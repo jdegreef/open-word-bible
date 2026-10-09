@@ -25,7 +25,12 @@ MACULA Greek includes:
 - Cherith Glosses for the Greek New Testament (`english`), by Andi Wu,
   Copyright (C) 2023 by Cherith Analytics, licensed under CC BY 4.0.
 - Word-sense data from the United Bible Societies MARBLE project
-  (`ln`, `domain`), used with permission.
+  (`ln`, `domain`), used with permission. Open Word Bible does not use or
+  redistribute these fields.
+
+The word extracts in `data/grc/` are derived from MACULA Greek and carry its
+CC BY 4.0 licence. They hold, per word: id, text, following punctuation,
+lemma, morphology, the Berean and Cherith glosses, and Strong's number.
 
 ## MACULA Hebrew Linguistic Datasets
 
