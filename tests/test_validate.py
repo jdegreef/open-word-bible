@@ -5,7 +5,7 @@ from pathlib import Path
 
 from owb import validate
 
-EXAMPLE = Path(__file__).resolve().parents[1] / "content" / "en" / "JHN" / "JHN.1.1-2.json"
+EXAMPLE = Path(__file__).resolve().parents[1] / "content" / "JHN" / "JHN.1.1-18.json"
 
 
 def example_records():
