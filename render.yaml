@@ -1,0 +1,19 @@
+# Render Blueprint: the public site, built from content/ and data/grc/.
+# Create it in Render with New > Blueprint and this repository.
+services:
+  - type: web
+    name: open-word-bible
+    runtime: static
+    buildCommand: python3 scripts/build_site.py
+    staticPublishPath: site
+    pullRequestPreviewsEnabled: true
+    domains:
+      - openwordbible.org
+      - www.openwordbible.org
+    headers:
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin

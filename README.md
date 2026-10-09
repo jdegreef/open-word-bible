@@ -33,7 +33,8 @@ Decisions come in two layers:
 Each decision names its tokens, category, choice, alternatives and reason,
 and whether it is uncertain or needs a footnote.
 
-Example: `content/en/JHN/JHN.1.1-2.json`.
+Content: `content/JHN/JHN.1.1-18.json`, John 1:1–18 in English and Spanish
+(one record per verse for now).
 
 ## Reader settings
 
@@ -68,4 +69,15 @@ tree; files are then read with `git show` at the pinned commit.
 Other tools:
 
     python3 scripts/build_skeleton.py JHN.1.3 JHN.1.5 -o new.json
-    python3 -m owb.validate content/en/JHN/*.json
+    python3 -m owb.validate content/JHN/*.json
+    python3 scripts/extract_tokens.py         # refresh data/grc/ after adding verses
+
+## The site
+
+`scripts/build_site.py` builds a static site into `site/` from `content/` and
+the word extracts in `data/grc/`. It needs no source clones and nothing beyond
+Python 3. Preview it with:
+
+    python3 scripts/build_site.py && python3 -m http.server -d site 8000
+
+`render.yaml` deploys it to Render as a static site on openwordbible.org.
