@@ -35,14 +35,14 @@ class SiteTest(unittest.TestCase):
 
     def test_chapter_has_every_verse_in_both_languages(self):
         data = self.chapter_data()
-        self.assertEqual([r["refs"][0] for r in data["records"]],
+        self.assertEqual([v for r in data["records"] for v in r["refs"]],
                          [f"JHN.1.{v}" for v in range(1, 19)])
         self.assertEqual(data["languages"], ["en", "es"])
 
     def test_words_match_each_verse_source_tokens(self):
         data = self.chapter_data()
         for r in data["records"]:
-            words = {t["id"] for t in data["words"][r["refs"][0]]}
+            words = {t["id"] for v in r["refs"] for t in data["words"][v]}
             self.assertEqual(set(r["source"]["tokens"]), words, r["id"])
 
     def test_about_page_credits_sources(self):

@@ -30,6 +30,13 @@ class MarkupTest(unittest.TestCase):
         self.assertFalse(markup.stray_braces(TEXT))
         self.assertTrue(markup.stray_braces("the {{gender:all people"))
 
+    def test_verse_markers(self):
+        text = "children of God \\v 13 children born of God."
+        self.assertEqual(markup.verse_markers(text), [13])
+        self.assertEqual(markup.split_verses(text),
+                         [(None, "children of God"), (13, "children born of God.")])
+        self.assertEqual(markup.split_verses("In the beginning"), [(None, "In the beginning")])
+
 
 if __name__ == "__main__":
     unittest.main()

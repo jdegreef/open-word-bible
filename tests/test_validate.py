@@ -68,6 +68,13 @@ class ValidateTest(unittest.TestCase):
         self.assertEqual(validate.STATUSES, ["ai_draft", "meaning_reviewed", "reviewed", "revised"])
         self.assertIn("setting_alternative", validate.CATEGORIES)
 
+    def test_sentence_across_verses_needs_its_marker(self):
+        record = next(r for r in example_records() if r["id"] == "JHN.1.12.s1")
+        self.assertEqual(record["refs"], ["JHN.1.12", "JHN.1.13"])
+        self.assertEqual(validate.validate_record(record), [])
+        record["renderings"]["en"]["B"] = record["renderings"]["en"]["B"].replace("\\v 13 ", "")
+        self.assertTrue(any("verse markers" in e for e in validate.validate_record(record)))
+
 
 if __name__ == "__main__":
     unittest.main()

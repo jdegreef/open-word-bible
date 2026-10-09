@@ -113,7 +113,16 @@ def validate_record(record, known_tokens=None):
             elif tid not in in_source:
                 errors.append(f"{where}: token {tid!r} is not in source.tokens")
 
+    # Every verse after the first is marked where it starts, in order.
+    later_verses = [refs.parse(v).verse for v in verse_ids[1:]]
+
+    def check_verses(text, where):
+        if isinstance(text, str) and markup.verse_markers(text) != later_verses:
+            errors.append(f"{where}: verse markers {markup.verse_markers(text)} "
+                          f"should be {later_verses}")
+
     _check_markup(record.get("literal_gloss"), "literal_gloss", errors)
+    check_verses(record.get("literal_gloss"), "literal_gloss")
 
     renderings = record.get("renderings")
     if not isinstance(renderings, dict) or not renderings:
@@ -127,6 +136,7 @@ def validate_record(record, known_tokens=None):
             continue
         for level, text in levels.items():
             _check_markup(text, f"renderings.{lang}.{level}", errors)
+            check_verses(text, f"renderings.{lang}.{level}")
 
     for i, al in enumerate(record.get("alignments", [])):
         where = f"alignments[{i}]"

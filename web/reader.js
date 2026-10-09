@@ -35,6 +35,22 @@
 
   var current = null;   // selected record
   var SPAN = /\{\{([a-z_]+):([^{}]*)\}\}/g;
+  var VERSE = /\\v (\d+) ?/;
+
+  function verseOf(id) { return id.split(".")[2]; }
+
+  // A record's verses as "12" or "12\u201313".
+  function verseRange(r) {
+    var first = verseOf(r.refs[0]), last = verseOf(r.refs[r.refs.length - 1]);
+    return first === last ? first : first + "\u2013" + last;
+  }
+
+  // Split rendered text at verse markers: [[verse, text], ...].
+  function splitVerses(r, text) {
+    var parts = text.split(VERSE), out = [[verseOf(r.refs[0]), parts[0].trim()]];
+    for (var i = 1; i < parts.length; i += 2) out.push([parts[i], parts[i + 1]]);
+    return out;
+  }
 
   function render(text) {
     return text.replace(SPAN, function (_, name, opts) {
@@ -84,25 +100,25 @@
     box.textContent = "";
     document.getElementById("title").textContent = DATA.title[settings.lang];
     DATA.records.forEach(function (r) {
-      var v = r.refs[0].split(".")[2];
-      var span = el("span", "verse");
-      span.tabIndex = 0;
-      span.setAttribute("role", "button");
-      span.setAttribute("aria-label", "Verse " + v + ": show the reasoning");
-      span.dataset.id = r.id;
-      if (current && current.id === r.id) span.setAttribute("aria-current", "true");
-      span.appendChild(el("sup", null, v));
-      span.appendChild(document.createTextNode(render(r.renderings[settings.lang][settings.level])));
       var ds = decisionsFor(r);
-      if (ds.meaning.concat(ds.rendering).some(function (d) { return d.footnote; })) {
-        span.appendChild(el("span", "fn", "\u2020"));
-      }
-      span.addEventListener("click", function () { select(r); });
-      span.addEventListener("keydown", function (e) {
-        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(r); }
+      var hasNote = ds.meaning.concat(ds.rendering).some(function (d) { return d.footnote; });
+      var parts = splitVerses(r, render(r.renderings[settings.lang][settings.level]));
+      parts.forEach(function (part, i) {
+        var span = el("span", "verse");
+        span.tabIndex = 0;
+        span.setAttribute("role", "button");
+        span.setAttribute("aria-label", "Verse " + part[0] + ": show the reasoning");
+        if (current && current.id === r.id) span.setAttribute("aria-current", "true");
+        span.appendChild(el("sup", null, part[0]));
+        span.appendChild(document.createTextNode(part[1]));
+        if (hasNote && i === parts.length - 1) span.appendChild(el("span", "fn", "\u2020"));
+        span.addEventListener("click", function () { select(r, part[0]); });
+        span.addEventListener("keydown", function (e) {
+          if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(r, part[0]); }
+        });
+        box.appendChild(span);
+        box.appendChild(document.createTextNode(" "));
       });
-      box.appendChild(span);
-      box.appendChild(document.createTextNode(" "));
     });
   }
 
@@ -141,15 +157,14 @@
         "Tap or click any verse to see the Greek, a word-for-word gloss, and every translation decision with its reason."));
       return;
     }
-    var v = current.refs[0].split(".")[2];
-    panel.appendChild(el("h2", null, DATA.title[settings.lang].replace(/[\d:\u2013\s]+$/, "") + " " + DATA.chapter + ":" + v));
+    panel.appendChild(el("h2", null, DATA.title[settings.lang].replace(/[\d:\u2013\s]+$/, "") + " " + DATA.chapter + ":" + verseRange(current)));
     panel.appendChild(el("span", "status", "AI draft \u00b7 not yet reviewed"));
 
     panel.appendChild(el("h3", null, "Greek (SBLGNT)"));
     var greek = el("div", "greek");
     greek.lang = "grc";
     var info = el("p", "wordinfo");
-    (DATA.words[current.refs[0]] || []).forEach(function (t) {
+    function drawWord(t) {
       var w = el("span", "word", t.text);
       w.dataset.id = t.id;
       w.tabIndex = 0;
@@ -163,12 +178,21 @@
       w.addEventListener("focus", show);
       greek.appendChild(w);
       greek.appendChild(document.createTextNode(t.after.trim() ? t.after.trim() + " " : " "));
+    }
+    current.refs.forEach(function (vid, i) {
+      if (i > 0) greek.appendChild(el("sup", null, verseOf(vid)));
+      (DATA.words[vid] || []).forEach(drawWord);
     });
     panel.appendChild(greek);
     panel.appendChild(info);
 
     panel.appendChild(el("h3", null, "Word for word"));
-    panel.appendChild(el("p", "gloss", current.literal_gloss));
+    var gloss = el("p", "gloss");
+    splitVerses(current, current.literal_gloss).forEach(function (part, i) {
+      if (i > 0) gloss.appendChild(el("sup", null, " " + part[0]));
+      gloss.appendChild(document.createTextNode((i > 0 ? " " : "") + part[1]));
+    });
+    panel.appendChild(gloss);
 
     var ds = decisionsFor(current);
     panel.appendChild(el("h3", null, "What the original means"));
@@ -179,9 +203,9 @@
     ds.rendering.forEach(function (d) { panel.appendChild(drawCard(d, current)); });
   }
 
-  function select(record) {
+  function select(record, verse) {
     current = record;
-    try { history.replaceState(null, "", "#v" + record.refs[0].split(".")[2]); } catch (e) { /* ignore */ }
+    try { history.replaceState(null, "", "#v" + (verse || verseOf(record.refs[0]))); } catch (e) { /* ignore */ }
     drawText();
     drawPanel();
     if (window.matchMedia("(max-width: 860px)").matches) {
@@ -204,7 +228,9 @@
   });
 
   var m = /^#v(\d+)$/.exec(location.hash);
-  if (m) current = DATA.records.find(function (r) { return r.refs[0].split(".")[2] === m[1]; }) || null;
+  if (m) current = DATA.records.find(function (r) {
+    return r.refs.some(function (vid) { return verseOf(vid) === m[1]; });
+  }) || null;
   drawControls();
   drawText();
   drawPanel();

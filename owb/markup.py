@@ -13,6 +13,10 @@ SETTINGS = ("gender", "christos", "divine_name", "units", "deity_pronoun", "spel
 
 SPAN = re.compile(r"\{\{([a-z_]+):([^{}]*)\}\}")
 
+# A sentence that crosses a verse boundary marks where each later verse
+# starts with a USFM-style marker: "... children of God \v 13 children born ...".
+VERSE = re.compile(r"\\v (\d+) ?")
+
 
 class Span(NamedTuple):
     setting: str
@@ -31,6 +35,21 @@ def stray_braces(text):
     """True if text has "{{" or "}}" outside a well-formed span."""
     rest = SPAN.sub("", text)
     return "{{" in rest or "}}" in rest
+
+
+def verse_markers(text):
+    """The verse numbers marked inside text, in order."""
+    return [int(m[1]) for m in VERSE.finditer(text)]
+
+
+def split_verses(text):
+    """Split text at verse markers: [(None, first part), (13, rest), ...]."""
+    parts, verse, pos = [], None, 0
+    for m in VERSE.finditer(text):
+        parts.append((verse, text[pos:m.start()].rstrip()))
+        verse, pos = int(m[1]), m.end()
+    parts.append((verse, text[pos:]))
+    return parts
 
 
 def render(text, settings=None):
