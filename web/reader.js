@@ -25,6 +25,7 @@
                       "\u201cMessiah\u201d: shows it is a title meaning \u201canointed king\u201d."],
       hint_deity_pronoun: ["\u201che\u201d: lowercase, like the original, which has no capital letters.",
                            "\u201cHe\u201d: capitalised, as some readers prefer out of reverence."],
+      plural: "Plural you", hint_plural_you: ["", ""],
       verse_label: "Verse {v}: show the reasoning",
       empty_title: "The reasoning behind each verse",
       empty_text: "Tap or click any verse to see the Greek, a word-for-word gloss, and every translation decision with its reason.",
@@ -58,6 +59,8 @@
                       "\u00abMes\u00edas\u00bb: muestra que es un t\u00edtulo que significa \u00abrey ungido\u00bb."],
       hint_deity_pronoun: ["\u00ab\u00e9l\u00bb: en min\u00fascula, como el original, que no tiene may\u00fasculas.",
                            "\u00ab\u00c9l\u00bb: con may\u00fascula, como prefieren algunos lectores por reverencia."],
+      plural: "Plural", hint_plural_you: ["\u00abustedes\u00bb: como se habla en Am\u00e9rica Latina.",
+                                           "\u00abvosotros\u00bb: como se habla en la mayor parte de Espa\u00f1a."],
       verse_label: "Vers\u00edculo {v}: ver el razonamiento",
       empty_title: "El razonamiento detr\u00e1s de cada vers\u00edculo",
       empty_text: "Toca cualquier vers\u00edculo para ver el griego, una glosa palabra por palabra y cada decisi\u00f3n de traducci\u00f3n con su raz\u00f3n.",
@@ -79,7 +82,7 @@
 
   function t(key) { return UI[settings.lang][key]; }
 
-  var settings = { lang: "en", level: "B", gender: 0, christos: 0, deity_pronoun: 0 };
+  var settings = { lang: "en", level: "B", gender: 0, christos: 0, deity_pronoun: 0, plural_you: 0 };
   try {
     var saved = JSON.parse(localStorage.getItem(STORE) || "{}");
     for (var k in settings) if (k in saved) settings[k] = saved[k];
@@ -146,7 +149,10 @@
       n.textContent = t(n.getAttribute("data-i18n"));
     });
     document.getElementById("hint-level").textContent = t("hint_level")[settings.level];
-    ["gender", "christos", "deity_pronoun"].forEach(function (name) {
+    document.querySelectorAll("[data-only-lang]").forEach(function (n) {
+      n.hidden = n.getAttribute("data-only-lang") !== settings.lang;
+    });
+    ["gender", "christos", "deity_pronoun", "plural_you"].forEach(function (name) {
       document.getElementById("hint-" + name).textContent = t("hint_" + name)[settings[name]];
     });
     document.documentElement.lang = settings.lang;
@@ -156,6 +162,7 @@
     var box = document.getElementById("text");
     box.textContent = "";
     document.getElementById("title").textContent = DATA.title[settings.lang];
+    var shown = null;   // last verse number printed
     DATA.records.forEach(function (r) {
       var ds = decisionsFor(r);
       var hasNote = ds.meaning.concat(ds.rendering).some(function (d) { return d.footnote; });
@@ -166,7 +173,8 @@
         span.setAttribute("role", "button");
         span.setAttribute("aria-label", t("verse_label").replace("{v}", part[0]));
         if (current && current.id === r.id) span.setAttribute("aria-current", "true");
-        span.appendChild(el("sup", null, part[0]));
+        if (part[0] !== shown) span.appendChild(el("sup", null, part[0]));
+        shown = part[0];
         span.appendChild(document.createTextNode(part[1]));
         if (hasNote && i === parts.length - 1) span.appendChild(el("span", "fn", "\u2020"));
         span.addEventListener("click", function () { select(r, part[0]); });
@@ -235,9 +243,10 @@
       greek.appendChild(w);
       greek.appendChild(document.createTextNode(t.after.trim() ? t.after.trim() + " " : " "));
     }
+    var mine = new Set(current.source.tokens);
     current.refs.forEach(function (vid, i) {
       if (i > 0) greek.appendChild(el("sup", null, verseOf(vid)));
-      (DATA.words[vid] || []).forEach(drawWord);
+      (DATA.words[vid] || []).filter(function (w) { return mine.has(w.id); }).forEach(drawWord);
     });
     panel.appendChild(greek);
     panel.appendChild(info);

@@ -19,13 +19,14 @@ sys.path.insert(0, str(ROOT))
 
 from owb import refs  # noqa: E402
 
-BOOK_NAMES = {"JHN": {"en": "John", "es": "Juan"}}
+BOOK_NAMES = {"JHN": {"en": "John", "es": "Juan"},
+              "PHP": {"en": "Philippians", "es": "Filipenses"}}
 LANGUAGES = ("en", "es")
 SITE_NAME = "Open Word Bible"
 
 
 def page(title, body, current="", description=""):
-    nav = [("/", "Home"), ("/jhn/1/", "Read"), ("/about/", "About")]
+    nav = [("/", "Home"), ("/read/", "Read"), ("/about/", "About")]
     links = "".join(
         f'<a href="{href}"{" aria-current=page" if href == current else ""}>{label}</a>'
         for href, label in nav)
@@ -97,11 +98,28 @@ def load_chapter(book, chapter):
     return records, words
 
 
+def chapters():
+    """Every (book, chapter) with content, in canonical order."""
+    found = set()
+    for path in (ROOT / "content").glob("*/*.json"):
+        for r in json.loads(path.read_text(encoding="utf-8"))["records"]:
+            ref = refs.parse(r["refs"][0])
+            found.add((ref.book, ref.chapter))
+    return sorted(found, key=lambda bc: refs.Ref(bc[0], bc[1], 1).sort_key())
+
+
+def chapter_url(book, chapter):
+    return f"/{book.lower()}/{chapter}/"
+
+
+def chapter_title(records, book, chapter, lang="en"):
+    verses = [refs.parse(v).verse for r in records for v in r["refs"]]
+    return f"{BOOK_NAMES[book][lang]} {chapter}:{min(verses)}–{max(verses)}"
+
+
 def chapter_page(book, chapter):
     records, words = load_chapter(book, chapter)
-    verses = [refs.parse(r["refs"][0]).verse for r in records]
-    span = f"{chapter}:{min(verses)}–{max(verses)}"
-    title = {lang: f"{BOOK_NAMES[book][lang]} {span}" for lang in LANGUAGES}
+    title = {lang: chapter_title(records, book, chapter, lang) for lang in LANGUAGES}
     languages = [lang for lang in LANGUAGES
                  if all(lang in r["renderings"] for r in records)]
     data = {"book": book, "chapter": chapter, "title": title, "languages": languages,
@@ -130,8 +148,9 @@ def chapter_page(book, chapter):
   <div class="control">{label("gender", "Gender")} {seg("gender", [("0", "Inclusive", "inclusive"), ("1", "Traditional", "traditional")])}</div>
   <div class="control">{label("title", "Title")} {seg("christos", [("0", "Christ", "christ"), ("1", "Messiah", "messiah")])}</div>
   <div class="control">{label("pronouns", "Pronouns for God")} {seg("deity_pronoun", [("0", "he", "he"), ("1", "He", "He")])}</div>
+  <div class="control" data-only-lang="es" hidden>{label("plural", "Plural you")} {seg("plural_you", [("0", "ustedes", None), ("1", "vosotros", None)])}</div>
 </div>
-<p class="hint"><span id="hint-level"></span> <span id="hint-gender"></span> <span id="hint-christos"></span> <span id="hint-deity_pronoun"></span></p>
+<p class="hint"><span id="hint-level"></span> <span id="hint-gender"></span> <span id="hint-christos"></span> <span id="hint-deity_pronoun"></span> <span id="hint-plural_you"></span></p>
 <div class="reader">
   <article class="passage">
     <h1 id="title">{html.escape(title["en"])}</h1>
@@ -143,8 +162,24 @@ def chapter_page(book, chapter):
 <script type="application/json" id="owb-data">{blob}</script>
 <script src="/reader.js"></script>
 """
-    return page(title["en"], body, current="/jhn/1/",
-                description="John 1:1-18 translated from the Greek, with the reasoning behind every verse.")
+    return page(title["en"], body, current="/read/",
+                description=f"{title['en']} translated from the Greek, with the reasoning behind every verse.")
+
+
+def read_page():
+    items = "".join(
+        f'<li><a href="{chapter_url(b, c)}">'
+        f'{html.escape(chapter_title(load_chapter(b, c)[0], b, c))}</a></li>'
+        for b, c in chapters())
+    body = f"""
+<div class="prose">
+<h1>Read</h1>
+<p>Sample passages so far, each translated from the SBL Greek New Testament into English and
+Spanish with the reasoning behind every sentence. All are AI drafts awaiting review.</p>
+<ul>{items}</ul>
+</div>
+"""
+    return page("Read", body, current="/read/", description="Passages available in Open Word Bible.")
 
 
 def home_page():
@@ -153,7 +188,7 @@ def home_page():
 <h1>The Bible, translated from Hebrew and Greek, with its reasoning shown.</h1>
 <p>Open Word Bible is a free translation for every reader. Tap any verse to see the original words,
 a word-for-word gloss, and why each word was chosen. Everything is released under CC0.</p>
-<a class="button" href="/jhn/1/">Read John 1:1&ndash;18</a>
+<a class="button" href="/read/">Read the sample passages</a>
 </section>
 <section class="points">
 <div><h2>Three levels</h2><p>Literal follows the original closely, Balanced reads naturally, and Readable uses plain modern language. The meaning is the same at every level.</p></div>
@@ -199,10 +234,12 @@ def build(out):
         shutil.rmtree(out)
     files = {
         "index.html": home_page(),
-        "jhn/1/index.html": chapter_page("JHN", 1),
+        "read/index.html": read_page(),
         "about/index.html": about_page(),
         "404.html": not_found_page(),
     }
+    for book, chapter in chapters():
+        files[chapter_url(book, chapter).strip("/") + "/index.html"] = chapter_page(book, chapter)
     for rel, text in files.items():
         path = out / rel
         path.parent.mkdir(parents=True, exist_ok=True)

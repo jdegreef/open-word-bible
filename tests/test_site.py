@@ -23,14 +23,14 @@ class SiteTest(unittest.TestCase):
     def tearDownClass(cls):
         cls.tmp.cleanup()
 
-    def chapter_data(self):
-        page = (self.out / "jhn" / "1" / "index.html").read_text(encoding="utf-8")
+    def chapter_data(self, path="jhn/1"):
+        page = (self.out / path / "index.html").read_text(encoding="utf-8")
         m = re.search(r'<script type="application/json" id="owb-data">(.*?)</script>', page, re.S)
         return json.loads(m[1])
 
     def test_pages_exist(self):
-        for rel in ("index.html", "jhn/1/index.html", "about/index.html", "404.html",
-                    "style.css", "reader.js"):
+        for rel in ("index.html", "read/index.html", "jhn/1/index.html", "php/4/index.html",
+                    "about/index.html", "404.html", "style.css", "reader.js"):
             self.assertTrue((self.out / rel).is_file(), rel)
 
     def test_chapter_has_every_verse_in_both_languages(self):
@@ -44,6 +44,17 @@ class SiteTest(unittest.TestCase):
         for r in data["records"]:
             words = {t["id"] for v in r["refs"] for t in data["words"][v]}
             self.assertEqual(set(r["source"]["tokens"]), words, r["id"])
+
+    def test_read_page_lists_every_passage(self):
+        read = (self.out / "read" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('href="/jhn/1/"', read)
+        self.assertIn('href="/php/4/"', read)
+
+    def test_sentence_records_split_a_verse(self):
+        data = self.chapter_data("php/4")
+        five = [r for r in data["records"] if r["refs"] == ["PHP.4.5"]]
+        self.assertEqual([r["id"] for r in five], ["PHP.4.5.s1", "PHP.4.5.s2"])
+        self.assertFalse(set(five[0]["source"]["tokens"]) & set(five[1]["source"]["tokens"]))
 
     def test_about_page_credits_sources(self):
         about = (self.out / "about" / "index.html").read_text(encoding="utf-8")
