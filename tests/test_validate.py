@@ -75,6 +75,12 @@ class ValidateTest(unittest.TestCase):
         record["renderings"]["en"]["B"] = record["renderings"]["en"]["B"].replace("\\v 13 ", "")
         self.assertTrue(any("verse markers" in e for e in validate.validate_record(record)))
 
+    def test_plural_you_is_spanish_only(self):
+        path = EXAMPLE.parents[1] / "PHP" / "PHP.4.1-9.json"
+        for record in json.loads(path.read_text(encoding="utf-8"))["records"]:
+            self.assertNotIn("plural_you", json.dumps(record["renderings"]["en"]))
+        self.assertEqual(validate.validate_file(path), [])
+
 
 if __name__ == "__main__":
     unittest.main()

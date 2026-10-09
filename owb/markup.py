@@ -9,7 +9,8 @@ the default.
 import re
 from typing import NamedTuple
 
-SETTINGS = ("gender", "christos", "divine_name", "units", "deity_pronoun", "spelling")
+SETTINGS = ("gender", "christos", "divine_name", "units", "deity_pronoun", "spelling",
+            "plural_you")
 
 SPAN = re.compile(r"\{\{([a-z_]+):([^{}]*)\}\}")
 
