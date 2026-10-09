@@ -1,1 +1,71 @@
-# open-word-bible
+# Open Word Bible
+
+Open Word Bible translates the Bible from Hebrew and Greek into modern
+languages: English first, then Spanish, French, Portuguese and Swahili.
+
+Every translated sentence carries a **reasoning record**: the original words,
+a literal gloss, the translation at three levels, and each translation
+decision with its reason. The original-language text is never typed by hand;
+it is always loaded from the pinned source data.
+
+## Three levels
+
+| Level    | Code  | Aim                                              |
+|----------|-------|--------------------------------------------------|
+| Literal  | OWB-L | Follows the original closely; supplied words in [brackets]. |
+| Balanced | OWB-B | Accurate and natural.                            |
+| Readable | OWB-R | Plain modern language, made explicit where it helps. |
+
+## Reasoning records
+
+A record (`schema/sentence-record.schema.json`) holds one source sentence:
+its verse ids, source token ids, literal gloss, renderings per language and
+level, optional alignments, decisions and a status (`ai_draft`,
+`meaning_reviewed`, `reviewed`, `revised`).
+
+Decisions come in two layers:
+
+- **meaning**: what the original says. Written once per passage and shared
+  by every language and level (`language` is `null`).
+- **rendering**: how one language says it at one or more levels
+  (`language` and `levels` are set).
+
+Each decision names its tokens, category, choice, alternatives and reason,
+and whether it is uncertain or needs a footnote.
+
+Example: `content/en/JHN/JHN.1.1-2.json`.
+
+## Reader settings
+
+Reader settings are stored as marked alternatives inside the text. The first
+option is the default:
+
+    the light of {{gender:all people|men}}
+
+Settings: `gender`, `christos`, `divine_name`, `units`, `deity_pronoun`,
+`spelling`. `owb/markup.py` lists and renders the spans.
+
+## Licences
+
+- Translation, reasoning records and other data in this repository:
+  **CC0 1.0** (`LICENSE`).
+- Code (`owb/`, `scripts/`, `tests/`): **MIT** (`LICENSE-CODE`).
+- Source texts and linguistic data keep their own licences and are not
+  included here; they are fetched into `vendor/`. See `CREDITS.md` for the
+  required attributions.
+
+## Setup and tests
+
+Python 3, standard library only.
+
+    python3 scripts/fetch_sources.py          # clone pinned sources into vendor/
+    python3 -m unittest discover -s tests -t .
+
+To use sources elsewhere, set `OWB_VENDOR` to a directory containing
+`sblgnt/`, `macula-greek/`, ... A source may be a git clone without a working
+tree; files are then read with `git show` at the pinned commit.
+
+Other tools:
+
+    python3 scripts/build_skeleton.py JHN.1.3 JHN.1.5 -o new.json
+    python3 -m owb.validate content/en/JHN/*.json
