@@ -110,25 +110,32 @@ def chapter_page(book, chapter):
     # "</" cannot appear inside a script element.
     blob = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
 
+    # Labels are English here; reader.js swaps in the reading language's
+    # labels (data-i18n keys) once the page loads.
     def seg(name, options):
-        buttons = "".join(f'<button type="button" data-value="{v}">{label}</button>'
-                          for v, label in options)
+        buttons = "".join(
+            f'<button type="button" data-value="{v}"{f" data-i18n={key}" if key else ""}>{label}</button>'
+            for v, label, key in options)
         return f'<span class="seg" data-setting="{name}">{buttons}</span>'
+
+    def label(key, text):
+        return f'<span data-i18n="{key}">{text}</span>'
 
     lang_labels = {"en": "English", "es": "Español"}
     body = f"""
-<p class="notice">Sample passage. Every line is an AI draft that has not yet been checked by a reviewer who reads Greek.</p>
+<p class="notice" data-i18n="notice">Sample passage. Every line is an AI draft that has not yet been checked by a reviewer who reads Greek.</p>
 <div class="controls">
-  <div class="control">Language {seg("lang", [(l, lang_labels[l]) for l in languages])}</div>
-  <div class="control">Level {seg("level", [("L", "Literal"), ("B", "Balanced"), ("R", "Readable")])}</div>
-  <div class="control">Gender {seg("gender", [("0", "Inclusive"), ("1", "Traditional")])}</div>
-  <div class="control">Title {seg("christos", [("0", "Christ"), ("1", "Messiah")])}</div>
+  <div class="control">{label("language", "Language")} {seg("lang", [(l, lang_labels[l], None) for l in languages])}</div>
+  <div class="control">{label("level", "Level")} {seg("level", [("L", "Literal", "L"), ("B", "Balanced", "B"), ("R", "Readable", "R")])}</div>
+  <div class="control">{label("gender", "Gender")} {seg("gender", [("0", "Inclusive", "inclusive"), ("1", "Traditional", "traditional")])}</div>
+  <div class="control">{label("title", "Title")} {seg("christos", [("0", "Christ", "christ"), ("1", "Messiah", "messiah")])}</div>
+  <div class="control">{label("pronouns", "Pronouns for God")} {seg("deity_pronoun", [("0", "he", "he"), ("1", "He", "He")])}</div>
 </div>
-<p class="hint"><span id="hint-level"></span> <span id="hint-gender"></span> <span id="hint-christos"></span></p>
+<p class="hint"><span id="hint-level"></span> <span id="hint-gender"></span> <span id="hint-christos"></span> <span id="hint-deity_pronoun"></span></p>
 <div class="reader">
   <article class="passage">
     <h1 id="title">{html.escape(title["en"])}</h1>
-    <p class="sub">Translated from the SBL Greek New Testament. Tap a verse to see why it reads as it does. &dagger; marks a verse with a footnote.</p>
+    <p class="sub" data-i18n="sub">Translated from the SBL Greek New Testament. Tap a verse to see why it reads as it does. &dagger; marks a verse with a footnote.</p>
     <div class="text" id="text"></div>
   </article>
   <aside class="panel" id="panel" aria-live="polite"></aside>
