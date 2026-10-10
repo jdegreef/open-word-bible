@@ -265,6 +265,22 @@ def chapter_page(book, chapter):
                 description=f"{title['en']} translated from the Greek, with the reasoning behind every verse.")
 
 
+def opening_verse(records):
+    """A passage's first verse in English, Balanced, at the default settings:
+    what its Read-page card and its share card quote."""
+    return plain(markup.VERSE.split(records[0]["renderings"]["en"]["B"])[0])
+
+
+def review_label(records):
+    """How far review has got, from the records' own status."""
+    reviewed = sum(r["status"] != "ai_draft" for r in records)
+    if reviewed == 0:
+        return "AI draft, not yet reviewed"
+    if reviewed == len(records):
+        return "Reviewed"
+    return f"{reviewed} of {len(records)} sentences reviewed"
+
+
 def passage_card(book, chapter):
     """A passage as a card in the article-card style: its opening verse at
     the default settings, and how much of it is translated and recorded."""
@@ -272,8 +288,7 @@ def passage_card(book, chapter):
     verses = sorted({refs.parse(v).verse for r in records for v in r["refs"]})
     decisions = sum(len(r["decisions"]) for r in records)
     uncertain = sum(d["uncertain"] for r in records for d in r["decisions"])
-    first = records[0]
-    opening = plain(markup.VERSE.split(first["renderings"]["en"]["B"])[0])   # its first verse
+    opening = opening_verse(records)
     languages = " &middot; ".join(name for code, name in (("en", "English"), ("es", "Espa\u00f1ol"))
                                   if all(code in r["renderings"] for r in records))
     meta = (f"{len(verses)} verses &middot; {len(records)} sentences &middot; "
@@ -283,7 +298,7 @@ def passage_card(book, chapter):
             f'<span class="a-title">{html.escape(chapter_title(records, book, chapter))}</span>'
             f'<span class="p-opening">&ldquo;{display(opening)}&rdquo;</span>'
             f'<span class="a-meta">{meta}</span>'
-            f'<span class="p-status"><span class="status">AI draft, not yet reviewed</span></span></a></li>')
+            f'<span class="p-status"><span class="status">{review_label(records)}</span></span></a></li>')
 
 
 def read_page():
