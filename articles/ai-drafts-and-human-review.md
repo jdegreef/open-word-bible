@@ -28,7 +28,7 @@ Every review is recorded with the reviewer's name, so the history of each senten
 
 ## You can always see the status
 
-The reader shows each sentence's status. Today every sentence on this site is an AI draft, and the home page says so with a count: zero reviewed so far.
+The reader shows each sentence's status. Today no sentence on this site has been reviewed yet, and the reader says so on every one.
 
 ## Help review
 

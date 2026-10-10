@@ -648,7 +648,7 @@ def example_html():
 def progress_html():
     records = all_records()
     decisions = sum(len(r["decisions"]) for r in records)
-    reviewed = sum(r["status"] != "ai_draft" for r in records)
+    language_names = " and ".join({"en": "English", "es": "Spanish"}[lang] for lang in LANGUAGES)
     rows = []
     for book, chaps in books():
         done, total, progress = book_progress(book, chaps)
@@ -663,9 +663,9 @@ def progress_html():
 <div class="stats">
 <div><b>{len(records)}</b><span>sentences translated</span></div>
 <div><b>{decisions}</b><span>decisions recorded</span></div>
-<div><b>{reviewed}</b><span>reviewed by a scholar so far</span></div>
+<div><b>{len(LANGUAGES)}</b><span>languages: {language_names}</span></div>
 </div>
-<p>Everything published so far is an <strong>AI draft</strong>, in English, with Spanish for some passages. Nothing is
+<p>The translation is drafted with AI assistance, in English, with Spanish for some passages. Nothing is
 marked reviewed until named reviewers who read Hebrew or Greek approve it, and the reader always
 shows each sentence's status.</p>
 <p class="label">Books so far</p>
