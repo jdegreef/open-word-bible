@@ -267,8 +267,8 @@
       var item = el("li");
       var button = el("button", "note");
       button.type = "button";
-      button.appendChild(el("span", "mark", n.mark));
-      button.appendChild(el("span", "ref", verseRange(n.record)));
+      button.appendChild(el("span", "note-mark", n.mark));
+      button.appendChild(el("span", "note-ref", verseRange(n.record)));
       button.appendChild(el("span", "note-text", noteText(n.decision)));
       button.addEventListener("click", function () { select(n.record); });
       item.appendChild(button);
