@@ -3,6 +3,7 @@ title: Why another Bible translation?
 summary: Most modern translations are copyrighted, and almost all of them hide their reasoning. Open Word Bible sets out to change both.
 date: 2026-10-10
 order: 1
+section: method
 ---
 There are already many good English Bibles. So why start another one?
 

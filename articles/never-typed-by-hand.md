@@ -3,6 +3,7 @@ title: Why we never type Greek or Hebrew by hand
 summary: One firm rule protects the accuracy of everything Open Word Bible shows of the original languages. Here is the rule, and how the software enforces it.
 date: 2026-10-10
 order: 9
+section: method
 ---
 Open Word Bible has a rule that surprises people: no one, human or AI, ever types a Greek or Hebrew word into the translation or its notes. Every original-language word you see on this site, including the Greek in these articles, is copied by software from fixed source data.
 

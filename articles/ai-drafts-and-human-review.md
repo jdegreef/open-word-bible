@@ -3,6 +3,7 @@ title: "AI drafts and human review: how a sentence becomes \"reviewed\""
 summary: Everything on this site today is drafted with AI. Here is what that means, what it does not mean, and how a sentence moves from draft to reviewed.
 date: 2026-10-10
 order: 10
+section: method
 ---
 Open Word Bible is drafted with the help of AI. We say so plainly, because a project that promises to show its work cannot be vague about who did the work.
 
