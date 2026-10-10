@@ -19,10 +19,14 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
+from typing import NamedTuple  # noqa: E402
+
 from owb import markup, morph, refs  # noqa: E402
 
 BOOK_NAMES = {"JHN": {"en": "John", "es": "Juan"},
               "PHP": {"en": "Philippians", "es": "Filipenses"}}
+# Chapters in each book, for "2 of 21 chapters" and a book's completeness.
+BOOK_CHAPTERS = {"JHN": 21, "PHP": 4}
 LANGUAGES = ("en", "es")
 SITE_NAME = "Open Word Bible"
 # The site's home (Render serves it on openwordbible.org and redirects www).
@@ -201,13 +205,13 @@ def nav_menus():
         return f'<a class="dd-all" href="{href}">{label} {icon(ICONS["arrow"], 16)}</a>'
 
     rows = []
-    for url, title, records in passages():
-        verses = len({v for r in records for v in r["refs"]})
-        langs = [n for code, n in (("en", "English"), ("es", "Español"))
-                 if all(code in r["renderings"] for r in records)]
-        rows.append(row(url, display(title), f"{verses} verses &middot; {' &middot; '.join(langs)}", "book"))
-    read = (f'<p class="dd-head">Passages so far</p>{"".join(rows)}'
-            f'{all_link("/read/", "All passages")}')
+    for book, chaps in books():
+        _, _, progress = book_progress(book, chaps)
+        pills = chapter_pills(chaps)
+        rows.append(f'<div class="dd-book">{row(f"/read/#{book.lower()}", BOOK_NAMES[book]["en"], progress, "book")}'
+                    f'<div class="dd-chaps" aria-label="{BOOK_NAMES[book]["en"]} chapters">{pills}</div></div>')
+    read = (f'<p class="dd-head">Books so far</p>{"".join(rows)}'
+            f'{all_link("/read/", "All books and chapters")}')
 
     articles = sorted(load_articles(), key=lambda a: a["order"])
     groups = "".join(
@@ -242,6 +246,7 @@ def site_header(current, path=None):
         if path:
             panel = panel.replace(f'class="dd-item" href="{path}"', f'class="dd-item" href="{path}" aria-current="page"')
             panel = panel.replace(f'class="dd-all" href="{path}"', f'class="dd-all" href="{path}" aria-current="page"')
+            panel = re.sub(rf'(class="chap(?: part)?" href="{re.escape(path)}")', r'\1 aria-current="page"', panel)
         items.append(
             f'<li class="nav-item">'
             f'<button type="button" class="nav-link nav-trigger{" active" if on else ""}" '
@@ -326,12 +331,64 @@ def chapters():
     return sorted(found, key=lambda bc: refs.Ref(bc[0], bc[1], 1).sort_key())
 
 
+class Passage(NamedTuple):
+    """One chapter with content: its records, and whether every verse of the
+    chapter in the Greek extract is translated."""
+    book: str
+    chapter: int
+    url: str
+    name: str
+    records: list
+    verses: int
+    complete: bool
+
+
 @functools.lru_cache(maxsize=None)
 def passages():
-    """Every passage with content as (url, title, records), in canonical
-    order. Built once per build; the header, home page and footer list it."""
-    return tuple((chapter_url(b, c), chapter_title(records, b, c), records)
-                 for b, c in chapters() for records in [load_chapter(b, c)[0]])
+    """Every chapter with content, in canonical order. Built once per build;
+    the header, Read page, home page, footer and reader all list it."""
+    out = []
+    for b, c in chapters():
+        records, words = load_chapter(b, c)
+        verses = len({v for r in records for v in r["refs"]})
+        out.append(Passage(b, c, chapter_url(b, c), chapter_name(records, b, c), records,
+                           verses, verses == len(words)))
+    return tuple(out)
+
+
+def books():
+    """The books with content, in canonical order, as (book, [Passage])."""
+    grouped = {}
+    for p in passages():
+        grouped.setdefault(p.book, []).append(p)
+    return list(grouped.items())
+
+
+def book_progress(book, chapters_):
+    """"4 of 4 chapters, complete" / "2 of 21 chapters": a book's progress."""
+    done = sum(p.complete for p in chapters_)
+    total = BOOK_CHAPTERS[book]
+    return done, total, (f"{done} of {total} chapters" + (", complete" if done == total else ""))
+
+
+def chapter_pills(chaps, current=None):
+    """A pill per chapter, linked; a dashed one for a chapter only partly
+    translated, and the current chapter marked."""
+    return "".join(
+        f'<a class="chap{"" if p.complete else " part"}" href="{p.url}"'
+        f'{" aria-current=page" if p.chapter == current else ""} title="{html.escape(p.name)}">{p.chapter}</a>'
+        for p in chaps)
+
+
+def meter(done, total):
+    """A progress meter, done of total (decorative: the text says it too)."""
+    return f'<span class="meter" aria-hidden="true"><span style="width:{100 * done / total:.0f}%"></span></span>'
+
+
+def languages_of(records):
+    """The reading languages every sentence of a passage has, as names."""
+    return [n for code, n in (("en", "English"), ("es", "Espa\u00f1ol"))
+            if all(code in r["renderings"] for r in records)]
 
 
 def chapter_url(book, chapter):
@@ -343,9 +400,18 @@ def chapter_title(records, book, chapter, lang="en"):
     return f"{BOOK_NAMES[book][lang]} {chapter}:{min(verses)}–{max(verses)}"
 
 
+def chapter_name(records, book, chapter, lang="en"):
+    """What the site calls a passage: "Philippians 2" for a whole chapter,
+    "John 1:1–18" for part of one. (Share cards keep chapter_title.)"""
+    total = len(json.loads((ROOT / "data" / "grc" / f"{book}.{chapter}.json")
+                           .read_text(encoding="utf-8"))["verses"])
+    verses = {v for r in records for v in r["refs"]}
+    return f"{BOOK_NAMES[book][lang]} {chapter}" if len(verses) == total else chapter_title(records, book, chapter, lang)
+
+
 def chapter_page(book, chapter):
     records, words = load_chapter(book, chapter)
-    title = {lang: chapter_title(records, book, chapter, lang) for lang in LANGUAGES}
+    title = {lang: chapter_name(records, book, chapter, lang) for lang in LANGUAGES}
     # Every language any sentence has: English may run ahead of the others,
     # and the reader shows a sentence not yet translated in English.
     languages = [lang for lang in LANGUAGES
@@ -372,7 +438,7 @@ def chapter_page(book, chapter):
 
     lang_labels = {"en": "English", "es": "Español"}
     body = f"""
-<p class="notice" data-i18n="notice">Sample passage. Every line is an AI draft that has not yet been checked by a reviewer who reads Greek.</p>
+<p class="notice" data-i18n="notice">Every line is an AI draft that has not yet been checked by a reviewer who reads Greek.</p>
 <button type="button" class="settings-toggle" id="settings-toggle" aria-expanded="false" aria-controls="settings">
   <span data-i18n="settings">Reading settings</span> <span class="settings-summary" id="settings-summary"></span>
 </button>
@@ -389,11 +455,13 @@ def chapter_page(book, chapter):
 </div>
 <div class="reader">
   <article class="passage">
+    {chapter_strip(book, chapter)}
     <h1 id="title">{html.escape(title["en"])}</h1>
     <p class="sub" data-i18n="sub">Translated from the SBL Greek New Testament. Tap a verse to see why it reads as it does. Small letters mark footnotes, listed below the passage.</p>
     <p class="notice" id="partial" hidden></p>
     <div class="text" id="text"></div>
     <section class="notes" id="notes" aria-label="Notes" hidden></section>
+    {chapter_turns(book, chapter)}
   </article>
   <aside class="panel" id="panel" aria-live="polite" tabindex="-1"></aside>
 </div>
@@ -404,6 +472,35 @@ def chapter_page(book, chapter):
                 card=og_card_chapter(book, chapter),
                 card_alt=f"{title['en']}: \u201c{opening_verse(records)}\u201d, with the Greek beneath.",
                 description=f"{title['en']} translated from the Greek, with the reasoning behind every verse.")
+
+
+def chapter_strip(book, chapter):
+    """Above a passage: its book, how far the book has got, and a pill for
+    each chapter translated so far, this one marked."""
+    chaps = dict(books())[book]
+    pills = chapter_pills(chaps, chapter)
+    _, _, progress = book_progress(book, chaps)
+    return (f'<nav class="chapstrip" aria-label="{BOOK_NAMES[book]["en"]}: chapters">'
+            f'<a class="chap-book" href="/read/#{book.lower()}">{icon(ICONS["book"], 16)}{BOOK_NAMES[book]["en"]}</a>'
+            f'<span class="chap-pills">{pills}</span><span class="chap-progress">{progress}</span></nav>')
+
+
+def chapter_turns(book, chapter):
+    """Below a passage: the previous and next passages, across books."""
+    ps = passages()
+    i = next(n for n, p in enumerate(ps) if (p.book, p.chapter) == (book, chapter))
+
+    def turn(p, rel, label):
+        if p is None:
+            return '<span class="turn-gap"></span>'
+        return (f'<a class="turn {rel}" href="{p.url}" rel="{rel}">'
+                f'<span class="turn-label">{label}</span>'
+                f'<span class="turn-name">{display(p.name)}</span></a>')
+
+    prev = ps[i - 1] if i > 0 else None
+    nxt = ps[i + 1] if i + 1 < len(ps) else None
+    return (f'<nav class="turns" aria-label="Previous and next passage">'
+            f'{turn(prev, "prev", "&larr; Previous")}{turn(nxt, "next", "Next &rarr;")}</nav>')
 
 
 def opening_verse(records):
@@ -430,30 +527,38 @@ def passage_card(book, chapter):
     decisions = sum(len(r["decisions"]) for r in records)
     uncertain = sum(d["uncertain"] for r in records for d in r["decisions"])
     opening = opening_verse(records)
-    languages = " &middot; ".join(name for code, name in (("en", "English"), ("es", "Espa\u00f1ol"))
-                                  if all(code in r["renderings"] for r in records))
+    languages = " &middot; ".join(languages_of(records))
     meta = (f"{len(verses)} verses &middot; {len(records)} sentences &middot; "
             f"{decisions} decisions, {uncertain} marked uncertain")
     return (f'<li><a class="a-card p-card" href="{chapter_url(book, chapter)}">'
             f'<span class="a-section">{BOOK_NAMES[book]["en"]} &middot; {languages}</span>'
-            f'<span class="a-title">{html.escape(chapter_title(records, book, chapter))}</span>'
+            f'<span class="a-title">{html.escape(chapter_name(records, book, chapter))}</span>'
             f'<span class="p-opening">&ldquo;{display(opening)}&rdquo;</span>'
             f'<span class="a-meta">{meta}</span>'
             f'<span class="p-status"><span class="status">{review_label(records)}</span></span></a></li>')
 
 
 def read_page():
-    cards = "".join(passage_card(b, c) for b, c in chapters())
+    groups = []
+    for book, chaps in books():
+        done, total, progress = book_progress(book, chaps)
+        groups.append(
+            f'<section class="book-group" id="{book.lower()}" aria-labelledby="book-{book.lower()}">'
+            f'<div class="book-head"><h2 id="book-{book.lower()}">{BOOK_NAMES[book]["en"]}</h2>'
+            f'<span class="book-progress{" done" if done == total else ""}">{progress}</span>'
+            f'{meter(done, total)}</div>'
+            f'<ul class="a-grid">{"".join(passage_card(p.book, p.chapter) for p in chaps)}</ul></section>')
+    cards = "".join(groups)
     body = f"""
 <header class="page-head">
 <p class="eyebrow">Read</p>
-<h1>Passages translated so far</h1>
+<h1>Books and chapters translated so far</h1>
 <p class="dek">Each passage is translated from the SBL Greek New Testament at three levels, with
 the reasoning behind every sentence. English comes first; Spanish follows, and where a sentence is
 not yet in Spanish the reader shows the English. All are AI drafts until a reviewer who reads Greek
 approves them.</p>
 </header>
-<ul class="a-grid">{cards}</ul>
+{cards}
 <section class="how" aria-labelledby="how-h">
 <h2 id="how-h">How the reader works</h2>
 <ol class="steps">
@@ -537,10 +642,17 @@ def progress_html():
     records = all_records()
     decisions = sum(len(r["decisions"]) for r in records)
     reviewed = sum(r["status"] != "ai_draft" for r in records)
-    items = "".join(f'<li><a href="{url}">{html.escape(title)}</a></li>' for url, title, _ in passages())
+    rows = []
+    for book, chaps in books():
+        done, total, progress = book_progress(book, chaps)
+        pills = chapter_pills(chaps)
+        rows.append(f'<li class="book-row"><a class="book-name" href="/read/#{book.lower()}">{BOOK_NAMES[book]["en"]}</a>'
+                    f'{meter(done, total)}'
+                    f'<span class="book-progress{" done" if done == total else ""}">{progress}</span>'
+                    f'<span class="chap-pills">{pills}</span></li>')
     return f"""
 <section class="progress" aria-labelledby="progress-h">
-{sec_head("progress-h", "check", "Where the work stands", "/read/", "All passages")}
+{sec_head("progress-h", "check", "Where the work stands", "/read/", "All books")}
 <div class="stats">
 <div><b>{len(records)}</b><span>sentences translated</span></div>
 <div><b>{decisions}</b><span>decisions recorded</span></div>
@@ -549,8 +661,8 @@ def progress_html():
 <p>Everything published so far is an <strong>AI draft</strong>, in English, with Spanish for some passages. Nothing is
 marked reviewed until named reviewers who read Hebrew or Greek approve it, and the reader always
 shows each sentence's status.</p>
-<p class="label">Passages so far</p>
-<ul class="passages">{items}</ul>
+<p class="label">Books so far</p>
+<ul class="book-rows">{"".join(rows)}</ul>
 </section>
 """
 
@@ -576,7 +688,7 @@ so anyone may use it for anything.</p>
 <ul class="trust">
 <li>{icon(ICONS["gift"], 16)}Free forever</li>
 <li>{icon(ICONS["scale"], 16)}CC0 public domain</li>
-<li>{icon(ICONS["languages"], 16)}English and Español</li>
+<li>{icon(ICONS["languages"], 16)}English first, Spanish begun</li>
 </ul>
 </section>
 {example_html()}
@@ -973,7 +1085,7 @@ def site_footer():
     def items(pairs):
         return "".join(f'<li><a href="{href}">{html.escape(label)}</a></li>' for href, label in pairs)
 
-    read = [(url, title) for url, title, _ in passages()]
+    read = [(f"/read/#{book.lower()}", BOOK_NAMES[book]["en"]) for book, _ in books()]
     start = sorted((a for a in load_articles() if a["section"] == "method"), key=lambda a: a["order"])[:3]
     learn = [(article_url(a), a["title"]) for a in start] + [("/articles/", "All articles")]
     project = [("/about/", "About"), ("/about/#credits", "Sources and credits"),
@@ -986,7 +1098,7 @@ def site_footer():
 <p>A free Bible translated from Hebrew and Greek, with the reasoning behind every sentence shown.</p>
 <p class="foot-licence"><span class="pill">CC0</span> Public domain: quote it, print it, build on it.</p>
 </div>
-<nav aria-labelledby="foot-read"><h2 id="foot-read">Read</h2><ul>{items(read + [("/read/", "All passages")])}</ul></nav>
+<nav aria-labelledby="foot-read"><h2 id="foot-read">Read</h2><ul>{items(read + [("/read/", "All books and chapters")])}</ul></nav>
 <nav aria-labelledby="foot-learn"><h2 id="foot-learn">Learn</h2><ul>{items(learn)}</ul></nav>
 <nav aria-labelledby="foot-project"><h2 id="foot-project">Project</h2><ul>{items(project)}</ul></nav>
 </div>
