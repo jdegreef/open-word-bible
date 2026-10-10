@@ -83,9 +83,23 @@ COLOUR_MENU = (
     + '</div></div></div>')
 
 
-def page(title, body, path=None, current="", description=""):
+OG = ROOT / "web" / "og"
+
+
+def og_card_chapter(book, chapter):
+    """The name of a passage's link-preview image in web/og/ (scripts/build_og.py)."""
+    return f"{book.lower()}-{chapter}"
+
+
+def og_card_article(article):
+    return f"article-{article['slug']}"
+
+
+def page(title, body, path=None, current="", description="", card="site"):
     """A full HTML page. path is the page's URL path ("/read/"); pages with
-    one get a canonical link and link-preview tags, and go in the sitemap."""
+    one get a canonical link and link-preview tags, and go in the sitemap.
+    card names the page's preview image in web/og/; a card not drawn yet
+    falls back to the site's."""
     nav = [("/read/", "Read"), ("/articles/", "Articles"), ("/about/", "About")]
     links = "".join(
         f'<a href="{href}"{" aria-current=page" if href == current else ""}>{label}</a>'
@@ -96,6 +110,9 @@ def page(title, body, path=None, current="", description=""):
     meta = ""
     if path is not None:
         url = html.escape(SITE_URL + path)
+        if not (OG / f"{card}.jpg").is_file():
+            card = "site"
+        image = html.escape(f"{SITE_URL}/og/{card}.jpg")
         meta = f"""
 <link rel="canonical" href="{url}">
 <meta property="og:site_name" content="{SITE_NAME}">
@@ -103,7 +120,11 @@ def page(title, body, path=None, current="", description=""):
 <meta property="og:url" content="{url}">
 <meta property="og:title" content="{html.escape(full_title)}">
 <meta property="og:description" content="{html.escape(description)}">
-<meta name="twitter:card" content="summary">"""
+<meta property="og:image" content="{image}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{html.escape(full_title)}">
+<meta name="twitter:card" content="summary_large_image">"""
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -262,6 +283,7 @@ def chapter_page(book, chapter):
 <script src="/reader.js"></script>
 """
     return page(title["en"], body, path=chapter_url(book, chapter), current="/read/",
+                card=og_card_chapter(book, chapter),
                 description=f"{title['en']} translated from the Greek, with the reasoning behind every verse.")
 
 
@@ -731,6 +753,7 @@ def article_page(article, articles):
 <p><a href="/articles/">All articles &rarr;</a></p></section>
 """
     return page(article["title"], body, path=article_url(article), current="/articles/",
+                card=og_card_article(article),
                 description=article["summary"])
 
 
@@ -807,6 +830,7 @@ def build(out):
         path.write_text(text, encoding="utf-8")
     for asset in ("style.css", "reader.js", "site.js"):
         shutil.copy(ROOT / "web" / asset, out / asset)
+    shutil.copytree(OG, out / "og", ignore=shutil.ignore_patterns("manifest.json"))
     return sorted(files) + ["reader.js", "site.js", "style.css"]
 
 
