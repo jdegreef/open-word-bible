@@ -19,7 +19,7 @@ The second is **reasoning**. Every translation makes thousands of choices. Does 
 
 **It is translated from the original languages.** Every language is translated from the Hebrew, Aramaic and Greek, not from English.
 
-**It is honest about where it stands.** Everything on this site today is an AI draft. It is not marked reviewed until named reviewers who read Hebrew or Greek have checked it, and the reader always shows each sentence's status. See [AI drafts and human review](/articles/ai-drafts-and-human-review/).
+**It is honest about where it stands.** Everything on this site today is AI-assisted. It is not marked reviewed until named reviewers who read Hebrew or Greek have checked it, and the reader always shows each sentence's status. See [AI-assisted translation and human review](/articles/ai-assisted-translation-and-human-review/).
 
 ## Where we are
 

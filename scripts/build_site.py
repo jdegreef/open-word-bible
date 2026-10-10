@@ -445,7 +445,7 @@ def chapter_page(book, chapter):
 
     lang_labels = {"en": "English", "es": "Español"}
     body = f"""
-<p class="notice" data-i18n="notice">Every line is an AI draft that has not yet been checked by a reviewer who reads Greek.</p>
+<p class="notice" data-i18n="notice">Every line is AI-assisted and has not yet been checked by a reviewer who reads Greek.</p>
 <button type="button" class="settings-toggle" id="settings-toggle" aria-expanded="false" aria-controls="settings">
   <span data-i18n="settings">Reading settings</span> <span class="settings-summary" id="settings-summary"></span>
 </button>
@@ -520,7 +520,7 @@ def review_label(records):
     """How far review has got, from the records' own status."""
     reviewed = sum(r["status"] != "ai_draft" for r in records)
     if reviewed == 0:
-        return "AI draft, not yet reviewed"
+        return "AI-assisted, not yet reviewed"
     if reviewed == len(records):
         return "Reviewed"
     return f"{reviewed} of {len(records)} sentences reviewed"
@@ -562,8 +562,8 @@ def read_page():
 <h1>Books and chapters translated so far</h1>
 <p class="dek">Each passage is translated from the SBL Greek New Testament at three levels, with
 the reasoning behind every sentence. English comes first; Spanish follows, and where a sentence is
-not yet in Spanish the reader shows the English. All are AI drafts until a reviewer who reads Greek
-approves them.</p>
+not yet in Spanish the reader shows the English. All are AI-assisted, and none is marked reviewed until a
+reviewer who reads Greek approves it.</p>
 </header>
 {cards}
 <section class="how" aria-labelledby="how-h">
@@ -665,7 +665,7 @@ def progress_html():
 <div><b>{decisions}</b><span>decisions recorded</span></div>
 <div><b>{len(LANGUAGES)}</b><span>languages: {language_names}</span></div>
 </div>
-<p>The translation is drafted with AI assistance, in English, with Spanish for some passages. Nothing is
+<p>The translation is AI-assisted, in English, with Spanish for some passages. Nothing is
 marked reviewed until named reviewers who read Hebrew or Greek approve it, and the reader always
 shows each sentence's status.</p>
 <p class="label">Books so far</p>
@@ -1174,7 +1174,7 @@ def site_footer():
 <nav aria-labelledby="foot-project"><h2 id="foot-project">Project</h2><ul>{items(project)}</ul></nav>
 </div>
 <div class="foot-base">
-<p>Every sentence is an AI draft until a named reviewer who reads the original language approves it.</p>
+<p>Every sentence is AI-assisted and stays unreviewed until a named reviewer who reads the original language approves it.</p>
 <p>Translation and notes CC0 &middot; Code MIT &middot; Source texts keep their own licences</p>
 </div>
 </div></footer>"""

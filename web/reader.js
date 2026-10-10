@@ -9,7 +9,7 @@
   // English for now; Spanish readers are told so in the panel.
   var UI = {
     en: {
-      notice: "Every line is an AI draft that has not yet been checked by a reviewer who reads Greek.",
+      notice: "Every line is AI-assisted and has not yet been checked by a reviewer who reads Greek.",
       sub: "Translated from the SBL Greek New Testament. Tap a verse to see why it reads as it does. Small letters mark footnotes, listed below the passage.",
       notes: "Notes", fn_or: "Or: ", fn_other: "Other manuscripts: ",
       language: "Language", level: "Level", gender: "Gender", title: "Title", pronouns: "Pronouns for God",
@@ -32,7 +32,7 @@
       settings: "Reading settings", close: "Close",
       empty_title: "The reasoning behind each verse",
       empty_text: "Tap or click any verse to see the Greek, a word-for-word gloss, and every translation decision with its reason.",
-      status: "AI draft \u00b7 not yet reviewed",
+      status: "AI-assisted \u00b7 not yet reviewed",
       greek: "Greek (SBLGNT), word by word", gloss: "Word for word", notes_language: "",
       word_hint: "Tap a Greek word for its dictionary form and grammar.",
       lemma: "Dictionary form", strong: "Strong\u2019s",
@@ -48,7 +48,7 @@
       }
     },
     es: {
-      notice: "Cada l\u00ednea es un borrador hecho con IA que a\u00fan no ha revisado nadie que lea griego.",
+      notice: "Cada l\u00ednea se tradujo con ayuda de IA y a\u00fan no la ha revisado nadie que lea griego.",
       sub: "Traducido del Nuevo Testamento griego de la SBL. Toca un vers\u00edculo para ver por qu\u00e9 dice lo que dice. Las letras peque\u00f1as marcan notas al pie, que aparecen debajo del pasaje.",
       notes: "Notas", fn_or: "O bien: ", fn_other: "Otros manuscritos: ",
       language: "Idioma", level: "Nivel", gender: "G\u00e9nero", title: "T\u00edtulo", pronouns: "Pronombres para Dios",
@@ -72,7 +72,7 @@
       settings: "Ajustes de lectura", close: "Cerrar",
       empty_title: "El razonamiento detr\u00e1s de cada vers\u00edculo",
       empty_text: "Toca cualquier vers\u00edculo para ver el griego, una glosa palabra por palabra y cada decisi\u00f3n de traducci\u00f3n con su raz\u00f3n.",
-      status: "Borrador de IA \u00b7 a\u00fan sin revisar",
+      status: "Asistido por IA \u00b7 a\u00fan sin revisar",
       greek: "Griego (SBLGNT), palabra por palabra", gloss: "Palabra por palabra (en ingl\u00e9s)",
       word_hint: "Toca una palabra griega para ver su forma de diccionario y su gram\u00e1tica. Las glosas est\u00e1n en ingl\u00e9s.",
       lemma: "Forma de diccionario", strong: "Strong",
