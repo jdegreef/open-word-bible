@@ -1,3 +1,4 @@
+import hashlib
 import json
 import re
 import subprocess
@@ -122,3 +123,40 @@ class ExtractTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+    def test_assets_are_versioned_by_content(self):
+        # A deploy must never pair new pages with a stylesheet the browser
+        # kept from the last one: each asset URL carries its content hash.
+        home = (self.out / "index.html").read_text(encoding="utf-8")
+        chapter = (self.out / "jhn" / "1" / "index.html").read_text(encoding="utf-8")
+        for name, page in (("style.css", home), ("site.js", home), ("reader.js", chapter)):
+            m = re.search(r'"/%s\?v=([0-9a-f]{10})"' % re.escape(name), page)
+            self.assertTrue(m, name)
+            digest = hashlib.sha256((self.out / name).read_bytes()).hexdigest()[:10]
+            self.assertEqual(m[1], digest, name)
+
+    def test_header_dropdowns_list_passages_and_articles(self):
+        home = (self.out / "index.html").read_text(encoding="utf-8")
+        header = re.search(r'<header class="site">(.*?)</header>', home, re.S)[1]
+        for key in ("read", "articles", "about"):
+            self.assertIn(f'aria-controls="dd-{key}"', header)
+            self.assertIn(f'<div class="dropdown', header)
+        self.assertIn('href="/jhn/1/"', header)
+        self.assertIn('href="/php/4/"', header)
+        for a in build_site.load_articles():
+            self.assertIn(f'href="{build_site.article_url(a)}"', header)
+        # The current section's trigger is marked on its pages.
+        articles = (self.out / "articles" / "index.html").read_text(encoding="utf-8")
+        self.assertRegex(articles, r'class="nav-link nav-trigger active"[^>]*aria-controls="dd-articles"')
+
+    def test_interface_fonts_are_self_hosted_with_their_licences(self):
+        css = (self.out / "style.css").read_text(encoding="utf-8")
+        files = re.findall(r"url\(/fonts/([^)]+)\)", css)
+        self.assertTrue(files)
+        for name in files:
+            self.assertTrue((self.out / "fonts" / name).is_file(), name)
+        for licence in ("OFL-Fraunces.txt", "OFL-HankenGrotesk.txt"):
+            self.assertIn("SIL Open Font License", (ROOT / "web" / "fonts" / licence).read_text(encoding="utf-8"))
+        home = (self.out / "index.html").read_text(encoding="utf-8")
+        preload = re.search(r'<link rel="preload" href="/fonts/([^"]+)"', home)[1]
+        self.assertIn(preload, files)
