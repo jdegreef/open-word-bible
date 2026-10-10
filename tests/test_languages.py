@@ -96,7 +96,7 @@ class LanguagesTest(unittest.TestCase):
 
     def test_spanish_pages_have_spanish_interface_text(self):
         en, es = build_site.catalog("en"), build_site.catalog("es")
-        keys = ("skip", "nav.home", "nav.all_passages", "nav.all_articles", "footer.tagline",
+        keys = ("skip", "nav.home", "nav.all_books", "nav.all_articles", "footer.tagline",
                 "footer.review", "footer.report", "tools.theme", "theme.night")
         for rel in self.english_pages():
             page = self.read(Path("es") / rel)
@@ -145,6 +145,26 @@ class LanguagesTest(unittest.TestCase):
             for href in re.findall(r'href="(/[^"#?]*)', path.read_text(encoding="utf-8")):
                 target = self.out / href.lstrip("/")
                 self.assertTrue(target.is_file() or (target / "index.html").is_file(), (path, href))
+
+    def test_account_page_speaks_the_page_language(self):
+        page = self.read("es/account/index.html")
+        m = re.search(r'id="account-text">(.*?)</script>', page, re.S)
+        self.assertEqual(json.loads(m[1]), build_site.catalog("es")["account.ui"])
+        self.assertIn('<meta name="robots" content="noindex">', page)
+        self.assertNotIn('rel="canonical"', page)
+        # Unlisted, but the switch and the remembered choice still lead to it.
+        self.assertIn('<a href="/account/" lang="en"', page)
+        self.assertIn(build_site.LANG_SCRIPT, page)
+        self.assertNotIn("/account/", self.read("sitemap.xml"))
+
+    def test_chapter_strip_and_turns_stay_in_the_language(self):
+        page = self.read("es/php/2/index.html")
+        strip = re.search(r'<nav class="chapstrip"(.*?)</nav>', page, re.S)[1]
+        self.assertIn('href="/es/php/2/" aria-current=page', strip)
+        self.assertIn("Filipenses", strip)
+        turns = re.search(r'<nav class="turns"(.*?)</nav>', page, re.S)[1]
+        self.assertIn('href="/es/php/1/" rel="prev"', turns)
+        self.assertIn("Anterior", turns)
 
     def test_dates_are_written_in_each_language(self):
         self.assertEqual(build_site._date("2026-10-10", "en"), "10 October 2026")

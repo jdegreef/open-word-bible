@@ -43,7 +43,9 @@ services:
     # Migrate, then reload content/ so the API matches main. The import skips
     # itself until import_texts has been run once (see below).
     preDeployCommand: python backend/manage.py migrate --noinput && python backend/manage.py import_content --if-texts-loaded
-    startCommand: gunicorn --chdir backend config.wsgi --workers 2 --timeout 60
+    # Threads, so a slow request (such as sending a sign-in email) does not
+    # hold up reading.
+    startCommand: gunicorn --chdir backend config.wsgi --workers 2 --threads 4 --worker-class gthread --timeout 60
     healthCheckPath: /healthz
     domains:
       - api.openwordbible.org
@@ -61,3 +63,23 @@ services:
         value: api.openwordbible.org
       - key: CSRF_TRUSTED_ORIGINS
         value: https://api.openwordbible.org
+      # Accounts (backend/accounts/). The reader site calls the API from
+      # these origins, and sign-in links point at OWB_SITE_URL.
+      - key: OWB_SITE_URL
+        value: https://openwordbible.org
+      - key: CORS_ALLOWED_ORIGINS
+        value: https://openwordbible.org,https://www.openwordbible.org
+      # Set these in the dashboard; they are not published here.
+      # OWB_SUPER_ADMIN_EMAILS: comma-separated super admin emails.
+      # EMAIL_*: SMTP for sign-in emails (e.g. Resend: smtp.resend.com, 587,
+      # user "resend", password = API key). Without EMAIL_HOST no email is sent.
+      - key: OWB_SUPER_ADMIN_EMAILS
+        sync: false
+      - key: EMAIL_HOST
+        sync: false
+      - key: EMAIL_HOST_USER
+        sync: false
+      - key: EMAIL_HOST_PASSWORD
+        sync: false
+      - key: DEFAULT_FROM_EMAIL
+        sync: false

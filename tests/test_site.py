@@ -35,6 +35,20 @@ class SiteTest(unittest.TestCase):
                     "sitemap.xml", "robots.txt", "favicon.svg"):
             self.assertTrue((self.out / rel).is_file(), rel)
 
+    def test_account_page_is_built_but_not_indexed(self):
+        page = (self.out / "account" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('<meta name="robots" content="noindex">', page)
+        self.assertIn('id="link-form"', page)
+        self.assertTrue((self.out / "account.js").is_file())
+        self.assertNotIn("/account/", (self.out / "sitemap.xml").read_text(encoding="utf-8"))
+        # Every page knows the API and has the account button.
+        for path in self.out.rglob("index.html"):
+            text = path.read_text(encoding="utf-8")
+            self.assertIn(f'<meta name="owb-api" content="{build_site.API_URL}">', text, path)
+            lang = re.search(r'<html lang="([a-z]+)">', text)[1]
+            account = build_site.url(lang, "/account/")
+            self.assertIn(f'class="tool-btn account-btn" href="{account}"', text, path)
+
     def test_chapter_has_every_verse_in_order(self):
         data = self.chapter_data()
         verses = list(dict.fromkeys(v for r in data["records"] for v in r["refs"]))
@@ -149,17 +163,6 @@ class SiteTest(unittest.TestCase):
         self.assertIn('aria-controls="settings"', page)
         self.assertIn('<div class="settings" id="settings">', page)
 
-
-class ExtractTest(unittest.TestCase):
-    def test_extracts_are_up_to_date(self):
-        result = subprocess.run([sys.executable, str(ROOT / "scripts" / "extract_tokens.py"), "--check"],
-                                capture_output=True, text=True)
-        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
-
-
-if __name__ == "__main__":
-    unittest.main()
-
     def test_assets_are_versioned_by_content(self):
         # A deploy must never pair new pages with a stylesheet the browser
         # kept from the last one: each asset URL carries its content hash.
@@ -186,7 +189,7 @@ if __name__ == "__main__":
         self.assertRegex(articles, r'class="nav-link nav-trigger active"[^>]*aria-controls="dd-articles"')
         # ...and the dropdown link to the page itself tells a screen reader.
         chapter = (self.out / "jhn" / "1" / "index.html").read_text(encoding="utf-8")
-        self.assertIn('class="dd-item" href="/jhn/1/" aria-current="page"', chapter)
+        self.assertRegex(chapter, r'class="chap(?: part)?" href="/jhn/1/" aria-current="page"')
         self.assertNotIn('href="/php/4/" aria-current', chapter)
 
     def test_interface_fonts_are_self_hosted_with_their_licences(self):
@@ -200,3 +203,44 @@ if __name__ == "__main__":
         home = (self.out / "index.html").read_text(encoding="utf-8")
         preload = re.search(r'<link rel="preload" href="/fonts/([^"]+)"', home)[1]
         self.assertIn(preload, files)
+
+    def test_whole_chapters_are_named_without_a_verse_range(self):
+        names = {(p.book, p.chapter): (p.name, p.complete) for p in build_site.passages()}
+        self.assertEqual(names[("PHP", 2)], ("Philippians 2", True))
+        page = (self.out / "php" / "2" / "index.html").read_text(encoding="utf-8")
+        self.assertIn("<title>Philippians 2 · Open Word Bible</title>", page)
+        self.assertNotIn("Sample passage", page)
+
+    def test_reader_links_every_chapter_and_its_neighbours(self):
+        ps = build_site.passages()
+        for i, p in enumerate(ps):
+            page = (self.out / p.url.strip("/") / "index.html").read_text(encoding="utf-8")
+            strip = re.search(r'<nav class="chapstrip"(.*?)</nav>', page, re.S)[1]
+            for q in ps:
+                if q.book == p.book:
+                    self.assertIn(f'href="{q.url}"', strip)
+            self.assertIn(f'href="{p.url}" aria-current=page', strip)
+            turns = re.search(r'<nav class="turns"(.*?)</nav>', page, re.S)[1]
+            if i > 0:
+                self.assertIn(f'href="{ps[i - 1].url}" rel="prev"', turns)
+            if i + 1 < len(ps):
+                self.assertIn(f'href="{ps[i + 1].url}" rel="next"', turns)
+
+    def test_read_page_groups_chapters_by_book(self):
+        read = (self.out / "read" / "index.html").read_text(encoding="utf-8")
+        for book, chaps in build_site.books():
+            section = re.search(rf'<section class="book-group" id="{book.lower()}"(.*?)</section>', read, re.S)[1]
+            for p in chaps:
+                self.assertIn(f'href="{p.url}"', section)
+        self.assertIn("4 of 4 chapters, complete", read)
+
+
+class ExtractTest(unittest.TestCase):
+    def test_extracts_are_up_to_date(self):
+        result = subprocess.run([sys.executable, str(ROOT / "scripts" / "extract_tokens.py"), "--check"],
+                                capture_output=True, text=True)
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+
+
+if __name__ == "__main__":
+    unittest.main()

@@ -153,6 +153,26 @@
   });
 })();
 
+// The header's account button: once signed in (web/account.js keeps a copy
+// of the account in localStorage), it shows the reader's initial.
+(function () {
+  "use strict";
+  var link = document.querySelector(".account-btn");
+  if (!link) return;
+  var account = null;
+  try { account = JSON.parse(localStorage.getItem("owb.account") || "null"); } catch (e) { /* none */ }
+  if (!account || !account.user) return;
+  var name = account.user.display_name || account.user.email;
+  var initial = link.querySelector(".account-initial");
+  initial.textContent = name.charAt(0).toUpperCase();
+  initial.hidden = false;
+  link.classList.add("signed-in");
+  // The label is in the page's language (data-signed-in, from i18n/).
+  var label = link.getAttribute("data-signed-in");
+  link.setAttribute("aria-label", label + " (" + name + ")");
+  link.title = label;
+})();
+
 // The footer's language links (language_links in scripts/build_site.py):
 // the choice is kept as owb-lang, so the boot script in each page opens
 // later pages in that language too, and the verse open in the reader

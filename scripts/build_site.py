@@ -12,6 +12,7 @@ import functools
 import hashlib
 import html
 import json
+import os
 import re
 import shutil
 import sys
@@ -20,10 +21,14 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
+from typing import NamedTuple  # noqa: E402
+
 from owb import markup, morph, refs  # noqa: E402
 
 BOOK_NAMES = {"JHN": {"en": "John", "es": "Juan"},
               "PHP": {"en": "Philippians", "es": "Filipenses"}}
+# Chapters in each book, for "2 of 21 chapters" and a book's completeness.
+BOOK_CHAPTERS = {"JHN": 21, "PHP": 4}
 # The interface languages, English first (see catalog below).
 LANGUAGES = ("en", "es")
 SITE_NAME = "Open Word Bible"
@@ -31,6 +36,9 @@ SITE_NAME = "Open Word Bible"
 # Canonical links, the sitemap and link previews use it.
 SITE_URL = "https://openwordbible.org"
 GITHUB_URL = "https://github.com/jdegreef/open-word-bible"
+# The Django API (backend/), for accounts. OWB_API_URL points a local build
+# at a local API.
+API_URL = os.environ.get("OWB_API_URL", "https://api.openwordbible.org").rstrip("/")
 
 # The open-book mark: the favicon, and the logo in the header and footer
 # (where style.css colours it from the current colour mode).
@@ -65,6 +73,7 @@ ICONS = {
     "code": '<path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/>',
     "users": '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6 6 0 0 1 3.5 6"/>',
     "check": '<path d="M20 6 9 17l-5-5"/>',
+    "user": '<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>',
     "github": '<path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/>',
 }
 
@@ -167,14 +176,16 @@ def og_card_article(article):
 
 
 def page(lang, title, body, path=None, current="", description="", card="site", card_alt=None,
-         translated=LANGUAGES):
+         translated=LANGUAGES, unlisted=None):
     """A full HTML page in lang. path is the page's URL path without the
     language ("/read/"); pages with one get a canonical link, hreflang links
     to the page in each language in translated, and link-preview tags, and
     go in the sitemap. A page whose content is not yet in lang (an article
     shown in English) names the English page as canonical. card names the
     page's preview image in web/og/; a card not drawn yet falls back to the
-    site's. card_alt says what the card shows."""
+    site's. card_alt says what the card shows. An unlisted page (the account
+    page) has no path: it is not indexed and has no preview, but unlisted
+    names its path, so the language switch still leads to it."""
     full_title = f"{title} · {SITE_NAME}" if title != SITE_NAME else SITE_NAME
     description = description or t(lang, "meta.description")
     meta = ""
@@ -202,7 +213,10 @@ def page(lang, title, body, path=None, current="", description="", card="site", 
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="{html.escape(card_alt)}">
 <meta name="twitter:card" content="summary_large_image">"""
-    boot = BOOT_SCRIPT + (LANG_SCRIPT if path is not None else "")
+    here = path if path is not None else unlisted
+    if unlisted is not None:
+        meta += '\n<meta name="robots" content="noindex">'
+    boot = BOOT_SCRIPT + (LANG_SCRIPT if here is not None else "")
     return f"""<!doctype html>
 <html lang="{lang}">
 <head>
@@ -210,6 +224,7 @@ def page(lang, title, body, path=None, current="", description="", card="site", 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{html.escape(full_title)}</title>
 <meta name="description" content="{html.escape(description)}">{meta}
+<meta name="owb-api" content="{API_URL}">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <script>{boot}</script>
 <link rel="preload" href="/fonts/hanken-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -223,7 +238,7 @@ def page(lang, title, body, path=None, current="", description="", card="site", 
 <main class="wrap" id="main" tabindex="-1">
 {body}
 </main>
-{site_footer(lang, path)}
+{site_footer(lang, here)}
 </body>
 </html>
 """
@@ -253,12 +268,14 @@ def nav_menus(lang):
         return f'<a class="dd-all" href="{href}">{label} {icon(ICONS["arrow"], 16)}</a>'
 
     rows = []
-    for book, chapter, records in passages():
-        verses = len({v for r in records for v in r["refs"]})
-        note = f"{t(lang, 'nav.verses', n=verses)} &middot; {languages_label(records)}"
-        rows.append(row(url(lang, chapter_url(book, chapter)), display(chapter_title(records, book, chapter, lang)), note, "book"))
-    read = (f'<p class="dd-head">{t(lang, "nav.passages_so_far")}</p>{"".join(rows)}'
-            f'{all_link(url(lang, "/read/"), t(lang, "nav.all_passages"))}')
+    for book, chaps in books():
+        name = BOOK_NAMES[book][lang]
+        progress = book_progress(book, chaps, lang)[2]
+        rows.append(f'<div class="dd-book">{row(url(lang, f"/read/#{book.lower()}"), name, progress, "book")}'
+                    f'<div class="dd-chaps" aria-label="{t(lang, "nav.book_chapters", book=name)}">'
+                    f'{chapter_pills(chaps, lang)}</div></div>')
+    read = (f'<p class="dd-head">{t(lang, "nav.books_so_far")}</p>{"".join(rows)}'
+            f'{all_link(url(lang, "/read/"), t(lang, "nav.all_books"))}')
 
     articles = sorted(load_articles(lang), key=lambda a: a["order"])
     groups = "".join(
@@ -296,6 +313,7 @@ def site_header(lang, current, path=None):
             here = url(lang, path)
             panel = panel.replace(f'class="dd-item" href="{here}"', f'class="dd-item" href="{here}" aria-current="page"')
             panel = panel.replace(f'class="dd-all" href="{here}"', f'class="dd-all" href="{here}" aria-current="page"')
+            panel = re.sub(rf'(class="chap(?: part)?" href="{re.escape(here)}")', r'\1 aria-current="page"', panel)
         items.append(
             f'<li class="nav-item">'
             f'<button type="button" class="nav-link nav-trigger{" active" if on else ""}" '
@@ -306,6 +324,7 @@ def site_header(lang, current, path=None):
 <a class="brand" href="{home}"{" aria-current=page" if home_on else ""}>{MARK}<span class="brand-name">Open Word <em>Bible</em></span></a>
 <nav class="primary" id="site-nav" aria-label="{t(lang, "nav.main")}"><ul class="nav-list">{"".join(items)}</ul></nav>
 <div class="tools">
+<a class="tool-btn account-btn" href="{url(lang, "/account/")}" aria-label="{t(lang, "tools.sign_in")}" title="{t(lang, "tools.sign_in")}" data-signed-in="{t(lang, "tools.your_account")}">{icon(ICONS["user"])}<span class="account-initial" hidden></span></a>
 <a class="tool-btn" href="{GITHUB_URL}" aria-label="{t(lang, "tools.github")}" title="GitHub">{icon(ICONS["github"])}</a>
 {colour_menu(lang)}
 <button type="button" class="tool-btn menu-btn" aria-expanded="false" aria-controls="site-nav" aria-label="{t(lang, "nav.menu")}">{icon(ICONS["menu"], 22)}{icon(ICONS["close"], 22)}</button>
@@ -320,9 +339,8 @@ def footer_links(lang):
         return "".join(f'<li><a href="{href}"{f" lang={tl}" if tl and tl != lang else ""}>{label}</a></li>'
                        for href, label, tl in pairs)
 
-    read = [(url(lang, chapter_url(b, c)), display(chapter_title(records, b, c, lang)), None)
-            for b, c, records in passages()]
-    read.append((url(lang, "/read/"), t(lang, "nav.all_passages"), None))
+    read = [(url(lang, f"/read/#{book.lower()}"), BOOK_NAMES[book][lang], None) for book, _ in books()]
+    read.append((url(lang, "/read/"), t(lang, "nav.all_books"), None))
     start = sorted((a for a in load_articles(lang) if a["section"] == "method"), key=lambda a: a["order"])[:3]
     learn = [(url(lang, article_url(a)), display(a["title"]), a["lang"]) for a in start]
     learn.append((url(lang, "/articles/"), t(lang, "nav.all_articles"), None))
@@ -439,11 +457,61 @@ def chapters():
     return sorted(found, key=lambda bc: refs.Ref(bc[0], bc[1], 1).sort_key())
 
 
+class Passage(NamedTuple):
+    """One chapter with content: its records, and whether every verse of the
+    chapter in the Greek extract is translated. name is the English one;
+    chapter_name gives it in another language."""
+    book: str
+    chapter: int
+    url: str
+    name: str
+    records: list
+    verses: int
+    complete: bool
+
+
 @functools.lru_cache(maxsize=None)
 def passages():
-    """Every passage with content as (book, chapter, records), in canonical
-    order. Built once per build; the header, home page and footer list it."""
-    return tuple((b, c, load_chapter(b, c)[0]) for b, c in chapters())
+    """Every chapter with content, in canonical order. Built once per build;
+    the header, Read page, home page, footer and reader all list it."""
+    out = []
+    for b, c in chapters():
+        records, words = load_chapter(b, c)
+        verses = len({v for r in records for v in r["refs"]})
+        out.append(Passage(b, c, chapter_url(b, c), chapter_name(records, b, c), records,
+                           verses, verses == len(words)))
+    return tuple(out)
+
+
+def books():
+    """The books with content, in canonical order, as (book, [Passage])."""
+    grouped = {}
+    for p in passages():
+        grouped.setdefault(p.book, []).append(p)
+    return list(grouped.items())
+
+
+def book_progress(book, chapters_, lang="en"):
+    """"4 of 4 chapters, complete" / "2 of 21 chapters": a book's progress."""
+    done = sum(p.complete for p in chapters_)
+    total = BOOK_CHAPTERS[book]
+    return done, total, t(lang, "progress.complete" if done == total else "progress.chapters",
+                          done=done, total=total)
+
+
+def chapter_pills(chaps, lang="en", current=None):
+    """A pill per chapter, linked; a dashed one for a chapter only partly
+    translated, and the current chapter marked."""
+    return "".join(
+        f'<a class="chap{"" if p.complete else " part"}" href="{url(lang, p.url)}"'
+        f'{" aria-current=page" if p.chapter == current else ""} '
+        f'title="{html.escape(chapter_name(p.records, p.book, p.chapter, lang))}">{p.chapter}</a>'
+        for p in chaps)
+
+
+def meter(done, total):
+    """A progress meter, done of total (decorative: the text says it too)."""
+    return f'<span class="meter" aria-hidden="true"><span style="width:{100 * done / total:.0f}%"></span></span>'
 
 
 def chapter_url(book, chapter):
@@ -453,6 +521,15 @@ def chapter_url(book, chapter):
 def chapter_title(records, book, chapter, lang="en"):
     verses = [refs.parse(v).verse for r in records for v in r["refs"]]
     return f"{BOOK_NAMES[book][lang]} {chapter}:{min(verses)}–{max(verses)}"
+
+
+def chapter_name(records, book, chapter, lang="en"):
+    """What the site calls a passage: "Philippians 2" for a whole chapter,
+    "John 1:1–18" for part of one. (Share cards keep chapter_title.)"""
+    total = len(json.loads((ROOT / "data" / "grc" / f"{book}.{chapter}.json")
+                           .read_text(encoding="utf-8"))["verses"])
+    verses = {v for r in records for v in r["refs"]}
+    return f"{BOOK_NAMES[book][lang]} {chapter}" if len(verses) == total else chapter_title(records, book, chapter, lang)
 
 
 def text_lang(record, lang):
@@ -472,7 +549,7 @@ PLURAL_YOU = {"es"}
 
 def chapter_page(book, chapter, lang="en"):
     records, words = load_chapter(book, chapter)
-    title = chapter_title(records, book, chapter, lang)
+    title = chapter_name(records, book, chapter, lang)
     # Every language any sentence has: English may run ahead of the others,
     # and the reader shows a sentence not yet translated in English.
     languages = [code for code in LANGUAGES
@@ -512,11 +589,13 @@ def chapter_page(book, chapter, lang="en"):
 </div>
 <div class="reader">
   <article class="passage">
+    {chapter_strip(book, chapter, lang)}
     <h1 id="title">{html.escape(title)}</h1>
     <p class="sub">{t(lang, "reader.sub")}</p>
     <p class="notice" id="partial" hidden></p>
     <div class="text" id="text"></div>
     <section class="notes" id="notes" aria-label="{t(lang, "reader.notes")}" hidden></section>
+    {chapter_turns(book, chapter, lang)}
   </article>
   <aside class="panel" id="panel" aria-live="polite" tabindex="-1"></aside>
 </div>
@@ -527,6 +606,36 @@ def chapter_page(book, chapter, lang="en"):
                 card=og_card_chapter(book, chapter),
                 card_alt=t(lang, "meta.chapter_card_alt", title=title, verse=opening_verse(records, lang)),
                 description=t(lang, "meta.chapter_description", title=title))
+
+
+def chapter_strip(book, chapter, lang="en"):
+    """Above a passage: its book, how far the book has got, and a pill for
+    each chapter translated so far, this one marked."""
+    chaps = dict(books())[book]
+    name = BOOK_NAMES[book][lang]
+    progress = book_progress(book, chaps, lang)[2]
+    return (f'<nav class="chapstrip" aria-label="{t(lang, "reader.strip", book=name)}">'
+            f'<a class="chap-book" href="{url(lang, f"/read/#{book.lower()}")}">{icon(ICONS["book"], 16)}{name}</a>'
+            f'<span class="chap-pills">{chapter_pills(chaps, lang, chapter)}</span>'
+            f'<span class="chap-progress">{progress}</span></nav>')
+
+
+def chapter_turns(book, chapter, lang="en"):
+    """Below a passage: the previous and next passages, across books."""
+    ps = passages()
+    i = next(n for n, p in enumerate(ps) if (p.book, p.chapter) == (book, chapter))
+
+    def turn(p, rel, label):
+        if p is None:
+            return '<span class="turn-gap"></span>'
+        return (f'<a class="turn {rel}" href="{url(lang, p.url)}" rel="{rel}">'
+                f'<span class="turn-label">{label}</span>'
+                f'<span class="turn-name">{display(chapter_name(p.records, p.book, p.chapter, lang))}</span></a>')
+
+    prev = ps[i - 1] if i > 0 else None
+    nxt = ps[i + 1] if i + 1 < len(ps) else None
+    return (f'<nav class="turns" aria-label="{t(lang, "reader.turns")}">'
+            f'{turn(prev, "prev", t(lang, "reader.prev"))}{turn(nxt, "next", t(lang, "reader.next"))}</nav>')
 
 
 def opening_verse(records, lang="en"):
@@ -563,21 +672,30 @@ def passage_card(book, chapter, lang="en"):
     q = "&laquo;{}&raquo;" if lang == "es" else "&ldquo;{}&rdquo;"
     return (f'<li><a class="a-card p-card" href="{url(lang, chapter_url(book, chapter))}">'
             f'<span class="a-section">{BOOK_NAMES[book][lang]} &middot; {languages_label(records)}</span>'
-            f'<span class="a-title">{display(chapter_title(records, book, chapter, lang))}</span>'
+            f'<span class="a-title">{display(chapter_name(records, book, chapter, lang))}</span>'
             f'<span class="p-opening"{lang_attr(text_lang(records[0], lang), lang)}>{q.format(display(opening))}</span>'
             f'<span class="a-meta">{meta}</span>'
             f'<span class="p-status"><span class="status">{review_label(records, lang)}</span></span></a></li>')
 
 
 def read_page(lang="en"):
-    cards = "".join(passage_card(b, c, lang) for b, c in chapters())
+    groups = []
+    for book, chaps in books():
+        done, total, progress = book_progress(book, chaps, lang)
+        groups.append(
+            f'<section class="book-group" id="{book.lower()}" aria-labelledby="book-{book.lower()}">'
+            f'<div class="book-head"><h2 id="book-{book.lower()}">{BOOK_NAMES[book][lang]}</h2>'
+            f'<span class="book-progress{" done" if done == total else ""}">{progress}</span>'
+            f'{meter(done, total)}</div>'
+            f'<ul class="a-grid">{"".join(passage_card(p.book, p.chapter, lang) for p in chaps)}</ul></section>')
+    cards = "".join(groups)
     body = f"""
 <header class="page-head">
 <p class="eyebrow">{t(lang, "read.title")}</p>
 <h1>{t(lang, "read.heading")}</h1>
 <p class="dek">{t(lang, "read.dek")}</p>
 </header>
-<ul class="a-grid">{cards}</ul>
+{cards}
 <section class="how" aria-labelledby="how-h">
 <h2 id="how-h">{t(lang, "read.how")}</h2>
 <ol class="steps">
@@ -666,19 +784,24 @@ def progress_html(lang="en"):
     records = all_records()
     decisions = sum(len(r["decisions"]) for r in records)
     reviewed = sum(r["status"] != "ai_draft" for r in records)
-    items = "".join(f'<li><a href="{url(lang, chapter_url(b, c))}">{display(chapter_title(rs, b, c, lang))}</a></li>'
-                    for b, c, rs in passages())
+    rows = []
+    for book, chaps in books():
+        done, total, progress = book_progress(book, chaps, lang)
+        rows.append(f'<li class="book-row"><a class="book-name" href="{url(lang, f"/read/#{book.lower()}")}">'
+                    f'{BOOK_NAMES[book][lang]}</a>{meter(done, total)}'
+                    f'<span class="book-progress{" done" if done == total else ""}">{progress}</span>'
+                    f'<span class="chap-pills">{chapter_pills(chaps, lang)}</span></li>')
     return f"""
 <section class="progress" aria-labelledby="progress-h">
-{sec_head("progress-h", "check", t(lang, "home.progress"), url(lang, "/read/"), t(lang, "nav.all_passages"))}
+{sec_head("progress-h", "check", t(lang, "home.progress"), url(lang, "/read/"), t(lang, "home.all_books"))}
 <div class="stats">
 <div><b>{len(records)}</b><span>{t(lang, "home.stat_sentences")}</span></div>
 <div><b>{decisions}</b><span>{t(lang, "home.stat_decisions")}</span></div>
 <div><b>{reviewed}</b><span>{t(lang, "home.stat_reviewed")}</span></div>
 </div>
 <p>{t(lang, "home.progress_text")}</p>
-<p class="label">{t(lang, "nav.passages_so_far")}</p>
-<ul class="passages">{items}</ul>
+<p class="label">{t(lang, "nav.books_so_far")}</p>
+<ul class="book-rows">{"".join(rows)}</ul>
 </section>
 """
 
@@ -1107,6 +1230,70 @@ def article_page(article, articles, lang="en"):
                 translated=LANGUAGES if al == lang else ("en",))
 
 
+def account_page(lang="en"):
+    """Sign in by email link, and the signed-in account (web/account.js).
+    Not in the sitemap, and not indexed."""
+    def a(key):
+        return t(lang, "account." + key)
+
+    messages = json.dumps(catalog(lang)["account.ui"], ensure_ascii=False).replace("</", "<\\/")
+    body = f"""
+<section class="account" id="account" aria-live="polite">
+<header class="page-head">
+<p class="eyebrow">{a("title")}</p>
+<h1 id="account-title">{t(lang, "tools.sign_in")}</h1>
+</header>
+
+<div data-state="signed-out" hidden>
+<p class="dek">{a("signed_out_dek")}</p>
+<form class="account-form" id="link-form" novalidate>
+<label for="email">{a("email")}</label>
+<div class="field-row">
+<input id="email" name="email" type="email" autocomplete="email" inputmode="email" required>
+<button class="button" type="submit">{a("send")}</button>
+</div>
+<p class="form-error" id="link-error" role="alert" hidden></p>
+</form>
+<p class="fine">{a("privacy")}</p>
+</div>
+
+<div data-state="sent" hidden>
+<p class="dek">{a("sent_dek")}</p>
+<p><button class="button ghost" type="button" id="different-email">{a("different")}</button></p>
+</div>
+
+<div data-state="confirm" hidden>
+<p class="dek">{a("confirm_dek")}</p>
+<p><button class="button" type="button" id="finish">{a("finish")}</button></p>
+</div>
+
+<div data-state="signed-in" hidden>
+<dl class="account-facts">
+<div><dt>{a("fact_email")}</dt><dd id="me-email"></dd></div>
+<div><dt>{a("fact_roles")}</dt><dd id="me-roles"></dd></div>
+<div><dt>{a("fact_joined")}</dt><dd id="me-joined"></dd></div>
+</dl>
+<form class="account-form" id="name-form">
+<label for="display-name">{a("display_name")} <span class="fine">{a("display_name_note")}</span></label>
+<div class="field-row">
+<input id="display-name" name="display_name" maxlength="80" autocomplete="name">
+<button class="button ghost" type="submit">{a("save")}</button>
+</div>
+<p class="form-note" id="name-note" role="status"></p>
+</form>
+<div class="soon">
+<h2>{a("soon")}</h2>
+<p>{a("soon_text")}</p>
+</div>
+<p><button class="button ghost" type="button" id="sign-out">{a("sign_out")}</button></p>
+</div>
+</section>
+<script type="application/json" id="account-text">{messages}</script>
+<script src="{asset("account.js")}" defer></script>
+"""
+    return page(lang, a("title"), body, unlisted="/account/")
+
+
 def not_found_page():
     """One 404 page serves every address, so it speaks each language."""
     lang = "en"
@@ -1162,6 +1349,7 @@ def build(out):
             # An article still in English on another language's pages is
             # left to its English page in search results.
             add(article_url(article), article_page(article, articles, lang), index=article["lang"] == lang)
+        add("/account/", account_page(lang), index=False)
     files = {(p.strip("/") + "/index.html").lstrip("/"): text for p, text in pages.items()}
     files["404.html"] = not_found_page()
     files["sitemap.xml"] = sitemap(indexed)
@@ -1171,7 +1359,7 @@ def build(out):
         path = out / rel
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(text, encoding="utf-8")
-    for name in ("style.css", "reader.js", "site.js"):
+    for name in ("style.css", "reader.js", "site.js", "account.js"):
         shutil.copy(ROOT / "web" / name, out / name)
     shutil.copytree(ROOT / "web" / "fonts", out / "fonts")
     shutil.copytree(OG, out / "og", ignore=shutil.ignore_patterns("manifest.json"))

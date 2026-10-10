@@ -6,6 +6,13 @@ Configuration comes from the environment:
   DJANGO_DEBUG          "1" for local development
   DJANGO_ALLOWED_HOSTS  comma-separated host names
   CSRF_TRUSTED_ORIGINS  comma-separated origins, e.g. https://api.openwordbible.org
+  OWB_SITE_URL          the reader site, for sign-in links (default https://openwordbible.org)
+  CORS_ALLOWED_ORIGINS  sites that may call the API (default: OWB_SITE_URL)
+  OWB_SUPER_ADMIN_EMAILS  comma-separated emails that are super admins (set
+                        in the Render dashboard, so they are not published)
+  EMAIL_HOST, EMAIL_PORT, EMAIL_HOST_USER, EMAIL_HOST_PASSWORD, DEFAULT_FROM_EMAIL
+                        SMTP for sign-in emails; without EMAIL_HOST emails
+                        are printed to the log instead of sent
 """
 import os
 import sys
@@ -47,9 +54,11 @@ INSTALLED_APPS = [
     "texts",
     "translation",
     "api",
+    "accounts",
 ]
 
 MIDDLEWARE = [
+    "accounts.cors.ApiCorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -109,9 +118,28 @@ STORAGES = {
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": ["accounts.auth.TokenAuthentication"],
     "DEFAULT_PERMISSION_CLASSES": ["rest_framework.permissions.AllowAny"],
     "DEFAULT_RENDERER_CLASSES": ["rest_framework.renderers.JSONRenderer"],
 }
+
+# Accounts (backend/accounts/).
+OWB_SITE_URL = os.environ.get("OWB_SITE_URL", "https://openwordbible.org").rstrip("/")
+CORS_ALLOWED_ORIGINS = env_list("CORS_ALLOWED_ORIGINS", OWB_SITE_URL) + (
+    ["http://localhost:8000", "http://127.0.0.1:8000", "http://localhost:8080"] if DEBUG else [])
+OWB_SUPER_ADMIN_EMAILS = [e.lower() for e in env_list("OWB_SUPER_ADMIN_EMAILS")]
+SIGN_IN_LINK_MINUTES = 20
+
+EMAIL_HOST = os.environ.get("EMAIL_HOST", "")
+EMAIL_BACKEND = ("django.core.mail.backends.smtp.EmailBackend" if EMAIL_HOST
+                 else "django.core.mail.backends.console.EmailBackend")
+EMAIL_PORT = int(os.environ.get("EMAIL_PORT", "587"))
+EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER", "")
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD", "")
+EMAIL_USE_SSL = EMAIL_PORT == 465
+EMAIL_USE_TLS = not EMAIL_USE_SSL   # never send the SMTP password in the clear
+EMAIL_TIMEOUT = 10
+DEFAULT_FROM_EMAIL = os.environ.get("DEFAULT_FROM_EMAIL", "Open Word Bible <noreply@openwordbible.org>")
 
 if not DEBUG:
     SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")

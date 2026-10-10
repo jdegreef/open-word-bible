@@ -464,12 +464,61 @@ footer.site .foot-langs ul { display: flex; flex-wrap: wrap; gap: 6px 18px; }
 .stats b { display: block; font-family: var(--display); font-size: 44px; font-weight: 600; line-height: 1; color: var(--accent); margin-bottom: 6px; }
 .stats span { color: var(--muted); font-size: 14.5px; }
 .progress p { max-width: 72ch; }
-.passages { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 0; }
-.passages a {
-  display: inline-block; border: 1px solid var(--line-strong); background: var(--surface); border-radius: 999px;
-  padding: 5px 16px; text-decoration: none; font-weight: 600; font-size: 15px;
+/* Books and their chapters: a progress bar and a pill per chapter, used
+   by the home page, the Read page, the header's Read menu and the reader. */
+.meter { display: block; height: 6px; border-radius: 999px; background: var(--surface-2); overflow: hidden; box-shadow: inset 0 0 0 1px var(--line); }
+.meter > span { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--accent), var(--gold)); }
+.book-progress { font-size: 14px; color: var(--muted); white-space: nowrap; }
+.book-progress.done { color: var(--gold); font-weight: 700; }
+.chap-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+.chap {
+  display: inline-grid; place-items: center; min-width: 34px; height: 34px; padding: 0 8px; border-radius: 999px;
+  border: 1px solid var(--line-strong); background: var(--surface); color: var(--text);
+  font-size: 14px; font-weight: 600; text-decoration: none; transition: border-color var(--fast) ease, background-color var(--fast) ease;
 }
-.passages a:hover { border-color: var(--accent); background: var(--accent-soft); }
+.chap:hover { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
+.chap.part { border-style: dashed; }
+.chap[aria-current] { background: var(--accent); border-color: var(--accent); color: var(--accent-contrast); }
+.book-rows { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.book-row {
+  display: grid; grid-template-columns: 140px minmax(80px, 1fr) auto; grid-template-areas: "name bar progress" "pills pills pills";
+  align-items: center; gap: 10px 18px; padding: 16px 20px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow-card);
+}
+.book-row .book-name { grid-area: name; font-family: var(--display); font-weight: 600; font-size: 20px; color: var(--text); text-decoration: none; }
+.book-row .book-name:hover { color: var(--accent); }
+.book-row .meter { grid-area: bar; }
+.book-row .book-progress { grid-area: progress; }
+.book-row .chap-pills { grid-area: pills; }
+
+/* Read page: one section per book. */
+.book-group { margin: 0 0 48px; }
+.book-head { display: grid; grid-template-columns: auto auto 1fr; align-items: center; gap: 8px 18px; margin: 0 0 16px; }
+.book-head h2 { font-family: var(--display); font-weight: 600; font-size: 28px; letter-spacing: -.01em; margin: 0; }
+.book-head .meter { max-width: 260px; }
+
+/* Header Read menu: each book, then its chapters as pills. */
+.dd-book + .dd-book { border-top: 1px solid var(--line); margin-top: 4px; padding-top: 4px; }
+.dd-chaps { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 10px 10px 56px; }
+.dd-chaps .chap { min-width: 30px; height: 30px; font-size: 13px; }
+
+/* Reader: the book's chapters above the passage, previous and next below. */
+.chapstrip { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin: 28px 0 0; }
+.chap-book { display: inline-flex; align-items: center; gap: 7px; font-weight: 700; font-size: 14px; letter-spacing: .02em; color: var(--accent); text-decoration: none; }
+.chap-book:hover { text-decoration: underline; }
+.chapstrip .chap { min-width: 30px; height: 30px; font-size: 13px; }
+.chap-progress { font-size: 13px; color: var(--muted); }
+.chapstrip + h1 { margin-top: 14px; }
+.turns { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 40px 0 0; padding-top: 28px; border-top: 1px solid var(--line); }
+.turn {
+  display: grid; gap: 2px; padding: 16px 20px; border: 1px solid var(--line); border-radius: var(--radius);
+  background: var(--surface); box-shadow: var(--shadow-card); text-decoration: none;
+  transition: border-color var(--fast) ease, transform var(--fast) ease;
+}
+.turn:hover { border-color: var(--accent); transform: translateY(-1px); }
+.turn.next { text-align: right; }
+.turn-label { font-size: 12.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+.turn-name { font-family: var(--display); font-weight: 600; font-size: 20px; color: var(--text); }
 
 /* "Help make it": a warm band, like the Ochorus footer invitation. */
 .involve {
@@ -701,12 +750,17 @@ footer.site .foot-langs ul { display: flex; flex-wrap: wrap; gap: 6px 18px; }
   .hero .eyebrow { font-size: 11px; letter-spacing: .1em; }
   .trust { gap: 8px 18px; font-size: 13px; }
   .points, .helpers { grid-template-columns: 1fr; }
+  .book-row { grid-template-columns: 1fr auto; grid-template-areas: "name progress" "bar bar" "pills pills"; padding: 14px 16px; }
+  .book-head { grid-template-columns: 1fr auto; }
+  .book-head .meter { grid-column: 1 / -1; max-width: none; }
+  .turn { padding: 12px 14px; }
+  .turn-name { font-size: 17px; }
   .involve { padding: 28px 22px; }
   .example, .points-wrap, .progress, .latest { margin-top: 56px; }
   .prefs-menu { position: fixed; left: 16px; right: 16px; top: calc(var(--header-h) + 8px); width: auto; }
 }
 @media (max-width: 400px) {
-  header.site .tools > a.tool-btn { display: none; }
+  header.site .tools > a.tool-btn:not(.account-btn) { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   .dropdown, .button, .a-card, .nav-link .caret { animation: none; transition: none; }
@@ -758,3 +812,34 @@ footer.site .foot-langs ul { display: flex; flex-wrap: wrap; gap: 6px 18px; }
 @media (max-width: 860px) and (prefers-reduced-motion: reduce) {
   .panel, .panel.open { transition: none; }
 }
+
+/* The header's account button shows the reader's initial once signed in. */
+.account-btn.signed-in .icon { display: none; }
+.account-initial {
+  display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%;
+  background: var(--accent); color: var(--bg); font-size: 13px; font-weight: 700; line-height: 1;
+}
+.account-initial[hidden] { display: none; }
+
+/* The account page (/account/). */
+.account { max-width: 640px; }
+.account .dek { margin-bottom: 24px; }
+.account-form { display: grid; gap: 8px; margin: 0 0 16px; }
+.account-form label { font-weight: 600; font-size: 15px; }
+.field-row { display: flex; flex-wrap: wrap; gap: 10px; }
+.field-row input {
+  flex: 1 1 260px; min-width: 0; padding: 11px 14px; font: inherit; font-size: 17px; color: var(--text);
+  background: var(--surface); border: 1px solid var(--line-strong, var(--line)); border-radius: 10px;
+}
+.field-row input:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: transparent; }
+.form-error { color: var(--warn); background: var(--warn-bg); border-radius: 8px; padding: 8px 12px; margin: 4px 0 0; font-size: 15px; }
+.form-note { color: var(--muted); font-size: 14px; margin: 0; min-height: 1.4em; }
+.fine { color: var(--muted); font-size: 14px; font-weight: normal; }
+.account-facts { display: grid; gap: 0; margin: 0 0 28px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+.account-facts > div { display: grid; grid-template-columns: 120px 1fr; gap: 12px; padding: 12px 18px; border-top: 1px solid var(--line); }
+.account-facts > div:first-child { border-top: 0; }
+.account-facts dt { color: var(--muted); font-size: 14px; }
+.account-facts dd { margin: 0; overflow-wrap: anywhere; }
+.soon { margin: 28px 0; padding: 18px 20px; border-radius: 12px; background: var(--accent-soft); }
+.soon h2 { font-size: 16px; margin: 0 0 6px; }
+.soon p { margin: 0; color: var(--text); font-size: 15px; }
