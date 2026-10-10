@@ -33,8 +33,27 @@ Decisions come in two layers:
 Each decision names its tokens, category, choice, alternatives and reason,
 and whether it is uncertain or needs a footnote.
 
-Content: `content/JHN/JHN.1.1-18.json`, John 1:1–18 in English and Spanish
-(one record per verse for now).
+Content: `content/JHN/JHN.1.1-18.json` (John 1:1–18) and
+`content/PHP/PHP.4.1-9.json` (Philippians 4:1–9), in English and Spanish.
+
+A record is one sentence of the source, not one verse. It ends where the
+SBLGNT ends a sentence: a full stop, a question mark, or a raised dot (·)
+where the next clause stands on its own. So a verse may hold two records
+(Philippians 4:5) and a record may run across verses (John 1:12–13, marked
+with `\v 13` in the renderings). A record that reads the punctuation
+differently, as John 1:3 does with its last two words, says so in a
+`punctuation` meaning decision. `owb.validate` enforces this, and
+`build_skeleton.py` starts new passages with one record per sentence.
+
+Greek or Hebrew quoted in a gloss, rendering or decision must be copied from
+the source data: the validator rejects any word that is not, code point for
+code point, a form or lemma in MACULA.
+
+The validator also keeps the two layers apart: a meaning decision may not
+use a wording category (`word_choice`, `setting_alternative`, ...), contain a
+reader setting, or name a target language. Every setting span needs a
+default and at least one distinct, non-empty alternative, and a
+`deity_pronoun` alternative only capitalises the default.
 
 ## Reader settings
 
@@ -48,6 +67,12 @@ Settings: `gender`, `christos`, `divine_name`, `units`, `deity_pronoun`,
 
 ## Licences
 
+MACULA's word-sense columns (Louw-Nida `domain` and `ln`; Hebrew SDBH
+`lexdomain`, `coredomain`, `contextualdomain`, `sdbh`) are used with
+permission but not openly licensed. They are never extracted or published;
+`tests/test_licensing.py` checks the extracts and the built site, and the
+backend tests check the word table and API.
+
 - Translation, reasoning records and other data in this repository:
   **CC0 1.0** (`LICENSE`).
 - Code (`owb/`, `scripts/`, `tests/`): **MIT** (`LICENSE-CODE`).
@@ -57,7 +82,9 @@ Settings: `gender`, `christos`, `divine_name`, `units`, `deity_pronoun`,
 
 ## Setup and tests
 
-Python 3, standard library only.
+Python 3, standard library only. GitHub Actions runs the tests, the
+validator, the extract check, the site build and the backend tests on every
+pull request (`.github/workflows/ci.yml`).
 
     python3 scripts/fetch_sources.py          # clone pinned sources into vendor/
     python3 -m unittest discover -s tests -t .

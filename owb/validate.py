@@ -2,8 +2,12 @@
 
 Checks the rules in schema/sentence-record.schema.json that matter most, plus
 what a schema cannot: every token id exists in the MACULA data for the
-record's verses, generated source text matches the data, and every
-{{setting:...}} span names a known setting.
+record's verses, generated source text matches the data, every Greek or
+Hebrew word anywhere else in the record is a form or lemma copied from the
+source data, a Greek record holds one whole source sentence, meaning
+decisions carry no wording for one language (no wording category, setting
+span or target-language name), and every {{setting:...}} span names a known
+setting and is well formed.
 
 Usage: python3 -m owb.validate content/en/JHN/JHN.1.1-2.json [...]
 """
@@ -13,7 +17,7 @@ import sys
 from pathlib import Path
 
 from owb import markup, refs
-from owb.sources import macula_greek
+from owb.sources import macula_greek, macula_hebrew
 
 SCHEMA = json.loads((Path(__file__).resolve().parents[1] / "schema" /
                      "sentence-record.schema.json").read_text(encoding="utf-8"))
@@ -25,8 +29,26 @@ SOURCE_LANGUAGES = _PROPS["source"]["properties"]["language"]["enum"]
 LEVELS = _DEFS["level"]["enum"]
 LAYERS = _DEFS["decision"]["properties"]["layer"]["enum"]
 CATEGORIES = _DEFS["decision"]["properties"]["category"]["enum"]
+MEANING_CATEGORIES = _DEFS["decision"]["then"]["properties"]["category"]["enum"]
 RECORD_ID = re.compile(_PROPS["id"]["pattern"])
 LANGUAGE = re.compile(_DEFS["language"]["pattern"])
+
+# A meaning decision is shared by every language, so it must not name one of
+# the languages the translation is made into (in English or in that language).
+TARGET_LANGUAGE_NAMES = re.compile(
+    r"\b(English|Spanish|espa\u00f1ol|castellano|French|fran\u00e7ais|"
+    r"Portuguese|portugu\u00eas|Swahili|Kiswahili)\b", re.IGNORECASE)
+
+# Runs of Greek or Hebrew letters and their marks. Punctuation (ano teleia,
+# maqaf, sof pasuq, elision marks) ends a word.
+_SCRIPTS = {
+    "Greek": (re.compile("[\u0300-\u036f\u0370-\u0373\u0376-\u037d"
+                         "\u0386\u0388-\u03ff\u1f00-\u1fff]+"),
+              macula_greek.forms),
+    "Hebrew": (re.compile("[\u0591-\u05bd\u05bf\u05c1\u05c2\u05c4\u05c5"
+                          "\u05c7\u05d0-\u05f2\ufb1d-\ufb4f]+"),
+               macula_hebrew.forms),
+}
 
 
 def _fields(obj, schema_obj, where, errors):
@@ -52,6 +74,65 @@ def _check_markup(text, where, errors):
     for span in markup.spans(text):
         if span.setting not in markup.SETTINGS:
             errors.append(f"{where}: unknown setting {span.setting!r}")
+        options = span.options
+        if len(options) < 2 or not all(o.strip() for o in options):
+            errors.append(f"{where}: {span.setting} span needs a default and at least one "
+                          "non-empty alternative")
+        elif len(set(options)) != len(options):
+            errors.append(f"{where}: {span.setting} span repeats an option")
+        elif any(o != o.strip() for o in options):
+            errors.append(f"{where}: {span.setting} span option has spaces at its edge")
+        elif span.setting == "deity_pronoun" and any(
+                o != options[0][:1].upper() + options[0][1:] for o in options[1:]):
+            # The setting only capitalises the pronoun; any other change of
+            # wording would be a decision, not a setting.
+            errors.append(f"{where}: deity_pronoun alternative must be the default "
+                          "capitalised")
+
+
+def _strings(obj, where):
+    """Yield (where, string) for every string inside obj."""
+    if isinstance(obj, str):
+        yield where, obj
+    elif isinstance(obj, dict):
+        for key, value in obj.items():
+            yield from _strings(value, f"{where}.{key}" if where else key)
+    elif isinstance(obj, list):
+        for i, value in enumerate(obj):
+            yield from _strings(value, f"{where}[{i}]")
+
+
+def check_original_language(record, errors):
+    """Every Greek or Hebrew word outside source must be copied from the
+    source data: it must equal, code point for code point, a word form or
+    lemma in MACULA. A word typed by hand usually differs in an accent,
+    breathing or vowel point, or is not a real form at all."""
+    for where, text in _strings({k: v for k, v in record.items() if k != "source"}, ""):
+        for script, (pattern, forms) in _SCRIPTS.items():
+            for word in pattern.findall(text):
+                if word not in forms():
+                    errors.append(f"{where}: {script} {word!r} is not a form or lemma "
+                                  "in the source data; copy it from MACULA")
+
+
+def check_sentence(tokens, decisions, errors):
+    """A Greek record holds one source sentence: it ends where the SBLGNT
+    ends a sentence (full stop, question mark or raised dot) and has no full
+    stop or question mark inside. A meaning decision in the punctuation
+    category exempts the record, since it reads the text's punctuation
+    differently (as John 1:3 does with the last two words)."""
+    if any(isinstance(d, dict) and d.get("layer") == "meaning"
+           and d.get("category") == "punctuation" for d in decisions):
+        return
+    ends = macula_greek.FULL_STOPS + macula_greek.RAISED_DOT
+    if not any(c in tokens[-1].after for c in ends):
+        errors.append(f"source.tokens: the record ends mid-sentence at {tokens[-1].id}; "
+                      "extend it to the end of the sentence, or add a punctuation "
+                      "meaning decision")
+    for tok in tokens[:-1]:
+        if any(c in tok.after for c in macula_greek.FULL_STOPS):
+            errors.append(f"source.tokens: a sentence ends at {tok.id}; split the record "
+                          "there, or add a punctuation meaning decision")
 
 
 def source_text(tokens):
@@ -59,11 +140,12 @@ def source_text(tokens):
     return " ".join(t.text + t.after.rstrip() for t in tokens)
 
 
-def validate_record(record, known_tokens=None):
+def validate_record(record, known_tokens=None, original_language=True):
     """Return a list of error strings (empty if the record is valid).
 
     known_tokens maps token id -> Token; by default it is loaded from MACULA
-    for the record's refs.
+    for the record's refs. original_language=False skips the check of Greek
+    and Hebrew quoted outside source, which needs the whole MACULA data.
     """
     errors = []
     if not _fields(record, SCHEMA, "record", errors):
@@ -101,6 +183,10 @@ def validate_record(record, known_tokens=None):
             if source["text"] != expected:
                 errors.append("source.text: does not match the source data "
                               "(regenerate it with scripts/build_skeleton.py)")
+        if (source.get("language") == "grc" and source_tokens
+                and all(t in known_tokens for t in source_tokens)):
+            check_sentence([known_tokens[t] for t in source_tokens],
+                           record.get("decisions") or [], errors)
     in_source = set(source_tokens)
 
     def check_tokens(ids, where):
@@ -165,6 +251,19 @@ def validate_record(record, known_tokens=None):
                 errors.append(f"{where}: meaning decisions must have language null")
             if "levels" in d:
                 errors.append(f"{where}: meaning decisions apply to every level; drop 'levels'")
+            if d.get("category") in CATEGORIES and d.get("category") not in MEANING_CATEGORIES:
+                errors.append(f"{where}.category: {d.get('category')!r} is about wording; "
+                              "make it a rendering decision")
+            for key, text in _strings({k: d.get(k) for k in ("choice", "alternatives", "reason")},
+                                      where):
+                if markup.spans(text):
+                    errors.append(f"{key}: a reader setting is wording; move it to a "
+                                  "rendering decision")
+                m = TARGET_LANGUAGE_NAMES.search(text)
+                if m:
+                    errors.append(f"{key}: names {m[0]!r}; meaning decisions are shared by "
+                                  "every language, so wording for one language belongs in "
+                                  "its rendering decisions")
         else:
             if d.get("language") not in renderings:
                 errors.append(f"{where}: rendering decisions need a language "
@@ -187,6 +286,9 @@ def validate_record(record, known_tokens=None):
         for flag in ("uncertain", "footnote"):
             if not isinstance(d.get(flag), bool):
                 errors.append(f"{where}.{flag}: must be true or false")
+
+    if original_language:
+        check_original_language(record, errors)
 
     if record.get("status") not in STATUSES:
         errors.append(f"status: {record.get('status')!r} not allowed")

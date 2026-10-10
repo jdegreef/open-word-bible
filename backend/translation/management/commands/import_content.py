@@ -62,7 +62,11 @@ class Command(BaseCommand):
                 ref = refs.parse(vid)
                 mine.update({k: w for k, w in known.items()
                              if (w.book, w.chapter, w.verse) == (ref.book, ref.chapter, ref.verse)})
-            errors += [f"{record.get('id')}: {e}" for e in validate.validate_record(record, mine)]
+            # Greek and Hebrew quoted in notes may come from anywhere in the
+            # Bible, and the database may hold only the words for content/;
+            # owb.validate checks them against the full MACULA data in CI.
+            errors += [f"{record.get('id')}: {e}"
+                       for e in validate.validate_record(record, mine, original_language=False)]
         return errors
 
     def save(self, record):

@@ -75,6 +75,119 @@ class ValidateTest(unittest.TestCase):
         record["renderings"]["en"]["B"] = record["renderings"]["en"]["B"].replace("\\v 13 ", "")
         self.assertTrue(any("verse markers" in e for e in validate.validate_record(record)))
 
+    def _reason_errors(self, word):
+        record = example_records()[0]
+        record["decisions"][0]["reason"] += f" Compare {word}."
+        return [e for e in validate.validate_record(record) if "source data" in e]
+
+    def test_greek_copied_from_the_data_passes(self):
+        from owb.sources import macula_greek
+        tok = macula_greek.load_tokens("JHN.1.1")[4]
+        for word in (tok.text, tok.lemma, tok.normalized):
+            self.assertEqual(self._reason_errors(word), [], word)
+
+    def test_greek_typed_by_hand_fails(self):
+        import unicodedata
+        from owb.sources import macula_greek
+        word = macula_greek.load_tokens("JHN.1.1")[4].text
+        # The same word with oxia for tonos, decomposed, or misspelled.
+        lookalike = word.translate({0x03cc: 0x1f79})
+        self.assertNotEqual(lookalike, word)
+        for bad in (lookalike, unicodedata.normalize("NFD", word), word + word[-1]):
+            errors = self._reason_errors(bad)
+            self.assertTrue(errors and "decisions[0].reason: Greek" in errors[0], bad)
+
+    def test_greek_in_renderings_is_checked_too(self):
+        from owb.sources import macula_greek
+        word = macula_greek.load_tokens("JHN.1.1")[4].text
+        record = example_records()[0]
+        record["renderings"]["en"]["L"] += " " + word[::-1]
+        self.assertTrue(any("renderings.en.L: Greek" in e
+                            for e in validate.validate_record(record)))
+
+    def test_hebrew_copied_from_the_data_passes(self):
+        from owb import refs
+        from owb.sources import macula_hebrew
+        prefix, noun = macula_hebrew._all()[refs.parse("GEN.1.1")][:2]
+        whole = prefix.text + noun.text
+        for word in (noun.text, noun.lemma, whole, macula_hebrew._ACCENTS.sub("", whole)):
+            self.assertEqual(self._reason_errors(word), [], word)
+
+    def test_hebrew_typed_by_hand_fails(self):
+        from owb import refs
+        from owb.sources import macula_hebrew
+        noun = macula_hebrew._all()[refs.parse("GEN.1.1")][1]
+        errors = self._reason_errors(noun.lemma[::-1])
+        self.assertTrue(errors and "Hebrew" in errors[0], errors)
+
+    def test_record_cut_mid_sentence_fails(self):
+        record = example_records()[0]
+        record["source"]["tokens"] = record["source"]["tokens"][:5]
+        del record["source"]["text"]
+        record["decisions"] = [d for d in record["decisions"]
+                               if set(d["tokens"]) <= set(record["source"]["tokens"])]
+        self.assertTrue(any("ends mid-sentence at n43001001005" in e
+                            for e in validate.validate_record(record)))
+
+    def test_two_sentences_in_one_record_fail(self):
+        first, second = example_records()[:2]
+        first["refs"] += second["refs"]
+        first["source"]["tokens"] += second["source"]["tokens"]
+        del first["source"]["text"]
+        for level in "LBR":
+            for lang in first["renderings"]:
+                first["renderings"][lang][level] += " \\v 2 x"
+        first["literal_gloss"] += " \\v 2 x"
+        errors = validate.validate_record(first)
+        self.assertTrue(any("a sentence ends at n43001001017" in e for e in errors), errors)
+
+    def test_punctuation_decision_allows_a_different_boundary(self):
+        record = next(r for r in example_records() if r["id"] == "JHN.1.3.s1")
+        self.assertEqual(validate.validate_record(record), [])
+        record["decisions"] = [d for d in record["decisions"] if d["category"] != "punctuation"]
+        errors = validate.validate_record(record)
+        self.assertTrue(any("a sentence ends at n43001003010" in e for e in errors), errors)
+        self.assertTrue(any("ends mid-sentence at n43001003012" in e for e in errors), errors)
+
+    def test_meaning_decision_with_a_wording_category_fails(self):
+        record = example_records()[0]
+        record["decisions"][0]["category"] = "word_choice"
+        self.assertTrue(any("about wording" in e for e in validate.validate_record(record)))
+
+    def test_meaning_categories_come_from_schema(self):
+        self.assertIn("word_sense", validate.MEANING_CATEGORIES)
+        self.assertNotIn("setting_alternative", validate.MEANING_CATEGORIES)
+
+    def test_meaning_decision_naming_a_language_fails(self):
+        for text in ("English needs the article here.", "En espa\u00f1ol se dice así."):
+            record = example_records()[0]
+            record["decisions"][0]["reason"] = text
+            errors = validate.validate_record(record)
+            self.assertTrue(any("decisions[0].reason: names" in e for e in errors), (text, errors))
+
+    def test_meaning_decision_with_a_setting_fails(self):
+        record = example_records()[0]
+        record["decisions"][0]["choice"] = "{{gender:all people|men}}"
+        self.assertTrue(any("decisions[0].choice: a reader setting is wording" in e
+                            for e in validate.validate_record(record)))
+
+    def test_rendering_decision_may_name_its_language(self):
+        record = next(r for r in example_records() if r["id"] == "JHN.1.3.s1")
+        rendering = next(d for d in record["decisions"] if d["layer"] == "rendering")
+        rendering["reason"] = "Plain English for Readable."
+        self.assertEqual(validate.validate_record(record), [])
+
+    def test_badly_formed_setting_spans_fail(self):
+        for span, message in (("{{gender:people}}", "at least one"),
+                              ("{{gender:people|}}", "at least one"),
+                              ("{{gender:people|people}}", "repeats"),
+                              ("{{gender:people| men}}", "spaces"),
+                              ("{{deity_pronoun:him|He}}", "capitalised")):
+            record = example_records()[0]
+            record["renderings"]["en"]["B"] = f"the light of {span}"
+            errors = validate.validate_record(record)
+            self.assertTrue(any(message in e for e in errors), (span, errors))
+
     def test_plural_you_is_spanish_only(self):
         path = EXAMPLE.parents[1] / "PHP" / "PHP.4.1-9.json"
         for record in json.loads(path.read_text(encoding="utf-8"))["records"]:

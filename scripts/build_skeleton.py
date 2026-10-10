@@ -2,9 +2,11 @@
 
 Usage: python3 scripts/build_skeleton.py JHN.1.1 [JHN.1.2] [--lang en] [-o FILE]
 
-Writes one record per verse (split or merge them by hand when a sentence
-does not match a verse). Token ids and source text come from MACULA Greek;
-translators fill in literal_gloss, renderings and decisions.
+Writes one record per source sentence (see macula_greek.sentences), so a
+sentence may cover part of a verse or run across several; later verses are
+marked with \\v N in the gloss and renderings. Token ids and source text come
+from MACULA Greek; translators fill in literal_gloss, renderings and
+decisions.
 """
 import argparse
 import json
@@ -19,24 +21,25 @@ from owb.validate import source_text  # noqa: E402
 
 
 def skeleton(start, end=None, lang="en"):
-    by_verse = {}
-    for tok in macula_greek.load_tokens(start, end):
-        by_verse.setdefault(tok.ref, []).append(tok)
-    if not by_verse:
+    tokens = macula_greek.load_tokens(start, end)
+    if not tokens:
         raise SystemExit(f"no tokens for {start}..{end or start}")
-    records = []
-    for ref, toks in by_verse.items():
+    records, per_verse = [], {}
+    for toks in macula_greek.sentences(tokens):
+        verses = list(dict.fromkeys(t.ref for t in toks))
+        per_verse[verses[0]] = per_verse.get(verses[0], 0) + 1
+        markers = "".join(f"\\v {v.verse} " for v in verses[1:])
         records.append({
-            "id": f"{ref}.s1",
-            "refs": [str(ref)],
+            "id": f"{verses[0]}.s{per_verse[verses[0]]}",
+            "refs": [str(v) for v in verses],
             "source": {
                 "language": "grc",
                 "text_id": sblgnt.TEXT_ID,
                 "tokens": [t.id for t in toks],
                 "text": source_text(toks),
             },
-            "literal_gloss": "",
-            "renderings": {lang: {"L": "", "B": "", "R": ""}},
+            "literal_gloss": markers,
+            "renderings": {lang: {"L": markers, "B": markers, "R": markers}},
             "decisions": [],
             "status": "ai_draft",
         })
