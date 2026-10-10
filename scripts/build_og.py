@@ -58,7 +58,7 @@ def to_jpeg(png, jpg):
         raise SystemExit("needs sips (macOS) or ImageMagick to make JPEGs")
     subprocess.run(cmd, check=True, capture_output=True)
 # Bump when the template changes, so every card is drawn again.
-TEMPLATE_VERSION = 4
+TEMPLATE_VERSION = 5
 
 
 def font_faces():
@@ -122,6 +122,7 @@ body {{ box-sizing: border-box; padding: 78px 72px 56px; display: flex; flex-dir
 body::before {{ content: ""; position: absolute; top: 0; left: 0; right: 0; height: 14px;
   background: linear-gradient(90deg, #3f3d9a 0%, #3f3d9a 55%, #b07d22 100%); }}
 .mark rect {{ fill: #3f3d9a; }} .mark path {{ fill: #faf6ef; }}
+.mark .quotes {{ fill: #3f3d9a; }}
 .brand {{ display: flex; align-items: center; gap: 16px; font-family: "Fraunces", Georgia, serif;
   font-size: 36px; font-weight: 600; letter-spacing: -.01em; }}
 .brand em {{ font-style: italic; font-weight: 500; color: #3f3d9a; }}
