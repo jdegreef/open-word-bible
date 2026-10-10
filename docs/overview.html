@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Open Word Bible — Project Overview</title>
+<style>
+  @page { size: Letter; margin: 0.55in 0.65in 0.6in; }
+  * { box-sizing: border-box; }
+  html { color: #000; background: #fff; }
+  body {
+    margin: 0;
+    font: 9.4pt/1.36 "Georgia", "DejaVu Serif", "Liberation Serif", serif;
+  }
+  h1, h2, h3, .label, th, .meta, .small { font-family: "Helvetica Neue", "Liberation Sans", "DejaVu Sans", Arial, sans-serif; }
+  h1 { font-size: 22pt; line-height: 1.1; margin: 0 0 4pt; letter-spacing: -0.01em; }
+  .subtitle { font-size: 11.5pt; margin: 0 0 8pt; font-style: italic; }
+  .meta { font-size: 8.5pt; text-transform: uppercase; letter-spacing: 0.08em; border-top: 2pt solid #000; border-bottom: 0.5pt solid #000; padding: 4pt 0; margin: 0 0 10pt; display: flex; justify-content: space-between; }
+  h2 { font-size: 10.5pt; text-transform: uppercase; letter-spacing: 0.06em; margin: 11pt 0 5pt; padding-bottom: 2pt; border-bottom: 1pt solid #000; break-after: avoid; }
+  h3 { font-size: 9.6pt; margin: 7pt 0 2pt; break-after: avoid; }
+  p { margin: 0 0 4.5pt; }
+  ul, ol { margin: 0 0 6pt; padding-left: 16pt; }
+  li { margin: 0 0 1.5pt; }
+  .lead { font-size: 10.6pt; line-height: 1.42; margin: 0 0 6pt; }
+  .pull { border-left: 3pt solid #000; padding: 1pt 0 1pt 9pt; margin: 7pt 0; font-size: 10pt; font-style: italic; }
+  table { width: 100%; border-collapse: collapse; margin: 4pt 0 8pt; font-size: 8.4pt; line-height: 1.3; break-inside: auto; }
+  thead { display: table-header-group; break-after: avoid; }
+  th { text-align: left; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1pt solid #000; padding: 3pt 6pt 3pt 0; vertical-align: bottom; }
+  td { border-bottom: 0.5pt solid #000; padding: 2.5pt 6pt 2.5pt 0; vertical-align: top; }
+  tr { break-inside: avoid; }
+  td:first-child { font-weight: bold; }
+  .two { columns: 2; column-gap: 20pt; }
+  .two > * { break-inside: avoid; }
+  .two h3 { margin-top: 0; }
+  td:first-child { white-space: nowrap; }
+  .box { border: 1pt solid #000; padding: 6pt 9pt; margin: 6pt 0; break-inside: avoid; }
+  .box .label { font-size: 8pt; text-transform: uppercase; letter-spacing: 0.08em; font-weight: bold; margin-bottom: 3pt; }
+  .greek { font-family: "DejaVu Serif", "Gentium Plus", serif; }
+  .example td:first-child { width: 22%; }
+  .small { font-size: 8.5pt; }
+  .page-break { break-before: page; }
+  code { font-family: "DejaVu Sans Mono", "Liberation Mono", monospace; font-size: 8.5pt; }
+  .footer-note { margin-top: 14pt; border-top: 0.5pt solid #000; padding-top: 6pt; font-size: 8.5pt; }
+</style>
+</head>
+<body>
+
+<h1>Open Word Bible</h1>
+<p class="subtitle">A free translation of the Bible from Hebrew and Greek, with the reasoning behind every sentence.</p>
+<div class="meta"><span>Project overview</span><span>October 2026</span><span>openwordbible.org</span></div>
+
+<p class="lead">Open Word Bible translates the Scriptures from their original languages into modern
+languages, English and Spanish first, and releases everything into the public domain. Its distinguishing
+feature is transparency: a reader can open any sentence and see the original words, a word-for-word
+gloss, and every translation decision with the alternatives considered and the reason for the choice.</p>
+
+<h2>1. Vision</h2>
+<p>Most modern Bible translations are copyrighted. That limits who can quote, print, adapt, put them in
+apps, or build new resources on them. And almost every translation makes thousands of interpretive choices
+silently: the reader sees the result, never the reasoning.</p>
+<p>Open Word Bible aims to change both:</p>
+<ul>
+  <li><strong>Free for everyone.</strong> The translation, its notes and its data are released under CC0. Anyone
+  may use them for any purpose without asking permission.</li>
+  <li><strong>The work is shown.</strong> Every sentence carries a reasoning record that explains how the original was
+  understood and why it was worded as it is.</li>
+  <li><strong>For every reader.</strong> Three reading levels and a small set of reader settings let people choose how
+  the text reads without changing what it means.</li>
+  <li><strong>Many languages, one understanding.</strong> The meaning of each passage is worked out once and shared
+  by every language, so translations stay consistent with each other.</li>
+</ul>
+
+<h2>2. The approach</h2>
+<h3>Translated from the original languages</h3>
+<p>Every language is translated from the Hebrew, Aramaic and Greek, never from English. English may be
+consulted as a guide, but it is never the source. The source texts are fixed, openly licensed editions,
+pinned to exact versions so that every result can be reproduced.</p>
+<table>
+  <thead><tr><th>Role</th><th>Source</th><th>Licence</th></tr></thead>
+  <tr><td>Old Testament text</td><td>Westminster Leningrad Codex</td><td>Public domain</td></tr>
+  <tr><td>Old Testament word data</td><td>Open Scriptures Hebrew Bible; MACULA Hebrew</td><td>CC BY 4.0</td></tr>
+  <tr><td>New Testament text</td><td>SBL Greek New Testament (v1.2)</td><td>CC BY 4.0</td></tr>
+  <tr><td>New Testament word data</td><td>MACULA Greek (lemma, grammar, glosses)</td><td>CC BY 4.0</td></tr>
+  <tr><td>Consulted, not followed</td><td>Byzantine and Received Texts; Septuagint; Dead Sea Scrolls</td><td>Cited in notes</td></tr>
+</table>
+<p>One firm rule protects accuracy: <strong>the original-language text is never typed by hand.</strong> Every Hebrew and
+Greek word, in the text and in the notes, is pulled from the source data by software. In early testing, Greek
+typed from memory contained accent errors that this rule now prevents.</p>
+
+<h3>Three reading levels</h3>
+<table>
+  <thead><tr><th>Level</th><th>Aim</th><th>Character</th></tr></thead>
+  <tr><td>Literal (OWB-L)</td><td>Let readers see the original's form</td><td>Follows the original's wording and order where English allows; added words shown in brackets</td></tr>
+  <tr><td>Balanced (OWB-B)</td><td>Natural and accurate; the default</td><td>Reads like modern English while tracking the original closely</td></tr>
+  <tr><td>Readable (OWB-R)</td><td>Plain language for new and young readers</td><td>Short sentences, idioms explained, about a 6th–8th grade reading level</td></tr>
+</table>
+<p>The levels may differ in how much they say, but never in what they mean. A level may keep an ambiguity the
+original has, but no level may choose a different reading from the others. Key theological terms such as
+<em>grace</em>, <em>glory</em>, <em>covenant</em> and <em>righteousness</em> stay the same at every level.</p>
+
+<h3>Reasoning records: showing the work</h3>
+<p>Each sentence has a record containing the original words with their grammar, a word-for-word gloss, the
+translation at each level, and a list of decisions. Each decision states the words it covers, the choice made,
+the alternatives considered, and the reason in plain language. Decisions sit in two layers:</p>
+<table>
+  <thead><tr><th>Layer</th><th>Written</th><th>Shared by</th><th>Covers</th></tr></thead>
+  <tr><td>Meaning</td><td>Once per passage</td><td>Every language and level</td><td>Manuscript readings, word senses, grammar, allusions, idioms, culture, theology</td></tr>
+  <tr><td>Rendering</td><td>Once per language and level</td><td>That language only</td><td>Word choice, word order, style, words added for sense</td></tr>
+</table>
+<div class="box">
+  <div class="label">Example: John 1:1, "the Word was God"</div>
+  <table class="example" style="margin:0">
+    <tr><td>Original</td><td class="greek">{{GREEK:JHN.1.1:14-17}}</td></tr>
+    <tr><td>Choice</td><td>"the Word was God"</td></tr>
+    <tr><td>Also considered</td><td>"the Word was a god"; "the Word was divine"</td></tr>
+    <tr><td>Reason</td><td>"The Word" has the article, so it is the subject. "God" comes first without the article and says
+    what the Word is, without making the Word the same person as "the God" just mentioned. "A god" would contradict
+    John's insistence on one God; "divine" is weaker than the noun.</td></tr>
+  </table>
+</div>
+<p>Notes are written at the same time as the translation, not afterwards as justification; they cite only
+sources the project holds; and where the evidence is evenly balanced, the decision is marked <em>uncertain</em>.</p>
+
+<h2>3. Key decisions</h2>
+<table>
+  <thead><tr><th>Question</th><th>Decision</th><th>Why</th></tr></thead>
+  <tr><td>Name and domain</td><td>Open Word Bible; openwordbible.org</td><td>"Word" points to Scripture and to the Word of John 1</td></tr>
+  <tr><td>Licence</td><td>CC0 for translation, notes and data; MIT for code</td><td>Removes every barrier to use and reuse</td></tr>
+  <tr><td>New Testament base</td><td>SBL Greek New Testament</td><td>Modern critical text, openly licensed; major variants given in footnotes</td></tr>
+  <tr><td>Default level</td><td>Balanced</td><td>Matches the most widely read modern translations</td></tr>
+  <tr><td>Divine name</td><td>"the LORD" by default; "Yahweh" as a setting</td><td>Familiar tradition, with the personal name one tap away</td></tr>
+  <tr><td>Gender language</td><td>Inclusive where the original includes women; Traditional as a setting</td><td>Says what the original means to a modern reader; God, Christ and named men are never changed</td></tr>
+  <tr><td>Spelling</td><td>US by default; UK as a setting</td><td>Largest English readership</td></tr>
+  <tr><td>Disputed passages</td><td>Printed in brackets with a note (e.g. Mark 16:9–20)</td><td>Neither hidden nor presented as certain</td></tr>
+</table>
+
+<h3>Reader settings: wording, never meaning</h3>
+<p>Settings change only how something is said, never what it means. Where scholars disagree about meaning
+(for example, Isaiah 7:14), there is no setting: the translation commits to one reading and the notes give the others.</p>
+<p class="small"><strong>Divine name:</strong> the LORD · Yahweh &nbsp;|&nbsp; <strong>Gender:</strong> Inclusive · Traditional &nbsp;|&nbsp;
+<strong>Units and money:</strong> modern · original &nbsp;|&nbsp; <strong>Christos:</strong> Christ · Messiah &nbsp;|&nbsp;
+<strong>Pronouns for God:</strong> he · He &nbsp;|&nbsp; <strong>Spelling:</strong> US · UK &nbsp;|&nbsp;
+<strong>Spanish plural "you":</strong> ustedes · vosotros. Defaults are listed first.</p>
+<p>Each setting is stored once inside the text as a marked alternative, so a setting never needs its own
+translation or review. Passages that are cited, printed, downloaded or shared with other sites always use the
+defaults, under a stable edition code (OWB-L, OWB-B, OWB-R).</p>
+
+<h2>4. Many languages</h2>
+<p>English comes first, followed by Spanish, then French, Portuguese and Swahili, and more as reviewers are found.
+The two-layer design is what makes this practical. When the English and Spanish versions of John 1:1–18 were
+compared, all 35 meaning decisions carried over to Spanish unchanged. Spanish needed only 12 new decisions of
+its own instead of a fresh set of 48.</p>
+<p>The Spanish test also showed why each language needs its own rendering layer. Problems appeared that English
+never faces:</p>
+<ul>
+  <li><strong>Grammatical gender.</strong> "La Palabra" (the Word) is feminine, but the Word becomes a man in John 1:14,
+  so the traditional masculine "el Verbo" was chosen and flagged for native review.</li>
+  <li><strong>Two verbs for one.</strong> Spanish must split the Greek "was" into <em>era</em> (identity) and <em>estaba</em> (presence).</li>
+  <li><strong>Inclusive by grammar.</strong> Spanish <em>hijos</em> and <em>hermanos</em> already include women, so they need no gender setting.</li>
+  <li><strong>Regional forms.</strong> Spanish needs <em>ustedes</em> or <em>vosotros</em>; a single setting covers both, even changing
+  verb forms such as <em>alégrense</em> / <em>alegraos</em>.</li>
+</ul>
+<p>For languages with few speakers or little written material, the project should partner with established
+Bible translation organisations rather than rely on AI alone. AI translation is strong in major languages and
+unreliable in low-resource ones.</p>
+
+<h2>5. Review and honesty</h2>
+<p>Every passage is first drafted with AI assistance. Nothing is marked reviewed until named people approve it,
+and the AI never approves its own work. Readers always see where a passage stands.</p>
+<p>Every passage moves through four statuses: <strong>AI draft</strong> (not yet reviewed); <strong>meaning reviewed</strong>
+(checked by a reviewer trained in Hebrew or Greek); <strong>reviewed</strong> (also checked by a fluent reader of the
+target language); and <strong>revised</strong> (changed after review, with the reason recorded).</p>
+<p>Two further safeguards: anyone can flag a sentence for correction, and every accepted change records who made
+it, when and why. New text is also checked against well-known copyrighted translations. In testing, early drafts
+of Philippians 4:6–8 came out almost word for word like existing translations and were rewritten.</p>
+
+<h2>6. Technology</h2>
+<p><strong>Data first, website second.</strong> The core product is an open dataset, not a website. Each passage is a
+structured file of sentence records; the public site, an app, Ochorus and any other project all read from the same
+versioned releases, published in standard Bible formats (USFM, USX) and JSON.</p>
+<p><strong>Checks on every change.</strong> Automated tests (35 today) verify that every word reference exists in the source
+data, that the Greek matches the data exactly, that settings are well formed, and that sentences crossing verse
+boundaries are marked correctly.</p>
+<p><strong>A simple, sturdy site.</strong> The reader site is plain static pages built by a short Python script and hosted on
+Render at openwordbible.org: no database and no server code, so it is cheap to run and hard to break. It works on
+phones and in light and dark modes.</p>
+<p><strong>Technical issues still to solve:</strong> Hebrew support (right-to-left text and Old Testament word data);
+translating the notes themselves into each language; a repeatable pipeline that drafts whole books rather than
+passages; a reviewer workflow with sign-off recorded in the data; and automated similarity checks against
+copyrighted versions.</p>
+
+<h2>7. Where things stand</h2>
+<div class="two">
+  <div>
+    <h3>Done</h3>
+    <ul>
+      <li>Translation charter agreed, covering the decisions on this page.</li>
+      <li>Source licences confirmed from each dataset's own licence file.</li>
+      <li>John 1:1–18 and Philippians 4:1–9 in English and Spanish, at all three levels, with about 120 reasoning notes.</li>
+      <li>Data format, checker, tests and a reader website, ready to deploy.</li>
+    </ul>
+  </div>
+  <div>
+    <h3>Not yet</h3>
+    <ul>
+      <li>No passage has been reviewed by a human scholar.</li>
+      <li>The site is not yet live.</li>
+      <li>Notes are in English only.</li>
+      <li>No Old Testament (Hebrew) passage yet.</li>
+      <li>No complete book yet.</li>
+    </ul>
+  </div>
+</div>
+
+<h2>8. The plan</h2>
+<table>
+  <thead><tr><th>Phase</th><th>Work</th><th>Outcome</th></tr></thead>
+  <tr><td>1. Foundation</td><td>Launch the site; set up reviewer sign-off; recruit Greek, Hebrew and Spanish reviewers; add a Hebrew sample (Genesis 6)</td><td>A public draft that experts can review</td></tr>
+  <tr><td>2. First book</td><td>Build the drafting pipeline; translate a complete Gospel (Mark or John) in English and Spanish; translate the notes</td><td>A usable, reviewable book in two languages</td></tr>
+  <tr><td>3. First release</td><td>Publish version 0.1 of the open dataset; show verse pop-ups for Scripture references in Ochorus</td><td>Others can build on the work</td></tr>
+  <tr><td>4. Growth</td><td>The New Testament, then the Old Testament; French, Portuguese and Swahili; partnerships for smaller languages</td><td>A full, free, transparent Bible in many languages</td></tr>
+</table>
+
+<h2>9. Risks and open questions</h2>
+<ul>
+  <li><strong>Trust.</strong> An AI-assisted Bible will be met with scepticism. The answer is full transparency, named human
+  reviewers, and never overstating what has been checked.</li>
+  <li><strong>Reviewer capacity.</strong> Review, not drafting, is the real limit on speed. Recruiting qualified reviewers is the
+  most important early task.</li>
+  <li><strong>Theological positioning.</strong> Some churches will ask for a statement of faith before adopting the text. Whether
+  to publish one, or only the charter, is still open.</li>
+  <li><strong>Contested choices.</strong> Defaults such as inclusive gender language will be debated. Every such choice is
+  explained, and the alternative is always one tap away.</li>
+  <li><strong>Low-resource languages.</strong> These require partnership with experienced translation organisations, not AI alone.</li>
+</ul>
+
+<p class="footer-note">Open Word Bible · openwordbible.org · Source code and data: github.com/jdegreef/open-word-bible ·
+The translation and its notes are dedicated to the public domain under CC0 1.0. Source texts are credited on the website's About page.</p>
+
+</body>
+</html>
