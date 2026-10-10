@@ -95,7 +95,7 @@
 
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
-html { -webkit-text-size-adjust: 100%; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: calc(var(--header-h) + 16px); }
 body {
   margin: 0;
   background: var(--bg);
@@ -140,7 +140,9 @@ header.site nav.primary a {
 header.site nav.primary a:hover { color: var(--text); background: var(--accent-soft); }
 header.site nav.primary a[aria-current] { color: var(--text); font-weight: 600; }
 header.site nav.primary a[aria-current]::after {
-  content: ""; position: absolute; left: 12px; right: 12px; bottom: -11px; height: 2px; border-radius: 2px; background: var(--accent);
+  /* Sits on the header's bottom edge whatever the header and link heights. */
+  content: ""; position: absolute; left: 12px; right: 12px; bottom: calc((100% - var(--header-h)) / 2);
+  height: 2px; border-radius: 2px; background: var(--accent);
 }
 header.site .nav-ext { margin-left: 8px; border: 1px solid var(--line); }
 header.site .tools { display: flex; align-items: center; gap: 8px; }
@@ -270,7 +272,7 @@ footer.site nav a:hover { color: var(--accent); text-decoration: underline; }
 .article-body { font-family: var(--serif); font-size: 20px; line-height: 1.7; }
 .article-body p, .article-body ul { margin: 0 0 1.1em; }
 .article-body li { margin: 0 0 .4em; }
-.article-body h2 { font-weight: normal; font-size: 28px; line-height: 1.25; margin: 1.8em 0 .5em; scroll-margin-top: calc(var(--header-h) + 16px); }
+.article-body h2 { font-weight: normal; font-size: 28px; line-height: 1.25; margin: 1.8em 0 .5em; }
 .article-body h3 { font-family: var(--sans); font-size: 18px; margin: 1.6em 0 .4em; }
 .article-body .greek { font-family: var(--greek); }
 .article-body a { text-underline-offset: 3px; }
@@ -321,7 +323,7 @@ footer.site nav a:hover { color: var(--accent); text-decoration: underline; }
 .passage h1 { font-family: var(--serif); font-weight: normal; font-size: 30px; margin: 24px 0 4px; }
 .passage .sub { color: var(--muted); font-size: 14px; margin: 0 0 16px; }
 .text { font-family: var(--serif); font-size: 21px; line-height: 1.75; }
-.verse { cursor: pointer; border-radius: 3px; padding: 1px 0; scroll-margin-top: calc(var(--header-h) + 16px); }
+.verse { cursor: pointer; border-radius: 3px; padding: 1px 0; }
 .verse:hover { background: var(--accent-soft); }
 .verse[aria-current="true"] { background: var(--mark); }
 .verse sup { font-family: var(--sans); font-size: 12px; color: var(--accent); font-weight: 700; margin-right: 3px; }

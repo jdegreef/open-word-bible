@@ -630,9 +630,7 @@ def load_articles():
                 raise SystemExit(f"{path.name}: front matter needs {key!r}")
         if meta["section"] not in SECTIONS:
             raise SystemExit(f"{path.name}: section must be one of {', '.join(SECTIONS)}")
-        # A word joiner either side of a range's dash keeps "4:6–7" on one line.
-        for key in ("title", "summary"):
-            meta[key] = re.sub(r"(\d)\u2013(\d)", "\\1\u2060\u2013\u2060\\2", smart_quotes(meta[key]))
+        meta["title"], meta["summary"] = smart_quotes(meta["title"]), smart_quotes(meta["summary"])
         words = len(re.findall(r"\w+", re.sub(r"\{\{[^}]*\}\}", "", m[2])))
         articles.append({**meta, "slug": path.stem, "body": m[2], "order": int(meta["order"]),
                          "minutes": max(1, round(words / 220)),
@@ -649,6 +647,13 @@ def _date(iso):
     return datetime.date.fromisoformat(iso).strftime("%-d %B %Y")
 
 
+def display(text):
+    """Escaped text for the page, with a verse range's dash ("4:6–7") kept
+    on one line. Only the visible HTML gets the word joiners; titles and
+    link previews keep the plain text."""
+    return re.sub(r"(\d)\u2013(\d)", "\\1\u2060\u2013\u2060\\2", html.escape(text))
+
+
 def article_meta(a):
     """"6 min read · John 1:1, 14": what a card or byline says about length
     and which verses an article reads."""
@@ -659,8 +664,8 @@ def article_meta(a):
 def article_card(a, featured=False):
     return (f'<li><a class="a-card{" featured" if featured else ""}" href="{article_url(a)}">'
             f'<span class="a-section">{SECTIONS[a["section"]]}</span>'
-            f'<span class="a-title">{html.escape(a["title"])}</span>'
-            f'<span class="a-summary">{html.escape(a["summary"])}</span>'
+            f'<span class="a-title">{display(a["title"])}</span>'
+            f'<span class="a-summary">{display(a["summary"])}</span>'
             f'<span class="a-meta">{article_meta(a)}</span></a></li>')
 
 
@@ -697,7 +702,8 @@ def article_page(article, articles):
     other = [a for a in articles if a is not article and a["section"] != article["section"]]
     more = sorted(same, key=lambda a: a["order"])[:2] + sorted(other, key=lambda a: a["order"])[:1]
     contents = "".join(f'<li><a href="#{slug}">{label}</a></li>' for slug, label in toc)
-    links = [(passage_label(*p), verse_link(p[0], p[1], p[2][0])) for p in article["passages"]]
+    links = [(passage_label(b, c, vs), next(filter(None, (verse_link(b, c, v) for v in vs)), None))
+             for b, c, vs in article["passages"]]
     read = "".join(f'<a class="chip" href="{href}">{html.escape(label)}&nbsp;&rarr;</a>'
                    for label, href in links if href)
     passage = (f'<aside class="read-card"><h2>Read the passage</h2><p>Open it in the reader, '
@@ -708,8 +714,8 @@ def article_page(article, articles):
 <article class="article">
 <header class="article-head">
 <p class="eyebrow"><a href="/articles/#{article["section"]}">{SECTIONS[article["section"]]}</a></p>
-<h1>{html.escape(article["title"])}</h1>
-<p class="dek">{html.escape(article["summary"])}</p>
+<h1>{display(article["title"])}</h1>
+<p class="dek">{display(article["summary"])}</p>
 <p class="byline">{MARK}<span>Open Word Bible &middot; {_date(article["date"])} &middot; {article["minutes"]} min read
 <span class="status">Draft, not yet reviewed</span></span></p>
 </header>
@@ -779,6 +785,8 @@ def sitemap(paths):
 
 
 def build(out):
+    site_footer.cache_clear()
+    translated_verses.cache_clear()
     if out.exists():
         shutil.rmtree(out)
     pages = {"/": home_page(), "/read/": read_page(), "/about/": about_page()}

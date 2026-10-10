@@ -90,4 +90,9 @@
   document.addEventListener("click", function (e) {
     if (nav.classList.contains("open") && !nav.contains(e.target) && !button.contains(e.target)) open(false);
   });
+  // Tabbing out of the open menu closes it too.
+  nav.addEventListener("focusout", function (e) {
+    var to = e.relatedTarget;
+    if (to && !nav.contains(to) && !button.contains(to)) open(false);
+  });
 })();
