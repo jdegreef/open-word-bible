@@ -4,7 +4,7 @@ Usage: python3 scripts/build_og.py [--check]
 
 Social apps and chat show a page's og:image when a link is shared, and most
 of them ignore SVG, so each card is drawn as HTML and photographed with
-headless Chrome, then saved as JPEG (sips, on macOS). The images are
+headless Chrome or Chromium, then saved as JPEG (sips or ImageMagick). The images are
 committed: the site build only copies them. Run this after changing a
 passage's opening verse, an article's title or summary, or the template;
 web/og/manifest.json records what each image was drawn from, and the tests
@@ -17,6 +17,7 @@ import argparse
 import hashlib
 import html
 import json
+import os
 import shutil
 import subprocess
 import sys
@@ -24,6 +25,7 @@ import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import build_site  # noqa: E402
@@ -32,7 +34,29 @@ from owb import markup  # noqa: E402
 OUT = ROOT / "web" / "og"
 MANIFEST = OUT / "manifest.json"
 WIDTH, HEIGHT = 1200, 630
-CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+MAC_CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+
+
+def chrome():
+    """Chrome or Chromium: $OWB_CHROME, then the PATH, then the macOS app."""
+    for candidate in (os.environ.get("OWB_CHROME"), shutil.which("google-chrome"),
+                      shutil.which("chromium"), shutil.which("chromium-browser"), MAC_CHROME):
+        if candidate and Path(candidate).is_file():
+            return candidate
+    return None
+
+
+def to_jpeg(png, jpg):
+    """sips on macOS, ImageMagick elsewhere."""
+    if shutil.which("sips"):
+        cmd = ["sips", "-s", "format", "jpeg", "-s", "formatOptions", "82", str(png), "--out", str(jpg)]
+    elif shutil.which("magick"):
+        cmd = ["magick", str(png), "-quality", "82", str(jpg)]
+    elif shutil.which("convert"):
+        cmd = ["convert", str(png), "-quality", "82", str(jpg)]
+    else:
+        raise SystemExit("needs sips (macOS) or ImageMagick to make JPEGs")
+    subprocess.run(cmd, check=True, capture_output=True)
 # Bump when the template changes, so every card is drawn again.
 TEMPLATE_VERSION = 2
 # The site's fonts, from the same pinned packages as web/fonts/.
@@ -110,16 +134,15 @@ footer {{ display: flex; justify-content: space-between; font-family: -apple-sys
 </body></html>"""
 
 
-def draw(name, spec, tmp):
+def draw(name, spec, tmp, browser):
     page = tmp / f"{name}.html"
     page.write_text(card_html(spec), encoding="utf-8")
     png = tmp / f"{name}.png"
-    subprocess.run([CHROME, "--headless=new", "--disable-gpu", "--hide-scrollbars",
+    subprocess.run([browser, "--headless=new", "--disable-gpu", "--hide-scrollbars",
                     f"--window-size={WIDTH},{HEIGHT}", "--virtual-time-budget=5000",
                     f"--screenshot={png}", page.as_uri()],
                    check=True, capture_output=True)
-    subprocess.run(["sips", "-s", "format", "jpeg", "-s", "formatOptions", "82",
-                    str(png), "--out", str(OUT / f"{name}.jpg")], check=True, capture_output=True)
+    to_jpeg(png, OUT / f"{name}.jpg")
 
 
 def stale(specs, manifest):
@@ -137,12 +160,13 @@ def main():
     if args.check:
         print("\n".join(todo) or "all cards current")
         return 1 if todo else 0
-    if todo and not Path(CHROME).is_file():
-        raise SystemExit(f"needs Google Chrome at {CHROME}")
+    browser = chrome()
+    if todo and not browser:
+        raise SystemExit("needs Chrome or Chromium: set OWB_CHROME to its path")
     OUT.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory() as tmp:
         for name in todo:
-            draw(name, specs[name], Path(tmp))
+            draw(name, specs[name], Path(tmp), browser)
             print(f"drew {name}.jpg")
     for old in OUT.glob("*.jpg"):
         if old.stem not in specs:
