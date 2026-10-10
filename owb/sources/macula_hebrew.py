@@ -18,6 +18,10 @@ from owb import refs
 from owb.sources import read_text
 
 TSV_PATH = "WLC/tsv/macula-hebrew.tsv"
+
+# Word-sense columns (SDBH, UBS MARBLE): not used or redistributed; see
+# tests/test_licensing.py.
+RESTRICTED = ("lexdomain", "contextualdomain", "coredomain", "sdbh")
 TEXT_ID = "WLC@macula-hebrew"
 _REF = re.compile(r"(\w+) (\d+):(\d+)!(\d+)")
 

@@ -15,6 +15,11 @@ from owb import refs
 from owb.sources import read_text
 
 TSV_PATH = "SBLGNT/tsv/macula-greek-SBLGNT.tsv"
+
+# Louw-Nida domains (UBS MARBLE): used with permission but not openly
+# licensed, so never read, stored or published. tests/test_licensing.py
+# checks that nothing we publish carries them.
+RESTRICTED = ("domain", "ln")
 _REF = re.compile(r"(\w+) (\d+):(\d+)!(\d+)")
 
 

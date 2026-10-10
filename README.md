@@ -67,6 +67,12 @@ Settings: `gender`, `christos`, `divine_name`, `units`, `deity_pronoun`,
 
 ## Licences
 
+MACULA's word-sense columns (Louw-Nida `domain` and `ln`; Hebrew SDBH
+`lexdomain`, `coredomain`, `contextualdomain`, `sdbh`) are used with
+permission but not openly licensed. They are never extracted or published;
+`tests/test_licensing.py` checks the extracts and the built site, and the
+backend tests check the word table and API.
+
 - Translation, reasoning records and other data in this repository:
   **CC0 1.0** (`LICENSE`).
 - Code (`owb/`, `scripts/`, `tests/`): **MIT** (`LICENSE-CODE`).

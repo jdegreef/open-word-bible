@@ -101,6 +101,16 @@ class ApiTest(TestCase):
         self.assertEqual(self.client.get("/api/passages/XYZ/1/").status_code, 404)
         self.assertEqual(self.client.get("/api/text/JHN/1/?editions=nope").status_code, 400)
 
+    def test_no_restricted_macula_fields(self):
+        # Louw-Nida and SDBH word senses are used with permission, not openly
+        # licensed: the word table and the API never carry them.
+        from owb.sources import macula_greek, macula_hebrew
+        restricted = set(macula_greek.RESTRICTED + macula_hebrew.RESTRICTED)
+        self.assertFalse({f.name for f in Word._meta.get_fields()} & restricted)
+        words = self.client.get("/api/passages/jhn/1/").json()["words"]["JHN.1.1"]
+        self.assertTrue(words)
+        self.assertFalse({k for w in words for k in w} & restricted)
+
     def test_editions_and_health(self):
         self.assertEqual({e["code"] for e in self.client.get("/api/editions/").json()}, {"sblgnt", "bsb"})
         self.assertEqual(self.client.get("/healthz").json(), {"ok": True})
