@@ -207,8 +207,7 @@ def nav_menus():
     rows = []
     for book, chaps in books():
         _, _, progress = book_progress(book, chaps)
-        pills = "".join(f'<a class="chap{"" if p.complete else " part"}" href="{p.url}" '
-                        f'title="{html.escape(p.name)}">{p.chapter}</a>' for p in chaps)
+        pills = chapter_pills(chaps)
         rows.append(f'<div class="dd-book">{row(f"/read/#{book.lower()}", BOOK_NAMES[book]["en"], progress, "book")}'
                     f'<div class="dd-chaps" aria-label="{BOOK_NAMES[book]["en"]} chapters">{pills}</div></div>')
     read = (f'<p class="dd-head">Books so far</p>{"".join(rows)}'
@@ -372,6 +371,20 @@ def book_progress(book, chapters_):
     return done, total, (f"{done} of {total} chapters" + (", complete" if done == total else ""))
 
 
+def chapter_pills(chaps, current=None):
+    """A pill per chapter, linked; a dashed one for a chapter only partly
+    translated, and the current chapter marked."""
+    return "".join(
+        f'<a class="chap{"" if p.complete else " part"}" href="{p.url}"'
+        f'{" aria-current=page" if p.chapter == current else ""} title="{html.escape(p.name)}">{p.chapter}</a>'
+        for p in chaps)
+
+
+def meter(done, total):
+    """A progress meter, done of total (decorative: the text says it too)."""
+    return f'<span class="meter" aria-hidden="true"><span style="width:{100 * done / total:.0f}%"></span></span>'
+
+
 def languages_of(records):
     """The reading languages every sentence of a passage has, as names."""
     return [n for code, n in (("en", "English"), ("es", "Espa\u00f1ol"))
@@ -465,10 +478,7 @@ def chapter_strip(book, chapter):
     """Above a passage: its book, how far the book has got, and a pill for
     each chapter translated so far, this one marked."""
     chaps = dict(books())[book]
-    pills = "".join(
-        f'<a class="chap{"" if p.complete else " part"}" href="{p.url}"'
-        f'{" aria-current=page" if p.chapter == chapter else ""} title="{html.escape(p.name)}">{p.chapter}</a>'
-        for p in chaps)
+    pills = chapter_pills(chaps, chapter)
     _, _, progress = book_progress(book, chaps)
     return (f'<nav class="chapstrip" aria-label="{BOOK_NAMES[book]["en"]}: chapters">'
             f'<a class="chap-book" href="/read/#{book.lower()}">{icon(ICONS["book"], 16)}{BOOK_NAMES[book]["en"]}</a>'
@@ -536,7 +546,7 @@ def read_page():
             f'<section class="book-group" id="{book.lower()}" aria-labelledby="book-{book.lower()}">'
             f'<div class="book-head"><h2 id="book-{book.lower()}">{BOOK_NAMES[book]["en"]}</h2>'
             f'<span class="book-progress{" done" if done == total else ""}">{progress}</span>'
-            f'<span class="meter" aria-hidden="true"><span style="width:{100 * done / total:.0f}%"></span></span></div>'
+            f'{meter(done, total)}</div>'
             f'<ul class="a-grid">{"".join(passage_card(p.book, p.chapter) for p in chaps)}</ul></section>')
     cards = "".join(groups)
     body = f"""
@@ -635,10 +645,9 @@ def progress_html():
     rows = []
     for book, chaps in books():
         done, total, progress = book_progress(book, chaps)
-        pills = "".join(f'<a class="chap{"" if p.complete else " part"}" href="{p.url}" '
-                        f'title="{html.escape(p.name)}">{p.chapter}</a>' for p in chaps)
+        pills = chapter_pills(chaps)
         rows.append(f'<li class="book-row"><a class="book-name" href="/read/#{book.lower()}">{BOOK_NAMES[book]["en"]}</a>'
-                    f'<span class="meter" aria-hidden="true"><span style="width:{100 * done / total:.0f}%"></span></span>'
+                    f'{meter(done, total)}'
                     f'<span class="book-progress{" done" if done == total else ""}">{progress}</span>'
                     f'<span class="chap-pills">{pills}</span></li>')
     return f"""
