@@ -113,6 +113,7 @@ def page(title, body, path=None, current="", description=""):
 <meta name="description" content="{html.escape(description)}">{meta}
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <script>{BOOT_SCRIPT}</script>
+<link rel="preload" href="/fonts/gentium-book-plus-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/style.css">
 <script src="/site.js" defer></script>
 </head>
@@ -807,6 +808,7 @@ def build(out):
         path.write_text(text, encoding="utf-8")
     for asset in ("style.css", "reader.js", "site.js"):
         shutil.copy(ROOT / "web" / asset, out / asset)
+    shutil.copytree(ROOT / "web" / "fonts", out / "fonts")
     return sorted(files) + ["reader.js", "site.js", "style.css"]
 
 
