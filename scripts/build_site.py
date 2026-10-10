@@ -390,9 +390,10 @@ def chapter_page(book, chapter):
 <div class="reader">
   <article class="passage">
     <h1 id="title">{html.escape(title["en"])}</h1>
-    <p class="sub" data-i18n="sub">Translated from the SBL Greek New Testament. Tap a verse to see why it reads as it does. &dagger; marks a verse with a footnote.</p>
+    <p class="sub" data-i18n="sub">Translated from the SBL Greek New Testament. Tap a verse to see why it reads as it does. Small letters mark footnotes, listed below the passage.</p>
     <p class="notice" id="partial" hidden></p>
     <div class="text" id="text"></div>
+    <section class="notes" id="notes" aria-label="Notes" hidden></section>
   </article>
   <aside class="panel" id="panel" aria-live="polite" tabindex="-1"></aside>
 </div>

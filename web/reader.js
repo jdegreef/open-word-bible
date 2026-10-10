@@ -10,7 +10,8 @@
   var UI = {
     en: {
       notice: "Sample passage. Every line is an AI draft that has not yet been checked by a reviewer who reads Greek.",
-      sub: "Translated from the SBL Greek New Testament. Tap a verse to see why it reads as it does. \u2020 marks a verse with a footnote.",
+      sub: "Translated from the SBL Greek New Testament. Tap a verse to see why it reads as it does. Small letters mark footnotes, listed below the passage.",
+      notes: "Notes", fn_or: "Or: ", fn_other: "Other manuscripts: ",
       language: "Language", level: "Level", gender: "Gender", title: "Title", pronouns: "Pronouns for God",
       L: "Literal", B: "Balanced", R: "Readable",
       inclusive: "Inclusive", traditional: "Traditional", christ: "Christ", messiah: "Messiah", he: "he", He: "He",
@@ -48,7 +49,8 @@
     },
     es: {
       notice: "Pasaje de muestra. Cada l\u00ednea es un borrador hecho con IA que a\u00fan no ha revisado nadie que lea griego.",
-      sub: "Traducido del Nuevo Testamento griego de la SBL. Toca un vers\u00edculo para ver por qu\u00e9 dice lo que dice. \u2020 marca un vers\u00edculo con nota al pie.",
+      sub: "Traducido del Nuevo Testamento griego de la SBL. Toca un vers\u00edculo para ver por qu\u00e9 dice lo que dice. Las letras peque\u00f1as marcan notas al pie, que aparecen debajo del pasaje.",
+      notes: "Notas", fn_or: "O bien: ", fn_other: "Otros manuscritos: ",
       language: "Idioma", level: "Nivel", gender: "G\u00e9nero", title: "T\u00edtulo", pronouns: "Pronombres para Dios",
       L: "Literal", B: "Equilibrada", R: "Sencilla",
       inclusive: "Inclusivo", traditional: "Tradicional", christ: "Cristo", messiah: "Mes\u00edas", he: "\u00e9l", He: "\u00c9l",
@@ -182,6 +184,30 @@
     return DATA.languages.filter(function (l) { return r.renderings[l]; })[0];
   }
 
+  // Footnote letters: a..z, then aa, ab, ...
+  function letter(n) {
+    var out = "";
+    for (n += 1; n > 0; n = Math.floor((n - 1) / 26)) out = String.fromCharCode(97 + (n - 1) % 26) + out;
+    return out;
+  }
+
+  // A footnote as a printed Bible would give it: the choice, then the
+  // alternatives, labelled for what they are. An uncertain decision's
+  // alternative is a real possibility ("Or:"); a variant is another
+  // manuscript reading; otherwise the alternatives were considered and set
+  // aside, and are never presented as equally possible. The full reasoning is
+  // one tap away.
+  function noteText(d) {
+    var alts = d.alternatives.map(render);
+    var text = render(d.choice);
+    if (alts.length) {
+      var label = d.category === "text_variant" ? "fn_other" : d.uncertain ? "fn_or" : "also";
+      text += ". " + t(label) + alts.join("; ");
+    }
+    if (d.uncertain) text += " (" + t("uncertain") + ")";
+    return text + ".";
+  }
+
   function drawText() {
     var box = document.getElementById("text");
     box.textContent = "";
@@ -191,9 +217,15 @@
     note.textContent = partial ? t("partial") : "";
     document.getElementById("title").textContent = DATA.title[settings.lang];
     var shown = null;   // last verse number printed
+    var notes = [];
     DATA.records.forEach(function (r) {
       var ds = decisionsFor(r);
-      var hasNote = ds.meaning.concat(ds.rendering).some(function (d) { return d.footnote; });
+      var marks = ds.meaning.concat(ds.rendering).filter(function (d) { return d.footnote; })
+        .map(function (d) {
+          var mark = letter(notes.length);
+          notes.push({ mark: mark, record: r, decision: d });
+          return mark;
+        });
       var lang = textLang(r);
       var parts = splitVerses(r, render(r.renderings[lang][settings.level]));
       parts.forEach(function (part, i) {
@@ -207,7 +239,11 @@
         if (part[0] !== shown) span.appendChild(el("sup", null, part[0]));
         shown = part[0];
         span.appendChild(document.createTextNode(part[1]));
-        if (hasNote && i === parts.length - 1) span.appendChild(el("span", "fn", "\u2020"));
+        if (marks.length && i === parts.length - 1) {
+          var sup = el("sup", "fn", marks.join(","));
+          sup.setAttribute("aria-label", t("notes") + " " + marks.join(", "));
+          span.appendChild(sup);
+        }
         span.addEventListener("click", function () { select(r, part[0]); });
         span.addEventListener("keydown", function (e) {
           if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(r, part[0]); }
@@ -216,6 +252,29 @@
         box.appendChild(document.createTextNode(" "));
       });
     });
+    drawNotes(notes);
+  }
+
+  function drawNotes(notes) {
+    var section = document.getElementById("notes");
+    if (!section) return;
+    section.textContent = "";
+    section.hidden = !notes.length;
+    if (!notes.length) return;
+    section.appendChild(el("h2", null, t("notes")));
+    var list = el("ol");
+    notes.forEach(function (n) {
+      var item = el("li");
+      var button = el("button", "note");
+      button.type = "button";
+      button.appendChild(el("span", "note-mark", n.mark));
+      button.appendChild(el("span", "note-ref", verseRange(n.record)));
+      button.appendChild(el("span", "note-text", noteText(n.decision)));
+      button.addEventListener("click", function () { select(n.record); });
+      item.appendChild(button);
+      list.appendChild(item);
+    });
+    section.appendChild(list);
   }
 
   function highlight(ids, card) {

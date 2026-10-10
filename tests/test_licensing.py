@@ -77,12 +77,26 @@ class LicensingTest(unittest.TestCase):
                     self.assertFalse(leaked, (path, word["id"], leaked))
 
     def test_site_has_no_restricted_fields_or_values(self):
-        values = {v for vs in restricted_values().values() for v in vs}
+        # Field names are checked on every file. Values are checked per word:
+        # the restricted codes are short numbers ("3.5"), which also occur in
+        # markup (an SVG radius), so a page-wide search would only find
+        # coincidences. Each word in a page's embedded data is compared with
+        # that same word's restricted values instead.
+        values = restricted_values()
         field = re.compile(r'"(%s)"\s*:' % "|".join(RESTRICTED))
+        blob = re.compile(r'<script type="application/json" id="owb-data">(.*?)</script>', re.S)
+        checked = 0
         for path, text in self.pages.items():
             self.assertIsNone(field.search(text), path)
-            quoted = set(re.findall(r'"([^"\\]{1,40})"', text))
-            self.assertFalse(quoted & values, path)
+            m = blob.search(text)
+            if not m:
+                continue
+            for words in json.loads(m[1]).get("words", {}).values():
+                for word in words:
+                    leaked = values.get(word["id"], set()) & {str(v) for v in word.values()}
+                    self.assertFalse(leaked, (path, word["id"], leaked))
+                    checked += 1
+        self.assertTrue(checked, "no word data found on the site to check")
 
 
 if __name__ == "__main__":
