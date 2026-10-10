@@ -516,16 +516,6 @@ def opening_verse(records):
     return plain(markup.VERSE.split(records[0]["renderings"]["en"]["B"])[0])
 
 
-def review_label(records):
-    """How far review has got, from the records' own status."""
-    reviewed = sum(r["status"] != "ai_draft" for r in records)
-    if reviewed == 0:
-        return "AI draft, not yet reviewed"
-    if reviewed == len(records):
-        return "Reviewed"
-    return f"{reviewed} of {len(records)} sentences reviewed"
-
-
 def passage_card(book, chapter):
     """A passage as a card in the article-card style: its opening verse at
     the default settings, and how much of it is translated and recorded."""
@@ -541,8 +531,7 @@ def passage_card(book, chapter):
             f'<span class="a-section">{BOOK_NAMES[book]["en"]} &middot; {languages}</span>'
             f'<span class="a-title">{html.escape(chapter_name(records, book, chapter))}</span>'
             f'<span class="p-opening">&ldquo;{display(opening)}&rdquo;</span>'
-            f'<span class="a-meta">{meta}</span>'
-            f'<span class="p-status"><span class="status">{review_label(records)}</span></span></a></li>')
+            f'<span class="a-meta">{meta}</span></a></li>')
 
 
 def read_page():
@@ -666,8 +655,7 @@ def progress_html():
 <div><b>{reviewed}</b><span>reviewed by a scholar so far</span></div>
 </div>
 <p>Everything published so far is an <strong>AI draft</strong>, in English, with Spanish for some passages. Nothing is
-marked reviewed until named reviewers who read Hebrew or Greek approve it, and the reader always
-shows each sentence's status.</p>
+marked reviewed until named reviewers who read Hebrew or Greek approve it.</p>
 <p class="label">Books so far</p>
 <ul class="book-rows">{"".join(rows)}</ul>
 </section>
@@ -1047,8 +1035,7 @@ def article_page(article, articles):
 <p class="eyebrow"><a href="/articles/#{article["section"]}">{SECTIONS[article["section"]]}</a></p>
 <h1>{display(article["title"])}</h1>
 <p class="dek">{display(article["summary"])}</p>
-<p class="byline">{MARK}<span>Open Word Bible &middot; {_date(article["date"])} &middot; {article["minutes"]} min read
-<span class="status">Draft, not yet reviewed</span></span></p>
+<p class="byline">{MARK}<span>Open Word Bible &middot; {_date(article["date"])} &middot; {article["minutes"]} min read</span></p>
 </header>
 <div class="article-body">
 {content}
