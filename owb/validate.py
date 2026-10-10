@@ -116,11 +116,12 @@ def source_text(tokens):
     return " ".join(t.text + t.after.rstrip() for t in tokens)
 
 
-def validate_record(record, known_tokens=None):
+def validate_record(record, known_tokens=None, original_language=True):
     """Return a list of error strings (empty if the record is valid).
 
     known_tokens maps token id -> Token; by default it is loaded from MACULA
-    for the record's refs.
+    for the record's refs. original_language=False skips the check of Greek
+    and Hebrew quoted outside source, which needs the whole MACULA data.
     """
     errors = []
     if not _fields(record, SCHEMA, "record", errors):
@@ -249,7 +250,8 @@ def validate_record(record, known_tokens=None):
             if not isinstance(d.get(flag), bool):
                 errors.append(f"{where}.{flag}: must be true or false")
 
-    check_original_language(record, errors)
+    if original_language:
+        check_original_language(record, errors)
 
     if record.get("status") not in STATUSES:
         errors.append(f"status: {record.get('status')!r} not allowed")
