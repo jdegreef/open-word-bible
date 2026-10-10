@@ -3,6 +3,7 @@ title: "Showing our work: what a reasoning record is"
 summary: Every sentence in Open Word Bible carries a record of the original words, a gloss, three translations and every decision behind them.
 date: 2026-10-10
 order: 2
+section: method
 ---
 Open any verse on this site and a panel opens beside it. What you see there is the verse's *reasoning record*. It is the heart of the project, and it is worth knowing what is in it.
 

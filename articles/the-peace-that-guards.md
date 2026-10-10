@@ -3,6 +3,7 @@ title: "The peace that stands guard: Philippians 4:6–7"
 summary: Paul's words on anxiety and prayer, read closely. A military verb, a promise rather than a payment, and thanks that does not wait for the answer.
 date: 2026-10-10
 order: 8
+section: passage
 ---
 Philippians 4:6–7 is one of the most loved passages in Paul's letters, and one of the most quoted to anxious people. Read closely, it says more than "don't worry". Here is the Balanced level:
 
