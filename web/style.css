@@ -359,9 +359,18 @@ footer.site ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 9p
 footer.site nav a { color: var(--text); text-decoration: none; }
 footer.site nav a:hover { color: var(--accent); text-decoration: underline; }
 .pill { display: inline-block; font-size: 11.5px; font-weight: 700; letter-spacing: .04em; border: 1px solid var(--gold); color: var(--gold); border-radius: 999px; padding: 0 8px; margin-right: 4px; }
+/* The language switch, as on Ochorus: a label, then each language in its
+   own name; the current one is plain text. */
+.foot-langs {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 18px;
+  border-top: 1px solid var(--line); margin-top: 44px; padding-top: 20px;
+}
+footer.site .foot-langs h2 { margin: 0; }
+footer.site .foot-langs ul { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+.foot-langs [aria-current] { font-weight: 700; color: var(--text); }
 .foot-base {
   display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px;
-  border-top: 1px solid var(--line); margin-top: 44px; padding-top: 20px; color: var(--muted); font-size: 13px;
+  border-top: 1px solid var(--line); margin-top: 20px; padding-top: 20px; color: var(--muted); font-size: 13px;
 }
 .foot-base p { margin: 0; }
 

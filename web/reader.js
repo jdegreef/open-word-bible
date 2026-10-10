@@ -5,99 +5,21 @@
   var DATA = JSON.parse(document.getElementById("owb-data").textContent);
   var STORE = "owb.settings";
 
-  // Interface text in each reading language. Decision notes are written in
-  // English for now; Spanish readers are told so in the panel.
-  var UI = {
-    en: {
-      notice: "Sample passage. Every line is an AI draft that has not yet been checked by a reviewer who reads Greek.",
-      sub: "Translated from the SBL Greek New Testament. Tap a verse to see why it reads as it does. Small letters mark footnotes, listed below the passage.",
-      notes: "Notes", fn_or: "Or: ", fn_other: "Other manuscripts: ",
-      language: "Language", level: "Level", gender: "Gender", title: "Title", pronouns: "Pronouns for God",
-      L: "Literal", B: "Balanced", R: "Readable",
-      inclusive: "Inclusive", traditional: "Traditional", christ: "Christ", messiah: "Messiah", he: "he", He: "He",
-      hint_level: {
-        L: "Follows the Greek closely. Words in [brackets] are added for sense.",
-        B: "Natural English that tracks the Greek closely. The default.",
-        R: "Plain modern English for first-time and young readers."
-      },
-      hint_gender: ["Inclusive: \u201call people\u201d where the original means everyone.",
-                    "Traditional: \u201cmen\u201d, as older translations read."],
-      hint_christos: ["\u201cChrist\u201d: the familiar form.",
-                      "\u201cMessiah\u201d: shows it is a title meaning \u201canointed king\u201d."],
-      hint_deity_pronoun: ["\u201che\u201d: lowercase, like the original, which has no capital letters.",
-                           "\u201cHe\u201d: capitalised, as some readers prefer out of reverence."],
-      plural: "Plural you", hint_plural_you: ["", ""],
-      partial: "Some sentences in this chapter are not yet translated; they are shown in English, in grey.",
-      verse_label: "Verse {v}: show the reasoning",
-      settings: "Reading settings", close: "Close",
-      empty_title: "The reasoning behind each verse",
-      empty_text: "Tap or click any verse to see the Greek, a word-for-word gloss, and every translation decision with its reason.",
-      status: "AI draft \u00b7 not yet reviewed",
-      greek: "Greek (SBLGNT), word by word", gloss: "Word for word", notes_language: "",
-      word_hint: "Tap a Greek word for its dictionary form and grammar.",
-      lemma: "Dictionary form", strong: "Strong\u2019s",
-      meaning: "What the original means", rendering: "How English {level} says it",
-      no_meaning: "No meaning notes for this verse.", no_rendering: "No wording notes for this level.",
-      also: "Also considered: ", uncertain: "Uncertain", footnote: "Footnote",
-      category: {
-        text_variant: "Manuscript reading", punctuation: "Punctuation",
-        word_sense: "Word meaning", grammar: "Grammar", allusion: "Echo of other scripture",
-        idiom: "Idiom", culture: "Culture and history", theology: "Theology",
-        word_choice: "Word choice", word_order: "Word order", register: "Style",
-        supplied_words: "Words added for sense", setting_alternative: "Reader setting"
-      }
-    },
-    es: {
-      notice: "Pasaje de muestra. Cada l\u00ednea es un borrador hecho con IA que a\u00fan no ha revisado nadie que lea griego.",
-      sub: "Traducido del Nuevo Testamento griego de la SBL. Toca un vers\u00edculo para ver por qu\u00e9 dice lo que dice. Las letras peque\u00f1as marcan notas al pie, que aparecen debajo del pasaje.",
-      notes: "Notas", fn_or: "O bien: ", fn_other: "Otros manuscritos: ",
-      language: "Idioma", level: "Nivel", gender: "G\u00e9nero", title: "T\u00edtulo", pronouns: "Pronombres para Dios",
-      L: "Literal", B: "Equilibrada", R: "Sencilla",
-      inclusive: "Inclusivo", traditional: "Tradicional", christ: "Cristo", messiah: "Mes\u00edas", he: "\u00e9l", He: "\u00c9l",
-      hint_level: {
-        L: "Sigue de cerca el griego. Las palabras entre [corchetes] se a\u00f1aden para dar sentido.",
-        B: "Espa\u00f1ol natural que sigue de cerca el griego. La opci\u00f3n predeterminada.",
-        R: "Espa\u00f1ol sencillo y actual para quienes leen por primera vez y para j\u00f3venes."
-      },
-      hint_gender: ["Inclusivo: \u00abtoda la humanidad\u00bb donde el original se refiere a todos.",
-                    "Tradicional: \u00ablos hombres\u00bb, como en traducciones antiguas."],
-      hint_christos: ["\u00abCristo\u00bb: la forma conocida.",
-                      "\u00abMes\u00edas\u00bb: muestra que es un t\u00edtulo que significa \u00abrey ungido\u00bb."],
-      hint_deity_pronoun: ["\u00ab\u00e9l\u00bb: en min\u00fascula, como el original, que no tiene may\u00fasculas.",
-                           "\u00ab\u00c9l\u00bb: con may\u00fascula, como prefieren algunos lectores por reverencia."],
-      plural: "Plural", hint_plural_you: ["\u00abustedes\u00bb: como se habla en Am\u00e9rica Latina.",
-                                           "\u00abvosotros\u00bb: como se habla en la mayor parte de Espa\u00f1a."],
-      partial: "Algunas frases de este cap\u00edtulo a\u00fan no est\u00e1n traducidas al espa\u00f1ol; se muestran en ingl\u00e9s, en gris.",
-      verse_label: "Vers\u00edculo {v}: ver el razonamiento",
-      settings: "Ajustes de lectura", close: "Cerrar",
-      empty_title: "El razonamiento detr\u00e1s de cada vers\u00edculo",
-      empty_text: "Toca cualquier vers\u00edculo para ver el griego, una glosa palabra por palabra y cada decisi\u00f3n de traducci\u00f3n con su raz\u00f3n.",
-      status: "Borrador de IA \u00b7 a\u00fan sin revisar",
-      greek: "Griego (SBLGNT), palabra por palabra", gloss: "Palabra por palabra (en ingl\u00e9s)",
-      word_hint: "Toca una palabra griega para ver su forma de diccionario y su gram\u00e1tica. Las glosas est\u00e1n en ingl\u00e9s.",
-      lemma: "Forma de diccionario", strong: "Strong",
-      notes_language: "Por ahora, las notas est\u00e1n en ingl\u00e9s.",
-      meaning: "Lo que significa el original", rendering: "C\u00f3mo lo dice la versi\u00f3n {level} en espa\u00f1ol",
-      no_meaning: "No hay notas de significado para este vers\u00edculo.", no_rendering: "No hay notas de redacci\u00f3n para este nivel.",
-      also: "Tambi\u00e9n se consider\u00f3: ", uncertain: "Incierto", footnote: "Nota al pie",
-      category: {
-        text_variant: "Lectura de manuscritos", punctuation: "Puntuaci\u00f3n",
-        word_sense: "Significado de la palabra", grammar: "Gram\u00e1tica", allusion: "Eco de otra escritura",
-        idiom: "Modismo", culture: "Cultura e historia", theology: "Teolog\u00eda",
-        word_choice: "Elecci\u00f3n de palabras", word_order: "Orden de las palabras", register: "Estilo",
-        supplied_words: "Palabras a\u00f1adidas para dar sentido", setting_alternative: "Ajuste del lector"
-      }
-    }
-  };
+  // Interface text in the page's language (i18n/<lang>.json, reader.ui).
+  // Decision notes are written in English for now; readers of other
+  // languages are told so in the panel.
+  var UI = DATA.ui;
 
-  function t(key) { return UI[settings.lang][key]; }
+  function t(key) { return UI[key]; }
 
-  var settings = { lang: "en", level: "B", gender: 0, christos: 0, deity_pronoun: 0, plural_you: 0 };
+  // The reading language is the page's (/es/... is Spanish); the footer
+  // switches it. The other settings are kept across pages and languages.
+  var settings = { level: "B", gender: 0, christos: 0, deity_pronoun: 0, plural_you: 0 };
   try {
     var saved = JSON.parse(localStorage.getItem(STORE) || "{}");
     for (var k in settings) if (k in saved) settings[k] = saved[k];
   } catch (e) { /* storage unavailable: use defaults */ }
-  if (!DATA.languages.includes(settings.lang)) settings.lang = DATA.languages[0];
+  settings.lang = DATA.lang;
 
   var current = null;   // selected record
   var panelEl = document.getElementById("panel");
@@ -156,17 +78,10 @@
         b.setAttribute("aria-pressed", on ? "true" : "false");
       });
     });
-    document.querySelectorAll("[data-i18n]").forEach(function (n) {
-      n.textContent = t(n.getAttribute("data-i18n"));
-    });
     document.getElementById("hint-level").textContent = t("hint_level")[settings.level];
-    document.querySelectorAll("[data-only-lang]").forEach(function (n) {
-      n.hidden = n.getAttribute("data-only-lang") !== settings.lang;
-    });
     ["gender", "christos", "deity_pronoun", "plural_you"].forEach(function (name) {
       document.getElementById("hint-" + name).textContent = t("hint_" + name)[settings[name]];
     });
-    document.documentElement.lang = settings.lang;
     // The summary on the phone settings button: each shown choice's label.
     var summary = [];
     document.querySelectorAll(".control:not([hidden]) .seg").forEach(function (seg) {
@@ -215,7 +130,7 @@
     var note = document.getElementById("partial");
     note.hidden = !partial;
     note.textContent = partial ? t("partial") : "";
-    document.getElementById("title").textContent = DATA.title[settings.lang];
+    document.getElementById("title").textContent = DATA.title;
     var shown = null;   // last verse number printed
     var notes = [];
     DATA.records.forEach(function (r) {
@@ -316,7 +231,7 @@
     close.setAttribute("aria-label", t("close"));
     close.addEventListener("click", deselect);
     panel.appendChild(close);
-    panel.appendChild(el("h2", null, DATA.title[settings.lang].replace(/[\d:\u2013\s]+$/, "") + " " + DATA.chapter + ":" + verseRange(current)));
+    panel.appendChild(el("h2", null, DATA.title.replace(/[\d:\u2013\s]+$/, "") + " " + DATA.chapter + ":" + verseRange(current)));
     panel.appendChild(el("span", "status", t("status")));
 
     panel.appendChild(el("h3", null, t("greek")));

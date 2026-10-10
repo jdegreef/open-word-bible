@@ -152,3 +152,17 @@
     if (to && nav.classList.contains("open") && !nav.contains(to) && !(menuBtn && menuBtn.contains(to))) showMenu(false);
   });
 })();
+
+// The footer's language links (language_links in scripts/build_site.py):
+// the choice is kept as owb-lang, so the boot script in each page opens
+// later pages in that language too, and the verse open in the reader
+// (#v12) carries over to the same chapter in the other language.
+(function () {
+  "use strict";
+  document.querySelectorAll("a[data-lang]").forEach(function (a) {
+    a.addEventListener("click", function () {
+      try { localStorage.setItem("owb-lang", a.getAttribute("data-lang")); } catch (e) { /* this page only */ }
+      if (/^#v\d+$/.test(location.hash)) a.hash = location.hash;
+    });
+  });
+})();

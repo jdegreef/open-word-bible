@@ -1,10 +1,11 @@
-"""Build the static site into site/ from content/ and data/grc/.
+"""Build the static site into site/ from content/, data/grc/ and i18n/.
 
 Usage: python3 scripts/build_site.py [-o DIR]
 
 Needs only the repository: the Greek words come from the committed extracts
 in data/grc/ (see scripts/extract_tokens.py), so a deploy never fetches the
-full sources.
+full sources. Every page is built in each interface language: English at
+the root, Spanish under /es/.
 """
 import argparse
 import functools
@@ -23,13 +24,12 @@ from owb import markup, morph, refs  # noqa: E402
 
 BOOK_NAMES = {"JHN": {"en": "John", "es": "Juan"},
               "PHP": {"en": "Philippians", "es": "Filipenses"}}
+# The interface languages, English first (see catalog below).
 LANGUAGES = ("en", "es")
 SITE_NAME = "Open Word Bible"
 # The site's home (Render serves it on openwordbible.org and redirects www).
 # Canonical links, the sitemap and link previews use it.
 SITE_URL = "https://openwordbible.org"
-DESCRIPTION = ("A free translation of the Bible from Hebrew and Greek, "
-               "with the reasoning behind every sentence.")
 GITHUB_URL = "https://github.com/jdegreef/open-word-bible"
 
 # The open-book mark: the favicon, and the logo in the header and footer
@@ -69,6 +69,29 @@ ICONS = {
 }
 
 
+# The site's interface languages. English is served at the root and every
+# other language under its own prefix (/es/...), as Ochorus does; each page
+# is built once per language. Interface text lives in i18n/<lang>.json.
+I18N = ROOT / "i18n"
+
+
+@functools.lru_cache(maxsize=None)
+def catalog(lang):
+    return json.loads((I18N / f"{lang}.json").read_text(encoding="utf-8"))
+
+
+def t(lang, key, **values):
+    """Interface text in lang. Catalog values are trusted HTML; {name}
+    placeholders are filled from values, which the caller escapes."""
+    text = catalog(lang)[key]
+    return text.format(**values) if values else text
+
+
+def url(lang, path):
+    """A site path ("/read/") in a language: English has no prefix."""
+    return path if lang == "en" else f"/{lang}{path}"
+
+
 @functools.lru_cache(maxsize=None)
 def asset(name):
     """The URL of a file from web/, with its content hash as a version.
@@ -78,20 +101,30 @@ def asset(name):
     return f"/{name}?v={digest}"
 
 
-# Colour modes (see web/style.css and web/site.js): value, label, and the
-# background and accent its swatch shows. "auto" follows the device.
-COLOUR_MODES = (("auto", "Automatic", "#faf6ef", "#16130f"),
-                ("light", "Paper", "#faf6ef", "#3f3d9a"),
-                ("sepia", "Sepia", "#f4ecd8", "#3f3d9a"),
-                ("dark", "Lamplight", "#16130f", "#9c9af2"),
-                ("night", "Night", "#000000", "#e0b45c"),
-                ("contrast", "High contrast", "#ffffff", "#000000"))
+# Colour modes (see web/style.css and web/site.js): value, and the
+# background and accent its swatch shows. Labels are in i18n/ (theme.*).
+# "auto" follows the device.
+COLOUR_MODES = (("auto", "#faf6ef", "#16130f"),
+                ("light", "#faf6ef", "#3f3d9a"),
+                ("sepia", "#f4ecd8", "#3f3d9a"),
+                ("dark", "#16130f", "#9c9af2"),
+                ("night", "#000000", "#e0b45c"),
+                ("contrast", "#ffffff", "#000000"))
 
 # Applies the saved colour mode before the first paint, so a page never
 # flashes the default colours. Mirrors web/site.js.
 BOOT_SCRIPT = ("try{var t=localStorage.getItem('owb-theme');"
                "if(['light','sepia','dark','night','contrast'].indexOf(t)>=0)"
                "document.documentElement.setAttribute('data-theme',t)}catch(e){}")
+
+# A reader who picked a language in the footer (web/site.js keeps it as
+# owb-lang) is taken to this page in that language before the first paint,
+# so a link shared in English still opens in Spanish for them. Every page
+# with a path exists in every language.
+LANG_SCRIPT = ("try{var l=localStorage.getItem('owb-lang'),h=document.documentElement.lang;"
+               f"if(l&&l!==h&&{list(LANGUAGES)!r}.indexOf(l)>=0){{"
+               "var p=h==='en'?location.pathname:location.pathname.slice(h.length+1);"
+               "location.replace((l==='en'?'':'/'+l)+p+location.search+location.hash)}}catch(e){}")
 
 GEAR = ('<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
         'stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
@@ -103,20 +136,22 @@ GEAR = ('<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="cur
         '1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4'
         'h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>')
 
-COLOUR_MENU = (
-    '<div class="prefs">'
-    '<button type="button" class="tool-btn prefs-btn" aria-expanded="false" aria-controls="colour-menu" '
-    f'aria-label="Theme" title="Theme">{GEAR}</button>'
-    '<div id="colour-menu" class="prefs-menu" role="group" aria-labelledby="colour-menu-label" hidden>'
-    '<p class="prefs-label" id="colour-menu-label">Theme</p>'
-    '<div role="radiogroup" aria-labelledby="colour-menu-label">'
-    + "".join(
-        f'<button type="button" role="radio" aria-checked="{"true" if v == "auto" else "false"}" '
-        f'tabindex="{0 if v == "auto" else -1}" data-theme-option="{v}">'
-        f'<span class="swatch" style="--sw-bg:{bg};--sw-accent:{accent}" aria-hidden="true"></span>'
-        f'{label}<span class="check" aria-hidden="true">&#10003;</span></button>'
-        for v, label, bg, accent in COLOUR_MODES)
-    + '</div></div></div>')
+def colour_menu(lang):
+    label = t(lang, "tools.theme")
+    return (
+        '<div class="prefs">'
+        '<button type="button" class="tool-btn prefs-btn" aria-expanded="false" aria-controls="colour-menu" '
+        f'aria-label="{label}" title="{label}">{GEAR}</button>'
+        '<div id="colour-menu" class="prefs-menu" role="group" aria-labelledby="colour-menu-label" hidden>'
+        f'<p class="prefs-label" id="colour-menu-label">{label}</p>'
+        '<div role="radiogroup" aria-labelledby="colour-menu-label">'
+        + "".join(
+            f'<button type="button" role="radio" aria-checked="{"true" if v == "auto" else "false"}" '
+            f'tabindex="{0 if v == "auto" else -1}" data-theme-option="{v}">'
+            f'<span class="swatch" style="--sw-bg:{bg};--sw-accent:{accent}" aria-hidden="true"></span>'
+            f'{t(lang, "theme." + v)}<span class="check" aria-hidden="true">&#10003;</span></button>'
+            for v, bg, accent in COLOUR_MODES)
+        + '</div></div></div>')
 
 
 OG = ROOT / "web" / "og"
@@ -131,28 +166,35 @@ def og_card_article(article):
     return f"article-{article['slug']}"
 
 
-SITE_CARD_ALT = "Open Word Bible: the Bible, translated from Hebrew and Greek, with its reasoning shown."
-
-
-def page(title, body, path=None, current="", description="", card="site", card_alt=None):
-    """A full HTML page. path is the page's URL path ("/read/"); pages with
-    one get a canonical link and link-preview tags, and go in the sitemap.
-    card names the page's preview image in web/og/; a card not drawn yet
-    falls back to the site's. card_alt says what the card shows."""
+def page(lang, title, body, path=None, current="", description="", card="site", card_alt=None,
+         translated=LANGUAGES):
+    """A full HTML page in lang. path is the page's URL path without the
+    language ("/read/"); pages with one get a canonical link, hreflang links
+    to the page in each language in translated, and link-preview tags, and
+    go in the sitemap. A page whose content is not yet in lang (an article
+    shown in English) names the English page as canonical. card names the
+    page's preview image in web/og/; a card not drawn yet falls back to the
+    site's. card_alt says what the card shows."""
     full_title = f"{title} · {SITE_NAME}" if title != SITE_NAME else SITE_NAME
-    description = description or DESCRIPTION
+    description = description or t(lang, "meta.description")
     meta = ""
     if path is not None:
-        url = html.escape(SITE_URL + path)
+        own = html.escape(SITE_URL + url(lang, path))
+        canonical = own if lang in translated else html.escape(SITE_URL + url(translated[0], path))
+        alternates = "".join(
+            f'\n<link rel="alternate" hreflang="{code}" href="{html.escape(SITE_URL + url(code, path))}">'
+            for code in translated)
+        alternates += f'\n<link rel="alternate" hreflang="x-default" href="{html.escape(SITE_URL + path)}">'
         if not (OG / f"{card}.jpg").is_file():
             card, card_alt = "site", None
-        card_alt = card_alt or SITE_CARD_ALT
+        card_alt = card_alt or t(lang, "meta.card_alt")
         image = html.escape(f"{SITE_URL}/og/{card}.jpg")
         meta = f"""
-<link rel="canonical" href="{url}">
+<link rel="canonical" href="{canonical}">{alternates}
 <meta property="og:site_name" content="{SITE_NAME}">
 <meta property="og:type" content="website">
-<meta property="og:url" content="{url}">
+<meta property="og:url" content="{own}">
+<meta property="og:locale" content="{lang}">
 <meta property="og:title" content="{html.escape(full_title)}">
 <meta property="og:description" content="{html.escape(description)}">
 <meta property="og:image" content="{image}">
@@ -160,88 +202,100 @@ def page(title, body, path=None, current="", description="", card="site", card_a
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="{html.escape(card_alt)}">
 <meta name="twitter:card" content="summary_large_image">"""
+    boot = BOOT_SCRIPT + (LANG_SCRIPT if path is not None else "")
     return f"""<!doctype html>
-<html lang="en">
+<html lang="{lang}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{html.escape(full_title)}</title>
 <meta name="description" content="{html.escape(description)}">{meta}
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<script>{BOOT_SCRIPT}</script>
+<script>{boot}</script>
 <link rel="preload" href="/fonts/hanken-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/gentium-book-plus-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{asset("style.css")}">
 <script src="{asset("site.js")}" defer></script>
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
-{site_header(current, path)}
+<a class="skip" href="#main">{t(lang, "skip")}</a>
+{site_header(lang, current, path)}
 <main class="wrap" id="main" tabindex="-1">
 {body}
 </main>
-{site_footer()}
+{site_footer(lang, path)}
 </body>
 </html>
 """
 
 
+def languages_label(records):
+    """"English · Español": the languages every sentence of a passage is in,
+    each in its own name."""
+    return " &middot; ".join(t(code, "language_name") for code in LANGUAGES
+                             if all(code in r["renderings"] for r in records))
+
+
 @functools.lru_cache(maxsize=None)
-def nav_menus():
-    """The header's dropdowns, as [(key, label, icon, href, panel html)].
-    Built once per build; site_header marks the current one."""
-    def row(href, title, note="", ico=None, ext=False):
+def nav_menus(lang):
+    """The header's dropdowns in lang, as [(key, label, icon, href, panel
+    html)]. Built once per build and language; site_header marks the
+    current one."""
+    def row(href, title, note="", ico=None, ext=False, text_lang=None):
         lead = f'<span class="dd-ico">{icon(ICONS[ico])}</span>' if ico else ""
         note = f'<span class="dd-note">{note}</span>' if note else ""
         rel = ' rel="noopener"' if ext else ""
+        tl = f' lang="{text_lang}"' if text_lang and text_lang != lang else ""
         return (f'<a class="dd-item" href="{href}"{rel}>{lead}'
-                f'<span class="dd-text"><span class="dd-title">{title}</span>{note}</span></a>')
+                f'<span class="dd-text"><span class="dd-title"{tl}>{title}</span>{note}</span></a>')
 
     def all_link(href, label):
         return f'<a class="dd-all" href="{href}">{label} {icon(ICONS["arrow"], 16)}</a>'
 
     rows = []
-    for url, title, records in passages():
+    for book, chapter, records in passages():
         verses = len({v for r in records for v in r["refs"]})
-        langs = [n for code, n in (("en", "English"), ("es", "Español"))
-                 if all(code in r["renderings"] for r in records)]
-        rows.append(row(url, display(title), f"{verses} verses &middot; {' &middot; '.join(langs)}", "book"))
-    read = (f'<p class="dd-head">Passages so far</p>{"".join(rows)}'
-            f'{all_link("/read/", "All passages")}')
+        note = f"{t(lang, 'nav.verses', n=verses)} &middot; {languages_label(records)}"
+        rows.append(row(url(lang, chapter_url(book, chapter)), display(chapter_title(records, book, chapter, lang)), note, "book"))
+    read = (f'<p class="dd-head">{t(lang, "nav.passages_so_far")}</p>{"".join(rows)}'
+            f'{all_link(url(lang, "/read/"), t(lang, "nav.all_passages"))}')
 
-    articles = sorted(load_articles(), key=lambda a: a["order"])
+    articles = sorted(load_articles(lang), key=lambda a: a["order"])
     groups = "".join(
-        f'<div class="dd-col"><p class="dd-head">{label}</p>'
-        + "".join(row(article_url(a), display(a["title"]), f'{a["minutes"]} min read')
+        f'<div class="dd-col"><p class="dd-head">{catalog(lang)["sections"][key]}</p>'
+        + "".join(row(url(lang, article_url(a)), display(a["title"]), t(lang, "article.min_read", n=a["minutes"]),
+                      text_lang=a["lang"])
                   for a in articles if a["section"] == key)
         + "</div>"
-        for key, label in SECTIONS.items())
-    arts = f'<div class="dd-cols">{groups}</div>{all_link("/articles/", "All articles")}'
+        for key in SECTIONS)
+    arts = f'<div class="dd-cols">{groups}</div>{all_link(url(lang, "/articles/"), t(lang, "nav.all_articles"))}'
 
     about = ("".join((
-        row("/about/", "About the project", "What it is and how it is licensed", "info"),
-        row("/about/#credits", "Sources and credits", "The texts and data it is built on", "scale"),
-        row("/#help", "Help make it", "Reviewers, speakers and developers", "users"),
-        row(GITHUB_URL, "Source code", "Data, validator and site on GitHub", "code", ext=True),
+        row(url(lang, "/about/"), t(lang, "nav.about_project"), t(lang, "nav.about_project_note"), "info"),
+        row(url(lang, "/about/#credits"), t(lang, "nav.credits"), t(lang, "nav.credits_note"), "scale"),
+        row(url(lang, "/#help"), t(lang, "nav.help"), t(lang, "nav.help_note"), "users"),
+        row(GITHUB_URL, t(lang, "nav.source"), t(lang, "nav.source_note"), "code", ext=True),
     )))
-    return (("read", "Read", "book", "/read/", read, "dd-read"),
-            ("articles", "Articles", "articles", "/articles/", arts, "dd-wide"),
-            ("about", "About", "info", "/about/", about, "dd-about"))
+    return (("read", t(lang, "nav.read"), "book", "/read/", read, "dd-read"),
+            ("articles", t(lang, "nav.articles"), "articles", "/articles/", arts, "dd-wide"),
+            ("about", t(lang, "nav.about"), "info", "/about/", about, "dd-about"))
 
 
-def site_header(current, path=None):
+def site_header(lang, current, path=None):
     """Logo, the main links with their dropdowns, and the tools. On narrow
     screens the links fold into a panel behind the menu button, where each
     dropdown opens in place (web/site.js). The section trigger for current
     is lit, and the dropdown link to this page (path) is aria-current."""
     home_on = current == "/"
-    items = [f'<li><a class="nav-link" href="/"{" aria-current=page" if home_on else ""}>'
-             f'{icon(ICONS["home"])}<span>Home</span></a></li>']
-    for key, label, ico, href, panel, cls in nav_menus():
+    home = url(lang, "/")
+    items = [f'<li><a class="nav-link" href="{home}"{" aria-current=page" if home_on else ""}>'
+             f'{icon(ICONS["home"])}<span>{t(lang, "nav.home")}</span></a></li>']
+    for key, label, ico, href, panel, cls in nav_menus(lang):
         on = current == href
         if path:
-            panel = panel.replace(f'class="dd-item" href="{path}"', f'class="dd-item" href="{path}" aria-current="page"')
-            panel = panel.replace(f'class="dd-all" href="{path}"', f'class="dd-all" href="{path}" aria-current="page"')
+            here = url(lang, path)
+            panel = panel.replace(f'class="dd-item" href="{here}"', f'class="dd-item" href="{here}" aria-current="page"')
+            panel = panel.replace(f'class="dd-all" href="{here}"', f'class="dd-all" href="{here}" aria-current="page"')
         items.append(
             f'<li class="nav-item">'
             f'<button type="button" class="nav-link nav-trigger{" active" if on else ""}" '
@@ -249,14 +303,73 @@ def site_header(current, path=None):
             f'{icon(ICONS[ico])}<span>{label}</span>{icon(ICONS["chevron"], 15, "icon caret")}</button>'
             f'<div class="dropdown {cls}" id="dd-{key}" hidden>{panel}</div></li>')
     return f"""<header class="site"><div class="wrap bar">
-<a class="brand" href="/"{" aria-current=page" if home_on else ""}>{MARK}<span class="brand-name">Open Word <em>Bible</em></span></a>
-<nav class="primary" id="site-nav" aria-label="Main"><ul class="nav-list">{"".join(items)}</ul></nav>
+<a class="brand" href="{home}"{" aria-current=page" if home_on else ""}>{MARK}<span class="brand-name">Open Word <em>Bible</em></span></a>
+<nav class="primary" id="site-nav" aria-label="{t(lang, "nav.main")}"><ul class="nav-list">{"".join(items)}</ul></nav>
 <div class="tools">
-<a class="tool-btn" href="{GITHUB_URL}" aria-label="Open Word Bible on GitHub" title="GitHub">{icon(ICONS["github"])}</a>
-{COLOUR_MENU}
-<button type="button" class="tool-btn menu-btn" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">{icon(ICONS["menu"], 22)}{icon(ICONS["close"], 22)}</button>
+<a class="tool-btn" href="{GITHUB_URL}" aria-label="{t(lang, "tools.github")}" title="GitHub">{icon(ICONS["github"])}</a>
+{colour_menu(lang)}
+<button type="button" class="tool-btn menu-btn" aria-expanded="false" aria-controls="site-nav" aria-label="{t(lang, "nav.menu")}">{icon(ICONS["menu"], 22)}{icon(ICONS["close"], 22)}</button>
 </div>
 </div></header>"""
+
+
+@functools.lru_cache(maxsize=None)
+def footer_links(lang):
+    """The footer's link columns in lang. Built once per build and language."""
+    def items(pairs):
+        return "".join(f'<li><a href="{href}"{f" lang={tl}" if tl and tl != lang else ""}>{label}</a></li>'
+                       for href, label, tl in pairs)
+
+    read = [(url(lang, chapter_url(b, c)), display(chapter_title(records, b, c, lang)), None)
+            for b, c, records in passages()]
+    read.append((url(lang, "/read/"), t(lang, "nav.all_passages"), None))
+    start = sorted((a for a in load_articles(lang) if a["section"] == "method"), key=lambda a: a["order"])[:3]
+    learn = [(url(lang, article_url(a)), display(a["title"]), a["lang"]) for a in start]
+    learn.append((url(lang, "/articles/"), t(lang, "nav.all_articles"), None))
+    project = [(url(lang, "/about/"), t(lang, "footer.about"), None),
+               (url(lang, "/about/#credits"), t(lang, "nav.credits"), None),
+               (url(lang, "/#help"), t(lang, "nav.help"), None),
+               (GITHUB_URL, t(lang, "nav.source"), None),
+               (GITHUB_URL + "/issues/new", t(lang, "footer.report"), None)]
+    return (f'<nav aria-labelledby="foot-read"><h2 id="foot-read">{t(lang, "footer.read")}</h2><ul>{items(read)}</ul></nav>\n'
+            f'<nav aria-labelledby="foot-learn"><h2 id="foot-learn">{t(lang, "footer.learn")}</h2><ul>{items(learn)}</ul></nav>\n'
+            f'<nav aria-labelledby="foot-project"><h2 id="foot-project">{t(lang, "footer.project")}</h2><ul>{items(project)}</ul></nav>')
+
+
+def language_links(lang, path):
+    """The footer's language switch, as Ochorus has it: each language in its
+    own name, the current one as plain text and the others as links to this
+    page in that language (the home page from a page without a path).
+    web/site.js remembers the choice."""
+    target = path if path is not None else "/"
+    links = "".join(
+        f'<li><span lang="{code}" aria-current="true">{t(code, "language_name")}</span></li>' if code == lang
+        else f'<li><a href="{url(code, target)}" lang="{code}" hreflang="{code}" data-lang="{code}">'
+             f'{t(code, "language_name")}</a></li>'
+        for code in LANGUAGES)
+    return (f'<nav class="foot-langs" aria-labelledby="foot-langs">'
+            f'<h2 id="foot-langs">{t(lang, "footer.languages")}</h2><ul>{links}</ul></nav>')
+
+
+def site_footer(lang, path=None):
+    """The footer on every page: the passages, the first articles to read,
+    the project's links, and the language switch."""
+    home = url(lang, "/")
+    return f"""<footer class="site"><div class="wrap">
+<div class="foot-grid">
+<div class="foot-about">
+<a class="brand" href="{home}">{MARK}<span class="brand-name">Open Word <em>Bible</em></span></a>
+<p>{t(lang, "footer.tagline")}</p>
+<p class="foot-licence"><span class="pill">CC0</span> {t(lang, "footer.licence")}</p>
+</div>
+{footer_links(lang)}
+</div>
+{language_links(lang, path)}
+<div class="foot-base">
+<p>{t(lang, "footer.review")}</p>
+<p>{t(lang, "footer.licences")}</p>
+</div>
+</div></footer>"""
 
 
 def markdown(text):
@@ -328,10 +441,9 @@ def chapters():
 
 @functools.lru_cache(maxsize=None)
 def passages():
-    """Every passage with content as (url, title, records), in canonical
+    """Every passage with content as (book, chapter, records), in canonical
     order. Built once per build; the header, home page and footer list it."""
-    return tuple((chapter_url(b, c), chapter_title(records, b, c), records)
-                 for b, c in chapters() for records in [load_chapter(b, c)[0]])
+    return tuple((b, c, load_chapter(b, c)[0]) for b, c in chapters())
 
 
 def chapter_url(book, chapter):
@@ -343,130 +455,140 @@ def chapter_title(records, book, chapter, lang="en"):
     return f"{BOOK_NAMES[book][lang]} {chapter}:{min(verses)}–{max(verses)}"
 
 
-def chapter_page(book, chapter):
+def text_lang(record, lang):
+    """The language a record is shown in on a page in lang: lang if the
+    record has it yet, otherwise English, which runs ahead of the others."""
+    return lang if lang in record["renderings"] else "en"
+
+
+def lang_attr(text_language, lang):
+    """A lang attribute for text that is not in the page's language."""
+    return f' lang="{text_language}"' if text_language != lang else ""
+
+
+# Reader settings whose control only some languages have.
+PLURAL_YOU = {"es"}
+
+
+def chapter_page(book, chapter, lang="en"):
     records, words = load_chapter(book, chapter)
-    title = {lang: chapter_title(records, book, chapter, lang) for lang in LANGUAGES}
+    title = chapter_title(records, book, chapter, lang)
     # Every language any sentence has: English may run ahead of the others,
     # and the reader shows a sentence not yet translated in English.
-    languages = [lang for lang in LANGUAGES
-                 if any(lang in r["renderings"] for r in records)]
-    data = {"book": book, "chapter": chapter, "title": title, "languages": languages,
-            "records": records,
+    languages = [code for code in LANGUAGES
+                 if any(code in r["renderings"] for r in records)]
+    data = {"book": book, "chapter": chapter, "title": title, "lang": lang, "languages": languages,
+            "ui": catalog(lang)["reader.ui"], "records": records,
             "words": {vid: words[vid] for r in records for vid in r["refs"]}}
     # Each morphology code's description in every language, once per page.
-    data["grammar"] = {code: {lang: morph.describe(code, lang) for lang in LANGUAGES}
+    data["grammar"] = {code: {l: morph.describe(code, l) for l in LANGUAGES}
                        for code in sorted({w["morph"] for ws in data["words"].values() for w in ws})}
     # "</" cannot appear inside a script element.
     blob = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
 
-    # Labels are English here; reader.js swaps in the reading language's
-    # labels (data-i18n keys) once the page loads.
     def seg(name, options):
-        buttons = "".join(
-            f'<button type="button" data-value="{v}"{f" data-i18n={key}" if key else ""}>{label}</button>'
-            for v, label, key in options)
+        buttons = "".join(f'<button type="button" data-value="{v}">{label}</button>' for v, label in options)
         return f'<span class="seg" data-setting="{name}">{buttons}</span>'
 
-    def label(key, text):
-        return f'<span data-i18n="{key}">{text}</span>'
+    def control(key, name, options):
+        return f'<div class="control"><span>{t(lang, "reader." + key)}</span> {seg(name, options)}</div>'
 
-    lang_labels = {"en": "English", "es": "Español"}
+    levels = catalog(lang)["levels"]
+    plural = ("\n  " + control("plural", "plural_you", [("0", "ustedes"), ("1", "vosotros")])
+              if lang in PLURAL_YOU else "")
     body = f"""
-<p class="notice" data-i18n="notice">Sample passage. Every line is an AI draft that has not yet been checked by a reviewer who reads Greek.</p>
+<p class="notice">{t(lang, "reader.notice")}</p>
 <button type="button" class="settings-toggle" id="settings-toggle" aria-expanded="false" aria-controls="settings">
-  <span data-i18n="settings">Reading settings</span> <span class="settings-summary" id="settings-summary"></span>
+  <span>{t(lang, "reader.settings")}</span> <span class="settings-summary" id="settings-summary"></span>
 </button>
 <div class="settings" id="settings">
 <div class="controls">
-  <div class="control">{label("language", "Language")} {seg("lang", [(l, lang_labels[l], None) for l in languages])}</div>
-  <div class="control">{label("level", "Level")} {seg("level", [("L", "Literal", "L"), ("B", "Balanced", "B"), ("R", "Readable", "R")])}</div>
-  <div class="control">{label("gender", "Gender")} {seg("gender", [("0", "Inclusive", "inclusive"), ("1", "Traditional", "traditional")])}</div>
-  <div class="control">{label("title", "Title")} {seg("christos", [("0", "Christ", "christ"), ("1", "Messiah", "messiah")])}</div>
-  <div class="control">{label("pronouns", "Pronouns for God")} {seg("deity_pronoun", [("0", "he", "he"), ("1", "He", "He")])}</div>
-  <div class="control" data-only-lang="es" hidden>{label("plural", "Plural you")} {seg("plural_you", [("0", "ustedes", None), ("1", "vosotros", None)])}</div>
+  {control("level", "level", [(code, levels[code]) for code in "LBR"])}
+  {control("gender", "gender", [("0", t(lang, "reader.inclusive")), ("1", t(lang, "reader.traditional"))])}
+  {control("title", "christos", [("0", t(lang, "reader.christ")), ("1", t(lang, "reader.messiah"))])}
+  {control("pronouns", "deity_pronoun", [("0", t(lang, "reader.he")), ("1", t(lang, "reader.He"))])}{plural}
 </div>
 <p class="hint"><span id="hint-level"></span> <span id="hint-gender"></span> <span id="hint-christos"></span> <span id="hint-deity_pronoun"></span> <span id="hint-plural_you"></span></p>
 </div>
 <div class="reader">
   <article class="passage">
-    <h1 id="title">{html.escape(title["en"])}</h1>
-    <p class="sub" data-i18n="sub">Translated from the SBL Greek New Testament. Tap a verse to see why it reads as it does. Small letters mark footnotes, listed below the passage.</p>
+    <h1 id="title">{html.escape(title)}</h1>
+    <p class="sub">{t(lang, "reader.sub")}</p>
     <p class="notice" id="partial" hidden></p>
     <div class="text" id="text"></div>
-    <section class="notes" id="notes" aria-label="Notes" hidden></section>
+    <section class="notes" id="notes" aria-label="{t(lang, "reader.notes")}" hidden></section>
   </article>
   <aside class="panel" id="panel" aria-live="polite" tabindex="-1"></aside>
 </div>
 <script type="application/json" id="owb-data">{blob}</script>
 <script src="{asset("reader.js")}"></script>
 """
-    return page(title["en"], body, path=chapter_url(book, chapter), current="/read/",
+    return page(lang, title, body, path=chapter_url(book, chapter), current="/read/",
                 card=og_card_chapter(book, chapter),
-                card_alt=f"{title['en']}: \u201c{opening_verse(records)}\u201d, with the Greek beneath.",
-                description=f"{title['en']} translated from the Greek, with the reasoning behind every verse.")
+                card_alt=t(lang, "meta.chapter_card_alt", title=title, verse=opening_verse(records, lang)),
+                description=t(lang, "meta.chapter_description", title=title))
 
 
-def opening_verse(records):
-    """A passage's first verse in English, Balanced, at the default settings:
-    what its Read-page card and its share card quote."""
-    return plain(markup.VERSE.split(records[0]["renderings"]["en"]["B"])[0])
+def opening_verse(records, lang="en"):
+    """A passage's first verse, Balanced, at the default settings: what its
+    Read-page card and its share card quote. In English when the first
+    sentence is not yet in lang."""
+    first = records[0]
+    return plain(markup.VERSE.split(first["renderings"][text_lang(first, lang)]["B"])[0])
 
 
-def review_label(records):
+def review_label(records, lang="en"):
     """How far review has got, from the records' own status."""
     reviewed = sum(r["status"] != "ai_draft" for r in records)
     if reviewed == 0:
-        return "AI draft, not yet reviewed"
+        return t(lang, "status.draft")
     if reviewed == len(records):
-        return "Reviewed"
-    return f"{reviewed} of {len(records)} sentences reviewed"
+        return t(lang, "status.reviewed")
+    return t(lang, "status.some", n=reviewed, total=len(records))
 
 
-def passage_card(book, chapter):
+def passage_card(book, chapter, lang="en"):
     """A passage as a card in the article-card style: its opening verse at
     the default settings, and how much of it is translated and recorded."""
     records = load_chapter(book, chapter)[0]
     verses = sorted({refs.parse(v).verse for r in records for v in r["refs"]})
     decisions = sum(len(r["decisions"]) for r in records)
     uncertain = sum(d["uncertain"] for r in records for d in r["decisions"])
-    opening = opening_verse(records)
-    languages = " &middot; ".join(name for code, name in (("en", "English"), ("es", "Espa\u00f1ol"))
-                                  if all(code in r["renderings"] for r in records))
-    meta = (f"{len(verses)} verses &middot; {len(records)} sentences &middot; "
-            f"{decisions} decisions, {uncertain} marked uncertain")
-    return (f'<li><a class="a-card p-card" href="{chapter_url(book, chapter)}">'
-            f'<span class="a-section">{BOOK_NAMES[book]["en"]} &middot; {languages}</span>'
-            f'<span class="a-title">{html.escape(chapter_title(records, book, chapter))}</span>'
-            f'<span class="p-opening">&ldquo;{display(opening)}&rdquo;</span>'
+    opening = opening_verse(records, lang)
+    meta = t(lang, "card.meta", verses=len(verses), sentences=len(records),
+             decisions=decisions, uncertain=uncertain)
+    done = sum(lang in r["renderings"] for r in records)
+    if done < len(records):
+        meta += " &middot; " + t(lang, "card.coverage", n=done, total=len(records))
+    q = "&laquo;{}&raquo;" if lang == "es" else "&ldquo;{}&rdquo;"
+    return (f'<li><a class="a-card p-card" href="{url(lang, chapter_url(book, chapter))}">'
+            f'<span class="a-section">{BOOK_NAMES[book][lang]} &middot; {languages_label(records)}</span>'
+            f'<span class="a-title">{display(chapter_title(records, book, chapter, lang))}</span>'
+            f'<span class="p-opening"{lang_attr(text_lang(records[0], lang), lang)}>{q.format(display(opening))}</span>'
             f'<span class="a-meta">{meta}</span>'
-            f'<span class="p-status"><span class="status">{review_label(records)}</span></span></a></li>')
+            f'<span class="p-status"><span class="status">{review_label(records, lang)}</span></span></a></li>')
 
 
-def read_page():
-    cards = "".join(passage_card(b, c) for b, c in chapters())
+def read_page(lang="en"):
+    cards = "".join(passage_card(b, c, lang) for b, c in chapters())
     body = f"""
 <header class="page-head">
-<p class="eyebrow">Read</p>
-<h1>Passages translated so far</h1>
-<p class="dek">Each passage is translated from the SBL Greek New Testament at three levels, with
-the reasoning behind every sentence. English comes first; Spanish follows, and where a sentence is
-not yet in Spanish the reader shows the English. All are AI drafts until a reviewer who reads Greek
-approves them.</p>
+<p class="eyebrow">{t(lang, "read.title")}</p>
+<h1>{t(lang, "read.heading")}</h1>
+<p class="dek">{t(lang, "read.dek")}</p>
 </header>
 <ul class="a-grid">{cards}</ul>
 <section class="how" aria-labelledby="how-h">
-<h2 id="how-h">How the reader works</h2>
+<h2 id="how-h">{t(lang, "read.how")}</h2>
 <ol class="steps">
-<li><b>Choose how it reads.</b> Literal, Balanced or Readable, and your wording settings: inclusive or
-traditional language, &ldquo;Christ&rdquo; or &ldquo;Messiah&rdquo;, he or He.</li>
-<li><b>Tap any verse.</b> The Greek appears with a word-for-word gloss beside the translation.</li>
-<li><b>See every decision.</b> What the original means, what else was considered, why this wording
-was chosen, and which calls are uncertain.</li>
+<li>{t(lang, "read.step1")}</li>
+<li>{t(lang, "read.step2")}</li>
+<li>{t(lang, "read.step3")}</li>
 </ol>
 </section>
 """
-    return page("Read", body, path="/read/", current="/read/",
-                description="Passages translated in Open Word Bible so far, with the reasoning behind every sentence.")
+    return page(lang, t(lang, "read.title"), body, path="/read/", current="/read/",
+                description=t(lang, "meta.read_description"))
 
 
 def all_records():
@@ -491,10 +613,10 @@ def sec_head(hid, ico, title, href=None, more=None):
             f'{title}</h2>{link}</div>')
 
 
-def example_html():
+def example_html(lang="en"):
     """John 1:1 at every level, with one decision and its Greek words marked.
     Everything comes from content/ and data/grc/, so it stays in step with
-    the translation."""
+    the translation. Decision notes are in English for now."""
     book, chapter, record_id, decision_id = EXAMPLE
     records, words = load_chapter(book, chapter)
     record = next(r for r in records if r["id"] == record_id)
@@ -504,135 +626,142 @@ def example_html():
         (f'<mark>{html.escape(w["text"])}</mark>' if w["id"] in marked else html.escape(w["text"]))
         + html.escape(w["after"].rstrip())
         for vid in record["refs"] for w in words[vid] if w["id"] in record["source"]["tokens"])
+    shown = text_lang(record, lang)
     levels = "".join(
-        f'<div class="lvl"><span class="tag">{name}</span><p>{html.escape(plain(record["renderings"]["en"][code]))}</p></div>'
-        for code, name in (("L", "Literal"), ("B", "Balanced"), ("R", "Readable")))
+        f'<div class="lvl"><span class="tag">{name}</span>'
+        f'<p{lang_attr(shown, lang)}>{html.escape(plain(record["renderings"][shown][code]))}</p></div>'
+        for code, name in catalog(lang)["levels"].items())
     ref = refs.parse(record["refs"][0])
     also = "; ".join(html.escape(a) for a in decision["alternatives"])
+    open_url = url(lang, chapter_url(book, chapter))
+    passage = f"{BOOK_NAMES[book][lang]} {chapter}"
+    en = lang_attr("en", lang)
+    note = f'<p class="alts">{t(lang, "notes_in_english")}</p>' if lang != "en" else ""
     return f"""
 <section class="example" aria-labelledby="example-h">
-{sec_head("example-h", "book", f'See the work: {BOOK_NAMES[book]["en"]} {ref.chapter}:{ref.verse}', chapter_url(book, chapter), f'Open {BOOK_NAMES[book]["en"]} {chapter}')}
+{sec_head("example-h", "book", t(lang, "home.example", ref=f"{BOOK_NAMES[book][lang]} {ref.chapter}:{ref.verse}"), open_url, t(lang, "home.example_open", passage=passage))}
 <div class="example-grid">
 <div>
-<p class="label">Greek (SBL Greek New Testament)</p>
+<p class="label">{t(lang, "home.example_greek")}</p>
 <p class="greek" lang="grc">{greek}</p>
-<p class="label">Word for word</p>
-<p class="gloss">{html.escape(plain(record["literal_gloss"]))}</p>
-<p class="label">Three levels, one meaning</p>
+<p class="label">{t(lang, "home.example_gloss")}</p>
+<p class="gloss"{en}>{html.escape(plain(record["literal_gloss"]))}</p>
+<p class="label">{t(lang, "home.example_levels")}</p>
 {levels}
 </div>
 <div class="card decision">
-<p class="label">Decision</p>
-<p class="choice">&ldquo;{html.escape(plain(decision["choice"]))}&rdquo;</p>
-<p class="alts">Also considered: {also}</p>
-<p class="why">{html.escape(decision["reason"])}</p>
+<p class="label">{t(lang, "home.example_decision")}</p>
+<p class="choice"{en}>&ldquo;{html.escape(plain(decision["choice"]))}&rdquo;</p>
+<p class="alts">{t(lang, "home.example_also", alts=f"<span{en}>{also}</span>")}</p>
+<p class="why"{en}>{html.escape(decision["reason"])}</p>
+{note}
 </div>
 </div>
-<p class="example-foot">Every verse in the reader opens like this. <a href="{chapter_url(book, chapter)}">Open {BOOK_NAMES[book]["en"]} {chapter} and tap any verse&nbsp;&rarr;</a></p>
+<p class="example-foot">{t(lang, "home.example_foot")} <a href="{open_url}">{t(lang, "home.example_foot_link", passage=passage)}</a></p>
 </section>
 """
 
 
-def progress_html():
+def progress_html(lang="en"):
     records = all_records()
     decisions = sum(len(r["decisions"]) for r in records)
     reviewed = sum(r["status"] != "ai_draft" for r in records)
-    items = "".join(f'<li><a href="{url}">{html.escape(title)}</a></li>' for url, title, _ in passages())
+    items = "".join(f'<li><a href="{url(lang, chapter_url(b, c))}">{display(chapter_title(rs, b, c, lang))}</a></li>'
+                    for b, c, rs in passages())
     return f"""
 <section class="progress" aria-labelledby="progress-h">
-{sec_head("progress-h", "check", "Where the work stands", "/read/", "All passages")}
+{sec_head("progress-h", "check", t(lang, "home.progress"), url(lang, "/read/"), t(lang, "nav.all_passages"))}
 <div class="stats">
-<div><b>{len(records)}</b><span>sentences translated</span></div>
-<div><b>{decisions}</b><span>decisions recorded</span></div>
-<div><b>{reviewed}</b><span>reviewed by a scholar so far</span></div>
+<div><b>{len(records)}</b><span>{t(lang, "home.stat_sentences")}</span></div>
+<div><b>{decisions}</b><span>{t(lang, "home.stat_decisions")}</span></div>
+<div><b>{reviewed}</b><span>{t(lang, "home.stat_reviewed")}</span></div>
 </div>
-<p>Everything published so far is an <strong>AI draft</strong>, in English, with Spanish for some passages. Nothing is
-marked reviewed until named reviewers who read Hebrew or Greek approve it, and the reader always
-shows each sentence's status.</p>
-<p class="label">Passages so far</p>
+<p>{t(lang, "home.progress_text")}</p>
+<p class="label">{t(lang, "nav.passages_so_far")}</p>
 <ul class="passages">{items}</ul>
 </section>
 """
 
 
-def home_page():
-    def point(ico, title, text):
+def home_page(lang="en"):
+    def point(ico, n):
         return (f'<li class="point"><span class="tile">{icon(ICONS[ico], 22)}</span>'
-                f'<h3>{title}</h3><p>{text}</p></li>')
+                f'<h3>{t(lang, f"home.point{n}")}</h3><p>{t(lang, f"home.point{n}_text")}</p></li>')
 
-    def helper(ico, who, what):
+    def helper(ico, n):
         return (f'<li><span class="tile sm">{icon(ICONS[ico])}</span>'
-                f'<p><strong>{who}</strong> {what}</p></li>')
+                f'<p><strong>{t(lang, f"home.helper{n}")}</strong> {t(lang, f"home.helper{n}_text")}</p></li>')
 
+    articles = url(lang, "/articles/")
     body = f"""
 <section class="hero">
-<p class="eyebrow">Free &middot; From the Hebrew and Greek &middot; Public domain</p>
-<h1>The Bible, translated from Hebrew and Greek, with its reasoning&nbsp;shown.</h1>
-<p class="hero-sub">Open Word Bible is a free translation for every reader. Open any sentence to see the original
-words, a word-for-word gloss, and why each word was chosen. Everything is released under CC0,
-so anyone may use it for anything.</p>
-<p class="actions"><a class="button" href="/read/">{icon(ICONS["book"])}Start reading</a>
-<a class="button ghost" href="#example-h">See how it works</a></p>
+<p class="eyebrow">{t(lang, "home.eyebrow")}</p>
+<h1>{t(lang, "home.heading")}</h1>
+<p class="hero-sub">{t(lang, "home.sub")}</p>
+<p class="actions"><a class="button" href="{url(lang, "/read/")}">{icon(ICONS["book"])}{t(lang, "home.start")}</a>
+<a class="button ghost" href="#example-h">{t(lang, "home.how")}</a></p>
 <ul class="trust">
-<li>{icon(ICONS["gift"], 16)}Free forever</li>
-<li>{icon(ICONS["scale"], 16)}CC0 public domain</li>
-<li>{icon(ICONS["languages"], 16)}English and Español</li>
+<li>{icon(ICONS["gift"], 16)}{t(lang, "home.trust_free")}</li>
+<li>{icon(ICONS["scale"], 16)}{t(lang, "home.trust_cc0")}</li>
+<li>{icon(ICONS["languages"], 16)}{t(lang, "home.trust_languages")}</li>
 </ul>
 </section>
-{example_html()}
+{example_html(lang)}
 <section class="points-wrap" aria-labelledby="points-h">
-{sec_head("points-h", "info", "What makes it different")}
+{sec_head("points-h", "info", t(lang, "home.points"))}
 <ul class="points">
-{point("gift", "Free for everyone", "The translation, its notes and its data are public domain (CC0). Quote it, print it, put it in an app, or build on it without asking.")}
-{point("languages", "From the original languages", "Every language is translated from the Hebrew, Aramaic and Greek, never from English, using fixed, openly licensed source texts.")}
-{point("sliders", "Three levels, your settings", "Literal, Balanced or Readable; inclusive or traditional gender language; &ldquo;Christ&rdquo; or &ldquo;Messiah&rdquo;. Settings change wording, never meaning.")}
-{point("check", "Every decision shown", "Each sentence records what the original says, what we chose, what else we considered, and why. Uncertain calls are marked uncertain.")}
+{point("gift", 1)}
+{point("languages", 2)}
+{point("sliders", 3)}
+{point("check", 4)}
 </ul>
 </section>
-{progress_html()}
+{progress_html(lang)}
 <section class="latest" aria-labelledby="latest-h">
-{sec_head("latest-h", "articles", "From the articles", "/articles/", "All articles")}
-<ul class="a-grid">{article_list(sorted(load_articles(), key=lambda a: a["order"])[:3])}</ul>
+{sec_head("latest-h", "articles", t(lang, "home.latest"), articles, t(lang, "nav.all_articles"))}
+<ul class="a-grid">{article_list(sorted(load_articles(lang), key=lambda a: a["order"])[:3], lang)}</ul>
 </section>
 <section class="involve" id="help" aria-labelledby="involve-h">
 <div class="involve-text">
-<h2 id="involve-h">Help make it</h2>
-<p>Open Word Bible is built in the open. Every sentence waits for people who can check it.</p>
-<p><a class="button" href="{GITHUB_URL}">{icon(ICONS["github"])}The project on GitHub</a></p>
+<h2 id="involve-h">{t(lang, "home.involve")}</h2>
+<p>{t(lang, "home.involve_text")}</p>
+<p><a class="button" href="{GITHUB_URL}">{icon(ICONS["github"])}{t(lang, "home.involve_github")}</a></p>
 </div>
 <ul class="helpers">
-{helper("languages", "Read Greek or Hebrew?", "Reviewers check each sentence and its decisions before it is marked reviewed.")}
-{helper("users", "Native Spanish speaker?", "Check that the Spanish reads naturally at each level.")}
-{helper("code", "Build software?", "The site, validator and data tools are open source (MIT).")}
-{helper("sliders", "Making something?", "Use the text and its reasoning records in your own app, study or project.")}
+{helper("languages", 1)}
+{helper("users", 2)}
+{helper("code", 3)}
+{helper("sliders", 4)}
 </ul>
 </section>
 """
-    return page(SITE_NAME, body, path="/", current="/", description=DESCRIPTION)
+    return page(lang, SITE_NAME, body, path="/", current="/")
 
 
-def about_page():
+def about_page(lang="en"):
     credits = markdown((ROOT / "CREDITS.md").read_text(encoding="utf-8"))
     # Demote the file's headings one level to sit under the page's h1.
     for n in (2, 1):
         credits = credits.replace(f"<h{n}>", f"<h{n + 1}>").replace(f"</h{n}>", f"</h{n + 1}>")
-    credits = credits.replace("<h2>Credits</h2>", '<h2 id="credits">Credits</h2>', 1)
+    # The credits are written in English, as their sources publish them; on
+    # a page in another language a note says so, and is the #credits target.
+    if lang == "en":
+        credits = credits.replace("<h2>Credits</h2>", '<h2 id="credits">Credits</h2>', 1)
+    else:
+        credits = (f'<p id="credits" class="fine">{t(lang, "about.credits_language")}</p>\n'
+                   f'<div lang="en">{credits}</div>')
     body = f"""
 <div class="prose">
-<h1>About</h1>
-<p>Open Word Bible translates the Bible from its original languages into modern ones,
-English and Spanish first. Every sentence carries a record of the original words and the reasoning
-behind each translation decision.</p>
-<h2>Licences</h2>
-<p>The translation, its reasoning records and the alignments are dedicated to the public domain
-under <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a>.
-The code is MIT-licensed. The source texts keep their own licences, credited below.</p>
-<p>Source code and data: <a href="https://github.com/jdegreef/open-word-bible">github.com/jdegreef/open-word-bible</a>.</p>
+<h1>{t(lang, "about.title")}</h1>
+<p>{t(lang, "about.intro")}</p>
+<h2>{t(lang, "about.licences")}</h2>
+<p>{t(lang, "about.licences_text")}</p>
+<p>{t(lang, "about.source")} <a href="{GITHUB_URL}">github.com/jdegreef/open-word-bible</a>.</p>
 {credits}
 </div>
 """
-    return page("About", body, path="/about/", current="/about/",
-                description="Licences and source credits for Open Word Bible.")
+    return page(lang, t(lang, "about.title"), body, path="/about/", current="/about/",
+                description=t(lang, "meta.about_description"))
 
 
 ARTICLES = ROOT / "articles"
@@ -665,14 +794,15 @@ def _lemma(m):
     return f'<span class="greek" lang="grc">{html.escape(word["lemma"])}</span>'
 
 
-def _owb(m):
-    """{{OWB:JHN.1.1.s1:B}}: our English for a sentence, with default settings."""
+def _owb(m, lang="en"):
+    """{{OWB:JHN.1.1.s1:B}}: our translation of a sentence in lang (English
+    if it is not in lang yet), with default settings."""
     record_id, level = m[1], m[2]
     ref = refs.parse(record_id.rsplit(".s", 1)[0])
     record = next((r for r in load_chapter(ref.book, ref.chapter)[0] if r["id"] == record_id), None)
     if record is None:
         raise SystemExit(f"no record {record_id} in content/")
-    return html.escape(plain(record["renderings"]["en"][level]))
+    return html.escape(plain(record["renderings"][text_lang(record, lang)][level]))
 
 
 def smart_quotes(s):
@@ -683,9 +813,6 @@ def smart_quotes(s):
     return s.replace("'", "\u2019")
 
 
-LEVEL_NAMES = {"L": "Literal", "B": "Balanced", "R": "Readable"}
-
-
 @functools.lru_cache(maxsize=None)
 def translated_verses():
     """Every verse id with a record, so article links only go to verses the
@@ -693,36 +820,39 @@ def translated_verses():
     return frozenset(v for r in all_records() for v in r["refs"])
 
 
-def verse_link(book, chapter, verse):
+def verse_link(book, chapter, verse, lang="en"):
     """The reader URL for a verse, or None when it is not translated yet."""
     if f"{book}.{chapter}.{verse}" not in translated_verses():
         return None
-    return f"{chapter_url(book, chapter)}#v{verse}"
+    return f"{url(lang, chapter_url(book, chapter))}#v{verse}"
 
 
-def verse_name(book, chapter, verse):
-    return f"{BOOK_NAMES[book]['en']} {chapter}:{verse}"
+def verse_name(book, chapter, verse, lang="en"):
+    return f"{BOOK_NAMES[book][lang]} {chapter}:{verse}"
 
 
-def _quote_figure(body, inner):
+def _quote_figure(body, inner, lang, text_language):
     """A blockquote that is just one {{GREEK:..}} or {{OWB:..}} placeholder
-    becomes a figure captioned with its source, linked to the reader."""
+    becomes a figure captioned with its source, linked to the reader. The
+    caption is in the article's language; the link goes to the reader in
+    the page's."""
     m = _GREEK.fullmatch(body)
     if m:
         book, chapter, verse = m[1], int(m[2]), int(m[3])
-        source = "Greek, SBL Greek New Testament"
+        source = t(text_language, "article.greek_source")
+        kind = "greek-quote"
     else:
         m = _OWB.fullmatch(body)
         if not m:
             return f"<blockquote><p>{inner}</p></blockquote>"
         ref = refs.parse(m[1].rsplit(".s", 1)[0])
         book, chapter, verse = ref.book, ref.chapter, ref.verse
-        source = f"Open Word Bible, {LEVEL_NAMES[m[2]]}"
-    kind = "greek-quote" if source.startswith("Greek") else "owb-quote"
-    link = verse_link(book, chapter, verse)
-    more = f' <a href="{link}">Read it with the reasoning&nbsp;&rarr;</a>' if link else ""
+        source = t(text_language, "article.owb_source", level=catalog(text_language)["levels"][m[2]])
+        kind = "owb-quote"
+    link = verse_link(book, chapter, verse, lang)
+    more = f' <a href="{link}">{t(text_language, "article.read_with_reasoning")}</a>' if link else ""
     return (f'<figure class="quote {kind}"><blockquote><p>{inner}</p></blockquote>'
-            f"<figcaption>{verse_name(book, chapter, verse)} &middot; {source}{more}</figcaption></figure>")
+            f"<figcaption>{verse_name(book, chapter, verse, text_language)} &middot; {source}{more}</figcaption></figure>")
 
 
 def _slug(text, taken):
@@ -734,22 +864,27 @@ def _slug(text, taken):
     return slug
 
 
-def article_html(text, toc=None):
+def article_html(text, toc=None, lang="en", text_language="en"):
     """Markdown for articles: ## and ### headings, paragraphs, - lists,
     > quotes, **bold**, *italic*, [links](url), and placeholders that pull
     Greek words ({{GREEK:..}}, {{LEMMA:..}}) and our own translation
-    ({{OWB:..}}) from the data, so none of it is typed by hand."""
+    ({{OWB:..}}) from the data, so none of it is typed by hand. The text is
+    in text_language, on a page in lang: links to the site go to its pages
+    in lang."""
     fills = []
 
     def hold(html_text):
         fills.append(html_text)
         return f"\x00{len(fills) - 1}\x00"
 
+    def href(target):
+        return url(lang, target) if target.startswith("/") else target
+
     def inline(s):
         s = _GREEK.sub(lambda m: hold(_greek(m)), s)
         s = _LEMMA.sub(lambda m: hold(_lemma(m)), s)
-        s = _OWB.sub(lambda m: hold(_owb(m)), s)
-        s = re.sub(r"\]\(([^)\s]+)\)", lambda m: "](" + hold(html.escape(m[1])) + ")", s)
+        s = _OWB.sub(lambda m: hold(_owb(m, text_language)), s)
+        s = re.sub(r"\]\(([^)\s]+)\)", lambda m: "](" + hold(html.escape(href(m[1]))) + ")", s)
         s = html.escape(smart_quotes(s), quote=False)
         s = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", s)
         s = re.sub(r"(?<![*\w])\*(?!\s)(.+?)(?<!\s)\*(?![*\w])", r"<em>\1</em>", s)
@@ -782,13 +917,14 @@ def article_html(text, toc=None):
             out.append("<ul>" + "".join(f"<li>{inline(i)}</li>" for i in items) + "</ul>")
         elif lines[0].startswith(">"):
             body = " ".join(line.lstrip(">").strip() for line in lines)
-            out.append(_quote_figure(body, inline(body)))
+            out.append(_quote_figure(body, inline(body), lang, text_language))
         else:
             out.append(f"<p>{inline(' '.join(lines))}</p>")
     return "\n".join(out)
 
 
-# Article sections, in the order the articles page shows them.
+# Article sections, in the order the articles page shows them. Their names
+# in each language are in i18n/ (sections).
 SECTIONS = {"method": "How it is made", "passage": "Reading the text"}
 
 
@@ -809,7 +945,7 @@ def article_passages(body):
     return [(b, c, vs) for (b, c), vs in chapters_.items()]
 
 
-def passage_label(book, chapter, verses):
+def passage_label(book, chapter, verses, lang="en"):
     """"John 1:1, 14, 16–18": consecutive verses become ranges."""
     runs = []
     for v in verses:
@@ -817,36 +953,46 @@ def passage_label(book, chapter, verses):
             runs[-1][1] = v
         else:
             runs.append([v, v])
-    return f"{BOOK_NAMES[book]['en']} {chapter}:" + ", ".join(
-        str(a) if a == b else f"{a}\u2013{b}" for a, b in runs)
+    return f"{BOOK_NAMES[book][lang]} {chapter}:" + ", ".join(
+        str(a) if a == b else f"{a}–{b}" for a, b in runs)
 
 
-def load_articles():
-    """Every article in articles/, newest first, then by its order number.
-    A file starts with a front matter block: title, summary, date, order,
-    section (a key of SECTIONS)."""
+def _read_article(path):
+    """One article file. It starts with a front matter block: title,
+    summary, date, order, section (a key of SECTIONS)."""
+    text = path.read_text(encoding="utf-8")
+    m = re.match(r"---\n(.*?)\n---\n(.*)", text, re.S)
+    if not m:
+        raise SystemExit(f"{path.name}: missing the --- front matter block")
+    meta = {}
+    for line in m[1].splitlines():
+        if line.strip():
+            key, value = line.split(": ", 1)
+            # A value may be JSON-quoted when it contains quotation marks.
+            meta[key] = json.loads(value) if value.startswith('"') else value
+    for key in ("title", "summary", "date", "order", "section"):
+        if key not in meta:
+            raise SystemExit(f"{path.name}: front matter needs {key!r}")
+    if meta["section"] not in SECTIONS:
+        raise SystemExit(f"{path.name}: section must be one of {', '.join(SECTIONS)}")
+    meta["title"], meta["summary"] = smart_quotes(meta["title"]), smart_quotes(meta["summary"])
+    words = len(re.findall(r"\w+", re.sub(r"\{\{[^}]*\}\}", "", m[2])))
+    return {**meta, "slug": path.stem, "body": m[2], "order": int(meta["order"]),
+            "minutes": max(1, round(words / 220)), "passages": article_passages(m[2])}
+
+
+def load_articles(lang="en"):
+    """Every article in articles/, newest first, then by its order number,
+    for a page in lang. A translation is articles/<lang>/<slug>.md; an
+    article not translated yet comes in English. Each article's "lang" says
+    which it is."""
     articles = []
     for path in sorted(ARTICLES.glob("*.md")):
-        text = path.read_text(encoding="utf-8")
-        m = re.match(r"---\n(.*?)\n---\n(.*)", text, re.S)
-        if not m:
-            raise SystemExit(f"{path.name}: missing the --- front matter block")
-        meta = {}
-        for line in m[1].splitlines():
-            if line.strip():
-                key, value = line.split(": ", 1)
-                # A value may be JSON-quoted when it contains quotation marks.
-                meta[key] = json.loads(value) if value.startswith('"') else value
-        for key in ("title", "summary", "date", "order", "section"):
-            if key not in meta:
-                raise SystemExit(f"{path.name}: front matter needs {key!r}")
-        if meta["section"] not in SECTIONS:
-            raise SystemExit(f"{path.name}: section must be one of {', '.join(SECTIONS)}")
-        meta["title"], meta["summary"] = smart_quotes(meta["title"]), smart_quotes(meta["summary"])
-        words = len(re.findall(r"\w+", re.sub(r"\{\{[^}]*\}\}", "", m[2])))
-        articles.append({**meta, "slug": path.stem, "body": m[2], "order": int(meta["order"]),
-                         "minutes": max(1, round(words / 220)),
-                         "passages": article_passages(m[2])})
+        translation = ARTICLES / lang / path.name
+        if lang != "en" and translation.is_file():
+            articles.append({**_read_article(translation), "lang": lang})
+        else:
+            articles.append({**_read_article(path), "lang": "en"})
     return sorted(articles, key=lambda a: (a["date"], -a["order"]), reverse=True)
 
 
@@ -854,9 +1000,10 @@ def article_url(article):
     return f"/articles/{article['slug']}/"
 
 
-def _date(iso):
+def _date(iso, lang="en"):
     import datetime
-    return datetime.date.fromisoformat(iso).strftime("%-d %B %Y")
+    day = datetime.date.fromisoformat(iso)
+    return t(lang, "date", d=day.day, month=catalog(lang)["months"][day.month - 1], y=day.year)
 
 
 def display(text):
@@ -866,96 +1013,115 @@ def display(text):
     return re.sub(r"(\d)\u2013(\d)", "\\1\u2060\u2013\u2060\\2", html.escape(text))
 
 
-def article_meta(a):
+def article_meta(a, lang="en"):
     """"6 min read · John 1:1, 14": what a card or byline says about length
     and which verses an article reads."""
-    parts = [f"{a['minutes']} min read"] + [passage_label(*p) for p in a["passages"]]
-    return " &middot; ".join(html.escape(p) for p in parts)
+    parts = [html.escape(t(lang, "article.min_read", n=a["minutes"]))]
+    parts += [html.escape(passage_label(*p, lang)) for p in a["passages"]]
+    return " &middot; ".join(parts)
 
 
-def article_card(a, featured=False):
-    return (f'<li><a class="a-card{" featured" if featured else ""}" href="{article_url(a)}">'
-            f'<span class="a-section">{SECTIONS[a["section"]]}</span>'
-            f'<span class="a-title">{display(a["title"])}</span>'
-            f'<span class="a-summary">{display(a["summary"])}</span>'
-            f'<span class="a-meta">{article_meta(a)}</span></a></li>')
+def article_card(a, lang="en", featured=False):
+    section = catalog(lang)["sections"][a["section"]]
+    if a["lang"] != lang:
+        section += f' &middot; {t(lang, "english_only")}'
+    tl = lang_attr(a["lang"], lang)
+    return (f'<li><a class="a-card{" featured" if featured else ""}" href="{url(lang, article_url(a))}">'
+            f'<span class="a-section">{section}</span>'
+            f'<span class="a-title"{tl}>{display(a["title"])}</span>'
+            f'<span class="a-summary"{tl}>{display(a["summary"])}</span>'
+            f'<span class="a-meta">{article_meta(a, lang)}</span></a></li>')
 
 
-def article_list(articles):
-    return "".join(article_card(a) for a in articles)
+def article_list(articles, lang="en"):
+    return "".join(article_card(a, lang) for a in articles)
 
 
-def articles_page(articles):
+def articles_page(articles, lang="en"):
     by_order = sorted(articles, key=lambda a: a["order"])
     featured, rest = by_order[0], by_order[1:]
     sections = "".join(
         f'<section class="a-group" id="{key}" aria-labelledby="{key}-h">'
-        f'<h2 id="{key}-h">{label}</h2>'
-        f'<ul class="a-grid">{article_list([a for a in rest if a["section"] == key])}</ul></section>'
-        for key, label in SECTIONS.items())
+        f'<h2 id="{key}-h">{catalog(lang)["sections"][key]}</h2>'
+        f'<ul class="a-grid">{article_list([a for a in rest if a["section"] == key], lang)}</ul></section>'
+        for key in SECTIONS)
     body = f"""
 <header class="page-head">
-<p class="eyebrow">Articles</p>
-<h1>How the translation is made, and why it reads as it does</h1>
-<p class="dek">Short pieces on the method behind Open Word Bible and close readings of the passages
-translated so far. Like the translation, every article is a draft until a reviewer has checked it.</p>
+<p class="eyebrow">{t(lang, "articles.title")}</p>
+<h1>{t(lang, "articles.heading")}</h1>
+<p class="dek">{t(lang, "articles.dek")}</p>
 </header>
-<ul class="a-feature">{article_card(featured, featured=True)}</ul>
+<ul class="a-feature">{article_card(featured, lang, featured=True)}</ul>
 {sections}
 """
-    return page("Articles", body, path="/articles/", current="/articles/",
-                description="Articles on how Open Word Bible is translated and why it reads as it does.")
+    return page(lang, t(lang, "articles.title"), body, path="/articles/", current="/articles/",
+                description=t(lang, "meta.articles_description"))
 
 
-def article_page(article, articles):
+def article_page(article, articles, lang="en"):
+    """An article on a page in lang. One not yet translated is shown in
+    English under a note, and its canonical page is the English one."""
+    al = article["lang"]
     toc = []
-    content = article_html(article["body"], toc)
+    content = article_html(article["body"], toc, lang, al)
     same = [a for a in articles if a is not article and a["section"] == article["section"]]
     other = [a for a in articles if a is not article and a["section"] != article["section"]]
     more = sorted(same, key=lambda a: a["order"])[:2] + sorted(other, key=lambda a: a["order"])[:1]
     contents = "".join(f'<li><a href="#{slug}">{label}</a></li>' for slug, label in toc)
-    links = [(passage_label(b, c, vs), next(filter(None, (verse_link(b, c, v) for v in vs)), None))
+    links = [(passage_label(b, c, vs, lang), next(filter(None, (verse_link(b, c, v, lang) for v in vs)), None))
              for b, c, vs in article["passages"]]
     read = "".join(f'<a class="chip" href="{href}">{html.escape(label)}&nbsp;&rarr;</a>'
                    for label, href in links if href)
-    passage = (f'<aside class="read-card"><h2>Read the passage</h2><p>Open it in the reader, '
-               f'tap any verse, and every decision behind it is there.</p><p>{read}</p></aside>'
+    passage = (f'<aside class="read-card"><h2>{t(lang, "article.read_passage")}</h2>'
+               f'<p>{t(lang, "article.read_passage_text")}</p><p>{read}</p></aside>'
                if read else "")
+    tl = lang_attr(al, lang)
+    untranslated = f'<p class="notice">{t(lang, "article.not_translated")}</p>\n' if al != lang else ""
+    section = catalog(lang)["sections"][article["section"]]
     body = f"""
 <div class="article-layout">
 <article class="article">
 <header class="article-head">
-<p class="eyebrow"><a href="/articles/#{article["section"]}">{SECTIONS[article["section"]]}</a></p>
-<h1>{display(article["title"])}</h1>
-<p class="dek">{display(article["summary"])}</p>
-<p class="byline">{MARK}<span>Open Word Bible &middot; {_date(article["date"])} &middot; {article["minutes"]} min read
-<span class="status">Draft, not yet reviewed</span></span></p>
+{untranslated}<p class="eyebrow"><a href="{url(lang, "/articles/")}#{article["section"]}">{section}</a></p>
+<h1{tl}>{display(article["title"])}</h1>
+<p class="dek"{tl}>{display(article["summary"])}</p>
+<p class="byline">{MARK}<span>Open Word Bible &middot; {_date(article["date"], lang)} &middot; {t(lang, "article.min_read", n=article["minutes"])}
+<span class="status">{t(lang, "article.status")}</span></span></p>
 </header>
-<div class="article-body">
+<div class="article-body"{tl}>
 {content}
 </div>
 {passage}
 </article>
-{f'<nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">On this page</h2><ol>{contents}</ol></nav>' if len(toc) > 1 else ""}
+{f'<nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">{t(lang, "article.on_this_page")}</h2><ol{tl}>{contents}</ol></nav>' if len(toc) > 1 else ""}
 </div>
-<section class="more" aria-labelledby="more-h"><h2 id="more-h">Keep reading</h2>
-<ul class="a-grid">{article_list(more)}</ul>
-<p><a href="/articles/">All articles &rarr;</a></p></section>
+<section class="more" aria-labelledby="more-h"><h2 id="more-h">{t(lang, "article.keep_reading")}</h2>
+<ul class="a-grid">{article_list(more, lang)}</ul>
+<p><a href="{url(lang, "/articles/")}">{t(lang, "article.all")}</a></p></section>
 """
-    return page(article["title"], body, path=article_url(article), current="/articles/",
+    return page(lang, article["title"], body, path=article_url(article), current="/articles/",
                 card=og_card_article(article),
-                card_alt=f"Article, {SECTIONS[article['section']]}: {article['title']}. {article['summary']}",
-                description=article["summary"])
+                card_alt=t(lang, "meta.article_card_alt", section=section,
+                           title=article["title"], summary=article["summary"]),
+                description=article["summary"],
+                translated=LANGUAGES if al == lang else ("en",))
 
 
 def not_found_page():
-    return page("Not found", f"""
+    """One 404 page serves every address, so it speaks each language."""
+    lang = "en"
+    others = "".join(
+        f'<p class="hero-sub" lang="{code}">{t(code, "404.heading")} '
+        f'<a href="{url(code, "/")}">{t(code, "404.home")}</a></p>'
+        for code in LANGUAGES if code != lang)
+    return page(lang, t(lang, "404.title"), f"""
 <section class="hero lost">
 <p class="eyebrow">404</p>
-<h1>This page is not here.</h1>
-<p class="hero-sub">It may have moved, or the address may be mistyped. Only a few passages are translated so far.</p>
-<p class="actions"><a class="button" href="/read/">{icon(ICONS["book"])}See the passages</a>
-<a class="button ghost" href="/">Go to the home page</a></p>
+<h1>{t(lang, "404.heading")}</h1>
+<p class="hero-sub">{t(lang, "404.sub")}</p>
+<p class="actions"><a class="button" href="/read/">{icon(ICONS["book"])}{t(lang, "404.passages")}</a>
+<a class="button ghost" href="/">{t(lang, "404.home")}</a></p>
+{others}
 </section>""")
 
 
@@ -966,37 +1132,6 @@ FAVICON = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
 """
 
 
-@functools.lru_cache(maxsize=None)
-def site_footer():
-    """The footer on every page: the passages, the first articles to read,
-    and the project's links. Built once per build."""
-    def items(pairs):
-        return "".join(f'<li><a href="{href}">{html.escape(label)}</a></li>' for href, label in pairs)
-
-    read = [(url, title) for url, title, _ in passages()]
-    start = sorted((a for a in load_articles() if a["section"] == "method"), key=lambda a: a["order"])[:3]
-    learn = [(article_url(a), a["title"]) for a in start] + [("/articles/", "All articles")]
-    project = [("/about/", "About"), ("/about/#credits", "Sources and credits"),
-               ("/#help", "Help make it"), (GITHUB_URL, "Source code"),
-               (GITHUB_URL + "/issues/new", "Report a problem")]
-    return f"""<footer class="site"><div class="wrap">
-<div class="foot-grid">
-<div class="foot-about">
-<a class="brand" href="/">{MARK}<span class="brand-name">Open Word <em>Bible</em></span></a>
-<p>A free Bible translated from Hebrew and Greek, with the reasoning behind every sentence shown.</p>
-<p class="foot-licence"><span class="pill">CC0</span> Public domain: quote it, print it, build on it.</p>
-</div>
-<nav aria-labelledby="foot-read"><h2 id="foot-read">Read</h2><ul>{items(read + [("/read/", "All passages")])}</ul></nav>
-<nav aria-labelledby="foot-learn"><h2 id="foot-learn">Learn</h2><ul>{items(learn)}</ul></nav>
-<nav aria-labelledby="foot-project"><h2 id="foot-project">Project</h2><ul>{items(project)}</ul></nav>
-</div>
-<div class="foot-base">
-<p>Every sentence is an AI draft until a named reviewer who reads the original language approves it.</p>
-<p>Translation and notes CC0 &middot; Code MIT &middot; Source texts keep their own licences</p>
-</div>
-</div></footer>"""
-
-
 def sitemap(paths):
     urls = "".join(f"<url><loc>{html.escape(SITE_URL + p)}</loc></url>\n" for p in paths)
     return ('<?xml version="1.0" encoding="UTF-8"?>\n'
@@ -1005,23 +1140,31 @@ def sitemap(paths):
 
 
 def build(out):
-    site_footer.cache_clear()
-    nav_menus.cache_clear()
-    passages.cache_clear()
-    asset.cache_clear()
-    translated_verses.cache_clear()
+    for cached in (nav_menus, footer_links, passages, asset, translated_verses, catalog):
+        cached.cache_clear()
     if out.exists():
         shutil.rmtree(out)
-    pages = {"/": home_page(), "/read/": read_page(), "/about/": about_page()}
-    for book, chapter in chapters():
-        pages[chapter_url(book, chapter)] = chapter_page(book, chapter)
-    articles = load_articles()
-    pages["/articles/"] = articles_page(articles)
-    for article in articles:
-        pages[article_url(article)] = article_page(article, articles)
+    pages, indexed = {}, []
+    for lang in LANGUAGES:
+        def add(path, text, index=True):
+            pages[url(lang, path)] = text
+            if index:
+                indexed.append(url(lang, path))
+
+        add("/", home_page(lang))
+        add("/read/", read_page(lang))
+        add("/about/", about_page(lang))
+        for book, chapter in chapters():
+            add(chapter_url(book, chapter), chapter_page(book, chapter, lang))
+        articles = load_articles(lang)
+        add("/articles/", articles_page(articles, lang))
+        for article in articles:
+            # An article still in English on another language's pages is
+            # left to its English page in search results.
+            add(article_url(article), article_page(article, articles, lang), index=article["lang"] == lang)
     files = {(p.strip("/") + "/index.html").lstrip("/"): text for p, text in pages.items()}
     files["404.html"] = not_found_page()
-    files["sitemap.xml"] = sitemap(pages)
+    files["sitemap.xml"] = sitemap(indexed)
     files["robots.txt"] = f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n"
     files["favicon.svg"] = FAVICON
     for rel, text in files.items():
