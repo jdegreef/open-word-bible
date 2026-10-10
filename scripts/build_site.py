@@ -150,13 +150,28 @@ def markdown(text):
     return "\n".join(out)
 
 
+def curl_record(r):
+    """The record with curly quotes in every text a reader sees. content/
+    stores straight ones; curling here, the one loader, covers the reader,
+    the home page and articles alike."""
+    for levels in r["renderings"].values():
+        for level, text in levels.items():
+            levels[level] = smart_quotes(text)
+    r["literal_gloss"] = smart_quotes(r["literal_gloss"])
+    for d in r["decisions"]:
+        d["choice"] = smart_quotes(d["choice"])
+        d["alternatives"] = [smart_quotes(a) for a in d["alternatives"]]
+        d["reason"] = smart_quotes(d["reason"])
+    return r
+
+
 def load_chapter(book, chapter):
     records = []
     for path in sorted((ROOT / "content" / book).glob("*.json")):
         for r in json.loads(path.read_text(encoding="utf-8"))["records"]:
             first = refs.parse(r["refs"][0])
             if first.chapter == chapter:
-                records.append(r)
+                records.append(curl_record(r))
     records.sort(key=lambda r: refs.parse(r["refs"][0]).sort_key() + (r["id"],))
     words = json.loads((ROOT / "data" / "grc" / f"{book}.{chapter}.json")
                        .read_text(encoding="utf-8"))["verses"]
@@ -260,7 +275,7 @@ def all_records():
 
 def plain(text):
     """Rendering text as a reader sees it with the default settings."""
-    return smart_quotes(markup.VERSE.sub("", markup.render(text)).strip())
+    return markup.VERSE.sub("", markup.render(text)).strip()
 
 
 # The worked example on the home page: a record and one of its decisions.
@@ -284,7 +299,7 @@ def example_html():
         f'<div class="lvl"><span class="tag">{name}</span><p>{html.escape(plain(record["renderings"]["en"][code]))}</p></div>'
         for code, name in (("L", "Literal"), ("B", "Balanced"), ("R", "Readable")))
     ref = refs.parse(record["refs"][0])
-    also = "; ".join(html.escape(plain(a)) for a in decision["alternatives"])
+    also = "; ".join(html.escape(a) for a in decision["alternatives"])
     return f"""
 <section class="example" aria-labelledby="example-h">
 <h2 id="example-h">See the work: {BOOK_NAMES[book]["en"]} {ref.chapter}:{ref.verse}</h2>
@@ -301,7 +316,7 @@ def example_html():
 <p class="label">Decision</p>
 <p class="choice">&ldquo;{html.escape(plain(decision["choice"]))}&rdquo;</p>
 <p class="alts">Also considered: {also}</p>
-<p class="why">{html.escape(smart_quotes(decision["reason"]))}</p>
+<p class="why">{html.escape(decision["reason"])}</p>
 </div>
 </div>
 <p><a href="{chapter_url(book, chapter)}">Open {BOOK_NAMES[book]["en"]} {chapter} and tap any verse &rarr;</a></p>

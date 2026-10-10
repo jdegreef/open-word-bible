@@ -92,6 +92,7 @@
   if (!DATA.languages.includes(settings.lang)) settings.lang = DATA.languages[0];
 
   var current = null;   // selected record
+  var panelEl = document.getElementById("panel");
   var SPAN = /\{\{([a-z_]+):([^{}]*)\}\}/g;
   var VERSE = /\\v (\d+) ?/;
 
@@ -110,19 +111,12 @@
     return out;
   }
 
-  // Curly quotes and apostrophes for the straight ones in the data, as the
-  // build does for articles (smart_quotes in scripts/build_site.py).
-  function curl(s) {
-    return s.replace(/(^|[\s(\[\u2014-])"/g, "$1\u201c").replace(/"/g, "\u201d")
-            .replace(/(^|[\s(\[\u2014-])'/g, "$1\u2018").replace(/'/g, "\u2019");
-  }
-
   function render(text) {
-    return curl(text.replace(SPAN, function (_, name, opts) {
+    return text.replace(SPAN, function (_, name, opts) {
       var options = opts.split("|");
       var i = settings[name];
       return typeof i === "number" && i >= 0 && i < options.length ? options[i] : options[0];
-    }));
+    });
   }
 
   function el(tag, cls, text) {
@@ -165,9 +159,12 @@
       document.getElementById("hint-" + name).textContent = t("hint_" + name)[settings[name]];
     });
     document.documentElement.lang = settings.lang;
-    var summary = [t(settings.level), t(["inclusive", "traditional"][settings.gender]),
-                   t(["christ", "messiah"][settings.christos]), t(["he", "He"][settings.deity_pronoun])];
-    if (DATA.languages.length > 1) summary.unshift(settings.lang === "es" ? "Espa\u00f1ol" : "English");
+    // The summary on the phone settings button: each shown choice's label.
+    var summary = [];
+    document.querySelectorAll(".control:not([hidden]) .seg").forEach(function (seg) {
+      var on = seg.querySelector('[aria-pressed="true"]');
+      if (on && seg.children.length > 1) summary.push(on.textContent);
+    });
     document.getElementById("settings-summary").textContent = summary.join(" \u00b7 ");
   }
 
@@ -220,7 +217,7 @@
     if (d.alternatives.length) {
       card.appendChild(el("div", "alts", t("also") + d.alternatives.map(render).join("; ")));
     }
-    card.appendChild(el("p", "why", curl(d.reason)));
+    card.appendChild(el("p", "why", d.reason));
     function on() { highlight(d.tokens, card); }
     card.addEventListener("click", on);
     card.addEventListener("focus", on);
@@ -228,7 +225,7 @@
   }
 
   function drawPanel() {
-    var panel = document.getElementById("panel");
+    var panel = panelEl;
     panel.textContent = "";
     if (!current) {
       panel.appendChild(el("h2", null, t("empty_title")));
@@ -272,7 +269,7 @@
 
     panel.appendChild(el("h3", null, t("gloss")));
     var gloss = el("p", "gloss");
-    splitVerses(current, curl(current.literal_gloss)).forEach(function (part, i) {
+    splitVerses(current, current.literal_gloss).forEach(function (part, i) {
       if (i > 0) gloss.appendChild(el("sup", null, " " + part[0]));
       gloss.appendChild(document.createTextNode((i > 0 ? " " : "") + part[1]));
     });
@@ -289,49 +286,53 @@
   }
 
   // On narrow screens the panel is a bottom sheet over the text (see .panel
-  // in style.css), so opening it never moves the reader's place.
-  var NARROW = window.matchMedia("(max-width: 860px)");
-  var panelEl = document.getElementById("panel");
-  var lastVerse = null;
+  // in style.css), so opening it never moves the reader's place. The CSS
+  // owns the breakpoint: the sheet is the panel when it is position: fixed.
+  function narrow() { return getComputedStyle(panelEl).position === "fixed"; }
+  function verseEl(v) { return document.querySelector('.verse[data-v="' + v + '"]'); }
+  function hashVerse() { var m = /^#v(\d+)$/.exec(location.hash); return m && m[1]; }
 
   function sheet(open) {
     panelEl.classList.toggle("open", open);
-    document.body.classList.toggle("sheet-open", open && NARROW.matches);
+    document.body.classList.toggle("sheet-open", open);
   }
 
   function select(record, verse) {
     current = record;
-    lastVerse = verse || verseOf(record.refs[0]);
-    try { history.replaceState(null, "", "#v" + lastVerse); } catch (e) { /* ignore */ }
+    verse = verse || verseOf(record.refs[0]);
+    try { history.replaceState(null, "", "#v" + verse); } catch (e) { /* ignore */ }
     drawText();
     drawPanel();
     panelEl.scrollTop = 0;
     sheet(true);
-    if (NARROW.matches) {
-      var v = document.querySelector('.verse[data-v="' + lastVerse + '"]');
+    if (narrow()) {
+      var v = verseEl(verse);
       if (v) v.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   }
 
   function deselect() {
     if (!current) return;
+    var verse = hashVerse();
     current = null;
     try { history.replaceState(null, "", location.pathname + location.search); } catch (e) { /* ignore */ }
     sheet(false);
     drawText();
     drawPanel();
-    var v = lastVerse && document.querySelector('.verse[data-v="' + lastVerse + '"]');
+    var v = verse && verseEl(verse);
     if (v) v.focus({ preventScroll: true });
   }
 
   document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && current && NARROW.matches) deselect();
+    if (e.key === "Escape" && narrow()) deselect();
   });
 
-  // Swipe the sheet down to close it, when it is scrolled to its top.
+  // Swipe the sheet down to close it, when it is scrolled to its top. The
+  // slide transition is off while dragging so the sheet follows the finger.
   var startY = null;
   panelEl.addEventListener("touchstart", function (e) {
-    startY = NARROW.matches && panelEl.scrollTop <= 0 ? e.touches[0].clientY : null;
+    startY = narrow() && panelEl.scrollTop <= 0 ? e.touches[0].clientY : null;
+    if (startY !== null) panelEl.style.transition = "none";
   }, { passive: true });
   panelEl.addEventListener("touchmove", function (e) {
     if (startY === null) return;
@@ -341,7 +342,7 @@
   panelEl.addEventListener("touchend", function (e) {
     if (startY === null) return;
     var dy = e.changedTouches[0].clientY - startY;
-    panelEl.style.transform = "";
+    panelEl.style.transform = panelEl.style.transition = "";
     startY = null;
     if (dy > 80) deselect();
   });
@@ -350,7 +351,6 @@
   toggle.addEventListener("click", function () {
     var open = toggle.getAttribute("aria-expanded") !== "true";
     toggle.setAttribute("aria-expanded", open ? "true" : "false");
-    document.getElementById("settings").classList.toggle("open", open);
   });
 
   document.querySelectorAll("[data-setting]").forEach(function (seg) {
@@ -367,15 +367,19 @@
     });
   });
 
-  var m = /^#v(\d+)$/.exec(location.hash);
-  if (m) current = DATA.records.find(function (r) {
-    return r.refs.some(function (vid) { return verseOf(vid) === m[1]; });
-  }) || null;
+  var start = hashVerse();
+  var record = start && DATA.records.find(function (r) {
+    return r.refs.some(function (vid) { return verseOf(vid) === start; });
+  });
   drawControls();
-  drawText();
-  drawPanel();
-  if (current) {
-    lastVerse = m[1];
-    sheet(true);
-  }
+  if (record) {
+    // Opened at a verse: the verse decides where the page sits, not the
+    // browser's scroll restoring, and the jump waits for layout to settle.
+    try { history.scrollRestoration = "manual"; } catch (e) { /* ignore */ }
+    select(record, start);
+    window.addEventListener("load", function () {
+      var v = narrow() && verseEl(start);
+      if (v) v.scrollIntoView({ block: "start" });
+    });
+  } else { drawText(); drawPanel(); }
 })();

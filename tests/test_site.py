@@ -100,6 +100,13 @@ class SiteTest(unittest.TestCase):
         self.assertNotIn('"', why)
         self.assertNotIn("&quot;", why)
 
+    def test_chapter_data_has_curly_quotes(self):
+        for r in self.chapter_data()["records"]:
+            texts = [t for levels in r["renderings"].values() for t in levels.values()]
+            texts += [r["literal_gloss"]] + [d["reason"] for d in r["decisions"]]
+            for text in texts:
+                self.assertNotRegex(text, "[\"']", r["id"])
+
     def test_chapter_settings_fold_behind_a_toggle(self):
         page = (self.out / "jhn" / "1" / "index.html").read_text(encoding="utf-8")
         self.assertIn('aria-controls="settings"', page)
