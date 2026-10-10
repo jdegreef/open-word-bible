@@ -89,6 +89,29 @@ class SiteTest(unittest.TestCase):
         for name in ("SBL Greek New Testament", "MACULA Greek", "Open Scriptures Hebrew Bible"):
             self.assertIn(name, about)
 
+    def test_about_page_renders_markdown_links(self):
+        about = (self.out / "about" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('<a href="https://github.com/seven1m/open-bibles">seven1m/open-bibles</a>', about)
+        self.assertNotIn("](", about)
+
+    def test_home_page_example_has_curly_quotes(self):
+        home = (self.out / "index.html").read_text(encoding="utf-8")
+        why = re.search(r'<p class="why">(.*?)</p>', home, re.S)[1]
+        self.assertNotIn('"', why)
+        self.assertNotIn("&quot;", why)
+
+    def test_chapter_data_has_curly_quotes(self):
+        for r in self.chapter_data()["records"]:
+            texts = [t for levels in r["renderings"].values() for t in levels.values()]
+            texts += [r["literal_gloss"]] + [d["reason"] for d in r["decisions"]]
+            for text in texts:
+                self.assertNotRegex(text, "[\"']", r["id"])
+
+    def test_chapter_settings_fold_behind_a_toggle(self):
+        page = (self.out / "jhn" / "1" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('aria-controls="settings"', page)
+        self.assertIn('<div class="settings" id="settings">', page)
+
 
 class ExtractTest(unittest.TestCase):
     def test_extracts_are_up_to_date(self):
