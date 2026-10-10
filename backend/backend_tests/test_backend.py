@@ -72,6 +72,21 @@ class ImportContentTest(TestCase):
         self.assertEqual(Sentence.objects.count(), 0)
 
 
+class FreshDatabaseTest(TestCase):
+    def test_deploy_import_skips_until_texts_are_loaded(self):
+        out = io.StringIO()
+        call_command("import_content", "--if-texts-loaded", stdout=out, stderr=io.StringIO())
+        self.assertIn("run import_texts", out.getvalue())
+        self.assertEqual(Sentence.objects.count(), 0)
+        with self.assertRaises(CommandError):
+            import_content()
+
+    def test_deploy_import_runs_once_texts_are_loaded(self):
+        load_extract_words()
+        call_command("import_content", "--if-texts-loaded", stdout=io.StringIO(), stderr=io.StringIO())
+        self.assertTrue(Sentence.objects.exists())
+
+
 class ApiTest(TestCase):
     @classmethod
     def setUpTestData(cls):

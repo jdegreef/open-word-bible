@@ -1,10 +1,13 @@
 """Load the sentence records in content/ into the database.
 
     python manage.py import_content
+    python manage.py import_content --if-texts-loaded   # run on every deploy
 
 Every record is checked first with owb.validate against the words already in
 the database (run import_texts before this). A file with any error is not
-imported. Renderings and decisions are replaced from the file, since content/
+imported. With --if-texts-loaded, the command does nothing (and succeeds)
+while no source words are in the database yet, so a fresh deploy is not
+blocked before import_texts has run. Renderings and decisions are replaced from the file, since content/
 is still the master copy. A sentence's status is set only when it is created:
 once review starts, the review trail owns it and a re-import never resets it.
 """
@@ -26,8 +29,14 @@ class Command(BaseCommand):
 
     def add_arguments(self, parser):
         parser.add_argument("paths", nargs="*", help="Content files (default: content/*/*.json)")
+        parser.add_argument("--if-texts-loaded", action="store_true",
+                            help="Skip quietly if import_texts has not been run yet")
 
-    def handle(self, *args, paths, **options):
+    def handle(self, *args, paths, if_texts_loaded=False, **options):
+        if if_texts_loaded and not Word.objects.exists():
+            self.stdout.write("No source texts in the database yet; run import_texts, "
+                              "then import_content. Nothing imported.")
+            return
         files = paths or sorted(str(p) for p in (settings.REPO_ROOT / "content").glob("*/*.json"))
         if not files:
             raise CommandError("No content files found")
