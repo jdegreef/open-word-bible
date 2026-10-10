@@ -91,7 +91,9 @@ others.
 - US spelling (honor, Savior, practice as a verb). A future `spelling` setting
   will give UK forms.
 - "Lord" for the Greek *kyrios* when it refers to Jesus or to God. "the LORD"
-  for the divine name in the Old Testament, with Yahweh as a setting.
+  for the divine name in the Old Testament, with Yahweh as a setting. In a New
+  Testament quotation of the Old Testament the Greek has *kyrios*, so write
+  "Lord" and note the Hebrew original in a decision (John 1:23).
 - Modern English: no "thee", "thou", "-eth", "behold", "lo". "Brothers and
   sisters" through the gender setting, not "brethren".
 - Numbers in words up to ninety-nine; numerals for larger numbers and in
@@ -112,8 +114,15 @@ Settings change wording, never meaning. **(checked)** Use a setting span
   `the {{christos:Christ|Messiah}}`.
 - `deity_pronoun`: every pronoun for God or Christ, lowercase default,
   capitalised alternative: `{{deity_pronoun:him|Him}}`. **(checked: only the
-  capitalisation may differ)** At the start of a sentence the pronoun is
-  capitalised either way, so write plain "He" with no span (as John 1:2 does).
+  capitalisation may differ)** This covers every pronoun for God or Christ
+  except "I": he/him/his/himself, "me/my/mine" when he speaks of himself, and
+  "you/your" when someone speaks to him. Never the Spirit as "it". At the start
+  of a sentence the pronoun is capitalised either way, so write plain "He"
+  with no span (as John 1:2 does).
+- `units`: modern measures by default, the original unit as the alternative:
+  `about {{units:20 to 30 gallons|two or three measures}}`. Literal keeps the
+  original unit. US units are the modern default; metric belongs to a future
+  UK/metric setting, not to `units`.
 - `divine_name`, `units`, `spelling`: when they apply (the Old Testament,
   measures and money).
 

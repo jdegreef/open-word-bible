@@ -72,9 +72,34 @@ uncertain and footnoted, giving the view that a distinction is meant.
 
 **Messiah (*Messias*, 2).** 1:41 and 4:25 have the Hebrew title in Greek
 letters, then John translates it as Christos. Write "Messiah" plainly (no
-setting) and render the explanation as "(which means Christ)" with the
-christos setting on the second word only, so no setting can produce
-"Messiah (which means Messiah)".
+setting), and give the explanation its own alternative so no setting can
+produce "Messiah (which means Messiah)":
+"(which means {{christos:Christ|Anointed One}})", as 1:41 does.
+
+**Christ with the article.** Where the Greek says "the Christ" as a title
+("I am not the Christ", 1:20), every level writes `the {{christos:Christ|Messiah}}`,
+since "I am not Christ" would misread it as a name.
+
+**Temple words.** *hieron* is the whole temple area: "temple" at Literal,
+"temple courts" or "temple area" at Balanced and Readable. *naos* is the
+sanctuary itself: "temple" at every level, so that "destroy this temple ...
+the temple of his body" (2:19-21) stays clear.
+
+**Believe, entrust (2:24).** The key term "believe" also means "entrust";
+where John plays on the two (2:23-24), a word_sense meaning decision says so
+and excuses the key term.
+
+**Jesus's brothers (2:12; 7:3-10).** No gender setting: specific men are
+meant. A footnote gives the views of who they were (younger brothers, half
+brothers, cousins).
+
+**Historic present.** John often tells past events in the present ("he says",
+1:21). Literal keeps the present; Balanced and Readable use the past. One
+rendering decision per passage, not per verb.
+
+**Footnotes on "the Jews".** Footnote the occurrences where Balanced and
+Readable depart from the word (the authorities); the ones that mean the
+people need a meaning decision but no footnote.
 
 **"Woman" as an address (2:4; 19:26; 20:15).** Respectful in Greek, not
 cold. Literal "Woman"; Balanced "Woman" with a note, or "Dear woman" with a
@@ -82,6 +107,9 @@ rendering decision; Readable "Mother" only at 2:4 and 19:26 where she is his
 mother, with a decision.
 
 **The beloved disciple.** Always "the disciple whom Jesus loved"; never named.
+
+**Disciples.** "disciples" at every level, Readable included: the word is
+plain enough and recurs throughout the Gospel.
 
 ## Disputed passages
 
@@ -93,5 +121,7 @@ mother, with a decision.
 - **5:3b-4** (the angel stirring the water) is not in the SBLGNT text. A
   footnote at 5:3 gives it, and the verse numbering skips 5:4 as the source
   does.
+- **1:34**: the SBLGNT reads "the Chosen One of God"; "the Son of God" is the
+  variant and goes in the footnote.
 - Other variants follow `docs/english-style.md`: the SBLGNT governs, and a
   reviewer checks each variant note against the apparatus.
