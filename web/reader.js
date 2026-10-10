@@ -31,7 +31,9 @@
       empty_title: "The reasoning behind each verse",
       empty_text: "Tap or click any verse to see the Greek, a word-for-word gloss, and every translation decision with its reason.",
       status: "AI draft \u00b7 not yet reviewed",
-      greek: "Greek (SBLGNT)", gloss: "Word for word", notes_language: "",
+      greek: "Greek (SBLGNT), word by word", gloss: "Word for word", notes_language: "",
+      word_hint: "Tap a Greek word for its dictionary form and grammar.",
+      lemma: "Dictionary form", strong: "Strong\u2019s",
       meaning: "What the original means", rendering: "How English {level} says it",
       no_meaning: "No meaning notes for this verse.", no_rendering: "No wording notes for this level.",
       also: "Also considered: ", uncertain: "Uncertain", footnote: "Footnote",
@@ -67,7 +69,9 @@
       empty_title: "El razonamiento detr\u00e1s de cada vers\u00edculo",
       empty_text: "Toca cualquier vers\u00edculo para ver el griego, una glosa palabra por palabra y cada decisi\u00f3n de traducci\u00f3n con su raz\u00f3n.",
       status: "Borrador de IA \u00b7 a\u00fan sin revisar",
-      greek: "Griego (SBLGNT)", gloss: "Palabra por palabra (en ingl\u00e9s)",
+      greek: "Griego (SBLGNT), palabra por palabra", gloss: "Palabra por palabra (en ingl\u00e9s)",
+      word_hint: "Toca una palabra griega para ver su forma de diccionario y su gram\u00e1tica. Las glosas est\u00e1n en ingl\u00e9s.",
+      lemma: "Forma de diccionario", strong: "Strong",
       notes_language: "Por ahora, las notas est\u00e1n en ingl\u00e9s.",
       meaning: "Lo que significa el original", rendering: "C\u00f3mo lo dice la versi\u00f3n {level} en espa\u00f1ol",
       no_meaning: "No hay notas de significado para este vers\u00edculo.", no_rendering: "No hay notas de redacci\u00f3n para este nivel.",
@@ -241,29 +245,43 @@
     panel.appendChild(el("span", "status", t("status")));
 
     panel.appendChild(el("h3", null, t("greek")));
-    var greek = el("div", "greek");
-    greek.lang = "grc";
-    var info = el("p", "wordinfo");
-    function drawWord(t) {
-      var w = el("span", "word", t.text);
-      w.dataset.id = t.id;
-      w.tabIndex = 0;
-      function show() {
-        info.textContent = t.lemma + " \u00b7 " + t.morph + " \u00b7 \u201c" + t.gloss + "\u201d";
+    // Interlinear: each Greek word over its gloss. Tapping one shows its
+    // dictionary form, Strong's number and grammar, and lights up every
+    // decision that names it.
+    var greek = el("div", "interlinear");
+    var info = el("div", "wordinfo");
+    info.hidden = true;
+    function drawWord(word) {
+      var w = el("button", "word iw");
+      w.type = "button";
+      w.dataset.id = word.id;
+      var g = el("span", "iw-g", word.text + word.after.trim());
+      g.lang = "grc";
+      w.appendChild(g);
+      w.appendChild(el("span", "iw-e", word.gloss));
+      w.addEventListener("click", function () {
+        info.textContent = "";
+        var head = el("p", "wi-head");
+        var lemma = el("span", "wi-lemma", word.lemma);
+        lemma.lang = "grc";
+        head.appendChild(lemma);
+        head.appendChild(el("span", "wi-label", t("lemma") + (word.strong ? " \u00b7 " + t("strong") + " G" + word.strong : "")));
+        info.appendChild(head);
+        info.appendChild(el("p", "wi-grammar", word.grammar[settings.lang]));
+        info.appendChild(el("p", "wi-gloss", "\u201c" + word.gloss + "\u201d"));
+        info.hidden = false;
         var ids = [];
-        current.decisions.forEach(function (d) { if (d.tokens.includes(t.id)) ids = ids.concat(d.tokens); });
-        highlight(ids.length ? ids : [t.id], null);
-      }
-      w.addEventListener("click", show);
-      w.addEventListener("focus", show);
+        current.decisions.forEach(function (d) { if (d.tokens.includes(word.id)) ids = ids.concat(d.tokens); });
+        highlight(ids.length ? ids : [word.id], null);
+      });
       greek.appendChild(w);
-      greek.appendChild(document.createTextNode(t.after.trim() ? t.after.trim() + " " : " "));
     }
     var mine = new Set(current.source.tokens);
     current.refs.forEach(function (vid, i) {
-      if (i > 0) greek.appendChild(el("sup", null, verseOf(vid)));
+      if (i > 0) greek.appendChild(el("sup", "iw-verse", verseOf(vid)));
       (DATA.words[vid] || []).filter(function (w) { return mine.has(w.id); }).forEach(drawWord);
     });
+    panel.appendChild(el("p", "hint", t("word_hint")));
     panel.appendChild(greek);
     panel.appendChild(info);
 

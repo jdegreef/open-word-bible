@@ -18,7 +18,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from owb import markup, refs  # noqa: E402
+from owb import markup, morph, refs  # noqa: E402
 
 BOOK_NAMES = {"JHN": {"en": "John", "es": "Juan"},
               "PHP": {"en": "Philippians", "es": "Filipenses"}}
@@ -218,7 +218,9 @@ def chapter_page(book, chapter):
                  if all(lang in r["renderings"] for r in records)]
     data = {"book": book, "chapter": chapter, "title": title, "languages": languages,
             "records": records,
-            "words": {vid: words[vid] for r in records for vid in r["refs"]}}
+            "words": {vid: [dict(w, grammar={lang: morph.describe(w["morph"], lang) for lang in LANGUAGES})
+                            for w in words[vid]]
+                      for r in records for vid in r["refs"]}}
     # "</" cannot appear inside a script element.
     blob = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
 
