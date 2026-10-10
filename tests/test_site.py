@@ -1,3 +1,4 @@
+import hashlib
 import json
 import re
 import subprocess
@@ -67,6 +68,10 @@ class SiteTest(unittest.TestCase):
         read = (self.out / "read" / "index.html").read_text(encoding="utf-8")
         self.assertIn('href="/jhn/1/"', read)
         self.assertIn('href="/php/4/"', read)
+        # Each card opens with its passage's first verse, from the content.
+        self.assertEqual(read.count('class="a-card p-card"'), len(build_site.chapters()))
+        first = build_site.load_chapter("JHN", 1)[0][0]
+        self.assertIn(build_site.plain(first["renderings"]["en"]["B"]), read)
 
     def test_sentence_records_split_a_verse(self):
         data = self.chapter_data("php/4")
@@ -100,6 +105,21 @@ class SiteTest(unittest.TestCase):
             self.assertIn(f"<mark>{word}</mark>", home)
         self.assertIn(f"<b>{len(build_site.all_records())}</b>", home)
         self.assertIn('href="/jhn/1/"', home)
+
+    def test_fonts_are_self_hosted_with_their_licences(self):
+        css = (self.out / "style.css").read_text(encoding="utf-8")
+        files = re.findall(r"url\(/fonts/([^)]+)\)", css)
+        self.assertTrue(files)
+        for name in files:
+            self.assertTrue((self.out / "fonts" / name).is_file(), name)
+        for script in ("greek", "greek-ext"):
+            self.assertIn(f"gentium-book-plus-{script}-400-normal.woff2", files)
+        self.assertIn("noto-serif-hebrew-hebrew-400-normal.woff2", files)
+        for licence in ("OFL-Gentium.txt", "OFL-NotoSerifHebrew.txt"):
+            self.assertIn("SIL Open Font License", (ROOT / "web" / "fonts" / licence).read_text(encoding="utf-8"))
+        home = (self.out / "index.html").read_text(encoding="utf-8")
+        preload = re.search(r'<link rel="preload" href="/fonts/([^"]+)"', home)[1]
+        self.assertIn(preload, files)
 
     def test_about_page_credits_sources(self):
         about = (self.out / "about" / "index.html").read_text(encoding="utf-8")
@@ -139,3 +159,44 @@ class ExtractTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+    def test_assets_are_versioned_by_content(self):
+        # A deploy must never pair new pages with a stylesheet the browser
+        # kept from the last one: each asset URL carries its content hash.
+        home = (self.out / "index.html").read_text(encoding="utf-8")
+        chapter = (self.out / "jhn" / "1" / "index.html").read_text(encoding="utf-8")
+        for name, page in (("style.css", home), ("site.js", home), ("reader.js", chapter)):
+            m = re.search(r'"/%s\?v=([0-9a-f]{10})"' % re.escape(name), page)
+            self.assertTrue(m, name)
+            digest = hashlib.sha256((self.out / name).read_bytes()).hexdigest()[:10]
+            self.assertEqual(m[1], digest, name)
+
+    def test_header_dropdowns_list_passages_and_articles(self):
+        home = (self.out / "index.html").read_text(encoding="utf-8")
+        header = re.search(r'<header class="site">(.*?)</header>', home, re.S)[1]
+        for key in ("read", "articles", "about"):
+            self.assertIn(f'aria-controls="dd-{key}"', header)
+            self.assertIn(f'<div class="dropdown', header)
+        self.assertIn('href="/jhn/1/"', header)
+        self.assertIn('href="/php/4/"', header)
+        for a in build_site.load_articles():
+            self.assertIn(f'href="{build_site.article_url(a)}"', header)
+        # The current section's trigger is marked on its pages.
+        articles = (self.out / "articles" / "index.html").read_text(encoding="utf-8")
+        self.assertRegex(articles, r'class="nav-link nav-trigger active"[^>]*aria-controls="dd-articles"')
+        # ...and the dropdown link to the page itself tells a screen reader.
+        chapter = (self.out / "jhn" / "1" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('class="dd-item" href="/jhn/1/" aria-current="page"', chapter)
+        self.assertNotIn('href="/php/4/" aria-current', chapter)
+
+    def test_interface_fonts_are_self_hosted_with_their_licences(self):
+        css = (self.out / "style.css").read_text(encoding="utf-8")
+        files = re.findall(r"url\(/fonts/([^)]+)\)", css)
+        self.assertTrue(files)
+        for name in files:
+            self.assertTrue((self.out / "fonts" / name).is_file(), name)
+        for licence in ("OFL-Fraunces.txt", "OFL-HankenGrotesk.txt"):
+            self.assertIn("SIL Open Font License", (ROOT / "web" / "fonts" / licence).read_text(encoding="utf-8"))
+        home = (self.out / "index.html").read_text(encoding="utf-8")
+        preload = re.search(r'<link rel="preload" href="/fonts/([^"]+)"', home)[1]
+        self.assertIn(preload, files)
