@@ -46,6 +46,14 @@ class SiteTest(unittest.TestCase):
             words = {t["id"] for v in r["refs"] for t in data["words"][v]}
             self.assertEqual(set(r["source"]["tokens"]), words, r["id"])
 
+    def test_chapter_has_a_notes_section(self):
+        page = (self.out / "jhn" / "1" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('id="notes"', page)
+        self.assertIn("Small letters mark footnotes", page)
+        reader = (self.out / "reader.js").read_text(encoding="utf-8")
+        # Alternatives a decision set aside are never offered as possible.
+        self.assertIn('d.uncertain ? "fn_or" : "also"', reader)
+
     def test_read_page_lists_every_passage(self):
         read = (self.out / "read" / "index.html").read_text(encoding="utf-8")
         self.assertIn('href="/jhn/1/"', read)
