@@ -65,3 +65,11 @@ def tokens_for_refs(verse_ids):
         for tok in _all_tokens().get(refs.parse(vid), []):
             out[tok.id] = tok
     return out
+
+
+@lru_cache(maxsize=None)
+def forms():
+    """Every word form, normalized form and lemma in the New Testament."""
+    return frozenset(x for toks in _all_tokens().values() for t in toks
+                     for x in (t.text, t.normalized, t.lemma) if x)
+

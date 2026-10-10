@@ -75,6 +75,51 @@ class ValidateTest(unittest.TestCase):
         record["renderings"]["en"]["B"] = record["renderings"]["en"]["B"].replace("\\v 13 ", "")
         self.assertTrue(any("verse markers" in e for e in validate.validate_record(record)))
 
+    def _reason_errors(self, word):
+        record = example_records()[0]
+        record["decisions"][0]["reason"] += f" Compare {word}."
+        return [e for e in validate.validate_record(record) if "source data" in e]
+
+    def test_greek_copied_from_the_data_passes(self):
+        from owb.sources import macula_greek
+        tok = macula_greek.load_tokens("JHN.1.1")[4]
+        for word in (tok.text, tok.lemma, tok.normalized):
+            self.assertEqual(self._reason_errors(word), [], word)
+
+    def test_greek_typed_by_hand_fails(self):
+        import unicodedata
+        from owb.sources import macula_greek
+        word = macula_greek.load_tokens("JHN.1.1")[4].text
+        # The same word with oxia for tonos, decomposed, or misspelled.
+        lookalike = word.translate({0x03cc: 0x1f79})
+        self.assertNotEqual(lookalike, word)
+        for bad in (lookalike, unicodedata.normalize("NFD", word), word + word[-1]):
+            errors = self._reason_errors(bad)
+            self.assertTrue(errors and "decisions[0].reason: Greek" in errors[0], bad)
+
+    def test_greek_in_renderings_is_checked_too(self):
+        from owb.sources import macula_greek
+        word = macula_greek.load_tokens("JHN.1.1")[4].text
+        record = example_records()[0]
+        record["renderings"]["en"]["L"] += " " + word[::-1]
+        self.assertTrue(any("renderings.en.L: Greek" in e
+                            for e in validate.validate_record(record)))
+
+    def test_hebrew_copied_from_the_data_passes(self):
+        from owb import refs
+        from owb.sources import macula_hebrew
+        prefix, noun = macula_hebrew._all()[refs.parse("GEN.1.1")][:2]
+        whole = prefix.text + noun.text
+        for word in (noun.text, noun.lemma, whole, macula_hebrew._ACCENTS.sub("", whole)):
+            self.assertEqual(self._reason_errors(word), [], word)
+
+    def test_hebrew_typed_by_hand_fails(self):
+        from owb import refs
+        from owb.sources import macula_hebrew
+        noun = macula_hebrew._all()[refs.parse("GEN.1.1")][1]
+        errors = self._reason_errors(noun.lemma[::-1])
+        self.assertTrue(errors and "Hebrew" in errors[0], errors)
+
     def test_plural_you_is_spanish_only(self):
         path = EXAMPLE.parents[1] / "PHP" / "PHP.4.1-9.json"
         for record in json.loads(path.read_text(encoding="utf-8"))["records"]:

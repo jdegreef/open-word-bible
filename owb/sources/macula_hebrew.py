@@ -61,3 +61,23 @@ def verses():
 
 def verse_text(morphemes):
     return "".join(m.text + m.after for m in morphemes).strip()
+
+
+_ACCENTS = re.compile("[֑-֯]")
+
+
+@lru_cache(maxsize=None)
+def forms():
+    """Every morpheme, lemma and whole word in the Old Testament, each with
+    and without cantillation accents. A whole word joins the morphemes that
+    share a word number (be- + reshit)."""
+    out = set()
+    for morphemes in _all().values():
+        words = {}
+        for m in morphemes:
+            out.update((m.text, m.lemma))
+            words[m.position] = words.get(m.position, "") + m.text
+        out.update(words.values())
+    out |= {_ACCENTS.sub("", f) for f in out}
+    out.discard("")
+    return frozenset(out)
