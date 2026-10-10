@@ -104,7 +104,16 @@
         "footnote": {"type": "boolean"}
       },
       "if": {"properties": {"layer": {"const": "meaning"}}},
-      "then": {"properties": {"language": {"type": "null"}}, "not": {"required": ["levels"]}},
+      "then": {
+        "properties": {
+          "language": {"type": "null"},
+          "category": {
+            "description": "Meaning decisions state the sense only; wording categories belong to rendering decisions.",
+            "enum": ["text_variant", "punctuation", "word_sense", "grammar", "allusion", "idiom", "culture", "theology"]
+          }
+        },
+        "not": {"required": ["levels"]}
+      },
       "else": {"properties": {"language": {"$ref": "#/$defs/language"}}, "required": ["levels"]}
     }
   }

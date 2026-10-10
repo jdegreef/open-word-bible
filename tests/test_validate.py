@@ -149,6 +149,45 @@ class ValidateTest(unittest.TestCase):
         self.assertTrue(any("a sentence ends at n43001003010" in e for e in errors), errors)
         self.assertTrue(any("ends mid-sentence at n43001003012" in e for e in errors), errors)
 
+    def test_meaning_decision_with_a_wording_category_fails(self):
+        record = example_records()[0]
+        record["decisions"][0]["category"] = "word_choice"
+        self.assertTrue(any("about wording" in e for e in validate.validate_record(record)))
+
+    def test_meaning_categories_come_from_schema(self):
+        self.assertIn("word_sense", validate.MEANING_CATEGORIES)
+        self.assertNotIn("setting_alternative", validate.MEANING_CATEGORIES)
+
+    def test_meaning_decision_naming_a_language_fails(self):
+        for text in ("English needs the article here.", "En espa\u00f1ol se dice así."):
+            record = example_records()[0]
+            record["decisions"][0]["reason"] = text
+            errors = validate.validate_record(record)
+            self.assertTrue(any("decisions[0].reason: names" in e for e in errors), (text, errors))
+
+    def test_meaning_decision_with_a_setting_fails(self):
+        record = example_records()[0]
+        record["decisions"][0]["choice"] = "{{gender:all people|men}}"
+        self.assertTrue(any("decisions[0].choice: a reader setting is wording" in e
+                            for e in validate.validate_record(record)))
+
+    def test_rendering_decision_may_name_its_language(self):
+        record = next(r for r in example_records() if r["id"] == "JHN.1.3.s1")
+        rendering = next(d for d in record["decisions"] if d["layer"] == "rendering")
+        rendering["reason"] = "Plain English for Readable."
+        self.assertEqual(validate.validate_record(record), [])
+
+    def test_badly_formed_setting_spans_fail(self):
+        for span, message in (("{{gender:people}}", "at least one"),
+                              ("{{gender:people|}}", "at least one"),
+                              ("{{gender:people|people}}", "repeats"),
+                              ("{{gender:people| men}}", "spaces"),
+                              ("{{deity_pronoun:him|He}}", "capitalised")):
+            record = example_records()[0]
+            record["renderings"]["en"]["B"] = f"the light of {span}"
+            errors = validate.validate_record(record)
+            self.assertTrue(any(message in e for e in errors), (span, errors))
+
     def test_plural_you_is_spanish_only(self):
         path = EXAMPLE.parents[1] / "PHP" / "PHP.4.1-9.json"
         for record in json.loads(path.read_text(encoding="utf-8"))["records"]:

@@ -49,6 +49,12 @@ Greek or Hebrew quoted in a gloss, rendering or decision must be copied from
 the source data: the validator rejects any word that is not, code point for
 code point, a form or lemma in MACULA.
 
+The validator also keeps the two layers apart: a meaning decision may not
+use a wording category (`word_choice`, `setting_alternative`, ...), contain a
+reader setting, or name a target language. Every setting span needs a
+default and at least one distinct, non-empty alternative, and a
+`deity_pronoun` alternative only capitalises the default.
+
 ## Reader settings
 
 Reader settings are stored as marked alternatives inside the text. The first

@@ -4,7 +4,10 @@ Checks the rules in schema/sentence-record.schema.json that matter most, plus
 what a schema cannot: every token id exists in the MACULA data for the
 record's verses, generated source text matches the data, every Greek or
 Hebrew word anywhere else in the record is a form or lemma copied from the
-source data, a Greek record holds one whole source sentence, and every {{setting:...}} span names a known setting.
+source data, a Greek record holds one whole source sentence, meaning
+decisions carry no wording for one language (no wording category, setting
+span or target-language name), and every {{setting:...}} span names a known
+setting and is well formed.
 
 Usage: python3 -m owb.validate content/en/JHN/JHN.1.1-2.json [...]
 """
@@ -26,8 +29,15 @@ SOURCE_LANGUAGES = _PROPS["source"]["properties"]["language"]["enum"]
 LEVELS = _DEFS["level"]["enum"]
 LAYERS = _DEFS["decision"]["properties"]["layer"]["enum"]
 CATEGORIES = _DEFS["decision"]["properties"]["category"]["enum"]
+MEANING_CATEGORIES = _DEFS["decision"]["then"]["properties"]["category"]["enum"]
 RECORD_ID = re.compile(_PROPS["id"]["pattern"])
 LANGUAGE = re.compile(_DEFS["language"]["pattern"])
+
+# A meaning decision is shared by every language, so it must not name one of
+# the languages the translation is made into (in English or in that language).
+TARGET_LANGUAGE_NAMES = re.compile(
+    r"\b(English|Spanish|espa\u00f1ol|castellano|French|fran\u00e7ais|"
+    r"Portuguese|portugu\u00eas|Swahili|Kiswahili)\b", re.IGNORECASE)
 
 # Runs of Greek or Hebrew letters and their marks. Punctuation (ano teleia,
 # maqaf, sof pasuq, elision marks) ends a word.
@@ -64,6 +74,20 @@ def _check_markup(text, where, errors):
     for span in markup.spans(text):
         if span.setting not in markup.SETTINGS:
             errors.append(f"{where}: unknown setting {span.setting!r}")
+        options = span.options
+        if len(options) < 2 or not all(o.strip() for o in options):
+            errors.append(f"{where}: {span.setting} span needs a default and at least one "
+                          "non-empty alternative")
+        elif len(set(options)) != len(options):
+            errors.append(f"{where}: {span.setting} span repeats an option")
+        elif any(o != o.strip() for o in options):
+            errors.append(f"{where}: {span.setting} span option has spaces at its edge")
+        elif span.setting == "deity_pronoun" and any(
+                o != options[0][:1].upper() + options[0][1:] for o in options[1:]):
+            # The setting only capitalises the pronoun; any other change of
+            # wording would be a decision, not a setting.
+            errors.append(f"{where}: deity_pronoun alternative must be the default "
+                          "capitalised")
 
 
 def _strings(obj, where):
@@ -227,6 +251,19 @@ def validate_record(record, known_tokens=None, original_language=True):
                 errors.append(f"{where}: meaning decisions must have language null")
             if "levels" in d:
                 errors.append(f"{where}: meaning decisions apply to every level; drop 'levels'")
+            if d.get("category") in CATEGORIES and d.get("category") not in MEANING_CATEGORIES:
+                errors.append(f"{where}.category: {d.get('category')!r} is about wording; "
+                              "make it a rendering decision")
+            for key, text in _strings({k: d.get(k) for k in ("choice", "alternatives", "reason")},
+                                      where):
+                if markup.spans(text):
+                    errors.append(f"{key}: a reader setting is wording; move it to a "
+                                  "rendering decision")
+                m = TARGET_LANGUAGE_NAMES.search(text)
+                if m:
+                    errors.append(f"{key}: names {m[0]!r}; meaning decisions are shared by "
+                                  "every language, so wording for one language belongs in "
+                                  "its rendering decisions")
         else:
             if d.get("language") not in renderings:
                 errors.append(f"{where}: rendering decisions need a language "
