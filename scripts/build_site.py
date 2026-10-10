@@ -126,6 +126,7 @@ def markdown(text):
     def inline(s):
         s = html.escape(s, quote=False)
         s = re.sub(r"`([^`]+)`", r"<code>\1</code>", s)
+        s = re.sub(r"\[([^\]]+)\]\((https?://[^)\s]+)\)", r'<a href="\2">\1</a>', s)
         s = re.sub(r"&lt;(https?://[^&\s]+)&gt;", r'<a href="\1">\1</a>', s)
         return re.sub(r"(?<![\"'>])(https?://[^\s<)]+)", r'<a href="\1">\1</a>', s)
 
@@ -206,6 +207,10 @@ def chapter_page(book, chapter):
     lang_labels = {"en": "English", "es": "Español"}
     body = f"""
 <p class="notice" data-i18n="notice">Sample passage. Every line is an AI draft that has not yet been checked by a reviewer who reads Greek.</p>
+<button type="button" class="settings-toggle" id="settings-toggle" aria-expanded="false" aria-controls="settings">
+  <span data-i18n="settings">Reading settings</span> <span class="settings-summary" id="settings-summary"></span>
+</button>
+<div class="settings" id="settings">
 <div class="controls">
   <div class="control">{label("language", "Language")} {seg("lang", [(l, lang_labels[l], None) for l in languages])}</div>
   <div class="control">{label("level", "Level")} {seg("level", [("L", "Literal", "L"), ("B", "Balanced", "B"), ("R", "Readable", "R")])}</div>
@@ -215,13 +220,14 @@ def chapter_page(book, chapter):
   <div class="control" data-only-lang="es" hidden>{label("plural", "Plural you")} {seg("plural_you", [("0", "ustedes", None), ("1", "vosotros", None)])}</div>
 </div>
 <p class="hint"><span id="hint-level"></span> <span id="hint-gender"></span> <span id="hint-christos"></span> <span id="hint-deity_pronoun"></span> <span id="hint-plural_you"></span></p>
+</div>
 <div class="reader">
   <article class="passage">
     <h1 id="title">{html.escape(title["en"])}</h1>
     <p class="sub" data-i18n="sub">Translated from the SBL Greek New Testament. Tap a verse to see why it reads as it does. &dagger; marks a verse with a footnote.</p>
     <div class="text" id="text"></div>
   </article>
-  <aside class="panel" id="panel" aria-live="polite"></aside>
+  <aside class="panel" id="panel" aria-live="polite" tabindex="-1"></aside>
 </div>
 <script type="application/json" id="owb-data">{blob}</script>
 <script src="/reader.js"></script>
@@ -254,7 +260,7 @@ def all_records():
 
 def plain(text):
     """Rendering text as a reader sees it with the default settings."""
-    return markup.VERSE.sub("", markup.render(text)).strip()
+    return smart_quotes(markup.VERSE.sub("", markup.render(text)).strip())
 
 
 # The worked example on the home page: a record and one of its decisions.
@@ -278,7 +284,7 @@ def example_html():
         f'<div class="lvl"><span class="tag">{name}</span><p>{html.escape(plain(record["renderings"]["en"][code]))}</p></div>'
         for code, name in (("L", "Literal"), ("B", "Balanced"), ("R", "Readable")))
     ref = refs.parse(record["refs"][0])
-    also = "; ".join(html.escape(a) for a in decision["alternatives"])
+    also = "; ".join(html.escape(plain(a)) for a in decision["alternatives"])
     return f"""
 <section class="example" aria-labelledby="example-h">
 <h2 id="example-h">See the work: {BOOK_NAMES[book]["en"]} {ref.chapter}:{ref.verse}</h2>
@@ -295,7 +301,7 @@ def example_html():
 <p class="label">Decision</p>
 <p class="choice">&ldquo;{html.escape(plain(decision["choice"]))}&rdquo;</p>
 <p class="alts">Also considered: {also}</p>
-<p class="why">{html.escape(decision["reason"])}</p>
+<p class="why">{html.escape(smart_quotes(decision["reason"]))}</p>
 </div>
 </div>
 <p><a href="{chapter_url(book, chapter)}">Open {BOOK_NAMES[book]["en"]} {chapter} and tap any verse &rarr;</a></p>
@@ -373,7 +379,7 @@ def about_page():
 <div class="prose">
 <h1>About</h1>
 <p>Open Word Bible translates the Bible from its original languages into modern ones,
-English and Spanish first. Every verse carries a record of the original words and the reasoning
+English and Spanish first. Every sentence carries a record of the original words and the reasoning
 behind each translation decision.</p>
 <h2>Licences</h2>
 <p>The translation, its reasoning records and the alignments are dedicated to the public domain

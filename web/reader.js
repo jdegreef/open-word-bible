@@ -27,6 +27,7 @@
                            "\u201cHe\u201d: capitalised, as some readers prefer out of reverence."],
       plural: "Plural you", hint_plural_you: ["", ""],
       verse_label: "Verse {v}: show the reasoning",
+      settings: "Reading settings", close: "Close",
       empty_title: "The reasoning behind each verse",
       empty_text: "Tap or click any verse to see the Greek, a word-for-word gloss, and every translation decision with its reason.",
       status: "AI draft \u00b7 not yet reviewed",
@@ -62,6 +63,7 @@
       plural: "Plural", hint_plural_you: ["\u00abustedes\u00bb: como se habla en Am\u00e9rica Latina.",
                                            "\u00abvosotros\u00bb: como se habla en la mayor parte de Espa\u00f1a."],
       verse_label: "Vers\u00edculo {v}: ver el razonamiento",
+      settings: "Ajustes de lectura", close: "Cerrar",
       empty_title: "El razonamiento detr\u00e1s de cada vers\u00edculo",
       empty_text: "Toca cualquier vers\u00edculo para ver el griego, una glosa palabra por palabra y cada decisi\u00f3n de traducci\u00f3n con su raz\u00f3n.",
       status: "Borrador de IA \u00b7 a\u00fan sin revisar",
@@ -108,12 +110,19 @@
     return out;
   }
 
+  // Curly quotes and apostrophes for the straight ones in the data, as the
+  // build does for articles (smart_quotes in scripts/build_site.py).
+  function curl(s) {
+    return s.replace(/(^|[\s(\[\u2014-])"/g, "$1\u201c").replace(/"/g, "\u201d")
+            .replace(/(^|[\s(\[\u2014-])'/g, "$1\u2018").replace(/'/g, "\u2019");
+  }
+
   function render(text) {
-    return text.replace(SPAN, function (_, name, opts) {
+    return curl(text.replace(SPAN, function (_, name, opts) {
       var options = opts.split("|");
       var i = settings[name];
       return typeof i === "number" && i >= 0 && i < options.length ? options[i] : options[0];
-    });
+    }));
   }
 
   function el(tag, cls, text) {
@@ -156,6 +165,10 @@
       document.getElementById("hint-" + name).textContent = t("hint_" + name)[settings[name]];
     });
     document.documentElement.lang = settings.lang;
+    var summary = [t(settings.level), t(["inclusive", "traditional"][settings.gender]),
+                   t(["christ", "messiah"][settings.christos]), t(["he", "He"][settings.deity_pronoun])];
+    if (DATA.languages.length > 1) summary.unshift(settings.lang === "es" ? "Espa\u00f1ol" : "English");
+    document.getElementById("settings-summary").textContent = summary.join(" \u00b7 ");
   }
 
   function drawText() {
@@ -172,6 +185,7 @@
         span.tabIndex = 0;
         span.setAttribute("role", "button");
         span.setAttribute("aria-label", t("verse_label").replace("{v}", part[0]));
+        span.dataset.v = part[0];
         if (current && current.id === r.id) span.setAttribute("aria-current", "true");
         if (part[0] !== shown) span.appendChild(el("sup", null, part[0]));
         shown = part[0];
@@ -206,7 +220,7 @@
     if (d.alternatives.length) {
       card.appendChild(el("div", "alts", t("also") + d.alternatives.map(render).join("; ")));
     }
-    card.appendChild(el("p", "why", d.reason));
+    card.appendChild(el("p", "why", curl(d.reason)));
     function on() { highlight(d.tokens, card); }
     card.addEventListener("click", on);
     card.addEventListener("focus", on);
@@ -221,6 +235,11 @@
       panel.appendChild(el("p", "empty", t("empty_text")));
       return;
     }
+    var close = el("button", "sheet-close", "\u00d7");
+    close.type = "button";
+    close.setAttribute("aria-label", t("close"));
+    close.addEventListener("click", deselect);
+    panel.appendChild(close);
     panel.appendChild(el("h2", null, DATA.title[settings.lang].replace(/[\d:\u2013\s]+$/, "") + " " + DATA.chapter + ":" + verseRange(current)));
     panel.appendChild(el("span", "status", t("status")));
 
@@ -253,7 +272,7 @@
 
     panel.appendChild(el("h3", null, t("gloss")));
     var gloss = el("p", "gloss");
-    splitVerses(current, current.literal_gloss).forEach(function (part, i) {
+    splitVerses(current, curl(current.literal_gloss)).forEach(function (part, i) {
       if (i > 0) gloss.appendChild(el("sup", null, " " + part[0]));
       gloss.appendChild(document.createTextNode((i > 0 ? " " : "") + part[1]));
     });
@@ -269,15 +288,70 @@
     ds.rendering.forEach(function (d) { panel.appendChild(drawCard(d, current)); });
   }
 
+  // On narrow screens the panel is a bottom sheet over the text (see .panel
+  // in style.css), so opening it never moves the reader's place.
+  var NARROW = window.matchMedia("(max-width: 860px)");
+  var panelEl = document.getElementById("panel");
+  var lastVerse = null;
+
+  function sheet(open) {
+    panelEl.classList.toggle("open", open);
+    document.body.classList.toggle("sheet-open", open && NARROW.matches);
+  }
+
   function select(record, verse) {
     current = record;
-    try { history.replaceState(null, "", "#v" + (verse || verseOf(record.refs[0]))); } catch (e) { /* ignore */ }
+    lastVerse = verse || verseOf(record.refs[0]);
+    try { history.replaceState(null, "", "#v" + lastVerse); } catch (e) { /* ignore */ }
     drawText();
     drawPanel();
-    if (window.matchMedia("(max-width: 860px)").matches) {
-      document.getElementById("panel").scrollIntoView({ behavior: "smooth", block: "start" });
+    panelEl.scrollTop = 0;
+    sheet(true);
+    if (NARROW.matches) {
+      var v = document.querySelector('.verse[data-v="' + lastVerse + '"]');
+      if (v) v.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   }
+
+  function deselect() {
+    if (!current) return;
+    current = null;
+    try { history.replaceState(null, "", location.pathname + location.search); } catch (e) { /* ignore */ }
+    sheet(false);
+    drawText();
+    drawPanel();
+    var v = lastVerse && document.querySelector('.verse[data-v="' + lastVerse + '"]');
+    if (v) v.focus({ preventScroll: true });
+  }
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && current && NARROW.matches) deselect();
+  });
+
+  // Swipe the sheet down to close it, when it is scrolled to its top.
+  var startY = null;
+  panelEl.addEventListener("touchstart", function (e) {
+    startY = NARROW.matches && panelEl.scrollTop <= 0 ? e.touches[0].clientY : null;
+  }, { passive: true });
+  panelEl.addEventListener("touchmove", function (e) {
+    if (startY === null) return;
+    var dy = e.touches[0].clientY - startY;
+    panelEl.style.transform = dy > 0 ? "translateY(" + dy + "px)" : "";
+  }, { passive: true });
+  panelEl.addEventListener("touchend", function (e) {
+    if (startY === null) return;
+    var dy = e.changedTouches[0].clientY - startY;
+    panelEl.style.transform = "";
+    startY = null;
+    if (dy > 80) deselect();
+  });
+
+  var toggle = document.getElementById("settings-toggle");
+  toggle.addEventListener("click", function () {
+    var open = toggle.getAttribute("aria-expanded") !== "true";
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    document.getElementById("settings").classList.toggle("open", open);
+  });
 
   document.querySelectorAll("[data-setting]").forEach(function (seg) {
     var name = seg.getAttribute("data-setting");
@@ -300,4 +374,8 @@
   drawControls();
   drawText();
   drawPanel();
+  if (current) {
+    lastVerse = m[1];
+    sheet(true);
+  }
 })();
