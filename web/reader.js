@@ -9,7 +9,7 @@
   // English for now; Spanish readers are told so in the panel.
   var UI = {
     en: {
-      notice: "Every line is an AI draft that has not yet been checked by a reviewer who reads Greek.",
+      notice: "Every line is AI-assisted and has not yet been checked by a reviewer who reads Greek.",
       sub: "Translated from the SBL Greek New Testament. Tap a verse to see why it reads as it does. Small letters mark footnotes, listed below the passage.",
       notes: "Notes", fn_or: "Or: ", fn_other: "Other manuscripts: ",
       language: "Language", level: "Level", gender: "Gender", title: "Title", pronouns: "Pronouns for God",
@@ -47,7 +47,7 @@
       }
     },
     es: {
-      notice: "Cada l\u00ednea es un borrador hecho con IA que a\u00fan no ha revisado nadie que lea griego.",
+      notice: "Cada l\u00ednea se tradujo con ayuda de IA y a\u00fan no la ha revisado nadie que lea griego.",
       sub: "Traducido del Nuevo Testamento griego de la SBL. Toca un vers\u00edculo para ver por qu\u00e9 dice lo que dice. Las letras peque\u00f1as marcan notas al pie, que aparecen debajo del pasaje.",
       notes: "Notas", fn_or: "O bien: ", fn_other: "Otros manuscritos: ",
       language: "Idioma", level: "Nivel", gender: "G\u00e9nero", title: "T\u00edtulo", pronouns: "Pronombres para Dios",

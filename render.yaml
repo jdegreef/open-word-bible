@@ -28,6 +28,14 @@ services:
       - path: /*
         name: Referrer-Policy
         value: strict-origin-when-cross-origin
+    # Renamed pages keep their old addresses working.
+    routes:
+      - type: redirect
+        source: /articles/ai-drafts-and-human-review
+        destination: /articles/ai-assisted-translation-and-human-review/
+      - type: redirect
+        source: /articles/ai-drafts-and-human-review/
+        destination: /articles/ai-assisted-translation-and-human-review/
 
   # Django API and admin (backend/). Load the source texts once from the
   # service's Shell; after that every deploy reloads content/ by itself:
