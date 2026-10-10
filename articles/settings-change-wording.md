@@ -3,6 +3,7 @@ title: Settings change wording, never meaning
 summary: Inclusive or traditional, Christ or Messiah, he or He. Why these are settings, and why disagreements about meaning never are.
 date: 2026-10-10
 order: 4
+section: method
 ---
 Readers of English Bibles disagree about some things that are, strictly, matters of wording. Should "brothers" be "brothers and sisters" when the whole church is meant? Should Jesus's title be "Christ" or "Messiah"? Should pronouns for God have capital letters? Open Word Bible lets each reader choose.
 

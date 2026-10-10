@@ -65,3 +65,29 @@
   });
   mark();
 })();
+
+// The menu button that shows the site links on narrow screens (see
+// header.site in style.css). Escape or a click elsewhere closes it.
+(function () {
+  "use strict";
+  var button = document.querySelector(".menu-btn");
+  var nav = document.getElementById("site-nav");
+  if (!button || !nav) return;
+
+  function open(show) {
+    nav.classList.toggle("open", show);
+    button.setAttribute("aria-expanded", show ? "true" : "false");
+  }
+
+  button.addEventListener("click", function () {
+    var show = !nav.classList.contains("open");
+    open(show);
+    if (show) nav.querySelector("a").focus();
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && nav.classList.contains("open")) { open(false); button.focus(); }
+  });
+  document.addEventListener("click", function (e) {
+    if (nav.classList.contains("open") && !nav.contains(e.target) && !button.contains(e.target)) open(false);
+  });
+})();

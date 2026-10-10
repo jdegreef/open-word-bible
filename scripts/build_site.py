@@ -7,6 +7,7 @@ in data/grc/ (see scripts/extract_tokens.py), so a deploy never fetches the
 full sources.
 """
 import argparse
+import functools
 import html
 import json
 import re
@@ -28,6 +29,17 @@ SITE_NAME = "Open Word Bible"
 SITE_URL = "https://openwordbible.org"
 DESCRIPTION = ("A free translation of the Bible from Hebrew and Greek, "
                "with the reasoning behind every sentence.")
+GITHUB_URL = "https://github.com/jdegreef/open-word-bible"
+
+# The open-book mark: the favicon, and the logo in the header and footer
+# (where style.css colours it from the current colour mode).
+BOOK_PATH = ("M30 19C24 15.5 17 14.5 10 15.5v31c7-1 14 0 20 3.5zM34 19c6-3.5 13-4.5 20-3.5v31"
+             "c-7-1-14 0-20 3.5z")
+MARK = (f'<svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14"/>'
+        f'<path d="{BOOK_PATH}"/></svg>')
+MENU_ICON = ('<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+             'stroke-width="2" stroke-linecap="round" aria-hidden="true">'
+             '<path d="M4 7h16M4 12h16M4 17h16"/></svg>')
 
 
 # Colour modes (see web/style.css and web/site.js): value, label, and the
@@ -74,10 +86,11 @@ COLOUR_MENU = (
 def page(title, body, path=None, current="", description=""):
     """A full HTML page. path is the page's URL path ("/read/"); pages with
     one get a canonical link and link-preview tags, and go in the sitemap."""
-    nav = [("/", "Home"), ("/read/", "Read"), ("/articles/", "Articles"), ("/about/", "About")]
+    nav = [("/read/", "Read"), ("/articles/", "Articles"), ("/about/", "About")]
     links = "".join(
         f'<a href="{href}"{" aria-current=page" if href == current else ""}>{label}</a>'
         for href, label in nav)
+    links += f'<a class="nav-ext" href="{GITHUB_URL}">GitHub</a>'
     full_title = f"{title} · {SITE_NAME}" if title != SITE_NAME else SITE_NAME
     description = description or DESCRIPTION
     meta = ""
@@ -104,18 +117,19 @@ def page(title, body, path=None, current="", description=""):
 <script src="/site.js" defer></script>
 </head>
 <body>
-<header class="site"><div class="wrap">
-<a class="brand" href="/">{SITE_NAME}</a>
-<nav>{links}</nav>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site"><div class="wrap bar">
+<a class="brand" href="/"{" aria-current=page" if current == "/" else ""}>{MARK}<span>{SITE_NAME}</span></a>
+<nav class="primary" id="site-nav" aria-label="Main">{links}</nav>
+<div class="tools">
 {COLOUR_MENU}
+<button type="button" class="menu-btn" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">{MENU_ICON}</button>
+</div>
 </div></header>
-<main class="wrap">
+<main class="wrap" id="main" tabindex="-1">
 {body}
 </main>
-<footer class="site"><div class="wrap">
-The translation and its reasoning are released under CC0: free for anyone to use.
-Source texts are credited on the <a href="/about/">About</a> page.
-</div></footer>
+{site_footer()}
 </body>
 </html>
 """
@@ -368,10 +382,10 @@ so anyone may use it for anything.</p>
 {progress_html()}
 <section class="latest" aria-labelledby="latest-h">
 <h2 id="latest-h">From the articles</h2>
-<ul class="article-list">{article_list(load_articles()[:3])}</ul>
+<ul class="a-grid">{article_list(sorted(load_articles(), key=lambda a: a["order"])[:3])}</ul>
 <p><a href="/articles/">All articles &rarr;</a></p>
 </section>
-<section class="involve" aria-labelledby="involve-h">
+<section class="involve" id="help" aria-labelledby="involve-h">
 <h2 id="involve-h">Help make it</h2>
 <ul>
 <li><strong>Read Greek or Hebrew?</strong> Reviewers check each sentence and its decisions before it is marked reviewed.</li>
@@ -390,6 +404,7 @@ def about_page():
     # Demote the file's headings one level to sit under the page's h1.
     for n in (2, 1):
         credits = credits.replace(f"<h{n}>", f"<h{n + 1}>").replace(f"</h{n}>", f"</h{n + 1}>")
+    credits = credits.replace("<h2>Credits</h2>", '<h2 id="credits">Credits</h2>', 1)
     body = f"""
 <div class="prose">
 <h1>About</h1>
@@ -456,7 +471,58 @@ def smart_quotes(s):
     return s.replace("'", "\u2019")
 
 
-def article_html(text):
+LEVEL_NAMES = {"L": "Literal", "B": "Balanced", "R": "Readable"}
+
+
+@functools.lru_cache(maxsize=None)
+def translated_verses():
+    """Every verse id with a record, so article links only go to verses the
+    reader has."""
+    return frozenset(v for r in all_records() for v in r["refs"])
+
+
+def verse_link(book, chapter, verse):
+    """The reader URL for a verse, or None when it is not translated yet."""
+    if f"{book}.{chapter}.{verse}" not in translated_verses():
+        return None
+    return f"{chapter_url(book, chapter)}#v{verse}"
+
+
+def verse_name(book, chapter, verse):
+    return f"{BOOK_NAMES[book]['en']} {chapter}:{verse}"
+
+
+def _quote_figure(body, inner):
+    """A blockquote that is just one {{GREEK:..}} or {{OWB:..}} placeholder
+    becomes a figure captioned with its source, linked to the reader."""
+    m = _GREEK.fullmatch(body)
+    if m:
+        book, chapter, verse = m[1], int(m[2]), int(m[3])
+        source = "Greek, SBL Greek New Testament"
+    else:
+        m = _OWB.fullmatch(body)
+        if not m:
+            return f"<blockquote><p>{inner}</p></blockquote>"
+        ref = refs.parse(m[1].rsplit(".s", 1)[0])
+        book, chapter, verse = ref.book, ref.chapter, ref.verse
+        source = f"Open Word Bible, {LEVEL_NAMES[m[2]]}"
+    kind = "greek-quote" if source.startswith("Greek") else "owb-quote"
+    link = verse_link(book, chapter, verse)
+    more = f' <a href="{link}">Read it with the reasoning&nbsp;&rarr;</a>' if link else ""
+    return (f'<figure class="quote {kind}"><blockquote><p>{inner}</p></blockquote>'
+            f"<figcaption>{verse_name(book, chapter, verse)} &middot; {source}{more}</figcaption></figure>")
+
+
+def _slug(text, taken):
+    base = re.sub(r"[^a-z0-9]+", "-", re.sub(r"<[^>]+>", "", text).lower()).strip("-") or "section"
+    slug, n = base, 2
+    while slug in taken:
+        slug, n = f"{base}-{n}", n + 1
+    taken.add(slug)
+    return slug
+
+
+def article_html(text, toc=None):
     """Markdown for articles: ## and ### headings, paragraphs, - lists,
     > quotes, **bold**, *italic*, [links](url), and placeholders that pull
     Greek words ({{GREEK:..}}, {{LEMMA:..}}) and our own translation
@@ -479,12 +545,20 @@ def article_html(text):
                    lambda m: f'<a href="{m[2]}">{m[1]}</a>', s)
         return re.sub("\x00(\\d+)\x00", lambda m: fills[int(m[1])], s)
 
+    taken = set()
     out = []
     for block in re.split(r"\n\s*\n", text.strip()):
         lines = [line.rstrip() for line in block.splitlines()]
         if lines[0].startswith("#"):
             level = len(lines[0]) - len(lines[0].lstrip("#"))
-            out.append(f"<h{level}>{inline(lines[0].lstrip('#').strip())}</h{level}>")
+            heading = inline(lines[0].lstrip("#").strip())
+            if level == 2:
+                slug = _slug(heading, taken)
+                if toc is not None:
+                    toc.append((slug, heading))
+                out.append(f'<h2 id="{slug}">{heading}</h2>')
+            else:
+                out.append(f"<h{level}>{heading}</h{level}>")
         elif lines[0].startswith("- "):
             items, cur = [], []
             for line in lines:
@@ -496,15 +570,49 @@ def article_html(text):
             out.append("<ul>" + "".join(f"<li>{inline(i)}</li>" for i in items) + "</ul>")
         elif lines[0].startswith(">"):
             body = " ".join(line.lstrip(">").strip() for line in lines)
-            out.append(f"<blockquote><p>{inline(body)}</p></blockquote>")
+            out.append(_quote_figure(body, inline(body)))
         else:
             out.append(f"<p>{inline(' '.join(lines))}</p>")
     return "\n".join(out)
 
 
+# Article sections, in the order the articles page shows them.
+SECTIONS = {"method": "How it is made", "passage": "Reading the text"}
+
+
+def article_passages(body):
+    """The verses an article quotes, from its placeholders, as
+    [(book, chapter, [verses])] in canonical order."""
+    found = set()
+    for m in _GREEK.finditer(body):
+        found.add((m[1], int(m[2]), int(m[3])))
+    for m in _LEMMA.finditer(body):
+        found.add((m[1], int(m[2]), int(m[3])))
+    for m in _OWB.finditer(body):
+        ref = refs.parse(m[1].rsplit(".s", 1)[0])
+        found.add((ref.book, ref.chapter, ref.verse))
+    chapters_ = {}
+    for book, chapter, verse in sorted(found, key=lambda f: refs.Ref(*f).sort_key()):
+        chapters_.setdefault((book, chapter), []).append(verse)
+    return [(b, c, vs) for (b, c), vs in chapters_.items()]
+
+
+def passage_label(book, chapter, verses):
+    """"John 1:1, 14, 16–18": consecutive verses become ranges."""
+    runs = []
+    for v in verses:
+        if runs and v == runs[-1][1] + 1:
+            runs[-1][1] = v
+        else:
+            runs.append([v, v])
+    return f"{BOOK_NAMES[book]['en']} {chapter}:" + ", ".join(
+        str(a) if a == b else f"{a}\u2013{b}" for a, b in runs)
+
+
 def load_articles():
     """Every article in articles/, newest first, then by its order number.
-    A file starts with a front matter block: title, summary, date, order."""
+    A file starts with a front matter block: title, summary, date, order,
+    section (a key of SECTIONS)."""
     articles = []
     for path in sorted(ARTICLES.glob("*.md")):
         text = path.read_text(encoding="utf-8")
@@ -517,11 +625,18 @@ def load_articles():
                 key, value = line.split(": ", 1)
                 # A value may be JSON-quoted when it contains quotation marks.
                 meta[key] = json.loads(value) if value.startswith('"') else value
-        for key in ("title", "summary", "date", "order"):
+        for key in ("title", "summary", "date", "order", "section"):
             if key not in meta:
                 raise SystemExit(f"{path.name}: front matter needs {key!r}")
-        meta["title"], meta["summary"] = smart_quotes(meta["title"]), smart_quotes(meta["summary"])
-        articles.append({**meta, "slug": path.stem, "body": m[2], "order": int(meta["order"])})
+        if meta["section"] not in SECTIONS:
+            raise SystemExit(f"{path.name}: section must be one of {', '.join(SECTIONS)}")
+        # A word joiner either side of a range's dash keeps "4:6–7" on one line.
+        for key in ("title", "summary"):
+            meta[key] = re.sub(r"(\d)\u2013(\d)", "\\1\u2060\u2013\u2060\\2", smart_quotes(meta[key]))
+        words = len(re.findall(r"\w+", re.sub(r"\{\{[^}]*\}\}", "", m[2])))
+        articles.append({**meta, "slug": path.stem, "body": m[2], "order": int(meta["order"]),
+                         "minutes": max(1, round(words / 220)),
+                         "passages": article_passages(m[2])})
     return sorted(articles, key=lambda a: (a["date"], -a["order"]), reverse=True)
 
 
@@ -534,36 +649,80 @@ def _date(iso):
     return datetime.date.fromisoformat(iso).strftime("%-d %B %Y")
 
 
+def article_meta(a):
+    """"6 min read · John 1:1, 14": what a card or byline says about length
+    and which verses an article reads."""
+    parts = [f"{a['minutes']} min read"] + [passage_label(*p) for p in a["passages"]]
+    return " &middot; ".join(html.escape(p) for p in parts)
+
+
+def article_card(a, featured=False):
+    return (f'<li><a class="a-card{" featured" if featured else ""}" href="{article_url(a)}">'
+            f'<span class="a-section">{SECTIONS[a["section"]]}</span>'
+            f'<span class="a-title">{html.escape(a["title"])}</span>'
+            f'<span class="a-summary">{html.escape(a["summary"])}</span>'
+            f'<span class="a-meta">{article_meta(a)}</span></a></li>')
+
+
 def article_list(articles):
-    return "".join(
-        f'<li><a href="{article_url(a)}"><span class="a-title">{html.escape(a["title"])}</span>'
-        f'<span class="a-summary">{html.escape(a["summary"])}</span></a></li>'
-        for a in articles)
+    return "".join(article_card(a) for a in articles)
 
 
 def articles_page(articles):
+    by_order = sorted(articles, key=lambda a: a["order"])
+    featured, rest = by_order[0], by_order[1:]
+    sections = "".join(
+        f'<section class="a-group" id="{key}" aria-labelledby="{key}-h">'
+        f'<h2 id="{key}-h">{label}</h2>'
+        f'<ul class="a-grid">{article_list([a for a in rest if a["section"] == key])}</ul></section>'
+        for key, label in SECTIONS.items())
     body = f"""
-<div class="prose">
-<h1>Articles</h1>
-<p>How Open Word Bible is made, and the reasoning behind particular passages. Like the
-translation, the articles are drafts until a reviewer has checked them.</p>
-</div>
-<ul class="article-list">{article_list(articles)}</ul>
+<header class="page-head">
+<p class="eyebrow">Articles</p>
+<h1>How the translation is made, and why it reads as it does</h1>
+<p class="dek">Short pieces on the method behind Open Word Bible and close readings of the passages
+translated so far. Like the translation, every article is a draft until a reviewer has checked it.</p>
+</header>
+<ul class="a-feature">{article_card(featured, featured=True)}</ul>
+{sections}
 """
     return page("Articles", body, path="/articles/", current="/articles/",
                 description="Articles on how Open Word Bible is translated and why it reads as it does.")
 
 
 def article_page(article, articles):
-    others = [a for a in articles if a is not article][:3]
+    toc = []
+    content = article_html(article["body"], toc)
+    same = [a for a in articles if a is not article and a["section"] == article["section"]]
+    other = [a for a in articles if a is not article and a["section"] != article["section"]]
+    more = sorted(same, key=lambda a: a["order"])[:2] + sorted(other, key=lambda a: a["order"])[:1]
+    contents = "".join(f'<li><a href="#{slug}">{label}</a></li>' for slug, label in toc)
+    links = [(passage_label(*p), verse_link(p[0], p[1], p[2][0])) for p in article["passages"]]
+    read = "".join(f'<a class="chip" href="{href}">{html.escape(label)}&nbsp;&rarr;</a>'
+                   for label, href in links if href)
+    passage = (f'<aside class="read-card"><h2>Read the passage</h2><p>Open it in the reader, '
+               f'tap any verse, and every decision behind it is there.</p><p>{read}</p></aside>'
+               if read else "")
     body = f"""
-<article class="prose article">
-<p class="crumb"><a href="/articles/">Articles</a></p>
+<div class="article-layout">
+<article class="article">
+<header class="article-head">
+<p class="eyebrow"><a href="/articles/#{article["section"]}">{SECTIONS[article["section"]]}</a></p>
 <h1>{html.escape(article["title"])}</h1>
-<p class="byline">Open Word Bible &middot; {_date(article["date"])} &middot; <span class="status">Draft, not yet reviewed</span></p>
-{article_html(article["body"])}
+<p class="dek">{html.escape(article["summary"])}</p>
+<p class="byline">{MARK}<span>Open Word Bible &middot; {_date(article["date"])} &middot; {article["minutes"]} min read
+<span class="status">Draft, not yet reviewed</span></span></p>
+</header>
+<div class="article-body">
+{content}
+</div>
+{passage}
 </article>
-<aside class="more"><h2>More articles</h2><ul class="article-list">{article_list(others)}</ul></aside>
+{f'<nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">On this page</h2><ol>{contents}</ol></nav>' if len(toc) > 1 else ""}
+</div>
+<section class="more" aria-labelledby="more-h"><h2 id="more-h">Keep reading</h2>
+<ul class="a-grid">{article_list(more)}</ul>
+<p><a href="/articles/">All articles &rarr;</a></p></section>
 """
     return page(article["title"], body, path=article_url(article), current="/articles/",
                 description=article["summary"])
@@ -574,11 +733,42 @@ def not_found_page():
                 '<p><a href="/">Go to the home page</a>.</p></div>')
 
 
-FAVICON = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+FAVICON = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
 <rect width="64" height="64" rx="12" fill="#7a4b14"/>
-<path d="M18 16h12a6 6 0 0 1 6 6v28a5 5 0 0 0-5-5H18zM46 16H34a6 6 0 0 0-6 6v28a5 5 0 0 1 5-5h13z" fill="#fbfaf7"/>
+<path d="{BOOK_PATH}" fill="#fbfaf7"/>
 </svg>
 """
+
+
+@functools.lru_cache(maxsize=None)
+def site_footer():
+    """The footer on every page: the passages, the first articles to read,
+    and the project's links. Built once per build."""
+    def items(pairs):
+        return "".join(f'<li><a href="{href}">{html.escape(label)}</a></li>' for href, label in pairs)
+
+    passages = [(chapter_url(b, c), chapter_title(load_chapter(b, c)[0], b, c)) for b, c in chapters()]
+    start = sorted((a for a in load_articles() if a["section"] == "method"), key=lambda a: a["order"])[:3]
+    learn = [(article_url(a), a["title"]) for a in start] + [("/articles/", "All articles")]
+    project = [("/about/", "About"), ("/about/#credits", "Sources and credits"),
+               ("/#help", "Help make it"), (GITHUB_URL, "Source code"),
+               (GITHUB_URL + "/issues/new", "Report a problem")]
+    return f"""<footer class="site"><div class="wrap">
+<div class="foot-grid">
+<div class="foot-about">
+<a class="brand" href="/">{MARK}<span>{SITE_NAME}</span></a>
+<p>A free Bible translated from Hebrew and Greek, with the reasoning behind every sentence shown.</p>
+<p class="foot-licence"><span class="pill">CC0</span> Public domain: quote it, print it, build on it.</p>
+</div>
+<nav aria-labelledby="foot-read"><h2 id="foot-read">Read</h2><ul>{items(passages + [("/read/", "All passages")])}</ul></nav>
+<nav aria-labelledby="foot-learn"><h2 id="foot-learn">Learn</h2><ul>{items(learn)}</ul></nav>
+<nav aria-labelledby="foot-project"><h2 id="foot-project">Project</h2><ul>{items(project)}</ul></nav>
+</div>
+<div class="foot-base">
+<p>Every sentence is an AI draft until a named reviewer who reads the original language approves it.</p>
+<p>Translation and notes CC0 &middot; Code MIT &middot; Source texts keep their own licences</p>
+</div>
+</div></footer>"""
 
 
 def sitemap(paths):

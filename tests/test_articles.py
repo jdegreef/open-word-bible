@@ -63,6 +63,44 @@ class ArticlesTest(unittest.TestCase):
         self.assertIn('href="/articles/"', home)
         self.assertIn(build_site.article_url(self.articles[0]), home)
 
+    def test_every_article_has_a_known_section(self):
+        for a in self.articles:
+            self.assertIn(a["section"], build_site.SECTIONS, a["slug"])
+        index = (self.out / "articles" / "index.html").read_text(encoding="utf-8")
+        for key in build_site.SECTIONS:
+            self.assertIn(f'id="{key}"', index)
+
+    def test_scripture_quotes_are_captioned_and_link_to_the_reader(self):
+        page = (self.out / "articles" / "the-word-was-god" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('<figure class="quote greek-quote">', page)
+        self.assertIn('<figure class="quote owb-quote">', page)
+        self.assertIn('href="/jhn/1/#v1">Read it with the reasoning', page)
+        self.assertIn('<nav class="toc"', page)
+        for slug in re.findall(r'<li><a href="#([^"]+)"', page):
+            self.assertIn(f'<h2 id="{slug}">', page)
+
+    def test_passage_labels_join_consecutive_verses(self):
+        self.assertEqual(build_site.passage_label("PHP", 4, [6, 7]), "Philippians 4:6–7")
+        self.assertEqual(build_site.passage_label("JHN", 1, [1, 14, 16, 17, 18]), "John 1:1, 14, 16–18")
+
+
+class SiteChromeTest(unittest.TestCase):
+    def test_every_page_has_the_header_menu_skip_link_and_footer(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            out = Path(tmp) / "site"
+            build_site.build(out)
+            for path in out.rglob("*.html"):
+                text = path.read_text(encoding="utf-8")
+                self.assertIn('<a class="skip" href="#main">', text, path)
+                self.assertIn('id="main"', text, path)
+                self.assertIn('class="menu-btn"', text, path)
+                self.assertIn('aria-controls="site-nav"', text, path)
+                self.assertIn('<footer class="site">', text, path)
+                self.assertIn('href="/jhn/1/"', text, path)
+            about = (out / "about" / "index.html").read_text(encoding="utf-8")
+            self.assertIn('<h2 id="credits">', about)
+            self.assertIn('id="help"', (out / "index.html").read_text(encoding="utf-8"))
+
 
 class ColourModesTest(unittest.TestCase):
     MODES = [v for v, *_ in build_site.COLOUR_MODES if v != "auto"]

@@ -3,6 +3,7 @@ title: "\"One and only\" or \"only begotten\"?"
 summary: John 1:14 and 1:18 use a word older Bibles rendered "only begotten". Here is why Open Word Bible says "one and only", and what it does with a famous textual question in verse 18.
 date: 2026-10-10
 order: 6
+section: passage
 ---
 Readers who grew up with older English Bibles know John 1:14 and 3:16 with the words "only begotten". Most modern translations say "one and only" or "only". Open Word Bible does too. The reasons are in the records for John 1:14 and 1:18.
 

@@ -329,9 +329,12 @@
   }
 
   document.addEventListener("keydown", function (e) {
-    // An Escape that closes the colour menu (site.js) leaves the sheet open.
+    // An Escape that closes the colour menu or the site menu (site.js)
+    // leaves the sheet open.
     var menu = document.getElementById("colour-menu");
-    if (e.key === "Escape" && (!menu || menu.hidden) && narrow()) deselect();
+    var nav = document.getElementById("site-nav");
+    var menuOpen = (menu && !menu.hidden) || (nav && nav.classList.contains("open"));
+    if (e.key === "Escape" && !menuOpen && narrow()) deselect();
   });
 
   // Swipe the sheet down to close it, when it is scrolled to its top. The
