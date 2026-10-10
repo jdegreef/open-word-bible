@@ -308,6 +308,8 @@
     if (narrow()) {
       var v = verseEl(verse);
       if (v) v.scrollIntoView({ behavior: "smooth", block: "start" });
+      // The sheet covers the text below the verse, so take focus into it.
+      panelEl.focus({ preventScroll: true });
     }
   }
 
@@ -315,7 +317,10 @@
     if (!current) return;
     var verse = hashVerse();
     current = null;
-    try { history.replaceState(null, "", location.pathname + location.search); } catch (e) { /* ignore */ }
+    try {
+      history.replaceState(null, "", location.pathname + location.search);
+      history.scrollRestoration = "auto";
+    } catch (e) { /* ignore */ }
     sheet(false);
     drawText();
     drawPanel();
@@ -324,7 +329,9 @@
   }
 
   document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && narrow()) deselect();
+    // An Escape that closes the colour menu (site.js) leaves the sheet open.
+    var menu = document.getElementById("colour-menu");
+    if (e.key === "Escape" && (!menu || menu.hidden) && narrow()) deselect();
   });
 
   // Swipe the sheet down to close it, when it is scrolled to its top. The
@@ -339,13 +346,15 @@
     var dy = e.touches[0].clientY - startY;
     panelEl.style.transform = dy > 0 ? "translateY(" + dy + "px)" : "";
   }, { passive: true });
-  panelEl.addEventListener("touchend", function (e) {
+  function endDrag(e) {
     if (startY === null) return;
-    var dy = e.changedTouches[0].clientY - startY;
+    var dy = e.type === "touchend" ? e.changedTouches[0].clientY - startY : 0;
     panelEl.style.transform = panelEl.style.transition = "";
     startY = null;
     if (dy > 80) deselect();
-  });
+  }
+  panelEl.addEventListener("touchend", endDrag);
+  panelEl.addEventListener("touchcancel", endDrag);
 
   var toggle = document.getElementById("settings-toggle");
   toggle.addEventListener("click", function () {
@@ -373,12 +382,13 @@
   });
   drawControls();
   if (record) {
-    // Opened at a verse: the verse decides where the page sits, not the
-    // browser's scroll restoring, and the jump waits for layout to settle.
-    try { history.scrollRestoration = "manual"; } catch (e) { /* ignore */ }
+    // Opened at a verse on a phone: the verse decides where the page sits,
+    // not the browser's scroll restoring (deselect turns it back on), and
+    // the jump waits for layout to settle.
+    if (narrow()) try { history.scrollRestoration = "manual"; } catch (e) { /* ignore */ }
     select(record, start);
     window.addEventListener("load", function () {
-      var v = narrow() && verseEl(start);
+      var v = narrow() && current && verseEl(start);
       if (v) v.scrollIntoView({ block: "start" });
     });
   } else { drawText(); drawPanel(); }
