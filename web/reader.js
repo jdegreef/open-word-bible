@@ -26,6 +26,7 @@
       hint_deity_pronoun: ["\u201che\u201d: lowercase, like the original, which has no capital letters.",
                            "\u201cHe\u201d: capitalised, as some readers prefer out of reverence."],
       plural: "Plural you", hint_plural_you: ["", ""],
+      partial: "Some sentences in this chapter are not yet translated; they are shown in English, in grey.",
       verse_label: "Verse {v}: show the reasoning",
       settings: "Reading settings", close: "Close",
       empty_title: "The reasoning behind each verse",
@@ -64,6 +65,7 @@
                            "\u00ab\u00c9l\u00bb: con may\u00fascula, como prefieren algunos lectores por reverencia."],
       plural: "Plural", hint_plural_you: ["\u00abustedes\u00bb: como se habla en Am\u00e9rica Latina.",
                                            "\u00abvosotros\u00bb: como se habla en la mayor parte de Espa\u00f1a."],
+      partial: "Algunas frases de este cap\u00edtulo a\u00fan no est\u00e1n traducidas al espa\u00f1ol; se muestran en ingl\u00e9s, en gris.",
       verse_label: "Vers\u00edculo {v}: ver el razonamiento",
       settings: "Ajustes de lectura", close: "Cerrar",
       empty_title: "El razonamiento detr\u00e1s de cada vers\u00edculo",
@@ -172,17 +174,31 @@
     document.getElementById("settings-summary").textContent = summary.join(" \u00b7 ");
   }
 
+  // The language a record is shown in: the reading language if the record
+  // has it yet, otherwise the first language it does have (English runs
+  // ahead of the others).
+  function textLang(r) {
+    if (r.renderings[settings.lang]) return settings.lang;
+    return DATA.languages.filter(function (l) { return r.renderings[l]; })[0];
+  }
+
   function drawText() {
     var box = document.getElementById("text");
     box.textContent = "";
+    var partial = DATA.records.some(function (r) { return !r.renderings[settings.lang]; });
+    var note = document.getElementById("partial");
+    note.hidden = !partial;
+    note.textContent = partial ? t("partial") : "";
     document.getElementById("title").textContent = DATA.title[settings.lang];
     var shown = null;   // last verse number printed
     DATA.records.forEach(function (r) {
       var ds = decisionsFor(r);
       var hasNote = ds.meaning.concat(ds.rendering).some(function (d) { return d.footnote; });
-      var parts = splitVerses(r, render(r.renderings[settings.lang][settings.level]));
+      var lang = textLang(r);
+      var parts = splitVerses(r, render(r.renderings[lang][settings.level]));
       parts.forEach(function (part, i) {
-        var span = el("span", "verse");
+        var span = el("span", lang === settings.lang ? "verse" : "verse fallback");
+        if (lang !== settings.lang) span.lang = lang;
         span.tabIndex = 0;
         span.setAttribute("role", "button");
         span.setAttribute("aria-label", t("verse_label").replace("{v}", part[0]));

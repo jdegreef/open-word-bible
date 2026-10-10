@@ -69,6 +69,8 @@ class LicensingTest(unittest.TestCase):
         values = restricted_values()
         self.assertTrue(any(values.values()), "the check found no values to look for")
         for path, data in self.extracts.items():
+            if "verses" not in data:   # not a word extract (e.g. key_terms.json)
+                continue
             for words in data["verses"].values():
                 for word in words:
                     leaked = values.get(word["id"], set()) & {str(v) for v in word.values()}
