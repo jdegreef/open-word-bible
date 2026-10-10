@@ -108,6 +108,26 @@ Python 3. Preview it with:
     python3 scripts/build_site.py && python3 -m http.server -d site 8000
 
 `render.yaml` deploys it to Render as a static site on openwordbible.org.
+The build also writes `sitemap.xml`, `robots.txt` and a canonical link on
+every page, all using `SITE_URL` in `scripts/build_site.py`.
+
+### Pointing openwordbible.org at Render
+
+The custom domains are listed in `render.yaml`; the DNS records are set at
+the domain registrar. In the Render dashboard, open the `open-word-bible`
+static site, then **Settings → Custom Domains**, and check that
+`openwordbible.org` and `www.openwordbible.org` are listed (add them if
+not). Render shows the exact records to create; they are normally:
+
+| Host  | Type                     | Value                               |
+|-------|--------------------------|-------------------------------------|
+| `@`   | A (or ALIAS/ANAME)       | Render's IP, `216.24.57.1` (or `open-word-bible.onrender.com` for ALIAS) |
+| `www` | CNAME                    | `open-word-bible.onrender.com`      |
+| `api` | CNAME                    | `owb-api.onrender.com` (the Django service) |
+
+Remove any other A, AAAA or CNAME records for those hosts (parking pages),
+then press **Verify** in Render. Render issues the HTTPS certificates and
+redirects `www` to the bare domain once both are verified.
 
 ## Backend (Django + Postgres)
 
