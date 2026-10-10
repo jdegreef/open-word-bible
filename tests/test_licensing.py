@@ -52,8 +52,9 @@ class LicensingTest(unittest.TestCase):
         build_site.build(cls.site)
         cls.extracts = {p: json.loads(p.read_text(encoding="utf-8"))
                         for p in sorted((ROOT / "data").rglob("*.json"))}
+        # Every text file the site serves; the fonts are binary.
         cls.pages = {p: p.read_text(encoding="utf-8") for p in sorted(cls.site.rglob("*"))
-                     if p.is_file()}
+                     if p.is_file() and p.suffix != ".woff2"}
 
     @classmethod
     def tearDownClass(cls):
