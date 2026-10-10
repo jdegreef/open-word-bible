@@ -751,7 +751,7 @@ footer.site nav a:hover { color: var(--accent); text-decoration: underline; }
   .prefs-menu { position: fixed; left: 16px; right: 16px; top: calc(var(--header-h) + 8px); width: auto; }
 }
 @media (max-width: 400px) {
-  header.site .tools > a.tool-btn { display: none; }
+  header.site .tools > a.tool-btn:not(.account-btn) { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   .dropdown, .button, .a-card, .nav-link .caret { animation: none; transition: none; }
@@ -803,3 +803,34 @@ footer.site nav a:hover { color: var(--accent); text-decoration: underline; }
 @media (max-width: 860px) and (prefers-reduced-motion: reduce) {
   .panel, .panel.open { transition: none; }
 }
+
+/* The header's account button shows the reader's initial once signed in. */
+.account-btn.signed-in .icon { display: none; }
+.account-initial {
+  display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%;
+  background: var(--accent); color: var(--bg); font-size: 13px; font-weight: 700; line-height: 1;
+}
+.account-initial[hidden] { display: none; }
+
+/* The account page (/account/). */
+.account { max-width: 640px; }
+.account .dek { margin-bottom: 24px; }
+.account-form { display: grid; gap: 8px; margin: 0 0 16px; }
+.account-form label { font-weight: 600; font-size: 15px; }
+.field-row { display: flex; flex-wrap: wrap; gap: 10px; }
+.field-row input {
+  flex: 1 1 260px; min-width: 0; padding: 11px 14px; font: inherit; font-size: 17px; color: var(--text);
+  background: var(--surface); border: 1px solid var(--line-strong, var(--line)); border-radius: 10px;
+}
+.field-row input:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: transparent; }
+.form-error { color: var(--warn); background: var(--warn-bg); border-radius: 8px; padding: 8px 12px; margin: 4px 0 0; font-size: 15px; }
+.form-note { color: var(--muted); font-size: 14px; margin: 0; min-height: 1.4em; }
+.fine { color: var(--muted); font-size: 14px; font-weight: normal; }
+.account-facts { display: grid; gap: 0; margin: 0 0 28px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+.account-facts > div { display: grid; grid-template-columns: 120px 1fr; gap: 12px; padding: 12px 18px; border-top: 1px solid var(--line); }
+.account-facts > div:first-child { border-top: 0; }
+.account-facts dt { color: var(--muted); font-size: 14px; }
+.account-facts dd { margin: 0; overflow-wrap: anywhere; }
+.soon { margin: 28px 0; padding: 18px 20px; border-radius: 12px; background: var(--accent-soft); }
+.soon h2 { font-size: 16px; margin: 0 0 6px; }
+.soon p { margin: 0; color: var(--text); font-size: 15px; }

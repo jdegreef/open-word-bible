@@ -35,6 +35,18 @@ class SiteTest(unittest.TestCase):
                     "sitemap.xml", "robots.txt", "favicon.svg"):
             self.assertTrue((self.out / rel).is_file(), rel)
 
+    def test_account_page_is_built_but_not_indexed(self):
+        page = (self.out / "account" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('<meta name="robots" content="noindex">', page)
+        self.assertIn('id="link-form"', page)
+        self.assertTrue((self.out / "account.js").is_file())
+        self.assertNotIn("/account/", (self.out / "sitemap.xml").read_text(encoding="utf-8"))
+        # Every page knows the API and has the account button.
+        for path in self.out.rglob("index.html"):
+            text = path.read_text(encoding="utf-8")
+            self.assertIn(f'<meta name="owb-api" content="{build_site.API_URL}">', text, path)
+            self.assertIn('class="tool-btn account-btn" href="/account/"', text, path)
+
     def test_chapter_has_every_verse_in_order(self):
         data = self.chapter_data()
         verses = list(dict.fromkeys(v for r in data["records"] for v in r["refs"]))
