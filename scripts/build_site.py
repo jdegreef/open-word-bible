@@ -353,8 +353,10 @@ def chapter_title(records, book, chapter, lang="en"):
 def chapter_page(book, chapter):
     records, words = load_chapter(book, chapter)
     title = {lang: chapter_title(records, book, chapter, lang) for lang in LANGUAGES}
+    # Every language any sentence has: English may run ahead of the others,
+    # and the reader shows a sentence not yet translated in English.
     languages = [lang for lang in LANGUAGES
-                 if all(lang in r["renderings"] for r in records)]
+                 if any(lang in r["renderings"] for r in records)]
     data = {"book": book, "chapter": chapter, "title": title, "languages": languages,
             "records": records,
             "words": {vid: words[vid] for r in records for vid in r["refs"]}}
@@ -395,8 +397,10 @@ def chapter_page(book, chapter):
 <div class="reader">
   <article class="passage">
     <h1 id="title">{html.escape(title["en"])}</h1>
-    <p class="sub" data-i18n="sub">Translated from the SBL Greek New Testament. Tap a verse to see why it reads as it does. &dagger; marks a verse with a footnote.</p>
+    <p class="sub" data-i18n="sub">Translated from the SBL Greek New Testament. Tap a verse to see why it reads as it does. Small letters mark footnotes, listed below the passage.</p>
+    <p class="notice" id="partial" hidden></p>
     <div class="text" id="text"></div>
+    <section class="notes" id="notes" aria-label="Notes" hidden></section>
   </article>
   <aside class="panel" id="panel" aria-live="polite" tabindex="-1"></aside>
 </div>
@@ -451,9 +455,10 @@ def read_page():
 <header class="page-head">
 <p class="eyebrow">Read</p>
 <h1>Passages translated so far</h1>
-<p class="dek">Each passage is translated from the SBL Greek New Testament into English and
-Spanish, at three levels, with the reasoning behind every sentence. All are AI drafts until a
-reviewer who reads Greek approves them.</p>
+<p class="dek">Each passage is translated from the SBL Greek New Testament at three levels, with
+the reasoning behind every sentence. English comes first; Spanish follows, and where a sentence is
+not yet in Spanish the reader shows the English. All are AI drafts until a reviewer who reads Greek
+approves them.</p>
 </header>
 <ul class="a-grid">{cards}</ul>
 <section class="how" aria-labelledby="how-h">
@@ -548,7 +553,7 @@ def progress_html():
 <div><b>{decisions}</b><span>decisions recorded</span></div>
 <div><b>{reviewed}</b><span>reviewed by a scholar so far</span></div>
 </div>
-<p>Everything published so far is an <strong>AI draft</strong>, in English and Spanish. Nothing is
+<p>Everything published so far is an <strong>AI draft</strong>, in English, with Spanish for some passages. Nothing is
 marked reviewed until named reviewers who read Hebrew or Greek approve it, and the reader always
 shows each sentence's status.</p>
 <p class="label">Passages so far</p>

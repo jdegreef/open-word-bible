@@ -58,7 +58,7 @@ def to_jpeg(png, jpg):
         raise SystemExit("needs sips (macOS) or ImageMagick to make JPEGs")
     subprocess.run(cmd, check=True, capture_output=True)
 # Bump when the template changes, so every card is drawn again.
-TEMPLATE_VERSION = 3
+TEMPLATE_VERSION = 4
 
 
 def font_faces():
@@ -109,30 +109,34 @@ def card_html(spec):
                 f'<h1 style="font-size:{size}px">{e(spec["title"])}</h1>'
                 f'<p class="summary">{e(spec["summary"])}</p>')
     else:
-        main = (f'<h1 style="font-size:70px">{e(spec["title"])}</h1>'
+        main = (f'<h1 style="font-size:58px">{e(spec["title"])}</h1>'
                 f'<p class="summary">Every sentence shows the original words, a word-for-word '
                 f'gloss, and why each word was chosen.</p>')
     mark = build_site.MARK.replace('class="mark"', 'class="mark" width="56" height="56"')
     return f"""<!doctype html><html><head><meta charset="utf-8"><style>
 {faces}
 html, body {{ margin: 0; width: {WIDTH}px; height: {HEIGHT}px; overflow: hidden; }}
-body {{ box-sizing: border-box; padding: 64px 72px 56px; display: flex; flex-direction: column;
-  background: #fbfaf7; color: #1f1d1a; font-family: "Gentium Book Plus", Georgia, serif;
-  border-top: 14px solid #7a4b14; }}
-.mark rect {{ fill: #7a4b14; }} .mark path {{ fill: #fbfaf7; }}
-.brand {{ display: flex; align-items: center; gap: 16px; font-size: 34px; }}
+body {{ box-sizing: border-box; padding: 78px 72px 56px; display: flex; flex-direction: column;
+  position: relative; background: #faf6ef; color: #221c15;
+  font-family: "Gentium Book Plus", Georgia, serif; }}
+body::before {{ content: ""; position: absolute; top: 0; left: 0; right: 0; height: 14px;
+  background: linear-gradient(90deg, #3f3d9a 0%, #3f3d9a 55%, #b07d22 100%); }}
+.mark rect {{ fill: #3f3d9a; }} .mark path {{ fill: #faf6ef; }}
+.brand {{ display: flex; align-items: center; gap: 16px; font-family: "Fraunces", Georgia, serif;
+  font-size: 36px; font-weight: 600; letter-spacing: -.01em; }}
+.brand em {{ font-style: italic; font-weight: 500; color: #3f3d9a; }}
 main {{ flex: 1; display: flex; flex-direction: column; justify-content: center; }}
 p, h1 {{ margin: 0; }}
-.eyebrow {{ font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 24px; font-weight: 700;
-  letter-spacing: .08em; text-transform: uppercase; color: #7a4b14; margin-bottom: 18px; }}
-h1 {{ font-weight: normal; line-height: 1.12; letter-spacing: -.01em; }}
+.eyebrow {{ font-family: "Hanken Grotesk", Arial, sans-serif; font-size: 24px; font-weight: 700;
+  letter-spacing: .12em; text-transform: uppercase; color: #b07d22; margin-bottom: 18px; }}
+h1 {{ font-family: "Fraunces", Georgia, serif; font-weight: 600; line-height: 1.12; letter-spacing: -.02em; }}
 .quote {{ line-height: 1.3; }}
-.greek {{ font-size: 30px; color: #6b665e; margin-top: 22px; line-height: 1.4; }}
-.summary {{ font-size: 30px; line-height: 1.4; color: #6b665e; margin-top: 20px; }}
-footer {{ display: flex; justify-content: space-between; font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
-  font-size: 22px; color: #6b665e; }}
+.greek {{ font-size: 30px; color: #6e6358; margin-top: 22px; line-height: 1.4; }}
+.summary {{ font-size: 30px; line-height: 1.4; color: #6e6358; margin-top: 20px; }}
+footer {{ display: flex; justify-content: space-between; font-family: "Hanken Grotesk", Arial, sans-serif;
+  font-size: 22px; font-weight: 500; color: #6e6358; }}
 </style></head><body>
-<div class="brand">{mark}<span>Open Word Bible</span></div>
+<div class="brand">{mark}<span>Open Word <em>Bible</em></span></div>
 <main>{main}</main>
 <footer><span>openwordbible.org</span><span>Free &middot; public domain &middot; reasoning shown</span></footer>
 </body></html>"""

@@ -7,7 +7,8 @@ Hebrew word anywhere else in the record is a form or lemma copied from the
 source data, a Greek record holds one whole source sentence, meaning
 decisions carry no wording for one language (no wording category, setting
 span or target-language name), and every {{setting:...}} span names a known
-setting and is well formed.
+setting and is well formed, and key terms (data/key_terms.json) keep their
+settled English word at every level.
 
 Usage: python3 -m owb.validate content/en/JHN/JHN.1.1-2.json [...]
 """
@@ -38,6 +39,10 @@ LANGUAGE = re.compile(_DEFS["language"]["pattern"])
 TARGET_LANGUAGE_NAMES = re.compile(
     r"\b(English|Spanish|espa\u00f1ol|castellano|French|fran\u00e7ais|"
     r"Portuguese|portugu\u00eas|Swahili|Kiswahili)\b", re.IGNORECASE)
+
+KEY_TERMS = {t["strong"]: t for t in json.loads(
+    (Path(__file__).resolve().parents[1] / "data" / "key_terms.json")
+    .read_text(encoding="utf-8"))["terms"]}
 
 # Runs of Greek or Hebrew letters and their marks. Punctuation (ano teleia,
 # maqaf, sof pasuq, elision marks) ends a word.
@@ -115,6 +120,35 @@ def check_original_language(record, errors):
                                   "in the source data; copy it from MACULA")
 
 
+def check_key_terms(record, tokens, errors):
+    """Every English level of a record that contains a key term
+    (data/key_terms.json) uses one of the term's settled English words,
+    unless a decision on that word explains the exception: an English
+    rendering decision (a different word), or a word_sense meaning decision
+    (a different sense, such as "faithfulness" for faith). Other meaning
+    decisions that happen to include the word do not excuse it."""
+    explained = {tid for d in record.get("decisions") or [] if isinstance(d, dict)
+                 and (d.get("language") == "en"
+                      or (d.get("layer") == "meaning" and d.get("category") == "word_sense"))
+                 for tid in d.get("tokens") or []}
+    english = (record.get("renderings") or {}).get("en")
+    if not isinstance(english, dict):
+        return
+    for tok in tokens:
+        term = KEY_TERMS.get(tok.strong)
+        if term is None or tok.id in explained:
+            continue
+        for level, text in sorted(english.items()):
+            allowed = term["english"]
+            if isinstance(allowed, dict):
+                allowed = allowed.get(level, [])
+            words = re.compile(r"\b(%s)s?\b" % "|".join(map(re.escape, allowed)), re.IGNORECASE)
+            if isinstance(text, str) and not words.search(text):
+                errors.append(f"renderings.en.{level}: key term {term['sense']!r} ({tok.id}) "
+                              f"should be rendered {' or '.join(allowed)}; or add "
+                              "a decision on that word explaining why not")
+
+
 def check_sentence(tokens, decisions, errors):
     """A Greek record holds one source sentence: it ends where the SBLGNT
     ends a sentence (full stop, question mark or raised dot) and has no full
@@ -187,6 +221,8 @@ def validate_record(record, known_tokens=None, original_language=True):
                 and all(t in known_tokens for t in source_tokens)):
             check_sentence([known_tokens[t] for t in source_tokens],
                            record.get("decisions") or [], errors)
+        if source_tokens and all(t in known_tokens for t in source_tokens):
+            check_key_terms(record, [known_tokens[t] for t in source_tokens], errors)
     in_source = set(source_tokens)
 
     def check_tokens(ids, where):
