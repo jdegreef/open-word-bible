@@ -188,6 +188,45 @@ class ValidateTest(unittest.TestCase):
             errors = validate.validate_record(record)
             self.assertTrue(any(message in e for e in errors), (span, errors))
 
+    def _record(self, rid):
+        path = EXAMPLE.parents[1] / "PHP" / "PHP.4.1-9.json"
+        for r in example_records() + json.loads(path.read_text(encoding="utf-8"))["records"]:
+            if r["id"] == rid:
+                return r
+
+    def test_key_term_must_keep_its_english_word(self):
+        record = self._record("JHN.1.17.s1")
+        self.assertEqual(validate.validate_record(record), [])
+        record["renderings"]["en"]["R"] = record["renderings"]["en"]["R"].replace("Grace", "Kindness")
+        errors = validate.validate_record(record)
+        self.assertTrue(any("renderings.en.R: key term 'grace'" in e for e in errors), errors)
+
+    def test_a_decision_on_the_word_explains_an_exception(self):
+        record = self._record("JHN.1.17.s1")
+        record["renderings"]["en"]["R"] = record["renderings"]["en"]["R"].replace("Grace", "Kindness")
+        grace = next(t for t in validate.macula_greek.load_tokens("JHN.1.17")
+                     if t.strong == "5485")
+        record["decisions"].append({
+            "id": "r-en-9", "layer": "rendering", "language": "en", "levels": ["R"],
+            "category": "word_choice", "tokens": [grace.id], "choice": "kindness",
+            "alternatives": ["grace"], "reason": "Test.", "uncertain": False, "footnote": False})
+        self.assertEqual(validate.validate_record(record), [])
+
+    def test_gospel_is_good_news_at_readable_only(self):
+        record = self._record("PHP.4.3.s1")
+        self.assertEqual(validate.validate_record(record), [])
+        record["renderings"]["en"]["B"] = record["renderings"]["en"]["B"].replace("gospel", "good news")
+        self.assertTrue(any("renderings.en.B: key term 'gospel'" in e
+                            for e in validate.validate_record(record)))
+
+    def test_key_term_lemmas_are_copied_from_the_data(self):
+        forms = validate.macula_greek.forms()
+        for strong, term in validate.KEY_TERMS.items():
+            self.assertIn(term["lemma"], forms, strong)
+            lemmas = {t.lemma for v in validate.macula_greek._all_tokens().values()
+                      for t in v if t.strong == strong}
+            self.assertIn(term["lemma"], lemmas, strong)
+
     def test_plural_you_is_spanish_only(self):
         path = EXAMPLE.parents[1] / "PHP" / "PHP.4.1-9.json"
         for record in json.loads(path.read_text(encoding="utf-8"))["records"]:

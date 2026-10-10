@@ -35,17 +35,34 @@ class SiteTest(unittest.TestCase):
                     "sitemap.xml", "robots.txt", "favicon.svg"):
             self.assertTrue((self.out / rel).is_file(), rel)
 
-    def test_chapter_has_every_verse_in_both_languages(self):
+    def test_chapter_has_every_verse_in_order(self):
         data = self.chapter_data()
-        self.assertEqual([v for r in data["records"] for v in r["refs"]],
-                         [f"JHN.1.{v}" for v in range(1, 19)])
+        verses = list(dict.fromkeys(v for r in data["records"] for v in r["refs"]))
+        self.assertEqual(verses, [f"JHN.1.{v}" for v in range(1, 52)])
+        # English for every sentence; Spanish for 1:1-18 so far.
         self.assertEqual(data["languages"], ["en", "es"])
+        self.assertTrue(all("en" in r["renderings"] for r in data["records"]))
 
-    def test_words_match_each_verse_source_tokens(self):
+    def test_each_verse_words_are_covered_once(self):
+        # A verse may hold several sentences (1:21 has five) and a sentence
+        # may cross verses; together the records cover every word once.
         data = self.chapter_data()
+        seen = {}
         for r in data["records"]:
-            words = {t["id"] for v in r["refs"] for t in data["words"][v]}
-            self.assertEqual(set(r["source"]["tokens"]), words, r["id"])
+            for tid in r["source"]["tokens"]:
+                self.assertNotIn(tid, seen, f"{tid} in {seen.get(tid)} and {r['id']}")
+                seen[tid] = r["id"]
+        for vid in dict.fromkeys(v for r in data["records"] for v in r["refs"]):
+            words = {t["id"] for t in data["words"][vid]}
+            self.assertEqual({t for t in seen if t in words}, words, vid)
+
+    def test_chapter_has_a_notes_section(self):
+        page = (self.out / "jhn" / "1" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('id="notes"', page)
+        self.assertIn("Small letters mark footnotes", page)
+        reader = (self.out / "reader.js").read_text(encoding="utf-8")
+        # Alternatives a decision set aside are never offered as possible.
+        self.assertIn('d.uncertain ? "fn_or" : "also"', reader)
 
     def test_read_page_lists_every_passage(self):
         read = (self.out / "read" / "index.html").read_text(encoding="utf-8")
