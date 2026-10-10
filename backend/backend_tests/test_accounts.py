@@ -11,6 +11,7 @@ from django.test import TestCase, override_settings
 from django.utils import timezone
 from rest_framework.test import APIClient
 
+from accounts.auth import sync_super_admin
 from accounts.models import ApiToken, Role, SignInLink
 
 SITE = "https://openwordbible.org"
@@ -22,8 +23,8 @@ class SignInTest(TestCase):
     def setUp(self):
         self.client = APIClient()
 
-    def ask(self, email="reader@example.org"):
-        return self.client.post("/api/auth/link", {"email": email}, format="json")
+    def ask(self, email="reader@example.org", **extra):
+        return self.client.post("/api/auth/link", {"email": email}, format="json", **extra)
 
     def link_secret(self):
         body = mail.outbox[-1].body
@@ -70,9 +71,55 @@ class SignInTest(TestCase):
         self.assertEqual(self.client.post("/api/auth/sign-out").status_code, 204)
         self.assertEqual(self.client.get("/api/me").status_code, 401)
 
-    def test_a_wrong_token_is_401_not_anonymous(self):
+    def test_a_wrong_token_reads_as_anonymous_but_cannot_see_an_account(self):
         self.client.credentials(HTTP_AUTHORIZATION="Bearer nonsense")
-        self.assertEqual(self.client.get("/api/editions/").status_code, 401)
+        self.assertEqual(self.client.get("/api/editions/").status_code, 200)
+        self.assertEqual(self.client.get("/api/me").status_code, 401)
+        # ...and does not get in the way of signing in again.
+        self.assertEqual(self.ask().status_code, 202)
+        r = self.client.post("/api/auth/verify", {"token": self.link_secret()}, format="json")
+        self.assertEqual(r.status_code, 200)
+
+    def test_an_idle_token_signs_out(self):
+        token = self.sign_in()["token"]
+        ApiToken.objects.update(created_at=timezone.now() - timedelta(days=200), last_used_at=None)
+        self.client.credentials(HTTP_AUTHORIZATION=f"Bearer {token}")
+        self.assertEqual(self.client.get("/api/me").status_code, 401)
+        self.assertFalse(ApiToken.objects.exists())
+
+    def test_redeeming_one_link_retires_the_others(self):
+        self.ask()
+        first = self.link_secret()
+        self.sign_in()
+        r = self.client.post("/api/auth/verify", {"token": first}, format="json")
+        self.assertEqual(r.status_code, 400)
+
+    def test_only_json_from_the_site_can_ask_for_a_link(self):
+        form = self.client.post("/api/auth/link", {"email": "victim@example.org"})
+        self.assertEqual(form.status_code, 415)
+        self.assertEqual(self.ask(HTTP_ORIGIN="https://evil.example").status_code, 403)
+        self.assertEqual(self.ask(HTTP_ORIGIN=SITE).status_code, 202)
+
+    def test_the_network_limit_uses_the_address_render_saw(self):
+        # Clients can put anything first in X-Forwarded-For; Render appends
+        # the real address last.
+        for i in range(20):
+            r = self.ask(f"r{i}@example.org", HTTP_X_FORWARDED_FOR=f"10.0.0.{i}, 203.0.113.9")
+            self.assertEqual(r.status_code, 202)
+        r = self.ask("r99@example.org", HTTP_X_FORWARDED_FOR="10.9.9.9, 203.0.113.9")
+        self.assertEqual(r.status_code, 429)
+        # Junk in the header is ignored, not a 500.
+        self.assertEqual(self.ask("junk@example.org", HTTP_X_FORWARDED_FOR="not an ip").status_code, 202)
+
+    def test_long_and_international_addresses(self):
+        self.assertEqual(self.ask("a" * 140 + "@example.org").status_code, 400)
+        self.assertEqual(self.ask("Ana@Bücher.example").status_code, 202)
+        self.assertEqual(SignInLink.objects.latest("created_at").email, "ana@xn--bcher-kva.example")
+
+    @override_settings(EMAIL_BACKEND="django.core.mail.backends.console.EmailBackend", DEBUG=False)
+    def test_no_links_in_the_log_when_email_is_not_set_up(self):
+        self.assertEqual(self.ask().status_code, 503)
+        self.assertFalse(SignInLink.objects.exists())
 
     def test_listed_emails_become_super_admins(self):
         user = self.sign_in("boss@example.org")["user"]
@@ -80,6 +127,12 @@ class SignInTest(TestCase):
         account = get_user_model().objects.get(username="boss@example.org")
         self.assertTrue(account.is_staff and account.is_superuser)
         self.assertFalse(self.sign_in("someone@example.org")["user"]["is_super_admin"])
+
+    def test_super_admin_follows_the_sign_in_address_not_the_email_field(self):
+        user = get_user_model().objects.create(username="other@example.org", email="boss@example.org")
+        sync_super_admin(user)
+        self.assertFalse(user.roles.exists())
+        self.assertFalse(user.is_superuser)
 
     def test_cors_only_for_the_site_and_only_on_the_api(self):
         r = self.client.options("/api/auth/link", HTTP_ORIGIN=SITE,
@@ -115,3 +168,12 @@ class RoleTest(TestCase):
             call_command("grant_role", "new@example.org", "scholar_reviewer", stdout=out)
         call_command("grant_role", "new@example.org", "language_reviewer", "es", "--remove", stdout=out)
         self.assertFalse(user.roles.exists())
+
+    def test_grant_role_leaves_no_account_behind_on_a_mistake(self):
+        out = io.StringIO()
+        call_command("grant_role", "typo@example.org", "editor", "--remove", stdout=out)
+        with self.assertRaises(CommandError):
+            call_command("grant_role", "typo@example.org", "scholar_reviewer", "es", stdout=out)
+        with self.assertRaises(CommandError):
+            call_command("grant_role", "not-an-email", "editor", stdout=out)
+        self.assertFalse(get_user_model().objects.filter(username__in=["typo@example.org", "not-an-email"]).exists())

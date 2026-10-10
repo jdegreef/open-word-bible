@@ -12,8 +12,8 @@ class ApiCorsMiddleware:
 
     def __call__(self, request):
         origin = request.headers.get("Origin")
-        allowed = (request.path.startswith("/api/") and origin
-                   and origin in settings.CORS_ALLOWED_ORIGINS)
+        api = request.path.startswith("/api/")
+        allowed = api and origin and origin in settings.CORS_ALLOWED_ORIGINS
         if allowed and request.method == "OPTIONS" and "Access-Control-Request-Method" in request.headers:
             response = HttpResponse(status=204)
             response["Access-Control-Allow-Methods"] = "GET, POST, PATCH, PUT, DELETE, OPTIONS"
@@ -23,5 +23,7 @@ class ApiCorsMiddleware:
             response = self.get_response(request)
         if allowed:
             response["Access-Control-Allow-Origin"] = origin
-            response["Vary"] = ", ".join(filter(None, [response.get("Vary"), "Origin"]))
+        if api:
+            # Answers differ by Origin (and by token), so caches must not share them.
+            response["Vary"] = ", ".join(filter(None, [response.get("Vary"), "Origin, Authorization"]))
         return response

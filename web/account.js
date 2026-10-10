@@ -26,10 +26,11 @@
     return "Something went wrong.";
   }
 
+  // options.anonymous: the sign-in calls never send a saved token.
   function api(path, options) {
     options = options || {};
     var headers = { "Content-Type": "application/json" };
-    var account = saved();
+    var account = options.anonymous ? null : saved();
     if (account && account.token) headers.Authorization = "Bearer " + account.token;
     return fetch(API + path, {
       method: options.method || "GET", headers: headers,
@@ -49,7 +50,8 @@
       n.hidden = n.getAttribute("data-state") !== state;
     });
     document.getElementById("account-title").textContent =
-      state === "signed-in" ? "Your account" : state === "sent" ? "Check your email" : "Sign in";
+      state === "signed-in" ? "Your account" : state === "sent" ? "Check your email"
+        : state === "confirm" ? "Finish signing in" : "Sign in";
   }
 
   function render(user) {
@@ -77,7 +79,7 @@
     }
     var button = form.querySelector("button");
     button.disabled = true;
-    api("/api/auth/link", { method: "POST", body: { email: email } }).then(function () {
+    api("/api/auth/link", { method: "POST", body: { email: email }, anonymous: true }).then(function () {
       document.getElementById("sent-to").textContent = email;
       show("sent");
     }).catch(function (err) {
@@ -109,19 +111,28 @@
       .then(function () { store(null); show("signed-out"); });
   });
 
-  // Arriving from the email (#token=...), already signed in, or neither.
+  // Arriving from the email (#token=...): the link is used only when the
+  // reader presses Finish, so a scanner that opens it does not use it up.
+  // The secret leaves the address bar at once and stays in this page.
   var m = /^#token=([\w-]+)$/.exec(location.hash);
   if (m) {
+    var secret = m[1];
     try { history.replaceState(null, "", location.pathname); } catch (e) { /* ignore */ }
-    show("verifying");
-    api("/api/auth/verify", { method: "POST", body: { token: m[1] } }).then(function (data) {
-      store({ token: data.token, user: data.user });
-      render(data.user);
-    }).catch(function (err) {
-      show("signed-out");
-      error.textContent = err.message;
-      error.hidden = false;
+    show("confirm");
+    var finish = document.getElementById("finish");
+    finish.addEventListener("click", function () {
+      finish.disabled = true;
+      api("/api/auth/verify", { method: "POST", body: { token: secret }, anonymous: true })
+        .then(function (data) {
+          store({ token: data.token, user: data.user });
+          render(data.user);
+        }).catch(function (err) {
+          show("signed-out");
+          error.textContent = err.message;
+          error.hidden = false;
+        });
     });
+    finish.focus();
   } else if (saved()) {
     render(saved().user);
     api("/api/me").then(function (user) {

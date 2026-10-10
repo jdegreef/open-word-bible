@@ -980,7 +980,11 @@ questions about a translation. There is no password: we email you a link that si
 <p><button class="button ghost" type="button" id="different-email">Use a different email</button></p>
 </div>
 
-<div data-state="verifying" hidden><p class="dek">Signing you in&hellip;</p></div>
+<div data-state="confirm" hidden>
+<p class="dek">One more step: finish signing in on this device. (The link works once; this
+step stops email scanners from using it up before you do.)</p>
+<p><button class="button" type="button" id="finish">Finish signing in</button></p>
+</div>
 
 <div data-state="signed-in" hidden>
 <dl class="account-facts">

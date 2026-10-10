@@ -10,8 +10,10 @@ up before they first sign in.
 from django.contrib.auth import get_user_model
 from django.core.management.base import BaseCommand, CommandError
 from django.db import IntegrityError, transaction
+from rest_framework.exceptions import ValidationError
 
 from accounts.models import Role
+from accounts.views import normalise_email
 
 
 class Command(BaseCommand):
@@ -24,15 +26,18 @@ class Command(BaseCommand):
         parser.add_argument("--remove", action="store_true")
 
     def handle(self, email, kind, language, remove, **options):
-        email = email.strip().lower()
+        try:
+            email = normalise_email(email)
+        except ValidationError:
+            raise CommandError(f"not a valid email address: {email!r}")
         User = get_user_model()
-        user, _ = User.objects.get_or_create(username=email, defaults={"email": email})
         if remove:
-            n, _ = Role.objects.filter(user=user, kind=kind, language=language).delete()
+            n, _ = Role.objects.filter(user__username=email, kind=kind, language=language).delete()
             self.stdout.write(f"removed {n} role(s) from {email}")
             return
         try:
             with transaction.atomic():
+                user, _ = User.objects.get_or_create(username=email, defaults={"email": email})
                 role, created = Role.objects.get_or_create(user=user, kind=kind, language=language)
         except IntegrityError:
             raise CommandError(f"{kind} needs a language: scholar_reviewer takes "

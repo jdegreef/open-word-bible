@@ -43,7 +43,9 @@ services:
     # Migrate, then reload content/ so the API matches main. The import skips
     # itself until import_texts has been run once (see below).
     preDeployCommand: python backend/manage.py migrate --noinput && python backend/manage.py import_content --if-texts-loaded
-    startCommand: gunicorn --chdir backend config.wsgi --workers 2 --timeout 60
+    # Threads, so a slow request (such as sending a sign-in email) does not
+    # hold up reading.
+    startCommand: gunicorn --chdir backend config.wsgi --workers 2 --threads 4 --worker-class gthread --timeout 60
     healthCheckPath: /healthz
     domains:
       - api.openwordbible.org
