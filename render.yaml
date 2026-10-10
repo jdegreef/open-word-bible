@@ -29,7 +29,8 @@ services:
         name: Referrer-Policy
         value: strict-origin-when-cross-origin
 
-  # Django API and admin (backend/). Load data once from the service's Shell:
+  # Django API and admin (backend/). Load the source texts once from the
+  # service's Shell; after that every deploy reloads content/ by itself:
   #   python scripts/fetch_sources.py
   #   python backend/manage.py import_texts
   #   python backend/manage.py import_content
@@ -39,12 +40,17 @@ services:
     runtime: python
     plan: starter
     buildCommand: pip install -r backend/requirements.txt && python backend/manage.py collectstatic --noinput
-    preDeployCommand: python backend/manage.py migrate --noinput
+    # Migrate, then reload content/ so the API matches main. The import skips
+    # itself until import_texts has been run once (see below).
+    preDeployCommand: python backend/manage.py migrate --noinput && python backend/manage.py import_content --if-texts-loaded
     startCommand: gunicorn --chdir backend config.wsgi --workers 2 --timeout 60
     healthCheckPath: /healthz
     domains:
       - api.openwordbible.org
     envVars:
+      # The version CI tests with (.github/workflows/ci.yml).
+      - key: PYTHON_VERSION
+        value: "3.13"
       - key: DATABASE_URL
         fromDatabase:
           name: owb-db
