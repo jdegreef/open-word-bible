@@ -106,7 +106,7 @@ GEAR = ('<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="cur
 COLOUR_MENU = (
     '<div class="prefs">'
     '<button type="button" class="tool-btn prefs-btn" aria-expanded="false" aria-controls="colour-menu" '
-    f'aria-label="Colours" title="Colours">{GEAR}</button>'
+    f'aria-label="Theme" title="Theme">{GEAR}</button>'
     '<div id="colour-menu" class="prefs-menu" role="group" aria-labelledby="colour-menu-label" hidden>'
     '<p class="prefs-label" id="colour-menu-label">Theme</p>'
     '<div role="radiogroup" aria-labelledby="colour-menu-label">'
@@ -150,7 +150,7 @@ def page(title, body, path=None, current="", description=""):
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-{site_header(current)}
+{site_header(current, path)}
 <main class="wrap" id="main" tabindex="-1">
 {body}
 </main>
@@ -174,15 +174,13 @@ def nav_menus():
     def all_link(href, label):
         return f'<a class="dd-all" href="{href}">{label} {icon(ICONS["arrow"], 16)}</a>'
 
-    passages = []
-    for b, c in chapters():
-        records = load_chapter(b, c)[0]
+    rows = []
+    for url, title, records in passages():
         verses = len({v for r in records for v in r["refs"]})
         langs = [n for code, n in (("en", "English"), ("es", "Español"))
                  if all(code in r["renderings"] for r in records)]
-        passages.append(row(chapter_url(b, c), display(chapter_title(records, b, c)),
-                            f"{verses} verses &middot; {' &middot; '.join(langs)}", "book"))
-    read = (f'<p class="dd-head">Passages so far</p>{"".join(passages)}'
+        rows.append(row(url, display(title), f"{verses} verses &middot; {' &middot; '.join(langs)}", "book"))
+    read = (f'<p class="dd-head">Passages so far</p>{"".join(rows)}'
             f'{all_link("/read/", "All passages")}')
 
     articles = sorted(load_articles(), key=lambda a: a["order"])
@@ -205,15 +203,19 @@ def nav_menus():
             ("about", "About", "info", "/about/", about, "dd-about"))
 
 
-def site_header(current):
+def site_header(current, path=None):
     """Logo, the main links with their dropdowns, and the tools. On narrow
     screens the links fold into a panel behind the menu button, where each
-    dropdown opens in place (web/site.js)."""
+    dropdown opens in place (web/site.js). The section trigger for current
+    is lit, and the dropdown link to this page (path) is aria-current."""
     home_on = current == "/"
     items = [f'<li><a class="nav-link" href="/"{" aria-current=page" if home_on else ""}>'
              f'{icon(ICONS["home"])}<span>Home</span></a></li>']
     for key, label, ico, href, panel, cls in nav_menus():
         on = current == href
+        if path:
+            panel = panel.replace(f'class="dd-item" href="{path}"', f'class="dd-item" href="{path}" aria-current="page"')
+            panel = panel.replace(f'class="dd-all" href="{path}"', f'class="dd-all" href="{path}" aria-current="page"')
         items.append(
             f'<li class="nav-item">'
             f'<button type="button" class="nav-link nav-trigger{" active" if on else ""}" '
@@ -296,6 +298,14 @@ def chapters():
             ref = refs.parse(r["refs"][0])
             found.add((ref.book, ref.chapter))
     return sorted(found, key=lambda bc: refs.Ref(bc[0], bc[1], 1).sort_key())
+
+
+@functools.lru_cache(maxsize=None)
+def passages():
+    """Every passage with content as (url, title, records), in canonical
+    order. Built once per build; the header, home page and footer list it."""
+    return tuple((chapter_url(b, c), chapter_title(records, b, c), records)
+                 for b, c in chapters() for records in [load_chapter(b, c)[0]])
 
 
 def chapter_url(book, chapter):
@@ -446,9 +456,7 @@ def progress_html():
     records = all_records()
     decisions = sum(len(r["decisions"]) for r in records)
     reviewed = sum(r["status"] != "ai_draft" for r in records)
-    passages = "".join(
-        f'<li><a href="{chapter_url(b, c)}">{html.escape(chapter_title(load_chapter(b, c)[0], b, c))}</a></li>'
-        for b, c in chapters())
+    items = "".join(f'<li><a href="{url}">{html.escape(title)}</a></li>' for url, title, _ in passages())
     return f"""
 <section class="progress" aria-labelledby="progress-h">
 {sec_head("progress-h", "check", "Where the work stands", "/read/", "All passages")}
@@ -461,7 +469,7 @@ def progress_html():
 marked reviewed until named reviewers who read Hebrew or Greek approve it, and the reader always
 shows each sentence's status.</p>
 <p class="label">Passages so far</p>
-<ul class="passages">{passages}</ul>
+<ul class="passages">{items}</ul>
 </section>
 """
 
@@ -882,7 +890,7 @@ def site_footer():
     def items(pairs):
         return "".join(f'<li><a href="{href}">{html.escape(label)}</a></li>' for href, label in pairs)
 
-    passages = [(chapter_url(b, c), chapter_title(load_chapter(b, c)[0], b, c)) for b, c in chapters()]
+    read = [(url, title) for url, title, _ in passages()]
     start = sorted((a for a in load_articles() if a["section"] == "method"), key=lambda a: a["order"])[:3]
     learn = [(article_url(a), a["title"]) for a in start] + [("/articles/", "All articles")]
     project = [("/about/", "About"), ("/about/#credits", "Sources and credits"),
@@ -895,7 +903,7 @@ def site_footer():
 <p>A free Bible translated from Hebrew and Greek, with the reasoning behind every sentence shown.</p>
 <p class="foot-licence"><span class="pill">CC0</span> Public domain: quote it, print it, build on it.</p>
 </div>
-<nav aria-labelledby="foot-read"><h2 id="foot-read">Read</h2><ul>{items(passages + [("/read/", "All passages")])}</ul></nav>
+<nav aria-labelledby="foot-read"><h2 id="foot-read">Read</h2><ul>{items(read + [("/read/", "All passages")])}</ul></nav>
 <nav aria-labelledby="foot-learn"><h2 id="foot-learn">Learn</h2><ul>{items(learn)}</ul></nav>
 <nav aria-labelledby="foot-project"><h2 id="foot-project">Project</h2><ul>{items(project)}</ul></nav>
 </div>
@@ -916,6 +924,7 @@ def sitemap(paths):
 def build(out):
     site_footer.cache_clear()
     nav_menus.cache_clear()
+    passages.cache_clear()
     asset.cache_clear()
     translated_verses.cache_clear()
     if out.exists():

@@ -148,6 +148,10 @@ if __name__ == "__main__":
         # The current section's trigger is marked on its pages.
         articles = (self.out / "articles" / "index.html").read_text(encoding="utf-8")
         self.assertRegex(articles, r'class="nav-link nav-trigger active"[^>]*aria-controls="dd-articles"')
+        # ...and the dropdown link to the page itself tells a screen reader.
+        chapter = (self.out / "jhn" / "1" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('class="dd-item" href="/jhn/1/" aria-current="page"', chapter)
+        self.assertNotIn('href="/php/4/" aria-current', chapter)
 
     def test_interface_fonts_are_self_hosted_with_their_licences(self):
         css = (self.out / "style.css").read_text(encoding="utf-8")

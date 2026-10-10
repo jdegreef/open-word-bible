@@ -129,6 +129,12 @@
     });
   }
 
+  // Following a link closes the menus, so one to a place on this page
+  // (About > Help make it, on the home page) isn't left under them.
+  nav.addEventListener("click", function (e) {
+    if (e.target.closest("a")) showMenu(false);
+  });
+
   document.addEventListener("keydown", function (e) {
     if (e.key !== "Escape") return;
     var t = openTrigger();
