@@ -51,7 +51,7 @@ class ArticlesTest(unittest.TestCase):
 
     def test_internal_links_resolve(self):
         for path in (self.out / "articles").rglob("index.html"):
-            for href in re.findall(r'href="(/[^"#]*)"', path.read_text(encoding="utf-8")):
+            for href in re.findall(r'href="(/[^"#?]*)', path.read_text(encoding="utf-8")):
                 target = self.out / href.lstrip("/")
                 self.assertTrue(target.is_file() or (target / "index.html").is_file(), (path, href))
 
@@ -93,7 +93,7 @@ class SiteChromeTest(unittest.TestCase):
                 text = path.read_text(encoding="utf-8")
                 self.assertIn('<a class="skip" href="#main">', text, path)
                 self.assertIn('id="main"', text, path)
-                self.assertIn('class="menu-btn"', text, path)
+                self.assertIn('class="tool-btn menu-btn"', text, path)
                 self.assertIn('aria-controls="site-nav"', text, path)
                 self.assertIn('<footer class="site">', text, path)
                 self.assertIn('href="/jhn/1/"', text, path)
@@ -125,7 +125,7 @@ class ColourModesTest(unittest.TestCase):
             build_site.build(out)
             for path in out.rglob("*.html"):
                 text = path.read_text(encoding="utf-8")
-                self.assertIn('class="prefs-btn"', text, path)
+                self.assertIn('class="tool-btn prefs-btn"', text, path)
                 self.assertIn("localStorage.getItem('owb-theme')", text, path)
             self.assertTrue((out / "site.js").is_file())
 

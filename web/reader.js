@@ -348,11 +348,9 @@
   }
 
   document.addEventListener("keydown", function (e) {
-    // An Escape that closes the colour menu or the site menu (site.js)
-    // leaves the sheet open.
-    var menu = document.getElementById("colour-menu");
-    var nav = document.getElementById("site-nav");
-    var menuOpen = (menu && !menu.hidden) || (nav && nav.classList.contains("open"));
+    // An Escape that closes a header menu (site.js: the colour menu, a
+    // dropdown or the narrow-screen menu) leaves the sheet open.
+    var menuOpen = !!document.querySelector('header.site [aria-expanded="true"]');
     if (e.key === "Escape" && !menuOpen && narrow()) deselect();
   });
 

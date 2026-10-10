@@ -66,33 +66,89 @@
   mark();
 })();
 
-// The menu button that shows the site links on narrow screens (see
-// header.site in style.css). Escape or a click elsewhere closes it.
+// The header's section dropdowns (Read, Articles, About), and the menu
+// button that shows the links on narrow screens, where each dropdown opens
+// in place (see site_header in scripts/build_site.py). One dropdown is open
+// at a time; Escape, a click elsewhere or tabbing away closes it.
 (function () {
   "use strict";
-  var button = document.querySelector(".menu-btn");
   var nav = document.getElementById("site-nav");
-  if (!button || !nav) return;
+  var menuBtn = document.querySelector(".menu-btn");
+  if (!nav) return;
+  var triggers = Array.prototype.slice.call(nav.querySelectorAll(".nav-trigger"));
 
-  function open(show) {
-    nav.classList.toggle("open", show);
-    button.setAttribute("aria-expanded", show ? "true" : "false");
+  function panel(t) { return document.getElementById(t.getAttribute("aria-controls")); }
+
+  function setOpen(t, show) {
+    panel(t).hidden = !show;
+    t.setAttribute("aria-expanded", show ? "true" : "false");
   }
 
-  button.addEventListener("click", function () {
-    var show = !nav.classList.contains("open");
-    open(show);
-    if (show) nav.querySelector("a").focus();
+  function openOne(t) {
+    triggers.forEach(function (o) { if (o !== t) setOpen(o, false); });
+    setOpen(t, true);
+  }
+
+  function closeAll() { triggers.forEach(function (t) { setOpen(t, false); }); }
+
+  function openTrigger() {
+    return triggers.filter(function (t) { return t.getAttribute("aria-expanded") === "true"; })[0];
+  }
+
+  function showMenu(show) {
+    nav.classList.toggle("open", show);
+    if (menuBtn) menuBtn.setAttribute("aria-expanded", show ? "true" : "false");
+    if (!show) closeAll();
+  }
+
+  triggers.forEach(function (t) {
+    t.addEventListener("click", function () {
+      if (t.getAttribute("aria-expanded") === "true") setOpen(t, false);
+      else openOne(t);
+    });
+    // Down arrow on a closed trigger opens it and moves into the panel.
+    t.addEventListener("keydown", function (e) {
+      if (e.key !== "ArrowDown") return;
+      e.preventDefault();
+      openOne(t);
+      var first = panel(t).querySelector("a");
+      if (first) first.focus();
+    });
+    // Leaving an open item by keyboard closes its panel.
+    t.parentNode.addEventListener("focusout", function (e) {
+      var to = e.relatedTarget;
+      if (to && !t.parentNode.contains(to)) setOpen(t, false);
+    });
   });
+
+  if (menuBtn) {
+    menuBtn.addEventListener("click", function () {
+      var show = !nav.classList.contains("open");
+      showMenu(show);
+      if (show) nav.querySelector(".nav-link").focus();
+    });
+  }
+
+  // Following a link closes the menus, so one to a place on this page
+  // (About > Help make it, on the home page) isn't left under them.
+  nav.addEventListener("click", function (e) {
+    if (e.target.closest("a")) showMenu(false);
+  });
+
   document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && nav.classList.contains("open")) { open(false); button.focus(); }
+    if (e.key !== "Escape") return;
+    var t = openTrigger();
+    if (t) { setOpen(t, false); t.focus(); }
+    else if (nav.classList.contains("open")) { showMenu(false); menuBtn.focus(); }
   });
   document.addEventListener("click", function (e) {
-    if (nav.classList.contains("open") && !nav.contains(e.target) && !button.contains(e.target)) open(false);
+    if (nav.contains(e.target) || (menuBtn && menuBtn.contains(e.target))) return;
+    closeAll();
+    if (nav.classList.contains("open")) showMenu(false);
   });
-  // Tabbing out of the open menu closes it too.
+  // Tabbing out of the open narrow-screen menu closes it too.
   nav.addEventListener("focusout", function (e) {
     var to = e.relatedTarget;
-    if (to && !nav.contains(to) && !button.contains(to)) open(false);
+    if (to && nav.classList.contains("open") && !nav.contains(to) && !(menuBtn && menuBtn.contains(to))) showMenu(false);
   });
 })();

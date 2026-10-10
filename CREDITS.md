@@ -64,7 +64,9 @@ Word Bible is translated from the Hebrew and Greek.
 
 ## Fonts
 
-The site's text is set in Gentium Book Plus, Copyright (c) 2003–2022 SIL
-International, and Hebrew in Noto Serif Hebrew, Copyright 2022 The Noto
-Project Authors. Both are licensed under the SIL Open Font License 1.1; the
-licences are in `web/fonts/`.
+The reading text and Greek are set in Gentium Book Plus, Copyright (c)
+2003–2022 SIL International, and Hebrew in Noto Serif Hebrew, Copyright 2022
+The Noto Project Authors. Headings are set in Fraunces, Copyright 2020 The
+Fraunces Project Authors, and the interface in Hanken Grotesk, Copyright 2021
+The Hanken Grotesk Project Authors. All four are licensed under the SIL Open
+Font License 1.1; the licences are in `web/fonts/`.

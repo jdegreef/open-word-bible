@@ -8,6 +8,7 @@ full sources.
 """
 import argparse
 import functools
+import hashlib
 import html
 import json
 import re
@@ -35,20 +36,55 @@ GITHUB_URL = "https://github.com/jdegreef/open-word-bible"
 # (where style.css colours it from the current colour mode).
 BOOK_PATH = ("M30 19C24 15.5 17 14.5 10 15.5v31c7-1 14 0 20 3.5zM34 19c6-3.5 13-4.5 20-3.5v31"
              "c-7-1-14 0-20 3.5z")
-MARK = (f'<svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14"/>'
-        f'<path d="{BOOK_PATH}"/></svg>')
-MENU_ICON = ('<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
-             'stroke-width="2" stroke-linecap="round" aria-hidden="true">'
-             '<path d="M4 7h16M4 12h16M4 17h16"/></svg>')
+# Sized and filled in its own attributes too, so a page whose stylesheet has
+# not loaded shows a small mark rather than a black square across the header.
+MARK = (f'<svg class="mark" width="32" height="32" viewBox="0 0 64 64" aria-hidden="true">'
+        f'<rect width="64" height="64" rx="14" fill="#3f3d9a"/><path d="{BOOK_PATH}" fill="#faf6ef"/></svg>')
+
+
+def icon(paths, size=18, cls="icon"):
+    """A line icon in the header's style (24-unit grid, drawn in currentColor)."""
+    return (f'<svg class="{cls}" width="{size}" height="{size}" viewBox="0 0 24 24" fill="none" '
+            'stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" '
+            f'aria-hidden="true">{paths}</svg>')
+
+
+ICONS = {
+    "home": '<path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M10 21v-6h4v6"/>',
+    "book": '<path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/>',
+    "articles": '<path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/>',
+    "info": '<circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/>',
+    "chevron": '<path d="m6 9 6 6 6-6"/>',
+    "arrow": '<path d="M5 12h14M13 6l6 6-6 6"/>',
+    "menu": '<path d="M4 7h16M4 12h16M4 17h16"/>',
+    "close": '<path d="M6 6l12 12M18 6 6 18"/>',
+    "gift": '<path d="M20 12v9H4v-9M2 7h20v5H2zM12 21V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>',
+    "languages": '<path d="M5 8h8M9 5v3c0 4-2 7-5 8M7 12c1.5 2 3.5 3.5 6 4"/><path d="m13 21 4-9 4 9M14.5 18h5"/>',
+    "sliders": '<path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/>',
+    "scale": '<path d="M12 3v18M7 21h10M5 7h14"/><path d="m5 7-3 7a3 3 0 0 0 6 0zM19 7l-3 7a3 3 0 0 0 6 0z"/>',
+    "code": '<path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/>',
+    "users": '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6 6 0 0 1 3.5 6"/>',
+    "check": '<path d="M20 6 9 17l-5-5"/>',
+    "github": '<path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/>',
+}
+
+
+@functools.lru_cache(maxsize=None)
+def asset(name):
+    """The URL of a file from web/, with its content hash as a version.
+    Browsers keep style.css and the scripts for hours; a new version is a
+    new URL, so a deploy can never pair new pages with old styles."""
+    digest = hashlib.sha256((ROOT / "web" / name).read_bytes()).hexdigest()[:10]
+    return f"/{name}?v={digest}"
 
 
 # Colour modes (see web/style.css and web/site.js): value, label, and the
 # background and accent its swatch shows. "auto" follows the device.
-COLOUR_MODES = (("auto", "Automatic", "#fbfaf7", "#171614"),
-                ("light", "Light", "#fbfaf7", "#7a4b14"),
-                ("sepia", "Sepia", "#f4ecd8", "#74450f"),
-                ("dark", "Dark", "#171614", "#e0a96a"),
-                ("night", "Night", "#000000", "#c9965a"),
+COLOUR_MODES = (("auto", "Automatic", "#faf6ef", "#16130f"),
+                ("light", "Paper", "#faf6ef", "#3f3d9a"),
+                ("sepia", "Sepia", "#f4ecd8", "#3f3d9a"),
+                ("dark", "Lamplight", "#16130f", "#9c9af2"),
+                ("night", "Night", "#000000", "#e0b45c"),
                 ("contrast", "High contrast", "#ffffff", "#000000"))
 
 # Applies the saved colour mode before the first paint, so a page never
@@ -69,10 +105,10 @@ GEAR = ('<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="cur
 
 COLOUR_MENU = (
     '<div class="prefs">'
-    '<button type="button" class="prefs-btn" aria-expanded="false" aria-controls="colour-menu" '
-    f'aria-label="Colours" title="Colours">{GEAR}</button>'
+    '<button type="button" class="tool-btn prefs-btn" aria-expanded="false" aria-controls="colour-menu" '
+    f'aria-label="Theme" title="Theme">{GEAR}</button>'
     '<div id="colour-menu" class="prefs-menu" role="group" aria-labelledby="colour-menu-label" hidden>'
-    '<p class="prefs-label" id="colour-menu-label">Colours</p>'
+    '<p class="prefs-label" id="colour-menu-label">Theme</p>'
     '<div role="radiogroup" aria-labelledby="colour-menu-label">'
     + "".join(
         f'<button type="button" role="radio" aria-checked="{"true" if v == "auto" else "false"}" '
@@ -103,11 +139,6 @@ def page(title, body, path=None, current="", description="", card="site", card_a
     one get a canonical link and link-preview tags, and go in the sitemap.
     card names the page's preview image in web/og/; a card not drawn yet
     falls back to the site's. card_alt says what the card shows."""
-    nav = [("/read/", "Read"), ("/articles/", "Articles"), ("/about/", "About")]
-    links = "".join(
-        f'<a href="{href}"{" aria-current=page" if href == current else ""}>{label}</a>'
-        for href, label in nav)
-    links += f'<a class="nav-ext" href="{GITHUB_URL}">GitHub</a>'
     full_title = f"{title} · {SITE_NAME}" if title != SITE_NAME else SITE_NAME
     description = description or DESCRIPTION
     meta = ""
@@ -138,20 +169,14 @@ def page(title, body, path=None, current="", description="", card="site", card_a
 <meta name="description" content="{html.escape(description)}">{meta}
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <script>{BOOT_SCRIPT}</script>
+<link rel="preload" href="/fonts/hanken-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/gentium-book-plus-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/style.css">
-<script src="/site.js" defer></script>
+<link rel="stylesheet" href="{asset("style.css")}">
+<script src="{asset("site.js")}" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<header class="site"><div class="wrap bar">
-<a class="brand" href="/"{" aria-current=page" if current == "/" else ""}>{MARK}<span>{SITE_NAME}</span></a>
-<nav class="primary" id="site-nav" aria-label="Main">{links}</nav>
-<div class="tools">
-{COLOUR_MENU}
-<button type="button" class="menu-btn" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">{MENU_ICON}</button>
-</div>
-</div></header>
+{site_header(current, path)}
 <main class="wrap" id="main" tabindex="-1">
 {body}
 </main>
@@ -159,6 +184,79 @@ def page(title, body, path=None, current="", description="", card="site", card_a
 </body>
 </html>
 """
+
+
+@functools.lru_cache(maxsize=None)
+def nav_menus():
+    """The header's dropdowns, as [(key, label, icon, href, panel html)].
+    Built once per build; site_header marks the current one."""
+    def row(href, title, note="", ico=None, ext=False):
+        lead = f'<span class="dd-ico">{icon(ICONS[ico])}</span>' if ico else ""
+        note = f'<span class="dd-note">{note}</span>' if note else ""
+        rel = ' rel="noopener"' if ext else ""
+        return (f'<a class="dd-item" href="{href}"{rel}>{lead}'
+                f'<span class="dd-text"><span class="dd-title">{title}</span>{note}</span></a>')
+
+    def all_link(href, label):
+        return f'<a class="dd-all" href="{href}">{label} {icon(ICONS["arrow"], 16)}</a>'
+
+    rows = []
+    for url, title, records in passages():
+        verses = len({v for r in records for v in r["refs"]})
+        langs = [n for code, n in (("en", "English"), ("es", "Español"))
+                 if all(code in r["renderings"] for r in records)]
+        rows.append(row(url, display(title), f"{verses} verses &middot; {' &middot; '.join(langs)}", "book"))
+    read = (f'<p class="dd-head">Passages so far</p>{"".join(rows)}'
+            f'{all_link("/read/", "All passages")}')
+
+    articles = sorted(load_articles(), key=lambda a: a["order"])
+    groups = "".join(
+        f'<div class="dd-col"><p class="dd-head">{label}</p>'
+        + "".join(row(article_url(a), display(a["title"]), f'{a["minutes"]} min read')
+                  for a in articles if a["section"] == key)
+        + "</div>"
+        for key, label in SECTIONS.items())
+    arts = f'<div class="dd-cols">{groups}</div>{all_link("/articles/", "All articles")}'
+
+    about = ("".join((
+        row("/about/", "About the project", "What it is and how it is licensed", "info"),
+        row("/about/#credits", "Sources and credits", "The texts and data it is built on", "scale"),
+        row("/#help", "Help make it", "Reviewers, speakers and developers", "users"),
+        row(GITHUB_URL, "Source code", "Data, validator and site on GitHub", "code", ext=True),
+    )))
+    return (("read", "Read", "book", "/read/", read, "dd-read"),
+            ("articles", "Articles", "articles", "/articles/", arts, "dd-wide"),
+            ("about", "About", "info", "/about/", about, "dd-about"))
+
+
+def site_header(current, path=None):
+    """Logo, the main links with their dropdowns, and the tools. On narrow
+    screens the links fold into a panel behind the menu button, where each
+    dropdown opens in place (web/site.js). The section trigger for current
+    is lit, and the dropdown link to this page (path) is aria-current."""
+    home_on = current == "/"
+    items = [f'<li><a class="nav-link" href="/"{" aria-current=page" if home_on else ""}>'
+             f'{icon(ICONS["home"])}<span>Home</span></a></li>']
+    for key, label, ico, href, panel, cls in nav_menus():
+        on = current == href
+        if path:
+            panel = panel.replace(f'class="dd-item" href="{path}"', f'class="dd-item" href="{path}" aria-current="page"')
+            panel = panel.replace(f'class="dd-all" href="{path}"', f'class="dd-all" href="{path}" aria-current="page"')
+        items.append(
+            f'<li class="nav-item">'
+            f'<button type="button" class="nav-link nav-trigger{" active" if on else ""}" '
+            f'aria-expanded="false" aria-controls="dd-{key}">'
+            f'{icon(ICONS[ico])}<span>{label}</span>{icon(ICONS["chevron"], 15, "icon caret")}</button>'
+            f'<div class="dropdown {cls}" id="dd-{key}" hidden>{panel}</div></li>')
+    return f"""<header class="site"><div class="wrap bar">
+<a class="brand" href="/"{" aria-current=page" if home_on else ""}>{MARK}<span class="brand-name">Open Word <em>Bible</em></span></a>
+<nav class="primary" id="site-nav" aria-label="Main"><ul class="nav-list">{"".join(items)}</ul></nav>
+<div class="tools">
+<a class="tool-btn" href="{GITHUB_URL}" aria-label="Open Word Bible on GitHub" title="GitHub">{icon(ICONS["github"])}</a>
+{COLOUR_MENU}
+<button type="button" class="tool-btn menu-btn" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">{icon(ICONS["menu"], 22)}{icon(ICONS["close"], 22)}</button>
+</div>
+</div></header>"""
 
 
 def markdown(text):
@@ -228,6 +326,14 @@ def chapters():
     return sorted(found, key=lambda bc: refs.Ref(bc[0], bc[1], 1).sort_key())
 
 
+@functools.lru_cache(maxsize=None)
+def passages():
+    """Every passage with content as (url, title, records), in canonical
+    order. Built once per build; the header, home page and footer list it."""
+    return tuple((chapter_url(b, c), chapter_title(records, b, c), records)
+                 for b, c in chapters() for records in [load_chapter(b, c)[0]])
+
+
 def chapter_url(book, chapter):
     return f"/{book.lower()}/{chapter}/"
 
@@ -288,7 +394,7 @@ def chapter_page(book, chapter):
   <aside class="panel" id="panel" aria-live="polite" tabindex="-1"></aside>
 </div>
 <script type="application/json" id="owb-data">{blob}</script>
-<script src="/reader.js"></script>
+<script src="{asset("reader.js")}"></script>
 """
     return page(title["en"], body, path=chapter_url(book, chapter), current="/read/",
                 card=og_card_chapter(book, chapter),
@@ -372,6 +478,14 @@ def plain(text):
 EXAMPLE = ("JHN", 1, "JHN.1.1.s1", "m4")
 
 
+def sec_head(hid, ico, title, href=None, more=None):
+    """A home-page section heading: icon and title, with an "all" link on
+    the right (the Ochorus shelf heading)."""
+    link = f'<a class="sec-more" href="{href}">{more} {icon(ICONS["arrow"], 16)}</a>' if href else ""
+    return (f'<div class="sec-head"><h2 id="{hid}"><span class="sec-ico">{icon(ICONS[ico])}</span>'
+            f'{title}</h2>{link}</div>')
+
+
 def example_html():
     """John 1:1 at every level, with one decision and its Greek words marked.
     Everything comes from content/ and data/grc/, so it stays in step with
@@ -392,7 +506,7 @@ def example_html():
     also = "; ".join(html.escape(a) for a in decision["alternatives"])
     return f"""
 <section class="example" aria-labelledby="example-h">
-<h2 id="example-h">See the work: {BOOK_NAMES[book]["en"]} {ref.chapter}:{ref.verse}</h2>
+{sec_head("example-h", "book", f'See the work: {BOOK_NAMES[book]["en"]} {ref.chapter}:{ref.verse}', chapter_url(book, chapter), f'Open {BOOK_NAMES[book]["en"]} {chapter}')}
 <div class="example-grid">
 <div>
 <p class="label">Greek (SBL Greek New Testament)</p>
@@ -409,7 +523,7 @@ def example_html():
 <p class="why">{html.escape(decision["reason"])}</p>
 </div>
 </div>
-<p><a href="{chapter_url(book, chapter)}">Open {BOOK_NAMES[book]["en"]} {chapter} and tap any verse &rarr;</a></p>
+<p class="example-foot">Every verse in the reader opens like this. <a href="{chapter_url(book, chapter)}">Open {BOOK_NAMES[book]["en"]} {chapter} and tap any verse&nbsp;&rarr;</a></p>
 </section>
 """
 
@@ -418,12 +532,10 @@ def progress_html():
     records = all_records()
     decisions = sum(len(r["decisions"]) for r in records)
     reviewed = sum(r["status"] != "ai_draft" for r in records)
-    passages = "".join(
-        f'<li><a href="{chapter_url(b, c)}">{html.escape(chapter_title(load_chapter(b, c)[0], b, c))}</a></li>'
-        for b, c in chapters())
+    items = "".join(f'<li><a href="{url}">{html.escape(title)}</a></li>' for url, title, _ in passages())
     return f"""
 <section class="progress" aria-labelledby="progress-h">
-<h2 id="progress-h">Where the work stands</h2>
+{sec_head("progress-h", "check", "Where the work stands", "/read/", "All passages")}
 <div class="stats">
 <div><b>{len(records)}</b><span>sentences translated</span></div>
 <div><b>{decisions}</b><span>decisions recorded</span></div>
@@ -433,43 +545,62 @@ def progress_html():
 marked reviewed until named reviewers who read Hebrew or Greek approve it, and the reader always
 shows each sentence's status.</p>
 <p class="label">Passages so far</p>
-<ul class="passages">{passages}</ul>
+<ul class="passages">{items}</ul>
 </section>
 """
 
 
 def home_page():
+    def point(ico, title, text):
+        return (f'<li class="point"><span class="tile">{icon(ICONS[ico], 22)}</span>'
+                f'<h3>{title}</h3><p>{text}</p></li>')
+
+    def helper(ico, who, what):
+        return (f'<li><span class="tile sm">{icon(ICONS[ico])}</span>'
+                f'<p><strong>{who}</strong> {what}</p></li>')
+
     body = f"""
 <section class="hero">
-<h1>The Bible, translated from Hebrew and Greek, with its reasoning shown.</h1>
-<p>Open Word Bible is a free translation for every reader. Open any sentence to see the original
+<p class="eyebrow">Free &middot; From the Hebrew and Greek &middot; Public domain</p>
+<h1>The Bible, translated from Hebrew and Greek, with its reasoning&nbsp;shown.</h1>
+<p class="hero-sub">Open Word Bible is a free translation for every reader. Open any sentence to see the original
 words, a word-for-word gloss, and why each word was chosen. Everything is released under CC0,
 so anyone may use it for anything.</p>
-<p class="actions"><a class="button" href="/read/">Start reading</a>
+<p class="actions"><a class="button" href="/read/">{icon(ICONS["book"])}Start reading</a>
 <a class="button ghost" href="#example-h">See how it works</a></p>
+<ul class="trust">
+<li>{icon(ICONS["gift"], 16)}Free forever</li>
+<li>{icon(ICONS["scale"], 16)}CC0 public domain</li>
+<li>{icon(ICONS["languages"], 16)}English and Español</li>
+</ul>
 </section>
 {example_html()}
-<section class="points" aria-label="Principles">
-<div><h2>Free for everyone</h2><p>The translation, its notes and its data are public domain (CC0). Quote it, print it, put it in an app, or build on it without asking.</p></div>
-<div><h2>From the original languages</h2><p>Every language is translated from the Hebrew, Aramaic and Greek, never from English, using fixed, openly licensed source texts.</p></div>
-<div><h2>Three levels, your settings</h2><p>Literal, Balanced or Readable; inclusive or traditional gender language; &ldquo;Christ&rdquo; or &ldquo;Messiah&rdquo;. Settings change wording, never meaning.</p></div>
-<div><h2>Every decision shown</h2><p>Each sentence records what the original says, what we chose, what else we considered, and why. Uncertain calls are marked uncertain.</p></div>
+<section class="points-wrap" aria-labelledby="points-h">
+{sec_head("points-h", "info", "What makes it different")}
+<ul class="points">
+{point("gift", "Free for everyone", "The translation, its notes and its data are public domain (CC0). Quote it, print it, put it in an app, or build on it without asking.")}
+{point("languages", "From the original languages", "Every language is translated from the Hebrew, Aramaic and Greek, never from English, using fixed, openly licensed source texts.")}
+{point("sliders", "Three levels, your settings", "Literal, Balanced or Readable; inclusive or traditional gender language; &ldquo;Christ&rdquo; or &ldquo;Messiah&rdquo;. Settings change wording, never meaning.")}
+{point("check", "Every decision shown", "Each sentence records what the original says, what we chose, what else we considered, and why. Uncertain calls are marked uncertain.")}
+</ul>
 </section>
 {progress_html()}
 <section class="latest" aria-labelledby="latest-h">
-<h2 id="latest-h">From the articles</h2>
+{sec_head("latest-h", "articles", "From the articles", "/articles/", "All articles")}
 <ul class="a-grid">{article_list(sorted(load_articles(), key=lambda a: a["order"])[:3])}</ul>
-<p><a href="/articles/">All articles &rarr;</a></p>
 </section>
 <section class="involve" id="help" aria-labelledby="involve-h">
+<div class="involve-text">
 <h2 id="involve-h">Help make it</h2>
-<ul>
-<li><strong>Read Greek or Hebrew?</strong> Reviewers check each sentence and its decisions before it is marked reviewed.</li>
-<li><strong>Native Spanish speaker?</strong> Check that the Spanish reads naturally at each level.</li>
-<li><strong>Build software?</strong> The site, validator and data tools are open source (MIT).</li>
-<li><strong>Making something?</strong> Use the text and its reasoning records in your own app, study or project.</li>
+<p>Open Word Bible is built in the open. Every sentence waits for people who can check it.</p>
+<p><a class="button" href="{GITHUB_URL}">{icon(ICONS["github"])}The project on GitHub</a></p>
+</div>
+<ul class="helpers">
+{helper("languages", "Read Greek or Hebrew?", "Reviewers check each sentence and its decisions before it is marked reviewed.")}
+{helper("users", "Native Spanish speaker?", "Check that the Spanish reads naturally at each level.")}
+{helper("code", "Build software?", "The site, validator and data tools are open source (MIT).")}
+{helper("sliders", "Making something?", "Use the text and its reasoning records in your own app, study or project.")}
 </ul>
-<p><a class="button ghost" href="https://github.com/jdegreef/open-word-bible">The project on GitHub</a></p>
 </section>
 """
     return page(SITE_NAME, body, path="/", current="/", description=DESCRIPTION)
@@ -813,13 +944,19 @@ def article_page(article, articles):
 
 
 def not_found_page():
-    return page("Not found", '<div class="prose"><h1>Page not found</h1>'
-                '<p><a href="/">Go to the home page</a>.</p></div>')
+    return page("Not found", f"""
+<section class="hero lost">
+<p class="eyebrow">404</p>
+<h1>This page is not here.</h1>
+<p class="hero-sub">It may have moved, or the address may be mistyped. Only a few passages are translated so far.</p>
+<p class="actions"><a class="button" href="/read/">{icon(ICONS["book"])}See the passages</a>
+<a class="button ghost" href="/">Go to the home page</a></p>
+</section>""")
 
 
 FAVICON = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-<rect width="64" height="64" rx="12" fill="#7a4b14"/>
-<path d="{BOOK_PATH}" fill="#fbfaf7"/>
+<rect width="64" height="64" rx="14" fill="#3f3d9a"/>
+<path d="{BOOK_PATH}" fill="#faf6ef"/>
 </svg>
 """
 
@@ -831,7 +968,7 @@ def site_footer():
     def items(pairs):
         return "".join(f'<li><a href="{href}">{html.escape(label)}</a></li>' for href, label in pairs)
 
-    passages = [(chapter_url(b, c), chapter_title(load_chapter(b, c)[0], b, c)) for b, c in chapters()]
+    read = [(url, title) for url, title, _ in passages()]
     start = sorted((a for a in load_articles() if a["section"] == "method"), key=lambda a: a["order"])[:3]
     learn = [(article_url(a), a["title"]) for a in start] + [("/articles/", "All articles")]
     project = [("/about/", "About"), ("/about/#credits", "Sources and credits"),
@@ -840,11 +977,11 @@ def site_footer():
     return f"""<footer class="site"><div class="wrap">
 <div class="foot-grid">
 <div class="foot-about">
-<a class="brand" href="/">{MARK}<span>{SITE_NAME}</span></a>
+<a class="brand" href="/">{MARK}<span class="brand-name">Open Word <em>Bible</em></span></a>
 <p>A free Bible translated from Hebrew and Greek, with the reasoning behind every sentence shown.</p>
 <p class="foot-licence"><span class="pill">CC0</span> Public domain: quote it, print it, build on it.</p>
 </div>
-<nav aria-labelledby="foot-read"><h2 id="foot-read">Read</h2><ul>{items(passages + [("/read/", "All passages")])}</ul></nav>
+<nav aria-labelledby="foot-read"><h2 id="foot-read">Read</h2><ul>{items(read + [("/read/", "All passages")])}</ul></nav>
 <nav aria-labelledby="foot-learn"><h2 id="foot-learn">Learn</h2><ul>{items(learn)}</ul></nav>
 <nav aria-labelledby="foot-project"><h2 id="foot-project">Project</h2><ul>{items(project)}</ul></nav>
 </div>
@@ -864,6 +1001,9 @@ def sitemap(paths):
 
 def build(out):
     site_footer.cache_clear()
+    nav_menus.cache_clear()
+    passages.cache_clear()
+    asset.cache_clear()
     translated_verses.cache_clear()
     if out.exists():
         shutil.rmtree(out)
@@ -883,8 +1023,8 @@ def build(out):
         path = out / rel
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(text, encoding="utf-8")
-    for asset in ("style.css", "reader.js", "site.js"):
-        shutil.copy(ROOT / "web" / asset, out / asset)
+    for name in ("style.css", "reader.js", "site.js"):
+        shutil.copy(ROOT / "web" / name, out / name)
     shutil.copytree(ROOT / "web" / "fonts", out / "fonts")
     shutil.copytree(OG, out / "og", ignore=shutil.ignore_patterns("manifest.json"))
     return sorted(files) + ["reader.js", "site.js", "style.css"]
