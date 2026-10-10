@@ -32,7 +32,6 @@
       settings: "Reading settings", close: "Close",
       empty_title: "The reasoning behind each verse",
       empty_text: "Tap or click any verse to see the Greek, a word-for-word gloss, and every translation decision with its reason.",
-      status: "AI-assisted \u00b7 not yet reviewed",
       greek: "Greek (SBLGNT), word by word", gloss: "Word for word", notes_language: "",
       word_hint: "Tap a Greek word for its dictionary form and grammar.",
       lemma: "Dictionary form", strong: "Strong\u2019s",
@@ -72,7 +71,6 @@
       settings: "Ajustes de lectura", close: "Cerrar",
       empty_title: "El razonamiento detr\u00e1s de cada vers\u00edculo",
       empty_text: "Toca cualquier vers\u00edculo para ver el griego, una glosa palabra por palabra y cada decisi\u00f3n de traducci\u00f3n con su raz\u00f3n.",
-      status: "Asistido por IA \u00b7 a\u00fan sin revisar",
       greek: "Griego (SBLGNT), palabra por palabra", gloss: "Palabra por palabra (en ingl\u00e9s)",
       word_hint: "Toca una palabra griega para ver su forma de diccionario y su gram\u00e1tica. Las glosas est\u00e1n en ingl\u00e9s.",
       lemma: "Forma de diccionario", strong: "Strong",
@@ -317,7 +315,6 @@
     close.addEventListener("click", deselect);
     panel.appendChild(close);
     panel.appendChild(el("h2", null, DATA.title[settings.lang].replace(/[\d:\u2013\s]+$/, "") + " " + DATA.chapter + ":" + verseRange(current)));
-    panel.appendChild(el("span", "status", t("status")));
 
     panel.appendChild(el("h3", null, t("greek")));
     // Interlinear: each Greek word over its gloss. Tapping one shows its

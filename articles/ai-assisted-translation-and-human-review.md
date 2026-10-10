@@ -26,9 +26,9 @@ A sentence moves through these statuses:
 
 Every review is recorded with the reviewer's name, so the history of each sentence can be traced.
 
-## You can always see the status
+## Where things stand today
 
-The reader shows each sentence's status. Today no sentence on this site has been reviewed yet, and the reader says so on every one.
+Every sentence keeps its status in the open data on GitHub. Today no sentence on this site has been reviewed yet.
 
 ## Help review
 
