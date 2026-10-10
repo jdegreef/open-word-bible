@@ -32,4 +32,16 @@ summarises the data model.
     python3 scripts/extract_tokens.py --check   # after adding verses
     python3 scripts/build_site.py               # the site must still build
 
+Backend changes also need, against a Postgres database:
+
+    DATABASE_URL=postgres://... DJANGO_DEBUG=1 python backend/manage.py test backend_tests
+
 `scripts/fetch_sources.py` clones the pinned sources into `vendor/`.
+
+## Backend
+
+- `backend/` is Django + DRF on Postgres (Render). `content/` stays the master
+  copy of the translation until the reviewer workflow ships;
+  `import_content` loads it and never resets a sentence's review status.
+- Reference Bibles (BSB, WEB, KJV, RV1909, ...) are for comparison and review.
+  Never use them as the basis for Open Word Bible wording.

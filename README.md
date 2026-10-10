@@ -81,3 +81,29 @@ Python 3. Preview it with:
     python3 scripts/build_site.py && python3 -m http.server -d site 8000
 
 `render.yaml` deploys it to Render as a static site on openwordbible.org.
+
+## Backend (Django + Postgres)
+
+`backend/` is a Django project with Django REST Framework, run on Render
+against Postgres (`render.yaml`). It holds:
+
+- **texts**: imported editions, verses and words. The base texts are the
+  SBL Greek New Testament and the Westminster Leningrad Codex, each with
+  MACULA word data. The reference Bibles are the BSB, WEB, ASV, KJV, YLT and
+  Reina-Valera 1909, from open-bibles.
+- **translation**: our sentence records, renderings, decisions and the review
+  trail. `content/` is still the master copy and is loaded with
+  `import_content`.
+- **api**: read-only JSON at `/api/editions/`, `/api/text/<BOOK>/<ch>/` and
+  `/api/passages/<BOOK>/<ch>/`. The Django admin at `/admin/` is the first
+  review tool.
+
+Local setup:
+
+    pip install -r backend/requirements.txt
+    python scripts/fetch_sources.py                       # pinned sources into vendor/
+    export DATABASE_URL=postgres://postgres@localhost:5432/owb DJANGO_DEBUG=1
+    python backend/manage.py migrate
+    python backend/manage.py import_texts                 # about 90 seconds
+    python backend/manage.py import_content
+    python backend/manage.py test backend_tests           # needs Postgres

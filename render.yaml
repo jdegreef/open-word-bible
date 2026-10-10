@@ -1,6 +1,17 @@
-# Render Blueprint: the public site, built from content/ and data/grc/.
-# Create it in Render with New > Blueprint and this repository.
+# Render Blueprint for Open Word Bible. Create it in Render with
+# New > Blueprint and this repository. Plan names are the smallest paid tiers
+# at the time of writing; change them in the dashboard if Render renames them.
+
+databases:
+  # Postgres: imported texts, our sentence records, reviews and users.
+  - name: owb-db
+    databaseName: owb
+    user: owb
+    plan: basic-256mb
+    postgresMajorVersion: "16"
+
 services:
+  # The public reader site, built from content/ and data/grc/.
   - type: web
     name: open-word-bible
     runtime: static
@@ -17,3 +28,30 @@ services:
       - path: /*
         name: Referrer-Policy
         value: strict-origin-when-cross-origin
+
+  # Django API and admin (backend/). Load data once from the service's Shell:
+  #   python scripts/fetch_sources.py
+  #   python backend/manage.py import_texts
+  #   python backend/manage.py import_content
+  #   python backend/manage.py createsuperuser
+  - type: web
+    name: owb-api
+    runtime: python
+    plan: starter
+    buildCommand: pip install -r backend/requirements.txt && python backend/manage.py collectstatic --noinput
+    preDeployCommand: python backend/manage.py migrate --noinput
+    startCommand: gunicorn --chdir backend config.wsgi --workers 2 --timeout 60
+    healthCheckPath: /healthz
+    domains:
+      - api.openwordbible.org
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: owb-db
+          property: connectionString
+      - key: DJANGO_SECRET_KEY
+        generateValue: true
+      - key: DJANGO_ALLOWED_HOSTS
+        value: api.openwordbible.org
+      - key: CSRF_TRUSTED_ORIGINS
+        value: https://api.openwordbible.org
