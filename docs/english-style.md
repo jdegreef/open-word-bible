@@ -41,11 +41,12 @@ Rules the software enforces are marked **(checked)**.
 
 ## 3. The literal gloss
 
-Word for word, in Greek order where English can follow, without brackets and
-without smoothing: "In beginning was the word, and the word was toward the
-God". It shows the shape of the sentence and is not meant to read well. Keep
-the article where the Greek has it ("the God") and leave it out where the Greek
-does.
+Word for word, in Greek order where English can follow, without smoothing:
+"In beginning was the word, and the word was toward the God". It shows the
+shape of the sentence and is not meant to read well. Keep the article where
+the Greek has it ("the God") and leave it out where the Greek does. Use
+[brackets] sparingly, only for a word the gloss cannot parse without ("in the
+[one] strengthening me").
 
 ## 4. The three levels
 
@@ -107,9 +108,12 @@ Settings change wording, never meaning. **(checked)** Use a setting span
   where a specific male is meant.
 - `christos`: `{{christos:Christ|Messiah}}` (Literal) or
   `{{christos:Christ|the Messiah}}` (Balanced, Readable) for every Christos.
+  Where the Greek has the article and Literal keeps it, write
+  `the {{christos:Christ|Messiah}}`.
 - `deity_pronoun`: every pronoun for God or Christ, lowercase default,
   capitalised alternative: `{{deity_pronoun:him|Him}}`. **(checked: only the
-  capitalisation may differ)**
+  capitalisation may differ)** At the start of a sentence the pronoun is
+  capitalised either way, so write plain "He" with no span (as John 1:2 does).
 - `divine_name`, `units`, `spelling`: when they apply (the Old Testament,
   measures and money).
 
@@ -142,6 +146,10 @@ were considered, and the reason, in plain language a lay reader can follow.
 - Set `footnote` when a reader of the printed text should see the alternative:
   textual variants, uncertain decisions, and well-known renderings we depart
   from ("only begotten").
+- Text variants: the SBLGNT text governs. The SBLGNT apparatus is not yet in
+  the pinned sources, so a `text_variant` decision describes the manuscript
+  evidence from general knowledge; reviewers must check it against the
+  apparatus before the sentence is marked meaning reviewed.
 - Cite only what the project can stand behind: other passages of Scripture,
   facts about the text and its manuscripts, and well-established historical
   facts. No unverifiable claims about scholars or "most translations".

@@ -33,8 +33,10 @@ Decisions come in two layers:
 Each decision names its tokens, category, choice, alternatives and reason,
 and whether it is uncertain or needs a footnote.
 
-Content: `content/JHN/JHN.1.1-18.json` (John 1:1–18) and
-`content/PHP/PHP.4.1-9.json` (Philippians 4:1–9), in English and Spanish.
+Content: John 1:1–18 (`content/JHN/`) in English and Spanish, and all of
+Philippians (`content/PHP/`) in English, with 4:1–9 also in Spanish. English
+runs ahead of the other languages; `docs/english-style.md` is the brief for
+drafting it and `data/key_terms.json` the settled key terms.
 
 A record is one sentence of the source, not one verse. It ends where the
 SBLGNT ends a sentence: a full stop, a question mark, or a raised dot (·)

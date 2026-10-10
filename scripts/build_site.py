@@ -241,8 +241,9 @@ def read_page():
     body = f"""
 <div class="prose">
 <h1>Read</h1>
-<p>Sample passages so far, each translated from the SBL Greek New Testament into English and
-Spanish with the reasoning behind every sentence. All are AI drafts awaiting review.</p>
+<p>Passages so far, each translated from the SBL Greek New Testament with the reasoning behind
+every sentence. English comes first; Spanish follows, and where a sentence is not yet in Spanish the
+reader shows the English. All are AI drafts awaiting review.</p>
 <ul>{items}</ul>
 </div>
 """
