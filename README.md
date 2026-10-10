@@ -111,6 +111,38 @@ Python 3. Preview it with:
 The build also writes `sitemap.xml`, `robots.txt` and a canonical link on
 every page, all using `SITE_URL` in `scripts/build_site.py`.
 
+### Articles
+
+Articles live in `articles/*.md`, one file each, starting with a front
+matter block:
+
+    ---
+    title: Why another Bible translation?
+    summary: One sentence for the article list and link previews.
+    date: 2026-10-10
+    order: 1
+    ---
+
+The body is plain Markdown (`##` headings, paragraphs, `-` lists, `>` quotes,
+`**bold**`, `*italic*`, `[links](/jhn/1/)`). Greek is never typed: quote it
+with placeholders the build fills from `data/grc/`, and quote our own
+translation from `content/` the same way:
+
+    {{GREEK:JHN.1.1:14-17}}   words 14-17 of John 1:1, as the SBLGNT has them
+    {{LEMMA:JHN.1.14:17}}     the dictionary form of word 17 of John 1:14
+    {{OWB:JHN.1.1.s1:B}}      our English for that sentence, Balanced level
+
+`tests/test_articles.py` fails if an article contains typed Greek or Hebrew,
+an unfilled placeholder or a broken internal link.
+
+### Colour modes
+
+The gear at the top right of every page offers Automatic (follow the device)
+and five colour modes: Light, Sepia, Dark, Night and High contrast. The modes
+are blocks of colour tokens in `web/style.css`; `web/site.js` runs the menu and
+remembers the choice in the browser, and a small script in each page's head
+applies it before the first paint.
+
 ### Pointing openwordbible.org at Render
 
 The custom domains are listed in `render.yaml`; the DNS records are set at
