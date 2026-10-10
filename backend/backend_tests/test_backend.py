@@ -102,7 +102,11 @@ class ApiTest(TestCase):
     def test_passages_round_trip_the_content_files(self):
         response = self.client.get("/api/passages/jhn/1/")
         self.assertEqual(response.status_code, 200)
-        from_file = json.loads((CONTENT / "JHN" / "JHN.1.1-18.json").read_text())["records"]
+        # A chapter may be spread over several content files (John 1:1-18,
+        # 1:19-51); the API returns all of its records, in file order.
+        from_file = [r for path in sorted((CONTENT / "JHN").glob("JHN.1.*.json"))
+                     for r in json.loads(path.read_text())["records"]]
+        self.assertGreater(len(from_file), 17)   # both files, not just 1:1-18
         self.assertEqual(response.json()["records"], from_file)
         self.assertIn("JHN.1.1", response.json()["words"])
 
