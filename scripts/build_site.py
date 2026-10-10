@@ -184,8 +184,10 @@ def chapter_title(records, book, chapter, lang="en"):
 def chapter_page(book, chapter):
     records, words = load_chapter(book, chapter)
     title = {lang: chapter_title(records, book, chapter, lang) for lang in LANGUAGES}
+    # Every language any sentence has: English may run ahead of the others,
+    # and the reader shows a sentence not yet translated in English.
     languages = [lang for lang in LANGUAGES
-                 if all(lang in r["renderings"] for r in records)]
+                 if any(lang in r["renderings"] for r in records)]
     data = {"book": book, "chapter": chapter, "title": title, "languages": languages,
             "records": records,
             "words": {vid: words[vid] for r in records for vid in r["refs"]}}
@@ -219,6 +221,7 @@ def chapter_page(book, chapter):
   <article class="passage">
     <h1 id="title">{html.escape(title["en"])}</h1>
     <p class="sub" data-i18n="sub">Translated from the SBL Greek New Testament. Tap a verse to see why it reads as it does. &dagger; marks a verse with a footnote.</p>
+    <p class="notice" id="partial" hidden></p>
     <div class="text" id="text"></div>
   </article>
   <aside class="panel" id="panel" aria-live="polite"></aside>
