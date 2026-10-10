@@ -1,0 +1,96 @@
+"""Articles (articles/*.md) and the colour-mode menu, as built into the site."""
+import re
+import sys
+import tempfile
+import unittest
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+
+import build_site  # noqa: E402
+from owb import validate  # noqa: E402
+
+
+class ArticlesTest(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.tmp = tempfile.TemporaryDirectory()
+        cls.out = Path(cls.tmp.name) / "site"
+        build_site.build(cls.out)
+        cls.articles = build_site.load_articles()
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.tmp.cleanup()
+
+    def test_ten_articles_with_front_matter(self):
+        self.assertGreaterEqual(len(self.articles), 10)
+        for a in self.articles:
+            for key in ("title", "summary", "date"):
+                self.assertTrue(a[key].strip(), (a["slug"], key))
+            self.assertTrue((self.out / "articles" / a["slug"] / "index.html").is_file())
+
+    def test_no_greek_or_hebrew_typed_in_articles(self):
+        # Original-language words come only through {{GREEK:..}} and
+        # {{LEMMA:..}} placeholders, filled from data/grc/ at build time.
+        for path in sorted((ROOT / "articles").glob("*.md")):
+            text = path.read_text(encoding="utf-8")
+            for script, (pattern, _) in validate._SCRIPTS.items():
+                self.assertEqual(pattern.findall(text), [], f"{path.name}: {script} typed by hand")
+
+    def test_placeholders_are_filled_from_the_data(self):
+        page = (self.out / "articles" / "the-word-was-god" / "index.html").read_text(encoding="utf-8")
+        words = build_site._verse_words("JHN", 1, 1)
+        expected = " ".join(w["text"] + (w["after"].rstrip() if w["position"] < 17 else "")
+                            for w in words if 14 <= w["position"] <= 17)
+        self.assertIn(f'<span class="greek" lang="grc">{expected}</span>', page)
+        self.assertIn(build_site.plain(build_site.load_chapter("JHN", 1)[0][0]["renderings"]["en"]["B"]), page)
+        for path in (self.out / "articles").rglob("index.html"):
+            self.assertNotIn("{{", path.read_text(encoding="utf-8"), path)
+
+    def test_internal_links_resolve(self):
+        for path in (self.out / "articles").rglob("index.html"):
+            for href in re.findall(r'href="(/[^"#]*)"', path.read_text(encoding="utf-8")):
+                target = self.out / href.lstrip("/")
+                self.assertTrue(target.is_file() or (target / "index.html").is_file(), (path, href))
+
+    def test_articles_are_in_the_nav_sitemap_and_home_page(self):
+        sitemap = (self.out / "sitemap.xml").read_text(encoding="utf-8")
+        for a in self.articles:
+            self.assertIn(f"{build_site.SITE_URL}/articles/{a['slug']}/", sitemap)
+        home = (self.out / "index.html").read_text(encoding="utf-8")
+        self.assertIn('href="/articles/"', home)
+        self.assertIn(build_site.article_url(self.articles[0]), home)
+
+
+class ColourModesTest(unittest.TestCase):
+    MODES = [v for v, *_ in build_site.COLOUR_MODES if v != "auto"]
+
+    def test_five_colour_modes_plus_automatic(self):
+        self.assertEqual(self.MODES, ["light", "sepia", "dark", "night", "contrast"])
+        self.assertEqual(build_site.COLOUR_MODES[0][0], "auto")
+
+    def test_every_mode_is_styled_and_known_to_the_scripts(self):
+        css = (ROOT / "web" / "style.css").read_text(encoding="utf-8")
+        site_js = (ROOT / "web" / "site.js").read_text(encoding="utf-8")
+        js_modes = re.search(r"var MODES = \[([^\]]*)\]", site_js)[1]
+        boot_modes = re.search(r"\[([^\]]*)\]\.indexOf", build_site.BOOT_SCRIPT)[1]
+        for mode in self.MODES:
+            self.assertIn(f':root[data-theme="{mode}"]', css)
+            self.assertIn(f'"{mode}"', js_modes)
+            self.assertIn(f"'{mode}'", boot_modes)
+
+    def test_every_page_has_the_gear_menu(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            out = Path(tmp) / "site"
+            build_site.build(out)
+            for path in out.rglob("*.html"):
+                text = path.read_text(encoding="utf-8")
+                self.assertIn('class="prefs-btn"', text, path)
+                self.assertIn("localStorage.getItem('owb-theme')", text, path)
+            self.assertTrue((out / "site.js").is_file())
+
+
+if __name__ == "__main__":
+    unittest.main()

@@ -30,10 +30,51 @@ DESCRIPTION = ("A free translation of the Bible from Hebrew and Greek, "
                "with the reasoning behind every sentence.")
 
 
+# Colour modes (see web/style.css and web/site.js): value, label, and the
+# background and accent its swatch shows. "auto" follows the device.
+COLOUR_MODES = (("auto", "Automatic", "#fbfaf7", "#171614"),
+                ("light", "Light", "#fbfaf7", "#7a4b14"),
+                ("sepia", "Sepia", "#f4ecd8", "#74450f"),
+                ("dark", "Dark", "#171614", "#e0a96a"),
+                ("night", "Night", "#000000", "#c9965a"),
+                ("contrast", "High contrast", "#ffffff", "#000000"))
+
+# Applies the saved colour mode before the first paint, so a page never
+# flashes the default colours. Mirrors web/site.js.
+BOOT_SCRIPT = ("try{var t=localStorage.getItem('owb-theme');"
+               "if(['light','sepia','dark','night','contrast'].indexOf(t)>=0)"
+               "document.documentElement.setAttribute('data-theme',t)}catch(e){}")
+
+GEAR = ('<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+        'stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+        '<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83'
+        'l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4'
+        'a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1'
+        'H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06'
+        'A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 '
+        '1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4'
+        'h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>')
+
+COLOUR_MENU = (
+    '<div class="prefs">'
+    '<button type="button" class="prefs-btn" aria-expanded="false" aria-controls="colour-menu" '
+    f'aria-label="Colours" title="Colours">{GEAR}</button>'
+    '<div id="colour-menu" class="prefs-menu" role="group" aria-labelledby="colour-menu-label" hidden>'
+    '<p class="prefs-label" id="colour-menu-label">Colours</p>'
+    '<div role="radiogroup" aria-labelledby="colour-menu-label">'
+    + "".join(
+        f'<button type="button" role="radio" aria-checked="{"true" if v == "auto" else "false"}" '
+        f'tabindex="{0 if v == "auto" else -1}" data-theme-option="{v}">'
+        f'<span class="swatch" style="--sw-bg:{bg};--sw-accent:{accent}" aria-hidden="true"></span>'
+        f'{label}<span class="check" aria-hidden="true">&#10003;</span></button>'
+        for v, label, bg, accent in COLOUR_MODES)
+    + '</div></div></div>')
+
+
 def page(title, body, path=None, current="", description=""):
     """A full HTML page. path is the page's URL path ("/read/"); pages with
     one get a canonical link and link-preview tags, and go in the sitemap."""
-    nav = [("/", "Home"), ("/read/", "Read"), ("/about/", "About")]
+    nav = [("/", "Home"), ("/read/", "Read"), ("/articles/", "Articles"), ("/about/", "About")]
     links = "".join(
         f'<a href="{href}"{" aria-current=page" if href == current else ""}>{label}</a>'
         for href, label in nav)
@@ -58,12 +99,15 @@ def page(title, body, path=None, current="", description=""):
 <title>{html.escape(full_title)}</title>
 <meta name="description" content="{html.escape(description)}">{meta}
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<script>{BOOT_SCRIPT}</script>
 <link rel="stylesheet" href="/style.css">
+<script src="/site.js" defer></script>
 </head>
 <body>
 <header class="site"><div class="wrap">
 <a class="brand" href="/">{SITE_NAME}</a>
 <nav>{links}</nav>
+{COLOUR_MENU}
 </div></header>
 <main class="wrap">
 {body}
@@ -301,6 +345,11 @@ so anyone may use it for anything.</p>
 <div><h2>Every decision shown</h2><p>Each sentence records what the original says, what we chose, what else we considered, and why. Uncertain calls are marked uncertain.</p></div>
 </section>
 {progress_html()}
+<section class="latest" aria-labelledby="latest-h">
+<h2 id="latest-h">From the articles</h2>
+<ul class="article-list">{article_list(load_articles()[:3])}</ul>
+<p><a href="/articles/">All articles &rarr;</a></p>
+</section>
 <section class="involve" aria-labelledby="involve-h">
 <h2 id="involve-h">Help make it</h2>
 <ul>
@@ -338,6 +387,167 @@ The code is MIT-licensed. The source texts keep their own licences, credited bel
                 description="Licences and source credits for Open Word Bible.")
 
 
+ARTICLES = ROOT / "articles"
+_GREEK = re.compile(r"\{\{GREEK:([A-Z0-9]+)\.(\d+)\.(\d+):(\d+)(?:-(\d+))?\}\}")
+_LEMMA = re.compile(r"\{\{LEMMA:([A-Z0-9]+)\.(\d+)\.(\d+):(\d+)\}\}")
+_OWB = re.compile(r"\{\{OWB:([A-Z0-9.]+\.s\d+):([LBR])\}\}")
+
+
+def _verse_words(book, chapter, verse):
+    """The MACULA words of one verse, from the committed extract."""
+    path = ROOT / "data" / "grc" / f"{book}.{chapter}.json"
+    verses = json.loads(path.read_text(encoding="utf-8"))["verses"]
+    vid = f"{book}.{chapter}.{verse}"
+    if vid not in verses:
+        raise SystemExit(f"{vid} is not in {path.name}; add it with scripts/extract_tokens.py")
+    return verses[vid]
+
+
+def _greek(m):
+    """{{GREEK:JHN.1.1:14-17}}: words 14 to 17 of John 1:1 as the data has them."""
+    book, chapter, verse, a, b = m[1], int(m[2]), int(m[3]), int(m[4]), int(m[5] or m[4])
+    words = [w for w in _verse_words(book, chapter, verse) if a <= w["position"] <= b]
+    text = " ".join(w["text"] + (w["after"].rstrip() if w["position"] < b else "") for w in words)
+    return f'<span class="greek" lang="grc">{html.escape(text)}</span>'
+
+
+def _lemma(m):
+    """{{LEMMA:JHN.1.14:17}}: the dictionary form of word 17 of John 1:14."""
+    word = next(w for w in _verse_words(m[1], int(m[2]), int(m[3])) if w["position"] == int(m[4]))
+    return f'<span class="greek" lang="grc">{html.escape(word["lemma"])}</span>'
+
+
+def _owb(m):
+    """{{OWB:JHN.1.1.s1:B}}: our English for a sentence, with default settings."""
+    record_id, level = m[1], m[2]
+    ref = refs.parse(record_id.rsplit(".s", 1)[0])
+    record = next((r for r in load_chapter(ref.book, ref.chapter)[0] if r["id"] == record_id), None)
+    if record is None:
+        raise SystemExit(f"no record {record_id} in content/")
+    return html.escape(plain(record["renderings"]["en"][level]))
+
+
+def smart_quotes(s):
+    """Curly quotes and apostrophes for straight ones in plain text."""
+    s = re.sub(r'(^|[\s(\[\u2014-])"', "\\1\u201c", s)
+    s = s.replace('"', "\u201d")
+    s = re.sub(r"(^|[\s(\[\u2014-])'", "\\1\u2018", s)
+    return s.replace("'", "\u2019")
+
+
+def article_html(text):
+    """Markdown for articles: ## and ### headings, paragraphs, - lists,
+    > quotes, **bold**, *italic*, [links](url), and placeholders that pull
+    Greek words ({{GREEK:..}}, {{LEMMA:..}}) and our own translation
+    ({{OWB:..}}) from the data, so none of it is typed by hand."""
+    fills = []
+
+    def hold(html_text):
+        fills.append(html_text)
+        return f"\x00{len(fills) - 1}\x00"
+
+    def inline(s):
+        s = _GREEK.sub(lambda m: hold(_greek(m)), s)
+        s = _LEMMA.sub(lambda m: hold(_lemma(m)), s)
+        s = _OWB.sub(lambda m: hold(_owb(m)), s)
+        s = re.sub(r"\]\(([^)\s]+)\)", lambda m: "](" + hold(html.escape(m[1])) + ")", s)
+        s = html.escape(smart_quotes(s), quote=False)
+        s = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", s)
+        s = re.sub(r"(?<![*\w])\*(?!\s)(.+?)(?<!\s)\*(?![*\w])", r"<em>\1</em>", s)
+        s = re.sub(r"\[([^\]]+)\]\(([^)\s]+)\)",
+                   lambda m: f'<a href="{m[2]}">{m[1]}</a>', s)
+        return re.sub("\x00(\\d+)\x00", lambda m: fills[int(m[1])], s)
+
+    out = []
+    for block in re.split(r"\n\s*\n", text.strip()):
+        lines = [line.rstrip() for line in block.splitlines()]
+        if lines[0].startswith("#"):
+            level = len(lines[0]) - len(lines[0].lstrip("#"))
+            out.append(f"<h{level}>{inline(lines[0].lstrip('#').strip())}</h{level}>")
+        elif lines[0].startswith("- "):
+            items, cur = [], []
+            for line in lines:
+                if line.startswith("- ") and cur:
+                    items.append(" ".join(cur))
+                    cur = []
+                cur.append(line[2:] if line.startswith("- ") else line.strip())
+            items.append(" ".join(cur))
+            out.append("<ul>" + "".join(f"<li>{inline(i)}</li>" for i in items) + "</ul>")
+        elif lines[0].startswith(">"):
+            body = " ".join(line.lstrip(">").strip() for line in lines)
+            out.append(f"<blockquote><p>{inline(body)}</p></blockquote>")
+        else:
+            out.append(f"<p>{inline(' '.join(lines))}</p>")
+    return "\n".join(out)
+
+
+def load_articles():
+    """Every article in articles/, newest first, then by its order number.
+    A file starts with a front matter block: title, summary, date, order."""
+    articles = []
+    for path in sorted(ARTICLES.glob("*.md")):
+        text = path.read_text(encoding="utf-8")
+        m = re.match(r"---\n(.*?)\n---\n(.*)", text, re.S)
+        if not m:
+            raise SystemExit(f"{path.name}: missing the --- front matter block")
+        meta = {}
+        for line in m[1].splitlines():
+            if line.strip():
+                key, value = line.split(": ", 1)
+                # A value may be JSON-quoted when it contains quotation marks.
+                meta[key] = json.loads(value) if value.startswith('"') else value
+        for key in ("title", "summary", "date", "order"):
+            if key not in meta:
+                raise SystemExit(f"{path.name}: front matter needs {key!r}")
+        meta["title"], meta["summary"] = smart_quotes(meta["title"]), smart_quotes(meta["summary"])
+        articles.append({**meta, "slug": path.stem, "body": m[2], "order": int(meta["order"])})
+    return sorted(articles, key=lambda a: (a["date"], -a["order"]), reverse=True)
+
+
+def article_url(article):
+    return f"/articles/{article['slug']}/"
+
+
+def _date(iso):
+    import datetime
+    return datetime.date.fromisoformat(iso).strftime("%-d %B %Y")
+
+
+def article_list(articles):
+    return "".join(
+        f'<li><a href="{article_url(a)}"><span class="a-title">{html.escape(a["title"])}</span>'
+        f'<span class="a-summary">{html.escape(a["summary"])}</span></a></li>'
+        for a in articles)
+
+
+def articles_page(articles):
+    body = f"""
+<div class="prose">
+<h1>Articles</h1>
+<p>How Open Word Bible is made, and the reasoning behind particular passages. Like the
+translation, the articles are drafts until a reviewer has checked them.</p>
+</div>
+<ul class="article-list">{article_list(articles)}</ul>
+"""
+    return page("Articles", body, path="/articles/", current="/articles/",
+                description="Articles on how Open Word Bible is translated and why it reads as it does.")
+
+
+def article_page(article, articles):
+    others = [a for a in articles if a is not article][:3]
+    body = f"""
+<article class="prose article">
+<p class="crumb"><a href="/articles/">Articles</a></p>
+<h1>{html.escape(article["title"])}</h1>
+<p class="byline">Open Word Bible &middot; {_date(article["date"])} &middot; <span class="status">Draft, not yet reviewed</span></p>
+{article_html(article["body"])}
+</article>
+<aside class="more"><h2>More articles</h2><ul class="article-list">{article_list(others)}</ul></aside>
+"""
+    return page(article["title"], body, path=article_url(article), current="/articles/",
+                description=article["summary"])
+
+
 def not_found_page():
     return page("Not found", '<div class="prose"><h1>Page not found</h1>'
                 '<p><a href="/">Go to the home page</a>.</p></div>')
@@ -363,6 +573,10 @@ def build(out):
     pages = {"/": home_page(), "/read/": read_page(), "/about/": about_page()}
     for book, chapter in chapters():
         pages[chapter_url(book, chapter)] = chapter_page(book, chapter)
+    articles = load_articles()
+    pages["/articles/"] = articles_page(articles)
+    for article in articles:
+        pages[article_url(article)] = article_page(article, articles)
     files = {(p.strip("/") + "/index.html").lstrip("/"): text for p, text in pages.items()}
     files["404.html"] = not_found_page()
     files["sitemap.xml"] = sitemap(pages)
@@ -372,9 +586,9 @@ def build(out):
         path = out / rel
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(text, encoding="utf-8")
-    for asset in ("style.css", "reader.js"):
+    for asset in ("style.css", "reader.js", "site.js"):
         shutil.copy(ROOT / "web" / asset, out / asset)
-    return sorted(files) + ["reader.js", "style.css"]
+    return sorted(files) + ["reader.js", "site.js", "style.css"]
 
 
 def main():
