@@ -267,7 +267,7 @@
         head.appendChild(lemma);
         head.appendChild(el("span", "wi-label", t("lemma") + (word.strong ? " \u00b7 " + t("strong") + " G" + word.strong : "")));
         info.appendChild(head);
-        info.appendChild(el("p", "wi-grammar", word.grammar[settings.lang]));
+        info.appendChild(el("p", "wi-grammar", DATA.grammar[word.morph][settings.lang]));
         info.appendChild(el("p", "wi-gloss", "\u201c" + word.gloss + "\u201d"));
         info.hidden = false;
         var ids = [];

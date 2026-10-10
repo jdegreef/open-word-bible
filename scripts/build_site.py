@@ -218,9 +218,10 @@ def chapter_page(book, chapter):
                  if all(lang in r["renderings"] for r in records)]
     data = {"book": book, "chapter": chapter, "title": title, "languages": languages,
             "records": records,
-            "words": {vid: [dict(w, grammar={lang: morph.describe(w["morph"], lang) for lang in LANGUAGES})
-                            for w in words[vid]]
-                      for r in records for vid in r["refs"]}}
+            "words": {vid: words[vid] for r in records for vid in r["refs"]}}
+    # Each morphology code's description in every language, once per page.
+    data["grammar"] = {code: {lang: morph.describe(code, lang) for lang in LANGUAGES}
+                       for code in sorted({w["morph"] for ws in data["words"].values() for w in ws})}
     # "</" cannot appear inside a script element.
     blob = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
 

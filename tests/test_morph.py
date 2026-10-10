@@ -49,8 +49,8 @@ class MorphTest(unittest.TestCase):
         data = json.loads(re.search(r'id="owb-data">(.*?)</script>', page, re.S)[1])
         for words in data["words"].values():
             for w in words:
-                self.assertEqual(w["grammar"]["en"], morph.describe(w["morph"]))
-                self.assertEqual(w["grammar"]["es"], morph.describe(w["morph"], "es"))
+                self.assertEqual(data["grammar"][w["morph"]]["en"], morph.describe(w["morph"]))
+                self.assertEqual(data["grammar"][w["morph"]]["es"], morph.describe(w["morph"], "es"))
 
 
 if __name__ == "__main__":
