@@ -16,7 +16,10 @@ WORDS = {
                 "F": "Reflexive pronoun", "C": "Reciprocal pronoun", "S": "Possessive pronoun",
                 "Q": "Correlative or interrogative pronoun",
                 "ADV": "Adverb", "CONJ": "Conjunction", "PREP": "Preposition", "PRT": "Particle",
-                "COND": "Conditional conjunction", "INJ": "Interjection"},
+                "COND": "Conditional conjunction", "INJ": "Interjection",
+                "HEB": "Hebrew word", "ARAM": "Aramaic word"},
+        "indeclinable": {"PRI": "proper name, indeclinable", "LI": "letter, indeclinable",
+                         "OI": "indeclinable", "NUI": "number, indeclinable"},
         "case": {"N": "nominative", "G": "genitive", "D": "dative", "A": "accusative", "V": "vocative"},
         "number": {"S": "singular", "P": "plural"},
         "gender": {"M": "masculine", "F": "feminine", "N": "neuter"},
@@ -31,7 +34,8 @@ WORDS = {
                  "N": "infinitive", "P": "participle", "R": "participle (as a command)"},
         "person": {"1": "1st person", "2": "2nd person", "3": "3rd person"},
         "suffix": {"N": "negative", "I": "interrogative", "S": "superlative", "C": "comparative",
-                   "ATT": "Attic form", "K": "contracted form"},
+                   "ATT": "Attic form", "K": "crasis (two words run together)",
+                   "P": "with particle attached", "ABB": "abbreviated form"},
     },
     "es": {
         "pos": {"N": "Sustantivo", "V": "Verbo", "A": "Adjetivo", "T": "Artículo",
@@ -40,7 +44,10 @@ WORDS = {
                 "F": "Pronombre reflexivo", "C": "Pronombre recíproco", "S": "Pronombre posesivo",
                 "Q": "Pronombre correlativo o interrogativo",
                 "ADV": "Adverbio", "CONJ": "Conjunción", "PREP": "Preposición", "PRT": "Partícula",
-                "COND": "Conjunción condicional", "INJ": "Interjección"},
+                "COND": "Conjunción condicional", "INJ": "Interjección",
+                "HEB": "Palabra hebrea", "ARAM": "Palabra aramea"},
+        "indeclinable": {"PRI": "nombre propio, indeclinable", "LI": "letra, indeclinable",
+                         "OI": "indeclinable", "NUI": "número, indeclinable"},
         "case": {"N": "nominativo", "G": "genitivo", "D": "dativo", "A": "acusativo", "V": "vocativo"},
         "number": {"S": "singular", "P": "plural"},
         "gender": {"M": "masculino", "F": "femenino", "N": "neutro"},
@@ -55,13 +62,17 @@ WORDS = {
                  "N": "infinitivo", "P": "participio", "R": "participio (como mandato)"},
         "person": {"1": "1.ª persona", "2": "2.ª persona", "3": "3.ª persona"},
         "suffix": {"N": "negaci\u00f3n", "I": "interrogativo", "S": "superlativo", "C": "comparativo",
-                   "ATT": "forma ática", "K": "forma contracta"},
+                   "ATT": "forma ática", "K": "crasis (dos palabras unidas)",
+                   "P": "con partícula unida", "ABB": "forma abreviada"},
     },
 }
 
 _VERB = re.compile(r"(2?)([PIFARL])([AMPEDONQX])([ISOMNPR])(?:-(.+))?")
 _CNG = re.compile(r"([1-3]?)([NGDAV])([SP])([MFN]?)")
 _PN = re.compile(r"([1-3])([SP])")
+# Possessive pronouns: the owner's person and number, then the noun's case,
+# number and gender (S-1SNSM: "my", nominative singular masculine).
+_POSS = re.compile(r"([1-3])([SP])([NGDAV])([SP])([MFN])")
 
 
 def describe(code, lang="en"):
@@ -93,6 +104,14 @@ def describe(code, lang="en"):
             else:
                 raise ValueError(f"unknown verb ending in {code!r}")
         rest = tail
+    elif rest and rest[0] in w["indeclinable"]:
+        out.append(w["indeclinable"][rest[0]])
+        rest = rest[1:]
+    elif pos == "S" and rest and _POSS.fullmatch(rest[0]):
+        m = _POSS.fullmatch(rest[0])
+        out.append(f"{w['person'][m[1]]} {w['number'][m[2]]} \u00b7 "
+                   f"{w['case'][m[3]]} {w['number'][m[4]]} {w['gender'][m[5]]}")
+        rest = rest[1:]
     elif rest and _CNG.fullmatch(rest[0]):
         out.append(_cng(_CNG.fullmatch(rest[0]), w))
         rest = rest[1:]

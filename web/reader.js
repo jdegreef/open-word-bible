@@ -250,6 +250,7 @@
     // decision that names it.
     var greek = el("div", "interlinear");
     var info = el("div", "wordinfo");
+    info.setAttribute("aria-live", "polite");
     info.hidden = true;
     function drawWord(word) {
       var w = el("button", "word iw");
