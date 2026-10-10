@@ -4,7 +4,7 @@ Checks the rules in schema/sentence-record.schema.json that matter most, plus
 what a schema cannot: every token id exists in the MACULA data for the
 record's verses, generated source text matches the data, every Greek or
 Hebrew word anywhere else in the record is a form or lemma copied from the
-source data, and every {{setting:...}} span names a known setting.
+source data, a Greek record holds one whole source sentence, and every {{setting:...}} span names a known setting.
 
 Usage: python3 -m owb.validate content/en/JHN/JHN.1.1-2.json [...]
 """
@@ -91,6 +91,26 @@ def check_original_language(record, errors):
                                   "in the source data; copy it from MACULA")
 
 
+def check_sentence(tokens, decisions, errors):
+    """A Greek record holds one source sentence: it ends where the SBLGNT
+    ends a sentence (full stop, question mark or raised dot) and has no full
+    stop or question mark inside. A meaning decision in the punctuation
+    category exempts the record, since it reads the text's punctuation
+    differently (as John 1:3 does with the last two words)."""
+    if any(isinstance(d, dict) and d.get("layer") == "meaning"
+           and d.get("category") == "punctuation" for d in decisions):
+        return
+    ends = macula_greek.FULL_STOPS + macula_greek.RAISED_DOT
+    if not any(c in tokens[-1].after for c in ends):
+        errors.append(f"source.tokens: the record ends mid-sentence at {tokens[-1].id}; "
+                      "extend it to the end of the sentence, or add a punctuation "
+                      "meaning decision")
+    for tok in tokens[:-1]:
+        if any(c in tok.after for c in macula_greek.FULL_STOPS):
+            errors.append(f"source.tokens: a sentence ends at {tok.id}; split the record "
+                          "there, or add a punctuation meaning decision")
+
+
 def source_text(tokens):
     """The source text of a token list, rebuilt from the MACULA data."""
     return " ".join(t.text + t.after.rstrip() for t in tokens)
@@ -138,6 +158,10 @@ def validate_record(record, known_tokens=None):
             if source["text"] != expected:
                 errors.append("source.text: does not match the source data "
                               "(regenerate it with scripts/build_skeleton.py)")
+        if (source.get("language") == "grc" and source_tokens
+                and all(t in known_tokens for t in source_tokens)):
+            check_sentence([known_tokens[t] for t in source_tokens],
+                           record.get("decisions") or [], errors)
     in_source = set(source_tokens)
 
     def check_tokens(ids, where):

@@ -73,3 +73,27 @@ def forms():
     return frozenset(x for toks in _all_tokens().values() for t in toks
                      for x in (t.text, t.normalized, t.lemma) if x)
 
+
+# SBLGNT punctuation in a token's `after`: full stop, Greek question mark,
+# and the raised dot (ano teleia), which can end a sentence or join clauses.
+FULL_STOPS = ".;"
+RAISED_DOT = "·"
+
+
+def sentences(tokens):
+    """Group tokens (in text order) into source sentences.
+
+    A sentence ends at a full stop or question mark, or at a raised dot that
+    ends a verse. A raised dot inside a verse joins clauses and does not end
+    one. This is a starting point: a record may be split at another raised
+    dot, or two sentences merged, when the clauses call for it."""
+    out, current = [], []
+    for i, tok in enumerate(tokens):
+        current.append(tok)
+        verse_ends = i + 1 == len(tokens) or tokens[i + 1].ref != tok.ref
+        if any(c in tok.after for c in FULL_STOPS) or (verse_ends and RAISED_DOT in tok.after):
+            out.append(current)
+            current = []
+    if current:
+        out.append(current)
+    return out
