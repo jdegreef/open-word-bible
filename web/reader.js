@@ -27,6 +27,7 @@
                            "\u201cHe\u201d: capitalised, as some readers prefer out of reverence."],
       plural: "Plural you", hint_plural_you: ["", ""],
       verse_label: "Verse {v}: show the reasoning",
+      settings: "Reading settings", close: "Close",
       empty_title: "The reasoning behind each verse",
       empty_text: "Tap or click any verse to see the Greek, a word-for-word gloss, and every translation decision with its reason.",
       status: "AI draft \u00b7 not yet reviewed",
@@ -62,6 +63,7 @@
       plural: "Plural", hint_plural_you: ["\u00abustedes\u00bb: como se habla en Am\u00e9rica Latina.",
                                            "\u00abvosotros\u00bb: como se habla en la mayor parte de Espa\u00f1a."],
       verse_label: "Vers\u00edculo {v}: ver el razonamiento",
+      settings: "Ajustes de lectura", close: "Cerrar",
       empty_title: "El razonamiento detr\u00e1s de cada vers\u00edculo",
       empty_text: "Toca cualquier vers\u00edculo para ver el griego, una glosa palabra por palabra y cada decisi\u00f3n de traducci\u00f3n con su raz\u00f3n.",
       status: "Borrador de IA \u00b7 a\u00fan sin revisar",
@@ -90,6 +92,7 @@
   if (!DATA.languages.includes(settings.lang)) settings.lang = DATA.languages[0];
 
   var current = null;   // selected record
+  var panelEl = document.getElementById("panel");
   var SPAN = /\{\{([a-z_]+):([^{}]*)\}\}/g;
   var VERSE = /\\v (\d+) ?/;
 
@@ -156,6 +159,13 @@
       document.getElementById("hint-" + name).textContent = t("hint_" + name)[settings[name]];
     });
     document.documentElement.lang = settings.lang;
+    // The summary on the phone settings button: each shown choice's label.
+    var summary = [];
+    document.querySelectorAll(".control:not([hidden]) .seg").forEach(function (seg) {
+      var on = seg.querySelector('[aria-pressed="true"]');
+      if (on && seg.children.length > 1) summary.push(on.textContent);
+    });
+    document.getElementById("settings-summary").textContent = summary.join(" \u00b7 ");
   }
 
   function drawText() {
@@ -172,6 +182,7 @@
         span.tabIndex = 0;
         span.setAttribute("role", "button");
         span.setAttribute("aria-label", t("verse_label").replace("{v}", part[0]));
+        span.dataset.v = part[0];
         if (current && current.id === r.id) span.setAttribute("aria-current", "true");
         if (part[0] !== shown) span.appendChild(el("sup", null, part[0]));
         shown = part[0];
@@ -214,13 +225,18 @@
   }
 
   function drawPanel() {
-    var panel = document.getElementById("panel");
+    var panel = panelEl;
     panel.textContent = "";
     if (!current) {
       panel.appendChild(el("h2", null, t("empty_title")));
       panel.appendChild(el("p", "empty", t("empty_text")));
       return;
     }
+    var close = el("button", "sheet-close", "\u00d7");
+    close.type = "button";
+    close.setAttribute("aria-label", t("close"));
+    close.addEventListener("click", deselect);
+    panel.appendChild(close);
     panel.appendChild(el("h2", null, DATA.title[settings.lang].replace(/[\d:\u2013\s]+$/, "") + " " + DATA.chapter + ":" + verseRange(current)));
     panel.appendChild(el("span", "status", t("status")));
 
@@ -269,15 +285,82 @@
     ds.rendering.forEach(function (d) { panel.appendChild(drawCard(d, current)); });
   }
 
+  // On narrow screens the panel is a bottom sheet over the text (see .panel
+  // in style.css), so opening it never moves the reader's place. The CSS
+  // owns the breakpoint: the sheet is the panel when it is position: fixed.
+  function narrow() { return getComputedStyle(panelEl).position === "fixed"; }
+  function verseEl(v) { return document.querySelector('.verse[data-v="' + v + '"]'); }
+  function hashVerse() { var m = /^#v(\d+)$/.exec(location.hash); return m && m[1]; }
+
+  function sheet(open) {
+    panelEl.classList.toggle("open", open);
+    document.body.classList.toggle("sheet-open", open);
+  }
+
   function select(record, verse) {
     current = record;
-    try { history.replaceState(null, "", "#v" + (verse || verseOf(record.refs[0]))); } catch (e) { /* ignore */ }
+    verse = verse || verseOf(record.refs[0]);
+    try { history.replaceState(null, "", "#v" + verse); } catch (e) { /* ignore */ }
     drawText();
     drawPanel();
-    if (window.matchMedia("(max-width: 860px)").matches) {
-      document.getElementById("panel").scrollIntoView({ behavior: "smooth", block: "start" });
+    panelEl.scrollTop = 0;
+    sheet(true);
+    if (narrow()) {
+      var v = verseEl(verse);
+      if (v) v.scrollIntoView({ behavior: "smooth", block: "start" });
+      // The sheet covers the text below the verse, so take focus into it.
+      panelEl.focus({ preventScroll: true });
     }
   }
+
+  function deselect() {
+    if (!current) return;
+    var verse = hashVerse();
+    current = null;
+    try {
+      history.replaceState(null, "", location.pathname + location.search);
+      history.scrollRestoration = "auto";
+    } catch (e) { /* ignore */ }
+    sheet(false);
+    drawText();
+    drawPanel();
+    var v = verse && verseEl(verse);
+    if (v) v.focus({ preventScroll: true });
+  }
+
+  document.addEventListener("keydown", function (e) {
+    // An Escape that closes the colour menu (site.js) leaves the sheet open.
+    var menu = document.getElementById("colour-menu");
+    if (e.key === "Escape" && (!menu || menu.hidden) && narrow()) deselect();
+  });
+
+  // Swipe the sheet down to close it, when it is scrolled to its top. The
+  // slide transition is off while dragging so the sheet follows the finger.
+  var startY = null;
+  panelEl.addEventListener("touchstart", function (e) {
+    startY = narrow() && panelEl.scrollTop <= 0 ? e.touches[0].clientY : null;
+    if (startY !== null) panelEl.style.transition = "none";
+  }, { passive: true });
+  panelEl.addEventListener("touchmove", function (e) {
+    if (startY === null) return;
+    var dy = e.touches[0].clientY - startY;
+    panelEl.style.transform = dy > 0 ? "translateY(" + dy + "px)" : "";
+  }, { passive: true });
+  function endDrag(e) {
+    if (startY === null) return;
+    var dy = e.type === "touchend" ? e.changedTouches[0].clientY - startY : 0;
+    panelEl.style.transform = panelEl.style.transition = "";
+    startY = null;
+    if (dy > 80) deselect();
+  }
+  panelEl.addEventListener("touchend", endDrag);
+  panelEl.addEventListener("touchcancel", endDrag);
+
+  var toggle = document.getElementById("settings-toggle");
+  toggle.addEventListener("click", function () {
+    var open = toggle.getAttribute("aria-expanded") !== "true";
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
 
   document.querySelectorAll("[data-setting]").forEach(function (seg) {
     var name = seg.getAttribute("data-setting");
@@ -293,11 +376,20 @@
     });
   });
 
-  var m = /^#v(\d+)$/.exec(location.hash);
-  if (m) current = DATA.records.find(function (r) {
-    return r.refs.some(function (vid) { return verseOf(vid) === m[1]; });
-  }) || null;
+  var start = hashVerse();
+  var record = start && DATA.records.find(function (r) {
+    return r.refs.some(function (vid) { return verseOf(vid) === start; });
+  });
   drawControls();
-  drawText();
-  drawPanel();
+  if (record) {
+    // Opened at a verse on a phone: the verse decides where the page sits,
+    // not the browser's scroll restoring (deselect turns it back on), and
+    // the jump waits for layout to settle.
+    if (narrow()) try { history.scrollRestoration = "manual"; } catch (e) { /* ignore */ }
+    select(record, start);
+    window.addEventListener("load", function () {
+      var v = narrow() && current && verseEl(start);
+      if (v) v.scrollIntoView({ block: "start" });
+    });
+  } else { drawText(); drawPanel(); }
 })();
