@@ -50,6 +50,10 @@ class SiteTest(unittest.TestCase):
         read = (self.out / "read" / "index.html").read_text(encoding="utf-8")
         self.assertIn('href="/jhn/1/"', read)
         self.assertIn('href="/php/4/"', read)
+        # Each card opens with its passage's first verse, from the content.
+        self.assertEqual(read.count('class="a-card p-card"'), len(build_site.chapters()))
+        first = build_site.load_chapter("JHN", 1)[0][0]
+        self.assertIn(build_site.plain(first["renderings"]["en"]["B"]), read)
 
     def test_sentence_records_split_a_verse(self):
         data = self.chapter_data("php/4")

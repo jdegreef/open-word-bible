@@ -265,21 +265,51 @@ def chapter_page(book, chapter):
                 description=f"{title['en']} translated from the Greek, with the reasoning behind every verse.")
 
 
+def passage_card(book, chapter):
+    """A passage as a card in the article-card style: its opening verse at
+    the default settings, and how much of it is translated and recorded."""
+    records = load_chapter(book, chapter)[0]
+    verses = sorted({refs.parse(v).verse for r in records for v in r["refs"]})
+    decisions = sum(len(r["decisions"]) for r in records)
+    uncertain = sum(d["uncertain"] for r in records for d in r["decisions"])
+    first = records[0]
+    opening = plain(markup.VERSE.split(first["renderings"]["en"]["B"])[0])   # its first verse
+    languages = " &middot; ".join(name for code, name in (("en", "English"), ("es", "Espa\u00f1ol"))
+                                  if all(code in r["renderings"] for r in records))
+    meta = (f"{len(verses)} verses &middot; {len(records)} sentences &middot; "
+            f"{decisions} decisions, {uncertain} marked uncertain")
+    return (f'<li><a class="a-card p-card" href="{chapter_url(book, chapter)}">'
+            f'<span class="a-section">{BOOK_NAMES[book]["en"]} &middot; {languages}</span>'
+            f'<span class="a-title">{html.escape(chapter_title(records, book, chapter))}</span>'
+            f'<span class="p-opening">&ldquo;{display(opening)}&rdquo;</span>'
+            f'<span class="a-meta">{meta}</span>'
+            f'<span class="p-status"><span class="status">AI draft, not yet reviewed</span></span></a></li>')
+
+
 def read_page():
-    items = "".join(
-        f'<li><a href="{chapter_url(b, c)}">'
-        f'{html.escape(chapter_title(load_chapter(b, c)[0], b, c))}</a></li>'
-        for b, c in chapters())
+    cards = "".join(passage_card(b, c) for b, c in chapters())
     body = f"""
-<div class="prose">
-<h1>Read</h1>
-<p>Sample passages so far, each translated from the SBL Greek New Testament into English and
-Spanish with the reasoning behind every sentence. All are AI drafts awaiting review.</p>
-<ul>{items}</ul>
-</div>
+<header class="page-head">
+<p class="eyebrow">Read</p>
+<h1>Passages translated so far</h1>
+<p class="dek">Each passage is translated from the SBL Greek New Testament into English and
+Spanish, at three levels, with the reasoning behind every sentence. All are AI drafts until a
+reviewer who reads Greek approves them.</p>
+</header>
+<ul class="a-grid">{cards}</ul>
+<section class="how" aria-labelledby="how-h">
+<h2 id="how-h">How the reader works</h2>
+<ol class="steps">
+<li><b>Choose how it reads.</b> Literal, Balanced or Readable, and your wording settings: inclusive or
+traditional language, &ldquo;Christ&rdquo; or &ldquo;Messiah&rdquo;, he or He.</li>
+<li><b>Tap any verse.</b> The Greek appears with a word-for-word gloss beside the translation.</li>
+<li><b>See every decision.</b> What the original means, what else was considered, why this wording
+was chosen, and which calls are uncertain.</li>
+</ol>
+</section>
 """
     return page("Read", body, path="/read/", current="/read/",
-                description="Passages available in Open Word Bible.")
+                description="Passages translated in Open Word Bible so far, with the reasoning behind every sentence.")
 
 
 def all_records():
