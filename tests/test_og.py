@@ -26,6 +26,8 @@ class ShareCardTest(unittest.TestCase):
             build_site.build(out)
             for path in out.rglob("index.html"):
                 text = path.read_text(encoding="utf-8")
+                if '<link rel="canonical"' not in text:
+                    continue   # unlisted pages (the account page) have no preview
                 image = re.search(r'<meta property="og:image" content="([^"]+)"', text)
                 self.assertTrue(image, path)
                 name = image[1].removeprefix(build_site.SITE_URL + "/og/")

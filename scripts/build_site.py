@@ -11,6 +11,7 @@ import functools
 import hashlib
 import html
 import json
+import os
 import re
 import shutil
 import sys
@@ -31,6 +32,9 @@ SITE_URL = "https://openwordbible.org"
 DESCRIPTION = ("A free translation of the Bible from Hebrew and Greek, "
                "with the reasoning behind every sentence.")
 GITHUB_URL = "https://github.com/jdegreef/open-word-bible"
+# The Django API (backend/), for accounts. OWB_API_URL points a local build
+# at a local API.
+API_URL = os.environ.get("OWB_API_URL", "https://api.openwordbible.org").rstrip("/")
 
 # The open-book mark: the favicon, and the logo in the header and footer
 # (where style.css colours it from the current colour mode).
@@ -65,6 +69,7 @@ ICONS = {
     "code": '<path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/>',
     "users": '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6 6 0 0 1 3.5 6"/>',
     "check": '<path d="M20 6 9 17l-5-5"/>',
+    "user": '<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>',
     "github": '<path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/>',
 }
 
@@ -167,6 +172,7 @@ def page(title, body, path=None, current="", description="", card="site", card_a
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{html.escape(full_title)}</title>
 <meta name="description" content="{html.escape(description)}">{meta}
+<meta name="owb-api" content="{API_URL}">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <script>{BOOT_SCRIPT}</script>
 <link rel="preload" href="/fonts/hanken-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -252,6 +258,7 @@ def site_header(current, path=None):
 <a class="brand" href="/"{" aria-current=page" if home_on else ""}>{MARK}<span class="brand-name">Open Word <em>Bible</em></span></a>
 <nav class="primary" id="site-nav" aria-label="Main"><ul class="nav-list">{"".join(items)}</ul></nav>
 <div class="tools">
+<a class="tool-btn account-btn" href="/account/" aria-label="Sign in" title="Sign in">{icon(ICONS["user"])}<span class="account-initial" hidden></span></a>
 <a class="tool-btn" href="{GITHUB_URL}" aria-label="Open Word Bible on GitHub" title="GitHub">{icon(ICONS["github"])}</a>
 {COLOUR_MENU}
 <button type="button" class="tool-btn menu-btn" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">{icon(ICONS["menu"], 22)}{icon(ICONS["close"], 22)}</button>
@@ -943,6 +950,66 @@ def article_page(article, articles):
                 description=article["summary"])
 
 
+def account_page():
+    """Sign in by email link, and the signed-in account (web/account.js).
+    Not in the sitemap, and not indexed."""
+    body = f"""
+<section class="account" id="account" aria-live="polite">
+<header class="page-head">
+<p class="eyebrow">Account</p>
+<h1 id="account-title">Sign in</h1>
+</header>
+
+<div data-state="signed-out" hidden>
+<p class="dek">Sign in to keep highlights, bookmarks and notes, and to suggest edits or ask
+questions about a translation. There is no password: we email you a link that signs you in.</p>
+<form class="account-form" id="link-form" novalidate>
+<label for="email">Email address</label>
+<div class="field-row">
+<input id="email" name="email" type="email" autocomplete="email" inputmode="email" required>
+<button class="button" type="submit">Email me a sign-in link</button>
+</div>
+<p class="form-error" id="link-error" role="alert" hidden></p>
+</form>
+<p class="fine">Your email is used only to sign you in. Your notes and highlights are private to you.</p>
+</div>
+
+<div data-state="sent" hidden>
+<p class="dek">Check your inbox at <strong id="sent-to"></strong>. The link signs you in once, within
+20 minutes. It may take a minute to arrive; look in spam if it does not.</p>
+<p><button class="button ghost" type="button" id="different-email">Use a different email</button></p>
+</div>
+
+<div data-state="verifying" hidden><p class="dek">Signing you in&hellip;</p></div>
+
+<div data-state="signed-in" hidden>
+<dl class="account-facts">
+<div><dt>Email</dt><dd id="me-email"></dd></div>
+<div><dt>Roles</dt><dd id="me-roles"></dd></div>
+<div><dt>Joined</dt><dd id="me-joined"></dd></div>
+</dl>
+<form class="account-form" id="name-form">
+<label for="display-name">Display name <span class="fine">(shown to reviewers on suggestions and questions)</span></label>
+<div class="field-row">
+<input id="display-name" name="display_name" maxlength="80" autocomplete="name">
+<button class="button ghost" type="submit">Save</button>
+</div>
+<p class="form-note" id="name-note" role="status"></p>
+</form>
+<div class="soon">
+<h2>Coming next</h2>
+<p>Highlights, bookmarks and private notes on any verse, synced across your devices; then
+suggesting an edit or asking a question about a translation decision.</p>
+</div>
+<p><button class="button ghost" type="button" id="sign-out">Sign out on this device</button></p>
+</div>
+</section>
+<script src="{asset("account.js")}" defer></script>
+"""
+    return page("Account", body).replace(
+        '<meta name="owb-api"', '<meta name="robots" content="noindex">\n<meta name="owb-api"', 1)
+
+
 def not_found_page():
     return page("Not found", f"""
 <section class="hero lost">
@@ -1016,6 +1083,7 @@ def build(out):
         pages[article_url(article)] = article_page(article, articles)
     files = {(p.strip("/") + "/index.html").lstrip("/"): text for p, text in pages.items()}
     files["404.html"] = not_found_page()
+    files["account/index.html"] = account_page()
     files["sitemap.xml"] = sitemap(pages)
     files["robots.txt"] = f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n"
     files["favicon.svg"] = FAVICON
@@ -1023,7 +1091,7 @@ def build(out):
         path = out / rel
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(text, encoding="utf-8")
-    for name in ("style.css", "reader.js", "site.js"):
+    for name in ("style.css", "reader.js", "site.js", "account.js"):
         shutil.copy(ROOT / "web" / name, out / name)
     shutil.copytree(ROOT / "web" / "fonts", out / "fonts")
     shutil.copytree(OG, out / "og", ignore=shutil.ignore_patterns("manifest.json"))
