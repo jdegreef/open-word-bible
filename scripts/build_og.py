@@ -18,6 +18,7 @@ import hashlib
 import html
 import json
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -29,7 +30,6 @@ sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import build_site  # noqa: E402
-from owb import markup  # noqa: E402
 
 OUT = ROOT / "web" / "og"
 MANIFEST = OUT / "manifest.json"
@@ -58,12 +58,15 @@ def to_jpeg(png, jpg):
         raise SystemExit("needs sips (macOS) or ImageMagick to make JPEGs")
     subprocess.run(cmd, check=True, capture_output=True)
 # Bump when the template changes, so every card is drawn again.
-TEMPLATE_VERSION = 2
-# The site's fonts, from the same pinned packages as web/fonts/.
-FONT_CSS = ("https://cdn.jsdelivr.net/npm/@fontsource/gentium-book-plus@5.2.7/index.css",
-            "https://cdn.jsdelivr.net/npm/@fontsource/gentium-book-plus@5.2.7/greek.css",
-            "https://cdn.jsdelivr.net/npm/@fontsource/gentium-book-plus@5.2.7/greek-ext.css",
-            "https://cdn.jsdelivr.net/npm/@fontsource/gentium-book-plus@5.2.7/400-italic.css")
+TEMPLATE_VERSION = 3
+
+
+def font_faces():
+    """The site's own @font-face rules (web/style.css), pointed at the font
+    files on disk, so a card is drawn in exactly the site's fonts."""
+    css = (ROOT / "web" / "style.css").read_text(encoding="utf-8")
+    faces = "\n".join(re.findall(r"@font-face \{.*?\}", css, re.S))
+    return faces.replace("url(/fonts/", f"url({(ROOT / 'web' / 'fonts').as_uri()}/")
 
 
 def cards():
@@ -76,7 +79,7 @@ def cards():
         verse = first["refs"][0]
         mine = set(first["source"]["tokens"])
         greek = " ".join(w["text"] + w["after"].strip() for w in words[verse] if w["id"] in mine)
-        english = build_site.plain(markup.VERSE.split(first["renderings"]["en"]["B"])[0])
+        english = build_site.opening_verse(records)
         specs[build_site.og_card_chapter(book, chapter)] = {
             "kind": "passage", "eyebrow": build_site.chapter_title(records, book, chapter),
             "title": english, "greek": greek}
@@ -94,7 +97,7 @@ def digest(spec):
 
 def card_html(spec):
     e = html.escape
-    links = "".join(f'<link rel="stylesheet" href="{u}">' for u in FONT_CSS)
+    faces = font_faces()
     if spec["kind"] == "passage":
         size = 52 if len(spec["title"]) < 90 else 44 if len(spec["title"]) < 140 else 38
         main = (f'<p class="eyebrow">{e(spec["eyebrow"])}</p>'
@@ -110,7 +113,8 @@ def card_html(spec):
                 f'<p class="summary">Every sentence shows the original words, a word-for-word '
                 f'gloss, and why each word was chosen.</p>')
     mark = build_site.MARK.replace('class="mark"', 'class="mark" width="56" height="56"')
-    return f"""<!doctype html><html><head><meta charset="utf-8">{links}<style>
+    return f"""<!doctype html><html><head><meta charset="utf-8"><style>
+{faces}
 html, body {{ margin: 0; width: {WIDTH}px; height: {HEIGHT}px; overflow: hidden; }}
 body {{ box-sizing: border-box; padding: 64px 72px 56px; display: flex; flex-direction: column;
   background: #fbfaf7; color: #1f1d1a; font-family: "Gentium Book Plus", Georgia, serif;

@@ -61,3 +61,10 @@ American Standard Version (1901), the King James Version (Crown copyright
 applies in the United Kingdom), Young's Literal Translation (New Testament)
 and the Reina-Valera 1909. These are used for comparison and review only; Open
 Word Bible is translated from the Hebrew and Greek.
+
+## Fonts
+
+The site's text is set in Gentium Book Plus, Copyright (c) 2003–2022 SIL
+International, and Hebrew in Noto Serif Hebrew, Copyright 2022 The Noto
+Project Authors. Both are licensed under the SIL Open Font License 1.1; the
+licences are in `web/fonts/`.

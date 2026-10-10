@@ -18,7 +18,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from owb import markup, refs  # noqa: E402
+from owb import markup, morph, refs  # noqa: E402
 
 BOOK_NAMES = {"JHN": {"en": "John", "es": "Juan"},
               "PHP": {"en": "Philippians", "es": "Filipenses"}}
@@ -95,11 +95,14 @@ def og_card_article(article):
     return f"article-{article['slug']}"
 
 
-def page(title, body, path=None, current="", description="", card="site"):
+SITE_CARD_ALT = "Open Word Bible: the Bible, translated from Hebrew and Greek, with its reasoning shown."
+
+
+def page(title, body, path=None, current="", description="", card="site", card_alt=None):
     """A full HTML page. path is the page's URL path ("/read/"); pages with
     one get a canonical link and link-preview tags, and go in the sitemap.
     card names the page's preview image in web/og/; a card not drawn yet
-    falls back to the site's."""
+    falls back to the site's. card_alt says what the card shows."""
     nav = [("/read/", "Read"), ("/articles/", "Articles"), ("/about/", "About")]
     links = "".join(
         f'<a href="{href}"{" aria-current=page" if href == current else ""}>{label}</a>'
@@ -111,7 +114,8 @@ def page(title, body, path=None, current="", description="", card="site"):
     if path is not None:
         url = html.escape(SITE_URL + path)
         if not (OG / f"{card}.jpg").is_file():
-            card = "site"
+            card, card_alt = "site", None
+        card_alt = card_alt or SITE_CARD_ALT
         image = html.escape(f"{SITE_URL}/og/{card}.jpg")
         meta = f"""
 <link rel="canonical" href="{url}">
@@ -123,7 +127,7 @@ def page(title, body, path=None, current="", description="", card="site"):
 <meta property="og:image" content="{image}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="{html.escape(full_title)}">
+<meta property="og:image:alt" content="{html.escape(card_alt)}">
 <meta name="twitter:card" content="summary_large_image">"""
     return f"""<!doctype html>
 <html lang="en">
@@ -134,6 +138,7 @@ def page(title, body, path=None, current="", description="", card="site"):
 <meta name="description" content="{html.escape(description)}">{meta}
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <script>{BOOT_SCRIPT}</script>
+<link rel="preload" href="/fonts/gentium-book-plus-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/style.css">
 <script src="/site.js" defer></script>
 </head>
@@ -240,6 +245,9 @@ def chapter_page(book, chapter):
     data = {"book": book, "chapter": chapter, "title": title, "languages": languages,
             "records": records,
             "words": {vid: words[vid] for r in records for vid in r["refs"]}}
+    # Each morphology code's description in every language, once per page.
+    data["grammar"] = {code: {lang: morph.describe(code, lang) for lang in LANGUAGES}
+                       for code in sorted({w["morph"] for ws in data["words"].values() for w in ws})}
     # "</" cannot appear inside a script element.
     blob = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
 
@@ -284,24 +292,70 @@ def chapter_page(book, chapter):
 """
     return page(title["en"], body, path=chapter_url(book, chapter), current="/read/",
                 card=og_card_chapter(book, chapter),
+                card_alt=f"{title['en']}: \u201c{opening_verse(records)}\u201d, with the Greek beneath.",
                 description=f"{title['en']} translated from the Greek, with the reasoning behind every verse.")
 
 
+def opening_verse(records):
+    """A passage's first verse in English, Balanced, at the default settings:
+    what its Read-page card and its share card quote."""
+    return plain(markup.VERSE.split(records[0]["renderings"]["en"]["B"])[0])
+
+
+def review_label(records):
+    """How far review has got, from the records' own status."""
+    reviewed = sum(r["status"] != "ai_draft" for r in records)
+    if reviewed == 0:
+        return "AI draft, not yet reviewed"
+    if reviewed == len(records):
+        return "Reviewed"
+    return f"{reviewed} of {len(records)} sentences reviewed"
+
+
+def passage_card(book, chapter):
+    """A passage as a card in the article-card style: its opening verse at
+    the default settings, and how much of it is translated and recorded."""
+    records = load_chapter(book, chapter)[0]
+    verses = sorted({refs.parse(v).verse for r in records for v in r["refs"]})
+    decisions = sum(len(r["decisions"]) for r in records)
+    uncertain = sum(d["uncertain"] for r in records for d in r["decisions"])
+    opening = opening_verse(records)
+    languages = " &middot; ".join(name for code, name in (("en", "English"), ("es", "Espa\u00f1ol"))
+                                  if all(code in r["renderings"] for r in records))
+    meta = (f"{len(verses)} verses &middot; {len(records)} sentences &middot; "
+            f"{decisions} decisions, {uncertain} marked uncertain")
+    return (f'<li><a class="a-card p-card" href="{chapter_url(book, chapter)}">'
+            f'<span class="a-section">{BOOK_NAMES[book]["en"]} &middot; {languages}</span>'
+            f'<span class="a-title">{html.escape(chapter_title(records, book, chapter))}</span>'
+            f'<span class="p-opening">&ldquo;{display(opening)}&rdquo;</span>'
+            f'<span class="a-meta">{meta}</span>'
+            f'<span class="p-status"><span class="status">{review_label(records)}</span></span></a></li>')
+
+
 def read_page():
-    items = "".join(
-        f'<li><a href="{chapter_url(b, c)}">'
-        f'{html.escape(chapter_title(load_chapter(b, c)[0], b, c))}</a></li>'
-        for b, c in chapters())
+    cards = "".join(passage_card(b, c) for b, c in chapters())
     body = f"""
-<div class="prose">
-<h1>Read</h1>
-<p>Sample passages so far, each translated from the SBL Greek New Testament into English and
-Spanish with the reasoning behind every sentence. All are AI drafts awaiting review.</p>
-<ul>{items}</ul>
-</div>
+<header class="page-head">
+<p class="eyebrow">Read</p>
+<h1>Passages translated so far</h1>
+<p class="dek">Each passage is translated from the SBL Greek New Testament into English and
+Spanish, at three levels, with the reasoning behind every sentence. All are AI drafts until a
+reviewer who reads Greek approves them.</p>
+</header>
+<ul class="a-grid">{cards}</ul>
+<section class="how" aria-labelledby="how-h">
+<h2 id="how-h">How the reader works</h2>
+<ol class="steps">
+<li><b>Choose how it reads.</b> Literal, Balanced or Readable, and your wording settings: inclusive or
+traditional language, &ldquo;Christ&rdquo; or &ldquo;Messiah&rdquo;, he or He.</li>
+<li><b>Tap any verse.</b> The Greek appears with a word-for-word gloss beside the translation.</li>
+<li><b>See every decision.</b> What the original means, what else was considered, why this wording
+was chosen, and which calls are uncertain.</li>
+</ol>
+</section>
 """
     return page("Read", body, path="/read/", current="/read/",
-                description="Passages available in Open Word Bible.")
+                description="Passages translated in Open Word Bible so far, with the reasoning behind every sentence.")
 
 
 def all_records():
@@ -754,6 +808,7 @@ def article_page(article, articles):
 """
     return page(article["title"], body, path=article_url(article), current="/articles/",
                 card=og_card_article(article),
+                card_alt=f"Article, {SECTIONS[article['section']]}: {article['title']}. {article['summary']}",
                 description=article["summary"])
 
 
@@ -830,6 +885,7 @@ def build(out):
         path.write_text(text, encoding="utf-8")
     for asset in ("style.css", "reader.js", "site.js"):
         shutil.copy(ROOT / "web" / asset, out / asset)
+    shutil.copytree(ROOT / "web" / "fonts", out / "fonts")
     shutil.copytree(OG, out / "og", ignore=shutil.ignore_patterns("manifest.json"))
     return sorted(files) + ["reader.js", "site.js", "style.css"]
 
