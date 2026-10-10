@@ -84,6 +84,21 @@ class SiteTest(unittest.TestCase):
         self.assertIn(f"<b>{len(build_site.all_records())}</b>", home)
         self.assertIn('href="/jhn/1/"', home)
 
+    def test_fonts_are_self_hosted_with_their_licences(self):
+        css = (self.out / "style.css").read_text(encoding="utf-8")
+        files = re.findall(r"url\(/fonts/([^)]+)\)", css)
+        self.assertTrue(files)
+        for name in files:
+            self.assertTrue((self.out / "fonts" / name).is_file(), name)
+        for script in ("greek", "greek-ext"):
+            self.assertIn(f"gentium-book-plus-{script}-400-normal.woff2", files)
+        self.assertIn("noto-serif-hebrew-hebrew-400-normal.woff2", files)
+        for licence in ("OFL-Gentium.txt", "OFL-NotoSerifHebrew.txt"):
+            self.assertIn("SIL Open Font License", (ROOT / "web" / "fonts" / licence).read_text(encoding="utf-8"))
+        home = (self.out / "index.html").read_text(encoding="utf-8")
+        preload = re.search(r'<link rel="preload" href="/fonts/([^"]+)"', home)[1]
+        self.assertIn(preload, files)
+
     def test_about_page_credits_sources(self):
         about = (self.out / "about" / "index.html").read_text(encoding="utf-8")
         for name in ("SBL Greek New Testament", "MACULA Greek", "Open Scriptures Hebrew Bible"):
