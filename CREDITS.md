@@ -52,3 +52,12 @@ Licensed under CC BY 4.0.
 ## Westminster Leningrad Codex
 
 The Hebrew text of the Westminster Leningrad Codex is in the public domain.
+
+## Reference Bibles (public domain)
+
+From [seven1m/open-bibles](https://github.com/seven1m/open-bibles), pinned in
+`sources.lock.json`: the Berean Standard Bible, the World English Bible, the
+American Standard Version (1901), the King James Version (Crown copyright
+applies in the United Kingdom), Young's Literal Translation (New Testament)
+and the Reina-Valera 1909. These are used for comparison and review only; Open
+Word Bible is translated from the Hebrew and Greek.

@@ -23,7 +23,16 @@ def source_dir(name):
 
 
 def read_text(name, relpath):
-    """Return the text of one file of a pinned source."""
+    """Return the text of one file of a pinned source.
+
+    Files stored with Git LFS are read from <name>-lfs/<relpath>, where
+    scripts/fetch_sources.py downloads them.
+    """
+    if relpath in LOCK[name].get("lfs", {}):
+        path = vendor_dir() / f"{name}-lfs" / relpath
+        if not path.is_file():
+            raise FileNotFoundError(f"{path} missing; run scripts/fetch_sources.py {name}")
+        return path.read_text(encoding="utf-8")
     path = source_dir(name) / relpath
     if path.is_file():
         return path.read_text(encoding="utf-8")
