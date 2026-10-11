@@ -10,11 +10,14 @@
   // languages are told so in the panel.
   var UI = DATA.ui;
 
-  function t(key) { return UI[key]; }
+  // Old Testament pages read from the Hebrew: a string with an _hbo
+  // variant uses it there ("Tap a Hebrew word...").
+  var HEBREW = DATA.source === "hbo";
+  function t(key) { return HEBREW && (key + "_hbo") in UI ? UI[key + "_hbo"] : UI[key]; }
 
   // The reading language is the page's (/es/... is Spanish); the footer
   // switches it. The other settings are kept across pages and languages.
-  var settings = { level: "B", gender: 0, christos: 0, deity_pronoun: 0, plural_you: 0 };
+  var settings = { level: "B", gender: 0, christos: 0, divine_name: 0, deity_pronoun: 0, plural_you: 0 };
   try {
     var saved = JSON.parse(localStorage.getItem(STORE) || "{}");
     for (var k in settings) if (k in saved) settings[k] = saved[k];
@@ -94,8 +97,11 @@
       });
     });
     document.getElementById("hint-level").textContent = t("hint_level")[settings.level];
-    ["gender", "christos", "deity_pronoun", "plural_you"].forEach(function (name) {
-      document.getElementById("hint-" + name).textContent = t("hint_" + name)[settings[name]];
+    // A page shows either the divine name (Old Testament) or the title
+    // Christ (New Testament), so one of the two hints is missing.
+    ["gender", "christos", "divine_name", "deity_pronoun", "plural_you"].forEach(function (name) {
+      var hint = document.getElementById("hint-" + name);
+      if (hint) hint.textContent = t("hint_" + name)[settings[name]];
     });
     // The summary on the phone settings button: each shown choice's label.
     var summary = [];
@@ -250,10 +256,11 @@
       (crossesChapter(current) ? "" : DATA.chapter + ":") + verseRange(current)));
 
     panel.appendChild(el("h3", null, t("greek")));
-    // Interlinear: each Greek word over its gloss. Tapping one shows its
+    // Interlinear: each Greek word (or Hebrew morpheme) over its gloss. Tapping one shows its
     // dictionary form, Strong's number and grammar, and lights up every
     // decision that names it.
     var greek = el("div", "interlinear");
+    if (HEBREW) greek.dir = "rtl";
     var info = el("div", "wordinfo");
     info.setAttribute("aria-live", "polite");
     info.hidden = true;
@@ -262,19 +269,23 @@
       w.type = "button";
       w.dataset.id = word.id;
       var g = el("span", "iw-g", word.text + word.after.trim());
-      g.lang = "grc";
+      g.lang = DATA.source;
       w.appendChild(g);
-      w.appendChild(el("span", "iw-e", word.gloss));
+      // MACULA Hebrew glosses join words with dots: "he.created".
+      w.appendChild(el("span", "iw-e", HEBREW ? word.gloss.replace(/\./g, " ") : word.gloss));
       w.addEventListener("click", function () {
         info.textContent = "";
         var head = el("p", "wi-head");
         var lemma = el("span", "wi-lemma", word.lemma);
-        lemma.lang = "grc";
+        lemma.lang = DATA.source;
         head.appendChild(lemma);
-        head.appendChild(el("span", "wi-label", t("lemma") + (word.strong ? " \u00b7 " + t("strong") + " G" + word.strong : "")));
+        var strong = word.strong ? (HEBREW ? " H" + word.strong.replace(/^0+/, "") : " G" + word.strong) : "";
+        head.appendChild(el("span", "wi-label", t("lemma") + (strong ? " \u00b7 " + t("strong") + strong : "")));
+        if (word.transliteration) head.appendChild(el("span", "wi-label", word.transliteration));
         info.appendChild(head);
-        info.appendChild(el("p", "wi-grammar", DATA.grammar[word.morph][settings.lang]));
-        info.appendChild(el("p", "wi-gloss", "\u201c" + word.gloss + "\u201d"));
+        var key = (word.lang === "A" ? "A:" : "") + word.morph;
+        info.appendChild(el("p", "wi-grammar", DATA.grammar[key][settings.lang]));
+        info.appendChild(el("p", "wi-gloss", "\u201c" + (HEBREW ? word.gloss.replace(/\./g, " ") : word.gloss) + "\u201d"));
         info.hidden = false;
         var ids = [];
         current.decisions.forEach(function (d) { if (d.tokens.includes(word.id)) ids = ids.concat(d.tokens); });

@@ -1,4 +1,4 @@
-"""Build the static site into site/ from content/, data/grc/ and i18n/.
+"""Build the static site into site/ from content/, data/grc/, data/hbo/ and i18n/.
 
 Usage: python3 scripts/build_site.py [-o DIR]
 
@@ -25,10 +25,12 @@ from typing import NamedTuple  # noqa: E402
 
 from owb import markup, morph, refs  # noqa: E402
 
-BOOK_NAMES = {"JHN": {"en": "John", "es": "Juan", "fr": "Jean", "sw": "Yohana"},
-              "PHP": {"en": "Philippians", "es": "Filipenses", "fr": "Philippiens", "sw": "Wafilipi"}}
+BOOK_NAMES = {"GEN": {"en": "Genesis", "es": "Génesis", "fr": "Genèse", "sw": "Mwanzo"},
+              "JHN": {"en": "John", "es": "Juan", "fr": "Jean", "sw": "Yohana"},
+              "PHP": {"en": "Philippians", "es": "Filipenses", "fr": "Philippiens", "sw": "Wafilipi"},
+              "COL": {"en": "Colossians", "es": "Colosenses", "fr": "Colossiens", "sw": "Wakolosai"}}
 # Chapters in each book, for "2 of 21 chapters" and a book's completeness.
-BOOK_CHAPTERS = {"JHN": 21, "PHP": 4}
+BOOK_CHAPTERS = {"GEN": 50, "JHN": 21, "PHP": 4, "COL": 4}
 # The interface languages, English first (see catalog below).
 LANGUAGES = ("en", "es", "fr", "sw")
 SITE_NAME = "Open Word Bible"
@@ -442,6 +444,28 @@ def curl_record(r):
     return r
 
 
+def source_language(book):
+    """hbo for an Old Testament book (Hebrew, with some Aramaic), grc for the New."""
+    return "hbo" if book in refs.OT_CODES else "grc"
+
+
+def words_path(book, chapter):
+    """A chapter's word extract (scripts/extract_tokens.py)."""
+    return ROOT / "data" / source_language(book) / f"{book}.{chapter}.json"
+
+
+def grammar_key(word):
+    """The key of a word's grammar in the reader data. Aramaic verb stems
+    share letters with Hebrew ones but not names, so they are kept apart."""
+    return ("A:" if word.get("lang") == "A" else "") + word["morph"]
+
+
+def describe(word, lang):
+    if "lang" in word:   # MACULA Hebrew
+        return morph.describe_hebrew(word["morph"], lang, word["lang"])
+    return morph.describe(word["morph"], lang)
+
+
 def load_chapter(book, chapter):
     """A chapter's records, and the Greek words of every verse they cover. A
     sentence that runs into the next chapter (John 7:53-8:1) belongs to both:
@@ -455,8 +479,7 @@ def load_chapter(book, chapter):
     records.sort(key=lambda r: refs.parse(r["refs"][0]).sort_key() + (r["id"],))
     words = {}
     for ch in sorted({chapter} | {refs.parse(v).chapter for r in records for v in r["refs"]}):
-        words.update(json.loads((ROOT / "data" / "grc" / f"{book}.{ch}.json")
-                                .read_text(encoding="utf-8"))["verses"])
+        words.update(json.loads(words_path(book, ch).read_text(encoding="utf-8"))["verses"])
     return records, words
 
 
@@ -473,7 +496,7 @@ def chapters():
 
 class Passage(NamedTuple):
     """One chapter with content: its records, and whether every verse of the
-    chapter in the Greek extract is translated. name is the English one;
+    chapter in the word extract is translated. name is the English one;
     chapter_name gives it in another language."""
     book: str
     chapter: int
@@ -490,10 +513,11 @@ def passages():
     the header, Read page, home page, footer and reader all list it."""
     out = []
     for b, c in chapters():
-        records = load_chapter(b, c)[0]
-        verses = len(chapter_verses(records, c))
+        records, words = load_chapter(b, c)
+        verses = len(own_verses(records, c))
+        total = sum(refs.parse(v).chapter == c for v in words)
         out.append(Passage(b, c, chapter_url(b, c), chapter_name(records, b, c), records,
-                           verses, verses == verse_count(b, c)))
+                           verses, verses == total))
     return tuple(out)
 
 
@@ -532,28 +556,23 @@ def chapter_url(book, chapter):
     return f"/{book.lower()}/{chapter}/"
 
 
-def chapter_verses(records, chapter):
-    """The verses of this chapter that records cover, leaving out a verse of
-    the chapter before or after that a sentence runs into."""
+def own_verses(records, chapter):
+    """The verses of this chapter the records cover; a record that runs on
+    into the next chapter (John 7:53-8:1) does not count its verses there."""
     return {v for r in records for v in r["refs"] if refs.parse(v).chapter == chapter}
 
 
-def verse_count(book, chapter):
-    """How many verses the chapter has in the Greek extract."""
-    return len(json.loads((ROOT / "data" / "grc" / f"{book}.{chapter}.json")
-                          .read_text(encoding="utf-8"))["verses"])
-
-
 def chapter_title(records, book, chapter, lang="en"):
-    verses = [refs.parse(v).verse for v in chapter_verses(records, chapter)]
+    verses = [refs.parse(v).verse for v in own_verses(records, chapter)]
     return f"{BOOK_NAMES[book][lang]} {chapter}:{min(verses)}–{max(verses)}"
 
 
 def chapter_name(records, book, chapter, lang="en"):
     """What the site calls a passage: "Philippians 2" for a whole chapter,
     "John 1:1–18" for part of one. (Share cards keep chapter_title.)"""
-    whole = len(chapter_verses(records, chapter)) == verse_count(book, chapter)
-    return f"{BOOK_NAMES[book][lang]} {chapter}" if whole else chapter_title(records, book, chapter, lang)
+    total = len(json.loads(words_path(book, chapter).read_text(encoding="utf-8"))["verses"])
+    verses = own_verses(records, chapter)
+    return f"{BOOK_NAMES[book][lang]} {chapter}" if len(verses) == total else chapter_title(records, book, chapter, lang)
 
 
 def text_lang(record, lang):
@@ -578,12 +597,13 @@ def chapter_page(book, chapter, lang="en"):
     # and the reader shows a sentence not yet translated in English.
     languages = [code for code in LANGUAGES
                  if any(code in r["renderings"] for r in records)]
+    source = source_language(book)
     data = {"book": book, "chapter": chapter, "title": title, "lang": lang, "languages": languages,
-            "ui": catalog(lang)["reader.ui"], "records": records,
+            "source": source, "ui": catalog(lang)["reader.ui"], "records": records,
             "words": {vid: words[vid] for r in records for vid in r["refs"]}}
     # Each morphology code's description in every language, once per page.
-    data["grammar"] = {code: {l: morph.describe(code, l) for l in LANGUAGES}
-                       for code in sorted({w["morph"] for ws in data["words"].values() for w in ws})}
+    data["grammar"] = {grammar_key(w): {l: describe(w, l) for l in LANGUAGES}
+                       for ws in data["words"].values() for w in ws}
     # "</" cannot appear inside a script element.
     blob = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
 
@@ -594,11 +614,21 @@ def chapter_page(book, chapter, lang="en"):
     def control(key, name, options):
         return f'<div class="control"><span>{t(lang, "reader." + key)}</span> {seg(name, options)}</div>'
 
+    # Old Testament pages name the Hebrew where New Testament ones name the Greek.
+    suffix = "_hbo" if source == "hbo" else ""
+    # The Old Testament has the divine name (the LORD or Yahweh); the New
+    # Testament has the title Christ (Christ or Messiah).
+    if source == "hbo":
+        title_setting = "divine_name"
+        title_control = control("name", "divine_name", [("0", t(lang, "reader.lord")), ("1", t(lang, "reader.yahweh"))])
+    else:
+        title_setting = "christos"
+        title_control = control("title", "christos", [("0", t(lang, "reader.christ")), ("1", t(lang, "reader.messiah"))])
     levels = catalog(lang)["levels"]
     plural = ("\n  " + control("plural", "plural_you", [("0", "ustedes"), ("1", "vosotros")])
               if lang in PLURAL_YOU else "")
     body = f"""
-<p class="notice">{t(lang, "reader.notice")}</p>
+<p class="notice">{t(lang, "reader.notice" + suffix)}</p>
 <button type="button" class="settings-toggle" id="settings-toggle" aria-expanded="false" aria-controls="settings">
   <span>{t(lang, "reader.settings")}</span> <span class="settings-summary" id="settings-summary"></span>
 </button>
@@ -606,16 +636,16 @@ def chapter_page(book, chapter, lang="en"):
 <div class="controls">
   {control("level", "level", [(code, levels[code]) for code in "LBR"])}
   {control("gender", "gender", [("0", t(lang, "reader.inclusive")), ("1", t(lang, "reader.traditional"))])}
-  {control("title", "christos", [("0", t(lang, "reader.christ")), ("1", t(lang, "reader.messiah"))])}
+  {title_control}
   {control("pronouns", "deity_pronoun", [("0", t(lang, "reader.he")), ("1", t(lang, "reader.He"))])}{plural}
 </div>
-<p class="hint"><span id="hint-level"></span> <span id="hint-gender"></span> <span id="hint-christos"></span> <span id="hint-deity_pronoun"></span> <span id="hint-plural_you"></span></p>
+<p class="hint"><span id="hint-level"></span> <span id="hint-gender"></span> <span id="hint-{title_setting}"></span> <span id="hint-deity_pronoun"></span> <span id="hint-plural_you"></span></p>
 </div>
 <div class="reader">
   <article class="passage">
     {chapter_strip(book, chapter, lang)}
     <h1 id="title">{html.escape(title)}</h1>
-    <p class="sub">{t(lang, "reader.sub")}</p>
+    <p class="sub">{t(lang, "reader.sub" + suffix)}</p>
     <p class="notice" id="partial" hidden></p>
     <div class="text" id="text"></div>
     <section class="notes" id="notes" aria-label="{t(lang, "reader.notes")}" hidden></section>
@@ -628,8 +658,9 @@ def chapter_page(book, chapter, lang="en"):
 """
     return page(lang, title, body, path=chapter_url(book, chapter), current="/read/",
                 card=og_card_chapter(book, chapter),
-                card_alt=t(lang, "meta.chapter_card_alt", title=title, verse=opening_verse(records, chapter, lang)),
-                description=t(lang, "meta.chapter_description", title=title))
+                card_alt=t(lang, "meta.chapter_card_alt" + suffix, title=title,
+                           verse=opening_verse(records, chapter, lang)),
+                description=t(lang, "meta.chapter_description" + suffix, title=title))
 
 
 def chapter_strip(book, chapter, lang="en"):
@@ -707,7 +738,7 @@ def passage_card(book, chapter, lang="en"):
     """A passage as a card in the article-card style: its opening verse at
     the default settings, and how much of it is translated and recorded."""
     records = load_chapter(book, chapter)[0]
-    verses = chapter_verses(records, chapter)
+    verses = own_verses(records, chapter)
     decisions = sum(len(r["decisions"]) for r in records)
     uncertain = sum(d["uncertain"] for r in records for d in r["decisions"])
     r0 = opening(records, chapter)[0]
