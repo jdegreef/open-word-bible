@@ -963,7 +963,7 @@
   // (some voices stop after about fifteen seconds of one utterance).
   function spoken(r) {
     var lang = textLang(r);
-    var rest = render(r.renderings[lang][settings.level]).replace(/\\v \d+ ?/g, "").replace(/\s+/g, " ").trim();
+    var rest = render(r.renderings[lang][settings.level]).replace(new RegExp(VERSE.source, "g"), "").replace(/\s+/g, " ").trim();
     var parts = [];
     while (rest.length > 220) {
       var cut = -1, re = /[,;:\u2014.!?]\s/g, m;
@@ -980,8 +980,9 @@
   // The device's voices for a language, the most natural first, without
   // the novelty voices macOS ships (Bells, Bubbles, Zarvox...).
   var NATURAL = /google|neural|natural|premium|enhanced|siri/i;
-  var NAMED = /samantha|daniel|karen|moira|tessa|serena|allison|ava|zoe|nicky|aaron|fiona|rishi|monica|paulina|jorge|thomas|amelie|audrey/i;
-  var NOVELTY = /albert|bad news|bahh|bells|boing|bubbles|cellos|deranged|good news|hysterical|jester|organ|superstar|trinoids|whisper|wobble|zarvox|fred|junior|ralph|kathy|grandma|grandpa|rocko|eddy|flo|reed|sandy|shelley/i;
+  // Whole names only: "Flo" is a novelty voice, "Florian" is not.
+  var NAMED = /\b(samantha|daniel|karen|moira|tessa|serena|allison|ava|zoe|nicky|aaron|fiona|rishi|monica|paulina|jorge|thomas|amelie|audrey)\b/i;
+  var NOVELTY = /^(albert|bad news|bahh|bells|boing|bubbles|cellos|deranged|good news|hysterical|jester|organ|pipe organ|superstar|trinoids|whisper|wobble|zarvox|fred|junior|ralph|kathy|grandma|grandpa|rocko|eddy|flo|reed|sandy|shelley)\b/i;
   function voicesFor(lang) {
     function score(v) { return (NATURAL.test(v.name) ? 4 : 0) + (NAMED.test(v.name) ? 2 : 0) + (v.default ? 1 : 0); }
     var seen = {};
@@ -999,9 +1000,17 @@
     return all.filter(function (v) { return v.voiceURI === listen.voices[lang]; })[0] || all[0] || null;
   }
 
-  // Light up the sentence being read; follow it down the page.
+  // Light up the sentence being read, and follow it down the page: always
+  // when the reader moved to it, otherwise only while the reader is still
+  // watching the one before (not when they have scrolled away to read).
+  function inView(v) {
+    var box = v.getBoundingClientRect();
+    return box.bottom > readingLine() && box.top < window.innerHeight - bar.offsetHeight;
+  }
   function mark(follow) {
     var r = DATA.records[listen.at];
+    var before = document.querySelector("#text .speaking");
+    if (follow === "auto") follow = !before || inView(before);
     var first = null;
     document.querySelectorAll("#text .verse").forEach(function (v) {
       var on = r && v.dataset.record === r.id;
@@ -1018,7 +1027,9 @@
     where.textContent = r ? DATA.books[DATA.book] + " " + (/:/.test(range) ? range : DATA.chapter + ":" + range) : "";
   }
 
-  function speakRecord(i) {
+  // jump: the reader moved here (start, previous/next, a new setting), so
+  // the page follows; reading on by itself follows only a watching reader.
+  function speakRecord(i, jump) {
     listen.utter = null;
     speech.cancel();
     if (i < 0) i = 0;
@@ -1036,7 +1047,7 @@
       return;
     }
     note.hidden = true;
-    mark(true);
+    mark(jump === false ? "auto" : true);
     drawBar();
     (function next(k) {
       var u = new SpeechSynthesisUtterance(s.parts[k]);
@@ -1046,7 +1057,7 @@
       u.onend = function () {
         if (listen.utter !== u) return;   // stopped or moved on
         if (k + 1 < s.parts.length) next(k + 1);
-        else speakRecord(i + 1);
+        else speakRecord(i + 1, false);
       };
       u.onerror = function (e) {
         if (listen.utter === u && e.error !== "interrupted" && e.error !== "canceled") stopListening();
@@ -1116,6 +1127,7 @@
   var row = el("div", "listen-row");
   var prevBtn = button("prev", t("listen_prev"), function () { speakRecord(listen.at - 1); });
   var playBtn = button("pause", t("listen_pause"), togglePause);
+  playBtn.classList.add("listen-play");
   var nextBtn = button("next", t("listen_next"), function () { speakRecord(listen.at + 1); });
   var where = el("span", "listen-where");
   var rateBtn = el("button", "listen-rate");
@@ -1142,6 +1154,10 @@
   bar.appendChild(row);
   bar.appendChild(note);
   document.body.appendChild(bar);
+  // The page keeps room for the bar at its foot, however tall it grows.
+  if (window.ResizeObserver) new ResizeObserver(function () {
+    document.documentElement.style.setProperty("--listen-h", bar.offsetHeight + "px");
+  }).observe(bar);
 
   function drawBar() {
     var paused = listen.paused;
@@ -1169,6 +1185,7 @@
   var startBtn = document.getElementById("listen-start");
   if (speech && window.SpeechSynthesisUtterance && startBtn) {
     startBtn.hidden = false;
+    startBtn.setAttribute("aria-pressed", "false");
     startBtn.addEventListener("click", function () {
       if (listen.on) stopListening(); else startListening();
     });
