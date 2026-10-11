@@ -397,6 +397,17 @@ class SiteTest(unittest.TestCase):
         # A reference is the palette's first row, so Enter goes straight to it.
         self.assertLess(search.index('fill(ui("go_to")'), search.index('fill(ui("show_all")'))
 
+    def test_reader_can_read_aloud(self):
+        for code in build_site.LANGUAGES:
+            page = (self.out / build_site.url(code, "/jhn/2/").lstrip("/") / "index.html").read_text(encoding="utf-8")
+            strip = re.search(r'<nav class="chapstrip"(.*?)</nav>', page, re.S)[1]
+            # Hidden until reader.js finds the browser can speak.
+            self.assertIn('id="listen-start" hidden', strip)
+            ui = self.chapter_data(build_site.url(code, "/jhn/2").lstrip("/"))["ui"]
+            for key in ("listen_bar", "listen_play", "listen_pause", "listen_prev", "listen_next",
+                        "listen_speed", "listen_voice", "listen_stop", "listen_no_voice"):
+                self.assertTrue(ui.get(key), (code, key))
+
     def test_read_page_groups_chapters_by_book(self):
         read = (self.out / "read" / "index.html").read_text(encoding="utf-8")
         for book, chaps in build_site.books():
