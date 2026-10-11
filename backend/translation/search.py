@@ -17,6 +17,7 @@ typing "running") still match. Every word of a query also matches as the
 start of a word, so results appear as the reader types; a single letter
 matches only itself.
 """
+import json
 import re
 import sys
 import unicodedata
@@ -173,6 +174,10 @@ def _headline():
 
 
 def _result(doc, headline):
+    # Django has psycopg return jsonb as text, for JSONField to parse; raw
+    # queries parse it themselves.
+    if isinstance(doc, str):
+        doc = json.loads(doc)
     if headline and "⟦" in headline:
         return {**doc, "hl": headline}
     return doc
