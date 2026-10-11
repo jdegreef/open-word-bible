@@ -43,6 +43,13 @@ Wu, Copyright (C) 2022 by Cherith Analytics, licensed under CC BY 4.0; and the
 Westminster Hebrew Syntax, Copyright (C) 1991–2018 by The J. Alan Groves Center
 for Advanced Biblical Research, licensed under CC BY 4.0.
 
+The word extracts in `data/hbo/` are derived from MACULA Hebrew and carry its
+CC BY 4.0 licence. They hold, per morpheme: id, text, following punctuation,
+transliteration, lemma, morphology (from the Open Scriptures Hebrew Bible),
+the MACULA and Cherith glosses, Strong's number and language (Hebrew or
+Aramaic). The word-sense columns (`sdbh`, `lexdomain`, `coredomain`,
+`contextualdomain`) are not used or redistributed.
+
 ## Open Scriptures Hebrew Bible
 
 Original work of the Open Scriptures Hebrew Bible available at https://github.com/openscriptures/morphhb

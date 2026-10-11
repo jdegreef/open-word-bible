@@ -1,4 +1,4 @@
-"""Build the static site into site/ from content/, data/grc/ and i18n/.
+"""Build the static site into site/ from content/, data/grc/, data/hbo/ and i18n/.
 
 Usage: python3 scripts/build_site.py [-o DIR]
 
@@ -25,10 +25,11 @@ from typing import NamedTuple  # noqa: E402
 
 from owb import markup, morph, refs  # noqa: E402
 
-BOOK_NAMES = {"JHN": {"en": "John", "es": "Juan"},
+BOOK_NAMES = {"GEN": {"en": "Genesis", "es": "Génesis"},
+              "JHN": {"en": "John", "es": "Juan"},
               "PHP": {"en": "Philippians", "es": "Filipenses"}}
 # Chapters in each book, for "2 of 21 chapters" and a book's completeness.
-BOOK_CHAPTERS = {"JHN": 21, "PHP": 4}
+BOOK_CHAPTERS = {"GEN": 50, "JHN": 21, "PHP": 4}
 # The interface languages, English first (see catalog below).
 LANGUAGES = ("en", "es")
 SITE_NAME = "Open Word Bible"
@@ -442,6 +443,28 @@ def curl_record(r):
     return r
 
 
+def source_language(book):
+    """hbo for an Old Testament book (Hebrew, with some Aramaic), grc for the New."""
+    return "hbo" if book in refs.OT_CODES else "grc"
+
+
+def words_path(book, chapter):
+    """A chapter's word extract (scripts/extract_tokens.py)."""
+    return ROOT / "data" / source_language(book) / f"{book}.{chapter}.json"
+
+
+def grammar_key(word):
+    """The key of a word's grammar in the reader data. Aramaic verb stems
+    share letters with Hebrew ones but not names, so they are kept apart."""
+    return ("A:" if word.get("lang") == "A" else "") + word["morph"]
+
+
+def describe(word, lang):
+    if "lang" in word:   # MACULA Hebrew
+        return morph.describe_hebrew(word["morph"], lang, word["lang"])
+    return morph.describe(word["morph"], lang)
+
+
 def load_chapter(book, chapter):
     records = []
     for path in sorted((ROOT / "content" / book).glob("*.json")):
@@ -450,8 +473,7 @@ def load_chapter(book, chapter):
             if first.chapter == chapter:
                 records.append(curl_record(r))
     records.sort(key=lambda r: refs.parse(r["refs"][0]).sort_key() + (r["id"],))
-    words = json.loads((ROOT / "data" / "grc" / f"{book}.{chapter}.json")
-                       .read_text(encoding="utf-8"))["verses"]
+    words = json.loads(words_path(book, chapter).read_text(encoding="utf-8"))["verses"]
     return records, words
 
 
@@ -467,7 +489,7 @@ def chapters():
 
 class Passage(NamedTuple):
     """One chapter with content: its records, and whether every verse of the
-    chapter in the Greek extract is translated. name is the English one;
+    chapter in the word extract is translated. name is the English one;
     chapter_name gives it in another language."""
     book: str
     chapter: int
@@ -534,8 +556,7 @@ def chapter_title(records, book, chapter, lang="en"):
 def chapter_name(records, book, chapter, lang="en"):
     """What the site calls a passage: "Philippians 2" for a whole chapter,
     "John 1:1–18" for part of one. (Share cards keep chapter_title.)"""
-    total = len(json.loads((ROOT / "data" / "grc" / f"{book}.{chapter}.json")
-                           .read_text(encoding="utf-8"))["verses"])
+    total = len(json.loads(words_path(book, chapter).read_text(encoding="utf-8"))["verses"])
     verses = {v for r in records for v in r["refs"]}
     return f"{BOOK_NAMES[book][lang]} {chapter}" if len(verses) == total else chapter_title(records, book, chapter, lang)
 
@@ -562,12 +583,13 @@ def chapter_page(book, chapter, lang="en"):
     # and the reader shows a sentence not yet translated in English.
     languages = [code for code in LANGUAGES
                  if any(code in r["renderings"] for r in records)]
+    source = source_language(book)
     data = {"book": book, "chapter": chapter, "title": title, "lang": lang, "languages": languages,
-            "ui": catalog(lang)["reader.ui"], "records": records,
+            "source": source, "ui": catalog(lang)["reader.ui"], "records": records,
             "words": {vid: words[vid] for r in records for vid in r["refs"]}}
     # Each morphology code's description in every language, once per page.
-    data["grammar"] = {code: {l: morph.describe(code, l) for l in LANGUAGES}
-                       for code in sorted({w["morph"] for ws in data["words"].values() for w in ws})}
+    data["grammar"] = {grammar_key(w): {l: describe(w, l) for l in LANGUAGES}
+                       for ws in data["words"].values() for w in ws}
     # "</" cannot appear inside a script element.
     blob = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
 
@@ -578,11 +600,13 @@ def chapter_page(book, chapter, lang="en"):
     def control(key, name, options):
         return f'<div class="control"><span>{t(lang, "reader." + key)}</span> {seg(name, options)}</div>'
 
+    # Old Testament pages name the Hebrew where New Testament ones name the Greek.
+    suffix = "_hbo" if source == "hbo" else ""
     levels = catalog(lang)["levels"]
     plural = ("\n  " + control("plural", "plural_you", [("0", "ustedes"), ("1", "vosotros")])
               if lang in PLURAL_YOU else "")
     body = f"""
-<p class="notice">{t(lang, "reader.notice")}</p>
+<p class="notice">{t(lang, "reader.notice" + suffix)}</p>
 <button type="button" class="settings-toggle" id="settings-toggle" aria-expanded="false" aria-controls="settings">
   <span>{t(lang, "reader.settings")}</span> <span class="settings-summary" id="settings-summary"></span>
 </button>
@@ -599,7 +623,7 @@ def chapter_page(book, chapter, lang="en"):
   <article class="passage">
     {chapter_strip(book, chapter, lang)}
     <h1 id="title">{html.escape(title)}</h1>
-    <p class="sub">{t(lang, "reader.sub")}</p>
+    <p class="sub">{t(lang, "reader.sub" + suffix)}</p>
     <p class="notice" id="partial" hidden></p>
     <div class="text" id="text"></div>
     <section class="notes" id="notes" aria-label="{t(lang, "reader.notes")}" hidden></section>
@@ -612,8 +636,9 @@ def chapter_page(book, chapter, lang="en"):
 """
     return page(lang, title, body, path=chapter_url(book, chapter), current="/read/",
                 card=og_card_chapter(book, chapter),
-                card_alt=t(lang, "meta.chapter_card_alt", title=title, verse=opening_verse(records, lang)),
-                description=t(lang, "meta.chapter_description", title=title))
+                card_alt=t(lang, "meta.chapter_card_alt" + suffix, title=title,
+                           verse=opening_verse(records, lang)),
+                description=t(lang, "meta.chapter_description" + suffix, title=title))
 
 
 def chapter_strip(book, chapter, lang="en"):

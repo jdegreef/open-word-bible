@@ -67,6 +67,73 @@ def verse_text(morphemes):
     return "".join(m.text + m.after for m in morphemes).strip()
 
 
+def written(m):
+    """False for a morpheme the WLC does not write: the article that a
+    preposition swallows (la- "to the") has a row of its own with no text and
+    an id ending in a letter. The preposition's code (Rd) already says the
+    article is there, so records and extracts leave these rows out."""
+    return bool(m.text)
+
+
+def load_tokens(start, end=None):
+    """Return the written [Morpheme] for verses start..end (inclusive), in
+    text order."""
+    start = refs.parse(start) if isinstance(start, str) else start
+    end = start if end is None else (refs.parse(end) if isinstance(end, str) else end)
+    return [m for ref, ms in verses().items()
+            if refs.in_range(ref, start, end) for m in ms if written(m)]
+
+
+def tokens_for_refs(verse_ids):
+    """Return {morpheme id: Morpheme} for the written morphemes of a list of
+    verse ids."""
+    out = {}
+    for vid in verse_ids:
+        for m in _all().get(refs.parse(vid), []):
+            if written(m):
+                out[m.id] = m
+    return out
+
+
+def source_language(morphemes):
+    """hbo for Hebrew, arc for a passage wholly in Aramaic."""
+    return "arc" if morphemes and all(m.lang == "A" for m in morphemes) else "hbo"
+
+
+def text_of(morphemes):
+    """The text of a run of morphemes as the WLC writes it: a prefix joins
+    its word, maqaf joins two words, and a new verse starts after a space."""
+    out = []
+    for i, m in enumerate(morphemes):
+        out.append(m.text + m.after)
+        nxt = morphemes[i + 1] if i + 1 < len(morphemes) else None
+        if nxt is not None and verse_of(nxt.id) != verse_of(m.id) and not m.after.endswith(" "):
+            out.append(" ")
+    return "".join(out).strip()
+
+
+def verse_of(morpheme_id):
+    """The verse part of a MACULA Hebrew id: o + book, chapter, verse
+    (2 + 3 + 3 digits), then word and morpheme numbers."""
+    return morpheme_id[:9]
+
+
+def sentences(morphemes):
+    """Group morphemes (in text order) into records, one per verse.
+
+    The WLC marks only the end of a verse (sof pasuq, with a paragraph sign
+    after it), so verse divisions are the only sentence boundaries the source
+    gives. A Hebrew record is one verse, or several whole verses joined by
+    hand where one sentence runs across them (see owb.validate)."""
+    out = []
+    for m in morphemes:
+        if out and verse_of(out[-1][-1].id) == verse_of(m.id):
+            out[-1].append(m)
+        else:
+            out.append([m])
+    return out
+
+
 _ACCENTS = re.compile("[֑-֯]")
 
 

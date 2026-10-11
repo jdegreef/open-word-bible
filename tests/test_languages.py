@@ -99,7 +99,10 @@ class LanguagesTest(unittest.TestCase):
         keys = ("skip", "nav.home", "nav.all_books", "nav.all_articles", "footer.tagline",
                 "footer.review", "footer.report", "tools.theme", "theme.night")
         for rel in self.english_pages():
-            page = self.read(Path("es") / rel)
+            # The passage data may hold the same words as Bible text
+            # (Genesis 1:5 names the darkness "Night"); only the interface counts.
+            page = re.sub(r'<script type="application/json" id="owb-data">.*?</script>', "",
+                          self.read(Path("es") / rel), flags=re.S)
             for key in keys:
                 self.assertNotIn(en[key], page, (rel, key))
                 self.assertIn(es[key], page, (rel, key))
