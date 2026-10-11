@@ -39,15 +39,15 @@ Content: Genesis 1–7 (`content/GEN/`) in English; John 1–8
 English; all of 1 and 2 Corinthians (`content/1CO/`,
 `content/2CO/`) in English; all of Galatians (`content/GAL/`) in English; all of Philippians (`content/PHP/`) in English, with chapter 4
 also in Spanish; all of Ephesians (`content/EPH/`), Colossians
-(`content/COL/`) and Philemon (`content/PHM/`) in English; and all of James and 1 and 2 Peter
-(`content/JAS/`, `content/1PE/`, `content/2PE/`) in English. English runs
+(`content/COL/`) and Philemon (`content/PHM/`) in English; and all of James, 1 and 2 Peter and 1 John
+(`content/JAS/`, `content/1PE/`, `content/2PE/`, `content/1JN/`) in English. English runs
 ahead of the other languages; `docs/english-style.md` is the brief for
 drafting it and `data/key_terms.json` the settled key terms.
 `docs/corinthians-terms.md` proposes the recurring choices for 1 and 2 Corinthians.
 `docs/french-style.md` and
 `docs/swahili-style.md` are the briefs for French and Swahili.
 
-Matthew 1–2 (`content/MAT/`) is drafted in English.
+Matthew 1–3 (`content/MAT/`) is drafted in English.
 
 Psalms 1–2 (`content/PSA/`) are drafted in English.
 
