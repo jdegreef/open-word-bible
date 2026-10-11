@@ -11,8 +11,11 @@ site's: notes are written in English, and a sentence not yet translated is
 shown, and found, in English. Each language has a text search
 configuration that removes accents and then stems (migration 0003): owb_english,
 owb_spanish, owb_french, and owb_simple for languages Postgres has no
-stemmer for. Every word of a query also matches as the start of a word, so
-results appear as the reader types.
+stemmer for. Every entry is also indexed word for word (owb_simple, the
+lowest weight), so words a stemmer drops ("I am") or shortens ("runn" while
+typing "running") still match. Every word of a query also matches as the
+start of a word, so results appear as the reader types; a single letter
+matches only itself.
 """
 import re
 import sys
@@ -108,7 +111,8 @@ def rebuild():
         cursor.execute(f"""UPDATE {SearchEntry._meta.db_table} SET vector =
             setweight(to_tsvector(config::regconfig, title), 'A')
             || setweight(to_tsvector(config::regconfig, extra), 'B')
-            || setweight(to_tsvector(config::regconfig, body), 'C')""")
+            || setweight(to_tsvector(config::regconfig, body), 'C')
+            || setweight(to_tsvector('{SIMPLE}', concat_ws(' ', title, extra, body)), 'D')""")
     return counts
 
 
@@ -125,19 +129,17 @@ def terms(q):
                 out.append((phrase, True))
         else:
             out += [(w, False) for w in re.split(r"[\W_]+", m[2]) if w]
-    # A lone letter ("s" from "God's") would match the start of nearly every
-    # word; numbers stay.
-    words = [t for t in out if len(t[0]) > 1 or t[0].isdigit() or t[1]]
-    return words or out
+    return out
 
 
 def tsquery(lang, query_terms):
     """SQL (with its parameters) for a tsquery matching every term, in each
-    text search configuration used on lang's pages: the language's own, and
-    English for notes and sentences not yet translated. A word matches as
-    the start of a word (prefix)."""
+    text search configuration used on lang's pages: the language's own,
+    English for notes and sentences not yet translated, and word for word.
+    A word matches as the start of a word (prefix), except a single letter,
+    which would match nearly everything."""
     alternatives, params = [], []
-    for cfg in sorted({config(lang), config("en")}):
+    for cfg in sorted({config(lang), config("en"), SIMPLE}):
         parts = []
         for text, phrase in query_terms:
             if phrase:
@@ -147,7 +149,7 @@ def tsquery(lang, query_terms):
                 # Only letters and digits reach to_tsquery, so a query can't
                 # inject tsquery operators.
                 parts.append("to_tsquery(%s::regconfig, %s)")
-                params += [cfg, f"{text}:*"]
+                params += [cfg, text if len(text) == 1 else f"{text}:*"]
         alternatives.append("(" + " && ".join(parts) + ")")
     return " || ".join(alternatives), params
 

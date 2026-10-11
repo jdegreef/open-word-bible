@@ -4,6 +4,7 @@ language."""
 import sys
 
 from django.conf import settings
+from django.core.cache import cache
 from django.test import TestCase
 
 from api import views
@@ -24,6 +25,9 @@ class SearchTest(TestCase):
     def setUpTestData(cls):
         load_extract_words()
         import_content()
+
+    def setUp(self):
+        cache.clear()   # the search throttle counts requests in the cache
 
     def get(self, status=200, **params):
         response = self.client.get("/api/search/", params)
@@ -74,7 +78,16 @@ class SearchTest(TestCase):
         self.assertIn("JHN.3.16", found)
 
     def test_a_word_matches_as_the_reader_types(self):
-        self.assertEqual(self.get(q="ligh", lang="en")["totals"], self.get(q="light", lang="en")["totals"])
+        whole = set().union(*(verse_ids(d) for d in self.every("light", "verse")))
+        typing = set().union(*(verse_ids(d) for d in self.every("ligh", "verse")))
+        self.assertTrue(whole and whole <= typing)
+        # A stemmer shortens "running" to "run", so "runn" matches only word for word.
+        self.assertGreater(self.get(q="runn", lang="en")["totals"].get("verse", 0), 0)
+
+    def test_words_a_stemmer_drops(self):
+        # "I" and "am" are English stop words; John 8:24 and 8:58 say "I am".
+        found = set().union(*(verse_ids(d) for d in self.every('"I am"', "verse")))
+        self.assertTrue({"JHN.8.24", "JHN.8.58"} <= found, sorted(found)[:10])
 
     def test_every_option_of_a_setting_is_found(self):
         # Colossians 1:1 reads "Christ" or "Messiah" by the reader's setting.
