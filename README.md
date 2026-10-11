@@ -51,6 +51,15 @@ differently, as John 1:3 does with its last two words, says so in a
 `punctuation` meaning decision. `owb.validate` enforces this, and
 `build_skeleton.py` starts new passages with one record per sentence.
 
+Alignments link source tokens to the words of one rendering, so the reader
+can light up a Greek word and the English it became. A rendering's
+alignments are listed in the order their `target_span`s appear, and each
+span is found after the one before (so a repeated "the" is unambiguous);
+a span may not hold a verse marker or cut through a setting span
+(`markup.alignment_ranges`). A token may appear in more than one alignment
+("not yet ... come"), and words with no counterpart are left out. John 2,
+English Balanced, is aligned as a pilot.
+
 The Old Testament is translated from the Westminster Leningrad Codex with
 MACULA Hebrew word data (`text_id` `WLC@macula-hebrew`, `language` `hbo`, or
 `arc` for Aramaic). MACULA Hebrew divides words into morphemes, so a word with
@@ -69,6 +78,16 @@ use a wording category (`word_choice`, `setting_alternative`, ...), contain a
 reader setting, or name a target language. Every setting span needs a
 default and at least one distinct, non-empty alternative, and a
 `deity_pronoun` alternative only capitalises the default.
+
+## Paragraphs and headings
+
+The reader breaks the text into paragraphs where SBLGNT does: SBLGNT
+capitalises a paragraph's first word (`paragraph_starts` in
+`scripts/build_site.py`). Section headings are editorial aids, not
+translation: `data/headings.json` keys each one by the record it stands
+above, per language, and they stay AI drafts until a named reviewer
+approves them. A page shows a heading only in the language its sentence is
+shown in.
 
 ## Reader settings
 
