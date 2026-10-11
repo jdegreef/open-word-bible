@@ -41,6 +41,7 @@ class MorphTest(unittest.TestCase):
             "P-1NS-K": "Personal pronoun · 1st person nominative singular · crasis (two words run together)",
             # As MACULA codes one word at John 8:10, with no person and a stray hyphen.
             "P-GS-": "Personal pronoun · genitive singular",
+            "P-GP-": "Personal pronoun · genitive plural",
         }
         for code, words in cases.items():
             self.assertEqual(morph.describe(code), words, code)
