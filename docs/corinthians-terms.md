@@ -2,7 +2,7 @@
 
 **Status: proposed, awaiting the founder's approval, except where a choice
 says it is settled.** These are the choices
-the drafts so far (1 Corinthians 1–12, all of 2 Corinthians) settled on, so that
+the drafts of both letters settled on, so that
 later chapters stay consistent with them. If a choice changes, every passage
 drafted under it is revised. Read with `docs/english-style.md`; key terms are
 enforced through `data/key_terms.json`.
@@ -62,6 +62,10 @@ enforced through `data/key_terms.json`.
 | *peirasmos* (1 Cor 10:13) | testing | testing | testing | "Temptation" footnoted; links to Israel testing Christ (10:9). |
 | *kephalē* (1 Cor 11:3) | head | head | head | Read as authority, uncertain, "source" footnoted. |
 | *stephanos* (1 Cor 9:25) | wreath | wreath | crown of leaves | |
+| *agapē* (1 Cor 13) | love | love | love | Never "charity". |
+| *anastasis*, *egeirō* (1 Cor 15) | resurrection, raised | resurrection, raised | rise, God raised | The perfect *egēgertai* is "has been raised". |
+| *koimaomai* | fall asleep | die | die | 1 Cor 7:39; 11:30; 15; each with an idiom decision. |
+| *idiōtēs* (1 Cor 14:16, 23–24) | outsider | outsider | someone who does not understand | |
 | *adelphos*, singular, any believer (1 Cor 8:11–13) | `{{gender:brother or sister\|brother}}` | same | same | No span for a particular man (1 Cor 7:12; 2 Cor 8:18). |
 
 ## Choices made in context
