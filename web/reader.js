@@ -310,7 +310,22 @@
     var unsureCount = 0;
     var starts = new Set(DATA.paragraphs);
     var para = null;    // the paragraph being filled
+    // A passage whose place in the text is disputed (John 7:53-8:11) is set
+    // apart in a block of its own, under a note that says why.
+    var disputed = DATA.disputed ? new Set(DATA.disputed.records) : new Set();
+    var page = box, inDisputed = false;
     DATA.records.forEach(function (r) {
+      if (disputed.has(r.id) !== inDisputed) {
+        inDisputed = !inDisputed;
+        para = null;
+        if (inDisputed) {
+          box = el("div", "disputed-block");
+          page.appendChild(box);
+          box.appendChild(disputedNote());
+        } else {
+          box = page;
+        }
+      }
       // A section heading, then a new paragraph where the Greek starts one.
       // The heading is shown in the language its sentence is shown in, and
       // left out until it has that language.
@@ -391,8 +406,23 @@
         para.appendChild(document.createTextNode(" "));
       });
     });
+    box = page;
     drawUnsureToggle(unsureCount);
     drawNotes(notes);
+  }
+
+  function disputedNote() {
+    var d = DATA.disputed;
+    var note = el("div", "disputed-note");
+    note.appendChild(el("p", null, t("disputed_note").replace("{ref}", d.ref)));
+    var rec = DATA.records.filter(function (r) { return r.id === d.records[0]; })[0];
+    if (d.note && rec && !plain()) {
+      var why = el("button", "fn-pop-more", t("fn_reasoning") + " \u2192");
+      why.type = "button";
+      why.addEventListener("click", function () { select(rec, null, d.note); });
+      note.appendChild(why);
+    }
+    return note;
   }
 
   // Above the text: mark the sentences where a decision is uncertain.

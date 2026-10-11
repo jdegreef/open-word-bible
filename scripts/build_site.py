@@ -734,6 +734,7 @@ def chapter_page(book, chapter, lang="en"):
             "source": source, "ui": catalog(lang)["reader.ui"], "records": records,
             "words": {vid: words[vid] for r in records for vid in r["refs"]},
             "paragraphs": paragraph_starts(records, words),
+            "disputed": disputed_block(records, lang),
             "headings": {r["id"]: headings()[r["id"]] for r in records if r["id"] in headings()}}
     # Each morphology code's description in every language, once per page.
     data["uses"] = word_uses()[1]
@@ -877,6 +878,20 @@ DISPUTED = (("JHN.7.53", "JHN.8.11"),)
 def disputed(vid):
     key = refs.parse(vid).sort_key()
     return any(refs.parse(a).sort_key() <= key <= refs.parse(b).sort_key() for a, b in DISPUTED)
+
+
+def disputed_block(records, lang="en"):
+    """The reader's view of a disputed passage on this page: its records, its
+    reference, and the manuscript-reading decision that explains it (shown
+    from the note above the passage). None when the page has none."""
+    ids = [r["id"] for r in records if any(disputed(v) for v in r["refs"])]
+    if not ids:
+        return None
+    first = next(r for r in records if r["id"] == ids[0])
+    note = next((d["id"] for d in first["decisions"] if d["category"] == "text_variant"), None)
+    a, b = next((refs.parse(x), refs.parse(y)) for x, y in DISPUTED if disputed(first["refs"][0]))
+    span = f"{a.chapter}:{a.verse}\u2013" + (f"{b.verse}" if a.chapter == b.chapter else f"{b.chapter}:{b.verse}")
+    return {"records": ids, "ref": f"{BOOK_NAMES[a.book][lang]} {span}", "note": note}
 
 
 def opening(records, chapter):
