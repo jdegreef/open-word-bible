@@ -17,7 +17,7 @@
 
   // The reading language is the page's (/es/... is Spanish); the footer
   // switches it. The other settings are kept across pages and languages.
-  var settings = { level: "B", gender: 0, christos: 0, deity_pronoun: 0, plural_you: 0 };
+  var settings = { level: "B", gender: 0, christos: 0, divine_name: 0, deity_pronoun: 0, plural_you: 0 };
   try {
     var saved = JSON.parse(localStorage.getItem(STORE) || "{}");
     for (var k in settings) if (k in saved) settings[k] = saved[k];
@@ -82,8 +82,11 @@
       });
     });
     document.getElementById("hint-level").textContent = t("hint_level")[settings.level];
-    ["gender", "christos", "deity_pronoun", "plural_you"].forEach(function (name) {
-      document.getElementById("hint-" + name).textContent = t("hint_" + name)[settings[name]];
+    // A page shows either the divine name (Old Testament) or the title
+    // Christ (New Testament), so one of the two hints is missing.
+    ["gender", "christos", "divine_name", "deity_pronoun", "plural_you"].forEach(function (name) {
+      var hint = document.getElementById("hint-" + name);
+      if (hint) hint.textContent = t("hint_" + name)[settings[name]];
     });
     // The summary on the phone settings button: each shown choice's label.
     var summary = [];
