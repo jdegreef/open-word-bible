@@ -113,6 +113,27 @@ Python 3. Preview it with:
 The build also writes `sitemap.xml`, `robots.txt` and a canonical link on
 every page, all using `SITE_URL` in `scripts/build_site.py`.
 
+### Languages
+
+The whole site, menus and controls included, is built once per interface
+language, as on Ochorus: English at the root (`/jhn/1/`) and Spanish under
+`/es/` (`/es/jhn/1/`). The footer's Languages row switches to the same page
+in another language; the browser remembers the choice and opens later pages
+in it. Pages carry `<html lang>`, hreflang links and a canonical URL.
+
+Interface text lives in `i18n/<lang>.json`, one flat catalog per language
+with the same keys and `{placeholders}` (`tests/test_languages.py` checks
+this). The reader shows each sentence in the page's language, or in grey
+English where it is not translated yet.
+
+An article is translated by adding `articles/<lang>/<slug>.md` with the same
+slug. Until then, the other language's page shows the English under a note,
+names the English page as canonical and stays out of the sitemap.
+
+To add a language: add it to `LANGUAGES` and `BOOK_NAMES` in
+`scripts/build_site.py`, write `i18n/<lang>.json`, and add its words to
+`owb/morph.py`.
+
 ### Articles
 
 Articles live in `articles/*.md`, one file each, starting with a front

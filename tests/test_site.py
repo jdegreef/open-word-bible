@@ -45,7 +45,9 @@ class SiteTest(unittest.TestCase):
         for path in self.out.rglob("index.html"):
             text = path.read_text(encoding="utf-8")
             self.assertIn(f'<meta name="owb-api" content="{build_site.API_URL}">', text, path)
-            self.assertIn('class="tool-btn account-btn" href="/account/"', text, path)
+            lang = re.search(r'<html lang="([a-z]+)">', text)[1]
+            account = build_site.url(lang, "/account/")
+            self.assertIn(f'class="tool-btn account-btn" href="{account}"', text, path)
 
     def test_chapter_has_every_verse_in_order(self):
         data = self.chapter_data()

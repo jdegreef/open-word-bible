@@ -2,12 +2,14 @@
 // account. The API (backend/accounts/) is on another host, named by the
 // owb-api meta tag; a signed-in browser keeps an API token and a copy of the
 // account in localStorage under owb.account (site.js reads the copy to show
-// the header's initial). All text is inserted with textContent.
+// the header's initial). All text is inserted with textContent, and the
+// messages are the page's language's (i18n/<lang>.json, account.ui).
 (function () {
   "use strict";
   var API = document.querySelector('meta[name="owb-api"]').content;
   var KEY = "owb.account";
   var root = document.getElementById("account");
+  var T = JSON.parse(document.getElementById("account-text").textContent);
 
   function saved() {
     try { return JSON.parse(localStorage.getItem(KEY) || "null"); } catch (e) { return null; }
@@ -23,7 +25,7 @@
   function message(data) {
     if (data.detail) return data.detail;
     for (var k in data) return Array.isArray(data[k]) ? data[k][0] : String(data[k]);
-    return "Something went wrong.";
+    return T.error;
   }
 
   // options.anonymous: the sign-in calls never send a saved token.
@@ -50,16 +52,15 @@
       n.hidden = n.getAttribute("data-state") !== state;
     });
     document.getElementById("account-title").textContent =
-      state === "signed-in" ? "Your account" : state === "sent" ? "Check your email"
-        : state === "confirm" ? "Finish signing in" : "Sign in";
+      T[state === "signed-in" || state === "sent" || state === "confirm" ? state : "signed-out"];
   }
 
   function render(user) {
     document.getElementById("me-email").textContent = user.email;
     document.getElementById("me-roles").textContent = user.roles.length
-      ? user.roles.map(function (r) { return r.label; }).join(", ") : "Reader";
+      ? user.roles.map(function (r) { return r.label; }).join(", ") : T.reader;
     document.getElementById("me-joined").textContent = new Date(user.joined + "T00:00:00")
-      .toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" });
+      .toLocaleDateString(document.documentElement.lang, { year: "numeric", month: "long", day: "numeric" });
     document.getElementById("display-name").value = user.display_name || "";
     show("signed-in");
   }
@@ -72,7 +73,7 @@
     var email = form.email.value.trim();
     error.hidden = true;
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      error.textContent = "Enter a valid email address.";
+      error.textContent = T.invalid_email;
       error.hidden = false;
       form.email.focus();
       return;
@@ -84,7 +85,7 @@
       show("sent");
     }).catch(function (err) {
       error.textContent = err.message === "Failed to fetch"
-        ? "Could not reach Open Word Bible. Check your connection and try again." : err.message;
+        ? T.offline : err.message;
       error.hidden = false;
     }).then(function () { button.disabled = false; });
   });
@@ -102,7 +103,7 @@
       .then(function (user) {
         var account = saved();
         if (account) { account.user = user; store(account); }
-        note.textContent = "Saved.";
+        note.textContent = T.saved;
       }).catch(function (err) { note.textContent = err.message; });
   });
 

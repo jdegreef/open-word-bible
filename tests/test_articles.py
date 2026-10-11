@@ -34,7 +34,8 @@ class ArticlesTest(unittest.TestCase):
     def test_no_greek_or_hebrew_typed_in_articles(self):
         # Original-language words come only through {{GREEK:..}} and
         # {{LEMMA:..}} placeholders, filled from data/grc/ at build time.
-        for path in sorted((ROOT / "articles").glob("*.md")):
+        # Translations (articles/<lang>/) included.
+        for path in sorted((ROOT / "articles").rglob("*.md")):
             text = path.read_text(encoding="utf-8")
             for script, (pattern, _) in validate._SCRIPTS.items():
                 self.assertEqual(pattern.findall(text), [], f"{path.name}: {script} typed by hand")
@@ -96,7 +97,9 @@ class SiteChromeTest(unittest.TestCase):
                 self.assertIn('class="tool-btn menu-btn"', text, path)
                 self.assertIn('aria-controls="site-nav"', text, path)
                 self.assertIn('<footer class="site">', text, path)
-                self.assertIn('href="/jhn/1/"', text, path)
+                # Links stay in the page's language: /es/ pages link to /es/.
+                lang = re.search(r'<html lang="([a-z]+)">', text)[1]
+                self.assertIn(f'href="{build_site.url(lang, "/jhn/1/")}"', text, path)
             about = (out / "about" / "index.html").read_text(encoding="utf-8")
             self.assertIn('<h2 id="credits">', about)
             self.assertIn('id="help"', (out / "index.html").read_text(encoding="utf-8"))

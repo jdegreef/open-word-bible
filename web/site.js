@@ -167,6 +167,22 @@
   initial.textContent = name.charAt(0).toUpperCase();
   initial.hidden = false;
   link.classList.add("signed-in");
-  link.setAttribute("aria-label", "Your account (" + name + ")");
-  link.title = "Your account";
+  // The label is in the page's language (data-signed-in, from i18n/).
+  var label = link.getAttribute("data-signed-in");
+  link.setAttribute("aria-label", label + " (" + name + ")");
+  link.title = label;
+})();
+
+// The footer's language links (language_links in scripts/build_site.py):
+// the choice is kept as owb-lang, so the boot script in each page opens
+// later pages in that language too, and the verse open in the reader
+// (#v12) carries over to the same chapter in the other language.
+(function () {
+  "use strict";
+  document.querySelectorAll("a[data-lang]").forEach(function (a) {
+    a.addEventListener("click", function () {
+      try { localStorage.setItem("owb-lang", a.getAttribute("data-lang")); } catch (e) { /* this page only */ }
+      if (/^#v\d+$/.test(location.hash)) a.hash = location.hash;
+    });
+  });
 })();
