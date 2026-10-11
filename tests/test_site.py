@@ -53,9 +53,9 @@ class SiteTest(unittest.TestCase):
         data = self.chapter_data()
         verses = list(dict.fromkeys(v for r in data["records"] for v in r["refs"]))
         self.assertEqual(verses, [f"JHN.1.{v}" for v in range(1, 52)])
-        # English for every sentence; Spanish for 1:1-18 so far, French for
-        # the whole chapter.
-        self.assertEqual(data["languages"], ["en", "es", "fr"])
+        # English for every sentence; Spanish and Swahili for 1:1-18 so far,
+        # French for the whole chapter.
+        self.assertEqual(data["languages"], ["en", "es", "fr", "sw"])
         self.assertTrue(all("fr" in r["renderings"] for r in data["records"]))
         self.assertTrue(all("en" in r["renderings"] for r in data["records"]))
 
