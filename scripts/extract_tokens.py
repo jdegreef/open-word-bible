@@ -1,8 +1,12 @@
-"""Write the MACULA Greek words for every verse in content/ to data/grc/.
+"""Write the MACULA words for every chapter in content/ to data/grc/ (Greek)
+and data/hbo/ (Hebrew and Aramaic).
 
 The site is built from these extracts, so a deploy never needs the full
-source clones. Each file holds one chapter: data/grc/JHN.1.json. The extracts
-are derived from MACULA Greek (CC BY 4.0) and are credited in CREDITS.md.
+source clones. Each file holds one whole chapter, translated or not, so the
+site can tell a part-translated chapter from a complete one: data/grc/JHN.1.json,
+data/hbo/GEN.1.json. A Hebrew entry is one morpheme, so a word with a prefix
+has two. The extracts are derived from MACULA Greek and MACULA Hebrew (both
+CC BY 4.0) and are credited in CREDITS.md.
 
 Usage: python3 scripts/extract_tokens.py [--check]
 
@@ -17,9 +21,11 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from owb import refs  # noqa: E402
-from owb.sources import macula_greek, sblgnt  # noqa: E402
+from owb.sources import macula_greek, macula_hebrew, sblgnt  # noqa: E402
 
 FIELDS = ("id", "position", "text", "after", "lemma", "morph", "gloss", "english", "strong")
+# lang is H (Hebrew) or A (Aramaic): the two use different verb stems.
+HEBREW_FIELDS = FIELDS[:4] + ("transliteration",) + FIELDS[4:] + ("lang",)
 
 
 def content_refs():
@@ -33,19 +39,22 @@ def content_refs():
 
 def extracts():
     """Return {relative path: file text} for every chapter in content/."""
-    by_chapter = {}
-    for vid in content_refs():
-        ref = refs.parse(vid)
-        by_chapter.setdefault((ref.book, ref.chapter), []).append(ref)
+    chapters = {(refs.parse(vid).book, refs.parse(vid).chapter) for vid in content_refs()}
     files = {}
-    for (book, chapter), verse_refs in by_chapter.items():
+    for book, chapter in chapters:
+        hebrew = book in refs.OT_CODES
+        source, fields = (macula_hebrew, HEBREW_FIELDS) if hebrew else (macula_greek, FIELDS)
         verses = {}
-        for ref in sorted(verse_refs, key=lambda r: r.verse):
-            verses[str(ref)] = [{f: getattr(t, f) for f in FIELDS}
-                                for t in macula_greek.load_tokens(ref)]
-        data = {"text_id": sblgnt.TEXT_ID, "source": "MACULA Greek (CC BY 4.0)",
-                "verses": verses}
-        files[f"data/grc/{book}.{chapter}.json"] = (
+        for t in source.load_tokens(refs.Ref(book, chapter, 1), refs.Ref(book, chapter, 999)):
+            verses.setdefault(str(t.ref), []).append({f: getattr(t, f) for f in fields})
+        if hebrew:
+            data = {"text_id": macula_hebrew.TEXT_ID, "source": "MACULA Hebrew (CC BY 4.0)",
+                    "verses": verses}
+        else:
+            data = {"text_id": sblgnt.TEXT_ID, "source": "MACULA Greek (CC BY 4.0)",
+                    "verses": verses}
+        folder = "hbo" if hebrew else "grc"
+        files[f"data/{folder}/{book}.{chapter}.json"] = (
             json.dumps(data, ensure_ascii=False, indent=1) + "\n")
     return files
 

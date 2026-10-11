@@ -53,10 +53,11 @@ class SiteTest(unittest.TestCase):
         data = self.chapter_data()
         verses = list(dict.fromkeys(v for r in data["records"] for v in r["refs"]))
         self.assertEqual(verses, [f"JHN.1.{v}" for v in range(1, 52)])
-        # English for every sentence; Spanish and Swahili for 1:1-18 so far,
-        # French for the whole chapter.
+        # English for every sentence; Spanish for 1:1-18 so far, French and
+        # Swahili for the whole chapter.
         self.assertEqual(data["languages"], ["en", "es", "fr", "sw"])
         self.assertTrue(all("fr" in r["renderings"] for r in data["records"]))
+        self.assertTrue(all("sw" in r["renderings"] for r in data["records"]))
         self.assertTrue(all("en" in r["renderings"] for r in data["records"]))
 
     def test_each_verse_words_are_covered_once(self):
@@ -159,6 +160,19 @@ class SiteTest(unittest.TestCase):
             texts += [r["literal_gloss"]] + [d["reason"] for d in r["decisions"]]
             for text in texts:
                 self.assertNotRegex(text, "[\"']", r["id"])
+
+    def test_old_testament_pages_offer_the_divine_name(self):
+        # The divine name (the LORD or Yahweh) on Old Testament pages, the
+        # title Christ (Christ or Messiah) on New Testament ones.
+        gen = (self.out / "gen" / "2" / "index.html").read_text(encoding="utf-8")
+        jhn = (self.out / "jhn" / "1" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('data-setting="divine_name"', gen)
+        self.assertIn('id="hint-divine_name"', gen)
+        self.assertNotIn('data-setting="christos"', gen)
+        self.assertIn('data-setting="christos"', jhn)
+        self.assertNotIn('data-setting="divine_name"', jhn)
+        text = json.dumps(self.chapter_data("gen/2")["records"])
+        self.assertIn("{{divine_name:the LORD|Yahweh}}", text)
 
     def test_chapter_settings_fold_behind_a_toggle(self):
         page = (self.out / "jhn" / "1" / "index.html").read_text(encoding="utf-8")

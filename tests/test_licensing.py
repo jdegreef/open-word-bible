@@ -33,14 +33,17 @@ def keys(obj):
 
 
 def restricted_values():
-    """The restricted Greek values for the verses in content/, by token id."""
-    wanted = {r.replace(".", " ", 1).replace(".", ":") for r in content_refs()}
-    reader = csv.DictReader(io.StringIO(read_text("macula-greek", macula_greek.TSV_PATH)),
-                            delimiter="\t", quoting=csv.QUOTE_NONE)
+    """The restricted Greek and Hebrew values for the chapters in content/
+    (the extracts hold whole chapters), by token id."""
+    wanted = {r.rsplit(".", 1)[0].replace(".", " ") for r in content_refs()}
     out = {}
-    for row in reader:
-        if row["ref"].split("!")[0] in wanted:
-            out[row["xml:id"]] = {row[c] for c in macula_greek.RESTRICTED if row[c].strip()}
+    for source in (macula_greek, macula_hebrew):
+        name = source.__name__.rsplit(".", 1)[1].replace("_", "-")
+        reader = csv.DictReader(io.StringIO(read_text(name, source.TSV_PATH)),
+                                delimiter="\t", quoting=csv.QUOTE_NONE)
+        for row in reader:
+            if row["ref"].split(":")[0] in wanted:
+                out[row["xml:id"]] = {row[c] for c in source.RESTRICTED if row[c].strip()}
     return out
 
 

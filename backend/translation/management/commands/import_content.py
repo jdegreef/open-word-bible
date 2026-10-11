@@ -21,7 +21,7 @@ from owb import refs, validate
 from texts.models import Edition, Word
 from translation.models import Decision, Rendering, Sentence
 
-TEXT_ID_EDITION = {"SBLGNT@v1.2": "sblgnt"}
+TEXT_ID_EDITION = {"SBLGNT@v1.2": "sblgnt", "WLC@macula-hebrew": "wlc"}
 
 
 class Command(BaseCommand):
