@@ -499,6 +499,11 @@
         if (onSearchPage) document.getElementById("search-q").focus(); else open();
       }
     });
+    // The reader's "Go to" button opens the palette too.
+    document.querySelectorAll("[data-open-search]").forEach(function (b) {
+      b.addEventListener("click", function () { open(); });
+      b.addEventListener("pointerenter", function () { load().catch(function () {}); }, { once: true });
+    });
     if (button) {
       button.addEventListener("click", function (e) {
         if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button) return;

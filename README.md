@@ -43,6 +43,8 @@ drafting it and `data/key_terms.json` the settled key terms.
 `docs/french-style.md` and
 `docs/swahili-style.md` are the briefs for French and Swahili.
 
+Matthew 1 (`content/MAT/`) is drafted in English.
+
 A record is one sentence of the source, not one verse. It ends where the
 SBLGNT ends a sentence: a full stop, a question mark, or a raised dot (·)
 where the next clause stands on its own. So a verse may hold two records
@@ -210,7 +212,9 @@ Ctrl K / Cmd K (or `/`) on any page, opens a palette that searches as you
 type. Its "All results" row leads to `/search/`. That page groups results
 into passages, verses, notes and articles, with filters, and keeps the
 query in the address (`?q=`), so a search can be shared. A reference such as
-"John 3:16" or "Fil 4:6-7" shows those verses with a link into the reader.
+"John 3:16" or "Fil 4:6-7" shows those verses with a link into the reader;
+in the palette it is the first row, so Enter goes straight there. The
+reader's "Go to…" button, beside the chapter pills, opens the palette.
 A verse opened from a result has the query's words marked.
 
 The site is static, so there is no search server. The build writes one
