@@ -5,7 +5,7 @@ Usage: python3 scripts/build_site.py [-o DIR]
 Needs only the repository: the Greek words come from the committed extracts
 in data/grc/ (see scripts/extract_tokens.py), so a deploy never fetches the
 full sources. Every page is built in each interface language: English at
-the root, Spanish under /es/.
+the root, Spanish under /es/, French under /fr/, Swahili under /sw/.
 """
 import argparse
 import functools
@@ -25,12 +25,12 @@ from typing import NamedTuple  # noqa: E402
 
 from owb import markup, morph, refs  # noqa: E402
 
-BOOK_NAMES = {"JHN": {"en": "John", "es": "Juan"},
-              "PHP": {"en": "Philippians", "es": "Filipenses"}}
+BOOK_NAMES = {"JHN": {"en": "John", "es": "Juan", "fr": "Jean", "sw": "Yohana"},
+              "PHP": {"en": "Philippians", "es": "Filipenses", "fr": "Philippiens", "sw": "Wafilipi"}}
 # Chapters in each book, for "2 of 21 chapters" and a book's completeness.
 BOOK_CHAPTERS = {"JHN": 21, "PHP": 4}
 # The interface languages, English first (see catalog below).
-LANGUAGES = ("en", "es")
+LANGUAGES = ("en", "es", "fr", "sw")
 SITE_NAME = "Open Word Bible"
 # The site's home (Render serves it on openwordbible.org and redirects www).
 # Canonical links, the sitemap and link previews use it.
@@ -455,8 +455,12 @@ def load_chapter(book, chapter):
             if first.chapter == chapter:
                 records.append(curl_record(r))
     records.sort(key=lambda r: refs.parse(r["refs"][0]).sort_key() + (r["id"],))
-    words = json.loads((ROOT / "data" / "grc" / f"{book}.{chapter}.json")
-                       .read_text(encoding="utf-8"))["verses"]
+    # A sentence can run into the next chapter (John 7:53-8:1), so load the
+    # words of every chapter the records touch.
+    words = {}
+    for ch in sorted({chapter} | {refs.parse(v).chapter for r in records for v in r["refs"]}):
+        words.update(json.loads((ROOT / "data" / "grc" / f"{book}.{ch}.json")
+                                .read_text(encoding="utf-8"))["verses"])
     return records, words
 
 
@@ -659,6 +663,11 @@ def opening_verse(records, lang="en"):
     return plain(markup.VERSE.split(first["renderings"][text_lang(first, lang)]["B"])[0])
 
 
+# A quoted verse in each language's quotation marks (English curly quotes
+# otherwise). French sets its guillemets off with no-break spaces.
+QUOTES_AROUND = {"es": "&laquo;{}&raquo;", "fr": "&laquo;&nbsp;{}&nbsp;&raquo;"}
+
+
 def passage_card(book, chapter, lang="en"):
     """A passage as a card in the article-card style: its opening verse at
     the default settings, and how much of it is translated and recorded."""
@@ -672,7 +681,7 @@ def passage_card(book, chapter, lang="en"):
     done = sum(lang in r["renderings"] for r in records)
     if done < len(records):
         meta += " &middot; " + t(lang, "card.coverage", n=done, total=len(records))
-    q = "&laquo;{}&raquo;" if lang == "es" else "&ldquo;{}&rdquo;"
+    q = QUOTES_AROUND.get(lang, "&ldquo;{}&rdquo;")
     return (f'<li><a class="a-card p-card" href="{url(lang, chapter_url(book, chapter))}">'
             f'<span class="a-section">{BOOK_NAMES[book][lang]} &middot; {languages_label(records)}</span>'
             f'<span class="a-title">{display(chapter_name(records, book, chapter, lang))}</span>'

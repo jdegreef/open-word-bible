@@ -47,7 +47,7 @@ class Role(models.Model):
     # Original languages a scholar reviews, and reading languages a language
     # reviewer reviews.
     ORIGINAL_LANGUAGES = {"grc": "Greek", "hbo": "Hebrew"}
-    READING_LANGUAGES = {"en": "English", "es": "Spanish"}
+    READING_LANGUAGES = {"en": "English", "es": "Spanish", "fr": "French", "sw": "Swahili"}
 
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="roles")
     kind = models.CharField(max_length=20, choices=Kind.choices)
@@ -64,7 +64,7 @@ class Role(models.Model):
             models.CheckConstraint(
                 name="role_language_matches_kind",
                 condition=(Q(kind="scholar_reviewer", language__in=["grc", "hbo"])
-                           | Q(kind="language_reviewer", language__in=["en", "es"])
+                           | Q(kind="language_reviewer", language__in=["en", "es", "fr", "sw"])
                            | (Q(kind__in=["super_admin", "editor"]) & Q(language=""))),
             ),
         ]
