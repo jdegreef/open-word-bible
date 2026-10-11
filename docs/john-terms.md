@@ -106,6 +106,18 @@ cold. Literal "Woman"; Balanced "Woman" with a note, or "Dear woman" with a
 rendering decision; Readable "Mother" only at 2:4 and 19:26 where she is his
 mother, with a decision.
 
+**"Sir" or "Lord" (*kyrie* as an address).** People who do not yet know who
+Jesus is say "Sir" at every level (the Samaritan woman, 4:11-19; the
+official, 4:49), with a footnote giving "Lord" the first time in a passage.
+His disciples, and those who have come to believe, say "Lord" (6:68; 11:27;
+20:28). The narrator's "the Lord" (4:1; 20:20) is always "the Lord".
+
+**Where a speech ends.** The Greek has no quotation marks. Where it is unclear
+whether the speaker's words go on or the narrator comments (3:16-21 after
+Jesus; 3:31-36 after John the Baptist), a punctuation meaning decision, marked
+uncertain and footnoted, says where the quotation closes; both passages keep
+the speech running to the end of the chapter section.
+
 **The beloved disciple.** Always "the disciple whom Jesus loved"; never named.
 
 **Disciples.** "disciples" at every level, Readable included: the word is

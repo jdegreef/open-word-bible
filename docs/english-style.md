@@ -94,6 +94,9 @@ others.
   for the divine name in the Old Testament, with Yahweh as a setting. In a New
   Testament quotation of the Old Testament the Greek has *kyrios*, so write
   "Lord" and note the Hebrew original in a decision (John 1:23).
+- "slave" for *doulos* at every level, as Philippians 1:1 and 2:7 have it,
+  with a meaning decision on what the person's position was; never the
+  softer "servant".
 - Modern English: no "thee", "thou", "-eth", "behold", "lo". "Brothers and
   sisters" through the gender setting, not "brethren".
 - Numbers in words up to ninety-nine; numerals for larger numbers and in
@@ -108,6 +111,10 @@ Settings change wording, never meaning. **(checked)** Use a setting span
   traditional form as the alternative. `{{gender:brothers and sisters|brothers}}`,
   `{{gender:all people|men}}`. Never for God, Christ or named men, and never
   where a specific male is meant.
+- `gender` only where both options exist: an English word that is already
+  inclusive ("everyone", "worshipers", "anyone who believes") needs no span.
+  A pronoun for a figure in a parable or picture (the bridegroom, John
+  3:29) is not a pronoun for God and takes no deity_pronoun span.
 - `christos`: `{{christos:Christ|Messiah}}` (Literal) or
   `{{christos:Christ|the Messiah}}` (Balanced, Readable) for every Christos.
   Where the Greek has the article and Literal keeps it, write
