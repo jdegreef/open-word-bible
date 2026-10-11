@@ -10,7 +10,7 @@ passage's opening verse, an article's title or summary, or the template;
 web/og/manifest.json records what each image was drawn from, and the tests
 fail when a card is stale. --check only reports stale or missing cards.
 
-Cards: one per passage (its opening verse in English and Greek), one per
+Cards: one per passage (its opening verse in English and in Greek or Hebrew), one per
 article (section, title, summary), and "site" for every other page.
 """
 import argparse
@@ -78,11 +78,17 @@ def cards():
         first = records[0]
         verse = first["refs"][0]
         mine = set(first["source"]["tokens"])
-        greek = " ".join(w["text"] + w["after"].strip() for w in words[verse] if w["id"] in mine)
         english = build_site.opening_verse(records)
-        specs[build_site.og_card_chapter(book, chapter)] = {
-            "kind": "passage", "eyebrow": build_site.chapter_title(records, book, chapter),
-            "title": english, "greek": greek}
+        spec = {"kind": "passage", "eyebrow": build_site.chapter_title(records, book, chapter),
+                "title": english}
+        if build_site.source_language(book) == "hbo":
+            # Hebrew prefixes join their word, so the morphemes run together.
+            spec["hebrew"] = "".join(w["text"] + w["after"] for w in words[verse]
+                                     if w["id"] in mine).strip()
+        else:
+            spec["greek"] = " ".join(w["text"] + w["after"].strip() for w in words[verse]
+                                     if w["id"] in mine)
+        specs[build_site.og_card_chapter(book, chapter)] = spec
     for a in build_site.load_articles():
         specs[build_site.og_card_article(a)] = {
             "kind": "article", "eyebrow": build_site.SECTIONS[a["section"]],
@@ -102,7 +108,8 @@ def card_html(spec):
         size = 52 if len(spec["title"]) < 90 else 44 if len(spec["title"]) < 140 else 38
         main = (f'<p class="eyebrow">{e(spec["eyebrow"])}</p>'
                 f'<p class="quote" style="font-size:{size}px">“{e(spec["title"])}”</p>'
-                f'<p class="greek" lang="grc">{e(spec["greek"])}</p>')
+                + (f'<p class="hebrew" lang="hbo" dir="rtl">{e(spec["hebrew"])}</p>' if "hebrew" in spec
+                   else f'<p class="greek" lang="grc">{e(spec["greek"])}</p>'))
     elif spec["kind"] == "article":
         size = 64 if len(spec["title"]) < 50 else 54 if len(spec["title"]) < 80 else 46
         main = (f'<p class="eyebrow">Article &middot; {e(spec["eyebrow"])}</p>'
@@ -133,6 +140,8 @@ p, h1 {{ margin: 0; }}
 h1 {{ font-family: "Fraunces", Georgia, serif; font-weight: 600; line-height: 1.12; letter-spacing: -.02em; }}
 .quote {{ line-height: 1.3; }}
 .greek {{ font-size: 30px; color: #6e6358; margin-top: 22px; line-height: 1.4; }}
+.hebrew {{ font-family: "Noto Serif Hebrew", serif; font-size: 32px; color: #6e6358; margin-top: 22px;
+  line-height: 1.5; text-align: right; }}
 .summary {{ font-size: 30px; line-height: 1.4; color: #6e6358; margin-top: 20px; }}
 footer {{ display: flex; justify-content: space-between; font-family: "Hanken Grotesk", Arial, sans-serif;
   font-size: 22px; font-weight: 500; color: #6e6358; }}

@@ -41,6 +41,7 @@ class MorphTest(unittest.TestCase):
             "P-1NS-K": "Personal pronoun · 1st person nominative singular · crasis (two words run together)",
             # As MACULA codes one word at John 8:10, with no person and a stray hyphen.
             "P-GS-": "Personal pronoun · genitive singular",
+            "P-GP-": "Personal pronoun · genitive plural",
         }
         for code, words in cases.items():
             self.assertEqual(morph.describe(code), words, code)
@@ -50,6 +51,53 @@ class MorphTest(unittest.TestCase):
                          "Verbe · indicatif imparfait, voix active · 3e personne du singulier")
         self.assertEqual(morph.describe("V-2AAI-3S", "fr"),
                          "Verbe · indicatif aoriste second, voix active · 3e personne du singulier")
+        self.assertEqual(morph.describe("V-IAI-3S", "sw"),
+                         "Kitenzi · wakati uliopita endelevu, hali elekezi, kauli tendaji · nafsi ya tatu, umoja")
+        self.assertEqual(morph.describe("N-DSF", "sw"), "Nomino · kipokezi (dativi), umoja, kike")
+
+    def test_every_hebrew_code_in_the_extracts_is_described(self):
+        words = [w for path in (ROOT / "data" / "hbo").glob("*.json")
+                 for ws in json.loads(path.read_text(encoding="utf-8"))["verses"].values()
+                 for w in ws]
+        self.assertTrue(words)
+        for w in words:
+            for lang in morph.HEBREW_WORDS:
+                self.assertTrue(morph.describe_hebrew(w["morph"], lang, w["lang"]), w["morph"])
+
+    def test_hebrew_descriptions(self):
+        cases = {
+            "Vqw3ms": "Verb · Qal · past narrative (wayyiqtol) · 3rd person masculine singular",
+            "Vqp3ms": "Verb · Qal · perfect (qatal) · 3rd person masculine singular",
+            "VNrmsa": "Verb · Niphal · participle · masculine singular absolute",
+            "Vqc": "Verb · Qal · infinitive construct",
+            "Ncfsa": "Noun · common · feminine singular absolute",
+            "Np": "Noun · proper name",
+            "Aomsa": "Adjective · ordinal number · masculine singular absolute",
+            "Rd": "Preposition · with the article",
+            "Sp3ms": "Suffix · pronoun · 3rd person masculine singular",
+            "To": "Particle · direct object marker",
+            "Pdxms": "Pronoun · demonstrative · masculine singular",
+            "C": "Conjunction",
+        }
+        for code, words in cases.items():
+            self.assertEqual(morph.describe_hebrew(code), words, code)
+        self.assertEqual(morph.describe_hebrew("Vqw3ms", "es"),
+                         "Verbo · Qal · narrativo pasado (wayyiqtol) · 3.ª persona masculino singular")
+        # Aramaic stems share letters with Hebrew ones but not names.
+        self.assertEqual(morph.describe_hebrew("Vai3ms", "en", "A"),
+                         "Verb · Aphel · imperfect (yiqtol) · 3rd person masculine singular")
+        for code in ("Xq", "Vxw3ms", "Vqz3ms", "Nq", "Rz", "Vqc3ms"):
+            with self.assertRaises(ValueError, msg=code):
+                morph.describe_hebrew(code)
+
+    def test_hebrew_reader_data_carries_the_grammar(self):
+        page = build_site.chapter_page("GEN", 1)
+        data = json.loads(re.search(r'id="owb-data">(.*?)</script>', page, re.S)[1])
+        self.assertEqual(data["source"], "hbo")
+        for words in data["words"].values():
+            for w in words:
+                self.assertEqual(data["grammar"][w["morph"]]["en"],
+                                 morph.describe_hebrew(w["morph"], "en", w["lang"]))
 
     def test_unknown_codes_fail_loudly(self):
         for code in ("Z-NSM", "V-ZAI-3S", "N-QSM", "PREP-Z"):
@@ -62,7 +110,7 @@ class MorphTest(unittest.TestCase):
         for words in data["words"].values():
             for w in words:
                 self.assertEqual(data["grammar"][w["morph"]]["en"], morph.describe(w["morph"]))
-                for lang in ("es", "fr"):
+                for lang in ("es", "fr", "sw"):
                     self.assertEqual(data["grammar"][w["morph"]][lang], morph.describe(w["morph"], lang))
 
 

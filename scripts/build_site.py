@@ -1,11 +1,11 @@
-"""Build the static site into site/ from content/, data/grc/ and i18n/.
+"""Build the static site into site/ from content/, data/grc/, data/hbo/ and i18n/.
 
 Usage: python3 scripts/build_site.py [-o DIR]
 
 Needs only the repository: the Greek words come from the committed extracts
 in data/grc/ (see scripts/extract_tokens.py), so a deploy never fetches the
 full sources. Every page is built in each interface language: English at
-the root, Spanish under /es/, French under /fr/.
+the root, Spanish under /es/, French under /fr/, Swahili under /sw/.
 """
 import argparse
 import functools
@@ -25,12 +25,14 @@ from typing import NamedTuple  # noqa: E402
 
 from owb import markup, morph, refs  # noqa: E402
 
-BOOK_NAMES = {"JHN": {"en": "John", "es": "Juan", "fr": "Jean"},
-              "PHP": {"en": "Philippians", "es": "Filipenses", "fr": "Philippiens"}}
+BOOK_NAMES = {"GEN": {"en": "Genesis", "es": "Génesis", "fr": "Genèse", "sw": "Mwanzo"},
+              "JHN": {"en": "John", "es": "Juan", "fr": "Jean", "sw": "Yohana"},
+              "PHP": {"en": "Philippians", "es": "Filipenses", "fr": "Philippiens", "sw": "Wafilipi"},
+              "COL": {"en": "Colossians", "es": "Colosenses", "fr": "Colossiens", "sw": "Wakolosai"}}
 # Chapters in each book, for "2 of 21 chapters" and a book's completeness.
-BOOK_CHAPTERS = {"JHN": 21, "PHP": 4}
+BOOK_CHAPTERS = {"GEN": 50, "JHN": 21, "PHP": 4, "COL": 4}
 # The interface languages, English first (see catalog below).
-LANGUAGES = ("en", "es", "fr")
+LANGUAGES = ("en", "es", "fr", "sw")
 SITE_NAME = "Open Word Bible"
 # The site's home (Render serves it on openwordbible.org and redirects www).
 # Canonical links, the sitemap and link previews use it.
@@ -427,10 +429,25 @@ def markdown(text):
     return "\n".join(out)
 
 
+def alignment_links(r):
+    """A record's alignments as the reader uses them: for each language and
+    level, [start, end, token ids] ranges into the rendering. Curling quotes
+    keeps every character in place, so the ranges hold afterwards too."""
+    groups = {}
+    for al in r.get("alignments", []):
+        groups.setdefault((al["language"], al["level"]), []).append(al)
+    links = {}
+    for (lang, level), als in groups.items():
+        ranges = markup.alignment_ranges(r["renderings"][lang][level], [a["target_span"] for a in als])
+        links.setdefault(lang, {})[level] = [[s, e, a["tokens"]] for (s, e), a in zip(ranges, als)]
+    return links
+
+
 def curl_record(r):
     """The record with curly quotes in every text a reader sees. content/
     stores straight ones; curling here, the one loader, covers the reader,
     the home page and articles alike."""
+    r["links"] = alignment_links(r)
     for levels in r["renderings"].values():
         for level, text in levels.items():
             levels[level] = smart_quotes(text)
@@ -440,6 +457,28 @@ def curl_record(r):
         d["alternatives"] = [smart_quotes(a) for a in d["alternatives"]]
         d["reason"] = smart_quotes(d["reason"])
     return r
+
+
+def source_language(book):
+    """hbo for an Old Testament book (Hebrew, with some Aramaic), grc for the New."""
+    return "hbo" if book in refs.OT_CODES else "grc"
+
+
+def words_path(book, chapter):
+    """A chapter's word extract (scripts/extract_tokens.py)."""
+    return ROOT / "data" / source_language(book) / f"{book}.{chapter}.json"
+
+
+def grammar_key(word):
+    """The key of a word's grammar in the reader data. Aramaic verb stems
+    share letters with Hebrew ones but not names, so they are kept apart."""
+    return ("A:" if word.get("lang") == "A" else "") + word["morph"]
+
+
+def describe(word, lang):
+    if "lang" in word:   # MACULA Hebrew
+        return morph.describe_hebrew(word["morph"], lang, word["lang"])
+    return morph.describe(word["morph"], lang)
 
 
 def load_chapter(book, chapter):
@@ -454,9 +493,47 @@ def load_chapter(book, chapter):
     # words of every chapter the records touch.
     words = {}
     for ch in sorted({chapter} | {refs.parse(v).chapter for r in records for v in r["refs"]}):
-        words.update(json.loads((ROOT / "data" / "grc" / f"{book}.{ch}.json")
-                                .read_text(encoding="utf-8"))["verses"])
+        words.update(json.loads(words_path(book, ch).read_text(encoding="utf-8"))["verses"])
     return records, words
+
+
+# Pe and samekh, the codex's paragraph signs (written as escapes: Hebrew in
+# this project is only ever copied from the source data).
+HEBREW_PARAGRAPH = re.compile("[\u05e4\u05e1]")
+
+
+def paragraph_starts(records, words):
+    """The ids of the records that open a paragraph. SBLGNT marks a
+    paragraph by capitalising its first word, but it also capitalises the
+    start of a quotation, which follows a raised dot or a comma. So a record
+    opens a paragraph when its first word is capitalised (and is not a name,
+    whose dictionary form is capitalised too) and the word before it ends a
+    sentence with a full stop. The Hebrew codex has no capitals; it marks a
+    paragraph's end with an open or closed paragraph sign (petuchah, pe;
+    setumah, samekh) after the last word, which MACULA keeps in "after".
+    A chapter's first record always opens one."""
+    order = [w for verse in words.values() for w in verse]
+    by_id = {w["id"]: w for w in order}
+    before = {b["id"]: a for a, b in zip(order, order[1:])}
+    starts = []
+    for i, r in enumerate(records):
+        first = r["source"]["tokens"][0]
+        word = by_id.get(first)
+        prev = before.get(first)
+        if i == 0 or prev is None or HEBREW_PARAGRAPH.search(prev["after"]) or (
+                word and word["text"][:1].isupper() and word["lemma"][:1].islower()
+                and prev["after"].strip().endswith(".")):
+            starts.append(r["id"])
+    return starts
+
+
+@functools.cache
+def headings():
+    """Section headings by the record they stand above (data/headings.json),
+    each in the languages it has, with curly quotes."""
+    data = json.loads((ROOT / "data" / "headings.json").read_text(encoding="utf-8"))
+    return {rid: {lang: smart_quotes(text) for lang, text in h.items()}
+            for rid, h in data["headings"].items()}
 
 
 def chapters():
@@ -471,7 +548,7 @@ def chapters():
 
 class Passage(NamedTuple):
     """One chapter with content: its records, and whether every verse of the
-    chapter in the Greek extract is translated. name is the English one;
+    chapter in the word extract is translated. name is the English one;
     chapter_name gives it in another language."""
     book: str
     chapter: int
@@ -489,9 +566,10 @@ def passages():
     out = []
     for b, c in chapters():
         records, words = load_chapter(b, c)
-        verses = len({v for r in records for v in r["refs"]})
+        verses = len(own_verses(records, c))
+        total = sum(refs.parse(v).chapter == c for v in words)
         out.append(Passage(b, c, chapter_url(b, c), chapter_name(records, b, c), records,
-                           verses, verses == len(words)))
+                           verses, verses == total))
     return tuple(out)
 
 
@@ -511,14 +589,21 @@ def book_progress(book, chapters_, lang="en"):
                           done=done, total=total)
 
 
-def chapter_pills(chaps, lang="en", current=None):
+def chapter_pills(chaps, lang="en", current=None, total=None):
     """A pill per chapter, linked; a dashed one for a chapter only partly
-    translated, and the current chapter marked."""
-    return "".join(
-        f'<a class="chap{"" if p.complete else " part"}" href="{url(lang, p.url)}"'
-        f'{" aria-current=page" if p.chapter == current else ""} '
-        f'title="{html.escape(chapter_name(p.records, p.book, p.chapter, lang))}">{p.chapter}</a>'
-        for p in chaps)
+    translated, and the current chapter marked. Given the book's number of
+    chapters, the ones not yet translated are shown too, greyed out."""
+    def pill(p):
+        return (f'<a class="chap{"" if p.complete else " part"}" href="{url(lang, p.url)}"'
+                f'{" aria-current=page" if p.chapter == current else ""} '
+                f'title="{html.escape(chapter_name(p.records, p.book, p.chapter, lang))}">{p.chapter}</a>')
+    if total is None:
+        return "".join(pill(p) for p in chaps)
+    have = {p.chapter: p for p in chaps}
+    missing = t(lang, "reader.not_translated")
+    return "".join(pill(have[n]) if n in have else
+                   f'<span class="chap none" title="{missing}" aria-label="{n}: {missing}">{n}</span>'
+                   for n in range(1, total + 1))
 
 
 def meter(done, total):
@@ -530,6 +615,12 @@ def chapter_url(book, chapter):
     return f"/{book.lower()}/{chapter}/"
 
 
+def own_verses(records, chapter):
+    """The verses of this chapter the records cover; a record that runs on
+    into the next chapter (John 7:53-8:1) does not count its verses there."""
+    return {v for r in records for v in r["refs"] if refs.parse(v).chapter == chapter}
+
+
 def chapter_title(records, book, chapter, lang="en"):
     verses = [refs.parse(v).verse for r in records for v in r["refs"]]
     return f"{BOOK_NAMES[book][lang]} {chapter}:{min(verses)}–{max(verses)}"
@@ -538,9 +629,8 @@ def chapter_title(records, book, chapter, lang="en"):
 def chapter_name(records, book, chapter, lang="en"):
     """What the site calls a passage: "Philippians 2" for a whole chapter,
     "John 1:1–18" for part of one. (Share cards keep chapter_title.)"""
-    total = len(json.loads((ROOT / "data" / "grc" / f"{book}.{chapter}.json")
-                           .read_text(encoding="utf-8"))["verses"])
-    verses = {v for r in records for v in r["refs"]}
+    total = len(json.loads(words_path(book, chapter).read_text(encoding="utf-8"))["verses"])
+    verses = own_verses(records, chapter)
     return f"{BOOK_NAMES[book][lang]} {chapter}" if len(verses) == total else chapter_title(records, book, chapter, lang)
 
 
@@ -566,12 +656,15 @@ def chapter_page(book, chapter, lang="en"):
     # and the reader shows a sentence not yet translated in English.
     languages = [code for code in LANGUAGES
                  if any(code in r["renderings"] for r in records)]
+    source = source_language(book)
     data = {"book": book, "chapter": chapter, "title": title, "lang": lang, "languages": languages,
-            "ui": catalog(lang)["reader.ui"], "records": records,
-            "words": {vid: words[vid] for r in records for vid in r["refs"]}}
+            "source": source, "ui": catalog(lang)["reader.ui"], "records": records,
+            "words": {vid: words[vid] for r in records for vid in r["refs"]},
+            "paragraphs": paragraph_starts(records, words),
+            "headings": {r["id"]: headings()[r["id"]] for r in records if r["id"] in headings()}}
     # Each morphology code's description in every language, once per page.
-    data["grammar"] = {code: {l: morph.describe(code, l) for l in LANGUAGES}
-                       for code in sorted({w["morph"] for ws in data["words"].values() for w in ws})}
+    data["grammar"] = {grammar_key(w): {l: describe(w, l) for l in LANGUAGES}
+                       for ws in data["words"].values() for w in ws}
     # "</" cannot appear inside a script element.
     blob = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
 
@@ -582,11 +675,20 @@ def chapter_page(book, chapter, lang="en"):
     def control(key, name, options):
         return f'<div class="control"><span>{t(lang, "reader." + key)}</span> {seg(name, options)}</div>'
 
+    # Old Testament pages name the Hebrew where New Testament ones name the Greek.
+    suffix = "_hbo" if source == "hbo" else ""
+    # The Old Testament has the divine name (the LORD or Yahweh); the New
+    # Testament has the title Christ (Christ or Messiah).
+    if source == "hbo":
+        title_setting = "divine_name"
+        title_control = control("name", "divine_name", [("0", t(lang, "reader.lord")), ("1", t(lang, "reader.yahweh"))])
+    else:
+        title_setting = "christos"
+        title_control = control("title", "christos", [("0", t(lang, "reader.christ")), ("1", t(lang, "reader.messiah"))])
     levels = catalog(lang)["levels"]
     plural = ("\n  " + control("plural", "plural_you", [("0", "ustedes"), ("1", "vosotros")])
               if lang in PLURAL_YOU else "")
     body = f"""
-<p class="notice">{t(lang, "reader.notice")}</p>
 <button type="button" class="settings-toggle" id="settings-toggle" aria-expanded="false" aria-controls="settings">
   <span>{t(lang, "reader.settings")}</span> <span class="settings-summary" id="settings-summary"></span>
 </button>
@@ -594,16 +696,16 @@ def chapter_page(book, chapter, lang="en"):
 <div class="controls">
   {control("level", "level", [(code, levels[code]) for code in "LBR"])}
   {control("gender", "gender", [("0", t(lang, "reader.inclusive")), ("1", t(lang, "reader.traditional"))])}
-  {control("title", "christos", [("0", t(lang, "reader.christ")), ("1", t(lang, "reader.messiah"))])}
+  {title_control}
   {control("pronouns", "deity_pronoun", [("0", t(lang, "reader.he")), ("1", t(lang, "reader.He"))])}{plural}
 </div>
-<p class="hint"><span id="hint-level"></span> <span id="hint-gender"></span> <span id="hint-christos"></span> <span id="hint-deity_pronoun"></span> <span id="hint-plural_you"></span></p>
+<p class="hint"><span id="hint-level"></span> <span id="hint-gender"></span> <span id="hint-{title_setting}"></span> <span id="hint-deity_pronoun"></span> <span id="hint-plural_you"></span></p>
 </div>
 <div class="reader">
   <article class="passage">
     {chapter_strip(book, chapter, lang)}
     <h1 id="title">{html.escape(title)}</h1>
-    <p class="sub">{t(lang, "reader.sub")}</p>
+    <p class="sub">{t(lang, "reader.sub" + suffix)}</p>
     <p class="notice" id="partial" hidden></p>
     <div class="text" id="text"></div>
     <section class="notes" id="notes" aria-label="{t(lang, "reader.notes")}" hidden></section>
@@ -611,13 +713,15 @@ def chapter_page(book, chapter, lang="en"):
   </article>
   <aside class="panel" id="panel" aria-live="polite" tabindex="-1"></aside>
 </div>
+{edge_turns(book, chapter, lang)}
 <script type="application/json" id="owb-data">{blob}</script>
 <script src="{asset("reader.js")}"></script>
 """
     return page(lang, title, body, path=chapter_url(book, chapter), current="/read/",
                 card=og_card_chapter(book, chapter),
-                card_alt=t(lang, "meta.chapter_card_alt", title=title, verse=opening_verse(records, lang)),
-                description=t(lang, "meta.chapter_description", title=title))
+                card_alt=t(lang, "meta.chapter_card_alt" + suffix, title=title,
+                           verse=opening_verse(records, lang)),
+                description=t(lang, "meta.chapter_description" + suffix, title=title))
 
 
 def chapter_strip(book, chapter, lang="en"):
@@ -628,14 +732,41 @@ def chapter_strip(book, chapter, lang="en"):
     progress = book_progress(book, chaps, lang)[2]
     return (f'<nav class="chapstrip" aria-label="{t(lang, "reader.strip", book=name)}">'
             f'<a class="chap-book" href="{url(lang, f"/read/#{book.lower()}")}">{icon(ICONS["book"], 16)}{name}</a>'
-            f'<span class="chap-pills">{chapter_pills(chaps, lang, chapter)}</span>'
+            f'<span class="chap-pills">{chapter_pills(chaps, lang, chapter, BOOK_CHAPTERS[book])}</span>'
             f'<span class="chap-progress">{progress}</span></nav>')
+
+
+def neighbours(book, chapter):
+    """The passages before and after this one, across books (None at the ends)."""
+    ps = passages()
+    i = next(n for n, p in enumerate(ps) if (p.book, p.chapter) == (book, chapter))
+    return (ps[i - 1] if i > 0 else None), (ps[i + 1] if i + 1 < len(ps) else None)
+
+
+def edge_turns(book, chapter, lang="en"):
+    """Arrows at the sides of the window on wide screens, for the previous
+    and next passages; the reader's arrow keys follow them (web/reader.js)."""
+    prev, nxt = neighbours(book, chapter)
+
+    def arrow(p, rel, label, glyph):
+        if p is None:
+            return ""
+        name = html.escape(chapter_name(p.records, p.book, p.chapter, lang))
+        return (f'<a class="edge-turn {rel}" href="{url(lang, p.url)}" data-turn="{rel}" '
+                f'aria-label="{plain_label(label)}: {name}" title="{name}">{glyph}</a>')
+
+    return (arrow(prev, "prev", t(lang, "reader.prev"), "&lsaquo;")
+            + arrow(nxt, "next", t(lang, "reader.next"), "&rsaquo;"))
+
+
+def plain_label(label):
+    """A button label without its arrow entity, for an aria-label."""
+    return re.sub(r"\s*&[lr]arr;\s*", "", label)
 
 
 def chapter_turns(book, chapter, lang="en"):
     """Below a passage: the previous and next passages, across books."""
-    ps = passages()
-    i = next(n for n, p in enumerate(ps) if (p.book, p.chapter) == (book, chapter))
+    prev, nxt = neighbours(book, chapter)
 
     def turn(p, rel, label):
         if p is None:
@@ -644,8 +775,6 @@ def chapter_turns(book, chapter, lang="en"):
                 f'<span class="turn-label">{label}</span>'
                 f'<span class="turn-name">{display(chapter_name(p.records, p.book, p.chapter, lang))}</span></a>')
 
-    prev = ps[i - 1] if i > 0 else None
-    nxt = ps[i + 1] if i + 1 < len(ps) else None
     return (f'<nav class="turns" aria-label="{t(lang, "reader.turns")}">'
             f'{turn(prev, "prev", t(lang, "reader.prev"))}{turn(nxt, "next", t(lang, "reader.next"))}</nav>')
 
