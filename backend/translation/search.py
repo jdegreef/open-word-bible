@@ -13,15 +13,16 @@ configuration that removes accents and then stems (migration 0003): owb_english,
 owb_spanish, owb_french, and owb_simple for languages Postgres has no
 stemmer for. Every entry is also indexed word for word (owb_simple, the
 lowest weight), so words a stemmer drops ("I am") or shortens ("runn" while
-typing "running") still match. Every word of a query also matches as the
-start of a word, so results appear as the reader types; a single letter
-matches only itself. A "quoted phrase" matches word for word, in order.
+typing "running") still match. A query word matches an entry in its stemmed
+forms, in the entry's own language only, or word for word as the start of a
+word (tsquery explains why). A "quoted phrase" matches word for word, in order.
 """
 import json
 import re
 import sys
 import unicodedata
 from collections import Counter
+from typing import NamedTuple
 
 from django.conf import settings
 from django.db import connection, transaction
@@ -133,30 +134,53 @@ def terms(q):
     return out
 
 
+class Query(NamedTuple):
+    """A query as SQL for a CTE named q: one tsquery column per text search
+    configuration used on a site language's pages (sql, with params), and
+    the expressions that match and rank an entry e with its own column."""
+    sql: str
+    params: list
+    configs: list
+
+    @property
+    def match(self):
+        return "(" + " OR ".join(f"(e.config = '{c}' AND e.vector @@ q.{c})" for c in self.configs) + ")"
+
+    @property
+    def own(self):
+        """The entry's own tsquery."""
+        return "CASE e.config " + " ".join(f"WHEN '{c}' THEN q.{c}" for c in self.configs) + " END"
+
+
 def tsquery(lang, query_terms):
-    """SQL (with its parameters) for a tsquery matching every term. A word
-    matches in each text search configuration used on lang's pages: the
-    language's own, English for notes and sentences not yet translated, and
-    word for word. It matches as the start of a word (prefix), except a
-    single letter, which would match nearly everything. A quoted phrase
-    matches word for word only: a stemmer drops common words ("from",
-    "above"), and "born from above" would shrink to "born"."""
-    words = [text for text, phrase in query_terms if not phrase]
-    phrases = [text for text, phrase in query_terms if phrase]
-    clauses, params = [], []
-    if words:
-        alternatives = []
-        for cfg in sorted({config(lang), config("en"), SIMPLE}):
+    """The query for lang's pages. Each entry is matched in its own text's
+    language: lang's, or English for notes and sentences not yet translated.
+    A word matches there in its stemmed forms ("loving" finds "love"), or
+    word for word as the start of a word, so results appear as the reader
+    types; a single letter matches only itself. Stemmed forms never match
+    as prefixes, nor across languages: Spanish "verbo" stems to "verb",
+    which would otherwise find English notes about verbs. A quoted phrase
+    matches word for word only, in order: a stemmer drops common words
+    ("from", "above"), and "born from above" would shrink to "born"."""
+    configs = sorted({config(lang), config("en")})
+    columns, params = [], []
+    for cfg in configs:
+        parts = []
+        for text, phrase in query_terms:
+            prefix = text if len(text) == 1 else f"{text}:*"
             # Only letters and digits reach to_tsquery, so a query can't
             # inject tsquery operators.
-            alternatives.append("(" + " && ".join(["to_tsquery(%s::regconfig, %s)"] * len(words)) + ")")
-            for text in words:
-                params += [cfg, text if len(text) == 1 else f"{text}:*"]
-        clauses.append("(" + " || ".join(alternatives) + ")")
-    for text in phrases:
-        clauses.append("phraseto_tsquery(%s::regconfig, %s)")
-        params += [SIMPLE, text]
-    return " && ".join(clauses), params
+            if phrase:
+                parts.append("phraseto_tsquery(%s::regconfig, %s)")
+                params += [SIMPLE, text]
+            elif cfg == SIMPLE:
+                parts.append("to_tsquery(%s::regconfig, %s)")
+                params += [SIMPLE, prefix]
+            else:
+                parts.append("(to_tsquery(%s::regconfig, %s) || to_tsquery(%s::regconfig, %s))")
+                params += [cfg, text, SIMPLE, prefix]
+        columns.append(" && ".join(parts) + f" AS {cfg}")
+    return Query("SELECT " + ", ".join(columns), params, configs)
 
 
 def _table():
@@ -169,12 +193,12 @@ def _rows(sql, params):
         return cursor.fetchall()
 
 
-def _headline():
+def _headline(query):
     """A short passage of a note's reason or an article's text around the
     match, with the matches marked ⟦ ⟧."""
-    return ("CASE WHEN e.kind IN ('n', 'a') THEN ts_headline(e.config::regconfig, e.body, q.query, "
-            "'StartSel=⟦, StopSel=⟧, MinWords=18, MaxWords=40, ShortWord=2, "
-            "MaxFragments=1, FragmentDelimiter=\" … \"') END")
+    return (f"CASE WHEN e.kind IN ('n', 'a') THEN ts_headline(e.config::regconfig, e.body, {query.own}, "
+            "'StartSel=\u27e6, StopSel=\u27e7, MinWords=18, MaxWords=40, ShortWord=2, "
+            "MaxFragments=1, FragmentDelimiter=\" \u2026 \"') END")
 
 
 def _result(doc, headline):
@@ -182,37 +206,37 @@ def _result(doc, headline):
     # queries parse it themselves.
     if isinstance(doc, str):
         doc = json.loads(doc)
-    if headline and "⟦" in headline:
+    if headline and "\u27e6" in headline:
         return {**doc, "hl": headline}
     return doc
 
 
-def counts(lang, query_sql, params):
-    rows = _rows(f"""WITH q AS (SELECT {query_sql} AS query)
+def counts(lang, query):
+    rows = _rows(f"""WITH q AS ({query.sql})
         SELECT e.kind, count(*) FROM {_table()} e, q
-        WHERE e.language = %s AND e.vector @@ q.query GROUP BY e.kind""", [*params, lang])
+        WHERE e.language = %s AND {query.match} GROUP BY e.kind""", [*query.params, lang])
     return {NAMES[kind]: n for kind, n in rows}
 
 
-def best_of_each(lang, query_sql, params, per):
+def best_of_each(lang, query, per):
     """The best `per` documents of each kind."""
-    rows = _rows(f"""WITH q AS (SELECT {query_sql} AS query),
+    rows = _rows(f"""WITH q AS ({query.sql}),
         hits AS (
           SELECT e.id, e.kind, row_number() OVER (
-            PARTITION BY e.kind ORDER BY ts_rank_cd(e.vector, q.query) DESC, e.position) AS n
-          FROM {_table()} e, q WHERE e.language = %s AND e.vector @@ q.query)
-        SELECT e.doc, {_headline()} FROM hits h JOIN {_table()} e ON e.id = h.id, q
+            PARTITION BY e.kind ORDER BY ts_rank_cd(e.vector, {query.own}) DESC, e.position) AS n
+          FROM {_table()} e, q WHERE e.language = %s AND {query.match})
+        SELECT e.doc, {_headline(query)} FROM hits h JOIN {_table()} e ON e.id = h.id, q
         WHERE h.n <= %s ORDER BY e.kind = 'c' DESC, e.kind = 'v' DESC, e.kind = 'n' DESC, h.n""",
-                 [*params, lang, per])
+                 [*query.params, lang, per])
     return [_result(doc, hl) for doc, hl in rows]
 
 
-def page(lang, query_sql, params, kind, offset, limit, sort):
-    order = "e.position" if sort == "order" else "ts_rank_cd(e.vector, q.query) DESC, e.position"
-    rows = _rows(f"""WITH q AS (SELECT {query_sql} AS query)
-        SELECT e.doc, {_headline()} FROM {_table()} e, q
-        WHERE e.language = %s AND e.kind = %s AND e.vector @@ q.query
-        ORDER BY {order} LIMIT %s OFFSET %s""", [*params, lang, KINDS[kind], limit, offset])
+def page(lang, query, kind, offset, limit, sort):
+    order = "e.position" if sort == "order" else f"ts_rank_cd(e.vector, {query.own}) DESC, e.position"
+    rows = _rows(f"""WITH q AS ({query.sql})
+        SELECT e.doc, {_headline(query)} FROM {_table()} e, q
+        WHERE e.language = %s AND e.kind = %s AND {query.match}
+        ORDER BY {order} LIMIT %s OFFSET %s""", [*query.params, lang, KINDS[kind], limit, offset])
     return [_result(doc, hl) for doc, hl in rows]
 
 
@@ -272,8 +296,7 @@ def suggest(lang, query_terms):
         if phrase or len(text) < 3:
             words.append(text)
             continue
-        sql, params = tsquery(lang, [(text, False)])
-        if counts(lang, sql, params):
+        if counts(lang, tsquery(lang, [(text, False)])):
             words.append(text)
             continue
         found = _rows(f"""SELECT word FROM {SearchWord._meta.db_table}
@@ -287,8 +310,7 @@ def suggest(lang, query_terms):
     if not changed:
         return None
     suggestion = " ".join(words)
-    sql, params = tsquery(lang, terms(suggestion))
-    return suggestion if counts(lang, sql, params) else None
+    return suggestion if counts(lang, tsquery(lang, terms(suggestion))) else None
 
 
 # ---- The search ------------------------------------------------------------
@@ -303,18 +325,18 @@ def search(lang, q, kind=None, offset=0, limit=20, sort="relevance", per=8):
     query_terms = terms(q)
     if len(q) < MIN_QUERY or not query_terms:
         return {**answer, "reference": None, "totals": {}, "results": [], "suggestion": None}
-    sql, params = tsquery(lang, query_terms)
+    query = tsquery(lang, query_terms)
     if kind:
-        total = counts(lang, sql, params).get(kind, 0)
+        total = counts(lang, query).get(kind, 0)
         return {**answer, "type": kind, "sort": sort, "offset": offset, "total": total,
-                "results": page(lang, sql, params, kind, offset, limit, sort) if total > offset else []}
+                "results": page(lang, query, kind, offset, limit, sort) if total > offset else []}
     books = SearchLanguage.objects.get(code=lang).books
     ref = reference(q, books, lang)
     if ref:
         # A reference is answered by its verses alone: its words and numbers
         # would otherwise match every note that mentions them.
         return {**answer, "reference": ref, "totals": {}, "results": [], "suggestion": None}
-    totals = counts(lang, sql, params)
+    totals = counts(lang, query)
     return {**answer, "reference": None, "totals": totals,
-            "results": best_of_each(lang, sql, params, per) if totals else [],
+            "results": best_of_each(lang, query, per) if totals else [],
             "suggestion": None if totals else suggest(lang, query_terms)}
