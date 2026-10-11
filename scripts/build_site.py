@@ -450,8 +450,12 @@ def load_chapter(book, chapter):
             if first.chapter == chapter:
                 records.append(curl_record(r))
     records.sort(key=lambda r: refs.parse(r["refs"][0]).sort_key() + (r["id"],))
-    words = json.loads((ROOT / "data" / "grc" / f"{book}.{chapter}.json")
-                       .read_text(encoding="utf-8"))["verses"]
+    # A sentence can run into the next chapter (John 7:53-8:1), so load the
+    # words of every chapter the records touch.
+    words = {}
+    for ch in sorted({chapter} | {refs.parse(v).chapter for r in records for v in r["refs"]}):
+        words.update(json.loads((ROOT / "data" / "grc" / f"{book}.{ch}.json")
+                                .read_text(encoding="utf-8"))["verses"])
     return records, words
 
 

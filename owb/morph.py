@@ -77,7 +77,9 @@ _POSS = re.compile(r"([1-3])([SP])([NGDAV])([SP])([MFN])")
 
 def describe(code, lang="en"):
     w = WORDS[lang]
-    parts = code.split("-")
+    # MACULA's text of John 7:53-8:11 has one stray trailing hyphen ("P-GS-"
+    # at 8:10); an empty last part says nothing, so drop it.
+    parts = code.removesuffix("-").split("-")
     pos, rest = parts[0], parts[1:]
     if pos not in w["pos"]:
         raise ValueError(f"unknown part of speech in {code!r}")
