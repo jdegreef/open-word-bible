@@ -54,6 +54,25 @@
 @font-face { font-family: "Noto Serif Hebrew"; font-style: normal; font-weight: 600; font-display: swap;
   src: url(/fonts/noto-serif-hebrew-hebrew-600-normal.woff2) format("woff2"); unicode-range: U+0307-0308,U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F; }
 
+/* Atkinson Hyperlegible, the Readable typeface in the gear menu, made by the
+   Braille Institute for low-vision readers. Generated from
+   @fontsource/atkinson-hyperlegible@5.2.8. */
+@font-face { font-family: "Atkinson Hyperlegible"; font-style: normal; font-weight: 400; font-display: swap;
+  src: url(/fonts/atkinson-hyperlegible-latin-400-normal.woff2) format("woff2"); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: "Atkinson Hyperlegible"; font-style: italic; font-weight: 400; font-display: swap;
+  src: url(/fonts/atkinson-hyperlegible-latin-400-italic.woff2) format("woff2"); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: "Atkinson Hyperlegible"; font-style: normal; font-weight: 700; font-display: swap;
+  src: url(/fonts/atkinson-hyperlegible-latin-700-normal.woff2) format("woff2"); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: "Atkinson Hyperlegible"; font-style: italic; font-weight: 700; font-display: swap;
+  src: url(/fonts/atkinson-hyperlegible-latin-700-italic.woff2) format("woff2"); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: "Atkinson Hyperlegible"; font-style: normal; font-weight: 400; font-display: swap;
+  src: url(/fonts/atkinson-hyperlegible-latin-ext-400-normal.woff2) format("woff2"); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family: "Atkinson Hyperlegible"; font-style: italic; font-weight: 400; font-display: swap;
+  src: url(/fonts/atkinson-hyperlegible-latin-ext-400-italic.woff2) format("woff2"); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family: "Atkinson Hyperlegible"; font-style: normal; font-weight: 700; font-display: swap;
+  src: url(/fonts/atkinson-hyperlegible-latin-ext-700-normal.woff2) format("woff2"); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family: "Atkinson Hyperlegible"; font-style: italic; font-weight: 700; font-display: swap;
+  src: url(/fonts/atkinson-hyperlegible-latin-ext-700-italic.woff2) format("woff2"); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
 
 :root {
   --header-h: 64px;
@@ -65,7 +84,19 @@
   --radius: 12px;
   --radius-sm: 9px;
   --fast: 150ms;
+  /* The reading text's size, typeface and line spacing, which the gear
+     menu changes (data-size, data-font, data-leading on <html>). */
+  --read-scale: 1;
+  --read-font: var(--serif);
+  --read-leading: 1;
 }
+:root[data-size="s"] { --read-scale: .88; }
+:root[data-size="l"] { --read-scale: 1.15; }
+:root[data-size="xl"] { --read-scale: 1.32; }
+:root[data-font="sans"] { --read-font: var(--sans); }
+:root[data-font="readable"] { --read-font: "Atkinson Hyperlegible", var(--sans); }
+:root[data-leading="compact"] { --read-leading: .88; }
+:root[data-leading="spacious"] { --read-leading: 1.18; }
 
 /* Colour modes, shared with Ochorus: indigo with a gold accent. The reader
    picks one from the gear menu (web/site.js), which sets data-theme on
@@ -316,15 +347,20 @@ header.site .tools { display: flex; align-items: center; gap: 8px; flex: none; }
 .menu-btn .icon + .icon, .menu-btn[aria-expanded="true"] .icon:first-child { display: none; }
 .menu-btn[aria-expanded="true"] .icon + .icon { display: block; }
 
-/* The colour-mode menu behind the gear: a grid of theme tiles. */
+/* The display menu behind the gear: theme tiles, then the reading text's
+   size, typeface and line spacing. */
 .prefs { position: relative; }
 .prefs-menu {
   position: absolute; right: 0; top: calc(100% + 10px); z-index: 30; width: 300px;
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
   box-shadow: var(--shadow-pop); padding: 12px;
+  max-height: calc(100vh - var(--header-h) - 24px); overflow-y: auto; overscroll-behavior: contain;
 }
 .prefs-label { font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 2px 4px 10px; }
 .prefs-menu [role="radiogroup"] { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.prefs-menu [role="radiogroup"] + .prefs-label { margin-top: 16px; }
+.prefs-menu [data-pref="size"] { grid-template-columns: repeat(4, 1fr); }
+.prefs-menu [data-pref]:not([data-pref="theme"]) button { gap: 4px; padding: 7px 2px 6px; font-size: 11.5px; }
 .prefs-menu button {
   position: relative; display: flex; flex-direction: column; align-items: center; gap: 7px; width: 100%; padding: 10px 4px 8px;
   border: 1px solid var(--line); border-radius: var(--radius-sm); background: none; color: var(--text);
@@ -340,6 +376,15 @@ header.site .tools { display: flex; align-items: center; gap: 8px; flex: none; }
   background: linear-gradient(135deg, var(--sw-bg) 50%, var(--sw-accent) 50%);
   box-shadow: inset 0 0 0 1px rgb(127 127 127 / .5);
 }
+/* Each tile shows its setting: "Aa" at its size or in its face, or
+   three lines at its spacing. */
+.sample { display: grid; place-items: center; height: 26px; font-family: var(--serif); font-size: 17px; line-height: 1; }
+[data-value="s"] > .sample { font-size: 14px; }
+[data-value="l"] > .sample { font-size: 20px; }
+[data-value="xl"] > .sample { font-size: 24px; }
+[data-value="sans"] > .sample { font-family: var(--sans); }
+[data-value="readable"] > .sample { font-family: "Atkinson Hyperlegible", var(--sans); }
+.sample svg { display: block; }
 .prefs-menu .check {
   position: absolute; top: 4px; right: 6px; font-size: 11px; visibility: hidden;
 }
@@ -495,10 +540,11 @@ footer.site .foot-langs ul { display: flex; flex-wrap: wrap; gap: 6px 18px; }
 .book-row .meter { grid-area: bar; }
 .book-row .book-progress { grid-area: progress; }
 .book-row .chap-pills { grid-area: pills; }
+.saved-books { margin: 0 0 48px; }
 
 /* Read page: one section per book. */
 .book-group { margin: 0 0 48px; }
-.book-head { display: grid; grid-template-columns: auto auto 1fr; align-items: center; gap: 8px 18px; margin: 0 0 16px; }
+.book-head { display: grid; grid-template-columns: auto auto 1fr auto; align-items: center; gap: 8px 18px; margin: 0 0 16px; }
 .book-head h2 { font-family: var(--display); font-weight: 600; font-size: 28px; letter-spacing: -.01em; margin: 0; }
 .book-head .meter { max-width: 260px; }
 
@@ -515,12 +561,15 @@ footer.site .foot-langs ul { display: flex; flex-wrap: wrap; gap: 6px 18px; }
 /* The book and its progress on one line, every chapter on the next. */
 .chapstrip .chap-pills { order: 3; flex-basis: 100%; gap: 5px; }
 .chapstrip .chap-progress { margin-left: auto; }
-.chap-goto {
+.chap-goto, .save-book {
   display: inline-flex; align-items: center; gap: 6px; padding: 4px 11px; border: 1px solid var(--line-strong);
   border-radius: 999px; background: var(--surface); color: var(--text); font: inherit; font-size: 13px; font-weight: 600;
   cursor: pointer; transition: border-color var(--fast), color var(--fast);
 }
-.chap-goto:hover { border-color: var(--accent); color: var(--accent); }
+.chap-goto:hover, .save-book:hover { border-color: var(--accent); color: var(--accent); }
+/* Read page: a book saved for offline (web/site.js). */
+.save-book[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
+.save-book:disabled { cursor: progress; opacity: .8; }
 .chap-goto:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .chap-progress { font-size: 13px; color: var(--muted); }
 .chapstrip + h1 { margin-top: 14px; }
@@ -614,7 +663,7 @@ footer.site .foot-langs ul { display: flex; flex-wrap: wrap; gap: 6px 18px; }
 .article-head h1 { font-family: var(--display); font-weight: 600; letter-spacing: -.02em; font-size: clamp(32px, 5vw, 46px); line-height: 1.15; margin: 0 0 14px; }
 .byline { display: flex; align-items: center; gap: 10px; color: var(--muted); font-size: 14px; line-height: 1.6; margin: 22px 0 0; }
 .byline .mark { width: 26px; height: 26px; }
-.article-body { font-family: var(--serif); font-size: 20px; line-height: 1.7; }
+.article-body { font-family: var(--read-font); font-size: calc(20px * var(--read-scale)); line-height: calc(1.7 * var(--read-leading)); }
 .article-body p, .article-body ul { margin: 0 0 1.1em; }
 .article-body li { margin: 0 0 .4em; }
 .article-body h2 { font-family: var(--display); font-weight: 600; font-size: 27px; letter-spacing: -.01em; line-height: 1.25; margin: 1.8em 0 .5em; }
@@ -692,7 +741,7 @@ footer.site .foot-langs ul { display: flex; flex-wrap: wrap; gap: 6px 18px; }
 .passage h1 { font-family: var(--display); font-weight: 600; font-size: clamp(30px, 4vw, 40px); letter-spacing: -.02em; margin: 36px 0 6px; }
 .passage .sub { color: var(--muted); font-size: 14px; margin: 0 0 16px; }
 /* About 65 characters a line, the comfortable measure for long reading. */
-.text { font-family: var(--serif); font-size: 21px; line-height: 1.8; max-width: 29em; }
+.text { font-family: var(--read-font); font-size: calc(21px * var(--read-scale)); line-height: calc(1.8 * var(--read-leading)); max-width: 29em; }
 /* Paragraphs follow SBLGNT's; section headings (data/headings.json) are
    editorial aids, set apart from the text in the interface font. */
 .text .para { margin: 0 0 .85em; }
@@ -705,8 +754,9 @@ footer.site .foot-langs ul { display: flex; flex-wrap: wrap; gap: 6px 18px; }
 .section-head.fallback { color: var(--muted); }
 .verse {
   cursor: pointer; border-radius: 3px; padding: 1px 0;
-  /* j and k scroll a verse into view clear of the header and settings bar. */
-  scroll-margin-top: calc(var(--header-h) + var(--settings-h, 0px) + 16px); scroll-margin-bottom: 32px;
+  /* A verse scrolled into view clears the settings bar too; html's
+     scroll-padding-top already clears the header (the two add up). */
+  scroll-margin-top: var(--settings-h, 0px); scroll-margin-bottom: 32px;
 }
 .verse:hover { background: var(--accent-soft); }
 .verse[aria-current="true"] { background: var(--mark); }
@@ -873,7 +923,7 @@ footer.site .foot-langs ul { display: flex; flex-wrap: wrap; gap: 6px 18px; }
   .brand-name { font-size: 19px; }
   header.site .bar { gap: 10px; }
   .tool-btn { width: 36px; height: 36px; }
-  .article-body { font-size: 19px; }
+  .article-body { font-size: calc(19px * var(--read-scale)); }
   .quote { padding: 18px 18px 14px 22px; }
   .quote blockquote { font-size: 21px; }
   .a-card.featured { padding: 24px 22px; }
@@ -885,7 +935,8 @@ footer.site .foot-langs ul { display: flex; flex-wrap: wrap; gap: 6px 18px; }
   .points, .helpers { grid-template-columns: 1fr; }
   .book-row { grid-template-columns: 1fr auto; grid-template-areas: "name progress" "bar bar" "pills pills"; padding: 14px 16px; }
   .book-head { grid-template-columns: 1fr auto; }
-  .book-head .meter { grid-column: 1 / -1; max-width: none; }
+  .book-head .meter, .book-head .save-book { grid-column: 1 / -1; max-width: none; }
+  .book-head .save-book { justify-self: start; }
   .chapstrip .chap-pills { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding: 2px 0; min-width: 0; max-width: 100%; }
   .chapstrip .chap-pills::-webkit-scrollbar { display: none; }
   .chapstrip .chap { flex: none; }
@@ -1007,7 +1058,7 @@ body.plain .passage { margin: 0 auto; }
 body.plain .panel, body.plain .notes, body.plain .verse sup, body.plain .passage .sub { display: none; }
 body.plain .verse { cursor: text; }
 body.plain .verse:hover { background: none; }
-body.plain .text { font-size: 22px; }
+body.plain .text { font-size: calc(22px * var(--read-scale)); }
 
 /* "Copy with reference", by a selection in the passage. */
 .copy-quote {
