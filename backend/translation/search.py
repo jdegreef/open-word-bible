@@ -15,7 +15,7 @@ stemmer for. Every entry is also indexed word for word (owb_simple, the
 lowest weight), so words a stemmer drops ("I am") or shortens ("runn" while
 typing "running") still match. Every word of a query also matches as the
 start of a word, so results appear as the reader types; a single letter
-matches only itself.
+matches only itself. A "quoted phrase" matches word for word, in order.
 """
 import json
 import re
@@ -134,25 +134,29 @@ def terms(q):
 
 
 def tsquery(lang, query_terms):
-    """SQL (with its parameters) for a tsquery matching every term, in each
-    text search configuration used on lang's pages: the language's own,
-    English for notes and sentences not yet translated, and word for word.
-    A word matches as the start of a word (prefix), except a single letter,
-    which would match nearly everything."""
-    alternatives, params = [], []
-    for cfg in sorted({config(lang), config("en"), SIMPLE}):
-        parts = []
-        for text, phrase in query_terms:
-            if phrase:
-                parts.append("phraseto_tsquery(%s::regconfig, %s)")
-                params += [cfg, text]
-            else:
-                # Only letters and digits reach to_tsquery, so a query can't
-                # inject tsquery operators.
-                parts.append("to_tsquery(%s::regconfig, %s)")
+    """SQL (with its parameters) for a tsquery matching every term. A word
+    matches in each text search configuration used on lang's pages: the
+    language's own, English for notes and sentences not yet translated, and
+    word for word. It matches as the start of a word (prefix), except a
+    single letter, which would match nearly everything. A quoted phrase
+    matches word for word only: a stemmer drops common words ("from",
+    "above"), and "born from above" would shrink to "born"."""
+    words = [text for text, phrase in query_terms if not phrase]
+    phrases = [text for text, phrase in query_terms if phrase]
+    clauses, params = [], []
+    if words:
+        alternatives = []
+        for cfg in sorted({config(lang), config("en"), SIMPLE}):
+            # Only letters and digits reach to_tsquery, so a query can't
+            # inject tsquery operators.
+            alternatives.append("(" + " && ".join(["to_tsquery(%s::regconfig, %s)"] * len(words)) + ")")
+            for text in words:
                 params += [cfg, text if len(text) == 1 else f"{text}:*"]
-        alternatives.append("(" + " && ".join(parts) + ")")
-    return " || ".join(alternatives), params
+        clauses.append("(" + " || ".join(alternatives) + ")")
+    for text in phrases:
+        clauses.append("phraseto_tsquery(%s::regconfig, %s)")
+        params += [SIMPLE, text]
+    return " && ".join(clauses), params
 
 
 def _table():

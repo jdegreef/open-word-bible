@@ -97,7 +97,12 @@ class SearchTest(TestCase):
     def test_quoted_phrase(self):
         found = set().union(*(verse_ids(d) for d in self.every('"born from above"', "verse")))
         self.assertTrue({"JHN.3.3", "JHN.3.7"} <= found, found)
+        # Not every sentence with "born": English drops "from" and "above".
+        self.assertNotIn("JHN.3.6", found)
         self.assertEqual(self.every('"above from born"', "verse"), [])
+        # A phrase and a word together.
+        both = set().union(*(verse_ids(d) for d in self.every('"born from above" Jesus', "verse")))
+        self.assertTrue(both and both <= found)
 
     def test_accents_are_ignored_in_each_language(self):
         for lang, q in (("es", "senor"), ("fr", "lumiere"), ("sw", "neema")):
