@@ -57,7 +57,10 @@ class ImportContentTest(TestCase):
         self.assertEqual(Sentence.objects.count(), expected)
         s = Sentence.objects.get(record_id="JHN.1.12.s1")
         self.assertEqual(s.refs, ["JHN.1.12", "JHN.1.13"])
-        self.assertEqual(s.renderings.count(), 6)
+        # One rendering per language and level the record has.
+        record = next(r for r in json.loads((CONTENT / "JHN" / "JHN.1.1-18.json").read_text())["records"]
+                      if r["id"] == "JHN.1.12.s1")
+        self.assertEqual(s.renderings.count(), sum(len(levels) for levels in record["renderings"].values()))
         self.assertTrue(s.decisions.filter(layer="meaning").exists())
 
     def test_reimport_never_resets_review_status(self):

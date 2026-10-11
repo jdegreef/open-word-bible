@@ -1,9 +1,9 @@
 """Plain-language descriptions of MACULA Greek and Hebrew morphology codes.
 
 The word extracts (data/grc/) carry Robinson-style codes such as N-DSF or
-V-2AAI-3S. describe() turns one into words a reader can follow, in English
-or Spanish: "Noun · dative singular feminine", "Verb · second aorist active
-indicative · 3rd person singular". An unknown code raises ValueError, so a
+V-2AAI-3S. describe() turns one into words a reader can follow, in English,
+Spanish, French or Swahili: "Noun · dative singular feminine", "Verb ·
+second aorist active indicative · 3rd person singular". An unknown code raises ValueError, so a
 new code in the data fails the tests rather than showing a reader nothing.
 """
 import re
@@ -65,6 +65,67 @@ WORDS = {
                    "ATT": "forma ática", "K": "crasis (dos palabras unidas)",
                    "P": "con partícula unida", "ABB": "forma abreviada"},
     },
+    "fr": {
+        "pos": {"N": "Nom", "V": "Verbe", "A": "Adjectif", "T": "Article",
+                "P": "Pronom personnel", "R": "Pronom relatif", "D": "Pronom démonstratif",
+                "K": "Pronom corrélatif", "X": "Pronom indéfini", "I": "Pronom interrogatif",
+                "F": "Pronom réfléchi", "C": "Pronom réciproque", "S": "Pronom possessif",
+                "Q": "Pronom corrélatif ou interrogatif",
+                "ADV": "Adverbe", "CONJ": "Conjonction", "PREP": "Préposition", "PRT": "Particule",
+                "COND": "Conjonction conditionnelle", "INJ": "Interjection",
+                "HEB": "Mot hébreu", "ARAM": "Mot araméen"},
+        "indeclinable": {"PRI": "nom propre, indéclinable", "LI": "lettre, indéclinable",
+                         "OI": "indéclinable", "NUI": "nombre, indéclinable"},
+        "case": {"N": "nominatif", "G": "génitif", "D": "datif", "A": "accusatif", "V": "vocatif"},
+        "number": {"S": "singulier", "P": "pluriel"},
+        "gender": {"M": "masculin", "F": "féminin", "N": "neutre"},
+        "tense": {"P": "présent", "I": "imparfait", "F": "futur", "A": "aoriste",
+                  "R": "parfait", "L": "plus-que-parfait"},
+        "second": "{} second",
+        "verb": "{mood} {tense}, {voice}", "voiced": "voix {}",
+        "voice": {"A": "active", "M": "moyenne", "P": "passive", "E": "moyenne ou passive",
+                  "D": "moyenne (déponent)", "O": "passive (déponent)",
+                  "N": "moyenne ou passive (déponent)", "Q": "active impersonnelle", "X": ""},
+        "mood": {"I": "indicatif", "S": "subjonctif", "O": "optatif", "M": "impératif",
+                 "N": "infinitif", "P": "participe", "R": "participe (valeur d’impératif)"},
+        "person": {"1": "1re personne", "2": "2e personne", "3": "3e personne"},
+        "person_number": "{person} du {number}",
+        "suffix": {"N": "négation", "I": "interrogatif", "S": "superlatif", "C": "comparatif",
+                   "ATT": "forme attique", "K": "crase (deux mots fondus en un)",
+                   "P": "avec particule attachée", "ABB": "forme abrégée"},
+    },
+    "sw": {
+        "pos": {"N": "Nomino", "V": "Kitenzi", "A": "Kivumishi", "T": "Kibainishi",
+                "P": "Kiwakilishi cha nafsi", "R": "Kiwakilishi rejeshi", "D": "Kiwakilishi kioneshi",
+                "K": "Kiwakilishi kiambatani", "X": "Kiwakilishi kisichodhahiri", "I": "Kiwakilishi kiulizi",
+                "F": "Kiwakilishi cha kujirejea", "C": "Kiwakilishi cha kutendana", "S": "Kiwakilishi kimilikishi",
+                "Q": "Kiwakilishi kiambatani au kiulizi",
+                "ADV": "Kielezi", "CONJ": "Kiunganishi", "PREP": "Kihusishi", "PRT": "Kijineno",
+                "COND": "Kiunganishi cha sharti", "INJ": "Kiingizi",
+                "HEB": "Neno la Kiebrania", "ARAM": "Neno la Kiaramu"},
+        "indeclinable": {"PRI": "jina la pekee, halibadiliki", "LI": "herufi, haibadiliki",
+                         "OI": "halibadiliki", "NUI": "namba, haibadiliki"},
+        "case": {"N": "kiima (nominativi)", "G": "milikishi (jenitivi)", "D": "kipokezi (dativi)",
+                 "A": "yambwa (akusativi)", "V": "mwito (vokativi)"},
+        "number": {"S": "umoja", "P": "wingi"},
+        "gender": {"M": "kiume", "F": "kike", "N": "si kiume wala kike"},
+        "tense": {"P": "wakati uliopo", "I": "wakati uliopita endelevu", "F": "wakati ujao",
+                  "A": "aoristi", "R": "timilifu", "L": "timilifu ya zamani"},
+        "second": "{} ya pili",
+        "verb": "{tense}, {mood}, {voice}", "voiced": "kauli {}",
+        "voice": {"A": "tendaji", "M": "ya kati", "P": "tendwa", "E": "ya kati au tendwa",
+                  "D": "ya kati (maana tendaji)", "O": "tendwa (maana tendaji)",
+                  "N": "ya kati au tendwa (maana tendaji)", "Q": "tendaji isiyo na mtenda", "X": ""},
+        "mood": {"I": "hali elekezi", "S": "hali tegemezi", "O": "hali ya matamanio", "M": "hali ya amri",
+                 "N": "kitenzi-jina", "P": "kitenzi-kivumishi",
+                 "R": "kitenzi-kivumishi (kama amri)"},
+        "person": {"1": "nafsi ya kwanza", "2": "nafsi ya pili", "3": "nafsi ya tatu"},
+        "person_number": "{person}, {number}",
+        "join": ", ",
+        "suffix": {"N": "kanushi", "I": "kiulizi", "S": "kupita yote", "C": "kulinganisha",
+                   "ATT": "umbo la Kiatiki", "K": "maneno mawili yaliyounganishwa",
+                   "P": "pamoja na kijineno kilichoambatishwa", "ABB": "umbo lililofupishwa"},
+    },
 }
 
 _VERB = re.compile(r"(2?)([PIFARL])([AMPEDONQX])([ISOMNPR])(?:-(.+))?")
@@ -77,7 +138,9 @@ _POSS = re.compile(r"([1-3])([SP])([NGDAV])([SP])([MFN])")
 
 def describe(code, lang="en"):
     w = WORDS[lang]
-    parts = code.split("-")
+    # MACULA's text of John 7:53-8:11 has one stray trailing hyphen ("P-GS-"
+    # at 8:10); an empty last part says nothing, so drop it.
+    parts = code.removesuffix("-").split("-")
     pos, rest = parts[0], parts[1:]
     if pos not in w["pos"]:
         raise ValueError(f"unknown part of speech in {code!r}")
@@ -100,7 +163,8 @@ def describe(code, lang="en"):
             if mood in "PR" and cng:
                 out.append(_cng(cng, w))
             elif pn:
-                out.append(f"{w['person'][pn[1]]} {w['number'][pn[2]]}")
+                out.append(w.get("person_number", "{person} {number}").format(
+                    person=w["person"][pn[1]], number=w["number"][pn[2]]))
             else:
                 raise ValueError(f"unknown verb ending in {code!r}")
         rest = tail
@@ -109,8 +173,9 @@ def describe(code, lang="en"):
         rest = rest[1:]
     elif pos == "S" and rest and _POSS.fullmatch(rest[0]):
         m = _POSS.fullmatch(rest[0])
-        out.append(f"{w['person'][m[1]]} {w['number'][m[2]]} \u00b7 "
-                   f"{w['case'][m[3]]} {w['number'][m[4]]} {w['gender'][m[5]]}")
+        join = w.get("join", " ")
+        out.append(join.join([w["person"][m[1]], w["number"][m[2]]]) + " \u00b7 "
+                   + join.join([w["case"][m[3]], w["number"][m[4]], w["gender"][m[5]]]))
         rest = rest[1:]
     elif rest and _CNG.fullmatch(rest[0]):
         out.append(_cng(_CNG.fullmatch(rest[0]), w))
@@ -128,7 +193,7 @@ def _cng(m, w):
     words += [w["case"][case], w["number"][number]]
     if gender:
         words.append(w["gender"][gender])
-    return " ".join(words)
+    return w.get("join", " ").join(words)
 
 
 # Hebrew and Aramaic: the Open Scriptures Hebrew Bible codes MACULA Hebrew

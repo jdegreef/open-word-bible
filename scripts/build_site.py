@@ -5,7 +5,7 @@ Usage: python3 scripts/build_site.py [-o DIR]
 Needs only the repository: the Greek words come from the committed extracts
 in data/grc/ (see scripts/extract_tokens.py), so a deploy never fetches the
 full sources. Every page is built in each interface language: English at
-the root, Spanish under /es/.
+the root, Spanish under /es/, French under /fr/, Swahili under /sw/.
 """
 import argparse
 import functools
@@ -25,13 +25,13 @@ from typing import NamedTuple  # noqa: E402
 
 from owb import markup, morph, refs  # noqa: E402
 
-BOOK_NAMES = {"GEN": {"en": "Genesis", "es": "Génesis"},
-              "JHN": {"en": "John", "es": "Juan"},
-              "PHP": {"en": "Philippians", "es": "Filipenses"}}
+BOOK_NAMES = {"GEN": {"en": "Genesis", "es": "Génesis", "fr": "Genèse", "sw": "Mwanzo"},
+              "JHN": {"en": "John", "es": "Juan", "fr": "Jean", "sw": "Yohana"},
+              "PHP": {"en": "Philippians", "es": "Filipenses", "fr": "Philippiens", "sw": "Wafilipi"}}
 # Chapters in each book, for "2 of 21 chapters" and a book's completeness.
 BOOK_CHAPTERS = {"GEN": 50, "JHN": 21, "PHP": 4}
 # The interface languages, English first (see catalog below).
-LANGUAGES = ("en", "es")
+LANGUAGES = ("en", "es", "fr", "sw")
 SITE_NAME = "Open Word Bible"
 # The site's home (Render serves it on openwordbible.org and redirects www).
 # Canonical links, the sitemap and link previews use it.
@@ -473,7 +473,11 @@ def load_chapter(book, chapter):
             if first.chapter == chapter:
                 records.append(curl_record(r))
     records.sort(key=lambda r: refs.parse(r["refs"][0]).sort_key() + (r["id"],))
-    words = json.loads(words_path(book, chapter).read_text(encoding="utf-8"))["verses"]
+    # A sentence can run into the next chapter (John 7:53-8:1), so load the
+    # words of every chapter the records touch.
+    words = {}
+    for ch in sorted({chapter} | {refs.parse(v).chapter for r in records for v in r["refs"]}):
+        words.update(json.loads(words_path(book, ch).read_text(encoding="utf-8"))["verses"])
     return records, words
 
 
@@ -507,9 +511,10 @@ def passages():
     out = []
     for b, c in chapters():
         records, words = load_chapter(b, c)
-        verses = len({v for r in records for v in r["refs"]})
+        verses = len(own_verses(records, c))
+        total = sum(refs.parse(v).chapter == c for v in words)
         out.append(Passage(b, c, chapter_url(b, c), chapter_name(records, b, c), records,
-                           verses, verses == len(words)))
+                           verses, verses == total))
     return tuple(out)
 
 
@@ -548,6 +553,12 @@ def chapter_url(book, chapter):
     return f"/{book.lower()}/{chapter}/"
 
 
+def own_verses(records, chapter):
+    """The verses of this chapter the records cover; a record that runs on
+    into the next chapter (John 7:53-8:1) does not count its verses there."""
+    return {v for r in records for v in r["refs"] if refs.parse(v).chapter == chapter}
+
+
 def chapter_title(records, book, chapter, lang="en"):
     verses = [refs.parse(v).verse for r in records for v in r["refs"]]
     return f"{BOOK_NAMES[book][lang]} {chapter}:{min(verses)}–{max(verses)}"
@@ -557,7 +568,7 @@ def chapter_name(records, book, chapter, lang="en"):
     """What the site calls a passage: "Philippians 2" for a whole chapter,
     "John 1:1–18" for part of one. (Share cards keep chapter_title.)"""
     total = len(json.loads(words_path(book, chapter).read_text(encoding="utf-8"))["verses"])
-    verses = {v for r in records for v in r["refs"]}
+    verses = own_verses(records, chapter)
     return f"{BOOK_NAMES[book][lang]} {chapter}" if len(verses) == total else chapter_title(records, book, chapter, lang)
 
 
@@ -679,6 +690,11 @@ def opening_verse(records, lang="en"):
     return plain(markup.VERSE.split(first["renderings"][text_lang(first, lang)]["B"])[0])
 
 
+# A quoted verse in each language's quotation marks (English curly quotes
+# otherwise). French sets its guillemets off with no-break spaces.
+QUOTES_AROUND = {"es": "&laquo;{}&raquo;", "fr": "&laquo;&nbsp;{}&nbsp;&raquo;"}
+
+
 def passage_card(book, chapter, lang="en"):
     """A passage as a card in the article-card style: its opening verse at
     the default settings, and how much of it is translated and recorded."""
@@ -692,7 +708,7 @@ def passage_card(book, chapter, lang="en"):
     done = sum(lang in r["renderings"] for r in records)
     if done < len(records):
         meta += " &middot; " + t(lang, "card.coverage", n=done, total=len(records))
-    q = "&laquo;{}&raquo;" if lang == "es" else "&ldquo;{}&rdquo;"
+    q = QUOTES_AROUND.get(lang, "&ldquo;{}&rdquo;")
     return (f'<li><a class="a-card p-card" href="{url(lang, chapter_url(book, chapter))}">'
             f'<span class="a-section">{BOOK_NAMES[book][lang]} &middot; {languages_label(records)}</span>'
             f'<span class="a-title">{display(chapter_name(records, book, chapter, lang))}</span>'
