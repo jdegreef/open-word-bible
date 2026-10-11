@@ -13,6 +13,7 @@ urlpatterns = [
     path("api/editions/", views.editions),
     path("api/text/<str:book>/<int:chapter>/", views.chapter_text),
     path("api/passages/<str:book>/<int:chapter>/", views.passages),
+    path("api/search/", views.search),
     path("api/auth/methods", accounts.methods),
     path("api/auth/sign-in", accounts.sign_in),
     path("api/auth/sign-up", accounts.sign_up),

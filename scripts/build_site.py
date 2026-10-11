@@ -38,11 +38,13 @@ BOOK_NAMES = {"GEN": {"en": "Genesis", "es": "Génesis", "fr": "Genèse", "sw": 
               "1PE": {"en": "1 Peter", "es": "1 Pedro", "fr": "1 Pierre", "sw": "1 Petro"},
               "2PE": {"en": "2 Peter", "es": "2 Pedro", "fr": "2 Pierre", "sw": "2 Petro"},
               "1JN": {"en": "1 John", "es": "1 Juan", "fr": "1 Jean", "sw": "1 Yohana"},
+              "2JN": {"en": "2 John", "es": "2 Juan", "fr": "2 Jean", "sw": "2 Yohana"},
+              "3JN": {"en": "3 John", "es": "3 Juan", "fr": "3 Jean", "sw": "3 Yohana"},
               "PSA": {"en": "Psalms", "es": "Salmos", "fr": "Psaumes", "sw": "Zaburi"}}
 # A book whose chapters go by another name: "Psalm 23", not "Psalms 23".
 CHAPTER_NAMES = {"PSA": {"en": "Psalm", "es": "Salmo", "fr": "Psaume", "sw": "Zaburi"}}
 # Chapters in each book, for "2 of 21 chapters" and a book's completeness.
-BOOK_CHAPTERS = {"GEN": 50, "MAT": 28, "JHN": 21, "ROM": 16, "GAL": 6, "EPH": 6, "PHP": 4, "COL": 4, "PHM": 1, "JAS": 5, "1PE": 5, "2PE": 3, "1JN": 5, "PSA": 150}
+BOOK_CHAPTERS = {"GEN": 50, "MAT": 28, "JHN": 21, "ROM": 16, "GAL": 6, "EPH": 6, "PHP": 4, "COL": 4, "PHM": 1, "JAS": 5, "1PE": 5, "2PE": 3, "1JN": 5, "2JN": 1, "3JN": 1, "PSA": 150}
 # The interface languages, English first (see catalog below).
 LANGUAGES = ("en", "es", "fr", "sw")
 SITE_NAME = "Open Word Bible"
@@ -793,9 +795,10 @@ def chapter_page(book, chapter, lang="en"):
   {control("gender", "gender", [("0", t(lang, "reader.inclusive")), ("1", t(lang, "reader.traditional"))])}
   {title_control}
   {control("pronouns", "deity_pronoun", [("0", t(lang, "reader.he")), ("1", t(lang, "reader.He"))])}{units}{plural}
+  {control("headings", "headings", [("0", t(lang, "reader.show")), ("1", t(lang, "reader.hide"))])}
   {control("view", "view", [("0", t(lang, "reader.study")), ("1", t(lang, "reader.reading"))], " view-control")}
 </div>
-<p class="hint"><span id="hint-level"></span> <span id="hint-gender"></span> <span id="hint-{title_setting}"></span> <span id="hint-deity_pronoun"></span> <span id="hint-units"></span> <span id="hint-plural_you"></span> <span id="hint-view"></span></p>
+<p class="hint"><span id="hint-level"></span> <span id="hint-gender"></span> <span id="hint-{title_setting}"></span> <span id="hint-deity_pronoun"></span> <span id="hint-units"></span> <span id="hint-plural_you"></span> <span id="hint-headings"></span> <span id="hint-view"></span></p>
 </div>
 <div class="reader">
   <article class="passage">
@@ -1783,11 +1786,14 @@ def article_text(body, lang="en"):
 
 
 @functools.lru_cache(maxsize=None)
-def search_index(lang):
-    """The search index for pages in lang, as JSON text. Kinds: "c" a
-    passage, "v" a sentence (its text at each level, with the settings
-    spans left in for the browser to render), "n" a note (a decision),
-    "a" an article."""
+def search_documents(lang):
+    """Everything search can find on pages in lang: interface text, the
+    books, page shortcuts, and the documents. Kinds: "c" a passage, "v" a
+    sentence (its text at each level, with the settings spans left in for
+    the browser to render), "n" a note (a decision), "a" an article. The
+    API (backend/translation/search.py) indexes these same documents, so
+    the site and the API find the same things. Callers must not change
+    the result: it is cached."""
     ui = dict(catalog(lang)["search.ui"])
     ui["levels"] = catalog(lang)["levels"]
     ui["category"] = catalog(lang)["reader.ui"]["category"]
@@ -1837,9 +1843,14 @@ def search_index(lang):
     for d in docs:
         if d.get("l") == lang:
             del d["l"]
-    data = {"lang": lang, "ui": ui, "books": book_list, "docs": docs,
+    return {"lang": lang, "ui": ui, "books": book_list, "docs": docs,
             "pages": [[html.unescape(t(lang, key)), url(lang, path)] for key, path in SEARCH_PAGES]}
-    return json.dumps(data, ensure_ascii=False, separators=(",", ":"))
+
+
+@functools.lru_cache(maxsize=None)
+def search_index(lang):
+    """The search index for pages in lang, as JSON text (search_documents)."""
+    return json.dumps(search_documents(lang), ensure_ascii=False, separators=(",", ":"))
 
 
 @functools.lru_cache(maxsize=None)
@@ -1920,7 +1931,7 @@ def sitemap(paths):
 
 
 def build(out):
-    for cached in (nav_menus, footer_links, passages, asset, translated_verses, catalog, search_index,
+    for cached in (nav_menus, footer_links, passages, asset, translated_verses, catalog, search_documents, search_index,
                    search_index_url, word_uses):
         cached.cache_clear()
     if out.exists():
