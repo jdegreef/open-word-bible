@@ -476,6 +476,12 @@
     close.setAttribute("aria-label", t("close"));
     close.addEventListener("click", deselect);
     panel.appendChild(close);
+    var handle = el("button", "sheet-handle");
+    handle.type = "button";
+    handle.setAttribute("aria-expanded", panelEl.classList.contains("full") ? "true" : "false");
+    handle.setAttribute("aria-label", t("sheet_expand"));
+    handle.addEventListener("click", function () { expand(!panelEl.classList.contains("full")); });
+    panel.appendChild(handle);
     var ref = DATA.title.replace(/[\d:\u2013\s]+$/, "") + " " + (crossesChapter(current) ? "" : DATA.chapter + ":") +
       verseRange(current);
     var title = el("h2", "panel-title");
@@ -623,6 +629,13 @@
   function sheet(open) {
     panelEl.classList.toggle("open", open);
     document.body.classList.toggle("sheet-open", open);
+    if (!open) expand(false);
+  }
+
+  function expand(full) {
+    panelEl.classList.toggle("full", full);
+    var handle = panelEl.querySelector(".sheet-handle");
+    if (handle) handle.setAttribute("aria-expanded", full ? "true" : "false");
   }
 
   function select(record, verse, decision) {
@@ -747,7 +760,9 @@
     var dy = e.type === "touchend" ? e.changedTouches[0].clientY - startY : 0;
     panelEl.style.transform = panelEl.style.transition = "";
     startY = null;
-    if (dy > 80) deselect();
+    var full = panelEl.classList.contains("full");
+    if (dy < -60 && !full) expand(true);
+    else if (dy > 80) { if (full) expand(false); else deselect(); }
   }
   panelEl.addEventListener("touchend", endDrag);
   panelEl.addEventListener("touchcancel", endDrag);

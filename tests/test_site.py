@@ -330,6 +330,14 @@ class SiteTest(unittest.TestCase):
         self.assertIn('addEventListener("copy"', reader)
         self.assertIn('" (Open Word Bible, "', reader)
 
+    def test_reader_can_go_to_a_reference(self):
+        page = (self.out / "jhn" / "2" / "index.html").read_text(encoding="utf-8")
+        strip = re.search(r'<nav class="chapstrip"(.*?)</nav>', page, re.S)[1]
+        self.assertIn('class="chap-goto" data-open-search', strip)
+        search = (self.out / "search.js").read_text(encoding="utf-8")
+        # A reference is the palette's first row, so Enter goes straight to it.
+        self.assertLess(search.index('fill(ui("go_to")'), search.index('fill(ui("show_all")'))
+
     def test_read_page_groups_chapters_by_book(self):
         read = (self.out / "read" / "index.html").read_text(encoding="utf-8")
         for book, chaps in build_site.books():

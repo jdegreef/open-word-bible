@@ -766,6 +766,8 @@ def chapter_strip(book, chapter, lang="en"):
     return (f'<nav class="chapstrip" aria-label="{t(lang, "reader.strip", book=name)}">'
             f'<a class="chap-book" href="{url(lang, f"/read/#{book.lower()}")}">{icon(ICONS["book"], 16)}{name}</a>'
             f'<span class="chap-pills">{chapter_pills(chaps, lang, chapter, BOOK_CHAPTERS[book])}</span>'
+            f'<button type="button" class="chap-goto" data-open-search aria-keyshortcuts="/">'
+            f'{icon(ICONS["search"], 15)}{t(lang, "reader.goto")}</button>'
             f'<span class="chap-progress">{progress}</span></nav>')
 
 

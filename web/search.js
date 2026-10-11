@@ -401,13 +401,14 @@
         rows = [];
         if (q.length >= MIN) {
           var terms = parse(q);
-          rows.push({ all: true, kindLabel: "\u21b5", title: fill(ui("show_all"), { q: q }), href: searchUrl(SEARCH_BASE, q) });
+          // A reference comes first, so "jn 3:16" and Enter goes straight there.
           var ref = reference(q);
           if (ref && ref.url) {
             rows.push(ref.shown.length
               ? { kindLabel: ui("kind").v, title: fill(ui("go_to"), { ref: ref.label }), href: ref.url }
               : { kindLabel: ui("kind").c, title: fill(ui("read_passage"), { ref: ref.chapterLabel }), href: ref.url });
           }
+          rows.push({ all: true, kindLabel: "\u21b5", title: fill(ui("show_all"), { q: q }), href: searchUrl(SEARCH_BASE, q) });
           rows = rows.concat(pages(q));
           // The best few of each kind, in a fixed order: passages, verses,
           // notes, articles.
@@ -497,6 +498,11 @@
         e.preventDefault();
         if (onSearchPage) document.getElementById("search-q").focus(); else open();
       }
+    });
+    // The reader's "Go to" button opens the palette too.
+    document.querySelectorAll("[data-open-search]").forEach(function (b) {
+      b.addEventListener("click", function () { open(); });
+      b.addEventListener("pointerenter", function () { load().catch(function () {}); }, { once: true });
     });
     if (button) {
       button.addEventListener("click", function (e) {
