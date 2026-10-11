@@ -76,6 +76,9 @@
         var v = b.getAttribute("data-value");
         var on = String(settings[name]) === v;
         b.setAttribute("aria-pressed", on ? "true" : "false");
+        // On wide screens the explanations are tooltips, so the bar stays one row.
+        var hint = UI["hint_" + name] && UI["hint_" + name][v];
+        if (hint) b.title = hint;
       });
     });
     document.getElementById("hint-level").textContent = t("hint_level")[settings.level];
@@ -123,7 +126,71 @@
     return text + ".";
   }
 
+  // A footnote opens in place, under its letter, so reading never jumps to
+  // the foot of the page. "See the reasoning" opens the decision in the panel.
+  var popover = null;
+
+  function closeNote(refocus) {
+    if (!popover) return;
+    var opener = popover.opener;
+    popover.remove();
+    popover = null;
+    if (opener) {
+      opener.setAttribute("aria-expanded", "false");
+      if (refocus && document.contains(opener)) opener.focus();
+    }
+  }
+
+  function openNote(button, n) {
+    var same = popover && popover.opener === button;
+    closeNote(false);
+    if (same) return;
+    var box = el("div", "fn-pop");
+    box.id = "fn-pop";
+    box.setAttribute("role", "dialog");
+    box.setAttribute("aria-label", t("fn_open").replace("{m}", n.mark));
+    var head = el("p", "fn-pop-head");
+    head.appendChild(el("span", "note-mark", n.mark));
+    head.appendChild(el("span", "note-ref", verseRange(n.record)));
+    var cat = t("category")[n.decision.category];
+    if (cat) head.appendChild(el("span", "fn-pop-cat", cat));
+    box.appendChild(head);
+    box.appendChild(el("p", "fn-pop-text", noteText(n.decision)));
+    var more = el("button", "fn-pop-more", t("fn_reasoning") + " \u2192");
+    more.type = "button";
+    more.addEventListener("click", function () {
+      closeNote(false);
+      select(n.record, null, n.decision.id);
+    });
+    box.appendChild(more);
+    box.addEventListener("click", function (e) { e.stopPropagation(); });
+    document.body.appendChild(box);
+    popover = box;
+    box.opener = button;
+    button.setAttribute("aria-expanded", "true");
+    button.setAttribute("aria-controls", "fn-pop");
+    placeNote();
+    more.focus({ preventScroll: true });
+  }
+
+  // Under the letter, kept inside the window.
+  function placeNote() {
+    if (!popover) return;
+    var r = popover.opener.getBoundingClientRect();
+    var w = popover.offsetWidth, gap = 16;
+    var left = Math.min(Math.max(gap, r.left + r.width / 2 - w / 2), document.documentElement.clientWidth - w - gap);
+    var top = r.bottom + 8;
+    if (top + popover.offsetHeight > window.innerHeight - gap && r.top - popover.offsetHeight - 8 > gap)
+      top = r.top - popover.offsetHeight - 8;
+    popover.style.left = left + window.scrollX + "px";
+    popover.style.top = top + window.scrollY + "px";
+  }
+
+  document.addEventListener("click", function () { closeNote(false); });
+  window.addEventListener("resize", placeNote);
+
   function drawText() {
+    closeNote(false);
     var box = document.getElementById("text");
     box.textContent = "";
     var partial = DATA.records.some(function (r) { return !r.renderings[settings.lang]; });
@@ -155,8 +222,17 @@
         shown = part[0];
         span.appendChild(document.createTextNode(part[1]));
         if (marks.length && i === parts.length - 1) {
-          var sup = el("sup", "fn", marks.join(","));
-          sup.setAttribute("aria-label", t("notes") + " " + marks.join(", "));
+          var sup = el("sup", "fn");
+          marks.forEach(function (mark) {
+            var n = notes.filter(function (x) { return x.mark === mark; })[0];
+            var b = el("button", "fn-mark", mark);
+            b.type = "button";
+            b.setAttribute("aria-label", t("fn_open").replace("{m}", mark));
+            b.setAttribute("aria-expanded", "false");
+            b.addEventListener("click", function (e) { e.stopPropagation(); openNote(b, n); });
+            b.addEventListener("keydown", function (e) { e.stopPropagation(); });
+            sup.appendChild(b);
+          });
           span.appendChild(sup);
         }
         span.addEventListener("click", function () { select(r, part[0]); });
@@ -203,6 +279,7 @@
   function drawCard(d, record) {
     var card = el("div", "card");
     card.tabIndex = 0;
+    card.dataset.decision = d.id;
     var cat = el("div", "cat", t("category")[d.category] || d.category);
     if (d.uncertain) cat.appendChild(el("span", "badge unc", t("uncertain")));
     if (d.footnote) cat.appendChild(el("span", "badge", t("footnote")));
@@ -283,6 +360,32 @@
     });
     panel.appendChild(gloss);
 
+    // The same sentence at each level, side by side; choosing one reads the
+    // chapter at it.
+    panel.appendChild(el("h3", null, t("levels")));
+    var lang = textLang(current);
+    var levels = el("div", "levels");
+    if (lang !== settings.lang) levels.lang = lang;
+    ["L", "B", "R"].forEach(function (code) {
+      var on = code === settings.level;
+      var b = el("button", "lvl-row" + (on ? " on" : ""));
+      b.type = "button";
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+      var name = el("span", "lvl-name", t(code));
+      if (on) name.appendChild(el("span", "badge", t("reading")));
+      b.appendChild(name);
+      var text = el("span", "lvl-text");
+      splitVerses(current, render(current.renderings[lang][code])).forEach(function (part, i) {
+        if (i > 0) text.appendChild(el("sup", null, " " + part[0] + " "));
+        text.appendChild(document.createTextNode(part[1]));
+      });
+      b.appendChild(text);
+      b.addEventListener("click", function () { if (!on) setSetting("level", code); });
+      levels.appendChild(b);
+    });
+    panel.appendChild(el("p", "hint", t("levels_hint")));
+    panel.appendChild(levels);
+
     var ds = decisionsFor(current);
     panel.appendChild(el("h3", null, t("meaning")));
     if (t("notes_language")) panel.appendChild(el("p", "empty", t("notes_language")));
@@ -305,7 +408,7 @@
     document.body.classList.toggle("sheet-open", open);
   }
 
-  function select(record, verse) {
+  function select(record, verse, decision) {
     current = record;
     verse = verse || verseOf(record.refs[0]);
     try { history.replaceState(null, "", "#v" + verse); } catch (e) { /* ignore */ }
@@ -313,11 +416,17 @@
     drawPanel();
     panelEl.scrollTop = 0;
     sheet(true);
+    var card = decision && panelEl.querySelector('.card[data-decision="' + decision + '"]');
+    if (card) {
+      card.focus({ preventScroll: true });
+      card.scrollIntoView({ block: "nearest" });
+      if (!narrow()) return;
+    }
     if (narrow()) {
       var v = verseEl(verse);
       if (v) v.scrollIntoView({ behavior: "smooth", block: "start" });
       // The sheet covers the text below the verse, so take focus into it.
-      panelEl.focus({ preventScroll: true });
+      if (!card) panelEl.focus({ preventScroll: true });
     }
   }
 
@@ -337,6 +446,16 @@
   }
 
   document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && popover) { closeNote(true); return; }
+    // Left and right arrows turn to the previous and next passage, unless
+    // the reader is typing or a control wants the arrows.
+    if ((e.key === "ArrowLeft" || e.key === "ArrowRight") && !e.altKey && !e.ctrlKey && !e.metaKey && !e.shiftKey) {
+      var tag = (e.target.tagName || "").toLowerCase();
+      if (tag !== "input" && tag !== "textarea" && tag !== "select" && !e.target.isContentEditable) {
+        var turn = document.querySelector('[data-turn="' + (e.key === "ArrowLeft" ? "prev" : "next") + '"]');
+        if (turn) { e.preventDefault(); location.href = turn.href; return; }
+      }
+    }
     // An Escape that closes a header menu (site.js: the colour menu, a
     // dropdown or the narrow-screen menu) leaves the sheet open.
     var menuOpen = !!document.querySelector('header.site [aria-expanded="true"]');
@@ -365,6 +484,25 @@
   panelEl.addEventListener("touchend", endDrag);
   panelEl.addEventListener("touchcancel", endDrag);
 
+  function setSetting(name, value) {
+    var top = panelEl.scrollTop;
+    settings[name] = value;
+    save();
+    drawControls();
+    drawText();
+    drawPanel();
+    panelEl.scrollTop = top;
+  }
+
+  // The settings bar sticks under the header; the panel sticks under both,
+  // so it needs the bar's height (it changes as the bar wraps).
+  var settingsEl = document.getElementById("settings");
+  function measure() {
+    document.documentElement.style.setProperty("--settings-h", settingsEl.offsetHeight + "px");
+  }
+  if (window.ResizeObserver) new ResizeObserver(measure).observe(settingsEl);
+  measure();
+
   var toggle = document.getElementById("settings-toggle");
   toggle.addEventListener("click", function () {
     var open = toggle.getAttribute("aria-expanded") !== "true";
@@ -376,11 +514,7 @@
     seg.querySelectorAll("button").forEach(function (b) {
       b.addEventListener("click", function () {
         var v = b.getAttribute("data-value");
-        settings[name] = /^\d+$/.test(v) ? Number(v) : v;
-        save();
-        drawControls();
-        drawText();
-        drawPanel();
+        setSetting(name, /^\d+$/.test(v) ? Number(v) : v);
       });
     });
   });

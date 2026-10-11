@@ -73,7 +73,7 @@ class SiteTest(unittest.TestCase):
     def test_chapter_has_a_notes_section(self):
         page = (self.out / "jhn" / "1" / "index.html").read_text(encoding="utf-8")
         self.assertIn('id="notes"', page)
-        self.assertIn("Small letters mark footnotes", page)
+        self.assertIn("Tap a small letter to read its footnote", page)
         reader = (self.out / "reader.js").read_text(encoding="utf-8")
         # Alternatives a decision set aside are never offered as possible.
         self.assertIn('d.uncertain ? "fn_or" : "also"', reader)
