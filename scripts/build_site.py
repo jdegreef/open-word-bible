@@ -1562,6 +1562,10 @@ def search_index(lang):
         docs.append({"k": "c", "bk": p.book, "c": p.chapter, "t": title, "u": url(lang, p.url), "s": html.unescape(languages_label(p.records)),
                      "h": " ".join([title, refs.BOOK_NAMES[p.book], *BOOK_NAMES[p.book].values()])})
         for r in p.records:
+            # A sentence that runs into the next chapter (John 7:53-8:1) is
+            # found once, in the chapter it starts in.
+            if refs.parse(r["refs"][0]).chapter != p.chapter:
+                continue
             shown = text_lang(r, lang)
             verse = refs.parse(r["refs"][0]).verse
             doc = {"k": "v", "bk": p.book, "c": p.chapter, "v": verse,
