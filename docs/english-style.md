@@ -148,6 +148,8 @@ Settings change wording, never meaning. **(checked)** Use a setting span
   `about {{units:20 to 30 gallons|two or three measures}}`. Literal keeps the
   original unit. US units are the modern default; metric belongs to a future
   UK/metric setting, not to `units`.
+  The reader shows a Measures control on any page whose text has a `units`
+  span. A cubit is about 18 inches (Genesis 6:15).
 - `divine_name`, `units`, `spelling`: when they apply (the Old Testament,
   measures and money).
 
@@ -192,3 +194,22 @@ were considered, and the reason, in plain language a lay reader can follow.
 
 Every new record is `ai_draft`. Nothing is marked reviewed until a named human
 reviewer approves it, and an AI never changes a status.
+
+## 9. Section headings
+
+Headings are editorial aids, not translation (`data/headings.json`). Readers
+can hide them, and every heading stays an AI draft until a named reviewer
+approves it.
+
+- A heading stands where the SBLGNT starts a paragraph. **(checked)** It
+  never splits what the Greek holds together.
+- Say what the section is about, briefly, in the passage's own wording where
+  it can ("God's complete armor", Ephesians 6:10; "Clothed in love",
+  Colossians 3:12). Do not interpret it: a heading must not settle a question
+  the decisions leave open.
+- Do not cut across the grammar. Ephesians 5:22 borrows its verb from 5:21,
+  so its heading begins "Submitting to one another".
+- Never copy the headings of a copyrighted translation; they pull drafts
+  toward familiar wording just as verses do.
+- A heading may use reader settings (`{{christos:Christ|the Messiah}}`), like
+  any rendering. No contractions; sentence case.
