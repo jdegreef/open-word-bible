@@ -41,6 +41,60 @@ BOOK_NAMES = {"GEN": {"en": "Genesis", "es": "Génesis", "fr": "Genèse", "sw": 
               "2JN": {"en": "2 John", "es": "2 Juan", "fr": "2 Jean", "sw": "2 Yohana"},
               "3JN": {"en": "3 John", "es": "3 Juan", "fr": "3 Jean", "sw": "3 Yohana"},
               "PSA": {"en": "Psalms", "es": "Salmos", "fr": "Psaumes", "sw": "Zaburi"}}
+# The rest of the canon, for the footer's index of every book. A book drafted
+# later goes in BOOK_NAMES too; book_name looks there first.
+OTHER_BOOK_NAMES = {
+    "EXO": {"en": "Exodus", "es": "Éxodo", "fr": "Exode", "sw": "Kutoka"},
+    "LEV": {"en": "Leviticus", "es": "Levítico", "fr": "Lévitique", "sw": "Mambo ya Walawi"},
+    "NUM": {"en": "Numbers", "es": "Números", "fr": "Nombres", "sw": "Hesabu"},
+    "DEU": {"en": "Deuteronomy", "es": "Deuteronomio", "fr": "Deutéronome", "sw": "Kumbukumbu la Torati"},
+    "JOS": {"en": "Joshua", "es": "Josué", "fr": "Josué", "sw": "Yoshua"},
+    "JDG": {"en": "Judges", "es": "Jueces", "fr": "Juges", "sw": "Waamuzi"},
+    "RUT": {"en": "Ruth", "es": "Rut", "fr": "Ruth", "sw": "Ruthu"},
+    "1SA": {"en": "1 Samuel", "es": "1 Samuel", "fr": "1 Samuel", "sw": "1 Samweli"},
+    "2SA": {"en": "2 Samuel", "es": "2 Samuel", "fr": "2 Samuel", "sw": "2 Samweli"},
+    "1KI": {"en": "1 Kings", "es": "1 Reyes", "fr": "1 Rois", "sw": "1 Wafalme"},
+    "2KI": {"en": "2 Kings", "es": "2 Reyes", "fr": "2 Rois", "sw": "2 Wafalme"},
+    "1CH": {"en": "1 Chronicles", "es": "1 Crónicas", "fr": "1 Chroniques", "sw": "1 Mambo ya Nyakati"},
+    "2CH": {"en": "2 Chronicles", "es": "2 Crónicas", "fr": "2 Chroniques", "sw": "2 Mambo ya Nyakati"},
+    "EZR": {"en": "Ezra", "es": "Esdras", "fr": "Esdras", "sw": "Ezra"},
+    "NEH": {"en": "Nehemiah", "es": "Nehemías", "fr": "Néhémie", "sw": "Nehemia"},
+    "EST": {"en": "Esther", "es": "Ester", "fr": "Esther", "sw": "Esta"},
+    "JOB": {"en": "Job", "es": "Job", "fr": "Job", "sw": "Ayubu"},
+    "PRO": {"en": "Proverbs", "es": "Proverbios", "fr": "Proverbes", "sw": "Mithali"},
+    "ECC": {"en": "Ecclesiastes", "es": "Eclesiastés", "fr": "Ecclésiaste", "sw": "Mhubiri"},
+    "SNG": {"en": "Song of Songs", "es": "Cantares", "fr": "Cantique des cantiques", "sw": "Wimbo Ulio Bora"},
+    "ISA": {"en": "Isaiah", "es": "Isaías", "fr": "Ésaïe", "sw": "Isaya"},
+    "JER": {"en": "Jeremiah", "es": "Jeremías", "fr": "Jérémie", "sw": "Yeremia"},
+    "LAM": {"en": "Lamentations", "es": "Lamentaciones", "fr": "Lamentations", "sw": "Maombolezo"},
+    "EZK": {"en": "Ezekiel", "es": "Ezequiel", "fr": "Ézéchiel", "sw": "Ezekieli"},
+    "DAN": {"en": "Daniel", "es": "Daniel", "fr": "Daniel", "sw": "Danieli"},
+    "HOS": {"en": "Hosea", "es": "Oseas", "fr": "Osée", "sw": "Hosea"},
+    "JOL": {"en": "Joel", "es": "Joel", "fr": "Joël", "sw": "Yoeli"},
+    "AMO": {"en": "Amos", "es": "Amós", "fr": "Amos", "sw": "Amosi"},
+    "OBA": {"en": "Obadiah", "es": "Abdías", "fr": "Abdias", "sw": "Obadia"},
+    "JON": {"en": "Jonah", "es": "Jonás", "fr": "Jonas", "sw": "Yona"},
+    "MIC": {"en": "Micah", "es": "Miqueas", "fr": "Michée", "sw": "Mika"},
+    "NAM": {"en": "Nahum", "es": "Nahúm", "fr": "Nahoum", "sw": "Nahumu"},
+    "HAB": {"en": "Habakkuk", "es": "Habacuc", "fr": "Habacuc", "sw": "Habakuki"},
+    "ZEP": {"en": "Zephaniah", "es": "Sofonías", "fr": "Sophonie", "sw": "Sefania"},
+    "HAG": {"en": "Haggai", "es": "Hageo", "fr": "Aggée", "sw": "Hagai"},
+    "ZEC": {"en": "Zechariah", "es": "Zacarías", "fr": "Zacharie", "sw": "Zekaria"},
+    "MAL": {"en": "Malachi", "es": "Malaquías", "fr": "Malachie", "sw": "Malaki"},
+    "MRK": {"en": "Mark", "es": "Marcos", "fr": "Marc", "sw": "Marko"},
+    "LUK": {"en": "Luke", "es": "Lucas", "fr": "Luc", "sw": "Luka"},
+    "ACT": {"en": "Acts", "es": "Hechos", "fr": "Actes", "sw": "Matendo"},
+    "1CO": {"en": "1 Corinthians", "es": "1 Corintios", "fr": "1 Corinthiens", "sw": "1 Wakorintho"},
+    "2CO": {"en": "2 Corinthians", "es": "2 Corintios", "fr": "2 Corinthiens", "sw": "2 Wakorintho"},
+    "1TH": {"en": "1 Thessalonians", "es": "1 Tesalonicenses", "fr": "1 Thessaloniciens", "sw": "1 Wathesalonike"},
+    "2TH": {"en": "2 Thessalonians", "es": "2 Tesalonicenses", "fr": "2 Thessaloniciens", "sw": "2 Wathesalonike"},
+    "1TI": {"en": "1 Timothy", "es": "1 Timoteo", "fr": "1 Timothée", "sw": "1 Timotheo"},
+    "2TI": {"en": "2 Timothy", "es": "2 Timoteo", "fr": "2 Timothée", "sw": "2 Timotheo"},
+    "TIT": {"en": "Titus", "es": "Tito", "fr": "Tite", "sw": "Tito"},
+    "HEB": {"en": "Hebrews", "es": "Hebreos", "fr": "Hébreux", "sw": "Waebrania"},
+    "JUD": {"en": "Jude", "es": "Judas", "fr": "Jude", "sw": "Yuda"},
+    "REV": {"en": "Revelation", "es": "Apocalipsis", "fr": "Apocalypse", "sw": "Ufunuo"},
+}
 # A book whose chapters go by another name: "Psalm 23", not "Psalms 23".
 CHAPTER_NAMES = {"PSA": {"en": "Psalm", "es": "Salmo", "fr": "Psaume", "sw": "Zaburi"}}
 # Chapters in each book, for "2 of 21 chapters" and a book's completeness.
@@ -409,8 +463,6 @@ def footer_links(lang):
         return "".join(f'<li><a href="{href}"{f" lang={tl}" if tl and tl != lang else ""}>{label}</a></li>'
                        for href, label, tl in pairs)
 
-    read = [(url(lang, f"/read/#{book.lower()}"), BOOK_NAMES[book][lang], None) for book, _ in books(lang)]
-    read.append((url(lang, "/read/"), t(lang, "nav.all_books"), None))
     start = sorted((a for a in load_articles(lang) if a["section"] == "method"), key=lambda a: a["order"])[:3]
     learn = [(url(lang, article_url(a)), display(a["title"]), a["lang"]) for a in start]
     learn.append((url(lang, "/articles/"), t(lang, "nav.all_articles"), None))
@@ -419,9 +471,47 @@ def footer_links(lang):
                (url(lang, "/#help"), t(lang, "nav.help"), None),
                (GITHUB_URL, t(lang, "nav.source"), None),
                (GITHUB_URL + "/issues/new", t(lang, "footer.report"), None)]
-    return (f'<nav aria-labelledby="foot-read"><h2 id="foot-read">{t(lang, "footer.read")}</h2><ul>{items(read)}</ul></nav>\n'
-            f'<nav aria-labelledby="foot-learn"><h2 id="foot-learn">{t(lang, "footer.learn")}</h2><ul>{items(learn)}</ul></nav>\n'
-            f'<nav aria-labelledby="foot-project"><h2 id="foot-project">{t(lang, "footer.project")}</h2><ul>{items(project)}</ul></nav>')
+    project = items(project).replace('/issues/new"', '/issues/new" data-report', 1)
+    return (f'<nav aria-labelledby="foot-learn"><h2 id="foot-learn">{t(lang, "footer.learn")}</h2><ul>{items(learn)}</ul></nav>\n'
+            f'<nav aria-labelledby="foot-project"><h2 id="foot-project">{t(lang, "footer.project")}</h2><ul>{project}</ul></nav>')
+
+
+def book_name(book, lang):
+    """A book's name in lang, drafted or not."""
+    return (BOOK_NAMES.get(book) or OTHER_BOOK_NAMES[book])[lang]
+
+
+@functools.lru_cache(maxsize=None)
+def book_index(lang):
+    """The footer's index of all 66 books, by testament. A book with chapters
+    in lang links to it on the Read page (dashed while some chapters are
+    still missing); the others are greyed out, so the index stays the same
+    size as the translation grows."""
+    have = dict(books(lang))
+
+    def chip(book):
+        name = book_name(book, lang)
+        if book not in have:
+            return (f'<li><span class="book-chip none">{name}'
+                    f'<span class="sr-only"> ({t(lang, "footer.key_none")})</span></span></li>')
+        done, total, progress = book_progress(book, have[book], lang)
+        return (f'<li><a class="book-chip{"" if done == total else " part"}" '
+                f'href="{url(lang, f"/read/#{book.lower()}")}" title="{progress}">{name}</a></li>')
+
+    def testament(key, codes):
+        started = sum(b in have for b in codes)
+        return (f'<section class="testament" aria-labelledby="foot-{key}"><div class="testament-head">'
+                f'<h3 id="foot-{key}">{t(lang, "footer." + key)}</h3>'
+                f'<span>{t(lang, "footer.started", done=started, total=len(codes))}</span></div>'
+                f'<ul class="book-chips">{"".join(chip(b) for b in codes)}</ul></section>')
+
+    key = "".join(f'<span><span class="book-chip{cls}" aria-hidden="true"></span>{t(lang, "footer.key_" + k)}</span>'
+                  for k, cls in (("done", ""), ("part", " part"), ("none", " none")))
+    return (f'<nav class="foot-books" aria-labelledby="foot-read"><h2 id="foot-read">{t(lang, "footer.read")}</h2>'
+            f'<div class="testaments">{testament("old_testament", refs.OT_CODES)}'
+            f'{testament("new_testament", refs.BOOK_CODES[39:])}</div>'
+            f'<p class="foot-key">{key}<a href="{url(lang, "/read/")}">{t(lang, "nav.all_books")}'
+            f'{icon(ICONS["arrow"], 15)}</a></p></nav>')
 
 
 def language_links(lang, path):
@@ -440,21 +530,34 @@ def language_links(lang, path):
 
 
 def site_footer(lang, path=None):
-    """The footer on every page: the passages, the first articles to read,
-    the project's links, and the language switch."""
+    """The footer on every page, in three tiers: the project and a box to go
+    to a passage; an index of every book; then the first articles to read,
+    the project's links and the language switch."""
     home = url(lang, "/")
+    placeholder = html.escape(catalog(lang)["search.ui"]["palette_placeholder"])
     return f"""<footer class="site"><div class="wrap">
-<div class="foot-grid">
+<div class="foot-top">
 <div class="foot-about">
 <a class="brand" href="{home}">{MARK}<span class="brand-name">Open Word <em>Bible</em></span></a>
 <p>{t(lang, "footer.tagline")}</p>
 <p class="foot-licence"><span class="pill">CC0</span> {t(lang, "footer.licence")}</p>
 </div>
-{footer_links(lang)}
+<div class="foot-find">
+<h2 id="foot-find">{t(lang, "footer.find")}</h2>
+<form class="foot-search" action="{url(lang, "/search/")}" method="get" role="search" aria-labelledby="foot-find">
+<input type="search" name="q" id="foot-q" autocomplete="off" spellcheck="false" enterkeyhint="go" placeholder="{placeholder}" aria-labelledby="foot-find">
+<button class="button" type="submit">{t(lang, "footer.go")}</button>
+</form>
+{resume_link(lang, "foot-resume")}
 </div>
+</div>
+{book_index(lang)}
+<div class="foot-grid">
+{footer_links(lang)}
 {language_links(lang, path)}
+</div>
 <div class="foot-base">
-<p>{t(lang, "footer.review")}</p>
+<p class="foot-review">{t(lang, "footer.review")}</p>
 <p>{t(lang, "footer.licences")}</p>
 </div>
 </div></footer>"""
@@ -974,12 +1077,12 @@ def passage_card(book, chapter, lang="en"):
             f'<span class="a-meta">{meta}</span></a></li>')
 
 
-def resume_link(lang):
+def resume_link(lang, cls="button"):
     """A link back to the verse the reader was last at, hidden until
     web/site.js finds one saved by web/reader.js (owb.place). It carries the
     book names in lang, so the link names the passage in the page's language."""
     names = json.dumps({b: BOOK_NAMES[b][lang] for b, _ in books()}, ensure_ascii=False)
-    return (f'<a class="button" data-resume hidden data-label="{html.escape(t(lang, "resume.link"))}" '
+    return (f'<a class="{cls}" data-resume hidden data-label="{html.escape(t(lang, "resume.link"))}" '
             f'data-prefix="{url(lang, "")}" data-books="{html.escape(names)}" href="{url(lang, "/read/")}">'
             f'{icon(ICONS["book"])}<span></span></a>')
 

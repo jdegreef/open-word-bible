@@ -390,35 +390,69 @@ header.site .tools { display: flex; align-items: center; gap: 8px; flex: none; }
 }
 .prefs-menu button[aria-checked="true"] .check { visibility: visible; }
 
-/* Footer: an indigo-to-gold hairline, the project, then three link columns. */
+/* Footer: an indigo-to-gold hairline, then three tiers: the project and a
+   box to go to a passage; an index of all 66 books; the link columns. */
 footer.site {
-  position: relative; background: var(--surface-2); margin-top: 96px; padding: 56px 0 28px; font-size: 15px;
+  position: relative; background: var(--surface-2); margin-top: 96px; padding: 52px 0 28px; font-size: 15px;
 }
 footer.site::before {
   content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px;
   background: linear-gradient(90deg, var(--accent) 0%, var(--accent) 55%, var(--gold) 100%);
 }
-.foot-grid { display: grid; grid-template-columns: minmax(0, 1.6fr) repeat(3, minmax(0, 1fr)); gap: 32px; }
-.foot-about p { color: var(--muted); max-width: 34ch; margin: 14px 0 0; }
-footer.site h2 { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 8px 0 14px; }
+footer.site h2 { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0 0 14px; }
 footer.site ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 9px; }
 footer.site nav a { color: var(--text); text-decoration: none; }
 footer.site nav a:hover { color: var(--accent); text-decoration: underline; }
+.foot-top { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 32px 48px; align-items: start; }
+.foot-about p { color: var(--muted); max-width: 40ch; margin: 14px 0 0; }
 .pill { display: inline-block; font-size: 11.5px; font-weight: 700; letter-spacing: .04em; border: 1px solid var(--gold); color: var(--gold); border-radius: 999px; padding: 0 8px; margin-right: 4px; }
-/* The language switch, as on Ochorus: a label, then each language in its
-   own name; the current one is plain text. */
-.foot-langs {
-  display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 18px;
-  border-top: 1px solid var(--line); margin-top: 44px; padding-top: 20px;
+.foot-find h2 { margin-top: 6px; }
+.foot-search { display: flex; gap: 8px; }
+.foot-search input {
+  flex: 1; min-width: 0; font: inherit; font-family: var(--serif); font-size: 16px; padding: 10px 14px;
+  border: 1px solid var(--line-strong); border-radius: 999px; background: var(--surface); color: var(--text);
 }
-footer.site .foot-langs h2 { margin: 0; }
-footer.site .foot-langs ul { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+.foot-search input:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
+.foot-search .button { padding: 10px 20px; font-size: 15px; }
+.foot-resume {
+  display: inline-flex; align-items: center; gap: 8px; margin-top: 12px; padding: 8px 14px; border-radius: 999px;
+  background: var(--accent-soft); border: 1px solid var(--accent-soft-border); color: var(--accent);
+  font-size: 14px; font-weight: 600; text-decoration: none;
+}
+.foot-resume:hover { text-decoration: underline; }
+/* The index of every book: a chip per book, in canon order. A book not yet
+   started is greyed out; one with some chapters missing is dashed, as the
+   chapter pills are. */
+.foot-books { border-top: 1px solid var(--line); margin-top: 40px; padding-top: 28px; }
+.testaments { display: grid; grid-template-columns: minmax(0, 39fr) minmax(0, 27fr); gap: 24px 40px; }
+.testament-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 12px; margin-bottom: 12px; }
+.testament-head h3 { font: 600 17px/1.2 var(--display); margin: 0; }
+.testament-head span { font-size: 13px; color: var(--muted); }
+footer.site .book-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.book-chip {
+  display: inline-block; padding: 3px 10px; border-radius: 999px; border: 1px solid var(--line-strong);
+  background: var(--surface); font-size: 13.5px; line-height: 1.5; white-space: nowrap;
+}
+footer.site a.book-chip { color: var(--text); font-weight: 600; }
+footer.site a.book-chip:hover { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); text-decoration: none; }
+.book-chip.part { border-style: dashed; }
+.book-chip.none { border-color: transparent; background: none; color: var(--muted); opacity: .6; padding-inline: 6px; }
+.foot-key { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; margin: 18px 0 0; font-size: 13px; color: var(--muted); }
+.foot-key > span { display: inline-flex; align-items: center; gap: 7px; }
+.foot-key .book-chip { width: 22px; height: 14px; padding: 0; }
+.foot-key .book-chip.none { border: 1px dotted var(--line-strong); }
+.foot-key a { display: inline-flex; align-items: center; gap: 6px; margin-left: auto; font-weight: 600; }
+.foot-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; border-top: 1px solid var(--line); margin-top: 28px; padding-top: 28px; }
+/* The language switch, as on Ochorus: each language in its own name; the
+   current one is plain text. */
 .foot-langs [aria-current] { font-weight: 700; color: var(--text); }
 .foot-base {
   display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px;
-  border-top: 1px solid var(--line); margin-top: 20px; padding-top: 20px; color: var(--muted); font-size: 13px;
+  border-top: 1px solid var(--line); margin-top: 28px; padding-top: 20px; color: var(--muted); font-size: 13px;
 }
 .foot-base p { margin: 0; }
+.foot-review { display: flex; gap: 8px; align-items: baseline; max-width: 70ch; }
+.foot-review::before { content: ""; flex: none; width: 8px; height: 8px; border-radius: 50%; background: var(--gold); transform: translateY(-1px); }
 
 /* Buttons: one solid call, one outline. */
 .button {
@@ -909,8 +943,6 @@ footer.site .foot-langs ul { display: flex; flex-wrap: wrap; gap: 6px 18px; }
   }
   .dd-cols { grid-template-columns: 1fr; }
   .dd-all { justify-content: flex-start; border-top: 0; padding: 8px 10px; }
-  .foot-grid { grid-template-columns: 1fr 1fr; }
-  .foot-about { grid-column: 1 / -1; }
 }
 @media (max-width: 1000px) {
   .article-layout { grid-template-columns: minmax(0, 1fr); }
@@ -1240,4 +1272,19 @@ mark.q-hit { box-shadow: inset 0 -2px 0 var(--gold); border-radius: 2px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .palette-box { animation: none; }
+}
+
+/* Footer on narrower screens: the tiers stack; on a phone the index keeps
+   only the books with chapters, and each testament's count says how many
+   there are in all. */
+@media (max-width: 860px) {
+  .foot-top, .testaments { grid-template-columns: minmax(0, 1fr); }
+  .foot-grid { grid-template-columns: 1fr 1fr; }
+  .foot-grid .foot-langs { grid-column: 1 / -1; }
+  .foot-grid .foot-langs ul { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+}
+@media (max-width: 560px) {
+  .foot-books .book-chips li:has(.none) { display: none; }
+  .foot-key > span:last-of-type { display: none; }
+  .foot-key a { margin-left: 0; }
 }
