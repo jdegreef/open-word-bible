@@ -1236,3 +1236,31 @@ mark.q-hit { box-shadow: inset 0 -2px 0 var(--gold); border-radius: 2px; }
 @media (prefers-reduced-motion: reduce) {
   .palette-box { animation: none; }
 }
+
+/* Print: the passage and its footnotes, with a line saying what it is and
+   how it was set; no header, controls, panel or navigation. */
+.print-only { display: none; }
+@media print {
+  :root { --text-scale: 1 !important; }
+  body { background: #fff !important; color: #000 !important; }
+  header.site, footer.site, .skip, .settings, .settings-toggle, .panel, .edge-turn, .chapstrip, .turns,
+  .text-tool, .copy-quote, .fn-pop, .notes-tabs, .topic-chips, #partial, .passage .sub, .palette, #palette { display: none !important; }
+  .print-only { display: block; }
+  .print-head { font-family: var(--sans); font-size: 9pt; color: #444; border-bottom: .5pt solid #999; padding-bottom: 4pt; margin: 0 0 10pt; }
+  .reader { display: block; }
+  .passage { max-width: none; }
+  .passage h1 { font-size: 22pt; margin: 0 0 8pt; }
+  .text { font-size: 12pt; line-height: 1.55; max-width: none; color: #000; }
+  .verse, .verse[aria-current="true"], .aw, .aw.lit { background: none !important; color: #000 !important; text-decoration: none !important; }
+  .verse sup, .fn-mark, .verse .fn { color: #000 !important; background: none !important; }
+  .section-head { font-size: 11pt; margin-top: 12pt; break-after: avoid; }
+  .para { orphans: 3; widows: 3; }
+  .disputed-block { border-left: 1.5pt solid #999; }
+  .disputed-note { background: none; border: .5pt solid #999; color: #333; }
+  .disputed-note .fn-pop-more { display: none; }
+  .notes { border-top: .5pt solid #999; margin-top: 14pt; }
+  .notes h2 { color: #000; }
+  .notes .note { font-size: 9.5pt; padding: 1pt 0; color: #000; }
+  .notes li { break-inside: avoid; }
+  a { color: #000; text-decoration: none; }
+}

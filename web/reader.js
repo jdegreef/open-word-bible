@@ -194,6 +194,10 @@
       if (on && seg.children.length > 1) summary.push(on.textContent);
     });
     document.getElementById("settings-summary").textContent = summary.join(" \u00b7 ");
+    // On paper: the reference, the settings it was printed with, and where.
+    var head = document.getElementById("print-head");
+    if (head) head.textContent = DATA.title + " \u00b7 Open Word Bible \u00b7 " + summary.join(" \u00b7 ") +
+      " \u00b7 " + location.host + location.pathname;
     document.body.classList.toggle("plain", plain());
   }
 
@@ -445,6 +449,17 @@
   // by topic (meaning notes, and the wording notes for this language and
   // level), with the uncertain ones as a topic of their own.
   var notesTab = "foot", topic = null;
+
+  // Printing shows the footnotes at the end, whatever the notes tab shows.
+  var screenTab = null;
+  window.addEventListener("beforeprint", function () {
+    screenTab = notesTab;
+    notesTab = "foot";
+    drawText();
+  });
+  window.addEventListener("afterprint", function () {
+    if (screenTab) { notesTab = screenTab; screenTab = null; drawText(); }
+  });
 
   function drawNotes(notes) {
     var section = document.getElementById("notes");
