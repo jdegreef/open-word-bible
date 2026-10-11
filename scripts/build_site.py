@@ -42,11 +42,12 @@ BOOK_NAMES = {"GEN": {"en": "Genesis", "es": "Génesis", "fr": "Genèse", "sw": 
               "1JN": {"en": "1 John", "es": "1 Juan", "fr": "1 Jean", "sw": "1 Yohana"},
               "2JN": {"en": "2 John", "es": "2 Juan", "fr": "2 Jean", "sw": "2 Yohana"},
               "3JN": {"en": "3 John", "es": "3 Juan", "fr": "3 Jean", "sw": "3 Yohana"},
-              "PSA": {"en": "Psalms", "es": "Salmos", "fr": "Psaumes", "sw": "Zaburi"}}
+              "PSA": {"en": "Psalms", "es": "Salmos", "fr": "Psaumes", "sw": "Zaburi"},
+              "REV": {"en": "Revelation", "es": "Apocalipsis", "fr": "Apocalypse", "sw": "Ufunuo"}}
 # A book whose chapters go by another name: "Psalm 23", not "Psalms 23".
 CHAPTER_NAMES = {"PSA": {"en": "Psalm", "es": "Salmo", "fr": "Psaume", "sw": "Zaburi"}}
 # Chapters in each book, for "2 of 21 chapters" and a book's completeness.
-BOOK_CHAPTERS = {"GEN": 50, "MAT": 28, "JHN": 21, "ROM": 16, "1CO": 16, "2CO": 13, "GAL": 6, "EPH": 6, "PHP": 4, "COL": 4, "PHM": 1, "JAS": 5, "1PE": 5, "2PE": 3, "1JN": 5, "2JN": 1, "3JN": 1, "PSA": 150}
+BOOK_CHAPTERS = {"GEN": 50, "MAT": 28, "JHN": 21, "ROM": 16, "1CO": 16, "2CO": 13, "GAL": 6, "EPH": 6, "PHP": 4, "COL": 4, "PHM": 1, "JAS": 5, "1PE": 5, "2PE": 3, "1JN": 5, "2JN": 1, "3JN": 1, "PSA": 150, "REV": 22}
 # The interface languages, English first (see catalog below).
 LANGUAGES = ("en", "es", "fr", "sw")
 SITE_NAME = "Open Word Bible"
