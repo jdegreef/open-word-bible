@@ -33,8 +33,8 @@ Decisions come in two layers:
 Each decision names its tokens, category, choice, alternatives and reason,
 and whether it is uncertain or needs a footnote.
 
-Content: John 1–6 (`content/JHN/`) in English, with 1:1–18 also in Spanish
-and Swahili and chapters 1–2 in French, and all of Philippians
+Content: John 1–7 (`content/JHN/`) in English, with 1:1–18 also in Spanish,
+chapter 1 in Swahili and chapters 1–2 in French, and all of Philippians
 (`content/PHP/`) in English, with 4:1–9 also in Spanish. English runs ahead
 of the other languages; `docs/english-style.md` is the brief for drafting it
 and `data/key_terms.json` the settled key terms. `docs/french-style.md` and
