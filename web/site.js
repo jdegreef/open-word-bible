@@ -64,6 +64,33 @@
     if (!menu.hidden && !menu.contains(e.target) && !button.contains(e.target)) open(false);
   });
   mark();
+
+  // Text size and line spacing, kept like the colour mode and applied as
+  // data-size and data-spacing on <html> (the boot script does it before
+  // paint). The middle choice is the default and removes the attribute.
+  [["size", "owb-size", "m"], ["spacing", "owb-spacing", "normal"]].forEach(function (g) {
+    var name = g[0], key = g[1], plain = g[2];
+    var opts = Array.prototype.slice.call(menu.querySelectorAll("[data-" + name + "-option]"));
+    function show() {
+      var value = root.getAttribute("data-" + name) || plain;
+      opts.forEach(function (o) {
+        o.setAttribute("aria-pressed", o.getAttribute("data-" + name + "-option") === value ? "true" : "false");
+      });
+    }
+    opts.forEach(function (o) {
+      o.addEventListener("click", function () {
+        var value = o.getAttribute("data-" + name + "-option");
+        if (value === plain) root.removeAttribute("data-" + name);
+        else root.setAttribute("data-" + name, value);
+        try {
+          if (value === plain) localStorage.removeItem(key);
+          else localStorage.setItem(key, value);
+        } catch (e) { /* storage blocked */ }
+        show();
+      });
+    });
+    show();
+  });
 })();
 
 // The header's section dropdowns (Read, Articles, About), and the menu

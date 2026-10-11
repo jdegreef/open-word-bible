@@ -138,9 +138,17 @@ COLOUR_MODES = (("auto", "#faf6ef", "#16130f"),
 
 # Applies the saved colour mode before the first paint, so a page never
 # flashes the default colours. Mirrors web/site.js.
-BOOT_SCRIPT = ("try{var t=localStorage.getItem('owb-theme');"
+BOOT_SCRIPT = ("try{var t=localStorage.getItem('owb-theme'),d=document.documentElement;"
                "if(['light','sepia','dark','night','contrast'].indexOf(t)>=0)"
-               "document.documentElement.setAttribute('data-theme',t)}catch(e){}")
+               "d.setAttribute('data-theme',t);"
+               "var z=localStorage.getItem('owb-size'),l=localStorage.getItem('owb-spacing');"
+               "if(['s','l','xl'].indexOf(z)>=0)d.setAttribute('data-size',z);"
+               "if(['tight','loose'].indexOf(l)>=0)d.setAttribute('data-spacing',l)}catch(e){}")
+
+# Text size and line spacing in the gear menu: value and the label key
+# (i18n type.*). The middle one is the default and sets no attribute.
+TEXT_SIZES = ("s", "m", "l", "xl")
+LINE_SPACINGS = ("tight", "normal", "loose")
 
 # A reader who picked a language in the footer (web/site.js keeps it as
 # owb-lang) is taken to this page in that language before the first paint,
@@ -176,7 +184,21 @@ def colour_menu(lang):
             f'<span class="swatch" style="--sw-bg:{bg};--sw-accent:{accent}" aria-hidden="true"></span>'
             f'{t(lang, "theme." + v)}<span class="check" aria-hidden="true">&#10003;</span></button>'
             for v, bg, accent in COLOUR_MODES)
-        + '</div></div></div>')
+        + '</div>'
+        + type_group(lang, "size", TEXT_SIZES, "m")
+        + type_group(lang, "spacing", LINE_SPACINGS, "normal")
+        + '</div></div>')
+
+
+def type_group(lang, name, values, default):
+    """A row of the gear menu for text size or line spacing (web/site.js)."""
+    label = t(lang, f"type.{name}")
+    buttons = "".join(
+        f'<button type="button" class="type-opt type-{name}-{v}" data-{name}-option="{v}" '
+        f'aria-pressed="{"true" if v == default else "false"}">{t(lang, f"type.{name}.{v}")}</button>'
+        for v in values)
+    return (f'<p class="prefs-label prefs-sub" id="{name}-menu-label">{label}</p>'
+            f'<div class="type-row" role="group" aria-labelledby="{name}-menu-label">{buttons}</div>')
 
 
 OG = ROOT / "web" / "og"

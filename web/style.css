@@ -318,6 +318,21 @@ header.site .tools { display: flex; align-items: center; gap: 8px; flex: none; }
 
 /* The colour-mode menu behind the gear: a grid of theme tiles. */
 .prefs { position: relative; }
+/* Text size and line spacing (the gear menu): a scale and a factor that the
+   reading text and article bodies multiply by. */
+:root { --text-scale: 1; --text-leading: 1; }
+:root[data-size="s"] { --text-scale: .9; }
+:root[data-size="l"] { --text-scale: 1.12; }
+:root[data-size="xl"] { --text-scale: 1.26; }
+:root[data-spacing="tight"] { --text-leading: .9; }
+:root[data-spacing="loose"] { --text-leading: 1.15; }
+.prefs-sub { margin-top: 14px !important; }
+.type-row { display: flex; gap: 6px; }
+.prefs-menu .type-opt { flex: 1; justify-content: center; padding: 7px 4px; }
+.prefs-menu .type-opt[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); font-weight: 700; }
+.prefs-menu .type-size-s { font-size: 12px; }
+.prefs-menu .type-size-l { font-size: 16px; }
+.prefs-menu .type-size-xl { font-size: 18px; }
 .prefs-menu {
   position: absolute; right: 0; top: calc(100% + 10px); z-index: 30; width: 300px;
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
@@ -612,7 +627,7 @@ footer.site .foot-langs ul { display: flex; flex-wrap: wrap; gap: 6px 18px; }
 .article-head h1 { font-family: var(--display); font-weight: 600; letter-spacing: -.02em; font-size: clamp(32px, 5vw, 46px); line-height: 1.15; margin: 0 0 14px; }
 .byline { display: flex; align-items: center; gap: 10px; color: var(--muted); font-size: 14px; line-height: 1.6; margin: 22px 0 0; }
 .byline .mark { width: 26px; height: 26px; }
-.article-body { font-family: var(--serif); font-size: 20px; line-height: 1.7; }
+.article-body { font-family: var(--serif); font-size: calc(20px * var(--text-scale)); line-height: calc(1.7 * var(--text-leading)); }
 .article-body p, .article-body ul { margin: 0 0 1.1em; }
 .article-body li { margin: 0 0 .4em; }
 .article-body h2 { font-family: var(--display); font-weight: 600; font-size: 27px; letter-spacing: -.01em; line-height: 1.25; margin: 1.8em 0 .5em; }
@@ -690,7 +705,7 @@ footer.site .foot-langs ul { display: flex; flex-wrap: wrap; gap: 6px 18px; }
 .passage h1 { font-family: var(--display); font-weight: 600; font-size: clamp(30px, 4vw, 40px); letter-spacing: -.02em; margin: 36px 0 6px; }
 .passage .sub { color: var(--muted); font-size: 14px; margin: 0 0 16px; }
 /* About 65 characters a line, the comfortable measure for long reading. */
-.text { font-family: var(--serif); font-size: 21px; line-height: 1.8; max-width: 29em; }
+.text { font-family: var(--serif); font-size: calc(21px * var(--text-scale)); line-height: calc(1.8 * var(--text-leading)); max-width: 29em; }
 /* Paragraphs follow SBLGNT's; section headings (data/headings.json) are
    editorial aids, set apart from the text in the interface font. */
 .text .para { margin: 0 0 .85em; }
@@ -871,7 +886,7 @@ footer.site .foot-langs ul { display: flex; flex-wrap: wrap; gap: 6px 18px; }
   .brand-name { font-size: 19px; }
   header.site .bar { gap: 10px; }
   .tool-btn { width: 36px; height: 36px; }
-  .article-body { font-size: 19px; }
+  .article-body { font-size: calc(19px * var(--text-scale)); }
   .quote { padding: 18px 18px 14px 22px; }
   .quote blockquote { font-size: 21px; }
   .a-card.featured { padding: 24px 22px; }
@@ -1005,7 +1020,7 @@ body.plain .passage { margin: 0 auto; }
 body.plain .panel, body.plain .notes, body.plain .verse sup, body.plain .passage .sub { display: none; }
 body.plain .verse { cursor: text; }
 body.plain .verse:hover { background: none; }
-body.plain .text { font-size: 22px; }
+body.plain .text { font-size: calc(22px * var(--text-scale)); }
 
 /* "Copy with reference", by a selection in the passage. */
 .copy-quote {
