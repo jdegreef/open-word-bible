@@ -121,6 +121,8 @@ REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": ["accounts.auth.TokenAuthentication"],
     "DEFAULT_PERMISSION_CLASSES": ["rest_framework.permissions.AllowAny"],
     "DEFAULT_RENDERER_CLASSES": ["rest_framework.renderers.JSONRenderer"],
+    # Search (api/views.py): as Ochorus allows.
+    "DEFAULT_THROTTLE_RATES": {"search": "120/min"},
 }
 
 # Accounts (backend/accounts/).
