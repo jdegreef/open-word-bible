@@ -17,12 +17,50 @@
 
   // The reading language is the page's (/es/... is Spanish); the footer
   // switches it. The other settings are kept across pages and languages.
-  var settings = { level: "B", gender: 0, christos: 0, divine_name: 0, deity_pronoun: 0, plural_you: 0, view: 0 };
+  var settings = { level: "B", gender: 0, christos: 0, divine_name: 0, deity_pronoun: 0, plural_you: 0, view: 0, uncertain: 0 };
   try {
     var saved = JSON.parse(localStorage.getItem(STORE) || "{}");
     for (var k in settings) if (k in saved) settings[k] = saved[k];
   } catch (e) { /* storage unavailable: use defaults */ }
   settings.lang = DATA.lang;
+
+  // A shared link may carry the sender's settings (?level=L&title=1): they
+  // apply to this visit and are not saved unless the reader changes one.
+  var DEFAULTS = { level: "B", gender: 0, christos: 0, divine_name: 0, deity_pronoun: 0, plural_you: 0 };
+  var PARAMS = { level: "level", gender: "gender", christos: "title", divine_name: "name",
+                 deity_pronoun: "pronoun", plural_you: "plural" };
+  (function () {
+    var q = new URLSearchParams(location.search);
+    Object.keys(PARAMS).forEach(function (name) {
+      var v = q.get(PARAMS[name]);
+      if (v === null) return;
+      if (name === "level") { if (/^[LBR]$/.test(v)) settings.level = v; }
+      else if (v === "0" || v === "1") settings[name] = Number(v);
+    });
+  })();
+
+  // The query for a link that keeps this reader's settings: only those
+  // that differ from the defaults.
+  function settingsQuery() {
+    var q = new URLSearchParams();
+    Object.keys(PARAMS).forEach(function (name) {
+      if (settings[name] !== DEFAULTS[name]) q.set(PARAMS[name], settings[name]);
+    });
+    var s = q.toString();
+    return s ? "?" + s : "";
+  }
+
+  // Once the reader changes a setting the link's settings no longer apply;
+  // take them out of the address (a search's ?q= stays).
+  function dropSettingsParams() {
+    var q = new URLSearchParams(location.search), changed = false;
+    Object.keys(PARAMS).forEach(function (name) {
+      if (q.has(PARAMS[name])) { q.delete(PARAMS[name]); changed = true; }
+    });
+    if (!changed) return;
+    var s = q.toString();
+    try { history.replaceState(null, "", location.pathname + (s ? "?" + s : "") + location.hash); } catch (e) { /* ignore */ }
+  }
 
   var current = null;   // selected record
   var currentVerse = null;   // the verse within it that was chosen
@@ -269,6 +307,7 @@
     document.getElementById("title").textContent = DATA.title;
     var shown = null;   // last verse number printed
     var notes = [];
+    var unsureCount = 0;
     var starts = new Set(DATA.paragraphs);
     var para = null;    // the paragraph being filled
     DATA.records.forEach(function (r) {
@@ -295,9 +334,13 @@
         });
       var lang = textLang(r);
       var parts = versePieces(r, lang, settings.level);
+      // Where a decision is marked uncertain, the meaning is open to question.
+      var unsure = ds.meaning.concat(ds.rendering).some(function (d) { return d.uncertain; });
+      if (unsure) unsureCount++;
       var chosen = current && current.id === r.id;
       parts.forEach(function (part, i) {
-        var span = el("span", lang === settings.lang ? "verse" : "verse fallback");
+        var span = el("span", (lang === settings.lang ? "verse" : "verse fallback") +
+                           (settings.uncertain && unsure ? " unsure" : ""));
         if (lang !== settings.lang) span.lang = lang;
         if (!plain()) {
           span.tabIndex = 0;
@@ -348,29 +391,120 @@
         para.appendChild(document.createTextNode(" "));
       });
     });
+    drawUnsureToggle(unsureCount);
     drawNotes(notes);
   }
+
+  // Above the text: mark the sentences where a decision is uncertain.
+  function drawUnsureToggle(n) {
+    var b = document.getElementById("unsure-toggle");
+    if (!b) {
+      b = el("button", "text-tool");
+      b.id = "unsure-toggle";
+      b.type = "button";
+      b.addEventListener("click", function () { setSetting("uncertain", settings.uncertain ? 0 : 1); });
+      var box = document.getElementById("text");
+      box.parentNode.insertBefore(b, box);
+    }
+    b.hidden = !n;
+    b.setAttribute("aria-pressed", settings.uncertain ? "true" : "false");
+    b.textContent = t("unsure_toggle").replace("{n}", n);
+  }
+
+  // Below the passage: its footnotes, or every note in the chapter grouped
+  // by topic (meaning notes, and the wording notes for this language and
+  // level), with the uncertain ones as a topic of their own.
+  var notesTab = "foot", topic = null;
 
   function drawNotes(notes) {
     var section = document.getElementById("notes");
     if (!section) return;
     section.textContent = "";
-    section.hidden = !notes.length;
-    if (!notes.length) return;
-    section.appendChild(el("h2", null, t("notes")));
-    var list = el("ol");
-    notes.forEach(function (n) {
+    var all = [];
+    DATA.records.forEach(function (r) {
+      var ds = decisionsFor(r);
+      ds.meaning.concat(ds.rendering).forEach(function (d) { all.push({ record: r, decision: d }); });
+    });
+    section.hidden = !all.length;
+    if (!all.length) return;
+    if (!notes.length) notesTab = "topic";
+    var head = el("div", "notes-head");
+    head.appendChild(el("h2", null, t("notes")));
+    var tabs = el("div", "notes-tabs");
+    tabs.setAttribute("role", "group");
+    [["foot", t("notes_foot") + " (" + notes.length + ")"], ["topic", t("notes_topic") + " (" + all.length + ")"]]
+      .forEach(function (tab) {
+        if (tab[0] === "foot" && !notes.length) return;
+        var b = el("button", "notes-tab", tab[1]);
+        b.type = "button";
+        b.setAttribute("aria-pressed", notesTab === tab[0] ? "true" : "false");
+        b.addEventListener("click", function () { notesTab = tab[0]; drawNotes(notes); });
+        tabs.appendChild(b);
+      });
+    head.appendChild(tabs);
+    section.appendChild(head);
+
+    if (notesTab === "foot") {
+      var list = el("ol");
+      notes.forEach(function (n) {
+        var item = el("li");
+        var button = el("button", "note");
+        button.type = "button";
+        button.appendChild(el("span", "note-mark", n.mark));
+        button.appendChild(el("span", "note-ref", verseRange(n.record)));
+        button.appendChild(el("span", "note-text", noteText(n.decision)));
+        button.addEventListener("click", function () { select(n.record, null, n.decision.id); });
+        item.appendChild(button);
+        list.appendChild(item);
+      });
+      section.appendChild(list);
+      return;
+    }
+
+    // Topics: each category with its count, then "Uncertain".
+    var counts = {}, order = [];
+    all.forEach(function (n) {
+      var c = n.decision.category;
+      if (!(c in counts)) { counts[c] = 0; order.push(c); }
+      counts[c]++;
+    });
+    var unsure = all.filter(function (n) { return n.decision.uncertain; }).length;
+    var chips = el("div", "topic-chips");
+    function chip(value, label, n) {
+      var b = el("button", "topic-chip" + (value === "uncertain" ? " unc" : ""), label + " " + n);
+      b.type = "button";
+      b.setAttribute("aria-pressed", topic === value ? "true" : "false");
+      b.addEventListener("click", function () { topic = value; drawNotes(notes); });
+      chips.appendChild(b);
+    }
+    if (topic && topic !== "uncertain" && !(topic in counts)) topic = null;
+    chip(null, t("notes_all"), all.length);
+    order.sort(function (a, b) { return counts[b] - counts[a]; }).forEach(function (c) {
+      chip(c, t("category")[c] || c, counts[c]);
+    });
+    if (unsure) chip("uncertain", t("uncertain"), unsure);
+    section.appendChild(chips);
+
+    var shown = all.filter(function (n) {
+      return !topic || (topic === "uncertain" ? n.decision.uncertain : n.decision.category === topic);
+    });
+    var list2 = el("ul", "topic-list");
+    shown.forEach(function (n) {
+      var d = n.decision;
       var item = el("li");
       var button = el("button", "note");
       button.type = "button";
-      button.appendChild(el("span", "note-mark", n.mark));
       button.appendChild(el("span", "note-ref", verseRange(n.record)));
-      button.appendChild(el("span", "note-text", noteText(n.decision)));
-      button.addEventListener("click", function () { select(n.record); });
+      var body = el("span", "note-text");
+      body.appendChild(el("span", "topic-cat", t("category")[d.category] || d.category));
+      if (d.uncertain) body.appendChild(el("span", "badge unc", t("uncertain")));
+      body.appendChild(el("span", "topic-choice", render(d.choice)));
+      button.appendChild(body);
+      button.addEventListener("click", function () { select(n.record, null, d.id); });
       item.appendChild(button);
-      list.appendChild(item);
+      list2.appendChild(item);
     });
-    section.appendChild(list);
+    section.appendChild(list2);
   }
 
   function highlight(ids, card) {
@@ -594,7 +728,7 @@
     var label = el("span", null, t(share ? "share" : "copy_link"));
     b.appendChild(label);
     b.addEventListener("click", function () {
-      var link = location.origin + location.pathname + "#v" + verse;
+      var link = location.origin + location.pathname + settingsQuery() + "#v" + verse;
       var name = DATA.title.replace(/[\d:\u2013\s]+$/, "") + " " + DATA.chapter + ":" + verse;
       function done(ok) {
         label.textContent = t(ok ? "copied" : "copy_failed");
@@ -770,6 +904,7 @@
   function setSetting(name, value) {
     var top = panelEl.scrollTop;
     settings[name] = value;
+    dropSettingsParams();
     save();
     drawControls();
     if (plain() && current) { deselect(); return; }
