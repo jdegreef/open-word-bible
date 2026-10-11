@@ -17,7 +17,7 @@
 
   // The reading language is the page's (/es/... is Spanish); the footer
   // switches it. The other settings are kept across pages and languages.
-  var settings = { level: "B", gender: 0, christos: 0, divine_name: 0, deity_pronoun: 0, plural_you: 0, view: 0, headings: 0 };
+  var settings = { level: "B", gender: 0, christos: 0, divine_name: 0, deity_pronoun: 0, units: 0, plural_you: 0, view: 0, headings: 0 };
   try {
     var saved = JSON.parse(localStorage.getItem(STORE) || "{}");
     for (var k in settings) if (k in saved) settings[k] = saved[k];
@@ -144,8 +144,9 @@
     });
     document.getElementById("hint-level").textContent = t("hint_level")[settings.level];
     // A page shows either the divine name (Old Testament) or the title
-    // Christ (New Testament), so one of the two hints is missing.
-    ["gender", "christos", "divine_name", "deity_pronoun", "plural_you", "view", "headings"].forEach(function (name) {
+    // Christ (New Testament), and measures only where it has them, so
+    // some hints are missing.
+    ["gender", "christos", "divine_name", "deity_pronoun", "units", "plural_you", "view", "headings"].forEach(function (name) {
       var hint = document.getElementById("hint-" + name);
       if (hint) hint.textContent = t("hint_" + name)[settings[name]];
     });
