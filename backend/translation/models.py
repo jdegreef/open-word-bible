@@ -13,7 +13,7 @@ from texts.models import Edition
 
 
 class Status(models.TextChoices):
-    AI_DRAFT = "ai_draft", "AI draft"
+    AI_DRAFT = "ai_draft", "AI-assisted"
     MEANING_REVIEWED = "meaning_reviewed", "Meaning reviewed"
     REVIEWED = "reviewed", "Reviewed"
     REVISED = "revised", "Revised"
