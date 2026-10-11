@@ -4,7 +4,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ("accounts", "0001_initial"),
+        ("accounts", "0002_french_language_reviewers"),
     ]
 
     operations = [
@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
             constraint=models.CheckConstraint(
                 condition=models.Q(
                     models.Q(("kind", "scholar_reviewer"), ("language__in", ["grc", "hbo"])),
-                    models.Q(("kind", "language_reviewer"), ("language__in", ["en", "es", "sw"])),
+                    models.Q(("kind", "language_reviewer"), ("language__in", ["en", "es", "fr", "sw"])),
                     models.Q(("kind__in", ["super_admin", "editor"]), ("language", "")),
                     _connector="OR",
                 ),

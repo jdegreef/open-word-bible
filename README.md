@@ -34,11 +34,11 @@ Each decision names its tokens, category, choice, alternatives and reason,
 and whether it is uncertain or needs a footnote.
 
 Content: John 1–6 (`content/JHN/`) in English, with 1:1–18 also in Spanish
-and Swahili, and all of Philippians (`content/PHP/`) in English, with 4:1–9
-also in Spanish. English
-runs ahead of the other languages; `docs/english-style.md` is the brief for
-drafting it and `data/key_terms.json` the settled key terms.
-`docs/swahili-style.md` is the brief for Swahili.
+and Swahili and chapters 1–2 in French, and all of Philippians
+(`content/PHP/`) in English, with 4:1–9 also in Spanish. English runs ahead
+of the other languages; `docs/english-style.md` is the brief for drafting it
+and `data/key_terms.json` the settled key terms. `docs/french-style.md` and
+`docs/swahili-style.md` are the briefs for French and Swahili.
 
 A record is one sentence of the source, not one verse. It ends where the
 SBLGNT ends a sentence: a full stop, a question mark, or a raised dot (·)
@@ -119,7 +119,8 @@ every page, all using `SITE_URL` in `scripts/build_site.py`.
 
 The whole site, menus and controls included, is built once per interface
 language, as on Ochorus: English at the root (`/jhn/1/`), Spanish under
-`/es/` (`/es/jhn/1/`) and Swahili under `/sw/` (`/sw/jhn/1/`). The footer's Languages row switches to the same page
+`/es/` (`/es/jhn/1/`), French under `/fr/` (`/fr/jhn/1/`) and Swahili under
+`/sw/` (`/sw/jhn/1/`). The footer's Languages row switches to the same page
 in another language; the browser remembers the choice and opens later pages
 in it. Pages carry `<html lang>`, hreflang links and a canonical URL.
 

@@ -2,8 +2,8 @@
 
 The word extracts (data/grc/) carry Robinson-style codes such as N-DSF or
 V-2AAI-3S. describe() turns one into words a reader can follow, in English,
-Spanish or Swahili: "Noun · dative singular feminine", "Verb · second aorist active
-indicative · 3rd person singular". An unknown code raises ValueError, so a
+Spanish, French or Swahili: "Noun · dative singular feminine", "Verb ·
+second aorist active indicative · 3rd person singular". An unknown code raises ValueError, so a
 new code in the data fails the tests rather than showing a reader nothing.
 """
 import re
@@ -64,6 +64,35 @@ WORDS = {
         "suffix": {"N": "negaci\u00f3n", "I": "interrogativo", "S": "superlativo", "C": "comparativo",
                    "ATT": "forma ática", "K": "crasis (dos palabras unidas)",
                    "P": "con partícula unida", "ABB": "forma abreviada"},
+    },
+    "fr": {
+        "pos": {"N": "Nom", "V": "Verbe", "A": "Adjectif", "T": "Article",
+                "P": "Pronom personnel", "R": "Pronom relatif", "D": "Pronom démonstratif",
+                "K": "Pronom corrélatif", "X": "Pronom indéfini", "I": "Pronom interrogatif",
+                "F": "Pronom réfléchi", "C": "Pronom réciproque", "S": "Pronom possessif",
+                "Q": "Pronom corrélatif ou interrogatif",
+                "ADV": "Adverbe", "CONJ": "Conjonction", "PREP": "Préposition", "PRT": "Particule",
+                "COND": "Conjonction conditionnelle", "INJ": "Interjection",
+                "HEB": "Mot hébreu", "ARAM": "Mot araméen"},
+        "indeclinable": {"PRI": "nom propre, indéclinable", "LI": "lettre, indéclinable",
+                         "OI": "indéclinable", "NUI": "nombre, indéclinable"},
+        "case": {"N": "nominatif", "G": "génitif", "D": "datif", "A": "accusatif", "V": "vocatif"},
+        "number": {"S": "singulier", "P": "pluriel"},
+        "gender": {"M": "masculin", "F": "féminin", "N": "neutre"},
+        "tense": {"P": "présent", "I": "imparfait", "F": "futur", "A": "aoriste",
+                  "R": "parfait", "L": "plus-que-parfait"},
+        "second": "{} second",
+        "verb": "{mood} {tense}, {voice}", "voiced": "voix {}",
+        "voice": {"A": "active", "M": "moyenne", "P": "passive", "E": "moyenne ou passive",
+                  "D": "moyenne (déponent)", "O": "passive (déponent)",
+                  "N": "moyenne ou passive (déponent)", "Q": "active impersonnelle", "X": ""},
+        "mood": {"I": "indicatif", "S": "subjonctif", "O": "optatif", "M": "impératif",
+                 "N": "infinitif", "P": "participe", "R": "participe (valeur d’impératif)"},
+        "person": {"1": "1re personne", "2": "2e personne", "3": "3e personne"},
+        "person_number": "{person} du {number}",
+        "suffix": {"N": "négation", "I": "interrogatif", "S": "superlatif", "C": "comparatif",
+                   "ATT": "forme attique", "K": "crase (deux mots fondus en un)",
+                   "P": "avec particule attachée", "ABB": "forme abrégée"},
     },
     "sw": {
         "pos": {"N": "Nomino", "V": "Kitenzi", "A": "Kivumishi", "T": "Kibainishi",

@@ -1,6 +1,6 @@
 """The site in each interface language: English at the root, Spanish under
-/es/ and Swahili under /sw/, the footer's language switch, and the message
-catalogs in i18n/."""
+/es/, French under /fr/ and Swahili under /sw/, the footer's language switch,
+and the message catalogs in i18n/."""
 import json
 import re
 import string
@@ -88,6 +88,8 @@ class LanguagesTest(unittest.TestCase):
         es = self.read("es/jhn/1/index.html")
         self.assertIn('<span lang="en" aria-current="true">English</span>', en)
         self.assertIn('<a href="/es/jhn/1/" lang="es" hreflang="es" data-lang="es">Español</a>', en)
+        self.assertIn('<a href="/fr/jhn/1/" lang="fr" hreflang="fr" data-lang="fr">Français</a>', en + es)
+        self.assertIn('<span lang="fr" aria-current="true">Français</span>', self.read("fr/jhn/1/index.html"))
         self.assertIn('<a href="/sw/jhn/1/" lang="sw" hreflang="sw" data-lang="sw">Kiswahili</a>', en + es)
         self.assertIn('<span lang="sw" aria-current="true">Kiswahili</span>', self.read("sw/jhn/1/index.html"))
         self.assertIn('<span lang="es" aria-current="true">Español</span>', es)
@@ -130,6 +132,9 @@ class LanguagesTest(unittest.TestCase):
         self.assertNotIn('data-setting="plural_you"', en)
         self.assertIn('data-setting="plural_you"', es)
         self.assertIn(">Equilibrada</button>", es)
+        fr = self.read("fr/jhn/1/index.html")
+        self.assertNotIn('data-setting="plural_you"', fr)
+        self.assertIn(">Équilibrée</button>", fr)
         sw = self.read("sw/jhn/1/index.html")
         self.assertNotIn('data-setting="plural_you"', sw)
         self.assertIn(">Linganifu</button>", sw)
@@ -178,7 +183,14 @@ class LanguagesTest(unittest.TestCase):
     def test_dates_are_written_in_each_language(self):
         self.assertEqual(build_site._date("2026-10-10", "en"), "10 October 2026")
         self.assertEqual(build_site._date("2026-10-10", "es"), "10 de octubre de 2026")
+        self.assertEqual(build_site._date("2026-10-10", "fr"), "10 octobre 2026")
         self.assertEqual(build_site._date("2026-10-10", "sw"), "10 Oktoba 2026")
+
+    def test_french_typography_has_no_breaking_space_before_its_marks(self):
+        # French sets « » : ; ! ? off with no-break spaces, so a line never
+        # starts with one. A plain space before them is a typo.
+        text = (ROOT / "i18n" / "fr.json").read_text(encoding="utf-8")
+        self.assertEqual(re.findall(r"(?: [;:!?»]|« )", text), [])
 
 
 if __name__ == "__main__":

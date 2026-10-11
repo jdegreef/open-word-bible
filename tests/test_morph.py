@@ -44,6 +44,10 @@ class MorphTest(unittest.TestCase):
             self.assertEqual(morph.describe(code), words, code)
         self.assertEqual(morph.describe("V-IAI-3S", "es"),
                          "Verbo · indicativo imperfecto, voz activa · 3.ª persona singular")
+        self.assertEqual(morph.describe("V-IAI-3S", "fr"),
+                         "Verbe · indicatif imparfait, voix active · 3e personne du singulier")
+        self.assertEqual(morph.describe("V-2AAI-3S", "fr"),
+                         "Verbe · indicatif aoriste second, voix active · 3e personne du singulier")
         self.assertEqual(morph.describe("V-IAI-3S", "sw"),
                          "Kitenzi · wakati uliopita endelevu, hali elekezi, kauli tendaji · nafsi ya tatu, umoja")
         self.assertEqual(morph.describe("N-DSF", "sw"), "Nomino · kipokezi (dativi), umoja, kike")
@@ -59,7 +63,7 @@ class MorphTest(unittest.TestCase):
         for words in data["words"].values():
             for w in words:
                 self.assertEqual(data["grammar"][w["morph"]]["en"], morph.describe(w["morph"]))
-                for lang in ("es", "sw"):
+                for lang in ("es", "fr", "sw"):
                     self.assertEqual(data["grammar"][w["morph"]][lang], morph.describe(w["morph"], lang))
 
 
