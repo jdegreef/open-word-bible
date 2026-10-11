@@ -1,8 +1,8 @@
 """Plain-language descriptions of MACULA Greek morphology codes.
 
 The word extracts (data/grc/) carry Robinson-style codes such as N-DSF or
-V-2AAI-3S. describe() turns one into words a reader can follow, in English
-or Spanish: "Noun · dative singular feminine", "Verb · second aorist active
+V-2AAI-3S. describe() turns one into words a reader can follow, in English,
+Spanish or Swahili: "Noun · dative singular feminine", "Verb · second aorist active
 indicative · 3rd person singular". An unknown code raises ValueError, so a
 new code in the data fails the tests rather than showing a reader nothing.
 """
@@ -65,6 +65,38 @@ WORDS = {
                    "ATT": "forma ática", "K": "crasis (dos palabras unidas)",
                    "P": "con partícula unida", "ABB": "forma abreviada"},
     },
+    "sw": {
+        "pos": {"N": "Nomino", "V": "Kitenzi", "A": "Kivumishi", "T": "Kibainishi",
+                "P": "Kiwakilishi cha nafsi", "R": "Kiwakilishi rejeshi", "D": "Kiwakilishi kioneshi",
+                "K": "Kiwakilishi kiambatani", "X": "Kiwakilishi kisichodhahiri", "I": "Kiwakilishi kiulizi",
+                "F": "Kiwakilishi cha kujirejea", "C": "Kiwakilishi cha kutendana", "S": "Kiwakilishi kimilikishi",
+                "Q": "Kiwakilishi kiambatani au kiulizi",
+                "ADV": "Kielezi", "CONJ": "Kiunganishi", "PREP": "Kihusishi", "PRT": "Kijineno",
+                "COND": "Kiunganishi cha sharti", "INJ": "Kiingizi",
+                "HEB": "Neno la Kiebrania", "ARAM": "Neno la Kiaramu"},
+        "indeclinable": {"PRI": "jina la pekee, halibadiliki", "LI": "herufi, haibadiliki",
+                         "OI": "halibadiliki", "NUI": "namba, haibadiliki"},
+        "case": {"N": "kiima (nominativi)", "G": "milikishi (jenitivi)", "D": "kipokezi (dativi)",
+                 "A": "yambwa (akusativi)", "V": "mwito (vokativi)"},
+        "number": {"S": "umoja", "P": "wingi"},
+        "gender": {"M": "kiume", "F": "kike", "N": "si kiume wala kike"},
+        "tense": {"P": "wakati uliopo", "I": "wakati uliopita endelevu", "F": "wakati ujao",
+                  "A": "aoristi", "R": "timilifu", "L": "timilifu ya zamani"},
+        "second": "{} ya pili",
+        "verb": "{tense}, {mood}, {voice}", "voiced": "kauli {}",
+        "voice": {"A": "tendaji", "M": "ya kati", "P": "tendwa", "E": "ya kati au tendwa",
+                  "D": "ya kati (maana tendaji)", "O": "tendwa (maana tendaji)",
+                  "N": "ya kati au tendwa (maana tendaji)", "Q": "tendaji isiyo na mtenda", "X": ""},
+        "mood": {"I": "hali elekezi", "S": "hali tegemezi", "O": "hali ya matamanio", "M": "hali ya amri",
+                 "N": "kitenzi-jina", "P": "kitenzi-kivumishi",
+                 "R": "kitenzi-kivumishi (kama amri)"},
+        "person": {"1": "nafsi ya kwanza", "2": "nafsi ya pili", "3": "nafsi ya tatu"},
+        "person_number": "{person}, {number}",
+        "join": ", ",
+        "suffix": {"N": "kanushi", "I": "kiulizi", "S": "kupita yote", "C": "kulinganisha",
+                   "ATT": "umbo la Kiatiki", "K": "maneno mawili yaliyounganishwa",
+                   "P": "pamoja na kijineno kilichoambatishwa", "ABB": "umbo lililofupishwa"},
+    },
 }
 
 _VERB = re.compile(r"(2?)([PIFARL])([AMPEDONQX])([ISOMNPR])(?:-(.+))?")
@@ -100,7 +132,8 @@ def describe(code, lang="en"):
             if mood in "PR" and cng:
                 out.append(_cng(cng, w))
             elif pn:
-                out.append(f"{w['person'][pn[1]]} {w['number'][pn[2]]}")
+                out.append(w.get("person_number", "{person} {number}").format(
+                    person=w["person"][pn[1]], number=w["number"][pn[2]]))
             else:
                 raise ValueError(f"unknown verb ending in {code!r}")
         rest = tail
@@ -109,8 +142,9 @@ def describe(code, lang="en"):
         rest = rest[1:]
     elif pos == "S" and rest and _POSS.fullmatch(rest[0]):
         m = _POSS.fullmatch(rest[0])
-        out.append(f"{w['person'][m[1]]} {w['number'][m[2]]} \u00b7 "
-                   f"{w['case'][m[3]]} {w['number'][m[4]]} {w['gender'][m[5]]}")
+        join = w.get("join", " ")
+        out.append(join.join([w["person"][m[1]], w["number"][m[2]]]) + " \u00b7 "
+                   + join.join([w["case"][m[3]], w["number"][m[4]], w["gender"][m[5]]]))
         rest = rest[1:]
     elif rest and _CNG.fullmatch(rest[0]):
         out.append(_cng(_CNG.fullmatch(rest[0]), w))
@@ -128,4 +162,4 @@ def _cng(m, w):
     words += [w["case"][case], w["number"][number]]
     if gender:
         words.append(w["gender"][gender])
-    return " ".join(words)
+    return w.get("join", " ").join(words)

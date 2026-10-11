@@ -5,7 +5,7 @@ Usage: python3 scripts/build_site.py [-o DIR]
 Needs only the repository: the Greek words come from the committed extracts
 in data/grc/ (see scripts/extract_tokens.py), so a deploy never fetches the
 full sources. Every page is built in each interface language: English at
-the root, Spanish under /es/.
+the root, Spanish under /es/, Swahili under /sw/.
 """
 import argparse
 import functools
@@ -25,12 +25,12 @@ from typing import NamedTuple  # noqa: E402
 
 from owb import markup, morph, refs  # noqa: E402
 
-BOOK_NAMES = {"JHN": {"en": "John", "es": "Juan"},
-              "PHP": {"en": "Philippians", "es": "Filipenses"}}
+BOOK_NAMES = {"JHN": {"en": "John", "es": "Juan", "sw": "Yohana"},
+              "PHP": {"en": "Philippians", "es": "Filipenses", "sw": "Wafilipi"}}
 # Chapters in each book, for "2 of 21 chapters" and a book's completeness.
 BOOK_CHAPTERS = {"JHN": 21, "PHP": 4}
 # The interface languages, English first (see catalog below).
-LANGUAGES = ("en", "es")
+LANGUAGES = ("en", "es", "sw")
 SITE_NAME = "Open Word Bible"
 # The site's home (Render serves it on openwordbible.org and redirects www).
 # Canonical links, the sitemap and link previews use it.

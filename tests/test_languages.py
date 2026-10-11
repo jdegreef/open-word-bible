@@ -1,5 +1,6 @@
 """The site in each interface language: English at the root, Spanish under
-/es/, the footer's language switch, and the message catalogs in i18n/."""
+/es/ and Swahili under /sw/, the footer's language switch, and the message
+catalogs in i18n/."""
 import json
 import re
 import string
@@ -87,6 +88,8 @@ class LanguagesTest(unittest.TestCase):
         es = self.read("es/jhn/1/index.html")
         self.assertIn('<span lang="en" aria-current="true">English</span>', en)
         self.assertIn('<a href="/es/jhn/1/" lang="es" hreflang="es" data-lang="es">Español</a>', en)
+        self.assertIn('<a href="/sw/jhn/1/" lang="sw" hreflang="sw" data-lang="sw">Kiswahili</a>', en + es)
+        self.assertIn('<span lang="sw" aria-current="true">Kiswahili</span>', self.read("sw/jhn/1/index.html"))
         self.assertIn('<span lang="es" aria-current="true">Español</span>', es)
         self.assertIn('<a href="/jhn/1/" lang="en" hreflang="en" data-lang="en">English</a>', es)
         self.assertIn('<h2 id="foot-langs">Idiomas</h2>', es)
@@ -94,19 +97,21 @@ class LanguagesTest(unittest.TestCase):
         self.assertIn('href="/es/" lang="es"', self.read("404.html"))
         self.assertNotIn(build_site.LANG_SCRIPT, self.read("404.html"))
 
-    def test_spanish_pages_have_spanish_interface_text(self):
-        en, es = build_site.catalog("en"), build_site.catalog("es")
+    def test_other_language_pages_have_their_own_interface_text(self):
+        en = build_site.catalog("en")
         keys = ("skip", "nav.home", "nav.all_books", "nav.all_articles", "footer.tagline",
                 "footer.review", "footer.report", "tools.theme", "theme.night")
-        for rel in self.english_pages():
-            page = self.read(Path("es") / rel)
-            for key in keys:
-                self.assertNotIn(en[key], page, (rel, key))
-                self.assertIn(es[key], page, (rel, key))
-        home = self.read("es/index.html")
-        self.assertIn(es["home.heading"], home)
-        self.assertIn('href="/es/read/"', home)
-        self.assertNotIn('href="/read/"', home)
+        for lang in OTHERS:
+            cat = build_site.catalog(lang)
+            for rel in self.english_pages():
+                page = self.read(Path(lang) / rel)
+                for key in keys:
+                    self.assertNotIn(en[key], page, (lang, rel, key))
+                    self.assertIn(cat[key], page, (lang, rel, key))
+            home = self.read(f"{lang}/index.html")
+            self.assertIn(cat["home.heading"], home)
+            self.assertIn(f'href="/{lang}/read/"', home)
+            self.assertNotIn('href="/read/"', home)
 
     def test_reader_reads_in_the_page_language(self):
         def data(rel):
@@ -125,23 +130,27 @@ class LanguagesTest(unittest.TestCase):
         self.assertNotIn('data-setting="plural_you"', en)
         self.assertIn('data-setting="plural_you"', es)
         self.assertIn(">Equilibrada</button>", es)
+        sw = self.read("sw/jhn/1/index.html")
+        self.assertNotIn('data-setting="plural_you"', sw)
+        self.assertIn(">Linganifu</button>", sw)
 
     def test_an_untranslated_article_shows_the_english_and_points_to_it(self):
-        for article in build_site.load_articles("es"):
-            rel = Path("es") / build_site.article_url(article).strip("/") / "index.html"
-            page = self.read(rel)
-            english = build_site.SITE_URL + build_site.article_url(article)
-            if article["lang"] == "es":
-                self.assertIn('hreflang="es"', page)
-                continue
-            self.assertIn(build_site.catalog("es")["article.not_translated"], page)
-            self.assertIn(f'<link rel="canonical" href="{english}">', page)
-            self.assertIn('<div class="article-body" lang="en">', page)
-            self.assertNotIn(f"{build_site.SITE_URL}/es{build_site.article_url(article)}<",
-                             self.read("sitemap.xml"))
+        for lang in OTHERS:
+            for article in build_site.load_articles(lang):
+                rel = Path(lang) / build_site.article_url(article).strip("/") / "index.html"
+                page = self.read(rel)
+                english = build_site.SITE_URL + build_site.article_url(article)
+                if article["lang"] == lang:
+                    self.assertIn(f'hreflang="{lang}"', page)
+                    continue
+                self.assertIn(build_site.catalog(lang)["article.not_translated"], page)
+                self.assertIn(f'<link rel="canonical" href="{english}">', page)
+                self.assertIn('<div class="article-body" lang="en">', page)
+                self.assertNotIn(f"{build_site.SITE_URL}/{lang}{build_site.article_url(article)}<",
+                                 self.read("sitemap.xml"))
 
-    def test_links_inside_spanish_pages_resolve(self):
-        for path in (self.out / "es").rglob("index.html"):
+    def test_links_inside_other_language_pages_resolve(self):
+        for path in (p for lang in OTHERS for p in (self.out / lang).rglob("index.html")):
             for href in re.findall(r'href="(/[^"#?]*)', path.read_text(encoding="utf-8")):
                 target = self.out / href.lstrip("/")
                 self.assertTrue(target.is_file() or (target / "index.html").is_file(), (path, href))
@@ -169,6 +178,7 @@ class LanguagesTest(unittest.TestCase):
     def test_dates_are_written_in_each_language(self):
         self.assertEqual(build_site._date("2026-10-10", "en"), "10 October 2026")
         self.assertEqual(build_site._date("2026-10-10", "es"), "10 de octubre de 2026")
+        self.assertEqual(build_site._date("2026-10-10", "sw"), "10 Oktoba 2026")
 
 
 if __name__ == "__main__":
