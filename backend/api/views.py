@@ -6,17 +6,24 @@ GET /api/text/<BOOK>/<chapter>/?editions=bsb,web
 GET /api/passages/<BOOK>/<chapter>/      our sentence records for a chapter, in the
                                          same shape as the files in content/, plus
                                          the source words they refer to
+GET /api/search/?q=light&lang=en         search the site's passages, sentences, notes
+                                         and articles (translation/search.py); add
+                                         &type=verse|note|article|passage for one
+                                         kind a page at a time (&offset, &limit,
+                                         &sort=relevance|order)
 GET /healthz                             liveness check
 """
 from django.db import connection
 from django.http import JsonResponse
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, throttle_classes
 from rest_framework.exceptions import NotFound, ValidationError
 from rest_framework.response import Response
+from rest_framework.throttling import UserRateThrottle
 
 from owb import refs
 from texts.models import Edition, Verse, Word
-from translation.models import Sentence
+from translation import search as site_search
+from translation.models import SearchLanguage, Sentence
 
 
 def _book(code):
@@ -93,6 +100,44 @@ def passages(request, book, chapter):
         words.setdefault(f"{w.book}.{w.chapter}.{w.verse}", []).append(word)
     return Response({"book": book, "chapter": chapter,
                      "records": [record_json(s) for s in sentences], "words": words})
+
+
+class SearchThrottle(UserRateThrottle):
+    """Searches per visitor (or account) a minute: settings REST_FRAMEWORK."""
+    scope = "search"
+
+
+def _number(params, name, default, low, high):
+    try:
+        value = int(params.get(name, default))
+    except ValueError:
+        raise ValidationError({name: "must be a whole number"})
+    return min(max(value, low), high)
+
+
+@api_view(["GET"])
+@throttle_classes([SearchThrottle])
+def search(request):
+    params = request.query_params
+    lang = params.get("lang", "en")
+    if not SearchLanguage.objects.filter(code=lang).exists():
+        if not SearchLanguage.objects.exists():
+            return Response({"detail": "Search is not ready: run import_content."}, status=503)
+        raise ValidationError({"lang": f"unknown site language {lang!r}"})
+    kind = params.get("type") or None
+    if kind and kind not in site_search.KINDS:
+        raise ValidationError({"type": f"one of {', '.join(site_search.KINDS)}"})
+    sort = params.get("sort", "relevance")
+    if sort not in ("relevance", "order"):
+        raise ValidationError({"sort": "relevance or order"})
+    answer = site_search.search(
+        lang, params.get("q", ""), kind, sort=sort,
+        offset=_number(params, "offset", 0, 0, 1000), limit=_number(params, "limit", 20, 1, 50),
+        per=_number(params, "per", 8, 1, 20))
+    response = Response(answer)
+    # Answers change only when a deploy re-imports content/.
+    response["Cache-Control"] = "public, max-age=300"
+    return response
 
 
 def healthz(request):
