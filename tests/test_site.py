@@ -1,4 +1,5 @@
 import hashlib
+import html
 import json
 import re
 import subprocess
@@ -246,7 +247,8 @@ class SiteTest(unittest.TestCase):
         self.assertTrue(files)
         for name in files:
             self.assertTrue((self.out / "fonts" / name).is_file(), name)
-        for licence in ("OFL-Fraunces.txt", "OFL-HankenGrotesk.txt"):
+        self.assertIn("atkinson-hyperlegible-latin-400-normal.woff2", files)
+        for licence in ("OFL-Fraunces.txt", "OFL-HankenGrotesk.txt", "OFL-AtkinsonHyperlegible.txt"):
             self.assertIn("SIL Open Font License", (ROOT / "web" / "fonts" / licence).read_text(encoding="utf-8"))
         home = (self.out / "index.html").read_text(encoding="utf-8")
         preload = re.search(r'<link rel="preload" href="/fonts/([^"]+)"', home)[1]
@@ -402,6 +404,46 @@ class SiteTest(unittest.TestCase):
             for p in chaps:
                 self.assertIn(f'href="{p.url}"', section)
         self.assertIn("4 of 4 chapters, complete", read)
+
+    def built(self, path):
+        """The built file a site path names ("/es/offline/", "/style.css?v=...")."""
+        rel = path.split("?")[0].lstrip("/")
+        return self.out / (rel + "index.html" if rel.endswith("/") or not rel else rel)
+
+    def test_offline_worker_keeps_files_that_exist(self):
+        sw = (self.out / "sw.js").read_text(encoding="utf-8")
+        self.assertNotIn("__", sw.split('"use strict";')[1])
+        precache = json.loads(re.search(r"var PRECACHE = (.*);", sw)[1])
+        offline = json.loads(re.search(r"var OFFLINE = (.*);", sw)[1])
+        for path in precache + list(offline.values()):
+            self.assertTrue(self.built(path).is_file(), path)
+        self.assertIn(build_site.asset("reader.js"), precache)
+        self.assertEqual(set(offline), {"" if code == "en" else code for code in build_site.LANGUAGES})
+        manifest = json.loads((self.out / "manifest.webmanifest").read_text(encoding="utf-8"))
+        self.assertEqual(manifest["start_url"], "/")
+        self.assertIn('<link rel="manifest" href="/manifest.webmanifest">',
+                      (self.out / "index.html").read_text(encoding="utf-8"))
+
+    def test_offline_pages_are_built_but_not_indexed(self):
+        sitemap = (self.out / "sitemap.xml").read_text(encoding="utf-8")
+        self.assertNotIn("/offline/", sitemap)
+        for code in build_site.LANGUAGES:
+            page = self.built(build_site.url(code, "/offline/")).read_text(encoding="utf-8")
+            self.assertIn('<meta name="robots" content="noindex">', page)
+            self.assertIn('id="saved-books"', page)
+
+    def test_read_page_can_save_each_book(self):
+        for code in build_site.LANGUAGES:
+            read = self.built(build_site.url(code, "/read/")).read_text(encoding="utf-8")
+            files = json.loads(html.unescape(re.search(r'data-offline-files="([^"]*)"', read)[1]))
+            for path in files:
+                self.assertTrue(self.built(path).is_file(), path)
+            buttons = re.findall(r'class="save-book" hidden data-book="([A-Z0-9]+)"[^>]*data-pages="([^"]*)"', read)
+            self.assertEqual([b for b, _ in buttons], [b for b, _ in build_site.books(code)])
+            for _, pages in buttons:
+                for path in json.loads(html.unescape(pages)):
+                    self.assertTrue(path.startswith(build_site.url(code, "/")), path)
+                    self.assertTrue(self.built(path).is_file(), path)
 
 
 class ExtractTest(unittest.TestCase):

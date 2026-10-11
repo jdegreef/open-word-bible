@@ -33,19 +33,22 @@ Decisions come in two layers:
 Each decision names its tokens, category, choice, alternatives and reason,
 and whether it is uncertain or needs a footnote.
 
-Content: Genesis 1–7 (`content/GEN/`) in English; John 1–8
+Content: Genesis 1–8 (`content/GEN/`) in English; John 1–8
 (`content/JHN/`) in English, with chapters 1–5 also in Spanish, chapters
-1–2 in French and chapters 1–6 in Swahili; Romans 1–2 and 9–16 (`content/ROM/`) in
+1–2 in French and chapters 1–7 in Swahili; Romans 1–3 and 9–16 (`content/ROM/`) in
 English; all of Galatians (`content/GAL/`) in English; all of Philippians (`content/PHP/`) in English, with chapter 4
 also in Spanish; all of Ephesians (`content/EPH/`), Colossians
-(`content/COL/`) and Philemon (`content/PHM/`) in English; and all of James and 1 and 2 Peter
-(`content/JAS/`, `content/1PE/`, `content/2PE/`) in English. English runs
+(`content/COL/`) and Philemon (`content/PHM/`) in English; and all of James, 1 and 2 Peter and 1, 2 and 3
+John (`content/JAS/`, `content/1PE/`, `content/2PE/`, `content/1JN/`,
+`content/2JN/`, `content/3JN/`) in English. English runs
 ahead of the other languages; `docs/english-style.md` is the brief for
 drafting it and `data/key_terms.json` the settled key terms.
 `docs/french-style.md` and
 `docs/swahili-style.md` are the briefs for French and Swahili.
 
-Matthew 1–2 (`content/MAT/`) is drafted in English.
+Matthew 1–3 (`content/MAT/`) is drafted in English.
+
+Psalms 1–2 (`content/PSA/`) are drafted in English.
 
 A record is one sentence of the source, not one verse. It ends where the
 SBLGNT ends a sentence: a full stop, a question mark, or a raised dot (·)
@@ -229,9 +232,13 @@ index per interface language (`search-en.json`, `search-es.json`):
 
 `web/search.js` loads the index the first time someone searches and matches
 in the browser. Matching ignores accents and matches from the start of a
-word. The gzipped index is about 160 KB today. Once the translation grows
-much larger, searching should move to the API (Postgres full-text search,
-as Ochorus does).
+word.
+
+Search is moving to the API, because the index grows by about 2 KB for
+every verse translated. `/api/search/` (below) already answers from the
+same documents, using Postgres full-text search, as Ochorus does. The next
+step switches `web/search.js` over to it, and after that the build stops
+writing the index.
 
 ### Pointing openwordbible.org at Render
 
@@ -263,9 +270,19 @@ against Postgres (`render.yaml`). It holds:
 - **translation**: our sentence records, renderings, decisions and the review
   trail. `content/` is still the master copy and is loaded with
   `import_content`.
-- **api**: read-only JSON at `/api/editions/`, `/api/text/<BOOK>/<ch>/` and
-  `/api/passages/<BOOK>/<ch>/`. The Django admin at `/admin/` is the first
-  review tool.
+- **api**: read-only JSON at `/api/editions/`, `/api/text/<BOOK>/<ch>/`,
+  `/api/passages/<BOOK>/<ch>/` and `/api/search/?q=…&lang=…`. The Django
+  admin at `/admin/` is the first review tool.
+- **search** (in translation): `import_content` rebuilds the search tables
+  from `search_documents` in `scripts/build_site.py`, the same documents as
+  the site's search index, in every site language. Words are matched by the
+  language of their own text, with accents ignored and stemming for English,
+  Spanish and French (Swahili matches whole words and their beginnings).
+  `/api/search/` returns the best of each kind (passages, verses, notes,
+  articles), or with `&type=` one kind a page at a time (`&offset`,
+  `&limit`, `&sort=relevance|order`). A reference such as "John 3:16" is
+  answered by its verses alone, and a query that finds nothing gets a "Did
+  you mean". Nothing about searches is logged.
 
 Local setup:
 
