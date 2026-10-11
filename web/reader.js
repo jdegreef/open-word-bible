@@ -706,6 +706,40 @@
     return node;
   }
 
+  // Key terms and the people, places and peoples in the chosen sentence
+  // (DATA.cards, from data/key_terms.json and data/names.json). Tapping one
+  // lights its words in the Greek or Hebrew above.
+  function drawWordCards(panel) {
+    var byCard = {};
+    current.source.tokens.forEach(function (id) {
+      var i = DATA.cards.tokens[id];
+      if (i !== undefined) (byCard[i] = byCard[i] || []).push(id);
+    });
+    var found = Object.keys(byCard).map(Number);
+    if (!found.length) return;
+    panel.appendChild(el("h3", null, t("cards_title")));
+    var list = el("div", "wcards");
+    found.sort(function (a, b) { return DATA.cards.list[a].type === "term" ? -1 : DATA.cards.list[b].type === "term" ? 1 : a - b; })
+      .forEach(function (i) {
+        var c = DATA.cards.list[i];
+        var card = el("button", "wcard " + c.type);
+        card.type = "button";
+        var head = el("span", "wcard-head");
+        head.appendChild(el("span", "wcard-title", c.title));
+        var lemma = el("span", "wcard-lemma", c.lemma);
+        lemma.lang = DATA.source;
+        head.appendChild(lemma);
+        head.appendChild(el("span", "wcard-kind", t("card_kind")[c.type === "term" ? "term" : c.kind] || ""));
+        card.appendChild(head);
+        // A key term's note is for translators; readers get the rule it keeps.
+        if (c.type === "term") card.appendChild(el("span", "wcard-note", t("card_term").replace("{words}", c.english.join(", "))));
+        else card.appendChild(el("span", "wcard-note", c.note));
+        card.addEventListener("click", function () { highlight(byCard[i], null); light(byCard[i]); });
+        list.appendChild(card);
+      });
+    panel.appendChild(list);
+  }
+
   function drawCard(d, record) {
     var card = el("div", "card");
     card.tabIndex = 0;
@@ -896,6 +930,7 @@
     });
     panel.appendChild(el("p", "hint", t("levels_hint")));
     panel.appendChild(levels);
+    drawWordCards(panel);
 
     var ds = decisionsFor(current);
     panel.appendChild(el("h3", null, t("meaning")));

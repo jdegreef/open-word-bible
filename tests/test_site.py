@@ -388,6 +388,27 @@ class SiteTest(unittest.TestCase):
         # A reference is the palette's first row, so Enter goes straight to it.
         self.assertLess(search.index('fill(ui("go_to")'), search.index('fill(ui("show_all")'))
 
+    def test_name_cards_match_the_word_data(self):
+        import glob
+        words = {}
+        for path in glob.glob(str(build_site.ROOT / "data" / "*" / "*.json")):
+            if "/grc/" in path or "/hbo/" in path:
+                for vid, ws in json.loads(Path(path).read_text(encoding="utf-8"))["verses"].items():
+                    for w in ws:
+                        words.setdefault((build_site.word_strong(w), w["lemma"]), set()).add(vid)
+        for (strong, lemma), senses in build_site.name_cards().items():
+            # Every lemma is copied from the source data, never typed.
+            self.assertIn((strong, lemma), words, (strong, lemma))
+            listed = [v for s in senses for v in s.get("verses", [])]
+            self.assertEqual(len(listed), len(set(listed)), strong)
+            self.assertLessEqual(sum("verses" not in s for s in senses), 1, strong)
+            self.assertTrue(set(listed) <= words[(strong, lemma)], strong)
+        # A page's cards resolve a shared name by verse: two Lamechs.
+        gen4 = self.chapter_data("gen/4")["cards"]["list"]
+        gen5 = self.chapter_data("gen/5")["cards"]["list"]
+        self.assertIn("Lamech, descendant of Cain", [c["title"] for c in gen4])
+        self.assertIn("Lamech, father of Noah", [c["title"] for c in gen5])
+
     def test_read_page_groups_chapters_by_book(self):
         read = (self.out / "read" / "index.html").read_text(encoding="utf-8")
         for book, chaps in build_site.books():

@@ -736,6 +736,7 @@ def chapter_page(book, chapter, lang="en"):
             "paragraphs": paragraph_starts(records, words),
             "disputed": disputed_block(records, lang),
             "bookRefs": book_refs(lang),
+            "cards": word_cards(records, words),
             "headings": {r["id"]: headings()[r["id"]] for r in records if r["id"] in headings()}}
     # Each morphology code's description in every language, once per page.
     data["uses"] = word_uses()[1]
@@ -881,6 +882,64 @@ DISPUTED = (("JHN.7.53", "JHN.8.11"),)
 def disputed(vid):
     key = refs.parse(vid).sort_key()
     return any(refs.parse(a).sort_key() <= key <= refs.parse(b).sort_key() for a, b in DISPUTED)
+
+
+@functools.lru_cache(maxsize=None)
+def key_terms():
+    """data/key_terms.json, by lemma."""
+    data = json.loads((ROOT / "data" / "key_terms.json").read_text(encoding="utf-8"))
+    return {t["lemma"]: t for t in data["terms"]}
+
+
+@functools.lru_cache(maxsize=None)
+def name_cards():
+    """data/names.json (people, places and peoples), by (Strong's number,
+    lemma). Each has one or more senses; a sense with "verses" is the one
+    for those verses, a sense without is the one for every other verse."""
+    path = ROOT / "data" / "names.json"
+    if not path.exists():
+        return {}
+    data = json.loads(path.read_text(encoding="utf-8"))
+    return {(n["strong"], n["lemma"]): n["senses"] for n in data["names"]}
+
+
+def word_strong(word):
+    """A word's Strong's number as names.json keys it: G or H and digits."""
+    prefix = "H" if word["id"].startswith("o") else "G"
+    return prefix + (word.get("strong") or "").lstrip("0")
+
+
+def word_cards(records, words):
+    """The key terms and the people, places and peoples among this page's
+    words: {"list": [card, ...], "tokens": {token id: index into list}}.
+    A name used of more than one person resolves to the sense for its verse."""
+    terms, names = key_terms(), name_cards()
+    mine = {t for r in records for t in r["source"]["tokens"]}
+    cards, index, tokens = [], {}, {}
+    for vid, ws in words.items():
+        for w in ws:
+            if w["id"] not in mine:
+                continue
+            card = None
+            term = terms.get(w["lemma"])
+            if term:
+                key = ("term", w["lemma"])
+                card = {"type": "term", "lemma": term["lemma"], "title": term["sense"],
+                        "english": term["english"], "note": term.get("note", "")}
+            senses = names.get((word_strong(w), w["lemma"]))
+            if senses and not card:
+                sense = next((s for s in senses if vid in s.get("verses", [])), None) \
+                    or next((s for s in senses if "verses" not in s), None)
+                if sense:
+                    key = ("name", w["lemma"], sense["name"])
+                    card = {"type": "name", "lemma": w["lemma"], "title": sense["name"],
+                            "kind": sense["kind"], "note": sense["note"]}
+            if card:
+                if key not in index:
+                    index[key] = len(cards)
+                    cards.append(card)
+                tokens[w["id"]] = index[key]
+    return {"list": cards, "tokens": tokens}
 
 
 @functools.lru_cache(maxsize=None)
@@ -1792,7 +1851,7 @@ def sitemap(paths):
 
 
 def build(out):
-    for cached in (nav_menus, footer_links, passages, asset, translated_verses, catalog, book_refs, search_index,
+    for cached in (nav_menus, footer_links, passages, asset, translated_verses, catalog, book_refs, key_terms, name_cards, search_index,
                    search_index_url, word_uses):
         cached.cache_clear()
     if out.exists():
