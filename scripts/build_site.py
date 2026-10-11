@@ -33,11 +33,12 @@ BOOK_NAMES = {"GEN": {"en": "Genesis", "es": "Génesis", "fr": "Genèse", "sw": 
               "EPH": {"en": "Ephesians", "es": "Efesios", "fr": "Éphésiens", "sw": "Waefeso"},
               "PHP": {"en": "Philippians", "es": "Filipenses", "fr": "Philippiens", "sw": "Wafilipi"},
               "COL": {"en": "Colossians", "es": "Colosenses", "fr": "Colossiens", "sw": "Wakolosai"},
+              "PHM": {"en": "Philemon", "es": "Filemón", "fr": "Philémon", "sw": "Filemoni"},
               "JAS": {"en": "James", "es": "Santiago", "fr": "Jacques", "sw": "Yakobo"},
               "1PE": {"en": "1 Peter", "es": "1 Pedro", "fr": "1 Pierre", "sw": "1 Petro"},
               "2PE": {"en": "2 Peter", "es": "2 Pedro", "fr": "2 Pierre", "sw": "2 Petro"}}
 # Chapters in each book, for "2 of 21 chapters" and a book's completeness.
-BOOK_CHAPTERS = {"GEN": 50, "MAT": 28, "JHN": 21, "ROM": 16, "GAL": 6, "EPH": 6, "PHP": 4, "COL": 4, "JAS": 5, "1PE": 5, "2PE": 3}
+BOOK_CHAPTERS = {"GEN": 50, "MAT": 28, "JHN": 21, "ROM": 16, "GAL": 6, "EPH": 6, "PHP": 4, "COL": 4, "PHM": 1, "JAS": 5, "1PE": 5, "2PE": 3}
 # The interface languages, English first (see catalog below).
 LANGUAGES = ("en", "es", "fr", "sw")
 SITE_NAME = "Open Word Bible"
@@ -919,6 +920,16 @@ def passage_card(book, chapter, lang="en"):
             f'<span class="a-meta">{meta}</span></a></li>')
 
 
+def resume_link(lang):
+    """A link back to the verse the reader was last at, hidden until
+    web/site.js finds one saved by web/reader.js (owb.place). It carries the
+    book names in lang, so the link names the passage in the page's language."""
+    names = json.dumps({b: BOOK_NAMES[b][lang] for b, _ in books()}, ensure_ascii=False)
+    return (f'<a class="button" data-resume hidden data-label="{html.escape(t(lang, "resume.link"))}" '
+            f'data-prefix="{url(lang, "")}" data-books="{html.escape(names)}" href="{url(lang, "/read/")}">'
+            f'{icon(ICONS["book"])}<span></span></a>')
+
+
 def read_page(lang="en"):
     groups = []
     for book, chaps in books(lang):
@@ -935,6 +946,7 @@ def read_page(lang="en"):
 <p class="eyebrow">{t(lang, "read.title")}</p>
 <h1>{t(lang, "read.heading")}</h1>
 <p class="dek">{t(lang, "read.dek")}</p>
+<p class="actions">{resume_link(lang)}</p>
 </header>
 {cards}
 <section class="how" aria-labelledby="how-h">
@@ -1069,7 +1081,7 @@ def home_page(lang="en"):
 <p class="eyebrow">{t(lang, "home.eyebrow")}</p>
 <h1>{t(lang, "home.heading")}</h1>
 <p class="hero-sub">{t(lang, "home.sub")}</p>
-<p class="actions"><a class="button" href="{url(lang, "/read/")}">{icon(ICONS["book"])}{t(lang, "home.start")}</a>
+<p class="actions">{resume_link(lang)}<a class="button" href="{url(lang, "/read/")}">{icon(ICONS["book"])}{t(lang, "home.start")}</a>
 <a class="button ghost" href="#example-h">{t(lang, "home.how")}</a></p>
 <ul class="trust">
 <li>{icon(ICONS["gift"], 16)}{t(lang, "home.trust_free")}</li>
