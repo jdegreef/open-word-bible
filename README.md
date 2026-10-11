@@ -35,10 +35,12 @@ and whether it is uncertain or needs a footnote.
 
 Content: Genesis 1–3 (`content/GEN/`) in English; John 1–8
 (`content/JHN/`) in English, with 1:1–18 also in Spanish, chapters 1–2
-in French and chapters 1–3 in Swahili, all of Philippians (`content/PHP/`) in English, with
+in French and chapters 1–3 in Swahili, 1 Corinthians 1–4 and 2 Corinthians 1–4
+(`content/1CO/`, `content/2CO/`) in English, all of Philippians (`content/PHP/`) in English, with
 4:1–9 also in Spanish, and all of Colossians (`content/COL/`) in English.
 English runs ahead of the other languages; `docs/english-style.md` is the
 brief for drafting it and `data/key_terms.json` the settled key terms.
+`docs/corinthians-terms.md` proposes the recurring choices for 1 and 2 Corinthians.
 `docs/french-style.md` and
 `docs/swahili-style.md` are the briefs for French and Swahili.
 

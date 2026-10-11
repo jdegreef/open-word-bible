@@ -27,10 +27,12 @@ from owb import markup, morph, refs  # noqa: E402
 
 BOOK_NAMES = {"GEN": {"en": "Genesis", "es": "Génesis", "fr": "Genèse", "sw": "Mwanzo"},
               "JHN": {"en": "John", "es": "Juan", "fr": "Jean", "sw": "Yohana"},
+              "1CO": {"en": "1 Corinthians", "es": "1 Corintios", "fr": "1 Corinthiens", "sw": "1 Wakorintho"},
+              "2CO": {"en": "2 Corinthians", "es": "2 Corintios", "fr": "2 Corinthiens", "sw": "2 Wakorintho"},
               "PHP": {"en": "Philippians", "es": "Filipenses", "fr": "Philippiens", "sw": "Wafilipi"},
               "COL": {"en": "Colossians", "es": "Colosenses", "fr": "Colossiens", "sw": "Wakolosai"}}
 # Chapters in each book, for "2 of 21 chapters" and a book's completeness.
-BOOK_CHAPTERS = {"GEN": 50, "JHN": 21, "PHP": 4, "COL": 4}
+BOOK_CHAPTERS = {"GEN": 50, "JHN": 21, "1CO": 16, "2CO": 13, "PHP": 4, "COL": 4}
 # The interface languages, English first (see catalog below).
 LANGUAGES = ("en", "es", "fr", "sw")
 SITE_NAME = "Open Word Bible"
