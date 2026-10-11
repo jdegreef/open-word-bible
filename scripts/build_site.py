@@ -459,6 +459,37 @@ def load_chapter(book, chapter):
     return records, words
 
 
+def paragraph_starts(records, words):
+    """The ids of the records that open a paragraph. SBLGNT marks a
+    paragraph by capitalising its first word, but it also capitalises the
+    start of a quotation, which follows a raised dot or a comma. So a record
+    opens a paragraph when its first word is capitalised (and is not a name,
+    whose dictionary form is capitalised too) and the word before it ends a
+    sentence with a full stop. A chapter's first record always does."""
+    order = [w for verse in words.values() for w in verse]
+    by_id = {w["id"]: w for w in order}
+    before = {b["id"]: a for a, b in zip(order, order[1:])}
+    starts = []
+    for i, r in enumerate(records):
+        first = r["source"]["tokens"][0]
+        word = by_id.get(first)
+        prev = before.get(first)
+        if i == 0 or prev is None or (
+                word and word["text"][:1].isupper() and word["lemma"][:1].islower()
+                and prev["after"].strip().endswith(".")):
+            starts.append(r["id"])
+    return starts
+
+
+@functools.cache
+def headings():
+    """Section headings by the record they stand above (data/headings.json),
+    each in the languages it has, with curly quotes."""
+    data = json.loads((ROOT / "data" / "headings.json").read_text(encoding="utf-8"))
+    return {rid: {lang: smart_quotes(text) for lang, text in h.items()}
+            for rid, h in data["headings"].items()}
+
+
 def chapters():
     """Every (book, chapter) with content, in canonical order."""
     found = set()
@@ -511,14 +542,21 @@ def book_progress(book, chapters_, lang="en"):
                           done=done, total=total)
 
 
-def chapter_pills(chaps, lang="en", current=None):
+def chapter_pills(chaps, lang="en", current=None, total=None):
     """A pill per chapter, linked; a dashed one for a chapter only partly
-    translated, and the current chapter marked."""
-    return "".join(
-        f'<a class="chap{"" if p.complete else " part"}" href="{url(lang, p.url)}"'
-        f'{" aria-current=page" if p.chapter == current else ""} '
-        f'title="{html.escape(chapter_name(p.records, p.book, p.chapter, lang))}">{p.chapter}</a>'
-        for p in chaps)
+    translated, and the current chapter marked. Given the book's number of
+    chapters, the ones not yet translated are shown too, greyed out."""
+    def pill(p):
+        return (f'<a class="chap{"" if p.complete else " part"}" href="{url(lang, p.url)}"'
+                f'{" aria-current=page" if p.chapter == current else ""} '
+                f'title="{html.escape(chapter_name(p.records, p.book, p.chapter, lang))}">{p.chapter}</a>')
+    if total is None:
+        return "".join(pill(p) for p in chaps)
+    have = {p.chapter: p for p in chaps}
+    missing = t(lang, "reader.not_translated")
+    return "".join(pill(have[n]) if n in have else
+                   f'<span class="chap none" title="{missing}" aria-label="{n}: {missing}">{n}</span>'
+                   for n in range(1, total + 1))
 
 
 def meter(done, total):
@@ -568,7 +606,9 @@ def chapter_page(book, chapter, lang="en"):
                  if any(code in r["renderings"] for r in records)]
     data = {"book": book, "chapter": chapter, "title": title, "lang": lang, "languages": languages,
             "ui": catalog(lang)["reader.ui"], "records": records,
-            "words": {vid: words[vid] for r in records for vid in r["refs"]}}
+            "words": {vid: words[vid] for r in records for vid in r["refs"]},
+            "paragraphs": paragraph_starts(records, words),
+            "headings": {r["id"]: headings()[r["id"]] for r in records if r["id"] in headings()}}
     # Each morphology code's description in every language, once per page.
     data["grammar"] = {code: {l: morph.describe(code, l) for l in LANGUAGES}
                        for code in sorted({w["morph"] for ws in data["words"].values() for w in ws})}
@@ -586,7 +626,6 @@ def chapter_page(book, chapter, lang="en"):
     plural = ("\n  " + control("plural", "plural_you", [("0", "ustedes"), ("1", "vosotros")])
               if lang in PLURAL_YOU else "")
     body = f"""
-<p class="notice">{t(lang, "reader.notice")}</p>
 <button type="button" class="settings-toggle" id="settings-toggle" aria-expanded="false" aria-controls="settings">
   <span>{t(lang, "reader.settings")}</span> <span class="settings-summary" id="settings-summary"></span>
 </button>
@@ -611,6 +650,7 @@ def chapter_page(book, chapter, lang="en"):
   </article>
   <aside class="panel" id="panel" aria-live="polite" tabindex="-1"></aside>
 </div>
+{edge_turns(book, chapter, lang)}
 <script type="application/json" id="owb-data">{blob}</script>
 <script src="{asset("reader.js")}"></script>
 """
@@ -628,14 +668,41 @@ def chapter_strip(book, chapter, lang="en"):
     progress = book_progress(book, chaps, lang)[2]
     return (f'<nav class="chapstrip" aria-label="{t(lang, "reader.strip", book=name)}">'
             f'<a class="chap-book" href="{url(lang, f"/read/#{book.lower()}")}">{icon(ICONS["book"], 16)}{name}</a>'
-            f'<span class="chap-pills">{chapter_pills(chaps, lang, chapter)}</span>'
+            f'<span class="chap-pills">{chapter_pills(chaps, lang, chapter, BOOK_CHAPTERS[book])}</span>'
             f'<span class="chap-progress">{progress}</span></nav>')
+
+
+def neighbours(book, chapter):
+    """The passages before and after this one, across books (None at the ends)."""
+    ps = passages()
+    i = next(n for n, p in enumerate(ps) if (p.book, p.chapter) == (book, chapter))
+    return (ps[i - 1] if i > 0 else None), (ps[i + 1] if i + 1 < len(ps) else None)
+
+
+def edge_turns(book, chapter, lang="en"):
+    """Arrows at the sides of the window on wide screens, for the previous
+    and next passages; the reader's arrow keys follow them (web/reader.js)."""
+    prev, nxt = neighbours(book, chapter)
+
+    def arrow(p, rel, label, glyph):
+        if p is None:
+            return ""
+        name = html.escape(chapter_name(p.records, p.book, p.chapter, lang))
+        return (f'<a class="edge-turn {rel}" href="{url(lang, p.url)}" data-turn="{rel}" '
+                f'aria-label="{plain_label(label)}: {name}" title="{name}">{glyph}</a>')
+
+    return (arrow(prev, "prev", t(lang, "reader.prev"), "&lsaquo;")
+            + arrow(nxt, "next", t(lang, "reader.next"), "&rsaquo;"))
+
+
+def plain_label(label):
+    """A button label without its arrow entity, for an aria-label."""
+    return re.sub(r"\s*&[lr]arr;\s*", "", label)
 
 
 def chapter_turns(book, chapter, lang="en"):
     """Below a passage: the previous and next passages, across books."""
-    ps = passages()
-    i = next(n for n, p in enumerate(ps) if (p.book, p.chapter) == (book, chapter))
+    prev, nxt = neighbours(book, chapter)
 
     def turn(p, rel, label):
         if p is None:
@@ -644,8 +711,6 @@ def chapter_turns(book, chapter, lang="en"):
                 f'<span class="turn-label">{label}</span>'
                 f'<span class="turn-name">{display(chapter_name(p.records, p.book, p.chapter, lang))}</span></a>')
 
-    prev = ps[i - 1] if i > 0 else None
-    nxt = ps[i + 1] if i + 1 < len(ps) else None
     return (f'<nav class="turns" aria-label="{t(lang, "reader.turns")}">'
             f'{turn(prev, "prev", t(lang, "reader.prev"))}{turn(nxt, "next", t(lang, "reader.next"))}</nav>')
 
