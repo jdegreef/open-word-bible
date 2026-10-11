@@ -33,10 +33,14 @@ Decisions come in two layers:
 Each decision names its tokens, category, choice, alternatives and reason,
 and whether it is uncertain or needs a footnote.
 
-Content: John 1:1–18 (`content/JHN/`) in English and Spanish, and all of
-Philippians (`content/PHP/`) in English, with 4:1–9 also in Spanish. English
-runs ahead of the other languages; `docs/english-style.md` is the brief for
-drafting it and `data/key_terms.json` the settled key terms.
+Content: Genesis 1–2 (`content/GEN/`) in English; John 1–8
+(`content/JHN/`) in English, with 1:1–18 also in Spanish and chapters 1–2
+in French and Swahili, all of Philippians (`content/PHP/`) in English, with
+4:1–9 also in Spanish, and all of Colossians (`content/COL/`) in English.
+English runs ahead of the other languages; `docs/english-style.md` is the
+brief for drafting it and `data/key_terms.json` the settled key terms.
+`docs/french-style.md` and
+`docs/swahili-style.md` are the briefs for French and Swahili.
 
 A record is one sentence of the source, not one verse. It ends where the
 SBLGNT ends a sentence: a full stop, a question mark, or a raised dot (·)
@@ -47,6 +51,24 @@ differently, as John 1:3 does with its last two words, says so in a
 `punctuation` meaning decision. `owb.validate` enforces this, and
 `build_skeleton.py` starts new passages with one record per sentence.
 
+Alignments link source tokens to the words of one rendering, so the reader
+can light up a Greek word and the English it became. A rendering's
+alignments are listed in the order their `target_span`s appear, and each
+span is found after the one before (so a repeated "the" is unambiguous);
+a span may not hold a verse marker or cut through a setting span
+(`markup.alignment_ranges`). A token may appear in more than one alignment
+("not yet ... come"), and words with no counterpart are left out. John 2,
+English Balanced, is aligned as a pilot.
+
+The Old Testament is translated from the Westminster Leningrad Codex with
+MACULA Hebrew word data (`text_id` `WLC@macula-hebrew`, `language` `hbo`, or
+`arc` for Aramaic). MACULA Hebrew divides words into morphemes, so a word with
+a prefix such as "and" or "the" has two token ids. The codex marks no
+sentence ends inside a verse, so a Hebrew record holds whole verses: one by
+default, or several where one sentence runs across them. The article that a
+preposition swallows (la-, "to the") has a MACULA row with no text; records
+and extracts leave it out, and the preposition's code says it is there.
+
 Greek or Hebrew quoted in a gloss, rendering or decision must be copied from
 the source data: the validator rejects any word that is not, code point for
 code point, a form or lemma in MACULA.
@@ -56,6 +78,16 @@ use a wording category (`word_choice`, `setting_alternative`, ...), contain a
 reader setting, or name a target language. Every setting span needs a
 default and at least one distinct, non-empty alternative, and a
 `deity_pronoun` alternative only capitalises the default.
+
+## Paragraphs and headings
+
+The reader breaks the text into paragraphs where SBLGNT does: SBLGNT
+capitalises a paragraph's first word (`paragraph_starts` in
+`scripts/build_site.py`). Section headings are editorial aids, not
+translation: `data/headings.json` keys each one by the record it stands
+above, per language, and they stay AI drafts until a named reviewer
+approves them. A page shows a heading only in the language its sentence is
+shown in.
 
 ## Reader settings
 
@@ -99,7 +131,7 @@ Other tools:
 
     python3 scripts/build_skeleton.py JHN.1.3 JHN.1.5 -o new.json
     python3 -m owb.validate content/JHN/*.json
-    python3 scripts/extract_tokens.py         # refresh data/grc/ after adding verses
+    python3 scripts/extract_tokens.py         # refresh data/grc/ and data/hbo/ after adding verses
 
 ## The site
 
@@ -116,8 +148,9 @@ every page, all using `SITE_URL` in `scripts/build_site.py`.
 ### Languages
 
 The whole site, menus and controls included, is built once per interface
-language, as on Ochorus: English at the root (`/jhn/1/`) and Spanish under
-`/es/` (`/es/jhn/1/`). The footer's Languages row switches to the same page
+language, as on Ochorus: English at the root (`/jhn/1/`), Spanish under
+`/es/` (`/es/jhn/1/`), French under `/fr/` (`/fr/jhn/1/`) and Swahili under
+`/sw/` (`/sw/jhn/1/`). The footer's Languages row switches to the same page
 in another language; the browser remembers the choice and opens later pages
 in it. Pages carry `<html lang>`, hreflang links and a canonical URL.
 
@@ -131,8 +164,11 @@ slug. Until then, the other language's page shows the English under a note,
 names the English page as canonical and stays out of the sitemap.
 
 To add a language: add it to `LANGUAGES` and `BOOK_NAMES` in
-`scripts/build_site.py`, write `i18n/<lang>.json`, and add its words to
-`owb/morph.py`.
+`scripts/build_site.py`, write `i18n/<lang>.json`, add its words to
+`owb/morph.py`, and add it to `Role.READING_LANGUAGES` and the role
+constraint in `backend/accounts/models.py` (with a migration) so it can have
+language reviewers. A drafting brief in `docs/<language>-style.md` settles
+the book-wide wording choices.
 
 ### Articles
 

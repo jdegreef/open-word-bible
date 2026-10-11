@@ -38,5 +38,20 @@ class MarkupTest(unittest.TestCase):
         self.assertEqual(markup.split_verses("In the beginning"), [(None, "In the beginning")])
 
 
+    def test_alignment_ranges_follow_the_rendering_in_order(self):
+        text = "the light of {{gender:all people|men}} \\v 5 and the light shines"
+        # The second "the" is found after "of", not at the start again.
+        ranges = markup.alignment_ranges(text, ["the light", "{{gender:all people|men}}", "the light"])
+        self.assertEqual([text[s:e] for s, e in ranges],
+                         ["the light", "{{gender:all people|men}}", "the light"])
+        self.assertEqual(ranges[2][0], text.rindex("the light"))
+        for bad, reason in ((["shines", "light"], "after the previous"),
+                            (["darkness"], "not found in rendering"),
+                            (["of {{gender:all"], "cuts a setting span"),
+                            (["men}} \\v 5 and"], "verse marker"),
+                            ([" "], "empty")):
+            with self.assertRaisesRegex(ValueError, reason):
+                markup.alignment_ranges(text, bad)
+
 if __name__ == "__main__":
     unittest.main()

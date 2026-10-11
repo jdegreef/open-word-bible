@@ -153,8 +153,11 @@ class RoleTest(TestCase):
     def test_each_role_takes_the_right_kind_of_language(self):
         Role.objects.create(user=self.user, kind="scholar_reviewer", language="grc")
         Role.objects.create(user=self.user, kind="language_reviewer", language="es")
+        Role.objects.create(user=self.user, kind="language_reviewer", language="fr")
+        Role.objects.create(user=self.user, kind="language_reviewer", language="sw")
         Role.objects.create(user=self.user, kind="editor")
         for kind, language in [("scholar_reviewer", "es"), ("language_reviewer", "grc"),
+                               ("language_reviewer", "de"),
                                ("editor", "en"), ("scholar_reviewer", "")]:
             with self.assertRaises(IntegrityError, msg=(kind, language)), transaction.atomic():
                 Role.objects.create(user=self.user, kind=kind, language=language)
