@@ -43,9 +43,16 @@ TARGET_LANGUAGE_NAMES = re.compile(
     r"\b(English|Spanish|espa\u00f1ol|castellano|French|fran\u00e7ais|"
     r"Portuguese|portugu\u00eas|Swahili|Kiswahili)\b", re.IGNORECASE)
 
-KEY_TERMS = {t["strong"]: t for t in json.loads(
+# Keyed by (source language, Strong's number): Greek and Hebrew Strong's
+# numbers overlap (4100 is "believe" in Greek and "what" in Hebrew).
+KEY_TERMS = {(t.get("language", "grc"), t["strong"]): t for t in json.loads(
     (Path(__file__).resolve().parents[1] / "data" / "key_terms.json")
     .read_text(encoding="utf-8"))["terms"]}
+
+
+def token_language(token_id):
+    """grc for a MACULA Greek id (n...), hbo for a MACULA Hebrew one (o...)."""
+    return "hbo" if token_id.startswith("o") else "grc"
 
 # Runs of Greek or Hebrew letters and their marks. Punctuation (ano teleia,
 # maqaf, sof pasuq, elision marks) ends a word.
@@ -138,7 +145,7 @@ def check_key_terms(record, tokens, errors):
     if not isinstance(english, dict):
         return
     for tok in tokens:
-        term = KEY_TERMS.get(tok.strong)
+        term = KEY_TERMS.get((token_language(tok.id), tok.strong))
         if term is None or tok.id in explained:
             continue
         for level, text in sorted(english.items()):

@@ -1,5 +1,6 @@
 import copy
 import json
+import re
 import unittest
 from pathlib import Path
 
@@ -251,12 +252,25 @@ class ValidateTest(unittest.TestCase):
                             for e in validate.validate_record(record)))
 
     def test_key_term_lemmas_are_copied_from_the_data(self):
-        forms = validate.macula_greek.forms()
-        for strong, term in validate.KEY_TERMS.items():
+        from owb.sources import macula_hebrew
+        sources = {"grc": (validate.macula_greek.forms(), validate.macula_greek._all_tokens()),
+                   "hbo": (macula_hebrew.forms(), macula_hebrew._all())}
+        for (language, strong), term in validate.KEY_TERMS.items():
+            forms, words = sources[language]
             self.assertIn(term["lemma"], forms, strong)
-            lemmas = {t.lemma for v in validate.macula_greek._all_tokens().values()
-                      for t in v if t.strong == strong}
+            lemmas = {t.lemma for v in words.values() for t in v if t.strong == strong}
             self.assertIn(term["lemma"], lemmas, strong)
+
+    def test_key_terms_are_matched_by_language(self):
+        # Hebrew Strong's 4100 ("what", Genesis 2:19) is not Greek 4100 ("believe").
+        path = EXAMPLE.parents[1] / "GEN" / "GEN.2.4-25.json"
+        self.assertEqual(validate.validate_file(path), [])
+        record = next(r for r in json.loads(path.read_text(encoding="utf-8"))["records"]
+                      if r["id"] == "GEN.2.5.s1")
+        record["renderings"]["en"]["R"] = re.sub(r"\{\{divine_name:[^}]*\}\}", "God",
+                                                 record["renderings"]["en"]["R"])
+        self.assertTrue(any("key term 'the divine name (YHWH)'" in e
+                            for e in validate.validate_record(record)))
 
     def test_plural_you_is_spanish_only(self):
         path = EXAMPLE.parents[1] / "PHP" / "PHP.4.1-9.json"

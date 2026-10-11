@@ -99,6 +99,13 @@ others.
   those words saying why.
 - US spelling (honor, Savior, practice as a verb). A future `spelling` setting
   will give UK forms.
+- The divine name YHWH is a key term: write `{{divine_name:the LORD|Yahweh}}`
+  (`The LORD` at the start of a sentence) at every level. **(checked)** The
+  reader's "Name of God" control, shown on Old Testament pages, switches it.
+  Key terms are matched by language as well as Strong's number, since Greek
+  and Hebrew numbers overlap.
+- In Genesis 2–3, *ha-adam* is "the man", one particular person, with no
+  gender span; in 1:26–27 *adam* is humankind and takes one.
 - "Lord" for the Greek *kyrios* when it refers to Jesus or to God. "the LORD"
   for the divine name in the Old Testament, with Yahweh as a setting. In a New
   Testament quotation of the Old Testament the Greek has *kyrios*, so write

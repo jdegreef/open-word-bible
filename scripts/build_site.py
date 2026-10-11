@@ -614,6 +614,14 @@ def chapter_page(book, chapter, lang="en"):
 
     # Old Testament pages name the Hebrew where New Testament ones name the Greek.
     suffix = "_hbo" if source == "hbo" else ""
+    # The Old Testament has the divine name (the LORD or Yahweh); the New
+    # Testament has the title Christ (Christ or Messiah).
+    if source == "hbo":
+        title_setting = "divine_name"
+        title_control = control("name", "divine_name", [("0", t(lang, "reader.lord")), ("1", t(lang, "reader.yahweh"))])
+    else:
+        title_setting = "christos"
+        title_control = control("title", "christos", [("0", t(lang, "reader.christ")), ("1", t(lang, "reader.messiah"))])
     levels = catalog(lang)["levels"]
     plural = ("\n  " + control("plural", "plural_you", [("0", "ustedes"), ("1", "vosotros")])
               if lang in PLURAL_YOU else "")
@@ -626,10 +634,10 @@ def chapter_page(book, chapter, lang="en"):
 <div class="controls">
   {control("level", "level", [(code, levels[code]) for code in "LBR"])}
   {control("gender", "gender", [("0", t(lang, "reader.inclusive")), ("1", t(lang, "reader.traditional"))])}
-  {control("title", "christos", [("0", t(lang, "reader.christ")), ("1", t(lang, "reader.messiah"))])}
+  {title_control}
   {control("pronouns", "deity_pronoun", [("0", t(lang, "reader.he")), ("1", t(lang, "reader.He"))])}{plural}
 </div>
-<p class="hint"><span id="hint-level"></span> <span id="hint-gender"></span> <span id="hint-christos"></span> <span id="hint-deity_pronoun"></span> <span id="hint-plural_you"></span></p>
+<p class="hint"><span id="hint-level"></span> <span id="hint-gender"></span> <span id="hint-{title_setting}"></span> <span id="hint-deity_pronoun"></span> <span id="hint-plural_you"></span></p>
 </div>
 <div class="reader">
   <article class="passage">

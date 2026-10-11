@@ -161,6 +161,19 @@ class SiteTest(unittest.TestCase):
             for text in texts:
                 self.assertNotRegex(text, "[\"']", r["id"])
 
+    def test_old_testament_pages_offer_the_divine_name(self):
+        # The divine name (the LORD or Yahweh) on Old Testament pages, the
+        # title Christ (Christ or Messiah) on New Testament ones.
+        gen = (self.out / "gen" / "2" / "index.html").read_text(encoding="utf-8")
+        jhn = (self.out / "jhn" / "1" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('data-setting="divine_name"', gen)
+        self.assertIn('id="hint-divine_name"', gen)
+        self.assertNotIn('data-setting="christos"', gen)
+        self.assertIn('data-setting="christos"', jhn)
+        self.assertNotIn('data-setting="divine_name"', jhn)
+        text = json.dumps(self.chapter_data("gen/2")["records"])
+        self.assertIn("{{divine_name:the LORD|Yahweh}}", text)
+
     def test_chapter_settings_fold_behind_a_toggle(self):
         page = (self.out / "jhn" / "1" / "index.html").read_text(encoding="utf-8")
         self.assertIn('aria-controls="settings"', page)
