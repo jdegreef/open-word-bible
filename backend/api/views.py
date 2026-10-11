@@ -85,10 +85,12 @@ def passages(request, book, chapter):
     token_ids = [t for s in sentences for t in s.tokens]
     words = {}
     for w in Word.objects.filter(id__in=token_ids).order_by("seq"):
-        words.setdefault(f"{w.book}.{w.chapter}.{w.verse}", []).append(
-            {"id": w.id, "position": w.position, "text": w.text, "after": w.after,
-             "lemma": w.lemma, "morph": w.morph, "gloss": w.gloss, "english": w.english,
-             "strong": w.strong})
+        word = {"id": w.id, "position": w.position, "text": w.text, "after": w.after,
+                "lemma": w.lemma, "morph": w.morph, "gloss": w.gloss, "english": w.english,
+                "strong": w.strong}
+        if w.lang in ("H", "A"):   # a Hebrew or Aramaic morpheme, as in data/hbo/
+            word.update(transliteration=w.transliteration, lang=w.lang)
+        words.setdefault(f"{w.book}.{w.chapter}.{w.verse}", []).append(word)
     return Response({"book": book, "chapter": chapter,
                      "records": [record_json(s) for s in sentences], "words": words})
 

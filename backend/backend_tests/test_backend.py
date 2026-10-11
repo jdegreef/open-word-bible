@@ -1,6 +1,6 @@
 """Backend tests. They need a Postgres database (DATABASE_URL) but not the
 large source clones: source words come from the committed extracts in
-data/grc/."""
+data/grc/ and data/hbo/."""
 import io
 import json
 import tempfile
@@ -18,19 +18,27 @@ CONTENT = settings.REPO_ROOT / "content"
 
 
 def load_extract_words():
-    """Create the SBLGNT edition and the words for every chapter in content/."""
-    edition = Edition.objects.create(code="sblgnt", name="SBL Greek New Testament", language="grc",
-                                     kind="original", licence="CC BY 4.0", source="sblgnt",
-                                     source_commit="test")
+    """Create the SBLGNT and WLC editions and the words for every chapter in
+    content/. Returns the SBLGNT edition."""
+    editions = {
+        "grc": Edition.objects.create(code="sblgnt", name="SBL Greek New Testament", language="grc",
+                                      kind="original", licence="CC BY 4.0", source="sblgnt",
+                                      source_commit="test"),
+        "hbo": Edition.objects.create(code="wlc", name="Westminster Leningrad Codex", language="hbo",
+                                      kind="original", licence="Public domain", source="macula-hebrew",
+                                      source_commit="test"),
+    }
     seq = 0
-    for path in sorted((settings.REPO_ROOT / "data" / "grc").glob("*.json")):
-        for vid, words in json.loads(path.read_text(encoding="utf-8"))["verses"].items():
-            book, chapter, verse = vid.split(".")
-            for w in words:
-                Word.objects.create(edition=edition, book=book, chapter=int(chapter), verse=int(verse),
-                                    seq=seq, lang="grc", **w)
-                seq += 1
-    return edition
+    for folder, edition in editions.items():
+        for path in sorted((settings.REPO_ROOT / "data" / folder).glob("*.json")):
+            for vid, words in json.loads(path.read_text(encoding="utf-8"))["verses"].items():
+                book, chapter, verse = vid.split(".")
+                for w in words:
+                    # Hebrew extracts carry each morpheme's language (H or A).
+                    Word.objects.create(edition=edition, book=book, chapter=int(chapter),
+                                        verse=int(verse), seq=seq, **{"lang": folder, **w})
+                    seq += 1
+    return editions["grc"]
 
 
 def import_content(*paths):
@@ -49,7 +57,10 @@ class ImportContentTest(TestCase):
         self.assertEqual(Sentence.objects.count(), expected)
         s = Sentence.objects.get(record_id="JHN.1.12.s1")
         self.assertEqual(s.refs, ["JHN.1.12", "JHN.1.13"])
-        self.assertEqual(s.renderings.count(), 6)
+        # One rendering per language and level the record has.
+        record = next(r for r in json.loads((CONTENT / "JHN" / "JHN.1.1-18.json").read_text())["records"]
+                      if r["id"] == "JHN.1.12.s1")
+        self.assertEqual(s.renderings.count(), sum(len(levels) for levels in record["renderings"].values()))
         self.assertTrue(s.decisions.filter(layer="meaning").exists())
 
     def test_reimport_never_resets_review_status(self):
@@ -110,6 +121,15 @@ class ApiTest(TestCase):
         self.assertEqual(response.json()["records"], from_file)
         self.assertIn("JHN.1.1", response.json()["words"])
 
+    def test_hebrew_passage_round_trips(self):
+        response = self.client.get("/api/passages/gen/1/")
+        self.assertEqual(response.status_code, 200)
+        from_file = [r for path in sorted((CONTENT / "GEN").glob("GEN.1.*.json"))
+                     for r in json.loads(path.read_text())["records"]]
+        self.assertEqual(response.json()["records"], from_file)
+        extract = json.loads((settings.REPO_ROOT / "data" / "hbo" / "GEN.1.json").read_text())
+        self.assertEqual(response.json()["words"]["GEN.1.1"], extract["verses"]["GEN.1.1"])
+
     def test_chapter_text_by_edition(self):
         response = self.client.get("/api/text/JHN/1/?editions=bsb,sblgnt")
         self.assertEqual(response.status_code, 200)
@@ -131,7 +151,7 @@ class ApiTest(TestCase):
         self.assertFalse({k for w in words for k in w} & restricted)
 
     def test_editions_and_health(self):
-        self.assertEqual({e["code"] for e in self.client.get("/api/editions/").json()}, {"sblgnt", "bsb"})
+        self.assertEqual({e["code"] for e in self.client.get("/api/editions/").json()}, {"sblgnt", "wlc", "bsb"})
         self.assertEqual(self.client.get("/healthz").json(), {"ok": True})
 
 

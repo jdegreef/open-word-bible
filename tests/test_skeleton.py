@@ -43,6 +43,24 @@ class SkeletonTest(unittest.TestCase):
         self.assertFalse([e for e in validate.validate_record(record)
                           if "verse markers" in e or "source" in e])
 
+    def test_hebrew_skeleton_has_one_record_per_verse(self):
+        records = skeleton("GEN.1.1", "GEN.1.5")["records"]
+        self.assertEqual([r["id"] for r in records], [f"GEN.1.{v}.s1" for v in range(1, 6)])
+        first = records[0]["source"]
+        self.assertEqual((first["language"], first["text_id"]), ("hbo", "WLC@macula-hebrew"))
+        self.assertEqual(first["tokens"][:2], ["o010010010011", "o010010010012"])
+        # The article swallowed by a preposition (la- "to the", verse 5) has
+        # no written form and is left out.
+        self.assertTrue(all(t[1:].isdigit() for r in records for t in r["source"]["tokens"]))
+        for record in records:
+            self.assertFalse([e for e in validate.validate_record(record) if "source" in e])
+
+    def test_genesis_follows_the_skeleton(self):
+        made = boundaries(skeleton("GEN.1.1", "GEN.2.3")["records"])
+        ours = boundaries(content("GEN/GEN.1.1-13.json") + content("GEN/GEN.1.14-31.json")
+                          + content("GEN/GEN.2.1-3.json"))
+        self.assertEqual(made, ours)
+
 
 if __name__ == "__main__":
     unittest.main()
