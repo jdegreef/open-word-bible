@@ -400,18 +400,19 @@
         if (mine !== seq) return;
         rows = [];
         if (q.length >= MIN) {
-          var terms = parse(q);
-          rows.push({ all: true, kindLabel: "\u21b5", title: fill(ui("show_all"), { q: q }), href: searchUrl(SEARCH_BASE, q) });
-          var ref = reference(q);
+          var terms = parse(q), ref = reference(q);
+          // A reference ("John 3:16") comes first, so Enter goes to it.
           if (ref && ref.url) {
             rows.push(ref.shown.length
               ? { kindLabel: ui("kind").v, title: fill(ui("go_to"), { ref: ref.label }), href: ref.url }
               : { kindLabel: ui("kind").c, title: fill(ui("read_passage"), { ref: ref.chapterLabel }), href: ref.url });
           }
+          rows.push({ all: true, kindLabel: "\u21b5", title: fill(ui("show_all"), { q: q }), href: searchUrl(SEARCH_BASE, q) });
           rows = rows.concat(pages(q));
           // The best few of each kind, in a fixed order: passages, verses,
-          // notes, articles.
-          var hits = terms.length ? find(terms) : [], few = { c: 2, v: 3, n: 2, a: 2 };
+          // notes, articles. A reference is answered by its own row: its
+          // numbers would otherwise match any note that mentions a 3 and a 16.
+          var hits = terms.length && !ref ? find(terms) : [], few = { c: 2, v: 3, n: 2, a: 2 };
           var add = function (h) {
             var r = row(h, terms, q);
             rows.push({ kindLabel: ui("kind")[r.kind], title: r.title, snippet: r.kind === "c" ? r.meta : r.snippet,
@@ -705,7 +706,9 @@
         say(q ? ui("prompt") : "");
         return;
       }
-      var terms = parse(q), hits = terms.length ? find(terms) : [], ref = reference(q);
+      // A reference ("John 3:16") is answered by its card alone: its words
+      // and numbers would otherwise match every note that mentions them.
+      var terms = parse(q), ref = reference(q), hits = terms.length && !ref ? find(terms) : [];
       var by = {};
       GROUPS.forEach(function (g) { by[g] = []; });
       hits.forEach(function (h) { by[h.doc.k].push(h); });
