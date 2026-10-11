@@ -33,7 +33,7 @@ Decisions come in two layers:
 Each decision names its tokens, category, choice, alternatives and reason,
 and whether it is uncertain or needs a footnote.
 
-Content: Genesis 1–4 (`content/GEN/`) in English; John 1–8
+Content: Genesis 1–5 (`content/GEN/`) in English; John 1–8
 (`content/JHN/`) in English, with chapters 1–5 also in Spanish, chapters
 1–2 in French and chapters 1–4 in Swahili, all of Philippians
 (`content/PHP/`) in English, with chapter 4 also in Spanish, and all of
@@ -211,7 +211,9 @@ Ctrl K / Cmd K (or `/`) on any page, opens a palette that searches as you
 type. Its "All results" row leads to `/search/`. That page groups results
 into passages, verses, notes and articles, with filters, and keeps the
 query in the address (`?q=`), so a search can be shared. A reference such as
-"John 3:16" or "Fil 4:6-7" shows those verses with a link into the reader.
+"John 3:16" or "Fil 4:6-7" shows those verses with a link into the reader;
+in the palette it is the first row, so Enter goes straight there. The
+reader's "Go to…" button, beside the chapter pills, opens the palette.
 A verse opened from a result has the query's words marked.
 
 The site is static, so there is no search server. The build writes one
