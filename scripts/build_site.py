@@ -743,6 +743,12 @@ def chapter_page(book, chapter, lang="en"):
     levels = catalog(lang)["levels"]
     plural = ("\n  " + control("plural", "plural_you", [("0", "ustedes"), ("1", "vosotros")])
               if lang in PLURAL_YOU else "")
+    # Measures (modern or original units) only where a passage has them.
+    has_units = any("{{units:" in text for r in records
+                    for levels_ in r["renderings"].values() for text in levels_.values())
+    units = ("\n  " + control("measures", "units", [("0", t(lang, "reader.modern")),
+                                                     ("1", t(lang, "reader.original"))])
+             if has_units else "")
     body = f"""
 <button type="button" class="settings-toggle" id="settings-toggle" aria-expanded="false" aria-controls="settings">
   <span>{t(lang, "reader.settings")}</span> <span class="settings-summary" id="settings-summary"></span>
@@ -752,10 +758,10 @@ def chapter_page(book, chapter, lang="en"):
   {control("level", "level", [(code, levels[code]) for code in "LBR"])}
   {control("gender", "gender", [("0", t(lang, "reader.inclusive")), ("1", t(lang, "reader.traditional"))])}
   {title_control}
-  {control("pronouns", "deity_pronoun", [("0", t(lang, "reader.he")), ("1", t(lang, "reader.He"))])}{plural}
+  {control("pronouns", "deity_pronoun", [("0", t(lang, "reader.he")), ("1", t(lang, "reader.He"))])}{units}{plural}
   {control("view", "view", [("0", t(lang, "reader.study")), ("1", t(lang, "reader.reading"))], " view-control")}
 </div>
-<p class="hint"><span id="hint-level"></span> <span id="hint-gender"></span> <span id="hint-{title_setting}"></span> <span id="hint-deity_pronoun"></span> <span id="hint-plural_you"></span> <span id="hint-view"></span></p>
+<p class="hint"><span id="hint-level"></span> <span id="hint-gender"></span> <span id="hint-{title_setting}"></span> <span id="hint-deity_pronoun"></span> <span id="hint-units"></span> <span id="hint-plural_you"></span> <span id="hint-view"></span></p>
 </div>
 <div class="reader">
   <article class="passage">
