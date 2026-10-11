@@ -44,10 +44,18 @@ API_URL = os.environ.get("OWB_API_URL", "https://api.openwordbible.org").rstrip(
 # (where style.css colours it from the current colour mode).
 BOOK_PATH = ("M30 19C24 15.5 17 14.5 10 15.5v31c7-1 14 0 20 3.5zM34 19c6-3.5 13-4.5 20-3.5v31"
              "c-7-1-14 0-20 3.5z")
+# Quotation marks on its pages, opening on the left and closing on the right:
+# the book is a Word that speaks. Cut out in the tile's colour.
+_QUOTE = ("M{x0} 31a3.6 3.6 0 1 0 7.2 0a3.6 3.6 0 1 0-7.2 0zM{x0} 31q0-7.5 6.6-9.8l1.2 1.7"
+          "q-4.4 2.2-4.2 8.1z")
+QUOTES_PATH = _QUOTE.format(x0=13.4) + _QUOTE.format(x0=21.4)
+QUOTES = (f'<path class="quotes" d="{QUOTES_PATH}" fill="{{fill}}"/>'
+          f'<path class="quotes" d="{QUOTES_PATH}" transform="rotate(180 32 31)" fill="{{fill}}"/>')
 # Sized and filled in its own attributes too, so a page whose stylesheet has
 # not loaded shows a small mark rather than a black square across the header.
 MARK = (f'<svg class="mark" width="32" height="32" viewBox="0 0 64 64" aria-hidden="true">'
-        f'<rect width="64" height="64" rx="14" fill="#3f3d9a"/><path d="{BOOK_PATH}" fill="#faf6ef"/></svg>')
+        f'<rect width="64" height="64" rx="14" fill="#3f3d9a"/><path d="{BOOK_PATH}" fill="#faf6ef"/>'
+        f'{QUOTES.format(fill="#3f3d9a")}</svg>')
 
 
 def icon(paths, size=18, cls="icon"):
@@ -1302,6 +1310,7 @@ def not_found_page():
 FAVICON = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
 <rect width="64" height="64" rx="14" fill="#3f3d9a"/>
 <path d="{BOOK_PATH}" fill="#faf6ef"/>
+{QUOTES.format(fill="#3f3d9a")}
 </svg>
 """
 
