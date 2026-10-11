@@ -223,17 +223,20 @@
     var key = m[1].replace(/[\s.]+/g, "");
     if (!key || /^\d+$/.test(key)) return null;
     var book = INDEX.books.filter(function (b) { return b.aliases.indexOf(key) >= 0; })[0];
+    var chapter = Number(m[2]), verse = m[3] ? Number(m[3]) : null;
+    // The start of a name ("phil") counts only for a book with passages, or
+    // with a verse given, so "son 3" stays a search for words.
     if (!book && key.replace(/^\d/, "").length >= 3) {
       book = INDEX.books.filter(function (b) {
-        return b.aliases.some(function (a) { return a.indexOf(key) === 0; });
+        return (b.chapters || verse) && b.aliases.some(function (a) { return a.indexOf(key) === 0; });
       })[0];
     }
     if (!book) return null;
-    var chapter = Number(m[2]), verse = m[3] ? Number(m[3]) : null;
     var end = m[4] ? Math.max(Number(m[4]), verse) : verse;
     var label = book.name + " " + chapter + (verse ? ":" + verse + (end !== verse ? "\u2013" + end : "") : "");
     var ch = book.chapters && book.chapters[chapter];
-    var ref = { book: book, chapter: chapter, verse: verse, end: end, label: label, chapterInfo: ch };
+    var ref = { book: book, chapter: chapter, verse: verse, end: end, label: label, chapterInfo: ch,
+                chapterLabel: book.name + " " + chapter };
     if (ch) {
       ref.shown = verse ? ch.verses.filter(function (v) { return v >= verse && v <= end; }) : [];
       ref.url = ch.url + (ref.shown.length ? "#v" + ref.shown[0] : "");
@@ -324,8 +327,8 @@
     return base + (q ? "?q=" + encodeURIComponent(q).replace(/%20/g, "+") : "");
   }
 
-  var SEARCH_BASE = (document.querySelector(".search-btn") || { getAttribute: function () { return "/search/"; } })
-    .getAttribute("href");
+  var paletteForm = document.querySelector(".palette-form");
+  var SEARCH_BASE = paletteForm ? paletteForm.getAttribute("action") : "/search/";
   var onSearchPage = !!document.getElementById("search-q");
 
   // ---- The palette -----------------------------------------------------
@@ -363,7 +366,8 @@
         text.appendChild(sn);
       }
       a.appendChild(text);
-      a.addEventListener("click", function () { remember(input.value); });
+      // A link within this page (/#help on the home page) does not unload it.
+      a.addEventListener("click", function () { remember(input.value); close(); });
       li.appendChild(a);
       return li;
     }
@@ -399,7 +403,11 @@
           var terms = parse(q);
           rows.push({ all: true, kindLabel: "\u21b5", title: fill(ui("show_all"), { q: q }), href: searchUrl(SEARCH_BASE, q) });
           var ref = reference(q);
-          if (ref && ref.url) rows.push({ kindLabel: ui("kind")[ref.verse ? "v" : "c"], title: fill(ui("go_to"), { ref: ref.label }), href: ref.url });
+          if (ref && ref.url) {
+            rows.push(ref.shown.length
+              ? { kindLabel: ui("kind").v, title: fill(ui("go_to"), { ref: ref.label }), href: ref.url }
+              : { kindLabel: ui("kind").c, title: fill(ui("read_passage"), { ref: ref.chapterLabel }), href: ref.url });
+          }
           rows = rows.concat(pages(q));
           // The best few of each kind, in a fixed order: passages, verses,
           // notes, articles.
@@ -614,7 +622,8 @@
       if (ref.url) {
         var head = el("div", "ref-head");
         head.appendChild(el("h2", null, ref.label));
-        var go = el("a", "button ref-go", fill(ui(ref.verse ? "go_to" : "read_passage"), { ref: ref.label }));
+        var go = el("a", "button ref-go", ref.shown.length ? fill(ui("go_to"), { ref: ref.label })
+          : fill(ui("read_passage"), { ref: ref.chapterLabel }));
         go.href = ref.url;
         head.appendChild(go);
         card.appendChild(head);
@@ -738,6 +747,7 @@
 
       var kinds = GROUPS.filter(function (g) { return by[g].length; });
       var type = state.type !== "all" && by[state.type].length ? state.type : "all";
+      if (type !== state.type) { state.type = type; state.sort = "rel"; writeUrl(); }
       var layout = results;
       if (kinds.length > 1) {
         var rail = el("aside", "facets");
@@ -823,6 +833,10 @@
       var a = links[i];
       a.classList.add("active");
       a.scrollIntoView({ block: "nearest" });
+      // Keep it clear of the search box pinned under the header.
+      var below = document.querySelector(".search-bar").getBoundingClientRect().bottom;
+      var top = a.getBoundingClientRect().top;
+      if (top < below) window.scrollBy(0, top - below - 8);
       var title = (a.querySelector(".hit-title, .hit-eyebrow, h2") || a).textContent;
       say(fill(ui("announce"), { i: i + 1, n: links.length, title: title }));
     }
@@ -844,8 +858,8 @@
     });
     document.addEventListener("keydown", function (e) {
       if (!links.length || !document.getElementById("palette").hidden) return;
-      var inField = e.target !== input && /^(INPUT|TEXTAREA|SELECT|BUTTON)$/.test(e.target.tagName);
-      if (inField) return;
+      // From the box or a result only: elsewhere the arrows scroll the page.
+      if (e.target !== input && !(e.target.closest && e.target.closest(".hit-link, .ref-go"))) return;
       if (e.key === "ArrowDown" || e.key === "ArrowUp") {
         e.preventDefault();
         var n = links.length, i = active < 0 ? (e.key === "ArrowDown" ? 0 : n - 1)
