@@ -39,24 +39,24 @@ def _tables():
     data = json.loads(DATA.read_text(encoding="utf-8"))
     english = {refs.parse(h): tuple(refs.parse(e) for e in es) for h, es in data["english"].items()}
     absent = {refs.parse(e) for e in data["not_in_hebrew"]}
-    source = defaultdict(list)
+    source, chapters = defaultdict(list), defaultdict(set)
     for h, es in english.items():
         for e in es:
             source[e].append(h)
-    return english, {e: tuple(hs) for e, hs in source.items()}, absent
+            chapters[h.book, h.chapter].add(e.chapter)
+    return english, {e: tuple(hs) for e, hs in source.items()}, absent, dict(chapters)
 
 
 def to_english(ref):
     """The English-numbered verses that hold the text of one of our verses
     (a Ref), in order: usually one, none for a psalm title, two where the
     Hebrew verse spans two English ones (PSA.13.6 is Psalm 13:5-6)."""
-    english, _, _ = _tables()
-    return english.get(ref, (ref,))
+    return _tables()[0].get(ref, (ref,))
 
 
 def to_source(ref):
     """Our verses that hold the text of one English-numbered verse."""
-    english, source, absent = _tables()
+    english, source, absent, _ = _tables()
     own = () if ref in english or ref in absent else (ref,)
     return tuple(sorted(source.get(ref, ()) + own, key=refs.Ref.sort_key))
 
@@ -74,9 +74,7 @@ def english_ids(verse_ids):
 def english_chapters(book, chapter):
     """The English chapters that hold text of one of our chapters (Hebrew
     Genesis 32:1 is English Genesis 31:55)."""
-    english, _, _ = _tables()
-    return sorted({chapter} | {e.chapter for h, es in english.items()
-                               if h.book == book and h.chapter == chapter for e in es})
+    return sorted({chapter} | _tables()[3].get((book, chapter), set()))
 
 
 # Deriving data/versification.json
@@ -115,7 +113,7 @@ def derive(verse_map_xml, hebrew_refs):
         w, _, k, k_part, kind = entry
         if kind == "full" and not k_part:
             whole[k].append(entry)
-    titles = {id(e) for es in whole.values()
+    titles = {e for es in whole.values()
               for e in sorted(es, key=lambda e: e[0].verse)[:-1]}
     paired = defaultdict(set)
     renumbered = set()
@@ -125,7 +123,7 @@ def derive(verse_map_xml, hebrew_refs):
             renumbered.add(w)
         if not k_part:
             renumbered.add(k)
-        if id(entry) not in titles:
+        if entry not in titles:
             paired[w].add(k)
     out, absent = {}, set()
     for ref in set(paired) | renumbered:

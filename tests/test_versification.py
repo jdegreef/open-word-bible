@@ -1,6 +1,6 @@
 import sys
 import unittest
-from collections import Counter
+from collections import Counter, defaultdict
 from pathlib import Path
 
 from owb import refs, versification
@@ -84,6 +84,9 @@ class VersificationDataTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.hebrew = set(macula_hebrew.verses())
+        # Each Bible parsed once: {code: {Ref}} for the Old Testament.
+        cls.bibles = {code: {refs.Ref(*key) for key in open_bibles.load(code) if key[0] in refs.OT_CODES}
+                      for code in open_bibles.EDITIONS}
 
     def test_table_is_up_to_date(self):
         self.assertEqual(build_versification.build(),
@@ -101,7 +104,7 @@ class VersificationDataTest(unittest.TestCase):
         # 7:68, which the Leningrad Codex lacks.
         mapped = self.mapped()
         for code in ("bsb", "web", "kjv", "asv"):
-            english = {refs.Ref(*key) for key in open_bibles.load(code) if key[0] in refs.OT_CODES}
+            english = self.bibles[code]
             with self.subTest(code):
                 self.assertEqual(set(mapped) - english, set())
                 self.assertEqual(english - set(mapped), {ref("NEH.7.68")})
@@ -111,8 +114,8 @@ class VersificationDataTest(unittest.TestCase):
         # Only Hebrew 13:6 holds two English verses, and no English verse is
         # split between two Hebrew ones.
         self.assertEqual(set(mapped.values()), {1})
-        for code, (_, _, language, *_) in open_bibles.EDITIONS.items():
-            psalms = {refs.Ref(*key) for key in open_bibles.load(code) if key[0] == "PSA"}
+        for code, verses in self.bibles.items():
+            psalms = {r for r in verses if r.book == "PSA"}
             if psalms:
                 with self.subTest(code):
                     self.assertEqual(psalms, set(mapped))
@@ -121,19 +124,17 @@ class VersificationDataTest(unittest.TestCase):
         # Where a psalm has n more verses in Hebrew than in English, its first
         # n verses are the title (Psalm 13 has as many in both but its title
         # is verse 1 and its last verse holds two English ones).
-        hebrew, english = Counter(), Counter()
+        hebrew, english, titles = Counter(), Counter(), defaultdict(list)
         for h in self.hebrew:
             if h.book == "PSA":
                 hebrew[h.chapter] += 1
-        for key in open_bibles.load("bsb"):
-            if key[0] == "PSA":
-                english[key[1]] += 1
+                if not versification.to_english(h):
+                    titles[h.chapter].append(h.verse)
+        english.update(r.chapter for r in self.bibles["bsb"] if r.book == "PSA")
         for psalm in range(1, 151):
-            titles = [h.verse for h in self.hebrew if h.book == "PSA" and h.chapter == psalm
-                      and not versification.to_english(h)]
             with self.subTest(psalm=psalm):
                 expected = 1 if psalm == 13 else hebrew[psalm] - english[psalm]
-                self.assertEqual(sorted(titles), list(range(1, expected + 1)))
+                self.assertEqual(sorted(titles[psalm]), list(range(1, expected + 1)))
 
 
 if __name__ == "__main__":

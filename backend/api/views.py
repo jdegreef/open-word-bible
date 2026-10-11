@@ -72,7 +72,7 @@ def chapter_text(request, book, chapter):
             ref = refs.Ref(book, v.chapter, v.verse)
             numbers = [r.verse for r in versification.to_source(ref) if r.chapter == chapter]
             for n in numbers:
-                english.setdefault(n, {}).setdefault(code, []).append(str(ref))
+                english.setdefault(n, {}).setdefault(code, []).append(ref)
         for n in numbers:
             verse = texts.setdefault(n, {})
             verse[code] = f"{verse[code]} {v.text}" if code in verse else v.text
@@ -81,8 +81,8 @@ def chapter_text(request, book, chapter):
     verses = []
     for n, text in sorted(texts.items()):
         verse = {"verse": n, "text": text}
-        moved = {code: ids for code, ids in english.get(n, {}).items()
-                 if ids != [f"{book}.{chapter}.{n}"]}
+        moved = {code: [str(r) for r in rs] for code, rs in english.get(n, {}).items()
+                 if rs != [refs.Ref(book, chapter, n)]}
         if moved:
             verse["refs"] = moved
         verses.append(verse)
