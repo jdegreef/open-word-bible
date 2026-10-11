@@ -2,7 +2,7 @@
 
 **Status: proposed, awaiting the founder's approval, except where a choice
 says it is settled.** These are the choices
-the drafts so far (1 Corinthians 1–8, 2 Corinthians 1–8) settled on, so that
+the drafts so far (1 Corinthians 1–12, all of 2 Corinthians) settled on, so that
 later chapters stay consistent with them. If a choice changes, every passage
 drafted under it is revised. Read with `docs/english-style.md`; key terms are
 enforced through `data/key_terms.json`.
@@ -51,6 +51,17 @@ enforced through `data/key_terms.json`.
 | *splanchna* | tender affection | deep love, tender affection | | As in Philippians 1:8; 2:1. |
 | *charis* in 2 Cor 8–9 | grace (thanks in 8:16) | grace; "gift of grace" for the collection; "favor" (8:4) | grace; generous gift | Each departure from "grace" has a word_sense and a rendering decision. |
 | *diakonia* for the collection (2 Cor 8–9) | ministry | relief | helping | "Ministry" alone would suggest preaching. |
+| *synistēmi* (2 Cor 3:1; 4:2; 5:12; 10:12, 18; 12:11) | commend | recommend | recommend | |
+| *aphrosynē*, *aphrōn* (2 Cor 11–12) | foolishness, fool | foolishness, fool | fool, like a fool | Not the *mōria* of 1 Cor 1–3; *paraphroneō* (11:23) is "out of my mind". |
+| *hyperlian apostoloi* (2 Cor 11:5; 12:11) | the super-apostles | the super-apostles | those so-called super-apostles | |
+| *kanōn* (2 Cor 10:13–16) | sphere | field | area | |
+| *dokimos*, *adokimos*, *dokimē* | approved, fail the test, proof | same | | Keep the family visible (2 Cor 10:18; 13:3–7). |
+| *charisma* (1 Cor 12–14) | gift | gift | gift | Not "spiritual gift"; *pneumatika* (12:1) is "spiritual gifts". |
+| Gifts of 1 Cor 12:8–10, 28 | word of wisdom, word of knowledge, prophecy, distinguishing of spirits, kinds of tongues, interpretation of tongues | message of wisdom, message of knowledge, prophecy, the ability to tell spirits apart, different kinds of tongues, interpretation of tongues | | *glōssai* is "tongues", with "languages" footnoted. Chapters 13–14 follow these names. |
+| *melē* (1 Cor 6:15; 12) | members | parts | parts | |
+| *peirasmos* (1 Cor 10:13) | testing | testing | testing | "Temptation" footnoted; links to Israel testing Christ (10:9). |
+| *kephalē* (1 Cor 11:3) | head | head | head | Read as authority, uncertain, "source" footnoted. |
+| *stephanos* (1 Cor 9:25) | wreath | wreath | crown of leaves | |
 | *adelphos*, singular, any believer (1 Cor 8:11–13) | `{{gender:brother or sister\|brother}}` | same | same | No span for a particular man (1 Cor 7:12; 2 Cor 8:18). |
 
 ## Choices made in context
@@ -65,6 +76,8 @@ is debated.
 items at every level, describe acts and not orientation, and never become
 "homosexuals", "effeminate" or "sodomites"; the meaning decisions give the
 evidence and the debated alternatives, footnoted.
+
+**The Holy Spirit** takes the deity_pronoun setting like God and Christ, and is never "it" (2 Cor 1:22; 1 Cor 12:11).
 
 **Names.** "Cephas" at Literal and Balanced, "Peter" at Readable (1 Cor 1:12;
 3:22). "Silvanus", not "Silas" (2 Cor 1:19).
@@ -83,6 +96,7 @@ for good pride (2 Cor 1:12–14), so:
 - Readable says "be proud", or "brag" for pride that takes credit for a gift
   (1 Cor 3:21; 4:7), except where Balanced keeps "boast".
 - Each departure from "boast" gets an English rendering decision.
+- In 2 Corinthians 10–12 the drafts keep "boast" at all three levels.
 
 **The earlier letter and the painful visit** (2 Cor 2:1–9). "I wrote" is read
 as an earlier, tearful letter, not 1 Corinthians (uncertain, footnoted);
