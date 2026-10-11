@@ -843,6 +843,7 @@
     var title = el("h2", "panel-title");
     title.appendChild(el("span", null, ref));
     title.appendChild(linkButton(currentVerse));
+    title.appendChild(imageButton(currentVerse));
     panel.appendChild(title);
 
     panel.appendChild(el("h3", null, t("greek")));
@@ -967,6 +968,97 @@
       }
     });
     return b;
+  }
+
+  // An image of the verse to share: its text at the reader's settings, the
+  // reference and level, in the site's fonts and the reader's colours.
+  function imageButton(verse) {
+    var b = el("button", "copy-link", t("image"));
+    b.type = "button";
+    b.addEventListener("click", function () {
+      b.disabled = true;
+      verseImage(verse).then(function (file) {
+        b.disabled = false;
+        if (narrow() && navigator.canShare && navigator.canShare({ files: [file] })) {
+          navigator.share({ files: [file] }).catch(function () { /* dismissed */ });
+          return;
+        }
+        var a = document.createElement("a");
+        a.href = URL.createObjectURL(file);
+        a.download = file.name;
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+      }, function () { b.disabled = false; });
+    });
+    return b;
+  }
+
+  function verseText(verse) {
+    var out = [];
+    DATA.records.forEach(function (r) {
+      splitVerses(r, render(r.renderings[textLang(r)][settings.level])).forEach(function (part) {
+        if (part[0] === verse) out.push(part[1].trim());
+      });
+    });
+    return out.join(" ");
+  }
+
+  function wrapLines(ctx, text, width) {
+    var lines = [], line = "";
+    text.split(/\s+/).forEach(function (word) {
+      var test = line ? line + " " + word : word;
+      if (ctx.measureText(test).width > width && line) { lines.push(line); line = word; }
+      else line = test;
+    });
+    if (line) lines.push(line);
+    return lines;
+  }
+
+  function verseImage(verse) {
+    var size = 1200, pad = 100;
+    var css = getComputedStyle(document.documentElement);
+    function v(name, fallback) { return (css.getPropertyValue(name) || fallback).trim(); }
+    var bg = v("--surface", "#fff"), text = v("--text", "#221c15"), accent = v("--accent", "#3f3d9a"), muted = v("--muted", "#6e6358");
+    var serif = '"Gentium Book Plus", Georgia, serif', display = '"Fraunces", Georgia, serif', sans = '"Hanken Grotesk", system-ui, sans-serif';
+    var name = (DATA.books && DATA.books[DATA.book]) || DATA.title.replace(/[\d:\u2013\s]+$/, "");
+    var ref = name + " " + DATA.chapter + ":" + verse;
+    var words = verseText(verse);
+    return Promise.all([document.fonts.load("56px " + serif), document.fonts.load("600 48px " + display),
+                        document.fonts.load("600 28px " + sans)]).then(function () {
+      var canvas = document.createElement("canvas");
+      canvas.width = canvas.height = size;
+      var ctx = canvas.getContext("2d");
+      ctx.fillStyle = bg;
+      ctx.fillRect(0, 0, size, size);
+      ctx.fillStyle = accent;
+      ctx.fillRect(pad, pad, 72, 8);
+      // The largest text size that fits the space above the reference.
+      var fontSize = 64, lines, room = size - pad * 2 - 230;
+      do {
+        ctx.font = fontSize + "px " + serif;
+        lines = wrapLines(ctx, "\u201c" + words + "\u201d", size - pad * 2);
+        fontSize -= 2;
+      } while (lines.length * fontSize * 1.45 > room && fontSize > 26);
+      fontSize += 2;
+      ctx.fillStyle = text;
+      ctx.textBaseline = "top";
+      var y = pad + 60 + (room - lines.length * fontSize * 1.45) / 2;
+      lines.forEach(function (line) { ctx.fillText(line, pad, y); y += fontSize * 1.45; });
+      ctx.fillStyle = accent;
+      ctx.font = "600 48px " + display;
+      ctx.fillText(ref, pad, size - pad - 110);
+      ctx.fillStyle = muted;
+      ctx.font = "600 28px " + sans;
+      ctx.fillText("Open Word Bible \u00b7 " + t(settings.level) + " \u00b7 openwordbible.org", pad, size - pad - 40);
+      return new Promise(function (resolve, reject) {
+        canvas.toBlob(function (blob) {
+          if (!blob) return reject(new Error("no image"));
+          var file = ref.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") + ".png";
+          resolve(new File([blob], file, { type: "image/png" }));
+        }, "image/png");
+      });
+    });
   }
 
   // On narrow screens the panel is a bottom sheet over the text (see .panel
