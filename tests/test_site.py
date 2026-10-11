@@ -246,7 +246,8 @@ class SiteTest(unittest.TestCase):
         self.assertTrue(files)
         for name in files:
             self.assertTrue((self.out / "fonts" / name).is_file(), name)
-        for licence in ("OFL-Fraunces.txt", "OFL-HankenGrotesk.txt"):
+        self.assertIn("atkinson-hyperlegible-latin-400-normal.woff2", files)
+        for licence in ("OFL-Fraunces.txt", "OFL-HankenGrotesk.txt", "OFL-AtkinsonHyperlegible.txt"):
             self.assertIn("SIL Open Font License", (ROOT / "web" / "fonts" / licence).read_text(encoding="utf-8"))
         home = (self.out / "index.html").read_text(encoding="utf-8")
         preload = re.search(r'<link rel="preload" href="/fonts/([^"]+)"', home)[1]
