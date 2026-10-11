@@ -28,6 +28,14 @@ services:
       - path: /*
         name: Referrer-Policy
         value: strict-origin-when-cross-origin
+      # The service worker must never be kept stale, or a new version of the
+      # site would wait for it.
+      - path: /sw.js
+        name: Cache-Control
+        value: no-cache
+      - path: /manifest.webmanifest
+        name: Content-Type
+        value: application/manifest+json
     # Renamed pages keep their old addresses working.
     routes:
       - type: redirect

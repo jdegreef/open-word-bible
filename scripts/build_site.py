@@ -265,6 +265,10 @@ def page(lang, title, body, path=None, current="", description="", card="site", 
 <meta name="owb-api" content="{API_URL}">
 <meta name="owb-search" content="{search_index_url(lang)}">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<meta name="theme-color" content="#f4eee3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#2a241c" media="(prefers-color-scheme: dark)">
 <script>{boot}</script>
 <link rel="preload" href="/fonts/hanken-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/gentium-book-plus-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -1584,6 +1588,46 @@ def article_page(article, articles, lang="en"):
                 translated=LANGUAGES if al == lang else ("en",))
 
 
+def offline_page(lang="en"):
+    """What the service worker (web/sw.js) shows for a page this device has
+    not kept, when there is no network."""
+    body = f"""
+<header class="page-head">
+<p class="eyebrow">{t(lang, "offline.eyebrow")}</p>
+<h1>{t(lang, "offline.heading")}</h1>
+<p class="dek">{t(lang, "offline.text")}</p>
+<p><a class="button" href="{url(lang, "/read/")}">{t(lang, "offline.read")}</a></p>
+</header>
+"""
+    return page(lang, t(lang, "offline.heading"), body, unlisted="/offline/")
+
+
+def web_manifest():
+    """The web app manifest: installing the site, with its icons."""
+    return json.dumps({
+        "name": SITE_NAME, "short_name": SITE_NAME, "start_url": "/", "scope": "/",
+        "display": "standalone", "background_color": "#faf6ef", "theme_color": "#3f3d9a",
+        "description": t("en", "meta.read_description"),
+        "icons": [{"src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png"},
+                  {"src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png"},
+                  {"src": "/icons/maskable-512.png", "sizes": "512x512", "type": "image/png",
+                   "purpose": "maskable"}],
+    }, ensure_ascii=False, indent=1)
+
+
+def service_worker():
+    """web/sw.js with what it keeps from the start (the scripts, styles,
+    fonts, icons and each language's offline page) and a version that
+    changes whenever any of them does."""
+    urls = [asset(n) for n in ("style.css", "site.js", "reader.js", "search.js")]
+    urls += [f"/fonts/{f.name}" for f in sorted((ROOT / "web" / "fonts").glob("*.woff2"))]
+    urls += ["/icons/icon-192.png", "/favicon.svg"] + [url(l, "/offline/") for l in LANGUAGES]
+    version = hashlib.sha256(json.dumps(urls).encode() + (ROOT / "web" / "sw.js").read_bytes()
+                             + "".join(t(l, "offline.text") for l in LANGUAGES).encode()).hexdigest()[:10]
+    return ((ROOT / "web" / "sw.js").read_text(encoding="utf-8")
+            .replace("__VERSION__", version).replace("__PRECACHE__", json.dumps(urls)))
+
+
 def account_page(lang="en"):
     """Sign in by email link, and the signed-in account (web/account.js).
     Not in the sitemap, and not indexed."""
@@ -1876,6 +1920,7 @@ def build(out):
             # left to its English page in search results.
             add(article_url(article), article_page(article, articles, lang), index=article["lang"] == lang)
         add("/account/", account_page(lang), index=False)
+        add("/offline/", offline_page(lang), index=False)
     files = {(p.strip("/") + "/index.html").lstrip("/"): text for p, text in pages.items()}
     files["404.html"] = not_found_page()
     files["sitemap.xml"] = sitemap(indexed)
@@ -1891,6 +1936,9 @@ def build(out):
     for name in ("style.css", "reader.js", "site.js", "account.js", "search.js"):
         shutil.copy(ROOT / "web" / name, out / name)
     shutil.copytree(ROOT / "web" / "fonts", out / "fonts")
+    shutil.copytree(ROOT / "web" / "icons", out / "icons")
+    (out / "manifest.webmanifest").write_text(web_manifest(), encoding="utf-8")
+    (out / "sw.js").write_text(service_worker(), encoding="utf-8")
     shutil.copytree(OG, out / "og", ignore=shutil.ignore_patterns("manifest.json"))
     return sorted(files) + ["reader.js", "search.js", "site.js", "style.css"]
 

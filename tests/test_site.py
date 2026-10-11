@@ -409,6 +409,23 @@ class SiteTest(unittest.TestCase):
         self.assertIn("Lamech, descendant of Cain", [c["title"] for c in gen4])
         self.assertIn("Lamech, father of Noah", [c["title"] for c in gen5])
 
+    def test_site_can_be_installed_and_read_offline(self):
+        manifest = json.loads((self.out / "manifest.webmanifest").read_text(encoding="utf-8"))
+        for icon in manifest["icons"]:
+            self.assertTrue((self.out / icon["src"].lstrip("/")).is_file(), icon["src"])
+        sw = (self.out / "sw.js").read_text(encoding="utf-8")
+        self.assertNotIn("__PRECACHE__", sw)
+        self.assertNotIn("__VERSION__", sw)
+        precache = json.loads(re.search(r"var PRECACHE = (\[.*?\]);", sw)[1])
+        for u in precache:
+            path = u.split("?")[0].lstrip("/")
+            self.assertTrue((self.out / path).is_file() or (self.out / path / "index.html").is_file(), u)
+        for lang in build_site.LANGUAGES:
+            self.assertIn(build_site.url(lang, "/offline/"), precache)
+        page = (self.out / "jhn" / "2" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('<link rel="manifest" href="/manifest.webmanifest">', page)
+        self.assertNotIn("/offline/", (self.out / "sitemap.xml").read_text(encoding="utf-8"))
+
     def test_read_page_groups_chapters_by_book(self):
         read = (self.out / "read" / "index.html").read_text(encoding="utf-8")
         for book, chaps in build_site.books():

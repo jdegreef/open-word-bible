@@ -213,3 +213,19 @@
     });
   });
 })();
+
+// Reading offline: the service worker (web/sw.js) keeps every page a reader
+// opens. Only where the browser allows it (https, or localhost).
+if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {
+  window.addEventListener("load", function () {
+    var first = !navigator.serviceWorker.controller;
+    navigator.serviceWorker.register("/sw.js").then(function () {
+      // The page that installed it came before it, so keep that one too.
+      if (first && window.caches) {
+        return navigator.serviceWorker.ready.then(function () {
+          return caches.open("owb-runtime").then(function (c) { return c.add(location.pathname + location.search); });
+        });
+      }
+    }).catch(function () { /* reading online still works */ });
+  });
+}
