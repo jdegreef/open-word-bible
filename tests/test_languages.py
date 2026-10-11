@@ -1,6 +1,6 @@
 """The site in each interface language: English at the root, Spanish under
-/es/ and French under /fr/, the footer's language switch, and the message
-catalogs in i18n/."""
+/es/, French under /fr/ and Swahili under /sw/, the footer's language switch,
+and the message catalogs in i18n/."""
 import json
 import re
 import string
@@ -90,6 +90,8 @@ class LanguagesTest(unittest.TestCase):
         self.assertIn('<a href="/es/jhn/1/" lang="es" hreflang="es" data-lang="es">Español</a>', en)
         self.assertIn('<a href="/fr/jhn/1/" lang="fr" hreflang="fr" data-lang="fr">Français</a>', en + es)
         self.assertIn('<span lang="fr" aria-current="true">Français</span>', self.read("fr/jhn/1/index.html"))
+        self.assertIn('<a href="/sw/jhn/1/" lang="sw" hreflang="sw" data-lang="sw">Kiswahili</a>', en + es)
+        self.assertIn('<span lang="sw" aria-current="true">Kiswahili</span>', self.read("sw/jhn/1/index.html"))
         self.assertIn('<span lang="es" aria-current="true">Español</span>', es)
         self.assertIn('<a href="/jhn/1/" lang="en" hreflang="en" data-lang="en">English</a>', es)
         self.assertIn('<h2 id="foot-langs">Idiomas</h2>', es)
@@ -133,6 +135,9 @@ class LanguagesTest(unittest.TestCase):
         fr = self.read("fr/jhn/1/index.html")
         self.assertNotIn('data-setting="plural_you"', fr)
         self.assertIn(">Équilibrée</button>", fr)
+        sw = self.read("sw/jhn/1/index.html")
+        self.assertNotIn('data-setting="plural_you"', sw)
+        self.assertIn(">Linganifu</button>", sw)
 
     def test_an_untranslated_article_shows_the_english_and_points_to_it(self):
         for lang in OTHERS:
@@ -179,6 +184,7 @@ class LanguagesTest(unittest.TestCase):
         self.assertEqual(build_site._date("2026-10-10", "en"), "10 October 2026")
         self.assertEqual(build_site._date("2026-10-10", "es"), "10 de octubre de 2026")
         self.assertEqual(build_site._date("2026-10-10", "fr"), "10 octobre 2026")
+        self.assertEqual(build_site._date("2026-10-10", "sw"), "10 Oktoba 2026")
 
     def test_french_typography_has_no_breaking_space_before_its_marks(self):
         # French sets « » : ; ! ? off with no-break spaces, so a line never
