@@ -17,9 +17,10 @@ from translation.models import ReviewEvent, Sentence
 CONTENT = settings.REPO_ROOT / "content"
 
 
-def load_extract_words():
+def load_extract_words(languages=("grc", "hbo")):
     """Create the SBLGNT and WLC editions and the words for every chapter in
-    content/. Returns the SBLGNT edition."""
+    content/ (or only the editions for languages). Returns the SBLGNT
+    edition."""
     editions = {
         "grc": Edition.objects.create(code="sblgnt", name="SBL Greek New Testament", language="grc",
                                       kind="original", licence="CC BY 4.0", source="sblgnt",
@@ -30,6 +31,8 @@ def load_extract_words():
     }
     seq = 0
     for folder, edition in editions.items():
+        if folder not in languages:
+            continue
         for path in sorted((settings.REPO_ROOT / "data" / folder).glob("*.json")):
             for vid, words in json.loads(path.read_text(encoding="utf-8"))["verses"].items():
                 book, chapter, verse = vid.split(".")
@@ -96,6 +99,21 @@ class FreshDatabaseTest(TestCase):
         load_extract_words()
         call_command("import_content", "--if-texts-loaded", stdout=io.StringIO(), stderr=io.StringIO())
         self.assertTrue(Sentence.objects.exists())
+
+    def test_deploy_import_skips_files_whose_text_is_not_loaded(self):
+        # Only the Greek is in: the deploy imports the New Testament and skips
+        # Genesis instead of failing (which blocked every deploy once Genesis
+        # was added before the Hebrew was imported).
+        load_extract_words(languages=("grc",))
+        out = io.StringIO()
+        call_command("import_content", "--if-texts-loaded", stdout=out, stderr=io.StringIO())
+        self.assertIn("run import_texts wlc. Skipped.", out.getvalue())
+        self.assertTrue(Sentence.objects.filter(book="JHN").exists())
+        self.assertTrue(Sentence.objects.filter(book="ROM").exists())
+        self.assertFalse(Sentence.objects.filter(book="GEN").exists())
+        # Run by hand, the missing text is an error that says what to do.
+        with self.assertRaisesMessage(CommandError, "run import_texts wlc"):
+            import_content()
 
 
 class ApiTest(TestCase):
