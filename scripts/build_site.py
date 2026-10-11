@@ -543,9 +543,10 @@ def word_uses():
             for token in r["source"]["tokens"]:
                 verse = verse_of.get(token)
                 if token in lemma and verse:
-                    places = uses.setdefault(lemma[token], [])
-                    if not places or places[-1] != verse:
-                        places.append(verse)
+                    uses.setdefault(lemma[token], set()).add(verse)
+    # A chapter's records need not come in verse order (a passage the
+    # manuscripts place differently), so sort each list.
+    uses = {k: sorted(v, key=lambda vid: refs.parse(vid).sort_key()) for k, v in uses.items()}
     text = json.dumps(uses, ensure_ascii=False, separators=(",", ":"))
     return text, f"/word-uses.json?v={hashlib.sha256(text.encode()).hexdigest()[:10]}"
 
