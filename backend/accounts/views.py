@@ -192,8 +192,10 @@ def confirm_reset(request):
     secret = str(_field(request, "token")).strip()
     if not secret:
         return error(*EXPIRED)
-    password = checked_password(_field(request, "password"), "")
-    result = auth.reset_password(secret, password, label=_label(request))
+    try:
+        result = auth.reset_password(secret, str(_field(request, "password")), label=_label(request))
+    except DjangoValidationError as e:
+        return error(e.messages[0], "weak_password", status.HTTP_400_BAD_REQUEST)
     return signed_in(result) if result else error(*EXPIRED)
 
 

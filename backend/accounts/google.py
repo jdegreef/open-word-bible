@@ -53,9 +53,8 @@ def _callback_url(request):
 
 
 def _site_login(lang, fragment, redirect=""):
-    prefix = "" if lang == "en" else f"/{lang}"
-    query = f"?redirect={urllib.parse.quote(redirect, safe='/')}" if redirect else ""
-    return f"{settings.OWB_SITE_URL}{prefix}/login/{query}#{fragment}"
+    """The site's /login/ page, told what happened (#error=...)."""
+    return auth.site_url("/login/", lang, redirect, fragment)
 
 
 def start(request):
@@ -117,12 +116,12 @@ def callback(request):
         saved = None
     lang = saved["lang"] if saved else "en"
     back = saved["redirect"] if saved else ""
-    fragment = "error=google_failed"
+    fragment, target = "error=google_failed", None
     if (saved and request.GET.get("code") and enabled()
             and secrets.compare_digest(request.GET.get("state", ""), saved["state"])):
         try:
             claims = _exchange(request, request.GET["code"], saved["verifier"])
-        except (urllib.error.URLError, ValueError, KeyError, TimeoutError):
+        except (urllib.error.URLError, ValueError, KeyError, IndexError, TimeoutError):
             log.exception("Google sign-in failed")
             claims = None
         if claims and claims.get("email") and claims.get("email_verified") in (True, "true"):
@@ -132,9 +131,9 @@ def callback(request):
             except Exception:
                 email = None
             if email:
-                fragment = "google=" + auth.google_link(email)
+                target = auth.link_url(auth.Purpose.GOOGLE, auth.google_link(email), lang, back)
     elif request.GET.get("error") == "access_denied":
         fragment = "error=google_cancelled"
-    response = http_redirect(_site_login(lang, fragment, back))
+    response = http_redirect(target or _site_login(lang, fragment, back))
     response.delete_cookie(COOKIE, path=COOKIE_PATH)
     return response

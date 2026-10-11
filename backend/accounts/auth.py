@@ -24,6 +24,7 @@ from urllib.parse import quote
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.contrib.auth.hashers import check_password, make_password
+from django.contrib.auth.password_validation import validate_password
 from django.core.mail import send_mail
 from django.db import transaction
 from django.utils import timezone
@@ -68,12 +69,17 @@ def safe_redirect(path):
     return path
 
 
-def link_url(purpose, secret, lang="en", redirect=""):
+def site_url(page, lang="en", redirect="", fragment=""):
+    """A page on the site in lang ("/login/"), with ?redirect= and #fragment."""
     prefix = "" if lang == "en" else f"/{lang}"
-    page = "/reset-password/" if purpose == Purpose.RESET else "/login/"
     query = f"?redirect={quote(redirect, safe='/')}" if redirect else ""
+    return f"{settings.OWB_SITE_URL}{prefix}{page}{query}{'#' + fragment if fragment else ''}"
+
+
+def link_url(purpose, secret, lang="en", redirect=""):
+    page = "/reset-password/" if purpose == Purpose.RESET else "/login/"
     key = "google" if purpose == Purpose.GOOGLE else "token"
-    return f"{settings.OWB_SITE_URL}{prefix}{page}{query}#{key}={secret}"
+    return site_url(page, lang, redirect, f"{key}={secret}")
 
 
 EMAILS = {
@@ -94,6 +100,13 @@ EMAILS = {
 }
 
 
+# A reset asked for an address with no account.
+NO_ACCOUNT = ("Open Word Bible password reset",
+              "Someone asked to reset the Open Word Bible password for this address, but there is "
+              "no account for it. To create one, go to {url}\n\n"
+              "If you did not ask, you can ignore this email.")
+
+
 def _check_rate(email, ip):
     hour_ago = timezone.now() - timedelta(hours=1)
     recent = SignInLink.objects.filter(created_at__gte=hour_ago)
@@ -106,10 +119,11 @@ def _check_rate(email, ip):
 def send_link(email, purpose=Purpose.SIGN_IN, ip=None, lang="en", redirect="", password=None):
     """Email a single-use link. email must already be validated and
     normalised (views.normalise_email); password (sign-up) must already be
-    validated. A reset link goes only to an existing account, but the call
-    looks the same either way. Raises RateLimited when the address, the
-    network or the site has sent too many links in the last hour, and
-    EmailUnavailable when email is not set up or the mail server fails."""
+    validated. A reset link goes only to an existing account; an address
+    with no account is emailed to say so, so the call looks and takes the
+    same either way. Raises RateLimited when the address, the network or
+    the site has sent too many links in the last hour, and EmailUnavailable
+    when email is not set up or the mail server fails."""
     if settings.EMAIL_BACKEND.endswith("console.EmailBackend") and not settings.DEBUG:
         # Without SMTP the link would be printed to the log, where anyone who
         # can read the log could sign in as anyone.
@@ -119,15 +133,17 @@ def send_link(email, purpose=Purpose.SIGN_IN, ip=None, lang="en", redirect="", p
     link = SignInLink.objects.create(
         email=email, token_hash=token_hash, requested_ip=ip, purpose=purpose,
         password_hash=make_password(password) if password else "")
-    if purpose == Purpose.RESET and not get_user_model().objects.filter(username=email, is_active=True).exists():
-        return   # counted against the limits like any other, but not sent
-    subject, body = EMAILS[purpose]
     lang = lang if lang in LANGUAGES else "en"
+    subject, body = EMAILS[purpose]
+    url = link_url(purpose, secret, lang, safe_redirect(redirect))
+    if purpose == Purpose.RESET and not get_user_model().objects.filter(username=email, is_active=True).exists():
+        # Still an email, so the answer takes as long either way.
+        subject, body = NO_ACCOUNT
+        url = site_url("/login/", lang) + "?mode=signup"
     try:
         send_mail(
             subject=subject,
-            message=body.format(url=link_url(purpose, secret, lang, safe_redirect(redirect)),
-                                minutes=settings.SIGN_IN_LINK_MINUTES),
+            message=body.format(url=url, minutes=settings.SIGN_IN_LINK_MINUTES),
             from_email=settings.DEFAULT_FROM_EMAIL,
             recipient_list=[email],
         )
@@ -192,15 +208,17 @@ def redeem_link(secret, label=""):
 
 @transaction.atomic
 def reset_password(secret, password, label=""):
-    """Set a new password with a reset link's secret (password must already
-    be validated), sign out every other device, and sign this one in.
-    Returns (user, api_token_secret), or None for a bad link."""
+    """Set a new password with a reset link's secret, sign out every other
+    device, and sign this one in. Returns (user, api_token_secret), or None
+    for a bad link; raises django ValidationError, leaving the link unused,
+    for a password the validators refuse."""
     link = _take_link(secret, [Purpose.RESET])
     if link is None:
         return None
     user = get_user_model().objects.filter(username=link.email, is_active=True).first()
     if user is None:
         return None
+    validate_password(password, user)   # raises, undoing the transaction and keeping the link
     user.set_password(password)
     user.save(update_fields=["password"])
     user.api_tokens.all().delete()

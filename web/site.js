@@ -167,12 +167,16 @@
   try { account = JSON.parse(localStorage.getItem("owb.account") || "null"); } catch (e) { /* none */ }
   if (!account || !account.user) {
     document.documentElement.classList.remove("signed-in");
-    signIn.addEventListener("click", function () {
-      var here = location.pathname + location.search + location.hash;
-      if (!/\/(login|reset-password)\/$/.test(location.pathname)) {
-        signIn.href = signIn.pathname + "?redirect=" + encodeURIComponent(here);
-      }
-    });
+    // Set now, not on click, so a link opened in a new tab comes back too;
+    // and again on click, for a verse picked since (#v12).
+    var back = function () {
+      if (/\/(login|reset-password)\/$/.test(location.pathname)) return;
+      signIn.href = signIn.pathname + "?redirect=" +
+        encodeURIComponent(location.pathname + location.search + location.hash);
+    };
+    back();
+    signIn.addEventListener("click", back);
+    signIn.addEventListener("auxclick", back);
     return;
   }
   var user = account.user;

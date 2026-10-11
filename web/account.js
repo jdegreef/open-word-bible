@@ -288,8 +288,8 @@
       redeem(m[2]);
     } else if (m && m[1] === "error") {
       say(T[m[2]] || T.error);
-    } else if (saved()) {
-      goOn();   // already signed in
+    } else if (saved() && mode !== "reset") {
+      goOn();   // already signed in (but may ask for a link to choose a password)
     }
   }
 
@@ -353,6 +353,12 @@
       var account = saved();
       if (account) { account.user = user; store(account); }
       render(user);
+      // The header's menu (site.js) shows the name too.
+      var menu = document.querySelector(".account-menu");
+      if (menu) {
+        menu.querySelector(".account-initial").textContent = (user.display_name || user.email).charAt(0).toUpperCase();
+        menu.querySelector(".who-name").textContent = user.display_name || "";
+      }
     }
     function failed(err, note) {
       if (err.signedOut) toLogin();
