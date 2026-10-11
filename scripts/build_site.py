@@ -31,11 +31,15 @@ BOOK_NAMES = {"GEN": {"en": "Genesis", "es": "Génesis", "fr": "Genèse", "sw": 
               "ROM": {"en": "Romans", "es": "Romanos", "fr": "Romains", "sw": "Warumi"},
               "1CO": {"en": "1 Corinthians", "es": "1 Corintios", "fr": "1 Corinthiens", "sw": "1 Wakorintho"},
               "2CO": {"en": "2 Corinthians", "es": "2 Corintios", "fr": "2 Corinthiens", "sw": "2 Wakorintho"},
+              "GAL": {"en": "Galatians", "es": "Gálatas", "fr": "Galates", "sw": "Wagalatia"},
               "EPH": {"en": "Ephesians", "es": "Efesios", "fr": "Éphésiens", "sw": "Waefeso"},
               "PHP": {"en": "Philippians", "es": "Filipenses", "fr": "Philippiens", "sw": "Wafilipi"},
-              "COL": {"en": "Colossians", "es": "Colosenses", "fr": "Colossiens", "sw": "Wakolosai"}}
+              "COL": {"en": "Colossians", "es": "Colosenses", "fr": "Colossiens", "sw": "Wakolosai"},
+              "JAS": {"en": "James", "es": "Santiago", "fr": "Jacques", "sw": "Yakobo"},
+              "1PE": {"en": "1 Peter", "es": "1 Pedro", "fr": "1 Pierre", "sw": "1 Petro"},
+              "2PE": {"en": "2 Peter", "es": "2 Pedro", "fr": "2 Pierre", "sw": "2 Petro"}}
 # Chapters in each book, for "2 of 21 chapters" and a book's completeness.
-BOOK_CHAPTERS = {"GEN": 50, "MAT": 28, "JHN": 21, "ROM": 16, "1CO": 16, "2CO": 13, "EPH": 6, "PHP": 4, "COL": 4}
+BOOK_CHAPTERS = {"GEN": 50, "MAT": 28, "JHN": 21, "ROM": 16, "1CO": 16, "2CO": 13, "GAL": 6, "EPH": 6, "PHP": 4, "COL": 4, "JAS": 5, "1PE": 5, "2PE": 3}
 # The interface languages, English first (see catalog below).
 LANGUAGES = ("en", "es", "fr", "sw")
 SITE_NAME = "Open Word Bible"
@@ -741,6 +745,12 @@ def chapter_page(book, chapter, lang="en"):
     levels = catalog(lang)["levels"]
     plural = ("\n  " + control("plural", "plural_you", [("0", "ustedes"), ("1", "vosotros")])
               if lang in PLURAL_YOU else "")
+    # Measures (modern or original units) only where a passage has them.
+    has_units = any("{{units:" in text for r in records
+                    for levels_ in r["renderings"].values() for text in levels_.values())
+    units = ("\n  " + control("measures", "units", [("0", t(lang, "reader.modern")),
+                                                     ("1", t(lang, "reader.original"))])
+             if has_units else "")
     body = f"""
 <button type="button" class="settings-toggle" id="settings-toggle" aria-expanded="false" aria-controls="settings">
   <span>{t(lang, "reader.settings")}</span> <span class="settings-summary" id="settings-summary"></span>
@@ -750,10 +760,10 @@ def chapter_page(book, chapter, lang="en"):
   {control("level", "level", [(code, levels[code]) for code in "LBR"])}
   {control("gender", "gender", [("0", t(lang, "reader.inclusive")), ("1", t(lang, "reader.traditional"))])}
   {title_control}
-  {control("pronouns", "deity_pronoun", [("0", t(lang, "reader.he")), ("1", t(lang, "reader.He"))])}{plural}
+  {control("pronouns", "deity_pronoun", [("0", t(lang, "reader.he")), ("1", t(lang, "reader.He"))])}{units}{plural}
   {control("view", "view", [("0", t(lang, "reader.study")), ("1", t(lang, "reader.reading"))], " view-control")}
 </div>
-<p class="hint"><span id="hint-level"></span> <span id="hint-gender"></span> <span id="hint-{title_setting}"></span> <span id="hint-deity_pronoun"></span> <span id="hint-plural_you"></span> <span id="hint-view"></span></p>
+<p class="hint"><span id="hint-level"></span> <span id="hint-gender"></span> <span id="hint-{title_setting}"></span> <span id="hint-deity_pronoun"></span> <span id="hint-units"></span> <span id="hint-plural_you"></span> <span id="hint-view"></span></p>
 </div>
 <div class="reader">
   <article class="passage">
