@@ -56,6 +56,16 @@
           "L": "And you, being dead in your trespasses and sins, \\v 2 in which you once walked according to the age of this world, according to the ruler of the authority of the air, of the spirit that is now working in the {{gender:children|sons}} of disobedience;",
           "B": "As for you, you were dead in your trespasses and sins. \\v 2 You once lived in them, following the way of this world in its present age and following the ruler of the realm of the air, the ruler of the spirit now at work in those who disobey.",
           "R": "Once you were spiritually dead because of the wrong things you did and the sins you committed. \\v 2 That is how you used to live. You followed the ways of this world as it is now. You obeyed the devil, who rules the realm of the air. He is the ruler of the spirit that is now at work in people who refuse to obey God."
+        },
+        "es": {
+          "L": "Y a {{plural_you:ustedes|vosotros}}, estando muertos en {{plural_you:sus|vuestros}} delitos y pecados, \\v 2 en los cuales {{plural_you:anduvieron|anduvisteis}} en otro tiempo conforme a la era de este mundo, conforme al gobernante de la autoridad del aire, del espíritu que ahora actúa en los hijos de la desobediencia;",
+          "B": "En cuanto a {{plural_you:ustedes|vosotros}}, {{plural_you:estaban|estabais}} muertos en {{plural_you:sus|vuestros}} delitos y pecados. \\v 2 En ellos {{plural_you:vivían|vivíais}} en otro tiempo, siguiendo el camino de este mundo en su era presente y siguiendo al gobernante del dominio del aire, el que gobierna también el espíritu que ahora actúa en los que desobedecen.",
+          "R": "Antes {{plural_you:ustedes estaban|vosotros estabais}} muertos espiritualmente a causa del mal que {{plural_you:hacían|hacíais}} y de {{plural_you:sus|vuestros}} pecados. \\v 2 Así {{plural_you:vivían|vivíais}}. {{plural_you:Seguían|Seguíais}} los caminos de este mundo tal como es ahora. {{plural_you:Obedecían|Obedecíais}} al diablo, que gobierna el dominio del aire. Él gobierna el espíritu que ahora actúa en la gente que se niega a obedecer a Dios."
+        },
+        "sw": {
+          "L": "Nanyi, mkiwa wafu katika makosa yenu na dhambi zenu, \\v 2 ambazo ndani yake mlienenda zamani kufuatana na enzi ya ulimwengu huu, kufuatana na mtawala wa mamlaka ya anga, wa roho inayofanya kazi sasa ndani ya wana wa kutotii;",
+          "B": "Ninyi mlikuwa wafu katika makosa yenu na dhambi zenu. \\v 2 Zamani mliishi katika mambo hayo, mkifuata njia ya ulimwengu huu katika enzi hii ya sasa, na mkimfuata mtawala wa milki ya anga, anayetawala pia roho ile inayofanya kazi sasa ndani ya wale wasiotii.",
+          "R": "Zamani mlikuwa wafu kiroho kwa sababu ya mabaya mliyotenda na dhambi mlizofanya. \\v 2 Ndivyo mlivyoishi zamani. Mlifuata njia za ulimwengu huu kama ulivyo sasa. Mlimtii Shetani, anayetawala milki ya anga. Yeye ndiye mtawala wa roho ile inayofanya kazi sasa ndani ya watu wanaokataa kumtii Mungu."
         }
       },
       "decisions": [
@@ -322,6 +332,89 @@
           "reason": "Readable names the ruler (m5) and says who is disobeyed (m8).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n49002001002"
+          ],
+          "choice": "ustedes / vosotros forms",
+          "alternatives": [],
+          "reason": "Paul writes to his readers in the plural throughout the chapter. Every plural \"you\" and its verb is a reader setting: ustedes (Latin America, the default) or vosotros (Spain), as in Philippians.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n49002002025"
+          ],
+          "choice": "hijos de la desobediencia, no gender setting",
+          "alternatives": [
+            "{{gender:hijos e hijas|hijos}} de la desobediencia"
+          ],
+          "reason": "The English offers \"sons\" as the traditional form. Spanish \"hijos\" already covers sons and daughters, as in John 1:12, so the Spanish has no gender span here. Balanced and Readable say \"los que desobedecen\" and \"la gente que se niega a obedecer\", as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n49002002025"
+          ],
+          "choice": "wana wa kutotii, no gender setting",
+          "alternatives": [
+            "{{gender:wana|wana wa kiume}} wa kutotii",
+            "wana wa uasi"
+          ],
+          "reason": "\"Wana\" means children of either sex, so Swahili has no gender span where the English offers \"sons\" (docs/swahili-style.md 7). \"Kutotii\" (not obeying) is ἀπειθείας as refusing to obey God (m8); \"uasi\" (rebellion) says more.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-2",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n49002002018",
+            "n49002002019",
+            "n49002002020",
+            "n49002002021",
+            "n49002002022"
+          ],
+          "choice": "roho inayofanya kazi (class 9 agreement)",
+          "alternatives": [
+            "roho anayefanya kazi"
+          ],
+          "reason": "The spirit here is a power under the ruler, not the ruler himself (m7). Swahili lets \"roho\" take either personal agreement (anayefanya) or the agreement of its noun class (inayofanya); the class 9 form keeps it a force at work in people and stops a reader taking it for the ruler or for God's Spirit.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -374,6 +467,16 @@
           "L": "among whom we also all once lived in the desires of our flesh, doing the wishes of the flesh and of the thoughts, and we were children of wrath by nature, as the rest also [were].",
           "B": "We all once lived among them too, following the desires of our flesh and doing whatever our flesh and our thoughts wanted. By nature we deserved God's wrath, just like the rest of humanity.",
           "R": "All of us used to live among those people too. We did whatever our sinful nature wanted. We followed its desires and the plans of our own minds. By our very nature we deserved God's anger, just like everyone else."
+        },
+        "es": {
+          "L": "entre los cuales también todos nosotros nos conducíamos en otro tiempo en los deseos de nuestra carne, haciendo las voluntades de la carne y de los pensamientos, y éramos hijos de ira por naturaleza, como también los demás [lo eran].",
+          "B": "También todos nosotros vivíamos antes entre ellos, siguiendo los deseos de nuestra carne y haciendo lo que querían nuestra carne y nuestros pensamientos. Por naturaleza merecíamos la ira de Dios, igual que el resto de la humanidad.",
+          "R": "Todos nosotros también vivíamos antes entre esa gente. Hacíamos todo lo que quería nuestra naturaleza pecadora. Seguíamos sus deseos y los planes de nuestra propia mente. Por nuestra misma naturaleza merecíamos la ira de Dios, igual que todos los demás."
+        },
+        "sw": {
+          "L": "miongoni mwa hao sisi pia sote tuliishi zamani katika tamaa za mwili wetu, tukifanya matakwa ya mwili na ya mawazo, na tulikuwa kwa asili watoto wa ghadhabu kama wengine nao [walivyokuwa].",
+          "B": "Sisi sote pia tuliishi zamani miongoni mwao, tukifuata tamaa za utu wetu wa dhambi na kufanya kila kitu ambacho utu huo na mawazo yetu vilitaka. Kwa asili tulistahili ghadhabu ya Mungu, sawa na wanadamu wengine wote.",
+          "R": "Sisi sote pia tuliishi zamani katikati ya watu hao. Tulifanya kila kitu ambacho utu wetu wa dhambi ulitaka. Tulifuata tamaa zake na mipango ya akili zetu wenyewe. Kwa asili yetu tulistahili ghadhabu ya Mungu, sawa na watu wengine wote."
         }
       },
       "decisions": [
@@ -518,6 +621,48 @@
           "reason": "Readable says what \"flesh\" means here (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n49002003024",
+            "n49002003026"
+          ],
+          "choice": "la ira de Dios",
+          "alternatives": [
+            "el enojo de Dios"
+          ],
+          "reason": "The English Readable says \"anger\" for a plainer word. Spanish \"ira\" is already an everyday word, so Spanish keeps the settled term at every level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n49002003012",
+            "n49002003018"
+          ],
+          "choice": "utu wetu wa dhambi (our sinful self)",
+          "alternatives": [
+            "asili yetu ya dhambi",
+            "mwili wetu"
+          ],
+          "reason": "Here \"flesh\" is human nature turned from God, not the body (m3), so Balanced and Readable do not say \"mwili\", which a reader would take as bodily appetite only. \"Asili ya dhambi\" (sinful nature) is the usual phrase, but the same verse says \"kwa asili\" (by nature) for φύσει, and using \"asili\" for both Greek words would blur them. Literal keeps \"mwili\".",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -600,6 +745,16 @@
           "L": "But God, being rich in mercy, because of {{deity_pronoun:his|His}} great love with which {{deity_pronoun:he|He}} loved us, \\v 5 even when we were dead in trespasses, made [us] alive together with the {{christos:Christ|Messiah}} (by grace you have been saved), \\v 6 and raised [us] together and seated [us] together in the heavenly [places] in {{christos:Christ|Messiah}} Jesus, \\v 7 in order that {{deity_pronoun:he|He}} might display in the ages that are coming the surpassing wealth of {{deity_pronoun:his|His}} grace in kindness toward us in {{christos:Christ|Messiah}} Jesus.",
           "B": "But God is rich in mercy. Because of the great love {{deity_pronoun:he|He}} had for us, \\v 5 even when we were dead in our trespasses, {{deity_pronoun:he|He}} made us alive together with {{christos:Christ|the Messiah}}. You have been saved by grace. \\v 6 With {{deity_pronoun:him|Him}} God raised us up, and with {{deity_pronoun:him|Him}} seated us in the heavenly places, in {{christos:Christ|the Messiah}} Jesus, \\v 7 so that through the ages still to come {{deity_pronoun:he|He}} might put on display the wealth of {{deity_pronoun:his|His}} grace, which surpasses all measure, seen in the kindness {{deity_pronoun:he|He}} has shown us in {{christos:Christ|the Messiah}} Jesus.",
           "R": "But God's mercy is very great, and {{deity_pronoun:he|He}} loves us with a great love. \\v 5 So even when we were spiritually dead because of our sins, God gave us life together with {{christos:Christ|the Messiah}}. It is by God's grace that you have been saved! \\v 6 God raised us up to life with {{christos:Christ|the Messiah}}, and gave us a place with {{deity_pronoun:him|Him}} in heaven, because we belong to {{christos:Christ|the Messiah}} Jesus. \\v 7 God did this so that for all time to come {{deity_pronoun:he|He}} could show how very rich {{deity_pronoun:his|His}} grace is. He shows it by being kind to us in {{christos:Christ|the Messiah}} Jesus."
+        },
+        "es": {
+          "L": "Pero Dios, siendo rico en misericordia, a causa de {{deity_pronoun:su|Su}} gran amor con el cual nos amó, \\v 5 aun estando nosotros muertos en los delitos, [nos] vivificó juntamente con el {{christos:Cristo|Mesías}} (por gracia {{plural_you:han|habéis}} sido salvados), \\v 6 y [nos] resucitó juntamente y [nos] sentó juntamente en los [lugares] celestiales en {{christos:Cristo Jesús|Mesías Jesús}}, \\v 7 a fin de mostrar en las edades que vienen la riqueza sobreabundante de {{deity_pronoun:su|Su}} gracia en bondad hacia nosotros en {{christos:Cristo Jesús|Mesías Jesús}}.",
+          "B": "Pero Dios es rico en misericordia. Por el gran amor que nos tuvo, \\v 5 aun cuando estábamos muertos en nuestros delitos, nos dio vida juntamente con {{christos:Cristo|el Mesías}}. Por gracia {{plural_you:ustedes han|vosotros habéis}} sido salvados. \\v 6 Con {{deity_pronoun:él|Él}} Dios nos resucitó, y con {{deity_pronoun:él|Él}} nos sentó en los lugares celestiales, en {{christos:Cristo Jesús|el Mesías Jesús}}, \\v 7 para exhibir en las edades que aún han de venir la riqueza de {{deity_pronoun:su|Su}} gracia, que sobrepasa toda medida, manifestada en la bondad que nos ha mostrado en {{christos:Cristo Jesús|el Mesías Jesús}}.",
+          "R": "Pero la misericordia de Dios es muy grande, y {{deity_pronoun:él|Él}} nos ama con un gran amor. \\v 5 Por eso, aun cuando estábamos muertos espiritualmente a causa de nuestros pecados, Dios nos dio vida junto con {{christos:Cristo|el Mesías}}. ¡Es por la gracia de Dios que {{plural_you:ustedes han|vosotros habéis}} sido salvados! \\v 6 Dios nos levantó a la vida con {{christos:Cristo|el Mesías}} y nos dio un lugar con {{deity_pronoun:él|Él}} en el cielo, porque pertenecemos {{christos:a Cristo Jesús|al Mesías Jesús}}. \\v 7 Dios hizo esto para mostrar, por todos los tiempos que vendrán, lo inmensamente rica que es {{deity_pronoun:su|Su}} gracia. Y la muestra al ser bondadoso con nosotros en {{christos:Cristo Jesús|el Mesías Jesús}}."
+        },
+        "sw": {
+          "L": "Lakini Mungu, akiwa tajiri wa rehema, kwa sababu ya upendo {{deity_pronoun:wake|Wake}} mwingi ambao alitupenda nao, \\v 5 hata tulipokuwa wafu katika makosa, alitufanya kuwa hai pamoja na {{christos:Kristo|Masihi}} (kwa neema mmeokolewa), \\v 6 akatufufua pamoja [naye], akatuketisha pamoja [naye] katika [ulimwengu wa] mbinguni ndani ya {{christos:Kristo|Masihi}} Yesu, \\v 7 ili aonyeshe katika nyakati zinazokuja utajiri unaozidi mno wa neema {{deity_pronoun:yake|Yake}} katika wema kwetu ndani ya {{christos:Kristo|Masihi}} Yesu.",
+          "B": "Lakini Mungu ni tajiri wa rehema. Kwa sababu ya upendo mkuu aliokuwa nao kwetu, \\v 5 hata tulipokuwa wafu katika makosa yetu, alitufanya kuwa hai pamoja na {{christos:Kristo|Masihi}}. Mmeokolewa kwa neema. \\v 6 Mungu alitufufua pamoja naye, na pamoja naye akatuketisha katika ulimwengu wa mbinguni, ndani ya {{christos:Kristo|Masihi}} Yesu, \\v 7 ili katika nyakati zote zijazo aonyeshe utajiri wa neema {{deity_pronoun:yake|Yake}}, unaozidi kipimo chochote, unaoonekana katika wema aliotutendea ndani ya {{christos:Kristo|Masihi}} Yesu.",
+          "R": "Lakini rehema ya Mungu ni kubwa sana, naye anatupenda kwa upendo mkuu. \\v 5 Kwa hiyo hata tulipokuwa wafu kiroho kwa sababu ya dhambi zetu, Mungu alitupa uzima pamoja na {{christos:Kristo|Masihi}}. Ni kwa neema ya Mungu kwamba mmeokolewa! \\v 6 Mungu alitufufua tuwe hai pamoja na {{christos:Kristo|Masihi}}, akatupa nafasi pamoja naye mbinguni, kwa sababu sisi ni wa {{christos:Kristo|Masihi}} Yesu. \\v 7 Mungu alifanya hivyo ili kwa nyakati zote zijazo aonyeshe jinsi neema {{deity_pronoun:yake|Yake}} ilivyo tajiri mno. Anaionyesha kwa kutufanyia wema ndani ya {{christos:Kristo|Masihi}} Yesu."
         }
       },
       "decisions": [
@@ -828,7 +983,7 @@
           ],
           "choice": "because we belong to {{christos:Christ|the Messiah}} Jesus",
           "alternatives": [
-            "in @CB@ Jesus"
+            "in {{christos:Christ|the Messiah}} Jesus"
           ],
           "reason": "Readable says what \"in Christ Jesus\" means here: these things are true of believers because they are joined to Christ (m5).",
           "uncertain": false,
@@ -850,6 +1005,74 @@
             "dead in trespasses"
           ],
           "reason": "As in verse 1.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n49002004012",
+            "n49002004014"
+          ],
+          "choice": "deity_pronoun spans only on written pronouns",
+          "alternatives": [
+            "{{deity_pronoun:él|Él}} nos amó"
+          ],
+          "reason": "Spanish usually leaves the subject inside the verb (\"nos amó\", \"nos sentó\"), so the setting applies only where a pronoun is written (\"su gracia\", \"con él\"). The Spanish therefore has fewer pronoun spans than the English.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n49002004012",
+            "n49002004014"
+          ],
+          "choice": "deity_pronoun spans only on free pronouns and possessives",
+          "alternatives": [
+            "{{deity_pronoun:yeye|Yeye}} alitupenda"
+          ],
+          "reason": "Swahili marks the subject and object inside the verb (alitupenda, akatufufua) and joins \"na\" and \"yeye\" into \"naye\"; none of these can take a capital. The setting applies to free possessives such as \"upendo wake\" and \"neema yake\", so the Swahili has fewer spans than the English.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-2",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n49002006005",
+            "n49002006006",
+            "n49002006007"
+          ],
+          "choice": "ulimwengu wa mbinguni (L, B); mbinguni (R)",
+          "alternatives": [
+            "ulimwengu wa roho",
+            "mahali pa mbinguni"
+          ],
+          "reason": "Here the heavenly places are where Christ sits at God's right hand (m6), so Swahili names heaven itself rather than \"ulimwengu wa roho\" (the spirit world), which would also suit the realm of the evil powers in 6:12. Literal brackets \"ulimwengu wa\", which the Greek lacks.",
           "uncertain": false,
           "footnote": false
         }
@@ -889,6 +1112,16 @@
           "L": "For by the grace you have been saved through faith; and this [is] not from you; of God [is] the gift;",
           "B": "For it is by this grace that you have been saved, through faith. None of this comes from you; it is God's gift.",
           "R": "You have been saved because of God's grace, and it came to you through faith. Being saved does not come from you. God gives it as a gift."
+        },
+        "es": {
+          "L": "Porque por la gracia {{plural_you:han|habéis}} sido salvados por medio de [la] fe; y esto no [viene] de {{plural_you:ustedes|vosotros}}, de Dios [es] el don;",
+          "B": "Porque es por esta gracia que {{plural_you:ustedes han|vosotros habéis}} sido salvados, por medio de la fe. Nada de esto sale de {{plural_you:ustedes|vosotros}}: es don de Dios.",
+          "R": "{{plural_you:Ustedes han|Vosotros habéis}} sido salvados a causa de la gracia de Dios, y esa salvación {{plural_you:les|os}} llegó por medio de la fe. Ser salvos no viene de {{plural_you:ustedes|vosotros}}. Es un regalo de Dios."
+        },
+        "sw": {
+          "L": "Kwa maana kwa neema mmeokolewa kupitia imani; na hili si kutoka kwenu, zawadi [ni] ya Mungu;",
+          "B": "Kwa maana ni kwa neema hiyo mmeokolewa, kupitia imani. Jambo hili halitoki kwenu; ni zawadi ya Mungu.",
+          "R": "Mmeokolewa kwa sababu ya neema ya Mungu, na wokovu huo uliwafikia kupitia imani. Kuokolewa hakutoki kwenu. Mungu anautoa kama zawadi."
         }
       },
       "decisions": [
@@ -1014,6 +1247,46 @@
           "reason": "Balanced shows that the article points back to the grace of verses 5-7 (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n49002008009"
+          ],
+          "choice": "esto (neuter)",
+          "alternatives": [
+            "esta (agreeing with gracia or fe)"
+          ],
+          "reason": "Spanish has a neuter demonstrative, as Greek does here. \"Esto\" points to the whole statement, being saved by grace through faith (m1); \"esta\" would point to \"la fe\" or \"la gracia\" alone.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n49002008009"
+          ],
+          "choice": "hili / jambo hili",
+          "alternatives": [
+            "hii (agreeing with neema or imani)"
+          ],
+          "reason": "\"Hii\" would agree with \"neema\" or \"imani\" (both class 9) and point to one of them. \"Hili\", the class 5 form used for a matter or affair (\"jambo hili\"), points to the whole statement, as the Greek neuter does (m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1043,6 +1316,16 @@
           "L": "not from works, in order that no one might boast.",
           "B": "It is not the result of what anyone has done, so there is no room for anyone to boast.",
           "R": "Nobody earns it by the things they do, so nobody can boast about it."
+        },
+        "es": {
+          "L": "no de obras, a fin de que nadie se jacte.",
+          "B": "No es fruto de lo que alguien haya hecho; así nadie tiene de qué jactarse.",
+          "R": "Nadie se la gana por las cosas que hace, así que nadie puede presumir de ella."
+        },
+        "sw": {
+          "L": "si kutoka kwa matendo, ili mtu yeyote asijisifu.",
+          "B": "Halitokani na yale ambayo mtu yeyote ametenda, kwa hiyo hakuna nafasi ya mtu yeyote kujisifu.",
+          "R": "Hakuna mtu anayeupata wokovu kwa matendo yake, kwa hiyo hakuna anayeweza kujisifu kwa ajili yake."
         }
       },
       "decisions": [
@@ -1158,7 +1441,17 @@
         "en": {
           "L": "For {{deity_pronoun:his|His}} handiwork we are, having been created in {{christos:Christ|Messiah}} Jesus for good works that God prepared in advance, so that in them we might walk.",
           "B": "For we are God's own work. In {{christos:Christ|the Messiah}} Jesus {{deity_pronoun:he|He}} created us for good works, which God made ready in advance so that we would live our lives doing them.",
-          "R": "God is the one who made us what we are. @He@ created us new because we belong to {{christos:Christ|the Messiah}} Jesus, so that we would do good things. God got these good things ready ahead of time, so that we would live by doing them."
+          "R": "God is the one who made us what we are. He created us new because we belong to {{christos:Christ|the Messiah}} Jesus, so that we would do good things. God got these good things ready ahead of time, so that we would live by doing them."
+        },
+        "es": {
+          "L": "Porque de {{deity_pronoun:él|Él}} somos obra, habiendo sido creados en {{christos:Cristo Jesús|Mesías Jesús}} para obras buenas que Dios preparó con anticipación, a fin de que en ellas caminemos.",
+          "B": "Porque somos obra del mismo Dios. En {{christos:Cristo Jesús|el Mesías Jesús}} nos creó para buenas obras, que Dios dispuso de antemano para que vivamos practicándolas.",
+          "R": "Dios es quien nos hizo lo que somos. Nos creó de nuevo porque pertenecemos {{christos:a Cristo Jesús|al Mesías Jesús}}, para que hagamos cosas buenas. Dios preparó esas cosas buenas desde antes, para que vivamos haciéndolas."
+        },
+        "sw": {
+          "L": "Kwa maana sisi ni kazi {{deity_pronoun:yake|Yake}}, tulioumbwa ndani ya {{christos:Kristo|Masihi}} Yesu kwa ajili ya matendo mema ambayo Mungu aliyaandaa mapema ili tuenende katika hayo.",
+          "B": "Kwa maana sisi ni kazi ya Mungu mwenyewe. Ndani ya {{christos:Kristo|Masihi}} Yesu alituumba kwa ajili ya matendo mema, ambayo Mungu aliyaandaa mapema ili maisha yetu yawe ya kuyatenda.",
+          "R": "Mungu ndiye aliyetufanya tulivyo. Alituumba upya kwa sababu sisi ni wa {{christos:Kristo|Masihi}} Yesu, ili tufanye mambo mema. Mungu aliyaandaa mambo hayo mema tangu zamani, ili tuishi kwa kuyatenda."
         }
       },
       "decisions": [
@@ -1312,9 +1605,9 @@
             "n49002010007",
             "n49002010008"
           ],
-          "choice": "@He@ created us new because we belong to {{christos:Christ|the Messiah}} Jesus",
+          "choice": "He created us new because we belong to {{christos:Christ|the Messiah}} Jesus",
           "alternatives": [
-            "created in @CB@ Jesus"
+            "created in {{christos:Christ|the Messiah}} Jesus"
           ],
           "reason": "Readable says that this creation is a new one, and what \"in Christ\" means (m3).",
           "uncertain": false,
@@ -1387,6 +1680,16 @@
           "L": "Therefore remember that once you, the Gentiles in [the] flesh, who are called \"uncircumcision\" by what is called \"circumcision\", in [the] flesh, made by hands— \\v 12 that at that time you were without {{christos:Christ|Messiah}}, excluded from the citizenship of Israel and strangers to the covenants of the promise, not having hope, and without God in the world.",
           "B": "So remember what you once were: Gentiles by birth, labeled \"the uncircumcised\" by those who are called \"the circumcised\", a circumcision performed on the body by human hands. \\v 12 Remember that at that time you were without {{christos:Christ|the Messiah}}. You were excluded from citizenship in Israel and were strangers to the covenants built on God's promise. You had no hope, and you were without God in the world.",
           "R": "So remember what you were before. You were Gentiles, people who are not Jewish by birth. Jewish people called you \"the uncircumcised,\" and they called themselves \"the circumcised.\" (Circumcision is a cut made in the body by human hands. It was the sign that a man belonged to God's people, Israel.) \\v 12 Remember that back then you did not have {{christos:Christ|the Messiah}}. You were not part of Israel, the people of God. You had no share in the covenants, the agreements God made with Israel, or in the promise {{deity_pronoun:he|He}} gave in them. You had no hope, and you lived in the world without God."
+        },
+        "es": {
+          "L": "Por tanto, {{plural_you:recuerden|recordad}} que en otro tiempo {{plural_you:ustedes|vosotros}}, los gentiles en [la] carne, los llamados «incircuncisión» por la llamada «circuncisión» en [la] carne, hecha a mano— \\v 12 que en aquel tiempo {{plural_you:estaban|estabais}} sin {{christos:Cristo|Mesías}}, excluidos de la ciudadanía de Israel y extranjeros a los pactos de la promesa, sin tener esperanza y sin Dios en el mundo.",
+          "B": "Así que {{plural_you:recuerden|recordad}} lo que {{plural_you:ustedes eran|vosotros erais}} antes: gentiles de nacimiento, a quienes llamaban «los incircuncisos» aquellos que se llaman «los circuncisos», por una circuncisión hecha en el cuerpo por manos humanas. \\v 12 {{plural_you:Recuerden|Recordad}} que en aquel tiempo {{plural_you:estaban|estabais}} sin {{christos:Cristo|el Mesías}}. {{plural_you:Estaban|Estabais}} excluidos de la ciudadanía de Israel y {{plural_you:eran|erais}} extranjeros en cuanto a los pactos basados en la promesa de Dios. No {{plural_you:tenían|teníais}} esperanza, y {{plural_you:estaban|estabais}} sin Dios en el mundo.",
+          "R": "Así que {{plural_you:recuerden|recordad}} lo que {{plural_you:eran|erais}} antes. {{plural_you:Eran|Erais}} gentiles, es decir, personas que no son judías de nacimiento. Los judíos {{plural_you:los|os}} llamaban «los incircuncisos», y a sí mismos se llamaban «los circuncisos». (La circuncisión es un corte hecho en el cuerpo por manos humanas. Era la señal de que un hombre pertenecía al pueblo de Dios, Israel). \\v 12 {{plural_you:Recuerden|Recordad}} que en aquel tiempo no {{plural_you:tenían|teníais}} {{christos:a Cristo|al Mesías}}. No {{plural_you:formaban|formabais}} parte de Israel, el pueblo de Dios. No {{plural_you:tenían|teníais}} parte en los pactos, los acuerdos que Dios hizo con Israel, ni en la promesa que {{deity_pronoun:él|Él}} dio en ellos. No {{plural_you:tenían|teníais}} esperanza, y {{plural_you:vivían|vivíais}} en el mundo sin Dios."
+        },
+        "sw": {
+          "L": "Kwa hiyo kumbukeni kwamba zamani ninyi, watu wa mataifa katika mwili, mnaoitwa \"Kutotahiriwa\" na ile inayoitwa \"Tohara\" katika mwili, iliyofanywa kwa mikono— \\v 12 kwamba wakati ule mlikuwa bila {{christos:Kristo|Masihi}}, mkiwa mmetengwa na uraia wa Israeli na wageni kuhusu maagano ya ahadi, bila kuwa na tumaini, na bila Mungu ulimwenguni.",
+          "B": "Basi kumbukeni mlivyokuwa zamani: watu wa mataifa kwa kuzaliwa, mlioitwa \"wasiotahiriwa\" na wale wanaoitwa \"waliotahiriwa\", kwa sababu ya tohara inayofanywa mwilini kwa mikono ya wanadamu. \\v 12 Kumbukeni kwamba wakati ule mlikuwa bila {{christos:Kristo|Masihi}}. Mlikuwa mmetengwa na uraia wa Israeli, na mlikuwa wageni kuhusu maagano yaliyojengwa juu ya ahadi ya Mungu. Hamkuwa na tumaini, na mlikuwa bila Mungu ulimwenguni.",
+          "R": "Kwa hiyo kumbukeni mlivyokuwa zamani. Mlikuwa watu wasio Wayahudi kwa kuzaliwa. Wayahudi waliwaita \"wasiotahiriwa,\" nao wakajiita \"waliotahiriwa.\" (Tohara ni kukata sehemu ya mwili kwa mikono ya wanadamu. Ilikuwa ishara kwamba mwanamume ni wa watu wa Mungu, Israeli.) \\v 12 Kumbukeni kwamba wakati ule hamkuwa na {{christos:Kristo|Masihi}}. Hamkuwa sehemu ya Israeli, watu wa Mungu. Hamkuwa na sehemu katika maagano, yaani mapatano ambayo Mungu alifanya na Israeli, wala katika ahadi aliyotoa ndani yake. Hamkuwa na tumaini, na mliishi ulimwenguni bila Mungu."
         }
       },
       "decisions": [
@@ -1642,9 +1945,27 @@
           ],
           "choice": "you did not have {{christos:Christ|the Messiah}}",
           "alternatives": [
-            "you were without @CB@"
+            "you were without {{christos:Christ|the Messiah}}"
           ],
           "reason": "A plain way of saying they had no part in the Messiah (m5).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n49002011012",
+            "n49002011016"
+          ],
+          "choice": "\"Kutotahiriwa\" and \"Tohara\" (L); \"wasiotahiriwa\", \"waliotahiriwa\" (B, R)",
+          "alternatives": [],
+          "reason": "Literal keeps the Greek labels as nouns for a condition, as the English Literal does; Balanced and Readable name the groups of people (m3). \"Tohara\" is the noun for the rite, so \"ile inayoitwa\" and \"iliyofanywa\" agree with it.",
           "uncertain": false,
           "footnote": false
         }
@@ -1686,6 +2007,16 @@
           "L": "But now in {{christos:Christ|Messiah}} Jesus you who once were far away became near by the blood of the {{christos:Christ|Messiah}}.",
           "B": "But now you who were once far away are in {{christos:Christ|the Messiah}} Jesus, and the blood of {{christos:Christ|the Messiah}} has brought you near.",
           "R": "But now you belong to {{christos:Christ|the Messiah}} Jesus. You were once far away from God and {{deity_pronoun:his|His}} people, but now you have come near. It happened through the blood {{christos:Christ|the Messiah}} shed when {{deity_pronoun:he|He}} died on the cross."
+        },
+        "es": {
+          "L": "Pero ahora en {{christos:Cristo Jesús|Mesías Jesús}} {{plural_you:ustedes|vosotros}}, los que en otro tiempo {{plural_you:estaban|estabais}} lejos, {{plural_you:llegaron|llegasteis}} a estar cerca por la sangre del {{christos:Cristo|Mesías}}.",
+          "B": "Pero ahora {{plural_you:ustedes|vosotros}}, que antes {{plural_you:estaban|estabais}} lejos, {{plural_you:están|estáis}} en {{christos:Cristo Jesús|el Mesías Jesús}}, y por la sangre {{christos:de Cristo|del Mesías}} {{plural_you:han|habéis}} sido traídos cerca.",
+          "R": "Pero ahora {{plural_you:ustedes pertenecen|vosotros pertenecéis}} {{christos:a Cristo Jesús|al Mesías Jesús}}. Antes {{plural_you:estaban|estabais}} lejos de Dios y de {{deity_pronoun:su|Su}} pueblo, pero ahora {{plural_you:se han|os habéis}} acercado. Esto sucedió por medio de la sangre que {{christos:Cristo|el Mesías}} derramó cuando murió en la cruz."
+        },
+        "sw": {
+          "L": "Lakini sasa ndani ya {{christos:Kristo|Masihi}} Yesu ninyi ambao zamani mlikuwa mbali mlifanyika [kuwa] karibu kwa damu ya {{christos:Kristo|Masihi}}.",
+          "B": "Lakini sasa ninyi mliokuwa mbali zamani mko ndani ya {{christos:Kristo|Masihi}} Yesu, na damu ya {{christos:Kristo|Masihi}} imewaleta karibu.",
+          "R": "Lakini sasa ninyi ni wa {{christos:Kristo|Masihi}} Yesu. Zamani mlikuwa mbali na Mungu na watu {{deity_pronoun:wake|Wake}}, lakini sasa mmekaribia. Hilo lilitokea kupitia damu ambayo {{christos:Kristo|Masihi}} alimwaga alipokufa msalabani."
         }
       },
       "decisions": [
@@ -1775,7 +2106,7 @@
           ],
           "choice": "the blood {{christos:Christ|the Messiah}} shed when {{deity_pronoun:he|He}} died on the cross",
           "alternatives": [
-            "the blood of @CB@"
+            "the blood of {{christos:Christ|the Messiah}}"
           ],
           "reason": "Readable says what \"the blood\" stands for (m2).",
           "uncertain": false,
@@ -1808,7 +2139,7 @@
           ],
           "choice": "you who were once far away are in {{christos:Christ|the Messiah}} Jesus, and the blood of {{christos:Christ|the Messiah}} has brought you near",
           "alternatives": [
-            "in @CB@ Jesus you who once were far away have come near by the blood of @CB@"
+            "in {{christos:Christ|the Messiah}} Jesus you who once were far away have come near by the blood of {{christos:Christ|the Messiah}}"
           ],
           "reason": "Balanced splits the sentence into two clauses to keep the two phrases about Christ apart.",
           "uncertain": false,
@@ -1896,6 +2227,16 @@
           "L": "For {{deity_pronoun:he|He}} {{deity_pronoun:himself|Himself}} is our peace, who made both one and broke down the dividing wall of the barrier, the hostility, in {{deity_pronoun:his|His}} flesh, \\v 15 having abolished the law of the commandments in decrees, so that {{deity_pronoun:he|He}} might create the two in {{deity_pronoun:himself|Himself}} into one new {{gender:human being|man}}, making peace, \\v 16 and might reconcile both in one body to God through the cross, having killed the hostility by it;",
           "B": "For {{christos:Christ|the Messiah}} {{deity_pronoun:himself|Himself}} is our peace. He has made the two groups into one, and has broken down the wall that divided them, the hostility between them. In {{deity_pronoun:his|His}} own body \\v 15 {{deity_pronoun:he|He}} set aside the law with its commandments and regulations. He did this to create in {{deity_pronoun:himself|Himself}} one new humanity out of the two, so making peace, \\v 16 and to reconcile both of them to God in one body through the cross, by which {{deity_pronoun:he|He}} put the hostility to death.",
           "R": "{{christos:Christ|the Messiah}} {{deity_pronoun:himself|Himself}} is our peace. He has made Jews and Gentiles into one people. A wall stood between them, and they were like enemies. But {{deity_pronoun:he|He}} broke the wall down when {{deity_pronoun:he|He}} died in {{deity_pronoun:his|His}} own body. \\v 15 He ended the power of the law, with all its commands and rules, to keep them apart. He did this to make the two groups into one new people, joined to {{deity_pronoun:himself|Himself}}. In this way {{deity_pronoun:he|He}} made peace. \\v 16 Through the cross {{deity_pronoun:he|He}} brought both groups to God as one body, at peace with {{deity_pronoun:him|Him}}. On the cross {{deity_pronoun:he|He}} put an end to the hostility."
+        },
+        "es": {
+          "L": "Porque {{deity_pronoun:él|Él}} mismo es nuestra paz, el que hizo de ambos uno y derribó la pared intermedia de la separación, la enemistad, en {{deity_pronoun:su|Su}} carne, \\v 15 habiendo anulado la ley de los mandamientos en decretos, para crear en {{deity_pronoun:sí mismo|Sí mismo}} de los dos un solo {{gender:ser humano|hombre}} nuevo, haciendo la paz, \\v 16 y reconciliar con Dios a ambos en un solo cuerpo por medio de la cruz, habiendo dado muerte a la enemistad por ella;",
+          "B": "Porque {{christos:Cristo|el Mesías}} mismo es nuestra paz. Ha hecho de los dos grupos uno solo, y ha derribado el muro que los dividía, la enemistad que había entre ellos. En {{deity_pronoun:su|Su}} propio cuerpo \\v 15 dejó sin efecto la ley con sus mandamientos y reglamentos. Lo hizo para crear en {{deity_pronoun:sí mismo|Sí mismo}} una sola humanidad nueva a partir de los dos, haciendo así la paz, \\v 16 y para reconciliar con Dios a ambos en un solo cuerpo por medio de la cruz, con la cual dio muerte a la enemistad.",
+          "R": "{{christos:Cristo|El Mesías}} mismo es nuestra paz. Ha unido a los judíos y a los que no son judíos en un solo pueblo. Entre ellos había un muro, y eran como enemigos. Pero {{deity_pronoun:él|Él}} derribó ese muro cuando murió en {{deity_pronoun:su|Su}} propio cuerpo. \\v 15 Quitó a la ley, con todos sus mandatos y reglas, el poder de mantenerlos separados. Lo hizo para formar con los dos grupos un solo pueblo nuevo, unido a {{deity_pronoun:sí mismo|Sí mismo}}. Así hizo la paz. \\v 16 Por medio de la cruz llevó a los dos grupos a Dios como un solo cuerpo, en paz con {{deity_pronoun:él|Él}}. En la cruz puso fin a la enemistad."
+        },
+        "sw": {
+          "L": "Kwa maana {{deity_pronoun:yeye|Yeye}} {{deity_pronoun:mwenyewe|Mwenyewe}} ndiye amani yetu, aliyevifanya vyote viwili kuwa kimoja na kuubomoa ukuta wa kati wa kizuizi, uadui, katika mwili {{deity_pronoun:wake|Wake}}, \\v 15 akiwa ameibatilisha sheria ya amri katika kanuni, ili awaumbe hao wawili ndani {{deity_pronoun:yake|Yake}} {{deity_pronoun:mwenyewe|Mwenyewe}} kuwa binadamu mmoja mpya, akifanya amani, \\v 16 na kuwapatanisha hao wote wawili na Mungu, wakiwa mwili mmoja, kupitia msalaba, akiwa ameufisha uadui kwa msalaba huo;",
+          "B": "Kwa maana {{christos:Kristo|Masihi}} {{deity_pronoun:mwenyewe|Mwenyewe}} ndiye amani yetu. Ameyafanya makundi hayo mawili kuwa moja, na ameubomoa ukuta uliowatenganisha, yaani uadui uliokuwa kati yao. Katika mwili {{deity_pronoun:wake|Wake}} mwenyewe \\v 15 aliiondolea nguvu sheria pamoja na amri zake na kanuni zake. Alifanya hivyo ili ndani {{deity_pronoun:yake|Yake}} {{deity_pronoun:mwenyewe|Mwenyewe}} aumbe jamii moja mpya ya wanadamu kutoka kwa wale wawili, na hivyo akaleta amani, \\v 16 na ili kupitia msalaba awapatanishe na Mungu wote wawili, wakiwa mwili mmoja; kwa msalaba huo aliufisha uadui.",
+          "R": "{{christos:Kristo|Masihi}} {{deity_pronoun:mwenyewe|Mwenyewe}} ndiye amani yetu. Amewafanya Wayahudi na watu wasio Wayahudi kuwa jamii moja. Kulikuwa na ukuta kati yao, nao walikuwa kama maadui. Lakini aliubomoa ukuta huo alipokufa katika mwili {{deity_pronoun:wake|Wake}} mwenyewe. \\v 15 Aliiondolea sheria, pamoja na amri zake zote na kanuni zake, nguvu ya kuwatenganisha. Alifanya hivyo ili makundi hayo mawili yawe jamii moja mpya, iliyounganishwa naye. Kwa njia hiyo alileta amani. \\v 16 Kupitia msalaba aliyaleta makundi yote mawili kwa Mungu kama mwili mmoja, yakiwa na amani naye. Msalabani alikomesha uadui."
         }
       },
       "decisions": [
@@ -2217,6 +2558,54 @@
           "reason": "Readable says what reconciling means (m8).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n49002014009",
+            "n49002014010",
+            "n49002014011",
+            "n49002015009",
+            "n49002015010"
+          ],
+          "choice": "vyote viwili ... kimoja (v. 14); hao wawili (v. 15)",
+          "alternatives": [
+            "wote wawili ... mmoja throughout"
+          ],
+          "reason": "Paul first speaks of the two groups with a neuter, as two things, then with masculine forms for the people themselves (m2). Swahili Literal can show the same shift: class 8 \"vyote viwili\" and class 7 \"kimoja\" for things, then the personal \"hao wawili\" and \"wote wawili\". Balanced and Readable say \"makundi\" (groups) or name Jews and Gentiles.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-2",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n49002015014",
+            "n49002015015",
+            "n49002015016",
+            "n49002015017"
+          ],
+          "choice": "binadamu mmoja mpya (L); jamii moja mpya ya wanadamu (B); jamii moja mpya (R); no gender setting",
+          "alternatives": [
+            "mtu mmoja mpya",
+            "ubinadamu mmoja mpya"
+          ],
+          "reason": "ἄνθρωπον is a human being, not a male (m6), and \"binadamu\" already includes men and women, so there is no gender span where the English Literal has one. \"Ubinadamu\" usually means human nature or humaneness, so Balanced says \"jamii ... ya wanadamu\" (a community of human beings) for the one new people. For review by a native speaker.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2250,6 +2639,16 @@
           "L": "And having come, {{deity_pronoun:he|He}} proclaimed as good news peace to you who [were] far off and peace to those [who were] near;",
           "B": "He came with good news: peace for you who were far off, and peace for those who were near.",
           "R": "{{christos:Christ|the Messiah}} came with good news. He brought peace to you Gentiles, who were far away from God. And {{deity_pronoun:he|He}} brought peace to the Jewish people, who were near."
+        },
+        "es": {
+          "L": "Y habiendo venido, anunció como buena noticia paz a {{plural_you:ustedes|vosotros}}, los que [estaban] lejos, y paz a los que [estaban] cerca;",
+          "B": "Vino con la buena noticia: paz para {{plural_you:ustedes|vosotros}}, que {{plural_you:estaban|estabais}} lejos, y paz para los que estaban cerca.",
+          "R": "{{christos:Cristo|El Mesías}} vino con la buena noticia. Trajo paz a {{plural_you:ustedes|vosotros}}, los que no son judíos, que {{plural_you:estaban|estabais}} lejos de Dios. Y trajo paz al pueblo judío, que estaba cerca."
+        },
+        "sw": {
+          "L": "Naye alipokuja, aliitangaza amani kuwa habari njema kwenu [mliokuwa] mbali, na amani kwa [wale waliokuwa] karibu;",
+          "B": "Alikuja na habari njema: amani kwenu ninyi mlio mbali, na amani kwa wale walio karibu.",
+          "R": "{{christos:Kristo|Masihi}} alikuja na habari njema. Aliwaletea amani ninyi watu wasio Wayahudi, mliokuwa mbali na Mungu. Na aliwaletea amani Wayahudi, waliokuwa karibu."
         }
       },
       "decisions": [
@@ -2355,6 +2754,50 @@
           "reason": "Readable names Christ as the subject.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n49002017003"
+          ],
+          "choice": "anunció como buena noticia (L); vino con la buena noticia (B, R)",
+          "alternatives": [
+            "evangelizó",
+            "anunció el evangelio de la paz"
+          ],
+          "reason": "The verb means to announce good news (m1). \"Evangelizar\" now suggests preaching to convert, and \"evangelio\" is kept for the noun, so every level says \"buena noticia\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n49002017003"
+          ],
+          "choice": "habari njema, lowercase",
+          "alternatives": [
+            "Injili",
+            "alihubiri"
+          ],
+          "reason": "This is the verb \"announce good news\", not the noun \"gospel\", so Swahili says \"habari njema\" in lowercase at every level, keeping \"Injili\" and the capitalised \"Habari Njema\" for the noun.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2391,6 +2834,16 @@
           "L": "because through {{deity_pronoun:him|Him}} we have the access, the both [of us], in one Spirit to the Father.",
           "B": "It is through {{deity_pronoun:him|Him}} that both of us can approach the Father, in the one Spirit.",
           "R": "Because of what {{christos:Christ|the Messiah}} has done, all of us, Jews and Gentiles, can come to God the Father together, by the one Spirit."
+        },
+        "es": {
+          "L": "porque por medio de {{deity_pronoun:él|Él}} tenemos el acceso, ambos, en un Espíritu al Padre.",
+          "B": "Por medio de {{deity_pronoun:él|Él}}, los dos podemos acercarnos al Padre en un mismo Espíritu.",
+          "R": "Gracias a lo que {{christos:Cristo|el Mesías}} ha hecho, todos nosotros, judíos y no judíos, podemos venir juntos a Dios Padre, por el mismo Espíritu."
+        },
+        "sw": {
+          "L": "kwa sababu kupitia {{deity_pronoun:yeye|Yeye}} tuna kibali cha kukaribia, sisi wote wawili, katika Roho mmoja kwa Baba.",
+          "B": "Ni kupitia {{deity_pronoun:yeye|Yeye}} kwamba sisi sote wawili tunaweza kumwendea Baba, katika Roho yule mmoja.",
+          "R": "Kwa sababu ya yale ambayo {{christos:Kristo|Masihi}} amefanya, sisi sote, Wayahudi na watu wasio Wayahudi, tunaweza kumjia Mungu Baba pamoja, kwa Roho yule mmoja."
         }
       },
       "decisions": [
@@ -2475,9 +2928,29 @@
           ],
           "choice": "Because of what {{christos:Christ|the Messiah}} has done",
           "alternatives": [
-            "through @him@"
+            "through {{deity_pronoun:him|Him}}"
           ],
           "reason": "Readable names Christ and says how the access comes through him.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n49002018006"
+          ],
+          "choice": "kibali cha kukaribia",
+          "alternatives": [
+            "njia ya kumkaribia",
+            "ufikiaji"
+          ],
+          "reason": "προσαγωγὴν is the right to come into someone's presence (m2). \"Kibali\" (leave, permission) keeps the sense of being admitted, as before a king; \"ufikiaji\" is a technical word for access. Balanced and Readable use the verbs \"kumwendea\" and \"kumjia\" (come to him).",
           "uncertain": false,
           "footnote": false
         }
@@ -2556,6 +3029,16 @@
           "L": "So then no longer are you strangers and resident aliens, but you are fellow citizens of the holy ones and household members of God, \\v 20 having been built on the foundation of the apostles and prophets, the cornerstone being {{christos:Christ|Messiah}} Jesus {{deity_pronoun:himself|Himself}}, \\v 21 in whom every building, being joined together, grows into a holy temple in [the] Lord, \\v 22 in whom you also are being built up together into a dwelling of God in [the] Spirit.",
           "B": "So you are no longer strangers and resident foreigners. You are citizens together with God's holy people, and you belong to God's household. \\v 20 You have been built on the apostles and prophets as your foundation, and the cornerstone is {{christos:Christ|the Messiah}} Jesus {{deity_pronoun:himself|Himself}}. \\v 21 In {{deity_pronoun:him|Him}} all the building, as it is fitted together, is growing into a holy temple in the Lord. \\v 22 And in {{deity_pronoun:him|Him}} you also are being built up with the others into a home for God, who lives there by the Spirit.",
           "R": "So now you are not strangers or outsiders anymore. You are citizens together with all of God's people, and you are part of God's family. \\v 20 You are like a building that God is putting up. The apostles and prophets are its foundation, and {{christos:Christ|the Messiah}} Jesus {{deity_pronoun:himself|Himself}} is the cornerstone. \\v 21 In {{deity_pronoun:him|Him}} the whole building is fitted together, and it is growing into a holy temple, joined to the Lord. \\v 22 And in {{deity_pronoun:him|Him}} you too are being built together with the others into a home where God lives by the Spirit."
+        },
+        "es": {
+          "L": "Así pues, ya no {{plural_you:son|sois}} extranjeros y forasteros, sino que {{plural_you:son|sois}} conciudadanos de los santos y familiares de Dios, \\v 20 edificados sobre el fundamento de los apóstoles y profetas, siendo la piedra angular el mismo {{christos:Cristo Jesús|Mesías Jesús}}, \\v 21 en quien todo edificio, siendo ensamblado, crece hasta ser un templo santo en [el] Señor, \\v 22 en quien también {{plural_you:ustedes son|vosotros sois}} edificados juntamente para ser morada de Dios en [el] Espíritu.",
+          "B": "Así que ya no {{plural_you:son|sois}} extranjeros ni residentes sin ciudadanía. {{plural_you:Son|Sois}} ciudadanos junto con el pueblo santo de Dios, y {{plural_you:pertenecen|pertenecéis}} a la familia de Dios. \\v 20 {{plural_you:Han|Habéis}} sido edificados sobre los apóstoles y los profetas como fundamento, y la piedra angular es {{christos:Cristo Jesús|el Mesías Jesús}} mismo. \\v 21 En {{deity_pronoun:él|Él}} todo el edificio, bien ensamblado, va creciendo hasta ser un templo santo en el Señor. \\v 22 Y en {{deity_pronoun:él|Él}} también {{plural_you:ustedes son|vosotros sois}} edificados junto con los demás para ser un hogar para Dios, que vive allí por el Espíritu.",
+          "R": "Así que ahora ya no {{plural_you:son|sois}} extraños ni gente de afuera. {{plural_you:Son|Sois}} ciudadanos junto con todo el pueblo de Dios, y {{plural_you:son|sois}} parte de la familia de Dios. \\v 20 {{plural_you:Son|Sois}} como un edificio que Dios está levantando. Los apóstoles y los profetas son su fundamento, y {{christos:Cristo Jesús|el Mesías Jesús}} mismo es la piedra angular. \\v 21 En {{deity_pronoun:él|Él}} todo el edificio está bien unido, y va creciendo hasta ser un templo santo, unido al Señor. \\v 22 Y en {{deity_pronoun:él|Él}} también {{plural_you:ustedes están|vosotros estáis}} siendo construidos junto con los demás para ser un hogar donde Dios vive por el Espíritu."
+        },
+        "sw": {
+          "L": "Basi kwa hiyo ninyi si wageni tena wala wakazi wasio raia, bali ni raia wenzi wa watakatifu na wanafamilia wa Mungu, \\v 20 mkiwa mmejengwa juu ya msingi wa mitume na wa manabii, jiwe la pembeni likiwa {{christos:Kristo|Masihi}} Yesu {{deity_pronoun:mwenyewe|Mwenyewe}}, \\v 21 ambaye ndani {{deity_pronoun:yake|Yake}} kila jengo, likiungwa pamoja, linaongezeka kuwa hekalu takatifu ndani ya Bwana, \\v 22 ambaye ndani {{deity_pronoun:yake|Yake}} ninyi pia mnajengwa pamoja kuwa makao ya Mungu katika Roho.",
+          "B": "Kwa hiyo ninyi si wageni tena wala wakazi wasio na haki za raia. Mmekuwa raia pamoja na watu wa Mungu walio watakatifu, na ninyi ni wa nyumba ya Mungu. \\v 20 Mmejengwa juu ya mitume na manabii kama msingi wenu, na jiwe la pembeni ni {{christos:Kristo|Masihi}} Yesu {{deity_pronoun:mwenyewe|Mwenyewe}}. \\v 21 Ndani {{deity_pronoun:yake|Yake}} jengo zima linaunganishwa sehemu kwa sehemu, nalo linakua hadi kuwa hekalu takatifu ndani ya Bwana. \\v 22 Nanyi pia, ndani {{deity_pronoun:yake|Yake}}, mnajengwa pamoja na wengine kuwa nyumba ya Mungu, anayekaa humo kwa Roho.",
+          "R": "Kwa hiyo sasa ninyi si wageni wala watu wa nje tena. Ninyi ni raia pamoja na watu wote wa Mungu, na ni sehemu ya familia ya Mungu. \\v 20 Mko kama jengo ambalo Mungu analijenga. Mitume na manabii ndio msingi wake, na {{christos:Kristo|Masihi}} Yesu {{deity_pronoun:mwenyewe|Mwenyewe}} ndiye jiwe la pembeni. \\v 21 Ndani {{deity_pronoun:yake|Yake}} jengo lote limeunganishwa vizuri, nalo linakua kuwa hekalu takatifu, lililounganishwa na Bwana. \\v 22 Nanyi pia, ndani {{deity_pronoun:yake|Yake}}, mnajengwa pamoja na wengine kuwa nyumba ambamo Mungu anakaa kwa Roho."
         }
       },
       "decisions": [
@@ -2829,6 +3312,27 @@
             "a dwelling place of God"
           ],
           "reason": "\"Home\" is the everyday word for a place where someone lives (m9).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n49002019007"
+          ],
+          "choice": "wakazi wasio raia (L); wakazi wasio na haki za raia (B)",
+          "alternatives": [
+            "wapitaji",
+            "wageni"
+          ],
+          "reason": "πάροικοι live in a place without a citizen's rights (m1). Swahili has no single word for a resident foreigner, so it says \"residents who are not citizens\", which also prepares for \"raia\" (citizens) in the same verse.",
           "uncertain": false,
           "footnote": false
         }
