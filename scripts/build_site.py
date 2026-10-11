@@ -26,9 +26,10 @@ from typing import NamedTuple  # noqa: E402
 from owb import markup, morph, refs  # noqa: E402
 
 BOOK_NAMES = {"JHN": {"en": "John", "es": "Juan"},
-              "PHP": {"en": "Philippians", "es": "Filipenses"}}
+              "PHP": {"en": "Philippians", "es": "Filipenses"},
+              "COL": {"en": "Colossians", "es": "Colosenses"}}
 # Chapters in each book, for "2 of 21 chapters" and a book's completeness.
-BOOK_CHAPTERS = {"JHN": 21, "PHP": 4}
+BOOK_CHAPTERS = {"JHN": 21, "PHP": 4, "COL": 4}
 # The interface languages, English first (see catalog below).
 LANGUAGES = ("en", "es")
 SITE_NAME = "Open Word Bible"

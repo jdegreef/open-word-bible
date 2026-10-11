@@ -77,7 +77,9 @@ _POSS = re.compile(r"([1-3])([SP])([NGDAV])([SP])([MFN])")
 
 def describe(code, lang="en"):
     w = WORDS[lang]
-    parts = code.split("-")
+    # MACULA writes a few personal pronouns with no person and a trailing
+    # dash (P-GP- for "our" in Colossians 1:7); the empty part says nothing.
+    parts = code.rstrip("-").split("-")
     pos, rest = parts[0], parts[1:]
     if pos not in w["pos"]:
         raise ValueError(f"unknown part of speech in {code!r}")

@@ -34,7 +34,8 @@ Each decision names its tokens, category, choice, alternatives and reason,
 and whether it is uncertain or needs a footnote.
 
 Content: John 1:1–18 (`content/JHN/`) in English and Spanish, and all of
-Philippians (`content/PHP/`) in English, with 4:1–9 also in Spanish. English
+Philippians (`content/PHP/`) in English, with 4:1–9 also in Spanish, and
+Colossians 1 (`content/COL/`) in English. English
 runs ahead of the other languages; `docs/english-style.md` is the brief for
 drafting it and `data/key_terms.json` the settled key terms.
 

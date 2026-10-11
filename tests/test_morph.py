@@ -39,6 +39,7 @@ class MorphTest(unittest.TestCase):
             "HEB": "Hebrew word",
             "S-1SNSM": "Possessive pronoun · 1st person singular · nominative singular masculine",
             "P-1NS-K": "Personal pronoun · 1st person nominative singular · crasis (two words run together)",
+            "P-GP-": "Personal pronoun · genitive plural",
         }
         for code, words in cases.items():
             self.assertEqual(morph.describe(code), words, code)
