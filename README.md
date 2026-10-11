@@ -45,7 +45,7 @@ also in Spanish; all of Ephesians (`content/EPH/`) and Colossians
 `docs/french-style.md` and
 `docs/swahili-style.md` are the briefs for French and Swahili.
 
-Matthew 1 (`content/MAT/`) is drafted in English.
+Matthew 1–2 (`content/MAT/`) is drafted in English.
 
 A record is one sentence of the source, not one verse. It ends where the
 SBLGNT ends a sentence: a full stop, a question mark, or a raised dot (·)
