@@ -267,6 +267,56 @@ class SiteTest(unittest.TestCase):
             if i + 1 < len(ps):
                 self.assertIn(f'href="{ps[i + 1].url}" rel="next"', turns)
 
+    def test_home_page_progress_is_for_its_language(self):
+        for lang in build_site.LANGUAGES:
+            home = (self.out / build_site.url(lang, "/").lstrip("/") / "index.html").read_text(encoding="utf-8")
+            progress = home[home.index('class="progress"'):home.index('class="latest"')]
+            records = [r for r in build_site.all_records() if lang in r["renderings"]]
+            decisions = sum(d["language"] in (None, lang) for r in records for d in r["decisions"])
+            self.assertIn(f"<b>{len(records)}</b>", progress)
+            self.assertIn(f"<b>{decisions}</b>", progress)
+            shown = {(r.book, r.chapter) for r in map(build_site.refs.parse, (r["refs"][0] for r in records))}
+            for p in build_site.passages():
+                link = f'href="{build_site.url(lang, p.url)}"'
+                self.assertEqual(link in progress, (p.book, p.chapter) in shown, (lang, p.url))
+
+    def test_header_footer_and_read_page_list_only_the_page_language(self):
+        for lang in build_site.LANGUAGES:
+            shown = {(p.book, p.chapter) for p in build_site.passages_in(lang)}
+            books = {b for b, _ in shown}
+            read = (self.out / build_site.url(lang, "/read/").lstrip("/") / "index.html").read_text(encoding="utf-8")
+            header = re.search(r"<header.*?</header>", read, re.S)[0]
+            footer = re.search(r"<footer.*?</footer>", read, re.S)[0]
+            for p in build_site.passages():
+                link = f'href="{build_site.url(lang, p.url)}"'
+                self.assertEqual(link in header, (p.book, p.chapter) in shown, (lang, p.url))
+                self.assertEqual(f'id="{p.book.lower()}"' in read, p.book in books, (lang, p.book))
+                book_link = f'href="{build_site.url(lang, f"/read/#{p.book.lower()}")}"'
+                self.assertEqual(book_link in footer, p.book in books, (lang, p.book))
+
+    def test_reader_navigation_lists_only_the_page_language(self):
+        for lang in build_site.LANGUAGES:
+            shown = {(p.book, p.chapter) for p in build_site.passages_in(lang)}
+            for p in build_site.passages():
+                page = (self.out / build_site.url(lang, p.url).lstrip("/") / "index.html").read_text(encoding="utf-8")
+                strip = re.search(r'<nav class="chapstrip".*?</nav>', page, re.S)[0]
+                turns = re.search(r'<nav class="turns".*?</nav>', page, re.S)[0]
+                linked = {(q.book, q.chapter) for q in build_site.passages()
+                          if f'href="{build_site.url(lang, q.url)}"' in strip + turns}
+                if (p.book, p.chapter) in shown:
+                    self.assertLessEqual(linked, shown, (lang, p.url))
+                else:  # a page not yet in lang is in English, and links like one
+                    self.assertIn((p.book, p.chapter), linked, (lang, p.url))
+
+    def test_read_page_cards_count_the_page_language(self):
+        for lang in build_site.LANGUAGES:
+            for p in build_site.passages_in(lang):
+                card = build_site.passage_card(p.book, p.chapter, lang)
+                shown = [d for r in p.records for d in r["decisions"] if d["language"] in (None, lang)]
+                self.assertIn(build_site.t(lang, "card.meta", verses=p.verses, sentences=len(p.records),
+                                           decisions=len(shown),
+                                           uncertain=sum(d["uncertain"] for d in shown)), card)
+
     def test_paragraphs_follow_the_greek(self):
         # SBLGNT capitalises a paragraph's first word; John 2 has four.
         self.assertEqual(self.chapter_data("jhn/2")["paragraphs"],
