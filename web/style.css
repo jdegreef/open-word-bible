@@ -384,8 +384,9 @@ footer.site .foot-langs ul { display: flex; flex-wrap: wrap; gap: 6px 18px; }
   transition: transform var(--fast) ease, filter var(--fast) ease;
 }
 .button:hover { transform: translateY(-1px); filter: brightness(1.06); }
-.button.ghost { background: var(--surface); color: var(--text); border-color: var(--line-strong); box-shadow: none; }
-.button.ghost:hover { border-color: var(--accent); color: var(--accent); }
+/* Beside a shown "Continue reading" link, the start button steps back. */
+.button.ghost, [data-resume]:not([hidden]) + .button { background: var(--surface); color: var(--text); border-color: var(--line-strong); box-shadow: none; }
+.button.ghost:hover, [data-resume]:not([hidden]) + .button:hover { border-color: var(--accent); color: var(--accent); }
 .actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 0; }
 
 /* Home: a centred hero on a soft indigo-and-gold wash. */

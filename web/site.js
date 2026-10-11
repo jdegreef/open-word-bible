@@ -203,11 +203,9 @@
     // A verse of the next chapter that a sentence runs into is "8:1".
     var verse = String(place.verse);
     var ref = name + " " + (verse.indexOf(":") >= 0 ? verse : place.chapter + ":" + verse);
+    // The chapter's address, as chapter_url in scripts/build_site.py makes it.
     a.href = a.getAttribute("data-prefix") + "/" + place.book.toLowerCase() + "/" + place.chapter + "/#at-" + verse;
     a.querySelector("span").textContent = a.getAttribute("data-label").replace("{ref}", ref);
     a.hidden = false;
-    // Beside it, the start button steps back.
-    var next = a.nextElementSibling;
-    if (next && next.classList.contains("button")) next.classList.add("ghost");
   });
 })();

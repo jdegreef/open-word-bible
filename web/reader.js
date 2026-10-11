@@ -618,8 +618,10 @@
   function narrow() { return getComputedStyle(panelEl).position === "fixed"; }
   function verseEl(v) { return document.querySelector('.verse[data-v="' + v + '"]'); }
   // A verse in the address: #v4, or plainly #4 (#v7:53 for a verse
-  // of another chapter that a sentence runs into).
-  function hashVerse() { var m = /^#v?(\d+(?::\d+)?)$/.exec(location.hash); return m && m[1]; }
+  // of another chapter that a sentence runs into). #at-4 (from "Continue
+  // reading") only scrolls to it; see resumeAt below.
+  var VERSE_ID = "(\\d+(?::\\d+)?)";
+  function hashVerse() { var m = new RegExp("^#v?" + VERSE_ID + "$").exec(location.hash); return m && m[1]; }
   function recordFor(verse) {
     return DATA.records.find(function (r) {
       return r.refs.some(function (vid) { return verseOf(vid) === verse; });
@@ -880,13 +882,11 @@
   if (here && pills.scrollWidth > pills.clientWidth)
     pills.scrollLeft = here.offsetLeft - pills.offsetLeft - pills.clientWidth / 2 + here.offsetWidth / 2;
 
-  // The reader's place: the verse at the top of the text, kept as
-  // owb.place for "Continue reading" on the home and Read pages (site.js).
-  // A link from there ends in #at-12, which scrolls to the verse without
-  // opening its notes.
-  // The reading line: a quarter of the way down, or just below the sticky
-  // header and settings bar (a verse's scroll margin) if that is lower.
-  // Saving and resuming both use it, so a place does not drift.
+  // The reader's place, kept as owb.place for "Continue reading" on the
+  // home and Read pages (site.js): the verse at the reading line, a quarter
+  // of the way down or just below the sticky header and settings bar (a
+  // verse's scroll margin) if that is lower. Saving and resuming both use
+  // the line, so a place does not drift.
   function readingLine() {
     var first = document.querySelector("#text .verse");
     var margin = first ? parseFloat(getComputedStyle(first).scrollMarginTop) || 0 : 0;
@@ -900,10 +900,12 @@
     }
     return all.length ? all[all.length - 1].dataset.v : null;
   }
+  var keptVerse = null;
   function keepPlace() {
     var verse = topVerse();
-    if (!verse) return;
-    var place = { book: DATA.book, chapter: DATA.chapter, verse: verse, at: Date.now() };
+    if (!verse || verse === keptVerse) return;
+    keptVerse = verse;
+    var place = { book: DATA.book, chapter: DATA.chapter, verse: verse };
     try { localStorage.setItem("owb.place", JSON.stringify(place)); } catch (e) { /* this visit only */ }
   }
   var placeTimer = null;
@@ -913,7 +915,7 @@
   }, { passive: true });
   window.addEventListener("pagehide", keepPlace);
 
-  var resumeAt = /^#at-(\d+(?::\d+)?)$/.exec(location.hash);
+  var resumeAt = new RegExp("^#at-" + VERSE_ID + "$").exec(location.hash);
   if (resumeAt) {
     try {
       history.replaceState(null, "", location.pathname + location.search);
