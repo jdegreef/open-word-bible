@@ -17,7 +17,7 @@
 
   // The reading language is the page's (/es/... is Spanish); the footer
   // switches it. The other settings are kept across pages and languages.
-  var settings = { level: "B", gender: 0, christos: 0, divine_name: 0, deity_pronoun: 0, plural_you: 0, view: 0, uncertain: 0 };
+  var settings = { level: "B", gender: 0, christos: 0, divine_name: 0, deity_pronoun: 0, plural_you: 0, view: 0, uncertain: 0, partner: "" };
   try {
     var saved = JSON.parse(localStorage.getItem(STORE) || "{}");
     for (var k in settings) if (k in saved) settings[k] = saved[k];
@@ -199,11 +199,45 @@
     if (head) head.textContent = DATA.title + " \u00b7 Open Word Bible \u00b7 " + summary.join(" \u00b7 ") +
       " \u00b7 " + location.host + location.pathname;
     document.body.classList.toggle("plain", plain());
+    document.body.classList.toggle("view-parallel", parallel());
+    document.body.classList.toggle("view-interlinear", interlinear());
+    // Offer Parallel only with another language, Interlinear only with links.
+    var views = document.querySelector('[data-setting="view"]');
+    if (views) {
+      views.querySelector('[data-value="2"]').hidden = !partners().length;
+      views.querySelector('[data-value="3"]').hidden = !anyLinks();
+    }
   }
 
   // Reading view: the text alone, without verse numbers, footnote letters or
   // the reasoning panel; verses are not buttons.
-  function plain() { return settings.view === 1; }
+  // Every view but Study is for reading: no reasoning panel, verses are not
+  // buttons. Parallel sets another language beside each sentence;
+  // Interlinear sets the original words over the English they became.
+  function plain() { return settings.view !== 0; }
+  function parallel() { return settings.view === 2 && partners().length > 0; }
+  function interlinear() { return settings.view === 3; }
+
+  // Languages to set beside the page's: those any sentence here has.
+  function partners() {
+    return DATA.languages.filter(function (l) { return l !== settings.lang; });
+  }
+  function partner() {
+    var all = partners();
+    return all.indexOf(settings.partner) >= 0 ? settings.partner : all[0];
+  }
+
+  // Interlinear needs alignments for this language and level.
+  function anyLinks(level) {
+    return DATA.records.some(function (r) {
+      return r.links && r.links[settings.lang] && (level ? r.links[settings.lang][level] : true);
+    });
+  }
+
+  var WORD_TEXT = {};
+  Object.keys(DATA.words).forEach(function (vid) {
+    DATA.words[vid].forEach(function (w) { WORD_TEXT[w.id] = w.text; });
+  });
 
   // The language a record is shown in: the reading language if the record
   // has it yet, otherwise the first language it does have (English runs
@@ -309,6 +343,8 @@
     note.hidden = !partial;
     note.textContent = partial ? t("partial") : "";
     document.getElementById("title").textContent = DATA.title;
+    if (parallel()) { drawParallel(box); drawUnsureToggle(0); drawViewTools(); drawNotes([]); return; }
+    drawViewTools();
     var shown = null;   // last verse number printed
     var notes = [];
     var unsureCount = 0;
@@ -373,6 +409,16 @@
         part[1].forEach(function (piece) {
           var text = render(piece[0]);
           if (!piece[1]) { span.appendChild(document.createTextNode(text)); return; }
+          if (interlinear()) {
+            // The original words over the English they became.
+            var ruby = el("ruby", "il");
+            ruby.appendChild(document.createTextNode(text));
+            var rt = el("rt", null, piece[1].map(function (id) { return WORD_TEXT[id] || ""; }).join(" ").trim());
+            rt.lang = DATA.source;
+            ruby.appendChild(rt);
+            span.appendChild(ruby);
+            return;
+          }
           var w = el("span", "aw", text);
           w.dataset.tokens = piece[1].join(" ");
           // In the chosen sentence, pointing at an English word lights the
@@ -427,6 +473,68 @@
       note.appendChild(why);
     }
     return note;
+  }
+
+  // Parallel: each sentence in a row, the page's language beside another.
+  function drawParallel(box) {
+    var other = partner();
+    var starts = new Set(DATA.paragraphs);
+    box.appendChild(parallelRow(DATA.languages.indexOf(settings.lang) >= 0 ? settings.lang : "en", other, true));
+    DATA.records.forEach(function (r) {
+      var heading = DATA.headings[r.id];
+      if (heading && (heading[settings.lang] || heading.en)) {
+        box.appendChild(el("h2", "section-head", render(heading[settings.lang] || heading.en)));
+      }
+      var row = el("div", "prow" + (starts.has(r.id) ? " pstart" : ""));
+      [textLang(r), other].forEach(function (lang, i) {
+        var cell = el("div", "pcell");
+        var has = r.renderings[lang];
+        if (!has) {
+          cell.appendChild(el("span", "pmissing", t("not_in_language")));
+        } else {
+          cell.lang = lang;
+          splitVerses(r, render(has[settings.level])).forEach(function (part, j) {
+            cell.appendChild(el("sup", "pv", part[0]));
+            cell.appendChild(document.createTextNode(part[1] + " "));
+          });
+          if (i === 0 && lang !== settings.lang) cell.classList.add("fallback");
+        }
+        row.appendChild(cell);
+      });
+      box.appendChild(row);
+    });
+  }
+
+  function parallelRow(a, b) {
+    var row = el("div", "prow phead");
+    [a, b].forEach(function (l) { row.appendChild(el("div", "pcell", t("lang_names")[l] || l)); });
+    return row;
+  }
+
+  // Above the text, in Parallel and Interlinear: the language to set beside
+  // the page's, or a word on where interlinear links exist so far.
+  function drawViewTools() {
+    var tools = document.getElementById("view-tools");
+    if (!tools) {
+      tools = el("div", "view-tools");
+      tools.id = "view-tools";
+      var box = document.getElementById("text");
+      box.parentNode.insertBefore(tools, box);
+    }
+    tools.textContent = "";
+    tools.hidden = !(parallel() || interlinear());
+    if (parallel()) {
+      tools.appendChild(el("span", "vt-label", t("parallel_with")));
+      partners().forEach(function (l) {
+        var b = el("button", "text-tool", t("lang_names")[l] || l);
+        b.type = "button";
+        b.setAttribute("aria-pressed", l === partner() ? "true" : "false");
+        b.addEventListener("click", function () { setSetting("partner", l); });
+        tools.appendChild(b);
+      });
+    } else if (interlinear() && !anyLinks(settings.level)) {
+      tools.appendChild(el("span", "vt-label", t("interlinear_none")));
+    }
   }
 
   // Above the text: mark the sentences where a decision is uncertain.

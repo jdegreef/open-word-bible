@@ -775,7 +775,8 @@ def chapter_page(book, chapter, lang="en"):
   {control("gender", "gender", [("0", t(lang, "reader.inclusive")), ("1", t(lang, "reader.traditional"))])}
   {title_control}
   {control("pronouns", "deity_pronoun", [("0", t(lang, "reader.he")), ("1", t(lang, "reader.He"))])}{plural}
-  {control("view", "view", [("0", t(lang, "reader.study")), ("1", t(lang, "reader.reading"))], " view-control")}
+  {control("view", "view", [("0", t(lang, "reader.study")), ("1", t(lang, "reader.reading")),
+                            ("2", t(lang, "reader.parallel")), ("3", t(lang, "reader.interlinear"))], " view-control")}
 </div>
 <p class="hint"><span id="hint-level"></span> <span id="hint-gender"></span> <span id="hint-{title_setting}"></span> <span id="hint-deity_pronoun"></span> <span id="hint-plural_you"></span> <span id="hint-view"></span></p>
 </div>

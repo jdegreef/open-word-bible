@@ -1264,3 +1264,30 @@ mark.q-hit { box-shadow: inset 0 -2px 0 var(--gold); border-radius: 2px; }
   .notes li { break-inside: avoid; }
   a { color: #000; text-decoration: none; }
 }
+
+/* Parallel view: each sentence beside the same sentence in another
+   language, in rows that keep the two in step. */
+body.view-parallel .passage { max-width: 1080px; }
+body.view-parallel .text { max-width: none; font-size: calc(18px * var(--text-scale)); }
+.prow { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; padding: 6px 0; border-top: 1px solid var(--line); }
+.prow.pstart { margin-top: .6em; }
+.prow.phead { border-top: 0; font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.pcell .pv { font-family: var(--sans); font-size: 11px; font-weight: 700; color: var(--accent); margin-right: 3px; }
+.pcell.fallback, .pmissing { color: var(--muted); }
+.pmissing { font-family: var(--sans); font-size: 14px; font-style: italic; }
+@media (max-width: 860px) {
+  .prow { grid-template-columns: 1fr; gap: 4px; }
+  .prow .pcell + .pcell { color: var(--muted); padding-left: 12px; border-left: 2px solid var(--line); }
+  .prow.phead { display: none; }
+}
+.view-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 0 0 12px; }
+.view-tools[hidden] { display: none; }
+.view-tools .text-tool { margin: 0; }
+.vt-label { font-size: 13px; color: var(--muted); }
+
+/* Interlinear view: the original words over the English they became. */
+body.view-interlinear .text { line-height: calc(2.6 * var(--text-leading)); }
+ruby.il { ruby-position: over; }
+body.view-interlinear .verse sup { display: inline; }
+ruby.il rt { font-family: var(--greek); font-size: .58em; color: var(--accent); letter-spacing: 0; }
+ruby.il rt:lang(hbo) { font-family: var(--hebrew); }
