@@ -17,7 +17,8 @@
 
   // The reading language is the page's (/es/... is Spanish); the footer
   // switches it. The other settings are kept across pages and languages.
-  var settings = { level: "B", gender: 0, christos: 0, divine_name: 0, deity_pronoun: 0, plural_you: 0, view: 0, uncertain: 0, partner: "" };
+  var settings = { level: "B", gender: 0, christos: 0, divine_name: 0, deity_pronoun: 0, units: 0, plural_you: 0, view: 0,
+                   uncertain: 0, partner: "" };
   try {
     var saved = JSON.parse(localStorage.getItem(STORE) || "{}");
     for (var k in settings) if (k in saved) settings[k] = saved[k];
@@ -270,8 +271,9 @@
     });
     document.getElementById("hint-level").textContent = t("hint_level")[settings.level];
     // A page shows either the divine name (Old Testament) or the title
-    // Christ (New Testament), so one of the two hints is missing.
-    ["gender", "christos", "divine_name", "deity_pronoun", "plural_you", "view"].forEach(function (name) {
+    // Christ (New Testament), and measures only where it has them, so
+    // some hints are missing.
+    ["gender", "christos", "divine_name", "deity_pronoun", "units", "plural_you", "view"].forEach(function (name) {
       var hint = document.getElementById("hint-" + name);
       if (hint) hint.textContent = t("hint_" + name)[settings[name]];
     });
@@ -1188,8 +1190,10 @@
   function narrow() { return getComputedStyle(panelEl).position === "fixed"; }
   function verseEl(v) { return document.querySelector('.verse[data-v="' + v + '"]'); }
   // A verse in the address: #v4, or plainly #4 (#v7:53 for a verse
-  // of another chapter that a sentence runs into).
-  function hashVerse() { var m = /^#v?(\d+(?::\d+)?)$/.exec(location.hash); return m && m[1]; }
+  // of another chapter that a sentence runs into). #at-4 (from "Continue
+  // reading") only scrolls to it; see resumeAt below.
+  var VERSE_ID = "(\\d+(?::\\d+)?)";
+  function hashVerse() { var m = new RegExp("^#v?" + VERSE_ID + "$").exec(location.hash); return m && m[1]; }
   function recordFor(verse) {
     return DATA.records.find(function (r) {
       return r.refs.some(function (vid) { return verseOf(vid) === verse; });
@@ -1450,6 +1454,51 @@
   var here = pills && pills.querySelector("[aria-current]");
   if (here && pills.scrollWidth > pills.clientWidth)
     pills.scrollLeft = here.offsetLeft - pills.offsetLeft - pills.clientWidth / 2 + here.offsetWidth / 2;
+
+  // The reader's place, kept as owb.place for "Continue reading" on the
+  // home and Read pages (site.js): the verse at the reading line, a quarter
+  // of the way down or just below the sticky header and settings bar (a
+  // verse's scroll margin) if that is lower. Saving and resuming both use
+  // the line, so a place does not drift.
+  function readingLine() {
+    var first = document.querySelector("#text .verse");
+    var margin = first ? parseFloat(getComputedStyle(first).scrollMarginTop) || 0 : 0;
+    return Math.max(margin, window.innerHeight * 0.25);
+  }
+  function topVerse() {
+    var line = readingLine() + 1;
+    var all = document.querySelectorAll("#text .verse");
+    for (var i = 0; i < all.length; i++) {
+      if (all[i].getBoundingClientRect().bottom > line) return all[i].dataset.v;
+    }
+    return all.length ? all[all.length - 1].dataset.v : null;
+  }
+  var keptVerse = null;
+  function keepPlace() {
+    var verse = topVerse();
+    if (!verse || verse === keptVerse) return;
+    keptVerse = verse;
+    var place = { book: DATA.book, chapter: DATA.chapter, verse: verse };
+    try { localStorage.setItem("owb.place", JSON.stringify(place)); } catch (e) { /* this visit only */ }
+  }
+  var placeTimer = null;
+  window.addEventListener("scroll", function () {
+    clearTimeout(placeTimer);
+    placeTimer = setTimeout(keepPlace, 400);
+  }, { passive: true });
+  window.addEventListener("pagehide", keepPlace);
+
+  var resumeAt = new RegExp("^#at-" + VERSE_ID + "$").exec(location.hash);
+  if (resumeAt) {
+    try {
+      history.replaceState(null, "", location.pathname + location.search);
+      history.scrollRestoration = "manual";
+    } catch (e) { /* ignore */ }
+    window.addEventListener("load", function () {
+      var v = verseEl(resumeAt[1]);
+      if (v) window.scrollBy(0, v.getBoundingClientRect().top - readingLine());
+    });
+  }
 
   loadMarks().then(function () { drawText(); if (current) drawPanel(); });
 

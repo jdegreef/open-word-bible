@@ -186,6 +186,13 @@ class SiteTest(unittest.TestCase):
             for text in texts:
                 self.assertNotRegex(text, "[\"']", r["id"])
 
+    def test_measures_control_only_where_a_passage_has_units(self):
+        gen6 = (self.out / "gen" / "6" / "index.html").read_text(encoding="utf-8")
+        gen1 = (self.out / "gen" / "1" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('data-setting="units"', gen6)
+        self.assertNotIn('data-setting="units"', gen1)
+        self.assertIn("{{units:450 feet|300 cubits}}", json.dumps(self.chapter_data("gen/6")["records"]))
+
     def test_old_testament_pages_offer_the_divine_name(self):
         # The divine name (the LORD or Yahweh) on Old Testament pages, the
         # title Christ (Christ or Messiah) on New Testament ones.
