@@ -4,7 +4,8 @@ Checks the rules in schema/sentence-record.schema.json that matter most, plus
 what a schema cannot: every token id exists in the MACULA data for the
 record's verses, generated source text matches the data, every Greek or
 Hebrew word anywhere else in the record is a form or lemma copied from the
-source data, a Greek record holds one whole source sentence, meaning
+source data, a Greek record holds one whole source sentence and a Hebrew
+record whole verses, meaning
 decisions carry no wording for one language (no wording category, setting
 span or target-language name), and every {{setting:...}} span names a known
 setting and is well formed, and key terms (data/key_terms.json) keep their
@@ -31,6 +32,8 @@ LEVELS = _DEFS["level"]["enum"]
 LAYERS = _DEFS["decision"]["properties"]["layer"]["enum"]
 CATEGORIES = _DEFS["decision"]["properties"]["category"]["enum"]
 MEANING_CATEGORIES = _DEFS["decision"]["then"]["properties"]["category"]["enum"]
+# The edition each source language is translated from.
+TEXT_ID_FOR = {"grc": "SBLGNT@v1.2", "hbo": macula_hebrew.TEXT_ID, "arc": macula_hebrew.TEXT_ID}
 RECORD_ID = re.compile(_PROPS["id"]["pattern"])
 LANGUAGE = re.compile(_DEFS["language"]["pattern"])
 
@@ -40,9 +43,16 @@ TARGET_LANGUAGE_NAMES = re.compile(
     r"\b(English|Spanish|espa\u00f1ol|castellano|French|fran\u00e7ais|"
     r"Portuguese|portugu\u00eas|Swahili|Kiswahili)\b", re.IGNORECASE)
 
-KEY_TERMS = {t["strong"]: t for t in json.loads(
+# Keyed by (source language, Strong's number): Greek and Hebrew Strong's
+# numbers overlap (4100 is "believe" in Greek and "what" in Hebrew).
+KEY_TERMS = {(t.get("language", "grc"), t["strong"]): t for t in json.loads(
     (Path(__file__).resolve().parents[1] / "data" / "key_terms.json")
     .read_text(encoding="utf-8"))["terms"]}
+
+
+def token_language(token_id):
+    """grc for a MACULA Greek id (n...), hbo for a MACULA Hebrew one (o...)."""
+    return "hbo" if token_id.startswith("o") else "grc"
 
 # Runs of Greek or Hebrew letters and their marks. Punctuation (ano teleia,
 # maqaf, sof pasuq, elision marks) ends a word.
@@ -135,7 +145,7 @@ def check_key_terms(record, tokens, errors):
     if not isinstance(english, dict):
         return
     for tok in tokens:
-        term = KEY_TERMS.get(tok.strong)
+        term = KEY_TERMS.get((token_language(tok.id), tok.strong))
         if term is None or tok.id in explained:
             continue
         for level, text in sorted(english.items()):
@@ -169,8 +179,26 @@ def check_sentence(tokens, decisions, errors):
                           "there, or add a punctuation meaning decision")
 
 
+def check_hebrew_verses(tokens, known_tokens, decisions, errors):
+    """A Hebrew record holds whole verses, in order: the WLC marks no
+    sentence boundary inside a verse, only the end of one. A punctuation
+    meaning decision exempts the record, as it does for Greek."""
+    if any(isinstance(d, dict) and d.get("layer") == "meaning"
+           and d.get("category") == "punctuation" for d in decisions):
+        return
+    ids = [t.id for t in tokens]
+    verses = {macula_hebrew.verse_of(i) for i in ids}
+    expected = sorted(tid for tid, t in known_tokens.items()
+                      if macula_hebrew.verse_of(tid) in verses and macula_hebrew.written(t))
+    if ids != expected:
+        errors.append("source.tokens: a Hebrew record holds every word of its verses, in "
+                      "order; add the missing words, or add a punctuation meaning decision")
+
+
 def source_text(tokens):
     """The source text of a token list, rebuilt from the MACULA data."""
+    if tokens and tokens[0].id.startswith("o"):   # MACULA Hebrew
+        return macula_hebrew.text_of(tokens)
     return " ".join(t.text + t.after.rstrip() for t in tokens)
 
 
@@ -196,16 +224,20 @@ def validate_record(record, known_tokens=None, original_language=True):
             errors.append(f"refs: bad verse id {vid!r}")
     if errors:
         return errors
-    if known_tokens is None:
-        known_tokens = macula_greek.tokens_for_refs(verse_ids)
-
     source = record["source"]
+    hebrew = isinstance(source, dict) and source.get("language") in ("hbo", "arc")
+    if known_tokens is None:
+        known_tokens = (macula_hebrew if hebrew else macula_greek).tokens_for_refs(verse_ids)
+
     source_tokens = []
     if _fields(source, _PROPS["source"], "source", errors):
         if source.get("language") not in SOURCE_LANGUAGES:
             errors.append(f"source.language: {source.get('language')!r} not allowed")
         if source.get("text_id") not in TEXT_IDS:
             errors.append(f"source.text_id: {source.get('text_id')!r} not allowed")
+        elif source.get("text_id") != TEXT_ID_FOR.get(source.get("language")):
+            errors.append(f"source.text_id: {source.get('text_id')!r} is not the text "
+                          f"for {source.get('language')!r}")
         source_tokens = source.get("tokens") or []
         if not source_tokens:
             errors.append("source.tokens: must not be empty")
@@ -221,6 +253,10 @@ def validate_record(record, known_tokens=None, original_language=True):
                 and all(t in known_tokens for t in source_tokens)):
             check_sentence([known_tokens[t] for t in source_tokens],
                            record.get("decisions") or [], errors)
+        if (hebrew and source_tokens
+                and all(t in known_tokens for t in source_tokens)):
+            check_hebrew_verses([known_tokens[t] for t in source_tokens], known_tokens,
+                                record.get("decisions") or [], errors)
         if source_tokens and all(t in known_tokens for t in source_tokens):
             check_key_terms(record, [known_tokens[t] for t in source_tokens], errors)
     in_source = set(source_tokens)
