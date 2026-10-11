@@ -22,17 +22,22 @@ def source_dir(name):
     return vendor_dir() / name
 
 
+def lfs_path(name, relpath):
+    """The downloaded copy of a file a source stores with Git LFS:
+    <name>-lfs/<relpath>, where scripts/fetch_sources.py puts it."""
+    path = vendor_dir() / f"{name}-lfs" / relpath
+    if not path.is_file():
+        raise FileNotFoundError(f"{path} missing; run scripts/fetch_sources.py {name}")
+    return path
+
+
 def read_text(name, relpath):
     """Return the text of one file of a pinned source.
 
-    Files stored with Git LFS are read from <name>-lfs/<relpath>, where
-    scripts/fetch_sources.py downloads them.
+    Files stored with Git LFS are read from <name>-lfs/<relpath> (lfs_path).
     """
     if relpath in LOCK[name].get("lfs", {}):
-        path = vendor_dir() / f"{name}-lfs" / relpath
-        if not path.is_file():
-            raise FileNotFoundError(f"{path} missing; run scripts/fetch_sources.py {name}")
-        return path.read_text(encoding="utf-8")
+        return lfs_path(name, relpath).read_text(encoding="utf-8")
     path = source_dir(name) / relpath
     if path.is_file():
         return path.read_text(encoding="utf-8")
