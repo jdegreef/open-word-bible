@@ -10,12 +10,13 @@ contextualdomain) are not used or redistributed.
 """
 import csv
 import io
+import itertools
 import re
 from functools import lru_cache
 from typing import NamedTuple
 
 from owb import refs
-from owb.sources import read_text
+from owb.sources import lfs_path, read_text
 
 TSV_PATH = "WLC/tsv/macula-hebrew.tsv"
 
@@ -41,26 +42,41 @@ class Morpheme(NamedTuple):
     lang: str
 
 
-@lru_cache(maxsize=None)
-def _all():
-    """Return {Ref: [Morpheme]} for the whole Old Testament."""
-    reader = csv.DictReader(io.StringIO(read_text("macula-hebrew", TSV_PATH)),
-                            delimiter="\t", quoting=csv.QUOTE_NONE)
-    by_verse = {}
-    for row in reader:
+def _morphemes(lines):
+    """Parse the TSV's lines into Morphemes, in the file's order."""
+    for row in csv.DictReader(lines, delimiter="\t", quoting=csv.QUOTE_NONE):
         m = _REF.fullmatch(row["ref"])
         ref = refs.Ref(m[1], int(m[2]), int(m[3]))
-        by_verse.setdefault(ref, []).append(Morpheme(
+        yield Morpheme(
             id=row["xml:id"], ref=ref, position=int(m[4]), text=row["text"],
             after=row["after"], transliteration=row["transliteration"],
             lemma=row["lemma"], morph=row["morph"], gloss=row["gloss"],
-            english=row["english"], strong=row["strongnumberx"], lang=row["lang"]))
+            english=row["english"], strong=row["strongnumberx"], lang=row["lang"])
+
+
+@lru_cache(maxsize=None)
+def _all():
+    """Return {Ref: [Morpheme]} for the whole Old Testament."""
+    by_verse = {}
+    for m in _morphemes(io.StringIO(read_text("macula-hebrew", TSV_PATH))):
+        by_verse.setdefault(m.ref, []).append(m)
     return by_verse
 
 
 def verses():
     """Return {Ref: [Morpheme]} in canonical order."""
     return dict(sorted(_all().items(), key=lambda kv: kv[0].sort_key()))
+
+
+def iter_verses():
+    """Yield (Ref, [Morpheme]) one verse at a time, reading the file as it
+    goes: the same verses in the same order as verses(), without holding the
+    Old Testament in memory (about 475,000 rows; the import on a small
+    server cannot afford the whole of it at once). The file is already in
+    canonical order; a test checks that against verses()."""
+    with open(lfs_path("macula-hebrew", TSV_PATH), encoding="utf-8", newline="") as f:
+        for ref, group in itertools.groupby(_morphemes(f), key=lambda m: m.ref):
+            yield ref, list(group)
 
 
 def verse_text(morphemes):
