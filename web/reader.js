@@ -17,7 +17,7 @@
 
   // The reading language is the page's (/es/... is Spanish); the footer
   // switches it. The other settings are kept across pages and languages.
-  var settings = { level: "B", gender: 0, christos: 0, divine_name: 0, deity_pronoun: 0, plural_you: 0 };
+  var settings = { level: "B", gender: 0, christos: 0, divine_name: 0, deity_pronoun: 0, units: 0, plural_you: 0, view: 0 };
   try {
     var saved = JSON.parse(localStorage.getItem(STORE) || "{}");
     for (var k in settings) if (k in saved) settings[k] = saved[k];
@@ -144,8 +144,9 @@
     });
     document.getElementById("hint-level").textContent = t("hint_level")[settings.level];
     // A page shows either the divine name (Old Testament) or the title
-    // Christ (New Testament), so one of the two hints is missing.
-    ["gender", "christos", "divine_name", "deity_pronoun", "plural_you"].forEach(function (name) {
+    // Christ (New Testament), and measures only where it has them, so
+    // some hints are missing.
+    ["gender", "christos", "divine_name", "deity_pronoun", "units", "plural_you", "view"].forEach(function (name) {
       var hint = document.getElementById("hint-" + name);
       if (hint) hint.textContent = t("hint_" + name)[settings[name]];
     });
@@ -156,7 +157,12 @@
       if (on && seg.children.length > 1) summary.push(on.textContent);
     });
     document.getElementById("settings-summary").textContent = summary.join(" \u00b7 ");
+    document.body.classList.toggle("plain", plain());
   }
+
+  // Reading view: the text alone, without verse numbers, footnote letters or
+  // the reasoning panel; verses are not buttons.
+  function plain() { return settings.view === 1; }
 
   // The language a record is shown in: the reading language if the record
   // has it yet, otherwise the first language it does have (English runs
@@ -294,9 +300,11 @@
       parts.forEach(function (part, i) {
         var span = el("span", lang === settings.lang ? "verse" : "verse fallback");
         if (lang !== settings.lang) span.lang = lang;
-        span.tabIndex = 0;
-        span.setAttribute("role", "button");
-        span.setAttribute("aria-label", t("verse_label").replace("{v}", part[0]));
+        if (!plain()) {
+          span.tabIndex = 0;
+          span.setAttribute("role", "button");
+          span.setAttribute("aria-label", t("verse_label").replace("{v}", part[0]));
+        }
         span.dataset.v = part[0];
         if (current && current.id === r.id) span.setAttribute("aria-current", "true");
         if (part[0] !== shown) span.appendChild(el("sup", null, part[0]));
@@ -329,7 +337,11 @@
           });
           span.appendChild(sup);
         }
-        span.addEventListener("click", function () { select(r, part[0]); });
+        span.addEventListener("click", function () {
+          // Selecting text is not choosing the verse.
+          if (!window.getSelection().isCollapsed) return;
+          select(r, part[0]);
+        });
         span.addEventListener("keydown", function (e) {
           if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(r, part[0]); }
         });
@@ -392,6 +404,65 @@
     return card;
   }
 
+  // Elsewhere in the translation: every other verse with this dictionary
+  // form, from the site-wide index (fetched once, on the first tap).
+  var usesIndex = null;
+  function loadUses() {
+    if (!usesIndex) {
+      usesIndex = fetch(DATA.uses).then(function (r) {
+        if (!r.ok) throw new Error(r.status);
+        return r.json();
+      });
+      usesIndex.catch(function () { usesIndex = null; });
+    }
+    return usesIndex;
+  }
+
+  function verseUrl(vid) {
+    var p = vid.split(".");
+    if (p[0] === DATA.book && Number(p[1]) === DATA.chapter) return "#v" + p[2];
+    return (DATA.lang === "en" ? "" : "/" + DATA.lang) + "/" + p[0].toLowerCase() + "/" + p[1] + "/#v" + p[2];
+  }
+
+  function drawUses(word) {
+    var box = el("div", "uses");
+    box.appendChild(el("p", "uses-title", t("uses_loading")));
+    var here = Object.keys(DATA.words).filter(function (vid) {
+      return DATA.words[vid].some(function (w) { return w.id === word.id; });
+    })[0];
+    loadUses().then(function (index) {
+      var places = (index[word.lemma] || []).filter(function (vid) { return vid !== here; });
+      box.textContent = "";
+      var n = places.length;
+      box.appendChild(el("p", "uses-title",
+        n ? t(n === 1 ? "uses_one" : "uses_many").replace("{n}", n) : t("uses_none")));
+      if (!n) return;
+      var list = el("p", "uses-list");
+      var SHOW = 12;
+      function add(from, to) {
+        places.slice(from, to).forEach(function (vid) {
+          var p = vid.split(".");
+          var a = el("a", "use", (DATA.books[p[0]] || p[0]) + " " + p[1] + ":" + p[2]);
+          a.href = verseUrl(vid);
+          list.insertBefore(a, more);
+        });
+      }
+      var more = null;
+      if (n > SHOW) {
+        more = el("button", "use use-more", t("uses_all").replace("{n}", n));
+        more.type = "button";
+        more.addEventListener("click", function () { add(SHOW, n); more.remove(); });
+        list.appendChild(more);
+      }
+      add(0, SHOW);
+      box.appendChild(list);
+    }, function () {
+      box.textContent = "";
+      box.appendChild(el("p", "uses-title", t("uses_failed")));
+    });
+    return box;
+  }
+
   function drawPanel() {
     var panel = panelEl;
     panel.textContent = "";
@@ -406,6 +477,12 @@
     close.setAttribute("aria-label", t("close"));
     close.addEventListener("click", deselect);
     panel.appendChild(close);
+    var handle = el("button", "sheet-handle");
+    handle.type = "button";
+    handle.setAttribute("aria-expanded", panelEl.classList.contains("full") ? "true" : "false");
+    handle.setAttribute("aria-label", t("sheet_expand"));
+    handle.addEventListener("click", function () { expand(!panelEl.classList.contains("full")); });
+    panel.appendChild(handle);
     var ref = DATA.title.replace(/[\d:\u2013\s]+$/, "") + " " + (crossesChapter(current) ? "" : DATA.chapter + ":") +
       verseRange(current);
     var title = el("h2", "panel-title");
@@ -448,6 +525,7 @@
         var key = (word.lang === "A" ? "A:" : "") + word.morph;
         info.appendChild(el("p", "wi-grammar", DATA.grammar[key][settings.lang]));
         info.appendChild(el("p", "wi-gloss", "\u201c" + (HEBREW ? word.gloss.replace(/\./g, " ") : word.gloss) + "\u201d"));
+        info.appendChild(drawUses(word));
         info.hidden = false;
         var ids = [];
         current.decisions.forEach(function (d) { if (d.tokens.includes(word.id)) ids = ids.concat(d.tokens); });
@@ -541,8 +619,10 @@
   function narrow() { return getComputedStyle(panelEl).position === "fixed"; }
   function verseEl(v) { return document.querySelector('.verse[data-v="' + v + '"]'); }
   // A verse in the address: #v4, or plainly #4 (#v7:53 for a verse
-  // of another chapter that a sentence runs into).
-  function hashVerse() { var m = /^#v?(\d+(?::\d+)?)$/.exec(location.hash); return m && m[1]; }
+  // of another chapter that a sentence runs into). #at-4 (from "Continue
+  // reading") only scrolls to it; see resumeAt below.
+  var VERSE_ID = "(\\d+(?::\\d+)?)";
+  function hashVerse() { var m = new RegExp("^#v?" + VERSE_ID + "$").exec(location.hash); return m && m[1]; }
   function recordFor(verse) {
     return DATA.records.find(function (r) {
       return r.refs.some(function (vid) { return verseOf(vid) === verse; });
@@ -552,9 +632,17 @@
   function sheet(open) {
     panelEl.classList.toggle("open", open);
     document.body.classList.toggle("sheet-open", open);
+    if (!open) expand(false);
+  }
+
+  function expand(full) {
+    panelEl.classList.toggle("full", full);
+    var handle = panelEl.querySelector(".sheet-handle");
+    if (handle) handle.setAttribute("aria-expanded", full ? "true" : "false");
   }
 
   function select(record, verse, decision) {
+    if (plain()) return;
     current = record;
     verse = verse || verseOf(record.refs[0]);
     currentVerse = verse;
@@ -675,7 +763,9 @@
     var dy = e.type === "touchend" ? e.changedTouches[0].clientY - startY : 0;
     panelEl.style.transform = panelEl.style.transition = "";
     startY = null;
-    if (dy > 80) deselect();
+    var full = panelEl.classList.contains("full");
+    if (dy < -60 && !full) expand(true);
+    else if (dy > 80) { if (full) expand(false); else deselect(); }
   }
   panelEl.addEventListener("touchend", endDrag);
   panelEl.addEventListener("touchcancel", endDrag);
@@ -685,10 +775,81 @@
     settings[name] = value;
     save();
     drawControls();
+    if (plain() && current) { deselect(); return; }
     drawText();
     drawPanel();
     panelEl.scrollTop = top;
   }
+
+  // Copying from the passage adds where it comes from: "John 2:4 (Open
+  // Word Bible, Balanced)". Verse numbers and footnote letters are left out,
+  // paragraphs and headings keep their own lines.
+  var textBox = document.getElementById("text");
+
+  function selectedRange() {
+    var sel = window.getSelection();
+    if (!sel.rangeCount || sel.isCollapsed) return null;
+    var range = sel.getRangeAt(0);
+    return textBox.contains(range.commonAncestorContainer) ? range : null;
+  }
+
+  function quote(range) {
+    var div = document.createElement("div");
+    div.appendChild(range.cloneContents());
+    div.querySelectorAll("sup, button").forEach(function (n) { n.remove(); });
+    var blocks = div.querySelectorAll("p, h2");
+    var parts = blocks.length ? Array.prototype.map.call(blocks, function (b) { return b.textContent; }) : [div.textContent];
+    var text = parts.map(function (x) { return x.replace(/\s+/g, " ").trim(); }).filter(Boolean).join("\n\n");
+    var verses = Array.prototype.filter.call(textBox.querySelectorAll(".verse"), function (v) {
+      return range.intersectsNode(v);
+    }).map(function (v) { return Number(v.dataset.v); });
+    if (!text || !verses.length) return null;
+    var a = Math.min.apply(null, verses), b = Math.max.apply(null, verses);
+    var name = (DATA.books && DATA.books[DATA.book]) || DATA.title.replace(/[\d:\u2013\s]+$/, "");
+    return text + "\n\u2014 " + name + " " + DATA.chapter + ":" + (a === b ? a : a + "\u2013" + b) +
+      " (Open Word Bible, " + t(settings.level) + ")";
+  }
+
+  document.addEventListener("copy", function (e) {
+    var range = selectedRange();
+    var text = range && quote(range);
+    if (!text || !e.clipboardData) return;
+    e.clipboardData.setData("text/plain", text);
+    e.preventDefault();
+  });
+
+  // A button by the selection does the same, for readers who do not use
+  // the keyboard. On touch screens it sits below, clear of the system menu.
+  var copyBtn = el("button", "copy-quote", t("copy_quote"));
+  copyBtn.type = "button";
+  copyBtn.hidden = true;
+  document.body.appendChild(copyBtn);
+  copyBtn.addEventListener("mousedown", function (e) { e.preventDefault(); });
+  copyBtn.addEventListener("click", function () {
+    var range = selectedRange();
+    var text = range && quote(range);
+    if (!text || !navigator.clipboard) return;
+    navigator.clipboard.writeText(text).then(function () {
+      copyBtn.textContent = t("copied_quote");
+      setTimeout(function () { copyBtn.hidden = true; copyBtn.textContent = t("copy_quote"); }, 1200);
+    }, function () { copyBtn.textContent = t("copy_failed"); });
+  });
+  var placing = null;
+  document.addEventListener("selectionchange", function () {
+    clearTimeout(placing);
+    placing = setTimeout(function () {
+      var range = selectedRange();
+      if (!range || !navigator.clipboard) { copyBtn.hidden = true; return; }
+      var r = range.getBoundingClientRect();
+      copyBtn.hidden = false;
+      var below = window.matchMedia("(pointer: coarse)").matches || r.top < 120;
+      var top = below ? r.bottom + 10 : r.top - copyBtn.offsetHeight - 10;
+      var left = Math.min(Math.max(16, r.left + r.width / 2 - copyBtn.offsetWidth / 2),
+                          document.documentElement.clientWidth - copyBtn.offsetWidth - 16);
+      copyBtn.style.top = top + window.scrollY + "px";
+      copyBtn.style.left = left + window.scrollX + "px";
+    }, 150);
+  });
 
   // The settings bar sticks under the header; the panel sticks under both,
   // so it needs the bar's height (it changes as the bar wraps).
@@ -721,6 +882,51 @@
   var here = pills && pills.querySelector("[aria-current]");
   if (here && pills.scrollWidth > pills.clientWidth)
     pills.scrollLeft = here.offsetLeft - pills.offsetLeft - pills.clientWidth / 2 + here.offsetWidth / 2;
+
+  // The reader's place, kept as owb.place for "Continue reading" on the
+  // home and Read pages (site.js): the verse at the reading line, a quarter
+  // of the way down or just below the sticky header and settings bar (a
+  // verse's scroll margin) if that is lower. Saving and resuming both use
+  // the line, so a place does not drift.
+  function readingLine() {
+    var first = document.querySelector("#text .verse");
+    var margin = first ? parseFloat(getComputedStyle(first).scrollMarginTop) || 0 : 0;
+    return Math.max(margin, window.innerHeight * 0.25);
+  }
+  function topVerse() {
+    var line = readingLine() + 1;
+    var all = document.querySelectorAll("#text .verse");
+    for (var i = 0; i < all.length; i++) {
+      if (all[i].getBoundingClientRect().bottom > line) return all[i].dataset.v;
+    }
+    return all.length ? all[all.length - 1].dataset.v : null;
+  }
+  var keptVerse = null;
+  function keepPlace() {
+    var verse = topVerse();
+    if (!verse || verse === keptVerse) return;
+    keptVerse = verse;
+    var place = { book: DATA.book, chapter: DATA.chapter, verse: verse };
+    try { localStorage.setItem("owb.place", JSON.stringify(place)); } catch (e) { /* this visit only */ }
+  }
+  var placeTimer = null;
+  window.addEventListener("scroll", function () {
+    clearTimeout(placeTimer);
+    placeTimer = setTimeout(keepPlace, 400);
+  }, { passive: true });
+  window.addEventListener("pagehide", keepPlace);
+
+  var resumeAt = new RegExp("^#at-" + VERSE_ID + "$").exec(location.hash);
+  if (resumeAt) {
+    try {
+      history.replaceState(null, "", location.pathname + location.search);
+      history.scrollRestoration = "manual";
+    } catch (e) { /* ignore */ }
+    window.addEventListener("load", function () {
+      var v = verseEl(resumeAt[1]);
+      if (v) window.scrollBy(0, v.getBoundingClientRect().top - readingLine());
+    });
+  }
 
   var start = hashVerse();
   var record = start && recordFor(start);

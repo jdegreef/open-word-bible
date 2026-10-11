@@ -186,6 +186,13 @@ class SiteTest(unittest.TestCase):
             for text in texts:
                 self.assertNotRegex(text, "[\"']", r["id"])
 
+    def test_measures_control_only_where_a_passage_has_units(self):
+        gen6 = (self.out / "gen" / "6" / "index.html").read_text(encoding="utf-8")
+        gen1 = (self.out / "gen" / "1" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('data-setting="units"', gen6)
+        self.assertNotIn('data-setting="units"', gen1)
+        self.assertIn("{{units:450 feet|300 cubits}}", json.dumps(self.chapter_data("gen/6")["records"]))
+
     def test_old_testament_pages_offer_the_divine_name(self):
         # The divine name (the LORD or Yahweh) on Old Testament pages, the
         # title Christ (Christ or Messiah) on New Testament ones.
@@ -355,6 +362,38 @@ class SiteTest(unittest.TestCase):
                 self.assertEqual(al["tokens"], tokens)
                 # Curly quotes on the page keep every range in place.
                 self.assertEqual(build_site.smart_quotes(al["target_span"]), text[start:end])
+
+    def test_word_uses_index(self):
+        text = (self.out / "word-uses.json").read_text(encoding="utf-8")
+        index = json.loads(text)
+        data = self.chapter_data("jhn/2")
+        # Each page points at this build's copy of the index.
+        self.assertEqual(data["uses"], build_site.word_uses()[1])
+        self.assertIn(hashlib.sha256(text.encode()).hexdigest()[:10], data["uses"])
+        # Every word of a translated sentence is listed at its verse, once.
+        record = data["records"][0]
+        for word in data["words"]["JHN.2.1"]:
+            if word["id"] in record["source"]["tokens"]:
+                self.assertIn("JHN.2.1", index[word["lemma"]])
+        for places in index.values():
+            self.assertEqual(len(places), len(set(places)))
+
+    def test_reader_has_a_reading_view(self):
+        page = (self.out / "jhn" / "2" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('<span class="seg" data-setting="view">', page)
+        self.assertIn('id="hint-view"', page)
+        reader = (self.out / "reader.js").read_text(encoding="utf-8")
+        # Copying from the passage adds its reference and level.
+        self.assertIn('addEventListener("copy"', reader)
+        self.assertIn('" (Open Word Bible, "', reader)
+
+    def test_reader_can_go_to_a_reference(self):
+        page = (self.out / "jhn" / "2" / "index.html").read_text(encoding="utf-8")
+        strip = re.search(r'<nav class="chapstrip"(.*?)</nav>', page, re.S)[1]
+        self.assertIn('class="chap-goto" data-open-search', strip)
+        search = (self.out / "search.js").read_text(encoding="utf-8")
+        # A reference is the palette's first row, so Enter goes straight to it.
+        self.assertLess(search.index('fill(ui("go_to")'), search.index('fill(ui("show_all")'))
 
     def test_read_page_groups_chapters_by_book(self):
         read = (self.out / "read" / "index.html").read_text(encoding="utf-8")

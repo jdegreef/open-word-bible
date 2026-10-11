@@ -26,11 +26,19 @@ from typing import NamedTuple  # noqa: E402
 from owb import markup, morph, refs  # noqa: E402
 
 BOOK_NAMES = {"GEN": {"en": "Genesis", "es": "Génesis", "fr": "Genèse", "sw": "Mwanzo"},
+              "MAT": {"en": "Matthew", "es": "Mateo", "fr": "Matthieu", "sw": "Mathayo"},
               "JHN": {"en": "John", "es": "Juan", "fr": "Jean", "sw": "Yohana"},
+              "ROM": {"en": "Romans", "es": "Romanos", "fr": "Romains", "sw": "Warumi"},
+              "GAL": {"en": "Galatians", "es": "Gálatas", "fr": "Galates", "sw": "Wagalatia"},
+              "EPH": {"en": "Ephesians", "es": "Efesios", "fr": "Éphésiens", "sw": "Waefeso"},
               "PHP": {"en": "Philippians", "es": "Filipenses", "fr": "Philippiens", "sw": "Wafilipi"},
-              "COL": {"en": "Colossians", "es": "Colosenses", "fr": "Colossiens", "sw": "Wakolosai"}}
+              "COL": {"en": "Colossians", "es": "Colosenses", "fr": "Colossiens", "sw": "Wakolosai"},
+              "PHM": {"en": "Philemon", "es": "Filemón", "fr": "Philémon", "sw": "Filemoni"},
+              "JAS": {"en": "James", "es": "Santiago", "fr": "Jacques", "sw": "Yakobo"},
+              "1PE": {"en": "1 Peter", "es": "1 Pedro", "fr": "1 Pierre", "sw": "1 Petro"},
+              "2PE": {"en": "2 Peter", "es": "2 Pedro", "fr": "2 Pierre", "sw": "2 Petro"}}
 # Chapters in each book, for "2 of 21 chapters" and a book's completeness.
-BOOK_CHAPTERS = {"GEN": 50, "JHN": 21, "PHP": 4, "COL": 4}
+BOOK_CHAPTERS = {"GEN": 50, "MAT": 28, "JHN": 21, "ROM": 16, "GAL": 6, "EPH": 6, "PHP": 4, "COL": 4, "PHM": 1, "JAS": 5, "1PE": 5, "2PE": 3}
 # The interface languages, English first (see catalog below).
 LANGUAGES = ("en", "es", "fr", "sw")
 SITE_NAME = "Open Word Bible"
@@ -533,6 +541,29 @@ def paragraph_starts(records, words):
     return starts
 
 
+@functools.lru_cache(maxsize=None)
+def word_uses():
+    """Every dictionary form in the translated sentences, with the verses it
+    is in, in canonical order: the reader's "elsewhere" list for a word. As
+    JSON, and its URL with a content hash, so a deploy is never served an old
+    copy. Pages fetch it only when a reader taps a word."""
+    uses = {}
+    for book, chapter in chapters():
+        records, words = load_chapter(book, chapter)
+        lemma = {w["id"]: w["lemma"] for ws in words.values() for w in ws}
+        verse_of = {w["id"]: vid for vid, ws in words.items() for w in ws}
+        for r in records:
+            for token in r["source"]["tokens"]:
+                verse = verse_of.get(token)
+                if token in lemma and verse:
+                    uses.setdefault(lemma[token], set()).add(verse)
+    # A chapter's records need not come in verse order (a passage the
+    # manuscripts place differently), so sort each list.
+    uses = {k: sorted(v, key=lambda vid: refs.parse(vid).sort_key()) for k, v in uses.items()}
+    text = json.dumps(uses, ensure_ascii=False, separators=(",", ":"))
+    return text, f"/word-uses.json?v={hashlib.sha256(text.encode()).hexdigest()[:10]}"
+
+
 @functools.cache
 def headings():
     """Section headings by the record they stand above (data/headings.json),
@@ -686,6 +717,8 @@ def chapter_page(book, chapter, lang="en"):
             "paragraphs": paragraph_starts(records, words),
             "headings": {r["id"]: headings()[r["id"]] for r in records if r["id"] in headings()}}
     # Each morphology code's description in every language, once per page.
+    data["uses"] = word_uses()[1]
+    data["books"] = {b: BOOK_NAMES[b][lang] for b, _ in books()}
     data["grammar"] = {grammar_key(w): {l: describe(w, l) for l in LANGUAGES}
                        for ws in data["words"].values() for w in ws}
     # "</" cannot appear inside a script element.
@@ -695,8 +728,8 @@ def chapter_page(book, chapter, lang="en"):
         buttons = "".join(f'<button type="button" data-value="{v}">{label}</button>' for v, label in options)
         return f'<span class="seg" data-setting="{name}">{buttons}</span>'
 
-    def control(key, name, options):
-        return f'<div class="control"><span>{t(lang, "reader." + key)}</span> {seg(name, options)}</div>'
+    def control(key, name, options, cls=""):
+        return f'<div class="control{cls}"><span>{t(lang, "reader." + key)}</span> {seg(name, options)}</div>'
 
     # Old Testament pages name the Hebrew where New Testament ones name the Greek.
     suffix = "_hbo" if source == "hbo" else ""
@@ -711,6 +744,12 @@ def chapter_page(book, chapter, lang="en"):
     levels = catalog(lang)["levels"]
     plural = ("\n  " + control("plural", "plural_you", [("0", "ustedes"), ("1", "vosotros")])
               if lang in PLURAL_YOU else "")
+    # Measures (modern or original units) only where a passage has them.
+    has_units = any("{{units:" in text for r in records
+                    for levels_ in r["renderings"].values() for text in levels_.values())
+    units = ("\n  " + control("measures", "units", [("0", t(lang, "reader.modern")),
+                                                     ("1", t(lang, "reader.original"))])
+             if has_units else "")
     body = f"""
 <button type="button" class="settings-toggle" id="settings-toggle" aria-expanded="false" aria-controls="settings">
   <span>{t(lang, "reader.settings")}</span> <span class="settings-summary" id="settings-summary"></span>
@@ -720,9 +759,10 @@ def chapter_page(book, chapter, lang="en"):
   {control("level", "level", [(code, levels[code]) for code in "LBR"])}
   {control("gender", "gender", [("0", t(lang, "reader.inclusive")), ("1", t(lang, "reader.traditional"))])}
   {title_control}
-  {control("pronouns", "deity_pronoun", [("0", t(lang, "reader.he")), ("1", t(lang, "reader.He"))])}{plural}
+  {control("pronouns", "deity_pronoun", [("0", t(lang, "reader.he")), ("1", t(lang, "reader.He"))])}{units}{plural}
+  {control("view", "view", [("0", t(lang, "reader.study")), ("1", t(lang, "reader.reading"))], " view-control")}
 </div>
-<p class="hint"><span id="hint-level"></span> <span id="hint-gender"></span> <span id="hint-{title_setting}"></span> <span id="hint-deity_pronoun"></span> <span id="hint-plural_you"></span></p>
+<p class="hint"><span id="hint-level"></span> <span id="hint-gender"></span> <span id="hint-{title_setting}"></span> <span id="hint-deity_pronoun"></span> <span id="hint-units"></span> <span id="hint-plural_you"></span> <span id="hint-view"></span></p>
 </div>
 <div class="reader">
   <article class="passage">
@@ -766,6 +806,8 @@ def chapter_strip(book, chapter, lang="en"):
     return (f'<nav class="chapstrip" aria-label="{t(lang, "reader.strip", book=name)}">'
             f'<a class="chap-book" href="{url(lang, f"/read/#{book.lower()}")}">{icon(ICONS["book"], 16)}{name}</a>'
             f'<span class="chap-pills">{chapter_pills(chaps, lang, chapter, BOOK_CHAPTERS[book])}</span>'
+            f'<button type="button" class="chap-goto" data-open-search aria-keyshortcuts="/">'
+            f'{icon(ICONS["search"], 15)}{t(lang, "reader.goto")}</button>'
             f'<span class="chap-progress">{progress}</span></nav>')
 
 
@@ -878,6 +920,16 @@ def passage_card(book, chapter, lang="en"):
             f'<span class="a-meta">{meta}</span></a></li>')
 
 
+def resume_link(lang):
+    """A link back to the verse the reader was last at, hidden until
+    web/site.js finds one saved by web/reader.js (owb.place). It carries the
+    book names in lang, so the link names the passage in the page's language."""
+    names = json.dumps({b: BOOK_NAMES[b][lang] for b, _ in books()}, ensure_ascii=False)
+    return (f'<a class="button" data-resume hidden data-label="{html.escape(t(lang, "resume.link"))}" '
+            f'data-prefix="{url(lang, "")}" data-books="{html.escape(names)}" href="{url(lang, "/read/")}">'
+            f'{icon(ICONS["book"])}<span></span></a>')
+
+
 def read_page(lang="en"):
     groups = []
     for book, chaps in books(lang):
@@ -894,6 +946,7 @@ def read_page(lang="en"):
 <p class="eyebrow">{t(lang, "read.title")}</p>
 <h1>{t(lang, "read.heading")}</h1>
 <p class="dek">{t(lang, "read.dek")}</p>
+<p class="actions">{resume_link(lang)}</p>
 </header>
 {cards}
 <section class="how" aria-labelledby="how-h">
@@ -1028,7 +1081,7 @@ def home_page(lang="en"):
 <p class="eyebrow">{t(lang, "home.eyebrow")}</p>
 <h1>{t(lang, "home.heading")}</h1>
 <p class="hero-sub">{t(lang, "home.sub")}</p>
-<p class="actions"><a class="button" href="{url(lang, "/read/")}">{icon(ICONS["book"])}{t(lang, "home.start")}</a>
+<p class="actions">{resume_link(lang)}<a class="button" href="{url(lang, "/read/")}">{icon(ICONS["book"])}{t(lang, "home.start")}</a>
 <a class="button ghost" href="#example-h">{t(lang, "home.how")}</a></p>
 <ul class="trust">
 <li>{icon(ICONS["gift"], 16)}{t(lang, "home.trust_free")}</li>
@@ -1704,7 +1757,7 @@ def sitemap(paths):
 
 def build(out):
     for cached in (nav_menus, footer_links, passages, asset, translated_verses, catalog, search_index,
-                   search_index_url):
+                   search_index_url, word_uses):
         cached.cache_clear()
     if out.exists():
         shutil.rmtree(out)
@@ -1733,6 +1786,7 @@ def build(out):
     files["sitemap.xml"] = sitemap(indexed)
     files["robots.txt"] = f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n"
     files["favicon.svg"] = FAVICON
+    files["word-uses.json"] = word_uses()[0]
     for lang in LANGUAGES:
         files[f"search-{lang}.json"] = search_index(lang)
     for rel, text in files.items():
