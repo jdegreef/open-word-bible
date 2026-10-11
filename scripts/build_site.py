@@ -98,6 +98,7 @@ ICONS = {
     "code": '<path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/>',
     "users": '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6 6 0 0 1 3.5 6"/>',
     "check": '<path d="M20 6 9 17l-5-5"/>',
+    "download": '<path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/>',
     "user": '<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>',
     "search": '<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>',
     "github": '<path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/>',
@@ -146,11 +147,23 @@ COLOUR_MODES = (("auto", "#faf6ef", "#16130f"),
                 ("night", "#000000", "#e0b45c"),
                 ("contrast", "#ffffff", "#000000"))
 
-# Applies the saved colour mode before the first paint, so a page never
-# flashes the default colours. Mirrors web/site.js.
-BOOT_SCRIPT = ("try{var t=localStorage.getItem('owb-theme');"
+# The reading text's settings in the gear menu (see web/style.css): name,
+# default, and the values in the menu's order. A choice is kept as
+# owb-<name> and applied as data-<name> on <html>. They change how the text
+# looks, never its wording. Labels are in i18n/ (prefs.<name>, <name>.<value>).
+READING_PREFS = (("size", "m", ("s", "m", "l", "xl")),
+                 ("font", "serif", ("serif", "sans", "readable")),
+                 ("leading", "normal", ("compact", "normal", "spacious")))
+
+# Applies the saved colour mode and reading settings before the first paint,
+# so a page never flashes the default colours or text. Mirrors web/site.js.
+BOOT_SCRIPT = ("try{var d=document.documentElement,t=localStorage.getItem('owb-theme');"
                "if(['light','sepia','dark','night','contrast'].indexOf(t)>=0)"
-               "document.documentElement.setAttribute('data-theme',t)}catch(e){}")
+               "d.setAttribute('data-theme',t);"
+               "var p={" + ",".join(f"{name}:{[v for v in values if v != default]!r}"
+                                   for name, default, values in READING_PREFS) + "};"
+               "for(var k in p){var v=localStorage.getItem('owb-'+k);"
+               "if(p[k].indexOf(v)>=0)d.setAttribute('data-'+k,v)}}catch(e){}")
 
 # A reader who picked a language in the footer (web/site.js keeps it as
 # owb-lang) is taken to this page in that language before the first paint,
@@ -171,22 +184,49 @@ GEAR = ('<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="cur
         '1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4'
         'h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>')
 
+def leading_sample(gap):
+    """Three lines of text, gap apart, for a line-spacing tile."""
+    ys = [13 - gap, 13, 13 + gap]
+    lines = "".join(f'<line x1="2" x2="{24 if i < 2 else 16}" y1="{y}" y2="{y}"/>' for i, y in enumerate(ys))
+    return ('<svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="currentColor" '
+            f'stroke-width="2" stroke-linecap="round" aria-hidden="true">{lines}</svg>')
+
+
+LEADING_GAPS = {"compact": 5, "normal": 7, "spacious": 9}
+
+
 def colour_menu(lang):
-    label = t(lang, "tools.theme")
+    """The gear menu: the colour mode, then the reading text's settings
+    (READING_PREFS). web/site.js runs it."""
+    label = t(lang, "tools.display")
+
+    def option(value, default, face, name):
+        on = value == default
+        return (f'<button type="button" role="radio" aria-checked="{"true" if on else "false"}" '
+                f'tabindex="{0 if on else -1}" data-value="{value}">'
+                f'{face}{name}<span class="check" aria-hidden="true">&#10003;</span></button>')
+
+    def group(pref, heading, default, options):
+        return (f'<p class="prefs-label" id="prefs-{pref}">{heading}</p>'
+                f'<div role="radiogroup" aria-labelledby="prefs-{pref}" data-pref="{pref}" data-default="{default}">'
+                + "".join(option(v, default, face, name) for v, face, name in options) + '</div>')
+
+    theme = group("theme", t(lang, "tools.theme"), "auto", [
+        (v, f'<span class="swatch" style="--sw-bg:{bg};--sw-accent:{accent}" aria-hidden="true"></span>',
+         t(lang, "theme." + v)) for v, bg, accent in COLOUR_MODES])
+    def sample(pref, value):
+        inner = leading_sample(LEADING_GAPS[value]) if pref == "leading" else "Aa"
+        return f'<span class="sample" aria-hidden="true">{inner}</span>'
+
+    rows = [group(pref, t(lang, "prefs." + pref), default,
+                  [(v, sample(pref, v), t(lang, f"{pref}.{v}")) for v in values])
+            for pref, default, values in READING_PREFS]
     return (
         '<div class="prefs">'
         '<button type="button" class="tool-btn prefs-btn" aria-expanded="false" aria-controls="colour-menu" '
         f'aria-label="{label}" title="{label}">{GEAR}</button>'
-        '<div id="colour-menu" class="prefs-menu" role="group" aria-labelledby="colour-menu-label" hidden>'
-        f'<p class="prefs-label" id="colour-menu-label">{label}</p>'
-        '<div role="radiogroup" aria-labelledby="colour-menu-label">'
-        + "".join(
-            f'<button type="button" role="radio" aria-checked="{"true" if v == "auto" else "false"}" '
-            f'tabindex="{0 if v == "auto" else -1}" data-theme-option="{v}">'
-            f'<span class="swatch" style="--sw-bg:{bg};--sw-accent:{accent}" aria-hidden="true"></span>'
-            f'{t(lang, "theme." + v)}<span class="check" aria-hidden="true">&#10003;</span></button>'
-            for v, bg, accent in COLOUR_MODES)
-        + '</div></div></div>')
+        f'<div id="colour-menu" class="prefs-menu" role="group" aria-label="{label}" hidden>'
+        + theme + "".join(rows) + '</div></div>')
 
 
 OG = ROOT / "web" / "og"
@@ -253,6 +293,7 @@ def page(lang, title, body, path=None, current="", description="", card="site", 
 <meta name="owb-api" content="{API_URL}">
 <meta name="owb-search" content="{search_index_url(lang)}">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/manifest.webmanifest">
 <script>{boot}</script>
 <link rel="preload" href="/fonts/hanken-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/gentium-book-plus-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -944,6 +985,25 @@ def resume_link(lang):
             f'{icon(ICONS["book"])}<span></span></a>')
 
 
+def save_button(book, chaps, lang):
+    """A book's "Save for offline" button on the Read page: web/site.js
+    stores the pages it names in the owb-books cache, which web/sw.js reads
+    when there is no connection. Hidden where the browser cannot."""
+    pages = json.dumps([url(lang, chapter_url(p.book, p.chapter)) for p in chaps])
+    labels = "".join(f' data-{k}="{html.escape(t(lang, "offline." + k))}"'
+                     for k in ("save", "saving", "saved", "failed"))
+    return (f'<button type="button" class="save-book" hidden data-book="{book}" '
+            f'data-name="{html.escape(BOOK_NAMES[book][lang])}" data-pages="{html.escape(pages)}"{labels}>'
+            f'{icon(ICONS["download"], 16)}<span>{t(lang, "offline.save")}</span></button>')
+
+
+def offline_files(lang):
+    """What a saved book needs besides its pages and what web/sw.js keeps
+    anyway: the reader, the word index, the search index and the fonts."""
+    fonts = sorted(f"/fonts/{f.name}" for f in (ROOT / "web" / "fonts").glob("*.woff2"))
+    return [url(lang, "/read/"), asset("reader.js"), word_uses()[1], search_index_url(lang)] + fonts
+
+
 def read_page(lang="en"):
     groups = []
     for book, chaps in books(lang):
@@ -952,11 +1012,11 @@ def read_page(lang="en"):
             f'<section class="book-group" id="{book.lower()}" aria-labelledby="book-{book.lower()}">'
             f'<div class="book-head"><h2 id="book-{book.lower()}">{BOOK_NAMES[book][lang]}</h2>'
             f'<span class="book-progress{" done" if done == total else ""}">{progress}</span>'
-            f'{meter(done, total)}</div>'
+            f'{meter(done, total)}{save_button(book, chaps, lang)}</div>'
             f'<ul class="a-grid">{"".join(passage_card(p.book, p.chapter, lang) for p in chaps)}</ul></section>')
     cards = "".join(groups)
     body = f"""
-<header class="page-head">
+<header class="page-head" data-offline-files="{html.escape(json.dumps(offline_files(lang)))}">
 <p class="eyebrow">{t(lang, "read.title")}</p>
 <h1>{t(lang, "read.heading")}</h1>
 <p class="dek">{t(lang, "read.dek")}</p>
@@ -1585,6 +1645,45 @@ def not_found_page():
 </section>""")
 
 
+def offline_page(lang="en"):
+    """What web/sw.js shows for a page not saved on the device, with the
+    books that are (filled in by web/site.js)."""
+    return page(lang, t(lang, "offline.title"), f"""
+<section class="hero lost">
+<p class="eyebrow">{t(lang, "offline.title")}</p>
+<h1>{t(lang, "offline.heading")}</h1>
+<p class="hero-sub">{t(lang, "offline.sub")}</p>
+<p class="actions">{resume_link(lang)}<a class="button" href="{url(lang, "/")}" data-if-saved hidden>{t(lang, "404.home")}</a></p>
+</section>
+<section class="saved-books" id="saved-books" hidden aria-labelledby="saved-h">
+<h2 id="saved-h">{t(lang, "offline.saved_books")}</h2>
+<ul class="book-rows"></ul>
+</section>""", unlisted="/offline/")
+
+
+def manifest():
+    return json.dumps({
+        "name": SITE_NAME, "short_name": SITE_NAME, "start_url": "/", "scope": "/",
+        "display": "standalone", "background_color": "#faf6ef", "theme_color": "#3f3d9a",
+        "icons": [{"src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml"}],
+    }, indent=2) + "\n"
+
+
+def service_worker():
+    """web/sw.js with the files to keep from the start (the styles, the
+    scripts and each language's offline page). Its version is a hash of the
+    whole, so a deploy that changes any of them installs a new worker."""
+    shell = [asset(n) for n in ("style.css", "site.js", "search.js", "reader.js")]
+    shell += ["/favicon.svg", "/manifest.webmanifest"] + [url(lang, "/offline/") for lang in LANGUAGES]
+    offline = {("" if lang == "en" else lang): url(lang, "/offline/") for lang in LANGUAGES}
+    current = [asset(n) for n in ("style.css", "site.js", "search.js", "reader.js", "account.js")]
+    current += [word_uses()[1]] + [search_index_url(lang) for lang in LANGUAGES]
+    text = ((ROOT / "web" / "sw.js").read_text(encoding="utf-8")
+            .replace("__PRECACHE__", json.dumps(shell)).replace("__OFFLINE__", json.dumps(offline))
+            .replace("__CURRENT__", json.dumps(current)))
+    return text.replace("__VERSION__", hashlib.sha256(text.encode()).hexdigest()[:10])
+
+
 FAVICON = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
 <rect width="64" height="64" rx="14" fill="#3f3d9a"/>
 <path d="{BOOK_PATH}" fill="#faf6ef"/>
@@ -1804,11 +1903,14 @@ def build(out):
             # left to its English page in search results.
             add(article_url(article), article_page(article, articles, lang), index=article["lang"] == lang)
         add("/account/", account_page(lang), index=False)
+        add("/offline/", offline_page(lang), index=False)
     files = {(p.strip("/") + "/index.html").lstrip("/"): text for p, text in pages.items()}
     files["404.html"] = not_found_page()
     files["sitemap.xml"] = sitemap(indexed)
     files["robots.txt"] = f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n"
     files["favicon.svg"] = FAVICON
+    files["manifest.webmanifest"] = manifest()
+    files["sw.js"] = service_worker()
     files["word-uses.json"] = word_uses()[0]
     for lang in LANGUAGES:
         files[f"search-{lang}.json"] = search_index(lang)

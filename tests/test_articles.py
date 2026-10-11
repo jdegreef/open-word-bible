@@ -122,6 +122,24 @@ class ColourModesTest(unittest.TestCase):
             self.assertIn(f'"{mode}"', js_modes)
             self.assertIn(f"'{mode}'", boot_modes)
 
+    def test_reading_settings_are_styled_and_applied_before_paint(self):
+        css = (ROOT / "web" / "style.css").read_text(encoding="utf-8")
+        menu = build_site.colour_menu("en")
+        for name, default, values in build_site.READING_PREFS:
+            others = [v for v in values if v != default]
+            self.assertIn(default, values)
+            self.assertIn(f'data-pref="{name}" data-default="{default}"', menu)
+            self.assertIn(f"{name}:{others!r}", build_site.BOOT_SCRIPT)
+            for value in values:
+                self.assertIn(f'data-value="{value}"', menu)
+            for value in others:
+                self.assertIn(f':root[data-{name}="{value}"]', css)
+        # The reading text takes them; the interface keeps its own sizes.
+        for rule in (".text {", ".article-body {"):
+            line = next(l for l in css.splitlines() if l.startswith(rule))
+            for var in ("--read-font", "--read-scale", "--read-leading"):
+                self.assertIn(var, line)
+
     def test_every_page_has_the_gear_menu(self):
         with tempfile.TemporaryDirectory() as tmp:
             out = Path(tmp) / "site"
