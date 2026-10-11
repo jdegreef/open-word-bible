@@ -6,8 +6,10 @@
 Every record is checked first with owb.validate against the words already in
 the database (run import_texts before this). A file with any error is not
 imported. With --if-texts-loaded, the command does nothing (and succeeds)
-while no source words are in the database yet, so a fresh deploy is not
-blocked before import_texts has run. Renderings and decisions are replaced from the file, since content/
+while no source words are in the database yet, and skips, with a notice, a
+file whose source text has not been imported (Genesis before the Hebrew is
+loaded), so a deploy is never blocked by import_texts not having run yet.
+Renderings and decisions are replaced from the file, since content/
 is still the master copy. A sentence's status is set only when it is created:
 once review starts, the review trail owns it and a re-import never resets it.
 
@@ -45,8 +47,17 @@ class Command(BaseCommand):
         if not files:
             raise CommandError("No content files found")
         total = 0
+        loaded = set(Edition.objects.filter(words__isnull=False).distinct().values_list("code", flat=True))
         for path in files:
             records = json.loads(open(path, encoding="utf-8").read())["records"]
+            missing = sorted({TEXT_ID_EDITION[r["source"]["text_id"]] for r in records} - loaded)
+            if missing:
+                message = (f"{path}: the {', '.join(missing)} text is not in the database; "
+                           f"run import_texts {' '.join(missing)}")
+                if if_texts_loaded:
+                    self.stdout.write(f"{message}. Skipped.")
+                    continue
+                raise CommandError(message)
             errors = self.validate_records(records)
             if errors:
                 for e in errors:
