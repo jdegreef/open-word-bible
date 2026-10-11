@@ -39,12 +39,21 @@ class MorphTest(unittest.TestCase):
             "HEB": "Hebrew word",
             "S-1SNSM": "Possessive pronoun · 1st person singular · nominative singular masculine",
             "P-1NS-K": "Personal pronoun · 1st person nominative singular · crasis (two words run together)",
+            # As MACULA codes one word at John 8:10, with no person and a stray hyphen.
+            "P-GS-": "Personal pronoun · genitive singular",
             "P-GP-": "Personal pronoun · genitive plural",
         }
         for code, words in cases.items():
             self.assertEqual(morph.describe(code), words, code)
         self.assertEqual(morph.describe("V-IAI-3S", "es"),
                          "Verbo · indicativo imperfecto, voz activa · 3.ª persona singular")
+        self.assertEqual(morph.describe("V-IAI-3S", "fr"),
+                         "Verbe · indicatif imparfait, voix active · 3e personne du singulier")
+        self.assertEqual(morph.describe("V-2AAI-3S", "fr"),
+                         "Verbe · indicatif aoriste second, voix active · 3e personne du singulier")
+        self.assertEqual(morph.describe("V-IAI-3S", "sw"),
+                         "Kitenzi · wakati uliopita endelevu, hali elekezi, kauli tendaji · nafsi ya tatu, umoja")
+        self.assertEqual(morph.describe("N-DSF", "sw"), "Nomino · kipokezi (dativi), umoja, kike")
 
     def test_unknown_codes_fail_loudly(self):
         for code in ("Z-NSM", "V-ZAI-3S", "N-QSM", "PREP-Z"):
@@ -57,7 +66,8 @@ class MorphTest(unittest.TestCase):
         for words in data["words"].values():
             for w in words:
                 self.assertEqual(data["grammar"][w["morph"]]["en"], morph.describe(w["morph"]))
-                self.assertEqual(data["grammar"][w["morph"]]["es"], morph.describe(w["morph"], "es"))
+                for lang in ("es", "fr", "sw"):
+                    self.assertEqual(data["grammar"][w["morph"]][lang], morph.describe(w["morph"], lang))
 
 
 if __name__ == "__main__":
