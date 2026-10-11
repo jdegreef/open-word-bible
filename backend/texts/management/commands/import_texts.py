@@ -6,7 +6,13 @@ scripts/fetch_sources.py).
     python manage.py import_texts sblgnt bsb     # just these
 
 Each edition is replaced wholesale, so the command can be re-run safely.
+Rows are saved in batches as they are read, so the Hebrew Bible (about
+475,000 words) never has to be in memory all at once. One edition per run
+peaks at about 410 MB (the BSB and the Greek; the Hebrew about 180 MB). A
+run of every edition holds on to more, since Python keeps memory it has
+used, so on a 512 MB server import them one at a time.
 """
+import itertools
 import time
 
 from django.core.management.base import BaseCommand, CommandError
@@ -55,35 +61,37 @@ class Command(BaseCommand):
                 verses, words = getattr(self, f"load_{code}")()
             else:
                 verses, words = self.load_reference(code)
-            self.save(code, verses, words)
-            self.stdout.write(f"{code}: {len(verses)} verses, {len(words)} words "
+            n_verses, n_words = self.save(code, verses, words)
+            self.stdout.write(f"{code}: {n_verses} verses, {n_words} words "
                               f"({time.monotonic() - started:.1f}s)")
 
-    # Loaders return (edition fields, [(book, chapter, verse, text)], [word dicts]).
+    # Loaders return ([(book, chapter, verse, text)], [word dicts]), as lists
+    # or as iterables that are read once.
 
     def load_sblgnt(self):
         verses = []
         for code, _ in refs.NT_BOOKS:
             for ref, v in sblgnt.load_book(code).items():
                 verses.append((ref.book, ref.chapter, ref.verse, v.text))
-        words = []
-        for seq, t in enumerate(t for toks in macula_greek._all_tokens().values() for t in toks):
-            words.append(dict(id=t.id, book=t.ref.book, chapter=t.ref.chapter, verse=t.ref.verse,
-                              position=t.position, seq=seq, text=t.text, after=t.after,
-                              lemma=t.lemma, morph=t.morph, gloss=t.gloss, english=t.english,
-                              strong=t.strong, lang="grc"))
+        tokens = (t for toks in macula_greek._all_tokens().values() for t in toks)
+        words = (dict(id=t.id, book=t.ref.book, chapter=t.ref.chapter, verse=t.ref.verse,
+                      position=t.position, seq=seq, text=t.text, after=t.after,
+                      lemma=t.lemma, morph=t.morph, gloss=t.gloss, english=t.english,
+                      strong=t.strong, lang="grc")
+                 for seq, t in enumerate(tokens))
         return verses, words
 
     def load_wlc(self):
-        verses, words, seq = [], [], 0
-        for ref, morphemes in macula_hebrew.verses().items():
-            verses.append((ref.book, ref.chapter, ref.verse, macula_hebrew.verse_text(morphemes)))
-            for m in morphemes:
-                words.append(dict(id=m.id, book=ref.book, chapter=ref.chapter, verse=ref.verse,
-                                  position=m.position, seq=seq, text=m.text, after=m.after,
-                                  lemma=m.lemma, morph=m.morph, gloss=m.gloss, english=m.english,
-                                  strong=m.strong, transliteration=m.transliteration, lang=m.lang))
-                seq += 1
+        # Two passes over the file, each streamed, rather than one pass that
+        # keeps everything.
+        verses = ((ref.book, ref.chapter, ref.verse, macula_hebrew.verse_text(morphemes))
+                  for ref, morphemes in macula_hebrew.iter_verses())
+        morphemes = (m for _, ms in macula_hebrew.iter_verses() for m in ms)
+        words = (dict(id=m.id, book=m.ref.book, chapter=m.ref.chapter, verse=m.ref.verse,
+                      position=m.position, seq=seq, text=m.text, after=m.after,
+                      lemma=m.lemma, morph=m.morph, gloss=m.gloss, english=m.english,
+                      strong=m.strong, transliteration=m.transliteration, lang=m.lang)
+                 for seq, m in enumerate(morphemes))
         return verses, words
 
     def load_reference(self, code):
@@ -106,10 +114,23 @@ class Command(BaseCommand):
 
     @transaction.atomic
     def save(self, code, verses, words):
+        """Replace the edition's verses and words; return how many of each."""
         edition, _ = Edition.objects.update_or_create(code=code, defaults=self.edition_fields(code))
         edition.verses.all().delete()
         edition.words.all().delete()
-        Verse.objects.bulk_create(
-            (Verse(edition=edition, book=b, chapter=c, verse=v, text=t) for b, c, v, t in verses),
-            batch_size=BATCH)
-        Word.objects.bulk_create((Word(edition=edition, **w) for w in words), batch_size=BATCH)
+        n_verses = bulk_create(
+            Verse, (Verse(edition=edition, book=b, chapter=c, verse=v, text=t) for b, c, v, t in verses))
+        n_words = bulk_create(Word, (Word(edition=edition, **w) for w in words))
+        return n_verses, n_words
+
+
+def bulk_create(model, objs):
+    """Insert objs BATCH at a time. Django's bulk_create makes a list of
+    everything it is given first, so a generator passed to it whole would
+    still be held in memory."""
+    total = 0
+    objs = iter(objs)
+    while batch := list(itertools.islice(objs, BATCH)):
+        model.objects.bulk_create(batch)
+        total += len(batch)
+    return total

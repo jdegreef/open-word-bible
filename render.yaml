@@ -38,9 +38,12 @@ services:
         destination: /articles/ai-assisted-translation-and-human-review/
 
   # Django API and admin (backend/). Load the source texts once from the
-  # service's Shell; after that every deploy reloads content/ by itself:
+  # service's Shell; after that every deploy reloads content/ by itself.
+  # Each deploy starts with a fresh disk, so fetch the sources in the same
+  # Shell session, and import one edition per command to stay within the
+  # starter plan's 512 MB:
   #   python scripts/fetch_sources.py
-  #   python backend/manage.py import_texts
+  #   for e in sblgnt wlc bsb web asv kjv ylt rv1909; do python backend/manage.py import_texts $e; done
   #   python backend/manage.py import_content
   #   python backend/manage.py createsuperuser
   - type: web
