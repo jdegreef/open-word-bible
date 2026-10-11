@@ -732,20 +732,20 @@ QUOTES_AROUND = {"es": "&laquo;{}&raquo;", "fr": "&laquo;&nbsp;{}&nbsp;&raquo;"}
 
 def passage_card(book, chapter, lang="en"):
     """A passage as a card in the article-card style: its opening verse at
-    the default settings, and how much of it is translated and recorded."""
-    records = load_chapter(book, chapter)[0]
+    the default settings, and how much of it is translated into lang and
+    recorded (its meaning decisions and its rendering decisions for lang)."""
+    every = load_chapter(book, chapter)[0]
+    records = [r for r in every if lang in r["renderings"]] or every
     verses = sorted({refs.parse(v).verse for r in records for v in r["refs"]})
-    decisions = sum(len(r["decisions"]) for r in records)
-    uncertain = sum(d["uncertain"] for r in records for d in r["decisions"])
+    shown = [d for r in records for d in r["decisions"] if d["language"] in (None, lang)]
     opening = opening_verse(records, lang)
     meta = t(lang, "card.meta", verses=len(verses), sentences=len(records),
-             decisions=decisions, uncertain=uncertain)
-    done = sum(lang in r["renderings"] for r in records)
-    if done < len(records):
-        meta += " &middot; " + t(lang, "card.coverage", n=done, total=len(records))
+             decisions=len(shown), uncertain=sum(d["uncertain"] for d in shown))
+    if len(records) < len(every):
+        meta += " &middot; " + t(lang, "card.coverage", n=len(records), total=len(every))
     q = QUOTES_AROUND.get(lang, "&ldquo;{}&rdquo;")
     return (f'<li><a class="a-card p-card" href="{url(lang, chapter_url(book, chapter))}">'
-            f'<span class="a-section">{BOOK_NAMES[book][lang]} &middot; {languages_label(records)}</span>'
+            f'<span class="a-section">{BOOK_NAMES[book][lang]} &middot; {languages_label(every)}</span>'
             f'<span class="a-title">{display(chapter_name(records, book, chapter, lang))}</span>'
             f'<span class="p-opening"{lang_attr(text_lang(records[0], lang), lang)}>{q.format(display(opening))}</span>'
             f'<span class="a-meta">{meta}</span></a></li>')

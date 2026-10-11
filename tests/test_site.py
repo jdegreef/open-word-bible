@@ -283,6 +283,15 @@ class SiteTest(unittest.TestCase):
                 else:  # a page not yet in lang is in English, and links like one
                     self.assertIn((p.book, p.chapter), linked, (lang, p.url))
 
+    def test_read_page_cards_count_the_page_language(self):
+        for lang in build_site.LANGUAGES:
+            for p in build_site.passages_in(lang):
+                card = build_site.passage_card(p.book, p.chapter, lang)
+                shown = [d for r in p.records for d in r["decisions"] if d["language"] in (None, lang)]
+                self.assertIn(build_site.t(lang, "card.meta", verses=p.verses, sentences=len(p.records),
+                                           decisions=len(shown),
+                                           uncertain=sum(d["uncertain"] for d in shown)), card)
+
     def test_read_page_groups_chapters_by_book(self):
         read = (self.out / "read" / "index.html").read_text(encoding="utf-8")
         for book, chaps in build_site.books():
