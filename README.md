@@ -191,12 +191,15 @@ matter block:
     ---
 
 The body is plain Markdown (`##` headings, paragraphs, `-` lists, `>` quotes,
-`**bold**`, `*italic*`, `[links](/jhn/1/)`). Greek is never typed: quote it
-with placeholders the build fills from `data/grc/`, and quote our own
-translation from `content/` the same way:
+`**bold**`, `*italic*`, `[links](/jhn/1/)`). Greek and Hebrew are never
+typed: quote them with placeholders the build fills from `data/grc/` and
+`data/hbo/`, and quote our own translation from `content/` the same way:
 
     {{GREEK:JHN.1.1:14-17}}   words 14-17 of John 1:1, as the SBLGNT has them
+    {{HEBREW:GEN.1.1:1-3}}    words 1-3 of Genesis 1:1, as the WLC has them
     {{LEMMA:JHN.1.14:17}}     the dictionary form of word 17 of John 1:14
+    {{LEMMA:GEN.1.1:1.2}}     a Hebrew word in parts (prefix, word, suffix):
+                              the dictionary form of part 2 of word 1
     {{OWB:JHN.1.1.s1:B}}      our English for that sentence, Balanced level
 
 `tests/test_articles.py` fails if an article contains typed Greek or Hebrew,
