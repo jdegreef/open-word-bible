@@ -75,10 +75,9 @@ def cards():
                                                "with its reasoning shown."}}
     for book, chapter in build_site.chapters():
         records, words = build_site.load_chapter(book, chapter)
-        first = records[0]
-        verse = first["refs"][0]
-        mine = set(first["source"]["tokens"])
-        english = build_site.opening_verse(records)
+        record, verse = build_site.opening(records, chapter)
+        mine = set(record["source"]["tokens"])
+        english = build_site.opening_verse(records, chapter)
         spec = {"kind": "passage", "eyebrow": build_site.chapter_title(records, book, chapter),
                 "title": english}
         if build_site.source_language(book) == "hbo":

@@ -30,18 +30,36 @@
   var SPAN = /\{\{([a-z_]+):([^{}]*)\}\}/g;
   var VERSE = /\\v (\d+) ?/;
 
-  function verseOf(id) { return id.split(".")[2]; }
+  // A verse as this page names it: "12", or "7:53" for a verse of another
+  // chapter that a sentence runs into (John 7:53-8:1 is on both pages).
+  function verseOf(id) {
+    var p = id.split(".");
+    return Number(p[1]) === DATA.chapter ? p[2] : p[1] + ":" + p[2];
+  }
 
-  // A record's verses as "12" or "12\u201313".
+  function crossesChapter(r) {
+    return r.refs[0].split(".")[1] !== r.refs[r.refs.length - 1].split(".")[1];
+  }
+
+  // A record's verses as "12", "12\u201313" or "7:53\u20138:1".
   function verseRange(r) {
-    var first = verseOf(r.refs[0]), last = verseOf(r.refs[r.refs.length - 1]);
-    return first === last ? first : first + "\u2013" + last;
+    var ends = [r.refs[0], r.refs[r.refs.length - 1]].map(function (id) {
+      return crossesChapter(r) ? id.split(".").slice(1).join(":") : verseOf(id);
+    });
+    return ends[0] === ends[1] ? ends[0] : ends[0] + "\u2013" + ends[1];
+  }
+
+  // The verse a marker starts. A marker gives only the verse number, so
+  // name it from the record's refs.
+  function markerVerse(r, n) {
+    var id = r.refs.find(function (v) { return v.split(".")[2] === n; });
+    return id ? verseOf(id) : n;
   }
 
   // Split rendered text at verse markers: [[verse, text], ...].
   function splitVerses(r, text) {
     var parts = text.split(VERSE), out = [[verseOf(r.refs[0]), parts[0].trim()]];
-    for (var i = 1; i < parts.length; i += 2) out.push([parts[i], parts[i + 1]]);
+    for (var i = 1; i < parts.length; i += 2) out.push([markerVerse(r, parts[i]), parts[i + 1]]);
     return out;
   }
 
@@ -61,7 +79,7 @@
     var out = [[verseOf(r.refs[0]), []]];
     chunks.forEach(function (c) {
       c[0].split(VERSE).forEach(function (part, i) {
-        if (i % 2) out.push([part, []]);
+        if (i % 2) out.push([markerVerse(r, part), []]);
         else if (part) out[out.length - 1][1].push([part, c[1]]);
       });
     });
@@ -388,7 +406,8 @@
     close.setAttribute("aria-label", t("close"));
     close.addEventListener("click", deselect);
     panel.appendChild(close);
-    var ref = DATA.title.replace(/[\d:\u2013\s]+$/, "") + " " + DATA.chapter + ":" + verseRange(current);
+    var ref = DATA.title.replace(/[\d:\u2013\s]+$/, "") + " " + (crossesChapter(current) ? "" : DATA.chapter + ":") +
+      verseRange(current);
     var title = el("h2", "panel-title");
     title.appendChild(el("span", null, ref));
     title.appendChild(linkButton(currentVerse));
@@ -521,8 +540,9 @@
   // owns the breakpoint: the sheet is the panel when it is position: fixed.
   function narrow() { return getComputedStyle(panelEl).position === "fixed"; }
   function verseEl(v) { return document.querySelector('.verse[data-v="' + v + '"]'); }
-  // A verse in the address: #v4, or plainly #4.
-  function hashVerse() { var m = /^#v?(\d+)$/.exec(location.hash); return m && m[1]; }
+  // A verse in the address: #v4, or plainly #4 (#v7:53 for a verse
+  // of another chapter that a sentence runs into).
+  function hashVerse() { var m = /^#v?(\d+(?::\d+)?)$/.exec(location.hash); return m && m[1]; }
   function recordFor(verse) {
     return DATA.records.find(function (r) {
       return r.refs.some(function (vid) { return verseOf(vid) === verse; });
