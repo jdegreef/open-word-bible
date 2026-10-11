@@ -269,6 +269,20 @@ class SiteTest(unittest.TestCase):
                 book_link = f'href="{build_site.url(lang, f"/read/#{p.book.lower()}")}"'
                 self.assertEqual(book_link in footer, p.book in books, (lang, p.book))
 
+    def test_reader_navigation_lists_only_the_page_language(self):
+        for lang in build_site.LANGUAGES:
+            shown = {(p.book, p.chapter) for p in build_site.passages_in(lang)}
+            for p in build_site.passages():
+                page = (self.out / build_site.url(lang, p.url).lstrip("/") / "index.html").read_text(encoding="utf-8")
+                strip = re.search(r'<nav class="chapstrip".*?</nav>', page, re.S)[0]
+                turns = re.search(r'<nav class="turns".*?</nav>', page, re.S)[0]
+                linked = {(q.book, q.chapter) for q in build_site.passages()
+                          if f'href="{build_site.url(lang, q.url)}"' in strip + turns}
+                if (p.book, p.chapter) in shown:
+                    self.assertLessEqual(linked, shown, (lang, p.url))
+                else:  # a page not yet in lang is in English, and links like one
+                    self.assertIn((p.book, p.chapter), linked, (lang, p.url))
+
     def test_read_page_groups_chapters_by_book(self):
         read = (self.out / "read" / "index.html").read_text(encoding="utf-8")
         for book, chaps in build_site.books():

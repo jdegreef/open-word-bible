@@ -677,10 +677,20 @@ def chapter_page(book, chapter, lang="en"):
                 description=t(lang, "meta.chapter_description" + suffix, title=title))
 
 
+def reader_passages(book, chapter, lang="en"):
+    """The passages a reader page in lang links to: those with sentences in
+    lang, or every passage on a page not yet in lang, which is shown in
+    English."""
+    ps = passages_in(lang)
+    if any((p.book, p.chapter) == (book, chapter) for p in ps):
+        return ps
+    return list(passages())
+
+
 def chapter_strip(book, chapter, lang="en"):
     """Above a passage: its book, how far the book has got, and a pill for
     each chapter translated so far, this one marked."""
-    chaps = dict(books())[book]
+    chaps = [p for p in reader_passages(book, chapter, lang) if p.book == book]
     name = BOOK_NAMES[book][lang]
     progress = book_progress(book, chaps, lang)[2]
     return (f'<nav class="chapstrip" aria-label="{t(lang, "reader.strip", book=name)}">'
@@ -691,7 +701,7 @@ def chapter_strip(book, chapter, lang="en"):
 
 def chapter_turns(book, chapter, lang="en"):
     """Below a passage: the previous and next passages, across books."""
-    ps = passages()
+    ps = reader_passages(book, chapter, lang)
     i = next(n for n, p in enumerate(ps) if (p.book, p.chapter) == (book, chapter))
 
     def turn(p, rel, label):
