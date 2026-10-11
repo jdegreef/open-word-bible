@@ -887,7 +887,7 @@ footer.site .foot-langs ul { display: flex; flex-wrap: wrap; gap: 6px 18px; }
   .prefs-menu { position: fixed; left: 16px; right: 16px; top: calc(var(--header-h) + 8px); width: auto; }
 }
 @media (max-width: 400px) {
-  header.site .tools > a.tool-btn:not(.account-btn) { display: none; }
+  header.site .tools > a.tool-btn:not(.account-btn):not(.search-btn) { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   .dropdown, .button, .a-card, .nav-link .caret { animation: none; transition: none; }
@@ -989,3 +989,177 @@ body.plain .text { font-size: 22px; }
 }
 .copy-quote[hidden] { display: none; }
 .copy-quote:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Search (web/search.js), after Ochorus. The header's search button: a
+   pill with its shortcut on wide screens, a round tool on narrow ones. */
+.sr-only {
+  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+.search-btn { width: auto; display: inline-flex; align-items: center; gap: 8px; padding: 0 8px 0 12px; font-size: 14.5px; }
+.search-label { color: var(--muted); }
+kbd {
+  font: 600 11.5px/1 var(--sans); padding: 3px 6px; border-radius: 6px; color: var(--muted);
+  border: 1px solid var(--line); background: var(--surface-2);
+}
+@media (max-width: 1100px) {
+  .search-btn { width: 38px; padding: 0; justify-content: center; }
+  .search-label, .search-kbd { display: none; }
+}
+@media (max-width: 560px) { .search-btn { width: 36px; } }
+
+/* The palette: a dialog near the top of the window. */
+html.palette-open { overflow: hidden; }
+.palette {
+  position: fixed; inset: 0; z-index: 60; padding: 12vh 16px 16px;
+  background: rgb(10 8 5 / .45); -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px);
+}
+.palette-box {
+  max-width: 640px; margin: 0 auto; background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--radius); box-shadow: var(--shadow-pop); overflow: hidden; animation: pal-in .14s ease;
+}
+@keyframes pal-in { from { opacity: 0; transform: translateY(-6px); } }
+.palette-form { display: flex; align-items: center; gap: 10px; padding: 0 14px; border-bottom: 1px solid var(--line); color: var(--muted); }
+.palette-form input {
+  flex: 1; min-width: 0; padding: 16px 0; border: 0; outline: 0; background: none;
+  font: inherit; font-size: 18px; color: var(--text);
+}
+.palette-form input::-webkit-search-cancel-button { display: none; }
+.palette-list { list-style: none; margin: 0; padding: 6px; max-height: 52vh; overflow: auto; }
+.pal-row {
+  display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 12px; align-items: baseline;
+  padding: 9px 10px; border-radius: var(--radius-sm); color: var(--text); text-decoration: none;
+}
+[aria-selected="true"] > .pal-row { background: var(--accent-soft); box-shadow: inset 0 0 0 1.5px var(--accent-soft-border); }
+.pal-kind { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--gold); }
+.pal-all .pal-kind { color: var(--muted); font-size: 14px; letter-spacing: 0; }
+.pal-text { display: grid; min-width: 0; }
+.pal-title, .pal-meta { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pal-title { font-weight: 600; font-size: 15px; }
+.pal-all .pal-title { color: var(--accent); }
+.pal-meta { font-size: 13.5px; color: var(--muted); }
+.pal-meta.serif { font-family: var(--serif); font-size: 15px; }
+.pal-empty { padding: 14px 10px; color: var(--muted); font-size: 15px; }
+.palette-foot {
+  display: flex; gap: 16px; margin: 0; padding: 9px 16px; border-top: 1px solid var(--line);
+  background: var(--surface-2); font-size: 12.5px; color: var(--muted);
+}
+.palette-foot kbd { padding: 2px 5px; margin-right: 2px; }
+@media (max-width: 560px) {
+  .palette { padding-top: 10px; }
+  .palette-foot { display: none; }
+  .palette-list { max-height: 70vh; }
+  .pal-row { grid-template-columns: 1fr; gap: 0; }
+}
+
+/* The /search/ page: the box stays under the header while results scroll. */
+.search-head { padding-bottom: 20px; }
+.search-bar { position: sticky; top: var(--header-h); z-index: 20; padding: 10px 0 14px; background: var(--bg); }
+.search-box {
+  display: flex; align-items: center; gap: 12px; max-width: 760px; padding: 0 18px; color: var(--muted);
+  background: var(--surface); border: 1px solid var(--line-strong); border-radius: 999px; box-shadow: var(--shadow-card);
+}
+.search-box:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft-border); }
+.search-box input {
+  flex: 1; min-width: 0; padding: 14px 0; border: 0; outline: 0; background: none;
+  font: inherit; font-size: 19px; color: var(--text);
+}
+.search-layout { margin-top: 18px; }
+.search-layout.has-facets { display: grid; grid-template-columns: minmax(11rem, auto) minmax(0, 1fr); gap: 40px; align-items: start; }
+.facets { position: sticky; top: calc(var(--header-h) + 90px); }
+.facet-list { display: grid; gap: 4px; }
+.facet {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 8px 14px;
+  border: 1px solid transparent; border-radius: 999px; background: none; color: var(--text);
+  font: inherit; font-size: 15px; text-align: left; cursor: pointer;
+}
+.facet:hover { background: var(--surface-2); }
+.facet[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent-soft-border); color: var(--accent); font-weight: 600; }
+.facet-n { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.facet-sort { display: flex; align-items: center; gap: 10px; margin: 0 0 16px; font-size: 13.5px; font-weight: 600; color: var(--muted); }
+.facet-sort .seg button { font-size: 13.5px; }
+.search-main { min-width: 0; max-width: 780px; }
+.hit-group { margin: 0 0 32px; }
+.section-label {
+  display: flex; align-items: baseline; gap: 8px; margin: 0 0 6px; padding-bottom: 8px; border-bottom: 1px solid var(--line);
+  font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--muted);
+}
+.section-n { font-weight: 600; letter-spacing: 0; color: var(--muted); }
+.hits { list-style: none; margin: 0; padding: 0; }
+.hit-link {
+  display: grid; gap: 3px; margin: 0 -12px; padding: 12px; border-radius: var(--radius-sm);
+  color: var(--text); text-decoration: none; transition: background-color var(--fast) ease;
+}
+.hit-link:hover, .hit-link.active { background: var(--surface-2); }
+.hit-link.active { box-shadow: inset 0 0 0 1.5px var(--accent-soft-border); }
+.hit-eyebrow { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--gold); }
+.hit-level { color: var(--muted); font-weight: 600; text-transform: none; letter-spacing: 0; }
+.hit-title { font-weight: 650; font-size: 17px; line-height: 1.4; }
+.hit-c .hit-title, .hit-a .hit-title { font-family: var(--display); font-weight: 600; font-size: 20px; }
+.hit-snippet { color: var(--muted); font-size: 15px; line-height: 1.55; }
+.hit-snippet.serif { font-family: var(--serif); font-size: 18.5px; color: var(--text); }
+.hit-meta { font-size: 13.5px; color: var(--muted); }
+.hit-link mark, .pal-row mark, mark.q-hit {
+  background: var(--mark); color: inherit; border-radius: 3px; padding: 0 1px;
+}
+/* In the reader the selected verse is shaded too, so the marks are underlined. */
+mark.q-hit { box-shadow: inset 0 -2px 0 var(--gold); border-radius: 2px; }
+.more-btn {
+  margin: 8px 0 0; padding: 8px 16px; border: 1px solid var(--line-strong); border-radius: 999px;
+  background: var(--surface); color: var(--accent); font: inherit; font-size: 14.5px; font-weight: 600; cursor: pointer;
+}
+.more-btn:hover { border-color: var(--accent); }
+
+/* A reference ("John 3:16"): the verses, and a way into the reader. */
+.ref-card {
+  margin: 0 0 28px; padding: 20px 24px; border-radius: 16px;
+  background: var(--accent-soft); border: 1px solid var(--accent-soft-border);
+}
+.ref-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 16px; }
+.ref-head h2 { margin: 0; font-family: var(--display); font-weight: 600; font-size: 24px; }
+.ref-go { padding: 8px 16px; font-size: 15px; }
+.ref-text { margin: 12px 0 0; font-family: var(--serif); font-size: 20px; line-height: 1.6; }
+.ref-text sup { font-family: var(--sans); font-size: 12px; font-weight: 700; color: var(--accent); }
+.ref-note { margin: 10px 0 0; color: var(--text); }
+.ref-card > .ref-note:first-child { margin-top: 0; }
+.no-results { margin: 8px 0 24px; }
+.no-results-q { font-size: 19px; font-weight: 600; margin: 0 0 6px; }
+.no-results p { margin: 0 0 6px; }
+
+/* Before a search: recent searches, examples and the passages. */
+.ways-in { display: grid; gap: 28px; margin-top: 20px; max-width: 780px; }
+.ways-head { display: flex; align-items: baseline; gap: 14px; }
+.ways .label { margin: 0 0 10px; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0; padding: 0; }
+.tag {
+  display: inline-block; padding: 6px 14px; border: 1px solid var(--line-strong); border-radius: 999px;
+  background: var(--surface); color: var(--text); font-size: 15px; text-decoration: none;
+}
+.tag:hover { border-color: var(--accent); color: var(--accent); }
+.recent-item { display: inline-flex; align-items: center; }
+.recent-item .tag { padding-right: 32px; }
+.tag-x {
+  margin-left: -30px; width: 24px; height: 24px; border: 0; border-radius: 50%; background: none;
+  color: var(--muted); font-size: 17px; line-height: 1; cursor: pointer;
+}
+.tag-x:hover { background: var(--surface-2); color: var(--text); }
+.link-btn { border: 0; background: none; padding: 0; color: var(--accent); font: inherit; font-size: 14px; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.browse-book { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin: 0 0 12px; }
+.browse-name { display: inline-flex; align-items: center; gap: 7px; min-width: 9rem; font-weight: 700; text-decoration: none; }
+.browse-name:hover { text-decoration: underline; }
+
+@media (max-width: 860px) {
+  .search-layout.has-facets { display: block; }
+  .facets { position: static; margin: 0 0 16px; }
+  .facet-list { display: flex; flex-wrap: wrap; gap: 6px; }
+  .facet { border-color: var(--line); padding: 6px 12px; font-size: 14.5px; }
+  .facet-n { margin-left: -4px; }
+}
+@media (max-width: 560px) {
+  .search-box input { font-size: 17px; padding: 12px 0; }
+  .hit-snippet.serif { font-size: 17.5px; }
+  .ref-card { padding: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .palette-box { animation: none; }
+}

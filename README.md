@@ -202,6 +202,30 @@ are blocks of colour tokens in `web/style.css`; `web/site.js` runs the menu and
 remembers the choice in the browser, and a small script in each page's head
 applies it before the first paint.
 
+### Search
+
+Search works as it does on Ochorus. The search button in the header, or
+Ctrl K / Cmd K (or `/`) on any page, opens a palette that searches as you
+type. Its "All results" row leads to `/search/`. That page groups results
+into passages, verses, notes and articles, with filters, and keeps the
+query in the address (`?q=`), so a search can be shared. A reference such as
+"John 3:16" or "Fil 4:6-7" shows those verses with a link into the reader.
+A verse opened from a result has the query's words marked.
+
+The site is static, so there is no search server. The build writes one
+index per interface language (`search-en.json`, `search-es.json`):
+
+- every sentence, at each level, with its setting spans kept;
+- every note, both the meaning notes and the wording notes for the shown
+  language;
+- the articles and the passages.
+
+`web/search.js` loads the index the first time someone searches and matches
+in the browser. Matching ignores accents and matches from the start of a
+word. The gzipped index is about 160 KB today. Once the translation grows
+much larger, searching should move to the API (Postgres full-text search,
+as Ochorus does).
+
 ### Pointing openwordbible.org at Render
 
 The custom domains are listed in `render.yaml`; the DNS records are set at
