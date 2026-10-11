@@ -47,7 +47,7 @@ drafting it and `data/key_terms.json` the settled key terms.
 
 Matthew 1–2 (`content/MAT/`) is drafted in English.
 
-Proverbs 1 (`content/PRO/`) is drafted in English.
+Proverbs 1–2 (`content/PRO/`) is drafted in English.
 
 A record is one sentence of the source, not one verse. It ends where the
 SBLGNT ends a sentence: a full stop, a question mark, or a raised dot (·)
