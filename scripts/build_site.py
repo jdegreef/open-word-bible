@@ -278,7 +278,7 @@ def nav_menus(lang):
         return f'<a class="dd-all" href="{href}">{label} {icon(ICONS["arrow"], 16)}</a>'
 
     rows = []
-    for book, chaps in books():
+    for book, chaps in books(lang):
         name = BOOK_NAMES[book][lang]
         progress = book_progress(book, chaps, lang)[2]
         rows.append(f'<div class="dd-book">{row(url(lang, f"/read/#{book.lower()}"), name, progress, "book")}'
@@ -349,7 +349,7 @@ def footer_links(lang):
         return "".join(f'<li><a href="{href}"{f" lang={tl}" if tl and tl != lang else ""}>{label}</a></li>'
                        for href, label, tl in pairs)
 
-    read = [(url(lang, f"/read/#{book.lower()}"), BOOK_NAMES[book][lang], None) for book, _ in books()]
+    read = [(url(lang, f"/read/#{book.lower()}"), BOOK_NAMES[book][lang], None) for book, _ in books(lang)]
     read.append((url(lang, "/read/"), t(lang, "nav.all_books"), None))
     start = sorted((a for a in load_articles(lang) if a["section"] == "method"), key=lambda a: a["order"])[:3]
     learn = [(url(lang, article_url(a)), display(a["title"]), a["lang"]) for a in start]
@@ -743,7 +743,7 @@ def passage_card(book, chapter, lang="en"):
 
 def read_page(lang="en"):
     groups = []
-    for book, chaps in books():
+    for book, chaps in books(lang):
         done, total, progress = book_progress(book, chaps, lang)
         groups.append(
             f'<section class="book-group" id="{book.lower()}" aria-labelledby="book-{book.lower()}">'

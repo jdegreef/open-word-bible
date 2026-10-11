@@ -255,6 +255,20 @@ class SiteTest(unittest.TestCase):
                 link = f'href="{build_site.url(lang, p.url)}"'
                 self.assertEqual(link in progress, (p.book, p.chapter) in shown, (lang, p.url))
 
+    def test_header_footer_and_read_page_list_only_the_page_language(self):
+        for lang in build_site.LANGUAGES:
+            shown = {(p.book, p.chapter) for p in build_site.passages_in(lang)}
+            books = {b for b, _ in shown}
+            read = (self.out / build_site.url(lang, "/read/").lstrip("/") / "index.html").read_text(encoding="utf-8")
+            header = re.search(r"<header.*?</header>", read, re.S)[0]
+            footer = re.search(r"<footer.*?</footer>", read, re.S)[0]
+            for p in build_site.passages():
+                link = f'href="{build_site.url(lang, p.url)}"'
+                self.assertEqual(link in header, (p.book, p.chapter) in shown, (lang, p.url))
+                self.assertEqual(f'id="{p.book.lower()}"' in read, p.book in books, (lang, p.book))
+                book_link = f'href="{build_site.url(lang, f"/read/#{p.book.lower()}")}"'
+                self.assertEqual(book_link in footer, p.book in books, (lang, p.book))
+
     def test_read_page_groups_chapters_by_book(self):
         read = (self.out / "read" / "index.html").read_text(encoding="utf-8")
         for book, chaps in build_site.books():
