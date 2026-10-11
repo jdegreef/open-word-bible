@@ -1600,7 +1600,7 @@ def offline_page(lang="en"):
 <p class="eyebrow">{t(lang, "offline.title")}</p>
 <h1>{t(lang, "offline.heading")}</h1>
 <p class="hero-sub">{t(lang, "offline.sub")}</p>
-<p class="actions">{resume_link(lang)}<a class="button" href="{url(lang, "/")}">{t(lang, "404.home")}</a></p>
+<p class="actions">{resume_link(lang)}<a class="button" href="{url(lang, "/")}" data-if-saved hidden>{t(lang, "404.home")}</a></p>
 </section>
 <section class="saved-books" id="saved-books" hidden aria-labelledby="saved-h">
 <h2 id="saved-h">{t(lang, "offline.saved_books")}</h2>
@@ -1620,11 +1620,14 @@ def service_worker():
     """web/sw.js with the files to keep from the start (the styles, the
     scripts and each language's offline page). Its version is a hash of the
     whole, so a deploy that changes any of them installs a new worker."""
-    shell = [asset(n) for n in ("style.css", "site.js", "search.js", "reader.js", "account.js")]
+    shell = [asset(n) for n in ("style.css", "site.js", "search.js", "reader.js")]
     shell += ["/favicon.svg", "/manifest.webmanifest"] + [url(lang, "/offline/") for lang in LANGUAGES]
     offline = {("" if lang == "en" else lang): url(lang, "/offline/") for lang in LANGUAGES}
+    current = [asset(n) for n in ("style.css", "site.js", "search.js", "reader.js", "account.js")]
+    current += [word_uses()[1]] + [search_index_url(lang) for lang in LANGUAGES]
     text = ((ROOT / "web" / "sw.js").read_text(encoding="utf-8")
-            .replace("__PRECACHE__", json.dumps(shell)).replace("__OFFLINE__", json.dumps(offline)))
+            .replace("__PRECACHE__", json.dumps(shell)).replace("__OFFLINE__", json.dumps(offline))
+            .replace("__CURRENT__", json.dumps(current)))
     return text.replace("__VERSION__", hashlib.sha256(text.encode()).hexdigest()[:10])
 
 

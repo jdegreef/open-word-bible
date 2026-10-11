@@ -252,7 +252,8 @@
         return pages.concat(files).reduce(function (chain, u) {
           return chain.then(function () {
             return cache.match(u).then(function (hit) {
-              return hit || fetch(u, { credentials: "same-origin" }).then(function (res) {
+              // no-cache: past the worker's own cache (web/sw.js), fresh.
+              return hit || fetch(u, { credentials: "same-origin", cache: "no-cache" }).then(function (res) {
                 if (!res.ok) throw new Error(u + ": " + res.status);
                 return cache.put(u, res);
               });
@@ -273,8 +274,9 @@
       var list = saved();
       delete list[key];
       remember(list);
-      // The shared files go with the last saved book.
-      var gone = Object.keys(list).length ? pages : pages.concat(files);
+      // The shared files go with the language's last saved book.
+      var more = Object.keys(list).some(function (k) { return k.indexOf(lang + ":") === 0; });
+      var gone = more ? pages : pages.concat(files);
       caches.open("owb-books").then(function (cache) {
         return Promise.all(gone.map(function (u) { return cache.delete(u); }));
       }).then(function () { show("save"); });
@@ -314,4 +316,8 @@
     });
     box.hidden = !ul.children.length;
   }
+  // Its link home, only if the home page is saved (else it leads back here).
+  document.querySelectorAll("a[data-if-saved]").forEach(function (a) {
+    caches.match(a.getAttribute("href")).then(function (hit) { a.hidden = !hit; });
+  });
 })();

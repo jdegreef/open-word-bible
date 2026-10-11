@@ -15,6 +15,9 @@ var SHELL = "owb-shell-" + VERSION;
 var PRECACHE = __PRECACHE__;
 // The offline page for each language: "/es/" -> "/es/offline/".
 var OFFLINE = __OFFLINE__;
+// Every file whose address carries a content hash, as this deploy names
+// it; an older copy of one is dropped from owb-assets (see activate).
+var CURRENT = __CURRENT__;
 var MAX_PAGES = 60;
 // Past this a slow connection is treated as none, and a saved copy is shown.
 var NETWORK_WAIT = 4000;
@@ -24,22 +27,28 @@ self.addEventListener("install", function (e) {
   self.skipWaiting();
 });
 
+// The old shell goes, and so do older versions of the hashed files (a
+// search index is 3 MB, and main deploys often). Saved books keep theirs.
+function prune() {
+  var current = {};
+  CURRENT.forEach(function (u) { current[u.split("?")[0]] = u; });
+  return caches.open("owb-assets").then(function (cache) {
+    return cache.keys().then(function (keys) {
+      return Promise.all(keys.filter(function (req) {
+        var url = new URL(req.url), now = current[url.pathname];
+        return now && url.search && now !== url.pathname + url.search;
+      }).map(function (req) { return cache.delete(req); }));
+    });
+  });
+}
+
 self.addEventListener("activate", function (e) {
   e.waitUntil(caches.keys().then(function (keys) {
     return Promise.all(keys.filter(function (k) {
       return k.indexOf("owb-shell-") === 0 && k !== SHELL;
     }).map(function (k) { return caches.delete(k); }));
-  }).then(function () { return self.clients.claim(); }));
+  }).then(prune).then(function () { return self.clients.claim(); }));
 });
-
-// A response stored after a redirect cannot answer a page request, so
-// store its body under a plain response.
-function plain(res) {
-  if (!res.redirected) return Promise.resolve(res);
-  return res.blob().then(function (body) {
-    return new Response(body, { status: res.status, statusText: res.statusText, headers: res.headers });
-  });
-}
 
 function trim(cache) {
   return cache.keys().then(function (keys) {
@@ -63,19 +72,25 @@ function keepPage(req, res) {
 
 function offlinePage(url) {
   var lang = url.pathname.split("/")[1];
-  return caches.match(OFFLINE[lang] || OFFLINE[""]);
+  return caches.match(OFFLINE[lang] || OFFLINE[""]).then(function (res) {
+    // The shell cleared by a browser short of space: say so plainly.
+    return res || new Response("<!doctype html><meta charset=utf-8><title>Offline</title><p>Offline.</p>",
+                               { headers: { "Content-Type": "text/html; charset=utf-8" } });
+  });
 }
 
 // Pages: the network first, so a reader online always gets the latest
 // wording; a saved copy when there is no answer in time.
 function page(e) {
   var url = new URL(e.request.url);
+  var stored = Promise.resolve();
   var network = fetch(e.request).then(function (res) {
-    if (!res.ok) return res;
-    var copy = res.clone();
-    e.waitUntil(plain(copy).then(function (r) { return keepPage(e.request, r); }));
+    if (res.ok) stored = keepPage(e.request, res.clone());
     return res;
   });
+  // Registered now, while the event is live: the copy is kept even when a
+  // saved one answered first because the network was slow.
+  e.waitUntil(network.then(function () { return stored; }).catch(function () { /* offline */ }));
   var timer;
   var late = new Promise(function (resolve) { timer = setTimeout(resolve, NETWORK_WAIT); });
   return Promise.race([network.catch(function () { return null; }), late]).then(function (res) {
@@ -116,8 +131,9 @@ self.addEventListener("fetch", function (e) {
   // The API (sign-in, accounts) and other sites are left alone.
   if (url.origin !== self.location.origin) return;
   if (req.mode === "navigate") { e.respondWith(page(e)); return; }
-  // Share-card images are for link previews, not for reading; and a page
-  // fetched by a script (saving a book, in site.js) is stored by that script.
-  if (url.pathname.indexOf("/og/") === 0 || /\/$/.test(url.pathname)) return;
+  // Share-card images are for link previews, not for reading; and what
+  // site.js fetches to save a book (a page, or any file with cache:
+  // "no-cache") it stores itself, in owb-books.
+  if (url.pathname.indexOf("/og/") === 0 || /\/$/.test(url.pathname) || req.cache === "no-cache") return;
   e.respondWith(file(e));
 });
