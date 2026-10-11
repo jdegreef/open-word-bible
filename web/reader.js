@@ -10,11 +10,14 @@
   // languages are told so in the panel.
   var UI = DATA.ui;
 
-  function t(key) { return UI[key]; }
+  // Old Testament pages read from the Hebrew: a string with an _hbo
+  // variant uses it there ("Tap a Hebrew word...").
+  var HEBREW = DATA.source === "hbo";
+  function t(key) { return HEBREW && (key + "_hbo") in UI ? UI[key + "_hbo"] : UI[key]; }
 
   // The reading language is the page's (/es/... is Spanish); the footer
   // switches it. The other settings are kept across pages and languages.
-  var settings = { level: "B", gender: 0, christos: 0, deity_pronoun: 0, plural_you: 0 };
+  var settings = { level: "B", gender: 0, christos: 0, divine_name: 0, deity_pronoun: 0, plural_you: 0 };
   try {
     var saved = JSON.parse(localStorage.getItem(STORE) || "{}");
     for (var k in settings) if (k in saved) settings[k] = saved[k];
@@ -22,23 +25,81 @@
   settings.lang = DATA.lang;
 
   var current = null;   // selected record
+  var currentVerse = null;   // the verse within it that was chosen
   var panelEl = document.getElementById("panel");
   var SPAN = /\{\{([a-z_]+):([^{}]*)\}\}/g;
   var VERSE = /\\v (\d+) ?/;
 
-  function verseOf(id) { return id.split(".")[2]; }
+  // A verse as this page names it: "12", or "7:53" for a verse of another
+  // chapter that a sentence runs into (John 7:53-8:1 is on both pages).
+  function verseOf(id) {
+    var p = id.split(".");
+    return Number(p[1]) === DATA.chapter ? p[2] : p[1] + ":" + p[2];
+  }
 
-  // A record's verses as "12" or "12\u201313".
+  function crossesChapter(r) {
+    return r.refs[0].split(".")[1] !== r.refs[r.refs.length - 1].split(".")[1];
+  }
+
+  // A record's verses as "12", "12\u201313" or "7:53\u20138:1".
   function verseRange(r) {
-    var first = verseOf(r.refs[0]), last = verseOf(r.refs[r.refs.length - 1]);
-    return first === last ? first : first + "\u2013" + last;
+    var ends = [r.refs[0], r.refs[r.refs.length - 1]].map(function (id) {
+      return crossesChapter(r) ? id.split(".").slice(1).join(":") : verseOf(id);
+    });
+    return ends[0] === ends[1] ? ends[0] : ends[0] + "\u2013" + ends[1];
+  }
+
+  // The verse a marker starts. A marker gives only the verse number, so
+  // name it from the record's refs.
+  function markerVerse(r, n) {
+    var id = r.refs.find(function (v) { return v.split(".")[2] === n; });
+    return id ? verseOf(id) : n;
   }
 
   // Split rendered text at verse markers: [[verse, text], ...].
   function splitVerses(r, text) {
     var parts = text.split(VERSE), out = [[verseOf(r.refs[0]), parts[0].trim()]];
-    for (var i = 1; i < parts.length; i += 2) out.push([parts[i], parts[i + 1]]);
+    for (var i = 1; i < parts.length; i += 2) out.push([markerVerse(r, parts[i]), parts[i + 1]]);
     return out;
+  }
+
+  // A rendering split at its verse markers, each verse a list of pieces
+  // [text, token ids or null]: the pieces with ids are the English that
+  // aligned Greek words became (r.links, built from the record's alignments).
+  function versePieces(r, lang, level) {
+    var raw = r.renderings[lang][level];
+    var ranges = (r.links && r.links[lang] && r.links[lang][level]) || [];
+    var chunks = [], at = 0;
+    ranges.forEach(function (g) {
+      if (g[0] > at) chunks.push([raw.slice(at, g[0]), null]);
+      chunks.push([raw.slice(g[0], g[1]), g[2]]);
+      at = g[1];
+    });
+    if (at < raw.length) chunks.push([raw.slice(at), null]);
+    var out = [[verseOf(r.refs[0]), []]];
+    chunks.forEach(function (c) {
+      c[0].split(VERSE).forEach(function (part, i) {
+        if (i % 2) out.push([markerVerse(r, part), []]);
+        else if (part) out[out.length - 1][1].push([part, c[1]]);
+      });
+    });
+    var first = out[0][1][0];
+    if (first && !first[1]) first[0] = first[0].replace(/^\s+/, "");
+    return out;
+  }
+
+  function hasLinks(r) {
+    var lang = textLang(r);
+    return !!(r.links && r.links[lang] && r.links[lang][settings.level]);
+  }
+
+  // Light up a Greek word and the English it became, both ways.
+  function light(ids) {
+    var set = new Set(ids);
+    document.querySelectorAll(".aw").forEach(function (a) {
+      a.classList.toggle("lit", a.dataset.tokens.split(" ").some(function (id) { return set.has(id); }));
+    });
+    document.querySelectorAll(".iw").forEach(function (w) { w.classList.toggle("lit", set.has(w.dataset.id)); });
   }
 
   function render(text) {
@@ -76,11 +137,17 @@
         var v = b.getAttribute("data-value");
         var on = String(settings[name]) === v;
         b.setAttribute("aria-pressed", on ? "true" : "false");
+        // On wide screens the explanations are tooltips, so the bar stays one row.
+        var hint = t("hint_" + name) && t("hint_" + name)[v];
+        if (hint) b.title = hint;
       });
     });
     document.getElementById("hint-level").textContent = t("hint_level")[settings.level];
-    ["gender", "christos", "deity_pronoun", "plural_you"].forEach(function (name) {
-      document.getElementById("hint-" + name).textContent = t("hint_" + name)[settings[name]];
+    // A page shows either the divine name (Old Testament) or the title
+    // Christ (New Testament), so one of the two hints is missing.
+    ["gender", "christos", "divine_name", "deity_pronoun", "plural_you"].forEach(function (name) {
+      var hint = document.getElementById("hint-" + name);
+      if (hint) hint.textContent = t("hint_" + name)[settings[name]];
     });
     // The summary on the phone settings button: each shown choice's label.
     var summary = [];
@@ -123,7 +190,71 @@
     return text + ".";
   }
 
+  // A footnote opens in place, under its letter, so reading never jumps to
+  // the foot of the page. "See the reasoning" opens the decision in the panel.
+  var popover = null;
+
+  function closeNote(refocus) {
+    if (!popover) return;
+    var opener = popover.opener;
+    popover.remove();
+    popover = null;
+    if (opener) {
+      opener.setAttribute("aria-expanded", "false");
+      if (refocus && document.contains(opener)) opener.focus();
+    }
+  }
+
+  function openNote(button, n) {
+    var same = popover && popover.opener === button;
+    closeNote(false);
+    if (same) return;
+    var box = el("div", "fn-pop");
+    box.id = "fn-pop";
+    box.setAttribute("role", "dialog");
+    box.setAttribute("aria-label", t("fn_open").replace("{m}", n.mark));
+    var head = el("p", "fn-pop-head");
+    head.appendChild(el("span", "note-mark", n.mark));
+    head.appendChild(el("span", "note-ref", verseRange(n.record)));
+    var cat = t("category")[n.decision.category];
+    if (cat) head.appendChild(el("span", "fn-pop-cat", cat));
+    box.appendChild(head);
+    box.appendChild(el("p", "fn-pop-text", noteText(n.decision)));
+    var more = el("button", "fn-pop-more", t("fn_reasoning") + " \u2192");
+    more.type = "button";
+    more.addEventListener("click", function () {
+      closeNote(false);
+      select(n.record, null, n.decision.id);
+    });
+    box.appendChild(more);
+    box.addEventListener("click", function (e) { e.stopPropagation(); });
+    document.body.appendChild(box);
+    popover = box;
+    box.opener = button;
+    button.setAttribute("aria-expanded", "true");
+    button.setAttribute("aria-controls", "fn-pop");
+    placeNote();
+    more.focus({ preventScroll: true });
+  }
+
+  // Under the letter, kept inside the window.
+  function placeNote() {
+    if (!popover) return;
+    var r = popover.opener.getBoundingClientRect();
+    var w = popover.offsetWidth, gap = 16;
+    var left = Math.min(Math.max(gap, r.left + r.width / 2 - w / 2), document.documentElement.clientWidth - w - gap);
+    var top = r.bottom + 8;
+    if (top + popover.offsetHeight > window.innerHeight - gap && r.top - popover.offsetHeight - 8 > gap)
+      top = r.top - popover.offsetHeight - 8;
+    popover.style.left = left + window.scrollX + "px";
+    popover.style.top = top + window.scrollY + "px";
+  }
+
+  document.addEventListener("click", function () { closeNote(false); });
+  window.addEventListener("resize", placeNote);
+
   function drawText() {
+    closeNote(false);
     var box = document.getElementById("text");
     box.textContent = "";
     var partial = DATA.records.some(function (r) { return !r.renderings[settings.lang]; });
@@ -133,7 +264,23 @@
     document.getElementById("title").textContent = DATA.title;
     var shown = null;   // last verse number printed
     var notes = [];
+    var starts = new Set(DATA.paragraphs);
+    var para = null;    // the paragraph being filled
     DATA.records.forEach(function (r) {
+      // A section heading, then a new paragraph where the Greek starts one.
+      // The heading is shown in the language its sentence is shown in, and
+      // left out until it has that language.
+      var heading = DATA.headings[r.id];
+      var hlang = heading && [settings.lang, textLang(r)].filter(function (l) { return heading[l]; })[0];
+      if (hlang) {
+        var h = el("h2", "section-head" + (hlang === settings.lang ? "" : " fallback"), render(heading[hlang]));
+        if (hlang !== settings.lang) h.lang = hlang;
+        box.appendChild(h);
+      }
+      if (!para || heading || starts.has(r.id)) {
+        para = el("p", "para");
+        box.appendChild(para);
+      }
       var ds = decisionsFor(r);
       var marks = ds.meaning.concat(ds.rendering).filter(function (d) { return d.footnote; })
         .map(function (d) {
@@ -142,7 +289,8 @@
           return mark;
         });
       var lang = textLang(r);
-      var parts = splitVerses(r, render(r.renderings[lang][settings.level]));
+      var parts = versePieces(r, lang, settings.level);
+      var chosen = current && current.id === r.id;
       parts.forEach(function (part, i) {
         var span = el("span", lang === settings.lang ? "verse" : "verse fallback");
         if (lang !== settings.lang) span.lang = lang;
@@ -153,18 +301,40 @@
         if (current && current.id === r.id) span.setAttribute("aria-current", "true");
         if (part[0] !== shown) span.appendChild(el("sup", null, part[0]));
         shown = part[0];
-        span.appendChild(document.createTextNode(part[1]));
+        part[1].forEach(function (piece) {
+          var text = render(piece[0]);
+          if (!piece[1]) { span.appendChild(document.createTextNode(text)); return; }
+          var w = el("span", "aw", text);
+          w.dataset.tokens = piece[1].join(" ");
+          // In the chosen sentence, pointing at an English word lights the
+          // Greek it came from in the panel.
+          if (chosen) {
+            w.addEventListener("mouseenter", function () { light(piece[1]); });
+            w.addEventListener("mouseleave", function () { light([]); });
+            w.addEventListener("click", function (e) { e.stopPropagation(); light(piece[1]); });
+          }
+          span.appendChild(w);
+        });
         if (marks.length && i === parts.length - 1) {
-          var sup = el("sup", "fn", marks.join(","));
-          sup.setAttribute("aria-label", t("notes") + " " + marks.join(", "));
+          var sup = el("sup", "fn");
+          marks.forEach(function (mark) {
+            var n = notes.filter(function (x) { return x.mark === mark; })[0];
+            var b = el("button", "fn-mark", mark);
+            b.type = "button";
+            b.setAttribute("aria-label", t("fn_open").replace("{m}", mark));
+            b.setAttribute("aria-expanded", "false");
+            b.addEventListener("click", function (e) { e.stopPropagation(); openNote(b, n); });
+            b.addEventListener("keydown", function (e) { e.stopPropagation(); });
+            sup.appendChild(b);
+          });
           span.appendChild(sup);
         }
         span.addEventListener("click", function () { select(r, part[0]); });
         span.addEventListener("keydown", function (e) {
           if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(r, part[0]); }
         });
-        box.appendChild(span);
-        box.appendChild(document.createTextNode(" "));
+        para.appendChild(span);
+        para.appendChild(document.createTextNode(" "));
       });
     });
     drawNotes(notes);
@@ -198,11 +368,15 @@
       w.classList.toggle("on", set.has(w.dataset.id));
     });
     document.querySelectorAll(".card").forEach(function (c) { c.classList.toggle("on", c === card); });
+    document.querySelectorAll(".aw").forEach(function (a) {
+      a.classList.toggle("on", a.dataset.tokens.split(" ").some(function (id) { return set.has(id); }));
+    });
   }
 
   function drawCard(d, record) {
     var card = el("div", "card");
     card.tabIndex = 0;
+    card.dataset.decision = d.id;
     var cat = el("div", "cat", t("category")[d.category] || d.category);
     if (d.uncertain) cat.appendChild(el("span", "badge unc", t("uncertain")));
     if (d.footnote) cat.appendChild(el("span", "badge", t("footnote")));
@@ -224,6 +398,7 @@
     if (!current) {
       panel.appendChild(el("h2", null, t("empty_title")));
       panel.appendChild(el("p", "empty", t("empty_text")));
+      panel.appendChild(el("p", "keys", t("keys_hint")));
       return;
     }
     var close = el("button", "sheet-close", "\u00d7");
@@ -231,13 +406,19 @@
     close.setAttribute("aria-label", t("close"));
     close.addEventListener("click", deselect);
     panel.appendChild(close);
-    panel.appendChild(el("h2", null, DATA.title.replace(/[\d:\u2013\s]+$/, "") + " " + DATA.chapter + ":" + verseRange(current)));
+    var ref = DATA.title.replace(/[\d:\u2013\s]+$/, "") + " " + (crossesChapter(current) ? "" : DATA.chapter + ":") +
+      verseRange(current);
+    var title = el("h2", "panel-title");
+    title.appendChild(el("span", null, ref));
+    title.appendChild(linkButton(currentVerse));
+    panel.appendChild(title);
 
     panel.appendChild(el("h3", null, t("greek")));
-    // Interlinear: each Greek word over its gloss. Tapping one shows its
+    // Interlinear: each Greek word (or Hebrew morpheme) over its gloss. Tapping one shows its
     // dictionary form, Strong's number and grammar, and lights up every
     // decision that names it.
     var greek = el("div", "interlinear");
+    if (HEBREW) greek.dir = "rtl";
     var info = el("div", "wordinfo");
     info.setAttribute("aria-live", "polite");
     info.hidden = true;
@@ -246,19 +427,27 @@
       w.type = "button";
       w.dataset.id = word.id;
       var g = el("span", "iw-g", word.text + word.after.trim());
-      g.lang = "grc";
+      g.lang = DATA.source;
       w.appendChild(g);
-      w.appendChild(el("span", "iw-e", word.gloss));
+      // MACULA Hebrew glosses join words with dots: "he.created".
+      w.appendChild(el("span", "iw-e", HEBREW ? word.gloss.replace(/\./g, " ") : word.gloss));
+      w.addEventListener("mouseenter", function () { light([word.id]); });
+      w.addEventListener("mouseleave", function () { light([]); });
+      w.addEventListener("focus", function () { light([word.id]); });
+      w.addEventListener("blur", function () { light([]); });
       w.addEventListener("click", function () {
         info.textContent = "";
         var head = el("p", "wi-head");
         var lemma = el("span", "wi-lemma", word.lemma);
-        lemma.lang = "grc";
+        lemma.lang = DATA.source;
         head.appendChild(lemma);
-        head.appendChild(el("span", "wi-label", t("lemma") + (word.strong ? " \u00b7 " + t("strong") + " G" + word.strong : "")));
+        var strong = word.strong ? (HEBREW ? " H" + word.strong.replace(/^0+/, "") : " G" + word.strong) : "";
+        head.appendChild(el("span", "wi-label", t("lemma") + (strong ? " \u00b7 " + t("strong") + strong : "")));
+        if (word.transliteration) head.appendChild(el("span", "wi-label", word.transliteration));
         info.appendChild(head);
-        info.appendChild(el("p", "wi-grammar", DATA.grammar[word.morph][settings.lang]));
-        info.appendChild(el("p", "wi-gloss", "\u201c" + word.gloss + "\u201d"));
+        var key = (word.lang === "A" ? "A:" : "") + word.morph;
+        info.appendChild(el("p", "wi-grammar", DATA.grammar[key][settings.lang]));
+        info.appendChild(el("p", "wi-gloss", "\u201c" + (HEBREW ? word.gloss.replace(/\./g, " ") : word.gloss) + "\u201d"));
         info.hidden = false;
         var ids = [];
         current.decisions.forEach(function (d) { if (d.tokens.includes(word.id)) ids = ids.concat(d.tokens); });
@@ -271,7 +460,7 @@
       if (i > 0) greek.appendChild(el("sup", "iw-verse", verseOf(vid)));
       (DATA.words[vid] || []).filter(function (w) { return mine.has(w.id); }).forEach(drawWord);
     });
-    panel.appendChild(el("p", "hint", t("word_hint")));
+    panel.appendChild(el("p", "hint", t("word_hint") + (hasLinks(current) ? " " + t("align_hint") : "")));
     panel.appendChild(greek);
     panel.appendChild(info);
 
@@ -283,6 +472,32 @@
     });
     panel.appendChild(gloss);
 
+    // The same sentence at each level, side by side; choosing one reads the
+    // chapter at it.
+    panel.appendChild(el("h3", null, t("levels")));
+    var lang = textLang(current);
+    var levels = el("div", "levels");
+    if (lang !== settings.lang) levels.lang = lang;
+    ["L", "B", "R"].forEach(function (code) {
+      var on = code === settings.level;
+      var b = el("button", "lvl-row" + (on ? " on" : ""));
+      b.type = "button";
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+      var name = el("span", "lvl-name", t(code));
+      if (on) name.appendChild(el("span", "badge", t("reading")));
+      b.appendChild(name);
+      var text = el("span", "lvl-text");
+      splitVerses(current, render(current.renderings[lang][code])).forEach(function (part, i) {
+        if (i > 0) text.appendChild(el("sup", null, " " + part[0] + " "));
+        text.appendChild(document.createTextNode(part[1]));
+      });
+      b.appendChild(text);
+      b.addEventListener("click", function () { if (!on) setSetting("level", code); });
+      levels.appendChild(b);
+    });
+    panel.appendChild(el("p", "hint", t("levels_hint")));
+    panel.appendChild(levels);
+
     var ds = decisionsFor(current);
     panel.appendChild(el("h3", null, t("meaning")));
     if (t("notes_language")) panel.appendChild(el("p", "empty", t("notes_language")));
@@ -293,38 +508,79 @@
     ds.rendering.forEach(function (d) { panel.appendChild(drawCard(d, current)); });
   }
 
+  // A link to this chapter opened at a verse (#v4). Phones offer the
+  // system share sheet; elsewhere the link is copied.
+  function linkButton(verse) {
+    var b = el("button", "copy-link");
+    b.type = "button";
+    var share = narrow() && !!navigator.share;
+    var label = el("span", null, t(share ? "share" : "copy_link"));
+    b.appendChild(label);
+    b.addEventListener("click", function () {
+      var link = location.origin + location.pathname + "#v" + verse;
+      var name = DATA.title.replace(/[\d:\u2013\s]+$/, "") + " " + DATA.chapter + ":" + verse;
+      function done(ok) {
+        label.textContent = t(ok ? "copied" : "copy_failed");
+        b.classList.toggle("done", ok);
+        setTimeout(function () { label.textContent = t("copy_link"); b.classList.remove("done"); }, 2000);
+      }
+      if (share) {
+        navigator.share({ title: name + " \u00b7 Open Word Bible", url: link }).catch(function () { /* dismissed */ });
+      } else if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(link).then(function () { done(true); }, function () { done(false); });
+      } else {
+        done(false);
+      }
+    });
+    return b;
+  }
+
   // On narrow screens the panel is a bottom sheet over the text (see .panel
   // in style.css), so opening it never moves the reader's place. The CSS
   // owns the breakpoint: the sheet is the panel when it is position: fixed.
   function narrow() { return getComputedStyle(panelEl).position === "fixed"; }
   function verseEl(v) { return document.querySelector('.verse[data-v="' + v + '"]'); }
-  function hashVerse() { var m = /^#v(\d+)$/.exec(location.hash); return m && m[1]; }
+  // A verse in the address: #v4, or plainly #4 (#v7:53 for a verse
+  // of another chapter that a sentence runs into).
+  function hashVerse() { var m = /^#v?(\d+(?::\d+)?)$/.exec(location.hash); return m && m[1]; }
+  function recordFor(verse) {
+    return DATA.records.find(function (r) {
+      return r.refs.some(function (vid) { return verseOf(vid) === verse; });
+    });
+  }
 
   function sheet(open) {
     panelEl.classList.toggle("open", open);
     document.body.classList.toggle("sheet-open", open);
   }
 
-  function select(record, verse) {
+  function select(record, verse, decision) {
     current = record;
     verse = verse || verseOf(record.refs[0]);
+    currentVerse = verse;
     try { history.replaceState(null, "", "#v" + verse); } catch (e) { /* ignore */ }
     drawText();
     drawPanel();
     panelEl.scrollTop = 0;
     sheet(true);
+    var card = decision && panelEl.querySelector('.card[data-decision="' + decision + '"]');
+    if (card) {
+      card.focus({ preventScroll: true });
+      card.scrollIntoView({ block: "nearest" });
+      if (!narrow()) return;
+    }
     if (narrow()) {
       var v = verseEl(verse);
       if (v) v.scrollIntoView({ behavior: "smooth", block: "start" });
       // The sheet covers the text below the verse, so take focus into it.
-      panelEl.focus({ preventScroll: true });
+      if (!card) panelEl.focus({ preventScroll: true });
     }
   }
 
   function deselect() {
     if (!current) return;
-    var verse = hashVerse();
-    current = null;
+    var verse = currentVerse;
+    current = currentVerse = null;
     try {
       history.replaceState(null, "", location.pathname + location.search);
       history.scrollRestoration = "auto";
@@ -337,11 +593,70 @@
   }
 
   document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && popover) { closeNote(true); return; }
+    // Left and right arrows turn to the previous and next passage, unless
+    // the reader is typing or a control wants the arrows.
+    if ((e.key === "ArrowLeft" || e.key === "ArrowRight") && !e.altKey && !e.ctrlKey && !e.metaKey && !e.shiftKey) {
+      if (!typing(e.target)) {
+        var turn = document.querySelector('[data-turn="' + (e.key === "ArrowLeft" ? "prev" : "next") + '"]');
+        if (turn) { e.preventDefault(); location.href = turn.href; return; }
+      }
+    }
     // An Escape that closes a header menu (site.js: the colour menu, a
-    // dropdown or the narrow-screen menu) leaves the sheet open.
+    // dropdown or the narrow-screen menu) leaves the panel open.
     var menuOpen = !!document.querySelector('header.site [aria-expanded="true"]');
-    if (e.key === "Escape" && !menuOpen && narrow()) deselect();
+    if (e.key === "Escape" && !menuOpen) { deselect(); return; }
+    // j and k step to the next and previous verse.
+    if ((e.key === "j" || e.key === "k") && !e.altKey && !e.ctrlKey && !e.metaKey && !typing(e.target)) {
+      e.preventDefault();
+      step(e.key === "j" ? 1 : -1);
+    }
   });
+
+  function typing(target) {
+    var tag = (target.tagName || "").toLowerCase();
+    return tag === "input" || tag === "textarea" || tag === "select" || target.isContentEditable;
+  }
+
+  // Every verse on the page in order, with the record it is in. A verse
+  // shared by two sentences appears once for each, so j visits both.
+  function verses() {
+    var out = [];
+    DATA.records.forEach(function (r) {
+      splitVerses(r, r.renderings[textLang(r)][settings.level]).forEach(function (part) {
+        out.push({ record: r, verse: part[0] });
+      });
+    });
+    return out;
+  }
+
+  function step(by) {
+    var all = verses();
+    var i = -1;
+    all.forEach(function (v, n) { if (current && v.record === current && v.verse === currentVerse) i = n; });
+    var next = all[i < 0 ? (by > 0 ? 0 : all.length - 1) : Math.min(all.length - 1, Math.max(0, i + by))];
+    if (!next || (next.record === current && next.verse === currentVerse)) return;
+    select(next.record, next.verse);
+    var v = verseEl(next.verse);
+    if (v && !narrow()) {
+      v.focus({ preventScroll: true });
+      v.scrollIntoView({ block: "nearest", behavior: "smooth" });
+    }
+  }
+
+  // A link on the page that changes the verse in the address opens it.
+  window.addEventListener("hashchange", function () {
+    var verse = hashVerse();
+    var r = verse && recordFor(verse);
+    if (r && verse !== currentVerse) { select(r, verse); reveal(verse); }
+  });
+
+  // Bring a verse opened from the address into view. (On phones select
+  // already puts it at the top, above the sheet.)
+  function reveal(verse, instant) {
+    var v = !narrow() && verseEl(verse);
+    if (v) v.scrollIntoView({ block: "center", behavior: instant ? "auto" : "smooth" });
+  }
 
   // Swipe the sheet down to close it, when it is scrolled to its top. The
   // slide transition is off while dragging so the sheet follows the finger.
@@ -365,6 +680,25 @@
   panelEl.addEventListener("touchend", endDrag);
   panelEl.addEventListener("touchcancel", endDrag);
 
+  function setSetting(name, value) {
+    var top = panelEl.scrollTop;
+    settings[name] = value;
+    save();
+    drawControls();
+    drawText();
+    drawPanel();
+    panelEl.scrollTop = top;
+  }
+
+  // The settings bar sticks under the header; the panel sticks under both,
+  // so it needs the bar's height (it changes as the bar wraps).
+  var settingsEl = document.getElementById("settings");
+  function measure() {
+    document.documentElement.style.setProperty("--settings-h", settingsEl.offsetHeight + "px");
+  }
+  if (window.ResizeObserver) new ResizeObserver(measure).observe(settingsEl);
+  measure();
+
   var toggle = document.getElementById("settings-toggle");
   toggle.addEventListener("click", function () {
     var open = toggle.getAttribute("aria-expanded") !== "true";
@@ -376,29 +710,31 @@
     seg.querySelectorAll("button").forEach(function (b) {
       b.addEventListener("click", function () {
         var v = b.getAttribute("data-value");
-        settings[name] = /^\d+$/.test(v) ? Number(v) : v;
-        save();
-        drawControls();
-        drawText();
-        drawPanel();
+        setSetting(name, /^\d+$/.test(v) ? Number(v) : v);
       });
     });
   });
 
+  // On phones the chapter pills are one row that scrolls sideways; bring
+  // this chapter's pill into view.
+  var pills = document.querySelector(".chapstrip .chap-pills");
+  var here = pills && pills.querySelector("[aria-current]");
+  if (here && pills.scrollWidth > pills.clientWidth)
+    pills.scrollLeft = here.offsetLeft - pills.offsetLeft - pills.clientWidth / 2 + here.offsetWidth / 2;
+
   var start = hashVerse();
-  var record = start && DATA.records.find(function (r) {
-    return r.refs.some(function (vid) { return verseOf(vid) === start; });
-  });
+  var record = start && recordFor(start);
   drawControls();
   if (record) {
-    // Opened at a verse on a phone: the verse decides where the page sits,
+    // Opened at a verse: the verse decides where the page sits,
     // not the browser's scroll restoring (deselect turns it back on), and
     // the jump waits for layout to settle.
-    if (narrow()) try { history.scrollRestoration = "manual"; } catch (e) { /* ignore */ }
+    try { history.scrollRestoration = "manual"; } catch (e) { /* ignore */ }
     select(record, start);
     window.addEventListener("load", function () {
-      var v = narrow() && current && verseEl(start);
-      if (v) v.scrollIntoView({ block: "start" });
+      if (!current) return;
+      if (narrow()) { var v = verseEl(start); if (v) v.scrollIntoView({ block: "start" }); }
+      else reveal(start, true);
     });
   } else { drawText(); drawPanel(); }
 })();

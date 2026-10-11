@@ -53,10 +53,11 @@ class SiteTest(unittest.TestCase):
         data = self.chapter_data()
         verses = list(dict.fromkeys(v for r in data["records"] for v in r["refs"]))
         self.assertEqual(verses, [f"JHN.1.{v}" for v in range(1, 52)])
-        # English for every sentence; Spanish and Swahili for 1:1-18 so far,
-        # French for the whole chapter.
+        # English for every sentence; Spanish for 1:1-18 so far, French and
+        # Swahili for the whole chapter.
         self.assertEqual(data["languages"], ["en", "es", "fr", "sw"])
         self.assertTrue(all("fr" in r["renderings"] for r in data["records"]))
+        self.assertTrue(all("sw" in r["renderings"] for r in data["records"]))
         self.assertTrue(all("en" in r["renderings"] for r in data["records"]))
 
     def test_each_verse_words_are_covered_once(self):
@@ -75,7 +76,7 @@ class SiteTest(unittest.TestCase):
     def test_chapter_has_a_notes_section(self):
         page = (self.out / "jhn" / "1" / "index.html").read_text(encoding="utf-8")
         self.assertIn('id="notes"', page)
-        self.assertIn("Small letters mark footnotes", page)
+        self.assertIn("Tap a small letter to read its footnote", page)
         reader = (self.out / "reader.js").read_text(encoding="utf-8")
         # Alternatives a decision set aside are never offered as possible.
         self.assertIn('d.uncertain ? "fn_or" : "also"', reader)
@@ -88,6 +89,31 @@ class SiteTest(unittest.TestCase):
         self.assertEqual(read.count('class="a-card p-card"'), len(build_site.chapters()))
         first = build_site.load_chapter("JHN", 1)[0][0]
         self.assertIn(build_site.plain(first["renderings"]["en"]["B"]), read)
+
+    def test_a_sentence_across_a_chapter_break_is_on_both_pages(self):
+        # John 7:53-8:1 is one sentence. It opens the bracketed, disputed
+        # passage 7:53-8:11 with "[" and the note on the manuscripts, so John
+        # 8 needs it as much as John 7 does.
+        seven, eight = self.chapter_data("jhn/7"), self.chapter_data("jhn/8")
+        self.assertEqual(seven["records"][-1]["id"], "JHN.7.53.s1")
+        first = eight["records"][0]
+        self.assertEqual(first["id"], "JHN.7.53.s1")
+        self.assertTrue(first["renderings"]["en"]["B"].startswith("["))
+        self.assertTrue(any(d["category"] == "text_variant" and d["footnote"] for d in first["decisions"]))
+        self.assertEqual(eight["title"], "John 8")
+        names = {p.chapter: (p.name, p.complete) for p in build_site.passages() if p.book == "JHN"}
+        self.assertEqual(names[7], ("John 7", True))
+        self.assertEqual(names[8], ("John 8", True))
+        # Counted once on the home page.
+        ids = [r["id"] for r in build_site.all_records()]
+        self.assertEqual(len(ids), len(set(ids)))
+
+    def test_cards_quote_the_first_verse_outside_a_disputed_passage(self):
+        records = build_site.load_chapter("JHN", 8)[0]
+        self.assertEqual(build_site.opening(records, 8)[1], "JHN.8.12")
+        self.assertIn("I am the light of the world", build_site.opening_verse(records, 8))
+        records = build_site.load_chapter("JHN", 7)[0]
+        self.assertEqual(build_site.opening(records, 7)[1], "JHN.7.1")
 
     def test_sentence_records_split_a_verse(self):
         data = self.chapter_data("php/4")
@@ -160,6 +186,19 @@ class SiteTest(unittest.TestCase):
             for text in texts:
                 self.assertNotRegex(text, "[\"']", r["id"])
 
+    def test_old_testament_pages_offer_the_divine_name(self):
+        # The divine name (the LORD or Yahweh) on Old Testament pages, the
+        # title Christ (Christ or Messiah) on New Testament ones.
+        gen = (self.out / "gen" / "2" / "index.html").read_text(encoding="utf-8")
+        jhn = (self.out / "jhn" / "1" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('data-setting="divine_name"', gen)
+        self.assertIn('id="hint-divine_name"', gen)
+        self.assertNotIn('data-setting="christos"', gen)
+        self.assertIn('data-setting="christos"', jhn)
+        self.assertNotIn('data-setting="divine_name"', jhn)
+        text = json.dumps(self.chapter_data("gen/2")["records"])
+        self.assertIn("{{divine_name:the LORD|Yahweh}}", text)
+
     def test_chapter_settings_fold_behind_a_toggle(self):
         page = (self.out / "jhn" / "1" / "index.html").read_text(encoding="utf-8")
         self.assertIn('aria-controls="settings"', page)
@@ -227,6 +266,45 @@ class SiteTest(unittest.TestCase):
                 self.assertIn(f'href="{ps[i - 1].url}" rel="prev"', turns)
             if i + 1 < len(ps):
                 self.assertIn(f'href="{ps[i + 1].url}" rel="next"', turns)
+
+    def test_paragraphs_follow_the_greek(self):
+        # SBLGNT capitalises a paragraph's first word; John 2 has four.
+        self.assertEqual(self.chapter_data("jhn/2")["paragraphs"],
+                         ["JHN.2.1.s1", "JHN.2.12.s1", "JHN.2.13.s1", "JHN.2.23.s1"])
+        # A capitalised quotation after a raised dot does not open one.
+        self.assertNotIn("JHN.4.29.s1", self.chapter_data("jhn/4")["paragraphs"])
+        # The Hebrew codex marks paragraphs with pe or samekh: Genesis 1's days.
+        self.assertEqual(self.chapter_data("gen/1")["paragraphs"],
+                         ["GEN.1.1.s1", "GEN.1.6.s1", "GEN.1.9.s1", "GEN.1.14.s1", "GEN.1.20.s1", "GEN.1.24.s1"])
+
+    def test_headings_stand_above_paragraphs(self):
+        ids = {r["id"] for b, c in build_site.chapters() for r in build_site.load_chapter(b, c)[0]}
+        for rid, heading in build_site.headings().items():
+            self.assertIn(rid, ids, rid)
+            self.assertIn("en", heading, rid)
+            book, chapter = rid.split(".")[:2]
+            data = self.chapter_data(f"{book.lower()}/{chapter}")
+            self.assertIn(rid, data["paragraphs"], rid)
+            self.assertEqual(data["headings"][rid], heading)
+
+    def test_chapter_strip_shows_the_whole_book(self):
+        page = (self.out / "jhn" / "1" / "index.html").read_text(encoding="utf-8")
+        strip = re.search(r'<nav class="chapstrip"(.*?)</nav>', page, re.S)[1]
+        done = {p.chapter for p in build_site.passages() if p.book == "JHN"}
+        pills = re.findall(r'class="chap[^"]*"[^>]*>(\d+)<', strip)
+        self.assertEqual([int(n) for n in pills], list(range(1, build_site.BOOK_CHAPTERS["JHN"] + 1)))
+        self.assertEqual(len(re.findall(r'class="chap none"', strip)), 21 - len(done))
+
+    def test_aligned_records_carry_their_ranges(self):
+        records = self.chapter_data("jhn/2")["records"]
+        linked = [r for r in records if r["links"]]
+        self.assertTrue(linked)
+        for r in linked:
+            text = r["renderings"]["en"]["B"]
+            for (start, end, tokens), al in zip(r["links"]["en"]["B"], r["alignments"]):
+                self.assertEqual(al["tokens"], tokens)
+                # Curly quotes on the page keep every range in place.
+                self.assertEqual(build_site.smart_quotes(al["target_span"]), text[start:end])
 
     def test_read_page_groups_chapters_by_book(self):
         read = (self.out / "read" / "index.html").read_text(encoding="utf-8")
