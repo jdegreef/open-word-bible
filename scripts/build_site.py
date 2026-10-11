@@ -699,8 +699,8 @@ def chapter_page(book, chapter, lang="en"):
         buttons = "".join(f'<button type="button" data-value="{v}">{label}</button>' for v, label in options)
         return f'<span class="seg" data-setting="{name}">{buttons}</span>'
 
-    def control(key, name, options):
-        return f'<div class="control"><span>{t(lang, "reader." + key)}</span> {seg(name, options)}</div>'
+    def control(key, name, options, cls=""):
+        return f'<div class="control{cls}"><span>{t(lang, "reader." + key)}</span> {seg(name, options)}</div>'
 
     # Old Testament pages name the Hebrew where New Testament ones name the Greek.
     suffix = "_hbo" if source == "hbo" else ""
@@ -725,8 +725,9 @@ def chapter_page(book, chapter, lang="en"):
   {control("gender", "gender", [("0", t(lang, "reader.inclusive")), ("1", t(lang, "reader.traditional"))])}
   {title_control}
   {control("pronouns", "deity_pronoun", [("0", t(lang, "reader.he")), ("1", t(lang, "reader.He"))])}{plural}
+  {control("view", "view", [("0", t(lang, "reader.study")), ("1", t(lang, "reader.reading"))], " view-control")}
 </div>
-<p class="hint"><span id="hint-level"></span> <span id="hint-gender"></span> <span id="hint-{title_setting}"></span> <span id="hint-deity_pronoun"></span> <span id="hint-plural_you"></span></p>
+<p class="hint"><span id="hint-level"></span> <span id="hint-gender"></span> <span id="hint-{title_setting}"></span> <span id="hint-deity_pronoun"></span> <span id="hint-plural_you"></span> <span id="hint-view"></span></p>
 </div>
 <div class="reader">
   <article class="passage">

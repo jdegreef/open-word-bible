@@ -321,6 +321,15 @@ class SiteTest(unittest.TestCase):
         for places in index.values():
             self.assertEqual(len(places), len(set(places)))
 
+    def test_reader_has_a_reading_view(self):
+        page = (self.out / "jhn" / "2" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('<span class="seg" data-setting="view">', page)
+        self.assertIn('id="hint-view"', page)
+        reader = (self.out / "reader.js").read_text(encoding="utf-8")
+        # Copying from the passage adds its reference and level.
+        self.assertIn('addEventListener("copy"', reader)
+        self.assertIn('" (Open Word Bible, "', reader)
+
     def test_read_page_groups_chapters_by_book(self):
         read = (self.out / "read" / "index.html").read_text(encoding="utf-8")
         for book, chaps in build_site.books():
