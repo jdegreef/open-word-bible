@@ -519,10 +519,26 @@ def passages():
     return tuple(out)
 
 
-def books():
-    """The books with content, in canonical order, as (book, [Passage])."""
-    grouped = {}
+def passages_in(lang):
+    """The chapters with sentences in lang, each holding only those
+    sentences: a chapter is complete in lang only if every sentence of it
+    is in lang."""
+    out = []
     for p in passages():
+        records = [r for r in p.records if lang in r["renderings"]]
+        if len(records) == len(p.records):
+            out.append(p)
+        elif records:
+            out.append(p._replace(records=records, verses=len(own_verses(records, p.chapter)),
+                                  complete=False))
+    return out
+
+
+def books(lang=None):
+    """The books with content, in canonical order, as (book, [Passage]);
+    with lang, only the books and chapters with sentences in lang."""
+    grouped = {}
+    for p in (passages() if lang is None else passages_in(lang)):
         grouped.setdefault(p.book, []).append(p)
     return list(grouped.items())
 
@@ -828,10 +844,13 @@ def example_html(lang="en"):
 
 
 def progress_html(lang="en"):
-    records = all_records()
-    decisions = sum(len(r["decisions"]) for r in records)
+    """The home page's progress: sentences, decisions, books and chapters
+    in the page's language only. A sentence's decisions in lang are its
+    meaning decisions and its rendering decisions for lang."""
+    records = [r for r in all_records() if lang in r["renderings"]]
+    decisions = sum(d["language"] in (None, lang) for r in records for d in r["decisions"])
     rows = []
-    for book, chaps in books():
+    for book, chaps in books(lang):
         done, total, progress = book_progress(book, chaps, lang)
         rows.append(f'<li class="book-row"><a class="book-name" href="{url(lang, f"/read/#{book.lower()}")}">'
                     f'{BOOK_NAMES[book][lang]}</a>{meter(done, total)}'

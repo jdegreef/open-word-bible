@@ -242,6 +242,19 @@ class SiteTest(unittest.TestCase):
             if i + 1 < len(ps):
                 self.assertIn(f'href="{ps[i + 1].url}" rel="next"', turns)
 
+    def test_home_page_progress_is_for_its_language(self):
+        for lang in build_site.LANGUAGES:
+            home = (self.out / build_site.url(lang, "/").lstrip("/") / "index.html").read_text(encoding="utf-8")
+            progress = home[home.index('class="progress"'):home.index('class="latest"')]
+            records = [r for r in build_site.all_records() if lang in r["renderings"]]
+            decisions = sum(d["language"] in (None, lang) for r in records for d in r["decisions"])
+            self.assertIn(f"<b>{len(records)}</b>", progress)
+            self.assertIn(f"<b>{decisions}</b>", progress)
+            shown = {(r.book, r.chapter) for r in map(build_site.refs.parse, (r["refs"][0] for r in records))}
+            for p in build_site.passages():
+                link = f'href="{build_site.url(lang, p.url)}"'
+                self.assertEqual(link in progress, (p.book, p.chapter) in shown, (lang, p.url))
+
     def test_read_page_groups_chapters_by_book(self):
         read = (self.out / "read" / "index.html").read_text(encoding="utf-8")
         for book, chaps in build_site.books():
