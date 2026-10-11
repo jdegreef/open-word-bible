@@ -200,7 +200,23 @@
     document.getElementById("title").textContent = DATA.title;
     var shown = null;   // last verse number printed
     var notes = [];
+    var starts = new Set(DATA.paragraphs);
+    var para = null;    // the paragraph being filled
     DATA.records.forEach(function (r) {
+      // A section heading, then a new paragraph where the Greek starts one.
+      // The heading is shown in the language its sentence is shown in, and
+      // left out until it has that language.
+      var heading = DATA.headings[r.id];
+      var hlang = heading && [settings.lang, textLang(r)].filter(function (l) { return heading[l]; })[0];
+      if (hlang) {
+        var h = el("h2", "section-head" + (hlang === settings.lang ? "" : " fallback"), render(heading[hlang]));
+        if (hlang !== settings.lang) h.lang = hlang;
+        box.appendChild(h);
+      }
+      if (!para || heading || starts.has(r.id)) {
+        para = el("p", "para");
+        box.appendChild(para);
+      }
       var ds = decisionsFor(r);
       var marks = ds.meaning.concat(ds.rendering).filter(function (d) { return d.footnote; })
         .map(function (d) {
@@ -239,8 +255,8 @@
         span.addEventListener("keydown", function (e) {
           if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(r, part[0]); }
         });
-        box.appendChild(span);
-        box.appendChild(document.createTextNode(" "));
+        para.appendChild(span);
+        para.appendChild(document.createTextNode(" "));
       });
     });
     drawNotes(notes);
@@ -518,6 +534,13 @@
       });
     });
   });
+
+  // On phones the chapter pills are one row that scrolls sideways; bring
+  // this chapter's pill into view.
+  var pills = document.querySelector(".chapstrip .chap-pills");
+  var here = pills && pills.querySelector("[aria-current]");
+  if (here && pills.scrollWidth > pills.clientWidth)
+    pills.scrollLeft = here.offsetLeft - pills.offsetLeft - pills.clientWidth / 2 + here.offsetWidth / 2;
 
   var start = hashVerse();
   var record = start && DATA.records.find(function (r) {

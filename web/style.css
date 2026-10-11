@@ -479,6 +479,9 @@ footer.site .foot-langs ul { display: flex; flex-wrap: wrap; gap: 6px 18px; }
 }
 .chap:hover { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
 .chap.part { border-style: dashed; }
+/* A chapter not yet translated: shown so the reader sees the whole book. */
+.chap.none { border-style: dotted; color: var(--muted); opacity: .55; cursor: default; }
+.chap.none:hover { border-color: var(--line-strong); background: none; color: var(--muted); }
 .chap[aria-current] { background: var(--accent); border-color: var(--accent); color: var(--accent-contrast); }
 .book-rows { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
 .book-row {
@@ -508,6 +511,9 @@ footer.site .foot-langs ul { display: flex; flex-wrap: wrap; gap: 6px 18px; }
 .chap-book { display: inline-flex; align-items: center; gap: 7px; font-weight: 700; font-size: 14px; letter-spacing: .02em; color: var(--accent); text-decoration: none; }
 .chap-book:hover { text-decoration: underline; }
 .chapstrip .chap { min-width: 30px; height: 30px; font-size: 13px; }
+/* The book and its progress on one line, every chapter on the next. */
+.chapstrip .chap-pills { order: 3; flex-basis: 100%; gap: 5px; }
+.chapstrip .chap-progress { margin-left: auto; }
 .chap-progress { font-size: 13px; color: var(--muted); }
 .chapstrip + h1 { margin-top: 14px; }
 .turns { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 40px 0 0; padding-top: 28px; border-top: 1px solid var(--line); }
@@ -672,11 +678,22 @@ footer.site .foot-langs ul { display: flex; flex-wrap: wrap; gap: 6px 18px; }
    choices, so the passage starts on the first screen. */
 .settings-toggle, .sheet-close { display: none; }
 
-.reader { display: grid; grid-template-columns: minmax(0, 1fr) 420px; gap: 40px; align-items: start; }
+.reader { display: grid; grid-template-columns: minmax(0, 1fr) clamp(340px, 34vw, 460px); gap: 40px; align-items: start; }
 .passage { max-width: 680px; }
 .passage h1 { font-family: var(--display); font-weight: 600; font-size: clamp(30px, 4vw, 40px); letter-spacing: -.02em; margin: 36px 0 6px; }
 .passage .sub { color: var(--muted); font-size: 14px; margin: 0 0 16px; }
-.text { font-family: var(--serif); font-size: 21px; line-height: 1.8; }
+/* About 65 characters a line, the comfortable measure for long reading. */
+.text { font-family: var(--serif); font-size: 21px; line-height: 1.8; max-width: 29em; }
+/* Paragraphs follow SBLGNT's; section headings (data/headings.json) are
+   editorial aids, set apart from the text in the interface font. */
+.text .para { margin: 0 0 .85em; }
+.text .para:last-child { margin-bottom: 0; }
+.section-head {
+  font-family: var(--sans); font-size: 16px; font-weight: 700; letter-spacing: .01em; line-height: 1.35;
+  color: var(--text); margin: 1.9em 0 .5em;
+}
+.text > .section-head:first-child { margin-top: .4em; }
+.section-head.fallback { color: var(--muted); }
 .verse { cursor: pointer; border-radius: 3px; padding: 1px 0; }
 .verse:hover { background: var(--accent-soft); }
 .verse[aria-current="true"] { background: var(--mark); }
@@ -823,6 +840,9 @@ footer.site .foot-langs ul { display: flex; flex-wrap: wrap; gap: 6px 18px; }
   .book-row { grid-template-columns: 1fr auto; grid-template-areas: "name progress" "bar bar" "pills pills"; padding: 14px 16px; }
   .book-head { grid-template-columns: 1fr auto; }
   .book-head .meter { grid-column: 1 / -1; max-width: none; }
+  .chapstrip .chap-pills { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding: 2px 0; min-width: 0; max-width: 100%; }
+  .chapstrip .chap-pills::-webkit-scrollbar { display: none; }
+  .chapstrip .chap { flex: none; }
   .turn { padding: 12px 14px; }
   .turn-name { font-size: 17px; }
   .involve { padding: 28px 22px; }
@@ -837,7 +857,7 @@ footer.site .foot-langs ul { display: flex; flex-wrap: wrap; gap: 6px 18px; }
 }
 
 @media (max-width: 860px) {
-  .reader { grid-template-columns: 1fr; }
+  .reader { grid-template-columns: minmax(0, 1fr); }
   .example-grid { grid-template-columns: 1fr; padding: 20px; }
   .involve { grid-template-columns: 1fr; }
   .lvl { grid-template-columns: 1fr; gap: 2px; }

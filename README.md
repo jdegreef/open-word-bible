@@ -57,6 +57,16 @@ reader setting, or name a target language. Every setting span needs a
 default and at least one distinct, non-empty alternative, and a
 `deity_pronoun` alternative only capitalises the default.
 
+## Paragraphs and headings
+
+The reader breaks the text into paragraphs where SBLGNT does: SBLGNT
+capitalises a paragraph's first word (`paragraph_starts` in
+`scripts/build_site.py`). Section headings are editorial aids, not
+translation: `data/headings.json` keys each one by the record it stands
+above, per language, and they stay AI drafts until a named reviewer
+approves them. A page shows a heading only in the language its sentence is
+shown in.
+
 ## Reader settings
 
 Reader settings are stored as marked alternatives inside the text. The first

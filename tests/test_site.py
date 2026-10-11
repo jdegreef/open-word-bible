@@ -226,6 +226,31 @@ class SiteTest(unittest.TestCase):
             if i + 1 < len(ps):
                 self.assertIn(f'href="{ps[i + 1].url}" rel="next"', turns)
 
+    def test_paragraphs_follow_the_greek(self):
+        # SBLGNT capitalises a paragraph's first word; John 2 has four.
+        self.assertEqual(self.chapter_data("jhn/2")["paragraphs"],
+                         ["JHN.2.1.s1", "JHN.2.12.s1", "JHN.2.13.s1", "JHN.2.23.s1"])
+        # A capitalised quotation after a raised dot does not open one.
+        self.assertNotIn("JHN.4.29.s1", self.chapter_data("jhn/4")["paragraphs"])
+
+    def test_headings_stand_above_paragraphs(self):
+        ids = {r["id"] for b, c in build_site.chapters() for r in build_site.load_chapter(b, c)[0]}
+        for rid, heading in build_site.headings().items():
+            self.assertIn(rid, ids, rid)
+            self.assertIn("en", heading, rid)
+            book, chapter = rid.split(".")[:2]
+            data = self.chapter_data(f"{book.lower()}/{chapter}")
+            self.assertIn(rid, data["paragraphs"], rid)
+            self.assertEqual(data["headings"][rid], heading)
+
+    def test_chapter_strip_shows_the_whole_book(self):
+        page = (self.out / "jhn" / "1" / "index.html").read_text(encoding="utf-8")
+        strip = re.search(r'<nav class="chapstrip"(.*?)</nav>', page, re.S)[1]
+        done = {p.chapter for p in build_site.passages() if p.book == "JHN"}
+        pills = re.findall(r'class="chap[^"]*"[^>]*>(\d+)<', strip)
+        self.assertEqual([int(n) for n in pills], list(range(1, build_site.BOOK_CHAPTERS["JHN"] + 1)))
+        self.assertEqual(len(re.findall(r'class="chap none"', strip)), 21 - len(done))
+
     def test_read_page_groups_chapters_by_book(self):
         read = (self.out / "read" / "index.html").read_text(encoding="utf-8")
         for book, chaps in build_site.books():
