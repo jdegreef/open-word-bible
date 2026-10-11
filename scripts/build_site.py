@@ -91,6 +91,7 @@ ICONS = {
     "code": '<path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/>',
     "users": '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6 6 0 0 1 3.5 6"/>',
     "check": '<path d="M20 6 9 17l-5-5"/>',
+    "download": '<path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/>',
     "user": '<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>',
     "search": '<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>',
     "github": '<path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/>',
@@ -246,6 +247,7 @@ def page(lang, title, body, path=None, current="", description="", card="site", 
 <meta name="owb-api" content="{API_URL}">
 <meta name="owb-search" content="{search_index_url(lang)}">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/manifest.webmanifest">
 <script>{boot}</script>
 <link rel="preload" href="/fonts/hanken-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/gentium-book-plus-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -930,6 +932,25 @@ def resume_link(lang):
             f'{icon(ICONS["book"])}<span></span></a>')
 
 
+def save_button(book, chaps, lang):
+    """A book's "Save for offline" button on the Read page: web/site.js
+    stores the pages it names in the owb-books cache, which web/sw.js reads
+    when there is no connection. Hidden where the browser cannot."""
+    pages = json.dumps([url(lang, chapter_url(p.book, p.chapter)) for p in chaps])
+    labels = "".join(f' data-{k}="{html.escape(t(lang, "offline." + k))}"'
+                     for k in ("save", "saving", "saved", "failed"))
+    return (f'<button type="button" class="save-book" hidden data-book="{book}" '
+            f'data-name="{html.escape(BOOK_NAMES[book][lang])}" data-pages="{html.escape(pages)}"{labels}>'
+            f'{icon(ICONS["download"], 16)}<span>{t(lang, "offline.save")}</span></button>')
+
+
+def offline_files(lang):
+    """What a saved book needs besides its pages and what web/sw.js keeps
+    anyway: the reader, the word index, the search index and the fonts."""
+    fonts = sorted(f"/fonts/{f.name}" for f in (ROOT / "web" / "fonts").glob("*.woff2"))
+    return [url(lang, "/read/"), asset("reader.js"), word_uses()[1], search_index_url(lang)] + fonts
+
+
 def read_page(lang="en"):
     groups = []
     for book, chaps in books(lang):
@@ -938,11 +959,11 @@ def read_page(lang="en"):
             f'<section class="book-group" id="{book.lower()}" aria-labelledby="book-{book.lower()}">'
             f'<div class="book-head"><h2 id="book-{book.lower()}">{BOOK_NAMES[book][lang]}</h2>'
             f'<span class="book-progress{" done" if done == total else ""}">{progress}</span>'
-            f'{meter(done, total)}</div>'
+            f'{meter(done, total)}{save_button(book, chaps, lang)}</div>'
             f'<ul class="a-grid">{"".join(passage_card(p.book, p.chapter, lang) for p in chaps)}</ul></section>')
     cards = "".join(groups)
     body = f"""
-<header class="page-head">
+<header class="page-head" data-offline-files="{html.escape(json.dumps(offline_files(lang)))}">
 <p class="eyebrow">{t(lang, "read.title")}</p>
 <h1>{t(lang, "read.heading")}</h1>
 <p class="dek">{t(lang, "read.dek")}</p>
@@ -1571,6 +1592,42 @@ def not_found_page():
 </section>""")
 
 
+def offline_page(lang="en"):
+    """What web/sw.js shows for a page not saved on the device, with the
+    books that are (filled in by web/site.js)."""
+    return page(lang, t(lang, "offline.title"), f"""
+<section class="hero lost">
+<p class="eyebrow">{t(lang, "offline.title")}</p>
+<h1>{t(lang, "offline.heading")}</h1>
+<p class="hero-sub">{t(lang, "offline.sub")}</p>
+<p class="actions">{resume_link(lang)}<a class="button" href="{url(lang, "/")}">{t(lang, "404.home")}</a></p>
+</section>
+<section class="saved-books" id="saved-books" hidden aria-labelledby="saved-h">
+<h2 id="saved-h">{t(lang, "offline.saved_books")}</h2>
+<ul class="book-rows"></ul>
+</section>""", unlisted="/offline/")
+
+
+def manifest():
+    return json.dumps({
+        "name": SITE_NAME, "short_name": SITE_NAME, "start_url": "/", "scope": "/",
+        "display": "standalone", "background_color": "#faf6ef", "theme_color": "#3f3d9a",
+        "icons": [{"src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml"}],
+    }, indent=2) + "\n"
+
+
+def service_worker():
+    """web/sw.js with the files to keep from the start (the styles, the
+    scripts and each language's offline page). Its version is a hash of the
+    whole, so a deploy that changes any of them installs a new worker."""
+    shell = [asset(n) for n in ("style.css", "site.js", "search.js", "reader.js", "account.js")]
+    shell += ["/favicon.svg", "/manifest.webmanifest"] + [url(lang, "/offline/") for lang in LANGUAGES]
+    offline = {("" if lang == "en" else lang): url(lang, "/offline/") for lang in LANGUAGES}
+    text = ((ROOT / "web" / "sw.js").read_text(encoding="utf-8")
+            .replace("__PRECACHE__", json.dumps(shell)).replace("__OFFLINE__", json.dumps(offline)))
+    return text.replace("__VERSION__", hashlib.sha256(text.encode()).hexdigest()[:10])
+
+
 FAVICON = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
 <rect width="64" height="64" rx="14" fill="#3f3d9a"/>
 <path d="{BOOK_PATH}" fill="#faf6ef"/>
@@ -1781,11 +1838,14 @@ def build(out):
             # left to its English page in search results.
             add(article_url(article), article_page(article, articles, lang), index=article["lang"] == lang)
         add("/account/", account_page(lang), index=False)
+        add("/offline/", offline_page(lang), index=False)
     files = {(p.strip("/") + "/index.html").lstrip("/"): text for p, text in pages.items()}
     files["404.html"] = not_found_page()
     files["sitemap.xml"] = sitemap(indexed)
     files["robots.txt"] = f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n"
     files["favicon.svg"] = FAVICON
+    files["manifest.webmanifest"] = manifest()
+    files["sw.js"] = service_worker()
     files["word-uses.json"] = word_uses()[0]
     for lang in LANGUAGES:
         files[f"search-{lang}.json"] = search_index(lang)
