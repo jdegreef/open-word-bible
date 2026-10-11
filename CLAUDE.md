@@ -21,7 +21,7 @@ summarises the data model.
   `{{setting:default|alt}}` span; disagreements about meaning are decisions
   and footnotes, not settings.
 - **Nothing is marked reviewed by Claude.** Records stay `ai_draft` until a
-  named human reviewer approves them, and readers always see the status.
+  named human reviewer approves them.
 - Don't use or redistribute MACULA's `ln` / `domain` fields (UBS MARBLE,
   used with permission, not openly licensed).
 

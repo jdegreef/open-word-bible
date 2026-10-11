@@ -232,7 +232,6 @@
     close.addEventListener("click", deselect);
     panel.appendChild(close);
     panel.appendChild(el("h2", null, DATA.title.replace(/[\d:\u2013\s]+$/, "") + " " + DATA.chapter + ":" + verseRange(current)));
-    panel.appendChild(el("span", "status", t("status")));
 
     panel.appendChild(el("h3", null, t("greek")));
     // Interlinear: each Greek word over its gloss. Tapping one shows its

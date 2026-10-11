@@ -646,16 +646,6 @@ def opening_verse(records, lang="en"):
     return plain(markup.VERSE.split(first["renderings"][text_lang(first, lang)]["B"])[0])
 
 
-def review_label(records, lang="en"):
-    """How far review has got, from the records' own status."""
-    reviewed = sum(r["status"] != "ai_draft" for r in records)
-    if reviewed == 0:
-        return t(lang, "status.draft")
-    if reviewed == len(records):
-        return t(lang, "status.reviewed")
-    return t(lang, "status.some", n=reviewed, total=len(records))
-
-
 def passage_card(book, chapter, lang="en"):
     """A passage as a card in the article-card style: its opening verse at
     the default settings, and how much of it is translated and recorded."""
@@ -674,8 +664,7 @@ def passage_card(book, chapter, lang="en"):
             f'<span class="a-section">{BOOK_NAMES[book][lang]} &middot; {languages_label(records)}</span>'
             f'<span class="a-title">{display(chapter_name(records, book, chapter, lang))}</span>'
             f'<span class="p-opening"{lang_attr(text_lang(records[0], lang), lang)}>{q.format(display(opening))}</span>'
-            f'<span class="a-meta">{meta}</span>'
-            f'<span class="p-status"><span class="status">{review_label(records, lang)}</span></span></a></li>')
+            f'<span class="a-meta">{meta}</span></a></li>')
 
 
 def read_page(lang="en"):
@@ -783,7 +772,6 @@ def example_html(lang="en"):
 def progress_html(lang="en"):
     records = all_records()
     decisions = sum(len(r["decisions"]) for r in records)
-    reviewed = sum(r["status"] != "ai_draft" for r in records)
     rows = []
     for book, chaps in books():
         done, total, progress = book_progress(book, chaps, lang)
@@ -797,7 +785,7 @@ def progress_html(lang="en"):
 <div class="stats">
 <div><b>{len(records)}</b><span>{t(lang, "home.stat_sentences")}</span></div>
 <div><b>{decisions}</b><span>{t(lang, "home.stat_decisions")}</span></div>
-<div><b>{reviewed}</b><span>{t(lang, "home.stat_reviewed")}</span></div>
+<div><b>{len(LANGUAGES)}</b><span>{t(lang, "home.stat_languages")}</span></div>
 </div>
 <p>{t(lang, "home.progress_text")}</p>
 <p class="label">{t(lang, "nav.books_so_far")}</p>
@@ -1208,8 +1196,7 @@ def article_page(article, articles, lang="en"):
 {untranslated}<p class="eyebrow"><a href="{url(lang, "/articles/")}#{article["section"]}">{section}</a></p>
 <h1{tl}>{display(article["title"])}</h1>
 <p class="dek"{tl}>{display(article["summary"])}</p>
-<p class="byline">{MARK}<span>Open Word Bible &middot; {_date(article["date"], lang)} &middot; {t(lang, "article.min_read", n=article["minutes"])}
-<span class="status">{t(lang, "article.status")}</span></span></p>
+<p class="byline">{MARK}<span>Open Word Bible &middot; {_date(article["date"], lang)} &middot; {t(lang, "article.min_read", n=article["minutes"])}</span></p>
 </header>
 <div class="article-body"{tl}>
 {content}
