@@ -277,7 +277,7 @@ class SiteTest(unittest.TestCase):
     def test_home_page_progress_is_for_its_language(self):
         for lang in build_site.LANGUAGES:
             home = (self.out / build_site.url(lang, "/").lstrip("/") / "index.html").read_text(encoding="utf-8")
-            progress = home[home.index('class="progress"'):home.index('class="latest"')]
+            progress = home[home.index('class="progress"'):home.index('class="involve"')]
             records = [r for r in build_site.all_records() if lang in r["renderings"]]
             decisions = sum(d["language"] in (None, lang) for r in records for d in r["decisions"])
             self.assertIn(f"<b>{len(records)}</b>", progress)
