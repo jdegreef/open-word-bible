@@ -148,6 +148,8 @@ Settings change wording, never meaning. **(checked)** Use a setting span
   `about {{units:20 to 30 gallons|two or three measures}}`. Literal keeps the
   original unit. US units are the modern default; metric belongs to a future
   UK/metric setting, not to `units`.
+  The reader shows a Measures control on any page whose text has a `units`
+  span. A cubit is about 18 inches (Genesis 6:15).
 - `divine_name`, `units`, `spelling`: when they apply (the Old Testament,
   measures and money).
 

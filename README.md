@@ -33,10 +33,10 @@ Decisions come in two layers:
 Each decision names its tokens, category, choice, alternatives and reason,
 and whether it is uncertain or needs a footnote.
 
-Content: Genesis 1–5 (`content/GEN/`) in English; John 1–8
+Content: Genesis 1–6 (`content/GEN/`) in English; John 1–8
 (`content/JHN/`) in English, with chapters 1–5 also in Spanish, chapters
-1–2 in French and chapters 1–4 in Swahili; Romans 1 and 9–16 (`content/ROM/`) in
-English; all of Philippians (`content/PHP/`) in English, with chapter 4
+1–2 in French and chapters 1–5 in Swahili; Romans 1 and 9–16 (`content/ROM/`) in
+English; all of Galatians (`content/GAL/`) in English; all of Philippians (`content/PHP/`) in English, with chapter 4
 also in Spanish; all of Ephesians (`content/EPH/`) and Colossians
 (`content/COL/`) in English; and all of James, 1 and 2 Peter and 1 John
 (`content/JAS/`, `content/1PE/`, `content/2PE/`, `content/1JN/`) in English.
