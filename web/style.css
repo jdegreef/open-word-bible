@@ -790,6 +790,18 @@ footer.site .foot-langs ul { display: flex; flex-wrap: wrap; gap: 6px 18px; }
 .wi-lemma { font-family: var(--greek); font-size: 22px; }
 .wi-label { font-size: 12px; color: var(--muted); }
 .wi-grammar { font-size: 14px; margin-top: 4px !important; }
+/* Elsewhere in the translation: the word's other verses. */
+.uses { margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--accent-soft-border); }
+.uses-title { font-size: 13px; color: var(--muted); margin: 0 0 6px !important; }
+.uses-list { display: flex; flex-wrap: wrap; gap: 5px; margin: 0 !important; }
+.use {
+  display: inline-block; padding: 2px 9px; border: 1px solid var(--accent-soft-border); border-radius: 999px;
+  background: var(--surface); color: var(--accent); font: inherit; font-size: 12.5px; font-weight: 600;
+  text-decoration: none; cursor: pointer; white-space: nowrap;
+}
+.use:hover { border-color: var(--accent); }
+.use:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.use-more { color: var(--muted); }
 .wi-gloss { font-size: 14px; color: var(--muted); font-style: italic; }
 .gloss { font-style: italic; color: var(--muted); font-size: 15px; margin: 0; }
 .card { border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 11px 14px; margin: 0 0 8px; cursor: pointer; }

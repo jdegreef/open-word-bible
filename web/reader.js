@@ -374,6 +374,65 @@
     return card;
   }
 
+  // Elsewhere in the translation: every other verse with this dictionary
+  // form, from the site-wide index (fetched once, on the first tap).
+  var usesIndex = null;
+  function loadUses() {
+    if (!usesIndex) {
+      usesIndex = fetch(DATA.uses).then(function (r) {
+        if (!r.ok) throw new Error(r.status);
+        return r.json();
+      });
+      usesIndex.catch(function () { usesIndex = null; });
+    }
+    return usesIndex;
+  }
+
+  function verseUrl(vid) {
+    var p = vid.split(".");
+    if (p[0] === DATA.book && Number(p[1]) === DATA.chapter) return "#v" + p[2];
+    return (DATA.lang === "en" ? "" : "/" + DATA.lang) + "/" + p[0].toLowerCase() + "/" + p[1] + "/#v" + p[2];
+  }
+
+  function drawUses(word) {
+    var box = el("div", "uses");
+    box.appendChild(el("p", "uses-title", t("uses_loading")));
+    var here = Object.keys(DATA.words).filter(function (vid) {
+      return DATA.words[vid].some(function (w) { return w.id === word.id; });
+    })[0];
+    loadUses().then(function (index) {
+      var places = (index[word.lemma] || []).filter(function (vid) { return vid !== here; });
+      box.textContent = "";
+      var n = places.length;
+      box.appendChild(el("p", "uses-title",
+        n ? t(n === 1 ? "uses_one" : "uses_many").replace("{n}", n) : t("uses_none")));
+      if (!n) return;
+      var list = el("p", "uses-list");
+      var SHOW = 12;
+      function add(from, to) {
+        places.slice(from, to).forEach(function (vid) {
+          var p = vid.split(".");
+          var a = el("a", "use", (DATA.books[p[0]] || p[0]) + " " + p[1] + ":" + p[2]);
+          a.href = verseUrl(vid);
+          list.insertBefore(a, more);
+        });
+      }
+      var more = null;
+      if (n > SHOW) {
+        more = el("button", "use use-more", t("uses_all").replace("{n}", n));
+        more.type = "button";
+        more.addEventListener("click", function () { add(SHOW, n); more.remove(); });
+        list.appendChild(more);
+      }
+      add(0, SHOW);
+      box.appendChild(list);
+    }, function () {
+      box.textContent = "";
+      box.appendChild(el("p", "uses-title", t("uses_failed")));
+    });
+    return box;
+  }
+
   function drawPanel() {
     var panel = panelEl;
     panel.textContent = "";
@@ -429,6 +488,7 @@
         var key = (word.lang === "A" ? "A:" : "") + word.morph;
         info.appendChild(el("p", "wi-grammar", DATA.grammar[key][settings.lang]));
         info.appendChild(el("p", "wi-gloss", "\u201c" + (HEBREW ? word.gloss.replace(/\./g, " ") : word.gloss) + "\u201d"));
+        info.appendChild(drawUses(word));
         info.hidden = false;
         var ids = [];
         current.decisions.forEach(function (d) { if (d.tokens.includes(word.id)) ids = ids.concat(d.tokens); });

@@ -527,6 +527,28 @@ def paragraph_starts(records, words):
     return starts
 
 
+@functools.lru_cache(maxsize=None)
+def word_uses():
+    """Every dictionary form in the translated sentences, with the verses it
+    is in, in canonical order: the reader's "elsewhere" list for a word. As
+    JSON, and its URL with a content hash, so a deploy is never served an old
+    copy. Pages fetch it only when a reader taps a word."""
+    uses = {}
+    for book, chapter in chapters():
+        records, words = load_chapter(book, chapter)
+        lemma = {w["id"]: w["lemma"] for ws in words.values() for w in ws}
+        verse_of = {w["id"]: vid for vid, ws in words.items() for w in ws}
+        for r in records:
+            for token in r["source"]["tokens"]:
+                verse = verse_of.get(token)
+                if token in lemma and verse:
+                    places = uses.setdefault(lemma[token], [])
+                    if not places or places[-1] != verse:
+                        places.append(verse)
+    text = json.dumps(uses, ensure_ascii=False, separators=(",", ":"))
+    return text, f"/word-uses.json?v={hashlib.sha256(text.encode()).hexdigest()[:10]}"
+
+
 @functools.cache
 def headings():
     """Section headings by the record they stand above (data/headings.json),
@@ -663,6 +685,8 @@ def chapter_page(book, chapter, lang="en"):
             "paragraphs": paragraph_starts(records, words),
             "headings": {r["id"]: headings()[r["id"]] for r in records if r["id"] in headings()}}
     # Each morphology code's description in every language, once per page.
+    data["uses"] = word_uses()[1]
+    data["books"] = {b: BOOK_NAMES[b][lang] for b, _ in books()}
     data["grammar"] = {grammar_key(w): {l: describe(w, l) for l in LANGUAGES}
                        for ws in data["words"].values() for w in ws}
     # "</" cannot appear inside a script element.
@@ -1461,7 +1485,7 @@ def sitemap(paths):
 
 
 def build(out):
-    for cached in (nav_menus, footer_links, passages, asset, translated_verses, catalog):
+    for cached in (nav_menus, footer_links, passages, asset, translated_verses, catalog, word_uses):
         cached.cache_clear()
     if out.exists():
         shutil.rmtree(out)
@@ -1489,6 +1513,7 @@ def build(out):
     files["sitemap.xml"] = sitemap(indexed)
     files["robots.txt"] = f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n"
     files["favicon.svg"] = FAVICON
+    files["word-uses.json"] = word_uses()[0]
     for rel, text in files.items():
         path = out / rel
         path.parent.mkdir(parents=True, exist_ok=True)

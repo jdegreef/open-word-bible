@@ -281,6 +281,21 @@ class SiteTest(unittest.TestCase):
                 # Curly quotes on the page keep every range in place.
                 self.assertEqual(build_site.smart_quotes(al["target_span"]), text[start:end])
 
+    def test_word_uses_index(self):
+        text = (self.out / "word-uses.json").read_text(encoding="utf-8")
+        index = json.loads(text)
+        data = self.chapter_data("jhn/2")
+        # Each page points at this build's copy of the index.
+        self.assertEqual(data["uses"], build_site.word_uses()[1])
+        self.assertIn(hashlib.sha256(text.encode()).hexdigest()[:10], data["uses"])
+        # Every word of a translated sentence is listed at its verse, once.
+        record = data["records"][0]
+        for word in data["words"]["JHN.2.1"]:
+            if word["id"] in record["source"]["tokens"]:
+                self.assertIn("JHN.2.1", index[word["lemma"]])
+        for places in index.values():
+            self.assertEqual(len(places), len(set(places)))
+
     def test_read_page_groups_chapters_by_book(self):
         read = (self.out / "read" / "index.html").read_text(encoding="utf-8")
         for book, chaps in build_site.books():
