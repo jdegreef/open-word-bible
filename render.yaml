@@ -28,8 +28,8 @@ services:
       - path: /*
         name: Referrer-Policy
         value: strict-origin-when-cross-origin
-      # The service worker must never be kept stale, or a new version of the
-      # site would wait for it.
+      # The offline worker (web/sw.js) is checked on every visit, so a
+      # deploy reaches readers at once.
       - path: /sw.js
         name: Cache-Control
         value: no-cache

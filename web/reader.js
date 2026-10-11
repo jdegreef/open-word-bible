@@ -18,7 +18,7 @@
   // The reading language is the page's (/es/... is Spanish); the footer
   // switches it. The other settings are kept across pages and languages.
   var settings = { level: "B", gender: 0, christos: 0, divine_name: 0, deity_pronoun: 0, units: 0, plural_you: 0, view: 0,
-                   uncertain: 0, partner: "" };
+                   headings: 0, uncertain: 0, partner: "" };
   try {
     var saved = JSON.parse(localStorage.getItem(STORE) || "{}");
     for (var k in settings) if (k in saved) settings[k] = saved[k];
@@ -273,13 +273,14 @@
     // A page shows either the divine name (Old Testament) or the title
     // Christ (New Testament), and measures only where it has them, so
     // some hints are missing.
-    ["gender", "christos", "divine_name", "deity_pronoun", "units", "plural_you", "view"].forEach(function (name) {
+    ["gender", "christos", "divine_name", "deity_pronoun", "units", "plural_you", "view", "headings"].forEach(function (name) {
       var hint = document.getElementById("hint-" + name);
       if (hint) hint.textContent = t("hint_" + name)[settings[name]];
     });
     // The summary on the phone settings button: each shown choice's label.
     var summary = [];
-    document.querySelectorAll(".control:not([hidden]) .seg").forEach(function (seg) {
+    // "Show" or "Hide" means nothing without its label, so headings are left out.
+    document.querySelectorAll(".control:not([hidden]) .seg:not([data-setting=headings])").forEach(function (seg) {
       var on = seg.querySelector('[aria-pressed="true"]');
       if (on && seg.children.length > 1) summary.push(on.textContent);
     });
@@ -298,6 +299,10 @@
       views.querySelector('[data-value="3"]').hidden = !anyLinks();
     }
   }
+
+  // The headings control only where the chapter has headings.
+  var headingsSeg = document.querySelector('[data-setting="headings"]');
+  if (headingsSeg && !Object.keys(DATA.headings).length) headingsSeg.parentNode.hidden = true;
 
   // Reading view: the text alone, without verse numbers, footnote letters or
   // the reasoning panel; verses are not buttons.
@@ -458,9 +463,12 @@
       }
       // A section heading, then a new paragraph where the Greek starts one.
       // The heading is shown in the language its sentence is shown in, and
-      // left out until it has that language.
+      // left out until it has that language. Headings are editorial, not
+      // translation, so the reader can hide them; a hidden heading still
+      // starts its paragraph, so the text does not reflow.
       var heading = DATA.headings[r.id];
-      var hlang = heading && [settings.lang, textLang(r)].filter(function (l) { return heading[l]; })[0];
+      var hlang = heading && settings.headings === 0 &&
+        [settings.lang, textLang(r)].filter(function (l) { return heading[l]; })[0];
       if (hlang) {
         var h = el("h2", "section-head" + (hlang === settings.lang ? "" : " fallback"), render(heading[hlang]));
         if (hlang !== settings.lang) h.lang = hlang;
@@ -575,7 +583,7 @@
     box.appendChild(parallelRow(DATA.languages.indexOf(settings.lang) >= 0 ? settings.lang : "en", other, true));
     DATA.records.forEach(function (r) {
       var heading = DATA.headings[r.id];
-      if (heading && (heading[settings.lang] || heading.en)) {
+      if (heading && settings.headings === 0 && (heading[settings.lang] || heading.en)) {
         box.appendChild(el("h2", "section-head", render(heading[settings.lang] || heading.en)));
       }
       var row = el("div", "prow" + (starts.has(r.id) ? " pstart" : ""));

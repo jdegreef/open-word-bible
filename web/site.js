@@ -1,95 +1,82 @@
-// The colour-mode menu behind the gear in the header (see COLOUR_MENU in
-// scripts/build_site.py). The choice is kept in localStorage and applied as
-// data-theme on <html>; "auto" removes it so the page follows the device.
-// The inline boot script in each page applies a saved choice before paint.
+// The display menu behind the gear in the header (see colour_menu in
+// scripts/build_site.py): the colour mode, then the reading text's size,
+// typeface and line spacing. Each radiogroup is one setting (data-pref); a
+// choice is kept in localStorage as owb-<pref> and applied as data-<pref> on
+// <html>, and the default (data-default; "auto" for the colour mode, which
+// follows the device) removes both. The inline boot script in each page
+// applies saved choices before paint.
 (function () {
   "use strict";
-  var KEY = "owb-theme";
   var MODES = ["light", "sepia", "dark", "night", "contrast"];
   var root = document.documentElement;
   var button = document.querySelector(".prefs-btn");
   var menu = document.getElementById("colour-menu");
   if (!button || !menu) return;
-  var options = Array.prototype.slice.call(menu.querySelectorAll("[data-theme-option]"));
+  var groups = Array.prototype.slice.call(menu.querySelectorAll("[data-pref]"));
 
-  function current() {
-    var t = root.getAttribute("data-theme");
-    return MODES.indexOf(t) >= 0 ? t : "auto";
+  function optionsOf(group) {
+    return Array.prototype.slice.call(group.querySelectorAll("[data-value]"));
   }
 
-  function mark() {
-    var value = current();
-    options.forEach(function (o) {
-      var on = o.getAttribute("data-theme-option") === value;
+  function current(group) {
+    var pref = group.getAttribute("data-pref");
+    var v = root.getAttribute("data-" + pref);
+    var known = pref === "theme" ? MODES.indexOf(v) >= 0
+      : optionsOf(group).some(function (o) { return o.getAttribute("data-value") === v; });
+    return known ? v : group.getAttribute("data-default");
+  }
+
+  function mark(group) {
+    var value = current(group);
+    optionsOf(group).forEach(function (o) {
+      var on = o.getAttribute("data-value") === value;
       o.setAttribute("aria-checked", on ? "true" : "false");
       o.tabIndex = on ? 0 : -1;
     });
   }
 
-  function choose(value) {
-    if (value === "auto") root.removeAttribute("data-theme");
-    else root.setAttribute("data-theme", value);
+  function choose(group, value) {
+    var pref = group.getAttribute("data-pref");
+    var isDefault = value === group.getAttribute("data-default");
+    if (isDefault) root.removeAttribute("data-" + pref);
+    else root.setAttribute("data-" + pref, value);
     try {
-      if (value === "auto") localStorage.removeItem(KEY);
-      else localStorage.setItem(KEY, value);
+      if (isDefault) localStorage.removeItem("owb-" + pref);
+      else localStorage.setItem("owb-" + pref, value);
     } catch (e) { /* storage blocked: the choice lasts for this page only */ }
-    mark();
+    mark(group);
   }
 
   function open(show) {
     menu.hidden = !show;
     button.setAttribute("aria-expanded", show ? "true" : "false");
     if (show) {
-      var on = options.filter(function (o) { return o.tabIndex === 0; })[0] || options[0];
+      var on = optionsOf(groups[0]).filter(function (o) { return o.tabIndex === 0; })[0] || optionsOf(groups[0])[0];
       on.focus();
     }
   }
 
   button.addEventListener("click", function () { open(menu.hidden); });
-  options.forEach(function (o, i) {
-    o.addEventListener("click", function () { choose(o.getAttribute("data-theme-option")); });
-    o.addEventListener("keydown", function (e) {
-      var step = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
-      if (!step) return;
-      e.preventDefault();
-      var next = options[(i + step + options.length) % options.length];
-      choose(next.getAttribute("data-theme-option"));
-      next.focus();
+  groups.forEach(function (group) {
+    var options = optionsOf(group);
+    options.forEach(function (o, i) {
+      o.addEventListener("click", function () { choose(group, o.getAttribute("data-value")); });
+      o.addEventListener("keydown", function (e) {
+        var step = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
+        if (!step) return;
+        e.preventDefault();
+        var next = options[(i + step + options.length) % options.length];
+        choose(group, next.getAttribute("data-value"));
+        next.focus();
+      });
     });
+    mark(group);
   });
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape" && !menu.hidden) { open(false); button.focus(); }
   });
   document.addEventListener("click", function (e) {
     if (!menu.hidden && !menu.contains(e.target) && !button.contains(e.target)) open(false);
-  });
-  mark();
-
-  // Text size and line spacing, kept like the colour mode and applied as
-  // data-size and data-spacing on <html> (the boot script does it before
-  // paint). The middle choice is the default and removes the attribute.
-  [["size", "owb-size", "m"], ["spacing", "owb-spacing", "normal"]].forEach(function (g) {
-    var name = g[0], key = g[1], plain = g[2];
-    var opts = Array.prototype.slice.call(menu.querySelectorAll("[data-" + name + "-option]"));
-    function show() {
-      var value = root.getAttribute("data-" + name) || plain;
-      opts.forEach(function (o) {
-        o.setAttribute("aria-pressed", o.getAttribute("data-" + name + "-option") === value ? "true" : "false");
-      });
-    }
-    opts.forEach(function (o) {
-      o.addEventListener("click", function () {
-        var value = o.getAttribute("data-" + name + "-option");
-        if (value === plain) root.removeAttribute("data-" + name);
-        else root.setAttribute("data-" + name, value);
-        try {
-          if (value === plain) localStorage.removeItem(key);
-          else localStorage.setItem(key, value);
-        } catch (e) { /* storage blocked */ }
-        show();
-      });
-    });
-    show();
   });
 })();
 
@@ -237,18 +224,114 @@
   });
 })();
 
-// Reading offline: the service worker (web/sw.js) keeps every page a reader
-// opens. Only where the browser allows it (https, or localhost).
-if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {
+// Reading offline (web/sw.js). The worker keeps the pages read lately; the
+// Read page's "Save for offline" button stores a whole book in the
+// owb-books cache, and owb.saved remembers which, for the button and for
+// the offline page's list.
+(function () {
+  "use strict";
+  if (!("serviceWorker" in navigator) || !("caches" in window)) return;
   window.addEventListener("load", function () {
-    var first = !navigator.serviceWorker.controller;
-    navigator.serviceWorker.register("/sw.js").then(function () {
-      // The page that installed it came before it, so keep that one too.
-      if (first && window.caches) {
-        return navigator.serviceWorker.ready.then(function () {
-          return caches.open("owb-runtime").then(function (c) { return c.add(location.pathname + location.search); });
-        });
-      }
-    }).catch(function () { /* reading online still works */ });
+    navigator.serviceWorker.register("/sw.js").catch(function () { /* no offline reading */ });
   });
-}
+
+  var SAVED = "owb.saved";
+  function saved() {
+    try { return JSON.parse(localStorage.getItem(SAVED) || "{}"); } catch (e) { return {}; }
+  }
+  function remember(list) {
+    try { localStorage.setItem(SAVED, JSON.stringify(list)); } catch (e) { /* the cache still has it */ }
+  }
+  // A book is saved per language: "es:JHN".
+  var lang = document.documentElement.lang;
+
+  var head = document.querySelector("[data-offline-files]");
+  var files = head ? JSON.parse(head.getAttribute("data-offline-files")) : [];
+  document.querySelectorAll(".save-book").forEach(function (b) {
+    var key = lang + ":" + b.getAttribute("data-book");
+    var pages = JSON.parse(b.getAttribute("data-pages"));
+    var label = b.querySelector("span");
+    function show(state, n) {
+      b.setAttribute("aria-pressed", state === "saved" ? "true" : "false");
+      b.disabled = state === "saving";
+      label.textContent = b.getAttribute("data-" + state)
+        .replace("{n}", n || 0).replace("{total}", pages.length);
+    }
+
+    function save() {
+      show("saving", 0);
+      caches.open("owb-books").then(function (cache) {
+        var done = 0;
+        // One at a time, so a slow connection is not swamped.
+        return pages.concat(files).reduce(function (chain, u) {
+          return chain.then(function () {
+            return cache.match(u).then(function (hit) {
+              // no-cache: past the worker's own cache (web/sw.js), fresh.
+              return hit || fetch(u, { credentials: "same-origin", cache: "no-cache" }).then(function (res) {
+                if (!res.ok) throw new Error(u + ": " + res.status);
+                return cache.put(u, res);
+              });
+            }).then(function () {
+              if (pages.indexOf(u) >= 0) show("saving", ++done);
+            });
+          });
+        }, Promise.resolve());
+      }).then(function () {
+        var list = saved();
+        list[key] = { name: b.getAttribute("data-name"), pages: pages };
+        remember(list);
+        show("saved");
+      }).catch(function () { show("failed"); });
+    }
+
+    function remove() {
+      var list = saved();
+      delete list[key];
+      remember(list);
+      // The shared files go with the language's last saved book.
+      var more = Object.keys(list).some(function (k) { return k.indexOf(lang + ":") === 0; });
+      var gone = more ? pages : pages.concat(files);
+      caches.open("owb-books").then(function (cache) {
+        return Promise.all(gone.map(function (u) { return cache.delete(u); }));
+      }).then(function () { show("save"); });
+    }
+
+    b.addEventListener("click", function () {
+      if (b.getAttribute("aria-pressed") === "true") remove(); else save();
+    });
+    // Saved, if the list says so and the cache still has its pages (a
+    // browser short of space may have cleared it).
+    caches.open("owb-books").then(function (cache) { return cache.match(pages[pages.length - 1]); })
+      .then(function (hit) { show(saved()[key] && hit ? "saved" : "save"); b.hidden = false; });
+  });
+
+  // The offline page lists the saved books, each with its chapters.
+  var box = document.getElementById("saved-books");
+  if (box) {
+    var list = saved(), ul = box.querySelector("ul");
+    Object.keys(list).forEach(function (key) {
+      var li = document.createElement("li");
+      li.className = "book-row";
+      var name = document.createElement("span");
+      name.className = "book-name";
+      name.textContent = list[key].name;
+      var pills = document.createElement("span");
+      pills.className = "chap-pills";
+      list[key].pages.forEach(function (u) {
+        var a = document.createElement("a");
+        a.className = "chap";
+        a.href = u;
+        a.textContent = u.split("/").filter(Boolean).pop();
+        pills.appendChild(a);
+      });
+      li.appendChild(name);
+      li.appendChild(pills);
+      ul.appendChild(li);
+    });
+    box.hidden = !ul.children.length;
+  }
+  // Its link home, only if the home page is saved (else it leads back here).
+  document.querySelectorAll("a[data-if-saved]").forEach(function (a) {
+    caches.match(a.getAttribute("href")).then(function (hit) { a.hidden = !hit; });
+  });
+})();
