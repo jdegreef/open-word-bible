@@ -479,6 +479,9 @@ footer.site .foot-langs ul { display: flex; flex-wrap: wrap; gap: 6px 18px; }
 }
 .chap:hover { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
 .chap.part { border-style: dashed; }
+/* A chapter not yet translated: shown so the reader sees the whole book. */
+.chap.none { border-style: dotted; color: var(--muted); opacity: .55; cursor: default; }
+.chap.none:hover { border-color: var(--line-strong); background: none; color: var(--muted); }
 .chap[aria-current] { background: var(--accent); border-color: var(--accent); color: var(--accent-contrast); }
 .book-rows { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
 .book-row {
@@ -508,6 +511,9 @@ footer.site .foot-langs ul { display: flex; flex-wrap: wrap; gap: 6px 18px; }
 .chap-book { display: inline-flex; align-items: center; gap: 7px; font-weight: 700; font-size: 14px; letter-spacing: .02em; color: var(--accent); text-decoration: none; }
 .chap-book:hover { text-decoration: underline; }
 .chapstrip .chap { min-width: 30px; height: 30px; font-size: 13px; }
+/* The book and its progress on one line, every chapter on the next. */
+.chapstrip .chap-pills { order: 3; flex-basis: 100%; gap: 5px; }
+.chapstrip .chap-progress { margin-left: auto; }
 .chap-progress { font-size: 13px; color: var(--muted); }
 .chapstrip + h1 { margin-top: 14px; }
 .turns { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 40px 0 0; padding-top: 28px; border-top: 1px solid var(--line); }
@@ -515,6 +521,21 @@ footer.site .foot-langs ul { display: flex; flex-wrap: wrap; gap: 6px 18px; }
   display: grid; gap: 2px; padding: 16px 20px; border: 1px solid var(--line); border-radius: var(--radius);
   background: var(--surface); box-shadow: var(--shadow-card); text-decoration: none;
   transition: border-color var(--fast) ease, transform var(--fast) ease;
+}
+/* Previous and next passage at the window's edges, where there is room. */
+.edge-turn { display: none; }
+@media (min-width: 1320px) {
+  .edge-turn {
+    display: grid; place-items: center; position: fixed; top: 50%; z-index: 15; width: 44px; height: 44px; margin-top: -22px;
+    border: 1px solid var(--line); border-radius: 50%; background: var(--surface); color: var(--muted);
+    box-shadow: var(--shadow-card); font-size: 26px; line-height: 1; text-decoration: none;
+    transition: color var(--fast), border-color var(--fast);
+  }
+  .edge-turn.prev { left: 20px; }
+  .edge-turn.next { right: 20px; }
+  .edge-turn { padding-bottom: 3px; }
+  .edge-turn:hover { color: var(--accent); border-color: var(--accent); }
+  .edge-turn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 }
 .turn:hover { border-color: var(--accent); transform: translateY(-1px); }
 .turn.next { text-align: right; }
@@ -639,21 +660,73 @@ footer.site .foot-langs ul { display: flex; flex-wrap: wrap; gap: 6px 18px; }
 .settings-toggle:focus-visible, .sheet-close:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .hint { font-size: 13px; color: var(--muted); margin: 10px 4px 0; max-width: 70ch; }
 
+/* Wide screens: the settings are one slim bar that stays under the header
+   while the passage scrolls; each choice explains itself in a tooltip
+   (web/reader.js), so the hint line is for phones only. */
+@media (min-width: 861px) {
+  .settings {
+    position: sticky; top: var(--header-h); z-index: 20;
+    margin: 0 -8px; padding: 10px 8px 8px; background: var(--bg);
+  }
+  .settings .controls { margin-top: 0; padding: 6px 12px; gap: 6px 18px; box-shadow: none; }
+  .settings .control { font-size: 12.5px; }
+  .settings .seg button { font-size: 13.5px; padding: 3px 11px; }
+  .settings > .hint { display: none; }
+}
+
 /* On phones the settings fold behind one button that names the current
    choices, so the passage starts on the first screen. */
 .settings-toggle, .sheet-close { display: none; }
 
-.reader { display: grid; grid-template-columns: minmax(0, 1fr) 420px; gap: 40px; align-items: start; }
+.reader { display: grid; grid-template-columns: minmax(0, 1fr) clamp(340px, 34vw, 460px); gap: 40px; align-items: start; }
 .passage { max-width: 680px; }
 .passage h1 { font-family: var(--display); font-weight: 600; font-size: clamp(30px, 4vw, 40px); letter-spacing: -.02em; margin: 36px 0 6px; }
 .passage .sub { color: var(--muted); font-size: 14px; margin: 0 0 16px; }
-.text { font-family: var(--serif); font-size: 21px; line-height: 1.8; }
-.verse { cursor: pointer; border-radius: 3px; padding: 1px 0; }
+/* About 65 characters a line, the comfortable measure for long reading. */
+.text { font-family: var(--serif); font-size: 21px; line-height: 1.8; max-width: 29em; }
+/* Paragraphs follow SBLGNT's; section headings (data/headings.json) are
+   editorial aids, set apart from the text in the interface font. */
+.text .para { margin: 0 0 .85em; }
+.text .para:last-child { margin-bottom: 0; }
+.section-head {
+  font-family: var(--sans); font-size: 16px; font-weight: 700; letter-spacing: .01em; line-height: 1.35;
+  color: var(--text); margin: 1.9em 0 .5em;
+}
+.text > .section-head:first-child { margin-top: .4em; }
+.section-head.fallback { color: var(--muted); }
+.verse {
+  cursor: pointer; border-radius: 3px; padding: 1px 0;
+  /* j and k scroll a verse into view clear of the header and settings bar. */
+  scroll-margin-top: calc(var(--header-h) + var(--settings-h, 0px) + 16px); scroll-margin-bottom: 32px;
+}
 .verse:hover { background: var(--accent-soft); }
 .verse[aria-current="true"] { background: var(--mark); }
 .verse.fallback { color: var(--muted); }
 .verse sup { font-family: var(--sans); font-size: 12px; color: var(--accent); font-weight: 700; margin-right: 3px; }
 .verse .fn { font-family: var(--sans); font-size: 11px; font-style: italic; color: var(--accent); margin-left: 1px; }
+/* Each footnote letter is its own button and opens the note in place. */
+.fn-mark {
+  border: 0; background: none; padding: 2px 3px; margin: 0 -1px; font: inherit; font-weight: 700; color: inherit;
+  cursor: pointer; border-radius: 4px; line-height: 1;
+}
+.fn-mark:hover, .fn-mark[aria-expanded="true"] { background: var(--accent); color: var(--accent-contrast); }
+.fn-mark:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.fn-pop {
+  position: absolute; z-index: 35; width: min(360px, calc(100vw - 32px)); padding: 12px 14px;
+  background: var(--surface); color: var(--text); border: 1px solid var(--line-strong); border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-pop); font-family: var(--sans); font-size: 14.5px; line-height: 1.5;
+}
+.fn-pop p { margin: 0; }
+.fn-pop-head { display: flex; align-items: baseline; gap: 6px; margin-bottom: 4px !important; font-size: 13px; }
+.fn-pop .note-mark { font-style: italic; font-weight: 700; color: var(--accent); }
+.fn-pop .note-ref { font-weight: 700; }
+.fn-pop-cat { color: var(--muted); }
+.fn-pop-more {
+  margin-top: 8px; padding: 0; border: 0; background: none; font: inherit; font-size: 13.5px; font-weight: 600;
+  color: var(--accent); cursor: pointer;
+}
+.fn-pop-more:hover { text-decoration: underline; }
+.fn-pop-more:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
 .notes { margin-top: 32px; border-top: 1px solid var(--line); padding-top: 12px; }
 .notes h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); margin: 0 0 8px; }
 .notes ol { list-style: none; padding: 0; margin: 0; }
@@ -666,12 +739,28 @@ footer.site .foot-langs ul { display: flex; flex-wrap: wrap; gap: 6px 18px; }
 .notes .note-ref { font-weight: 600; margin-right: 6px; }
 
 .panel {
-  position: sticky; top: calc(var(--header-h) + 16px); margin-top: 36px;
+  position: sticky; top: calc(var(--header-h) + var(--settings-h, 0px) + 12px); margin-top: 28px;
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow-card);
-  padding: 20px 22px; max-height: calc(100vh - var(--header-h) - 32px); overflow: auto;
+  padding: 0 22px 20px; max-height: calc(100vh - var(--header-h) - var(--settings-h, 0px) - 28px); overflow: auto;
+  overscroll-behavior: contain;
 }
-.panel h2 { font-family: var(--display); font-weight: 600; font-size: 21px; margin: 0 0 4px; }
+/* The verse reference stays at the top of the panel as its notes scroll. */
+.panel h2 {
+  font-family: var(--display); font-weight: 600; font-size: 21px; margin: 0 -22px 4px; padding: 18px 22px 8px;
+  position: sticky; top: 0; z-index: 2; background: var(--surface);
+}
 .panel .empty { color: var(--muted); font-size: 15px; }
+.panel .keys { color: var(--muted); font-size: 13px; margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line); }
+@media (hover: none) { .panel .keys { display: none; } }
+.panel-title { display: flex; align-items: baseline; gap: 10px; }
+.copy-link {
+  margin-left: auto; flex: none; padding: 3px 10px; border: 1px solid var(--line-strong); border-radius: 999px;
+  background: var(--surface); color: var(--accent); font: inherit; font-family: var(--sans); font-size: 12.5px; font-weight: 600;
+  cursor: pointer; transition: border-color var(--fast), background-color var(--fast);
+}
+.copy-link:hover { border-color: var(--accent); background: var(--accent-soft); }
+.copy-link.done { border-color: var(--accent); background: var(--accent); color: var(--accent-contrast); }
+.copy-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .panel h3 { font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 20px 0 8px; }
 .greek { font-family: var(--greek); font-size: 21px; line-height: 1.9; }
 .word { cursor: pointer; border-radius: 3px; }
@@ -689,6 +778,12 @@ footer.site .foot-langs ul { display: flex; flex-wrap: wrap; gap: 6px 18px; }
 .interlinear[dir="rtl"] .iw-e { direction: ltr; unicode-bidi: isolate; }
 .iw-e { font-family: var(--sans); font-size: 12px; line-height: 1.3; color: var(--muted); max-width: 13ch; }
 .iw-verse { font-family: var(--sans); font-size: 12px; font-weight: 700; color: var(--accent); align-self: flex-start; padding: 6px 2px 0 6px; }
+/* Greek and the English it became (record alignments), lit together. */
+.aw { border-radius: 3px; transition: background-color var(--fast), color var(--fast); }
+.verse[aria-current="true"] .aw { cursor: help; }
+.aw.on { text-decoration: underline 2px var(--accent); text-underline-offset: 4px; }
+.aw.lit { background: var(--accent); color: var(--accent-contrast); }
+.iw.lit { background: var(--accent-soft); box-shadow: inset 0 0 0 1px var(--accent); }
 .wordinfo { margin: 12px 0 0; padding: 12px 14px; border-radius: 8px; background: var(--accent-soft); }
 .wordinfo p { margin: 0; }
 .wi-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; }
@@ -704,6 +799,21 @@ footer.site .foot-langs ul { display: flex; flex-wrap: wrap; gap: 6px 18px; }
 .card .choice { font-weight: 600; margin: 2px 0; }
 .card .alts { font-size: 14px; color: var(--muted); margin: 2px 0; }
 .card .why { font-size: 15px; margin: 4px 0 0; }
+/* The three levels of the selected sentence, side by side. */
+.levels { display: grid; gap: 6px; margin-top: 8px; }
+.lvl-row {
+  display: grid; gap: 2px; width: 100%; text-align: left; padding: 9px 12px; cursor: pointer;
+  border: 1px solid var(--line); border-radius: var(--radius-sm); background: none; color: var(--text); font: inherit;
+}
+.lvl-row:hover { border-color: var(--line-strong); }
+.lvl-row.on { border-color: var(--accent); background: var(--accent-soft); cursor: default; }
+.lvl-row:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.lvl-name { font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+.lvl-row.on .lvl-name { color: var(--accent); }
+.lvl-name .badge { text-transform: none; letter-spacing: 0; }
+.lvl-text { font-family: var(--serif); font-size: 16.5px; line-height: 1.55; }
+.lvl-text sup { font-family: var(--sans); font-size: 11px; font-weight: 700; color: var(--accent); }
+
 .badge { display: inline-block; font-size: 11px; font-weight: 600; border-radius: 999px; padding: 0 7px; margin-left: 4px; background: var(--accent-soft); color: var(--accent); }
 .badge.unc { background: var(--warn-bg); color: var(--warn); }
 
@@ -755,6 +865,9 @@ footer.site .foot-langs ul { display: flex; flex-wrap: wrap; gap: 6px 18px; }
   .book-row { grid-template-columns: 1fr auto; grid-template-areas: "name progress" "bar bar" "pills pills"; padding: 14px 16px; }
   .book-head { grid-template-columns: 1fr auto; }
   .book-head .meter { grid-column: 1 / -1; max-width: none; }
+  .chapstrip .chap-pills { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding: 2px 0; min-width: 0; max-width: 100%; }
+  .chapstrip .chap-pills::-webkit-scrollbar { display: none; }
+  .chapstrip .chap { flex: none; }
   .turn { padding: 12px 14px; }
   .turn-name { font-size: 17px; }
   .involve { padding: 28px 22px; }
@@ -769,7 +882,7 @@ footer.site .foot-langs ul { display: flex; flex-wrap: wrap; gap: 6px 18px; }
 }
 
 @media (max-width: 860px) {
-  .reader { grid-template-columns: 1fr; }
+  .reader { grid-template-columns: minmax(0, 1fr); }
   .example-grid { grid-template-columns: 1fr; padding: 20px; }
   .involve { grid-template-columns: 1fr; }
   .lvl { grid-template-columns: 1fr; gap: 2px; }
@@ -804,7 +917,7 @@ footer.site .foot-langs ul { display: flex; flex-wrap: wrap; gap: 6px 18px; }
     content: ""; position: absolute; top: 8px; left: 50%; width: 40px; height: 4px; margin-left: -20px;
     border-radius: 2px; background: var(--line);
   }
-  .panel h2 { padding-right: 44px; }
+  .panel h2 { position: static; margin: 0 0 4px; padding: 0 44px 0 0; }
   .sheet-close {
     display: grid; place-items: center; position: absolute; top: 12px; right: 10px; width: 40px; height: 40px;
     border: 0; border-radius: 50%; background: var(--accent-soft); color: var(--text); font-size: 24px; line-height: 1; cursor: pointer;

@@ -220,6 +220,17 @@ class ValidateTest(unittest.TestCase):
             errors = validate.validate_record(record)
             self.assertTrue(any(message in e for e in errors), (span, errors))
 
+    def test_alignments_must_follow_the_rendering_in_order(self):
+        record = example_records()[0]  # John 1:1
+        toks = record["source"]["tokens"]
+        text = record["renderings"]["en"]["B"]
+        word = text.split()[0]
+        record["alignments"] = [{"tokens": toks[:1], "language": "en", "level": "B", "target_span": word}]
+        self.assertEqual(validate.validate_record(record), [])
+        record["alignments"].append({"tokens": toks[:1], "language": "en", "level": "B", "target_span": word})
+        errors = validate.validate_record(record)
+        self.assertTrue(any("alignments[1]" in e and "after the previous" in e for e in errors), errors)
+
     def _record(self, rid):
         path = EXAMPLE.parents[1] / "PHP" / "PHP.4.1-9.json"
         for r in example_records() + json.loads(path.read_text(encoding="utf-8"))["records"]:
