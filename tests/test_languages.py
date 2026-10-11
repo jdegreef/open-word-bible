@@ -166,7 +166,12 @@ class LanguagesTest(unittest.TestCase):
     def test_account_page_speaks_the_page_language(self):
         page = self.read("es/account/index.html")
         m = re.search(r'id="account-text">(.*?)</script>', page, re.S)
-        self.assertEqual(json.loads(m[1]), build_site.catalog("es")["account.ui"])
+        text = json.loads(m[1])
+        # The page's messages, plus what its list of saved verses needs.
+        books = {k: text.pop(k) for k in ("books", "order", "base")}
+        self.assertEqual(text, build_site.catalog("es")["account.ui"])
+        self.assertEqual(books["books"]["JHN"], "Juan")
+        self.assertEqual(books["base"], "/es/")
         self.assertIn('<meta name="robots" content="noindex">', page)
         self.assertNotIn('rel="canonical"', page)
         # Unlisted, but the switch and the remembered choice still lead to it.

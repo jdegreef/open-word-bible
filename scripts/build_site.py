@@ -1634,7 +1634,13 @@ def account_page(lang="en"):
     def a(key):
         return t(lang, "account." + key)
 
-    messages = json.dumps(catalog(lang)["account.ui"], ensure_ascii=False).replace("</", "<\\/")
+    messages = dict(catalog(lang)["account.ui"])
+    # For the list of bookmarks and highlights: book names, canonical order,
+    # and where the reader is.
+    messages["books"] = {code: BOOK_NAMES.get(code, {}).get(lang, name) for code, name in refs.BOOK_NAMES.items()}
+    messages["order"] = list(refs.BOOK_CODES)
+    messages["base"] = url(lang, "/")
+    messages = json.dumps(messages, ensure_ascii=False).replace("</", "<\\/")
     body = f"""
 <section class="account" id="account" aria-live="polite">
 <header class="page-head">
@@ -1679,6 +1685,11 @@ def account_page(lang="en"):
 </div>
 <p class="form-note" id="name-note" role="status"></p>
 </form>
+<section class="saved-list" aria-labelledby="saved-h">
+<h2 id="saved-h">{a("saved")}</h2>
+<p class="fine" id="saved-empty">{a("saved_empty")}</p>
+<ul id="saved-items"></ul>
+</section>
 <div class="soon">
 <h2>{a("soon")}</h2>
 <p>{a("soon_text")}</p>

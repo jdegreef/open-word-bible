@@ -1308,3 +1308,42 @@ ruby.il rt:lang(hbo) { font-family: var(--hebrew); }
 .wcard-lemma:lang(hbo) { font-family: var(--hebrew); }
 .wcard-kind { margin-left: auto; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
 .wcard-note { font-size: 14px; line-height: 1.5; }
+
+/* Highlights and bookmarks (the reader's own; web/reader.js). Colours mixed
+   with the page background so they read in every colour mode. */
+:root { --hl-yellow: #f2d64b; --hl-green: #7fcf8a; --hl-blue: #7fb5ef; --hl-pink: #f29ac1; }
+.verse.hl-yellow { background: color-mix(in srgb, var(--hl-yellow) 38%, transparent); }
+.verse.hl-green { background: color-mix(in srgb, var(--hl-green) 34%, transparent); }
+.verse.hl-blue { background: color-mix(in srgb, var(--hl-blue) 34%, transparent); }
+.verse.hl-pink { background: color-mix(in srgb, var(--hl-pink) 34%, transparent); }
+.verse.bm::before {
+  content: ""; display: inline-block; width: 7px; height: 11px; margin-right: 3px; vertical-align: 1px;
+  background: var(--accent); clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 72%, 0 100%);
+}
+.save-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin: 6px 0 4px; }
+.save-bm {
+  border: 1px solid var(--line-strong); border-radius: 999px; background: var(--surface); color: var(--text);
+  font: inherit; font-size: 12.5px; font-weight: 600; padding: 3px 10px; cursor: pointer;
+}
+.save-bm[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-contrast); }
+.swatches { display: inline-flex; gap: 6px; }
+.swatch-btn { width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--surface); box-shadow: 0 0 0 1px var(--line-strong); cursor: pointer; padding: 0; }
+.swatch-btn.hl-yellow { background: var(--hl-yellow); }
+.swatch-btn.hl-green { background: var(--hl-green); }
+.swatch-btn.hl-blue { background: var(--hl-blue); }
+.swatch-btn.hl-pink { background: var(--hl-pink); }
+.swatch-btn[aria-pressed="true"] { box-shadow: 0 0 0 2px var(--accent); }
+.save-bm:focus-visible, .swatch-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.save-note { font-size: 12.5px; color: var(--muted); }
+/* The account page's list of them. */
+.saved-list { margin: 8px 0 24px; }
+.saved-list h2 { font-size: 18px; margin: 0 0 8px; }
+.saved-list ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.saved-list li { display: inline-flex; align-items: center; gap: 8px; padding: 4px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); }
+.saved-kind { font-size: 12px; color: var(--muted); }
+.saved-kind[class*="hl-"]::before { content: ""; display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 5px; }
+.saved-kind.hl-yellow::before { background: var(--hl-yellow); }
+.saved-kind.hl-green::before { background: var(--hl-green); }
+.saved-kind.hl-blue::before { background: var(--hl-blue); }
+.saved-kind.hl-pink::before { background: var(--hl-pink); }
+@media print { .verse[class*="hl-"] { background: none !important; } .verse.bm::before, .save-row { display: none; } }

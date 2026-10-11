@@ -62,6 +62,94 @@
     try { history.replaceState(null, "", location.pathname + (s ? "?" + s : "") + location.hash); } catch (e) { /* ignore */ }
   }
 
+  // Bookmarks and highlights: with the account's API when signed in
+  // (backend/accounts), otherwise kept on this device. {verse id: {bookmark:
+  // true, highlight: "yellow"}} for this chapter.
+  var API = (document.querySelector('meta[name="owb-api"]') || {}).content;
+  var SAVED_KEY = "owb.saved";
+  var kept = {};
+  function account() {
+    try { return JSON.parse(localStorage.getItem("owb.account") || "null"); } catch (e) { return null; }
+  }
+  function signedIn() { var a = account(); return !!(a && a.token && API); }
+  function local() {
+    try { return JSON.parse(localStorage.getItem(SAVED_KEY) || "{}"); } catch (e) { return {}; }
+  }
+  function storeLocal(all) {
+    try {
+      if (Object.keys(all).length) localStorage.setItem(SAVED_KEY, JSON.stringify(all));
+      else localStorage.removeItem(SAVED_KEY);
+    } catch (e) { /* storage blocked */ }
+  }
+  function api(path, method, body) {
+    return fetch(API + path, {
+      method: method || "GET",
+      headers: { "Content-Type": "application/json", Authorization: "Bearer " + account().token },
+      body: body ? JSON.stringify(body) : undefined
+    }).then(function (r) {
+      if (r.status === 401) {
+        try { localStorage.removeItem("owb.account"); } catch (e) { /* ignore */ }
+        throw new Error("signed out");
+      }
+      if (!r.ok) throw new Error(r.status);
+      return r.status === 204 ? null : r.json();
+    });
+  }
+  function chapterKey() { return DATA.book + "." + DATA.chapter; }
+  function verseId(v) {
+    var m = /^(\d+):(\d+)$/.exec(v);
+    return m ? DATA.book + "." + m[1] + "." + m[2] : chapterKey() + "." + v;
+  }
+  function verseOn(id) {
+    var p = id.split(".");
+    return Number(p[1]) === DATA.chapter ? p[2] : p[1] + ":" + p[2];
+  }
+
+  function loadMarks() {
+    var mine = local();
+    kept = {};
+    Object.keys(mine).forEach(function (id) {
+      if (id.indexOf(chapterKey() + ".") === 0) kept[verseOn(id)] = mine[id];
+    });
+    if (!signedIn()) return Promise.resolve();
+    // Moving what this device kept to the account, then the account's own.
+    var moves = [];
+    Object.keys(mine).forEach(function (id) {
+      if (mine[id].bookmark) moves.push(api("/api/saved/" + id + "/bookmark", "PUT", {}));
+      if (mine[id].highlight) moves.push(api("/api/saved/" + id + "/highlight", "PUT", { colour: mine[id].highlight }));
+    });
+    return Promise.all(moves).then(function () {
+      storeLocal({});
+      return api("/api/saved?chapter=" + chapterKey());
+    }).then(function (items) {
+      kept = {};
+      items.forEach(function (it) {
+        var v = verseOn(it.verse), m = kept[v] = kept[v] || {};
+        if (it.kind === "bookmark") m.bookmark = true; else m.highlight = it.colour;
+      });
+    }).catch(function () { /* offline or signed out: what this device has */ });
+  }
+
+  function setMark(verse, kind, value) {
+    var id = verseId(verse), m = kept[verse] = kept[verse] || {};
+    m[kind] = value;
+    if (!m.bookmark && !m.highlight) delete kept[verse];
+    var done;
+    if (signedIn()) {
+      done = value ? api("/api/saved/" + id + "/" + kind, "PUT", kind === "highlight" ? { colour: value } : {})
+                   : api("/api/saved/" + id + "/" + kind, "DELETE");
+    } else {
+      var all = local(), e = all[id] = all[id] || {};
+      if (value) e[kind] = value; else delete e[kind];
+      if (!e.bookmark && !e.highlight) delete all[id];
+      storeLocal(all);
+      done = Promise.resolve();
+    }
+    done.catch(function () { /* kept on the page; tried again when changed */ });
+    drawText();
+    drawPanel();
+  }
+
   var current = null;   // selected record
   var currentVerse = null;   // the verse within it that was chosen
   var panelEl = document.getElementById("panel");
@@ -394,8 +482,11 @@
       if (unsure) unsureCount++;
       var chosen = current && current.id === r.id;
       parts.forEach(function (part, i) {
+        var mark = kept[part[0]];
         var span = el("span", (lang === settings.lang ? "verse" : "verse fallback") +
-                           (settings.uncertain && unsure ? " unsure" : ""));
+                           (settings.uncertain && unsure ? " unsure" : "") +
+                           (mark && mark.highlight ? " hl-" + mark.highlight : "") +
+                           (mark && mark.bookmark && part[0] !== shown ? " bm" : ""));
         if (lang !== settings.lang) span.lang = lang;
         if (!plain()) {
           span.tabIndex = 0;
@@ -845,6 +936,7 @@
     title.appendChild(linkButton(currentVerse));
     title.appendChild(imageButton(currentVerse));
     panel.appendChild(title);
+    panel.appendChild(saveRow(currentVerse));
 
     panel.appendChild(el("h3", null, t("greek")));
     // Interlinear: each Greek word (or Hebrew morpheme) over its gloss. Tapping one shows its
@@ -968,6 +1060,35 @@
       }
     });
     return b;
+  }
+
+  // Bookmark and highlight the chosen verse.
+  function saveRow(verse) {
+    var m = kept[verse] || {};
+    var row = el("div", "save-row");
+    var bm = el("button", "save-bm", m.bookmark ? t("bookmarked") : t("bookmark"));
+    bm.type = "button";
+    bm.setAttribute("aria-pressed", m.bookmark ? "true" : "false");
+    bm.addEventListener("click", function () { setMark(verse, "bookmark", !m.bookmark); });
+    row.appendChild(bm);
+    var swatches = el("span", "swatches");
+    swatches.setAttribute("role", "group");
+    swatches.setAttribute("aria-label", t("highlight"));
+    ["yellow", "green", "blue", "pink"].forEach(function (c) {
+      var b = el("button", "swatch-btn hl-" + c);
+      b.type = "button";
+      b.setAttribute("aria-label", t("highlight") + ": " + t("colours")[c]);
+      b.setAttribute("aria-pressed", m.highlight === c ? "true" : "false");
+      b.addEventListener("click", function () { setMark(verse, "highlight", m.highlight === c ? "" : c); });
+      swatches.appendChild(b);
+    });
+    row.appendChild(swatches);
+    if (!signedIn() && (m.bookmark || m.highlight)) {
+      var note = el("a", "save-note", t("saved_here"));
+      note.href = (DATA.lang === "en" ? "" : "/" + DATA.lang) + "/account/";
+      row.appendChild(note);
+    }
+    return row;
   }
 
   // An image of the verse to share: its text at the reader's settings, the
@@ -1329,6 +1450,8 @@
   var here = pills && pills.querySelector("[aria-current]");
   if (here && pills.scrollWidth > pills.clientWidth)
     pills.scrollLeft = here.offsetLeft - pills.offsetLeft - pills.clientWidth / 2 + here.offsetWidth / 2;
+
+  loadMarks().then(function () { drawText(); if (current) drawPanel(); });
 
   var start = hashVerse();
   var record = start && recordFor(start);

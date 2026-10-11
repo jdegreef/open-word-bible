@@ -63,6 +63,39 @@
       .toLocaleDateString(document.documentElement.lang, { year: "numeric", month: "long", day: "numeric" });
     document.getElementById("display-name").value = user.display_name || "";
     show("signed-in");
+    drawSaved();
+  }
+
+  // The account's bookmarks and highlights (the reader keeps them), in
+  // canonical order, each a link to its verse.
+  function drawSaved() {
+    var list = document.getElementById("saved-items");
+    var empty = document.getElementById("saved-empty");
+    if (!list) return;
+    api("/api/saved").then(function (items) {
+      list.textContent = "";
+      empty.hidden = items.length > 0;
+      function key(id) {
+        var p = id.split(".");
+        return [T.order.indexOf(p[0]), Number(p[1]), Number(p[2])];
+      }
+      items.sort(function (a, b) {
+        var x = key(a.verse), y = key(b.verse);
+        return x[0] - y[0] || x[1] - y[1] || x[2] - y[2] || (a.kind < b.kind ? -1 : 1);
+      }).forEach(function (it) {
+        var p = it.verse.split(".");
+        var li = document.createElement("li");
+        var a = document.createElement("a");
+        a.href = T.base + p[0].toLowerCase() + "/" + p[1] + "/#v" + p[2];
+        a.textContent = (T.books[p[0]] || p[0]) + " " + p[1] + ":" + p[2];
+        li.appendChild(a);
+        var kind = document.createElement("span");
+        kind.className = "saved-kind" + (it.colour ? " hl-" + it.colour : "");
+        kind.textContent = it.kind === "bookmark" ? T.bookmark : T.highlight;
+        li.appendChild(kind);
+        list.appendChild(li);
+      });
+    }).catch(function () { /* the account shows without the list */ });
   }
 
   // Asking for a link.
