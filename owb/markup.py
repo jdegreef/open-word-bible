@@ -62,3 +62,30 @@ def render(text, settings=None):
         return options[index] if isinstance(index, int) and 0 <= index < len(options) else options[0]
 
     return SPAN.sub(choose, text)
+
+
+def alignment_ranges(text, targets):
+    """Where each alignment's target_span sits in one rendering.
+
+    A short span such as "the" can occur more than once, so a rendering's
+    alignments are listed in the order their spans appear, and each is found
+    after the end of the one before. A span may not hold a verse marker or
+    cut through a setting span. Returns [(start, end), ...]; raises
+    ValueError naming the first span that breaks a rule."""
+    whole = spans(text)
+    ranges, at = [], 0
+    for i, target in enumerate(targets):
+        if not target.strip():
+            raise ValueError(f"{i}: empty target_span")
+        if VERSE.search(target):
+            raise ValueError(f"{i}: target_span holds a verse marker")
+        start = text.find(target, at)
+        if start < 0:
+            where = "after the previous alignment" if target in text else "in rendering"
+            raise ValueError(f"{i}: target_span {target!r} not found {where}")
+        end = start + len(target)
+        if any(s.start < start < s.end or s.start < end < s.end for s in whole):
+            raise ValueError(f"{i}: target_span {target!r} cuts a setting span")
+        ranges.append((start, end))
+        at = end
+    return ranges
