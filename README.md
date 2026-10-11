@@ -36,16 +36,16 @@ and whether it is uncertain or needs a footnote.
 Content: Genesis 1–5 (`content/GEN/`) in English; John 1–8
 (`content/JHN/`) in English, with chapters 1–5 also in Spanish, chapters
 1–2 in French and chapters 1–5 in Swahili; Romans 1 and 9–16 (`content/ROM/`) in
-English; all of Philippians (`content/PHP/`) in English, with chapter 4
+English; all of Galatians (`content/GAL/`) in English; all of Philippians (`content/PHP/`) in English, with chapter 4
 also in Spanish; all of Ephesians (`content/EPH/`) and Colossians
-(`content/COL/`) in English; and all of 1 and 2 Peter (`content/1PE/`,
-`content/2PE/`) in English. English runs ahead of the other languages;
-`docs/english-style.md` is the brief for drafting it and
-`data/key_terms.json` the settled key terms.
+(`content/COL/`) in English; and all of James and 1 and 2 Peter
+(`content/JAS/`, `content/1PE/`, `content/2PE/`) in English. English runs
+ahead of the other languages; `docs/english-style.md` is the brief for
+drafting it and `data/key_terms.json` the settled key terms.
 `docs/french-style.md` and
 `docs/swahili-style.md` are the briefs for French and Swahili.
 
-Matthew 1 (`content/MAT/`) is drafted in English.
+Matthew 1–2 (`content/MAT/`) is drafted in English.
 
 A record is one sentence of the source, not one verse. It ends where the
 SBLGNT ends a sentence: a full stop, a question mark, or a raised dot (·)
