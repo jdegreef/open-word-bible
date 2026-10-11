@@ -1278,7 +1278,9 @@ body.listening { padding-bottom: calc(var(--listen-h, 64px) + 12px); }
 .hl-pink { --hl: rgba(236, 92, 154, .30); }
 .verse[class*="hl-"] { background: var(--hl); border-radius: 3px; }
 .verse[class*="hl-"]:hover { background: var(--hl); filter: saturate(1.4); }
-.verse.bookmarked > sup:first-child::before { content: "\25C6\00a0"; color: var(--accent); font-size: .85em; }
+/* The verse chosen keeps its highlight and is underlined instead. */
+.verse[aria-current="true"][class*="hl-"] { box-shadow: inset 0 -3px 0 var(--accent); }
+.verse.bookmarked > sup:not(.fn):first-child::before { content: "\25C6\00a0"; color: var(--accent); font-size: .85em; }
 .mark-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin: 4px 0 16px; }
 .mark-bookmark {
   display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border: 1px solid var(--line-strong);

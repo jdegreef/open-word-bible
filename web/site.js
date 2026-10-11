@@ -414,5 +414,7 @@
       draw();
     });
   });
+  // Marks made or removed in another tab.
+  window.addEventListener("storage", function (e) { if (e.key === "owb.marks") draw(); });
   draw();
 })();
