@@ -186,3 +186,28 @@
     });
   });
 })();
+
+// "Continue reading" on the home and Read pages (resume_link in
+// scripts/build_site.py): the reader keeps the verse it was last at as
+// owb.place (web/reader.js), and the link opens that chapter there
+// (#at-12 scrolls to the verse without opening its notes).
+(function () {
+  "use strict";
+  var place = null;
+  try { place = JSON.parse(localStorage.getItem("owb.place") || "null"); } catch (e) { /* none */ }
+  if (!place || !place.book || !place.chapter || !place.verse) return;
+  document.querySelectorAll("a[data-resume]").forEach(function (a) {
+    var names = JSON.parse(a.getAttribute("data-books"));
+    var name = names[place.book];
+    if (!name) return;
+    // A verse of the next chapter that a sentence runs into is "8:1".
+    var verse = String(place.verse);
+    var ref = name + " " + (verse.indexOf(":") >= 0 ? verse : place.chapter + ":" + verse);
+    a.href = a.getAttribute("data-prefix") + "/" + place.book.toLowerCase() + "/" + place.chapter + "/#at-" + verse;
+    a.querySelector("span").textContent = a.getAttribute("data-label").replace("{ref}", ref);
+    a.hidden = false;
+    // Beside it, the start button steps back.
+    var next = a.nextElementSibling;
+    if (next && next.classList.contains("button")) next.classList.add("ghost");
+  });
+})();

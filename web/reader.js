@@ -880,6 +880,51 @@
   if (here && pills.scrollWidth > pills.clientWidth)
     pills.scrollLeft = here.offsetLeft - pills.offsetLeft - pills.clientWidth / 2 + here.offsetWidth / 2;
 
+  // The reader's place: the verse at the top of the text, kept as
+  // owb.place for "Continue reading" on the home and Read pages (site.js).
+  // A link from there ends in #at-12, which scrolls to the verse without
+  // opening its notes.
+  // The reading line: a quarter of the way down, or just below the sticky
+  // header and settings bar (a verse's scroll margin) if that is lower.
+  // Saving and resuming both use it, so a place does not drift.
+  function readingLine() {
+    var first = document.querySelector("#text .verse");
+    var margin = first ? parseFloat(getComputedStyle(first).scrollMarginTop) || 0 : 0;
+    return Math.max(margin, window.innerHeight * 0.25);
+  }
+  function topVerse() {
+    var line = readingLine() + 1;
+    var all = document.querySelectorAll("#text .verse");
+    for (var i = 0; i < all.length; i++) {
+      if (all[i].getBoundingClientRect().bottom > line) return all[i].dataset.v;
+    }
+    return all.length ? all[all.length - 1].dataset.v : null;
+  }
+  function keepPlace() {
+    var verse = topVerse();
+    if (!verse) return;
+    var place = { book: DATA.book, chapter: DATA.chapter, verse: verse, at: Date.now() };
+    try { localStorage.setItem("owb.place", JSON.stringify(place)); } catch (e) { /* this visit only */ }
+  }
+  var placeTimer = null;
+  window.addEventListener("scroll", function () {
+    clearTimeout(placeTimer);
+    placeTimer = setTimeout(keepPlace, 400);
+  }, { passive: true });
+  window.addEventListener("pagehide", keepPlace);
+
+  var resumeAt = /^#at-(\d+(?::\d+)?)$/.exec(location.hash);
+  if (resumeAt) {
+    try {
+      history.replaceState(null, "", location.pathname + location.search);
+      history.scrollRestoration = "manual";
+    } catch (e) { /* ignore */ }
+    window.addEventListener("load", function () {
+      var v = verseEl(resumeAt[1]);
+      if (v) window.scrollBy(0, v.getBoundingClientRect().top - readingLine());
+    });
+  }
+
   var start = hashVerse();
   var record = start && recordFor(start);
   drawControls();
