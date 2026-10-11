@@ -38,6 +38,10 @@ Rules the software enforces are marked **(checked)**.
   starts, in the gloss and in every rendering. **(checked)**
 - A decision of category `punctuation` explains a record that reads the
   punctuation differently from the SBLGNT (as John 1:3 does).
+- **Hebrew.** The Westminster Leningrad Codex marks only the end of a verse,
+  so a Hebrew record is one whole verse, or several where one sentence runs
+  across them. **(checked)** A sentence that continues into the next verse ends
+  its record with a comma at Literal and Balanced (Genesis 1:14, 1:17, 1:29).
 
 ## 3. The literal gloss
 
@@ -47,6 +51,11 @@ shape of the sentence and is not meant to read well. Keep the article where
 the Greek has it ("the God") and leave it out where the Greek does. Use
 [brackets] sparingly, only for a word the gloss cannot parse without ("in the
 [one] strengthening me").
+
+A Hebrew gloss follows the Hebrew order, verb first: "And said God, let be
+light". It leaves out the object marker, which English has no word for, and
+brackets the verb "to be" that Hebrew leaves out: "darkness [was] over [the]
+face of [the] deep".
 
 ## 4. The three levels
 

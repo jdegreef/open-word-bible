@@ -33,7 +33,8 @@ Decisions come in two layers:
 Each decision names its tokens, category, choice, alternatives and reason,
 and whether it is uncertain or needs a footnote.
 
-Content: John 1–7 (`content/JHN/`) in English, with 1:1–18 also in Spanish,
+Content: Genesis 1:1–2:3 (`content/GEN/`) in English; John 1–8
+(`content/JHN/`) in English, with 1:1–18 also in Spanish,
 chapter 1 in Swahili and chapters 1–2 in French, all of Philippians
 (`content/PHP/`) in English, with 4:1–9 also in Spanish, and all of
 Colossians (`content/COL/`) in English. English runs ahead of the other
@@ -49,6 +50,15 @@ with `\v 13` in the renderings). A record that reads the punctuation
 differently, as John 1:3 does with its last two words, says so in a
 `punctuation` meaning decision. `owb.validate` enforces this, and
 `build_skeleton.py` starts new passages with one record per sentence.
+
+The Old Testament is translated from the Westminster Leningrad Codex with
+MACULA Hebrew word data (`text_id` `WLC@macula-hebrew`, `language` `hbo`, or
+`arc` for Aramaic). MACULA Hebrew divides words into morphemes, so a word with
+a prefix such as "and" or "the" has two token ids. The codex marks no
+sentence ends inside a verse, so a Hebrew record holds whole verses: one by
+default, or several where one sentence runs across them. The article that a
+preposition swallows (la-, "to the") has a MACULA row with no text; records
+and extracts leave it out, and the preposition's code says it is there.
 
 Greek or Hebrew quoted in a gloss, rendering or decision must be copied from
 the source data: the validator rejects any word that is not, code point for
@@ -102,7 +112,7 @@ Other tools:
 
     python3 scripts/build_skeleton.py JHN.1.3 JHN.1.5 -o new.json
     python3 -m owb.validate content/JHN/*.json
-    python3 scripts/extract_tokens.py         # refresh data/grc/ after adding verses
+    python3 scripts/extract_tokens.py         # refresh data/grc/ and data/hbo/ after adding verses
 
 ## The site
 

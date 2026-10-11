@@ -120,6 +120,37 @@ class ValidateTest(unittest.TestCase):
         errors = self._reason_errors(noun.lemma[::-1])
         self.assertTrue(errors and "Hebrew" in errors[0], errors)
 
+    def test_genesis_validates(self):
+        for path in sorted((EXAMPLE.parents[1] / "GEN").glob("*.json")):
+            self.assertEqual(validate.validate_file(path), [], path)
+
+    def _genesis(self, rid):
+        path = EXAMPLE.parents[1] / "GEN" / "GEN.1.1-13.json"
+        return next(r for r in json.loads(path.read_text(encoding="utf-8"))["records"]
+                    if r["id"] == rid)
+
+    def test_hebrew_record_must_hold_whole_verses(self):
+        record = self._genesis("GEN.1.3.s1")
+        record["source"]["tokens"] = record["source"]["tokens"][:-2]
+        del record["source"]["text"]
+        record["decisions"] = []
+        errors = validate.validate_record(record)
+        self.assertTrue(any("every word of its verses" in e for e in errors), errors)
+
+    def test_hebrew_source_text_is_rebuilt_from_morphemes(self):
+        record = self._genesis("GEN.1.1.s1")
+        # A prefix is written joined to its word: 11 morphemes, 7 words.
+        self.assertEqual(len(record["source"]["tokens"]), 11)
+        self.assertEqual(len(record["source"]["text"].split()), 7)
+        record["source"]["text"] = record["source"]["text"].replace(" ", "", 1)
+        self.assertTrue(any("source.text" in e for e in validate.validate_record(record)))
+
+    def test_source_text_id_must_match_its_language(self):
+        record = self._genesis("GEN.1.1.s1")
+        record["source"]["text_id"] = "SBLGNT@v1.2"
+        errors = validate.validate_record(record)
+        self.assertTrue(any("is not the text for 'hbo'" in e for e in errors), errors)
+
     def test_record_cut_mid_sentence_fails(self):
         record = example_records()[0]
         record["source"]["tokens"] = record["source"]["tokens"][:5]
