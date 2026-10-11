@@ -99,6 +99,8 @@ others.
   softer "servant".
 - Modern English: no "thee", "thou", "-eth", "behold", "lo". "Brothers and
   sisters" through the gender setting, not "brethren".
+- No contractions at any level, Readable included: "do not", "it is", "will
+  not". The text is read aloud and printed; the full forms suit both.
 - Numbers in words up to ninety-nine; numerals for larger numbers and in
   measurements.
 
