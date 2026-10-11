@@ -199,9 +199,8 @@ LEADING_GAPS = {"compact": 5, "normal": 7, "spacious": 9}
 
 def colour_menu(lang, path=None):
     """The gear menu: the colour mode, the display settings (DISPLAY_PREFS),
-    then the language, as links to this page in each (the home page from a
-    page without a path). web/site.js runs it, and remembers the language as
-    the footer's links do (language_links)."""
+    then the languages (language_items, as in the footer). web/site.js
+    runs it."""
     label = t(lang, "tools.display")
 
     def option(value, default, face, name):
@@ -227,15 +226,9 @@ def colour_menu(lang, path=None):
     rows = [group(pref, t(lang, "prefs." + pref), default,
                   [(v, sample(pref, v), t(lang, f"{pref}.{v}")) for v in values])
             for pref, default, values in DISPLAY_PREFS]
-    target = path if path is not None else "/"
-    languages = "".join(
-        f'<li><span lang="{code}" aria-current="true">{t(code, "language_name")}'
-        '<span class="check" aria-hidden="true">&#10003;</span></span></li>' if code == lang
-        else f'<li><a href="{url(code, target)}" lang="{code}" hreflang="{code}" data-lang="{code}">'
-             f'{t(code, "language_name")}</a></li>'
-        for code in LANGUAGES)
+    check = '<span class="check" aria-hidden="true">&#10003;</span>'
     languages = (f'<p class="prefs-label" id="prefs-lang">{t(lang, "footer.languages")}</p>'
-                 f'<ul class="prefs-langs" aria-labelledby="prefs-lang">{languages}</ul>')
+                 f'<ul class="prefs-langs" aria-labelledby="prefs-lang">{language_items(lang, path, check)}</ul>')
     return (
         '<div class="prefs">'
         '<button type="button" class="tool-btn prefs-btn" aria-expanded="false" aria-controls="colour-menu" '
@@ -440,19 +433,23 @@ def footer_links(lang):
             f'<nav aria-labelledby="foot-project"><h2 id="foot-project">{t(lang, "footer.project")}</h2><ul>{items(project)}</ul></nav>')
 
 
-def language_links(lang, path):
-    """The footer's language switch, as Ochorus has it: each language in its
-    own name, the current one as plain text and the others as links to this
-    page in that language (the home page from a page without a path).
-    web/site.js remembers the choice."""
+def language_items(lang, path, mark=""):
+    """Each language in its own name, as list items: the current one as plain
+    text (followed by mark) and the others as links to this page in that
+    language (the home page from a page without a path). web/site.js
+    remembers the choice."""
     target = path if path is not None else "/"
-    links = "".join(
-        f'<li><span lang="{code}" aria-current="true">{t(code, "language_name")}</span></li>' if code == lang
+    return "".join(
+        f'<li><span lang="{code}" aria-current="true">{t(code, "language_name")}{mark}</span></li>' if code == lang
         else f'<li><a href="{url(code, target)}" lang="{code}" hreflang="{code}" data-lang="{code}">'
              f'{t(code, "language_name")}</a></li>'
         for code in LANGUAGES)
+
+
+def language_links(lang, path):
+    """The footer's language switch, as Ochorus has it (language_items)."""
     return (f'<nav class="foot-langs" aria-labelledby="foot-langs">'
-            f'<h2 id="foot-langs">{t(lang, "footer.languages")}</h2><ul>{links}</ul></nav>')
+            f'<h2 id="foot-langs">{t(lang, "footer.languages")}</h2><ul>{language_items(lang, path)}</ul></nav>')
 
 
 def site_footer(lang, path=None):
