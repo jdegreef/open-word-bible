@@ -223,3 +223,115 @@
     a.hidden = false;
   });
 })();
+
+// Reading offline (web/sw.js). The worker keeps the pages read lately; the
+// Read page's "Save for offline" button stores a whole book in the
+// owb-books cache, and owb.saved remembers which, for the button and for
+// the offline page's list.
+(function () {
+  "use strict";
+  if (!("serviceWorker" in navigator) || !("caches" in window)) return;
+  window.addEventListener("load", function () {
+    navigator.serviceWorker.register("/sw.js").catch(function () { /* no offline reading */ });
+  });
+
+  var SAVED = "owb.saved";
+  function saved() {
+    try { return JSON.parse(localStorage.getItem(SAVED) || "{}"); } catch (e) { return {}; }
+  }
+  function remember(list) {
+    try { localStorage.setItem(SAVED, JSON.stringify(list)); } catch (e) { /* the cache still has it */ }
+  }
+  // A book is saved per language: "es:JHN".
+  var lang = document.documentElement.lang;
+
+  var head = document.querySelector("[data-offline-files]");
+  var files = head ? JSON.parse(head.getAttribute("data-offline-files")) : [];
+  document.querySelectorAll(".save-book").forEach(function (b) {
+    var key = lang + ":" + b.getAttribute("data-book");
+    var pages = JSON.parse(b.getAttribute("data-pages"));
+    var label = b.querySelector("span");
+    function show(state, n) {
+      b.setAttribute("aria-pressed", state === "saved" ? "true" : "false");
+      b.disabled = state === "saving";
+      label.textContent = b.getAttribute("data-" + state)
+        .replace("{n}", n || 0).replace("{total}", pages.length);
+    }
+
+    function save() {
+      show("saving", 0);
+      caches.open("owb-books").then(function (cache) {
+        var done = 0;
+        // One at a time, so a slow connection is not swamped.
+        return pages.concat(files).reduce(function (chain, u) {
+          return chain.then(function () {
+            return cache.match(u).then(function (hit) {
+              // no-cache: past the worker's own cache (web/sw.js), fresh.
+              return hit || fetch(u, { credentials: "same-origin", cache: "no-cache" }).then(function (res) {
+                if (!res.ok) throw new Error(u + ": " + res.status);
+                return cache.put(u, res);
+              });
+            }).then(function () {
+              if (pages.indexOf(u) >= 0) show("saving", ++done);
+            });
+          });
+        }, Promise.resolve());
+      }).then(function () {
+        var list = saved();
+        list[key] = { name: b.getAttribute("data-name"), pages: pages };
+        remember(list);
+        show("saved");
+      }).catch(function () { show("failed"); });
+    }
+
+    function remove() {
+      var list = saved();
+      delete list[key];
+      remember(list);
+      // The shared files go with the language's last saved book.
+      var more = Object.keys(list).some(function (k) { return k.indexOf(lang + ":") === 0; });
+      var gone = more ? pages : pages.concat(files);
+      caches.open("owb-books").then(function (cache) {
+        return Promise.all(gone.map(function (u) { return cache.delete(u); }));
+      }).then(function () { show("save"); });
+    }
+
+    b.addEventListener("click", function () {
+      if (b.getAttribute("aria-pressed") === "true") remove(); else save();
+    });
+    // Saved, if the list says so and the cache still has its pages (a
+    // browser short of space may have cleared it).
+    caches.open("owb-books").then(function (cache) { return cache.match(pages[pages.length - 1]); })
+      .then(function (hit) { show(saved()[key] && hit ? "saved" : "save"); b.hidden = false; });
+  });
+
+  // The offline page lists the saved books, each with its chapters.
+  var box = document.getElementById("saved-books");
+  if (box) {
+    var list = saved(), ul = box.querySelector("ul");
+    Object.keys(list).forEach(function (key) {
+      var li = document.createElement("li");
+      li.className = "book-row";
+      var name = document.createElement("span");
+      name.className = "book-name";
+      name.textContent = list[key].name;
+      var pills = document.createElement("span");
+      pills.className = "chap-pills";
+      list[key].pages.forEach(function (u) {
+        var a = document.createElement("a");
+        a.className = "chap";
+        a.href = u;
+        a.textContent = u.split("/").filter(Boolean).pop();
+        pills.appendChild(a);
+      });
+      li.appendChild(name);
+      li.appendChild(pills);
+      ul.appendChild(li);
+    });
+    box.hidden = !ul.children.length;
+  }
+  // Its link home, only if the home page is saved (else it leads back here).
+  document.querySelectorAll("a[data-if-saved]").forEach(function (a) {
+    caches.match(a.getAttribute("href")).then(function (hit) { a.hidden = !hit; });
+  });
+})();

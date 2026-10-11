@@ -540,10 +540,11 @@ footer.site .foot-langs ul { display: flex; flex-wrap: wrap; gap: 6px 18px; }
 .book-row .meter { grid-area: bar; }
 .book-row .book-progress { grid-area: progress; }
 .book-row .chap-pills { grid-area: pills; }
+.saved-books { margin: 0 0 48px; }
 
 /* Read page: one section per book. */
 .book-group { margin: 0 0 48px; }
-.book-head { display: grid; grid-template-columns: auto auto 1fr; align-items: center; gap: 8px 18px; margin: 0 0 16px; }
+.book-head { display: grid; grid-template-columns: auto auto 1fr auto; align-items: center; gap: 8px 18px; margin: 0 0 16px; }
 .book-head h2 { font-family: var(--display); font-weight: 600; font-size: 28px; letter-spacing: -.01em; margin: 0; }
 .book-head .meter { max-width: 260px; }
 
@@ -560,12 +561,15 @@ footer.site .foot-langs ul { display: flex; flex-wrap: wrap; gap: 6px 18px; }
 /* The book and its progress on one line, every chapter on the next. */
 .chapstrip .chap-pills { order: 3; flex-basis: 100%; gap: 5px; }
 .chapstrip .chap-progress { margin-left: auto; }
-.chap-goto {
+.chap-goto, .save-book {
   display: inline-flex; align-items: center; gap: 6px; padding: 4px 11px; border: 1px solid var(--line-strong);
   border-radius: 999px; background: var(--surface); color: var(--text); font: inherit; font-size: 13px; font-weight: 600;
   cursor: pointer; transition: border-color var(--fast), color var(--fast);
 }
-.chap-goto:hover { border-color: var(--accent); color: var(--accent); }
+.chap-goto:hover, .save-book:hover { border-color: var(--accent); color: var(--accent); }
+/* Read page: a book saved for offline (web/site.js). */
+.save-book[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
+.save-book:disabled { cursor: progress; opacity: .8; }
 .chap-goto:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .chap-progress { font-size: 13px; color: var(--muted); }
 .chapstrip + h1 { margin-top: 14px; }
@@ -931,7 +935,8 @@ footer.site .foot-langs ul { display: flex; flex-wrap: wrap; gap: 6px 18px; }
   .points, .helpers { grid-template-columns: 1fr; }
   .book-row { grid-template-columns: 1fr auto; grid-template-areas: "name progress" "bar bar" "pills pills"; padding: 14px 16px; }
   .book-head { grid-template-columns: 1fr auto; }
-  .book-head .meter { grid-column: 1 / -1; max-width: none; }
+  .book-head .meter, .book-head .save-book { grid-column: 1 / -1; max-width: none; }
+  .book-head .save-book { justify-self: start; }
   .chapstrip .chap-pills { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding: 2px 0; min-width: 0; max-width: 100%; }
   .chapstrip .chap-pills::-webkit-scrollbar { display: none; }
   .chapstrip .chap { flex: none; }
