@@ -39,6 +39,8 @@ class MorphTest(unittest.TestCase):
             "HEB": "Hebrew word",
             "S-1SNSM": "Possessive pronoun · 1st person singular · nominative singular masculine",
             "P-1NS-K": "Personal pronoun · 1st person nominative singular · crasis (two words run together)",
+            # As MACULA codes one word at John 8:10, with no person and a stray hyphen.
+            "P-GS-": "Personal pronoun · genitive singular",
         }
         for code, words in cases.items():
             self.assertEqual(morph.describe(code), words, code)
