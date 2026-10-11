@@ -82,6 +82,7 @@ ICONS = {
     "users": '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6 6 0 0 1 3.5 6"/>',
     "check": '<path d="M20 6 9 17l-5-5"/>',
     "user": '<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>',
+    "search": '<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>',
     "github": '<path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/>',
 }
 
@@ -233,12 +234,14 @@ def page(lang, title, body, path=None, current="", description="", card="site", 
 <title>{html.escape(full_title)}</title>
 <meta name="description" content="{html.escape(description)}">{meta}
 <meta name="owb-api" content="{API_URL}">
+<meta name="owb-search" content="{search_index_url(lang)}">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <script>{boot}</script>
 <link rel="preload" href="/fonts/hanken-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/gentium-book-plus-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{asset("style.css")}">
 <script src="{asset("site.js")}" defer></script>
+<script src="{asset("search.js")}" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">{t(lang, "skip")}</a>
@@ -247,6 +250,7 @@ def page(lang, title, body, path=None, current="", description="", card="site", 
 {body}
 </main>
 {site_footer(lang, here)}
+{palette(lang)}
 </body>
 </html>
 """
@@ -332,6 +336,7 @@ def site_header(lang, current, path=None):
 <a class="brand" href="{home}"{" aria-current=page" if home_on else ""}>{MARK}<span class="brand-name">Open Word <em>Bible</em></span></a>
 <nav class="primary" id="site-nav" aria-label="{t(lang, "nav.main")}"><ul class="nav-list">{"".join(items)}</ul></nav>
 <div class="tools">
+<a class="tool-btn search-btn" href="{url(lang, "/search/")}" aria-label="{t(lang, "nav.search")}" title="{t(lang, "nav.search")}" aria-keyshortcuts="Control+K Meta+K">{icon(ICONS["search"])}<span class="search-label">{t(lang, "nav.search")}</span><kbd class="search-kbd" hidden>Ctrl K</kbd></a>
 <a class="tool-btn account-btn" href="{url(lang, "/account/")}" aria-label="{t(lang, "tools.sign_in")}" title="{t(lang, "tools.sign_in")}" data-signed-in="{t(lang, "tools.your_account")}">{icon(ICONS["user"])}<span class="account-initial" hidden></span></a>
 <a class="tool-btn" href="{GITHUB_URL}" aria-label="{t(lang, "tools.github")}" title="GitHub">{icon(ICONS["github"])}</a>
 {colour_menu(lang)}
@@ -1315,6 +1320,171 @@ FAVICON = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
 """
 
 
+# Search (web/search.js). The site is static, so the build writes an index
+# of everything a reader can find, one file per interface language, and the
+# browser searches it: the /search/ page, and the palette that Ctrl K or
+# Cmd K opens on any page, as on Ochorus. An index holds what that
+# language's pages show: each sentence in the language the reader shows it
+# in, its notes, the articles and the passages.
+
+# Book abbreviations a reader may type besides each book's names, its USFM
+# code and its OSIS id ("Phil"); and prefixes of the names, from three
+# letters, in canonical order (so "phil" is Philippians, not Philemon).
+BOOK_ALIASES = {"JHN": ["jn"], "PHP": ["flp", "fil"], "1JN": ["1jn"], "2JN": ["2jn"], "3JN": ["3jn"]}
+# The palette's page shortcuts, by catalog key.
+SEARCH_PAGES = (("nav.home", "/"), ("nav.read", "/read/"), ("nav.articles", "/articles/"),
+                ("nav.about_project", "/about/"), ("nav.credits", "/about/#credits"),
+                ("nav.help", "/#help"), ("tools.sign_in", "/account/"))
+
+
+def fold(text):
+    """Text as search compares it: lower case, without accents."""
+    import unicodedata
+    return "".join(c for c in unicodedata.normalize("NFD", text.lower()) if not unicodedata.combining(c))
+
+
+def book_aliases(code, names):
+    out = {fold(n).replace(" ", "") for n in names}
+    out |= {code.lower(), next(o for c, o, _ in refs.BOOKS if c == code).lower()}
+    out |= set(BOOK_ALIASES.get(code, []))
+    return sorted(out)
+
+
+def article_text(body, lang="en"):
+    """An article's words without markup, for the index: quoted sentences
+    in full, other {{...}} tokens (Greek words) left out."""
+    text = _OWB.sub(lambda m: html.unescape(_owb(m, lang)), body)
+    text = re.sub(r"\{\{[^}]*\}\}", "", text)
+    text = re.sub(r"\[([^\]]+)\]\([^)]*\)", r"\1", text)
+    text = re.sub(r"[#*_`>|]", "", text)
+    return smart_quotes(re.sub(r"\s+", " ", text).strip())
+
+
+@functools.lru_cache(maxsize=None)
+def search_index(lang):
+    """The search index for pages in lang, as JSON text. Kinds: "c" a
+    passage, "v" a sentence (its text at each level, with the settings
+    spans left in for the browser to render), "n" a note (a decision),
+    "a" an article."""
+    ui = dict(catalog(lang)["search.ui"])
+    ui["levels"] = catalog(lang)["levels"]
+    ui["category"] = catalog(lang)["reader.ui"]["category"]
+    ui["read_url"] = url(lang, "/read/")
+    content = {b for b, _ in books()}
+    names = {code: BOOK_NAMES.get(code, {}).get(lang, name) for code, name in refs.BOOK_NAMES.items()}
+    book_list = []
+    for code in refs.BOOK_CODES:
+        known = BOOK_NAMES.get(code, {})
+        entry = {"code": code, "name": names[code],
+                 "aliases": book_aliases(code, [refs.BOOK_NAMES[code], *known.values()])}
+        if code in content:
+            entry["chapters"] = {str(p.chapter): {"url": url(lang, p.url), "verses": sorted(
+                {refs.parse(v).verse for r in p.records for v in r["refs"]})}
+                for p in dict(books())[code]}
+        book_list.append(entry)
+    docs = []
+    for p in passages():
+        title = chapter_name(p.records, p.book, p.chapter, lang)
+        docs.append({"k": "c", "bk": p.book, "c": p.chapter, "t": title, "u": url(lang, p.url), "s": html.unescape(languages_label(p.records)),
+                     "h": " ".join([title, refs.BOOK_NAMES[p.book], *BOOK_NAMES[p.book].values()])})
+        for r in p.records:
+            shown = text_lang(r, lang)
+            verse = refs.parse(r["refs"][0]).verse
+            doc = {"k": "v", "bk": p.book, "c": p.chapter, "v": verse,
+                   "vv": [refs.parse(v).verse for v in r["refs"]], "u": url(lang, p.url),
+                   "x": r["renderings"][shown]}
+            if shown != lang:
+                doc["l"] = shown
+            docs.append(doc)
+            for d in r["decisions"]:
+                if d["layer"] == "rendering" and d["language"] != shown:
+                    continue
+                docs.append({"k": "n", "bk": p.book, "c": p.chapter,
+                             "v": verse, "u": url(lang, p.url), "y": d["layer"], "g": d["category"],
+                             "t": d["choice"], "al": d["alternatives"], "s": d["reason"],
+                             "l": "en" if d["layer"] == "meaning" else d["language"]})
+    for a in sorted(load_articles(lang), key=lambda a: (a["section"] != "method", a["order"])):
+        docs.append({"k": "a", "t": a["title"], "s": a["summary"], "x": article_text(a["body"], a["lang"]),
+                     "u": url(lang, article_url(a)), "sec": catalog(lang)["sections"][a["section"]],
+                     "l": a["lang"]})
+    for d in docs:
+        if d.get("l") == lang:
+            del d["l"]
+    data = {"lang": lang, "ui": ui, "books": book_list, "docs": docs,
+            "pages": [[html.unescape(t(lang, key)), url(lang, path)] for key, path in SEARCH_PAGES]}
+    return json.dumps(data, ensure_ascii=False, separators=(",", ":"))
+
+
+@functools.lru_cache(maxsize=None)
+def search_index_url(lang):
+    digest = hashlib.sha256(search_index(lang).encode("utf-8")).hexdigest()[:10]
+    return f"/search-{lang}.json?v={digest}"
+
+
+def palette(lang):
+    """The search palette (web/search.js), on every page: a dialog with a
+    box that searches as the reader types. Without the script the header's
+    search button is a link to /search/."""
+    ui = catalog(lang)["search.ui"]
+    return f"""<div class="palette" id="palette" hidden>
+<div class="palette-box" role="dialog" aria-modal="true" aria-label="{t(lang, "nav.search")}">
+<form class="palette-form" action="{url(lang, "/search/")}" method="get" role="search">
+{icon(ICONS["search"], 20)}
+<input type="search" name="q" id="palette-q" autocomplete="off" spellcheck="false" placeholder="{html.escape(ui["palette_placeholder"])}" aria-label="{t(lang, "search.label")}" role="combobox" aria-expanded="true" aria-controls="palette-list" aria-autocomplete="list">
+<kbd class="palette-esc">esc</kbd>
+</form>
+<ul class="palette-list" id="palette-list" role="listbox" aria-label="{t(lang, "nav.search")}"></ul>
+<p class="palette-foot" aria-hidden="true"><span><kbd>&uarr;</kbd><kbd>&darr;</kbd> {html.escape(ui["navigate"])}</span><span><kbd>&crarr;</kbd> {html.escape(ui["open"])}</span><span><kbd>esc</kbd> {html.escape(ui["close"])}</span></p>
+</div>
+</div>"""
+
+
+def search_page(lang="en"):
+    """/search/: the box, then results as the reader types (web/search.js).
+    The query lives in the address (?q=), so a search can be shared. Before
+    a search the page offers recent searches, examples, and the passages."""
+    examples = "".join(f'<li><a class="tag" href="{url(lang, "/search/")}?q={html.escape(q.replace(" ", "+"))}">'
+                       f'{html.escape(q)}</a></li>' for q in catalog(lang)["search.examples"])
+    browse = "".join(
+        f'<div class="browse-book"><a class="browse-name" href="{url(lang, f"/read/#{book.lower()}")}">'
+        f'{icon(ICONS["book"], 16)}{BOOK_NAMES[book][lang]}</a>'
+        f'<span class="chap-pills">{chapter_pills(chaps, lang)}</span></div>'
+        for book, chaps in books())
+    ui = catalog(lang)["search.ui"]
+    body = f"""
+<header class="page-head search-head">
+<p class="eyebrow">{t(lang, "search.title")}</p>
+<h1>{t(lang, "search.heading")}</h1>
+<p class="dek">{t(lang, "search.dek")}</p>
+</header>
+<div class="search-bar">
+<form class="search-box" id="search-form" action="{url(lang, "/search/")}" method="get" role="search">
+{icon(ICONS["search"], 20)}
+<input type="search" name="q" id="search-q" autocomplete="off" spellcheck="false" placeholder="{t(lang, "search.placeholder")}" aria-label="{t(lang, "search.label")}" aria-describedby="search-status">
+</form>
+</div>
+<p class="sr-only" id="search-status" aria-live="polite"></p>
+<noscript><p class="notice">{t(lang, "search.noscript")}</p></noscript>
+<div class="search-layout" id="search-results" hidden data-error="{html.escape(ui["error"])}" data-retry="{html.escape(ui["retry"])}" data-remove="{html.escape(ui["remove"])}"></div>
+<div class="ways-in" id="search-start">
+<section class="ways" id="search-recent" hidden aria-labelledby="recent-h">
+<div class="ways-head"><h2 class="label" id="recent-h">{t(lang, "search.recent")}</h2><button type="button" class="link-btn" id="recent-clear">{t(lang, "search.clear")}</button></div>
+<ul class="tags" id="recent-list"></ul>
+</section>
+<section class="ways" aria-labelledby="try-h">
+<h2 class="label" id="try-h">{t(lang, "search.try")}</h2>
+<ul class="tags">{examples}</ul>
+</section>
+<section class="ways" aria-labelledby="browse-h">
+<h2 class="label" id="browse-h">{t(lang, "search.browse")}</h2>
+{browse}
+</section>
+</div>
+"""
+    return page(lang, t(lang, "search.title"), body, path="/search/", current="/search/",
+                description=t(lang, "meta.search_description"))
+
+
 def sitemap(paths):
     urls = "".join(f"<url><loc>{html.escape(SITE_URL + p)}</loc></url>\n" for p in paths)
     return ('<?xml version="1.0" encoding="UTF-8"?>\n'
@@ -1323,7 +1493,8 @@ def sitemap(paths):
 
 
 def build(out):
-    for cached in (nav_menus, footer_links, passages, asset, translated_verses, catalog):
+    for cached in (nav_menus, footer_links, passages, asset, translated_verses, catalog, search_index,
+                   search_index_url):
         cached.cache_clear()
     if out.exists():
         shutil.rmtree(out)
@@ -1337,6 +1508,7 @@ def build(out):
         add("/", home_page(lang))
         add("/read/", read_page(lang))
         add("/about/", about_page(lang))
+        add("/search/", search_page(lang))
         for book, chapter in chapters():
             add(chapter_url(book, chapter), chapter_page(book, chapter, lang))
         articles = load_articles(lang)
@@ -1351,15 +1523,17 @@ def build(out):
     files["sitemap.xml"] = sitemap(indexed)
     files["robots.txt"] = f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n"
     files["favicon.svg"] = FAVICON
+    for lang in LANGUAGES:
+        files[f"search-{lang}.json"] = search_index(lang)
     for rel, text in files.items():
         path = out / rel
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(text, encoding="utf-8")
-    for name in ("style.css", "reader.js", "site.js", "account.js"):
+    for name in ("style.css", "reader.js", "site.js", "account.js", "search.js"):
         shutil.copy(ROOT / "web" / name, out / name)
     shutil.copytree(ROOT / "web" / "fonts", out / "fonts")
     shutil.copytree(OG, out / "og", ignore=shutil.ignore_patterns("manifest.json"))
-    return sorted(files) + ["reader.js", "site.js", "style.css"]
+    return sorted(files) + ["reader.js", "search.js", "site.js", "style.css"]
 
 
 def main():
