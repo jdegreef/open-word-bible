@@ -38,8 +38,9 @@ Content: Genesis 1–5 (`content/GEN/`) in English; John 1–8
 1–2 in French and chapters 1–4 in Swahili; Romans 1 and 9–16 (`content/ROM/`) in
 English; all of Philippians (`content/PHP/`) in English, with chapter 4
 also in Spanish; all of Ephesians (`content/EPH/`) and Colossians
-(`content/COL/`) in English; and all of James and 1 and 2 Peter
-(`content/JAS/`, `content/1PE/`, `content/2PE/`) in English. English runs
+(`content/COL/`) in English; and all of James, 1 and 2 Peter and 2 and 3
+John (`content/JAS/`, `content/1PE/`, `content/2PE/`, `content/2JN/`,
+`content/3JN/`) in English. English runs
 ahead of the other languages; `docs/english-style.md` is the brief for
 drafting it and `data/key_terms.json` the settled key terms.
 `docs/french-style.md` and
