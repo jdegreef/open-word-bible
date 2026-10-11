@@ -625,6 +625,13 @@
   // in style.css), so opening it never moves the reader's place. The CSS
   // owns the breakpoint: the sheet is the panel when it is position: fixed.
   function narrow() { return getComputedStyle(panelEl).position === "fixed"; }
+  // Smooth scrolling, unless the reader asked for less motion (the device
+  // setting, or Motion in the gear menu: data-motion on <html>).
+  function scrollMotion() {
+    var reduce = document.documentElement.getAttribute("data-motion") === "reduce" ||
+      (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches);
+    return reduce ? "auto" : "smooth";
+  }
   function verseEl(v) { return document.querySelector('.verse[data-v="' + v + '"]'); }
   // A verse in the address: #v4, or plainly #4 (#v7:53 for a verse
   // of another chapter that a sentence runs into). #at-4 (from "Continue
@@ -667,7 +674,7 @@
     }
     if (narrow()) {
       var v = verseEl(verse);
-      if (v) v.scrollIntoView({ behavior: "smooth", block: "start" });
+      if (v) v.scrollIntoView({ behavior: scrollMotion(), block: "start" });
       // The sheet covers the text below the verse, so take focus into it.
       if (!card) panelEl.focus({ preventScroll: true });
     }
@@ -736,7 +743,7 @@
     var v = verseEl(next.verse);
     if (v && !narrow()) {
       v.focus({ preventScroll: true });
-      v.scrollIntoView({ block: "nearest", behavior: "smooth" });
+      v.scrollIntoView({ block: "nearest", behavior: scrollMotion() });
     }
   }
 
@@ -751,7 +758,7 @@
   // already puts it at the top, above the sheet.)
   function reveal(verse, instant) {
     var v = !narrow() && verseEl(verse);
-    if (v) v.scrollIntoView({ block: "center", behavior: instant ? "auto" : "smooth" });
+    if (v) v.scrollIntoView({ block: "center", behavior: instant ? "auto" : scrollMotion() });
   }
 
   // Swipe the sheet down to close it, when it is scrolled to its top. The
