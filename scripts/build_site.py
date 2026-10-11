@@ -582,7 +582,6 @@ def chapter_page(book, chapter, lang="en"):
     plural = ("\n  " + control("plural", "plural_you", [("0", "ustedes"), ("1", "vosotros")])
               if lang in PLURAL_YOU else "")
     body = f"""
-<p class="notice">{t(lang, "reader.notice")}</p>
 <button type="button" class="settings-toggle" id="settings-toggle" aria-expanded="false" aria-controls="settings">
   <span>{t(lang, "reader.settings")}</span> <span class="settings-summary" id="settings-summary"></span>
 </button>
@@ -607,6 +606,7 @@ def chapter_page(book, chapter, lang="en"):
   </article>
   <aside class="panel" id="panel" aria-live="polite" tabindex="-1"></aside>
 </div>
+{edge_turns(book, chapter, lang)}
 <script type="application/json" id="owb-data">{blob}</script>
 <script src="{asset("reader.js")}"></script>
 """
@@ -628,10 +628,37 @@ def chapter_strip(book, chapter, lang="en"):
             f'<span class="chap-progress">{progress}</span></nav>')
 
 
-def chapter_turns(book, chapter, lang="en"):
-    """Below a passage: the previous and next passages, across books."""
+def neighbours(book, chapter):
+    """The passages before and after this one, across books (None at the ends)."""
     ps = passages()
     i = next(n for n, p in enumerate(ps) if (p.book, p.chapter) == (book, chapter))
+    return (ps[i - 1] if i > 0 else None), (ps[i + 1] if i + 1 < len(ps) else None)
+
+
+def edge_turns(book, chapter, lang="en"):
+    """Arrows at the sides of the window on wide screens, for the previous
+    and next passages; the reader's arrow keys follow them (web/reader.js)."""
+    prev, nxt = neighbours(book, chapter)
+
+    def arrow(p, rel, label, glyph):
+        if p is None:
+            return ""
+        name = html.escape(chapter_name(p.records, p.book, p.chapter, lang))
+        return (f'<a class="edge-turn {rel}" href="{url(lang, p.url)}" data-turn="{rel}" '
+                f'aria-label="{plain_label(label)}: {name}" title="{name}">{glyph}</a>')
+
+    return (arrow(prev, "prev", t(lang, "reader.prev"), "&lsaquo;")
+            + arrow(nxt, "next", t(lang, "reader.next"), "&rsaquo;"))
+
+
+def plain_label(label):
+    """A button label without its arrow entity, for an aria-label."""
+    return re.sub(r"\s*&[lr]arr;\s*", "", label)
+
+
+def chapter_turns(book, chapter, lang="en"):
+    """Below a passage: the previous and next passages, across books."""
+    prev, nxt = neighbours(book, chapter)
 
     def turn(p, rel, label):
         if p is None:
@@ -640,8 +667,6 @@ def chapter_turns(book, chapter, lang="en"):
                 f'<span class="turn-label">{label}</span>'
                 f'<span class="turn-name">{display(chapter_name(p.records, p.book, p.chapter, lang))}</span></a>')
 
-    prev = ps[i - 1] if i > 0 else None
-    nxt = ps[i + 1] if i + 1 < len(ps) else None
     return (f'<nav class="turns" aria-label="{t(lang, "reader.turns")}">'
             f'{turn(prev, "prev", t(lang, "reader.prev"))}{turn(nxt, "next", t(lang, "reader.next"))}</nav>')
 
