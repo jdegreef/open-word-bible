@@ -97,6 +97,7 @@ ICONS = {
     "code": '<path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/>',
     "users": '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6 6 0 0 1 3.5 6"/>',
     "check": '<path d="M20 6 9 17l-5-5"/>',
+    "bookmark": '<path d="M6 3h12v18l-6-4-6 4z"/>',
     "listen": '<path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a10 10 0 0 1 0 14"/>',
     "download": '<path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/>',
     "user": '<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>',
@@ -773,6 +774,7 @@ def chapter_page(book, chapter, lang="en"):
     data["uses"] = word_uses()[1]
     # Names before a chapter number ("Psalm 23:1"), for "Book 1:2" links.
     data["books"] = {b: chapter_book(b, lang) for b, _ in books()}
+    data["saved"] = url(lang, "/saved/")
     data["grammar"] = {grammar_key(w): {l: describe(w, l) for l in LANGUAGES}
                        for ws in data["words"].values() for w in ws}
     # "</" cannot appear inside a script element.
@@ -1022,7 +1024,7 @@ def read_page(lang="en"):
 <p class="eyebrow">{t(lang, "read.title")}</p>
 <h1>{t(lang, "read.heading")}</h1>
 <p class="dek">{t(lang, "read.dek")}</p>
-<p class="actions">{resume_link(lang)}</p>
+<p class="actions">{resume_link(lang)}<a class="button ghost" href="{url(lang, "/saved/")}">{icon(ICONS["bookmark"])}{t(lang, "saved.title")}</a></p>
 </header>
 {cards}
 <section class="how" aria-labelledby="how-h">
@@ -1647,6 +1649,30 @@ def not_found_page():
 </section>""")
 
 
+def saved_page(lang="en"):
+    """The reader's bookmarks and highlights, from owb.marks in this browser
+    (web/reader.js keeps them, web/site.js lists them here). The page
+    carries the book names and canonical order in lang, and its labels."""
+    order = [b for b, _ in books()]
+    names = {b: chapter_book(b, lang) for b in order}
+    data = {"order": order, "names": names,
+            "chapters": {b: url(lang, chapter_url(b, 0)).replace("/0/", "/{c}/") for b in order},
+            "remove": t(lang, "saved.remove"), "bookmark": t(lang, "saved.bookmark")}
+    filters = "".join(f'<button type="button" data-filter="{k}" aria-pressed="{"true" if k == "all" else "false"}">'
+                      f'{t(lang, "saved." + k)}</button>' for k in ("all", "bookmarks", "highlights"))
+    return page(lang, t(lang, "saved.title"), f"""
+<header class="page-head">
+<p class="eyebrow">{t(lang, "saved.title")}</p>
+<h1>{t(lang, "saved.heading")}</h1>
+<p class="dek">{t(lang, "saved.dek")}</p>
+</header>
+<section class="saved" id="saved" data-saved="{html.escape(json.dumps(data, ensure_ascii=False))}">
+<div class="seg saved-filter" role="group" aria-label="{t(lang, "saved.show")}">{filters}</div>
+<p class="saved-empty" hidden>{t(lang, "saved.empty")}</p>
+<div class="saved-list"></div>
+</section>""", unlisted="/saved/")
+
+
 def offline_page(lang="en"):
     """What web/sw.js shows for a page not saved on the device, with the
     books that are (filled in by web/site.js)."""
@@ -1906,6 +1932,7 @@ def build(out):
             add(article_url(article), article_page(article, articles, lang), index=article["lang"] == lang)
         add("/account/", account_page(lang), index=False)
         add("/offline/", offline_page(lang), index=False)
+        add("/saved/", saved_page(lang), index=False)
     files = {(p.strip("/") + "/index.html").lstrip("/"): text for p, text in pages.items()}
     files["404.html"] = not_found_page()
     files["sitemap.xml"] = sitemap(indexed)
