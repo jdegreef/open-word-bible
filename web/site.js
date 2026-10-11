@@ -153,24 +153,62 @@
   });
 })();
 
-// The header's account button: once signed in (web/account.js keeps a copy
-// of the account in localStorage), it shows the reader's initial.
+// The header's account menu (account_menu in scripts/build_site.py), as on
+// Ochorus. Signed out, "Sign in" leads to /login/ and back to this page.
+// Signed in (web/account.js keeps a copy of the account in localStorage),
+// the reader's initial opens a menu: their name and email, the account
+// page, Admin for a super admin, and signing out.
 (function () {
   "use strict";
-  var link = document.querySelector(".account-btn");
-  if (!link) return;
+  var box = document.querySelector(".account-menu");
+  if (!box) return;
+  var signIn = box.querySelector("[data-login]");
   var account = null;
   try { account = JSON.parse(localStorage.getItem("owb.account") || "null"); } catch (e) { /* none */ }
-  if (!account || !account.user) return;
-  var name = account.user.display_name || account.user.email;
-  var initial = link.querySelector(".account-initial");
-  initial.textContent = name.charAt(0).toUpperCase();
-  initial.hidden = false;
-  link.classList.add("signed-in");
-  // The label is in the page's language (data-signed-in, from i18n/).
-  var label = link.getAttribute("data-signed-in");
-  link.setAttribute("aria-label", label + " (" + name + ")");
-  link.title = label;
+  if (!account || !account.user) {
+    document.documentElement.classList.remove("signed-in");
+    signIn.addEventListener("click", function () {
+      var here = location.pathname + location.search + location.hash;
+      if (!/\/(login|reset-password)\/$/.test(location.pathname)) {
+        signIn.href = signIn.pathname + "?redirect=" + encodeURIComponent(here);
+      }
+    });
+    return;
+  }
+  var user = account.user;
+  var name = user.display_name || user.email;
+  var button = box.querySelector(".avatar-btn");
+  var pop = box.querySelector(".account-pop");
+  box.querySelector(".account-initial").textContent = name.charAt(0).toUpperCase();
+  box.querySelector(".who-name").textContent = user.display_name || "";
+  box.querySelector(".who-email").textContent = user.email;
+  box.querySelector(".admin-link").hidden = !user.is_super_admin;
+  button.setAttribute("aria-label", button.getAttribute("aria-label") + " (" + name + ")");
+  signIn.hidden = true;
+  button.hidden = false;
+
+  function open(show) {
+    pop.hidden = !show;
+    button.setAttribute("aria-expanded", show ? "true" : "false");
+    if (show) pop.querySelector("a, button").focus();
+  }
+  button.addEventListener("click", function () { open(pop.hidden); });
+  document.addEventListener("click", function (e) {
+    if (!pop.hidden && !box.contains(e.target)) open(false);
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && !pop.hidden) { open(false); button.focus(); }
+  });
+
+  box.querySelector(".sign-out").addEventListener("click", function () {
+    var api = document.querySelector('meta[name="owb-api"]').content;
+    function done() {
+      try { localStorage.removeItem("owb.account"); } catch (e) { /* none */ }
+      location.reload();
+    }
+    fetch(api + "/api/auth/sign-out", { method: "POST", headers: { Authorization: "Bearer " + account.token } })
+      .then(done, done);
+  });
 })();
 
 // The footer's language links (language_links in scripts/build_site.py):

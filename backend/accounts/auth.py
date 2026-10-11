@@ -1,29 +1,53 @@
-"""Signing in: email links, API tokens, and roles.
+"""Signing in: passwords, email links, Google, API tokens and roles.
 
-A browser asks for a link (request_link), the email carries
-<site>/account/#token=<secret>, and the account page trades the secret for an
-API token (redeem_link) when the reader presses "Finish signing in", so an
-email scanner that opens the link does not use it up. The token goes in an
-Authorization: Bearer header.
+Three ways in, all ending in an API token (one per device) that goes in an
+Authorization: Bearer header:
+
+- a password (sign_in_with_password). Choosing one is confirmed by email:
+  sign_up emails a link carrying the hashed password, and the password
+  applies only when that link is used, so nobody can set the password of an
+  address they do not own, and asking reveals nothing about who has an
+  account;
+- a single-use link emailed to the address (send_link); redeeming one creates
+  the account the first time. Email links land on <site>/login/#token=<secret>,
+  and the page trades the secret for a token (redeem_link) only when the
+  reader presses "Finish signing in", so an email scanner that opens the link
+  does not use it up. Reset links land on /reset-password/ instead, where the
+  new password goes with the secret (reset_password);
+- Google (accounts/google.py), which hands the browser back to the site with
+  a link of its own.
 """
 import logging
 from datetime import timedelta
+from urllib.parse import quote
 
 from django.conf import settings
 from django.contrib.auth import get_user_model
+from django.contrib.auth.hashers import check_password, make_password
 from django.core.mail import send_mail
 from django.db import transaction
 from django.utils import timezone
 from rest_framework import authentication
 
-from .models import ApiToken, Role, SignInLink, hash_secret, new_secret
+from .models import ApiToken, FailedSignIn, Role, SignInLink, hash_secret, new_secret
 
 log = logging.getLogger(__name__)
 
 LINKS_PER_EMAIL_PER_HOUR = 5
 LINKS_PER_IP_PER_HOUR = 20
 LINKS_PER_HOUR = 300          # every address together: a cap on what the site can be made to send
+FAILURES_PER_EMAIL = 10       # wrong passwords in FAILURE_WINDOW before an address is paused
+FAILURES_PER_IP = 30
+FAILURE_WINDOW = timedelta(minutes=15)
 TOKEN_IDLE_DAYS = 180         # a device unused this long is signed out
+LANGUAGES = ("en", "es", "fr", "sw")
+Purpose = SignInLink.Purpose
+
+
+def has_password(user):
+    """Accounts made before passwords, or by a link, have none: a blank
+    password field, which Django would call usable, or an unusable one."""
+    return bool(user.password) and user.has_usable_password()
 
 
 class RateLimited(Exception):
@@ -34,31 +58,76 @@ class EmailUnavailable(Exception):
     pass
 
 
-def request_link(email, ip=None):
-    """Email a single-use sign-in link. email must already be validated and
-    normalised (views.normalise_email). Raises RateLimited when the address,
-    the network or the site has sent too many links in the last hour, and
-    EmailUnavailable when email is not set up or the mail server fails."""
-    if settings.EMAIL_BACKEND.endswith("console.EmailBackend") and not settings.DEBUG:
-        # Without SMTP the link would be printed to the log, where anyone who
-        # can read the log could sign in as anyone.
-        raise EmailUnavailable
+def safe_redirect(path):
+    """A path on the site to return to after signing in, or "". Only rooted
+    paths on the same site: never //host, /\\host or control characters."""
+    path = str(path or "")
+    if (not path.startswith("/") or path.startswith("//") or path.startswith("/\\")
+            or any(ord(c) < 32 or c == "\x7f" for c in path) or len(path) > 300):
+        return ""
+    return path
+
+
+def link_url(purpose, secret, lang="en", redirect=""):
+    prefix = "" if lang == "en" else f"/{lang}"
+    page = "/reset-password/" if purpose == Purpose.RESET else "/login/"
+    query = f"?redirect={quote(redirect, safe='/')}" if redirect else ""
+    key = "google" if purpose == Purpose.GOOGLE else "token"
+    return f"{settings.OWB_SITE_URL}{prefix}{page}{query}#{key}={secret}"
+
+
+EMAILS = {
+    Purpose.SIGN_IN: ("Sign in to Open Word Bible",
+                      "Open this link to sign in to Open Word Bible:\n\n{url}\n\n"
+                      "It works once, for {minutes} minutes. If you did not ask to sign in, "
+                      "you can ignore this email."),
+    Purpose.SIGN_UP: ("Confirm your Open Word Bible account",
+                      "Open this link to confirm your email and finish creating your "
+                      "Open Word Bible account:\n\n{url}\n\n"
+                      "It works once, for {minutes} minutes. If you already have an account, "
+                      "using it sets the password you just chose. If you did not ask for this, "
+                      "you can ignore this email."),
+    Purpose.RESET: ("Reset your Open Word Bible password",
+                    "Open this link to choose a new password for Open Word Bible:\n\n{url}\n\n"
+                    "It works once, for {minutes} minutes. If you did not ask to reset your "
+                    "password, you can ignore this email; your password has not changed."),
+}
+
+
+def _check_rate(email, ip):
     hour_ago = timezone.now() - timedelta(hours=1)
     recent = SignInLink.objects.filter(created_at__gte=hour_ago)
     if (recent.filter(email=email).count() >= LINKS_PER_EMAIL_PER_HOUR
             or (ip and recent.filter(requested_ip=ip).count() >= LINKS_PER_IP_PER_HOUR)
             or recent.count() >= LINKS_PER_HOUR):
         raise RateLimited
+
+
+def send_link(email, purpose=Purpose.SIGN_IN, ip=None, lang="en", redirect="", password=None):
+    """Email a single-use link. email must already be validated and
+    normalised (views.normalise_email); password (sign-up) must already be
+    validated. A reset link goes only to an existing account, but the call
+    looks the same either way. Raises RateLimited when the address, the
+    network or the site has sent too many links in the last hour, and
+    EmailUnavailable when email is not set up or the mail server fails."""
+    if settings.EMAIL_BACKEND.endswith("console.EmailBackend") and not settings.DEBUG:
+        # Without SMTP the link would be printed to the log, where anyone who
+        # can read the log could sign in as anyone.
+        raise EmailUnavailable
+    _check_rate(email, ip)
     secret, token_hash = new_secret()
-    link = SignInLink.objects.create(email=email, token_hash=token_hash, requested_ip=ip)
-    url = f"{settings.OWB_SITE_URL}/account/#token={secret}"
-    minutes = settings.SIGN_IN_LINK_MINUTES
+    link = SignInLink.objects.create(
+        email=email, token_hash=token_hash, requested_ip=ip, purpose=purpose,
+        password_hash=make_password(password) if password else "")
+    if purpose == Purpose.RESET and not get_user_model().objects.filter(username=email, is_active=True).exists():
+        return   # counted against the limits like any other, but not sent
+    subject, body = EMAILS[purpose]
+    lang = lang if lang in LANGUAGES else "en"
     try:
         send_mail(
-            subject="Sign in to Open Word Bible",
-            message=(f"Open this link to sign in to Open Word Bible:\n\n{url}\n\n"
-                     f"It works once, for {minutes} minutes. If you did not ask to sign in, "
-                     f"you can ignore this email."),
+            subject=subject,
+            message=body.format(url=link_url(purpose, secret, lang, safe_redirect(redirect)),
+                                minutes=settings.SIGN_IN_LINK_MINUTES),
             from_email=settings.DEFAULT_FROM_EMAIL,
             recipient_list=[email],
         )
@@ -68,29 +137,112 @@ def request_link(email, ip=None):
         raise EmailUnavailable
 
 
-@transaction.atomic
-def redeem_link(secret, label=""):
-    """Trade a sign-in link's secret for (user, api_token_secret), creating
-    the account the first time. Returns None for an unknown, used or
-    expired link. Redeeming one link retires that address's other links."""
+def google_link(email):
+    """A link for an address Google has vouched for; the browser is sent
+    straight to it (accounts/google.py), so it is never emailed."""
+    secret, token_hash = new_secret()
+    SignInLink.objects.create(email=email, token_hash=token_hash, purpose=Purpose.GOOGLE)
+    return secret
+
+
+def _take_link(secret, purposes):
+    """The unused, unexpired link for secret, locked and marked used along
+    with that address's other links; or None."""
     now = timezone.now()
     oldest = now - timedelta(minutes=settings.SIGN_IN_LINK_MINUTES)
     link = (SignInLink.objects.select_for_update()
-            .filter(token_hash=hash_secret(secret), used_at__isnull=True, created_at__gte=oldest)
+            .filter(token_hash=hash_secret(secret), used_at__isnull=True, created_at__gte=oldest,
+                    purpose__in=purposes)
             .first())
-    if link is None:
-        return None
-    SignInLink.objects.filter(email=link.email, used_at__isnull=True).update(used_at=now)
-    User = get_user_model()
-    user, _ = User.objects.get_or_create(username=link.email, defaults={"email": link.email})
-    if not user.is_active:
-        return None
-    user.last_login = now
+    if link is not None:
+        SignInLink.objects.filter(email=link.email, used_at__isnull=True).update(used_at=now)
+    return link
+
+
+def _issue_token(user, label):
+    user.last_login = timezone.now()
     user.save(update_fields=["last_login"])
     sync_super_admin(user)
     key, key_hash = new_secret()
     ApiToken.objects.create(user=user, key_hash=key_hash, label=label[:200])
     return user, key
+
+
+@transaction.atomic
+def redeem_link(secret, label=""):
+    """Trade a sign-in, sign-up or Google link's secret for (user,
+    api_token_secret), creating the account the first time; a sign-up link
+    also sets the password chosen with it. Returns None for an unknown, used
+    or expired link. Redeeming one link retires that address's other links."""
+    link = _take_link(secret, [Purpose.SIGN_IN, Purpose.SIGN_UP, Purpose.GOOGLE])
+    if link is None:
+        return None
+    User = get_user_model()
+    user, created = User.objects.get_or_create(username=link.email, defaults={"email": link.email})
+    if not user.is_active:
+        return None
+    if link.password_hash:
+        user.password = link.password_hash
+        user.save(update_fields=["password"])
+    elif created:
+        user.set_unusable_password()
+        user.save(update_fields=["password"])
+    return _issue_token(user, label)
+
+
+@transaction.atomic
+def reset_password(secret, password, label=""):
+    """Set a new password with a reset link's secret (password must already
+    be validated), sign out every other device, and sign this one in.
+    Returns (user, api_token_secret), or None for a bad link."""
+    link = _take_link(secret, [Purpose.RESET])
+    if link is None:
+        return None
+    user = get_user_model().objects.filter(username=link.email, is_active=True).first()
+    if user is None:
+        return None
+    user.set_password(password)
+    user.save(update_fields=["password"])
+    user.api_tokens.all().delete()
+    return _issue_token(user, label)
+
+
+# Compared against when there is no such account, so a wrong address takes
+# as long to answer as a wrong password.
+_DUMMY_PASSWORD = make_password("not a real password")
+
+
+def sign_in_with_password(email, password, ip=None, label=""):
+    """(user, api_token_secret) for the right password, or None. Raises
+    RateLimited after too many wrong passwords for the address or network."""
+    since = timezone.now() - FAILURE_WINDOW
+    failures = FailedSignIn.objects.filter(created_at__gte=since)
+    if (failures.filter(email=email).count() >= FAILURES_PER_EMAIL
+            or (ip and failures.filter(ip=ip).count() >= FAILURES_PER_IP)):
+        raise RateLimited
+    user = get_user_model().objects.filter(username=email).first()
+    if user is None or not has_password(user):
+        check_password(password, _DUMMY_PASSWORD)
+        ok = False
+    else:
+        ok = user.check_password(password) and user.is_active
+    if not ok:
+        FailedSignIn.objects.create(email=email, ip=ip)
+        FailedSignIn.objects.filter(created_at__lt=timezone.now() - timedelta(hours=1)).delete()
+        return None
+    return _issue_token(user, label)
+
+
+def delete_account(user):
+    """Delete the account, its roles and devices. Returns False, deleting
+    nothing, when it has review history, which the record keeps."""
+    from translation.models import ReviewEvent
+    if ReviewEvent.objects.filter(user=user).exists():
+        return False
+    SignInLink.objects.filter(email=user.username).delete()
+    FailedSignIn.objects.filter(email=user.username).delete()
+    user.delete()
+    return True
 
 
 def sync_super_admin(user):
@@ -118,6 +270,7 @@ def user_json(user):
         "roles": [r.as_json() for r in roles],
         "is_super_admin": any(r.kind == Role.Kind.SUPER_ADMIN for r in roles),
         "joined": user.date_joined.date().isoformat(),
+        "has_password": has_password(user),
     }
 
 

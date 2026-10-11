@@ -143,7 +143,10 @@ COLOUR_MODES = (("auto", "#faf6ef", "#16130f"),
 # flashes the default colours. Mirrors web/site.js.
 BOOT_SCRIPT = ("try{var t=localStorage.getItem('owb-theme');"
                "if(['light','sepia','dark','night','contrast'].indexOf(t)>=0)"
-               "document.documentElement.setAttribute('data-theme',t)}catch(e){}")
+               "document.documentElement.setAttribute('data-theme',t);"
+               # Signed in (web/account.js): the header's "Sign in" stays hidden.
+               "if(localStorage.getItem('owb.account'))document.documentElement.classList.add('signed-in')"
+               "}catch(e){}")
 
 # A reader who picked a language in the footer (web/site.js keeps it as
 # owb-lang) is taken to this page in that language before the first paint,
@@ -163,6 +166,26 @@ GEAR = ('<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="cur
         'A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 '
         '1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4'
         'h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>')
+
+def account_menu(lang):
+    """Signed out, a "Sign in" button; signed in, the reader's initial,
+    opening a menu with their name, the account page and signing out
+    (web/site.js swaps them, from the copy of the account web/account.js
+    keeps). The sign-in link gets ?redirect=<this page> when it is used."""
+    return (
+        '<div class="account-menu">'
+        f'<a class="sign-in-btn" href="{url(lang, "/login/")}" data-login>'
+        f'{icon(ICONS["user"])}<span>{t(lang, "tools.sign_in")}</span></a>'
+        '<button type="button" class="tool-btn avatar-btn" aria-expanded="false" aria-controls="account-pop" '
+        f'aria-label="{t(lang, "tools.your_account")}" title="{t(lang, "tools.your_account")}" hidden>'
+        '<span class="account-initial"></span></button>'
+        f'<div class="account-pop" id="account-pop" role="group" aria-label="{t(lang, "tools.your_account")}" hidden>'
+        '<p class="who"><strong class="who-name"></strong><span class="who-email"></span></p>'
+        f'<a class="pop-item" href="{url(lang, "/account/")}">{t(lang, "tools.account")}</a>'
+        f'<a class="pop-item admin-link" href="{API_URL}/admin/" hidden>{t(lang, "tools.admin")}</a>'
+        f'<button type="button" class="pop-item sign-out">{t(lang, "tools.sign_out")}</button>'
+        '</div></div>')
+
 
 def colour_menu(lang):
     label = t(lang, "tools.theme")
@@ -347,7 +370,7 @@ def site_header(lang, current, path=None):
 <nav class="primary" id="site-nav" aria-label="{t(lang, "nav.main")}"><ul class="nav-list">{"".join(items)}</ul></nav>
 <div class="tools">
 <a class="tool-btn search-btn" href="{url(lang, "/search/")}" aria-label="{t(lang, "nav.search")}" title="{t(lang, "nav.search")}" aria-keyshortcuts="Control+K Meta+K">{icon(ICONS["search"])}<span class="search-label">{t(lang, "nav.search")}</span><kbd class="search-kbd" hidden>Ctrl K</kbd></a>
-<a class="tool-btn account-btn" href="{url(lang, "/account/")}" aria-label="{t(lang, "tools.sign_in")}" title="{t(lang, "tools.sign_in")}" data-signed-in="{t(lang, "tools.your_account")}">{icon(ICONS["user"])}<span class="account-initial" hidden></span></a>
+{account_menu(lang)}
 <a class="tool-btn" href="{GITHUB_URL}" aria-label="{t(lang, "tools.github")}" title="GitHub">{icon(ICONS["github"])}</a>
 {colour_menu(lang)}
 <button type="button" class="tool-btn menu-btn" aria-expanded="false" aria-controls="site-nav" aria-label="{t(lang, "nav.menu")}">{icon(ICONS["menu"], 22)}{icon(ICONS["close"], 22)}</button>
@@ -1489,48 +1512,158 @@ def article_page(article, articles, lang="en"):
                 translated=LANGUAGES if al == lang else ("en",))
 
 
+GOOGLE_G = ('<svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true">'
+            '<path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 '
+            '14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>'
+            '<path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 '
+            '5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>'
+            '<path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19'
+            'C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>'
+            '<path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 '
+            '2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>')
+
+
+def _ui_json(lang, key):
+    return json.dumps(catalog(lang)[key], ensure_ascii=False).replace("</", "<\\/")
+
+
+def _password_field(lang, field_id, label, autocomplete):
+    """A password input with a Show/Hide button and the rule under it."""
+    return f"""<label for="{field_id}">{label}</label>
+<div class="pw-field">
+<input id="{field_id}" name="password" type="password" minlength="8" autocomplete="{autocomplete}" required aria-describedby="{field_id}-hint">
+<button type="button" class="pw-toggle" aria-controls="{field_id}" aria-pressed="false">{t(lang, "login.show")}</button>
+</div>
+<p class="fine" id="{field_id}-hint">{t(lang, "login.password_hint")}</p>"""
+
+
+def login_page(lang="en"):
+    """Signing in, creating an account and asking for a reset link, one page
+    in three modes (?mode=signup, ?mode=reset), as on Ochorus; and where the
+    links in sign-in and confirmation emails, and Google, land (#token=,
+    #google=). web/account.js runs it. Not in the sitemap, and not indexed."""
+    def l(key):
+        return t(lang, "login." + key)
+
+    def modes(**text):
+        return "".join(f'<span data-for="{m}"{"" if m == "sign-in" else " hidden"}>{v}</span>'
+                       for m, v in text.items())
+
+    body = f"""
+<section class="auth" id="login" data-mode="sign-in">
+<div data-view="form">
+<header class="auth-head">
+{MARK}
+<h1>{modes(**{"sign-in": l("title_sign_in"), "sign-up": l("title_sign_up"), "reset": l("title_reset")})}</h1>
+<p class="auth-dek">{l("dek")}</p>
+</header>
+<form class="auth-card" id="login-form" novalidate>
+<label for="email">{l("email")}</label>
+<input id="email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required aria-describedby="login-error">
+<div class="pw" data-for="sign-in sign-up">
+{_password_field(lang, "password", l("password"), "current-password")}
+</div>
+<p class="form-error" id="login-error" role="alert"></p>
+<button class="button wide" type="submit">{modes(**{"sign-in": l("submit_sign_in"), "sign-up": l("submit_sign_up"), "reset": l("submit_reset")})}</button>
+<div class="auth-alt" data-for="sign-in sign-up">
+<button class="button ghost wide" type="button" id="magic">{l("magic")}</button>
+<div class="google" hidden>
+<p class="or"><span>{l("or")}</span></p>
+<button class="button ghost wide google-btn" type="button" id="google">{GOOGLE_G}<span>{l("google")}</span></button>
+</div>
+</div>
+<p class="forgot" data-for="sign-in"><a href="?mode=reset" data-mode-link="reset">{l("forgot")}</a></p>
+</form>
+<p class="auth-switch" data-for="sign-in">{l("new")} <a href="./" data-mode-link="sign-up">{l("create")}</a></p>
+<p class="auth-switch" data-for="sign-up" hidden>{l("have")} <a href="./" data-mode-link="sign-in">{l("sign_in")}</a></p>
+<p class="auth-switch" data-for="reset" hidden><a href="./" data-mode-link="sign-in">{l("back")}</a></p>
+<p class="fine auth-privacy">{l("privacy")}</p>
+</div>
+
+<div class="auth-card auth-message" data-view="sent" hidden>
+<p class="badge" aria-hidden="true">&#9993;</p>
+<h2 tabindex="-1">{l("check_title")}</h2>
+<p id="sent-text"></p>
+<p class="fine">{l("resend_prompt")}</p>
+<p><button class="button ghost" type="button" id="resend">{l("resend")}</button></p>
+<p class="form-note" id="resend-note" role="status"></p>
+<p><a href="./" data-mode-link="sign-in">{l("back")}</a></p>
+</div>
+
+<div class="auth-card auth-message" data-view="confirm" hidden>
+<p class="badge" aria-hidden="true">&#9993;</p>
+<h2>{l("confirm_title")}</h2>
+<p>{l("confirm_text")}</p>
+<p><button class="button wide" type="button" id="finish">{l("finish")}</button></p>
+</div>
+</section>
+<script type="application/json" id="login-text">{_ui_json(lang, "login.ui")}</script>
+<script src="{asset("account.js")}" defer></script>
+"""
+    return page(lang, t(lang, "tools.sign_in"), body, unlisted="/login/")
+
+
+def reset_page(lang="en"):
+    """Choosing a new password, from the link in a reset email
+    (#token=); web/account.js runs it. Not indexed."""
+    def r(key):
+        return t(lang, "reset." + key)
+
+    body = f"""
+<section class="auth" id="reset">
+<div data-view="form" hidden>
+<header class="auth-head">
+{MARK}
+<h1>{r("title")}</h1>
+<p class="auth-dek">{r("dek")}</p>
+</header>
+<form class="auth-card" id="reset-form" novalidate>
+{_password_field(lang, "new-password", r("new_password"), "new-password")}
+<p class="form-error" id="reset-error" role="alert"></p>
+<button class="button wide" type="submit">{r("submit")}</button>
+</form>
+</div>
+<div class="auth-card auth-message" data-view="done" hidden>
+<p class="badge" aria-hidden="true">&#10003;</p>
+<h2>{r("done_title")}</h2>
+<p>{r("done_text")}</p>
+<p><a class="button wide" href="{url(lang, "/")}">{r("continue")}</a></p>
+</div>
+<div class="auth-card auth-message" data-view="missing" hidden>
+<h2>{r("missing_title")}</h2>
+<p>{r("missing_text")}</p>
+<p><a class="button wide" href="{url(lang, "/login/")}?mode=reset">{r("request")}</a></p>
+</div>
+</section>
+<script type="application/json" id="login-text">{_ui_json(lang, "login.ui")}</script>
+<script src="{asset("account.js")}" defer></script>
+"""
+    return page(lang, r("title"), body, unlisted="/reset-password/")
+
+
 def account_page(lang="en"):
-    """Sign in by email link, and the signed-in account (web/account.js).
-    Not in the sitemap, and not indexed."""
+    """The signed-in account, laid out like Ochorus's settings: who you are,
+    your data, and a danger zone (web/account.js). Signed out, it sends you
+    to /login/. Not in the sitemap, and not indexed."""
     def a(key):
         return t(lang, "account." + key)
 
-    messages = json.dumps(catalog(lang)["account.ui"], ensure_ascii=False).replace("</", "<\\/")
     body = f"""
-<section class="account" id="account" aria-live="polite">
+<section class="account" id="account" aria-live="polite" hidden>
 <header class="page-head">
 <p class="eyebrow">{a("title")}</p>
-<h1 id="account-title">{t(lang, "tools.sign_in")}</h1>
+<h1>{t(lang, "tools.your_account")}</h1>
+<p class="dek">{a("dek")}</p>
 </header>
 
-<div data-state="signed-out" hidden>
-<p class="dek">{a("signed_out_dek")}</p>
-<form class="account-form" id="link-form" novalidate>
-<label for="email">{a("email")}</label>
-<div class="field-row">
-<input id="email" name="email" type="email" autocomplete="email" inputmode="email" required>
-<button class="button" type="submit">{a("send")}</button>
-</div>
-<p class="form-error" id="link-error" role="alert" hidden></p>
-</form>
-<p class="fine">{a("privacy")}</p>
-</div>
-
-<div data-state="sent" hidden>
-<p class="dek">{a("sent_dek")}</p>
-<p><button class="button ghost" type="button" id="different-email">{a("different")}</button></p>
-</div>
-
-<div data-state="confirm" hidden>
-<p class="dek">{a("confirm_dek")}</p>
-<p><button class="button" type="button" id="finish">{a("finish")}</button></p>
-</div>
-
-<div data-state="signed-in" hidden>
+<section class="set-block">
+<h2>{a("title")}</h2>
+<p class="signed-as">{a("signed_in_as")} <strong id="me-name"></strong></p>
 <dl class="account-facts">
 <div><dt>{a("fact_email")}</dt><dd id="me-email"></dd></div>
 <div><dt>{a("fact_roles")}</dt><dd id="me-roles"></dd></div>
 <div><dt>{a("fact_joined")}</dt><dd id="me-joined"></dd></div>
+<div><dt>{a("fact_password")}</dt><dd><span id="me-password"></span> <a id="set-password" href="{url(lang, "/login/")}?mode=reset" hidden>{a("set_password")}</a></dd></div>
 </dl>
 <form class="account-form" id="name-form">
 <label for="display-name">{a("display_name")} <span class="fine">{a("display_name_note")}</span></label>
@@ -1540,14 +1673,34 @@ def account_page(lang="en"):
 </div>
 <p class="form-note" id="name-note" role="status"></p>
 </form>
+<p><button class="button ghost" type="button" id="sign-out">{a("sign_out")}</button></p>
+</section>
+
 <div class="soon">
 <h2>{a("soon")}</h2>
 <p>{a("soon_text")}</p>
 </div>
-<p><button class="button ghost" type="button" id="sign-out">{a("sign_out")}</button></p>
-</div>
+
+<section class="set-block">
+<h2>{a("data")}</h2>
+<p>{a("data_text")}</p>
+<p><button class="button ghost" type="button" id="download">{a("download")}</button></p>
 </section>
-<script type="application/json" id="account-text">{messages}</script>
+
+<section class="set-block danger">
+<h2>{a("danger")}</h2>
+<div class="danger-row">
+<div><h3>{a("clear_title")}</h3><p>{a("clear_text")}</p></div>
+<button class="button ghost" type="button" id="clear-device">{a("clear")}</button>
+</div>
+<div class="danger-row">
+<div><h3>{a("delete_title")}</h3><p>{a("delete_text")}</p></div>
+<button class="button ghost" type="button" id="delete-account">{a("delete")}</button>
+</div>
+<p class="form-note" id="danger-note" role="status"></p>
+</section>
+</section>
+<script type="application/json" id="account-text">{_ui_json(lang, "account.ui")}</script>
 <script src="{asset("account.js")}" defer></script>
 """
     return page(lang, a("title"), body, unlisted="/account/")
@@ -1593,7 +1746,7 @@ BOOK_ALIASES = {"JHN": ["jn"], "PHP": ["flp", "fil"], "1JN": ["1jn"], "2JN": ["2
 # The palette's page shortcuts, by catalog key.
 SEARCH_PAGES = (("nav.home", "/"), ("nav.read", "/read/"), ("nav.articles", "/articles/"),
                 ("nav.about_project", "/about/"), ("nav.credits", "/about/#credits"),
-                ("nav.help", "/#help"), ("tools.sign_in", "/account/"))
+                ("nav.help", "/#help"), ("tools.sign_in", "/login/"))
 
 
 def fold(text):
@@ -1781,6 +1934,8 @@ def build(out):
             # left to its English page in search results.
             add(article_url(article), article_page(article, articles, lang), index=article["lang"] == lang)
         add("/account/", account_page(lang), index=False)
+        add("/login/", login_page(lang), index=False)
+        add("/reset-password/", reset_page(lang), index=False)
     files = {(p.strip("/") + "/index.html").lstrip("/"): text for p, text in pages.items()}
     files["404.html"] = not_found_page()
     files["sitemap.xml"] = sitemap(indexed)
