@@ -922,15 +922,20 @@ def disputed(vid):
     return any(refs.parse(a).sort_key() <= key <= refs.parse(b).sort_key() for a, b in DISPUTED)
 
 
+# Verses that are only a psalm's title ("A psalm of David ..."), which the
+# Hebrew text counts as verse 1. A chapter's cards quote the psalm itself.
+TITLES = {"PSA.3.1"}
+
+
 def opening(records, chapter):
     """(record, verse id) for the verse a chapter's cards quote: its first
-    verse outside a disputed passage, or its first verse if every one is in
-    one."""
+    verse outside a disputed passage and not a psalm's title, or its first
+    verse if every one is skipped."""
     first = None
     for r in records:
         for vid in r["refs"]:
             if refs.parse(vid).chapter == chapter:
-                if not disputed(vid):
+                if not disputed(vid) and vid not in TITLES:
                     return r, vid
                 first = first or (r, vid)
     return first
