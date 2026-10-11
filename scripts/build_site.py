@@ -443,15 +443,16 @@ def curl_record(r):
 
 
 def load_chapter(book, chapter):
+    """A chapter's records, and the Greek words of every verse they cover. A
+    sentence that runs into the next chapter (John 7:53-8:1) belongs to both:
+    without it the next chapter would lose a verse, and John 8 would open
+    without the bracket and the note that begin the disputed passage."""
     records = []
     for path in sorted((ROOT / "content" / book).glob("*.json")):
         for r in json.loads(path.read_text(encoding="utf-8"))["records"]:
-            first = refs.parse(r["refs"][0])
-            if first.chapter == chapter:
+            if any(refs.parse(v).chapter == chapter for v in r["refs"]):
                 records.append(curl_record(r))
     records.sort(key=lambda r: refs.parse(r["refs"][0]).sort_key() + (r["id"],))
-    # A sentence can run into the next chapter (John 7:53-8:1), so load the
-    # words of every chapter the records touch.
     words = {}
     for ch in sorted({chapter} | {refs.parse(v).chapter for r in records for v in r["refs"]}):
         words.update(json.loads((ROOT / "data" / "grc" / f"{book}.{ch}.json")
@@ -464,8 +465,9 @@ def chapters():
     found = set()
     for path in (ROOT / "content").glob("*/*.json"):
         for r in json.loads(path.read_text(encoding="utf-8"))["records"]:
-            ref = refs.parse(r["refs"][0])
-            found.add((ref.book, ref.chapter))
+            for v in r["refs"]:
+                ref = refs.parse(v)
+                found.add((ref.book, ref.chapter))
     return sorted(found, key=lambda bc: refs.Ref(bc[0], bc[1], 1).sort_key())
 
 
@@ -488,10 +490,10 @@ def passages():
     the header, Read page, home page, footer and reader all list it."""
     out = []
     for b, c in chapters():
-        records, words = load_chapter(b, c)
-        verses = len({v for r in records for v in r["refs"]})
+        records = load_chapter(b, c)[0]
+        verses = len(chapter_verses(records, c))
         out.append(Passage(b, c, chapter_url(b, c), chapter_name(records, b, c), records,
-                           verses, verses == len(words)))
+                           verses, verses == verse_count(b, c)))
     return tuple(out)
 
 
@@ -530,18 +532,28 @@ def chapter_url(book, chapter):
     return f"/{book.lower()}/{chapter}/"
 
 
+def chapter_verses(records, chapter):
+    """The verses of this chapter that records cover, leaving out a verse of
+    the chapter before or after that a sentence runs into."""
+    return {v for r in records for v in r["refs"] if refs.parse(v).chapter == chapter}
+
+
+def verse_count(book, chapter):
+    """How many verses the chapter has in the Greek extract."""
+    return len(json.loads((ROOT / "data" / "grc" / f"{book}.{chapter}.json")
+                          .read_text(encoding="utf-8"))["verses"])
+
+
 def chapter_title(records, book, chapter, lang="en"):
-    verses = [refs.parse(v).verse for r in records for v in r["refs"]]
+    verses = [refs.parse(v).verse for v in chapter_verses(records, chapter)]
     return f"{BOOK_NAMES[book][lang]} {chapter}:{min(verses)}–{max(verses)}"
 
 
 def chapter_name(records, book, chapter, lang="en"):
     """What the site calls a passage: "Philippians 2" for a whole chapter,
     "John 1:1–18" for part of one. (Share cards keep chapter_title.)"""
-    total = len(json.loads((ROOT / "data" / "grc" / f"{book}.{chapter}.json")
-                           .read_text(encoding="utf-8"))["verses"])
-    verses = {v for r in records for v in r["refs"]}
-    return f"{BOOK_NAMES[book][lang]} {chapter}" if len(verses) == total else chapter_title(records, book, chapter, lang)
+    whole = len(chapter_verses(records, chapter)) == verse_count(book, chapter)
+    return f"{BOOK_NAMES[book][lang]} {chapter}" if whole else chapter_title(records, book, chapter, lang)
 
 
 def text_lang(record, lang):
@@ -616,7 +628,7 @@ def chapter_page(book, chapter, lang="en"):
 """
     return page(lang, title, body, path=chapter_url(book, chapter), current="/read/",
                 card=og_card_chapter(book, chapter),
-                card_alt=t(lang, "meta.chapter_card_alt", title=title, verse=opening_verse(records, lang)),
+                card_alt=t(lang, "meta.chapter_card_alt", title=title, verse=opening_verse(records, chapter, lang)),
                 description=t(lang, "meta.chapter_description", title=title))
 
 
@@ -650,12 +662,40 @@ def chapter_turns(book, chapter, lang="en"):
             f'{turn(prev, "prev", t(lang, "reader.prev"))}{turn(nxt, "next", t(lang, "reader.next"))}</nav>')
 
 
-def opening_verse(records, lang="en"):
-    """A passage's first verse, Balanced, at the default settings: what its
-    Read-page card and its share card quote. In English when the first
-    sentence is not yet in lang."""
-    first = records[0]
-    return plain(markup.VERSE.split(first["renderings"][text_lang(first, lang)]["B"])[0])
+# Passages whose place in the text is disputed, translated in [square
+# brackets] (docs/john-terms.md), as (first verse, last verse). A chapter's
+# cards quote the first verse outside them.
+DISPUTED = (("JHN.7.53", "JHN.8.11"),)
+
+
+def disputed(vid):
+    key = refs.parse(vid).sort_key()
+    return any(refs.parse(a).sort_key() <= key <= refs.parse(b).sort_key() for a, b in DISPUTED)
+
+
+def opening(records, chapter):
+    """(record, verse id) for the verse a chapter's cards quote: its first
+    verse outside a disputed passage, or its first verse if every one is in
+    one."""
+    first = None
+    for r in records:
+        for vid in r["refs"]:
+            if refs.parse(vid).chapter == chapter:
+                if not disputed(vid):
+                    return r, vid
+                first = first or (r, vid)
+    return first
+
+
+def opening_verse(records, chapter, lang="en"):
+    """A passage's opening verse (see opening), Balanced, at the default
+    settings: what its Read-page card and its share card quote. In English
+    when that sentence is not yet in lang."""
+    r, vid = opening(records, chapter)
+    # split keeps each marker's verse number: [text, "13", text, "14", text].
+    parts = markup.VERSE.split(r["renderings"][text_lang(r, lang)]["B"])
+    numbers = [str(refs.parse(r["refs"][0]).verse)] + parts[1::2]
+    return plain(parts[2 * numbers.index(str(refs.parse(vid).verse))].strip())
 
 
 # A quoted verse in each language's quotation marks (English curly quotes
@@ -667,10 +707,11 @@ def passage_card(book, chapter, lang="en"):
     """A passage as a card in the article-card style: its opening verse at
     the default settings, and how much of it is translated and recorded."""
     records = load_chapter(book, chapter)[0]
-    verses = sorted({refs.parse(v).verse for r in records for v in r["refs"]})
+    verses = chapter_verses(records, chapter)
     decisions = sum(len(r["decisions"]) for r in records)
     uncertain = sum(d["uncertain"] for r in records for d in r["decisions"])
-    opening = opening_verse(records, lang)
+    r0 = opening(records, chapter)[0]
+    quote = opening_verse(records, chapter, lang)
     meta = t(lang, "card.meta", verses=len(verses), sentences=len(records),
              decisions=decisions, uncertain=uncertain)
     done = sum(lang in r["renderings"] for r in records)
@@ -680,7 +721,7 @@ def passage_card(book, chapter, lang="en"):
     return (f'<li><a class="a-card p-card" href="{url(lang, chapter_url(book, chapter))}">'
             f'<span class="a-section">{BOOK_NAMES[book][lang]} &middot; {languages_label(records)}</span>'
             f'<span class="a-title">{display(chapter_name(records, book, chapter, lang))}</span>'
-            f'<span class="p-opening"{lang_attr(text_lang(records[0], lang), lang)}>{q.format(display(opening))}</span>'
+            f'<span class="p-opening"{lang_attr(text_lang(r0, lang), lang)}>{q.format(display(quote))}</span>'
             f'<span class="a-meta">{meta}</span></a></li>')
 
 
@@ -716,8 +757,13 @@ def read_page(lang="en"):
 
 
 def all_records():
-    """Every record in content/, in canonical order."""
-    return [r for b, c in chapters() for r in load_chapter(b, c)[0]]
+    """Every record in content/, in canonical order, once each (a sentence
+    across a chapter break is on both chapters' pages)."""
+    seen = {}
+    for b, c in chapters():
+        for r in load_chapter(b, c)[0]:
+            seen.setdefault(r["id"], r)
+    return list(seen.values())
 
 
 def plain(text):

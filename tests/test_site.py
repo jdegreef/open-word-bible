@@ -89,6 +89,31 @@ class SiteTest(unittest.TestCase):
         first = build_site.load_chapter("JHN", 1)[0][0]
         self.assertIn(build_site.plain(first["renderings"]["en"]["B"]), read)
 
+    def test_a_sentence_across_a_chapter_break_is_on_both_pages(self):
+        # John 7:53-8:1 is one sentence. It opens the bracketed, disputed
+        # passage 7:53-8:11 with "[" and the note on the manuscripts, so John
+        # 8 needs it as much as John 7 does.
+        seven, eight = self.chapter_data("jhn/7"), self.chapter_data("jhn/8")
+        self.assertEqual(seven["records"][-1]["id"], "JHN.7.53.s1")
+        first = eight["records"][0]
+        self.assertEqual(first["id"], "JHN.7.53.s1")
+        self.assertTrue(first["renderings"]["en"]["B"].startswith("["))
+        self.assertTrue(any(d["category"] == "text_variant" and d["footnote"] for d in first["decisions"]))
+        self.assertEqual(eight["title"], "John 8")
+        names = {p.chapter: (p.name, p.complete) for p in build_site.passages() if p.book == "JHN"}
+        self.assertEqual(names[7], ("John 7", True))
+        self.assertEqual(names[8], ("John 8", True))
+        # Counted once on the home page.
+        ids = [r["id"] for r in build_site.all_records()]
+        self.assertEqual(len(ids), len(set(ids)))
+
+    def test_cards_quote_the_first_verse_outside_a_disputed_passage(self):
+        records = build_site.load_chapter("JHN", 8)[0]
+        self.assertEqual(build_site.opening(records, 8)[1], "JHN.8.12")
+        self.assertIn("I am the light of the world", build_site.opening_verse(records, 8))
+        records = build_site.load_chapter("JHN", 7)[0]
+        self.assertEqual(build_site.opening(records, 7)[1], "JHN.7.1")
+
     def test_sentence_records_split_a_verse(self):
         data = self.chapter_data("php/4")
         five = [r for r in data["records"] if r["refs"] == ["PHP.4.5"]]

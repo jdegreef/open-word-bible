@@ -75,11 +75,10 @@ def cards():
                                                "with its reasoning shown."}}
     for book, chapter in build_site.chapters():
         records, words = build_site.load_chapter(book, chapter)
-        first = records[0]
-        verse = first["refs"][0]
-        mine = set(first["source"]["tokens"])
+        record, verse = build_site.opening(records, chapter)
+        mine = set(record["source"]["tokens"])
         greek = " ".join(w["text"] + w["after"].strip() for w in words[verse] if w["id"] in mine)
-        english = build_site.opening_verse(records)
+        english = build_site.opening_verse(records, chapter)
         specs[build_site.og_card_chapter(book, chapter)] = {
             "kind": "passage", "eyebrow": build_site.chapter_title(records, book, chapter),
             "title": english, "greek": greek}

@@ -26,18 +26,33 @@
   var SPAN = /\{\{([a-z_]+):([^{}]*)\}\}/g;
   var VERSE = /\\v (\d+) ?/;
 
-  function verseOf(id) { return id.split(".")[2]; }
-
-  // A record's verses as "12" or "12\u201313".
-  function verseRange(r) {
-    var first = verseOf(r.refs[0]), last = verseOf(r.refs[r.refs.length - 1]);
-    return first === last ? first : first + "\u2013" + last;
+  // A verse as this page names it: "12", or "7:53" for a verse of another
+  // chapter that a sentence runs into (John 7:53-8:1 is on both pages).
+  function verseOf(id) {
+    var p = id.split(".");
+    return Number(p[1]) === DATA.chapter ? p[2] : p[1] + ":" + p[2];
   }
 
-  // Split rendered text at verse markers: [[verse, text], ...].
+  function crossesChapter(r) {
+    return r.refs[0].split(".")[1] !== r.refs[r.refs.length - 1].split(".")[1];
+  }
+
+  // A record's verses as "12", "12\u201313" or "7:53\u20138:1".
+  function verseRange(r) {
+    var ends = [r.refs[0], r.refs[r.refs.length - 1]].map(function (id) {
+      return crossesChapter(r) ? id.split(".").slice(1).join(":") : verseOf(id);
+    });
+    return ends[0] === ends[1] ? ends[0] : ends[0] + "\u2013" + ends[1];
+  }
+
+  // Split rendered text at verse markers: [[verse, text], ...]. A marker
+  // gives only the verse number, so name it from the record's refs.
   function splitVerses(r, text) {
     var parts = text.split(VERSE), out = [[verseOf(r.refs[0]), parts[0].trim()]];
-    for (var i = 1; i < parts.length; i += 2) out.push([parts[i], parts[i + 1]]);
+    for (var i = 1; i < parts.length; i += 2) {
+      var id = r.refs.find(function (v) { return v.split(".")[2] === parts[i]; });
+      out.push([id ? verseOf(id) : parts[i], parts[i + 1]]);
+    }
     return out;
   }
 
@@ -231,7 +246,8 @@
     close.setAttribute("aria-label", t("close"));
     close.addEventListener("click", deselect);
     panel.appendChild(close);
-    panel.appendChild(el("h2", null, DATA.title.replace(/[\d:\u2013\s]+$/, "") + " " + DATA.chapter + ":" + verseRange(current)));
+    panel.appendChild(el("h2", null, DATA.title.replace(/[\d:\u2013\s]+$/, "") + " " +
+      (crossesChapter(current) ? "" : DATA.chapter + ":") + verseRange(current)));
 
     panel.appendChild(el("h3", null, t("greek")));
     // Interlinear: each Greek word over its gloss. Tapping one shows its
@@ -298,7 +314,7 @@
   // owns the breakpoint: the sheet is the panel when it is position: fixed.
   function narrow() { return getComputedStyle(panelEl).position === "fixed"; }
   function verseEl(v) { return document.querySelector('.verse[data-v="' + v + '"]'); }
-  function hashVerse() { var m = /^#v(\d+)$/.exec(location.hash); return m && m[1]; }
+  function hashVerse() { var m = /^#v(\d+(?::\d+)?)$/.exec(location.hash); return m && m[1]; }
 
   function sheet(open) {
     panelEl.classList.toggle("open", open);
