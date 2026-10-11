@@ -1,61 +1,76 @@
-// The colour-mode menu behind the gear in the header (see COLOUR_MENU in
-// scripts/build_site.py). The choice is kept in localStorage and applied as
-// data-theme on <html>; "auto" removes it so the page follows the device.
-// The inline boot script in each page applies a saved choice before paint.
+// The display menu behind the gear in the header (see colour_menu in
+// scripts/build_site.py): the colour mode, then the reading text's size,
+// typeface and line spacing. Each radiogroup is one setting (data-pref); a
+// choice is kept in localStorage as owb-<pref> and applied as data-<pref> on
+// <html>, and the default (data-default; "auto" for the colour mode, which
+// follows the device) removes both. The inline boot script in each page
+// applies saved choices before paint.
 (function () {
   "use strict";
-  var KEY = "owb-theme";
   var MODES = ["light", "sepia", "dark", "night", "contrast"];
   var root = document.documentElement;
   var button = document.querySelector(".prefs-btn");
   var menu = document.getElementById("colour-menu");
   if (!button || !menu) return;
-  var options = Array.prototype.slice.call(menu.querySelectorAll("[data-theme-option]"));
+  var groups = Array.prototype.slice.call(menu.querySelectorAll("[data-pref]"));
 
-  function current() {
-    var t = root.getAttribute("data-theme");
-    return MODES.indexOf(t) >= 0 ? t : "auto";
+  function optionsOf(group) {
+    return Array.prototype.slice.call(group.querySelectorAll("[data-value]"));
   }
 
-  function mark() {
-    var value = current();
-    options.forEach(function (o) {
-      var on = o.getAttribute("data-theme-option") === value;
+  function current(group) {
+    var pref = group.getAttribute("data-pref");
+    var v = root.getAttribute("data-" + pref);
+    var known = pref === "theme" ? MODES.indexOf(v) >= 0
+      : optionsOf(group).some(function (o) { return o.getAttribute("data-value") === v; });
+    return known ? v : group.getAttribute("data-default");
+  }
+
+  function mark(group) {
+    var value = current(group);
+    optionsOf(group).forEach(function (o) {
+      var on = o.getAttribute("data-value") === value;
       o.setAttribute("aria-checked", on ? "true" : "false");
       o.tabIndex = on ? 0 : -1;
     });
   }
 
-  function choose(value) {
-    if (value === "auto") root.removeAttribute("data-theme");
-    else root.setAttribute("data-theme", value);
+  function choose(group, value) {
+    var pref = group.getAttribute("data-pref");
+    var isDefault = value === group.getAttribute("data-default");
+    if (isDefault) root.removeAttribute("data-" + pref);
+    else root.setAttribute("data-" + pref, value);
     try {
-      if (value === "auto") localStorage.removeItem(KEY);
-      else localStorage.setItem(KEY, value);
+      if (isDefault) localStorage.removeItem("owb-" + pref);
+      else localStorage.setItem("owb-" + pref, value);
     } catch (e) { /* storage blocked: the choice lasts for this page only */ }
-    mark();
+    mark(group);
   }
 
   function open(show) {
     menu.hidden = !show;
     button.setAttribute("aria-expanded", show ? "true" : "false");
     if (show) {
-      var on = options.filter(function (o) { return o.tabIndex === 0; })[0] || options[0];
+      var on = optionsOf(groups[0]).filter(function (o) { return o.tabIndex === 0; })[0] || optionsOf(groups[0])[0];
       on.focus();
     }
   }
 
   button.addEventListener("click", function () { open(menu.hidden); });
-  options.forEach(function (o, i) {
-    o.addEventListener("click", function () { choose(o.getAttribute("data-theme-option")); });
-    o.addEventListener("keydown", function (e) {
-      var step = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
-      if (!step) return;
-      e.preventDefault();
-      var next = options[(i + step + options.length) % options.length];
-      choose(next.getAttribute("data-theme-option"));
-      next.focus();
+  groups.forEach(function (group) {
+    var options = optionsOf(group);
+    options.forEach(function (o, i) {
+      o.addEventListener("click", function () { choose(group, o.getAttribute("data-value")); });
+      o.addEventListener("keydown", function (e) {
+        var step = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
+        if (!step) return;
+        e.preventDefault();
+        var next = options[(i + step + options.length) % options.length];
+        choose(group, next.getAttribute("data-value"));
+        next.focus();
+      });
     });
+    mark(group);
   });
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape" && !menu.hidden) { open(false); button.focus(); }
@@ -63,7 +78,6 @@
   document.addEventListener("click", function (e) {
     if (!menu.hidden && !menu.contains(e.target) && !button.contains(e.target)) open(false);
   });
-  mark();
 })();
 
 // The header's section dropdowns (Read, Articles, About), and the menu

@@ -145,11 +145,23 @@ COLOUR_MODES = (("auto", "#faf6ef", "#16130f"),
                 ("night", "#000000", "#e0b45c"),
                 ("contrast", "#ffffff", "#000000"))
 
-# Applies the saved colour mode before the first paint, so a page never
-# flashes the default colours. Mirrors web/site.js.
-BOOT_SCRIPT = ("try{var t=localStorage.getItem('owb-theme');"
+# The reading text's settings in the gear menu (see web/style.css): name,
+# default, and the values in the menu's order. A choice is kept as
+# owb-<name> and applied as data-<name> on <html>. They change how the text
+# looks, never its wording. Labels are in i18n/ (prefs.<name>, <name>.<value>).
+READING_PREFS = (("size", "m", ("s", "m", "l", "xl")),
+                 ("font", "serif", ("serif", "sans", "readable")),
+                 ("leading", "normal", ("compact", "normal", "spacious")))
+
+# Applies the saved colour mode and reading settings before the first paint,
+# so a page never flashes the default colours or text. Mirrors web/site.js.
+BOOT_SCRIPT = ("try{var d=document.documentElement,t=localStorage.getItem('owb-theme');"
                "if(['light','sepia','dark','night','contrast'].indexOf(t)>=0)"
-               "document.documentElement.setAttribute('data-theme',t)}catch(e){}")
+               "d.setAttribute('data-theme',t);"
+               "var p={" + ",".join(f"{name}:{[v for v in values if v != default]!r}"
+                                   for name, default, values in READING_PREFS) + "};"
+               "for(var k in p){var v=localStorage.getItem('owb-'+k);"
+               "if(p[k].indexOf(v)>=0)d.setAttribute('data-'+k,v)}}catch(e){}")
 
 # A reader who picked a language in the footer (web/site.js keeps it as
 # owb-lang) is taken to this page in that language before the first paint,
@@ -170,22 +182,49 @@ GEAR = ('<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="cur
         '1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4'
         'h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>')
 
+def leading_sample(gap):
+    """Three lines of text, gap apart, for a line-spacing tile."""
+    ys = [13 - gap, 13, 13 + gap]
+    lines = "".join(f'<line x1="2" x2="{24 if i < 2 else 16}" y1="{y}" y2="{y}"/>' for i, y in enumerate(ys))
+    return ('<svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="currentColor" '
+            f'stroke-width="2" stroke-linecap="round" aria-hidden="true">{lines}</svg>')
+
+
+LEADING_GAPS = {"compact": 5, "normal": 7, "spacious": 9}
+
+
 def colour_menu(lang):
-    label = t(lang, "tools.theme")
+    """The gear menu: the colour mode, then the reading text's settings
+    (READING_PREFS). web/site.js runs it."""
+    label = t(lang, "tools.display")
+
+    def option(value, default, face, name):
+        on = value == default
+        return (f'<button type="button" role="radio" aria-checked="{"true" if on else "false"}" '
+                f'tabindex="{0 if on else -1}" data-value="{value}">'
+                f'{face}{name}<span class="check" aria-hidden="true">&#10003;</span></button>')
+
+    def group(pref, heading, default, options):
+        return (f'<p class="prefs-label" id="prefs-{pref}">{heading}</p>'
+                f'<div role="radiogroup" aria-labelledby="prefs-{pref}" data-pref="{pref}" data-default="{default}">'
+                + "".join(option(v, default, face, name) for v, face, name in options) + '</div>')
+
+    theme = group("theme", t(lang, "tools.theme"), "auto", [
+        (v, f'<span class="swatch" style="--sw-bg:{bg};--sw-accent:{accent}" aria-hidden="true"></span>',
+         t(lang, "theme." + v)) for v, bg, accent in COLOUR_MODES])
+    def sample(pref, value):
+        inner = leading_sample(LEADING_GAPS[value]) if pref == "leading" else "Aa"
+        return f'<span class="sample" aria-hidden="true">{inner}</span>'
+
+    rows = [group(pref, t(lang, "prefs." + pref), default,
+                  [(v, sample(pref, v), t(lang, f"{pref}.{v}")) for v in values])
+            for pref, default, values in READING_PREFS]
     return (
         '<div class="prefs">'
         '<button type="button" class="tool-btn prefs-btn" aria-expanded="false" aria-controls="colour-menu" '
         f'aria-label="{label}" title="{label}">{GEAR}</button>'
-        '<div id="colour-menu" class="prefs-menu" role="group" aria-labelledby="colour-menu-label" hidden>'
-        f'<p class="prefs-label" id="colour-menu-label">{label}</p>'
-        '<div role="radiogroup" aria-labelledby="colour-menu-label">'
-        + "".join(
-            f'<button type="button" role="radio" aria-checked="{"true" if v == "auto" else "false"}" '
-            f'tabindex="{0 if v == "auto" else -1}" data-theme-option="{v}">'
-            f'<span class="swatch" style="--sw-bg:{bg};--sw-accent:{accent}" aria-hidden="true"></span>'
-            f'{t(lang, "theme." + v)}<span class="check" aria-hidden="true">&#10003;</span></button>'
-            for v, bg, accent in COLOUR_MODES)
-        + '</div></div></div>')
+        f'<div id="colour-menu" class="prefs-menu" role="group" aria-label="{label}" hidden>'
+        + theme + "".join(rows) + '</div></div>')
 
 
 OG = ROOT / "web" / "og"
