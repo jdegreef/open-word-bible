@@ -1,6 +1,7 @@
 # 1 and 2 Corinthians: recurring terms and book-wide choices
 
-**Status: proposed, awaiting the founder's approval.** These are the choices
+**Status: proposed, awaiting the founder's approval, except where a choice
+says it is settled.** These are the choices
 the first drafts (1 Corinthians 1–4, 2 Corinthians 1–4) settled on, so that
 later chapters stay consistent with them. If a choice changes, every passage
 drafted under it is revised. Read with `docs/english-style.md`; key terms are
@@ -44,15 +45,16 @@ enforced through `data/key_terms.json`.
 Paul" (Balanced), "I am on Paul's side" (Readable), in the same words each
 time they come back.
 
-**Boasting (*kauchaomai*, *kauchēma*, *kauchēsis*). Open for the founder.**
-Literal always says "boast/boasting". The first drafts differ at Balanced and
-Readable: 1 Corinthians 1 and 4 say "boast", while 1 Corinthians 3:21 and
-2 Corinthians 1:12–14 say "take pride" or "be proud", because in English
-"boast" sounds bad and Paul uses the word for good pride as well. Philippians
-already uses both. A single rule is needed before 2 Corinthians 10–12, where
-Paul's ironic "boasting" carries the argument; the proposal is "boast" at
-Balanced wherever Paul's argument turns on the word (1 Cor 1:29–31; 2 Cor
-10–12), "pride" elsewhere at Balanced and Readable, each with a decision.
+**Boasting (*kauchaomai*, *kauchēma*, *kauchēsis*). Settled by the founder,
+11 October 2026.** In English "boast" sounds bad, but Paul also uses the word
+for good pride (2 Cor 1:12–14), so:
+- Literal always says "boast/boasting", so the word can be traced.
+- Balanced says "boast" where Paul's argument turns on the word itself
+  (1 Cor 1:29–31; 2 Cor 10–12, where his ironic boasting carries the
+  argument), and "take pride / be proud / reason to be proud" elsewhere.
+- Readable says "be proud", or "brag" for pride that takes credit for a gift
+  (1 Cor 3:21; 4:7), except where Balanced keeps "boast".
+- Each departure from "boast" gets an English rendering decision.
 
 **The earlier letter and the painful visit** (2 Cor 2:1–9). "I wrote" is read
 as an earlier, tearful letter, not 1 Corinthians (uncertain, footnoted);
