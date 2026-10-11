@@ -2,7 +2,7 @@
 import unittest
 
 from owb import refs
-from owb.sources import macula_greek, sblgnt
+from owb.sources import macula_greek, macula_hebrew, sblgnt
 
 
 class RefsTest(unittest.TestCase):
@@ -57,6 +57,18 @@ class MaculaGreekTest(unittest.TestCase):
     def test_token_fields(self):
         tok = macula_greek.load_tokens("JHN.1.1")[4]
         self.assertEqual((tok.lemma, tok.morph, tok.strong, tok.gloss), ("λόγος", "N-NSM", "3056", "Word"))
+
+
+class MaculaHebrewTest(unittest.TestCase):
+    def test_streamed_verses_match_the_loaded_ones(self):
+        # import_texts streams the file (iter_verses) on a small server; it
+        # must give exactly what verses() gives, in the same order.
+        loaded = macula_hebrew.verses()
+        streamed = macula_hebrew.iter_verses()
+        for (ref, morphemes), (sref, smorphemes) in zip(loaded.items(), streamed):
+            self.assertEqual((sref, smorphemes), (ref, morphemes))
+        self.assertIsNone(next(streamed, None))
+        self.assertEqual(next(iter(loaded)), refs.Ref("GEN", 1, 1))
 
 
 if __name__ == "__main__":
