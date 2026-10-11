@@ -262,7 +262,7 @@
     var cat = t("category")[n.decision.category];
     if (cat) head.appendChild(el("span", "fn-pop-cat", cat));
     box.appendChild(head);
-    box.appendChild(el("p", "fn-pop-text", noteText(n.decision)));
+    box.appendChild(linked("p", "fn-pop-text", noteText(n.decision)));
     var more = el("button", "fn-pop-more", t("fn_reasoning") + " \u2192");
     more.type = "button";
     more.addEventListener("click", function () {
@@ -548,6 +548,41 @@
     });
   }
 
+  // "Mark 14:54" or "2 Corinthians 7:9-10" in a note becomes a link: into
+  // the reader where that chapter is translated, otherwise to search (which
+  // says it is not translated yet). Book names come from DATA.bookRefs.
+  var REF = null;
+  function refPattern() {
+    if (REF) return REF;
+    var names = Object.keys(DATA.bookRefs.names).sort(function (a, b) { return b.length - a.length; })
+      .map(function (n) { return n.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); });
+    REF = new RegExp("\\b(" + names.join("|") + ") (\\d+):(\\d+)(?:[-\u2013](\\d+))?", "g");
+    return REF;
+  }
+
+  function refUrl(code, chapter, verse, label) {
+    var have = DATA.bookRefs.chapters[code] || [];
+    if (have.indexOf(chapter) < 0) return DATA.bookRefs.search + "?q=" + encodeURIComponent(label);
+    if (code === DATA.book && chapter === DATA.chapter) return "#v" + verse;
+    return (DATA.lang === "en" ? "" : "/" + DATA.lang) + "/" + code.toLowerCase() + "/" + chapter + "/#v" + verse;
+  }
+
+  function linked(tag, cls, text) {
+    var node = el(tag, cls);
+    var re = refPattern(), at = 0, m;
+    re.lastIndex = 0;
+    while ((m = re.exec(text))) {
+      node.appendChild(document.createTextNode(text.slice(at, m.index)));
+      var a = el("a", "sref", m[0]);
+      a.href = refUrl(DATA.bookRefs.names[m[1]], Number(m[2]), Number(m[3]), m[0]);
+      a.addEventListener("click", function (e) { e.stopPropagation(); });
+      node.appendChild(a);
+      at = m.index + m[0].length;
+    }
+    node.appendChild(document.createTextNode(text.slice(at)));
+    return node;
+  }
+
   function drawCard(d, record) {
     var card = el("div", "card");
     card.tabIndex = 0;
@@ -560,7 +595,7 @@
     if (d.alternatives.length) {
       card.appendChild(el("div", "alts", t("also") + d.alternatives.map(render).join("; ")));
     }
-    card.appendChild(el("p", "why", d.reason));
+    card.appendChild(linked("p", "why", d.reason));
     function on() { highlight(d.tokens, card); }
     card.addEventListener("click", on);
     card.addEventListener("focus", on);

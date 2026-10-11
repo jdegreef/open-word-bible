@@ -735,6 +735,7 @@ def chapter_page(book, chapter, lang="en"):
             "words": {vid: words[vid] for r in records for vid in r["refs"]},
             "paragraphs": paragraph_starts(records, words),
             "disputed": disputed_block(records, lang),
+            "bookRefs": book_refs(lang),
             "headings": {r["id"]: headings()[r["id"]] for r in records if r["id"] in headings()}}
     # Each morphology code's description in every language, once per page.
     data["uses"] = word_uses()[1]
@@ -878,6 +879,22 @@ DISPUTED = (("JHN.7.53", "JHN.8.11"),)
 def disputed(vid):
     key = refs.parse(vid).sort_key()
     return any(refs.parse(a).sort_key() <= key <= refs.parse(b).sort_key() for a, b in DISPUTED)
+
+
+@functools.lru_cache(maxsize=None)
+def book_refs(lang="en"):
+    """What the reader needs to link "Mark 14:54" in a note: every book's
+    names (English, which the notes are written in, and this language's)
+    and the chapters translated so far, which link into the reader; others
+    go to search, which says they are not translated yet."""
+    names = {}
+    for code, name in refs.BOOK_NAMES.items():
+        names[name] = code
+        local = BOOK_NAMES.get(code, {}).get(lang)
+        if local:
+            names[local] = code
+    chapters = {b: sorted(p.chapter for p in ps) for b, ps in books()}
+    return {"names": names, "chapters": chapters, "search": url(lang, "/search/")}
 
 
 def disputed_block(records, lang="en"):
@@ -1773,7 +1790,7 @@ def sitemap(paths):
 
 
 def build(out):
-    for cached in (nav_menus, footer_links, passages, asset, translated_verses, catalog, search_index,
+    for cached in (nav_menus, footer_links, passages, asset, translated_verses, catalog, book_refs, search_index,
                    search_index_url, word_uses):
         cached.cache_clear()
     if out.exists():
