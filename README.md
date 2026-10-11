@@ -33,10 +33,12 @@ Decisions come in two layers:
 Each decision names its tokens, category, choice, alternatives and reason,
 and whether it is uncertain or needs a footnote.
 
-Content: John 1:1–18 (`content/JHN/`) in English and Spanish, and all of
-Philippians (`content/PHP/`) in English, with 4:1–9 also in Spanish. English
-runs ahead of the other languages; `docs/english-style.md` is the brief for
-drafting it and `data/key_terms.json` the settled key terms.
+Content: John 1–4 (`content/JHN/`) in English, with 1:1–18 also in Spanish
+and chapters 1–2 in French, and all of Philippians (`content/PHP/`) in
+English, with 4:1–9 also in Spanish. English runs ahead of the other
+languages; `docs/english-style.md` is the brief for drafting it and
+`data/key_terms.json` the settled key terms. `docs/french-style.md` is the
+brief for French.
 
 A record is one sentence of the source, not one verse. It ends where the
 SBLGNT ends a sentence: a full stop, a question mark, or a raised dot (·)
@@ -116,8 +118,8 @@ every page, all using `SITE_URL` in `scripts/build_site.py`.
 ### Languages
 
 The whole site, menus and controls included, is built once per interface
-language, as on Ochorus: English at the root (`/jhn/1/`) and Spanish under
-`/es/` (`/es/jhn/1/`). The footer's Languages row switches to the same page
+language, as on Ochorus: English at the root (`/jhn/1/`), Spanish under
+`/es/` (`/es/jhn/1/`) and French under `/fr/` (`/fr/jhn/1/`). The footer's Languages row switches to the same page
 in another language; the browser remembers the choice and opens later pages
 in it. Pages carry `<html lang>`, hreflang links and a canonical URL.
 
@@ -131,8 +133,11 @@ slug. Until then, the other language's page shows the English under a note,
 names the English page as canonical and stays out of the sitemap.
 
 To add a language: add it to `LANGUAGES` and `BOOK_NAMES` in
-`scripts/build_site.py`, write `i18n/<lang>.json`, and add its words to
-`owb/morph.py`.
+`scripts/build_site.py`, write `i18n/<lang>.json`, add its words to
+`owb/morph.py`, and add it to `Role.READING_LANGUAGES` and the role
+constraint in `backend/accounts/models.py` (with a migration) so it can have
+language reviewers. A drafting brief in `docs/<language>-style.md` settles
+the book-wide wording choices.
 
 ### Articles
 
