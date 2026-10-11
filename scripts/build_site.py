@@ -921,6 +921,16 @@ def passage_card(book, chapter, lang="en"):
             f'<span class="a-meta">{meta}</span></a></li>')
 
 
+def resume_link(lang):
+    """A link back to the verse the reader was last at, hidden until
+    web/site.js finds one saved by web/reader.js (owb.place). It carries the
+    book names in lang, so the link names the passage in the page's language."""
+    names = json.dumps({b: BOOK_NAMES[b][lang] for b, _ in books()}, ensure_ascii=False)
+    return (f'<a class="button" data-resume hidden data-label="{html.escape(t(lang, "resume.link"))}" '
+            f'data-prefix="{url(lang, "")}" data-books="{html.escape(names)}" href="{url(lang, "/read/")}">'
+            f'{icon(ICONS["book"])}<span></span></a>')
+
+
 def read_page(lang="en"):
     groups = []
     for book, chaps in books(lang):
@@ -937,6 +947,7 @@ def read_page(lang="en"):
 <p class="eyebrow">{t(lang, "read.title")}</p>
 <h1>{t(lang, "read.heading")}</h1>
 <p class="dek">{t(lang, "read.dek")}</p>
+<p class="actions">{resume_link(lang)}</p>
 </header>
 {cards}
 <section class="how" aria-labelledby="how-h">
@@ -1071,7 +1082,7 @@ def home_page(lang="en"):
 <p class="eyebrow">{t(lang, "home.eyebrow")}</p>
 <h1>{t(lang, "home.heading")}</h1>
 <p class="hero-sub">{t(lang, "home.sub")}</p>
-<p class="actions"><a class="button" href="{url(lang, "/read/")}">{icon(ICONS["book"])}{t(lang, "home.start")}</a>
+<p class="actions">{resume_link(lang)}<a class="button" href="{url(lang, "/read/")}">{icon(ICONS["book"])}{t(lang, "home.start")}</a>
 <a class="button ghost" href="#example-h">{t(lang, "home.how")}</a></p>
 <ul class="trust">
 <li>{icon(ICONS["gift"], 16)}{t(lang, "home.trust_free")}</li>
