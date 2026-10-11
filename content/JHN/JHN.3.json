@@ -30,6 +30,16 @@
           "L": "Now there was a man of the Pharisees, Nicodemus [was] his name, a ruler of the Jews.",
           "B": "Now there was a man named Nicodemus, a Pharisee and one of the leaders of the Jewish people.",
           "R": "There was a man named Nicodemus. He was a Pharisee and one of the leaders of the Jewish people."
+        },
+        "es": {
+          "L": "Y había un hombre de los fariseos, su nombre [era] Nicodemo, un gobernante de los judíos.",
+          "B": "Había un hombre llamado Nicodemo, fariseo y uno de los dirigentes del pueblo judío.",
+          "R": "Había un hombre llamado Nicodemo. Era fariseo y uno de los dirigentes del pueblo judío."
+        },
+        "sw": {
+          "L": "Basi palikuwa na mtu wa Mafarisayo, jina lake Nikodemo, mkuu wa Wayahudi.",
+          "B": "Basi kulikuwa na mtu mmoja aitwaye Nikodemo, Mfarisayo na mmoja wa viongozi wa Wayahudi.",
+          "R": "Kulikuwa na mtu mmoja aitwaye Nikodemo. Alikuwa Mfarisayo na mmoja wa viongozi wa watu wa Kiyahudi."
         }
       },
       "decisions": [
@@ -140,6 +150,28 @@
           "reason": "Balanced and Readable say plainly what \"ruler\" means and name the people he led (meaning decisions m1 and m2). Literal keeps the word John wrote.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43003001010",
+            "n43003001011",
+            "n43003001012"
+          ],
+          "choice": "uno de los dirigentes del pueblo judío",
+          "alternatives": [
+            "un gobernante de los judíos"
+          ],
+          "reason": "As in English: Balanced and Readable say what \"ruler\" means and name the people he led (meaning decisions m1 and m2). Here the word means the people, so it is \"el pueblo judío\", not \"los dirigentes judíos\" as in 1:19.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -194,6 +226,16 @@
           "L": "He came to {{deity_pronoun:him|Him}} by night and said to {{deity_pronoun:him|Him}}, \"Rabbi, we know that {{deity_pronoun:you|You}} have come from God [as a] teacher; for no one is able to do these signs that {{deity_pronoun:you|You}} do, unless God is with {{gender:them|him}}.\"",
           "B": "He came to Jesus at night and said to {{deity_pronoun:him|Him}}, \"Rabbi, we know that {{deity_pronoun:you|You}} have come from God as a teacher, because no one can do such signs as {{deity_pronoun:you|You}} do unless God is with {{gender:them|him}}.\"",
           "R": "One night he came to see Jesus. He said, \"Rabbi, we know that {{deity_pronoun:you|You}} are a teacher God has sent. No one could do the signs {{deity_pronoun:you|You}} do unless God was with {{gender:them|him}}.\""
+        },
+        "es": {
+          "L": "Este vino a {{deity_pronoun:él|Él}} de noche y le dijo: «Rabí, sabemos que has venido de Dios [como] maestro; porque nadie puede hacer estas señales que {{deity_pronoun:tú|Tú}} haces si Dios no está con {{gender:esa persona|él}}».",
+          "B": "Fue a ver a Jesús de noche y le dijo: «Rabí, sabemos que eres un maestro que ha venido de Dios, porque nadie puede hacer las señales que {{deity_pronoun:tú|Tú}} haces si Dios no está con {{gender:quien las hace|él}}».",
+          "R": "Una noche fue a ver a Jesús y le dijo: «Rabí, sabemos que eres un maestro enviado por Dios. Solo alguien que tiene a Dios de su lado podría hacer las señales que {{deity_pronoun:tú|Tú}} haces»."
+        },
+        "sw": {
+          "L": "Huyo alikuja {{deity_pronoun:kwake|Kwake}} usiku, akamwambia, \"Rabi, tunajua kwamba umekuja kutoka kwa Mungu [ukiwa] mwalimu; kwa maana hakuna mtu awezaye kufanya ishara hizi unazozifanya {{deity_pronoun:wewe|Wewe}}, isipokuwa Mungu awe pamoja naye.\"",
+          "B": "Alimjia Yesu usiku, akamwambia, \"Rabi, tunajua kwamba {{deity_pronoun:wewe|Wewe}} ni mwalimu uliyetoka kwa Mungu, kwa sababu hakuna mtu anayeweza kufanya ishara kama unazofanya {{deity_pronoun:wewe|Wewe}} isipokuwa Mungu yu pamoja naye.\"",
+          "R": "Usiku mmoja alikwenda kumwona Yesu. Akasema, \"Rabi, tunajua kwamba {{deity_pronoun:wewe|Wewe}} ni mwalimu aliyetumwa na Mungu. Hakuna mtu ambaye angeweza kufanya ishara unazofanya, isipokuwa Mungu awe pamoja naye.\""
         }
       },
       "decisions": [
@@ -323,6 +365,42 @@
           "reason": "Readable says plainly what \"come from God\" means here.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n43003002032"
+          ],
+          "choice": "{{gender:esa persona|él}} (L); {{gender:quien las hace|él}} (B); no setting (R)",
+          "alternatives": [],
+          "reason": "The rule is about anyone, so the inclusive default avoids a generic \"él\", which could also be read as Jesus. Readable says it without a pronoun. In this passage Spanish needs the gender setting less often than English: \"alguien\", \"nadie\" and the verb forms are already general.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n43003002004"
+          ],
+          "choice": "Jesús",
+          "alternatives": [],
+          "reason": "As in English: Balanced and Readable name Jesus, since the last person named was Nicodemus.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -366,6 +444,16 @@
           "L": "Jesus answered and said to him, \"Truly, truly I say to you, unless {{gender:someone|a man}} is born from above, {{gender:they|he}} cannot see the kingdom of God.\"",
           "B": "Jesus answered him, \"Truly, truly, I tell you, unless {{gender:someone|a man}} is born from above, {{gender:they|he}} cannot see the kingdom of God.\"",
           "R": "Jesus answered, \"I tell you the truth: no one can see God's kingdom unless God gives {{gender:them|him}} a new birth from above.\""
+        },
+        "es": {
+          "L": "Respondió Jesús y le dijo: «En verdad, en verdad te digo que, si alguien no nace de lo alto, no puede ver el reino de Dios».",
+          "B": "Jesús le respondió: «En verdad, en verdad te digo que, si alguien no nace de lo alto, no puede ver el reino de Dios».",
+          "R": "Jesús le respondió: «Te digo la verdad: nadie puede ver el reino de Dios si Dios no le da un nuevo nacimiento de lo alto»."
+        },
+        "sw": {
+          "L": "Yesu akajibu, akamwambia, \"Kweli kweli nakuambia, mtu asipozaliwa kutoka juu, hawezi kuuona ufalme wa Mungu.\"",
+          "B": "Yesu akamjibu, \"Kweli kweli nakuambia, mtu asipozaliwa kutoka juu, hawezi kuuona ufalme wa Mungu.\"",
+          "R": "Yesu akajibu, \"Nakuambia ukweli: hakuna mtu awezaye kuuona ufalme wa Mungu, isipokuwa Mungu amzae upya kutoka juu.\""
         }
       },
       "decisions": [
@@ -542,6 +630,109 @@
           "reason": "Inclusive default; the traditional form one tap away.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43003003006",
+            "n43003003007",
+            "n43003003008",
+            "n43003003009"
+          ],
+          "choice": "En verdad, en verdad te digo (L, B); Te digo la verdad (R)",
+          "alternatives": [],
+          "reason": "The book-wide Spanish rendering (see 1:51), here with the singular \"te\" because Jesus speaks to Nicodemus. It covers 3:5 and 3:11.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43003003014"
+          ],
+          "choice": "nacer de lo alto",
+          "alternatives": [
+            "nacer de nuevo"
+          ],
+          "reason": "No single Spanish word carries both senses of the Greek (meaning decision m1). Literal and Balanced give the sense John uses elsewhere; it departs from the familiar \"nacer de nuevo\", so the footnote gives that reading.",
+          "uncertain": false,
+          "footnote": true
+        },
+        {
+          "id": "r-es-3",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n43003003013",
+            "n43003003014"
+          ],
+          "choice": "si Dios no le da un nuevo nacimiento de lo alto",
+          "alternatives": [],
+          "reason": "As in English: Readable names God as the one who gives the birth and keeps both senses with \"nuevo nacimiento de lo alto\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43003003014"
+          ],
+          "choice": "kutoka juu (L, B); upya kutoka juu (R)",
+          "alternatives": [
+            "mara ya pili",
+            "upya"
+          ],
+          "reason": "ἄνωθεν means \"from above\" and can also mean \"again\", and the meaning note keeps both. Swahili has no word for both. Literal and Balanced say \"kutoka juu\" (from above), the sense Jesus means; Nicodemus's \"mara ya pili\" (a second time) in verse 4 shows how he heard it. Readable says \"upya kutoka juu\" (anew, from above), which carries both.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-2",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n43003003012"
+          ],
+          "choice": "no gender spans in this chapter",
+          "alternatives": [
+            "{{gender:mtu|mwanamume}}"
+          ],
+          "reason": "The English needs \"someone ... they\" with \"a man ... he\" as the traditional alternative. Swahili \"mtu\" (a person) and its verbs (a-sipozaliwa, ha-wezi) say nothing about sex, so there is nothing for the setting to change, here or in the rest of the chapter.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -575,6 +766,16 @@
           "L": "Nicodemus says to {{deity_pronoun:him|Him}}, \"How is a man able to be born, being old?",
           "B": "Nicodemus said to {{deity_pronoun:him|Him}}, \"How can a man be born once he has grown old?",
           "R": "Nicodemus asked {{deity_pronoun:him|Him}}, \"How can a man who is already old be born?"
+        },
+        "es": {
+          "L": "Nicodemo le dice: «¿Cómo puede un hombre nacer siendo viejo?",
+          "B": "Nicodemo le dijo: «¿Cómo puede un hombre nacer cuando ya es viejo?",
+          "R": "Nicodemo le preguntó: «¿Cómo puede nacer un hombre que ya es viejo?"
+        },
+        "sw": {
+          "L": "Nikodemo anamwambia, \"Mtu awezaje kuzaliwa akiwa mzee?",
+          "B": "Nikodemo akamwambia, \"Mtu anawezaje kuzaliwa akishakuwa mzee?",
+          "R": "Nikodemo akamwuliza, \"Mtu ambaye tayari ni mzee anawezaje kuzaliwa?"
         }
       },
       "decisions": [
@@ -635,6 +836,25 @@
           "reason": "John often tells a story in the present tense (\"says\") for vividness. Literal keeps it; Balanced and Readable use the past, as stories are normally told. This applies throughout the passage.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43003004001"
+          ],
+          "choice": "historic present at Literal; pretérito at Balanced and Readable",
+          "alternatives": [],
+          "reason": "As in John 1 and 2: Literal keeps John's present (\"le dice\"); Balanced and Readable use the pretérito. This applies throughout the passage.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -669,6 +889,16 @@
           "L": "He cannot enter into the womb of his mother a second time and be born, can he?\"",
           "B": "He cannot go back into his mother's womb and be born a second time, can he?\"",
           "R": "He cannot go back inside his mother and be born a second time!\""
+        },
+        "es": {
+          "L": "¿Acaso puede entrar por segunda vez en el vientre de su madre y nacer?».",
+          "B": "¿Acaso puede volver a entrar en el vientre de su madre y nacer por segunda vez?».",
+          "R": "¡No puede volver a meterse dentro de su madre y nacer otra vez!»."
+        },
+        "sw": {
+          "L": "Hawezi kuingia tumboni mwa mama yake mara ya pili na kuzaliwa, sivyo?\"",
+          "B": "Hawezi kurudi tumboni mwa mama yake na kuzaliwa mara ya pili, sivyo?\"",
+          "R": "Hawezi kurudi tumboni mwa mama yake na kuzaliwa mara ya pili!\""
         }
       },
       "decisions": [
@@ -732,6 +962,25 @@
           "reason": "Readable turns a question that expects \"no\" into the statement it implies, so that young readers do not miss the point.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43003004012",
+            "n43003004013"
+          ],
+          "choice": "¿Acaso ...?",
+          "alternatives": [],
+          "reason": "\"Acaso\" marks a question that expects the answer no, as the Greek does (meaning decision m1). Readable turns it into the exclamation it implies, as in English.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -776,6 +1025,16 @@
           "L": "Jesus answered, \"Truly, truly I say to you, unless {{gender:someone|a man}} is born of water and Spirit, {{gender:they|he}} cannot enter into the kingdom of God.",
           "B": "Jesus replied, \"Truly, truly, I tell you, unless {{gender:someone|a man}} is born of water and the Spirit, {{gender:they|he}} cannot enter the kingdom of God.",
           "R": "Jesus answered, \"I tell you the truth: no one can enter God's kingdom unless {{gender:they are|he is}} born of water and the Spirit."
+        },
+        "es": {
+          "L": "Respondió Jesús: «En verdad, en verdad te digo que, si alguien no nace de agua y Espíritu, no puede entrar en el reino de Dios.",
+          "B": "Jesús le respondió: «En verdad, en verdad te digo que, si alguien no nace de agua y del Espíritu, no puede entrar en el reino de Dios.",
+          "R": "Jesús le respondió: «Te digo la verdad: nadie puede entrar en el reino de Dios si no nace de agua y del Espíritu."
+        },
+        "sw": {
+          "L": "Yesu akajibu, \"Kweli kweli nakuambia, mtu asipozaliwa kutoka kwa maji na Roho, hawezi kuingia katika ufalme wa Mungu.",
+          "B": "Yesu akajibu, \"Kweli kweli nakuambia, hakuna mtu anayeweza kuingia katika ufalme wa Mungu bila kuzaliwa kutoka kwa maji na Roho.",
+          "R": "Yesu akajibu, \"Nakuambia ukweli: ili mtu aingie katika ufalme wa Mungu, ni lazima azaliwe kwa maji na kwa Roho."
         }
       },
       "decisions": [
@@ -881,6 +1140,26 @@
           "reason": "As in 3:3.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n43003005014"
+          ],
+          "choice": "de agua y del Espíritu",
+          "alternatives": [
+            "del agua y del Espíritu"
+          ],
+          "reason": "Spanish needs the article for the Holy Spirit; Literal keeps the Greek without it. \"Agua\" stays without the article so that the two nouns still read as one birth (meaning decision m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -918,6 +1197,16 @@
           "L": "What has been born of the flesh is flesh, and what has been born of the Spirit is spirit.",
           "B": "Whatever is born of the flesh is flesh, and whatever is born of the Spirit is spirit.",
           "R": "Human parents give their children a human life. But those who are born of the Spirit have the Spirit's life."
+        },
+        "es": {
+          "L": "Lo que ha nacido de la carne, carne es, y lo que ha nacido del Espíritu, espíritu es.",
+          "B": "Lo que nace de la carne es carne, y lo que nace del Espíritu es espíritu.",
+          "R": "Los padres humanos dan a sus hijos una vida humana. Pero los que nacen del Espíritu tienen la vida del Espíritu."
+        },
+        "sw": {
+          "L": "Kile kilichozaliwa kutoka kwa mwili ni mwili, na kile kilichozaliwa kutoka kwa Roho ni roho.",
+          "B": "Chochote kinachozaliwa kwa mwili ni mwili, na chochote kinachozaliwa kwa Roho ni roho.",
+          "R": "Wazazi wa kibinadamu huwapa watoto wao uhai wa kibinadamu. Lakini wale waliozaliwa kwa Roho wanapata uzima unaotoka kwa Roho."
         }
       },
       "decisions": [
@@ -1026,6 +1315,37 @@
           "reason": "\"Flesh is flesh\" means little to young readers; Readable says what natural birth gives and what the Spirit gives (meaning decisions m1 and m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n43003006001",
+            "n43003006002",
+            "n43003006003",
+            "n43003006004",
+            "n43003006005",
+            "n43003006006",
+            "n43003006007",
+            "n43003006008",
+            "n43003006009",
+            "n43003006010",
+            "n43003006011",
+            "n43003006012",
+            "n43003006013",
+            "n43003006014",
+            "n43003006015"
+          ],
+          "choice": "Los padres humanos dan a sus hijos una vida humana ... la vida del Espíritu",
+          "alternatives": [],
+          "reason": "As in English: Readable says what natural birth gives and what the Spirit gives (meaning decisions m1 and m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1057,6 +1377,16 @@
           "L": "Do not marvel that I said to you, 'It is necessary for you [all] to be born from above.'",
           "B": "Do not be surprised that I told you, 'All of you must be born from above.'",
           "R": "Do not be surprised that I said, 'All of you need a new birth from above.'"
+        },
+        "es": {
+          "L": "No te maravilles de que te dije: “Es necesario que {{plural_you:ustedes nazcan|vosotros nazcáis}} de lo alto”.",
+          "B": "No te sorprendas de que te haya dicho: “{{plural_you:Ustedes tienen|Vosotros tenéis}} que nacer de lo alto”.",
+          "R": "No te sorprendas de que te haya dicho: “{{plural_you:Ustedes necesitan|Vosotros necesitáis}} un nuevo nacimiento de lo alto”."
+        },
+        "sw": {
+          "L": "Usishangae kwa sababu nilikuambia, 'Imewapasa ninyi kuzaliwa kutoka juu.'",
+          "B": "Usishangae kwamba nilikuambia, 'Ninyi nyote mnapaswa kuzaliwa kutoka juu.'",
+          "R": "Usishangae kwamba nilisema, 'Ninyi nyote mnahitaji kuzaliwa upya kutoka juu.'"
         }
       },
       "decisions": [
@@ -1144,6 +1474,66 @@
           "reason": "Everyday words; Literal keeps \"marvel\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n43003007007"
+          ],
+          "choice": "te ... ustedes / vosotros, no supplied [all]",
+          "alternatives": [],
+          "reason": "Spanish shows both numbers: \"te\" to Nicodemus, then a plural \"you\" for everyone (meaning decision m1), so no level needs an added word. The plural takes the reader setting: ustedes (Latin America, the default) or vosotros (Spain), as throughout the passage.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n43003007002"
+          ],
+          "choice": "no te sorprendas (B, R); no te maravilles (L)",
+          "alternatives": [],
+          "reason": "As in English: everyday words; Literal keeps the older verb.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n43003007002",
+            "n43003007005",
+            "n43003007007"
+          ],
+          "choice": "usishangae, nilikuambia (singular); imewapasa ninyi (plural)",
+          "alternatives": [
+            "imewapasa [ninyi nyote]"
+          ],
+          "reason": "Jesus speaks to Nicodemus in the singular, then says the need is for \"you\" in the plural. Swahili marks the shift in the verbs and pronoun (u-, -ku-, then -wa-, ninyi), so Literal needs no bracketed \"[all]\"; Balanced and Readable add \"nyote\" (all), as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1192,6 +1582,16 @@
           "L": "The wind blows where it wills, and its sound you hear, but you do not know from where it comes and where it goes; so is everyone who has been born of the Spirit.\"",
           "B": "The wind blows where it wants to. You hear its sound, yet you do not know where it has come from or where it is heading. That is how it is with everyone who is born of the Spirit.\"",
           "R": "The wind blows wherever it wants. You can hear it, but you cannot tell where it started or where it will go. It is like that with everyone who is born of the Spirit.\""
+        },
+        "es": {
+          "L": "El viento sopla donde quiere, y oyes su sonido, pero no sabes de dónde viene ni adónde va; así es todo el que ha nacido del Espíritu».",
+          "B": "El viento sopla donde quiere. Oyes su sonido, pero no sabes de dónde viene ni adónde va. Así sucede con todo el que nace del Espíritu».",
+          "R": "El viento sopla por donde quiere. Lo puedes oír, pero no sabes dónde empezó ni adónde irá. Así pasa con todos los que nacen del Espíritu»."
+        },
+        "sw": {
+          "L": "Upepo unavuma mahali unapotaka, na sauti yake unaisikia, lakini hujui unatoka wapi na unakwenda wapi; hivyo ndivyo ilivyo kwa kila aliyezaliwa kutoka kwa Roho.\"",
+          "B": "Upepo huvuma popote unapotaka. Unasikia sauti yake, lakini hujui unakotoka wala unakoelekea. Ndivyo ilivyo kwa kila mtu aliyezaliwa kwa Roho.\"",
+          "R": "Upepo huvuma popote unapotaka. Unaweza kuusikia, lakini huwezi kujua ulikoanzia wala utakakokwenda. Ndivyo ilivyo kwa kila mtu aliyezaliwa kwa Roho.\""
         }
       },
       "decisions": [
@@ -1295,6 +1695,48 @@
           "reason": "Literal keeps the verb of wanting; Balanced and Readable use \"wants\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43003008002",
+            "n43003008026"
+          ],
+          "choice": "viento ... Espíritu",
+          "alternatives": [],
+          "reason": "As in English: Spanish \"espíritu\" does not mean wind, so the first is \"viento\" and the last \"Espíritu\", with the footnote on meaning decision m1 giving the play on words.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43003008002",
+            "n43003008026"
+          ],
+          "choice": "upepo ... Roho",
+          "alternatives": [
+            "roho ... Roho"
+          ],
+          "reason": "πνεῦμα means both wind and spirit, and Jesus plays on it. Swahili \"roho\" means spirit or soul but never wind, so the verse says \"upepo\" (wind) and \"Roho\" (the Spirit), as the English does, and the meaning note explains the play.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1326,6 +1768,16 @@
           "L": "Nicodemus answered and said to {{deity_pronoun:him|Him}}, \"How can these things happen?\"",
           "B": "Nicodemus asked {{deity_pronoun:him|Him}}, \"How can this be possible?\"",
           "R": "Nicodemus asked {{deity_pronoun:him|Him}}, \"How can this happen?\""
+        },
+        "es": {
+          "L": "Respondió Nicodemo y le dijo: «¿Cómo pueden suceder estas cosas?».",
+          "B": "Nicodemo le preguntó: «¿Cómo es posible esto?».",
+          "R": "«¿Cómo puede pasar eso?», le preguntó Nicodemo."
+        },
+        "sw": {
+          "L": "Nikodemo akajibu, akamwambia, \"Mambo haya yanawezaje kutokea?\"",
+          "B": "Nikodemo akamwuliza, \"Jambo hili linawezekanaje?\"",
+          "R": "Nikodemo akamwuliza, \"Hili linawezaje kutokea?\""
         }
       },
       "decisions": [
@@ -1400,6 +1852,16 @@
           "L": "Jesus answered and said to him, \"You are the teacher of Israel, and you do not know these things?",
           "B": "Jesus answered, \"You are the teacher of Israel, and yet you do not understand this?",
           "R": "Jesus answered, \"You are an important teacher of Israel, and you still do not understand this?"
+        },
+        "es": {
+          "L": "Respondió Jesús y le dijo: «¿Tú eres el maestro de Israel, y no sabes estas cosas?",
+          "B": "Jesús le respondió: «Tú eres el maestro de Israel, ¿y no entiendes esto?",
+          "R": "Jesús le respondió: «Tú eres un maestro importante de Israel, ¿y todavía no entiendes esto?"
+        },
+        "sw": {
+          "L": "Yesu akajibu, akamwambia, \"Wewe ni mwalimu wa Israeli, nawe hujui mambo haya?",
+          "B": "Yesu akajibu, \"Wewe ni mwalimu wa Israeli, na bado huelewi jambo hili?",
+          "R": "Yesu akajibu, \"Wewe ni mwalimu mashuhuri wa Israeli, na bado huelewi jambo hili?"
         }
       },
       "decisions": [
@@ -1473,6 +1935,24 @@
           "reason": "Readable says what the article implies (meaning decision m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43003010008",
+            "n43003010009"
+          ],
+          "choice": "un maestro importante",
+          "alternatives": [],
+          "reason": "As in English: Readable says what the article implies (meaning decision m1). \"Tú\" is Nicodemus and has no setting.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1513,6 +1993,16 @@
           "L": "Truly, truly I say to you, what we know we speak, and what we have seen we testify [to], and our testimony you [all] do not receive.",
           "B": "Truly, truly, I tell you, we speak of what we know and testify to what we have seen, and still you people do not accept our testimony.",
           "R": "I tell you the truth: we talk about what we know, and we tell about what we have seen. But you people do not accept what we say."
+        },
+        "es": {
+          "L": "En verdad, en verdad te digo que lo que sabemos hablamos, y lo que hemos visto testificamos, y {{plural_you:no reciben|no recibís}} nuestro testimonio.",
+          "B": "En verdad, en verdad te digo que hablamos de lo que sabemos y damos testimonio de lo que hemos visto, y aun así {{plural_you:ustedes no aceptan|vosotros no aceptáis}} nuestro testimonio.",
+          "R": "Te digo la verdad: hablamos de lo que sabemos y contamos lo que hemos visto. Pero {{plural_you:ustedes no aceptan|vosotros no aceptáis}} lo que decimos."
+        },
+        "sw": {
+          "L": "Kweli kweli nakuambia, tunachokijua tunakinena, na tulichokiona tunakishuhudia, na ushuhuda wetu hamuupokei.",
+          "B": "Kweli kweli nakuambia, tunasema yale tunayoyajua na kushuhudia yale tuliyoyaona, lakini ninyi bado hamuukubali ushuhuda wetu.",
+          "R": "Nakuambia ukweli: tunazungumza juu ya yale tunayoyajua, na tunasema yale tuliyoyaona. Lakini ninyi hamyakubali tunayoyasema."
         }
       },
       "decisions": [
@@ -1586,6 +2076,27 @@
           "reason": "Shows the plural (meaning decision m2); Literal uses [all].",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n43003011018"
+          ],
+          "choice": "ustedes / vosotros, no supplied word",
+          "alternatives": [
+            "ustedes, la gente"
+          ],
+          "reason": "The verb shows the plural (meaning decision m2), so Spanish needs no \"[all]\" or \"you people\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1623,6 +2134,16 @@
           "L": "If earthly things I told you [all] and you do not believe, how, if I tell you heavenly things, will you believe?",
           "B": "If you do not believe when I tell you about things on earth, how will you believe when I tell you about things in heaven?",
           "R": "I have told you about things that happen here on earth, and you do not believe. So how will you believe if I tell you about the things of heaven?"
+        },
+        "es": {
+          "L": "Si {{plural_you:les|os}} dije las cosas terrenales y no {{plural_you:creen|creéis}}, ¿cómo {{plural_you:creerán|creeréis}} si {{plural_you:les|os}} digo las celestiales?",
+          "B": "Si no {{plural_you:me creen|me creéis}} cuando {{plural_you:les|os}} hablo de las cosas de la tierra, ¿cómo {{plural_you:me creerán|me creeréis}} cuando {{plural_you:les|os}} hable de las cosas del cielo?",
+          "R": "{{plural_you:Les|Os}} he hablado de cosas que pasan aquí en la tierra, y no {{plural_you:creen|creéis}}. Entonces, ¿cómo {{plural_you:van|vais}} a creer si {{plural_you:les|os}} hablo de las cosas del cielo?"
+        },
+        "sw": {
+          "L": "Ikiwa mambo ya kidunia niliwaambia, nanyi hamuamini, mtaaminije nikiwaambia mambo ya kimbingu?",
+          "B": "Ikiwa hamuamini ninapowaeleza mambo yanayotokea duniani, mtaaminije nitakapowaeleza mambo ya mbinguni?",
+          "R": "Nimewaambia mambo yanayotokea hapa duniani, nanyi hamuamini. Basi mtaaminije nikiwaambia mambo ya mbinguni?"
         }
       },
       "decisions": [
@@ -1681,6 +2202,26 @@
           "reason": "Key term. Here the verb has no \"in\": the question is whether they believe his words (compare 2:22).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43003012008",
+            "n43003012015"
+          ],
+          "choice": "me creen",
+          "alternatives": [
+            "creen en mí"
+          ],
+          "reason": "The verb here has no \"in\": the question is whether they believe what he says (meaning decision m3), so Spanish says \"creer\" + the person, not \"creer en\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1720,6 +2261,16 @@
           "L": "And no one has gone up into heaven except the one who came down out of heaven, the Son of Man.",
           "B": "No one has gone up into heaven except the one who came down from heaven, the Son of Man.",
           "R": "No one has ever gone up into heaven except the Son of Man. He is the one who came down from heaven."
+        },
+        "es": {
+          "L": "Y nadie ha subido al cielo, sino el que bajó del cielo, el Hijo del Hombre.",
+          "B": "Nadie ha subido al cielo, sino el que bajó del cielo, el Hijo del Hombre.",
+          "R": "Nadie ha subido jamás al cielo, excepto el Hijo del Hombre. Él es el que bajó del cielo."
+        },
+        "sw": {
+          "L": "Na hakuna aliyepanda kwenda mbinguni isipokuwa yule aliyeshuka kutoka mbinguni, Mwana wa Adamu.",
+          "B": "Hakuna mtu aliyewahi kupanda mbinguni isipokuwa yule aliyeshuka kutoka mbinguni, yaani Mwana wa Adamu.",
+          "R": "Hakuna mtu aliyewahi kupanda kwenda mbinguni isipokuwa Mwana wa Adamu. Yeye ndiye aliyeshuka kutoka mbinguni."
         }
       },
       "decisions": [
@@ -1823,6 +2374,26 @@
           "reason": "The same plain verbs as in 1:51 (\"going up and coming down\"), so the link between the two sayings stays visible.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43003013003",
+            "n43003013013"
+          ],
+          "choice": "subir ... bajar",
+          "alternatives": [],
+          "reason": "The same plain verbs as in 1:51 (\"subiendo y bajando\"), so the link between the two sayings stays visible.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1871,6 +2442,16 @@
           "L": "And just as Moses lifted up the serpent in the wilderness, so it is necessary for the Son of Man to be lifted up, \\v 15 so that everyone who believes may in {{deity_pronoun:him|Him}} have eternal life.",
           "B": "Moses lifted up the serpent in the wilderness, and in the same way the Son of Man must be lifted up, \\v 15 so that everyone who believes will have eternal life in {{deity_pronoun:him|Him}}.",
           "R": "Long ago in the desert, Moses lifted up a bronze snake on a pole. In the same way, the Son of Man must be lifted up, \\v 15 so that everyone who believes can have eternal life in {{deity_pronoun:him|Him}}: the life of the age to come, which begins now."
+        },
+        "es": {
+          "L": "Y como Moisés levantó en alto la serpiente en el desierto, así es necesario que el Hijo del Hombre sea levantado en alto, \\v 15 para que todo el que cree tenga en {{deity_pronoun:él|Él}} vida eterna.",
+          "B": "Moisés levantó en alto la serpiente en el desierto, y del mismo modo el Hijo del Hombre tiene que ser levantado en alto, \\v 15 para que todo el que cree tenga vida eterna en {{deity_pronoun:él|Él}}.",
+          "R": "Hace mucho tiempo, en el desierto, Moisés levantó en alto una serpiente de bronce sobre un poste. Del mismo modo, el Hijo del Hombre tiene que ser levantado en alto, \\v 15 para que todo el que cree tenga vida eterna en {{deity_pronoun:él|Él}}: la vida del mundo venidero, que comienza ya."
+        },
+        "sw": {
+          "L": "Na sawasawa na Musa alivyomwinua nyoka nyikani, ndivyo inavyompasa Mwana wa Adamu kuinuliwa, \\v 15 ili kila anayeamini apate uzima wa milele ndani {{deity_pronoun:yake|Yake}}.",
+          "B": "Musa alimwinua nyoka nyikani, na vivyo hivyo Mwana wa Adamu lazima ainuliwe, \\v 15 ili kila anayeamini awe na uzima wa milele ndani {{deity_pronoun:yake|Yake}}.",
+          "R": "Zamani za kale huko jangwani, Musa alimwinua nyoka wa shaba juu ya mti. Vivyo hivyo, Mwana wa Adamu lazima ainuliwe, \\v 15 ili kila anayeamini apate uzima wa milele ndani {{deity_pronoun:yake|Yake}}: uzima wa nyakati zijazo, unaoanza sasa."
         }
       },
       "decisions": [
@@ -2122,6 +2703,112 @@
           "reason": "Balanced keeps the older word used in the story of Numbers 21; Readable uses the everyday word.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43003014011"
+          ],
+          "choice": "levantado en alto, with no \"en la cruz\"",
+          "alternatives": [
+            "exaltado",
+            "levantado"
+          ],
+          "reason": "The book-wide choice keeps \"lifted up\" at every level, with both senses: raised on the cross and exalted (meaning decision m2). \"En alto\" is part of the Greek verb, which comes from the word for height, and it keeps this verb apart from \"levantar\" in 2:19-22, which translates a different verb (\"raise\"). \"Exaltado\" would lose the cross.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n43003015004",
+            "n43003015005",
+            "n43003015006",
+            "n43003015007"
+          ],
+          "choice": "tenga en él vida eterna",
+          "alternatives": [],
+          "reason": "As in English: Literal keeps the Greek order, which shows that \"en él\" goes with having life (meaning decision m4).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-3",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n43003014002",
+            "n43003014003",
+            "n43003014004",
+            "n43003014005",
+            "n43003014006",
+            "n43003014007",
+            "n43003014008",
+            "n43003014009"
+          ],
+          "choice": "una serpiente de bronce sobre un poste",
+          "alternatives": [],
+          "reason": "As in English: Readable says what the serpent was and how it was lifted up (Numbers 21:9).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-4",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n43003015008",
+            "n43003015009"
+          ],
+          "choice": "la vida del mundo venidero, que comienza ya",
+          "alternatives": [],
+          "reason": "As in English: Readable explains eternal life once in the passage (meaning decision m6).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43003014011"
+          ],
+          "choice": "kuinuliwa, with no \"msalabani\"",
+          "alternatives": [
+            "kuinuliwa msalabani",
+            "kutukuzwa"
+          ],
+          "reason": "\"Kuinuliwa\" means both to be lifted up and to be raised to honour, so it carries the double sense of the meaning note, as \"lifted up\" does in English. Adding \"msalabani\" (on the cross) would lose the second sense; \"kutukuzwa\" (be glorified) would lose the first.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2169,6 +2856,16 @@
           "L": "For in this way God loved the world, that {{deity_pronoun:he|He}} gave the Son, the one and only, in order that everyone who believes in {{deity_pronoun:him|Him}} may not perish but may have eternal life.",
           "B": "For God's love for the world was such that {{deity_pronoun:he|He}} gave {{deity_pronoun:his|His}} one and only Son, so that everyone who believes in {{deity_pronoun:him|Him}} may not perish but have eternal life.",
           "R": "God loved the people of the world, and this is how {{deity_pronoun:he|He}} loved them: {{deity_pronoun:he|He}} gave {{deity_pronoun:his|His}} one and only Son, so that everyone who believes in {{deity_pronoun:him|Him}} will not be lost but will have eternal life."
+        },
+        "es": {
+          "L": "Porque así amó Dios al mundo: que dio al Hijo unigénito, para que todo el que cree en {{deity_pronoun:él|Él}} no perezca, sino que tenga vida eterna.",
+          "B": "Porque Dios amó al mundo de tal manera que dio a su Hijo único, para que todo el que cree en {{deity_pronoun:él|Él}} no perezca, sino que tenga vida eterna.",
+          "R": "Dios amó a la gente del mundo, y así es como la amó: dio a su Hijo único, para que todo el que cree en {{deity_pronoun:él|Él}} no se pierda, sino que tenga vida eterna."
+        },
+        "sw": {
+          "L": "Kwa maana hivi ndivyo Mungu alivyoupenda ulimwengu, kwamba alimtoa Mwana, yule wa pekee, ili kila anayemwamini asiangamie bali awe na uzima wa milele.",
+          "B": "Kwa maana Mungu aliupenda ulimwengu kiasi kwamba alimtoa Mwana {{deity_pronoun:wake|Wake}} wa pekee, ili kila anayemwamini asiangamie, bali apate uzima wa milele.",
+          "R": "Mungu aliwapenda watu wa ulimwengu, na hivi ndivyo alivyowapenda: alimtoa Mwana {{deity_pronoun:wake|Wake}} wa pekee, ili kila anayemwamini asipotee, bali awe na uzima wa milele."
         }
       },
       "decisions": [
@@ -2438,6 +3135,79 @@
           "reason": "The Greek is general and the wording is already inclusive; no pronoun for the believer is needed, so no setting applies.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43003016001",
+            "n43003016008"
+          ],
+          "choice": "así amó Dios al mundo: que dio (L); amó al mundo de tal manera que (B)",
+          "alternatives": [
+            "tanto amó Dios al mundo"
+          ],
+          "reason": "Literal gives the sense of the adverb, \"in this way\" (meaning decision m2). In Balanced, \"de tal manera\" can mean \"in such a way\" or \"so much\", which keeps the open question in m2 without leaning to degree, as \"tanto amó\" would.",
+          "uncertain": false,
+          "footnote": true
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43003016012"
+          ],
+          "choice": "el Hijo unigénito (L); su Hijo único (B, R)",
+          "alternatives": [],
+          "reason": "As in 1:14 and 1:18: Literal may use \"unigénito\", which in today's Spanish means an only child; Balanced and Readable avoid it because \"-génito\" suggests \"begotten\" (meaning decision m4). Literal keeps \"el Hijo\"; Balanced and Readable add \"su\", as English adds \"his\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-3",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43003016021"
+          ],
+          "choice": "no se pierda (R); no perezca (L, B)",
+          "alternatives": [],
+          "reason": "\"Perecer\" is uncommon for young readers; \"perderse\" is how John uses the verb elsewhere (meaning decision m7).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-4",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n43003016001",
+            "n43003016007"
+          ],
+          "choice": "la gente del mundo ... así es como la amó",
+          "alternatives": [],
+          "reason": "As in English: Readable says who the world is (meaning decision m3) and spells out \"in this way\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2481,6 +3251,16 @@
           "L": "For God did not send the Son into the world in order that {{deity_pronoun:he|He}} might judge the world, but in order that the world might be saved through {{deity_pronoun:him|Him}}.",
           "B": "For God sent the Son into the world, not to condemn the world, but so that through {{deity_pronoun:him|Him}} the world might be saved.",
           "R": "God did not send {{deity_pronoun:his|His}} Son into the world to judge it guilty. He sent {{deity_pronoun:him|Him}} so that the world could be saved through {{deity_pronoun:him|Him}}."
+        },
+        "es": {
+          "L": "Porque no envió Dios al Hijo al mundo para que juzgara al mundo, sino para que el mundo fuera salvado por medio de {{deity_pronoun:él|Él}}.",
+          "B": "Porque Dios envió a su Hijo al mundo, no para condenar al mundo, sino para que por medio de {{deity_pronoun:él|Él}} el mundo sea salvado.",
+          "R": "Dios no envió a su Hijo al mundo para declararlo culpable. Lo envió para que el mundo pudiera ser salvado por medio de {{deity_pronoun:él|Él}}."
+        },
+        "sw": {
+          "L": "Kwa maana Mungu hakumtuma Mwana kuja ulimwenguni ili auhukumu ulimwengu, bali ili ulimwengu upate kuokolewa kupitia {{deity_pronoun:yeye|Yeye}}.",
+          "B": "Kwa maana Mungu alimtuma Mwana ulimwenguni, si ili auhukumu ulimwengu, bali ili kupitia {{deity_pronoun:yeye|Yeye}} ulimwengu uokolewe.",
+          "R": "Mungu hakumtuma Mwana {{deity_pronoun:wake|Wake}} ulimwenguni ili auhukumu kuwa na hatia. Alimtuma ili ulimwengu uweze kuokolewa kupitia {{deity_pronoun:yeye|Yeye}}."
         }
       },
       "decisions": [
@@ -2625,6 +3405,70 @@
           "reason": "As in 3:16.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43003017012"
+          ],
+          "choice": "juzgar (L); condenar (B); declarar culpable (R)",
+          "alternatives": [],
+          "reason": "As in English: Literal keeps \"juzgar\" so the word family of 3:17-19 can be seen; Balanced and Readable give its sense here (meaning decision m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43003017017",
+            "n43003017018",
+            "n43003017019",
+            "n43003017020",
+            "n43003017021"
+          ],
+          "choice": "fuera salvado / sea salvado",
+          "alternatives": [
+            "se salve"
+          ],
+          "reason": "The passive points to God as the one who saves (meaning decision m3); \"se salve\" could suggest the world saves itself.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43003017012"
+          ],
+          "choice": "kuhukumu at every level; kuhukumu kuwa na hatia (R)",
+          "alternatives": [
+            "kulaani"
+          ],
+          "reason": "Swahili \"kuhukumu\" means both to judge and to condemn, like κρίνῃ, so it serves Literal and Balanced where the English needs \"judge\" and \"condemn\". Readable adds \"kuwa na hatia\" (guilty) where the English Readable says \"judge it guilty\". The same holds in verse 18.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2670,6 +3514,16 @@
           "L": "The one who believes in {{deity_pronoun:him|Him}} is not judged; but the one who does not believe has already been judged, because {{gender:they have|he has}} not believed in the name of the one and only Son of God.",
           "B": "The one who believes in {{deity_pronoun:him|Him}} is not condemned, but the one who does not believe is condemned already, for not having believed in the name of the one and only Son of God.",
           "R": "Anyone who believes in the Son is not judged guilty. But anyone who does not believe is judged guilty already, because {{gender:they have|he has}} not believed in God's one and only Son."
+        },
+        "es": {
+          "L": "El que cree en {{deity_pronoun:él|Él}} no es juzgado; pero el que no cree ya ha sido juzgado, porque no ha creído en el nombre del unigénito Hijo de Dios.",
+          "B": "El que cree en {{deity_pronoun:él|Él}} no es condenado, pero el que no cree ya está condenado, por no haber creído en el nombre del Hijo único de Dios.",
+          "R": "Quien cree en el Hijo no es declarado culpable. Pero quien no cree ya ha sido declarado culpable, porque no ha creído en el Hijo único de Dios."
+        },
+        "sw": {
+          "L": "Yule anayemwamini hahukumiwi; lakini yule asiyeamini tayari amehukumiwa, kwa sababu hajaliamini jina la Mwana wa pekee wa Mungu.",
+          "B": "Anayemwamini hahukumiwi. Lakini asiyeamini amehukumiwa tayari, kwa sababu hajaliamini jina la Mwana wa pekee wa Mungu.",
+          "R": "Kila anayemwamini Mwana hahukumiwi kuwa na hatia. Lakini asiyeamini amekwisha hukumiwa kuwa na hatia, kwa sababu hajamwamini Mwana wa pekee wa Mungu."
         }
       },
       "decisions": [
@@ -2781,6 +3635,63 @@
           "reason": "Readable names the Son and gives the sense of the idiom (meaning decision m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43003018006",
+            "n43003018012"
+          ],
+          "choice": "condenado (B); declarado culpable (R)",
+          "alternatives": [],
+          "reason": "As in 3:17.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n43003018015"
+          ],
+          "choice": "no gender setting",
+          "alternatives": [],
+          "reason": "Spanish needs no pronoun for the person who does not believe (\"porque no ha creído\"), so the sentence is already general and no setting applies.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-3",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n43003018004",
+            "n43003018017",
+            "n43003018018"
+          ],
+          "choice": "el Hijo; el Hijo único de Dios",
+          "alternatives": [],
+          "reason": "As in English: Readable names the Son and gives the sense of the idiom (meaning decision m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2831,6 +3742,16 @@
           "L": "And this is the judgment, that the light has come into the world, and {{gender:people|men}} loved rather the darkness than the light, for their works were evil.",
           "B": "And this is how the judgment falls: the light has come into the world, but {{gender:people|men}} loved the darkness more than the light, because the things they did were evil.",
           "R": "This is how the judging happens: The light has come into the world. But {{gender:people|men}} loved the darkness more than the light, because they were doing evil things."
+        },
+        "es": {
+          "L": "Y este es el juicio: que la luz ha venido al mundo, y {{gender:los seres humanos|los hombres}} amaron más la oscuridad que la luz, porque sus obras eran malas.",
+          "B": "Y así es como se da el juicio: la luz ha venido al mundo, pero {{gender:la gente amó|los hombres amaron}} más la oscuridad que la luz, porque lo que hacían era malo.",
+          "R": "Así es como sucede el juicio: la luz ha venido al mundo, pero {{gender:la gente amó|los hombres amaron}} más la oscuridad que la luz, porque hacían cosas malas."
+        },
+        "sw": {
+          "L": "Basi hukumu ni hii: nuru imekuja ulimwenguni, na watu wakalipenda giza zaidi kuliko nuru, kwa maana matendo yao yalikuwa mabaya.",
+          "B": "Na hivi ndivyo hukumu inavyokuja: nuru imekuja ulimwenguni, lakini watu walipenda giza kuliko nuru, kwa sababu mambo waliyokuwa wakifanya yalikuwa mabaya.",
+          "R": "Hivi ndivyo hukumu inavyotokea: Nuru imekuja ulimwenguni. Lakini watu walipenda giza kuliko nuru, kwa sababu walikuwa wakitenda mambo maovu."
         }
       },
       "decisions": [
@@ -2982,6 +3903,51 @@
           "reason": "Shows that the sentence describes what judgment is (meaning decision m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n43003019016"
+          ],
+          "choice": "{{gender:los seres humanos|los hombres}} (L); {{gender:la gente amó|los hombres amaron}} (B, R)",
+          "alternatives": [],
+          "reason": "People in general (meaning decision m3): inclusive default, traditional one tap away. The span takes in the verb where the subject changes number.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43003019007",
+            "n43003019008",
+            "n43003019009",
+            "n43003019010",
+            "n43003019011",
+            "n43003019012"
+          ],
+          "choice": "la oscuridad",
+          "alternatives": [
+            "las tinieblas"
+          ],
+          "reason": "The same word as in 1:5, so the link with the opening can be seen. \"Las tinieblas\" is the traditional word but now sounds literary.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3024,6 +3990,16 @@
           "L": "For everyone who practices evil [things] hates the light and does not come to the light, in order that {{gender:their|his}} works may not be exposed.",
           "B": "For anyone who does what is wrong hates the light and will not come near it, so that what {{gender:they do|he does}} will not be exposed.",
           "R": "People who do evil hate the light. They stay away from it so that the bad things they do will not be seen for what they are."
+        },
+        "es": {
+          "L": "Porque todo el que practica lo malo odia la luz y no viene a la luz, para que sus obras no sean expuestas.",
+          "B": "Porque todo el que hace el mal odia la luz y no se acerca a ella, para que lo que hace no quede al descubierto.",
+          "R": "Los que hacen el mal odian la luz. Se mantienen lejos de ella para que no se vea lo malo que hacen."
+        },
+        "sw": {
+          "L": "Kwa kuwa kila anayefanya maovu anaichukia nuru, wala haji kwenye nuru, ili matendo yake yasifichuliwe.",
+          "B": "Kwa maana kila mtu anayetenda mabaya huichukia nuru, wala hataki kuikaribia, ili mambo anayoyatenda yasifichuliwe.",
+          "R": "Watu wanaotenda maovu huichukia nuru. Huikwepa nuru ili mambo mabaya wanayoyafanya yasionekane jinsi yalivyo."
         }
       },
       "decisions": [
@@ -3118,6 +4094,24 @@
           "reason": "Plain words for not coming to the light.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n43003020020"
+          ],
+          "choice": "no gender setting",
+          "alternatives": [],
+          "reason": "\"Todo el que\" and \"sus obras\" are general in Spanish, with no pronoun to choose, so no setting applies here or in 3:21.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3159,6 +4153,16 @@
           "L": "But the one who does the truth comes to the light, in order that {{gender:their|his}} works may be revealed, that they have been done in God.\"",
           "B": "But whoever practices the truth comes to the light, so that it may become plain that {{gender:their|his}} deeds have been done in God.\"",
           "R": "But anyone who lives by the truth comes to the light. Then it becomes clear that what {{gender:they have|he has}} done was done in union with God.\""
+        },
+        "es": {
+          "L": "Pero el que hace la verdad viene a la luz, para que sus obras sean manifestadas, que han sido hechas en Dios».",
+          "B": "Pero el que practica la verdad viene a la luz, para que se vea claramente que sus obras han sido hechas en Dios».",
+          "R": "Pero quien vive según la verdad se acerca a la luz. Así se ve claramente que lo que ha hecho, lo ha hecho unido a Dios»."
+        },
+        "sw": {
+          "L": "Lakini anayeitenda kweli anakuja kwenye nuru, ili matendo yake yaonekane wazi kwamba yametendwa ndani ya Mungu.\"",
+          "B": "Lakini yeyote anayeitenda kweli huja kwenye nuru, ili ionekane wazi kwamba matendo yake yamefanywa ndani ya Mungu.\"",
+          "R": "Lakini mtu anayeishi kwa kufuata kweli huja kwenye nuru. Ndipo inaonekana wazi kwamba aliyoyafanya aliyafanya akiwa ameungana na Mungu.\""
         }
       },
       "decisions": [
@@ -3294,6 +4298,46 @@
           "reason": "As in 3:20.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43003021003",
+            "n43003021004",
+            "n43003021005"
+          ],
+          "choice": "practica la verdad (B); vive según la verdad (R)",
+          "alternatives": [],
+          "reason": "As in English: \"hacer la verdad\" is not natural Spanish; Balanced and Readable keep \"verdad\" and say what the idiom means (meaning decision m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43003021016",
+            "n43003021017",
+            "n43003021018",
+            "n43003021019"
+          ],
+          "choice": "unido a Dios",
+          "alternatives": [],
+          "reason": "As in English: Readable says what \"in God\" means (meaning decision m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3336,6 +4380,16 @@
           "L": "After these things Jesus and {{deity_pronoun:his|His}} disciples came into the land of Judea, and there {{deity_pronoun:he|He}} was spending time with them and baptizing.",
           "B": "After this, Jesus went with {{deity_pronoun:his|His}} disciples into the Judean countryside. There {{deity_pronoun:he|He}} stayed with them for a while and baptized people.",
           "R": "After that, Jesus and {{deity_pronoun:his|His}} disciples left Jerusalem and went out into the countryside of Judea. Jesus stayed there with them for a while and baptized people."
+        },
+        "es": {
+          "L": "Después de estas cosas, vinieron Jesús y sus discípulos a la tierra de Judea, y allí pasaba tiempo con ellos y bautizaba.",
+          "B": "Después de esto, Jesús fue con sus discípulos a la región de Judea. Allí pasó un tiempo con ellos y bautizaba a la gente.",
+          "R": "Después, Jesús y sus discípulos salieron de Jerusalén y fueron al campo de Judea. Jesús pasó allí un tiempo con ellos y bautizaba a la gente."
+        },
+        "sw": {
+          "L": "Baada ya mambo haya Yesu na wanafunzi {{deity_pronoun:wake|Wake}} walikuja katika nchi ya Uyahudi, naye alikuwa akikaa nao huko na kubatiza.",
+          "B": "Baada ya hayo, Yesu alikwenda pamoja na wanafunzi {{deity_pronoun:wake|Wake}} katika maeneo ya vijijini ya Uyahudi. Akakaa nao huko kwa muda, akawabatiza watu.",
+          "R": "Baada ya hayo, Yesu na wanafunzi {{deity_pronoun:wake|Wake}} waliondoka Yerusalemu, wakaenda mashambani mwa Uyahudi. Yesu alikaa nao huko kwa muda, akawabatiza watu."
         }
       },
       "decisions": [
@@ -3402,6 +4456,44 @@
           "reason": "Readable says where they came from (meaning decision m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43003022016"
+          ],
+          "choice": "pasar tiempo",
+          "alternatives": [
+            "quedarse"
+          ],
+          "reason": "This is not the verb \"remain\" (meaning decision m3), so Spanish avoids \"quedarse\", which this translation uses for that verb in 1:38-39.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n43003022003"
+          ],
+          "choice": "salieron de Jerusalén",
+          "alternatives": [],
+          "reason": "As in English: Readable says where they came from (meaning decision m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3444,6 +4536,16 @@
           "L": "Now John also was baptizing in Aenon near Salim, because there were many waters there, and [people] were coming and being baptized.",
           "B": "John too was baptizing, at Aenon near Salim, where there was plenty of water, and people kept coming to be baptized.",
           "R": "John was also baptizing people at a place called Aenon, near the town of Salim. There was plenty of water there, and people kept coming to John to be baptized."
+        },
+        "es": {
+          "L": "Y también Juan estaba bautizando en Enón, cerca de Salim, porque había allí muchas aguas, y venían y eran bautizados.",
+          "B": "Juan también estaba bautizando, en Enón, cerca de Salim, donde había mucha agua, y la gente seguía llegando para ser bautizada.",
+          "R": "Juan también bautizaba a la gente en un lugar llamado Enón, cerca del pueblo de Salim. Allí había mucha agua, y muchos seguían yendo a Juan para que los bautizara."
+        },
+        "sw": {
+          "L": "Na Yohana pia alikuwa akibatiza katika Ainoni karibu na Salimu, kwa maana palikuwa na maji mengi hapo, na [watu] walikuwa wakifika na kubatizwa.",
+          "B": "Yohana pia alikuwa akibatiza huko Ainoni karibu na Salimu, mahali palipokuwa na maji ya kutosha, na watu waliendelea kuja kubatizwa.",
+          "R": "Yohana naye alikuwa akiwabatiza watu mahali palipoitwa Ainoni, karibu na mji wa Salimu. Huko kulikuwa na maji mengi, na watu waliendelea kumjia Yohana ili wabatizwe."
         }
       },
       "decisions": [
@@ -3531,6 +4633,43 @@
           "reason": "Readable says that these are place names.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n43003023018"
+          ],
+          "choice": "venían y eran bautizados, no supplied subject",
+          "alternatives": [],
+          "reason": "Spanish leaves the subject in the verb, as the Greek does, so Literal needs no bracketed \"[people]\" (meaning decision m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n43003023008",
+            "n43003023009",
+            "n43003023010",
+            "n43003023011"
+          ],
+          "choice": "un lugar llamado ... el pueblo de",
+          "alternatives": [],
+          "reason": "As in English: Readable says that these are place names.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3562,6 +4701,16 @@
           "L": "For John had not yet been thrown into prison.",
           "B": "This was before John had been put in prison.",
           "R": "This was before John was put in prison."
+        },
+        "es": {
+          "L": "Porque Juan todavía no había sido echado en la cárcel.",
+          "B": "Esto sucedió antes de que Juan fuera encarcelado.",
+          "R": "Esto pasó antes de que metieran a Juan en la cárcel."
+        },
+        "sw": {
+          "L": "Kwa maana Yohana alikuwa bado hajatupwa gerezani.",
+          "B": "Hii ilikuwa kabla Yohana hajatiwa gerezani.",
+          "R": "Hii ilikuwa kabla Yohana hajafungwa gerezani."
         }
       },
       "decisions": [
@@ -3660,6 +4809,16 @@
           "L": "So a dispute arose on the part of John's disciples with a Jew about purification.",
           "B": "Then a dispute broke out between some of John's disciples and a Jewish man about ritual cleansing.",
           "R": "Some of John's disciples began to argue with a Jewish man about the washings that made people clean for worship."
+        },
+        "es": {
+          "L": "Surgió, pues, una discusión de parte de los discípulos de Juan con un judío acerca de la purificación.",
+          "B": "Entonces se produjo una discusión entre algunos discípulos de Juan y un judío sobre los ritos de purificación.",
+          "R": "Algunos discípulos de Juan comenzaron a discutir con un judío sobre las ceremonias de lavado que purificaban a la gente para el culto."
+        },
+        "sw": {
+          "L": "Basi kukatokea mabishano kati ya wanafunzi wa Yohana na Myahudi mmoja kuhusu utakaso.",
+          "B": "Kisha baadhi ya wanafunzi wa Yohana walianza kubishana na Myahudi mmoja kuhusu desturi za kutakasa.",
+          "R": "Baadhi ya wanafunzi wa Yohana walianza kubishana na Myahudi mmoja kuhusu kunawa kunakomfanya mtu kuwa safi kwa ajili ya ibada."
         }
       },
       "decisions": [
@@ -3787,6 +4946,43 @@
           "reason": "Says what kind of purification is meant (meaning decision m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43003025009"
+          ],
+          "choice": "un judío",
+          "alternatives": [],
+          "reason": "One Jewish man (meaning decision m2); the singular already says so in Spanish, and no level speaks of leaders.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43003025011"
+          ],
+          "choice": "los ritos de purificación (B); las ceremonias de lavado que purificaban a la gente para el culto (R)",
+          "alternatives": [],
+          "reason": "As in English: says what kind of purification is meant (meaning decision m3); the same word as the \"purificación\" of 2:6.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3836,6 +5032,16 @@
           "L": "And they came to John and said to him, \"Rabbi, [the one] who was with you beyond the Jordan, to whom you have testified, look, this one is baptizing, and all are coming to {{deity_pronoun:him|Him}}.\"",
           "B": "They came to John and said to him, \"Rabbi, the man who was with you on the other side of the Jordan, the one you testified about: look, {{deity_pronoun:he|He}} is baptizing, and everyone is going to {{deity_pronoun:him|Him}}.\"",
           "R": "So they came to John and said, \"Rabbi, remember the man who was with you on the east side of the Jordan River? You told everyone about {{deity_pronoun:him|Him}}. Now {{deity_pronoun:he|He}} is baptizing people, and everyone is going to {{deity_pronoun:him|Him}} instead!\""
+        },
+        "es": {
+          "L": "Y vinieron a Juan y le dijeron: «Rabí, [aquel] que estaba contigo al otro lado del Jordán, de quien tú has dado testimonio, mira, este bautiza, y todos van a {{deity_pronoun:él|Él}}».",
+          "B": "Fueron a ver a Juan y le dijeron: «Rabí, el que estaba contigo al otro lado del Jordán, aquel de quien diste testimonio: mira, ahora bautiza, y todos acuden a {{deity_pronoun:él|Él}}».",
+          "R": "Entonces fueron a ver a Juan y le dijeron: «Rabí, ¿te acuerdas del hombre que estaba contigo al este del río Jordán? Tú hablaste a todos de {{deity_pronoun:él|Él}}. ¡Pues ahora {{deity_pronoun:él|Él}} está bautizando a la gente, y todos van a {{deity_pronoun:él|Él}} en lugar de venir a ti!»."
+        },
+        "sw": {
+          "L": "Nao wakamwendea Yohana, wakamwambia, \"Rabi, [yule] aliyekuwa pamoja nawe ng'ambo ya Yordani, ambaye wewe ulimshuhudia, tazama, huyu anabatiza, na wote wanakwenda {{deity_pronoun:kwake|Kwake}}.\"",
+          "B": "Wakamwendea Yohana, wakamwambia, \"Rabi, yule mtu aliyekuwa pamoja nawe ng'ambo ya Yordani, yule uliyemshuhudia: tazama, anabatiza, na kila mtu anakwenda {{deity_pronoun:kwake|Kwake}}.\"",
+          "R": "Basi wakamwendea Yohana, wakamwambia, \"Rabi, unamkumbuka yule mtu aliyekuwa pamoja nawe upande wa mashariki wa Mto Yordani? Uliwaambia watu wote habari {{deity_pronoun:zake|Zake}}. Sasa {{deity_pronoun:yeye|Yeye}} anabatiza watu, na kila mtu anakwenda {{deity_pronoun:kwake|Kwake}} badala yako!\""
         }
       },
       "decisions": [
@@ -3960,6 +5166,45 @@
           "reason": "The pronouns refer to Jesus, so they take the deity_pronoun setting, even though the speakers do not yet see who he is.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n43003026027"
+          ],
+          "choice": "{{deity_pronoun:él|Él}}",
+          "alternatives": [],
+          "reason": "As in English: the stressed pronouns refer to Jesus, so they take the setting, even though the speakers do not yet see who he is. \"Tú\" is John and has none.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n43003026024",
+            "n43003026025",
+            "n43003026026",
+            "n43003026027"
+          ],
+          "choice": "en lugar de venir a ti",
+          "alternatives": [],
+          "reason": "As in English: Readable shows the complaint in their words (meaning decision m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4000,6 +5245,16 @@
           "L": "John answered and said, \"{{gender:A person|A man}} is not able to receive even one thing unless it has been given to {{gender:them|him}} from heaven.",
           "B": "John replied, \"No one can receive anything at all unless it has been given {{gender:them|him}} from heaven.",
           "R": "John answered, \"{{gender:People|A man}} can have only what God gives {{gender:them|him}}."
+        },
+        "es": {
+          "L": "Respondió Juan y dijo: «{{gender:Una persona|Un hombre}} no puede recibir ni una sola cosa si no le ha sido dada del cielo.",
+          "B": "Juan respondió: «Nadie puede recibir nada si no le ha sido dado del cielo.",
+          "R": "Juan les respondió: «Nadie puede tener nada que Dios no le haya dado."
+        },
+        "sw": {
+          "L": "Yohana akajibu, akasema, \"Mtu hawezi kupokea hata kitu kimoja isipokuwa amepewa kutoka mbinguni.",
+          "B": "Yohana akajibu, \"Hakuna mtu awezaye kupokea chochote isipokuwa amepewa kutoka mbinguni.",
+          "R": "Yohana akajibu, \"Mtu anaweza kuwa na kile tu ambacho Mungu humpa."
         }
       },
       "decisions": [
@@ -4110,6 +5365,46 @@
           "reason": "Readable names God (meaning decision m1) and turns the double negative into a plain statement.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n43003027007",
+            "n43003027015"
+          ],
+          "choice": "{{gender:Una persona|Un hombre}} (L); nadie (B, R)",
+          "alternatives": [],
+          "reason": "The word means anyone (meaning decision m3). Literal keeps the noun with the inclusive default; Balanced and Readable say \"nadie\", which is general without a setting.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43003027013",
+            "n43003027014",
+            "n43003027015",
+            "n43003027016",
+            "n43003027017",
+            "n43003027018"
+          ],
+          "choice": "que Dios no le haya dado",
+          "alternatives": [],
+          "reason": "As in English: Readable names God (meaning decision m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4149,6 +5444,16 @@
           "L": "You yourselves testify to me that I said, 'I am not the {{christos:Christ|Messiah}},' but that, 'I have been sent ahead of {{deity_pronoun:him|Him}}.'",
           "B": "You yourselves are my witnesses that I said, 'I am not the {{christos:Christ|Messiah}}; rather, I have been sent ahead of {{deity_pronoun:him|Him}}.'",
           "R": "You heard me say it yourselves: 'I am not the {{christos:Christ|Messiah}}. God sent me to go ahead of {{deity_pronoun:him|Him}}.'"
+        },
+        "es": {
+          "L": "{{plural_you:Ustedes mismos me son|Vosotros mismos me sois}} testigos de que dije: “Yo no soy el {{christos:Cristo|Mesías}}”, sino: “He sido enviado delante de {{deity_pronoun:él|Él}}”.",
+          "B": "{{plural_you:Ustedes mismos son|Vosotros mismos sois}} testigos de que dije: “Yo no soy el {{christos:Cristo|Mesías}}; he sido enviado delante de {{deity_pronoun:él|Él}}”.",
+          "R": "{{plural_you:Ustedes mismos me oyeron|Vosotros mismos me oísteis}} decir: “Yo no soy el {{christos:Cristo|Mesías}}. Dios me envió para ir delante de {{deity_pronoun:él|Él}}”."
+        },
+        "sw": {
+          "L": "Ninyi wenyewe mnanishuhudia kwamba nilisema, 'Mimi siye {{christos:Kristo|Masihi}},' bali kwamba, 'Nimetumwa mbele {{deity_pronoun:yake|Yake}}.'",
+          "B": "Ninyi wenyewe ni mashahidi wangu kwamba nilisema, 'Mimi siye {{christos:Kristo|Masihi}}; ila nimetumwa nimtangulie.'",
+          "R": "Ninyi wenyewe mlinisikia nikisema: 'Mimi siye {{christos:Kristo|Masihi}}. Mungu alinituma niende mbele {{deity_pronoun:yake|Yake}}.'"
         }
       },
       "decisions": [
@@ -4248,6 +5553,44 @@
           "reason": "Readable names the sender (meaning decision m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n43003028010",
+            "n43003028011"
+          ],
+          "choice": "el {{christos:Cristo|Mesías}}",
+          "alternatives": [],
+          "reason": "A title with the article, as in 1:20.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n43003028014",
+            "n43003028015"
+          ],
+          "choice": "Dios me envió",
+          "alternatives": [],
+          "reason": "As in English: Readable names the sender (meaning decision m3).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4293,6 +5636,16 @@
           "L": "The one who has the bride is [the] bridegroom; but the friend of the bridegroom, who stands and hears him, rejoices with joy because of the bridegroom's voice.",
           "B": "It is the bridegroom who has the bride. But the bridegroom's friend, who stands by and listens for him, rejoices with great joy at the sound of the bridegroom's voice.",
           "R": "The bride is for the bridegroom. The bridegroom's friend stands nearby and listens for him, and when he hears the bridegroom's voice, his heart is full of joy."
+        },
+        "es": {
+          "L": "El que tiene a la novia es [el] novio; pero el amigo del novio, que está [allí] y lo oye, se alegra con alegría por la voz del novio.",
+          "B": "El que tiene a la novia es el novio. Pero el amigo del novio, que está a su lado y lo escucha, se llena de alegría al oír la voz del novio.",
+          "R": "La novia es para el novio. El amigo del novio espera cerca y está atento a él, y cuando oye la voz del novio, se le llena el corazón de alegría."
+        },
+        "sw": {
+          "L": "Aliye na bibi harusi ndiye bwana harusi; lakini rafiki wa bwana harusi, anayesimama na kumsikia, hufurahi kwa furaha kwa sababu ya sauti ya bwana harusi.",
+          "B": "Bwana harusi ndiye aliye na bibi harusi. Lakini rafiki wa bwana harusi, anayesimama karibu na kumsikiliza, hufurahi kwa furaha kuu anaposikia sauti ya bwana harusi.",
+          "R": "Bibi harusi ni wa bwana harusi. Rafiki wa bwana harusi husimama karibu na kumsikiliza, na anaposikia sauti ya bwana harusi, moyo wake hujaa furaha."
         }
       },
       "decisions": [
@@ -4429,6 +5782,68 @@
           "reason": "Readable says the point plainly: the bride belongs to the groom, not to his friend.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43003029017",
+            "n43003029018"
+          ],
+          "choice": "se alegra con alegría (L); se llena de alegría (B)",
+          "alternatives": [
+            "se goza grandemente"
+          ],
+          "reason": "Literal keeps the doubled words; Balanced keeps \"alegría\" and shows the added force (meaning decision m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43003029016"
+          ],
+          "choice": "no deity_pronoun setting",
+          "alternatives": [],
+          "reason": "As in English: within the picture the pronouns refer to the bridegroom of the story, not directly to Christ.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-3",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43003029001",
+            "n43003029002",
+            "n43003029003",
+            "n43003029004",
+            "n43003029005",
+            "n43003029006"
+          ],
+          "choice": "La novia es para el novio",
+          "alternatives": [],
+          "reason": "As in English: Readable says the point plainly.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4458,6 +5873,16 @@
           "L": "So this joy of mine has been fulfilled.",
           "B": "This, then, is my joy, and it has been made complete.",
           "R": "That is the joy I have, and now it is complete."
+        },
+        "es": {
+          "L": "Así pues, esta alegría mía ha sido colmada.",
+          "B": "Esa es mi alegría, y ya es completa.",
+          "R": "Esa es la alegría que tengo, y ahora es completa."
+        },
+        "sw": {
+          "L": "Basi furaha hii yangu imetimizwa.",
+          "B": "Basi hii ndiyo furaha yangu, nayo imekamilika.",
+          "R": "Hiyo ndiyo furaha niliyo nayo, na sasa imekamilika."
         }
       },
       "decisions": [
@@ -4521,6 +5946,16 @@
           "L": "That one must increase, but I must decrease.",
           "B": "He must grow greater, but I must grow less.",
           "R": "He must become more and more important, while I become less and less."
+        },
+        "es": {
+          "L": "Es necesario que aquel crezca, pero que yo disminuya.",
+          "B": "Él tiene que crecer, y yo tengo que menguar.",
+          "R": "Él tiene que ser cada vez más importante, y yo cada vez menos."
+        },
+        "sw": {
+          "L": "Yule inampasa kuongezeka, lakini mimi kupungua.",
+          "B": "Yeye lazima azidi kuwa mkuu, lakini mimi nipungue.",
+          "R": "Yeye anapaswa kuwa mkuu zaidi na zaidi, nami nizidi kuwa mdogo."
         }
       },
       "decisions": [
@@ -4592,6 +6027,24 @@
           "reason": "Readable says what the increase and decrease are (meaning decision m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43003030003",
+            "n43003030006"
+          ],
+          "choice": "cada vez más importante ... cada vez menos",
+          "alternatives": [],
+          "reason": "As in English: Readable says what the increase and decrease are (meaning decision m2). \"Él\" begins the sentence and is written plain.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4620,6 +6073,16 @@
           "L": "The one who comes from above is above all.",
           "B": "The one who comes from above is greater than all.",
           "R": "The one who comes from above is greater than everyone."
+        },
+        "es": {
+          "L": "El que viene de lo alto está sobre todos.",
+          "B": "El que viene de lo alto es superior a todos.",
+          "R": "El que viene de lo alto es más importante que todos."
+        },
+        "sw": {
+          "L": "Anayekuja kutoka juu yuko juu ya wote.",
+          "B": "Anayekuja kutoka juu ni mkuu kuliko wote.",
+          "R": "Yule anayekuja kutoka juu ni mkuu kuliko kila mtu."
         }
       },
       "decisions": [
@@ -4696,6 +6159,28 @@
           "reason": "\"Above all\" can be heard as \"most of all\"; Balanced and Readable say what it means.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43003031004",
+            "n43003031005"
+          ],
+          "choice": "todos",
+          "alternatives": [
+            "todo"
+          ],
+          "reason": "Spanish must choose between \"todos\" (all people) and \"todo\" (all things), where the Greek may mean either (meaning decision m3). \"Todos\" follows the contrast with \"the one from the earth\" in the next sentence, as the English Readable does. \"De lo alto\" is the phrase of 3:3 and 3:7.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4740,6 +6225,16 @@
           "L": "The one who is from the earth is from the earth and speaks from the earth; the one who comes from heaven is above all.",
           "B": "Whoever is from the earth is earthly and speaks from an earthly point of view. The one who comes from heaven is greater than all.",
           "R": "Anyone who comes from the earth belongs to the earth and speaks as someone from the earth. But the one who comes from heaven is greater than everyone."
+        },
+        "es": {
+          "L": "El que es de la tierra, de la tierra es y de la tierra habla; el que viene del cielo está sobre todos.",
+          "B": "El que es de la tierra es terrenal y habla como alguien de la tierra. El que viene del cielo es superior a todos.",
+          "R": "El que viene de la tierra pertenece a la tierra y habla como alguien de la tierra. Pero el que viene del cielo es más importante que todos."
+        },
+        "sw": {
+          "L": "Aliye wa dunia ni wa dunia, naye husema ya dunia; anayekuja kutoka mbinguni yuko juu ya wote.",
+          "B": "Aliye wa dunia ni wa kidunia, naye husema kwa mtazamo wa kidunia. Anayekuja kutoka mbinguni ni mkuu kuliko wote.",
+          "R": "Yeyote anayetoka duniani ni wa dunia, naye huzungumza kama mtu wa dunia. Lakini yule anayekuja kutoka mbinguni ni mkuu kuliko kila mtu."
         }
       },
       "decisions": [
@@ -4833,6 +6328,28 @@
           "reason": "As in the previous sentence.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43003031016",
+            "n43003031017",
+            "n43003031018",
+            "n43003031019",
+            "n43003031020"
+          ],
+          "choice": "habla como alguien de la tierra",
+          "alternatives": [],
+          "reason": "As in English: says what speaking \"from the earth\" means (meaning decision m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4867,6 +6384,16 @@
           "L": "What {{deity_pronoun:he|He}} has seen and heard, this {{deity_pronoun:he|He}} testifies, and no one receives {{deity_pronoun:his|His}} testimony.",
           "B": "What {{deity_pronoun:he|He}} has seen and heard is what {{deity_pronoun:he|He}} bears witness to, but no one accepts {{deity_pronoun:his|His}} testimony.",
           "R": "He tells what {{deity_pronoun:he|He}} has seen and heard, but no one accepts what {{deity_pronoun:he|He}} says."
+        },
+        "es": {
+          "L": "Lo que ha visto y oído, eso testifica, y nadie recibe su testimonio.",
+          "B": "Da testimonio de lo que ha visto y oído, pero nadie acepta su testimonio.",
+          "R": "Cuenta lo que ha visto y oído, pero nadie acepta lo que dice."
+        },
+        "sw": {
+          "L": "Alichokiona na kukisikia, ndicho anachokishuhudia, wala hakuna anayeupokea ushuhuda {{deity_pronoun:wake|Wake}}.",
+          "B": "Yeye hushuhudia yale aliyoyaona na kuyasikia, lakini hakuna anayeukubali ushuhuda {{deity_pronoun:wake|Wake}}.",
+          "R": "Anaeleza yale aliyoyaona na kuyasikia, lakini hakuna anayekubali anachokisema."
         }
       },
       "decisions": [
@@ -4937,6 +6464,30 @@
           "reason": "Varies the verb so that \"testimony\" can follow; the Greek words are related.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n43003032001",
+            "n43003032002",
+            "n43003032003",
+            "n43003032004",
+            "n43003032005",
+            "n43003032006"
+          ],
+          "choice": "no deity_pronoun span",
+          "alternatives": [],
+          "reason": "Spanish leaves the subject in the verb and uses only the possessive \"su\", so there is no stressed pronoun for the setting to change (see John 1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4970,6 +6521,16 @@
           "L": "The one who has received {{deity_pronoun:his|His}} testimony has sealed [the fact] that God is true.",
           "B": "Anyone who accepts {{deity_pronoun:his|His}} testimony has put {{gender:their|his}} seal on this: God is true.",
           "R": "But those who do accept what {{deity_pronoun:he|He}} says confirm that God is true to {{deity_pronoun:his|His}} word."
+        },
+        "es": {
+          "L": "El que ha recibido su testimonio ha sellado [el hecho de] que Dios es veraz.",
+          "B": "Quien acepta su testimonio pone su sello a esto: Dios es veraz.",
+          "R": "Pero los que sí aceptan lo que dice confirman que Dios dice la verdad."
+        },
+        "sw": {
+          "L": "Aliyeupokea ushuhuda {{deity_pronoun:wake|Wake}} ametia muhuri [kuthibitisha] kwamba Mungu ni wa kweli.",
+          "B": "Yeyote anayeukubali ushuhuda {{deity_pronoun:wake|Wake}} ametia muhuri juu ya jambo hili: Mungu ni wa kweli.",
+          "R": "Lakini wale wanaokubali anachosema wanathibitisha kwamba Mungu ni mwaminifu kwa neno {{deity_pronoun:lake|Lake}}."
         }
       },
       "decisions": [
@@ -5085,6 +6646,50 @@
           "reason": "Readable explains the image of the seal (meaning decision m1) and the sense of \"true\" (m3), and shows the contrast with the previous sentence.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n43003033006"
+          ],
+          "choice": "ha sellado [el hecho de] que",
+          "alternatives": [],
+          "reason": "As in English: Literal keeps the single verb and brackets the object Spanish needs.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43003033001",
+            "n43003033002",
+            "n43003033003",
+            "n43003033004",
+            "n43003033005",
+            "n43003033006",
+            "n43003033007",
+            "n43003033008",
+            "n43003033009",
+            "n43003033010",
+            "n43003033011"
+          ],
+          "choice": "confirman que Dios dice la verdad",
+          "alternatives": [],
+          "reason": "As in English: Readable explains the seal (meaning decision m1) and the sense of \"veraz\" (m3), and shows the contrast with the previous sentence. Spanish needs no gender setting here.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5124,6 +6729,16 @@
           "L": "For the one whom God sent speaks the words of God, for not by measure does {{deity_pronoun:he|He}} give the Spirit.",
           "B": "For the one God sent speaks the words of God, since the Spirit {{deity_pronoun:he|He}} gives is not measured out.",
           "R": "The one God sent speaks God's words, because the Spirit is given without any limit."
+        },
+        "es": {
+          "L": "Porque aquel a quien Dios envió habla las palabras de Dios, pues no da el Espíritu por medida.",
+          "B": "Porque el que Dios envió dice las palabras de Dios, ya que da el Espíritu sin medida.",
+          "R": "El que Dios envió dice las palabras de Dios, porque el Espíritu se da sin ningún límite."
+        },
+        "sw": {
+          "L": "Kwa maana yule ambaye Mungu alimtuma huyanena maneno ya Mungu, kwa maana hamtoi Roho kwa kipimo.",
+          "B": "Kwa maana yule aliyetumwa na Mungu husema maneno ya Mungu, kwa kuwa hamtoi Roho kwa kupima.",
+          "R": "Yule ambaye Mungu alimtuma huzungumza maneno ya Mungu, kwa sababu Roho hutolewa bila kikomo chochote."
         }
       },
       "decisions": [
@@ -5236,6 +6851,24 @@
           "reason": "Readable uses the passive, so that like the Greek it does not name the giver, and avoids a \"he\" young readers might take one way only.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n43003034015"
+          ],
+          "choice": "da, with no stated subject",
+          "alternatives": [],
+          "reason": "Spanish, like the Greek, can leave the giver unnamed in the verb, so Literal and Balanced keep the open question of meaning decision m1 without a pronoun. Readable uses the impersonal \"se da\", as English uses the passive.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5270,6 +6903,16 @@
           "L": "The Father loves the Son, and all things {{deity_pronoun:he|He}} has given into {{deity_pronoun:his|His}} hand.",
           "B": "The Father loves the Son and has handed everything over to {{deity_pronoun:him|Him}}.",
           "R": "The Father loves the Son and has given {{deity_pronoun:him|Him}} power over everything."
+        },
+        "es": {
+          "L": "El Padre ama al Hijo, y todas las cosas ha entregado en su mano.",
+          "B": "El Padre ama al Hijo y le ha entregado todo.",
+          "R": "El Padre ama al Hijo y le ha dado poder sobre todas las cosas."
+        },
+        "sw": {
+          "L": "Baba anampenda Mwana, na amempa vitu vyote mkononi {{deity_pronoun:mwake|Mwake}}.",
+          "B": "Baba anampenda Mwana, na amemkabidhi kila kitu.",
+          "R": "Baba anampenda Mwana, na amempa mamlaka juu ya kila kitu."
         }
       },
       "decisions": [
@@ -5367,6 +7010,28 @@
           "reason": "Readable says what the idiom means (meaning decision m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43003035008",
+            "n43003035009",
+            "n43003035010",
+            "n43003035011",
+            "n43003035012"
+          ],
+          "choice": "le ha entregado todo (B); le ha dado poder sobre todas las cosas (R)",
+          "alternatives": [],
+          "reason": "Plain wording for the idiom (meaning decision m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5413,6 +7078,16 @@
           "L": "The one who believes in the Son has eternal life; but the one who disobeys the Son will not see life, but the wrath of God remains on {{gender:them|him}}.\"",
           "B": "Anyone who believes in the Son has eternal life, but anyone who refuses to obey the Son will not see life. Instead, the wrath of God remains on {{gender:them|him}}.\"",
           "R": "Anyone who believes in the Son has eternal life already. But anyone who does not obey the Son will not have that life. Instead, God's anger remains on {{gender:them|him}}.\""
+        },
+        "es": {
+          "L": "El que cree en el Hijo tiene vida eterna; pero el que desobedece al Hijo no verá vida, sino que la ira de Dios permanece sobre {{gender:esa persona|él}}».",
+          "B": "El que cree en el Hijo tiene vida eterna, pero el que se niega a obedecer al Hijo no verá la vida. Al contrario, la ira de Dios permanece sobre {{gender:esa persona|él}}».",
+          "R": "Quien cree en el Hijo ya tiene vida eterna. Pero quien no obedece al Hijo no tendrá esa vida. Al contrario, el enojo de Dios permanece sobre esa persona»."
+        },
+        "sw": {
+          "L": "Yule anayemwamini Mwana anao uzima wa milele; lakini yule asiyemtii Mwana hatauona uzima, bali ghadhabu ya Mungu inakaa juu yake.\"",
+          "B": "Kila anayemwamini Mwana ana uzima wa milele, lakini anayekataa kumtii Mwana hatauona uzima. Badala yake, ghadhabu ya Mungu inakaa juu yake.\"",
+          "R": "Kila anayemwamini Mwana ana uzima wa milele tayari. Lakini asiyemtii Mwana hatapata uzima huo. Badala yake, hasira ya Mungu inakaa juu yake.\""
         }
       },
       "decisions": [
@@ -5599,6 +7274,104 @@
             "him"
           ],
           "reason": "The person meant is anyone who refuses; inclusive default.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43003036011"
+          ],
+          "choice": "desobedece (L); se niega a obedecer (B); no obedece (R)",
+          "alternatives": [],
+          "reason": "As in English: every level keeps the sense of obeying (meaning decision m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43003036022"
+          ],
+          "choice": "permanece",
+          "alternatives": [],
+          "reason": "The book-wide choice: \"permanecer\" for this verb in its weighty sense, as in 1:32-33.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-3",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43003036019",
+            "n43003036020",
+            "n43003036021"
+          ],
+          "choice": "el enojo de Dios (R); la ira (L, B)",
+          "alternatives": [],
+          "reason": "As in English: \"ira\" is less common for young readers; meaning decision m4 explains it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-4",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n43003036024"
+          ],
+          "choice": "{{gender:esa persona|él}}",
+          "alternatives": [],
+          "reason": "The person meant is anyone who refuses: inclusive default, with the generic \"él\" one tap away. Readable says \"esa persona\" plainly.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43003036019",
+            "n43003036022"
+          ],
+          "choice": "ghadhabu (L, B), hasira (R); inakaa",
+          "alternatives": [
+            "inabaki",
+            "hasira at every level"
+          ],
+          "reason": "\"Ghadhabu\" is settled, righteous anger, the sense in the meaning note; Readable says \"hasira\" (anger), as the English Readable says \"God's anger\". μένει is \"kukaa\", the verb used for the Spirit remaining on Jesus (1:32-33) and for staying with him (1:38-39), so Swahili keeps John's word.",
           "uncertain": false,
           "footnote": false
         }
