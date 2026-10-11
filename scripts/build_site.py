@@ -1595,11 +1595,14 @@ def article_text(body, lang="en"):
 
 
 @functools.lru_cache(maxsize=None)
-def search_index(lang):
-    """The search index for pages in lang, as JSON text. Kinds: "c" a
-    passage, "v" a sentence (its text at each level, with the settings
-    spans left in for the browser to render), "n" a note (a decision),
-    "a" an article."""
+def search_documents(lang):
+    """Everything search can find on pages in lang: interface text, the
+    books, page shortcuts, and the documents. Kinds: "c" a passage, "v" a
+    sentence (its text at each level, with the settings spans left in for
+    the browser to render), "n" a note (a decision), "a" an article. The
+    API (backend/translation/search.py) indexes these same documents, so
+    the site and the API find the same things. Callers must not change
+    the result: it is cached."""
     ui = dict(catalog(lang)["search.ui"])
     ui["levels"] = catalog(lang)["levels"]
     ui["category"] = catalog(lang)["reader.ui"]["category"]
@@ -1648,9 +1651,14 @@ def search_index(lang):
     for d in docs:
         if d.get("l") == lang:
             del d["l"]
-    data = {"lang": lang, "ui": ui, "books": book_list, "docs": docs,
+    return {"lang": lang, "ui": ui, "books": book_list, "docs": docs,
             "pages": [[html.unescape(t(lang, key)), url(lang, path)] for key, path in SEARCH_PAGES]}
-    return json.dumps(data, ensure_ascii=False, separators=(",", ":"))
+
+
+@functools.lru_cache(maxsize=None)
+def search_index(lang):
+    """The search index for pages in lang, as JSON text (search_documents)."""
+    return json.dumps(search_documents(lang), ensure_ascii=False, separators=(",", ":"))
 
 
 @functools.lru_cache(maxsize=None)
@@ -1731,7 +1739,7 @@ def sitemap(paths):
 
 
 def build(out):
-    for cached in (nav_menus, footer_links, passages, asset, translated_verses, catalog, search_index,
+    for cached in (nav_menus, footer_links, passages, asset, translated_verses, catalog, search_documents, search_index,
                    search_index_url, word_uses):
         cached.cache_clear()
     if out.exists():

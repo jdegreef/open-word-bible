@@ -10,6 +10,9 @@ while no source words are in the database yet, so a fresh deploy is not
 blocked before import_texts has run. Renderings and decisions are replaced from the file, since content/
 is still the master copy. A sentence's status is set only when it is created:
 once review starts, the review trail owns it and a re-import never resets it.
+
+Afterwards the search tables are rebuilt (translation/search.py), from all
+of content/ and articles/, whichever files were imported.
 """
 import json
 
@@ -19,6 +22,7 @@ from django.db import transaction
 
 from owb import refs, validate
 from texts.models import Edition, Word
+from translation import search
 from translation.models import Decision, Rendering, Sentence
 
 TEXT_ID_EDITION = {"SBLGNT@v1.2": "sblgnt", "WLC@macula-hebrew": "wlc"}
@@ -54,6 +58,8 @@ class Command(BaseCommand):
             total += len(records)
             self.stdout.write(f"{path}: {len(records)} records")
         self.stdout.write(f"{total} records imported")
+        counts = search.rebuild()
+        self.stdout.write("search: " + ", ".join(f"{lang} {n}" for lang, n in counts.items()))
 
     def validate_records(self, records):
         verse_ids = {v for r in records for v in r.get("refs", [])}
