@@ -253,6 +253,17 @@ class SiteTest(unittest.TestCase):
         self.assertEqual([int(n) for n in pills], list(range(1, build_site.BOOK_CHAPTERS["JHN"] + 1)))
         self.assertEqual(len(re.findall(r'class="chap none"', strip)), 21 - len(done))
 
+    def test_aligned_records_carry_their_ranges(self):
+        records = self.chapter_data("jhn/2")["records"]
+        linked = [r for r in records if r["links"]]
+        self.assertTrue(linked)
+        for r in linked:
+            text = r["renderings"]["en"]["B"]
+            for (start, end, tokens), al in zip(r["links"]["en"]["B"], r["alignments"]):
+                self.assertEqual(al["tokens"], tokens)
+                # Curly quotes on the page keep every range in place.
+                self.assertEqual(build_site.smart_quotes(al["target_span"]), text[start:end])
+
     def test_read_page_groups_chapters_by_book(self):
         read = (self.out / "read" / "index.html").read_text(encoding="utf-8")
         for book, chaps in build_site.books():

@@ -260,6 +260,7 @@ def validate_record(record, known_tokens=None, original_language=True):
             _check_markup(text, f"renderings.{lang}.{level}", errors)
             check_verses(text, f"renderings.{lang}.{level}")
 
+    by_rendering = {}
     for i, al in enumerate(record.get("alignments", [])):
         where = f"alignments[{i}]"
         if not _fields(al, _PROPS["alignments"]["items"], where, errors):
@@ -268,8 +269,15 @@ def validate_record(record, known_tokens=None, original_language=True):
         target = renderings.get(al.get("language"), {}).get(al.get("level"))
         if target is None:
             errors.append(f"{where}: no rendering for {al.get('language')}/{al.get('level')}")
-        elif al.get("target_span") not in target:
-            errors.append(f"{where}: target_span not found in rendering")
+        else:
+            by_rendering.setdefault((al["language"], al["level"]), []).append((i, al["target_span"]))
+    # Each rendering's spans in order, each found after the one before.
+    for (lang, level), items in by_rendering.items():
+        try:
+            markup.alignment_ranges(renderings[lang][level], [t for _, t in items])
+        except ValueError as e:
+            n, _, reason = str(e).partition(": ")
+            errors.append(f"alignments[{items[int(n)][0]}] ({lang}/{level}): {reason}")
 
     seen = set()
     for i, d in enumerate(record.get("decisions") or []):

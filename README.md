@@ -49,6 +49,15 @@ differently, as John 1:3 does with its last two words, says so in a
 `punctuation` meaning decision. `owb.validate` enforces this, and
 `build_skeleton.py` starts new passages with one record per sentence.
 
+Alignments link source tokens to the words of one rendering, so the reader
+can light up a Greek word and the English it became. A rendering's
+alignments are listed in the order their `target_span`s appear, and each
+span is found after the one before (so a repeated "the" is unambiguous);
+a span may not hold a verse marker or cut through a setting span
+(`markup.alignment_ranges`). A token may appear in more than one alignment
+("not yet ... come"), and words with no counterpart are left out. John 2,
+English Balanced, is aligned as a pilot.
+
 Greek or Hebrew quoted in a gloss, rendering or decision must be copied from
 the source data: the validator rejects any word that is not, code point for
 code point, a form or lemma in MACULA.

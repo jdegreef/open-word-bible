@@ -42,6 +42,45 @@
     return out;
   }
 
+  // A rendering split at its verse markers, each verse a list of pieces
+  // [text, token ids or null]: the pieces with ids are the English that
+  // aligned Greek words became (r.links, built from the record's alignments).
+  function versePieces(r, lang, level) {
+    var raw = r.renderings[lang][level];
+    var ranges = (r.links && r.links[lang] && r.links[lang][level]) || [];
+    var chunks = [], at = 0;
+    ranges.forEach(function (g) {
+      if (g[0] > at) chunks.push([raw.slice(at, g[0]), null]);
+      chunks.push([raw.slice(g[0], g[1]), g[2]]);
+      at = g[1];
+    });
+    if (at < raw.length) chunks.push([raw.slice(at), null]);
+    var out = [[verseOf(r.refs[0]), []]];
+    chunks.forEach(function (c) {
+      c[0].split(VERSE).forEach(function (part, i) {
+        if (i % 2) out.push([part, []]);
+        else if (part) out[out.length - 1][1].push([part, c[1]]);
+      });
+    });
+    var first = out[0][1][0];
+    if (first && !first[1]) first[0] = first[0].replace(/^\s+/, "");
+    return out;
+  }
+
+  function hasLinks(r) {
+    var lang = textLang(r);
+    return !!(r.links && r.links[lang] && r.links[lang][settings.level]);
+  }
+
+  // Light up a Greek word and the English it became, both ways.
+  function light(ids) {
+    var set = new Set(ids);
+    document.querySelectorAll(".aw").forEach(function (a) {
+      a.classList.toggle("lit", a.dataset.tokens.split(" ").some(function (id) { return set.has(id); }));
+    });
+    document.querySelectorAll(".iw").forEach(function (w) { w.classList.toggle("lit", set.has(w.dataset.id)); });
+  }
+
   function render(text) {
     return text.replace(SPAN, function (_, name, opts) {
       var options = opts.split("|");
@@ -226,7 +265,8 @@
           return mark;
         });
       var lang = textLang(r);
-      var parts = splitVerses(r, render(r.renderings[lang][settings.level]));
+      var parts = versePieces(r, lang, settings.level);
+      var chosen = current && current.id === r.id;
       parts.forEach(function (part, i) {
         var span = el("span", lang === settings.lang ? "verse" : "verse fallback");
         if (lang !== settings.lang) span.lang = lang;
@@ -237,7 +277,20 @@
         if (current && current.id === r.id) span.setAttribute("aria-current", "true");
         if (part[0] !== shown) span.appendChild(el("sup", null, part[0]));
         shown = part[0];
-        span.appendChild(document.createTextNode(part[1]));
+        part[1].forEach(function (piece) {
+          var text = render(piece[0]);
+          if (!piece[1]) { span.appendChild(document.createTextNode(text)); return; }
+          var w = el("span", "aw", text);
+          w.dataset.tokens = piece[1].join(" ");
+          // In the chosen sentence, pointing at an English word lights the
+          // Greek it came from in the panel.
+          if (chosen) {
+            w.addEventListener("mouseenter", function () { light(piece[1]); });
+            w.addEventListener("mouseleave", function () { light([]); });
+            w.addEventListener("click", function (e) { e.stopPropagation(); light(piece[1]); });
+          }
+          span.appendChild(w);
+        });
         if (marks.length && i === parts.length - 1) {
           var sup = el("sup", "fn");
           marks.forEach(function (mark) {
@@ -291,6 +344,9 @@
       w.classList.toggle("on", set.has(w.dataset.id));
     });
     document.querySelectorAll(".card").forEach(function (c) { c.classList.toggle("on", c === card); });
+    document.querySelectorAll(".aw").forEach(function (a) {
+      a.classList.toggle("on", a.dataset.tokens.split(" ").some(function (id) { return set.has(id); }));
+    });
   }
 
   function drawCard(d, record) {
@@ -348,6 +404,10 @@
       g.lang = "grc";
       w.appendChild(g);
       w.appendChild(el("span", "iw-e", word.gloss));
+      w.addEventListener("mouseenter", function () { light([word.id]); });
+      w.addEventListener("mouseleave", function () { light([]); });
+      w.addEventListener("focus", function () { light([word.id]); });
+      w.addEventListener("blur", function () { light([]); });
       w.addEventListener("click", function () {
         info.textContent = "";
         var head = el("p", "wi-head");
@@ -370,7 +430,7 @@
       if (i > 0) greek.appendChild(el("sup", "iw-verse", verseOf(vid)));
       (DATA.words[vid] || []).filter(function (w) { return mine.has(w.id); }).forEach(drawWord);
     });
-    panel.appendChild(el("p", "hint", t("word_hint")));
+    panel.appendChild(el("p", "hint", t("word_hint") + (hasLinks(current) ? " " + t("align_hint") : "")));
     panel.appendChild(greek);
     panel.appendChild(info);
 

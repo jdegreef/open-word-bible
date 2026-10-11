@@ -427,10 +427,25 @@ def markdown(text):
     return "\n".join(out)
 
 
+def alignment_links(r):
+    """A record's alignments as the reader uses them: for each language and
+    level, [start, end, token ids] ranges into the rendering. Curling quotes
+    keeps every character in place, so the ranges hold afterwards too."""
+    groups = {}
+    for al in r.get("alignments", []):
+        groups.setdefault((al["language"], al["level"]), []).append(al)
+    links = {}
+    for (lang, level), als in groups.items():
+        ranges = markup.alignment_ranges(r["renderings"][lang][level], [a["target_span"] for a in als])
+        links.setdefault(lang, {})[level] = [[s, e, a["tokens"]] for (s, e), a in zip(ranges, als)]
+    return links
+
+
 def curl_record(r):
     """The record with curly quotes in every text a reader sees. content/
     stores straight ones; curling here, the one loader, covers the reader,
     the home page and articles alike."""
+    r["links"] = alignment_links(r)
     for levels in r["renderings"].values():
         for level, text in levels.items():
             levels[level] = smart_quotes(text)
