@@ -106,7 +106,10 @@ class LanguagesTest(unittest.TestCase):
         for lang in OTHERS:
             cat = build_site.catalog(lang)
             for rel in self.english_pages():
-                page = self.read(Path(lang) / rel)
+                # The passage data may hold the same words as Bible text
+                # (Genesis 1:5 names the darkness "Night"); only the interface counts.
+                page = re.sub(r'<script type="application/json" id="owb-data">.*?</script>', "",
+                              self.read(Path(lang) / rel), flags=re.S)
                 for key in keys:
                     self.assertNotIn(en[key], page, (lang, rel, key))
                     self.assertIn(cat[key], page, (lang, rel, key))
