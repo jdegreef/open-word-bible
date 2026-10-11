@@ -534,6 +534,29 @@ def paragraph_starts(records, words):
     return starts
 
 
+@functools.lru_cache(maxsize=None)
+def word_uses():
+    """Every dictionary form in the translated sentences, with the verses it
+    is in, in canonical order: the reader's "elsewhere" list for a word. As
+    JSON, and its URL with a content hash, so a deploy is never served an old
+    copy. Pages fetch it only when a reader taps a word."""
+    uses = {}
+    for book, chapter in chapters():
+        records, words = load_chapter(book, chapter)
+        lemma = {w["id"]: w["lemma"] for ws in words.values() for w in ws}
+        verse_of = {w["id"]: vid for vid, ws in words.items() for w in ws}
+        for r in records:
+            for token in r["source"]["tokens"]:
+                verse = verse_of.get(token)
+                if token in lemma and verse:
+                    uses.setdefault(lemma[token], set()).add(verse)
+    # A chapter's records need not come in verse order (a passage the
+    # manuscripts place differently), so sort each list.
+    uses = {k: sorted(v, key=lambda vid: refs.parse(vid).sort_key()) for k, v in uses.items()}
+    text = json.dumps(uses, ensure_ascii=False, separators=(",", ":"))
+    return text, f"/word-uses.json?v={hashlib.sha256(text.encode()).hexdigest()[:10]}"
+
+
 @functools.cache
 def headings():
     """Section headings by the record they stand above (data/headings.json),
@@ -687,6 +710,8 @@ def chapter_page(book, chapter, lang="en"):
             "paragraphs": paragraph_starts(records, words),
             "headings": {r["id"]: headings()[r["id"]] for r in records if r["id"] in headings()}}
     # Each morphology code's description in every language, once per page.
+    data["uses"] = word_uses()[1]
+    data["books"] = {b: BOOK_NAMES[b][lang] for b, _ in books()}
     data["grammar"] = {grammar_key(w): {l: describe(w, l) for l in LANGUAGES}
                        for ws in data["words"].values() for w in ws}
     # "</" cannot appear inside a script element.
@@ -696,8 +721,8 @@ def chapter_page(book, chapter, lang="en"):
         buttons = "".join(f'<button type="button" data-value="{v}">{label}</button>' for v, label in options)
         return f'<span class="seg" data-setting="{name}">{buttons}</span>'
 
-    def control(key, name, options):
-        return f'<div class="control"><span>{t(lang, "reader." + key)}</span> {seg(name, options)}</div>'
+    def control(key, name, options, cls=""):
+        return f'<div class="control{cls}"><span>{t(lang, "reader." + key)}</span> {seg(name, options)}</div>'
 
     # Old Testament pages name the Hebrew where New Testament ones name the Greek.
     suffix = "_hbo" if source == "hbo" else ""
@@ -722,8 +747,9 @@ def chapter_page(book, chapter, lang="en"):
   {control("gender", "gender", [("0", t(lang, "reader.inclusive")), ("1", t(lang, "reader.traditional"))])}
   {title_control}
   {control("pronouns", "deity_pronoun", [("0", t(lang, "reader.he")), ("1", t(lang, "reader.He"))])}{plural}
+  {control("view", "view", [("0", t(lang, "reader.study")), ("1", t(lang, "reader.reading"))], " view-control")}
 </div>
-<p class="hint"><span id="hint-level"></span> <span id="hint-gender"></span> <span id="hint-{title_setting}"></span> <span id="hint-deity_pronoun"></span> <span id="hint-plural_you"></span></p>
+<p class="hint"><span id="hint-level"></span> <span id="hint-gender"></span> <span id="hint-{title_setting}"></span> <span id="hint-deity_pronoun"></span> <span id="hint-plural_you"></span> <span id="hint-view"></span></p>
 </div>
 <div class="reader">
   <article class="passage">
@@ -767,6 +793,8 @@ def chapter_strip(book, chapter, lang="en"):
     return (f'<nav class="chapstrip" aria-label="{t(lang, "reader.strip", book=name)}">'
             f'<a class="chap-book" href="{url(lang, f"/read/#{book.lower()}")}">{icon(ICONS["book"], 16)}{name}</a>'
             f'<span class="chap-pills">{chapter_pills(chaps, lang, chapter, BOOK_CHAPTERS[book])}</span>'
+            f'<button type="button" class="chap-goto" data-open-search aria-keyshortcuts="/">'
+            f'{icon(ICONS["search"], 15)}{t(lang, "reader.goto")}</button>'
             f'<span class="chap-progress">{progress}</span></nav>')
 
 
@@ -1705,7 +1733,7 @@ def sitemap(paths):
 
 def build(out):
     for cached in (nav_menus, footer_links, passages, asset, translated_verses, catalog, search_index,
-                   search_index_url):
+                   search_index_url, word_uses):
         cached.cache_clear()
     if out.exists():
         shutil.rmtree(out)
@@ -1734,6 +1762,7 @@ def build(out):
     files["sitemap.xml"] = sitemap(indexed)
     files["robots.txt"] = f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n"
     files["favicon.svg"] = FAVICON
+    files["word-uses.json"] = word_uses()[0]
     for lang in LANGUAGES:
         files[f"search-{lang}.json"] = search_index(lang)
     for rel, text in files.items():
