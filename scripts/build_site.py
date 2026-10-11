@@ -1397,7 +1397,7 @@ def article_html(text, toc=None, lang="en", text_language="en"):
 
 # Article sections, in the order the articles page shows them. Their names
 # in each language are in i18n/ (sections).
-SECTIONS = {"method": "How it is made", "passage": "Reading the text"}
+SECTIONS = {"method": "How it is made", "passage": "Reading the text", "history": "How we got the Bible"}
 
 
 def article_passages(body):
