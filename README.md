@@ -35,7 +35,7 @@ and whether it is uncertain or needs a footnote.
 
 Content: Genesis 1–5 (`content/GEN/`) in English; John 1–8
 (`content/JHN/`) in English, with chapters 1–5 also in Spanish, chapters
-1–2 in French and chapters 1–4 in Swahili; Romans 1 (`content/ROM/`) in
+1–2 in French and chapters 1–4 in Swahili; Romans 1 and 9–16 (`content/ROM/`) in
 English; all of Philippians (`content/PHP/`) in English, with chapter 4
 also in Spanish; and all of Ephesians (`content/EPH/`) and Colossians
 (`content/COL/`) in English. English runs ahead of the other languages;
