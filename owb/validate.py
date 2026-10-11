@@ -50,6 +50,9 @@ KEY_TERMS = {(t.get("language", "grc"), t["strong"]): t for t in json.loads(
     .read_text(encoding="utf-8"))["terms"]}
 
 
+PLACEHOLDER = re.compile(r"@[A-Za-z]+@")
+
+
 def token_language(token_id):
     """grc for a MACULA Greek id (n...), hbo for a MACULA Hebrew one (o...)."""
     return "hbo" if token_id.startswith("o") else "grc"
@@ -366,6 +369,11 @@ def validate_record(record, known_tokens=None, original_language=True):
         for flag in ("uncertain", "footnote"):
             if not isinstance(d.get(flag), bool):
                 errors.append(f"{where}.{flag}: must be true or false")
+
+    # A drafting placeholder such as @He@ or @CB@ that was never filled in.
+    for where, text in _strings({k: v for k, v in record.items() if k != "source"}, ""):
+        for m in PLACEHOLDER.findall(text):
+            errors.append(f"{where}: placeholder {m!r} left in the text")
 
     if original_language:
         check_original_language(record, errors)

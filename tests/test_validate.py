@@ -48,6 +48,11 @@ class ValidateTest(unittest.TestCase):
         record["renderings"]["en"]["B"] = "the light of {{gender:all people|men}}"
         self.assertEqual(validate.validate_record(record), [])
 
+    def test_placeholder_left_in_the_text_fails(self):
+        record = example_records()[0]
+        record["renderings"]["en"]["R"] = "In the beginning @He@ was there."
+        self.assertTrue(any("placeholder '@He@'" in e for e in validate.validate_record(record)))
+
     def test_layer_language_rules(self):
         base = example_records()[0]
         meaning = copy.deepcopy(base)

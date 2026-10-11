@@ -37,9 +37,15 @@ BOOK_NAMES = {"GEN": {"en": "Genesis", "es": "Génesis", "fr": "Genèse", "sw": 
               "PHM": {"en": "Philemon", "es": "Filemón", "fr": "Philémon", "sw": "Filemoni"},
               "JAS": {"en": "James", "es": "Santiago", "fr": "Jacques", "sw": "Yakobo"},
               "1PE": {"en": "1 Peter", "es": "1 Pedro", "fr": "1 Pierre", "sw": "1 Petro"},
-              "2PE": {"en": "2 Peter", "es": "2 Pedro", "fr": "2 Pierre", "sw": "2 Petro"}}
+              "2PE": {"en": "2 Peter", "es": "2 Pedro", "fr": "2 Pierre", "sw": "2 Petro"},
+              "1JN": {"en": "1 John", "es": "1 Juan", "fr": "1 Jean", "sw": "1 Yohana"},
+              "2JN": {"en": "2 John", "es": "2 Juan", "fr": "2 Jean", "sw": "2 Yohana"},
+              "3JN": {"en": "3 John", "es": "3 Juan", "fr": "3 Jean", "sw": "3 Yohana"},
+              "PSA": {"en": "Psalms", "es": "Salmos", "fr": "Psaumes", "sw": "Zaburi"}}
+# A book whose chapters go by another name: "Psalm 23", not "Psalms 23".
+CHAPTER_NAMES = {"PSA": {"en": "Psalm", "es": "Salmo", "fr": "Psaume", "sw": "Zaburi"}}
 # Chapters in each book, for "2 of 21 chapters" and a book's completeness.
-BOOK_CHAPTERS = {"GEN": 50, "MAT": 28, "JHN": 21, "ROM": 16, "GAL": 6, "EPH": 6, "PHP": 4, "COL": 4, "1TH": 5, "PHM": 1, "JAS": 5, "1PE": 5, "2PE": 3}
+BOOK_CHAPTERS = {"GEN": 50, "MAT": 28, "JHN": 21, "ROM": 16, "GAL": 6, "EPH": 6, "PHP": 4, "COL": 4, "1TH": 5, "PHM": 1, "JAS": 5, "1PE": 5, "2PE": 3, "1JN": 5, "2JN": 1, "3JN": 1, "PSA": 150}
 # The interface languages, English first (see catalog below).
 LANGUAGES = ("en", "es", "fr", "sw")
 SITE_NAME = "Open Word Bible"
@@ -676,9 +682,14 @@ def own_verses(records, chapter):
     return {v for r in records for v in r["refs"] if refs.parse(v).chapter == chapter}
 
 
+def chapter_book(book, lang="en"):
+    """The book's name before a chapter number: "Psalm" in "Psalm 23"."""
+    return CHAPTER_NAMES.get(book, BOOK_NAMES[book])[lang]
+
+
 def chapter_title(records, book, chapter, lang="en"):
     verses = [refs.parse(v).verse for v in own_verses(records, chapter)]
-    return f"{BOOK_NAMES[book][lang]} {chapter}:{min(verses)}–{max(verses)}"
+    return f"{chapter_book(book, lang)} {chapter}:{min(verses)}–{max(verses)}"
 
 
 def chapter_name(records, book, chapter, lang="en"):
@@ -686,7 +697,7 @@ def chapter_name(records, book, chapter, lang="en"):
     "John 1:1–18" for part of one. (Share cards keep chapter_title.)"""
     total = len(json.loads(words_path(book, chapter).read_text(encoding="utf-8"))["verses"])
     verses = own_verses(records, chapter)
-    return f"{BOOK_NAMES[book][lang]} {chapter}" if len(verses) == total else chapter_title(records, book, chapter, lang)
+    return f"{chapter_book(book, lang)} {chapter}" if len(verses) == total else chapter_title(records, book, chapter, lang)
 
 
 def text_lang(record, lang):
@@ -719,7 +730,8 @@ def chapter_page(book, chapter, lang="en"):
             "headings": {r["id"]: headings()[r["id"]] for r in records if r["id"] in headings()}}
     # Each morphology code's description in every language, once per page.
     data["uses"] = word_uses()[1]
-    data["books"] = {b: BOOK_NAMES[b][lang] for b, _ in books()}
+    # Names before a chapter number ("Psalm 23:1"), for "Book 1:2" links.
+    data["books"] = {b: chapter_book(b, lang) for b, _ in books()}
     data["grammar"] = {grammar_key(w): {l: describe(w, l) for l in LANGUAGES}
                        for ws in data["words"].values() for w in ws}
     # "</" cannot appear inside a script element.
@@ -761,9 +773,10 @@ def chapter_page(book, chapter, lang="en"):
   {control("gender", "gender", [("0", t(lang, "reader.inclusive")), ("1", t(lang, "reader.traditional"))])}
   {title_control}
   {control("pronouns", "deity_pronoun", [("0", t(lang, "reader.he")), ("1", t(lang, "reader.He"))])}{units}{plural}
+  {control("headings", "headings", [("0", t(lang, "reader.show")), ("1", t(lang, "reader.hide"))])}
   {control("view", "view", [("0", t(lang, "reader.study")), ("1", t(lang, "reader.reading"))], " view-control")}
 </div>
-<p class="hint"><span id="hint-level"></span> <span id="hint-gender"></span> <span id="hint-{title_setting}"></span> <span id="hint-deity_pronoun"></span> <span id="hint-units"></span> <span id="hint-plural_you"></span> <span id="hint-view"></span></p>
+<p class="hint"><span id="hint-level"></span> <span id="hint-gender"></span> <span id="hint-{title_setting}"></span> <span id="hint-deity_pronoun"></span> <span id="hint-units"></span> <span id="hint-plural_you"></span> <span id="hint-headings"></span> <span id="hint-view"></span></p>
 </div>
 <div class="reader">
   <article class="passage">
@@ -1011,12 +1024,12 @@ def example_html(lang="en"):
     ref = refs.parse(record["refs"][0])
     also = "; ".join(html.escape(a) for a in decision["alternatives"])
     open_url = url(lang, chapter_url(book, chapter))
-    passage = f"{BOOK_NAMES[book][lang]} {chapter}"
+    passage = f"{chapter_book(book, lang)} {chapter}"
     en = lang_attr("en", lang)
     note = f'<p class="alts">{t(lang, "notes_in_english")}</p>' if lang != "en" else ""
     return f"""
 <section class="example" aria-labelledby="example-h">
-{sec_head("example-h", "book", t(lang, "home.example", ref=f"{BOOK_NAMES[book][lang]} {ref.chapter}:{ref.verse}"), open_url, t(lang, "home.example_open", passage=passage))}
+{sec_head("example-h", "book", t(lang, "home.example", ref=f"{chapter_book(book, lang)} {ref.chapter}:{ref.verse}"), open_url, t(lang, "home.example_open", passage=passage))}
 <div class="example-grid">
 <div>
 <p class="label">{t(lang, "home.example_greek")}</p>
@@ -1212,7 +1225,7 @@ def verse_link(book, chapter, verse, lang="en"):
 
 
 def verse_name(book, chapter, verse, lang="en"):
-    return f"{BOOK_NAMES[book][lang]} {chapter}:{verse}"
+    return f"{chapter_book(book, lang)} {chapter}:{verse}"
 
 
 def _quote_figure(body, inner, lang, text_language):
@@ -1337,7 +1350,7 @@ def passage_label(book, chapter, verses, lang="en"):
             runs[-1][1] = v
         else:
             runs.append([v, v])
-    return f"{BOOK_NAMES[book][lang]} {chapter}:" + ", ".join(
+    return f"{chapter_book(book, lang)} {chapter}:" + ", ".join(
         str(a) if a == b else f"{a}–{b}" for a, b in runs)
 
 
@@ -1621,11 +1634,14 @@ def article_text(body, lang="en"):
 
 
 @functools.lru_cache(maxsize=None)
-def search_index(lang):
-    """The search index for pages in lang, as JSON text. Kinds: "c" a
-    passage, "v" a sentence (its text at each level, with the settings
-    spans left in for the browser to render), "n" a note (a decision),
-    "a" an article."""
+def search_documents(lang):
+    """Everything search can find on pages in lang: interface text, the
+    books, page shortcuts, and the documents. Kinds: "c" a passage, "v" a
+    sentence (its text at each level, with the settings spans left in for
+    the browser to render), "n" a note (a decision), "a" an article. The
+    API (backend/translation/search.py) indexes these same documents, so
+    the site and the API find the same things. Callers must not change
+    the result: it is cached."""
     ui = dict(catalog(lang)["search.ui"])
     ui["levels"] = catalog(lang)["levels"]
     ui["category"] = catalog(lang)["reader.ui"]["category"]
@@ -1636,7 +1652,8 @@ def search_index(lang):
     for code in refs.BOOK_CODES:
         known = BOOK_NAMES.get(code, {})
         entry = {"code": code, "name": names[code],
-                 "aliases": book_aliases(code, [refs.BOOK_NAMES[code], *known.values()])}
+                 "aliases": book_aliases(code, [refs.BOOK_NAMES[code], *known.values(),
+                                                       *CHAPTER_NAMES.get(code, {}).values()])}
         if code in content:
             entry["chapters"] = {str(p.chapter): {"url": url(lang, p.url), "verses": sorted(
                 {refs.parse(v).verse for r in p.records for v in r["refs"]})}
@@ -1674,9 +1691,14 @@ def search_index(lang):
     for d in docs:
         if d.get("l") == lang:
             del d["l"]
-    data = {"lang": lang, "ui": ui, "books": book_list, "docs": docs,
+    return {"lang": lang, "ui": ui, "books": book_list, "docs": docs,
             "pages": [[html.unescape(t(lang, key)), url(lang, path)] for key, path in SEARCH_PAGES]}
-    return json.dumps(data, ensure_ascii=False, separators=(",", ":"))
+
+
+@functools.lru_cache(maxsize=None)
+def search_index(lang):
+    """The search index for pages in lang, as JSON text (search_documents)."""
+    return json.dumps(search_documents(lang), ensure_ascii=False, separators=(",", ":"))
 
 
 @functools.lru_cache(maxsize=None)
@@ -1757,7 +1779,7 @@ def sitemap(paths):
 
 
 def build(out):
-    for cached in (nav_menus, footer_links, passages, asset, translated_verses, catalog, search_index,
+    for cached in (nav_menus, footer_links, passages, asset, translated_verses, catalog, search_documents, search_index,
                    search_index_url, word_uses):
         cached.cache_clear()
     if out.exists():
