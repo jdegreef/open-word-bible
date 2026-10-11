@@ -127,6 +127,15 @@ class ApiTest(TestCase):
         Verse.objects.create(edition=bsb, book="JHN", chapter=1, verse=1,
                              text="In the beginning was the Word")
         Verse.objects.create(edition=edition, book="JHN", chapter=1, verse=1, text="Ἐν ἀρχῇ")
+        # English numbering: a psalm's title is not a verse, so Psalm 3:1 is
+        # our PSA.3.2; Hebrew Psalm 13:6 is English 13:5-6; Hebrew Genesis
+        # 32:1 is English 31:55.
+        for (book, chapter, verse), text in {
+                ("PSA", 3, 1): "O LORD, how many are my foes!", ("PSA", 3, 2): "Many say of me",
+                ("PSA", 13, 5): "But I have trusted in Your loving devotion;",
+                ("PSA", 13, 6): "I will sing to the LORD,", ("GEN", 31, 55): "Early the next morning",
+                ("GEN", 32, 1): "Jacob also went on his way"}.items():
+            Verse.objects.create(edition=bsb, book=book, chapter=chapter, verse=verse, text=text)
 
     def test_passages_round_trip_the_content_files(self):
         response = self.client.get("/api/passages/jhn/1/")
@@ -153,6 +162,29 @@ class ApiTest(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.json()["verses"][0]["text"],
                          {"bsb": "In the beginning was the Word", "sblgnt": "Ἐν ἀρχῇ"})
+
+    def test_chapter_text_uses_our_verse_numbers(self):
+        data = self.client.get("/api/text/PSA/3/?editions=bsb").json()
+        self.assertEqual(data["numbering"], "source")
+        self.assertEqual(data["verses"], [
+            {"verse": 2, "text": {"bsb": "O LORD, how many are my foes!"}, "refs": {"bsb": ["PSA.3.1"]}},
+            {"verse": 3, "text": {"bsb": "Many say of me"}, "refs": {"bsb": ["PSA.3.2"]}}])
+        [verse] = self.client.get("/api/text/PSA/13/?editions=bsb").json()["verses"]
+        self.assertEqual(verse, {"verse": 6, "refs": {"bsb": ["PSA.13.5", "PSA.13.6"]},
+                                 "text": {"bsb": "But I have trusted in Your loving devotion; "
+                                                 "I will sing to the LORD,"}})
+        # A verse can move to another chapter.
+        verses = self.client.get("/api/text/GEN/32/?editions=bsb").json()["verses"]
+        self.assertEqual([(v["verse"], v["text"]["bsb"]) for v in verses],
+                         [(1, "Early the next morning"), (2, "Jacob also went on his way")])
+        self.assertEqual(self.client.get("/api/text/GEN/31/?editions=bsb").status_code, 404)
+
+    def test_chapter_text_in_each_editions_numbering(self):
+        data = self.client.get("/api/text/PSA/3/?editions=bsb&numbering=edition").json()
+        self.assertEqual(data["verses"][0], {"verse": 1, "text": {"bsb": "O LORD, how many are my foes!"}})
+        verses = self.client.get("/api/text/GEN/31/?editions=bsb&numbering=edition").json()["verses"]
+        self.assertEqual(verses, [{"verse": 55, "text": {"bsb": "Early the next morning"}}])
+        self.assertEqual(self.client.get("/api/text/PSA/3/?numbering=english").status_code, 400)
 
     def test_unknown_book_and_edition(self):
         self.assertEqual(self.client.get("/api/passages/XYZ/1/").status_code, 404)
