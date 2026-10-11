@@ -35,7 +35,7 @@ and whether it is uncertain or needs a footnote.
 
 Content: Genesis 1–9 (`content/GEN/`) in English; John 1–8
 (`content/JHN/`) in English, with chapters 1–5 also in Spanish, chapters
-1–2 in French and chapters 1–7 in Swahili; Romans 1–3 and 9–16 (`content/ROM/`) in
+1–2 in French and chapters 1–8 in Swahili; Romans 1–3 and 9–16 (`content/ROM/`) in
 English; all of Galatians (`content/GAL/`) in English; all of Philippians (`content/PHP/`) in English, with chapter 4
 also in Spanish; all of Ephesians (`content/EPH/`), Colossians
 (`content/COL/`) and Philemon (`content/PHM/`) in English; and all of James, 1 and 2 Peter and 1, 2 and 3
@@ -46,7 +46,7 @@ drafting it and `data/key_terms.json` the settled key terms.
 `docs/french-style.md` and
 `docs/swahili-style.md` are the briefs for French and Swahili.
 
-Matthew 1–3 (`content/MAT/`) is drafted in English.
+Matthew 1–4 (`content/MAT/`) is drafted in English.
 
 Psalms 1–2 (`content/PSA/`) are drafted in English.
 
