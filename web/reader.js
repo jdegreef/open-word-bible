@@ -22,6 +22,7 @@
   settings.lang = DATA.lang;
 
   var current = null;   // selected record
+  var currentVerse = null;   // the verse within it that was chosen
   var panelEl = document.getElementById("panel");
   var SPAN = /\{\{([a-z_]+):([^{}]*)\}\}/g;
   var VERSE = /\\v (\d+) ?/;
@@ -317,6 +318,7 @@
     if (!current) {
       panel.appendChild(el("h2", null, t("empty_title")));
       panel.appendChild(el("p", "empty", t("empty_text")));
+      panel.appendChild(el("p", "keys", t("keys_hint")));
       return;
     }
     var close = el("button", "sheet-close", "\u00d7");
@@ -324,7 +326,11 @@
     close.setAttribute("aria-label", t("close"));
     close.addEventListener("click", deselect);
     panel.appendChild(close);
-    panel.appendChild(el("h2", null, DATA.title.replace(/[\d:\u2013\s]+$/, "") + " " + DATA.chapter + ":" + verseRange(current)));
+    var ref = DATA.title.replace(/[\d:\u2013\s]+$/, "") + " " + DATA.chapter + ":" + verseRange(current);
+    var title = el("h2", "panel-title");
+    title.appendChild(el("span", null, ref));
+    title.appendChild(linkButton(currentVerse));
+    panel.appendChild(title);
 
     panel.appendChild(el("h3", null, t("greek")));
     // Interlinear: each Greek word over its gloss. Tapping one shows its
@@ -412,12 +418,45 @@
     ds.rendering.forEach(function (d) { panel.appendChild(drawCard(d, current)); });
   }
 
+  // A link to this chapter opened at a verse (#v4). Phones offer the
+  // system share sheet; elsewhere the link is copied.
+  function linkButton(verse) {
+    var b = el("button", "copy-link");
+    b.type = "button";
+    var share = narrow() && !!navigator.share;
+    var label = el("span", null, t(share ? "share" : "copy_link"));
+    b.appendChild(label);
+    b.addEventListener("click", function () {
+      var link = location.origin + location.pathname + "#v" + verse;
+      var name = DATA.title.replace(/[\d:\u2013\s]+$/, "") + " " + DATA.chapter + ":" + verse;
+      function done(ok) {
+        label.textContent = t(ok ? "copied" : "copy_failed");
+        b.classList.toggle("done", ok);
+        setTimeout(function () { label.textContent = t("copy_link"); b.classList.remove("done"); }, 2000);
+      }
+      if (share) {
+        navigator.share({ title: name + " \u00b7 Open Word Bible", url: link }).catch(function () { /* dismissed */ });
+      } else if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(link).then(function () { done(true); }, function () { done(false); });
+      } else {
+        done(false);
+      }
+    });
+    return b;
+  }
+
   // On narrow screens the panel is a bottom sheet over the text (see .panel
   // in style.css), so opening it never moves the reader's place. The CSS
   // owns the breakpoint: the sheet is the panel when it is position: fixed.
   function narrow() { return getComputedStyle(panelEl).position === "fixed"; }
   function verseEl(v) { return document.querySelector('.verse[data-v="' + v + '"]'); }
-  function hashVerse() { var m = /^#v(\d+)$/.exec(location.hash); return m && m[1]; }
+  // A verse in the address: #v4, or plainly #4.
+  function hashVerse() { var m = /^#v?(\d+)$/.exec(location.hash); return m && m[1]; }
+  function recordFor(verse) {
+    return DATA.records.find(function (r) {
+      return r.refs.some(function (vid) { return verseOf(vid) === verse; });
+    });
+  }
 
   function sheet(open) {
     panelEl.classList.toggle("open", open);
@@ -427,6 +466,7 @@
   function select(record, verse, decision) {
     current = record;
     verse = verse || verseOf(record.refs[0]);
+    currentVerse = verse;
     try { history.replaceState(null, "", "#v" + verse); } catch (e) { /* ignore */ }
     drawText();
     drawPanel();
@@ -448,8 +488,8 @@
 
   function deselect() {
     if (!current) return;
-    var verse = hashVerse();
-    current = null;
+    var verse = currentVerse;
+    current = currentVerse = null;
     try {
       history.replaceState(null, "", location.pathname + location.search);
       history.scrollRestoration = "auto";
@@ -466,17 +506,66 @@
     // Left and right arrows turn to the previous and next passage, unless
     // the reader is typing or a control wants the arrows.
     if ((e.key === "ArrowLeft" || e.key === "ArrowRight") && !e.altKey && !e.ctrlKey && !e.metaKey && !e.shiftKey) {
-      var tag = (e.target.tagName || "").toLowerCase();
-      if (tag !== "input" && tag !== "textarea" && tag !== "select" && !e.target.isContentEditable) {
+      if (!typing(e.target)) {
         var turn = document.querySelector('[data-turn="' + (e.key === "ArrowLeft" ? "prev" : "next") + '"]');
         if (turn) { e.preventDefault(); location.href = turn.href; return; }
       }
     }
     // An Escape that closes a header menu (site.js: the colour menu, a
-    // dropdown or the narrow-screen menu) leaves the sheet open.
+    // dropdown or the narrow-screen menu) leaves the panel open.
     var menuOpen = !!document.querySelector('header.site [aria-expanded="true"]');
-    if (e.key === "Escape" && !menuOpen && narrow()) deselect();
+    if (e.key === "Escape" && !menuOpen) { deselect(); return; }
+    // j and k step to the next and previous verse.
+    if ((e.key === "j" || e.key === "k") && !e.altKey && !e.ctrlKey && !e.metaKey && !typing(e.target)) {
+      e.preventDefault();
+      step(e.key === "j" ? 1 : -1);
+    }
   });
+
+  function typing(target) {
+    var tag = (target.tagName || "").toLowerCase();
+    return tag === "input" || tag === "textarea" || tag === "select" || target.isContentEditable;
+  }
+
+  // Every verse on the page in order, with the record it is in. A verse
+  // shared by two sentences appears once for each, so j visits both.
+  function verses() {
+    var out = [];
+    DATA.records.forEach(function (r) {
+      splitVerses(r, r.renderings[textLang(r)][settings.level]).forEach(function (part) {
+        out.push({ record: r, verse: part[0] });
+      });
+    });
+    return out;
+  }
+
+  function step(by) {
+    var all = verses();
+    var i = -1;
+    all.forEach(function (v, n) { if (current && v.record === current && v.verse === currentVerse) i = n; });
+    var next = all[i < 0 ? (by > 0 ? 0 : all.length - 1) : Math.min(all.length - 1, Math.max(0, i + by))];
+    if (!next || (next.record === current && next.verse === currentVerse)) return;
+    select(next.record, next.verse);
+    var v = verseEl(next.verse);
+    if (v && !narrow()) {
+      v.focus({ preventScroll: true });
+      v.scrollIntoView({ block: "nearest", behavior: "smooth" });
+    }
+  }
+
+  // A link on the page that changes the verse in the address opens it.
+  window.addEventListener("hashchange", function () {
+    var verse = hashVerse();
+    var r = verse && recordFor(verse);
+    if (r && verse !== currentVerse) { select(r, verse); reveal(verse); }
+  });
+
+  // Bring a verse opened from the address into view. (On phones select
+  // already puts it at the top, above the sheet.)
+  function reveal(verse, instant) {
+    var v = !narrow() && verseEl(verse);
+    if (v) v.scrollIntoView({ block: "center", behavior: instant ? "auto" : "smooth" });
+  }
 
   // Swipe the sheet down to close it, when it is scrolled to its top. The
   // slide transition is off while dragging so the sheet follows the finger.
@@ -543,19 +632,18 @@
     pills.scrollLeft = here.offsetLeft - pills.offsetLeft - pills.clientWidth / 2 + here.offsetWidth / 2;
 
   var start = hashVerse();
-  var record = start && DATA.records.find(function (r) {
-    return r.refs.some(function (vid) { return verseOf(vid) === start; });
-  });
+  var record = start && recordFor(start);
   drawControls();
   if (record) {
-    // Opened at a verse on a phone: the verse decides where the page sits,
+    // Opened at a verse: the verse decides where the page sits,
     // not the browser's scroll restoring (deselect turns it back on), and
     // the jump waits for layout to settle.
-    if (narrow()) try { history.scrollRestoration = "manual"; } catch (e) { /* ignore */ }
+    try { history.scrollRestoration = "manual"; } catch (e) { /* ignore */ }
     select(record, start);
     window.addEventListener("load", function () {
-      var v = narrow() && current && verseEl(start);
-      if (v) v.scrollIntoView({ block: "start" });
+      if (!current) return;
+      if (narrow()) { var v = verseEl(start); if (v) v.scrollIntoView({ block: "start" }); }
+      else reveal(start, true);
     });
   } else { drawText(); drawPanel(); }
 })();
