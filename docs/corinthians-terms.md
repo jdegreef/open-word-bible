@@ -2,7 +2,7 @@
 
 **Status: proposed, awaiting the founder's approval, except where a choice
 says it is settled.** These are the choices
-the first drafts (1 Corinthians 1–4, 2 Corinthians 1–4) settled on, so that
+the drafts so far (1 Corinthians 1–8, 2 Corinthians 1–8) settled on, so that
 later chapters stay consistent with them. If a choice changes, every passage
 drafted under it is revised. Read with `docs/english-style.md`; key terms are
 enforced through `data/key_terms.json`.
@@ -35,8 +35,36 @@ enforced through `data/key_terms.json`.
 | *enkakeō* (2 Cor 4:1, 16) | lose heart | give up | give up | |
 | *doulos* | slave | slave | slave | Never "servant" (style guide). |
 | *misthos* (1 Cor 3:8, 14) | wage | reward | reward | A decision says the reward is distinct from salvation. |
+| Vice list (1 Cor 5:10–11; 6:9–10) | sexually immoral, greedy, swindlers, idolaters, abusive, drunkards | same | commit sexual sins, greedy, cheat others, worship idols, insult people, get drunk | Same words wherever the list recurs. |
+| *porneia* | sexual immorality | sexual immorality | sexual sin | As in Colossians 3:5. |
+| *zymē* (1 Cor 5:6–8) | leaven | yeast | yeast | |
+| *eidōlothyton* (1 Cor 8; 10) | [food] offered to idols | food offered to idols | food offered to idols | Never varied. *eidōleion* is "an idol's temple". |
+| *gnōsis*, *syneidēsis*, *asthenēs* | knowledge, conscience, weak | same | same | |
+| *exousia* (1 Cor 8:9; 9) | right | right | right | Ready for the apostle's rights in chapter 9. |
+| *skandalizō*, *proskomma* | cause to fall, stumbling block | cause to fall, trip up | make fall, trip up | |
+| *agamos*, *parthenos* (1 Cor 7) | unmarried, virgin | unmarried, never married | unmarried, never married | *agamos* can include the widowed. |
+| *kaleō*, *klēsis* (1 Cor 7) | called, calling | called | God called | |
+| *timēs ēgorasthēte* (1 Cor 6:20; 7:23) | bought for a price | bought, and a price was paid for you | God paid the price | |
+| *katallassō*, *katallagē* (2 Cor 5) | reconcile, reconciliation | same | bring back to himself | As in Colossians 1:20–22. |
+| *arrabōn* (2 Cor 1:22; 5:5) | down payment | down payment | first payment | |
+| *metanoia* (2 Cor 7:9–10) | repentance | repentance | turn away from what was wrong | |
+| *splanchna* | tender affection | deep love, tender affection | | As in Philippians 1:8; 2:1. |
+| *charis* in 2 Cor 8–9 | grace (thanks in 8:16) | grace; "gift of grace" for the collection; "favor" (8:4) | grace; generous gift | Each departure from "grace" has a word_sense and a rendering decision. |
+| *diakonia* for the collection (2 Cor 8–9) | ministry | relief | helping | "Ministry" alone would suggest preaching. |
+| *adelphos*, singular, any believer (1 Cor 8:11–13) | `{{gender:brother or sister\|brother}}` | same | same | No span for a particular man (1 Cor 7:12; 2 Cor 8:18). |
 
 ## Choices made in context
+
+**Corinthian slogans.** Where Paul quotes the Corinthians' own sayings
+(1 Cor 6:12–13; 7:1; 8:1, 4), Literal and Balanced put them in quotation
+marks and Readable adds "you say" or "some of you say", each with a
+punctuation decision, footnoted, and uncertain where the extent of the quote
+is debated.
+
+**1 Corinthians 6:9–10.** The two words for male sexual partners stay two
+items at every level, describe acts and not orientation, and never become
+"homosexuals", "effeminate" or "sodomites"; the meaning decisions give the
+evidence and the debated alternatives, footnoted.
 
 **Names.** "Cephas" at Literal and Balanced, "Peter" at Readable (1 Cor 1:12;
 3:22). "Silvanus", not "Silas" (2 Cor 1:19).

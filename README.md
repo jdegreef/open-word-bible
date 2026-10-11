@@ -35,8 +35,8 @@ and whether it is uncertain or needs a footnote.
 
 Content: Genesis 1–5 (`content/GEN/`) in English; John 1–8
 (`content/JHN/`) in English, with chapters 1–5 also in Spanish, chapters
-1–2 in French and chapters 1–4 in Swahili, 1 Corinthians 1–4 and
-2 Corinthians 1–4 (`content/1CO/`, `content/2CO/`) in English, all of
+1–2 in French and chapters 1–4 in Swahili, 1 Corinthians 1–8 and
+2 Corinthians 1–8 (`content/1CO/`, `content/2CO/`) in English, all of
 Philippians (`content/PHP/`) in English, with chapter 4 also in Spanish,
 and all of Colossians (`content/COL/`) in English. English runs ahead of
 the other languages; `docs/english-style.md` is the brief for drafting it
