@@ -869,6 +869,8 @@ def passage_card(book, chapter, lang="en"):
     if len(records) < len(every):
         meta += " &middot; " + t(lang, "card.coverage", n=len(records), total=len(every))
     q = QUOTES_AROUND.get(lang, "&ldquo;{}&rdquo;")
+    if lang not in QUOTES_AROUND:   # inside double quotes, speech takes single ones
+        quote = quote.replace("\u201c", "\u2018").replace("\u201d", "\u2019")
     return (f'<li><a class="a-card p-card" href="{url(lang, chapter_url(book, chapter))}">'
             f'<span class="a-section">{BOOK_NAMES[book][lang]} &middot; {languages_label(every)}</span>'
             f'<span class="a-title">{display(chapter_name(records, book, chapter, lang))}</span>'
