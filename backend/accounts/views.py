@@ -5,6 +5,8 @@ POST   /api/auth/verify     {token}         trade a link for an API token
 POST   /api/auth/sign-out                   forget this device's token
 GET    /api/me                              the signed-in account
 PATCH  /api/me              {display_name}  change the display name
+GET    /api/reading                         the reader's marks and place
+POST   /api/reading         {marks, place}  merge a device's copy (reading.py)
 
 The two sign-in endpoints take JSON only, which a browser cannot send from
 another site without a CORS preflight, and ignore any Authorization header,
@@ -23,7 +25,7 @@ from rest_framework.parsers import JSONParser
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
-from . import auth
+from . import auth, reading as reading_sync
 
 # Django's User.username, where the address is kept.
 MAX_EMAIL = 150
@@ -112,3 +114,15 @@ def me(request):
         user.first_name = name
         user.save(update_fields=["first_name"])
     return Response(auth.user_json(user))
+
+
+@api_view(["GET", "POST"])
+@permission_classes([IsAuthenticated])
+@parser_classes([JSONParser])
+def reading(request):
+    if request.method == "GET":
+        return Response(reading_sync.state(request.user))
+    try:
+        return Response(reading_sync.merge(request.user, request.data))
+    except reading_sync.Invalid as e:
+        raise ValidationError({"detail": str(e)})

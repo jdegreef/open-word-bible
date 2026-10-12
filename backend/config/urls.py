@@ -17,5 +17,6 @@ urlpatterns = [
     path("api/auth/verify", accounts.verify),
     path("api/auth/sign-out", accounts.sign_out),
     path("api/me", accounts.me),
+    path("api/reading", accounts.reading),
     path("healthz", views.healthz),
 ]

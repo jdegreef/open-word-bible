@@ -1670,6 +1670,7 @@ def account_page(lang="en"):
 </div>
 <p class="form-note" id="name-note" role="status"></p>
 </form>
+<p class="synced">{a("synced")} <a href="{url(lang, "/saved/")}">{a("synced_link")}</a></p>
 <div class="soon">
 <h2>{a("soon")}</h2>
 <p>{a("soon_text")}</p>

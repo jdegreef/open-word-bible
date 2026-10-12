@@ -127,6 +127,8 @@
         .then(function (data) {
           store({ token: data.token, user: data.user });
           render(data.user);
+          // site.js syncs this browser's marks and place with the account.
+          document.dispatchEvent(new Event("owb:account"));
         }).catch(function (err) {
           show("signed-out");
           error.textContent = err.message;

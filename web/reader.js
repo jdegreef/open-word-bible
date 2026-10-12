@@ -604,7 +604,9 @@
   // Bookmarks and highlights, kept in this browser as owb.marks by verse
   // ("JHN.3.16"), so they hold whatever the settings or language. Each
   // keeps the verse's words as shown when it was marked, for the saved
-  // verses page (site.js). {b: true, h: "yellow", text, lang, at}
+  // verses page (site.js). {b: true, h: "yellow", text, lang, at}; a mark
+  // cleared is kept as {at} so a signed-in reader's other devices clear it
+  // too (site.js syncs owb.marks with the account).
   var MARKS = "owb.marks";
   var HUES = ["yellow", "green", "blue", "pink"];
   function marks() {
@@ -634,9 +636,10 @@
       m.at = Date.now();
       all[id] = m;
     } else {
-      delete all[id];
+      all[id] = { at: Date.now() };
     }
     try { localStorage.setItem(MARKS, JSON.stringify(all)); } catch (e) { /* storage full or blocked */ }
+    document.dispatchEvent(new Event("owb:marks"));
     var top = panelEl.scrollTop;
     drawText();
     drawPanel();
@@ -995,7 +998,8 @@
     var verse = topVerse();
     if (!verse || verse === keptVerse) return;
     keptVerse = verse;
-    var place = { book: DATA.book, chapter: DATA.chapter, verse: verse };
+    // at: when, so the latest place wins between a reader's devices.
+    var place = { book: DATA.book, chapter: DATA.chapter, verse: verse, at: Date.now() };
     try { localStorage.setItem("owb.place", JSON.stringify(place)); } catch (e) { /* this visit only */ }
   }
   var placeTimer = null;
@@ -1273,6 +1277,13 @@
     // Back to this page from the browser's cache: the voice has stopped.
     window.addEventListener("pageshow", function (e) { if (e.persisted && listen.on) stopListening(); });
   }
+
+  // Marks from the reader's other devices (site.js, after a sync).
+  document.addEventListener("owb:synced", function () {
+    var top = panelEl.scrollTop;
+    drawText();
+    if (current) { drawPanel(); panelEl.scrollTop = top; }
+  });
 
   var start = hashVerse();
   var record = start && recordFor(start);
