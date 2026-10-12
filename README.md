@@ -50,7 +50,7 @@ drafting it and `data/key_terms.json` the settled key terms.
 
 Matthew 1–9 (`content/MAT/`) is drafted in English.
 
-Psalms 1–6 (`content/PSA/`) are drafted in English.
+Psalms 1–9 (`content/PSA/`) are drafted in English.
 
 Old Testament verses are numbered as in the Hebrew text (a psalm's title is
 verse 1), not as in English Bibles; `data/versification.json` maps one to the
