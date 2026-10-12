@@ -24,7 +24,7 @@ class SearchTest(TestCase):
     @classmethod
     def setUpTestData(cls):
         load_extract_words()
-        import_content()
+        import_content(search=True)
 
     def setUp(self):
         cache.clear()   # the search throttle counts requests in the cache
@@ -109,6 +109,13 @@ class SearchTest(TestCase):
             with self.subTest(lang=lang):
                 self.assertGreater(self.get(q=q, lang=lang)["totals"].get("verse", 0), 0)
 
+    def test_stems_match_only_in_their_own_language(self):
+        # Spanish "verbo" stems to "verb": English notes about verbs must not match.
+        results = self.every("verbo", "note", lang="es") + self.every("verbo", "verse", lang="es")
+        self.assertTrue(results)
+        for doc in results:
+            self.assertRegex(search.fold(" ".join(search.fields(doc))), r"(^|[\W_])verbo", doc)
+
     def test_english_notes_are_found_on_other_language_sites(self):
         # Meaning notes are written in English: "the victor's wreath" (Philippians 4:1).
         notes = self.every("wreath", "note", lang="es")
@@ -162,8 +169,8 @@ class SearchTest(TestCase):
         self.assertEqual(ref["shown"], [6, 7])
 
     def test_references_not_translated_and_words_that_look_like_one(self):
-        ref = self.get(q="rev 3:20", lang="en")["reference"]
-        self.assertEqual(ref["label"], "Revelation 3:20")
+        ref = self.get(q="mal 3:1", lang="en")["reference"]
+        self.assertEqual(ref["label"], "Malachi 3:1")
         self.assertNotIn("url", ref)
         ref = self.get(q="John 4:60", lang="en")["reference"]
         self.assertEqual((ref["url"], ref["shown"], ref["sentences"]), ("/jhn/4/", [], []))

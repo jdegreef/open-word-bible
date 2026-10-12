@@ -5,7 +5,6 @@ import json
 import re
 import string
 import sys
-import tempfile
 import unittest
 from pathlib import Path
 
@@ -13,6 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import build_site  # noqa: E402
+from tests.site_build import built_site  # noqa: E402
 
 OTHERS = [lang for lang in build_site.LANGUAGES if lang != "en"]
 
@@ -44,13 +44,7 @@ class CatalogTest(unittest.TestCase):
 class LanguagesTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.tmp = tempfile.TemporaryDirectory()
-        cls.out = Path(cls.tmp.name) / "site"
-        build_site.build(cls.out)
-
-    @classmethod
-    def tearDownClass(cls):
-        cls.tmp.cleanup()
+        cls.out = built_site()
 
     def read(self, rel):
         return (self.out / rel).read_text(encoding="utf-8")
@@ -181,6 +175,10 @@ class LanguagesTest(unittest.TestCase):
         page = self.read("es/account/index.html")
         m = re.search(r'id="account-text">(.*?)</script>', page, re.S)
         self.assertEqual(json.loads(m[1]), build_site.catalog("es")["account.ui"])
+        login = self.read("es/login/index.html")
+        m = re.search(r'id="login-text">(.*?)</script>', login, re.S)
+        self.assertEqual(json.loads(m[1]), build_site.catalog("es")["login.ui"])
+        self.assertIn("Bienvenido de nuevo", login)
         self.assertIn('<meta name="robots" content="noindex">', page)
         self.assertNotIn('rel="canonical"', page)
         # Unlisted, but the switch and the remembered choice still lead to it.
