@@ -48,7 +48,7 @@ drafting it and `data/key_terms.json` the settled key terms.
 `docs/french-style.md` and
 `docs/swahili-style.md` are the briefs for French and Swahili.
 
-Matthew 1–9 (`content/MAT/`) is drafted in English.
+Matthew 1–12 (`content/MAT/`) is drafted in English.
 
 Psalms 1–4 (`content/PSA/`) are drafted in English.
 
