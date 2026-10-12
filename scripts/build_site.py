@@ -26,6 +26,7 @@ from typing import NamedTuple  # noqa: E402
 from owb import markup, morph, refs  # noqa: E402
 
 BOOK_NAMES = {"GEN": {"en": "Genesis", "es": "Génesis", "fr": "Genèse", "sw": "Mwanzo"},
+              "EXO": {"en": "Exodus", "es": "Éxodo", "fr": "Exode", "sw": "Kutoka"},
               "MAT": {"en": "Matthew", "es": "Mateo", "fr": "Matthieu", "sw": "Mathayo"},
               "LUK": {"en": "Luke", "es": "Lucas", "fr": "Luc", "sw": "Luka"},
               "JHN": {"en": "John", "es": "Juan", "fr": "Jean", "sw": "Yohana"},
@@ -103,7 +104,7 @@ OTHER_BOOK_NAMES = {
 # A book whose chapters go by another name: "Psalm 23", not "Psalms 23".
 CHAPTER_NAMES = {"PSA": {"en": "Psalm", "es": "Salmo", "fr": "Psaume", "sw": "Zaburi"}}
 # Chapters in each book, for "2 of 21 chapters" and a book's completeness.
-BOOK_CHAPTERS = {"GEN": 50, "MAT": 28, "LUK": 24, "JHN": 21, "ROM": 16, "1CO": 16, "2CO": 13, "GAL": 6, "EPH": 6, "PHP": 4, "COL": 4, "1TH": 5, "2TH": 3, "PHM": 1, "JAS": 5, "1PE": 5, "2PE": 3, "1JN": 5, "2JN": 1, "3JN": 1, "PSA": 150}
+BOOK_CHAPTERS = {"GEN": 50, "EXO": 40, "MAT": 28, "LUK": 24, "JHN": 21, "ROM": 16, "1CO": 16, "2CO": 13, "GAL": 6, "EPH": 6, "PHP": 4, "COL": 4, "1TH": 5, "2TH": 3, "PHM": 1, "JAS": 5, "1PE": 5, "2PE": 3, "1JN": 5, "2JN": 1, "3JN": 1, "PSA": 150}
 # The interface languages, English first (see catalog below).
 LANGUAGES = ("en", "es", "fr", "sw")
 SITE_NAME = "Open Word Bible"
@@ -156,6 +157,7 @@ ICONS = {
     "code": '<path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/>',
     "users": '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6 6 0 0 1 3.5 6"/>',
     "check": '<path d="M20 6 9 17l-5-5"/>',
+    "bookmark": '<path d="M6 3h12v18l-6-4-6 4z"/>',
     "listen": '<path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a10 10 0 0 1 0 14"/>',
     "download": '<path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/>',
     "user": '<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>',
@@ -928,6 +930,7 @@ def chapter_page(book, chapter, lang="en"):
     data["uses"] = word_uses()[1]
     # Names before a chapter number ("Psalm 23:1"), for "Book 1:2" links.
     data["books"] = {b: chapter_book(b, lang) for b, _ in books()}
+    data["saved"] = url(lang, "/saved/")
     data["grammar"] = {grammar_key(w): {l: describe(w, l) for l in LANGUAGES}
                        for ws in data["words"].values() for w in ws}
     # "</" cannot appear inside a script element.
@@ -1080,7 +1083,9 @@ def disputed(vid):
 
 # Verses that are only a psalm's title ("A psalm of David ..."), which the
 # Hebrew text counts as verse 1. A chapter's cards quote the psalm itself.
-TITLES = {"PSA.3.1", "PSA.4.1", "PSA.5.1", "PSA.6.1"}
+TITLES = {
+    "PSA.3.1", "PSA.4.1", "PSA.5.1", "PSA.6.1", "PSA.7.1", "PSA.8.1", "PSA.9.1",
+}
 
 
 def opening(records, chapter):
@@ -1192,7 +1197,7 @@ def read_page(lang="en"):
 <p class="eyebrow">{t(lang, "read.title")}</p>
 <h1>{t(lang, "read.heading")}</h1>
 <p class="dek">{t(lang, "read.dek")}</p>
-<p class="actions">{resume_link(lang)}</p>
+<p class="actions">{resume_link(lang)}<a class="button ghost" href="{url(lang, "/saved/")}">{icon(ICONS["bookmark"])}{t(lang, "saved.title")}</a></p>
 </header>
 {cards}
 <section class="how" aria-labelledby="how-h">
@@ -1592,7 +1597,8 @@ def article_html(text, toc=None, lang="en", text_language="en"):
 
 # Article sections, in the order the articles page shows them. Their names
 # in each language are in i18n/ (sections).
-SECTIONS = {"method": "How it is made", "passage": "Reading the text", "history": "How we got the Bible"}
+SECTIONS = {"method": "How it is made", "passage": "Reading the text", "history": "How we got the Bible",
+            "translation": "The Bible in translation"}
 
 
 def article_passages(body):
@@ -1984,6 +1990,30 @@ def not_found_page():
 </section>""")
 
 
+def saved_page(lang="en"):
+    """The reader's bookmarks and highlights, from owb.marks in this browser
+    (web/reader.js keeps them, web/site.js lists them here). The page
+    carries the book names and canonical order in lang, and its labels."""
+    order = [b for b, _ in books()]
+    names = {b: chapter_book(b, lang) for b in order}
+    data = {"order": order, "names": names,
+            "chapters": {b: url(lang, chapter_url(b, 0)).replace("/0/", "/{c}/") for b in order},
+            "remove": t(lang, "saved.remove"), "bookmark": t(lang, "saved.bookmark")}
+    filters = "".join(f'<button type="button" data-filter="{k}" aria-pressed="{"true" if k == "all" else "false"}">'
+                      f'{t(lang, "saved." + k)}</button>' for k in ("all", "bookmarks", "highlights"))
+    return page(lang, t(lang, "saved.title"), f"""
+<header class="page-head">
+<p class="eyebrow">{t(lang, "saved.title")}</p>
+<h1>{t(lang, "saved.heading")}</h1>
+<p class="dek">{t(lang, "saved.dek")}</p>
+</header>
+<section class="saved" id="saved" data-saved="{html.escape(json.dumps(data, ensure_ascii=False))}">
+<div class="seg saved-filter" role="group" aria-label="{t(lang, "saved.show")}">{filters}</div>
+<p class="saved-empty" hidden>{t(lang, "saved.empty")}</p>
+<div class="saved-list"></div>
+</section>""", unlisted="/saved/")
+
+
 def offline_page(lang="en"):
     """What web/sw.js shows for a page not saved on the device, with the
     books that are (filled in by web/site.js)."""
@@ -2121,7 +2151,9 @@ def search_documents(lang):
                 docs.append({"k": "n", "bk": p.book, "c": p.chapter,
                              "v": verse, "u": url(lang, p.url), "y": d["layer"], "g": d["category"],
                              "t": d["choice"], "al": d["alternatives"], "s": d["reason"],
-                             "l": "en" if d["layer"] == "meaning" else d["language"]})
+                             # Notes are written in English for now, whatever
+                             # language a wording note is about.
+                             "l": "en"})
     for a in sorted(load_articles(lang), key=lambda a: (a["section"] != "method", a["order"])):
         docs.append({"k": "a", "t": a["title"], "s": a["summary"], "x": article_text(a["body"], a["lang"]),
                      "u": url(lang, article_url(a)), "sec": catalog(lang)["sections"][a["section"]],
@@ -2243,6 +2275,7 @@ def build(out):
         add("/login/", login_page(lang), index=False)
         add("/reset-password/", reset_page(lang), index=False)
         add("/offline/", offline_page(lang), index=False)
+        add("/saved/", saved_page(lang), index=False)
     files = {(p.strip("/") + "/index.html").lstrip("/"): text for p, text in pages.items()}
     files["404.html"] = not_found_page()
     files["sitemap.xml"] = sitemap(indexed)
