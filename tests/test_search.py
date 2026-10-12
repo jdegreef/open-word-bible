@@ -105,8 +105,8 @@ class SearchTest(unittest.TestCase):
         self.assertIn("filipenses", books["PHP"]["aliases"])
         self.assertIn("phil", books["PHP"]["aliases"])
         # Books without passages yet are known, for "not translated yet".
-        self.assertIn("EXO", books)
-        self.assertNotIn("chapters", books["EXO"])
+        self.assertIn("NAM", books)
+        self.assertNotIn("chapters", books["NAM"])
 
     def test_fold(self):
         self.assertEqual(build_site.fold("Señor Corazón"), "senor corazon")

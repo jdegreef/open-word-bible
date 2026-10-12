@@ -26,6 +26,7 @@ from typing import NamedTuple  # noqa: E402
 from owb import markup, morph, refs  # noqa: E402
 
 BOOK_NAMES = {"GEN": {"en": "Genesis", "es": "Génesis", "fr": "Genèse", "sw": "Mwanzo"},
+              "EXO": {"en": "Exodus", "es": "Éxodo", "fr": "Exode", "sw": "Kutoka"},
               "MAT": {"en": "Matthew", "es": "Mateo", "fr": "Matthieu", "sw": "Mathayo"},
               "JHN": {"en": "John", "es": "Juan", "fr": "Jean", "sw": "Yohana"},
               "ROM": {"en": "Romans", "es": "Romanos", "fr": "Romains", "sw": "Warumi"},
@@ -101,7 +102,7 @@ OTHER_BOOK_NAMES = {
 # A book whose chapters go by another name: "Psalm 23", not "Psalms 23".
 CHAPTER_NAMES = {"PSA": {"en": "Psalm", "es": "Salmo", "fr": "Psaume", "sw": "Zaburi"}}
 # Chapters in each book, for "2 of 21 chapters" and a book's completeness.
-BOOK_CHAPTERS = {"GEN": 50, "MAT": 28, "JHN": 21, "ROM": 16, "1CO": 16, "2CO": 13, "GAL": 6, "EPH": 6, "PHP": 4, "COL": 4, "1TH": 5, "PHM": 1, "JAS": 5, "1PE": 5, "2PE": 3, "1JN": 5, "2JN": 1, "3JN": 1, "PSA": 150}
+BOOK_CHAPTERS = {"GEN": 50, "EXO": 40, "MAT": 28, "JHN": 21, "ROM": 16, "1CO": 16, "2CO": 13, "GAL": 6, "EPH": 6, "PHP": 4, "COL": 4, "1TH": 5, "PHM": 1, "JAS": 5, "1PE": 5, "2PE": 3, "1JN": 5, "2JN": 1, "3JN": 1, "PSA": 150}
 # The interface languages, English first (see catalog below).
 LANGUAGES = ("en", "es", "fr", "sw")
 SITE_NAME = "Open Word Bible"
