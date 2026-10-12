@@ -1430,3 +1430,37 @@ body.listening { padding-bottom: calc(var(--listen-h, 64px) + 12px); }
   /* On phones the voice menu takes its own row. */
   .listen-voice { order: 1; flex: 1 0 100%; max-width: none; }
 }
+
+/* Bookmarks and highlights (web/reader.js; the saved verses page in
+   web/site.js). A highlight is a translucent wash, so it reads in every
+   colour mode. */
+.hl-yellow { --hl: rgba(245, 197, 24, .38); }
+.hl-green { --hl: rgba(76, 175, 80, .32); }
+.hl-blue { --hl: rgba(79, 143, 247, .32); }
+.hl-pink { --hl: rgba(236, 92, 154, .30); }
+.verse[class*="hl-"] { background: var(--hl); border-radius: 3px; }
+.verse[class*="hl-"]:hover { background: var(--hl); filter: saturate(1.4); }
+/* The verse chosen keeps its highlight and is underlined instead. */
+.verse[aria-current="true"][class*="hl-"] { box-shadow: inset 0 -3px 0 var(--accent); }
+.verse.bookmarked > sup:not(.fn):first-child::before { content: "\25C6\00a0"; color: var(--accent); font-size: .85em; }
+.mark-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin: 4px 0 16px; }
+.mark-bookmark {
+  display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border: 1px solid var(--line-strong);
+  border-radius: 999px; background: var(--surface); color: var(--text); font: inherit; font-size: 13px; font-weight: 600; cursor: pointer;
+}
+.mark-bookmark::before { content: ""; width: 10px; height: 13px; background: currentColor; clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 72%, 0 100%); opacity: .35; }
+.mark-bookmark[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
+.mark-bookmark[aria-pressed="true"]::before { opacity: 1; }
+.mark-hues { display: inline-flex; gap: 6px; }
+.mark-hue { width: 26px; height: 26px; border-radius: 50%; border: 1px solid var(--line-strong); background: var(--hl); cursor: pointer; padding: 0; }
+.mark-hue[aria-pressed="true"] { box-shadow: 0 0 0 2px var(--surface), 0 0 0 4px var(--accent); }
+.mark-all { margin-left: auto; font-size: 13px; }
+.saved-filter { margin: 0 0 24px; }
+.saved-book { font-family: var(--display); font-weight: 600; font-size: 24px; margin: 28px 0 12px; }
+.saved-items { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.saved-item { padding: 14px 18px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: inset 4px 0 0 var(--hl, transparent); }
+.saved-head { display: flex; align-items: center; gap: 10px; margin: 0; }
+.saved-head a { font-weight: 700; }
+.saved-flag { font-size: 12px; color: var(--accent); }
+.saved-remove { margin-left: auto; border: 0; background: none; color: var(--muted); font: inherit; font-size: 13px; cursor: pointer; text-decoration: underline; }
+.saved-text { margin: 8px 0 0; font-family: var(--read-font, var(--serif)); line-height: 1.6; }
