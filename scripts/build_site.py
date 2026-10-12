@@ -25,84 +25,14 @@ from typing import NamedTuple  # noqa: E402
 
 from owb import markup, morph, refs  # noqa: E402
 
-BOOK_NAMES = {"GEN": {"en": "Genesis", "es": "Génesis", "fr": "Genèse", "sw": "Mwanzo"},
-              "MAT": {"en": "Matthew", "es": "Mateo", "fr": "Matthieu", "sw": "Mathayo"},
-              "LUK": {"en": "Luke", "es": "Lucas", "fr": "Luc", "sw": "Luka"},
-              "JHN": {"en": "John", "es": "Juan", "fr": "Jean", "sw": "Yohana"},
-              "ROM": {"en": "Romans", "es": "Romanos", "fr": "Romains", "sw": "Warumi"},
-              "1CO": {"en": "1 Corinthians", "es": "1 Corintios", "fr": "1 Corinthiens", "sw": "1 Wakorintho"},
-              "2CO": {"en": "2 Corinthians", "es": "2 Corintios", "fr": "2 Corinthiens", "sw": "2 Wakorintho"},
-              "GAL": {"en": "Galatians", "es": "Gálatas", "fr": "Galates", "sw": "Wagalatia"},
-              "EPH": {"en": "Ephesians", "es": "Efesios", "fr": "Éphésiens", "sw": "Waefeso"},
-              "PHP": {"en": "Philippians", "es": "Filipenses", "fr": "Philippiens", "sw": "Wafilipi"},
-              "COL": {"en": "Colossians", "es": "Colosenses", "fr": "Colossiens", "sw": "Wakolosai"},
-              "1TH": {"en": "1 Thessalonians", "es": "1 Tesalonicenses", "fr": "1 Thessaloniciens", "sw": "1 Wathesalonike"},
-              "PHM": {"en": "Philemon", "es": "Filemón", "fr": "Philémon", "sw": "Filemoni"},
-              "JAS": {"en": "James", "es": "Santiago", "fr": "Jacques", "sw": "Yakobo"},
-              "1PE": {"en": "1 Peter", "es": "1 Pedro", "fr": "1 Pierre", "sw": "1 Petro"},
-              "2PE": {"en": "2 Peter", "es": "2 Pedro", "fr": "2 Pierre", "sw": "2 Petro"},
-              "1JN": {"en": "1 John", "es": "1 Juan", "fr": "1 Jean", "sw": "1 Yohana"},
-              "2JN": {"en": "2 John", "es": "2 Juan", "fr": "2 Jean", "sw": "2 Yohana"},
-              "3JN": {"en": "3 John", "es": "3 Juan", "fr": "3 Jean", "sw": "3 Yohana"},
-              "PSA": {"en": "Psalms", "es": "Salmos", "fr": "Psaumes", "sw": "Zaburi"}}
-# The rest of the canon, for the footer's index of every book. A book drafted
-# later goes in BOOK_NAMES too; book_name looks there first.
-OTHER_BOOK_NAMES = {
-    "EXO": {"en": "Exodus", "es": "Éxodo", "fr": "Exode", "sw": "Kutoka"},
-    "LEV": {"en": "Leviticus", "es": "Levítico", "fr": "Lévitique", "sw": "Mambo ya Walawi"},
-    "NUM": {"en": "Numbers", "es": "Números", "fr": "Nombres", "sw": "Hesabu"},
-    "DEU": {"en": "Deuteronomy", "es": "Deuteronomio", "fr": "Deutéronome", "sw": "Kumbukumbu la Torati"},
-    "JOS": {"en": "Joshua", "es": "Josué", "fr": "Josué", "sw": "Yoshua"},
-    "JDG": {"en": "Judges", "es": "Jueces", "fr": "Juges", "sw": "Waamuzi"},
-    "RUT": {"en": "Ruth", "es": "Rut", "fr": "Ruth", "sw": "Ruthu"},
-    "1SA": {"en": "1 Samuel", "es": "1 Samuel", "fr": "1 Samuel", "sw": "1 Samweli"},
-    "2SA": {"en": "2 Samuel", "es": "2 Samuel", "fr": "2 Samuel", "sw": "2 Samweli"},
-    "1KI": {"en": "1 Kings", "es": "1 Reyes", "fr": "1 Rois", "sw": "1 Wafalme"},
-    "2KI": {"en": "2 Kings", "es": "2 Reyes", "fr": "2 Rois", "sw": "2 Wafalme"},
-    "1CH": {"en": "1 Chronicles", "es": "1 Crónicas", "fr": "1 Chroniques", "sw": "1 Mambo ya Nyakati"},
-    "2CH": {"en": "2 Chronicles", "es": "2 Crónicas", "fr": "2 Chroniques", "sw": "2 Mambo ya Nyakati"},
-    "EZR": {"en": "Ezra", "es": "Esdras", "fr": "Esdras", "sw": "Ezra"},
-    "NEH": {"en": "Nehemiah", "es": "Nehemías", "fr": "Néhémie", "sw": "Nehemia"},
-    "EST": {"en": "Esther", "es": "Ester", "fr": "Esther", "sw": "Esta"},
-    "JOB": {"en": "Job", "es": "Job", "fr": "Job", "sw": "Ayubu"},
-    "PRO": {"en": "Proverbs", "es": "Proverbios", "fr": "Proverbes", "sw": "Mithali"},
-    "ECC": {"en": "Ecclesiastes", "es": "Eclesiastés", "fr": "Ecclésiaste", "sw": "Mhubiri"},
-    "SNG": {"en": "Song of Songs", "es": "Cantares", "fr": "Cantique des cantiques", "sw": "Wimbo Ulio Bora"},
-    "ISA": {"en": "Isaiah", "es": "Isaías", "fr": "Ésaïe", "sw": "Isaya"},
-    "JER": {"en": "Jeremiah", "es": "Jeremías", "fr": "Jérémie", "sw": "Yeremia"},
-    "LAM": {"en": "Lamentations", "es": "Lamentaciones", "fr": "Lamentations", "sw": "Maombolezo"},
-    "EZK": {"en": "Ezekiel", "es": "Ezequiel", "fr": "Ézéchiel", "sw": "Ezekieli"},
-    "DAN": {"en": "Daniel", "es": "Daniel", "fr": "Daniel", "sw": "Danieli"},
-    "HOS": {"en": "Hosea", "es": "Oseas", "fr": "Osée", "sw": "Hosea"},
-    "JOL": {"en": "Joel", "es": "Joel", "fr": "Joël", "sw": "Yoeli"},
-    "AMO": {"en": "Amos", "es": "Amós", "fr": "Amos", "sw": "Amosi"},
-    "OBA": {"en": "Obadiah", "es": "Abdías", "fr": "Abdias", "sw": "Obadia"},
-    "JON": {"en": "Jonah", "es": "Jonás", "fr": "Jonas", "sw": "Yona"},
-    "MIC": {"en": "Micah", "es": "Miqueas", "fr": "Michée", "sw": "Mika"},
-    "NAM": {"en": "Nahum", "es": "Nahúm", "fr": "Nahoum", "sw": "Nahumu"},
-    "HAB": {"en": "Habakkuk", "es": "Habacuc", "fr": "Habacuc", "sw": "Habakuki"},
-    "ZEP": {"en": "Zephaniah", "es": "Sofonías", "fr": "Sophonie", "sw": "Sefania"},
-    "HAG": {"en": "Haggai", "es": "Hageo", "fr": "Aggée", "sw": "Hagai"},
-    "ZEC": {"en": "Zechariah", "es": "Zacarías", "fr": "Zacharie", "sw": "Zekaria"},
-    "MAL": {"en": "Malachi", "es": "Malaquías", "fr": "Malachie", "sw": "Malaki"},
-    "MRK": {"en": "Mark", "es": "Marcos", "fr": "Marc", "sw": "Marko"},
-    "LUK": {"en": "Luke", "es": "Lucas", "fr": "Luc", "sw": "Luka"},
-    "ACT": {"en": "Acts", "es": "Hechos", "fr": "Actes", "sw": "Matendo"},
-    "1CO": {"en": "1 Corinthians", "es": "1 Corintios", "fr": "1 Corinthiens", "sw": "1 Wakorintho"},
-    "2CO": {"en": "2 Corinthians", "es": "2 Corintios", "fr": "2 Corinthiens", "sw": "2 Wakorintho"},
-    "1TH": {"en": "1 Thessalonians", "es": "1 Tesalonicenses", "fr": "1 Thessaloniciens", "sw": "1 Wathesalonike"},
-    "2TH": {"en": "2 Thessalonians", "es": "2 Tesalonicenses", "fr": "2 Thessaloniciens", "sw": "2 Wathesalonike"},
-    "1TI": {"en": "1 Timothy", "es": "1 Timoteo", "fr": "1 Timothée", "sw": "1 Timotheo"},
-    "2TI": {"en": "2 Timothy", "es": "2 Timoteo", "fr": "2 Timothée", "sw": "2 Timotheo"},
-    "TIT": {"en": "Titus", "es": "Tito", "fr": "Tite", "sw": "Tito"},
-    "HEB": {"en": "Hebrews", "es": "Hebreos", "fr": "Hébreux", "sw": "Waebrania"},
-    "JUD": {"en": "Jude", "es": "Judas", "fr": "Jude", "sw": "Yuda"},
-    "REV": {"en": "Revelation", "es": "Apocalipsis", "fr": "Apocalypse", "sw": "Ufunuo"},
-}
+# Every book's name in each interface language and its number of chapters
+# (data/books.json). All 66 are listed, so adding a book needs no edit here.
+_BOOKS = json.loads((ROOT / "data" / "books.json").read_text(encoding="utf-8"))["books"]
+BOOK_NAMES = {code: {k: v for k, v in b.items() if k != "chapters"} for code, b in _BOOKS.items()}
 # A book whose chapters go by another name: "Psalm 23", not "Psalms 23".
 CHAPTER_NAMES = {"PSA": {"en": "Psalm", "es": "Salmo", "fr": "Psaume", "sw": "Zaburi"}}
 # Chapters in each book, for "2 of 21 chapters" and a book's completeness.
-BOOK_CHAPTERS = {"GEN": 50, "MAT": 28, "LUK": 24, "JHN": 21, "ROM": 16, "1CO": 16, "2CO": 13, "GAL": 6, "EPH": 6, "PHP": 4, "COL": 4, "1TH": 5, "PHM": 1, "JAS": 5, "1PE": 5, "2PE": 3, "1JN": 5, "2JN": 1, "3JN": 1, "PSA": 150}
+BOOK_CHAPTERS = {code: b["chapters"] for code, b in _BOOKS.items()}
 # The interface languages, English first (see catalog below).
 LANGUAGES = ("en", "es", "fr", "sw")
 SITE_NAME = "Open Word Bible"
@@ -155,6 +85,7 @@ ICONS = {
     "code": '<path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/>',
     "users": '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6 6 0 0 1 3.5 6"/>',
     "check": '<path d="M20 6 9 17l-5-5"/>',
+    "bookmark": '<path d="M6 3h12v18l-6-4-6 4z"/>',
     "listen": '<path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a10 10 0 0 1 0 14"/>',
     "download": '<path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/>',
     "user": '<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>',
@@ -197,7 +128,7 @@ def asset(name):
 
 # Colour modes (see web/style.css and web/site.js): value, and the
 # background and accent its swatch shows. Labels are in i18n/ (theme.*).
-# "auto" follows the device.
+# "light" (Paper) is the default; "auto" follows the device.
 COLOUR_MODES = (("auto", "#faf6ef", "#16130f"),
                 ("light", "#faf6ef", "#3f3d9a"),
                 ("sepia", "#f4ecd8", "#3f3d9a"),
@@ -205,21 +136,24 @@ COLOUR_MODES = (("auto", "#faf6ef", "#16130f"),
                 ("night", "#000000", "#e0b45c"),
                 ("contrast", "#ffffff", "#000000"))
 
-# The reading text's settings in the gear menu (see web/style.css): name,
+# The gear menu's settings after the colour mode (see web/style.css): name,
 # default, and the values in the menu's order. A choice is kept as
-# owb-<name> and applied as data-<name> on <html>. They change how the text
-# looks, never its wording. Labels are in i18n/ (prefs.<name>, <name>.<value>).
-READING_PREFS = (("size", "m", ("s", "m", "l", "xl")),
+# owb-<name> and applied as data-<name> on <html>. Size, font and leading
+# are the reading text's; motion "auto" follows the device. They change how
+# the page looks, never the text's wording. Labels are in i18n/
+# (prefs.<name>, <name>.<value>).
+DISPLAY_PREFS = (("size", "m", ("s", "m", "l", "xl")),
                  ("font", "serif", ("serif", "sans", "readable")),
-                 ("leading", "normal", ("compact", "normal", "spacious")))
+                 ("leading", "normal", ("compact", "normal", "spacious")),
+                 ("motion", "auto", ("auto", "reduce")))
 
-# Applies the saved colour mode and reading settings before the first paint,
+# Applies the saved colour mode and display settings before the first paint,
 # so a page never flashes the default colours or text. Mirrors web/site.js.
 BOOT_SCRIPT = ("try{var d=document.documentElement,t=localStorage.getItem('owb-theme');"
-               "if(['light','sepia','dark','night','contrast'].indexOf(t)>=0)"
+               "if(['auto','light','sepia','dark','night','contrast'].indexOf(t)>=0)"
                "d.setAttribute('data-theme',t);"
                "var p={" + ",".join(f"{name}:{[v for v in values if v != default]!r}"
-                                   for name, default, values in READING_PREFS) + "};"
+                                   for name, default, values in DISPLAY_PREFS) + "};"
                "for(var k in p){var v=localStorage.getItem('owb-'+k);"
                "if(p[k].indexOf(v)>=0)d.setAttribute('data-'+k,v)}"
                # Signed in (web/account.js): the header's "Sign in" stays hidden.
@@ -279,9 +213,10 @@ def leading_sample(gap):
 LEADING_GAPS = {"compact": 5, "normal": 7, "spacious": 9}
 
 
-def colour_menu(lang):
-    """The gear menu: the colour mode, then the reading text's settings
-    (READING_PREFS). web/site.js runs it."""
+def colour_menu(lang, path=None, translated=LANGUAGES):
+    """The gear menu: the colour mode, the display settings (DISPLAY_PREFS),
+    then the languages (language_items, as in the footer). web/site.js
+    runs it."""
     label = t(lang, "tools.display")
 
     def option(value, default, face, name):
@@ -295,22 +230,27 @@ def colour_menu(lang):
                 f'<div role="radiogroup" aria-labelledby="prefs-{pref}" data-pref="{pref}" data-default="{default}">'
                 + "".join(option(v, default, face, name) for v, face, name in options) + '</div>')
 
-    theme = group("theme", t(lang, "tools.theme"), "auto", [
+    theme = group("theme", t(lang, "tools.theme"), "light", [
         (v, f'<span class="swatch" style="--sw-bg:{bg};--sw-accent:{accent}" aria-hidden="true"></span>',
          t(lang, "theme." + v)) for v, bg, accent in COLOUR_MODES])
     def sample(pref, value):
+        if pref == "motion":
+            return ""
         inner = leading_sample(LEADING_GAPS[value]) if pref == "leading" else "Aa"
         return f'<span class="sample" aria-hidden="true">{inner}</span>'
 
     rows = [group(pref, t(lang, "prefs." + pref), default,
                   [(v, sample(pref, v), t(lang, f"{pref}.{v}")) for v in values])
-            for pref, default, values in READING_PREFS]
+            for pref, default, values in DISPLAY_PREFS]
+    check = '<span class="check" aria-hidden="true">&#10003;</span>'
+    languages = (f'<p class="prefs-label" id="prefs-lang">{t(lang, "footer.languages")}</p>'
+                 f'<ul class="prefs-langs" aria-labelledby="prefs-lang">{language_items(lang, path, translated, check)}</ul>')
     return (
         '<div class="prefs">'
         '<button type="button" class="tool-btn prefs-btn" aria-expanded="false" aria-controls="colour-menu" '
         f'aria-label="{label}" title="{label}">{GEAR}</button>'
         f'<div id="colour-menu" class="prefs-menu" role="group" aria-label="{label}" hidden>'
-        + theme + "".join(rows) + '</div></div>')
+        + theme + "".join(rows) + languages + '</div></div>')
 
 
 OG = ROOT / "web" / "og"
@@ -378,6 +318,9 @@ def page(lang, title, body, path=None, current="", description="", card="site", 
 <meta name="owb-search" content="{search_index_url(lang)}">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="manifest" href="/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<meta name="theme-color" content="#f4eee3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#2a241c" media="(prefers-color-scheme: dark)">
 <script>{boot}</script>
 <link rel="preload" href="/fonts/hanken-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/gentium-book-plus-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -387,7 +330,7 @@ def page(lang, title, body, path=None, current="", description="", card="site", 
 </head>
 <body>
 <a class="skip" href="#main">{t(lang, "skip")}</a>
-{site_header(lang, current, path)}
+{site_header(lang, current, path, here, translated)}
 <main class="wrap" id="main" tabindex="-1">
 {body}
 </main>
@@ -405,6 +348,9 @@ def languages_label(records):
                              if all(code in r["renderings"] for r in records))
 
 
+MENU_ARTICLES = 4  # articles per section in the header menu
+
+
 @functools.lru_cache(maxsize=None)
 def nav_menus(lang):
     """The header's dropdowns in lang, as [(key, label, icon, href, panel
@@ -420,24 +366,35 @@ def nav_menus(lang):
     def all_link(href, label):
         return f'<a class="dd-all" href="{href}">{label} {icon(ICONS["arrow"], 16)}</a>'
 
+    # Each book on one line with its progress; its chapters are one click
+    # further on, on the Read page.
     rows = []
     for book, chaps in books(lang):
-        name = BOOK_NAMES[book][lang]
-        progress = book_progress(book, chaps, lang)[2]
-        rows.append(f'<div class="dd-book">{row(url(lang, f"/read/#{book.lower()}"), name, progress, "book")}'
-                    f'<div class="dd-chaps" aria-label="{t(lang, "nav.book_chapters", book=name)}">'
-                    f'{chapter_pills(chaps, lang)}</div></div>')
-    read = (f'<p class="dd-head">{t(lang, "nav.books_so_far")}</p>{"".join(rows)}'
+        done, total, progress = book_progress(book, chaps, lang)
+        rows.append(f'<a class="dd-item dd-book" href="{url(lang, f"/read/#{book.lower()}")}" data-book="{book.lower()}">'
+                    f'<span class="dd-title">{BOOK_NAMES[book][lang]}</span>'
+                    f'<span class="dd-count" aria-hidden="true">{done}/{total}</span>'
+                    f'<span class="sr-only">, {progress}</span></a>')
+    read = (f'<p class="dd-head">{t(lang, "nav.books_so_far")}</p><div class="dd-books">{"".join(rows)}</div>'
             f'{all_link(url(lang, "/read/"), t(lang, "nav.all_books"))}')
 
+    # The first few articles of each section, by their short menu titles;
+    # the rest are on the articles page.
     articles = sorted(load_articles(lang), key=lambda a: a["order"])
-    groups = "".join(
-        f'<div class="dd-col"><p class="dd-head">{catalog(lang)["sections"][key]}</p>'
-        + "".join(row(url(lang, article_url(a)), display(a["title"]), t(lang, "article.min_read", n=a["minutes"]))
-                  for a in articles if a["section"] == key)
-        + "</div>"
-        for key in SECTIONS if any(a["section"] == key for a in articles))
-    arts = f'<div class="dd-cols">{groups}</div>{all_link(url(lang, "/articles/"), t(lang, "nav.all_articles"))}'
+    cols = []
+    for key in SECTIONS:
+        section = [a for a in articles if a["section"] == key]
+        if not section:
+            continue
+        more = (f'<a class="dd-more" href="{url(lang, "/articles/")}#{key}">'
+                f'{t(lang, "nav.section_all", n=len(section))} {icon(ICONS["arrow"], 14)}</a>'
+                if len(section) > MENU_ARTICLES else "")
+        cols.append(f'<div class="dd-col"><p class="dd-head">{catalog(lang)["sections"][key]}</p>'
+                    + "".join(row(url(lang, article_url(a)), display(a.get("nav_title") or a["title"]))
+                              for a in section[:MENU_ARTICLES])
+                    + f"{more}</div>")
+    arts = (f'<div class="dd-cols" style="--cols: {len(cols)}">{"".join(cols)}</div>'
+            f'{all_link(url(lang, "/articles/"), t(lang, "nav.all_articles"))}')
 
     about = ("".join((
         row(url(lang, "/about/"), t(lang, "nav.about_project"), t(lang, "nav.about_project_note"), "info"),
@@ -451,11 +408,12 @@ def nav_menus(lang):
             ("about", t(lang, "nav.about"), "info", "/about/", about, "dd-about"))
 
 
-def site_header(lang, current, path=None):
+def site_header(lang, current, path=None, lang_path=None, translated=LANGUAGES):
     """Logo, the main links with their dropdowns, and the tools. On narrow
     screens the links fold into a panel behind the menu button, where each
     dropdown opens in place (web/site.js). The section trigger for current
-    is lit, and the dropdown link to this page (path) is aria-current."""
+    is lit, and the dropdown link to this page (path) is aria-current. The
+    gear menu's language links go to lang_path, as the footer's do."""
     home_on = current == "/"
     home = url(lang, "/")
     items = [f'<li><a class="nav-link" href="{home}"{" aria-current=page" if home_on else ""}>'
@@ -466,7 +424,10 @@ def site_header(lang, current, path=None):
             here = url(lang, path)
             panel = panel.replace(f'class="dd-item" href="{here}"', f'class="dd-item" href="{here}" aria-current="page"')
             panel = panel.replace(f'class="dd-all" href="{here}"', f'class="dd-all" href="{here}" aria-current="page"')
-            panel = re.sub(rf'(class="chap(?: part)?" href="{re.escape(here)}")', r'\1 aria-current="page"', panel)
+            # On a chapter page, its book in the Read menu is the current one.
+            book = re.match(r"/([a-z0-9]{3})/\d+/", path)
+            if book:
+                panel = panel.replace(f'data-book="{book[1]}"', f'data-book="{book[1]}" aria-current="true"')
         items.append(
             f'<li class="nav-item">'
             f'<button type="button" class="nav-link nav-trigger{" active" if on else ""}" '
@@ -480,7 +441,7 @@ def site_header(lang, current, path=None):
 <a class="tool-btn search-btn" href="{url(lang, "/search/")}" aria-label="{t(lang, "nav.search")}" title="{t(lang, "nav.search")}" aria-keyshortcuts="Control+K Meta+K">{icon(ICONS["search"])}<span class="search-label">{t(lang, "nav.search")}</span><kbd class="search-kbd" hidden>Ctrl K</kbd></a>
 {account_menu(lang)}
 <a class="tool-btn" href="{GITHUB_URL}" aria-label="{t(lang, "tools.github")}" title="GitHub">{icon(ICONS["github"])}</a>
-{colour_menu(lang)}
+{colour_menu(lang, lang_path, translated)}
 <button type="button" class="tool-btn menu-btn" aria-expanded="false" aria-controls="site-nav" aria-label="{t(lang, "nav.menu")}">{icon(ICONS["menu"], 22)}{icon(ICONS["close"], 22)}</button>
 </div>
 </div></header>"""
@@ -510,7 +471,7 @@ def footer_links(lang):
 
 def book_name(book, lang):
     """A book's name in lang, drafted or not."""
-    return (BOOK_NAMES.get(book) or OTHER_BOOK_NAMES[book])[lang]
+    return BOOK_NAMES[book][lang]
 
 
 @functools.lru_cache(maxsize=None)
@@ -546,24 +507,29 @@ def book_index(lang):
             f'{icon(ICONS["arrow"], 15)}</a></p></nav>')
 
 
-def language_links(lang, path, translated=LANGUAGES):
-    """The footer's language switch, as Ochorus has it: each language in its
-    own name, the current one as plain text and the others as links to this
-    page in that language: the home page from a page without a path, and
-    the articles page from an article not in that language. web/site.js
-    remembers the choice."""
+def language_items(lang, path, translated=LANGUAGES, mark=""):
+    """Each language in its own name, as list items: the current one as plain
+    text (followed by mark) and the others as links to this page in that
+    language: the home page from a page without a path, and the articles
+    page from an article not in that language. web/site.js remembers the
+    choice."""
     def target(code):
         if path is None:
             return "/"
         return path if code in translated else "/articles/"
 
-    links = "".join(
-        f'<li><span lang="{code}" aria-current="true">{t(code, "language_name")}</span></li>' if code == lang
+    return "".join(
+        f'<li><span lang="{code}" aria-current="true">{t(code, "language_name")}{mark}</span></li>' if code == lang
         else f'<li><a href="{url(code, target(code))}" lang="{code}" hreflang="{code}" data-lang="{code}">'
              f'{t(code, "language_name")}</a></li>'
         for code in LANGUAGES)
+
+
+def language_links(lang, path, translated=LANGUAGES):
+    """The footer's language switch, as Ochorus has it (language_items)."""
     return (f'<nav class="foot-langs" aria-labelledby="foot-langs">'
-            f'<h2 id="foot-langs">{t(lang, "footer.languages")}</h2><ul>{links}</ul></nav>')
+            f'<h2 id="foot-langs">{t(lang, "footer.languages")}</h2>'
+            f'<ul>{language_items(lang, path, translated)}</ul></nav>')
 
 
 def site_footer(lang, path=None, translated=LANGUAGES):
@@ -753,11 +719,11 @@ def word_uses():
 
 @functools.cache
 def headings():
-    """Section headings by the record they stand above (data/headings.json),
-    each in the languages it has, with curly quotes."""
-    data = json.loads((ROOT / "data" / "headings.json").read_text(encoding="utf-8"))
+    """Section headings by the record they stand above (data/headings/, one
+    file per book), each in the languages it has, with curly quotes."""
     return {rid: {lang: smart_quotes(text) for lang, text in h.items()}
-            for rid, h in data["headings"].items()}
+            for path in sorted((ROOT / "data" / "headings").glob("*.json"))
+            for rid, h in json.loads(path.read_text(encoding="utf-8"))["headings"].items()}
 
 
 def chapters():
@@ -907,11 +873,15 @@ def chapter_page(book, chapter, lang="en"):
             "source": source, "ui": catalog(lang)["reader.ui"], "records": records,
             "words": {vid: words[vid] for r in records for vid in r["refs"]},
             "paragraphs": paragraph_starts(records, words),
+            "disputed": disputed_block(records, lang),
+            "bookRefs": book_refs(lang),
+            "cards": word_cards(records, words),
             "headings": {r["id"]: headings()[r["id"]] for r in records if r["id"] in headings()}}
     # Each morphology code's description in every language, once per page.
     data["uses"] = word_uses()[1]
     # Names before a chapter number ("Psalm 23:1"), for "Book 1:2" links.
     data["books"] = {b: chapter_book(b, lang) for b, _ in books()}
+    data["saved"] = url(lang, "/saved/")
     data["grammar"] = {grammar_key(w): {l: describe(w, l) for l in LANGUAGES}
                        for ws in data["words"].values() for w in ws}
     # "</" cannot appear inside a script element.
@@ -954,7 +924,8 @@ def chapter_page(book, chapter, lang="en"):
   {title_control}
   {control("pronouns", "deity_pronoun", [("0", t(lang, "reader.he")), ("1", t(lang, "reader.He"))])}{units}{plural}
   {control("headings", "headings", [("0", t(lang, "reader.show")), ("1", t(lang, "reader.hide"))])}
-  {control("view", "view", [("0", t(lang, "reader.study")), ("1", t(lang, "reader.reading"))], " view-control")}
+  {control("view", "view", [("0", t(lang, "reader.study")), ("1", t(lang, "reader.reading")),
+                            ("2", t(lang, "reader.parallel")), ("3", t(lang, "reader.interlinear"))], " view-control")}
 </div>
 <p class="hint"><span id="hint-level"></span> <span id="hint-gender"></span> <span id="hint-{title_setting}"></span> <span id="hint-deity_pronoun"></span> <span id="hint-units"></span> <span id="hint-plural_you"></span> <span id="hint-headings"></span> <span id="hint-view"></span></p>
 </div>
@@ -962,6 +933,7 @@ def chapter_page(book, chapter, lang="en"):
   <article class="passage">
     {chapter_strip(book, chapter, lang)}
     <h1 id="title">{html.escape(title)}</h1>
+    <p class="print-only print-head" id="print-head"></p>
     <p class="sub">{t(lang, "reader.sub" + suffix)}</p>
     <p class="notice" id="partial" hidden></p>
     <div class="text" id="text"></div>
@@ -1062,9 +1034,100 @@ def disputed(vid):
     return any(refs.parse(a).sort_key() <= key <= refs.parse(b).sort_key() for a, b in DISPUTED)
 
 
+@functools.lru_cache(maxsize=None)
+def key_terms():
+    """data/key_terms.json, by lemma."""
+    data = json.loads((ROOT / "data" / "key_terms.json").read_text(encoding="utf-8"))
+    return {t["lemma"]: t for t in data["terms"]}
+
+
+@functools.lru_cache(maxsize=None)
+def name_cards():
+    """data/names.json (people, places and peoples), by (Strong's number,
+    lemma). Each has one or more senses; a sense with "verses" is the one
+    for those verses, a sense without is the one for every other verse."""
+    path = ROOT / "data" / "names.json"
+    if not path.exists():
+        return {}
+    data = json.loads(path.read_text(encoding="utf-8"))
+    return {(n["strong"], n["lemma"]): n["senses"] for n in data["names"]}
+
+
+def word_strong(word):
+    """A word's Strong's number as names.json keys it: G or H and digits."""
+    prefix = "H" if word["id"].startswith("o") else "G"
+    return prefix + (word.get("strong") or "").lstrip("0")
+
+
+def word_cards(records, words):
+    """The key terms and the people, places and peoples among this page's
+    words: {"list": [card, ...], "tokens": {token id: index into list}}.
+    A name used of more than one person resolves to the sense for its verse."""
+    terms, names = key_terms(), name_cards()
+    mine = {t for r in records for t in r["source"]["tokens"]}
+    cards, index, tokens = [], {}, {}
+    for vid, ws in words.items():
+        for w in ws:
+            if w["id"] not in mine:
+                continue
+            card = None
+            term = terms.get(w["lemma"])
+            if term:
+                key = ("term", w["lemma"])
+                card = {"type": "term", "lemma": term["lemma"], "title": term["sense"],
+                        "english": term["english"], "note": term.get("note", "")}
+            senses = names.get((word_strong(w), w["lemma"]))
+            if senses and not card:
+                sense = next((s for s in senses if vid in s.get("verses", [])), None) \
+                    or next((s for s in senses if "verses" not in s), None)
+                if sense:
+                    key = ("name", w["lemma"], sense["name"])
+                    card = {"type": "name", "lemma": w["lemma"], "title": sense["name"],
+                            "kind": sense["kind"], "note": sense["note"]}
+            if card:
+                if key not in index:
+                    index[key] = len(cards)
+                    cards.append(card)
+                tokens[w["id"]] = index[key]
+    return {"list": cards, "tokens": tokens}
+
+
+@functools.lru_cache(maxsize=None)
+def book_refs(lang="en"):
+    """What the reader needs to link "Mark 14:54" in a note: every book's
+    names (English, which the notes are written in, and this language's)
+    and the chapters translated so far, which link into the reader; others
+    go to search, which says they are not translated yet."""
+    names = {}
+    for code, name in refs.BOOK_NAMES.items():
+        names[name] = code
+        local = BOOK_NAMES.get(code, {}).get(lang)
+        if local:
+            names[local] = code
+    chapters = {b: sorted(p.chapter for p in ps) for b, ps in books()}
+    return {"names": names, "chapters": chapters, "search": url(lang, "/search/")}
+
+
+def disputed_block(records, lang="en"):
+    """The reader's view of a disputed passage on this page: its records, its
+    reference, and the manuscript-reading decision that explains it (shown
+    from the note above the passage). None when the page has none."""
+    ids = [r["id"] for r in records if any(disputed(v) for v in r["refs"])]
+    if not ids:
+        return None
+    first = next(r for r in records if r["id"] == ids[0])
+    note = next((d["id"] for d in first["decisions"] if d["category"] == "text_variant"), None)
+    a, b = next((refs.parse(x), refs.parse(y)) for x, y in DISPUTED if disputed(first["refs"][0]))
+    span = f"{a.chapter}:{a.verse}\u2013" + (f"{b.verse}" if a.chapter == b.chapter else f"{b.chapter}:{b.verse}")
+    return {"records": ids, "ref": f"{BOOK_NAMES[a.book][lang]} {span}", "note": note}
+
+
 # Verses that are only a psalm's title ("A psalm of David ..."), which the
 # Hebrew text counts as verse 1. A chapter's cards quote the psalm itself.
-TITLES = {"PSA.3.1", "PSA.4.1"}
+TITLES = {
+    "PSA.3.1", "PSA.4.1", "PSA.5.1", "PSA.6.1", "PSA.7.1", "PSA.8.1", "PSA.9.1",
+    "PSA.12.1",
+}
 
 
 def opening(records, chapter):
@@ -1094,6 +1157,16 @@ def opening_verse(records, chapter, lang="en"):
 
 # A quoted verse in each language's quotation marks (English curly quotes
 # otherwise). French sets its guillemets off with no-break spaces.
+def inner_quotes(text):
+    """A verse to be shown inside double quotes: its own speech takes single
+    quotes, and speech that runs on into the next verse (Genesis 9:1) is
+    closed, so the marks stay balanced."""
+    text = text.replace("\u201c", "\u2018").replace("\u201d", "\u2019")
+    if text.count("\u2018") > text.count("\u2019") - text.count("\u2019s"):
+        text += "\u2019"
+    return text
+
+
 QUOTES_AROUND = {"es": "&laquo;{}&raquo;", "fr": "&laquo;&nbsp;{}&nbsp;&raquo;"}
 
 
@@ -1112,8 +1185,8 @@ def passage_card(book, chapter, lang="en"):
     if len(records) < len(every):
         meta += " &middot; " + t(lang, "card.coverage", n=len(records), total=len(every))
     q = QUOTES_AROUND.get(lang, "&ldquo;{}&rdquo;")
-    if lang not in QUOTES_AROUND:   # inside double quotes, speech takes single ones
-        quote = quote.replace("\u201c", "\u2018").replace("\u201d", "\u2019")
+    if lang not in QUOTES_AROUND:
+        quote = inner_quotes(quote)
     return (f'<li><a class="a-card p-card" href="{url(lang, chapter_url(book, chapter))}">'
             f'<span class="a-section">{BOOK_NAMES[book][lang]} &middot; {languages_label(every)}</span>'
             f'<span class="a-title">{display(chapter_name(records, book, chapter, lang))}</span>'
@@ -1166,7 +1239,7 @@ def read_page(lang="en"):
 <p class="eyebrow">{t(lang, "read.title")}</p>
 <h1>{t(lang, "read.heading")}</h1>
 <p class="dek">{t(lang, "read.dek")}</p>
-<p class="actions">{resume_link(lang)}</p>
+<p class="actions">{resume_link(lang)}<a class="button ghost" href="{url(lang, "/saved/")}">{icon(ICONS["bookmark"])}{t(lang, "saved.title")}</a></p>
 </header>
 {cards}
 <section class="how" aria-labelledby="how-h">
@@ -1566,7 +1639,8 @@ def article_html(text, toc=None, lang="en", text_language="en"):
 
 # Article sections, in the order the articles page shows them. Their names
 # in each language are in i18n/ (sections).
-SECTIONS = {"method": "How it is made", "passage": "Reading the text", "history": "How we got the Bible"}
+SECTIONS = {"method": "How it is made", "passage": "Reading the text", "history": "How we got the Bible",
+            "translation": "The Bible in translation"}
 
 
 def article_passages(body):
@@ -1600,7 +1674,8 @@ def passage_label(book, chapter, verses, lang="en"):
 
 def _read_article(path):
     """One article file. It starts with a front matter block: title,
-    summary, date, order, section (a key of SECTIONS)."""
+    summary, date, order, section (a key of SECTIONS), and optionally
+    nav_title, a shorter title for the header menu."""
     text = path.read_text(encoding="utf-8")
     m = re.match(r"---\n(.*?)\n---\n(.*)", text, re.S)
     if not m:
@@ -1617,6 +1692,8 @@ def _read_article(path):
     if meta["section"] not in SECTIONS:
         raise SystemExit(f"{path.name}: section must be one of {', '.join(SECTIONS)}")
     meta["title"], meta["summary"] = smart_quotes(meta["title"]), smart_quotes(meta["summary"])
+    if "nav_title" in meta:
+        meta["nav_title"] = smart_quotes(meta["nav_title"])
     words = len(re.findall(r"\w+", re.sub(r"\{\{[^}]*\}\}", "", m[2])))
     return {**meta, "slug": path.stem, "body": m[2], "order": int(meta["order"]),
             "minutes": max(1, round(words / 220)), "passages": article_passages(m[2])}
@@ -1909,7 +1986,6 @@ def account_page(lang="en"):
 </form>
 <p><button class="button ghost" type="button" id="sign-out">{a("sign_out")}</button></p>
 </section>
-
 <div class="soon">
 <h2>{a("soon")}</h2>
 <p>{a("soon_text")}</p>
@@ -1958,6 +2034,30 @@ def not_found_page():
 </section>""")
 
 
+def saved_page(lang="en"):
+    """The reader's bookmarks and highlights, from owb.marks in this browser
+    (web/reader.js keeps them, web/site.js lists them here). The page
+    carries the book names and canonical order in lang, and its labels."""
+    order = [b for b, _ in books()]
+    names = {b: chapter_book(b, lang) for b in order}
+    data = {"order": order, "names": names,
+            "chapters": {b: url(lang, chapter_url(b, 0)).replace("/0/", "/{c}/") for b in order},
+            "remove": t(lang, "saved.remove"), "bookmark": t(lang, "saved.bookmark")}
+    filters = "".join(f'<button type="button" data-filter="{k}" aria-pressed="{"true" if k == "all" else "false"}">'
+                      f'{t(lang, "saved." + k)}</button>' for k in ("all", "bookmarks", "highlights"))
+    return page(lang, t(lang, "saved.title"), f"""
+<header class="page-head">
+<p class="eyebrow">{t(lang, "saved.title")}</p>
+<h1>{t(lang, "saved.heading")}</h1>
+<p class="dek">{t(lang, "saved.dek")}</p>
+</header>
+<section class="saved" id="saved" data-saved="{html.escape(json.dumps(data, ensure_ascii=False))}">
+<div class="seg saved-filter" role="group" aria-label="{t(lang, "saved.show")}">{filters}</div>
+<p class="saved-empty" hidden>{t(lang, "saved.empty")}</p>
+<div class="saved-list"></div>
+</section>""", unlisted="/saved/")
+
+
 def offline_page(lang="en"):
     """What web/sw.js shows for a page not saved on the device, with the
     books that are (filled in by web/site.js)."""
@@ -1978,7 +2078,12 @@ def manifest():
     return json.dumps({
         "name": SITE_NAME, "short_name": SITE_NAME, "start_url": "/", "scope": "/",
         "display": "standalone", "background_color": "#faf6ef", "theme_color": "#3f3d9a",
-        "icons": [{"src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml"}],
+        # PNGs too (web/icons/, scripts/build_icons.py): phones install from those.
+        "icons": [{"src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml"},
+                  {"src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png"},
+                  {"src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png"},
+                  {"src": "/icons/maskable-512.png", "sizes": "512x512", "type": "image/png",
+                   "purpose": "maskable"}],
     }, indent=2) + "\n"
 
 
@@ -2095,7 +2200,9 @@ def search_documents(lang):
                 docs.append({"k": "n", "bk": p.book, "c": p.chapter,
                              "v": verse, "u": url(lang, p.url), "y": d["layer"], "g": d["category"],
                              "t": d["choice"], "al": d["alternatives"], "s": d["reason"],
-                             "l": "en" if d["layer"] == "meaning" else d["language"]})
+                             # Notes are written in English for now, whatever
+                             # language a wording note is about.
+                             "l": "en"})
     for a in sorted(load_articles(lang), key=lambda a: (a["section"] != "method", a["order"])):
         docs.append({"k": "a", "t": a["title"], "s": a["summary"], "x": article_text(a["body"], a["lang"]),
                      "u": url(lang, article_url(a)), "sec": catalog(lang)["sections"][a["section"]],
@@ -2191,7 +2298,8 @@ def sitemap(paths):
 
 
 def build(out):
-    for cached in (nav_menus, footer_links, passages, asset, translated_verses, catalog, search_documents, search_index,
+    for cached in (nav_menus, footer_links, passages, asset, translated_verses, catalog, book_refs, key_terms, name_cards,
+                   search_documents, search_index,
                    search_index_url, word_uses):
         cached.cache_clear()
     if out.exists():
@@ -2217,6 +2325,7 @@ def build(out):
         add("/login/", login_page(lang), index=False)
         add("/reset-password/", reset_page(lang), index=False)
         add("/offline/", offline_page(lang), index=False)
+        add("/saved/", saved_page(lang), index=False)
     files = {(p.strip("/") + "/index.html").lstrip("/"): text for p, text in pages.items()}
     files["404.html"] = not_found_page()
     files["sitemap.xml"] = sitemap(indexed)
@@ -2234,7 +2343,8 @@ def build(out):
     for name in ("style.css", "reader.js", "site.js", "account.js", "search.js"):
         shutil.copy(ROOT / "web" / name, out / name)
     shutil.copytree(ROOT / "web" / "fonts", out / "fonts")
-    shutil.copytree(OG, out / "og", ignore=shutil.ignore_patterns("manifest.json"))
+    shutil.copytree(ROOT / "web" / "icons", out / "icons")
+    shutil.copytree(OG, out / "og", ignore=shutil.ignore_patterns("*.digest"))
     return sorted(files) + ["reader.js", "search.js", "site.js", "style.css"]
 
 

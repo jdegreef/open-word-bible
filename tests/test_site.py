@@ -4,7 +4,6 @@ import json
 import re
 import subprocess
 import sys
-import tempfile
 import unittest
 from pathlib import Path
 
@@ -12,18 +11,13 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import build_site  # noqa: E402
+from tests.site_build import built_site  # noqa: E402
 
 
 class SiteTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.tmp = tempfile.TemporaryDirectory()
-        cls.out = Path(cls.tmp.name) / "site"
-        build_site.build(cls.out)
-
-    @classmethod
-    def tearDownClass(cls):
-        cls.tmp.cleanup()
+        cls.out = built_site()
 
     def chapter_data(self, path="jhn/1"):
         page = (self.out / path / "index.html").read_text(encoding="utf-8")
@@ -237,17 +231,28 @@ class SiteTest(unittest.TestCase):
         for key in ("read", "articles", "about"):
             self.assertIn(f'aria-controls="dd-{key}"', header)
             self.assertIn(f'<div class="dropdown', header)
-        self.assertIn('href="/jhn/1/"', header)
-        self.assertIn('href="/php/4/"', header)
-        for a in build_site.load_articles():
-            self.assertIn(f'href="{build_site.article_url(a)}"', header)
+        # A line per book, linking to its chapters on the Read page.
+        self.assertIn('href="/read/#jhn"', header)
+        self.assertIn('href="/read/#php"', header)
+        self.assertNotIn('class="chap', header)
+        # The first few articles of each section, and a link to the rest.
+        articles_ = sorted(build_site.load_articles(), key=lambda a: a["order"])
+        for key in build_site.SECTIONS:
+            section = [a for a in articles_ if a["section"] == key]
+            for i, a in enumerate(section):
+                linked = f'href="{build_site.article_url(a)}"' in header
+                self.assertEqual(linked, i < build_site.MENU_ARTICLES, a["slug"])
+            if len(section) > build_site.MENU_ARTICLES:
+                self.assertIn(f'href="/articles/#{key}"', header)
+        self.assertNotIn("min read", header)
         # The current section's trigger is marked on its pages.
         articles = (self.out / "articles" / "index.html").read_text(encoding="utf-8")
         self.assertRegex(articles, r'class="nav-link nav-trigger active"[^>]*aria-controls="dd-articles"')
         # ...and the dropdown link to the page itself tells a screen reader.
         chapter = (self.out / "jhn" / "1" / "index.html").read_text(encoding="utf-8")
-        self.assertRegex(chapter, r'class="chap(?: part)?" href="/jhn/1/" aria-current="page"')
-        self.assertNotIn('href="/php/4/" aria-current', chapter)
+        chapter_header = re.search(r'<header class="site">(.*?)</header>', chapter, re.S)[1]
+        self.assertIn('data-book="jhn" aria-current="true"', chapter_header)
+        self.assertNotIn('data-book="php" aria-current', chapter_header)
 
     def test_interface_fonts_are_self_hosted_with_their_licences(self):
         css = (self.out / "style.css").read_text(encoding="utf-8")
@@ -305,10 +310,9 @@ class SiteTest(unittest.TestCase):
             header = re.search(r"<header.*?</header>", read, re.S)[0]
             footer = re.search(r"<footer.*?</footer>", read, re.S)[0]
             for p in build_site.passages():
-                link = f'href="{build_site.url(lang, p.url)}"'
-                self.assertEqual(link in header, (p.book, p.chapter) in shown, (lang, p.url))
                 self.assertEqual(f'id="{p.book.lower()}"' in read, p.book in books, (lang, p.book))
                 book_link = f'href="{build_site.url(lang, f"/read/#{p.book.lower()}")}"'
+                self.assertEqual(book_link in header, p.book in books, (lang, p.book))
                 self.assertEqual(book_link in footer, p.book in books, (lang, p.book))
 
     def test_reader_navigation_lists_only_the_page_language(self):
@@ -405,6 +409,44 @@ class SiteTest(unittest.TestCase):
         # A reference is the palette's first row, so Enter goes straight to it.
         self.assertLess(search.index('fill(ui("go_to")'), search.index('fill(ui("show_all")'))
 
+    def test_name_cards_match_the_word_data(self):
+        import glob
+        words = {}
+        for path in glob.glob(str(build_site.ROOT / "data" / "*" / "*.json")):
+            if "/grc/" in path or "/hbo/" in path:
+                for vid, ws in json.loads(Path(path).read_text(encoding="utf-8"))["verses"].items():
+                    for w in ws:
+                        words.setdefault((build_site.word_strong(w), w["lemma"]), set()).add(vid)
+        for (strong, lemma), senses in build_site.name_cards().items():
+            # Every lemma is copied from the source data, never typed.
+            self.assertIn((strong, lemma), words, (strong, lemma))
+            listed = [v for s in senses for v in s.get("verses", [])]
+            self.assertEqual(len(listed), len(set(listed)), strong)
+            self.assertLessEqual(sum("verses" not in s for s in senses), 1, strong)
+            self.assertTrue(set(listed) <= words[(strong, lemma)], strong)
+        # A page's cards resolve a shared name by verse: two Lamechs.
+        gen4 = self.chapter_data("gen/4")["cards"]["list"]
+        gen5 = self.chapter_data("gen/5")["cards"]["list"]
+        self.assertIn("Lamech, descendant of Cain", [c["title"] for c in gen4])
+        self.assertIn("Lamech, father of Noah", [c["title"] for c in gen5])
+
+    def test_site_can_be_installed_and_read_offline(self):
+        manifest = json.loads((self.out / "manifest.webmanifest").read_text(encoding="utf-8"))
+        for icon in manifest["icons"]:
+            self.assertTrue((self.out / icon["src"].lstrip("/")).is_file(), icon["src"])
+        sw = (self.out / "sw.js").read_text(encoding="utf-8")
+        self.assertNotIn("__PRECACHE__", sw)
+        self.assertNotIn("__VERSION__", sw)
+        precache = json.loads(re.search(r"var PRECACHE = (\[.*?\]);", sw)[1])
+        for u in precache:
+            path = u.split("?")[0].lstrip("/")
+            self.assertTrue((self.out / path).is_file() or (self.out / path / "index.html").is_file(), u)
+        for lang in build_site.LANGUAGES:
+            self.assertIn(build_site.url(lang, "/offline/"), precache)
+        page = (self.out / "jhn" / "2" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('<link rel="manifest" href="/manifest.webmanifest">', page)
+        self.assertNotIn("/offline/", (self.out / "sitemap.xml").read_text(encoding="utf-8"))
+
     def test_reader_can_read_aloud(self):
         for code in build_site.LANGUAGES:
             page = (self.out / build_site.url(code, "/jhn/2/").lstrip("/") / "index.html").read_text(encoding="utf-8")
@@ -415,6 +457,24 @@ class SiteTest(unittest.TestCase):
             for key in ("listen_bar", "listen_play", "listen_pause", "listen_prev", "listen_next",
                         "listen_speed", "listen_voice", "listen_stop", "listen_no_voice"):
                 self.assertTrue(ui.get(key), (code, key))
+
+    def test_saved_verses_page(self):
+        sitemap = (self.out / "sitemap.xml").read_text(encoding="utf-8")
+        self.assertNotIn("/saved/", sitemap)
+        for code in build_site.LANGUAGES:
+            rel = build_site.url(code, "/saved/").lstrip("/")
+            page = (self.out / rel / "index.html").read_text(encoding="utf-8")
+            self.assertIn('<meta name="robots" content="noindex">', page)
+            data = json.loads(html.unescape(re.search(r'data-saved="([^"]*)"', page)[1]))
+            self.assertEqual(data["order"], [b for b, _ in build_site.books()])
+            # Each book's chapter address is the reader's, in the page language.
+            self.assertEqual(data["chapters"]["JHN"].replace("{c}", "3"), build_site.url(code, "/jhn/3/"))
+            self.assertTrue((self.out / build_site.url(code, "/jhn/3/").lstrip("/") / "index.html").is_file())
+            chapter = self.chapter_data(build_site.url(code, "/jhn/2").lstrip("/"))
+            self.assertEqual(chapter["saved"], build_site.url(code, "/saved/"))
+            for key in ("bookmark", "bookmarked", "highlight", "hl_yellow", "hl_green", "hl_blue",
+                        "hl_pink", "saved_all"):
+                self.assertTrue(chapter["ui"].get(key), (code, key))
 
     def test_read_page_groups_chapters_by_book(self):
         read = (self.out / "read" / "index.html").read_text(encoding="utf-8")
@@ -470,6 +530,23 @@ class ExtractTest(unittest.TestCase):
         result = subprocess.run([sys.executable, str(ROOT / "scripts" / "extract_tokens.py"), "--check"],
                                 capture_output=True, text=True)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+
+
+class SharedDataTest(unittest.TestCase):
+    """Book data that pull requests adding chapters would otherwise all edit."""
+
+    def test_every_book_is_named_in_every_language(self):
+        from owb import refs
+        self.assertEqual(list(build_site.BOOK_NAMES), refs.BOOK_CODES)
+        for code, names in build_site.BOOK_NAMES.items():
+            self.assertEqual(set(names), set(build_site.LANGUAGES), code)
+            self.assertEqual(names["en"], refs.BOOK_NAMES[code])
+            self.assertGreater(build_site.BOOK_CHAPTERS[code], 0, code)
+
+    def test_headings_are_filed_by_book(self):
+        for path in (ROOT / "data" / "headings").glob("*.json"):
+            for rid in json.loads(path.read_text(encoding="utf-8"))["headings"]:
+                self.assertEqual(rid.split(".")[0], path.stem, path.name)
 
 
 if __name__ == "__main__":

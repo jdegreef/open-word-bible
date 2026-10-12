@@ -7,8 +7,9 @@ of them ignore SVG, so each card is drawn as HTML and photographed with
 headless Chrome or Chromium, then saved as JPEG (sips or ImageMagick). The images are
 committed: the site build only copies them. Run this after changing a
 passage's opening verse, an article's title or summary, or the template;
-web/og/manifest.json records what each image was drawn from, and the tests
-fail when a card is stale. --check only reports stale or missing cards.
+web/og/<card>.digest records what each image was drawn from (one small file
+per card, so pull requests adding cards never touch the same file), and the
+tests fail when a card is stale. --check only reports stale or missing cards.
 
 Cards: one per passage (its opening verse in English and in Greek or Hebrew), one per
 article (section, title, summary), and "site" for every other page.
@@ -32,7 +33,6 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import build_site  # noqa: E402
 
 OUT = ROOT / "web" / "og"
-MANIFEST = OUT / "manifest.json"
 WIDTH, HEIGHT = 1200, 630
 MAC_CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 
@@ -77,10 +77,8 @@ def cards():
         records, words = build_site.load_chapter(book, chapter)
         record, verse = build_site.opening(records, chapter)
         mine = set(record["source"]["tokens"])
-        # The card puts the verse in double quotes, so speech inside it takes
-        # single ones.
-        english = (build_site.opening_verse(records, chapter)
-                   .replace("\u201c", "\u2018").replace("\u201d", "\u2019"))
+        # The card puts the verse in double quotes (build_site.inner_quotes).
+        english = build_site.inner_quotes(build_site.opening_verse(records, chapter))
         spec = {"kind": "passage", "eyebrow": build_site.chapter_title(records, book, chapter),
                 "title": english}
         if build_site.source_language(book) == "hbo":
@@ -171,6 +169,11 @@ def draw(name, spec, tmp, browser):
     to_jpeg(png, OUT / f"{name}.jpg")
 
 
+def read_manifest():
+    """{card: digest of what its image was drawn from}, from web/og/*.digest."""
+    return {p.stem: p.read_text(encoding="utf-8").strip() for p in OUT.glob("*.digest")}
+
+
 def stale(specs, manifest):
     return sorted(n for n, s in specs.items()
                   if manifest.get(n) != digest(s) or not (OUT / f"{n}.jpg").is_file())
@@ -181,8 +184,7 @@ def main():
     ap.add_argument("--check", action="store_true", help="only report stale or missing cards")
     args = ap.parse_args()
     specs = cards()
-    manifest = json.loads(MANIFEST.read_text(encoding="utf-8")) if MANIFEST.is_file() else {}
-    todo = stale(specs, manifest)
+    todo = stale(specs, read_manifest())
     if args.check:
         print("\n".join(todo) or "all cards current")
         return 1 if todo else 0
@@ -194,12 +196,14 @@ def main():
         for name in todo:
             draw(name, specs[name], Path(tmp), browser)
             print(f"drew {name}.jpg")
-    for old in OUT.glob("*.jpg"):
+    for old in [*OUT.glob("*.jpg"), *OUT.glob("*.digest")]:
         if old.stem not in specs:
             old.unlink()
             print(f"removed {old.name}")
-    MANIFEST.write_text(json.dumps({n: digest(s) for n, s in sorted(specs.items())}, indent=1) + "\n",
-                        encoding="utf-8")
+    for n, s in specs.items():
+        path = OUT / f"{n}.digest"
+        if not path.is_file() or path.read_text(encoding="utf-8").strip() != digest(s):
+            path.write_text(digest(s) + "\n", encoding="utf-8")
     return 0
 
 
