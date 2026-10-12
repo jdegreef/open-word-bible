@@ -5,6 +5,7 @@ import io
 import json
 import tempfile
 from pathlib import Path
+from unittest import mock
 
 from django.conf import settings
 from django.contrib.auth import get_user_model
@@ -29,23 +30,37 @@ def load_extract_words(languages=("grc", "hbo")):
                                       kind="original", licence="Public domain", source="macula-hebrew",
                                       source_commit="test"),
     }
-    seq = 0
+    seq, words = 0, []
     for folder, edition in editions.items():
         if folder not in languages:
             continue
         for path in sorted((settings.REPO_ROOT / "data" / folder).glob("*.json")):
-            for vid, words in json.loads(path.read_text(encoding="utf-8"))["verses"].items():
+            for vid, verse_words in json.loads(path.read_text(encoding="utf-8"))["verses"].items():
                 book, chapter, verse = vid.split(".")
-                for w in words:
+                for w in verse_words:
                     # Hebrew extracts carry each morpheme's language (H or A).
-                    Word.objects.create(edition=edition, book=book, chapter=int(chapter),
-                                        verse=int(verse), seq=seq, **{"lang": folder, **w})
+                    words.append(Word(edition=edition, book=book, chapter=int(chapter),
+                                      verse=int(verse), seq=seq, **{"lang": folder, **w}))
                     seq += 1
+    Word.objects.bulk_create(words, batch_size=5000)
     return editions["grc"]
 
 
-def import_content(*paths):
-    call_command("import_content", *paths, stdout=io.StringIO(), stderr=io.StringIO())
+def import_content(*args, stdout=None, search=False):
+    """Run import_content. The search tables are rebuilt only with search=True
+    (test_search.py): a rebuild reads all of content/ for every site
+    language, and most tests don't look at them."""
+    stdout = stdout or io.StringIO()
+    if search:
+        call_command("import_content", *args, stdout=stdout, stderr=io.StringIO())
+        return
+    with mock.patch("translation.search.rebuild", return_value={}):
+        call_command("import_content", *args, stdout=stdout, stderr=io.StringIO())
+
+
+def content_files(*patterns):
+    """The content files matching patterns ("JHN/JHN.1.*.json"), as paths."""
+    return [str(p) for pattern in patterns for p in sorted(CONTENT.glob(pattern))]
 
 
 class ImportContentTest(TestCase):
@@ -67,11 +82,12 @@ class ImportContentTest(TestCase):
         self.assertTrue(s.decisions.filter(layer="meaning").exists())
 
     def test_reimport_never_resets_review_status(self):
-        import_content()
+        john = content_files("JHN/JHN.1.1-18.json")
+        import_content(*john)
         s = Sentence.objects.get(record_id="JHN.1.1.s1")
         s.status = "reviewed"
         s.save()
-        import_content()
+        import_content(*john)
         s.refresh_from_db()
         self.assertEqual(s.status, "reviewed")
 
@@ -89,7 +105,7 @@ class ImportContentTest(TestCase):
 class FreshDatabaseTest(TestCase):
     def test_deploy_import_skips_until_texts_are_loaded(self):
         out = io.StringIO()
-        call_command("import_content", "--if-texts-loaded", stdout=out, stderr=io.StringIO())
+        import_content("--if-texts-loaded", stdout=out)
         self.assertIn("run import_texts", out.getvalue())
         self.assertEqual(Sentence.objects.count(), 0)
         with self.assertRaises(CommandError):
@@ -97,7 +113,7 @@ class FreshDatabaseTest(TestCase):
 
     def test_deploy_import_runs_once_texts_are_loaded(self):
         load_extract_words()
-        call_command("import_content", "--if-texts-loaded", stdout=io.StringIO(), stderr=io.StringIO())
+        import_content("--if-texts-loaded", *content_files("PHP/*.json"))
         self.assertTrue(Sentence.objects.exists())
 
     def test_deploy_import_skips_files_whose_text_is_not_loaded(self):
@@ -106,27 +122,38 @@ class FreshDatabaseTest(TestCase):
         # was added before the Hebrew was imported).
         load_extract_words(languages=("grc",))
         out = io.StringIO()
-        call_command("import_content", "--if-texts-loaded", stdout=out, stderr=io.StringIO())
+        genesis = content_files("GEN/GEN.1.*.json")
+        import_content("--if-texts-loaded", *genesis, *content_files("JHN/JHN.1.*.json", "ROM/ROM.1.json"),
+                       stdout=out)
         self.assertIn("run import_texts wlc. Skipped.", out.getvalue())
         self.assertTrue(Sentence.objects.filter(book="JHN").exists())
         self.assertTrue(Sentence.objects.filter(book="ROM").exists())
         self.assertFalse(Sentence.objects.filter(book="GEN").exists())
         # Run by hand, the missing text is an error that says what to do.
         with self.assertRaisesMessage(CommandError, "run import_texts wlc"):
-            import_content()
+            import_content(*genesis)
 
 
 class ApiTest(TestCase):
     @classmethod
     def setUpTestData(cls):
         edition = load_extract_words()
-        import_content()
+        import_content(*content_files("JHN/JHN.1.*.json", "GEN/GEN.1.*.json"))
         bsb = Edition.objects.create(code="bsb", name="Berean Standard Bible", language="eng",
                                      kind="reference", licence="Public domain", source="open-bibles",
                                      source_commit="test")
         Verse.objects.create(edition=bsb, book="JHN", chapter=1, verse=1,
                              text="In the beginning was the Word")
         Verse.objects.create(edition=edition, book="JHN", chapter=1, verse=1, text="Ἐν ἀρχῇ")
+        # English numbering: a psalm's title is not a verse, so Psalm 3:1 is
+        # our PSA.3.2; Hebrew Psalm 13:6 is English 13:5-6; Hebrew Genesis
+        # 32:1 is English 31:55.
+        for (book, chapter, verse), text in {
+                ("PSA", 3, 1): "O LORD, how many are my foes!", ("PSA", 3, 2): "Many say of me",
+                ("PSA", 13, 5): "But I have trusted in Your loving devotion;",
+                ("PSA", 13, 6): "I will sing to the LORD,", ("GEN", 31, 55): "Early the next morning",
+                ("GEN", 32, 1): "Jacob also went on his way"}.items():
+            Verse.objects.create(edition=bsb, book=book, chapter=chapter, verse=verse, text=text)
 
     def test_passages_round_trip_the_content_files(self):
         response = self.client.get("/api/passages/jhn/1/")
@@ -154,6 +181,29 @@ class ApiTest(TestCase):
         self.assertEqual(response.json()["verses"][0]["text"],
                          {"bsb": "In the beginning was the Word", "sblgnt": "Ἐν ἀρχῇ"})
 
+    def test_chapter_text_uses_our_verse_numbers(self):
+        data = self.client.get("/api/text/PSA/3/?editions=bsb").json()
+        self.assertEqual(data["numbering"], "source")
+        self.assertEqual(data["verses"], [
+            {"verse": 2, "text": {"bsb": "O LORD, how many are my foes!"}, "refs": {"bsb": ["PSA.3.1"]}},
+            {"verse": 3, "text": {"bsb": "Many say of me"}, "refs": {"bsb": ["PSA.3.2"]}}])
+        [verse] = self.client.get("/api/text/PSA/13/?editions=bsb").json()["verses"]
+        self.assertEqual(verse, {"verse": 6, "refs": {"bsb": ["PSA.13.5", "PSA.13.6"]},
+                                 "text": {"bsb": "But I have trusted in Your loving devotion; "
+                                                 "I will sing to the LORD,"}})
+        # A verse can move to another chapter.
+        verses = self.client.get("/api/text/GEN/32/?editions=bsb").json()["verses"]
+        self.assertEqual([(v["verse"], v["text"]["bsb"]) for v in verses],
+                         [(1, "Early the next morning"), (2, "Jacob also went on his way")])
+        self.assertEqual(self.client.get("/api/text/GEN/31/?editions=bsb").status_code, 404)
+
+    def test_chapter_text_in_each_editions_numbering(self):
+        data = self.client.get("/api/text/PSA/3/?editions=bsb&numbering=edition").json()
+        self.assertEqual(data["verses"][0], {"verse": 1, "text": {"bsb": "O LORD, how many are my foes!"}})
+        verses = self.client.get("/api/text/GEN/31/?editions=bsb&numbering=edition").json()["verses"]
+        self.assertEqual(verses, [{"verse": 55, "text": {"bsb": "Early the next morning"}}])
+        self.assertEqual(self.client.get("/api/text/PSA/3/?numbering=english").status_code, 400)
+
     def test_unknown_book_and_edition(self):
         self.assertEqual(self.client.get("/api/passages/XYZ/1/").status_code, 404)
         self.assertEqual(self.client.get("/api/text/JHN/1/?editions=nope").status_code, 400)
@@ -176,7 +226,7 @@ class ApiTest(TestCase):
 class AdminTest(TestCase):
     def test_review_event_records_the_reviewer(self):
         load_extract_words()
-        import_content()
+        import_content(*content_files("PHP/PHP.4.*.json"))
         user = get_user_model().objects.create_superuser("reviewer", "r@example.com", "pw-not-used-elsewhere")
         self.client.force_login(user)
         s = Sentence.objects.get(record_id="PHP.4.5.s2")

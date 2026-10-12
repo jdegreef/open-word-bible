@@ -2,12 +2,12 @@
 // scripts/build_site.py): the colour mode, then the reading text's size,
 // typeface and line spacing. Each radiogroup is one setting (data-pref); a
 // choice is kept in localStorage as owb-<pref> and applied as data-<pref> on
-// <html>, and the default (data-default; "auto" for the colour mode, which
-// follows the device) removes both. The inline boot script in each page
+// <html>, and the default (data-default; "light", Paper, for the colour mode)
+// removes both. "auto" is a choice like any other: it follows the device. The inline boot script in each page
 // applies saved choices before paint.
 (function () {
   "use strict";
-  var MODES = ["light", "sepia", "dark", "night", "contrast"];
+  var MODES = ["auto", "light", "sepia", "dark", "night", "contrast"];
   var root = document.documentElement;
   var button = document.querySelector(".prefs-btn");
   var menu = document.getElementById("colour-menu");
@@ -167,24 +167,66 @@
   });
 })();
 
-// The header's account button: once signed in (web/account.js keeps a copy
-// of the account in localStorage), it shows the reader's initial.
+// The header's account menu (account_menu in scripts/build_site.py), as on
+// Ochorus. Signed out, "Sign in" leads to /login/ and back to this page.
+// Signed in (web/account.js keeps a copy of the account in localStorage),
+// the reader's initial opens a menu: their name and email, the account
+// page, Admin for a super admin, and signing out.
 (function () {
   "use strict";
-  var link = document.querySelector(".account-btn");
-  if (!link) return;
+  var box = document.querySelector(".account-menu");
+  if (!box) return;
+  var signIn = box.querySelector("[data-login]");
   var account = null;
   try { account = JSON.parse(localStorage.getItem("owb.account") || "null"); } catch (e) { /* none */ }
-  if (!account || !account.user) return;
-  var name = account.user.display_name || account.user.email;
-  var initial = link.querySelector(".account-initial");
-  initial.textContent = name.charAt(0).toUpperCase();
-  initial.hidden = false;
-  link.classList.add("signed-in");
-  // The label is in the page's language (data-signed-in, from i18n/).
-  var label = link.getAttribute("data-signed-in");
-  link.setAttribute("aria-label", label + " (" + name + ")");
-  link.title = label;
+  if (!account || !account.user) {
+    document.documentElement.classList.remove("signed-in");
+    // Set now, not on click, so a link opened in a new tab comes back too;
+    // and again on click, for a verse picked since (#v12).
+    var back = function () {
+      if (/\/(login|reset-password)\/$/.test(location.pathname)) return;
+      signIn.href = signIn.pathname + "?redirect=" +
+        encodeURIComponent(location.pathname + location.search + location.hash);
+    };
+    back();
+    signIn.addEventListener("click", back);
+    signIn.addEventListener("auxclick", back);
+    return;
+  }
+  var user = account.user;
+  var name = user.display_name || user.email;
+  var button = box.querySelector(".avatar-btn");
+  var pop = box.querySelector(".account-pop");
+  box.querySelector(".account-initial").textContent = name.charAt(0).toUpperCase();
+  box.querySelector(".who-name").textContent = user.display_name || "";
+  box.querySelector(".who-email").textContent = user.email;
+  box.querySelector(".admin-link").hidden = !user.is_super_admin;
+  button.setAttribute("aria-label", button.getAttribute("aria-label") + " (" + name + ")");
+  signIn.hidden = true;
+  button.hidden = false;
+
+  function open(show) {
+    pop.hidden = !show;
+    button.setAttribute("aria-expanded", show ? "true" : "false");
+    if (show) pop.querySelector("a, button").focus();
+  }
+  button.addEventListener("click", function () { open(pop.hidden); });
+  document.addEventListener("click", function (e) {
+    if (!pop.hidden && !box.contains(e.target)) open(false);
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && !pop.hidden) { open(false); button.focus(); }
+  });
+
+  box.querySelector(".sign-out").addEventListener("click", function () {
+    var api = document.querySelector('meta[name="owb-api"]').content;
+    function done() {
+      try { localStorage.removeItem("owb.account"); } catch (e) { /* none */ }
+      location.reload();
+    }
+    fetch(api + "/api/auth/sign-out", { method: "POST", headers: { Authorization: "Bearer " + account.token } })
+      .then(done, done);
+  });
 })();
 
 // The footer's language links (language_links in scripts/build_site.py):
@@ -333,5 +375,99 @@
   // Its link home, only if the home page is saved (else it leads back here).
   document.querySelectorAll("a[data-if-saved]").forEach(function (a) {
     caches.match(a.getAttribute("href")).then(function (hit) { a.hidden = !hit; });
+  });
+})();
+
+// The saved verses page (saved_page in scripts/build_site.py): the
+// bookmarks and highlights web/reader.js keeps as owb.marks, by book in
+// canonical order, each with its words as they were shown when marked.
+(function () {
+  "use strict";
+  var box = document.getElementById("saved");
+  if (!box) return;
+  var data = JSON.parse(box.getAttribute("data-saved"));
+  var list = box.querySelector(".saved-list"), empty = box.querySelector(".saved-empty");
+  var filter = "all";
+
+  function load() {
+    try { return JSON.parse(localStorage.getItem("owb.marks") || "{}"); } catch (e) { return {}; }
+  }
+  function remove(id) {
+    var all = load();
+    delete all[id];
+    try { localStorage.setItem("owb.marks", JSON.stringify(all)); } catch (e) { /* ignore */ }
+    draw();
+  }
+  function el(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
+  }
+
+  function draw() {
+    var all = load();
+    var ids = Object.keys(all).filter(function (id) {
+      var m = all[id], book = id.split(".")[0];
+      if (data.order.indexOf(book) < 0) return false;
+      return filter === "all" || (filter === "bookmarks" ? m.b : m.h);
+    }).sort(function (a, b) {
+      var p = a.split("."), q = b.split(".");
+      return (data.order.indexOf(p[0]) - data.order.indexOf(q[0])) || (p[1] - q[1]) || (p[2] - q[2]);
+    });
+    list.textContent = "";
+    empty.hidden = ids.length > 0;
+    var group = null, book = null;
+    ids.forEach(function (id) {
+      var m = all[id], p = id.split(".");
+      if (p[0] !== book) {
+        book = p[0];
+        list.appendChild(el("h2", "saved-book", data.names[book]));
+        group = el("ul", "saved-items");
+        list.appendChild(group);
+      }
+      var li = el("li", "saved-item" + (m.h ? " hl-" + m.h : ""));
+      var head = el("p", "saved-head");
+      var a = el("a", null, data.names[book] + " " + p[1] + ":" + p[2]);
+      a.href = data.chapters[book].replace("{c}", p[1]) + "#v" + p[2];
+      head.appendChild(a);
+      if (m.b) {
+        var b = el("span", "saved-flag", data.bookmark);
+        head.appendChild(b);
+      }
+      var x = el("button", "saved-remove", data.remove);
+      x.type = "button";
+      x.addEventListener("click", function () { remove(id); });
+      head.appendChild(x);
+      li.appendChild(head);
+      if (m.text) {
+        var q = el("p", "saved-text", m.text);
+        if (m.lang && m.lang !== document.documentElement.lang) q.lang = m.lang;
+        li.appendChild(q);
+      }
+      group.appendChild(li);
+    });
+  }
+
+  box.querySelectorAll("[data-filter]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      filter = b.getAttribute("data-filter");
+      box.querySelectorAll("[data-filter]").forEach(function (o) { o.setAttribute("aria-pressed", o === b ? "true" : "false"); });
+      draw();
+    });
+  });
+  // Marks made or removed in another tab.
+  window.addEventListener("storage", function (e) { if (e.key === "owb.marks") draw(); });
+  draw();
+})();
+
+// The footer's "Report a problem" (footer_links in scripts/build_site.py)
+// opens a GitHub issue that already names the page it was reported from.
+(function () {
+  "use strict";
+  document.querySelectorAll("a[data-report]").forEach(function (a) {
+    var title = document.title.replace(/\s*[·|–-]\s*Open Word Bible$/, "");
+    a.href += "?title=" + encodeURIComponent(title + ": ") +
+      "&body=" + encodeURIComponent("Page: " + location.origin + location.pathname + "\n\nWhat's wrong:\n");
   });
 })();
