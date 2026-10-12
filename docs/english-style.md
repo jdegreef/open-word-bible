@@ -204,7 +204,7 @@ reviewer approves it, and an AI never changes a status.
 
 ## 9. Section headings
 
-Headings are editorial aids, not translation (`data/headings.json`). Readers
+Headings are editorial aids, not translation (`data/headings/<BOOK>.json`). Readers
 can hide them, and every heading stays an AI draft until a named reviewer
 approves it.
 
