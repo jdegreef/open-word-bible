@@ -63,5 +63,15 @@ jobs:
       - run: pip install -r backend/requirements.txt
       - name: Migrations are up to date
         run: python backend/manage.py makemigrations --check --dry-run
+      # DIAGNOSTIC (not for merge): log slow queries and per-test timings.
+      - name: Log slow queries
+        run: |
+          PGPASSWORD=postgres psql -h localhost -U postgres -d owb -c "ALTER SYSTEM SET log_min_duration_statement = 2000"
+          PGPASSWORD=postgres psql -h localhost -U postgres -d owb -c "SELECT pg_reload_conf()"
       - name: Backend tests
-        run: python backend/manage.py test backend_tests
+        env:
+          PYTHONUNBUFFERED: "1"
+        run: python -u backend/manage.py test backend_tests -v 2 --timing --durations 25
+      - name: Slow queries
+        if: always()
+        run: docker logs $(docker ps -q --filter ancestor=postgres:16) 2>&1 | grep -E 'duration:|statement:' | cut -c1-600 | tail -80
