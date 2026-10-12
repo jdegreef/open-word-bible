@@ -399,6 +399,44 @@ class SiteTest(unittest.TestCase):
         # A reference is the palette's first row, so Enter goes straight to it.
         self.assertLess(search.index('fill(ui("go_to")'), search.index('fill(ui("show_all")'))
 
+    def test_name_cards_match_the_word_data(self):
+        import glob
+        words = {}
+        for path in glob.glob(str(build_site.ROOT / "data" / "*" / "*.json")):
+            if "/grc/" in path or "/hbo/" in path:
+                for vid, ws in json.loads(Path(path).read_text(encoding="utf-8"))["verses"].items():
+                    for w in ws:
+                        words.setdefault((build_site.word_strong(w), w["lemma"]), set()).add(vid)
+        for (strong, lemma), senses in build_site.name_cards().items():
+            # Every lemma is copied from the source data, never typed.
+            self.assertIn((strong, lemma), words, (strong, lemma))
+            listed = [v for s in senses for v in s.get("verses", [])]
+            self.assertEqual(len(listed), len(set(listed)), strong)
+            self.assertLessEqual(sum("verses" not in s for s in senses), 1, strong)
+            self.assertTrue(set(listed) <= words[(strong, lemma)], strong)
+        # A page's cards resolve a shared name by verse: two Lamechs.
+        gen4 = self.chapter_data("gen/4")["cards"]["list"]
+        gen5 = self.chapter_data("gen/5")["cards"]["list"]
+        self.assertIn("Lamech, descendant of Cain", [c["title"] for c in gen4])
+        self.assertIn("Lamech, father of Noah", [c["title"] for c in gen5])
+
+    def test_site_can_be_installed_and_read_offline(self):
+        manifest = json.loads((self.out / "manifest.webmanifest").read_text(encoding="utf-8"))
+        for icon in manifest["icons"]:
+            self.assertTrue((self.out / icon["src"].lstrip("/")).is_file(), icon["src"])
+        sw = (self.out / "sw.js").read_text(encoding="utf-8")
+        self.assertNotIn("__PRECACHE__", sw)
+        self.assertNotIn("__VERSION__", sw)
+        precache = json.loads(re.search(r"var PRECACHE = (\[.*?\]);", sw)[1])
+        for u in precache:
+            path = u.split("?")[0].lstrip("/")
+            self.assertTrue((self.out / path).is_file() or (self.out / path / "index.html").is_file(), u)
+        for lang in build_site.LANGUAGES:
+            self.assertIn(build_site.url(lang, "/offline/"), precache)
+        page = (self.out / "jhn" / "2" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('<link rel="manifest" href="/manifest.webmanifest">', page)
+        self.assertNotIn("/offline/", (self.out / "sitemap.xml").read_text(encoding="utf-8"))
+
     def test_reader_can_read_aloud(self):
         for code in build_site.LANGUAGES:
             page = (self.out / build_site.url(code, "/jhn/2/").lstrip("/") / "index.html").read_text(encoding="utf-8")
