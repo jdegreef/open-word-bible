@@ -96,7 +96,7 @@ default and at least one distinct, non-empty alternative, and a
 The reader breaks the text into paragraphs where SBLGNT does: SBLGNT
 capitalises a paragraph's first word (`paragraph_starts` in
 `scripts/build_site.py`). Section headings are editorial aids, not
-translation: `data/headings.json` keys each one by the record it stands
+translation: `data/headings/<BOOK>.json` keys each one by the record it stands
 above, per language, and they stay AI drafts until a named reviewer
 approves them. A page shows a heading only in the language its sentence is
 shown in.
@@ -144,6 +144,7 @@ Other tools:
     python3 scripts/build_skeleton.py JHN.1.3 JHN.1.5 -o new.json
     python3 -m owb.validate content/JHN/*.json
     python3 scripts/extract_tokens.py         # refresh data/grc/ and data/hbo/ after adding verses
+    python3 scripts/build_versification.py    # rebuild data/versification.json after a source update
 
 ## The site
 
@@ -175,8 +176,8 @@ An article is translated by adding `articles/<lang>/<slug>.md` with the same
 slug. Until then, the other language's page shows the English under a note,
 names the English page as canonical and stays out of the sitemap.
 
-To add a language: add it to `LANGUAGES` and `BOOK_NAMES` in
-`scripts/build_site.py`, write `i18n/<lang>.json`, add its words to
+To add a language: add it to `LANGUAGES` in `scripts/build_site.py` and
+every book's name in it to `data/books.json`, write `i18n/<lang>.json`, add its words to
 `owb/morph.py`, and add it to `Role.READING_LANGUAGES` and the role
 constraint in `backend/accounts/models.py` (with a migration) so it can have
 language reviewers. A drafting brief in `docs/<language>-style.md` settles
@@ -195,12 +196,15 @@ matter block:
     ---
 
 The body is plain Markdown (`##` headings, paragraphs, `-` lists, `>` quotes,
-`**bold**`, `*italic*`, `[links](/jhn/1/)`). Greek is never typed: quote it
-with placeholders the build fills from `data/grc/`, and quote our own
-translation from `content/` the same way:
+`**bold**`, `*italic*`, `[links](/jhn/1/)`). Greek and Hebrew are never
+typed: quote them with placeholders the build fills from `data/grc/` and
+`data/hbo/`, and quote our own translation from `content/` the same way:
 
     {{GREEK:JHN.1.1:14-17}}   words 14-17 of John 1:1, as the SBLGNT has them
+    {{HEBREW:GEN.1.1:1-3}}    words 1-3 of Genesis 1:1, as the WLC has them
     {{LEMMA:JHN.1.14:17}}     the dictionary form of word 17 of John 1:14
+    {{LEMMA:GEN.1.1:1.2}}     a Hebrew word in parts (prefix, word, suffix):
+                              the dictionary form of part 2 of word 1
     {{OWB:JHN.1.1.s1:B}}      our English for that sentence, Balanced level
 
 `tests/test_articles.py` fails if an article contains typed Greek or Hebrew,

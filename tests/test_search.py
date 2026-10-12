@@ -6,7 +6,6 @@ import re
 import shutil
 import subprocess
 import sys
-import tempfile
 import unittest
 from pathlib import Path
 
@@ -14,19 +13,14 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import build_site  # noqa: E402
+from tests.site_build import built_site  # noqa: E402
 
 
 class SearchTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.tmp = tempfile.TemporaryDirectory()
-        cls.out = Path(cls.tmp.name) / "site"
-        build_site.build(cls.out)
+        cls.out = built_site()
         cls.records = build_site.all_records()
-
-    @classmethod
-    def tearDownClass(cls):
-        cls.tmp.cleanup()
 
     def index(self, lang):
         return json.loads((self.out / f"search-{lang}.json").read_text(encoding="utf-8"))
@@ -105,8 +99,8 @@ class SearchTest(unittest.TestCase):
         self.assertIn("filipenses", books["PHP"]["aliases"])
         self.assertIn("phil", books["PHP"]["aliases"])
         # Books without passages yet are known, for "not translated yet".
-        self.assertIn("EXO", books)
-        self.assertNotIn("chapters", books["EXO"])
+        self.assertIn("NAM", books)
+        self.assertNotIn("chapters", books["NAM"])
 
     def test_fold(self):
         self.assertEqual(build_site.fold("Señor Corazón"), "senor corazon")
