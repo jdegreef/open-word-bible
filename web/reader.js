@@ -17,12 +17,51 @@
 
   // The reading language is the page's (/es/... is Spanish); the footer
   // switches it. The other settings are kept across pages and languages.
-  var settings = { level: "B", gender: 0, christos: 0, divine_name: 0, deity_pronoun: 0, units: 0, plural_you: 0, view: 0, headings: 0 };
+  var settings = { level: "B", gender: 0, christos: 0, divine_name: 0, deity_pronoun: 0, units: 0, plural_you: 0, view: 0,
+                   headings: 0, uncertain: 0, partner: "" };
   try {
     var saved = JSON.parse(localStorage.getItem(STORE) || "{}");
     for (var k in settings) if (k in saved) settings[k] = saved[k];
   } catch (e) { /* storage unavailable: use defaults */ }
   settings.lang = DATA.lang;
+
+  // A shared link may carry the sender's settings (?level=L&title=1): they
+  // apply to this visit and are not saved unless the reader changes one.
+  var DEFAULTS = { level: "B", gender: 0, christos: 0, divine_name: 0, deity_pronoun: 0, plural_you: 0 };
+  var PARAMS = { level: "level", gender: "gender", christos: "title", divine_name: "name",
+                 deity_pronoun: "pronoun", plural_you: "plural" };
+  (function () {
+    var q = new URLSearchParams(location.search);
+    Object.keys(PARAMS).forEach(function (name) {
+      var v = q.get(PARAMS[name]);
+      if (v === null) return;
+      if (name === "level") { if (/^[LBR]$/.test(v)) settings.level = v; }
+      else if (v === "0" || v === "1") settings[name] = Number(v);
+    });
+  })();
+
+  // The query for a link that keeps this reader's settings: only those
+  // that differ from the defaults.
+  function settingsQuery() {
+    var q = new URLSearchParams();
+    Object.keys(PARAMS).forEach(function (name) {
+      if (settings[name] !== DEFAULTS[name]) q.set(PARAMS[name], settings[name]);
+    });
+    var s = q.toString();
+    return s ? "?" + s : "";
+  }
+
+  // Once the reader changes a setting the link's settings no longer apply;
+  // take them out of the address (a search's ?q= stays).
+  function dropSettingsParams() {
+    var q = new URLSearchParams(location.search), changed = false;
+    Object.keys(PARAMS).forEach(function (name) {
+      if (q.has(PARAMS[name])) { q.delete(PARAMS[name]); changed = true; }
+    });
+    if (!changed) return;
+    var s = q.toString();
+    try { history.replaceState(null, "", location.pathname + (s ? "?" + s : "") + location.hash); } catch (e) { /* ignore */ }
+  }
 
   var current = null;   // selected record
   var currentVerse = null;   // the verse within it that was chosen
@@ -158,7 +197,19 @@
       if (on && seg.children.length > 1) summary.push(on.textContent);
     });
     document.getElementById("settings-summary").textContent = summary.join(" \u00b7 ");
+    // On paper: the reference, the settings it was printed with, and where.
+    var head = document.getElementById("print-head");
+    if (head) head.textContent = DATA.title + " \u00b7 Open Word Bible \u00b7 " + summary.join(" \u00b7 ") +
+      " \u00b7 " + location.host + location.pathname;
     document.body.classList.toggle("plain", plain());
+    document.body.classList.toggle("view-parallel", parallel());
+    document.body.classList.toggle("view-interlinear", interlinear());
+    // Offer Parallel only with another language, Interlinear only with links.
+    var views = document.querySelector('[data-setting="view"]');
+    if (views) {
+      views.querySelector('[data-value="2"]').hidden = !partners().length;
+      views.querySelector('[data-value="3"]').hidden = !anyLinks();
+    }
   }
 
   // The headings control only where the chapter has headings.
@@ -167,7 +218,33 @@
 
   // Reading view: the text alone, without verse numbers, footnote letters or
   // the reasoning panel; verses are not buttons.
-  function plain() { return settings.view === 1; }
+  // Every view but Study is for reading: no reasoning panel, verses are not
+  // buttons. Parallel sets another language beside each sentence;
+  // Interlinear sets the original words over the English they became.
+  function plain() { return settings.view !== 0; }
+  function parallel() { return settings.view === 2 && partners().length > 0; }
+  function interlinear() { return settings.view === 3; }
+
+  // Languages to set beside the page's: those any sentence here has.
+  function partners() {
+    return DATA.languages.filter(function (l) { return l !== settings.lang; });
+  }
+  function partner() {
+    var all = partners();
+    return all.indexOf(settings.partner) >= 0 ? settings.partner : all[0];
+  }
+
+  // Interlinear needs alignments for this language and level.
+  function anyLinks(level) {
+    return DATA.records.some(function (r) {
+      return r.links && r.links[settings.lang] && (level ? r.links[settings.lang][level] : true);
+    });
+  }
+
+  var WORD_TEXT = {};
+  Object.keys(DATA.words).forEach(function (vid) {
+    DATA.words[vid].forEach(function (w) { WORD_TEXT[w.id] = w.text; });
+  });
 
   // The language a record is shown in: the reading language if the record
   // has it yet, otherwise the first language it does have (English runs
@@ -230,7 +307,7 @@
     var cat = t("category")[n.decision.category];
     if (cat) head.appendChild(el("span", "fn-pop-cat", cat));
     box.appendChild(head);
-    box.appendChild(el("p", "fn-pop-text", noteText(n.decision)));
+    box.appendChild(linked("p", "fn-pop-text", noteText(n.decision)));
     var more = el("button", "fn-pop-more", t("fn_reasoning") + " \u2192");
     more.type = "button";
     more.addEventListener("click", function () {
@@ -273,12 +350,30 @@
     note.hidden = !partial;
     note.textContent = partial ? t("partial") : "";
     document.getElementById("title").textContent = DATA.title;
+    if (parallel()) { drawParallel(box); drawUnsureToggle(0); drawViewTools(); drawNotes([]); return; }
+    drawViewTools();
     var shown = null;   // last verse number printed
     var marked = marks();
     var notes = [];
+    var unsureCount = 0;
     var starts = new Set(DATA.paragraphs);
     var para = null;    // the paragraph being filled
+    // A passage whose place in the text is disputed (John 7:53-8:11) is set
+    // apart in a block of its own, under a note that says why.
+    var disputed = DATA.disputed ? new Set(DATA.disputed.records) : new Set();
+    var page = box, inDisputed = false;
     DATA.records.forEach(function (r) {
+      if (disputed.has(r.id) !== inDisputed) {
+        inDisputed = !inDisputed;
+        para = null;
+        if (inDisputed) {
+          box = el("div", "disputed-block");
+          page.appendChild(box);
+          box.appendChild(disputedNote());
+        } else {
+          box = page;
+        }
+      }
       // A section heading, then a new paragraph where the Greek starts one.
       // The heading is shown in the language its sentence is shown in, and
       // left out until it has that language. Headings are editorial, not
@@ -305,9 +400,13 @@
         });
       var lang = textLang(r);
       var parts = versePieces(r, lang, settings.level);
+      // Where a decision is marked uncertain, the meaning is open to question.
+      var unsure = ds.meaning.concat(ds.rendering).some(function (d) { return d.uncertain; });
+      if (unsure) unsureCount++;
       var chosen = current && current.id === r.id;
       parts.forEach(function (part, i) {
-        var span = el("span", lang === settings.lang ? "verse" : "verse fallback");
+        var span = el("span", (lang === settings.lang ? "verse" : "verse fallback") +
+                           (settings.uncertain && unsure ? " unsure" : ""));
         if (lang !== settings.lang) span.lang = lang;
         if (!plain()) {
           span.tabIndex = 0;
@@ -325,6 +424,16 @@
         part[1].forEach(function (piece) {
           var text = render(piece[0]);
           if (!piece[1]) { span.appendChild(document.createTextNode(text)); return; }
+          if (interlinear()) {
+            // The original words over the English they became.
+            var ruby = el("ruby", "il");
+            ruby.appendChild(document.createTextNode(text));
+            var rt = el("rt", null, piece[1].map(function (id) { return WORD_TEXT[id] || ""; }).join(" ").trim());
+            rt.lang = DATA.source;
+            ruby.appendChild(rt);
+            span.appendChild(ruby);
+            return;
+          }
           var w = el("span", "aw", text);
           w.dataset.tokens = piece[1].join(" ");
           // In the chosen sentence, pointing at an English word lights the
@@ -362,30 +471,209 @@
         para.appendChild(document.createTextNode(" "));
       });
     });
+    box = page;
+    drawUnsureToggle(unsureCount);
     drawNotes(notes);
     if (listen.on) mark(false);
   }
+
+  function disputedNote() {
+    var d = DATA.disputed;
+    var note = el("div", "disputed-note");
+    note.appendChild(el("p", null, t("disputed_note").replace("{ref}", d.ref)));
+    var rec = DATA.records.filter(function (r) { return r.id === d.records[0]; })[0];
+    if (d.note && rec && !plain()) {
+      var why = el("button", "fn-pop-more", t("fn_reasoning") + " \u2192");
+      why.type = "button";
+      why.addEventListener("click", function () { select(rec, null, d.note); });
+      note.appendChild(why);
+    }
+    return note;
+  }
+
+  // Parallel: each sentence in a row, the page's language beside another.
+  function drawParallel(box) {
+    var other = partner();
+    var starts = new Set(DATA.paragraphs);
+    box.appendChild(parallelRow(DATA.languages.indexOf(settings.lang) >= 0 ? settings.lang : "en", other, true));
+    DATA.records.forEach(function (r) {
+      var heading = DATA.headings[r.id];
+      if (heading && settings.headings === 0 && (heading[settings.lang] || heading.en)) {
+        box.appendChild(el("h2", "section-head", render(heading[settings.lang] || heading.en)));
+      }
+      var row = el("div", "prow" + (starts.has(r.id) ? " pstart" : ""));
+      [textLang(r), other].forEach(function (lang, i) {
+        var cell = el("div", "pcell");
+        var has = r.renderings[lang];
+        if (!has) {
+          cell.appendChild(el("span", "pmissing", t("not_in_language")));
+        } else {
+          cell.lang = lang;
+          splitVerses(r, render(has[settings.level])).forEach(function (part, j) {
+            cell.appendChild(el("sup", "pv", part[0]));
+            cell.appendChild(document.createTextNode(part[1] + " "));
+          });
+          if (i === 0 && lang !== settings.lang) cell.classList.add("fallback");
+        }
+        row.appendChild(cell);
+      });
+      box.appendChild(row);
+    });
+  }
+
+  function parallelRow(a, b) {
+    var row = el("div", "prow phead");
+    [a, b].forEach(function (l) { row.appendChild(el("div", "pcell", t("lang_names")[l] || l)); });
+    return row;
+  }
+
+  // Above the text, in Parallel and Interlinear: the language to set beside
+  // the page's, or a word on where interlinear links exist so far.
+  function drawViewTools() {
+    var tools = document.getElementById("view-tools");
+    if (!tools) {
+      tools = el("div", "view-tools");
+      tools.id = "view-tools";
+      var box = document.getElementById("text");
+      box.parentNode.insertBefore(tools, box);
+    }
+    tools.textContent = "";
+    tools.hidden = !(parallel() || interlinear());
+    if (parallel()) {
+      tools.appendChild(el("span", "vt-label", t("parallel_with")));
+      partners().forEach(function (l) {
+        var b = el("button", "text-tool", t("lang_names")[l] || l);
+        b.type = "button";
+        b.setAttribute("aria-pressed", l === partner() ? "true" : "false");
+        b.addEventListener("click", function () { setSetting("partner", l); });
+        tools.appendChild(b);
+      });
+    } else if (interlinear() && !anyLinks(settings.level)) {
+      tools.appendChild(el("span", "vt-label", t("interlinear_none")));
+    }
+  }
+
+  // Above the text: mark the sentences where a decision is uncertain.
+  function drawUnsureToggle(n) {
+    var b = document.getElementById("unsure-toggle");
+    if (!b) {
+      b = el("button", "text-tool");
+      b.id = "unsure-toggle";
+      b.type = "button";
+      b.addEventListener("click", function () { setSetting("uncertain", settings.uncertain ? 0 : 1); });
+      var box = document.getElementById("text");
+      box.parentNode.insertBefore(b, box);
+    }
+    b.hidden = !n;
+    b.setAttribute("aria-pressed", settings.uncertain ? "true" : "false");
+    b.textContent = t("unsure_toggle").replace("{n}", n);
+  }
+
+  // Below the passage: its footnotes, or every note in the chapter grouped
+  // by topic (meaning notes, and the wording notes for this language and
+  // level), with the uncertain ones as a topic of their own.
+  var notesTab = "foot", topic = null;
+
+  // Printing shows the footnotes at the end, whatever the notes tab shows.
+  var screenTab = null;
+  window.addEventListener("beforeprint", function () {
+    screenTab = notesTab;
+    notesTab = "foot";
+    drawText();
+  });
+  window.addEventListener("afterprint", function () {
+    if (screenTab) { notesTab = screenTab; screenTab = null; drawText(); }
+  });
 
   function drawNotes(notes) {
     var section = document.getElementById("notes");
     if (!section) return;
     section.textContent = "";
-    section.hidden = !notes.length;
-    if (!notes.length) return;
-    section.appendChild(el("h2", null, t("notes")));
-    var list = el("ol");
-    notes.forEach(function (n) {
+    var all = [];
+    DATA.records.forEach(function (r) {
+      var ds = decisionsFor(r);
+      ds.meaning.concat(ds.rendering).forEach(function (d) { all.push({ record: r, decision: d }); });
+    });
+    section.hidden = !all.length;
+    if (!all.length) return;
+    if (!notes.length) notesTab = "topic";
+    var head = el("div", "notes-head");
+    head.appendChild(el("h2", null, t("notes")));
+    var tabs = el("div", "notes-tabs");
+    tabs.setAttribute("role", "group");
+    [["foot", t("notes_foot") + " (" + notes.length + ")"], ["topic", t("notes_topic") + " (" + all.length + ")"]]
+      .forEach(function (tab) {
+        if (tab[0] === "foot" && !notes.length) return;
+        var b = el("button", "notes-tab", tab[1]);
+        b.type = "button";
+        b.setAttribute("aria-pressed", notesTab === tab[0] ? "true" : "false");
+        b.addEventListener("click", function () { notesTab = tab[0]; drawNotes(notes); });
+        tabs.appendChild(b);
+      });
+    head.appendChild(tabs);
+    section.appendChild(head);
+
+    if (notesTab === "foot") {
+      var list = el("ol");
+      notes.forEach(function (n) {
+        var item = el("li");
+        var button = el("button", "note");
+        button.type = "button";
+        button.appendChild(el("span", "note-mark", n.mark));
+        button.appendChild(el("span", "note-ref", verseRange(n.record)));
+        button.appendChild(el("span", "note-text", noteText(n.decision)));
+        button.addEventListener("click", function () { select(n.record, null, n.decision.id); });
+        item.appendChild(button);
+        list.appendChild(item);
+      });
+      section.appendChild(list);
+      return;
+    }
+
+    // Topics: each category with its count, then "Uncertain".
+    var counts = {}, order = [];
+    all.forEach(function (n) {
+      var c = n.decision.category;
+      if (!(c in counts)) { counts[c] = 0; order.push(c); }
+      counts[c]++;
+    });
+    var unsure = all.filter(function (n) { return n.decision.uncertain; }).length;
+    var chips = el("div", "topic-chips");
+    function chip(value, label, n) {
+      var b = el("button", "topic-chip" + (value === "uncertain" ? " unc" : ""), label + " " + n);
+      b.type = "button";
+      b.setAttribute("aria-pressed", topic === value ? "true" : "false");
+      b.addEventListener("click", function () { topic = value; drawNotes(notes); });
+      chips.appendChild(b);
+    }
+    if (topic && topic !== "uncertain" && !(topic in counts)) topic = null;
+    chip(null, t("notes_all"), all.length);
+    order.sort(function (a, b) { return counts[b] - counts[a]; }).forEach(function (c) {
+      chip(c, t("category")[c] || c, counts[c]);
+    });
+    if (unsure) chip("uncertain", t("uncertain"), unsure);
+    section.appendChild(chips);
+
+    var shown = all.filter(function (n) {
+      return !topic || (topic === "uncertain" ? n.decision.uncertain : n.decision.category === topic);
+    });
+    var list2 = el("ul", "topic-list");
+    shown.forEach(function (n) {
+      var d = n.decision;
       var item = el("li");
       var button = el("button", "note");
       button.type = "button";
-      button.appendChild(el("span", "note-mark", n.mark));
       button.appendChild(el("span", "note-ref", verseRange(n.record)));
-      button.appendChild(el("span", "note-text", noteText(n.decision)));
-      button.addEventListener("click", function () { select(n.record); });
+      var body = el("span", "note-text");
+      body.appendChild(el("span", "topic-cat", t("category")[d.category] || d.category));
+      if (d.uncertain) body.appendChild(el("span", "badge unc", t("uncertain")));
+      body.appendChild(el("span", "topic-choice", render(d.choice)));
+      button.appendChild(body);
+      button.addEventListener("click", function () { select(n.record, null, d.id); });
       item.appendChild(button);
-      list.appendChild(item);
+      list2.appendChild(item);
     });
-    section.appendChild(list);
+    section.appendChild(list2);
   }
 
   function highlight(ids, card) {
@@ -397,6 +685,75 @@
     document.querySelectorAll(".aw").forEach(function (a) {
       a.classList.toggle("on", a.dataset.tokens.split(" ").some(function (id) { return set.has(id); }));
     });
+  }
+
+  // "Mark 14:54" or "2 Corinthians 7:9-10" in a note becomes a link: into
+  // the reader where that chapter is translated, otherwise to search (which
+  // says it is not translated yet). Book names come from DATA.bookRefs.
+  var REF = null;
+  function refPattern() {
+    if (REF) return REF;
+    var names = Object.keys(DATA.bookRefs.names).sort(function (a, b) { return b.length - a.length; })
+      .map(function (n) { return n.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); });
+    REF = new RegExp("\\b(" + names.join("|") + ") (\\d+):(\\d+)(?:[-\u2013](\\d+))?", "g");
+    return REF;
+  }
+
+  function refUrl(code, chapter, verse, label) {
+    var have = DATA.bookRefs.chapters[code] || [];
+    if (have.indexOf(chapter) < 0) return DATA.bookRefs.search + "?q=" + encodeURIComponent(label);
+    if (code === DATA.book && chapter === DATA.chapter) return "#v" + verse;
+    return (DATA.lang === "en" ? "" : "/" + DATA.lang) + "/" + code.toLowerCase() + "/" + chapter + "/#v" + verse;
+  }
+
+  function linked(tag, cls, text) {
+    var node = el(tag, cls);
+    var re = refPattern(), at = 0, m;
+    re.lastIndex = 0;
+    while ((m = re.exec(text))) {
+      node.appendChild(document.createTextNode(text.slice(at, m.index)));
+      var a = el("a", "sref", m[0]);
+      a.href = refUrl(DATA.bookRefs.names[m[1]], Number(m[2]), Number(m[3]), m[0]);
+      a.addEventListener("click", function (e) { e.stopPropagation(); });
+      node.appendChild(a);
+      at = m.index + m[0].length;
+    }
+    node.appendChild(document.createTextNode(text.slice(at)));
+    return node;
+  }
+
+  // Key terms and the people, places and peoples in the chosen sentence
+  // (DATA.cards, from data/key_terms.json and data/names.json). Tapping one
+  // lights its words in the Greek or Hebrew above.
+  function drawWordCards(panel) {
+    var byCard = {};
+    current.source.tokens.forEach(function (id) {
+      var i = DATA.cards.tokens[id];
+      if (i !== undefined) (byCard[i] = byCard[i] || []).push(id);
+    });
+    var found = Object.keys(byCard).map(Number);
+    if (!found.length) return;
+    panel.appendChild(el("h3", null, t("cards_title")));
+    var list = el("div", "wcards");
+    found.sort(function (a, b) { return DATA.cards.list[a].type === "term" ? -1 : DATA.cards.list[b].type === "term" ? 1 : a - b; })
+      .forEach(function (i) {
+        var c = DATA.cards.list[i];
+        var card = el("button", "wcard " + c.type);
+        card.type = "button";
+        var head = el("span", "wcard-head");
+        head.appendChild(el("span", "wcard-title", c.title));
+        var lemma = el("span", "wcard-lemma", c.lemma);
+        lemma.lang = DATA.source;
+        head.appendChild(lemma);
+        head.appendChild(el("span", "wcard-kind", t("card_kind")[c.type === "term" ? "term" : c.kind] || ""));
+        card.appendChild(head);
+        // A key term's note is for translators; readers get the rule it keeps.
+        if (c.type === "term") card.appendChild(el("span", "wcard-note", t("card_term").replace("{words}", c.english.join(", "))));
+        else card.appendChild(el("span", "wcard-note", c.note));
+        card.addEventListener("click", function () { highlight(byCard[i], null); light(byCard[i]); });
+        list.appendChild(card);
+      });
+    panel.appendChild(list);
   }
 
   function drawCard(d, record) {
@@ -411,7 +768,7 @@
     if (d.alternatives.length) {
       card.appendChild(el("div", "alts", t("also") + d.alternatives.map(render).join("; ")));
     }
-    card.appendChild(el("p", "why", d.reason));
+    card.appendChild(linked("p", "why", d.reason));
     function on() { highlight(d.tokens, card); }
     card.addEventListener("click", on);
     card.addEventListener("focus", on);
@@ -502,6 +859,7 @@
     var title = el("h2", "panel-title");
     title.appendChild(el("span", null, ref));
     title.appendChild(linkButton(currentVerse));
+    title.appendChild(imageButton(currentVerse));
     panel.appendChild(title);
     panel.appendChild(markRow(currentVerse));
 
@@ -590,6 +948,7 @@
     });
     panel.appendChild(el("p", "hint", t("levels_hint")));
     panel.appendChild(levels);
+    drawWordCards(panel);
 
     var ds = decisionsFor(current);
     panel.appendChild(el("h3", null, t("meaning")));
@@ -680,7 +1039,7 @@
     var label = el("span", null, t(share ? "share" : "copy_link"));
     b.appendChild(label);
     b.addEventListener("click", function () {
-      var link = location.origin + location.pathname + "#v" + verse;
+      var link = location.origin + location.pathname + settingsQuery() + "#v" + verse;
       var name = DATA.title.replace(/[\d:\u2013\s]+$/, "") + " " + DATA.chapter + ":" + verse;
       function done(ok) {
         label.textContent = t(ok ? "copied" : "copy_failed");
@@ -696,6 +1055,97 @@
       }
     });
     return b;
+  }
+
+  // An image of the verse to share: its text at the reader's settings, the
+  // reference and level, in the site's fonts and the reader's colours.
+  function imageButton(verse) {
+    var b = el("button", "copy-link", t("image"));
+    b.type = "button";
+    b.addEventListener("click", function () {
+      b.disabled = true;
+      verseImage(verse).then(function (file) {
+        b.disabled = false;
+        if (narrow() && navigator.canShare && navigator.canShare({ files: [file] })) {
+          navigator.share({ files: [file] }).catch(function () { /* dismissed */ });
+          return;
+        }
+        var a = document.createElement("a");
+        a.href = URL.createObjectURL(file);
+        a.download = file.name;
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+      }, function () { b.disabled = false; });
+    });
+    return b;
+  }
+
+  function verseText(verse) {
+    var out = [];
+    DATA.records.forEach(function (r) {
+      splitVerses(r, render(r.renderings[textLang(r)][settings.level])).forEach(function (part) {
+        if (part[0] === verse) out.push(part[1].trim());
+      });
+    });
+    return out.join(" ");
+  }
+
+  function wrapLines(ctx, text, width) {
+    var lines = [], line = "";
+    text.split(/\s+/).forEach(function (word) {
+      var test = line ? line + " " + word : word;
+      if (ctx.measureText(test).width > width && line) { lines.push(line); line = word; }
+      else line = test;
+    });
+    if (line) lines.push(line);
+    return lines;
+  }
+
+  function verseImage(verse) {
+    var size = 1200, pad = 100;
+    var css = getComputedStyle(document.documentElement);
+    function v(name, fallback) { return (css.getPropertyValue(name) || fallback).trim(); }
+    var bg = v("--surface", "#fff"), text = v("--text", "#221c15"), accent = v("--accent", "#3f3d9a"), muted = v("--muted", "#6e6358");
+    var serif = '"Gentium Book Plus", Georgia, serif', display = '"Fraunces", Georgia, serif', sans = '"Hanken Grotesk", system-ui, sans-serif';
+    var name = (DATA.books && DATA.books[DATA.book]) || DATA.title.replace(/[\d:\u2013\s]+$/, "");
+    var ref = name + " " + DATA.chapter + ":" + verse;
+    var words = verseText(verse);
+    return Promise.all([document.fonts.load("56px " + serif), document.fonts.load("600 48px " + display),
+                        document.fonts.load("600 28px " + sans)]).then(function () {
+      var canvas = document.createElement("canvas");
+      canvas.width = canvas.height = size;
+      var ctx = canvas.getContext("2d");
+      ctx.fillStyle = bg;
+      ctx.fillRect(0, 0, size, size);
+      ctx.fillStyle = accent;
+      ctx.fillRect(pad, pad, 72, 8);
+      // The largest text size that fits the space above the reference.
+      var fontSize = 64, lines, room = size - pad * 2 - 230;
+      do {
+        ctx.font = fontSize + "px " + serif;
+        lines = wrapLines(ctx, "\u201c" + words + "\u201d", size - pad * 2);
+        fontSize -= 2;
+      } while (lines.length * fontSize * 1.45 > room && fontSize > 26);
+      fontSize += 2;
+      ctx.fillStyle = text;
+      ctx.textBaseline = "top";
+      var y = pad + 60 + (room - lines.length * fontSize * 1.45) / 2;
+      lines.forEach(function (line) { ctx.fillText(line, pad, y); y += fontSize * 1.45; });
+      ctx.fillStyle = accent;
+      ctx.font = "600 48px " + display;
+      ctx.fillText(ref, pad, size - pad - 110);
+      ctx.fillStyle = muted;
+      ctx.font = "600 28px " + sans;
+      ctx.fillText("Open Word Bible \u00b7 " + t(settings.level) + " \u00b7 openwordbible.org", pad, size - pad - 40);
+      return new Promise(function (resolve, reject) {
+        canvas.toBlob(function (blob) {
+          if (!blob) return reject(new Error("no image"));
+          var file = ref.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") + ".png";
+          resolve(new File([blob], file, { type: "image/png" }));
+        }, "image/png");
+      });
+    });
   }
 
   // On narrow screens the panel is a bottom sheet over the text (see .panel
@@ -865,6 +1315,7 @@
   function setSetting(name, value) {
     var top = panelEl.scrollTop;
     settings[name] = value;
+    dropSettingsParams();
     save();
     drawControls();
     if (plain() && current) { deselect(); return; }
@@ -1280,6 +1731,7 @@
     // Back to this page from the browser's cache: the voice has stopped.
     window.addEventListener("pageshow", function (e) { if (e.persisted && listen.on) stopListening(); });
   }
+
 
   var start = hashVerse();
   var record = start && recordFor(start);
