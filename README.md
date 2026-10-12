@@ -54,7 +54,7 @@ Psalms 1–4 (`content/PSA/`) are drafted in English.
 
 Exodus 1–2 (`content/EXO/`) is drafted in English.
 
-Proverbs 1–2 (`content/PRO/`) is drafted in English.
+Proverbs 1–4 (`content/PRO/`) is drafted in English.
 
 A record is one sentence of the source, not one verse. It ends where the
 SBLGNT ends a sentence: a full stop, a question mark, or a raised dot (·)
