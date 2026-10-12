@@ -33,13 +33,13 @@ Decisions come in two layers:
 Each decision names its tokens, category, choice, alternatives and reason,
 and whether it is uncertain or needs a footnote.
 
-Content: Genesis 1–8 (`content/GEN/`) in English; John 1–8
+Content: Genesis 1–15 (`content/GEN/`) in English, with 1–8 also in Spanish; John 1–8
 (`content/JHN/`) in English, with chapters 1–5 also in Spanish, chapters
-1–2 in French and chapters 1–8 in Swahili; Romans 1–3 and 9–16 (`content/ROM/`) in
+1–2 in French and chapters 1–13 in Swahili; Romans 1–3 and 9–16 (`content/ROM/`) in
 English; all of 1 and 2 Corinthians (`content/1CO/`,
 `content/2CO/`) in English; all of Galatians (`content/GAL/`) in English; all of Philippians (`content/PHP/`) in English, with chapter 4
 also in Spanish; all of Ephesians (`content/EPH/`), Colossians
-(`content/COL/`) and Philemon (`content/PHM/`) in English; and all of James, 1 and 2 Peter and 1, 2 and 3
+(`content/COL/`), 1 and 2 Thessalonians (`content/1TH/`, `content/2TH/`) and Philemon (`content/PHM/`) in English; and all of James, 1 and 2 Peter and 1, 2 and 3
 John (`content/JAS/`, `content/1PE/`, `content/2PE/`, `content/1JN/`,
 `content/2JN/`, `content/3JN/`) in English. English runs
 ahead of the other languages; `docs/english-style.md` is the brief for
@@ -48,9 +48,15 @@ drafting it and `data/key_terms.json` the settled key terms.
 `docs/french-style.md` and
 `docs/swahili-style.md` are the briefs for French and Swahili.
 
-Matthew 1–4 (`content/MAT/`) is drafted in English.
+Matthew 1–9 (`content/MAT/`) is drafted in English.
 
 Psalms 1–12 (`content/PSA/`) are drafted in English.
+
+Old Testament verses are numbered as in the Hebrew text (a psalm's title is
+verse 1), not as in English Bibles; `data/versification.json` maps one to the
+other (`owb/versification.py`).
+
+Exodus 1–2 (`content/EXO/`) is drafted in English.
 
 A record is one sentence of the source, not one verse. It ends where the
 SBLGNT ends a sentence: a full stop, a question mark, or a raised dot (·)
@@ -142,6 +148,7 @@ Other tools:
     python3 scripts/build_skeleton.py JHN.1.3 JHN.1.5 -o new.json
     python3 -m owb.validate content/JHN/*.json
     python3 scripts/extract_tokens.py         # refresh data/grc/ and data/hbo/ after adding verses
+    python3 scripts/build_versification.py    # rebuild data/versification.json after a source update
 
 ## The site
 
@@ -193,12 +200,15 @@ matter block:
     ---
 
 The body is plain Markdown (`##` headings, paragraphs, `-` lists, `>` quotes,
-`**bold**`, `*italic*`, `[links](/jhn/1/)`). Greek is never typed: quote it
-with placeholders the build fills from `data/grc/`, and quote our own
-translation from `content/` the same way:
+`**bold**`, `*italic*`, `[links](/jhn/1/)`). Greek and Hebrew are never
+typed: quote them with placeholders the build fills from `data/grc/` and
+`data/hbo/`, and quote our own translation from `content/` the same way:
 
     {{GREEK:JHN.1.1:14-17}}   words 14-17 of John 1:1, as the SBLGNT has them
+    {{HEBREW:GEN.1.1:1-3}}    words 1-3 of Genesis 1:1, as the WLC has them
     {{LEMMA:JHN.1.14:17}}     the dictionary form of word 17 of John 1:14
+    {{LEMMA:GEN.1.1:1.2}}     a Hebrew word in parts (prefix, word, suffix):
+                              the dictionary form of part 2 of word 1
     {{OWB:JHN.1.1.s1:B}}      our English for that sentence, Balanced level
 
 `tests/test_articles.py` fails if an article contains typed Greek or Hebrew,
