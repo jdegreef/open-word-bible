@@ -3,6 +3,7 @@ title: "Grace upon grace: when a decision is marked uncertain"
 summary: Some translation choices are close calls. Open Word Bible says so openly. Two examples from John 1.
 date: 2026-10-10
 order: 7
+nav_title: When a decision is uncertain
 section: passage
 ---
 Every translation hides its close calls. A committee votes, the majority reading goes into the text, and the reader never learns that the vote was close. Open Word Bible marks such decisions as *uncertain*, explains both sides, and shows a label in the reader. Here are two.

@@ -318,6 +318,9 @@ def page(lang, title, body, path=None, current="", description="", card="site", 
 <meta name="owb-search" content="{search_index_url(lang)}">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="manifest" href="/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<meta name="theme-color" content="#f4eee3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#2a241c" media="(prefers-color-scheme: dark)">
 <script>{boot}</script>
 <link rel="preload" href="/fonts/hanken-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/gentium-book-plus-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -345,6 +348,9 @@ def languages_label(records):
                              if all(code in r["renderings"] for r in records))
 
 
+MENU_ARTICLES = 4  # articles per section in the header menu
+
+
 @functools.lru_cache(maxsize=None)
 def nav_menus(lang):
     """The header's dropdowns in lang, as [(key, label, icon, href, panel
@@ -360,24 +366,35 @@ def nav_menus(lang):
     def all_link(href, label):
         return f'<a class="dd-all" href="{href}">{label} {icon(ICONS["arrow"], 16)}</a>'
 
+    # Each book on one line with its progress; its chapters are one click
+    # further on, on the Read page.
     rows = []
     for book, chaps in books(lang):
-        name = BOOK_NAMES[book][lang]
-        progress = book_progress(book, chaps, lang)[2]
-        rows.append(f'<div class="dd-book">{row(url(lang, f"/read/#{book.lower()}"), name, progress, "book")}'
-                    f'<div class="dd-chaps" aria-label="{t(lang, "nav.book_chapters", book=name)}">'
-                    f'{chapter_pills(chaps, lang)}</div></div>')
-    read = (f'<p class="dd-head">{t(lang, "nav.books_so_far")}</p>{"".join(rows)}'
+        done, total, progress = book_progress(book, chaps, lang)
+        rows.append(f'<a class="dd-item dd-book" href="{url(lang, f"/read/#{book.lower()}")}" data-book="{book.lower()}">'
+                    f'<span class="dd-title">{BOOK_NAMES[book][lang]}</span>'
+                    f'<span class="dd-count" aria-hidden="true">{done}/{total}</span>'
+                    f'<span class="sr-only">, {progress}</span></a>')
+    read = (f'<p class="dd-head">{t(lang, "nav.books_so_far")}</p><div class="dd-books">{"".join(rows)}</div>'
             f'{all_link(url(lang, "/read/"), t(lang, "nav.all_books"))}')
 
+    # The first few articles of each section, by their short menu titles;
+    # the rest are on the articles page.
     articles = sorted(load_articles(lang), key=lambda a: a["order"])
-    groups = "".join(
-        f'<div class="dd-col"><p class="dd-head">{catalog(lang)["sections"][key]}</p>'
-        + "".join(row(url(lang, article_url(a)), display(a["title"]), t(lang, "article.min_read", n=a["minutes"]))
-                  for a in articles if a["section"] == key)
-        + "</div>"
-        for key in SECTIONS if any(a["section"] == key for a in articles))
-    arts = f'<div class="dd-cols">{groups}</div>{all_link(url(lang, "/articles/"), t(lang, "nav.all_articles"))}'
+    cols = []
+    for key in SECTIONS:
+        section = [a for a in articles if a["section"] == key]
+        if not section:
+            continue
+        more = (f'<a class="dd-more" href="{url(lang, "/articles/")}#{key}">'
+                f'{t(lang, "nav.section_all", n=len(section))} {icon(ICONS["arrow"], 14)}</a>'
+                if len(section) > MENU_ARTICLES else "")
+        cols.append(f'<div class="dd-col"><p class="dd-head">{catalog(lang)["sections"][key]}</p>'
+                    + "".join(row(url(lang, article_url(a)), display(a.get("nav_title") or a["title"]))
+                              for a in section[:MENU_ARTICLES])
+                    + f"{more}</div>")
+    arts = (f'<div class="dd-cols" style="--cols: {len(cols)}">{"".join(cols)}</div>'
+            f'{all_link(url(lang, "/articles/"), t(lang, "nav.all_articles"))}')
 
     about = ("".join((
         row(url(lang, "/about/"), t(lang, "nav.about_project"), t(lang, "nav.about_project_note"), "info"),
@@ -407,7 +424,10 @@ def site_header(lang, current, path=None, lang_path=None, translated=LANGUAGES):
             here = url(lang, path)
             panel = panel.replace(f'class="dd-item" href="{here}"', f'class="dd-item" href="{here}" aria-current="page"')
             panel = panel.replace(f'class="dd-all" href="{here}"', f'class="dd-all" href="{here}" aria-current="page"')
-            panel = re.sub(rf'(class="chap(?: part)?" href="{re.escape(here)}")', r'\1 aria-current="page"', panel)
+            # On a chapter page, its book in the Read menu is the current one.
+            book = re.match(r"/([a-z0-9]{3})/\d+/", path)
+            if book:
+                panel = panel.replace(f'data-book="{book[1]}"', f'data-book="{book[1]}" aria-current="true"')
         items.append(
             f'<li class="nav-item">'
             f'<button type="button" class="nav-link nav-trigger{" active" if on else ""}" '
@@ -853,6 +873,9 @@ def chapter_page(book, chapter, lang="en"):
             "source": source, "ui": catalog(lang)["reader.ui"], "records": records,
             "words": {vid: words[vid] for r in records for vid in r["refs"]},
             "paragraphs": paragraph_starts(records, words),
+            "disputed": disputed_block(records, lang),
+            "bookRefs": book_refs(lang),
+            "cards": word_cards(records, words),
             "headings": {r["id"]: headings()[r["id"]] for r in records if r["id"] in headings()}}
     # Each morphology code's description in every language, once per page.
     data["uses"] = word_uses()[1]
@@ -901,7 +924,8 @@ def chapter_page(book, chapter, lang="en"):
   {title_control}
   {control("pronouns", "deity_pronoun", [("0", t(lang, "reader.he")), ("1", t(lang, "reader.He"))])}{units}{plural}
   {control("headings", "headings", [("0", t(lang, "reader.show")), ("1", t(lang, "reader.hide"))])}
-  {control("view", "view", [("0", t(lang, "reader.study")), ("1", t(lang, "reader.reading"))], " view-control")}
+  {control("view", "view", [("0", t(lang, "reader.study")), ("1", t(lang, "reader.reading")),
+                            ("2", t(lang, "reader.parallel")), ("3", t(lang, "reader.interlinear"))], " view-control")}
 </div>
 <p class="hint"><span id="hint-level"></span> <span id="hint-gender"></span> <span id="hint-{title_setting}"></span> <span id="hint-deity_pronoun"></span> <span id="hint-units"></span> <span id="hint-plural_you"></span> <span id="hint-headings"></span> <span id="hint-view"></span></p>
 </div>
@@ -909,6 +933,7 @@ def chapter_page(book, chapter, lang="en"):
   <article class="passage">
     {chapter_strip(book, chapter, lang)}
     <h1 id="title">{html.escape(title)}</h1>
+    <p class="print-only print-head" id="print-head"></p>
     <p class="sub">{t(lang, "reader.sub" + suffix)}</p>
     <p class="notice" id="partial" hidden></p>
     <div class="text" id="text"></div>
@@ -1007,6 +1032,94 @@ DISPUTED = (("JHN.7.53", "JHN.8.11"),)
 def disputed(vid):
     key = refs.parse(vid).sort_key()
     return any(refs.parse(a).sort_key() <= key <= refs.parse(b).sort_key() for a, b in DISPUTED)
+
+
+@functools.lru_cache(maxsize=None)
+def key_terms():
+    """data/key_terms.json, by lemma."""
+    data = json.loads((ROOT / "data" / "key_terms.json").read_text(encoding="utf-8"))
+    return {t["lemma"]: t for t in data["terms"]}
+
+
+@functools.lru_cache(maxsize=None)
+def name_cards():
+    """data/names.json (people, places and peoples), by (Strong's number,
+    lemma). Each has one or more senses; a sense with "verses" is the one
+    for those verses, a sense without is the one for every other verse."""
+    path = ROOT / "data" / "names.json"
+    if not path.exists():
+        return {}
+    data = json.loads(path.read_text(encoding="utf-8"))
+    return {(n["strong"], n["lemma"]): n["senses"] for n in data["names"]}
+
+
+def word_strong(word):
+    """A word's Strong's number as names.json keys it: G or H and digits."""
+    prefix = "H" if word["id"].startswith("o") else "G"
+    return prefix + (word.get("strong") or "").lstrip("0")
+
+
+def word_cards(records, words):
+    """The key terms and the people, places and peoples among this page's
+    words: {"list": [card, ...], "tokens": {token id: index into list}}.
+    A name used of more than one person resolves to the sense for its verse."""
+    terms, names = key_terms(), name_cards()
+    mine = {t for r in records for t in r["source"]["tokens"]}
+    cards, index, tokens = [], {}, {}
+    for vid, ws in words.items():
+        for w in ws:
+            if w["id"] not in mine:
+                continue
+            card = None
+            term = terms.get(w["lemma"])
+            if term:
+                key = ("term", w["lemma"])
+                card = {"type": "term", "lemma": term["lemma"], "title": term["sense"],
+                        "english": term["english"], "note": term.get("note", "")}
+            senses = names.get((word_strong(w), w["lemma"]))
+            if senses and not card:
+                sense = next((s for s in senses if vid in s.get("verses", [])), None) \
+                    or next((s for s in senses if "verses" not in s), None)
+                if sense:
+                    key = ("name", w["lemma"], sense["name"])
+                    card = {"type": "name", "lemma": w["lemma"], "title": sense["name"],
+                            "kind": sense["kind"], "note": sense["note"]}
+            if card:
+                if key not in index:
+                    index[key] = len(cards)
+                    cards.append(card)
+                tokens[w["id"]] = index[key]
+    return {"list": cards, "tokens": tokens}
+
+
+@functools.lru_cache(maxsize=None)
+def book_refs(lang="en"):
+    """What the reader needs to link "Mark 14:54" in a note: every book's
+    names (English, which the notes are written in, and this language's)
+    and the chapters translated so far, which link into the reader; others
+    go to search, which says they are not translated yet."""
+    names = {}
+    for code, name in refs.BOOK_NAMES.items():
+        names[name] = code
+        local = BOOK_NAMES.get(code, {}).get(lang)
+        if local:
+            names[local] = code
+    chapters = {b: sorted(p.chapter for p in ps) for b, ps in books()}
+    return {"names": names, "chapters": chapters, "search": url(lang, "/search/")}
+
+
+def disputed_block(records, lang="en"):
+    """The reader's view of a disputed passage on this page: its records, its
+    reference, and the manuscript-reading decision that explains it (shown
+    from the note above the passage). None when the page has none."""
+    ids = [r["id"] for r in records if any(disputed(v) for v in r["refs"])]
+    if not ids:
+        return None
+    first = next(r for r in records if r["id"] == ids[0])
+    note = next((d["id"] for d in first["decisions"] if d["category"] == "text_variant"), None)
+    a, b = next((refs.parse(x), refs.parse(y)) for x, y in DISPUTED if disputed(first["refs"][0]))
+    span = f"{a.chapter}:{a.verse}\u2013" + (f"{b.verse}" if a.chapter == b.chapter else f"{b.chapter}:{b.verse}")
+    return {"records": ids, "ref": f"{BOOK_NAMES[a.book][lang]} {span}", "note": note}
 
 
 def psalm_title(vid):
@@ -1560,7 +1673,8 @@ def passage_label(book, chapter, verses, lang="en"):
 
 def _read_article(path):
     """One article file. It starts with a front matter block: title,
-    summary, date, order, section (a key of SECTIONS)."""
+    summary, date, order, section (a key of SECTIONS), and optionally
+    nav_title, a shorter title for the header menu."""
     text = path.read_text(encoding="utf-8")
     m = re.match(r"---\n(.*?)\n---\n(.*)", text, re.S)
     if not m:
@@ -1577,6 +1691,8 @@ def _read_article(path):
     if meta["section"] not in SECTIONS:
         raise SystemExit(f"{path.name}: section must be one of {', '.join(SECTIONS)}")
     meta["title"], meta["summary"] = smart_quotes(meta["title"]), smart_quotes(meta["summary"])
+    if "nav_title" in meta:
+        meta["nav_title"] = smart_quotes(meta["nav_title"])
     words = len(re.findall(r"\w+", re.sub(r"\{\{[^}]*\}\}", "", m[2])))
     return {**meta, "slug": path.stem, "body": m[2], "order": int(meta["order"]),
             "minutes": max(1, round(words / 220)), "passages": article_passages(m[2])}
@@ -1869,7 +1985,6 @@ def account_page(lang="en"):
 </form>
 <p><button class="button ghost" type="button" id="sign-out">{a("sign_out")}</button></p>
 </section>
-
 <div class="soon">
 <h2>{a("soon")}</h2>
 <p>{a("soon_text")}</p>
@@ -1962,7 +2077,12 @@ def manifest():
     return json.dumps({
         "name": SITE_NAME, "short_name": SITE_NAME, "start_url": "/", "scope": "/",
         "display": "standalone", "background_color": "#faf6ef", "theme_color": "#3f3d9a",
-        "icons": [{"src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml"}],
+        # PNGs too (web/icons/, scripts/build_icons.py): phones install from those.
+        "icons": [{"src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml"},
+                  {"src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png"},
+                  {"src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png"},
+                  {"src": "/icons/maskable-512.png", "sizes": "512x512", "type": "image/png",
+                   "purpose": "maskable"}],
     }, indent=2) + "\n"
 
 
@@ -2177,7 +2297,8 @@ def sitemap(paths):
 
 
 def build(out):
-    for cached in (nav_menus, footer_links, passages, asset, translated_verses, catalog, search_documents, search_index,
+    for cached in (nav_menus, footer_links, passages, asset, translated_verses, catalog, book_refs, key_terms, name_cards,
+                   search_documents, search_index,
                    search_index_url, word_uses):
         cached.cache_clear()
     if out.exists():
@@ -2221,6 +2342,7 @@ def build(out):
     for name in ("style.css", "reader.js", "site.js", "account.js", "search.js"):
         shutil.copy(ROOT / "web" / name, out / name)
     shutil.copytree(ROOT / "web" / "fonts", out / "fonts")
+    shutil.copytree(ROOT / "web" / "icons", out / "icons")
     shutil.copytree(OG, out / "og", ignore=shutil.ignore_patterns("*.digest"))
     return sorted(files) + ["reader.js", "search.js", "site.js", "style.css"]
 
