@@ -3,6 +3,7 @@ title: "Literal, Balanced, Readable: three levels, one meaning"
 summary: The same sentence translated three ways, for three kinds of reading, without ever changing what it means.
 date: 2026-10-10
 order: 3
+nav_title: Three levels, one meaning
 section: method
 ---
 People read the Bible for different reasons. A student comparing a verse with the Greek wants to see its structure. Someone reading a chapter aloud in church wants natural English. A new reader, or a child, wants plain words. One translation cannot serve all three equally well, so Open Word Bible gives every sentence at three levels.

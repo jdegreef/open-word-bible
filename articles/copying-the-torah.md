@@ -3,6 +3,7 @@ title: Copying with care, the rules for a Torah scroll
 summary: Jewish law developed detailed rules for copying the books of Moses, from the ink and the ruling to what to do when a scribe makes a mistake. What the rules are, where they come from, and what they did for the text.
 date: 2026-10-11
 order: 23
+nav_title: The rules for a Torah scroll
 section: history
 ---
 Visit a synagogue today and you may see the Torah scroll taken from the ark, unrolled, and read aloud. That scroll was written by hand by a trained scribe, following rules that are more than a thousand years old. A single missing letter would make it unfit for public reading.
