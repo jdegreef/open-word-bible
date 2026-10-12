@@ -1,5 +1,5 @@
 ---
-title: Copying with care, the rules for a Torah scroll
+title: "Copying with care: the rules for a Torah scroll"
 summary: Jewish law developed detailed rules for copying the books of Moses, from the ink and the ruling to what to do when a scribe makes a mistake. What the rules are, where they come from, and what they did for the text.
 date: 2026-10-11
 order: 23
