@@ -274,6 +274,7 @@
     note.textContent = partial ? t("partial") : "";
     document.getElementById("title").textContent = DATA.title;
     var shown = null;   // last verse number printed
+    var marked = marks();
     var notes = [];
     var starts = new Set(DATA.paragraphs);
     var para = null;    // the paragraph being filled
@@ -315,6 +316,9 @@
         }
         span.dataset.v = part[0];
         span.dataset.record = r.id;
+        var m = marked[verseId(part[0])];
+        if (m && m.h) span.classList.add("hl-" + m.h);
+        if (m && m.b) span.classList.add("bookmarked");
         if (current && current.id === r.id) span.setAttribute("aria-current", "true");
         if (part[0] !== shown) span.appendChild(el("sup", null, part[0]));
         shown = part[0];
@@ -499,6 +503,7 @@
     title.appendChild(el("span", null, ref));
     title.appendChild(linkButton(currentVerse));
     panel.appendChild(title);
+    panel.appendChild(markRow(currentVerse));
 
     panel.appendChild(el("h3", null, t("greek")));
     // Interlinear: each Greek word (or Hebrew morpheme) over its gloss. Tapping one shows its
@@ -596,6 +601,76 @@
     ds.rendering.forEach(function (d) { panel.appendChild(drawCard(d, current)); });
   }
 
+  // Bookmarks and highlights, kept in this browser as owb.marks by verse
+  // ("JHN.3.16"), so they hold whatever the settings or language. Each
+  // keeps the verse's words as shown when it was marked, for the saved
+  // verses page (site.js). {b: true, h: "yellow", text, lang, at}
+  var MARKS = "owb.marks";
+  var HUES = ["yellow", "green", "blue", "pink"];
+  function marks() {
+    try { return JSON.parse(localStorage.getItem(MARKS) || "{}"); } catch (e) { return {}; }
+  }
+  // "16" -> "JHN.3.16"; "7:53" (another chapter's verse) -> "JHN.7.53".
+  function verseId(v) {
+    var p = String(v).split(":");
+    return DATA.book + "." + (p.length > 1 ? p[0] + "." + p[1] : DATA.chapter + "." + v);
+  }
+  // A verse's words as shown, without its number or footnote letters.
+  function verseWords(v) {
+    var spans = document.querySelectorAll('#text .verse[data-v="' + v + '"]');
+    return Array.prototype.map.call(spans, function (s) {
+      var copy = s.cloneNode(true);
+      copy.querySelectorAll("sup").forEach(function (x) { x.remove(); });
+      return copy.textContent.trim();
+    }).join(" ");
+  }
+  function setMark(v, change) {
+    var all = marks(), id = verseId(v), m = all[id] || {};
+    for (var k in change) { if (change[k]) m[k] = change[k]; else delete m[k]; }
+    if (m.b || m.h) {
+      var span = verseEl(v);
+      m.text = verseWords(v);
+      m.lang = (span && span.lang) || settings.lang;
+      m.at = Date.now();
+      all[id] = m;
+    } else {
+      delete all[id];
+    }
+    try { localStorage.setItem(MARKS, JSON.stringify(all)); } catch (e) { /* storage full or blocked */ }
+    var top = panelEl.scrollTop;
+    drawText();
+    drawPanel();
+    panelEl.scrollTop = top;
+  }
+
+  // Under the panel's title: bookmark the verse, highlight it in a colour.
+  function markRow(v) {
+    var m = marks()[verseId(v)] || {};
+    var row = el("div", "mark-row");
+    var b = el("button", "mark-bookmark", t(m.b ? "bookmarked" : "bookmark"));
+    b.type = "button";
+    b.setAttribute("aria-pressed", m.b ? "true" : "false");
+    b.addEventListener("click", function () { setMark(v, { b: !m.b }); });
+    row.appendChild(b);
+    var hues = el("div", "mark-hues");
+    hues.setAttribute("role", "group");
+    hues.setAttribute("aria-label", t("highlight"));
+    HUES.forEach(function (hue) {
+      var h = el("button", "mark-hue hl-" + hue);
+      h.type = "button";
+      h.setAttribute("aria-label", t("hl_" + hue));
+      h.title = t("hl_" + hue);
+      h.setAttribute("aria-pressed", m.h === hue ? "true" : "false");
+      h.addEventListener("click", function () { setMark(v, { h: m.h === hue ? null : hue }); });
+      hues.appendChild(h);
+    });
+    row.appendChild(hues);
+    var all = el("a", "mark-all", t("saved_all"));
+    all.href = DATA.saved;
+    row.appendChild(all);
+    return row;
+  }
+
   // A link to this chapter opened at a verse (#v4). Phones offer the
   // system share sheet; elsewhere the link is copied.
   function linkButton(verse) {
@@ -627,6 +702,13 @@
   // in style.css), so opening it never moves the reader's place. The CSS
   // owns the breakpoint: the sheet is the panel when it is position: fixed.
   function narrow() { return getComputedStyle(panelEl).position === "fixed"; }
+  // Smooth scrolling, unless the reader asked for less motion (the device
+  // setting, or Motion in the gear menu: data-motion on <html>).
+  function scrollMotion() {
+    var reduce = document.documentElement.getAttribute("data-motion") === "reduce" ||
+      (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches);
+    return reduce ? "auto" : "smooth";
+  }
   function verseEl(v) { return document.querySelector('.verse[data-v="' + v + '"]'); }
   // A verse in the address: #v4, or plainly #4 (#v7:53 for a verse
   // of another chapter that a sentence runs into). #at-4 (from "Continue
@@ -669,7 +751,7 @@
     }
     if (narrow()) {
       var v = verseEl(verse);
-      if (v) v.scrollIntoView({ behavior: "smooth", block: "start" });
+      if (v) v.scrollIntoView({ behavior: scrollMotion(), block: "start" });
       // The sheet covers the text below the verse, so take focus into it.
       if (!card) panelEl.focus({ preventScroll: true });
     }
@@ -738,7 +820,7 @@
     var v = verseEl(next.verse);
     if (v && !narrow()) {
       v.focus({ preventScroll: true });
-      v.scrollIntoView({ block: "nearest", behavior: "smooth" });
+      v.scrollIntoView({ block: "nearest", behavior: scrollMotion() });
     }
   }
 
@@ -753,7 +835,7 @@
   // already puts it at the top, above the sheet.)
   function reveal(verse, instant) {
     var v = !narrow() && verseEl(verse);
-    if (v) v.scrollIntoView({ block: "center", behavior: instant ? "auto" : "smooth" });
+    if (v) v.scrollIntoView({ block: "center", behavior: instant ? "auto" : scrollMotion() });
   }
 
   // Swipe the sheet down to close it, when it is scrolled to its top. The
