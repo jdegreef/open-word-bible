@@ -23,7 +23,7 @@ sys.path.insert(0, str(ROOT))
 
 from typing import NamedTuple  # noqa: E402
 
-from owb import markup, morph, refs  # noqa: E402
+from owb import markup, morph, refs, versification  # noqa: E402
 
 # Every book's name in each interface language and its number of chapters
 # (data/books.json). All 66 are listed, so adding a book needs no edit here.
@@ -1132,12 +1132,11 @@ def disputed_block(records, lang="en"):
     return {"records": ids, "ref": f"{BOOK_NAMES[a.book][lang]} {span}", "note": note}
 
 
-# Verses that are only a psalm's title ("A psalm of David ..."), which the
-# Hebrew text counts as verse 1. A chapter's cards quote the psalm itself.
-TITLES = {
-    "PSA.3.1", "PSA.4.1", "PSA.5.1", "PSA.6.1", "PSA.7.1", "PSA.8.1", "PSA.9.1",
-    "PSA.12.1",
-}
+def psalm_title(vid):
+    """True for a verse that is only a psalm's title ("A psalm of David ..."),
+    which the Hebrew text counts as a verse and English Bibles do not number.
+    A chapter's cards quote the psalm itself."""
+    return not versification.to_english(refs.parse(vid))
 
 
 def opening(records, chapter):
@@ -1148,7 +1147,7 @@ def opening(records, chapter):
     for r in records:
         for vid in r["refs"]:
             if refs.parse(vid).chapter == chapter:
-                if not disputed(vid) and vid not in TITLES:
+                if not disputed(vid) and not psalm_title(vid):
                     return r, vid
                 first = first or (r, vid)
     return first
