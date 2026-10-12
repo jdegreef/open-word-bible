@@ -2,12 +2,12 @@
 // scripts/build_site.py): the colour mode, then the reading text's size,
 // typeface and line spacing. Each radiogroup is one setting (data-pref); a
 // choice is kept in localStorage as owb-<pref> and applied as data-<pref> on
-// <html>, and the default (data-default; "auto" for the colour mode, which
-// follows the device) removes both. The inline boot script in each page
+// <html>, and the default (data-default; "light", Paper, for the colour mode)
+// removes both. "auto" is a choice like any other: it follows the device. The inline boot script in each page
 // applies saved choices before paint.
 (function () {
   "use strict";
-  var MODES = ["light", "sepia", "dark", "night", "contrast"];
+  var MODES = ["auto", "light", "sepia", "dark", "night", "contrast"];
   var root = document.documentElement;
   var button = document.querySelector(".prefs-btn");
   var menu = document.getElementById("colour-menu");
@@ -167,24 +167,66 @@
   });
 })();
 
-// The header's account button: once signed in (web/account.js keeps a copy
-// of the account in localStorage), it shows the reader's initial.
+// The header's account menu (account_menu in scripts/build_site.py), as on
+// Ochorus. Signed out, "Sign in" leads to /login/ and back to this page.
+// Signed in (web/account.js keeps a copy of the account in localStorage),
+// the reader's initial opens a menu: their name and email, the account
+// page, Admin for a super admin, and signing out.
 (function () {
   "use strict";
-  var link = document.querySelector(".account-btn");
-  if (!link) return;
+  var box = document.querySelector(".account-menu");
+  if (!box) return;
+  var signIn = box.querySelector("[data-login]");
   var account = null;
   try { account = JSON.parse(localStorage.getItem("owb.account") || "null"); } catch (e) { /* none */ }
-  if (!account || !account.user) return;
-  var name = account.user.display_name || account.user.email;
-  var initial = link.querySelector(".account-initial");
-  initial.textContent = name.charAt(0).toUpperCase();
-  initial.hidden = false;
-  link.classList.add("signed-in");
-  // The label is in the page's language (data-signed-in, from i18n/).
-  var label = link.getAttribute("data-signed-in");
-  link.setAttribute("aria-label", label + " (" + name + ")");
-  link.title = label;
+  if (!account || !account.user) {
+    document.documentElement.classList.remove("signed-in");
+    // Set now, not on click, so a link opened in a new tab comes back too;
+    // and again on click, for a verse picked since (#v12).
+    var back = function () {
+      if (/\/(login|reset-password)\/$/.test(location.pathname)) return;
+      signIn.href = signIn.pathname + "?redirect=" +
+        encodeURIComponent(location.pathname + location.search + location.hash);
+    };
+    back();
+    signIn.addEventListener("click", back);
+    signIn.addEventListener("auxclick", back);
+    return;
+  }
+  var user = account.user;
+  var name = user.display_name || user.email;
+  var button = box.querySelector(".avatar-btn");
+  var pop = box.querySelector(".account-pop");
+  box.querySelector(".account-initial").textContent = name.charAt(0).toUpperCase();
+  box.querySelector(".who-name").textContent = user.display_name || "";
+  box.querySelector(".who-email").textContent = user.email;
+  box.querySelector(".admin-link").hidden = !user.is_super_admin;
+  button.setAttribute("aria-label", button.getAttribute("aria-label") + " (" + name + ")");
+  signIn.hidden = true;
+  button.hidden = false;
+
+  function open(show) {
+    pop.hidden = !show;
+    button.setAttribute("aria-expanded", show ? "true" : "false");
+    if (show) pop.querySelector("a, button").focus();
+  }
+  button.addEventListener("click", function () { open(pop.hidden); });
+  document.addEventListener("click", function (e) {
+    if (!pop.hidden && !box.contains(e.target)) open(false);
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && !pop.hidden) { open(false); button.focus(); }
+  });
+
+  box.querySelector(".sign-out").addEventListener("click", function () {
+    var api = document.querySelector('meta[name="owb-api"]').content;
+    function done() {
+      try { localStorage.removeItem("owb.account"); } catch (e) { /* none */ }
+      location.reload();
+    }
+    fetch(api + "/api/auth/sign-out", { method: "POST", headers: { Authorization: "Bearer " + account.token } })
+      .then(done, done);
+  });
 })();
 
 // The footer's language links (language_links in scripts/build_site.py):
@@ -333,5 +375,16 @@
   // Its link home, only if the home page is saved (else it leads back here).
   document.querySelectorAll("a[data-if-saved]").forEach(function (a) {
     caches.match(a.getAttribute("href")).then(function (hit) { a.hidden = !hit; });
+  });
+})();
+
+// The footer's "Report a problem" (footer_links in scripts/build_site.py)
+// opens a GitHub issue that already names the page it was reported from.
+(function () {
+  "use strict";
+  document.querySelectorAll("a[data-report]").forEach(function (a) {
+    var title = document.title.replace(/\s*[·|–-]\s*Open Word Bible$/, "");
+    a.href += "?title=" + encodeURIComponent(title + ": ") +
+      "&body=" + encodeURIComponent("Page: " + location.origin + location.pathname + "\n\nWhat's wrong:\n");
   });
 })();
