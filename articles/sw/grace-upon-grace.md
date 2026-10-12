@@ -21,7 +21,7 @@ Kwa sababu usomaji wote miwili unaweza kutetewa, uamuzi umewekewa alama ya kutok
 
 > **Halisi:** {{OWB:JHN.1.16.s1:L}}
 
-Kanuni ya viwango ni kwamba kiwango kinaweza kubaki na utata ulio katika asili, lakini hakiwezi kuchagua upande mwingine. Kwa Kiingereza, Halisi inasema "grace for grace", ambayo inaweza kusomwa kwa njia zote mbili. Halisi ya Kiswahili inatafsiri kihusishi hicho kwa maana yake ya kawaida, "badala ya". Lakini "neema badala ya neema" linaelekea zaidi upande wa kubadilishana kuliko Kigiriki kinavyofanya, kwa hiyo hapa ni mahali ambapo mkaguzi wa Kiswahili anapaswa kuangalia kama Halisi bado inaacha swali wazi.
+Kanuni ya viwango ni kwamba kiwango kinaweza kubaki na utata ulio katika asili, lakini hakiwezi kuchagua upande mwingine. Halisi inasema "neema kwa neema", ambayo, kama Kigiriki, inaweza kusomwa kwa njia zote mbili: neema moja juu ya nyingine, au neema moja badala ya nyingine. Haisemi "neema badala ya neema", kwa sababu hilo lingechagua upande wa kubadilishana.
 
 ## Yohana 1:5: kushinda, au kuelewa?
 
