@@ -378,6 +378,17 @@
   });
 })();
 
+// The footer's "Report a problem" (footer_links in scripts/build_site.py)
+// opens a GitHub issue that already names the page it was reported from.
+(function () {
+  "use strict";
+  document.querySelectorAll("a[data-report]").forEach(function (a) {
+    var title = document.title.replace(/\s*[·|–-]\s*Open Word Bible$/, "");
+    a.href += "?title=" + encodeURIComponent(title + ": ") +
+      "&body=" + encodeURIComponent("Page: " + location.origin + location.pathname + "\n\nWhat's wrong:\n");
+  });
+})();
+
 // The saved verses page (saved_page in scripts/build_site.py): the
 // bookmarks and highlights web/reader.js keeps as owb.marks, by book in
 // canonical order, each with its words as they were shown when marked.
@@ -459,15 +470,4 @@
   // Marks made or removed in another tab.
   window.addEventListener("storage", function (e) { if (e.key === "owb.marks") draw(); });
   draw();
-})();
-
-// The footer's "Report a problem" (footer_links in scripts/build_site.py)
-// opens a GitHub issue that already names the page it was reported from.
-(function () {
-  "use strict";
-  document.querySelectorAll("a[data-report]").forEach(function (a) {
-    var title = document.title.replace(/\s*[·|–-]\s*Open Word Bible$/, "");
-    a.href += "?title=" + encodeURIComponent(title + ": ") +
-      "&body=" + encodeURIComponent("Page: " + location.origin + location.pathname + "\n\nWhat's wrong:\n");
-  });
 })();
