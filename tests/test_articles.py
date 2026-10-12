@@ -75,7 +75,8 @@ class ArticlesTest(unittest.TestCase):
             self.assertIn(f"{build_site.SITE_URL}/articles/{a['slug']}/", sitemap)
         home = (self.out / "index.html").read_text(encoding="utf-8")
         self.assertIn('href="/articles/"', home)
-        self.assertIn(build_site.article_url(self.articles[0]), home)
+        first = min(self.articles, key=lambda a: a["order"])
+        self.assertIn(build_site.article_url(first), home)
 
     def test_every_article_has_a_known_section(self):
         for a in self.articles:
@@ -110,7 +111,7 @@ class SiteChromeTest(unittest.TestCase):
             self.assertIn('<footer class="site">', text, path)
             # Links stay in the page's language: /es/ pages link to /es/.
             lang = re.search(r'<html lang="([a-z]+)">', text)[1]
-            self.assertIn(f'href="{build_site.url(lang, "/jhn/1/")}"', text, path)
+            self.assertIn(f'href="{build_site.url(lang, "/read/#jhn")}"', text, path)
         about = (out / "about" / "index.html").read_text(encoding="utf-8")
         self.assertIn('<h2 id="credits">', about)
         self.assertIn('id="help"', (out / "index.html").read_text(encoding="utf-8"))
