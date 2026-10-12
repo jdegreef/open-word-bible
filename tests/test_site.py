@@ -235,6 +235,11 @@ class SiteTest(unittest.TestCase):
         self.assertIn('href="/read/#jhn"', header)
         self.assertIn('href="/read/#php"', header)
         self.assertNotIn('class="chap', header)
+        # ...grouped by testament, Old before New.
+        read = header[header.index('id="dd-read"'):header.index('id="dd-articles"')]
+        self.assertLess(read.index(">Old Testament<"), read.index('href="/read/#gen"'))
+        self.assertLess(read.index('href="/read/#gen"'), read.index(">New Testament<"))
+        self.assertLess(read.index(">New Testament<"), read.index('href="/read/#jhn"'))
         # The first few articles of each section, and a link to the rest.
         articles_ = sorted(build_site.load_articles(), key=lambda a: a["order"])
         for key in build_site.SECTIONS:
