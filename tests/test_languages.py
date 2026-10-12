@@ -181,6 +181,10 @@ class LanguagesTest(unittest.TestCase):
         page = self.read("es/account/index.html")
         m = re.search(r'id="account-text">(.*?)</script>', page, re.S)
         self.assertEqual(json.loads(m[1]), build_site.catalog("es")["account.ui"])
+        login = self.read("es/login/index.html")
+        m = re.search(r'id="login-text">(.*?)</script>', login, re.S)
+        self.assertEqual(json.loads(m[1]), build_site.catalog("es")["login.ui"])
+        self.assertIn("Bienvenido de nuevo", login)
         self.assertIn('<meta name="robots" content="noindex">', page)
         self.assertNotIn('rel="canonical"', page)
         # Unlisted, but the switch and the remembered choice still lead to it.

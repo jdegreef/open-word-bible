@@ -49,6 +49,16 @@
           "L": "Paul, an apostle, not from human beings nor through a human being, but through Jesus {{christos:Christ|Messiah}} and God [the] Father, who raised {{deity_pronoun:him|Him}} from [the] dead, \\v 2 and all the {{gender:brothers and sisters|brothers}} with me, to the churches of Galatia:",
           "B": "From Paul, an apostle sent not from any human source, nor through any human go-between, but through Jesus {{christos:Christ|the Messiah}} and God the Father, who raised {{deity_pronoun:him|Him}} from the dead, \\v 2 and from all the {{gender:brothers and sisters|brothers}} who are with me, to the churches of Galatia.",
           "R": "This letter is from Paul, an apostle. No human group sent me out, and no person made me an apostle. Jesus {{christos:Christ|the Messiah}} and God the Father sent me. It was God who raised Jesus from the dead. \\v 2 All the {{gender:brothers and sisters|brothers}} who are here with me join me in writing to the churches in Galatia."
+        },
+        "es": {
+          "L": "Pablo, apóstol, no de parte de seres humanos ni por medio de un ser humano, sino por medio de {{christos:Jesucristo|Jesús, el Mesías}} y de Dios Padre, que {{deity_pronoun:lo|Lo}} resucitó de entre [los] muertos, \\v 2 y todos los hermanos [que están] conmigo, a las iglesias de Galacia:",
+          "B": "De Pablo, apóstol, no enviado por iniciativa humana ni por medio de ningún intermediario humano, sino por medio de {{christos:Jesucristo|Jesús, el Mesías}} y de Dios Padre, que {{deity_pronoun:lo|Lo}} resucitó de entre los muertos, \\v 2 y de todos los hermanos que están conmigo, a las iglesias de Galacia.",
+          "R": "Esta carta es de Pablo, apóstol. Ningún grupo humano me envió, y ninguna persona me hizo apóstol. Fueron {{christos:Jesucristo|Jesús, el Mesías,}} y Dios Padre quienes me enviaron. Fue Dios quien resucitó a Jesús de entre los muertos. \\v 2 Todos los hermanos que están aquí conmigo se unen a mí para escribir a las iglesias de Galacia."
+        },
+        "sw": {
+          "L": "Paulo, mtume, si kutoka kwa wanadamu wala kupitia mwanadamu, bali kupitia Yesu {{christos:Kristo|Masihi}} na Mungu Baba, aliyemfufua kutoka kwa wafu, \\v 2 na ndugu wote walio pamoja nami, kwa makanisa ya Galatia:",
+          "B": "Kutoka kwa Paulo, mtume ambaye utume wake haukutoka kwa chanzo chochote cha kibinadamu, wala haukuja kupitia mtu yeyote wa kati, bali kupitia Yesu {{christos:Kristo|Masihi}} na Mungu Baba, aliyemfufua kutoka kwa wafu, \\v 2 na kutoka kwa ndugu wote walio pamoja nami, kwa makanisa ya Galatia.",
+          "R": "Barua hii inatoka kwa Paulo, mtume. Hakuna kundi la watu lililonituma, na hakuna mtu aliyenifanya kuwa mtume. Yesu {{christos:Kristo|Masihi}} na Mungu Baba ndio walionituma. Ni Mungu aliyemfufua Yesu kutoka kwa wafu. \\v 2 Ndugu wote walio hapa pamoja nami wanaungana nami kuyaandikia makanisa ya Galatia."
         }
       },
       "decisions": [
@@ -262,6 +272,90 @@
           "reason": "Readable turns the address into ordinary sentences, as Colossians 1:1 does, says plainly who sent Paul, and names the subject of \"raised\" (God) and its object (Jesus) instead of a pronoun.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n48001001012"
+          ],
+          "choice": "{{christos:Jesucristo|Jesús, el Mesías}}; {{christos:de Cristo|del Mesías}}",
+          "alternatives": [
+            "{{christos:Cristo|Mesías}} after \"Jesús\""
+          ],
+          "reason": "As in Romans 1:1: for \"Jesus Christ\" the default is the usual Spanish name \"Jesucristo\", and the alternative separates name and title, \"Jesús, el Mesías\". Where a preposition comes before the title the span takes it in, because Spanish puts the article before \"Mesías\" but not before \"Cristo\" (\"de Cristo\" | \"del Mesías\").",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48001002006"
+          ],
+          "choice": "hermanos, no setting",
+          "alternatives": [
+            "hermanos y hermanas"
+          ],
+          "reason": "As in Romans 1:13 and Philippians 4:1, Spanish \"hermanos\" already covers brothers and sisters, so there is no gender span in this letter.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48001002006"
+          ],
+          "choice": "ndugu, no setting",
+          "alternatives": [
+            "ndugu wa kiume na wa kike"
+          ],
+          "reason": "\"Ndugu\" already means brothers and sisters, so Swahili needs no gender span in this letter, as in Romans 1:13.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-2",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n48001001018"
+          ],
+          "choice": "spans only on free pronouns and possessives",
+          "alternatives": [
+            "a span for every pronoun the English marks"
+          ],
+          "reason": "As in Romans 1:1: Swahili marks the pronoun inside the verb (\"aliyemfufua\", who raised him), and a prefix cannot take a capital, so the deity_pronoun setting applies only to free pronouns and possessives, and Swahili has fewer spans than English.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -331,6 +425,16 @@
           "L": "Grace to you and peace from God [the] Father and our Lord Jesus {{christos:Christ|Messiah}}, \\v 4 who gave {{deity_pronoun:himself|Himself}} for our sins so that {{deity_pronoun:he|He}} might rescue us out of the present evil age, according to the will of our God and Father, \\v 5 to whom [be] the glory to the ages of the ages. Amen.",
           "B": "Grace and peace to you from God the Father and our Lord Jesus {{christos:Christ|the Messiah}}, \\v 4 who gave {{deity_pronoun:himself|Himself}} for our sins to rescue us from this present evil age, as our God and Father willed. \\v 5 To {{deity_pronoun:him|Him}} be the glory for ever and ever. Amen.",
           "R": "May God our Father and our Lord Jesus {{christos:Christ|the Messiah}} show you grace and give you peace. \\v 4 Jesus gave {{deity_pronoun:himself|Himself}} to die for our sins. He did it to rescue us from the evil age we live in now. This was what our God and Father wanted. \\v 5 May God receive glory forever and ever! Amen."
+        },
+        "es": {
+          "L": "Gracia a {{plural_you:ustedes|vosotros}} y paz de Dios Padre y de nuestro Señor {{christos:Jesucristo|Jesús, el Mesías}}, \\v 4 que se dio a {{deity_pronoun:sí mismo|Sí mismo}} por nuestros pecados para librarnos de la presente era mala, según la voluntad de nuestro Dios y Padre, \\v 5 a quien [sea] la gloria por los siglos de los siglos. Amén.",
+          "B": "Gracia y paz a {{plural_you:ustedes|vosotros}} de parte de Dios Padre y de nuestro Señor {{christos:Jesucristo|Jesús, el Mesías}}, \\v 4 que se entregó a {{deity_pronoun:sí mismo|Sí mismo}} por nuestros pecados para rescatarnos de esta era presente y malvada, como lo quiso nuestro Dios y Padre. \\v 5 A {{deity_pronoun:él|Él}} sea la gloria por los siglos de los siglos. Amén.",
+          "R": "Que Dios nuestro Padre y nuestro Señor {{christos:Jesucristo|Jesús, el Mesías,}} {{plural_you:les|os}} den gracia y paz. \\v 4 Jesús se dio a {{deity_pronoun:sí mismo|Sí mismo}} para morir por nuestros pecados. Lo hizo para rescatarnos de esta era malvada en que vivimos ahora. Eso era lo que quería nuestro Dios y Padre. \\v 5 ¡Que Dios reciba la gloria por siempre! Amén."
+        },
+        "sw": {
+          "L": "Neema kwenu na amani kutoka kwa Mungu Baba na Bwana wetu Yesu {{christos:Kristo|Masihi}}, \\v 4 aliyejitoa {{deity_pronoun:mwenyewe|Mwenyewe}} kwa ajili ya dhambi zetu ili atuokoe kutoka katika zama hizi za sasa zilizo mbovu, kwa kadiri ya mapenzi ya Mungu na Baba yetu, \\v 5 ambaye kwake [uwe] utukufu milele na milele. Amina.",
+          "B": "Neema na amani ziwe nanyi kutoka kwa Mungu Baba na Bwana wetu Yesu {{christos:Kristo|Masihi}}, \\v 4 aliyejitoa {{deity_pronoun:mwenyewe|Mwenyewe}} kwa ajili ya dhambi zetu, ili atuokoe kutoka katika zama hizi mbovu za sasa, kama Mungu na Baba yetu alivyopenda. \\v 5 Utukufu uwe {{deity_pronoun:kwake|Kwake}} milele na milele. Amina.",
+          "R": "Mungu Baba yetu na Bwana wetu Yesu {{christos:Kristo|Masihi}} wawape neema na amani. \\v 4 Yesu alijitoa {{deity_pronoun:mwenyewe|Mwenyewe}} afe kwa ajili ya dhambi zetu. Alifanya hivyo ili atuokoe kutoka katika zama hizi mbovu tunazoishi sasa. Hivyo ndivyo Mungu na Baba yetu alivyotaka. \\v 5 Mungu na apewe utukufu milele na milele! Amina."
         }
       },
       "decisions": [
@@ -585,6 +689,73 @@
           "reason": "Literal keeps the Hebrew-style phrase; Balanced uses the English phrase with the same force.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48001003002"
+          ],
+          "choice": "ustedes / vosotros forms",
+          "alternatives": [],
+          "reason": "Paul writes to the Galatian churches in the plural throughout the letter. Each plural \"you\" and its verb is a reader setting: ustedes (Latin America, the default) or vosotros (Spain), as in Romans.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48001004013",
+            "n48001005006",
+            "n48001005008"
+          ],
+          "choice": "\"era\" for the present evil age; \"por los siglos de los siglos\" (L, B), \"por siempre\" (R) in the praise",
+          "alternatives": [
+            "siglo",
+            "mundo"
+          ],
+          "reason": "In modern Spanish \"siglo\" is a century, and \"mundo\" would suggest the created world, which the meaning decision rules out. \"Era\" keeps the sense of a period of history. In the praise the same Greek word stands in a fixed phrase, and Spanish has its own fixed phrase for it, as in Philippians 4:20.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48001004013",
+            "n48001005006",
+            "n48001005008"
+          ],
+          "choice": "\"zama\" for the present evil age; \"milele na milele\" in the praise",
+          "alternatives": [
+            "ulimwengu",
+            "nyakati"
+          ],
+          "reason": "\"Ulimwengu\" is the world, which the meaning decision rules out; \"zama\" is an age or era, a period of history. In the praise the same Greek word stands in a fixed phrase for \"for ever\", and Swahili says \"milele na milele\" at Literal too, since \"zama za zama\" is not Swahili.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -641,6 +812,16 @@
           "L": "I am astonished that you are so quickly turning away from the one who called you in [the] grace of {{christos:Christ|Messiah}}, to a different gospel, \\v 7 which is not another [gospel]; except that there are some who are troubling you and want to distort the gospel of the {{christos:Christ|Messiah}}.",
           "B": "I am astonished that you are so quickly turning away from God, who called you by the grace of {{christos:Christ|the Messiah}}, and going over to a different gospel. \\v 7 But there is no second gospel. There are only some people who are unsettling you and want to twist the gospel of {{christos:Christ|the Messiah}} into something else.",
           "R": "I am shocked that you are so quickly turning away from God. He called you through the grace of {{christos:Christ|the Messiah}}. But now you are turning to a different kind of good news. \\v 7 Really, there is no other good news. But some people are confusing you. They want to change the good news about {{christos:Christ|the Messiah}} into something else."
+        },
+        "es": {
+          "L": "Me asombro de que tan rápido {{plural_you:estén|estéis}} desertando del que {{plural_you:los|os}} llamó en [la] gracia {{christos:de Cristo|del Mesías}} hacia un evangelio diferente, \\v 7 que no es otro [evangelio]; solo que hay algunos que {{plural_you:los|os}} inquietan y quieren torcer el evangelio {{christos:de Cristo|del Mesías}}.",
+          "B": "Me asombra que tan pronto {{plural_you:estén|estéis}} abandonando a Dios, que {{plural_you:los|os}} llamó por la gracia {{christos:de Cristo|del Mesías}}, y {{plural_you:se estén|os estéis}} pasando a un evangelio diferente. \\v 7 Pero no existe un segundo evangelio. Lo único que hay son algunas personas que {{plural_you:los|os}} inquietan y quieren torcer el evangelio {{christos:de Cristo|del Mesías}} para convertirlo en otra cosa.",
+          "R": "Me sorprende mucho que tan pronto {{plural_you:se estén|os estéis}} alejando de Dios. Él {{plural_you:los|os}} llamó por medio de la gracia {{christos:de Cristo|del Mesías}}. Pero ahora {{plural_you:se están|os estáis}} volviendo hacia otra clase de buena noticia. \\v 7 En realidad, no hay otra buena noticia. Pero algunas personas {{plural_you:los|os}} están confundiendo. Quieren convertir la buena noticia acerca {{christos:de Cristo|del Mesías}} en otra cosa."
+        },
+        "sw": {
+          "L": "Ninashangaa kwamba upesi hivi mnahama kutoka kwa yule aliyewaita katika neema ya {{christos:Kristo|Masihi}} kwenda kwenye Injili tofauti, \\v 7 ambayo si [Injili] nyingine; isipokuwa wapo watu fulani wanaowavuruga na wanaotaka kuipotosha Injili ya {{christos:Kristo|Masihi}}.",
+          "B": "Ninashangaa kwamba upesi hivi mnamwacha Mungu aliyewaita kwa neema ya {{christos:Kristo|Masihi}}, mkahamia Injili tofauti. \\v 7 Lakini hakuna Injili ya pili. Kuna watu fulani tu wanaowavuruga, nao wanataka kuipotosha Injili ya {{christos:Kristo|Masihi}} iwe kitu kingine.",
+          "R": "Nashangaa sana kwamba mnamwacha Mungu upesi hivi. Yeye aliwaita kupitia neema ya {{christos:Kristo|Masihi}}. Lakini sasa mnageukia habari njema ya aina nyingine. \\v 7 Kwa kweli, hakuna habari njema nyingine. Lakini watu fulani wanawachanganya. Wanataka kuibadilisha Habari Njema kuhusu {{christos:Kristo|Masihi}} iwe kitu kingine."
         }
       },
       "decisions": [
@@ -840,6 +1021,48 @@
           "reason": "Readable says plainly that the difference is one of kind (m5).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48001006005"
+          ],
+          "choice": "desertando (L); abandonando ... pasando a (B); alejando (R)",
+          "alternatives": [
+            "apartando",
+            "cambiando"
+          ],
+          "reason": "The verb was used of changing sides (meaning decision m4). Literal keeps that picture with \"desertar\"; Balanced says both halves of the move, leaving God and going over to another message; Readable uses the everyday \"alejarse\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48001006005"
+          ],
+          "choice": "kuhama (L); kumwacha ... kuhamia (B)",
+          "alternatives": [
+            "kugeuka"
+          ],
+          "reason": "\"Kuhama\" is to move away or change one's allegiance, which fits the picture of deserting one side for another (m4). Readable says \"mnamwacha\" and \"mnageukia\", plain words for leaving and turning to.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -878,6 +1101,16 @@
           "L": "But even if we or an angel from heaven should preach a gospel to you contrary to what we preached to you, let that one be accursed.",
           "B": "But even if we ourselves, or an angel from heaven, should preach to you a gospel other than the one we preached to you, let that one be under God's curse.",
           "R": "But suppose we ourselves, or even an angel from heaven, told you good news that is different from the good news we told you. Then may God's curse fall on them!"
+        },
+        "es": {
+          "L": "Pero aun si nosotros o un ángel del cielo {{plural_you:les|os}} anunciara un evangelio contrario al que {{plural_you:les|os}} anunciamos, quede bajo maldición.",
+          "B": "Pero aun si nosotros mismos, o un ángel del cielo, {{plural_you:les|os}} anunciara un evangelio distinto del que {{plural_you:les|os}} anunciamos, quien lo haga quede bajo la maldición de Dios.",
+          "R": "Supongamos que alguno de nosotros, o incluso un ángel del cielo, {{plural_you:les|os}} anunciara una buena noticia diferente de la que {{plural_you:les|os}} anunciamos. ¡Entonces, que la maldición de Dios caiga sobre quien lo haga!"
+        },
+        "sw": {
+          "L": "Lakini hata kama sisi au malaika kutoka mbinguni angewahubiria Injili iliyo kinyume na ile tuliyowahubiria, na alaaniwe.",
+          "B": "Lakini hata kama sisi wenyewe, au malaika kutoka mbinguni, angewahubiria Injili tofauti na ile tuliyowahubiria, huyo na awe chini ya laana ya Mungu.",
+          "R": "Lakini tuseme sisi wenyewe, au hata malaika kutoka mbinguni, angewaambia habari njema iliyo tofauti na Habari Njema tuliyowaambia. Basi laana ya Mungu na imwangukie huyo!"
         }
       },
       "decisions": [
@@ -1014,6 +1247,29 @@
           "reason": "Readable splits the condition and the curse into two sentences.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48001008015",
+            "n48001008016"
+          ],
+          "choice": "quede bajo maldición (L); quien lo haga quede bajo la maldición de Dios (B); que la maldición de Dios caiga sobre quien lo haga (R)",
+          "alternatives": [
+            "sea anatema",
+            "sea maldito"
+          ],
+          "reason": "\"Anatema\" is a church word few readers know. \"Sea maldito\" would make the one cursed masculine, while Paul includes himself, his companions and an angel; \"quedar bajo maldición\" and \"quien lo haga\" leave the subject open, as the English \"that one\" does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1051,6 +1307,16 @@
           "L": "As we have said before, so now I say again: if anyone is preaching a gospel to you contrary to what you received, let that one be accursed.",
           "B": "We have said it before, and now I say it again: if anyone preaches to you a gospel other than the one you received, let that one be under God's curse.",
           "R": "We told you this before, and now I am telling you again. If anyone tells you good news that is different from the good news you accepted, may God's curse fall on them!"
+        },
+        "es": {
+          "L": "Como hemos dicho antes, también ahora digo otra vez: si alguien {{plural_you:les|os}} está anunciando un evangelio contrario a lo que {{plural_you:recibieron|recibisteis}}, quede bajo maldición.",
+          "B": "Ya lo hemos dicho antes, y ahora lo repito: si alguien {{plural_you:les|os}} anuncia un evangelio distinto del que {{plural_you:recibieron|recibisteis}}, que quede bajo la maldición de Dios.",
+          "R": "Ya {{plural_you:se|os}} lo dijimos antes, y ahora {{plural_you:se|os}} lo vuelvo a decir. Si alguien {{plural_you:les|os}} anuncia una buena noticia diferente de la que {{plural_you:aceptaron|aceptasteis}}, ¡que la maldición de Dios caiga sobre esa persona!"
+        },
+        "sw": {
+          "L": "Kama tulivyosema kabla, hata sasa nasema tena: mtu yeyote akiwahubiria Injili iliyo kinyume na ile mliyoipokea, na alaaniwe.",
+          "B": "Tumekwisha kusema hapo awali, na sasa nasema tena: mtu yeyote akiwahubiria Injili tofauti na ile mliyoipokea, huyo na awe chini ya laana ya Mungu.",
+          "R": "Tuliwaambia jambo hili hapo kwanza, na sasa nawaambia tena. Mtu yeyote akiwaambia habari njema iliyo tofauti na Habari Njema mliyoikubali, laana ya Mungu na imwangukie!"
         }
       },
       "decisions": [
@@ -1171,6 +1437,16 @@
           "L": "For am I now winning over human beings, or God?",
           "B": "Is it people I am trying to win over now, or God?",
           "R": "So, am I now trying to win people over? Or am I trying to win God's approval?"
+        },
+        "es": {
+          "L": "Porque, ¿estoy ahora ganándome a los seres humanos, o a Dios?",
+          "B": "¿Es a la gente a quien intento ganarme ahora, o a Dios?",
+          "R": "Entonces, ¿estoy tratando ahora de ganarme a la gente? ¿O estoy tratando de ganarme la aprobación de Dios?"
+        },
+        "sw": {
+          "L": "Kwa maana je, sasa ninawavuta wanadamu [upande wangu], au Mungu?",
+          "B": "Je, ni watu ninaojaribu kuwavuta upande wangu sasa, au ni Mungu?",
+          "R": "Basi, je, sasa ninajaribu kuwafanya watu wanikubali? Au ninajaribu kupata kibali cha Mungu?"
         }
       },
       "decisions": [
@@ -1248,6 +1524,26 @@
           "reason": "Readable writes out the second half of the question.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48001010004"
+          ],
+          "choice": "kuvuta upande wangu",
+          "alternatives": [
+            "kushawishi"
+          ],
+          "reason": "\"Kushawishi\" is to persuade by argument, and the meaning decision rules that out, since no one argues God round. \"Kuvuta upande wangu\" (draw to my side) is winning someone over and fits both people and God.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1274,6 +1570,16 @@
           "L": "Or am I seeking to please human beings?",
           "B": "Or is my aim to please people?",
           "R": "Is my goal to make people happy with me?"
+        },
+        "es": {
+          "L": "¿O busco agradar a los seres humanos?",
+          "B": "¿O es mi propósito agradar a la gente?",
+          "R": "¿Es mi meta que la gente esté contenta conmigo?"
+        },
+        "sw": {
+          "L": "Au je, ninatafuta kuwapendeza wanadamu?",
+          "B": "Au je, lengo langu ni kuwapendeza watu?",
+          "R": "Je, lengo langu ni watu wapendezwe nami?"
         }
       },
       "decisions": [
@@ -1347,6 +1653,16 @@
           "L": "If I were still pleasing human beings, I would not be a slave of {{christos:Christ|Messiah}}.",
           "B": "If I were still out to please people, I would be no slave of {{christos:Christ|the Messiah}}.",
           "R": "If I were still trying to make people happy with me, I would not be a slave who serves {{christos:Christ|the Messiah}}."
+        },
+        "es": {
+          "L": "Si todavía agradara a los seres humanos, no sería esclavo {{christos:de Cristo|del Mesías}}.",
+          "B": "Si todavía quisiera agradar a la gente, no sería esclavo {{christos:de Cristo|del Mesías}}.",
+          "R": "Si todavía tratara de que la gente estuviera contenta conmigo, no sería un esclavo que sirve {{christos:a Cristo|al Mesías}}."
+        },
+        "sw": {
+          "L": "Kama ningekuwa bado ninawapendeza wanadamu, nisingekuwa mtumwa wa {{christos:Kristo|Masihi}}.",
+          "B": "Kama bado ningekuwa ninatafuta kuwapendeza watu, nisingekuwa mtumwa wa {{christos:Kristo|Masihi}}.",
+          "R": "Kama bado ningekuwa ninajaribu kuwafanya watu wapendezwe nami, nisingekuwa mtumwa anayemtumikia {{christos:Kristo|Masihi}}."
         }
       },
       "decisions": [
@@ -1443,6 +1759,48 @@
           "reason": "As in Philippians 1:1, never the softer \"servant\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48001010017"
+          ],
+          "choice": "esclavo",
+          "alternatives": [
+            "siervo"
+          ],
+          "reason": "As in Romans 1:1, \"esclavo\" says what the Greek word means (m3); the softer \"siervo\" of older Spanish Bibles is not used for it in Paul's letters.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48001010017"
+          ],
+          "choice": "mtumwa",
+          "alternatives": [
+            "mtumishi"
+          ],
+          "reason": "As in Romans 1:1, \"mtumwa\" is a slave, as the Greek word is; \"mtumishi\" (servant) would soften it.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1480,6 +1838,16 @@
           "L": "For I make known to you, {{gender:brothers and sisters|brothers}}, the gospel that was preached by me, that it is not of human [origin];",
           "B": "For I want you to know, {{gender:brothers and sisters|brothers}}, that the gospel I preached is no human invention.",
           "R": "My {{gender:brothers and sisters|brothers}}, I want you to understand this. The good news I told you is not something people made up."
+        },
+        "es": {
+          "L": "Porque {{plural_you:les|os}} hago saber, hermanos, el evangelio que fue anunciado por mí, que no es de [origen] humano;",
+          "B": "Porque quiero que {{plural_you:sepan|sepáis}}, hermanos, que el evangelio que yo anuncié no es invención humana.",
+          "R": "Hermanos míos, quiero que {{plural_you:entiendan|entendáis}} esto. La buena noticia que {{plural_you:les|os}} anuncié no es algo inventado por la gente."
+        },
+        "sw": {
+          "L": "Kwa maana nawajulisha, ndugu, Injili iliyohubiriwa nami, kwamba si ya [asili ya] kibinadamu;",
+          "B": "Kwa maana nataka mjue, ndugu, kwamba Injili niliyoihubiri si jambo lililobuniwa na wanadamu.",
+          "R": "Ndugu zangu, nataka mwelewe jambo hili. Habari Njema niliyowaambia si kitu ambacho watu walikitunga."
         }
       },
       "decisions": [
@@ -1624,6 +1992,16 @@
           "L": "For I did not receive it from a human being, nor was I taught [it], but [I received it] through a revelation of Jesus {{christos:Christ|Messiah}}.",
           "B": "I did not receive it from any human being, and nobody taught it to me. It came to me through a revelation of Jesus {{christos:Christ|the Messiah}}.",
           "R": "No person gave it to me, and no one taught it to me. Instead, God showed Jesus {{christos:Christ|the Messiah}} to me, and that is how I received it."
+        },
+        "es": {
+          "L": "Porque yo tampoco lo recibí de un ser humano, ni me fue enseñado, sino [que lo recibí] por medio de una revelación de {{christos:Jesucristo|Jesús, el Mesías}}.",
+          "B": "No lo recibí de ningún ser humano, y nadie me lo enseñó. Me llegó por medio de una revelación de {{christos:Jesucristo|Jesús, el Mesías}}.",
+          "R": "Ninguna persona me la dio, y nadie me la enseñó. Al contrario, Dios me mostró a {{christos:Jesucristo|Jesús, el Mesías}}, y así fue como la recibí."
+        },
+        "sw": {
+          "L": "Kwa maana mimi sikuipokea kutoka kwa mwanadamu, wala sikufundishwa, bali [niliipokea] kupitia ufunuo wa Yesu {{christos:Kristo|Masihi}}.",
+          "B": "Sikuipokea kutoka kwa mwanadamu yeyote, wala hakuna aliyenifundisha. Ilinijia kupitia ufunuo wa Yesu {{christos:Kristo|Masihi}}.",
+          "R": "Hakuna mtu aliyenipa, na hakuna aliyenifundisha. Badala yake, Mungu alinionyesha Yesu {{christos:Kristo|Masihi}}, na hivyo ndivyo nilivyoipokea."
         }
       },
       "decisions": [
@@ -1798,6 +2176,16 @@
           "L": "For you have heard of my way of life formerly in Judaism, that beyond measure I was persecuting the church of God and trying to destroy it, \\v 14 and I was advancing in Judaism beyond many of my own age among my people, being far more zealous for the traditions of my fathers.",
           "B": "You have heard about the way I once lived in Judaism: how fiercely I persecuted God's church and set out to destroy it. \\v 14 I was moving ahead in Judaism faster than many people my age among my own people, because I was far more zealous for the traditions handed down from my ancestors.",
           "R": "You have heard how I used to live when I was devoted to Judaism, the Jewish way of life. I attacked God's church with great violence. I tried to wipe it out. \\v 14 I was going further in Judaism than many others my age among my people. I was much more eager than they were to keep the traditions handed down from my ancestors."
+        },
+        "es": {
+          "L": "Porque {{plural_you:han|habéis}} oído de mi manera de vivir en otro tiempo en el judaísmo, que perseguía sobremanera a la iglesia de Dios y trataba de destruirla, \\v 14 y avanzaba en el judaísmo más que muchos de mi edad entre los de mi pueblo, siendo extremadamente celoso de las tradiciones de mis padres.",
+          "B": "{{plural_you:Ustedes han|Vosotros habéis}} oído cómo vivía yo antes en el judaísmo: con qué furia perseguía a la iglesia de Dios y me proponía destruirla. \\v 14 Avanzaba en el judaísmo más que muchos de mi edad en mi pueblo, porque defendía con mucho más celo las tradiciones heredadas de mis antepasados.",
+          "R": "{{plural_you:Ustedes han|Vosotros habéis}} oído cómo vivía yo cuando estaba entregado al judaísmo, la forma de vida judía. Atacaba a la iglesia de Dios con gran violencia. Trataba de acabar con ella. \\v 14 Iba más lejos en el judaísmo que muchos otros de mi edad en mi pueblo. Tenía mucho más empeño que ellos en cumplir las tradiciones que venían de mis antepasados."
+        },
+        "sw": {
+          "L": "Kwa maana mmesikia habari za mwenendo wangu wa zamani katika Uyahudi, kwamba nilikuwa nikilitesa kanisa la Mungu kupita kiasi na kujaribu kuliangamiza, \\v 14 nami nilikuwa nikiendelea katika Uyahudi kupita wengi wa rika langu katika taifa langu, nikiwa na ari kubwa zaidi kwa ajili ya mapokeo ya baba zangu.",
+          "B": "Mmesikia jinsi nilivyoishi zamani katika Uyahudi: jinsi nilivyolitesa kanisa la Mungu kwa ukali mkubwa na kujaribu kuliangamiza. \\v 14 Nilikuwa nikisonga mbele katika Uyahudi kuliko wengi wa rika langu katika taifa langu, kwa sababu nilikuwa na ari kubwa zaidi kwa mapokeo niliyorithi kutoka kwa mababu zangu.",
+          "R": "Mmesikia jinsi nilivyoishi zamani nilipokuwa nimejitoa kwa Uyahudi, yaani njia ya maisha ya Wayahudi. Nililishambulia kanisa la Mungu kwa ukatili mkubwa. Nilijaribu kulifuta kabisa. \\v 14 Nilikuwa nimeendelea katika Uyahudi kuliko wengine wengi wa rika langu katika taifa langu. Nilikuwa na hamu kubwa zaidi kuliko wao ya kushika mapokeo niliyorithi kutoka kwa mababu zangu."
         }
       },
       "decisions": [
@@ -1972,6 +2360,49 @@
           "reason": "The phrase means to an extreme degree; the context is violent persecution.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48001013009",
+            "n48001014005"
+          ],
+          "choice": "Uyahudi",
+          "alternatives": [
+            "dini ya Kiyahudi"
+          ],
+          "reason": "\"Dini ya Kiyahudi\" (the Jewish religion) would suggest a religion separate from faith in Christ, which the meaning decision rules out. \"Uyahudi\" names the Jewish way of life, and Readable explains it as \"njia ya maisha ya Wayahudi\". Because \"Uyahudi\" is also an older name for Judea, verse 22 calls the region \"Yudea\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-2",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48001014014"
+          ],
+          "choice": "ari",
+          "alternatives": [
+            "wivu",
+            "bidii"
+          ],
+          "reason": "\"Wivu\" is jealousy, and \"bidii\" is mere hard work. \"Ari\" is fervent devotion, the sense of the Greek word (m4); Readable says \"hamu kubwa\" (strong eagerness).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2048,6 +2479,16 @@
           "L": "But when the one who set me apart from my mother's womb and called [me] through {{deity_pronoun:his|His}} grace was pleased \\v 16 to reveal {{deity_pronoun:his|His}} Son in me, so that I might preach {{deity_pronoun:him|Him}} among the Gentiles, immediately I did not consult with flesh and blood, \\v 17 nor did I go up to Jerusalem to those [who were] apostles before me, but I went away into Arabia, and again I returned to Damascus.",
           "B": "But God set me apart from birth and called me by {{deity_pronoun:his|His}} grace, and when {{deity_pronoun:he|He}} chose \\v 16 to reveal {{deity_pronoun:his|His}} Son in me so that I would proclaim the gospel about {{deity_pronoun:him|Him}} among the Gentiles, I did not at once turn to any human being for advice. \\v 17 I did not go up to Jerusalem to see those who were apostles before me. Instead I went away to Arabia, and afterward I came back to Damascus.",
           "R": "But even before I was born, God set me apart. Because of {{deity_pronoun:his|His}} grace, {{deity_pronoun:he|He}} called me. Then the time came when {{deity_pronoun:he|He}} was pleased \\v 16 to show me {{deity_pronoun:his|His}} Son, so that I would tell the good news about {{deity_pronoun:him|Him}} to people who are not Jews. When that happened, I did not go to any person for advice. \\v 17 I did not go up to Jerusalem to see those who were apostles before me. Instead, I went off to Arabia. Later I went back to the city of Damascus."
+        },
+        "es": {
+          "L": "Pero cuando el que me apartó desde el vientre de mi madre y [me] llamó por medio de {{deity_pronoun:su|Su}} gracia tuvo a bien \\v 16 revelar a {{deity_pronoun:su|Su}} Hijo en mí, para que yo {{deity_pronoun:lo|Lo}} anunciara entre los gentiles, en seguida no consulté con carne y sangre, \\v 17 ni subí a Jerusalén a los que eran apóstoles antes que yo, sino que me fui a Arabia, y volví de nuevo a Damasco.",
+          "B": "Pero Dios me apartó desde mi nacimiento y me llamó por {{deity_pronoun:su|Su}} gracia, y cuando quiso \\v 16 revelar a {{deity_pronoun:su|Su}} Hijo en mí para que yo anunciara el evangelio acerca de {{deity_pronoun:él|Él}} entre los gentiles, no acudí enseguida a ningún ser humano en busca de consejo. \\v 17 No subí a Jerusalén para ver a los que eran apóstoles antes que yo. Más bien me fui a Arabia, y después regresé a Damasco.",
+          "R": "Pero aun antes de que yo naciera, Dios me apartó. Por {{deity_pronoun:su|Su}} gracia, me llamó. Luego llegó el momento en que {{deity_pronoun:le|Le}} agradó \\v 16 mostrarme a {{deity_pronoun:su|Su}} Hijo, para que yo anunciara la buena noticia acerca de {{deity_pronoun:él|Él}} a los que no son judíos. Cuando eso sucedió, no fui a pedir consejo a nadie. \\v 17 No subí a Jerusalén para ver a los que eran apóstoles antes que yo. Más bien, me fui a Arabia. Más tarde volví a la ciudad de Damasco."
+        },
+        "sw": {
+          "L": "Lakini ilipompendeza yule aliyenitenga tangu tumboni mwa mama yangu na kuniita kupitia neema {{deity_pronoun:yake|Yake}} \\v 16 kumfunua Mwana {{deity_pronoun:wake|Wake}} ndani yangu, ili nimhubiri kati ya watu wa mataifa, mara moja sikushauriana na mwili na damu, \\v 17 wala sikupanda kwenda Yerusalemu kwa wale waliokuwa mitume kabla yangu, bali nilienda zangu Uarabuni, kisha nikarudi tena Dameski.",
+          "B": "Lakini Mungu alinitenga tangu kuzaliwa kwangu, akaniita kwa neema {{deity_pronoun:yake|Yake}}, na alipoamua \\v 16 kumfunua Mwana {{deity_pronoun:wake|Wake}} ndani yangu ili nitangaze Injili inayomhusu kati ya watu wa mataifa, sikwenda mara moja kwa mwanadamu yeyote kutafuta ushauri. \\v 17 Sikupanda kwenda Yerusalemu kuwaona wale waliokuwa mitume kabla yangu. Badala yake nilienda Uarabuni, na baadaye nikarudi Dameski.",
+          "R": "Lakini hata kabla sijazaliwa, Mungu alikuwa amenitenga. Kwa sababu ya neema {{deity_pronoun:yake|Yake}}, aliniita. Kisha wakati ukafika ambapo alipendezwa \\v 16 kunionyesha Mwana {{deity_pronoun:wake|Wake}}, ili niwaambie watu wasio Wayahudi Habari Njema inayomhusu. Jambo hilo lilipotokea, sikwenda kwa mtu yeyote kuomba ushauri. \\v 17 Sikupanda kwenda Yerusalemu kuwaona wale waliokuwa mitume kabla yangu. Badala yake, nilienda Uarabuni. Baadaye nilirudi katika mji wa Dameski."
         }
       },
       "decisions": [
@@ -2288,6 +2729,26 @@
           "reason": "Readable explains \"Gentiles\" (m4).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48001015003"
+          ],
+          "choice": "tuvo a bien",
+          "alternatives": [
+            "le agradó",
+            "quiso"
+          ],
+          "reason": "\"Le agradó al que me apartó\" would put an unmarked pronoun for God before its noun; \"tuvo a bien\" says \"was pleased\" with the subject named, and keeps the verse break where the Greek has it.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2325,6 +2786,16 @@
           "L": "Then after three years I went up to Jerusalem to get to know Cephas, and I remained with him fifteen days.",
           "B": "Three years later I did go up to Jerusalem, to get to know Cephas, and I stayed with him for fifteen days.",
           "R": "Three years after that, I did go up to Jerusalem. I went to get to know Peter, and I stayed with him for fifteen days."
+        },
+        "es": {
+          "L": "Después, al cabo de tres años, subí a Jerusalén para conocer a Cefas, y me quedé con él quince días.",
+          "B": "Tres años más tarde sí subí a Jerusalén, para conocer a Cefas, y estuve con él quince días.",
+          "R": "Tres años después, sí subí a Jerusalén. Fui para conocer a Pedro, y me quedé con él quince días."
+        },
+        "sw": {
+          "L": "Kisha baada ya miaka mitatu nilipanda kwenda Yerusalemu ili kufahamiana na Kefa, nami nikakaa naye siku kumi na tano.",
+          "B": "Miaka mitatu baadaye ndipo nilipopanda kwenda Yerusalemu, ili kufahamiana na Kefa, nikakaa naye kwa siku kumi na tano.",
+          "R": "Miaka mitatu baadaye, nilipanda kwenda Yerusalemu. Nilienda kufahamiana na Petro, nikakaa naye kwa siku kumi na tano."
         }
       },
       "decisions": [
@@ -2431,6 +2902,16 @@
           "L": "But I did not see another of the apostles, except James the brother of the Lord.",
           "B": "Apart from James, the Lord's brother, I did not see any of the other apostles.",
           "R": "I did not see any of the other apostles. The only one I saw was James, the brother of the Lord Jesus."
+        },
+        "es": {
+          "L": "Pero no vi a otro de los apóstoles, excepto a Santiago, el hermano del Señor.",
+          "B": "Aparte de Santiago, el hermano del Señor, no vi a ningún otro de los apóstoles.",
+          "R": "No vi a ninguno de los otros apóstoles. El único al que vi fue Santiago, el hermano del Señor Jesús."
+        },
+        "sw": {
+          "L": "Lakini sikumwona mwingine yeyote wa mitume, isipokuwa Yakobo ndugu wa Bwana.",
+          "B": "Isipokuwa Yakobo, ndugu yake Bwana, sikumwona mtume mwingine yeyote.",
+          "R": "Sikumwona mtume mwingine yeyote. Niliyemwona peke yake ni Yakobo, ndugu yake Bwana Yesu."
         }
       },
       "decisions": [
@@ -2494,6 +2975,48 @@
           "reason": "Readable names Jesus as the Lord meant.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48001019009"
+          ],
+          "choice": "Santiago",
+          "alternatives": [
+            "Jacobo"
+          ],
+          "reason": "\"Santiago\" is the usual Spanish name for this James, the Lord's brother, and the name by which Spanish readers know the letter of James. \"Jacobo\" is used in some Bibles to keep the link with the patriarch Jacob.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48001019011"
+          ],
+          "choice": "ndugu",
+          "alternatives": [
+            "kaka"
+          ],
+          "reason": "\"Kaka\" is specifically an older brother. \"Ndugu\" is the ordinary word for a brother and can also mean a near relative, so it leaves open the question the meaning decision mentions, as the Greek does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2527,6 +3050,16 @@
           "L": "Now [in] what I am writing to you, look, before God, I am not lying.",
           "B": "Now, as God sees me, I am not lying in what I write to you.",
           "R": "God knows that what I am writing to you is true. I am not lying!"
+        },
+        "es": {
+          "L": "Y en lo que {{plural_you:les|os}} escribo, {{plural_you:miren|mirad}}, delante de Dios, no miento.",
+          "B": "Delante de Dios {{plural_you:les|os}} aseguro que no miento en lo que {{plural_you:les|os}} escribo.",
+          "R": "Dios sabe que lo que {{plural_you:les|os}} escribo es verdad. ¡No estoy mintiendo!"
+        },
+        "sw": {
+          "L": "Basi [katika] mambo ninayowaandikia, tazama, mbele za Mungu, sisemi uongo.",
+          "B": "Basi, mbele za Mungu nawahakikishia kwamba sisemi uongo katika mambo ninayowaandikia.",
+          "R": "Mungu anajua kwamba mambo ninayowaandikia ni kweli. Sisemi uongo!"
         }
       },
       "decisions": [
@@ -2642,6 +3175,16 @@
           "L": "Then I went into the regions of Syria and of Cilicia.",
           "B": "After that I went into the regions of Syria and Cilicia.",
           "R": "After that I went to the areas of Syria and Cilicia."
+        },
+        "es": {
+          "L": "Después fui a las regiones de Siria y de Cilicia.",
+          "B": "Después de eso fui a las regiones de Siria y Cilicia.",
+          "R": "Después fui a las zonas de Siria y Cilicia."
+        },
+        "sw": {
+          "L": "Kisha nilienda katika sehemu za Shamu na za Kilikia.",
+          "B": "Baada ya hapo nilienda katika maeneo ya Shamu na Kilikia.",
+          "R": "Baadaye nilienda sehemu za Shamu na Kilikia."
         }
       },
       "decisions": [
@@ -2681,6 +3224,27 @@
           ],
           "reason": "A plainer word.",
           "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48001021007"
+          ],
+          "choice": "Shamu",
+          "alternatives": [
+            "Siria"
+          ],
+          "reason": "\"Shamu\" is the long-standing Swahili name for Syria and is used for it throughout the Bible text; \"Siria\" is a modern borrowing. A reviewer may prefer \"Siria\" for younger readers.",
+          "uncertain": true,
           "footnote": false
         }
       ],
@@ -2740,6 +3304,16 @@
           "L": "But I remained unknown by face to the churches of Judea that are in {{christos:Christ|Messiah}}; \\v 23 they were only hearing, \"The one who once persecuted us is now preaching the faith that he once tried to destroy,\" \\v 24 and they glorified God because of me.",
           "B": "The churches of Judea that are in {{christos:Christ|the Messiah}} still did not know me by sight. \\v 23 They only kept hearing it said, \"The man who used to persecute us is now proclaiming the faith he once set out to destroy.\" \\v 24 And because of me they glorified God.",
           "R": "At that time the churches in Judea that belong to {{christos:Christ|the Messiah}} had never met me. \\v 23 All they knew was what others were saying: \"The man who used to attack us is now telling others the good news, the very faith he once tried to wipe out!\" \\v 24 And they gave glory to God because of what had happened to me."
+        },
+        "es": {
+          "L": "Pero yo seguía siendo desconocido de vista para las iglesias de Judea que [están] en {{christos:Cristo|el Mesías}}; \\v 23 solamente oían [decir]: «El que antes nos perseguía ahora anuncia la fe que antes trataba de destruir», \\v 24 y glorificaban a Dios por causa de mí.",
+          "B": "Las iglesias de Judea que están en {{christos:Cristo|el Mesías}} todavía no me conocían en persona. \\v 23 Solo oían decir una y otra vez: «El que antes nos perseguía ahora está anunciando la fe que en otro tiempo se propuso destruir». \\v 24 Y glorificaban a Dios por causa de mí.",
+          "R": "En ese tiempo, las iglesias de Judea que pertenecen {{christos:a Cristo|al Mesías}} nunca me habían visto. \\v 23 Solo sabían lo que otros decían: «¡El hombre que antes nos atacaba ahora anuncia la buena noticia, la misma fe que antes quería destruir!». \\v 24 Y daban gloria a Dios por lo que había pasado conmigo."
+        },
+        "sw": {
+          "L": "Nami nilikuwa sijulikani kwa uso na makanisa ya Yudea yaliyo katika {{christos:Kristo|Masihi}}; \\v 23 ila yalikuwa yakisikia tu kwamba, \"Yule aliyekuwa akitutesa zamani sasa anaihubiri imani aliyokuwa akijaribu kuiangamiza zamani,\" \\v 24 nayo yalikuwa yakimtukuza Mungu kwa sababu yangu.",
+          "B": "Makanisa ya Yudea yaliyo katika {{christos:Kristo|Masihi}} bado hayakunifahamu kwa sura. \\v 23 Yalikuwa yakisikia tu watu wakisema, \"Mtu yule aliyekuwa akitutesa sasa anaitangaza imani aliyokuwa ameazimia kuiangamiza.\" \\v 24 Nayo yakamtukuza Mungu kwa sababu yangu.",
+          "R": "Wakati huo, makanisa ya Yudea yaliyo ya {{christos:Kristo|Masihi}} yalikuwa hayajawahi kukutana nami. \\v 23 Waumini wa huko walijua tu yale ambayo watu wengine walikuwa wakisema: \"Mtu yule aliyekuwa akitushambulia sasa anawaambia watu Habari Njema, imani ile ile aliyojaribu kuifuta kabisa!\" \\v 24 Nao wakampa Mungu utukufu kwa sababu ya yale yaliyotokea maishani mwangu."
         }
       },
       "decisions": [
@@ -2910,6 +3484,27 @@
             "because of me"
           ],
           "reason": "Readable says why they praised God (m5).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48001022009"
+          ],
+          "choice": "Yudea",
+          "alternatives": [
+            "Uyahudi"
+          ],
+          "reason": "Older Swahili Bibles call Judea \"Uyahudi\", but in verses 13-14 that word names Judaism, the Jewish way of life. \"Yudea\" keeps the region and the way of life apart.",
           "uncertain": false,
           "footnote": false
         }
