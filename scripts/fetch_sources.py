@@ -3,8 +3,9 @@
 Usage: python3 scripts/fetch_sources.py [name ...]
 
 Each source is fetched shallowly at its pinned commit from sources.lock.json
-and checked out detached. A source already at its pinned commit is skipped.
-A source with "paths" gets a sparse checkout of just those files and folders.
+and checked out detached. A source already at its pinned commit is not
+fetched again. A source with "paths" gets a sparse checkout of just those
+files and folders.
 Files a source stores with Git LFS (listed under "lfs" with their SHA-256)
 are downloaded to <name>-lfs/<path> and checked against that hash.
 """
@@ -32,6 +33,8 @@ def head(path):
 def fetch(name, repo, commit, vendor, paths=None):
     dest = vendor / name
     if dest.exists() and head(dest) == commit:
+        if paths:   # in case paths were added to sources.lock.json
+            git("sparse-checkout", "set", "--no-cone", *paths, cwd=dest)
         print(f"{name}: already at {commit[:12]}")
         return
     dest.mkdir(parents=True, exist_ok=True)

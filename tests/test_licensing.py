@@ -7,14 +7,13 @@ import io
 import json
 import re
 import sys
-import tempfile
 import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-import build_site  # noqa: E402
+from tests.site_build import built_site  # noqa: E402
 from extract_tokens import content_refs  # noqa: E402
 from owb.sources import macula_greek, macula_hebrew, read_text  # noqa: E402
 
@@ -50,18 +49,12 @@ def restricted_values():
 class LicensingTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.tmp = tempfile.TemporaryDirectory()
-        cls.site = Path(cls.tmp.name) / "site"
-        build_site.build(cls.site)
+        cls.site = built_site()
         cls.extracts = {p: json.loads(p.read_text(encoding="utf-8"))
                         for p in sorted((ROOT / "data").rglob("*.json"))}
         # Every text file the site serves; fonts and share images are binary.
         cls.pages = {p: p.read_text(encoding="utf-8") for p in sorted(cls.site.rglob("*"))
                      if p.is_file() and p.suffix not in (".woff2", ".jpg")}
-
-    @classmethod
-    def tearDownClass(cls):
-        cls.tmp.cleanup()
 
     def test_extracts_have_no_restricted_fields(self):
         self.assertTrue(self.extracts)
