@@ -117,11 +117,16 @@ class SiteChromeTest(unittest.TestCase):
 
 
 class ColourModesTest(unittest.TestCase):
-    MODES = [v for v, *_ in build_site.COLOUR_MODES if v != "auto"]
+    MODES = [v for v, *_ in build_site.COLOUR_MODES]
 
     def test_five_colour_modes_plus_automatic(self):
-        self.assertEqual(self.MODES, ["light", "sepia", "dark", "night", "contrast"])
-        self.assertEqual(build_site.COLOUR_MODES[0][0], "auto")
+        self.assertEqual(self.MODES, ["auto", "light", "sepia", "dark", "night", "contrast"])
+
+    def test_paper_is_the_default(self):
+        css = (ROOT / "web" / "style.css").read_text(encoding="utf-8")
+        self.assertIn('data-pref="theme" data-default="light"', build_site.colour_menu("en"))
+        # With no choice saved, nothing follows the device's dark setting.
+        self.assertNotIn(":root:not([data-theme])", css)
 
     def test_every_mode_is_styled_and_known_to_the_scripts(self):
         css = (ROOT / "web" / "style.css").read_text(encoding="utf-8")
