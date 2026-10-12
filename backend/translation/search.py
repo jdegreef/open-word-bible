@@ -115,6 +115,12 @@ def rebuild():
             || setweight(to_tsvector(config::regconfig, extra), 'B')
             || setweight(to_tsvector(config::regconfig, body), 'C')
             || setweight(to_tsvector('{SIMPLE}', concat_ws(' ', title, extra, body)), 'D')""")
+        # Fresh statistics for the planner. Without them it can take the
+        # tables for empty (after the delete above, or a vacuum that ran
+        # while they were) and plan a search that ranks every match once
+        # for every entry: hours instead of milliseconds.
+        for model in (SearchEntry, SearchWord, SearchLanguage):
+            cursor.execute(f"ANALYZE {model._meta.db_table}")
     return counts
 
 
@@ -146,10 +152,9 @@ class Query(NamedTuple):
     def match(self):
         return "(" + " OR ".join(f"(e.config = '{c}' AND e.vector @@ q.{c})" for c in self.configs) + ")"
 
-    @property
-    def own(self):
-        """The entry's own tsquery."""
-        return "CASE e.config " + " ".join(f"WHEN '{c}' THEN q.{c}" for c in self.configs) + " END"
+    def own(self, e="e"):
+        """The tsquery for entry e's own configuration."""
+        return f"CASE {e}.config " + " ".join(f"WHEN '{c}' THEN q.{c}" for c in self.configs) + " END"
 
 
 def tsquery(lang, query_terms):
@@ -193,12 +198,12 @@ def _rows(sql, params):
         return cursor.fetchall()
 
 
-def _headline(query):
+def _headline(query, e="e"):
     """A short passage of a note's reason or an article's text around the
-    match, with the matches marked ⟦ ⟧."""
-    return (f"CASE WHEN e.kind IN ('n', 'a') THEN ts_headline(e.config::regconfig, e.body, {query.own}, "
-            "'StartSel=\u27e6, StopSel=\u27e7, MinWords=18, MaxWords=40, ShortWord=2, "
-            "MaxFragments=1, FragmentDelimiter=\" \u2026 \"') END")
+    match, with the matches marked ⟦ ⟧ (e is the entry's table alias)."""
+    return (f"CASE WHEN {e}.kind IN ('n', 'a') THEN ts_headline({e}.config::regconfig, {e}.body, {query.own(e)}, "
+            "'StartSel=⟦, StopSel=⟧, MinWords=18, MaxWords=40, ShortWord=2, "
+            "MaxFragments=1, FragmentDelimiter=\" … \"') END")
 
 
 def _result(doc, headline):
@@ -220,19 +225,20 @@ def counts(lang, query):
 
 def best_of_each(lang, query, per):
     """The best `per` documents of each kind."""
-    rows = _rows(f"""WITH q AS ({query.sql}),
-        hits AS (
-          SELECT e.id, e.kind, row_number() OVER (
-            PARTITION BY e.kind ORDER BY ts_rank_cd(e.vector, {query.own}) DESC, e.position) AS n
-          FROM {_table()} e, q WHERE e.language = %s AND {query.match})
-        SELECT e.doc, {_headline(query)} FROM hits h JOIN {_table()} e ON e.id = h.id, q
-        WHERE h.n <= %s ORDER BY e.kind = 'c' DESC, e.kind = 'v' DESC, e.kind = 'n' DESC, h.n""",
+    # One pass over the matches, with no join back to the table: a join
+    # lets the planner rank every match again for each row it joins.
+    rows = _rows(f"""WITH q AS ({query.sql})
+        SELECT h.doc, {_headline(query, "h")} FROM (
+          SELECT e.doc, e.kind, e.config, e.body, row_number() OVER (
+            PARTITION BY e.kind ORDER BY ts_rank_cd(e.vector, {query.own()}) DESC, e.position) AS n
+          FROM {_table()} e, q WHERE e.language = %s AND {query.match}) h, q
+        WHERE h.n <= %s ORDER BY h.kind = 'c' DESC, h.kind = 'v' DESC, h.kind = 'n' DESC, h.n""",
                  [*query.params, lang, per])
     return [_result(doc, hl) for doc, hl in rows]
 
 
 def page(lang, query, kind, offset, limit, sort):
-    order = "e.position" if sort == "order" else f"ts_rank_cd(e.vector, {query.own}) DESC, e.position"
+    order = "e.position" if sort == "order" else f"ts_rank_cd(e.vector, {query.own()}) DESC, e.position"
     rows = _rows(f"""WITH q AS ({query.sql})
         SELECT e.doc, {_headline(query)} FROM {_table()} e, q
         WHERE e.language = %s AND e.kind = %s AND {query.match}

@@ -29,6 +29,16 @@
           "L": "Tell me, you who want to be under [the] law, do you not listen to the law?",
           "B": "You who want to be under the law, tell me: do you not hear what the law says?",
           "R": "You want to live under the law. Then tell me, do you not listen to what the law itself says?"
+        },
+        "es": {
+          "L": "{{plural_you:Díganme|Decidme}}, {{plural_you:ustedes|vosotros}} que {{plural_you:quieren|queréis}} estar bajo [la] ley, ¿no {{plural_you:escuchan|escucháis}} la ley?",
+          "B": "{{plural_you:Ustedes|Vosotros}}, los que {{plural_you:quieren|queréis}} estar bajo la ley, {{plural_you:díganme|decidme}}: ¿no {{plural_you:escuchan|escucháis}} lo que dice la ley?",
+          "R": "{{plural_you:Quieren|Queréis}} vivir bajo la ley. Entonces {{plural_you:díganme|decidme}}: ¿no {{plural_you:escuchan|escucháis}} lo que dice la ley misma?"
+        },
+        "sw": {
+          "L": "Niambieni, ninyi mnaotaka kuwa chini ya sheria, je, hamsikilizi sheria?",
+          "B": "Ninyi mnaotaka kuwa chini ya sheria, niambieni: je, hamsikii kile ambacho sheria inasema?",
+          "R": "Mnataka kuishi chini ya sheria. Basi niambieni, je, hamsikilizi kile ambacho sheria yenyewe inasema?"
         }
       },
       "decisions": [
@@ -107,6 +117,67 @@
           "reason": "Readable splits the question in two and adds \"itself\" to show the turn in Paul's argument: the law they want points away from the law (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48004021001",
+            "n48004021011"
+          ],
+          "choice": "ustedes / vosotros forms",
+          "alternatives": [],
+          "reason": "Paul addresses the Galatians in the plural. As elsewhere in his letters, each plural \"you\" and its verb is a reader setting: ustedes (Latin America, the default) or vosotros (Spain).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48004021011"
+          ],
+          "choice": "escuchar",
+          "alternatives": [
+            "oír"
+          ],
+          "reason": "\"Oír\" can mean only that sound reaches the ear; \"escuchar\" is to listen and attend, which is the sense of the meaning decision (m2), so every level uses it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48004021011"
+          ],
+          "choice": "kusikiliza (L, R); kusikia (B)",
+          "alternatives": [
+            "kusikia at every level"
+          ],
+          "reason": "\"Kusikia\" is to hear, \"kusikiliza\" to listen with attention. Literal and Readable use \"hamsikilizi\" for the sense of the meaning decision (m2); Balanced says \"hamsikii kile ambacho sheria inasema\", where hearing what the law says carries the same point.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -145,6 +216,16 @@
           "L": "For it is written that Abraham had two sons, one from the slave woman and one from the free [woman].",
           "B": "Scripture says that Abraham had two sons: one was the son of the slave woman, the other the son of the free woman.",
           "R": "The Scriptures say that Abraham had two sons. One son's mother was a slave woman. The other son's mother was a free woman."
+        },
+        "es": {
+          "L": "Porque está escrito que Abraham tuvo dos hijos, uno de la esclava y uno de la libre.",
+          "B": "La Escritura dice que Abraham tuvo dos hijos: uno fue hijo de la esclava, y el otro, hijo de la mujer libre.",
+          "R": "Las Escrituras dicen que Abraham tuvo dos hijos. La madre de uno era una esclava. La madre del otro era una mujer libre."
+        },
+        "sw": {
+          "L": "Kwa maana imeandikwa kwamba Ibrahimu alikuwa na wana wawili, mmoja kutoka kwa mwanamke mtumwa na mmoja kutoka kwa [mwanamke] huru.",
+          "B": "Maandiko yanasema kwamba Ibrahimu alikuwa na wana wawili: mmoja alikuwa mwana wa mwanamke mtumwa, na mwingine mwana wa mwanamke huru.",
+          "R": "Maandiko yanasema kwamba Ibrahimu alikuwa na wana wawili. Mama wa mwana mmoja alikuwa mtumwa. Mama wa yule mwingine alikuwa mwanamke huru."
         }
       },
       "decisions": [
@@ -254,6 +335,51 @@
           "reason": "Balanced gives the sense of the set formula \"it has been written\": this is what Scripture records.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48004022011",
+            "n48004022016"
+          ],
+          "choice": "la esclava ... la libre (L); la mujer libre (B, R)",
+          "alternatives": [
+            "la sierva",
+            "la criada"
+          ],
+          "reason": "\"Esclava\" is the feminine of \"esclavo\", the word used for doulos throughout Paul, and keeps the slave/free contrast of the passage; \"sierva\" and \"criada\" soften it. Spanish can make the adjective a noun with the article, \"la libre\", so Literal needs no bracket; Balanced and Readable say \"la mujer libre\" for clarity.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48004022011",
+            "n48004022016"
+          ],
+          "choice": "mwanamke mtumwa ... mwanamke huru",
+          "alternatives": [
+            "mjakazi ... muungwana"
+          ],
+          "reason": "\"Mjakazi\" is the traditional word for a slave woman, but it is now old and can be heard as a maidservant. \"Mwanamke mtumwa\" uses \"mtumwa\", the word for doulos throughout Paul, and so keeps the link with \"utumwa\" (slavery) in verses 24-25 and 5:1; \"mwanamke huru\" stands against it.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -292,6 +418,16 @@
           "L": "But the [one] from the slave woman was born according to [the] flesh, and the [one] from the free [woman] through [the] promise.",
           "B": "The slave woman's son was born according to the flesh, but the free woman's son was born through the promise.",
           "R": "The slave woman's son was born in the ordinary way, through a plan people made. But the free woman's son was born because of what God had promised."
+        },
+        "es": {
+          "L": "Pero el de la esclava nació según [la] carne, y el de la libre, por medio de [la] promesa.",
+          "B": "El hijo de la esclava nació según la carne, pero el hijo de la mujer libre nació por la promesa.",
+          "R": "El hijo de la esclava nació de la manera común, por un plan que hicieron las personas. Pero el hijo de la mujer libre nació porque Dios lo había prometido."
+        },
+        "sw": {
+          "L": "Lakini yule wa mwanamke mtumwa amezaliwa kulingana na mwili, na yule wa [mwanamke] huru kupitia ahadi.",
+          "B": "Mwana wa mwanamke mtumwa alizaliwa kufuatana na mwili, lakini mwana wa mwanamke huru alizaliwa kupitia ahadi.",
+          "R": "Mwana wa mwanamke mtumwa alizaliwa kwa njia ya kawaida, kwa mpango ambao wanadamu walifanya. Lakini mwana wa mwanamke huru alizaliwa kwa sababu ya kile ambacho Mungu alikuwa ameahidi."
         }
       },
       "decisions": [
@@ -384,6 +520,26 @@
           "reason": "Readable explains the two phrases from the Genesis story (m1, m2). \"Flesh\" alone would make a young reader think of the body or of sin.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48004023007",
+            "n48004023008"
+          ],
+          "choice": "kufuatana na mwili",
+          "alternatives": [
+            "kwa asili ya dhambi"
+          ],
+          "reason": "In Galatians 5 Balanced renders this word \"asili ya dhambi\" (sinful nature), but here the meaning decision (m1) says it is ordinary human birth, not the sinful self. So Balanced keeps \"mwili\", as the English Balanced keeps \"flesh\", and verse 29 does the same.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -446,6 +602,16 @@
           "L": "These things are spoken allegorically, for these [women] are two covenants: one from Mount Sinai, bearing [children] into slavery, which is Hagar. \\v 25 Now Hagar is Mount Sinai in Arabia, and she corresponds to the present Jerusalem, for she is in slavery with her children.",
           "B": "These things can be read as an allegory. The two women are two covenants. One comes from Mount Sinai and bears children who will be slaves; this is Hagar. \\v 25 Hagar stands for Mount Sinai in Arabia, and she matches the Jerusalem of the present time, since she is in slavery together with her children.",
           "R": "This story is also a picture of something else. The two women stand for two covenants. One covenant came from Mount Sinai, and the children born under it are slaves. That covenant is Hagar. \\v 25 Hagar stands for Mount Sinai in Arabia. She is like the city of Jerusalem today, because Jerusalem and her people are living as slaves."
+        },
+        "es": {
+          "L": "Estas cosas se dicen alegóricamente, porque estas [mujeres] son dos pactos: uno del monte Sinaí, que da a luz [hijos] para esclavitud, el cual es Agar. \\v 25 Ahora bien, Agar es el monte Sinaí en Arabia, y corresponde a la Jerusalén actual, porque está en esclavitud con sus hijos.",
+          "B": "Esto puede leerse como una alegoría. Las dos mujeres son dos pactos. Uno procede del monte Sinaí y da a luz hijos que serán esclavos: ese es Agar. \\v 25 Agar representa el monte Sinaí en Arabia, y corresponde a la Jerusalén del tiempo presente, ya que ella está en esclavitud junto con sus hijos.",
+          "R": "Esta historia es también una imagen de otra cosa. Las dos mujeres representan dos pactos. Un pacto vino del monte Sinaí, y los hijos que nacen bajo él son esclavos. Ese pacto es Agar. \\v 25 Agar representa el monte Sinaí, en Arabia. Ella es como la ciudad de Jerusalén de hoy, porque Jerusalén y su pueblo viven como esclavos."
+        },
+        "sw": {
+          "L": "Mambo haya yanasemwa kwa njia ya mfano, kwa maana [wanawake] hawa ni maagano mawili: moja kutoka mlima Sinai, linalozaa [watoto] kwa utumwa, ambalo ni Hajiri. \\v 25 Basi Hajiri ni mlima Sinai katika Uarabuni, naye analingana na Yerusalemu ya sasa, kwa maana yuko utumwani pamoja na watoto wake.",
+          "B": "Mambo haya yanaweza kusomwa kama mfano wa mambo mengine. Wanawake hao wawili ni maagano mawili. Agano moja linatoka mlima Sinai na kuzaa watoto watakaokuwa watumwa; hilo ndilo Hajiri. \\v 25 Hajiri anawakilisha mlima Sinai katika Uarabuni, naye analingana na Yerusalemu ya wakati huu, kwa kuwa yuko utumwani pamoja na watoto wake.",
+          "R": "Habari hii pia ni picha ya jambo jingine. Wanawake hao wawili wanawakilisha maagano mawili. Agano moja lilitoka mlima Sinai, na watoto wanaozaliwa chini yake ni watumwa. Agano hilo ni Hajiri. \\v 25 Hajiri anawakilisha mlima Sinai, katika Uarabuni. Yeye ni kama mji wa Yerusalemu wa leo, kwa sababu Yerusalemu na watu wake wanaishi kama watumwa."
         }
       },
       "decisions": [
@@ -655,6 +821,52 @@
           "reason": "Readable avoids the word \"allegory\" and says that the story is also a picture (m1). It names \"her children\" as Jerusalem's people (m8).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48004024017",
+            "n48004024018",
+            "n48004024019"
+          ],
+          "choice": "el cual es Agar (L); ese es Agar (B); Ese pacto es Agar (R)",
+          "alternatives": [
+            "la cual es Agar"
+          ],
+          "reason": "The Greek relative is feminine because \"covenant\" is feminine in Greek. Spanish \"pacto\", the word used for covenant elsewhere in Paul, is masculine, so the pronoun agrees with \"pacto\" and not with Hagar; Readable names the covenant to make this plain.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48004024001",
+            "n48004024002",
+            "n48004024003"
+          ],
+          "choice": "kwa njia ya mfano (L); kama mfano wa mambo mengine (B)",
+          "alternatives": [
+            "kwa fumbo",
+            "istiari"
+          ],
+          "reason": "Swahili has no common word for allegory. \"Fumbo\" is a riddle or hidden saying and would suggest the story is not history, which the meaning decision (m1) denies; \"mfano\" (a figure, a picture of something) says that the story stands for something beyond itself.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -687,6 +899,16 @@
           "L": "But the Jerusalem above is free, which is our mother.",
           "B": "The Jerusalem above, however, is free, and it is she who is our mother.",
           "R": "But there is another Jerusalem, God's city in heaven. She is free, and she is our mother."
+        },
+        "es": {
+          "L": "Pero la Jerusalén de arriba es libre, la cual es nuestra madre.",
+          "B": "La Jerusalén de arriba, en cambio, es libre, y ella es nuestra madre.",
+          "R": "Pero hay otra Jerusalén, la ciudad de Dios en el cielo. Ella es libre, y es nuestra madre."
+        },
+        "sw": {
+          "L": "Lakini Yerusalemu ya juu ni huru, ambayo ni mama yetu.",
+          "B": "Lakini Yerusalemu iliyo juu ni huru, nayo ndiyo mama yetu.",
+          "R": "Lakini kuna Yerusalemu nyingine, mji wa Mungu ulioko mbinguni. Mji huo ni huru, nao ni mama yetu."
         }
       },
       "decisions": [
@@ -805,6 +1027,16 @@
           "L": "For it is written: \"Rejoice, barren [woman] who does not bear; break out and shout, you who are not in labor; for many [are] the children of the desolate [woman], more than of her who has the husband.\"",
           "B": "For it is written: \"Be glad, barren woman, you who have borne no child; break into a shout, you who have never been in labor. For the woman left alone has many children, more than the woman who has a husband.\"",
           "R": "The Scriptures say, \"Be glad, you woman who could never have children! You never felt the pains of giving birth, but now break out and shout for joy! The woman who was left alone has more children than the woman who has a husband.\""
+        },
+        "es": {
+          "L": "Porque está escrito: «Regocíjate, estéril que no das a luz; irrumpe y grita, tú que no estás de parto; porque muchos [son] los hijos de la desolada, más que de la que tiene el marido».",
+          "B": "Porque está escrito: «Alégrate, mujer estéril, tú que no has dado a luz; estalla en gritos, tú que nunca has tenido dolores de parto. Porque la mujer abandonada tiene muchos hijos, más que la que tiene marido».",
+          "R": "Las Escrituras dicen: «¡Alégrate, mujer que nunca pudiste tener hijos! Nunca sentiste los dolores del parto, pero ahora ¡rompe a gritar de alegría! La mujer que fue dejada sola tiene más hijos que la mujer que tiene marido»."
+        },
+        "sw": {
+          "L": "Kwa maana imeandikwa: \"Furahi, [mwanamke] tasa usiyezaa; lipuka na upige kelele, wewe usiyepatwa na uchungu wa kuzaa; kwa maana watoto wa [mwanamke] aliyeachwa ukiwa ni wengi, kuliko wa yule aliye na mume.\"",
+          "B": "Kwa maana imeandikwa: \"Shangilia, mwanamke tasa, wewe ambaye hujapata kuzaa; lipuka kwa kelele, wewe ambaye hujawahi kupatwa na uchungu wa kuzaa. Kwa maana mwanamke aliyeachwa peke yake ana watoto wengi, kuliko yule aliye na mume.\"",
+          "R": "Maandiko yanasema, \"Furahi, wewe mwanamke ambaye hukuweza kamwe kupata watoto! Hukuwahi kuona uchungu wa kuzaa, lakini sasa lipuka, upige kelele za furaha! Mwanamke aliyeachwa peke yake ana watoto wengi kuliko yule aliye na mume.\""
         }
       },
       "decisions": [
@@ -941,6 +1173,48 @@
           "reason": "Readable adds \"for joy\" (m4) and \"now\" to mark the change from her past grief.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48004027003",
+            "n48004027008",
+            "n48004027010"
+          ],
+          "choice": "tú forms, no setting",
+          "alternatives": [],
+          "reason": "The prophet speaks to one woman, so the imperatives are singular \"tú\" forms (\"Alégrate\", \"estalla\") and are not under the plural_you setting.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48004027008"
+          ],
+          "choice": "lipuka",
+          "alternatives": [
+            "paza sauti"
+          ],
+          "reason": "The verb means to break or burst (m4). \"Lipuka\" (burst out) keeps that picture of a sudden cry; \"paza sauti\" (raise the voice) is weaker.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -971,6 +1245,16 @@
           "L": "But you, {{gender:brothers and sisters|brothers}}, are children of promise like Isaac.",
           "B": "And you, {{gender:brothers and sisters|brothers}}, are children of the promise, as Isaac was.",
           "R": "And you, {{gender:brothers and sisters|brothers}}, are like Isaac. You are children born because of what God promised."
+        },
+        "es": {
+          "L": "Pero {{plural_you:ustedes|vosotros}}, hermanos, {{plural_you:son|sois}} hijos de [la] promesa como Isaac.",
+          "B": "Y {{plural_you:ustedes|vosotros}}, hermanos, {{plural_you:son|sois}} hijos de la promesa, como lo fue Isaac.",
+          "R": "Y {{plural_you:ustedes|vosotros}}, hermanos, {{plural_you:son|sois}} como Isaac. {{plural_you:Son|Sois}} hijos que nacieron por lo que Dios había prometido."
+        },
+        "sw": {
+          "L": "Lakini ninyi, ndugu, ni watoto wa ahadi kama Isaka.",
+          "B": "Nanyi, ndugu, ni watoto wa ahadi, kama Isaka alivyokuwa.",
+          "R": "Nanyi, ndugu, mko kama Isaka. Ninyi ni watoto mliozaliwa kwa sababu ya kile ambacho Mungu aliahidi."
         }
       },
       "decisions": [
@@ -1061,6 +1345,48 @@
           "reason": "Readable explains \"children of promise\" from verse 23 (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48004028003"
+          ],
+          "choice": "hermanos, no setting",
+          "alternatives": [
+            "hermanos y hermanas"
+          ],
+          "reason": "As elsewhere in Paul, Spanish \"hermanos\" already covers brothers and sisters, so there is no gender span here or in verse 31.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48004028003"
+          ],
+          "choice": "ndugu, no setting",
+          "alternatives": [
+            "ndugu wa kiume na wa kike"
+          ],
+          "reason": "\"Ndugu\" already means brothers and sisters, so Swahili has no gender span here or in verse 31.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1097,6 +1423,16 @@
           "L": "But just as at that time the [one] born according to [the] flesh persecuted the [one born] according to [the] Spirit, so [it is] also now.",
           "B": "In those days the son born according to the flesh persecuted the son born according to the Spirit, and it is the same now.",
           "R": "But back then, the son born in the ordinary human way mistreated the son born by the power of the Spirit. The same thing is happening now."
+        },
+        "es": {
+          "L": "Pero así como entonces el que nació según [la] carne perseguía al [nacido] según [el] Espíritu, así también ahora.",
+          "B": "En aquel tiempo el hijo nacido según la carne perseguía al hijo nacido según el Espíritu, y lo mismo sucede ahora.",
+          "R": "Pero en aquel tiempo, el hijo que nació de la manera humana común maltrataba al hijo que nació por el poder del Espíritu. Lo mismo está pasando ahora."
+        },
+        "sw": {
+          "L": "Lakini kama vile wakati ule yule aliyezaliwa kulingana na mwili alikuwa akimtesa yule [aliyezaliwa] kulingana na Roho, ndivyo [ilivyo] sasa pia.",
+          "B": "Wakati ule mwana aliyezaliwa kufuatana na mwili alimtesa mwana aliyezaliwa kufuatana na Roho, na ndivyo ilivyo sasa.",
+          "R": "Lakini zamani zile, mwana aliyezaliwa kwa njia ya kawaida ya kibinadamu alimtendea vibaya mwana aliyezaliwa kwa nguvu za Roho. Jambo hilo hilo linatokea sasa."
         }
       },
       "decisions": [
@@ -1241,6 +1577,16 @@
           "L": "But what does the Scripture say?",
           "B": "But what does Scripture say?",
           "R": "But what do the Scriptures say?"
+        },
+        "es": {
+          "L": "Pero ¿qué dice la Escritura?",
+          "B": "Pero ¿qué dice la Escritura?",
+          "R": "Pero ¿qué dicen las Escrituras?"
+        },
+        "sw": {
+          "L": "Lakini Andiko linasema nini?",
+          "B": "Lakini Maandiko yanasema nini?",
+          "R": "Lakini Maandiko yanasema nini?"
         }
       },
       "decisions": [
@@ -1276,6 +1622,25 @@
             "Scripture"
           ],
           "reason": "Readable uses the plural, the ordinary way to speak of the Bible, as in verse 22.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48004030005"
+          ],
+          "choice": "Andiko (L); Maandiko (B, R)",
+          "alternatives": [
+            "Maandiko at every level"
+          ],
+          "reason": "Literal keeps the singular \"Andiko\", one passage of Scripture (m1). Balanced uses the plural \"Maandiko\", the ordinary Swahili way of speaking of Scripture, where the English Balanced says \"Scripture\" without an article.",
           "uncertain": false,
           "footnote": false
         }
@@ -1320,6 +1685,16 @@
           "L": "\"Drive out the slave woman and her son, for the son of the slave woman will by no means inherit with the son of the free [woman].\"",
           "B": "\"Send away the slave woman and her son, for the slave woman's son will never share the inheritance with the free woman's son.\"",
           "R": "\"Send the slave woman and her son away. The slave woman's son will never share the inheritance with the free woman's son.\""
+        },
+        "es": {
+          "L": "«Echa fuera a la esclava y a su hijo, porque de ningún modo heredará el hijo de la esclava con el hijo de la libre».",
+          "B": "«Despide a la esclava y a su hijo, porque el hijo de la esclava nunca tendrá parte en la herencia con el hijo de la mujer libre».",
+          "R": "«Manda lejos a la esclava y a su hijo. El hijo de la esclava nunca compartirá la herencia con el hijo de la mujer libre»."
+        },
+        "sw": {
+          "L": "\"Mfukuze mwanamke mtumwa pamoja na mwanawe, kwa maana mwana wa mwanamke mtumwa hatarithi kamwe pamoja na mwana wa [mwanamke] huru.\"",
+          "B": "\"Waondoe mwanamke mtumwa na mwanawe, kwa maana mwana wa mwanamke mtumwa hatashiriki kamwe urithi pamoja na mwana wa mwanamke huru.\"",
+          "R": "\"Wapeleke mbali mwanamke mtumwa na mwanawe. Mwana wa mwanamke mtumwa hatashiriki kamwe urithi pamoja na mwana wa mwanamke huru.\""
         }
       },
       "decisions": [
@@ -1461,6 +1836,16 @@
           "L": "Therefore, {{gender:brothers and sisters|brothers}}, we are not children of a slave woman but of the free [woman].",
           "B": "So then, {{gender:brothers and sisters|brothers}}, we are children not of a slave woman but of the free woman.",
           "R": "So, {{gender:brothers and sisters|brothers}}, we are not the children of a slave woman. We are the children of the free woman."
+        },
+        "es": {
+          "L": "Por tanto, hermanos, no somos hijos de una esclava, sino de la libre.",
+          "B": "Así que, hermanos, no somos hijos de una esclava, sino de la mujer libre.",
+          "R": "Así que, hermanos, no somos hijos de una esclava. Somos hijos de la mujer libre."
+        },
+        "sw": {
+          "L": "Kwa hiyo, ndugu, sisi si watoto wa mwanamke mtumwa, bali wa yule [mwanamke] huru.",
+          "B": "Basi, ndugu, sisi si watoto wa mwanamke mtumwa, bali ni watoto wa yule mwanamke huru.",
+          "R": "Kwa hiyo, ndugu, sisi si watoto wa mwanamke mtumwa. Sisi ni watoto wa yule mwanamke huru."
         }
       },
       "decisions": [
@@ -1514,6 +1899,28 @@
             "brethren"
           ],
           "reason": "Paul is writing to the whole church in Galatia, women and men, and has just said that in Christ there is neither male nor female (3:28). \"Brothers\" stays available as the traditional form.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n48004031008",
+            "n48004031009"
+          ],
+          "choice": "yule mwanamke huru",
+          "alternatives": [
+            "mwanamke huru"
+          ],
+          "reason": "Swahili has no article. The Greek sets \"a slave woman\" without the article against \"the free woman\" with it (m1); \"yule\" (that one) marks the one free woman, and the slave woman is left without it.",
           "uncertain": false,
           "footnote": false
         }
