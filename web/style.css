@@ -604,9 +604,12 @@ footer.site a.book-chip:hover { border-color: var(--accent); background: var(--a
 .book-head h2 { font-family: var(--display); font-weight: 600; font-size: 28px; letter-spacing: -.01em; margin: 0; }
 .book-head .meter { max-width: 260px; }
 
-/* Header Read menu: a book a line, read down two columns. */
-.dropdown.dd-read { width: 440px; }
-.dd-books { columns: 2; column-gap: 8px; }
+/* Header Read menu: a book a line under its testament, each testament
+   one or two columns wide (--cols) and read down its columns. */
+.dropdown.dd-read { width: auto; }
+.dd-testaments { display: flex; gap: 8px; }
+.dd-testaments .dd-col { width: calc(var(--cols) * 200px + (var(--cols) - 1) * 8px); }
+.dd-books { columns: var(--cols, 1); column-gap: 8px; }
 .dd-book { align-items: baseline; justify-content: space-between; padding: 7px 10px; break-inside: avoid; }
 .dd-count { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
 
@@ -1002,6 +1005,8 @@ body.plain .text-tool { display: none; }
   }
   .dd-cols { grid-template-columns: 1fr; }
   .dd-books { columns: 1; }
+  .dd-testaments { display: block; }
+  .dd-testaments .dd-col { width: auto; }
   .dd-all { justify-content: flex-start; border-top: 0; padding: 8px 10px; }
 }
 @media (max-width: 1000px) {
