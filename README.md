@@ -52,6 +52,10 @@ Matthew 1–9 (`content/MAT/`) is drafted in English.
 
 Psalms 1–6 (`content/PSA/`) are drafted in English.
 
+Old Testament verses are numbered as in the Hebrew text (a psalm's title is
+verse 1), not as in English Bibles; `data/versification.json` maps one to the
+other (`owb/versification.py`).
+
 A record is one sentence of the source, not one verse. It ends where the
 SBLGNT ends a sentence: a full stop, a question mark, or a raised dot (·)
 where the next clause stands on its own. So a verse may hold two records
@@ -142,6 +146,7 @@ Other tools:
     python3 scripts/build_skeleton.py JHN.1.3 JHN.1.5 -o new.json
     python3 -m owb.validate content/JHN/*.json
     python3 scripts/extract_tokens.py         # refresh data/grc/ and data/hbo/ after adding verses
+    python3 scripts/build_versification.py    # rebuild data/versification.json after a source update
 
 ## The site
 

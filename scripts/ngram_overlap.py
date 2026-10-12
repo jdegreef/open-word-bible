@@ -12,6 +12,11 @@ owns one can compare against it with --extra NAME=PATH, where PATH is a local
 tab-separated file of "VERSE_ID<TAB>text" lines (e.g. "COL.1.1<TAB>Paul, ...").
 Keep that file outside the repository.
 
+Our Old Testament verses are numbered as the Hebrew text is (a psalm's title
+is verse 1); the comparison Bibles, --extra files included, are taken to use
+English numbering, and each sentence is compared with the English verses that
+hold the same text (owb/versification.py).
+
 Usage:
     OWB_VENDOR=<sources dir> python3 scripts/ngram_overlap.py content/COL/COL.1.json
     python3 scripts/ngram_overlap.py --no-open-bibles --extra niv=~/niv-col.tsv content/COL/*.json
@@ -28,7 +33,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from owb import markup, refs  # noqa: E402
+from owb import markup, refs, versification  # noqa: E402
 
 # Our language codes and the open-bibles language codes.
 OPEN_BIBLE_LANGUAGE = {"en": "eng", "es": "spa"}
@@ -84,9 +89,11 @@ def open_bible_editions(language):
 
 def compare(records, language, levels, editions, n):
     """One result per sentence and level that has a rendering:
-    {"id", "level", "words", "runs": {edition: [(start, end), ...]}}."""
+    {"id", "level", "words", "runs": {edition: [(start, end), ...]}}.
+    The editions are keyed by English verse id."""
     results = []
     for record in records:
+        english = versification.english_ids(record["refs"])
         renderings = record["renderings"].get(language, {})
         for level in levels:
             if level not in renderings:
@@ -95,7 +102,7 @@ def compare(records, language, levels, editions, n):
             lower = [w.lower() for w in ours]
             found = {}
             for name, verses in editions.items():
-                theirs = words(" ".join(verses.get(r, "") for r in record["refs"]))
+                theirs = words(" ".join(verses.get(r, "") for r in english))
                 hits = runs(lower, [w.lower() for w in theirs], n)
                 if hits:
                     found[name] = hits
