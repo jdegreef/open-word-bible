@@ -77,10 +77,8 @@ def cards():
         records, words = build_site.load_chapter(book, chapter)
         record, verse = build_site.opening(records, chapter)
         mine = set(record["source"]["tokens"])
-        # The card puts the verse in double quotes, so speech inside it takes
-        # single ones.
-        english = (build_site.opening_verse(records, chapter)
-                   .replace("\u201c", "\u2018").replace("\u201d", "\u2019"))
+        # The card puts the verse in double quotes (build_site.inner_quotes).
+        english = build_site.inner_quotes(build_site.opening_verse(records, chapter))
         spec = {"kind": "passage", "eyebrow": build_site.chapter_title(records, book, chapter),
                 "title": english}
         if build_site.source_language(book) == "hbo":

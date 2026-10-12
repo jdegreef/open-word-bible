@@ -4,7 +4,6 @@ import json
 import re
 import subprocess
 import sys
-import tempfile
 import unittest
 from pathlib import Path
 
@@ -12,18 +11,13 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import build_site  # noqa: E402
+from tests.site_build import built_site  # noqa: E402
 
 
 class SiteTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.tmp = tempfile.TemporaryDirectory()
-        cls.out = Path(cls.tmp.name) / "site"
-        build_site.build(cls.out)
-
-    @classmethod
-    def tearDownClass(cls):
-        cls.tmp.cleanup()
+        cls.out = built_site()
 
     def chapter_data(self, path="jhn/1"):
         page = (self.out / path / "index.html").read_text(encoding="utf-8")
