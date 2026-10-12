@@ -77,10 +77,8 @@ def cards():
         records, words = build_site.load_chapter(book, chapter)
         record, verse = build_site.opening(records, chapter)
         mine = set(record["source"]["tokens"])
-        # The card puts the verse in double quotes, so speech inside it takes
-        # single ones.
-        english = (build_site.opening_verse(records, chapter)
-                   .replace("\u201c", "\u2018").replace("\u201d", "\u2019"))
+        # The card puts the verse in double quotes (build_site.inner_quotes).
+        english = build_site.inner_quotes(build_site.opening_verse(records, chapter))
         spec = {"kind": "passage", "eyebrow": build_site.chapter_title(records, book, chapter),
                 "title": english}
         if build_site.source_language(book) == "hbo":
@@ -158,10 +156,16 @@ def draw(name, spec, tmp, browser):
     page = tmp / f"{name}.html"
     page.write_text(card_html(spec), encoding="utf-8")
     png = tmp / f"{name}.png"
-    subprocess.run([browser, "--headless=new", "--disable-gpu", "--hide-scrollbars",
-                    f"--window-size={WIDTH},{HEIGHT}", "--virtual-time-budget=5000",
-                    f"--screenshot={png}", page.as_uri()],
-                   check=True, capture_output=True)
+    run = subprocess.run([browser, "--headless=new", "--disable-gpu", "--hide-scrollbars",
+                          f"--window-size={WIDTH},{HEIGHT}", "--virtual-time-budget=5000",
+                          f"--screenshot={png}", page.as_uri()],
+                         capture_output=True)
+    # Some Chrome builds write the screenshot and then crash while shutting
+    # down ("Teardown watchdog expired"); the image is good, so only fail when
+    # there is none.
+    if not png.exists() or png.stat().st_size == 0:
+        run.check_returncode()
+        raise RuntimeError(f"{browser} wrote no screenshot for {name}")
     to_jpeg(png, OUT / f"{name}.jpg")
 
 
