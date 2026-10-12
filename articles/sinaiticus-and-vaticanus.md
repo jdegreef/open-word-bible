@@ -53,7 +53,7 @@ Both manuscripts lack some passages that appear in later manuscripts and in the 
 - **John 7:53–8:11**, the story of the woman caught in adultery, is absent from both.
 - **1 John 5:7–8**, the expanded wording about "the Father, the Word and the Holy Spirit" known as the *Comma Johanneum*, is absent from both, and from all Greek manuscripts before the medieval period.
 
-These passages are discussed in [How much do the manuscripts differ?](/articles/how-reliable-is-the-text/). Modern translations based on critical editions generally mark them as not part of the earliest text, and Sinaiticus and Vaticanus are two of the main reasons.
+These passages are discussed in [How reliable is the Bible's text?](/articles/how-reliable-is-the-text/). Modern translations based on critical editions generally mark them as not part of the earliest text, and Sinaiticus and Vaticanus are two of the main reasons.
 
 ## Why they matter
 
