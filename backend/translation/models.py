@@ -7,6 +7,8 @@ database becomes the master and content/ the published export.
 """
 from django.conf import settings
 from django.contrib.postgres.fields import ArrayField
+from django.contrib.postgres.indexes import GinIndex
+from django.contrib.postgres.search import SearchVectorField
 from django.db import models
 
 from texts.models import Edition
@@ -111,3 +113,54 @@ class ReviewEvent(models.Model):
 
     def __str__(self):
         return f"{self.sentence} {self.action} by {self.user}"
+
+
+# Search (GET /api/search/, translation/search.py). import_content rebuilds
+# these tables from the same documents the site's own search file holds
+# (search_documents in scripts/build_site.py), one set per site language.
+
+class SearchLanguage(models.Model):
+    """A site language search covers, with its books (names, abbreviations
+    and translated chapters, for references such as "Juan 3:16") and the
+    page shortcuts the search panel offers."""
+    code = models.CharField(max_length=3, primary_key=True)
+    books = models.JSONField()
+    pages = models.JSONField()
+
+    def __str__(self):
+        return self.code
+
+
+class SearchEntry(models.Model):
+    """One thing a reader can find on the site in one language: a passage
+    ("c"), a sentence ("v"), a note ("n") or an article ("a")."""
+    language = models.CharField(max_length=3, help_text="The site language")
+    kind = models.CharField(max_length=1)
+    position = models.PositiveIntegerField(help_text="Canonical order: the order the site lists them in")
+    config = models.CharField(max_length=16, help_text="Text search configuration for the entry's own language")
+    title = models.TextField(blank=True)
+    extra = models.TextField(blank=True, help_text="A note's alternatives, an article's summary")
+    body = models.TextField(blank=True)
+    doc = models.JSONField(help_text="What the site needs to show it (the search file's document)")
+    vector = SearchVectorField(null=True)
+
+    class Meta:
+        indexes = [GinIndex(fields=["vector"], name="search_entry_vector"),
+                   models.Index(fields=["language", "kind", "position"], name="search_entry_order")]
+
+    def __str__(self):
+        return f"{self.language} {self.kind} {self.position}"
+
+
+class SearchWord(models.Model):
+    """A word the entries of one language contain, and how often: "Did you
+    mean" picks the closest common one (pg_trgm)."""
+    language = models.CharField(max_length=3)
+    word = models.CharField(max_length=64)
+    count = models.PositiveIntegerField()
+
+    class Meta:
+        indexes = [GinIndex(fields=["word"], opclasses=["gin_trgm_ops"], name="search_word_trgm")]
+
+    def __str__(self):
+        return f"{self.language} {self.word}"

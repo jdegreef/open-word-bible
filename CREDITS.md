@@ -56,6 +56,9 @@ Original work of the Open Scriptures Hebrew Bible available at https://github.co
 
 Licensed under CC BY 4.0.
 
+The Hebrew-to-English verse numbering table in `data/versification.json` is
+derived from its `wlc/VerseMap.xml` and carries its CC BY 4.0 licence.
+
 ## Westminster Leningrad Codex
 
 The Hebrew text of the Westminster Leningrad Codex is in the public domain.
@@ -75,5 +78,7 @@ The reading text and Greek are set in Gentium Book Plus, Copyright (c)
 2003–2022 SIL International, and Hebrew in Noto Serif Hebrew, Copyright 2022
 The Noto Project Authors. Headings are set in Fraunces, Copyright 2020 The
 Fraunces Project Authors, and the interface in Hanken Grotesk, Copyright 2021
-The Hanken Grotesk Project Authors. All four are licensed under the SIL Open
-Font License 1.1; the licences are in `web/fonts/`.
+The Hanken Grotesk Project Authors. Readers can choose Atkinson Hyperlegible
+for the reading text, Copyright 2020 Braille Institute of America, Inc. All
+five are licensed under the SIL Open Font License 1.1; the licences are in
+`web/fonts/`.
