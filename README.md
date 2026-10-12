@@ -58,7 +58,7 @@ Proverbs 1–6 (`content/PRO/`) is drafted in English.
 
 All of Hebrews (`content/HEB/`) is drafted in English, Spanish, Swahili and French.
 
-Revelation 1–4 (`content/REV/`) are drafted in English.
+Revelation 1–5 (`content/REV/`) are drafted in English.
 
 Acts 1–2 (`content/ACT/`) are drafted in English.
 
