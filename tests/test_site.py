@@ -472,5 +472,22 @@ class ExtractTest(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
 
 
+class SharedDataTest(unittest.TestCase):
+    """Book data that pull requests adding chapters would otherwise all edit."""
+
+    def test_every_book_is_named_in_every_language(self):
+        from owb import refs
+        self.assertEqual(list(build_site.BOOK_NAMES), refs.BOOK_CODES)
+        for code, names in build_site.BOOK_NAMES.items():
+            self.assertEqual(set(names), set(build_site.LANGUAGES), code)
+            self.assertEqual(names["en"], refs.BOOK_NAMES[code])
+            self.assertGreater(build_site.BOOK_CHAPTERS[code], 0, code)
+
+    def test_headings_are_filed_by_book(self):
+        for path in (ROOT / "data" / "headings").glob("*.json"):
+            for rid in json.loads(path.read_text(encoding="utf-8"))["headings"]:
+                self.assertEqual(rid.split(".")[0], path.stem, path.name)
+
+
 if __name__ == "__main__":
     unittest.main()
