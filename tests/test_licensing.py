@@ -52,9 +52,9 @@ class LicensingTest(unittest.TestCase):
         cls.site = built_site()
         cls.extracts = {p: json.loads(p.read_text(encoding="utf-8"))
                         for p in sorted((ROOT / "data").rglob("*.json"))}
-        # Every text file the site serves; fonts and share images are binary.
+        # Every text file the site serves; fonts, share images and icons are binary.
         cls.pages = {p: p.read_text(encoding="utf-8") for p in sorted(cls.site.rglob("*"))
-                     if p.is_file() and p.suffix not in (".woff2", ".jpg")}
+                     if p.is_file() and p.suffix not in (".woff2", ".jpg", ".png")}
 
     def test_extracts_have_no_restricted_fields(self):
         self.assertTrue(self.extracts)

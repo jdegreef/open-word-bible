@@ -3,6 +3,7 @@ title: "\"The Word was God\": translating John 1:1"
 summary: Why Open Word Bible reads "the Word was God", not "a god" or "divine", and what the Greek word order is doing.
 date: 2026-10-10
 order: 5
+nav_title: Translating John 1:1
 section: passage
 ---
 John's Gospel begins with one of the most discussed sentences in the Bible:
