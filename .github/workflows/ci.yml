@@ -37,7 +37,8 @@ jobs:
           fi
           # The pull request merge commit; its first parent is the base branch.
           git diff --name-only HEAD^1 HEAD | tee changed.txt
-          if grep -qE '^(backend/|owb/|\.github/workflows/|sources\.lock\.json$)' changed.txt; then
+          # scripts/: the backend builds its search tables with build_site.py.
+          if grep -qE '^(backend/|owb/|scripts/|\.github/workflows/|sources\.lock\.json$)' changed.txt; then
             echo backend=true >> "$GITHUB_OUTPUT"
           else
             echo backend=false >> "$GITHUB_OUTPUT"
