@@ -56,7 +56,7 @@ Exodus 1–3 (`content/EXO/`) is drafted in English.
 
 Proverbs 1–5 (`content/PRO/`) is drafted in English.
 
-All of Hebrews (`content/HEB/`) is drafted in English, Spanish and Swahili.
+All of Hebrews (`content/HEB/`) is drafted in English, Spanish, Swahili and French.
 
 Revelation 1–2 (`content/REV/`) are drafted in English.
 
