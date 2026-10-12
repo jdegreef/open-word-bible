@@ -49,6 +49,11 @@ Rules the software enforces are marked **(checked)**.
   so. Cite other psalms by the Hebrew numbers too (Psalm 31:14, not 31:13).
   *Selah* stays "Selah" at every level, at the end of its line, with a meaning
   decision that its sense is unknown.
+- **Exodus.** Verses are numbered as in the Hebrew text too. Hebrew 7:26–29 is
+  8:1–4 in most English Bibles (so Hebrew 8:1–28 is English 8:5–32), and Hebrew
+  21:37 is English 22:1 (so Hebrew 22:1–30 is English 22:2–31). A footnoted
+  decision at 7:26, 8:1, 21:37 and 22:1 says so, and Exodus is cited by the
+  Hebrew numbers.
 
 ## 3. The literal gloss
 
