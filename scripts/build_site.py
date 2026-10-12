@@ -1751,10 +1751,12 @@ def article_meta(a, lang="en"):
     return " &middot; ".join(parts)
 
 
-def article_card(a, lang="en", featured=False):
-    section = catalog(lang)["sections"][a["section"]]
+def article_card(a, lang="en", featured=False, section=True):
+    """An article's card. Under its own section's heading it leaves out the
+    section's name (section=False)."""
+    label = f'<span class="a-section">{catalog(lang)["sections"][a["section"]]}</span>' if section else ""
     return (f'<li><a class="a-card{" featured" if featured else ""}" href="{url(lang, article_url(a))}">'
-            f'<span class="a-section">{section}</span>'
+            f'{label}'
             f'<span class="a-title">{display(a["title"])}</span>'
             f'<span class="a-summary">{display(a["summary"])}</span>'
             f'<span class="a-meta">{article_meta(a, lang)}</span></a></li>')
@@ -1769,12 +1771,21 @@ def articles_page(articles, lang="en"):
     by_order = sorted(articles, key=lambda a: a["order"])
     if by_order:
         featured, rest = by_order[0], by_order[1:]
+        names = catalog(lang)["sections"]
+        groups = [(key, [a for a in rest if a["section"] == key]) for key in SECTIONS]
+        groups = [(key, items) for key, items in groups if items]
+        # Links to each section, with how many articles it has.
+        jump = (f'<nav class="a-jump" aria-label="{t(lang, "articles.sections")}"><ul>'
+                + "".join(f'<li><a href="#{key}">{names[key]} <span>{sum(a["section"] == key for a in by_order)}</span></a></li>'
+                          for key, _ in groups)
+                + "</ul></nav>")
+        # Inside a section, compact rows rather than cards.
         sections = "".join(
             f'<section class="a-group" id="{key}" aria-labelledby="{key}-h">'
-            f'<h2 id="{key}-h">{catalog(lang)["sections"][key]}</h2>'
-            f'<ul class="a-grid">{article_list([a for a in rest if a["section"] == key], lang)}</ul></section>'
-            for key in SECTIONS if any(a["section"] == key for a in rest))
-        listing = f'<ul class="a-feature">{article_card(featured, lang, featured=True)}</ul>\n{sections}'
+            f'<h2 id="{key}-h">{names[key]}</h2>'
+            f'<ul class="a-rows">{"".join(article_card(a, lang, section=False) for a in items)}</ul></section>'
+            for key, items in groups)
+        listing = f'{jump}\n<ul class="a-feature">{article_card(featured, lang, featured=True)}</ul>\n{sections}'
     else:
         listing = f'<p class="notice">{t(lang, "articles.none")}</p>'
     body = f"""
