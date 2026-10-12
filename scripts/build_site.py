@@ -932,7 +932,9 @@ def disputed(vid):
 
 # Verses that are only a psalm's title ("A psalm of David ..."), which the
 # Hebrew text counts as verse 1. A chapter's cards quote the psalm itself.
-TITLES = {"PSA.3.1", "PSA.4.1", "PSA.5.1", "PSA.6.1"}
+TITLES = {
+    "PSA.3.1", "PSA.4.1", "PSA.5.1", "PSA.6.1", "PSA.7.1", "PSA.8.1", "PSA.9.1",
+}
 
 
 def opening(records, chapter):
