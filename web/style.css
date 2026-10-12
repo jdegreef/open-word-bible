@@ -769,8 +769,9 @@ footer.site .foot-langs ul { display: flex; flex-wrap: wrap; gap: 6px 18px; }
 .section-head.fallback { color: var(--muted); }
 .verse {
   cursor: pointer; border-radius: 3px; padding: 1px 0;
-  /* j and k scroll a verse into view clear of the header and settings bar. */
-  scroll-margin-top: calc(var(--header-h) + var(--settings-h, 0px) + 16px); scroll-margin-bottom: 32px;
+  /* A verse scrolled into view clears the settings bar too; html's
+     scroll-padding-top already clears the header (the two add up). */
+  scroll-margin-top: var(--settings-h, 0px); scroll-margin-bottom: 32px;
 }
 .verse:hover { background: var(--accent-soft); }
 .verse[aria-current="true"] { background: var(--mark); }

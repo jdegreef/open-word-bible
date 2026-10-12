@@ -149,6 +149,10 @@ class ColourModesTest(unittest.TestCase):
                               f'data-lang="{code}"', menu)
         # Without a path (the 404 page), each language's home page.
         self.assertIn('href="/fr/" lang="fr"', build_site.colour_menu("en"))
+        # From an article not in a language, that language's articles page.
+        menu = build_site.colour_menu("en", "/articles/x/", ("en", "es"))
+        self.assertIn('href="/es/articles/x/" lang="es"', menu)
+        self.assertIn('href="/fr/articles/" lang="fr"', menu)
 
     def test_every_page_has_the_gear_menu(self):
         with tempfile.TemporaryDirectory() as tmp:

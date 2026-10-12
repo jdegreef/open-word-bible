@@ -900,13 +900,15 @@
 
   // The reader's place, kept as owb.place for "Continue reading" on the
   // home and Read pages (site.js): the verse at the reading line, a quarter
-  // of the way down or just below the sticky header and settings bar (a
-  // verse's scroll margin) if that is lower. Saving and resuming both use
+  // of the way down or just below the sticky header and settings bar if
+  // that is lower (where scrollIntoView puts a verse: the page's scroll
+  // padding plus the verse's scroll margin). Saving and resuming both use
   // the line, so a place does not drift.
   function readingLine() {
     var first = document.querySelector("#text .verse");
+    var pad = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
     var margin = first ? parseFloat(getComputedStyle(first).scrollMarginTop) || 0 : 0;
-    return Math.max(margin, window.innerHeight * 0.25);
+    return Math.max(pad + margin, window.innerHeight * 0.25);
   }
   function topVerse() {
     var line = readingLine() + 1;
