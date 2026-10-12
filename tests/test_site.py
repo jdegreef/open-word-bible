@@ -4,7 +4,6 @@ import json
 import re
 import subprocess
 import sys
-import tempfile
 import unittest
 from pathlib import Path
 
@@ -12,18 +11,13 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import build_site  # noqa: E402
+from tests.site_build import built_site  # noqa: E402
 
 
 class SiteTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.tmp = tempfile.TemporaryDirectory()
-        cls.out = Path(cls.tmp.name) / "site"
-        build_site.build(cls.out)
-
-    @classmethod
-    def tearDownClass(cls):
-        cls.tmp.cleanup()
+        cls.out = built_site()
 
     def chapter_data(self, path="jhn/1"):
         page = (self.out / path / "index.html").read_text(encoding="utf-8")
@@ -36,19 +30,27 @@ class SiteTest(unittest.TestCase):
                     "sitemap.xml", "robots.txt", "favicon.svg"):
             self.assertTrue((self.out / rel).is_file(), rel)
 
-    def test_account_page_is_built_but_not_indexed(self):
-        page = (self.out / "account" / "index.html").read_text(encoding="utf-8")
-        self.assertIn('<meta name="robots" content="noindex">', page)
-        self.assertIn('id="link-form"', page)
+    def test_account_pages_are_built_but_not_indexed(self):
+        sitemap = (self.out / "sitemap.xml").read_text(encoding="utf-8")
+        for name, marker in (("account", 'id="name-form"'), ("login", 'id="login-form"'),
+                             ("reset-password", 'id="reset-form"')):
+            page = (self.out / name / "index.html").read_text(encoding="utf-8")
+            self.assertIn('<meta name="robots" content="noindex">', page)
+            self.assertIn(marker, page)
+            self.assertNotIn(f"/{name}/", sitemap)
         self.assertTrue((self.out / "account.js").is_file())
-        self.assertNotIn("/account/", (self.out / "sitemap.xml").read_text(encoding="utf-8"))
-        # Every page knows the API and has the account button.
+        login = (self.out / "login" / "index.html").read_text(encoding="utf-8")
+        # Sign in, create an account, reset: one page, sign in showing first.
+        self.assertIn('<span data-for="sign-in">Welcome back</span>', login)
+        self.assertIn('<span data-for="sign-up" hidden>Create your account</span>', login)
+        self.assertIn('id="google"', login)
+        # Every page knows the API and has the header's account menu.
         for path in self.out.rglob("index.html"):
             text = path.read_text(encoding="utf-8")
             self.assertIn(f'<meta name="owb-api" content="{build_site.API_URL}">', text, path)
             lang = re.search(r'<html lang="([a-z]+)">', text)[1]
-            account = build_site.url(lang, "/account/")
-            self.assertIn(f'class="tool-btn account-btn" href="{account}"', text, path)
+            self.assertIn(f'<a class="sign-in-btn" href="{build_site.url(lang, "/login/")}" data-login>', text, path)
+            self.assertIn(f'<a class="pop-item" href="{build_site.url(lang, "/account/")}">', text, path)
 
     def test_chapter_has_every_verse_in_order(self):
         data = self.chapter_data()
@@ -396,6 +398,17 @@ class SiteTest(unittest.TestCase):
         search = (self.out / "search.js").read_text(encoding="utf-8")
         # A reference is the palette's first row, so Enter goes straight to it.
         self.assertLess(search.index('fill(ui("go_to")'), search.index('fill(ui("show_all")'))
+
+    def test_reader_can_read_aloud(self):
+        for code in build_site.LANGUAGES:
+            page = (self.out / build_site.url(code, "/jhn/2/").lstrip("/") / "index.html").read_text(encoding="utf-8")
+            strip = re.search(r'<nav class="chapstrip"(.*?)</nav>', page, re.S)[1]
+            # Hidden until reader.js finds the browser can speak.
+            self.assertIn('id="listen-start" hidden', strip)
+            ui = self.chapter_data(build_site.url(code, "/jhn/2").lstrip("/"))["ui"]
+            for key in ("listen_bar", "listen_play", "listen_pause", "listen_prev", "listen_next",
+                        "listen_speed", "listen_voice", "listen_stop", "listen_no_voice"):
+                self.assertTrue(ui.get(key), (code, key))
 
     def test_read_page_groups_chapters_by_book(self):
         read = (self.out / "read" / "index.html").read_text(encoding="utf-8")
