@@ -36,19 +36,27 @@ class SiteTest(unittest.TestCase):
                     "sitemap.xml", "robots.txt", "favicon.svg"):
             self.assertTrue((self.out / rel).is_file(), rel)
 
-    def test_account_page_is_built_but_not_indexed(self):
-        page = (self.out / "account" / "index.html").read_text(encoding="utf-8")
-        self.assertIn('<meta name="robots" content="noindex">', page)
-        self.assertIn('id="link-form"', page)
+    def test_account_pages_are_built_but_not_indexed(self):
+        sitemap = (self.out / "sitemap.xml").read_text(encoding="utf-8")
+        for name, marker in (("account", 'id="name-form"'), ("login", 'id="login-form"'),
+                             ("reset-password", 'id="reset-form"')):
+            page = (self.out / name / "index.html").read_text(encoding="utf-8")
+            self.assertIn('<meta name="robots" content="noindex">', page)
+            self.assertIn(marker, page)
+            self.assertNotIn(f"/{name}/", sitemap)
         self.assertTrue((self.out / "account.js").is_file())
-        self.assertNotIn("/account/", (self.out / "sitemap.xml").read_text(encoding="utf-8"))
-        # Every page knows the API and has the account button.
+        login = (self.out / "login" / "index.html").read_text(encoding="utf-8")
+        # Sign in, create an account, reset: one page, sign in showing first.
+        self.assertIn('<span data-for="sign-in">Welcome back</span>', login)
+        self.assertIn('<span data-for="sign-up" hidden>Create your account</span>', login)
+        self.assertIn('id="google"', login)
+        # Every page knows the API and has the header's account menu.
         for path in self.out.rglob("index.html"):
             text = path.read_text(encoding="utf-8")
             self.assertIn(f'<meta name="owb-api" content="{build_site.API_URL}">', text, path)
             lang = re.search(r'<html lang="([a-z]+)">', text)[1]
-            account = build_site.url(lang, "/account/")
-            self.assertIn(f'class="tool-btn account-btn" href="{account}"', text, path)
+            self.assertIn(f'<a class="sign-in-btn" href="{build_site.url(lang, "/login/")}" data-login>', text, path)
+            self.assertIn(f'<a class="pop-item" href="{build_site.url(lang, "/account/")}">', text, path)
 
     def test_chapter_has_every_verse_in_order(self):
         data = self.chapter_data()
