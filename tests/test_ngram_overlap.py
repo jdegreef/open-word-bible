@@ -53,6 +53,18 @@ class NgramOverlapTest(unittest.TestCase):
         self.assertEqual([" ".join(result["words"][s:e]) for s, e in found["other"]],
                          ["God chose to make known how rich"])
 
+    def test_compare_uses_english_verse_numbers(self):
+        # Our PSA.3.2 is Psalm 3:1 in English Bibles; PSA.3.1 is the title.
+        record = {"id": "PSA.3.2.s1", "refs": ["PSA.3.1", "PSA.3.2"],
+                  "renderings": {"en": {"L": "how many are my foes have become"}}}
+        editions = {"pd": {"PSA.3.1": "LORD, how many are my foes have become!",
+                           "PSA.3.2": "Many are saying of me"}}
+        [result] = ngram_overlap.compare([record], "en", ["L"], editions, 6)
+        self.assertEqual(result["runs"], {"pd": [(0, 7)]})
+        record["refs"] = ["PSA.3.3"]
+        [result] = ngram_overlap.compare([record], "en", ["L"], editions, 6)
+        self.assertEqual(result["runs"], {})
+
     def test_main_with_extra_file_only(self):
         with tempfile.TemporaryDirectory() as d:
             content = Path(d) / "COL.1.json"
