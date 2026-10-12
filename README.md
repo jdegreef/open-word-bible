@@ -39,7 +39,7 @@ Content: Genesis 1–8 (`content/GEN/`) in English and Spanish; John 1–8
 English; all of 1 and 2 Corinthians (`content/1CO/`,
 `content/2CO/`) in English; all of Galatians (`content/GAL/`) in English; all of Philippians (`content/PHP/`) in English, with chapter 4
 also in Spanish; all of Ephesians (`content/EPH/`), Colossians
-(`content/COL/`) and Philemon (`content/PHM/`) in English; and all of James, 1 and 2 Peter and 1, 2 and 3
+(`content/COL/`), 1 Thessalonians (`content/1TH/`) and Philemon (`content/PHM/`) in English; and all of James, 1 and 2 Peter and 1, 2 and 3
 John (`content/JAS/`, `content/1PE/`, `content/2PE/`, `content/1JN/`,
 `content/2JN/`, `content/3JN/`) in English. English runs
 ahead of the other languages; `docs/english-style.md` is the brief for
