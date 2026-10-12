@@ -48,6 +48,7 @@ class Command(BaseCommand):
             raise CommandError("No content files found")
         total = 0
         loaded = set(Edition.objects.filter(words__isnull=False).distinct().values_list("code", flat=True))
+        editions = {e.code: e for e in Edition.objects.all()}
         for path in files:
             records = json.loads(open(path, encoding="utf-8").read())["records"]
             missing = sorted({TEXT_ID_EDITION[r["source"]["text_id"]] for r in records} - loaded)
@@ -64,8 +65,7 @@ class Command(BaseCommand):
                     self.stderr.write(f"{path}: {e}")
                 raise CommandError(f"{path}: {len(errors)} error(s); nothing imported from it")
             with transaction.atomic():
-                for record in records:
-                    self.save(record)
+                self.save(records, editions)
             total += len(records)
             self.stdout.write(f"{path}: {len(records)} records")
         self.stdout.write(f"{total} records imported")
@@ -74,20 +74,21 @@ class Command(BaseCommand):
 
     def validate_records(self, records):
         verse_ids = {v for r in records for v in r.get("refs", [])}
-        known = {}
-        for vid in verse_ids:
-            ref = refs.parse(vid)
-            for w in Word.objects.filter(book=ref.book, chapter=ref.chapter, verse=ref.verse):
-                known[w.id] = w
-        if not known:
+        verses = {(ref.book, ref.chapter, ref.verse) for ref in map(refs.parse, verse_ids)}
+        # One query for the file's chapters, rather than one for each verse.
+        by_verse = {}
+        for book, chapter in {(b, c) for b, c, _ in verses}:
+            for w in Word.objects.filter(book=book, chapter=chapter):
+                if (w.book, w.chapter, w.verse) in verses:
+                    by_verse.setdefault((w.book, w.chapter, w.verse), {})[w.id] = w
+        if not by_verse:
             return ["no source words in the database for these verses; run import_texts first"]
         errors = []
         for record in records:
             mine = {}
             for vid in record.get("refs", []):
                 ref = refs.parse(vid)
-                mine.update({k: w for k, w in known.items()
-                             if (w.book, w.chapter, w.verse) == (ref.book, ref.chapter, ref.verse)})
+                mine.update(by_verse.get((ref.book, ref.chapter, ref.verse), {}))
             # Greek and Hebrew quoted in notes may come from anywhere in the
             # Bible, and the database may hold only the words for content/;
             # owb.validate checks them against the full MACULA data in CI.
@@ -95,29 +96,38 @@ class Command(BaseCommand):
                        for e in validate.validate_record(record, mine, original_language=False)]
         return errors
 
-    def save(self, record):
-        first = refs.parse(record["refs"][0])
-        source = record["source"]
-        edition = Edition.objects.get(code=TEXT_ID_EDITION[source["text_id"]])
-        fields = dict(
-            book=first.book, chapter=first.chapter, verse=first.verse,
-            number=int(record["id"].rsplit(".s", 1)[1]), refs=record["refs"],
-            source_edition=edition, source_text_id=source["text_id"],
-            tokens=source["tokens"], source_text=source.get("text", ""),
-            literal_gloss=record["literal_gloss"])
-        sentence, created = Sentence.objects.update_or_create(
-            record_id=record["id"], defaults=fields,
-            create_defaults=dict(fields, status=record["status"]))
-        sentence.renderings.all().delete()
-        sentence.decisions.all().delete()
+    def save(self, records, editions):
+        """Save one file's records, a handful of queries for the whole file."""
+        records = list({r["id"]: r for r in records}.values())
+        sentences = []
+        for record in records:
+            first = refs.parse(record["refs"][0])
+            source = record["source"]
+            sentences.append(Sentence(
+                record_id=record["id"], book=first.book, chapter=first.chapter, verse=first.verse,
+                number=int(record["id"].rsplit(".s", 1)[1]), refs=record["refs"],
+                source_edition=editions[TEXT_ID_EDITION[source["text_id"]]],
+                source_text_id=source["text_id"], tokens=source["tokens"],
+                source_text=source.get("text", ""), literal_gloss=record["literal_gloss"],
+                status=record["status"]))
+        # A sentence already in the database keeps its status: the update
+        # leaves it out.
+        Sentence.objects.bulk_create(
+            sentences, update_conflicts=True, unique_fields=["record_id"],
+            update_fields=["book", "chapter", "verse", "number", "refs", "source_edition",
+                           "source_text_id", "tokens", "source_text", "literal_gloss", "updated_at"])
+        Rendering.objects.filter(sentence__in=sentences).delete()
+        Decision.objects.filter(sentence__in=sentences).delete()
         Rendering.objects.bulk_create(
-            Rendering(sentence=sentence, language=lang, level=level, text=text)
-            for lang, levels in record["renderings"].items() for level, text in levels.items())
+            (Rendering(sentence=sentence, language=lang, level=level, text=text)
+             for sentence, record in zip(sentences, records)
+             for lang, levels in record["renderings"].items() for level, text in levels.items()),
+            batch_size=2000)
         Decision.objects.bulk_create(
-            Decision(sentence=sentence, key=d["id"], order=i, layer=d["layer"],
-                     language=d["language"] or "", levels=d.get("levels", []),
-                     category=d["category"], tokens=d["tokens"], choice=d["choice"],
-                     alternatives=d["alternatives"], reason=d["reason"],
-                     uncertain=d["uncertain"], footnote=d["footnote"])
-            for i, d in enumerate(record["decisions"]))
-        return created
+            (Decision(sentence=sentence, key=d["id"], order=i, layer=d["layer"],
+                      language=d["language"] or "", levels=d.get("levels", []),
+                      category=d["category"], tokens=d["tokens"], choice=d["choice"],
+                      alternatives=d["alternatives"], reason=d["reason"],
+                      uncertain=d["uncertain"], footnote=d["footnote"])
+             for sentence, record in zip(sentences, records) for i, d in enumerate(record["decisions"])),
+            batch_size=2000)
