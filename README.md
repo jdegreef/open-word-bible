@@ -60,7 +60,7 @@ All of Hebrews (`content/HEB/`) is drafted in English, Spanish, Swahili and Fren
 
 Revelation 1–5 (`content/REV/`) are drafted in English.
 
-Acts 1–2 (`content/ACT/`) are drafted in English.
+Acts 1–3 (`content/ACT/`) are drafted in English.
 
 Old Testament verses are numbered as in the Hebrew text (a psalm's title is
 verse 1), not as in English Bibles; `data/versification.json` maps one to the
