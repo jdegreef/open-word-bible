@@ -13,7 +13,6 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-import build_site  # noqa: E402
 from tests.site_build import built_site  # noqa: E402
 from extract_tokens import content_refs  # noqa: E402
 from owb.sources import macula_greek, macula_hebrew, read_text  # noqa: E402
