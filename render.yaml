@@ -28,6 +28,11 @@ services:
       - path: /*
         name: Referrer-Policy
         value: strict-origin-when-cross-origin
+      # The offline worker (web/sw.js) is checked on every visit, so a
+      # deploy reaches readers at once.
+      - path: /sw.js
+        name: Cache-Control
+        value: no-cache
     # Renamed pages keep their old addresses working.
     routes:
       - type: redirect
