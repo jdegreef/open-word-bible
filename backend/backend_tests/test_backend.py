@@ -5,6 +5,7 @@ import io
 import json
 import tempfile
 from pathlib import Path
+from unittest import mock
 
 from django.conf import settings
 from django.contrib.auth import get_user_model
@@ -29,23 +30,37 @@ def load_extract_words(languages=("grc", "hbo")):
                                       kind="original", licence="Public domain", source="macula-hebrew",
                                       source_commit="test"),
     }
-    seq = 0
+    seq, words = 0, []
     for folder, edition in editions.items():
         if folder not in languages:
             continue
         for path in sorted((settings.REPO_ROOT / "data" / folder).glob("*.json")):
-            for vid, words in json.loads(path.read_text(encoding="utf-8"))["verses"].items():
+            for vid, verse_words in json.loads(path.read_text(encoding="utf-8"))["verses"].items():
                 book, chapter, verse = vid.split(".")
-                for w in words:
+                for w in verse_words:
                     # Hebrew extracts carry each morpheme's language (H or A).
-                    Word.objects.create(edition=edition, book=book, chapter=int(chapter),
-                                        verse=int(verse), seq=seq, **{"lang": folder, **w})
+                    words.append(Word(edition=edition, book=book, chapter=int(chapter),
+                                      verse=int(verse), seq=seq, **{"lang": folder, **w}))
                     seq += 1
+    Word.objects.bulk_create(words, batch_size=5000)
     return editions["grc"]
 
 
-def import_content(*paths):
-    call_command("import_content", *paths, stdout=io.StringIO(), stderr=io.StringIO())
+def import_content(*args, stdout=None, search=False):
+    """Run import_content. The search tables are rebuilt only with search=True
+    (test_search.py): a rebuild reads all of content/ for every site
+    language, and most tests don't look at them."""
+    stdout = stdout or io.StringIO()
+    if search:
+        call_command("import_content", *args, stdout=stdout, stderr=io.StringIO())
+        return
+    with mock.patch("translation.search.rebuild", return_value={}):
+        call_command("import_content", *args, stdout=stdout, stderr=io.StringIO())
+
+
+def content_files(*patterns):
+    """The content files matching patterns ("JHN/JHN.1.*.json"), as paths."""
+    return [str(p) for pattern in patterns for p in sorted(CONTENT.glob(pattern))]
 
 
 class ImportContentTest(TestCase):
@@ -67,11 +82,12 @@ class ImportContentTest(TestCase):
         self.assertTrue(s.decisions.filter(layer="meaning").exists())
 
     def test_reimport_never_resets_review_status(self):
-        import_content()
+        john = content_files("JHN/JHN.1.1-18.json")
+        import_content(*john)
         s = Sentence.objects.get(record_id="JHN.1.1.s1")
         s.status = "reviewed"
         s.save()
-        import_content()
+        import_content(*john)
         s.refresh_from_db()
         self.assertEqual(s.status, "reviewed")
 
@@ -89,7 +105,7 @@ class ImportContentTest(TestCase):
 class FreshDatabaseTest(TestCase):
     def test_deploy_import_skips_until_texts_are_loaded(self):
         out = io.StringIO()
-        call_command("import_content", "--if-texts-loaded", stdout=out, stderr=io.StringIO())
+        import_content("--if-texts-loaded", stdout=out)
         self.assertIn("run import_texts", out.getvalue())
         self.assertEqual(Sentence.objects.count(), 0)
         with self.assertRaises(CommandError):
@@ -97,7 +113,7 @@ class FreshDatabaseTest(TestCase):
 
     def test_deploy_import_runs_once_texts_are_loaded(self):
         load_extract_words()
-        call_command("import_content", "--if-texts-loaded", stdout=io.StringIO(), stderr=io.StringIO())
+        import_content("--if-texts-loaded", *content_files("PHP/*.json"))
         self.assertTrue(Sentence.objects.exists())
 
     def test_deploy_import_skips_files_whose_text_is_not_loaded(self):
@@ -106,21 +122,23 @@ class FreshDatabaseTest(TestCase):
         # was added before the Hebrew was imported).
         load_extract_words(languages=("grc",))
         out = io.StringIO()
-        call_command("import_content", "--if-texts-loaded", stdout=out, stderr=io.StringIO())
+        genesis = content_files("GEN/GEN.1.*.json")
+        import_content("--if-texts-loaded", *content_files("GEN/GEN.1.*.json", "JHN/JHN.1.*.json",
+                                                           "ROM/ROM.1.json"), stdout=out)
         self.assertIn("run import_texts wlc. Skipped.", out.getvalue())
         self.assertTrue(Sentence.objects.filter(book="JHN").exists())
         self.assertTrue(Sentence.objects.filter(book="ROM").exists())
         self.assertFalse(Sentence.objects.filter(book="GEN").exists())
         # Run by hand, the missing text is an error that says what to do.
         with self.assertRaisesMessage(CommandError, "run import_texts wlc"):
-            import_content()
+            import_content(*genesis)
 
 
 class ApiTest(TestCase):
     @classmethod
     def setUpTestData(cls):
         edition = load_extract_words()
-        import_content()
+        import_content(*content_files("JHN/JHN.1.*.json", "GEN/GEN.1.*.json"))
         bsb = Edition.objects.create(code="bsb", name="Berean Standard Bible", language="eng",
                                      kind="reference", licence="Public domain", source="open-bibles",
                                      source_commit="test")
@@ -176,7 +194,7 @@ class ApiTest(TestCase):
 class AdminTest(TestCase):
     def test_review_event_records_the_reviewer(self):
         load_extract_words()
-        import_content()
+        import_content(*content_files("PHP/PHP.4.*.json"))
         user = get_user_model().objects.create_superuser("reviewer", "r@example.com", "pw-not-used-elsewhere")
         self.client.force_login(user)
         s = Sentence.objects.get(record_id="PHP.4.5.s2")

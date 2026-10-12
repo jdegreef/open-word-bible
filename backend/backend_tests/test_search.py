@@ -24,7 +24,7 @@ class SearchTest(TestCase):
     @classmethod
     def setUpTestData(cls):
         load_extract_words()
-        import_content()
+        import_content(search=True)
 
     def setUp(self):
         cache.clear()   # the search throttle counts requests in the cache
