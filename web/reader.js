@@ -17,7 +17,7 @@
 
   // The reading language is the page's (/es/... is Spanish); the footer
   // switches it. The other settings are kept across pages and languages.
-  var settings = { level: "B", gender: 0, christos: 0, divine_name: 0, deity_pronoun: 0, units: 0, plural_you: 0, view: 0 };
+  var settings = { level: "B", gender: 0, christos: 0, divine_name: 0, deity_pronoun: 0, units: 0, plural_you: 0, view: 0, headings: 0 };
   try {
     var saved = JSON.parse(localStorage.getItem(STORE) || "{}");
     for (var k in settings) if (k in saved) settings[k] = saved[k];
@@ -146,19 +146,24 @@
     // A page shows either the divine name (Old Testament) or the title
     // Christ (New Testament), and measures only where it has them, so
     // some hints are missing.
-    ["gender", "christos", "divine_name", "deity_pronoun", "units", "plural_you", "view"].forEach(function (name) {
+    ["gender", "christos", "divine_name", "deity_pronoun", "units", "plural_you", "view", "headings"].forEach(function (name) {
       var hint = document.getElementById("hint-" + name);
       if (hint) hint.textContent = t("hint_" + name)[settings[name]];
     });
     // The summary on the phone settings button: each shown choice's label.
     var summary = [];
-    document.querySelectorAll(".control:not([hidden]) .seg").forEach(function (seg) {
+    // "Show" or "Hide" means nothing without its label, so headings are left out.
+    document.querySelectorAll(".control:not([hidden]) .seg:not([data-setting=headings])").forEach(function (seg) {
       var on = seg.querySelector('[aria-pressed="true"]');
       if (on && seg.children.length > 1) summary.push(on.textContent);
     });
     document.getElementById("settings-summary").textContent = summary.join(" \u00b7 ");
     document.body.classList.toggle("plain", plain());
   }
+
+  // The headings control only where the chapter has headings.
+  var headingsSeg = document.querySelector('[data-setting="headings"]');
+  if (headingsSeg && !Object.keys(DATA.headings).length) headingsSeg.parentNode.hidden = true;
 
   // Reading view: the text alone, without verse numbers, footnote letters or
   // the reasoning panel; verses are not buttons.
@@ -269,15 +274,19 @@
     note.textContent = partial ? t("partial") : "";
     document.getElementById("title").textContent = DATA.title;
     var shown = null;   // last verse number printed
+    var marked = marks();
     var notes = [];
     var starts = new Set(DATA.paragraphs);
     var para = null;    // the paragraph being filled
     DATA.records.forEach(function (r) {
       // A section heading, then a new paragraph where the Greek starts one.
       // The heading is shown in the language its sentence is shown in, and
-      // left out until it has that language.
+      // left out until it has that language. Headings are editorial, not
+      // translation, so the reader can hide them; a hidden heading still
+      // starts its paragraph, so the text does not reflow.
       var heading = DATA.headings[r.id];
-      var hlang = heading && [settings.lang, textLang(r)].filter(function (l) { return heading[l]; })[0];
+      var hlang = heading && settings.headings === 0 &&
+        [settings.lang, textLang(r)].filter(function (l) { return heading[l]; })[0];
       if (hlang) {
         var h = el("h2", "section-head" + (hlang === settings.lang ? "" : " fallback"), render(heading[hlang]));
         if (hlang !== settings.lang) h.lang = hlang;
@@ -306,6 +315,10 @@
           span.setAttribute("aria-label", t("verse_label").replace("{v}", part[0]));
         }
         span.dataset.v = part[0];
+        span.dataset.record = r.id;
+        var m = marked[verseId(part[0])];
+        if (m && m.h) span.classList.add("hl-" + m.h);
+        if (m && m.b) span.classList.add("bookmarked");
         if (current && current.id === r.id) span.setAttribute("aria-current", "true");
         if (part[0] !== shown) span.appendChild(el("sup", null, part[0]));
         shown = part[0];
@@ -350,6 +363,7 @@
       });
     });
     drawNotes(notes);
+    if (listen.on) mark(false);
   }
 
   function drawNotes(notes) {
@@ -489,6 +503,7 @@
     title.appendChild(el("span", null, ref));
     title.appendChild(linkButton(currentVerse));
     panel.appendChild(title);
+    panel.appendChild(markRow(currentVerse));
 
     panel.appendChild(el("h3", null, t("greek")));
     // Interlinear: each Greek word (or Hebrew morpheme) over its gloss. Tapping one shows its
@@ -586,6 +601,76 @@
     ds.rendering.forEach(function (d) { panel.appendChild(drawCard(d, current)); });
   }
 
+  // Bookmarks and highlights, kept in this browser as owb.marks by verse
+  // ("JHN.3.16"), so they hold whatever the settings or language. Each
+  // keeps the verse's words as shown when it was marked, for the saved
+  // verses page (site.js). {b: true, h: "yellow", text, lang, at}
+  var MARKS = "owb.marks";
+  var HUES = ["yellow", "green", "blue", "pink"];
+  function marks() {
+    try { return JSON.parse(localStorage.getItem(MARKS) || "{}"); } catch (e) { return {}; }
+  }
+  // "16" -> "JHN.3.16"; "7:53" (another chapter's verse) -> "JHN.7.53".
+  function verseId(v) {
+    var p = String(v).split(":");
+    return DATA.book + "." + (p.length > 1 ? p[0] + "." + p[1] : DATA.chapter + "." + v);
+  }
+  // A verse's words as shown, without its number or footnote letters.
+  function verseWords(v) {
+    var spans = document.querySelectorAll('#text .verse[data-v="' + v + '"]');
+    return Array.prototype.map.call(spans, function (s) {
+      var copy = s.cloneNode(true);
+      copy.querySelectorAll("sup").forEach(function (x) { x.remove(); });
+      return copy.textContent.trim();
+    }).join(" ");
+  }
+  function setMark(v, change) {
+    var all = marks(), id = verseId(v), m = all[id] || {};
+    for (var k in change) { if (change[k]) m[k] = change[k]; else delete m[k]; }
+    if (m.b || m.h) {
+      var span = verseEl(v);
+      m.text = verseWords(v);
+      m.lang = (span && span.lang) || settings.lang;
+      m.at = Date.now();
+      all[id] = m;
+    } else {
+      delete all[id];
+    }
+    try { localStorage.setItem(MARKS, JSON.stringify(all)); } catch (e) { /* storage full or blocked */ }
+    var top = panelEl.scrollTop;
+    drawText();
+    drawPanel();
+    panelEl.scrollTop = top;
+  }
+
+  // Under the panel's title: bookmark the verse, highlight it in a colour.
+  function markRow(v) {
+    var m = marks()[verseId(v)] || {};
+    var row = el("div", "mark-row");
+    var b = el("button", "mark-bookmark", t(m.b ? "bookmarked" : "bookmark"));
+    b.type = "button";
+    b.setAttribute("aria-pressed", m.b ? "true" : "false");
+    b.addEventListener("click", function () { setMark(v, { b: !m.b }); });
+    row.appendChild(b);
+    var hues = el("div", "mark-hues");
+    hues.setAttribute("role", "group");
+    hues.setAttribute("aria-label", t("highlight"));
+    HUES.forEach(function (hue) {
+      var h = el("button", "mark-hue hl-" + hue);
+      h.type = "button";
+      h.setAttribute("aria-label", t("hl_" + hue));
+      h.title = t("hl_" + hue);
+      h.setAttribute("aria-pressed", m.h === hue ? "true" : "false");
+      h.addEventListener("click", function () { setMark(v, { h: m.h === hue ? null : hue }); });
+      hues.appendChild(h);
+    });
+    row.appendChild(hues);
+    var all = el("a", "mark-all", t("saved_all"));
+    all.href = DATA.saved;
+    row.appendChild(all);
+    return row;
+  }
+
   // A link to this chapter opened at a verse (#v4). Phones offer the
   // system share sheet; elsewhere the link is copied.
   function linkButton(verse) {
@@ -617,6 +702,13 @@
   // in style.css), so opening it never moves the reader's place. The CSS
   // owns the breakpoint: the sheet is the panel when it is position: fixed.
   function narrow() { return getComputedStyle(panelEl).position === "fixed"; }
+  // Smooth scrolling, unless the reader asked for less motion (the device
+  // setting, or Motion in the gear menu: data-motion on <html>).
+  function scrollMotion() {
+    var reduce = document.documentElement.getAttribute("data-motion") === "reduce" ||
+      (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches);
+    return reduce ? "auto" : "smooth";
+  }
   function verseEl(v) { return document.querySelector('.verse[data-v="' + v + '"]'); }
   // A verse in the address: #v4, or plainly #4 (#v7:53 for a verse
   // of another chapter that a sentence runs into). #at-4 (from "Continue
@@ -659,7 +751,7 @@
     }
     if (narrow()) {
       var v = verseEl(verse);
-      if (v) v.scrollIntoView({ behavior: "smooth", block: "start" });
+      if (v) v.scrollIntoView({ behavior: scrollMotion(), block: "start" });
       // The sheet covers the text below the verse, so take focus into it.
       if (!card) panelEl.focus({ preventScroll: true });
     }
@@ -728,7 +820,7 @@
     var v = verseEl(next.verse);
     if (v && !narrow()) {
       v.focus({ preventScroll: true });
-      v.scrollIntoView({ block: "nearest", behavior: "smooth" });
+      v.scrollIntoView({ block: "nearest", behavior: scrollMotion() });
     }
   }
 
@@ -743,7 +835,7 @@
   // already puts it at the top, above the sheet.)
   function reveal(verse, instant) {
     var v = !narrow() && verseEl(verse);
-    if (v) v.scrollIntoView({ block: "center", behavior: instant ? "auto" : "smooth" });
+    if (v) v.scrollIntoView({ block: "center", behavior: instant ? "auto" : scrollMotion() });
   }
 
   // Swipe the sheet down to close it, when it is scrolled to its top. The
@@ -779,6 +871,8 @@
     drawText();
     drawPanel();
     panelEl.scrollTop = top;
+    // New wording: read the sentence again as it now stands.
+    if (listen.on && !listen.paused) speakRecord(listen.at);
   }
 
   // Copying from the passage adds where it comes from: "John 2:4 (Open
@@ -885,13 +979,15 @@
 
   // The reader's place, kept as owb.place for "Continue reading" on the
   // home and Read pages (site.js): the verse at the reading line, a quarter
-  // of the way down or just below the sticky header and settings bar (a
-  // verse's scroll margin) if that is lower. Saving and resuming both use
+  // of the way down or just below the sticky header and settings bar if
+  // that is lower (where scrollIntoView puts a verse: the page's scroll
+  // padding plus the verse's scroll margin). Saving and resuming both use
   // the line, so a place does not drift.
   function readingLine() {
     var first = document.querySelector("#text .verse");
+    var pad = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
     var margin = first ? parseFloat(getComputedStyle(first).scrollMarginTop) || 0 : 0;
-    return Math.max(margin, window.innerHeight * 0.25);
+    return Math.max(pad + margin, window.innerHeight * 0.25);
   }
   function topVerse() {
     var line = readingLine() + 1;
@@ -926,6 +1022,263 @@
       var v = verseEl(resumeAt[1]);
       if (v) window.scrollBy(0, v.getBoundingClientRect().top - readingLine());
     });
+  }
+
+  // Listen: the browser's own voices read the passage aloud, one sentence
+  // (record) at a time, in the wording the settings give, from the verse
+  // the reader is at. A sentence shown in English on another language's
+  // page is read in English. No audio files, so it works offline too.
+  // Speed, and a voice per language, are kept as owb.listen.
+  var speech = window.speechSynthesis;
+  var LISTEN = "owb.listen";
+  var RATES = [0.8, 1, 1.25, 1.5, 2];
+  var listen = { on: false, paused: false, at: 0, utter: null, rate: 1, voices: {} };
+  try {
+    var kept = JSON.parse(localStorage.getItem(LISTEN) || "{}");
+    if (RATES.indexOf(kept.rate) >= 0) listen.rate = kept.rate;
+    if (kept.voices) listen.voices = kept.voices;
+  } catch (e) { /* defaults */ }
+  function keepListen() {
+    try { localStorage.setItem(LISTEN, JSON.stringify({ rate: listen.rate, voices: listen.voices })); } catch (e) { /* ignore */ }
+  }
+
+  // A sentence as it is read: its language, and its text without verse
+  // markers, in pieces of up to about 220 characters split at punctuation
+  // (some voices stop after about fifteen seconds of one utterance).
+  function spoken(r) {
+    var lang = textLang(r);
+    var rest = render(r.renderings[lang][settings.level]).replace(new RegExp(VERSE.source, "g"), "").replace(/\s+/g, " ").trim();
+    var parts = [];
+    while (rest.length > 220) {
+      var cut = -1, re = /[,;:\u2014.!?]\s/g, m;
+      while ((m = re.exec(rest)) && m.index < 220) cut = m.index + 1;
+      if (cut < 40) cut = rest.lastIndexOf(" ", 220);
+      if (cut < 40) cut = 220;
+      parts.push(rest.slice(0, cut).trim());
+      rest = rest.slice(cut).trim();
+    }
+    if (rest) parts.push(rest);
+    return { lang: lang, parts: parts };
+  }
+
+  // The device's voices for a language, the most natural first, without
+  // the novelty voices macOS ships (Bells, Bubbles, Zarvox...).
+  var NATURAL = /google|neural|natural|premium|enhanced|siri/i;
+  // Whole names only: "Flo" is a novelty voice, "Florian" is not.
+  var NAMED = /\b(samantha|daniel|karen|moira|tessa|serena|allison|ava|zoe|nicky|aaron|fiona|rishi|monica|paulina|jorge|thomas|amelie|audrey)\b/i;
+  var NOVELTY = /^(albert|bad news|bahh|bells|boing|bubbles|cellos|deranged|good news|hysterical|jester|organ|pipe organ|superstar|trinoids|whisper|wobble|zarvox|fred|junior|ralph|kathy|grandma|grandpa|rocko|eddy|flo|reed|sandy|shelley)\b/i;
+  function voicesFor(lang) {
+    function score(v) { return (NATURAL.test(v.name) ? 4 : 0) + (NAMED.test(v.name) ? 2 : 0) + (v.default ? 1 : 0); }
+    var seen = {};
+    var all = speech.getVoices().filter(function (v) {
+      if (v.lang.toLowerCase().split(/[-_]/)[0] !== lang || seen[v.name]) return false;
+      seen[v.name] = true;
+      return true;
+    });
+    var plain = all.filter(function (v) { return !NOVELTY.test(v.name); });
+    // Only novelty voices for a language are still better than none.
+    return (plain.length ? plain : all).sort(function (a, b) { return score(b) - score(a); });
+  }
+  function voiceFor(lang) {
+    var all = voicesFor(lang);
+    return all.filter(function (v) { return v.voiceURI === listen.voices[lang]; })[0] || all[0] || null;
+  }
+
+  // Light up the sentence being read, and follow it down the page: always
+  // when the reader moved to it, otherwise only while the reader is still
+  // watching the one before (not when they have scrolled away to read).
+  function inView(v) {
+    var box = v.getBoundingClientRect();
+    return box.bottom > readingLine() && box.top < window.innerHeight - bar.offsetHeight;
+  }
+  function mark(follow) {
+    var r = DATA.records[listen.at];
+    var before = document.querySelector("#text .speaking");
+    if (follow === "auto") follow = !before || inView(before);
+    var first = null;
+    document.querySelectorAll("#text .verse").forEach(function (v) {
+      var on = r && v.dataset.record === r.id;
+      v.classList.toggle("speaking", on);
+      if (on && !first) first = v;
+    });
+    if (follow && first) {
+      var box = first.getBoundingClientRect();
+      if (box.top < readingLine() || box.bottom > window.innerHeight - bar.offsetHeight - 16)
+        window.scrollBy(0, box.top - readingLine());
+    }
+    // "John 3:16", or "John 7:53\u20138:11" for a sentence across chapters.
+    var range = r ? verseRange(r) : "";
+    where.textContent = r ? DATA.books[DATA.book] + " " + (/:/.test(range) ? range : DATA.chapter + ":" + range) : "";
+  }
+
+  // jump: the reader moved here (start, previous/next, a new setting), so
+  // the page follows; reading on by itself follows only a watching reader.
+  function speakRecord(i, jump) {
+    listen.utter = null;
+    speech.cancel();
+    if (i < 0) i = 0;
+    if (i >= DATA.records.length) { stopListening(); return; }
+    listen.at = i;
+    listen.paused = false;
+    var s = spoken(DATA.records[i]);
+    var voice = voiceFor(s.lang);
+    // Voices known but none for this language: say so rather than read
+    // the words in another language's voice.
+    if (!voice && speech.getVoices().length) {
+      note.hidden = false;
+      listen.paused = true;
+      drawBar();
+      return;
+    }
+    note.hidden = true;
+    mark(jump === false ? "auto" : true);
+    drawBar();
+    (function next(k) {
+      var u = new SpeechSynthesisUtterance(s.parts[k]);
+      u.lang = s.lang;
+      if (voice) u.voice = voice;
+      u.rate = listen.rate;
+      u.onend = function () {
+        if (listen.utter !== u) return;   // stopped or moved on
+        if (k + 1 < s.parts.length) next(k + 1);
+        else speakRecord(i + 1, false);
+      };
+      u.onerror = function (e) {
+        if (listen.utter === u && e.error !== "interrupted" && e.error !== "canceled") stopListening();
+      };
+      listen.utter = u;
+      speech.speak(u);
+    })(0);
+  }
+
+  function startListening() {
+    // From the sentence chosen, or else the one at the reading line.
+    var r = current || recordFor(topVerse());
+    listen.on = true;
+    bar.hidden = false;
+    document.body.classList.add("listening");
+    startBtn.setAttribute("aria-pressed", "true");
+    voiceMenu();
+    speakRecord(Math.max(0, DATA.records.indexOf(r)));
+  }
+
+  function stopListening() {
+    listen.on = false;
+    listen.utter = null;
+    speech.cancel();
+    bar.hidden = true;
+    note.hidden = true;
+    document.body.classList.remove("listening");
+    document.querySelectorAll("#text .speaking").forEach(function (v) { v.classList.remove("speaking"); });
+    startBtn.setAttribute("aria-pressed", "false");
+    startBtn.focus({ preventScroll: true });
+  }
+
+  // Pausing stops the voice; playing again starts the sentence over (the
+  // engine's own pause is unreliable on phones).
+  function togglePause() {
+    if (listen.paused) { speakRecord(listen.at); return; }
+    listen.paused = true;
+    listen.utter = null;
+    speech.cancel();
+    drawBar();
+  }
+
+  // The bar at the foot of the window while listening.
+  var ICON = {
+    play: "M8 5v14l11-7z", pause: "M7 5h3v14H7zM14 5h3v14h-3z",
+    prev: "M18 5v14L8 12zM6 5v14", next: "M6 5v14l10-7zM18 5v14", stop: "M18 6 6 18M6 6l12 12"
+  };
+  function button(name, label, onClick) {
+    var b = el("button", "listen-btn");
+    b.type = "button";
+    b.setAttribute("aria-label", label);
+    b.title = label;
+    var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("viewBox", "0 0 24 24");
+    svg.setAttribute("aria-hidden", "true");
+    var path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path.setAttribute("d", ICON[name]);
+    svg.appendChild(path);
+    b.appendChild(svg);
+    b.addEventListener("click", onClick);
+    return b;
+  }
+  var bar = el("div", "listen-bar");
+  bar.hidden = true;
+  bar.setAttribute("role", "region");
+  bar.setAttribute("aria-label", t("listen_bar"));
+  var row = el("div", "listen-row");
+  var prevBtn = button("prev", t("listen_prev"), function () { speakRecord(listen.at - 1); });
+  var playBtn = button("pause", t("listen_pause"), togglePause);
+  playBtn.classList.add("listen-play");
+  var nextBtn = button("next", t("listen_next"), function () { speakRecord(listen.at + 1); });
+  var where = el("span", "listen-where");
+  var rateBtn = el("button", "listen-rate");
+  rateBtn.type = "button";
+  rateBtn.setAttribute("aria-label", t("listen_speed"));
+  rateBtn.title = t("listen_speed");
+  rateBtn.addEventListener("click", function () {
+    listen.rate = RATES.filter(function (x) { return x > listen.rate; })[0] || RATES[0];
+    keepListen();
+    if (!listen.paused) speakRecord(listen.at);
+    drawBar();
+  });
+  var voiceSel = el("select", "listen-voice");
+  voiceSel.setAttribute("aria-label", t("listen_voice"));
+  voiceSel.addEventListener("change", function () {
+    listen.voices[DATA.lang] = voiceSel.value;
+    keepListen();
+    if (!listen.paused) speakRecord(listen.at);
+  });
+  var stopBtn = button("stop", t("listen_stop"), stopListening);
+  [prevBtn, playBtn, nextBtn, where, rateBtn, voiceSel, stopBtn].forEach(function (n) { row.appendChild(n); });
+  var note = el("p", "listen-note", t("listen_no_voice"));
+  note.hidden = true;
+  bar.appendChild(row);
+  bar.appendChild(note);
+  document.body.appendChild(bar);
+  // The page keeps room for the bar at its foot, however tall it grows.
+  if (window.ResizeObserver) new ResizeObserver(function () {
+    document.documentElement.style.setProperty("--listen-h", bar.offsetHeight + "px");
+  }).observe(bar);
+
+  function drawBar() {
+    var paused = listen.paused;
+    playBtn.setAttribute("aria-label", t(paused ? "listen_play" : "listen_pause"));
+    playBtn.title = playBtn.getAttribute("aria-label");
+    playBtn.querySelector("path").setAttribute("d", ICON[paused ? "play" : "pause"]);
+    rateBtn.textContent = listen.rate + "\u00d7";
+  }
+
+  // The voice menu offers the page language's best few voices, when there
+  // is a choice.
+  function voiceMenu() {
+    var all = voicesFor(DATA.lang).slice(0, 5);
+    voiceSel.textContent = "";
+    all.forEach(function (v) {
+      var o = el("option", null, v.name.replace(/^(Microsoft|Google)\s+/, ""));
+      o.value = v.voiceURI;
+      voiceSel.appendChild(o);
+    });
+    var chosen = voiceFor(DATA.lang);
+    if (chosen) voiceSel.value = chosen.voiceURI;
+    voiceSel.hidden = all.length < 2;
+  }
+
+  var startBtn = document.getElementById("listen-start");
+  if (speech && window.SpeechSynthesisUtterance && startBtn) {
+    startBtn.hidden = false;
+    startBtn.setAttribute("aria-pressed", "false");
+    startBtn.addEventListener("click", function () {
+      if (listen.on) stopListening(); else startListening();
+    });
+    // Voices arrive after the page in some browsers.
+    if (speech.addEventListener) speech.addEventListener("voiceschanged", function () { if (listen.on) voiceMenu(); });
+    // Leaving the page stops the voice (some browsers would read on).
+    window.addEventListener("pagehide", function () { speech.cancel(); });
+    // Back to this page from the browser's cache: the voice has stopped.
+    window.addEventListener("pageshow", function (e) { if (e.persisted && listen.on) stopListening(); });
   }
 
   var start = hashVerse();

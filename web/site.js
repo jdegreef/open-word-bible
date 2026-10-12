@@ -1,61 +1,76 @@
-// The colour-mode menu behind the gear in the header (see COLOUR_MENU in
-// scripts/build_site.py). The choice is kept in localStorage and applied as
-// data-theme on <html>; "auto" removes it so the page follows the device.
-// The inline boot script in each page applies a saved choice before paint.
+// The display menu behind the gear in the header (see colour_menu in
+// scripts/build_site.py): the colour mode, then the reading text's size,
+// typeface and line spacing. Each radiogroup is one setting (data-pref); a
+// choice is kept in localStorage as owb-<pref> and applied as data-<pref> on
+// <html>, and the default (data-default; "light", Paper, for the colour mode)
+// removes both. "auto" is a choice like any other: it follows the device. The inline boot script in each page
+// applies saved choices before paint.
 (function () {
   "use strict";
-  var KEY = "owb-theme";
-  var MODES = ["light", "sepia", "dark", "night", "contrast"];
+  var MODES = ["auto", "light", "sepia", "dark", "night", "contrast"];
   var root = document.documentElement;
   var button = document.querySelector(".prefs-btn");
   var menu = document.getElementById("colour-menu");
   if (!button || !menu) return;
-  var options = Array.prototype.slice.call(menu.querySelectorAll("[data-theme-option]"));
+  var groups = Array.prototype.slice.call(menu.querySelectorAll("[data-pref]"));
 
-  function current() {
-    var t = root.getAttribute("data-theme");
-    return MODES.indexOf(t) >= 0 ? t : "auto";
+  function optionsOf(group) {
+    return Array.prototype.slice.call(group.querySelectorAll("[data-value]"));
   }
 
-  function mark() {
-    var value = current();
-    options.forEach(function (o) {
-      var on = o.getAttribute("data-theme-option") === value;
+  function current(group) {
+    var pref = group.getAttribute("data-pref");
+    var v = root.getAttribute("data-" + pref);
+    var known = pref === "theme" ? MODES.indexOf(v) >= 0
+      : optionsOf(group).some(function (o) { return o.getAttribute("data-value") === v; });
+    return known ? v : group.getAttribute("data-default");
+  }
+
+  function mark(group) {
+    var value = current(group);
+    optionsOf(group).forEach(function (o) {
+      var on = o.getAttribute("data-value") === value;
       o.setAttribute("aria-checked", on ? "true" : "false");
       o.tabIndex = on ? 0 : -1;
     });
   }
 
-  function choose(value) {
-    if (value === "auto") root.removeAttribute("data-theme");
-    else root.setAttribute("data-theme", value);
+  function choose(group, value) {
+    var pref = group.getAttribute("data-pref");
+    var isDefault = value === group.getAttribute("data-default");
+    if (isDefault) root.removeAttribute("data-" + pref);
+    else root.setAttribute("data-" + pref, value);
     try {
-      if (value === "auto") localStorage.removeItem(KEY);
-      else localStorage.setItem(KEY, value);
+      if (isDefault) localStorage.removeItem("owb-" + pref);
+      else localStorage.setItem("owb-" + pref, value);
     } catch (e) { /* storage blocked: the choice lasts for this page only */ }
-    mark();
+    mark(group);
   }
 
   function open(show) {
     menu.hidden = !show;
     button.setAttribute("aria-expanded", show ? "true" : "false");
     if (show) {
-      var on = options.filter(function (o) { return o.tabIndex === 0; })[0] || options[0];
+      var on = optionsOf(groups[0]).filter(function (o) { return o.tabIndex === 0; })[0] || optionsOf(groups[0])[0];
       on.focus();
     }
   }
 
   button.addEventListener("click", function () { open(menu.hidden); });
-  options.forEach(function (o, i) {
-    o.addEventListener("click", function () { choose(o.getAttribute("data-theme-option")); });
-    o.addEventListener("keydown", function (e) {
-      var step = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
-      if (!step) return;
-      e.preventDefault();
-      var next = options[(i + step + options.length) % options.length];
-      choose(next.getAttribute("data-theme-option"));
-      next.focus();
+  groups.forEach(function (group) {
+    var options = optionsOf(group);
+    options.forEach(function (o, i) {
+      o.addEventListener("click", function () { choose(group, o.getAttribute("data-value")); });
+      o.addEventListener("keydown", function (e) {
+        var step = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
+        if (!step) return;
+        e.preventDefault();
+        var next = options[(i + step + options.length) % options.length];
+        choose(group, next.getAttribute("data-value"));
+        next.focus();
+      });
     });
+    mark(group);
   });
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape" && !menu.hidden) { open(false); button.focus(); }
@@ -63,7 +78,6 @@
   document.addEventListener("click", function (e) {
     if (!menu.hidden && !menu.contains(e.target) && !button.contains(e.target)) open(false);
   });
-  mark();
 })();
 
 // The header's section dropdowns (Read, Articles, About), and the menu
@@ -153,24 +167,66 @@
   });
 })();
 
-// The header's account button: once signed in (web/account.js keeps a copy
-// of the account in localStorage), it shows the reader's initial.
+// The header's account menu (account_menu in scripts/build_site.py), as on
+// Ochorus. Signed out, "Sign in" leads to /login/ and back to this page.
+// Signed in (web/account.js keeps a copy of the account in localStorage),
+// the reader's initial opens a menu: their name and email, the account
+// page, Admin for a super admin, and signing out.
 (function () {
   "use strict";
-  var link = document.querySelector(".account-btn");
-  if (!link) return;
+  var box = document.querySelector(".account-menu");
+  if (!box) return;
+  var signIn = box.querySelector("[data-login]");
   var account = null;
   try { account = JSON.parse(localStorage.getItem("owb.account") || "null"); } catch (e) { /* none */ }
-  if (!account || !account.user) return;
-  var name = account.user.display_name || account.user.email;
-  var initial = link.querySelector(".account-initial");
-  initial.textContent = name.charAt(0).toUpperCase();
-  initial.hidden = false;
-  link.classList.add("signed-in");
-  // The label is in the page's language (data-signed-in, from i18n/).
-  var label = link.getAttribute("data-signed-in");
-  link.setAttribute("aria-label", label + " (" + name + ")");
-  link.title = label;
+  if (!account || !account.user) {
+    document.documentElement.classList.remove("signed-in");
+    // Set now, not on click, so a link opened in a new tab comes back too;
+    // and again on click, for a verse picked since (#v12).
+    var back = function () {
+      if (/\/(login|reset-password)\/$/.test(location.pathname)) return;
+      signIn.href = signIn.pathname + "?redirect=" +
+        encodeURIComponent(location.pathname + location.search + location.hash);
+    };
+    back();
+    signIn.addEventListener("click", back);
+    signIn.addEventListener("auxclick", back);
+    return;
+  }
+  var user = account.user;
+  var name = user.display_name || user.email;
+  var button = box.querySelector(".avatar-btn");
+  var pop = box.querySelector(".account-pop");
+  box.querySelector(".account-initial").textContent = name.charAt(0).toUpperCase();
+  box.querySelector(".who-name").textContent = user.display_name || "";
+  box.querySelector(".who-email").textContent = user.email;
+  box.querySelector(".admin-link").hidden = !user.is_super_admin;
+  button.setAttribute("aria-label", button.getAttribute("aria-label") + " (" + name + ")");
+  signIn.hidden = true;
+  button.hidden = false;
+
+  function open(show) {
+    pop.hidden = !show;
+    button.setAttribute("aria-expanded", show ? "true" : "false");
+    if (show) pop.querySelector("a, button").focus();
+  }
+  button.addEventListener("click", function () { open(pop.hidden); });
+  document.addEventListener("click", function (e) {
+    if (!pop.hidden && !box.contains(e.target)) open(false);
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && !pop.hidden) { open(false); button.focus(); }
+  });
+
+  box.querySelector(".sign-out").addEventListener("click", function () {
+    var api = document.querySelector('meta[name="owb-api"]').content;
+    function done() {
+      try { localStorage.removeItem("owb.account"); } catch (e) { /* none */ }
+      location.reload();
+    }
+    fetch(api + "/api/auth/sign-out", { method: "POST", headers: { Authorization: "Bearer " + account.token } })
+      .then(done, done);
+  });
 })();
 
 // The footer's language links (language_links in scripts/build_site.py):
@@ -207,5 +263,211 @@
     a.href = a.getAttribute("data-prefix") + "/" + place.book.toLowerCase() + "/" + place.chapter + "/#at-" + verse;
     a.querySelector("span").textContent = a.getAttribute("data-label").replace("{ref}", ref);
     a.hidden = false;
+  });
+})();
+
+// Reading offline (web/sw.js). The worker keeps the pages read lately; the
+// Read page's "Save for offline" button stores a whole book in the
+// owb-books cache, and owb.saved remembers which, for the button and for
+// the offline page's list.
+(function () {
+  "use strict";
+  if (!("serviceWorker" in navigator) || !("caches" in window)) return;
+  window.addEventListener("load", function () {
+    navigator.serviceWorker.register("/sw.js").catch(function () { /* no offline reading */ });
+  });
+
+  var SAVED = "owb.saved";
+  function saved() {
+    try { return JSON.parse(localStorage.getItem(SAVED) || "{}"); } catch (e) { return {}; }
+  }
+  function remember(list) {
+    try { localStorage.setItem(SAVED, JSON.stringify(list)); } catch (e) { /* the cache still has it */ }
+  }
+  // A book is saved per language: "es:JHN".
+  var lang = document.documentElement.lang;
+
+  var head = document.querySelector("[data-offline-files]");
+  var files = head ? JSON.parse(head.getAttribute("data-offline-files")) : [];
+  document.querySelectorAll(".save-book").forEach(function (b) {
+    var key = lang + ":" + b.getAttribute("data-book");
+    var pages = JSON.parse(b.getAttribute("data-pages"));
+    var label = b.querySelector("span");
+    function show(state, n) {
+      b.setAttribute("aria-pressed", state === "saved" ? "true" : "false");
+      b.disabled = state === "saving";
+      label.textContent = b.getAttribute("data-" + state)
+        .replace("{n}", n || 0).replace("{total}", pages.length);
+    }
+
+    function save() {
+      show("saving", 0);
+      caches.open("owb-books").then(function (cache) {
+        var done = 0;
+        // One at a time, so a slow connection is not swamped.
+        return pages.concat(files).reduce(function (chain, u) {
+          return chain.then(function () {
+            return cache.match(u).then(function (hit) {
+              // no-cache: past the worker's own cache (web/sw.js), fresh.
+              return hit || fetch(u, { credentials: "same-origin", cache: "no-cache" }).then(function (res) {
+                if (!res.ok) throw new Error(u + ": " + res.status);
+                return cache.put(u, res);
+              });
+            }).then(function () {
+              if (pages.indexOf(u) >= 0) show("saving", ++done);
+            });
+          });
+        }, Promise.resolve());
+      }).then(function () {
+        var list = saved();
+        list[key] = { name: b.getAttribute("data-name"), pages: pages };
+        remember(list);
+        show("saved");
+      }).catch(function () { show("failed"); });
+    }
+
+    function remove() {
+      var list = saved();
+      delete list[key];
+      remember(list);
+      // The shared files go with the language's last saved book.
+      var more = Object.keys(list).some(function (k) { return k.indexOf(lang + ":") === 0; });
+      var gone = more ? pages : pages.concat(files);
+      caches.open("owb-books").then(function (cache) {
+        return Promise.all(gone.map(function (u) { return cache.delete(u); }));
+      }).then(function () { show("save"); });
+    }
+
+    b.addEventListener("click", function () {
+      if (b.getAttribute("aria-pressed") === "true") remove(); else save();
+    });
+    // Saved, if the list says so and the cache still has its pages (a
+    // browser short of space may have cleared it).
+    caches.open("owb-books").then(function (cache) { return cache.match(pages[pages.length - 1]); })
+      .then(function (hit) { show(saved()[key] && hit ? "saved" : "save"); b.hidden = false; });
+  });
+
+  // The offline page lists the saved books, each with its chapters.
+  var box = document.getElementById("saved-books");
+  if (box) {
+    var list = saved(), ul = box.querySelector("ul");
+    Object.keys(list).forEach(function (key) {
+      var li = document.createElement("li");
+      li.className = "book-row";
+      var name = document.createElement("span");
+      name.className = "book-name";
+      name.textContent = list[key].name;
+      var pills = document.createElement("span");
+      pills.className = "chap-pills";
+      list[key].pages.forEach(function (u) {
+        var a = document.createElement("a");
+        a.className = "chap";
+        a.href = u;
+        a.textContent = u.split("/").filter(Boolean).pop();
+        pills.appendChild(a);
+      });
+      li.appendChild(name);
+      li.appendChild(pills);
+      ul.appendChild(li);
+    });
+    box.hidden = !ul.children.length;
+  }
+  // Its link home, only if the home page is saved (else it leads back here).
+  document.querySelectorAll("a[data-if-saved]").forEach(function (a) {
+    caches.match(a.getAttribute("href")).then(function (hit) { a.hidden = !hit; });
+  });
+})();
+
+// The saved verses page (saved_page in scripts/build_site.py): the
+// bookmarks and highlights web/reader.js keeps as owb.marks, by book in
+// canonical order, each with its words as they were shown when marked.
+(function () {
+  "use strict";
+  var box = document.getElementById("saved");
+  if (!box) return;
+  var data = JSON.parse(box.getAttribute("data-saved"));
+  var list = box.querySelector(".saved-list"), empty = box.querySelector(".saved-empty");
+  var filter = "all";
+
+  function load() {
+    try { return JSON.parse(localStorage.getItem("owb.marks") || "{}"); } catch (e) { return {}; }
+  }
+  function remove(id) {
+    var all = load();
+    delete all[id];
+    try { localStorage.setItem("owb.marks", JSON.stringify(all)); } catch (e) { /* ignore */ }
+    draw();
+  }
+  function el(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
+  }
+
+  function draw() {
+    var all = load();
+    var ids = Object.keys(all).filter(function (id) {
+      var m = all[id], book = id.split(".")[0];
+      if (data.order.indexOf(book) < 0) return false;
+      return filter === "all" || (filter === "bookmarks" ? m.b : m.h);
+    }).sort(function (a, b) {
+      var p = a.split("."), q = b.split(".");
+      return (data.order.indexOf(p[0]) - data.order.indexOf(q[0])) || (p[1] - q[1]) || (p[2] - q[2]);
+    });
+    list.textContent = "";
+    empty.hidden = ids.length > 0;
+    var group = null, book = null;
+    ids.forEach(function (id) {
+      var m = all[id], p = id.split(".");
+      if (p[0] !== book) {
+        book = p[0];
+        list.appendChild(el("h2", "saved-book", data.names[book]));
+        group = el("ul", "saved-items");
+        list.appendChild(group);
+      }
+      var li = el("li", "saved-item" + (m.h ? " hl-" + m.h : ""));
+      var head = el("p", "saved-head");
+      var a = el("a", null, data.names[book] + " " + p[1] + ":" + p[2]);
+      a.href = data.chapters[book].replace("{c}", p[1]) + "#v" + p[2];
+      head.appendChild(a);
+      if (m.b) {
+        var b = el("span", "saved-flag", data.bookmark);
+        head.appendChild(b);
+      }
+      var x = el("button", "saved-remove", data.remove);
+      x.type = "button";
+      x.addEventListener("click", function () { remove(id); });
+      head.appendChild(x);
+      li.appendChild(head);
+      if (m.text) {
+        var q = el("p", "saved-text", m.text);
+        if (m.lang && m.lang !== document.documentElement.lang) q.lang = m.lang;
+        li.appendChild(q);
+      }
+      group.appendChild(li);
+    });
+  }
+
+  box.querySelectorAll("[data-filter]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      filter = b.getAttribute("data-filter");
+      box.querySelectorAll("[data-filter]").forEach(function (o) { o.setAttribute("aria-pressed", o === b ? "true" : "false"); });
+      draw();
+    });
+  });
+  // Marks made or removed in another tab.
+  window.addEventListener("storage", function (e) { if (e.key === "owb.marks") draw(); });
+  draw();
+})();
+
+// The footer's "Report a problem" (footer_links in scripts/build_site.py)
+// opens a GitHub issue that already names the page it was reported from.
+(function () {
+  "use strict";
+  document.querySelectorAll("a[data-report]").forEach(function (a) {
+    var title = document.title.replace(/\s*[·|–-]\s*Open Word Bible$/, "");
+    a.href += "?title=" + encodeURIComponent(title + ": ") +
+      "&body=" + encodeURIComponent("Page: " + location.origin + location.pathname + "\n\nWhat's wrong:\n");
   });
 })();

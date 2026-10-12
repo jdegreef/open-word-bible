@@ -27,6 +27,16 @@
           "L": "I say then, did God reject {{deity_pronoun:his|His}} people?",
           "B": "So I ask: has God rejected {{deity_pronoun:his|His}} people?",
           "R": "So I ask this: Has God rejected {{deity_pronoun:his|His}} own people?"
+        },
+        "es": {
+          "L": "Digo, pues: ¿acaso rechazó Dios a {{deity_pronoun:su|Su}} pueblo?",
+          "B": "Pregunto, entonces: ¿ha rechazado Dios a {{deity_pronoun:su|Su}} pueblo?",
+          "R": "Entonces pregunto: ¿Ha rechazado Dios a {{deity_pronoun:su|Su}} propio pueblo?"
+        },
+        "sw": {
+          "L": "Basi nasema, je, Mungu aliwakataa watu {{deity_pronoun:wake|Wake}}?",
+          "B": "Basi nauliza: Je, Mungu amewakataa watu {{deity_pronoun:wake|Wake}}?",
+          "R": "Kwa hiyo nauliza hivi: Je, Mungu amewakataa watu {{deity_pronoun:wake|Wake}} {{deity_pronoun:mwenyewe|Mwenyewe}}?"
         }
       },
       "decisions": [
@@ -104,6 +114,27 @@
           "reason": "The verb is \"I say\", but it introduces a question, so Balanced and Readable say \"I ask\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n45011001009"
+          ],
+          "choice": "spans only on free pronouns and possessives (\"watu wake\")",
+          "alternatives": [
+            "a span for every pronoun the English marks"
+          ],
+          "reason": "As in Romans 1:1, Swahili marks most pronouns for God inside the verb (\"aliwakataa\", \"aliwajua\"), where a capital is impossible, so the deity_pronoun setting applies only to free pronouns and possessives, and this chapter has fewer spans than the English.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -138,6 +169,16 @@
           "L": "May it not be! For I also am an Israelite, from [the] seed of Abraham, of [the] tribe of Benjamin.",
           "B": "Certainly not! I myself am an Israelite, descended from Abraham, of the tribe of Benjamin.",
           "R": "Of course not! I am an Israelite too. I come from Abraham's family, from the tribe of Benjamin."
+        },
+        "es": {
+          "L": "¡No sea así! Porque también yo soy israelita, de [la] descendencia de Abraham, de [la] tribu de Benjamín.",
+          "B": "¡De ningún modo! Yo mismo soy israelita, descendiente de Abraham, de la tribu de Benjamín.",
+          "R": "¡Claro que no! Yo también soy israelita. Vengo de la familia de Abraham, de la tribu de Benjamín."
+        },
+        "sw": {
+          "L": "Isiwe hivyo! Kwa maana mimi pia ni Mwisraeli, wa uzao wa Ibrahimu, wa kabila la Benyamini.",
+          "B": "Hasha! Mimi mwenyewe ni Mwisraeli, mzao wa Ibrahimu, wa kabila la Benyamini.",
+          "R": "Sivyo kabisa! Mimi pia ni Mwisraeli. Ninatoka katika ukoo wa Ibrahimu, katika kabila la Benyamini."
         }
       },
       "decisions": [
@@ -237,6 +278,51 @@
           "reason": "Balanced and Readable use ordinary English for an emphatic no. \"God forbid\" adds a word for God that the Greek does not have.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011001010",
+            "n45011001011"
+          ],
+          "choice": "¡No sea así! (L); ¡De ningún modo! (B); ¡Claro que no! (R)",
+          "alternatives": [
+            "¡En ninguna manera!",
+            "¡Dios nos libre!"
+          ],
+          "reason": "Literal keeps the form of a wish, \"let it not be so\"; Balanced and Readable use ordinary emphatic Spanish. \"¡Dios nos libre!\" would add a word for God that the Greek does not have. The same wording serves for this phrase in verse 11.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011001010",
+            "n45011001011"
+          ],
+          "choice": "Isiwe hivyo! (L); Hasha! (B); Sivyo kabisa! (R)",
+          "alternatives": [
+            "Mungu apishe mbali!"
+          ],
+          "reason": "Literal keeps the form of a wish, \"let it not be so\"; \"Hasha!\" is the standard emphatic Swahili no, and Readable says \"not at all\". \"Mungu apishe mbali\" would add a word for God that the Greek does not have. The same wording serves for this phrase in verse 11.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -268,6 +354,16 @@
           "L": "God did not reject {{deity_pronoun:his|His}} people, whom {{deity_pronoun:he|He}} foreknew.",
           "B": "God has not rejected {{deity_pronoun:his|His}} people, whom {{deity_pronoun:he|He}} foreknew.",
           "R": "No, God has not rejected {{deity_pronoun:his|His}} people. He knew them and chose them from the beginning."
+        },
+        "es": {
+          "L": "No rechazó Dios a {{deity_pronoun:su|Su}} pueblo, al cual conoció de antemano.",
+          "B": "Dios no ha rechazado a {{deity_pronoun:su|Su}} pueblo, al que de antemano conoció.",
+          "R": "No, Dios no ha rechazado a {{deity_pronoun:su|Su}} pueblo. Desde el principio lo conoció y lo eligió."
+        },
+        "sw": {
+          "L": "Mungu hakuwakataa watu {{deity_pronoun:wake|Wake}} aliowajua kabla.",
+          "B": "Mungu hajawakataa watu {{deity_pronoun:wake|Wake}}, aliowajua tangu awali.",
+          "R": "Hapana, Mungu hajawakataa watu {{deity_pronoun:wake|Wake}}. Aliwajua na kuwachagua tangu mwanzo."
         }
       },
       "decisions": [
@@ -363,6 +459,16 @@
           "L": "Or do you not know what the Scripture says in [the passage about] Elijah, how he pleads with God against Israel?",
           "B": "Or do you not know what Scripture says in the story of Elijah, how he appealed to God against Israel?",
           "R": "Do you remember what Scripture says in the story of Elijah? He complained to God about the people of Israel."
+        },
+        "es": {
+          "L": "¿O no {{plural_you:saben|sabéis}} lo que dice la Escritura en [el pasaje de] Elías, cómo apela a Dios contra Israel?",
+          "B": "¿O no {{plural_you:saben|sabéis}} lo que dice la Escritura en la historia de Elías, cómo apeló a Dios contra Israel?",
+          "R": "¿{{plural_you:Recuerdan|Recordáis}} lo que dice la Escritura en la historia de Elías? Se quejó ante Dios contra el pueblo de Israel."
+        },
+        "sw": {
+          "L": "Au hamjui Maandiko yanavyosema katika [habari za] Eliya, jinsi anavyomsihi Mungu dhidi ya Israeli?",
+          "B": "Au hamjui Maandiko yanavyosema katika habari za Eliya, jinsi alivyomlalamikia Mungu kuhusu Israeli?",
+          "R": "Je, mnakumbuka Maandiko yanavyosema katika habari za Eliya? Alimlalamikia Mungu juu ya watu wa Israeli."
         }
       },
       "decisions": [
@@ -443,6 +549,25 @@
           "reason": "The present tense of the Greek tells a past story vividly; English tells it in the past. \"Intercedes\" would suggest prayer on Israel's behalf.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011002012"
+          ],
+          "choice": "{{plural_you:saben|sabéis}} (ustedes / vosotros forms)",
+          "alternatives": [],
+          "reason": "As throughout Romans (1:1), every plural \"you\" addressed to the readers is a reader setting: ustedes forms by default, vosotros forms as the alternative. Verses 17-24 speak to one imagined reader as \"tú\", which is not a setting.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -482,6 +607,16 @@
           "L": "\"Lord, they have killed {{deity_pronoun:your|Your}} prophets, they have torn down {{deity_pronoun:your|Your}} altars, and I alone am left, and they are seeking my life.\"",
           "B": "\"Lord, they have killed {{deity_pronoun:your|Your}} prophets and demolished {{deity_pronoun:your|Your}} altars. I alone am left, and now they are trying to take my life.\"",
           "R": "\"Lord, they have killed {{deity_pronoun:your|Your}} prophets. They have destroyed {{deity_pronoun:your|Your}} altars. I am the only one left, and now they want to kill me.\""
+        },
+        "es": {
+          "L": "«Señor, a {{deity_pronoun:tus|Tus}} profetas han matado, {{deity_pronoun:tus|Tus}} altares han derribado, y yo he quedado solo, y buscan mi vida.»",
+          "B": "«Señor, han matado a {{deity_pronoun:tus|Tus}} profetas y han demolido {{deity_pronoun:tus|Tus}} altares. Solo yo he quedado, y ahora tratan de quitarme la vida.»",
+          "R": "«Señor, han matado a {{deity_pronoun:tus|Tus}} profetas. Han destruido {{deity_pronoun:tus|Tus}} altares. Soy el único que queda, y ahora quieren matarme.»"
+        },
+        "sw": {
+          "L": "\"Bwana, wamewaua manabii {{deity_pronoun:wako|Wako}}, wameziangusha madhabahu {{deity_pronoun:zako|Zako}}, nami nimeachwa peke yangu, nao wanatafuta uhai wangu.\"",
+          "B": "\"Bwana, wamewaua manabii {{deity_pronoun:wako|Wako}} na kuzivunjavunja madhabahu {{deity_pronoun:zako|Zako}}. Ni mimi peke yangu niliyesalia, na sasa wanajaribu kuniondolea uhai.\"",
+          "R": "\"Bwana, wamewaua manabii {{deity_pronoun:wako|Wako}}. Wameharibu madhabahu {{deity_pronoun:zako|Zako}}. Ni mimi peke yangu niliyebaki, na sasa wanataka kuniua.\""
         }
       },
       "decisions": [
@@ -582,6 +717,16 @@
           "L": "But what does the divine answer say to him?",
           "B": "But what was God's answer to him?",
           "R": "But what did God say to him in reply?"
+        },
+        "es": {
+          "L": "Pero ¿qué le dice la respuesta divina?",
+          "B": "Pero ¿cuál fue la respuesta de Dios?",
+          "R": "Pero ¿qué le contestó Dios?"
+        },
+        "sw": {
+          "L": "Lakini jibu la kimungu linamwambia nini?",
+          "B": "Lakini jibu la Mungu kwake lilikuwa nini?",
+          "R": "Lakini Mungu alimjibu nini?"
         }
       },
       "decisions": [
@@ -652,6 +797,16 @@
           "L": "\"I have kept for {{deity_pronoun:myself|Myself}} seven thousand {{gender:people|men}} who have not bent [the] knee to Baal.\"",
           "B": "\"I have kept for {{deity_pronoun:myself|Myself}} seven thousand {{gender:people|men}} who have not bent the knee to Baal.\"",
           "R": "\"I have kept seven thousand {{gender:people|men}} for {{deity_pronoun:myself|Myself}}. They have not bowed down to worship Baal.\""
+        },
+        "es": {
+          "L": "«He dejado para {{deity_pronoun:mí|Mí}} siete mil {{gender:personas|hombres}} que no han doblado [la] rodilla ante Baal.»",
+          "B": "«He reservado para {{deity_pronoun:mí|Mí}} siete mil {{gender:personas|hombres}} que no han doblado la rodilla ante Baal.»",
+          "R": "«He guardado para {{deity_pronoun:mí|Mí}} siete mil {{gender:personas|hombres}}. No se han arrodillado para adorar a Baal.»"
+        },
+        "sw": {
+          "L": "\"Nimejibakizia watu elfu saba, ambao hawakupiga goti mbele ya Baali.\"",
+          "B": "\"Nimejiwekea watu elfu saba ambao hawakupiga magoti mbele ya Baali.\"",
+          "R": "\"Nimejiwekea watu elfu saba. Hawakupiga magoti kumwabudu Baali.\""
         }
       },
       "decisions": [
@@ -730,6 +885,27 @@
           "reason": "Readable explains the gesture.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011004010"
+          ],
+          "choice": "watu, no gender span",
+          "alternatives": [
+            "wanaume"
+          ],
+          "reason": "\"Watu\" means people of either sex, which is the sense the meaning decision gives. \"Wanaume\" means males and would change the meaning, so Swahili has no counterpart to the English gender span. \"For myself\" is inside the verb (\"Nimejibakizia\", \"Nimejiwekea\") and takes no deity_pronoun span.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -764,6 +940,16 @@
           "L": "So then also in the present time there has come to be a remnant according to [the] election of grace.",
           "B": "In the same way, at the present time too there is a remnant, chosen by grace.",
           "R": "It is the same today. Some of Israel are still left, a remnant whom God has chosen by {{deity_pronoun:his|His}} grace."
+        },
+        "es": {
+          "L": "Así pues, también en el tiempo presente ha llegado a haber un remanente según [la] elección de [la] gracia.",
+          "B": "Lo mismo sucede en el tiempo presente: hay un remanente, elegido por la gracia.",
+          "R": "Hoy pasa lo mismo. Todavía quedan algunos de Israel, un remanente que Dios ha elegido por {{deity_pronoun:su|Su}} gracia."
+        },
+        "sw": {
+          "L": "Basi hivyo hivyo pia katika wakati wa sasa yamekuwepo mabaki kwa kadiri ya uchaguzi wa neema.",
+          "B": "Vivyo hivyo, hata wakati huu wa sasa kuna mabaki, yaliyochaguliwa kwa neema.",
+          "R": "Ndivyo ilivyo leo pia. Bado wapo baadhi ya Waisraeli waliosalia, mabaki ambayo Mungu ameyachagua kwa neema {{deity_pronoun:yake|Yake}}."
         }
       },
       "decisions": [
@@ -817,6 +1003,27 @@
           "reason": "Readable says what a remnant is before using the word.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011005008"
+          ],
+          "choice": "mabaki",
+          "alternatives": [
+            "masalio"
+          ],
+          "reason": "\"Mabaki\" is the everyday word for what is left over, and it carries the prophets' picture of a part of Israel that remains. Readable first says \"waliosalia\" (those who are left), as the English Readable explains the word before using it.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -851,6 +1058,16 @@
           "L": "And if by grace, [it is] no longer from works, since [then] grace would no longer be grace.",
           "B": "And if it is by grace, it does not come from works; otherwise grace would no longer be grace.",
           "R": "And if God chose them by grace, then it was not because of what they did. If it were, grace would not really be grace."
+        },
+        "es": {
+          "L": "Y si [es] por gracia, ya no [es] por obras, pues [de otro modo] la gracia ya no sería gracia.",
+          "B": "Y si es por gracia, no proviene de las obras; si así fuera, la gracia dejaría de ser gracia.",
+          "R": "Y si Dios los eligió por gracia, entonces no fue por lo que ellos hicieron. Si fuera así, la gracia no sería realmente gracia."
+        },
+        "sw": {
+          "L": "Na ikiwa ni kwa neema, si kwa matendo tena, kwa maana [vinginevyo] neema isingekuwa neema tena.",
+          "B": "Na ikiwa ni kwa neema, basi haitokani tena na matendo; vinginevyo neema ingekoma kuwa neema.",
+          "R": "Na kama Mungu aliwachagua kwa neema, basi haikuwa kwa sababu ya mambo waliyoyafanya. Kama ingekuwa hivyo, neema isingekuwa neema kweli."
         }
       },
       "decisions": [
@@ -957,6 +1174,16 @@
           "L": "What then?",
           "B": "What then?",
           "R": "So what does this mean?"
+        },
+        "es": {
+          "L": "¿Qué, pues?",
+          "B": "¿Qué, entonces?",
+          "R": "Entonces, ¿qué significa esto?"
+        },
+        "sw": {
+          "L": "Basi nini?",
+          "B": "Basi je?",
+          "R": "Basi, hii ina maana gani?"
         }
       },
       "decisions": [
@@ -1052,6 +1279,16 @@
           "L": "What Israel is seeking, this it did not obtain, but the elect obtained [it]; and the rest were hardened, \\v 8 just as it is written, \"God gave them a spirit of stupor, eyes [so as] not to see and ears [so as] not to hear, to this very day.\"",
           "B": "Israel did not obtain what it was seeking. Those God chose obtained it, but the rest were hardened, \\v 8 as it is written, \"God has given them a spirit of numbness, eyes that do not see and ears that do not hear, to this very day.\"",
           "R": "So the people of Israel did not find what they were looking for. Only those God chose found it. God made the rest of them stubborn. \\v 8 As Scripture says, \"God made their minds dull. He gave them eyes that cannot see and ears that cannot hear, and they are still like that today.\""
+        },
+        "es": {
+          "L": "Lo que Israel busca, eso no lo alcanzó, pero los escogidos [lo] alcanzaron; y los demás fueron endurecidos, \\v 8 tal como está escrito: «Dios les dio un espíritu de estupor, ojos para no ver y oídos para no oír, hasta el día de hoy.»",
+          "B": "Israel no alcanzó lo que buscaba. Los que Dios eligió sí lo alcanzaron, pero los demás fueron endurecidos, \\v 8 como está escrito: «Dios les ha dado un espíritu de aturdimiento, ojos que no ven y oídos que no oyen, hasta el día de hoy.»",
+          "R": "Así que el pueblo de Israel no encontró lo que buscaba. Solo lo encontraron los que Dios eligió. A los demás, Dios los volvió tercos. \\v 8 Como dice la Escritura: «Dios les entorpeció la mente. Les dio ojos que no pueden ver y oídos que no pueden oír, y siguen así hasta hoy.»"
+        },
+        "sw": {
+          "L": "Kile anachokitafuta Israeli, hicho hakukipata, lakini wateule walikipata; na wale waliobaki walifanywa wagumu, \\v 8 kama ilivyoandikwa: \"Mungu aliwapa roho ya bumbuazi, macho ya kutoona na masikio ya kutosikia, hadi siku hii ya leo.\"",
+          "B": "Israeli hakukipata kile alichokuwa akikitafuta. Wale ambao Mungu aliwachagua walikipata, lakini wengine walifanywa wagumu, \\v 8 kama ilivyoandikwa: \"Mungu amewapa roho ya bumbuazi, macho yasiyoona na masikio yasiyosikia, hadi leo hii.\"",
+          "R": "Kwa hiyo watu wa Israeli hawakupata kile walichokuwa wakikitafuta. Ni wale tu ambao Mungu aliwachagua waliokipata. Wengine Mungu aliwafanya wakaidi. \\v 8 Kama Maandiko yanavyosema: \"Mungu alizifanya akili zao kuwa nzito. Aliwapa macho yasiyoweza kuona na masikio yasiyoweza kusikia, na mpaka leo bado wako hivyo.\""
         }
       },
       "decisions": [
@@ -1219,6 +1456,47 @@
           "reason": "\"It is written\" is the normal formula for quoting Scripture; Readable names Scripture, as in 1:17.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011007005"
+          ],
+          "choice": "Israeli with singular personal agreement (\"hakukipata\")",
+          "alternatives": [
+            "Waisraeli with plural agreement (\"hawakukipata\")"
+          ],
+          "reason": "The Greek speaks of Israel as one, so Literal and Balanced keep the name singular and give it personal agreement, as a people named like a person. Readable says \"watu wa Israeli\" with plural agreement, as the English Readable does. A reviewer may prefer plural agreement at every level.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-2",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011008007",
+            "n45011008008"
+          ],
+          "choice": "roho ya bumbuazi",
+          "alternatives": [
+            "roho ya usingizi mzito"
+          ],
+          "reason": "\"Bumbuazi\" is a dazed, stunned state, the numbness the meaning decision describes. \"Usingizi mzito\" (deep sleep) is the Hebrew of Isaiah, not the Greek word Paul uses. Readable says that God made their minds heavy (\"akili zao kuwa nzito\").",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1275,6 +1553,16 @@
           "L": "And David says, \"Let their table become a snare and a trap and a stumbling block and a retribution to them; \\v 10 let their eyes be darkened so as not to see, and bend their back continually.\"",
           "B": "And David says, \"May their table turn into a snare and a net, a stumbling block and a just penalty for them. \\v 10 May their eyes grow dark so that they cannot see, and keep their backs bent forever.\"",
           "R": "And David says, \"May the meals they enjoy become a trap that catches them. May they trip and fall and get what they deserve. \\v 10 May their eyes be darkened so that they cannot see. Keep their backs bent low forever.\""
+        },
+        "es": {
+          "L": "Y David dice: «Conviértase su mesa en lazo y en trampa y en tropiezo y en retribución para ellos; \\v 10 oscurézcanse sus ojos para no ver, y encorva su espalda continuamente.»",
+          "B": "Y David dice: «Que su mesa se vuelva para ellos lazo y red, tropiezo y justo castigo. \\v 10 Que se les oscurezcan los ojos para que no puedan ver, y haz que su espalda se encorve para siempre.»",
+          "R": "Y David dice: «Que las comidas que disfrutan se conviertan en una trampa que los atrape. Que tropiecen y caigan y reciban lo que merecen. \\v 10 Que se les nublen los ojos para que no puedan ver. Haz que anden siempre encorvados.»"
+        },
+        "sw": {
+          "L": "Na Daudi anasema: \"Meza yao igeuke kuwa mtego na kitanzi na kizuizi cha kujikwaa na malipizi juu yao; \\v 10 macho yao yafunikwe na giza yasione, na mgongo wao uupinde daima.\"",
+          "B": "Na Daudi anasema: \"Meza yao na igeuke kuwa mtego na wavu, kikwazo na adhabu wanayostahili. \\v 10 Macho yao na yafunikwe na giza wasiweze kuona, na migongo yao uipinde milele.\"",
+          "R": "Na Daudi anasema: \"Vyakula wanavyovifurahia na viwe mtego wa kuwanasa. Na wajikwae na kuanguka, na wapate kile wanachostahili. \\v 10 Macho yao na yafunikwe na giza ili wasiweze kuona. Uwafanye watembee wakiwa wameinama milele.\""
         }
       },
       "decisions": [
@@ -1473,6 +1761,16 @@
           "L": "I say then, did they stumble so that they might fall?",
           "B": "So I ask: did they stumble so as to fall for good?",
           "R": "So I ask this: When the people of Israel stumbled, did they fall and never get up again?"
+        },
+        "es": {
+          "L": "Digo, pues: ¿acaso tropezaron para que cayeran?",
+          "B": "Pregunto, entonces: ¿tropezaron para caer del todo?",
+          "R": "Entonces pregunto: Cuando el pueblo de Israel tropezó, ¿cayó para no levantarse más?"
+        },
+        "sw": {
+          "L": "Basi nasema, je, walijikwaa ili waanguke?",
+          "B": "Basi nauliza: Je, walijikwaa hata wakaanguka kabisa?",
+          "R": "Kwa hiyo nauliza hivi: Watu wa Israeli walipojikwaa, je, walianguka wasiinuke tena?"
         }
       },
       "decisions": [
@@ -1601,6 +1899,16 @@
           "L": "May it not be! But by their trespass salvation [has come] to the Gentiles, so as to make them jealous.",
           "B": "Certainly not! Rather, through their wrongdoing salvation has come to the Gentiles, so that Israel would become jealous.",
           "R": "Of course not! Because they did wrong, salvation has come to people who are not Jews. That was meant to make the people of Israel jealous."
+        },
+        "es": {
+          "L": "¡No sea así! Sino que por su transgresión [vino] la salvación a los gentiles, para provocarlos a celos.",
+          "B": "¡De ningún modo! Al contrario, por medio de su transgresión la salvación ha alcanzado a los gentiles, con el fin de despertar los celos de Israel.",
+          "R": "¡Claro que no! Como ellos hicieron mal, la salvación ha llegado a los que no son judíos. Eso debía hacer que el pueblo de Israel sintiera celos."
+        },
+        "sw": {
+          "L": "Isiwe hivyo! Bali kwa kosa lao wokovu [umewafikia] watu wa mataifa, ili kuwatia wivu.",
+          "B": "Hasha! Badala yake, kupitia kosa lao wokovu umewafikia watu wa mataifa, ili kuwafanya Waisraeli waone wivu.",
+          "R": "Sivyo kabisa! Kwa sababu walikosea, wokovu umewafikia watu wasio Wayahudi. Jambo hilo lilikusudiwa kuwafanya watu wa Israeli waone wivu."
         }
       },
       "decisions": [
@@ -1747,6 +2055,47 @@
           "reason": "Readable says what \"Gentiles\" means, as in 1:16.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011011012"
+          ],
+          "choice": "transgresión",
+          "alternatives": [
+            "delito",
+            "falta"
+          ],
+          "reason": "\"Transgresión\" is the settled word for this noun in Paul (Colossians 2:13) and keeps the picture of a false step. Readable says \"hicieron mal\", as the English Readable says \"did wrong\". The same applies in verse 12.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011011012"
+          ],
+          "choice": "kosa",
+          "alternatives": [
+            "dhambi"
+          ],
+          "reason": "\"Kosa\" (a fault, a wrong step) is the word used for this noun in Colossians 2:13 and Ephesians, and it keeps the picture of stumbling better than \"dhambi\" (sin). Readable uses the verb \"walikosea\". The same applies in verse 12.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1787,6 +2136,16 @@
           "L": "Now if their trespass [means] riches for [the] world, and their loss [means] riches for [the] Gentiles, how much more their fullness!",
           "B": "Now if their wrongdoing means riches for the world, and their loss means riches for the Gentiles, how much greater riches their fullness will bring!",
           "R": "Their wrong step brought great blessing to the world. Their loss brought great blessing to people who are not Jews. So think how much greater the blessing will be when their full number is brought in!"
+        },
+        "es": {
+          "L": "Y si su transgresión [es] riqueza para [el] mundo, y su pérdida riqueza para [los] gentiles, ¡cuánto más su plenitud!",
+          "B": "Ahora bien, si su transgresión significa riqueza para el mundo, y su pérdida significa riqueza para los gentiles, ¡cuánta mayor riqueza traerá su plenitud!",
+          "R": "Su paso en falso trajo una gran bendición al mundo. Su pérdida trajo una gran bendición a los que no son judíos. ¡{{plural_you:Imaginen|Imaginad}} cuánto mayor será la bendición cuando haya entrado su número completo!"
+        },
+        "sw": {
+          "L": "Na ikiwa kosa lao [ni] utajiri kwa ulimwengu, na hasara yao utajiri kwa watu wa mataifa, utimilifu wao [utakuwa] zaidi sana kiasi gani!",
+          "B": "Basi, ikiwa kosa lao limeleta utajiri kwa ulimwengu, na kushindwa kwao kumeleta utajiri kwa watu wa mataifa, utimilifu wao utaleta utajiri mkubwa zaidi kiasi gani!",
+          "R": "Kosa lao lilileta baraka kubwa kwa ulimwengu. Hasara yao iliwaletea baraka kubwa watu wasio Wayahudi. Basi fikirini jinsi baraka itakavyokuwa kubwa zaidi idadi yao kamili itakapoingia!"
         }
       },
       "decisions": [
@@ -1909,6 +2268,24 @@
           "reason": "Readable says what \"Gentiles\" means.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011012014",
+            "n45011012015"
+          ],
+          "choice": "¡{{plural_you:Imaginen|Imaginad}} cuánto mayor será ...!",
+          "alternatives": [],
+          "reason": "The English Readable says \"think how much greater\". Spanish puts the invitation to the readers in a plural verb, so it carries a plural_you span.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1936,6 +2313,16 @@
           "L": "But I am speaking to you, the Gentiles.",
           "B": "Now I am speaking to you who are Gentiles.",
           "R": "Now I am speaking to you who are not Jews."
+        },
+        "es": {
+          "L": "Pero a {{plural_you:ustedes|vosotros}} hablo, a los gentiles.",
+          "B": "Ahora me dirijo a {{plural_you:ustedes|vosotros}}, los gentiles.",
+          "R": "Ahora {{plural_you:les|os}} hablo a {{plural_you:ustedes|vosotros}}, que no {{plural_you:son|sois}} judíos."
+        },
+        "sw": {
+          "L": "Lakini ninasema nanyi, watu wa mataifa.",
+          "B": "Sasa ninasema nanyi mlio watu wa mataifa.",
+          "R": "Sasa ninasema nanyi ambao si Wayahudi."
         }
       },
       "decisions": [
@@ -2021,6 +2408,16 @@
           "L": "Inasmuch then as I am an apostle of [the] Gentiles, I glorify my ministry, \\v 14 if somehow I may make my flesh jealous and save some of them.",
           "B": "So since I am an apostle to the Gentiles, I make much of my ministry, \\v 14 in the hope that somehow I may make my own flesh and blood jealous and save some of them.",
           "R": "God sent me as an apostle to people who are not Jews, so I make much of this work. \\v 14 I hope that in some way I can make my own people, the Jews, jealous, and save some of them."
+        },
+        "es": {
+          "L": "Por cuanto, pues, yo soy apóstol de [los] gentiles, glorifico mi ministerio, \\v 14 por si de algún modo provoco a celos a mi carne y salvo a algunos de ellos.",
+          "B": "Así que, ya que soy apóstol para los gentiles, doy gran valor a mi ministerio, \\v 14 con la esperanza de despertar de algún modo los celos de los de mi propia sangre y salvar a algunos de ellos.",
+          "R": "Dios me envió como apóstol a los que no son judíos, por eso doy mucha importancia a este trabajo. \\v 14 Espero que de alguna manera pueda hacer que mi propio pueblo, los judíos, sienta celos, y así salvar a algunos de ellos."
+        },
+        "sw": {
+          "L": "Basi kwa kadiri nilivyo mtume wa watu wa mataifa, naitukuza huduma yangu, \\v 14 ili kwa njia yoyote niutie wivu mwili wangu na kuwaokoa baadhi yao.",
+          "B": "Basi, kwa kuwa mimi ni mtume kwa watu wa mataifa, naipa huduma yangu uzito mkubwa, \\v 14 nikitumaini kwamba kwa namna fulani nitawatia wivu ndugu zangu wa damu na kuwaokoa baadhi yao.",
+          "R": "Mungu alinituma kama mtume kwa watu wasio Wayahudi, kwa hiyo naiona kazi hii kuwa ya maana sana. \\v 14 Natumaini kwamba kwa namna fulani nitawafanya watu wa taifa langu, Wayahudi, waone wivu, nami niwaokoe baadhi yao."
         }
       },
       "decisions": [
@@ -2160,6 +2557,48 @@
           "reason": "An apostle is one sent; Readable names God as the sender (1:1, 1:5).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011014004",
+            "n45011014005",
+            "n45011014006"
+          ],
+          "choice": "los de mi propia sangre",
+          "alternatives": [
+            "mi carne y sangre"
+          ],
+          "reason": "Where the English Balanced keeps \"flesh\" in \"my own flesh and blood\", Spanish speaks of relatives as those of one's blood; \"mi carne y sangre\" is not a usual Spanish way of naming one's people. The sense is the kinship the meaning decision describes.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011014004",
+            "n45011014005",
+            "n45011014006"
+          ],
+          "choice": "ndugu zangu wa damu",
+          "alternatives": [
+            "mwili wangu"
+          ],
+          "reason": "\"Mwili wangu\" (my body) cannot mean one's relatives in Swahili, so Balanced says \"ndugu zangu wa damu\" (my blood relatives), the kinship the meaning decision describes. Literal keeps \"mwili\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2197,6 +2636,16 @@
           "L": "For if their rejection [means the] reconciliation of [the] world, what [will their] acceptance [be] but life from [the] dead?",
           "B": "For if their rejection means the reconciliation of the world, what will their acceptance mean? Nothing less than life from the dead!",
           "R": "When God set them aside, the world was brought back to God and made friends with {{deity_pronoun:him|Him}}. So what will it be like when God takes them back? It will be life from the dead!"
+        },
+        "es": {
+          "L": "Porque si su rechazo [es la] reconciliación del mundo, ¿qué [será su] aceptación sino vida de entre [los] muertos?",
+          "B": "Porque si su rechazo significa la reconciliación del mundo, ¿qué significará su aceptación? ¡Nada menos que vida de entre los muertos!",
+          "R": "Cuando Dios los apartó, el mundo pudo volver a Dios y ser {{deity_pronoun:su|Su}} amigo. Entonces, ¿cómo será cuando Dios los reciba de nuevo? ¡Será vida de entre los muertos!"
+        },
+        "sw": {
+          "L": "Kwa maana ikiwa kukataliwa kwao [ni] upatanisho wa ulimwengu, kupokelewa kwao [kutakuwa] nini, isipokuwa uzima kutoka kwa wafu?",
+          "B": "Kwa maana ikiwa kukataliwa kwao kunaleta upatanisho wa ulimwengu, kupokelewa kwao kutaleta nini? Si kitu kingine ila uzima kutoka kwa wafu!",
+          "R": "Mungu alipowaweka kando, ulimwengu ulirudishwa kwa Mungu na kuwa rafiki {{deity_pronoun:yake|Yake}}. Basi itakuwaje Mungu atakapowapokea tena? Itakuwa uzima kutoka kwa wafu!"
         }
       },
       "decisions": [
@@ -2298,6 +2747,28 @@
           "reason": "Readable names God, as the meaning decision explains, and says what reconciliation is.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011015004",
+            "n45011015005",
+            "n45011015010"
+          ],
+          "choice": "kukataliwa kwao / kupokelewa kwao (passive)",
+          "alternatives": [
+            "kukataa kwao (their rejecting)"
+          ],
+          "reason": "Swahili must choose between \"their rejecting\" and \"their being rejected\", which the Greek noun leaves open. Following the meaning decision, both nouns are passive: God sets them aside and God accepts them.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2336,6 +2807,16 @@
           "L": "Now if the firstfruit [is] holy, so [is] the lump; and if the root [is] holy, so [are] the branches.",
           "B": "If the portion of dough offered as firstfruits is holy, so is the whole batch; and if the root is holy, so are the branches.",
           "R": "If the first piece of dough is offered to God and is holy, the whole batch of dough is holy too. And if the root of a tree is holy, so are its branches."
+        },
+        "es": {
+          "L": "Y si las primicias [son] santas, también la masa; y si la raíz [es] santa, también las ramas.",
+          "B": "Si la porción de masa ofrecida como primicias es santa, también lo es toda la masa; y si la raíz es santa, las ramas lo son también.",
+          "R": "Si el primer pedazo de la masa se ofrece a Dios y es santo, toda la masa también es santa. Y si la raíz de un árbol es santa, también lo son sus ramas."
+        },
+        "sw": {
+          "L": "Na ikiwa limbuko [ni] takatifu, donge pia; na ikiwa mzizi [ni] mtakatifu, matawi pia.",
+          "B": "Ikiwa sehemu ya unga uliokandwa inayotolewa kama limbuko ni takatifu, basi donge zima ni takatifu; na ikiwa mzizi ni mtakatifu, matawi nayo ni matakatifu.",
+          "R": "Kipande cha kwanza cha unga kikitolewa kwa Mungu na kuwa kitakatifu, unga wote uliobaki ni mtakatifu pia. Na mzizi wa mti ukiwa mtakatifu, matawi yake nayo ni matakatifu."
         }
       },
       "decisions": [
@@ -2470,6 +2951,16 @@
           "L": "But if some of the branches were broken off, and you, being a wild olive, were grafted in among them and became a sharer of the root of the richness of the olive tree, \\v 18 do not boast over the branches; but if you do boast, [remember that] it is not you [who] support the root, but the root [supports] you.",
           "B": "Now if some of the branches were broken off, and you, though a wild olive shoot, were grafted in among them and now share in the rich root of the olive tree, \\v 18 do not boast over the branches. If you do boast, remember: you do not hold up the root; the root holds you up.",
           "R": "Some of the branches of the olive tree were broken off. You are like a shoot from a wild olive tree that was joined onto the tree among the other branches. Now you share the rich sap that comes up from its root. \\v 18 So do not think you are better than the natural branches. If you are tempted to boast, remember this: You do not hold up the root. The root holds you up."
+        },
+        "es": {
+          "L": "Pero si algunas de las ramas fueron desgajadas, y tú, siendo olivo silvestre, fuiste injertado entre ellas y llegaste a ser copartícipe de la raíz de la riqueza del olivo, \\v 18 no te jactes contra las ramas; pero si te jactas, [recuerda que] no sostienes tú a la raíz, sino la raíz a ti.",
+          "B": "Ahora bien, si algunas de las ramas fueron arrancadas y tú, aunque eras un brote de olivo silvestre, fuiste injertado entre ellas y ahora participas de la rica raíz del olivo, \\v 18 no te jactes frente a las ramas. Y si te jactas, recuerda: no cargas tú con la raíz; la raíz carga contigo.",
+          "R": "Algunas ramas del olivo fueron arrancadas. Tú eres como un brote de olivo silvestre que fue injertado, es decir, unido al árbol entre las otras ramas. Ahora recibes la savia abundante que sube de su raíz. \\v 18 Así que no mires con desprecio a las ramas naturales. Si sientes la tentación de jactarte, recuerda esto: Tú no sostienes la raíz. La raíz te sostiene a ti."
+        },
+        "sw": {
+          "L": "Lakini ikiwa baadhi ya matawi yalivunjwa, nawe, ukiwa mzeituni mwitu, ulipandikizwa kati yao na ukawa mshiriki wa mzizi wa unono wa mzeituni, \\v 18 usijigambe juu ya matawi; na ikiwa unajigamba, [jua kwamba] wewe hautegemezi mzizi, bali mzizi unakutegemeza wewe.",
+          "B": "Basi, ikiwa baadhi ya matawi yalivunjwa, nawe, ingawa ulikuwa chipukizi la mzeituni mwitu, ukapandikizwa katikati yao na sasa unashiriki mzizi wenye rutuba wa mzeituni, \\v 18 usijigambe mbele ya matawi. Ukijigamba, kumbuka: wewe hauushikilii mzizi; mzizi ndio unaokushikilia wewe.",
+          "R": "Baadhi ya matawi ya mzeituni yalivunjwa. Wewe ni kama chipukizi la mzeituni mwitu lililopandikizwa, yaani, kuunganishwa na mti huo kati ya matawi mengine. Sasa unapata utomvu mwingi unaopanda kutoka kwenye mzizi wake. \\v 18 Kwa hiyo usiyadharau matawi ya asili. Ukishawishika kujigamba, kumbuka hili: Wewe hauushikilii mzizi. Mzizi ndio unaokushikilia wewe."
         }
       },
       "decisions": [
@@ -2600,6 +3091,71 @@
           "reason": "Readable gives the sense of boasting over others: looking down on them. The branches are those that belong to the tree by nature (verse 21).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011017007"
+          ],
+          "choice": "tú, no plural_you setting (verses 17-24)",
+          "alternatives": [
+            "{{plural_you:ustedes|vosotros}}"
+          ],
+          "reason": "Here Paul speaks to one imagined Gentile listener in the singular (m2), so Spanish uses \"tú\" and its verb forms, which are the same in Latin America and Spain and need no setting.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011017009",
+            "n45011017021"
+          ],
+          "choice": "olivo silvestre / olivo",
+          "alternatives": [
+            "acebuche"
+          ],
+          "reason": "\"Acebuche\" is the exact word for the wild olive, familiar from older Spanish Bibles, but many readers do not know it. \"Olivo silvestre\" says the same plainly and keeps the contrast with the olive tree at every level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011017009",
+            "n45011017011"
+          ],
+          "choice": "mzeituni mwitu; kupandikiza",
+          "alternatives": [
+            "mzeituni wa porini"
+          ],
+          "reason": "\"Mzeituni mwitu\" is the wild olive and \"kupandikiza\" the ordinary word for grafting. Readable adds \"yaani, kuunganishwa na mti huo\" (that is, joined to the tree) to explain grafting, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2629,6 +3185,16 @@
           "L": "You will say then, \"Branches were broken off so that I might be grafted in.\"",
           "B": "Then you will say, \"Branches were broken off to let me be grafted in.\"",
           "R": "Then you might say, \"God broke those branches off to make room for me.\""
+        },
+        "es": {
+          "L": "Dirás entonces: «Fueron desgajadas ramas para que yo fuera injertado.»",
+          "B": "Entonces dirás: «Se desgajaron ramas para que yo pudiera ser injertado.»",
+          "R": "Entonces tal vez digas: «Dios arrancó esas ramas para hacerme lugar a mí.»"
+        },
+        "sw": {
+          "L": "Basi utasema: \"Matawi yalivunjwa ili mimi nipandikizwe.\"",
+          "B": "Hapo utasema: \"Matawi yalivunjwa ili nipate kupandikizwa mimi.\"",
+          "R": "Labda utasema: \"Mungu aliyavunja matawi hayo ili anipatie nafasi.\""
         }
       },
       "decisions": [
@@ -2701,6 +3267,16 @@
           "L": "Well [said]; they were broken off because of unbelief, but you stand by faith.",
           "B": "That is true. They were broken off because of their unbelief, but you stand firm by faith.",
           "R": "That is true. But they were broken off because they did not believe. And you are still there only because of your faith."
+        },
+        "es": {
+          "L": "Bien [dicho]; por la incredulidad fueron desgajadas, y tú por la fe te mantienes en pie.",
+          "B": "Es cierto. Fueron desgajadas por su incredulidad, pero tú te mantienes firme por la fe.",
+          "R": "Es verdad. Pero esas ramas fueron arrancadas porque no creyeron. Y tú sigues allí solo por tu fe."
+        },
+        "sw": {
+          "L": "Vema; kwa sababu ya kutoamini yalivunjwa, lakini wewe kwa imani umesimama.",
+          "B": "Ni kweli. Yalivunjwa kwa sababu ya kutoamini kwao, lakini wewe umesimama imara kwa imani.",
+          "R": "Ni kweli. Lakini matawi hayo yalivunjwa kwa sababu ya kutoamini kwao. Nawe bado uko pale kwa sababu ya imani yako tu."
         }
       },
       "decisions": [
@@ -2818,6 +3394,16 @@
           "L": "Do not think lofty [thoughts], but fear.",
           "B": "Do not be proud, but fear.",
           "R": "So do not be proud. Fear God instead."
+        },
+        "es": {
+          "L": "No pienses cosas altivas, sino teme.",
+          "B": "No seas orgulloso, sino teme.",
+          "R": "Así que no seas orgulloso. Más bien, teme a Dios."
+        },
+        "sw": {
+          "L": "Usiwaze mambo ya juu, bali uogope.",
+          "B": "Usiwe na kiburi, bali uwe na hofu.",
+          "R": "Kwa hiyo usijivune. Badala yake mche Mungu."
         }
       },
       "decisions": [
@@ -2906,6 +3492,16 @@
           "L": "For if God did not spare the natural branches, neither will {{deity_pronoun:he|He}} spare you.",
           "B": "For if God did not spare the branches that grew naturally on the tree, {{deity_pronoun:he|He}} will not spare you either.",
           "R": "God did not spare the branches that belonged to the tree by nature. So if you become proud, {{deity_pronoun:he|He}} will not spare you either."
+        },
+        "es": {
+          "L": "Porque si Dios no escatimó a las ramas naturales, tampoco te escatimará a ti.",
+          "B": "Porque si Dios no escatimó a las ramas que crecían naturalmente en el árbol, tampoco te escatimará a ti.",
+          "R": "Dios no libró de ser cortadas a las ramas que pertenecían al árbol por naturaleza. Así que, si te vuelves orgulloso, tampoco a ti te librará."
+        },
+        "sw": {
+          "L": "Kwa maana ikiwa Mungu hakuyahurumia matawi ya asili, wala wewe hatakuhurumia.",
+          "B": "Kwa maana ikiwa Mungu hakuyahurumia matawi yaliyoota kwa asili kwenye mti, hatakuhurumia wewe pia.",
+          "R": "Mungu hakuyahurumia matawi yaliyokuwa ya mti huo kwa asili. Kwa hiyo ukijivuna, hatakuhurumia wewe pia."
         }
       },
       "decisions": [
@@ -2987,6 +3583,51 @@
           "reason": "Readable states the condition the warning assumes, from verse 20 (\"do not be proud\") and verse 22 (\"if you continue in his kindness\").",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011021010",
+            "n45011021013"
+          ],
+          "choice": "no escatimó (L, B); no libró (R)",
+          "alternatives": [
+            "no perdonó"
+          ],
+          "reason": "Older Spanish Bibles say \"no perdonó\", but \"perdonar\" is the word for forgiving sins, and here the verb means to spare from punishment. \"Escatimar\" has that sense (as in 8:32); Readable says plainly that God did not keep the branches from being cut off.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011021010",
+            "n45011021013"
+          ],
+          "choice": "kuhurumia",
+          "alternatives": [
+            "kuacha",
+            "kurehemu"
+          ],
+          "reason": "\"Kuhurumia\" (to have pity on, to spare) says that God did not hold back his judgment. \"Kurehemu\" is kept for the mercy of verses 30-32, a different Greek word.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3033,6 +3674,16 @@
           "L": "See then [the] kindness and severity of God: on those who fell, severity, but on you, God's kindness, if you continue in [that] kindness; otherwise you too will be cut off.",
           "B": "Notice, then, both the kindness and the severity of God: severity toward those who fell, but God's kindness toward you, as long as you continue in {{deity_pronoun:his|His}} kindness. Otherwise you too will be cut off.",
           "R": "So think about how kind God is, and also how severe {{deity_pronoun:he|He}} is. He was severe with those who fell. But {{deity_pronoun:he|He}} is kind to you, as long as you keep living in {{deity_pronoun:his|His}} kindness. If you do not, you will be cut off too."
+        },
+        "es": {
+          "L": "Mira, pues, [la] bondad y [la] severidad de Dios: sobre los que cayeron, severidad, pero sobre ti, bondad de Dios, si permaneces en [esa] bondad; de lo contrario, también tú serás cortado.",
+          "B": "Fíjate, entonces, en la bondad y en la severidad de Dios: severidad hacia los que cayeron, pero bondad de Dios hacia ti, mientras sigas en {{deity_pronoun:su|Su}} bondad. De lo contrario, tú también serás cortado.",
+          "R": "Así que piensa en lo bondadoso que es Dios, y también en lo severo que es. Fue severo con los que cayeron. Pero es bondadoso contigo, siempre que sigas viviendo en {{deity_pronoun:su|Su}} bondad. Si no, tú también serás cortado."
+        },
+        "sw": {
+          "L": "Basi ona fadhili na ukali wa Mungu: juu ya wale walioanguka, ukali; lakini juu yako, fadhili za Mungu, ukidumu katika fadhili [hizo]; la sivyo, wewe pia utakatwa.",
+          "B": "Basi angalia fadhili na ukali wa Mungu: ukali kwa wale walioanguka, lakini fadhili za Mungu kwako, maadamu unadumu katika fadhili {{deity_pronoun:zake|Zake}}. Vinginevyo, wewe pia utakatwa.",
+          "R": "Kwa hiyo fikiri jinsi Mungu alivyo mwenye fadhili, na pia jinsi alivyo mkali. Aliwatendea kwa ukali wale walioanguka. Lakini anakutendea kwa fadhili, maadamu unaendelea kuishi katika fadhili {{deity_pronoun:zake|Zake}}. Usipofanya hivyo, wewe pia utakatwa."
         }
       },
       "decisions": [
@@ -3106,6 +3757,28 @@
           "reason": "Readable uses a plain verb for remaining in God's kindness.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011022003",
+            "n45011022005"
+          ],
+          "choice": "fadhili / ukali",
+          "alternatives": [
+            "wema / ukali"
+          ],
+          "reason": "\"Fadhili\" is kindness shown freely to someone, which suits God's generosity (m1) better than \"wema\" (goodness in general). \"Ukali\" is sternness, the severity of a judge. Both words stay the same at every level.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3144,6 +3817,16 @@
           "L": "And they also, if they do not continue in unbelief, will be grafted in; for God is able to graft them in again.",
           "B": "And they too, if they do not remain in unbelief, will be grafted in, for God has the power to graft them back in.",
           "R": "And if the people of Israel stop refusing to believe, they will be joined to the tree again. God has the power to put them back in."
+        },
+        "es": {
+          "L": "Y también ellos, si no permanecen en la incredulidad, serán injertados; porque poderoso es Dios para injertarlos de nuevo.",
+          "B": "Y también ellos, si no siguen en la incredulidad, serán injertados, porque Dios tiene poder para volver a injertarlos.",
+          "R": "Y si el pueblo de Israel deja de negarse a creer, volverá a ser unido al árbol. Dios tiene poder para ponerlos de nuevo en él."
+        },
+        "sw": {
+          "L": "Na wao pia, ikiwa hawatadumu katika kutoamini, watapandikizwa; kwa maana Mungu anaweza kuwapandikiza tena.",
+          "B": "Na wao pia, wasipoendelea katika kutoamini, watapandikizwa, kwa sababu Mungu ana uwezo wa kuwapandikiza tena.",
+          "R": "Na watu wa Israeli wakiacha kukataa kuamini, wataunganishwa na mti tena. Mungu ana uwezo wa kuwarudisha mahali pao."
         }
       },
       "decisions": [
@@ -3274,6 +3957,16 @@
           "L": "For if you were cut out of the olive tree that is wild by nature, and contrary to nature were grafted into a cultivated olive tree, how much more will these, the natural [branches], be grafted into their own olive tree!",
           "B": "After all, if you were cut from what is by nature a wild olive tree and grafted, against nature, into a cultivated olive tree, how much more readily will these natural branches be grafted back into their own olive tree!",
           "R": "You were cut from a wild olive tree, where you grew naturally. Then, against the way things usually grow, you were joined to a garden olive tree. The natural branches belong to that tree. So it will be even easier for God to join them back to their own tree!"
+        },
+        "es": {
+          "L": "Porque si tú fuiste cortado del olivo silvestre por naturaleza, y contra naturaleza fuiste injertado en un olivo cultivado, ¡cuánto más estas, las [ramas] naturales, serán injertadas en su propio olivo!",
+          "B": "Después de todo, si tú fuiste cortado de lo que por naturaleza es un olivo silvestre e injertado, contra la naturaleza, en un olivo cultivado, ¡con cuánta más facilidad serán injertadas de nuevo estas ramas naturales en su propio olivo!",
+          "R": "Tú fuiste cortado de un olivo silvestre, donde creciste de forma natural. Luego, al revés de como suelen crecer las cosas, fuiste unido a un olivo de huerto. Las ramas naturales pertenecen a ese árbol. ¡Así que a Dios le será aún más fácil volver a unirlas a su propio árbol!"
+        },
+        "sw": {
+          "L": "Kwa maana ikiwa wewe ulikatwa kutoka katika mzeituni ulio mwitu kwa asili, na kinyume cha asili ukapandikizwa katika mzeituni uliopandwa, haya, [matawi] ya asili, yatapandikizwa zaidi sana kiasi gani katika mzeituni wao wenyewe!",
+          "B": "Hata hivyo, ikiwa wewe ulikatwa kutoka kwenye mzeituni ambao kwa asili ni mwitu, na kinyume cha asili ukapandikizwa katika mzeituni uliopandwa, itakuwa rahisi zaidi kiasi gani matawi haya ya asili kupandikizwa tena katika mzeituni wao wenyewe!",
+          "R": "Wewe ulikatwa kutoka kwenye mzeituni mwitu, ulikokuwa ukiota kwa asili. Kisha, kinyume na jinsi mimea inavyoota kwa kawaida, uliunganishwa na mzeituni wa bustani. Matawi ya asili ni ya mti huo. Kwa hiyo itakuwa rahisi zaidi kwa Mungu kuyaunganisha tena na mti wao wenyewe!"
         }
       },
       "decisions": [
@@ -3428,6 +4121,16 @@
           "L": "For I do not want you to be ignorant, {{gender:brothers and sisters|brothers}}, of this mystery, so that you may not be wise in your own [eyes]: that a hardening in part has come to Israel until the fullness of the Gentiles has come in, \\v 26 and in this way all Israel will be saved, just as it is written, \"The Deliverer will come out of Zion; {{deity_pronoun:he|He}} will turn away ungodliness from Jacob.\"",
           "B": "{{gender:Brothers and sisters|Brothers}}, I want you to understand this mystery, so that you will not think yourselves wise: a hardening has come upon part of Israel until the full number of the Gentiles comes in. \\v 26 And in this way all Israel will be saved. As it is written, \"Out of Zion will come the Deliverer; {{deity_pronoun:he|He}} will turn ungodliness away from Jacob.\"",
           "R": "{{gender:Brothers and sisters|Brothers}}, I want you to know a secret that God has now made known. Then you will not think you are wiser than you are. Part of Israel has been made stubborn, but only until the full number of people who are not Jews has come in. \\v 26 And in this way all Israel will be saved. As Scripture says, \"The One who rescues will come from Zion. He will turn the people of Jacob away from their ungodly ways.\""
+        },
+        "es": {
+          "L": "Porque no quiero que {{plural_you:ignoren|ignoréis}}, hermanos, este misterio, para que no {{plural_you:sean|seáis}} sabios en {{plural_you:su|vuestra}} propia [opinión]: que un endurecimiento en parte le ha sobrevenido a Israel hasta que haya entrado la plenitud de los gentiles, \\v 26 y de este modo todo Israel será salvo, tal como está escrito: «Vendrá de Sion el Libertador; apartará de Jacob la impiedad.»",
+          "B": "Hermanos, quiero que {{plural_you:entiendan|entendáis}} este misterio, para que no {{plural_you:se crean|os creáis}} sabios: un endurecimiento ha venido sobre una parte de Israel hasta que entre el número completo de los gentiles. \\v 26 Y de este modo todo Israel será salvo. Como está escrito: «De Sion vendrá el Libertador; apartará de Jacob la impiedad.»",
+          "R": "Hermanos, quiero que {{plural_you:conozcan|conozcáis}} un misterio, un plan secreto que Dios ahora ha dado a conocer. Así no {{plural_you:se creerán|os creeréis}} más sabios de lo que {{plural_you:son|sois}}. Una parte de Israel se ha vuelto terca, pero solo hasta que haya entrado el número completo de los que no son judíos. \\v 26 Y de este modo todo Israel será salvo. Como dice la Escritura: «El que rescata vendrá de Sion. Hará que el pueblo de Jacob deje de vivir sin Dios.»"
+        },
+        "sw": {
+          "L": "Kwa maana sitaki mkose kuijua siri hii, ndugu, ili msiwe wenye hekima kwa maoni yenu wenyewe: kwamba ugumu kwa sehemu umekuja juu ya Israeli hadi utimilifu wa watu wa mataifa utakapoingia, \\v 26 na hivyo Israeli wote wataokolewa, kama ilivyoandikwa: \"Mwokoaji atakuja kutoka Sayuni; ataondoa kutomcha Mungu kutoka kwa Yakobo.\"",
+          "B": "Ndugu, nataka mwielewe siri hii, ili msijione kuwa wenye hekima: ugumu umekuja juu ya sehemu ya Israeli hadi idadi kamili ya watu wa mataifa itakapoingia. \\v 26 Na hivyo ndivyo Israeli wote watakavyookolewa. Kama ilivyoandikwa: \"Mwokoaji atakuja kutoka Sayuni; ataondoa kutomcha Mungu kutoka kwa Yakobo.\"",
+          "R": "Ndugu, nataka mjue siri ambayo Mungu ameifunua sasa. Hapo hamtajiona kuwa wenye hekima kuliko mlivyo. Baadhi ya watu wa Israeli wamefanywa wakaidi, lakini ni mpaka idadi kamili ya watu wasio Wayahudi itakapokuwa imeingia. \\v 26 Na hivyo ndivyo Israeli wote watakavyookolewa. Kama Maandiko yanavyosema: \"Yule anayeokoa atakuja kutoka Sayuni. Atawageuza watu wa Yakobo waache njia zao za kutomcha Mungu.\""
         }
       },
       "decisions": [
@@ -3646,6 +4349,131 @@
           "reason": "\"It is written\" is the normal formula for quoting Scripture; Readable names Scripture.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011025006"
+          ],
+          "choice": "hermanos, no setting",
+          "alternatives": [
+            "hermanos y hermanas"
+          ],
+          "reason": "As in Romans 1:13, Spanish \"hermanos\" already covers brothers and sisters, so the English gender setting has no Spanish span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011025008"
+          ],
+          "choice": "misterio, explained as \"un plan secreto que Dios ahora ha dado a conocer\"",
+          "alternatives": [
+            "un secreto"
+          ],
+          "reason": "Where the English Readable says \"secret\", Spanish keeps \"misterio\" at every level, as in Ephesians and Colossians, and Readable explains it in the same sentence (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-3",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011026011",
+            "n45011026012"
+          ],
+          "choice": "el Libertador",
+          "alternatives": [
+            "el Redentor"
+          ],
+          "reason": "The Greek word is \"the one who rescues\" (m7). \"Redentor\" is the Hebrew of Isaiah, not the word Paul uses; Readable says \"El que rescata\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011025006"
+          ],
+          "choice": "ndugu, no setting",
+          "alternatives": [
+            "ndugu wa kiume"
+          ],
+          "reason": "As in Romans 1:13, \"ndugu\" means brothers and sisters alike, so the English gender setting has nothing to change in Swahili.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-2",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011025008"
+          ],
+          "choice": "siri at every level",
+          "alternatives": [
+            "fumbo"
+          ],
+          "reason": "Swahili has one word, \"siri\", for both a secret and a mystery, as in Ephesians and Colossians. Readable says it is a secret God has now made known (m1). \"Fumbo\" is a riddle, the sense the meaning decision rules out.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-3",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011026011",
+            "n45011026012"
+          ],
+          "choice": "Mwokoaji",
+          "alternatives": [
+            "Mkombozi",
+            "Mwokozi"
+          ],
+          "reason": "\"Mwokoaji\" is one who rescues, as the Greek word is (m7). \"Mkombozi\" (redeemer) is the Hebrew of Isaiah, and \"Mwokozi\" is the title Savior, a different Greek word. Readable says \"Yule anayeokoa\" (the one who rescues).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3680,6 +4508,16 @@
           "L": "\"And this [is] the covenant from {{deity_pronoun:me|Me}} with them, when I take away their sins.\"",
           "B": "\"And this will be {{deity_pronoun:my|My}} covenant with them, when I take their sins away.\"",
           "R": "\"This is the covenant I will make with them when I take away their sins.\""
+        },
+        "es": {
+          "L": "«Y este [es] para ellos el pacto de {{deity_pronoun:mí|Mí}}, cuando yo quite sus pecados.»",
+          "B": "«Y cuando les quite sus pecados, este será {{deity_pronoun:mi|Mi}} pacto con ellos.»",
+          "R": "«Este es el pacto que haré con ellos cuando les quite sus pecados.»"
+        },
+        "sw": {
+          "L": "\"Na hili [ndilo] agano kutoka {{deity_pronoun:kwangu|Kwangu}} kwao, nitakapoziondoa dhambi zao.\"",
+          "B": "\"Nitakapoziondoa dhambi zao, hili ndilo litakalokuwa agano {{deity_pronoun:langu|Langu}} pamoja nao.\"",
+          "R": "\"Hili ndilo agano nitakalofanya nao nitakapoziondoa dhambi zao.\""
         }
       },
       "decisions": [
@@ -3797,6 +4635,16 @@
           "L": "As regards the gospel, [they are] enemies for your sake; but as regards the election, [they are] beloved for the sake of the fathers.",
           "B": "As far as the gospel is concerned, they are enemies for your sake; but as far as God's choice is concerned, they are loved because of the patriarchs.",
           "R": "When it comes to the good news, they are now God's enemies, and that has been for your good. But God chose them, and {{deity_pronoun:he|He}} still loves them because of their ancestors Abraham, Isaac and Jacob."
+        },
+        "es": {
+          "L": "En cuanto al evangelio, [son] enemigos por causa de {{plural_you:ustedes|vosotros}}; pero en cuanto a la elección, [son] amados por causa de los padres.",
+          "B": "Desde el punto de vista del evangelio, son enemigos en beneficio de {{plural_you:ustedes|vosotros}}; pero desde el punto de vista de la elección de Dios, son amados a causa de los patriarcas.",
+          "R": "En lo que se refiere a la buena noticia, ahora son enemigos de Dios, y eso ha sido para el bien de {{plural_you:ustedes|vosotros}}. Pero Dios los eligió, y todavía los ama por causa de sus antepasados Abraham, Isaac y Jacob."
+        },
+        "sw": {
+          "L": "Kuhusu Injili, [ni] maadui kwa sababu yenu; lakini kuhusu uchaguzi, [ni] wapendwa kwa sababu ya mababa.",
+          "B": "Kwa upande wa Injili, wao ni maadui kwa faida yenu; lakini kwa upande wa uchaguzi wa Mungu, wanapendwa kwa sababu ya mababu.",
+          "R": "Kuhusu Habari Njema, sasa wao ni maadui wa Mungu, na jambo hilo limekuwa kwa faida yenu. Lakini Mungu aliwachagua, na bado anawapenda kwa sababu ya mababu zao Ibrahimu, Isaka na Yakobo."
         }
       },
       "decisions": [
@@ -3950,6 +4798,16 @@
           "L": "For the gifts and the calling of God [are] irrevocable.",
           "B": "For the gifts and the call of God can never be taken back.",
           "R": "God never changes {{deity_pronoun:his|His}} mind about the gifts {{deity_pronoun:he|He}} gives or about the people {{deity_pronoun:he|He}} calls."
+        },
+        "es": {
+          "L": "Porque irrevocables [son] los dones y la llamada de Dios.",
+          "B": "Porque los dones y el llamado de Dios no se pueden revocar jamás.",
+          "R": "Dios nunca cambia de opinión acerca de los dones que da ni acerca de las personas que llama."
+        },
+        "sw": {
+          "L": "Kwa maana karama na wito wa Mungu havibatiliki.",
+          "B": "Kwa maana karama na wito wa Mungu haviwezi kamwe kurudishwa nyuma.",
+          "R": "Mungu habadili nia {{deity_pronoun:yake|Yake}} kamwe kuhusu karama anazotoa wala kuhusu watu anaowaita."
         }
       },
       "decisions": [
@@ -4051,6 +4909,16 @@
           "L": "For just as you once were disobedient to God but now have received mercy because of their disobedience, \\v 31 so these also have now been disobedient, for the mercy [shown] to you, so that they too may now receive mercy.",
           "B": "Once you were disobedient to God, but now you have been shown mercy because of their disobedience. \\v 31 In the same way they have now been disobedient, so that by the mercy God has shown you, they too may now be shown mercy.",
           "R": "At one time you did not obey God. But now God has shown you mercy, because the people of Israel did not obey. \\v 31 In the same way, they have now refused to obey, so that they too may now receive mercy because of the mercy God has shown you."
+        },
+        "es": {
+          "L": "Porque así como {{plural_you:ustedes|vosotros}} en otro tiempo {{plural_you:desobedecieron|desobedecisteis}} a Dios, pero ahora {{plural_you:han|habéis}} recibido misericordia por la desobediencia de ellos, \\v 31 así también estos ahora han desobedecido, por la misericordia [mostrada] a {{plural_you:ustedes|vosotros}}, para que también ellos ahora reciban misericordia.",
+          "B": "En otro tiempo {{plural_you:ustedes|vosotros}} {{plural_you:fueron|fuisteis}} desobedientes a Dios, pero ahora {{plural_you:han|habéis}} alcanzado misericordia a causa de la desobediencia de ellos. \\v 31 Del mismo modo, ellos ahora han sido desobedientes, para que, por la misericordia que Dios {{plural_you:les|os}} ha mostrado a {{plural_you:ustedes|vosotros}}, también ellos alcancen ahora misericordia.",
+          "R": "En otro tiempo {{plural_you:ustedes|vosotros}} no {{plural_you:obedecían|obedecíais}} a Dios. Pero ahora Dios ha tenido misericordia de {{plural_you:ustedes|vosotros}}, porque el pueblo de Israel no obedeció. \\v 31 Del mismo modo, ellos ahora se han negado a obedecer, para que también ellos reciban ahora misericordia gracias a la misericordia que Dios {{plural_you:les|os}} ha mostrado."
+        },
+        "sw": {
+          "L": "Kwa maana kama vile ninyi hapo zamani mlikuwa wasiomtii Mungu, lakini sasa mmerehemiwa kwa sababu ya kutotii kwao, \\v 31 vivyo hivyo hawa nao sasa wamekuwa wasiotii, kwa ajili ya rehema [mliyoonyeshwa] ninyi, ili wao pia sasa warehemiwe.",
+          "B": "Hapo zamani mlikuwa wasiomtii Mungu, lakini sasa mmeonyeshwa rehema kwa sababu ya kutotii kwao. \\v 31 Vivyo hivyo, wao sasa wamekuwa wasiotii, ili kwa rehema ambayo Mungu amewaonyesha ninyi, wao pia sasa waonyeshwe rehema.",
+          "R": "Wakati fulani ninyi hamkumtii Mungu. Lakini sasa Mungu amewaonyesha rehema, kwa sababu watu wa Israeli hawakutii. \\v 31 Vivyo hivyo, wao sasa wamekataa kutii, ili wao pia sasa wapokee rehema kwa sababu ya rehema ambayo Mungu amewaonyesha ninyi."
         }
       },
       "decisions": [
@@ -4177,6 +5045,29 @@
           "reason": "\"Your mercy\" means the mercy shown to you, not mercy you show; Balanced and Readable say so.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011030005",
+            "n45011030013",
+            "n45011031005"
+          ],
+          "choice": "kutotii (not obeying)",
+          "alternatives": [
+            "kuasi (to rebel)"
+          ],
+          "reason": "\"Kuasi\" is open rebellion; the Greek verb is refusing to obey, which in Romans includes refusing to believe (m1). \"Kutotii\" says that without adding revolt. Mercy is \"rehema\" in verses 30-32.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4211,6 +5102,16 @@
           "L": "For God has shut up all in disobedience, so that {{deity_pronoun:he|He}} may have mercy on all.",
           "B": "For God has locked everyone up together in disobedience, so that {{deity_pronoun:he|He}} may show mercy to everyone.",
           "R": "God has put everyone in the prison of disobedience, so that {{deity_pronoun:he|He}} can show mercy to everyone."
+        },
+        "es": {
+          "L": "Porque Dios encerró a todos en desobediencia, para tener misericordia de todos.",
+          "B": "Porque Dios ha encerrado a todos juntos en la desobediencia, para mostrar misericordia a todos.",
+          "R": "Dios ha puesto a todos en la cárcel de la desobediencia, para poder mostrar misericordia a todos."
+        },
+        "sw": {
+          "L": "Kwa maana Mungu amewafungia wote katika kutotii, ili wote awarehemu.",
+          "B": "Kwa maana Mungu amewafungia watu wote pamoja ndani ya kutotii, ili apate kuwaonyesha wote rehema.",
+          "R": "Mungu amewaweka watu wote katika gereza la kutotii, ili aweze kuwaonyesha wote rehema."
         }
       },
       "decisions": [
@@ -4322,6 +5223,16 @@
           "L": "O [the] depth of [the] riches and wisdom and knowledge of God! How unsearchable [are] {{deity_pronoun:his|His}} judgments and untraceable {{deity_pronoun:his|His}} ways!",
           "B": "How deep are the riches and the wisdom and the knowledge of God! How impossible to search out {{deity_pronoun:his|His}} judgments, and how impossible to trace {{deity_pronoun:his|His}} ways!",
           "R": "How great God's riches are! How deep {{deity_pronoun:his|His}} wisdom and knowledge are! No one can fully understand {{deity_pronoun:his|His}} decisions. No one can trace the paths {{deity_pronoun:he|He}} takes."
+        },
+        "es": {
+          "L": "¡Oh profundidad de [las] riquezas y de [la] sabiduría y del conocimiento de Dios! ¡Cuán inescrutables [son] {{deity_pronoun:sus|Sus}} juicios e imposibles de rastrear {{deity_pronoun:sus|Sus}} caminos!",
+          "B": "¡Qué profundas son las riquezas y la sabiduría y el conocimiento de Dios! ¡Qué imposible es investigar {{deity_pronoun:sus|Sus}} juicios y seguir el rastro de {{deity_pronoun:sus|Sus}} caminos!",
+          "R": "¡Qué grandes son las riquezas de Dios! ¡Qué profundos son {{deity_pronoun:su|Su}} sabiduría y {{deity_pronoun:su|Su}} conocimiento! Nadie puede entender del todo {{deity_pronoun:sus|Sus}} decisiones. Nadie puede seguir los caminos por donde {{deity_pronoun:él|Él}} va."
+        },
+        "sw": {
+          "L": "Ee kina cha utajiri na hekima na maarifa ya Mungu! Jinsi gani hukumu {{deity_pronoun:zake|Zake}} hazichunguziki, na njia {{deity_pronoun:zake|Zake}} hazifuatiliki!",
+          "B": "Utajiri na hekima na maarifa ya Mungu ni ya kina kirefu mno! Hakuna awezaye kuzichunguza hukumu {{deity_pronoun:zake|Zake}}, wala kuzifuatilia njia {{deity_pronoun:zake|Zake}}!",
+          "R": "Utajiri wa Mungu ni mkubwa kiasi gani! Hekima {{deity_pronoun:yake|Yake}} na maarifa {{deity_pronoun:yake|Yake}} ni ya kina kirefu mno! Hakuna mtu anayeweza kuelewa kikamilifu maamuzi {{deity_pronoun:yake|Yake}}. Hakuna anayeweza kufuatilia njia anazopita."
         }
       },
       "decisions": [
@@ -4434,6 +5345,16 @@
           "L": "For \"who has known [the] mind of [the] Lord?\"",
           "B": "For \"who has known the mind of the Lord?\"",
           "R": "As Scripture says, \"Who has ever known what the Lord is thinking?\""
+        },
+        "es": {
+          "L": "Porque «¿quién conoció [la] mente del Señor?»",
+          "B": "Porque «¿quién ha conocido la mente del Señor?»",
+          "R": "Como dice la Escritura: «¿Quién ha sabido jamás lo que piensa el Señor?»"
+        },
+        "sw": {
+          "L": "Kwa maana \"nani ameijua akili ya Bwana?\"",
+          "B": "Kwa maana \"ni nani amepata kuijua akili ya Bwana?\"",
+          "R": "Kama Maandiko yanavyosema: \"Ni nani amewahi kujua mawazo ya Bwana?\""
         }
       },
       "decisions": [
@@ -4514,6 +5435,16 @@
           "L": "\"Or who has become {{deity_pronoun:his|His}} counselor?\"",
           "B": "\"Or who has been {{deity_pronoun:his|His}} counselor?\"",
           "R": "\"Or who has ever given {{deity_pronoun:him|Him}} advice?\""
+        },
+        "es": {
+          "L": "«¿O quién llegó a ser {{deity_pronoun:su|Su}} consejero?»",
+          "B": "«¿O quién ha sido {{deity_pronoun:su|Su}} consejero?»",
+          "R": "«¿O quién {{deity_pronoun:le|Le}} ha dado alguna vez un consejo?»"
+        },
+        "sw": {
+          "L": "\"Au ni nani aliyekuwa mshauri {{deity_pronoun:wake|Wake}}?\"",
+          "B": "\"Au ni nani amekuwa mshauri {{deity_pronoun:wake|Wake}}?\"",
+          "R": "\"Au ni nani amewahi kumpa ushauri?\""
         }
       },
       "decisions": [
@@ -4582,6 +5513,16 @@
           "L": "\"Or who has first given to {{deity_pronoun:him|Him}}, and it will be repaid to him?\"",
           "B": "\"Or who has given {{deity_pronoun:him|Him}} anything first and must be paid back?\"",
           "R": "\"Has anyone ever given God a gift, so that God must pay them back?\""
+        },
+        "es": {
+          "L": "«¿O quién {{deity_pronoun:le|Le}} ha dado primero, y le será devuelto?»",
+          "B": "«¿O quién {{deity_pronoun:le|Le}} ha dado algo primero, para que tenga que devolvérselo?»",
+          "R": "«¿Alguien ha hecho alguna vez un regalo a Dios, de modo que Dios tenga que pagárselo?»"
+        },
+        "sw": {
+          "L": "\"Au ni nani aliyempa kwanza, naye atalipwa?\"",
+          "B": "\"Au ni nani aliyempa kitu kwanza, hata alazimike kumlipa?\"",
+          "R": "\"Je, kuna mtu aliyewahi kumpa Mungu zawadi, hata Mungu alazimike kumlipa?\""
         }
       },
       "decisions": [
@@ -4684,6 +5625,16 @@
           "L": "For from {{deity_pronoun:him|Him}} and through {{deity_pronoun:him|Him}} and to {{deity_pronoun:him|Him}} [are] all things. To {{deity_pronoun:him|Him}} [be] the glory forever. Amen.",
           "B": "For all things are from {{deity_pronoun:him|Him}} and through {{deity_pronoun:him|Him}} and for {{deity_pronoun:him|Him}}. To {{deity_pronoun:him|Him}} be glory forever! Amen.",
           "R": "Everything comes from {{deity_pronoun:him|Him}}. Everything exists through {{deity_pronoun:him|Him}} and for {{deity_pronoun:him|Him}}. Let all glory be {{deity_pronoun:his|His}} forever! Amen."
+        },
+        "es": {
+          "L": "Porque de {{deity_pronoun:él|Él}} y por medio de {{deity_pronoun:él|Él}} y hacia {{deity_pronoun:él|Él}} [son] todas las cosas. A {{deity_pronoun:él|Él}} [sea] la gloria por los siglos. Amén.",
+          "B": "Porque todas las cosas son de {{deity_pronoun:él|Él}}, por medio de {{deity_pronoun:él|Él}} y para {{deity_pronoun:él|Él}}. ¡A {{deity_pronoun:él|Él}} la gloria para siempre! Amén.",
+          "R": "Todo viene de {{deity_pronoun:él|Él}}. Todo existe por medio de {{deity_pronoun:él|Él}} y para {{deity_pronoun:él|Él}}. ¡Que toda la gloria sea {{deity_pronoun:suya|Suya}} para siempre! Amén."
+        },
+        "sw": {
+          "L": "Kwa maana kutoka {{deity_pronoun:kwake|Kwake}}, na kupitia {{deity_pronoun:yeye|Yeye}}, na kuelekea {{deity_pronoun:kwake|Kwake}} [ni] vitu vyote. Kwake [uwe] utukufu hata milele. Amina.",
+          "B": "Kwa maana vitu vyote vimetoka {{deity_pronoun:kwake|Kwake}}, vipo kupitia {{deity_pronoun:yeye|Yeye}}, na ni kwa ajili {{deity_pronoun:yake|Yake}}. Utukufu uwe {{deity_pronoun:kwake|Kwake}} milele! Amina.",
+          "R": "Kila kitu kinatoka {{deity_pronoun:kwake|Kwake}}. Kila kitu kipo kupitia {{deity_pronoun:yeye|Yeye}} na kwa ajili {{deity_pronoun:yake|Yake}}. Utukufu wote na uwe {{deity_pronoun:wake|Wake}} milele! Amina."
         }
       },
       "decisions": [
