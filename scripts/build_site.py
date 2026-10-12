@@ -36,6 +36,7 @@ BOOK_NAMES = {"GEN": {"en": "Genesis", "es": "Génesis", "fr": "Genèse", "sw": 
               "PHP": {"en": "Philippians", "es": "Filipenses", "fr": "Philippiens", "sw": "Wafilipi"},
               "COL": {"en": "Colossians", "es": "Colosenses", "fr": "Colossiens", "sw": "Wakolosai"},
               "1TH": {"en": "1 Thessalonians", "es": "1 Tesalonicenses", "fr": "1 Thessaloniciens", "sw": "1 Wathesalonike"},
+              "2TH": {"en": "2 Thessalonians", "es": "2 Tesalonicenses", "fr": "2 Thessaloniciens", "sw": "2 Wathesalonike"},
               "2TI": {"en": "2 Timothy", "es": "2 Timoteo", "fr": "2 Timothée", "sw": "2 Timotheo"},
               "PHM": {"en": "Philemon", "es": "Filemón", "fr": "Philémon", "sw": "Filemoni"},
               "JAS": {"en": "James", "es": "Santiago", "fr": "Jacques", "sw": "Yakobo"},
@@ -102,7 +103,7 @@ OTHER_BOOK_NAMES = {
 # A book whose chapters go by another name: "Psalm 23", not "Psalms 23".
 CHAPTER_NAMES = {"PSA": {"en": "Psalm", "es": "Salmo", "fr": "Psaume", "sw": "Zaburi"}}
 # Chapters in each book, for "2 of 21 chapters" and a book's completeness.
-BOOK_CHAPTERS = {"GEN": 50, "MAT": 28, "JHN": 21, "ROM": 16, "1CO": 16, "2CO": 13, "GAL": 6, "EPH": 6, "PHP": 4, "COL": 4, "1TH": 5, "2TI": 4, "PHM": 1, "JAS": 5, "1PE": 5, "2PE": 3, "1JN": 5, "2JN": 1, "3JN": 1, "PSA": 150}
+BOOK_CHAPTERS = {"GEN": 50, "MAT": 28, "JHN": 21, "ROM": 16, "1CO": 16, "2CO": 13, "GAL": 6, "EPH": 6, "PHP": 4, "COL": 4, "1TH": 5, "2TH": 3, "2TI": 4, "PHM": 1, "JAS": 5, "1PE": 5, "2PE": 3, "1JN": 5, "2JN": 1, "3JN": 1, "PSA": 150}
 # The interface languages, English first (see catalog below).
 LANGUAGES = ("en", "es", "fr", "sw")
 SITE_NAME = "Open Word Bible"
@@ -197,7 +198,7 @@ def asset(name):
 
 # Colour modes (see web/style.css and web/site.js): value, and the
 # background and accent its swatch shows. Labels are in i18n/ (theme.*).
-# "auto" follows the device.
+# "light" (Paper) is the default; "auto" follows the device.
 COLOUR_MODES = (("auto", "#faf6ef", "#16130f"),
                 ("light", "#faf6ef", "#3f3d9a"),
                 ("sepia", "#f4ecd8", "#3f3d9a"),
@@ -205,21 +206,24 @@ COLOUR_MODES = (("auto", "#faf6ef", "#16130f"),
                 ("night", "#000000", "#e0b45c"),
                 ("contrast", "#ffffff", "#000000"))
 
-# The reading text's settings in the gear menu (see web/style.css): name,
+# The gear menu's settings after the colour mode (see web/style.css): name,
 # default, and the values in the menu's order. A choice is kept as
-# owb-<name> and applied as data-<name> on <html>. They change how the text
-# looks, never its wording. Labels are in i18n/ (prefs.<name>, <name>.<value>).
-READING_PREFS = (("size", "m", ("s", "m", "l", "xl")),
+# owb-<name> and applied as data-<name> on <html>. Size, font and leading
+# are the reading text's; motion "auto" follows the device. They change how
+# the page looks, never the text's wording. Labels are in i18n/
+# (prefs.<name>, <name>.<value>).
+DISPLAY_PREFS = (("size", "m", ("s", "m", "l", "xl")),
                  ("font", "serif", ("serif", "sans", "readable")),
-                 ("leading", "normal", ("compact", "normal", "spacious")))
+                 ("leading", "normal", ("compact", "normal", "spacious")),
+                 ("motion", "auto", ("auto", "reduce")))
 
-# Applies the saved colour mode and reading settings before the first paint,
+# Applies the saved colour mode and display settings before the first paint,
 # so a page never flashes the default colours or text. Mirrors web/site.js.
 BOOT_SCRIPT = ("try{var d=document.documentElement,t=localStorage.getItem('owb-theme');"
-               "if(['light','sepia','dark','night','contrast'].indexOf(t)>=0)"
+               "if(['auto','light','sepia','dark','night','contrast'].indexOf(t)>=0)"
                "d.setAttribute('data-theme',t);"
                "var p={" + ",".join(f"{name}:{[v for v in values if v != default]!r}"
-                                   for name, default, values in READING_PREFS) + "};"
+                                   for name, default, values in DISPLAY_PREFS) + "};"
                "for(var k in p){var v=localStorage.getItem('owb-'+k);"
                "if(p[k].indexOf(v)>=0)d.setAttribute('data-'+k,v)}"
                # Signed in (web/account.js): the header's "Sign in" stays hidden.
@@ -279,9 +283,10 @@ def leading_sample(gap):
 LEADING_GAPS = {"compact": 5, "normal": 7, "spacious": 9}
 
 
-def colour_menu(lang):
-    """The gear menu: the colour mode, then the reading text's settings
-    (READING_PREFS). web/site.js runs it."""
+def colour_menu(lang, path=None, translated=LANGUAGES):
+    """The gear menu: the colour mode, the display settings (DISPLAY_PREFS),
+    then the languages (language_items, as in the footer). web/site.js
+    runs it."""
     label = t(lang, "tools.display")
 
     def option(value, default, face, name):
@@ -295,22 +300,27 @@ def colour_menu(lang):
                 f'<div role="radiogroup" aria-labelledby="prefs-{pref}" data-pref="{pref}" data-default="{default}">'
                 + "".join(option(v, default, face, name) for v, face, name in options) + '</div>')
 
-    theme = group("theme", t(lang, "tools.theme"), "auto", [
+    theme = group("theme", t(lang, "tools.theme"), "light", [
         (v, f'<span class="swatch" style="--sw-bg:{bg};--sw-accent:{accent}" aria-hidden="true"></span>',
          t(lang, "theme." + v)) for v, bg, accent in COLOUR_MODES])
     def sample(pref, value):
+        if pref == "motion":
+            return ""
         inner = leading_sample(LEADING_GAPS[value]) if pref == "leading" else "Aa"
         return f'<span class="sample" aria-hidden="true">{inner}</span>'
 
     rows = [group(pref, t(lang, "prefs." + pref), default,
                   [(v, sample(pref, v), t(lang, f"{pref}.{v}")) for v in values])
-            for pref, default, values in READING_PREFS]
+            for pref, default, values in DISPLAY_PREFS]
+    check = '<span class="check" aria-hidden="true">&#10003;</span>'
+    languages = (f'<p class="prefs-label" id="prefs-lang">{t(lang, "footer.languages")}</p>'
+                 f'<ul class="prefs-langs" aria-labelledby="prefs-lang">{language_items(lang, path, translated, check)}</ul>')
     return (
         '<div class="prefs">'
         '<button type="button" class="tool-btn prefs-btn" aria-expanded="false" aria-controls="colour-menu" '
         f'aria-label="{label}" title="{label}">{GEAR}</button>'
         f'<div id="colour-menu" class="prefs-menu" role="group" aria-label="{label}" hidden>'
-        + theme + "".join(rows) + '</div></div>')
+        + theme + "".join(rows) + languages + '</div></div>')
 
 
 OG = ROOT / "web" / "og"
@@ -387,7 +397,7 @@ def page(lang, title, body, path=None, current="", description="", card="site", 
 </head>
 <body>
 <a class="skip" href="#main">{t(lang, "skip")}</a>
-{site_header(lang, current, path)}
+{site_header(lang, current, path, here, translated)}
 <main class="wrap" id="main" tabindex="-1">
 {body}
 </main>
@@ -451,11 +461,12 @@ def nav_menus(lang):
             ("about", t(lang, "nav.about"), "info", "/about/", about, "dd-about"))
 
 
-def site_header(lang, current, path=None):
+def site_header(lang, current, path=None, lang_path=None, translated=LANGUAGES):
     """Logo, the main links with their dropdowns, and the tools. On narrow
     screens the links fold into a panel behind the menu button, where each
     dropdown opens in place (web/site.js). The section trigger for current
-    is lit, and the dropdown link to this page (path) is aria-current."""
+    is lit, and the dropdown link to this page (path) is aria-current. The
+    gear menu's language links go to lang_path, as the footer's do."""
     home_on = current == "/"
     home = url(lang, "/")
     items = [f'<li><a class="nav-link" href="{home}"{" aria-current=page" if home_on else ""}>'
@@ -480,7 +491,7 @@ def site_header(lang, current, path=None):
 <a class="tool-btn search-btn" href="{url(lang, "/search/")}" aria-label="{t(lang, "nav.search")}" title="{t(lang, "nav.search")}" aria-keyshortcuts="Control+K Meta+K">{icon(ICONS["search"])}<span class="search-label">{t(lang, "nav.search")}</span><kbd class="search-kbd" hidden>Ctrl K</kbd></a>
 {account_menu(lang)}
 <a class="tool-btn" href="{GITHUB_URL}" aria-label="{t(lang, "tools.github")}" title="GitHub">{icon(ICONS["github"])}</a>
-{colour_menu(lang)}
+{colour_menu(lang, lang_path, translated)}
 <button type="button" class="tool-btn menu-btn" aria-expanded="false" aria-controls="site-nav" aria-label="{t(lang, "nav.menu")}">{icon(ICONS["menu"], 22)}{icon(ICONS["close"], 22)}</button>
 </div>
 </div></header>"""
@@ -546,24 +557,29 @@ def book_index(lang):
             f'{icon(ICONS["arrow"], 15)}</a></p></nav>')
 
 
-def language_links(lang, path, translated=LANGUAGES):
-    """The footer's language switch, as Ochorus has it: each language in its
-    own name, the current one as plain text and the others as links to this
-    page in that language: the home page from a page without a path, and
-    the articles page from an article not in that language. web/site.js
-    remembers the choice."""
+def language_items(lang, path, translated=LANGUAGES, mark=""):
+    """Each language in its own name, as list items: the current one as plain
+    text (followed by mark) and the others as links to this page in that
+    language: the home page from a page without a path, and the articles
+    page from an article not in that language. web/site.js remembers the
+    choice."""
     def target(code):
         if path is None:
             return "/"
         return path if code in translated else "/articles/"
 
-    links = "".join(
-        f'<li><span lang="{code}" aria-current="true">{t(code, "language_name")}</span></li>' if code == lang
+    return "".join(
+        f'<li><span lang="{code}" aria-current="true">{t(code, "language_name")}{mark}</span></li>' if code == lang
         else f'<li><a href="{url(code, target(code))}" lang="{code}" hreflang="{code}" data-lang="{code}">'
              f'{t(code, "language_name")}</a></li>'
         for code in LANGUAGES)
+
+
+def language_links(lang, path, translated=LANGUAGES):
+    """The footer's language switch, as Ochorus has it (language_items)."""
     return (f'<nav class="foot-langs" aria-labelledby="foot-langs">'
-            f'<h2 id="foot-langs">{t(lang, "footer.languages")}</h2><ul>{links}</ul></nav>')
+            f'<h2 id="foot-langs">{t(lang, "footer.languages")}</h2>'
+            f'<ul>{language_items(lang, path, translated)}</ul></nav>')
 
 
 def site_footer(lang, path=None, translated=LANGUAGES):
@@ -1064,7 +1080,7 @@ def disputed(vid):
 
 # Verses that are only a psalm's title ("A psalm of David ..."), which the
 # Hebrew text counts as verse 1. A chapter's cards quote the psalm itself.
-TITLES = {"PSA.3.1", "PSA.4.1"}
+TITLES = {"PSA.3.1", "PSA.4.1", "PSA.5.1", "PSA.6.1"}
 
 
 def opening(records, chapter):
@@ -1094,6 +1110,16 @@ def opening_verse(records, chapter, lang="en"):
 
 # A quoted verse in each language's quotation marks (English curly quotes
 # otherwise). French sets its guillemets off with no-break spaces.
+def inner_quotes(text):
+    """A verse to be shown inside double quotes: its own speech takes single
+    quotes, and speech that runs on into the next verse (Genesis 9:1) is
+    closed, so the marks stay balanced."""
+    text = text.replace("\u201c", "\u2018").replace("\u201d", "\u2019")
+    if text.count("\u2018") > text.count("\u2019") - text.count("\u2019s"):
+        text += "\u2019"
+    return text
+
+
 QUOTES_AROUND = {"es": "&laquo;{}&raquo;", "fr": "&laquo;&nbsp;{}&nbsp;&raquo;"}
 
 
@@ -1112,8 +1138,8 @@ def passage_card(book, chapter, lang="en"):
     if len(records) < len(every):
         meta += " &middot; " + t(lang, "card.coverage", n=len(records), total=len(every))
     q = QUOTES_AROUND.get(lang, "&ldquo;{}&rdquo;")
-    if lang not in QUOTES_AROUND:   # inside double quotes, speech takes single ones
-        quote = quote.replace("\u201c", "\u2018").replace("\u201d", "\u2019")
+    if lang not in QUOTES_AROUND:
+        quote = inner_quotes(quote)
     return (f'<li><a class="a-card p-card" href="{url(lang, chapter_url(book, chapter))}">'
             f'<span class="a-section">{BOOK_NAMES[book][lang]} &middot; {languages_label(every)}</span>'
             f'<span class="a-title">{display(chapter_name(records, book, chapter, lang))}</span>'
