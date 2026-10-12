@@ -157,7 +157,9 @@ def describe(code, lang="en"):
         phrase = w["verb"].format(tense=t, voice=w["voiced"].format(v) if v else "", mood=w["mood"][mood])
         out.append(re.sub(r"[ ,]+$", "", re.sub(r"\s+", " ", phrase)).strip())
         tail = tail.split("-") if tail else []
-        if tail:
+        # An infinitive has no person or case, so its tail may be only a
+        # suffix: V-RAN-ATT (Luke 24:46), an Attic perfect infinitive.
+        if tail and tail[0] not in w["suffix"]:
             form = tail.pop(0)
             pn, cng = _PN.fullmatch(form), _CNG.fullmatch(form)
             if mood in "PR" and cng:
