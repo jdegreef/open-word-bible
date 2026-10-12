@@ -58,6 +58,8 @@ Proverbs 1–4 (`content/PRO/`) is drafted in English.
 
 All of Hebrews (`content/HEB/`) is drafted in English.
 
+Revelation 1 (`content/REV/`) is drafted in English.
+
 A record is one sentence of the source, not one verse. It ends where the
 SBLGNT ends a sentence: a full stop, a question mark, or a raised dot (·)
 where the next clause stands on its own. So a verse may hold two records
