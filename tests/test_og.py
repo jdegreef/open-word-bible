@@ -1,5 +1,4 @@
 """Link-preview images (scripts/build_og.py, web/og/)."""
-import json
 import re
 import sys
 import unittest
@@ -17,8 +16,7 @@ class ShareCardTest(unittest.TestCase):
     def test_every_card_is_drawn_and_current(self):
         # A stale card means its passage, article or template changed:
         # run python3 scripts/build_og.py (needs Chrome) and commit web/og/.
-        manifest = json.loads(build_og.MANIFEST.read_text(encoding="utf-8"))
-        self.assertEqual(build_og.stale(build_og.cards(), manifest), [])
+        self.assertEqual(build_og.stale(build_og.cards(), build_og.read_manifest()), [])
 
     def test_every_page_points_at_its_own_card(self):
         out = built_site()
