@@ -308,13 +308,19 @@ header.site nav.primary { flex: 1; display: flex; justify-content: center; }
   box-shadow: var(--shadow-pop);
   animation: dd-in var(--fast) ease;
 }
-.dropdown.dd-wide { width: 620px; }
+.dropdown.dd-wide { width: 820px; max-width: calc(100vw - 32px); }
 @keyframes dd-in { from { opacity: 0; transform: translate(-50%, -4px); } }
 .dd-head {
   margin: 6px 10px 6px; font-size: 11.5px; font-weight: 700; letter-spacing: .08em;
   text-transform: uppercase; color: var(--muted);
 }
-.dd-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 8px; }
+.dd-cols { display: grid; grid-template-columns: repeat(var(--cols, 2), 1fr); gap: 4px 8px; }
+.dd-col .dd-item { padding: 7px 10px; }
+.dd-more {
+  display: inline-flex; align-items: center; gap: 4px; margin: 2px 10px 4px; font-size: 13.5px; font-weight: 600;
+  text-decoration: none;
+}
+.dd-more:hover { text-decoration: underline; }
 .dd-item {
   display: flex; align-items: flex-start; gap: 12px; padding: 9px 10px; border-radius: var(--radius-sm);
   color: var(--text); text-decoration: none; transition: background-color var(--fast) ease;
@@ -598,10 +604,11 @@ footer.site a.book-chip:hover { border-color: var(--accent); background: var(--a
 .book-head h2 { font-family: var(--display); font-weight: 600; font-size: 28px; letter-spacing: -.01em; margin: 0; }
 .book-head .meter { max-width: 260px; }
 
-/* Header Read menu: each book, then its chapters as pills. */
-.dd-book + .dd-book { border-top: 1px solid var(--line); margin-top: 4px; padding-top: 4px; }
-.dd-chaps { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 10px 10px 56px; }
-.dd-chaps .chap { min-width: 30px; height: 30px; font-size: 13px; }
+/* Header Read menu: a book a line, read down two columns. */
+.dropdown.dd-read { width: 440px; }
+.dd-books { columns: 2; column-gap: 8px; }
+.dd-book { align-items: baseline; justify-content: space-between; padding: 7px 10px; break-inside: avoid; }
+.dd-count { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
 
 /* Reader: the book's chapters above the passage, previous and next below. */
 .chapstrip { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin: 28px 0 0; }
@@ -988,12 +995,13 @@ body.plain .text-tool { display: none; }
   .nav-list { flex-direction: column; align-items: stretch; gap: 2px; }
   .nav-link { width: 100%; padding: 12px 14px; font-size: 17px; border-radius: var(--radius-sm); }
   .nav-link .caret { margin-left: auto; }
-  .dropdown, .dropdown.dd-wide {
+  .dropdown, .dropdown.dd-wide, .dropdown.dd-read {
     position: static; transform: none; width: auto; margin: 2px 0 8px; padding: 4px 0 4px 14px;
     border: 0; border-left: 2px solid var(--accent-soft-border); border-radius: 0; box-shadow: none; animation: none;
     background: none;
   }
   .dd-cols { grid-template-columns: 1fr; }
+  .dd-books { columns: 1; }
   .dd-all { justify-content: flex-start; border-top: 0; padding: 8px 10px; }
 }
 @media (max-width: 1000px) {

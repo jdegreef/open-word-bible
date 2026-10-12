@@ -348,6 +348,9 @@ def languages_label(records):
                              if all(code in r["renderings"] for r in records))
 
 
+MENU_ARTICLES = 4  # articles per section in the header menu
+
+
 @functools.lru_cache(maxsize=None)
 def nav_menus(lang):
     """The header's dropdowns in lang, as [(key, label, icon, href, panel
@@ -363,24 +366,35 @@ def nav_menus(lang):
     def all_link(href, label):
         return f'<a class="dd-all" href="{href}">{label} {icon(ICONS["arrow"], 16)}</a>'
 
+    # Each book on one line with its progress; its chapters are one click
+    # further on, on the Read page.
     rows = []
     for book, chaps in books(lang):
-        name = BOOK_NAMES[book][lang]
-        progress = book_progress(book, chaps, lang)[2]
-        rows.append(f'<div class="dd-book">{row(url(lang, f"/read/#{book.lower()}"), name, progress, "book")}'
-                    f'<div class="dd-chaps" aria-label="{t(lang, "nav.book_chapters", book=name)}">'
-                    f'{chapter_pills(chaps, lang)}</div></div>')
-    read = (f'<p class="dd-head">{t(lang, "nav.books_so_far")}</p>{"".join(rows)}'
+        done, total, progress = book_progress(book, chaps, lang)
+        rows.append(f'<a class="dd-item dd-book" href="{url(lang, f"/read/#{book.lower()}")}" data-book="{book.lower()}">'
+                    f'<span class="dd-title">{BOOK_NAMES[book][lang]}</span>'
+                    f'<span class="dd-count" aria-hidden="true">{done}/{total}</span>'
+                    f'<span class="sr-only">, {progress}</span></a>')
+    read = (f'<p class="dd-head">{t(lang, "nav.books_so_far")}</p><div class="dd-books">{"".join(rows)}</div>'
             f'{all_link(url(lang, "/read/"), t(lang, "nav.all_books"))}')
 
+    # The first few articles of each section, by their short menu titles;
+    # the rest are on the articles page.
     articles = sorted(load_articles(lang), key=lambda a: a["order"])
-    groups = "".join(
-        f'<div class="dd-col"><p class="dd-head">{catalog(lang)["sections"][key]}</p>'
-        + "".join(row(url(lang, article_url(a)), display(a["title"]), t(lang, "article.min_read", n=a["minutes"]))
-                  for a in articles if a["section"] == key)
-        + "</div>"
-        for key in SECTIONS if any(a["section"] == key for a in articles))
-    arts = f'<div class="dd-cols">{groups}</div>{all_link(url(lang, "/articles/"), t(lang, "nav.all_articles"))}'
+    cols = []
+    for key in SECTIONS:
+        section = [a for a in articles if a["section"] == key]
+        if not section:
+            continue
+        more = (f'<a class="dd-more" href="{url(lang, "/articles/")}#{key}">'
+                f'{t(lang, "nav.section_all", n=len(section))} {icon(ICONS["arrow"], 14)}</a>'
+                if len(section) > MENU_ARTICLES else "")
+        cols.append(f'<div class="dd-col"><p class="dd-head">{catalog(lang)["sections"][key]}</p>'
+                    + "".join(row(url(lang, article_url(a)), display(a.get("nav_title") or a["title"]))
+                              for a in section[:MENU_ARTICLES])
+                    + f"{more}</div>")
+    arts = (f'<div class="dd-cols" style="--cols: {len(cols)}">{"".join(cols)}</div>'
+            f'{all_link(url(lang, "/articles/"), t(lang, "nav.all_articles"))}')
 
     about = ("".join((
         row(url(lang, "/about/"), t(lang, "nav.about_project"), t(lang, "nav.about_project_note"), "info"),
@@ -410,7 +424,10 @@ def site_header(lang, current, path=None, lang_path=None, translated=LANGUAGES):
             here = url(lang, path)
             panel = panel.replace(f'class="dd-item" href="{here}"', f'class="dd-item" href="{here}" aria-current="page"')
             panel = panel.replace(f'class="dd-all" href="{here}"', f'class="dd-all" href="{here}" aria-current="page"')
-            panel = re.sub(rf'(class="chap(?: part)?" href="{re.escape(here)}")', r'\1 aria-current="page"', panel)
+            # On a chapter page, its book in the Read menu is the current one.
+            book = re.match(r"/([a-z0-9]{3})/\d+/", path)
+            if book:
+                panel = panel.replace(f'data-book="{book[1]}"', f'data-book="{book[1]}" aria-current="true"')
         items.append(
             f'<li class="nav-item">'
             f'<button type="button" class="nav-link nav-trigger{" active" if on else ""}" '
@@ -1657,7 +1674,8 @@ def passage_label(book, chapter, verses, lang="en"):
 
 def _read_article(path):
     """One article file. It starts with a front matter block: title,
-    summary, date, order, section (a key of SECTIONS)."""
+    summary, date, order, section (a key of SECTIONS), and optionally
+    nav_title, a shorter title for the header menu."""
     text = path.read_text(encoding="utf-8")
     m = re.match(r"---\n(.*?)\n---\n(.*)", text, re.S)
     if not m:
@@ -1674,6 +1692,8 @@ def _read_article(path):
     if meta["section"] not in SECTIONS:
         raise SystemExit(f"{path.name}: section must be one of {', '.join(SECTIONS)}")
     meta["title"], meta["summary"] = smart_quotes(meta["title"]), smart_quotes(meta["summary"])
+    if "nav_title" in meta:
+        meta["nav_title"] = smart_quotes(meta["nav_title"])
     words = len(re.findall(r"\w+", re.sub(r"\{\{[^}]*\}\}", "", m[2])))
     return {**meta, "slug": path.stem, "body": m[2], "order": int(meta["order"]),
             "minutes": max(1, round(words / 220)), "passages": article_passages(m[2])}

@@ -231,17 +231,28 @@ class SiteTest(unittest.TestCase):
         for key in ("read", "articles", "about"):
             self.assertIn(f'aria-controls="dd-{key}"', header)
             self.assertIn(f'<div class="dropdown', header)
-        self.assertIn('href="/jhn/1/"', header)
-        self.assertIn('href="/php/4/"', header)
-        for a in build_site.load_articles():
-            self.assertIn(f'href="{build_site.article_url(a)}"', header)
+        # A line per book, linking to its chapters on the Read page.
+        self.assertIn('href="/read/#jhn"', header)
+        self.assertIn('href="/read/#php"', header)
+        self.assertNotIn('class="chap', header)
+        # The first few articles of each section, and a link to the rest.
+        articles_ = sorted(build_site.load_articles(), key=lambda a: a["order"])
+        for key in build_site.SECTIONS:
+            section = [a for a in articles_ if a["section"] == key]
+            for i, a in enumerate(section):
+                linked = f'href="{build_site.article_url(a)}"' in header
+                self.assertEqual(linked, i < build_site.MENU_ARTICLES, a["slug"])
+            if len(section) > build_site.MENU_ARTICLES:
+                self.assertIn(f'href="/articles/#{key}"', header)
+        self.assertNotIn("min read", header)
         # The current section's trigger is marked on its pages.
         articles = (self.out / "articles" / "index.html").read_text(encoding="utf-8")
         self.assertRegex(articles, r'class="nav-link nav-trigger active"[^>]*aria-controls="dd-articles"')
         # ...and the dropdown link to the page itself tells a screen reader.
         chapter = (self.out / "jhn" / "1" / "index.html").read_text(encoding="utf-8")
-        self.assertRegex(chapter, r'class="chap(?: part)?" href="/jhn/1/" aria-current="page"')
-        self.assertNotIn('href="/php/4/" aria-current', chapter)
+        chapter_header = re.search(r'<header class="site">(.*?)</header>', chapter, re.S)[1]
+        self.assertIn('data-book="jhn" aria-current="true"', chapter_header)
+        self.assertNotIn('data-book="php" aria-current', chapter_header)
 
     def test_interface_fonts_are_self_hosted_with_their_licences(self):
         css = (self.out / "style.css").read_text(encoding="utf-8")
@@ -299,10 +310,9 @@ class SiteTest(unittest.TestCase):
             header = re.search(r"<header.*?</header>", read, re.S)[0]
             footer = re.search(r"<footer.*?</footer>", read, re.S)[0]
             for p in build_site.passages():
-                link = f'href="{build_site.url(lang, p.url)}"'
-                self.assertEqual(link in header, (p.book, p.chapter) in shown, (lang, p.url))
                 self.assertEqual(f'id="{p.book.lower()}"' in read, p.book in books, (lang, p.book))
                 book_link = f'href="{build_site.url(lang, f"/read/#{p.book.lower()}")}"'
+                self.assertEqual(book_link in header, p.book in books, (lang, p.book))
                 self.assertEqual(book_link in footer, p.book in books, (lang, p.book))
 
     def test_reader_navigation_lists_only_the_page_language(self):
