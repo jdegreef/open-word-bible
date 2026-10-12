@@ -2157,7 +2157,9 @@ def search_documents(lang):
                 docs.append({"k": "n", "bk": p.book, "c": p.chapter,
                              "v": verse, "u": url(lang, p.url), "y": d["layer"], "g": d["category"],
                              "t": d["choice"], "al": d["alternatives"], "s": d["reason"],
-                             "l": "en" if d["layer"] == "meaning" else d["language"]})
+                             # Notes are written in English for now, whatever
+                             # language a wording note is about.
+                             "l": "en"})
     for a in sorted(load_articles(lang), key=lambda a: (a["section"] != "method", a["order"])):
         docs.append({"k": "a", "t": a["title"], "s": a["summary"], "x": article_text(a["body"], a["lang"]),
                      "u": url(lang, article_url(a)), "sec": catalog(lang)["sections"][a["section"]],
