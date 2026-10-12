@@ -37,6 +37,7 @@ BOOK_NAMES = {"GEN": {"en": "Genesis", "es": "Génesis", "fr": "Genèse", "sw": 
               "PHP": {"en": "Philippians", "es": "Filipenses", "fr": "Philippiens", "sw": "Wafilipi"},
               "COL": {"en": "Colossians", "es": "Colosenses", "fr": "Colossiens", "sw": "Wakolosai"},
               "1TH": {"en": "1 Thessalonians", "es": "1 Tesalonicenses", "fr": "1 Thessaloniciens", "sw": "1 Wathesalonike"},
+              "2TH": {"en": "2 Thessalonians", "es": "2 Tesalonicenses", "fr": "2 Thessaloniciens", "sw": "2 Wathesalonike"},
               "PHM": {"en": "Philemon", "es": "Filemón", "fr": "Philémon", "sw": "Filemoni"},
               "JAS": {"en": "James", "es": "Santiago", "fr": "Jacques", "sw": "Yakobo"},
               "1PE": {"en": "1 Peter", "es": "1 Pedro", "fr": "1 Pierre", "sw": "1 Petro"},
@@ -45,10 +46,64 @@ BOOK_NAMES = {"GEN": {"en": "Genesis", "es": "Génesis", "fr": "Genèse", "sw": 
               "2JN": {"en": "2 John", "es": "2 Juan", "fr": "2 Jean", "sw": "2 Yohana"},
               "3JN": {"en": "3 John", "es": "3 Juan", "fr": "3 Jean", "sw": "3 Yohana"},
               "PSA": {"en": "Psalms", "es": "Salmos", "fr": "Psaumes", "sw": "Zaburi"}}
+# The rest of the canon, for the footer's index of every book. A book drafted
+# later goes in BOOK_NAMES too; book_name looks there first.
+OTHER_BOOK_NAMES = {
+    "EXO": {"en": "Exodus", "es": "Éxodo", "fr": "Exode", "sw": "Kutoka"},
+    "LEV": {"en": "Leviticus", "es": "Levítico", "fr": "Lévitique", "sw": "Mambo ya Walawi"},
+    "NUM": {"en": "Numbers", "es": "Números", "fr": "Nombres", "sw": "Hesabu"},
+    "DEU": {"en": "Deuteronomy", "es": "Deuteronomio", "fr": "Deutéronome", "sw": "Kumbukumbu la Torati"},
+    "JOS": {"en": "Joshua", "es": "Josué", "fr": "Josué", "sw": "Yoshua"},
+    "JDG": {"en": "Judges", "es": "Jueces", "fr": "Juges", "sw": "Waamuzi"},
+    "RUT": {"en": "Ruth", "es": "Rut", "fr": "Ruth", "sw": "Ruthu"},
+    "1SA": {"en": "1 Samuel", "es": "1 Samuel", "fr": "1 Samuel", "sw": "1 Samweli"},
+    "2SA": {"en": "2 Samuel", "es": "2 Samuel", "fr": "2 Samuel", "sw": "2 Samweli"},
+    "1KI": {"en": "1 Kings", "es": "1 Reyes", "fr": "1 Rois", "sw": "1 Wafalme"},
+    "2KI": {"en": "2 Kings", "es": "2 Reyes", "fr": "2 Rois", "sw": "2 Wafalme"},
+    "1CH": {"en": "1 Chronicles", "es": "1 Crónicas", "fr": "1 Chroniques", "sw": "1 Mambo ya Nyakati"},
+    "2CH": {"en": "2 Chronicles", "es": "2 Crónicas", "fr": "2 Chroniques", "sw": "2 Mambo ya Nyakati"},
+    "EZR": {"en": "Ezra", "es": "Esdras", "fr": "Esdras", "sw": "Ezra"},
+    "NEH": {"en": "Nehemiah", "es": "Nehemías", "fr": "Néhémie", "sw": "Nehemia"},
+    "EST": {"en": "Esther", "es": "Ester", "fr": "Esther", "sw": "Esta"},
+    "JOB": {"en": "Job", "es": "Job", "fr": "Job", "sw": "Ayubu"},
+    "PRO": {"en": "Proverbs", "es": "Proverbios", "fr": "Proverbes", "sw": "Mithali"},
+    "ECC": {"en": "Ecclesiastes", "es": "Eclesiastés", "fr": "Ecclésiaste", "sw": "Mhubiri"},
+    "SNG": {"en": "Song of Songs", "es": "Cantares", "fr": "Cantique des cantiques", "sw": "Wimbo Ulio Bora"},
+    "ISA": {"en": "Isaiah", "es": "Isaías", "fr": "Ésaïe", "sw": "Isaya"},
+    "JER": {"en": "Jeremiah", "es": "Jeremías", "fr": "Jérémie", "sw": "Yeremia"},
+    "LAM": {"en": "Lamentations", "es": "Lamentaciones", "fr": "Lamentations", "sw": "Maombolezo"},
+    "EZK": {"en": "Ezekiel", "es": "Ezequiel", "fr": "Ézéchiel", "sw": "Ezekieli"},
+    "DAN": {"en": "Daniel", "es": "Daniel", "fr": "Daniel", "sw": "Danieli"},
+    "HOS": {"en": "Hosea", "es": "Oseas", "fr": "Osée", "sw": "Hosea"},
+    "JOL": {"en": "Joel", "es": "Joel", "fr": "Joël", "sw": "Yoeli"},
+    "AMO": {"en": "Amos", "es": "Amós", "fr": "Amos", "sw": "Amosi"},
+    "OBA": {"en": "Obadiah", "es": "Abdías", "fr": "Abdias", "sw": "Obadia"},
+    "JON": {"en": "Jonah", "es": "Jonás", "fr": "Jonas", "sw": "Yona"},
+    "MIC": {"en": "Micah", "es": "Miqueas", "fr": "Michée", "sw": "Mika"},
+    "NAM": {"en": "Nahum", "es": "Nahúm", "fr": "Nahoum", "sw": "Nahumu"},
+    "HAB": {"en": "Habakkuk", "es": "Habacuc", "fr": "Habacuc", "sw": "Habakuki"},
+    "ZEP": {"en": "Zephaniah", "es": "Sofonías", "fr": "Sophonie", "sw": "Sefania"},
+    "HAG": {"en": "Haggai", "es": "Hageo", "fr": "Aggée", "sw": "Hagai"},
+    "ZEC": {"en": "Zechariah", "es": "Zacarías", "fr": "Zacharie", "sw": "Zekaria"},
+    "MAL": {"en": "Malachi", "es": "Malaquías", "fr": "Malachie", "sw": "Malaki"},
+    "MRK": {"en": "Mark", "es": "Marcos", "fr": "Marc", "sw": "Marko"},
+    "LUK": {"en": "Luke", "es": "Lucas", "fr": "Luc", "sw": "Luka"},
+    "ACT": {"en": "Acts", "es": "Hechos", "fr": "Actes", "sw": "Matendo"},
+    "1CO": {"en": "1 Corinthians", "es": "1 Corintios", "fr": "1 Corinthiens", "sw": "1 Wakorintho"},
+    "2CO": {"en": "2 Corinthians", "es": "2 Corintios", "fr": "2 Corinthiens", "sw": "2 Wakorintho"},
+    "1TH": {"en": "1 Thessalonians", "es": "1 Tesalonicenses", "fr": "1 Thessaloniciens", "sw": "1 Wathesalonike"},
+    "2TH": {"en": "2 Thessalonians", "es": "2 Tesalonicenses", "fr": "2 Thessaloniciens", "sw": "2 Wathesalonike"},
+    "1TI": {"en": "1 Timothy", "es": "1 Timoteo", "fr": "1 Timothée", "sw": "1 Timotheo"},
+    "2TI": {"en": "2 Timothy", "es": "2 Timoteo", "fr": "2 Timothée", "sw": "2 Timotheo"},
+    "TIT": {"en": "Titus", "es": "Tito", "fr": "Tite", "sw": "Tito"},
+    "HEB": {"en": "Hebrews", "es": "Hebreos", "fr": "Hébreux", "sw": "Waebrania"},
+    "JUD": {"en": "Jude", "es": "Judas", "fr": "Jude", "sw": "Yuda"},
+    "REV": {"en": "Revelation", "es": "Apocalipsis", "fr": "Apocalypse", "sw": "Ufunuo"},
+}
 # A book whose chapters go by another name: "Psalm 23", not "Psalms 23".
 CHAPTER_NAMES = {"PSA": {"en": "Psalm", "es": "Salmo", "fr": "Psaume", "sw": "Zaburi"}}
 # Chapters in each book, for "2 of 21 chapters" and a book's completeness.
-BOOK_CHAPTERS = {"GEN": 50, "EXO": 40, "MAT": 28, "JHN": 21, "ROM": 16, "1CO": 16, "2CO": 13, "GAL": 6, "EPH": 6, "PHP": 4, "COL": 4, "1TH": 5, "PHM": 1, "JAS": 5, "1PE": 5, "2PE": 3, "1JN": 5, "2JN": 1, "3JN": 1, "PSA": 150}
+BOOK_CHAPTERS = {"GEN": 50, "EXO": 40, "MAT": 28, "JHN": 21, "ROM": 16, "1CO": 16, "2CO": 13, "GAL": 6, "EPH": 6, "PHP": 4, "COL": 4, "1TH": 5, "2TH": 3, "PHM": 1, "JAS": 5, "1PE": 5, "2PE": 3, "1JN": 5, "2JN": 1, "3JN": 1, "PSA": 150}
 # The interface languages, English first (see catalog below).
 LANGUAGES = ("en", "es", "fr", "sw")
 SITE_NAME = "Open Word Bible"
@@ -151,23 +206,29 @@ COLOUR_MODES = (("auto", "#faf6ef", "#16130f"),
                 ("night", "#000000", "#e0b45c"),
                 ("contrast", "#ffffff", "#000000"))
 
-# The reading text's settings in the gear menu (see web/style.css): name,
+# The gear menu's settings after the colour mode (see web/style.css): name,
 # default, and the values in the menu's order. A choice is kept as
-# owb-<name> and applied as data-<name> on <html>. They change how the text
-# looks, never its wording. Labels are in i18n/ (prefs.<name>, <name>.<value>).
-READING_PREFS = (("size", "m", ("s", "m", "l", "xl")),
+# owb-<name> and applied as data-<name> on <html>. Size, font and leading
+# are the reading text's; motion "auto" follows the device. They change how
+# the page looks, never the text's wording. Labels are in i18n/
+# (prefs.<name>, <name>.<value>).
+DISPLAY_PREFS = (("size", "m", ("s", "m", "l", "xl")),
                  ("font", "serif", ("serif", "sans", "readable")),
-                 ("leading", "normal", ("compact", "normal", "spacious")))
+                 ("leading", "normal", ("compact", "normal", "spacious")),
+                 ("motion", "auto", ("auto", "reduce")))
 
-# Applies the saved colour mode and reading settings before the first paint,
+# Applies the saved colour mode and display settings before the first paint,
 # so a page never flashes the default colours or text. Mirrors web/site.js.
 BOOT_SCRIPT = ("try{var d=document.documentElement,t=localStorage.getItem('owb-theme');"
                "if(['light','sepia','dark','night','contrast'].indexOf(t)>=0)"
                "d.setAttribute('data-theme',t);"
                "var p={" + ",".join(f"{name}:{[v for v in values if v != default]!r}"
-                                   for name, default, values in READING_PREFS) + "};"
+                                   for name, default, values in DISPLAY_PREFS) + "};"
                "for(var k in p){var v=localStorage.getItem('owb-'+k);"
-               "if(p[k].indexOf(v)>=0)d.setAttribute('data-'+k,v)}}catch(e){}")
+               "if(p[k].indexOf(v)>=0)d.setAttribute('data-'+k,v)}"
+               # Signed in (web/account.js): the header's "Sign in" stays hidden.
+               "if(localStorage.getItem('owb.account'))d.classList.add('signed-in')"
+               "}catch(e){}")
 
 # A reader who picked a language in the footer (web/site.js keeps it as
 # owb-lang) is taken to this page in that language before the first paint,
@@ -190,6 +251,27 @@ GEAR = ('<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="cur
         '1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4'
         'h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>')
 
+
+def account_menu(lang):
+    """Signed out, a "Sign in" button; signed in, the reader's initial,
+    opening a menu with their name, the account page and signing out
+    (web/site.js swaps them, from the copy of the account web/account.js
+    keeps). The sign-in link gets ?redirect=<this page> when it is used."""
+    return (
+        '<div class="account-menu">'
+        f'<a class="sign-in-btn" href="{url(lang, "/login/")}" data-login>'
+        f'{icon(ICONS["user"])}<span>{t(lang, "tools.sign_in")}</span></a>'
+        '<button type="button" class="tool-btn avatar-btn" aria-expanded="false" aria-controls="account-pop" '
+        f'aria-label="{t(lang, "tools.your_account")}" title="{t(lang, "tools.your_account")}" hidden>'
+        '<span class="account-initial"></span></button>'
+        f'<div class="account-pop" id="account-pop" role="group" aria-label="{t(lang, "tools.your_account")}" hidden>'
+        '<p class="who"><strong class="who-name"></strong><span class="who-email"></span></p>'
+        f'<a class="pop-item" href="{url(lang, "/account/")}">{t(lang, "tools.account")}</a>'
+        f'<a class="pop-item admin-link" href="{API_URL}/admin/" hidden>{t(lang, "tools.admin")}</a>'
+        f'<button type="button" class="pop-item sign-out">{t(lang, "tools.sign_out")}</button>'
+        '</div></div>')
+
+
 def leading_sample(gap):
     """Three lines of text, gap apart, for a line-spacing tile."""
     ys = [13 - gap, 13, 13 + gap]
@@ -201,9 +283,10 @@ def leading_sample(gap):
 LEADING_GAPS = {"compact": 5, "normal": 7, "spacious": 9}
 
 
-def colour_menu(lang):
-    """The gear menu: the colour mode, then the reading text's settings
-    (READING_PREFS). web/site.js runs it."""
+def colour_menu(lang, path=None, translated=LANGUAGES):
+    """The gear menu: the colour mode, the display settings (DISPLAY_PREFS),
+    then the languages (language_items, as in the footer). web/site.js
+    runs it."""
     label = t(lang, "tools.display")
 
     def option(value, default, face, name):
@@ -221,18 +304,23 @@ def colour_menu(lang):
         (v, f'<span class="swatch" style="--sw-bg:{bg};--sw-accent:{accent}" aria-hidden="true"></span>',
          t(lang, "theme." + v)) for v, bg, accent in COLOUR_MODES])
     def sample(pref, value):
+        if pref == "motion":
+            return ""
         inner = leading_sample(LEADING_GAPS[value]) if pref == "leading" else "Aa"
         return f'<span class="sample" aria-hidden="true">{inner}</span>'
 
     rows = [group(pref, t(lang, "prefs." + pref), default,
                   [(v, sample(pref, v), t(lang, f"{pref}.{v}")) for v in values])
-            for pref, default, values in READING_PREFS]
+            for pref, default, values in DISPLAY_PREFS]
+    check = '<span class="check" aria-hidden="true">&#10003;</span>'
+    languages = (f'<p class="prefs-label" id="prefs-lang">{t(lang, "footer.languages")}</p>'
+                 f'<ul class="prefs-langs" aria-labelledby="prefs-lang">{language_items(lang, path, translated, check)}</ul>')
     return (
         '<div class="prefs">'
         '<button type="button" class="tool-btn prefs-btn" aria-expanded="false" aria-controls="colour-menu" '
         f'aria-label="{label}" title="{label}">{GEAR}</button>'
         f'<div id="colour-menu" class="prefs-menu" role="group" aria-label="{label}" hidden>'
-        + theme + "".join(rows) + '</div></div>')
+        + theme + "".join(rows) + languages + '</div></div>')
 
 
 OG = ROOT / "web" / "og"
@@ -309,7 +397,7 @@ def page(lang, title, body, path=None, current="", description="", card="site", 
 </head>
 <body>
 <a class="skip" href="#main">{t(lang, "skip")}</a>
-{site_header(lang, current, path)}
+{site_header(lang, current, path, here, translated)}
 <main class="wrap" id="main" tabindex="-1">
 {body}
 </main>
@@ -373,11 +461,12 @@ def nav_menus(lang):
             ("about", t(lang, "nav.about"), "info", "/about/", about, "dd-about"))
 
 
-def site_header(lang, current, path=None):
+def site_header(lang, current, path=None, lang_path=None, translated=LANGUAGES):
     """Logo, the main links with their dropdowns, and the tools. On narrow
     screens the links fold into a panel behind the menu button, where each
     dropdown opens in place (web/site.js). The section trigger for current
-    is lit, and the dropdown link to this page (path) is aria-current."""
+    is lit, and the dropdown link to this page (path) is aria-current. The
+    gear menu's language links go to lang_path, as the footer's do."""
     home_on = current == "/"
     home = url(lang, "/")
     items = [f'<li><a class="nav-link" href="{home}"{" aria-current=page" if home_on else ""}>'
@@ -400,9 +489,9 @@ def site_header(lang, current, path=None):
 <nav class="primary" id="site-nav" aria-label="{t(lang, "nav.main")}"><ul class="nav-list">{"".join(items)}</ul></nav>
 <div class="tools">
 <a class="tool-btn search-btn" href="{url(lang, "/search/")}" aria-label="{t(lang, "nav.search")}" title="{t(lang, "nav.search")}" aria-keyshortcuts="Control+K Meta+K">{icon(ICONS["search"])}<span class="search-label">{t(lang, "nav.search")}</span><kbd class="search-kbd" hidden>Ctrl K</kbd></a>
-<a class="tool-btn account-btn" href="{url(lang, "/account/")}" aria-label="{t(lang, "tools.sign_in")}" title="{t(lang, "tools.sign_in")}" data-signed-in="{t(lang, "tools.your_account")}">{icon(ICONS["user"])}<span class="account-initial" hidden></span></a>
+{account_menu(lang)}
 <a class="tool-btn" href="{GITHUB_URL}" aria-label="{t(lang, "tools.github")}" title="GitHub">{icon(ICONS["github"])}</a>
-{colour_menu(lang)}
+{colour_menu(lang, lang_path, translated)}
 <button type="button" class="tool-btn menu-btn" aria-expanded="false" aria-controls="site-nav" aria-label="{t(lang, "nav.menu")}">{icon(ICONS["menu"], 22)}{icon(ICONS["close"], 22)}</button>
 </div>
 </div></header>"""
@@ -415,8 +504,6 @@ def footer_links(lang):
         return "".join(f'<li><a href="{href}"{f" lang={tl}" if tl and tl != lang else ""}>{label}</a></li>'
                        for href, label, tl in pairs)
 
-    read = [(url(lang, f"/read/#{book.lower()}"), BOOK_NAMES[book][lang], None) for book, _ in books(lang)]
-    read.append((url(lang, "/read/"), t(lang, "nav.all_books"), None))
     start = sorted((a for a in load_articles(lang) if a["section"] == "method"), key=lambda a: a["order"])[:3]
     learn = [(url(lang, article_url(a)), display(a["title"]), None) for a in start]
     learn.append((url(lang, "/articles/"), t(lang, "nav.all_articles"), None))
@@ -425,49 +512,105 @@ def footer_links(lang):
                (url(lang, "/#help"), t(lang, "nav.help"), None),
                (GITHUB_URL, t(lang, "nav.source"), None),
                (GITHUB_URL + "/issues/new", t(lang, "footer.report"), None)]
+    project = items(project).replace('/issues/new"', '/issues/new" data-report', 1)
     learn = (f'<nav aria-labelledby="foot-learn"><h2 id="foot-learn">{t(lang, "footer.learn")}</h2><ul>{items(learn)}</ul></nav>\n'
              if start else "")
-    return (f'<nav aria-labelledby="foot-read"><h2 id="foot-read">{t(lang, "footer.read")}</h2><ul>{items(read)}</ul></nav>\n'
-            f'{learn}'
-            f'<nav aria-labelledby="foot-project"><h2 id="foot-project">{t(lang, "footer.project")}</h2><ul>{items(project)}</ul></nav>')
+    return (f'{learn}'
+            f'<nav aria-labelledby="foot-project"><h2 id="foot-project">{t(lang, "footer.project")}</h2><ul>{project}</ul></nav>')
 
 
-def language_links(lang, path, translated=LANGUAGES):
-    """The footer's language switch, as Ochorus has it: each language in its
-    own name, the current one as plain text and the others as links to this
-    page in that language: the home page from a page without a path, and
-    the articles page from an article not in that language. web/site.js
-    remembers the choice."""
+def book_name(book, lang):
+    """A book's name in lang, drafted or not."""
+    return (BOOK_NAMES.get(book) or OTHER_BOOK_NAMES[book])[lang]
+
+
+@functools.lru_cache(maxsize=None)
+def book_index(lang):
+    """The footer's index of all 66 books, by testament. A book with chapters
+    in lang links to it on the Read page (dashed while some chapters are
+    still missing); the others are greyed out, so the index stays the same
+    size as the translation grows."""
+    have = dict(books(lang))
+
+    def chip(book):
+        name = book_name(book, lang)
+        if book not in have:
+            return (f'<li><span class="book-chip none">{name}'
+                    f'<span class="sr-only"> ({t(lang, "footer.key_none")})</span></span></li>')
+        done, total, progress = book_progress(book, have[book], lang)
+        return (f'<li><a class="book-chip{"" if done == total else " part"}" '
+                f'href="{url(lang, f"/read/#{book.lower()}")}" title="{progress}">{name}</a></li>')
+
+    def testament(key, codes):
+        started = sum(b in have for b in codes)
+        return (f'<section class="testament" aria-labelledby="foot-{key}"><div class="testament-head">'
+                f'<h3 id="foot-{key}">{t(lang, "footer." + key)}</h3>'
+                f'<span>{t(lang, "footer.started", done=started, total=len(codes))}</span></div>'
+                f'<ul class="book-chips">{"".join(chip(b) for b in codes)}</ul></section>')
+
+    key = "".join(f'<span><span class="book-chip{cls}" aria-hidden="true"></span>{t(lang, "footer.key_" + k)}</span>'
+                  for k, cls in (("done", ""), ("part", " part"), ("none", " none")))
+    return (f'<nav class="foot-books" aria-labelledby="foot-read"><h2 id="foot-read">{t(lang, "footer.read")}</h2>'
+            f'<div class="testaments">{testament("old_testament", refs.OT_CODES)}'
+            f'{testament("new_testament", refs.BOOK_CODES[39:])}</div>'
+            f'<p class="foot-key">{key}<a href="{url(lang, "/read/")}">{t(lang, "nav.all_books")}'
+            f'{icon(ICONS["arrow"], 15)}</a></p></nav>')
+
+
+def language_items(lang, path, translated=LANGUAGES, mark=""):
+    """Each language in its own name, as list items: the current one as plain
+    text (followed by mark) and the others as links to this page in that
+    language: the home page from a page without a path, and the articles
+    page from an article not in that language. web/site.js remembers the
+    choice."""
     def target(code):
         if path is None:
             return "/"
         return path if code in translated else "/articles/"
 
-    links = "".join(
-        f'<li><span lang="{code}" aria-current="true">{t(code, "language_name")}</span></li>' if code == lang
+    return "".join(
+        f'<li><span lang="{code}" aria-current="true">{t(code, "language_name")}{mark}</span></li>' if code == lang
         else f'<li><a href="{url(code, target(code))}" lang="{code}" hreflang="{code}" data-lang="{code}">'
              f'{t(code, "language_name")}</a></li>'
         for code in LANGUAGES)
+
+
+def language_links(lang, path, translated=LANGUAGES):
+    """The footer's language switch, as Ochorus has it (language_items)."""
     return (f'<nav class="foot-langs" aria-labelledby="foot-langs">'
-            f'<h2 id="foot-langs">{t(lang, "footer.languages")}</h2><ul>{links}</ul></nav>')
+            f'<h2 id="foot-langs">{t(lang, "footer.languages")}</h2>'
+            f'<ul>{language_items(lang, path, translated)}</ul></nav>')
 
 
 def site_footer(lang, path=None, translated=LANGUAGES):
-    """The footer on every page: the passages, the first articles to read,
-    the project's links, and the language switch."""
+    """The footer on every page, in three tiers: the project and a box to go
+    to a passage; an index of every book; then the first articles to read,
+    the project's links and the language switch."""
     home = url(lang, "/")
+    placeholder = html.escape(catalog(lang)["search.ui"]["palette_placeholder"])
     return f"""<footer class="site"><div class="wrap">
-<div class="foot-grid">
+<div class="foot-top">
 <div class="foot-about">
 <a class="brand" href="{home}">{MARK}<span class="brand-name">Open Word <em>Bible</em></span></a>
 <p>{t(lang, "footer.tagline")}</p>
 <p class="foot-licence"><span class="pill">CC0</span> {t(lang, "footer.licence")}</p>
 </div>
-{footer_links(lang)}
+<div class="foot-find">
+<h2 id="foot-find">{t(lang, "footer.find")}</h2>
+<form class="foot-search" action="{url(lang, "/search/")}" method="get" role="search" aria-labelledby="foot-find">
+<input type="search" name="q" id="foot-q" autocomplete="off" spellcheck="false" enterkeyhint="go" placeholder="{placeholder}" aria-labelledby="foot-find">
+<button class="button" type="submit">{t(lang, "footer.go")}</button>
+</form>
+{resume_link(lang, "foot-resume")}
 </div>
+</div>
+{book_index(lang)}
+<div class="foot-grid">
+{footer_links(lang)}
 {language_links(lang, path, translated)}
+</div>
 <div class="foot-base">
-<p>{t(lang, "footer.review")}</p>
+<p class="foot-review">{t(lang, "footer.review")}</p>
 <p>{t(lang, "footer.licences")}</p>
 </div>
 </div></footer>"""
@@ -937,7 +1080,7 @@ def disputed(vid):
 
 # Verses that are only a psalm's title ("A psalm of David ..."), which the
 # Hebrew text counts as verse 1. A chapter's cards quote the psalm itself.
-TITLES = {"PSA.3.1"}
+TITLES = {"PSA.3.1", "PSA.4.1"}
 
 
 def opening(records, chapter):
@@ -967,6 +1110,16 @@ def opening_verse(records, chapter, lang="en"):
 
 # A quoted verse in each language's quotation marks (English curly quotes
 # otherwise). French sets its guillemets off with no-break spaces.
+def inner_quotes(text):
+    """A verse to be shown inside double quotes: its own speech takes single
+    quotes, and speech that runs on into the next verse (Genesis 9:1) is
+    closed, so the marks stay balanced."""
+    text = text.replace("\u201c", "\u2018").replace("\u201d", "\u2019")
+    if text.count("\u2018") > text.count("\u2019") - text.count("\u2019s"):
+        text += "\u2019"
+    return text
+
+
 QUOTES_AROUND = {"es": "&laquo;{}&raquo;", "fr": "&laquo;&nbsp;{}&nbsp;&raquo;"}
 
 
@@ -985,8 +1138,8 @@ def passage_card(book, chapter, lang="en"):
     if len(records) < len(every):
         meta += " &middot; " + t(lang, "card.coverage", n=len(records), total=len(every))
     q = QUOTES_AROUND.get(lang, "&ldquo;{}&rdquo;")
-    if lang not in QUOTES_AROUND:   # inside double quotes, speech takes single ones
-        quote = quote.replace("\u201c", "\u2018").replace("\u201d", "\u2019")
+    if lang not in QUOTES_AROUND:
+        quote = inner_quotes(quote)
     return (f'<li><a class="a-card p-card" href="{url(lang, chapter_url(book, chapter))}">'
             f'<span class="a-section">{BOOK_NAMES[book][lang]} &middot; {languages_label(every)}</span>'
             f'<span class="a-title">{display(chapter_name(records, book, chapter, lang))}</span>'
@@ -994,12 +1147,12 @@ def passage_card(book, chapter, lang="en"):
             f'<span class="a-meta">{meta}</span></a></li>')
 
 
-def resume_link(lang):
+def resume_link(lang, cls="button"):
     """A link back to the verse the reader was last at, hidden until
     web/site.js finds one saved by web/reader.js (owb.place). It carries the
     book names in lang, so the link names the passage in the page's language."""
     names = json.dumps({b: BOOK_NAMES[b][lang] for b, _ in books()}, ensure_ascii=False)
-    return (f'<a class="button" data-resume hidden data-label="{html.escape(t(lang, "resume.link"))}" '
+    return (f'<a class="{cls}" data-resume hidden data-label="{html.escape(t(lang, "resume.link"))}" '
             f'data-prefix="{url(lang, "")}" data-books="{html.escape(names)}" href="{url(lang, "/read/")}">'
             f'{icon(ICONS["book"])}<span></span></a>')
 
@@ -1439,7 +1592,7 @@ def article_html(text, toc=None, lang="en", text_language="en"):
 
 # Article sections, in the order the articles page shows them. Their names
 # in each language are in i18n/ (sections).
-SECTIONS = {"method": "How it is made", "passage": "Reading the text"}
+SECTIONS = {"method": "How it is made", "passage": "Reading the text", "history": "How we got the Bible"}
 
 
 def article_passages(body):
@@ -1619,48 +1772,158 @@ def article_page(article, articles, lang="en"):
                 translated=article_languages(article))
 
 
+GOOGLE_G = ('<svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true">'
+            '<path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 '
+            '14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>'
+            '<path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 '
+            '5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>'
+            '<path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19'
+            'C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>'
+            '<path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 '
+            '2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>')
+
+
+def _ui_json(lang, key):
+    return json.dumps(catalog(lang)[key], ensure_ascii=False).replace("</", "<\\/")
+
+
+def _password_field(lang, field_id, label, autocomplete):
+    """A password input with a Show/Hide button and the rule under it."""
+    return f"""<label for="{field_id}">{label}</label>
+<div class="pw-field">
+<input id="{field_id}" name="password" type="password" minlength="8" autocomplete="{autocomplete}" required aria-describedby="{field_id}-hint">
+<button type="button" class="pw-toggle" aria-controls="{field_id}" aria-pressed="false">{t(lang, "login.show")}</button>
+</div>
+<p class="fine" id="{field_id}-hint">{t(lang, "login.password_hint")}</p>"""
+
+
+def login_page(lang="en"):
+    """Signing in, creating an account and asking for a reset link, one page
+    in three modes (?mode=signup, ?mode=reset), as on Ochorus; and where the
+    links in sign-in and confirmation emails, and Google, land (#token=,
+    #google=). web/account.js runs it. Not in the sitemap, and not indexed."""
+    def l(key):
+        return t(lang, "login." + key)
+
+    def modes(**text):
+        return "".join(f'<span data-for="{m}"{"" if m == "sign-in" else " hidden"}>{v}</span>'
+                       for m, v in text.items())
+
+    body = f"""
+<section class="auth" id="login" data-mode="sign-in">
+<div data-view="form">
+<header class="auth-head">
+{MARK}
+<h1>{modes(**{"sign-in": l("title_sign_in"), "sign-up": l("title_sign_up"), "reset": l("title_reset")})}</h1>
+<p class="auth-dek">{l("dek")}</p>
+</header>
+<form class="auth-card" id="login-form" novalidate>
+<label for="email">{l("email")}</label>
+<input id="email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required aria-describedby="login-error">
+<div class="pw" data-for="sign-in sign-up">
+{_password_field(lang, "password", l("password"), "current-password")}
+</div>
+<p class="form-error" id="login-error" role="alert"></p>
+<button class="button wide" type="submit">{modes(**{"sign-in": l("submit_sign_in"), "sign-up": l("submit_sign_up"), "reset": l("submit_reset")})}</button>
+<div class="auth-alt" data-for="sign-in sign-up">
+<button class="button ghost wide" type="button" id="magic">{l("magic")}</button>
+<div class="google" hidden>
+<p class="or"><span>{l("or")}</span></p>
+<button class="button ghost wide google-btn" type="button" id="google">{GOOGLE_G}<span>{l("google")}</span></button>
+</div>
+</div>
+<p class="forgot" data-for="sign-in"><a href="?mode=reset" data-mode-link="reset">{l("forgot")}</a></p>
+</form>
+<p class="auth-switch" data-for="sign-in">{l("new")} <a href="./" data-mode-link="sign-up">{l("create")}</a></p>
+<p class="auth-switch" data-for="sign-up" hidden>{l("have")} <a href="./" data-mode-link="sign-in">{l("sign_in")}</a></p>
+<p class="auth-switch" data-for="reset" hidden><a href="./" data-mode-link="sign-in">{l("back")}</a></p>
+<p class="fine auth-privacy">{l("privacy")}</p>
+</div>
+
+<div class="auth-card auth-message" data-view="sent" hidden>
+<p class="badge" aria-hidden="true">&#9993;</p>
+<h2 tabindex="-1">{l("check_title")}</h2>
+<p id="sent-text"></p>
+<p class="fine">{l("resend_prompt")}</p>
+<p><button class="button ghost" type="button" id="resend">{l("resend")}</button></p>
+<p class="form-note" id="resend-note" role="status"></p>
+<p><a href="./" data-mode-link="sign-in">{l("back")}</a></p>
+</div>
+
+<div class="auth-card auth-message" data-view="confirm" hidden>
+<p class="badge" aria-hidden="true">&#9993;</p>
+<h2>{l("confirm_title")}</h2>
+<p>{l("confirm_text")}</p>
+<p><button class="button wide" type="button" id="finish">{l("finish")}</button></p>
+</div>
+</section>
+<script type="application/json" id="login-text">{_ui_json(lang, "login.ui")}</script>
+<script src="{asset("account.js")}" defer></script>
+"""
+    return page(lang, t(lang, "tools.sign_in"), body, unlisted="/login/")
+
+
+def reset_page(lang="en"):
+    """Choosing a new password, from the link in a reset email
+    (#token=); web/account.js runs it. Not indexed."""
+    def r(key):
+        return t(lang, "reset." + key)
+
+    body = f"""
+<section class="auth" id="reset">
+<div data-view="form" hidden>
+<header class="auth-head">
+{MARK}
+<h1>{r("title")}</h1>
+<p class="auth-dek">{r("dek")}</p>
+</header>
+<form class="auth-card" id="reset-form" novalidate>
+{_password_field(lang, "new-password", r("new_password"), "new-password")}
+<p class="form-error" id="reset-error" role="alert"></p>
+<button class="button wide" type="submit">{r("submit")}</button>
+</form>
+</div>
+<div class="auth-card auth-message" data-view="done" hidden>
+<p class="badge" aria-hidden="true">&#10003;</p>
+<h2>{r("done_title")}</h2>
+<p>{r("done_text")}</p>
+<p><a class="button wide" href="{url(lang, "/")}">{r("continue")}</a></p>
+</div>
+<div class="auth-card auth-message" data-view="missing" hidden>
+<h2>{r("missing_title")}</h2>
+<p>{r("missing_text")}</p>
+<p><a class="button wide" href="{url(lang, "/login/")}?mode=reset">{r("request")}</a></p>
+</div>
+</section>
+<script type="application/json" id="login-text">{_ui_json(lang, "login.ui")}</script>
+<script src="{asset("account.js")}" defer></script>
+"""
+    return page(lang, r("title"), body, unlisted="/reset-password/")
+
+
 def account_page(lang="en"):
-    """Sign in by email link, and the signed-in account (web/account.js).
-    Not in the sitemap, and not indexed."""
+    """The signed-in account, laid out like Ochorus's settings: who you are,
+    your data, and a danger zone (web/account.js). Signed out, it sends you
+    to /login/. Not in the sitemap, and not indexed."""
     def a(key):
         return t(lang, "account." + key)
 
-    messages = json.dumps(catalog(lang)["account.ui"], ensure_ascii=False).replace("</", "<\\/")
     body = f"""
-<section class="account" id="account" aria-live="polite">
+<section class="account" id="account" aria-live="polite" hidden>
 <header class="page-head">
 <p class="eyebrow">{a("title")}</p>
-<h1 id="account-title">{t(lang, "tools.sign_in")}</h1>
+<h1>{t(lang, "tools.your_account")}</h1>
+<p class="dek">{a("dek")}</p>
 </header>
 
-<div data-state="signed-out" hidden>
-<p class="dek">{a("signed_out_dek")}</p>
-<form class="account-form" id="link-form" novalidate>
-<label for="email">{a("email")}</label>
-<div class="field-row">
-<input id="email" name="email" type="email" autocomplete="email" inputmode="email" required>
-<button class="button" type="submit">{a("send")}</button>
-</div>
-<p class="form-error" id="link-error" role="alert" hidden></p>
-</form>
-<p class="fine">{a("privacy")}</p>
-</div>
-
-<div data-state="sent" hidden>
-<p class="dek">{a("sent_dek")}</p>
-<p><button class="button ghost" type="button" id="different-email">{a("different")}</button></p>
-</div>
-
-<div data-state="confirm" hidden>
-<p class="dek">{a("confirm_dek")}</p>
-<p><button class="button" type="button" id="finish">{a("finish")}</button></p>
-</div>
-
-<div data-state="signed-in" hidden>
+<section class="set-block">
+<h2>{a("title")}</h2>
+<p class="signed-as">{a("signed_in_as")} <strong id="me-name"></strong></p>
 <dl class="account-facts">
 <div><dt>{a("fact_email")}</dt><dd id="me-email"></dd></div>
 <div><dt>{a("fact_roles")}</dt><dd id="me-roles"></dd></div>
 <div><dt>{a("fact_joined")}</dt><dd id="me-joined"></dd></div>
+<div><dt>{a("fact_password")}</dt><dd><span id="me-password"></span> <a id="set-password" href="{url(lang, "/login/")}?mode=reset" hidden>{a("set_password")}</a></dd></div>
 </dl>
 <form class="account-form" id="name-form">
 <label for="display-name">{a("display_name")} <span class="fine">{a("display_name_note")}</span></label>
@@ -1670,14 +1933,34 @@ def account_page(lang="en"):
 </div>
 <p class="form-note" id="name-note" role="status"></p>
 </form>
+<p><button class="button ghost" type="button" id="sign-out">{a("sign_out")}</button></p>
+</section>
+
 <div class="soon">
 <h2>{a("soon")}</h2>
 <p>{a("soon_text")}</p>
 </div>
-<p><button class="button ghost" type="button" id="sign-out">{a("sign_out")}</button></p>
-</div>
+
+<section class="set-block">
+<h2>{a("data")}</h2>
+<p>{a("data_text")}</p>
+<p><button class="button ghost" type="button" id="download">{a("download")}</button></p>
 </section>
-<script type="application/json" id="account-text">{messages}</script>
+
+<section class="set-block danger">
+<h2>{a("danger")}</h2>
+<div class="danger-row">
+<div><h3>{a("clear_title")}</h3><p>{a("clear_text")}</p></div>
+<button class="button ghost" type="button" id="clear-device">{a("clear")}</button>
+</div>
+<div class="danger-row">
+<div><h3>{a("delete_title")}</h3><p>{a("delete_text")}</p></div>
+<button class="button ghost" type="button" id="delete-account">{a("delete")}</button>
+</div>
+<p class="form-note" id="danger-note" role="status"></p>
+</section>
+</section>
+<script type="application/json" id="account-text">{_ui_json(lang, "account.ui")}</script>
 <script src="{asset("account.js")}" defer></script>
 """
     return page(lang, a("title"), body, unlisted="/account/")
@@ -1762,7 +2045,7 @@ BOOK_ALIASES = {"JHN": ["jn"], "PHP": ["flp", "fil"], "1JN": ["1jn"], "2JN": ["2
 # The palette's page shortcuts, by catalog key.
 SEARCH_PAGES = (("nav.home", "/"), ("nav.read", "/read/"), ("nav.articles", "/articles/"),
                 ("nav.about_project", "/about/"), ("nav.credits", "/about/#credits"),
-                ("nav.help", "/#help"), ("tools.sign_in", "/account/"))
+                ("nav.help", "/#help"), ("tools.sign_in", "/login/"))
 
 
 def fold(text):
@@ -1957,6 +2240,8 @@ def build(out):
         for article in articles:
             add(article_url(article), article_page(article, articles, lang))
         add("/account/", account_page(lang), index=False)
+        add("/login/", login_page(lang), index=False)
+        add("/reset-password/", reset_page(lang), index=False)
         add("/offline/", offline_page(lang), index=False)
     files = {(p.strip("/") + "/index.html").lstrip("/"): text for p, text in pages.items()}
     files["404.html"] = not_found_page()
