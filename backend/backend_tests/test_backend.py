@@ -123,8 +123,8 @@ class FreshDatabaseTest(TestCase):
         load_extract_words(languages=("grc",))
         out = io.StringIO()
         genesis = content_files("GEN/GEN.1.*.json")
-        import_content("--if-texts-loaded", *content_files("GEN/GEN.1.*.json", "JHN/JHN.1.*.json",
-                                                           "ROM/ROM.1.json"), stdout=out)
+        import_content("--if-texts-loaded", *genesis, *content_files("JHN/JHN.1.*.json", "ROM/ROM.1.json"),
+                       stdout=out)
         self.assertIn("run import_texts wlc. Skipped.", out.getvalue())
         self.assertTrue(Sentence.objects.filter(book="JHN").exists())
         self.assertTrue(Sentence.objects.filter(book="ROM").exists())
