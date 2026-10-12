@@ -25,86 +25,14 @@ from typing import NamedTuple  # noqa: E402
 
 from owb import markup, morph, refs  # noqa: E402
 
-BOOK_NAMES = {"GEN": {"en": "Genesis", "es": "Génesis", "fr": "Genèse", "sw": "Mwanzo"},
-              "EXO": {"en": "Exodus", "es": "Éxodo", "fr": "Exode", "sw": "Kutoka"},
-              "MAT": {"en": "Matthew", "es": "Mateo", "fr": "Matthieu", "sw": "Mathayo"},
-              "JHN": {"en": "John", "es": "Juan", "fr": "Jean", "sw": "Yohana"},
-              "ROM": {"en": "Romans", "es": "Romanos", "fr": "Romains", "sw": "Warumi"},
-              "1CO": {"en": "1 Corinthians", "es": "1 Corintios", "fr": "1 Corinthiens", "sw": "1 Wakorintho"},
-              "2CO": {"en": "2 Corinthians", "es": "2 Corintios", "fr": "2 Corinthiens", "sw": "2 Wakorintho"},
-              "GAL": {"en": "Galatians", "es": "Gálatas", "fr": "Galates", "sw": "Wagalatia"},
-              "EPH": {"en": "Ephesians", "es": "Efesios", "fr": "Éphésiens", "sw": "Waefeso"},
-              "PHP": {"en": "Philippians", "es": "Filipenses", "fr": "Philippiens", "sw": "Wafilipi"},
-              "COL": {"en": "Colossians", "es": "Colosenses", "fr": "Colossiens", "sw": "Wakolosai"},
-              "1TH": {"en": "1 Thessalonians", "es": "1 Tesalonicenses", "fr": "1 Thessaloniciens", "sw": "1 Wathesalonike"},
-              "2TH": {"en": "2 Thessalonians", "es": "2 Tesalonicenses", "fr": "2 Thessaloniciens", "sw": "2 Wathesalonike"},
-              "1TI": {"en": "1 Timothy", "es": "1 Timoteo", "fr": "1 Timothée", "sw": "1 Timotheo"},
-              "PHM": {"en": "Philemon", "es": "Filemón", "fr": "Philémon", "sw": "Filemoni"},
-              "JAS": {"en": "James", "es": "Santiago", "fr": "Jacques", "sw": "Yakobo"},
-              "1PE": {"en": "1 Peter", "es": "1 Pedro", "fr": "1 Pierre", "sw": "1 Petro"},
-              "2PE": {"en": "2 Peter", "es": "2 Pedro", "fr": "2 Pierre", "sw": "2 Petro"},
-              "1JN": {"en": "1 John", "es": "1 Juan", "fr": "1 Jean", "sw": "1 Yohana"},
-              "2JN": {"en": "2 John", "es": "2 Juan", "fr": "2 Jean", "sw": "2 Yohana"},
-              "3JN": {"en": "3 John", "es": "3 Juan", "fr": "3 Jean", "sw": "3 Yohana"},
-              "PSA": {"en": "Psalms", "es": "Salmos", "fr": "Psaumes", "sw": "Zaburi"}}
-# The rest of the canon, for the footer's index of every book. A book drafted
-# later goes in BOOK_NAMES too; book_name looks there first.
-OTHER_BOOK_NAMES = {
-    "EXO": {"en": "Exodus", "es": "Éxodo", "fr": "Exode", "sw": "Kutoka"},
-    "LEV": {"en": "Leviticus", "es": "Levítico", "fr": "Lévitique", "sw": "Mambo ya Walawi"},
-    "NUM": {"en": "Numbers", "es": "Números", "fr": "Nombres", "sw": "Hesabu"},
-    "DEU": {"en": "Deuteronomy", "es": "Deuteronomio", "fr": "Deutéronome", "sw": "Kumbukumbu la Torati"},
-    "JOS": {"en": "Joshua", "es": "Josué", "fr": "Josué", "sw": "Yoshua"},
-    "JDG": {"en": "Judges", "es": "Jueces", "fr": "Juges", "sw": "Waamuzi"},
-    "RUT": {"en": "Ruth", "es": "Rut", "fr": "Ruth", "sw": "Ruthu"},
-    "1SA": {"en": "1 Samuel", "es": "1 Samuel", "fr": "1 Samuel", "sw": "1 Samweli"},
-    "2SA": {"en": "2 Samuel", "es": "2 Samuel", "fr": "2 Samuel", "sw": "2 Samweli"},
-    "1KI": {"en": "1 Kings", "es": "1 Reyes", "fr": "1 Rois", "sw": "1 Wafalme"},
-    "2KI": {"en": "2 Kings", "es": "2 Reyes", "fr": "2 Rois", "sw": "2 Wafalme"},
-    "1CH": {"en": "1 Chronicles", "es": "1 Crónicas", "fr": "1 Chroniques", "sw": "1 Mambo ya Nyakati"},
-    "2CH": {"en": "2 Chronicles", "es": "2 Crónicas", "fr": "2 Chroniques", "sw": "2 Mambo ya Nyakati"},
-    "EZR": {"en": "Ezra", "es": "Esdras", "fr": "Esdras", "sw": "Ezra"},
-    "NEH": {"en": "Nehemiah", "es": "Nehemías", "fr": "Néhémie", "sw": "Nehemia"},
-    "EST": {"en": "Esther", "es": "Ester", "fr": "Esther", "sw": "Esta"},
-    "JOB": {"en": "Job", "es": "Job", "fr": "Job", "sw": "Ayubu"},
-    "PRO": {"en": "Proverbs", "es": "Proverbios", "fr": "Proverbes", "sw": "Mithali"},
-    "ECC": {"en": "Ecclesiastes", "es": "Eclesiastés", "fr": "Ecclésiaste", "sw": "Mhubiri"},
-    "SNG": {"en": "Song of Songs", "es": "Cantares", "fr": "Cantique des cantiques", "sw": "Wimbo Ulio Bora"},
-    "ISA": {"en": "Isaiah", "es": "Isaías", "fr": "Ésaïe", "sw": "Isaya"},
-    "JER": {"en": "Jeremiah", "es": "Jeremías", "fr": "Jérémie", "sw": "Yeremia"},
-    "LAM": {"en": "Lamentations", "es": "Lamentaciones", "fr": "Lamentations", "sw": "Maombolezo"},
-    "EZK": {"en": "Ezekiel", "es": "Ezequiel", "fr": "Ézéchiel", "sw": "Ezekieli"},
-    "DAN": {"en": "Daniel", "es": "Daniel", "fr": "Daniel", "sw": "Danieli"},
-    "HOS": {"en": "Hosea", "es": "Oseas", "fr": "Osée", "sw": "Hosea"},
-    "JOL": {"en": "Joel", "es": "Joel", "fr": "Joël", "sw": "Yoeli"},
-    "AMO": {"en": "Amos", "es": "Amós", "fr": "Amos", "sw": "Amosi"},
-    "OBA": {"en": "Obadiah", "es": "Abdías", "fr": "Abdias", "sw": "Obadia"},
-    "JON": {"en": "Jonah", "es": "Jonás", "fr": "Jonas", "sw": "Yona"},
-    "MIC": {"en": "Micah", "es": "Miqueas", "fr": "Michée", "sw": "Mika"},
-    "NAM": {"en": "Nahum", "es": "Nahúm", "fr": "Nahoum", "sw": "Nahumu"},
-    "HAB": {"en": "Habakkuk", "es": "Habacuc", "fr": "Habacuc", "sw": "Habakuki"},
-    "ZEP": {"en": "Zephaniah", "es": "Sofonías", "fr": "Sophonie", "sw": "Sefania"},
-    "HAG": {"en": "Haggai", "es": "Hageo", "fr": "Aggée", "sw": "Hagai"},
-    "ZEC": {"en": "Zechariah", "es": "Zacarías", "fr": "Zacharie", "sw": "Zekaria"},
-    "MAL": {"en": "Malachi", "es": "Malaquías", "fr": "Malachie", "sw": "Malaki"},
-    "MRK": {"en": "Mark", "es": "Marcos", "fr": "Marc", "sw": "Marko"},
-    "LUK": {"en": "Luke", "es": "Lucas", "fr": "Luc", "sw": "Luka"},
-    "ACT": {"en": "Acts", "es": "Hechos", "fr": "Actes", "sw": "Matendo"},
-    "1CO": {"en": "1 Corinthians", "es": "1 Corintios", "fr": "1 Corinthiens", "sw": "1 Wakorintho"},
-    "2CO": {"en": "2 Corinthians", "es": "2 Corintios", "fr": "2 Corinthiens", "sw": "2 Wakorintho"},
-    "1TH": {"en": "1 Thessalonians", "es": "1 Tesalonicenses", "fr": "1 Thessaloniciens", "sw": "1 Wathesalonike"},
-    "2TH": {"en": "2 Thessalonians", "es": "2 Tesalonicenses", "fr": "2 Thessaloniciens", "sw": "2 Wathesalonike"},
-    "1TI": {"en": "1 Timothy", "es": "1 Timoteo", "fr": "1 Timothée", "sw": "1 Timotheo"},
-    "2TI": {"en": "2 Timothy", "es": "2 Timoteo", "fr": "2 Timothée", "sw": "2 Timotheo"},
-    "TIT": {"en": "Titus", "es": "Tito", "fr": "Tite", "sw": "Tito"},
-    "HEB": {"en": "Hebrews", "es": "Hebreos", "fr": "Hébreux", "sw": "Waebrania"},
-    "JUD": {"en": "Jude", "es": "Judas", "fr": "Jude", "sw": "Yuda"},
-    "REV": {"en": "Revelation", "es": "Apocalipsis", "fr": "Apocalypse", "sw": "Ufunuo"},
-}
+# Every book's name in each interface language and its number of chapters
+# (data/books.json). All 66 are listed, so adding a book needs no edit here.
+_BOOKS = json.loads((ROOT / "data" / "books.json").read_text(encoding="utf-8"))["books"]
+BOOK_NAMES = {code: {k: v for k, v in b.items() if k != "chapters"} for code, b in _BOOKS.items()}
 # A book whose chapters go by another name: "Psalm 23", not "Psalms 23".
 CHAPTER_NAMES = {"PSA": {"en": "Psalm", "es": "Salmo", "fr": "Psaume", "sw": "Zaburi"}}
 # Chapters in each book, for "2 of 21 chapters" and a book's completeness.
-BOOK_CHAPTERS = {"GEN": 50, "EXO": 40, "MAT": 28, "JHN": 21, "ROM": 16, "1CO": 16, "2CO": 13, "GAL": 6, "EPH": 6, "PHP": 4, "COL": 4, "1TH": 5, "2TH": 3, "1TI": 6, "PHM": 1, "JAS": 5, "1PE": 5, "2PE": 3, "1JN": 5, "2JN": 1, "3JN": 1, "PSA": 150}
+BOOK_CHAPTERS = {code: b["chapters"] for code, b in _BOOKS.items()}
 # The interface languages, English first (see catalog below).
 LANGUAGES = ("en", "es", "fr", "sw")
 SITE_NAME = "Open Word Bible"
@@ -526,7 +454,7 @@ def footer_links(lang):
 
 def book_name(book, lang):
     """A book's name in lang, drafted or not."""
-    return (BOOK_NAMES.get(book) or OTHER_BOOK_NAMES[book])[lang]
+    return BOOK_NAMES[book][lang]
 
 
 @functools.lru_cache(maxsize=None)
@@ -774,11 +702,11 @@ def word_uses():
 
 @functools.cache
 def headings():
-    """Section headings by the record they stand above (data/headings.json),
-    each in the languages it has, with curly quotes."""
-    data = json.loads((ROOT / "data" / "headings.json").read_text(encoding="utf-8"))
+    """Section headings by the record they stand above (data/headings/, one
+    file per book), each in the languages it has, with curly quotes."""
     return {rid: {lang: smart_quotes(text) for lang, text in h.items()}
-            for rid, h in data["headings"].items()}
+            for path in sorted((ROOT / "data" / "headings").glob("*.json"))
+            for rid, h in json.loads(path.read_text(encoding="utf-8"))["headings"].items()}
 
 
 def chapters():
@@ -2395,7 +2323,7 @@ def build(out):
         shutil.copy(ROOT / "web" / name, out / name)
     shutil.copytree(ROOT / "web" / "fonts", out / "fonts")
     shutil.copytree(ROOT / "web" / "icons", out / "icons")
-    shutil.copytree(OG, out / "og", ignore=shutil.ignore_patterns("manifest.json"))
+    shutil.copytree(OG, out / "og", ignore=shutil.ignore_patterns("*.digest"))
     return sorted(files) + ["reader.js", "search.js", "site.js", "style.css"]
 
 
