@@ -169,8 +169,8 @@ class SearchTest(TestCase):
         self.assertEqual(ref["shown"], [6, 7])
 
     def test_references_not_translated_and_words_that_look_like_one(self):
-        ref = self.get(q="rev 3:20", lang="en")["reference"]
-        self.assertEqual(ref["label"], "Revelation 3:20")
+        ref = self.get(q="mal 3:1", lang="en")["reference"]
+        self.assertEqual(ref["label"], "Malachi 3:1")
         self.assertNotIn("url", ref)
         ref = self.get(q="John 4:60", lang="en")["reference"]
         self.assertEqual((ref["url"], ref["shown"], ref["sentences"]), ("/jhn/4/", [], []))
