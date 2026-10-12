@@ -17,6 +17,7 @@ typing "running") still match. Every word of a query also matches as the
 start of a word, so results appear as the reader types; a single letter
 matches only itself. A "quoted phrase" matches word for word, in order.
 """
+import functools
 import json
 import re
 import sys
@@ -44,10 +45,16 @@ def config(lang):
     return CONFIGS.get(lang, SIMPLE)
 
 
+@functools.cache
+def _marks():
+    """Every combining mark, for str.translate to remove."""
+    return dict.fromkeys(c for c in range(sys.maxunicode + 1) if unicodedata.combining(chr(c)))
+
+
 def fold(text):
     """Lower case, accents removed, curly quotes straightened (as the site's
     search.js folds text)."""
-    text = "".join(c for c in unicodedata.normalize("NFD", text.lower()) if not unicodedata.combining(c))
+    text = unicodedata.normalize("NFD", text.lower()).translate(_marks())
     return re.sub("[‘’ʼ]", "'", re.sub("[“”«»]", '"', text))
 
 
@@ -85,6 +92,17 @@ def fields(doc):
     return doc["t"], doc["s"], doc["x"]
 
 
+ENTRY_COLUMNS = ("language", "kind", "position", "config", "title", "extra", "body", "doc")
+
+
+def _copy(cursor, table, columns, rows):
+    """Load rows into table with COPY: many times faster than INSERTs for
+    the tens of thousands of entries a rebuild writes."""
+    with cursor.cursor.copy(f"COPY {table} ({', '.join(columns)}) FROM STDIN") as copy:
+        for row in rows:
+            copy.write_row(row)
+
+
 @transaction.atomic
 def rebuild():
     """Replace the search tables with the site's documents in every site
@@ -93,27 +111,35 @@ def rebuild():
     SearchEntry.objects.all().delete()
     SearchWord.objects.all().delete()
     SearchLanguage.objects.all().delete()
-    counts = {}
-    for lang in site.LANGUAGES:
-        data = site.search_documents(lang)
-        SearchLanguage.objects.create(code=lang, books=data["books"], pages=data["pages"])
-        entries, words = [], Counter()
-        for position, doc in enumerate(data["docs"]):
-            title, extra, body = fields(doc)
-            entries.append(SearchEntry(language=lang, kind=doc["k"], position=position,
-                                       config=config(doc.get("l", lang)),
-                                       title=title, extra=extra, body=body, doc=doc))
-            words.update(w for w in re.findall(r"[^\W\d_][\w']{2,62}", fold(f"{title} {extra} {body}")))
-        SearchEntry.objects.bulk_create(entries, batch_size=2000)
-        SearchWord.objects.bulk_create(
-            (SearchWord(language=lang, word=w, count=n) for w, n in words.items()), batch_size=5000)
-        counts[lang] = len(entries)
+    entries, words, counts = _table(), SearchWord._meta.db_table, {}
     with connection.cursor() as cursor:
-        cursor.execute(f"""UPDATE {SearchEntry._meta.db_table} SET vector =
-            setweight(to_tsvector(config::regconfig, title), 'A')
-            || setweight(to_tsvector(config::regconfig, extra), 'B')
-            || setweight(to_tsvector(config::regconfig, body), 'C')
-            || setweight(to_tsvector('{SIMPLE}', concat_ws(' ', title, extra, body)), 'D')""")
+        # Entries go through a scratch table, so each row is written once,
+        # with its vector, rather than inserted and then updated.
+        cursor.execute("""CREATE TEMPORARY TABLE search_load (language text, kind text,
+            position integer, config text, title text, extra text, body text, doc jsonb)
+            ON COMMIT DROP""")
+        for lang in site.LANGUAGES:
+            data = site.search_documents(lang)
+            SearchLanguage.objects.create(code=lang, books=data["books"], pages=data["pages"])
+            rows, found = [], Counter()
+            for position, doc in enumerate(data["docs"]):
+                title, extra, body = fields(doc)
+                rows.append((lang, doc["k"], position, config(doc.get("l", lang)),
+                             title, extra, body, json.dumps(doc, ensure_ascii=False)))
+                found.update(w for w in re.findall(r"[^\W\d_][\w']{2,62}", fold(f"{title} {extra} {body}")))
+            _copy(cursor, "search_load", ENTRY_COLUMNS, rows)
+            _copy(cursor, words, ("language", "word", "count"), ((lang, w, n) for w, n in found.items()))
+            counts[lang] = len(rows)
+        cursor.execute(f"""INSERT INTO {entries} ({', '.join(ENTRY_COLUMNS)}, vector)
+            SELECT {', '.join(ENTRY_COLUMNS)},
+              setweight(to_tsvector(config::regconfig, title), 'A')
+              || setweight(to_tsvector(config::regconfig, extra), 'B')
+              || setweight(to_tsvector(config::regconfig, body), 'C')
+              || setweight(to_tsvector('{SIMPLE}', concat_ws(' ', title, extra, body)), 'D')
+            FROM search_load ORDER BY language, position""")
+        # Dropped now as well as at commit: inside a test the transaction
+        # never commits, and the next rebuild would find it still there.
+        cursor.execute("DROP TABLE search_load")
         # Fresh statistics for the planner. Without them it can take the
         # tables for empty (after the delete above, or a vacuum that ran
         # while they were) and plan a search that ranks every match once
