@@ -56,6 +56,9 @@ Original work of the Open Scriptures Hebrew Bible available at https://github.co
 
 Licensed under CC BY 4.0.
 
+The Hebrew-to-English verse numbering table in `data/versification.json` is
+derived from its `wlc/VerseMap.xml` and carries its CC BY 4.0 licence.
+
 ## Westminster Leningrad Codex
 
 The Hebrew text of the Westminster Leningrad Codex is in the public domain.
