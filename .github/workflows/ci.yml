@@ -102,4 +102,7 @@ jobs:
       - name: Migrations are up to date
         run: python backend/manage.py makemigrations --check --dry-run
       - name: Backend tests
-        run: python backend/manage.py test backend_tests
+        # -v 2 prints each test as it starts, so a stall names its test
+        # (bare progress dots stay buffered and the log looks hung), and
+        # --durations lists the slowest at the end.
+        run: python backend/manage.py test backend_tests -v 2 --durations 10
