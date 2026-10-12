@@ -130,37 +130,3 @@ class ApiToken(models.Model):
 
     def __str__(self):
         return f"{self.user} ({self.label or 'device'})"
-
-
-class SavedVerse(models.Model):
-    """A reader's bookmark or highlight on a verse (web/reader.js). A verse
-    has at most one of each per reader; a highlight has a colour."""
-    class Kind(models.TextChoices):
-        BOOKMARK = "bookmark", "Bookmark"
-        HIGHLIGHT = "highlight", "Highlight"
-
-    COLOURS = ("yellow", "green", "blue", "pink")
-
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="saved_verses")
-    verse = models.CharField(max_length=20, help_text='A verse id, such as "JHN.3.16"')
-    kind = models.CharField(max_length=10, choices=Kind.choices)
-    colour = models.CharField(max_length=10, blank=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        constraints = [
-            models.UniqueConstraint(fields=["user", "verse", "kind"], name="unique_saved_verse"),
-            models.CheckConstraint(
-                name="saved_verse_colour_matches_kind",
-                condition=(Q(kind="bookmark", colour="")
-                           | Q(kind="highlight", colour__in=["yellow", "green", "blue", "pink"])),
-            ),
-        ]
-        ordering = ["user", "verse", "kind"]
-
-    def __str__(self):
-        return f"{self.user}: {self.kind} {self.verse}{f' ({self.colour})' if self.colour else ''}"
-
-    def as_json(self):
-        return {"verse": self.verse, "kind": self.kind, "colour": self.colour}

@@ -14,9 +14,6 @@ POST   /api/auth/sign-out                   forget this device's token
 GET    /api/me                              the signed-in account
 PATCH  /api/me              {display_name}  change the display name
 DELETE /api/me                              delete the account
-GET    /api/saved[?chapter=JHN.3]           the account's bookmarks and highlights
-PUT    /api/saved/<verse>/<kind> {colour}   bookmark or highlight a verse
-DELETE /api/saved/<verse>/<kind>            remove it
 
 The sign-in endpoints take JSON only, which a browser cannot send from
 another site without a CORS preflight, and ignore any Authorization header,
@@ -40,10 +37,7 @@ from rest_framework.parsers import JSONParser
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
-from owb import refs
-
 from . import auth, google
-from .models import SavedVerse
 
 # Django's User.username, where the address is kept.
 MAX_EMAIL = 150
@@ -229,47 +223,3 @@ def me(request):
         user.first_name = name
         user.save(update_fields=["first_name"])
     return Response(auth.user_json(user))
-
-
-# A cap on one account's saved verses, so the table cannot be filled.
-MAX_SAVED = 5000
-
-
-def _verse(value):
-    try:
-        ref = refs.parse(value)
-    except ValueError:
-        raise ValidationError({"verse": "Not a verse."})
-    return f"{ref.book}.{ref.chapter}.{ref.verse}"
-
-
-@api_view(["GET"])
-@permission_classes([IsAuthenticated])
-def saved(request):
-    items = request.user.saved_verses.all()
-    chapter = request.query_params.get("chapter", "")
-    if chapter:
-        items = items.filter(verse__startswith=chapter.rstrip(".") + ".")
-    return Response([s.as_json() for s in items])
-
-
-@api_view(["PUT", "DELETE"])
-@permission_classes([IsAuthenticated])
-@parser_classes([JSONParser])
-def saved_verse(request, verse, kind):
-    verse = _verse(verse)
-    if kind not in SavedVerse.Kind.values:
-        raise ValidationError({"kind": "Bookmark or highlight."})
-    found = request.user.saved_verses.filter(verse=verse, kind=kind)
-    if request.method == "DELETE":
-        found.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
-    colour = str(_field(request, "colour")) if kind == SavedVerse.Kind.HIGHLIGHT else ""
-    if kind == SavedVerse.Kind.HIGHLIGHT and colour not in SavedVerse.COLOURS:
-        raise ValidationError({"colour": "One of " + ", ".join(SavedVerse.COLOURS) + "."})
-    if not found.exists() and request.user.saved_verses.count() >= MAX_SAVED:
-        return Response({"detail": f"An account can keep up to {MAX_SAVED} bookmarks and highlights."},
-                        status=status.HTTP_400_BAD_REQUEST)
-    item, _ = SavedVerse.objects.update_or_create(user=request.user, verse=verse, kind=kind,
-                                                  defaults={"colour": colour})
-    return Response(item.as_json())

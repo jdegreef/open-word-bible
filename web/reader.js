@@ -16,7 +16,7 @@
   function t(key) { return HEBREW && (key + "_hbo") in UI ? UI[key + "_hbo"] : UI[key]; }
 
   // The reading language is the page's (/es/... is Spanish); the footer
-  // switches it. The other settings are savedMarks across pages and languages.
+  // switches it. The other settings are kept across pages and languages.
   var settings = { level: "B", gender: 0, christos: 0, divine_name: 0, deity_pronoun: 0, units: 0, plural_you: 0, view: 0,
                    headings: 0, uncertain: 0, partner: "" };
   try {
@@ -61,94 +61,6 @@
     if (!changed) return;
     var s = q.toString();
     try { history.replaceState(null, "", location.pathname + (s ? "?" + s : "") + location.hash); } catch (e) { /* ignore */ }
-  }
-
-  // Bookmarks and highlights: with the account's API when signed in
-  // (backend/accounts), otherwise savedMarks on this device. {verse id: {bookmark:
-  // true, highlight: "yellow"}} for this chapter.
-  var API = (document.querySelector('meta[name="owb-api"]') || {}).content;
-  var SAVED_KEY = "owb.saved";
-  var savedMarks = {};
-  function account() {
-    try { return JSON.parse(localStorage.getItem("owb.account") || "null"); } catch (e) { return null; }
-  }
-  function signedIn() { var a = account(); return !!(a && a.token && API); }
-  function local() {
-    try { return JSON.parse(localStorage.getItem(SAVED_KEY) || "{}"); } catch (e) { return {}; }
-  }
-  function storeLocal(all) {
-    try {
-      if (Object.keys(all).length) localStorage.setItem(SAVED_KEY, JSON.stringify(all));
-      else localStorage.removeItem(SAVED_KEY);
-    } catch (e) { /* storage blocked */ }
-  }
-  function api(path, method, body) {
-    return fetch(API + path, {
-      method: method || "GET",
-      headers: { "Content-Type": "application/json", Authorization: "Bearer " + account().token },
-      body: body ? JSON.stringify(body) : undefined
-    }).then(function (r) {
-      if (r.status === 401) {
-        try { localStorage.removeItem("owb.account"); } catch (e) { /* ignore */ }
-        throw new Error("signed out");
-      }
-      if (!r.ok) throw new Error(r.status);
-      return r.status === 204 ? null : r.json();
-    });
-  }
-  function chapterKey() { return DATA.book + "." + DATA.chapter; }
-  function verseId(v) {
-    var m = /^(\d+):(\d+)$/.exec(v);
-    return m ? DATA.book + "." + m[1] + "." + m[2] : chapterKey() + "." + v;
-  }
-  function verseOn(id) {
-    var p = id.split(".");
-    return Number(p[1]) === DATA.chapter ? p[2] : p[1] + ":" + p[2];
-  }
-
-  function loadMarks() {
-    var mine = local();
-    savedMarks = {};
-    Object.keys(mine).forEach(function (id) {
-      if (id.indexOf(chapterKey() + ".") === 0) savedMarks[verseOn(id)] = mine[id];
-    });
-    if (!signedIn()) return Promise.resolve();
-    // Moving what this device savedMarks to the account, then the account's own.
-    var moves = [];
-    Object.keys(mine).forEach(function (id) {
-      if (mine[id].bookmark) moves.push(api("/api/saved/" + id + "/bookmark", "PUT", {}));
-      if (mine[id].highlight) moves.push(api("/api/saved/" + id + "/highlight", "PUT", { colour: mine[id].highlight }));
-    });
-    return Promise.all(moves).then(function () {
-      storeLocal({});
-      return api("/api/saved?chapter=" + chapterKey());
-    }).then(function (items) {
-      savedMarks = {};
-      items.forEach(function (it) {
-        var v = verseOn(it.verse), m = savedMarks[v] = savedMarks[v] || {};
-        if (it.kind === "bookmark") m.bookmark = true; else m.highlight = it.colour;
-      });
-    }).catch(function () { /* offline or signed out: what this device has */ });
-  }
-
-  function setMark(verse, kind, value) {
-    var id = verseId(verse), m = savedMarks[verse] = savedMarks[verse] || {};
-    m[kind] = value;
-    if (!m.bookmark && !m.highlight) delete savedMarks[verse];
-    var done;
-    if (signedIn()) {
-      done = value ? api("/api/saved/" + id + "/" + kind, "PUT", kind === "highlight" ? { colour: value } : {})
-                   : api("/api/saved/" + id + "/" + kind, "DELETE");
-    } else {
-      var all = local(), e = all[id] = all[id] || {};
-      if (value) e[kind] = value; else delete e[kind];
-      if (!e.bookmark && !e.highlight) delete all[id];
-      storeLocal(all);
-      done = Promise.resolve();
-    }
-    done.catch(function () { /* savedMarks on the page; tried again when changed */ });
-    drawText();
-    drawPanel();
   }
 
   var current = null;   // selected record
@@ -413,7 +325,7 @@
     more.focus({ preventScroll: true });
   }
 
-  // Under the letter, savedMarks inside the window.
+  // Under the letter, kept inside the window.
   function placeNote() {
     if (!popover) return;
     var r = popover.opener.getBoundingClientRect();
@@ -441,6 +353,7 @@
     if (parallel()) { drawParallel(box); drawUnsureToggle(0); drawViewTools(); drawNotes([]); return; }
     drawViewTools();
     var shown = null;   // last verse number printed
+    var marked = marks();
     var notes = [];
     var unsureCount = 0;
     var starts = new Set(DATA.paragraphs);
@@ -492,11 +405,8 @@
       if (unsure) unsureCount++;
       var chosen = current && current.id === r.id;
       parts.forEach(function (part, i) {
-        var mark = savedMarks[part[0]];
         var span = el("span", (lang === settings.lang ? "verse" : "verse fallback") +
-                           (settings.uncertain && unsure ? " unsure" : "") +
-                           (mark && mark.highlight ? " hl-" + mark.highlight : "") +
-                           (mark && mark.bookmark && part[0] !== shown ? " bm" : ""));
+                           (settings.uncertain && unsure ? " unsure" : ""));
         if (lang !== settings.lang) span.lang = lang;
         if (!plain()) {
           span.tabIndex = 0;
@@ -505,6 +415,9 @@
         }
         span.dataset.v = part[0];
         span.dataset.record = r.id;
+        var m = marked[verseId(part[0])];
+        if (m && m.h) span.classList.add("hl-" + m.h);
+        if (m && m.b) span.classList.add("bookmarked");
         if (current && current.id === r.id) span.setAttribute("aria-current", "true");
         if (part[0] !== shown) span.appendChild(el("sup", null, part[0]));
         shown = part[0];
@@ -948,7 +861,7 @@
     title.appendChild(linkButton(currentVerse));
     title.appendChild(imageButton(currentVerse));
     panel.appendChild(title);
-    panel.appendChild(saveRow(currentVerse));
+    panel.appendChild(markRow(currentVerse));
 
     panel.appendChild(el("h3", null, t("greek")));
     // Interlinear: each Greek word (or Hebrew morpheme) over its gloss. Tapping one shows its
@@ -1047,6 +960,76 @@
     ds.rendering.forEach(function (d) { panel.appendChild(drawCard(d, current)); });
   }
 
+  // Bookmarks and highlights, kept in this browser as owb.marks by verse
+  // ("JHN.3.16"), so they hold whatever the settings or language. Each
+  // keeps the verse's words as shown when it was marked, for the saved
+  // verses page (site.js). {b: true, h: "yellow", text, lang, at}
+  var MARKS = "owb.marks";
+  var HUES = ["yellow", "green", "blue", "pink"];
+  function marks() {
+    try { return JSON.parse(localStorage.getItem(MARKS) || "{}"); } catch (e) { return {}; }
+  }
+  // "16" -> "JHN.3.16"; "7:53" (another chapter's verse) -> "JHN.7.53".
+  function verseId(v) {
+    var p = String(v).split(":");
+    return DATA.book + "." + (p.length > 1 ? p[0] + "." + p[1] : DATA.chapter + "." + v);
+  }
+  // A verse's words as shown, without its number or footnote letters.
+  function verseWords(v) {
+    var spans = document.querySelectorAll('#text .verse[data-v="' + v + '"]');
+    return Array.prototype.map.call(spans, function (s) {
+      var copy = s.cloneNode(true);
+      copy.querySelectorAll("sup").forEach(function (x) { x.remove(); });
+      return copy.textContent.trim();
+    }).join(" ");
+  }
+  function setMark(v, change) {
+    var all = marks(), id = verseId(v), m = all[id] || {};
+    for (var k in change) { if (change[k]) m[k] = change[k]; else delete m[k]; }
+    if (m.b || m.h) {
+      var span = verseEl(v);
+      m.text = verseWords(v);
+      m.lang = (span && span.lang) || settings.lang;
+      m.at = Date.now();
+      all[id] = m;
+    } else {
+      delete all[id];
+    }
+    try { localStorage.setItem(MARKS, JSON.stringify(all)); } catch (e) { /* storage full or blocked */ }
+    var top = panelEl.scrollTop;
+    drawText();
+    drawPanel();
+    panelEl.scrollTop = top;
+  }
+
+  // Under the panel's title: bookmark the verse, highlight it in a colour.
+  function markRow(v) {
+    var m = marks()[verseId(v)] || {};
+    var row = el("div", "mark-row");
+    var b = el("button", "mark-bookmark", t(m.b ? "bookmarked" : "bookmark"));
+    b.type = "button";
+    b.setAttribute("aria-pressed", m.b ? "true" : "false");
+    b.addEventListener("click", function () { setMark(v, { b: !m.b }); });
+    row.appendChild(b);
+    var hues = el("div", "mark-hues");
+    hues.setAttribute("role", "group");
+    hues.setAttribute("aria-label", t("highlight"));
+    HUES.forEach(function (hue) {
+      var h = el("button", "mark-hue hl-" + hue);
+      h.type = "button";
+      h.setAttribute("aria-label", t("hl_" + hue));
+      h.title = t("hl_" + hue);
+      h.setAttribute("aria-pressed", m.h === hue ? "true" : "false");
+      h.addEventListener("click", function () { setMark(v, { h: m.h === hue ? null : hue }); });
+      hues.appendChild(h);
+    });
+    row.appendChild(hues);
+    var all = el("a", "mark-all", t("saved_all"));
+    all.href = DATA.saved;
+    row.appendChild(all);
+    return row;
+  }
+
   // A link to this chapter opened at a verse (#v4). Phones offer the
   // system share sheet; elsewhere the link is copied.
   function linkButton(verse) {
@@ -1072,35 +1055,6 @@
       }
     });
     return b;
-  }
-
-  // Bookmark and highlight the chosen verse.
-  function saveRow(verse) {
-    var m = savedMarks[verse] || {};
-    var row = el("div", "save-row");
-    var bm = el("button", "save-bm", m.bookmark ? t("bookmarked") : t("bookmark"));
-    bm.type = "button";
-    bm.setAttribute("aria-pressed", m.bookmark ? "true" : "false");
-    bm.addEventListener("click", function () { setMark(verse, "bookmark", !m.bookmark); });
-    row.appendChild(bm);
-    var swatches = el("span", "swatches");
-    swatches.setAttribute("role", "group");
-    swatches.setAttribute("aria-label", t("highlight"));
-    ["yellow", "green", "blue", "pink"].forEach(function (c) {
-      var b = el("button", "swatch-btn hl-" + c);
-      b.type = "button";
-      b.setAttribute("aria-label", t("highlight") + ": " + t("colours")[c]);
-      b.setAttribute("aria-pressed", m.highlight === c ? "true" : "false");
-      b.addEventListener("click", function () { setMark(verse, "highlight", m.highlight === c ? "" : c); });
-      swatches.appendChild(b);
-    });
-    row.appendChild(swatches);
-    if (!signedIn() && (m.bookmark || m.highlight)) {
-      var note = el("a", "save-note", t("saved_here"));
-      note.href = (DATA.lang === "en" ? "" : "/" + DATA.lang) + "/account/";
-      row.appendChild(note);
-    }
-    return row;
   }
 
   // An image of the verse to share: its text at the reader's settings, the
@@ -1198,6 +1152,13 @@
   // in style.css), so opening it never moves the reader's place. The CSS
   // owns the breakpoint: the sheet is the panel when it is position: fixed.
   function narrow() { return getComputedStyle(panelEl).position === "fixed"; }
+  // Smooth scrolling, unless the reader asked for less motion (the device
+  // setting, or Motion in the gear menu: data-motion on <html>).
+  function scrollMotion() {
+    var reduce = document.documentElement.getAttribute("data-motion") === "reduce" ||
+      (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches);
+    return reduce ? "auto" : "smooth";
+  }
   function verseEl(v) { return document.querySelector('.verse[data-v="' + v + '"]'); }
   // A verse in the address: #v4, or plainly #4 (#v7:53 for a verse
   // of another chapter that a sentence runs into). #at-4 (from "Continue
@@ -1240,7 +1201,7 @@
     }
     if (narrow()) {
       var v = verseEl(verse);
-      if (v) v.scrollIntoView({ behavior: "smooth", block: "start" });
+      if (v) v.scrollIntoView({ behavior: scrollMotion(), block: "start" });
       // The sheet covers the text below the verse, so take focus into it.
       if (!card) panelEl.focus({ preventScroll: true });
     }
@@ -1309,7 +1270,7 @@
     var v = verseEl(next.verse);
     if (v && !narrow()) {
       v.focus({ preventScroll: true });
-      v.scrollIntoView({ block: "nearest", behavior: "smooth" });
+      v.scrollIntoView({ block: "nearest", behavior: scrollMotion() });
     }
   }
 
@@ -1324,7 +1285,7 @@
   // already puts it at the top, above the sheet.)
   function reveal(verse, instant) {
     var v = !narrow() && verseEl(verse);
-    if (v) v.scrollIntoView({ block: "center", behavior: instant ? "auto" : "smooth" });
+    if (v) v.scrollIntoView({ block: "center", behavior: instant ? "auto" : scrollMotion() });
   }
 
   // Swipe the sheet down to close it, when it is scrolled to its top. The
@@ -1467,7 +1428,7 @@
   if (here && pills.scrollWidth > pills.clientWidth)
     pills.scrollLeft = here.offsetLeft - pills.offsetLeft - pills.clientWidth / 2 + here.offsetWidth / 2;
 
-  // The reader's place, savedMarks as owb.place for "Continue reading" on the
+  // The reader's place, kept as owb.place for "Continue reading" on the
   // home and Read pages (site.js): the verse at the reading line, a quarter
   // of the way down or just below the sticky header and settings bar if
   // that is lower (where scrollIntoView puts a verse: the page's scroll
@@ -1518,7 +1479,7 @@
   // (record) at a time, in the wording the settings give, from the verse
   // the reader is at. A sentence shown in English on another language's
   // page is read in English. No audio files, so it works offline too.
-  // Speed, and a voice per language, are savedMarks as owb.listen.
+  // Speed, and a voice per language, are kept as owb.listen.
   var speech = window.speechSynthesis;
   var LISTEN = "owb.listen";
   var RATES = [0.8, 1, 1.25, 1.5, 2];
@@ -1771,7 +1732,6 @@
     window.addEventListener("pageshow", function (e) { if (e.persisted && listen.on) stopListening(); });
   }
 
-  loadMarks().then(function () { drawText(); if (current) drawPanel(); });
 
   var start = hashVerse();
   var record = start && recordFor(start);

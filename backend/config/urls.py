@@ -25,7 +25,5 @@ urlpatterns = [
     path("api/auth/google/callback", google.callback),
     path("api/auth/sign-out", accounts.sign_out),
     path("api/me", accounts.me),
-    path("api/saved", accounts.saved),
-    path("api/saved/<str:verse>/<str:kind>", accounts.saved_verse),
     path("healthz", views.healthz),
 ]

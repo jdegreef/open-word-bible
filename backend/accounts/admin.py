@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.auth import get_user_model
 from django.contrib.auth.admin import UserAdmin
 
-from .models import ApiToken, Role, SavedVerse, SignInLink
+from .models import ApiToken, Role, SignInLink
 
 User = get_user_model()
 
@@ -61,10 +61,3 @@ class SignInLinkAdmin(admin.ModelAdmin):
 
     def has_add_permission(self, request):
         return False
-
-
-@admin.register(SavedVerse)
-class SavedVerseAdmin(admin.ModelAdmin):
-    list_display = ["user", "verse", "kind", "colour", "updated_at"]
-    list_filter = ["kind", "colour"]
-    search_fields = ["user__username", "verse"]

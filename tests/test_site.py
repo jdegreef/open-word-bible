@@ -4,7 +4,6 @@ import json
 import re
 import subprocess
 import sys
-import tempfile
 import unittest
 from pathlib import Path
 
@@ -12,18 +11,13 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import build_site  # noqa: E402
+from tests.site_build import built_site  # noqa: E402
 
 
 class SiteTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.tmp = tempfile.TemporaryDirectory()
-        cls.out = Path(cls.tmp.name) / "site"
-        build_site.build(cls.out)
-
-    @classmethod
-    def tearDownClass(cls):
-        cls.tmp.cleanup()
+        cls.out = built_site()
 
     def chapter_data(self, path="jhn/1"):
         page = (self.out / path / "index.html").read_text(encoding="utf-8")
@@ -453,6 +447,24 @@ class SiteTest(unittest.TestCase):
             for key in ("listen_bar", "listen_play", "listen_pause", "listen_prev", "listen_next",
                         "listen_speed", "listen_voice", "listen_stop", "listen_no_voice"):
                 self.assertTrue(ui.get(key), (code, key))
+
+    def test_saved_verses_page(self):
+        sitemap = (self.out / "sitemap.xml").read_text(encoding="utf-8")
+        self.assertNotIn("/saved/", sitemap)
+        for code in build_site.LANGUAGES:
+            rel = build_site.url(code, "/saved/").lstrip("/")
+            page = (self.out / rel / "index.html").read_text(encoding="utf-8")
+            self.assertIn('<meta name="robots" content="noindex">', page)
+            data = json.loads(html.unescape(re.search(r'data-saved="([^"]*)"', page)[1]))
+            self.assertEqual(data["order"], [b for b, _ in build_site.books()])
+            # Each book's chapter address is the reader's, in the page language.
+            self.assertEqual(data["chapters"]["JHN"].replace("{c}", "3"), build_site.url(code, "/jhn/3/"))
+            self.assertTrue((self.out / build_site.url(code, "/jhn/3/").lstrip("/") / "index.html").is_file())
+            chapter = self.chapter_data(build_site.url(code, "/jhn/2").lstrip("/"))
+            self.assertEqual(chapter["saved"], build_site.url(code, "/saved/"))
+            for key in ("bookmark", "bookmarked", "highlight", "hl_yellow", "hl_green", "hl_blue",
+                        "hl_pink", "saved_all"):
+                self.assertTrue(chapter["ui"].get(key), (code, key))
 
     def test_read_page_groups_chapters_by_book(self):
         read = (self.out / "read" / "index.html").read_text(encoding="utf-8")
