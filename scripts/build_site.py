@@ -423,8 +423,6 @@ def footer_links(lang):
         return "".join(f'<li><a href="{href}"{f" lang={tl}" if tl and tl != lang else ""}>{label}</a></li>'
                        for href, label, tl in pairs)
 
-    read = [(url(lang, f"/read/#{book.lower()}"), BOOK_NAMES[book][lang], None) for book, _ in books(lang)]
-    read.append((url(lang, "/read/"), t(lang, "nav.all_books"), None))
     start = sorted((a for a in load_articles(lang) if a["section"] == "method"), key=lambda a: a["order"])[:3]
     learn = [(url(lang, article_url(a)), display(a["title"]), None) for a in start]
     learn.append((url(lang, "/articles/"), t(lang, "nav.all_articles"), None))
@@ -433,11 +431,49 @@ def footer_links(lang):
                (url(lang, "/#help"), t(lang, "nav.help"), None),
                (GITHUB_URL, t(lang, "nav.source"), None),
                (GITHUB_URL + "/issues/new", t(lang, "footer.report"), None)]
+    project = items(project).replace('/issues/new"', '/issues/new" data-report', 1)
     learn = (f'<nav aria-labelledby="foot-learn"><h2 id="foot-learn">{t(lang, "footer.learn")}</h2><ul>{items(learn)}</ul></nav>\n'
              if start else "")
-    return (f'<nav aria-labelledby="foot-read"><h2 id="foot-read">{t(lang, "footer.read")}</h2><ul>{items(read)}</ul></nav>\n'
-            f'{learn}'
-            f'<nav aria-labelledby="foot-project"><h2 id="foot-project">{t(lang, "footer.project")}</h2><ul>{items(project)}</ul></nav>')
+    return (f'{learn}'
+            f'<nav aria-labelledby="foot-project"><h2 id="foot-project">{t(lang, "footer.project")}</h2><ul>{project}</ul></nav>')
+
+
+def book_name(book, lang):
+    """A book's name in lang, drafted or not."""
+    return BOOK_NAMES[book][lang]
+
+
+@functools.lru_cache(maxsize=None)
+def book_index(lang):
+    """The footer's index of all 66 books, by testament. A book with chapters
+    in lang links to it on the Read page (dashed while some chapters are
+    still missing); the others are greyed out, so the index stays the same
+    size as the translation grows."""
+    have = dict(books(lang))
+
+    def chip(book):
+        name = book_name(book, lang)
+        if book not in have:
+            return (f'<li><span class="book-chip none">{name}'
+                    f'<span class="sr-only"> ({t(lang, "footer.key_none")})</span></span></li>')
+        done, total, progress = book_progress(book, have[book], lang)
+        return (f'<li><a class="book-chip{"" if done == total else " part"}" '
+                f'href="{url(lang, f"/read/#{book.lower()}")}" title="{progress}">{name}</a></li>')
+
+    def testament(key, codes):
+        started = sum(b in have for b in codes)
+        return (f'<section class="testament" aria-labelledby="foot-{key}"><div class="testament-head">'
+                f'<h3 id="foot-{key}">{t(lang, "footer." + key)}</h3>'
+                f'<span>{t(lang, "footer.started", done=started, total=len(codes))}</span></div>'
+                f'<ul class="book-chips">{"".join(chip(b) for b in codes)}</ul></section>')
+
+    key = "".join(f'<span><span class="book-chip{cls}" aria-hidden="true"></span>{t(lang, "footer.key_" + k)}</span>'
+                  for k, cls in (("done", ""), ("part", " part"), ("none", " none")))
+    return (f'<nav class="foot-books" aria-labelledby="foot-read"><h2 id="foot-read">{t(lang, "footer.read")}</h2>'
+            f'<div class="testaments">{testament("old_testament", refs.OT_CODES)}'
+            f'{testament("new_testament", refs.BOOK_CODES[39:])}</div>'
+            f'<p class="foot-key">{key}<a href="{url(lang, "/read/")}">{t(lang, "nav.all_books")}'
+            f'{icon(ICONS["arrow"], 15)}</a></p></nav>')
 
 
 def language_links(lang, path, translated=LANGUAGES):
@@ -461,21 +497,34 @@ def language_links(lang, path, translated=LANGUAGES):
 
 
 def site_footer(lang, path=None, translated=LANGUAGES):
-    """The footer on every page: the passages, the first articles to read,
-    the project's links, and the language switch."""
+    """The footer on every page, in three tiers: the project and a box to go
+    to a passage; an index of every book; then the first articles to read,
+    the project's links and the language switch."""
     home = url(lang, "/")
+    placeholder = html.escape(catalog(lang)["search.ui"]["palette_placeholder"])
     return f"""<footer class="site"><div class="wrap">
-<div class="foot-grid">
+<div class="foot-top">
 <div class="foot-about">
 <a class="brand" href="{home}">{MARK}<span class="brand-name">Open Word <em>Bible</em></span></a>
 <p>{t(lang, "footer.tagline")}</p>
 <p class="foot-licence"><span class="pill">CC0</span> {t(lang, "footer.licence")}</p>
 </div>
-{footer_links(lang)}
+<div class="foot-find">
+<h2 id="foot-find">{t(lang, "footer.find")}</h2>
+<form class="foot-search" action="{url(lang, "/search/")}" method="get" role="search" aria-labelledby="foot-find">
+<input type="search" name="q" id="foot-q" autocomplete="off" spellcheck="false" enterkeyhint="go" placeholder="{placeholder}" aria-labelledby="foot-find">
+<button class="button" type="submit">{t(lang, "footer.go")}</button>
+</form>
+{resume_link(lang, "foot-resume")}
 </div>
+</div>
+{book_index(lang)}
+<div class="foot-grid">
+{footer_links(lang)}
 {language_links(lang, path, translated)}
+</div>
 <div class="foot-base">
-<p>{t(lang, "footer.review")}</p>
+<p class="foot-review">{t(lang, "footer.review")}</p>
 <p>{t(lang, "footer.licences")}</p>
 </div>
 </div></footer>"""
@@ -1002,12 +1051,12 @@ def passage_card(book, chapter, lang="en"):
             f'<span class="a-meta">{meta}</span></a></li>')
 
 
-def resume_link(lang):
+def resume_link(lang, cls="button"):
     """A link back to the verse the reader was last at, hidden until
     web/site.js finds one saved by web/reader.js (owb.place). It carries the
     book names in lang, so the link names the passage in the page's language."""
     names = json.dumps({b: BOOK_NAMES[b][lang] for b, _ in books()}, ensure_ascii=False)
-    return (f'<a class="button" data-resume hidden data-label="{html.escape(t(lang, "resume.link"))}" '
+    return (f'<a class="{cls}" data-resume hidden data-label="{html.escape(t(lang, "resume.link"))}" '
             f'data-prefix="{url(lang, "")}" data-books="{html.escape(names)}" href="{url(lang, "/read/")}">'
             f'{icon(ICONS["book"])}<span></span></a>')
 
