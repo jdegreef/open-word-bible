@@ -24,7 +24,7 @@ class SearchTest(TestCase):
     @classmethod
     def setUpTestData(cls):
         load_extract_words()
-        import_content()
+        import_content(search=True)
 
     def setUp(self):
         cache.clear()   # the search throttle counts requests in the cache
@@ -108,6 +108,13 @@ class SearchTest(TestCase):
         for lang, q in (("es", "senor"), ("fr", "lumiere"), ("sw", "neema")):
             with self.subTest(lang=lang):
                 self.assertGreater(self.get(q=q, lang=lang)["totals"].get("verse", 0), 0)
+
+    def test_stems_match_only_in_their_own_language(self):
+        # Spanish "verbo" stems to "verb": English notes about verbs must not match.
+        results = self.every("verbo", "note", lang="es") + self.every("verbo", "verse", lang="es")
+        self.assertTrue(results)
+        for doc in results:
+            self.assertRegex(search.fold(" ".join(search.fields(doc))), r"(^|[\W_])verbo", doc)
 
     def test_english_notes_are_found_on_other_language_sites(self):
         # Meaning notes are written in English: "the victor's wreath" (Philippians 4:1).
