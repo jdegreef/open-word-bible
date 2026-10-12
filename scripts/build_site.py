@@ -349,6 +349,7 @@ def languages_label(records):
 
 
 MENU_ARTICLES = 4  # articles per section in the header menu
+MENU_BOOKS_PER_COLUMN = 8  # a testament with more books takes two columns
 
 
 @functools.lru_cache(maxsize=None)
@@ -366,16 +367,25 @@ def nav_menus(lang):
     def all_link(href, label):
         return f'<a class="dd-all" href="{href}">{label} {icon(ICONS["arrow"], 16)}</a>'
 
-    # Each book on one line with its progress; its chapters are one click
-    # further on, on the Read page.
-    rows = []
-    for book, chaps in books(lang):
+    # Each book on one line with its progress, under its testament; its
+    # chapters are one click further on, on the Read page. A testament with
+    # many books takes two columns.
+    def book_row(book, chaps):
         done, total, progress = book_progress(book, chaps, lang)
-        rows.append(f'<a class="dd-item dd-book" href="{url(lang, f"/read/#{book.lower()}")}" data-book="{book.lower()}">'
-                    f'<span class="dd-title">{BOOK_NAMES[book][lang]}</span>'
-                    f'<span class="dd-count" aria-hidden="true">{done}/{total}</span>'
-                    f'<span class="sr-only">, {progress}</span></a>')
-    read = (f'<p class="dd-head">{t(lang, "nav.books_so_far")}</p><div class="dd-books">{"".join(rows)}</div>'
+        return (f'<a class="dd-item dd-book" href="{url(lang, f"/read/#{book.lower()}")}" data-book="{book.lower()}">'
+                f'<span class="dd-title">{BOOK_NAMES[book][lang]}</span>'
+                f'<span class="dd-count" aria-hidden="true">{done}/{total}</span>'
+                f'<span class="sr-only">, {progress}</span></a>')
+
+    have = books(lang)
+    testaments = []
+    for key, codes in (("old_testament", refs.OT_CODES), ("new_testament", refs.BOOK_CODES[39:])):
+        rows = [book_row(book, chaps) for book, chaps in have if book in codes]
+        if rows:
+            cols = 1 if len(rows) <= MENU_BOOKS_PER_COLUMN else 2
+            testaments.append(f'<div class="dd-col" style="--cols: {cols}"><p class="dd-head">{t(lang, "footer." + key)}</p>'
+                              f'<div class="dd-books">{"".join(rows)}</div></div>')
+    read = (f'<div class="dd-testaments">{"".join(testaments)}</div>'
             f'{all_link(url(lang, "/read/"), t(lang, "nav.all_books"))}')
 
     # The first few articles of each section, by their short menu titles;
