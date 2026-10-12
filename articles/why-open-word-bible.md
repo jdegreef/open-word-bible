@@ -23,4 +23,4 @@ The second is **reasoning**. Every translation makes thousands of choices. Does 
 
 ## Where we are
 
-The project is young. Two sample passages, [John 1:1–18](/jhn/1/) and [Philippians 4:1–9](/php/4/), are translated into English and Spanish, with their full reasoning. They are there to show the method and to be criticised. If you read Greek or Hebrew, or simply notice something that reads badly, the [project on GitHub](https://github.com/jdegreef/open-word-bible) is the place to say so.
+The project is young. Books from both Testaments are being drafted in English, and Spanish, French and Swahili follow, each from the Greek and Hebrew. Every sentence comes with its full reasoning, and the [Read](/read/) page shows what is translated so far. It is there to show the method and to be criticised. If you read Greek or Hebrew, or simply notice something that reads badly, the [project on GitHub](https://github.com/jdegreef/open-word-bible) is the place to say so.

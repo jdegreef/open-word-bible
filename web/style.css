@@ -703,6 +703,7 @@ footer.site a.book-chip:hover { border-color: var(--accent); background: var(--a
 .article-body h2 { font-family: var(--display); font-weight: 600; font-size: 27px; letter-spacing: -.01em; line-height: 1.25; margin: 1.8em 0 .5em; }
 .article-body h3 { font-family: var(--sans); font-size: 18px; margin: 1.6em 0 .4em; }
 .article-body .greek { font-family: var(--greek); }
+.article-body .hebrew { font-family: var(--hebrew); font-size: 1.1em; }
 .article-body a { text-underline-offset: 3px; }
 .article-body blockquote { margin: 1.4em 0; padding: 2px 0 2px 20px; border-left: 3px solid var(--gold); }
 .article-body blockquote p { margin: 0; }
@@ -710,6 +711,7 @@ footer.site a.book-chip:hover { border-color: var(--accent); background: var(--a
 .quote::before { content: ""; position: absolute; left: 0; top: 18px; bottom: 18px; width: 3px; border-radius: 0 3px 3px 0; background: var(--gold); }
 .quote blockquote { margin: 0; padding: 0; border: 0; font-size: 23px; line-height: 1.55; }
 .quote.greek-quote blockquote { font-size: 25px; }
+.quote.hebrew-quote blockquote { font-size: 27px; }
 .quote figcaption { font-family: var(--sans); font-size: 13px; color: var(--muted); margin-top: 12px; }
 .quote figcaption a { font-weight: 600; white-space: nowrap; }
 .read-card { margin: 40px 0 0; padding: 26px 28px; border-radius: 16px; background: var(--accent-soft); border: 1px solid var(--accent-soft-border); }
@@ -788,8 +790,9 @@ footer.site a.book-chip:hover { border-color: var(--accent); background: var(--a
 .section-head.fallback { color: var(--muted); }
 .verse {
   cursor: pointer; border-radius: 3px; padding: 1px 0;
-  /* j and k scroll a verse into view clear of the header and settings bar. */
-  scroll-margin-top: calc(var(--header-h) + var(--settings-h, 0px) + 16px); scroll-margin-bottom: 32px;
+  /* A verse scrolled into view clears the settings bar too; html's
+     scroll-padding-top already clears the header (the two add up). */
+  scroll-margin-top: var(--settings-h, 0px); scroll-margin-bottom: 32px;
 }
 .verse:hover { background: var(--accent-soft); }
 .verse[aria-current="true"] { background: var(--mark); }
