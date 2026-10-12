@@ -2,12 +2,12 @@
 // scripts/build_site.py): the colour mode, then the reading text's size,
 // typeface and line spacing. Each radiogroup is one setting (data-pref); a
 // choice is kept in localStorage as owb-<pref> and applied as data-<pref> on
-// <html>, and the default (data-default; "auto" for the colour mode, which
-// follows the device) removes both. The inline boot script in each page
+// <html>, and the default (data-default; "light", Paper, for the colour mode)
+// removes both. "auto" is a choice like any other: it follows the device. The inline boot script in each page
 // applies saved choices before paint.
 (function () {
   "use strict";
-  var MODES = ["light", "sepia", "dark", "night", "contrast"];
+  var MODES = ["auto", "light", "sepia", "dark", "night", "contrast"];
   var root = document.documentElement;
   var button = document.querySelector(".prefs-btn");
   var menu = document.getElementById("colour-menu");
@@ -376,6 +376,89 @@
   document.querySelectorAll("a[data-if-saved]").forEach(function (a) {
     caches.match(a.getAttribute("href")).then(function (hit) { a.hidden = !hit; });
   });
+})();
+
+// The saved verses page (saved_page in scripts/build_site.py): the
+// bookmarks and highlights web/reader.js keeps as owb.marks, by book in
+// canonical order, each with its words as they were shown when marked.
+(function () {
+  "use strict";
+  var box = document.getElementById("saved");
+  if (!box) return;
+  var data = JSON.parse(box.getAttribute("data-saved"));
+  var list = box.querySelector(".saved-list"), empty = box.querySelector(".saved-empty");
+  var filter = "all";
+
+  function load() {
+    try { return JSON.parse(localStorage.getItem("owb.marks") || "{}"); } catch (e) { return {}; }
+  }
+  function remove(id) {
+    var all = load();
+    delete all[id];
+    try { localStorage.setItem("owb.marks", JSON.stringify(all)); } catch (e) { /* ignore */ }
+    draw();
+  }
+  function el(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
+  }
+
+  function draw() {
+    var all = load();
+    var ids = Object.keys(all).filter(function (id) {
+      var m = all[id], book = id.split(".")[0];
+      if (data.order.indexOf(book) < 0) return false;
+      return filter === "all" || (filter === "bookmarks" ? m.b : m.h);
+    }).sort(function (a, b) {
+      var p = a.split("."), q = b.split(".");
+      return (data.order.indexOf(p[0]) - data.order.indexOf(q[0])) || (p[1] - q[1]) || (p[2] - q[2]);
+    });
+    list.textContent = "";
+    empty.hidden = ids.length > 0;
+    var group = null, book = null;
+    ids.forEach(function (id) {
+      var m = all[id], p = id.split(".");
+      if (p[0] !== book) {
+        book = p[0];
+        list.appendChild(el("h2", "saved-book", data.names[book]));
+        group = el("ul", "saved-items");
+        list.appendChild(group);
+      }
+      var li = el("li", "saved-item" + (m.h ? " hl-" + m.h : ""));
+      var head = el("p", "saved-head");
+      var a = el("a", null, data.names[book] + " " + p[1] + ":" + p[2]);
+      a.href = data.chapters[book].replace("{c}", p[1]) + "#v" + p[2];
+      head.appendChild(a);
+      if (m.b) {
+        var b = el("span", "saved-flag", data.bookmark);
+        head.appendChild(b);
+      }
+      var x = el("button", "saved-remove", data.remove);
+      x.type = "button";
+      x.addEventListener("click", function () { remove(id); });
+      head.appendChild(x);
+      li.appendChild(head);
+      if (m.text) {
+        var q = el("p", "saved-text", m.text);
+        if (m.lang && m.lang !== document.documentElement.lang) q.lang = m.lang;
+        li.appendChild(q);
+      }
+      group.appendChild(li);
+    });
+  }
+
+  box.querySelectorAll("[data-filter]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      filter = b.getAttribute("data-filter");
+      box.querySelectorAll("[data-filter]").forEach(function (o) { o.setAttribute("aria-pressed", o === b ? "true" : "false"); });
+      draw();
+    });
+  });
+  // Marks made or removed in another tab.
+  window.addEventListener("storage", function (e) { if (e.key === "owb.marks") draw(); });
+  draw();
 })();
 
 // The footer's "Report a problem" (footer_links in scripts/build_site.py)
