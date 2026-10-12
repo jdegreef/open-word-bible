@@ -52,7 +52,7 @@ Matthew 1–9 (`content/MAT/`) is drafted in English.
 
 Psalms 1–6 (`content/PSA/`) are drafted in English.
 
-Exodus 1–5 (`content/EXO/`) is drafted in English.
+Exodus 1–8 (`content/EXO/`) is drafted in English.
 
 Proverbs 1–7 (`content/PRO/`) is drafted in English.
 
