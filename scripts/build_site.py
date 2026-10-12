@@ -41,6 +41,7 @@ BOOK_NAMES = {"GEN": {"en": "Genesis", "es": "Génesis", "fr": "Genèse", "sw": 
               "PHP": {"en": "Philippians", "es": "Filipenses", "fr": "Philippiens", "sw": "Wafilipi"},
               "COL": {"en": "Colossians", "es": "Colosenses", "fr": "Colossiens", "sw": "Wakolosai"},
               "1TH": {"en": "1 Thessalonians", "es": "1 Tesalonicenses", "fr": "1 Thessaloniciens", "sw": "1 Wathesalonike"},
+              "1TI": {"en": "1 Timothy", "es": "1 Timoteo", "fr": "1 Timothée", "sw": "1 Timotheo"},
               "2TH": {"en": "2 Thessalonians", "es": "2 Tesalonicenses", "fr": "2 Thessaloniciens", "sw": "2 Wathesalonike"},
               "PHM": {"en": "Philemon", "es": "Filemón", "fr": "Philémon", "sw": "Filemoni"},
               "HEB": {"en": "Hebrews", "es": "Hebreos", "fr": "Hébreux", "sw": "Waebrania"},
@@ -110,7 +111,7 @@ OTHER_BOOK_NAMES = {
 # A book whose chapters go by another name: "Psalm 23", not "Psalms 23".
 CHAPTER_NAMES = {"PSA": {"en": "Psalm", "es": "Salmo", "fr": "Psaume", "sw": "Zaburi"}}
 # Chapters in each book, for "2 of 21 chapters" and a book's completeness.
-BOOK_CHAPTERS = {"GEN": 50, "PRO": 31, "EXO": 40, "MAT": 28, "MRK": 16, "LUK": 24, "JHN": 21, "ACT": 28, "ROM": 16, "1CO": 16, "2CO": 13, "GAL": 6, "EPH": 6, "PHP": 4, "COL": 4, "1TH": 5, "2TH": 3, "PHM": 1, "HEB": 13, "JAS": 5, "1PE": 5, "2PE": 3, "1JN": 5, "2JN": 1, "3JN": 1, "JUD": 1, "PSA": 150, "REV": 22}
+BOOK_CHAPTERS = {"GEN": 50, "PRO": 31, "EXO": 40, "MAT": 28, "MRK": 16, "LUK": 24, "JHN": 21, "ACT": 28, "ROM": 16, "1CO": 16, "2CO": 13, "GAL": 6, "EPH": 6, "PHP": 4, "COL": 4, "1TH": 5, "1TI": 6, "2TH": 3, "PHM": 1, "HEB": 13, "JAS": 5, "1PE": 5, "2PE": 3, "1JN": 5, "2JN": 1, "3JN": 1, "JUD": 1, "PSA": 150, "REV": 22}
 # The interface languages, English first (see catalog below).
 LANGUAGES = ("en", "es", "fr", "sw")
 SITE_NAME = "Open Word Bible"
