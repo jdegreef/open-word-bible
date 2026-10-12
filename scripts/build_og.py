@@ -158,10 +158,16 @@ def draw(name, spec, tmp, browser):
     page = tmp / f"{name}.html"
     page.write_text(card_html(spec), encoding="utf-8")
     png = tmp / f"{name}.png"
-    subprocess.run([browser, "--headless=new", "--disable-gpu", "--hide-scrollbars",
-                    f"--window-size={WIDTH},{HEIGHT}", "--virtual-time-budget=5000",
-                    f"--screenshot={png}", page.as_uri()],
-                   check=True, capture_output=True)
+    run = subprocess.run([browser, "--headless=new", "--disable-gpu", "--hide-scrollbars",
+                          f"--window-size={WIDTH},{HEIGHT}", "--virtual-time-budget=5000",
+                          f"--screenshot={png}", page.as_uri()],
+                         capture_output=True)
+    # Some Chrome builds write the screenshot and then crash while shutting
+    # down ("Teardown watchdog expired"); the image is good, so only fail when
+    # there is none.
+    if not png.exists() or png.stat().st_size == 0:
+        run.check_returncode()
+        raise RuntimeError(f"{browser} wrote no screenshot for {name}")
     to_jpeg(png, OUT / f"{name}.jpg")
 
 
