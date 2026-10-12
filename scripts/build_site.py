@@ -206,21 +206,24 @@ COLOUR_MODES = (("auto", "#faf6ef", "#16130f"),
                 ("night", "#000000", "#e0b45c"),
                 ("contrast", "#ffffff", "#000000"))
 
-# The reading text's settings in the gear menu (see web/style.css): name,
+# The gear menu's settings after the colour mode (see web/style.css): name,
 # default, and the values in the menu's order. A choice is kept as
-# owb-<name> and applied as data-<name> on <html>. They change how the text
-# looks, never its wording. Labels are in i18n/ (prefs.<name>, <name>.<value>).
-READING_PREFS = (("size", "m", ("s", "m", "l", "xl")),
+# owb-<name> and applied as data-<name> on <html>. Size, font and leading
+# are the reading text's; motion "auto" follows the device. They change how
+# the page looks, never the text's wording. Labels are in i18n/
+# (prefs.<name>, <name>.<value>).
+DISPLAY_PREFS = (("size", "m", ("s", "m", "l", "xl")),
                  ("font", "serif", ("serif", "sans", "readable")),
-                 ("leading", "normal", ("compact", "normal", "spacious")))
+                 ("leading", "normal", ("compact", "normal", "spacious")),
+                 ("motion", "auto", ("auto", "reduce")))
 
-# Applies the saved colour mode and reading settings before the first paint,
+# Applies the saved colour mode and display settings before the first paint,
 # so a page never flashes the default colours or text. Mirrors web/site.js.
 BOOT_SCRIPT = ("try{var d=document.documentElement,t=localStorage.getItem('owb-theme');"
                "if(['light','sepia','dark','night','contrast'].indexOf(t)>=0)"
                "d.setAttribute('data-theme',t);"
                "var p={" + ",".join(f"{name}:{[v for v in values if v != default]!r}"
-                                   for name, default, values in READING_PREFS) + "};"
+                                   for name, default, values in DISPLAY_PREFS) + "};"
                "for(var k in p){var v=localStorage.getItem('owb-'+k);"
                "if(p[k].indexOf(v)>=0)d.setAttribute('data-'+k,v)}"
                # Signed in (web/account.js): the header's "Sign in" stays hidden.
@@ -280,9 +283,10 @@ def leading_sample(gap):
 LEADING_GAPS = {"compact": 5, "normal": 7, "spacious": 9}
 
 
-def colour_menu(lang):
-    """The gear menu: the colour mode, then the reading text's settings
-    (READING_PREFS). web/site.js runs it."""
+def colour_menu(lang, path=None, translated=LANGUAGES):
+    """The gear menu: the colour mode, the display settings (DISPLAY_PREFS),
+    then the languages (language_items, as in the footer). web/site.js
+    runs it."""
     label = t(lang, "tools.display")
 
     def option(value, default, face, name):
@@ -300,18 +304,23 @@ def colour_menu(lang):
         (v, f'<span class="swatch" style="--sw-bg:{bg};--sw-accent:{accent}" aria-hidden="true"></span>',
          t(lang, "theme." + v)) for v, bg, accent in COLOUR_MODES])
     def sample(pref, value):
+        if pref == "motion":
+            return ""
         inner = leading_sample(LEADING_GAPS[value]) if pref == "leading" else "Aa"
         return f'<span class="sample" aria-hidden="true">{inner}</span>'
 
     rows = [group(pref, t(lang, "prefs." + pref), default,
                   [(v, sample(pref, v), t(lang, f"{pref}.{v}")) for v in values])
-            for pref, default, values in READING_PREFS]
+            for pref, default, values in DISPLAY_PREFS]
+    check = '<span class="check" aria-hidden="true">&#10003;</span>'
+    languages = (f'<p class="prefs-label" id="prefs-lang">{t(lang, "footer.languages")}</p>'
+                 f'<ul class="prefs-langs" aria-labelledby="prefs-lang">{language_items(lang, path, translated, check)}</ul>')
     return (
         '<div class="prefs">'
         '<button type="button" class="tool-btn prefs-btn" aria-expanded="false" aria-controls="colour-menu" '
         f'aria-label="{label}" title="{label}">{GEAR}</button>'
         f'<div id="colour-menu" class="prefs-menu" role="group" aria-label="{label}" hidden>'
-        + theme + "".join(rows) + '</div></div>')
+        + theme + "".join(rows) + languages + '</div></div>')
 
 
 OG = ROOT / "web" / "og"
@@ -388,7 +397,7 @@ def page(lang, title, body, path=None, current="", description="", card="site", 
 </head>
 <body>
 <a class="skip" href="#main">{t(lang, "skip")}</a>
-{site_header(lang, current, path)}
+{site_header(lang, current, path, here, translated)}
 <main class="wrap" id="main" tabindex="-1">
 {body}
 </main>
@@ -452,11 +461,12 @@ def nav_menus(lang):
             ("about", t(lang, "nav.about"), "info", "/about/", about, "dd-about"))
 
 
-def site_header(lang, current, path=None):
+def site_header(lang, current, path=None, lang_path=None, translated=LANGUAGES):
     """Logo, the main links with their dropdowns, and the tools. On narrow
     screens the links fold into a panel behind the menu button, where each
     dropdown opens in place (web/site.js). The section trigger for current
-    is lit, and the dropdown link to this page (path) is aria-current."""
+    is lit, and the dropdown link to this page (path) is aria-current. The
+    gear menu's language links go to lang_path, as the footer's do."""
     home_on = current == "/"
     home = url(lang, "/")
     items = [f'<li><a class="nav-link" href="{home}"{" aria-current=page" if home_on else ""}>'
@@ -481,7 +491,7 @@ def site_header(lang, current, path=None):
 <a class="tool-btn search-btn" href="{url(lang, "/search/")}" aria-label="{t(lang, "nav.search")}" title="{t(lang, "nav.search")}" aria-keyshortcuts="Control+K Meta+K">{icon(ICONS["search"])}<span class="search-label">{t(lang, "nav.search")}</span><kbd class="search-kbd" hidden>Ctrl K</kbd></a>
 {account_menu(lang)}
 <a class="tool-btn" href="{GITHUB_URL}" aria-label="{t(lang, "tools.github")}" title="GitHub">{icon(ICONS["github"])}</a>
-{colour_menu(lang)}
+{colour_menu(lang, lang_path, translated)}
 <button type="button" class="tool-btn menu-btn" aria-expanded="false" aria-controls="site-nav" aria-label="{t(lang, "nav.menu")}">{icon(ICONS["menu"], 22)}{icon(ICONS["close"], 22)}</button>
 </div>
 </div></header>"""
@@ -547,24 +557,29 @@ def book_index(lang):
             f'{icon(ICONS["arrow"], 15)}</a></p></nav>')
 
 
-def language_links(lang, path, translated=LANGUAGES):
-    """The footer's language switch, as Ochorus has it: each language in its
-    own name, the current one as plain text and the others as links to this
-    page in that language: the home page from a page without a path, and
-    the articles page from an article not in that language. web/site.js
-    remembers the choice."""
+def language_items(lang, path, translated=LANGUAGES, mark=""):
+    """Each language in its own name, as list items: the current one as plain
+    text (followed by mark) and the others as links to this page in that
+    language: the home page from a page without a path, and the articles
+    page from an article not in that language. web/site.js remembers the
+    choice."""
     def target(code):
         if path is None:
             return "/"
         return path if code in translated else "/articles/"
 
-    links = "".join(
-        f'<li><span lang="{code}" aria-current="true">{t(code, "language_name")}</span></li>' if code == lang
+    return "".join(
+        f'<li><span lang="{code}" aria-current="true">{t(code, "language_name")}{mark}</span></li>' if code == lang
         else f'<li><a href="{url(code, target(code))}" lang="{code}" hreflang="{code}" data-lang="{code}">'
              f'{t(code, "language_name")}</a></li>'
         for code in LANGUAGES)
+
+
+def language_links(lang, path, translated=LANGUAGES):
+    """The footer's language switch, as Ochorus has it (language_items)."""
     return (f'<nav class="foot-langs" aria-labelledby="foot-langs">'
-            f'<h2 id="foot-langs">{t(lang, "footer.languages")}</h2><ul>{links}</ul></nav>')
+            f'<h2 id="foot-langs">{t(lang, "footer.languages")}</h2>'
+            f'<ul>{language_items(lang, path, translated)}</ul></nav>')
 
 
 def site_footer(lang, path=None, translated=LANGUAGES):

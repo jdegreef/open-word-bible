@@ -141,10 +141,10 @@ class ColourModesTest(unittest.TestCase):
             self.assertIn(f'"{mode}"', js_modes)
             self.assertIn(f"'{mode}'", boot_modes)
 
-    def test_reading_settings_are_styled_and_applied_before_paint(self):
+    def test_display_settings_are_styled_and_applied_before_paint(self):
         css = (ROOT / "web" / "style.css").read_text(encoding="utf-8")
         menu = build_site.colour_menu("en")
-        for name, default, values in build_site.READING_PREFS:
+        for name, default, values in build_site.DISPLAY_PREFS:
             others = [v for v in values if v != default]
             self.assertIn(default, values)
             self.assertIn(f'data-pref="{name}" data-default="{default}"', menu)
@@ -158,6 +158,20 @@ class ColourModesTest(unittest.TestCase):
             line = next(l for l in css.splitlines() if l.startswith(rule))
             for var in ("--read-font", "--read-scale", "--read-leading"):
                 self.assertIn(var, line)
+
+    def test_gear_menu_links_this_page_in_every_language(self):
+        menu = build_site.colour_menu("es", "/jhn/3/")
+        self.assertIn('<span lang="es" aria-current="true">Español', menu)
+        for code in build_site.LANGUAGES:
+            if code != "es":
+                self.assertIn(f'href="{build_site.url(code, "/jhn/3/")}" lang="{code}" hreflang="{code}" '
+                              f'data-lang="{code}"', menu)
+        # Without a path (the 404 page), each language's home page.
+        self.assertIn('href="/fr/" lang="fr"', build_site.colour_menu("en"))
+        # From an article not in a language, that language's articles page.
+        menu = build_site.colour_menu("en", "/articles/x/", ("en", "es"))
+        self.assertIn('href="/es/articles/x/" lang="es"', menu)
+        self.assertIn('href="/fr/articles/" lang="fr"', menu)
 
     def test_every_page_has_the_gear_menu(self):
         with tempfile.TemporaryDirectory() as tmp:
