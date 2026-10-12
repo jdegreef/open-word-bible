@@ -1,7 +1,10 @@
-"""Accounts: email sign-in links, API tokens, roles and CORS."""
+"""Accounts: passwords, email links, Google, API tokens, roles and CORS."""
 import io
+import json
 import re
 from datetime import timedelta
+from unittest import mock
+from urllib.parse import parse_qs, urlsplit
 
 from django.contrib.auth import get_user_model
 from django.core import mail
@@ -12,7 +15,10 @@ from django.utils import timezone
 from rest_framework.test import APIClient
 
 from accounts.auth import sync_super_admin
-from accounts.models import ApiToken, Role, SignInLink
+from accounts import google
+from accounts.models import ApiToken, FailedSignIn, Role, SignInLink
+from texts.models import Edition
+from translation.models import ReviewEvent, Sentence
 
 SITE = "https://openwordbible.org"
 
@@ -26,9 +32,9 @@ class SignInTest(TestCase):
     def ask(self, email="reader@example.org", **extra):
         return self.client.post("/api/auth/link", {"email": email}, format="json", **extra)
 
-    def link_secret(self):
+    def link_secret(self, page="login"):
         body = mail.outbox[-1].body
-        return re.search(re.escape(SITE) + r"/account/#token=([\w-]+)", body)[1]
+        return re.search(re.escape(SITE) + rf"(?:/[a-z]{{2}})?/{page}/(?:\?redirect=[^#\s]+)?#token=([\w-]+)", body)[1]
 
     def sign_in(self, email="reader@example.org"):
         self.assertEqual(self.ask(email).status_code, 202)
@@ -144,6 +150,221 @@ class SignInTest(TestCase):
         self.assertNotIn("Access-Control-Allow-Origin", other)
         admin = self.client.get("/healthz", HTTP_ORIGIN=SITE)
         self.assertNotIn("Access-Control-Allow-Origin", admin)
+
+
+GOOD = "a long enough password"
+
+
+@override_settings(OWB_SITE_URL=SITE, CORS_ALLOWED_ORIGINS=[SITE], OWB_SUPER_ADMIN_EMAILS=[])
+class PasswordTest(TestCase):
+    def setUp(self):
+        self.client = APIClient()
+
+    def post(self, path, data, **extra):
+        return self.client.post(path, data, format="json", **extra)
+
+    def link(self, page="login"):
+        return re.search(re.escape(SITE) + rf"(?:/[a-z]{{2}})?/{page}/(?:\?redirect=([^#\s]+))?#token=([\w-]+)",
+                         mail.outbox[-1].body)
+
+    def sign_up(self, email="new@example.org", password=GOOD, **data):
+        r = self.post("/api/auth/sign-up", {"email": email, "password": password, **data})
+        self.assertEqual(r.status_code, 202, r.content)
+        r = self.post("/api/auth/verify", {"token": self.link()[2]})
+        self.assertEqual(r.status_code, 200, r.content)
+        return r.json()
+
+    def sign_in(self, email="new@example.org", password=GOOD):
+        return self.post("/api/auth/sign-in", {"email": email, "password": password})
+
+    def test_sign_up_confirms_the_address_before_any_account_exists(self):
+        r = self.post("/api/auth/sign-up", {"email": "New@Example.org", "password": GOOD,
+                                            "lang": "es", "redirect": "/es/jhn/3/"})
+        self.assertEqual(r.status_code, 202)
+        self.assertFalse(get_user_model().objects.exists())
+        self.assertEqual(self.sign_in().status_code, 400)
+        # The link goes back to the page in the reader's language.
+        self.assertIn(f"{SITE}/es/login/?redirect=/es/jhn/3/#token=", mail.outbox[-1].body)
+        self.assertNotIn(GOOD, mail.outbox[-1].body)
+        user = self.post("/api/auth/verify", {"token": self.link()[2]}).json()["user"]
+        self.assertTrue(user["has_password"])
+        r = self.sign_in()
+        self.assertEqual(r.status_code, 200)
+        self.assertEqual(r.json()["user"]["email"], "new@example.org")
+
+    def test_weak_passwords_are_refused_with_a_code(self):
+        for password in ("short", "12345678901", "password123", "new@example.org"):
+            r = self.post("/api/auth/sign-up", {"email": "new@example.org", "password": password})
+            self.assertEqual(r.status_code, 400, password)
+            self.assertEqual(r.json()["code"], "weak_password")
+        self.assertEqual(mail.outbox, [])
+
+    def test_sign_up_for_an_existing_account_looks_the_same_and_sets_the_password_once_confirmed(self):
+        get_user_model().objects.create(username="new@example.org", email="new@example.org")
+        r = self.post("/api/auth/sign-up", {"email": "new@example.org", "password": GOOD})
+        self.assertEqual(r.status_code, 202)
+        self.assertEqual(self.sign_in().status_code, 400)
+        self.post("/api/auth/verify", {"token": self.link()[2]})
+        self.assertEqual(self.sign_in().status_code, 200)
+        self.assertEqual(get_user_model().objects.count(), 1)
+
+    def test_wrong_passwords_say_the_same_thing_and_are_limited(self):
+        self.sign_up()
+        unknown = self.sign_in("nobody@example.org")
+        wrong = self.sign_in(password="not the password")
+        self.assertEqual(unknown.json(), wrong.json())
+        self.assertEqual(wrong.json()["code"], "invalid_credentials")
+        for _ in range(9):
+            self.sign_in(password="not the password")
+        r = self.sign_in()
+        self.assertEqual(r.status_code, 429)
+        self.assertEqual(r.json()["code"], "rate_limited")
+        FailedSignIn.objects.update(created_at=timezone.now() - timedelta(minutes=16))
+        self.assertEqual(self.sign_in().status_code, 200)
+
+    def test_an_account_from_a_link_has_no_password_to_guess(self):
+        self.post("/api/auth/link", {"email": "new@example.org"})
+        user = self.post("/api/auth/verify", {"token": self.link()[2]}).json()["user"]
+        self.assertFalse(user["has_password"])
+        self.assertEqual(self.sign_in(password="").status_code, 400)
+
+    def test_reset_sets_a_new_password_and_signs_out_other_devices(self):
+        old = self.sign_up()["token"]
+        r = self.post("/api/auth/reset", {"email": "new@example.org", "lang": "fr"})
+        self.assertEqual(r.status_code, 202)
+        self.assertIn(f"{SITE}/fr/reset-password/#token=", mail.outbox[-1].body)
+        secret = self.link("reset-password")[2]
+        # A reset link does not sign in by itself, and a sign-in link cannot reset.
+        self.assertEqual(self.post("/api/auth/verify", {"token": secret}).status_code, 400)
+        for weak in ("short", "new@example.org"):   # the account's own address, too
+            r = self.post("/api/auth/reset/confirm", {"token": secret, "password": weak})
+            self.assertEqual(r.json()["code"], "weak_password", weak)
+        r = self.post("/api/auth/reset/confirm", {"token": secret, "password": "another fine password"})
+        self.assertEqual(r.status_code, 200, r.content)
+        self.assertEqual(self.sign_in().status_code, 400)
+        self.assertEqual(self.sign_in(password="another fine password").status_code, 200)
+        self.client.credentials(HTTP_AUTHORIZATION=f"Bearer {old}")
+        self.assertEqual(self.client.get("/api/me").status_code, 401)
+        self.client.credentials()
+        again = self.post("/api/auth/reset/confirm", {"token": secret, "password": "a third fine password"})
+        self.assertEqual(again.json()["code"], "link_expired")
+
+    def test_reset_for_an_unknown_address_looks_the_same_but_sends_no_link(self):
+        r = self.post("/api/auth/reset", {"email": "nobody@example.org", "lang": "sw"})
+        self.assertEqual(r.status_code, 202)
+        # An email still goes, so the answer takes as long, but it only
+        # says there is no account.
+        self.assertEqual(len(mail.outbox), 1)
+        self.assertNotIn("#token=", mail.outbox[0].body)
+        self.assertIn(f"{SITE}/sw/login/?mode=signup", mail.outbox[0].body)
+        self.assertFalse(get_user_model().objects.exists())
+
+    def test_redirects_stay_on_the_site(self):
+        for bad in ("https://evil.example/", "//evil.example/", "/\\evil.example", "/a\nb", "jhn/3/"):
+            self.post("/api/auth/link", {"email": "new@example.org", "redirect": bad})
+            self.assertIsNone(self.link()[1], bad)
+            mail.outbox.clear()
+            SignInLink.objects.all().delete()
+
+    def test_deleting_an_account(self):
+        token = self.sign_up()["token"]
+        self.client.credentials(HTTP_AUTHORIZATION=f"Bearer {token}")
+        self.assertEqual(self.client.delete("/api/me").status_code, 204)
+        self.assertFalse(get_user_model().objects.exists())
+        self.assertFalse(ApiToken.objects.exists())
+        self.assertEqual(self.client.get("/api/me").status_code, 401)
+
+    def test_an_account_with_review_history_is_kept(self):
+        token = self.sign_up()["token"]
+        user = get_user_model().objects.get()
+        edition = Edition.objects.create(code="sblgnt", name="SBLGNT", language="grc", kind="original",
+                                         licence="CC BY 4.0", source="sblgnt", source_commit="0" * 40)
+        sentence = Sentence.objects.create(record_id="JHN.1.1.s1", book="JHN", chapter=1, verse=1, number=1,
+                                           refs=["JHN.1.1"], source_edition=edition, source_text_id="x",
+                                           tokens=[], literal_gloss="x")
+        ReviewEvent.objects.create(sentence=sentence, user=user, action="comment")
+        self.client.credentials(HTTP_AUTHORIZATION=f"Bearer {token}")
+        r = self.client.delete("/api/me")
+        self.assertEqual(r.status_code, 409)
+        self.assertEqual(r.json()["code"], "has_reviews")
+        self.assertTrue(get_user_model().objects.filter(pk=user.pk).exists())
+
+    def test_methods(self):
+        self.assertEqual(self.client.get("/api/auth/methods").json(),
+                         {"password": True, "link": True, "google": False})
+
+
+class FakeGoogle:
+    """Google's token endpoint, answering with claims."""
+    def __init__(self, claims):
+        payload = json.dumps(claims).encode()
+        import base64
+        self.body = json.dumps({"id_token": "h." + base64.urlsafe_b64encode(payload).decode().rstrip("=") + ".s"})
+        self.requests = []
+
+    def __call__(self, request, timeout=None):
+        self.requests.append(parse_qs(request.data.decode()))
+        return io.BytesIO(self.body.encode())
+
+
+@override_settings(OWB_SITE_URL=SITE, CORS_ALLOWED_ORIGINS=[SITE], OWB_SUPER_ADMIN_EMAILS=[],
+                   GOOGLE_CLIENT_ID="client-id", GOOGLE_CLIENT_SECRET="client-secret")
+class GoogleTest(TestCase):
+    def claims(self, **extra):
+        return {"aud": "client-id", "iss": "https://accounts.google.com", "exp": 9999999999,
+                "email": "Lydia@Example.org", "email_verified": True, **extra}
+
+    def round_trip(self, claims, state=None, redirect="/jhn/3/", lang="sw"):
+        start = self.client.get("/api/auth/google/start", {"lang": lang, "redirect": redirect})
+        self.assertEqual(start.status_code, 302)
+        query = parse_qs(urlsplit(start["Location"]).query)
+        self.assertEqual(query["code_challenge_method"], ["S256"])
+        self.assertEqual(query["redirect_uri"], ["http://testserver/api/auth/google/callback"])
+        fake = FakeGoogle(claims)
+        with mock.patch("urllib.request.urlopen", fake):
+            back = self.client.get("/api/auth/google/callback",
+                                   {"code": "abc", "state": state or query["state"][0]})
+        self.assertEqual(back.status_code, 302)
+        return back["Location"], fake
+
+    def test_google_signs_in_through_a_single_use_link(self):
+        location, fake = self.round_trip(self.claims())
+        self.assertTrue(location.startswith(f"{SITE}/sw/login/?redirect=/jhn/3/#google="), location)
+        self.assertEqual(fake.requests[0]["client_secret"], ["client-secret"])
+        self.assertIn("code_verifier", fake.requests[0])
+        secret = location.split("#google=")[1]
+        r = self.client.post("/api/auth/verify", {"token": secret}, content_type="application/json")
+        self.assertEqual(r.status_code, 200)
+        self.assertEqual(r.json()["user"]["email"], "lydia@example.org")
+        self.assertFalse(r.json()["user"]["has_password"])
+
+    def test_a_forged_state_or_unverified_email_or_other_audience_is_refused(self):
+        for claims, state in ((self.claims(), "forged"),
+                              (self.claims(email_verified=False), None),
+                              (self.claims(aud="someone-else"), None),
+                              (self.claims(exp=1), None)):
+            location, _ = self.round_trip(claims, state)
+            self.assertTrue(location.endswith("#error=google_failed"), (claims, state, location))
+        self.assertFalse(SignInLink.objects.exists())
+
+    def test_a_malformed_id_token_is_refused_not_a_crash(self):
+        fake = FakeGoogle({})
+        fake.body = json.dumps({"id_token": "no-dots"})
+        start = self.client.get("/api/auth/google/start")
+        state = parse_qs(urlsplit(start["Location"]).query)["state"][0]
+        with mock.patch("urllib.request.urlopen", fake):
+            back = self.client.get("/api/auth/google/callback", {"code": "abc", "state": state})
+        self.assertEqual(back["Location"], f"{SITE}/login/#error=google_failed")
+
+    def test_a_bad_redirect_is_dropped(self):
+        location, _ = self.round_trip(self.claims(), redirect="//evil.example/", lang="xx")
+        self.assertTrue(location.startswith(f"{SITE}/login/#google="), location)
+
+    @override_settings(GOOGLE_CLIENT_ID="")
+    def test_without_keys_the_site_is_told(self):
+        r = self.client.get("/api/auth/google/start")
+        self.assertEqual(r["Location"], f"{SITE}/login/#error=google_unavailable")
+        self.assertFalse(google.enabled())
 
 
 class RoleTest(TestCase):

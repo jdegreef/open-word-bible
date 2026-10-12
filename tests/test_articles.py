@@ -1,7 +1,6 @@
 """Articles (articles/*.md) and the colour-mode menu, as built into the site."""
 import re
 import sys
-import tempfile
 import unittest
 from pathlib import Path
 
@@ -9,20 +8,15 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import build_site  # noqa: E402
+from tests.site_build import built_site  # noqa: E402
 from owb import validate  # noqa: E402
 
 
 class ArticlesTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.tmp = tempfile.TemporaryDirectory()
-        cls.out = Path(cls.tmp.name) / "site"
-        build_site.build(cls.out)
+        cls.out = built_site()
         cls.articles = build_site.load_articles()
-
-    @classmethod
-    def tearDownClass(cls):
-        cls.tmp.cleanup()
 
     def test_ten_articles_with_front_matter(self):
         self.assertGreaterEqual(len(self.articles), 10)
@@ -106,22 +100,20 @@ class ArticlesTest(unittest.TestCase):
 
 class SiteChromeTest(unittest.TestCase):
     def test_every_page_has_the_header_menu_skip_link_and_footer(self):
-        with tempfile.TemporaryDirectory() as tmp:
-            out = Path(tmp) / "site"
-            build_site.build(out)
-            for path in out.rglob("*.html"):
-                text = path.read_text(encoding="utf-8")
-                self.assertIn('<a class="skip" href="#main">', text, path)
-                self.assertIn('id="main"', text, path)
-                self.assertIn('class="tool-btn menu-btn"', text, path)
-                self.assertIn('aria-controls="site-nav"', text, path)
-                self.assertIn('<footer class="site">', text, path)
-                # Links stay in the page's language: /es/ pages link to /es/.
-                lang = re.search(r'<html lang="([a-z]+)">', text)[1]
-                self.assertIn(f'href="{build_site.url(lang, "/jhn/1/")}"', text, path)
-            about = (out / "about" / "index.html").read_text(encoding="utf-8")
-            self.assertIn('<h2 id="credits">', about)
-            self.assertIn('id="help"', (out / "index.html").read_text(encoding="utf-8"))
+        out = built_site()
+        for path in out.rglob("*.html"):
+            text = path.read_text(encoding="utf-8")
+            self.assertIn('<a class="skip" href="#main">', text, path)
+            self.assertIn('id="main"', text, path)
+            self.assertIn('class="tool-btn menu-btn"', text, path)
+            self.assertIn('aria-controls="site-nav"', text, path)
+            self.assertIn('<footer class="site">', text, path)
+            # Links stay in the page's language: /es/ pages link to /es/.
+            lang = re.search(r'<html lang="([a-z]+)">', text)[1]
+            self.assertIn(f'href="{build_site.url(lang, "/jhn/1/")}"', text, path)
+        about = (out / "about" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('<h2 id="credits">', about)
+        self.assertIn('id="help"', (out / "index.html").read_text(encoding="utf-8"))
 
 
 class ColourModesTest(unittest.TestCase):
@@ -160,14 +152,12 @@ class ColourModesTest(unittest.TestCase):
                 self.assertIn(var, line)
 
     def test_every_page_has_the_gear_menu(self):
-        with tempfile.TemporaryDirectory() as tmp:
-            out = Path(tmp) / "site"
-            build_site.build(out)
-            for path in out.rglob("*.html"):
-                text = path.read_text(encoding="utf-8")
-                self.assertIn('class="tool-btn prefs-btn"', text, path)
-                self.assertIn("localStorage.getItem('owb-theme')", text, path)
-            self.assertTrue((out / "site.js").is_file())
+        out = built_site()
+        for path in out.rglob("*.html"):
+            text = path.read_text(encoding="utf-8")
+            self.assertIn('class="tool-btn prefs-btn"', text, path)
+            self.assertIn("localStorage.getItem('owb-theme')", text, path)
+        self.assertTrue((out / "site.js").is_file())
 
 
 if __name__ == "__main__":
