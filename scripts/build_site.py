@@ -1109,6 +1109,16 @@ def opening_verse(records, chapter, lang="en"):
 
 # A quoted verse in each language's quotation marks (English curly quotes
 # otherwise). French sets its guillemets off with no-break spaces.
+def inner_quotes(text):
+    """A verse to be shown inside double quotes: its own speech takes single
+    quotes, and speech that runs on into the next verse (Genesis 9:1) is
+    closed, so the marks stay balanced."""
+    text = text.replace("\u201c", "\u2018").replace("\u201d", "\u2019")
+    if text.count("\u2018") > text.count("\u2019") - text.count("\u2019s"):
+        text += "\u2019"
+    return text
+
+
 QUOTES_AROUND = {"es": "&laquo;{}&raquo;", "fr": "&laquo;&nbsp;{}&nbsp;&raquo;"}
 
 
@@ -1127,8 +1137,8 @@ def passage_card(book, chapter, lang="en"):
     if len(records) < len(every):
         meta += " &middot; " + t(lang, "card.coverage", n=len(records), total=len(every))
     q = QUOTES_AROUND.get(lang, "&ldquo;{}&rdquo;")
-    if lang not in QUOTES_AROUND:   # inside double quotes, speech takes single ones
-        quote = quote.replace("\u201c", "\u2018").replace("\u201d", "\u2019")
+    if lang not in QUOTES_AROUND:
+        quote = inner_quotes(quote)
     return (f'<li><a class="a-card p-card" href="{url(lang, chapter_url(book, chapter))}">'
             f'<span class="a-section">{BOOK_NAMES[book][lang]} &middot; {languages_label(every)}</span>'
             f'<span class="a-title">{display(chapter_name(records, book, chapter, lang))}</span>'
