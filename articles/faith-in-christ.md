@@ -26,7 +26,7 @@ Paul uses the phrase twice in this verse, and the question has divided careful s
 
 ## What the translation does
 
-Open Word Bible follows the first reading at every level, marks the decision *uncertain*, and gives "through the faithfulness of Jesus Christ" in a footnote. The Literal level shows that "in" is an interpretation of a phrase that has no preposition:
+Open Word Bible follows the first reading at every level, marks the decision *uncertain*, and gives "through the faithfulness of Jesus Christ" in a footnote. The Literal level says "faith in" too. The Greek has no preposition, so even the most literal rendering has to choose a reading:
 
 > {{OWB:GAL.2.15.s1:L}}
 
