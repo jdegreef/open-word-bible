@@ -3,6 +3,7 @@ title: "The Masoretes: guardians of the Hebrew text"
 summary: Between about 600 and 1000 CE, Jewish scholars in Tiberias and Babylonia added vowels, accents and thousands of marginal notes to the Hebrew Bible. Their work is the reason we can read it today.
 date: 2026-10-11
 order: 24
+nav_title: The Masoretes
 section: history
 ---
 Open a Hebrew Bible and you will see the consonants, the main letters, surrounded by small dots and dashes above and below them. Those marks are the vowels and the accents. Around the edges of the page in a scholarly edition you will see tiny notes in abbreviated Aramaic. All of this was added by a group of scholars known as the **Masoretes**. Almost every Old Testament translation in the world, including Open Word Bible's, is made from the text they guarded.
