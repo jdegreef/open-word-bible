@@ -349,6 +349,7 @@ def languages_label(records):
 
 
 MENU_ARTICLES = 4  # articles per section in the header menu
+MENU_BOOKS_PER_COLUMN = 8  # a testament with more books takes two columns
 
 
 @functools.lru_cache(maxsize=None)
@@ -366,16 +367,25 @@ def nav_menus(lang):
     def all_link(href, label):
         return f'<a class="dd-all" href="{href}">{label} {icon(ICONS["arrow"], 16)}</a>'
 
-    # Each book on one line with its progress; its chapters are one click
-    # further on, on the Read page.
-    rows = []
-    for book, chaps in books(lang):
+    # Each book on one line with its progress, under its testament; its
+    # chapters are one click further on, on the Read page. A testament with
+    # many books takes two columns.
+    def book_row(book, chaps):
         done, total, progress = book_progress(book, chaps, lang)
-        rows.append(f'<a class="dd-item dd-book" href="{url(lang, f"/read/#{book.lower()}")}" data-book="{book.lower()}">'
-                    f'<span class="dd-title">{BOOK_NAMES[book][lang]}</span>'
-                    f'<span class="dd-count" aria-hidden="true">{done}/{total}</span>'
-                    f'<span class="sr-only">, {progress}</span></a>')
-    read = (f'<p class="dd-head">{t(lang, "nav.books_so_far")}</p><div class="dd-books">{"".join(rows)}</div>'
+        return (f'<a class="dd-item dd-book" href="{url(lang, f"/read/#{book.lower()}")}" data-book="{book.lower()}">'
+                f'<span class="dd-title">{BOOK_NAMES[book][lang]}</span>'
+                f'<span class="dd-count" aria-hidden="true">{done}/{total}</span>'
+                f'<span class="sr-only">, {progress}</span></a>')
+
+    have = books(lang)
+    testaments = []
+    for key, codes in (("old_testament", refs.OT_CODES), ("new_testament", refs.BOOK_CODES[39:])):
+        rows = [book_row(book, chaps) for book, chaps in have if book in codes]
+        if rows:
+            cols = 1 if len(rows) <= MENU_BOOKS_PER_COLUMN else 2
+            testaments.append(f'<div class="dd-col" style="--cols: {cols}"><p class="dd-head">{t(lang, "footer." + key)}</p>'
+                              f'<div class="dd-books">{"".join(rows)}</div></div>')
+    read = (f'<div class="dd-testaments">{"".join(testaments)}</div>'
             f'{all_link(url(lang, "/read/"), t(lang, "nav.all_books"))}')
 
     # The first few articles of each section, by their short menu titles;
@@ -1740,10 +1750,12 @@ def article_meta(a, lang="en"):
     return " &middot; ".join(parts)
 
 
-def article_card(a, lang="en", featured=False):
-    section = catalog(lang)["sections"][a["section"]]
+def article_card(a, lang="en", featured=False, section=True):
+    """An article's card. Under its own section's heading it leaves out the
+    section's name (section=False)."""
+    label = f'<span class="a-section">{catalog(lang)["sections"][a["section"]]}</span>' if section else ""
     return (f'<li><a class="a-card{" featured" if featured else ""}" href="{url(lang, article_url(a))}">'
-            f'<span class="a-section">{section}</span>'
+            f'{label}'
             f'<span class="a-title">{display(a["title"])}</span>'
             f'<span class="a-summary">{display(a["summary"])}</span>'
             f'<span class="a-meta">{article_meta(a, lang)}</span></a></li>')
@@ -1758,12 +1770,21 @@ def articles_page(articles, lang="en"):
     by_order = sorted(articles, key=lambda a: a["order"])
     if by_order:
         featured, rest = by_order[0], by_order[1:]
+        names = catalog(lang)["sections"]
+        groups = [(key, [a for a in rest if a["section"] == key]) for key in SECTIONS]
+        groups = [(key, items) for key, items in groups if items]
+        # Links to each section, with how many articles it has.
+        jump = (f'<nav class="a-jump" aria-label="{t(lang, "articles.sections")}"><ul>'
+                + "".join(f'<li><a href="#{key}">{names[key]} <span>{sum(a["section"] == key for a in by_order)}</span></a></li>'
+                          for key, _ in groups)
+                + "</ul></nav>")
+        # Inside a section, compact rows rather than cards.
         sections = "".join(
             f'<section class="a-group" id="{key}" aria-labelledby="{key}-h">'
-            f'<h2 id="{key}-h">{catalog(lang)["sections"][key]}</h2>'
-            f'<ul class="a-grid">{article_list([a for a in rest if a["section"] == key], lang)}</ul></section>'
-            for key in SECTIONS if any(a["section"] == key for a in rest))
-        listing = f'<ul class="a-feature">{article_card(featured, lang, featured=True)}</ul>\n{sections}'
+            f'<h2 id="{key}-h">{names[key]}</h2>'
+            f'<ul class="a-rows">{"".join(article_card(a, lang, section=False) for a in items)}</ul></section>'
+            for key, items in groups)
+        listing = f'{jump}\n<ul class="a-feature">{article_card(featured, lang, featured=True)}</ul>\n{sections}'
     else:
         listing = f'<p class="notice">{t(lang, "articles.none")}</p>'
     body = f"""

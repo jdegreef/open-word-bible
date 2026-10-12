@@ -84,6 +84,12 @@ class ArticlesTest(unittest.TestCase):
         index = (self.out / "articles" / "index.html").read_text(encoding="utf-8")
         for key in build_site.SECTIONS:
             self.assertIn(f'id="{key}"', index)
+            # A link to each section from the top, with its count...
+            count = sum(a["section"] == key for a in self.articles)
+            self.assertIn(f'<a href="#{key}">{build_site.SECTIONS[key]} <span>{count}</span></a>', index)
+        # ...and a section's rows don't repeat its name.
+        groups = index[index.index('<section class="a-group"'):]
+        self.assertNotIn('class="a-section"', groups)
 
     def test_scripture_quotes_are_captioned_and_link_to_the_reader(self):
         page = (self.out / "articles" / "the-word-was-god" / "index.html").read_text(encoding="utf-8")

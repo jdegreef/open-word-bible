@@ -604,9 +604,12 @@ footer.site a.book-chip:hover { border-color: var(--accent); background: var(--a
 .book-head h2 { font-family: var(--display); font-weight: 600; font-size: 28px; letter-spacing: -.01em; margin: 0; }
 .book-head .meter { max-width: 260px; }
 
-/* Header Read menu: a book a line, read down two columns. */
-.dropdown.dd-read { width: 440px; }
-.dd-books { columns: 2; column-gap: 8px; }
+/* Header Read menu: a book a line under its testament, each testament
+   one or two columns wide (--cols) and read down its columns. */
+.dropdown.dd-read { width: auto; }
+.dd-testaments { display: flex; gap: 8px; }
+.dd-testaments .dd-col { width: calc(var(--cols) * 200px + (var(--cols) - 1) * 8px); }
+.dd-books { columns: var(--cols, 1); column-gap: 8px; }
 .dd-book { align-items: baseline; justify-content: space-between; padding: 7px 10px; break-inside: avoid; }
 .dd-count { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
 
@@ -699,6 +702,30 @@ footer.site a.book-chip:hover { border-color: var(--accent); background: var(--a
 .a-card.featured .a-title { font-size: clamp(26px, 4vw, 34px); max-width: 24ch; }
 .a-card.featured .a-summary { font-family: var(--serif); font-size: 19px; max-width: 60ch; color: var(--text); }
 .a-group { margin: 48px 0 0; }
+/* Articles page: links to the sections, then each section as compact rows,
+   two columns, a summary cut to two lines. */
+.a-jump ul { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 28px; padding: 0; }
+.a-jump a {
+  display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; border: 1px solid var(--line);
+  border-radius: 999px; background: var(--surface); color: var(--text); font-size: 14.5px; font-weight: 600;
+  text-decoration: none;
+}
+.a-jump a:hover { border-color: var(--accent); color: var(--accent); }
+.a-jump span { font-size: 13px; font-weight: 500; color: var(--muted); font-variant-numeric: tabular-nums; }
+.a-group { scroll-margin-top: calc(var(--header-h) + 16px); }
+.a-rows {
+  list-style: none; padding: 0; margin: 0; display: grid; gap: 0 32px;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+}
+.a-rows li { border-top: 1px solid var(--line); }
+.a-rows .a-card {
+  height: auto; padding: 16px 4px 18px; gap: 4px; border: 0; border-radius: 0; background: none; box-shadow: none;
+}
+.a-rows .a-card:hover { transform: none; box-shadow: none; }
+.a-rows .a-card:hover .a-title { color: var(--accent); }
+.a-rows .a-title { font-size: 19px; }
+.a-rows .a-summary { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.a-rows .a-meta { padding-top: 2px; }
 .a-group h2, .more h2 { font-family: var(--display); font-weight: 600; font-size: 26px; letter-spacing: -.01em; margin: 0 0 16px; }
 .latest > p, .more > p { margin: 16px 0 0; }
 
@@ -1002,6 +1029,8 @@ body.plain .text-tool { display: none; }
   }
   .dd-cols { grid-template-columns: 1fr; }
   .dd-books { columns: 1; }
+  .dd-testaments { display: block; }
+  .dd-testaments .dd-col { width: auto; }
   .dd-all { justify-content: flex-start; border-top: 0; padding: 8px 10px; }
 }
 @media (max-width: 1000px) {
