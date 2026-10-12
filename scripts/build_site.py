@@ -1237,33 +1237,69 @@ def about_page(lang="en"):
 
 
 ARTICLES = ROOT / "articles"
-_GREEK = re.compile(r"\{\{GREEK:([A-Z0-9]+)\.(\d+)\.(\d+):(\d+)(?:-(\d+))?\}\}")
-_LEMMA = re.compile(r"\{\{LEMMA:([A-Z0-9]+)\.(\d+)\.(\d+):(\d+)\}\}")
+_ORIGINAL = re.compile(r"\{\{(GREEK|HEBREW):([A-Z0-9]+)\.(\d+)\.(\d+):(\d+)(?:-(\d+))?\}\}")
+_LEMMA = re.compile(r"\{\{LEMMA:([A-Z0-9]+)\.(\d+)\.(\d+):(\d+)(?:\.(\d+))?\}\}")
 _OWB = re.compile(r"\{\{OWB:([A-Z0-9.]+\.s\d+):([LBR])\}\}")
+
+# How articles show each source language: the placeholder that quotes it,
+# the class and attributes of its spans, and how the data's words join.
+# Greek "after" holds punctuation that may lack its space; Hebrew "after"
+# is the exact join between parts of a word and between words (maqaf).
+ORIGINAL = {
+    "grc": {"tag": "GREEK", "name": "greek", "attrs": 'lang="grc"',
+            "join": lambda ws: " ".join([w["text"] + w["after"].rstrip() for w in ws[:-1]] + [ws[-1]["text"]])},
+    "hbo": {"tag": "HEBREW", "name": "hebrew", "attrs": 'lang="hbo" dir="rtl"',
+            "join": lambda ws: "".join(w["text"] + w["after"] for w in ws[:-1]) + ws[-1]["text"]},
+}
+
+
+@functools.lru_cache(maxsize=None)
+def _chapter_words(book, chapter):
+    return json.loads(words_path(book, chapter).read_text(encoding="utf-8"))["verses"]
 
 
 def _verse_words(book, chapter, verse):
-    """The MACULA words of one verse, from the committed extract."""
-    path = ROOT / "data" / "grc" / f"{book}.{chapter}.json"
-    verses = json.loads(path.read_text(encoding="utf-8"))["verses"]
+    """The MACULA words of one verse, from the committed extract: data/grc/
+    for the New Testament, data/hbo/ for the Old. A Hebrew word can be
+    several entries (prefixes, the word, suffixes) sharing one position."""
+    verses = _chapter_words(book, chapter)
     vid = f"{book}.{chapter}.{verse}"
     if vid not in verses:
-        raise SystemExit(f"{vid} is not in {path.name}; add it with scripts/extract_tokens.py")
+        raise SystemExit(f"{vid} is not in {words_path(book, chapter).name}; add it with scripts/extract_tokens.py")
     return verses[vid]
 
 
-def _greek(m):
-    """{{GREEK:JHN.1.1:14-17}}: words 14 to 17 of John 1:1 as the data has them."""
-    book, chapter, verse, a, b = m[1], int(m[2]), int(m[3]), int(m[4]), int(m[5] or m[4])
+def _original_span(book, text):
+    spec = ORIGINAL[source_language(book)]
+    return f'<span class="{spec["name"]}" {spec["attrs"]}>{html.escape(text)}</span>'
+
+
+def _original(m):
+    """{{GREEK:JHN.1.1:14-17}}: words 14 to 17 of John 1:1 as the data has
+    them; {{HEBREW:GEN.1.1:1-3}} the same for the Old Testament. The last
+    word's punctuation (a Hebrew verse's sof pasuq) is left off."""
+    tag, book, chapter, verse, a = m[1], m[2], int(m[3]), int(m[4]), int(m[5])
+    b = int(m[6] or a)
+    want = ORIGINAL[source_language(book)]["tag"]
+    if tag != want:
+        raise SystemExit(f"{m[0]}: {book} is quoted with {{{{{want}:..}}}}")
     words = [w for w in _verse_words(book, chapter, verse) if a <= w["position"] <= b]
-    text = " ".join(w["text"] + (w["after"].rstrip() if w["position"] < b else "") for w in words)
-    return f'<span class="greek" lang="grc">{html.escape(text)}</span>'
+    if not words:
+        raise SystemExit(f"{m[0]}: no such words")
+    return _original_span(book, ORIGINAL[source_language(book)]["join"](words))
 
 
 def _lemma(m):
-    """{{LEMMA:JHN.1.14:17}}: the dictionary form of word 17 of John 1:14."""
-    word = next(w for w in _verse_words(m[1], int(m[2]), int(m[3])) if w["position"] == int(m[4]))
-    return f'<span class="greek" lang="grc">{html.escape(word["lemma"])}</span>'
+    """{{LEMMA:JHN.1.14:17}}: the dictionary form of word 17 of John 1:14.
+    A Hebrew word made of several parts names the part:
+    {{LEMMA:GEN.1.1:1.2}} is the second part of word 1 of Genesis 1:1."""
+    book = m[1]
+    parts = [w for w in _verse_words(book, int(m[2]), int(m[3])) if w["position"] == int(m[4])]
+    chosen = parts[int(m[5]) - 1:int(m[5])] if m[5] else parts
+    if len(chosen) != 1:
+        found = ", ".join(f"{m[4]}.{i}" for i in range(1, len(parts) + 1))
+        raise SystemExit(f"{m[0]}: word {m[4]} has {len(parts)} parts; name one ({found})")
+    return _original_span(book, chosen[0]["lemma"])
 
 
 def _owb(m, lang="en"):
@@ -1304,15 +1340,16 @@ def verse_name(book, chapter, verse, lang="en"):
 
 
 def _quote_figure(body, inner, lang, text_language):
-    """A blockquote that is just one {{GREEK:..}} or {{OWB:..}} placeholder
+    """A blockquote that is just one {{GREEK:..}}, {{HEBREW:..}} or {{OWB:..}} placeholder
     becomes a figure captioned with its source, linked to the reader. The
     caption is in the article's language; the link goes to the reader in
     the page's."""
-    m = _GREEK.fullmatch(body)
+    m = _ORIGINAL.fullmatch(body)
     if m:
-        book, chapter, verse = m[1], int(m[2]), int(m[3])
-        source = t(text_language, "article.greek_source")
-        kind = "greek-quote"
+        book, chapter, verse = m[2], int(m[3]), int(m[4])
+        spec = ORIGINAL[source_language(book)]
+        kind, attrs = f'{spec["name"]}-quote', f' {spec["attrs"]}'
+        source = t(text_language, f'article.{spec["name"]}_source')
     else:
         m = _OWB.fullmatch(body)
         if not m:
@@ -1320,10 +1357,10 @@ def _quote_figure(body, inner, lang, text_language):
         ref = refs.parse(m[1].rsplit(".s", 1)[0])
         book, chapter, verse = ref.book, ref.chapter, ref.verse
         source = t(text_language, "article.owb_source", level=catalog(text_language)["levels"][m[2]])
-        kind = "owb-quote"
+        kind, attrs = "owb-quote", ""
     link = verse_link(book, chapter, verse, lang)
     more = f' <a href="{link}">{t(text_language, "article.read_with_reasoning")}</a>' if link else ""
-    return (f'<figure class="quote {kind}"><blockquote><p>{inner}</p></blockquote>'
+    return (f'<figure class="quote {kind}"><blockquote{attrs}><p>{inner}</p></blockquote>'
             f"<figcaption>{verse_name(book, chapter, verse, text_language)} &middot; {source}{more}</figcaption></figure>")
 
 
@@ -1339,7 +1376,7 @@ def _slug(text, taken):
 def article_html(text, toc=None, lang="en", text_language="en"):
     """Markdown for articles: ## and ### headings, paragraphs, - lists,
     > quotes, **bold**, *italic*, [links](url), and placeholders that pull
-    Greek words ({{GREEK:..}}, {{LEMMA:..}}) and our own translation
+    Greek and Hebrew words ({{GREEK:..}}, {{HEBREW:..}}, {{LEMMA:..}}) and our own translation
     ({{OWB:..}}) from the data, so none of it is typed by hand. The text is
     in text_language, on a page in lang: links to the site go to its pages
     in lang."""
@@ -1353,7 +1390,7 @@ def article_html(text, toc=None, lang="en", text_language="en"):
         return url(lang, target) if target.startswith("/") else target
 
     def inline(s):
-        s = _GREEK.sub(lambda m: hold(_greek(m)), s)
+        s = _ORIGINAL.sub(lambda m: hold(_original(m)), s)
         s = _LEMMA.sub(lambda m: hold(_lemma(m)), s)
         s = _OWB.sub(lambda m: hold(_owb(m, text_language)), s)
         s = re.sub(r"\]\(([^)\s]+)\)", lambda m: "](" + hold(html.escape(href(m[1]))) + ")", s)
@@ -1404,8 +1441,8 @@ def article_passages(body):
     """The verses an article quotes, from its placeholders, as
     [(book, chapter, [verses])] in canonical order."""
     found = set()
-    for m in _GREEK.finditer(body):
-        found.add((m[1], int(m[2]), int(m[3])))
+    for m in _ORIGINAL.finditer(body):
+        found.add((m[2], int(m[3]), int(m[4])))
     for m in _LEMMA.finditer(body):
         found.add((m[1], int(m[2]), int(m[3])))
     for m in _OWB.finditer(body):
