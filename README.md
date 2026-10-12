@@ -36,9 +36,9 @@ and whether it is uncertain or needs a footnote.
 Content, by book (`content/<BOOK>/`), all drafted in English, with other
 languages where named:
 
-- Old Testament: Genesis 1–12 (1–11 also in Spanish), Exodus 1–8,
+- Old Testament: Genesis 1–15 (1–11 also in Spanish), Exodus 1–8,
   Psalms 1–9 and Proverbs 1–10.
-- Gospels and Acts: Matthew 1–9, Mark 1–6, Luke 1–6, John 1–16 (1–15 also in
+- Gospels and Acts: Matthew 1–9, Mark 1–6, Luke 1–6, John 1–20 (1–15 also in
   Spanish; 1–13 in Swahili; 1–2 in French) and Acts 1–3.
 - Letters: Romans 1–4 and 9–16 (most of it also in Spanish and Swahili); all
   of 1 and 2 Corinthians, Galatians, Ephesians, Philippians (chapter 4 also in
