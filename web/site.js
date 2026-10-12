@@ -377,3 +377,14 @@
     caches.match(a.getAttribute("href")).then(function (hit) { a.hidden = !hit; });
   });
 })();
+
+// The footer's "Report a problem" (footer_links in scripts/build_site.py)
+// opens a GitHub issue that already names the page it was reported from.
+(function () {
+  "use strict";
+  document.querySelectorAll("a[data-report]").forEach(function (a) {
+    var title = document.title.replace(/\s*[·|–-]\s*Open Word Bible$/, "");
+    a.href += "?title=" + encodeURIComponent(title + ": ") +
+      "&body=" + encodeURIComponent("Page: " + location.origin + location.pathname + "\n\nWhat's wrong:\n");
+  });
+})();
