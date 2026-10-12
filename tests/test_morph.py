@@ -33,6 +33,7 @@ class MorphTest(unittest.TestCase):
             "P-1DS": "Personal pronoun · 1st person dative singular",
             "PRT-N": "Particle · negative",
             "V-RAI-3S-ATT": "Verb · perfect active indicative · 3rd person singular · Attic form",
+            "V-RAN-ATT": "Verb · perfect active infinitive · Attic form",
             # Codes not in today's passages, so the next ones do not break the build.
             "N-PRI": "Noun · proper name, indeclinable",
             "A-NUI": "Adjective · number, indeclinable",
