@@ -42,6 +42,13 @@ Rules the software enforces are marked **(checked)**.
   so a Hebrew record is one whole verse, or several where one sentence runs
   across them. **(checked)** A sentence that continues into the next verse ends
   its record with a comma at Literal and Balanced (Genesis 1:14, 1:17, 1:29).
+- **Psalms.** Verses are numbered as in the Hebrew text, where a psalm's title
+  is verse 1 (Psalm 3:1 is "A psalm of David ..."), so from Psalm 3 on many
+  verse numbers are one higher than in most English Bibles. The title is its
+  own record, translated at every level, and the first record's decisions say
+  so. Cite other psalms by the Hebrew numbers too (Psalm 31:14, not 31:13).
+  *Selah* stays "Selah" at every level, at the end of its line, with a meaning
+  decision that its sense is unknown.
 
 ## 3. The literal gloss
 
@@ -197,7 +204,7 @@ reviewer approves it, and an AI never changes a status.
 
 ## 9. Section headings
 
-Headings are editorial aids, not translation (`data/headings.json`). Readers
+Headings are editorial aids, not translation (`data/headings/<BOOK>.json`). Readers
 can hide them, and every heading stays an AI draft until a named reviewer
 approves it.
 
