@@ -93,8 +93,9 @@ class SearchTest(unittest.TestCase):
             docs = self.index(lang)["docs"]
             self.assertEqual(sum(d["k"] == "a" for d in docs), len(build_site.load_articles(lang)))
             self.assertEqual(sum(d["k"] == "c" for d in docs), len(build_site.passages()))
-            article = next(d for d in docs if d["k"] == "a")
-            self.assertNotIn("{{", article["x"])
+            for article in (d for d in docs if d["k"] == "a"):
+                self.assertNotIn("{{", article["x"])
+                self.assertNotIn("l", article)
 
     def test_book_names_and_abbreviations(self):
         books = {b["code"]: b for b in self.index("es")["books"]}
