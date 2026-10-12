@@ -54,7 +54,7 @@ Psalms 1–5 (`content/PSA/`) are drafted in English.
 
 Exodus 1–4 (`content/EXO/`) is drafted in English.
 
-Proverbs 1–5 (`content/PRO/`) is drafted in English.
+Proverbs 1–6 (`content/PRO/`) is drafted in English.
 
 All of Hebrews (`content/HEB/`) is drafted in English, Spanish, Swahili and French.
 
