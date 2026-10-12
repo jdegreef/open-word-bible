@@ -1244,3 +1244,30 @@ mark.q-hit { box-shadow: inset 0 -2px 0 var(--gold); border-radius: 2px; }
 @media (prefers-reduced-motion: reduce) {
   .palette-box { animation: none; }
 }
+
+/* Listen (web/reader.js): the sentence being read, and the bar at the foot
+   of the window. It sits under the notes sheet on phones. */
+.verse.speaking { background: var(--accent-soft); box-shadow: 0 2px 0 var(--accent); }
+.chap-listen[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
+body.listening { padding-bottom: calc(var(--listen-h, 64px) + 12px); }
+.listen-bar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 25;
+  padding: 8px 16px calc(8px + env(safe-area-inset-bottom));
+  background: var(--surface); border-top: 1px solid var(--line); box-shadow: 0 -6px 20px rgba(0, 0, 0, .08);
+}
+.listen-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; max-width: 760px; margin: 0 auto; }
+.listen-btn, .listen-rate {
+  display: inline-grid; place-items: center; min-width: 40px; height: 40px; padding: 0 8px;
+  border: 1px solid var(--line-strong); border-radius: 999px; background: var(--surface); color: var(--text);
+  font: inherit; font-size: 14px; font-weight: 600; font-variant-numeric: tabular-nums; cursor: pointer;
+}
+.listen-btn:hover, .listen-rate:hover { border-color: var(--accent); color: var(--accent); }
+.listen-btn svg { width: 18px; height: 18px; fill: currentColor; stroke: currentColor; stroke-width: 1.5; stroke-linejoin: round; stroke-linecap: round; }
+.listen-play { background: var(--accent); border-color: var(--accent); color: var(--accent-contrast); }
+.listen-where { flex: 1; min-width: 0; font-size: 14px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.listen-voice { max-width: 160px; height: 40px; border: 1px solid var(--line-strong); border-radius: 999px; padding: 0 10px; background: var(--surface); color: var(--text); font: inherit; font-size: 13px; }
+.listen-note { max-width: 760px; margin: 8px auto 0; font-size: 14px; color: var(--muted); }
+@media (max-width: 560px) {
+  /* On phones the voice menu takes its own row. */
+  .listen-voice { order: 1; flex: 1 0 100%; max-width: none; }
+}
