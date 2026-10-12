@@ -198,7 +198,7 @@ def asset(name):
 
 # Colour modes (see web/style.css and web/site.js): value, and the
 # background and accent its swatch shows. Labels are in i18n/ (theme.*).
-# "auto" follows the device.
+# "light" (Paper) is the default; "auto" follows the device.
 COLOUR_MODES = (("auto", "#faf6ef", "#16130f"),
                 ("light", "#faf6ef", "#3f3d9a"),
                 ("sepia", "#f4ecd8", "#3f3d9a"),
@@ -220,7 +220,7 @@ DISPLAY_PREFS = (("size", "m", ("s", "m", "l", "xl")),
 # Applies the saved colour mode and display settings before the first paint,
 # so a page never flashes the default colours or text. Mirrors web/site.js.
 BOOT_SCRIPT = ("try{var d=document.documentElement,t=localStorage.getItem('owb-theme');"
-               "if(['light','sepia','dark','night','contrast'].indexOf(t)>=0)"
+               "if(['auto','light','sepia','dark','night','contrast'].indexOf(t)>=0)"
                "d.setAttribute('data-theme',t);"
                "var p={" + ",".join(f"{name}:{[v for v in values if v != default]!r}"
                                    for name, default, values in DISPLAY_PREFS) + "};"
@@ -300,7 +300,7 @@ def colour_menu(lang, path=None, translated=LANGUAGES):
                 f'<div role="radiogroup" aria-labelledby="prefs-{pref}" data-pref="{pref}" data-default="{default}">'
                 + "".join(option(v, default, face, name) for v, face, name in options) + '</div>')
 
-    theme = group("theme", t(lang, "tools.theme"), "auto", [
+    theme = group("theme", t(lang, "tools.theme"), "light", [
         (v, f'<span class="swatch" style="--sw-bg:{bg};--sw-accent:{accent}" aria-hidden="true"></span>',
          t(lang, "theme." + v)) for v, bg, accent in COLOUR_MODES])
     def sample(pref, value):
@@ -1080,7 +1080,7 @@ def disputed(vid):
 
 # Verses that are only a psalm's title ("A psalm of David ..."), which the
 # Hebrew text counts as verse 1. A chapter's cards quote the psalm itself.
-TITLES = {"PSA.3.1", "PSA.4.1", "PSA.5.1"}
+TITLES = {"PSA.3.1", "PSA.4.1", "PSA.5.1", "PSA.6.1"}
 
 
 def opening(records, chapter):
