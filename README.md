@@ -50,7 +50,7 @@ drafting it and `data/key_terms.json` the settled key terms.
 
 Matthew 1–9 (`content/MAT/`) is drafted in English.
 
-Psalms 1–6 (`content/PSA/`) are drafted in English.
+Psalms 1–9 (`content/PSA/`) are drafted in English.
 
 Exodus 1–8 (`content/EXO/`) is drafted in English.
 
