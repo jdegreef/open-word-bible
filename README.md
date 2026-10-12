@@ -33,26 +33,25 @@ Decisions come in two layers:
 Each decision names its tokens, category, choice, alternatives and reason,
 and whether it is uncertain or needs a footnote.
 
-Content: Genesis 1–8 (`content/GEN/`) in English and Spanish; John 1–8
-(`content/JHN/`) in English, with chapters 1–5 also in Spanish, chapters
-1–2 in French and chapters 1–11 in Swahili; Romans 1–3 and 9–16 (`content/ROM/`) in
-English; all of 1 and 2 Corinthians (`content/1CO/`,
-`content/2CO/`) in English; all of Galatians (`content/GAL/`) in English; all of Philippians (`content/PHP/`) in English, with chapter 4
-also in Spanish; all of Ephesians (`content/EPH/`), Colossians
-(`content/COL/`), 1 Thessalonians (`content/1TH/`) and Philemon (`content/PHM/`) in English; and all of James, 1 and 2 Peter and 1, 2 and 3
-John (`content/JAS/`, `content/1PE/`, `content/2PE/`, `content/1JN/`,
-`content/2JN/`, `content/3JN/`) in English. English runs
-ahead of the other languages; `docs/english-style.md` is the brief for
-drafting it and `data/key_terms.json` the settled key terms.
-`docs/corinthians-terms.md` proposes the recurring choices for 1 and 2 Corinthians.
-`docs/french-style.md` and
-`docs/swahili-style.md` are the briefs for French and Swahili.
+`content/<BOOK>/` holds the translation, one folder per book. What is
+drafted, and in which languages, is listed on the site's Read page
+(<https://openwordbible.org/read/>), built from `content/` itself, so this
+README does not keep a list that every new chapter would have to edit.
+English runs ahead of the other languages; `docs/english-style.md` is the
+brief for drafting it and `data/key_terms.json` the settled key terms.
+`docs/corinthians-terms.md` proposes the recurring choices for 1 and 2
+Corinthians. `docs/french-style.md` and `docs/swahili-style.md` are the
+briefs for French and Swahili.
 
-Matthew 1–8 (`content/MAT/`) is drafted in English.
+Adding a book needs no shared file edited: `data/books.json` already lists
+all 66 books (names in each language, chapter counts), section headings go
+in `data/headings/<BOOK>.json`, and each share card's digest sits in its own
+`web/og/<card>.digest`. Two pull requests that add different chapters touch
+different files, so they don't conflict.
 
-Luke 1–9 (`content/LUK/`) are drafted in English.
-
-Psalms 1–4 (`content/PSA/`) are drafted in English.
+Old Testament verses are numbered as in the Hebrew text (a psalm's title is
+verse 1), not as in English Bibles; `data/versification.json` maps one to the
+other (`owb/versification.py`).
 
 A record is one sentence of the source, not one verse. It ends where the
 SBLGNT ends a sentence: a full stop, a question mark, or a raised dot (·)
@@ -96,7 +95,7 @@ default and at least one distinct, non-empty alternative, and a
 The reader breaks the text into paragraphs where SBLGNT does: SBLGNT
 capitalises a paragraph's first word (`paragraph_starts` in
 `scripts/build_site.py`). Section headings are editorial aids, not
-translation: `data/headings.json` keys each one by the record it stands
+translation: `data/headings/<BOOK>.json` keys each one by the record it stands
 above, per language, and they stay AI drafts until a named reviewer
 approves them. A page shows a heading only in the language its sentence is
 shown in.
@@ -144,6 +143,7 @@ Other tools:
     python3 scripts/build_skeleton.py JHN.1.3 JHN.1.5 -o new.json
     python3 -m owb.validate content/JHN/*.json
     python3 scripts/extract_tokens.py         # refresh data/grc/ and data/hbo/ after adding verses
+    python3 scripts/build_versification.py    # rebuild data/versification.json after a source update
 
 ## The site
 
@@ -175,8 +175,8 @@ An article is translated by adding `articles/<lang>/<slug>.md` with the same
 slug. Until then, the other language's page shows the English under a note,
 names the English page as canonical and stays out of the sitemap.
 
-To add a language: add it to `LANGUAGES` and `BOOK_NAMES` in
-`scripts/build_site.py`, write `i18n/<lang>.json`, add its words to
+To add a language: add it to `LANGUAGES` in `scripts/build_site.py` and
+every book's name in it to `data/books.json`, write `i18n/<lang>.json`, add its words to
 `owb/morph.py`, and add it to `Role.READING_LANGUAGES` and the role
 constraint in `backend/accounts/models.py` (with a migration) so it can have
 language reviewers. A drafting brief in `docs/<language>-style.md` settles

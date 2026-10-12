@@ -100,8 +100,9 @@
 
 /* Colour modes, shared with Ochorus: indigo with a gold accent. The reader
    picks one from the gear menu (web/site.js), which sets data-theme on
-   <html>; with no choice, the page follows the device's light or dark
-   setting. Every mode defines the same tokens. */
+   <html>; with no choice, the page is Paper (light). "Automatic"
+   (data-theme="auto") follows the device's light or dark setting. Every
+   mode defines the same tokens. */
 :root, :root[data-theme="light"] {
   color-scheme: light;
   --bg: #faf6ef;
@@ -123,7 +124,7 @@
   --shadow-pop: 0 14px 36px -8px rgb(90 70 40 / .25);
 }
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme]) {
+  :root[data-theme="auto"] {
     color-scheme: dark;
     --bg: #16130f;
     --surface: #201b15;
@@ -360,6 +361,21 @@ header.site .tools { display: flex; align-items: center; gap: 8px; flex: none; }
 .prefs-menu [role="radiogroup"] { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
 .prefs-menu [role="radiogroup"] + .prefs-label { margin-top: 16px; }
 .prefs-menu [data-pref="size"] { grid-template-columns: repeat(4, 1fr); }
+.prefs-menu [data-pref="motion"] { grid-template-columns: repeat(2, 1fr); }
+.prefs-menu [data-pref="motion"] button { padding: 9px 4px; }
+/* The language links: tiles like the settings', the page's own language
+   marked as chosen. */
+.prefs-langs { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+.prefs-langs a, .prefs-langs span[aria-current] {
+  position: relative; display: block; padding: 9px 4px; border: 1px solid var(--line); border-radius: var(--radius-sm);
+  color: var(--text); font-size: 12.5px; line-height: 1.2; text-align: center; text-decoration: none;
+}
+.prefs-langs a:hover { background: var(--accent-soft); }
+.prefs-langs span[aria-current] {
+  background: var(--accent-soft); color: var(--accent); font-weight: 600;
+  border-color: var(--accent); box-shadow: inset 0 0 0 .5px var(--accent);
+}
+.prefs-menu .prefs-langs .check { position: absolute; top: 4px; right: 6px; font-size: 11px; visibility: visible; }
 .prefs-menu [data-pref]:not([data-pref="theme"]) button { gap: 4px; padding: 7px 2px 6px; font-size: 11.5px; }
 .prefs-menu button {
   position: relative; display: flex; flex-direction: column; align-items: center; gap: 7px; width: 100%; padding: 10px 4px 8px;
@@ -990,6 +1006,11 @@ footer.site a.book-chip:hover { border-color: var(--accent); background: var(--a
   header.site .tools { gap: 4px; }
   .tool-btn { width: 34px; height: 34px; }
 }
+/* Reduced motion, from the device or the gear menu's Motion setting
+   (data-motion="reduce"), which turns off every transition and animation. */
+:root[data-motion="reduce"] *, :root[data-motion="reduce"] *::before, :root[data-motion="reduce"] *::after {
+  animation: none !important; transition: none !important; scroll-behavior: auto !important;
+}
 @media (prefers-reduced-motion: reduce) {
   .dropdown, .button, .a-card, .nav-link .caret { animation: none; transition: none; }
 }
@@ -1162,7 +1183,7 @@ html.signed-in .sign-in-btn { visibility: hidden; }
 .danger { border-color: color-mix(in srgb, #b3261e 35%, var(--line)); }
 .danger h2 { color: #b3261e; }
 :root[data-theme="dark"] .danger h2, :root[data-theme="night"] .danger h2, :root[data-theme="contrast"] .danger h2 { color: #f2938c; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme]) .danger h2 { color: #f2938c; } }
+@media (prefers-color-scheme: dark) { :root[data-theme="auto"] .danger h2 { color: #f2938c; } }
 .danger-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 20px; padding: 14px 0; border-top: 1px solid var(--line); }
 .danger-row:first-of-type { border-top: 0; padding-top: 0; }
 .danger-row h3 { font-size: 16px; margin: 0 0 4px; }
@@ -1410,3 +1431,37 @@ body.listening { padding-bottom: calc(var(--listen-h, 64px) + 12px); }
   /* On phones the voice menu takes its own row. */
   .listen-voice { order: 1; flex: 1 0 100%; max-width: none; }
 }
+
+/* Bookmarks and highlights (web/reader.js; the saved verses page in
+   web/site.js). A highlight is a translucent wash, so it reads in every
+   colour mode. */
+.hl-yellow { --hl: rgba(245, 197, 24, .38); }
+.hl-green { --hl: rgba(76, 175, 80, .32); }
+.hl-blue { --hl: rgba(79, 143, 247, .32); }
+.hl-pink { --hl: rgba(236, 92, 154, .30); }
+.verse[class*="hl-"] { background: var(--hl); border-radius: 3px; }
+.verse[class*="hl-"]:hover { background: var(--hl); filter: saturate(1.4); }
+/* The verse chosen keeps its highlight and is underlined instead. */
+.verse[aria-current="true"][class*="hl-"] { box-shadow: inset 0 -3px 0 var(--accent); }
+.verse.bookmarked > sup:not(.fn):first-child::before { content: "\25C6\00a0"; color: var(--accent); font-size: .85em; }
+.mark-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin: 4px 0 16px; }
+.mark-bookmark {
+  display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border: 1px solid var(--line-strong);
+  border-radius: 999px; background: var(--surface); color: var(--text); font: inherit; font-size: 13px; font-weight: 600; cursor: pointer;
+}
+.mark-bookmark::before { content: ""; width: 10px; height: 13px; background: currentColor; clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 72%, 0 100%); opacity: .35; }
+.mark-bookmark[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
+.mark-bookmark[aria-pressed="true"]::before { opacity: 1; }
+.mark-hues { display: inline-flex; gap: 6px; }
+.mark-hue { width: 26px; height: 26px; border-radius: 50%; border: 1px solid var(--line-strong); background: var(--hl); cursor: pointer; padding: 0; }
+.mark-hue[aria-pressed="true"] { box-shadow: 0 0 0 2px var(--surface), 0 0 0 4px var(--accent); }
+.mark-all { margin-left: auto; font-size: 13px; }
+.saved-filter { margin: 0 0 24px; }
+.saved-book { font-family: var(--display); font-weight: 600; font-size: 24px; margin: 28px 0 12px; }
+.saved-items { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.saved-item { padding: 14px 18px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: inset 4px 0 0 var(--hl, transparent); }
+.saved-head { display: flex; align-items: center; gap: 10px; margin: 0; }
+.saved-head a { font-weight: 700; }
+.saved-flag { font-size: 12px; color: var(--accent); }
+.saved-remove { margin-left: auto; border: 0; background: none; color: var(--muted); font: inherit; font-size: 13px; cursor: pointer; text-decoration: underline; }
+.saved-text { margin: 8px 0 0; font-family: var(--read-font, var(--serif)); line-height: 1.6; }
