@@ -114,6 +114,11 @@ def rebuild():
             || setweight(to_tsvector(config::regconfig, extra), 'B')
             || setweight(to_tsvector(config::regconfig, body), 'C')
             || setweight(to_tsvector('{SIMPLE}', concat_ws(' ', title, extra, body)), 'D')""")
+        # Fresh statistics for the planner. Without them it still sees the
+        # tables as they were before the rebuild (empty on a first import, and
+        # always inside the rebuild's own transaction, which autovacuum can't
+        # see) and picks plans that take minutes instead of milliseconds.
+        cursor.execute(f"ANALYZE {SearchEntry._meta.db_table}, {SearchWord._meta.db_table}")
     return counts
 
 

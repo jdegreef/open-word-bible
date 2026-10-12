@@ -4,7 +4,9 @@ data/grc/ and data/hbo/."""
 import io
 import json
 import tempfile
+from contextlib import nullcontext
 from pathlib import Path
+from unittest import mock
 
 from django.conf import settings
 from django.contrib.auth import get_user_model
@@ -29,23 +31,30 @@ def load_extract_words(languages=("grc", "hbo")):
                                       kind="original", licence="Public domain", source="macula-hebrew",
                                       source_commit="test"),
     }
-    seq = 0
+    words, seq = [], 0
     for folder, edition in editions.items():
         if folder not in languages:
             continue
         for path in sorted((settings.REPO_ROOT / "data" / folder).glob("*.json")):
-            for vid, words in json.loads(path.read_text(encoding="utf-8"))["verses"].items():
+            for vid, verse_words in json.loads(path.read_text(encoding="utf-8"))["verses"].items():
                 book, chapter, verse = vid.split(".")
-                for w in words:
+                for w in verse_words:
                     # Hebrew extracts carry each morpheme's language (H or A).
-                    Word.objects.create(edition=edition, book=book, chapter=int(chapter),
-                                        verse=int(verse), seq=seq, **{"lang": folder, **w})
+                    words.append(Word(edition=edition, book=book, chapter=int(chapter),
+                                      verse=int(verse), seq=seq, **{"lang": folder, **w}))
                     seq += 1
+    # One insert per batch, not per word: the extracts grow with every chapter
+    # added, and row-by-row inserts had made the suite outrun CI.
+    Word.objects.bulk_create(words, batch_size=5000)
     return editions["grc"]
 
 
-def import_content(*paths):
-    call_command("import_content", *paths, stdout=io.StringIO(), stderr=io.StringIO())
+def import_content(*paths, search=False):
+    """Run import_content. Its closing search rebuild is the slowest step and
+    only the search tests need it, so it is skipped unless search=True."""
+    skip = mock.patch("translation.search.rebuild", return_value={}) if not search else nullcontext()
+    with skip:
+        call_command("import_content", *paths, stdout=io.StringIO(), stderr=io.StringIO())
 
 
 class ImportContentTest(TestCase):
@@ -86,6 +95,8 @@ class ImportContentTest(TestCase):
         self.assertEqual(Sentence.objects.count(), 0)
 
 
+# These call the deploy command directly; none of them is about search.
+@mock.patch("translation.search.rebuild", new=lambda: {})
 class FreshDatabaseTest(TestCase):
     def test_deploy_import_skips_until_texts_are_loaded(self):
         out = io.StringIO()

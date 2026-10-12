@@ -40,6 +40,8 @@ jobs:
   backend:
     name: Backend (Django + Postgres)
     runs-on: ubuntu-latest
+    # Fail rather than run for hours if the suite stalls or outgrows CI.
+    timeout-minutes: 30
     services:
       postgres:
         image: postgres:16
@@ -64,4 +66,5 @@ jobs:
       - name: Migrations are up to date
         run: python backend/manage.py makemigrations --check --dry-run
       - name: Backend tests
-        run: python backend/manage.py test backend_tests
+        # -v 2 names each test as it runs, so a slow or stuck one shows in the log.
+        run: python backend/manage.py test backend_tests -v 2 --durations 10
