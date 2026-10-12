@@ -114,6 +114,12 @@ def rebuild():
             || setweight(to_tsvector(config::regconfig, extra), 'B')
             || setweight(to_tsvector(config::regconfig, body), 'C')
             || setweight(to_tsvector('{SIMPLE}', concat_ws(' ', title, extra, body)), 'D')""")
+        # Fresh statistics for the planner. Without them it can take the
+        # tables for empty (after the delete above, or a vacuum that ran
+        # while they were) and plan a search that ranks every match once
+        # for every entry: hours instead of milliseconds.
+        for model in (SearchEntry, SearchWord, SearchLanguage):
+            cursor.execute(f"ANALYZE {model._meta.db_table}")
     return counts
 
 
@@ -169,10 +175,10 @@ def _rows(sql, params):
         return cursor.fetchall()
 
 
-def _headline():
+def _headline(e="e"):
     """A short passage of a note's reason or an article's text around the
-    match, with the matches marked ⟦ ⟧."""
-    return ("CASE WHEN e.kind IN ('n', 'a') THEN ts_headline(e.config::regconfig, e.body, q.query, "
+    match, with the matches marked ⟦ ⟧ (e is the entry's table alias)."""
+    return (f"CASE WHEN {e}.kind IN ('n', 'a') THEN ts_headline({e}.config::regconfig, {e}.body, q.query, "
             "'StartSel=⟦, StopSel=⟧, MinWords=18, MaxWords=40, ShortWord=2, "
             "MaxFragments=1, FragmentDelimiter=\" … \"') END")
 
@@ -196,13 +202,14 @@ def counts(lang, query_sql, params):
 
 def best_of_each(lang, query_sql, params, per):
     """The best `per` documents of each kind."""
-    rows = _rows(f"""WITH q AS (SELECT {query_sql} AS query),
-        hits AS (
-          SELECT e.id, e.kind, row_number() OVER (
+    # One pass over the matches, with no join back to the table: a join
+    # lets the planner rank every match again for each row it joins.
+    rows = _rows(f"""WITH q AS (SELECT {query_sql} AS query)
+        SELECT h.doc, {_headline("h")} FROM (
+          SELECT e.doc, e.kind, e.config, e.body, row_number() OVER (
             PARTITION BY e.kind ORDER BY ts_rank_cd(e.vector, q.query) DESC, e.position) AS n
-          FROM {_table()} e, q WHERE e.language = %s AND e.vector @@ q.query)
-        SELECT e.doc, {_headline()} FROM hits h JOIN {_table()} e ON e.id = h.id, q
-        WHERE h.n <= %s ORDER BY e.kind = 'c' DESC, e.kind = 'v' DESC, e.kind = 'n' DESC, h.n""",
+          FROM {_table()} e, q WHERE e.language = %s AND e.vector @@ q.query) h, q
+        WHERE h.n <= %s ORDER BY h.kind = 'c' DESC, h.kind = 'v' DESC, h.kind = 'n' DESC, h.n""",
                  [*params, lang, per])
     return [_result(doc, hl) for doc, hl in rows]
 
