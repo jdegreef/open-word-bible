@@ -50,6 +50,25 @@ class ArticlesTest(unittest.TestCase):
         for path in (self.out / "articles").rglob("index.html"):
             self.assertNotIn("{{", path.read_text(encoding="utf-8"), path)
 
+    def test_hebrew_placeholders_are_filled_from_the_data(self):
+        # Genesis 1:1 word 1 is two parts (a prefix and the noun) sharing a
+        # position; the quote keeps the joins but not the closing sof pasuq.
+        words = build_site._verse_words("GEN", 1, 1)
+        last = max(w["position"] for w in words)
+        parts = [w for w in words if w["position"] >= last - 1]
+        expected = "".join(w["text"] + w["after"] for w in parts[:-1]) + parts[-1]["text"]
+        page = build_site.article_html(f"> {{{{HEBREW:GEN.1.1:{last - 1}-{last}}}}}")
+        self.assertIn(f'<span class="hebrew" lang="hbo" dir="rtl">{expected}</span>', page)
+        self.assertIn('class="quote hebrew-quote"', page)
+        self.assertIn(f"Genesis 1:1 &middot; {build_site.t('en', 'article.hebrew_source')}", page)
+        self.assertEqual(build_site.article_passages("{{HEBREW:GEN.1.1:1}}"), [("GEN", 1, [1])])
+        first = [w for w in words if w["position"] == 1]
+        self.assertGreater(len(first), 1)
+        self.assertIn(first[1]["lemma"], build_site.article_html("{{LEMMA:GEN.1.1:1.2}}"))
+        for wrong in ("{{LEMMA:GEN.1.1:1}}", "{{GREEK:GEN.1.1:1}}", "{{HEBREW:JHN.1.1:1}}"):
+            with self.assertRaises(SystemExit, msg=wrong):
+                build_site.article_html(wrong)
+
     def test_internal_links_resolve(self):
         for path in (self.out / "articles").rglob("index.html"):
             for href in re.findall(r'href="(/[^"#?]*)', path.read_text(encoding="utf-8")):
