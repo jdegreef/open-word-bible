@@ -50,7 +50,7 @@ drafting it and `data/key_terms.json` the settled key terms.
 
 Matthew 1–4 (`content/MAT/`) is drafted in English.
 
-Psalms 1–4 (`content/PSA/`) are drafted in English.
+Psalms 1–5 (`content/PSA/`) are drafted in English.
 
 A record is one sentence of the source, not one verse. It ends where the
 SBLGNT ends a sentence: a full stop, a question mark, or a raised dot (·)
