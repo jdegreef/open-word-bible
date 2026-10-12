@@ -53,8 +53,6 @@ Old Testament verses are numbered as in the Hebrew text (a psalm's title is
 verse 1), not as in English Bibles; `data/versification.json` maps one to the
 other (`owb/versification.py`).
 
-Revelation 1–8 (`content/REV/`) are drafted in English.
-
 A record is one sentence of the source, not one verse. It ends where the
 SBLGNT ends a sentence: a full stop, a question mark, or a raised dot (·)
 where the next clause stands on its own. So a verse may hold two records
