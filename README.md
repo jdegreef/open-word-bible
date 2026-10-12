@@ -41,7 +41,7 @@ English; all of 1 and 2 Corinthians (`content/1CO/`,
 also in Spanish; all of Ephesians (`content/EPH/`), Colossians
 (`content/COL/`), 1 Thessalonians (`content/1TH/`) and Philemon (`content/PHM/`) in English; and all of James, 1 and 2 Peter and 1, 2 and 3
 John (`content/JAS/`, `content/1PE/`, `content/2PE/`, `content/1JN/`,
-`content/2JN/`, `content/3JN/`) in English. English runs
+`content/2JN/`, `content/3JN/`) and Jude (`content/JUD/`) in English. English runs
 ahead of the other languages; `docs/english-style.md` is the brief for
 drafting it and `data/key_terms.json` the settled key terms.
 `docs/corinthians-terms.md` proposes the recurring choices for 1 and 2 Corinthians.
