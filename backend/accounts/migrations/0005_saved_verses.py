@@ -8,7 +8,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('accounts', '0003_swahili_language_reviewers'),
+        ('accounts', '0004_passwords_and_google'),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 

@@ -16,7 +16,7 @@
   function t(key) { return HEBREW && (key + "_hbo") in UI ? UI[key + "_hbo"] : UI[key]; }
 
   // The reading language is the page's (/es/... is Spanish); the footer
-  // switches it. The other settings are kept across pages and languages.
+  // switches it. The other settings are savedMarks across pages and languages.
   var settings = { level: "B", gender: 0, christos: 0, divine_name: 0, deity_pronoun: 0, units: 0, plural_you: 0, view: 0,
                    headings: 0, uncertain: 0, partner: "" };
   try {
@@ -64,11 +64,11 @@
   }
 
   // Bookmarks and highlights: with the account's API when signed in
-  // (backend/accounts), otherwise kept on this device. {verse id: {bookmark:
+  // (backend/accounts), otherwise savedMarks on this device. {verse id: {bookmark:
   // true, highlight: "yellow"}} for this chapter.
   var API = (document.querySelector('meta[name="owb-api"]') || {}).content;
   var SAVED_KEY = "owb.saved";
-  var kept = {};
+  var savedMarks = {};
   function account() {
     try { return JSON.parse(localStorage.getItem("owb.account") || "null"); } catch (e) { return null; }
   }
@@ -108,12 +108,12 @@
 
   function loadMarks() {
     var mine = local();
-    kept = {};
+    savedMarks = {};
     Object.keys(mine).forEach(function (id) {
-      if (id.indexOf(chapterKey() + ".") === 0) kept[verseOn(id)] = mine[id];
+      if (id.indexOf(chapterKey() + ".") === 0) savedMarks[verseOn(id)] = mine[id];
     });
     if (!signedIn()) return Promise.resolve();
-    // Moving what this device kept to the account, then the account's own.
+    // Moving what this device savedMarks to the account, then the account's own.
     var moves = [];
     Object.keys(mine).forEach(function (id) {
       if (mine[id].bookmark) moves.push(api("/api/saved/" + id + "/bookmark", "PUT", {}));
@@ -123,18 +123,18 @@
       storeLocal({});
       return api("/api/saved?chapter=" + chapterKey());
     }).then(function (items) {
-      kept = {};
+      savedMarks = {};
       items.forEach(function (it) {
-        var v = verseOn(it.verse), m = kept[v] = kept[v] || {};
+        var v = verseOn(it.verse), m = savedMarks[v] = savedMarks[v] || {};
         if (it.kind === "bookmark") m.bookmark = true; else m.highlight = it.colour;
       });
     }).catch(function () { /* offline or signed out: what this device has */ });
   }
 
   function setMark(verse, kind, value) {
-    var id = verseId(verse), m = kept[verse] = kept[verse] || {};
+    var id = verseId(verse), m = savedMarks[verse] = savedMarks[verse] || {};
     m[kind] = value;
-    if (!m.bookmark && !m.highlight) delete kept[verse];
+    if (!m.bookmark && !m.highlight) delete savedMarks[verse];
     var done;
     if (signedIn()) {
       done = value ? api("/api/saved/" + id + "/" + kind, "PUT", kind === "highlight" ? { colour: value } : {})
@@ -146,7 +146,7 @@
       storeLocal(all);
       done = Promise.resolve();
     }
-    done.catch(function () { /* kept on the page; tried again when changed */ });
+    done.catch(function () { /* savedMarks on the page; tried again when changed */ });
     drawText();
     drawPanel();
   }
@@ -413,7 +413,7 @@
     more.focus({ preventScroll: true });
   }
 
-  // Under the letter, kept inside the window.
+  // Under the letter, savedMarks inside the window.
   function placeNote() {
     if (!popover) return;
     var r = popover.opener.getBoundingClientRect();
@@ -492,7 +492,7 @@
       if (unsure) unsureCount++;
       var chosen = current && current.id === r.id;
       parts.forEach(function (part, i) {
-        var mark = kept[part[0]];
+        var mark = savedMarks[part[0]];
         var span = el("span", (lang === settings.lang ? "verse" : "verse fallback") +
                            (settings.uncertain && unsure ? " unsure" : "") +
                            (mark && mark.highlight ? " hl-" + mark.highlight : "") +
@@ -504,6 +504,7 @@
           span.setAttribute("aria-label", t("verse_label").replace("{v}", part[0]));
         }
         span.dataset.v = part[0];
+        span.dataset.record = r.id;
         if (current && current.id === r.id) span.setAttribute("aria-current", "true");
         if (part[0] !== shown) span.appendChild(el("sup", null, part[0]));
         shown = part[0];
@@ -560,6 +561,7 @@
     box = page;
     drawUnsureToggle(unsureCount);
     drawNotes(notes);
+    if (listen.on) mark(false);
   }
 
   function disputedNote() {
@@ -1074,7 +1076,7 @@
 
   // Bookmark and highlight the chosen verse.
   function saveRow(verse) {
-    var m = kept[verse] || {};
+    var m = savedMarks[verse] || {};
     var row = el("div", "save-row");
     var bm = el("button", "save-bm", m.bookmark ? t("bookmarked") : t("bookmark"));
     bm.type = "button";
@@ -1359,6 +1361,8 @@
     drawText();
     drawPanel();
     panelEl.scrollTop = top;
+    // New wording: read the sentence again as it now stands.
+    if (listen.on && !listen.paused) speakRecord(listen.at);
   }
 
   // Copying from the passage adds where it comes from: "John 2:4 (Open
@@ -1463,15 +1467,17 @@
   if (here && pills.scrollWidth > pills.clientWidth)
     pills.scrollLeft = here.offsetLeft - pills.offsetLeft - pills.clientWidth / 2 + here.offsetWidth / 2;
 
-  // The reader's place, kept as owb.place for "Continue reading" on the
+  // The reader's place, savedMarks as owb.place for "Continue reading" on the
   // home and Read pages (site.js): the verse at the reading line, a quarter
-  // of the way down or just below the sticky header and settings bar (a
-  // verse's scroll margin) if that is lower. Saving and resuming both use
+  // of the way down or just below the sticky header and settings bar if
+  // that is lower (where scrollIntoView puts a verse: the page's scroll
+  // padding plus the verse's scroll margin). Saving and resuming both use
   // the line, so a place does not drift.
   function readingLine() {
     var first = document.querySelector("#text .verse");
+    var pad = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
     var margin = first ? parseFloat(getComputedStyle(first).scrollMarginTop) || 0 : 0;
-    return Math.max(margin, window.innerHeight * 0.25);
+    return Math.max(pad + margin, window.innerHeight * 0.25);
   }
   function topVerse() {
     var line = readingLine() + 1;
@@ -1506,6 +1512,263 @@
       var v = verseEl(resumeAt[1]);
       if (v) window.scrollBy(0, v.getBoundingClientRect().top - readingLine());
     });
+  }
+
+  // Listen: the browser's own voices read the passage aloud, one sentence
+  // (record) at a time, in the wording the settings give, from the verse
+  // the reader is at. A sentence shown in English on another language's
+  // page is read in English. No audio files, so it works offline too.
+  // Speed, and a voice per language, are savedMarks as owb.listen.
+  var speech = window.speechSynthesis;
+  var LISTEN = "owb.listen";
+  var RATES = [0.8, 1, 1.25, 1.5, 2];
+  var listen = { on: false, paused: false, at: 0, utter: null, rate: 1, voices: {} };
+  try {
+    var kept = JSON.parse(localStorage.getItem(LISTEN) || "{}");
+    if (RATES.indexOf(kept.rate) >= 0) listen.rate = kept.rate;
+    if (kept.voices) listen.voices = kept.voices;
+  } catch (e) { /* defaults */ }
+  function keepListen() {
+    try { localStorage.setItem(LISTEN, JSON.stringify({ rate: listen.rate, voices: listen.voices })); } catch (e) { /* ignore */ }
+  }
+
+  // A sentence as it is read: its language, and its text without verse
+  // markers, in pieces of up to about 220 characters split at punctuation
+  // (some voices stop after about fifteen seconds of one utterance).
+  function spoken(r) {
+    var lang = textLang(r);
+    var rest = render(r.renderings[lang][settings.level]).replace(new RegExp(VERSE.source, "g"), "").replace(/\s+/g, " ").trim();
+    var parts = [];
+    while (rest.length > 220) {
+      var cut = -1, re = /[,;:\u2014.!?]\s/g, m;
+      while ((m = re.exec(rest)) && m.index < 220) cut = m.index + 1;
+      if (cut < 40) cut = rest.lastIndexOf(" ", 220);
+      if (cut < 40) cut = 220;
+      parts.push(rest.slice(0, cut).trim());
+      rest = rest.slice(cut).trim();
+    }
+    if (rest) parts.push(rest);
+    return { lang: lang, parts: parts };
+  }
+
+  // The device's voices for a language, the most natural first, without
+  // the novelty voices macOS ships (Bells, Bubbles, Zarvox...).
+  var NATURAL = /google|neural|natural|premium|enhanced|siri/i;
+  // Whole names only: "Flo" is a novelty voice, "Florian" is not.
+  var NAMED = /\b(samantha|daniel|karen|moira|tessa|serena|allison|ava|zoe|nicky|aaron|fiona|rishi|monica|paulina|jorge|thomas|amelie|audrey)\b/i;
+  var NOVELTY = /^(albert|bad news|bahh|bells|boing|bubbles|cellos|deranged|good news|hysterical|jester|organ|pipe organ|superstar|trinoids|whisper|wobble|zarvox|fred|junior|ralph|kathy|grandma|grandpa|rocko|eddy|flo|reed|sandy|shelley)\b/i;
+  function voicesFor(lang) {
+    function score(v) { return (NATURAL.test(v.name) ? 4 : 0) + (NAMED.test(v.name) ? 2 : 0) + (v.default ? 1 : 0); }
+    var seen = {};
+    var all = speech.getVoices().filter(function (v) {
+      if (v.lang.toLowerCase().split(/[-_]/)[0] !== lang || seen[v.name]) return false;
+      seen[v.name] = true;
+      return true;
+    });
+    var plain = all.filter(function (v) { return !NOVELTY.test(v.name); });
+    // Only novelty voices for a language are still better than none.
+    return (plain.length ? plain : all).sort(function (a, b) { return score(b) - score(a); });
+  }
+  function voiceFor(lang) {
+    var all = voicesFor(lang);
+    return all.filter(function (v) { return v.voiceURI === listen.voices[lang]; })[0] || all[0] || null;
+  }
+
+  // Light up the sentence being read, and follow it down the page: always
+  // when the reader moved to it, otherwise only while the reader is still
+  // watching the one before (not when they have scrolled away to read).
+  function inView(v) {
+    var box = v.getBoundingClientRect();
+    return box.bottom > readingLine() && box.top < window.innerHeight - bar.offsetHeight;
+  }
+  function mark(follow) {
+    var r = DATA.records[listen.at];
+    var before = document.querySelector("#text .speaking");
+    if (follow === "auto") follow = !before || inView(before);
+    var first = null;
+    document.querySelectorAll("#text .verse").forEach(function (v) {
+      var on = r && v.dataset.record === r.id;
+      v.classList.toggle("speaking", on);
+      if (on && !first) first = v;
+    });
+    if (follow && first) {
+      var box = first.getBoundingClientRect();
+      if (box.top < readingLine() || box.bottom > window.innerHeight - bar.offsetHeight - 16)
+        window.scrollBy(0, box.top - readingLine());
+    }
+    // "John 3:16", or "John 7:53\u20138:11" for a sentence across chapters.
+    var range = r ? verseRange(r) : "";
+    where.textContent = r ? DATA.books[DATA.book] + " " + (/:/.test(range) ? range : DATA.chapter + ":" + range) : "";
+  }
+
+  // jump: the reader moved here (start, previous/next, a new setting), so
+  // the page follows; reading on by itself follows only a watching reader.
+  function speakRecord(i, jump) {
+    listen.utter = null;
+    speech.cancel();
+    if (i < 0) i = 0;
+    if (i >= DATA.records.length) { stopListening(); return; }
+    listen.at = i;
+    listen.paused = false;
+    var s = spoken(DATA.records[i]);
+    var voice = voiceFor(s.lang);
+    // Voices known but none for this language: say so rather than read
+    // the words in another language's voice.
+    if (!voice && speech.getVoices().length) {
+      note.hidden = false;
+      listen.paused = true;
+      drawBar();
+      return;
+    }
+    note.hidden = true;
+    mark(jump === false ? "auto" : true);
+    drawBar();
+    (function next(k) {
+      var u = new SpeechSynthesisUtterance(s.parts[k]);
+      u.lang = s.lang;
+      if (voice) u.voice = voice;
+      u.rate = listen.rate;
+      u.onend = function () {
+        if (listen.utter !== u) return;   // stopped or moved on
+        if (k + 1 < s.parts.length) next(k + 1);
+        else speakRecord(i + 1, false);
+      };
+      u.onerror = function (e) {
+        if (listen.utter === u && e.error !== "interrupted" && e.error !== "canceled") stopListening();
+      };
+      listen.utter = u;
+      speech.speak(u);
+    })(0);
+  }
+
+  function startListening() {
+    // From the sentence chosen, or else the one at the reading line.
+    var r = current || recordFor(topVerse());
+    listen.on = true;
+    bar.hidden = false;
+    document.body.classList.add("listening");
+    startBtn.setAttribute("aria-pressed", "true");
+    voiceMenu();
+    speakRecord(Math.max(0, DATA.records.indexOf(r)));
+  }
+
+  function stopListening() {
+    listen.on = false;
+    listen.utter = null;
+    speech.cancel();
+    bar.hidden = true;
+    note.hidden = true;
+    document.body.classList.remove("listening");
+    document.querySelectorAll("#text .speaking").forEach(function (v) { v.classList.remove("speaking"); });
+    startBtn.setAttribute("aria-pressed", "false");
+    startBtn.focus({ preventScroll: true });
+  }
+
+  // Pausing stops the voice; playing again starts the sentence over (the
+  // engine's own pause is unreliable on phones).
+  function togglePause() {
+    if (listen.paused) { speakRecord(listen.at); return; }
+    listen.paused = true;
+    listen.utter = null;
+    speech.cancel();
+    drawBar();
+  }
+
+  // The bar at the foot of the window while listening.
+  var ICON = {
+    play: "M8 5v14l11-7z", pause: "M7 5h3v14H7zM14 5h3v14h-3z",
+    prev: "M18 5v14L8 12zM6 5v14", next: "M6 5v14l10-7zM18 5v14", stop: "M18 6 6 18M6 6l12 12"
+  };
+  function button(name, label, onClick) {
+    var b = el("button", "listen-btn");
+    b.type = "button";
+    b.setAttribute("aria-label", label);
+    b.title = label;
+    var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("viewBox", "0 0 24 24");
+    svg.setAttribute("aria-hidden", "true");
+    var path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path.setAttribute("d", ICON[name]);
+    svg.appendChild(path);
+    b.appendChild(svg);
+    b.addEventListener("click", onClick);
+    return b;
+  }
+  var bar = el("div", "listen-bar");
+  bar.hidden = true;
+  bar.setAttribute("role", "region");
+  bar.setAttribute("aria-label", t("listen_bar"));
+  var row = el("div", "listen-row");
+  var prevBtn = button("prev", t("listen_prev"), function () { speakRecord(listen.at - 1); });
+  var playBtn = button("pause", t("listen_pause"), togglePause);
+  playBtn.classList.add("listen-play");
+  var nextBtn = button("next", t("listen_next"), function () { speakRecord(listen.at + 1); });
+  var where = el("span", "listen-where");
+  var rateBtn = el("button", "listen-rate");
+  rateBtn.type = "button";
+  rateBtn.setAttribute("aria-label", t("listen_speed"));
+  rateBtn.title = t("listen_speed");
+  rateBtn.addEventListener("click", function () {
+    listen.rate = RATES.filter(function (x) { return x > listen.rate; })[0] || RATES[0];
+    keepListen();
+    if (!listen.paused) speakRecord(listen.at);
+    drawBar();
+  });
+  var voiceSel = el("select", "listen-voice");
+  voiceSel.setAttribute("aria-label", t("listen_voice"));
+  voiceSel.addEventListener("change", function () {
+    listen.voices[DATA.lang] = voiceSel.value;
+    keepListen();
+    if (!listen.paused) speakRecord(listen.at);
+  });
+  var stopBtn = button("stop", t("listen_stop"), stopListening);
+  [prevBtn, playBtn, nextBtn, where, rateBtn, voiceSel, stopBtn].forEach(function (n) { row.appendChild(n); });
+  var note = el("p", "listen-note", t("listen_no_voice"));
+  note.hidden = true;
+  bar.appendChild(row);
+  bar.appendChild(note);
+  document.body.appendChild(bar);
+  // The page keeps room for the bar at its foot, however tall it grows.
+  if (window.ResizeObserver) new ResizeObserver(function () {
+    document.documentElement.style.setProperty("--listen-h", bar.offsetHeight + "px");
+  }).observe(bar);
+
+  function drawBar() {
+    var paused = listen.paused;
+    playBtn.setAttribute("aria-label", t(paused ? "listen_play" : "listen_pause"));
+    playBtn.title = playBtn.getAttribute("aria-label");
+    playBtn.querySelector("path").setAttribute("d", ICON[paused ? "play" : "pause"]);
+    rateBtn.textContent = listen.rate + "\u00d7";
+  }
+
+  // The voice menu offers the page language's best few voices, when there
+  // is a choice.
+  function voiceMenu() {
+    var all = voicesFor(DATA.lang).slice(0, 5);
+    voiceSel.textContent = "";
+    all.forEach(function (v) {
+      var o = el("option", null, v.name.replace(/^(Microsoft|Google)\s+/, ""));
+      o.value = v.voiceURI;
+      voiceSel.appendChild(o);
+    });
+    var chosen = voiceFor(DATA.lang);
+    if (chosen) voiceSel.value = chosen.voiceURI;
+    voiceSel.hidden = all.length < 2;
+  }
+
+  var startBtn = document.getElementById("listen-start");
+  if (speech && window.SpeechSynthesisUtterance && startBtn) {
+    startBtn.hidden = false;
+    startBtn.setAttribute("aria-pressed", "false");
+    startBtn.addEventListener("click", function () {
+      if (listen.on) stopListening(); else startListening();
+    });
+    // Voices arrive after the page in some browsers.
+    if (speech.addEventListener) speech.addEventListener("voiceschanged", function () { if (listen.on) voiceMenu(); });
+    // Leaving the page stops the voice (some browsers would read on).
+    window.addEventListener("pagehide", function () { speech.cancel(); });
+    // Back to this page from the browser's cache: the voice has stopped.
+    window.addEventListener("pageshow", function (e) { if (e.persisted && listen.on) stopListening(); });
   }
 
   loadMarks().then(function () { drawText(); if (current) drawPanel(); });

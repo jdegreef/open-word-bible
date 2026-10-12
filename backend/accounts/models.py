@@ -1,7 +1,9 @@
 """Accounts: who someone is, what they may do, and how they sign in.
 
-Anyone with an email address can sign in, by a single-use link sent to that
-address; an account is created the first time. Every account is a reader
+Anyone with an email address can have an account. They sign in with a
+password, a single-use link emailed to them, or Google; an account is
+created the first time a link is used (or Google vouches for the address),
+so there are never accounts for addresses nobody has proved they own. Every account is a reader
 (highlights, bookmarks, notes, suggestions and questions). Further roles
 are granted by a super admin:
 
@@ -82,9 +84,21 @@ class Role(models.Model):
 
 
 class SignInLink(models.Model):
-    """A single-use sign-in link, valid for SIGN_IN_LINK_MINUTES."""
+    """A single-use link, valid for SIGN_IN_LINK_MINUTES. Each is emailed
+    except Google's, which hands the browser back to the site."""
+    class Purpose(models.TextChoices):
+        SIGN_IN = "sign_in", "Sign in"
+        SIGN_UP = "sign_up", "Confirm a new password"
+        RESET = "reset", "Reset the password"
+        GOOGLE = "google", "Signed in with Google"
+
     email = models.EmailField(db_index=True)
     token_hash = models.CharField(max_length=64, unique=True)
+    purpose = models.CharField(max_length=10, choices=Purpose.choices, default=Purpose.SIGN_IN)
+    # Sign-up: the chosen password, already hashed. It becomes the account's
+    # password only when the link is used, so it never applies to an
+    # address its owner has not confirmed.
+    password_hash = models.CharField(max_length=128, blank=True)
     requested_ip = models.GenericIPAddressField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True, db_index=True)
     used_at = models.DateTimeField(null=True, blank=True)
@@ -94,6 +108,13 @@ class SignInLink(models.Model):
 
     def __str__(self):
         return f"{self.email} at {self.created_at:%Y-%m-%d %H:%M}"
+
+
+class FailedSignIn(models.Model):
+    """A wrong password, kept for an hour to limit guessing."""
+    email = models.EmailField(db_index=True)
+    ip = models.GenericIPAddressField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True, db_index=True)
 
 
 class ApiToken(models.Model):
