@@ -5,6 +5,7 @@ date: 2026-10-11
 order: 24
 nav_title: Wamasoreti
 section: history
+part: ot
 ---
 Fungua Biblia ya Kiebrania nawe utaona konsonanti, yaani herufi kuu, zikiwa zimezungukwa na nukta na vistari vidogo juu na chini yake. Alama hizo ni irabu na alama za kiimbo. Pembezoni mwa ukurasa katika toleo la kitaalamu utaona maelezo madogo sana kwa Kiaramu kilichofupishwa. Yote haya yaliongezwa na kundi la wanachuoni wanaojulikana kama **Wamasoreti**. Karibu kila tafsiri ya Agano la Kale ulimwenguni, ikiwemo ile ya Open Word Bible, imetengenezwa kutoka maandiko waliyoyalinda.
 

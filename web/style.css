@@ -453,9 +453,9 @@ footer.site nav a:hover { color: var(--accent); text-decoration: underline; }
   font-size: 14px; font-weight: 600; text-decoration: none;
 }
 .foot-resume:hover { text-decoration: underline; }
-/* The index of every book: a chip per book, in canon order. A book not yet
-   started is greyed out; one with some chapters missing is dashed, as the
-   chapter pills are. */
+/* The index of the books: a chip per book started, in canon order, then one
+   greyed-out chip counting the books not started yet. A book with some
+   chapters missing is dashed, as the chapter pills are. */
 .foot-books { border-top: 1px solid var(--line); margin-top: 40px; padding-top: 28px; }
 .testaments { display: grid; grid-template-columns: minmax(0, 39fr) minmax(0, 27fr); gap: 24px 40px; }
 .testament-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 12px; margin-bottom: 12px; }
@@ -470,6 +470,8 @@ footer.site a.book-chip { color: var(--text); font-weight: 600; }
 footer.site a.book-chip:hover { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); text-decoration: none; }
 .book-chip.part { border-style: dashed; }
 .book-chip.none { border-color: transparent; background: none; color: var(--muted); opacity: .6; padding-inline: 6px; }
+footer.site a.book-chip.none { border: 1px dotted var(--line-strong); opacity: 1; padding-inline: 10px; font-weight: 500; }
+footer.site a.book-chip.none:not(:hover) { color: var(--muted); }
 .foot-key { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; margin: 18px 0 0; font-size: 13px; color: var(--muted); }
 .foot-key > span { display: inline-flex; align-items: center; gap: 7px; }
 .foot-key .book-chip { width: 22px; height: 14px; padding: 0; }
@@ -762,6 +764,12 @@ footer.site a.book-chip:hover { border-color: var(--accent); background: var(--a
   list-style: none; padding: 0; margin: 0; display: grid; gap: 0 32px;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
 }
+.a-part + .a-part { margin-top: 20px; }
+.a-part h3 {
+  display: flex; align-items: baseline; gap: 10px; margin: 0 0 6px; font-size: 12.5px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .09em; color: var(--gold);
+}
+.a-part h3 span { font-weight: 500; letter-spacing: .04em; color: var(--muted); font-variant-numeric: tabular-nums; }
 .a-item { position: relative; display: flex; gap: 12px; padding: 16px 4px 18px; border-top: 1px solid var(--line); }
 .a-body { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
 .a-item .a-title { font-size: 19px; text-decoration: none; }
@@ -780,11 +788,6 @@ footer.site a.book-chip:hover { border-color: var(--accent); background: var(--a
   border: 1px solid var(--accent-soft-border); border-radius: 999px; padding: 2px 10px; text-decoration: none; white-space: nowrap;
 }
 a.a-ref:hover { border-color: var(--accent); }
-.a-status {
-  display: inline-flex; align-items: center; gap: 5px; font-size: 11.5px; font-weight: 600;
-  color: var(--warn); background: var(--warn-bg); border-radius: 999px; padding: 1px 9px;
-}
-.a-status::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
 .a-group h2, .more h2 { font-family: var(--display); font-weight: 600; font-size: 26px; letter-spacing: -.01em; margin: 0 0 16px; }
 .latest > p, .more > p { margin: 16px 0 0; }
 
@@ -888,6 +891,33 @@ a.a-ref:hover { border-color: var(--accent); }
 /* Wide screens: the settings are one slim bar that stays under the header
    while the passage scrolls; each choice explains itself in a tooltip
    (web/reader.js), so the hint line is for phones only. */
+/* Wording settings (gender, title, pronouns, measures, headings): behind one
+   button on wide screens, so the bar stays one row; inline on phones. */
+.wording-toggle { display: none; }
+@media (min-width: 861px) {
+  .wording-wrap { position: relative; }
+  .wording-toggle {
+    display: inline-flex; align-items: baseline; gap: 8px; max-width: 360px; padding: 4px 12px;
+    border: 1px solid var(--line-strong); border-radius: 999px; background: var(--surface-2);
+    color: var(--text); font: inherit; font-size: 13.5px; font-weight: 600; cursor: pointer;
+  }
+  .wording-toggle::after { content: "\25BE"; color: var(--muted); font-weight: normal; }
+  .wording-toggle[aria-expanded="true"]::after { content: "\25B4"; }
+  .wording-toggle:hover { border-color: var(--accent); }
+  .wording-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .wording-label { color: var(--muted); }
+  .wording-summary { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--accent); }
+  .wording {
+    position: absolute; top: calc(100% + 8px); left: 0; z-index: 25; display: none;
+    flex-direction: column; align-items: flex-start; gap: 10px; padding: 14px 16px; min-width: 300px;
+    background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow-pop);
+  }
+  .wording-toggle[aria-expanded="true"] + .wording { display: flex; }
+  .wording .control { width: 100%; justify-content: space-between; gap: 16px; }
+}
+@media (max-width: 860px) {
+  .wording-wrap, .wording { display: contents; }
+}
 @media (min-width: 861px) {
   .settings {
     position: sticky; top: var(--header-h); z-index: 20;
@@ -907,6 +937,12 @@ a.a-ref:hover { border-color: var(--accent); }
 .passage { max-width: 680px; }
 .passage h1 { font-family: var(--display); font-weight: 600; font-size: clamp(30px, 4vw, 40px); letter-spacing: -.02em; margin: 36px 0 6px; }
 .passage .sub { color: var(--muted); font-size: 14px; margin: 0 0 16px; }
+/* What the chapter is about, under its title (data/summaries/): an
+   editorial aid like a heading, so quieter than the text. */
+.chapter-summary {
+  font-family: var(--serif); font-style: italic; font-size: 18px; line-height: 1.5;
+  color: var(--muted); max-width: 60ch; margin: 2px 0 12px; text-wrap: pretty;
+}
 /* About 65 characters a line, the comfortable measure for long reading. */
 .text { font-family: var(--read-font); font-size: calc(21px * var(--read-scale)); line-height: calc(1.8 * var(--read-leading)); max-width: 29em; }
 /* Paragraphs follow SBLGNT's; section headings (data/headings.json) are
@@ -928,12 +964,26 @@ a.a-ref:hover { border-color: var(--accent); }
 .verse:hover { background: var(--accent-soft); }
 .verse[aria-current="true"] { background: var(--mark); }
 .verse.fallback { color: var(--muted); }
+/* Poetry (a rendering with \q line markers): each verse is a block of lines.
+   A verse's first line starts at the margin, its later lines one step in;
+   a line too long for the measure wraps two steps in, so a wrap never looks
+   like a new line. Prose verses stay inline. */
+.poem { display: block; --poem-step: 1.1em; }
+.poem .line { display: block; padding-left: calc(2 * var(--poem-step)); text-indent: calc(-2 * var(--poem-step)); }
+.poem .line + .line { text-indent: calc(-1 * var(--poem-step)); }
+.poem .line > * { text-indent: 0; }
+.text .poem + .poem { margin-top: .12em; }
+.pcell .poem { margin-bottom: .2em; }
+@media (max-width: 560px) { .poem { --poem-step: .9em; } }
 .verse sup { font-family: var(--sans); font-size: 12px; color: var(--accent); font-weight: 700; margin-right: 3px; }
 .verse .fn { font-family: var(--sans); font-size: 11px; font-style: italic; color: var(--accent); margin-left: 1px; }
 /* Each footnote letter is its own button and opens the note in place. */
 .fn-mark {
   border: 0; background: none; padding: 2px 3px; margin: 0 -1px; font: inherit; font-weight: 700; color: inherit;
   cursor: pointer; border-radius: 4px; line-height: 1;
+  /* A button is inline-block; the letters written into the page before
+     the reader draws its buttons are spans, and sit the same. */
+  display: inline-block;
 }
 .fn-mark:hover, .fn-mark[aria-expanded="true"] { background: var(--accent); color: var(--accent-contrast); }
 .fn-mark:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
@@ -1010,8 +1060,79 @@ body.plain .text-tool { display: none; }
 .panel .empty { color: var(--muted); font-size: 15px; }
 .panel .keys { color: var(--muted); font-size: 13px; margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line); }
 @media (hover: none) { .panel .keys { display: none; } }
-.panel-title { display: flex; align-items: baseline; gap: 10px; }
+.panel-title { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 4px; }
 .panel-title .copy-link + .copy-link { margin-left: 0; }
+/* Previous and next verse, either side of the reference. */
+.panel-step {
+  flex: none; display: inline-grid; place-items: center; width: 30px; height: 30px; padding: 0 0 2px;
+  border: 1px solid var(--line-strong); border-radius: 50%; background: var(--surface); color: var(--accent);
+  font: inherit; font-family: var(--sans); font-size: 20px; line-height: 1; cursor: pointer;
+}
+.panel-step:hover:not(:disabled) { border-color: var(--accent); background: var(--accent-soft); }
+.panel-step:disabled { color: var(--muted); opacity: .45; cursor: default; }
+.panel-step:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.panel-ref { padding: 0 4px; }
+.panel-actions { flex-basis: 100%; display: flex; flex-wrap: wrap; gap: 6px; }
+.panel-actions .ask-link { text-decoration: none; }
+.panel-actions .copy-link { margin-left: 0; }
+.copy-link[aria-expanded="true"] { border-color: var(--accent); background: var(--accent-soft); }
+/* Review status and the next sentence with notes. */
+.panel-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; margin: 8px 0 10px; font-family: var(--sans); font-size: 13px; }
+.review-status { color: var(--muted); }
+.review-ai_draft::before, .review-meaning_reviewed::before {
+  content: ""; display: inline-block; width: 7px; height: 7px; margin-right: 6px; border-radius: 50%;
+  background: var(--warn); vertical-align: 1px;
+}
+.ask-link { color: var(--accent); font-weight: 600; }
+.ask-link::after { content: " \2197"; font-size: .9em; }
+.ask-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+.panel-next-notes {
+  margin-left: auto; padding: 3px 10px; border: 1px solid var(--line-strong); border-radius: 999px; background: var(--surface);
+  color: var(--accent); font: inherit; font-weight: 600; cursor: pointer;
+}
+.panel-next-notes:hover:not(:disabled) { border-color: var(--accent); background: var(--accent-soft); }
+.panel-next-notes:disabled { color: var(--muted); opacity: .6; cursor: default; }
+.panel-next-notes:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.card .card-ask { display: inline-block; margin-top: 6px; font-size: 12.5px; }
+/* Cite: the citation, plain text and Markdown, each ready to copy. */
+.cite-box { margin: 4px 0 12px; padding: 10px 12px 12px; border-radius: var(--radius-sm); background: var(--surface-2); font-family: var(--sans); }
+.cite-box[hidden] { display: none; }
+.cite-head { display: flex; align-items: center; gap: 8px; margin: 8px 0 4px; }
+.cite-head:first-child { margin-top: 0; }
+.cite-label { font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+.cite-head .copy-link { margin-left: auto; }
+.cite-text {
+  display: block; width: 100%; box-sizing: border-box; resize: vertical; padding: 6px 8px; field-sizing: content; max-height: 9em;
+  border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--text);
+  font: 13px/1.45 var(--sans);
+}
+.cite-text:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.cite-chapter { margin: 10px 0 0; }
+.cite-scratch { position: fixed; top: 0; left: -9999px; opacity: 0; }
+/* A note's reference to a chapter not translated yet, with the verse from
+   a public-domain Bible for comparison. */
+.sref-away { font-weight: 600; }
+.xrefs { display: grid; gap: 6px; margin: 8px 0 2px; }
+.xref { padding: 8px 10px; border-left: 3px solid var(--line-strong); border-radius: 0 6px 6px 0; background: var(--surface-2); font-family: var(--sans); }
+.xref p { margin: 0; }
+.xref-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; font-size: 13px; }
+.xref-ref { font-weight: 700; }
+.xref-nt { color: var(--muted); }
+.xref-search { margin-left: auto; font-size: 12.5px; }
+.xref-text { margin-top: 4px !important; font-family: var(--serif); font-size: 15px; line-height: 1.5; }
+.xref-text sup { font-family: var(--sans); font-size: 10.5px; font-weight: 700; color: var(--muted); }
+.xref-src { margin-top: 4px !important; font-size: 11.5px; color: var(--muted); font-style: italic; }
+/* Footnotes and uncertain decisions first in the phone sheet (see the
+   narrow-screen rules); on wide screens the full notes are enough. */
+.key-notes { display: none; }
+.key-note { padding: 8px 12px; margin: 0 0 6px; border: 1px solid var(--line); border-radius: var(--radius-sm); }
+.key-note.unc { border-color: var(--warn); background: var(--warn-bg); }
+.key-note p { margin: 0; }
+.key-note-head { font-size: 12px; color: var(--muted); }
+.key-note-head .badge:first-child { margin-left: 0; }
+.key-note-cat { margin-left: 6px; }
+.key-note-text { font-size: 15px; margin-top: 2px !important; }
+.key-note .fn-pop-more { margin-top: 2px; font-family: var(--sans); }
 .copy-link {
   margin-left: auto; flex: none; padding: 3px 10px; border: 1px solid var(--line-strong); border-radius: 999px;
   background: var(--surface); color: var(--accent); font: inherit; font-family: var(--sans); font-size: 12.5px; font-weight: 600;
@@ -1227,6 +1348,14 @@ body.plain .text-tool { display: none; }
 @media (max-width: 860px) and (prefers-reduced-motion: reduce) {
   .panel, .panel.open { transition: none; }
 }
+@media (max-width: 860px) {
+  .key-notes { display: block; }
+  /* The actions run under the close button, which sits beside the title. */
+  .panel-actions { flex-basis: calc(100% + 44px); margin-right: -44px; }
+  /* Sideways swipes step through verses; vertical ones scroll. */
+  .panel { touch-action: pan-y; }
+  .panel-tools { margin-bottom: 6px; }
+}
 
 /* The header's account menu: "Sign in" when signed out, the reader's
    initial and a small menu when signed in (web/site.js). */
@@ -1304,7 +1433,8 @@ html.signed-in .sign-in-btn { visibility: hidden; }
 .auth-message h2 { font-family: var(--display); font-size: 24px; margin: 0; }
 .auth-message h2:focus { outline: none; }
 .auth-message p { margin: 4px 0; }
-.badge {
+/* Scoped: .badge alone is the reader's small label (Uncertain, Footnote). */
+.auth-message .badge {
   display: grid; place-items: center; width: 52px; height: 52px; margin: 0 auto 6px !important; border-radius: 50%;
   background: var(--accent-soft); color: var(--accent); font-size: 24px;
 }
@@ -1357,7 +1487,7 @@ html.signed-in .sign-in-btn { visibility: hidden; }
 .control.view-control { margin-left: auto; }
 body.plain .reader { grid-template-columns: minmax(0, 1fr); }
 body.plain .passage { margin: 0 auto; }
-body.plain .panel, body.plain .notes, body.plain .verse sup, body.plain .passage .sub { display: none; }
+body.plain .panel, body.plain .notes, body.plain .verse sup, body.plain .passage .sub, body.plain .chapter-summary { display: none; }
 body.plain .verse { cursor: text; }
 body.plain .verse:hover { background: none; }
 body.plain .text { font-size: calc(22px * var(--read-scale)); }
@@ -1618,8 +1748,7 @@ ruby.il rt:lang(hbo) { font-family: var(--hebrew); }
 .wcard-note { font-size: 14px; line-height: 1.5; }
 
 
-/* Footer on narrower screens: the tiers stack; on a phone the index keeps
-   only the books with chapters, and each testament's count says how many
+/* Footer on narrower screens: the tiers stack; each testament's count says how many
    there are in all. */
 @media (max-width: 860px) {
   .foot-top, .testaments { grid-template-columns: minmax(0, 1fr); }
@@ -1628,7 +1757,6 @@ ruby.il rt:lang(hbo) { font-family: var(--hebrew); }
   .foot-grid .foot-langs ul { display: flex; flex-wrap: wrap; gap: 8px 20px; }
 }
 @media (max-width: 560px) {
-  .foot-books .book-chips li:has(.none) { display: none; }
   .foot-key > span:last-of-type { display: none; }
   .foot-key a { margin-left: 0; }
 }
@@ -1670,7 +1798,8 @@ body.listening { padding-bottom: calc(var(--listen-h, 64px) + 12px); }
 .verse[class*="hl-"]:hover { background: var(--hl); filter: saturate(1.4); }
 /* The verse chosen keeps its highlight and is underlined instead. */
 .verse[aria-current="true"][class*="hl-"] { box-shadow: inset 0 -3px 0 var(--accent); }
-.verse.bookmarked > sup:not(.fn):first-child::before { content: "\25C6\00a0"; color: var(--accent); font-size: .85em; }
+.verse.bookmarked > sup:not(.fn):first-child::before,
+.verse.bookmarked > .line:first-child > sup:not(.fn):first-child::before { content: "\25C6\00a0"; color: var(--accent); font-size: .85em; }
 .mark-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin: 4px 0 16px; }
 .mark-bookmark {
   display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border: 1px solid var(--line-strong);

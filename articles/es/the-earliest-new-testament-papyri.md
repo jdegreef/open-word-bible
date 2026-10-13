@@ -4,6 +4,7 @@ summary: Un trozo de Juan del tamaño de una tarjeta de crédito, un libro de la
 date: 2026-10-11
 order: 34
 section: history
+part: nt
 ---
 Los documentos originales del Nuevo Testamento, las cartas que Pablo dictó y los Evangelios tal como sus autores los terminaron, desaparecieron hace mucho. Las copias más antiguas que tenemos están escritas en papiro, casi todas halladas en Egipto, y la mayoría son fragmentos. Se les llama **papiros del Nuevo Testamento**, y se numeran con una P (a menudo escrita en letra gótica) seguida de un número, en el orden en que se catalogaron: P1, P2, etc. El Instituto para la Investigación Textual del Nuevo Testamento de Münster, que lleva la lista oficial, tiene registrados más de 140.
 

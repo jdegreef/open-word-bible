@@ -4,6 +4,7 @@ summary: A shepherd, a cave, some clay jars, and the greatest manuscript find of
 date: 2026-10-11
 order: 26
 section: history
+part: ot
 ---
 In the winter of 1946–47, a young Bedouin shepherd named **Muhammed edh-Dhib**, of the Ta'amireh tribe, was looking for a stray goat among the cliffs near the north-western shore of the Dead Sea. He threw a stone into an opening in the rock and heard something break. When he and his companions later climbed in, they found tall clay jars, and inside some of them, bundles of old leather wrapped in linen.
 

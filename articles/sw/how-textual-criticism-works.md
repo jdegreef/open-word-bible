@@ -4,6 +4,7 @@ summary: Miswada inapotofautiana, wataalamu wanaamuaje waandishi waliandika nini
 date: 2026-10-11
 order: 37
 section: history
+part: nt
 ---
 Kila tafsiri ya Biblia inaanza na uamuzi ambao wasomaji wengi hawauoni kamwe: ni maandishi gani ya kutafsiri. Kwa sababu Biblia ilinakiliwa kwa mkono kwa karne nyingi, hakuna miswada miwili yenye urefu wowote wa maana inayofanana kabisa. Kabla mtafsiri hajauliza sentensi inamaanisha nini, lazima mtu aulize sentensi *inasema* nini. Fani inayojibu swali hilo inaitwa **uhakiki wa maandishi** (kwa Kiingereza *textual criticism*).
 

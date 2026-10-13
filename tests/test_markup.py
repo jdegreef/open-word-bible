@@ -37,6 +37,21 @@ class MarkupTest(unittest.TestCase):
                          [(None, "children of God"), (13, "children born of God.")])
         self.assertEqual(markup.split_verses("In the beginning"), [(None, "In the beginning")])
 
+    def test_line_markers(self):
+        text = "Blessed is the one who does not walk in the counsel of the wicked, \\q nor stand"
+        self.assertTrue(markup.is_poetry(text))
+        self.assertFalse(markup.is_poetry("In the beginning"))
+        self.assertEqual(markup.line_markers(text), 1)
+        self.assertEqual(markup.split_lines(text),
+                         ["Blessed is the one who does not walk in the counsel of the wicked,", "nor stand"])
+        self.assertEqual(markup.split_lines("In the beginning"), ["In the beginning"])
+        self.assertEqual(markup.flat(text), text.replace(" \\q ", " "))
+        # Verses first, then lines within each verse.
+        parts = markup.split_verses("a, \\q b \\v 2 c; \\q d")
+        self.assertEqual([markup.split_lines(t) for _, t in parts], [["a,", "b"], ["c;", "d"]])
+        self.assertEqual(markup.line_errors(text), [])
+        self.assertEqual(markup.line_errors("\\q a"), ["starts with a line marker"])
+
 
     def test_alignment_ranges_follow_the_rendering_in_order(self):
         text = "the light of {{gender:all people|men}} \\v 5 and the light shines"
@@ -53,6 +68,7 @@ class MarkupTest(unittest.TestCase):
                             (["darkness"], "not found in rendering"),
                             (["of {{gender:all"], "cuts a setting span"),
                             (["men}} \\v 5 and"], "verse marker"),
+                            (["and the \\q light"], "line marker"),
                             ([" "], "empty")):
             with self.assertRaisesRegex(ValueError, reason):
                 markup.alignment_ranges(text, bad)
