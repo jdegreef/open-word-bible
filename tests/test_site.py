@@ -653,6 +653,57 @@ class ExtractTest(unittest.TestCase):
                                 capture_output=True, text=True)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
 
+    def test_comparison_extracts_are_up_to_date(self):
+        result = subprocess.run([sys.executable, str(ROOT / "scripts" / "extract_comparison.py"), "--check"],
+                                capture_output=True, text=True)
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+
+
+def note(reason, alternatives=()):
+    return {"decisions": [{"choice": "x", "alternatives": list(alternatives), "reason": reason}]}
+
+
+class ComparisonTest(unittest.TestCase):
+    """A note's reference to a chapter not translated yet carries that
+    verse from a public-domain Bible, for comparison: only the verses the
+    page's notes name, so the page stays small."""
+
+    def test_notes_bring_only_untranslated_verses(self):
+        records, _ = build_site.load_chapter("1TI", 5)
+        compare = build_site.comparison_verses(records, "en")
+        self.assertEqual((compare["name"], compare["lang"]), ("World English Bible", "en"))
+        # 1 Timothy 5:18 quotes Deuteronomy 25:4.
+        self.assertEqual(compare["verses"]["DEU.25.4"], build_site.comparison_text("web")["DEU.25.4"])
+        have = build_site.book_refs("en")["chapters"]
+        for vid in compare["verses"]:
+            book, chapter, _ = vid.split(".")
+            self.assertNotIn(int(chapter), have.get(book, []), vid)
+
+    def test_spanish_pages_compare_with_the_reina_valera(self):
+        records, _ = build_site.load_chapter("1TI", 5)
+        compare = build_site.comparison_verses(records, "es")
+        self.assertEqual((compare["name"], compare["lang"]), ("Reina-Valera 1909", "es"))
+        self.assertEqual(compare["verses"]["DEU.25.4"], build_site.comparison_text("rv1909")["DEU.25.4"])
+
+    def test_ranges_are_capped_and_translated_chapters_skipped(self):
+        have = build_site.book_refs("en")["chapters"]
+        self.assertIn(10, have["LUK"])
+        self.assertNotIn(9, have.get("DEU", []))
+        self.assertNotIn(32, have.get("DEU", []))
+        compare = build_site.comparison_verses(
+            [note("As in Deuteronomy 9:9-20, and Luke 10:7.", alternatives=["Deuteronomy 32:4"])], "en")
+        self.assertEqual(set(compare["verses"]),
+                         {"DEU.32.4"} | {f"DEU.9.{v}" for v in range(9, 9 + build_site.COMPARE_MAX_VERSES)})
+        self.assertIsNone(build_site.comparison_verses([note("Luke 10:7 only.")], "en"))
+        self.assertIsNone(build_site.comparison_verses([note("No references here.")], "en"))
+
+    def test_chapter_pages_embed_the_comparison(self):
+        page = (built_site() / "1ti" / "5" / "index.html").read_text(encoding="utf-8")
+        data = json.loads(re.search(r'<script type="application/json" id="owb-data">(.*?)</script>', page, re.S)[1])
+        self.assertIn("DEU.25.4", data["compare"]["verses"])
+        # A page's comparison verses are a few kilobytes at most.
+        self.assertLess(len(json.dumps(data["compare"], ensure_ascii=False)), 25000)
+
 
 class SharedDataTest(unittest.TestCase):
     """Book data that pull requests adding chapters would otherwise all edit."""

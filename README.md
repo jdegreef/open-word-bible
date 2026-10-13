@@ -152,6 +152,7 @@ Other tools:
     python3 -m owb.validate content/JHN/*.json
     python3 scripts/extract_tokens.py         # refresh data/grc/ and data/hbo/ after adding verses
     python3 scripts/build_versification.py    # rebuild data/versification.json after a source update
+    python3 scripts/extract_comparison.py     # rebuild data/comparison/ (WEB, RV1909) after a source update
 
 ## The site
 

@@ -714,20 +714,71 @@
     return (DATA.lang === "en" ? "" : "/" + DATA.lang) + "/" + code.toLowerCase() + "/" + chapter + "/#v" + verse;
   }
 
-  function linked(tag, cls, text) {
+  function translated(code, chapter) {
+    return (DATA.bookRefs.chapters[code] || []).indexOf(chapter) >= 0;
+  }
+
+  // away, when given, collects the references to chapters not translated
+  // yet; they stay plain text, and the caller shows them as cards
+  // (refCards) instead of sending the reader to a search that finds nothing.
+  function linked(tag, cls, text, away) {
     var node = el(tag, cls);
     var re = refPattern(), at = 0, m;
     re.lastIndex = 0;
     while ((m = re.exec(text))) {
       node.appendChild(document.createTextNode(text.slice(at, m.index)));
-      var a = el("a", "sref", m[0]);
-      a.href = refUrl(DATA.bookRefs.names[m[1]], Number(m[2]), Number(m[3]), m[0]);
-      a.addEventListener("click", function (e) { e.stopPropagation(); });
-      node.appendChild(a);
+      var code = DATA.bookRefs.names[m[1]], chapter = Number(m[2]);
+      if (away && !translated(code, chapter)) {
+        node.appendChild(el("span", "sref sref-away", m[0]));
+        if (!away.some(function (x) { return x.label === m[0]; }))
+          away.push({ label: m[0], code: code, chapter: chapter, first: Number(m[3]), last: Number(m[4] || m[3]) });
+      } else {
+        var a = el("a", "sref", m[0]);
+        a.href = refUrl(code, chapter, Number(m[3]), m[0]);
+        a.addEventListener("click", function (e) { e.stopPropagation(); });
+        node.appendChild(a);
+      }
       at = m.index + m[0].length;
     }
     node.appendChild(document.createTextNode(text.slice(at)));
     return node;
+  }
+
+  // A reference to a chapter not translated yet: the reference, "Not
+  // translated yet", and the verse from a public-domain Bible for comparison
+  // (DATA.compare, chosen at build time), labelled as not ours. Search stays
+  // as a second way on.
+  function refCards(away) {
+    var box = el("div", "xrefs");
+    away.forEach(function (x) {
+      var card = el("div", "xref");
+      var head = el("p", "xref-head");
+      head.appendChild(el("span", "xref-ref", x.label));
+      head.appendChild(el("span", "xref-nt", t("xref_nt")));
+      var search = el("a", "xref-search", t("xref_search"));
+      search.href = DATA.bookRefs.search + "?q=" + encodeURIComponent(x.label);
+      search.addEventListener("click", function (e) { e.stopPropagation(); });
+      head.appendChild(search);
+      card.appendChild(head);
+      var verses = (DATA.compare && DATA.compare.verses) || {};
+      var text = el("p", "xref-text");
+      text.lang = DATA.compare ? DATA.compare.lang : "en";
+      var many = x.last > x.first;
+      for (var v = x.first; v <= Math.max(x.first, x.last); v++) {
+        var words = verses[x.code + "." + x.chapter + "." + v];
+        if (!words) continue;
+        if (many) text.appendChild(el("sup", null, v + " "));
+        text.appendChild(document.createTextNode(words + " "));
+      }
+      // The build brings the first few verses of a long range.
+      if (text.childNodes.length && x.last - x.first >= 4) text.appendChild(document.createTextNode("…"));
+      if (text.childNodes.length) {
+        card.appendChild(text);
+        card.appendChild(el("p", "xref-src", t("xref_source").replace("{name}", DATA.compare.name)));
+      }
+      box.appendChild(card);
+    });
+    return box;
   }
 
   // Key terms and the people, places and peoples in the chosen sentence
@@ -776,7 +827,12 @@
     if (d.alternatives.length) {
       card.appendChild(el("div", "alts", t("also") + d.alternatives.map(render).join("; ")));
     }
-    card.appendChild(linked("p", "why", d.reason));
+    var away = [];
+    card.appendChild(linked("p", "why", d.reason, away));
+    if (away.length) card.appendChild(refCards(away));
+    var ask = askLink(d);
+    ask.classList.add("card-ask");
+    card.appendChild(ask);
     function on() { highlight(d.tokens, card); }
     card.addEventListener("click", on);
     card.addEventListener("focus", on);
@@ -865,11 +921,27 @@
     var ref = DATA.title.replace(/[\d:\u2013\s]+$/, "") + " " + (crossesChapter(current) ? "" : DATA.chapter + ":") +
       verseRange(current);
     var title = el("h2", "panel-title");
-    title.appendChild(el("span", null, ref));
-    title.appendChild(linkButton(currentVerse));
-    title.appendChild(imageButton(currentVerse));
+    var at = verseIndex(), count = verses().length;
+    title.appendChild(stepButton(-1, at <= 0));
+    title.appendChild(el("span", "panel-ref", ref));
+    title.appendChild(stepButton(1, at < 0 || at >= count - 1));
+    var actions = el("span", "panel-actions");
+    actions.appendChild(linkButton(currentVerse));
+    actions.appendChild(imageButton(currentVerse));
+    actions.appendChild(citeButton());
+    var ask = askLink(null);
+    ask.classList.add("copy-link");
+    actions.appendChild(ask);
+    title.appendChild(actions);
     panel.appendChild(title);
+    panel.appendChild(citeBox(currentVerse));
+    panel.appendChild(toolRow());
     panel.appendChild(markRow(currentVerse));
+    // On phones the sheet opens at 60% height: its footnotes and uncertain
+    // decisions come first, ahead of the word list (hidden on wide screens,
+    // where the full notes are a scroll away).
+    var key = keyNotes();
+    if (key) panel.appendChild(key);
 
     panel.appendChild(el("h3", null, t("greek")));
     // Interlinear: each Greek word (or Hebrew morpheme) over its gloss. Tapping one shows its
@@ -1036,6 +1108,240 @@
     all.href = DATA.saved;
     row.appendChild(all);
     return row;
+  }
+
+  // By the panel's title: the previous and next verse (as k and j do).
+  function stepButton(by, off) {
+    var label = t(by < 0 ? "step_prev" : "step_next");
+    var b = el("button", "panel-step", by < 0 ? "\u2039" : "\u203a");
+    b.type = "button";
+    b.dataset.step = by;
+    b.setAttribute("aria-label", label);
+    b.title = label + " (" + (by < 0 ? "k" : "j") + ")";
+    b.disabled = off;
+    b.addEventListener("click", function () { step(by, '[data-step="' + by + '"]'); });
+    return b;
+  }
+
+  // A sentence worth stopping at: one with a footnote, an uncertain
+  // decision or an echo of other scripture, in this language and level.
+  function noted(r) {
+    var ds = decisionsFor(r);
+    return ds.meaning.concat(ds.rendering).some(function (d) {
+      return d.footnote || d.uncertain || d.category === "allusion";
+    });
+  }
+  function nextNoted() {
+    for (var i = DATA.records.indexOf(current) + 1; i < DATA.records.length; i++)
+      if (noted(DATA.records[i])) return DATA.records[i];
+    return null;
+  }
+
+  // Under the title: how far the sentence has been reviewed, and the next
+  // sentence with notes.
+  function toolRow() {
+    var row = el("div", "panel-tools");
+    var statuses = t("review_status");
+    var status = el("span", "review-status review-" + current.status, statuses[current.status] || statuses.ai_draft);
+    status.title = t("review_hint");
+    row.appendChild(status);
+    var next = nextNoted();
+    var b = el("button", "panel-next-notes", t("step_notes") + " \u203a");
+    b.type = "button";
+    b.disabled = !next;
+    b.title = next ? t("step_notes_hint") : t("step_notes_none");
+    b.addEventListener("click", function () {
+      var r = nextNoted();
+      if (r) goTo(r, null, ".panel-next-notes");
+    });
+    row.appendChild(b);
+    return row;
+  }
+
+  // "1 Timothy 5:18" ("John 7:53" for another chapter's verse on this page).
+  function verseName(verse) {
+    var name = (DATA.books && DATA.books[DATA.book]) || DATA.title.replace(/[\d:\u2013\s]+$/, "");
+    return name + " " + (/:/.test(verse) ? verse : DATA.chapter + ":" + verse);
+  }
+  function pageLink(verse) {
+    return location.origin + location.pathname + settingsQuery() + (verse ? "#v" + verse : "");
+  }
+
+  // "Question this": a new GitHub issue, filled in with what a reviewer
+  // needs to find the sentence and see it as the reader saw it.
+  var ISSUES = "https://github.com/jdegreef/open-word-bible/issues/new";
+  function settingsLine() {
+    var parts = [t(settings.level) + " (" + settings.level + ")", settings.lang];
+    Object.keys(PARAMS).forEach(function (name) {
+      if (name !== "level" && settings[name] !== DEFAULTS[name]) parts.push(PARAMS[name] + "=" + settings[name]);
+    });
+    if (settings.units) parts.push("units=" + settings.units);
+    return parts.join(" \u00b7 ");
+  }
+  function clip(s, n) { return s.length > n ? s.slice(0, n - 1) + "\u2026" : s; }
+  function issueUrl(d) {
+    var ref = verseName(currentVerse);
+    var title = t("ask_title").replace("{ref}", ref) + (d ? " \u00b7 " + (t("category")[d.category] || d.category) : "");
+    function make(n) {
+      var lines = ["**Verse:** " + ref, "**Record:** `" + current.id + "` (" + current.status + ")"];
+      if (d) lines.push("**Decision:** `" + d.id + "`: " + clip(render(d.choice), n));
+      lines.push("**Reading:** " + settingsLine(), "**Page:** " + pageLink(currentVerse), "",
+                 "### " + t("ask_what"), "", "", "### " + t("ask_why"), "", "");
+      return ISSUES + "?labels=question&title=" + encodeURIComponent(title) + "&body=" + encodeURIComponent(lines.join("\n"));
+    }
+    var link = make(300);
+    return link.length > 6000 ? make(60) : link;
+  }
+  function askLink(d) {
+    var a = el("a", "ask-link", t("ask"));
+    a.href = issueUrl(d);
+    a.target = "_blank";
+    a.rel = "noopener";
+    a.setAttribute("aria-label", t(d ? "ask_decision_label" : "ask_label"));
+    // Settings may have changed since the panel was drawn.
+    a.addEventListener("click", function (e) { e.stopPropagation(); a.href = issueUrl(d); });
+    return a;
+  }
+
+  // Cite: the verse as a citation, as plain text and as Markdown, each
+  // ready to copy; and the whole chapter as plain text.
+  var citeOpen = false;
+  function citeButton() {
+    var b = el("button", "copy-link cite-toggle", t("cite"));
+    b.type = "button";
+    b.setAttribute("aria-expanded", citeOpen ? "true" : "false");
+    b.setAttribute("aria-controls", "cite-box");
+    b.addEventListener("click", function () {
+      citeOpen = !citeOpen;
+      b.setAttribute("aria-expanded", citeOpen ? "true" : "false");
+      var box = document.getElementById("cite-box");
+      if (box) box.hidden = !citeOpen;
+    });
+    return b;
+  }
+
+  function citation(ref, status, link) {
+    var cites = t("review_cite");
+    return t("cite_format").replace("{ref}", ref).replace("{level}", t(settings.level))
+      .replace("{status}", cites[status] || cites.ai_draft).replace("{url}", link);
+  }
+
+  function citeBox(verse) {
+    var box = el("div", "cite-box");
+    box.id = "cite-box";
+    box.hidden = !citeOpen;
+    var ref = verseName(verse), link = pageLink(verse), words = verseText(verse);
+    var source = ref + " (Open Word Bible, " + t(settings.level) + ")";
+    [["cite_citation", citation(ref, current.status, link)],
+     ["cite_plain", words + "\n\u2014 " + source],
+     ["cite_markdown", "> " + words + "\n>\n> \u2014 [" + source + "](" + link + ")"]].forEach(function (item) {
+      var head = el("div", "cite-head");
+      var label = el("label", "cite-label", t(item[0]));
+      label.htmlFor = "cite-" + item[0];
+      head.appendChild(label);
+      var copy = el("button", "copy-link", t("cite_copy"));
+      copy.type = "button";
+      copy.setAttribute("aria-label", t("cite_copy") + ": " + t(item[0]));
+      head.appendChild(copy);
+      var field = el("textarea", "cite-text");
+      field.id = "cite-" + item[0];
+      field.readOnly = true;
+      field.value = item[1];
+      field.rows = Math.min(6, Math.max(2, Math.ceil(item[1].length / 46) + item[1].split("\n").length - 1));
+      field.addEventListener("focus", function () { field.select(); });
+      copy.addEventListener("click", function () { copyText(item[1], copy, field, t("cite_copy")); });
+      box.appendChild(head);
+      box.appendChild(field);
+    });
+    var chapter = el("button", "copy-link cite-chapter", t("cite_chapter"));
+    chapter.type = "button";
+    chapter.addEventListener("click", function () { copyText(chapterText(), chapter, null, t("cite_chapter")); });
+    box.appendChild(chapter);
+    return box;
+  }
+
+  // The chapter as plain text at the reader's settings: headings if shown,
+  // paragraphs, verse numbers; then the citation.
+  function chapterText() {
+    var starts = new Set(DATA.paragraphs), blocks = [], para = null, shown = null;
+    DATA.records.forEach(function (r) {
+      var heading = DATA.headings[r.id];
+      var hlang = heading && settings.headings === 0 &&
+        [settings.lang, textLang(r)].filter(function (l) { return heading[l]; })[0];
+      if (hlang) { blocks.push(render(heading[hlang])); para = null; }
+      if (!para || starts.has(r.id)) { para = []; blocks.push(para); }
+      splitVerses(r, render(r.renderings[textLang(r)][settings.level])).forEach(function (part) {
+        var words = part[1].trim();
+        if (!words) return;
+        para.push((part[0] !== shown ? part[0] + " " : "") + words);
+        shown = part[0];
+      });
+    });
+    var draft = DATA.records.some(function (r) { return r.status === "ai_draft"; });
+    return blocks.map(function (b) { return typeof b === "string" ? b : b.join(" "); }).filter(Boolean).join("\n\n") +
+      "\n\n" + citation(DATA.title, draft ? "ai_draft" : DATA.records[0].status, pageLink(null));
+  }
+
+  // Copy with the clipboard API, or else by selecting the text and the
+  // browser's copy command; the button says how it went.
+  function copyText(text, button, field, label) {
+    function done(ok) {
+      button.textContent = t(ok ? "cite_copied" : "copy_failed");
+      button.classList.toggle("done", ok);
+      setTimeout(function () { button.textContent = label; button.classList.remove("done"); }, 1600);
+    }
+    function fallback() {
+      var area = field;
+      if (!area) {
+        area = el("textarea", "cite-scratch");
+        area.value = text;
+        area.setAttribute("readonly", "");
+        document.body.appendChild(area);
+      }
+      area.focus({ preventScroll: true });
+      area.select();
+      var ok = false;
+      try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+      if (area !== field) { area.remove(); button.focus({ preventScroll: true }); }
+      done(ok);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { done(true); }, fallback);
+    } else {
+      fallback();
+    }
+  }
+
+  // Footnotes, then uncertain decisions with their alternative: shown first
+  // in the phone sheet (style.css hides them on wide screens).
+  function keyNotes() {
+    var ds = decisionsFor(current);
+    var all = ds.meaning.concat(ds.rendering);
+    var shown = all.filter(function (d) { return d.footnote; })
+      .concat(all.filter(function (d) { return d.uncertain && !d.footnote; }));
+    if (!shown.length) return null;
+    var box = el("div", "key-notes");
+    box.appendChild(el("h3", null, t("key_notes")));
+    shown.forEach(function (d) {
+      var item = el("div", "key-note" + (d.uncertain ? " unc" : ""));
+      var head = el("p", "key-note-head");
+      if (d.footnote) head.appendChild(el("span", "badge", t("footnote")));
+      if (d.uncertain) head.appendChild(el("span", "badge unc", t("uncertain")));
+      head.appendChild(el("span", "key-note-cat", t("category")[d.category] || d.category));
+      item.appendChild(head);
+      item.appendChild(linked("p", "key-note-text", noteText(d)));
+      var more = el("button", "fn-pop-more", t("fn_reasoning") + " \u2193");
+      more.type = "button";
+      more.addEventListener("click", function () {
+        var card = panelEl.querySelector('.card[data-decision="' + d.id + '"]');
+        if (!card) return;
+        card.focus({ preventScroll: true });
+        card.scrollIntoView({ block: "start", behavior: scrollMotion() });
+      });
+      item.appendChild(more);
+      box.appendChild(item);
+    });
+    return box;
   }
 
   // A link to this chapter opened at a verse (#v4). Phones offer the
@@ -1268,17 +1574,33 @@
     return out;
   }
 
-  function step(by) {
-    var all = verses();
+  // Where the chosen verse is in verses(), or -1.
+  function verseIndex() {
     var i = -1;
-    all.forEach(function (v, n) { if (current && v.record === current && v.verse === currentVerse) i = n; });
+    verses().forEach(function (v, n) { if (current && v.record === current && v.verse === currentVerse) i = n; });
+    return i;
+  }
+
+  // refocus: a selector for the panel control that moved the reader (the
+  // panel is drawn again, so focus returns to its new copy).
+  function step(by, refocus) {
+    var all = verses();
+    var i = verseIndex();
     var next = all[i < 0 ? (by > 0 ? 0 : all.length - 1) : Math.min(all.length - 1, Math.max(0, i + by))];
     if (!next || (next.record === current && next.verse === currentVerse)) return;
-    select(next.record, next.verse);
-    var v = verseEl(next.verse);
+    goTo(next.record, next.verse, refocus);
+  }
+
+  function goTo(record, verse, refocus) {
+    select(record, verse);
+    var v = verseEl(currentVerse);
     if (v && !narrow()) {
-      v.focus({ preventScroll: true });
+      if (!refocus) v.focus({ preventScroll: true });
       v.scrollIntoView({ block: "nearest", behavior: scrollMotion() });
+    }
+    if (refocus) {
+      var b = panelEl.querySelector(refocus);
+      (b && !b.disabled ? b : panelEl).focus({ preventScroll: true });
     }
   }
 
@@ -1319,6 +1641,40 @@
   }
   panelEl.addEventListener("touchend", endDrag);
   panelEl.addEventListener("touchcancel", endDrag);
+
+  // Swipe the sheet sideways for the next (left) or previous (right) verse.
+  // The direction is settled by the first few pixels: a mostly vertical
+  // drag is left to scrolling and to the handle drag above. The sheet
+  // follows the finger a little, unless the reader asked for less motion.
+  var swipe = null;
+  panelEl.addEventListener("touchstart", function (e) {
+    var on = e.target.closest && e.target.closest("textarea, input, select, .cite-box");
+    swipe = narrow() && current && e.touches.length === 1 && !on
+      ? { x: e.touches[0].clientX, y: e.touches[0].clientY, axis: null } : null;
+  }, { passive: true });
+  panelEl.addEventListener("touchmove", function (e) {
+    if (!swipe) return;
+    var dx = e.touches[0].clientX - swipe.x, dy = e.touches[0].clientY - swipe.y;
+    if (!swipe.axis && (Math.abs(dx) > 10 || Math.abs(dy) > 10)) {
+      swipe.axis = Math.abs(dx) > Math.abs(dy) * 1.5 ? "x" : "y";
+      if (swipe.axis === "x") {
+        startY = null;
+        panelEl.style.transform = "";
+        panelEl.style.transition = "none";
+      }
+    }
+    if (swipe.axis === "x" && scrollMotion() === "smooth") panelEl.style.transform = "translateX(" + dx / 4 + "px)";
+  }, { passive: true });
+  function endSwipe(e) {
+    var s = swipe;
+    swipe = null;
+    if (!s || s.axis !== "x") return;
+    panelEl.style.transform = panelEl.style.transition = "";
+    var dx = e.type === "touchend" ? e.changedTouches[0].clientX - s.x : 0;
+    if (Math.abs(dx) > 60) step(dx < 0 ? 1 : -1);
+  }
+  panelEl.addEventListener("touchend", endSwipe);
+  panelEl.addEventListener("touchcancel", endSwipe);
 
   function setSetting(name, value) {
     var top = panelEl.scrollTop;
