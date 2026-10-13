@@ -54,7 +54,7 @@ def fetch(url, timeout=30):
 # ---- The browser's matching (web/search.js) ---------------------------------
 
 SPAN = re.compile(r"\{\{([a-z_]+):([^{}]*)\}\}")
-VERSE_MARK = re.compile(r"\\v \d+ ?")
+VERSE_MARK = re.compile(r"\\v \d+ ?|\\q ?")
 
 
 def fold(text):

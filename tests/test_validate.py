@@ -48,6 +48,35 @@ class ValidateTest(unittest.TestCase):
         record["renderings"]["en"]["B"] = "the light of {{gender:all people|men}}"
         self.assertEqual(validate.validate_record(record), [])
 
+    def test_line_markers_between_words_pass(self):
+        record = next(r for r in example_records() if r["id"] == "JHN.1.12.s1")
+        en = record["renderings"]["en"]
+        en["B"] = en["B"].replace(", ", ", \\q ", 1)
+        self.assertIn("\\q", en["B"])
+        self.assertEqual(validate.validate_record(record), [])
+
+    def test_misplaced_line_markers_fail(self):
+        for bad, reason in (("\\q In the beginning", "starts with a line marker"),
+                            ("In the beginning \\q", "ends with a line marker"),
+                            ("In the \\q \\q beginning", "doubled line marker"),
+                            ("In the\\q beginning", "stand alone"),
+                            ("In the {{gender:all \\q people|men}}", "inside a setting span"),
+                            ("In the \\x beginning", "unknown backslash marker")):
+            record = example_records()[0]
+            record["renderings"]["en"]["L"] = bad
+            errors = validate.validate_record(record)
+            self.assertTrue(any(reason in e for e in errors), (bad, errors))
+
+    def test_line_marker_next_to_a_verse_marker_fails(self):
+        record = next(r for r in example_records() if r["id"] == "JHN.1.12.s1")
+        record["renderings"]["en"]["B"] = record["renderings"]["en"]["B"].replace("\\v 13 ", "\\q \\v 13 ")
+        self.assertTrue(any("next to a verse marker" in e for e in validate.validate_record(record)))
+
+    def test_line_marker_in_the_gloss_fails(self):
+        record = example_records()[0]
+        record["literal_gloss"] = record["literal_gloss"].replace(" ", " \\q ", 1)
+        self.assertTrue(any("renderings only" in e for e in validate.validate_record(record)))
+
     def test_placeholder_left_in_the_text_fails(self):
         record = example_records()[0]
         record["renderings"]["en"]["R"] = "In the beginning @He@ was there."

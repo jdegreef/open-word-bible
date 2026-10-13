@@ -4,6 +4,7 @@ summary: Ni nani walionakili Agano Jipya katika karne zake za kwanza, na walikuw
 date: 2026-10-11
 order: 33
 section: history
+part: nt
 ---
 Kila mswada wa Agano Jipya uliodumu ulinakiliwa na mtu fulani. Katika karne tatu za kwanza za kanisa, hawa hawakuwa watawa katika chumba cha kunakilia cha nyumba ya watawa, na kwa hakika hawakuwa wachapishaji. Walikuwa Wakristo, na wakati mwingine wataalamu waliolipwa, wakinakili vitabu kwa ajili ya makanisa yao wenyewe, kwa ajili ya marafiki, au kwa ajili yao wenyewe, katika ulimwengu ambao Ukristo ulikuwa vuguvugu dogo ambalo wakati mwingine liliteswa. Tunajua nini kuwahusu, na walikuwa hodari kiasi gani katika kazi yao?
 

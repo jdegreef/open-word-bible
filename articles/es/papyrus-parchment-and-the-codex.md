@@ -4,6 +4,7 @@ summary: Los materiales en que se escribió la Biblia determinaron cómo se cons
 date: 2026-10-11
 order: 32
 section: history
+part: nt
 ---
 Antes de preguntar con qué exactitud se copió la Biblia, conviene hacer una pregunta más sencilla: ¿*sobre qué* se copió? Los materiales que usaban los escribas antiguos, y la forma de sus libros, explican mucho sobre qué manuscritos se conservaron, dónde se encontraron y por qué las Escrituras cristianas tienen el aspecto que tienen. También explican uno de los hechos más sorprendentes de la historia del libro: los primeros cristianos estuvieron entre los primeros en adoptar el códice, el antepasado del libro moderno.
 

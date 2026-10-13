@@ -4,6 +4,7 @@ summary: Más de dos siglos antes de Jesús, judíos de Egipto tradujeron al gri
 date: 2026-10-11
 order: 29
 section: history
+part: ot
 ---
 La primera traducción de la Biblia no la hicieron cristianos, ni se hizo al latín ni al inglés. La hicieron judíos, en Egipto, al griego, a partir del siglo III a. C. Se llama **Septuaginta**, de la palabra latina que significa «setenta», y es uno de los libros más importantes de la historia de la Biblia.
 
