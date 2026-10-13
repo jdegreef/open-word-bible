@@ -300,3 +300,8 @@ Local setup:
     python backend/manage.py import_texts                 # about 90 seconds
     python backend/manage.py import_content
     python backend/manage.py test backend_tests           # needs Postgres
+
+On Render (render.yaml) every deploy migrates, runs `import_texts --missing`
+(which fetches and imports only the editions not yet loaded) and reloads
+content/. Errors and warnings go to the log, and to Sentry when `SENTRY_DSN`
+is set; no query strings or searches are sent.
