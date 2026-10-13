@@ -493,6 +493,87 @@
   draw();
 })();
 
+// A link to a folded section (a book's uses on a key-term page, #jhn)
+// opens it, in browsers that do not unfold it themselves.
+(function () {
+  "use strict";
+  function unfold() {
+    var id;
+    try { id = decodeURIComponent(location.hash.slice(1)); } catch (e) { return; }  // a malformed hash (#100%)
+    var target = id && document.getElementById(id);
+    if (target && target.tagName === "DETAILS" && !target.open) {
+      target.open = true;
+      target.scrollIntoView();
+    }
+  }
+  window.addEventListener("hashchange", unfold);
+  unfold();
+})();
+
+// The articles page (articles_page in scripts/build_site.py): the section
+// links filter the list to one section, and a search box narrows it to the
+// articles whose title, summary or passages hold every word typed. A
+// section link from elsewhere (/articles/#history) opens that section.
+(function () {
+  "use strict";
+  var index = document.getElementById("a-index");
+  if (!index) return;
+  var links = Array.prototype.slice.call(index.querySelectorAll("[data-filter]"));
+  var groups = Array.prototype.slice.call(index.querySelectorAll(".a-group"));
+  var input = document.getElementById("a-search");
+  var none = document.getElementById("a-none");
+  var start = document.getElementById("a-start");
+  var filter = "all";
+
+  function fold(s) {
+    return s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+  }
+  var texts = groups.map(function (g) {
+    return Array.prototype.slice.call(g.querySelectorAll("li")).map(function (li) {
+      return { li: li, text: fold(li.textContent) };
+    });
+  });
+
+  function apply() {
+    var words = fold(input.value).split(/\s+/).filter(Boolean);
+    var shown = 0;
+    groups.forEach(function (g, i) {
+      var visible = 0;
+      texts[i].forEach(function (item) {
+        var match = words.every(function (w) { return item.text.indexOf(w) >= 0; });
+        item.li.hidden = !match;
+        if (match) visible++;
+      });
+      g.hidden = !visible || (filter !== "all" && g.getAttribute("data-section") !== filter);
+      if (!g.hidden) shown += visible;
+    });
+    none.hidden = shown > 0;
+    if (start) start.hidden = filter !== "all" || words.length > 0;
+    links.forEach(function (a) {
+      if (a.getAttribute("data-filter") === filter) a.setAttribute("aria-current", "true");
+      else a.removeAttribute("aria-current");
+    });
+  }
+
+  function choose(key) {
+    filter = groups.some(function (g) { return g.getAttribute("data-section") === key; }) ? key : "all";
+    apply();
+  }
+
+  links.forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      e.preventDefault();
+      var key = a.getAttribute("data-filter");
+      choose(key);
+      history.replaceState(null, "", key === "all" ? location.pathname + location.search : "#" + key);
+    });
+  });
+  input.closest("label").hidden = false;
+  input.addEventListener("input", apply);
+  window.addEventListener("hashchange", function () { choose(location.hash.slice(1)); });
+  choose(location.hash.slice(1));
+})();
+
 // Sync for a signed-in reader (backend accounts/reading.py): bookmarks,
 // highlights (owb.marks) and the reading place (owb.place) go to the account
 // and come back merged, the latest change to each verse winning, so they

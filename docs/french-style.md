@@ -111,6 +111,7 @@ narration records the tense choice by level.
 | Messiah (1:41) | le Messie | Plainly, no setting; the explanation is `{{christos:Christ|Oint}}`. |
 | the temple | le temple (naos, every level); le temple at L for hieron, la cour du temple, l’esplanade du temple at B and R | |
 | disciples | les disciples | Every level. |
+| slave (*doulos*, *ʿeved*) | esclave (L); serviteur, servante (B, R) | As the English: "esclave" at every level where slavery itself is the point (slave and free, bought and sold, slavery in Egypt, slavery to sin). |
 | brothers (2:12) | ses frères | Specific men: no setting. |
 | Woman (2:4) | Femme (L, B); Mère (R) | As the English: Readable names her as his mother, with a decision. |
 | Sir / Lord (*kyrie*) | Monsieur / Seigneur | As `docs/john-terms.md`: "Seigneur" for those who believe. |
