@@ -1378,6 +1378,8 @@ html.palette-open { overflow: hidden; }
 .pal-meta { font-size: 13.5px; color: var(--muted); }
 .pal-meta.serif { font-family: var(--serif); font-size: 15px; }
 .pal-empty { padding: 14px 10px; color: var(--muted); font-size: 15px; }
+/* An answer on its way: the rows shown are for what was typed before. */
+.palette-list[aria-busy="true"] .pal-row:not(.pal-all) { opacity: .6; }
 .palette-foot {
   display: flex; gap: 16px; margin: 0; padding: 9px 16px; border-top: 1px solid var(--line);
   background: var(--surface-2); font-size: 12.5px; color: var(--muted);
@@ -1402,7 +1404,8 @@ html.palette-open { overflow: hidden; }
   flex: 1; min-width: 0; padding: 14px 0; border: 0; outline: 0; background: none;
   font: inherit; font-size: 19px; color: var(--text);
 }
-.search-layout { margin-top: 18px; }
+.search-layout { margin-top: 18px; transition: opacity .15s; }
+.search-layout.is-loading { opacity: .55; }
 .search-layout.has-facets { display: grid; grid-template-columns: minmax(11rem, auto) minmax(0, 1fr); gap: 40px; align-items: start; }
 .facets { position: sticky; top: calc(var(--header-h) + 90px); }
 .facet-list { display: grid; gap: 4px; }

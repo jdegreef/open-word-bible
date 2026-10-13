@@ -237,6 +237,10 @@ def _result(doc, headline):
     # queries parse it themselves.
     if isinstance(doc, str):
         doc = json.loads(doc)
+    # An article's whole text ("x", kilobytes each) stays out of answers:
+    # the headline shows the part that matched.
+    if doc["k"] == "a":
+        doc = {k: v for k, v in doc.items() if k != "x"}
     if headline and "\u27e6" in headline:
         return {**doc, "hl": headline}
     return doc
@@ -351,7 +355,7 @@ def search(lang, q, kind=None, offset=0, limit=20, sort="relevance", per=8):
     """The API's answer to q on lang's pages. With no kind: the reference
     if q is one, or else counts for each kind, the best `per` of each, and
     a suggestion when nothing matched. With a kind: one page of that kind,
-    by relevance or in Bible order ("order")."""
+    by relevance or in Bible order ("order"), with the counts of every kind."""
     q = q.replace("\x00", "").strip()[:200]
     answer = {"query": q, "lang": lang}
     query_terms = terms(q)
@@ -359,8 +363,10 @@ def search(lang, q, kind=None, offset=0, limit=20, sort="relevance", per=8):
         return {**answer, "reference": None, "totals": {}, "results": [], "suggestion": None}
     query = tsquery(lang, query_terms)
     if kind:
-        total = counts(lang, query).get(kind, 0)
-        return {**answer, "type": kind, "sort": sort, "offset": offset, "total": total,
+        # Every kind's count comes with the page, for the site's filters.
+        totals = counts(lang, query)
+        total = totals.get(kind, 0)
+        return {**answer, "type": kind, "sort": sort, "offset": offset, "total": total, "totals": totals,
                 "results": page(lang, query, kind, offset, limit, sort) if total > offset else []}
     books = SearchLanguage.objects.get(code=lang).books
     ref = reference(q, books, lang)
