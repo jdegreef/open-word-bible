@@ -3,6 +3,7 @@ title: How the Old Testament came to be written
 summary: Before there were scrolls in a library, there were songs, laws, stories and prophecies told and written in ancient Israel. What archaeology and the text itself tell us about how the Hebrew Bible was first put into writing.
 date: 2026-10-11
 order: 21
+nav_title: How the Old Testament was written
 section: history
 ---
 The Old Testament is not one book but a library. Christians count thirty-nine books in it; Jewish tradition counts the same writings as twenty-four. They include law, history, poetry, proverbs, prophecy and letters of a kind, written over many centuries in Hebrew, with a few chapters in Aramaic. No one sat down and wrote it from beginning to end. So how did it come to be written at all?

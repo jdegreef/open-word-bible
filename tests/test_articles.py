@@ -75,7 +75,8 @@ class ArticlesTest(unittest.TestCase):
             self.assertIn(f"{build_site.SITE_URL}/articles/{a['slug']}/", sitemap)
         home = (self.out / "index.html").read_text(encoding="utf-8")
         self.assertIn('href="/articles/"', home)
-        self.assertIn(build_site.article_url(self.articles[0]), home)
+        first = min(self.articles, key=lambda a: a["order"])
+        self.assertIn(build_site.article_url(first), home)
 
     def test_every_article_has_a_known_section(self):
         for a in self.articles:
@@ -83,6 +84,12 @@ class ArticlesTest(unittest.TestCase):
         index = (self.out / "articles" / "index.html").read_text(encoding="utf-8")
         for key in build_site.SECTIONS:
             self.assertIn(f'id="{key}"', index)
+            # A link to each section from the top, with its count...
+            count = sum(a["section"] == key for a in self.articles)
+            self.assertIn(f'<a href="#{key}">{build_site.SECTIONS[key]} <span>{count}</span></a>', index)
+        # ...and a section's rows don't repeat its name.
+        groups = index[index.index('<section class="a-group"'):]
+        self.assertNotIn('class="a-section"', groups)
 
     def test_scripture_quotes_are_captioned_and_link_to_the_reader(self):
         page = (self.out / "articles" / "the-word-was-god" / "index.html").read_text(encoding="utf-8")
@@ -110,7 +117,7 @@ class SiteChromeTest(unittest.TestCase):
             self.assertIn('<footer class="site">', text, path)
             # Links stay in the page's language: /es/ pages link to /es/.
             lang = re.search(r'<html lang="([a-z]+)">', text)[1]
-            self.assertIn(f'href="{build_site.url(lang, "/jhn/1/")}"', text, path)
+            self.assertIn(f'href="{build_site.url(lang, "/read/#jhn")}"', text, path)
         about = (out / "about" / "index.html").read_text(encoding="utf-8")
         self.assertIn('<h2 id="credits">', about)
         self.assertIn('id="help"', (out / "index.html").read_text(encoding="utf-8"))
