@@ -23,7 +23,7 @@ sys.path.insert(0, str(ROOT))
 
 from typing import NamedTuple  # noqa: E402
 
-from owb import markup, morph, refs  # noqa: E402
+from owb import markup, morph, refs, versification  # noqa: E402
 
 # Every book's name in each interface language and its number of chapters
 # (data/books.json). All 66 are listed, so adding a book needs no edit here.
@@ -1132,12 +1132,11 @@ def disputed_block(records, lang="en"):
     return {"records": ids, "ref": f"{BOOK_NAMES[a.book][lang]} {span}", "note": note}
 
 
-# Verses that are only a psalm's title ("A psalm of David ..."), which the
-# Hebrew text counts as verse 1. A chapter's cards quote the psalm itself.
-TITLES = {
-    "PSA.3.1", "PSA.4.1", "PSA.5.1", "PSA.6.1", "PSA.7.1", "PSA.8.1", "PSA.9.1",
-    "PSA.12.1",
-}
+def psalm_title(vid):
+    """True for a verse that is only a psalm's title ("A psalm of David ..."),
+    which the Hebrew text counts as a verse and English Bibles do not number.
+    A chapter's cards quote the psalm itself."""
+    return not versification.to_english(refs.parse(vid))
 
 
 def opening(records, chapter):
@@ -1148,7 +1147,7 @@ def opening(records, chapter):
     for r in records:
         for vid in r["refs"]:
             if refs.parse(vid).chapter == chapter:
-                if not disputed(vid) and vid not in TITLES:
+                if not disputed(vid) and not psalm_title(vid):
                     return r, vid
                 first = first or (r, vid)
     return first
@@ -1751,10 +1750,12 @@ def article_meta(a, lang="en"):
     return " &middot; ".join(parts)
 
 
-def article_card(a, lang="en", featured=False):
-    section = catalog(lang)["sections"][a["section"]]
+def article_card(a, lang="en", featured=False, section=True):
+    """An article's card. Under its own section's heading it leaves out the
+    section's name (section=False)."""
+    label = f'<span class="a-section">{catalog(lang)["sections"][a["section"]]}</span>' if section else ""
     return (f'<li><a class="a-card{" featured" if featured else ""}" href="{url(lang, article_url(a))}">'
-            f'<span class="a-section">{section}</span>'
+            f'{label}'
             f'<span class="a-title">{display(a["title"])}</span>'
             f'<span class="a-summary">{display(a["summary"])}</span>'
             f'<span class="a-meta">{article_meta(a, lang)}</span></a></li>')
@@ -1769,12 +1770,21 @@ def articles_page(articles, lang="en"):
     by_order = sorted(articles, key=lambda a: a["order"])
     if by_order:
         featured, rest = by_order[0], by_order[1:]
+        names = catalog(lang)["sections"]
+        groups = [(key, [a for a in rest if a["section"] == key]) for key in SECTIONS]
+        groups = [(key, items) for key, items in groups if items]
+        # Links to each section, with how many articles it has.
+        jump = (f'<nav class="a-jump" aria-label="{t(lang, "articles.sections")}"><ul>'
+                + "".join(f'<li><a href="#{key}">{names[key]} <span>{sum(a["section"] == key for a in by_order)}</span></a></li>'
+                          for key, _ in groups)
+                + "</ul></nav>")
+        # Inside a section, compact rows rather than cards.
         sections = "".join(
             f'<section class="a-group" id="{key}" aria-labelledby="{key}-h">'
-            f'<h2 id="{key}-h">{catalog(lang)["sections"][key]}</h2>'
-            f'<ul class="a-grid">{article_list([a for a in rest if a["section"] == key], lang)}</ul></section>'
-            for key in SECTIONS if any(a["section"] == key for a in rest))
-        listing = f'<ul class="a-feature">{article_card(featured, lang, featured=True)}</ul>\n{sections}'
+            f'<h2 id="{key}-h">{names[key]}</h2>'
+            f'<ul class="a-rows">{"".join(article_card(a, lang, section=False) for a in items)}</ul></section>'
+            for key, items in groups)
+        listing = f'{jump}\n<ul class="a-feature">{article_card(featured, lang, featured=True)}</ul>\n{sections}'
     else:
         listing = f'<p class="notice">{t(lang, "articles.none")}</p>'
     body = f"""
