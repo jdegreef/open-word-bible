@@ -3,6 +3,7 @@ title: "La paz que monta guardia: Filipenses 4:6–7"
 summary: Las palabras de Pablo sobre la angustia y la oración, leídas de cerca. Un verbo militar, una promesa y no un pago, y una gratitud que no espera la respuesta.
 date: 2026-10-10
 order: 8
+nav_title: La paz que monta guardia
 section: passage
 ---
 Filipenses 4:6–7 es uno de los pasajes más queridos de las cartas de Pablo, y uno de los que más se citan a las personas angustiadas. Leído de cerca, dice más que «no te preocupes». Esta es la versión Equilibrada:

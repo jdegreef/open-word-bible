@@ -3,6 +3,7 @@ title: "Mostrar el trabajo: qué es un registro de razonamiento"
 summary: Cada frase de Open Word Bible lleva un registro con las palabras originales, una glosa, tres traducciones y cada decisión que hay detrás.
 date: 2026-10-10
 order: 2
+nav_title: Qué es un registro de razonamiento
 section: method
 ---
 Abre cualquier versículo en este sitio y se abrirá un panel a su lado. Lo que ves ahí es el *registro de razonamiento* del versículo. Es el corazón del proyecto, y vale la pena saber qué contiene.
