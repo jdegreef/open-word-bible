@@ -195,11 +195,12 @@ An article is translated by adding `articles/<lang>/<slug>.md` with the same
 slug. Until then, the other language's page shows the English under a note,
 names the English page as canonical and stays out of the sitemap.
 
-To add a language: add it to `LANGUAGES` in `scripts/build_site.py` and
-every book's name in it to `data/books.json`, write `i18n/<lang>.json`, add its words to
-`owb/morph.py`, and add it to `Role.READING_LANGUAGES` and the role
-constraint in `backend/accounts/models.py` (with a migration) so it can have
-language reviewers. A drafting brief in `docs/<language>-style.md` settles
+To add a language: list it in `data/languages.json` (its code, English and
+own names, quotation marks, and any reader setting only it has), add every
+book's name in it to `data/books.json`, write `i18n/<lang>.json`, add its
+words to `owb/morph.py`, and run `python backend/manage.py makemigrations
+accounts` so it can have language reviewers. The site, the validator and the
+backend all read the list from `owb/languages.py`. A drafting brief in `docs/<language>-style.md` settles
 the book-wide wording choices.
 
 ### Articles

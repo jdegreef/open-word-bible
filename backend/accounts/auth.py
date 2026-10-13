@@ -30,6 +30,8 @@ from django.db import transaction
 from django.utils import timezone
 from rest_framework import authentication
 
+from owb import languages
+
 from .models import ApiToken, FailedSignIn, Role, SignInLink, hash_secret, new_secret
 
 log = logging.getLogger(__name__)
@@ -41,7 +43,7 @@ FAILURES_PER_EMAIL = 10       # wrong passwords in FAILURE_WINDOW before an addr
 FAILURES_PER_IP = 30
 FAILURE_WINDOW = timedelta(minutes=15)
 TOKEN_IDLE_DAYS = 180         # a device unused this long is signed out
-LANGUAGES = ("en", "es", "fr", "sw")
+LANGUAGES = languages.CODES  # the site's languages (data/languages.json)
 Purpose = SignInLink.Purpose
 
 
