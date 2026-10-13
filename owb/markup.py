@@ -18,6 +18,15 @@ SPAN = re.compile(r"\{\{([a-z_]+):([^{}]*)\}\}")
 # starts with a USFM-style marker: "... children of God \v 13 children born ...".
 VERSE = re.compile(r"\\v (\d+) ?")
 
+# Poetry is set in lines. A line marker "\q " starts a new poetic line inside
+# a verse: "the wicked, \q nor stands in the way of sinners". A verse start is
+# always a line start, so \q marks only breaks within a verse's text: never
+# at the start or end of a rendering, never doubled, never next to a \v
+# marker, never inside a {{setting:...}} span or an alignment's target_span.
+# A rendering with no \q is prose. Each language and level places its own
+# breaks; see docs/english-style.md ("Poetry: lines").
+LINE = re.compile(r" ?\\q ?")
+
 
 class Span(NamedTuple):
     setting: str
@@ -53,6 +62,48 @@ def split_verses(text):
     return parts
 
 
+def line_markers(text):
+    """How many line markers text holds."""
+    return len(LINE.findall(text))
+
+
+def split_lines(text):
+    """Split text (one verse's part, or any rendering) at its line markers:
+    "a, \\q b" -> ["a,", "b"]. Text with no marker is one line."""
+    return [part.strip() for part in LINE.split(text)]
+
+
+def is_poetry(text):
+    return bool(LINE.search(text))
+
+
+def flat(text):
+    """Text with its line markers turned into spaces: how a line break reads
+    wherever text is shown on one line (search, quotes, share cards, speech)."""
+    return LINE.sub(" ", text)
+
+
+def line_errors(text):
+    """What is wrong with text's line markers, as a list of reasons."""
+    found = []
+    stripped = text.strip()
+    if stripped.startswith("\\q"):
+        found.append("starts with a line marker")
+    if re.search(r"\\q\s*$", stripped):
+        found.append("ends with a line marker")
+    if re.search(r"\\q\s*\\q", text):
+        found.append("doubled line marker")
+    if re.search(r"\\q\s*\\v |\\v \d+\s*\\q", text):
+        found.append("line marker next to a verse marker (a verse already starts a line)")
+    if re.search(r"\\q(?!\s)", text) or re.search(r"\S\\q", text):
+        found.append('line marker must stand alone: "... \\q ..."')
+    if any("\\q" in text[s.start:s.end] for s in spans(text)):
+        found.append("line marker inside a setting span")
+    if re.search(r"\\(?![vq] )", text):
+        found.append("unknown backslash marker (only \\v N and \\q)")
+    return found
+
+
 def render(text, settings=None):
     settings = settings or {}
 
@@ -69,7 +120,7 @@ def alignment_ranges(text, targets):
 
     A short span such as "the" can occur more than once, so a rendering's
     alignments are listed in the order their spans appear, and each is found
-    after the end of the one before. A span may not hold a verse marker or
+    after the end of the one before. A span may not hold a verse or line marker or
     cut through a setting span. Returns [(start, end), ...]; raises
     ValueError naming the first span that breaks a rule."""
     whole = spans(text)
@@ -79,6 +130,8 @@ def alignment_ranges(text, targets):
             raise ValueError(f"{i}: empty target_span")
         if VERSE.search(target):
             raise ValueError(f"{i}: target_span holds a verse marker")
+        if "\\q" in target:
+            raise ValueError(f"{i}: target_span holds a line marker")
         start = text.find(target, at)
         if start < 0:
             where = "after the previous alignment" if target in text else "in rendering"

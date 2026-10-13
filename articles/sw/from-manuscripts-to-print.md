@@ -4,6 +4,7 @@ summary: Jinsi mashine ya uchapishaji ilivyoyafanya maandishi ya Biblia kuwa tha
 date: 2026-10-11
 order: 39
 section: history
+part: today
 ---
 Kwa sehemu kubwa ya historia yake, kila nakala ya Biblia ilikuwa ya pekee. Kila moja iliandikwa kwa mkono, na kila moja ilikuwa na makosa yake madogo na masahihisho yake. Kubuniwa kwa uchapishaji kwa herufi zinazohamishika katika karne ya kumi na tano kulibadilisha hilo. Kwa mara ya kwanza, maelfu ya nakala zinazofanana kabisa za maandishi mamoja yangeweza kutengenezwa. Hiyo ilikuwa zawadi kubwa, lakini pia ilileta tatizo jipya: maandishi yoyote yaliyotokea kuchapishwa kwanza yangeweza kuwa thabiti kwa karne nyingi, pamoja na makosa yake yote.
 

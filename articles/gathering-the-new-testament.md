@@ -4,6 +4,7 @@ summary: No council sat down and voted the New Testament into existence. How the
 date: 2026-10-11
 order: 38
 section: history
+part: nt
 ---
 Why does the New Testament contain these twenty-seven books, and not others? A popular story says that the emperor Constantine, or the Council of Nicaea in 325, chose the books and suppressed the rest. That story, made famous by novels, is not true: the Council of Nicaea did not discuss the canon at all. The real history is longer, more gradual, and in many ways more interesting.
 
