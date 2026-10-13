@@ -1750,12 +1750,10 @@ def article_meta(a, lang="en"):
     return " &middot; ".join(parts)
 
 
-def article_card(a, lang="en", featured=False, section=True):
-    """An article's card. Under its own section's heading it leaves out the
-    section's name (section=False)."""
-    label = f'<span class="a-section">{catalog(lang)["sections"][a["section"]]}</span>' if section else ""
-    return (f'<li><a class="a-card{" featured" if featured else ""}" href="{url(lang, article_url(a))}">'
-            f'{label}'
+def article_card(a, lang="en"):
+    """An article's card on the home page and under "Keep reading"."""
+    return (f'<li><a class="a-card" href="{url(lang, article_url(a))}">'
+            f'<span class="a-section">{catalog(lang)["sections"][a["section"]]}</span>'
             f'<span class="a-title">{display(a["title"])}</span>'
             f'<span class="a-summary">{display(a["summary"])}</span>'
             f'<span class="a-meta">{article_meta(a, lang)}</span></a></li>')
