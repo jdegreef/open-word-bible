@@ -8,6 +8,7 @@ full sources. Every page is built in each interface language: English at
 the root, Spanish under /es/, French under /fr/, Swahili under /sw/.
 """
 import argparse
+import base64
 import functools
 import hashlib
 import html
@@ -165,13 +166,29 @@ BOOT_SCRIPT = ("try{var d=document.documentElement,t=localStorage.getItem('owb-t
 # A reader who picked a language in the footer (web/site.js keeps it as
 # owb-lang) is taken to this page in that language before the first paint,
 # so a link shared in English still opens in Spanish for them. Only the
-# languages the page is in are named: an article not yet translated into
-# the reader's language stays in its own.
-def lang_script(translated):
-    return ("try{var l=localStorage.getItem('owb-lang'),h=document.documentElement.lang;"
-            f"if(l&&l!==h&&{list(translated)!r}.indexOf(l)>=0){{"
-            "var p=h==='en'?location.pathname:location.pathname.slice(h.length+1);"
-            "location.replace((l==='en'?'':'/'+l)+p+location.search+location.hash)}}catch(e){}")
+# languages the page is in count, from its owb-langs meta tag: an article
+# not yet translated into the reader's language stays in its own. The
+# script reads the tag rather than naming the languages so that it is the
+# same on every page, and the Content-Security-Policy in render.yaml can
+# allow it by its hash (BOOT_SCRIPT_HASH; tests/test_headers.py).
+BOOT_SCRIPT += ("try{var m=document.querySelector('meta[name=owb-langs]'),"
+                "l=localStorage.getItem('owb-lang'),h=document.documentElement.lang;"
+                "if(m&&l&&l!==h&&m.content.split(' ').indexOf(l)>=0){"
+                "var p=h==='en'?location.pathname:location.pathname.slice(h.length+1);"
+                "location.replace((l==='en'?'':'/'+l)+p+location.search+location.hash)}}catch(e){}")
+BOOT_SCRIPT_HASH = "sha256-" + base64.b64encode(hashlib.sha256(BOOT_SCRIPT.encode()).digest()).decode()
+
+# With JavaScript off, a chapter page's server-rendered disputed notes hide
+# their "reasoning" buttons (only reader.js can open the reasoning). It is the
+# site's one <style> element, so render.yaml's Content-Security-Policy allows
+# it by its hash in style-src-elem (NOSCRIPT_STYLE_HASH; tests/test_headers.py).
+NOSCRIPT_STYLE = ".disputed-note .fn-pop-more { display: none; }"
+NOSCRIPT_STYLE_HASH = "sha256-" + base64.b64encode(hashlib.sha256(NOSCRIPT_STYLE.encode()).digest()).decode()
+
+
+def langs_meta(translated):
+    """The tag naming the languages a page is in, for the boot script."""
+    return f'<meta name="owb-langs" content="{" ".join(translated)}">'
 
 GEAR = ('<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
         'stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
@@ -309,7 +326,8 @@ def page(lang, title, body, path=None, current="", description="", card="site", 
     here = path if path is not None else unlisted
     if unlisted is not None:
         meta += '\n<meta name="robots" content="noindex">'
-    boot = BOOT_SCRIPT + (lang_script(translated) if here is not None else "")
+    if here is not None:
+        meta += "\n" + langs_meta(translated)
     return f"""<!doctype html>
 <html lang="{lang}">
 <head>
@@ -324,7 +342,7 @@ def page(lang, title, body, path=None, current="", description="", card="site", 
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
 <meta name="theme-color" content="#f4eee3" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#2a241c" media="(prefers-color-scheme: dark)">
-<script>{boot}</script>
+<script>{BOOT_SCRIPT}</script>
 <link rel="preload" href="/fonts/hanken-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/gentium-book-plus-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{asset("style.css")}">
@@ -1108,7 +1126,7 @@ def chapter_page(book, chapter, lang="en"):
     <p class="print-only print-head" id="print-head"></p>
     <p class="sub">{t(lang, "reader.sub" + suffix)}</p>
     <p class="notice" id="partial"{"" if partial else " hidden"}>{html.escape(catalog(lang)["reader.ui"]["partial"]) if partial else ""}</p>
-    <noscript><p class="notice">{t(lang, "reader.noscript", level=levels["B"])}</p><style>.disputed-note .fn-pop-more {{ display: none; }}</style></noscript>
+    <noscript><p class="notice">{t(lang, "reader.noscript", level=levels["B"])}</p><style>{NOSCRIPT_STYLE}</style></noscript>
     <div class="text" id="text">{text}</div>
     <section class="notes" id="notes" aria-label="{t(lang, "reader.notes")}" hidden></section>
     {chapter_turns(book, chapter, lang)}
