@@ -4,6 +4,7 @@ summary: Les manuscrits ont confirmé que la Bible hébraïque avait été copi�
 date: 2026-10-11
 order: 28
 section: history
+part: ot
 ---
 Quand la découverte des manuscrits de la mer Morte a été annoncée, beaucoup de gens se sont posé une question : montreraient-ils que la Bible avait été modifiée ? La réponse s'est révélée plus intéressante qu'un simple oui ou un simple non.
 

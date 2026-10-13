@@ -4,6 +4,7 @@ summary: Comment l'imprimerie a fixé pour la première fois le texte de la Bibl
 date: 2026-10-11
 order: 39
 section: history
+part: today
 ---
 Pendant la plus grande partie de son histoire, chaque exemplaire de la Bible était unique. Chacun était écrit à la main, et chacun avait ses propres petites fautes et corrections. L'invention de l'imprimerie à caractères mobiles, au quinzième siècle, a changé cela. Pour la première fois, on pouvait produire des milliers d'exemplaires identiques d'un même texte. C'était un grand bienfait, mais cela a aussi créé un nouveau problème : le texte qui se trouvait être imprimé le premier pouvait se figer pour des siècles, avec ses fautes.
 

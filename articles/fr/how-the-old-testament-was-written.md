@@ -5,6 +5,7 @@ date: 2026-10-11
 order: 21
 nav_title: Comment l'Ancien Testament a été écrit
 section: history
+part: ot
 ---
 L'Ancien Testament n'est pas un livre, mais une bibliothèque. Les chrétiens y comptent trente-neuf livres ; la tradition juive compte les mêmes écrits comme vingt-quatre. On y trouve des lois, de l'histoire, de la poésie, des proverbes, des prophéties et des lettres d'un certain genre, écrits sur de nombreux siècles en hébreu, avec quelques chapitres en araméen. Personne ne s'est assis pour l'écrire du début à la fin. Comment a-t-il donc été écrit ?
 

@@ -48,7 +48,7 @@ def words(text):
 
 def plain(rendering):
     """A rendering with default settings, verse markers and [brackets] removed."""
-    text = markup.VERSE.sub(" ", markup.render(rendering))
+    text = markup.flat(markup.VERSE.sub(" ", markup.render(rendering)))
     return text.replace("[", "").replace("]", "")
 
 

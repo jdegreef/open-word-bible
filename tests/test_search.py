@@ -13,6 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import build_site  # noqa: E402
+from owb import markup  # noqa: E402
 from tests.site_build import built_site  # noqa: E402
 
 
@@ -56,7 +57,10 @@ class SearchTest(unittest.TestCase):
             self.assertEqual(len(verses), len(self.records), lang)
             for doc, record in zip(verses, self.records):
                 shown = build_site.text_lang(record, lang)
-                self.assertEqual(doc["x"], record["renderings"][shown])
+                # Poetic line markers (\q) read as spaces in search.
+                self.assertEqual(doc["x"], {level: markup.flat(text)
+                                            for level, text in record["renderings"][shown].items()})
+                self.assertFalse(any("\\q" in text for text in doc["x"].values()), doc)
                 # A sentence not yet in lang is shown, and found, in English.
                 self.assertEqual(doc.get("l"), None if shown == lang else shown)
                 self.assertEqual(doc["vv"], [int(r.split(".")[2]) for r in record["refs"]])
