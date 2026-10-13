@@ -64,14 +64,22 @@ def render(text, settings=None):
     return SPAN.sub(choose, text)
 
 
+def _whole(text, start, end):
+    """True if text[start:end] does not begin or end inside a word."""
+    inside_before = start > 0 and text[start - 1].isalnum() and text[start].isalnum()
+    inside_after = end < len(text) and text[end].isalnum() and text[end - 1].isalnum()
+    return not (inside_before or inside_after)
+
+
 def alignment_ranges(text, targets):
     """Where each alignment's target_span sits in one rendering.
 
     A short span such as "the" can occur more than once, so a rendering's
     alignments are listed in the order their spans appear, and each is found
-    after the end of the one before. A span may not hold a verse marker or
-    cut through a setting span. Returns [(start, end), ...]; raises
-    ValueError naming the first span that breaks a rule."""
+    after the end of the one before, as a whole word: "I" is never the start
+    of "If". A span may not hold a verse marker or cut through a setting
+    span. Returns [(start, end), ...]; raises ValueError naming the first
+    span that breaks a rule."""
     whole = spans(text)
     ranges, at = [], 0
     for i, target in enumerate(targets):
@@ -80,6 +88,8 @@ def alignment_ranges(text, targets):
         if VERSE.search(target):
             raise ValueError(f"{i}: target_span holds a verse marker")
         start = text.find(target, at)
+        while start >= 0 and not _whole(text, start, start + len(target)):
+            start = text.find(target, start + 1)
         if start < 0:
             where = "after the previous alignment" if target in text else "in rendering"
             raise ValueError(f"{i}: target_span {target!r} not found {where}")
