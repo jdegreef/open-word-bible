@@ -4,6 +4,7 @@ summary: Biblia mbili kubwa za karne ya nne, moja ilipatikana katika nyumba ya w
 date: 2026-10-11
 order: 35
 section: history
+part: nt
 ---
 Ikiwa mafunjo ndiyo mashahidi wa kwanza kabisa wa Agano Jipya, kodeksi mbili kubwa za ngozi za karne ya nne ndizo kamili zaidi. **Kodeksi Sinaitiko** (*Codex Sinaiticus*) na **Kodeksi Vatikano** (*Codex Vaticanus*) ndiyo miswada ya zamani zaidi iliyodumu ambayo wakati mmoja ilikuwa na Biblia nzima ya Kikristo, Agano la Kale na Agano Jipya, kwa Kigiriki. Zimeathiri kila toleo la kitaalamu la Agano Jipya la Kigiriki tangu karne ya kumi na tisa, na kupitia hayo karibu kila tafsiri ya kisasa.
 

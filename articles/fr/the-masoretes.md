@@ -4,6 +4,7 @@ summary: Entre environ 600 et 1000 apr. J.-C., des savants juifs de Tibériade e
 date: 2026-10-11
 order: 24
 section: history
+part: ot
 ---
 Ouvrez une Bible hébraïque et vous verrez les consonnes, les lettres principales, entourées de petits points et de petits traits au-dessus et au-dessous. Ces signes sont les voyelles et les accents. Sur les bords de la page d'une édition savante, vous verrez de minuscules notes en araméen abrégé. Tout cela a été ajouté par un groupe de savants connus sous le nom de **massorètes**. Presque toutes les traductions de l'Ancien Testament dans le monde, y compris celle d'Open Word Bible, sont faites à partir du texte qu'ils ont gardé.
 

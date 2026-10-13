@@ -4,6 +4,7 @@ summary: Le droit juif a élaboré des règles détaillées pour copier les livr
 date: 2026-10-11
 order: 23
 section: history
+part: ot
 ---
 Entrez aujourd'hui dans une synagogue, et vous verrez peut-être le rouleau de la Torah sortir de l'arche, être déroulé et lu à voix haute. Ce rouleau a été écrit à la main par un scribe formé, selon des règles vieilles de plus de mille ans. Une seule lettre manquante le rendrait impropre à la lecture publique.
 

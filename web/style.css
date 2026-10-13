@@ -743,6 +743,12 @@ footer.site a.book-chip:hover { border-color: var(--accent); background: var(--a
   list-style: none; padding: 0; margin: 0; display: grid; gap: 0 32px;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
 }
+.a-part + .a-part { margin-top: 20px; }
+.a-part h3 {
+  display: flex; align-items: baseline; gap: 10px; margin: 0 0 6px; font-size: 12.5px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .09em; color: var(--gold);
+}
+.a-part h3 span { font-weight: 500; letter-spacing: .04em; color: var(--muted); font-variant-numeric: tabular-nums; }
 .a-item { position: relative; display: flex; gap: 12px; padding: 16px 4px 18px; border-top: 1px solid var(--line); }
 .a-body { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
 .a-item .a-title { font-size: 19px; text-decoration: none; }

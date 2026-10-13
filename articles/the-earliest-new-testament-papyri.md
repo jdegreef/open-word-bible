@@ -4,6 +4,7 @@ summary: A scrap of John the size of a credit card, a second-century book of Pau
 date: 2026-10-11
 order: 34
 section: history
+part: nt
 ---
 The original documents of the New Testament, the letters Paul dictated and the Gospels as their authors finished them, are long gone. The oldest copies we have are written on papyrus, almost all found in Egypt, and most of them are fragments. They are called the **New Testament papyri**, and they are numbered with a P (often written in a Gothic letter) followed by a number, in the order in which they were catalogued: P1, P2, and so on. More than 140 have been registered by the Institute for New Testament Textual Research in Münster, which keeps the official list.
 

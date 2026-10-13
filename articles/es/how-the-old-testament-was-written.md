@@ -4,6 +4,7 @@ summary: Antes de que hubiera rollos en una biblioteca, hubo cantos, leyes, rela
 date: 2026-10-11
 order: 21
 section: history
+part: ot
 ---
 El Antiguo Testamento no es un solo libro, sino una biblioteca. Los cristianos cuentan en él treinta y nueve libros; la tradición judía cuenta esos mismos escritos como veinticuatro. Incluyen ley, historia, poesía, proverbios, profecía y cierto tipo de cartas, escritos a lo largo de muchos siglos en hebreo, con algunos capítulos en arameo. Nadie se sentó a escribirlo de principio a fin. Entonces, ¿cómo llegó a escribirse?
 
