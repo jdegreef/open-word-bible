@@ -386,7 +386,7 @@ def nav_menus(lang):
             cols = 1 if len(rows) <= MENU_BOOKS_PER_COLUMN else 2
             testaments.append(f'<div class="dd-col" style="--cols: {cols}"><p class="dd-head">{t(lang, "footer." + key)}</p>'
                               f'<div class="dd-books">{"".join(rows)}</div></div>')
-    read = (f'<div class="dd-testaments">{"".join(testaments)}</div>'
+    read = (f'{resume_link(lang, "dd-resume")}<div class="dd-testaments">{"".join(testaments)}</div>'
             f'{all_link(url(lang, "/read/"), t(lang, "nav.all_books"))}')
 
     # The first few articles of each section, by their short menu titles;
@@ -452,7 +452,6 @@ def site_header(lang, current, path=None, lang_path=None, translated=LANGUAGES):
 <div class="tools">
 <a class="tool-btn search-btn" href="{url(lang, "/search/")}" aria-label="{t(lang, "nav.search")}" title="{t(lang, "nav.search")}" aria-keyshortcuts="Control+K Meta+K">{icon(ICONS["search"])}<span class="search-label">{t(lang, "nav.search")}</span><kbd class="search-kbd" hidden>Ctrl K</kbd></a>
 {account_menu(lang)}
-<a class="tool-btn" href="{GITHUB_URL}" aria-label="{t(lang, "tools.github")}" title="GitHub">{icon(ICONS["github"])}</a>
 {colour_menu(lang, lang_path, translated)}
 <button type="button" class="tool-btn menu-btn" aria-expanded="false" aria-controls="site-nav" aria-label="{t(lang, "nav.menu")}">{icon(ICONS["menu"], 22)}{icon(ICONS["close"], 22)}</button>
 </div>
@@ -489,27 +488,30 @@ def book_name(book, lang):
 
 @functools.lru_cache(maxsize=None)
 def book_index(lang):
-    """The footer's index of all 66 books, by testament. A book with chapters
+    """The footer's index of the books, by testament. A book with chapters
     in lang links to it on the Read page (dashed while some chapters are
-    still missing); the others are greyed out, so the index stays the same
-    size as the translation grows."""
+    still missing); the books not started yet are one greyed-out chip that
+    says how many, linking to the Read page, which lists them all. (Every
+    page carries the footer, so naming each of them cost every page.)"""
     have = dict(books(lang))
 
     def chip(book):
-        name = book_name(book, lang)
-        if book not in have:
-            return (f'<li><span class="book-chip none">{name}'
-                    f'<span class="sr-only"> ({t(lang, "footer.key_none")})</span></span></li>')
         done, total, progress = book_progress(book, have[book], lang)
         return (f'<li><a class="book-chip{"" if done == total else " part"}" '
-                f'href="{url(lang, f"/read/#{book.lower()}")}" title="{progress}">{name}</a></li>')
+                f'href="{url(lang, f"/read/#{book.lower()}")}" title="{progress}">{book_name(book, lang)}</a></li>')
 
     def testament(key, codes):
         started = sum(b in have for b in codes)
+        missing = [b for b in codes if b not in have]
+        # A last book not started is named; more are counted.
+        more = (f'<li><span class="book-chip none">{book_name(missing[0], lang)}'
+                f'<span class="sr-only"> ({t(lang, "footer.key_none")})</span></span></li>' if len(missing) == 1 else
+                f'<li><a class="book-chip none" href="{url(lang, "/read/")}">'
+                f'{t(lang, "footer.not_started", n=len(missing))}</a></li>' if missing else "")
         return (f'<section class="testament" aria-labelledby="foot-{key}"><div class="testament-head">'
                 f'<h3 id="foot-{key}">{t(lang, "footer." + key)}</h3>'
                 f'<span>{t(lang, "footer.started", done=started, total=len(codes))}</span></div>'
-                f'<ul class="book-chips">{"".join(chip(b) for b in codes)}</ul></section>')
+                f'<ul class="book-chips">{"".join(chip(b) for b in codes if b in have)}{more}</ul></section>')
 
     key = "".join(f'<span><span class="book-chip{cls}" aria-hidden="true"></span>{t(lang, "footer.key_" + k)}</span>'
                   for k, cls in (("done", ""), ("part", " part"), ("none", " none")))
@@ -739,6 +741,27 @@ def headings():
             for rid, h in json.loads(path.read_text(encoding="utf-8"))["headings"].items()}
 
 
+@functools.cache
+def summaries():
+    """Chapter summaries by (book, chapter) (data/summaries/, one file per
+    book, keyed by chapter number), each in the languages it has."""
+    return {(path.stem, int(ch)): {lang: smart_quotes(text) for lang, text in s.items()}
+            for path in sorted((ROOT / "data" / "summaries").glob("*.json"))
+            for ch, s in json.loads(path.read_text(encoding="utf-8"))["summaries"].items()}
+
+
+def chapter_summary(book, chapter, records, lang):
+    """The chapter's summary paragraph, or "" if it has none to show. Like a
+    heading, a summary is shown in the language the text is shown in: the
+    page's, or English where no sentence has the page's language yet (the
+    whole chapter then reads in English)."""
+    summary = summaries().get((book, chapter), {})
+    shown = lang if any(lang in r["renderings"] for r in records) else "en"
+    if shown not in summary:
+        return ""
+    return f'<p class="chapter-summary"{lang_attr(shown, lang)}>{html.escape(summary[shown])}</p>'
+
+
 def chapters():
     """Every (book, chapter) with content, in canonical order."""
     found = set()
@@ -874,6 +897,126 @@ def lang_attr(text_language, lang):
 PLURAL_YOU = {"es"}
 
 
+def footnote_letter(n):
+    """The reader's footnote letters: a..z, then aa, ab, ... (n from 0)."""
+    out = ""
+    n += 1
+    while n > 0:
+        out = chr(97 + (n - 1) % 26) + out
+        n = (n - 1) // 26
+    return out
+
+
+def chapter_text(records, chapter, paragraphs, disputed_info, lang="en"):
+    """The chapter as reader.js's drawText() first draws it: Balanced, every
+    setting at its default, headings shown, Study view. Written into the
+    page so it has its text without JavaScript (and for crawlers); the
+    reader redraws the same markup in place. Each sentence is in lang, or
+    in English while it has no lang yet (text_lang)."""
+    def verse_of(vid):
+        ref = refs.parse(vid)
+        return str(ref.verse) if ref.chapter == chapter else f"{ref.chapter}:{ref.verse}"
+
+    def marker_verse(r, n):
+        vid = next((v for v in r["refs"] if refs.parse(v).verse == int(n)), None)
+        return verse_of(vid) if vid else n
+
+    esc = html.escape
+    starts = set(paragraphs)
+    disputed_ids = set(disputed_info["records"]) if disputed_info else set()
+    ui = catalog(lang)["reader.ui"]
+    out, para, shown, in_disputed, notes = [], None, None, False, 0
+
+    def close():
+        if para is not None:
+            out.append("".join(para) + "</p>")
+
+    for r in records:
+        if (r["id"] in disputed_ids) != in_disputed:
+            close()
+            para = None
+            in_disputed = not in_disputed
+            if in_disputed:
+                note = ui["disputed_note"].replace("{ref}", disputed_info["ref"])
+                # The reader's button to the note's reasoning, so the text
+                # below does not move when it is drawn; it does nothing
+                # without JavaScript, and is hidden then (chapter_page).
+                why = (f'<button type="button" class="fn-pop-more">{esc(ui["fn_reasoning"], quote=False)} \u2192</button>'
+                       if disputed_info["note"] else "")
+                out.append(f'<div class="disputed-block"><div class="disputed-note"><p>{esc(note, quote=False)}</p>{why}</div>')
+            else:
+                out.append("</div>")
+        heading = headings().get(r["id"])
+        tl = text_lang(r, lang)
+        hlang = next((code for code in (lang, tl) if heading and heading.get(code)), None)
+        if hlang:
+            close()
+            para = None
+            cls = "section-head" + ("" if hlang == lang else " fallback")
+            out.append(f'<h2 class="{cls}"{lang_attr(hlang, lang)}>{esc(markup.render(heading[hlang]), quote=False)}</h2>')
+        if para is None or heading or r["id"] in starts:
+            close()
+            para = ['<p class="para">']
+        # Footnote letters, counted through the page as the reader counts
+        # them: every meaning decision with a footnote, and this language's
+        # Balanced rendering decisions with one.
+        marks = []
+        for d in r["decisions"]:
+            if d.get("footnote") and (d["layer"] == "meaning" or (
+                    d.get("language") == lang and "B" in d.get("levels", []))):
+                marks.append(footnote_letter(notes))
+                notes += 1
+        parts = markup.VERSE.split(r["renderings"][tl]["B"])
+        verses = [(verse_of(r["refs"][0]), parts[0].lstrip())]
+        verses += [(marker_verse(r, n), text) for n, text in zip(parts[1::2], parts[2::2])]
+        cls = "verse" if tl == lang else "verse fallback"
+        for i, (v, text) in enumerate(verses):
+            sup = f"<sup>{esc(v)}</sup>" if v != shown else ""
+            shown = v
+            fn = ""
+            if marks and i == len(verses) - 1:
+                fn = ('<sup class="fn" aria-hidden="true">'
+                      + "".join(f'<span class="fn-mark">{m}</span>' for m in marks) + "</sup>")
+            para.append(f'<span class="{cls}"{lang_attr(tl, lang)} data-v="{esc(v)}" data-record="{esc(r["id"])}">'
+                        f'{sup}{esc(markup.render(text), quote=False)}{fn}</span> ')
+    close()
+    if in_disputed:
+        out.append("</div>")
+    return "".join(out)
+
+
+# The text each testament is translated from, for the pages' linked data.
+SOURCE_TEXTS = {
+    "grc": {"@type": "Book", "name": "SBL Greek New Testament (SBLGNT)", "inLanguage": "grc",
+            "url": "https://github.com/LogosBible/SBLGNT"},
+    "hbo": {"@type": "Book", "name": "Westminster Leningrad Codex (Open Scriptures Hebrew Bible)",
+            "inLanguage": "hbo", "url": "https://github.com/openscriptures/morphhb"},
+}
+CC0_URL = "https://creativecommons.org/publicdomain/zero/1.0/"
+
+
+def chapter_ld(records, book, chapter, title, lang="en"):
+    """schema.org data for a chapter page, as a script element. Every "<" is
+    written as an escape, so nothing in it can close the element."""
+    source = SOURCE_TEXTS[source_language(book)]
+    data = {
+        "@context": "https://schema.org",
+        "@type": "Chapter",
+        "name": title,
+        "url": SITE_URL + url(lang, chapter_url(book, chapter)),
+        "inLanguage": lang,
+        "isPartOf": {"@type": "Book", "name": SITE_NAME, "url": SITE_URL + url(lang, "/"),
+                     "license": CC0_URL},
+        "license": CC0_URL,
+        # Nothing is reviewed until a named human reviewer approves it.
+        "creativeWorkStatus": "Draft" if any(r["status"] == "ai_draft" for r in records) else "Published",
+        "translationOfWork": source,
+        "isBasedOn": source,
+    }
+    text = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
+    return f'<script type="application/ld+json">{text}</script>'
+
+
 def chapter_page(book, chapter, lang="en"):
     records, words = load_chapter(book, chapter)
     title = chapter_name(records, book, chapter, lang)
@@ -895,10 +1038,14 @@ def chapter_page(book, chapter, lang="en"):
     # Names before a chapter number ("Psalm 23:1"), for "Book 1:2" links.
     data["books"] = {b: chapter_book(b, lang) for b, _ in books()}
     data["saved"] = url(lang, "/saved/")
-    data["grammar"] = {grammar_key(w): {l: describe(w, l) for l in LANGUAGES}
+    # The reader shows a word's grammar in the page's language only.
+    data["grammar"] = {grammar_key(w): {lang: describe(w, lang)}
                        for ws in data["words"].values() for w in ws}
     # "</" cannot appear inside a script element.
-    blob = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
+    blob = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+    # Without JavaScript (and for crawlers) the page still has its text.
+    text = chapter_text(records, chapter, data["paragraphs"], data["disputed"], lang)
+    partial = any(lang not in r["renderings"] for r in records)
 
     def seg(name, options):
         buttons = "".join(f'<button type="button" data-value="{v}">{label}</button>' for v, label in options)
@@ -933,10 +1080,17 @@ def chapter_page(book, chapter, lang="en"):
 <div class="settings" id="settings">
 <div class="controls">
   {control("level", "level", [(code, levels[code]) for code in "LBR"])}
+  <div class="wording-wrap">
+  <button type="button" class="wording-toggle" id="wording-toggle" aria-expanded="false" aria-controls="wording">
+    <span class="wording-label">{t(lang, "reader.wording")}</span> <span class="wording-summary" id="wording-summary"></span>
+  </button>
+  <div class="wording" id="wording">
   {control("gender", "gender", [("0", t(lang, "reader.inclusive")), ("1", t(lang, "reader.traditional"))])}
   {title_control}
   {control("pronouns", "deity_pronoun", [("0", t(lang, "reader.he")), ("1", t(lang, "reader.He"))])}{units}{plural}
   {control("headings", "headings", [("0", t(lang, "reader.show")), ("1", t(lang, "reader.hide"))])}
+  </div>
+  </div>
   {control("view", "view", [("0", t(lang, "reader.study")), ("1", t(lang, "reader.reading")),
                             ("2", t(lang, "reader.parallel")), ("3", t(lang, "reader.interlinear"))], " view-control")}
 </div>
@@ -946,10 +1100,12 @@ def chapter_page(book, chapter, lang="en"):
   <article class="passage">
     {chapter_strip(book, chapter, lang)}
     <h1 id="title">{html.escape(title)}</h1>
+    {chapter_summary(book, chapter, records, lang)}
     <p class="print-only print-head" id="print-head"></p>
     <p class="sub">{t(lang, "reader.sub" + suffix)}</p>
-    <p class="notice" id="partial" hidden></p>
-    <div class="text" id="text"></div>
+    <p class="notice" id="partial"{"" if partial else " hidden"}>{html.escape(catalog(lang)["reader.ui"]["partial"]) if partial else ""}</p>
+    <noscript><p class="notice">{t(lang, "reader.noscript", level=levels["B"])}</p><style>.disputed-note .fn-pop-more {{ display: none; }}</style></noscript>
+    <div class="text" id="text">{text}</div>
     <section class="notes" id="notes" aria-label="{t(lang, "reader.notes")}" hidden></section>
     {chapter_turns(book, chapter, lang)}
   </article>
@@ -957,6 +1113,7 @@ def chapter_page(book, chapter, lang="en"):
 </div>
 {edge_turns(book, chapter, lang)}
 <script type="application/json" id="owb-data">{blob}</script>
+{chapter_ld(records, book, chapter, title, lang)}
 <script src="{asset("reader.js")}"></script>
 """
     return page(lang, title, body, path=chapter_url(book, chapter), current="/read/",
@@ -1781,12 +1938,10 @@ def article_meta(a, lang="en"):
     return " &middot; ".join(parts)
 
 
-def article_card(a, lang="en", featured=False, section=True):
-    """An article's card. Under its own section's heading it leaves out the
-    section's name (section=False)."""
-    label = f'<span class="a-section">{catalog(lang)["sections"][a["section"]]}</span>' if section else ""
-    return (f'<li><a class="a-card{" featured" if featured else ""}" href="{url(lang, article_url(a))}">'
-            f'{label}'
+def article_card(a, lang="en"):
+    """An article's card on the home page and under "Keep reading"."""
+    return (f'<li><a class="a-card" href="{url(lang, article_url(a))}">'
+            f'<span class="a-section">{catalog(lang)["sections"][a["section"]]}</span>'
             f'<span class="a-title">{display(a["title"])}</span>'
             f'<span class="a-summary">{display(a["summary"])}</span>'
             f'<span class="a-meta">{article_meta(a, lang)}</span></a></li>')
@@ -1796,30 +1951,83 @@ def article_list(articles, lang="en"):
     return "".join(article_card(a, lang) for a in articles)
 
 
+# Sections that are series, read in order: their rows are numbered.
+SERIES = ("history", "translation")
+
+
+def _duration(minutes, lang="en"):
+    """"45 min" or "2 h 20 min"."""
+    h, m = divmod(minutes, 60)
+    return t(lang, "articles.hours", h=h, m=m) if h else t(lang, "articles.minutes", m=m)
+
+
+def index_row(a, lang="en", number=None, minutes=True):
+    """An article's row on the articles page. The title is the link and
+    covers the row; the verses it reads are links of their own."""
+    refs = []
+    for b, c, vs in a["passages"]:
+        label = html.escape(passage_label(b, c, vs, lang))
+        href = next(filter(None, (verse_link(b, c, v, lang) for v in vs)), None)
+        refs.append(f'<a class="a-ref" href="{href}">{label}</a>' if href else f'<span class="a-ref">{label}</span>')
+    meta = [html.escape(t(lang, "article.min_read", n=a["minutes"]))] if minutes else []
+    meta.append(f'<span class="a-status">{t(lang, "article.draft")}</span>')
+    num = f'<span class="a-num" aria-hidden="true">{number}</span>' if number else ""
+    return (f'<li class="a-item{" numbered" if number else ""}">{num}<div class="a-body">'
+            + (f'<p class="a-refs">{"".join(refs)}</p>' if refs else "")
+            + f'<a class="a-title" href="{url(lang, article_url(a))}">{display(a["title"])}</a>'
+            f'<span class="a-summary">{display(a["summary"])}</span>'
+            f'<span class="a-meta">{" ".join(meta)}</span></div></li>')
+
+
+def _section(key, items, lang="en"):
+    """A section of the articles page: its heading with how many articles
+    and how long they take, then a row for each. When most of a section's
+    articles take the same time, a row says its time only if it differs."""
+    names = catalog(lang)["sections"]
+    times = [a["minutes"] for a in items]
+    common = max(set(times), key=times.count)
+    usual = times.count(common) >= .75 * len(times) and len(times) > 2
+    sub = t(lang, "articles.count_time", n=len(items), time=_duration(sum(times), lang))
+    rows = "".join(index_row(a, lang, number=i if key in SERIES else None,
+                             minutes=not usual or a["minutes"] != common)
+                   for i, a in enumerate(items, 1))
+    return (f'<section class="a-group" id="{key}" aria-labelledby="{key}-h">'
+            f'<div class="a-group-head"><h2 id="{key}-h">{names[key]}</h2><span>{sub}</span></div>'
+            f'<ol class="a-rows{" series" if key in SERIES else ""}">{rows}</ol></section>')
+
+
 def articles_page(articles, lang="en"):
     """The articles in lang, or a note that none is translated yet."""
     by_order = sorted(articles, key=lambda a: a["order"])
     if by_order:
         featured, rest = by_order[0], by_order[1:]
         names = catalog(lang)["sections"]
+        # The featured article opens the page, so its section starts after it.
         groups = [(key, [a for a in rest if a["section"] == key]) for key in SECTIONS]
         groups = [(key, items) for key, items in groups if items]
         # Links to each section, with how many articles it has.
         jump = (f'<nav class="a-jump" aria-label="{t(lang, "articles.sections")}"><ul>'
-                + "".join(f'<li><a href="#{key}">{names[key]} <span>{sum(a["section"] == key for a in by_order)}</span></a></li>'
-                          for key, _ in groups)
+                + "".join(f'<li><a href="#{key}">{names[key]} <span>{len(items)}</span></a></li>'
+                          for key, items in groups)
                 + "</ul></nav>")
-        # Inside a section, compact rows rather than cards.
-        sections = "".join(
-            f'<section class="a-group" id="{key}" aria-labelledby="{key}-h">'
-            f'<h2 id="{key}-h">{names[key]}</h2>'
-            f'<ul class="a-rows">{"".join(article_card(a, lang, section=False) for a in items)}</ul></section>'
-            for key, items in groups)
-        listing = f'{jump}\n<ul class="a-feature">{article_card(featured, lang, featured=True)}</ul>\n{sections}'
+        # The first article, with the next few of its section to read after it.
+        after = [a for a in rest if a["section"] == featured["section"]][:3]
+        path = "".join(f'<li><a href="{url(lang, article_url(a))}">{display(a.get("nav_title", a["title"]))}</a></li>'
+                       for a in after)
+        start = (f'<div class="a-start"><a class="a-card featured" href="{url(lang, article_url(featured))}">'
+                 f'<span class="a-section">{t(lang, "articles.start_here")}</span>'
+                 f'<span class="a-title">{display(featured["title"])}</span>'
+                 f'<span class="a-summary">{display(featured["summary"])}</span>'
+                 f'<span class="a-meta">{article_meta(featured, lang)}</span></a>'
+                 + (f'<nav class="a-path" aria-labelledby="a-path-h"><h2 id="a-path-h">{t(lang, "articles.then_read")}</h2>'
+                    f'<ol>{path}</ol></nav>' if after else "")
+                 + '</div>')
+        sections = "".join(_section(key, items, lang) for key, items in groups)
+        listing = f'{start}\n{jump}\n{sections}'
     else:
         listing = f'<p class="notice">{t(lang, "articles.none")}</p>'
     body = f"""
-<header class="page-head">
+<header class="page-head compact">
 <p class="eyebrow">{t(lang, "articles.title")}</p>
 <h1>{t(lang, "articles.heading")}</h1>
 <p class="dek">{t(lang, "articles.dek")}</p>

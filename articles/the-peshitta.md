@@ -3,6 +3,7 @@ title: The Peshitta and the Syriac Bible
 summary: Syriac, a form of Aramaic spoken around Edessa, became the language of one of the great branches of early Christianity. Its Bible, the Peshitta, travelled with Syriac-speaking Christians as far as India and China.
 date: 2026-10-12
 order: 42
+nav_title: The Peshitta
 section: translation
 ---
 Most Western Christians know the story of the Bible in Greek and Latin. Fewer know that a third great tradition grew up at the same time, east of the Roman world, in a language close to the one Jesus spoke. That language is **Syriac**, and its Bible, the **Peshitta**, is still read in churches from the Middle East to southern India.

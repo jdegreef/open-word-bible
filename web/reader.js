@@ -197,6 +197,14 @@
       if (on && seg.children.length > 1) summary.push(on.textContent);
     });
     document.getElementById("settings-summary").textContent = summary.join(" \u00b7 ");
+    // The Wording button names the wording choices it holds.
+    var wording = [];
+    document.querySelectorAll("#wording .control:not([hidden]) .seg:not([data-setting=headings])").forEach(function (seg) {
+      var on = seg.querySelector('[aria-pressed="true"]');
+      if (on) wording.push(on.textContent);
+    });
+    var ws = document.getElementById("wording-summary");
+    if (ws) ws.textContent = wording.join(" \u00b7 ");
     // On paper: the reference, the settings it was printed with, and where.
     var head = document.getElementById("print-head");
     if (head) head.textContent = DATA.title + " \u00b7 Open Word Bible \u00b7 " + summary.join(" \u00b7 ") +
@@ -1404,6 +1412,28 @@
   }
   if (window.ResizeObserver) new ResizeObserver(measure).observe(settingsEl);
   measure();
+
+  // On wide screens the wording settings open from one button, so the bar
+  // keeps to one row; Escape or a click elsewhere closes them.
+  var wordingBtn = document.getElementById("wording-toggle");
+  var wordingBox = document.getElementById("wording");
+  function openWording(open) {
+    if (wordingBtn) wordingBtn.setAttribute("aria-expanded", open ? "true" : "false");
+  }
+  if (wordingBtn) {
+    wordingBtn.addEventListener("click", function () {
+      openWording(wordingBtn.getAttribute("aria-expanded") !== "true");
+    });
+    document.addEventListener("click", function (e) {
+      if (!wordingBtn.contains(e.target) && !wordingBox.contains(e.target)) openWording(false);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && wordingBtn.getAttribute("aria-expanded") === "true") {
+        openWording(false);
+        wordingBtn.focus();
+      }
+    });
+  }
 
   var toggle = document.getElementById("settings-toggle");
   toggle.addEventListener("click", function () {

@@ -3,6 +3,7 @@ title: "Literal, Equilibrada, Sencilla: tres niveles, un solo significado"
 summary: La misma frase traducida de tres maneras, para tres formas de leer, sin cambiar nunca lo que significa.
 date: 2026-10-10
 order: 3
+nav_title: Tres niveles, un solo significado
 section: method
 ---
 La gente lee la Biblia por razones distintas. Quien estudia y compara un versículo con el griego quiere ver su estructura. Quien lee un capítulo en voz alta en la iglesia quiere un español natural. Quien lee por primera vez, o un niño, quiere palabras sencillas. Una sola traducción no puede servir igual de bien a los tres, así que Open Word Bible ofrece cada frase en tres niveles.

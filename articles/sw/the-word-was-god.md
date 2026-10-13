@@ -3,6 +3,7 @@ title: "\"Neno alikuwa Mungu\": kutafsiri Yohana 1:1"
 summary: Kwa nini Open Word Bible inasoma "Neno alikuwa Mungu", si "mungu" wala "wa kimungu", na mpangilio wa maneno ya Kigiriki unafanya nini.
 date: 2026-10-10
 order: 5
+nav_title: Kutafsiri Yohana 1:1
 section: passage
 ---
 Injili ya Yohana inaanza na mojawapo ya sentensi zinazojadiliwa zaidi katika Biblia:
