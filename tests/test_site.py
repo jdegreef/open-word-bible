@@ -380,6 +380,20 @@ class SiteTest(unittest.TestCase):
             self.assertIn(rid, data["paragraphs"], rid)
             self.assertEqual(data["headings"][rid], heading)
 
+    def test_summary_stands_under_the_title(self):
+        page = (self.out / "1ti" / "5" / "index.html").read_text(encoding="utf-8")
+        summary = html.escape(build_site.summaries()[("1TI", 5)]["en"])
+        self.assertRegex(page, r'<h1 id="title">[^<]*</h1>\s*<p class="chapter-summary">' + re.escape(summary))
+        # A page in another language shows the English summary only where the
+        # chapter itself reads in English, and marks it so.
+        records = build_site.load_chapter("1TI", 5)[0]
+        if not any("es" in r["renderings"] for r in records) and "es" not in build_site.summaries()[("1TI", 5)]:
+            page = (self.out / "es" / "1ti" / "5" / "index.html").read_text(encoding="utf-8")
+            self.assertIn('<p class="chapter-summary" lang="en">', page)
+        with_es = [{"renderings": {"en": {}, "es": {}}}]
+        self.assertEqual(build_site.chapter_summary("1TI", 5, with_es, "es"), "")
+        self.assertEqual(build_site.chapter_summary("JHN", 999, records, "en"), "")
+
     def test_chapter_strip_shows_the_whole_book(self):
         page = (self.out / "jhn" / "1" / "index.html").read_text(encoding="utf-8")
         strip = re.search(r'<nav class="chapstrip"(.*?)</nav>', page, re.S)[1]
@@ -569,6 +583,23 @@ class SharedDataTest(unittest.TestCase):
         for path in (ROOT / "data" / "headings").glob("*.json"):
             for rid in json.loads(path.read_text(encoding="utf-8"))["headings"]:
                 self.assertEqual(rid.split(".")[0], path.stem, path.name)
+
+    def test_summaries_are_well_formed(self):
+        done = set(build_site.chapters())
+        for path in (ROOT / "data" / "summaries").glob("*.json"):
+            data = json.loads(path.read_text(encoding="utf-8"))
+            self.assertEqual(data["status"], "ai_draft", path.name)
+            self.assertTrue(data["description"], path.name)
+            for chapter, summary in data["summaries"].items():
+                where = f"{path.name} {chapter}"
+                self.assertRegex(chapter, r"^[1-9][0-9]*$", where)
+                self.assertIn((path.stem, int(chapter)), done, where)
+                self.assertIn("en", summary, where)
+                for lang, text in summary.items():
+                    self.assertIn(lang, build_site.LANGUAGES, where)
+                    self.assertTrue(text.strip(), where)
+                    # Shown as plain text under the title: no reader settings.
+                    self.assertNotIn("{{", text, where)
 
 
 if __name__ == "__main__":

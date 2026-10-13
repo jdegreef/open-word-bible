@@ -738,6 +738,27 @@ def headings():
             for rid, h in json.loads(path.read_text(encoding="utf-8"))["headings"].items()}
 
 
+@functools.cache
+def summaries():
+    """Chapter summaries by (book, chapter) (data/summaries/, one file per
+    book, keyed by chapter number), each in the languages it has."""
+    return {(path.stem, int(ch)): {lang: smart_quotes(text) for lang, text in s.items()}
+            for path in sorted((ROOT / "data" / "summaries").glob("*.json"))
+            for ch, s in json.loads(path.read_text(encoding="utf-8"))["summaries"].items()}
+
+
+def chapter_summary(book, chapter, records, lang):
+    """The chapter's summary paragraph, or "" if it has none to show. Like a
+    heading, a summary is shown in the language the text is shown in: the
+    page's, or English where no sentence has the page's language yet (the
+    whole chapter then reads in English)."""
+    summary = summaries().get((book, chapter), {})
+    shown = lang if any(lang in r["renderings"] for r in records) else "en"
+    if shown not in summary:
+        return ""
+    return f'<p class="chapter-summary"{lang_attr(shown, lang)}>{html.escape(summary[shown])}</p>'
+
+
 def chapters():
     """Every (book, chapter) with content, in canonical order."""
     found = set()
@@ -952,6 +973,7 @@ def chapter_page(book, chapter, lang="en"):
   <article class="passage">
     {chapter_strip(book, chapter, lang)}
     <h1 id="title">{html.escape(title)}</h1>
+    {chapter_summary(book, chapter, records, lang)}
     <p class="print-only print-head" id="print-head"></p>
     <p class="sub">{t(lang, "reader.sub" + suffix)}</p>
     <p class="notice" id="partial" hidden></p>

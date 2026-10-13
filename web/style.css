@@ -934,6 +934,12 @@ a.a-ref:hover { border-color: var(--accent); }
 .passage { max-width: 680px; }
 .passage h1 { font-family: var(--display); font-weight: 600; font-size: clamp(30px, 4vw, 40px); letter-spacing: -.02em; margin: 36px 0 6px; }
 .passage .sub { color: var(--muted); font-size: 14px; margin: 0 0 16px; }
+/* What the chapter is about, under its title (data/summaries/): an
+   editorial aid like a heading, so quieter than the text. */
+.chapter-summary {
+  font-family: var(--serif); font-style: italic; font-size: 18px; line-height: 1.5;
+  color: var(--muted); max-width: 60ch; margin: 2px 0 12px; text-wrap: pretty;
+}
 /* About 65 characters a line, the comfortable measure for long reading. */
 .text { font-family: var(--read-font); font-size: calc(21px * var(--read-scale)); line-height: calc(1.8 * var(--read-leading)); max-width: 29em; }
 /* Paragraphs follow SBLGNT's; section headings (data/headings.json) are
@@ -1384,7 +1390,7 @@ html.signed-in .sign-in-btn { visibility: hidden; }
 .control.view-control { margin-left: auto; }
 body.plain .reader { grid-template-columns: minmax(0, 1fr); }
 body.plain .passage { margin: 0 auto; }
-body.plain .panel, body.plain .notes, body.plain .verse sup, body.plain .passage .sub { display: none; }
+body.plain .panel, body.plain .notes, body.plain .verse sup, body.plain .passage .sub, body.plain .chapter-summary { display: none; }
 body.plain .verse { cursor: text; }
 body.plain .verse:hover { background: none; }
 body.plain .text { font-size: calc(22px * var(--read-scale)); }

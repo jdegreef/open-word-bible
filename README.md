@@ -45,7 +45,8 @@ briefs for French and Swahili.
 
 Adding a book needs no shared file edited: `data/books.json` already lists
 all 66 books (names in each language, chapter counts), section headings go
-in `data/headings/<BOOK>.json`, and each share card's digest sits in its own
+in `data/headings/<BOOK>.json`, chapter summaries in
+`data/summaries/<BOOK>.json`, and each share card's digest sits in its own
 `web/og/<card>.digest`. Two pull requests that add different chapters touch
 different files, so they don't conflict.
 
@@ -99,6 +100,13 @@ translation: `data/headings/<BOOK>.json` keys each one by the record it stands
 above, per language, and they stay AI drafts until a named reviewer
 approves them. A page shows a heading only in the language its sentence is
 shown in.
+
+A chapter summary is one or two sentences under a chapter's title saying
+what the chapter is about. `data/summaries/<BOOK>.json` keys each by chapter
+number, per language. Like headings, summaries are AI drafts until reviewed,
+state the sense only (no reader settings), and are shown in the language the
+chapter's text is shown in: the page's language, or English, marked as such,
+where the chapter has no sentence in the page's language yet.
 
 ## Reader settings
 
