@@ -4,6 +4,7 @@ summary: The materials the Bible was written on shaped how it survived. Why earl
 date: 2026-10-11
 order: 32
 section: history
+part: nt
 ---
 Before we ask how accurately the Bible was copied, it helps to ask a simpler question: what was it copied *onto*? The materials ancient scribes used, and the form of their books, explain a great deal about which manuscripts survived, where they were found, and why the Christian scriptures look the way they do. They also explain one of the most surprising facts in the history of books: the early Christians were among the first people to adopt the codex, the ancestor of the modern book.
 

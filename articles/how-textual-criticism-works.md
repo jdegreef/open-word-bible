@@ -4,6 +4,7 @@ summary: When manuscripts disagree, how do scholars decide what the authors wrot
 date: 2026-10-11
 order: 37
 section: history
+part: nt
 ---
 Every translation of the Bible begins with a decision most readers never see: which text to translate. Because the Bible was copied by hand for centuries, no two manuscripts of any substantial length are exactly alike. Before a translator can ask what a sentence means, someone has to ask what the sentence *says*. The discipline that answers that question is called **textual criticism**.
 

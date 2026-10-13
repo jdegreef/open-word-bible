@@ -4,6 +4,7 @@ summary: Vitu ambavyo Biblia iliandikwa juu yake viliamua jinsi ilivyodumu. Kwa 
 date: 2026-10-11
 order: 32
 section: history
+part: nt
 ---
 Kabla hatujauliza Biblia ilinakiliwa kwa usahihi kiasi gani, inasaidia kuuliza swali rahisi zaidi: ilinakiliwa *juu ya* nini? Vitu walivyotumia waandishi wa zamani, na umbo la vitabu vyao, vinaeleza mengi kuhusu miswada ipi ilidumu, ilipatikana wapi, na kwa nini maandiko ya Kikristo yanaonekana jinsi yanavyoonekana. Vinaeleza pia mojawapo ya mambo ya kushangaza zaidi katika historia ya vitabu: Wakristo wa mwanzo walikuwa miongoni mwa watu wa kwanza kukubali kodeksi, babu wa kitabu cha kisasa.
 

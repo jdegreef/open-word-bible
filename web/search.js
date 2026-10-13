@@ -146,13 +146,15 @@
   function everything(levels) {
     return Object.keys(levels).map(function (l) {
       return levels[l].replace(SPAN, function (_, n, opts) { return opts.split("|").join(" "); })
-        .replace(/\\v \d+ ?/g, " ");
+        .replace(/\\v \d+ ?/g, " ").replace(/ ?\\q ?/g, " ");
     }).join(" \u2016 ");
   }
 
   // [[verse, text], ...] for rendered text with \v markers.
   function verses(first, text) {
-    var parts = text.split(VERSE), out = [[first, parts[0].trim()]];
+    // The build already turns poetic line markers (\q) into spaces; this
+    // keeps an index built before that from showing them.
+    var parts = text.replace(/ ?\\q ?/g, " ").split(VERSE), out = [[first, parts[0].trim()]];
     for (var i = 1; i < parts.length; i += 2) out.push([Number(parts[i]), parts[i + 1].trim()]);
     return out;
   }
