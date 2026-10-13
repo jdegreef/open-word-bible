@@ -76,13 +76,28 @@ class TermUsesTest(unittest.TestCase):
         # No allowed word: nothing is guessed.
         self.assertEqual(mark("You have found favor", ["grace"]), "You have found favor")
 
-    def test_slugs_are_unique_and_readable(self):
-        slugs = build_site.term_slugs()
+    def test_slugs_are_set_in_the_data_and_unique(self):
+        # Slugs are data, not derived from the sense, so rewording a sense
+        # never moves a page.
+        slugs = {key: term["slug"] for key, term in validate.KEY_TERMS.items()}
         self.assertEqual(len(set(slugs.values())), len(slugs))
         self.assertEqual(slugs[GRACE], "grace")
         self.assertEqual(slugs[YHWH], "the-divine-name-yhwh")
         for slug in slugs.values():
             self.assertRegex(slug, r"^[a-z0-9]+(-[a-z0-9]+)*$")
+        term = dict(validate.KEY_TERMS[GRACE], sense="unmerited favour")
+        self.assertEqual(build_site.term_path(term), "/terms/grace/")
+        self.assertEqual(build_site.term_path(term, "JHN"), "/terms/grace/jhn/")
+
+    def test_emphasise_without_words_changes_nothing(self):
+        self.assertEqual(build_site.emphasise("a < b", []), "a &lt; b")
+
+    def test_per_level_terms_name_each_level_on_the_card(self):
+        gospel = validate.KEY_TERMS[("grc", "2098")]
+        rule = build_site.term_card_rule(gospel, "en")
+        self.assertIn("Literal, Balanced: “gospel”", rule)
+        self.assertIn("Readable: “good news”", rule)
+        self.assertNotIn("every level", rule)
 
     def test_english_for_every_level(self):
         gospel = validate.KEY_TERMS[("grc", "2098")]
@@ -127,14 +142,36 @@ class TermPagesTest(unittest.TestCase):
         self.assertIn("Translated otherwise", page)
 
     def test_long_lists_fold_away(self):
-        many = self.read("terms/the-divine-name-yhwh")
-        self.assertIn('<details class="term-book" id="gen">', many)
-        self.assertNotIn('class="term-book" id="gen" open', many)
-        self.assertIn('href="#gen">Genesis <span>', many)
-        few = next(term for key, term in validate.KEY_TERMS.items()
+        folded = next(term for term in validate.KEY_TERMS.values()
+                      if build_site.TERM_OPEN_USES < build_site.term_count(term) <= build_site.TERM_SPLIT_USES)
+        page = self.read(build_site.term_path(folded).strip("/"))
+        self.assertIn('<details class="term-book" id="', page)
+        self.assertNotIn('" open>', page)
+        few = next(term for term in validate.KEY_TERMS.values()
                    if 0 < build_site.term_count(term) <= build_site.TERM_OPEN_USES)
         page = self.read(build_site.term_path(few).strip("/"))
         self.assertRegex(page, r'<details class="term-book" id="[a-z0-9]+" open>')
+
+    def test_many_uses_split_into_a_page_per_book(self):
+        term = validate.KEY_TERMS[YHWH]
+        self.assertTrue(build_site.term_split(term))
+        main = self.read("terms/the-divine-name-yhwh")
+        self.assertNotIn('class="term-book"', main)
+        self.assertIn('href="/terms/the-divine-name-yhwh/gen/">Genesis <span>', main)
+        books = build_site.term_books(term)
+        sitemap = (self.out / "sitemap.xml").read_text(encoding="utf-8")
+        for book, uses in books.items():
+            rel = f"terms/the-divine-name-yhwh/{book.lower()}"
+            page = self.read(rel)
+            self.assertEqual(page.count('<li class="term-use'), len(uses))
+            self.assertIn(f'<link rel="alternate" hreflang="es" href="https://openwordbible.org/es/{rel}/">', page)
+            self.assertIn(f"/{rel}/</loc>", sitemap)
+            self.assertIn(f"/es/{rel}/</loc>", sitemap)
+        gen = self.read("terms/the-divine-name-yhwh/gen")
+        self.assertIn('href="/terms/the-divine-name-yhwh/gen/" aria-current=page', gen)
+        self.assertIn('<mark class="term-hit">LORD</mark>', gen)
+        # A term with fewer uses has no book pages.
+        self.assertFalse((self.out / "terms" / "grace" / "jhn").exists())
 
     def test_term_pages_in_other_languages_keep_the_english(self):
         page = self.read("fr/terms/grace")

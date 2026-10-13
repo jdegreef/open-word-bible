@@ -477,7 +477,8 @@
 (function () {
   "use strict";
   function unfold() {
-    var id = decodeURIComponent(location.hash.slice(1));
+    var id;
+    try { id = decodeURIComponent(location.hash.slice(1)); } catch (e) { return; }  // a malformed hash (#100%)
     var target = id && document.getElementById(id);
     if (target && target.tagName === "DETAILS" && !target.open) {
       target.open = true;
