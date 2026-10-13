@@ -603,6 +603,27 @@ footer.site a.book-chip:hover { border-color: var(--accent); background: var(--a
 .book-head { display: grid; grid-template-columns: auto auto 1fr auto; align-items: center; gap: 8px 18px; margin: 0 0 16px; }
 .book-head h2 { font-family: var(--display); font-weight: 600; font-size: 28px; letter-spacing: -.01em; margin: 0; }
 .book-head .meter { max-width: 260px; }
+.book-group { scroll-margin-top: calc(var(--header-h) + 16px); }
+.book-group > .chap-pills { margin: 0 0 14px; }
+/* On a phone a book's heading takes two lines: name and progress, then the
+   meter and the save button. */
+@media (max-width: 560px) {
+  .book-head { grid-template-columns: auto 1fr; }
+  .book-head .book-progress { white-space: normal; justify-self: end; text-align: right; }
+  .book-head .meter { max-width: none; }
+}
+.previews > summary { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; font-size: 14px; font-weight: 600;
+  color: var(--accent); padding: 8px 0; }
+.previews[open] > summary { margin: 0 0 12px; }
+/* The index of books at the top of the Read page, under their testaments. */
+.book-index { display: grid; gap: 24px; margin: 0 0 48px; }
+.book-tiles { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 170px), 1fr)); }
+.book-tile { display: grid; gap: 6px; padding: 12px 14px; height: 100%; box-sizing: border-box; background: var(--surface);
+  border: 1px solid var(--line); border-radius: var(--radius-sm); color: var(--text); text-decoration: none; }
+.book-tile:hover { border-color: var(--accent); }
+.book-tile-name { font-weight: 700; font-size: 15px; }
+.book-tile .book-progress { font-size: 12.5px; white-space: normal; }
 
 /* Header Read menu: a book a line under its testament, each testament
    one or two columns wide (--cols) and read down its columns. */
@@ -728,6 +749,61 @@ footer.site a.book-chip:hover { border-color: var(--accent); background: var(--a
 .a-rows .a-meta { padding-top: 2px; }
 .a-group h2, .more h2 { font-family: var(--display); font-weight: 600; font-size: 26px; letter-spacing: -.01em; margin: 0 0 16px; }
 .latest > p, .more > p { margin: 16px 0 0; }
+
+/* Articles page: a few to start with, then the section filters and search
+   (web/site.js), the feed link at the foot. */
+.a-start { margin: 0 0 36px; padding: 22px 26px; background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--radius); box-shadow: var(--shadow-card); }
+.a-start-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 16px; }
+.a-start h2 { font-family: var(--display); font-weight: 600; font-size: 22px; margin: 0; }
+.a-start-head span { font-size: 14px; color: var(--muted); }
+.a-start ol { list-style: none; counter-reset: start; padding: 0; margin: 16px 0 0; display: grid; gap: 12px 20px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); }
+.a-start li { counter-increment: start; display: flex; gap: 12px; align-items: flex-start; }
+.a-start li::before { content: counter(start); flex: none; width: 28px; height: 28px; border-radius: 50%;
+  display: grid; place-items: center; background: var(--accent-soft); color: var(--accent); font-weight: 700; font-size: 14px; }
+.a-start a { color: var(--text); font-weight: 600; line-height: 1.35; text-decoration: none; padding-top: 3px; }
+.a-start a:hover { color: var(--accent); text-decoration: underline; }
+.a-tools { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 20px; margin: 0 0 8px; }
+.a-tools .a-jump ul { margin: 0; }
+.a-jump a[aria-current] { background: var(--accent); border-color: var(--accent); color: var(--accent-contrast); }
+.a-jump a[aria-current] span { color: inherit; opacity: .8; }
+.a-search { display: flex; align-items: center; gap: 8px; height: 44px; padding: 0 16px; min-width: min(100%, 360px);
+  box-sizing: border-box; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--muted); }
+.a-search[hidden] { display: none; }
+.a-search:focus-within { border-color: var(--accent); }
+.a-search input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; font: inherit; font-size: 15px; color: var(--text); }
+.a-index .a-group:first-of-type, .a-index > .notice + .a-group { margin-top: 24px; }
+.a-index > .notice { margin: 24px 0 0; }
+.a-feed { margin: 40px 0 0; font-size: 14px; }
+.a-feed a { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; }
+.a-feed svg { color: var(--gold); }
+/* On a phone the section filters are one row that scrolls sideways. */
+@media (max-width: 560px) {
+  .a-tools .a-jump { width: calc(100% + 32px); margin: 0 -16px; overflow-x: auto; scrollbar-width: none; }
+  .a-tools .a-jump ul { flex-wrap: nowrap; padding: 2px 16px; }
+  .a-tools .a-jump li { flex: none; }
+  .a-search { width: 100%; }
+}
+
+/* Article page: the draft note, and a series part's place in its series. */
+.a-draft { margin: 32px 0 0; padding: 12px 16px; border-radius: var(--radius-sm); background: var(--warn-bg); color: var(--warn); font-size: 14.5px; }
+.series { margin: 40px 0 0; padding: 22px 24px; background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--radius); box-shadow: var(--shadow-card); }
+.series-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 16px; margin: 0 0 12px; }
+.series-head h2 { margin: 0; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--gold); }
+.series-head a { font-size: 14px; font-weight: 600; }
+.s-turns { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 12px; margin: 16px 0 0; }
+.s-turn { display: flex; flex-direction: column; gap: 4px; padding: 14px 16px; border: 1px solid var(--line);
+  border-radius: var(--radius-sm); color: var(--text); text-decoration: none; }
+.s-turn:hover { border-color: var(--accent); }
+.s-turn.next { grid-column: -2; text-align: right; background: var(--accent-soft); border-color: var(--accent-soft-border); }
+.s-dir { font-size: 13px; font-weight: 700; color: var(--accent); }
+.s-title { font-family: var(--display); font-weight: 600; font-size: 18px; line-height: 1.3; }
+
+/* Under a chapter: the articles that read it. */
+.chapter-articles { margin: 40px 0 0; }
+.chapter-articles h2 { font-family: var(--display); font-weight: 600; font-size: 22px; margin: 0 0 14px; }
 
 /* Passage cards on the Read page share the article-card look. */
 .p-opening { font-family: var(--serif); font-size: 18px; line-height: 1.55; color: var(--text); }

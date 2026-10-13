@@ -90,6 +90,7 @@ ICONS = {
     "download": '<path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/>',
     "user": '<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>',
     "search": '<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>',
+    "feed": '<path d="M5 11a8 8 0 0 1 8 8"/><path d="M5 5a14 14 0 0 1 14 14"/><circle cx="6" cy="18" r="1"/>',
     "github": '<path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/>',
 }
 
@@ -266,7 +267,7 @@ def og_card_article(article):
 
 
 def page(lang, title, body, path=None, current="", description="", card="site", card_alt=None,
-         translated=LANGUAGES, unlisted=None):
+         translated=LANGUAGES, unlisted=None, head=""):
     """A full HTML page in lang. path is the page's URL path without the
     language ("/read/"); pages with one get a canonical link, hreflang links
     to the page in each language in translated (the languages it exists in),
@@ -274,7 +275,8 @@ def page(lang, title, body, path=None, current="", description="", card="site", 
     page's preview image in web/og/; a card not drawn yet falls back to the
     site's. card_alt says what the card shows. An unlisted page (the account
     page) has no path: it is not indexed and has no preview, but unlisted
-    names its path, so the language switch still leads to it."""
+    names its path, so the language switch still leads to it. head is more
+    for the <head> (the articles page's feed link)."""
     full_title = f"{title} · {SITE_NAME}" if title != SITE_NAME else SITE_NAME
     description = description or t(lang, "meta.description")
     meta = ""
@@ -313,7 +315,7 @@ def page(lang, title, body, path=None, current="", description="", card="site", 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{html.escape(full_title)}</title>
-<meta name="description" content="{html.escape(description)}">{meta}
+<meta name="description" content="{html.escape(description)}">{meta}{head}
 <meta name="owb-api" content="{API_URL}">
 <meta name="owb-search" content="{search_index_url(lang)}">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -799,11 +801,12 @@ def books(lang=None):
 
 
 def book_progress(book, chapters_, lang="en"):
-    """"4 of 4 chapters, complete" / "2 of 21 chapters": a book's progress."""
+    """"4 of 4 chapters, complete" / "2 of 21 chapters" / "1 chapter,
+    complete" (Philemon): a book's progress."""
     done = sum(p.complete for p in chapters_)
     total = BOOK_CHAPTERS[book]
-    return done, total, t(lang, "progress.complete" if done == total else "progress.chapters",
-                          done=done, total=total)
+    key = "progress.one" if total == 1 else "progress.complete" if done == total else "progress.chapters"
+    return done, total, t(lang, key, done=done, total=total)
 
 
 def chapter_pills(chaps, lang="en", current=None, total=None):
@@ -949,6 +952,7 @@ def chapter_page(book, chapter, lang="en"):
     <div class="text" id="text"></div>
     <section class="notes" id="notes" aria-label="{t(lang, "reader.notes")}" hidden></section>
     {chapter_turns(book, chapter, lang)}
+    {chapter_articles_html(book, chapter, lang)}
   </article>
   <aside class="panel" id="panel" aria-live="polite" tabindex="-1"></aside>
 </div>
@@ -1168,12 +1172,27 @@ def opening_verse(records, chapter, lang="en"):
 # otherwise). French sets its guillemets off with no-break spaces.
 def inner_quotes(text):
     """A verse to be shown inside double quotes: its own speech takes single
-    quotes, and speech that runs on into the next verse (Genesis 9:1) is
-    closed, so the marks stay balanced."""
-    text = text.replace("\u201c", "\u2018").replace("\u201d", "\u2019")
-    if text.count("\u2018") > text.count("\u2019") - text.count("\u2019s"):
-        text += "\u2019"
-    return text
+    quotes, and speech inside that speech (Exodus 4:1) double ones. Speech
+    that runs on into the next verse (Genesis 9:1) is closed, so the marks
+    stay balanced. A closing single quote with no quotation open, or between
+    letters, is an apostrophe (Moses’ father-in-law, Aaron’s sons) and stays."""
+    out, open_ = [], []
+    for i, ch in enumerate(text):
+        if ch in "\u201c\u2018":
+            open_.append(ch)
+            out.append("\u2018" if ch == "\u201c" else "\u201c")
+        elif ch == "\u201d":
+            if open_ and open_[-1] == "\u201c":
+                open_.pop()
+            out.append("\u2019")
+        elif ch == "\u2019" and open_ and open_[-1] == "\u2018" and not (
+                text[i - 1:i].isalpha() and text[i + 1:i + 2].isalpha()):
+            open_.pop()
+            out.append("\u201d")
+        else:
+            out.append(ch)
+    out += ["\u2019" if ch == "\u201c" else "\u201d" for ch in reversed(open_)]
+    return "".join(out)
 
 
 QUOTES_AROUND = {"es": "&laquo;{}&raquo;", "fr": "&laquo;&nbsp;{}&nbsp;&raquo;"}
@@ -1233,16 +1252,32 @@ def offline_files(lang):
 
 
 def read_page(lang="en"):
-    groups = []
+    """Every book translated so far: first an index of the books under their
+    testaments, then each book with a pill per chapter and, folded away, a
+    card per chapter with its opening verse."""
+    groups, tiles = [], {"old_testament": [], "new_testament": []}
     for book, chaps in books(lang):
         done, total, progress = book_progress(book, chaps, lang)
+        name = BOOK_NAMES[book][lang]
+        testament = "old_testament" if book in refs.OT_CODES else "new_testament"
+        tiles[testament].append(
+            f'<li><a class="book-tile" href="#{book.lower()}"><span class="book-tile-name">{name}</span>'
+            f'<span class="book-progress{" done" if done == total else ""}">{progress}</span>'
+            f'{meter(done, total)}</a></li>')
         groups.append(
             f'<section class="book-group" id="{book.lower()}" aria-labelledby="book-{book.lower()}">'
-            f'<div class="book-head"><h2 id="book-{book.lower()}">{BOOK_NAMES[book][lang]}</h2>'
+            f'<div class="book-head"><h2 id="book-{book.lower()}">{name}</h2>'
             f'<span class="book-progress{" done" if done == total else ""}">{progress}</span>'
             f'{meter(done, total)}{save_button(book, chaps, lang)}</div>'
-            f'<ul class="a-grid">{"".join(passage_card(p.book, p.chapter, lang) for p in chaps)}</ul></section>')
-    cards = "".join(groups)
+            f'<div class="chap-pills">{chapter_pills(chaps, lang, total=total)}</div>'
+            f'<details class="previews"><summary>{t(lang, "read.previews")}</summary>'
+            f'<ul class="a-grid">{"".join(passage_card(p.book, p.chapter, lang) for p in chaps)}</ul>'
+            f'</details></section>')
+    index = "".join(
+        f'<section class="book-index-group" aria-labelledby="ix-{key}"><h2 class="label" id="ix-{key}">'
+        f'{t(lang, "footer." + key)}</h2><ul class="book-tiles">{"".join(items)}</ul></section>'
+        for key, items in tiles.items() if items)
+    cards = f'<nav class="book-index" aria-label="{t(lang, "read.books")}">{index}</nav>\n' + "".join(groups)
     body = f"""
 <header class="page-head" data-offline-files="{html.escape(json.dumps(offline_files(lang)))}">
 <p class="eyebrow">{t(lang, "read.title")}</p>
@@ -1742,10 +1777,34 @@ def display(text):
     return re.sub(r"(\d)\u2013(\d)", "\\1\u2060\u2013\u2060\\2", html.escape(text))
 
 
+# The articles the articles page suggests reading first, in this order.
+START_HERE = ("why-open-word-bible", "showing-the-work", "three-levels-one-meaning",
+              "ai-assisted-translation-and-human-review")
+# Sections that are series, read in order: their articles are numbered parts.
+SERIES = ("history", "translation")
+
+
+@functools.lru_cache(maxsize=None)
+def series_numbers():
+    """Each series article's part number and its series' length, from the
+    English articles, so a part keeps its number in every language:
+    {slug: (n, total)}."""
+    numbers = {}
+    english = sorted(load_articles("en"), key=lambda a: a["order"])
+    for key in SERIES:
+        parts = [a["slug"] for a in english if a["section"] == key]
+        numbers.update({slug: (n, len(parts)) for n, slug in enumerate(parts, 1)})
+    return numbers
+
+
 def article_meta(a, lang="en"):
     """"6 min read · John 1:1, 14": what a card or byline says about length
-    and which verses an article reads."""
+    and which verses an article reads; for a part of a series, "7 min read ·
+    Part 4 of 20"."""
     parts = [html.escape(t(lang, "article.min_read", n=a["minutes"]))]
+    if a["slug"] in series_numbers():
+        n, total = series_numbers()[a["slug"]]
+        parts.append(html.escape(t(lang, "article.part", n=n, total=total)))
     parts += [html.escape(passage_label(*p, lang)) for p in a["passages"]]
     return " &middot; ".join(parts)
 
@@ -1765,26 +1824,76 @@ def article_list(articles, lang="en"):
     return "".join(article_card(a, lang) for a in articles)
 
 
+def feed_url(lang):
+    return url(lang, "/articles/feed.xml")
+
+
+def articles_feed(articles, lang="en"):
+    """An Atom feed of the articles in lang, newest first."""
+    def esc(text):
+        return html.escape(text, quote=False)
+    newest = max(a["date"] for a in articles)
+    entries = "".join(
+        f"<entry><title>{esc(a['title'])}</title>"
+        f'<link href="{html.escape(SITE_URL + url(lang, article_url(a)))}"/>'
+        f"<id>{esc(SITE_URL + url(lang, article_url(a)))}</id>"
+        f"<updated>{a['date']}T00:00:00Z</updated>"
+        f"<summary>{esc(a['summary'])}</summary></entry>\n"
+        for a in articles)
+    return ('<?xml version="1.0" encoding="utf-8"?>\n'
+            f'<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{lang}">\n'
+            f"<title>{esc(SITE_NAME + ' · ' + t(lang, 'articles.title'))}</title>\n"
+            f'<link href="{html.escape(SITE_URL + url(lang, "/articles/"))}"/>\n'
+            f'<link rel="self" href="{html.escape(SITE_URL + feed_url(lang))}"/>\n'
+            f"<id>{esc(SITE_URL + url(lang, '/articles/'))}</id>\n"
+            f"<updated>{newest}T00:00:00Z</updated>\n"
+            f"<author><name>{SITE_NAME}</name></author>\n"
+            f"{entries}</feed>\n")
+
+
 def articles_page(articles, lang="en"):
-    """The articles in lang, or a note that none is translated yet."""
+    """The articles in lang, or a note that none is translated yet: a few
+    to start with, then every article under its section. web/site.js turns
+    the section links into filters and shows a search box."""
     by_order = sorted(articles, key=lambda a: a["order"])
+    head_extra = ""
     if by_order:
-        featured, rest = by_order[0], by_order[1:]
         names = catalog(lang)["sections"]
-        groups = [(key, [a for a in rest if a["section"] == key]) for key in SECTIONS]
+        groups = [(key, [a for a in by_order if a["section"] == key]) for key in SECTIONS]
         groups = [(key, items) for key, items in groups if items]
-        # Links to each section, with how many articles it has.
-        jump = (f'<nav class="a-jump" aria-label="{t(lang, "articles.sections")}"><ul>'
-                + "".join(f'<li><a href="#{key}">{names[key]} <span>{sum(a["section"] == key for a in by_order)}</span></a></li>'
-                          for key, _ in groups)
-                + "</ul></nav>")
+        start = [a for slug in START_HERE for a in by_order if a["slug"] == slug]
+        start_html = ""
+        if start:
+            steps = "".join(f'<li><a href="{url(lang, article_url(a))}">{display(a["title"])}</a></li>'
+                            for a in start)
+            start_html = (f'<section class="a-start" id="a-start" aria-labelledby="start-h">'
+                          f'<div class="a-start-head"><h2 id="start-h">{t(lang, "articles.start")}</h2>'
+                          f'<span>{t(lang, "articles.start_time", n=sum(a["minutes"] for a in start))}</span></div>'
+                          f'<ol>{steps}</ol></section>')
+        # Links to each section, with how many articles it has; with
+        # JavaScript they filter the list.
+        chips = [f'<li><a href="#" data-filter="all">{t(lang, "articles.all")} <span>{len(by_order)}</span></a></li>']
+        chips += [f'<li><a href="#{key}" data-filter="{key}">{names[key]} <span>{len(items)}</span></a></li>'
+                  for key, items in groups]
+        tools = (f'<div class="a-tools">'
+                 f'<nav class="a-jump" aria-label="{t(lang, "articles.sections")}"><ul>{"".join(chips)}</ul></nav>'
+                 f'<label class="a-search" hidden><span class="sr-only">{t(lang, "articles.search")}</span>'
+                 f'{icon(ICONS["search"], 16)}'
+                 f'<input type="search" id="a-search" placeholder="{html.escape(t(lang, "articles.search_placeholder"))}" autocomplete="off"></label>'
+                 f'</div>')
         # Inside a section, compact rows rather than cards.
         sections = "".join(
-            f'<section class="a-group" id="{key}" aria-labelledby="{key}-h">'
+            f'<section class="a-group" id="{key}" data-section="{key}" aria-labelledby="{key}-h">'
             f'<h2 id="{key}-h">{names[key]}</h2>'
             f'<ul class="a-rows">{"".join(article_card(a, lang, section=False) for a in items)}</ul></section>'
             for key, items in groups)
-        listing = f'{jump}\n<ul class="a-feature">{article_card(featured, lang, featured=True)}</ul>\n{sections}'
+        feed = (f'<p class="a-feed"><a href="{feed_url(lang)}">{icon(ICONS["feed"], 16)}'
+                f'{t(lang, "articles.feed")}</a></p>')
+        listing = (f'{start_html}\n<div class="a-index" id="a-index">{tools}\n'
+                   f'<p class="notice" id="a-none" role="status" hidden>{t(lang, "articles.no_match")}</p>\n'
+                   f'{sections}</div>\n{feed}')
+        head_extra = (f'\n<link rel="alternate" type="application/atom+xml" '
+                      f'title="{html.escape(SITE_NAME + " · " + t(lang, "articles.title"))}" href="{feed_url(lang)}">')
     else:
         listing = f'<p class="notice">{t(lang, "articles.none")}</p>'
     body = f"""
@@ -1796,7 +1905,34 @@ def articles_page(articles, lang="en"):
 {listing}
 """
     return page(lang, t(lang, "articles.title"), body, path="/articles/", current="/articles/",
-                description=t(lang, "meta.articles_description"))
+                description=t(lang, "meta.articles_description"), head=head_extra)
+
+
+def series_nav(article, articles, lang="en"):
+    """For a part of a series: its number, and the parts before and after it
+    that are written in lang."""
+    if article["slug"] not in series_numbers():
+        return ""
+    n, total = series_numbers()[article["slug"]]
+    parts = sorted((a for a in articles if a["slug"] in series_numbers() and a["section"] == article["section"]),
+                   key=lambda a: a["order"])
+    i = parts.index(article)
+
+    def turn(a, cls, key):
+        if a is None:
+            return ""
+        m = series_numbers()[a["slug"]][0]
+        return (f'<a class="s-turn {cls}" href="{url(lang, article_url(a))}">'
+                f'<span class="s-dir">{t(lang, "article." + key)} &middot; {t(lang, "article.part_short", n=m)}</span>'
+                f'<span class="s-title">{display(a["title"])}</span></a>')
+    before = parts[i - 1] if i > 0 else None
+    after = parts[i + 1] if i + 1 < len(parts) else None
+    section = catalog(lang)["sections"][article["section"]]
+    return (f'<nav class="series" aria-labelledby="series-h">'
+            f'<div class="series-head"><h2 id="series-h">{section} &middot; {t(lang, "article.part", n=n, total=total)}</h2>'
+            f'<a href="{url(lang, "/articles/")}#{article["section"]}">{t(lang, "article.series_all", n=total)}</a></div>'
+            f'{meter(n, total)}'
+            f'<div class="s-turns">{turn(before, "prev", "previous")}{turn(after, "next", "next")}</div></nav>')
 
 
 def article_page(article, articles, lang="en"):
@@ -1815,11 +1951,15 @@ def article_page(article, articles, lang="en"):
                f'<p>{t(lang, "article.read_passage_text")}</p><p>{read}</p></aside>'
                if read else "")
     section = catalog(lang)["sections"][article["section"]]
+    part = ""
+    if article["slug"] in series_numbers():
+        part = " &middot; " + t(lang, "article.part", n=series_numbers()[article["slug"]][0],
+                                total=series_numbers()[article["slug"]][1])
     body = f"""
 <div class="article-layout">
 <article class="article">
 <header class="article-head">
-<p class="eyebrow"><a href="{url(lang, "/articles/")}#{article["section"]}">{section}</a></p>
+<p class="eyebrow"><a href="{url(lang, "/articles/")}#{article["section"]}">{section}</a>{part}</p>
 <h1>{display(article["title"])}</h1>
 <p class="dek">{display(article["summary"])}</p>
 <p class="byline">{MARK}<span>Open Word Bible &middot; {_date(article["date"], lang)} &middot; {t(lang, "article.min_read", n=article["minutes"])}</span></p>
@@ -1827,7 +1967,9 @@ def article_page(article, articles, lang="en"):
 <div class="article-body">
 {content}
 </div>
+<p class="a-draft">{t(lang, "article.draft")}</p>
 {passage}
+{series_nav(article, articles, lang)}
 </article>
 {f'<nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">{t(lang, "article.on_this_page")}</h2><ol>{contents}</ol></nav>' if len(toc) > 1 else ""}
 </div>
@@ -1841,6 +1983,29 @@ def article_page(article, articles, lang="en"):
                            title=article["title"], summary=article["summary"]),
                 description=article["summary"],
                 translated=article_languages(article))
+
+
+@functools.lru_cache(maxsize=None)
+def chapter_articles(lang):
+    """The articles in lang that read each chapter: {(book, chapter): [article]},
+    in the articles' order."""
+    found = {}
+    for a in sorted(load_articles(lang), key=lambda a: a["order"]):
+        for b, c, _ in a["passages"]:
+            found.setdefault((b, c), [])
+            if a not in found[(b, c)]:
+                found[(b, c)].append(a)
+    return found
+
+
+def chapter_articles_html(book, chapter, lang="en"):
+    """Under a chapter: the articles that read it closely."""
+    items = chapter_articles(lang).get((book, chapter))
+    if not items:
+        return ""
+    return (f'<aside class="chapter-articles" aria-labelledby="ch-articles-h">'
+            f'<h2 id="ch-articles-h">{t(lang, "reader.articles")}</h2>'
+            f'<ul class="a-grid">{article_list(items, lang)}</ul></aside>')
 
 
 GOOGLE_G = ('<svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true">'
@@ -2320,11 +2485,11 @@ def sitemap(paths):
 def build(out):
     for cached in (nav_menus, footer_links, passages, asset, translated_verses, catalog, book_refs, key_terms, name_cards,
                    search_documents, search_index,
-                   search_index_url, word_uses):
+                   search_index_url, word_uses, series_numbers, chapter_articles):
         cached.cache_clear()
     if out.exists():
         shutil.rmtree(out)
-    pages, indexed = {}, []
+    pages, indexed, feeds = {}, [], {}
     for lang in LANGUAGES:
         def add(path, text, index=True):
             pages[url(lang, path)] = text
@@ -2339,6 +2504,8 @@ def build(out):
             add(chapter_url(book, chapter), chapter_page(book, chapter, lang))
         articles = load_articles(lang)
         add("/articles/", articles_page(articles, lang), index=bool(articles))
+        if articles:
+            feeds[feed_url(lang).lstrip("/")] = articles_feed(articles, lang)
         for article in articles:
             add(article_url(article), article_page(article, articles, lang))
         add("/account/", account_page(lang), index=False)
@@ -2347,6 +2514,7 @@ def build(out):
         add("/offline/", offline_page(lang), index=False)
         add("/saved/", saved_page(lang), index=False)
     files = {(p.strip("/") + "/index.html").lstrip("/"): text for p, text in pages.items()}
+    files.update(feeds)
     files["404.html"] = not_found_page()
     files["sitemap.xml"] = sitemap(indexed)
     files["robots.txt"] = f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n"
