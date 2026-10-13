@@ -618,6 +618,23 @@ class SiteTest(unittest.TestCase):
             for p in chaps:
                 self.assertIn(f'href="{p.url}"', section)
         self.assertIn("4 of 4 chapters, complete", read)
+        self.assertIn("1 chapter, complete", read)
+        self.assertNotIn("1 of 1 chapters", read)
+        # An index of the books first, each linked to its section.
+        index = re.search(r'<nav class="book-index".*?</nav>', read, re.S)[0]
+        for book, _ in build_site.books():
+            self.assertIn(f'href="#{book.lower()}"', index)
+
+    def test_card_quotes_alternate_and_keep_apostrophes(self):
+        # Speech inside the verse's speech turns to double quotes.
+        self.assertEqual(build_site.inner_quotes("He said, \u201cThey will say, \u2018No.\u2019\u201d"),
+                         "He said, \u2018They will say, \u201cNo.\u201d\u2019")
+        # An apostrophe is not a closing quote.
+        self.assertEqual(build_site.inner_quotes("Moses\u2019 father-in-law and Aaron\u2019s sons"),
+                         "Moses\u2019 father-in-law and Aaron\u2019s sons")
+        # Speech that runs on into the next verse is closed, inner first.
+        self.assertEqual(build_site.inner_quotes("He said, \u201cTell him, \u2018Go"),
+                         "He said, \u2018Tell him, \u201cGo\u201d\u2019")
 
     def built(self, path):
         """The built file a site path names ("/es/offline/", "/style.css?v=...")."""
