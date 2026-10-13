@@ -29,6 +29,8 @@ from owb import markup, morph, refs, versification  # noqa: E402
 # (data/books.json). All 66 are listed, so adding a book needs no edit here.
 _BOOKS = json.loads((ROOT / "data" / "books.json").read_text(encoding="utf-8"))["books"]
 BOOK_NAMES = {code: {k: v for k, v in b.items() if k != "chapters"} for code, b in _BOOKS.items()}
+# Short names for references in tight places (data/book_abbreviations.json).
+BOOK_ABBREVIATIONS = json.loads((ROOT / "data" / "book_abbreviations.json").read_text(encoding="utf-8"))["books"]
 # A book whose chapters go by another name: "Psalm 23", not "Psalms 23".
 CHAPTER_NAMES = {"PSA": {"en": "Psalm", "es": "Salmo", "fr": "Psaume", "sw": "Zaburi"}}
 # Chapters in each book, for "2 of 21 chapters" and a book's completeness.
@@ -867,6 +869,27 @@ def lang_attr(text_language, lang):
     return f' lang="{text_language}"' if text_language != lang else ""
 
 
+# Statuses a named reviewer has approved (backend/translation/models.py):
+# "revised" is a reviewed sentence changed after review.
+REVIEWED = {"reviewed", "revised"}
+
+
+def review_status(records, lang="en"):
+    """Under a chapter's title: how many of its sentences a named reviewer
+    has approved, said plainly ("Draft · 0 of 22 sentences reviewed")."""
+    total = len(records)
+    done = sum(r["status"] in REVIEWED for r in records)
+    meaning = sum(r["status"] == "meaning_reviewed" for r in records)
+    if done == total:
+        return (f'<p class="review-status done" id="review-status">'
+                f'{t(lang, "reader.review_done", total=total)}</p>')
+    text = t(lang, "reader.review_draft", n=done, total=total)
+    if meaning:
+        text += " \u00b7 " + t(lang, "reader.review_meaning", n=meaning)
+    return (f'<p class="review-status" id="review-status" title="{t(lang, "footer.review")}">'
+            f'{text}</p>')
+
+
 # Reader settings whose control only some languages have.
 PLURAL_YOU = {"es"}
 
@@ -924,8 +947,10 @@ def chapter_page(book, chapter, lang="en"):
                                                      ("1", t(lang, "reader.original"))])
              if has_units else "")
     body = f"""
+<div class="settings-bar" id="settings-bar">
 <button type="button" class="settings-toggle" id="settings-toggle" aria-expanded="false" aria-controls="settings">
   <span>{t(lang, "reader.settings")}</span> <span class="settings-summary" id="settings-summary"></span>
+  <span class="settings-change" aria-hidden="true">{t(lang, "reader.change")}</span>
 </button>
 <div class="settings" id="settings">
 <div class="controls">
@@ -939,10 +964,12 @@ def chapter_page(book, chapter, lang="en"):
 </div>
 <p class="hint"><span id="hint-level"></span> <span id="hint-gender"></span> <span id="hint-{title_setting}"></span> <span id="hint-deity_pronoun"></span> <span id="hint-units"></span> <span id="hint-plural_you"></span> <span id="hint-headings"></span> <span id="hint-view"></span></p>
 </div>
+</div>
 <div class="reader">
   <article class="passage">
     {chapter_strip(book, chapter, lang)}
     <h1 id="title">{html.escape(title)}</h1>
+    {review_status(records, lang)}
     <p class="print-only print-head" id="print-head"></p>
     <p class="sub">{t(lang, "reader.sub" + suffix)}</p>
     <p class="notice" id="partial" hidden></p>
@@ -1114,8 +1141,15 @@ def book_refs(lang="en"):
         local = BOOK_NAMES.get(code, {}).get(lang)
         if local:
             names[local] = code
+        # The name before a chapter number too: "Psalm 2:7".
+        for form in {chapter_book(code), chapter_book(code, lang)}:
+            names[form] = code
     chapters = {b: sorted(p.chapter for p in ps) for b, ps in books()}
-    return {"names": names, "chapters": chapters, "search": url(lang, "/search/")}
+    # For the quotation tags in the text: each book's short name and the
+    # name it says in full ("Deut", "Deuteronomy").
+    abbr = {code: [forms.get(lang) or chapter_book(code, lang), chapter_book(code, lang)]
+            for code, forms in BOOK_ABBREVIATIONS.items()}
+    return {"names": names, "chapters": chapters, "search": url(lang, "/search/"), "abbr": abbr}
 
 
 def disputed_block(records, lang="en"):

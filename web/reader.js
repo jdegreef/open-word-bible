@@ -459,6 +459,10 @@
           });
           span.appendChild(sup);
         }
+        if (i === parts.length - 1 && !plain()) {
+          var echoes = echoTags(r);
+          if (echoes) span.appendChild(echoes);
+        }
         span.addEventListener("click", function () {
           // Selecting text is not choosing the verse.
           if (!window.getSelection().isCollapsed) return;
@@ -553,20 +557,85 @@
     }
   }
 
-  // Above the text: mark the sentences where a decision is uncertain.
+  // Above the text: mark the sentences where a decision is uncertain, and
+  // list their verses ("5:9, 5:11"); each opens that verse's reasoning.
   function drawUnsureToggle(n) {
+    var bar = document.getElementById("unsure-bar");
     var b = document.getElementById("unsure-toggle");
-    if (!b) {
+    if (!bar) {
+      bar = el("div", "unsure-bar");
+      bar.id = "unsure-bar";
       b = el("button", "text-tool");
       b.id = "unsure-toggle";
       b.type = "button";
       b.addEventListener("click", function () { setSetting("uncertain", settings.uncertain ? 0 : 1); });
+      bar.appendChild(b);
       var box = document.getElementById("text");
-      box.parentNode.insertBefore(b, box);
+      box.parentNode.insertBefore(bar, box);
     }
-    b.hidden = !n;
+    bar.hidden = b.hidden = !n;
     b.setAttribute("aria-pressed", settings.uncertain ? "true" : "false");
     b.textContent = t("unsure_toggle").replace("{n}", n);
+    var old = bar.querySelector(".unsure-list");
+    if (old) old.remove();
+    if (!n) return;
+    var list = el("span", "unsure-list");
+    list.setAttribute("role", "group");
+    list.setAttribute("aria-label", t("unsure_list"));
+    DATA.records.forEach(function (r) {
+      var ds = decisionsFor(r);
+      var d = ds.meaning.concat(ds.rendering).filter(function (x) { return x.uncertain; })[0];
+      if (!d) return;
+      var verse = verseOf(r.refs[0]);
+      if (list.childNodes.length) list.appendChild(document.createTextNode(", "));
+      var a = el("a", "unsure-ref", /:/.test(verse) ? verse : DATA.chapter + ":" + verse);
+      a.href = "#v" + verse;
+      if (current === r) a.setAttribute("aria-current", "true");
+      a.addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        select(r, verse, d.id);
+        reveal(verse);
+      });
+      list.appendChild(a);
+    });
+    bar.appendChild(list);
+  }
+
+  // After a sentence that echoes other scripture: a quiet tag naming the
+  // passage ("Deut 25:4"), from its "Echo of other scripture" decisions that
+  // name a chapter and verse. At most two; the tag opens the reasoning.
+  function echoTags(r) {
+    var seen = {}, out = [];
+    r.decisions.forEach(function (d) {
+      if (d.layer !== "meaning" || d.category !== "allusion") return;
+      var re = refPattern(), text = render(d.choice), m;
+      re.lastIndex = 0;
+      while ((m = re.exec(text))) {
+        var code = DATA.bookRefs.names[m[1]];
+        var key = code + " " + m[2] + ":" + m[3] + (m[4] ? "\u2013" + m[4] : "");
+        if (seen[key] || (code === DATA.book && Number(m[2]) === DATA.chapter)) continue;
+        seen[key] = true;
+        out.push({ decision: d, code: code, ref: m[2] + ":" + m[3] + (m[4] ? "\u2013" + m[4] : "") });
+      }
+    });
+    if (!out.length) return null;
+    var box = el("span", "echo-tags");
+    out.slice(0, 2).forEach(function (x) {
+      var names = (DATA.bookRefs.abbr && DATA.bookRefs.abbr[x.code]) || [x.code, x.code];
+      var b = el("button", "echo-tag", names[0] + "\u00a0" + x.ref);
+      b.type = "button";
+      var full = names[1] + " " + x.ref;
+      b.title = full;
+      b.setAttribute("aria-label", t("echo_tag").replace("{ref}", full));
+      b.addEventListener("click", function (e) {
+        e.stopPropagation();
+        select(r, splitVerses(r, r.renderings[textLang(r)][settings.level]).pop()[0], x.decision.id);
+      });
+      b.addEventListener("keydown", function (e) { e.stopPropagation(); });
+      box.appendChild(b);
+    });
+    return box;
   }
 
   // Below the passage: its footnotes, or every note in the chapter grouped
@@ -1243,6 +1312,62 @@
     }
   });
 
+  // "?" lists the keyboard shortcuts in a small dialog; Esc or the close
+  // button shuts it and focus goes back where it was.
+  var keysDialog = null, keysReturn = null;
+  function showKeys() {
+    if (!keysDialog) {
+      keysDialog = el("dialog", "keys-dialog");
+      keysDialog.id = "keys-dialog";
+      keysDialog.setAttribute("aria-labelledby", "keys-title");
+      var head = el("div", "keys-head");
+      var h = el("h2", null, t("keys_title"));
+      h.id = "keys-title";
+      head.appendChild(h);
+      var x = el("button", "keys-close", "\u00d7");
+      x.type = "button";
+      x.setAttribute("aria-label", t("close"));
+      x.addEventListener("click", hideKeys);
+      head.appendChild(x);
+      keysDialog.appendChild(head);
+      var dl = el("dl", "keys-list");
+      t("keys_list").forEach(function (k) {
+        var dt = el("dt");
+        k[0].split(" ").forEach(function (key) { dt.appendChild(el("kbd", null, key)); });
+        dl.appendChild(dt);
+        dl.appendChild(el("dd", null, k[1]));
+      });
+      keysDialog.appendChild(dl);
+      keysDialog.addEventListener("click", function (e) { if (e.target === keysDialog) hideKeys(); });
+      keysDialog.addEventListener("cancel", function (e) { e.preventDefault(); hideKeys(); });
+      document.body.appendChild(keysDialog);
+    }
+    if (keysDialog.open) return;
+    keysReturn = document.activeElement;
+    if (keysDialog.showModal) keysDialog.showModal(); else keysDialog.setAttribute("open", "");
+    keysDialog.querySelector(".keys-close").focus();
+  }
+  function hideKeys() {
+    if (!keysDialog || !keysDialog.open) return;
+    if (keysDialog.close) keysDialog.close(); else keysDialog.removeAttribute("open");
+    if (keysReturn && keysReturn.focus && document.contains(keysReturn)) keysReturn.focus({ preventScroll: true });
+    keysReturn = null;
+  }
+  // Ahead of the reader's other keys: while the list is open, Esc closes
+  // only it and the other shortcuts wait.
+  window.addEventListener("keydown", function (e) {
+    if (keysDialog && keysDialog.open) {
+      if (e.key === "Escape") { e.preventDefault(); hideKeys(); }
+      if (e.key !== "Tab") e.stopPropagation();
+      return;
+    }
+    if (e.key === "?" && !e.ctrlKey && !e.metaKey && !e.altKey && !typing(e.target)) {
+      e.preventDefault();
+      e.stopPropagation();
+      showKeys();
+    }
+  }, true);
+
   function typing(target) {
     var tag = (target.tagName || "").toLowerCase();
     return tag === "input" || tag === "textarea" || tag === "select" || target.isContentEditable;
@@ -1396,19 +1521,34 @@
     }, 150);
   });
 
-  // The settings bar sticks under the header; the panel sticks under both,
-  // so it needs the bar's height (it changes as the bar wraps).
-  var settingsEl = document.getElementById("settings");
+  // On wide screens the settings bar sticks under the header; the panel
+  // sticks under both, so it needs the bar's height (it changes as the bar
+  // opens and wraps). On phones the bar scrolls away, so it adds nothing.
+  var settingsEl = document.getElementById("settings-bar") || document.getElementById("settings");
   function measure() {
-    document.documentElement.style.setProperty("--settings-h", settingsEl.offsetHeight + "px");
+    var sticky = getComputedStyle(settingsEl).position === "sticky";
+    document.documentElement.style.setProperty("--settings-h", (sticky ? settingsEl.offsetHeight : 0) + "px");
   }
   if (window.ResizeObserver) new ResizeObserver(measure).observe(settingsEl);
+  window.addEventListener("resize", measure);
   measure();
 
+  // The settings fold behind one line naming the current choices; opening
+  // them is remembered for this visit (the tab's session).
+  var OPEN_KEY = "owb.settingsOpen";
   var toggle = document.getElementById("settings-toggle");
+  function openSettings(open) {
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    measure();
+  }
+  // (On phones they start folded, so the passage starts on the first screen.)
+  try {
+    if (sessionStorage.getItem(OPEN_KEY) === "1" && window.matchMedia("(min-width: 861px)").matches) openSettings(true);
+  } catch (e) { /* ignore */ }
   toggle.addEventListener("click", function () {
     var open = toggle.getAttribute("aria-expanded") !== "true";
-    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    openSettings(open);
+    try { sessionStorage.setItem(OPEN_KEY, open ? "1" : "0"); } catch (e) { /* ignore */ }
   });
 
   document.querySelectorAll("[data-setting]").forEach(function (seg) {
