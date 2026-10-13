@@ -24,18 +24,19 @@ sys.path.insert(0, str(ROOT))
 
 from typing import NamedTuple  # noqa: E402
 
-from owb import markup, morph, refs, versification  # noqa: E402
+from owb import languages as owb_languages, markup, morph, refs, versification  # noqa: E402
 
+# The interface languages, English first (data/languages.json; see catalog below).
+LANGUAGES = owb_languages.CODES
 # Every book's name in each interface language and its number of chapters
 # (data/books.json). All 66 are listed, so adding a book needs no edit here.
 _BOOKS = json.loads((ROOT / "data" / "books.json").read_text(encoding="utf-8"))["books"]
-BOOK_NAMES = {code: {k: v for k, v in b.items() if k != "chapters"} for code, b in _BOOKS.items()}
+BOOK_NAMES = {code: {k: v for k, v in b.items() if k not in ("chapters", "chapter_names")}
+              for code, b in _BOOKS.items()}
 # A book whose chapters go by another name: "Psalm 23", not "Psalms 23".
-CHAPTER_NAMES = {"PSA": {"en": "Psalm", "es": "Salmo", "fr": "Psaume", "sw": "Zaburi"}}
+CHAPTER_NAMES = {code: b["chapter_names"] for code, b in _BOOKS.items() if "chapter_names" in b}
 # Chapters in each book, for "2 of 21 chapters" and a book's completeness.
 BOOK_CHAPTERS = {code: b["chapters"] for code, b in _BOOKS.items()}
-# The interface languages, English first (see catalog below).
-LANGUAGES = ("en", "es", "fr", "sw")
 SITE_NAME = "Open Word Bible"
 # The site's home (Render serves it on openwordbible.org and redirects www).
 # Canonical links, the sitemap and link previews use it.
@@ -365,7 +366,7 @@ def page(lang, title, body, path=None, current="", description="", card="site", 
 def languages_label(records):
     """"English · Español": the languages every sentence of a passage is in,
     each in its own name."""
-    return " &middot; ".join(t(code, "language_name") for code in LANGUAGES
+    return " &middot; ".join(owb_languages.native(code) for code in LANGUAGES
                              if all(code in r["renderings"] for r in records))
 
 
@@ -554,9 +555,9 @@ def language_items(lang, path, translated=LANGUAGES, mark=""):
         return path if code in translated else "/articles/"
 
     return "".join(
-        f'<li><span lang="{code}" aria-current="true">{t(code, "language_name")}{mark}</span></li>' if code == lang
+        f'<li><span lang="{code}" aria-current="true">{owb_languages.native(code)}{mark}</span></li>' if code == lang
         else f'<li><a href="{url(code, target(code))}" lang="{code}" hreflang="{code}" data-lang="{code}">'
-             f'{t(code, "language_name")}</a></li>'
+             f'{owb_languages.native(code)}</a></li>'
         for code in LANGUAGES)
 
 
@@ -914,10 +915,6 @@ def lang_attr(text_language, lang):
     return f' lang="{text_language}"' if text_language != lang else ""
 
 
-# Reader settings whose control only some languages have.
-PLURAL_YOU = {"es"}
-
-
 def footnote_letter(n):
     """The reader's footnote letters: a..z, then aa, ab, ... (n from 0)."""
     out = ""
@@ -1087,8 +1084,10 @@ def chapter_page(book, chapter, lang="en"):
         title_setting = "christos"
         title_control = control("title", "christos", [("0", t(lang, "reader.christ")), ("1", t(lang, "reader.messiah"))])
     levels = catalog(lang)["levels"]
-    plural = ("\n  " + control("plural", "plural_you", [("0", "ustedes"), ("1", "vosotros")])
-              if lang in PLURAL_YOU else "")
+    # Reader settings whose control only some languages have (data/languages.json).
+    own = owb_languages.settings(lang)
+    plural = ("\n  " + control("plural", "plural_you", list(enumerate(own["plural_you"])))
+              if "plural_you" in own else "")
     # Measures (modern or original units) only where a passage has them.
     has_units = any("{{units:" in text for r in records
                     for levels_ in r["renderings"].values() for text in levels_.values())
@@ -1435,9 +1434,6 @@ def inner_quotes(text):
     return "".join(out)
 
 
-QUOTES_AROUND = {"es": "&laquo;{}&raquo;", "fr": "&laquo;&nbsp;{}&nbsp;&raquo;"}
-
-
 def passage_card(book, chapter, lang="en"):
     """A passage as a card in the article-card style: its opening verse at
     the default settings, and how much of it is translated into lang and
@@ -1452,8 +1448,10 @@ def passage_card(book, chapter, lang="en"):
              decisions=len(shown), uncertain=sum(d["uncertain"] for d in shown))
     if len(records) < len(every):
         meta += " &middot; " + t(lang, "card.coverage", n=len(records), total=len(every))
-    q = QUOTES_AROUND.get(lang, "&ldquo;{}&rdquo;")
-    if lang not in QUOTES_AROUND:
+    # Each language's marks around a quoted verse (data/languages.json);
+    # inside English-style double quotes, a quote's own marks become single.
+    q = owb_languages.READING[lang]["quotes"]
+    if q.startswith("&ldquo;"):
         quote = inner_quotes(quote)
     return (f'<li><a class="a-card p-card" href="{url(lang, chapter_url(book, chapter))}">'
             f'<span class="a-section">{BOOK_NAMES[book][lang]} &middot; {languages_label(every)}</span>'
