@@ -115,7 +115,8 @@ class Command(BaseCommand):
         Sentence.objects.bulk_create(
             sentences, update_conflicts=True, unique_fields=["record_id"],
             update_fields=["book", "chapter", "verse", "number", "refs", "source_edition",
-                           "source_text_id", "tokens", "source_text", "literal_gloss", "updated_at"])
+                           "source_text_id", "tokens", "source_text", "literal_gloss", "updated_at"],
+            batch_size=2000)
         Rendering.objects.filter(sentence__in=sentences).delete()
         Decision.objects.filter(sentence__in=sentences).delete()
         Rendering.objects.bulk_create(
