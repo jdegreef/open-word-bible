@@ -4,6 +4,7 @@ summary: More than two centuries before Jesus, Jews in Egypt translated the book
 date: 2026-10-11
 order: 29
 section: history
+part: ot
 ---
 The first translation of the Bible was not made by Christians, and it was not made into Latin or English. It was made by Jews, in Egypt, into Greek, beginning in the third century BCE. It is called the **Septuagint**, from the Latin for "seventy," and it is one of the most important books in the history of the Bible.
 

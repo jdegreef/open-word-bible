@@ -45,7 +45,8 @@ briefs for French and Swahili.
 
 Adding a book needs no shared file edited: `data/books.json` already lists
 all 66 books (names in each language, chapter counts), section headings go
-in `data/headings/<BOOK>.json`, and each share card's digest sits in its own
+in `data/headings/<BOOK>.json`, chapter summaries in
+`data/summaries/<BOOK>.json`, and each share card's digest sits in its own
 `web/og/<card>.digest`. Two pull requests that add different chapters touch
 different files, so they don't conflict.
 
@@ -70,6 +71,15 @@ a span may not hold a verse marker or cut through a setting span
 (`markup.alignment_ranges`). A token may appear in more than one alignment
 ("not yet ... come"), and words with no counterpart are left out. John 2,
 English Balanced, is aligned as a pilot.
+
+Poetry is set in lines. A rendering marks each break inside a verse with
+`\q ` (`"my shepherd; \q I will not lack"`); a verse start is always a line
+start, and a rendering with no `\q` is prose. Lines are wording, so each
+language and level places its own, following the Hebrew accents' division
+of the verse; `scripts/poetry_lines.py` prints that division beside the
+renderings, and `docs/english-style.md` ("Poetry: lines") gives the rules.
+Everywhere text is shown on one line, a break reads as a space
+(`markup.flat`). Psalms 1, 2, 3 and 23 are marked as a pilot.
 
 The Old Testament is translated from the Westminster Leningrad Codex with
 MACULA Hebrew word data (`text_id` `WLC@macula-hebrew`, `language` `hbo`, or
@@ -99,6 +109,13 @@ translation: `data/headings/<BOOK>.json` keys each one by the record it stands
 above, per language, and they stay AI drafts until a named reviewer
 approves them. A page shows a heading only in the language its sentence is
 shown in.
+
+A chapter summary is one or two sentences under a chapter's title saying
+what the chapter is about. `data/summaries/<BOOK>.json` keys each by chapter
+number, per language. Like headings, summaries are AI drafts until reviewed,
+state the sense only (no reader settings), and are shown in the language the
+chapter's text is shown in: the page's language, or English, marked as such,
+where the chapter has no sentence in the page's language yet.
 
 ## Reader settings
 
@@ -144,6 +161,7 @@ Other tools:
     python3 -m owb.validate content/JHN/*.json
     python3 scripts/extract_tokens.py         # refresh data/grc/ and data/hbo/ after adding verses
     python3 scripts/build_versification.py    # rebuild data/versification.json after a source update
+    python3 scripts/extract_comparison.py     # rebuild data/comparison/ (WEB, RV1909) after a source update
 
 ## The site
 
@@ -301,3 +319,8 @@ Local setup:
     python backend/manage.py import_texts                 # about 90 seconds
     python backend/manage.py import_content
     python backend/manage.py test backend_tests           # needs Postgres
+
+On Render (render.yaml) every deploy migrates, runs `import_texts --missing`
+(which fetches and imports only the editions not yet loaded) and reloads
+content/. Errors and warnings go to the log, and to Sentry when `SENTRY_DSN`
+is set; no query strings or searches are sent.

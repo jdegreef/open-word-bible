@@ -4,6 +4,7 @@ summary: Skipped lines, repeated words, letters that look alike, a familiar vers
 date: 2026-10-11
 order: 36
 section: history
+part: nt
 ---
 Try copying a page of text by hand, carefully, and then have someone check it against the original. Unless you are very practised, you will probably find a few mistakes: a word left out, a line skipped, a letter wrong, perhaps a word you were sure was there but was not. Ancient scribes were far more practised than most of us, but they were human, and they made the same kinds of mistakes.
 

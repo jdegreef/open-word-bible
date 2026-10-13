@@ -133,9 +133,12 @@ class LanguagesTest(unittest.TestCase):
                 keys += ("nav.all_articles",)
             cat = build_site.catalog(lang)
             for rel in self.english_pages():
-                # The passage data may hold the same words as Bible text
-                # (Genesis 1:5 names the darkness "Night"); only the interface counts.
-                page = re.sub(r'<script type="application/json" id="owb-data">.*?</script>', "",
+                # The passage data and the text written into the page may
+                # hold the same words as Bible text (Genesis 1:5 names the
+                # darkness "Night"), in English where a sentence has no
+                # translation yet; only the interface counts.
+                page = re.sub(r'<script type="application/json" id="owb-data">.*?</script>'
+                              r'|<div class="text" id="text">.*?</div>\s*<section class="notes"', "",
                               self.read(Path(lang) / rel), flags=re.S)
                 for key in keys:
                     self.assertNotIn(en[key], page, (lang, rel, key))

@@ -9,7 +9,8 @@ record whole verses, meaning
 decisions carry no wording for one language (no wording category, setting
 span or target-language name), and every {{setting:...}} span names a known
 setting and is well formed, and key terms (data/key_terms.json) keep their
-settled English word at every level.
+settled English word at every level, and poetic line markers (\\q) sit only
+between a verse's words in renderings (markup.line_errors).
 
 Usage: python3 -m owb.validate content/en/JHN/JHN.1.1-2.json [...]
 """
@@ -287,6 +288,8 @@ def validate_record(record, known_tokens=None, original_language=True):
 
     _check_markup(record.get("literal_gloss"), "literal_gloss", errors)
     check_verses(record.get("literal_gloss"), "literal_gloss")
+    if isinstance(record.get("literal_gloss"), str) and "\\q" in record["literal_gloss"]:
+        errors.append("literal_gloss: line markers (\\q) belong in renderings only")
 
     renderings = record.get("renderings")
     if not isinstance(renderings, dict) or not renderings:
@@ -307,6 +310,9 @@ def validate_record(record, known_tokens=None, original_language=True):
             own = languages.READING.get(lang, {}).get("settings", {})
             for setting in sorted(used & LANGUAGE_SETTINGS - set(own)):
                 errors.append(f"renderings.{lang}.{level}: {setting} is not a setting in this language")
+            if isinstance(text, str):
+                for reason in markup.line_errors(text):
+                    errors.append(f"renderings.{lang}.{level}: {reason}")
 
     by_rendering = {}
     for i, al in enumerate(record.get("alignments", [])):

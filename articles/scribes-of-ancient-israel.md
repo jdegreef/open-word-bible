@@ -4,6 +4,7 @@ summary: Long before printing, every copy of scripture was made by hand by a tra
 date: 2026-10-11
 order: 22
 section: history
+part: ot
 ---
 Every Bible printed today depends on people most readers never think about: the scribes. For well over two thousand years, the only way to have a copy of a biblical book was for someone to write it out by hand, letter by letter, from another copy. The accuracy of the Bible we read depends, in large part, on how good those people were at their work.
 

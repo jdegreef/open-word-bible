@@ -377,25 +377,34 @@
         .then(function () { store(null); location.replace(PREFIX + "/"); });
     });
 
-    // Your data: the account and this device's reading, as JSON.
+    // Your data: the account, the bookmarks, highlights and place kept with
+    // it (/api/reading), and this device's reading, as JSON.
     document.getElementById("download").addEventListener("click", function () {
       function read(key) {
         try { var v = localStorage.getItem(key); return v && v.charAt(0) === "{" ? JSON.parse(v) : v; }
         catch (e) { return null; }
       }
-      var data = {
-        exported: new Date().toISOString(),
-        account: saved() && saved().user,
-        device: { settings: read("owb.settings"), place: read("owb.place"),
-                  theme: read("owb-theme"), language: read("owb-lang") }
-      };
+      var button = this;
+      busy(button, true);
+      api("/api/reading", {}, T).catch(function () { return null; }).then(function (reading) {
+        busy(button, false);
+        save({
+          exported: new Date().toISOString(),
+          account: saved() && saved().user,
+          reading: reading,
+          device: { settings: read("owb.settings"), place: read("owb.place"), marks: read("owb.marks"),
+                    theme: read("owb-theme"), language: read("owb-lang") }
+        });
+      });
+    });
+    function save(data) {
       var a = document.createElement("a");
       a.href = URL.createObjectURL(new Blob([JSON.stringify(data, null, 2)], { type: "application/json" }));
       a.download = "open-word-bible-account.json";
       document.body.appendChild(a);
       a.click();
       setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 0);
-    });
+    }
 
     // The danger zone: each button asks to be clicked again within 4 seconds.
     var dangerNote = document.getElementById("danger-note");

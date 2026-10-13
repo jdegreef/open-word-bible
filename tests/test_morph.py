@@ -106,13 +106,13 @@ class MorphTest(unittest.TestCase):
                 morph.describe(code)
 
     def test_reader_data_carries_the_grammar(self):
-        page = build_site.chapter_page("JHN", 1)
-        data = json.loads(re.search(r'id="owb-data">(.*?)</script>', page, re.S)[1])
-        for words in data["words"].values():
-            for w in words:
-                self.assertEqual(data["grammar"][w["morph"]]["en"], morph.describe(w["morph"]))
-                for lang in build_site.LANGUAGES[1:]:
-                    self.assertEqual(data["grammar"][w["morph"]][lang], morph.describe(w["morph"], lang))
+        # Each page carries the grammar in its own language only.
+        for lang in build_site.LANGUAGES:
+            page = build_site.chapter_page("JHN", 1, lang)
+            data = json.loads(re.search(r'id="owb-data">(.*?)</script>', page, re.S)[1])
+            for words in data["words"].values():
+                for w in words:
+                    self.assertEqual(data["grammar"][w["morph"]], {lang: morph.describe(w["morph"], lang)})
 
 
 if __name__ == "__main__":
