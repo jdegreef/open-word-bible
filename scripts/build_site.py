@@ -1934,7 +1934,8 @@ def passage_label(book, chapter, verses, lang="en"):
 def _read_article(path):
     """One article file. It starts with a front matter block: title,
     summary, date, order, section (a key of SECTIONS), and optionally
-    nav_title, a shorter title for the header menu."""
+    nav_title, a shorter title for the header menu, and part (a key of
+    PARTS), the part of a series it belongs to."""
     text = path.read_text(encoding="utf-8")
     m = re.match(r"---\n(.*?)\n---\n(.*)", text, re.S)
     if not m:
@@ -1950,6 +1951,8 @@ def _read_article(path):
             raise SystemExit(f"{path.name}: front matter needs {key!r}")
     if meta["section"] not in SECTIONS:
         raise SystemExit(f"{path.name}: section must be one of {', '.join(SECTIONS)}")
+    if "part" in meta and meta["part"] not in PARTS:
+        raise SystemExit(f"{path.name}: part must be one of {', '.join(PARTS)}")
     meta["title"], meta["summary"] = smart_quotes(meta["title"]), smart_quotes(meta["summary"])
     if "nav_title" in meta:
         meta["nav_title"] = smart_quotes(meta["nav_title"])
@@ -2015,6 +2018,8 @@ def article_list(articles, lang="en"):
 
 # Sections that are series, read in order: their rows are numbered.
 SERIES = ("history", "translation")
+# Parts a series can be split into (an article's "part" front matter).
+PARTS = ("ot", "nt", "today")
 
 
 def _duration(minutes, lang="en"):
@@ -2031,14 +2036,13 @@ def index_row(a, lang="en", number=None, minutes=True):
         label = html.escape(passage_label(b, c, vs, lang))
         href = next(filter(None, (verse_link(b, c, v, lang) for v in vs)), None)
         refs.append(f'<a class="a-ref" href="{href}">{label}</a>' if href else f'<span class="a-ref">{label}</span>')
-    meta = [html.escape(t(lang, "article.min_read", n=a["minutes"]))] if minutes else []
-    meta.append(f'<span class="a-status">{t(lang, "article.draft")}</span>')
+    meta = html.escape(t(lang, "article.min_read", n=a["minutes"])) if minutes else ""
     num = f'<span class="a-num" aria-hidden="true">{number}</span>' if number else ""
     return (f'<li class="a-item{" numbered" if number else ""}">{num}<div class="a-body">'
             + (f'<p class="a-refs">{"".join(refs)}</p>' if refs else "")
             + f'<a class="a-title" href="{url(lang, article_url(a))}">{display(a["title"])}</a>'
             f'<span class="a-summary">{display(a["summary"])}</span>'
-            f'<span class="a-meta">{" ".join(meta)}</span></div></li>')
+            + (f'<span class="a-meta">{meta}</span>' if meta else "") + '</div></li>')
 
 
 def _section(key, items, lang="en"):
@@ -2050,12 +2054,28 @@ def _section(key, items, lang="en"):
     common = max(set(times), key=times.count)
     usual = times.count(common) >= .75 * len(times) and len(times) > 2
     sub = t(lang, "articles.count_time", n=len(items), time=_duration(sum(times), lang))
-    rows = "".join(index_row(a, lang, number=i if key in SERIES else None,
-                             minutes=not usual or a["minutes"] != common)
-                   for i, a in enumerate(items, 1))
-    return (f'<section class="a-group" id="{key}" aria-labelledby="{key}-h">'
-            f'<div class="a-group-head"><h2 id="{key}-h">{names[key]}</h2><span>{sub}</span></div>'
-            f'<ol class="a-rows{" series" if key in SERIES else ""}">{rows}</ol></section>')
+    numbers = {id(a): i for i, a in enumerate(items, 1)}
+
+    def rows(part_items):
+        return "".join(index_row(a, lang, number=numbers[id(a)] if key in SERIES else None,
+                                 minutes=not usual or a["minutes"] != common)
+                       for a in part_items)
+    head = f'<div class="a-group-head"><h2 id="{key}-h">{names[key]}</h2><span>{sub}</span></div>'
+    cls = f'a-rows{" series" if key in SERIES else ""}'
+    if any("part" in a for a in items):
+        # A series in parts: a heading for each, numbers running on.
+        parts = catalog(lang)["parts"]
+        body = ""
+        for part in PARTS:
+            group = [a for a in items if a.get("part") == part]
+            if group:
+                first, last = numbers[id(group[0])], numbers[id(group[-1])]
+                span = f"{first}\u2013{last}" if last > first else f"{first}"
+                body += (f'<div class="a-part"><h3>{parts[part]} <span>{span}</span></h3>'
+                         f'<ol class="{cls}" start="{first}">{rows(group)}</ol></div>')
+        return f'<section class="a-group" id="{key}" aria-labelledby="{key}-h">{head}{body}</section>'
+    return (f'<section class="a-group" id="{key}" aria-labelledby="{key}-h">{head}'
+            f'<ol class="{cls}">{rows(items)}</ol></section>')
 
 
 def articles_page(articles, lang="en"):

@@ -4,6 +4,7 @@ summary: There are hundreds of thousands of differences among the manuscripts of
 date: 2026-10-11
 order: 40
 section: history
+part: today
 ---
 This series has followed the Bible from its first writing, through generations of scribes, to the manuscripts and printed editions behind modern translations. This last article asks the question that lies behind all the others: how confident can we be that the Bible we read today says what its authors wrote?
 

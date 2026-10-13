@@ -4,6 +4,7 @@ summary: The scrolls confirmed that the Hebrew Bible was copied with great care,
 date: 2026-10-11
 order: 28
 section: history
+part: ot
 ---
 When the Dead Sea Scrolls were first announced, many people asked one question: would they show that the Bible had been changed? The answer turned out to be more interesting than either a simple yes or a simple no.
 
