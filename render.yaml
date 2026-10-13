@@ -28,6 +28,28 @@ services:
       - path: /*
         name: Referrer-Policy
         value: strict-origin-when-cross-origin
+      - path: /*
+        name: Strict-Transport-Security
+        value: max-age=31536000; includeSubDomains
+      # What pages may load (tests/test_headers.py checks it against the
+      # built site). The one executable inline script is the boot script in
+      # each page's head, allowed by its hash: scripts/build_site.py
+      # BOOT_SCRIPT_HASH, which the test compares with this. connect-src
+      # names the API (OWB_API_URL). Inline styles stay allowed for style=""
+      # attributes (colour swatches, menu columns, progress meters);
+      # <style> elements are not.
+      - path: /*
+        name: Content-Security-Policy
+        value: "default-src 'self'; script-src 'self' 'sha256-R1ge6oFeKSxSWMWAX6q5Mk2Cz/nvlXinUaZF7aBzFd0='; style-src 'self' 'unsafe-inline'; style-src-elem 'self' 'sha256-Vjdni3LI8S90EpgQbHEZ/A+16JxQofSIDa+PSZqFBdE='; img-src 'self'; font-src 'self'; connect-src 'self' https://api.openwordbible.org; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
+      - path: /*
+        name: X-Frame-Options
+        value: DENY
+      # Nothing on the site uses these. Listen uses speechSynthesis, and
+      # sharing uses navigator.share and the clipboard, none of which these
+      # cover.
+      - path: /*
+        name: Permissions-Policy
+        value: "accelerometer=(), autoplay=(), camera=(), display-capture=(), geolocation=(), gyroscope=(), hid=(), magnetometer=(), microphone=(), midi=(), payment=(), publickey-credentials-get=(), serial=(), usb=(), xr-spatial-tracking=(), browsing-topics=()"
       # The offline worker (web/sw.js) is checked on every visit, so a
       # deploy reaches readers at once.
       - path: /sw.js

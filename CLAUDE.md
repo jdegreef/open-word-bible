@@ -31,6 +31,8 @@ summarises the data model.
     OWB_VENDOR=<sources dir> python3 -m owb.validate content/*/*.json
     python3 scripts/extract_tokens.py --check   # after adding verses
     python3 scripts/build_site.py               # the site must still build
+    uvx ruff@0.16.9 check .                     # lint (settings in pyproject.toml)
+    node --test tests/js/*.test.mjs             # reader JS against tests/markup_vectors.json
 
 Backend changes also need, against a Postgres database:
 

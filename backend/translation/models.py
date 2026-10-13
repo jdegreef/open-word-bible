@@ -33,6 +33,8 @@ class Sentence(models.Model):
     tokens = ArrayField(models.CharField(max_length=16), help_text="Source word ids, in order")
     source_text = models.TextField(blank=True)
     literal_gloss = models.TextField()
+    alignments = models.JSONField(default=list, blank=True,
+                                  help_text="Links from source tokens to rendering spans, as in content/")
     status = models.CharField(max_length=20, choices=Status.choices, default=Status.AI_DRAFT)
     updated_at = models.DateTimeField(auto_now=True)
 

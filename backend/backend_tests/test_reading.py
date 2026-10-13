@@ -80,7 +80,8 @@ class ReadingSyncTest(TestCase):
         for body in ({"marks": {"JHN.3.16": {"h": "purple", "at": 1}}},
                      {"marks": {"not a verse": {"b": True, "at": 1}}},
                      {"marks": {"JHN.3.16": {"b": True}}},
-                     {"marks": {"JHN.3.16": {"b": True, "at": 1}}, "place": {"book": "JHN", "chapter": 0, "verse": "1"}},
+                     {"marks": {"JHN.3.16": {"b": True, "at": 1}},
+                      "place": {"book": "JHN", "chapter": 0, "verse": "1"}},
                      {"marks": ["JHN.3.16"]}):
             r = self.client.post("/api/reading", body, format="json")
             self.assertEqual(r.status_code, 400, body)

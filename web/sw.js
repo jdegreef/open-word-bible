@@ -28,7 +28,8 @@ self.addEventListener("install", function (e) {
 });
 
 // The old shell goes, and so do older versions of the hashed files (a
-// search index is 3 MB, and main deploys often). Saved books keep theirs.
+// search index runs to tens of megabytes, and main deploys often; see
+// scripts/check_budgets.py). Saved books keep theirs.
 function prune() {
   var current = {};
   CURRENT.forEach(function (u) { current[u.split("?")[0]] = u; });
