@@ -4,17 +4,31 @@ scripts/fetch_sources.py).
 
     python manage.py import_texts                # every edition
     python manage.py import_texts sblgnt bsb     # just these
+    python manage.py import_texts --missing      # run on every deploy
 
-Each edition is replaced wholesale, so the command can be re-run safely.
+Each edition is replaced wholesale in one transaction, so the command can
+be re-run safely and a failed import leaves the edition as it was.
 Rows are saved in batches as they are read, so the Hebrew Bible (about
 475,000 words) never has to be in memory all at once. One edition per run
 peaks at about 410 MB (the BSB and the Greek; the Hebrew about 180 MB). A
 run of every edition holds on to more, since Python keeps memory it has
 used, so on a 512 MB server import them one at a time.
+
+--missing imports only the editions that are not in the database yet, or
+were imported from a different commit than sources.lock.json pins. It
+fetches just the sources those editions need, then imports each edition in
+a process of its own, so memory never builds up. When nothing is missing it
+does nothing, so it costs a deploy almost nothing. A failed fetch or import
+is reported but does not fail the command: the deploy goes ahead with the
+texts already loaded, and the next deploy tries again.
 """
 import itertools
+import logging
+import subprocess
+import sys
 import time
 
+from django.conf import settings
 from django.core.management.base import BaseCommand, CommandError
 from django.db import transaction
 
@@ -23,6 +37,8 @@ from owb.sources import LOCK, macula_greek, macula_hebrew, open_bibles, sblgnt
 from texts.models import Edition, Verse, Word
 
 BATCH = 5000
+
+logger = logging.getLogger(__name__)
 
 ORIGINALS = {
     "sblgnt": dict(
@@ -45,12 +61,36 @@ class Command(BaseCommand):
     def add_arguments(self, parser):
         parser.add_argument("editions", nargs="*",
                             help=f"Editions to import (default: all of {self.all_codes()})")
+        parser.add_argument("--missing", action="store_true",
+                            help="Fetch and import only the editions not loaded at their pinned commit")
 
     @staticmethod
     def all_codes():
         return list(ORIGINALS) + list(open_bibles.EDITIONS)
 
-    def handle(self, *args, editions, **options):
+    @staticmethod
+    def sources(code):
+        """The sources.lock.json entries an edition is read from."""
+        if code == "sblgnt":
+            return ["sblgnt", "macula-greek"]
+        if code == "wlc":
+            return ["macula-hebrew"]
+        return ["open-bibles"]
+
+    @classmethod
+    def missing_codes(cls):
+        """Editions that have no verses in the database, or whose verses came
+        from a different commit than the one pinned now."""
+        loaded = dict(Edition.objects.filter(verses__isnull=False).distinct()
+                      .values_list("code", "source_commit"))
+        return [code for code in cls.all_codes()
+                if loaded.get(code) != LOCK[cls.sources(code)[0]]["commit"]]
+
+    def handle(self, *args, editions, missing=False, **options):
+        if missing:
+            if editions:
+                raise CommandError("Give editions or --missing, not both")
+            return self.import_missing()
         codes = editions or self.all_codes()
         unknown = set(codes) - set(self.all_codes())
         if unknown:
@@ -64,6 +104,32 @@ class Command(BaseCommand):
             n_verses, n_words = self.save(code, verses, words)
             self.stdout.write(f"{code}: {n_verses} verses, {n_words} words "
                               f"({time.monotonic() - started:.1f}s)")
+
+    def import_missing(self):
+        codes = self.missing_codes()
+        if not codes:
+            self.stdout.write("Every edition is loaded.")
+            return
+        self.stdout.write(f"Missing or out of date: {' '.join(codes)}")
+        self.stdout.flush()   # before the subprocesses write theirs
+        sources = list(dict.fromkeys(s for code in codes for s in self.sources(code)))
+        fetch = [sys.executable, str(settings.REPO_ROOT / "scripts" / "fetch_sources.py"), *sources]
+        if subprocess.run(fetch).returncode != 0:
+            return self.fail(f"Could not fetch {' '.join(sources)}; nothing imported")
+        failed = []
+        for code in codes:
+            # One process per edition: Python keeps memory it has used, so
+            # imports run one after another in the same process would not fit.
+            run = [sys.executable, str(settings.BASE_DIR / "manage.py"), "import_texts", code]
+            if subprocess.run(run).returncode != 0:
+                failed.append(code)
+        if failed:
+            self.fail(f"Could not import {' '.join(failed)}")
+
+    def fail(self, message):
+        # Logged as an error (and so sent to Sentry when it is set up), but the
+        # deploy goes on with the texts already loaded.
+        logger.error("import_texts --missing: %s; the next deploy will try again", message)
 
     # Loaders return ([(book, chapter, verse, text)], [word dicts]), as lists
     # or as iterables that are read once.

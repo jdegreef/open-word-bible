@@ -4,6 +4,7 @@ summary: Who copied the New Testament in its first centuries, and how careful we
 date: 2026-10-11
 order: 33
 section: history
+part: nt
 ---
 Every surviving manuscript of the New Testament was copied by someone. For the first three centuries of the church, these were not monks in a monastery scriptorium, and certainly not printers. They were Christians, and sometimes paid professionals, copying books for their own churches, for friends, or for themselves, in a world where Christianity was a small and sometimes persecuted movement. What do we know about them, and how good were they at their work?
 

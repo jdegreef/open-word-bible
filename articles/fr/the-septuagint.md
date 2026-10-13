@@ -4,6 +4,7 @@ summary: Plus de deux siècles avant Jésus, des Juifs d'Égypte ont traduit en 
 date: 2026-10-11
 order: 29
 section: history
+part: ot
 ---
 La première traduction de la Bible n'a pas été faite par des chrétiens, et elle n'a été faite ni en latin ni en anglais. Elle a été faite par des Juifs, en Égypte, en grec, à partir du IIIe siècle av. J.-C. On l'appelle la **Septante**, du latin signifiant "soixante-dix", et c'est l'un des livres les plus importants de l'histoire de la Bible.
 
