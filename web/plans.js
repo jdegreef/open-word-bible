@@ -234,7 +234,10 @@
         done.appendChild(el("span", null, fill(ui.marked, { day: day })));
         var next = current(rec, total);
         if (next) {
-          var a = tagLang(el("a", "plan-next", fill(ui.next, { ref: refs(plan.days[next - 1]) })), d.lang);
+          // Read ahead: the link goes back to the day the plan has reached
+          // (the home card's "today"), and says so.
+          var label = next < day ? ui.still : ui.next;
+          var a = tagLang(el("a", "plan-next", fill(label, { ref: refs(plan.days[next - 1]) })), d.lang);
           a.href = plan.days[next - 1][0].u;
           done.appendChild(document.createTextNode(" "));
           done.appendChild(a);
