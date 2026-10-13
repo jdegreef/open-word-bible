@@ -103,9 +103,8 @@ class ArticlesTest(unittest.TestCase):
         self.assertIn('<span class="a-num" aria-hidden="true">20</span>', history)
         method = index[index.index('id="method"'):index.index('id="passage"')]
         self.assertNotIn('a-num', method)
-        # Verses an article reads link to the reader, and rows say they are drafts.
+        # Verses an article reads link to the reader.
         self.assertIn('<a class="a-ref" href="/jhn/1/#v1">John 1:1</a>', index)
-        self.assertIn('<span class="a-status">Draft</span>', index)
 
     def test_history_series_is_in_parts_in_every_language(self):
         english = {a["slug"]: a for a in self.articles}

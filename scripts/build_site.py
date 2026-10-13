@@ -1817,14 +1817,13 @@ def index_row(a, lang="en", number=None, minutes=True):
         label = html.escape(passage_label(b, c, vs, lang))
         href = next(filter(None, (verse_link(b, c, v, lang) for v in vs)), None)
         refs.append(f'<a class="a-ref" href="{href}">{label}</a>' if href else f'<span class="a-ref">{label}</span>')
-    meta = [html.escape(t(lang, "article.min_read", n=a["minutes"]))] if minutes else []
-    meta.append(f'<span class="a-status">{t(lang, "article.draft")}</span>')
+    meta = html.escape(t(lang, "article.min_read", n=a["minutes"])) if minutes else ""
     num = f'<span class="a-num" aria-hidden="true">{number}</span>' if number else ""
     return (f'<li class="a-item{" numbered" if number else ""}">{num}<div class="a-body">'
             + (f'<p class="a-refs">{"".join(refs)}</p>' if refs else "")
             + f'<a class="a-title" href="{url(lang, article_url(a))}">{display(a["title"])}</a>'
             f'<span class="a-summary">{display(a["summary"])}</span>'
-            f'<span class="a-meta">{" ".join(meta)}</span></div></li>')
+            + (f'<span class="a-meta">{meta}</span>' if meta else "") + '</div></li>')
 
 
 def _section(key, items, lang="en"):
@@ -1882,8 +1881,7 @@ def articles_page(articles, lang="en"):
                  f'<span class="a-section">{t(lang, "articles.start_here")}</span>'
                  f'<span class="a-title">{display(featured["title"])}</span>'
                  f'<span class="a-summary">{display(featured["summary"])}</span>'
-                 f'<span class="a-meta">{article_meta(featured, lang)} '
-                 f'<span class="a-status">{t(lang, "article.draft")}</span></span></a>'
+                 f'<span class="a-meta">{article_meta(featured, lang)}</span></a>'
                  + (f'<nav class="a-path" aria-labelledby="a-path-h"><h2 id="a-path-h">{t(lang, "articles.then_read")}</h2>'
                     f'<ol>{path}</ol></nav>' if after else "")
                  + '</div>')
