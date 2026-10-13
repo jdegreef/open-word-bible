@@ -167,7 +167,8 @@ class ArticlesTest(unittest.TestCase):
         for a in self.articles:
             if any(b == "JHN" and c == 3 for b, c, _ in a["passages"]):
                 self.assertIn(build_site.article_url(a), aside)
-        self.assertNotIn('class="chapter-articles"', (self.out / "phm" / "1" / "index.html").read_text(encoding="utf-8"))
+        philemon = (self.out / "phm" / "1" / "index.html").read_text(encoding="utf-8")
+        self.assertNotIn('class="chapter-articles"', philemon)
 
     def test_scripture_quotes_are_captioned_and_link_to_the_reader(self):
         page = (self.out / "articles" / "the-word-was-god" / "index.html").read_text(encoding="utf-8")
