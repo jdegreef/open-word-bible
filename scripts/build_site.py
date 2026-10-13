@@ -24,7 +24,7 @@ sys.path.insert(0, str(ROOT))
 
 from typing import NamedTuple  # noqa: E402
 
-from owb import languages as owb_languages, markup, morph, refs, validate, versification  # noqa: E402
+from owb import languages as owb_languages, markup, morph, refs, translit, validate, versification  # noqa: E402
 
 # The interface languages, English first (data/languages.json; see catalog below).
 LANGUAGES = owb_languages.CODES
@@ -928,6 +928,19 @@ def lang_attr(text_language, lang):
     return f' lang="{text_language}"' if text_language != lang else ""
 
 
+def transliterated(verse_words, source):
+    """A verse's words for the reader, each with its transliteration
+    (owb.translit) for the word panel's Transliteration setting. Hebrew is
+    transliterated morpheme by morpheme, in one style for the whole Old
+    Testament; MACULA's own column has gaps and is not used."""
+    if source == "hbo":
+        latin = translit.hebrew_words(verse_words)
+    else:
+        latin = {w["id"]: translit.greek(w["text"]) for w in verse_words}
+    return [{**{k: v for k, v in w.items() if k != "transliteration"}, "translit": latin[w["id"]]}
+            for w in verse_words]
+
+
 def footnote_letter(n):
     """The reader's footnote letters: a..z, then aa, ab, ... (n from 0)."""
     out = ""
@@ -1058,7 +1071,7 @@ def chapter_page(book, chapter, lang="en"):
     source = source_language(book)
     data = {"book": book, "chapter": chapter, "title": title, "lang": lang, "languages": languages,
             "source": source, "ui": catalog(lang)["reader.ui"], "records": records,
-            "words": {vid: words[vid] for r in records for vid in r["refs"]},
+            "words": {vid: transliterated(words[vid], source) for r in records for vid in r["refs"]},
             "paragraphs": paragraph_starts(records, words),
             "disputed": disputed_block(records, lang),
             "bookRefs": book_refs(lang),
