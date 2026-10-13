@@ -3,6 +3,7 @@ title: "Kunakili kwa uangalifu: kanuni za hati-kunjo ya Torati"
 summary: Sheria ya Kiyahudi ilikuza kanuni za kina za kunakili vitabu vya Musa, kuanzia wino na mistari ya mwongozo hadi kile cha kufanya mwandishi anapokosea. Kanuni hizo ni zipi, zinatoka wapi, na zilifanya nini kwa maandiko.
 date: 2026-10-11
 order: 23
+nav_title: Kanuni za hati-kunjo ya Torati
 section: history
 ---
 Ukitembelea sinagogi leo unaweza kuona hati-kunjo ya Torati ikitolewa katika sanduku lake, ikifunguliwa, na kusomwa kwa sauti. Hati-kunjo hiyo iliandikwa kwa mkono na mwandishi aliyefunzwa, akifuata kanuni zenye umri wa zaidi ya miaka elfu moja. Herufi moja tu ikikosekana, isingefaa kusomwa hadharani.
