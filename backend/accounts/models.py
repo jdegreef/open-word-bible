@@ -28,6 +28,8 @@ from django.conf import settings
 from django.db import models
 from django.db.models import Q
 
+from owb import languages
+
 
 def new_secret():
     """A random secret and the hash that is stored in its place."""
@@ -47,9 +49,10 @@ class Role(models.Model):
         LANGUAGE_REVIEWER = "language_reviewer", "Language reviewer"
 
     # Original languages a scholar reviews, and reading languages a language
-    # reviewer reviews.
-    ORIGINAL_LANGUAGES = {"grc": "Greek", "hbo": "Hebrew"}
-    READING_LANGUAGES = {"en": "English", "es": "Spanish", "fr": "French", "sw": "Swahili"}
+    # reviewer reviews (data/languages.json). A language added there changes
+    # the check below, so it needs `manage.py makemigrations accounts`.
+    ORIGINAL_LANGUAGES = {code: lang["name"] for code, lang in languages.ORIGINAL.items()}
+    READING_LANGUAGES = {code: lang["name"] for code, lang in languages.READING.items()}
 
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="roles")
     kind = models.CharField(max_length=20, choices=Kind.choices)
@@ -65,8 +68,8 @@ class Role(models.Model):
             models.UniqueConstraint(fields=["user", "kind", "language"], name="unique_role"),
             models.CheckConstraint(
                 name="role_language_matches_kind",
-                condition=(Q(kind="scholar_reviewer", language__in=["grc", "hbo"])
-                           | Q(kind="language_reviewer", language__in=["en", "es", "fr", "sw"])
+                condition=(Q(kind="scholar_reviewer", language__in=list(languages.ORIGINAL))
+                           | Q(kind="language_reviewer", language__in=list(languages.READING))
                            | (Q(kind__in=["super_admin", "editor"]) & Q(language=""))),
             ),
         ]

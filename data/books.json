@@ -1,5 +1,5 @@
 {
- "description": "Every book of the Bible in canonical order: its number of chapters in the source text (Hebrew numbering for the Old Testament, so Joel has 4 and Malachi 3) and its name in each interface language. All 66 are here so that a pull request adding a book never edits this file.",
+ "description": "Every book of the Bible in canonical order: its number of chapters in the source text (Hebrew numbering for the Old Testament, so Joel has 4 and Malachi 3) and its name in each interface language (data/languages.json). A book whose chapters go by another name has chapter_names: \"Psalm 23\", not \"Psalms 23\". All 66 are here so that a pull request adding a book never edits this file.",
  "books": {
   "GEN": {"chapters": 50, "en": "Genesis", "es": "Génesis", "fr": "Genèse", "sw": "Mwanzo"},
   "EXO": {"chapters": 40, "en": "Exodus", "es": "Éxodo", "fr": "Exode", "sw": "Kutoka"},
@@ -19,7 +19,8 @@
   "NEH": {"chapters": 13, "en": "Nehemiah", "es": "Nehemías", "fr": "Néhémie", "sw": "Nehemia"},
   "EST": {"chapters": 10, "en": "Esther", "es": "Ester", "fr": "Esther", "sw": "Esta"},
   "JOB": {"chapters": 42, "en": "Job", "es": "Job", "fr": "Job", "sw": "Ayubu"},
-  "PSA": {"chapters": 150, "en": "Psalms", "es": "Salmos", "fr": "Psaumes", "sw": "Zaburi"},
+  "PSA": {"chapters": 150, "en": "Psalms", "es": "Salmos", "fr": "Psaumes", "sw": "Zaburi",
+          "chapter_names": {"en": "Psalm", "es": "Salmo", "fr": "Psaume", "sw": "Zaburi"}},
   "PRO": {"chapters": 31, "en": "Proverbs", "es": "Proverbios", "fr": "Proverbes", "sw": "Mithali"},
   "ECC": {"chapters": 12, "en": "Ecclesiastes", "es": "Eclesiastés", "fr": "Ecclésiaste", "sw": "Mhubiri"},
   "SNG": {"chapters": 8, "en": "Song of Songs", "es": "Cantares", "fr": "Cantique des cantiques", "sw": "Wimbo Ulio Bora"},

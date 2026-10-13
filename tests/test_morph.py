@@ -107,7 +107,7 @@ class MorphTest(unittest.TestCase):
 
     def test_reader_data_carries_the_grammar(self):
         # Each page carries the grammar in its own language only.
-        for lang in ("en", "es", "fr", "sw"):
+        for lang in build_site.LANGUAGES:
             page = build_site.chapter_page("JHN", 1, lang)
             data = json.loads(re.search(r'id="owb-data">(.*?)</script>', page, re.S)[1])
             for words in data["words"].values():

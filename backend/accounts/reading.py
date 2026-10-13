@@ -19,11 +19,13 @@ import time
 from django.contrib.auth import get_user_model
 from django.db import transaction
 
+from owb import languages
+
 from .models import Mark, ReadingPlace
 
 MAX_MARKS = 10000
 MAX_TEXT = 2000
-LANGS = {"en", "es", "fr", "sw"}
+LANGS = set(languages.CODES)  # the site's languages (data/languages.json)
 VERSE_ID = re.compile(r"^[1-4A-Z]{3}\.\d{1,3}\.\d{1,3}$")
 PLACE_VERSE = re.compile(r"^\d{1,3}(:\d{1,3})?$")
 BOOK = re.compile(r"^[1-4A-Z]{3}$")
