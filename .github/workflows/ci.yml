@@ -54,6 +54,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.13"
+      # Settings in pyproject.toml; the version is pinned so a ruff release
+      # can't fail a pull request that changed nothing it checks.
+      - name: Lint
+        run: pipx run --spec ruff==0.16.9 ruff check .
       # The pinned sources only change when sources.lock.json does.
       - uses: actions/cache@v4
         with:
@@ -63,6 +67,10 @@ jobs:
         run: python3 scripts/fetch_sources.py
       - name: Unit tests
         run: python3 -m unittest discover -s tests -t .
+      # The reader's copy of the markup rules (web/markup.js) against the
+      # same cases (tests/markup_vectors.json); the runner's own Node.
+      - name: Reader tests
+        run: node --test tests/js/*.test.mjs
       - name: Validate content
         run: python3 -m owb.validate content/*/*.json
       - name: Word extracts are up to date

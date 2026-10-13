@@ -110,7 +110,7 @@ class SiteTest(unittest.TestCase):
                 first = build_site.markup.VERSE.split(default)[0].strip()
                 self.assertIn(html.escape(first, quote=False), text, r["id"])
                 self.assertIn(f'data-record="{r["id"]}"', text)
-            for rid, heading in data["headings"].items():
+            for heading in data["headings"].values():
                 shown = html.escape(build_site.markup.render(heading["en"]), quote=False)
                 self.assertIn(f'<h2 class="section-head">{shown}</h2>', text)
             self.assertIn("<noscript>", page)
@@ -328,7 +328,8 @@ class SiteTest(unittest.TestCase):
         # kept from the last one: each asset URL carries its content hash.
         home = (self.out / "index.html").read_text(encoding="utf-8")
         chapter = (self.out / "jhn" / "1" / "index.html").read_text(encoding="utf-8")
-        for name, page in (("style.css", home), ("site.js", home), ("reader.js", chapter)):
+        for name, page in (("style.css", home), ("site.js", home), ("markup.js", chapter),
+                           ("reader.js", chapter)):
             m = re.search(r'"/%s\?v=([0-9a-f]{10})"' % re.escape(name), page)
             self.assertTrue(m, name)
             digest = hashlib.sha256((self.out / name).read_bytes()).hexdigest()[:10]
@@ -339,7 +340,7 @@ class SiteTest(unittest.TestCase):
         header = re.search(r'<header class="site">(.*?)</header>', home, re.S)[1]
         for key in ("read", "articles", "about"):
             self.assertIn(f'aria-controls="dd-{key}"', header)
-            self.assertIn(f'<div class="dropdown', header)
+            self.assertIn('<div class="dropdown', header)
         # A line per book, linking to its chapters on the Read page.
         self.assertIn('href="/read/#jhn"', header)
         self.assertIn('href="/read/#php"', header)
@@ -649,6 +650,7 @@ class SiteTest(unittest.TestCase):
         for path in precache + list(offline.values()):
             self.assertTrue(self.built(path).is_file(), path)
         self.assertIn(build_site.asset("reader.js"), precache)
+        self.assertIn(build_site.asset("markup.js"), precache)
         self.assertEqual(set(offline), {"" if code == "en" else code for code in build_site.LANGUAGES})
         manifest = json.loads((self.out / "manifest.webmanifest").read_text(encoding="utf-8"))
         self.assertEqual(manifest["start_url"], "/")
