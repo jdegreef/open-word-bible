@@ -821,6 +821,28 @@ a.a-ref:hover { border-color: var(--accent); }
 .prose ul { padding-left: 22px; }
 .prose li { margin: 6px 0; }
 
+/* What we believe (/about/beliefs/): the creed set large like a liturgy,
+   with gold initials, then the vision, mission and values. */
+.beliefs { max-width: 680px; }
+.beliefs .kicker { font-family: var(--display); font-style: italic; font-size: 19px; color: var(--gold); margin: 0 0 6px; }
+.beliefs h1 { margin-bottom: 28px; }
+.creed { font-family: var(--serif); font-size: 21px; line-height: 1.65; }
+.creed p { margin: 0 0 18px; }
+.creed p::first-letter { font-family: var(--display); font-weight: 600; font-size: 2.6em; line-height: .9; color: var(--gold); float: left; margin: 4px 8px 0 0; }
+.creed .amen { font-family: var(--display); font-style: italic; font-weight: 600; color: var(--gold); }
+.creed-note { font-size: 15px; line-height: 1.55; color: var(--muted); margin: 0; }
+/* A rule with a small gold cross at its centre. */
+.ornament { border: 0; height: 18px; margin: 40px 0; position: relative;
+  background: linear-gradient(var(--line), var(--line)) center / 100% 1px no-repeat; }
+.ornament::before, .ornament::after { content: ""; position: absolute; left: 50%; top: 50%; translate: -50% -50%; background: var(--gold); }
+.ornament::before { width: 2px; height: 18px; box-shadow: 0 0 0 10px var(--bg); }
+.ornament::after { width: 12px; height: 2px; margin-top: -3px; }
+.beliefs .aims { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 32px; }
+.beliefs .aims h2, .beliefs .ornament + h2 { margin-top: 0; }
+.beliefs .aims p { font-family: var(--serif); font-size: 18px; line-height: 1.55; margin: 0; }
+.guides { font-family: var(--serif); font-size: 18px; line-height: 1.55; }
+@media (max-width: 640px) { .beliefs .aims { grid-template-columns: 1fr; } .creed { font-size: 19px; } }
+
 /* Reader */
 .notice {
   display: flex; align-items: center; gap: 10px;

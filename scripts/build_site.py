@@ -74,6 +74,7 @@ ICONS = {
     "book": '<path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/>',
     "articles": '<path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/>',
     "info": '<circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/>',
+    "cross": '<path d="M12 3v18M6 8.5h12"/>',
     "chevron": '<path d="m6 9 6 6 6-6"/>',
     "arrow": '<path d="M5 12h14M13 6l6 6-6 6"/>',
     "menu": '<path d="M4 7h16M4 12h16M4 17h16"/>',
@@ -408,6 +409,7 @@ def nav_menus(lang):
 
     about = ("".join((
         row(url(lang, "/about/"), t(lang, "nav.about_project"), t(lang, "nav.about_project_note"), "info"),
+        row(url(lang, "/about/beliefs/"), t(lang, "nav.beliefs"), t(lang, "nav.beliefs_note"), "cross"),
         row(url(lang, "/about/#credits"), t(lang, "nav.credits"), t(lang, "nav.credits_note"), "scale"),
         row(url(lang, "/#help"), t(lang, "nav.help"), t(lang, "nav.help_note"), "users"),
         row(GITHUB_URL, t(lang, "nav.source"), t(lang, "nav.source_note"), "code", ext=True),
@@ -468,6 +470,7 @@ def footer_links(lang):
     learn = [(url(lang, article_url(a)), display(a["title"]), None) for a in start]
     learn.append((url(lang, "/articles/"), t(lang, "nav.all_articles"), None))
     project = [(url(lang, "/about/"), t(lang, "footer.about"), None),
+               (url(lang, "/about/beliefs/"), t(lang, "nav.beliefs"), None),
                (url(lang, "/about/#credits"), t(lang, "nav.credits"), None),
                (url(lang, "/#help"), t(lang, "nav.help"), None),
                (GITHUB_URL, t(lang, "nav.source"), None),
@@ -1450,6 +1453,34 @@ def about_page(lang="en"):
                 description=t(lang, "meta.about_description"))
 
 
+def beliefs_page(lang="en"):
+    """What we believe: the Apostles' Creed first, then the vision, mission
+    and values that grow out of it. All of it comes from the catalog's
+    "beliefs" entry, so each language has its own wording."""
+    b = catalog(lang)["beliefs"]
+    creed = "".join(f"<p>{p}</p>" for p in b["creed"][:-1])
+    creed += f'<p>{b["creed"][-1]} <span class="amen">{b["amen"]}</span></p>'
+    values = "".join(f"<li><strong>{name}:</strong> {text}</li>" for name, text in b["values"])
+    body = f"""
+<div class="prose beliefs">
+<p class="kicker">{b["kicker"]}</p>
+<h1>{b["heading"]}</h1>
+<div class="creed">{creed}</div>
+<p class="creed-note">{b["scripture"]}</p>
+<hr class="ornament">
+<div class="aims">
+<section><h2>{b["vision_title"]}</h2><p>{b["vision"]}</p></section>
+<section><h2>{b["mission_title"]}</h2><p>{b["mission"]}</p></section>
+</div>
+<hr class="ornament">
+<h2>{b["values_title"]}</h2>
+<ul class="guides">{values}</ul>
+</div>
+"""
+    return page(lang, b["title"], body, path="/about/beliefs/", current="/about/",
+                description=b["description"])
+
+
 ARTICLES = ROOT / "articles"
 _ORIGINAL = re.compile(r"\{\{(GREEK|HEBREW):([A-Z0-9]+)\.(\d+)\.(\d+):(\d+)(?:-(\d+))?\}\}")
 _LEMMA = re.compile(r"\{\{LEMMA:([A-Z0-9]+)\.(\d+)\.(\d+):(\d+)(?:\.(\d+))?\}\}")
@@ -2385,6 +2416,7 @@ def build(out):
         add("/", home_page(lang))
         add("/read/", read_page(lang))
         add("/about/", about_page(lang))
+        add("/about/beliefs/", beliefs_page(lang))
         add("/search/", search_page(lang))
         for book, chapter in chapters():
             add(chapter_url(book, chapter), chapter_page(book, chapter, lang))
