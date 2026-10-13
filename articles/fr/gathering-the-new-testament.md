@@ -4,6 +4,7 @@ summary: Aucun concile ne s'est réuni pour créer le Nouveau Testament par un v
 date: 2026-10-11
 order: 38
 section: history
+part: nt
 ---
 Pourquoi le Nouveau Testament contient-il ces vingt-sept livres, et pas d'autres ? Une histoire répandue raconte que l'empereur Constantin, ou le concile de Nicée en 325, a choisi les livres et supprimé les autres. Cette histoire, rendue célèbre par des romans, n'est pas vraie : le concile de Nicée n'a pas du tout discuté du canon. L'histoire réelle est plus longue, plus progressive et, à bien des égards, plus intéressante.
 

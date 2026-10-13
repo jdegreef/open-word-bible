@@ -40,7 +40,7 @@ services:
       # <style> elements are not.
       - path: /*
         name: Content-Security-Policy
-        value: "default-src 'self'; script-src 'self' 'sha256-R1ge6oFeKSxSWMWAX6q5Mk2Cz/nvlXinUaZF7aBzFd0='; style-src 'self' 'unsafe-inline'; style-src-elem 'self'; img-src 'self'; font-src 'self'; connect-src 'self' https://api.openwordbible.org; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
+        value: "default-src 'self'; script-src 'self' 'sha256-R1ge6oFeKSxSWMWAX6q5Mk2Cz/nvlXinUaZF7aBzFd0='; style-src 'self' 'unsafe-inline'; style-src-elem 'self' 'sha256-Vjdni3LI8S90EpgQbHEZ/A+16JxQofSIDa+PSZqFBdE='; img-src 'self'; font-src 'self'; connect-src 'self' https://api.openwordbible.org; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
       - path: /*
         name: X-Frame-Options
         value: DENY
@@ -67,23 +67,25 @@ services:
         source: /articles/ai-drafts-and-human-review/
         destination: /articles/ai-assisted-translation-and-human-review/
 
-  # Django API and admin (backend/). Load the source texts once from the
-  # service's Shell; after that every deploy reloads content/ by itself.
-  # Each deploy starts with a fresh disk, so fetch the sources in the same
-  # Shell session, and import one edition per command to stay within the
-  # starter plan's 512 MB:
-  #   python scripts/fetch_sources.py
-  #   for e in sblgnt wlc bsb web asv kjv ylt rv1909; do python backend/manage.py import_texts $e; done
-  #   python backend/manage.py import_content
+  # Django API and admin (backend/). Every deploy loads whatever source
+  # texts are missing (import_texts --missing: nothing to do once they are
+  # all in, so no sources are fetched), then reloads content/. Each deploy
+  # starts with a fresh disk, so the command fetches just the sources it
+  # needs, and imports one edition per process to stay within the starter
+  # plan's 512 MB. A failed fetch or import is logged and retried on the next
+  # deploy; it does not stop the deploy. The first deploy after this was
+  # added loads wlc and the six reference Bibles (several minutes).
+  # Create the first admin once from the service's Shell:
   #   python backend/manage.py createsuperuser
   - type: web
     name: owb-api
     runtime: python
     plan: starter
     buildCommand: pip install -r backend/requirements.txt && python backend/manage.py collectstatic --noinput
-    # Migrate, then reload content/ so the API matches main. The import skips
-    # itself until import_texts has been run once (see below).
-    preDeployCommand: python backend/manage.py migrate --noinput && python backend/manage.py import_content --if-texts-loaded
+    # Migrate, load any missing source texts, then reload content/ so the API
+    # matches main. Management commands have no statement timeout; web
+    # requests give up on a query after DB_STATEMENT_TIMEOUT_MS (15 s).
+    preDeployCommand: python backend/manage.py migrate --noinput && python backend/manage.py import_texts --missing && python backend/manage.py import_content --if-texts-loaded
     # Threads, so a slow request (such as sending a sign-in email) does not
     # hold up reading.
     startCommand: gunicorn --chdir backend config.wsgi --workers 2 --threads 4 --worker-class gthread --timeout 60
@@ -117,6 +119,8 @@ services:
       # GOOGLE_CLIENT_ID / GOOGLE_CLIENT_SECRET: "Continue with Google"; the
       # OAuth client's redirect URI is
       # https://api.openwordbible.org/api/auth/google/callback.
+      # SENTRY_DSN: optional; errors go to Sentry as well as the log. Events
+      # carry no cookies, headers, query strings or searches (config/sentry.py).
       - key: OWB_SUPER_ADMIN_EMAILS
         sync: false
       - key: EMAIL_HOST
@@ -130,4 +134,6 @@ services:
       - key: GOOGLE_CLIENT_ID
         sync: false
       - key: GOOGLE_CLIENT_SECRET
+        sync: false
+      - key: SENTRY_DSN
         sync: false

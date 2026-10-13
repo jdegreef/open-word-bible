@@ -25,8 +25,9 @@ BUDGETS = {
     # The largest chapter page (/<book>/<chapter>/, in any language)
     # [127 KB, es/jhn/6].
     "chapter_page_gz": 160 * KB,
-    # The largest script or style sheet [21 KB, reader.js].
-    "js_css_asset_gz": 27 * KB,
+    # The largest script or style sheet [21 KB, reader.js; 26 KB on
+    # 2026-10-13 after the verse panel tools, poetry lines and account sync].
+    "js_css_asset_gz": 33 * KB,
     # Every file in the site [703 MB]. Grows with each book translated.
     "site_total": 900 * MB,
     # The largest static search index, search-<lang>.json [5.6 MB; 23 MB

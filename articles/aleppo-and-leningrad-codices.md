@@ -4,6 +4,7 @@ summary: Two books written around the year 1000 CE stand behind almost every mod
 date: 2026-10-11
 order: 25
 section: history
+part: ot
 ---
 If you want to know exactly what the Hebrew text of the Old Testament says, where do you look? Not at the Dead Sea Scrolls, valuable as they are: they are mostly fragments, and they differ among themselves. Scholars and translators turn instead to two medieval books, both written by the most careful scribes of the Masoretic tradition, and both with remarkable stories. They are the **Aleppo Codex** and the **Leningrad Codex**.
 

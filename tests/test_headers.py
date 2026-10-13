@@ -1,5 +1,6 @@
 """The reader site's security headers (render.yaml) and the built pages agree:
-the Content-Security-Policy allows the boot script by its hash, and the pages
+the Content-Security-Policy allows the boot script and the <noscript> style
+by their hashes, and the pages
 load nothing the policy would block. A browser check of the same headers is
 described in the pull request that added them."""
 import re
@@ -54,6 +55,11 @@ class HeadersTest(unittest.TestCase):
                       f"'{build_site.BOOT_SCRIPT_HASH}', in render.yaml's "
                       "Content-Security-Policy (script-src)")
         self.assertNotIn("'unsafe-inline'", csp["script-src"])
+        self.assertIn(f"'{build_site.NOSCRIPT_STYLE_HASH}'", csp["style-src-elem"],
+                      "The <noscript> style changed: put its new hash, "
+                      f"'{build_site.NOSCRIPT_STYLE_HASH}', in render.yaml's "
+                      "Content-Security-Policy (style-src-elem)")
+        self.assertNotIn("'unsafe-inline'", csp["style-src-elem"])
         self.assertIn("https://api.openwordbible.org", csp["connect-src"])
 
 
@@ -71,11 +77,12 @@ class PagesFitPolicyTest(unittest.TestCase):
         for path in self.out.rglob("*.html"):
             text = path.read_text(encoding="utf-8")
             for attrs, body in inline.findall(text):
-                if 'type="application/json"' in attrs:
-                    continue   # data, not run
+                if re.search(r'type="application/(?:ld\+)?json"', attrs):
+                    continue   # data (JSON, JSON-LD), not run
                 self.assertEqual(body, build_site.BOOT_SCRIPT, f"{path}: an inline script")
             self.assertNotRegex(text, r"<[a-z][^>]*\son[a-z]+=", f"{path}: an inline event handler")
-            self.assertNotRegex(text, r"<style\b", f"{path}: a <style> element")
+            for body in re.findall(r"<style\b[^>]*>(.*?)</style>", text, re.S):
+                self.assertEqual(body, build_site.NOSCRIPT_STYLE, f"{path}: a <style> element")
             self.assertNotRegex(text, r"<base\b", f"{path}: a <base> element")
             self.assertNotRegex(text, r'\b(?:href|src|action)="(?:javascript|data):', path)
             for m in re.finditer(r'<form\b[^>]*\baction="([^"]*)"', text):
