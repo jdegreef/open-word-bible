@@ -19,7 +19,7 @@ import re
 import sys
 from pathlib import Path
 
-from owb import markup, refs
+from owb import languages, markup, refs
 from owb.sources import macula_greek, macula_hebrew
 
 SCHEMA = json.loads((Path(__file__).resolve().parents[1] / "schema" /
@@ -39,10 +39,13 @@ RECORD_ID = re.compile(_PROPS["id"]["pattern"])
 LANGUAGE = re.compile(_DEFS["language"]["pattern"])
 
 # A meaning decision is shared by every language, so it must not name one of
-# the languages the translation is made into (in English or in that language).
-TARGET_LANGUAGE_NAMES = re.compile(
-    r"\b(English|Spanish|espa\u00f1ol|castellano|French|fran\u00e7ais|"
-    r"Portuguese|portugu\u00eas|Swahili|Kiswahili)\b", re.IGNORECASE)
+# the languages the translation is made into (in English or in that language),
+# nor Spanish by its other name or Portuguese, which may come next.
+TARGET_LANGUAGE_NAMES = re.compile(r"\b(" + "|".join(
+    [n for lang in languages.READING.values() for n in dict.fromkeys([lang["name"], lang["native"]])]
+    + ["castellano", "Portuguese", "portugu\u00eas"]) + r")\b", re.IGNORECASE)
+# Reader settings only some languages have ({{plural_you:...}} is Spanish).
+LANGUAGE_SETTINGS = {name for lang in languages.READING.values() for name in lang.get("settings", {})}
 
 # Keyed by (source language, Strong's number): Greek and Hebrew Strong's
 # numbers overlap (4100 is "believe" in Greek and "what" in Hebrew).
@@ -318,12 +321,18 @@ def validate_record(record, known_tokens=None, original_language=True):
     for lang, levels in renderings.items():
         if not LANGUAGE.fullmatch(lang):
             errors.append(f"renderings: bad language code {lang!r}")
+        elif lang not in languages.READING:
+            errors.append(f"renderings: {lang!r} is not a language in data/languages.json")
         if not isinstance(levels, dict) or set(levels) != set(LEVELS):
             errors.append(f"renderings.{lang}: must have exactly {LEVELS}")
             continue
         for level, text in levels.items():
             _check_markup(text, f"renderings.{lang}.{level}", errors)
             check_verses(text, f"renderings.{lang}.{level}")
+            used = {span.setting for span in markup.spans(text)} if isinstance(text, str) else set()
+            own = languages.READING.get(lang, {}).get("settings", {})
+            for setting in sorted(used & LANGUAGE_SETTINGS - set(own)):
+                errors.append(f"renderings.{lang}.{level}: {setting} is not a setting in this language")
             if isinstance(text, str):
                 for reason in markup.line_errors(text):
                     errors.append(f"renderings.{lang}.{level}: {reason}")

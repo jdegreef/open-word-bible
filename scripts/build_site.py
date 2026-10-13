@@ -24,18 +24,19 @@ sys.path.insert(0, str(ROOT))
 
 from typing import NamedTuple  # noqa: E402
 
-from owb import markup, morph, refs, validate, versification  # noqa: E402
+from owb import languages as owb_languages, markup, morph, refs, validate, versification  # noqa: E402
 
+# The interface languages, English first (data/languages.json; see catalog below).
+LANGUAGES = owb_languages.CODES
 # Every book's name in each interface language and its number of chapters
 # (data/books.json). All 66 are listed, so adding a book needs no edit here.
 _BOOKS = json.loads((ROOT / "data" / "books.json").read_text(encoding="utf-8"))["books"]
-BOOK_NAMES = {code: {k: v for k, v in b.items() if k != "chapters"} for code, b in _BOOKS.items()}
+BOOK_NAMES = {code: {k: v for k, v in b.items() if k not in ("chapters", "chapter_names")}
+              for code, b in _BOOKS.items()}
 # A book whose chapters go by another name: "Psalm 23", not "Psalms 23".
-CHAPTER_NAMES = {"PSA": {"en": "Psalm", "es": "Salmo", "fr": "Psaume", "sw": "Zaburi"}}
+CHAPTER_NAMES = {code: b["chapter_names"] for code, b in _BOOKS.items() if "chapter_names" in b}
 # Chapters in each book, for "2 of 21 chapters" and a book's completeness.
 BOOK_CHAPTERS = {code: b["chapters"] for code, b in _BOOKS.items()}
-# The interface languages, English first (see catalog below).
-LANGUAGES = ("en", "es", "fr", "sw")
 SITE_NAME = "Open Word Bible"
 # The site's home (Render serves it on openwordbible.org and redirects www).
 # Canonical links, the sitemap and link previews use it.
@@ -371,7 +372,7 @@ def page(lang, title, body, path=None, current="", description="", card="site", 
 def languages_label(records):
     """"English · Español": the languages every sentence of a passage is in,
     each in its own name."""
-    return " &middot; ".join(t(code, "language_name") for code in LANGUAGES
+    return " &middot; ".join(owb_languages.native(code) for code in LANGUAGES
                              if all(code in r["renderings"] for r in records))
 
 
@@ -562,9 +563,9 @@ def language_items(lang, path, translated=LANGUAGES, mark=""):
         return path if code in translated else "/articles/"
 
     return "".join(
-        f'<li><span lang="{code}" aria-current="true">{t(code, "language_name")}{mark}</span></li>' if code == lang
+        f'<li><span lang="{code}" aria-current="true">{owb_languages.native(code)}{mark}</span></li>' if code == lang
         else f'<li><a href="{url(code, target(code))}" lang="{code}" hreflang="{code}" data-lang="{code}">'
-             f'{t(code, "language_name")}</a></li>'
+             f'{owb_languages.native(code)}</a></li>'
         for code in LANGUAGES)
 
 
@@ -922,10 +923,6 @@ def lang_attr(text_language, lang):
     return f' lang="{text_language}"' if text_language != lang else ""
 
 
-# Reader settings whose control only some languages have.
-PLURAL_YOU = {"es"}
-
-
 def footnote_letter(n):
     """The reader's footnote letters: a..z, then aa, ab, ... (n from 0)."""
     out = ""
@@ -1095,8 +1092,10 @@ def chapter_page(book, chapter, lang="en"):
         title_setting = "christos"
         title_control = control("title", "christos", [("0", t(lang, "reader.christ")), ("1", t(lang, "reader.messiah"))])
     levels = catalog(lang)["levels"]
-    plural = ("\n  " + control("plural", "plural_you", [("0", "ustedes"), ("1", "vosotros")])
-              if lang in PLURAL_YOU else "")
+    # Reader settings whose control only some languages have (data/languages.json).
+    own = owb_languages.settings(lang)
+    plural = ("\n  " + control("plural", "plural_you", list(enumerate(own["plural_you"])))
+              if "plural_you" in own else "")
     # Measures (modern or original units) only where a passage has them.
     has_units = any("{{units:" in text for r in records
                     for levels_ in r["renderings"].values() for text in levels_.values())
@@ -1145,6 +1144,7 @@ def chapter_page(book, chapter, lang="en"):
 {edge_turns(book, chapter, lang)}
 <script type="application/json" id="owb-data">{blob}</script>
 {chapter_ld(records, book, chapter, title, lang)}
+<script src="{asset("markup.js")}"></script>
 <script src="{asset("reader.js")}"></script>
 """
     return page(lang, title, body, path=chapter_url(book, chapter), current="/read/",
@@ -1460,9 +1460,6 @@ def inner_quotes(text):
     return "".join(out)
 
 
-QUOTES_AROUND = {"es": "&laquo;{}&raquo;", "fr": "&laquo;&nbsp;{}&nbsp;&raquo;"}
-
-
 def passage_card(book, chapter, lang="en"):
     """A passage as a card in the article-card style: its opening verse at
     the default settings, and how much of it is translated into lang and
@@ -1477,8 +1474,10 @@ def passage_card(book, chapter, lang="en"):
              decisions=len(shown), uncertain=sum(d["uncertain"] for d in shown))
     if len(records) < len(every):
         meta += " &middot; " + t(lang, "card.coverage", n=len(records), total=len(every))
-    q = QUOTES_AROUND.get(lang, "&ldquo;{}&rdquo;")
-    if lang not in QUOTES_AROUND:
+    # Each language's marks around a quoted verse (data/languages.json);
+    # inside English-style double quotes, a quote's own marks become single.
+    q = owb_languages.READING[lang]["quotes"]
+    if q.startswith("&ldquo;"):
         quote = inner_quotes(quote)
     return (f'<li><a class="a-card p-card" href="{url(lang, chapter_url(book, chapter))}">'
             f'<span class="a-section">{BOOK_NAMES[book][lang]} &middot; {languages_label(every)}</span>'
@@ -1513,7 +1512,7 @@ def offline_files(lang):
     """What a saved book needs besides its pages and what web/sw.js keeps
     anyway: the reader, the word index, the search index and the fonts."""
     fonts = sorted(f"/fonts/{f.name}" for f in (ROOT / "web" / "fonts").glob("*.woff2"))
-    return [url(lang, "/read/"), asset("reader.js"), word_uses()[1], search_index_url(lang)] + fonts
+    return [url(lang, "/read/"), asset("markup.js"), asset("reader.js"), word_uses()[1], search_index_url(lang)] + fonts
 
 
 def read_page(lang="en"):
@@ -2916,10 +2915,10 @@ def service_worker():
     """web/sw.js with the files to keep from the start (the styles, the
     scripts and each language's offline page). Its version is a hash of the
     whole, so a deploy that changes any of them installs a new worker."""
-    shell = [asset(n) for n in ("style.css", "site.js", "search.js", "reader.js")]
+    shell = [asset(n) for n in ("style.css", "site.js", "search.js", "markup.js", "reader.js")]
     shell += ["/favicon.svg", "/manifest.webmanifest"] + [url(lang, "/offline/") for lang in LANGUAGES]
     offline = {("" if lang == "en" else lang): url(lang, "/offline/") for lang in LANGUAGES}
-    current = [asset(n) for n in ("style.css", "site.js", "search.js", "reader.js", "account.js")]
+    current = [asset(n) for n in ("style.css", "site.js", "search.js", "markup.js", "reader.js", "account.js")]
     current += [word_uses()[1]] + [search_index_url(lang) for lang in LANGUAGES]
     text = ((ROOT / "web" / "sw.js").read_text(encoding="utf-8")
             .replace("__PRECACHE__", json.dumps(shell)).replace("__OFFLINE__", json.dumps(offline))
@@ -3176,12 +3175,12 @@ def build(out):
         path = out / rel
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(text, encoding="utf-8")
-    for name in ("style.css", "reader.js", "site.js", "account.js", "search.js"):
+    for name in ("style.css", "markup.js", "reader.js", "site.js", "account.js", "search.js"):
         shutil.copy(ROOT / "web" / name, out / name)
     shutil.copytree(ROOT / "web" / "fonts", out / "fonts")
     shutil.copytree(ROOT / "web" / "icons", out / "icons")
     shutil.copytree(OG, out / "og", ignore=shutil.ignore_patterns("*.digest"))
-    return sorted(files) + ["reader.js", "search.js", "site.js", "style.css"]
+    return sorted(files) + ["markup.js", "reader.js", "search.js", "site.js", "style.css"]
 
 
 def main():
