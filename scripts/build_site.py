@@ -488,27 +488,30 @@ def book_name(book, lang):
 
 @functools.lru_cache(maxsize=None)
 def book_index(lang):
-    """The footer's index of all 66 books, by testament. A book with chapters
+    """The footer's index of the books, by testament. A book with chapters
     in lang links to it on the Read page (dashed while some chapters are
-    still missing); the others are greyed out, so the index stays the same
-    size as the translation grows."""
+    still missing); the books not started yet are one greyed-out chip that
+    says how many, linking to the Read page, which lists them all. (Every
+    page carries the footer, so naming each of them cost every page.)"""
     have = dict(books(lang))
 
     def chip(book):
-        name = book_name(book, lang)
-        if book not in have:
-            return (f'<li><span class="book-chip none">{name}'
-                    f'<span class="sr-only"> ({t(lang, "footer.key_none")})</span></span></li>')
         done, total, progress = book_progress(book, have[book], lang)
         return (f'<li><a class="book-chip{"" if done == total else " part"}" '
-                f'href="{url(lang, f"/read/#{book.lower()}")}" title="{progress}">{name}</a></li>')
+                f'href="{url(lang, f"/read/#{book.lower()}")}" title="{progress}">{book_name(book, lang)}</a></li>')
 
     def testament(key, codes):
         started = sum(b in have for b in codes)
+        missing = [b for b in codes if b not in have]
+        # A last book not started is named; more are counted.
+        more = (f'<li><span class="book-chip none">{book_name(missing[0], lang)}'
+                f'<span class="sr-only"> ({t(lang, "footer.key_none")})</span></span></li>' if len(missing) == 1 else
+                f'<li><a class="book-chip none" href="{url(lang, "/read/")}">'
+                f'{t(lang, "footer.not_started", n=len(missing))}</a></li>' if missing else "")
         return (f'<section class="testament" aria-labelledby="foot-{key}"><div class="testament-head">'
                 f'<h3 id="foot-{key}">{t(lang, "footer." + key)}</h3>'
                 f'<span>{t(lang, "footer.started", done=started, total=len(codes))}</span></div>'
-                f'<ul class="book-chips">{"".join(chip(b) for b in codes)}</ul></section>')
+                f'<ul class="book-chips">{"".join(chip(b) for b in codes if b in have)}{more}</ul></section>')
 
     key = "".join(f'<span><span class="book-chip{cls}" aria-hidden="true"></span>{t(lang, "footer.key_" + k)}</span>'
                   for k, cls in (("done", ""), ("part", " part"), ("none", " none")))
@@ -894,6 +897,126 @@ def lang_attr(text_language, lang):
 PLURAL_YOU = {"es"}
 
 
+def footnote_letter(n):
+    """The reader's footnote letters: a..z, then aa, ab, ... (n from 0)."""
+    out = ""
+    n += 1
+    while n > 0:
+        out = chr(97 + (n - 1) % 26) + out
+        n = (n - 1) // 26
+    return out
+
+
+def chapter_text(records, chapter, paragraphs, disputed_info, lang="en"):
+    """The chapter as reader.js's drawText() first draws it: Balanced, every
+    setting at its default, headings shown, Study view. Written into the
+    page so it has its text without JavaScript (and for crawlers); the
+    reader redraws the same markup in place. Each sentence is in lang, or
+    in English while it has no lang yet (text_lang)."""
+    def verse_of(vid):
+        ref = refs.parse(vid)
+        return str(ref.verse) if ref.chapter == chapter else f"{ref.chapter}:{ref.verse}"
+
+    def marker_verse(r, n):
+        vid = next((v for v in r["refs"] if refs.parse(v).verse == int(n)), None)
+        return verse_of(vid) if vid else n
+
+    esc = html.escape
+    starts = set(paragraphs)
+    disputed_ids = set(disputed_info["records"]) if disputed_info else set()
+    ui = catalog(lang)["reader.ui"]
+    out, para, shown, in_disputed, notes = [], None, None, False, 0
+
+    def close():
+        if para is not None:
+            out.append("".join(para) + "</p>")
+
+    for r in records:
+        if (r["id"] in disputed_ids) != in_disputed:
+            close()
+            para = None
+            in_disputed = not in_disputed
+            if in_disputed:
+                note = ui["disputed_note"].replace("{ref}", disputed_info["ref"])
+                # The reader's button to the note's reasoning, so the text
+                # below does not move when it is drawn; it does nothing
+                # without JavaScript, and is hidden then (chapter_page).
+                why = (f'<button type="button" class="fn-pop-more">{esc(ui["fn_reasoning"], quote=False)} \u2192</button>'
+                       if disputed_info["note"] else "")
+                out.append(f'<div class="disputed-block"><div class="disputed-note"><p>{esc(note, quote=False)}</p>{why}</div>')
+            else:
+                out.append("</div>")
+        heading = headings().get(r["id"])
+        tl = text_lang(r, lang)
+        hlang = next((code for code in (lang, tl) if heading and heading.get(code)), None)
+        if hlang:
+            close()
+            para = None
+            cls = "section-head" + ("" if hlang == lang else " fallback")
+            out.append(f'<h2 class="{cls}"{lang_attr(hlang, lang)}>{esc(markup.render(heading[hlang]), quote=False)}</h2>')
+        if para is None or heading or r["id"] in starts:
+            close()
+            para = ['<p class="para">']
+        # Footnote letters, counted through the page as the reader counts
+        # them: every meaning decision with a footnote, and this language's
+        # Balanced rendering decisions with one.
+        marks = []
+        for d in r["decisions"]:
+            if d.get("footnote") and (d["layer"] == "meaning" or (
+                    d.get("language") == lang and "B" in d.get("levels", []))):
+                marks.append(footnote_letter(notes))
+                notes += 1
+        parts = markup.VERSE.split(r["renderings"][tl]["B"])
+        verses = [(verse_of(r["refs"][0]), parts[0].lstrip())]
+        verses += [(marker_verse(r, n), text) for n, text in zip(parts[1::2], parts[2::2])]
+        cls = "verse" if tl == lang else "verse fallback"
+        for i, (v, text) in enumerate(verses):
+            sup = f"<sup>{esc(v)}</sup>" if v != shown else ""
+            shown = v
+            fn = ""
+            if marks and i == len(verses) - 1:
+                fn = ('<sup class="fn" aria-hidden="true">'
+                      + "".join(f'<span class="fn-mark">{m}</span>' for m in marks) + "</sup>")
+            para.append(f'<span class="{cls}"{lang_attr(tl, lang)} data-v="{esc(v)}" data-record="{esc(r["id"])}">'
+                        f'{sup}{esc(markup.render(text), quote=False)}{fn}</span> ')
+    close()
+    if in_disputed:
+        out.append("</div>")
+    return "".join(out)
+
+
+# The text each testament is translated from, for the pages' linked data.
+SOURCE_TEXTS = {
+    "grc": {"@type": "Book", "name": "SBL Greek New Testament (SBLGNT)", "inLanguage": "grc",
+            "url": "https://github.com/LogosBible/SBLGNT"},
+    "hbo": {"@type": "Book", "name": "Westminster Leningrad Codex (Open Scriptures Hebrew Bible)",
+            "inLanguage": "hbo", "url": "https://github.com/openscriptures/morphhb"},
+}
+CC0_URL = "https://creativecommons.org/publicdomain/zero/1.0/"
+
+
+def chapter_ld(records, book, chapter, title, lang="en"):
+    """schema.org data for a chapter page, as a script element. Every "<" is
+    written as an escape, so nothing in it can close the element."""
+    source = SOURCE_TEXTS[source_language(book)]
+    data = {
+        "@context": "https://schema.org",
+        "@type": "Chapter",
+        "name": title,
+        "url": SITE_URL + url(lang, chapter_url(book, chapter)),
+        "inLanguage": lang,
+        "isPartOf": {"@type": "Book", "name": SITE_NAME, "url": SITE_URL + url(lang, "/"),
+                     "license": CC0_URL},
+        "license": CC0_URL,
+        # Nothing is reviewed until a named human reviewer approves it.
+        "creativeWorkStatus": "Draft" if any(r["status"] == "ai_draft" for r in records) else "Published",
+        "translationOfWork": source,
+        "isBasedOn": source,
+    }
+    text = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
+    return f'<script type="application/ld+json">{text}</script>'
+
+
 def chapter_page(book, chapter, lang="en"):
     records, words = load_chapter(book, chapter)
     title = chapter_name(records, book, chapter, lang)
@@ -915,10 +1038,14 @@ def chapter_page(book, chapter, lang="en"):
     # Names before a chapter number ("Psalm 23:1"), for "Book 1:2" links.
     data["books"] = {b: chapter_book(b, lang) for b, _ in books()}
     data["saved"] = url(lang, "/saved/")
-    data["grammar"] = {grammar_key(w): {l: describe(w, l) for l in LANGUAGES}
+    # The reader shows a word's grammar in the page's language only.
+    data["grammar"] = {grammar_key(w): {lang: describe(w, lang)}
                        for ws in data["words"].values() for w in ws}
     # "</" cannot appear inside a script element.
-    blob = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
+    blob = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+    # Without JavaScript (and for crawlers) the page still has its text.
+    text = chapter_text(records, chapter, data["paragraphs"], data["disputed"], lang)
+    partial = any(lang not in r["renderings"] for r in records)
 
     def seg(name, options):
         buttons = "".join(f'<button type="button" data-value="{v}">{label}</button>' for v, label in options)
@@ -976,8 +1103,9 @@ def chapter_page(book, chapter, lang="en"):
     {chapter_summary(book, chapter, records, lang)}
     <p class="print-only print-head" id="print-head"></p>
     <p class="sub">{t(lang, "reader.sub" + suffix)}</p>
-    <p class="notice" id="partial" hidden></p>
-    <div class="text" id="text"></div>
+    <p class="notice" id="partial"{"" if partial else " hidden"}>{html.escape(catalog(lang)["reader.ui"]["partial"]) if partial else ""}</p>
+    <noscript><p class="notice">{t(lang, "reader.noscript", level=levels["B"])}</p><style>.disputed-note .fn-pop-more {{ display: none; }}</style></noscript>
+    <div class="text" id="text">{text}</div>
     <section class="notes" id="notes" aria-label="{t(lang, "reader.notes")}" hidden></section>
     {chapter_turns(book, chapter, lang)}
   </article>
@@ -985,6 +1113,7 @@ def chapter_page(book, chapter, lang="en"):
 </div>
 {edge_turns(book, chapter, lang)}
 <script type="application/json" id="owb-data">{blob}</script>
+{chapter_ld(records, book, chapter, title, lang)}
 <script src="{asset("reader.js")}"></script>
 """
     return page(lang, title, body, path=chapter_url(book, chapter), current="/read/",

@@ -453,9 +453,9 @@ footer.site nav a:hover { color: var(--accent); text-decoration: underline; }
   font-size: 14px; font-weight: 600; text-decoration: none;
 }
 .foot-resume:hover { text-decoration: underline; }
-/* The index of every book: a chip per book, in canon order. A book not yet
-   started is greyed out; one with some chapters missing is dashed, as the
-   chapter pills are. */
+/* The index of the books: a chip per book started, in canon order, then one
+   greyed-out chip counting the books not started yet. A book with some
+   chapters missing is dashed, as the chapter pills are. */
 .foot-books { border-top: 1px solid var(--line); margin-top: 40px; padding-top: 28px; }
 .testaments { display: grid; grid-template-columns: minmax(0, 39fr) minmax(0, 27fr); gap: 24px 40px; }
 .testament-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 12px; margin-bottom: 12px; }
@@ -470,6 +470,8 @@ footer.site a.book-chip { color: var(--text); font-weight: 600; }
 footer.site a.book-chip:hover { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); text-decoration: none; }
 .book-chip.part { border-style: dashed; }
 .book-chip.none { border-color: transparent; background: none; color: var(--muted); opacity: .6; padding-inline: 6px; }
+footer.site a.book-chip.none { border: 1px dotted var(--line-strong); opacity: 1; padding-inline: 10px; font-weight: 500; }
+footer.site a.book-chip.none:not(:hover) { color: var(--muted); }
 .foot-key { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; margin: 18px 0 0; font-size: 13px; color: var(--muted); }
 .foot-key > span { display: inline-flex; align-items: center; gap: 7px; }
 .foot-key .book-chip { width: 22px; height: 14px; padding: 0; }
@@ -967,6 +969,9 @@ a.a-ref:hover { border-color: var(--accent); }
 .fn-mark {
   border: 0; background: none; padding: 2px 3px; margin: 0 -1px; font: inherit; font-weight: 700; color: inherit;
   cursor: pointer; border-radius: 4px; line-height: 1;
+  /* A button is inline-block; the letters written into the page before
+     the reader draws its buttons are spans, and sit the same. */
+  display: inline-block;
 }
 .fn-mark:hover, .fn-mark[aria-expanded="true"] { background: var(--accent); color: var(--accent-contrast); }
 .fn-mark:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
@@ -1651,8 +1656,7 @@ ruby.il rt:lang(hbo) { font-family: var(--hebrew); }
 .wcard-note { font-size: 14px; line-height: 1.5; }
 
 
-/* Footer on narrower screens: the tiers stack; on a phone the index keeps
-   only the books with chapters, and each testament's count says how many
+/* Footer on narrower screens: the tiers stack; each testament's count says how many
    there are in all. */
 @media (max-width: 860px) {
   .foot-top, .testaments { grid-template-columns: minmax(0, 1fr); }
@@ -1661,7 +1665,6 @@ ruby.il rt:lang(hbo) { font-family: var(--hebrew); }
   .foot-grid .foot-langs ul { display: flex; flex-wrap: wrap; gap: 8px 20px; }
 }
 @media (max-width: 560px) {
-  .foot-books .book-chips li:has(.none) { display: none; }
   .foot-key > span:last-of-type { display: none; }
   .foot-key a { margin-left: 0; }
 }
