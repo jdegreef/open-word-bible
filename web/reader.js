@@ -66,8 +66,7 @@
   var current = null;   // selected record
   var currentVerse = null;   // the verse within it that was chosen
   var panelEl = document.getElementById("panel");
-  var SPAN = /\{\{([a-z_]+):([^{}]*)\}\}/g;
-  var VERSE = /\\v (\d+) ?/;
+  var VERSE = OWBMarkup.VERSE;   // web/markup.js, loaded before this
   // Poetry: "\q " starts a new line within a verse (owb/markup.py LINE).
   // A verse start is always a line start; text with no marker is prose.
   var LINE = / ?\\q ?/;
@@ -110,9 +109,9 @@
 
   // Split rendered text at verse markers: [[verse, text], ...].
   function splitVerses(r, text) {
-    var parts = flat(text).split(VERSE), out = [[verseOf(r.refs[0]), parts[0].trim()]];
-    for (var i = 1; i < parts.length; i += 2) out.push([markerVerse(r, parts[i]), parts[i + 1]]);
-    return out;
+    return OWBMarkup.splitVerses(flat(text)).map(function (part, i) {
+      return [i ? markerVerse(r, part[0]) : verseOf(r.refs[0]), part[1]];
+    });
   }
 
   // A rendering split at its verse markers, each verse a list of pieces
@@ -160,13 +159,7 @@
     document.querySelectorAll(".iw").forEach(function (w) { w.classList.toggle("lit", set.has(w.dataset.id)); });
   }
 
-  function render(text) {
-    return text.replace(SPAN, function (_, name, opts) {
-      var options = opts.split("|");
-      var i = settings[name];
-      return typeof i === "number" && i >= 0 && i < options.length ? options[i] : options[0];
-    });
-  }
+  function render(text) { return OWBMarkup.render(text, settings); }
 
   function el(tag, cls, text) {
     var n = document.createElement(tag);

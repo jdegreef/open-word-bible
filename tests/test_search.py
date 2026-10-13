@@ -36,7 +36,8 @@ class SearchTest(unittest.TestCase):
         for page in self.out.rglob("index.html"):
             text = page.read_text(encoding="utf-8")
             lang = re.search(r'<html lang="(\w+)">', text)[1]
-            m = re.search(rf'<meta name="owb-search" content="{source}" data-ui="/search-ui-(\w+)\.json\?v=(\w+)">', text)
+            m = re.search(rf'<meta name="owb-search" content="{source}" '
+                          r'data-ui="/search-ui-(\w+)\.json\?v=(\w+)">', text)
             self.assertIsNotNone(m, page)
             self.assertEqual(m[1], lang, page)
             body = (self.out / f"search-ui-{lang}.json").read_bytes()

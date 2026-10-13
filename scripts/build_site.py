@@ -1137,6 +1137,7 @@ def chapter_page(book, chapter, lang="en"):
 {edge_turns(book, chapter, lang)}
 <script type="application/json" id="owb-data">{blob}</script>
 {chapter_ld(records, book, chapter, title, lang)}
+<script src="{asset("markup.js")}"></script>
 <script src="{asset("reader.js")}"></script>
 """
     return page(lang, title, body, path=chapter_url(book, chapter), current="/read/",
@@ -1489,7 +1490,7 @@ def offline_files(lang):
     while search runs in the browser: SEARCH_STATIC)."""
     fonts = sorted(f"/fonts/{f.name}" for f in (ROOT / "web" / "fonts").glob("*.woff2"))
     index = [search_index_url(lang)] if SEARCH_STATIC else []
-    return [url(lang, "/read/"), asset("reader.js"), word_uses()[1]] + index + fonts
+    return [url(lang, "/read/"), asset("markup.js"), asset("reader.js"), word_uses()[1]] + index + fonts
 
 
 def read_page(lang="en"):
@@ -2603,10 +2604,10 @@ def service_worker():
     """web/sw.js with the files to keep from the start (the styles, the
     scripts and each language's offline page). Its version is a hash of the
     whole, so a deploy that changes any of them installs a new worker."""
-    shell = [asset(n) for n in ("style.css", "site.js", "search.js", "reader.js")]
+    shell = [asset(n) for n in ("style.css", "site.js", "search.js", "markup.js", "reader.js")]
     shell += ["/favicon.svg", "/manifest.webmanifest"] + [url(lang, "/offline/") for lang in LANGUAGES]
     offline = {("" if lang == "en" else lang): url(lang, "/offline/") for lang in LANGUAGES}
-    current = [asset(n) for n in ("style.css", "site.js", "search.js", "reader.js", "account.js")]
+    current = [asset(n) for n in ("style.css", "site.js", "search.js", "markup.js", "reader.js", "account.js")]
     current += [word_uses()[1]] + [search_ui_url(lang) for lang in LANGUAGES]
     # The search indexes, kept by the worker only while search runs in the
     # browser; otherwise copies kept before are dropped.
@@ -2893,12 +2894,12 @@ def build(out):
         path = out / rel
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(text, encoding="utf-8")
-    for name in ("style.css", "reader.js", "site.js", "account.js", "search.js"):
+    for name in ("style.css", "markup.js", "reader.js", "site.js", "account.js", "search.js"):
         shutil.copy(ROOT / "web" / name, out / name)
     shutil.copytree(ROOT / "web" / "fonts", out / "fonts")
     shutil.copytree(ROOT / "web" / "icons", out / "icons")
     shutil.copytree(OG, out / "og", ignore=shutil.ignore_patterns("*.digest"))
-    return sorted(files) + ["reader.js", "search.js", "site.js", "style.css"]
+    return sorted(files) + ["markup.js", "reader.js", "search.js", "site.js", "style.css"]
 
 
 def main():

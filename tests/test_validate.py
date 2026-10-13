@@ -46,6 +46,7 @@ class ValidateTest(unittest.TestCase):
     def test_known_setting_passes(self):
         record = example_records()[0]
         record["renderings"]["en"]["B"] = "the light of {{gender:all people|men}}"
+        record.pop("alignments", None)   # they belong to the real rendering
         self.assertEqual(validate.validate_record(record), [])
 
     def test_line_markers_between_words_pass(self):

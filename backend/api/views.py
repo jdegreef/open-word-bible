@@ -109,6 +109,7 @@ def record_json(sentence):
             "source": {"language": sentence.source_edition.language, "text_id": sentence.source_text_id, "tokens": sentence.tokens,
                        "text": sentence.source_text},
             "literal_gloss": sentence.literal_gloss, "renderings": renderings,
+            **({"alignments": sentence.alignments} if sentence.alignments else {}),
             "decisions": decisions, "status": sentence.status}
 
 

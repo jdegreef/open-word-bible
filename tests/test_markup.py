@@ -1,6 +1,12 @@
+import json
 import unittest
+from pathlib import Path
 
 from owb import markup
+
+# Shared with tests/js/markup.test.mjs, which runs the same cases against
+# web/markup.js (the reader's copy of these rules).
+VECTORS = json.loads((Path(__file__).parent / "markup_vectors.json").read_text(encoding="utf-8"))
 
 TEXT = "the light of {{gender:all people|men}}, the {{christos:Messiah|Christ}}"
 
@@ -60,6 +66,10 @@ class MarkupTest(unittest.TestCase):
         self.assertEqual([text[s:e] for s, e in ranges],
                          ["the light", "{{gender:all people|men}}", "the light"])
         self.assertEqual(ranges[2][0], text.rindex("the light"))
+        # A span is a whole word: "I" is not the start of "If".
+        text2 = "If I go, I will come"
+        self.assertEqual([text2[s:e] for s, e in markup.alignment_ranges(text2, ["I", "I"])], ["I", "I"])
+        self.assertEqual(markup.alignment_ranges(text2, ["I"])[0][0], 3)
         for bad, reason in ((["shines", "light"], "after the previous"),
                             (["darkness"], "not found in rendering"),
                             (["of {{gender:all"], "cuts a setting span"),
@@ -68,6 +78,28 @@ class MarkupTest(unittest.TestCase):
                             ([" "], "empty")):
             with self.assertRaisesRegex(ValueError, reason):
                 markup.alignment_ranges(text, bad)
+
+
+class VectorsTest(unittest.TestCase):
+    def test_settings_match_the_reader(self):
+        self.assertEqual(list(markup.SETTINGS), VECTORS["settings"])
+
+    def test_cases(self):
+        for case in VECTORS["cases"]:
+            with self.subTest(case["name"]):
+                rendered = markup.render(case["text"], case["settings"])
+                self.assertEqual(rendered, case["rendered"])
+                if "verses" in case:
+                    self.assertEqual([list(p) for p in markup.split_verses(rendered)], case["verses"])
+
+    def test_known_differences(self):
+        for case in VECTORS["differences"]:
+            with self.subTest(case["name"]):
+                if case["kind"] == "render":
+                    self.assertEqual(markup.render(case["text"], case["settings"]), case["python"])
+                else:
+                    self.assertEqual([list(p) for p in markup.split_verses(case["text"])], case["python"])
+
 
 if __name__ == "__main__":
     unittest.main()
