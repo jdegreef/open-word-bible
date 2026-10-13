@@ -24,7 +24,7 @@ sys.path.insert(0, str(ROOT))
 
 from typing import NamedTuple  # noqa: E402
 
-from owb import languages as owb_languages, markup, morph, refs, translit, versification  # noqa: E402
+from owb import languages as owb_languages, markup, morph, refs, translit, validate, versification  # noqa: E402
 
 # The interface languages, English first (data/languages.json; see catalog below).
 LANGUAGES = owb_languages.CODES
@@ -77,6 +77,7 @@ ICONS = {
     "articles": '<path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/>',
     "info": '<circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/>',
     "cross": '<path d="M12 3v18M6 8.5h12"/>',
+    "key": '<circle cx="8" cy="15" r="4.5"/><path d="m11.2 11.8 9.3-9.3M17 6l3 3M14.5 8.5l2.5 2.5"/>',
     "chevron": '<path d="m6 9 6 6 6-6"/>',
     "arrow": '<path d="M5 12h14M13 6l6 6-6 6"/>',
     "menu": '<path d="M4 7h16M4 12h16M4 17h16"/>',
@@ -114,6 +115,11 @@ def t(lang, key, **values):
     placeholders are filled from values, which the caller escapes."""
     text = catalog(lang)[key]
     return text.format(**values) if values else text
+
+
+def tn(lang, key, n):
+    """A count in lang: key's "_one" form for one, key itself otherwise."""
+    return t(lang, f"{key}_one" if n == 1 else key, n=n)
 
 
 def url(lang, path):
@@ -431,6 +437,7 @@ def nav_menus(lang):
     about = ("".join((
         row(url(lang, "/about/"), t(lang, "nav.about_project"), t(lang, "nav.about_project_note"), "info"),
         row(url(lang, "/about/beliefs/"), t(lang, "nav.beliefs"), t(lang, "nav.beliefs_note"), "cross"),
+        row(url(lang, "/terms/"), t(lang, "nav.terms"), t(lang, "nav.terms_note"), "key"),
         row(url(lang, "/about/#credits"), t(lang, "nav.credits"), t(lang, "nav.credits_note"), "scale"),
         row(url(lang, "/#help"), t(lang, "nav.help"), t(lang, "nav.help_note"), "users"),
         row(GITHUB_URL, t(lang, "nav.source"), t(lang, "nav.source_note"), "code", ext=True),
@@ -488,7 +495,9 @@ def footer_links(lang):
 
     start = sorted((a for a in load_articles(lang) if a["section"] == "method"), key=lambda a: a["order"])[:3]
     learn = [(url(lang, article_url(a)), display(a["title"]), None) for a in start]
-    learn.append((url(lang, "/articles/"), t(lang, "nav.all_articles"), None))
+    if start:
+        learn.append((url(lang, "/articles/"), t(lang, "nav.all_articles"), None))
+    learn.append((url(lang, "/terms/"), t(lang, "nav.terms"), None))
     project = [(url(lang, "/about/"), t(lang, "footer.about"), None),
                (url(lang, "/about/beliefs/"), t(lang, "nav.beliefs"), None),
                (url(lang, "/about/#credits"), t(lang, "nav.credits"), None),
@@ -496,8 +505,7 @@ def footer_links(lang):
                (GITHUB_URL, t(lang, "nav.source"), None),
                (GITHUB_URL + "/issues/new", t(lang, "footer.report"), None)]
     project = items(project).replace('/issues/new"', '/issues/new" data-report', 1)
-    learn = (f'<nav aria-labelledby="foot-learn"><h2 id="foot-learn">{t(lang, "footer.learn")}</h2><ul>{items(learn)}</ul></nav>\n'
-             if start else "")
+    learn = f'<nav aria-labelledby="foot-learn"><h2 id="foot-learn">{t(lang, "footer.learn")}</h2><ul>{items(learn)}</ul></nav>\n'
     return (f'{learn}'
             f'<nav aria-labelledby="foot-project"><h2 id="foot-project">{t(lang, "footer.project")}</h2><ul>{project}</ul></nav>')
 
@@ -1063,7 +1071,7 @@ def chapter_page(book, chapter, lang="en"):
             "disputed": disputed_block(records, lang),
             "bookRefs": book_refs(lang),
             "compare": comparison_verses(records, lang),
-            "cards": word_cards(records, words),
+            "cards": word_cards(records, words, lang),
             "headings": {r["id"]: headings()[r["id"]] for r in records if r["id"] in headings()}}
     # Each morphology code's description in every language, once per page.
     data["uses"] = word_uses()[1]
@@ -1241,13 +1249,6 @@ def disputed(vid):
 
 
 @functools.lru_cache(maxsize=None)
-def key_terms():
-    """data/key_terms.json, by lemma."""
-    data = json.loads((ROOT / "data" / "key_terms.json").read_text(encoding="utf-8"))
-    return {t["lemma"]: t for t in data["terms"]}
-
-
-@functools.lru_cache(maxsize=None)
 def name_cards():
     """data/names.json (people, places and peoples), by (Strong's number,
     lemma). Each has one or more senses; a sense with "verses" is the one
@@ -1265,11 +1266,33 @@ def word_strong(word):
     return prefix + (word.get("strong") or "").lstrip("0")
 
 
-def word_cards(records, words):
+def term_english(term):
+    """A key term's settled English words, every level's, without repeats:
+    what the reader's card says it is always rendered by."""
+    allowed = term["english"]
+    words = [w for level in validate.LEVELS for w in allowed.get(level, [])] if isinstance(allowed, dict) else allowed
+    return list(dict.fromkeys(words))
+
+
+def term_card_rule(term, lang):
+    """What a reader's card says of a key term whose English differs by
+    level (gospel): each level's words, levels with the same words together."""
+    ui, levels = catalog(lang)["reader.ui"], catalog(lang)["levels"]
+    groups = {}
+    for level in validate.LEVELS:
+        groups.setdefault(tuple(term["english"].get(level, [])), []).append(levels[level])
+    parts = "; ".join(ui["card_term_level"].format(levels=", ".join(names), words=", ".join(words))
+                      for words, names in groups.items() if words)
+    return ui["card_term_levels"].format(words=parts)
+
+
+def word_cards(records, words, lang="en"):
     """The key terms and the people, places and peoples among this page's
     words: {"list": [card, ...], "tokens": {token id: index into list}}.
-    A name used of more than one person resolves to the sense for its verse."""
-    terms, names = key_terms(), name_cards()
+    A key term is found by its Strong's number and source language, as
+    owb.validate checks it, and its card links to the term's page. A name
+    used of more than one person resolves to the sense for its verse."""
+    names = name_cards()
     mine = {t for r in records for t in r["source"]["tokens"]}
     cards, index, tokens = [], {}, {}
     for vid, ws in words.items():
@@ -1277,11 +1300,14 @@ def word_cards(records, words):
             if w["id"] not in mine:
                 continue
             card = None
-            term = terms.get(w["lemma"])
+            term = validate.key_term(w["id"], w.get("strong") or "")
             if term:
-                key = ("term", w["lemma"])
+                key = ("term", term_key(term))
                 card = {"type": "term", "lemma": term["lemma"], "title": term["sense"],
-                        "english": term["english"], "note": term.get("note", "")}
+                        "english": term_english(term), "note": term.get("note", ""),
+                        "href": url(lang, term_path(term))}
+                if isinstance(term["english"], dict):
+                    card["rule"] = term_card_rule(term, lang)
             senses = names.get((word_strong(w), w["lemma"]))
             if senses and not card:
                 sense = next((s for s in senses if vid in s.get("verses", [])), None) \
@@ -1763,6 +1789,295 @@ def beliefs_page(lang="en"):
 """
     return page(lang, b["title"], body, path="/about/beliefs/", current="/about/",
                 description=b["description"])
+
+
+# The key-terms glossary: /terms/ lists every key term (data/key_terms.json)
+# and /terms/<slug>/ shows one with every place it is used in the drafted
+# text, so a reader can check that the translation keeps its word.
+
+def term_key(term):
+    """A key term's identity: its source language and Strong's number
+    (Greek and Hebrew numbers overlap), as owb.validate keys it."""
+    return (term.get("language", "grc"), term["strong"])
+
+
+def term_strong(term):
+    """A key term's Strong's number as it is usually cited: G1391, H3068."""
+    return ("H" if term_key(term)[0] == "hbo" else "G") + term["strong"].lstrip("0")
+
+
+def term_slug(term):
+    """A key term's page slug: the "slug" set in data/key_terms.json, which
+    never changes, so links to the page keep working."""
+    return term["slug"]
+
+
+def term_path(term, book=None):
+    """A key term's page, or the page of its uses in one book."""
+    return f"/terms/{term_slug(term)}/" + (f"{book.lower()}/" if book else "")
+
+
+class TermUse(NamedTuple):
+    """One sentence that uses a key term: the record, the term's words in
+    it (token ids) and the verses they are in, the English levels that do
+    not use a settled word, and the decisions that explain why
+    (owb.validate.explaining_decisions)."""
+    record: dict
+    tokens: list
+    verses: list
+    departs: list
+    decisions: list
+
+
+@functools.lru_cache(maxsize=None)
+def term_uses():
+    """Every use of every key term in the drafted text, by term_key, in
+    canonical order: one TermUse per sentence (a sentence across a chapter
+    break counts once). Words are matched by Strong's number and language,
+    as owb.validate matches them."""
+    uses, seen, by_id, loaded = {key: [] for key in validate.KEY_TERMS}, set(), {}, set()
+    # The records are passages()' (built once); only the word extracts are
+    # read here, each once.
+    for p in passages():
+        for r in p.records:
+            if r["id"] in seen:
+                continue
+            seen.add(r["id"])
+            for ref in {(refs.parse(v).book, refs.parse(v).chapter) for v in r["refs"]} - loaded:
+                loaded.add(ref)
+                for vid, ws in json.loads(words_path(*ref).read_text(encoding="utf-8"))["verses"].items():
+                    by_id.update((w["id"], (vid, w.get("strong") or "")) for w in ws)
+            found = {}
+            for tid in r["source"]["tokens"]:
+                if tid not in by_id:
+                    continue
+                vid, strong = by_id[tid]
+                term = validate.key_term(tid, strong)
+                if term:
+                    found.setdefault(term_key(term), []).append((tid, vid))
+            if not found:
+                continue
+            explained = validate.explaining_decisions(r)
+            english = r["renderings"].get("en", {})
+            for key, hits in found.items():
+                term = validate.KEY_TERMS[key]
+                departs = [level for level in validate.LEVELS if level in english and not
+                           validate.key_term_pattern(validate.key_term_words(term, level)).search(english[level])]
+                decisions = list({d["id"]: d for tid, _ in hits for d in explained.get(tid, [])}.values())
+                verses = sorted({vid for _, vid in hits}, key=lambda v: refs.parse(v).sort_key())
+                uses[key].append(TermUse(r, [tid for tid, _ in hits], verses,
+                                         departs if decisions else [], decisions if departs else []))
+    return uses
+
+
+def term_count(term):
+    """How many times a key term's word is in the drafted text."""
+    return sum(len(u.tokens) for u in term_uses()[term_key(term)])
+
+
+def emphasise(text, words):
+    """Escaped text with the key term's English words marked. Words in the
+    term's own case ("LORD") win over the same letters in another case
+    ("Lord"); with none, any case will do ("Grace" opening a sentence)."""
+    text = html.escape(text, quote=False)
+    if not words:
+        return text
+    exact = validate.key_term_pattern(words, 0)
+    pattern = exact if exact.search(text) else validate.key_term_pattern(words)
+    return pattern.sub(r'<mark class="term-hit">\g<0></mark>', text)
+
+
+def term_english_html(term, lang):
+    """The settled English words, one line for every level or one per level."""
+    allowed = term["english"]
+    levels = catalog(lang)["levels"]
+    if not isinstance(allowed, dict):
+        return (f'<p class="term-words"><span class="term-level">{t(lang, "terms.every_level")}</span> '
+                f'<span lang="en">{", ".join(html.escape(w) for w in allowed)}</span></p>')
+    return "".join(f'<p class="term-words"><span class="term-level">{levels[level]}</span> '
+                   f'<span lang="en">{", ".join(html.escape(w) for w in allowed.get(level, []))}</span></p>'
+                   for level in validate.LEVELS)
+
+
+def term_lemma(term, cls="term-lemma"):
+    return f'<span class="{cls}" lang="{term_key(term)[0]}">{html.escape(term["lemma"])}</span>'
+
+
+def terms_page(lang="en"):
+    """Every key term, Greek and then Hebrew, with its settled English and
+    how often the drafted text uses it."""
+    def row(term):
+        english = ", ".join(term_english(term))
+        return (f'<li><a class="term-row" href="{url(lang, term_path(term))}">'
+                f'{term_lemma(term)}'
+                f'<span class="term-sense"{lang_attr("en", lang)}>{html.escape(term["sense"])}</span>'
+                f'<span class="term-english"{lang_attr("en", lang)}>{html.escape(english)}</span>'
+                f'<span class="term-count">{tn(lang, "terms.count", term_count(term))}</span></a></li>')
+
+    groups = []
+    for code in ("grc", "hbo"):
+        terms = sorted((term for term in validate.KEY_TERMS.values() if term_key(term)[0] == code),
+                       key=lambda term: term["sense"].lower())
+        if terms:
+            groups.append(f'<section class="term-group" id="{code}" aria-labelledby="{code}-h">'
+                          f'<h2 id="{code}-h">{t(lang, "terms.group_" + code)}</h2>'
+                          f'<ul class="term-list">{"".join(row(term) for term in terms)}</ul></section>')
+    note = f'<p class="fine">{t(lang, "notes_in_english")}</p>' if lang != "en" else ""
+    body = f"""
+<header class="page-head">
+<p class="eyebrow">{t(lang, "terms.title")}</p>
+<h1>{t(lang, "terms.heading")}</h1>
+<p class="dek">{t(lang, "terms.dek")}</p>
+</header>
+<nav class="a-jump" aria-label="{t(lang, "terms.title")}"><ul>{"".join(
+        f'<li><a href="#{code}">{t(lang, "terms.group_" + code)}</a></li>' for code in ("grc", "hbo"))}</ul></nav>
+{note}
+{"".join(groups)}
+"""
+    return page(lang, t(lang, "terms.title"), body, path="/terms/", current="/about/",
+                description=t(lang, "meta.terms_description"))
+
+
+# A term with more uses than this has each book's list folded away.
+TERM_OPEN_USES = 40
+
+
+def term_use_html(term, use, lang):
+    """One sentence: its verse links, its Balanced English with the term's
+    word marked, and the decision that explains a different word."""
+    links = []
+    for vid in use.verses:
+        ref = refs.parse(vid)
+        links.append(f'<a href="{url(lang, chapter_url(ref.book, ref.chapter))}#v{ref.verse}">'
+                     f'{verse_name(ref.book, ref.chapter, ref.verse, lang)}</a>')
+    english = use.record["renderings"].get("en", {})
+    level = "B" if "B" in english else next(iter(english), "B")
+    sentence = emphasise(plain(english.get(level, "")), validate.key_term_words(term, level))
+    why = ""
+    if use.decisions:
+        levels = catalog(lang)["levels"]
+        why = "".join(
+            f'<div class="term-why"><p class="term-why-head">{t(lang, "terms.otherwise", levels=", ".join(levels[lv] for lv in use.departs))}</p>'
+            f'<p class="term-why-text"{lang_attr("en", lang)}><strong>{html.escape(plain(d["choice"]))}</strong> '
+            f'{html.escape(plain(d["reason"]))}</p></div>'
+            for d in use.decisions)
+    return (f'<li class="term-use{" departs" if use.decisions else ""}">'
+            f'<p class="term-ref">{" ".join(links)}</p>'
+            f'<p class="term-text"{lang_attr("en", lang)}>{sentence}</p>{why}</li>')
+
+
+# A term with more uses than this gives each book's sentences a page of
+# their own (/terms/<slug>/<book>/), so no page grows with the whole Bible.
+TERM_SPLIT_USES = 300
+
+
+def term_books(term):
+    """A key term's uses by book, in canonical order."""
+    by_book = {}
+    for u in term_uses()[term_key(term)]:
+        by_book.setdefault(refs.parse(u.verses[0]).book, []).append(u)
+    return by_book
+
+
+def term_split(term):
+    """Whether a key term's sentences are on one page per book."""
+    return term_count(term) > TERM_SPLIT_USES
+
+
+def term_head(term, lang, heading, eyebrow):
+    code = term_key(term)[0]
+    return f"""
+<header class="page-head term-head">
+<p class="eyebrow">{eyebrow}</p>
+<h1{heading[1]}>{heading[0]}</h1>
+<p class="term-id">{term_lemma(term, "term-lemma big")}
+<span class="term-strong">{t(lang, "terms.language_" + code)} &middot; Strong&rsquo;s {term_strong(term)}</span></p>
+</header>"""
+
+
+def term_book_chips(term, lang, current=None):
+    """Each book's count of uses, linking to its list: further down the
+    page, or to the book's own page when the term is split."""
+    def href(book):
+        return url(lang, term_path(term, book)) if term_split(term) else f"#{book.lower()}"
+    return (f'<nav class="a-jump term-books" aria-label="{t(lang, "terms.by_book")}"><ul>'
+            + "".join(f'<li><a href="{href(book)}"{" aria-current=page" if book == current else ""}>'
+                      f'{book_name(book, lang)} <span>{sum(len(u.tokens) for u in us)}</span></a></li>'
+                      for book, us in term_books(term).items())
+            + "</ul></nav>")
+
+
+def term_page(term, lang="en"):
+    """One key term: its lemma, Strong's number and sense, its settled
+    English at each level and the note on it, then its uses: counts by
+    book, the exceptions, and every sentence by book (or, for a term with
+    many uses, a link to each book's page)."""
+    uses = term_uses()[term_key(term)]
+    total = term_count(term)
+    by_book = term_books(term)
+    note = f'<p class="fine">{t(lang, "notes_in_english")}</p>' if lang != "en" else ""
+    if uses:
+        departs = [u for u in uses if u.decisions]
+        exceptions = (f'<section class="term-section" aria-labelledby="otherwise-h">'
+                      f'<h2 id="otherwise-h">{t(lang, "terms.exceptions")} <span class="term-count">{len(departs)}</span></h2>'
+                      f'<p class="fine">{t(lang, "terms.exceptions_dek")}</p>'
+                      f'<ol class="term-uses">{"".join(term_use_html(term, u, lang) for u in departs)}</ol></section>'
+                      if departs else "")
+        if term_split(term):
+            sentences = f'<p class="fine">{t(lang, "terms.books_dek")}</p>'
+        else:
+            openly = " open" if total <= TERM_OPEN_USES else ""
+            books_html = "".join(
+                f'<details class="term-book" id="{book.lower()}"{openly}><summary>{book_name(book, lang)} '
+                f'<span class="term-count">{tn(lang, "terms.count", sum(len(u.tokens) for u in us))}</span></summary>'
+                f'<ol class="term-uses">{"".join(term_use_html(term, u, lang) for u in us)}</ol></details>'
+                for book, us in by_book.items())
+            sentences = (f'<section class="term-section" aria-labelledby="uses-h"><h2 id="uses-h">{t(lang, "terms.uses")}</h2>'
+                         f'<p class="fine">{t(lang, "terms.uses_dek")}</p>{books_html}</section>')
+        listing = (f'<p>{t(lang, "terms.summary", times=tn(lang, "terms.times", total), books=tn(lang, "terms.books", len(by_book)))}</p>'
+                   f'{term_book_chips(term, lang)}'
+                   + (f'{sentences}{exceptions}' if term_split(term) else f'{exceptions}{sentences}'))
+    else:
+        listing = f'<p class="notice">{t(lang, "terms.none")}</p>'
+    head = term_head(term, lang, (html.escape(term["sense"]), lang_attr("en", lang)),
+                     f'<a href="{url(lang, "/terms/")}">{t(lang, "terms.title")}</a>')
+    body = f"""{head}
+<section class="term-section" aria-labelledby="settled-h">
+<h2 id="settled-h">{t(lang, "terms.settled")}</h2>
+{term_english_html(term, lang)}
+<p class="term-note"{lang_attr("en", lang)}>{html.escape(term.get("note", ""))}</p>
+{note}
+</section>
+<section class="term-section" aria-labelledby="where-h">
+<h2 id="where-h">{t(lang, "terms.where")}</h2>
+{listing}
+</section>
+"""
+    return page(lang, f'{term["sense"]} · {t(lang, "terms.title")}', body, path=term_path(term),
+                current="/about/",
+                description=t(lang, "meta.term_description", sense=term["sense"], lemma=term["lemma"]))
+
+
+def term_book_page(term, book, lang="en"):
+    """Every sentence in one book that uses a key term with many uses."""
+    us = term_books(term)[book]
+    name = book_name(book, lang)
+    eyebrow = (f'<a href="{url(lang, "/terms/")}">{t(lang, "terms.title")}</a> &middot; '
+               f'<a href="{url(lang, term_path(term))}"{lang_attr("en", lang)}>{html.escape(term["sense"])}</a>')
+    note = f'<p class="fine">{t(lang, "notes_in_english")}</p>' if lang != "en" else ""
+    body = f"""{term_head(term, lang, (name, ""), eyebrow)}
+<section class="term-section" aria-labelledby="uses-h">
+{term_book_chips(term, lang, book)}
+<h2 id="uses-h">{t(lang, "terms.uses")} <span class="term-count">{tn(lang, "terms.count", sum(len(u.tokens) for u in us))}</span></h2>
+<p class="fine">{t(lang, "terms.uses_dek")}</p>
+{note}
+<ol class="term-uses">{"".join(term_use_html(term, u, lang) for u in us)}</ol>
+</section>
+"""
+    return page(lang, f'{term["sense"]} · {name} · {t(lang, "terms.title")}', body,
+                path=term_path(term, book), current="/about/",
+                description=t(lang, "meta.term_book_description", sense=term["sense"],
+                              lemma=term["lemma"], book=name))
 
 
 ARTICLES = ROOT / "articles"
@@ -2645,7 +2960,7 @@ FAVICON = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
 BOOK_ALIASES = {"JHN": ["jn"], "PHP": ["flp", "fil"], "1JN": ["1jn"], "2JN": ["2jn"], "3JN": ["3jn"]}
 # The palette's page shortcuts, by catalog key.
 SEARCH_PAGES = (("nav.home", "/"), ("nav.read", "/read/"), ("nav.articles", "/articles/"),
-                ("nav.about_project", "/about/"), ("nav.credits", "/about/#credits"),
+                ("nav.about_project", "/about/"), ("nav.terms", "/terms/"), ("nav.credits", "/about/#credits"),
                 ("nav.help", "/#help"), ("tools.sign_in", "/login/"))
 
 
@@ -2821,7 +3136,7 @@ def sitemap(paths):
 
 
 def build(out):
-    for cached in (nav_menus, footer_links, passages, asset, translated_verses, catalog, book_refs, key_terms, name_cards,
+    for cached in (nav_menus, footer_links, passages, asset, translated_verses, catalog, book_refs, name_cards, term_uses,
                    search_documents, search_index,
                    search_index_url, word_uses, series_numbers, chapter_articles):
         cached.cache_clear()
@@ -2839,6 +3154,12 @@ def build(out):
         add("/about/", about_page(lang))
         add("/about/beliefs/", beliefs_page(lang))
         add("/search/", search_page(lang))
+        add("/terms/", terms_page(lang))
+        for term in validate.KEY_TERMS.values():
+            add(term_path(term), term_page(term, lang))
+            if term_split(term):
+                for book in term_books(term):
+                    add(term_path(term, book), term_book_page(term, book, lang))
         for book, chapter in chapters():
             add(chapter_url(book, chapter), chapter_page(book, chapter, lang))
         articles = load_articles(lang)

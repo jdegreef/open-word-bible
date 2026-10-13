@@ -851,10 +851,17 @@
         head.appendChild(el("span", "wcard-kind", t("card_kind")[c.type === "term" ? "term" : c.kind] || ""));
         card.appendChild(head);
         // A key term's note is for translators; readers get the rule it keeps.
-        if (c.type === "term") card.appendChild(el("span", "wcard-note", t("card_term").replace("{words}", c.english.join(", "))));
+        // A term whose English differs by level (gospel) names each level's.
+        if (c.type === "term") card.appendChild(el("span", "wcard-note", c.rule || t("card_term").replace("{words}", c.english.join(", "))));
         else card.appendChild(el("span", "wcard-note", c.note));
         card.addEventListener("click", function () { highlight(byCard[i], null); light(byCard[i]); });
         list.appendChild(card);
+        // A key term links to its page: every place the translation uses it.
+        if (c.href) {
+          var more = el("a", "wcard-link", t("card_term_link"));
+          more.href = c.href;
+          list.appendChild(more);
+        }
       });
     panel.appendChild(list);
   }
