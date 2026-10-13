@@ -44,8 +44,8 @@ SITE_NAME = "Open Word Bible"
 # Canonical links, the sitemap and link previews use it.
 SITE_URL = "https://openwordbible.org"
 GITHUB_URL = "https://github.com/jdegreef/open-word-bible"
-# The Django API (backend/), for accounts. OWB_API_URL points a local build
-# at a local API.
+# The Django API (backend/), for accounts and search. OWB_API_URL points a
+# local build at a local API.
 API_URL = os.environ.get("OWB_API_URL", "https://api.openwordbible.org").rstrip("/")
 
 # The open-book mark: the favicon, and the logo in the header and footer
@@ -346,7 +346,7 @@ def page(lang, title, body, path=None, current="", description="", card="site", 
 <title>{html.escape(full_title)}</title>
 <meta name="description" content="{html.escape(description)}">{meta}{head}
 <meta name="owb-api" content="{API_URL}">
-<meta name="owb-search" content="{search_index_url(lang)}">
+<meta name="owb-search" content="{search_source(lang)}" data-ui="{search_ui_url(lang)}">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="manifest" href="/manifest.webmanifest">
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
@@ -1539,9 +1539,11 @@ def save_button(book, chaps, lang):
 
 def offline_files(lang):
     """What a saved book needs besides its pages and what web/sw.js keeps
-    anyway: the reader, the word index, the search index and the fonts."""
+    anyway: the reader, the word index and the fonts (and the search index
+    while search runs in the browser: SEARCH_STATIC)."""
     fonts = sorted(f"/fonts/{f.name}" for f in (ROOT / "web" / "fonts").glob("*.woff2"))
-    return [url(lang, "/read/"), asset("markup.js"), asset("reader.js"), word_uses()[1], search_index_url(lang)] + fonts
+    index = [search_index_url(lang)] if SEARCH_STATIC else []
+    return [url(lang, "/read/"), asset("markup.js"), asset("reader.js"), word_uses()[1]] + index + fonts
 
 
 def read_page(lang="en"):
@@ -3139,11 +3141,16 @@ def service_worker():
     shell += ["/favicon.svg", "/manifest.webmanifest"] + [url(lang, "/offline/") for lang in LANGUAGES]
     offline = {("" if lang == "en" else lang): url(lang, "/offline/") for lang in LANGUAGES}
     current = [asset(n) for n in ("style.css", "site.js", "search.js", "markup.js", "reader.js", "account.js", "plans.js")]
-    current += [word_uses()[1]] + [search_index_url(lang) for lang in LANGUAGES]
+    current += [word_uses()[1]] + [search_ui_url(lang) for lang in LANGUAGES]
     current += [plans_json_url(lang) for lang in LANGUAGES]
+    # The search indexes, kept by the worker only while search runs in the
+    # browser; otherwise copies kept before are dropped.
+    indexes = [search_index_url(lang) for lang in LANGUAGES]
+    current += indexes if SEARCH_STATIC else []
+    dropped = [] if SEARCH_STATIC else [u.split("?")[0] for u in indexes]
     text = ((ROOT / "web" / "sw.js").read_text(encoding="utf-8")
             .replace("__PRECACHE__", json.dumps(shell)).replace("__OFFLINE__", json.dumps(offline))
-            .replace("__CURRENT__", json.dumps(current)))
+            .replace("__CURRENT__", json.dumps(current)).replace("__DROPPED__", json.dumps(dropped)))
     return text.replace("__VERSION__", hashlib.sha256(text.encode()).hexdigest()[:10])
 
 
@@ -3155,12 +3162,19 @@ FAVICON = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
 """
 
 
-# Search (web/search.js). The site is static, so the build writes an index
-# of everything a reader can find, one file per interface language, and the
-# browser searches it: the /search/ page, and the palette that Ctrl K or
-# Cmd K opens on any page, as on Ochorus. An index holds what that
-# language's pages show: each sentence in the language the reader shows it
-# in, its notes, the articles and the passages.
+# Search (web/search.js): the /search/ page, and the palette that Ctrl K or
+# Cmd K opens on any page, as on Ochorus. The API answers each search
+# (GET /api/search/, backend/translation/search.py) from the documents
+# search_documents lists. An index holds what that language's pages show:
+# each sentence in the language the reader shows it in, its notes, the
+# articles and the passages. search.js gets the interface text and page
+# shortcuts it needs from a small file per language (search_ui).
+#
+# Until the API had search, the build wrote each language's whole index
+# (search-<lang>.json, 22 MB) and the browser searched it. It is still
+# written for one release: set SEARCH_STATIC to True and the site searches
+# it in the browser again, and the service worker keeps it.
+SEARCH_STATIC = False
 
 # Book abbreviations a reader may type besides each book's names, its USFM
 # code and its OSIS id ("Phil"); and prefixes of the names, from three
@@ -3272,6 +3286,29 @@ def search_index_url(lang):
     return f"/search-{lang}.json?v={digest}"
 
 
+@functools.lru_cache(maxsize=None)
+def search_ui(lang):
+    """What search.js needs besides the API's answers, as JSON text: the
+    interface text, the palette's page shortcuts and the book names (a few
+    kilobytes)."""
+    data = search_documents(lang)
+    return json.dumps({"lang": lang, "ui": data["ui"], "pages": data["pages"],
+                       "names": {b["code"]: b["name"] for b in data["books"]}},
+                      ensure_ascii=False, separators=(",", ":"))
+
+
+@functools.lru_cache(maxsize=None)
+def search_ui_url(lang):
+    digest = hashlib.sha256(search_ui(lang).encode("utf-8")).hexdigest()[:10]
+    return f"/search-ui-{lang}.json?v={digest}"
+
+
+def search_source(lang):
+    """Where search.js searches (<meta name="owb-search">): the API, or the
+    static index while SEARCH_STATIC is set."""
+    return search_index_url(lang) if SEARCH_STATIC else f"{API_URL}/api/search/"
+
+
 def palette(lang):
     """The search palette (web/search.js), on every page: a dialog with a
     box that searches as the reader types. Without the script the header's
@@ -3284,7 +3321,7 @@ def palette(lang):
 <input type="search" name="q" id="palette-q" autocomplete="off" spellcheck="false" placeholder="{html.escape(ui["palette_placeholder"])}" aria-label="{t(lang, "search.label")}" role="combobox" aria-expanded="true" aria-controls="palette-list" aria-autocomplete="list">
 <kbd class="palette-esc">esc</kbd>
 </form>
-<ul class="palette-list" id="palette-list" role="listbox" aria-label="{t(lang, "nav.search")}"></ul>
+<ul class="palette-list" id="palette-list" role="listbox" aria-label="{t(lang, "nav.search")}" data-error="{html.escape(ui["error"])}" data-offline="{html.escape(ui["offline"])}"></ul>
 <p class="palette-foot" aria-hidden="true"><span><kbd>&uarr;</kbd><kbd>&darr;</kbd> {html.escape(ui["navigate"])}</span><span><kbd>&crarr;</kbd> {html.escape(ui["open"])}</span><span><kbd>esc</kbd> {html.escape(ui["close"])}</span></p>
 </div>
 </div>"""
@@ -3316,7 +3353,7 @@ def search_page(lang="en"):
 </div>
 <p class="sr-only" id="search-status" aria-live="polite"></p>
 <noscript><p class="notice">{t(lang, "search.noscript")}</p></noscript>
-<div class="search-layout" id="search-results" hidden data-error="{html.escape(ui["error"])}" data-retry="{html.escape(ui["retry"])}" data-remove="{html.escape(ui["remove"])}"></div>
+<div class="search-layout" id="search-results" hidden data-error="{html.escape(ui["error"])}" data-offline="{html.escape(ui["offline"])}" data-loading="{html.escape(ui["loading"])}" data-retry="{html.escape(ui["retry"])}" data-remove="{html.escape(ui["remove"])}"></div>
 <div class="ways-in" id="search-start">
 <section class="ways" id="search-recent" hidden aria-labelledby="recent-h">
 <div class="ways-head"><h2 class="label" id="recent-h">{t(lang, "search.recent")}</h2><button type="button" class="link-btn" id="recent-clear">{t(lang, "search.clear")}</button></div>
@@ -3402,6 +3439,7 @@ def build(out):
     files["word-uses.json"] = word_uses()[0]
     for lang in LANGUAGES:
         files[f"search-{lang}.json"] = search_index(lang)
+        files[f"search-ui-{lang}.json"] = search_ui(lang)
         files[f"plans-{lang}.json"] = plans_json(lang)
     for rel, text in files.items():
         path = out / rel

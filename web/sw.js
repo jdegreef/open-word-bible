@@ -18,6 +18,9 @@ var OFFLINE = __OFFLINE__;
 // Every file whose address carries a content hash, as this deploy names
 // it; an older copy of one is dropped from owb-assets (see activate).
 var CURRENT = __CURRENT__;
+// Files this deploy no longer uses (the static search indexes, 5 MB or
+// more each): every kept copy is dropped, from saved books too.
+var DROPPED = __DROPPED__;
 var MAX_PAGES = 60;
 // Past this a slow connection is treated as none, and a saved copy is shown.
 var NETWORK_WAIT = 4000;
@@ -27,20 +30,28 @@ self.addEventListener("install", function (e) {
   self.skipWaiting();
 });
 
-// The old shell goes, and so do older versions of the hashed files (a
-// search index runs to tens of megabytes, and main deploys often; see
-// scripts/check_budgets.py). Saved books keep theirs.
+// The old shell goes, and so do older versions of the hashed files (main
+// deploys often). Saved books keep theirs, but not a file no longer used.
+function drop(name, unwanted) {
+  return caches.open(name).then(function (cache) {
+    return cache.keys().then(function (keys) {
+      return Promise.all(keys.filter(function (req) { return unwanted(new URL(req.url)); })
+        .map(function (req) { return cache.delete(req); }));
+    });
+  });
+}
+
 function prune() {
   var current = {};
   CURRENT.forEach(function (u) { current[u.split("?")[0]] = u; });
-  return caches.open("owb-assets").then(function (cache) {
-    return cache.keys().then(function (keys) {
-      return Promise.all(keys.filter(function (req) {
-        var url = new URL(req.url), now = current[url.pathname];
-        return now && url.search && now !== url.pathname + url.search;
-      }).map(function (req) { return cache.delete(req); }));
-    });
-  });
+  function gone(url) { return DROPPED.indexOf(url.pathname) >= 0; }
+  return Promise.all([
+    drop("owb-assets", function (url) {
+      var now = current[url.pathname];
+      return gone(url) || (now && url.search && now !== url.pathname + url.search);
+    }),
+    drop("owb-books", gone)
+  ]);
 }
 
 self.addEventListener("activate", function (e) {
@@ -129,12 +140,14 @@ self.addEventListener("fetch", function (e) {
   var req = e.request;
   if (req.method !== "GET") return;
   var url = new URL(req.url);
-  // The API (sign-in, accounts) and other sites are left alone.
-  if (url.origin !== self.location.origin) return;
+  // The API (sign-in, accounts, search) and other sites are left alone:
+  // search answers are never kept.
+  if (url.origin !== self.location.origin || url.pathname.indexOf("/api/") === 0) return;
   if (req.mode === "navigate") { e.respondWith(page(e)); return; }
   // Share-card images are for link previews, not for reading; and what
   // site.js fetches to save a book (a page, or any file with cache:
   // "no-cache") it stores itself, in owb-books.
-  if (url.pathname.indexOf("/og/") === 0 || /\/$/.test(url.pathname) || req.cache === "no-cache") return;
+  if (url.pathname.indexOf("/og/") === 0 || /\/$/.test(url.pathname) || req.cache === "no-cache"
+      || DROPPED.indexOf(url.pathname) >= 0) return;
   e.respondWith(file(e));
 });
