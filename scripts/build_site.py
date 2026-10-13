@@ -1765,30 +1765,83 @@ def article_list(articles, lang="en"):
     return "".join(article_card(a, lang) for a in articles)
 
 
+# Sections that are series, read in order: their rows are numbered.
+SERIES = ("history", "translation")
+
+
+def _duration(minutes, lang="en"):
+    """"45 min" or "2 h 20 min"."""
+    h, m = divmod(minutes, 60)
+    return t(lang, "articles.hours", h=h, m=m) if h else t(lang, "articles.minutes", m=m)
+
+
+def index_row(a, lang="en", number=None, minutes=True):
+    """An article's row on the articles page. The title is the link and
+    covers the row; the verses it reads are links of their own."""
+    refs = []
+    for b, c, vs in a["passages"]:
+        label = html.escape(passage_label(b, c, vs, lang))
+        href = next(filter(None, (verse_link(b, c, v, lang) for v in vs)), None)
+        refs.append(f'<a class="a-ref" href="{href}">{label}</a>' if href else f'<span class="a-ref">{label}</span>')
+    meta = [html.escape(t(lang, "article.min_read", n=a["minutes"]))] if minutes else []
+    meta.append(f'<span class="a-status">{t(lang, "article.draft")}</span>')
+    num = f'<span class="a-num" aria-hidden="true">{number}</span>' if number else ""
+    return (f'<li class="a-item{" numbered" if number else ""}">{num}<div class="a-body">'
+            + (f'<p class="a-refs">{"".join(refs)}</p>' if refs else "")
+            + f'<a class="a-title" href="{url(lang, article_url(a))}">{display(a["title"])}</a>'
+            f'<span class="a-summary">{display(a["summary"])}</span>'
+            f'<span class="a-meta">{" ".join(meta)}</span></div></li>')
+
+
+def _section(key, items, lang="en"):
+    """A section of the articles page: its heading with how many articles
+    and how long they take, then a row for each. When most of a section's
+    articles take the same time, a row says its time only if it differs."""
+    names = catalog(lang)["sections"]
+    times = [a["minutes"] for a in items]
+    common = max(set(times), key=times.count)
+    usual = times.count(common) >= .75 * len(times) and len(times) > 2
+    sub = t(lang, "articles.count_time", n=len(items), time=_duration(sum(times), lang))
+    rows = "".join(index_row(a, lang, number=i if key in SERIES else None,
+                             minutes=not usual or a["minutes"] != common)
+                   for i, a in enumerate(items, 1))
+    return (f'<section class="a-group" id="{key}" aria-labelledby="{key}-h">'
+            f'<div class="a-group-head"><h2 id="{key}-h">{names[key]}</h2><span>{sub}</span></div>'
+            f'<ol class="a-rows{" series" if key in SERIES else ""}">{rows}</ol></section>')
+
+
 def articles_page(articles, lang="en"):
     """The articles in lang, or a note that none is translated yet."""
     by_order = sorted(articles, key=lambda a: a["order"])
     if by_order:
         featured, rest = by_order[0], by_order[1:]
         names = catalog(lang)["sections"]
+        # The featured article opens the page, so its section starts after it.
         groups = [(key, [a for a in rest if a["section"] == key]) for key in SECTIONS]
         groups = [(key, items) for key, items in groups if items]
         # Links to each section, with how many articles it has.
         jump = (f'<nav class="a-jump" aria-label="{t(lang, "articles.sections")}"><ul>'
-                + "".join(f'<li><a href="#{key}">{names[key]} <span>{sum(a["section"] == key for a in by_order)}</span></a></li>'
-                          for key, _ in groups)
+                + "".join(f'<li><a href="#{key}">{names[key]} <span>{len(items)}</span></a></li>'
+                          for key, items in groups)
                 + "</ul></nav>")
-        # Inside a section, compact rows rather than cards.
-        sections = "".join(
-            f'<section class="a-group" id="{key}" aria-labelledby="{key}-h">'
-            f'<h2 id="{key}-h">{names[key]}</h2>'
-            f'<ul class="a-rows">{"".join(article_card(a, lang, section=False) for a in items)}</ul></section>'
-            for key, items in groups)
-        listing = f'{jump}\n<ul class="a-feature">{article_card(featured, lang, featured=True)}</ul>\n{sections}'
+        # The first article, with the next few of its section to read after it.
+        after = [a for a in rest if a["section"] == featured["section"]][:3]
+        path = "".join(f'<li><a href="{url(lang, article_url(a))}">{display(a.get("nav_title", a["title"]))}</a></li>'
+                       for a in after)
+        start = (f'<div class="a-start"><a class="a-card featured" href="{url(lang, article_url(featured))}">'
+                 f'<span class="a-section">{t(lang, "articles.start_here")}</span>'
+                 f'<span class="a-title">{display(featured["title"])}</span>'
+                 f'<span class="a-summary">{display(featured["summary"])}</span>'
+                 f'<span class="a-meta">{article_meta(featured, lang)}</span></a>'
+                 + (f'<nav class="a-path" aria-labelledby="a-path-h"><h2 id="a-path-h">{t(lang, "articles.then_read")}</h2>'
+                    f'<ol>{path}</ol></nav>' if after else "")
+                 + '</div>')
+        sections = "".join(_section(key, items, lang) for key, items in groups)
+        listing = f'{start}\n{jump}\n{sections}'
     else:
         listing = f'<p class="notice">{t(lang, "articles.none")}</p>'
     body = f"""
-<header class="page-head">
+<header class="page-head compact">
 <p class="eyebrow">{t(lang, "articles.title")}</p>
 <h1>{t(lang, "articles.heading")}</h1>
 <p class="dek">{t(lang, "articles.dek")}</p>
