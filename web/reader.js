@@ -68,6 +68,19 @@
   var panelEl = document.getElementById("panel");
   var SPAN = /\{\{([a-z_]+):([^{}]*)\}\}/g;
   var VERSE = /\\v (\d+) ?/;
+  // Poetry: "\q " starts a new line within a verse (owb/markup.py LINE).
+  // A verse start is always a line start; text with no marker is prose.
+  var LINE = / ?\\q ?/;
+  var LINES = / ?\\q ?/g;
+  // Text on one line (panel, speech, verse images, copy): a line break reads as a space.
+  function flat(text) { return text.replace(LINES, " "); }
+  // A record is set as poetry in a language when any of its levels there
+  // has line markers, so every verse of it starts its own line even at a
+  // level (often Readable) that joins a verse's lines into one.
+  function poetic(r, lang) {
+    var levels = r.renderings[lang] || {};
+    return Object.keys(levels).some(function (l) { return LINE.test(levels[l]); });
+  }
 
   // A verse as this page names it: "12", or "7:53" for a verse of another
   // chapter that a sentence runs into (John 7:53-8:1 is on both pages).
@@ -97,7 +110,7 @@
 
   // Split rendered text at verse markers: [[verse, text], ...].
   function splitVerses(r, text) {
-    var parts = text.split(VERSE), out = [[verseOf(r.refs[0]), parts[0].trim()]];
+    var parts = flat(text).split(VERSE), out = [[verseOf(r.refs[0]), parts[0].trim()]];
     for (var i = 1; i < parts.length; i += 2) out.push([markerVerse(r, parts[i]), parts[i + 1]]);
     return out;
   }
@@ -105,6 +118,7 @@
   // A rendering split at its verse markers, each verse a list of pieces
   // [text, token ids or null]: the pieces with ids are the English that
   // aligned Greek words became (r.links, built from the record's alignments).
+  // A poetic line break is the piece [null, null].
   function versePieces(r, lang, level) {
     var raw = r.renderings[lang][level];
     var ranges = (r.links && r.links[lang] && r.links[lang][level]) || [];
@@ -118,12 +132,17 @@
     var out = [[verseOf(r.refs[0]), []]];
     chunks.forEach(function (c) {
       c[0].split(VERSE).forEach(function (part, i) {
-        if (i % 2) out.push([markerVerse(r, part), []]);
-        else if (part) out[out.length - 1][1].push([part, c[1]]);
+        if (i % 2) { out.push([markerVerse(r, part), []]); return; }
+        // A line break is a piece of its own: [null, null]. Alignment spans
+        // never hold one, so it only ever falls in unlinked text.
+        part.split(LINE).forEach(function (bit, j) {
+          if (j) out[out.length - 1][1].push([null, null]);
+          if (bit) out[out.length - 1][1].push([bit, c[1]]);
+        });
       });
     });
     var first = out[0][1][0];
-    if (first && !first[1]) first[0] = first[0].replace(/^\s+/, "");
+    if (first && first[0] && !first[1]) first[0] = first[0].replace(/^\s+/, "");
     return out;
   }
 
@@ -404,9 +423,10 @@
       var unsure = ds.meaning.concat(ds.rendering).some(function (d) { return d.uncertain; });
       if (unsure) unsureCount++;
       var chosen = current && current.id === r.id;
+      var poem = poetic(r, lang);
       parts.forEach(function (part, i) {
         var span = el("span", (lang === settings.lang ? "verse" : "verse fallback") +
-                           (settings.uncertain && unsure ? " unsure" : ""));
+                           (poem ? " poem" : "") + (settings.uncertain && unsure ? " unsure" : ""));
         if (lang !== settings.lang) span.lang = lang;
         if (!plain()) {
           span.tabIndex = 0;
@@ -419,11 +439,24 @@
         if (m && m.h) span.classList.add("hl-" + m.h);
         if (m && m.b) span.classList.add("bookmarked");
         if (current && current.id === r.id) span.setAttribute("aria-current", "true");
-        if (part[0] !== shown) span.appendChild(el("sup", null, part[0]));
+        // Poetry: the verse is a block of lines, each a block with a
+        // hanging indent; a space between lines keeps copied text apart.
+        var into = span;
+        function newLine() {
+          if (into !== span) span.appendChild(document.createTextNode(" "));
+          into = el("span", "line");
+          span.appendChild(into);
+        }
+        if (poem) newLine();
+        if (part[0] !== shown) into.appendChild(el("sup", null, part[0]));
         shown = part[0];
         part[1].forEach(function (piece) {
+          if (piece[0] === null) {
+            if (poem) newLine(); else into.appendChild(document.createTextNode(" "));
+            return;
+          }
           var text = render(piece[0]);
-          if (!piece[1]) { span.appendChild(document.createTextNode(text)); return; }
+          if (!piece[1]) { into.appendChild(document.createTextNode(text)); return; }
           if (interlinear()) {
             // The original words over the English they became.
             var ruby = el("ruby", "il");
@@ -431,7 +464,7 @@
             var rt = el("rt", null, piece[1].map(function (id) { return WORD_TEXT[id] || ""; }).join(" ").trim());
             rt.lang = DATA.source;
             ruby.appendChild(rt);
-            span.appendChild(ruby);
+            into.appendChild(ruby);
             return;
           }
           var w = el("span", "aw", text);
@@ -443,7 +476,7 @@
             w.addEventListener("mouseleave", function () { light([]); });
             w.addEventListener("click", function (e) { e.stopPropagation(); light(piece[1]); });
           }
-          span.appendChild(w);
+          into.appendChild(w);
         });
         if (marks.length && i === parts.length - 1) {
           var sup = el("sup", "fn");
@@ -457,7 +490,7 @@
             b.addEventListener("keydown", function (e) { e.stopPropagation(); });
             sup.appendChild(b);
           });
-          span.appendChild(sup);
+          into.appendChild(sup);
         }
         span.addEventListener("click", function () {
           // Selecting text is not choosing the verse.
@@ -509,10 +542,28 @@
           cell.appendChild(el("span", "pmissing", t("not_in_language")));
         } else {
           cell.lang = lang;
-          splitVerses(r, render(has[settings.level])).forEach(function (part, j) {
-            cell.appendChild(el("sup", "pv", part[0]));
-            cell.appendChild(document.createTextNode(part[1] + " "));
-          });
+          if (poetic(r, lang)) {
+            // Poetry: each verse a block of lines, as in the reading view.
+            var raw = render(has[settings.level]).split(VERSE), nums = [verseOf(r.refs[0])];
+            for (var k = 1; k < raw.length; k += 2) nums.push(markerVerse(r, raw[k]));
+            nums.forEach(function (v, j) {
+              var verse = el("span", "poem");
+              raw[2 * j].trim().split(LINE).forEach(function (text, n) {
+                var line = el("span", "line");
+                if (!n) line.appendChild(el("sup", "pv", v));
+                line.appendChild(document.createTextNode(text));
+                if (n) verse.appendChild(document.createTextNode(" "));
+                verse.appendChild(line);
+              });
+              cell.appendChild(verse);
+              cell.appendChild(document.createTextNode(" "));
+            });
+          } else {
+            splitVerses(r, render(has[settings.level])).forEach(function (part, j) {
+              cell.appendChild(el("sup", "pv", part[0]));
+              cell.appendChild(document.createTextNode(part[1] + " "));
+            });
+          }
           if (i === 0 && lang !== settings.lang) cell.classList.add("fallback");
         }
         row.appendChild(cell);
@@ -1498,7 +1549,7 @@
   // (some voices stop after about fifteen seconds of one utterance).
   function spoken(r) {
     var lang = textLang(r);
-    var rest = render(r.renderings[lang][settings.level]).replace(new RegExp(VERSE.source, "g"), "").replace(/\s+/g, " ").trim();
+    var rest = flat(render(r.renderings[lang][settings.level])).replace(new RegExp(VERSE.source, "g"), "").replace(/\s+/g, " ").trim();
     var parts = [];
     while (rest.length > 220) {
       var cut = -1, re = /[,;:\u2014.!?]\s/g, m;

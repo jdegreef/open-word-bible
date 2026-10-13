@@ -42,7 +42,7 @@
       "type": "string"
     },
     "renderings": {
-      "description": "Translation per language code, at each level: L = Literal (OWB-L), B = Balanced (OWB-B), R = Readable (OWB-R). Text may contain {{setting:default|alt}} spans.",
+      "description": "Translation per language code, at each level: L = Literal (OWB-L), B = Balanced (OWB-B), R = Readable (OWB-R). Text may contain {{setting:default|alt}} spans, \\v N markers where a later verse starts, and \\q markers that break poetry into lines within a verse (between words only: never at either end, doubled, next to a \\v marker, inside a setting span or in an alignment target_span). A rendering with no \\q is prose.",
       "type": "object",
       "minProperties": 1,
       "propertyNames": {"$ref": "#/$defs/language"},
@@ -68,7 +68,7 @@
           "tokens": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/token_id"}},
           "language": {"$ref": "#/$defs/language"},
           "level": {"$ref": "#/$defs/level"},
-          "target_span": {"description": "Text that occurs in that rendering.", "type": "string"}
+          "target_span": {"description": "Text that occurs in that rendering, holding no \\v or \\q marker.", "type": "string"}
         }
       }
     },

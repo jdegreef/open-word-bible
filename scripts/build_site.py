@@ -1278,8 +1278,9 @@ def all_records():
 
 
 def plain(text):
-    """Rendering text as a reader sees it with the default settings."""
-    return markup.VERSE.sub("", markup.render(text)).strip()
+    """Rendering text as a reader sees it with the default settings, on one
+    line: verse markers dropped, poetic line breaks (\\q) read as spaces."""
+    return markup.flat(markup.VERSE.sub("", markup.render(text))).strip()
 
 
 # The worked example on the home page: a record and one of its decisions.
@@ -2241,7 +2242,8 @@ def search_documents(lang):
             verse = refs.parse(r["refs"][0]).verse
             doc = {"k": "v", "bk": p.book, "c": p.chapter, "v": verse,
                    "vv": [refs.parse(v).verse for v in r["refs"]], "u": url(lang, p.url),
-                   "x": r["renderings"][shown]}
+                   # Search shows and matches text on one line: no line markers.
+                   "x": {level: markup.flat(text) for level, text in r["renderings"][shown].items()}}
             if shown != lang:
                 doc["l"] = shown
             docs.append(doc)
