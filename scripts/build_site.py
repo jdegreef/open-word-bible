@@ -932,10 +932,17 @@ def chapter_page(book, chapter, lang="en"):
 <div class="settings" id="settings">
 <div class="controls">
   {control("level", "level", [(code, levels[code]) for code in "LBR"])}
+  <div class="wording-wrap">
+  <button type="button" class="wording-toggle" id="wording-toggle" aria-expanded="false" aria-controls="wording">
+    <span class="wording-label">{t(lang, "reader.wording")}</span> <span class="wording-summary" id="wording-summary"></span>
+  </button>
+  <div class="wording" id="wording">
   {control("gender", "gender", [("0", t(lang, "reader.inclusive")), ("1", t(lang, "reader.traditional"))])}
   {title_control}
   {control("pronouns", "deity_pronoun", [("0", t(lang, "reader.he")), ("1", t(lang, "reader.He"))])}{units}{plural}
   {control("headings", "headings", [("0", t(lang, "reader.show")), ("1", t(lang, "reader.hide"))])}
+  </div>
+  </div>
   {control("view", "view", [("0", t(lang, "reader.study")), ("1", t(lang, "reader.reading")),
                             ("2", t(lang, "reader.parallel")), ("3", t(lang, "reader.interlinear"))], " view-control")}
 </div>
