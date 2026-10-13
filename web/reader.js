@@ -18,7 +18,7 @@
   // The reading language is the page's (/es/... is Spanish); the footer
   // switches it. The other settings are kept across pages and languages.
   var settings = { level: "B", gender: 0, christos: 0, divine_name: 0, deity_pronoun: 0, units: 0, plural_you: 0, view: 0,
-                   headings: 0, uncertain: 0, partner: "" };
+                   headings: 0, uncertain: 0, partner: "", script: 0 };
   try {
     var saved = JSON.parse(localStorage.getItem(STORE) || "{}");
     for (var k in settings) if (k in saved) settings[k] = saved[k];
@@ -1063,12 +1063,17 @@
     var key = keyNotes();
     if (key) panel.appendChild(key);
 
-    panel.appendChild(el("h3", null, t("greek")));
+    var wordsHead = el("div", "words-head");
+    wordsHead.appendChild(el("h3", null, t("greek")));
+    wordsHead.appendChild(scriptControl());
+    panel.appendChild(wordsHead);
     // Interlinear: each Greek word (or Hebrew morpheme) over its gloss. Tapping one shows its
     // dictionary form, Strong's number and grammar, and lights up every
-    // decision that names it.
+    // decision that names it. The Script setting shows the original
+    // letters (0), a transliteration (1) or both (2); transliterated
+    // Hebrew reads left to right.
     var greek = el("div", "interlinear");
-    if (HEBREW) greek.dir = "rtl";
+    if (HEBREW && settings.script !== 1) greek.dir = "rtl";
     var info = el("div", "wordinfo");
     info.setAttribute("aria-live", "polite");
     info.hidden = true;
@@ -1076,9 +1081,12 @@
       var w = el("button", "word iw");
       w.type = "button";
       w.dataset.id = word.id;
-      var g = el("span", "iw-g", word.text + word.after.trim());
-      g.lang = DATA.source;
-      w.appendChild(g);
+      if (settings.script !== 1) {
+        var g = el("span", "iw-g", word.text + word.after.trim());
+        g.lang = DATA.source;
+        w.appendChild(g);
+      }
+      if (settings.script !== 0) w.appendChild(el("span", "iw-t", (word.translit + latinAfter(word)) || "\u00a0"));
       // MACULA Hebrew glosses join words with dots: "he.created".
       w.appendChild(el("span", "iw-e", HEBREW ? word.gloss.replace(/\./g, " ") : word.gloss));
       w.addEventListener("mouseenter", function () { light([word.id]); });
@@ -1093,7 +1101,7 @@
         head.appendChild(lemma);
         var strong = word.strong ? (HEBREW ? " H" + word.strong.replace(/^0+/, "") : " G" + word.strong) : "";
         head.appendChild(el("span", "wi-label", t("lemma") + (strong ? " \u00b7 " + t("strong") + strong : "")));
-        if (word.transliteration) head.appendChild(el("span", "wi-label", word.transliteration));
+        if (word.translit) head.appendChild(el("span", "wi-label", word.translit));
         info.appendChild(head);
         var key = (word.lang === "A" ? "A:" : "") + word.morph;
         info.appendChild(el("p", "wi-grammar", DATA.grammar[key][settings.lang]));
@@ -1584,6 +1592,31 @@
         }, "image/png");
       });
     });
+  }
+
+  // A word's punctuation on the Latin line: maqaf joins Hebrew words with
+  // a hyphen; the codex's other marks are left out.
+  function latinAfter(word) {
+    if (!HEBREW) return word.after.trim();
+    return word.after.indexOf("\u05be") >= 0 ? "-" : "";
+  }
+
+  // The word panel's switch between original letters, transliteration
+  // and both (settings.script), kept with the other reader settings.
+  function scriptControl() {
+    var seg = el("span", "seg seg-small");
+    seg.setAttribute("data-setting", "script");
+    seg.setAttribute("role", "group");
+    seg.setAttribute("aria-label", t("script_label"));
+    t("script_options").forEach(function (label, v) {
+      var b = el("button", null, label);
+      b.type = "button";
+      b.setAttribute("data-value", String(v));
+      b.setAttribute("aria-pressed", settings.script === v ? "true" : "false");
+      b.addEventListener("click", function () { setSetting("script", v); });
+      seg.appendChild(b);
+    });
+    return seg;
   }
 
   // On narrow screens the panel is a bottom sheet over the text (see .panel

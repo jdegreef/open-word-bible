@@ -1259,6 +1259,13 @@ body.plain .echo-tags { display: none; }
 .interlinear[dir="rtl"] .iw { align-items: flex-end; text-align: right; }
 .interlinear[dir="rtl"] .iw-verse { padding: 6px 6px 0 2px; }
 .interlinear[dir="rtl"] .iw-e { direction: ltr; unicode-bidi: isolate; }
+/* The word-by-word heading with the Original / Transliteration / Both
+   switch (settings.script in web/reader.js). */
+.words-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 12px; margin: 20px 0 8px; }
+.words-head h3 { margin: 0; }
+.seg-small button { font-size: 12.5px; padding: 3px 9px; }
+.iw-t { font-family: var(--serif); font-size: 16px; line-height: 1.3; font-style: italic; }
+.iw-g + .iw-t { font-size: 13.5px; color: var(--muted); }
 .iw-e { font-family: var(--sans); font-size: 12px; line-height: 1.3; color: var(--muted); max-width: 13ch; }
 .iw-verse { font-family: var(--sans); font-size: 12px; font-weight: 700; color: var(--accent); align-self: flex-start; padding: 6px 2px 0 6px; }
 /* Greek and the English it became (record alignments), lit together. */
