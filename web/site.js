@@ -94,8 +94,21 @@
   function panel(t) { return document.getElementById(t.getAttribute("aria-controls")); }
 
   function setOpen(t, show) {
-    panel(t).hidden = !show;
+    var p = panel(t);
+    p.hidden = !show;
     t.setAttribute("aria-expanded", show ? "true" : "false");
+    if (show) keepOnScreen(p);
+  }
+
+  // A panel is centred under its trigger; nudge it back inside the window
+  // (16px clear of each edge) when that would run off one side.
+  function keepOnScreen(p) {
+    p.style.setProperty("--dd-shift", "0px");
+    if (getComputedStyle(p).position !== "absolute") return;
+    var r = p.getBoundingClientRect();
+    var room = document.documentElement.clientWidth - 16;
+    var shift = r.left < 16 ? 16 - r.left : r.right > room ? room - r.right : 0;
+    p.style.setProperty("--dd-shift", shift + "px");
   }
 
   function openOne(t) {

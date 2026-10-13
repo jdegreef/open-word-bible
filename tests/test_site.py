@@ -171,6 +171,16 @@ class SiteTest(unittest.TestCase):
         for name in ("SBL Greek New Testament", "MACULA Greek", "Open Scriptures Hebrew Bible"):
             self.assertIn(name, about)
 
+    def test_beliefs_page_sets_out_the_creed_vision_and_values(self):
+        page = (self.out / "about" / "beliefs" / "index.html").read_text(encoding="utf-8")
+        self.assertIn("I believe in God, the Father almighty", page)
+        self.assertIn("Apostles' Creed", page)
+        for heading in ("Our vision", "Our mission", "What guides the work"):
+            self.assertIn(f"<h2>{heading}</h2>", page)
+        self.assertEqual(page.count("<li><strong>"), 5)
+        # The About menu and the footer both link to it.
+        self.assertGreaterEqual(page.count('href="/about/beliefs/"'), 2)
+
     def test_about_page_renders_markdown_links(self):
         about = (self.out / "about" / "index.html").read_text(encoding="utf-8")
         self.assertIn('<a href="https://github.com/seven1m/open-bibles">seven1m/open-bibles</a>', about)
@@ -235,6 +245,13 @@ class SiteTest(unittest.TestCase):
         self.assertIn('href="/read/#jhn"', header)
         self.assertIn('href="/read/#php"', header)
         self.assertNotIn('class="chap', header)
+        # Continue reading heads the Read menu, hidden until web/site.js
+        # finds a place; GitHub is under About, not a header button.
+        read_panel = header[header.index('id="dd-read"'):header.index('id="dd-articles"')]
+        self.assertIn('<a class="dd-resume" data-resume hidden', read_panel)
+        self.assertNotIn(f'class="tool-btn" href="{build_site.GITHUB_URL}"', header)
+        about_panel = header[header.index('id="dd-about"'):]
+        self.assertIn(f'href="{build_site.GITHUB_URL}"', about_panel)
         # ...grouped by testament, Old before New.
         read = header[header.index('id="dd-read"'):header.index('id="dd-articles"')]
         self.assertLess(read.index(">Old Testament<"), read.index('href="/read/#gen"'))

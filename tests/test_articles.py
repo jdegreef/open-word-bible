@@ -78,6 +78,13 @@ class ArticlesTest(unittest.TestCase):
         first = min(self.articles, key=lambda a: a["order"])
         self.assertIn(build_site.article_url(first), home)
 
+    def test_menu_titles_are_shorter_than_titles(self):
+        # nav_title is a short title for the header menu, in every language.
+        for lang in build_site.LANGUAGES:
+            for a in build_site.load_articles(lang):
+                if "nav_title" in a:
+                    self.assertLess(len(a["nav_title"]), len(a["title"]), (lang, a["slug"]))
+
     def test_every_article_has_a_known_section(self):
         for a in self.articles:
             self.assertIn(a["section"], build_site.SECTIONS, a["slug"])

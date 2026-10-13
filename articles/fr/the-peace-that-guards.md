@@ -3,6 +3,7 @@ title: "La paix qui monte la garde : Philippiens 4:6–7"
 summary: Les paroles de Paul sur l'inquiétude et la prière, lues de près. Un verbe militaire, une promesse plutôt qu'une récompense, et une reconnaissance qui n'attend pas la réponse.
 date: 2026-10-10
 order: 8
+nav_title: La paix qui monte la garde
 section: passage
 ---
 Philippiens 4:6–7 est l'un des passages les plus aimés des lettres de Paul, et l'un des plus cités aux personnes angoissées. Lu de près, il dit plus que "ne vous inquiétez pas".
