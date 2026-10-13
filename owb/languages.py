@@ -22,11 +22,6 @@ ORIGINAL = {lang["code"]: lang for lang in _DATA["original"]}
 CODES = tuple(READING)
 
 
-def name(code):
-    """A language's English name: "Spanish", "Greek"."""
-    return (READING.get(code) or ORIGINAL[code])["name"]
-
-
 def native(code):
     """A reading language's own name: "Español"."""
     return READING[code]["native"]
