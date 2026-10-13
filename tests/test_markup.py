@@ -1,6 +1,12 @@
+import json
 import unittest
+from pathlib import Path
 
 from owb import markup
+
+# Shared with tests/js/markup.test.mjs, which runs the same cases against
+# web/markup.js (the reader's copy of these rules).
+VECTORS = json.loads((Path(__file__).parent / "markup_vectors.json").read_text(encoding="utf-8"))
 
 TEXT = "the light of {{gender:all people|men}}, the {{christos:Messiah|Christ}}"
 
@@ -52,6 +58,28 @@ class MarkupTest(unittest.TestCase):
                             ([" "], "empty")):
             with self.assertRaisesRegex(ValueError, reason):
                 markup.alignment_ranges(text, bad)
+
+
+class VectorsTest(unittest.TestCase):
+    def test_settings_match_the_reader(self):
+        self.assertEqual(list(markup.SETTINGS), VECTORS["settings"])
+
+    def test_cases(self):
+        for case in VECTORS["cases"]:
+            with self.subTest(case["name"]):
+                rendered = markup.render(case["text"], case["settings"])
+                self.assertEqual(rendered, case["rendered"])
+                if "verses" in case:
+                    self.assertEqual([list(p) for p in markup.split_verses(rendered)], case["verses"])
+
+    def test_known_differences(self):
+        for case in VECTORS["differences"]:
+            with self.subTest(case["name"]):
+                if case["kind"] == "render":
+                    self.assertEqual(markup.render(case["text"], case["settings"]), case["python"])
+                else:
+                    self.assertEqual([list(p) for p in markup.split_verses(case["text"])], case["python"])
+
 
 if __name__ == "__main__":
     unittest.main()

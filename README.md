@@ -107,8 +107,10 @@ option is the default:
 
     the light of {{gender:all people|men}}
 
-Settings: `gender`, `christos`, `divine_name`, `units`, `deity_pronoun`,
-`spelling`. `owb/markup.py` lists and renders the spans.
+Settings: `gender`, `christos`, `divine_name`, `deity_pronoun`, `units`,
+`plural_you` (a future `spelling` setting needs a reader control first).
+`owb/markup.py` and `web/markup.js` list and render the spans;
+`tests/markup_vectors.json` holds the two to the same answers.
 
 ## Licences
 
