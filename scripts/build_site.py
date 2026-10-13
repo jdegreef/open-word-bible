@@ -386,7 +386,7 @@ def nav_menus(lang):
             cols = 1 if len(rows) <= MENU_BOOKS_PER_COLUMN else 2
             testaments.append(f'<div class="dd-col" style="--cols: {cols}"><p class="dd-head">{t(lang, "footer." + key)}</p>'
                               f'<div class="dd-books">{"".join(rows)}</div></div>')
-    read = (f'<div class="dd-testaments">{"".join(testaments)}</div>'
+    read = (f'{resume_link(lang, "dd-resume")}<div class="dd-testaments">{"".join(testaments)}</div>'
             f'{all_link(url(lang, "/read/"), t(lang, "nav.all_books"))}')
 
     # The first few articles of each section, by their short menu titles;
@@ -452,7 +452,6 @@ def site_header(lang, current, path=None, lang_path=None, translated=LANGUAGES):
 <div class="tools">
 <a class="tool-btn search-btn" href="{url(lang, "/search/")}" aria-label="{t(lang, "nav.search")}" title="{t(lang, "nav.search")}" aria-keyshortcuts="Control+K Meta+K">{icon(ICONS["search"])}<span class="search-label">{t(lang, "nav.search")}</span><kbd class="search-kbd" hidden>Ctrl K</kbd></a>
 {account_menu(lang)}
-<a class="tool-btn" href="{GITHUB_URL}" aria-label="{t(lang, "tools.github")}" title="GitHub">{icon(ICONS["github"])}</a>
 {colour_menu(lang, lang_path, translated)}
 <button type="button" class="tool-btn menu-btn" aria-expanded="false" aria-controls="site-nav" aria-label="{t(lang, "nav.menu")}">{icon(ICONS["menu"], 22)}{icon(ICONS["close"], 22)}</button>
 </div>
