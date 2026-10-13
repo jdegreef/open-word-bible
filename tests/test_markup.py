@@ -66,6 +66,10 @@ class MarkupTest(unittest.TestCase):
         self.assertEqual([text[s:e] for s, e in ranges],
                          ["the light", "{{gender:all people|men}}", "the light"])
         self.assertEqual(ranges[2][0], text.rindex("the light"))
+        # A span is a whole word: "I" is not the start of "If".
+        text2 = "If I go, I will come"
+        self.assertEqual([text2[s:e] for s, e in markup.alignment_ranges(text2, ["I", "I"])], ["I", "I"])
+        self.assertEqual(markup.alignment_ranges(text2, ["I"])[0][0], 3)
         for bad, reason in ((["shines", "light"], "after the previous"),
                             (["darkness"], "not found in rendering"),
                             (["of {{gender:all"], "cuts a setting span"),
