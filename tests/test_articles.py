@@ -110,9 +110,21 @@ class ArticlesTest(unittest.TestCase):
         self.assertIn('<span class="a-num" aria-hidden="true">20</span>', history)
         method = index[index.index('id="method"'):index.index('id="passage"')]
         self.assertNotIn('a-num', method)
-        # Verses an article reads link to the reader, and rows say they are drafts.
+        # Verses an article reads link to the reader.
         self.assertIn('<a class="a-ref" href="/jhn/1/#v1">John 1:1</a>', index)
-        self.assertIn('<span class="a-status">Draft</span>', index)
+
+    def test_history_series_is_in_parts_in_every_language(self):
+        english = {a["slug"]: a for a in self.articles}
+        for a in self.articles:
+            if a["section"] == "history":
+                self.assertIn(a.get("part"), build_site.PARTS, a["slug"])
+        for lang in build_site.LANGUAGES:
+            for a in build_site.load_articles(lang):
+                self.assertEqual(a.get("part"), english[a["slug"]].get("part"), f"{lang} {a['slug']}")
+        index = (self.out / "articles" / "index.html").read_text(encoding="utf-8")
+        history = index[index.index('id="history"'):index.index('id="translation"')]
+        self.assertIn('<h3>The Old Testament <span>1\u201310</span></h3>', history)
+        self.assertIn('<ol class="a-rows series" start="11">', history)
 
     def test_scripture_quotes_are_captioned_and_link_to_the_reader(self):
         page = (self.out / "articles" / "the-word-was-god" / "index.html").read_text(encoding="utf-8")

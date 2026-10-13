@@ -4,6 +4,7 @@ summary: Letters dictated to secretaries and carried by friends, Gospels drawn f
 date: 2026-10-11
 order: 31
 section: history
+part: nt
 ---
 The New Testament was written much faster than the Old. Its twenty-seven books were all composed within about seventy years of the death of Jesus, most of them probably within forty or fifty. They were written in Greek, the common language of the Roman East, by a small number of authors, mostly Jewish followers of Jesus. This article looks at how they were written and how they first circulated.
 

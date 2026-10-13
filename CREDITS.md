@@ -72,6 +72,11 @@ applies in the United Kingdom), Young's Literal Translation (New Testament)
 and the Reina-Valera 1909. These are used for comparison and review only; Open
 Word Bible is translated from the Hebrew and Greek.
 
+The World English Bible and the Reina-Valera 1909 verse texts are kept in
+`data/comparison/`. Where a note names a verse Open Word Bible has not yet
+translated, the reader shows that verse from one of them, labelled as a
+comparison text and not Open Word Bible wording.
+
 ## Fonts
 
 The reading text and Greek are set in Gentium Book Plus, Copyright (c)

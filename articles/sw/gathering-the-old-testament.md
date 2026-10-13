@@ -4,6 +4,7 @@ summary: Ni vitabu gani vilivyo sehemu ya maandiko matakatifu ya Kiebrania, na n
 date: 2026-10-11
 order: 30
 section: history
+part: ot
 ---
 Kuandika kitabu ni jambo moja. Kuutambua mkusanyiko wa vitabu kuwa maandiko matakatifu, orodha thabiti yenye mwanzo na mwisho, ni jambo lingine. Neno la orodha ya aina hiyo ni **kanoni**, kutoka neno la Kigiriki la fimbo ya kupimia au kanuni. Makala hii inaangalia jinsi vitabu vya Biblia ya Kiebrania, yaani Agano la Kale la Kikristo, vilivyokuja kukusanywa kuwa kanoni, na kwa nini Biblia za Kiyahudi, za Kiprotestanti, za Kikatoliki na za Kiorthodoksi bado hazina orodha ile ile kabisa.
 

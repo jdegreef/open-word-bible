@@ -4,6 +4,7 @@ summary: How the printing press fixed the Bible's text for the first time, how E
 date: 2026-10-11
 order: 39
 section: history
+part: today
 ---
 For most of its history, every copy of the Bible was unique. Each was written by hand, and each had its own small mistakes and corrections. The invention of printing with movable type in the fifteenth century changed that. For the first time, thousands of identical copies of one text could be made. That was a great gift, but it also brought a new problem: whatever text happened to be printed first could become fixed for centuries, mistakes and all.
 

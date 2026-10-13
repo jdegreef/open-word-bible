@@ -4,6 +4,7 @@ summary: Zaidi ya karne mbili kabla ya Yesu, Wayahudi wa Misri walitafsiri vitab
 date: 2026-10-11
 order: 29
 section: history
+part: ot
 ---
 Tafsiri ya kwanza ya Biblia haikufanywa na Wakristo, wala haikufanywa kwa Kilatini au Kiingereza. Ilifanywa na Wayahudi, huko Misri, kwa Kigiriki, kuanzia karne ya tatu K.K. Inaitwa **Septuaginta**, kutoka neno la Kilatini la "sabini," nayo ni mojawapo ya vitabu muhimu zaidi katika historia ya Biblia.
 
