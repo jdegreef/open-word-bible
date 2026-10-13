@@ -294,6 +294,18 @@ class ValidateTest(unittest.TestCase):
             self.assertNotIn("plural_you", json.dumps(record["renderings"]["en"]))
         self.assertEqual(validate.validate_file(path), [])
 
+    def test_plural_you_outside_spanish_fails(self):
+        record = example_records()[0]
+        record["renderings"]["en"]["R"] += " {{plural_you:you all|you}}"
+        self.assertIn("renderings.en.R: plural_you is not a setting in this language",
+                      validate.validate_record(record))
+
+    def test_rendering_in_a_language_not_in_the_registry_fails(self):
+        record = example_records()[0]
+        record["renderings"]["pt"] = copy.deepcopy(record["renderings"]["en"])
+        self.assertIn("renderings: 'pt' is not a language in data/languages.json",
+                      validate.validate_record(record))
+
 
 if __name__ == "__main__":
     unittest.main()

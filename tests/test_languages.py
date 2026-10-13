@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import build_site  # noqa: E402
+from owb import languages, markup, morph  # noqa: E402
 from tests.site_build import built_site  # noqa: E402
 
 OTHERS = [lang for lang in build_site.LANGUAGES if lang != "en"]
@@ -39,6 +40,30 @@ class CatalogTest(unittest.TestCase):
             text = path.read_text(encoding="utf-8")
             for script, (pattern, _) in validate._SCRIPTS.items():
                 self.assertEqual(pattern.findall(text), [], f"{path.name}: {script}")
+
+
+class RegistryTest(unittest.TestCase):
+    """data/languages.json: each language listed there has the data the site
+    needs, and nothing is translated into a language it does not list."""
+
+    def test_every_language_has_a_catalog_and_every_catalog_a_language(self):
+        catalogs = {path.stem for path in (ROOT / "i18n").glob("*.json")}
+        self.assertEqual(set(languages.CODES), catalogs)
+
+    def test_english_comes_first(self):
+        self.assertEqual(languages.CODES[0], "en")
+
+    def test_every_language_has_its_names_and_grammar_words(self):
+        for code, lang in languages.READING.items():
+            self.assertTrue(lang["name"] and lang["native"] and "{}" in lang["quotes"], code)
+            self.assertIn(code, morph.WORDS)
+            self.assertIn(code, build_site.CHAPTER_NAMES["PSA"])
+
+    def test_language_settings_are_reader_settings(self):
+        for code, lang in languages.READING.items():
+            for name, labels in lang.get("settings", {}).items():
+                self.assertIn(name, markup.SETTINGS, code)
+                self.assertGreaterEqual(len(labels), 2, code)
 
 
 class LanguagesTest(unittest.TestCase):

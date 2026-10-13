@@ -111,7 +111,7 @@ class MorphTest(unittest.TestCase):
         for words in data["words"].values():
             for w in words:
                 self.assertEqual(data["grammar"][w["morph"]]["en"], morph.describe(w["morph"]))
-                for lang in ("es", "fr", "sw"):
+                for lang in build_site.LANGUAGES[1:]:
                     self.assertEqual(data["grammar"][w["morph"]][lang], morph.describe(w["morph"], lang))
 
 
