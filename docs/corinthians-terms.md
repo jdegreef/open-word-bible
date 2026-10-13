@@ -33,7 +33,7 @@ enforced through `data/key_terms.json`.
 | *hikanos*, *hikanotēs* (2 Cor 2:16; 3:5–6) | sufficient | fit, made fit | able | As in Colossians 1:12; 3:5 answers 2:16. |
 | *katargeō* (2 Cor 3) | set aside | done away with | not going to last | "Fading" is footnoted. |
 | *enkakeō* (2 Cor 4:1, 16) | lose heart | give up | give up | |
-| *doulos* | slave | slave | slave | Never "servant" (style guide). |
+| *doulos* | slave | servant | servant | "Slave" at every level where slavery itself is the point: slave and free (1 Cor 7:21–23; 12:13) (style guide). |
 | *misthos* (1 Cor 3:8, 14) | wage | reward | reward | A decision says the reward is distinct from salvation. |
 | Vice list (1 Cor 5:10–11; 6:9–10) | sexually immoral, greedy, swindlers, idolaters, abusive, drunkards | same | commit sexual sins, greedy, cheat others, worship idols, insult people, get drunk | Same words wherever the list recurs. |
 | *porneia* | sexual immorality | sexual immorality | sexual sin | As in Colossians 3:5. |

@@ -120,7 +120,7 @@ English has one.
 | Rabbi | Rabi | |
 | Messiah (1:41) | Masihi | Plainly, no setting; the explanation is `{{christos:Kristo|Masihi}}`. |
 | disciples | wanafunzi | Every level. |
-| slave (*doulos*) | mtumwa | Never *mtumishi* (servant), as the English. |
+| slave (*doulos*) | mtumwa (L); mtumishi (B, R) | As the English: *mtumwa* at every level where slavery itself is the point (slave and free, bought and sold, slavery in Egypt, slavery to sin). |
 | Sir / Lord (*kyrie*) | bwana / Bwana | Swahili uses one word for both: lowercase *bwana* as polite address, *Bwana* for those who believe, as `docs/john-terms.md`. |
 | Woman (2:4) | Mama | At every level: a man calling a woman *Mwanamke!* to her face is rude in Swahili, while *Mama* is the respectful address to any older woman. Needs a decision where it first appears. |
 

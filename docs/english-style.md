@@ -122,9 +122,26 @@ others.
   for the divine name in the Old Testament, with Yahweh as a setting. In a New
   Testament quotation of the Old Testament the Greek has *kyrios*, so write
   "Lord" and note the Hebrew original in a decision (John 1:23).
-- "slave" for *doulos* at every level, as Philippians 1:1 and 2:7 have it,
-  with a meaning decision on what the person's position was; never the
-  softer "servant".
+- *doulos* (Greek) and *ʿeved* (Hebrew): "slave" in Literal, "servant" in
+  Balanced and Readable. A meaning decision says what the person's position
+  was (owned, not hired), so the hard edge of the word is kept in the record
+  and the Literal text, while Balanced and Readable avoid the picture of
+  modern chattel slavery that "slave" brings to most readers. Related words
+  follow: "slavery" becomes "servitude" or "bondage", "enslave" becomes
+  "make ... serve" or "hold in bondage", as the sentence allows.
+  Keep "slave" at every level where slavery itself is the point and
+  "servant" would change the meaning:
+  - slave set against free or freed (Galatians 3:28; 1 Corinthians 7:21–23;
+    Philemon 16; John 8:34–36);
+  - people bought, sold, owned as property, or released (Exodus 21;
+    Leviticus 25; Genesis 37:27–28);
+  - Israel's slavery in Egypt ("the house of slavery", Exodus 20:2);
+  - slavery to sin, the law or corruption, set against freedom (Romans 6;
+    Galatians 4–5; 2 Peter 2:19);
+  - *doulos* set against *diakonos* in one saying, where the step down
+    from "servant" to "slave" is the point (Matthew 20:26–27; Mark
+    10:43–44).
+  Such a sentence keeps a rendering decision saying why it stays "slave".
 - Modern English: no "thee", "thou", "-eth", "behold", "lo". "Brothers and
   sisters" through the gender setting, not "brethren".
 - No contractions at any level, Readable included: "do not", "it is", "will
