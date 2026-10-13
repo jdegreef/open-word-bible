@@ -76,6 +76,92 @@ class SiteTest(unittest.TestCase):
             words = {t["id"] for t in data["words"][vid]}
             self.assertEqual({t for t in seen if t in words}, words, vid)
 
+    def chapter_text(self, path):
+        page = (self.out / path / "index.html").read_text(encoding="utf-8")
+        return page, re.search(r'<div class="text" id="text">(.*?)</div>\s*<section class="notes"', page, re.S)[1]
+
+    def test_chapter_text_is_in_the_page(self):
+        # Without JavaScript the page still has the Balanced text at the
+        # default settings, a span per verse as the reader draws it.
+        for path in ("1ti/5", "jhn/1", "gen/1"):
+            page, text = self.chapter_text(path)
+            data = self.chapter_data(path)
+            verses = [str(build_site.refs.parse(v).verse) for v in
+                      dict.fromkeys(v for r in data["records"] for v in r["refs"])]
+            self.assertEqual(list(dict.fromkeys(re.findall(r'data-v="([^"]+)"', text))), verses, path)
+            self.assertEqual(re.findall(r"<sup>([^<]+)</sup>", text), verses, path)
+            self.assertNotIn("{{", text)
+            self.assertNotIn("\\v ", text)
+            for r in data["records"]:
+                default = build_site.markup.render(r["renderings"]["en"]["B"])
+                first = build_site.markup.VERSE.split(default)[0].strip()
+                self.assertIn(html.escape(first, quote=False), text, r["id"])
+                self.assertIn(f'data-record="{r["id"]}"', text)
+            for rid, heading in data["headings"].items():
+                shown = html.escape(build_site.markup.render(heading["en"]), quote=False)
+                self.assertIn(f'<h2 class="section-head">{shown}</h2>', text)
+            self.assertIn("<noscript>", page)
+            self.assertIn(build_site.t("en", "reader.noscript", level="Balanced"), page)
+        self.assertIn('<sup class="fn" aria-hidden="true"><span class="fn-mark">a</span></sup>',
+                      self.chapter_text("1ti/5")[1])
+
+    def test_chapter_text_falls_back_to_english(self):
+        # A sentence not yet in the page's language is shown in English, in
+        # grey, under the notice that says so.
+        for lang in build_site.LANGUAGES:
+            for p in build_site.passages():
+                missing = [r for r in p.records if lang not in r["renderings"]]
+                if not missing:
+                    continue
+                page, text = self.chapter_text(build_site.url(lang, p.url).strip("/"))
+                self.assertIn('class="verse fallback" lang="en" data-v=', text)
+                self.assertIn(f'data-record="{missing[0]["id"]}"', text)
+                self.assertNotIn('id="partial" hidden', page)
+                return
+        self.skipTest("every chapter is in every language")
+
+    def test_disputed_passage_is_set_apart_in_the_text(self):
+        _, text = self.chapter_text("jhn/8")
+        block = re.search(r'<div class="disputed-block"><div class="disputed-note">.*?</div>(.*?)</div>', text, re.S)
+        self.assertIsNotNone(block)
+        self.assertIn('data-v="7:53"', block[1])
+        self.assertIn('data-v="11"', block[1])
+        self.assertNotIn('data-v="12"', block[1])
+
+    def test_chapter_pages_carry_linked_data(self):
+        for path, source in (("1ti/5", "SBLGNT"), ("gen/1", "Open Scriptures Hebrew Bible"),
+                             ("es/jhn/1", "SBLGNT")):
+            page = (self.out / path / "index.html").read_text(encoding="utf-8")
+            raw = re.search(r'<script type="application/ld\+json">(.*?)</script>', page, re.S)[1]
+            data = json.loads(raw)
+            self.assertEqual(data["@type"], "Chapter")
+            self.assertEqual(data["url"], build_site.SITE_URL + "/" + path + "/")
+            self.assertEqual(data["inLanguage"], "es" if path.startswith("es/") else "en")
+            self.assertEqual(data["isPartOf"]["name"], "Open Word Bible")
+            self.assertEqual(data["license"], "https://creativecommons.org/publicdomain/zero/1.0/")
+            # Nothing is reviewed yet.
+            self.assertEqual(data["creativeWorkStatus"], "Draft")
+            self.assertIn(source, data["isBasedOn"]["name"])
+            self.assertEqual(data["translationOfWork"], data["isBasedOn"])
+        # Nothing in it can close its script element.
+        records = build_site.load_chapter("1TI", 5)[0]
+        title = "</script><script>alert(1)</script>"
+        script = build_site.chapter_ld(records, "1TI", 5, title)
+        self.assertEqual(script.count("</"), 1)
+        self.assertEqual(json.loads(script[script.index(">") + 1:-len("</script>")])["name"], title)
+
+    def test_footer_counts_the_books_not_started(self):
+        page = (self.out / "1ti" / "5" / "index.html").read_text(encoding="utf-8")
+        index = re.search(r'<nav class="foot-books".*?</nav>', page, re.S)[0]
+        ot = build_site.refs.OT_CODES
+        have = {b for b, _ in build_site.books("en")}
+        missing = [code for code in ot if code not in have]
+        for code in ot:
+            self.assertEqual(f'>{build_site.BOOK_NAMES[code]["en"]}<' in index,
+                             code in have or len(missing) == 1, code)
+        if len(missing) > 1:
+            self.assertIn(f'href="/read/">{build_site.t("en", "footer.not_started", n=len(missing))}</a>', index)
+
     def test_chapter_has_a_notes_section(self):
         page = (self.out / "jhn" / "1" / "index.html").read_text(encoding="utf-8")
         self.assertIn('id="notes"', page)
