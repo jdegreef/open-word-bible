@@ -148,7 +148,30 @@ EMAIL_USE_TLS = not EMAIL_USE_SSL   # never send the SMTP password in the clear
 EMAIL_TIMEOUT = 10
 DEFAULT_FROM_EMAIL = os.environ.get("DEFAULT_FROM_EMAIL", "Open Word Bible <noreply@openwordbible.org>")
 
+# Security headers (django.middleware.security.SecurityMiddleware). Django's
+# defaults already send X-Frame-Options: DENY, Referrer-Policy: same-origin
+# and Cross-Origin-Opener-Policy: same-origin.
+SECURE_CONTENT_TYPE_NOSNIFF = True
+
+# Cookies: the site signs in with an API token in the Authorization header
+# (accounts/auth.py), never a cookie, so the cross-origin site -> API calls
+# need no SameSite=None cookie. The only cookies are the admin's session and
+# CSRF cookies, on the API host itself, and Google sign-in's short-lived
+# state cookie (accounts/google.py, SameSite=Lax so it survives Google's
+# top-level redirect back). Django's SameSite=Lax default suits them all.
+SESSION_COOKIE_HTTPONLY = True
+
 if not DEBUG:
     SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
+    # A year of HTTPS-only, as the reader site sends (render.yaml); not
+    # preloaded, so it can still be undone.
+    SECURE_HSTS_SECONDS = 31536000
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_PRELOAD = False
+    # check --deploy: Render redirects http to https at its edge (W008; a
+    # redirect here could also turn away Render's health check of /healthz,
+    # which may come over plain http), and preloading is left out on
+    # purpose (W021).
+    SILENCED_SYSTEM_CHECKS = ["security.W008", "security.W021"]
