@@ -89,6 +89,7 @@ ICONS = {
     "code": '<path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/>',
     "users": '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6 6 0 0 1 3.5 6"/>',
     "check": '<path d="M20 6 9 17l-5-5"/>',
+    "calendar": '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',
     "bookmark": '<path d="M6 3h12v18l-6-4-6 4z"/>',
     "listen": '<path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a10 10 0 0 1 0 14"/>',
     "download": '<path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/>',
@@ -414,7 +415,8 @@ def nav_menus(lang):
             testaments.append(f'<div class="dd-col" style="--cols: {cols}"><p class="dd-head">{t(lang, "footer." + key)}</p>'
                               f'<div class="dd-books">{"".join(rows)}</div></div>')
     read = (f'{resume_link(lang, "dd-resume")}<div class="dd-testaments">{"".join(testaments)}</div>'
-            f'{all_link(url(lang, "/read/"), t(lang, "nav.all_books"))}')
+            f'<div class="dd-alls">{all_link(url(lang, "/plans/"), t(lang, "nav.plans"))}'
+            f'{all_link(url(lang, "/read/"), t(lang, "nav.all_books"))}</div>')
 
     # The first few articles of each section, by their short menu titles;
     # the rest are on the articles page.
@@ -547,7 +549,8 @@ def book_index(lang):
     return (f'<nav class="foot-books" aria-labelledby="foot-read"><h2 id="foot-read">{t(lang, "footer.read")}</h2>'
             f'<div class="testaments">{testament("old_testament", refs.OT_CODES)}'
             f'{testament("new_testament", refs.BOOK_CODES[39:])}</div>'
-            f'<p class="foot-key">{key}<a href="{url(lang, "/read/")}">{t(lang, "nav.all_books")}'
+            f'<p class="foot-key">{key}<a href="{url(lang, "/plans/")}">{t(lang, "nav.plans")}'
+            f'{icon(ICONS["arrow"], 15)}</a><a href="{url(lang, "/read/")}">{t(lang, "nav.all_books")}'
             f'{icon(ICONS["arrow"], 15)}</a></p></nav>')
 
 
@@ -560,7 +563,9 @@ def language_items(lang, path, translated=LANGUAGES, mark=""):
     def target(code):
         if path is None:
             return "/"
-        return path if code in translated else "/articles/"
+        if code in translated:
+            return path
+        return "/plans/" if path.startswith("/plans/") else "/articles/"
 
     return "".join(
         f'<li><span lang="{code}" aria-current="true">{owb_languages.native(code)}{mark}</span></li>' if code == lang
@@ -1136,6 +1141,7 @@ def chapter_page(book, chapter, lang="en"):
     <noscript><p class="notice">{t(lang, "reader.noscript", level=levels["B"])}</p><style>{NOSCRIPT_STYLE}</style></noscript>
     <div class="text" id="text">{text}</div>
     <section class="notes" id="notes" aria-label="{t(lang, "reader.notes")}" hidden></section>
+    {plan_bar(book, chapter, lang)}
     {chapter_turns(book, chapter, lang)}
     {chapter_articles_html(book, chapter, lang)}
   </article>
@@ -1146,6 +1152,7 @@ def chapter_page(book, chapter, lang="en"):
 {chapter_ld(records, book, chapter, title, lang)}
 <script src="{asset("markup.js")}"></script>
 <script src="{asset("reader.js")}"></script>
+{plans_script()}
 """
     return page(lang, title, body, path=chapter_url(book, chapter), current="/read/",
                 card=og_card_chapter(book, chapter),
@@ -1547,7 +1554,8 @@ def read_page(lang="en"):
 <p class="eyebrow">{t(lang, "read.title")}</p>
 <h1>{t(lang, "read.heading")}</h1>
 <p class="dek">{t(lang, "read.dek")}</p>
-<p class="actions">{resume_link(lang)}<a class="button ghost" href="{url(lang, "/saved/")}">{icon(ICONS["bookmark"])}{t(lang, "saved.title")}</a></p>
+<p class="actions">{resume_link(lang)}<a class="button ghost" href="{url(lang, "/saved/")}">{icon(ICONS["bookmark"])}{t(lang, "saved.title")}</a>
+<a class="button ghost" href="{url(lang, "/plans/")}">{icon(ICONS["calendar"])}{t(lang, "nav.plans")}</a></p>
 </header>
 {cards}
 <section class="how" aria-labelledby="how-h">
@@ -1561,6 +1569,194 @@ def read_page(lang="en"):
 """
     return page(lang, t(lang, "read.title"), body, path="/read/", current="/read/",
                 description=t(lang, "meta.read_description"))
+
+
+# Reading plans (data/plans.json, web/plans.js): a book or a few, a day's
+# chapters at a time. A plan is offered in a language only when every chapter
+# in it is translated in that language. A reader's progress is kept in this
+# browser only (owb.plans), by web/plans.js.
+PLAN_DATA = ROOT / "data" / "plans.json"
+
+
+class Plan(NamedTuple):
+    id: str
+    name: dict
+    days: tuple  # of tuples of (book, chapter)
+
+
+@functools.lru_cache(maxsize=None)
+def load_plans():
+    """Every plan in data/plans.json, in its order."""
+    out = []
+    for p in json.loads(PLAN_DATA.read_text(encoding="utf-8"))["plans"]:
+        days = tuple(tuple((ref.split(".")[0], int(ref.split(".")[1])) for ref in day) for day in p["days"])
+        out.append(Plan(p["id"], p["name"], days))
+    return tuple(out)
+
+
+def drafted_chapters(lang):
+    """The (book, chapter) pairs a reader can read whole in lang: every verse
+    translated, every sentence in lang."""
+    return {(p.book, p.chapter) for p in passages_in(lang) if p.complete}
+
+
+def plan_readable(plan, drafted):
+    """Whether every chapter of plan is among drafted (drafted_chapters)."""
+    return all(bc in drafted for day in plan.days for bc in day)
+
+
+def available_plans(lang):
+    """The plans offered in lang: those it can read whole."""
+    drafted = drafted_chapters(lang)
+    return [p for p in load_plans() if plan_readable(p, drafted)]
+
+
+def plan_url(plan):
+    return f"/plans/{plan.id}/"
+
+
+def plan_ref(book, chapter, lang="en"):
+    """A whole chapter's name in a plan: "Mark 7", "Psalm 23"."""
+    return f"{chapter_book(book, lang)} {chapter}"
+
+
+def plan_length(plan, lang="en"):
+    """"16 days · a chapter a day"."""
+    daily = all(len(day) == 1 for day in plan.days)
+    return t(lang, "plans.length", n=len(plan.days)) + (f" &middot; {t(lang, 'plans.daily')}" if daily else "")
+
+
+def plan_books(plan, lang="en"):
+    """The books a plan reads, in its order: "Galatians · Ephesians"."""
+    codes = list(dict.fromkeys(b for day in plan.days for b, _ in day))
+    return " &middot; ".join(BOOK_NAMES[b][lang] for b in codes)
+
+
+def plan_dek(plan, lang="en"):
+    """Under a plan's name: its books, unless it reads one book (its name
+    says which), then its length."""
+    books_ = {b for day in plan.days for b, _ in day}
+    lead = f"{plan_books(plan, lang)} &middot; " if len(books_) > 1 else ""
+    return lead + plan_length(plan, lang)
+
+
+@functools.lru_cache(maxsize=None)
+def plans_json(lang):
+    """What web/plans.js needs for the plans offered in lang: its labels,
+    and each plan's name, page and days, each chapter with its name and
+    address in lang."""
+    plans = {p.id: {"name": p.name[lang], "url": url(lang, plan_url(p)),
+                    "days": [[{"b": b, "c": c, "n": plan_ref(b, c, lang), "u": url(lang, chapter_url(b, c))}
+                              for b, c in day] for day in p.days]}
+             for p in available_plans(lang)}
+    return json.dumps({"ui": catalog(lang)["plans.ui"], "plans": plans}, ensure_ascii=False, separators=(",", ":"))
+
+
+@functools.lru_cache(maxsize=None)
+def plans_json_url(lang):
+    digest = hashlib.sha256(plans_json(lang).encode("utf-8")).hexdigest()[:10]
+    return f"/plans-{lang}.json?v={digest}"
+
+
+def plans_attrs(lang):
+    """Where web/plans.js finds the plans: in lang, and in English for a plan
+    started in English that lang cannot offer yet."""
+    return f'data-plans="{plans_json_url(lang)}" data-plans-en="{plans_json_url("en")}"'
+
+
+def plans_script():
+    return f'<script src="{asset("plans.js")}" defer></script>'
+
+
+def plan_today(lang):
+    """The reader's current plan, filled in by web/plans.js: its name, the
+    day reached, a tick per day and a button to read that day's chapters.
+    Hidden without one."""
+    return (f'<section class="plan-today" data-plan-today {plans_attrs(lang)} '
+            f'data-plans-page="{url(lang, "/plans/")}" hidden aria-labelledby="plan-today-h"></section>')
+
+
+def plan_bar(book, chapter, lang="en"):
+    """At the end of a chapter that is the day's reading in the reader's
+    plan: the day, a button to mark it done, then the next day's chapter
+    (web/plans.js). Hidden otherwise."""
+    return (f'<div class="plan-bar" data-plan-bar data-book="{book}" data-chapter="{chapter}" '
+            f'{plans_attrs(lang)} aria-live="polite" hidden></div>')
+
+
+def plan_card(plan, lang="en"):
+    return (f'<li><a class="a-card plan-card" href="{url(lang, plan_url(plan))}" data-plan-card="{plan.id}">'
+            f'<span class="a-section">{plan_books(plan, lang)}</span>'
+            f'<span class="a-title">{html.escape(plan.name[lang])}</span>'
+            f'<span class="a-meta">{icon(ICONS["calendar"], 15)}{plan_length(plan, lang)}'
+            f'<span class="plan-mine" hidden> &middot; {t(lang, "plans.yours")}</span></span></a></li>')
+
+
+def plans_page(lang="en", plans=None):
+    """The plans offered in lang (available_plans), or, with none, a plain
+    word that none is ready yet and a link to the English ones."""
+    plans = available_plans(lang) if plans is None else plans
+    if plans:
+        listing = f'<ul class="a-grid plan-list">{"".join(plan_card(p, lang) for p in plans)}</ul>'
+    else:
+        listing = (f'<p class="plans-none">{t(lang, "plans.none", language=owb_languages.native(lang))} '
+                   f'<a href="{url("en", "/plans/")}" hreflang="en">{t(lang, "plans.none_link")}</a></p>')
+    body = f"""
+<header class="page-head">
+<p class="eyebrow">{t(lang, "plans.title")}</p>
+<h1>{t(lang, "plans.heading")}</h1>
+<p class="dek">{t(lang, "plans.dek")}</p>
+</header>
+{plan_today(lang)}
+<section class="plans" aria-labelledby="plans-h">
+<h2 id="plans-h" class="sr-only">{t(lang, "plans.title")}</h2>
+{listing}
+</section>
+{plans_script()}
+"""
+    return page(lang, t(lang, "plans.title"), body, path="/plans/", current="/read/",
+                description=t(lang, "meta.plans_description"))
+
+
+def plan_page(plan, lang="en", translated=LANGUAGES):
+    """One plan: its days, each with its chapters; buttons to start or stop
+    it and to mark days done (web/plans.js). translated is the languages
+    that offer it."""
+    n = len(plan.days)
+    days = []
+    for i, day in enumerate(plan.days, 1):
+        links = ", ".join(f'<a href="{url(lang, chapter_url(b, c))}">{plan_ref(b, c, lang)}</a>' for b, c in day)
+        days.append(f'<li class="plan-day" data-day="{i}"><span class="plan-day-n">{t(lang, "plans.day", n=i)}</span>'
+                    f'<span class="plan-day-chs">{links}</span>'
+                    f'<button type="button" class="plan-tick" data-plan-toggle aria-pressed="false" hidden '
+                    f'aria-label="{html.escape(t(lang, "plans.day_done", n=i))}">{icon(ICONS["check"], 16)}</button></li>')
+    name = html.escape(plan.name[lang])
+    body = f"""
+<header class="page-head">
+<p class="eyebrow"><a href="{url(lang, "/plans/")}">{t(lang, "plans.title")}</a></p>
+<h1>{name}</h1>
+<p class="dek">{plan_dek(plan, lang)}</p>
+<div class="plan-controls" data-plan-page="{plan.id}" data-total="{n}" {plans_attrs(lang)}>
+<p class="actions">
+<button type="button" class="button" data-plan-start data-continue="{html.escape(t(lang, "plans.continue"))}">{t(lang, "plans.start")}</button>
+<a class="button" data-plan-read hidden href="#"></a>
+<button type="button" class="button ghost" data-plan-stop hidden>{t(lang, "plans.stop")}</button>
+<button type="button" class="button ghost" data-plan-restart hidden>{t(lang, "plans.restart")}</button>
+</p>
+<p class="plan-status" data-plan-status aria-live="polite"></p>
+<p class="plan-kept">{t(lang, "plans.kept")}</p>
+</div>
+</header>
+<section class="plan-days-wrap" aria-labelledby="plan-days-h">
+<h2 id="plan-days-h">{t(lang, "plans.days")}</h2>
+<ol class="plan-days">
+{"".join(days)}
+</ol>
+</section>
+{plans_script()}
+"""
+    return page(lang, plan.name[lang], body, path=plan_url(plan), current="/read/", translated=translated,
+                description=t(lang, "meta.plan_description", name=plan.name[lang], days=n))
 
 
 def all_records():
@@ -1690,6 +1886,7 @@ def home_page(lang="en"):
 <p class="hero-sub">{t(lang, "home.sub")}</p>
 <p class="actions">{resume_link(lang)}<a class="button" href="{url(lang, "/read/")}">{icon(ICONS["book"])}{t(lang, "home.start")}</a>
 <a class="button ghost" href="#example-h">{t(lang, "home.how")}</a></p>
+{plan_today(lang)}
 <ul class="trust">
 <li>{icon(ICONS["gift"], 16)}{t(lang, "home.trust_free")}</li>
 <li>{icon(ICONS["scale"], 16)}{t(lang, "home.trust_cc0")}</li>
@@ -1720,6 +1917,7 @@ def home_page(lang="en"):
 {helper("sliders", 4)}
 </ul>
 </section>
+{plans_script()}
 """
     return page(lang, SITE_NAME, body, path="/", current="/")
 
@@ -2915,11 +3113,12 @@ def service_worker():
     """web/sw.js with the files to keep from the start (the styles, the
     scripts and each language's offline page). Its version is a hash of the
     whole, so a deploy that changes any of them installs a new worker."""
-    shell = [asset(n) for n in ("style.css", "site.js", "search.js", "markup.js", "reader.js")]
+    shell = [asset(n) for n in ("style.css", "site.js", "search.js", "markup.js", "reader.js", "plans.js")]
     shell += ["/favicon.svg", "/manifest.webmanifest"] + [url(lang, "/offline/") for lang in LANGUAGES]
     offline = {("" if lang == "en" else lang): url(lang, "/offline/") for lang in LANGUAGES}
-    current = [asset(n) for n in ("style.css", "site.js", "search.js", "markup.js", "reader.js", "account.js")]
+    current = [asset(n) for n in ("style.css", "site.js", "search.js", "markup.js", "reader.js", "account.js", "plans.js")]
     current += [word_uses()[1]] + [search_index_url(lang) for lang in LANGUAGES]
+    current += [plans_json_url(lang) for lang in LANGUAGES]
     text = ((ROOT / "web" / "sw.js").read_text(encoding="utf-8")
             .replace("__PRECACHE__", json.dumps(shell)).replace("__OFFLINE__", json.dumps(offline))
             .replace("__CURRENT__", json.dumps(current)))
@@ -2946,7 +3145,7 @@ FAVICON = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
 # letters, in canonical order (so "phil" is Philippians, not Philemon).
 BOOK_ALIASES = {"JHN": ["jn"], "PHP": ["flp", "fil"], "1JN": ["1jn"], "2JN": ["2jn"], "3JN": ["3jn"]}
 # The palette's page shortcuts, by catalog key.
-SEARCH_PAGES = (("nav.home", "/"), ("nav.read", "/read/"), ("nav.articles", "/articles/"),
+SEARCH_PAGES = (("nav.home", "/"), ("nav.read", "/read/"), ("nav.plans", "/plans/"), ("nav.articles", "/articles/"),
                 ("nav.about_project", "/about/"), ("nav.terms", "/terms/"), ("nav.credits", "/about/#credits"),
                 ("nav.help", "/#help"), ("tools.sign_in", "/login/"))
 
@@ -3125,7 +3324,7 @@ def sitemap(paths):
 def build(out):
     for cached in (nav_menus, footer_links, passages, asset, translated_verses, catalog, book_refs, name_cards, term_uses,
                    search_documents, search_index,
-                   search_index_url, word_uses, series_numbers, chapter_articles):
+                   search_index_url, word_uses, series_numbers, chapter_articles, load_plans, plans_json, plans_json_url):
         cached.cache_clear()
     if out.exists():
         shutil.rmtree(out)
@@ -3141,6 +3340,8 @@ def build(out):
         add("/about/", about_page(lang))
         add("/about/beliefs/", beliefs_page(lang))
         add("/search/", search_page(lang))
+        plans = available_plans(lang)
+        add("/plans/", plans_page(lang, plans), index=bool(plans))
         add("/terms/", terms_page(lang))
         for term in validate.KEY_TERMS.values():
             add(term_path(term), term_page(term, lang))
@@ -3160,6 +3361,14 @@ def build(out):
         add("/reset-password/", reset_page(lang), index=False)
         add("/offline/", offline_page(lang), index=False)
         add("/saved/", saved_page(lang), index=False)
+    # A plan's page is in the languages that offer it.
+    offered = {code: {p.id for p in available_plans(code)} for code in LANGUAGES}
+    for plan in load_plans():
+        langs = tuple(code for code in LANGUAGES if plan.id in offered[code])
+        for code in langs:
+            path = plan_url(plan)
+            pages[url(code, path)] = plan_page(plan, code, langs)
+            indexed.append(url(code, path))
     files = {(p.strip("/") + "/index.html").lstrip("/"): text for p, text in pages.items()}
     files.update(feeds)
     files["404.html"] = not_found_page()
@@ -3171,16 +3380,17 @@ def build(out):
     files["word-uses.json"] = word_uses()[0]
     for lang in LANGUAGES:
         files[f"search-{lang}.json"] = search_index(lang)
+        files[f"plans-{lang}.json"] = plans_json(lang)
     for rel, text in files.items():
         path = out / rel
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(text, encoding="utf-8")
-    for name in ("style.css", "markup.js", "reader.js", "site.js", "account.js", "search.js"):
+    for name in ("style.css", "markup.js", "reader.js", "site.js", "account.js", "search.js", "plans.js"):
         shutil.copy(ROOT / "web" / name, out / name)
     shutil.copytree(ROOT / "web" / "fonts", out / "fonts")
     shutil.copytree(ROOT / "web" / "icons", out / "icons")
     shutil.copytree(OG, out / "og", ignore=shutil.ignore_patterns("*.digest"))
-    return sorted(files) + ["markup.js", "reader.js", "search.js", "site.js", "style.css"]
+    return sorted(files) + ["markup.js", "plans.js", "reader.js", "search.js", "site.js", "style.css"]
 
 
 def main():
