@@ -2325,6 +2325,7 @@ def account_page(lang="en"):
 </div>
 <p class="form-note" id="name-note" role="status"></p>
 </form>
+<p class="synced">{a("synced")} <a href="{url(lang, "/saved/")}">{a("synced_link")}</a></p>
 <p><button class="button ghost" type="button" id="sign-out">{a("sign_out")}</button></p>
 </section>
 <div class="soon">

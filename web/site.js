@@ -262,21 +262,26 @@
 // (#at-12 scrolls to the verse without opening its notes).
 (function () {
   "use strict";
-  var place = null;
-  try { place = JSON.parse(localStorage.getItem("owb.place") || "null"); } catch (e) { /* none */ }
-  if (!place || !place.book || !place.chapter || !place.verse) return;
-  document.querySelectorAll("a[data-resume]").forEach(function (a) {
-    var names = JSON.parse(a.getAttribute("data-books"));
-    var name = names[place.book];
-    if (!name) return;
-    // A verse of the next chapter that a sentence runs into is "8:1".
-    var verse = String(place.verse);
-    var ref = name + " " + (verse.indexOf(":") >= 0 ? verse : place.chapter + ":" + verse);
-    // The chapter's address, as chapter_url in scripts/build_site.py makes it.
-    a.href = a.getAttribute("data-prefix") + "/" + place.book.toLowerCase() + "/" + place.chapter + "/#at-" + verse;
-    a.querySelector("span").textContent = a.getAttribute("data-label").replace("{ref}", ref);
-    a.hidden = false;
-  });
+  function fill() {
+    var place = null;
+    try { place = JSON.parse(localStorage.getItem("owb.place") || "null"); } catch (e) { /* none */ }
+    if (!place || !place.book || !place.chapter || !place.verse) return;
+    document.querySelectorAll("a[data-resume]").forEach(function (a) {
+      var names = JSON.parse(a.getAttribute("data-books"));
+      var name = names[place.book];
+      if (!name) return;
+      // A verse of the next chapter that a sentence runs into is "8:1".
+      var verse = String(place.verse);
+      var ref = name + " " + (verse.indexOf(":") >= 0 ? verse : place.chapter + ":" + verse);
+      // The chapter's address, as chapter_url in scripts/build_site.py makes it.
+      a.href = a.getAttribute("data-prefix") + "/" + place.book.toLowerCase() + "/" + place.chapter + "/#at-" + verse;
+      a.querySelector("span").textContent = a.getAttribute("data-label").replace("{ref}", ref);
+      a.hidden = false;
+    });
+  }
+  fill();
+  // A place from the reader's other devices (the sync below).
+  document.addEventListener("owb:synced", fill);
 })();
 
 // Reading offline (web/sw.js). The worker keeps the pages read lately; the
@@ -418,8 +423,9 @@
   }
   function remove(id) {
     var all = load();
-    delete all[id];
+    all[id] = { at: Date.now() };
     try { localStorage.setItem("owb.marks", JSON.stringify(all)); } catch (e) { /* ignore */ }
+    document.dispatchEvent(new Event("owb:marks"));
     draw();
   }
   function el(tag, cls, text) {
@@ -434,7 +440,8 @@
     var ids = Object.keys(all).filter(function (id) {
       var m = all[id], book = id.split(".")[0];
       if (data.order.indexOf(book) < 0) return false;
-      return filter === "all" || (filter === "bookmarks" ? m.b : m.h);
+      // A cleared mark ({at}) is kept only for syncing.
+      return filter === "all" ? m.b || m.h : filter === "bookmarks" ? m.b : m.h;
     }).sort(function (a, b) {
       var p = a.split("."), q = b.split(".");
       return (data.order.indexOf(p[0]) - data.order.indexOf(q[0])) || (p[1] - q[1]) || (p[2] - q[2]);
@@ -482,5 +489,90 @@
   });
   // Marks made or removed in another tab.
   window.addEventListener("storage", function (e) { if (e.key === "owb.marks") draw(); });
+  document.addEventListener("owb:synced", draw);
   draw();
+})();
+
+// Sync for a signed-in reader (backend accounts/reading.py): bookmarks,
+// highlights (owb.marks) and the reading place (owb.place) go to the account
+// and come back merged, the latest change to each verse winning, so they
+// follow the reader between devices. A sync sends this browser's whole copy;
+// it runs on loading a page when anything changed since the last sync (or
+// every two minutes, for the other devices' changes), soon after a mark
+// changes, on signing in, and, as best it can, when the page is hidden.
+// Offline, or signed out, everything stays in this browser as before.
+(function () {
+  "use strict";
+  var meta = document.querySelector('meta[name="owb-api"]');
+  if (!meta || !window.fetch) return;
+  var API = meta.content;
+  var SINCE = "owb.synced";   // sessionStorage: when this tab last synced
+  var SENT = "owb.sent";      // sessionStorage: a hash of what it sent
+  var running = false, again = false, timer = null, stopped = false;
+
+  function read(key, empty) {
+    try { return JSON.parse(localStorage.getItem(key) || "null") || empty; } catch (e) { return empty; }
+  }
+  function write(key, value) {
+    try { localStorage.setItem(key, JSON.stringify(value)); } catch (e) { /* full or blocked */ }
+  }
+  function token() { var a = read("owb.account", null); return a && a.token; }
+  function body() { return JSON.stringify({ marks: read("owb.marks", {}), place: read("owb.place", null) }); }
+  function hash(text) {
+    for (var h = 5381, i = 0; i < text.length; i++) h = (h * 33 + text.charCodeAt(i)) | 0;
+    return text.length + ":" + h;
+  }
+  function session(key) { try { return sessionStorage.getItem(key); } catch (e) { return null; } }
+
+  // The account's merged copy, taken in the same way: the later of each.
+  function take(merged) {
+    var marks = read("owb.marks", {}), changed = false;
+    Object.keys(merged.marks || {}).forEach(function (id) {
+      var theirs = merged.marks[id], ours = marks[id];
+      if (!ours || theirs.at > (ours.at || 0)) { marks[id] = theirs; changed = true; }
+    });
+    if (changed) write("owb.marks", marks);
+    var place = read("owb.place", null);
+    if (merged.place && (!place || merged.place.at > (place.at || 0))) { write("owb.place", merged.place); changed = true; }
+    try { sessionStorage.setItem(SINCE, String(Date.now())); } catch (e) { /* ignore */ }
+    if (changed) document.dispatchEvent(new Event("owb:synced"));
+  }
+
+  function sync(leaving) {
+    var key = token();
+    if (!key || stopped) return;
+    var data = body();
+    if (leaving && hash(data) === session(SENT)) return;
+    if (running) { again = true; return; }
+    running = true;
+    // keepalive lets the request finish after the page is gone; browsers
+    // allow it for small bodies only.
+    fetch(API + "/api/reading", {
+      method: "POST", body: data, keepalive: !!leaving && data.length < 60000,
+      headers: { "Content-Type": "application/json", Authorization: "Bearer " + key }
+    }).then(function (r) {
+      // The token was signed out elsewhere: forget it, as the account page does.
+      if (r.status === 401) {
+        stopped = true;
+        try { localStorage.removeItem("owb.account"); } catch (e) { /* ignore */ }
+        throw new Error("signed out");
+      }
+      if (!r.ok) throw new Error(String(r.status));
+      return r.json();
+    }).then(function (merged) {
+      try { sessionStorage.setItem(SENT, hash(data)); } catch (e) { /* ignore */ }
+      take(merged);
+    }).catch(function () { /* offline or signed out: try again later */ })
+      .then(function () {
+        running = false;
+        if (again) { again = false; sync(); }
+      });
+  }
+
+  function soon() { clearTimeout(timer); timer = setTimeout(sync, 1500); }
+  document.addEventListener("owb:marks", soon);
+  document.addEventListener("owb:account", function () { stopped = false; sync(); });
+  document.addEventListener("visibilitychange", function () { if (document.visibilityState === "hidden") sync(true); });
+  window.addEventListener("online", soon);
+  if (hash(body()) !== session(SENT) || Date.now() - (Number(session(SINCE)) || 0) > 120000) sync();
 })();
