@@ -106,7 +106,7 @@ class ArticlesTest(unittest.TestCase):
             self.assertIn(f'href="/articles/{slug}/"', start)
         # The search box waits for web/site.js, which filters the list.
         self.assertIn('<label class="a-search" hidden>', index)
-        self.assertIn('id="a-search"', (self.out / "articles" / "index.html").read_text(encoding="utf-8"))
+        self.assertIn('id="a-search"', index)
         self.assertIn('getElementById("a-index")', (self.out / "site.js").read_text(encoding="utf-8"))
         self.assertIn('type="application/atom+xml"', index)
         feed = (self.out / "articles" / "feed.xml").read_text(encoding="utf-8")

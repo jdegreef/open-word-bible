@@ -1983,8 +1983,8 @@ def article_page(article, articles, lang="en"):
     section = catalog(lang)["sections"][article["section"]]
     part = ""
     if article["slug"] in series_numbers():
-        part = " &middot; " + t(lang, "article.part", n=series_numbers()[article["slug"]][0],
-                                total=series_numbers()[article["slug"]][1])
+        n, total = series_numbers()[article["slug"]]
+        part = " &middot; " + t(lang, "article.part", n=n, total=total)
     body = f"""
 <div class="article-layout">
 <article class="article">
@@ -2021,10 +2021,9 @@ def chapter_articles(lang):
     in the articles' order."""
     found = {}
     for a in sorted(load_articles(lang), key=lambda a: a["order"]):
+        # article_passages gives each chapter once.
         for b, c, _ in a["passages"]:
-            found.setdefault((b, c), [])
-            if a not in found[(b, c)]:
-                found[(b, c)].append(a)
+            found.setdefault((b, c), []).append(a)
     return found
 
 
