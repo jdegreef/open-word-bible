@@ -4,6 +4,7 @@ summary: The only complete book of the Bible among the Dead Sea Scrolls is a cop
 date: 2026-10-11
 order: 27
 section: history
+part: ot
 ---
 Of all the Dead Sea Scrolls, one has become a symbol of the whole discovery: the **Great Isaiah Scroll**, known to scholars as **1QIsa-a** (Cave 1, Qumran, Isaiah, first copy). It was among the first seven scrolls found in 1947, and it is the only biblical book among the scrolls that survives complete, all sixty-six chapters, from the first verse to the last.
 

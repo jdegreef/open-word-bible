@@ -13,7 +13,7 @@ from django.core.management import CommandError, call_command
 from django.test import TestCase
 
 from texts.models import Edition, Verse, Word
-from translation.models import ReviewEvent, Sentence
+from translation.models import Decision, Rendering, ReviewEvent, Sentence
 
 CONTENT = settings.REPO_ROOT / "content"
 
@@ -90,6 +90,24 @@ class ImportContentTest(TestCase):
         import_content(*john)
         s.refresh_from_db()
         self.assertEqual(s.status, "reviewed")
+
+    def test_reimport_updates_sentences_in_place(self):
+        # The upsert hands back each existing sentence's id, so renderings and
+        # decisions are replaced on the same rows rather than added to them.
+        john = content_files("JHN/JHN.1.1-18.json")
+        import_content(*john)
+        ids = dict(Sentence.objects.values_list("record_id", "id"))
+        counts = (Rendering.objects.count(), Decision.objects.count())
+        s = Sentence.objects.get(record_id="JHN.1.12.s1")
+        s.literal_gloss = "changed"
+        s.save()
+        s.renderings.update(text="changed")
+        import_content(*john)
+        self.assertEqual(dict(Sentence.objects.values_list("record_id", "id")), ids)
+        self.assertEqual((Rendering.objects.count(), Decision.objects.count()), counts)
+        s.refresh_from_db()
+        self.assertNotEqual(s.literal_gloss, "changed")
+        self.assertFalse(s.renderings.filter(text="changed").exists())
 
     def test_file_with_an_unknown_word_is_not_imported(self):
         data = json.loads((CONTENT / "JHN" / "JHN.1.1-18.json").read_text())

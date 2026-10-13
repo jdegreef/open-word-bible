@@ -5,6 +5,7 @@ date: 2026-10-11
 order: 23
 nav_title: Kanuni za hati-kunjo ya Torati
 section: history
+part: ot
 ---
 Ukitembelea sinagogi leo unaweza kuona hati-kunjo ya Torati ikitolewa katika sanduku lake, ikifunguliwa, na kusomwa kwa sauti. Hati-kunjo hiyo iliandikwa kwa mkono na mwandishi aliyefunzwa, akifuata kanuni zenye umri wa zaidi ya miaka elfu moja. Herufi moja tu ikikosekana, isingefaa kusomwa hadharani.
 
