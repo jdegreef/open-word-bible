@@ -69,6 +69,8 @@ jobs:
         run: python3 scripts/extract_tokens.py --check
       - name: Build the site
         run: python3 scripts/build_site.py
+      - name: Site size budgets
+        run: python3 scripts/check_budgets.py site
 
   backend:
     name: Backend (Django + Postgres)

@@ -65,7 +65,7 @@ class LanguagesTest(unittest.TestCase):
                 self.assertTrue((self.out / lang / rel).is_file(), (lang, rel))
                 text = self.read(Path(lang) / rel)
                 self.assertIn(f'<html lang="{lang}">', text, rel)
-                self.assertIn(build_site.lang_script(build_site.LANGUAGES), text, rel)
+                self.assertIn(build_site.langs_meta(build_site.LANGUAGES), text, rel)
         for rel in pages:
             self.assertIn('<html lang="en">', self.read(rel), rel)
 
@@ -97,7 +97,7 @@ class LanguagesTest(unittest.TestCase):
         self.assertIn('<h2 id="foot-langs">Idiomas</h2>', es)
         # The 404 page, which has no path, offers each language's home page.
         self.assertIn('href="/es/" lang="es"', self.read("404.html"))
-        self.assertNotIn("owb-lang", self.read("404.html"))
+        self.assertNotIn('name="owb-langs"', self.read("404.html"))
 
     def test_other_language_pages_have_their_own_interface_text(self):
         en = build_site.catalog("en")
@@ -188,7 +188,7 @@ class LanguagesTest(unittest.TestCase):
         self.assertNotIn('rel="canonical"', page)
         # Unlisted, but the switch and the remembered choice still lead to it.
         self.assertIn('<a href="/account/" lang="en"', page)
-        self.assertIn(build_site.lang_script(build_site.LANGUAGES), page)
+        self.assertIn(build_site.langs_meta(build_site.LANGUAGES), page)
         self.assertNotIn("/account/", self.read("sitemap.xml"))
 
     def test_chapter_strip_and_turns_stay_in_the_language(self):
