@@ -23,7 +23,7 @@ sys.path.insert(0, str(ROOT))
 
 from typing import NamedTuple  # noqa: E402
 
-from owb import markup, morph, refs, versification  # noqa: E402
+from owb import markup, morph, refs, translit, versification  # noqa: E402
 
 # Every book's name in each interface language and its number of chapters
 # (data/books.json). All 66 are listed, so adding a book needs no edit here.
@@ -874,6 +874,19 @@ def lang_attr(text_language, lang):
 PLURAL_YOU = {"es"}
 
 
+def transliterated(verse_words, source):
+    """A verse's words for the reader, each with its transliteration
+    (owb.translit) for the word panel's Transliteration setting. Hebrew is
+    transliterated morpheme by morpheme, in one style for the whole Old
+    Testament; MACULA's own column has gaps and is not used."""
+    if source == "hbo":
+        latin = translit.hebrew_words(verse_words)
+    else:
+        latin = {w["id"]: translit.greek(w["text"]) for w in verse_words}
+    return [{**{k: v for k, v in w.items() if k != "transliteration"}, "translit": latin[w["id"]]}
+            for w in verse_words]
+
+
 def chapter_page(book, chapter, lang="en"):
     records, words = load_chapter(book, chapter)
     title = chapter_name(records, book, chapter, lang)
@@ -884,7 +897,7 @@ def chapter_page(book, chapter, lang="en"):
     source = source_language(book)
     data = {"book": book, "chapter": chapter, "title": title, "lang": lang, "languages": languages,
             "source": source, "ui": catalog(lang)["reader.ui"], "records": records,
-            "words": {vid: words[vid] for r in records for vid in r["refs"]},
+            "words": {vid: transliterated(words[vid], source) for r in records for vid in r["refs"]},
             "paragraphs": paragraph_starts(records, words),
             "disputed": disputed_block(records, lang),
             "bookRefs": book_refs(lang),
