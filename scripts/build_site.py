@@ -387,7 +387,7 @@ def nav_menus(lang):
             cols = 1 if len(rows) <= MENU_BOOKS_PER_COLUMN else 2
             testaments.append(f'<div class="dd-col" style="--cols: {cols}"><p class="dd-head">{t(lang, "footer." + key)}</p>'
                               f'<div class="dd-books">{"".join(rows)}</div></div>')
-    read = (f'<div class="dd-testaments">{"".join(testaments)}</div>'
+    read = (f'{resume_link(lang, "dd-resume")}<div class="dd-testaments">{"".join(testaments)}</div>'
             f'<div class="dd-alls">{all_link(url(lang, "/plans/"), t(lang, "nav.plans"))}'
             f'{all_link(url(lang, "/read/"), t(lang, "nav.all_books"))}</div>')
 
@@ -454,7 +454,6 @@ def site_header(lang, current, path=None, lang_path=None, translated=LANGUAGES):
 <div class="tools">
 <a class="tool-btn search-btn" href="{url(lang, "/search/")}" aria-label="{t(lang, "nav.search")}" title="{t(lang, "nav.search")}" aria-keyshortcuts="Control+K Meta+K">{icon(ICONS["search"])}<span class="search-label">{t(lang, "nav.search")}</span><kbd class="search-kbd" hidden>Ctrl K</kbd></a>
 {account_menu(lang)}
-<a class="tool-btn" href="{GITHUB_URL}" aria-label="{t(lang, "tools.github")}" title="GitHub">{icon(ICONS["github"])}</a>
 {colour_menu(lang, lang_path, translated)}
 <button type="button" class="tool-btn menu-btn" aria-expanded="false" aria-controls="site-nav" aria-label="{t(lang, "nav.menu")}">{icon(ICONS["menu"], 22)}{icon(ICONS["close"], 22)}</button>
 </div>
@@ -938,10 +937,17 @@ def chapter_page(book, chapter, lang="en"):
 <div class="settings" id="settings">
 <div class="controls">
   {control("level", "level", [(code, levels[code]) for code in "LBR"])}
+  <div class="wording-wrap">
+  <button type="button" class="wording-toggle" id="wording-toggle" aria-expanded="false" aria-controls="wording">
+    <span class="wording-label">{t(lang, "reader.wording")}</span> <span class="wording-summary" id="wording-summary"></span>
+  </button>
+  <div class="wording" id="wording">
   {control("gender", "gender", [("0", t(lang, "reader.inclusive")), ("1", t(lang, "reader.traditional"))])}
   {title_control}
   {control("pronouns", "deity_pronoun", [("0", t(lang, "reader.he")), ("1", t(lang, "reader.He"))])}{units}{plural}
   {control("headings", "headings", [("0", t(lang, "reader.show")), ("1", t(lang, "reader.hide"))])}
+  </div>
+  </div>
   {control("view", "view", [("0", t(lang, "reader.study")), ("1", t(lang, "reader.reading")),
                             ("2", t(lang, "reader.parallel")), ("3", t(lang, "reader.interlinear"))], " view-control")}
 </div>
@@ -1336,6 +1342,14 @@ def plan_books(plan, lang="en"):
     return " &middot; ".join(BOOK_NAMES[b][lang] for b in codes)
 
 
+def plan_dek(plan, lang="en"):
+    """Under a plan's name: its books, unless it reads one book (its name
+    says which), then its length."""
+    books_ = {b for day in plan.days for b, _ in day}
+    lead = f"{plan_books(plan, lang)} &middot; " if len(books_) > 1 else ""
+    return lead + plan_length(plan, lang)
+
+
 @functools.lru_cache(maxsize=None)
 def plans_json(lang):
     """What web/plans.js needs for the plans offered in lang: its labels,
@@ -1377,7 +1391,7 @@ def plan_bar(book, chapter, lang="en"):
     plan: the day, a button to mark it done, then the next day's chapter
     (web/plans.js). Hidden otherwise."""
     return (f'<div class="plan-bar" data-plan-bar data-book="{book}" data-chapter="{chapter}" '
-            f'{plans_attrs(lang)} hidden></div>')
+            f'{plans_attrs(lang)} aria-live="polite" hidden></div>')
 
 
 def plan_card(plan, lang="en"):
@@ -1431,7 +1445,7 @@ def plan_page(plan, lang="en", translated=LANGUAGES):
 <header class="page-head">
 <p class="eyebrow"><a href="{url(lang, "/plans/")}">{t(lang, "plans.title")}</a></p>
 <h1>{name}</h1>
-<p class="dek">{plan_books(plan, lang)} &middot; {plan_length(plan, lang)}</p>
+<p class="dek">{plan_dek(plan, lang)}</p>
 <div class="plan-controls" data-plan-page="{plan.id}" data-total="{n}" {plans_attrs(lang)}>
 <p class="actions">
 <button type="button" class="button" data-plan-start data-continue="{html.escape(t(lang, "plans.continue"))}">{t(lang, "plans.start")}</button>
@@ -1971,12 +1985,10 @@ def article_meta(a, lang="en"):
     return " &middot; ".join(parts)
 
 
-def article_card(a, lang="en", featured=False, section=True):
-    """An article's card. Under its own section's heading it leaves out the
-    section's name (section=False)."""
-    label = f'<span class="a-section">{catalog(lang)["sections"][a["section"]]}</span>' if section else ""
-    return (f'<li><a class="a-card{" featured" if featured else ""}" href="{url(lang, article_url(a))}">'
-            f'{label}'
+def article_card(a, lang="en"):
+    """An article's card on the home page and under "Keep reading"."""
+    return (f'<li><a class="a-card" href="{url(lang, article_url(a))}">'
+            f'<span class="a-section">{catalog(lang)["sections"][a["section"]]}</span>'
             f'<span class="a-title">{display(a["title"])}</span>'
             f'<span class="a-summary">{display(a["summary"])}</span>'
             f'<span class="a-meta">{article_meta(a, lang)}</span></a></li>')
@@ -1986,30 +1998,83 @@ def article_list(articles, lang="en"):
     return "".join(article_card(a, lang) for a in articles)
 
 
+# Sections that are series, read in order: their rows are numbered.
+SERIES = ("history", "translation")
+
+
+def _duration(minutes, lang="en"):
+    """"45 min" or "2 h 20 min"."""
+    h, m = divmod(minutes, 60)
+    return t(lang, "articles.hours", h=h, m=m) if h else t(lang, "articles.minutes", m=m)
+
+
+def index_row(a, lang="en", number=None, minutes=True):
+    """An article's row on the articles page. The title is the link and
+    covers the row; the verses it reads are links of their own."""
+    refs = []
+    for b, c, vs in a["passages"]:
+        label = html.escape(passage_label(b, c, vs, lang))
+        href = next(filter(None, (verse_link(b, c, v, lang) for v in vs)), None)
+        refs.append(f'<a class="a-ref" href="{href}">{label}</a>' if href else f'<span class="a-ref">{label}</span>')
+    meta = [html.escape(t(lang, "article.min_read", n=a["minutes"]))] if minutes else []
+    meta.append(f'<span class="a-status">{t(lang, "article.draft")}</span>')
+    num = f'<span class="a-num" aria-hidden="true">{number}</span>' if number else ""
+    return (f'<li class="a-item{" numbered" if number else ""}">{num}<div class="a-body">'
+            + (f'<p class="a-refs">{"".join(refs)}</p>' if refs else "")
+            + f'<a class="a-title" href="{url(lang, article_url(a))}">{display(a["title"])}</a>'
+            f'<span class="a-summary">{display(a["summary"])}</span>'
+            f'<span class="a-meta">{" ".join(meta)}</span></div></li>')
+
+
+def _section(key, items, lang="en"):
+    """A section of the articles page: its heading with how many articles
+    and how long they take, then a row for each. When most of a section's
+    articles take the same time, a row says its time only if it differs."""
+    names = catalog(lang)["sections"]
+    times = [a["minutes"] for a in items]
+    common = max(set(times), key=times.count)
+    usual = times.count(common) >= .75 * len(times) and len(times) > 2
+    sub = t(lang, "articles.count_time", n=len(items), time=_duration(sum(times), lang))
+    rows = "".join(index_row(a, lang, number=i if key in SERIES else None,
+                             minutes=not usual or a["minutes"] != common)
+                   for i, a in enumerate(items, 1))
+    return (f'<section class="a-group" id="{key}" aria-labelledby="{key}-h">'
+            f'<div class="a-group-head"><h2 id="{key}-h">{names[key]}</h2><span>{sub}</span></div>'
+            f'<ol class="a-rows{" series" if key in SERIES else ""}">{rows}</ol></section>')
+
+
 def articles_page(articles, lang="en"):
     """The articles in lang, or a note that none is translated yet."""
     by_order = sorted(articles, key=lambda a: a["order"])
     if by_order:
         featured, rest = by_order[0], by_order[1:]
         names = catalog(lang)["sections"]
+        # The featured article opens the page, so its section starts after it.
         groups = [(key, [a for a in rest if a["section"] == key]) for key in SECTIONS]
         groups = [(key, items) for key, items in groups if items]
         # Links to each section, with how many articles it has.
         jump = (f'<nav class="a-jump" aria-label="{t(lang, "articles.sections")}"><ul>'
-                + "".join(f'<li><a href="#{key}">{names[key]} <span>{sum(a["section"] == key for a in by_order)}</span></a></li>'
-                          for key, _ in groups)
+                + "".join(f'<li><a href="#{key}">{names[key]} <span>{len(items)}</span></a></li>'
+                          for key, items in groups)
                 + "</ul></nav>")
-        # Inside a section, compact rows rather than cards.
-        sections = "".join(
-            f'<section class="a-group" id="{key}" aria-labelledby="{key}-h">'
-            f'<h2 id="{key}-h">{names[key]}</h2>'
-            f'<ul class="a-rows">{"".join(article_card(a, lang, section=False) for a in items)}</ul></section>'
-            for key, items in groups)
-        listing = f'{jump}\n<ul class="a-feature">{article_card(featured, lang, featured=True)}</ul>\n{sections}'
+        # The first article, with the next few of its section to read after it.
+        after = [a for a in rest if a["section"] == featured["section"]][:3]
+        path = "".join(f'<li><a href="{url(lang, article_url(a))}">{display(a.get("nav_title", a["title"]))}</a></li>'
+                       for a in after)
+        start = (f'<div class="a-start"><a class="a-card featured" href="{url(lang, article_url(featured))}">'
+                 f'<span class="a-section">{t(lang, "articles.start_here")}</span>'
+                 f'<span class="a-title">{display(featured["title"])}</span>'
+                 f'<span class="a-summary">{display(featured["summary"])}</span>'
+                 f'<span class="a-meta">{article_meta(featured, lang)}</span></a>'
+                 + (f'<nav class="a-path" aria-labelledby="a-path-h"><h2 id="a-path-h">{t(lang, "articles.then_read")}</h2>'
+                    f'<ol>{path}</ol></nav>' if after else "")
+                 + '</div>')
+        sections = "".join(_section(key, items, lang) for key, items in groups)
+        listing = f'{start}\n{jump}\n{sections}'
     else:
         listing = f'<p class="notice">{t(lang, "articles.none")}</p>'
     body = f"""
-<header class="page-head">
+<header class="page-head compact">
 <p class="eyebrow">{t(lang, "articles.title")}</p>
 <h1>{t(lang, "articles.heading")}</h1>
 <p class="dek">{t(lang, "articles.dek")}</p>

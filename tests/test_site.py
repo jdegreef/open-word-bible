@@ -245,6 +245,13 @@ class SiteTest(unittest.TestCase):
         self.assertIn('href="/read/#jhn"', header)
         self.assertIn('href="/read/#php"', header)
         self.assertNotIn('class="chap', header)
+        # Continue reading heads the Read menu, hidden until web/site.js
+        # finds a place; GitHub is under About, not a header button.
+        read_panel = header[header.index('id="dd-read"'):header.index('id="dd-articles"')]
+        self.assertIn('<a class="dd-resume" data-resume hidden', read_panel)
+        self.assertNotIn(f'class="tool-btn" href="{build_site.GITHUB_URL}"', header)
+        about_panel = header[header.index('id="dd-about"'):]
+        self.assertIn(f'href="{build_site.GITHUB_URL}"', about_panel)
         # ...grouped by testament, Old before New.
         read = header[header.index('id="dd-read"'):header.index('id="dd-articles"')]
         self.assertLess(read.index(">Old Testament<"), read.index('href="/read/#gen"'))

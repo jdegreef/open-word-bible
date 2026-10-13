@@ -256,8 +256,8 @@
         if (!focus) focus = undo;
       }
       box.hidden = false;
-      // Announce changes made here, not the bar's first appearance.
-      if (justMarked || undone) box.setAttribute("aria-live", "polite");
+      // The bar is aria-live from the start (plan_bar), so marking and
+      // undoing are announced.
       if (justMarked && focus) focus.focus();
       if (undone) box.querySelector(".plan-mark").focus();
     }).catch(function () { box.hidden = true; });
