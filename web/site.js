@@ -493,6 +493,23 @@
   draw();
 })();
 
+// A link to a folded section (a book's uses on a key-term page, #jhn)
+// opens it, in browsers that do not unfold it themselves.
+(function () {
+  "use strict";
+  function unfold() {
+    var id;
+    try { id = decodeURIComponent(location.hash.slice(1)); } catch (e) { return; }  // a malformed hash (#100%)
+    var target = id && document.getElementById(id);
+    if (target && target.tagName === "DETAILS" && !target.open) {
+      target.open = true;
+      target.scrollIntoView();
+    }
+  }
+  window.addEventListener("hashchange", unfold);
+  unfold();
+})();
+
 // The articles page (articles_page in scripts/build_site.py): the section
 // links filter the list to one section, and a search box narrows it to the
 // articles whose title, summary or passages hold every word typed. A
