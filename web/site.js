@@ -471,3 +471,19 @@
   window.addEventListener("storage", function (e) { if (e.key === "owb.marks") draw(); });
   draw();
 })();
+
+// A link to a folded section (a book's uses on a key-term page, #jhn)
+// opens it, in browsers that do not unfold it themselves.
+(function () {
+  "use strict";
+  function unfold() {
+    var id = decodeURIComponent(location.hash.slice(1));
+    var target = id && document.getElementById(id);
+    if (target && target.tagName === "DETAILS" && !target.open) {
+      target.open = true;
+      target.scrollIntoView();
+    }
+  }
+  window.addEventListener("hashchange", unfold);
+  unfold();
+})();

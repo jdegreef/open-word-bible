@@ -133,30 +133,53 @@ def check_original_language(record, errors):
                                   "in the source data; copy it from MACULA")
 
 
+def key_term(token_id, strong):
+    """The key term (data/key_terms.json) a source word is, or None."""
+    return KEY_TERMS.get((token_language(token_id), strong))
+
+
+def key_term_words(term, level):
+    """The English words a key term may be rendered by at a level."""
+    allowed = term["english"]
+    return allowed.get(level, []) if isinstance(allowed, dict) else allowed
+
+
+def key_term_pattern(words, flags=re.IGNORECASE):
+    """A regex for any of a key term's English words (or their plural)."""
+    return re.compile(r"\b(%s)s?\b" % "|".join(map(re.escape, words)), flags)
+
+
+def explaining_decisions(record):
+    """The decisions that may explain a key term rendered otherwise, by the
+    token they are on: an English rendering decision (a different word), or
+    a word_sense meaning decision (a different sense, such as
+    "faithfulness" for faith). Other meaning decisions that happen to
+    include the word do not count."""
+    out = {}
+    for d in record.get("decisions") or []:
+        if isinstance(d, dict) and (d.get("language") == "en" or (
+                d.get("layer") == "meaning" and d.get("category") == "word_sense")):
+            for tid in d.get("tokens") or []:
+                out.setdefault(tid, []).append(d)
+    return out
+
+
 def check_key_terms(record, tokens, errors):
     """Every English level of a record that contains a key term
     (data/key_terms.json) uses one of the term's settled English words,
-    unless a decision on that word explains the exception: an English
-    rendering decision (a different word), or a word_sense meaning decision
-    (a different sense, such as "faithfulness" for faith). Other meaning
-    decisions that happen to include the word do not excuse it."""
-    explained = {tid for d in record.get("decisions") or [] if isinstance(d, dict)
-                 and (d.get("language") == "en"
-                      or (d.get("layer") == "meaning" and d.get("category") == "word_sense"))
-                 for tid in d.get("tokens") or []}
+    unless a decision on that word explains the exception
+    (explaining_decisions)."""
+    explained = explaining_decisions(record)
     english = (record.get("renderings") or {}).get("en")
     if not isinstance(english, dict):
         return
     for tok in tokens:
-        term = KEY_TERMS.get((token_language(tok.id), tok.strong))
+        term = key_term(tok.id, tok.strong)
         if term is None or tok.id in explained:
             continue
         for level, text in sorted(english.items()):
-            allowed = term["english"]
-            if isinstance(allowed, dict):
-                allowed = allowed.get(level, [])
-            words = re.compile(r"\b(%s)s?\b" % "|".join(map(re.escape, allowed)), re.IGNORECASE)
-            if isinstance(text, str) and not words.search(text):
+            allowed = key_term_words(term, level)
+            if isinstance(text, str) and not key_term_pattern(allowed).search(text):
                 errors.append(f"renderings.en.{level}: key term {term['sense']!r} ({tok.id}) "
                               f"should be rendered {' or '.join(allowed)}; or add "
                               "a decision on that word explaining why not")

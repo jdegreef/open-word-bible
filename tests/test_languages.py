@@ -112,6 +112,9 @@ class LanguagesTest(unittest.TestCase):
                 # (Genesis 1:5 names the darkness "Night"); only the interface counts.
                 page = re.sub(r'<script type="application/json" id="owb-data">.*?</script>', "",
                               self.read(Path(lang) / rel), flags=re.S)
+                # So may the English sentences and notes on a key-term page,
+                # which are marked as English.
+                page = re.sub(r'<p[^>]* lang="en">.*?</p>', "", page, flags=re.S)
                 for key in keys:
                     self.assertNotIn(en[key], page, (lang, rel, key))
                     self.assertIn(cat[key], page, (lang, rel, key))

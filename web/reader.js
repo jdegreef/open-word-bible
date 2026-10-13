@@ -752,6 +752,12 @@
         else card.appendChild(el("span", "wcard-note", c.note));
         card.addEventListener("click", function () { highlight(byCard[i], null); light(byCard[i]); });
         list.appendChild(card);
+        // A key term links to its page: every place the translation uses it.
+        if (c.href) {
+          var more = el("a", "wcard-link", t("card_term_link"));
+          more.href = c.href;
+          list.appendChild(more);
+        }
       });
     panel.appendChild(list);
   }
