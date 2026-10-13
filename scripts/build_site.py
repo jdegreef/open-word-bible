@@ -33,6 +33,8 @@ LANGUAGES = owb_languages.CODES
 _BOOKS = json.loads((ROOT / "data" / "books.json").read_text(encoding="utf-8"))["books"]
 BOOK_NAMES = {code: {k: v for k, v in b.items() if k not in ("chapters", "chapter_names")}
               for code, b in _BOOKS.items()}
+# Short names for references in tight places (data/book_abbreviations.json).
+BOOK_ABBREVIATIONS = json.loads((ROOT / "data" / "book_abbreviations.json").read_text(encoding="utf-8"))["books"]
 # A book whose chapters go by another name: "Psalm 23", not "Psalms 23".
 CHAPTER_NAMES = {code: b["chapter_names"] for code, b in _BOOKS.items() if "chapter_names" in b}
 # Chapters in each book, for "2 of 21 chapters" and a book's completeness.
@@ -1343,8 +1345,15 @@ def book_refs(lang="en"):
         local = BOOK_NAMES.get(code, {}).get(lang)
         if local:
             names[local] = code
+        # The name before a chapter number too: "Psalm 2:7".
+        for form in {chapter_book(code), chapter_book(code, lang)}:
+            names[form] = code
     chapters = {b: sorted(p.chapter for p in ps) for b, ps in books()}
-    return {"names": names, "chapters": chapters, "search": url(lang, "/search/")}
+    # For the quotation tags in the text: each book's short name and the
+    # name it says in full ("Deut", "Deuteronomy").
+    abbr = {code: [forms.get(lang) or chapter_book(code, lang), chapter_book(code, lang)]
+            for code, forms in BOOK_ABBREVIATIONS.items()}
+    return {"names": names, "chapters": chapters, "search": url(lang, "/search/"), "abbr": abbr}
 
 
 # A note's reference to a chapter not translated yet shows that verse from a
