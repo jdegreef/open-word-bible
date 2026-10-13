@@ -885,6 +885,7 @@ def chapter_page(book, chapter, lang="en"):
             "paragraphs": paragraph_starts(records, words),
             "disputed": disputed_block(records, lang),
             "bookRefs": book_refs(lang),
+            "compare": comparison_verses(records, lang),
             "cards": word_cards(records, words),
             "headings": {r["id"]: headings()[r["id"]] for r in records if r["id"] in headings()}}
     # Each morphology code's description in every language, once per page.
@@ -1116,6 +1117,66 @@ def book_refs(lang="en"):
             names[local] = code
     chapters = {b: sorted(p.chapter for p in ps) for b, ps in books()}
     return {"names": names, "chapters": chapters, "search": url(lang, "/search/")}
+
+
+# A note's reference to a chapter not translated yet shows that verse from a
+# public-domain Bible for comparison (data/comparison/, written by
+# scripts/extract_comparison.py): the Reina-Valera 1909 on Spanish pages,
+# the World English Bible elsewhere. Never Open Word Bible wording.
+COMPARISON = {"es": ("rv1909", "Reina-Valera 1909", "es")}
+COMPARISON_DEFAULT = ("web", "World English Bible", "en")
+# A range in a note ("9:9-15") brings at most this many verses.
+COMPARE_MAX_VERSES = 4
+
+
+@functools.lru_cache(maxsize=None)
+def comparison_text(code):
+    path = ROOT / "data" / "comparison" / f"{code}.json"
+    return json.loads(path.read_text(encoding="utf-8")) if path.is_file() else {}
+
+
+@functools.lru_cache(maxsize=None)
+def ref_pattern(lang):
+    """The reader's pattern for "Mark 14:54" or "2 Corinthians 7:9-10" in a
+    note (refPattern in reader.js), over the same book names."""
+    names = sorted(book_refs(lang)["names"], key=len, reverse=True)
+    return re.compile(r"\b(" + "|".join(re.escape(n) for n in names) + r") (\d+):(\d+)(?:[-–](\d+))?")
+
+
+def note_texts(record):
+    """Every note text the reader links references in: each decision's
+    choice, alternatives and reason."""
+    for d in record["decisions"]:
+        yield d["choice"]
+        yield from d["alternatives"]
+        yield d["reason"]
+
+
+def comparison_verses(records, lang="en"):
+    """The comparison text for the verses this page's notes name in chapters
+    not translated yet, and the edition's name: {"name", "verses":
+    {"DEU.25.4": text}, "lang"}. Only the verses the notes need, so the
+    page stays small; None when there are none."""
+    have = book_refs(lang)["chapters"]
+    names = book_refs(lang)["names"]
+    code, name, compare_lang = COMPARISON.get(lang, COMPARISON_DEFAULT)
+    text = comparison_text(code)
+    if not text:
+        code, name, compare_lang = COMPARISON_DEFAULT
+        text = comparison_text(code)
+    verses = {}
+    for r in records:
+        for note in note_texts(r):
+            for m in ref_pattern(lang).finditer(note):
+                book, chapter, first = names[m[1]], int(m[2]), int(m[3])
+                if chapter in have.get(book, []):
+                    continue
+                last = int(m[4]) if m[4] and int(m[4]) > first else first
+                for v in range(first, min(last, first + COMPARE_MAX_VERSES - 1) + 1):
+                    vid = f"{book}.{chapter}.{v}"
+                    if vid in text:
+                        verses[vid] = text[vid]
+    return {"name": name, "lang": compare_lang, "verses": verses} if verses else None
 
 
 def disputed_block(records, lang="en"):
