@@ -72,6 +72,15 @@ a span may not hold a verse marker or cut through a setting span
 ("not yet ... come"), and words with no counterpart are left out. John 2,
 English Balanced, is aligned as a pilot.
 
+Poetry is set in lines. A rendering marks each break inside a verse with
+`\q ` (`"my shepherd; \q I will not lack"`); a verse start is always a line
+start, and a rendering with no `\q` is prose. Lines are wording, so each
+language and level places its own, following the Hebrew accents' division
+of the verse; `scripts/poetry_lines.py` prints that division beside the
+renderings, and `docs/english-style.md` ("Poetry: lines") gives the rules.
+Everywhere text is shown on one line, a break reads as a space
+(`markup.flat`). Psalms 1, 2, 3 and 23 are marked as a pilot.
+
 The Old Testament is translated from the Westminster Leningrad Codex with
 MACULA Hebrew word data (`text_id` `WLC@macula-hebrew`, `language` `hbo`, or
 `arc` for Aramaic). MACULA Hebrew divides words into morphemes, so a word with

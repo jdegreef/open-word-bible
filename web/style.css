@@ -963,6 +963,17 @@ a.a-ref:hover { border-color: var(--accent); }
 .verse:hover { background: var(--accent-soft); }
 .verse[aria-current="true"] { background: var(--mark); }
 .verse.fallback { color: var(--muted); }
+/* Poetry (a rendering with \q line markers): each verse is a block of lines.
+   A verse's first line starts at the margin, its later lines one step in;
+   a line too long for the measure wraps two steps in, so a wrap never looks
+   like a new line. Prose verses stay inline. */
+.poem { display: block; --poem-step: 1.1em; }
+.poem .line { display: block; padding-left: calc(2 * var(--poem-step)); text-indent: calc(-2 * var(--poem-step)); }
+.poem .line + .line { text-indent: calc(-1 * var(--poem-step)); }
+.poem .line > * { text-indent: 0; }
+.text .poem + .poem { margin-top: .12em; }
+.pcell .poem { margin-bottom: .2em; }
+@media (max-width: 560px) { .poem { --poem-step: .9em; } }
 .verse sup { font-family: var(--sans); font-size: 12px; color: var(--accent); font-weight: 700; margin-right: 3px; }
 .verse .fn { font-family: var(--sans); font-size: 11px; font-style: italic; color: var(--accent); margin-left: 1px; }
 /* Each footnote letter is its own button and opens the note in place. */
@@ -1786,7 +1797,8 @@ body.listening { padding-bottom: calc(var(--listen-h, 64px) + 12px); }
 .verse[class*="hl-"]:hover { background: var(--hl); filter: saturate(1.4); }
 /* The verse chosen keeps its highlight and is underlined instead. */
 .verse[aria-current="true"][class*="hl-"] { box-shadow: inset 0 -3px 0 var(--accent); }
-.verse.bookmarked > sup:not(.fn):first-child::before { content: "\25C6\00a0"; color: var(--accent); font-size: .85em; }
+.verse.bookmarked > sup:not(.fn):first-child::before,
+.verse.bookmarked > .line:first-child > sup:not(.fn):first-child::before { content: "\25C6\00a0"; color: var(--accent); font-size: .85em; }
 .mark-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin: 4px 0 16px; }
 .mark-bookmark {
   display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border: 1px solid var(--line-strong);

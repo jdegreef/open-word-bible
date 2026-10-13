@@ -30,6 +30,19 @@ class SiteTest(unittest.TestCase):
                     "sitemap.xml", "robots.txt", "favicon.svg"):
             self.assertTrue((self.out / rel).is_file(), rel)
 
+    def test_poetry_keeps_its_lines_for_the_reader_only(self):
+        # The reader gets the line markers to set Psalm 23 as poetry; every
+        # text the build writes on one line reads them as spaces.
+        data = self.chapter_data("psa/23")
+        self.assertTrue(any("\\q " in r["renderings"]["en"]["B"] for r in data["records"]))
+        self.assertEqual(build_site.plain("my shepherd; \\q I will never be in need."),
+                         "my shepherd; I will never be in need.")
+        records = build_site.load_chapter("PSA", 23)[0]
+        self.assertNotIn("\\q", build_site.opening_verse(records, 23))
+        page = (self.out / "psa" / "23" / "index.html").read_text(encoding="utf-8")
+        head = page.split("<body", 1)[0]
+        self.assertNotIn("\\q", head)
+
     def test_account_pages_are_built_but_not_indexed(self):
         sitemap = (self.out / "sitemap.xml").read_text(encoding="utf-8")
         for name, marker in (("account", 'id="name-form"'), ("login", 'id="login-form"'),
