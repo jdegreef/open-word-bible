@@ -3,6 +3,7 @@ title: "Gracia sobre gracia: cuando una decisión se marca como incierta"
 summary: Algunas decisiones de traducción son muy reñidas. Open Word Bible lo dice abiertamente. Dos ejemplos de Juan 1.
 date: 2026-10-10
 order: 7
+nav_title: Cuando una decisión es incierta
 section: passage
 ---
 Toda traducción esconde sus decisiones reñidas. Un comité vota, la lectura de la mayoría entra en el texto y el lector nunca se entera de que la votación fue ajustada. Open Word Bible marca esas decisiones como *inciertas*, explica las dos posturas y muestra una etiqueta en el lector. Aquí van dos.

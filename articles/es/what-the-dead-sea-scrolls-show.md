@@ -4,6 +4,7 @@ summary: Los rollos confirmaron que la Biblia hebrea se copió con gran cuidado,
 date: 2026-10-11
 order: 28
 section: history
+part: ot
 ---
 Cuando se anunciaron por primera vez los Rollos del Mar Muerto, mucha gente se hizo una pregunta: ¿mostrarían que la Biblia había sido alterada? La respuesta resultó ser más interesante que un simple sí o un simple no.
 

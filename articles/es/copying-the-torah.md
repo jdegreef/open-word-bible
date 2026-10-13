@@ -3,7 +3,9 @@ title: "Copiar con cuidado: las reglas para un rollo de la Torá"
 summary: La ley judía desarrolló reglas detalladas para copiar los libros de Moisés, desde la tinta y el pautado hasta qué hacer cuando un escriba se equivoca. Cuáles son las reglas, de dónde vienen y qué hicieron por el texto.
 date: 2026-10-11
 order: 23
+nav_title: Las reglas de un rollo de la Torá
 section: history
+part: ot
 ---
 Si hoy visitas una sinagoga, quizá veas cómo se saca el rollo de la Torá del arca, se desenrolla y se lee en voz alta. Ese rollo lo escribió a mano un escriba formado, siguiendo reglas que tienen más de mil años. Una sola letra que faltara lo haría no apto para la lectura pública.
 

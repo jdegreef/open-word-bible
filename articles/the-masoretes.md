@@ -5,6 +5,7 @@ date: 2026-10-11
 order: 24
 nav_title: The Masoretes
 section: history
+part: ot
 ---
 Open a Hebrew Bible and you will see the consonants, the main letters, surrounded by small dots and dashes above and below them. Those marks are the vowels and the accents. Around the edges of the page in a scholarly edition you will see tiny notes in abbreviated Aramaic. All of this was added by a group of scholars known as the **Masoretes**. Almost every Old Testament translation in the world, including Open Word Bible's, is made from the text they guarded.
 

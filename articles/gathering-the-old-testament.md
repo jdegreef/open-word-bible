@@ -4,6 +4,7 @@ summary: Which books belong in the Hebrew scriptures, and who decided? The evide
 date: 2026-10-11
 order: 30
 section: history
+part: ot
 ---
 Writing a book is one thing. Recognising a collection of books as scripture, a fixed list with a beginning and an end, is another. The word for such a list is **canon**, from a Greek word for a measuring rod or rule. This article looks at how the books of the Hebrew Bible, the Christian Old Testament, came to be gathered into a canon, and why Jewish, Protestant, Catholic and Orthodox Bibles still do not have quite the same list.
 

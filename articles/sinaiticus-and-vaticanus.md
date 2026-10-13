@@ -4,6 +4,7 @@ summary: Two great Bibles from the fourth century, one found in a monastery at t
 date: 2026-10-11
 order: 35
 section: history
+part: nt
 ---
 If the papyri are the earliest witnesses to the New Testament, the two great parchment codices of the fourth century are the most complete. **Codex Sinaiticus** and **Codex Vaticanus** are the oldest surviving manuscripts that once contained the whole Christian Bible, Old and New Testaments, in Greek. They have shaped every critical edition of the Greek New Testament since the nineteenth century, and with it almost every modern translation.
 

@@ -78,18 +78,53 @@ class ArticlesTest(unittest.TestCase):
         first = min(self.articles, key=lambda a: a["order"])
         self.assertIn(build_site.article_url(first), home)
 
+    def test_menu_titles_are_shorter_than_titles(self):
+        # nav_title is a short title for the header menu, in every language.
+        for lang in build_site.LANGUAGES:
+            for a in build_site.load_articles(lang):
+                if "nav_title" in a:
+                    self.assertLess(len(a["nav_title"]), len(a["title"]), (lang, a["slug"]))
+
     def test_every_article_has_a_known_section(self):
         for a in self.articles:
             self.assertIn(a["section"], build_site.SECTIONS, a["slug"])
         index = (self.out / "articles" / "index.html").read_text(encoding="utf-8")
         for key in build_site.SECTIONS:
             self.assertIn(f'id="{key}"', index)
-            # A link to each section from the top, with its count...
-            count = sum(a["section"] == key for a in self.articles)
+            # A link to each section from the top, with its count (the
+            # first article opens the page, above the sections)...
+            first = min(self.articles, key=lambda a: a["order"])
+            count = sum(a["section"] == key for a in self.articles if a is not first)
             self.assertIn(f'<a href="#{key}">{build_site.SECTIONS[key]} <span>{count}</span></a>', index)
         # ...and a section's rows don't repeat its name.
         groups = index[index.index('<section class="a-group"'):]
         self.assertNotIn('class="a-section"', groups)
+
+    def test_articles_page_starts_here_numbers_series_and_links_verses(self):
+        index = (self.out / "articles" / "index.html").read_text(encoding="utf-8")
+        # The first article, with the next ones in its section to read after it.
+        self.assertIn('<div class="a-start">', index)
+        self.assertIn('<nav class="a-path"', index)
+        # Series are numbered; other sections are not.
+        history = index[index.index('id="history"'):]
+        self.assertIn('<span class="a-num" aria-hidden="true">20</span>', history)
+        method = index[index.index('id="method"'):index.index('id="passage"')]
+        self.assertNotIn('a-num', method)
+        # Verses an article reads link to the reader.
+        self.assertIn('<a class="a-ref" href="/jhn/1/#v1">John 1:1</a>', index)
+
+    def test_history_series_is_in_parts_in_every_language(self):
+        english = {a["slug"]: a for a in self.articles}
+        for a in self.articles:
+            if a["section"] == "history":
+                self.assertIn(a.get("part"), build_site.PARTS, a["slug"])
+        for lang in build_site.LANGUAGES:
+            for a in build_site.load_articles(lang):
+                self.assertEqual(a.get("part"), english[a["slug"]].get("part"), f"{lang} {a['slug']}")
+        index = (self.out / "articles" / "index.html").read_text(encoding="utf-8")
+        history = index[index.index('id="history"'):index.index('id="translation"')]
+        self.assertIn('<h3>The Old Testament <span>1\u201310</span></h3>', history)
+        self.assertIn('<ol class="a-rows series" start="11">', history)
 
     def test_scripture_quotes_are_captioned_and_link_to_the_reader(self):
         page = (self.out / "articles" / "the-word-was-god" / "index.html").read_text(encoding="utf-8")

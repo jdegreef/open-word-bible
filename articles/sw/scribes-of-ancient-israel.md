@@ -4,6 +4,7 @@ summary: Muda mrefu kabla ya uchapishaji, kila nakala ya maandiko matakatifu ili
 date: 2026-10-11
 order: 22
 section: history
+part: ot
 ---
 Kila Biblia inayochapishwa leo inawategemea watu ambao wasomaji wengi hawawafikirii kamwe: waandishi. Kwa zaidi ya miaka elfu mbili, njia pekee ya kupata nakala ya kitabu cha Biblia ilikuwa mtu kukiandika kwa mkono, herufi kwa herufi, kutoka nakala nyingine. Usahihi wa Biblia tunayoisoma unategemea, kwa kiasi kikubwa, jinsi watu hao walivyokuwa hodari katika kazi yao.
 

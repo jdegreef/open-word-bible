@@ -4,6 +4,7 @@
   "months": ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"],
   "levels": {"L": "Littérale", "B": "Équilibrée", "R": "Simple"},
   "sections": {"method": "Comment elle est faite", "passage": "Lire le texte", "history": "Comment la Bible nous est parvenue", "translation": "La Bible en traduction"},
+  "parts": {"ot": "L’Ancien Testament", "nt": "Le Nouveau Testament", "today": "Le texte aujourd’hui"},
 
   "meta.description": "Une traduction libre de la Bible depuis l’hébreu et le grec, avec le raisonnement derrière chaque phrase.",
   "meta.card_alt": "Open Word Bible : la Bible traduite de l’hébreu et du grec, raisonnement à l’appui.",
@@ -26,13 +27,14 @@
   "nav.all_articles": "Tous les articles",
   "nav.about_project": "À propos du projet",
   "nav.about_project_note": "Ce qu’il est et sous quelle licence il est publié",
+  "nav.beliefs": "Ce que nous croyons",
+  "nav.beliefs_note": "Notre foi, notre vision, notre mission et nos valeurs",
   "nav.credits": "Sources et crédits",
   "nav.credits_note": "Les textes et les données sur lesquels il repose",
   "nav.help": "Participer",
   "nav.help_note": "Relecteurs, locuteurs et développeurs",
   "nav.source": "Code source",
   "nav.source_note": "Données, validateur et site sur GitHub",
-  "tools.github": "Open Word Bible sur GitHub",
   "tools.theme": "Thème",
   "theme.auto": "Automatique",
   "theme.light": "Papier",
@@ -74,6 +76,7 @@
   "footer.key_done": "Tous les chapitres",
   "footer.key_part": "Quelques chapitres",
   "footer.key_none": "Pas encore commencé",
+  "footer.not_started": "{n} livres pas encore commencés",
   "footer.review": "Chaque phrase est traduite avec l’aide de l’IA et reste non relue jusqu’à ce qu’un relecteur nommé, qui lit la langue originale, l’approuve.",
   "footer.licences": "Traduction et notes CC0 &middot; Code MIT &middot; Les textes sources gardent leurs propres licences",
 
@@ -82,11 +85,8 @@
   "reader.sub": "Traduit du Nouveau Testament grec de la SBL. Touchez un verset pour voir pourquoi il est formulé ainsi. Touchez une petite lettre pour lire sa note.",
   "reader.sub_hbo": "Traduit de l’hébreu du Codex de Leningrad de Westminster. Touchez un verset pour voir pourquoi il est formulé ainsi. Touchez une petite lettre pour lire sa note.",
   "reader.settings": "Réglages de lecture",
-  "reader.change": "Modifier",
-  "reader.review_draft": "Brouillon · {n} phrases relues sur {total}",
-  "reader.review_done": "Relu · les {total} phrases",
-  "reader.review_meaning": "{n} au sens vérifié",
   "reader.level": "Niveau",
+  "reader.wording": "Formulation",
   "reader.gender": "Genre",
   "reader.title": "Titre",
   "reader.pronouns": "Pronoms pour Dieu",
@@ -112,6 +112,7 @@
   "reader.He": "Il",
   "reader.plural": "Pluriel",
   "reader.notes": "Notes",
+  "reader.noscript": "Voici la version {level} avec les réglages par défaut. Les notes, le raisonnement derrière chaque verset et les réglages de lecture nécessitent JavaScript.",
   "reader.ui": {
     "hint_level_hbo": {"L": "Suit de près l’hébreu. Les mots entre [crochets] sont ajoutés pour le sens.", "B": "Un français naturel qui suit de près l’hébreu. Le choix par défaut.", "R": "Un français simple et actuel, pour qui découvre la Bible et pour les jeunes."},
     "empty_text_hbo": "Touchez un verset pour voir l’hébreu, une glose mot à mot et chaque décision de traduction avec sa raison.",
@@ -178,6 +179,32 @@
     "hl_blue": "Surlignage bleu",
     "hl_pink": "Surlignage rose",
     "saved_all": "Tous les versets enregistrés",
+    "step_prev": "Verset précédent",
+    "step_next": "Verset suivant",
+    "step_notes": "Suivant avec notes",
+    "step_notes_hint": "La phrase suivante qui a une note de bas de page, une décision incertaine ou un écho d’un autre passage de l’Écriture",
+    "step_notes_none": "Plus de phrases avec des notes dans ce chapitre",
+    "review_status": {"ai_draft": "Brouillon · pas encore relu", "meaning_reviewed": "Sens relu · formulation pas encore relue", "reviewed": "Relu", "revised": "Corrigé après relecture"},
+    "review_cite": {"ai_draft": "brouillon, pas encore relu", "meaning_reviewed": "sens relu, formulation pas encore relue", "reviewed": "relu", "revised": "corrigé après relecture"},
+    "review_hint": "Chaque phrase reste un brouillon rédigé par IA jusqu’à ce qu’un relecteur nommé l’approuve.",
+    "ask": "Remettre en question",
+    "ask_label": "Remettre en question ce verset sur GitHub (s’ouvre dans un nouvel onglet)",
+    "ask_decision_label": "Remettre en question cette décision sur GitHub (s’ouvre dans un nouvel onglet)",
+    "ask_title": "Question : {ref}",
+    "ask_what": "Qu’est-ce qui semble faux ?",
+    "ask_why": "Pourquoi ? (le grec ou l’hébreu, d’autres traductions, des sources)",
+    "cite": "Citer",
+    "cite_citation": "Référence",
+    "cite_plain": "Texte brut",
+    "cite_markdown": "Markdown",
+    "cite_copy": "Copier",
+    "cite_copied": "Copié",
+    "cite_chapter": "Copier le chapitre",
+    "cite_format": "Open Word Bible, {ref} ({level} ; {status}). CC0. {url}",
+    "key_notes": "Notes sur ce verset",
+    "xref_nt": "Pas encore traduit",
+    "xref_search": "Rechercher",
+    "xref_source": "{name} — pour comparaison, ce n’est pas le texte d’Open Word Bible",
     "category": {
       "text_variant": "Leçon des manuscrits",
       "punctuation": "Ponctuation",
@@ -257,9 +284,54 @@
   "about.licences_text": "La traduction, ses fiches de raisonnement et les alignements sont versés dans le domaine public sous <a href=\"https://creativecommons.org/publicdomain/zero/1.0/deed.fr\">CC0 1.0</a>. Le code est sous licence MIT. Les textes sources gardent leurs propres licences, mentionnées ci-dessous.",
   "about.source": "Code source et données :",
   "about.credits_language": "Les crédits sont donnés en anglais, avec les noms et les licences tels que leurs auteurs les publient.",
+  "beliefs": {
+    "title": "Ce que nous croyons",
+    "description": "La confession de foi d’Open Word Bible, sa vision et sa mission, et les valeurs qui guident la traduction.",
+    "kicker": "Nous commençons par ce que nous croyons",
+    "heading": "La foi dans laquelle nous traduisons",
+    "creed": [
+      "Je crois en Dieu, le Père tout-puissant, créateur du ciel et de la terre.",
+      "Je crois en Jésus-Christ, son Fils unique, notre Seigneur, qui a été conçu du Saint-Esprit et est né de la vierge Marie. Il a souffert sous Ponce Pilate, a été crucifié, est mort et a été enseveli ; il est descendu au séjour des morts. Le troisième jour, il est ressuscité. Il est monté au ciel, il est assis à la droite du Père, et il viendra juger les vivants et les morts.",
+      "Je crois en l’Esprit saint, à la sainte Église universelle, à la communion des saints, au pardon des péchés, à la résurrection du corps et à la vie éternelle."
+    ],
+    "amen": "Amen.",
+    "scripture": "Ces paroles sont le Symbole des apôtres, que l’Église confesse depuis ses premiers siècles. Nous croyons aussi que les Écritures de l’Ancien et du Nouveau Testament sont la parole de Dieu et l’autorité finale pour la foi et la vie.",
+    "vision_title": "Notre vision",
+    "vision": "Que des personnes de toute nation, de toute tribu et de toute langue entendent les merveilles de Dieu dans leurs propres mots, grâce à une Bible que chacun peut utiliser et que chacun peut vérifier.",
+    "mission_title": "Notre mission",
+    "mission": "Traduire la Bible de l’hébreu, de l’araméen et du grec vers les langues d’aujourd’hui, montrer le raisonnement derrière chaque phrase, et tout donner.",
+    "values_title": "Ce qui guide le travail",
+    "values": [
+      [
+        "Fidélité",
+        "les langues originales, jamais une autre traduction."
+      ],
+      [
+        "Générosité",
+        "tout dans le domaine public, gratuitement."
+      ],
+      [
+        "Transparence",
+        "chaque décision montrée avec ses raisons."
+      ],
+      [
+        "Humilité",
+        "l’incertitude signalée, les corrections bienvenues."
+      ],
+      [
+        "Clarté",
+        "une Bible que chaque lecteur peut suivre."
+      ]
+    ]
+  },
 
   "articles.title": "Articles",
   "articles.sections": "Rubriques",
+  "articles.start_here": "Commencer ici",
+  "articles.then_read": "Ensuite, dans l’ordre",
+  "articles.count_time": "{n} articles &middot; environ {time}",
+  "articles.hours": "{h} h {m} min",
+  "articles.minutes": "{m} min",
   "articles.heading": "Comment la traduction est faite, et pourquoi elle dit ce qu’elle dit",
   "articles.dek": "De courts textes sur la méthode d’Open Word Bible et des lectures attentives des passages traduits jusqu’ici. Comme la traduction, chaque article reste un brouillon jusqu’à ce qu’un relecteur l’ait vérifié.",
   "articles.none": "Il n’y a pas encore d’articles en français.",
@@ -310,7 +382,9 @@
   "account.display_name_note": "(visible par les relecteurs sur vos propositions et vos questions)",
   "account.save": "Enregistrer",
   "account.soon": "Bientôt",
-  "account.soon_text": "Surlignages, signets et notes privées sur n’importe quel verset, synchronisés entre vos appareils ; puis la possibilité de proposer une correction ou de poser une question sur une décision de traduction.",
+  "account.soon_text": "Des notes privées sur n’importe quel verset ; puis la possibilité de proposer une correction ou de poser une question sur une décision de traduction.",
+  "account.synced": "Vos marque-pages, surlignages et l’endroit où vous en êtes de votre lecture sont gardés avec votre compte, et vous suivent donc sur vos autres appareils.",
+  "account.synced_link": "Voir vos versets enregistrés",
 
   "login.title_sign_in": "Bon retour parmi nous",
   "login.title_sign_up": "Créez votre compte",

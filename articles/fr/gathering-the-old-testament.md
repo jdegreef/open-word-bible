@@ -4,6 +4,7 @@ summary: Quels livres font partie des Écritures hébraïques, et qui en a déci
 date: 2026-10-11
 order: 30
 section: history
+part: ot
 ---
 Écrire un livre est une chose. Reconnaître une collection de livres comme Écriture, une liste fixe avec un début et une fin, en est une autre. Le mot qui désigne une telle liste est **canon**, d'un mot grec qui signifie une règle ou une baguette à mesurer. Cet article examine comment les livres de la Bible hébraïque, l'Ancien Testament des chrétiens, en sont venus à être rassemblés en un canon, et pourquoi les Bibles juive, protestante, catholique et orthodoxe n'ont toujours pas tout à fait la même liste.
 

@@ -4,6 +4,7 @@
   "months": ["Januari", "Februari", "Machi", "Aprili", "Mei", "Juni", "Julai", "Agosti", "Septemba", "Oktoba", "Novemba", "Desemba"],
   "levels": {"L": "Halisi", "B": "Linganifu", "R": "Rahisi"},
   "sections": {"method": "Jinsi inavyotafsiriwa", "passage": "Kusoma maandiko", "history": "Jinsi Biblia ilivyotufikia", "translation": "Biblia katika tafsiri"},
+  "parts": {"ot": "Agano la Kale", "nt": "Agano Jipya", "today": "Maandiko leo"},
 
   "meta.description": "Tafsiri huru ya Biblia kutoka Kiebrania na Kigiriki, pamoja na sababu za kila sentensi.",
   "meta.card_alt": "Open Word Bible: Biblia, iliyotafsiriwa kutoka Kiebrania na Kigiriki, pamoja na sababu zake.",
@@ -26,13 +27,14 @@
   "nav.all_articles": "Makala zote",
   "nav.about_project": "Kuhusu mradi",
   "nav.about_project_note": "Ni nini, na leseni yake",
+  "nav.beliefs": "Tunachoamini",
+  "nav.beliefs_note": "Imani yetu, maono, utume na maadili",
   "nav.credits": "Vyanzo na shukrani",
   "nav.credits_note": "Maandiko na data inayotumika",
   "nav.help": "Saidia kuitengeneza",
   "nav.help_note": "Wakaguzi, wazungumzaji na wasanidi programu",
   "nav.source": "Msimbo chanzo",
   "nav.source_note": "Data, kikaguzi na tovuti kwenye GitHub",
-  "tools.github": "Open Word Bible kwenye GitHub",
   "tools.theme": "Mandhari",
   "theme.auto": "Kiotomatiki",
   "theme.light": "Karatasi",
@@ -74,6 +76,7 @@
   "footer.key_done": "Sura zote",
   "footer.key_part": "Baadhi ya sura",
   "footer.key_none": "Bado hakijaanzishwa",
+  "footer.not_started": "Vitabu {n} bado havijaanzishwa",
   "footer.review": "Kila sentensi imetafsiriwa kwa msaada wa AI, na haihesabiwi kuwa imekaguliwa mpaka mkaguzi anayetajwa kwa jina, anayesoma lugha ya asili, aiidhinishe.",
   "footer.licences": "Tafsiri na maelezo CC0 &middot; Msimbo MIT &middot; Maandiko ya chanzo yana leseni zake",
 
@@ -82,11 +85,8 @@
   "reader.sub": "Imetafsiriwa kutoka Agano Jipya la Kigiriki la SBL. Gusa mstari kuona kwa nini unasomeka hivyo. Gusa herufi ndogo kusoma maelezo yake ya chini.",
   "reader.sub_hbo": "Imetafsiriwa kutoka Kiebrania cha Kodeksi ya Leningrad ya Westminster. Gusa mstari kuona kwa nini unasomeka hivyo. Gusa herufi ndogo kusoma maelezo yake ya chini.",
   "reader.settings": "Mipangilio ya kusoma",
-  "reader.change": "Badilisha",
-  "reader.review_draft": "Rasimu · sentensi {n} kati ya {total} zimekaguliwa",
-  "reader.review_done": "Imekaguliwa · sentensi zote {total}",
-  "reader.review_meaning": "{n} zimehakikiwa maana",
   "reader.level": "Kiwango",
+  "reader.wording": "Maneno",
   "reader.gender": "Jinsia",
   "reader.title": "Cheo",
   "reader.pronouns": "Viwakilishi vya Mungu",
@@ -112,6 +112,7 @@
   "reader.He": "Yeye",
   "reader.plural": "Wewe/ninyi",
   "reader.notes": "Maelezo",
+  "reader.noscript": "Haya ni maandishi ya {level} kwa mipangilio ya kawaida. Maelezo, sababu za kila mstari na mipangilio ya usomaji vinahitaji JavaScript.",
   "reader.ui": {
     "hint_level_hbo": {"L": "Inafuata Kiebrania kwa karibu. Maneno ndani ya [mabano] yameongezwa ili maana ieleweke.", "B": "Kiswahili cha kawaida kinachofuata Kiebrania kwa karibu. Chaguo la msingi.", "R": "Kiswahili rahisi cha leo kwa wanaosoma mara ya kwanza na kwa vijana."},
     "empty_text_hbo": "Gusa au bofya mstari wowote kuona Kiebrania, maana ya neno kwa neno, na kila uamuzi wa tafsiri pamoja na sababu yake.",
@@ -166,6 +167,32 @@
     "hl_blue": "Angazia kwa bluu",
     "hl_pink": "Angazia kwa waridi",
     "saved_all": "Mistari yote iliyohifadhiwa",
+    "step_prev": "Mstari uliotangulia",
+    "step_next": "Mstari unaofuata",
+    "step_notes": "Unaofuata wenye maelezo",
+    "step_notes_hint": "Sentensi inayofuata yenye maelezo ya chini, uamuzi usio na uhakika au mwangwi wa Maandiko mengine",
+    "step_notes_none": "Hakuna sentensi nyingine zenye maelezo katika sura hii",
+    "review_status": {"ai_draft": "Rasimu · bado haijakaguliwa", "meaning_reviewed": "Maana imekaguliwa · maneno bado hayajakaguliwa", "reviewed": "Imekaguliwa", "revised": "Imerekebishwa baada ya ukaguzi"},
+    "review_cite": {"ai_draft": "rasimu, bado haijakaguliwa", "meaning_reviewed": "maana imekaguliwa, maneno bado hayajakaguliwa", "reviewed": "imekaguliwa", "revised": "imerekebishwa baada ya ukaguzi"},
+    "review_hint": "Kila sentensi ni rasimu ya AI mpaka mkaguzi anayetajwa kwa jina aiidhinishe.",
+    "ask": "Hoji hili",
+    "ask_label": "Hoji mstari huu kwenye GitHub (hufunguka katika kichupo kipya)",
+    "ask_decision_label": "Hoji uamuzi huu kwenye GitHub (hufunguka katika kichupo kipya)",
+    "ask_title": "Swali: {ref}",
+    "ask_what": "Ni nini kinachoonekana si sahihi?",
+    "ask_why": "Kwa nini? (Kigiriki au Kiebrania, tafsiri nyingine, vyanzo)",
+    "cite": "Nukuu",
+    "cite_citation": "Rejeo",
+    "cite_plain": "Maandishi matupu",
+    "cite_markdown": "Markdown",
+    "cite_copy": "Nakili",
+    "cite_copied": "Imenakiliwa",
+    "cite_chapter": "Nakili sura",
+    "cite_format": "Open Word Bible, {ref} ({level}; {status}). CC0. {url}",
+    "key_notes": "Maelezo kuhusu mstari huu",
+    "xref_nt": "Bado haijatafsiriwa",
+    "xref_search": "Tafuta",
+    "xref_source": "{name} — kwa kulinganisha, si maneno ya Open Word Bible",
     "category": {
       "text_variant": "Usomaji wa nakala", "punctuation": "Uakifishaji",
       "word_sense": "Maana ya neno", "grammar": "Sarufi", "allusion": "Mwangwi wa maandiko mengine",
@@ -237,9 +264,54 @@
   "about.licences_text": "Tafsiri, rekodi zake za sababu na mipangilio ya maneno imewekwa katika mali ya umma chini ya <a href=\"https://creativecommons.org/publicdomain/zero/1.0/deed.sw\">CC0 1.0</a>. Msimbo una leseni ya MIT. Maandiko ya chanzo yana leseni zake, zinazotajwa hapa chini.",
   "about.source": "Msimbo chanzo na data:",
   "about.credits_language": "Shukrani zimeandikwa kwa Kiingereza, pamoja na majina na leseni kama waandishi wake wanavyozichapisha.",
+  "beliefs": {
+    "title": "Tunachoamini",
+    "description": "Tamko la imani la Open Word Bible, maono na utume wake, na maadili yanayoongoza tafsiri.",
+    "kicker": "Tunaanza na tunachoamini",
+    "heading": "Imani tunayotafsiri ndani yake",
+    "creed": [
+      "Nasadiki kwa Mungu, Baba Mwenyezi, Muumba wa mbingu na dunia.",
+      "Nasadiki kwa Yesu Kristo, Mwanawe wa pekee, Bwana wetu, aliyetungwa mimba kwa uweza wa Roho Mtakatifu, akazaliwa na Bikira Maria. Aliteswa wakati wa Pontio Pilato, akasulubiwa, akafa, akazikwa; akashuka kwa wafu. Siku ya tatu akafufuka. Akapaa mbinguni, ameketi mkono wa kuume wa Baba, na atakuja kuwahukumu walio hai na wafu.",
+      "Nasadiki kwa Roho Mtakatifu, Kanisa takatifu la ulimwengu wote, ushirika wa watakatifu, msamaha wa dhambi, ufufuo wa mwili, na uzima wa milele."
+    ],
+    "amen": "Amina.",
+    "scripture": "Maneno haya ni Kanuni ya Imani ya Mitume, ambayo kanisa limeikiri tangu karne zake za kwanza. Tunaamini pia kwamba Maandiko ya Agano la Kale na Agano Jipya ni neno la Mungu, na mamlaka ya mwisho kwa imani na maisha.",
+    "vision_title": "Maono yetu",
+    "vision": "Kwamba watu wa kila taifa, kabila na lugha wasikie matendo makuu ya Mungu kwa maneno yao wenyewe, kutoka kwa Biblia ambayo mtu yeyote anaweza kuitumia na kuikagua.",
+    "mission_title": "Utume wetu",
+    "mission": "Kutafsiri Biblia kutoka Kiebrania, Kiaramu na Kigiriki kwenda lugha za leo, kuonyesha sababu za kila sentensi, na kuitoa yote bure.",
+    "values_title": "Kinachoongoza kazi",
+    "values": [
+      [
+        "Uaminifu",
+        "lugha za asili, kamwe si tafsiri nyingine."
+      ],
+      [
+        "Ukarimu",
+        "kila kitu katika mali ya umma, bila malipo."
+      ],
+      [
+        "Uwazi",
+        "kila uamuzi unaonyeshwa pamoja na sababu zake."
+      ],
+      [
+        "Unyenyekevu",
+        "mashaka yanaonyeshwa, masahihisho yanakaribishwa."
+      ],
+      [
+        "Ufasaha",
+        "Biblia ambayo kila msomaji anaweza kuielewa."
+      ]
+    ]
+  },
 
   "articles.title": "Makala",
   "articles.sections": "Sehemu",
+  "articles.start_here": "Anza hapa",
+  "articles.then_read": "Kisha soma kwa mpangilio huu",
+  "articles.count_time": "Makala {n} &middot; takriban {time}",
+  "articles.hours": "saa {h} dakika {m}",
+  "articles.minutes": "dakika {m}",
   "articles.heading": "Jinsi tafsiri inavyotengenezwa, na kwa nini inasomeka hivyo",
   "articles.dek": "Makala fupi kuhusu mbinu ya Open Word Bible na usomaji wa karibu wa vifungu vilivyotafsiriwa hadi sasa. Kama tafsiri yenyewe, kila makala ni rasimu mpaka mkaguzi aikague.",
   "articles.none": "Bado hakuna makala kwa Kiswahili.",
@@ -290,7 +362,9 @@
   "account.display_name_note": "(linaonyeshwa kwa wakaguzi kwenye mapendekezo na maswali)",
   "account.save": "Hifadhi",
   "account.soon": "Kinachofuata",
-  "account.soon_text": "Alama, vialamisho na maelezo binafsi kwenye mstari wowote, yakiwa sawa kwenye vifaa vyako vyote; kisha kupendekeza marekebisho au kuuliza swali kuhusu uamuzi wa tafsiri.",
+  "account.soon_text": "Maelezo binafsi kwenye mstari wowote; kisha kupendekeza marekebisho au kuuliza swali kuhusu uamuzi wa tafsiri.",
+  "account.synced": "Alama zako, mistari uliyoangazia na mahali ulipofikia kusoma vinahifadhiwa pamoja na akaunti yako, hivyo vinakufuata kwenye vifaa vyako vingine.",
+  "account.synced_link": "Tazama mistari uliyohifadhi",
 
   "login.title_sign_in": "Karibu tena",
   "login.title_sign_up": "Fungua akaunti yako",

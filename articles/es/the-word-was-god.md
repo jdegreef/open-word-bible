@@ -3,6 +3,7 @@ title: "«El Verbo era Dios»: cómo se traduce Juan 1:1"
 summary: Por qué Open Word Bible dice «el Verbo era Dios», y no «un dios» ni «divino», y qué hace el orden de las palabras en griego.
 date: 2026-10-10
 order: 5
+nav_title: Cómo se traduce Juan 1:1
 section: passage
 ---
 El Evangelio de Juan empieza con una de las frases más discutidas de la Biblia:

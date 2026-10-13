@@ -299,17 +299,28 @@ header.site nav.primary { flex: 1; display: flex; justify-content: center; }
 }
 .nav-link .caret { margin-left: -2px; opacity: .7; transition: transform var(--fast) ease; }
 .nav-trigger[aria-expanded="true"] .caret { transform: rotate(180deg); }
+/* While a menu is open, its trigger is the one lit: the current section's
+   link goes quiet (keeping its weight, so nothing shifts). */
+.nav-trigger[aria-expanded="true"] { color: var(--accent); box-shadow: inset 0 0 0 1.5px var(--accent); }
+.nav-list:has(.nav-trigger[aria-expanded="true"]) :is(.nav-link.active, .nav-link[aria-current]):not([aria-expanded="true"]) {
+  color: var(--muted); background: none; box-shadow: none;
+}
 
 /* Dropdown panels. */
 .dropdown {
-  position: absolute; top: calc(100% + 10px); left: 50%; z-index: 30; transform: translateX(-50%);
+  position: absolute; top: calc(100% + 10px); left: 50%; z-index: 30;
+  /* Centred under its trigger; web/site.js sets --dd-shift to keep it on
+     screen, and a panel taller than the window scrolls inside. */
+  transform: translateX(calc(-50% + var(--dd-shift, 0px)));
   width: 340px; padding: 10px;
+  max-height: calc(100vh - var(--header-h) - 24px); max-height: calc(100dvh - var(--header-h) - 24px);
+  overflow-y: auto; overscroll-behavior: contain;
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
   box-shadow: var(--shadow-pop);
   animation: dd-in var(--fast) ease;
 }
 .dropdown.dd-wide { width: 820px; max-width: calc(100vw - 32px); }
-@keyframes dd-in { from { opacity: 0; transform: translate(-50%, -4px); } }
+@keyframes dd-in { from { opacity: 0; transform: translate(calc(-50% + var(--dd-shift, 0px)), -4px); } }
 .dd-head {
   margin: 6px 10px 6px; font-size: 11.5px; font-weight: 700; letter-spacing: .08em;
   text-transform: uppercase; color: var(--muted);
@@ -341,7 +352,7 @@ header.site nav.primary { flex: 1; display: flex; justify-content: center; }
 }
 .dd-all:hover { text-decoration: underline; }
 
-/* Round tool buttons on the right: GitHub, the colour gear, the menu. */
+/* Round tool buttons on the right: the colour gear, the menu. */
 header.site .tools { display: flex; align-items: center; gap: 8px; flex: none; }
 .tool-btn {
   display: grid; place-items: center; width: 38px; height: 38px; padding: 0;
@@ -442,9 +453,9 @@ footer.site nav a:hover { color: var(--accent); text-decoration: underline; }
   font-size: 14px; font-weight: 600; text-decoration: none;
 }
 .foot-resume:hover { text-decoration: underline; }
-/* The index of every book: a chip per book, in canon order. A book not yet
-   started is greyed out; one with some chapters missing is dashed, as the
-   chapter pills are. */
+/* The index of the books: a chip per book started, in canon order, then one
+   greyed-out chip counting the books not started yet. A book with some
+   chapters missing is dashed, as the chapter pills are. */
 .foot-books { border-top: 1px solid var(--line); margin-top: 40px; padding-top: 28px; }
 .testaments { display: grid; grid-template-columns: minmax(0, 39fr) minmax(0, 27fr); gap: 24px 40px; }
 .testament-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 12px; margin-bottom: 12px; }
@@ -459,6 +470,8 @@ footer.site a.book-chip { color: var(--text); font-weight: 600; }
 footer.site a.book-chip:hover { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); text-decoration: none; }
 .book-chip.part { border-style: dashed; }
 .book-chip.none { border-color: transparent; background: none; color: var(--muted); opacity: .6; padding-inline: 6px; }
+footer.site a.book-chip.none { border: 1px dotted var(--line-strong); opacity: 1; padding-inline: 10px; font-weight: 500; }
+footer.site a.book-chip.none:not(:hover) { color: var(--muted); }
 .foot-key { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; margin: 18px 0 0; font-size: 13px; color: var(--muted); }
 .foot-key > span { display: inline-flex; align-items: center; gap: 7px; }
 .foot-key .book-chip { width: 22px; height: 14px; padding: 0; }
@@ -604,6 +617,14 @@ footer.site a.book-chip:hover { border-color: var(--accent); background: var(--a
 .book-head h2 { font-family: var(--display); font-weight: 600; font-size: 28px; letter-spacing: -.01em; margin: 0; }
 .book-head .meter { max-width: 260px; }
 
+/* Continue reading, at the top of the Read menu once there is a place. */
+.dd-resume:not([hidden]) {
+  display: flex; align-items: center; gap: 10px; margin: 0 0 8px; padding: 10px 12px; border-radius: var(--radius-sm);
+  background: var(--accent-soft); border: 1px solid var(--accent-soft-border); color: var(--accent);
+  font-size: 15px; font-weight: 600; text-decoration: none;
+}
+.dd-resume:hover { border-color: var(--accent); }
+
 /* Header Read menu: a book a line under its testament, each testament
    one or two columns wide (--cols) and read down its columns. */
 .dropdown.dd-read { width: auto; }
@@ -701,10 +722,33 @@ footer.site a.book-chip:hover { border-color: var(--accent); background: var(--a
 .a-card.featured { padding: 36px 40px; background: var(--accent-soft); border-color: var(--accent-soft-border); }
 .a-card.featured .a-title { font-size: clamp(26px, 4vw, 34px); max-width: 24ch; }
 .a-card.featured .a-summary { font-family: var(--serif); font-size: 19px; max-width: 60ch; color: var(--text); }
-.a-group { margin: 48px 0 0; }
-/* Articles page: links to the sections, then each section as compact rows,
-   two columns, a summary cut to two lines. */
-.a-jump ul { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 28px; padding: 0; }
+.a-group { margin: 44px 0 0; scroll-margin-top: calc(var(--header-h) + 72px); }
+/* Articles page: a "Start here" box, links to the sections (kept in view
+   under the header), then each section as compact rows with a summary cut
+   to two lines. Series are numbered; the verses an article reads are links. */
+.page-head.compact { padding: 40px 0 24px; }
+.page-head.compact h1 { font-size: clamp(28px, 4vw, 38px); }
+.a-start {
+  display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  background: var(--accent-soft); border: 1px solid var(--accent-soft-border); border-radius: var(--radius);
+}
+.a-start .a-card.featured { background: none; border: 0; box-shadow: none; border-radius: var(--radius) 0 0 var(--radius); padding: 30px 34px; }
+.a-start .a-card.featured:hover { transform: none; }
+.a-start .a-card.featured:hover .a-title { color: var(--accent); }
+.a-start .a-section { color: var(--accent); }
+.a-path { margin: 24px 0; padding: 4px 30px; border-left: 1px solid var(--accent-soft-border); }
+.a-path h2 { margin: 0 0 12px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .09em; color: var(--muted); }
+.a-path ol { list-style: none; counter-reset: path; margin: 0; padding: 0; display: grid; gap: 12px; }
+.a-path li { counter-increment: path; display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 8px; align-items: baseline; }
+.a-path li::before { content: counter(path); font-family: var(--display); font-weight: 600; color: var(--accent); }
+.a-path a { font-weight: 600; color: var(--text); text-decoration: none; line-height: 1.35; }
+.a-path a:hover { color: var(--accent); text-decoration: underline; }
+.a-jump {
+  position: sticky; top: var(--header-h); z-index: 30; margin: 0 0 4px; padding: 12px 0;
+  background: var(--bg); border-bottom: 1px solid var(--line);
+}
+.a-jump ul { list-style: none; display: flex; gap: 8px; margin: 0; padding: 0; overflow-x: auto; scrollbar-width: none; }
+.a-jump li { flex: none; }
 .a-jump a {
   display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; border: 1px solid var(--line);
   border-radius: 999px; background: var(--surface); color: var(--text); font-size: 14.5px; font-weight: 600;
@@ -712,20 +756,38 @@ footer.site a.book-chip:hover { border-color: var(--accent); background: var(--a
 }
 .a-jump a:hover { border-color: var(--accent); color: var(--accent); }
 .a-jump span { font-size: 13px; font-weight: 500; color: var(--muted); font-variant-numeric: tabular-nums; }
-.a-group { scroll-margin-top: calc(var(--header-h) + 16px); }
+.a-start + .a-jump { margin-top: 20px; }
+.a-group-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; margin: 0 0 12px; }
+.a-group .a-group-head h2 { margin: 0; }
+.a-group-head span { font-size: 14px; color: var(--muted); font-variant-numeric: tabular-nums; }
 .a-rows {
   list-style: none; padding: 0; margin: 0; display: grid; gap: 0 32px;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
 }
-.a-rows li { border-top: 1px solid var(--line); }
-.a-rows .a-card {
-  height: auto; padding: 16px 4px 18px; gap: 4px; border: 0; border-radius: 0; background: none; box-shadow: none;
+.a-part + .a-part { margin-top: 20px; }
+.a-part h3 {
+  display: flex; align-items: baseline; gap: 10px; margin: 0 0 6px; font-size: 12.5px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .09em; color: var(--gold);
 }
-.a-rows .a-card:hover { transform: none; box-shadow: none; }
-.a-rows .a-card:hover .a-title { color: var(--accent); }
-.a-rows .a-title { font-size: 19px; }
-.a-rows .a-summary { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-.a-rows .a-meta { padding-top: 2px; }
+.a-part h3 span { font-weight: 500; letter-spacing: .04em; color: var(--muted); font-variant-numeric: tabular-nums; }
+.a-item { position: relative; display: flex; gap: 12px; padding: 16px 4px 18px; border-top: 1px solid var(--line); }
+.a-body { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.a-item .a-title { font-size: 19px; text-decoration: none; }
+.a-item .a-title::after { content: ""; position: absolute; inset: 0; }
+.a-item:hover .a-title { color: var(--accent); }
+.a-item .a-summary { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.a-item .a-meta { padding-top: 2px; display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; }
+.a-num {
+  flex: none; width: 30px; font-family: var(--display); font-weight: 600; font-size: 21px; line-height: 1.2;
+  color: var(--line-strong); font-variant-numeric: tabular-nums;
+}
+.a-item:hover .a-num { color: var(--accent); }
+.a-refs { position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 2px; }
+.a-ref {
+  font-size: 12.5px; font-weight: 600; color: var(--accent); background: var(--accent-soft);
+  border: 1px solid var(--accent-soft-border); border-radius: 999px; padding: 2px 10px; text-decoration: none; white-space: nowrap;
+}
+a.a-ref:hover { border-color: var(--accent); }
 .a-group h2, .more h2 { font-family: var(--display); font-weight: 600; font-size: 26px; letter-spacing: -.01em; margin: 0 0 16px; }
 .latest > p, .more > p { margin: 16px 0 0; }
 
@@ -781,6 +843,28 @@ footer.site a.book-chip:hover { border-color: var(--accent); background: var(--a
 .prose ul { padding-left: 22px; }
 .prose li { margin: 6px 0; }
 
+/* What we believe (/about/beliefs/): the creed set large like a liturgy,
+   with gold initials, then the vision, mission and values. */
+.beliefs { max-width: 680px; }
+.beliefs .kicker { font-family: var(--display); font-style: italic; font-size: 19px; color: var(--gold); margin: 0 0 6px; }
+.beliefs h1 { margin-bottom: 28px; }
+.creed { font-family: var(--serif); font-size: 21px; line-height: 1.65; }
+.creed p { margin: 0 0 18px; }
+.creed p::first-letter { font-family: var(--display); font-weight: 600; font-size: 2.6em; line-height: .9; color: var(--gold); float: left; margin: 4px 8px 0 0; }
+.creed .amen { font-family: var(--display); font-style: italic; font-weight: 600; color: var(--gold); }
+.creed-note { font-size: 15px; line-height: 1.55; color: var(--muted); margin: 0; }
+/* A rule with a small gold cross at its centre. */
+.ornament { border: 0; height: 18px; margin: 40px 0; position: relative;
+  background: linear-gradient(var(--line), var(--line)) center / 100% 1px no-repeat; }
+.ornament::before, .ornament::after { content: ""; position: absolute; left: 50%; top: 50%; translate: -50% -50%; background: var(--gold); }
+.ornament::before { width: 2px; height: 18px; box-shadow: 0 0 0 10px var(--bg); }
+.ornament::after { width: 12px; height: 2px; margin-top: -3px; }
+.beliefs .aims { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 32px; }
+.beliefs .aims h2, .beliefs .ornament + h2 { margin-top: 0; }
+.beliefs .aims p { font-family: var(--serif); font-size: 18px; line-height: 1.55; margin: 0; }
+.guides { font-family: var(--serif); font-size: 18px; line-height: 1.55; }
+@media (max-width: 640px) { .beliefs .aims { grid-template-columns: 1fr; } .creed { font-size: 19px; } }
+
 /* Reader */
 .notice {
   display: flex; align-items: center; gap: 10px;
@@ -804,48 +888,61 @@ footer.site a.book-chip:hover { border-color: var(--accent); background: var(--a
 .settings-toggle:focus-visible, .sheet-close:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .hint { font-size: 13px; color: var(--muted); margin: 10px 4px 0; max-width: 70ch; }
 
-/* The settings fold behind one button that names the current choices
-   ("Balanced · Inclusive · Christ · he · Study"), so the passage starts on
-   the first screen; the button opens the controls below it. */
-.settings-toggle {
-  display: flex; flex-wrap: nowrap; align-items: baseline; gap: 2px 10px; width: 100%; margin: 12px 0 0; padding: 10px 14px;
-  border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); color: var(--text);
-  font: inherit; font-size: 15px; font-weight: 600; box-shadow: var(--shadow-card); text-align: left; cursor: pointer;
-}
-.settings-toggle::after { content: "\25BE"; margin-left: 8px; color: var(--muted); font-weight: normal; }
-.settings-toggle[aria-expanded="true"]::after { content: "\25B4"; }
-.settings-summary {
-  flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
-  font-weight: normal; font-size: 13px; color: var(--accent);
-}
-.settings-toggle > span:first-child { flex: none; }
-.settings-change { flex: none; font-size: 13px; color: var(--muted); }
-.settings-toggle:hover .settings-change { color: var(--accent); }
-.settings-toggle[aria-expanded="false"] + .settings { display: none; }
-
-/* Wide screens: the folded settings are one slim line that stays under the
-   header while the passage scrolls, and open into the bar of controls; each
-   choice explains itself in a tooltip (web/reader.js), so the hint line is
-   for phones only. */
+/* Wide screens: the settings are one slim bar that stays under the header
+   while the passage scrolls; each choice explains itself in a tooltip
+   (web/reader.js), so the hint line is for phones only. */
+/* Wording settings (gender, title, pronouns, measures, headings): behind one
+   button on wide screens, so the bar stays one row; inline on phones. */
+.wording-toggle { display: none; }
 @media (min-width: 861px) {
-  .settings-bar {
-    position: sticky; top: var(--header-h); z-index: 20;
-    margin: 0 -8px; padding: 8px 8px 6px; background: var(--bg);
+  .wording-wrap { position: relative; }
+  .wording-toggle {
+    display: inline-flex; align-items: baseline; gap: 8px; max-width: 360px; padding: 4px 12px;
+    border: 1px solid var(--line-strong); border-radius: 999px; background: var(--surface-2);
+    color: var(--text); font: inherit; font-size: 13.5px; font-weight: 600; cursor: pointer;
   }
-  .settings-toggle { margin: 0; padding: 5px 14px; font-size: 13px; box-shadow: none; border-radius: 999px; }
-  .settings-toggle > span:first-child { color: var(--muted); }
-  .settings .controls { margin-top: 6px; padding: 6px 12px; gap: 6px 18px; box-shadow: none; }
+  .wording-toggle::after { content: "\25BE"; color: var(--muted); font-weight: normal; }
+  .wording-toggle[aria-expanded="true"]::after { content: "\25B4"; }
+  .wording-toggle:hover { border-color: var(--accent); }
+  .wording-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .wording-label { color: var(--muted); }
+  .wording-summary { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--accent); }
+  .wording {
+    position: absolute; top: calc(100% + 8px); left: 0; z-index: 25; display: none;
+    flex-direction: column; align-items: flex-start; gap: 10px; padding: 14px 16px; min-width: 300px;
+    background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow-pop);
+  }
+  .wording-toggle[aria-expanded="true"] + .wording { display: flex; }
+  .wording .control { width: 100%; justify-content: space-between; gap: 16px; }
+}
+@media (max-width: 860px) {
+  .wording-wrap, .wording { display: contents; }
+}
+@media (min-width: 861px) {
+  .settings {
+    position: sticky; top: var(--header-h); z-index: 20;
+    margin: 0 -8px; padding: 10px 8px 8px; background: var(--bg);
+  }
+  .settings .controls { margin-top: 0; padding: 6px 12px; gap: 6px 18px; box-shadow: none; }
   .settings .control { font-size: 12.5px; }
   .settings .seg button { font-size: 13.5px; padding: 3px 11px; }
   .settings > .hint { display: none; }
 }
 
-.sheet-close, .sheet-handle { display: none; }
+/* On phones the settings fold behind one button that names the current
+   choices, so the passage starts on the first screen. */
+.settings-toggle, .sheet-close, .sheet-handle { display: none; }
 
 .reader { display: grid; grid-template-columns: minmax(0, 1fr) clamp(340px, 34vw, 460px); gap: 40px; align-items: start; }
 .passage { max-width: 680px; }
 .passage h1 { font-family: var(--display); font-weight: 600; font-size: clamp(30px, 4vw, 40px); letter-spacing: -.02em; margin: 36px 0 6px; }
 .passage .sub { color: var(--muted); font-size: 14px; margin: 0 0 16px; }
+/* What the chapter is about, under its title (data/summaries/): an
+   editorial aid like a heading, so quieter than the text. */
+.chapter-summary {
+  font-family: var(--serif); font-style: italic; font-size: 18px; line-height: 1.5;
+  color: var(--muted); max-width: 60ch; margin: 2px 0 12px; text-wrap: pretty;
+}
 /* About 65 characters a line, the comfortable measure for long reading. */
 .text { font-family: var(--read-font); font-size: calc(21px * var(--read-scale)); line-height: calc(1.8 * var(--read-leading)); max-width: 29em; }
 /* Paragraphs follow SBLGNT's; section headings (data/headings.json) are
@@ -867,12 +964,26 @@ footer.site a.book-chip:hover { border-color: var(--accent); background: var(--a
 .verse:hover { background: var(--accent-soft); }
 .verse[aria-current="true"] { background: var(--mark); }
 .verse.fallback { color: var(--muted); }
+/* Poetry (a rendering with \q line markers): each verse is a block of lines.
+   A verse's first line starts at the margin, its later lines one step in;
+   a line too long for the measure wraps two steps in, so a wrap never looks
+   like a new line. Prose verses stay inline. */
+.poem { display: block; --poem-step: 1.1em; }
+.poem .line { display: block; padding-left: calc(2 * var(--poem-step)); text-indent: calc(-2 * var(--poem-step)); }
+.poem .line + .line { text-indent: calc(-1 * var(--poem-step)); }
+.poem .line > * { text-indent: 0; }
+.text .poem + .poem { margin-top: .12em; }
+.pcell .poem { margin-bottom: .2em; }
+@media (max-width: 560px) { .poem { --poem-step: .9em; } }
 .verse sup { font-family: var(--sans); font-size: 12px; color: var(--accent); font-weight: 700; margin-right: 3px; }
 .verse .fn { font-family: var(--sans); font-size: 11px; font-style: italic; color: var(--accent); margin-left: 1px; }
 /* Each footnote letter is its own button and opens the note in place. */
 .fn-mark {
   border: 0; background: none; padding: 2px 3px; margin: 0 -1px; font: inherit; font-weight: 700; color: inherit;
   cursor: pointer; border-radius: 4px; line-height: 1;
+  /* A button is inline-block; the letters written into the page before
+     the reader draws its buttons are spans, and sit the same. */
+  display: inline-block;
 }
 .fn-mark:hover, .fn-mark[aria-expanded="true"] { background: var(--accent); color: var(--accent-contrast); }
 .fn-mark:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
@@ -934,14 +1045,6 @@ body.plain .text-tool, body.plain .unsure-bar { display: none; }
 .unsure-ref:hover, .unsure-ref[aria-current="true"] { text-decoration-style: solid; }
 .unsure-ref:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
 
-/* Review status under the chapter title: quiet, and honest about drafts. */
-.review-status {
-  display: inline-flex; align-items: center; gap: 7px; margin: 0 0 8px; padding: 2px 10px;
-  border-radius: 999px; background: var(--warn-bg); color: var(--warn); font-size: 12.5px; font-weight: 600;
-}
-.review-status::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; flex: none; }
-.review-status.done { background: var(--accent-soft); color: var(--accent); }
-
 /* Where a sentence echoes other scripture: a small tag naming the passage,
    after its last verse ("Deut 25:4"). It opens the reasoning; Study only. */
 .echo-tags { white-space: nowrap; }
@@ -998,8 +1101,79 @@ body.plain .echo-tags { display: none; }
 .panel .empty { color: var(--muted); font-size: 15px; }
 .panel .keys { color: var(--muted); font-size: 13px; margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line); }
 @media (hover: none) { .panel .keys { display: none; } }
-.panel-title { display: flex; align-items: baseline; gap: 10px; }
+.panel-title { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 4px; }
 .panel-title .copy-link + .copy-link { margin-left: 0; }
+/* Previous and next verse, either side of the reference. */
+.panel-step {
+  flex: none; display: inline-grid; place-items: center; width: 30px; height: 30px; padding: 0 0 2px;
+  border: 1px solid var(--line-strong); border-radius: 50%; background: var(--surface); color: var(--accent);
+  font: inherit; font-family: var(--sans); font-size: 20px; line-height: 1; cursor: pointer;
+}
+.panel-step:hover:not(:disabled) { border-color: var(--accent); background: var(--accent-soft); }
+.panel-step:disabled { color: var(--muted); opacity: .45; cursor: default; }
+.panel-step:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.panel-ref { padding: 0 4px; }
+.panel-actions { flex-basis: 100%; display: flex; flex-wrap: wrap; gap: 6px; }
+.panel-actions .ask-link { text-decoration: none; }
+.panel-actions .copy-link { margin-left: 0; }
+.copy-link[aria-expanded="true"] { border-color: var(--accent); background: var(--accent-soft); }
+/* Review status and the next sentence with notes. */
+.panel-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; margin: 8px 0 10px; font-family: var(--sans); font-size: 13px; }
+.review-status { color: var(--muted); }
+.review-ai_draft::before, .review-meaning_reviewed::before {
+  content: ""; display: inline-block; width: 7px; height: 7px; margin-right: 6px; border-radius: 50%;
+  background: var(--warn); vertical-align: 1px;
+}
+.ask-link { color: var(--accent); font-weight: 600; }
+.ask-link::after { content: " \2197"; font-size: .9em; }
+.ask-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+.panel-next-notes {
+  margin-left: auto; padding: 3px 10px; border: 1px solid var(--line-strong); border-radius: 999px; background: var(--surface);
+  color: var(--accent); font: inherit; font-weight: 600; cursor: pointer;
+}
+.panel-next-notes:hover:not(:disabled) { border-color: var(--accent); background: var(--accent-soft); }
+.panel-next-notes:disabled { color: var(--muted); opacity: .6; cursor: default; }
+.panel-next-notes:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.card .card-ask { display: inline-block; margin-top: 6px; font-size: 12.5px; }
+/* Cite: the citation, plain text and Markdown, each ready to copy. */
+.cite-box { margin: 4px 0 12px; padding: 10px 12px 12px; border-radius: var(--radius-sm); background: var(--surface-2); font-family: var(--sans); }
+.cite-box[hidden] { display: none; }
+.cite-head { display: flex; align-items: center; gap: 8px; margin: 8px 0 4px; }
+.cite-head:first-child { margin-top: 0; }
+.cite-label { font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+.cite-head .copy-link { margin-left: auto; }
+.cite-text {
+  display: block; width: 100%; box-sizing: border-box; resize: vertical; padding: 6px 8px; field-sizing: content; max-height: 9em;
+  border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--text);
+  font: 13px/1.45 var(--sans);
+}
+.cite-text:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.cite-chapter { margin: 10px 0 0; }
+.cite-scratch { position: fixed; top: 0; left: -9999px; opacity: 0; }
+/* A note's reference to a chapter not translated yet, with the verse from
+   a public-domain Bible for comparison. */
+.sref-away { font-weight: 600; }
+.xrefs { display: grid; gap: 6px; margin: 8px 0 2px; }
+.xref { padding: 8px 10px; border-left: 3px solid var(--line-strong); border-radius: 0 6px 6px 0; background: var(--surface-2); font-family: var(--sans); }
+.xref p { margin: 0; }
+.xref-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; font-size: 13px; }
+.xref-ref { font-weight: 700; }
+.xref-nt { color: var(--muted); }
+.xref-search { margin-left: auto; font-size: 12.5px; }
+.xref-text { margin-top: 4px !important; font-family: var(--serif); font-size: 15px; line-height: 1.5; }
+.xref-text sup { font-family: var(--sans); font-size: 10.5px; font-weight: 700; color: var(--muted); }
+.xref-src { margin-top: 4px !important; font-size: 11.5px; color: var(--muted); font-style: italic; }
+/* Footnotes and uncertain decisions first in the phone sheet (see the
+   narrow-screen rules); on wide screens the full notes are enough. */
+.key-notes { display: none; }
+.key-note { padding: 8px 12px; margin: 0 0 6px; border: 1px solid var(--line); border-radius: var(--radius-sm); }
+.key-note.unc { border-color: var(--warn); background: var(--warn-bg); }
+.key-note p { margin: 0; }
+.key-note-head { font-size: 12px; color: var(--muted); }
+.key-note-head .badge:first-child { margin-left: 0; }
+.key-note-cat { margin-left: 6px; }
+.key-note-text { font-size: 15px; margin-top: 2px !important; }
+.key-note .fn-pop-more { margin-top: 2px; font-family: var(--sans); }
 .copy-link {
   margin-left: auto; flex: none; padding: 3px 10px; border: 1px solid var(--line-strong); border-radius: 999px;
   background: var(--surface); color: var(--accent); font: inherit; font-family: var(--sans); font-size: 12.5px; font-weight: 600;
@@ -1092,7 +1266,7 @@ body.plain .echo-tags { display: none; }
   .nav-link { width: 100%; padding: 12px 14px; font-size: 17px; border-radius: var(--radius-sm); }
   .nav-link .caret { margin-left: auto; }
   .dropdown, .dropdown.dd-wide, .dropdown.dd-read {
-    position: static; transform: none; width: auto; margin: 2px 0 8px; padding: 4px 0 4px 14px;
+    position: static; transform: none; width: auto; max-height: none; overflow: visible; margin: 2px 0 8px; padding: 4px 0 4px 14px;
     border: 0; border-left: 2px solid var(--accent-soft-border); border-radius: 0; box-shadow: none; animation: none;
     background: none;
   }
@@ -1116,6 +1290,9 @@ body.plain .echo-tags { display: none; }
   .quote { padding: 18px 18px 14px 22px; }
   .quote blockquote { font-size: 21px; }
   .a-card.featured { padding: 24px 22px; }
+  .a-start { grid-template-columns: minmax(0, 1fr); }
+  .a-start .a-card.featured { border-radius: var(--radius) var(--radius) 0 0; }
+  .a-path { margin: 0 22px 24px; padding: 18px 0 0; border-left: 0; border-top: 1px solid var(--accent-soft-border); }
   .page-head, .article-head { padding-top: 36px; }
   .hero { padding: 56px 0 40px; }
   .hero-sub { font-size: 17px; }
@@ -1165,8 +1342,19 @@ body.plain .echo-tags { display: none; }
   .stats span { font-size: 13px; }
 
   /* One line: the label, the current choices (cut short if need be), the arrow. */
-  .settings-change { display: none; }
-  .settings-toggle::after { margin-left: auto; }
+  .settings-toggle {
+    display: flex; flex-wrap: nowrap; align-items: baseline; gap: 2px 10px; width: 100%; margin: 12px 0 0; padding: 10px 14px;
+    border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); color: var(--text);
+    font: inherit; font-size: 15px; font-weight: 600; box-shadow: var(--shadow-card); text-align: left; cursor: pointer;
+  }
+  .settings-toggle::after { content: "\25BE"; margin-left: auto; color: var(--muted); font-weight: normal; }
+  .settings-toggle[aria-expanded="true"]::after { content: "\25B4"; }
+  .settings-summary {
+    flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    font-weight: normal; font-size: 13px; color: var(--accent);
+  }
+  .settings-toggle > span:first-child { flex: none; }
+  .settings-toggle[aria-expanded="false"] + .settings { display: none; }
   .settings .controls { padding-top: 12px; }
 
   /* The reasoning panel becomes a bottom sheet over the text: tapping a
@@ -1200,6 +1388,14 @@ body.plain .echo-tags { display: none; }
 }
 @media (max-width: 860px) and (prefers-reduced-motion: reduce) {
   .panel, .panel.open { transition: none; }
+}
+@media (max-width: 860px) {
+  .key-notes { display: block; }
+  /* The actions run under the close button, which sits beside the title. */
+  .panel-actions { flex-basis: calc(100% + 44px); margin-right: -44px; }
+  /* Sideways swipes step through verses; vertical ones scroll. */
+  .panel { touch-action: pan-y; }
+  .panel-tools { margin-bottom: 6px; }
 }
 
 /* The header's account menu: "Sign in" when signed out, the reader's
@@ -1278,7 +1474,8 @@ html.signed-in .sign-in-btn { visibility: hidden; }
 .auth-message h2 { font-family: var(--display); font-size: 24px; margin: 0; }
 .auth-message h2:focus { outline: none; }
 .auth-message p { margin: 4px 0; }
-.badge {
+/* Scoped: .badge alone is the reader's small label (Uncertain, Footnote). */
+.auth-message .badge {
   display: grid; place-items: center; width: 52px; height: 52px; margin: 0 auto 6px !important; border-radius: 50%;
   background: var(--accent-soft); color: var(--accent); font-size: 24px;
 }
@@ -1331,7 +1528,7 @@ html.signed-in .sign-in-btn { visibility: hidden; }
 .control.view-control { margin-left: auto; }
 body.plain .reader { grid-template-columns: minmax(0, 1fr); }
 body.plain .passage { margin: 0 auto; }
-body.plain .panel, body.plain .notes, body.plain .verse sup, body.plain .passage .sub { display: none; }
+body.plain .panel, body.plain .notes, body.plain .verse sup, body.plain .passage .sub, body.plain .chapter-summary { display: none; }
 body.plain .verse { cursor: text; }
 body.plain .verse:hover { background: none; }
 body.plain .text { font-size: calc(22px * var(--read-scale)); }
@@ -1592,8 +1789,7 @@ ruby.il rt:lang(hbo) { font-family: var(--hebrew); }
 .wcard-note { font-size: 14px; line-height: 1.5; }
 
 
-/* Footer on narrower screens: the tiers stack; on a phone the index keeps
-   only the books with chapters, and each testament's count says how many
+/* Footer on narrower screens: the tiers stack; each testament's count says how many
    there are in all. */
 @media (max-width: 860px) {
   .foot-top, .testaments { grid-template-columns: minmax(0, 1fr); }
@@ -1602,7 +1798,6 @@ ruby.il rt:lang(hbo) { font-family: var(--hebrew); }
   .foot-grid .foot-langs ul { display: flex; flex-wrap: wrap; gap: 8px 20px; }
 }
 @media (max-width: 560px) {
-  .foot-books .book-chips li:has(.none) { display: none; }
   .foot-key > span:last-of-type { display: none; }
   .foot-key a { margin-left: 0; }
 }
@@ -1644,7 +1839,8 @@ body.listening { padding-bottom: calc(var(--listen-h, 64px) + 12px); }
 .verse[class*="hl-"]:hover { background: var(--hl); filter: saturate(1.4); }
 /* The verse chosen keeps its highlight and is underlined instead. */
 .verse[aria-current="true"][class*="hl-"] { box-shadow: inset 0 -3px 0 var(--accent); }
-.verse.bookmarked > sup:not(.fn):first-child::before { content: "\25C6\00a0"; color: var(--accent); font-size: .85em; }
+.verse.bookmarked > sup:not(.fn):first-child::before,
+.verse.bookmarked > .line:first-child > sup:not(.fn):first-child::before { content: "\25C6\00a0"; color: var(--accent); font-size: .85em; }
 .mark-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin: 4px 0 16px; }
 .mark-bookmark {
   display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border: 1px solid var(--line-strong);

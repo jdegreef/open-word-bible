@@ -4,6 +4,7 @@ summary: Un pastor, una cueva, unas vasijas de barro y el mayor hallazgo de manu
 date: 2026-10-11
 order: 26
 section: history
+part: ot
 ---
 En el invierno de 1946-47, un joven pastor beduino llamado **Muhammed edh-Dhib**, de la tribu Ta'amireh, buscaba una cabra extraviada entre los acantilados cercanos a la orilla noroccidental del mar Muerto. Lanzó una piedra por una abertura de la roca y oyó que algo se rompía. Cuando más tarde él y sus compañeros entraron trepando, encontraron altas vasijas de barro y, dentro de algunas, envoltorios de cuero viejo envueltos en lino.
 

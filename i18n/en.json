@@ -4,6 +4,7 @@
   "months": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
   "levels": {"L": "Literal", "B": "Balanced", "R": "Readable"},
   "sections": {"method": "How it is made", "passage": "Reading the text", "history": "How we got the Bible", "translation": "The Bible in translation"},
+  "parts": {"ot": "The Old Testament", "nt": "The New Testament", "today": "The text today"},
 
   "meta.description": "A free translation of the Bible from Hebrew and Greek, with the reasoning behind every sentence.",
   "meta.card_alt": "Open Word Bible: the Bible, translated from Hebrew and Greek, with its reasoning shown.",
@@ -26,13 +27,14 @@
   "nav.all_articles": "All articles",
   "nav.about_project": "About the project",
   "nav.about_project_note": "What it is and how it is licensed",
+  "nav.beliefs": "What we believe",
+  "nav.beliefs_note": "Our faith, vision, mission and values",
   "nav.credits": "Sources and credits",
   "nav.credits_note": "The texts and data it is built on",
   "nav.help": "Help make it",
   "nav.help_note": "Reviewers, speakers and developers",
   "nav.source": "Source code",
   "nav.source_note": "Data, validator and site on GitHub",
-  "tools.github": "Open Word Bible on GitHub",
   "tools.theme": "Theme",
   "theme.auto": "Automatic",
   "theme.light": "Paper",
@@ -74,6 +76,7 @@
   "footer.key_done": "Every chapter",
   "footer.key_part": "Some chapters",
   "footer.key_none": "Not started yet",
+  "footer.not_started": "{n} books not started yet",
   "footer.review": "Every sentence is AI-assisted and stays unreviewed until a named reviewer who reads the original language approves it.",
   "footer.licences": "Translation and notes CC0 &middot; Code MIT &middot; Source texts keep their own licences",
 
@@ -82,11 +85,8 @@
   "reader.sub": "Translated from the SBL Greek New Testament. Tap a verse to see why it reads as it does. Tap a small letter to read its footnote.",
   "reader.sub_hbo": "Translated from the Hebrew of the Westminster Leningrad Codex. Tap a verse to see why it reads as it does. Tap a small letter to read its footnote.",
   "reader.settings": "Reading settings",
-  "reader.change": "Change",
-  "reader.review_draft": "Draft · {n} of {total} sentences reviewed",
-  "reader.review_done": "Reviewed · all {total} sentences",
-  "reader.review_meaning": "{n} with the meaning checked",
   "reader.level": "Level",
+  "reader.wording": "Wording",
   "reader.gender": "Gender",
   "reader.title": "Title",
   "reader.pronouns": "Pronouns for God",
@@ -112,6 +112,7 @@
   "reader.He": "He",
   "reader.plural": "Plural you",
   "reader.notes": "Notes",
+  "reader.noscript": "This is the {level} text at the default settings. The notes, the reasoning behind each verse and the reader settings need JavaScript.",
   "reader.ui": {
     "notes": "Notes", "fn_or": "Or: ", "fn_other": "Other manuscripts: ",
     "L": "Literal", "B": "Balanced", "R": "Readable",
@@ -169,6 +170,32 @@
     "hl_blue": "Blue highlight",
     "hl_pink": "Pink highlight",
     "saved_all": "All saved verses",
+    "step_prev": "Previous verse",
+    "step_next": "Next verse",
+    "step_notes": "Next with notes",
+    "step_notes_hint": "The next sentence with a footnote, an uncertain decision or an echo of other scripture",
+    "step_notes_none": "No more sentences with notes in this chapter",
+    "review_status": {"ai_draft": "Draft · not yet reviewed", "meaning_reviewed": "Meaning reviewed · wording not yet reviewed", "reviewed": "Reviewed", "revised": "Revised after review"},
+    "review_cite": {"ai_draft": "draft, not yet reviewed", "meaning_reviewed": "meaning reviewed, wording not yet reviewed", "reviewed": "reviewed", "revised": "revised after review"},
+    "review_hint": "Every sentence is an AI draft until a named reviewer approves it.",
+    "ask": "Question this",
+    "ask_label": "Question this verse on GitHub (opens in a new tab)",
+    "ask_decision_label": "Question this decision on GitHub (opens in a new tab)",
+    "ask_title": "Question: {ref}",
+    "ask_what": "What seems wrong?",
+    "ask_why": "Why? (the Greek or Hebrew, other translations, sources)",
+    "cite": "Cite",
+    "cite_citation": "Citation",
+    "cite_plain": "Plain text",
+    "cite_markdown": "Markdown",
+    "cite_copy": "Copy",
+    "cite_copied": "Copied",
+    "cite_chapter": "Copy chapter",
+    "cite_format": "Open Word Bible, {ref} ({level}; {status}). CC0. {url}",
+    "key_notes": "Notes on this verse",
+    "xref_nt": "Not translated yet",
+    "xref_search": "Search",
+    "xref_source": "{name} — for comparison, not Open Word Bible wording",
     "category": {
       "text_variant": "Manuscript reading", "punctuation": "Punctuation",
       "word_sense": "Word meaning", "grammar": "Grammar", "allusion": "Echo of other scripture",
@@ -240,9 +267,54 @@
   "about.licences_text": "The translation, its reasoning records and the alignments are dedicated to the public domain under <a href=\"https://creativecommons.org/publicdomain/zero/1.0/\">CC0 1.0</a>. The code is MIT-licensed. The source texts keep their own licences, credited below.",
   "about.source": "Source code and data:",
   "about.credits_language": "The credits are given in English, with names and licences as their authors publish them.",
+  "beliefs": {
+    "title": "What we believe",
+    "description": "Open Word Bible's statement of faith, its vision and mission, and the values that guide the translation.",
+    "kicker": "We begin with what we believe",
+    "heading": "The faith we translate in",
+    "creed": [
+      "I believe in God, the Father almighty, creator of heaven and earth.",
+      "I believe in Jesus Christ, his only Son, our Lord, who was conceived by the Holy Spirit and born of the virgin Mary. He suffered under Pontius Pilate, was crucified, died and was buried; he descended to the dead. On the third day he rose again. He ascended into heaven and is seated at the right hand of the Father, and he will come to judge the living and the dead.",
+      "I believe in the Holy Spirit, the holy catholic church, the communion of saints, the forgiveness of sins, the resurrection of the body, and the life everlasting."
+    ],
+    "amen": "Amen.",
+    "scripture": "These words are the Apostles' Creed, confessed by the church since its first centuries. We also believe that the Scriptures of the Old and New Testaments are the word of God, and the final authority for faith and life.",
+    "vision_title": "Our vision",
+    "vision": "That people from every nation, tribe and language may hear the mighty deeds of God in their own words, from a Bible anyone may use and anyone may check.",
+    "mission_title": "Our mission",
+    "mission": "To translate the Bible from Hebrew, Aramaic and Greek into modern languages, to show the reasoning behind every sentence, and to give it all away.",
+    "values_title": "What guides the work",
+    "values": [
+      [
+        "Faithfulness",
+        "the original languages, never another translation."
+      ],
+      [
+        "Generosity",
+        "everything in the public domain, free of charge."
+      ],
+      [
+        "Openness",
+        "every decision shown with its reasons."
+      ],
+      [
+        "Humility",
+        "uncertainty marked, corrections welcomed."
+      ],
+      [
+        "Clarity",
+        "a Bible every reader can follow."
+      ]
+    ]
+  },
 
   "articles.title": "Articles",
   "articles.sections": "Sections",
+  "articles.start_here": "Start here",
+  "articles.then_read": "Then read, in order",
+  "articles.count_time": "{n} articles &middot; about {time}",
+  "articles.hours": "{h} h {m} min",
+  "articles.minutes": "{m} min",
   "articles.heading": "How the translation is made, and why it reads as it does",
   "articles.dek": "Short pieces on the method behind Open Word Bible and close readings of the passages translated so far. Like the translation, every article is a draft until a reviewer has checked it.",
   "articles.none": "No articles have been written in English yet.",
@@ -293,7 +365,9 @@
   "account.display_name_note": "(shown to reviewers on suggestions and questions)",
   "account.save": "Save",
   "account.soon": "Coming next",
-  "account.soon_text": "Highlights, bookmarks and private notes on any verse, synced across your devices; then suggesting an edit or asking a question about a translation decision.",
+  "account.soon_text": "Private notes on any verse; then suggesting an edit or asking a question about a translation decision.",
+  "account.synced": "Your bookmarks, highlights and reading place are kept with your account, so they follow you to your other devices.",
+  "account.synced_link": "See your saved verses",
 
   "login.title_sign_in": "Welcome back",
   "login.title_sign_up": "Create your account",

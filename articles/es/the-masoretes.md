@@ -3,7 +3,9 @@ title: "Los masoretas: guardianes del texto hebreo"
 summary: Aproximadamente entre el 600 y el 1000 d. C., eruditos judíos de Tiberíades y de Babilonia añadieron vocales, acentos y miles de notas marginales a la Biblia hebrea. Su trabajo es la razón de que hoy podamos leerla.
 date: 2026-10-11
 order: 24
+nav_title: Los masoretas
 section: history
+part: ot
 ---
 Abre una Biblia hebrea y verás las consonantes, las letras principales, rodeadas de pequeños puntos y trazos por encima y por debajo. Esas marcas son las vocales y los acentos. En los bordes de la página de una edición académica verás notas diminutas en arameo abreviado. Todo esto lo añadió un grupo de eruditos conocidos como los **masoretas**. Casi todas las traducciones del Antiguo Testamento del mundo, incluida la de Open Word Bible, se hacen a partir del texto que ellos custodiaron.
 
