@@ -110,7 +110,7 @@ class SiteTest(unittest.TestCase):
                 first = build_site.markup.VERSE.split(default)[0].strip()
                 self.assertIn(html.escape(first, quote=False), text, r["id"])
                 self.assertIn(f'data-record="{r["id"]}"', text)
-            for rid, heading in data["headings"].items():
+            for heading in data["headings"].values():
                 shown = html.escape(build_site.markup.render(heading["en"]), quote=False)
                 self.assertIn(f'<h2 class="section-head">{shown}</h2>', text)
             self.assertIn("<noscript>", page)
