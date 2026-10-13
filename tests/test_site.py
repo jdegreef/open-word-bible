@@ -171,6 +171,16 @@ class SiteTest(unittest.TestCase):
         for name in ("SBL Greek New Testament", "MACULA Greek", "Open Scriptures Hebrew Bible"):
             self.assertIn(name, about)
 
+    def test_beliefs_page_sets_out_the_creed_vision_and_values(self):
+        page = (self.out / "about" / "beliefs" / "index.html").read_text(encoding="utf-8")
+        self.assertIn("I believe in God, the Father almighty", page)
+        self.assertIn("Apostles' Creed", page)
+        for heading in ("Our vision", "Our mission", "What guides the work"):
+            self.assertIn(f"<h2>{heading}</h2>", page)
+        self.assertEqual(page.count("<li><strong>"), 5)
+        # The About menu and the footer both link to it.
+        self.assertGreaterEqual(page.count('href="/about/beliefs/"'), 2)
+
     def test_about_page_renders_markdown_links(self):
         about = (self.out / "about" / "index.html").read_text(encoding="utf-8")
         self.assertIn('<a href="https://github.com/seven1m/open-bibles">seven1m/open-bibles</a>', about)
