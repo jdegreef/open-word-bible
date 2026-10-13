@@ -36,6 +36,16 @@ class PoetryLinesTest(unittest.TestCase):
             self.assertIsNone(poetry_lines.fill(text), text)
         self.assertEqual(markup.line_errors(poetry_lines.fill("a; b")), [])
 
+    def test_fill_never_breaks_inside_an_alignment_span(self):
+        text = "Tremble, and do not sin; speak in your heart."
+        span = text.index("sin; speak")
+        self.assertIsNone(poetry_lines.fill(text, [(span, span + len("sin; speak"))]))
+        self.assertIsNotNone(poetry_lines.fill(text, [(0, len("Tremble"))]))
+        record = {"renderings": {"en": {"B": "x " + text}}, "alignments": [
+            {"language": "en", "level": "B", "tokens": ["o1"], "target_span": "sin; speak"}]}
+        self.assertEqual(poetry_lines.aligned(record, "en", "B"),
+                         [(2 + span, 2 + span + len("sin; speak"))])
+
 
 if __name__ == "__main__":
     unittest.main()

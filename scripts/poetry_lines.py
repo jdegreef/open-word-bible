@@ -52,16 +52,16 @@ from owb import markup, refs  # noqa: E402
 # the reader of this printout.
 POETIC_BOOKS = {"PSA", "PRO", "JOB"}
 
-ATNACH = "֑"
-SEGOLTA = "֒"
-SHALSHELET = "֓"
-ZAQEF_QATAN = "֔"
-ZAQEF_GADOL = "֕"
-REVIA = "֗"
-TSINNOR = "֘"       # zarqa in prose; tsinnor in the poetic books
-OLE = "֫"           # with merkha (yored): olev-weyored
-MERKHA = "֥"
-MAHAPAKH = "֤"
+ATNACH = "\u0591"
+SEGOLTA = "\u0592"
+SHALSHELET = "\u0593"
+ZAQEF_QATAN = "\u0594"
+ZAQEF_GADOL = "\u0595"
+REVIA = "\u0597"
+TSINNOR = "\u0598"       # zarqa in prose; tsinnor in the poetic books
+OLE = "\u05AB"           # with merkha (yored): olev-weyored
+MERKHA = "\u05A5"
+MAHAPAKH = "\u05A4"
 
 NAMES = {ATNACH: "atnach", OLE: "olev-weyored", SEGOLTA: "segolta", SHALSHELET: "shalshelet",
          ZAQEF_QATAN: "zaqef", ZAQEF_GADOL: "zaqef gadol", REVIA: "revia", TSINNOR: "tsinnor"}
@@ -144,8 +144,10 @@ def verse_parts(record, text):
     return spans
 
 
-def fill(text):
-    """text (one verse's part) with a break after its only ";" or ":", or None."""
+def fill(text, protected=()):
+    """text (one verse's part) with a break after its only ";" or ":", or None.
+    protected: (start, end) ranges of text a break may not fall inside (the
+    rendering's alignment target spans, which may not hold a marker)."""
     if markup.is_poetry(text):
         return None
     marks = [m for m in PUNCT.finditer(text)
@@ -153,10 +155,19 @@ def fill(text):
     if len(PUNCT.findall(text)) != 1 or len(marks) != 1:
         return None
     at = marks[0].end()
+    if any(start < at < end or start < at + 1 < end for start, end in protected):
+        return None
     head, tail = text[:at], text[at:].lstrip()
     if not tail.strip() or tail.startswith("\\v"):
         return None
     return head + " \\q " + tail
+
+
+def aligned(record, lang, level):
+    """(start, end) of each alignment target span in one rendering."""
+    spans = [a["target_span"] for a in record.get("alignments", [])
+             if a["language"] == lang and a["level"] == level]
+    return markup.alignment_ranges(record["renderings"][lang][level], spans) if spans else []
 
 
 def chapters(arg):
@@ -211,7 +222,12 @@ def show(book, chapter, lang, write):
                 start, end = verse_parts(record, text)[ref.verse]
                 part = text[start:end]
                 if write and len(parts) == 2:
-                    new = fill(part.strip())
+                    # Alignment spans may not hold a marker: ranges relative
+                    # to the stripped verse text.
+                    lead = len(part) - len(part.lstrip())
+                    protected = [(s - start - lead, e - start - lead)
+                                 for s, e in aligned(record, lang, level)]
+                    new = fill(part.strip(), protected)
                     if new:
                         lead = part[:len(part) - len(part.lstrip())]
                         trail = part[len(part.rstrip()):]

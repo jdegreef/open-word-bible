@@ -332,6 +332,13 @@ def validate_record(record, known_tokens=None, original_language=True):
         if d.get("id") in seen:
             errors.append(f"{where}: duplicate id {d.get('id')!r}")
         seen.add(d.get("id"))
+        # Decision text is shown on one line, with settings but no other
+        # markup, so a line marker would appear as it is.
+        texts = [("choice", d.get("choice")), ("reason", d.get("reason"))] + [
+            (f"alternatives[{k}]", a) for k, a in enumerate(d.get("alternatives") or [])]
+        for name, text in texts:
+            if isinstance(text, str) and "\\q" in text:
+                errors.append(f"{where}.{name}: line markers (\\q) belong in renderings only")
         layer = d.get("layer")
         if layer not in LAYERS:
             errors.append(f"{where}.layer: {layer!r} not allowed")

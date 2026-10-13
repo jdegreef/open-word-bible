@@ -72,6 +72,18 @@ class ValidateTest(unittest.TestCase):
         record["renderings"]["en"]["B"] = record["renderings"]["en"]["B"].replace("\\v 13 ", "\\q \\v 13 ")
         self.assertTrue(any("next to a verse marker" in e for e in validate.validate_record(record)))
 
+    def test_line_marker_in_a_decision_fails(self):
+        for field in ("choice", "reason", "alternatives"):
+            record = example_records()[0]
+            d = record["decisions"][0]
+            if field == "alternatives":
+                d["alternatives"] = (d["alternatives"] or ["x"]) + ["a, \\q b"]
+            else:
+                d[field] = d[field] + " a, \\q b"
+            errors = validate.validate_record(record)
+            self.assertTrue(any(f"decisions[0].{field}" in e and "renderings only" in e
+                                for e in errors), (field, errors))
+
     def test_line_marker_in_the_gloss_fails(self):
         record = example_records()[0]
         record["literal_gloss"] = record["literal_gloss"].replace(" ", " \\q ", 1)

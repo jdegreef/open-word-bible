@@ -15,6 +15,15 @@ GET /api/search/?q=light&lang=en         search the site's passages, sentences, 
                                          kind a page at a time (&offset, &limit,
                                          &sort=relevance|order)
 GET /healthz                             liveness check
+
+Rendering text carries the markup of content/ (the literal gloss has its \\v
+markers too): {{setting:default|alternative}} reader-setting spans (the
+first option is the default), "\\v N " where a later verse starts inside a
+sentence, and in poetry "\\q " where a new line starts within a verse (a
+verse start is always a line start). To show a rendering on one line, pick
+each span's option, then replace / ?\\v \\d+ ?/ and / ?\\q ?/ with a space
+(Python: owb.markup.render, VERSE.sub and flat); to set poetry in lines,
+split each verse's text at / ?\\q ?/ (owb.markup.split_verses, split_lines).
 """
 from django.db import connection
 from django.http import JsonResponse
@@ -91,7 +100,9 @@ def chapter_text(request, book, chapter):
 
 
 def record_json(sentence):
-    """A sentence in the content/ file format."""
+    """A sentence in the content/ file format. Renderings keep their markup
+    (setting spans, \\v N verse markers, \\q poetic line markers; see the
+    module docstring)."""
     renderings = {}
     for r in sentence.renderings.all():
         renderings.setdefault(r.language, {})[r.level] = r.text
