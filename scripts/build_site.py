@@ -24,7 +24,7 @@ sys.path.insert(0, str(ROOT))
 
 from typing import NamedTuple  # noqa: E402
 
-from owb import languages as owb_languages, markup, morph, refs, translit, validate, versification  # noqa: E402
+from owb import crossrefs, languages as owb_languages, markup, morph, refs, translit, validate, versification  # noqa: E402
 
 # The interface languages, English first (data/languages.json; see catalog below).
 LANGUAGES = owb_languages.CODES
@@ -1079,7 +1079,8 @@ def chapter_page(book, chapter, lang="en"):
             "bookRefs": book_refs(lang),
             "compare": comparison_verses(records, lang),
             "cards": word_cards(records, words, lang),
-            "headings": {r["id"]: headings()[r["id"]] for r in records if r["id"] in headings()}}
+            "headings": {r["id"]: headings()[r["id"]] for r in records if r["id"] in headings()},
+            "crossrefs": chapter_crossrefs(records)}
     # Each morphology code's description in every language, once per page.
     data["uses"] = word_uses()[1]
     # Names before a chapter number ("Psalm 23:1"), for "Book 1:2" links.
@@ -1138,12 +1139,13 @@ def chapter_page(book, chapter, lang="en"):
   {title_control}
   {control("pronouns", "deity_pronoun", [("0", t(lang, "reader.he")), ("1", t(lang, "reader.He"))])}{units}{plural}
   {control("headings", "headings", [("0", t(lang, "reader.show")), ("1", t(lang, "reader.hide"))])}
+  {control("crossrefs", "crossrefs", [("0", t(lang, "reader.show")), ("1", t(lang, "reader.hide"))])}
   </div>
   </div>
   {control("view", "view", [("0", t(lang, "reader.study")), ("1", t(lang, "reader.reading")),
                             ("2", t(lang, "reader.parallel")), ("3", t(lang, "reader.interlinear"))], " view-control")}
 </div>
-<p class="hint"><span id="hint-level"></span> <span id="hint-gender"></span> <span id="hint-{title_setting}"></span> <span id="hint-deity_pronoun"></span> <span id="hint-units"></span> <span id="hint-plural_you"></span> <span id="hint-headings"></span> <span id="hint-view"></span></p>
+<p class="hint"><span id="hint-level"></span> <span id="hint-gender"></span> <span id="hint-{title_setting}"></span> <span id="hint-deity_pronoun"></span> <span id="hint-units"></span> <span id="hint-plural_you"></span> <span id="hint-headings"></span> <span id="hint-crossrefs"></span> <span id="hint-view"></span></p>
 </div>
 <div class="reader">
   <article class="passage">
@@ -1154,6 +1156,7 @@ def chapter_page(book, chapter, lang="en"):
     <p class="sub">{t(lang, "reader.sub" + suffix)}</p>
     <p class="notice" id="partial"{"" if partial else " hidden"}>{html.escape(catalog(lang)["reader.ui"]["partial"]) if partial else ""}</p>
     <noscript><p class="notice">{t(lang, "reader.noscript", level=levels["B"])}</p><style>{NOSCRIPT_STYLE}</style></noscript>
+    <div class="xr-margin" id="xr-margin"></div>
     <div class="text" id="text">{text}</div>
     <section class="notes" id="notes" aria-label="{t(lang, "reader.notes")}" hidden></section>
     {plan_bar(book, chapter, lang)}
@@ -1174,6 +1177,18 @@ def chapter_page(book, chapter, lang="en"):
                 card_alt=t(lang, "meta.chapter_card_alt" + suffix, title=title,
                            verse=opening_verse(records, chapter, lang)),
                 description=t(lang, "meta.chapter_description" + suffix, title=title))
+
+
+def chapter_crossrefs(records):
+    """The cross-references of every verse on a chapter page (owb/crossrefs.py),
+    by verse id, most voted first; the reader shows them in the margin."""
+    out = {}
+    for r in records:
+        for vid in r["refs"]:
+            found = crossrefs.load(vid.split(".")[0]).get(vid)
+            if found:
+                out[vid] = found
+    return out
 
 
 def reader_passages(book, chapter, lang="en"):

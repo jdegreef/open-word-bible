@@ -18,7 +18,7 @@
   // The reading language is the page's (/es/... is Spanish); the footer
   // switches it. The other settings are kept across pages and languages.
   var settings = { level: "B", gender: 0, christos: 0, divine_name: 0, deity_pronoun: 0, units: 0, plural_you: 0, view: 0,
-                   headings: 0, uncertain: 0, partner: "", script: 0 };
+                   headings: 0, crossrefs: 0, uncertain: 0, partner: "", script: 0 };
   try {
     var saved = JSON.parse(localStorage.getItem(STORE) || "{}");
     for (var k in settings) if (k in saved) settings[k] = saved[k];
@@ -197,21 +197,23 @@
     // A page shows either the divine name (Old Testament) or the title
     // Christ (New Testament), and measures only where it has them, so
     // some hints are missing.
-    ["gender", "christos", "divine_name", "deity_pronoun", "units", "plural_you", "view", "headings"].forEach(function (name) {
+    ["gender", "christos", "divine_name", "deity_pronoun", "units", "plural_you", "view", "headings", "crossrefs"].forEach(function (name) {
       var hint = document.getElementById("hint-" + name);
       if (hint) hint.textContent = t("hint_" + name)[settings[name]];
     });
     // The summary on the phone settings button: each shown choice's label.
     var summary = [];
-    // "Show" or "Hide" means nothing without its label, so headings are left out.
-    document.querySelectorAll(".control:not([hidden]) .seg:not([data-setting=headings])").forEach(function (seg) {
+    // "Show" or "Hide" means nothing without its label, so headings and
+    // cross-references are left out.
+    var shown = ".control:not([hidden]) .seg:not([data-setting=headings]):not([data-setting=crossrefs])";
+    document.querySelectorAll(shown).forEach(function (seg) {
       var on = seg.querySelector('[aria-pressed="true"]');
       if (on && seg.children.length > 1) summary.push(on.textContent);
     });
     document.getElementById("settings-summary").textContent = summary.join(" \u00b7 ");
     // The Wording button names the wording choices it holds.
     var wording = [];
-    document.querySelectorAll("#wording .control:not([hidden]) .seg:not([data-setting=headings])").forEach(function (seg) {
+    document.querySelectorAll("#wording " + shown).forEach(function (seg) {
       var on = seg.querySelector('[aria-pressed="true"]');
       if (on) wording.push(on.textContent);
     });
@@ -235,6 +237,9 @@
   // The headings control only where the chapter has headings.
   var headingsSeg = document.querySelector('[data-setting="headings"]');
   if (headingsSeg && !Object.keys(DATA.headings).length) headingsSeg.parentNode.hidden = true;
+  // And the cross-references control only where the chapter has some.
+  var crossrefsSeg = document.querySelector('[data-setting="crossrefs"]');
+  if (crossrefsSeg && !Object.keys(DATA.crossrefs).length) crossrefsSeg.parentNode.hidden = true;
 
   // Reading view: the text alone, without verse numbers, footnote letters or
   // the reasoning panel; verses are not buttons.
@@ -370,7 +375,7 @@
     note.hidden = !partial;
     note.textContent = partial ? t("partial") : "";
     document.getElementById("title").textContent = DATA.title;
-    if (parallel()) { drawParallel(box); drawUnsureToggle(0); drawViewTools(); drawNotes([]); return; }
+    if (parallel()) { drawParallel(box); drawUnsureToggle(0); drawViewTools(); drawNotes([]); drawMargin(); return; }
     drawViewTools();
     var shown = null;   // last verse number printed
     var marked = marks();
@@ -512,6 +517,7 @@
     box = page;
     drawUnsureToggle(unsureCount);
     drawNotes(notes);
+    drawMargin();
     if (listen.on) mark(false);
   }
 
@@ -687,6 +693,118 @@
       b.addEventListener("keydown", function (e) { e.stopPropagation(); });
       box.appendChild(b);
     });
+    return box;
+  }
+
+  // Cross-references (DATA.crossrefs, by verse id, from data/crossrefs/):
+  // other passages on the same subject, chosen by the readers of
+  // OpenBible.info, most voted first. They are not translation, so they are
+  // credited to their source, and the reader can hide them. On wide screens
+  // the best few stand in the margin beside their verse; the panel lists a
+  // chosen sentence's all. "ISA.40.11", "EZK.34.11-12", "GEN.1.31-2.3".
+  var XREF = /^([1-3]?[A-Z]{2,3})\.(\d+)\.(\d+)(?:-(?:(\d+)\.)?(\d+))?$/;
+  var XREF_MARGIN = 3;
+  var BOOK_ORDER = {};
+  Object.keys(DATA.bookRefs.abbr || {}).forEach(function (code, i) { BOOK_ORDER[code] = i; });
+  function xrefsShown() {
+    return settings.crossrefs === 0 && !plain() && Object.keys(DATA.crossrefs).length > 0;
+  }
+  function parseXref(text) {
+    var m = XREF.exec(text);
+    if (!m) return null;
+    var cv = m[2] + ":" + m[3] + (m[5] ? "\u2013" + (m[4] ? m[4] + ":" : "") + m[5] : "");
+    var names = (DATA.bookRefs.abbr && DATA.bookRefs.abbr[m[1]]) || [m[1], m[1]];
+    return { code: m[1], chapter: Number(m[2]), verse: Number(m[3]),
+             short: names[0] + "\u00a0" + cv, full: names[1] + " " + cv };
+  }
+  // A verse's references, the best max of them, in the Bible's order.
+  function xrefs(vid, max) {
+    return (DATA.crossrefs[vid] || []).slice(0, max).map(parseXref).filter(Boolean).sort(function (a, b) {
+      return (BOOK_ORDER[a.code] - BOOK_ORDER[b.code]) || (a.chapter - b.chapter) || (a.verse - b.verse);
+    });
+  }
+  // Into the reader where that chapter is translated, otherwise to search.
+  function xrefLink(x, label) {
+    var away = !translated(x.code, x.chapter);
+    var a = el("a", "xr-link" + (away ? " xr-away" : ""), label);
+    a.href = refUrl(x.code, x.chapter, x.verse, x.full);
+    a.title = away ? t("crossrefs_away").replace("{ref}", x.full) : x.full;
+    a.addEventListener("click", function (e) { e.stopPropagation(); });
+    return a;
+  }
+  function xrefLine(node, list, long) {
+    list.forEach(function (x, i) {
+      if (i) node.appendChild(document.createTextNode("; "));
+      node.appendChild(xrefLink(x, long ? x.full : x.short));
+    });
+    return node;
+  }
+
+  // The margin beside the text (#xr-margin, before #text, so copying the
+  // text never takes it along): each verse's number and its best
+  // references. The style sheet shows it only where there is room.
+  function drawMargin() {
+    var box = document.getElementById("xr-margin");
+    if (!box) return;
+    box.textContent = "";
+    document.body.classList.toggle("xr-on", xrefsShown());
+    if (!xrefsShown()) { layoutMargin(); return; }
+    var seen = {};
+    document.querySelectorAll("#text .verse").forEach(function (span) {
+      var v = span.dataset.v, vid = verseId(v);
+      if (seen[vid] || !DATA.crossrefs[vid]) return;
+      seen[vid] = true;
+      var note = el("p", "xr-note" + (currentVerse === v ? " on" : ""));
+      note.setAttribute("role", "group");
+      note.setAttribute("aria-label", t("crossrefs_label").replace("{v}", v));
+      note.appendChild(el("span", "xr-v", v));
+      xrefLine(note, xrefs(vid, XREF_MARGIN), false);
+      note.verse = span;
+      box.appendChild(note);
+    });
+    layoutMargin();
+  }
+
+  // Each note level with its verse, or just below the note before it.
+  // Notes that run past the end of the text lengthen it, so they never
+  // reach the notes below.
+  function layoutMargin() {
+    var box = document.getElementById("xr-margin"), text = document.getElementById("text");
+    if (!box) return;
+    var room = getComputedStyle(box).display !== "none" && box.children.length > 0;
+    var need = "";
+    if (room) {
+      box.style.top = text.offsetTop + "px";
+      box.style.left = (text.offsetLeft + text.offsetWidth) + "px";
+      var top = box.getBoundingClientRect().top, below = 0;
+      Array.prototype.forEach.call(box.children, function (note) {
+        var y = Math.max(Math.round(note.verse.getBoundingClientRect().top - top), below);
+        note.style.top = y + "px";
+        below = y + note.offsetHeight + 6;
+      });
+      var last = text.lastElementChild;
+      var height = last ? last.getBoundingClientRect().bottom - text.getBoundingClientRect().top : 0;
+      if (below > height) need = Math.ceil(below) + "px";
+    }
+    if (text.style.minHeight !== need) text.style.minHeight = need;
+  }
+  if (window.ResizeObserver) new ResizeObserver(layoutMargin).observe(document.getElementById("text"));
+
+  // In the panel: the chosen sentence's references, each verse's in full.
+  function xrefSection(r) {
+    if (settings.crossrefs !== 0) return null;
+    var vids = r.refs.filter(function (vid) { return DATA.crossrefs[vid]; });
+    if (!vids.length) return null;
+    var box = el("div", "xr-panel");
+    box.appendChild(el("h3", null, t("crossrefs")));
+    var list = el("ul", "xr-list");
+    vids.forEach(function (vid) {
+      var li = el("li");
+      if (r.refs.length > 1) li.appendChild(el("span", "xr-v", verseOf(vid)));
+      list.appendChild(xrefLine(li, xrefs(vid), true));
+    });
+    box.appendChild(list);
+    box.appendChild(el("p", "hint xr-credit", t("crossrefs_credit")));
     return box;
   }
 
@@ -1166,6 +1284,8 @@
     panel.appendChild(el("h3", null, t("rendering").replace("{level}", t(settings.level))));
     if (!ds.rendering.length) panel.appendChild(el("p", "empty", t("no_rendering")));
     ds.rendering.forEach(function (d) { panel.appendChild(drawCard(d, current)); });
+    var xr = xrefSection(current);
+    if (xr) panel.appendChild(xr);
   }
 
   // Bookmarks and highlights, kept in this browser as owb.marks by verse
