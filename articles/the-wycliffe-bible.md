@@ -7,7 +7,7 @@ section: translation
 ---
 The first complete Bible in English was not printed. It was copied by hand, in hundreds of manuscripts, in the decades around 1400. It was translated not from Hebrew and Greek but from the Latin **Vulgate**, the Bible of the medieval Western church. And it is named after a man who probably translated little or none of it himself: the Oxford theologian **John Wycliffe**.
 
-The **Wycliffite Bible**, as scholars now usually call it, sits at the centre of one of the sharpest controversies of the late Middle Ages. To its supporters it was the word of God made available to ordinary people. To its opponents it was a tool of heresy. Historians today are still debating how it was made, who made it, and how strictly it was suppressed.
+The **Wycliffite Bible**, as scholars now usually call it, was the word of God for ordinary people to its supporters and a tool of heresy to its opponents. Historians still debate who made it and how strictly it was suppressed.
 
 ## Wycliffe the Oxford scholar
 
@@ -25,9 +25,11 @@ A few names are attached to it, with varying confidence. One manuscript in the B
 
 The Wycliffite Bible exists in two main forms.
 
-The **Early Version**, probably made in the late 1370s and 1380s, is extremely literal. It follows the Latin word order and grammar closely, sometimes so closely that the English is hard to understand without the Latin.
+The **Early Version**, probably made in the late 1370s and 1380s, is extremely literal. It follows the Latin word order and grammar closely, sometimes so closely that the English is hard to understand without the Latin. The **Later Version**, probably completed in the 1390s, is a thorough revision in more natural English. Genesis 1:3 shows the difference. The Vulgate reads *fiat lux et facta est lux*. The Early Version copies its order:
 
-The **Later Version**, probably completed in the 1390s, is a thorough revision in more natural English. Its opening of John's Gospel, which reads almost the same in both versions, is in a commonly printed spelling:
+> And God seide, Be maad liȝt; and maad is liȝt.
+
+The Later Version puts the words in English order: "Liȝt be maad, and liȝt was maad." Its opening of John's Gospel reads, in a commonly printed spelling:
 
 > In the bigynnyng was the word, and the word was at God, and God was the word.
 
@@ -37,19 +39,19 @@ Some manuscripts of the Later Version include a long **General Prologue**. In it
 
 ## The Lollards
 
-Wycliffe's followers were called **Lollards**, a name of uncertain origin used mostly by their opponents. The movement began among Oxford scholars and spread to clergy, merchants, craftsmen and some knights and gentry. Lollards valued the English Bible and English sermons, read and copied texts in groups, and criticised many church practices.
+Wycliffe's followers were called **Lollards**, a name used mostly by their opponents. The movement spread from Oxford scholars to clergy, merchants, craftsmen and some gentry, who read and copied English texts in groups.
 
-After a failed Lollard rising in 1414 led by Sir John Oldcastle, the movement was more firmly associated with sedition as well as heresy, and many Lollards were tried and some executed. It continued underground into the sixteenth century, when it met the English Reformation.
+After Sir John Oldcastle's failed Lollard rising in 1414, the movement was linked with sedition as well as heresy, and some Lollards were executed. It continued underground into the sixteenth century, when it met the English Reformation.
 
 ## Arundel's Constitutions
 
 In 1407 **Thomas Arundel**, Archbishop of Canterbury, issued a set of decrees for the province of Canterbury, known as **Arundel's Constitutions**, formally published in 1409. One of them forbade anyone to translate any text of scripture into English on their own authority, and forbade the reading of any such book made in Wycliffe's time or since, unless it had been approved by a bishop or a provincial council.
 
-How this worked in practice is debated. The traditional view, developed in Margaret Deanesly's study of 1920 and in much later work, is that the decree effectively outlawed the English Bible and made owning one dangerous. Some heresy trials did cite English books as evidence. Nicholas Watson has argued that the Constitutions had a chilling effect on religious writing in English in general. Other historians, notably Henry Ansgar Kelly, argue that the ban was narrower than often thought: it required approval rather than banning translation outright, and orthodox owners, including members of the royal family and religious houses, continued to own and read copies of the Wycliffite Bible openly. Both views have evidence on their side, and the truth probably varied by time, place and person.
+How this worked in practice is debated. The traditional view, going back to Margaret Deanesly's study of 1920, is that the decree effectively outlawed the English Bible; some heresy trials did cite English books as evidence. Nicholas Watson has argued that the Constitutions had a chilling effect on religious writing in English in general. Other historians, notably Henry Ansgar Kelly, argue that the ban was narrower than often thought: it required approval rather than banning translation outright, and orthodox owners, including members of the royal family and religious houses, continued to own and read copies of the Wycliffite Bible openly. The truth probably varied by time, place and person.
 
 ## Surviving in manuscripts
 
-What is not in doubt is how widely the translation was copied. About 250 manuscripts of the Wycliffite Bible survive, complete or in part, more than for any other medieval English text. Most are of the Later Version, and many are of the New Testament alone, small enough to carry. Some are plain and cheap; others are beautifully decorated and were clearly made for wealthy owners. Many have tables of the church's lectionary readings, suggesting they were used alongside the church's services.
+What is not in doubt is how widely the translation was copied. About 250 manuscripts of the Wycliffite Bible survive, complete or in part, more than for any other medieval English text. Most are of the Later Version, and many are of the New Testament alone, small enough to carry. Some are plain and cheap; others were clearly made for wealthy owners. Many have tables of the church's lectionary readings, for use alongside its services.
 
 ## Wycliffe's bones
 
@@ -61,7 +63,7 @@ The Wycliffite Bible was not printed until much later: the New Testament in 1731
 
 ## A different starting point
 
-Open Word Bible shares the Wycliffite translators' conviction that ordinary readers should be able to read the Bible in their own language and that translators should explain their method. But it differs in two important ways. It translates from the Hebrew of the **Westminster Leningrad Codex** and the Greek of the **SBL Greek New Testament**, rather than from a Latin translation. And it needs nobody's permission to be read or copied: the translation and all its reasoning are released under a CC0 licence. It is AI-assisted, its drafts have not yet been approved by named human reviewers, and it is still at an early stage. See [AI-assisted translation and human review](/articles/ai-assisted-translation-and-human-review/).
+Open Word Bible shares the Wycliffite translators' conviction that ordinary readers should be able to read the Bible in their own language and that translators should explain their method. But it differs in two important ways. It translates from the Hebrew of the **Westminster Leningrad Codex** and the Greek of the **SBL Greek New Testament**, rather than from a Latin translation. And it needs nobody's permission to be read or copied: the translation and all its reasoning are released under a CC0 licence. It is AI-assisted, and its drafts have not yet been approved by named human reviewers. See [AI-assisted translation and human review](/articles/ai-assisted-translation-and-human-review/).
 
 ## Sources
 

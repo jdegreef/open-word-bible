@@ -5,65 +5,49 @@ date: 2026-10-12
 order: 55
 section: translation
 ---
-French has been a language of Bible translation for about eight hundred years. It has produced Bibles for kings and for refugees, for Catholics, Protestants and both together, and some of the most influential biblical scholarship of the modern world.
-
-Today French is spoken by hundreds of millions of people, many of them in Africa, and the French Bible is read in Kinshasa and Abidjan as much as in Paris or Geneva. This article traces how it came to be.
+French has been a language of Bible translation for about eight hundred years. It has produced Bibles for kings and for refugees, for Catholics, Protestants and both together. Today most French speakers live outside Europe, and the French Bible is read in Kinshasa and Abidjan as much as in Paris or Geneva.
 
 ## Medieval French Bibles
 
-The earliest French biblical texts were translations of particular books, especially the Psalms, made in the twelfth century, often for use in monasteries or by the nobility. In the thirteenth century, scholars in Paris produced a complete French translation of the Bible, sometimes called the **thirteenth-century Bible** or the Bible of Paris, though how it was made and by whom is still debated.
+The earliest French biblical texts, from the twelfth century, were translations of single books, especially the Psalms. In the thirteenth century scholars in Paris produced a complete French Bible, though who made it, and how, is still debated.
 
-The most widely copied medieval French Bible was the **Bible historiale** of **Guyart des Moulins**, a canon of Aire in northern France, completed in the 1290s. It was not a plain translation. Guyart translated the *Historia scholastica* of Peter Comestor, a popular twelfth-century retelling of biblical history with commentary, and combined it with translated biblical text. Later versions added more of the thirteenth-century translation, so that the *Bible historiale complétée* contained most of the Bible. Many copies were lavishly illustrated for royal and noble owners; scores of manuscripts survive.
+The most widely copied medieval French Bible was the **Bible historiale** of **Guyart des Moulins**, a canon of Aire, completed in the 1290s. It was not a plain translation. Guyart combined biblical text with a translation of Peter Comestor's *Historia scholastica*, a popular retelling of biblical history with commentary. Many copies were lavishly illustrated for royal and noble owners. Like all medieval French Bibles it was translated from the Latin Vulgate, and it was expensive, so it was mostly owned by the wealthy.
 
-These Bibles were in Old and Middle French and were translated from the Latin Vulgate. They were not banned outright, but they were expensive, and they were mostly owned by the wealthy. The first printed French Bibles, at the end of the fifteenth century, were largely based on them.
+## Lefèvre d'Étaples
 
-## Lefèvre d'Étaples: a Catholic reformer's Bible
-
-At the beginning of the sixteenth century, the humanist scholar **Jacques Lefèvre d'Étaples** wanted the gospel to reach ordinary French people. He belonged to a circle of reform-minded Catholics around Bishop Guillaume Briçonnet of Meaux. His French New Testament appeared in Paris in 1523, and his complete Bible was printed in **Antwerp** in 1530, because the theologians of the Sorbonne had made publishing it in Paris too dangerous.
-
-Lefèvre translated from the Latin Vulgate, though he corrected it in places from the Greek. He never left the Catholic Church, but his work was suspected of sympathy with Luther, and his Bible was later placed on lists of forbidden books. Even so, revised forms of it were reprinted for Catholic readers, notably as the **Louvain Bible** of 1550, approved by the theologians of the University of Louvain.
+At the start of the sixteenth century the humanist **Jacques Lefèvre d'Étaples**, part of a circle of reform-minded Catholics at Meaux, wanted the gospel to reach ordinary French people. His New Testament appeared in Paris in 1523. His complete Bible was printed in **Antwerp** in 1530, because the theologians of the Sorbonne had made publishing it in Paris too dangerous. He translated from the Vulgate, correcting it in places from the Greek. He never left the Catholic Church, but his Bible was later placed on lists of forbidden books.
 
 ## Olivétan's Bible, 1535
 
-The first French Bible translated from Hebrew and Greek was Protestant. It was the work of **Pierre Robert**, known as **Olivétan**, a cousin of John Calvin. The project was commissioned in 1532 by the **Waldensians**, a medieval dissenting movement in the Alpine valleys that had decided to join the Reformation, and they paid for it.
+The first French Bible translated from Hebrew and Greek was Protestant. It was the work of **Pierre Robert**, known as **Olivétan**, a cousin of John Calvin. The **Waldensians**, a medieval dissenting movement in the Alpine valleys that had decided to join the Reformation, commissioned and paid for it in 1532.
 
-Olivétan worked quickly, in about two years. For the New Testament he relied heavily on Lefèvre's translation, revised against the Greek of Erasmus; the Old Testament was a more independent translation from the Hebrew. The Bible was printed by Pierre de Wingle at Serrières, near **Neuchâtel**, in 1535, the same year as Coverdale's English Bible. It was a large, expensive folio, and its sales were slow.
-
-Calvin contributed a Latin preface addressed to kings and peoples, and he is generally credited with the French preface to the New Testament as well. In the following decades the Genevan church revised Olivétan's text repeatedly; Calvin himself took part in early revisions, and the **Geneva Bible** in French, especially the revision by the pastors and professors of Geneva in 1588, became the Bible of French-speaking Protestants. These French Bibles, with their notes and verse numbers, also influenced the English Geneva Bible (see [From Coverdale to Geneva: the English Bibles before 1611](/articles/english-bibles-before-1611/)).
+Olivétan worked fast, in about two years. For the New Testament he leaned on Lefèvre, revised against the Greek; the Old Testament was a more independent translation from the Hebrew. It was printed by Pierre de Wingle at Serrières, near **Neuchâtel**, in 1535, the same year as Coverdale's English Bible. Calvin wrote a Latin preface for it. In the following decades the Genevan church revised Olivétan's text again and again, and the Geneva revision of 1588 became the Bible of French-speaking Protestants. These French Bibles, with their notes and verse numbers, influenced the English Geneva Bible (see [From Coverdale to Geneva](/articles/english-bibles-before-1611/)).
 
 ## Port-Royal and Le Maistre de Sacy
 
-In the seventeenth century the most important Catholic French translation came from **Port-Royal**, the abbey near Paris associated with Jansenism, a movement within Catholicism that stressed grace and moral seriousness and was later condemned by Rome.
+The most important Catholic French translation of the seventeenth century came from **Port-Royal**, the abbey near Paris associated with Jansenism, a movement within Catholicism that stressed grace and moral seriousness and was later condemned by Rome.
 
-The leading translator was **Isaac-Louis Le Maistre de Sacy**. His team's New Testament, known as the **New Testament of Mons**, appeared in 1667. It was printed in Amsterdam, although its title page named Mons, in the Spanish Netherlands, and it met with fierce opposition from French church authorities, partly because of its Jansenist associations and partly because it put scripture into elegant everyday French for lay readers. Sacy was imprisoned in the Bastille from 1666 to 1668, and he worked on the Old Testament there. The full Bible, with extensive commentary, was published in instalments and completed after his death in 1684.
+Its leading translator, **Isaac-Louis Le Maistre de Sacy**, was imprisoned in the Bastille from 1666 to 1668 and worked on the Old Testament there. His team's **New Testament of Mons** appeared in 1667 and met fierce opposition, partly for its Jansenist links and partly because it put scripture into elegant everyday French for lay readers. The full Bible was completed after his death in 1684. Translated from the Vulgate in the clear French of Racine and Pascal, it was read for two centuries, by Protestants as well as Catholics.
 
-Sacy's Bible was translated from the Vulgate, in the clear, balanced French of the age of Racine and Pascal. It was widely read for two centuries, by Protestants as well as Catholics, and it shaped the French biblical vocabulary of educated readers.
-
-## Ostervald and Martin
-
-Protestant French Bibles were also updated. The French of the Geneva revisions was becoming old-fashioned, and in the late seventeenth and eighteenth centuries two pastors revised it. **David Martin**, a Huguenot pastor in Utrecht, published his revision in 1707. **Jean-Frédéric Ostervald**, a pastor in Neuchâtel, published his in 1744. The Ostervald and Martin Bibles were the standard French Protestant Bibles into the nineteenth century, and both are now in the public domain.
+Protestants, meanwhile, updated the Geneva text. **David Martin** in Utrecht (1707) and **Jean-Frédéric Ostervald** in Neuchâtel (1744) published revisions that remained standard into the nineteenth century.
 
 ## Louis Segond
 
-In the nineteenth century the Genevan pastor and scholar **Louis Segond** produced a new translation from the Hebrew and Greek. His Old Testament appeared in 1874 and his New Testament in 1880, and they were published together as a complete Bible in 1880. After his death, a revision was published in **1910**, and the "Segond 1910" became the most widely used French Protestant Bible of the twentieth century. It is in the public domain and is still printed and read, especially in Africa. Its John 3:16 reads:
+In the nineteenth century the Genevan pastor **Louis Segond** made a new translation from the Hebrew and Greek, complete in 1880. A revision published after his death in **1910** became the most widely used French Protestant Bible of the twentieth century. The Segond 1910 is in the public domain and is still printed and read, especially in Africa. Its John 3:16 reads:
 
 > Car Dieu a tant aimé le monde qu'il a donné son Fils unique, afin que quiconque croit en lui ne périsse point, mais qu'il ait la vie éternelle.
 
-The World English Bible has "For God so loved the world, that he gave his one and only Son."
+The World English Bible has "For God so loved the world, that he gave his one and only Son." Later revisions of Segond are under copyright.
 
-Segond's translation has been revised several times since, and the later revisions are under copyright.
+## Jerusalem and the TOB
 
-## The twentieth century: Jerusalem and the TOB
+Twentieth-century French scholarship produced two Bibles of international importance. The Dominican **École biblique** in Jerusalem published the **Bible de Jérusalem**, in parts from 1948 and in one volume in 1956. Translated from the Hebrew and Greek with notes based on modern scholarship, it was itself translated into English as the Jerusalem Bible of 1966.
 
-Twentieth-century French scholarship produced two Bibles of international importance. The Dominican **École biblique** in Jerusalem, a centre of Catholic biblical research since 1890, published a new annotated translation in separate volumes from 1948 and as a single volume in 1956: the **Bible de Jérusalem**. Translated from the Hebrew and Greek, with introductions and notes based on modern scholarship, it was soon translated into other languages, including English as the Jerusalem Bible of 1966.
-
-The second was the **Traduction œcuménique de la Bible** (TOB), prepared jointly by Catholic and Protestant scholars, with Orthodox participation, after the Second Vatican Council. Its New Testament appeared in 1972 and the complete Bible in 1975. It was one of the first major Bibles made by Catholics and Protestants working together, a striking change from the polemical notes of the sixteenth century.
-
-Since then many other French translations have appeared, among them the *Bible en français courant*, the *Bible du Semeur* and the *Nouvelle Bible Segond*, at every point between very literal and very free. Most are under copyright.
+The **Traduction œcuménique de la Bible** (TOB), made jointly by Catholic and Protestant scholars with Orthodox participation, followed in 1975. After four centuries of rival notes in the margins, Catholics and Protestants had produced one Bible together. Many other French translations have appeared since, most under copyright.
 
 ## Open Word Bible in French
 
-French is one of the languages in which Open Word Bible is being prepared, following the English. It is translated from the Hebrew and Greek, not from English, with the same meaning decisions as every other language and its own decisions about French wording. Like Olivétan, it works from the Hebrew and Greek; like the TOB, it aims to set out its reasoning in a way that readers of different traditions can examine together. The work is AI-assisted and awaits named human reviewers; nothing is yet marked reviewed. Like the Segond 1910, the result is free to use, under a CC0 dedication.
+French is one of the languages in which Open Word Bible is being prepared. Like Olivétan's, it is translated from the Hebrew and Greek, not from English, with the same meaning decisions as every other language and its own decisions about French wording. Like the TOB, it sets out its reasoning so that readers of different traditions can examine it together. The work is an AI-assisted draft awaiting named human reviewers. Like the Segond 1910, the result is free to use.
 
 ## Sources
 

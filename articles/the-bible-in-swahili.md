@@ -35,7 +35,7 @@ Steere completed the New Testament and parts of the Old before his death in 1882
 
 ## Two dialects, two Bibles
 
-The CMS missionaries in Kenya did not adopt the Zanzibar translation. They worked in the Swahili of Mombasa, **Kimvita**, which has a richer older literature and differs from Kiunguja in pronunciation, vocabulary and some grammar. Separate Mombasa-dialect Scriptures were produced in the late nineteenth and early twentieth centuries, including a New Testament published by the British and Foreign Bible Society in 1914; CMS missionaries such as William Taylor and Harry Binns were among those who worked on them.
+The CMS missionaries in Kenya did not adopt the Zanzibar translation. They worked in the Swahili of Mombasa, **Kimvita**, which has a richer older literature and differs from Kiunguja in pronunciation, vocabulary and some grammar. Separate Mombasa-dialect Scriptures were produced in the late nineteenth and early twentieth centuries, including a New Testament published by the British and Foreign Bible Society in 1914; the CMS missionary William Taylor, a leading scholar of Mombasa Swahili, was among those who translated in that dialect.
 
 Meanwhile, German missions in what was then German East Africa (later Tanganyika, now mainland Tanzania) also used Swahili, which the German colonial government had made a language of administration. So by the early twentieth century there were rival Swahili Bibles, tied to rival dialects and rival missions. This was a familiar pattern in missionary translation, and it raised a practical question: which Swahili should be written, taught and printed?
 
