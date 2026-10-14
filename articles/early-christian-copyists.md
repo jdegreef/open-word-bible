@@ -6,25 +6,23 @@ order: 33
 section: history
 part: nt
 ---
-Every surviving manuscript of the New Testament was copied by someone. For the first three centuries of the church, these were not monks in a monastery scriptorium, and certainly not printers. They were Christians, and sometimes paid professionals, copying books for their own churches, for friends, or for themselves, in a world where Christianity was a small and sometimes persecuted movement. What do we know about them, and how good were they at their work?
+Every surviving manuscript of the New Testament was copied by someone. For the first three centuries these were not monks in a scriptorium. They were Christians, and sometimes paid professionals, copying books for their churches, their friends or themselves, while Christianity was a small and sometimes persecuted movement. What do we know about them, and how good were they at their work?
 
 ## Who copied?
 
-In the Roman world, books were copied in several ways. Wealthy households owned educated slaves trained as scribes. Professional copyists could be hired. Private individuals with good handwriting copied books they wanted to own. There were bookshops in large cities, but most literature circulated through networks of friends: you borrowed a book and had it copied.
+In the Roman world, wealthy households owned slaves trained as scribes, professional copyists could be hired, and people with good handwriting copied books for themselves. There were bookshops in large cities, but most literature circulated through friends: you borrowed a book and had it copied.
 
 Early Christian books seem to have circulated in the same way. Kim Haines-Eitzen, in *Guardians of Letters*, argues that the earliest Christian scribes were mostly people who were also copyists in ordinary life: literate men and some women who handled documents, letters and literature, and who used their skills for the church. Many early Christian manuscripts are written in a clear, practical hand rather than the elegant book hand of a luxury edition. Colin Roberts described this as a "reformed documentary" hand: the writing of someone used to business documents, making an effort to write a book.
-
-That does not mean the copies were careless. It means they were made by people for whom these were working books, to be read aloud in worship and studied.
 
 ## Signs of a Christian scribal culture
 
 Several features of early Christian manuscripts show shared habits, a kind of Christian scribal culture that formed very early.
 
-**The codex.** As described in [Papyrus, parchment and the codex](/articles/papyrus-parchment-and-the-codex/), Christian scribes overwhelmingly used the codex for scripture, at a time when others still preferred the scroll.
+**The codex.** Christian scribes overwhelmingly used the codex for scripture while others still preferred the scroll (see [Papyrus, parchment and the codex](/articles/papyrus-parchment-and-the-codex/)).
 
 **The sacred names.** Christian scribes wrote certain words in abbreviated form with a line drawn above: God, Lord, Jesus, Christ, and later Spirit, cross, Father, son, man and others. These are called the *nomina sacra* ("sacred names"), a term coined by the scholar Ludwig Traube in 1907. "Jesus," for example, was written with just its first and last letters, or first two and last, with a line over the top. This practice is found in virtually every early Christian manuscript, from the earliest papyri onwards, across different regions. Larry Hurtado argues that it was a deliberate expression of reverence, perhaps influenced by Jewish treatment of the divine name, and that its consistency shows the scribes were part of a connected movement with shared conventions.
 
-**Reading aids.** Many early manuscripts have features that help a public reader: wider spacing, larger letters, marks dividing sense units, and occasional breathing and accent marks. These were books meant to be read aloud in church.
+**Reading aids.** Many early manuscripts have wider spacing, larger letters and marks dividing sense units: features that help someone reading aloud in church.
 
 ## How careful were they?
 
@@ -32,7 +30,7 @@ The best evidence comes from the papyri themselves. Because scholars can compare
 
 Ernest Colwell pioneered this work in the 1960s, and James Royse completed a massive study, *Scribal Habits in Early Greek New Testament Papyri* (2008), of the six largest early papyri. His findings include:
 
-- **P75**, containing much of Luke and John and dated around 200 CE or somewhat later, was copied with great care. Its scribe made relatively few mistakes, and its text agrees very closely with that of Codex Vaticanus, copied a century or more later. That agreement shows that a text very like Vaticanus's was already being copied accurately much earlier.
+- **P75**, containing much of Luke and John and dated around 200 CE or somewhat later, was copied with great care. Its scribe made relatively few mistakes, and its text is very close to that of Codex Vaticanus, copied a century or more later.
 - **P66**, a copy of John from around the same time, has many errors, but also many corrections, most of them made by the original scribe checking his work against his exemplar. It is a window into a scribe at work, making mistakes and catching them.
 - **P45**, a third-century copy of the Gospels and Acts, has a scribe who seems to have copied phrase by phrase, sometimes smoothing or shortening the wording while keeping the sense.
 - **P46**, a copy of Paul's letters from around 200 CE, has a large number of slips, many of them simple errors such as skipping a word, but its text is generally regarded as early and valuable.
@@ -45,23 +43,23 @@ The overall picture is of scribes with varying skill and varying care, most of t
 
 Early Christian writers knew that copying could go wrong, and some took steps to prevent it.
 
-The book of **Revelation** ends with a solemn warning against adding to or taking away from "the words of the prophecy of this book" (Revelation 22:18–19). Whatever else it means, it shows awareness that a text could be altered in copying.
+The book of **Revelation** ends with a warning against adding to or taking away from "the words of the prophecy of this book" (Revelation 22:18–19), which shows awareness that a text could be altered in copying.
 
 **Irenaeus**, bishop of Lyons around 180 CE, ended one of his works with a direct appeal to anyone who copied it. As Eusebius preserves it, Irenaeus adjures the copyist, by the Lord Jesus Christ and his coming in judgement, to compare the copy with the original and correct it carefully, and to copy this appeal as well (Eusebius, *Church History* 5.20.2). If Irenaeus asked this for his own book, we can assume that Christian communities cared at least as much about their scriptures.
 
-**Origen**, the great third-century scholar, complained that the differences among copies of the Gospels had become great, "either through the carelessness of some scribes or through the perverse audacity of others" who added or removed what they pleased (*Commentary on Matthew* 15.14). His complaint is evidence of the problem, and also of the solution: he and others compared manuscripts to establish the best text.
+**Origen**, the great third-century scholar, complained that the differences among copies of the Gospels had become great, "either through the carelessness of some scribes or through the perverse audacity of others" (*Commentary on Matthew* 15.14). His answer was to compare manuscripts and establish the best text.
 
 ## Correctors and scriptoria
 
 From the fourth century, with the church legal and growing fast, copying became more organised. Bishops and wealthy Christians commissioned large, expensive Bibles. Around 331 CE the emperor **Constantine** wrote to Eusebius of Caesarea asking for fifty copies of the scriptures, written on fine parchment by skilled professional scribes, for the churches of his new capital, Constantinople (Eusebius, *Life of Constantine* 4.36).
 
-Caesarea in Palestine had a famous Christian library, founded with Origen's books and expanded by the scholar Pamphilus. A note in **Codex Sinaiticus**, added by a later corrector at the end of the books of Ezra and Esther, records that the text had been checked against a very old manuscript corrected by the martyr Pamphilus himself. Sinaiticus as a whole shows the work of several original scribes and numerous later correctors, who made many thousands of changes over the centuries (see [Codex Sinaiticus and Codex Vaticanus](/articles/sinaiticus-and-vaticanus/)). Correction was a normal part of the life of a manuscript.
+Caesarea in Palestine had a famous Christian library, founded with Origen's books and expanded by the scholar Pamphilus. Manuscripts were checked against older copies there, and later readers went on correcting them for centuries (see [Codex Sinaiticus and Codex Vaticanus](/articles/sinaiticus-and-vaticanus/)). Correction was a normal part of the life of a manuscript.
 
 In the Middle Ages, copying moved largely into monasteries. Byzantine scribes produced the great majority of surviving Greek New Testament manuscripts, from the ninth century onwards, in a careful, standardised minuscule hand, and their text became increasingly uniform.
 
 ## Why this matters
 
-Knowing who the copyists were helps us weigh their work fairly. They were not infallible machines, and they were not careless amateurs either. They were people who valued these books highly, did their best to reproduce them, sometimes made mistakes, often caught them, and occasionally tried to improve the text in ways that we can now detect. The thousands of manuscripts they left behind are what make it possible to check their work, which is the subject of the articles on [textual criticism](/articles/how-textual-criticism-works/) later in this series.
+Knowing who the copyists were helps us weigh their work fairly. They were people who valued these books highly, did their best to reproduce them, sometimes made mistakes, often caught them, and occasionally tried to improve the text in ways that we can now detect. The thousands of manuscripts they left behind are what make it possible to check their work, which is the subject of the articles on [textual criticism](/articles/how-textual-criticism-works/) later in this series.
 
 ## Sources
 

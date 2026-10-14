@@ -22,7 +22,7 @@ By the middle of the second century, the core of the New Testament was in wide u
 
 **The Gospels.** Around 150 CE, **Justin Martyr** describes Christian worship in Rome: on Sunday, "the memoirs of the apostles or the writings of the prophets are read, as long as time permits" (*First Apology* 67). He calls these memoirs "Gospels." Justin's pupil **Tatian**, around 170 CE, made the *Diatessaron* ("through four"), a single continuous narrative woven from Matthew, Mark, Luke and John, which shows that these four were already a recognised set. Around 180 CE, **Irenaeus** of Lyons argued that there can be neither more nor fewer than four Gospels, comparing them to the four winds and the four corners of the world (*Against Heresies* 3.11.8). His argument is unusual, but his assumption is clear: the four Gospels were the Gospels of the church. Charles Hill, in *Who Chose the Gospels?*, shows that this fourfold Gospel was established earlier and more widely than is often assumed.
 
-**Paul.** Paul's letters were collected early (see [How the New Testament was written](/articles/how-the-new-testament-was-written/)). Early second-century writers such as Clement of Rome, Ignatius of Antioch and Polycarp of Smyrna know and echo several of them. The papyrus codex **P46**, from around 200 CE, is a collection of Paul's letters that includes Hebrews.
+**Paul.** Paul's letters were collected early (see [How the New Testament was written](/articles/how-the-new-testament-was-written/)). Writers around 100 CE, such as Clement of Rome, Ignatius of Antioch and Polycarp of Smyrna know and echo several of them. The papyrus codex **P46**, from around 200 CE, is a collection of Paul's letters that includes Hebrews.
 
 ## Marcion and the challenge of a short canon
 
@@ -62,6 +62,19 @@ In the West, regional councils at **Hippo** (393) and **Carthage** (397 and 419)
 
 It is worth noticing what the councils did. They did not create the canon; they recognised and confirmed books that the churches had been reading, in most cases, for two centuries or more.
 
+## The edges after Athanasius
+
+Agreement on the twenty-seven books did not end every question. Some churches kept their own lists for centuries.
+
+- **The Syriac churches.** The Peshitta, the standard Syriac Bible from the early fifth century, has only twenty-two books. It lacks 2 Peter, 2 and 3 John, Jude and Revelation, and some Syriac churches still read only those twenty-two in worship (see [The Peshitta and the Syriac Bible](/articles/the-peshitta/)).
+- **The Ethiopian church.** The Ethiopian Orthodox Tewahedo Church accepts the twenty-seven books and also, in what scholars call its broader canon, several books of church order and instruction, such as the *Sinodos*, the *Book of the Covenant*, an Ethiopic *Clement* and the *Didascalia* (see [Coptic and Ethiopic Bibles](/articles/coptic-and-ethiopic-bibles/)).
+
+In the West the old questions came back at the Reformation. Renaissance scholars read Eusebius and Jerome again and saw that some books had once been disputed. Erasmus and the Catholic cardinal Cajetan both doubted that Paul wrote Hebrews. **Martin Luther** went further. In his German New Testament of September 1522, he listed Hebrews, James, Jude and Revelation together at the end, without numbers, apart from the other twenty-three. In his preface he called James "an epistle of straw" compared with the books that, in his view, showed Christ most clearly, though that line was dropped from editions after 1537. Luther did not remove the four books; he printed and translated them. But he ranked them lower, and Lutheran Bibles kept his order for a long time.
+
+The **Council of Trent**, on 8 April 1546, answered by listing every book of both Testaments, including all twenty-seven of the New, as sacred and canonical. Reformed confessions, such as the French Confession of 1559 and the Belgic Confession of 1561, also listed the twenty-seven. So the Reformation, for all its disputes, ended with Catholics and Protestants holding the same New Testament.
+
+Open Word Bible translates these twenty-seven books, in the order most Bibles use today. The order itself is a tradition, not part of the text: Greek manuscripts often place Acts and the general letters before Paul, and Hebrews sometimes stands among Paul's letters, before the letters to Timothy.
+
 ## How did the church decide?
 
 Early Christian writers mention several considerations, which scholars often summarise as three questions:
@@ -81,12 +94,14 @@ Books such as the *Gospel of Thomas*, the *Gospel of Peter* or the *Gospel of Ju
 - Athanasius. *Festal Letter* 39 (367 CE).
 - Bruce, F. F. *The Canon of Scripture*. Downers Grove, IL: InterVarsity, 1988.
 - Eusebius. *Church History* 3.25; 6.25.
+- Council of Trent. *Decree Concerning the Canonical Scriptures*. Fourth Session, 8 April 1546.
 - Gallagher, Edmon L., and John D. Meade. *The Biblical Canon Lists from Early Christianity: Texts and Analysis*. Oxford: Oxford University Press, 2017.
 - Hahneman, Geoffrey Mark. *The Muratorian Fragment and the Development of the Canon*. Oxford: Clarendon, 1992.
 - Hill, Charles E. *Who Chose the Gospels? Probing the Great Gospel Conspiracy*. Oxford: Oxford University Press, 2010.
 - Irenaeus. *Against Heresies* 3.11.8.
 - Justin Martyr. *First Apology* 67.
 - Kruger, Michael J. *Canon Revisited: Establishing the Origins and Authority of the New Testament Books*. Wheaton, IL: Crossway, 2012.
+- Luther, Martin. *Das Newe Testament Deutzsch*. Wittenberg, 1522. Prefaces in *Luther's Works*, vol. 35, *Word and Sacrament I*. Philadelphia: Muhlenberg, 1960.
 - McDonald, Lee Martin. *The Biblical Canon: Its Origin, Transmission, and Authority*. Peabody, MA: Hendrickson, 2007.
 - Metzger, Bruce M. *The Canon of the New Testament: Its Origin, Development, and Significance*. Oxford: Clarendon, 1987.
 - Bible quotations are from the World English Bible (public domain), except where the article gives its own literal rendering.

@@ -20,6 +20,8 @@ Richard Bauckham, in *Jesus and the Eyewitnesses*, argues that the Gospel tradit
 
 The oldest books of the New Testament are almost certainly the **letters of Paul**. His first letter to the Thessalonians is usually dated to around 50 CE; Galatians may be earlier or slightly later; 1 and 2 Corinthians and Romans date to the mid-50s. They were written to particular churches, about particular problems, and many of them say so.
 
+They were also unusually long. E. Randolph Richards counted the surviving private letters on papyrus and found that they average about 87 words. Cicero's letters average about 295 words and Seneca's about 995. Paul's letters average about 2,500, and Romans runs to more than 7,000. A letter that size took days of work, several sheets of papyrus and a trained writer, and Richards estimates that Romans, with its drafts and copies, cost the equivalent of more than two thousand US dollars today. His figures are rough, and some reviewers question them, but the point stands: these were costly, deliberate documents, not quick notes.
+
 Ancient letters were usually not written by the sender's own hand. They were dictated to a secretary, or *amanuensis*. Paul's letters show this clearly.
 
 - At the end of Romans, the secretary adds his own greeting: "I, Tertius, who write the letter, greet you in the Lord" (Romans 16:22).
@@ -27,7 +29,15 @@ Ancient letters were usually not written by the sender's own hand. They were dic
 - In Galatians, Paul writes, "See with what large letters I write to you with my own hand" (Galatians 6:11).
 - 1 Peter says that it was written "through Silvanus" (1 Peter 5:12), who may have been the secretary, the carrier, or both.
 
-E. Randolph Richards, in his study of letter-writing in the first century, shows that secretaries could work in different ways: taking down dictation word for word, sometimes in shorthand; editing a draft; or composing from the author's instructions. This helps explain small differences in style between letters bearing the same author's name, and reminds us that letter-writing was often a team effort.
+Open Word Bible's notes on these verses make the same point. In Romans 16:22 the secretary steps forward in his own voice:
+
+> {{OWB:ROM.16.22.s1:B}}
+
+The note on this sentence explains that letters were often written by a trained scribe as the author dictated. It also records a small question of grammar: "in the Lord" most likely goes with "greet" (Tertius greets them as a fellow believer), though it could go with "wrote." At [Galatians 6](/gal/6/), the translation takes "I have written" as a letter-writer's way of saying "I am writing," since the words are past by the time the reader sees them, and marks as uncertain the view that Paul takes the pen here for the closing lines. Why were the letters large? The footnote gives the likeliest answer, emphasis, and names the others that have been suggested, poor eyesight or an untrained hand, because the text does not say.
+
+E. Randolph Richards shows that secretaries could work in different ways: taking down dictation word for word, sometimes in shorthand; editing a draft; or composing from the author's instructions. This helps explain small differences in style between letters bearing the same author's name, and reminds us that letter-writing was often a team effort.
+
+It also bears on a real debate. Many critical scholars think that some letters bearing Paul's name, especially 1 and 2 Timothy and Titus, and for some also Ephesians, Colossians and 2 Thessalonians, were written after his death by followers writing in his name, a known practice in the ancient world. Other scholars hold that Paul wrote them all, and point to the freedom a secretary could have as one reason the style varies. The differences are real; how to explain them is where scholars part ways. Open Word Bible translates each letter as it presents itself, and its notes say where authorship has been questioned (as at [Titus 1](/tit/1/)).
 
 Paul's letters also name co-senders: Sosthenes, Timothy, Silvanus. And they were carried by trusted messengers who could explain them. Phoebe, a deacon of the church at Cenchreae, was probably the carrier of Romans (Romans 16:1–2); Tychicus carried Colossians and Ephesians (Colossians 4:7–8; Ephesians 6:21–22).
 
@@ -35,11 +45,13 @@ Paul's letters also name co-senders: Sosthenes, Timothy, Silvanus. And they were
 
 Letters were written to be read aloud to the gathered church. "I solemnly command you by the Lord that this letter be read to all the holy brothers," Paul writes in 1 Thessalonians 5:27. And they were meant to be shared: "When this letter has been read among you, cause it to be read also in the assembly of the Laodiceans; and that you also read the letter from Laodicea" (Colossians 4:16).
 
-This sharing required copying. A church that wanted to keep a letter it had passed on, or to read one sent to another church, needed a copy. Before the end of the first century, Paul's letters were already being collected and read as more than occasional correspondence: 2 Peter 3:15–16 speaks of "all of his letters" and puts them alongside "the other Scriptures." Harry Gamble, in *Books and Readers in the Early Church*, argues that a collection of Paul's letters was circulating by the end of the first century, and that it was one of the main reasons Christians took up the book form called the codex (see [Papyrus, parchment and the codex](/articles/papyrus-parchment-and-the-codex/)).
+This sharing required copying. A church that wanted to keep a letter it had passed on, or to read one sent to another church, needed a copy. Early on, Paul's letters were collected and read as more than occasional correspondence: 2 Peter 3:15–16, a letter whose date is debated, speaks of "all of his letters" and puts them alongside "the other Scriptures." We can see one letter being used outside its first church. Around the end of the first century, the church at Rome wrote to the church at Corinth, in the letter known as *1 Clement*, about a new quarrel there. It tells them, in a literal rendering, "Take up the letter of the blessed Paul the apostle," and reminds them that Paul had already rebuked them for taking sides behind Paul, Cephas and Apollos (*1 Clement* 47.1–3, recalling 1 Corinthians 1:12). The Roman writer knows 1 Corinthians and expects the Corinthians still to have it, forty years after Paul wrote.
+
+Harry Gamble, in *Books and Readers in the Early Church*, argues that a collection of Paul's letters was circulating by the end of the first century, and that it was one of the main reasons Christians took up the book form called the codex (see [Papyrus, parchment and the codex](/articles/papyrus-parchment-and-the-codex/)).
 
 ## The Gospels
 
-The four Gospels are a different kind of writing: accounts of the life, teaching, death and resurrection of Jesus. Most scholars date them between about 65 and 95 CE, with Mark the earliest and John the latest, though some argue for earlier dates.
+The four Gospels are a different kind of writing: accounts of the life, teaching, death and resurrection of Jesus. Most scholars date them between about 65 and 95 CE, with Mark the earliest and John the latest, though some argue for earlier dates. One of the main points in the argument is the Roman destruction of the Jerusalem temple in 70 CE. Jesus predicts it in all three of the first Gospels (Mark 13:2; Matthew 24:2; Luke 21:6), and Luke speaks of Jerusalem "surrounded by armies" (Luke 21:20). Scholars who think the Gospels show knowledge of the event date them after 70; others answer that a prophet could foresee a siege. For most scholars the question moves the dates by a decade or two.
 
 **Sources.** Matthew, Mark and Luke share a great deal of material, often word for word in Greek. The most widely held explanation is that Matthew and Luke both used Mark, together with another shared source of sayings, which scholars call "Q", now lost. Other explanations exist, and the question is still debated. Luke says openly that he used earlier sources: "many have undertaken to set in order a narrative concerning those matters which have been fulfilled among us, even as those who from the beginning were eyewitnesses and servants of the word delivered them to us" (Luke 1:1–2). He writes "having traced the course of all things accurately from the first," so that his reader "might know the certainty" of what he had been taught (Luke 1:3–4).
 
@@ -67,6 +79,7 @@ But the gap between the writing and the first surviving copies is short by ancie
 - Deissmann, Adolf. *Light from the Ancient East*. Translated by Lionel R. M. Strachan. London: Hodder & Stoughton, 1910.
 - Eusebius. *Church History* 3.39.
 - Gamble, Harry Y. *Books and Readers in the Early Church: A History of Early Christian Texts*. New Haven: Yale University Press, 1995.
+- Clement of Rome. *1 Clement* 47.1–3.
 - Hengel, Martin. *The Four Gospels and the One Gospel of Jesus Christ*. Harrisburg, PA: Trinity Press International, 2000.
 - Richards, E. Randolph. *Paul and First-Century Letter Writing: Secretaries, Composition and Collection*. Downers Grove, IL: InterVarsity, 2004.
 - Dunn, James D. G. *Jesus Remembered*. Christianity in the Making 1. Grand Rapids: Eerdmans, 2003.

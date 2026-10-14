@@ -65,6 +65,28 @@ Open Word Bible does not try to settle this argument by choosing a side. It give
 
 What holds the levels together is the rule that they never differ in meaning. Decisions about what the Greek or Hebrew means are made once, recorded with their alternatives and reasons, and followed by every level. Only wording changes. That meets one of Ryken's chief concerns: a reader can always see where interpretation has happened, because each decision is listed in the sentence's reasoning record (see [Showing our work: what a reasoning record is](/articles/showing-the-work/)). And it meets Nida's: a reader who needs plain language can have it without a different meaning being smuggled in.
 
+## Inside one sentence
+
+The reasoning record for 1 Peter 1:13 shows how the work is divided. The picture of girding the loins gets one **meaning decision**: to gird up one's loins was to tuck a long robe into the belt so as to work, run or travel. Israel ate the first Passover dressed that way, ready to leave Egypt (Exodus 12:11), and Peter applies the picture to the mind. That decision says what the phrase means, for every level and every language.
+
+A separate **English wording decision** then says how each level shows it. Literal keeps the image, because a reader studying the text wants to see it. Balanced says "brace your minds for action" and Readable "get your minds ready to act," because readers today do not wear robes tied with a belt. The Literal reader is not left with a puzzle, since the meaning decision sits beside the sentence. The Readable reader is not given a guess, since the plain wording comes from the same decision.
+
+The same verse holds a harder problem. The Greek adverb {{GREEK:1PE.1.13:9}} (*teleiōs*, "completely") stands between "being sober" and "hope," and could belong to either: "be completely sober" or "hope completely." Greek can leave it where it is. English has to put it somewhere, and so does every translation, literal or free. The King James Version attached it to hope ("hope to the end"), as does the World English Bible ("set your hope fully"). Open Word Bible does too, but its record marks the decision as uncertain, says the evidence is close to even, and gives the other reading in a footnote. This is the honest answer to Ryken's worry about lost ambiguity. Where a language forces a choice, the translator makes it, and then tells the reader that a choice was made.
+
+Wording problems belong to each language. In Spanish the natural verb for "hope," *esperar*, also means "wait," and a plural command would most often be heard as "wait!" So the Spanish drafts say it with the noun *esperanza*, the key term, at every level. The meaning decision did not change. Only the Spanish words did.
+
+## Long of anger
+
+The Hebrew Bible is full of pictures like this. When God passes before Moses in Exodus 34:6, he is called {{HEBREW:EXO.34.6:11-12}}, literally "long of nostrils." Hebrew pictured anger as a nose that burns hot, so a "long" nose is slow to flare. The King James Version said "longsuffering," a word that keeps the length but drops the nose. The World English Bible says "slow to anger." Open Word Bible's Literal level keeps "long of anger," and Balanced reads:
+
+> {{OWB:EXO.34.6.s1:B}}
+
+Here the levels show their purpose plainly. A reader who meets "long of anger" learns how Hebrew thinks about anger and can trace the phrase through Proverbs 14:29 and 16:32. A reader who meets "slow to grow angry" understands at once. Both are reading the same decision: patient, slow to punish. And both can follow the record's note that these words became Israel's confession of who God is, echoed in Numbers 14:18, Psalm 103:8, Joel 2:13 and Jonah 4:2.
+
+## An objection
+
+A thoughtful skeptic might say that three levels are simply three translations with a promise attached. The promise matters, though, because it can be checked. Every level is drafted against the same written list of meaning decisions, and anyone who finds a level saying something the decisions do not say has found an error, not a difference of style. That is harder to do across three separate translations, where each team's decisions are mostly unwritten.
+
 The approach has limits. Three levels cannot capture every possible purpose, and deciding what counts as meaning and what counts as wording is itself a judgement that reviewers may dispute. The drafts are AI-assisted and none has yet been reviewed. But the project's hope is that, by showing its reasoning, it lets readers take part in the oldest argument in translation rather than simply receive its results.
 
 ## Sources
