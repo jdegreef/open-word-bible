@@ -95,7 +95,7 @@ The project is young, and its drafts are AI-assisted. None is marked reviewed un
 - World English Bible. Preface and copyright statement. eBible.org.
 - Berean Bible. "Terms and Conditions" and "Free Licensing." berean.bible.
 - Biblical Studies Press. "NET Bible Copyright." netbible.com.
-- Open English Bible. "Frequently Asked Questions" and "Move to CC0." openenglishbible.org.
+- Open English Bible. Front matter and CC0 licence statement. openenglishbible.org.
 - unfoldingWord. *unfoldingWord Literal Text* and *unfoldingWord Simplified Text*, front matter and licence. git.door43.org.
 - Griffin, Jesse A., and Todd L. Price. "Unrestricted Original Language Resources." *HIPHIL Novum* 5, no. 2 (2019): 86–96.
 - "Releasing God's Word: Do Copyrights Help or Hurt Bible Translation?" *Christianity Today*, July/August 2016.

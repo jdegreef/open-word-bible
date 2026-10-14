@@ -95,7 +95,7 @@ Open Word Bible separates the meaning question from the wording question. Where 
 
 ## Sources
 
-- Carson, D. A. *The Inclusive Language Debate: A Plea for Realism*. Grand Rapids: Baker, 1998.
+- Carson, D. A. *The Inclusive-Language Debate: A Plea for Realism*. Grand Rapids: Baker, 1998.
 - Poythress, Vern S., and Wayne A. Grudem. *The Gender-Neutral Bible Controversy: Muting the Masculinity of God's Words*. Nashville: Broadman & Holman, 2000.
 - Strauss, Mark L. *Distorting Scripture? The Challenge of Bible Translation and Gender Accuracy*. Downers Grove: InterVarsity Press, 1998.
 - Epp, Eldon Jay. *Junia: The First Woman Apostle*. Minneapolis: Fortress Press, 2005.
