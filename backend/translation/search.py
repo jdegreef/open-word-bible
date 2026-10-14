@@ -55,7 +55,10 @@ def _marks():
 def fold(text):
     """Lower case, accents removed, curly quotes straightened (as the site's
     search.js folds text)."""
-    text = unicodedata.normalize("NFD", text.lower()).translate(_marks())
+    # Composed again after the marks go, so a Korean syllable stays one
+    # character, as Postgres indexes it (NFD splits it into its letters).
+    text = unicodedata.normalize("NFC", unicodedata.normalize("NFD", text.lower()).translate(_marks()))
+    text = text.replace("\u0111", "d")   # Vietnamese đ, as unaccent does
     return re.sub("[‘’ʼ]", "'", re.sub("[“”«»]", '"', text))
 
 

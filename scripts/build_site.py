@@ -5,7 +5,7 @@ Usage: python3 scripts/build_site.py [-o DIR]
 Needs only the repository: the Greek words come from the committed extracts
 in data/grc/ (see scripts/extract_tokens.py), so a deploy never fetches the
 full sources. Every page is built in each interface language: English at
-the root, Spanish under /es/, French under /fr/, Swahili under /sw/.
+the root, the others under their codes (/es/, /fr/, /sw/, /vi/, /ko/).
 """
 import argparse
 import base64
@@ -3479,9 +3479,12 @@ SEARCH_PAGES = (("nav.home", "/"), ("nav.read", "/read/"), ("nav.plans", "/plans
 
 
 def fold(text):
-    """Text as search compares it: lower case, without accents."""
+    """Text as search compares it: lower case, without accents, Vietnamese
+    "đ" as "d". The rest is composed again, so a Korean syllable stays one
+    character (NFD splits it into its letters)."""
     import unicodedata
-    return "".join(c for c in unicodedata.normalize("NFD", text.lower()) if not unicodedata.combining(c))
+    return unicodedata.normalize("NFC", "".join(
+        c for c in unicodedata.normalize("NFD", text.lower()) if not unicodedata.combining(c))).replace("\u0111", "d")
 
 
 def book_aliases(code, names):

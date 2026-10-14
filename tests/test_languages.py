@@ -1,6 +1,6 @@
-"""The site in each interface language: English at the root, Spanish under
-/es/, French under /fr/ and Swahili under /sw/, the footer's language switch,
-and the message catalogs in i18n/."""
+"""The site in each interface language: English at the root, the others
+under their codes (/es/, /fr/, /sw/, /vi/, /ko/), the footer's language
+switch, and the message catalogs in i18n/."""
 import json
 import re
 import string
@@ -117,6 +117,8 @@ class LanguagesTest(unittest.TestCase):
         self.assertIn('<span lang="fr" aria-current="true">Français</span>', self.read("fr/jhn/1/index.html"))
         self.assertIn('<a href="/sw/jhn/1/" lang="sw" hreflang="sw" data-lang="sw">Kiswahili</a>', en + es)
         self.assertIn('<span lang="sw" aria-current="true">Kiswahili</span>', self.read("sw/jhn/1/index.html"))
+        self.assertIn('<a href="/vi/jhn/1/" lang="vi" hreflang="vi" data-lang="vi">Tiếng Việt</a>', en)
+        self.assertIn('<span lang="ko" aria-current="true">한국어</span>', self.read("ko/jhn/1/index.html"))
         self.assertIn('<span lang="es" aria-current="true">Español</span>', es)
         self.assertIn('<a href="/jhn/1/" lang="en" hreflang="en" data-lang="en">English</a>', es)
         self.assertIn('<h2 id="foot-langs">Idiomas</h2>', es)
@@ -173,6 +175,10 @@ class LanguagesTest(unittest.TestCase):
         sw = self.read("sw/jhn/1/index.html")
         self.assertNotIn('data-setting="plural_you"', sw)
         self.assertIn(">Linganifu</button>", sw)
+        for lang, balanced in (("vi", "Cân bằng"), ("ko", "균형")):
+            page = self.read(f"{lang}/jhn/1/index.html")
+            self.assertNotIn('data-setting="plural_you"', page)
+            self.assertIn(f">{balanced}</button>", page)
 
     def test_a_language_shows_only_its_own_articles(self):
         for lang in OTHERS:
@@ -230,6 +236,8 @@ class LanguagesTest(unittest.TestCase):
         self.assertEqual(build_site._date("2026-10-10", "es"), "10 de octubre de 2026")
         self.assertEqual(build_site._date("2026-10-10", "fr"), "10 octobre 2026")
         self.assertEqual(build_site._date("2026-10-10", "sw"), "10 Oktoba 2026")
+        self.assertEqual(build_site._date("2026-10-10", "vi"), "10 tháng 10, 2026")
+        self.assertEqual(build_site._date("2026-10-10", "ko"), "2026년 10월 10일")
 
     def test_french_typography_has_no_breaking_space_before_its_marks(self):
         # French sets « » : ; ! ? off with no-break spaces, so a line never
