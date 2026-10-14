@@ -1,0 +1,20 @@
+#!/bin/bash
+# Quick checks on what is being committed: ruff on staged Python, and
+# owb.validate on staged records. Enable once per clone with
+#   git config core.hooksPath scripts/git-hooks
+# (the cloud session start hook does this). Skip once with --no-verify.
+set -euo pipefail
+cd "$(git rev-parse --show-toplevel)"
+export OWB_VENDOR="${OWB_VENDOR:-$PWD/vendor}"
+
+staged() { git diff --cached --name-only --diff-filter=ACMR -- "$@"; }
+
+py=$(staged '*.py')
+if [ -n "$py" ]; then
+  uvx ruff@0.16.9 check $py
+fi
+
+records=$(staged 'content/*.json')
+if [ -n "$records" ]; then
+  python3 -m owb.validate $records
+fi

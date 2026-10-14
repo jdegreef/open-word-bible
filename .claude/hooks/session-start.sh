@@ -17,3 +17,5 @@ python3 scripts/fetch_sources.py
 python3 -m pip install --quiet --disable-pip-version-check -r backend/requirements.txt
 # The Greek/Hebrew word list guard_edits.py checks edits against (cached in vendor/).
 python3 .claude/hooks/guard_edits.py --build-cache
+# Lint and validate what Claude commits (scripts/git-hooks/pre-commit).
+git config core.hooksPath scripts/git-hooks
