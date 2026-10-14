@@ -1,24 +1,41 @@
 // Search, as Ochorus has it: a palette that Ctrl K or Cmd K (or "/") opens
 // on any page, the /search/ page, and the query's words marked in a passage
-// opened from a result. The site is static, so the search runs here, over
-// the index the build writes for the page's language (search_index in
-// scripts/build_site.py; its address is in <meta name="owb-search">). All
-// text is inserted with textContent.
+// opened from a result. The API searches (GET /api/search/, its address in
+// <meta name="owb-search">; backend/translation/search.py); this file asks
+// it as the reader types and shows the answers. The interface text comes
+// from a small file per language (search_ui in scripts/build_site.py, named
+// by the meta tag's data-ui). Nothing about a search is logged or sent
+// anywhere but the API; recent searches stay in this browser. All text is
+// inserted with textContent.
+//
+// While SEARCH_STATIC is set in build_site.py, the meta tag names the old
+// static index (search-<lang>.json) instead, and the search runs here over
+// it, answering in the API's shape (see "The static index" below).
 (function () {
   "use strict";
   var meta = document.querySelector('meta[name="owb-search"]');
   if (!meta) return;
-  var INDEX_URL = meta.getAttribute("content");
+  var SOURCE = meta.getAttribute("content");
+  var UI_URL = meta.getAttribute("data-ui");
+  var STATIC = /\.json(\?|$)/.test(SOURCE);
+  var LANG = document.documentElement.lang || "en";
   var RECENT = "owb.searches";
   var MIN = 2;
   var SPAN = /\{\{([a-z_]+):([^{}]*)\}\}/g;
   var VERSE = /\\v (\d+) ?/;
   var GROUPS = ["c", "v", "n", "a"];
+  // The API's names for the kinds.
+  var NAMES = { c: "passage", v: "verse", n: "note", a: "article" };
   // In the "All" view, how many of each kind show before "Show all".
   var CAPS = { c: 6, v: 8, n: 5, a: 4 };
+  var PER = 8;
+  // The palette shows the best few of each kind.
+  var FEW = { c: 2, v: 3, n: 2, a: 2 };
   var PAGE = 20;
   var LEVELS = ["B", "L", "R"];
   var WORD = /[\p{L}\p{N}]/u;
+  // The static index, while SEARCH_STATIC is set (see the end of this file).
+  var indexLoading = null, INDEX = null, vocab = null;
 
   // ---- Text --------------------------------------------------------------
 
@@ -45,7 +62,8 @@
   function escapeRe(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }
 
   // The query's terms: "quoted phrases" whole, other words one by one. A
-  // term matches at the start of a word, so "love" finds "loved".
+  // term matches at the start of a word, so "love" finds "loved". (The API
+  // finds other forms of a word too; these terms mark what it found.)
   function parse(q) {
     var terms = [], m, re = /"([^"]+)"|(\S+)/g, f = fold(q);
     while ((m = re.exec(f))) {
@@ -90,6 +108,26 @@
       at = to;
     });
     if (at < text.length) el.appendChild(document.createTextNode(text.slice(at)));
+    return el;
+  }
+
+  // The API's passage around a match ("hl"), its matches between ⟦ and ⟧:
+  // as text, with "…" where it was cut from body.
+  function headline(hl, body) {
+    var plain = hl.replace(/[\u27e6\u27e7]/g, "").trim();
+    var at = body.indexOf(plain);
+    return (at > 0 ? "\u2026 " : "") + hl.trim() + (at < 0 || at + plain.length < body.length ? " \u2026" : "");
+  }
+
+  // Append a snippet to el: an API headline with its matches in <mark>, or
+  // text with the terms' matches marked.
+  function snippet(el, r, terms) {
+    if (!r.hl) return marked(el, r.snippet, terms);
+    r.snippet.split(/\u27e6([^\u27e7]*)\u27e7/).forEach(function (part, i) {
+      if (!part) return;
+      if (i % 2) { var m = document.createElement("mark"); m.textContent = part; el.appendChild(m); }
+      else el.appendChild(document.createTextNode(part));
+    });
     return el;
   }
 
@@ -142,114 +180,75 @@
     });
   }
 
-  // Every word a sentence can show: all levels, every option of each span.
-  function everything(levels) {
-    return Object.keys(levels).map(function (l) {
-      return levels[l].replace(SPAN, function (_, n, opts) { return opts.split("|").join(" "); })
-        .replace(/\\v \d+ ?/g, " ");
-    }).join(" \u2016 ");
-  }
-
   // [[verse, text], ...] for rendered text with \v markers.
   function verses(first, text) {
-    var parts = text.split(VERSE), out = [[first, parts[0].trim()]];
+    // The build already turns poetic line markers (\q) into spaces; this
+    // keeps an index built before that from showing them.
+    var parts = text.replace(/ ?\\q ?/g, " ").split(VERSE), out = [[first, parts[0].trim()]];
     for (var i = 1; i < parts.length; i += 2) out.push([Number(parts[i]), parts[i + 1].trim()]);
     return out;
   }
 
-  // ---- The index ---------------------------------------------------------
+  // ---- Asking ----------------------------------------------------------
 
-  var loading = null, INDEX = null;
+  // The interface text, the palette's page shortcuts and the book names:
+  // { ui, pages, names }.
+  var uiLoading = null, UI = null;
 
-  function load() {
-    if (!loading) {
-      loading = fetch(INDEX_URL, { credentials: "same-origin" })
-        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-        .then(prepare)
-        .catch(function (e) { loading = null; throw e; });
+  function loadUi() {
+    if (!uiLoading) {
+      uiLoading = (STATIC ? loadIndex().then(function (data) {
+        return { ui: data.ui, pages: data.pages, names: data.names };
+      }) : fetch(UI_URL, { credentials: "same-origin" }).then(function (r) {
+        if (!r.ok) throw new Error(r.status);
+        return r.json();
+      })).then(function (data) { UI = data; return data; })
+        .catch(function (e) { uiLoading = null; throw e; });
     }
-    return loading;
+    return uiLoading;
   }
 
-  // Each document's searchable fields, folded once, with their weights.
-  function prepare(data) {
-    data.names = {};
-    data.books.forEach(function (b) { data.names[b.code] = b.name; });
-    data.docs.forEach(function (d, i) {
-      d.i = i;
-      if (d.k === "c") d.f = [[fold(d.h), 4]];
-      else if (d.k === "v") d.f = [[fold(everything(d.x)), 1]];
-      else if (d.k === "n") d.f = [[fold(d.t), 2.5], [fold(d.al.join(" \u2016 ")), 1.5], [fold(d.s), 1]];
-      else d.f = [[fold(d.t), 3], [fold(d.s), 1.5], [fold(d.x), 0.5]];
+  function ui(key) { return UI.ui[key]; }
+
+  // Why a search failed, for the message: "offline", "abort" or "error".
+  function why(e) {
+    if (e && e.name === "AbortError") return "abort";
+    return navigator.onLine === false ? "offline" : "error";
+  }
+
+  // The API's answer to params ({q, type, sort, offset, limit, per}): see
+  // backend/api/views.py. signal (an AbortSignal) cancels it.
+  function ask(params, signal) {
+    if (STATIC) return loadIndex().then(function () { return staticAnswer(params); });
+    if (navigator.onLine === false) {
+      var e = new Error("offline");
+      e.name = "Offline";
+      return Promise.reject(e);
+    }
+    var p = new URLSearchParams({ q: params.q, lang: LANG });
+    ["type", "sort", "offset", "limit", "per"].forEach(function (k) {
+      if (params[k] != null) p.set(k, params[k]);
     });
-    INDEX = data;
-    return data;
+    return fetch(SOURCE + "?" + p.toString(), { signal: signal, credentials: "omit", headers: { Accept: "application/json" } })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); });
   }
 
-  function ui(key) { return INDEX.ui[key]; }
+  // Each kind's count from an answer's totals, by one-letter code.
+  function totalsOf(answer) {
+    var out = {}, t = answer.totals || {};
+    GROUPS.forEach(function (g) { out[g] = t[NAMES[g]] || 0; });
+    return out;
+  }
 
   function refLabel(d, verse) {
-    return INDEX.names[d.bk] + " " + d.c + (verse ? ":" + verse : "");
+    return (UI.names[d.bk] || d.bk) + " " + d.c + (verse ? ":" + verse : "");
   }
 
-  // Every document that has every term, best first: matches in a title
-  // count for more, and a whole word for more than the start of one.
-  function find(terms) {
-    var hits = [];
-    INDEX.docs.forEach(function (d) {
-      var score = 0;
-      for (var i = 0; i < terms.length; i++) {
-        var got = 0;
-        d.f.forEach(function (field) {
-          var ms = matches(terms[i], field[0], 5);
-          ms.forEach(function (m) {
-            var whole = m[1] >= field[0].length || !WORD.test(field[0].charAt(m[1]));
-            got += field[1] * (whole ? 1.5 : 1);
-          });
-        });
-        if (!got) return;
-        score += got;
-      }
-      hits.push({ doc: d, score: score });
-    });
-    hits.sort(function (a, b) { return b.score - a.score || a.doc.i - b.doc.i; });
-    return hits;
-  }
-
-  // "John 3:16", "jn 3 16", "Filipenses 4:7-9", "1 John 2": a passage.
-  function reference(q) {
-    var m = /^\s*(.+?)\.?\s*(\d+)(?:\s*[:.,\s]\s*(\d+)(?:\s*[-\u2013]\s*(\d+))?)?\s*$/.exec(fold(q));
-    if (!m) return null;
-    var key = m[1].replace(/[\s.]+/g, "");
-    if (!key || /^\d+$/.test(key)) return null;
-    var book = INDEX.books.filter(function (b) { return b.aliases.indexOf(key) >= 0; })[0];
-    var chapter = Number(m[2]), verse = m[3] ? Number(m[3]) : null;
-    // The start of a name ("phil") counts only for a book with passages, or
-    // with a verse given, so "son 3" stays a search for words.
-    if (!book && key.replace(/^\d/, "").length >= 3) {
-      book = INDEX.books.filter(function (b) {
-        return (b.chapters || verse) && b.aliases.some(function (a) { return a.indexOf(key) === 0; });
-      })[0];
-    }
-    if (!book) return null;
-    var end = m[4] ? Math.max(Number(m[4]), verse) : verse;
-    var label = book.name + " " + chapter + (verse ? ":" + verse + (end !== verse ? "\u2013" + end : "") : "");
-    var ch = book.chapters && book.chapters[chapter];
-    var ref = { book: book, chapter: chapter, verse: verse, end: end, label: label, chapterInfo: ch,
-                chapterLabel: book.name + " " + chapter };
-    if (ch) {
-      ref.shown = verse ? ch.verses.filter(function (v) { return v >= verse && v <= end; }) : [];
-      ref.url = ch.url + (ref.shown.length ? "#v" + ref.shown[0] : "");
-    }
-    return ref;
-  }
-
-  // A reference's verses, as the reader's settings show them (at most 6).
+  // A reference's verses (the API's ref.sentences), as the reader's
+  // settings show them (at most 6).
   function refVerses(ref) {
     var set = settings(), out = [];
-    INDEX.docs.forEach(function (d) {
-      if (d.k !== "v" || d.bk !== ref.book.code || d.c !== ref.chapter) return;
-      if (!d.vv.some(function (v) { return ref.shown.indexOf(v) >= 0; })) return;
+    (ref.sentences || []).forEach(function (d) {
       verses(d.v, render(d.x[set.level] || d.x.B, set)).forEach(function (pair) {
         if (ref.shown.indexOf(pair[0]) >= 0 && out.length < 6) out.push({ verse: pair[0], text: pair[1], lang: d.l });
       });
@@ -257,18 +256,18 @@
     return out;
   }
 
-  // ---- Hits as rows --------------------------------------------------------
+  // ---- Answers as rows ---------------------------------------------------
 
   // What a result shows, whichever list it is in: kind, title, a line
   // about it, a snippet, and where it goes.
-  function row(hit, terms, q) {
-    var d = hit.doc, qs = "?q=" + encodeURIComponent(q);
+  function row(d, terms, q) {
+    var qs = "?q=" + encodeURIComponent(q);
     if (d.k === "c") return { kind: "c", title: d.t, meta: d.s, href: d.u };
     if (d.k === "v") {
       var set = settings(), order = [set.level].concat(LEVELS.filter(function (l) { return l !== set.level; }));
       // The reader's level, unless only another level has the words.
       var shown = order.map(function (level) {
-        var text = render(d.x[level], set, terms), f = fold(text);
+        var text = render(d.x[level] || d.x.B, set, terms), f = fold(text);
         return { level: level, text: text,
                  all: terms.every(function (t) { return has(t, f); }),
                  any: terms.some(function (t) { return has(t, f); }) };
@@ -287,10 +286,14 @@
       var also = terms.some(function (t) { return has(t, fold(d.al.join(" "))); }) && d.al.length
         ? ui("also") + d.al.join("; ") : "";
       return { kind: "n", title: d.t, eyebrow: refLabel(d, d.v), meta: label,
-               snippet: excerpt(d.s, terms), extra: also, href: d.u + qs + "#v" + d.v, lang: d.l };
+               snippet: d.hl ? headline(d.hl, d.s) : excerpt(d.s, terms), hl: !!d.hl,
+               extra: also, href: d.u + qs + "#v" + d.v, lang: d.l };
     }
-    var inBody = !terms.every(function (t) { return has(t, d.f[0][0]) || has(t, d.f[1][0]); });
-    return { kind: "a", title: d.t, eyebrow: d.sec, snippet: inBody ? excerpt(d.x, terms) : d.s,
+    var inBody = !terms.every(function (t) { return has(t, fold(d.t)) || has(t, fold(d.s)); });
+    return { kind: "a", title: d.t, eyebrow: d.sec,
+             // The API sends an article's passage that matched, not its text.
+             snippet: !inBody ? d.s : d.hl ? headline(d.hl, d.x || "") : d.x ? excerpt(d.x, terms) : d.s,
+             hl: inBody && !!d.hl,
              href: d.u, lang: d.l };
   }
 
@@ -339,7 +342,9 @@
     var list = document.getElementById("palette-list");
     var button = document.querySelector(".search-btn");
     if (!box || !input) return;
-    var rows = [], active = 0, opener = null, seq = 0, timer = null;
+    var rows = [], active = 0, opener = null, timer = null, asking = null, message = "";
+    // Enter pressed while an answer was on its way: go to its first row.
+    var enterWaiting = false;
 
     var kbd = button && button.querySelector(".search-kbd");
     if (kbd) {
@@ -362,7 +367,7 @@
       if (r.snippet) {
         var sn = el("span", "pal-meta" + (r.serif ? " serif" : ""));
         if (r.lang) sn.lang = r.lang;
-        marked(sn, r.snippet, r.terms || []);
+        snippet(sn, r, r.terms || []);
         text.appendChild(sn);
       }
       a.appendChild(text);
@@ -375,7 +380,8 @@
     function draw() {
       list.textContent = "";
       rows.forEach(function (r, i) { list.appendChild(option(r, i)); });
-      if (!rows.length) list.appendChild(el("li", "pal-empty", INDEX ? ui("no_matches") : ""));
+      if (message) list.appendChild(el("li", "pal-empty", message));
+      else if (!rows.length) list.appendChild(el("li", "pal-empty", UI ? ui("no_matches") : ""));
       mark();
     }
 
@@ -388,50 +394,78 @@
       else input.removeAttribute("aria-activedescendant");
     }
 
+    function busy(on) {
+      if (on) list.setAttribute("aria-busy", "true"); else list.removeAttribute("aria-busy");
+    }
+
     function pages(q) {
       var f = fold(q);
-      return INDEX.pages.filter(function (p) { return !f || fold(p[0]).indexOf(f) >= 0; })
+      return UI.pages.filter(function (p) { return !f || fold(p[0]).indexOf(f) >= 0; })
         .map(function (p) { return { kindLabel: ui("kind").g, title: p[0], href: p[1] }; });
     }
 
+    function failed(q, e) {
+      var kind = why(e);
+      if (kind === "abort") return;
+      // Enter still goes to the search page, which says the same.
+      rows = q.length >= MIN ? [showAll(q)] : [];
+      if (UI) rows = rows.concat(pages(q.length >= MIN ? q : ""));
+      message = list.getAttribute(kind === "offline" ? "data-offline" : "data-error") || "";
+      active = 0;
+      busy(false);
+      enterWaiting = false;
+      draw();
+    }
+
     function update() {
-      var q = input.value.trim(), mine = ++seq;
-      load().then(function () {
-        if (mine !== seq) return;
+      var q = input.value.trim();
+      if (asking) asking.abort();
+      asking = null;
+      if (q.length < MIN) {
+        loadUi().then(function () {
+          if (input.value.trim() !== q) return;
+          rows = pages(""); message = ""; active = 0;
+          busy(false);
+          draw();
+        }, function (e) { failed(q, e); });
+        return;
+      }
+      var mine = asking = typeof AbortController === "function" ? new AbortController() : { abort: function () {} };
+      busy(true);
+      Promise.all([loadUi(), ask({ q: q, per: 3 }, mine.signal)]).then(function (got) {
+        if (asking !== mine) return;
+        asking = null;
+        var answer = got[1], terms = parse(q), ref = answer.reference;
         rows = [];
-        if (q.length >= MIN) {
-          var terms = parse(q), ref = reference(q);
-          // A reference ("John 3:16") comes first, so Enter goes to it.
-          if (ref && ref.url) {
-            rows.push(ref.shown.length
-              ? { kindLabel: ui("kind").v, title: fill(ui("go_to"), { ref: ref.label }), href: ref.url }
-              : { kindLabel: ui("kind").c, title: fill(ui("read_passage"), { ref: ref.chapterLabel }), href: ref.url });
-          }
-          rows.push({ all: true, kindLabel: "\u21b5", title: fill(ui("show_all"), { q: q }), href: searchUrl(SEARCH_BASE, q) });
-          rows = rows.concat(pages(q));
-          // The best few of each kind, in a fixed order: passages, verses,
-          // notes, articles. A reference is answered by its own row: its
-          // numbers would otherwise match any note that mentions a 3 and a 16.
-          var hits = terms.length && !ref ? find(terms) : [], few = { c: 2, v: 3, n: 2, a: 2 };
-          var add = function (h) {
-            var r = row(h, terms, q);
-            rows.push({ kindLabel: ui("kind")[r.kind], title: r.title, snippet: r.kind === "c" ? r.meta : r.snippet,
-                        href: r.href, terms: terms, lang: r.lang, serif: r.serif });
-          };
-          GROUPS.forEach(function (g) {
-            hits.filter(function (h) { return h.doc.k === g; }).slice(0, few[g]).forEach(add);
-          });
-        } else {
-          rows = pages("");
+        message = "";
+        // A reference ("John 3:16") comes first, so Enter goes to it.
+        if (ref && ref.url) {
+          rows.push(ref.shown.length
+            ? { kindLabel: ui("kind").v, title: fill(ui("go_to"), { ref: ref.label }), href: ref.url }
+            : { kindLabel: ui("kind").c, title: fill(ui("read_passage"), { ref: ref.chapter_label }), href: ref.url });
         }
+        rows.push(showAll(q));
+        rows = rows.concat(pages(q));
+        // The best few of each kind, in a fixed order: passages, verses,
+        // notes, articles. (The API answers a reference with its verses
+        // alone: its numbers would match any note with a 3 and a 16.)
+        GROUPS.forEach(function (g) {
+          answer.results.filter(function (d) { return d.k === g; }).slice(0, FEW[g]).forEach(function (d) {
+            var r = row(d, terms, q);
+            rows.push({ kindLabel: ui("kind")[r.kind], title: r.title, snippet: r.kind === "c" ? r.meta : r.snippet,
+                        hl: r.kind !== "c" && r.hl, href: r.href, terms: terms, lang: r.lang, serif: r.serif });
+          });
+        });
         active = 0;
+        busy(false);
         draw();
-      }, function () {
-        if (mine !== seq) return;
-        // The index did not load: Enter still goes to the search page.
-        rows = q ? [{ all: true, kindLabel: "\u21b5", title: q, href: searchUrl(SEARCH_BASE, q) }] : [];
-        draw();
-      });
+        if (enterWaiting) { enterWaiting = false; go(rows[0]); }
+      }, function (e) { if (asking === mine) { asking = null; failed(q, e); } });
+    }
+
+    // The row that goes to the search page for q.
+    function showAll(q) {
+      return { all: true, kindLabel: "\u21b5", title: UI ? fill(ui("show_all"), { q: q }) : q, href: searchUrl(SEARCH_BASE, q) };
     }
 
     function open() {
@@ -441,6 +475,7 @@
       document.documentElement.classList.add("palette-open");
       input.value = "";
       rows = [];
+      message = "";
       list.textContent = "";
       input.focus();
       update();
@@ -449,6 +484,9 @@
     function close() {
       if (box.hidden) return;
       box.hidden = true;
+      enterWaiting = false;
+      if (asking) { asking.abort(); asking = null; }
+      clearTimeout(timer);
       document.documentElement.classList.remove("palette-open");
       if (opener && opener.focus) opener.focus();
     }
@@ -462,7 +500,8 @@
 
     input.addEventListener("input", function () {
       clearTimeout(timer);
-      timer = setTimeout(update, 120);
+      if (input.value.trim().length >= MIN) busy(true);
+      timer = setTimeout(update, 200);
     });
     input.addEventListener("keydown", function (e) {
       if (e.key === "ArrowDown" || e.key === "ArrowUp") {
@@ -473,7 +512,12 @@
       } else if (e.key === "Enter") {
         e.preventDefault();
         var q = input.value.trim();
-        if (rows[active]) go(rows[active]);
+        // The rows shown are for what was typed before: wait for the
+        // answer, unless the reader chose a row.
+        if (list.hasAttribute("aria-busy") && active === 0 && q.length >= MIN) {
+          enterWaiting = true;
+          if (!asking) { clearTimeout(timer); update(); }
+        } else if (rows[active]) go(rows[active]);
         else if (q.length >= MIN) go({ href: searchUrl(SEARCH_BASE, q) });
       } else if (e.key === "Tab") {
         e.preventDefault();
@@ -502,7 +546,7 @@
     // The reader's "Go to" button opens the palette too.
     document.querySelectorAll("[data-open-search]").forEach(function (b) {
       b.addEventListener("click", function () { open(); });
-      b.addEventListener("pointerenter", function () { load().catch(function () {}); }, { once: true });
+      b.addEventListener("pointerenter", function () { loadUi().catch(function () {}); }, { once: true });
     });
     if (button) {
       button.addEventListener("click", function (e) {
@@ -510,9 +554,9 @@
         e.preventDefault();
         if (onSearchPage) document.getElementById("search-q").focus(); else open();
       });
-      // Fetch the index as soon as the reader shows an interest.
+      // Fetch the interface text as soon as the reader shows an interest.
       ["pointerenter", "focus"].forEach(function (t) {
-        button.addEventListener(t, function () { load().catch(function () {}); }, { once: true });
+        button.addEventListener(t, function () { loadUi().catch(function () {}); }, { once: true });
       });
     }
   })();
@@ -528,8 +572,10 @@
     var status = document.getElementById("search-status");
     var recentBox = document.getElementById("search-recent");
     var recentList = document.getElementById("recent-list");
-    var state = { q: "", type: "all", sort: "rel", more: PAGE };
+    var state = { q: "", type: "all", sort: "rel" };
     var timer = null, links = [], active = -1, lastUrl = null;
+    // The answer shown, and the request on its way (an AbortController).
+    var answer = null, asking = null, failedKind = null;
 
     function readUrl() {
       var p = new URLSearchParams(location.search);
@@ -537,7 +583,6 @@
       state.q = (p.get("q") || "").slice(0, 200);
       state.type = GROUPS.indexOf(type) >= 0 && state.q ? type : "all";
       state.sort = sort === "order" && state.q ? "order" : "rel";
-      state.more = PAGE;
       lastUrl = location.search;
     }
 
@@ -564,7 +609,7 @@
         a.addEventListener("click", function (e) {
           e.preventDefault();
           input.value = q;
-          state.q = q; state.type = "all"; state.sort = "rel"; state.more = PAGE;
+          state.q = q; state.type = "all"; state.sort = "rel";
           writeUrl();
           run();
         });
@@ -598,7 +643,7 @@
       if (r.snippet) {
         var sn = el("span", "hit-snippet" + (r.serif ? " serif" : ""));
         if (r.lang) sn.lang = r.lang;
-        marked(sn, r.snippet, terms);
+        snippet(sn, r, terms);
         a.appendChild(sn);
       }
       if (r.extra) marked(a.appendChild(el("span", "hit-meta")), r.extra, terms);
@@ -618,18 +663,18 @@
     }
 
     function setType(type) {
-      state.type = type; state.sort = "rel"; state.more = PAGE;
-      writeUrl(); draw(); window.scrollTo({ top: 0 });
+      state.type = type; state.sort = "rel";
+      writeUrl(); run(); window.scrollTo({ top: 0 });
     }
 
-    function refCard(ref, terms) {
+    function refCard(ref) {
       var card = el("section", "ref-card");
       card.setAttribute("aria-label", ref.label);
       if (ref.url) {
         var head = el("div", "ref-head");
         head.appendChild(el("h2", null, ref.label));
         var go = el("a", "button ref-go", ref.shown.length ? fill(ui("go_to"), { ref: ref.label })
-          : fill(ui("read_passage"), { ref: ref.chapterLabel }));
+          : fill(ui("read_passage"), { ref: ref.chapter_label }));
         go.href = ref.url;
         head.appendChild(go);
         card.appendChild(head);
@@ -655,84 +700,45 @@
       return card;
     }
 
-    // "Did you mean": each term that found nothing, swapped for the
-    // commonest word in the index within an edit or two of it.
-    var vocab = null;
-    function suggest(q, terms) {
-      if (!vocab) {
-        vocab = {};
-        INDEX.docs.forEach(function (d) {
-          d.f.forEach(function (f) {
-            (f[0].match(/[\p{L}\p{N}']{3,}/gu) || []).forEach(function (w) { vocab[w] = (vocab[w] || 0) + 1; });
-          });
-        });
-      }
-      var changed = false, words = terms.map(function (t) {
-        if (find([t]).length || / /.test(t.text) || t.text.length < 3) return t.text;
-        var limit = t.text.length > 5 ? 2 : 1, best = null, bestD = limit + 1;
-        for (var w in vocab) {
-          if (Math.abs(w.length - t.text.length) > limit) continue;
-          var dist = distance(t.text, w, limit);
-          if (dist < bestD || (dist === bestD && vocab[w] > vocab[best])) { best = w; bestD = dist; }
-        }
-        if (!best) return t.text;
-        changed = true;
-        return best;
-      });
-      if (!changed) return null;
-      var s = words.join(" ");
-      return find(parse(s)).length ? s : null;
-    }
-
-    function distance(a, b, max) {
-      var prev = [], cur, i, j;
-      for (j = 0; j <= b.length; j++) prev[j] = j;
-      for (i = 1; i <= a.length; i++) {
-        cur = [i];
-        var low = i;
-        for (j = 1; j <= b.length; j++) {
-          cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
-          if (cur[j] < low) low = cur[j];
-        }
-        if (low > max) return max + 1;
-        prev = cur;
-      }
-      return prev[b.length];
+    function idle() {
+      results.hidden = true;
+      start.hidden = false;
+      drawRecent();
     }
 
     function draw() {
       var q = state.q.trim();
       links = []; active = -1;
       results.textContent = "";
-      if (q.length < MIN) {
-        results.hidden = true;
-        start.hidden = false;
-        drawRecent();
-        say(q ? ui("prompt") : "");
+      results.classList.remove("is-loading");
+      if (q.length < MIN || !answer) {
+        idle();
+        say(q && UI ? ui("prompt") : "");
         return;
       }
-      // A reference ("John 3:16") is answered by its card alone: its words
-      // and numbers would otherwise match every note that mentions them.
-      var terms = parse(q), ref = reference(q), hits = terms.length && !ref ? find(terms) : [];
-      var by = {};
-      GROUPS.forEach(function (g) { by[g] = []; });
-      hits.forEach(function (h) { by[h.doc.k].push(h); });
+      // What was asked: the box may have changed while the answer came.
+      q = answer.query;
+      var terms = parse(q), ref = answer.reference || null, totals = totalsOf(answer);
+      var sum = GROUPS.reduce(function (n, g) { return n + totals[g]; }, 0);
+      var type = answer.type ? state.type : "all";
       results.hidden = false;
-      start.hidden = hits.length > 0 || !!ref;
+      start.hidden = sum > 0 || !!ref;
       recentBox.hidden = true;
 
       var main = el("div", "search-main");
-      if (ref) main.appendChild(refCard(ref, terms));
+      // A reference ("John 3:16") is answered by its card alone: its words
+      // and numbers would otherwise match every note that mentions them.
+      if (ref) main.appendChild(refCard(ref));
 
-      if (!hits.length && ref) {
+      if (!sum && ref) {
         results.appendChild(main);
         say(ref.label);
         return;
       }
-      if (!hits.length) {
+      if (!sum) {
         var none = el("div", "no-results");
         none.appendChild(el("p", "no-results-q", fill(ui("no_results"), { q: q })));
-        var s = suggest(q, terms);
+        var s = answer.suggestion;
         if (s) {
           var p = el("p");
           p.appendChild(document.createTextNode(ui("did_you_mean") + " "));
@@ -740,8 +746,8 @@
           a.href = searchUrl(location.pathname, s);
           a.addEventListener("click", function (e) {
             e.preventDefault();
-            input.value = s; state.q = s; state.type = "all"; state.more = PAGE;
-            writeUrl(); draw();
+            input.value = s; state.q = s; state.type = "all";
+            writeUrl(); run();
           });
           p.appendChild(a);
           p.appendChild(document.createTextNode("?"));
@@ -753,17 +759,14 @@
         return;
       }
 
-      var kinds = GROUPS.filter(function (g) { return by[g].length; });
-      var type = state.type !== "all" && by[state.type].length ? state.type : "all";
-      if (type !== state.type) { state.type = type; state.sort = "rel"; writeUrl(); }
-      var layout = results;
+      var kinds = GROUPS.filter(function (g) { return totals[g]; });
       if (kinds.length > 1) {
         var rail = el("aside", "facets");
         rail.setAttribute("aria-label", ui("filter"));
         var chips = el("div", "facet-list");
-        chips.appendChild(chip(ui("all"), type === "all", function () { setType("all"); }, hits.length));
+        chips.appendChild(chip(ui("all"), type === "all", function () { setType("all"); }, sum));
         kinds.forEach(function (g) {
-          chips.appendChild(chip(ui("group")[g], type === g, function () { setType(g); }, by[g].length));
+          chips.appendChild(chip(ui("group")[g], type === g, function () { setType(g); }, totals[g]));
         });
         rail.appendChild(chips);
         results.appendChild(rail);
@@ -776,7 +779,7 @@
           var b = el("button", null, o[1]);
           b.type = "button";
           b.setAttribute("aria-pressed", state.sort === o[0] ? "true" : "false");
-          b.addEventListener("click", function () { state.sort = o[0]; state.more = PAGE; writeUrl(); draw(); });
+          b.addEventListener("click", function () { state.sort = o[0]; writeUrl(); run(); });
           segBtns.appendChild(b);
         });
         seg.appendChild(segBtns);
@@ -785,23 +788,21 @@
       results.classList.toggle("has-facets", kinds.length > 1);
 
       (type === "all" ? kinds : [type]).forEach(function (g) {
-        var list = by[g].slice();
-        if (state.sort === "order" && type !== "all") list.sort(function (a, b) { return a.doc.i - b.doc.i; });
-        var cap = type === "all" ? CAPS[g] : state.more;
+        var list = answer.results.filter(function (d) { return d.k === g; });
+        var cap = type === "all" ? CAPS[g] : list.length;
         var section = el("section", "hit-group");
         var h = el("h2", "section-label");
         h.appendChild(document.createTextNode(ui("group")[g] + " "));
-        h.appendChild(el("span", "section-n", String(list.length)));
+        h.appendChild(el("span", "section-n", String(totals[g])));
         section.appendChild(h);
         var ul = el("ul", "hits");
-        list.slice(0, cap).forEach(function (hit) { ul.appendChild(hitEl(row(hit, terms, q), terms)); });
+        list.slice(0, cap).forEach(function (d) { ul.appendChild(hitEl(row(d, terms, q), terms)); });
         section.appendChild(ul);
-        if (list.length > cap) {
-          var more = el("button", "more-btn", type === "all" ? fill(ui("show_all_n"), { n: list.length }) : ui("show_more"));
+        if (totals[g] > Math.min(cap, list.length)) {
+          var more = el("button", "more-btn", type === "all" ? fill(ui("show_all_n"), { n: totals[g] }) : ui("show_more"));
           more.type = "button";
           more.addEventListener("click", function () {
-            if (type === "all") setType(g);
-            else { state.more += PAGE; draw(); }
+            if (type === "all") setType(g); else showMore(more);
           });
           section.appendChild(more);
         }
@@ -809,28 +810,92 @@
       });
       results.appendChild(main);
       links = Array.prototype.slice.call(results.querySelectorAll(".ref-go, .hit-link"));
-      var shown = type === "all" ? hits.length : by[type].length;
-      say(countLabel(shown));
+      say(countLabel(type === "all" ? sum : totals[type]));
+    }
+
+    // The search's message when the API could not be asked: offline, or
+    // an error, with a button to try again.
+    function trouble(kind) {
+      failedKind = kind;
+      answer = null;
+      results.removeAttribute("aria-busy");
+      results.classList.remove("is-loading");
+      results.hidden = false;
+      start.hidden = true;
+      results.textContent = "";
+      var text = results.getAttribute(kind === "offline" ? "data-offline" : "data-error");
+      var p = el("p", "notice", text);
+      var b = el("button", "more-btn", results.getAttribute("data-retry"));
+      b.type = "button";
+      b.addEventListener("click", run);
+      results.appendChild(p);
+      results.appendChild(b);
+      say(text);
+    }
+
+    function params(offset) {
+      var q = state.q.trim();
+      if (state.type === "all") return { q: q, per: PER };
+      return { q: q, type: NAMES[state.type], sort: state.sort === "order" ? "order" : "relevance",
+               offset: offset || 0, limit: PAGE };
+    }
+
+    function begin() {
+      if (asking) asking.abort();
+      asking = typeof AbortController === "function" ? new AbortController() : { abort: function () {} };
+      return asking;
     }
 
     function run() {
       var q = state.q.trim();
-      if (q.length < MIN) { if (INDEX) draw(); else { results.hidden = true; start.hidden = false; drawRecent(); } return; }
+      failedKind = null;
+      if (q.length < MIN) {
+        if (asking) { asking.abort(); asking = null; }
+        answer = null;
+        results.removeAttribute("aria-busy");
+        loadUi().then(draw, function () { idle(); });
+        return;
+      }
+      var mine = begin();
       results.setAttribute("aria-busy", "true");
-      if (!INDEX) say("");
-      load().then(function () {
+      // What is shown stays, dimmed, until the answer comes.
+      if (!results.hidden) results.classList.add("is-loading");
+      say(results.getAttribute("data-loading"));
+      Promise.all([loadUi(), ask(params(0), mine.signal)]).then(function (got) {
+        if (asking !== mine) return;
+        asking = null;
         results.removeAttribute("aria-busy");
+        var a = got[1];
+        // A kind with nothing found goes back to all of them.
+        if (a.type && !a.total && GROUPS.some(function (g) { return totalsOf(a)[g]; })) {
+          state.type = "all"; state.sort = "rel"; writeUrl(); run();
+          return;
+        }
+        answer = a;
         draw();
-      }, function () {
-        results.removeAttribute("aria-busy");
-        results.hidden = false;
-        results.textContent = "";
-        var p = el("p", "notice", results.getAttribute("data-error"));
-        var b = el("button", "more-btn", results.getAttribute("data-retry"));
-        b.type = "button";
-        b.addEventListener("click", run);
-        results.appendChild(p);
-        results.appendChild(b);
+      }, function (e) {
+        if (asking !== mine) return;
+        asking = null;
+        var kind = why(e);
+        if (kind !== "abort") trouble(kind);
+      });
+    }
+
+    // The next page of one kind, added to those shown.
+    function showMore(button) {
+      var mine = begin(), shown = answer;
+      button.disabled = true;
+      ask(params(shown.results.length), mine.signal).then(function (a) {
+        if (asking !== mine) return;
+        asking = null;
+        shown.results = shown.results.concat(a.results);
+        shown.totals = a.totals;
+        draw();
+      }, function (e) {
+        if (asking !== mine) return;
+        asking = null;
+        var kind = why(e);
+        if (kind !== "abort") trouble(kind);
       });
     }
 
@@ -852,8 +917,8 @@
     input.addEventListener("input", function () {
       clearTimeout(timer);
       state.q = input.value;
-      state.type = "all"; state.sort = "rel"; state.more = PAGE;
-      timer = setTimeout(function () { writeUrl(); run(); }, 200);
+      state.type = "all"; state.sort = "rel";
+      timer = setTimeout(function () { writeUrl(); run(); }, 250);
     });
     form.addEventListener("submit", function (e) {
       e.preventDefault();
@@ -885,6 +950,8 @@
       if (location.search === lastUrl) return;
       readUrl(); input.value = state.q; run();
     });
+    // Back online after a search failed for want of a connection: try again.
+    window.addEventListener("online", function () { if (failedKind) run(); });
 
     readUrl();
     input.value = state.q;
@@ -892,8 +959,181 @@
     if (window.matchMedia && matchMedia("(pointer: fine)").matches) {
       requestAnimationFrame(function () { input.focus(); });
     }
-    if (!state.q) load().catch(function () {});
   })();
+
+  // ---- The static index (SEARCH_STATIC in scripts/build_site.py) ---------
+  //
+  // Until the API had search, the site searched here, over the whole index
+  // for the page's language. Kept for one release, so the site can switch
+  // back; this part goes when search-<lang>.json is no longer built.
+
+  function loadIndex() {
+    if (!indexLoading) {
+      indexLoading = fetch(SOURCE, { credentials: "same-origin" })
+        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+        .then(prepare)
+        .catch(function (e) { indexLoading = null; throw e; });
+    }
+    return indexLoading;
+  }
+
+  // Every word a sentence can show: all levels, every option of each span.
+  function everything(levels) {
+    return Object.keys(levels).map(function (l) {
+      return levels[l].replace(SPAN, function (_, n, opts) { return opts.split("|").join(" "); })
+        .replace(/\\v \d+ ?/g, " ").replace(/ ?\\q ?/g, " ");
+    }).join(" \u2016 ");
+  }
+
+  // Each document's searchable fields, folded once, with their weights.
+  function prepare(data) {
+    data.names = {};
+    data.books.forEach(function (b) { data.names[b.code] = b.name; });
+    data.docs.forEach(function (d, i) {
+      Object.defineProperty(d, "i", { value: i });
+      var f;
+      if (d.k === "c") f = [[fold(d.h), 4]];
+      else if (d.k === "v") f = [[fold(everything(d.x)), 1]];
+      else if (d.k === "n") f = [[fold(d.t), 2.5], [fold(d.al.join(" \u2016 ")), 1.5], [fold(d.s), 1]];
+      else f = [[fold(d.t), 3], [fold(d.s), 1.5], [fold(d.x), 0.5]];
+      Object.defineProperty(d, "f", { value: f });
+    });
+    INDEX = data;
+    return data;
+  }
+
+  // Every document that has every term, best first: matches in a title
+  // count for more, and a whole word for more than the start of one.
+  function find(terms) {
+    var hits = [];
+    INDEX.docs.forEach(function (d) {
+      var score = 0;
+      for (var i = 0; i < terms.length; i++) {
+        var got = 0;
+        d.f.forEach(function (field) {
+          var ms = matches(terms[i], field[0], 5);
+          ms.forEach(function (m) {
+            var whole = m[1] >= field[0].length || !WORD.test(field[0].charAt(m[1]));
+            got += field[1] * (whole ? 1.5 : 1);
+          });
+        });
+        if (!got) return;
+        score += got;
+      }
+      hits.push({ doc: d, score: score });
+    });
+    hits.sort(function (a, b) { return b.score - a.score || a.doc.i - b.doc.i; });
+    return hits;
+  }
+
+  // "John 3:16", "jn 3 16", "Filipenses 4:7-9", "1 John 2": a passage, as
+  // the API gives it.
+  function reference(q) {
+    var m = /^\s*(.+?)\.?\s*(\d+)(?:\s*[:.,\s]\s*(\d+)(?:\s*[-\u2013]\s*(\d+))?)?\s*$/.exec(fold(q));
+    if (!m) return null;
+    var key = m[1].replace(/[\s.]+/g, "");
+    if (!key || /^\d+$/.test(key)) return null;
+    var book = INDEX.books.filter(function (b) { return b.aliases.indexOf(key) >= 0; })[0];
+    var chapter = Number(m[2]), verse = m[3] ? Number(m[3]) : null;
+    // The start of a name ("phil") counts only for a book with passages, or
+    // with a verse given, so "son 3" stays a search for words.
+    if (!book && key.replace(/^\d/, "").length >= 3) {
+      book = INDEX.books.filter(function (b) {
+        return (b.chapters || verse) && b.aliases.some(function (a) { return a.indexOf(key) === 0; });
+      })[0];
+    }
+    if (!book) return null;
+    var end = m[4] ? Math.max(Number(m[4]), verse) : verse;
+    var ref = { book: book.code, chapter: chapter, verse: verse, end: end, chapter_label: book.name + " " + chapter,
+                label: book.name + " " + chapter + (verse ? ":" + verse + (end !== verse ? "\u2013" + end : "") : "") };
+    var ch = book.chapters && book.chapters[chapter];
+    if (ch) {
+      ref.shown = verse ? ch.verses.filter(function (v) { return v >= verse && v <= end; }) : [];
+      ref.url = ch.url + (ref.shown.length ? "#v" + ref.shown[0] : "");
+      ref.sentences = INDEX.docs.filter(function (d) {
+        return d.k === "v" && d.bk === book.code && d.c === chapter
+          && d.vv.some(function (v) { return ref.shown.indexOf(v) >= 0; });
+      });
+    }
+    return ref;
+  }
+
+  // "Did you mean": each term that found nothing, swapped for the
+  // commonest word in the index within an edit or two of it.
+  function suggest(terms) {
+    if (!vocab) {
+      vocab = {};
+      INDEX.docs.forEach(function (d) {
+        d.f.forEach(function (f) {
+          (f[0].match(/[\p{L}\p{N}']{3,}/gu) || []).forEach(function (w) { vocab[w] = (vocab[w] || 0) + 1; });
+        });
+      });
+    }
+    var changed = false, words = terms.map(function (t) {
+      if (find([t]).length || / /.test(t.text) || t.text.length < 3) return t.text;
+      var limit = t.text.length > 5 ? 2 : 1, best = null, bestD = limit + 1;
+      for (var w in vocab) {
+        if (Math.abs(w.length - t.text.length) > limit) continue;
+        var dist = distance(t.text, w, limit);
+        if (dist < bestD || (dist === bestD && vocab[w] > vocab[best])) { best = w; bestD = dist; }
+      }
+      if (!best) return t.text;
+      changed = true;
+      return best;
+    });
+    if (!changed) return null;
+    var s = words.join(" ");
+    return find(parse(s)).length ? s : null;
+  }
+
+  function distance(a, b, max) {
+    var prev = [], cur, i, j;
+    for (j = 0; j <= b.length; j++) prev[j] = j;
+    for (i = 1; i <= a.length; i++) {
+      cur = [i];
+      var low = i;
+      for (j = 1; j <= b.length; j++) {
+        cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+        if (cur[j] < low) low = cur[j];
+      }
+      if (low > max) return max + 1;
+      prev = cur;
+    }
+    return prev[b.length];
+  }
+
+  // The API's answer (backend/translation/search.py), from the index.
+  function staticAnswer(p) {
+    var q = p.q.replace(/\0/g, "").trim().slice(0, 200), terms = parse(q);
+    var answer = { query: q, lang: INDEX.lang };
+    if (q.length < MIN || !terms.length) {
+      answer.reference = null; answer.totals = {}; answer.results = []; answer.suggestion = null;
+      return answer;
+    }
+    var hits = find(terms), totals = {}, by = {};
+    hits.forEach(function (h) {
+      var name = NAMES[h.doc.k];
+      totals[name] = (totals[name] || 0) + 1;
+      (by[name] = by[name] || []).push(h.doc);
+    });
+    if (p.type) {
+      var list = (by[p.type] || []).slice(), offset = p.offset || 0;
+      if (p.sort === "order") list.sort(function (a, b) { return a.i - b.i; });
+      answer.type = p.type; answer.sort = p.sort; answer.offset = offset; answer.total = list.length;
+      answer.totals = totals; answer.results = list.slice(offset, offset + (p.limit || PAGE));
+      return answer;
+    }
+    answer.reference = reference(q);
+    if (answer.reference) {
+      answer.totals = {}; answer.results = []; answer.suggestion = null;
+      return answer;
+    }
+    answer.totals = totals;
+    answer.results = [];
+    GROUPS.forEach(function (g) { answer.results = answer.results.concat((by[NAMES[g]] || []).slice(0, p.per || PER)); });
+    answer.suggestion = hits.length ? null : suggest(terms);
+    return answer;
+  }
 
   // ---- A passage opened from a result: the query's words marked ----------
 

@@ -3,6 +3,7 @@ title: "Kuonyesha kazi yetu: rekodi ya sababu ni nini"
 summary: Kila sentensi katika Open Word Bible ina rekodi ya maneno ya asili, maana ya neno kwa neno, tafsiri tatu na kila uamuzi ulio nyuma yake.
 date: 2026-10-10
 order: 2
+nav_title: Rekodi ya sababu ni nini
 section: method
 ---
 Fungua mstari wowote kwenye tovuti hii na paneli inafunguka kando yake. Unachokiona pale ni *rekodi ya sababu* ya mstari huo. Ndiyo kiini cha mradi, na inafaa kujua kilichomo ndani yake.

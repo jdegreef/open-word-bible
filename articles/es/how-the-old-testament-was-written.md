@@ -3,6 +3,7 @@ title: Cómo llegó a escribirse el Antiguo Testamento
 summary: Antes de que hubiera rollos en una biblioteca, hubo cantos, leyes, relatos y profecías que se contaron y se escribieron en el antiguo Israel. Lo que la arqueología y el propio texto nos dicen sobre cómo se puso por escrito por primera vez la Biblia hebrea.
 date: 2026-10-11
 order: 21
+nav_title: Cómo se escribió el Antiguo Testamento
 section: history
 part: ot
 ---

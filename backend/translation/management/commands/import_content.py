@@ -109,13 +109,15 @@ class Command(BaseCommand):
                 source_edition=editions[TEXT_ID_EDITION[source["text_id"]]],
                 source_text_id=source["text_id"], tokens=source["tokens"],
                 source_text=source.get("text", ""), literal_gloss=record["literal_gloss"],
-                status=record["status"]))
+                alignments=record.get("alignments", []), status=record["status"]))
         # A sentence already in the database keeps its status: the update
         # leaves it out.
         Sentence.objects.bulk_create(
             sentences, update_conflicts=True, unique_fields=["record_id"],
             update_fields=["book", "chapter", "verse", "number", "refs", "source_edition",
-                           "source_text_id", "tokens", "source_text", "literal_gloss", "updated_at"])
+                           "source_text_id", "tokens", "source_text", "literal_gloss", "alignments",
+                           "updated_at"],
+            batch_size=2000)
         Rendering.objects.filter(sentence__in=sentences).delete()
         Decision.objects.filter(sentence__in=sentences).delete()
         Rendering.objects.bulk_create(

@@ -122,9 +122,26 @@ others.
   for the divine name in the Old Testament, with Yahweh as a setting. In a New
   Testament quotation of the Old Testament the Greek has *kyrios*, so write
   "Lord" and note the Hebrew original in a decision (John 1:23).
-- "slave" for *doulos* at every level, as Philippians 1:1 and 2:7 have it,
-  with a meaning decision on what the person's position was; never the
-  softer "servant".
+- *doulos* (Greek) and *ʿeved* (Hebrew): "slave" in Literal, "servant" in
+  Balanced and Readable. A meaning decision says what the person's position
+  was (owned, not hired), so the hard edge of the word is kept in the record
+  and the Literal text, while Balanced and Readable avoid the picture of
+  modern chattel slavery that "slave" brings to most readers. Related words
+  follow: "slavery" becomes "servitude" or "bondage", "enslave" becomes
+  "make ... serve" or "hold in bondage", as the sentence allows.
+  Keep "slave" at every level where slavery itself is the point and
+  "servant" would change the meaning:
+  - slave set against free or freed (Galatians 3:28; 1 Corinthians 7:21–23;
+    Philemon 16; John 8:34–36);
+  - people bought, sold, owned as property, or released (Exodus 21;
+    Leviticus 25; Genesis 37:27–28);
+  - Israel's slavery in Egypt ("the house of slavery", Exodus 20:2);
+  - slavery to sin, the law or corruption, set against freedom (Romans 6;
+    Galatians 4–5; 2 Peter 2:19);
+  - *doulos* set against *diakonos* in one saying, where the step down
+    from "servant" to "slave" is the point (Matthew 20:26–27; Mark
+    10:43–44).
+  Such a sentence keeps a rendering decision saying why it stays "slave".
 - Modern English: no "thee", "thou", "-eth", "behold", "lo". "Brothers and
   sisters" through the gender setting, not "brethren".
 - No contractions at any level, Readable included: "do not", "it is", "will
@@ -225,3 +242,75 @@ approves it.
   toward familiar wording just as verses do.
 - A heading may use reader settings (`{{christos:Christ|the Messiah}}`), like
   any rendering. No contractions; sentence case.
+
+## 10. Poetry: lines
+
+Hebrew poetry (Psalms, Proverbs, Job, the Song, Lamentations, most of the
+prophets, and poems inside narrative such as Exodus 15) is built from
+parallel lines, and the reader sets it in lines. A line break is marked
+inside a rendering with `\q `, the way `\v N ` marks a verse:
+
+    "L": "A psalm of David. \q {{divine_name:The LORD|Yahweh}} [is] my shepherd; \q I will not lack [anything]."
+
+- **The marker.** Write ` \q ` in place of the space between two words. A
+  verse start is always a line start, so `\q` marks only breaks *within* a
+  verse: never at the start or end of a rendering, never doubled, never
+  right before or after a `\v N` marker, never inside a `{{setting:...}}`
+  span or an alignment's `target_span`, and never in the literal gloss.
+  **(checked)** A rendering with no `\q` is prose and reads exactly as
+  before.
+- **Lines change no words.** Marking up lines only inserts markers: the
+  rendering with each ` \q ` read as a space must be the text it was. If a
+  line will not work without rewording, that is a rendering change with its
+  own decision, made separately.
+- **Where the breaks go: the Hebrew accents**, not any English Bible's
+  lineation. The main dividing accent (atnach; in Psalms, Proverbs and Job
+  also olev-weyored, which ranks above it) splits a verse into its cola; at
+  Literal and Balanced, break there in every poetic verse. Lesser
+  disjunctive accents (revia, tsinnor; in the prose-accented books zaqef and
+  segolta) mark places where a long colon may be split again: use them for a
+  clear three-line verse (Psalm 1:1, 1:3) or where one line would run past
+  about 60 characters, not everywhere. `scripts/poetry_lines.py` prints both
+  levels for a chapter (below).
+- **Break at an English phrase boundary.** A line ends where the English
+  clause or phrase ends, usually at the comma, semicolon or colon the
+  rendering already has. Never split a phrase ("the counsel / of the wicked")
+  to match the Hebrew word order; the English line holds the same content as
+  the Hebrew colon, in English order.
+- **Each level places its own.** Literal and Balanced follow the cola
+  closely. Readable may use fewer lines where it merges clauses (Psalm 1:2 is
+  one line at Readable), and breaks where its own sentences divide; it never
+  has more lines than the Hebrew has cola and lesser divisions. Other
+  languages place their own breaks by the same rules; they do not copy the
+  English line for line.
+- **Titles.** A psalm title that is a verse of its own stays prose (Psalm
+  3:1). A title that shares its verse with the poem is the verse's first line
+  (Psalm 23:1, above).
+- *Selah* stays at the end of the verse's last line.
+- **Whole records.** A record is set as poetry in a language when any of its
+  levels there has a `\q`; every verse of it then starts a new line at every
+  level, even a level that keeps a verse on one line. Mark every record of
+  a poem (Literal and Balanced at least), so a chapter does not switch
+  between poetry and prose. Stanzas are the reader's paragraphs; nothing more
+  is marked.
+- **Where it shows.** The reading, study, parallel and interlinear views set
+  the lines with a hanging indent (a verse's later lines one step in, a wrap
+  two steps in). Everywhere text is shown on one line (the reasoning panel,
+  search, share cards, article quotes, copied quotations, verse images,
+  listening), a line break reads as a space.
+
+### Marking up a chapter
+
+    python3 scripts/poetry_lines.py PSA 4            # Hebrew cola beside our renderings
+    python3 scripts/poetry_lines.py PSA 4-6 --lang es
+    python3 scripts/poetry_lines.py PSA 4 --fill     # first pass, then review
+
+For each verse the script prints the cola at the main division as MACULA's
+English glosses in Hebrew word order (a gloss, not a translation), with
+lesser divisions as indented `·` rows, then each level's current lines with
+their count, `L [2]`. `--fill` writes a break only where the Hebrew has
+exactly two cola and a level's text has exactly one `;` or `:`; it changes
+nothing else, and its list of filled verses is the place to start checking.
+Place the rest by hand (Psalms 1, 2, 3 and 23 are the worked example), run
+the script again to read the result, then `python3 -m owb.validate` on the
+file, and check the diff adds only ` \q `.

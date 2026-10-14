@@ -30,6 +30,19 @@ class SiteTest(unittest.TestCase):
                     "sitemap.xml", "robots.txt", "favicon.svg"):
             self.assertTrue((self.out / rel).is_file(), rel)
 
+    def test_poetry_keeps_its_lines_for_the_reader_only(self):
+        # The reader gets the line markers to set Psalm 23 as poetry; every
+        # text the build writes on one line reads them as spaces.
+        data = self.chapter_data("psa/23")
+        self.assertTrue(any("\\q " in r["renderings"]["en"]["B"] for r in data["records"]))
+        self.assertEqual(build_site.plain("my shepherd; \\q I will never be in need."),
+                         "my shepherd; I will never be in need.")
+        records = build_site.load_chapter("PSA", 23)[0]
+        self.assertNotIn("\\q", build_site.opening_verse(records, 23))
+        page = (self.out / "psa" / "23" / "index.html").read_text(encoding="utf-8")
+        head = page.split("<body", 1)[0]
+        self.assertNotIn("\\q", head)
+
     def test_account_pages_are_built_but_not_indexed(self):
         sitemap = (self.out / "sitemap.xml").read_text(encoding="utf-8")
         for name, marker in (("account", 'id="name-form"'), ("login", 'id="login-form"'),
@@ -75,6 +88,92 @@ class SiteTest(unittest.TestCase):
         for vid in dict.fromkeys(v for r in data["records"] for v in r["refs"]):
             words = {t["id"] for t in data["words"][vid]}
             self.assertEqual({t for t in seen if t in words}, words, vid)
+
+    def chapter_text(self, path):
+        page = (self.out / path / "index.html").read_text(encoding="utf-8")
+        return page, re.search(r'<div class="text" id="text">(.*?)</div>\s*<section class="notes"', page, re.S)[1]
+
+    def test_chapter_text_is_in_the_page(self):
+        # Without JavaScript the page still has the Balanced text at the
+        # default settings, a span per verse as the reader draws it.
+        for path in ("1ti/5", "jhn/1", "gen/1"):
+            page, text = self.chapter_text(path)
+            data = self.chapter_data(path)
+            verses = [str(build_site.refs.parse(v).verse) for v in
+                      dict.fromkeys(v for r in data["records"] for v in r["refs"])]
+            self.assertEqual(list(dict.fromkeys(re.findall(r'data-v="([^"]+)"', text))), verses, path)
+            self.assertEqual(re.findall(r"<sup>([^<]+)</sup>", text), verses, path)
+            self.assertNotIn("{{", text)
+            self.assertNotIn("\\v ", text)
+            for r in data["records"]:
+                default = build_site.markup.render(r["renderings"]["en"]["B"])
+                first = build_site.markup.VERSE.split(default)[0].strip()
+                self.assertIn(html.escape(first, quote=False), text, r["id"])
+                self.assertIn(f'data-record="{r["id"]}"', text)
+            for heading in data["headings"].values():
+                shown = html.escape(build_site.markup.render(heading["en"]), quote=False)
+                self.assertIn(f'<h2 class="section-head">{shown}</h2>', text)
+            self.assertIn("<noscript>", page)
+            self.assertIn(build_site.t("en", "reader.noscript", level="Balanced"), page)
+        self.assertIn('<sup class="fn" aria-hidden="true"><span class="fn-mark">a</span></sup>',
+                      self.chapter_text("1ti/5")[1])
+
+    def test_chapter_text_falls_back_to_english(self):
+        # A sentence not yet in the page's language is shown in English, in
+        # grey, under the notice that says so.
+        for lang in build_site.LANGUAGES:
+            for p in build_site.passages():
+                missing = [r for r in p.records if lang not in r["renderings"]]
+                if not missing:
+                    continue
+                page, text = self.chapter_text(build_site.url(lang, p.url).strip("/"))
+                self.assertIn('class="verse fallback" lang="en" data-v=', text)
+                self.assertIn(f'data-record="{missing[0]["id"]}"', text)
+                self.assertNotIn('id="partial" hidden', page)
+                return
+        self.skipTest("every chapter is in every language")
+
+    def test_disputed_passage_is_set_apart_in_the_text(self):
+        _, text = self.chapter_text("jhn/8")
+        block = re.search(r'<div class="disputed-block"><div class="disputed-note">.*?</div>(.*?)</div>', text, re.S)
+        self.assertIsNotNone(block)
+        self.assertIn('data-v="7:53"', block[1])
+        self.assertIn('data-v="11"', block[1])
+        self.assertNotIn('data-v="12"', block[1])
+
+    def test_chapter_pages_carry_linked_data(self):
+        for path, source in (("1ti/5", "SBLGNT"), ("gen/1", "Open Scriptures Hebrew Bible"),
+                             ("es/jhn/1", "SBLGNT")):
+            page = (self.out / path / "index.html").read_text(encoding="utf-8")
+            raw = re.search(r'<script type="application/ld\+json">(.*?)</script>', page, re.S)[1]
+            data = json.loads(raw)
+            self.assertEqual(data["@type"], "Chapter")
+            self.assertEqual(data["url"], build_site.SITE_URL + "/" + path + "/")
+            self.assertEqual(data["inLanguage"], "es" if path.startswith("es/") else "en")
+            self.assertEqual(data["isPartOf"]["name"], "Open Word Bible")
+            self.assertEqual(data["license"], "https://creativecommons.org/publicdomain/zero/1.0/")
+            # Nothing is reviewed yet.
+            self.assertEqual(data["creativeWorkStatus"], "Draft")
+            self.assertIn(source, data["isBasedOn"]["name"])
+            self.assertEqual(data["translationOfWork"], data["isBasedOn"])
+        # Nothing in it can close its script element.
+        records = build_site.load_chapter("1TI", 5)[0]
+        title = "</script><script>alert(1)</script>"
+        script = build_site.chapter_ld(records, "1TI", 5, title)
+        self.assertEqual(script.count("</"), 1)
+        self.assertEqual(json.loads(script[script.index(">") + 1:-len("</script>")])["name"], title)
+
+    def test_footer_counts_the_books_not_started(self):
+        page = (self.out / "1ti" / "5" / "index.html").read_text(encoding="utf-8")
+        index = re.search(r'<nav class="foot-books".*?</nav>', page, re.S)[0]
+        ot = build_site.refs.OT_CODES
+        have = {b for b, _ in build_site.books("en")}
+        missing = [code for code in ot if code not in have]
+        for code in ot:
+            self.assertEqual(f'>{build_site.BOOK_NAMES[code]["en"]}<' in index,
+                             code in have or len(missing) == 1, code)
+        if len(missing) > 1:
+            self.assertIn(f'href="/read/">{build_site.t("en", "footer.not_started", n=len(missing))}</a>', index)
 
     def test_chapter_has_a_notes_section(self):
         page = (self.out / "jhn" / "1" / "index.html").read_text(encoding="utf-8")
@@ -138,18 +237,28 @@ class SiteTest(unittest.TestCase):
 
     def test_home_page_example_comes_from_the_content(self):
         home = (self.out / "index.html").read_text(encoding="utf-8")
-        book, chapter, record_id, decision_id = build_site.EXAMPLE
-        records, words = build_site.load_chapter(book, chapter)
-        record = next(r for r in records if r["id"] == record_id)
-        decision = next(d for d in record["decisions"] if d["id"] == decision_id)
-        for level in "LBR":
-            self.assertIn(build_site.plain(record["renderings"]["en"][level]), home)
-        marked = [w["text"] for v in record["refs"] for w in words[v] if w["id"] in decision["tokens"]]
-        self.assertTrue(marked)
-        for word in marked:
-            self.assertIn(f"<mark>{word}</mark>", home)
+        example = home[home.index('class="example"'):home.index('class="points-wrap"')]
+        # The text as read, without the tags that mark aligned words and settings.
+        text = re.sub(r"<[^>]+>", "", example)
+        self.assertEqual(len(build_site.EXAMPLES), 2)
+        for book, chapter, record_id, decision_id in build_site.EXAMPLES:
+            records, words = build_site.load_chapter(book, chapter)
+            record = next(r for r in records if r["id"] == record_id)
+            decision = next(d for d in record["decisions"] if d["id"] == decision_id)
+            for level in "LBR":
+                self.assertIn(html.escape(build_site.plain(record["renderings"]["en"][level]), quote=False), text)
+            marked = [w["text"] for v in record["refs"] for w in words[v] if w["id"] in decision["tokens"]]
+            self.assertTrue(marked)
+            for word in marked:
+                self.assertIn(f"<mark>{word}</mark>", example)
+            for tid in record["source"]["tokens"]:
+                if any(w["id"] == tid for v in record["refs"] for w in words[v]):
+                    self.assertIn(f'data-t="{tid}"', example)
+            self.assertIn(f'href="/{book.lower()}/{chapter}/"', example)
+        # Aligned words light up their English; the divine name can switch.
+        self.assertIn('class="al" data-t="n43001001002"', example)
+        self.assertIn('data-switch="divine_name"', example)
         self.assertIn(f"<b>{len(build_site.all_records())}</b>", home)
-        self.assertIn('href="/jhn/1/"', home)
 
     def test_fonts_are_self_hosted_with_their_licences(self):
         css = (self.out / "style.css").read_text(encoding="utf-8")
@@ -192,6 +301,62 @@ class SiteTest(unittest.TestCase):
         self.assertNotIn('"', why)
         self.assertNotIn("&quot;", why)
 
+    def test_home_page_searches_in_its_language(self):
+        for lang in build_site.LANGUAGES:
+            home = (self.out / build_site.url(lang, "/").lstrip("/") / "index.html").read_text(encoding="utf-8")
+            form = re.search(r'<form class="hero-search" action="([^"]+)"', home)
+            self.assertEqual(form[1], build_site.url(lang, "/search/"))
+            for q in build_site.catalog(lang)["search.examples"]:
+                self.assertIn(f'?q={html.escape(q.replace(" ", "+"))}"', home)
+
+    def test_home_page_offers_the_data(self):
+        home = (self.out / "index.html").read_text(encoding="utf-8")
+        data = home[home.index('class="data"'):home.index('class="involve"')]
+        self.assertIn(f'href="{build_site.GITHUB_URL}/archive/refs/heads/main.zip"', data)
+        self.assertIn(f'href="{build_site.API_URL}/api/passages/JHN/1/"', data)
+        self.assertIn("schema/sentence-record.schema.json", data)
+
+    def test_home_page_shows_key_terms(self):
+        home = (self.out / "index.html").read_text(encoding="utf-8")
+        terms = home[home.index('class="home-terms"'):]
+        terms = terms[:terms.index("</section>")]
+        self.assertIn('href="/terms/"', terms)
+        self.assertEqual(terms.count('class="term-row"'), 6)
+        self.assertIn('href="/terms/the-divine-name-yhwh/"', terms)
+
+    def test_home_page_suggests_plans_offered_in_its_language(self):
+        for lang in build_site.LANGUAGES:
+            home = (self.out / build_site.url(lang, "/").lstrip("/") / "index.html").read_text(encoding="utf-8")
+            offered = build_site.available_plans(lang)
+            cards = re.findall(r'data-plan-card="([^"]+)"', home)
+            self.assertEqual(len(cards), min(3, len(offered)), lang)
+            self.assertLessEqual(set(cards), {p.id for p in offered})
+
+    def test_header_switches_language_and_offers_each_in_its_own_words(self):
+        for lang in build_site.LANGUAGES:
+            page = (self.out / build_site.url(lang, "/jhn/1/").lstrip("/") / "index.html").read_text(encoding="utf-8")
+            header = re.search(r'<header class="site">(.*?)</header>', page, re.S)[1]
+            menu = re.search(r'<div id="lang-pop".*?</div>', header, re.S)[0]
+            self.assertIn(f'<span class="lang-code">{lang.upper()}</span>', header)
+            for code in build_site.LANGUAGES:
+                if code == lang:
+                    self.assertNotIn(f'data-lang="{code}"', menu)
+                    continue
+                self.assertIn(f'href="{build_site.url(code, "/jhn/1/")}"', menu)
+                self.assertIn(f'data-lang="{code}" data-offer="{html.escape(build_site.t(code, "lang.offer"))}"', menu)
+
+    def test_verses_of_the_day_are_drafted_whole_sentences(self):
+        self.assertEqual(len(build_site.VERSES_OF_THE_DAY), len(set(build_site.VERSES_OF_THE_DAY)))
+        for lang in build_site.LANGUAGES:
+            verses = build_site.verses_of_the_day(lang)
+            self.assertEqual(len(verses), len(build_site.VERSES_OF_THE_DAY))
+            for vid, v in zip(build_site.VERSES_OF_THE_DAY, verses):
+                # The verse ends a sentence, so it reads on its own.
+                self.assertRegex(v["t"], r"[.?!][”’]?$", vid)
+        home = (self.out / "index.html").read_text(encoding="utf-8")
+        data = re.search(r'<script type="application/json" class="votd-data">(.*?)</script>', home, re.S)[1]
+        self.assertEqual(json.loads(data), build_site.verses_of_the_day("en"))
+
     def test_chapter_data_has_curly_quotes(self):
         for r in self.chapter_data()["records"]:
             texts = [t for levels in r["renderings"].values() for t in levels.values()]
@@ -229,7 +394,8 @@ class SiteTest(unittest.TestCase):
         # kept from the last one: each asset URL carries its content hash.
         home = (self.out / "index.html").read_text(encoding="utf-8")
         chapter = (self.out / "jhn" / "1" / "index.html").read_text(encoding="utf-8")
-        for name, page in (("style.css", home), ("site.js", home), ("reader.js", chapter)):
+        for name, page in (("style.css", home), ("site.js", home), ("markup.js", chapter),
+                           ("reader.js", chapter)):
             m = re.search(r'"/%s\?v=([0-9a-f]{10})"' % re.escape(name), page)
             self.assertTrue(m, name)
             digest = hashlib.sha256((self.out / name).read_bytes()).hexdigest()[:10]
@@ -240,11 +406,18 @@ class SiteTest(unittest.TestCase):
         header = re.search(r'<header class="site">(.*?)</header>', home, re.S)[1]
         for key in ("read", "articles", "about"):
             self.assertIn(f'aria-controls="dd-{key}"', header)
-            self.assertIn(f'<div class="dropdown', header)
+            self.assertIn('<div class="dropdown', header)
         # A line per book, linking to its chapters on the Read page.
         self.assertIn('href="/read/#jhn"', header)
         self.assertIn('href="/read/#php"', header)
         self.assertNotIn('class="chap', header)
+        # Continue reading heads the Read menu, hidden until web/site.js
+        # finds a place; GitHub is under About, not a header button.
+        read_panel = header[header.index('id="dd-read"'):header.index('id="dd-articles"')]
+        self.assertIn('<a class="dd-resume" data-resume hidden', read_panel)
+        self.assertNotIn(f'class="tool-btn" href="{build_site.GITHUB_URL}"', header)
+        about_panel = header[header.index('id="dd-about"'):]
+        self.assertIn(f'href="{build_site.GITHUB_URL}"', about_panel)
         # ...grouped by testament, Old before New.
         read = header[header.index('id="dd-read"'):header.index('id="dd-articles"')]
         self.assertLess(read.index(">Old Testament<"), read.index('href="/read/#gen"'))
@@ -312,10 +485,16 @@ class SiteTest(unittest.TestCase):
             decisions = sum(d["language"] in (None, lang) for r in records for d in r["decisions"])
             self.assertIn(f"<b>{len(records)}</b>", progress)
             self.assertIn(f"<b>{decisions}</b>", progress)
-            shown = {(r.book, r.chapter) for r in map(build_site.refs.parse, (r["refs"][0] for r in records))}
+            # The map has a tile for every book, linked once it has a
+            # sentence in lang, and no chapter links.
+            shown = {build_site.refs.parse(r["refs"][0]).book for r in records}
+            self.assertEqual(progress.count('<li><a class="map-book') + progress.count('<li><span class="map-book'),
+                             len(build_site.refs.BOOK_CODES))
+            for book in build_site.refs.BOOK_CODES:
+                link = f'href="{build_site.url(lang, f"/read/#{book.lower()}")}"'
+                self.assertEqual(link in progress, book in shown, (lang, book))
             for p in build_site.passages():
-                link = f'href="{build_site.url(lang, p.url)}"'
-                self.assertEqual(link in progress, (p.book, p.chapter) in shown, (lang, p.url))
+                self.assertNotIn(f'href="{build_site.url(lang, p.url)}"', progress, (lang, p.url))
 
     def test_header_footer_and_read_page_list_only_the_page_language(self):
         for lang in build_site.LANGUAGES:
@@ -372,6 +551,20 @@ class SiteTest(unittest.TestCase):
             data = self.chapter_data(f"{book.lower()}/{chapter}")
             self.assertIn(rid, data["paragraphs"], rid)
             self.assertEqual(data["headings"][rid], heading)
+
+    def test_summary_stands_under_the_title(self):
+        page = (self.out / "1ti" / "5" / "index.html").read_text(encoding="utf-8")
+        summary = html.escape(build_site.summaries()[("1TI", 5)]["en"])
+        self.assertRegex(page, r'<h1 id="title">[^<]*</h1>\s*<p class="chapter-summary">' + re.escape(summary))
+        # A page in another language shows the English summary only where the
+        # chapter itself reads in English, and marks it so.
+        records = build_site.load_chapter("1TI", 5)[0]
+        if not any("es" in r["renderings"] for r in records) and "es" not in build_site.summaries()[("1TI", 5)]:
+            page = (self.out / "es" / "1ti" / "5" / "index.html").read_text(encoding="utf-8")
+            self.assertIn('<p class="chapter-summary" lang="en">', page)
+        with_es = [{"renderings": {"en": {}, "es": {}}}]
+        self.assertEqual(build_site.chapter_summary("1TI", 5, with_es, "es"), "")
+        self.assertEqual(build_site.chapter_summary("JHN", 999, records, "en"), "")
 
     def test_chapter_strip_shows_the_whole_book(self):
         page = (self.out / "jhn" / "1" / "index.html").read_text(encoding="utf-8")
@@ -498,6 +691,23 @@ class SiteTest(unittest.TestCase):
             for p in chaps:
                 self.assertIn(f'href="{p.url}"', section)
         self.assertIn("4 of 4 chapters, complete", read)
+        self.assertIn("1 chapter, complete", read)
+        self.assertNotIn("1 of 1 chapters", read)
+        # An index of the books first, each linked to its section.
+        index = re.search(r'<nav class="book-index".*?</nav>', read, re.S)[0]
+        for book, _ in build_site.books():
+            self.assertIn(f'href="#{book.lower()}"', index)
+
+    def test_card_quotes_alternate_and_keep_apostrophes(self):
+        # Speech inside the verse's speech turns to double quotes.
+        self.assertEqual(build_site.inner_quotes("He said, \u201cThey will say, \u2018No.\u2019\u201d"),
+                         "He said, \u2018They will say, \u201cNo.\u201d\u2019")
+        # An apostrophe is not a closing quote.
+        self.assertEqual(build_site.inner_quotes("Moses\u2019 father-in-law and Aaron\u2019s sons"),
+                         "Moses\u2019 father-in-law and Aaron\u2019s sons")
+        # Speech that runs on into the next verse is closed, inner first.
+        self.assertEqual(build_site.inner_quotes("He said, \u201cTell him, \u2018Go"),
+                         "He said, \u2018Tell him, \u201cGo\u201d\u2019")
 
     def built(self, path):
         """The built file a site path names ("/es/offline/", "/style.css?v=...")."""
@@ -512,6 +722,7 @@ class SiteTest(unittest.TestCase):
         for path in precache + list(offline.values()):
             self.assertTrue(self.built(path).is_file(), path)
         self.assertIn(build_site.asset("reader.js"), precache)
+        self.assertIn(build_site.asset("markup.js"), precache)
         self.assertEqual(set(offline), {"" if code == "en" else code for code in build_site.LANGUAGES})
         manifest = json.loads((self.out / "manifest.webmanifest").read_text(encoding="utf-8"))
         self.assertEqual(manifest["start_url"], "/")
@@ -546,6 +757,57 @@ class ExtractTest(unittest.TestCase):
                                 capture_output=True, text=True)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
 
+    def test_comparison_extracts_are_up_to_date(self):
+        result = subprocess.run([sys.executable, str(ROOT / "scripts" / "extract_comparison.py"), "--check"],
+                                capture_output=True, text=True)
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+
+
+def note(reason, alternatives=()):
+    return {"decisions": [{"choice": "x", "alternatives": list(alternatives), "reason": reason}]}
+
+
+class ComparisonTest(unittest.TestCase):
+    """A note's reference to a chapter not translated yet carries that
+    verse from a public-domain Bible, for comparison: only the verses the
+    page's notes name, so the page stays small."""
+
+    def test_notes_bring_only_untranslated_verses(self):
+        records, _ = build_site.load_chapter("ROM", 1)
+        compare = build_site.comparison_verses(records, "en")
+        self.assertEqual((compare["name"], compare["lang"]), ("World English Bible", "en"))
+        # Romans 1:17 quotes Habakkuk 2:4.
+        self.assertEqual(compare["verses"]["HAB.2.4"], build_site.comparison_text("web")["HAB.2.4"])
+        have = build_site.book_refs("en")["chapters"]
+        for vid in compare["verses"]:
+            book, chapter, _ = vid.split(".")
+            self.assertNotIn(int(chapter), have.get(book, []), vid)
+
+    def test_spanish_pages_compare_with_the_reina_valera(self):
+        records, _ = build_site.load_chapter("ROM", 1)
+        compare = build_site.comparison_verses(records, "es")
+        self.assertEqual((compare["name"], compare["lang"]), ("Reina-Valera 1909", "es"))
+        self.assertEqual(compare["verses"]["HAB.2.4"], build_site.comparison_text("rv1909")["HAB.2.4"])
+
+    def test_ranges_are_capped_and_translated_chapters_skipped(self):
+        have = build_site.book_refs("en")["chapters"]
+        self.assertIn(10, have["LUK"])
+        self.assertNotIn(9, have.get("JER", []))
+        self.assertNotIn(32, have.get("JER", []))
+        compare = build_site.comparison_verses(
+            [note("As in Jeremiah 9:9-20, and Luke 10:7.", alternatives=["Jeremiah 32:4"])], "en")
+        self.assertEqual(set(compare["verses"]),
+                         {"JER.32.4"} | {f"JER.9.{v}" for v in range(9, 9 + build_site.COMPARE_MAX_VERSES)})
+        self.assertIsNone(build_site.comparison_verses([note("Luke 10:7 only.")], "en"))
+        self.assertIsNone(build_site.comparison_verses([note("No references here.")], "en"))
+
+    def test_chapter_pages_embed_the_comparison(self):
+        page = (built_site() / "rom" / "1" / "index.html").read_text(encoding="utf-8")
+        data = json.loads(re.search(r'<script type="application/json" id="owb-data">(.*?)</script>', page, re.S)[1])
+        self.assertIn("HAB.2.4", data["compare"]["verses"])
+        # A page's comparison verses are a few kilobytes at most.
+        self.assertLess(len(json.dumps(data["compare"], ensure_ascii=False)), 25000)
+
 
 class SharedDataTest(unittest.TestCase):
     """Book data that pull requests adding chapters would otherwise all edit."""
@@ -562,6 +824,23 @@ class SharedDataTest(unittest.TestCase):
         for path in (ROOT / "data" / "headings").glob("*.json"):
             for rid in json.loads(path.read_text(encoding="utf-8"))["headings"]:
                 self.assertEqual(rid.split(".")[0], path.stem, path.name)
+
+    def test_summaries_are_well_formed(self):
+        done = set(build_site.chapters())
+        for path in (ROOT / "data" / "summaries").glob("*.json"):
+            data = json.loads(path.read_text(encoding="utf-8"))
+            self.assertEqual(data["status"], "ai_draft", path.name)
+            self.assertTrue(data["description"], path.name)
+            for chapter, summary in data["summaries"].items():
+                where = f"{path.name} {chapter}"
+                self.assertRegex(chapter, r"^[1-9][0-9]*$", where)
+                self.assertIn((path.stem, int(chapter)), done, where)
+                self.assertIn("en", summary, where)
+                for lang, text in summary.items():
+                    self.assertIn(lang, build_site.LANGUAGES, where)
+                    self.assertTrue(text.strip(), where)
+                    # Shown as plain text under the title: no reader settings.
+                    self.assertNotIn("{{", text, where)
 
 
 if __name__ == "__main__":

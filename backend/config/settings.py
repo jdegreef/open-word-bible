@@ -16,6 +16,12 @@ Configuration comes from the environment:
   GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET
                         "Continue with Google" (accounts/google.py); without
                         them the site hides the button
+  DB_STATEMENT_TIMEOUT_MS  longest a database statement may run for the web
+                        server, in ms (default 15000; 0 for no limit).
+                        Management commands, tests included, have no limit.
+  DJANGO_LOG_LEVEL      level for Django's own log messages (default WARNING)
+  SENTRY_DSN            report errors to Sentry (config/sentry.py); without
+                        it errors are only logged
 """
 import os
 import sys
@@ -91,10 +97,27 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "config.wsgi.application"
 
+
+def statement_timeout_ms(argv=sys.argv, environ=os.environ):
+    """A search once ran for hours, so the web server gives up on a statement
+    after 15 seconds. Management commands such as migrate, the imports and
+    the tests (which rebuild the search tables) may run long, so they have
+    no limit; runserver has the web server's."""
+    if Path(argv[0]).name == "manage.py" and len(argv) > 1 and argv[1] != "runserver":
+        return 0
+    return int(environ.get("DB_STATEMENT_TIMEOUT_MS") or 15000)
+
+
+def database_options(timeout_ms):
+    return {"options": f"-c statement_timeout={timeout_ms}"}
+
+
 DATABASES = {
     "default": dj_database_url.config(
-        default="postgres://postgres@localhost:5432/owb", conn_max_age=600),
+        default="postgres://postgres@localhost:5432/owb", conn_max_age=600,
+        conn_health_checks=True),
 }
+DATABASES["default"].setdefault("OPTIONS", {}).update(database_options(statement_timeout_ms()))
 
 AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
@@ -148,7 +171,54 @@ EMAIL_USE_TLS = not EMAIL_USE_SSL   # never send the SMTP password in the clear
 EMAIL_TIMEOUT = 10
 DEFAULT_FROM_EMAIL = os.environ.get("DEFAULT_FROM_EMAIL", "Open Word Bible <noreply@openwordbible.org>")
 
+# Security headers (django.middleware.security.SecurityMiddleware). Django's
+# defaults already send X-Frame-Options: DENY, Referrer-Policy: same-origin
+# and Cross-Origin-Opener-Policy: same-origin.
+SECURE_CONTENT_TYPE_NOSNIFF = True
+
+# Cookies: the site signs in with an API token in the Authorization header
+# (accounts/auth.py), never a cookie, so the cross-origin site -> API calls
+# need no SameSite=None cookie. The only cookies are the admin's session and
+# CSRF cookies, on the API host itself, and Google sign-in's short-lived
+# state cookie (accounts/google.py, SameSite=Lax so it survives Google's
+# top-level redirect back). Django's SameSite=Lax default suits them all.
+SESSION_COOKIE_HTTPONLY = True
+
+# Warnings and errors, with tracebacks, go to stdout, which Render keeps.
+# Requests are logged by path only (Django leaves out the query string), so
+# searches are never logged.
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "plain": {"format": "%(asctime)s %(levelname)s %(name)s: %(message)s"},
+    },
+    "handlers": {
+        "stdout": {"class": "logging.StreamHandler", "stream": "ext://sys.stdout",
+                   "formatter": "plain"},
+    },
+    "root": {"handlers": ["stdout"], "level": "WARNING"},
+    "loggers": {
+        "django": {"handlers": ["stdout"], "level": os.environ.get("DJANGO_LOG_LEVEL", "WARNING"),
+                   "propagate": False},
+    },
+}
+
+if os.environ.get("SENTRY_DSN"):
+    from config import sentry
+    sentry.init(os.environ["SENTRY_DSN"], os.environ.get("RENDER_SERVICE_NAME", "local"))
+
 if not DEBUG:
     SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
+    # A year of HTTPS-only, as the reader site sends (render.yaml); not
+    # preloaded, so it can still be undone.
+    SECURE_HSTS_SECONDS = 31536000
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_PRELOAD = False
+    # check --deploy: Render redirects http to https at its edge (W008; a
+    # redirect here could also turn away Render's health check of /healthz,
+    # which may come over plain http), and preloading is left out on
+    # purpose (W021).
+    SILENCED_SYSTEM_CHECKS = ["security.W008", "security.W021"]

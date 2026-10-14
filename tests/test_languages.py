@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import build_site  # noqa: E402
+from owb import languages, markup, morph  # noqa: E402
 from tests.site_build import built_site  # noqa: E402
 
 OTHERS = [lang for lang in build_site.LANGUAGES if lang != "en"]
@@ -41,6 +42,30 @@ class CatalogTest(unittest.TestCase):
                 self.assertEqual(pattern.findall(text), [], f"{path.name}: {script}")
 
 
+class RegistryTest(unittest.TestCase):
+    """data/languages.json: each language listed there has the data the site
+    needs, and nothing is translated into a language it does not list."""
+
+    def test_every_language_has_a_catalog_and_every_catalog_a_language(self):
+        catalogs = {path.stem for path in (ROOT / "i18n").glob("*.json")}
+        self.assertEqual(set(languages.CODES), catalogs)
+
+    def test_english_comes_first(self):
+        self.assertEqual(languages.CODES[0], "en")
+
+    def test_every_language_has_its_names_and_grammar_words(self):
+        for code, lang in languages.READING.items():
+            self.assertTrue(lang["name"] and lang["native"] and "{}" in lang["quotes"], code)
+            self.assertIn(code, morph.WORDS)
+            self.assertIn(code, build_site.CHAPTER_NAMES["PSA"])
+
+    def test_language_settings_are_reader_settings(self):
+        for code, lang in languages.READING.items():
+            for name, labels in lang.get("settings", {}).items():
+                self.assertIn(name, markup.SETTINGS, code)
+                self.assertGreaterEqual(len(labels), 2, code)
+
+
 class LanguagesTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -50,12 +75,12 @@ class LanguagesTest(unittest.TestCase):
         return (self.out / rel).read_text(encoding="utf-8")
 
     def english_pages(self):
-        """Every English page but the articles, which a language has only
-        once they are translated."""
+        """Every English page but the articles and the reading plans, which
+        a language has only once they are translated."""
         langs = set(OTHERS)
         rels = (p.relative_to(self.out) for p in self.out.rglob("index.html"))
         return [rel for rel in rels if rel.parts[0] not in langs
-                and (rel.parts[0] != "articles" or len(rel.parts) == 2)]
+                and (rel.parts[0] not in ("articles", "plans") or len(rel.parts) == 2)]
 
     def test_every_page_is_built_in_every_language(self):
         pages = self.english_pages()
@@ -65,7 +90,7 @@ class LanguagesTest(unittest.TestCase):
                 self.assertTrue((self.out / lang / rel).is_file(), (lang, rel))
                 text = self.read(Path(lang) / rel)
                 self.assertIn(f'<html lang="{lang}">', text, rel)
-                self.assertIn(build_site.lang_script(build_site.LANGUAGES), text, rel)
+                self.assertIn(build_site.langs_meta(build_site.LANGUAGES), text, rel)
         for rel in pages:
             self.assertIn('<html lang="en">', self.read(rel), rel)
 
@@ -97,7 +122,7 @@ class LanguagesTest(unittest.TestCase):
         self.assertIn('<h2 id="foot-langs">Idiomas</h2>', es)
         # The 404 page, which has no path, offers each language's home page.
         self.assertIn('href="/es/" lang="es"', self.read("404.html"))
-        self.assertNotIn("owb-lang", self.read("404.html"))
+        self.assertNotIn('name="owb-langs"', self.read("404.html"))
 
     def test_other_language_pages_have_their_own_interface_text(self):
         en = build_site.catalog("en")
@@ -108,10 +133,15 @@ class LanguagesTest(unittest.TestCase):
                 keys += ("nav.all_articles",)
             cat = build_site.catalog(lang)
             for rel in self.english_pages():
-                # The passage data may hold the same words as Bible text
-                # (Genesis 1:5 names the darkness "Night"); only the interface counts.
-                page = re.sub(r'<script type="application/json" id="owb-data">.*?</script>', "",
+                # The passage data and the text written into the page may
+                # hold the same words as Bible text (Genesis 1:5 names the
+                # darkness "Night"), in English where a sentence has no
+                # translation yet; only the interface counts.
+                page = re.sub(r'<script type="application/json" id="owb-data">.*?</script>'
+                              r'|<div class="text" id="text">.*?</div>\s*<section class="notes"', "",
                               self.read(Path(lang) / rel), flags=re.S)
+                # So may a key-term page's English sentences and notes.
+                page = re.sub(r'<p class="term-(text|note|why-text)" lang="en">.*?</p>', "", page, flags=re.S)
                 for key in keys:
                     self.assertNotIn(en[key], page, (lang, rel, key))
                     self.assertIn(cat[key], page, (lang, rel, key))
@@ -183,7 +213,7 @@ class LanguagesTest(unittest.TestCase):
         self.assertNotIn('rel="canonical"', page)
         # Unlisted, but the switch and the remembered choice still lead to it.
         self.assertIn('<a href="/account/" lang="en"', page)
-        self.assertIn(build_site.lang_script(build_site.LANGUAGES), page)
+        self.assertIn(build_site.langs_meta(build_site.LANGUAGES), page)
         self.assertNotIn("/account/", self.read("sitemap.xml"))
 
     def test_chapter_strip_and_turns_stay_in_the_language(self):

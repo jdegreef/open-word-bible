@@ -3,6 +3,7 @@ title: "\"Le Verbe était Dieu\" : traduire Jean 1:1"
 summary: Pourquoi Open Word Bible dit "le Verbe était Dieu", et non "un dieu" ou "divin", et ce que fait l'ordre des mots en grec.
 date: 2026-10-10
 order: 5
+nav_title: Traduire Jean 1:1
 section: passage
 ---
 L'Évangile de Jean s'ouvre sur l'une des phrases les plus discutées de la Bible :

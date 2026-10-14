@@ -3,6 +3,7 @@ title: "The Targums: reading scripture in Aramaic"
 summary: For centuries, Jews in the synagogue heard the Hebrew Bible read aloud and then heard it again in Aramaic, the language they spoke. Those Aramaic renderings, the Targums, are among the oldest Bible translations and a window onto how ancient readers understood the text.
 date: 2026-10-12
 order: 41
+nav_title: The Targums
 section: translation
 ---
 Imagine a synagogue in Galilee in the third century. A reader stands and reads a verse of the Torah in Hebrew, from a scroll. Beside him stands a second man, with no scroll, who repeats the verse aloud in Aramaic, the language of the street and the market. Then the reader reads the next verse, and the translator renders it in turn. Verse by verse, the congregation hears the scripture twice: once in the holy language, once in their own.

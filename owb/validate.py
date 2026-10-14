@@ -9,7 +9,8 @@ record whole verses, meaning
 decisions carry no wording for one language (no wording category, setting
 span or target-language name), and every {{setting:...}} span names a known
 setting and is well formed, and key terms (data/key_terms.json) keep their
-settled English word at every level.
+settled English word at every level, and poetic line markers (\\q) sit only
+between a verse's words in renderings (markup.line_errors).
 
 Usage: python3 -m owb.validate content/en/JHN/JHN.1.1-2.json [...]
 """
@@ -18,7 +19,7 @@ import re
 import sys
 from pathlib import Path
 
-from owb import markup, refs
+from owb import languages, markup, refs
 from owb.sources import macula_greek, macula_hebrew
 
 SCHEMA = json.loads((Path(__file__).resolve().parents[1] / "schema" /
@@ -38,10 +39,13 @@ RECORD_ID = re.compile(_PROPS["id"]["pattern"])
 LANGUAGE = re.compile(_DEFS["language"]["pattern"])
 
 # A meaning decision is shared by every language, so it must not name one of
-# the languages the translation is made into (in English or in that language).
-TARGET_LANGUAGE_NAMES = re.compile(
-    r"\b(English|Spanish|espa\u00f1ol|castellano|French|fran\u00e7ais|"
-    r"Portuguese|portugu\u00eas|Swahili|Kiswahili)\b", re.IGNORECASE)
+# the languages the translation is made into (in English or in that language),
+# nor Spanish by its other name or Portuguese, which may come next.
+TARGET_LANGUAGE_NAMES = re.compile(r"\b(" + "|".join(
+    [n for lang in languages.READING.values() for n in dict.fromkeys([lang["name"], lang["native"]])]
+    + ["castellano", "Portuguese", "portugu\u00eas"]) + r")\b", re.IGNORECASE)
+# Reader settings only some languages have ({{plural_you:...}} is Spanish).
+LANGUAGE_SETTINGS = {name for lang in languages.READING.values() for name in lang.get("settings", {})}
 
 # Keyed by (source language, Strong's number): Greek and Hebrew Strong's
 # numbers overlap (4100 is "believe" in Greek and "what" in Hebrew).
@@ -133,30 +137,53 @@ def check_original_language(record, errors):
                                   "in the source data; copy it from MACULA")
 
 
+def key_term(token_id, strong):
+    """The key term (data/key_terms.json) a source word is, or None."""
+    return KEY_TERMS.get((token_language(token_id), strong))
+
+
+def key_term_words(term, level):
+    """The English words a key term may be rendered by at a level."""
+    allowed = term["english"]
+    return allowed.get(level, []) if isinstance(allowed, dict) else allowed
+
+
+def key_term_pattern(words, flags=re.IGNORECASE):
+    """A regex for any of a key term's English words (or their plural)."""
+    return re.compile(r"\b(%s)s?\b" % "|".join(map(re.escape, words)), flags)
+
+
+def explaining_decisions(record):
+    """The decisions that may explain a key term rendered otherwise, by the
+    token they are on: an English rendering decision (a different word), or
+    a word_sense meaning decision (a different sense, such as
+    "faithfulness" for faith). Other meaning decisions that happen to
+    include the word do not count."""
+    out = {}
+    for d in record.get("decisions") or []:
+        if isinstance(d, dict) and (d.get("language") == "en" or (
+                d.get("layer") == "meaning" and d.get("category") == "word_sense")):
+            for tid in d.get("tokens") or []:
+                out.setdefault(tid, []).append(d)
+    return out
+
+
 def check_key_terms(record, tokens, errors):
     """Every English level of a record that contains a key term
     (data/key_terms.json) uses one of the term's settled English words,
-    unless a decision on that word explains the exception: an English
-    rendering decision (a different word), or a word_sense meaning decision
-    (a different sense, such as "faithfulness" for faith). Other meaning
-    decisions that happen to include the word do not excuse it."""
-    explained = {tid for d in record.get("decisions") or [] if isinstance(d, dict)
-                 and (d.get("language") == "en"
-                      or (d.get("layer") == "meaning" and d.get("category") == "word_sense"))
-                 for tid in d.get("tokens") or []}
+    unless a decision on that word explains the exception
+    (explaining_decisions)."""
+    explained = explaining_decisions(record)
     english = (record.get("renderings") or {}).get("en")
     if not isinstance(english, dict):
         return
     for tok in tokens:
-        term = KEY_TERMS.get((token_language(tok.id), tok.strong))
+        term = key_term(tok.id, tok.strong)
         if term is None or tok.id in explained:
             continue
         for level, text in sorted(english.items()):
-            allowed = term["english"]
-            if isinstance(allowed, dict):
-                allowed = allowed.get(level, [])
-            words = re.compile(r"\b(%s)s?\b" % "|".join(map(re.escape, allowed)), re.IGNORECASE)
-            if isinstance(text, str) and not words.search(text):
+            allowed = key_term_words(term, level)
+            if isinstance(text, str) and not key_term_pattern(allowed).search(text):
                 errors.append(f"renderings.en.{level}: key term {term['sense']!r} ({tok.id}) "
                               f"should be rendered {' or '.join(allowed)}; or add "
                               "a decision on that word explaining why not")
@@ -284,6 +311,8 @@ def validate_record(record, known_tokens=None, original_language=True):
 
     _check_markup(record.get("literal_gloss"), "literal_gloss", errors)
     check_verses(record.get("literal_gloss"), "literal_gloss")
+    if isinstance(record.get("literal_gloss"), str) and "\\q" in record["literal_gloss"]:
+        errors.append("literal_gloss: line markers (\\q) belong in renderings only")
 
     renderings = record.get("renderings")
     if not isinstance(renderings, dict) or not renderings:
@@ -292,12 +321,21 @@ def validate_record(record, known_tokens=None, original_language=True):
     for lang, levels in renderings.items():
         if not LANGUAGE.fullmatch(lang):
             errors.append(f"renderings: bad language code {lang!r}")
+        elif lang not in languages.READING:
+            errors.append(f"renderings: {lang!r} is not a language in data/languages.json")
         if not isinstance(levels, dict) or set(levels) != set(LEVELS):
             errors.append(f"renderings.{lang}: must have exactly {LEVELS}")
             continue
         for level, text in levels.items():
             _check_markup(text, f"renderings.{lang}.{level}", errors)
             check_verses(text, f"renderings.{lang}.{level}")
+            used = {span.setting for span in markup.spans(text)} if isinstance(text, str) else set()
+            own = languages.READING.get(lang, {}).get("settings", {})
+            for setting in sorted(used & LANGUAGE_SETTINGS - set(own)):
+                errors.append(f"renderings.{lang}.{level}: {setting} is not a setting in this language")
+            if isinstance(text, str):
+                for reason in markup.line_errors(text):
+                    errors.append(f"renderings.{lang}.{level}: {reason}")
 
     by_rendering = {}
     for i, al in enumerate(record.get("alignments", [])):

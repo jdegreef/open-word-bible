@@ -3,6 +3,7 @@ title: "Les massorètes : gardiens du texte hébreu"
 summary: Entre environ 600 et 1000 apr. J.-C., des savants juifs de Tibériade et de Babylonie ont ajouté à la Bible hébraïque des voyelles, des accents et des milliers de notes marginales. C'est grâce à leur travail que nous pouvons la lire aujourd'hui.
 date: 2026-10-11
 order: 24
+nav_title: Les massorètes
 section: history
 part: ot
 ---

@@ -3,6 +3,7 @@ title: "Wamasoreti: walinzi wa maandiko ya Kiebrania"
 summary: Kati ya karibu mwaka 600 na 1000 B.K., wanachuoni wa Kiyahudi huko Tiberia na Babeli waliongeza irabu, alama za kiimbo na maelfu ya maelezo ya pembezoni katika Biblia ya Kiebrania. Kazi yao ndiyo sababu tunaweza kuisoma leo.
 date: 2026-10-11
 order: 24
+nav_title: Wamasoreti
 section: history
 part: ot
 ---

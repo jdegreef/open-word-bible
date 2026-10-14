@@ -3,6 +3,7 @@ title: "Africa's ancient Bibles: Coptic and Ge'ez"
 summary: Long before the Bible reached most of Europe in local languages, it was being read in Egypt in Coptic and in the highlands of Ethiopia in Ge'ez. These African translations are among the oldest in the world, and the Ethiopian church keeps the broadest biblical canon of any.
 date: 2026-10-12
 order: 44
+nav_title: Coptic and Ge'ez Bibles
 section: translation
 ---
 It is easy to tell the history of the Bible as a story that moves from Jerusalem to Rome and then north into Europe. But some of the earliest translations of the Bible were made in Africa. In Egypt, Christians translated the scriptures into **Coptic** from the third century onwards. In the kingdom of Aksum, in what is now Ethiopia and Eritrea, they were translated into **Ge'ez**, probably beginning in the fourth or fifth century. Both translations are still read in worship today.

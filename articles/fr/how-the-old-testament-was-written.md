@@ -3,6 +3,7 @@ title: Comment l'Ancien Testament a été mis par écrit
 summary: Avant les rouleaux rangés dans une bibliothèque, il y eut des chants, des lois, des récits et des prophéties, racontés et écrits dans l'ancien Israël. Ce que l'archéologie et le texte lui-même nous apprennent sur la première mise par écrit de la Bible hébraïque.
 date: 2026-10-11
 order: 21
+nav_title: Comment l'Ancien Testament a été écrit
 section: history
 part: ot
 ---

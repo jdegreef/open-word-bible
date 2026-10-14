@@ -54,7 +54,7 @@ def fetch(url, timeout=30):
 # ---- The browser's matching (web/search.js) ---------------------------------
 
 SPAN = re.compile(r"\{\{([a-z_]+):([^{}]*)\}\}")
-VERSE_MARK = re.compile(r"\\v \d+ ?")
+VERSE_MARK = re.compile(r"\\v \d+ ?|\\q ?")
 
 
 def fold(text):
@@ -134,7 +134,9 @@ def api_results(api, lang, q):
 
 
 def key(doc):
-    return json.dumps({k: v for k, v in doc.items() if k != "hl"}, sort_keys=True, ensure_ascii=False)
+    # The API leaves out an article's whole text ("x").
+    return json.dumps({k: v for k, v in doc.items() if k != "hl" and not (k == "x" and doc["k"] == "a")},
+                      sort_keys=True, ensure_ascii=False)
 
 
 def describe(doc):
