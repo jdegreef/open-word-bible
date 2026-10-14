@@ -23,8 +23,9 @@ MB = 1024 * KB
 # Limits, about 25% above the largest measured on 2026-10-12 (in brackets).
 BUDGETS = {
     # The largest chapter page (/<book>/<chapter>/, in any language)
-    # [127 KB, es/jhn/6].
-    "chapter_page_gz": 160 * KB,
+    # [127 KB, es/jhn/6; 165 KB on 2026-10-14 once John 6 had French, since
+    # a page carries every language's renderings and decisions].
+    "chapter_page_gz": 200 * KB,
     # The largest script or style sheet [21 KB, reader.js; 26 KB on
     # 2026-10-13 after the verse panel tools, poetry lines and account sync].
     "js_css_asset_gz": 33 * KB,
