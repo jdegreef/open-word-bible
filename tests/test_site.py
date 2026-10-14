@@ -332,6 +332,19 @@ class SiteTest(unittest.TestCase):
             self.assertEqual(len(cards), min(3, len(offered)), lang)
             self.assertLessEqual(set(cards), {p.id for p in offered})
 
+    def test_header_switches_language_and_offers_each_in_its_own_words(self):
+        for lang in build_site.LANGUAGES:
+            page = (self.out / build_site.url(lang, "/jhn/1/").lstrip("/") / "index.html").read_text(encoding="utf-8")
+            header = re.search(r'<header class="site">(.*?)</header>', page, re.S)[1]
+            menu = re.search(r'<div id="lang-pop".*?</div>', header, re.S)[0]
+            self.assertIn(f'<span class="lang-code">{lang.upper()}</span>', header)
+            for code in build_site.LANGUAGES:
+                if code == lang:
+                    self.assertNotIn(f'data-lang="{code}"', menu)
+                    continue
+                self.assertIn(f'href="{build_site.url(code, "/jhn/1/")}"', menu)
+                self.assertIn(f'data-lang="{code}" data-offer="{html.escape(build_site.t(code, "lang.offer"))}"', menu)
+
     def test_verses_of_the_day_are_drafted_whole_sentences(self):
         self.assertEqual(len(build_site.VERSES_OF_THE_DAY), len(set(build_site.VERSES_OF_THE_DAY)))
         for lang in build_site.LANGUAGES:

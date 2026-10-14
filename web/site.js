@@ -762,3 +762,61 @@
     });
   });
 })();
+
+// The header's language switch (language_menu in scripts/build_site.py),
+// and, once, an offer to read in the language the browser prefers when it
+// is one of the site's and not the page's. Choosing a language (the
+// footer's handler above keeps it as owb-lang) or saying no ends the offer.
+(function () {
+  "use strict";
+  var button = document.querySelector(".lang-btn");
+  var pop = document.getElementById("lang-pop");
+  if (!button || !pop) return;
+  function open(show) {
+    pop.hidden = !show;
+    button.setAttribute("aria-expanded", show ? "true" : "false");
+    if (show) (pop.querySelector("a") || pop).focus();
+  }
+  button.addEventListener("click", function () { open(pop.hidden); });
+  document.addEventListener("click", function (e) {
+    if (!pop.hidden && !pop.contains(e.target) && !button.contains(e.target)) open(false);
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && !pop.hidden) { open(false); button.focus(); }
+  });
+
+  var asked = null;
+  try { asked = localStorage.getItem("owb-lang") || localStorage.getItem("owb-lang-offer"); } catch (e) { return; }
+  if (asked) return;
+  var page = document.documentElement.lang;
+  var wanted = (navigator.languages || [navigator.language || ""]).map(function (l) { return String(l).slice(0, 2).toLowerCase(); });
+  var link = null;
+  for (var i = 0; i < wanted.length && !link; i++) {
+    if (wanted[i] === page) return;
+    link = pop.querySelector('a[data-lang="' + wanted[i] + '"][data-offer]');
+  }
+  if (!link) return;
+  var bar = document.createElement("div");
+  bar.className = "lang-offer";
+  bar.setAttribute("role", "region");
+  bar.setAttribute("aria-label", button.getAttribute("aria-label"));
+  bar.lang = link.getAttribute("data-lang");
+  var go = document.createElement("a");
+  go.className = "button";
+  go.href = link.href;
+  go.textContent = link.getAttribute("data-offer");
+  go.addEventListener("click", function () {
+    try { localStorage.setItem("owb-lang", link.getAttribute("data-lang")); } catch (e) { /* this page only */ }
+  });
+  var no = document.createElement("button");
+  no.type = "button";
+  no.className = "lang-offer-no";
+  no.textContent = link.getAttribute("data-offer-no");
+  no.addEventListener("click", function () {
+    try { localStorage.setItem("owb-lang-offer", "no"); } catch (e) { /* asked again next page */ }
+    bar.remove();
+  });
+  bar.appendChild(go);
+  bar.appendChild(no);
+  document.body.appendChild(bar);
+})();

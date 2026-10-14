@@ -243,6 +243,23 @@ def leading_sample(gap):
 LEADING_GAPS = {"compact": 5, "normal": 7, "spacious": 9}
 
 
+def language_menu(lang, path=None, translated=LANGUAGES):
+    """The header's language switch: the page's language, opening the
+    language links (language_items). Each link carries its language's own
+    offer to read in it, which web/site.js shows a first-time visitor whose
+    browser prefers that language."""
+    label = t(lang, "footer.languages")
+    items = language_items(lang, path, translated, '<span class="check" aria-hidden="true">&#10003;</span>')
+    for code in LANGUAGES:
+        items = items.replace(f'data-lang="{code}">', f'data-lang="{code}" data-offer="{html.escape(t(code, "lang.offer"))}" '
+                                                     f'data-offer-no="{html.escape(t(code, "lang.offer_no"))}">', 1)
+    return ('<div class="lang-menu">'
+            f'<button type="button" class="tool-btn lang-btn" aria-expanded="false" aria-controls="lang-pop" '
+            f'aria-label="{label}" title="{label}">{icon(ICONS["languages"])}<span class="lang-code">{lang.upper()}</span></button>'
+            f'<div id="lang-pop" class="lang-pop" role="group" aria-label="{label}" hidden>'
+            f'<ul class="prefs-langs">{items}</ul></div></div>')
+
+
 def colour_menu(lang, path=None, translated=LANGUAGES):
     """The gear menu: the colour mode, the display settings (DISPLAY_PREFS),
     then the languages (language_items, as in the footer). web/site.js
@@ -485,6 +502,7 @@ def site_header(lang, current, path=None, lang_path=None, translated=LANGUAGES):
 <div class="tools">
 <a class="tool-btn search-btn" href="{url(lang, "/search/")}" aria-label="{t(lang, "nav.search")}" title="{t(lang, "nav.search")}" aria-keyshortcuts="Control+K Meta+K">{icon(ICONS["search"])}<span class="search-label">{t(lang, "nav.search")}</span><kbd class="search-kbd" hidden>Ctrl K</kbd></a>
 {account_menu(lang)}
+{language_menu(lang, lang_path, translated)}
 {colour_menu(lang, lang_path, translated)}
 <button type="button" class="tool-btn menu-btn" aria-expanded="false" aria-controls="site-nav" aria-label="{t(lang, "nav.menu")}">{icon(ICONS["menu"], 22)}{icon(ICONS["close"], 22)}</button>
 </div>
