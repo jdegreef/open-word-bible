@@ -1082,6 +1082,15 @@ def chapter_ld(records, book, chapter, title, lang="en"):
     return f'<script type="application/ld+json">{text}</script>'
 
 
+def page_records(records, lang):
+    """The records as a page in lang carries them: every language's
+    renderings (the reader sets two side by side), but only the meaning
+    decisions and lang's own rendering decisions, the only ones the reader
+    shows. Each language's decisions would otherwise weigh on every page."""
+    return [{**r, "decisions": [d for d in r["decisions"] if d["language"] in (None, lang)]}
+            for r in records]
+
+
 def chapter_page(book, chapter, lang="en"):
     records, words = load_chapter(book, chapter)
     title = chapter_name(records, book, chapter, lang)
@@ -1091,7 +1100,7 @@ def chapter_page(book, chapter, lang="en"):
                  if any(code in r["renderings"] for r in records)]
     source = source_language(book)
     data = {"book": book, "chapter": chapter, "title": title, "lang": lang, "languages": languages,
-            "source": source, "ui": catalog(lang)["reader.ui"], "records": records,
+            "source": source, "ui": catalog(lang)["reader.ui"], "records": page_records(records, lang),
             "words": {vid: transliterated(words[vid], source) for r in records for vid in r["refs"]},
             "paragraphs": paragraph_starts(records, words),
             "disputed": disputed_block(records, lang),

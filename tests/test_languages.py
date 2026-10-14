@@ -180,6 +180,17 @@ class LanguagesTest(unittest.TestCase):
             self.assertNotIn('data-setting="plural_you"', page)
             self.assertIn(f">{balanced}</button>", page)
 
+    def test_a_chapter_page_carries_only_its_own_rendering_decisions(self):
+        # Every language's renderings (the reader sets two side by side), but
+        # only the meaning decisions and the page language's own wording ones.
+        for lang in build_site.LANGUAGES:
+            page = self.read(build_site.url(lang, "/jhn/1/").strip("/") + "/index.html")
+            data = json.loads(re.search(r'id="owb-data">(.*?)</script>', page, re.S)[1])
+            decisions = [d for r in data["records"] for d in r["decisions"]]
+            self.assertTrue(all(d["language"] in (None, lang) for d in decisions), lang)
+            self.assertTrue(any(d["language"] == lang for d in decisions), lang)
+            self.assertTrue(all({"en", "vi", "ko"} <= set(r["renderings"]) for r in data["records"]), lang)
+
     def test_a_language_shows_only_its_own_articles(self):
         for lang in OTHERS:
             own = {a["slug"] for a in build_site.load_articles(lang)}

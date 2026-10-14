@@ -23,15 +23,19 @@ MB = 1024 * KB
 # Limits, about 25% above the largest measured on 2026-10-12 (in brackets).
 BUDGETS = {
     # The largest chapter page (/<book>/<chapter>/, in any language)
-    # [127 KB, es/jhn/6].
-    "chapter_page_gz": 160 * KB,
+    # [127 KB, es/jhn/6; 165 KB, jhn/6, on 2026-10-14 with John in Vietnamese
+    # and Korean: a page carries every language's renderings, for the
+    # side-by-side view, though only its own language's decisions].
+    "chapter_page_gz": 205 * KB,
     # The largest script or style sheet [21 KB, reader.js; 26 KB on
     # 2026-10-13 after the verse panel tools, poetry lines and account sync].
     "js_css_asset_gz": 33 * KB,
     # Every file in the site [703 MB; 909 MB on 2026-10-14 with Numbers to
-    # Ruth; 1,150 MB later that day with 1 Samuel to 2 Chronicles]. Grows
-    # with each book translated.
-    "site_total": 1400 * MB,
+    # Ruth; 1,150 MB later that day with 1 Samuel to 2 Chronicles; 1,810 MB
+    # with Vietnamese and Korean as site languages, each about 250 MB, since
+    # every page is built in every language]. Grows with each book translated
+    # and each language added.
+    "site_total": 2300 * MB,
     # The largest static search index, search-<lang>.json [5.6 MB; 23 MB
     # unzipped; 7.4 MB on 2026-10-14 with Numbers to Ruth; 9.5 MB with
     # 1 Samuel to 2 Chronicles]. Delete this entry when the static index
