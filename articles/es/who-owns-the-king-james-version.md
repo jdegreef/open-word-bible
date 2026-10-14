@@ -25,7 +25,7 @@ Hasta dónde llega la prerrogativa, y cómo se aplicaría a las nuevas formas de
 
 ## El Impresor del Rey
 
-La primera Biblia King James fue «Imprinted at London by Robert Barker, Printer to the Kings most Excellent Maiestie» («Impresa en Londres por Robert Barker, Impresor de la muy Excelente Majestad del Rey»), en 1611 (véase [La versión King James](/articles/the-king-james-version/)). El cargo de **Impresor del Rey** (King's Printer, o Impresor de la Reina, según el monarca) llevaba consigo la patente para imprimir Biblias en Inglaterra.
+La primera Biblia King James fue «Imprinted at London by Robert Barker, Printer to the Kings most Excellent Maiestie» («Impresa en Londres por Robert Barker, Impresor de la muy Excelente Majestad del Rey»), en 1611 (véase [La versión King James](https://openwordbible.org/articles/the-king-james-version/) (en inglés)). El cargo de **Impresor del Rey** (King's Printer, o Impresor de la Reina, según el monarca) llevaba consigo la patente para imprimir Biblias en Inglaterra.
 
 Robert Barker había heredado el cargo de su padre, **Christopher Barker**, que lo había obtenido bajo Isabel I. La patente era valiosa, porque cada iglesia parroquial necesitaba una Biblia y un Libro de Oración y muchas familias compraban uno, y se disputaba con dureza. Barker se endeudó mucho para pagar la Biblia de 1611, tuvo pleitos con sus socios y financiadores, y pasó sus últimos años en una prisión por deudas. Su empresa imprimió también la célebre «Biblia malvada» (*Wicked Bible*) de 1631, que omitía el «no» del séptimo mandamiento.
 

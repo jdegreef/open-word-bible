@@ -5,7 +5,7 @@ date: 2026-10-14
 order: 62
 section: compare
 ---
-La versión King James la hicieron unos cincuenta estudiosos repartidos en seis grupos, que trabajaban según una lista de quince reglas (véase [La versión King James](/articles/the-king-james-version/)). Las traducciones modernas se hacen de un modo muy parecido, por comités que trabajan según principios escritos, pero con más etapas, más revisores, más tecnología y una editorial esperando al final.
+La versión King James la hicieron unos cincuenta estudiosos repartidos en seis grupos, que trabajaban según una lista de quince reglas (véase [La versión King James](https://openwordbible.org/articles/the-king-james-version/) (en inglés)). Las traducciones modernas se hacen de un modo muy parecido, por comités que trabajan según principios escritos, pero con más etapas, más revisores, más tecnología y una editorial esperando al final.
 
 Este artículo describe cómo suele funcionar ese proceso, a partir de los relatos publicados de varias traducciones importantes: la **New International Version** (NIV), la **English Standard Version** (ESV), la **New Living Translation** (NLT) y la **Christian Standard Bible** (CSB). Cada una organiza el trabajo de forma distinta, y los detalles que siguen son ejemplos, no una receta única.
 
@@ -24,7 +24,7 @@ La relación entre los dos últimos importa. Un comité que responde ante una ed
 Antes de redactar un solo versículo, una traducción tiene que ponerse de acuerdo sobre lo que intenta hacer. La mayoría publica una declaración de principios, a menudo en su prefacio o en un documento aparte. Suelen tratar:
 
 - **El texto de base.** Qué ediciones del hebreo, el arameo y el griego, y con qué libertad apartarse de ellas. Casi todas las traducciones protestantes y católicas modernas usan para el Antiguo Testamento el texto masorético de la *Biblia Hebraica Stuttgartensia* o de su sucesora, y para el Nuevo una edición reciente de Nestle-Aland o de las Sociedades Bíblicas Unidas. La New King James Version es la principal excepción, pues conserva el Texto Recibido.
-- **El enfoque.** Dónde se sitúa la traducción entre la forma y el sentido (véase [¿Palabra por palabra o sentido por sentido?](/articles/word-for-word-or-meaning-for-meaning/)). El prefacio de la ESV la llama «essentially literal» («esencialmente literal»); la CSB describe su método como «optimal equivalence» («equivalencia óptima»); la NLT aspira a la claridad de una traducción idea por idea; la NIV describe un equilibrio entre la transparencia respecto al original y un inglés natural.
+- **El enfoque.** Dónde se sitúa la traducción entre la forma y el sentido (véase [¿Palabra por palabra o sentido por sentido?](https://openwordbible.org/articles/word-for-word-or-meaning-for-meaning/) (en inglés)). El prefacio de la ESV la llama «essentially literal» («esencialmente literal»); la CSB describe su método como «optimal equivalence» («equivalencia óptima»); la NLT aspira a la claridad de una traducción idea por idea; la NIV describe un equilibrio entre la transparencia respecto al original y un inglés natural.
 - **El público.** Quién la leerá, con qué nivel de lectura, y si está pensada para la lectura pública, el estudio personal o ambas cosas.
 - **Criterios sobre cuestiones discutidas.** Cómo traducir el nombre divino, si usar un lenguaje inclusivo en cuanto al género para referirse a las personas, cómo marcar los pasajes disputados y si escribir con mayúscula los pronombres referidos a Dios.
 

@@ -34,7 +34,7 @@ La mayoría de los manuscritos griegos no tienen el versículo, y la World Engli
 
 ## Westcott y Hort
 
-En el siglo XIX, estudiosos como Lachmann, Tischendorf y Tregelles empezaron a imprimir textos basados en los manuscritos más antiguos y no en el Texto Recibido. El más influyente fue la edición de **B. F. Westcott y F. J. A. Hort**, *The New Testament in the Original Greek* (1881), publicada el mismo año que el Nuevo Testamento de la Revised Version, en cuyo comité participaron ambos (véase [Las traducciones inglesas desde la King James](/articles/modern-english-translations/)).
+En el siglo XIX, estudiosos como Lachmann, Tischendorf y Tregelles empezaron a imprimir textos basados en los manuscritos más antiguos y no en el Texto Recibido. El más influyente fue la edición de **B. F. Westcott y F. J. A. Hort**, *The New Testament in the Original Greek* (1881), publicada el mismo año que el Nuevo Testamento de la Revised Version, en cuyo comité participaron ambos (véase [Las traducciones inglesas desde la King James](https://openwordbible.org/articles/modern-english-translations/) (en inglés)).
 
 Westcott y Hort agruparon los manuscritos en familias y sostuvieron que el texto bizantino era una forma posterior, pulida y combinada. Dieron el mayor peso al **Códice Vaticano** y al **Códice Sinaítico**, ambos del siglo IV (véase [El Códice Sinaítico y el Códice Vaticano](/articles/sinaiticus-and-vaticanus/)). Descubrimientos posteriores, sobre todo los papiros, modificaron sus conclusiones en los detalles, pero su método dio forma a las ediciones críticas que siguieron (véase [Cómo la crítica textual recupera el texto](/articles/how-textual-criticism-works/)).
 

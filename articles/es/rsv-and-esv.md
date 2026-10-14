@@ -9,7 +9,7 @@ Pocas traducciones han sido tan queridas y tan atacadas como la **Revised Standa
 
 ## La Revised Standard Version
 
-La ascendencia de la RSV va desde la versión King James, pasando por la Revised Version de 1881–85, hasta la American Standard Version de 1901 (véase [Las traducciones inglesas desde la King James](/articles/modern-english-translations/)). En 1928 los derechos de autor de la ASV pasaron al International Council of Religious Education (Consejo Internacional de Educación Religiosa), un organismo de iglesias protestantes estadounidenses que más tarde pasó a formar parte del **Consejo Nacional de las Iglesias de Cristo en Estados Unidos**. En 1937 el consejo autorizó una revisión.
+La ascendencia de la RSV va desde la versión King James, pasando por la Revised Version de 1881–85, hasta la American Standard Version de 1901 (véase [Las traducciones inglesas desde la King James](https://openwordbible.org/articles/modern-english-translations/) (en inglés)). En 1928 los derechos de autor de la ASV pasaron al International Council of Religious Education (Consejo Internacional de Educación Religiosa), un organismo de iglesias protestantes estadounidenses que más tarde pasó a formar parte del **Consejo Nacional de las Iglesias de Cristo en Estados Unidos**. En 1937 el consejo autorizó una revisión.
 
 Presidió el comité **Luther A. Weigle**, decano de la Facultad de Teología de Yale. Su encargo era revisar la ASV a la luz de los estudios modernos, preservando las cualidades que habían dado a la versión King James su lugar en la literatura inglesa. Debía ser exacta, pero también adecuada para el culto público y privado.
 

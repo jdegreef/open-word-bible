@@ -68,7 +68,7 @@ La World English Bible tiene «an atoning sacrifice» («un sacrificio expiatori
 
 ## Equivalencia óptima
 
-La HCSB introdujo, y la CSB conservó, la expresión **equivalencia óptima** para su método. Los traductores la describen como un equilibrio entre la equivalencia formal, que sigue las palabras y la estructura del original, y la equivalencia funcional, que traduce el sentido en un inglés natural (véase [¿Palabra por palabra o sentido por sentido?](/articles/word-for-word-or-meaning-for-meaning/)). Su enfoque, en resumen:
+La HCSB introdujo, y la CSB conservó, la expresión **equivalencia óptima** para su método. Los traductores la describen como un equilibrio entre la equivalencia formal, que sigue las palabras y la estructura del original, y la equivalencia funcional, que traduce el sentido en un inglés natural (véase [¿Palabra por palabra o sentido por sentido?](https://openwordbible.org/articles/word-for-word-or-meaning-for-meaning/) (en inglés)). Su enfoque, en resumen:
 
 - Donde una traducción literal es clara y es un inglés natural, se usa.
 - Donde una traducción literal resultaría oscura o engañosa, se traduce el sentido, con una nota al pie que da la redacción literal cuando es útil.

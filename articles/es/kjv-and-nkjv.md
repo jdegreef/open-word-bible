@@ -11,7 +11,7 @@ Ese objetivo explica tanto sus virtudes como las discusiones que la rodean. Este
 
 ## La versión King James hoy
 
-La historia de la versión King James se cuenta en [La versión King James](/articles/the-king-james-version/). Aquí importan dos cosas.
+La historia de la versión King James se cuenta en [La versión King James](https://openwordbible.org/articles/the-king-james-version/) (en inglés). Aquí importan dos cosas.
 
 Primero, la versión King James que lee la mayoría de la gente no es el texto de 1611, sino la edición de Oxford de 1769 preparada por Benjamin Blayney, con la ortografía y la puntuación normalizadas. Así que «actualizar la King James» no era una idea nueva: impresores y editores llevaban siglo y medio haciéndolo discretamente.
 
