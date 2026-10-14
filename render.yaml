@@ -18,6 +18,10 @@ services:
     buildCommand: python3 scripts/build_site.py
     staticPublishPath: site
     pullRequestPreviewsEnabled: true
+    # Deploy main only once its CI checks (.github/workflows/ci.yml) pass, so
+    # a red main never goes live. Render skips the deploy if a check fails or
+    # none are reported; the next green commit deploys.
+    autoDeployTrigger: checksPass
     domains:
       - openwordbible.org
       - www.openwordbible.org
@@ -81,6 +85,8 @@ services:
     name: owb-api
     runtime: python
     plan: starter
+    # As for the site: deploy main only once its CI checks pass.
+    autoDeployTrigger: checksPass
     buildCommand: pip install -r backend/requirements.txt && python backend/manage.py collectstatic --noinput
     # Migrate, load any missing source texts, then reload content/ so the API
     # matches main. Management commands have no statement timeout; web

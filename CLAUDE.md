@@ -25,6 +25,10 @@ summarises the data model.
 - Don't use or redistribute MACULA's `ln` / `domain` fields (UBS MARBLE,
   used with permission, not openly licensed).
 
+`.claude/hooks/guard_edits.py` refuses edits that add Greek or Hebrew not
+found in the source data, or a status other than `ai_draft`; CI's
+`owb.validate` is still the check of record.
+
 ## Before pushing
 
     OWB_VENDOR=<sources dir> python3 -m unittest discover -s tests -t .
