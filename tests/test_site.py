@@ -309,6 +309,13 @@ class SiteTest(unittest.TestCase):
             for q in build_site.catalog(lang)["search.examples"]:
                 self.assertIn(f'?q={html.escape(q.replace(" ", "+"))}"', home)
 
+    def test_home_page_offers_the_data(self):
+        home = (self.out / "index.html").read_text(encoding="utf-8")
+        data = home[home.index('class="data"'):home.index('class="involve"')]
+        self.assertIn(f'href="{build_site.GITHUB_URL}/archive/refs/heads/main.zip"', data)
+        self.assertIn(f'href="{build_site.API_URL}/api/passages/JHN/1/"', data)
+        self.assertIn("schema/sentence-record.schema.json", data)
+
     def test_verses_of_the_day_are_drafted_whole_sentences(self):
         self.assertEqual(len(build_site.VERSES_OF_THE_DAY), len(set(build_site.VERSES_OF_THE_DAY)))
         for lang in build_site.LANGUAGES:

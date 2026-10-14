@@ -2041,6 +2041,26 @@ def verse_of_the_day(lang="en"):
 </section>"""
 
 
+def data_html(lang="en"):
+    """The home page's offer to builders: the whole translation to
+    download, the API, and the data model, all CC0."""
+    api = f"{API_URL}/api/passages/JHN/1/"
+    cards = (
+        ("download", f"{GITHUB_URL}/archive/refs/heads/main.zip", "home.data_zip", t(lang, "home.data_zip_text")),
+        ("code", api, "home.data_api", f'{t(lang, "home.data_api_text")} <code>{html.escape(api.split("//", 1)[1])}</code>'),
+        ("info", f"{GITHUB_URL}/blob/main/schema/sentence-record.schema.json", "home.data_schema",
+         t(lang, "home.data_schema_text")))
+    items = "".join(f'<li><a class="data-card" href="{href}"><span class="tile sm">{icon(ICONS[ico])}</span>'
+                    f'<span><strong>{t(lang, key)}</strong><span>{text}</span></span></a></li>'
+                    for ico, href, key, text in cards)
+    return f"""<section class="data" aria-labelledby="data-h">
+{sec_head("data-h", "scale", t(lang, "home.data"))}
+<p class="data-text">{t(lang, "home.data_text")}</p>
+<ul class="data-cards">{items}</ul>
+</section>
+"""
+
+
 def hero_search(lang="en"):
     """The home page's search box: a verse to go to or words to find, as
     the /search/ page takes them, with the search page's examples to try."""
@@ -2098,7 +2118,7 @@ def home_page(lang="en"):
 </ul>
 </section>
 {progress_html(lang)}
-{latest}<section class="involve" id="help" aria-labelledby="involve-h">
+{latest}{data_html(lang)}<section class="involve" id="help" aria-labelledby="involve-h">
 <div class="involve-text">
 <h2 id="involve-h">{t(lang, "home.involve")}</h2>
 <p>{t(lang, "home.involve_text")}</p>

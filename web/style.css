@@ -580,7 +580,20 @@ footer.site a.book-chip.none:not(:hover) { color: var(--muted); }
 .label { font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 20px 0 6px; }
 .label:first-child { margin-top: 0; }
 
-.example, .points-wrap, .progress, .latest { margin: 72px 0 0; }
+.example, .points-wrap, .progress, .latest, .data { margin: 72px 0 0; }
+/* Home: the text and its data for builders. */
+.data-text { max-width: 72ch; margin: 0 0 18px; }
+.data-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; list-style: none; margin: 0; padding: 0; }
+.data-card {
+  display: flex; gap: 14px; height: 100%; padding: 18px 20px; color: var(--text); text-decoration: none;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow-card);
+  transition: border-color var(--fast) ease, transform var(--fast) ease;
+}
+.data-card:hover { border-color: var(--accent); transform: translateY(-1px); }
+.data-card strong { display: block; font-family: var(--display); font-size: 18px; margin: 0 0 4px; }
+.data-card > span:last-child > span { display: block; color: var(--muted); font-size: 14.5px; line-height: 1.5; }
+.data-card code { font-size: 12.5px; overflow-wrap: anywhere; color: var(--accent); }
+@media (max-width: 760px) { .data-cards { grid-template-columns: minmax(0, 1fr); } }
 .example-grid {
   display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 28px; align-items: start;
   background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 28px; box-shadow: var(--shadow-card);
