@@ -586,6 +586,38 @@ footer.site a.book-chip.none:not(:hover) { color: var(--muted); }
   background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 28px; box-shadow: var(--shadow-card);
 }
 .example .greek { margin: 0; }
+.example .hebrew { margin: 0; font-family: var(--hebrew); font-size: 26px; line-height: 1.9; }
+/* The examples' tabs: John 1:1 from the Greek, Psalm 23:1 from the Hebrew. */
+.ex-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 14px; }
+.ex-tabs [role=tab] {
+  display: inline-flex; align-items: baseline; gap: 8px; padding: 8px 16px; cursor: pointer; font: inherit; font-size: 15px;
+  border: 1px solid var(--line-strong); border-radius: 999px; background: var(--surface); color: var(--text);
+}
+.ex-tabs [role=tab] span { color: var(--muted); font-size: 13.5px; }
+.ex-tabs [role=tab]:hover { border-color: var(--accent); color: var(--accent); }
+.ex-tabs [role=tab][aria-selected="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-contrast); }
+.ex-tabs [role=tab][aria-selected="true"] span { color: inherit; opacity: .8; }
+.ex-tabs [role=tab]:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.ex-panel + .ex-panel { margin-top: 28px; }
+/* A source word to tap: its lemma and sense show below, and the English
+   it became lights up. */
+.example button.w {
+  font: inherit; color: inherit; background: none; border: 0; padding: 0 1px; margin: 0; cursor: pointer;
+  border-radius: 4px; border-bottom: 1px dotted var(--line-strong);
+}
+.example button.w:hover { background: var(--accent-soft); }
+.example button.w[aria-pressed="true"] { background: var(--accent); color: var(--accent-contrast); }
+.example button.w[aria-pressed="true"] mark { background: none; color: inherit; }
+.example button.w:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.w-info { min-height: 1.6em; margin: 6px 0 0; font-size: 15px; color: var(--muted); }
+.w-info b { color: var(--text); font-family: var(--greek); font-size: 18px; }
+.w-info b:lang(hbo), .w-lemma:lang(hbo) { font-family: var(--hebrew); font-size: 20px; }
+.w-lemma { font-family: var(--greek); }
+.w-info b, .w-lemma { unicode-bidi: isolate; }
+.example .al { border-radius: 3px; transition: background-color var(--fast) ease; }
+.example .al.on { background: var(--mark); box-shadow: 0 0 0 2px var(--mark); }
+.example .set { border-bottom: 1px dashed var(--gold); }
+.ex-switch { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin: 14px 0 0; font-size: 13.5px; font-weight: 600; color: var(--muted); }
 .example mark { background: var(--mark); color: inherit; border-radius: 3px; padding: 0 2px; }
 .lvl { display: grid; grid-template-columns: 90px 1fr; gap: 12px; padding: 10px 0; border-top: 1px solid var(--line); }
 .lvl:first-of-type { border-top: 0; }

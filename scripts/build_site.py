@@ -1805,8 +1805,14 @@ def plain(text):
     return markup.flat(markup.VERSE.sub("", markup.render(text))).strip()
 
 
-# The worked example on the home page: a record and one of its decisions.
-EXAMPLE = ("JHN", 1, "JHN.1.1.s1", "m4")
+# The worked examples on the home page, one Greek and one Hebrew: a record
+# and one of its decisions each.
+EXAMPLES = (("JHN", 1, "JHN.1.1.s1", "m4"), ("PSA", 23, "PSA.23.1.s1", "m2"))
+EXAMPLE = EXAMPLES[0]
+# The reader settings an example can switch, with the reader's labels for
+# the setting and its options.
+EXAMPLE_SETTINGS = {"divine_name": ("reader.name", ("reader.lord", "reader.yahweh")),
+                    "christos": ("reader.title", ("reader.christ", "reader.messiah"))}
 
 
 def sec_head(hid, ico, title, href=None, more=None):
@@ -1817,51 +1823,129 @@ def sec_head(hid, ico, title, href=None, more=None):
             f'{title}</h2>{link}</div>')
 
 
-def example_html(lang="en"):
-    """John 1:1 at every level, with one decision and its Greek words marked.
-    Everything comes from content/ and data/grc/, so it stays in step with
-    the translation. Decision notes are in English for now."""
-    book, chapter, record_id, decision_id = EXAMPLE
+def example_piece(raw):
+    """Part of a rendering as the example shows it: verse markers dropped,
+    line breaks read as spaces, and each reader setting a span holding its
+    default, with its options for web/site.js to switch."""
+    raw = markup.LINE.sub(" ", markup.VERSE.sub("", raw))
+    out, at = [], 0
+    for m in markup.SPAN.finditer(raw):
+        options = m[2].split("|")
+        out.append(html.escape(raw[at:m.start()]))
+        out.append(f'<span class="set" data-set="{m[1]}" data-o="{html.escape(json.dumps(options, ensure_ascii=False))}">'
+                   f'{html.escape(options[0])}</span>')
+        at = m.end()
+    out.append(html.escape(raw[at:]))
+    return "".join(out)
+
+
+def example_rendering(text, alignments=()):
+    """A rendering for the example, with each aligned span marked with the
+    source words it renders, so tapping a word lights up its English."""
+    ranges = markup.alignment_ranges(text, [a["target_span"] for a in alignments])
+    out, at = [], 0
+    for (start, end), a in zip(ranges, alignments):
+        out.append(example_piece(text[at:start]))
+        out.append(f'<span class="al" data-t="{" ".join(a["tokens"])}">{example_piece(text[start:end])}</span>')
+        at = end
+    out.append(example_piece(text[at:]))
+    return "".join(out).strip()
+
+
+def example_panel(example, lang, n):
+    """One worked example: the source sentence, its words to tap, the
+    word-for-word gloss, the three levels and one decision. Everything comes
+    from content/ and data/, so it stays in step with the translation.
+    Decision notes are in English for now."""
+    book, chapter, record_id, decision_id = example
     records, words = load_chapter(book, chapter)
     record = next(r for r in records if r["id"] == record_id)
     decision = next(d for d in record["decisions"] if d["id"] == decision_id)
+    source = record["source"]["language"]
     marked = set(decision["tokens"])
-    greek = " ".join(
-        (f'<mark>{html.escape(w["text"])}</mark>' if w["id"] in marked else html.escape(w["text"]))
-        + html.escape(w["after"].rstrip())
-        for vid in record["refs"] for w in words[vid] if w["id"] in record["source"]["tokens"])
+
+    def word(w):
+        attrs = (f'data-t="{w["id"]}" data-g="{html.escape(w.get("english") or w.get("gloss") or "")}" '
+                 f'data-l="{html.escape(w["lemma"])}"')
+        text = html.escape(w["text"])
+        if w["id"] in marked:
+            text = f"<mark>{text}</mark>"
+        return f'<button type="button" class="w" {attrs}>{text}</button>'
+
+    hebrew = source in ("hbo", "arc")
+    tokens = [w for vid in record["refs"] for w in words[vid] if w["id"] in record["source"]["tokens"]]
+    original = ""
+    for i, w in enumerate(tokens):
+        after = w["after"].rstrip()
+        if i + 1 < len(tokens):
+            # The morphemes of one Hebrew word ("and" + "he called") share
+            # its position and are not spaced; a maqaf joins two words.
+            if not (hebrew and (tokens[i + 1]["position"] == w["position"] or after.endswith("\u05be"))):
+                after += " "
+        original += word(w) + html.escape(after)
     shown = text_lang(record, lang)
+    aligned = record.get("alignments", [])
     levels = "".join(
         f'<div class="lvl"><span class="lvl-tag">{name}</span>'
-        f'<p{lang_attr(shown, lang)}>{html.escape(plain(record["renderings"][shown][code]))}</p></div>'
+        f'<p{lang_attr(shown, lang)}>'
+        f'{example_rendering(record["renderings"][shown][code], [a for a in aligned if a["language"] == shown and a["level"] == code])}'
+        f'</p></div>'
         for code, name in catalog(lang)["levels"].items())
-    ref = refs.parse(record["refs"][0])
+    present = [k for k in EXAMPLE_SETTINGS if any(f"{{{{{k}:" in v for v in record["renderings"][shown].values())]
+    switches = ""
+    for key in present:
+        label, options = EXAMPLE_SETTINGS[key]
+        buttons = "".join(f'<button type="button" data-v="{i}" aria-pressed="{"true" if i == 0 else "false"}">{t(lang, o)}</button>'
+                          for i, o in enumerate(options))
+        switches += (f'<div class="ex-switch" data-switch="{key}"><span>{t(lang, label)}</span>'
+                     f'<span class="seg" role="group" aria-label="{t(lang, label)}">{buttons}</span></div>')
     also = "; ".join(html.escape(a) for a in decision["alternatives"])
     open_url = url(lang, chapter_url(book, chapter))
     passage = f"{chapter_book(book, lang)} {chapter}"
     en = lang_attr("en", lang)
     note = f'<p class="alts">{t(lang, "notes_in_english")}</p>' if lang != "en" else ""
-    return f"""
-<section class="example" aria-labelledby="example-h">
-{sec_head("example-h", "book", t(lang, "home.example", ref=f"{chapter_book(book, lang)} {ref.chapter}:{ref.verse}"), open_url, t(lang, "home.example_open", passage=passage))}
+    return f"""<div class="ex-panel" id="ex-{n}" role="tabpanel" aria-labelledby="ex-tab-{n}">
 <div class="example-grid">
 <div>
-<p class="label">{t(lang, "home.example_greek")}</p>
-<p class="greek" lang="grc">{greek}</p>
+<p class="label">{t(lang, "home.example_hebrew" if hebrew else "home.example_greek")}</p>
+<p class="{"hebrew" if hebrew else "greek"}" lang="{source}"{' dir="rtl"' if hebrew else ""}>{original}</p>
+<p class="w-info" aria-live="polite"><span class="w-hint">{t(lang, "home.example_tap")}</span></p>
 <p class="label">{t(lang, "home.example_gloss")}</p>
 <p class="gloss"{en}>{html.escape(plain(record["literal_gloss"]))}</p>
 <p class="label">{t(lang, "home.example_levels")}</p>
 {levels}
+{switches}
 </div>
 <div class="card decision">
 <p class="label">{t(lang, "home.example_decision")}</p>
 <p class="choice"{en}>&ldquo;{html.escape(plain(decision["choice"]))}&rdquo;</p>
-<p class="alts">{t(lang, "home.example_also", alts=f"<span{en}>{also}</span>")}</p>
+{f'<p class="alts">{t(lang, "home.example_also", alts=f"<span{en}>{also}</span>")}</p>' if also else ""}
 <p class="why"{en}>{html.escape(decision["reason"])}</p>
 {note}
 </div>
 </div>
 <p class="example-foot">{t(lang, "home.example_foot")} <a href="{open_url}">{t(lang, "home.example_foot_link", passage=passage)}</a></p>
+</div>"""
+
+
+def example_html(lang="en"):
+    """The worked examples, a tab each: John 1:1 from the Greek and Psalm
+    23:1 from the Hebrew. Without JavaScript both are shown, one after the
+    other (web/site.js makes the tabs)."""
+    tabs, panels = [], []
+    for n, example in enumerate(EXAMPLES):
+        book, chapter, record_id, _ = example
+        ref = refs.parse(record_id.rsplit(".", 1)[0])
+        script = "home.tab_hebrew" if book in refs.OT_CODES else "home.tab_greek"
+        tabs.append(f'<button type="button" role="tab" id="ex-tab-{n}" aria-controls="ex-{n}" '
+                    f'aria-selected="{"true" if n == 0 else "false"}"{"" if n == 0 else " tabindex=-1"}>'
+                    f'<b>{chapter_book(book, lang)} {ref.chapter}:{ref.verse}</b><span>{t(lang, script)}</span></button>')
+        panels.append(example_panel(example, lang, n))
+    return f"""
+<section class="example" aria-labelledby="example-h" data-example>
+{sec_head("example-h", "book", t(lang, "home.example_heading"))}
+<div class="ex-tabs" role="tablist" aria-labelledby="example-h" hidden>{"".join(tabs)}</div>
+{"".join(panels)}
 </section>
 """
 

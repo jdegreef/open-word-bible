@@ -678,3 +678,87 @@
   ref.href = v.u;
   box.querySelector(".votd-why").href = v.u;
 })();
+
+// The home page's worked examples (example_html in scripts/build_site.py):
+// a tab each; tapping a source word shows its lemma and sense and lights
+// up the English it became (where the sentence is aligned); a setting
+// switch shows the wording's options. The switch starts at the reader's
+// own setting and changes only this example.
+(function () {
+  "use strict";
+  var box = document.querySelector("[data-example]");
+  if (!box) return;
+  var tabs = Array.prototype.slice.call(box.querySelectorAll("[role=tab]"));
+  var panels = Array.prototype.slice.call(box.querySelectorAll("[role=tabpanel]"));
+  function select(i, focus) {
+    tabs.forEach(function (tab, n) {
+      tab.setAttribute("aria-selected", n === i ? "true" : "false");
+      tab.tabIndex = n === i ? 0 : -1;
+      panels[n].hidden = n !== i;
+    });
+    if (focus) tabs[i].focus();
+  }
+  if (tabs.length) {
+    box.querySelector("[role=tablist]").hidden = false;
+    tabs.forEach(function (tab, n) {
+      tab.addEventListener("click", function () { select(n); });
+      tab.addEventListener("keydown", function (e) {
+        var d = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
+        if (d) { e.preventDefault(); select((n + d + tabs.length) % tabs.length, true); }
+      });
+    });
+    select(0);
+  }
+
+  panels.forEach(function (panel) {
+    var info = panel.querySelector(".w-info");
+    var hint = info.innerHTML;
+    var current = null;
+    panel.querySelectorAll("button.w").forEach(function (w) {
+      w.setAttribute("aria-pressed", "false");
+      w.addEventListener("click", function () {
+        var on = current !== w;
+        if (current) current.setAttribute("aria-pressed", "false");
+        current = on ? w : null;
+        w.setAttribute("aria-pressed", on ? "true" : "false");
+        var id = w.getAttribute("data-t");
+        panel.querySelectorAll(".al").forEach(function (al) {
+          al.classList.toggle("on", on && (" " + al.getAttribute("data-t") + " ").indexOf(" " + id + " ") >= 0);
+        });
+        if (!on) { info.innerHTML = hint; return; }
+        info.textContent = "";
+        var word = document.createElement("b");
+        word.textContent = w.textContent;
+        word.lang = panel.querySelector("[dir=rtl], .greek").getAttribute("lang");
+        var lemma = document.createElement("span");
+        lemma.className = "w-lemma";
+        lemma.lang = word.lang;
+        lemma.textContent = w.getAttribute("data-l");
+        var sense = document.createElement("span");
+        sense.lang = "en";
+        sense.textContent = "“" + w.getAttribute("data-g").replace(/\./g, " ") + "”";
+        info.appendChild(word);
+        info.appendChild(document.createTextNode(" · "));
+        info.appendChild(lemma);
+        info.appendChild(document.createTextNode(" · "));
+        info.appendChild(sense);
+      });
+    });
+
+    var saved = {};
+    try { saved = JSON.parse(localStorage.getItem("owb.settings") || "{}") || {}; } catch (e) { /* defaults */ }
+    panel.querySelectorAll("[data-switch]").forEach(function (sw) {
+      var key = sw.getAttribute("data-switch");
+      var buttons = Array.prototype.slice.call(sw.querySelectorAll("button"));
+      function set(v) {
+        buttons.forEach(function (b) { b.setAttribute("aria-pressed", +b.getAttribute("data-v") === v ? "true" : "false"); });
+        panel.querySelectorAll('.set[data-set="' + key + '"]').forEach(function (span) {
+          var options = JSON.parse(span.getAttribute("data-o"));
+          span.textContent = options[v] || options[0];
+        });
+      }
+      buttons.forEach(function (b) { b.addEventListener("click", function () { set(+b.getAttribute("data-v")); }); });
+      if (saved[key] === 1) set(1);
+    });
+  });
+})();

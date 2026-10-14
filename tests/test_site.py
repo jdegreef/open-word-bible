@@ -237,18 +237,28 @@ class SiteTest(unittest.TestCase):
 
     def test_home_page_example_comes_from_the_content(self):
         home = (self.out / "index.html").read_text(encoding="utf-8")
-        book, chapter, record_id, decision_id = build_site.EXAMPLE
-        records, words = build_site.load_chapter(book, chapter)
-        record = next(r for r in records if r["id"] == record_id)
-        decision = next(d for d in record["decisions"] if d["id"] == decision_id)
-        for level in "LBR":
-            self.assertIn(build_site.plain(record["renderings"]["en"][level]), home)
-        marked = [w["text"] for v in record["refs"] for w in words[v] if w["id"] in decision["tokens"]]
-        self.assertTrue(marked)
-        for word in marked:
-            self.assertIn(f"<mark>{word}</mark>", home)
+        example = home[home.index('class="example"'):home.index('class="points-wrap"')]
+        # The text as read, without the tags that mark aligned words and settings.
+        text = re.sub(r"<[^>]+>", "", example)
+        self.assertEqual(len(build_site.EXAMPLES), 2)
+        for book, chapter, record_id, decision_id in build_site.EXAMPLES:
+            records, words = build_site.load_chapter(book, chapter)
+            record = next(r for r in records if r["id"] == record_id)
+            decision = next(d for d in record["decisions"] if d["id"] == decision_id)
+            for level in "LBR":
+                self.assertIn(html.escape(build_site.plain(record["renderings"]["en"][level]), quote=False), text)
+            marked = [w["text"] for v in record["refs"] for w in words[v] if w["id"] in decision["tokens"]]
+            self.assertTrue(marked)
+            for word in marked:
+                self.assertIn(f"<mark>{word}</mark>", example)
+            for tid in record["source"]["tokens"]:
+                if any(w["id"] == tid for v in record["refs"] for w in words[v]):
+                    self.assertIn(f'data-t="{tid}"', example)
+            self.assertIn(f'href="/{book.lower()}/{chapter}/"', example)
+        # Aligned words light up their English; the divine name can switch.
+        self.assertIn('class="al" data-t="n43001001002"', example)
+        self.assertIn('data-switch="divine_name"', example)
         self.assertIn(f"<b>{len(build_site.all_records())}</b>", home)
-        self.assertIn('href="/jhn/1/"', home)
 
     def test_fonts_are_self_hosted_with_their_licences(self):
         css = (self.out / "style.css").read_text(encoding="utf-8")
