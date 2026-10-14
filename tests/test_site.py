@@ -316,6 +316,14 @@ class SiteTest(unittest.TestCase):
         self.assertIn(f'href="{build_site.API_URL}/api/passages/JHN/1/"', data)
         self.assertIn("schema/sentence-record.schema.json", data)
 
+    def test_home_page_shows_key_terms(self):
+        home = (self.out / "index.html").read_text(encoding="utf-8")
+        terms = home[home.index('class="home-terms"'):]
+        terms = terms[:terms.index("</section>")]
+        self.assertIn('href="/terms/"', terms)
+        self.assertEqual(terms.count('class="term-row"'), 6)
+        self.assertIn('href="/terms/the-divine-name-yhwh/"', terms)
+
     def test_verses_of_the_day_are_drafted_whole_sentences(self):
         self.assertEqual(len(build_site.VERSES_OF_THE_DAY), len(set(build_site.VERSES_OF_THE_DAY)))
         for lang in build_site.LANGUAGES:

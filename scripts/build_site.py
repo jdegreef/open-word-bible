@@ -2118,6 +2118,7 @@ def home_page(lang="en"):
 </ul>
 </section>
 {progress_html(lang)}
+{home_terms(lang)}
 {latest}{data_html(lang)}<section class="involve" id="help" aria-labelledby="involve-h">
 <div class="involve-text">
 <h2 id="involve-h">{t(lang, "home.involve")}</h2>
@@ -2302,16 +2303,38 @@ def term_lemma(term, cls="term-lemma"):
     return f'<span class="{cls}" lang="{term_key(term)[0]}">{html.escape(term["lemma"])}</span>'
 
 
+def term_row(term, lang="en"):
+    """A key term in a list: its lemma, sense, settled English and uses."""
+    english = ", ".join(term_english(term))
+    return (f'<li><a class="term-row" href="{url(lang, term_path(term))}">'
+            f'{term_lemma(term)}'
+            f'<span class="term-sense"{lang_attr("en", lang)}>{html.escape(term["sense"])}</span>'
+            f'<span class="term-english"{lang_attr("en", lang)}>{html.escape(english)}</span>'
+            f'<span class="term-count">{tn(lang, "terms.count", term_count(term))}</span></a></li>')
+
+
+def home_terms(lang="en"):
+    """The home page's key terms: six of the most used, up to two of them
+    Hebrew, with a link to them all."""
+    terms = list(validate.KEY_TERMS.values())
+
+    def top(code):
+        return sorted((x for x in terms if term_key(x)[0] == code), key=term_count, reverse=True)
+    hebrew = top("hbo")[:2]
+    shown = top("grc")[:6 - len(hebrew)] + hebrew
+    return f"""<section class="home-terms" aria-labelledby="terms-h">
+{sec_head("terms-h", "key", t(lang, "terms.heading"), url(lang, "/terms/"), t(lang, "nav.section_all", n=len(terms)))}
+<p class="terms-text">{t(lang, "home.terms_text")}</p>
+<ul class="term-list">{"".join(term_row(term, lang) for term in shown)}</ul>
+</section>
+"""
+
+
 def terms_page(lang="en"):
     """Every key term, Greek and then Hebrew, with its settled English and
     how often the drafted text uses it."""
     def row(term):
-        english = ", ".join(term_english(term))
-        return (f'<li><a class="term-row" href="{url(lang, term_path(term))}">'
-                f'{term_lemma(term)}'
-                f'<span class="term-sense"{lang_attr("en", lang)}>{html.escape(term["sense"])}</span>'
-                f'<span class="term-english"{lang_attr("en", lang)}>{html.escape(english)}</span>'
-                f'<span class="term-count">{tn(lang, "terms.count", term_count(term))}</span></a></li>')
+        return term_row(term, lang)
 
     groups = []
     for code in ("grc", "hbo"):
