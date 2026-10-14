@@ -4,6 +4,7 @@ summary: The only complete book of the Bible among the Dead Sea Scrolls is a cop
 date: 2026-10-11
 order: 27
 section: history
+part: ot
 ---
 Of all the Dead Sea Scrolls, one has become a symbol of the whole discovery: the **Great Isaiah Scroll**, known to scholars as **1QIsa-a** (Cave 1, Qumran, Isaiah, first copy). It was among the first seven scrolls found in 1947, and it is the only biblical book among the scrolls that survives complete, all sixty-six chapters, from the first verse to the last.
 
@@ -23,7 +24,7 @@ When scholars first studied the scroll, the result surprised many of them. Milla
 
 That has held up. The differences between 1QIsa-a and the Masoretic text fall into a few groups.
 
-**Spelling.** The most common difference by far. The scribe of 1QIsa-a used a "full" spelling, adding consonants such as *waw* and *yod* to indicate vowels, much more often than the Masoretic text does. This is like the difference between British "colour" and American "color": the word is the same, the spelling is not. Thousands of the differences are of this kind.
+**Spelling.** The most common difference by far. The scribe of 1QIsa-a used a "full" spelling, adding consonants such as *waw* and *yod* to indicate vowels, much more often than the Masoretic text does. This is like the difference between British "colour" and American "color": the word is the same, the spelling is not.
 
 **Grammar and pronunciation.** Some forms reflect the Hebrew of the scribe's own day: slightly different pronoun endings or verb forms, and occasional Aramaic influence.
 
@@ -53,7 +54,7 @@ That is still a powerful result. The Masoretic manuscripts on which our Old Test
 
 ## Isaiah and Open Word Bible
 
-When Open Word Bible translates Isaiah, its starting point is the Westminster Leningrad Codex, a Masoretic text. In places where the Great Isaiah Scroll or other ancient witnesses offer a reading that many scholars prefer, as in Isaiah 53:11, the choice is not hidden. The reasoning record for the sentence names the witnesses, shows what each reads, and explains the decision, so a reader can disagree with it if they wish. That is how a translation should handle what the Dead Sea Scrolls have taught us: with gratitude, with care, and in the open.
+When Open Word Bible translates Isaiah, its starting point is the Westminster Leningrad Codex, a Masoretic text. In all three verses above, the current draft keeps the Masoretic reading: "he will see" in [Isaiah 53:11](/isa/53/), the lion in 21:8, and "someone said" in 40:6. But the choice is not hidden. The reasoning record for each sentence names the Great Isaiah Scroll, says what it reads, and explains the decision, and a footnote gives the reader the scroll's reading. In 53:11 the decision is marked uncertain, and the record notes that the meaning is close either way. That is how a translation should handle what the Dead Sea Scrolls have taught us: with gratitude, with care, and in the open.
 
 ## Sources
 

@@ -5,6 +5,7 @@ date: 2026-10-11
 order: 24
 nav_title: The Masoretes
 section: history
+part: ot
 ---
 Open a Hebrew Bible and you will see the consonants, the main letters, surrounded by small dots and dashes above and below them. Those marks are the vowels and the accents. Around the edges of the page in a scholarly edition you will see tiny notes in abbreviated Aramaic. All of this was added by a group of scholars known as the **Masoretes**. Almost every Old Testament translation in the world, including Open Word Bible's, is made from the text they guarded.
 
@@ -14,6 +15,8 @@ The name comes from the Hebrew word *masorah*, meaning "tradition," the traditio
 
 The Tiberian school became the most influential. Its best-known families were the **Ben Asher** and **Ben Naphtali** families, who over several generations refined the system of vowels and accents. The last and most famous member of the Ben Asher family, **Aaron ben Moses ben Asher**, worked in the first half of the tenth century. The Aleppo Codex, one of the most important manuscripts of the Hebrew Bible, was pointed by him (see [The Aleppo and Leningrad codices](/articles/aleppo-and-leningrad-codices/)).
 
+The two schools disagreed in remarkably small things. Around the eleventh century a scholar named Mishael ben Uzziel listed the differences between Ben Asher and Ben Naphtali for the whole Bible. There are about 860 of them, and roughly nine in ten concern a single minor mark that shows a secondary stress. Almost none of them touches the consonants.
+
 The Masoretes did not see themselves as editors. They did not change the consonantal text they had received. Their task was to protect it, and to fix in writing how it was to be pronounced and read.
 
 ## The problem they solved: a text without vowels
@@ -22,7 +25,11 @@ Hebrew, like Aramaic and Arabic, was originally written with consonants only. A 
 
 Some words can be read in more than one way when the vowels are missing. A famous example is in Genesis 47:31, where the same consonants can mean "bed" or "staff." The Masoretic vowels read "bed"; the Greek Septuagint, translated centuries earlier, read "staff," and that is the reading quoted in Hebrews 11:21. Both readings use exactly the same letters; only the vowels differ.
 
+The note in Open Word Bible's record for [Hebrews 11:21](/heb/11/) explains the bed-and-staff difference: the letters are the same, the vowels came later, and the Greek translators read "staff".
+
 The Masoretes' solution was to add vowel signs without touching the consonants. They invented a system of dots and short strokes placed above, below and inside the letters. Because these marks are small and sit around the letters, the sacred consonantal text remained untouched; anyone could still see exactly what the ancient scroll contained.
+
+There was more than one such system. Masoretes in Babylonia wrote their vowel signs above the letters, and an early system from the land of Israel did the same. The Tiberian system, with most of its signs below the letters, was the most detailed, and it displaced the others. It is the system of printed Hebrew Bibles today. The Babylonian system survived longest among the Jews of Yemen.
 
 ## Accents: punctuation and music
 
@@ -32,7 +39,11 @@ The Masoretes also added a full system of **accents** (in Hebrew, *te'amim*). Th
 - They work as punctuation, dividing every verse into halves, quarters and smaller units. The strongest accent at the end of each verse marks the verse ending; another strong accent marks its middle.
 - They are musical notation for chanting the text in the synagogue.
 
-Because the accents show how words group together, they are an ancient witness to how the text was understood. A well-known example is Isaiah 40:3. The accents connect "in the wilderness" with "prepare the way" ("A voice calls: in the wilderness prepare the way of the LORD"), while the Greek translation, quoted in the Gospels, connects it with the voice ("A voice of one calling in the wilderness"). Translators regularly consult the accents in decisions like this.
+Because the accents show how words group together, they are an ancient witness to how the text was understood. A well-known example is Isaiah 40:3. The accents connect "in the wilderness" with "prepare the way" ("A voice calls: in the wilderness prepare the way of the LORD"), while the Greek translation, quoted in the Gospels, connects it with the voice ("A voice of one calling in the wilderness"). Translators regularly consult the accents in decisions like this. Open Word Bible's record for this verse follows them, says why, and keeps the other grouping as an alternative. At the Literal level it reads:
+
+> {{OWB:ISA.40.3.s1:L}}
+
+The reasoning points out that "in the wilderness" matches "in the desert plain" in the next line: the road itself is to be built in the desert. The accents and the poetry agree.
 
 ## The Masorah: notes in the margins
 
@@ -69,6 +80,7 @@ Open Word Bible's Old Testament is translated from the Westminster Leningrad Cod
 - Kelley, Page H., Daniel S. Mynatt, and Timothy G. Crawford. *The Masorah of Biblia Hebraica Stuttgartensia: Introduction and Annotated Glossary*. Grand Rapids: Eerdmans, 1998.
 - Khan, Geoffrey. *The Tiberian Pronunciation Tradition of Biblical Hebrew*. 2 vols. Cambridge: Open Book Publishers, 2020. Open access.
 - Khan, Geoffrey. *A Short Introduction to the Tiberian Masoretic Bible and Its Reading Tradition*. 2nd ed. Piscataway, NJ: Gorgias, 2013.
+- Lipschütz, Lazar. *Kitāb al-Khilaf: The Book of the Ḥillufim. Mishael ben Uzziel's Treatise on the Differences between Ben Asher and Ben Naphtali*. Jerusalem: Magnes, 1965.
 - Tov, Emanuel. *Textual Criticism of the Hebrew Bible*. 3rd ed. Minneapolis: Fortress, 2012.
 - Würthwein, Ernst, and Alexander Achilles Fischer. *The Text of the Old Testament: An Introduction to the Biblia Hebraica*. 3rd ed. Grand Rapids: Eerdmans, 2014.
 - Yeivin, Israel. *Introduction to the Tiberian Masorah*. Translated and edited by E. J. Revell. Missoula, MT: Scholars Press, 1980.

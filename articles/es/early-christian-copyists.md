@@ -4,6 +4,7 @@ summary: ¿Quién copió el Nuevo Testamento en sus primeros siglos, y con cuán
 date: 2026-10-11
 order: 33
 section: history
+part: nt
 ---
 Cada manuscrito conservado del Nuevo Testamento lo copió alguien. Durante los tres primeros siglos de la iglesia, no eran monjes en el escritorio de un monasterio, y desde luego no eran impresores. Eran cristianos, y a veces profesionales pagados, que copiaban libros para sus propias iglesias, para amigos o para sí mismos, en un mundo donde el cristianismo era un movimiento pequeño y a veces perseguido. ¿Qué sabemos de ellos, y qué tan bien hacían su trabajo?
 

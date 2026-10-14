@@ -4,59 +4,45 @@ summary: Long before printing, every copy of scripture was made by hand by a tra
 date: 2026-10-11
 order: 22
 section: history
+part: ot
 ---
 Every Bible printed today depends on people most readers never think about: the scribes. For well over two thousand years, the only way to have a copy of a biblical book was for someone to write it out by hand, letter by letter, from another copy. The accuracy of the Bible we read depends, in large part, on how good those people were at their work.
 
-This article looks at the scribes of ancient Israel and early Judaism: who they were, how they were trained, what tools they used, and how they understood their task.
+## A profession
 
-## A profession, not a hobby
+In Egypt and Mesopotamia, scribes went to school for years and served kings, temples and merchants. Israel was smaller and its alphabet simpler, but the pattern was similar. The Hebrew word for a scribe is *sofer*, from a root connected with counting and recording, and the Bible names several royal scribes (2 Samuel 8:17). Under King Josiah, the scribe **Shaphan** is the one who reads the newly found "Book of the Law" to the king (2 Kings 22:8–10). Shaphan's family appears again and again in the book of Jeremiah: his son Ahikam protects Jeremiah, and another son, Gemariah, has a room in the temple where Baruch reads Jeremiah's scroll (Jeremiah 26:24; 36:10). Scribes stood close to the center of power.
 
-In the ancient Near East, a scribe was a trained professional. In Egypt and Mesopotamia, scribes went to school for years, learned to copy standard texts, and served kings, temples and merchants. Israel was smaller, and its alphabet was simpler, but the pattern was similar.
-
-The Hebrew word usually translated "scribe" is *sofer*, from a root connected with counting and recording. The Bible names several royal scribes. David's officials include a scribe (2 Samuel 8:17; 20:25). Under King Josiah, the scribe **Shaphan** is the one who reads the newly found "Book of the Law" to the king (2 Kings 22:8–10). Shaphan's family appears again and again in the book of Jeremiah: his son Ahikam protects Jeremiah, and another son, Gemariah, has a room in the temple where Baruch reads Jeremiah's scroll (Jeremiah 26:24; 36:10). Scribes were important people, close to the centre of power.
-
-Archaeology has found their traces. Clay seal impressions (bullae) from the late monarchy carry names that match people in the Bible, including one reading "belonging to Gemaryahu son of Shaphan," found in the City of David excavations in Jerusalem. Another, sold on the antiquities market, reads "belonging to Berekyahu son of Neriyahu the scribe" — that is, Baruch son of Neriah; since it was not found in a controlled dig, some scholars doubt it is genuine. Either way, the seals show how scribes signed and sealed documents: they are the physical side of the work described in Jeremiah 32:9–14, where a deed of purchase is written, sealed, witnessed and stored in a clay jar "that they may last many days."
+Archaeology has found their traces. Clay seal impressions (bullae) from the late monarchy carry names that match people in the Bible, including one reading "belonging to Gemaryahu son of Shaphan," found in the City of David excavations in Jerusalem. Another, bought on the antiquities market, reads "belonging to Berekyahu son of Neriyahu the scribe", that is, Baruch son of Neriah; since it was not found in a controlled dig, some scholars doubt it is genuine. Such seals are the physical side of the work described in Jeremiah 32:9–14, where a deed of purchase is written, sealed, witnessed and stored in a clay jar "that they may last many days."
 
 ## Ezra: the scribe as teacher
 
-After the exile, the meaning of "scribe" grew. **Ezra** is introduced as "a skilled scribe in the law of Moses" (Ezra 7:6), who "had set his heart to seek Yahweh's law, and to do it, and to teach statutes and ordinances in Israel" (Ezra 7:10). In Nehemiah 8 he reads the Law aloud to the people from a wooden platform, while the Levites help the people understand it.
+After the exile, the word grew. **Ezra** is introduced as "a skilled scribe in the law of Moses" (Ezra 7:6), who "had set his heart to seek Yahweh's law, and to do it, and to teach statutes and ordinances in Israel" (Ezra 7:10). In Nehemiah 8 he reads the Law aloud to the people from a wooden platform, while the Levites help the people understand it.
 
-Here the scribe is not only a copyist but a scholar and teacher of scripture. Karel van der Toorn, in *Scribal Culture and the Making of the Hebrew Bible*, argues that this is the key to understanding how the Hebrew Bible took shape: the same circles that copied the texts also studied, arranged and interpreted them. By the time of Jesus, "the scribes" (*grammateis* in the Greek of the Gospels) were a recognised group of experts in the Law, often mentioned together with the Pharisees.
+Here the scribe is a scholar and teacher of scripture as well as a copyist. Karel van der Toorn argues that this is the key to how the Hebrew Bible took shape: the same circles that copied the texts also studied, arranged and interpreted them. By the time of Jesus, "the scribes" (*grammateis* in the Greek of the Gospels) were a recognized group of experts in the Law, often mentioned together with the Pharisees.
 
-Ben Sira, a Jewish teacher in Jerusalem around 180 BCE, wrote a famous description of the scribe's calling (Sirach 38:24–39:11). Unlike the farmer or the potter, he says, the scribe has leisure to study; he "seeks out the wisdom of all the ancients and is concerned with prophecies." For Ben Sira, being a scribe was a vocation of devotion as well as skill.
+Ben Sira, a Jewish teacher in Jerusalem around 180 BCE, described the scribe's calling (Sirach 38:24–39:11). Unlike the farmer or the potter, he says, the scribe has leisure to study; he "seeks out the wisdom of all the ancients and is concerned with prophecies."
 
 ## Tools of the trade
 
-What did a scribe actually use?
-
-- **Writing surface.** Important books were written on scrolls. Most of the Dead Sea Scrolls are on leather or parchment (animal skin prepared for writing), and some on papyrus, made from strips of the papyrus reed pressed together. A scroll was made by sewing sheets together end to end. The Great Isaiah Scroll from Qumran is seventeen sheets, more than seven metres long.
-- **Ink.** Scribes used carbon ink, a mixture of soot and gum, which is very stable. Some Dead Sea Scrolls also show metal-based inks.
-- **Pen.** A reed cut to a point, kept sharp with a knife. Jeremiah 36:23 mentions the "scribe's knife" which King Jehoiakim used to cut the scroll.
-- **Ruling.** Before writing, the scribe scored faint guidelines into the leather with a sharp point, and hung the letters from the lines. These rulings are visible on many Dead Sea Scrolls. Later Jewish law made ruling compulsory for a Torah scroll.
-- **Layout.** Text was written in columns. Spaces marked the ends of sections, a system that survives in the "open" and "closed" paragraphs of later Hebrew manuscripts.
-
-Ezekiel 9:2 describes a man "with a writer's inkhorn by his side," the scribe's kit of reed pens and ink.
+- **Writing surface.** Most of the Dead Sea Scrolls are on leather or parchment, some on papyrus. The Great Isaiah Scroll from Qumran is seventeen sheets sewn end to end, more than seven meters long.
+- **Ink and pen.** Carbon ink, a stable mixture of soot and gum, applied with a reed cut to a point and kept sharp with a knife. Jeremiah 36:23 mentions the "scribe's knife" that King Jehoiakim used to cut the scroll, and Ezekiel 9:2 a man "with a writer's inkhorn by his side".
+- **Ruling and layout.** Before writing, the scribe scored faint guidelines into the leather and hung the letters from them. Text ran in columns, and spaces marked the ends of sections, a system that survives in the "open" and "closed" paragraphs of later Hebrew manuscripts.
 
 ## What the Dead Sea Scrolls show about scribal habits
 
-The Dead Sea Scrolls, copied between about the third century BCE and the first century CE, give us hundreds of real examples of scribal work. Emanuel Tov studied them in *Scribal Practices and Approaches Reflected in the Texts Found in the Judean Desert*, and his findings are worth summarising.
+The Dead Sea Scrolls, copied between about the third century BCE and the first century CE, give us hundreds of real examples of scribal work, which Emanuel Tov has studied in detail. Scribes corrected their own mistakes, writing missing letters above the line and marking unwanted ones with dots. Many scrolls were checked after copying, sometimes by a second hand.
 
-- Scribes **corrected their own mistakes**. They wrote missing letters or words above the line, marked unwanted letters with dots above or below them, crossed words out, and sometimes erased.
-- Many scrolls were **checked after copying**, sometimes by a second hand that added corrections.
-- Some scribes treated the **divine name** with special reverence, writing it in old paleo-Hebrew letters, or replacing it with four dots in non-biblical texts.
-- Practice **varied**. Some scrolls are carefully written with few corrections; others are rougher. Some scribes used fuller spellings, adding letters to show vowels; others kept a sparer spelling.
-
-That last point matters. The strict rules for copying a Torah scroll that later Jewish law records did not yet exist in their final form in the Second Temple period. What we see at Qumran is a profession with high standards and many shared customs, but also variety. Over the following centuries, the copying of scripture became more and more tightly regulated. That story continues in [Copying with care: the rules for a Torah scroll](/articles/copying-the-torah/).
+Practice also varied. Some scribes added letters to show vowels; others kept a sparer spelling. The strict rules that later Jewish law set for a Torah scroll came afterward; that story continues in [Copying with care: the rules for a Torah scroll](/articles/copying-the-torah/).
 
 ## Copying as a sacred task
 
-Why did scribes take such care? Partly because it was their trade, and a careless scribe would not be trusted. But for biblical books there was a deeper reason. These texts were believed to be the words of God, given through Moses and the prophets. Deuteronomy warns, "You shall not add to the word which I command you, neither shall you take away from it" (Deuteronomy 4:2; compare 12:32). Whether or not that verse was first meant as a rule for copyists, later scribes read it that way.
+Why did scribes take such care? Partly because a careless scribe would not be trusted. But these texts were also believed to be the words of God. Deuteronomy warns, "You shall not add to the word which I command you, neither shall you take away from it" (Deuteronomy 4:2; compare 12:32). Whether or not that verse was first meant as a rule for copyists, later scribes read it that way.
 
-The Jewish historian Josephus, writing near the end of the first century CE, claimed that "although such long ages have now passed, no one has ventured either to add, or to remove, or to alter a syllable" of the Jewish scriptures (*Against Apion* 1.42). That is the claim of an advocate, and the Dead Sea Scrolls show that the reality was more complicated. But it shows the ideal that Jewish scribes held: the text is to be passed on as it was received.
+The Jewish historian Josephus, writing near the end of the first century CE, claimed that "although such long ages have now passed, no one has ventured either to add, or to remove, or to alter a syllable" of the Jewish scriptures (*Against Apion* 1.42). That is an advocate's claim, and the scrolls show a more complicated reality. But it states the scribes' ideal: the text is to be passed on as it was received.
 
 ## What this means for readers today
 
-When we read the Old Testament, we read the work of these scribes. Their care is the main reason the text is as stable as it is; their occasional mistakes, and their occasional changes, are the reason textual critics exist. Both are part of the story. Understanding the scribes helps us trust the text for the right reasons: not because copying was magically perfect, but because a long line of skilled and devoted people did their work well, and because we now have enough of their manuscripts to check it.
+When we read the Old Testament, we read the work of these scribes. Their care is the main reason the text is as stable as it is; their occasional mistakes and changes are the reason textual critics exist. We can trust the text for the right reasons: because a long line of skilled and devoted people did their work well, and because we now have enough of their manuscripts to check it.
 
 ## Sources
 

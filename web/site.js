@@ -262,21 +262,29 @@
 // (#at-12 scrolls to the verse without opening its notes).
 (function () {
   "use strict";
-  var place = null;
-  try { place = JSON.parse(localStorage.getItem("owb.place") || "null"); } catch (e) { /* none */ }
-  if (!place || !place.book || !place.chapter || !place.verse) return;
-  document.querySelectorAll("a[data-resume]").forEach(function (a) {
-    var names = JSON.parse(a.getAttribute("data-books"));
-    var name = names[place.book];
-    if (!name) return;
-    // A verse of the next chapter that a sentence runs into is "8:1".
-    var verse = String(place.verse);
-    var ref = name + " " + (verse.indexOf(":") >= 0 ? verse : place.chapter + ":" + verse);
-    // The chapter's address, as chapter_url in scripts/build_site.py makes it.
-    a.href = a.getAttribute("data-prefix") + "/" + place.book.toLowerCase() + "/" + place.chapter + "/#at-" + verse;
-    a.querySelector("span").textContent = a.getAttribute("data-label").replace("{ref}", ref);
-    a.hidden = false;
-  });
+  function fill() {
+    var place = null;
+    try { place = JSON.parse(localStorage.getItem("owb.place") || "null"); } catch (e) { /* none */ }
+    if (!place || !place.book || !place.chapter || !place.verse) return;
+    // The book names in the page's language, carried once, by the footer's link.
+    var carrier = document.querySelector("a[data-resume][data-books]");
+    if (!carrier) return;
+    var names = JSON.parse(carrier.getAttribute("data-books"));
+    document.querySelectorAll("a[data-resume]").forEach(function (a) {
+      var name = names[place.book];
+      if (!name) return;
+      // A verse of the next chapter that a sentence runs into is "8:1".
+      var verse = String(place.verse);
+      var ref = name + " " + (verse.indexOf(":") >= 0 ? verse : place.chapter + ":" + verse);
+      // The chapter's address, as chapter_url in scripts/build_site.py makes it.
+      a.href = a.getAttribute("data-prefix") + "/" + place.book.toLowerCase() + "/" + place.chapter + "/#at-" + verse;
+      a.querySelector("span").textContent = a.getAttribute("data-label").replace("{ref}", ref);
+      a.hidden = false;
+    });
+  }
+  fill();
+  // A place from the reader's other devices (the sync below).
+  document.addEventListener("owb:synced", fill);
 })();
 
 // Reading offline (web/sw.js). The worker keeps the pages read lately; the
@@ -418,8 +426,9 @@
   }
   function remove(id) {
     var all = load();
-    delete all[id];
+    all[id] = { at: Date.now() };
     try { localStorage.setItem("owb.marks", JSON.stringify(all)); } catch (e) { /* ignore */ }
+    document.dispatchEvent(new Event("owb:marks"));
     draw();
   }
   function el(tag, cls, text) {
@@ -434,7 +443,8 @@
     var ids = Object.keys(all).filter(function (id) {
       var m = all[id], book = id.split(".")[0];
       if (data.order.indexOf(book) < 0) return false;
-      return filter === "all" || (filter === "bookmarks" ? m.b : m.h);
+      // A cleared mark ({at}) is kept only for syncing.
+      return filter === "all" ? m.b || m.h : filter === "bookmarks" ? m.b : m.h;
     }).sort(function (a, b) {
       var p = a.split("."), q = b.split(".");
       return (data.order.indexOf(p[0]) - data.order.indexOf(q[0])) || (p[1] - q[1]) || (p[2] - q[2]);
@@ -482,5 +492,334 @@
   });
   // Marks made or removed in another tab.
   window.addEventListener("storage", function (e) { if (e.key === "owb.marks") draw(); });
+  document.addEventListener("owb:synced", draw);
   draw();
+})();
+
+// A link to a folded section (a book's uses on a key-term page, #jhn)
+// opens it, in browsers that do not unfold it themselves.
+(function () {
+  "use strict";
+  function unfold() {
+    var id;
+    try { id = decodeURIComponent(location.hash.slice(1)); } catch (e) { return; }  // a malformed hash (#100%)
+    var target = id && document.getElementById(id);
+    if (target && target.tagName === "DETAILS" && !target.open) {
+      target.open = true;
+      target.scrollIntoView();
+    }
+  }
+  window.addEventListener("hashchange", unfold);
+  unfold();
+})();
+
+// The articles page (articles_page in scripts/build_site.py): the section
+// links filter the list to one section, and a search box narrows it to the
+// articles whose title, summary or passages hold every word typed. A
+// section link from elsewhere (/articles/#history) opens that section.
+(function () {
+  "use strict";
+  var index = document.getElementById("a-index");
+  if (!index) return;
+  var links = Array.prototype.slice.call(index.querySelectorAll("[data-filter]"));
+  var groups = Array.prototype.slice.call(index.querySelectorAll(".a-group"));
+  var input = document.getElementById("a-search");
+  var none = document.getElementById("a-none");
+  var start = document.getElementById("a-start");
+  var filter = "all";
+
+  function fold(s) {
+    return s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+  }
+  var texts = groups.map(function (g) {
+    return Array.prototype.slice.call(g.querySelectorAll("li")).map(function (li) {
+      return { li: li, text: fold(li.textContent) };
+    });
+  });
+
+  function apply() {
+    var words = fold(input.value).split(/\s+/).filter(Boolean);
+    var shown = 0;
+    groups.forEach(function (g, i) {
+      var visible = 0;
+      texts[i].forEach(function (item) {
+        var match = words.every(function (w) { return item.text.indexOf(w) >= 0; });
+        item.li.hidden = !match;
+        if (match) visible++;
+      });
+      g.hidden = !visible || (filter !== "all" && g.getAttribute("data-section") !== filter);
+      if (!g.hidden) shown += visible;
+    });
+    none.hidden = shown > 0;
+    if (start) start.hidden = filter !== "all" || words.length > 0;
+    links.forEach(function (a) {
+      if (a.getAttribute("data-filter") === filter) a.setAttribute("aria-current", "true");
+      else a.removeAttribute("aria-current");
+    });
+  }
+
+  function choose(key) {
+    filter = groups.some(function (g) { return g.getAttribute("data-section") === key; }) ? key : "all";
+    apply();
+  }
+
+  links.forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      e.preventDefault();
+      var key = a.getAttribute("data-filter");
+      choose(key);
+      history.replaceState(null, "", key === "all" ? location.pathname + location.search : "#" + key);
+    });
+  });
+  input.closest("label").hidden = false;
+  input.addEventListener("input", apply);
+  window.addEventListener("hashchange", function () { choose(location.hash.slice(1)); });
+  choose(location.hash.slice(1));
+})();
+
+// Sync for a signed-in reader (backend accounts/reading.py): bookmarks,
+// highlights (owb.marks) and the reading place (owb.place) go to the account
+// and come back merged, the latest change to each verse winning, so they
+// follow the reader between devices. A sync sends this browser's whole copy;
+// it runs on loading a page when anything changed since the last sync (or
+// every two minutes, for the other devices' changes), soon after a mark
+// changes, on signing in, and, as best it can, when the page is hidden.
+// Offline, or signed out, everything stays in this browser as before.
+(function () {
+  "use strict";
+  var meta = document.querySelector('meta[name="owb-api"]');
+  if (!meta || !window.fetch) return;
+  var API = meta.content;
+  var SINCE = "owb.synced";   // sessionStorage: when this tab last synced
+  var SENT = "owb.sent";      // sessionStorage: a hash of what it sent
+  var running = false, again = false, timer = null, stopped = false;
+
+  function read(key, empty) {
+    try { return JSON.parse(localStorage.getItem(key) || "null") || empty; } catch (e) { return empty; }
+  }
+  function write(key, value) {
+    try { localStorage.setItem(key, JSON.stringify(value)); } catch (e) { /* full or blocked */ }
+  }
+  function token() { var a = read("owb.account", null); return a && a.token; }
+  function body() { return JSON.stringify({ marks: read("owb.marks", {}), place: read("owb.place", null) }); }
+  function hash(text) {
+    for (var h = 5381, i = 0; i < text.length; i++) h = (h * 33 + text.charCodeAt(i)) | 0;
+    return text.length + ":" + h;
+  }
+  function session(key) { try { return sessionStorage.getItem(key); } catch (e) { return null; } }
+
+  // The account's merged copy, taken in the same way: the later of each.
+  function take(merged) {
+    var marks = read("owb.marks", {}), changed = false;
+    Object.keys(merged.marks || {}).forEach(function (id) {
+      var theirs = merged.marks[id], ours = marks[id];
+      if (!ours || theirs.at > (ours.at || 0)) { marks[id] = theirs; changed = true; }
+    });
+    if (changed) write("owb.marks", marks);
+    var place = read("owb.place", null);
+    if (merged.place && (!place || merged.place.at > (place.at || 0))) { write("owb.place", merged.place); changed = true; }
+    try { sessionStorage.setItem(SINCE, String(Date.now())); } catch (e) { /* ignore */ }
+    if (changed) document.dispatchEvent(new Event("owb:synced"));
+  }
+
+  function sync(leaving) {
+    var key = token();
+    if (!key || stopped) return;
+    var data = body();
+    if (leaving && hash(data) === session(SENT)) return;
+    if (running) { again = true; return; }
+    running = true;
+    // keepalive lets the request finish after the page is gone; browsers
+    // allow it for small bodies only.
+    fetch(API + "/api/reading", {
+      method: "POST", body: data, keepalive: !!leaving && data.length < 60000,
+      headers: { "Content-Type": "application/json", Authorization: "Bearer " + key }
+    }).then(function (r) {
+      // The token was signed out elsewhere: forget it, as the account page does.
+      if (r.status === 401) {
+        stopped = true;
+        try { localStorage.removeItem("owb.account"); } catch (e) { /* ignore */ }
+        throw new Error("signed out");
+      }
+      if (!r.ok) throw new Error(String(r.status));
+      return r.json();
+    }).then(function (merged) {
+      try { sessionStorage.setItem(SENT, hash(data)); } catch (e) { /* ignore */ }
+      take(merged);
+    }).catch(function () { /* offline or signed out: try again later */ })
+      .then(function () {
+        running = false;
+        if (again) { again = false; sync(); }
+      });
+  }
+
+  function soon() { clearTimeout(timer); timer = setTimeout(sync, 1500); }
+  document.addEventListener("owb:marks", soon);
+  document.addEventListener("owb:account", function () { stopped = false; sync(); });
+  document.addEventListener("visibilitychange", function () { if (document.visibilityState === "hidden") sync(true); });
+  window.addEventListener("online", soon);
+  if (hash(body()) !== session(SENT) || Date.now() - (Number(session(SINCE)) || 0) > 120000) sync();
+})();
+
+// The home page's verse of the day (verse_of_the_day in
+// scripts/build_site.py): the page is built with the build day's verse,
+// and the list in the page gives the reader's own day, in their time zone.
+(function () {
+  "use strict";
+  var box = document.querySelector("[data-votd]");
+  if (!box) return;
+  var verses;
+  try { verses = JSON.parse(box.querySelector(".votd-data").textContent); } catch (e) { return; }
+  var now = new Date();
+  var day = Math.floor((now.getTime() - now.getTimezoneOffset() * 60000) / 86400000);
+  var v = verses[day % verses.length];
+  var text = box.querySelector(".votd-text");
+  text.textContent = v.t;
+  if (v.l) text.setAttribute("lang", v.l); else text.removeAttribute("lang");
+  var ref = box.querySelector(".votd-ref");
+  ref.textContent = v.r;
+  ref.href = v.u;
+  box.querySelector(".votd-why").href = v.u;
+})();
+
+// The home page's worked examples (example_html in scripts/build_site.py):
+// a tab each; tapping a source word shows its lemma and sense and lights
+// up the English it became (where the sentence is aligned); a setting
+// switch shows the wording's options. The switch starts at the reader's
+// own setting and changes only this example.
+(function () {
+  "use strict";
+  var box = document.querySelector("[data-example]");
+  if (!box) return;
+  var tabs = Array.prototype.slice.call(box.querySelectorAll("[role=tab]"));
+  var panels = Array.prototype.slice.call(box.querySelectorAll("[role=tabpanel]"));
+  function select(i, focus) {
+    tabs.forEach(function (tab, n) {
+      tab.setAttribute("aria-selected", n === i ? "true" : "false");
+      tab.tabIndex = n === i ? 0 : -1;
+      panels[n].hidden = n !== i;
+    });
+    if (focus) tabs[i].focus();
+  }
+  if (tabs.length) {
+    box.querySelector("[role=tablist]").hidden = false;
+    tabs.forEach(function (tab, n) {
+      tab.addEventListener("click", function () { select(n); });
+      tab.addEventListener("keydown", function (e) {
+        var d = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
+        if (d) { e.preventDefault(); select((n + d + tabs.length) % tabs.length, true); }
+      });
+    });
+    select(0);
+  }
+
+  panels.forEach(function (panel) {
+    var info = panel.querySelector(".w-info");
+    var hint = info.innerHTML;
+    var current = null;
+    panel.querySelectorAll("button.w").forEach(function (w) {
+      w.setAttribute("aria-pressed", "false");
+      w.addEventListener("click", function () {
+        var on = current !== w;
+        if (current) current.setAttribute("aria-pressed", "false");
+        current = on ? w : null;
+        w.setAttribute("aria-pressed", on ? "true" : "false");
+        var id = w.getAttribute("data-t");
+        panel.querySelectorAll(".al").forEach(function (al) {
+          al.classList.toggle("on", on && (" " + al.getAttribute("data-t") + " ").indexOf(" " + id + " ") >= 0);
+        });
+        if (!on) { info.innerHTML = hint; return; }
+        info.textContent = "";
+        var word = document.createElement("b");
+        word.textContent = w.textContent;
+        word.lang = panel.querySelector("[dir=rtl], .greek").getAttribute("lang");
+        var lemma = document.createElement("span");
+        lemma.className = "w-lemma";
+        lemma.lang = word.lang;
+        lemma.textContent = w.getAttribute("data-l");
+        var sense = document.createElement("span");
+        sense.lang = "en";
+        sense.textContent = "“" + w.getAttribute("data-g").replace(/\./g, " ") + "”";
+        info.appendChild(word);
+        info.appendChild(document.createTextNode(" · "));
+        info.appendChild(lemma);
+        info.appendChild(document.createTextNode(" · "));
+        info.appendChild(sense);
+      });
+    });
+
+    var saved = {};
+    try { saved = JSON.parse(localStorage.getItem("owb.settings") || "{}") || {}; } catch (e) { /* defaults */ }
+    panel.querySelectorAll("[data-switch]").forEach(function (sw) {
+      var key = sw.getAttribute("data-switch");
+      var buttons = Array.prototype.slice.call(sw.querySelectorAll("button"));
+      function set(v) {
+        buttons.forEach(function (b) { b.setAttribute("aria-pressed", +b.getAttribute("data-v") === v ? "true" : "false"); });
+        panel.querySelectorAll('.set[data-set="' + key + '"]').forEach(function (span) {
+          var options = JSON.parse(span.getAttribute("data-o"));
+          span.textContent = options[v] || options[0];
+        });
+      }
+      buttons.forEach(function (b) { b.addEventListener("click", function () { set(+b.getAttribute("data-v")); }); });
+      if (saved[key] === 1) set(1);
+    });
+  });
+})();
+
+// The header's language switch (language_menu in scripts/build_site.py),
+// and, once, an offer to read in the language the browser prefers when it
+// is one of the site's and not the page's. Choosing a language (the
+// footer's handler above keeps it as owb-lang) or saying no ends the offer.
+(function () {
+  "use strict";
+  var button = document.querySelector(".lang-btn");
+  var pop = document.getElementById("lang-pop");
+  if (!button || !pop) return;
+  function open(show) {
+    pop.hidden = !show;
+    button.setAttribute("aria-expanded", show ? "true" : "false");
+    if (show) (pop.querySelector("a") || pop).focus();
+  }
+  button.addEventListener("click", function () { open(pop.hidden); });
+  document.addEventListener("click", function (e) {
+    if (!pop.hidden && !pop.contains(e.target) && !button.contains(e.target)) open(false);
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && !pop.hidden) { open(false); button.focus(); }
+  });
+
+  var asked = null;
+  try { asked = localStorage.getItem("owb-lang") || localStorage.getItem("owb-lang-offer"); } catch (e) { return; }
+  if (asked) return;
+  var page = document.documentElement.lang;
+  var wanted = (navigator.languages || [navigator.language || ""]).map(function (l) { return String(l).slice(0, 2).toLowerCase(); });
+  var link = null;
+  for (var i = 0; i < wanted.length && !link; i++) {
+    if (wanted[i] === page) return;
+    link = pop.querySelector('a[data-lang="' + wanted[i] + '"][data-offer]');
+  }
+  if (!link) return;
+  var bar = document.createElement("div");
+  bar.className = "lang-offer";
+  bar.setAttribute("role", "region");
+  bar.setAttribute("aria-label", button.getAttribute("aria-label"));
+  bar.lang = link.getAttribute("data-lang");
+  var go = document.createElement("a");
+  go.className = "button";
+  go.href = link.href;
+  go.textContent = link.getAttribute("data-offer");
+  go.addEventListener("click", function () {
+    try { localStorage.setItem("owb-lang", link.getAttribute("data-lang")); } catch (e) { /* this page only */ }
+  });
+  var no = document.createElement("button");
+  no.type = "button";
+  no.className = "lang-offer-no";
+  no.textContent = link.getAttribute("data-offer-no");
+  no.addEventListener("click", function () {
+    try { localStorage.setItem("owb-lang-offer", "no"); } catch (e) { /* asked again next page */ }
+    bar.remove();
+  });
+  bar.appendChild(go);
+  bar.appendChild(no);
+  document.body.appendChild(bar);
 })();

@@ -4,6 +4,7 @@ summary: Which books belong in the Hebrew scriptures, and who decided? The evide
 date: 2026-10-11
 order: 30
 section: history
+part: ot
 ---
 Writing a book is one thing. Recognising a collection of books as scripture, a fixed list with a beginning and an end, is another. The word for such a list is **canon**, from a Greek word for a measuring rod or rule. This article looks at how the books of the Hebrew Bible, the Christian Old Testament, came to be gathered into a canon, and why Jewish, Protestant, Catholic and Orthodox Bibles still do not have quite the same list.
 
@@ -42,11 +43,13 @@ The historian **Josephus**, writing around 95 CE, says that the Jews do not have
 
 The apocalypse known as **4 Ezra** (2 Esdras 14:44–47), written around 100 CE, tells how Ezra, by divine inspiration, dictated ninety-four books: **twenty-four** to be published openly for all, and seventy to be kept for the wise. The twenty-four are almost certainly the books of the Hebrew Bible.
 
-The Babylonian Talmud later gives the order of the Prophets and Writings and names the traditional authors (*Bava Batra* 14b–15a).
+The Babylonian Talmud later gives the order of the Prophets and Writings and names the traditional authors (*Bava Batra* 14b–15a). In its list, the Writings end with **Chronicles**, and printed Hebrew Bibles still end there today.
+
+That order may lie behind a saying of Jesus. Speaking of the prophets who had been killed, he says that this generation will answer for "the blood of all the prophets, which was shed from the foundation of the world... from the blood of Abel to the blood of Zachariah, who perished between the altar and the sanctuary" (Luke 11:50–51; compare Matthew 23:35). Abel is the first person murdered in Genesis. Zechariah, stoned in the court of the temple, is the last martyr in Chronicles (2 Chronicles 24:20–22), though not the last in time. Many commentators think Jesus is spanning the scriptures from first book to last, "from A to Z." If so, his Bible already ended with Chronicles. Others think the pairing simply means the first and a notable later martyr, so the saying is suggestive rather than decisive.
 
 ## The myth of the Council of Jamnia
 
-You may read that the Jewish canon was "closed" at a council held at **Jamnia** (Yavneh) around 90 CE. This idea, popular in the twentieth century, is now widely rejected. Jack P. Lewis showed in 1964 that the rabbinic sources say nothing of a council deciding a canon. They record discussions among rabbis at Yavneh about whether certain books, such as Ecclesiastes and the Song of Songs, "defile the hands" (a technical way of saying they are holy scripture). These were debates about books already widely accepted, not the creation of a list. The Mishnah records the conclusion that both books are holy (*Yadayim* 3:5).
+You may read that the Jewish canon was "closed" at a council held at **Jamnia** (Yavneh) around 90 CE. This idea, popular in the twentieth century, is now widely rejected. Jack P. Lewis showed in 1964 that the rabbinic sources say nothing of a council deciding a canon. They record discussions among rabbis at Yavneh about whether certain books, such as Ecclesiastes and the Song of Songs, "defile the hands" (a technical way of saying they are holy scripture). These were debates about books already widely accepted, not the creation of a list. The Mishnah records the conclusion that both books are holy (*Yadayim* 3:5). Esther was questioned too. The Talmud reports a view of the third-century teacher Samuel that Esther does not "defile the hands," and then explains that he still held it was spoken by the holy spirit, to be read aloud at Purim (*Megillah* 7a). A book can be read in worship and still have its status discussed by scholars.
 
 Most scholars now think that the Jewish canon became settled gradually, by consensus rather than decree, and that by the end of the first century CE most Jews recognised the twenty-four books. Some, such as Roger Beckwith, argue that the list was settled much earlier, in the second century BCE; others, such as Lee Martin McDonald, see more fluidity into the second century CE. Timothy Lim proposes that several canons existed side by side among different Jewish groups, and that the majority canon of the Pharisees eventually prevailed.
 
@@ -76,7 +79,8 @@ These differences are real, but they concern the edges. The thirty-nine books of
 - Lewis, Jack P. "What Do We Mean by Jabneh?" *Journal of Bible and Religion* 32 (1964): 125–132.
 - Lim, Timothy H. *The Formation of the Jewish Canon*. New Haven: Yale University Press, 2013.
 - McDonald, Lee Martin. *The Biblical Canon: Its Origin, Transmission, and Authority*. Peabody, MA: Hendrickson, 2007.
-- Mishnah, *Yadayim* 3:5; Babylonian Talmud, *Bava Batra* 14b–15a.
+- Mishnah, *Yadayim* 3:5; Babylonian Talmud, *Bava Batra* 14b–15a; *Megillah* 7a.
+- Peels, H. G. L. "The Blood 'from Abel to Zechariah' (Matthew 23,35; Luke 11,50f.) and the Canon of the Old Testament." *Zeitschrift für die alttestamentliche Wissenschaft* 113 (2001): 583–601.
 - Eusebius. *Church History* 4.26.13–14.
 - 2 Esdras (4 Ezra) 14:44–47; Sirach, Prologue.
 - Bible quotations are from the World English Bible (public domain), except where the article gives its own literal rendering.

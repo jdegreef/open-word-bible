@@ -18,7 +18,7 @@
   // The reading language is the page's (/es/... is Spanish); the footer
   // switches it. The other settings are kept across pages and languages.
   var settings = { level: "B", gender: 0, christos: 0, divine_name: 0, deity_pronoun: 0, units: 0, plural_you: 0, view: 0,
-                   headings: 0, uncertain: 0, partner: "" };
+                   headings: 0, crossrefs: 0, uncertain: 0, partner: "", script: 0 };
   try {
     var saved = JSON.parse(localStorage.getItem(STORE) || "{}");
     for (var k in settings) if (k in saved) settings[k] = saved[k];
@@ -66,8 +66,7 @@
   var current = null;   // selected record
   var currentVerse = null;   // the verse within it that was chosen
   var panelEl = document.getElementById("panel");
-  var SPAN = /\{\{([a-z_]+):([^{}]*)\}\}/g;
-  var VERSE = /\\v (\d+) ?/;
+  var VERSE = OWBMarkup.VERSE;   // web/markup.js, loaded before this
   // Poetry: "\q " starts a new line within a verse (owb/markup.py LINE).
   // A verse start is always a line start; text with no marker is prose.
   var LINE = / ?\\q ?/;
@@ -110,9 +109,9 @@
 
   // Split rendered text at verse markers: [[verse, text], ...].
   function splitVerses(r, text) {
-    var parts = flat(text).split(VERSE), out = [[verseOf(r.refs[0]), parts[0].trim()]];
-    for (var i = 1; i < parts.length; i += 2) out.push([markerVerse(r, parts[i]), parts[i + 1]]);
-    return out;
+    return OWBMarkup.splitVerses(flat(text)).map(function (part, i) {
+      return [i ? markerVerse(r, part[0]) : verseOf(r.refs[0]), part[1]];
+    });
   }
 
   // A rendering split at its verse markers, each verse a list of pieces
@@ -160,13 +159,7 @@
     document.querySelectorAll(".iw").forEach(function (w) { w.classList.toggle("lit", set.has(w.dataset.id)); });
   }
 
-  function render(text) {
-    return text.replace(SPAN, function (_, name, opts) {
-      var options = opts.split("|");
-      var i = settings[name];
-      return typeof i === "number" && i >= 0 && i < options.length ? options[i] : options[0];
-    });
-  }
+  function render(text) { return OWBMarkup.render(text, settings); }
 
   function el(tag, cls, text) {
     var n = document.createElement(tag);
@@ -204,21 +197,23 @@
     // A page shows either the divine name (Old Testament) or the title
     // Christ (New Testament), and measures only where it has them, so
     // some hints are missing.
-    ["gender", "christos", "divine_name", "deity_pronoun", "units", "plural_you", "view", "headings"].forEach(function (name) {
+    ["gender", "christos", "divine_name", "deity_pronoun", "units", "plural_you", "view", "headings", "crossrefs"].forEach(function (name) {
       var hint = document.getElementById("hint-" + name);
       if (hint) hint.textContent = t("hint_" + name)[settings[name]];
     });
     // The summary on the phone settings button: each shown choice's label.
     var summary = [];
-    // "Show" or "Hide" means nothing without its label, so headings are left out.
-    document.querySelectorAll(".control:not([hidden]) .seg:not([data-setting=headings])").forEach(function (seg) {
+    // "Show" or "Hide" means nothing without its label, so headings and
+    // cross-references are left out.
+    var shown = ".control:not([hidden]) .seg:not([data-setting=headings]):not([data-setting=crossrefs])";
+    document.querySelectorAll(shown).forEach(function (seg) {
       var on = seg.querySelector('[aria-pressed="true"]');
       if (on && seg.children.length > 1) summary.push(on.textContent);
     });
     document.getElementById("settings-summary").textContent = summary.join(" \u00b7 ");
     // The Wording button names the wording choices it holds.
     var wording = [];
-    document.querySelectorAll("#wording .control:not([hidden]) .seg:not([data-setting=headings])").forEach(function (seg) {
+    document.querySelectorAll("#wording " + shown).forEach(function (seg) {
       var on = seg.querySelector('[aria-pressed="true"]');
       if (on) wording.push(on.textContent);
     });
@@ -242,6 +237,9 @@
   // The headings control only where the chapter has headings.
   var headingsSeg = document.querySelector('[data-setting="headings"]');
   if (headingsSeg && !Object.keys(DATA.headings).length) headingsSeg.parentNode.hidden = true;
+  // And the cross-references control only where the chapter has some.
+  var crossrefsSeg = document.querySelector('[data-setting="crossrefs"]');
+  if (crossrefsSeg && !Object.keys(DATA.crossrefs).length) crossrefsSeg.parentNode.hidden = true;
 
   // Reading view: the text alone, without verse numbers, footnote letters or
   // the reasoning panel; verses are not buttons.
@@ -377,7 +375,7 @@
     note.hidden = !partial;
     note.textContent = partial ? t("partial") : "";
     document.getElementById("title").textContent = DATA.title;
-    if (parallel()) { drawParallel(box); drawUnsureToggle(0); drawViewTools(); drawNotes([]); return; }
+    if (parallel()) { drawParallel(box); drawUnsureToggle(0); drawViewTools(); drawNotes([]); drawMargin(); return; }
     drawViewTools();
     var shown = null;   // last verse number printed
     var marked = marks();
@@ -500,6 +498,10 @@
           });
           into.appendChild(sup);
         }
+        if (i === parts.length - 1 && !plain()) {
+          var echoes = echoTags(r);
+          if (echoes) into.appendChild(echoes);
+        }
         span.addEventListener("click", function () {
           // Selecting text is not choosing the verse.
           if (!window.getSelection().isCollapsed) return;
@@ -515,6 +517,7 @@
     box = page;
     drawUnsureToggle(unsureCount);
     drawNotes(notes);
+    drawMargin();
     if (listen.on) mark(false);
   }
 
@@ -612,20 +615,197 @@
     }
   }
 
-  // Above the text: mark the sentences where a decision is uncertain.
+  // Above the text: mark the sentences where a decision is uncertain, and
+  // list their verses ("5:9, 5:11"); each opens that verse's reasoning.
   function drawUnsureToggle(n) {
+    var bar = document.getElementById("unsure-bar");
     var b = document.getElementById("unsure-toggle");
-    if (!b) {
+    if (!bar) {
+      bar = el("div", "unsure-bar");
+      bar.id = "unsure-bar";
       b = el("button", "text-tool");
       b.id = "unsure-toggle";
       b.type = "button";
       b.addEventListener("click", function () { setSetting("uncertain", settings.uncertain ? 0 : 1); });
+      bar.appendChild(b);
       var box = document.getElementById("text");
-      box.parentNode.insertBefore(b, box);
+      box.parentNode.insertBefore(bar, box);
     }
-    b.hidden = !n;
+    bar.hidden = b.hidden = !n;
     b.setAttribute("aria-pressed", settings.uncertain ? "true" : "false");
     b.textContent = t("unsure_toggle").replace("{n}", n);
+    var old = bar.querySelector(".unsure-list");
+    if (old) old.remove();
+    if (!n) return;
+    var list = el("span", "unsure-list");
+    list.setAttribute("role", "group");
+    list.setAttribute("aria-label", t("unsure_list"));
+    DATA.records.forEach(function (r) {
+      var ds = decisionsFor(r);
+      var d = ds.meaning.concat(ds.rendering).filter(function (x) { return x.uncertain; })[0];
+      if (!d) return;
+      var verse = verseOf(r.refs[0]);
+      if (list.childNodes.length) list.appendChild(document.createTextNode(", "));
+      var a = el("a", "unsure-ref", /:/.test(verse) ? verse : DATA.chapter + ":" + verse);
+      a.href = "#v" + verse;
+      if (current === r) a.setAttribute("aria-current", "true");
+      a.addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        select(r, verse, d.id);
+        reveal(verse);
+      });
+      list.appendChild(a);
+    });
+    bar.appendChild(list);
+  }
+
+  // After a sentence that echoes other scripture: a quiet tag naming the
+  // passage ("Deut 25:4"), from its "Echo of other scripture" decisions that
+  // name a chapter and verse. At most two; the tag opens the reasoning.
+  function echoTags(r) {
+    var seen = {}, out = [];
+    r.decisions.forEach(function (d) {
+      if (d.layer !== "meaning" || d.category !== "allusion") return;
+      var re = refPattern(), text = render(d.choice), m;
+      re.lastIndex = 0;
+      while ((m = re.exec(text))) {
+        var code = DATA.bookRefs.names[m[1]];
+        var key = code + " " + m[2] + ":" + m[3] + (m[4] ? "\u2013" + m[4] : "");
+        if (seen[key] || (code === DATA.book && Number(m[2]) === DATA.chapter)) continue;
+        seen[key] = true;
+        out.push({ decision: d, code: code, ref: m[2] + ":" + m[3] + (m[4] ? "\u2013" + m[4] : "") });
+      }
+    });
+    if (!out.length) return null;
+    var box = el("span", "echo-tags");
+    out.slice(0, 2).forEach(function (x) {
+      var names = (DATA.bookRefs.abbr && DATA.bookRefs.abbr[x.code]) || [x.code, x.code];
+      var b = el("button", "echo-tag", names[0] + "\u00a0" + x.ref);
+      b.type = "button";
+      var full = names[1] + " " + x.ref;
+      b.title = full;
+      b.setAttribute("aria-label", t("echo_tag").replace("{ref}", full));
+      b.addEventListener("click", function (e) {
+        e.stopPropagation();
+        select(r, splitVerses(r, r.renderings[textLang(r)][settings.level]).pop()[0], x.decision.id);
+      });
+      b.addEventListener("keydown", function (e) { e.stopPropagation(); });
+      box.appendChild(b);
+    });
+    return box;
+  }
+
+  // Cross-references (DATA.crossrefs, by verse id, from data/crossrefs/):
+  // other passages on the same subject, chosen by the readers of
+  // OpenBible.info, most voted first. They are not translation, so they are
+  // credited to their source, and the reader can hide them. On wide screens
+  // the best few stand in the margin beside their verse; the panel lists a
+  // chosen sentence's all. "ISA.40.11", "EZK.34.11-12", "GEN.1.31-2.3".
+  var XREF = /^([1-3]?[A-Z]{2,3})\.(\d+)\.(\d+)(?:-(?:(\d+)\.)?(\d+))?$/;
+  var XREF_MARGIN = 3;
+  var BOOK_ORDER = {};
+  Object.keys(DATA.bookRefs.abbr || {}).forEach(function (code, i) { BOOK_ORDER[code] = i; });
+  function xrefsShown() {
+    return settings.crossrefs === 0 && !plain() && Object.keys(DATA.crossrefs).length > 0;
+  }
+  function parseXref(text) {
+    var m = XREF.exec(text);
+    if (!m) return null;
+    var cv = m[2] + ":" + m[3] + (m[5] ? "\u2013" + (m[4] ? m[4] + ":" : "") + m[5] : "");
+    var names = (DATA.bookRefs.abbr && DATA.bookRefs.abbr[m[1]]) || [m[1], m[1]];
+    return { code: m[1], chapter: Number(m[2]), verse: Number(m[3]),
+             short: names[0] + "\u00a0" + cv, full: names[1] + " " + cv };
+  }
+  // A verse's references, the best max of them, in the Bible's order.
+  function xrefs(vid, max) {
+    return (DATA.crossrefs[vid] || []).slice(0, max).map(parseXref).filter(Boolean).sort(function (a, b) {
+      return (BOOK_ORDER[a.code] - BOOK_ORDER[b.code]) || (a.chapter - b.chapter) || (a.verse - b.verse);
+    });
+  }
+  // Into the reader where that chapter is translated, otherwise to search.
+  function xrefLink(x, label) {
+    var away = !translated(x.code, x.chapter);
+    var a = el("a", "xr-link" + (away ? " xr-away" : ""), label);
+    a.href = refUrl(x.code, x.chapter, x.verse, x.full);
+    a.title = away ? t("crossrefs_away").replace("{ref}", x.full) : x.full;
+    a.addEventListener("click", function (e) { e.stopPropagation(); });
+    return a;
+  }
+  function xrefLine(node, list, long) {
+    list.forEach(function (x, i) {
+      if (i) node.appendChild(document.createTextNode("; "));
+      node.appendChild(xrefLink(x, long ? x.full : x.short));
+    });
+    return node;
+  }
+
+  // The margin beside the text (#xr-margin, before #text, so copying the
+  // text never takes it along): each verse's number and its best
+  // references. The style sheet shows it only where there is room.
+  function drawMargin() {
+    var box = document.getElementById("xr-margin");
+    if (!box) return;
+    box.textContent = "";
+    document.body.classList.toggle("xr-on", xrefsShown());
+    if (!xrefsShown()) { layoutMargin(); return; }
+    var seen = {};
+    document.querySelectorAll("#text .verse").forEach(function (span) {
+      var v = span.dataset.v, vid = verseId(v);
+      if (seen[vid] || !DATA.crossrefs[vid]) return;
+      seen[vid] = true;
+      var note = el("p", "xr-note" + (currentVerse === v ? " on" : ""));
+      note.setAttribute("role", "group");
+      note.setAttribute("aria-label", t("crossrefs_label").replace("{v}", v));
+      note.appendChild(el("span", "xr-v", v));
+      xrefLine(note, xrefs(vid, XREF_MARGIN), false);
+      note.verse = span;
+      box.appendChild(note);
+    });
+    layoutMargin();
+  }
+
+  // Each note level with its verse, or just below the note before it.
+  // Notes that run past the end of the text lengthen it, so they never
+  // reach the notes below.
+  function layoutMargin() {
+    var box = document.getElementById("xr-margin"), text = document.getElementById("text");
+    if (!box) return;
+    var room = getComputedStyle(box).display !== "none" && box.children.length > 0;
+    var need = "";
+    if (room) {
+      box.style.top = text.offsetTop + "px";
+      box.style.left = (text.offsetLeft + text.offsetWidth) + "px";
+      var top = box.getBoundingClientRect().top, below = 0;
+      Array.prototype.forEach.call(box.children, function (note) {
+        var y = Math.max(Math.round(note.verse.getBoundingClientRect().top - top), below);
+        note.style.top = y + "px";
+        below = y + note.offsetHeight + 6;
+      });
+      var last = text.lastElementChild;
+      var height = last ? last.getBoundingClientRect().bottom - text.getBoundingClientRect().top : 0;
+      if (below > height) need = Math.ceil(below) + "px";
+    }
+    if (text.style.minHeight !== need) text.style.minHeight = need;
+  }
+  if (window.ResizeObserver) new ResizeObserver(layoutMargin).observe(document.getElementById("text"));
+
+  // In the panel: the chosen sentence's references, each verse's in full.
+  function xrefSection(r) {
+    if (settings.crossrefs !== 0) return null;
+    var vids = r.refs.filter(function (vid) { return DATA.crossrefs[vid]; });
+    if (!vids.length) return null;
+    var box = el("div", "xr-panel");
+    box.appendChild(el("h3", null, t("crossrefs")));
+    var list = el("ul", "xr-list");
+    vids.forEach(function (vid) {
+      var li = el("li");
+      if (r.refs.length > 1) li.appendChild(el("span", "xr-v", verseOf(vid)));
+      list.appendChild(xrefLine(li, xrefs(vid), true));
+    });
+    box.appendChild(list);
+    box.appendChild(el("p", "hint xr-credit", t("crossrefs_credit")));
+    return box;
   }
 
   // Below the passage: its footnotes, or every note in the chapter grouped
@@ -858,10 +1038,17 @@
         head.appendChild(el("span", "wcard-kind", t("card_kind")[c.type === "term" ? "term" : c.kind] || ""));
         card.appendChild(head);
         // A key term's note is for translators; readers get the rule it keeps.
-        if (c.type === "term") card.appendChild(el("span", "wcard-note", t("card_term").replace("{words}", c.english.join(", "))));
+        // A term whose English differs by level (gospel) names each level's.
+        if (c.type === "term") card.appendChild(el("span", "wcard-note", c.rule || t("card_term").replace("{words}", c.english.join(", "))));
         else card.appendChild(el("span", "wcard-note", c.note));
         card.addEventListener("click", function () { highlight(byCard[i], null); light(byCard[i]); });
         list.appendChild(card);
+        // A key term links to its page: every place the translation uses it.
+        if (c.href) {
+          var more = el("a", "wcard-link", t("card_term_link"));
+          more.href = c.href;
+          list.appendChild(more);
+        }
       });
     panel.appendChild(list);
   }
@@ -994,12 +1181,17 @@
     var key = keyNotes();
     if (key) panel.appendChild(key);
 
-    panel.appendChild(el("h3", null, t("greek")));
+    var wordsHead = el("div", "words-head");
+    wordsHead.appendChild(el("h3", null, t("greek")));
+    wordsHead.appendChild(scriptControl());
+    panel.appendChild(wordsHead);
     // Interlinear: each Greek word (or Hebrew morpheme) over its gloss. Tapping one shows its
     // dictionary form, Strong's number and grammar, and lights up every
-    // decision that names it.
+    // decision that names it. The Script setting shows the original
+    // letters (0), a transliteration (1) or both (2); transliterated
+    // Hebrew reads left to right.
     var greek = el("div", "interlinear");
-    if (HEBREW) greek.dir = "rtl";
+    if (HEBREW && settings.script !== 1) greek.dir = "rtl";
     var info = el("div", "wordinfo");
     info.setAttribute("aria-live", "polite");
     info.hidden = true;
@@ -1007,9 +1199,12 @@
       var w = el("button", "word iw");
       w.type = "button";
       w.dataset.id = word.id;
-      var g = el("span", "iw-g", word.text + word.after.trim());
-      g.lang = DATA.source;
-      w.appendChild(g);
+      if (settings.script !== 1) {
+        var g = el("span", "iw-g", word.text + word.after.trim());
+        g.lang = DATA.source;
+        w.appendChild(g);
+      }
+      if (settings.script !== 0) w.appendChild(el("span", "iw-t", (word.translit + latinAfter(word)) || "\u00a0"));
       // MACULA Hebrew glosses join words with dots: "he.created".
       w.appendChild(el("span", "iw-e", HEBREW ? word.gloss.replace(/\./g, " ") : word.gloss));
       w.addEventListener("mouseenter", function () { light([word.id]); });
@@ -1024,7 +1219,7 @@
         head.appendChild(lemma);
         var strong = word.strong ? (HEBREW ? " H" + word.strong.replace(/^0+/, "") : " G" + word.strong) : "";
         head.appendChild(el("span", "wi-label", t("lemma") + (strong ? " \u00b7 " + t("strong") + strong : "")));
-        if (word.transliteration) head.appendChild(el("span", "wi-label", word.transliteration));
+        if (word.translit) head.appendChild(el("span", "wi-label", word.translit));
         info.appendChild(head);
         var key = (word.lang === "A" ? "A:" : "") + word.morph;
         info.appendChild(el("p", "wi-grammar", DATA.grammar[key][settings.lang]));
@@ -1089,12 +1284,16 @@
     panel.appendChild(el("h3", null, t("rendering").replace("{level}", t(settings.level))));
     if (!ds.rendering.length) panel.appendChild(el("p", "empty", t("no_rendering")));
     ds.rendering.forEach(function (d) { panel.appendChild(drawCard(d, current)); });
+    var xr = xrefSection(current);
+    if (xr) panel.appendChild(xr);
   }
 
   // Bookmarks and highlights, kept in this browser as owb.marks by verse
   // ("JHN.3.16"), so they hold whatever the settings or language. Each
   // keeps the verse's words as shown when it was marked, for the saved
-  // verses page (site.js). {b: true, h: "yellow", text, lang, at}
+  // verses page (site.js). {b: true, h: "yellow", text, lang, at}; a mark
+  // cleared is kept as {at} so a signed-in reader's other devices clear it
+  // too (site.js syncs owb.marks with the account).
   var MARKS = "owb.marks";
   var HUES = ["yellow", "green", "blue", "pink"];
   function marks() {
@@ -1105,12 +1304,13 @@
     var p = String(v).split(":");
     return DATA.book + "." + (p.length > 1 ? p[0] + "." + p[1] : DATA.chapter + "." + v);
   }
-  // A verse's words as shown, without its number or footnote letters.
+  // A verse's words as shown, without its number or footnote letters
+  // or echo tags.
   function verseWords(v) {
     var spans = document.querySelectorAll('#text .verse[data-v="' + v + '"]');
     return Array.prototype.map.call(spans, function (s) {
       var copy = s.cloneNode(true);
-      copy.querySelectorAll("sup").forEach(function (x) { x.remove(); });
+      copy.querySelectorAll("sup, .echo-tags").forEach(function (x) { x.remove(); });
       return copy.textContent.trim();
     }).join(" ");
   }
@@ -1124,9 +1324,10 @@
       m.at = Date.now();
       all[id] = m;
     } else {
-      delete all[id];
+      all[id] = { at: Date.now() };
     }
     try { localStorage.setItem(MARKS, JSON.stringify(all)); } catch (e) { /* storage full or blocked */ }
+    document.dispatchEvent(new Event("owb:marks"));
     var top = panelEl.scrollTop;
     drawText();
     drawPanel();
@@ -1513,6 +1714,31 @@
     });
   }
 
+  // A word's punctuation on the Latin line: maqaf joins Hebrew words with
+  // a hyphen; the codex's other marks are left out.
+  function latinAfter(word) {
+    if (!HEBREW) return word.after.trim();
+    return word.after.indexOf("\u05be") >= 0 ? "-" : "";
+  }
+
+  // The word panel's switch between original letters, transliteration
+  // and both (settings.script), kept with the other reader settings.
+  function scriptControl() {
+    var seg = el("span", "seg seg-small");
+    seg.setAttribute("data-setting", "script");
+    seg.setAttribute("role", "group");
+    seg.setAttribute("aria-label", t("script_label"));
+    t("script_options").forEach(function (label, v) {
+      var b = el("button", null, label);
+      b.type = "button";
+      b.setAttribute("data-value", String(v));
+      b.setAttribute("aria-pressed", settings.script === v ? "true" : "false");
+      b.addEventListener("click", function () { setSetting("script", v); });
+      seg.appendChild(b);
+    });
+    return seg;
+  }
+
   // On narrow screens the panel is a bottom sheet over the text (see .panel
   // in style.css), so opening it never moves the reader's place. The CSS
   // owns the breakpoint: the sheet is the panel when it is position: fixed.
@@ -1607,6 +1833,62 @@
       step(e.key === "j" ? 1 : -1);
     }
   });
+
+  // "?" lists the keyboard shortcuts in a small dialog; Esc or the close
+  // button shuts it and focus goes back where it was.
+  var keysDialog = null, keysReturn = null;
+  function showKeys() {
+    if (!keysDialog) {
+      keysDialog = el("dialog", "keys-dialog");
+      keysDialog.id = "keys-dialog";
+      keysDialog.setAttribute("aria-labelledby", "keys-title");
+      var head = el("div", "keys-head");
+      var h = el("h2", null, t("keys_title"));
+      h.id = "keys-title";
+      head.appendChild(h);
+      var x = el("button", "keys-close", "\u00d7");
+      x.type = "button";
+      x.setAttribute("aria-label", t("close"));
+      x.addEventListener("click", hideKeys);
+      head.appendChild(x);
+      keysDialog.appendChild(head);
+      var dl = el("dl", "keys-list");
+      t("keys_list").forEach(function (k) {
+        var dt = el("dt");
+        k[0].split(" ").forEach(function (key) { dt.appendChild(el("kbd", null, key)); });
+        dl.appendChild(dt);
+        dl.appendChild(el("dd", null, k[1]));
+      });
+      keysDialog.appendChild(dl);
+      keysDialog.addEventListener("click", function (e) { if (e.target === keysDialog) hideKeys(); });
+      keysDialog.addEventListener("cancel", function (e) { e.preventDefault(); hideKeys(); });
+      document.body.appendChild(keysDialog);
+    }
+    if (keysDialog.open) return;
+    keysReturn = document.activeElement;
+    if (keysDialog.showModal) keysDialog.showModal(); else keysDialog.setAttribute("open", "");
+    keysDialog.querySelector(".keys-close").focus();
+  }
+  function hideKeys() {
+    if (!keysDialog || !keysDialog.open) return;
+    if (keysDialog.close) keysDialog.close(); else keysDialog.removeAttribute("open");
+    if (keysReturn && keysReturn.focus && document.contains(keysReturn)) keysReturn.focus({ preventScroll: true });
+    keysReturn = null;
+  }
+  // Ahead of the reader's other keys: while the list is open, Esc closes
+  // only it and the other shortcuts wait.
+  window.addEventListener("keydown", function (e) {
+    if (keysDialog && keysDialog.open) {
+      if (e.key === "Escape") { e.preventDefault(); hideKeys(); }
+      if (e.key !== "Tab") e.stopPropagation();
+      return;
+    }
+    if (e.key === "?" && !e.ctrlKey && !e.metaKey && !e.altKey && !typing(e.target)) {
+      e.preventDefault();
+      e.stopPropagation();
+      showKeys();
+    }
+  }, true);
 
   function typing(target) {
     var tag = (target.tagName || "").toLowerCase();
@@ -1890,7 +2172,8 @@
     var verse = topVerse();
     if (!verse || verse === keptVerse) return;
     keptVerse = verse;
-    var place = { book: DATA.book, chapter: DATA.chapter, verse: verse };
+    // at: when, so the latest place wins between a reader's devices.
+    var place = { book: DATA.book, chapter: DATA.chapter, verse: verse, at: Date.now() };
     try { localStorage.setItem("owb.place", JSON.stringify(place)); } catch (e) { /* this visit only */ }
   }
   var placeTimer = null;
@@ -2169,6 +2452,12 @@
     window.addEventListener("pageshow", function (e) { if (e.persisted && listen.on) stopListening(); });
   }
 
+  // Marks from the reader's other devices (site.js, after a sync).
+  document.addEventListener("owb:synced", function () {
+    var top = panelEl.scrollTop;
+    drawText();
+    if (current) { drawPanel(); panelEl.scrollTop = top; }
+  });
 
   var start = hashVerse();
   var record = start && recordFor(start);

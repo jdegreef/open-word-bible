@@ -26,7 +26,7 @@ jobs:
     outputs:
       backend: ${{ steps.diff.outputs.backend }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         if: github.event_name == 'pull_request'
         with:
           fetch-depth: 2
@@ -50,23 +50,36 @@ jobs:
     env:
       OWB_VENDOR: ${{ github.workspace }}/vendor
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.13"
+      # Settings in pyproject.toml; the version is pinned so a ruff release
+      # can't fail a pull request that changed nothing it checks.
+      - name: Lint
+        run: pipx run --spec ruff==0.16.9 ruff check .
       # The pinned sources only change when sources.lock.json does.
-      - uses: actions/cache@v4
+      - uses: actions/cache@v6
         with:
           path: vendor
           key: sources-${{ hashFiles('sources.lock.json') }}
       - name: Fetch pinned sources
         run: python3 scripts/fetch_sources.py
+      # The reader's copy of the markup rules (web/markup.js) against the
+      # same cases (tests/markup_vectors.json); the runner's own Node.
+      - name: Reader tests
+        run: node --test tests/js/*.test.mjs
       - name: Validate content
         run: python3 -m owb.validate content/*/*.json
       - name: Word extracts are up to date
         run: python3 scripts/extract_tokens.py --check
+      # A unit test ran this until the tests began reading CI's build.
+      - name: Comparison extracts are up to date
+        run: python3 scripts/extract_comparison.py --check
       - name: Build the site
         run: python3 scripts/build_site.py
+      - name: Site size budgets
+        run: python3 scripts/check_budgets.py site
       # The tests read the build above rather than building the site again.
       - name: Unit tests
         env:
@@ -95,8 +108,8 @@ jobs:
       DATABASE_URL: postgres://postgres:postgres@localhost:5432/owb
       DJANGO_DEBUG: "1"
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.13"
           cache: pip

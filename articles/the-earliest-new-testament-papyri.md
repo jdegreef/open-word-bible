@@ -4,6 +4,7 @@ summary: A scrap of John the size of a credit card, a second-century book of Pau
 date: 2026-10-11
 order: 34
 section: history
+part: nt
 ---
 The original documents of the New Testament, the letters Paul dictated and the Gospels as their authors finished them, are long gone. The oldest copies we have are written on papyrus, almost all found in Egypt, and most of them are fragments. They are called the **New Testament papyri**, and they are numbered with a P (often written in a Gothic letter) followed by a number, in the order in which they were catalogued: P1, P2, and so on. More than 140 have been registered by the Institute for New Testament Textual Research in Münster, which keeps the official list.
 
@@ -24,6 +25,8 @@ This leads to an important point. Very few early manuscripts carry a date. Schol
 Palaeography is a real skill and gives real results, but it has limits. Scribes trained in one period might go on writing the same way for decades; styles overlap; and literary hands change more slowly than documentary ones. Most specialists today think palaeographic dates should normally be given as a range of fifty years or more, and Nongbri, in *God's Library* (2018), urges even wider ranges. Other evidence can help: where and with what the manuscript was found, the format of the book, and occasionally radiocarbon dating, though that requires destroying a small piece and also gives a range.
 
 So when you read that a manuscript dates from "around 200 CE," read it as "probably sometime in the late second or third century." That is still very early by the standards of ancient literature.
+
+The caution cuts both ways. In 1988 the scholar Young Kyu Kim argued in the journal *Biblica* that P46, the Chester Beatty copy of Paul's letters described below, was written in the later first century, before the reign of Domitian. If true, it would be a copy made within a generation of Paul himself. Other palaeographers did not accept his comparisons, and the usual date for P46 remains around 200 CE. A claim of a very early date deserves the same scrutiny as a claim of a late one.
 
 ## The Chester Beatty papyri
 
@@ -47,7 +50,7 @@ Like P52, P66 and P75 have been re-examined. Nongbri has argued that both could 
 
 ## The Oxyrhynchus papyri
 
-Many smaller papyri come from **Oxyrhynchus**, the Egyptian town whose ancient rubbish heaps were excavated from 1896 by Bernard Grenfell and Arthur Hunt. The Oxyrhynchus collection, mostly in Oxford, is still being published, volume by volume, more than a century later. Its New Testament fragments include some of the earliest copies of Matthew, John, Romans, Hebrews and Revelation.
+Many smaller papyri come from **Oxyrhynchus**, the Egyptian town whose ancient rubbish heaps were excavated from 1896 by Bernard Grenfell and Arthur Hunt. The Oxyrhynchus collection, mostly in Oxford, is still being published, volume by volume, more than a century later. Its New Testament fragments include some of the earliest copies of Matthew, John, Romans, Hebrews and Revelation. One of them, **P104** (P.Oxy. 64.4404), published by J. David Thomas in 1997, preserves a few lines of the parable of the tenants in Matthew 21. It is usually dated to the second century, which makes it one of the oldest surviving pieces of Matthew. Most of these fragments come from codices, not scrolls, which fits the wider Christian preference for the codex.
 
 ## A warning: the "first-century Mark"
 
@@ -69,10 +72,12 @@ The papyri do not take us all the way back to the authors. There is still a gap,
 ## Sources
 
 - Hill, Charles E., and Michael J. Kruger, eds. *The Early Text of the New Testament*. Oxford: Oxford University Press, 2012.
+- Kim, Young Kyu. "Palaeographical Dating of P46 to the Later First Century." *Biblica* 69 (1988): 248–257.
 - Kenyon, Frederic G. *The Chester Beatty Biblical Papyri*. 8 fascicles. London: Emery Walker, 1933–1958.
 - Nongbri, Brent. "The Use and Abuse of P52: Papyrological Pitfalls in the Dating of the Fourth Gospel." *Harvard Theological Review* 98 (2005): 23–48.
 - Nongbri, Brent. *God's Library: The Archaeology of the Earliest Christian Manuscripts*. New Haven: Yale University Press, 2018.
 - Orsini, Pasquale, and Willy Clarysse. "Early New Testament Manuscripts and Their Dates: A Critique of Theological Palaeography." *Ephemerides Theologicae Lovanienses* 88 (2012): 443–474.
+- Thomas, J. David. P.Oxy. 4404 (Matthew 21). In *The Oxyrhynchus Papyri* 64, 7–9. London: Egypt Exploration Society, 1997.
 - Roberts, C. H. *An Unpublished Fragment of the Fourth Gospel in the John Rylands Library*. Manchester: Manchester University Press, 1935.
 - Royse, James R. *Scribal Habits in Early Greek New Testament Papyri*. Leiden: Brill, 2008.
 - Institute for New Testament Textual Research (INTF), *Kurzgefasste Liste* online: [ntvmr.uni-muenster.de/liste](https://ntvmr.uni-muenster.de/liste).

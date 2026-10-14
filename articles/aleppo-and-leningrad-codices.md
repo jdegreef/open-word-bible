@@ -4,6 +4,7 @@ summary: Two books written around the year 1000 CE stand behind almost every mod
 date: 2026-10-11
 order: 25
 section: history
+part: ot
 ---
 If you want to know exactly what the Hebrew text of the Old Testament says, where do you look? Not at the Dead Sea Scrolls, valuable as they are: they are mostly fragments, and they differ among themselves. Scholars and translators turn instead to two medieval books, both written by the most careful scribes of the Masoretic tradition, and both with remarkable stories. They are the **Aleppo Codex** and the **Leningrad Codex**.
 
@@ -15,17 +16,19 @@ The Aleppo Codex was written in Tiberias around 930 CE. Its consonants were copi
 
 It was soon recognised as such. In the twelfth century, the great scholar **Maimonides** saw it in Egypt and used it to settle questions about the layout of the Torah. In his law code he describes the book he relied on as the one "known in Egypt, which contains the twenty-four books, and which was in Jerusalem," corrected by Ben Asher, and says that "everyone relied on it" (*Mishneh Torah*, Laws of Tefillin, Mezuzah and the Torah Scroll 8:4). Most scholars identify that book with the Aleppo Codex.
 
-Around the end of the fourteenth century the codex was taken to Aleppo, in Syria, where it was kept for nearly six hundred years in the city's great synagogue. The community called it the *Keter*, "the Crown." It was guarded so closely that few outside scholars were ever allowed to see it, let alone photograph it.
+Around the end of the fourteenth century the codex was taken to Aleppo, in Syria, where it was kept for nearly six hundred years in the city's great synagogue. The community called it the *Keter*, "the Crown." It was guarded so closely that few outside scholars were ever allowed to see it, let alone photograph it. An inscription on its first page, now lost, said in Judeo-Arabic: "Blessed be he who preserves it and cursed be he who steals it or sells it or pawns it."
+
+That secrecy had a cost. In the 1920s Paul Kahle tried to obtain photographs for his edition of the Hebrew Bible and was refused. In 1943 the Hebrew University sent the scholar **Umberto Cassuto** to Aleppo. He was allowed to study the codex and take notes, but not to photograph it. Before 1947 almost the only images ever made were of single pages, such as a photograph of a page of Deuteronomy published by Joseph Segall in 1910. Cassuto's notes and those few pictures became precious, because they record parts of the codex that no longer exist.
 
 ### 1947 and after
 
-In December 1947, after the United Nations voted to partition Palestine, riots broke out in Aleppo. The synagogue was set on fire. For a time it was feared the codex had been destroyed. In fact much of it had survived, but when it reached Israel in 1958, smuggled out of Syria, a large part was missing. About 295 of its original leaves survive, roughly 60 percent. Almost all of the Torah is lost: the surviving text begins in Deuteronomy 28. Some of the missing leaves may have been burned; others were very likely taken during or after the riots. A few single leaves have since come to light. The full story, including disputes over how the codex reached Israel, is told by Hayim Tawil and Bernard Schneider in *Crown of Aleppo* and, more critically, by the journalist Matti Friedman in *The Aleppo Codex*.
+In December 1947, after the United Nations voted to partition Palestine, riots broke out in Aleppo. The synagogue was set on fire. For a time it was feared the codex had been destroyed. In fact much of it had survived. Ten years later a Jewish merchant from Aleppo, **Murad Faham**, smuggled it out of Syria, and in January 1958 it was handed to Yitzhak Ben-Zvi, the President of Israel. But a large part was missing. About 295 of its original leaves survive, roughly 60 percent. Almost all of the Torah is lost: the surviving text begins in Deuteronomy 28. Some of the missing leaves may have been burned; others were very likely taken during or after the riots. Studies of the surviving leaves found that the dark stains on them are mould, not fire damage. Only a little has come back. In the 1980s a complete leaf of Chronicles surfaced in the hands of an Aleppo family in New York, and a scrap of Exodus that a young man named Sam Sabbagh had picked up from the synagogue floor in 1947 and carried for decades as a good-luck charm. The full story, including disputes over how the codex reached Israel, is told by Hayim Tawil and Bernard Schneider in *Crown of Aleppo* and, more critically, by the journalist Matti Friedman in *The Aleppo Codex*.
 
-The Aleppo Codex is now kept in the Israel Museum in Jerusalem, and high-resolution photographs are freely available online. It is the basis of the **Hebrew University Bible Project**, a major critical edition, and of several Israeli editions of the Hebrew Bible, such as the Jerusalem Crown edition. For the parts that are lost, editors rely on other manuscripts in the same tradition, above all the Leningrad Codex.
+The Aleppo Codex is now kept in the Israel Museum in Jerusalem, and high-resolution photographs are freely available online. It is the basis of the **Hebrew University Bible Project**, a major critical edition, and of several Israeli editions of the Hebrew Bible, such as the Jerusalem Crown edition. For the parts that are lost, editors rely on other manuscripts in the same tradition, above all the Leningrad Codex. The Israeli scholar **Mordechai Breuer** went further. Over some twenty years he gathered every description of the codex made before 1947, including Cassuto's notes, and compared the Leningrad Codex with other early manuscripts of the same school. From them he reconstructed the text of the Aleppo tradition, including the lost Torah, by a method now widely accepted by both Jewish and academic editors. It underlies the Mossad HaRav Kook edition (Torah 1977, whole Bible 1989) and the Jerusalem Crown (2000).
 
 ## The Leningrad Codex: complete and dated
 
-The Leningrad Codex was completed in **1008 CE** (its colophon also gives the date in other systems, which point to 1008 or 1009). It was written in Cairo by a scribe named **Samuel ben Jacob**, who copied the consonants and added the vowels, accents and Masorah himself. His colophon says that he corrected the codex according to books prepared by Aaron ben Moses ben Asher.
+The Leningrad Codex was completed in **1008 CE**. Its colophon dates it in five different systems at once: from the creation of the world, from the exile of King Jehoiachin, from the Seleucid era, from the destruction of the Second Temple, and by the Muslim calendar. They do not agree exactly, but most point to 1008 or 1009. It was written in Egypt, probably at Fustat, the old city of Cairo, by a scribe named **Samuel ben Jacob**, who copied the consonants and added the vowels, accents and Masorah himself. That was unusual: in a model codex like Aleppo, the work was normally split between a scribe and a Masorete. Samuel wrote it for a patron, Mevorakh ben Joseph, whose name he decorated in gold on some of the carpet pages. Mevorakh was probably a Karaite, a member of the Jewish movement that rejected rabbinic tradition but prized the biblical text. Samuel's skill was in demand: a contract from the Cairo Genizah, dated 1021, records him agreeing to copy eight biblical books for 25 gold dinars, a very large fee. His colophon says that he corrected the codex according to books prepared by Aaron ben Moses ben Asher.
 
 It is the **oldest complete manuscript of the Hebrew Bible** that survives. It contains all twenty-four books of the Hebrew canon (the thirty-nine of the Protestant Old Testament), in 491 leaves of parchment. It also contains sixteen "carpet pages," decorated pages of geometric designs made partly of tiny Masoretic notes written in patterns.
 
@@ -41,11 +44,13 @@ Since then, the Leningrad Codex has been the basis of:
 - **Biblia Hebraica Quinta** (BHQ), its successor, being published book by book since 2004;
 - the **Westminster Leningrad Codex** (WLC), a freely available digital transcription first produced at Westminster Theological Seminary and maintained by the J. Alan Groves Center, which in turn underlies open projects such as the Open Scriptures Hebrew Bible and MACULA Hebrew.
 
-In 1998 a full photographic facsimile was published, edited by David Noel Freedman and others, so that anyone could check the printed editions against the manuscript itself.
+In 1990 a team from the West Semitic Research Project, led by Bruce Zuckerman, photographed every page in St Petersburg. The photographs were published in 1998 as a full facsimile, edited by David Noel Freedman and others, so that anyone could check the printed editions against the manuscript itself. The colour images can now be viewed online.
 
 ## How close are the two?
 
 Very close. Scholars who have compared the Leningrad Codex with the Aleppo Codex in the books where both survive find that they agree almost entirely in their consonants and very largely in their vowels and accents. Where they differ, the Aleppo Codex is generally regarded as the more precise representative of the Ben Asher tradition; the Leningrad Codex has more corrections and occasional inconsistencies, some of which may come from Samuel ben Jacob conforming an earlier text to Ben Asher's model (Würthwein and Fischer 2014). Mordechai Breuer, who prepared an edition based on the Aleppo Codex and related manuscripts, found that the differences are mostly in small details of vowels and accents.
+
+One place where the Aleppo Codex still matters for ordinary readers is the layout of the Torah. Maimonides drew up his list of the "open" and "closed" paragraph breaks in the five books of Moses from the codex he saw in Egypt, and scribes who write Torah scrolls follow that list today (see [Copying with care](/articles/copying-the-torah/)). So a page that was lost in Aleppo still shapes every new scroll.
 
 For a reader of a translation, these differences almost never change the meaning. What the comparison shows is that two manuscripts, written about eighty years apart and in different cities, preserve the same text with extraordinary precision, and that both agree closely with the "proto-Masoretic" scrolls from the Judean desert written nearly a thousand years earlier.
 
@@ -61,10 +66,12 @@ Each sentence's reasoning record shows the Hebrew exactly as the WLC data gives 
 
 ## Sources
 
+- Cambridge University Library. "Samuel ben Jacob: the Leningrad Codex B19a and T-S 10J5.15." Genizah Research Unit, Fragment of the Month. [lib.cam.ac.uk](https://www.lib.cam.ac.uk/node/18732).
 - Freedman, David Noel, Astrid B. Beck, and James A. Sanders, eds. *The Leningrad Codex: A Facsimile Edition*. Grand Rapids: Eerdmans; Leiden: Brill, 1998.
 - Friedman, Matti. *The Aleppo Codex: A True Story of Obsession, Faith, and the Pursuit of an Ancient Bible*. Chapel Hill: Algonquin Books, 2012.
 - Goshen-Gottstein, Moshe H. "The Aleppo Codex and the Rise of the Massoretic Bible Text." *Biblical Archaeologist* 42 (1979): 145–163.
 - Maimonides. *Mishneh Torah*, Laws of Tefillin, Mezuzah and the Torah Scroll 8:4.
+- Ofer, Yosef. "The Aleppo Codex in Light of the Notes of M. D. Cassuto" (Hebrew). *Sefunot* 19 (1989): 277–344.
 - Tawil, Hayim, and Bernard Schneider. *Crown of Aleppo: The Mystery of the Oldest Hebrew Bible Codex*. Philadelphia: Jewish Publication Society, 2010.
 - Tov, Emanuel. *Textual Criticism of the Hebrew Bible*. 3rd ed. Minneapolis: Fortress, 2012.
 - Würthwein, Ernst, and Alexander Achilles Fischer. *The Text of the Old Testament: An Introduction to the Biblia Hebraica*. 3rd ed. Grand Rapids: Eerdmans, 2014.

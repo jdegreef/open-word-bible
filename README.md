@@ -117,6 +117,17 @@ state the sense only (no reader settings), and are shown in the language the
 chapter's text is shown in: the page's language, or English, marked as such,
 where the chapter has no sentence in the page's language yet.
 
+## Cross-references
+
+Beside the text, on screens wide enough, each verse's margin lists other
+passages on the same subject; the reasoning panel lists a chosen sentence's
+all, so phones have them too. They come from OpenBible.info's crowd-voted
+cross-references (CC BY, credited on the page), not from us: like headings
+they are an aid, not translation, and the reader can hide them.
+`scripts/extract_crossrefs.py` keeps each verse's most-voted few in
+`data/crossrefs/<BOOK>.json`, with both ends in our verse numbering
+(`owb/crossrefs.py`), so the build needs no source clone.
+
 ## Reader settings
 
 Reader settings are stored as marked alternatives inside the text. The first
@@ -124,8 +135,10 @@ option is the default:
 
     the light of {{gender:all people|men}}
 
-Settings: `gender`, `christos`, `divine_name`, `units`, `deity_pronoun`,
-`spelling`. `owb/markup.py` lists and renders the spans.
+Settings: `gender`, `christos`, `divine_name`, `deity_pronoun`, `units`,
+`plural_you` (a future `spelling` setting needs a reader control first).
+`owb/markup.py` and `web/markup.js` list and render the spans;
+`tests/markup_vectors.json` holds the two to the same answers.
 
 ## Licences
 
@@ -162,6 +175,7 @@ Other tools:
     python3 scripts/extract_tokens.py         # refresh data/grc/ and data/hbo/ after adding verses
     python3 scripts/build_versification.py    # rebuild data/versification.json after a source update
     python3 scripts/extract_comparison.py     # rebuild data/comparison/ (WEB, RV1909) after a source update
+    python3 scripts/extract_crossrefs.py      # rebuild data/crossrefs/ after a source update
 
 ## The site
 
@@ -193,11 +207,12 @@ An article is translated by adding `articles/<lang>/<slug>.md` with the same
 slug. Until then, the other language's page shows the English under a note,
 names the English page as canonical and stays out of the sitemap.
 
-To add a language: add it to `LANGUAGES` in `scripts/build_site.py` and
-every book's name in it to `data/books.json`, write `i18n/<lang>.json`, add its words to
-`owb/morph.py`, and add it to `Role.READING_LANGUAGES` and the role
-constraint in `backend/accounts/models.py` (with a migration) so it can have
-language reviewers. A drafting brief in `docs/<language>-style.md` settles
+To add a language: list it in `data/languages.json` (its code, English and
+own names, quotation marks, and any reader setting only it has), add every
+book's name in it to `data/books.json`, write `i18n/<lang>.json`, add its
+words to `owb/morph.py`, and run `python backend/manage.py makemigrations
+accounts` so it can have language reviewers. The site, the validator and the
+backend all read the list from `owb/languages.py`. A drafting brief in `docs/<language>-style.md` settles
 the book-wide wording choices.
 
 ### Articles

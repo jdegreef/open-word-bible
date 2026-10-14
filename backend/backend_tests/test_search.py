@@ -125,6 +125,15 @@ class SearchTest(TestCase):
         notes = self.get(q="grace", lang="en", type="note")["results"]
         self.assertTrue(any("⟦" in n.get("hl", "") for n in notes))
 
+    def test_articles_come_without_their_whole_text(self):
+        articles = self.get(q="grace", lang="en", type="article")["results"]
+        self.assertTrue(articles)
+        self.assertFalse([a for a in articles if "x" in a])
+        self.assertTrue(any("⟦" in a.get("hl", "") for a in articles))
+        best = [d for d in self.get(q="grace", lang="en")["results"] if d["k"] == "a"]
+        self.assertTrue(best)
+        self.assertFalse([a for a in best if "x" in a])
+
     def test_bible_order_and_paging(self):
         def plain(docs):
             return [{k: v for k, v in d.items() if k != "hl"} for d in docs]
@@ -135,6 +144,9 @@ class SearchTest(TestCase):
         positions = {str(e.doc): e.position for e in SearchEntry.objects.filter(language="en", kind="n")}
         order = [positions[str(d)] for d in in_order]
         self.assertEqual(order, sorted(order))
+        # A page carries every kind's count too, as the site's filters show them.
+        self.assertEqual(self.get(q="grace", lang="en", type="note", limit=2)["totals"],
+                         self.get(q="grace", lang="en")["totals"])
         first = self.get(q="grace", lang="en", type="note", limit=2)["results"]
         second = self.get(q="grace", lang="en", type="note", limit=2, offset=2)["results"]
         self.assertFalse([d for d in first if d in second])

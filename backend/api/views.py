@@ -13,7 +13,8 @@ GET /api/search/?q=light&lang=en         search the site's passages, sentences, 
                                          and articles (translation/search.py); add
                                          &type=verse|note|article|passage for one
                                          kind a page at a time (&offset, &limit,
-                                         &sort=relevance|order)
+                                         &sort=relevance|order, with every kind's
+                                         count in "totals")
 GET /healthz                             liveness check
 """
 from django.db import connection
@@ -108,6 +109,7 @@ def record_json(sentence):
             "source": {"language": sentence.source_edition.language, "text_id": sentence.source_text_id, "tokens": sentence.tokens,
                        "text": sentence.source_text},
             "literal_gloss": sentence.literal_gloss, "renderings": renderings,
+            **({"alignments": sentence.alignments} if sentence.alignments else {}),
             "decisions": decisions, "status": sentence.status}
 
 

@@ -28,6 +28,8 @@ from django.conf import settings
 from django.db import models
 from django.db.models import Q
 
+from owb import languages
+
 
 def new_secret():
     """A random secret and the hash that is stored in its place."""
@@ -47,9 +49,10 @@ class Role(models.Model):
         LANGUAGE_REVIEWER = "language_reviewer", "Language reviewer"
 
     # Original languages a scholar reviews, and reading languages a language
-    # reviewer reviews.
-    ORIGINAL_LANGUAGES = {"grc": "Greek", "hbo": "Hebrew"}
-    READING_LANGUAGES = {"en": "English", "es": "Spanish", "fr": "French", "sw": "Swahili"}
+    # reviewer reviews (data/languages.json). A language added there changes
+    # the check below, so it needs `manage.py makemigrations accounts`.
+    ORIGINAL_LANGUAGES = {code: lang["name"] for code, lang in languages.ORIGINAL.items()}
+    READING_LANGUAGES = {code: lang["name"] for code, lang in languages.READING.items()}
 
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="roles")
     kind = models.CharField(max_length=20, choices=Kind.choices)
@@ -65,8 +68,8 @@ class Role(models.Model):
             models.UniqueConstraint(fields=["user", "kind", "language"], name="unique_role"),
             models.CheckConstraint(
                 name="role_language_matches_kind",
-                condition=(Q(kind="scholar_reviewer", language__in=["grc", "hbo"])
-                           | Q(kind="language_reviewer", language__in=["en", "es", "fr", "sw"])
+                condition=(Q(kind="scholar_reviewer", language__in=list(languages.ORIGINAL))
+                           | Q(kind="language_reviewer", language__in=list(languages.READING))
                            | (Q(kind__in=["super_admin", "editor"]) & Q(language=""))),
             ),
         ]
@@ -130,3 +133,39 @@ class ApiToken(models.Model):
 
     def __str__(self):
         return f"{self.user} ({self.label or 'device'})"
+
+
+class Mark(models.Model):
+    """A reader's bookmark and highlight on one verse, synced from the reader
+    (web/reader.js keeps them in the browser as owb.marks; accounts/reading.py
+    merges them). A mark cleared on one device stays as a row with neither, so
+    the clearing reaches the reader's other devices. updated_at is the
+    device's clock in milliseconds: the latest change to a verse wins."""
+    HUES = ("yellow", "green", "blue", "pink")
+
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="marks")
+    verse = models.CharField(max_length=16, help_text='A verse id, "JHN.3.16"')
+    bookmark = models.BooleanField(default=False)
+    highlight = models.CharField(max_length=8, blank=True)
+    text = models.TextField(blank=True, help_text="The verse's words as shown when it was marked")
+    lang = models.CharField(max_length=3, blank=True)
+    updated_at = models.BigIntegerField()
+
+    class Meta:
+        constraints = [models.UniqueConstraint(fields=["user", "verse"], name="unique_mark")]
+        ordering = ["user", "verse"]
+
+    def __str__(self):
+        return f"{self.verse} ({self.user})"
+
+
+class ReadingPlace(models.Model):
+    """Where a reader last was ("Continue reading"), synced like Mark."""
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="reading_place")
+    book = models.CharField(max_length=3)
+    chapter = models.PositiveSmallIntegerField()
+    verse = models.CharField(max_length=8, help_text='"16", or "7:53" for a verse of the chapter before')
+    updated_at = models.BigIntegerField()
+
+    def __str__(self):
+        return f"{self.book} {self.chapter}:{self.verse} ({self.user})"
