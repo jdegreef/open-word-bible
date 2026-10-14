@@ -40,6 +40,11 @@
           "L": "Và khi đi ngang qua, {{deity_pronoun:ngài|Ngài}} thấy một người mù từ lúc mới sinh.",
           "B": "Khi Đức Giê-xu đang đi ngang qua, {{deity_pronoun:ngài|Ngài}} thấy một người bị mù từ khi mới sinh.",
           "R": "Khi Đức Giê-xu đang đi trên đường, {{deity_pronoun:ngài|Ngài}} thấy một người bị mù từ ngày mới sinh ra."
+        },
+        "ko": {
+          "L": "그리고 그분께서 지나가시다가, 날 때부터 눈먼 사람을 보셨다.",
+          "B": "예수께서 길을 지나가시다가, 날 때부터 눈이 먼 사람을 보셨다.",
+          "R": "예수께서 길을 걸어가시다가, 태어날 때부터 앞을 보지 못하는 사람을 보셨다."
         }
       },
       "alignments": [
@@ -218,6 +223,46 @@
           "reason": "Only the capital letter changes with the setting. In chapter 9 the people who do not know Jesus speak of him as \"ông ấy\" or \"người ấy\", which take no span.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n43009001003"
+          ],
+          "choice": "No deity_pronoun spans in Korean",
+          "alternatives": [
+            "capitalised pronoun alternatives, as in the English"
+          ],
+          "reason": "Korean has no capital letters, so the deity_pronoun setting has nothing to change. Respect for Jesus and God is carried at every level by the subject honorific -si-, by \"께서\" and by \"그분\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43009001005"
+          ],
+          "choice": "\"앞을 보지 못하는\" (R) for \"blind\"",
+          "alternatives": [
+            "\"눈먼\", as at Literal and Balanced"
+          ],
+          "reason": "Readable uses the plain, respectful description of the man's condition; Literal and Balanced keep the single word \"눈먼\", which the chapter's play on seeing and blindness (9:39-41) needs.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -273,6 +318,11 @@
           "L": "Và các môn đồ của {{deity_pronoun:ngài|Ngài}} hỏi {{deity_pronoun:ngài|Ngài}} rằng: \"Thưa Ra-bi, ai đã phạm tội, người này hay cha mẹ anh ta, để anh ta sinh ra đã bị mù?\"",
           "B": "Các môn đồ hỏi {{deity_pronoun:ngài|Ngài}}: \"Thưa Ra-bi, ai đã phạm tội khiến người này sinh ra đã bị mù? Anh ta hay cha mẹ anh ta?\"",
           "R": "Các môn đồ hỏi {{deity_pronoun:ngài|Ngài}}: \"Thưa Ra-bi, tại sao người này sinh ra đã bị mù? Có phải vì tội của chính anh ta, hay vì cha mẹ anh ta phạm tội?\""
+        },
+        "ko": {
+          "L": "그러자 그분의 제자들이 그분께 물으며 말했다. \"랍비, 누가 죄를 지어서 그가 눈먼 채로 태어났습니까? 이 [사람]입니까, 그의 부모입니까?\"",
+          "B": "그분의 제자들이 그분께 물었다. \"랍비님, 이 사람이 눈먼 채로 태어난 것은 누가 죄를 지었기 때문입니까? 이 사람입니까, 그의 부모입니까?\"",
+          "R": "그분의 제자들이 그분께 물었다. \"랍비님, 이 사람은 왜 앞을 보지 못하는 채로 태어났습니까? 자기가 죄를 지어서입니까, 부모가 죄를 지어서입니까?\""
         }
       },
       "alignments": [
@@ -526,6 +576,53 @@
           "reason": "John keeps the word Rabbi, so Vietnamese keeps \"Ra-bi\" with the respectful \"thưa\". \"Anh\" fits an adult man of unknown age (9:21 says he is of age).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n43009002008"
+          ],
+          "choice": "\"랍비\" (L); \"랍비님\" (B, R), with the formal style (합쇼체: -습니까)",
+          "alternatives": [
+            "\"선생님\"",
+            "해요체"
+          ],
+          "reason": "The style guide's choice: disciples address Jesus in 합쇼체, and the title Rabbi takes the honorific suffix \"-님\" at Balanced and Readable.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n43009002009",
+            "n43009002010",
+            "n43009002016",
+            "n43009002017",
+            "n43009002018"
+          ],
+          "choice": "The question \"who sinned\" is joined to its result before the two alternatives",
+          "alternatives": [
+            "\"누가 죄를 지었습니까? 이 사람입니까, 그의 부모입니까? 그래서 그가 눈먼 채로 태어났습니까?\""
+          ],
+          "reason": "Korean cannot leave the purpose clause trailing after the alternatives; even Literal puts \"so that he was born blind\" with the question it belongs to.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -581,6 +678,11 @@
           "L": "Đức Giê-xu đáp: \"Không phải người này phạm tội, cũng không phải cha mẹ anh ta, nhưng [việc ấy xảy ra] để các công việc của Đức Chúa Trời được bày tỏ trong anh ta.",
           "B": "Đức Giê-xu đáp: \"Không phải anh ta phạm tội, cũng không phải cha mẹ anh ta. Việc ấy xảy ra để công việc của Đức Chúa Trời được tỏ ra trong anh ta.",
           "R": "Đức Giê-xu đáp: \"Anh ta sinh ra bị mù không phải vì anh ta phạm tội hay vì cha mẹ anh ta phạm tội. Đó là để người ta có thể thấy công việc của Đức Chúa Trời trong anh ta."
+        },
+        "ko": {
+          "L": "예수께서 대답하셨다. \"이 [사람]이 죄를 지은 것도 아니고 그의 부모도 아니다. 오히려 [이렇게 된 것은] 하나님의 일들이 그 사람에게서 드러나게 하려는 것이다.",
+          "B": "예수께서 대답하셨다. \"이 사람이 죄를 지은 것도, 그의 부모가 죄를 지은 것도 아니다. 하나님의 일이 그에게서 드러나게 하려는 것이다.",
+          "R": "예수께서 대답하셨다. \"이 사람이 앞을 못 보게 태어난 것은 자기 죄 때문도, 부모의 죄 때문도 아니다. 하나님께서 하시는 일이 그에게서 드러나게 하시려는 것이다."
         }
       },
       "alignments": [
@@ -931,6 +1033,11 @@
           "L": "Chúng ta phải làm các công việc của Đấng đã sai {{deity_pronoun:ta|Ta}} trong khi còn ban ngày; đêm đến, là lúc không ai có thể làm việc.",
           "B": "Khi còn ban ngày, chúng ta phải làm công việc của Đấng đã sai {{deity_pronoun:ta|Ta}}. Đêm sắp đến, và lúc ấy không ai làm việc được.",
           "R": "Khi còn ban ngày, chúng ta phải làm công việc của Đức Chúa Trời, Đấng đã sai {{deity_pronoun:ta|Ta}}. Đêm sắp đến, và khi ấy không ai làm việc được nữa."
+        },
+        "ko": {
+          "L": "낮인 동안에 우리는 나를 보내신 분의 일들을 해야 한다. 밤이 오는데, 그때에는 아무도 일할 수 없다.",
+          "B": "아직 낮인 동안에 우리는 나를 보내신 분의 일을 해야 한다. 밤이 다가오고 있다. 그때가 되면 아무도 일할 수 없다.",
+          "R": "아직 낮일 때 우리는 나를 보내신 하나님의 일을 해야 한다. 밤이 오고 있다. 밤이 되면 아무도 일할 수 없다."
         }
       },
       "alignments": [
@@ -1242,6 +1349,27 @@
           "reason": "Vietnamese must say whether \"we\" includes the hearers; the meaning decision says Jesus includes his disciples.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n43009004009",
+            "n43009004010",
+            "n43009004011"
+          ],
+          "choice": "\"낮인 동안에\" placed first even at Literal",
+          "alternatives": [
+            "\"while it is day\" at the end, as in the Greek"
+          ],
+          "reason": "Korean puts a time clause before the verb it modifies; it cannot follow the main verb as in Greek.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1288,6 +1416,11 @@
           "L": "Khi {{deity_pronoun:ta|Ta}} ở trong thế gian, {{deity_pronoun:ta|Ta}} là ánh sáng của thế gian.\"",
           "B": "Đang khi {{deity_pronoun:ta|Ta}} còn ở trong thế gian, {{deity_pronoun:ta|Ta}} là ánh sáng của thế gian.\"",
           "R": "Bao lâu {{deity_pronoun:ta|Ta}} còn ở trong thế gian, {{deity_pronoun:ta|Ta}} là ánh sáng của thế gian.\""
+        },
+        "ko": {
+          "L": "내가 세상에 있을 때에는, 나는 세상의 빛이다.\"",
+          "B": "내가 세상에 있는 동안, 나는 세상의 빛이다.\"",
+          "R": "내가 이 세상에 있는 동안에는, 내가 세상의 빛이다.\""
         }
       },
       "alignments": [
@@ -1526,6 +1659,11 @@
           "L": "Nói xong những điều này, {{deity_pronoun:ngài|Ngài}} nhổ xuống đất, lấy nước bọt làm thành bùn, rồi bôi bùn ấy lên mắt anh ta, \\v 7 và nói với anh ta: \"Hãy đi, rửa trong ao Si-lô-ê\" (dịch ra là Được Sai).",
           "B": "Nói xong, {{deity_pronoun:ngài|Ngài}} nhổ xuống đất, lấy nước bọt trộn thành bùn, rồi xoa bùn lên mắt người ấy. \\v 7 Rồi {{deity_pronoun:ngài|Ngài}} bảo anh ta: \"Hãy đi rửa ở ao Si-lô-ê\" (tên này có nghĩa là Được Sai).",
           "R": "Nói xong, Đức Giê-xu nhổ xuống đất. Ngài trộn nước bọt với đất làm thành bùn, rồi {{deity_pronoun:ngài|Ngài}} đắp bùn lên mắt người ấy. \\v 7 Rồi {{deity_pronoun:ngài|Ngài}} bảo anh ta: \"Anh hãy đi rửa mặt ở ao Si-lô-ê.\" (Si-lô-ê có nghĩa là Được Sai.)"
+        },
+        "ko": {
+          "L": "이 말씀을 하시고, 그분께서 땅에 침을 뱉어 그 침으로 진흙을 만드시고, 그 진흙을 그의 눈에 바르셨다. \\v 7 그리고 그에게 말씀하셨다. \"가서 실로암 못에서 씻어라.\" (이것은 번역하면 '보냄을 받은 자'이다.)",
+          "B": "이 말씀을 하신 뒤에, 그분께서는 땅에 침을 뱉어 침으로 진흙을 개어 그 사람의 눈에 바르셨다. \\v 7 그리고 그에게 \"가서 실로암 못에서 씻어라\" 하고 말씀하셨다. (실로암은 '보냄을 받은 이'라는 뜻이다.)",
+          "R": "이렇게 말씀하신 뒤에, 예수께서는 땅에 침을 뱉어 흙과 섞어 진흙을 만드셨다. 그리고 그 진흙을 그 사람의 눈에 발라 주셨다. \\v 7 그리고 그에게 \"실로암 못에 가서 얼굴을 씻어라\" 하고 말씀하셨다. (실로암은 '보냄을 받은 이'라는 뜻이다.)"
         }
       },
       "alignments": [
@@ -2023,6 +2161,30 @@
           "reason": "A participle with no noun, as in the Greek; the link to Jesus as the one sent (9:4) is left for the reader to see, as the meaning decision says.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43009007011",
+            "n43009007012",
+            "n43009007013"
+          ],
+          "choice": "\"보냄을 받은 자\" (L); \"보냄을 받은 이\" (B, R) for \"Sent\"",
+          "alternatives": [
+            "\"보냄받음\"",
+            "\"파송된 자\""
+          ],
+          "reason": "The Greek translates the name with a participle, \"one who has been sent\"; Korean renders it as a person, so the link to Jesus as the one God sent stays visible. The explanation stays outside the quotation.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2067,6 +2229,11 @@
           "L": "Vậy anh ta đi và rửa, rồi trở [về], nhìn thấy được.",
           "B": "Vậy người ấy đi rửa, và khi trở về thì đã thấy được.",
           "R": "Vậy người ấy đi rửa mặt. Khi trở về, anh ta đã nhìn thấy được!"
+        },
+        "ko": {
+          "L": "그래서 그가 가서 씻고, 보면서 [돌아]왔다.",
+          "B": "그래서 그 사람은 가서 씻었고, 앞을 보게 되어 돌아왔다.",
+          "R": "그래서 그 사람은 가서 얼굴을 씻었다. 그가 돌아올 때에는 앞을 볼 수 있었다!"
         }
       },
       "alignments": [
@@ -2275,6 +2442,11 @@
           "L": "Vậy những người hàng xóm và những người trước đây đã thấy anh ta, [biết] anh ta là người ăn xin, nói: \"Đây chẳng phải là người vẫn ngồi ăn xin sao?\"",
           "B": "Những người hàng xóm và những ai trước đây từng thấy anh ta ăn xin bắt đầu hỏi nhau: \"Đây chẳng phải là người vẫn ngồi ăn xin đó sao?\"",
           "R": "Hàng xóm và những người trước đây từng thấy anh ta ăn xin cứ hỏi nhau: \"Đây có phải là người ăn xin hay ngồi ở đó không?\""
+        },
+        "ko": {
+          "L": "그러자 이웃 사람들과, 전에 그가 거지였던 것을 보아 온 사람들이 말하고 있었다. \"이 사람은 앉아서 구걸하던 사람이 아니냐?\"",
+          "B": "그의 이웃들과 전에 그가 구걸하는 것을 본 사람들이 묻기 시작했다. \"이 사람은 앉아서 구걸하던 그 사람이 아니냐?\"",
+          "R": "이웃 사람들과 전에 그가 구걸하는 것을 보았던 사람들이 자꾸 물었다. \"이 사람, 저기 늘 앉아 있던 그 거지가 아니냐?\""
         }
       },
       "alignments": [
@@ -2511,6 +2683,27 @@
           "reason": "As in English: shows the ongoing talk (meaning decision m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n43009008013"
+          ],
+          "choice": "The neighbours and the man speak among themselves in the plain style (해라체: -냐, -다)",
+          "alternatives": [
+            "해요체 (-요)"
+          ],
+          "reason": "The style guide's default between equals. The man changes to the formal style when he stands before the Pharisees (9:15).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2560,6 +2753,11 @@
           "L": "Những người khác nói: \"Chính là [anh ta]\"; những người khác nói: \"Không phải, nhưng [người này] giống anh ta.\"",
           "B": "Có người nói: \"Chính anh ta đó.\" Người khác lại nói: \"Không phải, chỉ là người giống anh ta thôi.\"",
           "R": "Có người nói: \"Phải, chính là anh ta.\" Người khác nói: \"Không phải đâu, chỉ là một người trông giống anh ta thôi.\""
+        },
+        "ko": {
+          "L": "다른 사람들은 \"이 사람이다\" 하고 말하고 있었고, 다른 사람들은 \"아니다. 그와 닮았다\" 하고 말하고 있었다.",
+          "B": "어떤 사람들은 \"바로 그 사람이다\" 하고, 또 어떤 사람들은 \"아니다. 그 사람을 닮은 사람이다\" 하고 말했다.",
+          "R": "어떤 사람들은 \"맞다, 바로 그 사람이다\" 하고 말했다. 다른 사람들은 \"아니다, 그냥 그 사람을 닮은 사람일 뿐이다\" 하고 말했다."
         }
       },
       "alignments": [
@@ -2763,6 +2961,11 @@
           "L": "Người ấy cứ nói: \"Tôi là [người đó].\"",
           "B": "Chính người ấy cứ nói: \"Tôi chính là người đó.\"",
           "R": "Nhưng anh ta cứ nói với họ: \"Phải, chính là tôi đây!\""
+        },
+        "ko": {
+          "L": "그 [사람]은 \"내가 [그 사람]이다\" 하고 말하고 있었다.",
+          "B": "그 사람 자신은 \"내가 바로 그 사람이다\" 하고 계속 말했다.",
+          "R": "그러나 그 사람은 \"맞다, 바로 나다!\" 하고 계속 말했다."
         }
       },
       "alignments": [
@@ -2895,6 +3098,28 @@
           "reason": "The meaning note says this \"I am\" is a plain answer about who he is. So Swahili uses the ordinary \"mimi ndiye\" (I am the one), not \"mimi niko\", which in 8:24-58 carries the echo of God's name.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43009009016",
+            "n43009009017"
+          ],
+          "choice": "\"내가 [그 사람]이다\" (L); \"내가 바로 그 사람이다\" (B); \"바로 나다\" (R)",
+          "alternatives": [
+            "\"나는 있다\", the wording of 8:58"
+          ],
+          "reason": "The same Greek words as in 8:58, but here, as the meaning decision says, a plain answer about who he is; Korean completes the predicate and does not echo Jesus's \"I am\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2940,6 +3165,11 @@
           "L": "Vậy họ nói với anh ta: \"Mắt anh đã được mở ra thế nào?\"",
           "B": "Vậy họ hỏi anh ta: \"Làm sao mắt anh được mở ra vậy?\"",
           "R": "Vậy họ hỏi anh ta: \"Làm sao mắt anh được mở ra? Sao bây giờ anh thấy được?\""
+        },
+        "ko": {
+          "L": "그러자 그들이 그에게 말하고 있었다. \"어떻게 네 눈이 뜨였느냐?\"",
+          "B": "그래서 그들이 그에게 물었다. \"그러면 네 눈이 어떻게 뜨였느냐?\"",
+          "R": "그래서 사람들이 그에게 물었다. \"네 눈이 어떻게 뜨였느냐? 지금 어떻게 볼 수 있게 되었느냐?\""
         }
       },
       "alignments": [
@@ -3159,6 +3389,11 @@
           "L": "Người ấy đáp: \"Người tên là Giê-xu đã làm bùn, bôi lên mắt tôi, và nói với tôi: 'Hãy đi đến Si-lô-ê mà rửa.' Vậy tôi đã đi và đã rửa, thì được sáng mắt.\"",
           "B": "Anh ta đáp: \"Người tên là Giê-xu đã trộn bùn và xoa lên mắt tôi. Ông ấy bảo tôi: 'Hãy đến Si-lô-ê mà rửa.' Vậy tôi đi rửa, và tôi bắt đầu thấy được.\"",
           "R": "Anh ta trả lời: \"Người tên là Giê-xu làm một ít bùn và đắp lên mắt tôi. Ông ấy bảo tôi: 'Hãy đến ao Si-lô-ê mà rửa.' Vậy tôi đến đó rửa, và bây giờ tôi thấy được rồi!\""
+        },
+        "ko": {
+          "L": "그 사람이 대답했다. \"예수라고 하는 사람이 진흙을 만들어 내 눈에 바르고, 나에게 '실로암에 가서 씻어라' 하고 말했다. 그래서 내가 가서 씻고 보게 되었다.\"",
+          "B": "그가 대답했다. \"예수라는 사람이 진흙을 만들어 내 눈에 발랐다. 그리고 나에게 '실로암에 가서 씻어라' 하고 말했다. 그래서 가서 씻었더니 보이기 시작했다.\"",
+          "R": "그가 대답했다. \"예수라는 사람이 진흙을 조금 만들어서 내 눈에 발랐다. 그리고 나에게 '실로암에 가서 씻어라' 하고 말했다. 그래서 그곳에 가서 씻었더니, 이제는 보인다!\""
         }
       },
       "alignments": [
@@ -3517,6 +3752,28 @@
           "reason": "The guide puts \"Đức\" before the name at every level, but here the name is in the mouth of a man who knows nothing about Jesus except his name; the honorific would have him confess what he only comes to see in 9:38. The narrator keeps \"Đức Giê-xu\".",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n43009011004",
+            "n43009011007"
+          ],
+          "choice": "The man speaks of Jesus without honorifics (\"예수라는 사람\", 발랐다, 말했다)",
+          "alternatives": [
+            "\"예수라는 분\", 바르셨다, 말씀하셨다"
+          ],
+          "reason": "He knows nothing about Jesus but his name (meaning decision). In Korean his growing understanding can be heard: \"그분\" and the honorific \"-시-\" first appear when he calls Jesus a prophet (9:17) and grow from there.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3560,6 +3817,11 @@
           "L": "Và họ nói với anh ta: \"Người đó ở đâu?\"",
           "B": "Họ hỏi anh ta: \"Ông ấy ở đâu?\"",
           "R": "\"Bây giờ ông ấy ở đâu?\" họ hỏi."
+        },
+        "ko": {
+          "L": "그리고 그들이 그에게 말했다. \"그 [사람]이 어디 있느냐?\"",
+          "B": "그들이 그에게 물었다. \"그 사람이 어디 있느냐?\"",
+          "R": "\"그 사람은 지금 어디 있느냐?\" 하고 그들이 물었다."
         }
       },
       "alignments": [
@@ -3735,6 +3997,11 @@
           "L": "Anh ta nói: \"Tôi không biết.\"",
           "B": "\"Tôi không biết,\" anh ta nói.",
           "R": "\"Tôi không biết,\" anh ta trả lời."
+        },
+        "ko": {
+          "L": "그가 말한다. \"나는 모른다.\"",
+          "B": "\"모르겠다\" 하고 그가 말했다.",
+          "R": "\"나는 모른다\" 하고 그가 대답했다."
         }
       },
       "alignments": [
@@ -3853,6 +4120,27 @@
           "choice": "historic present: \"nói\" with no past marker",
           "alternatives": [],
           "reason": "Vietnamese verbs carry no tense, so the historic present shows at Literal only in the absence of \"đã\"; one decision for this passage.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43009012007"
+          ],
+          "choice": "Historic present kept at Literal (\"말한다\"); past tense at Balanced and Readable",
+          "alternatives": [
+            "past tense at every level"
+          ],
+          "reason": "Korean narrative can use the present for vividness, so Literal keeps John's tense; Balanced and Readable use the ordinary past. One decision per passage.",
           "uncertain": false,
           "footnote": false
         }
