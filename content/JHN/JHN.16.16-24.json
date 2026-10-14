@@ -34,6 +34,11 @@
           "L": "Ít lâu [nữa] các con không còn thấy {{deity_pronoun:ta|Ta}}, và lại ít lâu [nữa] các con sẽ thấy {{deity_pronoun:ta|Ta}}.",
           "B": "Ít lâu nữa các con sẽ không còn thấy {{deity_pronoun:ta|Ta}}, rồi ít lâu sau nữa các con sẽ thấy {{deity_pronoun:ta|Ta}}.",
           "R": "Chỉ ít lâu nữa thôi, các con sẽ không thấy {{deity_pronoun:ta|Ta}} nữa. Rồi ít lâu sau đó, các con sẽ lại thấy {{deity_pronoun:ta|Ta}}."
+        },
+        "ko": {
+          "L": "조금 [있으면] 너희가 더 이상 나를 보지 못하고, 다시 조금 [있으면] 너희가 나를 볼 것이다.",
+          "B": "조금 있으면 너희가 더 이상 나를 보지 못할 것이다. 그리고 다시 조금 더 있으면 나를 보게 될 것이다.",
+          "R": "조금 있으면 너희는 나를 더 이상 보지 못할 것이다. 그러나 그 뒤에 조금 더 있으면 다시 나를 보게 될 것이다."
         }
       },
       "alignments": [
@@ -237,6 +242,47 @@
           "reason": "The forms of address set in the style guide for the whole book: Jesus speaks to his disciples as a teacher to those in his care. \"Ta\" mid-sentence is under the deity_pronoun setting.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n43016016005"
+          ],
+          "choice": "No deity_pronoun spans in Korean",
+          "alternatives": [
+            "capitalised pronoun spans as in English"
+          ],
+          "reason": "Korean has no capital letters, so the deity_pronoun setting has nothing to change; respect is carried by the honorific -si-, 께서 and 그분 at every level (style guide section 7).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n43016016001",
+            "n43016016007"
+          ],
+          "choice": "조금 [있으면] for mikron (\"a little\")",
+          "alternatives": [
+            "잠시 후"
+          ],
+          "reason": "Korean needs a verb to make \"a little\" a span of time; Literal brackets it, Balanced and Readable write it plainly.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -289,6 +335,11 @@
           "L": "Vậy [một số] môn đồ của {{deity_pronoun:ngài|Ngài}} nói với nhau: \"Điều này là gì mà Thầy nói với chúng ta: 'Ít lâu [nữa] các con không thấy {{deity_pronoun:ta|Ta}}, và lại ít lâu [nữa] các con sẽ thấy {{deity_pronoun:ta|Ta}}'?",
           "B": "Bấy giờ một số môn đồ của {{deity_pronoun:ngài|Ngài}} nói với nhau: \"Thầy muốn nói gì khi bảo chúng ta: 'Ít lâu nữa các con sẽ không còn thấy {{deity_pronoun:ta|Ta}}, rồi ít lâu sau nữa các con sẽ thấy {{deity_pronoun:ta|Ta}}'?",
           "R": "Vài môn đồ của {{deity_pronoun:ngài|Ngài}} bắt đầu hỏi nhau: \"Thầy muốn nói gì khi bảo: 'Chỉ ít lâu nữa thôi, các con sẽ không thấy {{deity_pronoun:ta|Ta}} nữa. Rồi ít lâu sau đó, các con sẽ lại thấy {{deity_pronoun:ta|Ta}}'?"
+        },
+        "ko": {
+          "L": "그러자 그분의 제자들 가운데 [몇이] 서로 말했다. \"그분이 우리에게 '조금 [있으면] 너희가 나를 보지 못하고, 다시 조금 [있으면] 너희가 나를 볼 것이다' 하고 말씀하시는 이것이 무엇이냐?",
+          "B": "그러자 제자들 가운데 몇 사람이 서로 말했다. \"선생님이 우리에게 '조금 있으면 너희가 더 이상 나를 보지 못할 것이다. 그리고 다시 조금 더 있으면 나를 보게 될 것이다' 하고 말씀하시는데, 그게 무슨 뜻일까?",
+          "R": "예수님의 제자들 가운데 몇 사람이 서로 묻기 시작했다. \"선생님이 '조금 있으면 너희는 나를 더 이상 보지 못할 것이다. 그러나 그 뒤에 조금 더 있으면 다시 나를 보게 될 것이다' 하고 말씀하시는데, 그게 무슨 뜻일까?"
         }
       },
       "alignments": [
@@ -559,6 +610,31 @@
           "reason": "Talking among themselves, the disciples would not say \"Ngài\" of their teacher but \"Thầy\", the noun they use to address him; it is always capitalised and takes no setting. Literal keeps the historic present \"Thầy nói\" (he says) by leaving out \"đã\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n43016017009",
+            "n43016017010",
+            "n43016017011",
+            "n43016017012"
+          ],
+          "choice": "The disciples speak among themselves in the plain style (해라체) and call Jesus 그분 (L) or 선생님 (B, R), with the honorific 말씀하시다",
+          "alternatives": [
+            "예수",
+            "당신"
+          ],
+          "reason": "Between equals the plain style is natural, but Jesus is still referred to with honour; 선생님 is how disciples would name their teacher in talk among themselves.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -592,6 +668,11 @@
           "L": "Và: 'Vì {{deity_pronoun:ta|Ta}} đi đến cùng Cha'?\"",
           "B": "Còn câu 'vì {{deity_pronoun:ta|Ta}} đi về cùng Cha' là sao?\"",
           "R": "Và Thầy muốn nói gì khi bảo 'vì {{deity_pronoun:ta|Ta}} đi về với Cha'?\""
+        },
+        "ko": {
+          "L": "또 '내가 아버지께로 가기 때문이다' [하신 것은]?\"",
+          "B": "또 '내가 아버지께로 가기 때문이다' 하신 것은 무슨 말일까?\"",
+          "R": "또 '내가 아버지께로 가기 때문이다' 하신 것은 무슨 뜻일까?\""
         }
       },
       "alignments": [
@@ -723,6 +804,11 @@
           "L": "Vậy họ cứ nói: \"Điều này là gì mà Thầy nói: 'ít lâu [nữa]'?",
           "B": "Vậy họ cứ bàn với nhau: \"Thầy muốn nói gì khi bảo 'ít lâu nữa'?",
           "R": "Họ cứ hỏi nhau mãi: \"Thầy nói 'ít lâu nữa' là có ý gì?"
+        },
+        "ko": {
+          "L": "그래서 그들이 말하고 있었다. \"그분이 말씀하시는 이 '조금 [있으면]'은 무엇이냐?",
+          "B": "그래서 그들은 계속 말했다. \"'조금 있으면'이라는 말씀이 무슨 뜻일까?",
+          "R": "그들은 계속 서로 물었다. \"'조금 있으면'이라는 말씀은 무슨 뜻일까?"
         }
       },
       "alignments": [
@@ -853,6 +939,11 @@
           "L": "Chúng ta không biết Thầy đang nói [về điều] gì.\"",
           "B": "Chúng ta không hiểu Thầy đang nói gì.\"",
           "R": "Chúng ta không hiểu Thầy nói gì cả.\""
+        },
+        "ko": {
+          "L": "우리는 그분이 무엇을 말씀하시는지 알지 못한다.\"",
+          "B": "선생님이 무슨 말씀을 하시는지 우리는 모르겠다.\"",
+          "R": "선생님이 무슨 말씀을 하시는지 모르겠다.\""
         }
       },
       "alignments": [
@@ -986,6 +1077,11 @@
           "L": "Đức Giê-xu biết rằng họ muốn hỏi {{deity_pronoun:ngài|Ngài}}, và {{deity_pronoun:ngài|Ngài}} phán với họ: \"Có phải các con đang tìm hiểu với nhau về điều này, rằng {{deity_pronoun:ta|Ta}} đã nói: 'Ít lâu [nữa] các con không thấy {{deity_pronoun:ta|Ta}}, và lại ít lâu [nữa] các con sẽ thấy {{deity_pronoun:ta|Ta}}'?\"",
           "B": "Đức Giê-xu biết họ muốn hỏi {{deity_pronoun:ngài|Ngài}} về điều đó, nên {{deity_pronoun:ngài|Ngài}} phán với họ: \"Có phải các con đang bàn với nhau xem {{deity_pronoun:ta|Ta}} muốn nói gì khi bảo: 'Ít lâu nữa các con sẽ không còn thấy {{deity_pronoun:ta|Ta}}, rồi ít lâu sau nữa các con sẽ thấy {{deity_pronoun:ta|Ta}}'?\"",
           "R": "Đức Giê-xu biết họ muốn hỏi {{deity_pronoun:ngài|Ngài}} về điều này. Vì vậy {{deity_pronoun:ngài|Ngài}} nói với họ: \"Có phải các con đang hỏi nhau về lời {{deity_pronoun:ta|Ta}} nói: 'Chỉ ít lâu nữa thôi, các con sẽ không thấy {{deity_pronoun:ta|Ta}} nữa. Rồi ít lâu sau đó, các con sẽ lại thấy {{deity_pronoun:ta|Ta}}'?\""
+        },
+        "ko": {
+          "L": "그들이 그분께 묻고 싶어 하는 것을 예수께서 아시고 그들에게 말씀하셨다. \"내가 '조금 [있으면] 너희가 나를 보지 못하고, 다시 조금 [있으면] 너희가 나를 볼 것이다' 하고 말한 것에 대하여 너희가 서로 묻고 있느냐?\"",
+          "B": "예수께서는 그들이 그것에 대해 묻고 싶어 한다는 것을 아시고 말씀하셨다. \"내가 '조금 있으면 너희가 더 이상 나를 보지 못할 것이다. 그리고 다시 조금 더 있으면 나를 보게 될 것이다' 하고 말한 것이 무슨 뜻인지 너희가 서로 의논하고 있느냐?\"",
+          "R": "예수께서는 제자들이 이것에 대해 묻고 싶어 한다는 것을 아셨다. 그래서 그들에게 말씀하셨다. \"내가 '조금 있으면 너희는 나를 더 이상 보지 못할 것이다. 그러나 그 뒤에 조금 더 있으면 다시 나를 보게 될 것이다' 하고 말한 것이 무슨 뜻인지 서로 묻고 있느냐?\""
         }
       },
       "alignments": [
@@ -1321,6 +1417,11 @@
           "L": "Thật vậy, thật vậy, {{deity_pronoun:ta|Ta}} nói với các con: các con sẽ khóc và than khóc, còn thế gian sẽ vui mừng; các con sẽ phải buồn rầu, nhưng nỗi buồn của các con sẽ trở thành niềm vui.",
           "B": "Thật vậy, thật vậy, {{deity_pronoun:ta|Ta}} nói với các con, các con sẽ khóc lóc và than khóc lớn tiếng, còn thế gian thì vui mừng. Các con sẽ đầy buồn rầu, nhưng nỗi buồn của các con sẽ biến thành niềm vui.",
           "R": "Ta nói thật với các con: các con sẽ khóc than, còn thế gian thì vui. Các con sẽ rất buồn, nhưng nỗi buồn ấy sẽ biến thành niềm vui."
+        },
+        "ko": {
+          "L": "진실로 진실로 너희에게 말한다. 너희는 울며 애곡할 것이나 세상은 기뻐할 것이다. 너희는 슬픔에 잠기겠지만, 너희의 슬픔이 기쁨으로 변할 것이다.",
+          "B": "진실로 진실로 너희에게 말한다. 너희는 울며 통곡하겠지만 세상은 기뻐할 것이다. 너희는 슬픔에 잠기겠지만, 너희의 슬픔은 기쁨이 될 것이다.",
+          "R": "내가 분명히 말한다. 너희는 울며 슬퍼할 것이다. 그러나 세상은 기뻐할 것이다. 너희는 몹시 슬프겠지만, 그 슬픔이 기쁨으로 바뀔 것이다."
         }
       },
       "alignments": [
@@ -1597,6 +1698,53 @@
           "reason": "The style guide's rendering of the double \"amen\" for the whole book, recorded once in this passage. \"Quả thật\" is the familiar 1926 wording, avoided so as not to drift toward it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43016020001",
+            "n43016020002",
+            "n43016020003",
+            "n43016020004"
+          ],
+          "choice": "진실로 진실로 너희에게 말한다 (L, B); 내가 분명히 말한다 (R)",
+          "alternatives": [
+            "참으로 참으로",
+            "아멘 아멘"
+          ],
+          "reason": "The guide's book-wide rendering of amen amen (one decision for the passage).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43016020006",
+            "n43016020008"
+          ],
+          "choice": "울며 애곡하다 (L); 울며 통곡하다 (B); 울며 슬퍼하다 (R)",
+          "alternatives": [
+            "울고 슬퍼하다 at every level"
+          ],
+          "reason": "The second verb is loud mourning for the dead; 애곡 and 통곡 say that, Readable uses the common word.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1653,6 +1801,11 @@
           "L": "Người phụ nữ khi sinh con thì đau buồn, vì giờ của mình đã đến; nhưng khi đã sinh đứa con rồi, thì không còn nhớ đến cơn khổ đau nữa, vì niềm vui rằng một con người đã được sinh ra trong thế gian.",
           "B": "Người phụ nữ khi sinh con thì đau buồn, vì giờ của mình đã đến. Nhưng khi đứa con đã ra đời, người ấy không còn nhớ đến cơn khổ đau nữa, vì vui mừng rằng một con người đã chào đời trong thế gian.",
           "R": "Khi một người phụ nữ sinh con, chị ấy phải chịu đau đớn, vì đã đến lúc sinh. Nhưng khi em bé chào đời, chị quên hết cơn đau. Chị vui mừng vì một con người mới đã ra đời trong thế gian."
+        },
+        "ko": {
+          "L": "여자가 해산할 때에는 자기의 때가 왔으므로 괴로움을 겪는다. 그러나 아이를 낳으면, 한 사람이 세상에 태어났다는 기쁨 때문에 그 고통을 더 이상 기억하지 않는다.",
+          "B": "여자가 아이를 낳을 때에는 해산할 때가 왔으므로 괴로움을 겪는다. 그러나 아이를 낳고 나면, 한 사람이 세상에 태어났다는 기쁨 때문에 그 고통을 더 이상 기억하지 않는다.",
+          "R": "여자가 아기를 낳을 때에는 그때가 되었기 때문에 몹시 아프다. 그러나 아기가 태어나면 그 아픔을 다 잊어버린다. 새 사람이 세상에 태어났다는 기쁨이 가득하기 때문이다."
         }
       },
       "alignments": [
@@ -1995,6 +2148,27 @@
           "reason": "The Greek uses the same noun as for the disciples' sorrow in verses 20 and 22. \"Đau buồn\" holds both the pain of labour and grief, and keeps the echo of \"buồn rầu\" and \"nỗi buồn\" in the verses around it; Readable says plainly \"đau đớn\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43016021005"
+          ],
+          "choice": "괴로움 (L, B); 아프다 (R) for lypē here",
+          "alternatives": [
+            "슬픔, as in verses 20 and 22"
+          ],
+          "reason": "The Greek uses the same word as the disciples' sorrow, but Korean 슬픔 does not fit the pain of labour; the link between the two is lost, as the meaning note explains.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2046,6 +2220,11 @@
           "L": "Vậy các con cũng thế, bây giờ các con có nỗi buồn; nhưng {{deity_pronoun:ta|Ta}} sẽ lại thấy các con, và lòng các con sẽ vui mừng, và niềm vui của các con không ai lấy đi khỏi các con.",
           "B": "Các con cũng vậy: bây giờ các con đang buồn rầu, nhưng {{deity_pronoun:ta|Ta}} sẽ gặp lại các con. Khi ấy lòng các con sẽ vui mừng, và không ai lấy mất niềm vui của các con được.",
           "R": "Các con cũng thế. Bây giờ các con buồn. Nhưng {{deity_pronoun:ta|Ta}} sẽ gặp lại các con. Lúc đó lòng các con sẽ tràn đầy vui mừng. Không ai có thể lấy mất niềm vui của các con."
+        },
+        "ko": {
+          "L": "그러므로 너희도 지금은 슬픔이 있다. 그러나 내가 너희를 다시 볼 것이고, 너희 마음이 기뻐할 것이며, 너희의 기쁨을 아무도 너희에게서 빼앗아 가지 못한다.",
+          "B": "이처럼 너희도 지금은 슬픔에 잠겨 있다. 그러나 내가 너희를 다시 볼 것이다. 그때에 너희 마음이 기뻐할 것이고, 아무도 너희의 기쁨을 너희에게서 빼앗아 가지 못한다.",
+          "R": "너희도 마찬가지다. 지금은 너희가 슬프다. 그러나 내가 너희를 다시 볼 것이다. 그러면 너희 마음이 기쁨으로 가득할 것이다. 아무도 그 기쁨을 너희에게서 빼앗아 가지 못할 것이다."
         }
       },
       "alignments": [
@@ -2376,6 +2555,11 @@
           "L": "Và trong ngày đó các con sẽ không hỏi {{deity_pronoun:ta|Ta}} điều gì. Thật vậy, thật vậy, {{deity_pronoun:ta|Ta}} nói với các con, nếu các con xin Cha điều gì, {{deity_pronoun:ngài|Ngài}} sẽ ban [điều đó] cho các con trong danh {{deity_pronoun:ta|Ta}}.",
           "B": "Trong ngày đó, các con sẽ không còn hỏi {{deity_pronoun:ta|Ta}} điều gì nữa. Thật vậy, thật vậy, {{deity_pronoun:ta|Ta}} nói với các con, nếu các con xin Cha điều gì, {{deity_pronoun:ngài|Ngài}} sẽ ban cho các con trong danh {{deity_pronoun:ta|Ta}}.",
           "R": "Đến ngày đó, các con sẽ không còn gì phải hỏi {{deity_pronoun:ta|Ta}} nữa. Ta nói thật với các con: nếu các con xin Cha bất cứ điều gì, {{deity_pronoun:ngài|Ngài}} sẽ ban cho các con trong danh {{deity_pronoun:ta|Ta}}."
+        },
+        "ko": {
+          "L": "그리고 그날에는 너희가 나에게 아무것도 묻지 않을 것이다. 진실로 진실로 너희에게 말한다. 너희가 무엇이든지 아버지께 구하면, 아버지께서 내 이름으로 너희에게 주실 것이다.",
+          "B": "그날에는 너희가 나에게 아무것도 묻지 않을 것이다. 진실로 진실로 너희에게 말한다. 너희가 아버지께 무엇이든지 구하면, 아버지께서 내 이름으로 그것을 너희에게 주실 것이다.",
+          "R": "그날이 오면 너희는 나에게 더 물어볼 것이 없을 것이다. 내가 분명히 말한다. 너희가 아버지께 무엇이든지 구하면, 아버지께서 내 이름으로 너희에게 주실 것이다."
         }
       },
       "alignments": [
@@ -2669,6 +2853,28 @@
           "reason": "Vietnamese has two everyday verbs that match the two Greek verbs exactly, so the distinction the meaning decision describes shows at every level without explanation.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43016023008",
+            "n43016023016"
+          ],
+          "choice": "묻다 for \"ask me\" (questions); 구하다 for \"ask the Father\" (requests)",
+          "alternatives": [
+            "구하다 for both"
+          ],
+          "reason": "Korean has two verbs that match the two Greek ones, so the difference the meaning note describes stays visible.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2714,6 +2920,11 @@
           "L": "Cho đến bây giờ các con chưa xin điều gì trong danh {{deity_pronoun:ta|Ta}}; hãy xin thì các con sẽ nhận được, để niềm vui của các con được làm cho đầy trọn.",
           "B": "Đến nay các con chưa xin điều gì trong danh {{deity_pronoun:ta|Ta}}. Hãy xin, các con sẽ nhận được, để niềm vui của các con được trọn vẹn.",
           "R": "Từ trước đến giờ các con chưa hề xin điều gì trong danh {{deity_pronoun:ta|Ta}}. Cứ xin đi, các con sẽ nhận được, để niềm vui của các con được tràn đầy."
+        },
+        "ko": {
+          "L": "지금까지 너희는 내 이름으로 아무것도 구하지 않았다. 구하라. 그러면 받을 것이다. 이는 너희의 기쁨이 가득 차게 하려는 것이다.",
+          "B": "지금까지 너희는 내 이름으로 아무것도 구하지 않았다. 구하여라. 그러면 받아서 너희의 기쁨이 온전해질 것이다.",
+          "R": "지금까지 너희는 내 이름으로 아무것도 구한 적이 없다. 계속 구하여라. 그러면 받을 것이다. 그래서 너희의 기쁨이 가득 찰 것이다."
         }
       },
       "alignments": [
