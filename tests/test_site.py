@@ -701,38 +701,38 @@ class ComparisonTest(unittest.TestCase):
     page's notes name, so the page stays small."""
 
     def test_notes_bring_only_untranslated_verses(self):
-        records, _ = build_site.load_chapter("1TI", 5)
+        records, _ = build_site.load_chapter("ROM", 1)
         compare = build_site.comparison_verses(records, "en")
         self.assertEqual((compare["name"], compare["lang"]), ("World English Bible", "en"))
-        # 1 Timothy 5:18 quotes Deuteronomy 25:4.
-        self.assertEqual(compare["verses"]["DEU.25.4"], build_site.comparison_text("web")["DEU.25.4"])
+        # Romans 1:17 quotes Habakkuk 2:4.
+        self.assertEqual(compare["verses"]["HAB.2.4"], build_site.comparison_text("web")["HAB.2.4"])
         have = build_site.book_refs("en")["chapters"]
         for vid in compare["verses"]:
             book, chapter, _ = vid.split(".")
             self.assertNotIn(int(chapter), have.get(book, []), vid)
 
     def test_spanish_pages_compare_with_the_reina_valera(self):
-        records, _ = build_site.load_chapter("1TI", 5)
+        records, _ = build_site.load_chapter("ROM", 1)
         compare = build_site.comparison_verses(records, "es")
         self.assertEqual((compare["name"], compare["lang"]), ("Reina-Valera 1909", "es"))
-        self.assertEqual(compare["verses"]["DEU.25.4"], build_site.comparison_text("rv1909")["DEU.25.4"])
+        self.assertEqual(compare["verses"]["HAB.2.4"], build_site.comparison_text("rv1909")["HAB.2.4"])
 
     def test_ranges_are_capped_and_translated_chapters_skipped(self):
         have = build_site.book_refs("en")["chapters"]
         self.assertIn(10, have["LUK"])
-        self.assertNotIn(9, have.get("DEU", []))
-        self.assertNotIn(32, have.get("DEU", []))
+        self.assertNotIn(9, have.get("JER", []))
+        self.assertNotIn(32, have.get("JER", []))
         compare = build_site.comparison_verses(
-            [note("As in Deuteronomy 9:9-20, and Luke 10:7.", alternatives=["Deuteronomy 32:4"])], "en")
+            [note("As in Jeremiah 9:9-20, and Luke 10:7.", alternatives=["Jeremiah 32:4"])], "en")
         self.assertEqual(set(compare["verses"]),
-                         {"DEU.32.4"} | {f"DEU.9.{v}" for v in range(9, 9 + build_site.COMPARE_MAX_VERSES)})
+                         {"JER.32.4"} | {f"JER.9.{v}" for v in range(9, 9 + build_site.COMPARE_MAX_VERSES)})
         self.assertIsNone(build_site.comparison_verses([note("Luke 10:7 only.")], "en"))
         self.assertIsNone(build_site.comparison_verses([note("No references here.")], "en"))
 
     def test_chapter_pages_embed_the_comparison(self):
-        page = (built_site() / "1ti" / "5" / "index.html").read_text(encoding="utf-8")
+        page = (built_site() / "rom" / "1" / "index.html").read_text(encoding="utf-8")
         data = json.loads(re.search(r'<script type="application/json" id="owb-data">(.*?)</script>', page, re.S)[1])
-        self.assertIn("DEU.25.4", data["compare"]["verses"])
+        self.assertIn("HAB.2.4", data["compare"]["verses"])
         # A page's comparison verses are a few kilobytes at most.
         self.assertLess(len(json.dumps(data["compare"], ensure_ascii=False)), 25000)
 
