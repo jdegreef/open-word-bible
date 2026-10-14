@@ -237,18 +237,28 @@ class SiteTest(unittest.TestCase):
 
     def test_home_page_example_comes_from_the_content(self):
         home = (self.out / "index.html").read_text(encoding="utf-8")
-        book, chapter, record_id, decision_id = build_site.EXAMPLE
-        records, words = build_site.load_chapter(book, chapter)
-        record = next(r for r in records if r["id"] == record_id)
-        decision = next(d for d in record["decisions"] if d["id"] == decision_id)
-        for level in "LBR":
-            self.assertIn(build_site.plain(record["renderings"]["en"][level]), home)
-        marked = [w["text"] for v in record["refs"] for w in words[v] if w["id"] in decision["tokens"]]
-        self.assertTrue(marked)
-        for word in marked:
-            self.assertIn(f"<mark>{word}</mark>", home)
+        example = home[home.index('class="example"'):home.index('class="points-wrap"')]
+        # The text as read, without the tags that mark aligned words and settings.
+        text = re.sub(r"<[^>]+>", "", example)
+        self.assertEqual(len(build_site.EXAMPLES), 2)
+        for book, chapter, record_id, decision_id in build_site.EXAMPLES:
+            records, words = build_site.load_chapter(book, chapter)
+            record = next(r for r in records if r["id"] == record_id)
+            decision = next(d for d in record["decisions"] if d["id"] == decision_id)
+            for level in "LBR":
+                self.assertIn(html.escape(build_site.plain(record["renderings"]["en"][level]), quote=False), text)
+            marked = [w["text"] for v in record["refs"] for w in words[v] if w["id"] in decision["tokens"]]
+            self.assertTrue(marked)
+            for word in marked:
+                self.assertIn(f"<mark>{word}</mark>", example)
+            for tid in record["source"]["tokens"]:
+                if any(w["id"] == tid for v in record["refs"] for w in words[v]):
+                    self.assertIn(f'data-t="{tid}"', example)
+            self.assertIn(f'href="/{book.lower()}/{chapter}/"', example)
+        # Aligned words light up their English; the divine name can switch.
+        self.assertIn('class="al" data-t="n43001001002"', example)
+        self.assertIn('data-switch="divine_name"', example)
         self.assertIn(f"<b>{len(build_site.all_records())}</b>", home)
-        self.assertIn('href="/jhn/1/"', home)
 
     def test_fonts_are_self_hosted_with_their_licences(self):
         css = (self.out / "style.css").read_text(encoding="utf-8")
@@ -290,6 +300,62 @@ class SiteTest(unittest.TestCase):
         why = re.search(r'<p class="why">(.*?)</p>', home, re.S)[1]
         self.assertNotIn('"', why)
         self.assertNotIn("&quot;", why)
+
+    def test_home_page_searches_in_its_language(self):
+        for lang in build_site.LANGUAGES:
+            home = (self.out / build_site.url(lang, "/").lstrip("/") / "index.html").read_text(encoding="utf-8")
+            form = re.search(r'<form class="hero-search" action="([^"]+)"', home)
+            self.assertEqual(form[1], build_site.url(lang, "/search/"))
+            for q in build_site.catalog(lang)["search.examples"]:
+                self.assertIn(f'?q={html.escape(q.replace(" ", "+"))}"', home)
+
+    def test_home_page_offers_the_data(self):
+        home = (self.out / "index.html").read_text(encoding="utf-8")
+        data = home[home.index('class="data"'):home.index('class="involve"')]
+        self.assertIn(f'href="{build_site.GITHUB_URL}/archive/refs/heads/main.zip"', data)
+        self.assertIn(f'href="{build_site.API_URL}/api/passages/JHN/1/"', data)
+        self.assertIn("schema/sentence-record.schema.json", data)
+
+    def test_home_page_shows_key_terms(self):
+        home = (self.out / "index.html").read_text(encoding="utf-8")
+        terms = home[home.index('class="home-terms"'):]
+        terms = terms[:terms.index("</section>")]
+        self.assertIn('href="/terms/"', terms)
+        self.assertEqual(terms.count('class="term-row"'), 6)
+        self.assertIn('href="/terms/the-divine-name-yhwh/"', terms)
+
+    def test_home_page_suggests_plans_offered_in_its_language(self):
+        for lang in build_site.LANGUAGES:
+            home = (self.out / build_site.url(lang, "/").lstrip("/") / "index.html").read_text(encoding="utf-8")
+            offered = build_site.available_plans(lang)
+            cards = re.findall(r'data-plan-card="([^"]+)"', home)
+            self.assertEqual(len(cards), min(3, len(offered)), lang)
+            self.assertLessEqual(set(cards), {p.id for p in offered})
+
+    def test_header_switches_language_and_offers_each_in_its_own_words(self):
+        for lang in build_site.LANGUAGES:
+            page = (self.out / build_site.url(lang, "/jhn/1/").lstrip("/") / "index.html").read_text(encoding="utf-8")
+            header = re.search(r'<header class="site">(.*?)</header>', page, re.S)[1]
+            menu = re.search(r'<div id="lang-pop".*?</div>', header, re.S)[0]
+            self.assertIn(f'<span class="lang-code">{lang.upper()}</span>', header)
+            for code in build_site.LANGUAGES:
+                if code == lang:
+                    self.assertNotIn(f'data-lang="{code}"', menu)
+                    continue
+                self.assertIn(f'href="{build_site.url(code, "/jhn/1/")}"', menu)
+                self.assertIn(f'data-lang="{code}" data-offer="{html.escape(build_site.t(code, "lang.offer"))}"', menu)
+
+    def test_verses_of_the_day_are_drafted_whole_sentences(self):
+        self.assertEqual(len(build_site.VERSES_OF_THE_DAY), len(set(build_site.VERSES_OF_THE_DAY)))
+        for lang in build_site.LANGUAGES:
+            verses = build_site.verses_of_the_day(lang)
+            self.assertEqual(len(verses), len(build_site.VERSES_OF_THE_DAY))
+            for vid, v in zip(build_site.VERSES_OF_THE_DAY, verses):
+                # The verse ends a sentence, so it reads on its own.
+                self.assertRegex(v["t"], r"[.?!][”’]?$", vid)
+        home = (self.out / "index.html").read_text(encoding="utf-8")
+        data = re.search(r'<script type="application/json" class="votd-data">(.*?)</script>', home, re.S)[1]
+        self.assertEqual(json.loads(data), build_site.verses_of_the_day("en"))
 
     def test_chapter_data_has_curly_quotes(self):
         for r in self.chapter_data()["records"]:
@@ -419,10 +485,16 @@ class SiteTest(unittest.TestCase):
             decisions = sum(d["language"] in (None, lang) for r in records for d in r["decisions"])
             self.assertIn(f"<b>{len(records)}</b>", progress)
             self.assertIn(f"<b>{decisions}</b>", progress)
-            shown = {(r.book, r.chapter) for r in map(build_site.refs.parse, (r["refs"][0] for r in records))}
+            # The map has a tile for every book, linked once it has a
+            # sentence in lang, and no chapter links.
+            shown = {build_site.refs.parse(r["refs"][0]).book for r in records}
+            self.assertEqual(progress.count('<li><a class="map-book') + progress.count('<li><span class="map-book'),
+                             len(build_site.refs.BOOK_CODES))
+            for book in build_site.refs.BOOK_CODES:
+                link = f'href="{build_site.url(lang, f"/read/#{book.lower()}")}"'
+                self.assertEqual(link in progress, book in shown, (lang, book))
             for p in build_site.passages():
-                link = f'href="{build_site.url(lang, p.url)}"'
-                self.assertEqual(link in progress, (p.book, p.chapter) in shown, (lang, p.url))
+                self.assertNotIn(f'href="{build_site.url(lang, p.url)}"', progress, (lang, p.url))
 
     def test_header_footer_and_read_page_list_only_the_page_language(self):
         for lang in build_site.LANGUAGES:
