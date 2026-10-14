@@ -419,10 +419,16 @@ class SiteTest(unittest.TestCase):
             decisions = sum(d["language"] in (None, lang) for r in records for d in r["decisions"])
             self.assertIn(f"<b>{len(records)}</b>", progress)
             self.assertIn(f"<b>{decisions}</b>", progress)
-            shown = {(r.book, r.chapter) for r in map(build_site.refs.parse, (r["refs"][0] for r in records))}
+            # The map has a tile for every book, linked once it has a
+            # sentence in lang, and no chapter links.
+            shown = {build_site.refs.parse(r["refs"][0]).book for r in records}
+            self.assertEqual(progress.count('<li><a class="map-book') + progress.count('<li><span class="map-book'),
+                             len(build_site.refs.BOOK_CODES))
+            for book in build_site.refs.BOOK_CODES:
+                link = f'href="{build_site.url(lang, f"/read/#{book.lower()}")}"'
+                self.assertEqual(link in progress, book in shown, (lang, book))
             for p in build_site.passages():
-                link = f'href="{build_site.url(lang, p.url)}"'
-                self.assertEqual(link in progress, (p.book, p.chapter) in shown, (lang, p.url))
+                self.assertNotIn(f'href="{build_site.url(lang, p.url)}"', progress, (lang, p.url))
 
     def test_header_footer_and_read_page_list_only_the_page_language(self):
         for lang in build_site.LANGUAGES:

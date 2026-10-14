@@ -1826,7 +1826,7 @@ def example_html(lang="en"):
         for vid in record["refs"] for w in words[vid] if w["id"] in record["source"]["tokens"])
     shown = text_lang(record, lang)
     levels = "".join(
-        f'<div class="lvl"><span class="tag">{name}</span>'
+        f'<div class="lvl"><span class="lvl-tag">{name}</span>'
         f'<p{lang_attr(shown, lang)}>{html.escape(plain(record["renderings"][shown][code]))}</p></div>'
         for code, name in catalog(lang)["levels"].items())
     ref = refs.parse(record["refs"][0])
@@ -1860,19 +1860,47 @@ def example_html(lang="en"):
 """
 
 
+def book_map(lang="en"):
+    """The home page's map of the whole Bible: a tile per book, by
+    testament, filled as far as its chapters are drafted in lang. A book
+    with chapters in lang links to it on the Read page; one not started is
+    a greyed-out tile. 66 tiles say what 34 progress bars could not: how
+    much of the Bible there is still to do."""
+    have = dict(books(lang))
+
+    def tile(book):
+        name = book_name(book, lang)
+        abbr = BOOK_ABBREVIATIONS[book].get(lang, name)
+        if book not in have:
+            return (f'<li><span class="map-book none" title="{name}: {t(lang, "footer.key_none")}">'
+                    f'<span aria-hidden="true">{abbr}</span><span class="sr-only">{name}: '
+                    f'{t(lang, "footer.key_none")}</span></span></li>')
+        done, total, progress = book_progress(book, have[book], lang)
+        fill = 100 * len(have[book]) / total
+        return (f'<li><a class="map-book{"" if done == total else " part"}" '
+                f'href="{url(lang, f"/read/#{book.lower()}")}" title="{name}: {progress}" style="--fill:{fill:.0f}%">'
+                f'<span aria-hidden="true">{abbr}</span><span class="sr-only">{name}: {progress}</span></a></li>')
+
+    def testament(key, codes):
+        started = sum(b in have for b in codes)
+        return (f'<section class="map-testament" aria-labelledby="map-{key}"><div class="testament-head">'
+                f'<h3 id="map-{key}">{t(lang, "footer." + key)}</h3>'
+                f'<span>{t(lang, "footer.started", done=started, total=len(codes))}</span></div>'
+                f'<ul class="map-books">{"".join(tile(b) for b in codes)}</ul></section>')
+
+    key = "".join(f'<span><span class="map-book{cls}" aria-hidden="true"></span>{t(lang, "footer.key_" + k)}</span>'
+                  for k, cls in (("done", ""), ("part", " part"), ("none", " none")))
+    return (f'<div class="book-map">{testament("old_testament", refs.OT_CODES)}'
+            f'{testament("new_testament", refs.BOOK_CODES[39:])}</div>'
+            f'<p class="map-key">{key}</p>')
+
+
 def progress_html(lang="en"):
-    """The home page's progress: sentences, decisions, books and chapters
-    in the page's language only. A sentence's decisions in lang are its
-    meaning decisions and its rendering decisions for lang."""
+    """The home page's progress: sentences, decisions, and the map of the
+    books, in the page's language only. A sentence's decisions in lang are
+    its meaning decisions and its rendering decisions for lang."""
     records = [r for r in all_records() if lang in r["renderings"]]
     decisions = sum(d["language"] in (None, lang) for r in records for d in r["decisions"])
-    rows = []
-    for book, chaps in books(lang):
-        done, total, progress = book_progress(book, chaps, lang)
-        rows.append(f'<li class="book-row"><a class="book-name" href="{url(lang, f"/read/#{book.lower()}")}">'
-                    f'{BOOK_NAMES[book][lang]}</a>{meter(done, total)}'
-                    f'<span class="book-progress{" done" if done == total else ""}">{progress}</span>'
-                    f'<span class="chap-pills">{chapter_pills(chaps, lang)}</span></li>')
     return f"""
 <section class="progress" aria-labelledby="progress-h">
 {sec_head("progress-h", "check", t(lang, "home.progress"), url(lang, "/read/"), t(lang, "home.all_books"))}
@@ -1882,8 +1910,7 @@ def progress_html(lang="en"):
 <div><b>{len(LANGUAGES)}</b><span>{t(lang, "home.stat_languages")}</span></div>
 </div>
 <p>{t(lang, "home.progress_text")}</p>
-<p class="label">{t(lang, "nav.books_so_far")}</p>
-<ul class="book-rows">{"".join(rows)}</ul>
+{book_map(lang)}
 </section>
 """
 
