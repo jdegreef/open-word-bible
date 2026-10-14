@@ -52,8 +52,10 @@ units and the rest) still applies.
   have only one or two decisions; do not pad them.
 - **Versification (Nehemiah).** Hebrew 3:33–38 is English 4:1–6 and Hebrew
   4:1–17 is English 4:7–23; Hebrew 10:1 is English 9:38 and Hebrew 10:2–40 is
-  English 10:1–39 (`data/versification.json`). A footnoted decision at 3:33,
-  4:1, 10:1 and 10:2 says so, and the book is cited by the Hebrew numbers.
+  English 10:1–39 (`data/versification.json`). The Hebrew has no line for the
+  horses and mules of Ezra 2:66, so Hebrew 7:68–72 is English 7:69–73. A
+  footnoted decision at 3:33, 4:1, 7:68, 10:1 and 10:2 says so, and the book is
+  cited by the Hebrew numbers.
 - **Nehemiah 8:8** *meforash*: "clearly" or "with interpretation"; an
   uncertain, footnoted meaning decision names both (and translating into
   Aramaic as a third).
@@ -83,6 +85,11 @@ units and the rest) still applies.
 - *Pur* / Purim: "Pur (that is, the lot)" as the Hebrew explains it (3:7; 9:24).
 - *Achashdarpenim*: "satraps" at Literal and Balanced, "regional governors" at
   Readable.
+- *'Ets* for Haman's gallows (5:14; 6:4; 7:9–10; 9:13, 25): "gallows" at
+  Balanced and Readable, with an uncertain, footnoted decision that the word is
+  "tree" or "pole" and the death may be impaling or hanging up the body.
+- *Chesed* between people (2:9, 17) is a superior's goodwill: "kindness" /
+  "favor", not "faithful love", with a word_sense decision.
 - 3:9 "ten thousand talents of silver":
   `{{units:about 375 tons of silver|ten thousand talents of silver}}`.
 - Dates: "in the twelfth month, which is the month Adar" at Literal and
@@ -95,7 +102,13 @@ units and the rest) still applies.
   Readable where it keeps the cola), following `docs/english-style.md`
   section 10 and `scripts/poetry_lines.py`. The speech introductions ("And Job
   answered and said:" 3:1–2, 4:1, 6:1, 8:1, ...; 32:1–6 prose; 38:1; 40:1, 3,
-  6; 42:1) stay prose, with no `\q`.
+  6; 42:1) stay prose, with no `\q`. Their wording is fixed: Literal "And Job
+  answered and said:", Balanced "Then Job answered:", Readable "Then Job
+  said:", with the speaker's full name ("Eliphaz the Temanite") at every
+  level. 27:1 and 29:1 ("took up his discourse") and 36:1 ("continued") follow
+  their own verbs.
+- No quotation marks around the speeches; words quoted inside a speech take
+  them.
 - *Hassatan* (1:6–12; 2:1–7): Literal "the satan", Balanced and Readable "the
   Accuser". A footnoted meaning decision at 1:6 says the word has the article,
   so it is a title, "the adversary" or "the accuser", one who opposes in a
