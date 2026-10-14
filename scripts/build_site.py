@@ -9,6 +9,7 @@ the root, Spanish under /es/, French under /fr/, Swahili under /sw/.
 """
 import argparse
 import base64
+import datetime
 import functools
 import hashlib
 import html
@@ -1455,7 +1456,12 @@ def opening_verse(records, chapter, lang="en"):
     """A passage's opening verse (see opening), Balanced, at the default
     settings: what its Read-page card and its share card quote. In English
     when that sentence is not yet in lang."""
-    r, vid = opening(records, chapter)
+    return verse_text(*opening(records, chapter), lang)
+
+
+def verse_text(r, vid, lang="en"):
+    """One verse of a record, Balanced, at the default settings, in lang or
+    in English when the sentence is not yet in lang."""
     # split keeps each marker's verse number: [text, "13", text, "14", text].
     parts = markup.VERSE.split(r["renderings"][text_lang(r, lang)]["B"])
     numbers = [str(refs.parse(r["refs"][0]).verse)] + parts[1::2]
@@ -1915,6 +1921,42 @@ def progress_html(lang="en"):
 """
 
 
+# The verse of the day (data/verse_of_the_day.json).
+VERSES_OF_THE_DAY = json.loads((ROOT / "data" / "verse_of_the_day.json").read_text(encoding="utf-8"))["refs"]
+
+
+def verses_of_the_day(lang="en"):
+    """Each verse of the day as the home page shows it: its reference, its
+    Balanced text in lang (or English, marked), and links to its notes and
+    its chapter."""
+    out = []
+    for vid in VERSES_OF_THE_DAY:
+        ref = refs.parse(vid)
+        r = next(r for r in load_chapter(ref.book, ref.chapter)[0] if vid in r["refs"])
+        item = {"r": f"{chapter_book(ref.book, lang)} {ref.chapter}:{ref.verse}", "t": verse_text(r, vid, lang),
+                "u": url(lang, chapter_url(ref.book, ref.chapter)) + f"#v{ref.verse}"}
+        if text_lang(r, lang) != lang:
+            item["l"] = text_lang(r, lang)
+        out.append(item)
+    return out
+
+
+def verse_of_the_day(lang="en"):
+    """The verse of the day: the build day's verse, which web/site.js swaps
+    for the reader's own day from the list in the page."""
+    verses = verses_of_the_day(lang)
+    v = verses[(datetime.date.today() - datetime.date(1970, 1, 1)).days % len(verses)]
+    data = json.dumps(verses, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+    la = f' lang="{v["l"]}"' if "l" in v else ""
+    return f"""<section class="votd" aria-labelledby="votd-h" data-votd>
+<p class="eyebrow" id="votd-h">{icon(ICONS["calendar"], 16)}{t(lang, "home.votd")}</p>
+<blockquote><p class="votd-text"{la}>{html.escape(v["t"])}</p>
+<footer><a class="votd-ref" href="{v["u"]}">{html.escape(v["r"])}</a>
+<a class="votd-why" href="{v["u"]}">{t(lang, "home.votd_why")} {icon(ICONS["arrow"], 15)}</a></footer></blockquote>
+<script type="application/json" class="votd-data">{data}</script>
+</section>"""
+
+
 def hero_search(lang="en"):
     """The home page's search box: a verse to go to or words to find, as
     the /search/ page takes them, with the search page's examples to try."""
@@ -1960,6 +2002,7 @@ def home_page(lang="en"):
 <li>{icon(ICONS["languages"], 16)}{t(lang, "home.trust_languages")}</li>
 </ul>
 </section>
+{verse_of_the_day(lang)}
 {example_html(lang)}
 <section class="points-wrap" aria-labelledby="points-h">
 {sec_head("points-h", "info", t(lang, "home.points"))}

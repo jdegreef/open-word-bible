@@ -547,6 +547,20 @@ footer.site a.book-chip.none:not(:hover) { color: var(--muted); }
 .trust li { display: inline-flex; align-items: center; gap: 7px; }
 .trust .icon { color: var(--gold); }
 
+/* Home: the verse of the day, under the hero. */
+.votd {
+  position: relative; max-width: 760px; margin: 0 auto; padding: 26px 30px 22px; text-align: center;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow-card);
+}
+.votd::before { content: ""; position: absolute; left: 30%; right: 30%; top: -1px; height: 3px; border-radius: 0 0 3px 3px; background: linear-gradient(90deg, var(--accent), var(--gold)); }
+.votd .eyebrow { display: inline-flex; align-items: center; gap: 8px; margin: 0 0 12px; color: var(--gold); font-size: 12px; letter-spacing: .14em; }
+.votd blockquote { margin: 0; }
+.votd-text { margin: 0; font-family: var(--serif); font-size: clamp(19px, 2.4vw, 23px); line-height: 1.5; text-wrap: pretty; }
+.votd footer { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px 18px; margin: 14px 0 0; font-size: 15px; }
+.votd-ref { font-weight: 700; color: var(--text); text-decoration: none; }
+.votd-ref:hover { color: var(--accent); }
+.votd-why { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; text-decoration: none; }
+.votd-why:hover { text-decoration: underline; }
 /* Section headings: an icon tile, the title, and an "all" link. */
 .sec-head { display: flex; align-items: center; justify-content: space-between; gap: 8px 16px; flex-wrap: wrap; margin: 0 0 20px; }
 .sec-head h2 {

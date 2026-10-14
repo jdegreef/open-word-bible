@@ -657,3 +657,24 @@
   window.addEventListener("online", soon);
   if (hash(body()) !== session(SENT) || Date.now() - (Number(session(SINCE)) || 0) > 120000) sync();
 })();
+
+// The home page's verse of the day (verse_of_the_day in
+// scripts/build_site.py): the page is built with the build day's verse,
+// and the list in the page gives the reader's own day, in their time zone.
+(function () {
+  "use strict";
+  var box = document.querySelector("[data-votd]");
+  if (!box) return;
+  var verses;
+  try { verses = JSON.parse(box.querySelector(".votd-data").textContent); } catch (e) { return; }
+  var now = new Date();
+  var day = Math.floor((now.getTime() - now.getTimezoneOffset() * 60000) / 86400000);
+  var v = verses[day % verses.length];
+  var text = box.querySelector(".votd-text");
+  text.textContent = v.t;
+  if (v.l) text.setAttribute("lang", v.l); else text.removeAttribute("lang");
+  var ref = box.querySelector(".votd-ref");
+  ref.textContent = v.r;
+  ref.href = v.u;
+  box.querySelector(".votd-why").href = v.u;
+})();

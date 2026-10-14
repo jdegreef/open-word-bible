@@ -299,6 +299,18 @@ class SiteTest(unittest.TestCase):
             for q in build_site.catalog(lang)["search.examples"]:
                 self.assertIn(f'?q={html.escape(q.replace(" ", "+"))}"', home)
 
+    def test_verses_of_the_day_are_drafted_whole_sentences(self):
+        self.assertEqual(len(build_site.VERSES_OF_THE_DAY), len(set(build_site.VERSES_OF_THE_DAY)))
+        for lang in build_site.LANGUAGES:
+            verses = build_site.verses_of_the_day(lang)
+            self.assertEqual(len(verses), len(build_site.VERSES_OF_THE_DAY))
+            for vid, v in zip(build_site.VERSES_OF_THE_DAY, verses):
+                # The verse ends a sentence, so it reads on its own.
+                self.assertRegex(v["t"], r"[.?!][”’]?$", vid)
+        home = (self.out / "index.html").read_text(encoding="utf-8")
+        data = re.search(r'<script type="application/json" class="votd-data">(.*?)</script>', home, re.S)[1]
+        self.assertEqual(json.loads(data), build_site.verses_of_the_day("en"))
+
     def test_chapter_data_has_curly_quotes(self):
         for r in self.chapter_data()["records"]:
             texts = [t for levels in r["renderings"].values() for t in levels.values()]
