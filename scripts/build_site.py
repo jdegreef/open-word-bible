@@ -662,20 +662,35 @@ def describe(word, lang):
     return morph.describe(word["morph"], lang)
 
 
+@functools.lru_cache(maxsize=None)
+def _book_records(book):
+    """A book's records, read once, by every chapter each one touches."""
+    by_chapter = {}
+    for path in sorted((ROOT / "content" / book).glob("*.json")):
+        for r in json.loads(path.read_text(encoding="utf-8"))["records"]:
+            r = curl_record(r)
+            for ch in {refs.parse(v).chapter for v in r["refs"]}:
+                by_chapter.setdefault(ch, []).append(r)
+    return by_chapter
+
+
+@functools.lru_cache(maxsize=None)
+def _chapter_words(book, chapter):
+    return json.loads(words_path(book, chapter).read_text(encoding="utf-8"))["verses"]
+
+
 def load_chapter(book, chapter):
     """A chapter's records, and the Greek words of every verse they cover. A
     sentence that runs into the next chapter (John 7:53-8:1) belongs to both:
     without it the next chapter would lose a verse, and John 8 would open
-    without the bracket and the note that begin the disputed passage."""
-    records = []
-    for path in sorted((ROOT / "content" / book).glob("*.json")):
-        for r in json.loads(path.read_text(encoding="utf-8"))["records"]:
-            if any(refs.parse(v).chapter == chapter for v in r["refs"]):
-                records.append(curl_record(r))
-    records.sort(key=lambda r: refs.parse(r["refs"][0]).sort_key() + (r["id"],))
+    without the bracket and the note that begin the disputed passage.
+    Each book is read once (a build asks for every chapter a dozen times);
+    the lists are fresh, the records shared, so don't change them."""
+    records = sorted(_book_records(book).get(chapter, []),
+                     key=lambda r: refs.parse(r["refs"][0]).sort_key() + (r["id"],))
     words = {}
     for ch in sorted({chapter} | {refs.parse(v).chapter for r in records for v in r["refs"]}):
-        words.update(json.loads(words_path(book, ch).read_text(encoding="utf-8"))["verses"])
+        words.update(_chapter_words(book, ch))
     return records, words
 
 
@@ -1488,11 +1503,16 @@ def read_page(lang="en"):
 def all_records():
     """Every record in content/, in canonical order, once each (a sentence
     across a chapter break is on both chapters' pages)."""
+    return list(_all_records())
+
+
+@functools.lru_cache(maxsize=None)
+def _all_records():
     seen = {}
     for b, c in chapters():
         for r in load_chapter(b, c)[0]:
             seen.setdefault(r["id"], r)
-    return list(seen.values())
+    return tuple(seen.values())
 
 
 def plain(text):
@@ -2620,7 +2640,7 @@ def sitemap(paths):
 
 
 def build(out):
-    for cached in (nav_menus, footer_links, passages, asset, translated_verses, catalog, book_refs, key_terms, name_cards,
+    for cached in (_book_records, _chapter_words, _all_records, nav_menus, footer_links, passages, asset, translated_verses, catalog, book_refs, key_terms, name_cards,
                    search_documents, search_index,
                    search_index_url, word_uses):
         cached.cache_clear()

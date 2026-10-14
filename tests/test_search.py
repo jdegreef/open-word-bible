@@ -31,14 +31,15 @@ class SearchTest(unittest.TestCase):
         return (self.out / path / "index.html").is_file()
 
     def test_every_page_points_at_its_languages_index(self):
+        digests = {lang: hashlib.sha256((self.out / f"search-{lang}.json").read_bytes()).hexdigest()[:10]
+                   for lang in build_site.LANGUAGES}
         for page in self.out.rglob("index.html"):
             text = page.read_text(encoding="utf-8")
             lang = re.search(r'<html lang="(\w+)">', text)[1]
             m = re.search(r'<meta name="owb-search" content="/search-(\w+)\.json\?v=(\w+)">', text)
             self.assertIsNotNone(m, page)
             self.assertEqual(m[1], lang, page)
-            body = (self.out / f"search-{lang}.json").read_bytes()
-            self.assertEqual(m[2], hashlib.sha256(body).hexdigest()[:10], page)
+            self.assertEqual(m[2], digests[lang], page)
             self.assertIn('id="palette"', text, page)
             self.assertIn(f'class="tool-btn search-btn" href="{build_site.url(lang, "/search/")}"', text, page)
 

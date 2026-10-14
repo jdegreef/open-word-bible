@@ -61,14 +61,17 @@ jobs:
           key: sources-${{ hashFiles('sources.lock.json') }}
       - name: Fetch pinned sources
         run: python3 scripts/fetch_sources.py
-      - name: Unit tests
-        run: python3 -m unittest discover -s tests -t .
       - name: Validate content
         run: python3 -m owb.validate content/*/*.json
       - name: Word extracts are up to date
         run: python3 scripts/extract_tokens.py --check
       - name: Build the site
         run: python3 scripts/build_site.py
+      # The tests read the build above rather than building the site again.
+      - name: Unit tests
+        env:
+          OWB_BUILT_SITE: site
+        run: python3 -m unittest discover -s tests -t .
 
   backend:
     name: Backend (Django + Postgres)

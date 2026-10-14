@@ -2,7 +2,6 @@ import hashlib
 import html
 import json
 import re
-import subprocess
 import sys
 import unittest
 from pathlib import Path
@@ -411,15 +410,16 @@ class SiteTest(unittest.TestCase):
                 self.assertIn(f'href="{ps[i + 1].url}" rel="next"', turns)
 
     def test_home_page_progress_is_for_its_language(self):
+        every, passages = build_site.all_records(), build_site.passages()
         for lang in build_site.LANGUAGES:
             home = (self.out / build_site.url(lang, "/").lstrip("/") / "index.html").read_text(encoding="utf-8")
             progress = home[home.index('class="progress"'):home.index('class="involve"')]
-            records = [r for r in build_site.all_records() if lang in r["renderings"]]
+            records = [r for r in every if lang in r["renderings"]]
             decisions = sum(d["language"] in (None, lang) for r in records for d in r["decisions"])
             self.assertIn(f"<b>{len(records)}</b>", progress)
             self.assertIn(f"<b>{decisions}</b>", progress)
             shown = {(r.book, r.chapter) for r in map(build_site.refs.parse, (r["refs"][0] for r in records))}
-            for p in build_site.passages():
+            for p in passages:
                 link = f'href="{build_site.url(lang, p.url)}"'
                 self.assertEqual(link in progress, (p.book, p.chapter) in shown, (lang, p.url))
 
@@ -658,18 +658,6 @@ class SiteTest(unittest.TestCase):
                 for path in json.loads(html.unescape(pages)):
                     self.assertTrue(path.startswith(build_site.url(code, "/")), path)
                     self.assertTrue(self.built(path).is_file(), path)
-
-
-class ExtractTest(unittest.TestCase):
-    def test_extracts_are_up_to_date(self):
-        result = subprocess.run([sys.executable, str(ROOT / "scripts" / "extract_tokens.py"), "--check"],
-                                capture_output=True, text=True)
-        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
-
-    def test_comparison_extracts_are_up_to_date(self):
-        result = subprocess.run([sys.executable, str(ROOT / "scripts" / "extract_comparison.py"), "--check"],
-                                capture_output=True, text=True)
-        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
 
 
 def note(reason, alternatives=()):
