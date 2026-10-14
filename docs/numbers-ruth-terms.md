@@ -30,6 +30,12 @@ is revised. Read with `docs/english-style.md`, which wins where the two differ.
 | cherem (noun and verb) | devoted thing / devote to destruction | same | destroy completely, as given over to the LORD (decision) |
 | 'eved | slave | servant | servant (see the style guide for where "slave" stays) |
 | "Moses the servant of the LORD" | slave of | servant of | servant of |
+| 'eved as a king's official or envoy | servants | officials / servants | officials / servants |
+| sar | princes | officials | leaders |
+| sar in a military setting | commanders | commanders | commanders |
+| ger | sojourner | outsider | outsider / stranger ("foreigner" is kept for nokhri) |
+| chesed | steadfast love | faithful love | faithful love (as Exodus 34:6) |
+| 'edot | testimonies | decrees | instructions |
 
 ## Units and numbers
 
@@ -139,8 +145,8 @@ Numbers are in words up to ninety-nine and numerals above: 46,500.
 - *Go'el*: Literal "redeemer", Balanced and Readable "family redeemer", with a
   culture decision at 2:20 (the relative bound to buy back family land and
   care for the family line, Leviticus 25:25; Deuteronomy 25:5–10).
-- *Chesed*: "loyal love" at Literal and Balanced; Readable "kindness" or
-  "faithful love" where it reads better, with a decision at 1:8.
+- *Chesed*: as everywhere else, "steadfast love" at Literal and "faithful
+  love" at Balanced and Readable, with a decision at 1:8.
 - *Shaddai* (1:20–21): "the Almighty"; Readable "God All-Powerful".
 - "Spread your wing/corner over" (3:9) keeps the picture at Literal and
   Balanced with an idiom decision linking 2:12.
