@@ -2105,7 +2105,12 @@ def home_page(lang="en"):
         return (f'<li><span class="tile sm">{icon(ICONS[ico])}</span>'
                 f'<p><strong>{t(lang, f"home.helper{n}")}</strong> {t(lang, f"home.helper{n}_text")}</p></li>')
 
-    first = sorted(load_articles(lang), key=lambda a: a["order"])[:3]
+    # One article from each kind, in the catalog's order of kinds: how it
+    # is made, reading the text, how we got the Bible (the footer already
+    # lists the first few on method).
+    ordered = sorted(load_articles(lang), key=lambda a: a["order"])
+    first = [a for a in (next((a for a in ordered if a["section"] == kind), None)
+                         for kind in catalog(lang)["sections"]) if a][:3]
     latest = f"""<section class="latest" aria-labelledby="latest-h">
 {sec_head("latest-h", "articles", t(lang, "home.latest"), url(lang, "/articles/"), t(lang, "nav.all_articles"))}
 <ul class="a-grid">{article_list(first, lang)}</ul>
