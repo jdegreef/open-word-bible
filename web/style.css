@@ -1482,6 +1482,21 @@ body.plain .echo-tags { display: none; }
   .hero .eyebrow { font-size: 11px; letter-spacing: .1em; }
   .trust { gap: 8px 18px; font-size: 13px; }
   .points, .helpers { grid-template-columns: 1fr; }
+  /* Home on a phone: sections closer together; the figures one per row,
+     the number beside its label; the key terms two to a row; the hero's
+     buttons side by side as far as they fit. */
+  .example, .points-wrap, .progress, .latest, .data, .home-terms, .home-plans { margin-top: 52px; }
+  .stats { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .stats div { display: flex; align-items: baseline; gap: 12px; padding: 12px 16px; }
+  .stats b { font-size: 30px; margin: 0; flex: none; }
+  .home-terms .term-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .home-terms .term-row { grid-template-columns: minmax(0, 1fr); padding: 10px 12px; }
+  .home-terms .term-row .term-count { grid-column: 1; grid-row: auto; }
+  .home-terms .term-english { display: none; }
+  .hero .actions .button { padding-inline: 18px; }
+  .votd { padding: 22px 18px 18px; }
+  .home-plans .plan-list { gap: 10px; }
+  .home-plans .a-card { padding: 16px 18px; }
   .book-row { grid-template-columns: 1fr auto; grid-template-areas: "name progress" "bar bar" "pills pills"; padding: 14px 16px; }
   .book-head { grid-template-columns: 1fr auto; }
   .book-head .meter, .book-head .save-book { grid-column: 1 / -1; max-width: none; }
