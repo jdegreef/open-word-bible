@@ -1722,6 +1722,26 @@ def plan_card(plan, lang="en"):
             f'<span class="plan-mine" hidden> &middot; {t(lang, "plans.yours")}</span></span></a></li>')
 
 
+# The plans the home page suggests first, where they are offered in its
+# language: a gospel, psalms and the beginning; then any others.
+HOME_PLANS = ("john", "psalms-1-50", "genesis-1-11", "romans", "hebrews")
+
+
+def home_plans(lang="en"):
+    """Three reading plans to start from, with a link to them all; nothing
+    where no plan is offered in lang yet."""
+    plans = available_plans(lang)
+    if not plans:
+        return ""
+    order = {pid: i for i, pid in enumerate(HOME_PLANS)}
+    shown = sorted(plans, key=lambda p: order.get(p.id, len(order)))[:3]
+    return f"""<section class="home-plans" aria-labelledby="plans-h">
+{sec_head("plans-h", "calendar", t(lang, "plans.heading"), url(lang, "/plans/"), t(lang, "nav.section_all", n=len(plans)))}
+<ul class="a-grid plan-list">{"".join(plan_card(p, lang) for p in shown)}</ul>
+</section>
+"""
+
+
 def plans_page(lang="en", plans=None):
     """The plans offered in lang (available_plans), or, with none, a plain
     word that none is ready yet and a link to the English ones."""
@@ -2117,6 +2137,7 @@ def home_page(lang="en"):
 {point("check", 4)}
 </ul>
 </section>
+{home_plans(lang)}
 {progress_html(lang)}
 {home_terms(lang)}
 {latest}{data_html(lang)}<section class="involve" id="help" aria-labelledby="involve-h">

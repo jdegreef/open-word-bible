@@ -324,6 +324,14 @@ class SiteTest(unittest.TestCase):
         self.assertEqual(terms.count('class="term-row"'), 6)
         self.assertIn('href="/terms/the-divine-name-yhwh/"', terms)
 
+    def test_home_page_suggests_plans_offered_in_its_language(self):
+        for lang in build_site.LANGUAGES:
+            home = (self.out / build_site.url(lang, "/").lstrip("/") / "index.html").read_text(encoding="utf-8")
+            offered = build_site.available_plans(lang)
+            cards = re.findall(r'data-plan-card="([^"]+)"', home)
+            self.assertEqual(len(cards), min(3, len(offered)), lang)
+            self.assertLessEqual(set(cards), {p.id for p in offered})
+
     def test_verses_of_the_day_are_drafted_whole_sentences(self):
         self.assertEqual(len(build_site.VERSES_OF_THE_DAY), len(set(build_site.VERSES_OF_THE_DAY)))
         for lang in build_site.LANGUAGES:
