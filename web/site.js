@@ -266,8 +266,11 @@
     var place = null;
     try { place = JSON.parse(localStorage.getItem("owb.place") || "null"); } catch (e) { /* none */ }
     if (!place || !place.book || !place.chapter || !place.verse) return;
+    // The book names in the page's language, carried once, by the footer's link.
+    var carrier = document.querySelector("a[data-resume][data-books]");
+    if (!carrier) return;
+    var names = JSON.parse(carrier.getAttribute("data-books"));
     document.querySelectorAll("a[data-resume]").forEach(function (a) {
-      var names = JSON.parse(a.getAttribute("data-books"));
       var name = names[place.book];
       if (!name) return;
       // A verse of the next chapter that a sentence runs into is "8:1".

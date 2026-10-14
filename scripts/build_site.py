@@ -621,7 +621,7 @@ def site_footer(lang, path=None, translated=LANGUAGES):
 <input type="search" name="q" id="foot-q" autocomplete="off" spellcheck="false" enterkeyhint="go" placeholder="{placeholder}" aria-labelledby="foot-find">
 <button class="button" type="submit">{t(lang, "footer.go")}</button>
 </form>
-{resume_link(lang, "foot-resume")}
+{resume_link(lang, "foot-resume", names=True)}
 </div>
 </div>
 {book_index(lang)}
@@ -1539,13 +1539,18 @@ def passage_card(book, chapter, lang="en"):
             f'<span class="a-meta">{meta}</span></a></li>')
 
 
-def resume_link(lang, cls="button"):
+def resume_link(lang, cls="button", names=False):
     """A link back to the verse the reader was last at, hidden until
-    web/site.js finds one saved by web/reader.js (owb.place). It carries the
-    book names in lang, so the link names the passage in the page's language."""
-    names = json.dumps({b: BOOK_NAMES[b][lang] for b, _ in books()}, ensure_ascii=False)
+    web/site.js finds one saved by web/reader.js (owb.place). The footer's
+    (names) carries the book names in lang, so that every such link on the
+    page names the passage in the page's language; one copy per page is
+    enough, and every page has the footer."""
+    books_attr = ""
+    if names:
+        names = json.dumps({b: BOOK_NAMES[b][lang] for b, _ in books()}, ensure_ascii=False)
+        books_attr = f' data-books="{html.escape(names)}"'
     return (f'<a class="{cls}" data-resume hidden data-label="{html.escape(t(lang, "resume.link"))}" '
-            f'data-prefix="{url(lang, "")}" data-books="{html.escape(names)}" href="{url(lang, "/read/")}">'
+            f'data-prefix="{url(lang, "")}"{books_attr} href="{url(lang, "/read/")}">'
             f'{icon(ICONS["book"])}<span></span></a>')
 
 
