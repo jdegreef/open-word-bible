@@ -241,7 +241,7 @@ class SiteTest(unittest.TestCase):
         example = home[home.index('class="example"'):home.index('class="points-wrap"')]
         # The text as read, without the tags that mark aligned words and settings.
         text = re.sub(r"<[^>]+>", "", example)
-        self.assertEqual(len(build_site.EXAMPLES), 2)
+        self.assertEqual(len(build_site.EXAMPLES), 3)
         for book, chapter, record_id, decision_id in build_site.EXAMPLES:
             records, words = build_site.load_chapter(book, chapter)
             record = next(r for r in records if r["id"] == record_id)
@@ -259,6 +259,11 @@ class SiteTest(unittest.TestCase):
         # Aligned words light up their English; the divine name can switch.
         self.assertIn('class="al" data-t="n43001001002"', example)
         self.assertIn('data-switch="divine_name"', example)
+        # One example is a call marked uncertain, with its other reading as "Or:".
+        self.assertEqual(example.count('class="card decision uncertain"'), 1)
+        self.assertIn(build_site.t("en", "home.tab_uncertain"), example)
+        self.assertIn(build_site.t("en", "home.example_uncertain"), example)
+        self.assertIn(f'<p class="alts">{build_site.catalog("en")["reader.ui"]["fn_or"]}', example)
         self.assertIn(f"<b>{len(build_site.all_records())}</b>", home)
 
     def test_fonts_are_self_hosted_with_their_licences(self):

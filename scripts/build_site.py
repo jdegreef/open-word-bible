@@ -1863,9 +1863,9 @@ def plain(text):
     return markup.flat(markup.VERSE.sub("", markup.render(text))).strip()
 
 
-# The worked examples on the home page, one Greek and one Hebrew: a record
-# and one of its decisions each.
-EXAMPLES = (("JHN", 1, "JHN.1.1.s1", "m4"), ("PSA", 23, "PSA.23.1.s1", "m2"))
+# The worked examples on the home page, one Greek, one Hebrew and one call
+# marked uncertain: a record and one of its decisions each.
+EXAMPLES = (("JHN", 1, "JHN.1.1.s1", "m4"), ("PSA", 23, "PSA.23.1.s1", "m2"), ("JHN", 1, "JHN.1.16.s1", "m1"))
 EXAMPLE = EXAMPLES[0]
 # The reader settings an example can switch, with the reader's labels for
 # the setting and its options.
@@ -1884,12 +1884,17 @@ def sec_head(hid, ico, title, href=None, more=None):
 def example_piece(raw):
     """Part of a rendering as the example shows it: verse markers dropped,
     line breaks read as spaces, and each reader setting a span holding its
-    default, with its options for web/site.js to switch."""
+    default, with its options for web/site.js to switch (only the settings
+    an example has a switch for; others show their default)."""
     raw = markup.LINE.sub(" ", markup.VERSE.sub("", raw))
     out, at = [], 0
     for m in markup.SPAN.finditer(raw):
         options = m[2].split("|")
         out.append(html.escape(raw[at:m.start()]))
+        if m[1] not in EXAMPLE_SETTINGS:
+            out.append(html.escape(options[0]))
+            at = m.end()
+            continue
         out.append(f'<span class="set" data-set="{m[1]}" data-o="{html.escape(json.dumps(options, ensure_ascii=False))}">'
                    f'{html.escape(options[0])}</span>')
         at = m.end()
@@ -1958,6 +1963,10 @@ def example_panel(example, lang, n):
         switches += (f'<div class="ex-switch" data-switch="{key}"><span>{t(lang, label)}</span>'
                      f'<span class="seg" role="group" aria-label="{t(lang, label)}">{buttons}</span></div>')
     also = "; ".join(html.escape(a) for a in decision["alternatives"])
+    # An uncertain call names its other reading as "Or:", as the reader's
+    # footnotes do, and says what the mark means.
+    unsure = decision["uncertain"]
+    ui = catalog(lang)["reader.ui"]
     open_url = url(lang, chapter_url(book, chapter))
     passage = f"{chapter_book(book, lang)} {chapter}"
     en = lang_attr("en", lang)
@@ -1974,10 +1983,12 @@ def example_panel(example, lang, n):
 {levels}
 {switches}
 </div>
-<div class="card decision">
-<p class="label">{t(lang, "home.example_decision")}</p>
+<div class="card decision{" uncertain" if unsure else ""}">
+<p class="label">{t(lang, "home.example_decision")}{f' <span class="unsure-tag">{ui["uncertain"]}</span>' if unsure else ""}</p>
 <p class="choice"{en}>&ldquo;{html.escape(plain(decision["choice"]))}&rdquo;</p>
-{f'<p class="alts">{t(lang, "home.example_also", alts=f"<span{en}>{also}</span>")}</p>' if also else ""}
+{f'<p class="alts">{html.escape(ui["fn_or"])}<span{en}>{also}</span></p>' if unsure and also else
+ f'<p class="alts">{t(lang, "home.example_also", alts=f"<span{en}>{also}</span>")}</p>' if also else ""}
+{f'<p class="unsure-note">{t(lang, "home.example_uncertain")}</p>' if unsure else ""}
 <p class="why"{en}>{html.escape(decision["reason"])}</p>
 {note}
 </div>
@@ -1987,14 +1998,18 @@ def example_panel(example, lang, n):
 
 
 def example_html(lang="en"):
-    """The worked examples, a tab each: John 1:1 from the Greek and Psalm
-    23:1 from the Hebrew. Without JavaScript both are shown, one after the
-    other (web/site.js makes the tabs)."""
+    """The worked examples, a tab each: John 1:1 from the Greek, Psalm 23:1
+    from the Hebrew, and John 1:16, a call marked uncertain. Without
+    JavaScript all are shown, one after another (web/site.js makes the
+    tabs)."""
     tabs, panels = [], []
     for n, example in enumerate(EXAMPLES):
         book, chapter, record_id, _ = example
         ref = refs.parse(record_id.rsplit(".", 1)[0])
-        script = "home.tab_hebrew" if book in refs.OT_CODES else "home.tab_greek"
+        decision = next(d for r in load_chapter(book, chapter)[0] if r["id"] == record_id
+                        for d in r["decisions"] if d["id"] == example[3])
+        script = ("home.tab_uncertain" if decision["uncertain"] else
+                  "home.tab_hebrew" if book in refs.OT_CODES else "home.tab_greek")
         tabs.append(f'<button type="button" role="tab" id="ex-tab-{n}" aria-controls="ex-{n}" '
                     f'aria-selected="{"true" if n == 0 else "false"}"{"" if n == 0 else " tabindex=-1"}>'
                     f'<b>{chapter_book(book, lang)} {ref.chapter}:{ref.verse}</b><span>{t(lang, script)}</span></button>')
