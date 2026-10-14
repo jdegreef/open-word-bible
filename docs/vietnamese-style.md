@@ -137,6 +137,16 @@ English Readable does, with a decision where the English has one.
 | Lord / Sir (*kyrie*) | Chúa / thưa ông | As `docs/john-terms.md`: people who do not yet know him say *thưa ông*; disciples and believers say *Chúa*. |
 | Woman (2:4; 19:26) | Thưa bà (L); Mẹ ơi / Thưa mẹ (B, R) where it is his mother | Needs a decision where it first appears. |
 | temple (*hieron*; *naos*) | đền thờ (L), sân đền thờ (B, R); đền thờ | As `docs/john-terms.md`. |
+| "I am" (*egō eimi* with no predicate) | Ta là [Đấng Hằng Hữu] (L), Ta là Đấng Hằng Hữu (B, R), 8:24, 8:28, 13:19; Ta Hằng Hữu, 8:58; Ta đây, 6:20 and 18:5-8 | *là* cannot end a sentence. *Hằng Hữu* echoes God's name in Exodus 3:14. Uncertain. |
+| say (of Jesus) | nói | Every level; *phán* only for God speaking (1:33; 9:29; 12:28). Uncertain: many readers expect *phán* for Jesus. |
+| life (*psychē*) | mạng sống | *sự sống* stays for *zōē*. |
+| prophet; the Prophet | nhà tiên tri; Đấng Tiên Tri | |
+| baptize | làm báp-têm | The Catholic *làm phép rửa* is the alternative. |
+| commandment | điều răn | |
+| Passover; Sabbath; synagogue | Lễ Vượt Qua; ngày Sa-bát; nhà hội | |
+| chief priests; high priest | các thầy tế lễ cả; thầy tế lễ thượng phẩm | |
+| angel; devil; Satan | thiên sứ; ma quỷ; Sa-tan | |
+| the disciple whom Jesus loved | môn đồ mà Đức Giê-xu yêu | |
 
 ## 6. Forms of address
 
@@ -156,6 +166,13 @@ that a scene does not change relationship from verse to verse.
 - **Jesus to the Father**: *Cha*, and *Con* for himself (John 17).
 - Ordinary people among themselves: *tôi*, *ông*, *bà*, *anh*, *chúng tôi*,
   *các ông* as the scene requires.
+- Disciples and believers who call him Lord say *Thưa Chúa* / *Lạy Chúa*, use
+  *Chúa* for "you" and *con*, *chúng con* for themselves. Those who do not
+  yet believe say *ông*; opponents speak of him as *ông ta* or *người này*.
+  None of these words of address take a deity_pronoun span, even where the
+  English has one.
+- A quotation is introduced with a colon, as Vietnamese writes it
+  (`Đức Giê-xu nói: "..."`), where the English has a comma.
 
 ## 7. Reader settings in Vietnamese
 

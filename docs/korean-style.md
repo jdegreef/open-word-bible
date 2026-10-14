@@ -129,7 +129,6 @@ through the book so a scene does not change relationship between verses.
 | the world | 세상 | |
 | sign | 표적 | Never 기적 (miracle). |
 | testify, testimony, witness | 증언하다, 증언, 증인 | |
-| remain | 머물다; 안에 머물다 (15:4-10) | |
 | the Jews | 유대인들 (L); 유대 지도자들 (B, R) where the authorities are meant | As `docs/john-terms.md`. |
 | Truly, truly | 진실로 진실로 너희에게 말한다 (L, B); 내가 분명히 말한다 (R) | One decision per passage. |
 | Son of Man | 인자 | A title, every level; Readable may add "사람의 아들" once per passage with a decision. Never under the gender setting. |
@@ -144,6 +143,17 @@ through the book so a scene does not change relationship between verses.
 | Lord / Sir (*kyrie*) | 주님 / 선생님 | As `docs/john-terms.md`. |
 | Woman (2:4; 19:26) | 여자여 (L); 어머니 (B, R) where it is his mother | Needs a decision where it first appears. Elsewhere 여자여 (L), 여인이여 or a respectful address (B, R). |
 | temple (*hieron*; *naos*) | 성전 (L), 성전 뜰 (B, R); 성전 | As `docs/john-terms.md`. |
+| "I am" (*egō eimi* with no predicate) | 내가 나임을 (8:24, 8:28, 13:19); 나는 있다 (8:58); 나다 (6:20) | Uncertain. |
+| remain, stay | 머무르다 | Every sense, so 1:38-39 and 15:4-10 stay linked. |
+| life (*psychē*) | 목숨 | 생명 stays for *zōē*. |
+| prophet; the Prophet | 예언자; 그 예언자 | 선지자 is the older Protestant word, the alternative. |
+| bread | 빵 | Never 떡. |
+| hour | 때 | Every level, Jesus's appointed hour included. |
+| only (*monogenēs*) | 하나뿐인 / 유일한 | Not 독생자. |
+| Passover; Sabbath; synagogue | 유월절; 안식일; 회당 | |
+| chief priests; council | 대제사장들; 공의회 | |
+| devil | 마귀 | |
+| the disciple whom Jesus loved | 예수께서 사랑하시는 제자 | |
 
 ## 7. Reader settings in Korean
 
