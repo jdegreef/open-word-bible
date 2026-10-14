@@ -2074,6 +2074,13 @@ body.listening { padding-bottom: calc(var(--listen-h, 64px) + 12px); }
 .plan-where strong { color: var(--text); }
 .plan-today .actions { margin-top: 16px; justify-content: flex-start; }
 main > .plan-today { margin: 0 0 40px; }
+/* A returning reader on the home page: the day's reading in their plan
+   comes first, above the hero's buttons, which step back; with a plan or a
+   place to continue from, "See how it works" goes. */
+.hero .plan-today { margin: 4px auto 28px; }
+.hero:has(.plan-today:not([hidden])) > .actions .button { background: var(--surface); color: var(--text); border-color: var(--line-strong); box-shadow: none; }
+.hero:has(.plan-today:not([hidden])) > .actions .button:hover { border-color: var(--accent); color: var(--accent); }
+.hero:has(.plan-today:not([hidden])) .hero-how, .hero:has([data-resume]:not([hidden])) .hero-how { display: none; }
 
 .plan-card.mine { border-color: var(--accent); }
 .plan-card .a-meta { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }

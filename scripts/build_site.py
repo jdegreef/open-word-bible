@@ -1992,10 +1992,10 @@ def home_page(lang="en"):
 <p class="eyebrow">{t(lang, "home.eyebrow")}</p>
 <h1>{t(lang, "home.heading")}</h1>
 <p class="hero-sub">{t(lang, "home.sub")}</p>
-<p class="actions">{resume_link(lang)}<a class="button" href="{url(lang, "/read/")}">{icon(ICONS["book"])}{t(lang, "home.start")}</a>
-<a class="button ghost" href="#example-h">{t(lang, "home.how")}</a></p>
-{hero_search(lang)}
 {plan_today(lang)}
+<p class="actions">{resume_link(lang)}<a class="button" href="{url(lang, "/read/")}">{icon(ICONS["book"])}{t(lang, "home.start")}</a>
+<a class="button ghost hero-how" href="#example-h">{t(lang, "home.how")}</a></p>
+{hero_search(lang)}
 <ul class="trust">
 <li>{icon(ICONS["gift"], 16)}{t(lang, "home.trust_free")}</li>
 <li>{icon(ICONS["scale"], 16)}{t(lang, "home.trust_cc0")}</li>
