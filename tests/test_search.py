@@ -33,6 +33,8 @@ class SearchTest(unittest.TestCase):
 
     def test_every_page_points_at_the_api_and_its_languages_text(self):
         source = re.escape(build_site.search_source("en"))
+        digests = {lang: hashlib.sha256((self.out / f"search-ui-{lang}.json").read_bytes()).hexdigest()[:10]
+                   for lang in build_site.LANGUAGES}
         for page in self.out.rglob("index.html"):
             text = page.read_text(encoding="utf-8")
             lang = re.search(r'<html lang="(\w+)">', text)[1]
@@ -40,8 +42,7 @@ class SearchTest(unittest.TestCase):
                           r'data-ui="/search-ui-(\w+)\.json\?v=(\w+)">', text)
             self.assertIsNotNone(m, page)
             self.assertEqual(m[1], lang, page)
-            body = (self.out / f"search-ui-{lang}.json").read_bytes()
-            self.assertEqual(m[2], hashlib.sha256(body).hexdigest()[:10], page)
+            self.assertEqual(m[2], digests[lang], page)
             self.assertIn('id="palette"', text, page)
             self.assertIn(f'class="tool-btn search-btn" href="{build_site.url(lang, "/search/")}"', text, page)
 
