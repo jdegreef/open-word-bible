@@ -368,6 +368,27 @@ header.site .tools { display: flex; align-items: center; gap: 8px; flex: none; }
 /* The display menu behind the gear: theme tiles, then the reading text's
    size, typeface and line spacing. */
 .prefs { position: relative; }
+.lang-menu { position: relative; }
+.lang-btn { display: inline-flex; align-items: center; width: auto; gap: 5px; padding: 0 10px; color: var(--text); }
+.lang-code { font-size: 12.5px; font-weight: 700; letter-spacing: .04em; }
+.lang-pop {
+  position: absolute; right: 0; top: calc(100% + 10px); z-index: 30; width: 240px; padding: 12px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow-pop);
+}
+.lang-pop .prefs-langs .check { position: absolute; top: 4px; right: 6px; font-size: 11px; }
+/* A phone's header has no room: the gear menu and the footer keep the
+   languages there. */
+@media (max-width: 560px) { .lang-menu { display: none; } }
+/* The offer to read in the browser's language, once. */
+.lang-offer {
+  position: fixed; left: 50%; bottom: 16px; z-index: 40; transform: translateX(-50%);
+  display: flex; align-items: center; gap: 8px 14px; flex-wrap: wrap; justify-content: center;
+  width: max-content; max-width: calc(100vw - 32px); padding: 10px 12px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 999px; box-shadow: var(--shadow-pop);
+}
+.lang-offer .button { padding: 8px 18px; font-size: 15px; }
+.lang-offer-no { border: 0; background: none; color: var(--muted); font: inherit; font-size: 14px; cursor: pointer; padding: 6px 10px; }
+.lang-offer-no:hover { color: var(--text); text-decoration: underline; }
 .prefs-menu {
   position: absolute; right: 0; top: calc(100% + 10px); z-index: 30; width: 300px;
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
@@ -520,6 +541,26 @@ footer.site a.book-chip.none:not(:hover) { color: var(--muted); }
 }
 .hero-sub { font-size: 19px; color: var(--muted); margin: 0 auto 30px; max-width: 60ch; }
 .hero .actions { justify-content: center; }
+/* The hero's search box: go to a verse or find words (/search/). */
+.hero-search {
+  position: relative; display: flex; gap: 8px; max-width: 560px; margin: 28px auto 0; padding: 6px;
+  background: var(--surface); border: 1px solid var(--line-strong); border-radius: 999px; box-shadow: var(--shadow-card);
+}
+.hero-search:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft-border); }
+.hero-search-ico { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); color: var(--muted); display: flex; }
+.hero-search input {
+  flex: 1; min-width: 0; font: inherit; font-family: var(--serif); font-size: 17px; padding: 8px 8px 8px 44px;
+  border: 0; background: none; color: var(--text);
+}
+.hero-search input:focus { outline: none; }
+.hero-search .button { padding: 10px 22px; font-size: 15px; }
+.hero-try { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px 10px; margin: 12px 0 0; font-size: 14px; color: var(--muted); }
+.hero-try ul { display: contents; list-style: none; }
+.hero-try a {
+  padding: 3px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface);
+  color: var(--text); text-decoration: none;
+}
+.hero-try a:hover { border-color: var(--accent); color: var(--accent); }
 .trust {
   display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 26px; list-style: none; padding: 0; margin: 28px 0 0;
   font-size: 14px; color: var(--muted);
@@ -527,6 +568,20 @@ footer.site a.book-chip.none:not(:hover) { color: var(--muted); }
 .trust li { display: inline-flex; align-items: center; gap: 7px; }
 .trust .icon { color: var(--gold); }
 
+/* Home: the verse of the day, under the hero. */
+.votd {
+  position: relative; max-width: 760px; margin: 0 auto; padding: 26px 30px 22px; text-align: center;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow-card);
+}
+.votd::before { content: ""; position: absolute; left: 30%; right: 30%; top: -1px; height: 3px; border-radius: 0 0 3px 3px; background: linear-gradient(90deg, var(--accent), var(--gold)); }
+.votd .eyebrow { display: inline-flex; align-items: center; gap: 8px; margin: 0 0 12px; color: var(--gold); font-size: 12px; letter-spacing: .14em; }
+.votd blockquote { margin: 0; }
+.votd-text { margin: 0; font-family: var(--serif); font-size: clamp(19px, 2.4vw, 23px); line-height: 1.5; text-wrap: pretty; }
+.votd footer { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px 18px; margin: 14px 0 0; font-size: 15px; }
+.votd-ref { font-weight: 700; color: var(--text); text-decoration: none; }
+.votd-ref:hover { color: var(--accent); }
+.votd-why { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; text-decoration: none; }
+.votd-why:hover { text-decoration: underline; }
 /* Section headings: an icon tile, the title, and an "all" link. */
 .sec-head { display: flex; align-items: center; justify-content: space-between; gap: 8px 16px; flex-wrap: wrap; margin: 0 0 20px; }
 .sec-head h2 {
@@ -546,16 +601,64 @@ footer.site a.book-chip.none:not(:hover) { color: var(--muted); }
 .label { font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 20px 0 6px; }
 .label:first-child { margin-top: 0; }
 
-.example, .points-wrap, .progress, .latest { margin: 72px 0 0; }
+.example, .points-wrap, .progress, .latest, .data, .home-terms, .home-plans { margin: 72px 0 0; }
+.terms-text { max-width: 72ch; margin: 0 0 18px; }
+.home-terms .term-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 860px) { .home-terms .term-list { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); } }
+/* Home: the text and its data for builders. */
+.data-text { max-width: 72ch; margin: 0 0 18px; }
+.data-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; list-style: none; margin: 0; padding: 0; }
+.data-card {
+  display: flex; gap: 14px; height: 100%; padding: 18px 20px; color: var(--text); text-decoration: none;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow-card);
+  transition: border-color var(--fast) ease, transform var(--fast) ease;
+}
+.data-card:hover { border-color: var(--accent); transform: translateY(-1px); }
+.data-card strong { display: block; font-family: var(--display); font-size: 18px; margin: 0 0 4px; }
+.data-card > span:last-child > span { display: block; color: var(--muted); font-size: 14.5px; line-height: 1.5; }
+.data-card code { font-size: 12.5px; overflow-wrap: anywhere; color: var(--accent); }
+@media (max-width: 760px) { .data-cards { grid-template-columns: minmax(0, 1fr); } }
 .example-grid {
   display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 28px; align-items: start;
   background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 28px; box-shadow: var(--shadow-card);
 }
 .example .greek { margin: 0; }
+.example .hebrew { margin: 0; font-family: var(--hebrew); font-size: 26px; line-height: 1.9; }
+/* The examples' tabs: John 1:1 from the Greek, Psalm 23:1 from the Hebrew. */
+.ex-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 14px; }
+.ex-tabs [role=tab] {
+  display: inline-flex; align-items: baseline; gap: 8px; padding: 8px 16px; cursor: pointer; font: inherit; font-size: 15px;
+  border: 1px solid var(--line-strong); border-radius: 999px; background: var(--surface); color: var(--text);
+}
+.ex-tabs [role=tab] span { color: var(--muted); font-size: 13.5px; }
+.ex-tabs [role=tab]:hover { border-color: var(--accent); color: var(--accent); }
+.ex-tabs [role=tab][aria-selected="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-contrast); }
+.ex-tabs [role=tab][aria-selected="true"] span { color: inherit; opacity: .8; }
+.ex-tabs [role=tab]:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.ex-panel + .ex-panel { margin-top: 28px; }
+/* A source word to tap: its lemma and sense show below, and the English
+   it became lights up. */
+.example button.w {
+  font: inherit; color: inherit; background: none; border: 0; padding: 0 1px; margin: 0; cursor: pointer;
+  border-radius: 4px; border-bottom: 1px dotted var(--line-strong);
+}
+.example button.w:hover { background: var(--accent-soft); }
+.example button.w[aria-pressed="true"] { background: var(--accent); color: var(--accent-contrast); }
+.example button.w[aria-pressed="true"] mark { background: none; color: inherit; }
+.example button.w:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.w-info { min-height: 1.6em; margin: 6px 0 0; font-size: 15px; color: var(--muted); }
+.w-info b { color: var(--text); font-family: var(--greek); font-size: 18px; }
+.w-info b:lang(hbo), .w-lemma:lang(hbo) { font-family: var(--hebrew); font-size: 20px; }
+.w-lemma { font-family: var(--greek); }
+.w-info b, .w-lemma { unicode-bidi: isolate; }
+.example .al { border-radius: 3px; transition: background-color var(--fast) ease; }
+.example .al.on { background: var(--mark); box-shadow: 0 0 0 2px var(--mark); }
+.example .set { border-bottom: 1px dashed var(--gold); }
+.ex-switch { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin: 14px 0 0; font-size: 13.5px; font-weight: 600; color: var(--muted); }
 .example mark { background: var(--mark); color: inherit; border-radius: 3px; padding: 0 2px; }
 .lvl { display: grid; grid-template-columns: 90px 1fr; gap: 12px; padding: 10px 0; border-top: 1px solid var(--line); }
 .lvl:first-of-type { border-top: 0; }
-.lvl .tag { font-size: 13px; font-weight: 700; color: var(--accent); padding-top: 4px; }
+.lvl-tag { font-size: 13px; font-weight: 700; color: var(--accent); padding-top: 4px; }
 .lvl p { margin: 0; font-family: var(--serif); font-size: 19px; line-height: 1.5; }
 .card.decision {
   cursor: default; margin: 0; padding: 20px 22px; background: var(--accent-soft);
@@ -580,6 +683,38 @@ footer.site a.book-chip.none:not(:hover) { color: var(--muted); }
 .stats b { display: block; font-family: var(--display); font-size: 44px; font-weight: 600; line-height: 1; color: var(--accent); margin-bottom: 6px; }
 .stats span { color: var(--muted); font-size: 14.5px; }
 .progress p { max-width: 72ch; }
+/* Home: the whole Bible as a map, a tile per book, by testament. A tile
+   fills as far as the book's chapters are drafted; one not started is
+   dotted and greyed out. */
+.book-map { display: grid; grid-template-columns: minmax(0, 39fr) minmax(0, 27fr); gap: 20px 28px; margin: 24px 0 0; }
+.map-testament {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; box-shadow: var(--shadow-card);
+}
+.map-books { display: grid; grid-template-columns: repeat(auto-fill, minmax(58px, 1fr)); gap: 6px; list-style: none; margin: 0; padding: 0; }
+.map-book {
+  position: relative; display: grid; place-items: center; height: 38px; padding: 0 4px; overflow: hidden; isolation: isolate;
+  border: 1px solid var(--accent); border-radius: var(--radius-sm); background: var(--accent); color: var(--accent-contrast);
+  font-size: 13px; font-weight: 700; text-decoration: none; white-space: nowrap;
+  transition: transform var(--fast) ease, box-shadow var(--fast) ease;
+}
+a.map-book:hover { transform: translateY(-1px); box-shadow: 0 0 0 2px var(--accent-soft-border); color: var(--accent-contrast); }
+a.map-book:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.map-book.part { background: var(--accent-soft); color: var(--accent); border-style: dashed; }
+.map-book.part::before {
+  content: ""; position: absolute; z-index: -1; left: 0; bottom: 0; height: 4px; width: var(--fill, 0%);
+  background: linear-gradient(90deg, var(--accent), var(--gold));
+}
+a.map-book.part:hover { color: var(--accent); }
+.map-book.none { background: none; border: 1px dotted var(--line-strong); color: var(--muted); font-weight: 500; opacity: .7; cursor: default; }
+.map-key { display: flex; flex-wrap: wrap; gap: 8px 20px; margin: 14px 0 0; font-size: 13.5px; color: var(--muted); }
+.map-key > span { display: inline-flex; align-items: center; gap: 8px; }
+.map-key .map-book { width: 22px; height: 16px; padding: 0; }
+.map-key .map-book.part::before { width: 50%; height: 3px; }
+@media (max-width: 760px) {
+  .book-map { grid-template-columns: minmax(0, 1fr); }
+  .map-testament { padding: 14px; }
+  .map-books { grid-template-columns: repeat(auto-fill, minmax(54px, 1fr)); }
+}
 /* Books and their chapters: a progress bar and a pill per chapter, used
    by the home page, the Read page, the header's Read menu and the reader. */
 .meter { display: block; height: 6px; border-radius: 999px; background: var(--surface-2); overflow: hidden; box-shadow: inset 0 0 0 1px var(--line); }
@@ -1400,6 +1535,21 @@ body.plain .echo-tags { display: none; }
   .hero .eyebrow { font-size: 11px; letter-spacing: .1em; }
   .trust { gap: 8px 18px; font-size: 13px; }
   .points, .helpers { grid-template-columns: 1fr; }
+  /* Home on a phone: sections closer together; the figures one per row,
+     the number beside its label; the key terms two to a row; the hero's
+     buttons side by side as far as they fit. */
+  .example, .points-wrap, .progress, .latest, .data, .home-terms, .home-plans { margin-top: 52px; }
+  .stats { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .stats div { display: flex; align-items: baseline; gap: 12px; padding: 12px 16px; }
+  .stats b { font-size: 30px; margin: 0; flex: none; }
+  .home-terms .term-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .home-terms .term-row { grid-template-columns: minmax(0, 1fr); padding: 10px 12px; }
+  .home-terms .term-row .term-count { grid-column: 1; grid-row: auto; }
+  .home-terms .term-english { display: none; }
+  .hero .actions .button { padding-inline: 18px; }
+  .votd { padding: 22px 18px 18px; }
+  .home-plans .plan-list { gap: 10px; }
+  .home-plans .a-card { padding: 16px 18px; }
   .book-row { grid-template-columns: 1fr auto; grid-template-areas: "name progress" "bar bar" "pills pills"; padding: 14px 16px; }
   .book-head { grid-template-columns: 1fr auto; }
   .book-head .meter, .book-head .save-book { grid-column: 1 / -1; max-width: none; }
@@ -2040,6 +2190,13 @@ body.listening { padding-bottom: calc(var(--listen-h, 64px) + 12px); }
 .plan-where strong { color: var(--text); }
 .plan-today .actions { margin-top: 16px; justify-content: flex-start; }
 main > .plan-today { margin: 0 0 40px; }
+/* A returning reader on the home page: the day's reading in their plan
+   comes first, above the hero's buttons, which step back; with a plan or a
+   place to continue from, "See how it works" goes. */
+.hero .plan-today { margin: 4px auto 28px; }
+.hero:has(.plan-today:not([hidden])) > .actions .button { background: var(--surface); color: var(--text); border-color: var(--line-strong); box-shadow: none; }
+.hero:has(.plan-today:not([hidden])) > .actions .button:hover { border-color: var(--accent); color: var(--accent); }
+.hero:has(.plan-today:not([hidden])) .hero-how, .hero:has([data-resume]:not([hidden])) .hero-how { display: none; }
 
 .plan-card.mine { border-color: var(--accent); }
 .plan-card .a-meta { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }

@@ -31,18 +31,22 @@ The UBS also produced tools for translators: a Greek New Testament edited with t
 
 The biggest change of the last fifty years is not in organisations but in who translates. In the nineteenth century the translator was usually a foreign missionary, with native speakers as helpers. Today most Bible translation is done by **mother-tongue translators**, people translating into their own first language, often trained in biblical languages and linguistics, with consultants who check the work for accuracy.
 
-A typical project now involves a team from the language community, a consultant, and many rounds of checking. One common method is **back-translation**: someone translates the draft back into a language the consultant knows, so that the consultant can see what the draft actually says. Drafts are tested with ordinary readers to see whether they understand them as intended. Many projects are now led by local churches and national organisations rather than by agencies from Europe or North America.
+A typical project now involves a team from the language community, a consultant, and many rounds of checking. One common method is **back-translation**: someone translates the draft back into a language the consultant knows, so that the consultant can see what the draft actually says. Drafts are tested with ordinary readers to see whether they understand them as intended.
+
+Software has changed the daily work. **Paratext**, begun in 1985 by the linguist Reinier de Blois and developed by the Bible societies, and since about 2010 jointly with SIL, lets a team see its draft beside the Hebrew and Greek, earlier translations and the UBS handbooks. It checks spelling, punctuation and the consistent use of key terms, and lets a consultant on another continent comment on the same text. Many projects are now led by local churches and national organisations rather than by agencies from Europe or North America.
 
 ## How many languages have the Bible?
 
 For many years the **Wycliffe Global Alliance** published annual statistics on Scripture access, compiled with the UBS, SIL and other partners. It has since scaled back its own calculations and points readers to **ProgressBible**, a shared database that is updated monthly. The figures change as projects finish and as counts are corrected, so they should be read as approximate.
 
-The Alliance's 2024 report, using data from September 2023, put the situation roughly like this:
+The Alliance's 2024 report, using data from September 2024, put the situation roughly like this:
 
 - 756 languages had a complete Bible;
 - 1,726 more had a New Testament;
 - 1,274 more had some smaller portion of Scripture;
 - and the rest of the world's roughly seven thousand languages, more than three thousand of them, had no Scripture at all, though translation work was under way in many of them, and the Alliance counted 985 languages still needing a translation to begin.
+
+The last figure has fallen fast. By August 2025 the Alliance counted 544 of the world's 7,396 languages still waiting for translation to begin, spoken by about 37 million people, with work under way in 4,457 languages.
 
 Numbers like these need care. A language with a complete Bible may have only an old version that few can read. A language with no Scripture may be spoken by a small community that mostly uses a regional language. And statistics cannot show whether a translation is good, or whether it is used. Still, they show both how much has been done and how much remains.
 
@@ -60,7 +64,11 @@ Examples include **unfoldingWord** and its **Door43** platform, which publish Bi
 
 ## Debates that continue
 
-Translators still argue about many questions: how far to adapt expressions to a culture, how to translate key terms where a word for "God" carries other religious meanings, how to render "Father" and "Son" for readers from Muslim backgrounds (the subject of a major controversy in the early 2010s, reviewed by a World Evangelical Alliance panel), and how to use computers and, now, artificial intelligence without weakening human checking. These are not new questions; they are the oldest questions of translation in new settings.
+Translators still argue about many questions: how far to adapt expressions to a culture, how to translate key terms where a word for "God" carries other religious meanings, and how to use computers and, now, artificial intelligence without weakening human checking.
+
+One debate shows how hard these questions can be. Many Muslims hear "Son of God" as a claim that God took a wife and fathered a child, which the Qur'an rejects. Critics reported that some translations made for Muslim readers replaced "Father" and "Son" with other words, such as "Lord" for "Father" and "Messiah" for "Son," to avoid that misunderstanding. They said this changed the meaning of the text, a petition launched in January 2012 drew wide support, and that year Wycliffe and SIL asked the **World Evangelical Alliance** to review their practice. Its panel of twelve scholars from several countries reported in April 2013. It recommended using the most directly equivalent familial words for God the Father and the Son of God, adding a qualifier such as "heavenly" where needed, and explaining the terms in notes rather than replacing them. Wycliffe and SIL accepted the report.
+
+The case turns on a distinction that runs through all translation: between what a word means and what a reader may wrongly hear in it. A note can address the second without changing the first. These are not new questions; they are the oldest questions of translation in new settings.
 
 ## Where Open Word Bible fits
 
@@ -75,5 +83,7 @@ Open Word Bible is not a minority-language project. Its languages so far are Eng
 - Robertson, Edwin H. *Taking the Word to the World*. 1996.
 - Wilt, Timothy, ed. *Bible Translation: Frames of Reference*. Manchester: St Jerome, 2003.
 - Eberhard, David M., Gary F. Simons, and Charles D. Fennig, eds. *Ethnologue: Languages of the World*. Dallas: SIL International, published annually.
-- Wycliffe Global Alliance. "2024 Global Scripture Access." Online at [wycliffe.net](https://wycliffe.net/2025/08/25/2025-scripture-access-statistics/), with later updates from ProgressBible ([progress.bible](https://progress.bible/)).
+- Wycliffe Global Alliance. "2024 Global Scripture Access" (data of September 2024) and "2025 Scripture access statistics" (data of 1 August 2025). Online at [wycliffe.net](https://wycliffe.net/2025/08/25/2025-scripture-access-statistics/), with later updates from ProgressBible ([progress.bible](https://progress.bible/)).
+- World Evangelical Alliance. "Report of the Independent Bible Translation Review Panel" to Wycliffe Global Alliance and SIL International on the translation of divine familial terms, April 2013.
+- United Bible Societies. "Celebrating 30 Years of Paratext Supporting Bible Translation." Online at [unitedbiblesocieties.org](https://unitedbiblesocieties.org/celebrating-30-years-of-paratext-supporting-bible-translation/).
 - Sanneh, Lamin. *Whose Religion Is Christianity? The Gospel beyond the West*. Grand Rapids: Eerdmans, 2003.

@@ -9,6 +9,7 @@ the root, Spanish under /es/, French under /fr/, Swahili under /sw/.
 """
 import argparse
 import base64
+import datetime
 import functools
 import hashlib
 import html
@@ -240,6 +241,23 @@ def leading_sample(gap):
 
 
 LEADING_GAPS = {"compact": 5, "normal": 7, "spacious": 9}
+
+
+def language_menu(lang, path=None, translated=LANGUAGES):
+    """The header's language switch: the page's language, opening the
+    language links (language_items). Each link carries its language's own
+    offer to read in it, which web/site.js shows a first-time visitor whose
+    browser prefers that language."""
+    label = t(lang, "footer.languages")
+    items = language_items(lang, path, translated, '<span class="check" aria-hidden="true">&#10003;</span>')
+    for code in LANGUAGES:
+        items = items.replace(f'data-lang="{code}">', f'data-lang="{code}" data-offer="{html.escape(t(code, "lang.offer"))}" '
+                                                     f'data-offer-no="{html.escape(t(code, "lang.offer_no"))}">', 1)
+    return ('<div class="lang-menu">'
+            f'<button type="button" class="tool-btn lang-btn" aria-expanded="false" aria-controls="lang-pop" '
+            f'aria-label="{label}" title="{label}">{icon(ICONS["languages"])}<span class="lang-code">{lang.upper()}</span></button>'
+            f'<div id="lang-pop" class="lang-pop" role="group" aria-label="{label}" hidden>'
+            f'<ul class="prefs-langs">{items}</ul></div></div>')
 
 
 def colour_menu(lang, path=None, translated=LANGUAGES):
@@ -484,6 +502,7 @@ def site_header(lang, current, path=None, lang_path=None, translated=LANGUAGES):
 <div class="tools">
 <a class="tool-btn search-btn" href="{url(lang, "/search/")}" aria-label="{t(lang, "nav.search")}" title="{t(lang, "nav.search")}" aria-keyshortcuts="Control+K Meta+K">{icon(ICONS["search"])}<span class="search-label">{t(lang, "nav.search")}</span><kbd class="search-kbd" hidden>Ctrl K</kbd></a>
 {account_menu(lang)}
+{language_menu(lang, lang_path, translated)}
 {colour_menu(lang, lang_path, translated)}
 <button type="button" class="tool-btn menu-btn" aria-expanded="false" aria-controls="site-nav" aria-label="{t(lang, "nav.menu")}">{icon(ICONS["menu"], 22)}{icon(ICONS["close"], 22)}</button>
 </div>
@@ -602,7 +621,7 @@ def site_footer(lang, path=None, translated=LANGUAGES):
 <input type="search" name="q" id="foot-q" autocomplete="off" spellcheck="false" enterkeyhint="go" placeholder="{placeholder}" aria-labelledby="foot-find">
 <button class="button" type="submit">{t(lang, "footer.go")}</button>
 </form>
-{resume_link(lang, "foot-resume")}
+{resume_link(lang, "foot-resume", names=True)}
 </div>
 </div>
 {book_index(lang)}
@@ -1470,7 +1489,12 @@ def opening_verse(records, chapter, lang="en"):
     """A passage's opening verse (see opening), Balanced, at the default
     settings: what its Read-page card and its share card quote. In English
     when that sentence is not yet in lang."""
-    r, vid = opening(records, chapter)
+    return verse_text(*opening(records, chapter), lang)
+
+
+def verse_text(r, vid, lang="en"):
+    """One verse of a record, Balanced, at the default settings, in lang or
+    in English when the sentence is not yet in lang."""
     # split keeps each marker's verse number: [text, "13", text, "14", text].
     parts = markup.VERSE.split(r["renderings"][text_lang(r, lang)]["B"])
     numbers = [str(refs.parse(r["refs"][0]).verse)] + parts[1::2]
@@ -1530,13 +1554,18 @@ def passage_card(book, chapter, lang="en"):
             f'<span class="a-meta">{meta}</span></a></li>')
 
 
-def resume_link(lang, cls="button"):
+def resume_link(lang, cls="button", names=False):
     """A link back to the verse the reader was last at, hidden until
-    web/site.js finds one saved by web/reader.js (owb.place). It carries the
-    book names in lang, so the link names the passage in the page's language."""
-    names = json.dumps({b: BOOK_NAMES[b][lang] for b, _ in books()}, ensure_ascii=False)
+    web/site.js finds one saved by web/reader.js (owb.place). The footer's
+    (names) carries the book names in lang, so that every such link on the
+    page names the passage in the page's language; one copy per page is
+    enough, and every page has the footer."""
+    books_attr = ""
+    if names:
+        names = json.dumps({b: BOOK_NAMES[b][lang] for b, _ in books()}, ensure_ascii=False)
+        books_attr = f' data-books="{html.escape(names)}"'
     return (f'<a class="{cls}" data-resume hidden data-label="{html.escape(t(lang, "resume.link"))}" '
-            f'data-prefix="{url(lang, "")}" data-books="{html.escape(names)}" href="{url(lang, "/read/")}">'
+            f'data-prefix="{url(lang, "")}"{books_attr} href="{url(lang, "/read/")}">'
             f'{icon(ICONS["book"])}<span></span></a>')
 
 
@@ -1731,6 +1760,26 @@ def plan_card(plan, lang="en"):
             f'<span class="plan-mine" hidden> &middot; {t(lang, "plans.yours")}</span></span></a></li>')
 
 
+# The plans the home page suggests first, where they are offered in its
+# language: a gospel, psalms and the beginning; then any others.
+HOME_PLANS = ("john", "psalms-1-50", "genesis-1-11", "romans", "hebrews")
+
+
+def home_plans(lang="en"):
+    """Three reading plans to start from, with a link to them all; nothing
+    where no plan is offered in lang yet."""
+    plans = available_plans(lang)
+    if not plans:
+        return ""
+    order = {pid: i for i, pid in enumerate(HOME_PLANS)}
+    shown = sorted(plans, key=lambda p: order.get(p.id, len(order)))[:3]
+    return f"""<section class="home-plans" aria-labelledby="plans-h">
+{sec_head("plans-h", "calendar", t(lang, "plans.heading"), url(lang, "/plans/"), t(lang, "nav.section_all", n=len(plans)))}
+<ul class="a-grid plan-list">{"".join(plan_card(p, lang) for p in shown)}</ul>
+</section>
+"""
+
+
 def plans_page(lang="en", plans=None):
     """The plans offered in lang (available_plans), or, with none, a plain
     word that none is ready yet and a link to the English ones."""
@@ -1814,8 +1863,14 @@ def plain(text):
     return markup.flat(markup.VERSE.sub("", markup.render(text))).strip()
 
 
-# The worked example on the home page: a record and one of its decisions.
-EXAMPLE = ("JHN", 1, "JHN.1.1.s1", "m4")
+# The worked examples on the home page, one Greek and one Hebrew: a record
+# and one of its decisions each.
+EXAMPLES = (("JHN", 1, "JHN.1.1.s1", "m4"), ("PSA", 23, "PSA.23.1.s1", "m2"))
+EXAMPLE = EXAMPLES[0]
+# The reader settings an example can switch, with the reader's labels for
+# the setting and its options.
+EXAMPLE_SETTINGS = {"divine_name": ("reader.name", ("reader.lord", "reader.yahweh")),
+                    "christos": ("reader.title", ("reader.christ", "reader.messiah"))}
 
 
 def sec_head(hid, ico, title, href=None, more=None):
@@ -1826,68 +1881,174 @@ def sec_head(hid, ico, title, href=None, more=None):
             f'{title}</h2>{link}</div>')
 
 
-def example_html(lang="en"):
-    """John 1:1 at every level, with one decision and its Greek words marked.
-    Everything comes from content/ and data/grc/, so it stays in step with
-    the translation. Decision notes are in English for now."""
-    book, chapter, record_id, decision_id = EXAMPLE
+def example_piece(raw):
+    """Part of a rendering as the example shows it: verse markers dropped,
+    line breaks read as spaces, and each reader setting a span holding its
+    default, with its options for web/site.js to switch."""
+    raw = markup.LINE.sub(" ", markup.VERSE.sub("", raw))
+    out, at = [], 0
+    for m in markup.SPAN.finditer(raw):
+        options = m[2].split("|")
+        out.append(html.escape(raw[at:m.start()]))
+        out.append(f'<span class="set" data-set="{m[1]}" data-o="{html.escape(json.dumps(options, ensure_ascii=False))}">'
+                   f'{html.escape(options[0])}</span>')
+        at = m.end()
+    out.append(html.escape(raw[at:]))
+    return "".join(out)
+
+
+def example_rendering(text, alignments=()):
+    """A rendering for the example, with each aligned span marked with the
+    source words it renders, so tapping a word lights up its English."""
+    ranges = markup.alignment_ranges(text, [a["target_span"] for a in alignments])
+    out, at = [], 0
+    for (start, end), a in zip(ranges, alignments):
+        out.append(example_piece(text[at:start]))
+        out.append(f'<span class="al" data-t="{" ".join(a["tokens"])}">{example_piece(text[start:end])}</span>')
+        at = end
+    out.append(example_piece(text[at:]))
+    return "".join(out).strip()
+
+
+def example_panel(example, lang, n):
+    """One worked example: the source sentence, its words to tap, the
+    word-for-word gloss, the three levels and one decision. Everything comes
+    from content/ and data/, so it stays in step with the translation.
+    Decision notes are in English for now."""
+    book, chapter, record_id, decision_id = example
     records, words = load_chapter(book, chapter)
     record = next(r for r in records if r["id"] == record_id)
     decision = next(d for d in record["decisions"] if d["id"] == decision_id)
+    source = record["source"]["language"]
     marked = set(decision["tokens"])
-    greek = " ".join(
-        (f'<mark>{html.escape(w["text"])}</mark>' if w["id"] in marked else html.escape(w["text"]))
-        + html.escape(w["after"].rstrip())
-        for vid in record["refs"] for w in words[vid] if w["id"] in record["source"]["tokens"])
+
+    def word(w):
+        attrs = (f'data-t="{w["id"]}" data-g="{html.escape(w.get("english") or w.get("gloss") or "")}" '
+                 f'data-l="{html.escape(w["lemma"])}"')
+        text = html.escape(w["text"])
+        if w["id"] in marked:
+            text = f"<mark>{text}</mark>"
+        return f'<button type="button" class="w" {attrs}>{text}</button>'
+
+    hebrew = source in ("hbo", "arc")
+    tokens = [w for vid in record["refs"] for w in words[vid] if w["id"] in record["source"]["tokens"]]
+    original = ""
+    for i, w in enumerate(tokens):
+        after = w["after"].rstrip()
+        if i + 1 < len(tokens):
+            # The morphemes of one Hebrew word ("and" + "he called") share
+            # its position and are not spaced; a maqaf joins two words.
+            if not (hebrew and (tokens[i + 1]["position"] == w["position"] or after.endswith("\u05be"))):
+                after += " "
+        original += word(w) + html.escape(after)
     shown = text_lang(record, lang)
+    aligned = record.get("alignments", [])
     levels = "".join(
-        f'<div class="lvl"><span class="tag">{name}</span>'
-        f'<p{lang_attr(shown, lang)}>{html.escape(plain(record["renderings"][shown][code]))}</p></div>'
+        f'<div class="lvl"><span class="lvl-tag">{name}</span>'
+        f'<p{lang_attr(shown, lang)}>'
+        f'{example_rendering(record["renderings"][shown][code], [a for a in aligned if a["language"] == shown and a["level"] == code])}'
+        f'</p></div>'
         for code, name in catalog(lang)["levels"].items())
-    ref = refs.parse(record["refs"][0])
+    present = [k for k in EXAMPLE_SETTINGS if any(f"{{{{{k}:" in v for v in record["renderings"][shown].values())]
+    switches = ""
+    for key in present:
+        label, options = EXAMPLE_SETTINGS[key]
+        buttons = "".join(f'<button type="button" data-v="{i}" aria-pressed="{"true" if i == 0 else "false"}">{t(lang, o)}</button>'
+                          for i, o in enumerate(options))
+        switches += (f'<div class="ex-switch" data-switch="{key}"><span>{t(lang, label)}</span>'
+                     f'<span class="seg" role="group" aria-label="{t(lang, label)}">{buttons}</span></div>')
     also = "; ".join(html.escape(a) for a in decision["alternatives"])
     open_url = url(lang, chapter_url(book, chapter))
     passage = f"{chapter_book(book, lang)} {chapter}"
     en = lang_attr("en", lang)
     note = f'<p class="alts">{t(lang, "notes_in_english")}</p>' if lang != "en" else ""
-    return f"""
-<section class="example" aria-labelledby="example-h">
-{sec_head("example-h", "book", t(lang, "home.example", ref=f"{chapter_book(book, lang)} {ref.chapter}:{ref.verse}"), open_url, t(lang, "home.example_open", passage=passage))}
+    return f"""<div class="ex-panel" id="ex-{n}" role="tabpanel" aria-labelledby="ex-tab-{n}">
 <div class="example-grid">
 <div>
-<p class="label">{t(lang, "home.example_greek")}</p>
-<p class="greek" lang="grc">{greek}</p>
+<p class="label">{t(lang, "home.example_hebrew" if hebrew else "home.example_greek")}</p>
+<p class="{"hebrew" if hebrew else "greek"}" lang="{source}"{' dir="rtl"' if hebrew else ""}>{original}</p>
+<p class="w-info" aria-live="polite"><span class="w-hint">{t(lang, "home.example_tap")}</span></p>
 <p class="label">{t(lang, "home.example_gloss")}</p>
 <p class="gloss"{en}>{html.escape(plain(record["literal_gloss"]))}</p>
 <p class="label">{t(lang, "home.example_levels")}</p>
 {levels}
+{switches}
 </div>
 <div class="card decision">
 <p class="label">{t(lang, "home.example_decision")}</p>
 <p class="choice"{en}>&ldquo;{html.escape(plain(decision["choice"]))}&rdquo;</p>
-<p class="alts">{t(lang, "home.example_also", alts=f"<span{en}>{also}</span>")}</p>
+{f'<p class="alts">{t(lang, "home.example_also", alts=f"<span{en}>{also}</span>")}</p>' if also else ""}
 <p class="why"{en}>{html.escape(decision["reason"])}</p>
 {note}
 </div>
 </div>
 <p class="example-foot">{t(lang, "home.example_foot")} <a href="{open_url}">{t(lang, "home.example_foot_link", passage=passage)}</a></p>
+</div>"""
+
+
+def example_html(lang="en"):
+    """The worked examples, a tab each: John 1:1 from the Greek and Psalm
+    23:1 from the Hebrew. Without JavaScript both are shown, one after the
+    other (web/site.js makes the tabs)."""
+    tabs, panels = [], []
+    for n, example in enumerate(EXAMPLES):
+        book, chapter, record_id, _ = example
+        ref = refs.parse(record_id.rsplit(".", 1)[0])
+        script = "home.tab_hebrew" if book in refs.OT_CODES else "home.tab_greek"
+        tabs.append(f'<button type="button" role="tab" id="ex-tab-{n}" aria-controls="ex-{n}" '
+                    f'aria-selected="{"true" if n == 0 else "false"}"{"" if n == 0 else " tabindex=-1"}>'
+                    f'<b>{chapter_book(book, lang)} {ref.chapter}:{ref.verse}</b><span>{t(lang, script)}</span></button>')
+        panels.append(example_panel(example, lang, n))
+    return f"""
+<section class="example" aria-labelledby="example-h" data-example>
+{sec_head("example-h", "book", t(lang, "home.example_heading"))}
+<div class="ex-tabs" role="tablist" aria-labelledby="example-h" hidden>{"".join(tabs)}</div>
+{"".join(panels)}
 </section>
 """
 
 
+def book_map(lang="en"):
+    """The home page's map of the whole Bible: a tile per book, by
+    testament, filled as far as its chapters are drafted in lang. A book
+    with chapters in lang links to it on the Read page; one not started is
+    a greyed-out tile. 66 tiles say what 34 progress bars could not: how
+    much of the Bible there is still to do."""
+    have = dict(books(lang))
+
+    def tile(book):
+        name = book_name(book, lang)
+        abbr = BOOK_ABBREVIATIONS[book].get(lang, name)
+        if book not in have:
+            return (f'<li><span class="map-book none" title="{name}: {t(lang, "footer.key_none")}">'
+                    f'<span aria-hidden="true">{abbr}</span><span class="sr-only">{name}: '
+                    f'{t(lang, "footer.key_none")}</span></span></li>')
+        done, total, progress = book_progress(book, have[book], lang)
+        fill = 100 * len(have[book]) / total
+        return (f'<li><a class="map-book{"" if done == total else " part"}" '
+                f'href="{url(lang, f"/read/#{book.lower()}")}" title="{name}: {progress}" style="--fill:{fill:.0f}%">'
+                f'<span aria-hidden="true">{abbr}</span><span class="sr-only">{name}: {progress}</span></a></li>')
+
+    def testament(key, codes):
+        started = sum(b in have for b in codes)
+        return (f'<section class="map-testament" aria-labelledby="map-{key}"><div class="testament-head">'
+                f'<h3 id="map-{key}">{t(lang, "footer." + key)}</h3>'
+                f'<span>{t(lang, "footer.started", done=started, total=len(codes))}</span></div>'
+                f'<ul class="map-books">{"".join(tile(b) for b in codes)}</ul></section>')
+
+    key = "".join(f'<span><span class="map-book{cls}" aria-hidden="true"></span>{t(lang, "footer.key_" + k)}</span>'
+                  for k, cls in (("done", ""), ("part", " part"), ("none", " none")))
+    return (f'<div class="book-map">{testament("old_testament", refs.OT_CODES)}'
+            f'{testament("new_testament", refs.BOOK_CODES[39:])}</div>'
+            f'<p class="map-key">{key}</p>')
+
+
 def progress_html(lang="en"):
-    """The home page's progress: sentences, decisions, books and chapters
-    in the page's language only. A sentence's decisions in lang are its
-    meaning decisions and its rendering decisions for lang."""
+    """The home page's progress: sentences, decisions, and the map of the
+    books, in the page's language only. A sentence's decisions in lang are
+    its meaning decisions and its rendering decisions for lang."""
     records = [r for r in all_records() if lang in r["renderings"]]
     decisions = sum(d["language"] in (None, lang) for r in records for d in r["decisions"])
-    rows = []
-    for book, chaps in books(lang):
-        done, total, progress = book_progress(book, chaps, lang)
-        rows.append(f'<li class="book-row"><a class="book-name" href="{url(lang, f"/read/#{book.lower()}")}">'
-                    f'{BOOK_NAMES[book][lang]}</a>{meter(done, total)}'
-                    f'<span class="book-progress{" done" if done == total else ""}">{progress}</span>'
-                    f'<span class="chap-pills">{chapter_pills(chaps, lang)}</span></li>')
     return f"""
 <section class="progress" aria-labelledby="progress-h">
 {sec_head("progress-h", "check", t(lang, "home.progress"), url(lang, "/read/"), t(lang, "home.all_books"))}
@@ -1897,10 +2058,80 @@ def progress_html(lang="en"):
 <div><b>{len(LANGUAGES)}</b><span>{t(lang, "home.stat_languages")}</span></div>
 </div>
 <p>{t(lang, "home.progress_text")}</p>
-<p class="label">{t(lang, "nav.books_so_far")}</p>
-<ul class="book-rows">{"".join(rows)}</ul>
+{book_map(lang)}
 </section>
 """
+
+
+# The verse of the day (data/verse_of_the_day.json).
+VERSES_OF_THE_DAY = json.loads((ROOT / "data" / "verse_of_the_day.json").read_text(encoding="utf-8"))["refs"]
+
+
+def verses_of_the_day(lang="en"):
+    """Each verse of the day as the home page shows it: its reference, its
+    Balanced text in lang (or English, marked), and links to its notes and
+    its chapter."""
+    out = []
+    for vid in VERSES_OF_THE_DAY:
+        ref = refs.parse(vid)
+        r = next(r for r in load_chapter(ref.book, ref.chapter)[0] if vid in r["refs"])
+        item = {"r": f"{chapter_book(ref.book, lang)} {ref.chapter}:{ref.verse}", "t": verse_text(r, vid, lang),
+                "u": url(lang, chapter_url(ref.book, ref.chapter)) + f"#v{ref.verse}"}
+        if text_lang(r, lang) != lang:
+            item["l"] = text_lang(r, lang)
+        out.append(item)
+    return out
+
+
+def verse_of_the_day(lang="en"):
+    """The verse of the day: the build day's verse, which web/site.js swaps
+    for the reader's own day from the list in the page."""
+    verses = verses_of_the_day(lang)
+    v = verses[(datetime.date.today() - datetime.date(1970, 1, 1)).days % len(verses)]
+    data = json.dumps(verses, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+    la = f' lang="{v["l"]}"' if "l" in v else ""
+    return f"""<section class="votd" aria-labelledby="votd-h" data-votd>
+<p class="eyebrow" id="votd-h">{icon(ICONS["calendar"], 16)}{t(lang, "home.votd")}</p>
+<blockquote><p class="votd-text"{la}>{html.escape(v["t"])}</p>
+<footer><a class="votd-ref" href="{v["u"]}">{html.escape(v["r"])}</a>
+<a class="votd-why" href="{v["u"]}">{t(lang, "home.votd_why")} {icon(ICONS["arrow"], 15)}</a></footer></blockquote>
+<script type="application/json" class="votd-data">{data}</script>
+</section>"""
+
+
+def data_html(lang="en"):
+    """The home page's offer to builders: the whole translation to
+    download, the API, and the data model, all CC0."""
+    api = f"{API_URL}/api/passages/JHN/1/"
+    cards = (
+        ("download", f"{GITHUB_URL}/archive/refs/heads/main.zip", "home.data_zip", t(lang, "home.data_zip_text")),
+        ("code", api, "home.data_api", f'{t(lang, "home.data_api_text")} <code>{html.escape(api.split("//", 1)[1])}</code>'),
+        ("info", f"{GITHUB_URL}/blob/main/schema/sentence-record.schema.json", "home.data_schema",
+         t(lang, "home.data_schema_text")))
+    items = "".join(f'<li><a class="data-card" href="{href}"><span class="tile sm">{icon(ICONS[ico])}</span>'
+                    f'<span><strong>{t(lang, key)}</strong><span>{text}</span></span></a></li>'
+                    for ico, href, key, text in cards)
+    return f"""<section class="data" aria-labelledby="data-h">
+{sec_head("data-h", "scale", t(lang, "home.data"))}
+<p class="data-text">{t(lang, "home.data_text")}</p>
+<ul class="data-cards">{items}</ul>
+</section>
+"""
+
+
+def hero_search(lang="en"):
+    """The home page's search box: a verse to go to or words to find, as
+    the /search/ page takes them, with the search page's examples to try."""
+    ui = catalog(lang)["search.ui"]
+    tries = "".join(f'<li><a href="{url(lang, "/search/")}?q={html.escape(q.replace(" ", "+"))}">{html.escape(q)}</a></li>'
+                    for q in catalog(lang)["search.examples"])
+    return (f'<form class="hero-search" action="{url(lang, "/search/")}" method="get" role="search">'
+            f'<label class="sr-only" for="hero-q">{t(lang, "footer.find")}</label>'
+            f'<span class="hero-search-ico" aria-hidden="true">{icon(ICONS["search"])}</span>'
+            f'<input type="search" name="q" id="hero-q" autocomplete="off" spellcheck="false" enterkeyhint="go" '
+            f'placeholder="{html.escape(ui["palette_placeholder"])}">'
+            f'<button class="button" type="submit">{t(lang, "footer.go")}</button></form>'
+            f'<div class="hero-try"><span>{t(lang, "home.try")}</span><ul>{tries}</ul></div>')
 
 
 def home_page(lang="en"):
@@ -1912,7 +2143,12 @@ def home_page(lang="en"):
         return (f'<li><span class="tile sm">{icon(ICONS[ico])}</span>'
                 f'<p><strong>{t(lang, f"home.helper{n}")}</strong> {t(lang, f"home.helper{n}_text")}</p></li>')
 
-    first = sorted(load_articles(lang), key=lambda a: a["order"])[:3]
+    # One article from each kind, in the catalog's order of kinds: how it
+    # is made, reading the text, how we got the Bible (the footer already
+    # lists the first few on method).
+    ordered = sorted(load_articles(lang), key=lambda a: a["order"])
+    first = [a for a in (next((a for a in ordered if a["section"] == kind), None)
+                         for kind in catalog(lang)["sections"]) if a][:3]
     latest = f"""<section class="latest" aria-labelledby="latest-h">
 {sec_head("latest-h", "articles", t(lang, "home.latest"), url(lang, "/articles/"), t(lang, "nav.all_articles"))}
 <ul class="a-grid">{article_list(first, lang)}</ul>
@@ -1923,15 +2159,17 @@ def home_page(lang="en"):
 <p class="eyebrow">{t(lang, "home.eyebrow")}</p>
 <h1>{t(lang, "home.heading")}</h1>
 <p class="hero-sub">{t(lang, "home.sub")}</p>
-<p class="actions">{resume_link(lang)}<a class="button" href="{url(lang, "/read/")}">{icon(ICONS["book"])}{t(lang, "home.start")}</a>
-<a class="button ghost" href="#example-h">{t(lang, "home.how")}</a></p>
 {plan_today(lang)}
+<p class="actions">{resume_link(lang)}<a class="button" href="{url(lang, "/read/")}">{icon(ICONS["book"])}{t(lang, "home.start")}</a>
+<a class="button ghost hero-how" href="#example-h">{t(lang, "home.how")}</a></p>
+{hero_search(lang)}
 <ul class="trust">
 <li>{icon(ICONS["gift"], 16)}{t(lang, "home.trust_free")}</li>
 <li>{icon(ICONS["scale"], 16)}{t(lang, "home.trust_cc0")}</li>
 <li>{icon(ICONS["languages"], 16)}{t(lang, "home.trust_languages")}</li>
 </ul>
 </section>
+{verse_of_the_day(lang)}
 {example_html(lang)}
 <section class="points-wrap" aria-labelledby="points-h">
 {sec_head("points-h", "info", t(lang, "home.points"))}
@@ -1942,8 +2180,10 @@ def home_page(lang="en"):
 {point("check", 4)}
 </ul>
 </section>
+{home_plans(lang)}
 {progress_html(lang)}
-{latest}<section class="involve" id="help" aria-labelledby="involve-h">
+{home_terms(lang)}
+{latest}{data_html(lang)}<section class="involve" id="help" aria-labelledby="involve-h">
 <div class="involve-text">
 <h2 id="involve-h">{t(lang, "home.involve")}</h2>
 <p>{t(lang, "home.involve_text")}</p>
@@ -2127,16 +2367,38 @@ def term_lemma(term, cls="term-lemma"):
     return f'<span class="{cls}" lang="{term_key(term)[0]}">{html.escape(term["lemma"])}</span>'
 
 
+def term_row(term, lang="en"):
+    """A key term in a list: its lemma, sense, settled English and uses."""
+    english = ", ".join(term_english(term))
+    return (f'<li><a class="term-row" href="{url(lang, term_path(term))}">'
+            f'{term_lemma(term)}'
+            f'<span class="term-sense"{lang_attr("en", lang)}>{html.escape(term["sense"])}</span>'
+            f'<span class="term-english"{lang_attr("en", lang)}>{html.escape(english)}</span>'
+            f'<span class="term-count">{tn(lang, "terms.count", term_count(term))}</span></a></li>')
+
+
+def home_terms(lang="en"):
+    """The home page's key terms: six of the most used, up to two of them
+    Hebrew, with a link to them all."""
+    terms = list(validate.KEY_TERMS.values())
+
+    def top(code):
+        return sorted((x for x in terms if term_key(x)[0] == code), key=term_count, reverse=True)
+    hebrew = top("hbo")[:2]
+    shown = top("grc")[:6 - len(hebrew)] + hebrew
+    return f"""<section class="home-terms" aria-labelledby="terms-h">
+{sec_head("terms-h", "key", t(lang, "terms.heading"), url(lang, "/terms/"), t(lang, "nav.section_all", n=len(terms)))}
+<p class="terms-text">{t(lang, "home.terms_text")}</p>
+<ul class="term-list">{"".join(term_row(term, lang) for term in shown)}</ul>
+</section>
+"""
+
+
 def terms_page(lang="en"):
     """Every key term, Greek and then Hebrew, with its settled English and
     how often the drafted text uses it."""
     def row(term):
-        english = ", ".join(term_english(term))
-        return (f'<li><a class="term-row" href="{url(lang, term_path(term))}">'
-                f'{term_lemma(term)}'
-                f'<span class="term-sense"{lang_attr("en", lang)}>{html.escape(term["sense"])}</span>'
-                f'<span class="term-english"{lang_attr("en", lang)}>{html.escape(english)}</span>'
-                f'<span class="term-count">{tn(lang, "terms.count", term_count(term))}</span></a></li>')
+        return term_row(term, lang)
 
     groups = []
     for code in ("grc", "hbo"):
@@ -2503,7 +2765,7 @@ def article_html(text, toc=None, lang="en", text_language="en"):
 # Article sections, in the order the articles page shows them. Their names
 # in each language are in i18n/ (sections).
 SECTIONS = {"method": "How it is made", "passage": "Reading the text", "history": "How we got the Bible",
-            "translation": "The Bible in translation"}
+            "translation": "The Bible in translation", "compare": "Comparing translations"}
 
 
 def article_passages(body):

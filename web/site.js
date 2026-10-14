@@ -266,8 +266,11 @@
     var place = null;
     try { place = JSON.parse(localStorage.getItem("owb.place") || "null"); } catch (e) { /* none */ }
     if (!place || !place.book || !place.chapter || !place.verse) return;
+    // The book names in the page's language, carried once, by the footer's link.
+    var carrier = document.querySelector("a[data-resume][data-books]");
+    if (!carrier) return;
+    var names = JSON.parse(carrier.getAttribute("data-books"));
     document.querySelectorAll("a[data-resume]").forEach(function (a) {
-      var names = JSON.parse(a.getAttribute("data-books"));
       var name = names[place.book];
       if (!name) return;
       // A verse of the next chapter that a sentence runs into is "8:1".
@@ -656,4 +659,167 @@
   document.addEventListener("visibilitychange", function () { if (document.visibilityState === "hidden") sync(true); });
   window.addEventListener("online", soon);
   if (hash(body()) !== session(SENT) || Date.now() - (Number(session(SINCE)) || 0) > 120000) sync();
+})();
+
+// The home page's verse of the day (verse_of_the_day in
+// scripts/build_site.py): the page is built with the build day's verse,
+// and the list in the page gives the reader's own day, in their time zone.
+(function () {
+  "use strict";
+  var box = document.querySelector("[data-votd]");
+  if (!box) return;
+  var verses;
+  try { verses = JSON.parse(box.querySelector(".votd-data").textContent); } catch (e) { return; }
+  var now = new Date();
+  var day = Math.floor((now.getTime() - now.getTimezoneOffset() * 60000) / 86400000);
+  var v = verses[day % verses.length];
+  var text = box.querySelector(".votd-text");
+  text.textContent = v.t;
+  if (v.l) text.setAttribute("lang", v.l); else text.removeAttribute("lang");
+  var ref = box.querySelector(".votd-ref");
+  ref.textContent = v.r;
+  ref.href = v.u;
+  box.querySelector(".votd-why").href = v.u;
+})();
+
+// The home page's worked examples (example_html in scripts/build_site.py):
+// a tab each; tapping a source word shows its lemma and sense and lights
+// up the English it became (where the sentence is aligned); a setting
+// switch shows the wording's options. The switch starts at the reader's
+// own setting and changes only this example.
+(function () {
+  "use strict";
+  var box = document.querySelector("[data-example]");
+  if (!box) return;
+  var tabs = Array.prototype.slice.call(box.querySelectorAll("[role=tab]"));
+  var panels = Array.prototype.slice.call(box.querySelectorAll("[role=tabpanel]"));
+  function select(i, focus) {
+    tabs.forEach(function (tab, n) {
+      tab.setAttribute("aria-selected", n === i ? "true" : "false");
+      tab.tabIndex = n === i ? 0 : -1;
+      panels[n].hidden = n !== i;
+    });
+    if (focus) tabs[i].focus();
+  }
+  if (tabs.length) {
+    box.querySelector("[role=tablist]").hidden = false;
+    tabs.forEach(function (tab, n) {
+      tab.addEventListener("click", function () { select(n); });
+      tab.addEventListener("keydown", function (e) {
+        var d = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
+        if (d) { e.preventDefault(); select((n + d + tabs.length) % tabs.length, true); }
+      });
+    });
+    select(0);
+  }
+
+  panels.forEach(function (panel) {
+    var info = panel.querySelector(".w-info");
+    var hint = info.innerHTML;
+    var current = null;
+    panel.querySelectorAll("button.w").forEach(function (w) {
+      w.setAttribute("aria-pressed", "false");
+      w.addEventListener("click", function () {
+        var on = current !== w;
+        if (current) current.setAttribute("aria-pressed", "false");
+        current = on ? w : null;
+        w.setAttribute("aria-pressed", on ? "true" : "false");
+        var id = w.getAttribute("data-t");
+        panel.querySelectorAll(".al").forEach(function (al) {
+          al.classList.toggle("on", on && (" " + al.getAttribute("data-t") + " ").indexOf(" " + id + " ") >= 0);
+        });
+        if (!on) { info.innerHTML = hint; return; }
+        info.textContent = "";
+        var word = document.createElement("b");
+        word.textContent = w.textContent;
+        word.lang = panel.querySelector("[dir=rtl], .greek").getAttribute("lang");
+        var lemma = document.createElement("span");
+        lemma.className = "w-lemma";
+        lemma.lang = word.lang;
+        lemma.textContent = w.getAttribute("data-l");
+        var sense = document.createElement("span");
+        sense.lang = "en";
+        sense.textContent = "“" + w.getAttribute("data-g").replace(/\./g, " ") + "”";
+        info.appendChild(word);
+        info.appendChild(document.createTextNode(" · "));
+        info.appendChild(lemma);
+        info.appendChild(document.createTextNode(" · "));
+        info.appendChild(sense);
+      });
+    });
+
+    var saved = {};
+    try { saved = JSON.parse(localStorage.getItem("owb.settings") || "{}") || {}; } catch (e) { /* defaults */ }
+    panel.querySelectorAll("[data-switch]").forEach(function (sw) {
+      var key = sw.getAttribute("data-switch");
+      var buttons = Array.prototype.slice.call(sw.querySelectorAll("button"));
+      function set(v) {
+        buttons.forEach(function (b) { b.setAttribute("aria-pressed", +b.getAttribute("data-v") === v ? "true" : "false"); });
+        panel.querySelectorAll('.set[data-set="' + key + '"]').forEach(function (span) {
+          var options = JSON.parse(span.getAttribute("data-o"));
+          span.textContent = options[v] || options[0];
+        });
+      }
+      buttons.forEach(function (b) { b.addEventListener("click", function () { set(+b.getAttribute("data-v")); }); });
+      if (saved[key] === 1) set(1);
+    });
+  });
+})();
+
+// The header's language switch (language_menu in scripts/build_site.py),
+// and, once, an offer to read in the language the browser prefers when it
+// is one of the site's and not the page's. Choosing a language (the
+// footer's handler above keeps it as owb-lang) or saying no ends the offer.
+(function () {
+  "use strict";
+  var button = document.querySelector(".lang-btn");
+  var pop = document.getElementById("lang-pop");
+  if (!button || !pop) return;
+  function open(show) {
+    pop.hidden = !show;
+    button.setAttribute("aria-expanded", show ? "true" : "false");
+    if (show) (pop.querySelector("a") || pop).focus();
+  }
+  button.addEventListener("click", function () { open(pop.hidden); });
+  document.addEventListener("click", function (e) {
+    if (!pop.hidden && !pop.contains(e.target) && !button.contains(e.target)) open(false);
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && !pop.hidden) { open(false); button.focus(); }
+  });
+
+  var asked = null;
+  try { asked = localStorage.getItem("owb-lang") || localStorage.getItem("owb-lang-offer"); } catch (e) { return; }
+  if (asked) return;
+  var page = document.documentElement.lang;
+  var wanted = (navigator.languages || [navigator.language || ""]).map(function (l) { return String(l).slice(0, 2).toLowerCase(); });
+  var link = null;
+  for (var i = 0; i < wanted.length && !link; i++) {
+    if (wanted[i] === page) return;
+    link = pop.querySelector('a[data-lang="' + wanted[i] + '"][data-offer]');
+  }
+  if (!link) return;
+  var bar = document.createElement("div");
+  bar.className = "lang-offer";
+  bar.setAttribute("role", "region");
+  bar.setAttribute("aria-label", button.getAttribute("aria-label"));
+  bar.lang = link.getAttribute("data-lang");
+  var go = document.createElement("a");
+  go.className = "button";
+  go.href = link.href;
+  go.textContent = link.getAttribute("data-offer");
+  go.addEventListener("click", function () {
+    try { localStorage.setItem("owb-lang", link.getAttribute("data-lang")); } catch (e) { /* this page only */ }
+  });
+  var no = document.createElement("button");
+  no.type = "button";
+  no.className = "lang-offer-no";
+  no.textContent = link.getAttribute("data-offer-no");
+  no.addEventListener("click", function () {
+    try { localStorage.setItem("owb-lang-offer", "no"); } catch (e) { /* asked again next page */ }
+    bar.remove();
+  });
+  bar.appendChild(go);
+  bar.appendChild(no);
+  document.body.appendChild(bar);
 })();

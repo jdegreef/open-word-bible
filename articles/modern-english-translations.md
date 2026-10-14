@@ -17,7 +17,7 @@ The first was **the text**. The King James New Testament was translated from the
 
 The second was **knowledge of the languages**. Hebrew and Greek scholarship had advanced, and some passages the 1611 translators had misunderstood could now be translated more accurately.
 
-The third was **English itself**. Some words had changed meaning. "Prevent" in 1611 meant "go before," and "let" could mean "hinder."
+The third was **English itself**. Some words had changed meaning. In 1 Thessalonians 4:15 the King James Version says that the living "shall not prevent them which are asleep"; "prevent" meant "go before," and the World English Bible says "will in no way precede." In Romans 1:13 Paul says he "was let hitherto," meaning hindered, which is how the World English Bible puts it. A reader in 1611 understood both. A reader in 1850 could easily take them the wrong way.
 
 ## The Revised Version and the American Standard
 
@@ -59,6 +59,8 @@ Evangelical Protestants, many of them uneasy about the RSV, produced their own t
 
 The **New King James Version** (1982) updated the King James wording while keeping its Received Text, for readers who preferred that text. Kenneth Taylor's popular paraphrase, the *Living Bible* (1971), was reworked by a large team of scholars into a true translation, the **New Living Translation** (1996). The **English Standard Version** (2001), a revision of the RSV, describes itself as "essentially literal." The **Christian Standard Bible** (2017) revised the Holman Christian Standard Bible of 2004, aiming at what its makers call "optimal equivalence."
 
+Jewish translators made their own English Bibles of the Hebrew scriptures. The Jewish Publication Society's *The Holy Scriptures According to the Masoretic Text* (1917) drew heavily on the Revised Version and the ASV while following the traditional Hebrew text more strictly, and is now in the public domain. Its replacement, the new JPS translation, appeared in parts and was gathered into one volume as *Tanakh* in 1985.
+
 A minority of churches hold that only the King James Version should be used, for reasons ranging from its Greek text to its place in their tradition. That conviction, too, is part of the modern landscape.
 
 ## Free and open translations
@@ -66,7 +68,7 @@ A minority of churches hold that only the King James Version should be used, for
 Almost all of these translations are under copyright, which limits how much of them can be quoted or reused. Some modern translations take a different course:
 
 - The **World English Bible**, an update of the ASV prepared from the 1990s onward by volunteers, has been placed in the public domain. Articles on this site quote it for that reason.
-- The **NET Bible** (first full edition 2005) is free to read online and is known for its many thousands of translators' notes explaining choices, though it remains under copyright.
+- The **NET Bible** (first full edition 2005) is free to read online and is known for its 60,932 translators' notes explaining choices, though it remains under copyright.
 - The **Berean Standard Bible** was released into the public domain in 2023.
 
 ## The ladder of approaches
@@ -83,6 +85,7 @@ Open Word Bible takes a different approach to the same problem. Instead of choos
 - Norton, David. *A History of the English Bible as Literature*. Cambridge: Cambridge University Press, 2000.
 - Deissmann, Adolf. *Light from the Ancient East*. Translated by Lionel R. M. Strachan. London: Hodder and Stoughton, 1910.
 - Fee, Gordon D., and Mark L. Strauss. *How to Choose a Translation for All Its Worth*. Grand Rapids: Zondervan, 2007.
+- Greenspoon, Leonard J. *Jewish Bible Translations: Personalities, Passions, Politics, Progress*. Philadelphia: Jewish Publication Society, 2020.
 - Pius XII. *Divino Afflante Spiritu*. Encyclical, 30 September 1943.
 - "Preface to the Revised Version" (New Testament, 1881).
 - Bible quotations are from the World English Bible (public domain), except where the article quotes a historic translation or gives its own literal rendering.
