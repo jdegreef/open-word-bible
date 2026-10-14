@@ -29,12 +29,14 @@ BUDGETS = {
     # 2026-10-13 after the verse panel tools, poetry lines and account sync].
     "js_css_asset_gz": 33 * KB,
     # Every file in the site [703 MB; 909 MB on 2026-10-14 with Numbers to
-    # Ruth]. Grows with each book translated.
-    "site_total": 1100 * MB,
+    # Ruth; 1,110 MB on 2026-10-14 with 1 Kings and Ezra to Job]. Grows with
+    # each book translated.
+    "site_total": 1400 * MB,
     # The largest static search index, search-<lang>.json [5.6 MB; 23 MB
-    # unzipped; 7.4 MB on 2026-10-14 with Numbers to Ruth]. Delete this entry
-    # when the static index goes; nothing else needs to change.
-    "search_index_gz": 9 * MB,
+    # unzipped; 7.4 MB on 2026-10-14 with Numbers to Ruth; 9.1 MB with 1 Kings
+    # and Ezra to Job]. Delete this entry when the static index goes; nothing
+    # else needs to change.
+    "search_index_gz": 11.5 * MB,
 }
 
 
