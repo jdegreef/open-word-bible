@@ -291,6 +291,14 @@ class SiteTest(unittest.TestCase):
         self.assertNotIn('"', why)
         self.assertNotIn("&quot;", why)
 
+    def test_home_page_searches_in_its_language(self):
+        for lang in build_site.LANGUAGES:
+            home = (self.out / build_site.url(lang, "/").lstrip("/") / "index.html").read_text(encoding="utf-8")
+            form = re.search(r'<form class="hero-search" action="([^"]+)"', home)
+            self.assertEqual(form[1], build_site.url(lang, "/search/"))
+            for q in build_site.catalog(lang)["search.examples"]:
+                self.assertIn(f'?q={html.escape(q.replace(" ", "+"))}"', home)
+
     def test_chapter_data_has_curly_quotes(self):
         for r in self.chapter_data()["records"]:
             texts = [t for levels in r["renderings"].values() for t in levels.values()]

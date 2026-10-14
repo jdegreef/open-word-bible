@@ -520,6 +520,26 @@ footer.site a.book-chip.none:not(:hover) { color: var(--muted); }
 }
 .hero-sub { font-size: 19px; color: var(--muted); margin: 0 auto 30px; max-width: 60ch; }
 .hero .actions { justify-content: center; }
+/* The hero's search box: go to a verse or find words (/search/). */
+.hero-search {
+  position: relative; display: flex; gap: 8px; max-width: 560px; margin: 28px auto 0; padding: 6px;
+  background: var(--surface); border: 1px solid var(--line-strong); border-radius: 999px; box-shadow: var(--shadow-card);
+}
+.hero-search:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft-border); }
+.hero-search-ico { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); color: var(--muted); display: flex; }
+.hero-search input {
+  flex: 1; min-width: 0; font: inherit; font-family: var(--serif); font-size: 17px; padding: 8px 8px 8px 44px;
+  border: 0; background: none; color: var(--text);
+}
+.hero-search input:focus { outline: none; }
+.hero-search .button { padding: 10px 22px; font-size: 15px; }
+.hero-try { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px 10px; margin: 12px 0 0; font-size: 14px; color: var(--muted); }
+.hero-try ul { display: contents; list-style: none; }
+.hero-try a {
+  padding: 3px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface);
+  color: var(--text); text-decoration: none;
+}
+.hero-try a:hover { border-color: var(--accent); color: var(--accent); }
 .trust {
   display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 26px; list-style: none; padding: 0; margin: 28px 0 0;
   font-size: 14px; color: var(--muted);

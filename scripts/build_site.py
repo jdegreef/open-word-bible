@@ -1915,6 +1915,21 @@ def progress_html(lang="en"):
 """
 
 
+def hero_search(lang="en"):
+    """The home page's search box: a verse to go to or words to find, as
+    the /search/ page takes them, with the search page's examples to try."""
+    ui = catalog(lang)["search.ui"]
+    tries = "".join(f'<li><a href="{url(lang, "/search/")}?q={html.escape(q.replace(" ", "+"))}">{html.escape(q)}</a></li>'
+                    for q in catalog(lang)["search.examples"])
+    return (f'<form class="hero-search" action="{url(lang, "/search/")}" method="get" role="search">'
+            f'<label class="sr-only" for="hero-q">{t(lang, "footer.find")}</label>'
+            f'<span class="hero-search-ico" aria-hidden="true">{icon(ICONS["search"])}</span>'
+            f'<input type="search" name="q" id="hero-q" autocomplete="off" spellcheck="false" enterkeyhint="go" '
+            f'placeholder="{html.escape(ui["palette_placeholder"])}">'
+            f'<button class="button" type="submit">{t(lang, "footer.go")}</button></form>'
+            f'<div class="hero-try"><span>{t(lang, "home.try")}</span><ul>{tries}</ul></div>')
+
+
 def home_page(lang="en"):
     def point(ico, n):
         return (f'<li class="point"><span class="tile">{icon(ICONS[ico], 22)}</span>'
@@ -1937,6 +1952,7 @@ def home_page(lang="en"):
 <p class="hero-sub">{t(lang, "home.sub")}</p>
 <p class="actions">{resume_link(lang)}<a class="button" href="{url(lang, "/read/")}">{icon(ICONS["book"])}{t(lang, "home.start")}</a>
 <a class="button ghost" href="#example-h">{t(lang, "home.how")}</a></p>
+{hero_search(lang)}
 {plan_today(lang)}
 <ul class="trust">
 <li>{icon(ICONS["gift"], 16)}{t(lang, "home.trust_free")}</li>
