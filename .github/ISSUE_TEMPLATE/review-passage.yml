@@ -1,0 +1,26 @@
+name: Review a passage
+description: A named human reviewer checks AI-drafted records
+title: "Review <book> <chapters> in <language>"
+labels: [review]
+body:
+  - type: input
+    id: passage
+    attributes:
+      label: Passage
+      placeholder: Ruth 1
+    validations:
+      required: true
+  - type: dropdown
+    id: stage
+    attributes:
+      label: Review stage
+      options: [Meaning (all languages), Rendering (one language)]
+    validations:
+      required: true
+  - type: input
+    id: reviewer
+    attributes:
+      label: Reviewer
+      description: The named person who will approve the records.
+    validations:
+      required: true
