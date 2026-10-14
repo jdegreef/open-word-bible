@@ -77,6 +77,21 @@ The World English Bible and the Reina-Valera 1909 verse texts are kept in
 translated, the reader shows that verse from one of them, labelled as a
 comparison text and not Open Word Bible wording.
 
+## Cross-references
+
+Cross-references from OpenBible.info
+(<https://www.openbible.info/labs/cross-references/>), 2024-11-04, licensed
+under CC BY. Pinned in `sources.lock.json` as the verbatim copy kept in
+[scrollmapper/bible_databases](https://github.com/scrollmapper/bible_databases)
+(`sources/extras/cross_references.txt`).
+
+The files in `data/crossrefs/` are derived from it and carry its CC BY
+licence. They hold, for each verse, its most-voted references (at most five,
+each with at least three votes), with both ends moved to Open Word Bible's
+verse numbering. The reader shows them in the margin and with each verse's
+reasoning, credited to OpenBible.info. They are an aid to study, not part of
+the translation.
+
 ## Fonts
 
 The reading text and Greek are set in Gentium Book Plus, Copyright (c)

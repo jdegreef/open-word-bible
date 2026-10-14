@@ -11,6 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import build_site  # noqa: E402
+from owb import crossrefs  # noqa: E402
 from tests.site_build import built_site  # noqa: E402
 
 
@@ -282,7 +283,7 @@ class SiteTest(unittest.TestCase):
 
     def test_about_page_credits_sources(self):
         about = (self.out / "about" / "index.html").read_text(encoding="utf-8")
-        for name in ("SBL Greek New Testament", "MACULA Greek", "Open Scriptures Hebrew Bible"):
+        for name in ("SBL Greek New Testament", "MACULA Greek", "Open Scriptures Hebrew Bible", "OpenBible.info"):
             self.assertIn(name, about)
 
     def test_beliefs_page_sets_out_the_creed_vision_and_values(self):
@@ -556,6 +557,20 @@ class SiteTest(unittest.TestCase):
             data = self.chapter_data(f"{book.lower()}/{chapter}")
             self.assertIn(rid, data["paragraphs"], rid)
             self.assertEqual(data["headings"][rid], heading)
+
+    def test_chapter_pages_carry_their_cross_references(self):
+        # Every verse on the page with references has them, and only those:
+        # Psalm 3:1 is the title, so the first references are verse 2's.
+        for path, book in (("jhn/3", "JHN"), ("psa/3", "PSA"), ("es/jhn/3", "JHN")):
+            data = self.chapter_data(path)
+            vids = {vid for r in data["records"] for vid in r["refs"]}
+            table = crossrefs.load(book)
+            self.assertEqual(data["crossrefs"], {v: table[v] for v in vids if v in table}, path)
+        self.assertEqual(self.chapter_data("jhn/3")["crossrefs"]["JHN.3.16"][0], "ROM.5.8")
+        self.assertNotIn("PSA.3.1", self.chapter_data("psa/3")["crossrefs"])
+        page = (self.out / "jhn" / "3" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('data-setting="crossrefs"', page)
+        self.assertIn('id="xr-margin"', page)
 
     def test_summary_stands_under_the_title(self):
         page = (self.out / "1ti" / "5" / "index.html").read_text(encoding="utf-8")
