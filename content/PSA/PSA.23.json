@@ -26,6 +26,16 @@
           "L": "A psalm of David. \\q {{divine_name:The LORD|Yahweh}} [is] my shepherd; \\q I will not lack [anything].",
           "B": "A psalm of David. \\q {{divine_name:The LORD|Yahweh}} is my shepherd; \\q I will never be in need.",
           "R": "A song of David. \\q {{divine_name:The LORD|Yahweh}} takes care of me like a shepherd. \\q I have everything I need."
+        },
+        "vi": {
+          "L": "[Một] thi thiên của Đa-vít. \\q {{divine_name:CHÚA|Gia-vê}} [là] Đấng chăn giữ tôi; \\q tôi sẽ không thiếu [gì].",
+          "B": "Thi thiên của Đa-vít. \\q {{divine_name:CHÚA|Gia-vê}} là Đấng chăn dắt tôi; \\q tôi sẽ chẳng bao giờ thiếu thốn.",
+          "R": "Bài ca của Đa-vít. \\q {{divine_name:CHÚA|Gia-vê}} chăm sóc tôi như người chăn chăm sóc chiên. \\q Tôi có đủ mọi điều mình cần."
+        },
+        "ko": {
+          "L": "다윗의 시. \\q {{divine_name:주|야훼}}는 나의 목자이시다. \\q 나는 [아무것도] 모자라지 않을 것이다.",
+          "B": "다윗의 시. \\q {{divine_name:주|야훼}}께서 나의 목자이시니, \\q 나는 아쉬울 것이 하나도 없다.",
+          "R": "다윗이 지은 노래. \\q {{divine_name:주|야훼}}께서 목자처럼 나를 돌보아 주신다. \\q 나에게는 필요한 것이 다 있다."
         }
       },
       "decisions": [
@@ -111,6 +121,95 @@
           "reason": "As in 3:1.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190230010011"
+          ],
+          "choice": "\"thi thiên\" (L, B), \"bài ca\" (R)",
+          "alternatives": [
+            "\"bài thơ\""
+          ],
+          "reason": "\"thi thiên\" is the word Vietnamese Bible readers know for a psalm; Readable says \"bài ca\" (song), the plain word, as the English Readable says \"song\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o190230010042",
+            "o190230010061"
+          ],
+          "choice": "the singer says \"tôi\" for himself",
+          "alternatives": [
+            "\"con\""
+          ],
+          "reason": "\"tôi\" is the plain first person of a psalm's voice, used for the whole psalm. \"con\" is how a believer speaks to God in prayer, but the psalm is spoken about God before it turns to him (verse 4), and one word for the singer keeps the voice the same.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o190230010031",
+            "o190230010041",
+            "o190230010061"
+          ],
+          "choice": "Verses 1-3 speak about the LORD in the plain written style (해라체) with the honorific (-시-, 께서), and the singer calls himself \"나\"",
+          "alternatives": [
+            "합쇼체 throughout the psalm",
+            "저 throughout"
+          ],
+          "reason": "Style guide section 7a: the psalmist speaks about God in the plain written style and to God in 합쇼체 with 저. The psalm turns to address God in verses 4-5 (see the decision there) and speaks about him again in verse 6.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190230010031"
+          ],
+          "choice": "YHWH is {{divine_name:주|야훼}} with the particle outside the span",
+          "alternatives": [
+            "여호와",
+            "주님"
+          ],
+          "reason": "As the style guide (section 7a); \"여호와\", the form of the older Protestant Bibles, is not used. The same span stands in verse 6.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -143,6 +242,16 @@
           "L": "In pastures of fresh grass {{deity_pronoun:he|He}} makes me lie down; \\q beside waters of rest {{deity_pronoun:he|He}} leads me.",
           "B": "He settles me down in meadows of fresh green grass; \\q {{deity_pronoun:he|He}} leads me gently to water where I can rest.",
           "R": "He lets me rest in fields of soft green grass. \\q He takes me to calm water where I can drink and rest."
+        },
+        "vi": {
+          "L": "Trong đồng cỏ xanh tươi {{deity_pronoun:ngài|Ngài}} cho tôi nằm nghỉ; \\q bên dòng nước của sự nghỉ ngơi {{deity_pronoun:ngài|Ngài}} dẫn tôi.",
+          "B": "Ngài cho tôi nằm nghỉ giữa những đồng cỏ non xanh mướt; \\q {{deity_pronoun:ngài|Ngài}} nhẹ nhàng dẫn tôi đến dòng nước, nơi tôi được nghỉ ngơi.",
+          "R": "Ngài cho tôi nghỉ trên những cánh đồng cỏ xanh mềm. \\q Ngài đưa tôi đến dòng nước êm, nơi tôi được uống và nghỉ ngơi."
+        },
+        "ko": {
+          "L": "새 풀의 목초지에 그분께서 나를 눕게 하시고, \\q 쉼의 물 곁으로 나를 이끄신다.",
+          "B": "그분께서 싱싱한 풀이 우거진 풀밭에 나를 눕히시고, \\q 편히 쉴 수 있는 물가로 나를 부드럽게 이끄신다.",
+          "R": "그분께서는 부드러운 풀밭에서 나를 쉬게 하신다. \\q 잔잔한 물가로 나를 데려가 마시고 쉬게 하신다."
         }
       },
       "decisions": [
@@ -194,6 +303,28 @@
           "reason": "Readable says what the water is for.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190230020031",
+            "o190230020071"
+          ],
+          "choice": "No deity_pronoun spans in Korean; God is \"그분\" with the honorific",
+          "alternatives": [
+            "capitalised pronouns (not possible in Hangul)"
+          ],
+          "reason": "Hangul has no capital letters, so the setting has nothing to change; respect is carried by 그분, 께서 and -시- at every level (style guide section 7). This holds for the whole psalm.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -227,6 +358,16 @@
           "L": "My soul {{deity_pronoun:he|He}} brings back; \\q {{deity_pronoun:he|He}} guides me in tracks of righteousness \\q for the sake of {{deity_pronoun:his|His}} name.",
           "B": "He brings back my life \\q and leads me in the tracks of what is right, \\q true to {{deity_pronoun:his|His}} name.",
           "R": "He makes me strong again. \\q He shows me the right way to walk. \\q He does this because of who {{deity_pronoun:he|He}} is."
+        },
+        "vi": {
+          "L": "Linh hồn tôi, {{deity_pronoun:ngài|Ngài}} đem trở lại; \\q {{deity_pronoun:ngài|Ngài}} dắt tôi trên những lối mòn của sự công chính \\q vì danh của {{deity_pronoun:ngài|Ngài}}.",
+          "B": "Ngài phục hồi sức sống của tôi \\q và dẫn tôi đi trên những lối ngay thẳng, \\q đúng như danh {{deity_pronoun:ngài|Ngài}}.",
+          "R": "Ngài làm cho tôi mạnh mẽ lại. \\q Ngài chỉ cho tôi con đường đúng để đi. \\q Ngài làm như vậy vì đó là bản tính của {{deity_pronoun:ngài|Ngài}}."
+        },
+        "ko": {
+          "L": "내 영혼을 그분께서 되살리신다. \\q 그분께서 의의 길들로 나를 인도하시니, \\q [이는] 그분의 이름을 위해서이다.",
+          "B": "그분께서 내 생명을 다시 살리시고, \\q 바른 길로 나를 이끄시니, \\q 그분의 이름에 걸맞게 하시는 일이다.",
+          "R": "그분께서는 나에게 다시 힘을 주신다. \\q 바른 길로 걷도록 나를 이끄신다. \\q 그분이 바로 그런 분이시기 때문이다."
         }
       },
       "decisions": [
@@ -298,6 +439,46 @@
           "reason": "Readable says what the phrase means (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190230030061",
+            "o190230030071"
+          ],
+          "choice": "\"vì đó là bản tính của Ngài\" (because that is his nature)",
+          "alternatives": [
+            "\"vì danh Ngài\""
+          ],
+          "reason": "\"For the sake of his name\" means because of who he is (see the meaning decision); \"danh Ngài\" would be church language for new readers, so Readable says what the name stands for.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o190230030061",
+            "o190230030071"
+          ],
+          "choice": "\"[이는] 그분의 이름을 위해서이다\" as a sentence of its own",
+          "alternatives": [
+            "그분의 이름을 위하여 의의 길들로 나를 인도하신다"
+          ],
+          "reason": "Korean puts a purpose phrase before its verb; Literal makes the last colon its own sentence so that it stays on its own line after the leading, as in the Hebrew.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -341,6 +522,16 @@
           "L": "Even when I walk in a valley of deep darkness, I will not fear harm, \\q for {{deity_pronoun:you|You}} [are] with me; \\q {{deity_pronoun:your|Your}} rod and {{deity_pronoun:your|Your}} staff, they comfort me.",
           "B": "Even if my path goes down through a valley of deepest darkness, I will not be afraid of any harm, \\q because {{deity_pronoun:you|You}} are there with me; \\q {{deity_pronoun:your|Your}} rod and {{deity_pronoun:your|Your}} staff give me courage.",
           "R": "Even when I go through a valley that is very dark and dangerous, I will not be afraid, \\q because {{deity_pronoun:you|You}} are right there beside me. \\q You guard me with {{deity_pronoun:your|Your}} club and guide me with {{deity_pronoun:your|Your}} staff, and that comforts me."
+        },
+        "vi": {
+          "L": "Dù khi tôi đi trong thung lũng bóng tối dày đặc, tôi sẽ không sợ tai họa, \\q vì {{deity_pronoun:ngài|Ngài}} [ở] với tôi; \\q cây roi của {{deity_pronoun:ngài|Ngài}} và cây gậy của {{deity_pronoun:ngài|Ngài}}, chúng an ủi tôi.",
+          "B": "Dù đường tôi đi xuống thung lũng tối tăm nhất, tôi sẽ không sợ một tai họa nào, \\q vì {{deity_pronoun:ngài|Ngài}} ở đó với tôi; \\q cây roi và cây gậy của {{deity_pronoun:ngài|Ngài}} cho tôi thêm can đảm.",
+          "R": "Dù khi tôi đi qua một thung lũng rất tối tăm và nguy hiểm, tôi sẽ không sợ, \\q vì {{deity_pronoun:ngài|Ngài}} ở ngay bên cạnh tôi. \\q Ngài bảo vệ tôi bằng cây gậy ngắn và dẫn dắt tôi bằng cây gậy dài của {{deity_pronoun:ngài|Ngài}}; điều đó làm tôi yên lòng."
+        },
+        "ko": {
+          "L": "제가 짙은 어둠의 골짜기를 걸을 때에도 해를 두려워하지 않을 것입니다. \\q 주님께서 저와 함께 [계시기] 때문입니다. \\q 주님의 막대기와 주님의 지팡이, 그것들이 저를 위로합니다.",
+          "B": "깊디깊은 어둠의 골짜기로 제 길이 이어진다 해도, 저는 어떤 해도 두렵지 않습니다. \\q 주님께서 저와 함께 계시기 때문입니다. \\q 주님의 막대기와 지팡이가 저에게 용기를 줍니다.",
+          "R": "아주 어둡고 위험한 골짜기를 지날 때에도 저는 무서워하지 않겠습니다. \\q 주님께서 바로 제 곁에 계시기 때문입니다. \\q 주님께서 몽둥이로 저를 지키시고 지팡이로 이끄시니, 저는 마음이 놓입니다."
         }
       },
       "decisions": [
@@ -408,6 +599,71 @@
           "reason": "Readable says what each is for (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o190230040101"
+          ],
+          "choice": "\"Ngài\" for \"you\" when the singer speaks to God, the same word as for \"he\"",
+          "alternatives": [
+            "\"Chúa\" for \"you\" (\"vì Chúa ở cùng tôi\")"
+          ],
+          "reason": "The style guide has the psalmist speak to God as \"Ngài\" or \"Chúa\"; \"Ngài\" keeps the deity_pronoun setting the English has here. But \"Ngài\" serves for both \"he\" and \"you\", so the turn from speaking about God to speaking to him, which the meaning decision points out, shows less than in Hebrew. A reviewer may prefer \"Chúa\" from here on.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190230040121",
+            "o190230040132"
+          ],
+          "choice": "\"cây gậy ngắn\" (short club) and \"cây gậy dài\" (long staff)",
+          "alternatives": [
+            "\"cây roi\" and \"cây trượng\""
+          ],
+          "reason": "The shepherd's two sticks, a club to fight off animals and a long staff to guide the flock (see the meaning decision), named in plain words; \"trượng\" is a literary word.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o190230040101",
+            "o190230040121"
+          ],
+          "choice": "When the psalm turns to speak to God (verses 4-5), the singer uses 합쇼체 and calls himself \"저\"; God is addressed by title, \"주님\" (주님께서, 주님의)",
+          "alternatives": [
+            "나 and 해라체 throughout",
+            "당신",
+            "주"
+          ],
+          "reason": "Style guide section 7a (speech levels in prayer). Korean addresses a superior by title, not by a pronoun; \"당신\" would be cold or rude. The change of level marks the turn to God that the Hebrew makes (meaning decision m2); verse 6 returns to speaking about the LORD. A reviewer may prefer one level for the whole psalm.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -446,6 +702,16 @@
           "L": "You set a table before me in front of my foes; \\q {{deity_pronoun:you|You}} have refreshed my head with oil; \\q my cup [is] overflowing.",
           "B": "You spread a meal before me while my enemies look on; \\q {{deity_pronoun:you|You}} refresh my head with oil, \\q and my cup is full to the brim.",
           "R": "You set out a feast for me, and my enemies have to watch. \\q You pour oil on my head to honor me. \\q You fill my cup until it spills over."
+        },
+        "vi": {
+          "L": "Ngài bày một cái bàn trước mặt tôi, ngay trước những kẻ thù của tôi; \\q {{deity_pronoun:ngài|Ngài}} đã làm tươi mới đầu tôi bằng dầu; \\q chén của tôi tràn ra.",
+          "B": "Ngài dọn tiệc cho tôi trong khi kẻ thù tôi đứng nhìn; \\q {{deity_pronoun:ngài|Ngài}} xức dầu làm tươi mát đầu tôi, \\q và chén tôi đầy đến tràn miệng.",
+          "R": "Ngài dọn một bữa tiệc cho tôi, và kẻ thù tôi phải đứng nhìn. \\q Ngài đổ dầu trên đầu tôi để tôn trọng tôi. \\q Ngài rót đầy chén tôi đến nỗi tràn ra."
+        },
+        "ko": {
+          "L": "주님께서 제 대적들 앞에서 제 앞에 상을 차리십니다. \\q 기름으로 제 머리를 윤기 나게 하셨습니다. \\q 제 잔이 넘칩니다.",
+          "B": "주님께서는 제 원수들이 지켜보는 가운데 제 앞에 식탁을 차려 주십니다. \\q 제 머리에 기름을 발라 새 힘을 주시니, \\q 제 잔이 가득 차 넘칩니다.",
+          "R": "주님께서 저를 위해 잔치를 베푸시니, 제 원수들은 그것을 지켜볼 수밖에 없습니다. \\q 주님께서 제 머리에 기름을 부어 저를 귀히 여겨 주십니다. \\q 주님께서 제 잔을 넘치도록 채워 주십니다."
         }
       },
       "decisions": [
@@ -553,6 +819,16 @@
           "L": "Surely goodness and loyal love will pursue me all the days of my life, \\q and I will return [to dwell] in the house of {{divine_name:the LORD|Yahweh}} for length of days.",
           "B": "Goodness and loyal love will surely chase after me every day I live, \\q and I will come home to the house of {{divine_name:the LORD|Yahweh}} for all my days to come.",
           "R": "I am sure that goodness and faithful love will run after me every day of my life. \\q And I will come back to live in {{divine_name:the LORD|Yahweh}}'s house for as long as I live."
+        },
+        "vi": {
+          "L": "Chắc chắn sự tốt lành và tình yêu thương thành tín sẽ đuổi theo tôi suốt mọi ngày của đời tôi, \\q và tôi sẽ trở về [ở] trong nhà của {{divine_name:CHÚA|Gia-vê}} cho đến những ngày dài lâu.",
+          "B": "Chắc chắn sự tốt lành và tình yêu thương thành tín sẽ đuổi theo tôi mỗi ngày trong đời tôi, \\q và tôi sẽ về lại nhà của {{divine_name:CHÚA|Gia-vê}} suốt những ngày còn lại.",
+          "R": "Tôi chắc chắn rằng sự tốt lành và tình thương không hề thay đổi sẽ chạy theo tôi mỗi ngày trong đời. \\q Và tôi sẽ trở về sống trong nhà của {{divine_name:CHÚA|Gia-vê}} suốt đời tôi."
+        },
+        "ko": {
+          "L": "참으로 선함과 한결같은 사랑이 내 삶의 모든 날 동안 나를 뒤쫓을 것이다. \\q 나는 긴 날들 동안 {{divine_name:주|야훼}}의 집으로 돌아와 [살] 것이다.",
+          "B": "선함과 한결같은 사랑이 내가 사는 날 동안 반드시 나를 뒤쫓아 올 것이니, \\q 나는 앞으로 내 모든 날을 {{divine_name:주|야훼}}의 집에 돌아와 머물 것이다.",
+          "R": "내가 사는 모든 날 동안 좋은 것과 변함없는 사랑이 나를 따라다닐 것이 분명하다. \\q 그리고 나는 살아 있는 동안 {{divine_name:주|야훼}}의 집에 돌아와 살 것이다."
         }
       },
       "decisions": [
@@ -659,6 +935,72 @@
             "dwell"
           ],
           "reason": "Literal and Balanced follow the Hebrew text (m3); Readable says \"come back to live\", which keeps both senses.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190230060032"
+          ],
+          "choice": "\"tình yêu thương thành tín\" (L, B); \"tình thương không hề thay đổi\" (R)",
+          "alternatives": [
+            "\"sự thương xót\"",
+            "\"lòng nhân từ\""
+          ],
+          "reason": "The word is love that keeps faith with a covenant (see the meaning decision). \"sự thương xót\" (mercy) and \"lòng nhân từ\" (kindness) each give only part of it; \"thành tín\" adds the loyalty. Readable says the same in everyday words.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190230060032"
+          ],
+          "choice": "\"한결같은 사랑\" (L, B), \"변함없는 사랑\" (R) for chesed",
+          "alternatives": [
+            "인자하심",
+            "자비",
+            "은총"
+          ],
+          "reason": "The word is love that stays loyal (meaning decision); \"인자하심\" is the older church word and now unclear to many readers, and \"자비\" says mercy only. The same Korean term should hold for chesed through the Psalter.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o190230060082"
+          ],
+          "choice": "Back to the plain written style with \"나\"",
+          "alternatives": [
+            "저 and 합쇼체 as in verses 4-5"
+          ],
+          "reason": "The verse speaks of \"the house of the LORD\" in the third person, so it is speech about God again (style guide section 7a), as in verses 1-3.",
           "uncertain": true,
           "footnote": false
         }
