@@ -2153,6 +2153,34 @@ def plain(text):
 # marked uncertain: a record and one of its decisions each.
 EXAMPLES = (("JHN", 1, "JHN.1.1.s1", "m4"), ("PSA", 23, "PSA.23.1.s1", "m2"), ("JHN", 1, "JHN.1.16.s1", "m1"))
 EXAMPLE = EXAMPLES[0]
+# The examples' gloss and decision in other languages (content/ keeps
+# decisions in English), from data/home_examples.json.
+HOME_EXAMPLES = json.loads((ROOT / "data" / "home_examples.json").read_text(encoding="utf-8"))["examples"]
+
+
+def example_translation(example, lang, words):
+    """An example's word-for-word gloss, word glosses and decision in lang,
+    with {w:id} and {l:id} filled from the source words; None where it has
+    none (English, or a language not yet given one)."""
+    _, _, record_id, decision_id = example
+    tr = HOME_EXAMPLES.get(record_id, {}).get(decision_id, {}).get(lang)
+    if not tr:
+        return None
+    by_id = {w["id"]: w for ws in words.values() for w in ws}
+
+    def fill(text):
+        return re.sub(r"\{([wl]):(\w+)\}",
+                      lambda m: by_id[m[2]]["text" if m[1] == "w" else "lemma"], text)
+    return {**tr, "reason": fill(tr["reason"]), "choice": fill(tr["choice"]),
+            "alternatives": [fill(a) for a in tr["alternatives"]]}
+
+
+def examples(lang="en"):
+    """The worked examples a page in lang shows: those whose sentence is
+    translated into lang, so none is shown in another language; all of
+    them while lang has none."""
+    return [e for e in EXAMPLES if any(r["id"] == e[2] and lang in r["renderings"]
+                                       for r in load_chapter(e[0], e[1])[0])] or list(EXAMPLES)
 # The reader settings an example can switch, with the reader's labels for
 # the setting and its options.
 EXAMPLE_SETTINGS = {"divine_name": ("reader.name", ("reader.lord", "reader.yahweh")),
@@ -2205,16 +2233,19 @@ def example_panel(example, lang, n):
     """One worked example: the source sentence, its words to tap, the
     word-for-word gloss, the three levels and one decision. Everything comes
     from content/ and data/, so it stays in step with the translation.
-    Decision notes are in English for now."""
+    Decision notes are in English, except where data/home_examples.json
+    gives the example in the page's language."""
     book, chapter, record_id, decision_id = example
     records, words = load_chapter(book, chapter)
     record = next(r for r in records if r["id"] == record_id)
     decision = next(d for d in record["decisions"] if d["id"] == decision_id)
+    tr = example_translation(example, lang, words)
     source = record["source"]["language"]
     marked = set(decision["tokens"])
 
     def word(w):
-        attrs = (f'data-t="{w["id"]}" data-g="{html.escape(w.get("english") or w.get("gloss") or "")}" '
+        gloss = tr["words"].get(w["id"]) if tr else None
+        attrs = (f'data-t="{w["id"]}" data-g="{html.escape(gloss or w.get("english") or w.get("gloss") or "")}" '
                  f'data-l="{html.escape(w["lemma"])}"')
         text = html.escape(w["text"])
         if w["id"] in marked:
@@ -2248,15 +2279,18 @@ def example_panel(example, lang, n):
                           for i, o in enumerate(options))
         switches += (f'<div class="ex-switch" data-switch="{key}"><span>{t(lang, label)}</span>'
                      f'<span class="seg" role="group" aria-label="{t(lang, label)}">{buttons}</span></div>')
-    also = "; ".join(html.escape(a) for a in decision["alternatives"])
+    # What the decision says: in the page's language where the example has
+    # a translation, otherwise content/'s English, marked as such.
+    said = tr or decision
+    also = "; ".join(html.escape(a) for a in said["alternatives"])
     # An uncertain call names its other reading as "Or:", as the reader's
     # footnotes do, and says what the mark means.
     unsure = decision["uncertain"]
     ui = catalog(lang)["reader.ui"]
     open_url = url(lang, chapter_url(book, chapter))
     passage = f"{chapter_book(book, lang)} {chapter}"
-    en = lang_attr("en", lang)
-    note = f'<p class="alts">{t(lang, "notes_in_english")}</p>' if lang != "en" else ""
+    en = "" if tr else lang_attr("en", lang)
+    note = f'<p class="alts">{t(lang, "notes_in_english")}</p>' if lang != "en" and not tr else ""
     return f"""<div class="ex-panel" id="ex-{n}" role="tabpanel" aria-labelledby="ex-tab-{n}">
 <div class="example-grid">
 <div>
@@ -2264,18 +2298,18 @@ def example_panel(example, lang, n):
 <p class="{"hebrew" if hebrew else "greek"}" lang="{source}"{' dir="rtl"' if hebrew else ""}>{original}</p>
 <p class="w-info" aria-live="polite"><span class="w-hint">{t(lang, "home.example_tap")}</span></p>
 <p class="label">{t(lang, "home.example_gloss")}</p>
-<p class="gloss"{en}>{html.escape(plain(record["literal_gloss"]))}</p>
+<p class="gloss"{en}>{html.escape(tr["gloss"] if tr else plain(record["literal_gloss"]))}</p>
 <p class="label">{t(lang, "home.example_levels")}</p>
 {levels}
 {switches}
 </div>
 <div class="card decision{" uncertain" if unsure else ""}">
 <p class="label">{t(lang, "home.example_decision")}{f' <span class="unsure-tag">{ui["uncertain"]}</span>' if unsure else ""}</p>
-<p class="choice"{en}>&ldquo;{html.escape(plain(decision["choice"]))}&rdquo;</p>
+<p class="choice"{en}>&ldquo;{html.escape(plain(said["choice"]))}&rdquo;</p>
 {f'<p class="alts">{html.escape(ui["fn_or"])}<span{en}>{also}</span></p>' if unsure and also else
  f'<p class="alts">{t(lang, "home.example_also", alts=f"<span{en}>{also}</span>")}</p>' if also else ""}
 {f'<p class="unsure-note">{t(lang, "home.example_uncertain")}</p>' if unsure else ""}
-<p class="why"{en}>{html.escape(decision["reason"])}</p>
+<p class="why"{en}>{html.escape(said["reason"])}</p>
 {note}
 </div>
 </div>
@@ -2289,7 +2323,7 @@ def example_html(lang="en"):
     JavaScript all are shown, one after another (web/site.js makes the
     tabs)."""
     tabs, panels = [], []
-    for n, example in enumerate(EXAMPLES):
+    for n, example in enumerate(examples(lang)):
         book, chapter, record_id, _ = example
         ref = refs.parse(record_id.rsplit(".", 1)[0])
         decision = next(d for r in load_chapter(book, chapter)[0] if r["id"] == record_id
@@ -2368,14 +2402,27 @@ def progress_html(lang="en"):
 VERSES_OF_THE_DAY = json.loads((ROOT / "data" / "verse_of_the_day.json").read_text(encoding="utf-8"))["refs"]
 
 
+def votd_record(vid):
+    ref = refs.parse(vid)
+    return next(r for r in load_chapter(ref.book, ref.chapter)[0] if vid in r["refs"])
+
+
+@functools.lru_cache(maxsize=None)
+def votd_refs(lang="en"):
+    """The verses of the day in lang: those already translated into it, in
+    the list's order, so a page never shows a verse in another language;
+    the whole list while lang has none of them yet."""
+    return tuple(v for v in VERSES_OF_THE_DAY if lang in votd_record(v)["renderings"]) or tuple(VERSES_OF_THE_DAY)
+
+
 def verses_of_the_day(lang="en"):
     """Each verse of the day as the home page shows it: its reference, its
-    Balanced text in lang (or English, marked), and links to its notes and
-    its chapter."""
+    Balanced text in lang (or English, marked, while lang has none of the
+    verses), and links to its notes and its chapter."""
     out = []
-    for vid in VERSES_OF_THE_DAY:
+    for vid in votd_refs(lang):
         ref = refs.parse(vid)
-        r = next(r for r in load_chapter(ref.book, ref.chapter)[0] if vid in r["refs"])
+        r = votd_record(vid)
         item = {"r": f"{chapter_book(ref.book, lang)} {ref.chapter}:{ref.verse}", "t": verse_text(r, vid, lang),
                 "u": url(lang, chapter_url(ref.book, ref.chapter)) + f"#v{ref.verse}"}
         if text_lang(r, lang) != lang:
@@ -2414,9 +2461,10 @@ def votd_feed_url(lang):
     return url(lang, "/verse-of-the-day.xml")
 
 
-def votd_for_day(day):
-    """The verse id of the day (a datetime.date): the home page's rule."""
-    return VERSES_OF_THE_DAY[(day - datetime.date(1970, 1, 1)).days % len(VERSES_OF_THE_DAY)]
+def votd_for_day(day, lang="en"):
+    """The verse id of the day (a datetime.date) in lang: the home page's rule."""
+    verses = votd_refs(lang)
+    return verses[(day - datetime.date(1970, 1, 1)).days % len(verses)]
 
 
 def votd_notes(r, lang):
@@ -2438,9 +2486,9 @@ def votd_feed(lang="en", today=None):
     entries = []
     for back in range(VOTD_FEED_DAYS):
         day = today - datetime.timedelta(days=back)
-        vid = votd_for_day(day)
+        vid = votd_for_day(day, lang)
         ref = refs.parse(vid)
-        r = next(r for r in load_chapter(ref.book, ref.chapter)[0] if vid in r["refs"])
+        r = votd_record(vid)
         name = f"{chapter_book(ref.book, lang)} {ref.chapter}:{ref.verse}"
         link = SITE_URL + url(lang, chapter_url(ref.book, ref.chapter)) + f"#v{ref.verse}"
         tl = text_lang(r, lang)

@@ -191,6 +191,33 @@ class LanguagesTest(unittest.TestCase):
             self.assertTrue(any(d["language"] == lang for d in decisions), lang)
             self.assertTrue(all({"en", "vi", "ko"} <= set(r["renderings"]) for r in data["records"]), lang)
 
+    def test_home_page_shows_nothing_in_english_where_it_need_not(self):
+        # The verse of the day and the worked examples are taken from what
+        # is translated into the page's language, and the examples' gloss
+        # and decision come from data/home_examples.json where it has them.
+        for lang in ("vi", "ko"):
+            home = self.read(f"{lang}/index.html")
+            votd = re.search(r'<section class="votd".*?</section>', home, re.S)[0]
+            example = re.search(r'<section class="example".*?</section>', home, re.S)[0]
+            self.assertNotIn('lang="en"', votd + example, lang)
+            self.assertNotIn(build_site.catalog(lang)["notes_in_english"], example, lang)
+
+    def test_home_examples_type_no_greek_or_hebrew_and_name_real_words(self):
+        from owb import validate
+        path = ROOT / "data" / "home_examples.json"
+        text = path.read_text(encoding="utf-8")
+        for script, (pattern, _) in validate._SCRIPTS.items():
+            self.assertEqual(pattern.findall(text), [], script)
+        for example in build_site.EXAMPLES:
+            words = build_site.load_chapter(example[0], example[1])[1]
+            ids = {w["id"] for ws in words.values() for w in ws}
+            for lang, tr in build_site.HOME_EXAMPLES.get(example[2], {}).get(example[3], {}).items():
+                self.assertIn(lang, build_site.LANGUAGES)
+                used = re.findall(r"\{[wl]:(\w+)\}", json.dumps(tr, ensure_ascii=False))
+                self.assertTrue(set(used) <= ids, (example, lang))
+                self.assertTrue(set(tr["words"]) <= ids, (example, lang))
+                self.assertNotIn("{", build_site.example_translation(example, lang, words)["reason"])
+
     def test_a_language_shows_only_its_own_articles(self):
         for lang in OTHERS:
             own = {a["slug"] for a in build_site.load_articles(lang)}
