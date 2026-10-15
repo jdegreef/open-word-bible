@@ -130,6 +130,8 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | have mercy (*eleēson*) | ten piedad (L, B); ten compasión (R) | nihurumie / tuhurumie |
 | reward (*misthos*) | recompensa | ujira |
 | deny; acknowledge | negar, renegar de; reconocer | kukataa; kutambua |
+| deny oneself | negarse a sí mismo | kujikana |
+| life (*psychē*, lost and saved) | vida | maisha (nafsi where set beside the body) |
 | pagans (*ethnikoi*) | gentiles (L); paganos (B); gente que no conoce a Dios (R) | watu wa mataifa (L); wapagani (B); watu wasiomjua Mungu (R) |
 | divorce (*apolyō* a wife) | divorciarse de | kutaliki |
 | mammon | Mamón (L); el dinero (B, R) as the English | Mamona (L); mali (B, R) |
