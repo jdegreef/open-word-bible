@@ -3641,11 +3641,9 @@ def login_page(lang="en"):
 <p class="auth-dek">{l("dek")}</p>
 </header>
 <form class="auth-card" id="login-form" novalidate>
-<div data-for="sign-in sign-up">
-<div class="google" hidden>
+<div class="google" data-for="sign-in sign-up" hidden>
 <button class="button ghost wide google-btn" type="button" id="google">{GOOGLE_G}<span>{l("google")}</span></button>
 <p class="or"><span>{l("or")}</span></p>
-</div>
 </div>
 <label for="email">{l("email")}</label>
 <input id="email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required aria-describedby="login-error">
