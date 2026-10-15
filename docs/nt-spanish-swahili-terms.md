@@ -25,7 +25,8 @@ Decision text stays in English, quoting the Spanish or Swahili words.
   `gender` span, and Spanish only where Spanish really has two wordings
   ("hermanos" already includes sisters, so it stays plain).
 - Measures: metric by default where the English converts to US units; wages
-  for coins, as John 6:7 and 12:5.
+  for coins, as John 6:7 and 12:5. Where the English has no units span,
+  neither does Spanish or Swahili.
 - Readable may explain, as the English Readable does; follow the English
   Readable's explanations rather than adding new ones.
 - Rendering decisions: zero to two per sentence, only where the language had
@@ -193,6 +194,8 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | bier | andas | machela |
 | thanks, credit (*charis* not as grace) | reconocimiento, agradecimiento | shukrani |
 | abyss (*abyssos*) | el abismo | kilindi (L, B); shimo lisilo na mwisho (R) |
+| neighbor (*plēsion*) | prójimo | jirani |
+| inn | posada | nyumba ya wageni |
 | tomb (*mnēmeion*) | el sepulcro (L, B); la tumba (R) | kaburi |
 | at the right (hand) | a la derecha (de) | upande wa kulia (wa) |
 
