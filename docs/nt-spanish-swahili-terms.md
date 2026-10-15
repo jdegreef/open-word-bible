@@ -114,6 +114,9 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | harvest, workers | cosecha, trabajadores | mavuno, wafanyakazi |
 | governors | gobernadores | magavana (L, B); watawala (R) |
 | synagogues (plural) | sinagogas | masinagogi |
+| mercy (*eleos*) | misericordia | huruma |
+| sacrifice | sacrificio | dhabihu |
+| Beelzebul | Beelzebul | Beelzebuli |
 | tomb (*mnēmeion*) | el sepulcro (L, B); la tumba (R) | kaburi |
 | at the right (hand) | a la derecha (de) | upande wa kulia (wa) |
 
@@ -131,7 +134,7 @@ Decision text stays in English, quoting the Spanish or Swahili words.
   article, as a title: `el {{christos:Cristo|Mesías}}`.
 - `deity_pronoun`: `{{deity_pronoun:él|Él}}`, `lo|Lo`, `le|Le`, `sí
   mismo|Sí mismo`, and the possessive `su|Su`, wherever the English marks
-  the pronoun, free clitics and pronouns included (lo, le, te, tú, ti); a clitic joined to the verb ("sígueme") takes no span. "Jesús mismo" is an adjective and takes no
+  the pronoun, free clitics and pronouns included (lo, le, te, tú, ti); a clitic joined to the verb ("sígueme") and "conmigo", "contigo" take no span. "Jesús mismo" is an adjective and takes no
   span.
 - Names in their usual Spanish form: Jesús, Juan, Pedro, Santiago (James),
   Mateo, Marcos, Lucas, Pablo, Bernabé, Esteban, Felipe, Herodes, Pilato,
@@ -151,7 +154,7 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 - Names in their usual Swahili form: Yesu, Yohana, Petro, Yakobo, Mathayo,
   Marko, Luka, Paulo, Barnaba, Stefano, Filipo, Herode, Pilato, Yerusalemu,
   Galilaya, Kapernaumu, Nazareti, Bethlehemu, Musa, Eliya, Isaya, Daudi,
-  Ibrahimu.
+  Ibrahimu, Sulemani, Ninawi.
 - Narrative: *-li-* for the first verb of a sequence, *-ka-* for those that
   follow (Balanced and Readable); Literal keeps the historic present
   ("anasema") where the Greek has it.
