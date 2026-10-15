@@ -88,7 +88,7 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | myths | mitos | ngano |
 | heart (*splanchna*) | entrañas (L); corazón (B, R) | moyo |
 | look (*idou*) | mira (L); omitted or reworded (B, R) as the English | tazama |
-| the Sea of Galilee | el mar (L); el lago (B, R) | bahari (L); ziwa (B, R) |
+| the Sea of Galilee | follow the English: mar / lago where it has sea / lake | Bahari / Ziwa likewise |
 | wind, winds | viento(s) | upepo (never plural "pepo", which is also "demons") |
 | the evil one | el maligno | yule mwovu |
 | antichrist | anticristo (no christos span) | mpinga-Kristo |
@@ -149,6 +149,8 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | synagogue leader | jefe de la sinagoga | mkuu wa sinagogi (L); kiongozi wa sinagogi (B, R) |
 | physicians | médicos | matabibu (L, B); madaktari (R) |
 | Most High (God) | Altísimo | Aliye Juu Kabisa |
+| John the Baptist | Juan el Bautista | Yohana Mbatizaji |
+| immediately (*euthys*, Mark) | al instante (L); enseguida / en seguida, or left out, as the English (B, R) | mara moja |
 | tomb (*mnēmeion*) | el sepulcro (L, B); la tumba (R) | kaburi |
 | at the right (hand) | a la derecha (de) | upande wa kulia (wa) |
 
