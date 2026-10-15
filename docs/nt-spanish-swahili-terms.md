@@ -55,7 +55,7 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | Gehenna | Gehena (L); el infierno (B, R) | Gehena (L); jehanamu (B, R) |
 | Hades | el Hades (L, B); el lugar de los muertos (R) | Kuzimu |
 | hypocrites | hipócritas | wanafiki |
-| parable | parábola (L, B); historia where the English Readable says "story" (R) | mfano |
+| parable | parábola (L, B); historia where the English Readable says "story" (R) | mfano (L, B); hadithi where the English Readable says "story" (R) |
 | repent, repentance | arrepentirse, arrepentimiento | kutubu, toba |
 | gospel, good news | el evangelio (B where it names the message); la buena noticia (R) | Injili; habari njema (R) |
 | baptize | bautizar | kubatiza |
@@ -197,6 +197,9 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | abyss (*abyssos*) | el abismo | kilindi (L, B); shimo lisilo na mwisho (R) |
 | neighbor (*plēsion*) | prójimo | jirani |
 | inn | posada | nyumba ya wageni |
+| this age / that age | esta era / aquella era | zama hizi / zama zile |
+| footstool | escabel | kiti cha kuwekea miguu |
+| show favoritism (*prosōpolēmpsia*) | hacer favoritismo (B, R) | kupendelea (B, R) |
 | tomb (*mnēmeion*) | el sepulcro (L, B); la tumba (R) | kaburi |
 | at the right (hand) | a la derecha (de) | upande wa kulia (wa) |
 
