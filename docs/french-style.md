@@ -156,6 +156,17 @@ Settings change wording, never meaning, exactly as in English.
   less and less, so the inclusive default says it plainly. Not for specific
   men, and not where French is already inclusive ("les enfants de Dieu",
   "chacun", "personne").
+  The setting goes on a **noun** French has to choose, usually where the
+  original has *anthrōpos* or *ʾādām*. Words that must agree with that noun
+  go under the same setting ("ce {{gender:qu’elle a fait|qu’il a fait}}",
+  John 7:51). Generic **pronouns** take none: "celui qui", "quiconque",
+  "quelqu’un", "chacun" and "personne" already mean anyone, and the "il",
+  "lui", "le" and "celui-là" that refer back to them are ordinary generic
+  French. So where the English needs `{{gender:they|he}}` for a pronoun,
+  French writes "celui qui … il" and adds no span. Don't bring in "la
+  personne … elle" only to carry the setting. A rendering decision
+  (setting_alternative) records the difference from the English the first
+  time it occurs in a passage.
 - `units`: metric by default in French, the original unit as the alternative:
   `{{units:80 à 120 litres|deux ou trois mesures}}` (a *metrētēs* held about
   39 litres). Literal keeps the original unit. This differs from the English
