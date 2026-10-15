@@ -129,7 +129,7 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | robbers, bandits (*lēstai*) | bandidos | wanyang'anyi (as John 18:40) |
 | have mercy (*eleēson*) | ten piedad (L, B); ten compasión (R) | nihurumie / tuhurumie |
 | reward (*misthos*) | recompensa | ujira |
-| deny; acknowledge | negar, renegar de; reconocer | kukataa; kutambua |
+| deny (disown a person, Peter); acknowledge | negar; reconocer | kukana; kutambua |
 | deny oneself | negarse a sí mismo | kujikana |
 | life (*psychē*, lost and saved) | vida | maisha (nafsi where set beside the body) |
 | pagans (*ethnikoi*) | gentiles (L); paganos (B); gente que no conoce a Dios (R) | watu wa mataifa (L); wapagani (B); watu wasiomjua Mungu (R) |
@@ -181,6 +181,9 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | Master (*epistata*, Luke) | Maestro | Mkuu |
 | teachers of the law (*nomodidaskaloi*) | maestros de la ley | walimu wa sheria |
 | grumble (*gongyzō*) | murmurar | kunung'unika |
+| Passover | la Pascua | Pasaka |
+| fall away (*skandalizomai*) | caer, tropezar y caer | kujikwaa |
+| Abba | Abba, Padre | Aba, Baba |
 | tomb (*mnēmeion*) | el sepulcro (L, B); la tumba (R) | kaburi |
 | at the right (hand) | a la derecha (de) | upande wa kulia (wa) |
 
@@ -198,7 +201,7 @@ Decision text stays in English, quoting the Spanish or Swahili words.
   article, as a title: `el {{christos:Cristo|Mesías}}`.
 - `deity_pronoun`: `{{deity_pronoun:él|Él}}`, `lo|Lo`, `le|Le`, `sí
   mismo|Sí mismo`, and the possessive `su|Su`, wherever the English marks
-  the pronoun, free clitics and pronouns included (lo, le, te, tú, ti); a clitic joined to the verb ("sígueme") and "conmigo", "contigo" take no span. "Jesús mismo" is an adjective and takes no
+  the pronoun, free clitics and pronouns included (lo, le, te, tú, ti, mí); a clitic joined to the verb ("sígueme") and "conmigo", "contigo" take no span. "Jesús mismo" is an adjective and takes no
   span.
 - Jesus's "yo" takes no span (the English "I" has none); Swahili spans
   free "mimi" as its style guide says.
