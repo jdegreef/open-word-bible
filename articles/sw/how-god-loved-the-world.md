@@ -80,6 +80,6 @@ Kisha mstari wa 18 unasema kwamba hukumu tayari imeshawekwa: anayeamini hahukumi
 
 ## Yesu anaacha kusema wapi?
 
-Uamuzi mmoja zaidi usio na uhakika unahusu aya nzima. Miswada haina alama za kunukuu, kwa hiyo hakuna anayejua kwa hakika maneno ya Yesu kwa Nikodemo yanaishia wapi. Wengine wanafikiri yanaishia katika mstari wa 15, na kwamba mistari ya 16 hadi 21 ni tafakari ya Yohana mwenyewe. Open Word Bible inaacha nukuu wazi hadi mwisho wa mstari wa 21, kwa kuwa hakuna kitu katika maandishi kinachoonyesha mpaka, na inatoa maoni mengine katika maelezo ya chini. [Alama za uakifishaji ambazo mitume hawakuziandika](/articles/punctuation-the-apostles-never-wrote/) inaangalia maamuzi ya aina hii.
+Uamuzi mmoja zaidi usio na uhakika unahusu aya nzima. Miswada haina alama za kunukuu, kwa hiyo hakuna anayejua kwa hakika maneno ya Yesu kwa Nikodemo yanaishia wapi. Wengine wanafikiri yanaishia katika mstari wa 15, na kwamba mistari ya 16 hadi 21 ni tafakari ya Yohana mwenyewe. Open Word Bible inaacha nukuu wazi hadi mwisho wa mstari wa 21, kwa kuwa hakuna kitu katika maandishi kinachoonyesha mpaka, na inatoa maoni mengine katika maelezo ya chini. [Uakifishaji ambao mitume hawakuuandika](/articles/punctuation-the-apostles-never-wrote/) inaangalia maamuzi ya aina hii.
 
 [Fungua Yohana 3](/jhn/3/) na uguse mstari wa 16 kuona rekodi nzima.

@@ -71,7 +71,7 @@ Katika Yohana 3, Yesu anazungumza na Nikodemo. Mahali fulani maneno yanaweza kua
 
 Baadhi ya wataalamu wanamaliza nukuu kwenye mstari wa 15. Kuanzia mstari wa 16 vitenzi vinahamia wakati uliopita ("Mungu aliupenda", "alimtoa"), Nikodemo haelekezwi maneno tena, na baadhi ya misemo ni ile ambayo Yohana anaitumia kwa sauti yake mwenyewe mahali pengine. Wengine wanaiendeleza hadi mwisho wa mstari wa 21. Mstari wa 16 unaanza na "Kwa maana", unaouunganisha na yale ambayo Yesu amesema sasa hivi, na mada zinaendelea bila kukatika.
 
-Open Word Bible inaiacha nukuu wazi hadi mwisho wa mstari wa 21, inauwekea uamuzi alama ya kutokuwa na uhakika, na inatoa mtazamo mwingine katika maelezo ya chini. Swali hilohilo linajitokeza tena katika Yohana 3:31–36. Ona ["Kwa maana Mungu aliupenda ulimwengu hivi"](/articles/how-god-loved-the-world/) kwa sehemu iliyobaki ya mstari huo.
+Open Word Bible inaiacha nukuu wazi hadi mwisho wa mstari wa 21, inauwekea uamuzi alama ya kutokuwa na uhakika, na inatoa mtazamo mwingine katika maelezo ya chini. Swali hilohilo linajitokeza tena katika Yohana 3:31–36. Ona ["Kwa maana Mungu aliupenda ulimwengu"](/articles/how-god-loved-the-world/) kwa sehemu iliyobaki ya mstari huo.
 
 ## Kwa nini ni uamuzi wa maana
 
