@@ -53,7 +53,7 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | Gehenna | Gehena (L); el infierno (B, R) | Gehena (L); jehanamu (B, R) |
 | Hades | el Hades (L, B); el lugar de los muertos (R) | Kuzimu |
 | hypocrites | hipócritas | wanafiki |
-| parable | parábola | mfano |
+| parable | parábola (L, B); historia where the English Readable says "story" (R) | mfano |
 | repent, repentance | arrepentirse, arrepentimiento | kutubu, toba |
 | gospel, good news | el evangelio (B where it names the message); la buena noticia (R) | Injili; habari njema (R) |
 | baptize | bautizar | kubatiza |
@@ -139,6 +139,9 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | talents (coins) | as the English span: {{units:bolsas de plata\|talentos}} | {{units:mifuko ya fedha\|talanta}} |
 | worship (*proskyneō*) | adorar | kuabudu (kusujudu where bowing down is the act) |
 | magi | magos (L, B); sabios que estudiaban las estrellas (R) | mamajusi (L, B); wataalamu wa nyota (R) |
+| Satan | Satanás | Shetani |
+| the Twelve | los Doce (L, B); los doce apóstoles (R) | wale Kumi na Wawili (L, B); mitume kumi na wawili (R) |
+| be muzzled, be silent (*phimoō*) | ¡cállate! / queda amordazado (L) | nyamaza / fungwa kinywa (L) |
 | tomb (*mnēmeion*) | el sepulcro (L, B); la tumba (R) | kaburi |
 | at the right (hand) | a la derecha (de) | upande wa kulia (wa) |
 
