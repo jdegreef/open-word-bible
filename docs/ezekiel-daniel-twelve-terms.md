@@ -435,7 +435,7 @@ year" but does not convert to a modern calendar.
   decision for Luke 1:17 and Matthew 17:11. A footnoted decision at 3:19 and
   3:23 gives the English numbering (Hebrew 3:19–24 is English 4:1–6).
 
-## Settled while drafting Hosea to Jonah
+## Settled while drafting the Twelve
 
 These conventions came up while the first five books were drafted. They are
 AI-draft choices, recorded here so the later books follow them; the founder
@@ -470,10 +470,40 @@ may change any of them.
   Bible (Hosea 1:1, Amos 1:1, the Amos 1–2 refrain at Literal, Amos 3:13,
   Jonah 1:1). Every other such run is reworded.
 - Headings stand only where the Hebrew starts a paragraph (pe or samekh).
+- *Hoy* as a summons, not a woe (Zechariah 2:10–11): "Ho" / "Come" /
+  "Hurry" or "Come".
+- *Ruach* as God's anger (Zechariah 6:8): "spirit" lowercase (L, B),
+  "anger" (R), with "Spirit" footnoted.
+- The angel of the LORD takes no `deity_pronoun` span (as Genesis 16:7).
+- Dated headings in Haggai and Zechariah follow Jeremiah: "in the second
+  year of Darius" (L), "of Darius's reign" (B), "Darius's second year as
+  king" (R), with a culture decision giving the modern date.
+- *'Adam* set against God or as humankind (Micah 6:8) is "mortal" (L, B) /
+  "human beings" (R), with "man" as the `gender` alternative.
+- The *segullah* of Malachi 3:17 reuses Exodus 19:5: "special possession"
+  (L), "special treasure" (B, R).
+- Habakkuk 3 follows the psalm titles at each level (Psalm 4:1 for the
+  closing note); a mid-verse "Selah" moves to the end of the verse, as
+  Psalm 57:4.
+- Malachi is set in lines at the main accent, with a decision at 1:1 that
+  the book is close to prose; Haggai and Zechariah 1–8, 12 and 14 are prose.
 - **Open for the founder:** quotations of Exodus 34:6 differ on *hesed*.
   Joel 2:13 uses the prophets' "loyal love"; Jonah 4:2 reuses the published
   Exodus 34:6 ("steadfast love" at Literal). One wording should be chosen
   for Joel, Jonah, Nahum 1:3 and Exodus 34:6 itself.
+
+- **Open for the founder:** wording reused from a parallel passage (Micah
+  4:1–3 from Isaiah 2:2–4; Zechariah 9:10 from Psalm 72:8; Habakkuk 2:14
+  from Isaiah 11:9) can run twelve words or more with an older Bible. Micah
+  and Habakkuk were reworded away from the published parallel; Zechariah
+  9:10 kept it. Should a reused parallel be exempt from the overlap check?
+- **Open for the founder:** "my servant" for Moses and others at Literal:
+  the histories have "slave" (Joshua 1:2; 2 Kings 21:8), the prophets
+  "servant" (Jeremiah 7:25; Amos 3:7). Haggai 2:23 and Malachi 3:22 use
+  "servant" at every level.
+- **Open for the founder:** Malachi 2:16 follows "I hate divorce" at every
+  level, with the other readings footnoted, since one reading must hold at
+  every level.
 
 ## Before meaning review: claims to check
 
@@ -525,6 +555,56 @@ below against the sources before its sentence is marked meaning reviewed.
 - 2: 1 m3, 5 m2
 - 3: 3 m2, 6 m2
 - 4: 6 m1
+
+**Micah**
+- 1: 1 m1, 1 m2, 5 m3, 6 m2, 8 m2, 9 m2, 10 m2, 10 m3, 10 m4, 11 m3, 12 m1,
+  13 m1, 14 m2
+- 2: 4 m3, 7 m1, 12 m3
+- 3: 3 m2, 8 m3, 12 m2
+- 4: 7 m1, 10 m2, 13 m2, 14 m2
+- 5: 1 m2, 1 m5, 4 m2, 13 m2
+- 6: 9 m1, 13 m1, 16 m4
+- 7: 8 m1, 14 m3, 19 m3
+
+**Nahum**
+- 1: 1 m2, 1 m3, 8 m1, 11 m2, 13 m2
+- 2: 2 m3, 4 m3, 6 m2, 7 m1, 9 m1, 12 m1
+- 3: 1 m2, 4 m2, 8 m1, 8 m3, 9 m1, 17 m1
+
+**Habakkuk**
+- 1: 1 m2, 5 m3, 6 m1, 11 m2, 12 m2, 17 m2
+- 2: 3 m2, 4 m1, 4 m2, 5 m1, 8 m1, 16 m1, 17 m1, 17 m2
+- 3: 5 m1, 7 m1
+
+**Zephaniah**
+- 1: 1 m2, 1 m3, 3 m2, 5 m2, 10 m1, 15 m3
+- 2: 1 m2, 2 m1, 4 m2, 5 m1, 12 m1, 13 m1, 13 m2, 14 m3
+- 3: 3 m2, 7 m2, 8 m2, 8 m4, 17 m2, 18 m1
+
+**Haggai**
+- 1: 1 m1, 1 m2, 1 m3, 2 m2, 8 m3, 10 m3, 14 m2, 15 m1
+- 2: 1 m1, 3 m1, 5 m1, 6 m1, 7 m1, 9 m3, 10 m1, 14 m3, 17 m2, 20 m1, 22 m3
+
+**Zechariah**
+- 1: 1 m1, 1 m2, 7 m1, 8 m4, 10 m1, 11 m2, 12 m1, 16 m2
+- 2: 10 m3, 10 m4, 12 m4
+- 3: 1 m2, 2 m1, 5 m1, 8 m3
+- 4: 2 m3, 6 m2, 9 m1
+- 5: 6 m2
+- 6: 1 m2, 6 m1, 11 m3, 12 m1, 13 m3, 14 m1
+- 7: 1 m1, 2 m1, 2 m2, 3 m1, 5 m1, 5 m2
+- 8: 9 m2, 19 m1
+- 9: 1 m2, 2 m1, 3 m1, 4 m3, 5 m1, 9 m2, 9 m6, 10 m1, 13 m2, 15 m3
+- 10: 6 m2, 11 m2, 12 m2
+- 11: 7 m1, 8 m1, 11 m1, 13 m2
+- 12: 10 m2, 10 m3, 10 m4, 11 m1, 12 m2
+- 14: 2 m2, 2 m3, 4 m1, 5 m1, 5 m2, 5 m3, 5 m5, 6 m1, 8 m2, 10 m1, 10 m3,
+  12 m3, 18 m1, 21 m3
+
+**Malachi**
+- 1: 1 m2, 1 m3, 3 m3, 7 m3, 8 m2, 11 m2, 13 m2, 14 m2
+- 2: 3 m1, 15 m1, 16 m1
+- 3: 8 m2, 19 m1, 20 m2, 24 m1, 24 m4
 
 ## The founder's rulings (2026-10-15)
 
