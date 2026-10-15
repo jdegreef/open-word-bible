@@ -117,6 +117,8 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | mercy (*eleos*) | misericordia | huruma |
 | sacrifice | sacrificio | dhabihu |
 | Beelzebul | Beelzebul | Beelzebuli |
+| servant (*diakonos*), serve | servidor, servir | mhudumu, kuhudumu |
+| phylacteries | filacterias | visanduku vya maandiko |
 | tomb (*mnēmeion*) | el sepulcro (L, B); la tumba (R) | kaburi |
 | at the right (hand) | a la derecha (de) | upande wa kulia (wa) |
 
