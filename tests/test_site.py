@@ -572,6 +572,70 @@ class SiteTest(unittest.TestCase):
         self.assertIn('data-setting="crossrefs"', page)
         self.assertIn('id="xr-margin"', page)
 
+    def test_verse_of_the_day_feed(self):
+        # One Atom feed per language: the home page's verse for each of the
+        # last days, linking to that verse in the reader, which is built.
+        import datetime
+        import xml.etree.ElementTree as ET
+        atom = "{http://www.w3.org/2005/Atom}"
+        for lang in build_site.LANGUAGES:
+            rel = build_site.votd_feed_url(lang).lstrip("/")
+            feed = ET.parse(self.out / rel).getroot()
+            entries = feed.findall(atom + "entry")
+            self.assertEqual(len(entries), build_site.VOTD_FEED_DAYS, lang)
+            for entry in entries:
+                day = datetime.date.fromisoformat(entry.find(atom + "updated").text[:10])
+                vid = build_site.votd_for_day(day)
+                ref = build_site.refs.parse(vid)
+                link = entry.find(atom + "link").get("href")
+                self.assertTrue(link.endswith(f"/{ref.book.lower()}/{ref.chapter}/#v{ref.verse}"), link)
+                page = link.removeprefix(build_site.SITE_URL).split("#")[0].strip("/")
+                self.assertTrue((self.out / page / "index.html").is_file(), link)
+            home = (self.out / build_site.url(lang, "/").strip("/") / "index.html").read_text(encoding="utf-8")
+            self.assertIn('type="application/atom+xml"', home)
+            self.assertIn(f'href="{build_site.votd_feed_url(lang)}"', home)
+
+    def test_compare_page_and_its_editions(self):
+        # One page per language takes the verse from its address; the other
+        # Bibles come from a file per chapter, in our verse numbering.
+        for lang in build_site.LANGUAGES:
+            page = (self.out / build_site.url(lang, "/compare/").strip("/") / "index.html").read_text(encoding="utf-8")
+            self.assertIn('id="cmp-data"', page)
+            self.assertIn("compare.js?v=", page)
+        files = sorted((self.out / build_site.EDITIONS_DIR).glob("*/*.json"))
+        self.assertEqual(len(files), sum(build_site.BOOK_CHAPTERS.values()))
+        john = json.loads((self.out / "editions" / "JHN" / "3.json").read_text(encoding="utf-8"))
+        self.assertEqual(set(john), {code for code, _, _ in build_site.EDITIONS})
+        self.assertIn("loved the world", john["bsb"]["16"])
+        # English Psalm 3:1 is our 3:2; our 3:1 is the title, which they lack.
+        psalm = json.loads((self.out / "editions" / "PSA" / "3.json").read_text(encoding="utf-8"))
+        self.assertNotIn("1", psalm["bsb"])
+        self.assertTrue(psalm["bsb"]["2"].startswith("O LORD"))
+        # The reader's panel links each verse here.
+        self.assertEqual(self.chapter_data("jhn/3")["compare_url"], "/compare/")
+        self.assertEqual(self.chapter_data("es/jhn/3")["compare_url"], "/es/compare/")
+
+    def test_word_pages_and_their_shards(self):
+        # Each dictionary form is in the shard its hash names; the hash must
+        # agree with web/word.js (tests/js/word.test.mjs, same vectors).
+        vectors = json.loads((ROOT / "tests" / "word_shard_vectors.json").read_text(encoding="utf-8"))
+        self.assertEqual(vectors["shards"], build_site.WORD_SHARDS)
+        for lemma, shard in vectors["cases"]:
+            self.assertEqual(build_site.word_shard(lemma), shard, lemma)
+        shards = {int(p.stem): json.loads(p.read_text(encoding="utf-8"))
+                  for p in (self.out / build_site.WORDS_DIR).glob("*.json")}
+        self.assertEqual(set(shards), set(range(build_site.WORD_SHARDS)))
+        uses = json.loads((self.out / "word-uses.json").read_text(encoding="utf-8"))
+        for lemma, verses in uses.items():
+            entry = shards[build_site.word_shard(lemma)].get(lemma)
+            self.assertIsNotNone(entry, lemma)
+            self.assertEqual(sum(n for _, n in entry["b"]), len(verses), lemma)
+            self.assertEqual(entry["v"], verses[:build_site.WORD_VERSES], lemma)
+        for lang in build_site.LANGUAGES:
+            page = (self.out / build_site.url(lang, "/word/").strip("/") / "index.html").read_text(encoding="utf-8")
+            self.assertIn('id="word-data"', page)
+        self.assertEqual(self.chapter_data("jhn/3")["word_url"], "/word/")
+
     def test_every_chapter_has_a_preview_file(self):
         # Cross-reference previews fetch /verses/<BOOK>/<chapter>.json: one
         # for every chapter of the Bible, ours where translated, otherwise

@@ -249,6 +249,37 @@ typed: quote them with placeholders the build fills from `data/grc/` and
 `tests/test_articles.py` fails if an article contains typed Greek or Hebrew,
 an unfilled placeholder or a broken internal link.
 
+### Verse of the day
+
+The home page shows one verse a day from `data/verse_of_the_day.json`, in
+turn. `/verse-of-the-day.xml` (and `/es/verse-of-the-day.xml`, ...) is the
+same as an Atom feed: the last 14 days up to the day the site was built,
+each with the verse, the notes that say why it reads as it does, and a link
+that opens its reasoning in the reader.
+
+### Comparing translations
+
+`/compare/?v=JHN.3.16` sets one verse of ours, at its three levels, beside
+the Berean Standard Bible, the World English Bible and the Reina-Valera 1909,
+then lists the decisions that say why ours reads as it does. The reader's
+verse panel links each verse there. It is one page per language
+(`web/compare.js`), not a page per verse: our text and decisions come from
+the verse's chapter page, and the other Bibles from
+`/editions/<BOOK>/<chapter>.json`, written by the build from
+`data/comparison/` in our verse numbering. They are for comparison only.
+
+### Dictionary words
+
+`/word/?w=<lemma>` is a Greek, Hebrew or Aramaic dictionary form: its
+MACULA glosses and how often each is given, how often and where it occurs
+in the translation so far, its key-term page if it has one, and the
+translation decisions that name it. The word panel in the reader links each
+word there. Like the comparison page it is one page per language
+(`web/word.js`); the build writes the words to 256 shards,
+`/words/<n>.json`, `n` being a hash of the lemma that `build_site.word_shard`
+and `web/word.js` compute alike (`tests/word_shard_vectors.json`). MACULA's
+word-sense fields are never used.
+
 ### Colour modes
 
 The gear at the top right of every page offers Automatic (follow the device)

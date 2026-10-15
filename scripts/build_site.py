@@ -18,6 +18,7 @@ import os
 import re
 import shutil
 import sys
+import urllib.parse
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -1103,6 +1104,8 @@ def chapter_page(book, chapter, lang="en"):
             # Where previews of other verses come from (verse_files), and the
             # comparison edition for verses not translated yet: the page
             # language's, then the World English Bible.
+            "compare_url": compare_url(lang),
+            "word_url": word_url(lang),
             "verses": {"url": f"/{VERSES_DIR}/",
                        "compare": [list(COMPARISON.get(lang, COMPARISON_DEFAULT)), list(COMPARISON_DEFAULT)]}}
     # Each morphology code's description in every language, once per page.
@@ -1524,6 +1527,18 @@ def record_verses(r):
     return out
 
 
+@functools.cache
+def comparison_ours(code):
+    """A comparison edition's verses by our verse Ref (owb/versification.py):
+    English Psalm 3:1 is our PSA.3.2; two English verses that make one of
+    ours are joined."""
+    moved = {}
+    for eid, text in comparison_text(code).items():
+        for ref in versification.to_source(refs.parse(eid)):
+            moved[ref] = f"{moved[ref]} {text}" if ref in moved else text
+    return moved
+
+
 def verse_files():
     """{path: text} for every chapter of the Bible (see VERSES_DIR)."""
     ours, seen = {}, set()
@@ -1544,17 +1559,194 @@ def verse_files():
         ref = refs.parse(vid)
         by_chapter.setdefault((ref.book, ref.chapter), {"v": {}})["v"][str(ref.verse)] = langs
     for code in COMPARISON_EDITIONS:
-        moved = {}
-        for eid, text in comparison_text(code).items():
-            for ref in versification.to_source(refs.parse(eid)):
-                moved[ref] = f"{moved[ref]} {text}" if ref in moved else text
-        for ref, text in moved.items():
+        for ref, text in comparison_ours(code).items():
             if str(ref) in ours:
                 continue
             entry = by_chapter.setdefault((ref.book, ref.chapter), {"v": {}})
             entry.setdefault("c", {}).setdefault(code, {})[str(ref.verse)] = text
     return {f"{VERSES_DIR}/{book}/{chapter}.json": json.dumps(entry, ensure_ascii=False, separators=(",", ":"))
             for (book, chapter), entry in by_chapter.items()}
+
+
+# Dictionary-word pages (/word/?w=<lemma>, web/word.js): each dictionary
+# form in the translation so far, with its glosses, how often and where it
+# occurs, and the translation decisions that name it. One page per language
+# reads the word from its address; the words are in WORD_SHARDS files,
+# /words/<n>.json, a word's n being word_shard() of its lemma, which
+# web/word.js computes the same way (tests/word_shard_vectors.json holds
+# the two to the same answers). Glosses are MACULA's Berean and Cherith
+# glosses; its word-sense fields are never used.
+WORDS_DIR = "words"
+WORD_SHARDS = 256
+WORD_VERSES = 40      # verses listed on a word's page; the rest are counted
+WORD_DECISIONS = 30   # decisions listed
+WORD_GLOSSES = 6
+
+
+def word_shard(lemma):
+    """FNV-1a (32-bit) of the lemma's UTF-16 code units, modulo WORD_SHARDS:
+    what JavaScript's charCodeAt sees, so web/word.js agrees."""
+    h = 0x811C9DC5
+    data = lemma.encode("utf-16-le")
+    for i in range(0, len(data), 2):
+        h ^= data[i] | (data[i + 1] << 8)
+        h = (h * 0x01000193) & 0xFFFFFFFF
+    return h % WORD_SHARDS
+
+
+def word_entries():
+    """{lemma: entry} for every dictionary form in the translated sentences:
+    {"s": Strong's, "lang": "grc"/"hbo"/"arc", "tr": transliteration (Greek),
+     "g": [[gloss, count], ...], "n": occurrences, "b": [[book, verses], ...],
+     "v": [verse id, ...] (the first WORD_VERSES), "d": [decision, ...],
+     "t": key-term slug}. A decision is {"v": verse id, "layer", "c":
+     category, "ch": choice, "lang": its language or null, "u": uncertain}."""
+    entries, seen = {}, set()
+    terms = {term_key(term): term_slug(term) for term in validate.KEY_TERMS.values()}
+    for book, chapter in chapters():
+        records, words = load_chapter(book, chapter)
+        by_id = {w["id"]: (vid, w) for vid, ws in words.items() for w in ws}
+        for r in records:
+            if r["id"] in seen:
+                continue
+            seen.add(r["id"])
+            for token in r["source"]["tokens"]:
+                if token not in by_id:
+                    continue
+                vid, w = by_id[token]
+                language = "grc" if book in refs.CODE_TO_SBLGNT else ("arc" if w.get("lang") == "A" else "hbo")
+                e = entries.setdefault(w["lemma"], {"s": w.get("strong", ""), "lang": language, "glosses": {},
+                                                    "n": 0, "verses": [], "d": []})
+                e["n"] += 1
+                if not e["verses"] or e["verses"][-1] != vid:
+                    e["verses"].append(vid)
+                gloss = (w.get("english") or w.get("gloss") or "").replace(".", " ").strip()
+                if gloss:
+                    e["glosses"][gloss] = e["glosses"].get(gloss, 0) + 1
+            for d in r["decisions"]:
+                lemmas = []
+                for token in d["tokens"]:
+                    if token in by_id and by_id[token][1]["lemma"] not in lemmas:
+                        lemmas.append(by_id[token][1]["lemma"])
+                for lemma in lemmas:
+                    if lemma in entries and len(entries[lemma]["d"]) < WORD_DECISIONS:
+                        vid = by_id[next(t for t in d["tokens"] if t in by_id)][0]
+                        entries[lemma]["d"].append({"v": vid, "layer": d["layer"], "c": d["category"],
+                                                    "ch": plain(d["choice"]), "lang": d.get("language"),
+                                                    "u": bool(d.get("uncertain"))})
+    out = {}
+    for lemma, e in entries.items():
+        verses = sorted(set(e["verses"]), key=lambda vid: refs.parse(vid).sort_key())
+        books_ = {}
+        for vid in verses:
+            books_[vid.split(".")[0]] = books_.get(vid.split(".")[0], 0) + 1
+        entry = {"s": e["s"], "lang": e["lang"], "n": e["n"],
+                 "g": sorted(e["glosses"].items(), key=lambda g: (-g[1], g[0]))[:WORD_GLOSSES],
+                 "b": list(books_.items()), "v": verses[:WORD_VERSES], "d": e["d"]}
+        if e["lang"] == "grc":
+            entry["tr"] = translit.greek(lemma)
+        slug = terms.get(("hbo" if e["lang"] == "arc" else e["lang"], e["s"]))
+        if slug:
+            entry["t"] = slug
+        out[lemma] = entry
+    return out
+
+
+def word_files():
+    """{path: text} for the WORD_SHARDS shards of word_entries()."""
+    shards = {}
+    for lemma, entry in word_entries().items():
+        shards.setdefault(word_shard(lemma), {})[lemma] = entry
+    return {f"{WORDS_DIR}/{n}.json": json.dumps(shards.get(n, {}), ensure_ascii=False, separators=(",", ":"))
+            for n in range(WORD_SHARDS)}
+
+
+def word_url(lang, lemma=None):
+    return url(lang, "/word/") + (f"?w={urllib.parse.quote(lemma)}" if lemma else "")
+
+
+def word_page(lang="en"):
+    ui = catalog(lang)["word.ui"]
+    reader = catalog(lang)["reader.ui"]
+    data = {"lang": lang, "ui": ui, "category": reader["category"], "notesLanguage": reader.get("notes_language", ""),
+            "wordsUrl": f"/{WORDS_DIR}/", "shards": WORD_SHARDS, "chapterUrl": url(lang, "/"),
+            "termUrl": url(lang, "/terms/"), "searchUrl": url(lang, "/search/"),
+            "books": {code: chapter_book(code, lang) for code in refs.BOOK_CODES},
+            "bookNames": {code: BOOK_NAMES[code][lang] for code in refs.BOOK_CODES if code in BOOK_NAMES}}
+    blob = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+    body = f"""
+<header class="page-head word-head">
+<p class="eyebrow">{t(lang, "word.title")}</p>
+<h1 id="word-title">{t(lang, "word.heading")}</h1>
+<p class="dek" id="word-dek">{t(lang, "word.dek")}</p>
+</header>
+<noscript><p class="notice">{t(lang, "word.noscript")}</p></noscript>
+<p class="sr-only" id="word-status" aria-live="polite"></p>
+<div class="word" id="word"></div>
+<script type="application/json" id="word-data">{blob}</script>
+<script src="{asset("word.js")}"></script>
+"""
+    return page(lang, t(lang, "word.title"), body, path="/word/", current="/read/", description=t(lang, "word.dek"))
+
+
+# The comparison page (/compare/, web/compare.js): one verse of ours at its
+# three levels beside public-domain Bibles, with the decisions that say why
+# ours reads as it does. One page per language takes the verse from its
+# address (?v=JHN.3.16), so there is no page per verse. Our text and the
+# decisions come from the verse's chapter page (its owb-data); the other
+# Bibles from /editions/<BOOK>/<chapter>.json, in our verse numbering.
+# They are for comparison only, never the basis of our wording.
+EDITIONS_DIR = "editions"
+EDITIONS = (("bsb", "Berean Standard Bible", "en"), ("web", "World English Bible", "en"),
+            ("rv1909", "Reina-Valera 1909", "es"))
+
+
+def editions_files():
+    """{path: text} for every chapter: each edition's verses there."""
+    by_chapter = {}
+    for code, _, _ in EDITIONS:
+        for ref, text in comparison_ours(code).items():
+            by_chapter.setdefault((ref.book, ref.chapter), {}).setdefault(code, {})[str(ref.verse)] = text
+    return {f"{EDITIONS_DIR}/{book}/{chapter}.json": json.dumps(entry, ensure_ascii=False, separators=(",", ":"))
+            for (book, chapter), entry in by_chapter.items()}
+
+
+def compare_url(lang, vid=None):
+    return url(lang, "/compare/") + (f"?v={vid}" if vid else "")
+
+
+def compare_page(lang="en"):
+    ui = catalog(lang)["compare.ui"]
+    reader = catalog(lang)["reader.ui"]
+    # The Spanish page sets its own Bible first.
+    editions = sorted(EDITIONS, key=lambda e: e[2] != lang)
+    data = {"lang": lang, "ui": ui, "levels": catalog(lang)["levels"],
+            "category": reader["category"], "notesLanguage": reader.get("notes_language", ""),
+            "editions": [list(e) for e in editions], "editionsUrl": f"/{EDITIONS_DIR}/",
+            "chapterUrl": url(lang, "/"), "books": {code: chapter_book(code, lang) for code in refs.BOOK_CODES},
+            "names": book_refs(lang)["names"], "chapters": book_refs(lang)["chapters"],
+            "counts": BOOK_CHAPTERS,
+            "start": "JHN.3.16"}
+    blob = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+    body = f"""
+<header class="page-head compare-head">
+<p class="eyebrow">{t(lang, "compare.title")}</p>
+<h1 id="cmp-title">{t(lang, "compare.heading")}</h1>
+<p class="dek">{t(lang, "compare.dek")}</p>
+</header>
+<form class="search-box cmp-form" id="cmp-form" action="{url(lang, "/compare/")}" method="get">
+{icon(ICONS["search"], 20)}
+<input type="search" name="ref" id="cmp-ref" autocomplete="off" spellcheck="false" placeholder="{html.escape(ui["pick"])}" aria-label="{html.escape(ui["pick"])}">
+</form>
+<noscript><p class="notice">{t(lang, "compare.noscript")}</p></noscript>
+<p class="sr-only" id="cmp-status" aria-live="polite"></p>
+<div class="cmp" id="cmp"></div>
+<script type="application/json" id="cmp-data">{blob}</script>
+<script src="{asset("markup.js")}"></script>
+<script src="{asset("compare.js")}"></script>
+"""
+    return page(lang, t(lang, "compare.title"), body, path="/compare/", current="/read/",
+                description=t(lang, "compare.dek"))
 
 
 def verse_text(r, vid, lang="en"):
@@ -2175,8 +2367,81 @@ def verse_of_the_day(lang="en"):
 <blockquote><p class="votd-text"{la}>{html.escape(v["t"])}</p>
 <footer><a class="votd-ref" href="{v["u"]}">{html.escape(v["r"])}</a>
 <a class="votd-why" href="{v["u"]}">{t(lang, "home.votd_why")} {icon(ICONS["arrow"], 15)}</a></footer></blockquote>
+<p class="votd-feed"><a href="{votd_feed_url(lang)}">{icon(ICONS["feed"], 15)}{t(lang, "home.votd_feed")}</a></p>
 <script type="application/json" class="votd-data">{data}</script>
 </section>"""
+
+
+# The verse of the day as an Atom feed, one per language: the last
+# VOTD_FEED_DAYS days up to the day the site was built, the same verse each
+# day as the home page shows. Each entry has the verse, the notes that say
+# why it reads as it does, and a link to the verse in the reader, which
+# opens its reasoning. The site is rebuilt on every deploy, so the feed is
+# as fresh as the last one.
+VOTD_FEED_DAYS = 14
+
+
+def votd_feed_url(lang):
+    return url(lang, "/verse-of-the-day.xml")
+
+
+def votd_for_day(day):
+    """The verse id of the day (a datetime.date): the home page's rule."""
+    return VERSES_OF_THE_DAY[(day - datetime.date(1970, 1, 1)).days % len(VERSES_OF_THE_DAY)]
+
+
+def votd_notes(r, lang):
+    """The decisions a verse of the day's entry explains it with: those the
+    reader footnotes (every meaning decision with a footnote, and this
+    language's Balanced wording decisions with one), or else its meaning
+    decisions; at most three."""
+    noted = [d for d in r["decisions"] if d.get("footnote") and (
+        d["layer"] == "meaning" or (d.get("language") == text_lang(r, lang) and "B" in d.get("levels", [])))]
+    return (noted or [d for d in r["decisions"] if d["layer"] == "meaning"])[:3]
+
+
+def votd_feed(lang="en", today=None):
+    """The Atom feed of the verse of the day in lang."""
+    def esc(text):
+        return html.escape(text, quote=False)
+    today = today or datetime.date.today()
+    ui = catalog(lang)["reader.ui"]
+    entries = []
+    for back in range(VOTD_FEED_DAYS):
+        day = today - datetime.timedelta(days=back)
+        vid = votd_for_day(day)
+        ref = refs.parse(vid)
+        r = next(r for r in load_chapter(ref.book, ref.chapter)[0] if vid in r["refs"])
+        name = f"{chapter_book(ref.book, lang)} {ref.chapter}:{ref.verse}"
+        link = SITE_URL + url(lang, chapter_url(ref.book, ref.chapter)) + f"#v{ref.verse}"
+        tl = text_lang(r, lang)
+        body = [f"<blockquote{lang_attr(tl, lang)}><p>{html.escape(verse_text(r, vid, lang))}</p></blockquote>"]
+        notes = votd_notes(r, lang)
+        if notes:
+            body.append(f"<p><strong>{html.escape(t(lang, 'home.votd_why'))}</strong></p>")
+            if ui.get("notes_language"):
+                body.append(f"<p><em>{html.escape(ui['notes_language'])}</em></p>")
+            items = "".join(
+                f"<li><strong>{html.escape(plain(d['choice']))}</strong>"
+                + (f" ({html.escape(ui['category'][d['category']])})" if d["category"] in ui.get("category", {}) else "")
+                + f": {html.escape(plain(d['reason']))}</li>" for d in notes)
+            body.append(f'<ul lang="en">{items}</ul>')
+        body.append(f'<p><a href="{html.escape(link)}">{html.escape(t(lang, "votd.read"))}</a></p>')
+        entries.append(
+            f"<entry><title>{esc(name)}</title>"
+            f'<link href="{html.escape(link)}"/>'
+            f"<id>{esc(SITE_URL + votd_feed_url(lang))}#{day.isoformat()}</id>"
+            f"<updated>{day.isoformat()}T00:00:00Z</updated>"
+            f'<content type="html">{esc("".join(body))}</content></entry>\n')
+    return ('<?xml version="1.0" encoding="utf-8"?>\n'
+            f'<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{lang}">\n'
+            f"<title>{esc(SITE_NAME + ' · ' + t(lang, 'home.votd'))}</title>\n"
+            f'<link href="{html.escape(SITE_URL + url(lang, "/"))}"/>\n'
+            f'<link rel="self" href="{html.escape(SITE_URL + votd_feed_url(lang))}"/>\n'
+            f"<id>{esc(SITE_URL + votd_feed_url(lang))}</id>\n"
+            f"<updated>{today.isoformat()}T00:00:00Z</updated>\n"
+            f"<author><name>{SITE_NAME}</name></author>\n"
+            f"{''.join(entries)}</feed>\n")
 
 
 def data_html(lang="en"):
@@ -2278,7 +2543,9 @@ def home_page(lang="en"):
 </section>
 {plans_script()}
 """
-    return page(lang, SITE_NAME, body, path="/", current="/")
+    feed = (f'\n<link rel="alternate" type="application/atom+xml" '
+            f'title="{html.escape(SITE_NAME + " · " + t(lang, "home.votd"))}" href="{votd_feed_url(lang)}">')
+    return page(lang, SITE_NAME, body, path="/", current="/", head=feed)
 
 
 def about_page(lang="en"):
@@ -3497,7 +3764,8 @@ def service_worker():
     shell = [asset(n) for n in ("style.css", "site.js", "search.js", "markup.js", "reader.js", "plans.js")]
     shell += ["/favicon.svg", "/manifest.webmanifest"] + [url(lang, "/offline/") for lang in LANGUAGES]
     offline = {("" if lang == "en" else lang): url(lang, "/offline/") for lang in LANGUAGES}
-    current = [asset(n) for n in ("style.css", "site.js", "search.js", "markup.js", "reader.js", "account.js", "plans.js")]
+    current = [asset(n) for n in ("style.css", "site.js", "search.js", "markup.js", "reader.js", "account.js", "plans.js",
+                                  "compare.js", "word.js")]
     current += [word_uses()[1]] + [search_ui_url(lang) for lang in LANGUAGES]
     current += [plans_json_url(lang) for lang in LANGUAGES]
     # The search indexes, kept by the worker only while search runs in the
@@ -3756,6 +4024,8 @@ def build(out):
         add("/about/", about_page(lang))
         add("/about/beliefs/", beliefs_page(lang))
         add("/search/", search_page(lang))
+        add("/compare/", compare_page(lang))
+        add("/word/", word_page(lang))
         plans = available_plans(lang)
         add("/plans/", plans_page(lang, plans), index=bool(plans))
         add("/terms/", terms_page(lang))
@@ -3770,6 +4040,7 @@ def build(out):
         add("/articles/", articles_page(articles, lang), index=bool(articles))
         if articles:
             feeds[feed_url(lang).lstrip("/")] = articles_feed(articles, lang)
+        feeds[votd_feed_url(lang).lstrip("/")] = votd_feed(lang)
         for article in articles:
             add(article_url(article), article_page(article, articles, lang))
         add("/account/", account_page(lang), index=False)
@@ -3795,6 +4066,8 @@ def build(out):
     files["sw.js"] = service_worker()
     files["word-uses.json"] = word_uses()[0]
     files.update(verse_files())
+    files.update(editions_files())
+    files.update(word_files())
     for lang in LANGUAGES:
         files[f"search-{lang}.json"] = search_index(lang)
         files[f"search-ui-{lang}.json"] = search_ui(lang)
@@ -3803,12 +4076,13 @@ def build(out):
         path = out / rel
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(text, encoding="utf-8")
-    for name in ("style.css", "markup.js", "reader.js", "site.js", "account.js", "search.js", "plans.js"):
+    for name in ("style.css", "markup.js", "reader.js", "site.js", "account.js", "search.js", "plans.js", "compare.js",
+                 "word.js"):
         shutil.copy(ROOT / "web" / name, out / name)
     shutil.copytree(ROOT / "web" / "fonts", out / "fonts")
     shutil.copytree(ROOT / "web" / "icons", out / "icons")
     shutil.copytree(OG, out / "og", ignore=shutil.ignore_patterns("*.digest"))
-    return sorted(files) + ["markup.js", "plans.js", "reader.js", "search.js", "site.js", "style.css"]
+    return sorted(files) + ["compare.js", "word.js", "markup.js", "plans.js", "reader.js", "search.js", "site.js", "style.css"]
 
 
 def main():

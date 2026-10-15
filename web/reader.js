@@ -1327,6 +1327,10 @@
     actions.appendChild(linkButton(currentVerse));
     actions.appendChild(imageButton(currentVerse));
     actions.appendChild(citeButton());
+    // The verse beside other Bibles, with the reasoning (/compare/).
+    var compare = el("a", "copy-link", t("compare"));
+    compare.href = DATA.compare_url + "?v=" + verseId(currentVerse || verseOf(current.refs[0]));
+    actions.appendChild(compare);
     var ask = askLink(null);
     ask.classList.add("copy-link");
     actions.appendChild(ask);
@@ -1385,6 +1389,10 @@
         info.appendChild(el("p", "wi-grammar", DATA.grammar[key][settings.lang]));
         info.appendChild(el("p", "wi-gloss", "\u201c" + (HEBREW ? word.gloss.replace(/\./g, " ") : word.gloss) + "\u201d"));
         info.appendChild(drawUses(word));
+        // Everything about this dictionary form (/word/).
+        var more = el("a", "fn-pop-more", t("word_page") + " \u2192");
+        more.href = DATA.word_url + "?w=" + encodeURIComponent(word.lemma);
+        info.appendChild(more);
         info.hidden = false;
         var ids = [];
         current.decisions.forEach(function (d) { if (d.tokens.includes(word.id)) ids = ids.concat(d.tokens); });
