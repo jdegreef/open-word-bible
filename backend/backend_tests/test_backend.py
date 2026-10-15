@@ -102,12 +102,34 @@ class ImportContentTest(TestCase):
         s.literal_gloss = "changed"
         s.save()
         s.renderings.update(text="changed")
-        import_content(*john)
+        import_content("--all", *john)
         self.assertEqual(dict(Sentence.objects.values_list("record_id", "id")), ids)
         self.assertEqual((Rendering.objects.count(), Decision.objects.count()), counts)
         s.refresh_from_db()
         self.assertNotEqual(s.literal_gloss, "changed")
         self.assertFalse(s.renderings.filter(text="changed").exists())
+
+    def test_reimport_skips_unchanged_files(self):
+        # A deploy imports only the files changed since the last import.
+        john = content_files("JHN/JHN.1.1-18.json")
+        import_content(*john)
+        Sentence.objects.filter(record_id="JHN.1.12.s1").update(literal_gloss="changed")
+        out = io.StringIO()
+        import_content(*john, stdout=out)
+        self.assertIn("0 records imported; 1 files unchanged", out.getvalue())
+        self.assertEqual(Sentence.objects.get(record_id="JHN.1.12.s1").literal_gloss, "changed")
+        # A changed file is imported again.
+        data = json.loads(Path(john[0]).read_text())
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "JHN.1.1-18.json"
+            path.write_text(json.dumps(data))
+            import_content(str(path))
+            self.assertNotEqual(Sentence.objects.get(record_id="JHN.1.12.s1").literal_gloss, "changed")
+            Sentence.objects.filter(record_id="JHN.1.12.s1").update(literal_gloss="changed")
+            data["records"][0]["literal_gloss"] += " (edited)"
+            path.write_text(json.dumps(data))
+            import_content(str(path))
+        self.assertNotEqual(Sentence.objects.get(record_id="JHN.1.12.s1").literal_gloss, "changed")
 
     def test_file_with_an_unknown_word_is_not_imported(self):
         data = json.loads((CONTENT / "JHN" / "JHN.1.1-18.json").read_text())

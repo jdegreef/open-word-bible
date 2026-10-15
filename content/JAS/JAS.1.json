@@ -39,15 +39,15 @@
           "B": "De Santiago, siervo de Dios y del Señor {{christos:Jesucristo|Jesús, el Mesías}}. A las doce tribus dispersas entre las naciones: saludos.",
           "R": "Esta carta es de Santiago, siervo de Dios y del Señor {{christos:Jesucristo|Jesús, el Mesías}}. Escribo a las doce tribus del pueblo de Dios, que viven dispersas por muchas tierras. ¡Saludos!"
         },
-        "fr": {
-          "L": "Jacques, esclave de Dieu et du Seigneur Jésus {{christos:Christ|Messie}}, aux douze tribus [qui sont] dans la dispersion : salut.",
-          "B": "De la part de Jacques, serviteur de Dieu et du Seigneur Jésus {{christos:Christ|le Messie}}, aux douze tribus dispersées parmi les nations : salutations.",
-          "R": "Cette lettre vient de Jacques, serviteur de Dieu et du Seigneur Jésus {{christos:Christ|le Messie}}. J’écris aux douze tribus du peuple de Dieu, qui vivent dispersées dans de nombreux pays. Je vous salue !"
-        },
         "sw": {
           "L": "Yakobo, mtumwa wa Mungu na wa Bwana Yesu {{christos:Kristo|Masihi}}, kwa makabila kumi na mawili yaliyo katika utawanyiko: salamu.",
           "B": "Kutoka kwa Yakobo, mtumishi wa Mungu na wa Bwana Yesu {{christos:Kristo|Masihi}}. Kwa makabila kumi na mawili yaliyotawanyika kati ya mataifa: salamu.",
           "R": "Barua hii inatoka kwa Yakobo, mtumishi wa Mungu na wa Bwana Yesu {{christos:Kristo|Masihi}}. Ninawaandikia makabila kumi na mawili ya watu wa Mungu, ambao wametawanyika katika nchi nyingi. Salamu!"
+        },
+        "fr": {
+          "L": "Jacques, esclave de Dieu et du Seigneur Jésus {{christos:Christ|Messie}}, aux douze tribus [qui sont] dans la dispersion : salut.",
+          "B": "De la part de Jacques, serviteur de Dieu et du Seigneur Jésus {{christos:Christ|le Messie}}, aux douze tribus dispersées parmi les nations : salut.",
+          "R": "Cette lettre vient de Jacques, serviteur de Dieu et du Seigneur Jésus {{christos:Christ|le Messie}}. J’écris aux douze tribus du peuple de Dieu, qui sont dispersées dans de nombreux pays. Je vous salue !"
         }
       },
       "decisions": [
@@ -208,48 +208,6 @@
           "footnote": false
         },
         {
-          "id": "r-fr-1",
-          "layer": "rendering",
-          "language": "fr",
-          "levels": [
-            "L",
-            "B",
-            "R"
-          ],
-          "category": "setting_alternative",
-          "tokens": [
-            "n59001001006"
-          ],
-          "choice": "\"Jésus {{christos:Christ|Messie}}\" (L); \"Jésus {{christos:Christ|le Messie}}\" (B, R); the article outside the span elsewhere, \"le {{christos:Christ|Messie}}\" (for the whole book)",
-          "alternatives": [
-            "\"Jésus-Christ\" with no setting"
-          ],
-          "reason": "As in Colossians and Hebrews: French writes the name without the usual hyphen of \"Jésus-Christ\" so that both options read naturally; Balanced and Readable give the alternative its article (\"Jésus le Messie\"), as the English does.",
-          "uncertain": false,
-          "footnote": false
-        },
-        {
-          "id": "r-fr-2",
-          "layer": "rendering",
-          "language": "fr",
-          "levels": [
-            "L",
-            "B",
-            "R"
-          ],
-          "category": "word_choice",
-          "tokens": [
-            "n59001001007"
-          ],
-          "choice": "esclave (L); serviteur (B, R) (for the whole book)",
-          "alternatives": [
-            "serviteur at every level"
-          ],
-          "reason": "As the English: Literal keeps the word for someone owned by a master (m1); Balanced and Readable say \"serviteur\", the usual French word for one who belongs to God's service.",
-          "uncertain": false,
-          "footnote": false
-        },
-        {
           "id": "r-sw-1",
           "layer": "rendering",
           "language": "sw",
@@ -286,6 +244,70 @@
             "slave"
           ],
           "reason": "\"Servant\" in Balanced and Readable, as the style guide has it; the meaning decision (m1) keeps that the person was owned, and Literal keeps \"slave\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n59001001006"
+          ],
+          "choice": "Jésus {{christos:Christ|Messie}} (L); Jésus {{christos:Christ|le Messie}} (B, R); le {{christos:Christ|Messie}} with the article outside the span; the deity_pronoun span on every French pronoun for God or Christ, subject \"il\" included (for the whole letter)",
+          "alternatives": [
+            "Jésus-Christ with no setting"
+          ],
+          "reason": "As in Colossians and Hebrews. French writes \"Jésus\" and the title without the usual hyphen so that both options read naturally. French must write a subject pronoun, so \"il\" for God or Christ carries the span wherever the English \"he\" does, and also where French needs a pronoun the English lacks.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-2",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n59001001015"
+          ],
+          "choice": "passé composé for past events at every level; passé simple at Literal and Balanced only for the stories retold in 2:21-25 and 5:17-18 (for the whole letter)",
+          "alternatives": [
+            "passé simple throughout at Literal and Balanced"
+          ],
+          "reason": "James is a letter of exhortation: he speaks to his readers, and French uses the tenses of speech for that. The passé simple is kept for the short narratives about Abraham, Rahab and Elijah, where Readable still uses the passé composé, as the French style guide sets out.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-3",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59001001015"
+          ],
+          "choice": "salut (L, B); Je vous salue ! (R)",
+          "alternatives": [
+            "salutations",
+            "réjouissez-vous"
+          ],
+          "reason": "The word is the ordinary greeting at the head of a Greek letter (m4), not a call to rejoice; French \"salut\" is the short traditional form of a written greeting.",
           "uncertain": false,
           "footnote": false
         }
@@ -335,15 +357,15 @@
           "B": "Hermanos míos, cuando {{plural_you:se encuentren|os encontréis}} en pruebas de toda clase, {{plural_you:ténganlo|tenedlo}} por motivo de gran gozo, \\v 3 porque {{plural_you:saben|sabéis}} que la prueba por la que pasa {{plural_you:su|vuestra}} fe produce perseverancia.",
           "R": "Hermanos míos, {{plural_you:les|os}} vendrán dificultades de muchas clases. Cuando lleguen, {{plural_you:estén|estad}} llenos de alegría. \\v 3 {{plural_you:Ya saben|Ya sabéis}} que, cuando {{plural_you:su|vuestra}} fe es puesta a prueba, esa prueba hace crecer en {{plural_you:ustedes|vosotros}} la perseverancia."
         },
-        "fr": {
-          "L": "Tenez-[le] pour une joie entière, mes {{gender:frères et sœurs|frères}}, quand vous tombez dans des épreuves diverses, \\v 3 sachant que la mise à l’épreuve de votre foi produit l’endurance ;",
-          "B": "Mes {{gender:frères et sœurs|frères}}, quand vous vous trouvez face à des épreuves de toutes sortes, voyez-y un motif de grande joie, \\v 3 car vous savez que votre foi, mise à l’épreuve, produit l’endurance.",
-          "R": "Mes {{gender:frères et sœurs|frères}}, toutes sortes de moments difficiles vont venir dans votre vie. Quand ils arrivent, soyez pleins de joie. \\v 3 Vous le savez : quand votre foi est mise à l’épreuve, cela fait grandir votre endurance."
-        },
         "sw": {
           "L": "Hesabuni kuwa ni furaha kamili, ndugu zangu, kila mnapoingia katika majaribu ya kila aina, \\v 3 mkitambua kwamba kupimwa kwa imani yenu hutokeza ustahimilivu;",
           "B": "Ndugu zangu, kila mnapojikuta katika majaribu ya kila namna, yaoneni kuwa sababu ya furaha kubwa, \\v 3 kwa maana mnajua kwamba imani yenu inapopimwa, upimaji huo hutokeza ustahimilivu.",
           "R": "Ndugu zangu, mtapatwa na taabu za aina nyingi. Zikiwajia, furahini sana. \\v 3 Mnajua kwamba imani yenu inapojaribiwa, majaribu hayo huwajenga ili mweze kustahimili zaidi."
+        },
+        "fr": {
+          "L": "Estimez [que c’est] une joie totale, mes {{gender:frères et sœurs|frères}}, quand vous tombez dans des épreuves diverses, \\v 3 sachant que la mise à l’épreuve de votre foi produit l’endurance ;",
+          "B": "Mes {{gender:frères et sœurs|frères}}, quand vous traversez des épreuves de toutes sortes, considérez-le comme un motif de grande joie, \\v 3 car vous savez que votre foi, quand elle est mise à l’épreuve, produit l’endurance.",
+          "R": "Mes {{gender:frères et sœurs|frères}}, vous allez connaître toutes sortes de moments difficiles. Quand ils arrivent, soyez pleins de joie. \\v 3 Vous le savez : quand votre foi est mise à l’épreuve, cette épreuve fait grandir en vous l’endurance."
         }
       },
       "decisions": [
@@ -525,48 +547,6 @@
           "footnote": false
         },
         {
-          "id": "r-fr-1",
-          "layer": "rendering",
-          "language": "fr",
-          "levels": [
-            "L",
-            "B",
-            "R"
-          ],
-          "category": "setting_alternative",
-          "tokens": [
-            "n59001002004",
-            "n59001002005"
-          ],
-          "choice": "{{gender:frères et sœurs|frères}} for the readers (for the whole book)",
-          "alternatives": [],
-          "reason": "As in English, James speaks to the whole church, men and women; \"frères\" stays available as the traditional form. Words that agree with it need no span (\"mes frères et sœurs bien-aimés\" / \"mes frères bien-aimés\").",
-          "uncertain": false,
-          "footnote": false
-        },
-        {
-          "id": "r-fr-2",
-          "layer": "rendering",
-          "language": "fr",
-          "levels": [
-            "L",
-            "B",
-            "R"
-          ],
-          "category": "word_choice",
-          "tokens": [
-            "n59001003009"
-          ],
-          "choice": "l'endurance, and the verb endurer, at every level (for the whole book: 1:4, 1:12, 5:11)",
-          "alternatives": [
-            "la persévérance",
-            "la patience"
-          ],
-          "reason": "As the English \"endurance\": one word throughout lets the thread of the letter be followed. \"La patience\" sounds passive, and \"la persévérance\" says keeping on at a task more than holding firm under pressure (m4).",
-          "uncertain": false,
-          "footnote": false
-        },
-        {
           "id": "r-sw-1",
           "layer": "rendering",
           "language": "sw",
@@ -627,6 +607,50 @@
           "reason": "\"Saburi\" is the traditional word but sounds like quiet waiting. \"Ustahimilivu\" (and the verb \"kustahimili\") is holding out under a load, as the meaning decision says, and is used for this word family throughout the letter, as in Romans 2:7.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n59001002004",
+            "n59001002005"
+          ],
+          "choice": "{{gender:frères et sœurs|frères}} for the readers (for the whole letter)",
+          "alternatives": [],
+          "reason": "As in English, James addresses the church as men and women together; \"frères\" stays available as the traditional form. Words that agree with it follow the masculine plural in both options and need no span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-2",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59001002007",
+            "n59001003009"
+          ],
+          "choice": "épreuves (1:2, 1:12); tenter, tentation (1:13-14); l’endurance at every level (for the whole letter)",
+          "alternatives": [
+            "tentations in 1:2",
+            "persévérance",
+            "patience"
+          ],
+          "reason": "The same Greek word family covers hardship that tests faith and the pull toward sin. Here it means trials (m1), so French says \"épreuves\"; in 1:13-14, where James speaks of being drawn toward evil, it says \"tenter\". \"Endurance\" is the word Hebrews uses for holding firm under pressure (m4); \"patience\" is kept for the other word in 5:7-10.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -669,15 +693,15 @@
           "B": "{{plural_you:Dejen|Dejad}} que la perseverancia lleve su obra hasta el final, para que {{plural_you:sean|seáis}} maduros y completos, sin que {{plural_you:les|os}} falte nada.",
           "R": "{{plural_you:Sigan|Seguid}} perseverando hasta que la perseverancia termine su obra en {{plural_you:ustedes|vosotros}}. Entonces {{plural_you:serán|seréis}} personas maduras y completas, sin que {{plural_you:les|os}} falte nada."
         },
-        "fr": {
-          "L": "Mais que l’endurance ait une œuvre parfaite, afin que vous soyez parfaits et entiers, ne manquant de rien.",
-          "B": "Laissez l’endurance mener son œuvre jusqu’au bout, afin que vous soyez mûrs et entiers, sans que rien ne vous manque.",
-          "R": "Continuez à tenir bon jusqu’à ce que l’endurance ait fini son travail en vous. Alors vous serez vraiment adultes dans la foi et entiers, et il ne vous manquera rien."
-        },
         "sw": {
           "L": "Na ustahimilivu uwe na kazi iliyo kamilifu, ili mwe wakamilifu na kamili, mkiwa hampungukiwi na kitu chochote.",
           "B": "Acheni ustahimilivu ukamilishe kazi yake, ili mkomae na kuwa kamili, bila kukosa chochote.",
           "R": "Endeleeni kustahimili mpaka ustahimilivu umalize kazi yake ndani yenu. Ndipo mtakuwa mmekomaa kabisa na kamili, bila kukosa chochote."
+        },
+        "fr": {
+          "L": "Et que l’endurance ait une œuvre accomplie, afin que vous soyez accomplis et entiers, ne manquant de rien.",
+          "B": "Laissez l’endurance mener son œuvre jusqu’au bout, afin que vous soyez mûrs et entiers, sans que rien ne vous manque.",
+          "R": "Continuez à tenir bon jusqu’à ce que l’endurance ait fini son œuvre en vous. Alors vous serez pleinement mûrs et entiers, et il ne vous manquera rien."
         }
       },
       "decisions": [
@@ -748,27 +772,6 @@
           "footnote": false
         },
         {
-          "id": "r-fr-1",
-          "layer": "rendering",
-          "language": "fr",
-          "levels": [
-            "L",
-            "B",
-            "R"
-          ],
-          "category": "word_choice",
-          "tokens": [
-            "n59001004014"
-          ],
-          "choice": "manquer (\"ne manquant de rien\", \"sans que rien ne vous manque\"), the same verb as \"manque de sagesse\" in verse 5",
-          "alternatives": [
-            "\"sans aucun défaut\""
-          ],
-          "reason": "The word leads into verse 5 (m3); French can keep the link with one verb at every level.",
-          "uncertain": false,
-          "footnote": false
-        },
-        {
           "id": "r-sw-1",
           "layer": "rendering",
           "language": "sw",
@@ -784,6 +787,26 @@
           "choice": "kupungukiwa (L); kukosa (B, R)",
           "alternatives": [],
           "reason": "The word for \"lacking\" here is picked up at once in verse 5 (see the meaning decision). Each level uses one verb in both verses: \"hampungukiwi\" / \"amepungukiwa\" at Literal, \"bila kukosa\" / \"anakosa\" at Balanced and Readable.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59001004005",
+            "n59001004009"
+          ],
+          "choice": "accomplie, accomplis (L); son œuvre jusqu’au bout, mûrs (B, R)",
+          "alternatives": [
+            "parfaite, parfaits"
+          ],
+          "reason": "\"Parfait\" would suggest being without fault; the word means complete, having reached its goal (m1). As in Colossians and Hebrews, Literal says \"accompli\" and keeps the repeated word.",
           "uncertain": false,
           "footnote": false
         }
@@ -833,15 +856,15 @@
           "B": "Si a alguno de {{plural_you:ustedes|vosotros}} le falta sabiduría, que se la pida a Dios, que da a todos con mano abierta y sin reprender, y se le dará.",
           "R": "¿Alguno de {{plural_you:ustedes|vosotros}} necesita sabiduría? Que se la pida a Dios. Dios da con gusto a todos, y no regaña a nadie por pedir. Dios le dará sabiduría."
         },
-        "fr": {
-          "L": "Et si quelqu’un d’entre vous manque de sagesse, qu’il [la] demande au Dieu qui donne à tous généreusement et sans faire de reproche, et elle lui sera donnée ;",
-          "B": "Si la sagesse vous manque, demandez-la à Dieu, qui donne à tous d’une main ouverte et sans faire de reproches, et elle vous sera donnée.",
-          "R": "Avez-vous besoin de sagesse ? Alors demandez-la à Dieu. Dieu donne à tout le monde sans compter, et {{deity_pronoun:il|Il}} ne fait pas de reproches à ceux qui demandent. Il vous donnera la sagesse."
-        },
         "sw": {
           "L": "Na kama yeyote kati yenu amepungukiwa na hekima, aombe kwa Mungu anayewapa wote kwa moyo mkunjufu bila kulaumu, naye atapewa;",
           "B": "Ikiwa mmoja wenu anakosa hekima, amwombe Mungu, anayewapa watu wote kwa mkono wazi bila kuwasuta, naye atapewa.",
           "R": "Je, kuna yeyote kati yenu anayehitaji hekima? Basi amwombe Mungu. Mungu huwapa wote kwa moyo mkunjufu, wala hamkaripii mtu yeyote kwa kuomba. Atampa hekima."
+        },
+        "fr": {
+          "L": "Et si l’un de vous manque de sagesse, qu’il [la] demande au Dieu qui donne à tous généreusement et sans faire de reproche, et elle lui sera donnée ;",
+          "B": "Si l’un de vous manque de sagesse, qu’il la demande à Dieu, qui donne à tous sans compter et sans faire de reproches, et elle lui sera donnée.",
+          "R": "L’un de vous a-t-il besoin de sagesse ? Qu’il la demande à Dieu. Dieu donne volontiers à tout le monde, et {{deity_pronoun:il|Il}} ne fait de reproches à personne quand on {{deity_pronoun:lui|Lui}} demande quelque chose. Il lui donnera la sagesse."
         }
       },
       "decisions": [
@@ -975,27 +998,6 @@
           "footnote": false
         },
         {
-          "id": "r-fr-1",
-          "layer": "rendering",
-          "language": "fr",
-          "levels": [
-            "L"
-          ],
-          "category": "setting_alternative",
-          "tokens": [
-            "n59001005003",
-            "n59001005007",
-            "n59001005019"
-          ],
-          "choice": "\"quelqu'un … qu'il … lui\" with no gender span (for the whole book)",
-          "alternatives": [
-            "{{gender:qu'il ou elle|qu'il}}"
-          ],
-          "reason": "Where the English needs {{gender:them|him}} for a pronoun, French writes \"quelqu'un\", \"celui qui\", \"chacun\" and refers back to them with the ordinary generic \"il\", which already means anyone; the setting is kept for nouns French has to choose.",
-          "uncertain": false,
-          "footnote": false
-        },
-        {
           "id": "r-sw-1",
           "layer": "rendering",
           "language": "sw",
@@ -1014,6 +1016,29 @@
             "second person, as the English Balanced and Readable"
           ],
           "reason": "Swahili verbs do not mark gender, so the Swahili keeps James's third-person command (\"mmoja wenu ... amwombe Mungu\") at every level here and in verses 6-8, where the English Balanced and Readable turn to \"you\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n59001005003",
+            "n59001005007",
+            "n59001005019"
+          ],
+          "choice": "\"l’un de vous ... qu’il\", \"celui qui ... il\", \"chacun\", with no gender span (for the whole letter)",
+          "alternatives": [
+            "{{gender:qu’elle ou qu’il|qu’il}}"
+          ],
+          "reason": "Where the English needs {{gender:they|he}} for a pronoun, French keeps the third person of the Greek with the generic \"il\" that refers back to \"l’un de vous\", \"quelqu’un\" or \"celui qui\", which already mean anyone; the style guide adds no span there. The gender setting is kept for the nouns French has to choose (\"être humain\" / \"homme\").",
           "uncertain": false,
           "footnote": false
         }
@@ -1059,15 +1084,15 @@
           "B": "Pero ha de pedir con fe, sin vacilar. Quien vacila es como una ola en alta mar, que el viento arrastra y lanza de aquí para allá.",
           "R": "Pero cuando pida, que pida con fe y sin dudar. Quien duda es como una ola del mar. El viento sopla sobre ella y la empuja de un lado a otro."
         },
-        "fr": {
-          "L": "Mais qu’il demande avec foi, sans douter en rien, car celui qui doute ressemble à une vague de la mer, poussée par le vent et agitée ;",
-          "B": "Mais demandez avec foi, sans être partagés. Celui qui est partagé ressemble à une vague du large, que le vent pousse et ballotte en tous sens.",
-          "R": "Mais quand vous demandez, demandez avec foi, sans douter. Celui qui doute ressemble à une vague sur la mer : le vent la pousse et la ballotte dans tous les sens."
-        },
         "sw": {
           "L": "Lakini aombe kwa imani, bila kutilia shaka chochote, kwa maana anayetilia shaka ni kama wimbi la bahari linalosukumwa na upepo na kurushwa-rushwa;",
           "B": "Lakini aombe kwa imani, bila kusitasita. Mtu anayesitasita ni kama wimbi la bahari kuu, linalosukumwa na upepo na kutupwa huku na huku.",
           "R": "Lakini anapoomba, aombe kwa imani, bila kuwa na shaka. Mtu mwenye shaka ni kama wimbi la baharini. Upepo unalipiga na kulisukuma huku na huku."
+        },
+        "fr": {
+          "L": "Mais qu’il demande avec foi, sans douter en rien, car celui qui doute ressemble à une vague de la mer, poussée par le vent et agitée ;",
+          "B": "Mais qu’il demande avec foi, sans hésiter, car celui qui hésite est comme une vague du large, que le vent pousse et soulève de tous côtés.",
+          "R": "Mais quand vous demandez, demandez avec foi, sans douter. Celui qui doute est comme une vague sur la mer : le vent souffle sur elle et la pousse de tous côtés."
         }
       },
       "decisions": [
@@ -1159,26 +1184,6 @@
           "reason": "Balanced and Readable go on speaking to \"you\", as in verse 5.",
           "uncertain": false,
           "footnote": false
-        },
-        {
-          "id": "r-fr-1",
-          "layer": "rendering",
-          "language": "fr",
-          "levels": [
-            "B"
-          ],
-          "category": "word_choice",
-          "tokens": [
-            "n59001006006",
-            "n59001006009"
-          ],
-          "choice": "sans être partagés; celui qui est partagé (B)",
-          "alternatives": [
-            "sans hésiter; celui qui hésite"
-          ],
-          "reason": "The word means being divided in oneself (m1), as the English \"waver\" says. \"Partagé\" says it and prepares \"le cœur partagé\" of verse 8; Literal and Readable keep \"douter\".",
-          "uncertain": false,
-          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1228,15 +1233,15 @@
           "B": "{{gender:Una persona así|Un hombre así}} no debe esperar recibir nada del Señor. \\v 8 Tiene el ánimo dividido y es inestable en todo lo que hace.",
           "R": "{{gender:Una persona así|Un hombre así}} no debe pensar que el Señor le dará algo. \\v 8 Su corazón tira hacia dos lados a la vez, y nada de lo que hace es firme."
         },
-        "fr": {
-          "L": "Que {{gender:cet être humain|cet homme}}, en effet, ne s’imagine pas qu’il recevra quoi que ce soit du Seigneur, \\v 8 [c’est] {{gender:un être|un homme}} à l’âme double, instable dans toutes ses voies.",
-          "B": "Celui qui agit ainsi ne doit pas s’attendre à recevoir quoi que ce soit du Seigneur. \\v 8 Il a le cœur partagé, il est instable dans tout ce qu’il fait.",
-          "R": "Celui qui doute ainsi ne doit pas penser que le Seigneur lui donnera quoi que ce soit. \\v 8 Il est tiraillé de deux côtés à la fois, et rien de ce qu’il fait n’est stable."
-        },
         "sw": {
           "L": "Kwa maana mtu huyo asifikiri kwamba atapata chochote kutoka kwa Bwana, \\v 8 [akiwa] mtu mwenye nia mbili, asiye imara katika njia zake zote.",
           "B": "Mtu wa namna hiyo asitarajie kupokea chochote kutoka kwa Bwana. \\v 8 Yeye ni mwenye nia mbili, hana msimamo katika yote anayofanya.",
           "R": "Mtu kama huyo asifikiri kwamba Bwana atampa chochote. \\v 8 Moyo wake unavutwa pande mbili kwa wakati mmoja, na hakuna anachofanya kilicho imara."
+        },
+        "fr": {
+          "L": "Car que {{gender:cet être humain|cet homme}}-là ne s’imagine pas qu’il recevra quoi que ce soit du Seigneur, \\v 8 [lui qui est] {{gender:un être|un homme}} à l’âme double, instable dans toutes ses voies.",
+          "B": "{{gender:Un tel être humain|Un tel homme}} ne doit pas s’attendre à recevoir quoi que ce soit du Seigneur. \\v 8 Il a l’âme partagée, et il est instable dans tout ce qu’il fait.",
+          "R": "{{gender:Quelqu’un comme lui|Un homme comme lui}} ne doit pas penser que le Seigneur lui donnera quoi que ce soit. \\v 8 Il est tiré dans deux directions à la fois, et rien de ce qu’il fait n’est solide."
         }
       },
       "decisions": [
@@ -1388,20 +1393,18 @@
           "language": "fr",
           "levels": [
             "L",
-            "B",
-            "R"
+            "B"
           ],
-          "category": "setting_alternative",
+          "category": "word_choice",
           "tokens": [
-            "n59001007005",
-            "n59001007006",
-            "n59001008001"
+            "n59001008002"
           ],
-          "choice": "{{gender:cet être humain|cet homme}}, {{gender:un être|un homme}} (L); \"celui qui\" with no span (B, R)",
+          "choice": "à l’âme double (L); à l’âme partagée (B)",
           "alternatives": [
-            "{{gender:cette personne|cet homme}}"
+            "au cœur double",
+            "indécis"
           ],
-          "reason": "Literal keeps James's nouns and puts the setting on them; the words that agree stay masculine in both options. Balanced and Readable say \"celui qui\", which already means anyone, so they need no span where the English has several.",
+          "reason": "The word is built on \"soul\" and \"two\" (m1): a loyalty divided between God and something else. Literal keeps the picture; Balanced says it in current French. \"Indécis\" would make it a matter of temperament.",
           "uncertain": false,
           "footnote": false
         }
@@ -1455,15 +1458,15 @@
           "B": "{{gender:El hermano o la hermana|El hermano}} de condición humilde debe sentir orgullo de su alta posición, \\v 10 y el rico, de verse rebajado, porque el rico pasará como una flor silvestre.",
           "R": "{{gender:El hermano o la hermana|El hermano}} que es pobre y a quien la gente desprecia debe sentir orgullo, porque Dios le ha dado un lugar alto. \\v 10 Y el rico debe sentir orgullo de ser rebajado, porque los ricos desaparecerán, igual que una flor en el campo."
         },
-        "fr": {
-          "L": "Que le {{gender:frère ou la sœur|frère}} humble se glorifie de son élévation, \\v 10 et le riche, de son abaissement, parce que, comme la fleur de l’herbe, il passera.",
-          "B": "Que le {{gender:frère ou la sœur|frère}} de condition modeste tire sa fierté de son élévation, \\v 10 et le riche, de son abaissement, car le riche passera comme une fleur des champs.",
-          "R": "Parmi les {{gender:frères et sœurs|frères}}, celui qui est pauvre et méprisé doit être fier, car Dieu l’a élevé. \\v 10 Et celui qui est riche doit être fier d’avoir été abaissé, car les riches vont disparaître, comme une fleur dans l’herbe."
-        },
         "sw": {
           "L": "Na ndugu aliye wa hali ya chini ajivunie kuinuliwa kwake, \\v 10 na tajiri [ajivunie] kushushwa kwake, kwa sababu atapita kama ua la nyasi.",
           "B": "Ndugu aliye wa hali ya chini na ajivunie kuinuliwa juu, \\v 10 na tajiri ajivunie kushushwa chini, kwa sababu tajiri atapita kama ua la porini.",
           "R": "Ndugu aliye maskini na kudharauliwa na watu ajivunie kwamba Mungu amemwinua. \\v 10 Na tajiri ajivunie kushushwa chini, kwa sababu matajiri watatoweka kama ua katika nyasi."
+        },
+        "fr": {
+          "L": "Que {{gender:le frère ou la sœur|le frère}} de condition humble se glorifie de son élévation, \\v 10 et le riche de son abaissement, parce que, comme la fleur de l’herbe, il passera.",
+          "B": "{{gender:Le frère ou la sœur|Le frère}} de condition modeste doit se glorifier de son élévation, \\v 10 et le riche, de son abaissement, car le riche passera comme la fleur des champs.",
+          "R": "{{gender:Le frère ou la sœur|Le frère}} qui est pauvre et que les gens méprisent doit tirer fierté de la place d’honneur que Dieu lui donne. \\v 10 Et le riche doit tirer fierté d’être abaissé, car les riches disparaîtront comme une fleur dans l’herbe."
         }
       },
       "decisions": [
@@ -1598,46 +1601,6 @@
           "footnote": false
         },
         {
-          "id": "r-fr-1",
-          "layer": "rendering",
-          "language": "fr",
-          "levels": [
-            "L",
-            "B",
-            "R"
-          ],
-          "category": "word_choice",
-          "tokens": [
-            "n59001009001"
-          ],
-          "choice": "se glorifier (L); tirer sa fierté (B); être fier (R)",
-          "alternatives": [
-            "se vanter"
-          ],
-          "reason": "The verb is used in a good sense. \"Se vanter\" is always bad in French; \"se glorifier de\" can be good and stays close to the Greek at Literal, while Balanced and Readable say pride plainly, as the English does.",
-          "uncertain": false,
-          "footnote": false
-        },
-        {
-          "id": "r-fr-2",
-          "layer": "rendering",
-          "language": "fr",
-          "levels": [
-            "R"
-          ],
-          "category": "setting_alternative",
-          "tokens": [
-            "n59001009004"
-          ],
-          "choice": "Parmi les {{gender:frères et sœurs|frères}}, celui qui … (R)",
-          "alternatives": [
-            "{{gender:Un frère ou une sœur|Un frère}} pauvre et méprisé"
-          ],
-          "reason": "The English {{gender:brother or sister|brother}} would make the French adjectives that follow (\"méprisé\", \"fier\") agree with two genders at once. Readable puts the setting on the plural noun and goes on with the generic \"celui qui\"; Literal and Balanced use words that do not agree (\"humble\", \"de condition modeste\", \"son élévation\").",
-          "uncertain": false,
-          "footnote": false
-        },
-        {
           "id": "r-sw-1",
           "layer": "rendering",
           "language": "sw",
@@ -1676,6 +1639,49 @@
             "majani"
           ],
           "reason": "\"Majani\" can mean both grass and leaves; \"nyasi\" is grass only, the picture of Isaiah 40 (see the meaning decision). It is used again in verse 11.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n59001009004",
+            "n59001009005"
+          ],
+          "choice": "{{gender:le frère ou la sœur|le frère}}, with the article inside the span",
+          "alternatives": [
+            "{{gender:frère ou sœur|frère}} after a shared article"
+          ],
+          "reason": "French articles agree with each noun, so the span covers \"le frère ou la sœur\". The words around it are chosen so that they read the same with either option (\"humble\", \"modeste\", \"pauvre\", \"son élévation\", \"lui\"), where \"fier\" or \"élevé\" would have to agree.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-2",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59001009001"
+          ],
+          "choice": "se glorifier de (L, B); tirer fierté de (R)",
+          "alternatives": [
+            "être fier de",
+            "se vanter de"
+          ],
+          "reason": "\"Se glorifier\" is the traditional rendering of the verb and is kept at Literal and Balanced, as for this word family elsewhere; it reads the same with either option of the setting. Readable says \"tirer fierté\", since the boast is good: \"être fier\" would have to agree with \"la sœur\" in the inclusive option, and \"se vanter\" would sound like empty boasting.",
           "uncertain": false,
           "footnote": false
         }
@@ -1738,15 +1744,15 @@
           "B": "El sol sale con su calor ardiente y seca la hierba; su flor se cae y toda su hermosura se pierde. Así se marchitarán los ricos, aun mientras andan ocupados en sus negocios.",
           "R": "Sale el sol, y su calor quema la hierba hasta secarla. Sus flores se caen, y su belleza desaparece. Así les pasa a los ricos. Se marchitarán mientras siguen ocupados en sus negocios."
         },
-        "fr": {
-          "L": "Car le soleil s’est levé avec la chaleur brûlante et a desséché l’herbe, et sa fleur est tombée, et la beauté de son aspect a péri ; ainsi aussi le riche se flétrira dans ses allées et venues.",
-          "B": "Le soleil se lève avec sa chaleur brûlante et dessèche l’herbe ; sa fleur tombe, et toute sa beauté disparaît. C’est ainsi que le riche se fanera, au milieu même de ses affaires.",
-          "R": "Le soleil se lève, et sa chaleur brûle l’herbe, qui se dessèche. Ses fleurs tombent, et leur beauté disparaît. Les riches sont comme cela : ils vont se faner pendant qu’ils sont encore occupés à faire leurs affaires."
-        },
         "sw": {
           "L": "Kwa maana jua lilipanda pamoja na joto kali na kuzikausha nyasi, na ua lake likadondoka, na urembo wa sura yake ukaangamia; hivyo hivyo pia tajiri atanyauka katikati ya safari zake.",
           "B": "Jua linapanda na joto lake kali na kuzikausha nyasi; ua lake linadondoka, na urembo wake wote unatoweka. Ndivyo matajiri watakavyonyauka, hata wakiwa katikati ya shughuli zao.",
           "R": "Jua linapochomoza, joto lake huchoma nyasi hadi zinakauka. Maua yake huanguka, na uzuri wake unatoweka. Ndivyo ilivyo kwa matajiri. Watanyauka wakiwa bado wanahangaika na biashara zao."
+        },
+        "fr": {
+          "L": "Car le soleil s’est levé avec la chaleur brûlante et a desséché l’herbe, et sa fleur est tombée et la beauté de son aspect a péri ; ainsi aussi le riche se flétrira dans ses allées et venues.",
+          "B": "Le soleil se lève avec sa chaleur brûlante et dessèche l’herbe ; sa fleur tombe, et toute sa beauté disparaît. C’est ainsi que le riche se fanera, au milieu même de ses affaires.",
+          "R": "Le soleil se lève, et sa chaleur brûle l’herbe jusqu’à la dessécher. Ses fleurs tombent, et leur beauté disparaît. Il en est de même pour les riches : ils se faneront pendant qu’ils sont encore occupés par leurs affaires."
         }
       },
       "decisions": [
@@ -1828,22 +1834,18 @@
           "layer": "rendering",
           "language": "fr",
           "levels": [
-            "L",
-            "B",
-            "R"
+            "L"
           ],
-          "category": "word_order",
+          "category": "word_choice",
           "tokens": [
-            "n59001011001",
-            "n59001011009",
-            "n59001011016",
-            "n59001011023"
+            "n59001011030"
           ],
-          "choice": "passé composé at Literal; present at Balanced and Readable",
+          "choice": "ses allées et venues (L); ses affaires (B, R)",
           "alternatives": [
-            "passé simple at Literal"
+            "ses voyages",
+            "ses entreprises"
           ],
-          "reason": "The past tenses tell what always happens (m1). Literal keeps them as past, in the passé composé used throughout the letter; Balanced and Readable use the present, as French tells a general truth, like the English.",
+          "reason": "The word means a person’s goings, journeys and business (m3). \"Allées et venues\" keeps the picture of movement at Literal; Balanced and Readable say what the movement is about.",
           "uncertain": false,
           "footnote": false
         }
@@ -1892,15 +1894,15 @@
           "B": "Bienaventurado quien persevera en la prueba. Cuando haya pasado la prueba, recibirá la corona de la vida que Dios ha prometido a los que {{deity_pronoun:lo|Lo}} aman.",
           "R": "Dios bendice a quien sigue perseverando en las pruebas. Cuando haya pasado la prueba y se vea que su fe es verdadera, recibirá la corona de la vida. Dios ha prometido este premio a todos los que {{deity_pronoun:lo|Lo}} aman."
         },
-        "fr": {
-          "L": "Heureux {{gender:l’être humain|l’homme}} qui endure l’épreuve, car, après avoir été approuvé, il recevra la couronne de la vie, que [Dieu] a promise à ceux qui {{deity_pronoun:l’|L’}}aiment.",
-          "B": "Heureux celui qui endure l’épreuve jusqu’au bout ! Quand il aura fait ses preuves, il recevra la couronne de vie que Dieu a promise à ceux qui {{deity_pronoun:l’|L’}}aiment.",
-          "R": "Dieu bénit celui qui continue à endurer les épreuves. Quand il aura été mis à l’épreuve et qu’il aura montré que sa foi est vraie, il recevra la couronne de la vie. Dieu a promis ce prix à tous ceux qui {{deity_pronoun:l’|L’}}aiment."
-        },
         "sw": {
           "L": "Heri mtu anayestahimili jaribu, kwa maana baada ya kuthibitika kuwa halisi, atapewa taji la uzima, ambalo [Mungu] aliahidi kwa wale wanaompenda.",
           "B": "Heri mtu anayestahimili wakati wa jaribu. Akishathibitishwa kuwa halisi, atapokea taji la uzima ambalo Mungu amewaahidi wale wanaompenda.",
           "R": "Mungu humbariki mtu anayeendelea kustahimili majaribu. Mtu huyo akishajaribiwa na kuonekana kuwa wa kweli, atapokea taji la uzima. Mungu ameahidi tuzo hiyo kwa wote wanaompenda."
+        },
+        "fr": {
+          "L": "Bienheureux {{gender:celui|l’homme}} qui endure l’épreuve, car, devenu éprouvé, il recevra la couronne de la vie, que [Dieu] a promise à ceux qui {{deity_pronoun:l’|L’}}aiment.",
+          "B": "Bienheureux {{gender:celui|l’homme}} qui tient bon dans l’épreuve. Quand il aura fait ses preuves, il recevra la couronne de la vie, que Dieu a promise à ceux qui {{deity_pronoun:l’|L’}}aiment.",
+          "R": "Dieu bénit celui qui continue à tenir bon dans les épreuves. Quand il aura été mis à l’épreuve et que sa foi se sera montrée vraie, il recevra la couronne de la vie. Dieu a promis ce prix à tous ceux qui {{deity_pronoun:l’|L’}}aiment."
         }
       },
       "decisions": [
@@ -2080,18 +2082,18 @@
           "language": "fr",
           "levels": [
             "L",
-            "B"
+            "B",
+            "R"
           ],
           "category": "word_choice",
           "tokens": [
             "n59001012001"
           ],
-          "choice": "Heureux (L, B); Dieu bénit (R) (for the whole book)",
+          "choice": "Bienheureux (L, B); Dieu bénit (R) (for the whole letter)",
           "alternatives": [
-            "Béni",
-            "Bienheureux"
+            "Heureux"
           ],
-          "reason": "\"Heureux\" is the established French form of this declaration and says that the person is truly well off; \"béni\" belongs to another word, and \"bienheureux\" now sounds like church language. Readable names God as the one who blesses, as the English does.",
+          "reason": "As in John 13:17 and 20:29: the word declares a person well off before God (m1). French \"heureux\" now says first of all \"happy\"; \"bienheureux\" keeps the sense of a blessing from God. Readable names God as the one who blesses, as the English Readable does.",
           "uncertain": false,
           "footnote": false
         },
@@ -2101,16 +2103,17 @@
           "language": "fr",
           "levels": [
             "L",
-            "B",
-            "R"
+            "B"
           ],
           "category": "setting_alternative",
           "tokens": [
             "n59001012002"
           ],
-          "choice": "{{gender:l'être humain|l'homme}} (L); \"celui qui\" with no span (B, R)",
-          "alternatives": [],
-          "reason": "As in verse 7: Literal keeps the noun with the setting; Balanced and Readable say \"celui qui\", and the following \"il\" is generic, so the English {{gender:they|he}} needs no French span.",
+          "choice": "{{gender:celui|l’homme}} qui",
+          "alternatives": [
+            "{{gender:la personne|l’homme}} qui"
+          ],
+          "reason": "The Greek has \"man\" in the sense of anyone. \"Celui qui\" is the natural inclusive French and keeps \"il\" in what follows, where \"la personne\" would make the next words feminine in one option only.",
           "uncertain": false,
           "footnote": false
         }
@@ -2158,15 +2161,15 @@
           "B": "Nadie que sea tentado debe decir: «Dios me está tentando». Porque Dios está fuera del alcance de la tentación del mal, y {{deity_pronoun:él|Él}} nunca tienta a nadie.",
           "R": "Cuando {{plural_you:sientan|sintáis}} la tentación de hacer el mal, no {{plural_you:digan|digáis}}: «Dios me está tentando». El mal no puede tentar a Dios, y Dios nunca tienta a nadie a hacer el mal."
         },
-        "fr": {
-          "L": "Que nul, quand il est tenté, ne dise : « Je suis tenté de la part de Dieu » ; car Dieu est inaccessible à la tentation du mal, et {{deity_pronoun:lui-même|Lui-même}} ne tente personne.",
-          "B": "Celui qui est tenté ne doit pas dire : « Cette tentation vient de Dieu. » Car Dieu est hors d’atteinte de la tentation du mal, et {{deity_pronoun:il|Il}} ne tente jamais personne.",
-          "R": "Quand vous êtes tentés de faire le mal, ne dites pas : « Dieu est en train de me tenter. » Le mal ne peut pas tenter Dieu, et Dieu ne tente jamais personne pour l’amener à faire le mal."
-        },
         "sw": {
           "L": "Mtu yeyote anayejaribiwa na asiseme kwamba, \"Ninajaribiwa kutoka kwa Mungu\"; kwa sababu Mungu hajaribiki na mambo maovu, na {{deity_pronoun:yeye|Yeye}} mwenyewe hamjaribu yeyote.",
           "B": "Mtu anapojaribiwa, asidai kwamba, \"Mungu ananijaribu.\" Kwa maana uovu hauwezi kumvuta Mungu, wala {{deity_pronoun:yeye|Yeye}} hamjaribu mtu yeyote kamwe.",
           "R": "Mnapojaribiwa kutenda mabaya, msiseme, \"Mungu ananijaribu.\" Uovu hauwezi kumjaribu Mungu, na Mungu hamjaribu mtu yeyote atende mabaya."
+        },
+        "fr": {
+          "L": "Que personne, quand il est tenté, ne dise : « Je suis tenté par Dieu » ; car Dieu ne peut être tenté par les [choses] mauvaises, et {{deity_pronoun:il|Il}} ne tente {{deity_pronoun:lui-même|Lui-même}} personne.",
+          "B": "Que personne, quand il est tenté, ne dise : « Dieu me tente. » Car Dieu est hors d’atteinte de la tentation du mal, et {{deity_pronoun:il|Il}} ne tente jamais personne.",
+          "R": "Quand vous êtes tentés de faire le mal, ne dites pas : « C’est Dieu qui me tente. » Le mal ne peut pas tenter Dieu, et Dieu ne pousse jamais personne à faire le mal."
         }
       },
       "decisions": [
@@ -2278,27 +2281,6 @@
           "footnote": false
         },
         {
-          "id": "r-fr-1",
-          "layer": "rendering",
-          "language": "fr",
-          "levels": [
-            "L",
-            "B"
-          ],
-          "category": "word_choice",
-          "tokens": [
-            "n59001013005",
-            "n59001013006"
-          ],
-          "choice": "de la part de Dieu (L); vient de Dieu (B)",
-          "alternatives": [
-            "par Dieu"
-          ],
-          "reason": "The preposition names God as the source, even if not the direct agent (m3); \"par Dieu\" would make God the one doing the tempting.",
-          "uncertain": false,
-          "footnote": false
-        },
-        {
           "id": "r-sw-1",
           "layer": "rendering",
           "language": "sw",
@@ -2341,6 +2323,29 @@
           "reason": "Swahili marks most pronouns for God inside the verb (\"hamjaribu\", \"wanaompenda\"), and a prefix cannot take a capital, so the deity_pronoun setting applies only to free pronouns and possessives. Swahili therefore has fewer spans than English in this letter.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59001013002",
+            "n59001013007",
+            "n59001013014"
+          ],
+          "choice": "tenter, tenté (1:13-14)",
+          "alternatives": [
+            "éprouver, mettre à l’épreuve"
+          ],
+          "reason": "Here the verb means drawing someone toward sin (m1), so French uses \"tenter\", where 1:2 and 1:12 say \"épreuve\" for the same word family. French cannot keep one word for both senses, as the English cannot.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2379,15 +2384,15 @@
           "B": "Más bien, cada uno es tentado por su propio deseo, que lo arrastra y lo atrae como un cebo.",
           "R": "Las personas son tentadas por las cosas malas que desean. Sus propios deseos las arrastran y las atrapan, como el cebo atrapa a un pez."
         },
-        "fr": {
-          "L": "Mais chacun est tenté par son propre désir, étant entraîné et appâté ;",
-          "B": "Chacun, au contraire, est tenté par son propre désir, qui l’attire au-dehors et l’accroche comme un appât.",
-          "R": "Les gens sont tentés par les mauvaises choses qu’ils désirent. Leurs propres désirs les entraînent et les prennent au piège, comme l’appât attrape le poisson."
-        },
         "sw": {
           "L": "Lakini kila mmoja hujaribiwa na tamaa yake mwenyewe, akivutwa mbali na kunaswa kwa chambo;",
           "B": "Badala yake, kila mtu hujaribiwa na tamaa yake mwenyewe, inayomvuta na kumnasa kama chambo.",
           "R": "Watu hujaribiwa na mambo mabaya wanayoyatamani. Tamaa zao wenyewe huwavuta mbali na kuwanasa, kama chambo kinavyomnasa samaki."
+        },
+        "fr": {
+          "L": "Mais chacun est tenté par son propre désir, étant entraîné et appâté ;",
+          "B": "Chacun, au contraire, est tenté par son propre désir, qui l’entraîne et le séduit comme un appât.",
+          "R": "Les gens sont tentés par les mauvaises choses qu’ils désirent. Leurs propres désirs les entraînent et les prennent au piège, comme l’appât attrape un poisson."
         }
       },
       "decisions": [
@@ -2476,24 +2481,6 @@
           "reason": "\"Each one\" means everyone, so the pronouns take the gender setting.",
           "uncertain": false,
           "footnote": false
-        },
-        {
-          "id": "r-fr-1",
-          "layer": "rendering",
-          "language": "fr",
-          "levels": [
-            "L",
-            "B"
-          ],
-          "category": "setting_alternative",
-          "tokens": [
-            "n59001014001"
-          ],
-          "choice": "\"chacun … son … l'\" with no gender span",
-          "alternatives": [],
-          "reason": "\"Chacun\" already means everyone, and the possessive \"son\" does not mark gender, so the English {{gender:their|his}} and {{gender:them|him}} need no French span.",
-          "uncertain": false,
-          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2534,15 +2521,15 @@
           "B": "El deseo concibe y da a luz el pecado, y el pecado, cuando ha crecido del todo, hace nacer la muerte.",
           "R": "El mal deseo es como una madre. Crece dentro de la persona y da a luz el pecado. Luego el pecado crece y da a luz la muerte."
         },
-        "fr": {
-          "L": "Ensuite le désir, ayant conçu, enfante le péché, et le péché, une fois achevé, donne naissance à la mort.",
-          "B": "Le désir conçoit et enfante le péché, et le péché, une fois arrivé à maturité, donne naissance à la mort.",
-          "R": "Le désir mauvais est comme une mère : il grandit à l’intérieur de quelqu’un, puis il met au monde le péché. Ensuite le péché grandit à son tour, et il donne naissance à la mort."
-        },
         "sw": {
           "L": "Kisha tamaa, baada ya kushika mimba, huzaa dhambi; nayo dhambi, ikishakua kikamilifu, huzaa kifo.",
           "B": "Tamaa hushika mimba na kuzaa dhambi, na dhambi ikishakua kabisa huzaa kifo.",
           "R": "Tamaa mbaya ni kama mama. Inakua ndani ya mtu na kuzaliwa kama dhambi. Kisha dhambi inakua, nayo inazaa kifo."
+        },
+        "fr": {
+          "L": "Puis le désir, ayant conçu, enfante le péché, et le péché, étant parvenu à son terme, met au monde la mort.",
+          "B": "Le désir conçoit et enfante le péché, et le péché, une fois pleinement développé, donne naissance à la mort.",
+          "R": "Le mauvais désir est comme une mère. Il grandit à l’intérieur d’une personne et met au monde le péché. Puis le péché grandit, et il donne naissance à la mort."
         }
       },
       "decisions": [
@@ -2635,28 +2622,6 @@
           "footnote": false
         },
         {
-          "id": "r-fr-1",
-          "layer": "rendering",
-          "language": "fr",
-          "levels": [
-            "L",
-            "B",
-            "R"
-          ],
-          "category": "word_choice",
-          "tokens": [
-            "n59001015005",
-            "n59001015011"
-          ],
-          "choice": "enfante; donne naissance à (the same \"donner naissance\" as in verse 18)",
-          "alternatives": [
-            "engendre"
-          ],
-          "reason": "Two verbs of giving birth. The second is the one James uses of God in verse 18 (m3), so French keeps \"donner naissance\" for both places at every level.",
-          "uncertain": false,
-          "footnote": false
-        },
-        {
           "id": "r-sw-1",
           "layer": "rendering",
           "language": "sw",
@@ -2710,15 +2675,15 @@
           "B": "No {{plural_you:se dejen|os dejéis}} engañar, mis queridos hermanos.",
           "R": "Mis queridos hermanos, no {{plural_you:dejen|dejéis}} que nadie {{plural_you:los|os}} engañe en esto."
         },
-        "fr": {
-          "L": "Ne vous égarez pas, mes {{gender:frères et sœurs|frères}} bien-aimés.",
-          "B": "Ne vous laissez pas tromper, mes chers {{gender:frères et sœurs|frères}}.",
-          "R": "Mes chers {{gender:frères et sœurs|frères}}, ne laissez personne vous tromper à ce sujet."
-        },
         "sw": {
           "L": "Msipotoshwe, ndugu zangu wapendwa.",
           "B": "Msikubali kudanganywa, ndugu zangu wapenzi.",
           "R": "Ndugu zangu wapendwa, msikubali mtu yeyote awadanganye kuhusu jambo hili."
+        },
+        "fr": {
+          "L": "Ne vous égarez pas, mes {{gender:frères et sœurs|frères}} bien-aimés.",
+          "B": "Ne vous laissez pas tromper, mes chers {{gender:frères et sœurs|frères}}.",
+          "R": "Mes chers {{gender:frères et sœurs|frères}}, ne laissez personne vous tromper à ce sujet."
         }
       },
       "decisions": [
@@ -2773,27 +2738,6 @@
           "reason": "James speaks to the whole church, men and women, so the gender setting applies; the traditional \"brothers\" is the alternative. ἀγαπητοί is \"loved\": \"my dear\" says it in everyday words.",
           "uncertain": false,
           "footnote": false
-        },
-        {
-          "id": "r-fr-1",
-          "layer": "rendering",
-          "language": "fr",
-          "levels": [
-            "L",
-            "B",
-            "R"
-          ],
-          "category": "word_choice",
-          "tokens": [
-            "n59001016005"
-          ],
-          "choice": "bien-aimés (L); chers (B, R) (for the whole book)",
-          "alternatives": [
-            "chers at every level"
-          ],
-          "reason": "Literal keeps the word \"loved\"; Balanced and Readable say it in everyday French, as the English \"my dear\" does. \"Bien-aimés\" agrees in the masculine plural with both options of the setting.",
-          "uncertain": false,
-          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2845,15 +2789,15 @@
           "B": "Toda buena acción de dar y todo regalo perfecto viene de arriba. Baja del Padre de las luces del cielo, en quien no hay cambio, ni la sombra que proyecta un giro.",
           "R": "Todo regalo bueno y perfecto viene del cielo. Baja de Dios Padre, que creó el sol, la luna y las estrellas. Esas luces se mueven y cambian, y sus sombras se desplazan, pero Dios nunca cambia."
         },
-        "fr": {
-          "L": "Tout bon don et tout présent parfait est d’en haut, descendant du Père des lumières, auprès de qui il n’y a pas de variation ou d’ombre de rotation.",
-          "B": "Tout bienfait et tout don parfait viennent d’en haut. Ils descendent du Père des lumières qui brillent dans le ciel ; en lui il n’y a aucun changement, aucune ombre produite par un mouvement.",
-          "R": "Tout cadeau bon et parfait vient du ciel. Il descend de Dieu le Père, qui a créé le soleil, la lune et les étoiles. Leur lumière bouge et change, et elles font des ombres qui se déplacent, mais Dieu, {{deity_pronoun:lui|Lui}}, ne change jamais."
-        },
         "sw": {
           "L": "Kila utoaji mwema na kila zawadi kamilifu ni kutoka juu, ikishuka kutoka kwa Baba wa mianga, ambaye kwake hakuna mabadiliko wala kivuli cha mzunguko.",
           "B": "Kila tendo jema la kutoa na kila zawadi kamilifu hutoka juu. Hushuka kutoka kwa Baba wa mianga ya angani, ambaye hana mabadiliko yoyote wala kivuli kinachotokana na mzunguko.",
           "R": "Kila zawadi njema na kamilifu hutoka mbinguni. Inashuka kutoka kwa Mungu Baba, aliyeumba jua, mwezi na nyota. Mwanga wa vitu hivyo husogea na kubadilika, na vivuli vyake huhama, lakini Mungu habadiliki kamwe."
+        },
+        "fr": {
+          "L": "Tout don bon et tout présent parfait est d’en haut, descendant du Père des lumières, auprès de qui il n’y a ni variation ni ombre de rotation.",
+          "B": "Toute bonne manière de donner et tout don parfait viennent d’en haut. Ils descendent du Père des lumières du ciel, en qui il n’y a ni changement, ni ombre projetée par un mouvement.",
+          "R": "Tout cadeau bon et parfait vient du ciel. Il descend de Dieu le Père, qui a créé le soleil, la lune et les étoiles. Leur lumière se déplace et change, et leurs ombres bougent, mais Dieu, {{deity_pronoun:lui|Lui}}, ne change jamais."
         }
       },
       "decisions": [
@@ -2977,43 +2921,6 @@
           "footnote": false
         },
         {
-          "id": "r-fr-1",
-          "layer": "rendering",
-          "language": "fr",
-          "levels": [
-            "L",
-            "B"
-          ],
-          "category": "word_choice",
-          "tokens": [
-            "n59001017022"
-          ],
-          "choice": "ombre de rotation (L); ombre produite par un mouvement (B)",
-          "alternatives": [
-            "ombre de changement"
-          ],
-          "reason": "The word is the turning of the heavenly bodies, which makes their shadows move (m3); \"rotation\" keeps the picture of the sky, which \"changement\" loses.",
-          "uncertain": false,
-          "footnote": false
-        },
-        {
-          "id": "r-fr-2",
-          "layer": "rendering",
-          "language": "fr",
-          "levels": [
-            "B"
-          ],
-          "category": "setting_alternative",
-          "tokens": [
-            "n59001017017"
-          ],
-          "choice": "en {{deity_pronoun:lui|Lui}}",
-          "alternatives": [],
-          "reason": "Balanced starts a new clause for \"with whom\" and needs a pronoun for God where the English has none.",
-          "uncertain": false,
-          "footnote": false
-        },
-        {
           "id": "r-sw-1",
           "layer": "rendering",
           "language": "sw",
@@ -3074,15 +2981,15 @@
           "B": "Fue {{deity_pronoun:su|Su}} voluntad hacernos nacer por medio de la palabra de verdad, para que fuéramos algo así como las primicias de todo lo que {{deity_pronoun:él|Él}} ha creado.",
           "R": "Dios quiso darnos vida nueva por medio de {{deity_pronoun:su|Su}} mensaje de verdad. Quería que fuéramos como la primera parte de la cosecha, que le pertenece a {{deity_pronoun:él|Él}}: lo primero de todo lo que {{deity_pronoun:él|Él}} ha hecho."
         },
-        "fr": {
-          "L": "[L’]ayant voulu, {{deity_pronoun:il|Il}} nous a donné naissance par la parole de vérité, afin que nous soyons une sorte de prémices de {{deity_pronoun:ses|Ses}} créatures.",
-          "B": "Il a voulu nous donner naissance par la parole de vérité, pour que nous soyons comme les prémices de tout ce qu’{{deity_pronoun:il|Il}} a créé.",
-          "R": "Dieu a choisi de nous donner une vie nouvelle par {{deity_pronoun:son|Son}} message de vérité. Il voulait que nous soyons comme la première partie de la récolte, celle qui {{deity_pronoun:lui|Lui}} appartient : les premiers de tout ce qu’{{deity_pronoun:il|Il}} a fait."
-        },
         "sw": {
           "L": "Kwa kuwa alipenda [hivyo], alituzaa kupitia neno la kweli, ili tuwe aina fulani ya limbuko la viumbe {{deity_pronoun:vyake|Vyake}}.",
           "B": "Ilikuwa ni mapenzi {{deity_pronoun:yake|Yake}} kutuzaa kupitia neno la kweli, ili tuwe kitu kama limbuko miongoni mwa viumbe {{deity_pronoun:vyake|Vyake}} vyote.",
           "R": "Mungu aliamua kutupa uzima mpya kupitia ujumbe {{deity_pronoun:wake|Wake}} wa kweli. Alitaka tuwe kama sehemu ya kwanza ya mavuno, ambayo ni mali {{deity_pronoun:yake|Yake}}: wa kwanza kati ya vitu vyote alivyoviumba."
+        },
+        "fr": {
+          "L": "Ayant voulu [cela], {{deity_pronoun:il|Il}} nous a mis au monde par [la] parole de vérité, pour que nous soyons comme des prémices de {{deity_pronoun:ses|Ses}} créatures.",
+          "B": "C’est par {{deity_pronoun:sa|Sa}} volonté qu’{{deity_pronoun:il|Il}} nous a donné naissance par la parole de vérité, pour que nous soyons en quelque sorte les prémices de tout ce qu’{{deity_pronoun:il|Il}} a créé.",
+          "R": "Dieu a choisi de nous donner une vie nouvelle par {{deity_pronoun:son|Son}} message de vérité. Il voulait que nous soyons comme la première partie de la récolte, celle qui {{deity_pronoun:lui|Lui}} appartient : les premiers de tout ce qu’{{deity_pronoun:il|Il}} a fait."
         }
       },
       "decisions": [
@@ -3171,38 +3078,18 @@
           "language": "fr",
           "levels": [
             "L",
-            "B",
-            "R"
-          ],
-          "category": "register",
-          "tokens": [
-            "n59001018002"
-          ],
-          "choice": "passé composé for past events at every level (for the whole letter)",
-          "alternatives": [
-            "passé simple at Literal and Balanced"
-          ],
-          "reason": "James is a letter: he speaks to the readers of what God has done for them (\"il nous a donné naissance\"), and French uses the passé composé for that, as in Colossians. The letter has no narrative passage that would call for the passé simple.",
-          "uncertain": false,
-          "footnote": false
-        },
-        {
-          "id": "r-fr-2",
-          "layer": "rendering",
-          "language": "fr",
-          "levels": [
-            "L",
             "B"
           ],
           "category": "word_choice",
           "tokens": [
-            "n59001018010"
+            "n59001018002"
           ],
-          "choice": "prémices (L, B); la première partie de la récolte (R)",
+          "choice": "met au monde (1:15), nous a mis au monde (1:18) at Literal; donne naissance, nous a donné naissance at Balanced",
           "alternatives": [
-            "premiers fruits"
+            "nous a engendrés",
+            "nous a fait naître"
           ],
-          "reason": "\"Les prémices\" is the French word for the first part of the harvest given to God (m4); Readable explains it in plain words, as the English does.",
+          "reason": "James uses the same verb for sin giving birth to death and for God giving birth to his people (m3 on 1:15). Literal and Balanced use the same French verb in both verses so the contrast can be heard.",
           "uncertain": false,
           "footnote": false
         }
@@ -3237,15 +3124,15 @@
           "B": "{{plural_you:Tengan|Tened}} por seguro esto, mis queridos hermanos.",
           "R": "Mis queridos hermanos, {{plural_you:recuerden|recordad}} esto."
         },
-        "fr": {
-          "L": "Sachez[-le], mes {{gender:frères et sœurs|frères}} bien-aimés.",
-          "B": "Soyez-en sûrs, mes chers {{gender:frères et sœurs|frères}}.",
-          "R": "Mes chers {{gender:frères et sœurs|frères}}, souvenez-vous de ceci."
-        },
         "sw": {
           "L": "Jueni [hili], ndugu zangu wapendwa.",
           "B": "Fahamuni hili kwa hakika, ndugu zangu wapendwa.",
           "R": "Ndugu zangu wapendwa, kumbukeni jambo hili."
+        },
+        "fr": {
+          "L": "Sachez [cela], mes {{gender:frères et sœurs|frères}} bien-aimés.",
+          "B": "Soyez-en sûrs, mes chers {{gender:frères et sœurs|frères}}.",
+          "R": "Mes chers {{gender:frères et sœurs|frères}}, retenez bien ceci."
         }
       },
       "decisions": [
@@ -3354,15 +3241,15 @@
           "B": "Toda persona debe estar dispuesta a escuchar, ser lenta para hablar y lenta para enojarse, \\v 20 porque la ira {{gender:humana|del hombre}} no produce la justicia de Dios.",
           "R": "Todos deben estar listos para escuchar y ser lentos para hablar. No {{plural_you:se enojen|os enfadéis}} enseguida. \\v 20 Cuando la gente se enoja, no vive la vida justa que Dios quiere."
         },
-        "fr": {
-          "L": "Que {{gender:tout être humain|tout homme}} soit rapide à écouter, lent à parler, lent à la colère ; \\v 20 car la colère {{gender:d’un être humain|d’un homme}} ne produit pas la justice de Dieu.",
-          "B": "Chacun doit s’empresser d’écouter, mais prendre son temps pour parler et pour se mettre en colère, \\v 20 car la colère {{gender:humaine|de l’homme}} ne réalise pas la justice de Dieu.",
-          "R": "Tout le monde doit être rapide pour écouter et lent pour parler. Ne vous mettez pas vite en colère. \\v 20 Quand les gens sont en colère, ils ne vivent pas de la manière juste que Dieu demande."
-        },
         "sw": {
           "L": "Na kila mwanadamu na awe mwepesi katika kusikia, mzito katika kusema, mzito katika kukasirika; \\v 20 kwa maana hasira ya mtu haitendi haki ya Mungu.",
           "B": "Kila mtu anapaswa kuwa tayari kusikiliza, kuchelewa kusema, na kuchelewa kukasirika, \\v 20 kwa sababu hasira ya mwanadamu haitimizi haki ya Mungu.",
           "R": "Kila mtu awe tayari kusikiliza na asiwe na haraka ya kusema. Msiwe wepesi wa kukasirika. \\v 20 Watu wanapokasirika, hawaishi maisha ya haki ambayo Mungu anataka."
+        },
+        "fr": {
+          "L": "Que {{gender:tout être humain|tout homme}} soit prompt à écouter, lent à parler, lent à la colère ; \\v 20 car la colère de l’{{gender:être humain|homme}} n’accomplit pas la justice de Dieu.",
+          "B": "Chacun doit être prompt à écouter, lent à parler et lent à se mettre en colère, \\v 20 car la colère {{gender:humaine|de l’homme}} ne produit pas la justice que Dieu demande.",
+          "R": "Chacun doit être prêt à écouter et lent à parler. Ne vous mettez pas vite en colère. \\v 20 Quand les gens se mettent en colère, ils ne vivent pas de la manière juste que Dieu veut."
         }
       },
       "decisions": [
@@ -3499,46 +3386,6 @@
           "footnote": false
         },
         {
-          "id": "r-fr-1",
-          "layer": "rendering",
-          "language": "fr",
-          "levels": [
-            "L",
-            "B"
-          ],
-          "category": "setting_alternative",
-          "tokens": [
-            "n59001019007",
-            "n59001019008",
-            "n59001020003"
-          ],
-          "choice": "{{gender:tout être humain|tout homme}} (L); \"chacun\" with no span (B); {{gender:d'un être humain|d'un homme}} (L), {{gender:humaine|de l'homme}} (B)",
-          "alternatives": [],
-          "reason": "The sayings are for everyone (m4). Balanced says \"chacun\", which needs no setting, where the English has \"every person\".",
-          "uncertain": false,
-          "footnote": false
-        },
-        {
-          "id": "r-fr-2",
-          "layer": "rendering",
-          "language": "fr",
-          "levels": [
-            "L",
-            "B"
-          ],
-          "category": "word_choice",
-          "tokens": [
-            "n59001020004"
-          ],
-          "choice": "la justice de Dieu (L, B); la manière juste que Dieu demande (R) (for the whole book)",
-          "alternatives": [
-            "la droiture"
-          ],
-          "reason": "As the term sheet: \"la justice\" at Literal and Balanced; here it is the right conduct God requires (m1), which Readable says plainly, as the English does.",
-          "uncertain": false,
-          "footnote": false
-        },
-        {
           "id": "r-sw-1",
           "layer": "rendering",
           "language": "sw",
@@ -3557,6 +3404,47 @@
             "ghadhabu"
           ],
           "reason": "This is human anger, so Swahili says \"hasira\"; \"ghadhabu\" is kept for the wrath of God, as in Romans.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n59001019008",
+            "n59001020003"
+          ],
+          "choice": "{{gender:tout être humain|tout homme}}, l’{{gender:être humain|homme}} (L); Chacun, la colère {{gender:humaine|de l’homme}} (B)",
+          "alternatives": [],
+          "reason": "Both words mean anyone at all (m4). As in Colossians, \"tout être humain\" agrees like \"tout homme\", so only the noun changes; Balanced says \"chacun\", which is already inclusive.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-2",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59001020004",
+            "n59001020005"
+          ],
+          "choice": "la justice (L, B); de la manière juste (R)",
+          "alternatives": [
+            "la droiture"
+          ],
+          "reason": "\"Justice\" is the key term for righteousness at every level in Hebrews; here it is the right conduct God requires (m1), which Readable says plainly while keeping \"juste\".",
           "uncertain": false,
           "footnote": false
         }
@@ -3606,15 +3494,15 @@
           "B": "Así que {{plural_you:quítense|quitaos}} todo lo sucio y la maldad que se desborda, y con un espíritu manso {{plural_you:acojan|acoged}} la palabra plantada en {{plural_you:ustedes|vosotros}}, que tiene poder para salvar {{plural_you:sus|vuestras}} almas.",
           "R": "Así que {{plural_you:dejen|dejad}} todo lo sucio y malo que hay en {{plural_you:su|vuestra}} vida. {{plural_you:Sean|Sed}} humildes y {{plural_you:reciban|recibid}} el mensaje que Dios ha plantado en {{plural_you:su|vuestro}} corazón. Ese mensaje tiene poder para {{plural_you:salvarlos|salvaros}}."
         },
-        "fr": {
-          "L": "C’est pourquoi, ayant ôté toute saleté et [tout] débordement de méchanceté, recevez avec douceur la parole implantée, qui est capable de sauver vos âmes.",
-          "B": "Débarrassez-vous donc, comme d’un vêtement sale, de toute impureté et de la méchanceté qui déborde, et accueillez avec un esprit doux la parole enracinée en vous, qui a le pouvoir de sauver vos âmes.",
-          "R": "Alors, débarrassez-vous de tout ce qui est sale et mauvais dans votre vie. Soyez humbles, et accueillez le message que Dieu a planté dans votre cœur. Il a le pouvoir de vous sauver."
-        },
         "sw": {
           "L": "Kwa sababu hiyo, mkishavua kila uchafu na wingi wa uovu, karibisheni kwa upole neno lililopandwa [ndani yenu], lenye uwezo wa kuokoa nafsi zenu.",
           "B": "Basi vueni kila kitu kichafu na uovu unaofurika, na kwa roho ya upole mlipokee neno lililopandwa ndani yenu, ambalo lina nguvu ya kuokoa nafsi zenu.",
           "R": "Kwa hiyo achaneni na kila kitu kichafu na kiovu maishani mwenu. Muwe wanyenyekevu, mkaukaribishe ujumbe ambao Mungu ameupanda mioyoni mwenu. Ujumbe huo una nguvu ya kuwaokoa."
+        },
+        "fr": {
+          "L": "C’est pourquoi, vous étant débarrassés de toute saleté et de [tout] excès de méchanceté, recevez avec douceur la parole implantée, qui peut sauver vos âmes.",
+          "B": "Débarrassez-vous donc de toute impureté et du mal qui déborde, et accueillez avec douceur la parole plantée en vous, qui a le pouvoir de sauver vos âmes.",
+          "R": "Alors, rejetez tout ce qui est sale et mauvais dans votre vie. Soyez humbles, et accueillez le message que Dieu a planté dans votre cœur. Il a le pouvoir de vous sauver."
         }
       },
       "decisions": [
@@ -3724,25 +3612,6 @@
           "footnote": false
         },
         {
-          "id": "r-fr-1",
-          "layer": "rendering",
-          "language": "fr",
-          "levels": [
-            "B"
-          ],
-          "category": "supplied_words",
-          "tokens": [
-            "n59001021002"
-          ],
-          "choice": "comme d'un vêtement sale (B)",
-          "alternatives": [
-            "débarrassez-vous de"
-          ],
-          "reason": "The English \"take off\" keeps the clothing picture (m1) in the verb; French \"se débarrasser\" does not, so Balanced says it in a short phrase.",
-          "uncertain": false,
-          "footnote": false
-        },
-        {
           "id": "r-sw-1",
           "layer": "rendering",
           "language": "sw",
@@ -3800,15 +3669,15 @@
           "B": "{{plural_you:Sean|Sed}} personas que ponen por obra la palabra, no solo que la oyen. De lo contrario, {{plural_you:se engañan a sí mismos|os engañáis a vosotros mismos}}.",
           "R": "No basta con oír el mensaje de Dios. También {{plural_you:tienen|tenéis}} que hacer lo que dice, o solo {{plural_you:se están engañando|os estáis engañando}} a {{plural_you:ustedes|vosotros}} mismos."
         },
-        "fr": {
-          "L": "Et devenez des pratiquants de la parole, et non des auditeurs seulement, vous trompant vous-mêmes.",
-          "B": "Soyez des gens qui accomplissent la parole, pas seulement des gens qui l’entendent. Sinon, vous vous faites des illusions.",
-          "R": "Il ne suffit pas d’écouter le message de Dieu. Vous devez aussi faire ce qu’il dit, sinon vous vous trompez vous-mêmes."
-        },
         "sw": {
           "L": "Na iweni watendaji wa neno, si wasikilizaji peke yake, mkijidanganya wenyewe.",
           "B": "Muwe watu wanaolitekeleza neno, si watu wanaolisikia tu. La sivyo mnajidanganya wenyewe.",
           "R": "Kusikia ujumbe wa Mungu hakutoshi. Ni lazima pia mfanye unavyosema, la sivyo mnajidanganya tu."
+        },
+        "fr": {
+          "L": "Et devenez des gens qui pratiquent [la] parole, et non des auditeurs seulement, vous trompant vous-mêmes.",
+          "B": "Mettez la parole en pratique, au lieu de vous contenter de l’écouter : ce serait vous tromper vous-mêmes.",
+          "R": "Écouter le message de Dieu ne suffit pas. Vous devez aussi faire ce qu’il dit, sinon vous vous trompez vous-mêmes."
         }
       },
       "decisions": [
@@ -3883,15 +3752,14 @@
           ],
           "category": "word_choice",
           "tokens": [
-            "n59001022003",
-            "n59001022007"
+            "n59001022003"
           ],
-          "choice": "des pratiquants de la parole; des auditeurs (L, also 1:23 and 1:25)",
+          "choice": "des gens qui pratiquent [la] parole (L), also \"ne la pratique pas\" (1:23) and \"quelqu’un qui pratique\" (1:25)",
           "alternatives": [
             "des faiseurs",
-            "des exécutants"
+            "des pratiquants"
           ],
-          "reason": "French has no plain noun for \"doer\": \"faiseur\" is pejorative and \"exécutant\" sounds like music or orders. \"Pratiquant\", one who puts something into practice, keeps a noun opposite \"auditeur\"; Balanced says it with \"des gens qui\", as the English does.",
+          "reason": "French has no current noun for \"doer\": \"faiseur\" is pejorative and \"pratiquant\" means someone who keeps up religious observance. Literal uses the verb \"pratiquer\" each time the noun occurs, and keeps the noun \"auditeur\" beside it.",
           "uncertain": false,
           "footnote": false
         }
@@ -3953,15 +3821,15 @@
           "B": "Quien oye la palabra pero no la pone por obra es como un hombre que se mira detenidamente la cara en un espejo. \\v 24 Se observa, se va, y enseguida olvida cómo era su aspecto.",
           "R": "Algunas personas oyen el mensaje de Dios, pero no hacen lo que dice. Son como un hombre que se mira la cara en un espejo. \\v 24 Se ve, luego se va, y pronto ya no recuerda cómo era su cara."
         },
-        "fr": {
-          "L": "Car si quelqu’un est auditeur de la parole et non pratiquant, celui-là ressemble à un homme qui observe dans un miroir son visage naturel ; \\v 24 car il s’est observé lui-même, et il s’en est allé, et aussitôt il a oublié comment il était.",
-          "B": "Celui qui écoute la parole sans l’accomplir ressemble à un homme qui examine son propre visage dans un miroir. \\v 24 Il se regarde, s’en va, et oublie aussitôt à quoi il ressemblait.",
-          "R": "Certains écoutent le message de Dieu, mais ne font pas ce qu’il dit. Ils ressemblent à un homme qui regarde son visage dans un miroir. \\v 24 Il se voit, puis il s’en va, et bientôt il ne se souvient plus de ce à quoi son visage ressemblait."
-        },
         "sw": {
           "L": "Kwa sababu mtu yeyote akiwa msikilizaji wa neno wala si mtendaji, huyo ni kama mtu anayeutazama kwa makini uso aliozaliwa nao katika kioo; \\v 24 kwa maana alijiangalia, akaondoka, na papo hapo akasahau jinsi alivyokuwa.",
           "B": "Mtu anayesikia neno lakini hatendi linavyosema ni kama mtu anayechunguza uso wake katika kioo. \\v 24 Anajiangalia, anaondoka, na mara moja anasahau sura yake ilivyokuwa.",
           "R": "Watu wengine husikia ujumbe wa Mungu lakini hawafanyi unavyosema. Wao ni kama mtu anayejiangalia uso katika kioo. \\v 24 Anajiona, kisha anaondoka, na baada ya muda mfupi hakumbuki uso wake ulivyokuwa."
+        },
+        "fr": {
+          "L": "Car si quelqu’un est auditeur de [la] parole et ne la pratique pas, celui-là ressemble à un homme qui observe dans un miroir le visage de sa naissance ; \\v 24 car il s’est observé et s’en est allé, et aussitôt il a oublié comment il était.",
+          "B": "Celui qui écoute la parole sans la mettre en pratique ressemble à un homme qui examine son propre visage dans un miroir. \\v 24 Il se regarde, il s’en va, et il oublie aussitôt de quoi il avait l’air.",
+          "R": "Certaines personnes écoutent le message de Dieu mais ne font pas ce qu’il dit. Elles sont comme un homme qui regarde son visage dans un miroir. \\v 24 Il se voit, puis il s’en va, et bientôt il ne se rappelle plus à quoi ressemblait son visage."
         }
       },
       "decisions": [
@@ -4050,27 +3918,6 @@
             "someone"
           ],
           "reason": "ἀνήρ is \"man\". He is a figure in a picture, not a general statement about people, so no gender setting is used and the pronouns stay \"he\" and \"his\".",
-          "uncertain": false,
-          "footnote": false
-        },
-        {
-          "id": "r-fr-1",
-          "layer": "rendering",
-          "language": "fr",
-          "levels": [
-            "L",
-            "B",
-            "R"
-          ],
-          "category": "word_order",
-          "tokens": [
-            "n59001024001",
-            "n59001024005",
-            "n59001024008"
-          ],
-          "choice": "passé composé at Literal; present at Balanced and Readable",
-          "alternatives": [],
-          "reason": "As in verse 11: the past tenses tell a quick, vivid picture of what happens (m4). Literal keeps them as past; Balanced and Readable tell it in the present, as the English Balanced and Readable do.",
           "uncertain": false,
           "footnote": false
         },
@@ -4169,15 +4016,15 @@
           "B": "Pero quien mira con atención la ley perfecta de la libertad y se queda en ella, no oyendo para luego olvidar, sino haciendo la obra, será bienaventurado en lo que hace.",
           "R": "Pero hay personas que miran con atención la ley perfecta de Dios, la ley que da libertad, y siguen mirándola. No olvidan lo que oyen. Hacen lo que dice. Dios las bendecirá en lo que hacen."
         },
-        "fr": {
-          "L": "Mais celui qui s’est penché sur la loi parfaite, celle de la liberté, et [y] est resté, n’étant pas devenu un auditeur qui oublie mais un pratiquant de l’œuvre, celui-là sera heureux dans ce qu’il fait.",
-          "B": "Mais celui qui plonge son regard dans la loi parfaite de la liberté et s’y tient, qui ne se contente pas d’écouter pour oublier ensuite mais qui accomplit l’œuvre, celui-là sera heureux dans ce qu’il fait.",
-          "R": "Mais d’autres regardent de près la loi parfaite de Dieu, la loi de la liberté, et ils continuent à la regarder. Ils n’oublient pas ce qu’ils entendent. Ils font ce qu’elle dit. Dieu les bénira dans ce qu’ils font."
-        },
         "sw": {
           "L": "Lakini yule aliyeinama kuchungulia katika sheria kamilifu, ile ya uhuru, na akaendelea [nayo], akiwa si msikilizaji anayesahau bali mtendaji wa kazi, huyo atakuwa heri katika utendaji wake.",
           "B": "Lakini mtu anayechunguza kwa makini sheria kamilifu ya uhuru na kuendelea nayo, asiyesikia kisha akasahau bali anayetenda kazi inayotakiwa, atabarikiwa katika kile anachofanya.",
           "R": "Lakini watu wengine huichunguza kwa makini sheria kamilifu ya Mungu, sheria inayoleta uhuru, nao huendelea kuitazama. Hawasahau wanachosikia. Wanafanya inavyosema. Mungu atawabariki katika yale wanayofanya."
+        },
+        "fr": {
+          "L": "Mais celui qui s’est penché sur [la] loi parfaite, celle de la liberté, et qui [y] est resté, n’étant pas devenu un auditeur oublieux mais quelqu’un qui pratique l’œuvre, celui-là sera bienheureux dans ce qu’il fait.",
+          "B": "Mais celui qui plonge son regard dans la loi parfaite, la loi de la liberté, et qui s’y tient, sans écouter pour oublier ensuite mais en accomplissant l’œuvre, celui-là sera bienheureux dans ce qu’il fait.",
+          "R": "Mais d’autres regardent avec attention la loi parfaite de Dieu, la loi qui rend libre, et ils continuent à la regarder. Ils n’oublient pas ce qu’ils entendent. Ils font ce qu’elle dit. Dieu les bénira dans tout ce qu’ils font."
         }
       },
       "decisions": [
@@ -4298,47 +4145,6 @@
           "footnote": false
         },
         {
-          "id": "r-fr-1",
-          "layer": "rendering",
-          "language": "fr",
-          "levels": [
-            "L",
-            "B",
-            "R"
-          ],
-          "category": "word_choice",
-          "tokens": [
-            "n59001025005"
-          ],
-          "choice": "la loi parfaite, la loi de la liberté, lowercase (also 2:12); la Loi where the law of Moses is cited (2:8-11)",
-          "alternatives": [
-            "la Loi parfaite"
-          ],
-          "reason": "The phrase names God's law as fulfilled in Jesus' teaching (m2), qualified by \"perfect\" and \"of freedom\"; the capital is kept for the Law of Moses as such, as the term sheet has it.",
-          "uncertain": false,
-          "footnote": false
-        },
-        {
-          "id": "r-fr-2",
-          "layer": "rendering",
-          "language": "fr",
-          "levels": [
-            "L",
-            "B"
-          ],
-          "category": "word_choice",
-          "tokens": [
-            "n59001025020"
-          ],
-          "choice": "heureux (L, B), as in verse 12",
-          "alternatives": [
-            "béni"
-          ],
-          "reason": "The same word as in verse 12 is kept so that the two sayings answer each other; Readable names God as the one who blesses.",
-          "uncertain": false,
-          "footnote": false
-        },
-        {
           "id": "r-sw-1",
           "layer": "rendering",
           "language": "sw",
@@ -4354,6 +4160,28 @@
             "aliyetazama"
           ],
           "reason": "The Greek verb is stooping to look closely (see the meaning decision); Literal says \"bent down to peer into\". Balanced and Readable say \"anachunguza kwa makini\" (examines carefully).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59001025005",
+            "n59001025006"
+          ],
+          "choice": "la loi parfaite, la loi de la liberté, lowercase (also 2:8, 2:12); la Loi, capitalised, where James speaks of the Law of Moses with its commandments (2:9-11; 4:11)",
+          "alternatives": [
+            "la Loi throughout"
+          ],
+          "reason": "The French style guide capitalises \"la Loi\" for the Law of Moses. Here James describes God’s law as he understands it, perfect and giving freedom (m2), and the description carries the meaning, so the common noun is used; where the commandments of Sinai are quoted and weighed, French writes \"la Loi\".",
           "uncertain": false,
           "footnote": false
         }
@@ -4401,15 +4229,15 @@
           "B": "Si alguien se cree piadoso, pero no le pone freno a su lengua, se engaña a sí mismo, y su religión está vacía.",
           "R": "Algunas personas creen que sirven bien a Dios, pero no controlan lo que dicen. Se engañan a sí mismas, y su religión no vale nada."
         },
-        "fr": {
-          "L": "Si quelqu’un pense être religieux, ne tenant pas sa langue en bride mais trompant son cœur, la religion de celui-là est vaine.",
-          "B": "Si quelqu’un se croit pieux mais ne met pas de frein à sa langue, il se trompe lui-même, et sa religion est vide.",
-          "R": "Certains croient qu’ils servent bien Dieu, mais ils ne contrôlent pas ce qu’ils disent. Ils se trompent eux-mêmes, et leur religion ne vaut rien."
-        },
         "sw": {
           "L": "Ikiwa mtu anajiona kuwa mtu wa dini, bila kuutia ulimi wake hatamu, bali akiudanganya moyo wake, dini ya huyo ni bure.",
           "B": "Mtu akijiona kuwa mcha Mungu lakini hauwekei ulimi wake hatamu, anajidanganya mwenyewe, na dini yake ni tupu.",
           "R": "Watu wengine hudhani kwamba wanamtumikia Mungu vizuri, lakini hawazuii maneno yao. Wanajidanganya wenyewe, na dini yao haina thamani yoyote."
+        },
+        "fr": {
+          "L": "Si quelqu’un pense être religieux, ne tenant pas sa langue en bride mais trompant son cœur, la religion de celui-là est vaine.",
+          "B": "Si quelqu’un se croit pieux mais ne met pas de bride à sa langue, il se trompe lui-même, et sa religion est vide.",
+          "R": "Certains pensent qu’ils servent bien Dieu, mais ils ne contrôlent pas ce qu’ils disent. Ils se trompent eux-mêmes, et leur religion ne vaut rien."
         }
       },
       "decisions": [
@@ -4568,15 +4396,15 @@
           "B": "Para Dios el Padre, la religión pura y sin contaminación es esta: acudir en ayuda de los huérfanos y de las viudas en sus dificultades, y mantenerse sin mancha del mundo.",
           "R": "Esta es la religión que Dios el Padre considera pura y buena: cuidar a los huérfanos y a las viudas cuando sufren, y no dejarse ensuciar por la maldad del mundo."
         },
-        "fr": {
-          "L": "La religion pure et sans souillure devant le Dieu et Père, la voici : visiter les orphelins et les veuves dans leur détresse, [et] se garder soi-même sans tache, à l’abri du monde.",
-          "B": "Aux yeux de Dieu le Père, une religion pure et sans souillure, c’est ceci : aller au secours des orphelins et des veuves dans leur détresse, et ne pas se laisser tacher par le monde.",
-          "R": "Voici la religion que Dieu le Père trouve pure et bonne : prendre soin des orphelins et des veuves quand ils souffrent, et ne pas vous laisser salir par le mal du monde."
-        },
         "sw": {
           "L": "Dini safi isiyotiwa najisi mbele ya Mungu na Baba ni hii: kuwatembelea yatima na wajane katika taabu zao, [na] kujitunza bila doa kutokana na ulimwengu.",
           "B": "Mbele ya Mungu Baba, dini iliyo safi na isiyochafuliwa ni hii: kuwasaidia yatima na wajane katika shida zao, na kujiweka mwenyewe bila doa la ulimwengu.",
           "R": "Hii ndiyo dini ambayo Mungu Baba anaiona kuwa safi na njema: kuwatunza yatima na wajane wanapoteseka, na kujilinda usichafuliwe na uovu wa ulimwengu."
+        },
+        "fr": {
+          "L": "[La] religion pure et sans souillure devant [notre] Dieu et Père est celle-ci : visiter les orphelins et les veuves dans leur détresse, [et] se garder sans tache loin du monde.",
+          "B": "Aux yeux de Dieu le Père, la religion pure et sans souillure consiste à venir en aide aux orphelins et aux veuves dans leur détresse, et à ne pas se laisser souiller par le monde.",
+          "R": "Voici la religion que Dieu le Père considère comme pure et bonne : prendre soin des orphelins et des veuves quand ils souffrent, et ne pas se laisser salir par le mal du monde."
         }
       },
       "decisions": [
@@ -4748,28 +4576,6 @@
           "footnote": false
         },
         {
-          "id": "r-fr-1",
-          "layer": "rendering",
-          "language": "fr",
-          "levels": [
-            "L"
-          ],
-          "category": "supplied_words",
-          "tokens": [
-            "n59001027006",
-            "n59001027007",
-            "n59001027008",
-            "n59001027009"
-          ],
-          "choice": "devant le Dieu et Père (L), with no supplied word",
-          "alternatives": [
-            "devant [notre] Dieu et Père"
-          ],
-          "reason": "French can keep the single article over both nouns, which shows that one person is meant (m4), so the [our] the English supplies is not needed.",
-          "uncertain": false,
-          "footnote": false
-        },
-        {
           "id": "r-sw-1",
           "layer": "rendering",
           "language": "sw",
@@ -4786,6 +4592,26 @@
             "dunia"
           ],
           "reason": "\"Dunia\" is the earth; \"ulimwengu\" is also the world of people and its ways, which is the sense here (see the meaning decision).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59001027012"
+          ],
+          "choice": "venir en aide (B); prendre soin (R); visiter (L)",
+          "alternatives": [
+            "rendre visite"
+          ],
+          "reason": "The verb means coming to help and care for someone (m1). French \"visiter\" keeps the Greek word at Literal; at Balanced and Readable a plain \"rendre visite\" would sound like a social call.",
           "uncertain": false,
           "footnote": false
         }

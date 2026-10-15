@@ -41,15 +41,15 @@
           "B": "De Judas, siervo de {{christos:Jesucristo|Jesús, el Mesías,}} y hermano de Santiago, a los que han sido llamados, amados por Dios Padre y guardados a salvo para {{christos:Jesucristo|Jesús, el Mesías}}.",
           "R": "Esta carta es de Judas. Soy siervo de {{christos:Jesucristo|Jesús, el Mesías,}} y hermano de Santiago. {{plural_you:Les|Os}} escribo a {{plural_you:ustedes|vosotros}}, a quienes Dios ha llamado. Dios Padre {{plural_you:los|os}} ama, y {{plural_you:los|os}} guarda a salvo para {{christos:Jesucristo|Jesús, el Mesías}}."
         },
-        "fr": {
-          "L": "Jude, esclave de Jésus {{christos:Christ|Messie}} et frère de Jacques, aux appelés, aimés en Dieu [le] Père et gardés pour Jésus {{christos:Christ|Messie}}.",
-          "B": "De la part de Jude, serviteur de Jésus {{christos:Christ|le Messie}} et frère de Jacques, à ceux qui ont été appelés, qui sont aimés de Dieu le Père et gardés en sûreté pour Jésus {{christos:Christ|le Messie}}.",
-          "R": "Cette lettre vient de Jude. Je suis serviteur de Jésus {{christos:Christ|le Messie}}, et je suis un frère de Jacques. Je vous écris, à vous que Dieu a appelés. Dieu le Père vous aime, et {{deity_pronoun:il|Il}} vous garde en sûreté pour Jésus {{christos:Christ|le Messie}}."
-        },
         "sw": {
           "L": "Yuda, mtumwa wa Yesu {{christos:Kristo|Masihi}} na ndugu yake Yakobo, kwa walioitwa, waliopendwa katika Mungu Baba na kulindwa kwa ajili ya Yesu {{christos:Kristo|Masihi}}.",
           "B": "Kutoka kwa Yuda, mtumishi wa Yesu {{christos:Kristo|Masihi}} na ndugu yake Yakobo, kwa wale walioitwa, wanaopendwa na Mungu Baba na kulindwa salama kwa ajili ya Yesu {{christos:Kristo|Masihi}}.",
           "R": "Barua hii inatoka kwa Yuda. Mimi ni mtumishi wa Yesu {{christos:Kristo|Masihi}}, na ni ndugu yake Yakobo. Ninawaandikia ninyi ambao Mungu amewaita. Mungu Baba anawapenda, na anawalinda salama kwa ajili ya Yesu {{christos:Kristo|Masihi}}."
+        },
+        "fr": {
+          "L": "Jude, esclave de Jésus {{christos:Christ|Messie}} et frère de Jacques, à ceux qui sont appelés, aimés en Dieu le Père et gardés pour Jésus {{christos:Christ|Messie}} :",
+          "B": "De la part de Jude, serviteur de Jésus {{christos:Christ|le Messie}} et frère de Jacques, à ceux qui ont été appelés, qui sont aimés par Dieu le Père et gardés en sûreté pour Jésus {{christos:Christ|le Messie}}.",
+          "R": "Cette lettre vient de Jude. Je suis serviteur de Jésus {{christos:Christ|le Messie}}, et je suis frère de Jacques. Je vous écris, à vous que Dieu a appelés. Dieu le Père vous aime, et {{deity_pronoun:il|Il}} vous garde en sûreté pour Jésus {{christos:Christ|le Messie}}."
         }
       },
       "decisions": [
@@ -331,49 +331,6 @@
           "footnote": false
         },
         {
-          "id": "r-fr-1",
-          "layer": "rendering",
-          "language": "fr",
-          "levels": [
-            "L",
-            "B",
-            "R"
-          ],
-          "category": "setting_alternative",
-          "tokens": [
-            "n65001001003",
-            "n65001001015"
-          ],
-          "choice": "\"Jésus {{christos:Christ|Messie}}\" (L); \"Jésus {{christos:Christ|le Messie}}\" (B, R); every pronoun for God or Christ under deity_pronoun, subject \"il\" included (for the whole letter)",
-          "alternatives": [
-            "\"Jésus-Christ\" with no setting"
-          ],
-          "reason": "As in Colossians: no hyphen, so that both options read naturally; French must write the subject pronoun, so \"il\" for God or Christ carries the span (\"{{deity_pronoun:il|Il}} vous garde\"), and a pronoun beginning a sentence is written plainly.",
-          "uncertain": false,
-          "footnote": false
-        },
-        {
-          "id": "r-fr-2",
-          "layer": "rendering",
-          "language": "fr",
-          "levels": [
-            "L",
-            "B",
-            "R"
-          ],
-          "category": "word_choice",
-          "tokens": [
-            "n65001001004"
-          ],
-          "choice": "esclave (L); serviteur (B, R)",
-          "alternatives": [
-            "esclave at every level"
-          ],
-          "reason": "As the English and the style guide: here the word is a title of service to Christ, not a statement about slavery itself, so Balanced and Readable say \"serviteur\"; the meaning decision (m2) keeps the sense of belonging.",
-          "uncertain": false,
-          "footnote": false
-        },
-        {
           "id": "r-sw-1",
           "layer": "rendering",
           "language": "sw",
@@ -433,6 +390,68 @@
           "reason": "Swahili marks most pronouns for God and Christ inside the verb (\"anawapenda\", \"anawalinda\"), and a prefix cannot take a capital, so the deity_pronoun setting goes only on free pronouns and possessives, as in Romans and 2 Peter. Swahili therefore has fewer spans than English.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n65001001001",
+            "n65001001007"
+          ],
+          "choice": "Jude; Jacques",
+          "alternatives": [
+            "Judas"
+          ],
+          "reason": "French, like English, has long called the writer \"Jude\", which keeps him apart from Judas Iscariot, though the Greek name is the same (m1). \"Jacques\" is the usual French form of James.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-2",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n65001001004"
+          ],
+          "choice": "esclave (L); serviteur (B, R)",
+          "alternatives": [],
+          "reason": "As the style guide sets out for the Greek word: Literal keeps \"esclave\", and the meaning decision (m2) records that he was owned; Balanced and Readable say \"serviteur\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-3",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n65001001012"
+          ],
+          "choice": "passé composé for past events at every level, the stories of verses 5-11 and 14 included (for the whole letter); Jésus {{christos:Christ|Messie}} (L), Jésus {{christos:Christ|le Messie}} (B, R)",
+          "alternatives": [
+            "passé simple at Balanced for the stories"
+          ],
+          "reason": "Jude is a letter: he reminds the readers of what they know, and French uses the passé composé for that, as in Colossians and Ephesians. The title setting follows the style guide.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -468,15 +487,15 @@
           "B": "Que la misericordia, la paz y el amor {{plural_you:les|os}} sean dados en abundancia cada vez mayor.",
           "R": "Oro para que {{plural_you:tengan|tengáis}} cada vez más misericordia, paz y amor."
         },
-        "fr": {
-          "L": "Que la miséricorde, la paix et l’amour vous soient multipliés.",
-          "B": "Que la miséricorde, la paix et l’amour vous soient accordés toujours plus abondamment.",
-          "R": "Je prie pour que vous receviez de plus en plus de miséricorde, de paix et d’amour."
-        },
         "sw": {
           "L": "Rehema kwenu, na amani, na upendo viongezwe.",
           "B": "Rehema, amani na upendo viwe vyenu kwa wingi zaidi na zaidi.",
           "R": "Ninaomba mpate rehema, amani na upendo zaidi na zaidi."
+        },
+        "fr": {
+          "L": "Miséricorde, paix et amour vous soient multipliés.",
+          "B": "Que la miséricorde, la paix et l’amour vous soient donnés toujours plus abondamment.",
+          "R": "Je prie pour que vous ayez toujours plus de miséricorde, de paix et d’amour."
         }
       },
       "decisions": [
@@ -580,15 +599,15 @@
           "B": "Queridos, yo estaba haciendo todo lo posible por escribir{{plural_you:les|os}} acerca de la salvación que tenemos en común, pero me he visto obligado a escribir{{plural_you:les|os}} para rogar{{plural_you:les|os}} que {{plural_you:luchen|luchéis}} con empeño por la fe que fue entregada una vez para siempre al pueblo santo de Dios.",
           "R": "Queridos amigos, yo me estaba esforzando por escribir{{plural_you:les|os}} acerca de la salvación que todos compartimos. Pero he tenido que escribir{{plural_you:les|os}} sobre otra cosa. {{plural_you:Les|Os}} ruego que {{plural_you:defiendan|defendáis}} la fe y {{plural_you:luchen|luchéis}} por ella. Esta fe fue entregada al pueblo santo de Dios una sola vez, y es para siempre."
         },
-        "fr": {
-          "L": "Bien-aimés, alors que je mettais tout mon zèle à vous écrire au sujet de notre salut commun, je me suis trouvé dans la nécessité de vous écrire pour vous exhorter à combattre pour la foi qui a été transmise une fois pour toutes aux saints.",
-          "B": "Chers amis, je faisais tout mon possible pour vous écrire au sujet du salut que nous avons en commun, mais je me suis vu obligé de vous écrire pour vous exhorter à lutter avec ardeur pour la foi qui a été transmise une fois pour toutes au peuple saint de Dieu.",
-          "R": "Chers amis, je travaillais dur pour vous écrire au sujet du salut que nous partageons tous. Mais j’ai dû vous écrire au sujet d’autre chose. Je vous demande de vous lever et de combattre pour la foi. Cette foi a été transmise au peuple saint de Dieu une seule fois, pour toujours."
-        },
         "sw": {
           "L": "Wapendwa, nikifanya bidii yote kuwaandikia kuhusu wokovu wetu wa pamoja, niliona ni lazima kuwaandikia, nikiwasihi mshindanie imani iliyokabidhiwa watakatifu mara moja kwa daima.",
           "B": "Wapendwa, nilipokuwa nikifanya kila juhudi kuwaandikia kuhusu wokovu tunaoushiriki sote, niliona sina budi kuwaandikia na kuwasihi mpigane kwa bidii kwa ajili ya imani ambayo watu wa Mungu walio watakatifu walikabidhiwa mara moja kwa daima.",
           "R": "Wapendwa wangu, nilikuwa nikijitahidi sana kuwaandikia kuhusu wokovu ambao sisi sote tunashiriki. Lakini imenibidi kuwaandikia kuhusu jambo jingine. Ninawasihi msimame na kuipigania imani. Watu wa Mungu walikabidhiwa imani hii mara moja tu, iwe yao kwa wakati wote."
+        },
+        "fr": {
+          "L": "Bien-aimés, alors que je mettais tout mon zèle à vous écrire au sujet de notre salut commun, je me suis vu obligé de vous écrire pour vous exhorter à combattre pour la foi transmise une fois pour toutes aux saints.",
+          "B": "Mes chers amis, je faisais tout mon possible pour vous écrire au sujet du salut que nous avons en commun, mais je me suis vu obligé de vous écrire pour vous exhorter à lutter avec ardeur pour la foi qui a été transmise une fois pour toutes au peuple saint de Dieu.",
+          "R": "Mes chers amis, je travaillais dur pour vous écrire au sujet du salut que nous partageons tous. Mais j’ai dû vous écrire sur un autre sujet. Je vous encourage à vous lever et à vous battre pour la foi. Cette foi a été transmise au peuple saint de Dieu une seule fois, pour toujours."
         }
       },
       "decisions": [
@@ -777,48 +796,6 @@
           "footnote": false
         },
         {
-          "id": "r-fr-1",
-          "layer": "rendering",
-          "language": "fr",
-          "levels": [
-            "L",
-            "B",
-            "R"
-          ],
-          "category": "word_choice",
-          "tokens": [
-            "n65001003001"
-          ],
-          "choice": "Bien-aimés (L); Chers amis (B, R) (verses 3, 17, 20)",
-          "alternatives": [
-            "Bien-aimés at every level"
-          ],
-          "reason": "As the English: \"bien-aimés\" as an address is church language; \"chers amis\" is how a French letter speaks to friends.",
-          "uncertain": false,
-          "footnote": false
-        },
-        {
-          "id": "r-fr-2",
-          "layer": "rendering",
-          "language": "fr",
-          "levels": [
-            "L",
-            "B",
-            "R"
-          ],
-          "category": "word_choice",
-          "tokens": [
-            "n65001003022"
-          ],
-          "choice": "les saints (L); le peuple saint de Dieu (B, R) (for the whole letter)",
-          "alternatives": [
-            "les saints at every level"
-          ],
-          "reason": "As Colossians: \"les saints\" today suggests canonised individuals; Balanced and Readable say that all God's people are meant.",
-          "uncertain": false,
-          "footnote": false
-        },
-        {
           "id": "r-sw-1",
           "layer": "rendering",
           "language": "sw",
@@ -836,6 +813,26 @@
             "wapenzi"
           ],
           "reason": "As in 2 Peter 3:1: \"wapendwa\" (those who are loved) says what the Greek word says; \"wapenzi\" today often means sweethearts. Readable adds \"wangu\" (my) for warmth. The same in verses 17 and 20.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n65001003001",
+            "n65001003022"
+          ],
+          "choice": "Bien-aimés (L); Mes chers amis (B, R); aux saints (L), au peuple saint de Dieu (B, R) (for the whole letter)",
+          "alternatives": [],
+          "reason": "\"Bien-aimés\" is no longer an ordinary way to address people; Balanced and Readable say \"mes chers amis\", as the English does (m1). \"Les saints\" now suggests exceptional individuals, so Balanced and Readable say who they are, as in Colossians and Ephesians.",
           "uncertain": false,
           "footnote": false
         }
@@ -896,15 +893,15 @@
           "B": "Porque {{gender:algunas personas|algunos hombres}} se han infiltrado entre {{plural_you:ustedes|vosotros}} sin que nadie lo notara. Hace mucho tiempo quedó escrito que les esperaba este juicio. Son gente impía que hace de la gracia de nuestro Dios una excusa para el desenfreno, y que reniega de {{christos:Jesucristo|Jesús, el Mesías}}, nuestro único Amo y Señor.",
           "R": "Digo esto porque {{gender:algunas personas|algunos hombres}} se han metido entre {{plural_you:ustedes|vosotros}} a escondidas, sin que nadie se diera cuenta. Hace mucho tiempo quedó escrito que la gente como ellos sería juzgada. No honran a Dios. Toman la gracia de nuestro Dios y la usan como excusa para llevar una vida desvergonzada. Y se vuelven contra {{christos:Jesucristo|Jesús, el Mesías}}, el único que es nuestro Amo y Señor."
         },
-        "fr": {
-          "L": "Car {{gender:des gens|des hommes}} se sont glissés [parmi vous], eux qui depuis longtemps ont été inscrits d’avance pour ce jugement, des impies, qui changent la grâce de notre Dieu en débauche et renient notre seul Maître et Seigneur, Jésus {{christos:Christ|Messie}}.",
-          "B": "Car {{gender:des gens|des hommes}} se sont glissés parmi vous sans qu’on les remarque. Il y a longtemps qu’il a été écrit qu’ils subiraient ce jugement. Ce sont des impies, qui font de la grâce de notre Dieu un prétexte pour vivre sans retenue, et qui renient Jésus {{christos:Christ|le Messie}}, notre seul Maître et Seigneur.",
-          "R": "Je dis cela parce que {{gender:des gens|des hommes}} se sont faufilés parmi vous sans que personne le remarque. Il y a longtemps, il a été écrit que des gens comme eux seraient jugés. Ils ne respectent pas Dieu. Ils prennent la grâce de notre Dieu et s’en servent comme excuse pour vivre sans aucune honte. Et ils se retournent contre Jésus {{christos:Christ|le Messie}}, qui est notre seul Maître et Seigneur."
-        },
         "sw": {
           "L": "Kwa maana watu fulani wamejipenyeza kwa siri, ambao tangu zamani waliandikwa mapema kwa ajili ya hukumu hii, [watu] wasiomcha Mungu, wakiigeuza neema ya Mungu wetu kuwa ukosefu wa haya, na wakimkana Bwana wetu wa pekee, Yesu {{christos:Kristo|Masihi}}.",
           "B": "Kwa maana watu fulani wamejipenyeza kati yenu bila kutambuliwa. Zamani iliandikwa kwamba wangeipata hukumu hii. Ni watu wasiomcha Mungu, wanaoigeuza neema ya Mungu wetu kuwa kisingizio cha maisha yasiyo na haya, na wanaomkana Yesu {{christos:Kristo|Masihi}}, Bwana wetu wa pekee.",
           "R": "Nasema hivi kwa sababu watu fulani wameingia kati yenu kwa siri, bila mtu yeyote kutambua. Zamani iliandikwa kwamba watu kama hao watahukumiwa. Hawamheshimu Mungu. Wanaichukua neema ya Mungu wetu na kuitumia kama kisingizio cha kuishi bila haya. Tena wanamgeuka Yesu {{christos:Kristo|Masihi}}, ambaye peke yake ndiye Bwana wetu."
+        },
+        "fr": {
+          "L": "Car certains {{gender:individus|hommes}} se sont glissés [parmi vous], eux qui depuis longtemps ont été inscrits d’avance pour ce jugement, des impies, qui changent la grâce de notre Dieu en débauche et renient notre seul Maître et Seigneur, Jésus {{christos:Christ|Messie}}.",
+          "B": "Car certains {{gender:individus|hommes}} se sont glissés parmi vous sans qu’on les remarque. Il y a longtemps qu’il a été écrit qu’ils subiraient ce jugement. Ce sont des impies, qui font de la grâce de notre Dieu un prétexte à la débauche, et qui renient Jésus {{christos:Christ|le Messie}}, notre seul Maître et Seigneur.",
+          "R": "Je vous dis cela parce que certains {{gender:individus|hommes}} se sont introduits parmi vous sans que personne le remarque. Il y a longtemps, il a été écrit que des gens comme eux seraient jugés. Ils ne respectent pas Dieu. Ils prennent la grâce de notre Dieu et s’en servent comme excuse pour vivre sans aucune pudeur. Et ils se tournent contre Jésus {{christos:Christ|le Messie}}, qui est notre seul Maître et Seigneur."
         }
       },
       "decisions": [
@@ -1175,47 +1172,6 @@
           "footnote": false
         },
         {
-          "id": "r-fr-1",
-          "layer": "rendering",
-          "language": "fr",
-          "levels": [
-            "L",
-            "B",
-            "R"
-          ],
-          "category": "setting_alternative",
-          "tokens": [
-            "n65001004004"
-          ],
-          "choice": "{{gender:des gens|des hommes}}",
-          "alternatives": [
-            "{{gender:certaines personnes|certains hommes}}"
-          ],
-          "reason": "The word means human beings (r-en-1). \"Gens\" takes masculine agreement like \"hommes\", so the words that follow (\"glissés\", \"inscrits\") are the same in both options; \"personnes\" would make them feminine in one only.",
-          "uncertain": false,
-          "footnote": false
-        },
-        {
-          "id": "r-fr-2",
-          "layer": "rendering",
-          "language": "fr",
-          "levels": [
-            "L",
-            "B"
-          ],
-          "category": "word_choice",
-          "tokens": [
-            "n65001004030"
-          ],
-          "choice": "renient (L, B); se retournent contre (R)",
-          "alternatives": [
-            "nient"
-          ],
-          "reason": "French \"renier\" already means to disown a person, which is the sense here (m7), so Balanced need not change the word as the English does.",
-          "uncertain": false,
-          "footnote": false
-        },
-        {
           "id": "r-sw-1",
           "layer": "rendering",
           "language": "sw",
@@ -1279,6 +1235,47 @@
             "wanaume"
           ],
           "reason": "\"Watu\" already means people, men and women; \"wanaume\" means males and would change the meaning, so Swahili has no counterpart to the English gender span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n65001004004"
+          ],
+          "choice": "certains {{gender:individus|hommes}}",
+          "alternatives": [
+            "{{gender:certaines personnes|certains hommes}}"
+          ],
+          "reason": "The word means human beings, and the text does not say whether women were among them. \"Individus\" is inclusive, keeps the slightly distant tone of the Greek \"certain people\", and is masculine like \"hommes\", so the words that agree with it (\"glissés\") are the same under both options.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-2",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n65001004030"
+          ],
+          "choice": "renient (L, B); se tournent contre (R)",
+          "alternatives": [
+            "nient"
+          ],
+          "reason": "French \"renier\" means to disown a person one belonged to, which is the sense here (m7), so it needs none of the care that English \"deny\" does.",
           "uncertain": false,
           "footnote": false
         }
@@ -1353,15 +1350,15 @@
           "B": "Ahora quiero recordar{{plural_you:les|os}} algo, aunque ya lo {{plural_you:saben|sabéis}} todo. Jesús salvó a un pueblo sacándolo de la tierra de Egipto, pero después destruyó a los de ese pueblo que no creyeron. \\v 6 Y a los ángeles que no se mantuvieron en el lugar de autoridad que les correspondía, sino que abandonaron su propia morada, los ha guardado en cadenas perpetuas, en profunda oscuridad, para el juicio del gran día.",
           "R": "{{plural_you:Ustedes|Vosotros}} ya {{plural_you:saben|sabéis}} todo esto, pero quiero {{plural_you:recordárselo|recordároslo}}. Jesús salvó al pueblo de Israel y lo sacó de la tierra de Egipto. Pero más tarde destruyó a los que no creyeron. \\v 6 {{plural_you:Recuerden|Recordad}} también a los ángeles que no se quedaron en el lugar de autoridad que Dios les había dado. Dejaron el hogar al que pertenecían. Por eso {{deity_pronoun:él|Él}} los tiene guardados en la oscuridad, con cadenas que durarán para siempre. Allí están presos hasta el gran día del juicio."
         },
-        "fr": {
-          "L": "Or je veux vous rappeler, à vous qui savez tout une fois pour toutes, que Jésus, après avoir sauvé un peuple du pays d’Égypte, a fait périr la seconde fois ceux qui n’avaient pas cru ; \\v 6 et les anges qui n’ont pas gardé leur propre rang, mais qui ont abandonné leur propre demeure, {{deity_pronoun:il|Il}} les a gardés pour le jugement du grand jour, dans des liens perpétuels, sous l’obscurité.",
-          "B": "Je veux maintenant vous rappeler quelque chose, bien que vous le sachiez déjà parfaitement. Jésus a sauvé un peuple en le faisant sortir du pays d’Égypte, mais ensuite {{deity_pronoun:il|Il}} a fait périr ceux d’entre eux qui n’ont pas cru. \\v 6 Et les anges qui ne sont pas restés dans le rang d’autorité qui était le leur, mais qui ont abandonné leur propre demeure, {{deity_pronoun:il|Il}} les garde dans des chaînes perpétuelles, au fond des ténèbres, en vue du jugement du grand jour.",
-          "R": "Vous savez déjà tout cela, mais je veux vous le rappeler. Jésus a sauvé le peuple d’Israël et l’a fait sortir du pays d’Égypte. Mais ensuite, {{deity_pronoun:il|Il}} a fait mourir ceux qui n’avaient pas cru. \\v 6 Souvenez-vous des anges qui ne sont pas restés à la place d’autorité que Dieu leur avait donnée. Ils ont quitté la demeure qui était la leur. Alors {{deity_pronoun:il|Il}} les garde dans le noir, avec des chaînes qui dureront toujours. Ils sont retenus là jusqu’au grand jour du jugement."
-        },
         "sw": {
           "L": "Lakini nataka kuwakumbusha, ingawa mnajua mambo yote mara moja kwa daima, kwamba Yesu, akiisha kuwaokoa watu kutoka nchi ya Misri, mara ya pili aliwaangamiza wale ambao hawakuamini; \\v 6 na malaika ambao hawakulinda nafasi yao wenyewe, bali waliacha makao yao wenyewe, amewalinda kwa ajili ya hukumu ya siku ile kuu katika vifungo vya daima chini ya giza.",
           "B": "Sasa nataka kuwakumbusha jambo fulani, ingawa tayari mnayajua yote. Yesu aliwaokoa watu kutoka nchi ya Misri, lakini baadaye aliwaangamiza wale miongoni mwao ambao hawakuamini. \\v 6 Na malaika ambao hawakukaa katika nafasi ya mamlaka waliyopewa, bali waliyaacha makao yao wenyewe, amewalinda katika minyororo ya daima, katika giza nene, tayari kwa hukumu ya siku ile kuu.",
           "R": "Mnajua tayari mambo haya yote, lakini nataka kuwakumbusha. Yesu aliwaokoa watu wa Israeli na kuwatoa katika nchi ya Misri. Lakini baadaye aliwaangamiza wale ambao hawakuamini. \\v 6 Kumbukeni pia malaika ambao hawakukaa katika nafasi ya mamlaka ambayo Mungu aliwapa. Waliyaacha makao yaliyokuwa yao. Kwa hiyo amewafunga gizani kwa minyororo itakayodumu milele. Wanalindwa huko mpaka siku ile kuu ya hukumu."
+        },
+        "fr": {
+          "L": "Or je veux vous rappeler, bien que vous sachiez tout une fois pour toutes, que Jésus, ayant sauvé un peuple du pays d’Égypte, a fait périr la seconde fois ceux qui n’avaient pas cru ; \\v 6 et les anges qui n’ont pas gardé leur rang, mais ont abandonné leur propre demeure, {{deity_pronoun:il|Il}} les a gardés pour le jugement du grand jour dans des liens perpétuels, sous l’obscurité.",
+          "B": "Je veux maintenant vous rappeler une chose, bien que vous la sachiez déjà. Jésus a sauvé un peuple en le faisant sortir du pays d’Égypte, mais ensuite {{deity_pronoun:il|Il}} a fait périr ceux d’entre eux qui n’avaient pas cru. \\v 6 Quant aux anges qui ne sont pas restés dans la position d’autorité qui était la leur, mais qui ont abandonné leur propre demeure, {{deity_pronoun:il|Il}} les a gardés dans des chaînes perpétuelles, au plus profond des ténèbres, pour le jugement du grand jour.",
+          "R": "Vous savez déjà tout cela, mais je veux vous le rappeler. Jésus a sauvé le peuple d’Israël et l’a fait sortir du pays d’Égypte. Mais plus tard, {{deity_pronoun:il|Il}} a fait mourir ceux qui n’avaient pas cru. \\v 6 Souvenez-vous des anges qui ne sont pas restés à la place d’autorité que Dieu leur avait donnée. Ils ont quitté le lieu où ils devaient vivre. Alors {{deity_pronoun:il|Il}} les a gardés dans l’obscurité, attachés avec des chaînes qui dureront toujours. Ils sont retenus là jusqu’au grand jour du jugement."
         }
       },
       "decisions": [
@@ -1674,48 +1671,6 @@
           "footnote": false
         },
         {
-          "id": "r-fr-1",
-          "layer": "rendering",
-          "language": "fr",
-          "levels": [
-            "L",
-            "B",
-            "R"
-          ],
-          "category": "register",
-          "tokens": [
-            "n65001005015",
-            "n65001005021"
-          ],
-          "choice": "passé composé for past events at every level, the examples from Israel's history included (for the whole letter)",
-          "alternatives": [
-            "passé simple at Literal and Balanced for verses 5-11"
-          ],
-          "reason": "Jude reminds his readers of stories they know (m1); this is speech to them, not narration, so French uses the passé composé, as in Colossians.",
-          "uncertain": false,
-          "footnote": false
-        },
-        {
-          "id": "r-fr-2",
-          "layer": "rendering",
-          "language": "fr",
-          "levels": [
-            "L",
-            "B"
-          ],
-          "category": "word_choice",
-          "tokens": [
-            "n65001006019"
-          ],
-          "choice": "perpétuels, perpétuelles (L, B); qui dureront toujours (R)",
-          "alternatives": [
-            "éternels"
-          ],
-          "reason": "As the English keeps \"eternal\" for a different word in verses 7 and 21 (\"le feu éternel\", \"la vie éternelle\"), French uses another adjective here.",
-          "uncertain": false,
-          "footnote": false
-        },
-        {
           "id": "r-sw-1",
           "layer": "rendering",
           "language": "sw",
@@ -1756,6 +1711,28 @@
             "vifungo vya milele"
           ],
           "reason": "ἀΐδιος is a different word from the \"eternal\" of verses 7 and 21 (m8). Literal and Balanced keep \"milele\" for that word and say \"daima\" (lasting, everlasting) here. Readable says plainly that the chains will last forever, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n65001006005",
+            "n65001006022",
+            "n65001006019"
+          ],
+          "choice": "n’ont pas gardé ... les a gardés (L, B); perpétuels (L, B)",
+          "alternatives": [
+            "éternels"
+          ],
+          "reason": "French \"garder\" can carry Jude’s play on one verb (m7), and it is kept for the same verb in verses 1, 13 and 21. \"Perpétuels\" is used for this word so that \"éternel\" stays for the different word of verses 7 and 21, as the English keeps \"eternal\".",
           "uncertain": false,
           "footnote": false
         }
@@ -1811,15 +1788,15 @@
           "B": "Así también Sodoma y Gomorra y las ciudades vecinas, que, como aquellos ángeles, se entregaron a la inmoralidad sexual y fueron tras carne de otra clase, están ahora ante nosotros como ejemplo, sufriendo la pena del fuego eterno.",
           "R": "{{plural_you:Piensen|Pensad}} también en Sodoma y Gomorra y en las ciudades vecinas. Igual que aquellos ángeles, la gente de allí vivía en la inmoralidad sexual y fue tras carne de un tipo diferente. Su castigo con fuego eterno está a la vista de todos como advertencia."
         },
-        "fr": {
-          "L": "De même, Sodome et Gomorrhe et les villes d’alentour, qui de la même manière que ceux-ci se sont livrées à l’immoralité sexuelle et sont allées après une autre chair, sont proposées en exemple, subissant la peine d’un feu éternel.",
-          "B": "De même, Sodome et Gomorrhe et les villes voisines, qui, comme ces anges, se sont livrées à l’immoralité sexuelle et ont recherché une chair d’une autre nature, sont là devant nous comme un exemple : elles subissent la peine du feu éternel.",
-          "R": "Pensez aussi à Sodome, à Gomorrhe et aux villes voisines. Comme ces anges, leurs habitants ont vécu dans l’immoralité sexuelle et ont recherché une chair d’un autre genre. Leur punition par le feu éternel est placée devant tout le monde comme un avertissement."
-        },
         "sw": {
           "L": "Kama vile Sodoma na Gomora na miji iliyoizunguka, ambayo kwa namna ileile kama hawa ilijitia katika uasherati na kufuata mwili mwingine, imewekwa mbele [kama] mfano, ikipata adhabu ya moto wa milele.",
           "B": "Vivyo hivyo Sodoma na Gomora na miji iliyoizunguka, ambayo, kama malaika wale, ilijitia katika uasherati na kufuata mwili wa aina nyingine, sasa iko mbele yetu kama mfano, ikiteseka kwa adhabu ya moto wa milele.",
           "R": "Fikirini pia Sodoma na Gomora na miji iliyoizunguka. Kama malaika wale, watu wa huko walifanya uasherati na kufuata mwili wa aina tofauti. Adhabu yao ya moto wa milele imewekwa mbele ya kila mtu kama onyo."
+        },
+        "fr": {
+          "L": "De même Sodome et Gomorrhe et les villes d’alentour, s’étant livrées de la même manière que ceux-ci à l’immoralité sexuelle et étant allées après une autre chair, sont proposées en exemple, subissant la peine d’un feu éternel.",
+          "B": "De même, Sodome et Gomorrhe et les villes voisines, qui, comme ces anges, se sont livrées à l’immoralité sexuelle et sont allées après une chair d’une autre nature, sont maintenant placées devant nous comme un exemple : elles subissent la peine du feu éternel.",
+          "R": "Pensez aussi à Sodome et Gomorrhe et aux villes voisines. Comme ces anges, les gens de ces villes ont commis des péchés sexuels et sont allés après une chair d’une autre sorte. Leur punition par le feu éternel est placée devant tous comme un avertissement."
         }
       },
       "decisions": [
@@ -2027,15 +2004,15 @@
           "B": "Sin embargo, de la misma manera estos soñadores contaminan su cuerpo, rechazan la autoridad del Señor y calumnian a los seres gloriosos.",
           "R": "Estos soñadores hacen lo mismo. Hacen impuro su propio cuerpo con el pecado. Rechazan la autoridad del Señor. E insultan a seres gloriosos del mundo celestial."
         },
-        "fr": {
-          "L": "Pourtant, de la même manière, ceux-ci aussi, rêvant, souillent la chair, rejettent la seigneurie et blasphèment les gloires.",
-          "B": "Pourtant, de la même manière, ces rêveurs souillent leur corps, rejettent l’autorité du Seigneur et injurient les êtres glorieux.",
-          "R": "Ces rêveurs font la même chose. Ils salissent leur propre corps par le péché. Ils rejettent l’autorité du Seigneur. Et ils insultent les êtres glorieux du monde céleste."
-        },
         "sw": {
           "L": "Hata hivyo, vivyo hivyo hawa nao, wakiota ndoto, wanautia mwili unajisi, wanakataa ubwana, na wanawakufuru wenye utukufu.",
           "B": "Hata hivyo, vivyo hivyo watu hawa wanaoota ndoto wanaitia miili yao unajisi, wanakataa mamlaka ya Bwana, na wanawatukana wenye utukufu.",
           "R": "Watu hawa wanaoota ndoto wanafanya vivyo hivyo. Wanaifanya miili yao kuwa najisi kwa dhambi. Wanakataa mamlaka ya Bwana. Tena wanawatukana viumbe wenye utukufu katika ulimwengu wa mbinguni."
+        },
+        "fr": {
+          "L": "Pourtant ceux-ci aussi, de la même manière, en rêvant, souillent la chair, rejettent la seigneurie et blasphèment les gloires.",
+          "B": "Et pourtant ces rêveurs font de même : ils souillent leur corps, rejettent l’autorité du Seigneur et injurient les êtres glorieux.",
+          "R": "Ces rêveurs agissent de la même manière. Ils salissent leur propre corps par le péché. Ils rejettent l’autorité du Seigneur. Et ils insultent les êtres glorieux du monde céleste."
         }
       },
       "decisions": [
@@ -2215,30 +2192,11 @@
           "tokens": [
             "n65001008014"
           ],
-          "choice": "blasphémer (L); injurier (B); insulter (R); the same in verses 9 and 10",
+          "choice": "blasphèment (L); injurient (B); insultent (R), here and in verses 9-10",
           "alternatives": [
-            "calomnier (B)"
+            "calomnient"
           ],
-          "reason": "As the English: \"blasphémer\" is said in French only of speech against God, so Balanced and Readable use words for abusive speech. \"Calomnier\" would mean false accusation, which is narrower than the Greek.",
-          "uncertain": false,
-          "footnote": false
-        },
-        {
-          "id": "r-fr-2",
-          "layer": "rendering",
-          "language": "fr",
-          "levels": [
-            "L"
-          ],
-          "category": "word_choice",
-          "tokens": [
-            "n65001008012"
-          ],
-          "choice": "les gloires (L); les êtres glorieux (B, R)",
-          "alternatives": [
-            "les dignités"
-          ],
-          "reason": "Literal keeps the bare plural noun, as the English \"glorious ones\" keeps the Greek form; Balanced and Readable say that beings are meant (m5).",
+          "reason": "As in English, Literal keeps the Greek word; French \"blasphémer\" is now said only of speech against God or what is sacred, so Balanced and Readable use words for abusive speech (m5). \"Calomnier\" would mean spreading false reports, which is not the point.",
           "uncertain": false,
           "footnote": false
         }
@@ -2293,15 +2251,15 @@
           "B": "Pero cuando el arcángel Miguel disputaba con el diablo, discutiendo sobre el cuerpo de Moisés, no se atrevió a pronunciar contra él un juicio calumnioso. Al contrario, dijo: «Que el Señor te reprenda».",
           "R": "Pero {{plural_you:piensen|pensad}} en Miguel, el jefe de los ángeles. Él discutía con el diablo sobre el cuerpo de Moisés. Sin embargo, no se atrevió a insultar al diablo cuando lo acusó. Solo le dijo: «¡Que el Señor te reprenda!»."
         },
-        "fr": {
-          "L": "Mais Michel l’archange, lorsqu’il disputait avec le diable et discutait au sujet du corps de Moïse, n’a pas osé porter [contre lui] un jugement blasphématoire, mais il a dit : « Que [le] Seigneur te réprimande ! »",
-          "B": "Mais quand Michel, l’archange, était en conflit avec le diable et discutait au sujet du corps de Moïse, il n’a pas osé porter contre lui un jugement injurieux. Il a dit au contraire : « Que le Seigneur te réprimande ! »",
-          "R": "Mais pensez à Michel, le chef des anges. Il se disputait avec le diable au sujet du corps de Moïse. Pourtant, il n’a pas osé insulter le diable en l’accusant. Il a seulement dit : « Que le Seigneur te réprimande ! »"
-        },
         "sw": {
           "L": "Lakini Mikaeli malaika mkuu, alipokuwa akishindana na Ibilisi, akihojiana juu ya mwili wa Musa, hakuthubutu kuleta [juu yake] hukumu ya kukufuru, bali alisema, \"Bwana akukemee.\"",
           "B": "Lakini Mikaeli, malaika mkuu, alipokuwa akishindana na Ibilisi, akibishana juu ya mwili wa Musa, hakuthubutu kuleta juu yake hukumu ya matusi. Badala yake alisema, \"Bwana akukemee.\"",
           "R": "Lakini fikirini Mikaeli, kiongozi wa malaika. Alikuwa akibishana na Ibilisi kuhusu mwili wa Musa. Hata hivyo, hakuthubutu kumtukana Ibilisi alipomshtaki. Alisema tu, \"Bwana akukemee!\""
+        },
+        "fr": {
+          "L": "Or Michel l’archange, lorsqu’il contestait avec le diable et discutait au sujet du corps de Moïse, n’a pas osé porter [contre lui] un jugement blasphématoire, mais il a dit : « Que le Seigneur te réprimande ! »",
+          "B": "Pourtant, quand l’archange Michel était en conflit avec le diable et discutait avec lui au sujet du corps de Moïse, il n’a pas osé prononcer contre lui un jugement injurieux. Il a seulement dit : « Que le Seigneur te réprimande ! »",
+          "R": "Mais pensez à Michel, le chef des anges. Il se disputait avec le diable au sujet du corps de Moïse. Pourtant, il n’a pas osé insulter le diable en l’accusant. Il a seulement dit : « Que le Seigneur te réprimande ! »"
         }
       },
       "decisions": [
@@ -2462,15 +2420,15 @@
           "B": "Pero estas personas calumnian lo que no conocen, mientras que lo que conocen por instinto, como animales que no razonan, es precisamente lo que los destruye.",
           "R": "Pero estas personas insultan cosas que no conocen. Son como animales salvajes que no pueden pensar. Lo único que entienden es lo que saben por instinto, y eso es justamente lo que los destruye."
         },
-        "fr": {
-          "L": "Mais ceux-ci blasphèment tout ce qu’ils ne connaissent pas ; et ce qu’ils savent naturellement, comme les animaux sans raison, en cela ils sont détruits.",
-          "B": "Mais ces gens injurient ce qu’ils ne connaissent pas, tandis que ce qu’ils savent d’instinct, comme des animaux privés de raison, est précisément ce qui les détruit.",
-          "R": "Mais ces gens insultent des choses qu’ils ne connaissent pas. Ils sont comme des bêtes sauvages qui ne peuvent pas réfléchir. Les seules choses qu’ils comprennent, ce sont celles qu’ils savent d’instinct, et ce sont justement elles qui les détruisent."
-        },
         "sw": {
           "L": "Lakini hawa wanayakufuru mambo wasiyoyajua; na mambo wanayoyaelewa kwa asili, kama wanyama wasio na busara, katika hayo wanaangamizwa.",
           "B": "Lakini watu hawa wanatukana mambo wasiyoyajua, na yale wanayoyajua kwa silika, kama wanyama wasioweza kufikiri, ndiyo hasa yanayowaangamiza.",
           "R": "Lakini watu hawa wanatukana mambo wasiyoyajua. Wao ni kama wanyama wa porini wasioweza kufikiri. Wanaelewa tu yale wanayoyajua kwa silika, na hayo ndiyo hasa yanayowaangamiza."
+        },
+        "fr": {
+          "L": "Mais ceux-ci blasphèment tout ce qu’ils ne connaissent pas, et ce qu’ils savent par nature, comme les animaux sans raison, c’est en cela qu’ils sont détruits.",
+          "B": "Mais ces gens-là injurient ce qu’ils ne connaissent pas, tandis que ce qu’ils connaissent d’instinct, comme des animaux sans raison, c’est justement cela qui les détruit.",
+          "R": "Mais ces gens insultent des choses qu’ils ne connaissent pas. Ils sont comme des bêtes sauvages qui ne peuvent pas réfléchir. Les seules choses qu’ils comprennent sont celles qu’ils connaissent par instinct, et ce sont justement elles qui les détruisent."
         }
       },
       "decisions": [
@@ -2620,15 +2578,15 @@
           "B": "¡Ay de ellos! Han seguido el camino de Caín. Por la paga se han lanzado al error de Balaam. Han perecido en la rebelión de Coré.",
           "R": "¡Qué terrible será para ellos! Han vivido como Caín, que mató a su hermano. Se han precipitado en el mismo error que Balaam, y todo por dinero. Y serán destruidos, como Coré cuando se rebeló contra Moisés."
         },
-        "fr": {
-          "L": "Malheur à eux, car ils sont allés dans la voie de Caïn, et pour un salaire ils se sont répandus dans l’égarement de Balaam, et dans la rébellion de Coré ils ont péri.",
-          "B": "Malheur à eux ! Ils ont marché dans la voie de Caïn. Pour de l’argent, ils se sont jetés dans l’égarement de Balaam. Ils ont péri dans la rébellion de Coré.",
-          "R": "Comme ce sera terrible pour eux ! Ils ont vécu comme Caïn, qui a tué son frère. Ils se sont précipités dans la même faute que Balaam, et tout cela pour de l’argent. Et ils seront détruits, comme Coré l’a été quand il s’est révolté contre Moïse."
-        },
         "sw": {
           "L": "Ole wao, kwa sababu walikwenda katika njia ya Kaini, na kwa ajili ya malipo walijimwaga katika upotevu wa Balaamu, na katika uasi wa Kora waliangamia.",
           "B": "Ole wao! Wamefuata njia ya Kaini. Kwa ajili ya malipo wamejitosa katika upotevu wa Balaamu. Wameangamia katika uasi wa Kora.",
           "R": "Itakuwa vibaya mno kwao! Wameishi kama Kaini, aliyemuua ndugu yake. Wamekimbilia kosa lilelile la Balaamu, wakitafuta fedha tu. Nao wataangamizwa, kama Kora alivyoangamizwa alipomwasi Musa."
+        },
+        "fr": {
+          "L": "Malheur à eux, car ils sont allés dans la voie de Caïn, et pour un salaire ils se sont jetés dans l’égarement de Balaam, et ils ont péri dans la révolte de Coré.",
+          "B": "Malheur à eux ! Ils ont suivi le chemin de Caïn. Pour de l’argent, ils se sont précipités dans l’égarement de Balaam. Ils ont péri dans la révolte de Coré.",
+          "R": "Quel malheur pour eux ! Ils ont vécu comme Caïn, qui a tué son frère. Ils se sont précipités dans la même faute que Balaam, et tout cela pour de l’argent. Et ils seront détruits, comme Coré l’a été quand il s’est révolté contre Moïse."
         }
       },
       "decisions": [
@@ -2788,13 +2746,13 @@
           ],
           "category": "word_choice",
           "tokens": [
-            "n65001011001"
+            "n65001011007",
+            "n65001011013",
+            "n65001011020"
           ],
-          "choice": "Malheur à eux (L, B); Comme ce sera terrible pour eux ! (R)",
-          "alternatives": [
-            "Malheur à eux at every level"
-          ],
-          "reason": "As the style guide sets for \"woe\": Literal and Balanced keep the prophets' cry, which is still current French; Readable says what it means, as the English Readable does (m1).",
+          "choice": "Caïn, Balaam, Coré",
+          "alternatives": [],
+          "reason": "The usual French forms of the three names (m2-m4). \"Malheur à eux\" is still current French for the prophets’ cry (m1), so only Readable recasts it.",
           "uncertain": false,
           "footnote": false
         }
@@ -2866,15 +2824,15 @@
           "B": "En los banquetes de amor {{plural_you:de ustedes|vuestros}} estas personas son como arrecifes ocultos bajo el agua. Comen con {{plural_you:ustedes|vosotros}} sin el menor temor, pastores que solo cuidan de sí mismos. Son nubes que no traen lluvia, llevadas por los vientos; árboles a fines del otoño sin fruto, dos veces muertos y arrancados de raíz; \\v 13 olas salvajes del mar que arrojan como espuma sus hechos vergonzosos; estrellas errantes, para quienes está guardada para siempre la más negra oscuridad.",
           "R": "Estas personas son como rocas escondidas bajo el agua, que hacen naufragar los barcos. Están presentes en los banquetes de amor {{plural_you:de ustedes|vuestros}}, las comidas en que {{plural_you:comen|coméis}} juntos. Comen con {{plural_you:ustedes|vosotros}} y no tienen miedo de nada. No cuidan de nadie más que de sí mismos. Son como nubes que no traen lluvia y que el viento se lleva. Son como árboles al final del otoño, que no tienen fruto. Están muertos dos veces, arrancados con raíz y todo. \\v 13 Son como olas salvajes del mar, que arrojan como espuma sus hechos vergonzosos. Son como estrellas que se salen de su camino. Un lugar de oscuridad profunda está guardado para ellos por siempre."
         },
-        "fr": {
-          "L": "Ce sont eux, les écueils dans vos agapes, festoyant ensemble sans crainte, se paissant eux-mêmes ; nuées sans eau, emportées par les vents ; arbres de fin d’automne, sans fruit, deux fois morts, déracinés ; \\v 13 vagues sauvages de la mer, rejetant l’écume de leurs propres hontes ; astres errants, pour qui l’obscurité des ténèbres a été gardée pour toujours.",
-          "B": "Ces gens sont, dans vos agapes, comme des écueils cachés sous l’eau. Ils mangent avec vous sans la moindre crainte, bergers qui ne prennent soin que d’eux-mêmes. Ce sont des nuages qui n’apportent pas de pluie, poussés par les vents ; des arbres de fin d’automne sans fruits, deux fois morts et arrachés avec leurs racines ; \\v 13 des vagues sauvages de la mer, qui rejettent comme une écume leurs actions honteuses ; des étoiles errantes, à qui sont gardées pour toujours les ténèbres les plus noires.",
-          "R": "Ces gens sont comme des rochers cachés sous l’eau, qui font couler les bateaux. Ils sont là pendant vos agapes, les repas que vous prenez ensemble. Ils mangent avec vous et n’ont peur de rien. Ils ne s’occupent de personne d’autre qu’eux-mêmes. Ils sont comme des nuages qui n’apportent pas de pluie et que le vent emporte. Ils sont comme des arbres à la fin de l’automne, qui n’ont pas de fruits. Ils sont deux fois morts, arrachés avec toutes leurs racines. \\v 13 Ils sont comme les vagues sauvages de la mer, qui rejettent leurs actions honteuses comme de l’écume. Ils sont comme des étoiles qui sortent de leur route. Un lieu de ténèbres profondes leur est réservé pour toujours."
-        },
         "sw": {
           "L": "Hawa ndio wale walio miamba katika karamu zenu za upendo, wakila karamu pamoja [nanyi] bila hofu, wakijichunga wenyewe; mawingu yasiyo na maji, yakichukuliwa na pepo; miti ya mwishoni mwa vuli, isiyo na matunda, iliyokufa mara mbili, iliyong'olewa; \\v 13 mawimbi makali ya bahari, yakirusha povu la aibu zao wenyewe; nyota zinazotangatanga, ambazo kwa ajili yao utusitusi wa giza umelindwa milele.",
           "B": "Katika karamu zenu za upendo watu hawa ni kama miamba iliyojificha chini ya maji. Wanakula pamoja nanyi bila hofu yoyote, wachungaji wanaojilisha wenyewe tu. Ni mawingu yasiyoleta mvua, yanayopeperushwa na upepo; miti ya mwishoni mwa vuli isiyo na matunda, iliyokufa mara mbili na kung'olewa na mizizi yake; \\v 13 mawimbi makali ya bahari, yanayotoa matendo yao ya aibu kama povu; nyota zinazotangatanga, ambazo kwa ajili yao giza jeusi kabisa limewekwa milele.",
           "R": "Watu hawa ni kama miamba iliyojificha chini ya maji inayovunja meli. Wako katika karamu zenu za upendo, yaani milo mnayokula pamoja. Wanakula pamoja nanyi bila kuogopa chochote. Hawamjali mtu yeyote ila wao wenyewe. Ni kama mawingu yasiyoleta mvua yanayopeperushwa na upepo. Ni kama miti isiyo na matunda yoyote wakati wa mavuno. Imekufa mara mbili, imeng'olewa pamoja na mizizi yake. \\v 13 Ni kama mawimbi makali ya bahari, yanayotupa matendo yao ya aibu kama povu. Ni kama nyota zinazotoka nje ya njia yao. Mahali pa giza nene pameandaliwa kwa ajili yao milele."
+        },
+        "fr": {
+          "L": "Ce sont eux qui, dans vos agapes, [sont] des écueils, festoyant avec vous sans crainte, se paissant eux-mêmes ; nuées sans eau, emportées par les vents ; arbres de fin d’automne, sans fruits, deux fois morts, déracinés ; \\v 13 vagues sauvages de la mer, rejetant l’écume de leurs propres hontes ; astres errants, à qui l’obscurité des ténèbres a été gardée pour toujours.",
+          "B": "Dans vos agapes, ces gens sont comme des écueils cachés sous l’eau. Ils mangent avec vous sans la moindre crainte, des bergers qui ne prennent soin que d’eux-mêmes. Ce sont des nuages sans pluie, poussés par les vents ; des arbres de fin d’automne sans fruits, deux fois morts et arrachés avec leurs racines ; \\v 13 des vagues sauvages de la mer, qui rejettent leurs actes honteux comme de l’écume ; des étoiles errantes, à qui les ténèbres les plus noires sont réservées pour toujours.",
+          "R": "Ces gens sont comme des rochers cachés sous l’eau, qui font couler les bateaux. Ils sont là à vos agapes, les repas où vous mangez ensemble. Ils mangent avec vous et n’ont peur de rien. Ils ne s’occupent de personne d’autre qu’eux-mêmes. Ils sont comme des nuages qui n’apportent pas de pluie et que le vent emporte. Ils sont comme des arbres à la fin de l’automne, qui n’ont pas de fruits. Ils sont morts deux fois, arrachés avec toutes leurs racines. \\v 13 Ils sont comme des vagues sauvages de la mer, qui rejettent leurs actes honteux comme de l’écume. Ils sont comme des étoiles qui s’égarent loin de leur route. Un lieu de profondes ténèbres leur est réservé pour toujours."
         }
       },
       "decisions": [
@@ -3116,28 +3074,6 @@
           "footnote": false
         },
         {
-          "id": "r-fr-1",
-          "layer": "rendering",
-          "language": "fr",
-          "levels": [
-            "L",
-            "B",
-            "R"
-          ],
-          "category": "word_choice",
-          "tokens": [
-            "n65001012006",
-            "n65001012008"
-          ],
-          "choice": "vos agapes at every level, explained at Readable; des écueils (L, B), des rochers cachés sous l’eau (R)",
-          "alternatives": [
-            "vos repas fraternels"
-          ],
-          "reason": "\"Agapes\" is the French word for the church's shared meals (m2) and is still understood as a feast; Readable adds what they were, as the English does. \"Écueil\" is the exact French word for a hidden reef and already carries the sense of danger (m1).",
-          "uncertain": false,
-          "footnote": false
-        },
-        {
           "id": "r-sw-1",
           "layer": "rendering",
           "language": "sw",
@@ -3156,6 +3092,46 @@
           ],
           "reason": "\"Vuli\" is the standard Swahili word for autumn, but in East Africa it also names the season of the short rains, which is not a harvest time. The point of the picture is a tree with no fruit when fruit is expected (m5), so Readable says \"wakati wa mavuno\" (harvest time). A reviewer should check that \"vuli\" is clear to readers.",
           "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n65001012006"
+          ],
+          "choice": "vos agapes (every level), explained at Readable",
+          "alternatives": [
+            "vos repas fraternels"
+          ],
+          "reason": "\"Agape\" is the French name, taken from the Greek word, for the church’s shared meals (m2), and it keeps the link with the word for love; Readable says what they were.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-2",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n65001012008"
+          ],
+          "choice": "des écueils (L); des écueils cachés sous l’eau (B); des rochers cachés sous l’eau, qui font couler les bateaux (R)",
+          "alternatives": [
+            "des taches"
+          ],
+          "reason": "The word means rocks hidden under the surface (m1). \"Écueil\" is the French word for such a rock, and it already carries the idea of hidden danger; Balanced and Readable say more.",
+          "uncertain": false,
           "footnote": false
         }
       ],
@@ -3230,15 +3206,15 @@
           "B": "Enoc, el séptimo en la descendencia de Adán, también profetizó acerca de estas personas. Dijo: «¡{{plural_you:Miren|Mirad}}! El Señor viene con decenas de miles de {{deity_pronoun:sus|Sus}} santos \\v 15 para juzgar a todos, y para demostrar que todos los impíos son culpables de todas las obras impías que han cometido en su impiedad, y de todas las palabras duras que los pecadores impíos han dicho contra {{deity_pronoun:él|Él}}».",
           "R": "Enoc era el séptimo en la línea familiar que comenzó con Adán. Él también dio una profecía acerca de estas personas. Dijo: «¡{{plural_you:Miren|Mirad}}! El Señor vendrá con muchos miles de {{deity_pronoun:sus|Sus}} santos ángeles. \\v 15 Juzgará a todos. Demostrará que todos los impíos son culpables de todas las cosas impías que han hecho. Y demostrará que son culpables de todas las palabras duras y crueles que los pecadores impíos han dicho contra {{deity_pronoun:él|Él}}»."
         },
-        "fr": {
-          "L": "Et c’est aussi au sujet de ceux-ci qu’Hénoch, le septième depuis Adam, a prophétisé, disant : « Voici, [le] Seigneur est venu avec {{deity_pronoun:ses|Ses}} saintes myriades, \\v 15 pour exercer le jugement contre tous, et pour convaincre tous les impies de toutes leurs œuvres d’impiété qu’ils ont commises dans leur impiété, et de toutes les paroles dures que des pécheurs impies ont dites contre {{deity_pronoun:lui|Lui}}. »",
-          "B": "Hénoch, le septième dans la lignée d’Adam, a lui aussi prophétisé au sujet de ces gens. Il a dit : « Voici que le Seigneur vient avec des dizaines de milliers de {{deity_pronoun:ses|Ses}} saints \\v 15 pour exercer le jugement sur tous, et pour montrer que tous les impies sont coupables de toutes les actions impies qu’ils ont commises dans leur impiété, et de toutes les paroles dures que des pécheurs impies ont prononcées contre {{deity_pronoun:lui|Lui}}. »",
-          "R": "Hénoch était le septième dans la famille qui a commencé avec Adam. Lui aussi a annoncé une prophétie au sujet de ces gens. Il a dit : « Regardez ! Le Seigneur va venir avec des milliers et des milliers de {{deity_pronoun:ses|Ses}} saints anges. \\v 15 Il va juger tout le monde. Il va montrer que tous les impies sont coupables de toutes les choses impies qu’ils ont faites. Et {{deity_pronoun:il|Il}} va montrer qu’ils sont coupables de toutes les paroles dures et cruelles que des pécheurs impies ont dites contre {{deity_pronoun:lui|Lui}}. »"
-        },
         "sw": {
           "L": "Na Henoko, wa saba kutoka kwa Adamu, alitoa unabii pia juu ya hawa, akisema, \"Tazama, Bwana alikuja pamoja na makumi ya maelfu ya watakatifu {{deity_pronoun:wake|Wake}}, \\v 15 kufanya hukumu juu ya wote, na kuwathibitishia hatia wote wasiomcha Mungu kuhusu matendo yao yote ya kutomcha Mungu waliyoyatenda kwa kutomcha Mungu, na kuhusu maneno yote magumu ambayo wenye dhambi wasiomcha Mungu walisema dhidi {{deity_pronoun:yake|Yake}}.\"",
           "B": "Henoko, wa saba katika ukoo kutoka kwa Adamu, alitoa unabii pia kuhusu watu hawa. Alisema, \"Tazama! Bwana anakuja pamoja na makumi ya maelfu ya watakatifu {{deity_pronoun:wake|Wake}} \\v 15 ili kuwahukumu wote, na kuwathibitishia hatia wote wasiomcha Mungu kwa kila tendo la kutomcha Mungu walilotenda katika kutomcha Mungu kwao, na kwa kila neno gumu ambalo wenye dhambi wasiomcha Mungu wamesema dhidi {{deity_pronoun:yake|Yake}}.\"",
           "R": "Henoko alikuwa wa saba katika ukoo ulioanza na Adamu. Yeye pia alitoa unabii kuhusu watu hawa. Alisema, \"Tazama! Bwana atakuja pamoja na maelfu mengi ya malaika {{deity_pronoun:wake|Wake}} watakatifu. \\v 15 Atawahukumu watu wote. Ataonyesha kwamba wote wasiomcha Mungu wana hatia kwa mambo yote ya kutomcha Mungu waliyoyafanya. Tena ataonyesha kwamba wana hatia kwa maneno yote magumu na ya kikatili ambayo wenye dhambi wasiomcha Mungu wamesema dhidi {{deity_pronoun:yake|Yake}}.\""
+        },
+        "fr": {
+          "L": "Hénoch aussi, le septième depuis Adam, a prophétisé à leur sujet, disant : « Voici, le Seigneur est venu avec {{deity_pronoun:ses|Ses}} saintes myriades, \\v 15 pour exercer le jugement contre tous et pour convaincre tous les impies de toutes les œuvres d’impiété qu’ils ont commises dans leur impiété, et de toutes les paroles dures que des pécheurs impies ont proférées contre {{deity_pronoun:lui|Lui}}. »",
+          "B": "Hénoch, le septième dans la lignée d’Adam, a aussi prophétisé au sujet de ces gens. Il a dit : « Voici que le Seigneur vient avec des dizaines de milliers de {{deity_pronoun:ses|Ses}} saints \\v 15 pour exercer le jugement sur tous, et pour prouver la culpabilité de tous les impies, pour toutes les œuvres impies qu’ils ont commises dans leur impiété, et pour toutes les paroles dures que des pécheurs impies ont prononcées contre {{deity_pronoun:lui|Lui}}. »",
+          "R": "Hénoch était le septième dans la famille qui a commencé avec Adam. Lui aussi a prononcé une prophétie au sujet de ces gens. Il a dit : « Regardez ! Le Seigneur viendra avec des milliers et des milliers de {{deity_pronoun:ses|Ses}} saints anges. \\v 15 Il jugera tout le monde. Il montrera que tous les impies sont coupables de toutes les choses impies qu’ils ont faites. Et {{deity_pronoun:il|Il}} montrera qu’ils sont coupables de toutes les paroles dures et cruelles que des pécheurs impies ont dites contre {{deity_pronoun:lui|Lui}}. »"
         }
       },
       "decisions": [
@@ -3535,47 +3511,6 @@
           "footnote": false
         },
         {
-          "id": "r-fr-1",
-          "layer": "rendering",
-          "language": "fr",
-          "levels": [
-            "L"
-          ],
-          "category": "word_choice",
-          "tokens": [
-            "n65001015006"
-          ],
-          "choice": "convaincre … de (L); montrer que … sont coupables (B, R)",
-          "alternatives": [
-            "confondre"
-          ],
-          "reason": "\"Convaincre quelqu’un de\" means to prove someone guilty of something, the sense here (m6), but today it is read as \"persuade\"; Balanced and Readable say it plainly.",
-          "uncertain": false,
-          "footnote": false
-        },
-        {
-          "id": "r-fr-2",
-          "layer": "rendering",
-          "language": "fr",
-          "levels": [
-            "L",
-            "B",
-            "R"
-          ],
-          "category": "word_choice",
-          "tokens": [
-            "n65001015009",
-            "n65001015028"
-          ],
-          "choice": "impie, impiété at every level, Readable included",
-          "alternatives": [
-            "qui ne respectent pas Dieu (R)"
-          ],
-          "reason": "As the English Readable: the word is repeated on purpose (m6), so Readable keeps it here though it explains it in verse 4.",
-          "uncertain": false,
-          "footnote": false
-        },
-        {
           "id": "r-sw-1",
           "layer": "rendering",
           "language": "sw",
@@ -3597,6 +3532,26 @@
             "wasiomheshimu Mungu"
           ],
           "reason": "The prophecy repeats the word for ungodliness four times on purpose (m6), so Swahili keeps the same phrase each time, at every level, as the English Readable keeps \"ungodly\" here. \"Wasiomcha Mungu\" is the phrase used for the ungodly in 2 Peter 2-3 and in verse 4.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n65001014008",
+            "n65001014010"
+          ],
+          "choice": "Hénoch; Voici (L, B), Regardez (R); impie, impiété at every level",
+          "alternatives": [],
+          "reason": "\"Hénoch\" is the usual French form of the name. \"Voici\" is ordinary French for a call to attention, not an archaism like English \"behold\". The repeated \"impie\" (m6) is kept four times at every level, as the English keeps \"ungodly\".",
           "uncertain": false,
           "footnote": false
         }
@@ -3646,15 +3601,15 @@
           "B": "Estas personas murmuran y se quejan de su suerte. Viven según sus propios deseos. Su boca dice palabras grandes y arrogantes, y adulan a la gente para sacar provecho.",
           "R": "Estas personas siempre están murmurando y quejándose de que la vida no les da lo que merecen. Hacen lo que les da la gana. Se jactan con palabras grandes. Y adulan a la gente para conseguir de ella lo que quieren."
         },
-        "fr": {
-          "L": "Ce sont des murmurateurs, mécontents de leur sort, qui marchent selon leurs désirs ; et leur bouche dit des [paroles] enflées, admirant les visages en vue du profit.",
-          "B": "Ces gens murmurent et se plaignent de leur sort. Ils vivent selon leurs propres désirs. Leur bouche prononce de grands mots pleins d’orgueil, et ils flattent les gens pour en tirer profit.",
-          "R": "Ces gens ne cessent de se plaindre et de trouver que la vie est injuste envers eux. Ils font tout ce qu’ils veulent. Ils se vantent avec de grands mots. Et ils flattent les gens pour obtenir d’eux ce qu’ils veulent."
-        },
         "sw": {
           "L": "Hawa ni wanung'unikaji, walalamikaji juu ya fungu lao, wakienenda kwa kufuata tamaa zao; na kinywa chao kinanena [maneno] yaliyovimba, wakistaajabia nyuso kwa ajili ya faida.",
           "B": "Watu hawa wananung'unika na kulalamikia fungu lao maishani. Wanaishi kwa kufuata tamaa zao wenyewe. Vinywa vyao vinasema maneno makubwa ya kujivuna, nao wanawabembeleza watu ili wapate faida kutoka kwao.",
           "R": "Watu hawa daima wananung'unika na kulalamika kwamba wamepunjwa maishani. Wanafanya lolote wanalotaka. Wanajisifu kwa maneno makubwa. Tena wanawabembeleza watu ili wapate wanachotaka kutoka kwao."
+        },
+        "fr": {
+          "L": "Ce sont des murmurateurs, mécontents de leur sort, allant selon leurs désirs ; et leur bouche prononce des [paroles] enflées, admirant les visages en vue d’un profit.",
+          "B": "Ces gens murmurent et se plaignent de leur sort. Ils vivent selon leurs propres désirs. Leur bouche prononce de grands mots pleins d’orgueil, et ils flattent les gens pour en tirer profit.",
+          "R": "Ces gens sont toujours en train de murmurer et de se plaindre que la vie n’est pas juste pour eux. Ils font tout ce qu’ils veulent. Ils se vantent avec de grands mots. Et ils flattent les gens pour obtenir d’eux ce qu’ils veulent."
         }
       },
       "decisions": [
@@ -3758,27 +3713,6 @@
           "reason": "As in 2 Peter 2:18 (m3).",
           "uncertain": false,
           "footnote": false
-        },
-        {
-          "id": "r-fr-1",
-          "layer": "rendering",
-          "language": "fr",
-          "levels": [
-            "L",
-            "B"
-          ],
-          "category": "word_choice",
-          "tokens": [
-            "n65001016003"
-          ],
-          "choice": "murmurateurs (L); murmurent (B)",
-          "alternatives": [
-            "râleurs",
-            "grincheux"
-          ],
-          "reason": "\"Murmurer\" is the French word for Israel's grumbling in the wilderness, so it keeps the allusion (m1).",
-          "uncertain": false,
-          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3839,15 +3773,15 @@
           "B": "Pero {{plural_you:ustedes|vosotros}}, queridos, {{plural_you:deben|debéis}} recordar las palabras que dijeron de antemano los apóstoles de nuestro Señor {{christos:Jesucristo|Jesús, el Mesías}}. \\v 18 Ellos {{plural_you:les|os}} decían: «En el último tiempo vendrán burladores, llevados por sus propios deseos impíos».",
           "R": "Pero {{plural_you:ustedes|vosotros}}, queridos amigos, {{plural_you:deben|debéis}} recordar lo que {{plural_you:les|os}} anunciaron los apóstoles de nuestro Señor {{christos:Jesucristo|Jesús, el Mesías}}. \\v 18 Ellos {{plural_you:les|os}} decían: «En el último tiempo vendrá gente que se ríe y se burla. Vivirán según sus propios deseos impíos»."
         },
-        "fr": {
-          "L": "Mais vous, bien-aimés, souvenez-vous des paroles dites d’avance par les apôtres de notre Seigneur Jésus {{christos:Christ|Messie}}, \\v 18 car ils vous disaient : « Dans [le] dernier temps, il y aura des moqueurs, qui marcheront selon leurs propres désirs impies. »",
-          "B": "Mais vous, chers amis, souvenez-vous des paroles dites à l’avance par les apôtres de notre Seigneur Jésus {{christos:Christ|le Messie}}. \\v 18 Ils vous disaient : « Dans les derniers temps, il viendra des moqueurs, menés par leurs propres désirs impies. »",
-          "R": "Mais vous, chers amis, souvenez-vous de ce que les apôtres de notre Seigneur Jésus {{christos:Christ|le Messie}} vous ont annoncé. \\v 18 Ils vous disaient : « Dans les derniers temps, il viendra des gens qui se moquent de tout et qui ricanent. Ils vivront selon leurs propres désirs impies. »"
-        },
         "sw": {
           "L": "Lakini ninyi, wapendwa, kumbukeni maneno yaliyosemwa kabla na mitume wa Bwana wetu Yesu {{christos:Kristo|Masihi}}, \\v 18 kwamba waliwaambia, \"Katika wakati wa mwisho watakuwako wadhihaki, wakienenda kwa kufuata tamaa zao wenyewe za kutomcha Mungu.\"",
           "B": "Lakini ninyi, wapendwa, yakumbukeni maneno yaliyosemwa mapema na mitume wa Bwana wetu Yesu {{christos:Kristo|Masihi}}. \\v 18 Walikuwa wakiwaambia, \"Katika wakati wa mwisho watakuja wadhihaki, wakiongozwa na tamaa zao wenyewe za kutomcha Mungu.\"",
           "R": "Lakini ninyi, wapendwa wangu, kumbukeni yale ambayo mitume wa Bwana wetu Yesu {{christos:Kristo|Masihi}} waliwaambia kwamba yatatokea. \\v 18 Walikuwa wakiwaambia, \"Katika wakati wa mwisho watakuja watu wanaocheka na kudhihaki. Wataishi kwa kufuata tamaa zao wenyewe za kutomcha Mungu.\""
+        },
+        "fr": {
+          "L": "Mais vous, bien-aimés, souvenez-vous des paroles dites d’avance par les apôtres de notre Seigneur Jésus {{christos:Christ|Messie}}, \\v 18 car ils vous disaient : « Dans le dernier temps il y aura des moqueurs, allant selon leurs propres désirs d’impiété. »",
+          "B": "Mais vous, mes chers amis, souvenez-vous des paroles que les apôtres de notre Seigneur Jésus {{christos:Christ|le Messie}} ont dites à l’avance. \\v 18 Ils vous disaient : « Dans le dernier temps, il viendra des moqueurs, menés par leurs propres désirs impies. »",
+          "R": "Mais vous, mes chers amis, souvenez-vous de ce que les apôtres de notre Seigneur Jésus {{christos:Christ|le Messie}} vous ont annoncé. \\v 18 Ils vous disaient : « Dans le dernier temps, des gens viendront qui se moqueront de tout et ricaneront. Ils vivront selon leurs propres désirs impies. »"
         }
       },
       "decisions": [
@@ -4106,15 +4040,15 @@
           "B": "Estas personas crean divisiones entre {{plural_you:ustedes|vosotros}}. Son mundanas, y el Espíritu no está en ellas.",
           "R": "Estas personas dividen a la iglesia en grupos. Piensan y actúan como el mundo que las rodea, y no tienen el Espíritu de Dios."
         },
-        "fr": {
-          "L": "Ce sont eux qui causent des divisions, [des êtres] naturels, n’ayant pas [l’]Esprit.",
-          "B": "Ces gens créent des divisions parmi vous. Ils ne vivent qu’au niveau de ce monde, et l’Esprit n’est pas en eux.",
-          "R": "Ces gens divisent l’église en groupes. Ils pensent et agissent comme le monde qui les entoure, et ils n’ont pas l’Esprit de Dieu."
-        },
         "sw": {
           "L": "Hawa ndio wale wanaosababisha mafarakano, [watu] wa asili ya kibinadamu tu, wasio na Roho.",
           "B": "Watu hawa wanaleta mafarakano kati yenu. Ni watu wa kidunia, na Roho hayumo ndani yao.",
           "R": "Watu hawa wanaligawa kanisa katika makundi. Wanafikiri na kutenda kama ulimwengu unaowazunguka, wala hawana Roho wa Mungu."
+        },
+        "fr": {
+          "L": "Ce sont eux qui provoquent des divisions, [des gens] naturels, qui n’ont pas [l’]Esprit.",
+          "B": "Ces gens créent des divisions parmi vous. Ils sont attachés à ce monde, et l’Esprit n’est pas en eux.",
+          "R": "Ces gens divisent l’église en groupes. Ils pensent et agissent comme le monde qui les entoure, et ils n’ont pas l’Esprit de Dieu."
         }
       },
       "decisions": [
@@ -4208,26 +4142,6 @@
           "footnote": false
         },
         {
-          "id": "r-fr-1",
-          "layer": "rendering",
-          "language": "fr",
-          "levels": [
-            "B"
-          ],
-          "category": "word_choice",
-          "tokens": [
-            "n65001019005"
-          ],
-          "choice": "Ils ne vivent qu’au niveau de ce monde (B)",
-          "alternatives": [
-            "mondains",
-            "charnels"
-          ],
-          "reason": "\"Mondain\" in French means a socialite, and \"charnel\" is the word for the flesh; Balanced describes the sense of m2 instead.",
-          "uncertain": false,
-          "footnote": false
-        },
-        {
           "id": "r-sw-1",
           "layer": "rendering",
           "language": "sw",
@@ -4244,6 +4158,28 @@
             "wa tabia ya asili"
           ],
           "reason": "ψυχικοί describes people who have only natural human life, without the Spirit (m2). \"Wa kinafsi\" would follow the Greek root (\"nafsi\") but today suggests selfishness. Literal says \"of merely human nature\"; Balanced and Readable follow the English in saying \"worldly\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n65001019005"
+          ],
+          "choice": "naturels (L); attachés à ce monde (B); pensent et agissent comme le monde (R); l’église, lowercase (R)",
+          "alternatives": [
+            "psychiques",
+            "charnels"
+          ],
+          "reason": "The word means living on the level of ordinary human life, without the Spirit (m2). French \"psychique\" now means \"of the mind\", and \"charnel\" belongs to another Greek word, so Literal says \"naturels\" and Balanced and Readable say what is meant. As in Colossians 4:15, the local congregation is \"l’église\".",
           "uncertain": false,
           "footnote": false
         }
@@ -4304,15 +4240,15 @@
           "B": "Pero {{plural_you:ustedes|vosotros}}, queridos, {{plural_you:sigan|seguid}} edificándo{{plural_you:se|os}} sobre {{plural_you:su|vuestra}} santísima fe y orando en el Espíritu Santo. \\v 21 {{plural_you:Guárdense|Guardaos}} en el amor de Dios, mientras {{plural_you:esperan|esperáis}} la misericordia de nuestro Señor {{christos:Jesucristo|Jesús, el Mesías}}, que trae vida eterna.",
           "R": "Pero {{plural_you:ustedes|vosotros}}, queridos amigos, {{plural_you:sigan|seguid}} construyendo {{plural_you:sus|vuestras}} vidas sobre la santísima fe que {{plural_you:tienen|tenéis}}. {{plural_you:Oren|Orad}} como el Espíritu Santo {{plural_you:los|os}} guíe y {{plural_you:les|os}} ayude. \\v 21 {{plural_you:Manténganse|Manteneos}} viviendo en el amor de Dios. Y {{plural_you:esperen|esperad}} con ansias el día en que nuestro Señor {{christos:Jesucristo|Jesús, el Mesías,}} {{plural_you:les|os}} mostrará misericordia y {{plural_you:les|os}} dará vida eterna."
         },
-        "fr": {
-          "L": "Mais vous, bien-aimés, vous édifiant vous-mêmes sur votre très sainte foi, priant dans l’Esprit Saint, \\v 21 gardez-vous vous-mêmes dans l’amour de Dieu, attendant la miséricorde de notre Seigneur Jésus {{christos:Christ|Messie}} pour la vie éternelle.",
-          "B": "Mais vous, chers amis, continuez à vous construire sur votre très sainte foi et à prier dans l’Esprit Saint. \\v 21 Gardez-vous dans l’amour de Dieu, en attendant la miséricorde de notre Seigneur Jésus {{christos:Christ|le Messie}}, qui conduit à la vie éternelle.",
-          "R": "Mais vous, chers amis, continuez à bâtir votre vie sur votre très sainte foi. Priez comme l’Esprit Saint vous guide et vous aide. \\v 21 Continuez à vivre dans l’amour de Dieu. Et attendez avec espérance le jour où notre Seigneur Jésus {{christos:Christ|le Messie}} vous montrera {{deity_pronoun:sa|Sa}} miséricorde et vous donnera la vie éternelle."
-        },
         "sw": {
           "L": "Lakini ninyi, wapendwa, mkijijenga wenyewe juu ya imani yenu takatifu mno, mkisali ndani ya Roho Mtakatifu, \\v 21 jilindeni wenyewe ndani ya upendo wa Mungu, mkitazamia rehema ya Bwana wetu Yesu {{christos:Kristo|Masihi}} ielekeayo uzima wa milele.",
           "B": "Lakini ninyi, wapendwa, endeleeni kujijenga juu ya imani yenu iliyo takatifu kabisa, na kuomba katika Roho Mtakatifu. \\v 21 Jilindeni ndani ya upendo wa Mungu, huku mkiitazamia rehema ya Bwana wetu Yesu {{christos:Kristo|Masihi}} inayoleta uzima wa milele.",
           "R": "Lakini ninyi, wapendwa wangu, endeleeni kujenga maisha yenu juu ya imani yenu iliyo takatifu kabisa. Ombeni kama Roho Mtakatifu anavyowaongoza na kuwasaidia. \\v 21 Jilindeni ili mzidi kuishi katika upendo wa Mungu. Tena itazamieni siku ambayo Bwana wetu Yesu {{christos:Kristo|Masihi}} atawaonyesha rehema na kuwapa uzima wa milele."
+        },
+        "fr": {
+          "L": "Mais vous, bien-aimés, vous édifiant vous-mêmes sur votre très sainte foi, priant dans l’Esprit Saint, \\v 21 gardez-vous vous-mêmes dans l’amour de Dieu, attendant la miséricorde de notre Seigneur Jésus {{christos:Christ|Messie}} pour la vie éternelle.",
+          "B": "Mais vous, mes chers amis, continuez à vous construire sur votre très sainte foi et à prier dans l’Esprit Saint. \\v 21 Gardez-vous dans l’amour de Dieu, en attendant la miséricorde de notre Seigneur Jésus {{christos:Christ|le Messie}}, qui conduit à la vie éternelle.",
+          "R": "Mais vous, mes chers amis, continuez à bâtir votre vie sur votre très sainte foi. Priez comme l’Esprit Saint vous conduit et vous aide. \\v 21 Gardez-vous dans l’amour de Dieu. Et attendez avec impatience le jour où notre Seigneur Jésus {{christos:Christ|le Messie}} vous montrera {{deity_pronoun:sa|Sa}} miséricorde et vous donnera la vie éternelle."
         }
       },
       "decisions": [
@@ -4521,28 +4457,6 @@
           "reason": "Literal and Balanced keep \"guardar\", the verb of verses 1, 6 and 13: those whom God keeps are told to keep themselves (m4). Readable says \"manténganse\", as the English Readable says \"keep yourselves living\".",
           "uncertain": false,
           "footnote": false
-        },
-        {
-          "id": "r-fr-1",
-          "layer": "rendering",
-          "language": "fr",
-          "levels": [
-            "L",
-            "B",
-            "R"
-          ],
-          "category": "word_choice",
-          "tokens": [
-            "n65001020011",
-            "n65001020012"
-          ],
-          "choice": "l’Esprit Saint (for the whole letter)",
-          "alternatives": [
-            "le Saint-Esprit"
-          ],
-          "reason": "As the style guide sets for the New Testament, so that the books drafted separately read alike.",
-          "uncertain": false,
-          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4596,15 +4510,15 @@
           "B": "{{plural_you:Sean|Sed}} misericordiosos con algunos que vacilan. \\v 23 A otros, {{plural_you:sálvenlos|salvadlos}} sacándolos del fuego. A otros más, {{plural_you:muéstrenles|mostradles}} misericordia, pero con temor: {{plural_you:aborrezcan|aborreced}} hasta la ropa manchada por su carne pecadora.",
           "R": "{{plural_you:Muestren|Mostrad}} misericordia a los que tienen dudas. \\v 23 A otros, {{plural_you:sáquenlos|sacadlos}} del fuego y {{plural_you:sálvenlos|salvadlos}}. A otros más, {{plural_you:muéstrenles|mostradles}} misericordia, pero {{plural_you:háganlo|hacedlo}} con temor. {{plural_you:Odien|Odiad}} incluso la ropa ensuciada por la vida de pecado de esa gente."
         },
-        "fr": {
-          "L": "Et ayez pitié des uns, qui doutent ; \\v 23 sauvez-en d’autres, [les] arrachant au feu ; et d’autres, ayez-en pitié avec crainte, haïssant même la tunique souillée par la chair.",
-          "B": "Soyez miséricordieux envers certains qui hésitent. \\v 23 Sauvez-en d’autres en les arrachant au feu. Envers d’autres encore, montrez de la miséricorde, mais avec crainte : haïssez jusqu’au vêtement souillé par leur chair pécheresse.",
-          "R": "Ayez pitié de ceux qui ont des doutes. \\v 23 Tirez-en d’autres du feu et sauvez-les. Ayez pitié d’autres encore, mais faites-le avec crainte. Détestez même les vêtements que leur vie de péché a salis."
-        },
         "sw": {
           "L": "Na wengine wahurumieni, walio na shaka; \\v 23 na wengine waokoeni, mkiwanyakua kutoka motoni; na wengine wahurumieni kwa hofu, mkichukia hata kanzu iliyotiwa madoa na mwili.",
           "B": "Wahurumieni wengine walio na mashaka. \\v 23 Waokoeni wengine kwa kuwanyakua kutoka motoni. Na wengine wahurumieni, lakini kwa hofu: chukieni hata nguo zilizochafuliwa na mwili wao wenye dhambi.",
           "R": "Waonyesheni rehema watu walio na mashaka. \\v 23 Wanyakueni wengine kutoka motoni na kuwaokoa. Waonyesheni wengine rehema, lakini fanyeni hivyo kwa hofu. Chukieni hata nguo ambazo maisha yao ya dhambi yamezichafua."
+        },
+        "fr": {
+          "L": "Et faites miséricorde aux uns, qui doutent ; \\v 23 sauvez-en d’autres en [les] arrachant au feu ; et aux autres faites miséricorde avec crainte, haïssant même la tunique souillée par la chair.",
+          "B": "Soyez miséricordieux envers certains qui hésitent. \\v 23 Sauvez-en d’autres en les arrachant au feu. Et à d’autres encore, montrez de la miséricorde, mais avec crainte : haïssez même les vêtements que leur chair pécheresse a salis.",
+          "R": "Montrez de la miséricorde à ceux qui ont des doutes. \\v 23 Arrachez d’autres au feu pour les sauver. Montrez de la miséricorde à d’autres encore, mais faites-le avec crainte. Détestez même les vêtements que leur vie pécheresse a salis."
         }
       },
       "decisions": [
@@ -4790,6 +4704,28 @@
           "reason": "χιτῶνα is the tunic worn next to the skin (m5). \"Kanzu\" is the long garment worn next to the body, and the word older Swahili uses for the tunic; Balanced and Readable say \"nguo\" (clothes), as the English says \"clothes\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n65001022004",
+            "n65001023009"
+          ],
+          "choice": "faites miséricorde (L); soyez miséricordieux, montrez de la miséricorde (B, R)",
+          "alternatives": [
+            "ayez pitié"
+          ],
+          "reason": "The verb is from the same word as \"miséricorde\" in verses 2 and 21; French keeps the family visible. \"Avoir pitié\" can sound condescending in current French.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4861,15 +4797,15 @@
           "B": "Y al que puede proteger{{plural_you:los|os}} para que no {{plural_you:tropiecen|tropecéis}}, y llevar{{plural_you:los|os}} a la presencia de {{deity_pronoun:su|Su}} gloria sin mancha y llenos de alegría, \\v 25 al único Dios, nuestro Salvador, por medio de {{christos:Jesucristo|Jesús, el Mesías,}} nuestro Señor, sea la gloria, la majestad, el poder y la autoridad, desde antes de que comenzara el tiempo, ahora y por todos los siglos venideros. Amén.",
           "R": "Dios puede proteger{{plural_you:los|os}} para que no {{plural_you:tropiecen|tropecéis}} ni {{plural_you:caigan|caigáis}}. Él puede llevar{{plural_you:los|os}} ante {{deity_pronoun:su|Su}} presencia gloriosa sin ninguna falta, y {{plural_you:ustedes|vosotros}} {{plural_you:estarán|estaréis}} llenos de alegría. \\v 25 Él es el único Dios, nuestro Salvador. Por medio de {{christos:Jesucristo|Jesús, el Mesías,}} nuestro Señor, que la gloria, la grandeza, el poder y la autoridad sean {{deity_pronoun:suyos|Suyos}}, desde antes de que comenzara el tiempo, ahora y para siempre. Amén."
         },
-        "fr": {
-          "L": "À celui qui peut vous préserver de tout faux pas et [vous] faire tenir devant {{deity_pronoun:sa|Sa}} gloire sans tache, dans l’allégresse, \\v 25 au seul Dieu, notre Sauveur, par Jésus {{christos:Christ|Messie}} notre Seigneur, [soient] gloire, majesté, force et autorité, avant tout âge, et maintenant, et pour tous les âges. Amen.",
-          "B": "À celui qui peut vous préserver de tout faux pas et vous faire paraître devant {{deity_pronoun:sa|Sa}} gloire sans tache et dans une grande joie, \\v 25 au seul Dieu, notre Sauveur, par Jésus {{christos:Christ|le Messie}} notre Seigneur, soient la gloire, la majesté, la force et l’autorité, avant le commencement des temps, maintenant et pour tous les siècles à venir. Amen.",
-          "R": "Dieu peut vous protéger, pour que vous ne trébuchiez pas et ne tombiez pas. Il peut vous faire entrer en {{deity_pronoun:sa|Sa}} présence glorieuse sans aucun défaut, et vous serez remplis de joie. \\v 25 Il est le seul Dieu, notre Sauveur. Par Jésus {{christos:Christ|le Messie}} notre Seigneur, que la gloire, la grandeur, la puissance et l’autorité soient à {{deity_pronoun:lui|Lui}}, avant le commencement des temps, maintenant et pour toujours ! Amen."
-        },
         "sw": {
           "L": "Basi, kwa yule anayeweza kuwahifadhi bila kujikwaa, na kuwasimamisha bila dosari mbele ya utukufu {{deity_pronoun:wake|Wake}} kwa shangwe, \\v 25 kwa Mungu pekee, Mwokozi wetu, kupitia Yesu {{christos:Kristo|Masihi}} Bwana wetu, [kuwe na] utukufu, adhama, nguvu na mamlaka, kabla ya nyakati zote, na sasa, na hata katika nyakati zote. Amina.",
           "B": "Basi, kwa yule anayeweza kuwahifadhi msianguke, na kuwaleta mbele ya utukufu {{deity_pronoun:wake|Wake}} bila dosari na kwa shangwe kuu, \\v 25 kwa Mungu pekee, Mwokozi wetu, kupitia Yesu {{christos:Kristo|Masihi}} Bwana wetu, kuwe na utukufu, adhama, nguvu na mamlaka, tangu kabla ya mwanzo wa wakati, sasa, na milele yote. Amina.",
           "R": "Mungu anaweza kuwahifadhi ili msijikwae na kuanguka. Anaweza kuwaleta mbele ya uwepo {{deity_pronoun:wake|Wake}} wenye utukufu bila kosa lolote, nanyi mtajawa na furaha. \\v 25 Yeye ndiye Mungu pekee, Mwokozi wetu. Kupitia Yesu {{christos:Kristo|Masihi}} Bwana wetu, utukufu, ukuu, nguvu na mamlaka viwe {{deity_pronoun:vyake|Vyake}}, tangu kabla ya mwanzo wa wakati, sasa, na milele! Amina."
+        },
+        "fr": {
+          "L": "Or à celui qui peut vous préserver de toute chute et vous faire tenir debout devant {{deity_pronoun:sa|Sa}} gloire, sans tache, dans l’allégresse, \\v 25 au seul Dieu, notre Sauveur, par Jésus {{christos:Christ|Messie}} notre Seigneur, [soient] gloire, majesté, force et autorité, avant tout âge, et maintenant, et dans tous les âges. Amen.",
+          "B": "À celui qui peut vous préserver de toute chute et vous faire paraître devant {{deity_pronoun:sa|Sa}} gloire sans tache et dans une grande joie, \\v 25 au seul Dieu, notre Sauveur, par Jésus {{christos:Christ|le Messie}} notre Seigneur, soient la gloire, la majesté, la force et l’autorité, avant le commencement des temps, maintenant et pour tous les siècles à venir. Amen.",
+          "R": "Dieu peut vous protéger pour que vous ne trébuchiez pas et ne tombiez pas. Il peut vous faire entrer dans {{deity_pronoun:sa|Sa}} présence glorieuse sans aucun défaut, et vous serez remplis de joie. \\v 25 Il est le seul Dieu, notre Sauveur. Par Jésus {{christos:Christ|le Messie}} notre Seigneur, que la gloire, la grandeur, la puissance et l’autorité soient à {{deity_pronoun:lui|Lui}}, avant le commencement des temps, maintenant et pour toujours ! Amen."
         }
       },
       "decisions": [
@@ -5214,26 +5150,6 @@
           "footnote": false
         },
         {
-          "id": "r-fr-1",
-          "layer": "rendering",
-          "language": "fr",
-          "levels": [
-            "L",
-            "B"
-          ],
-          "category": "word_choice",
-          "tokens": [
-            "n65001024004"
-          ],
-          "choice": "préserver (L, B); protéger (R)",
-          "alternatives": [
-            "garder"
-          ],
-          "reason": "As the English: \"garder\" is kept for the verb of verses 1, 6, 13 and 21 (\"gardés pour Jésus\", \"il les a gardés\", \"gardez-vous\"), so this different verb has its own word (r-en-1).",
-          "uncertain": false,
-          "footnote": false
-        },
-        {
           "id": "r-sw-1",
           "layer": "rendering",
           "language": "sw",
@@ -5275,6 +5191,27 @@
             "utukufu na uwe wake"
           ],
           "reason": "The doxology has no verb (m2). Swahili says \"kuwe na\" (may there be) before a list of four nouns of different classes, and Readable makes them agree together with \"viwe vyake\". \"Adhama\" is majesty; Readable says \"ukuu\" (greatness), as the English Readable does. \"Utukufu\" is glory, as in 2 Peter 3:18.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n65001024004"
+          ],
+          "choice": "préserver (L, B); protéger (R)",
+          "alternatives": [
+            "garder"
+          ],
+          "reason": "As in English: \"garder\" is kept for the verb of verses 1, 6, 13 and 21, and this is a different verb (m3).",
           "uncertain": false,
           "footnote": false
         }

@@ -42,15 +42,15 @@
           "B": "De Pablo, apóstol {{christos:de Cristo|del Mesías}} Jesús por la voluntad de Dios, al pueblo santo de Dios en Éfeso, que es fiel en {{christos:Cristo|el Mesías}} Jesús.",
           "R": "Esta carta es de Pablo. Dios quiso que yo fuera apóstol, enviado por {{christos:Cristo|el Mesías}} Jesús. Escribo al pueblo santo de Dios en Éfeso, que pertenece {{christos:a Cristo|al Mesías}} Jesús y es fiel a {{deity_pronoun:él|Él}}."
         },
-        "fr": {
-          "L": "Paul, apôtre du {{christos:Christ|Messie}} Jésus par la volonté de Dieu, aux saints qui sont à Éphèse et fidèles {{christos:en Christ|dans le Messie}} Jésus :",
-          "B": "De la part de Paul, apôtre du {{christos:Christ|Messie}} Jésus par la volonté de Dieu, au peuple saint de Dieu qui est à Éphèse, à ceux qui sont fidèles {{christos:en Christ|dans le Messie}} Jésus.",
-          "R": "Cette lettre vient de Paul. Dieu a voulu que je sois apôtre, envoyé par le {{christos:Christ|Messie}} Jésus. J’écris au peuple saint de Dieu dans la ville d’Éphèse, à ceux qui appartiennent au {{christos:Christ|Messie}} Jésus et qui {{deity_pronoun:lui|Lui}} sont fidèles."
-        },
         "sw": {
           "L": "Paulo, mtume wa {{christos:Kristo|Masihi}} Yesu kupitia mapenzi ya Mungu, kwa watakatifu walioko Efeso na waaminifu katika {{christos:Kristo|Masihi}} Yesu:",
           "B": "Kutoka kwa Paulo, mtume wa {{christos:Kristo|Masihi}} Yesu kwa mapenzi ya Mungu, kwa watu wa Mungu walio watakatifu huko Efeso, walio waaminifu katika {{christos:Kristo|Masihi}} Yesu.",
           "R": "Barua hii inatoka kwa Paulo. Mungu alitaka niwe mtume, niliyetumwa na {{christos:Kristo|Masihi}} Yesu. Ninawaandikia watu wa Mungu walio watakatifu huko Efeso, ambao ni mali ya {{christos:Kristo|Masihi}} Yesu na ni waaminifu {{deity_pronoun:kwake|Kwake}}."
+        },
+        "fr": {
+          "L": "Paul, apôtre du {{christos:Christ|Messie}} Jésus par la volonté de Dieu, aux saints qui sont à Éphèse et fidèles {{christos:en Christ|dans le Messie}} Jésus :",
+          "B": "De la part de Paul, apôtre du {{christos:Christ|Messie}} Jésus par la volonté de Dieu, au peuple saint de Dieu qui est à Éphèse, fidèle {{christos:en Christ|dans le Messie}} Jésus.",
+          "R": "Cette lettre vient de Paul. Dieu a voulu que je sois apôtre, envoyé par le {{christos:Christ|Messie}} Jésus. J’écris au peuple saint de Dieu à Éphèse, à ceux qui appartiennent au {{christos:Christ|Messie}} Jésus et qui {{deity_pronoun:lui|Lui}} sont fidèles."
         }
       },
       "decisions": [
@@ -188,50 +188,6 @@
           "footnote": false
         },
         {
-          "id": "r-fr-1",
-          "layer": "rendering",
-          "language": "fr",
-          "levels": [
-            "L",
-            "B",
-            "R"
-          ],
-          "category": "setting_alternative",
-          "tokens": [
-            "n49001001003",
-            "n49001001017"
-          ],
-          "choice": "\"du {{christos:Christ|Messie}}\", \"le {{christos:Christ|Messie}}\"; \"{{christos:en Christ|dans le Messie}}\" for \"in Christ\" (for the whole letter)",
-          "alternatives": [
-            "\"en {{christos:Christ|Messie}}\"",
-            "\"en Christ\" with no setting"
-          ],
-          "reason": "As in Colossians: the title needs an article in French and \"en\" does not take one, so the span for Paul's phrase \"in Christ\" covers the preposition, with the familiar \"en Christ\" as the default and \"dans le Messie\" as the alternative. Elsewhere the article stays outside the span (\"du Christ\" / \"du Messie\"). \"Jesus Christ\" is \"Jésus {{christos:Christ|le Messie}}\" at Balanced and Readable, \"Jésus {{christos:Christ|Messie}}\" at Literal. Where Literal has the Greek article (\"in the Christ\", 1:10, 1:12), it writes \"dans le {{christos:Christ|Messie}}\".",
-          "uncertain": false,
-          "footnote": false
-        },
-        {
-          "id": "r-fr-2",
-          "layer": "rendering",
-          "language": "fr",
-          "levels": [
-            "L",
-            "B",
-            "R"
-          ],
-          "category": "word_choice",
-          "tokens": [
-            "n49001001009"
-          ],
-          "choice": "les saints (L); le peuple saint de Dieu (B, R) (for the whole letter)",
-          "alternatives": [
-            "les saints at every level"
-          ],
-          "reason": "As in Colossians: French \"les saints\" suggests people of exceptional holiness, not a whole congregation set apart for God. Literal keeps the word.",
-          "uncertain": false,
-          "footnote": false
-        },
-        {
           "id": "r-sw-1",
           "layer": "rendering",
           "language": "sw",
@@ -252,6 +208,69 @@
             "a span on every pronoun the English marks"
           ],
           "reason": "Swahili marks most pronouns inside the verb (a-li-tu-chagua), and a prefix cannot take a capital. So in this chapter the setting applies to free words such as \"ndani yake\", \"utukufu wake\", \"nguvu zake\" and \"waaminifu kwake\", and Swahili has fewer spans than the English.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n49001001003",
+            "n49001001017"
+          ],
+          "choice": "\"du {{christos:Christ|Messie}}\", \"le {{christos:Christ|Messie}}\", \"au {{christos:Christ|Messie}}\"; \"{{christos:en Christ|dans le Messie}}\" for Paul's \"in Christ\" (for the whole letter)",
+          "alternatives": [
+            "{{christos:Christ|Messie}} with the article inside the span"
+          ],
+          "reason": "As in Colossians: French cannot say \"en Messie\", because the title needs an article and \"en\" does not take one, so the span for \"in Christ\" covers the preposition, with the familiar \"en Christ\" as the default. Elsewhere the article stays outside the span, since both \"le Christ\" and \"le Messie\" are good French.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-2",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n49001001001"
+          ],
+          "choice": "passé composé for past events at every level (for the whole letter)",
+          "alternatives": [
+            "passé simple at Balanced"
+          ],
+          "reason": "Ephesians is a letter: Paul tells the readers what God has done for them and what they heard and received, and French uses the passé composé for that (\"Dieu nous a choisis\", \"vous avez entendu\"), as in Colossians. The letter has no narrative that would call for the passé simple.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-3",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n49001001009"
+          ],
+          "choice": "aux saints (L); au peuple saint de Dieu (B); au peuple saint de Dieu, au peuple de Dieu (R) (for the whole letter)",
+          "alternatives": [
+            "aux saints at every level"
+          ],
+          "reason": "As in Colossians and as in the English: in current French \"les saints\" suggests people of exceptional goodness or those canonized by the church, not a whole congregation. Literal keeps the word so the reader can follow it.",
           "uncertain": false,
           "footnote": false
         }
@@ -294,15 +313,15 @@
           "B": "Gracia y paz a {{plural_you:ustedes|vosotros}} de parte de Dios nuestro Padre y del Señor Jesús {{christos:Cristo|el Mesías}}.",
           "R": "Que Dios nuestro Padre y el Señor Jesús {{christos:Cristo|el Mesías}} {{plural_you:les|os}} den gracia y paz."
         },
-        "fr": {
-          "L": "Grâce à vous et paix de la part de Dieu notre Père et du Seigneur Jésus {{christos:Christ|Messie}}.",
-          "B": "Grâce et paix à vous de la part de Dieu notre Père et du Seigneur Jésus {{christos:Christ|le Messie}}.",
-          "R": "Que Dieu notre Père et le Seigneur Jésus {{christos:Christ|le Messie}} vous donnent leur grâce et leur paix."
-        },
         "sw": {
           "L": "Neema kwenu na amani kutoka kwa Mungu Baba yetu na Bwana Yesu {{christos:Kristo|Masihi}}.",
           "B": "Neema na amani kutoka kwa Mungu Baba yetu na kwa Bwana Yesu {{christos:Kristo|Masihi}} ziwe pamoja nanyi.",
           "R": "Mungu Baba yetu na Bwana Yesu {{christos:Kristo|Masihi}} wawaonyeshe ninyi neema na wawape amani."
+        },
+        "fr": {
+          "L": "Grâce à vous et paix de la part de Dieu notre Père et du Seigneur Jésus {{christos:Christ|Messie}}.",
+          "B": "Grâce et paix à vous de la part de Dieu notre Père et du Seigneur Jésus {{christos:Christ|le Messie}}.",
+          "R": "Que Dieu notre Père et le Seigneur Jésus {{christos:Christ|le Messie}} vous donnent la grâce et la paix."
         }
       },
       "decisions": [
@@ -612,15 +631,15 @@
           "B": "Bendito sea el Dios y Padre de nuestro Señor Jesús {{christos:Cristo|el Mesías}}. En {{christos:Cristo|el Mesías}} nos ha bendecido con toda bendición que da el Espíritu en los lugares celestiales. \\v 4 Antes de que el mundo fuera fundado, Dios nos eligió en {{christos:Cristo|el Mesías}} para que fuéramos santos y sin mancha delante de {{deity_pronoun:él|Él}} en amor. \\v 5 De antemano nos destinó a ser adoptados como {{deity_pronoun:sus|Sus}} propios hijos por medio de Jesús {{christos:Cristo|el Mesías}}. Eso fue lo que {{deity_pronoun:él|Él}} quiso con agrado, \\v 6 para que fuera alabada {{deity_pronoun:su|Su}} gloriosa gracia, la gracia que nos ha dado gratuitamente en el Amado. \\v 7 En {{deity_pronoun:él|Él}} y por medio de {{deity_pronoun:su|Su}} sangre tenemos la redención, el perdón de nuestras faltas. La tenemos porque la gracia de Dios es muy rica, \\v 8 gracia que {{deity_pronoun:él|Él}} ha derramado sobre nosotros en abundancia, con toda sabiduría y entendimiento. \\v 9 Nos ha dado a conocer el misterio de {{deity_pronoun:su|Su}} voluntad, como a {{deity_pronoun:él|Él}} le agradó hacerlo. Se propuso este plan en {{christos:Cristo|el Mesías}} \\v 10 como {{deity_pronoun:su|Su}} designio para cuando los tiempos llegaran a su plenitud: reunir todas las cosas bajo una sola cabeza en {{christos:Cristo|el Mesías}}, las que están en el cielo y las que están en la tierra, todo en {{deity_pronoun:él|Él}}. \\v 11 En {{deity_pronoun:él|Él}} también nosotros hemos llegado a ser la porción propia de Dios. Para esto fuimos destinados de antemano por el propósito de Dios, que lo lleva a cabo todo como {{deity_pronoun:su|Su}} voluntad lo determina, \\v 12 para que nosotros, los primeros en poner nuestra esperanza en {{christos:Cristo|el Mesías}}, seamos para alabanza de {{deity_pronoun:su|Su}} gloria.",
           "R": "¡Alabemos al Dios y Padre de nuestro Señor Jesús {{christos:Cristo|el Mesías}}! Porque estamos unidos {{christos:a Cristo|al Mesías}}, Dios nos ha bendecido con toda bendición que trae el Espíritu, bendiciones del mundo celestial. \\v 4 Aun antes de crear el mundo, Dios nos eligió para que estuviéramos unidos {{christos:a Cristo|al Mesías}}. Nos eligió para que fuéramos santos y sin falta ante {{deity_pronoun:sus|Sus}} ojos, y para que viviéramos en amor. \\v 5 Hace mucho tiempo Dios decidió adoptarnos por medio de Jesús {{christos:Cristo|el Mesías}} como {{deity_pronoun:sus|Sus}} propios hijos, con todos los derechos que tienen los hijos. Eso es lo que {{deity_pronoun:él|Él}} quería, y eso {{deity_pronoun:le|Le}} dio alegría. \\v 6 Lo hizo para que {{deity_pronoun:su|Su}} gloriosa gracia fuera alabada. Nos ha dado esta gracia gratuitamente en {{deity_pronoun:su|Su}} Hijo amado. \\v 7 Por la sangre de {{deity_pronoun:su|Su}} Hijo hemos sido liberados, y nuestras malas acciones están perdonadas. Así de rica es la gracia de Dios, \\v 8 y {{deity_pronoun:él|Él}} la ha derramado sobre nosotros en abundancia. Nos ha dado toda sabiduría y entendimiento. \\v 9 Nos ha dejado conocer el misterio de lo que {{deity_pronoun:él|Él}} quería hacer: {{deity_pronoun:su|Su}} plan, antes escondido, ahora dado a conocer. A Dios le alegró hacer este plan, y lo hizo para llevarlo a cabo por medio {{christos:de Cristo|del Mesías}}. \\v 10 Este es el plan de Dios para el tiempo que {{deity_pronoun:él|Él}} ha fijado: reunir todo lo que hay en el cielo y en la tierra, con {{christos:Cristo|el Mesías}} como cabeza de todo. \\v 11 Porque estamos unidos {{christos:a Cristo|al Mesías}}, Dios nos ha hecho {{deity_pronoun:su|Su}} propio pueblo, {{deity_pronoun:su|Su}} porción preciosa. Lo decidió hace mucho tiempo. Dios hace que todo suceda como {{deity_pronoun:él|Él}} lo ha planeado y querido. \\v 12 Lo hizo para que nosotros, los primeros en poner nuestra esperanza en {{christos:Cristo|el Mesías}}, diéramos alabanza a {{deity_pronoun:su|Su}} gloria."
         },
-        "fr": {
-          "L": "Béni [soit] le Dieu et Père de notre Seigneur Jésus {{christos:Christ|Messie}}, qui nous a bénis de toute bénédiction spirituelle dans les [lieux] célestes {{christos:en Christ|dans le Messie}}, \\v 4 selon qu’{{deity_pronoun:il|Il}} nous a choisis en {{deity_pronoun:lui|Lui}} avant la fondation du monde, pour que nous soyons saints et sans tache devant {{deity_pronoun:lui|Lui}} dans l’amour, \\v 5 nous ayant prédestinés à l’adoption comme {{gender:fils et filles|fils}} par Jésus {{christos:Christ|Messie}} pour {{deity_pronoun:lui-même|Lui-même}}, selon le bon plaisir de {{deity_pronoun:sa|Sa}} volonté, \\v 6 à la louange de la gloire de {{deity_pronoun:sa|Sa}} grâce, dont {{deity_pronoun:il|Il}} nous a gratifiés dans le Bien-Aimé, \\v 7 en qui nous avons la rédemption par {{deity_pronoun:son|Son}} sang, le pardon des fautes, selon la richesse de {{deity_pronoun:sa|Sa}} grâce, \\v 8 qu’{{deity_pronoun:il|Il}} a fait abonder envers nous en toute sagesse et intelligence, \\v 9 nous ayant fait connaître le mystère de {{deity_pronoun:sa|Sa}} volonté, selon {{deity_pronoun:son|Son}} bon plaisir, qu’{{deity_pronoun:il|Il}} s’était proposé en {{deity_pronoun:lui|Lui}} \\v 10 pour [l’]administration de la plénitude des temps : récapituler toutes choses dans le {{christos:Christ|Messie}}, les choses dans les cieux et les choses sur la terre, en {{deity_pronoun:lui|Lui}}, \\v 11 en qui aussi nous avons été faits l’héritage [de Dieu], ayant été prédestinés selon le dessein de celui qui opère toutes choses selon le conseil de {{deity_pronoun:sa|Sa}} volonté, \\v 12 pour que nous soyons à la louange de {{deity_pronoun:sa|Sa}} gloire, nous qui d’avance avons espéré dans le {{christos:Christ|Messie}} ;",
-          "B": "Béni soit le Dieu et Père de notre Seigneur Jésus {{christos:Christ|le Messie}}. Il nous a bénis {{christos:en Christ|dans le Messie}} de toute bénédiction que donne l’Esprit, dans les lieux célestes. \\v 4 Avant même la fondation du monde, Dieu nous a choisis {{christos:en Christ|dans le Messie}}, pour que nous soyons saints et sans tache devant {{deity_pronoun:lui|Lui}} dans l’amour. \\v 5 D’avance, {{deity_pronoun:il|Il}} nous a destinés à être adoptés comme {{deity_pronoun:ses|Ses}} propres {{gender:fils et filles|fils}} par Jésus {{christos:Christ|le Messie}}. Voilà ce qu’{{deity_pronoun:il|Il}} a voulu dans {{deity_pronoun:sa|Sa}} bienveillance, \\v 6 pour que soit louée {{deity_pronoun:sa|Sa}} grâce glorieuse, la grâce dont {{deity_pronoun:il|Il}} nous a comblés gratuitement dans le Bien-Aimé. \\v 7 En {{deity_pronoun:lui|Lui}} et par {{deity_pronoun:son|Son}} sang, nous avons la rédemption, le pardon de nos fautes. Nous l’avons parce que la grâce de Dieu est si riche, \\v 8 cette grâce qu’{{deity_pronoun:il|Il}} a répandue sur nous en abondance, avec toute sagesse et toute intelligence. \\v 9 Il nous a fait connaître le mystère de {{deity_pronoun:sa|Sa}} volonté, comme il {{deity_pronoun:lui|Lui}} a plu de le faire. Il a fixé ce dessein {{christos:en Christ|dans le Messie}} \\v 10 comme {{deity_pronoun:son|Son}} plan pour le moment où les temps arriveraient à leur plénitude : réunir toutes choses sous un seul chef {{christos:en Christ|dans le Messie}}, ce qui est dans le ciel et ce qui est sur la terre, tout en {{deity_pronoun:lui|Lui}}. \\v 11 En {{deity_pronoun:lui|Lui}}, nous aussi, nous sommes devenus la part que Dieu s’est réservée. Nous y avons été destinés d’avance par le dessein de Dieu, qui accomplit tout selon ce que décide {{deity_pronoun:sa|Sa}} volonté, \\v 12 afin que {{deity_pronoun:sa|Sa}} gloire soit louée par nous, qui avons été les premiers à espérer dans le {{christos:Christ|Messie}}.",
-          "R": "Louons le Dieu et Père de notre Seigneur Jésus {{christos:Christ|le Messie}} ! Parce que nous sommes unis au {{christos:Christ|Messie}}, Dieu nous a bénis de toutes les bénédictions que donne l’Esprit, des bénédictions qui viennent du monde céleste. \\v 4 Avant même de créer le monde, Dieu nous a choisis pour que nous soyons unis au {{christos:Christ|Messie}}. Il nous a choisis pour que nous soyons saints et sans défaut à {{deity_pronoun:ses|Ses}} yeux, et pour que nous vivions dans l’amour. \\v 5 Il y a longtemps, Dieu a décidé de nous adopter par Jésus {{christos:Christ|le Messie}} comme {{deity_pronoun:ses|Ses}} propres {{gender:fils et filles|fils}}, avec tous les droits de {{deity_pronoun:ses|Ses}} enfants. C’est ce qu’{{deity_pronoun:il|Il}} voulait, et cela {{deity_pronoun:lui|Lui}} a fait plaisir. \\v 6 Il l’a fait pour que tous louent {{deity_pronoun:sa|Sa}} grâce glorieuse. Cette grâce, {{deity_pronoun:il|Il}} nous l’a donnée gratuitement dans {{deity_pronoun:son|Son}} Fils bien-aimé. \\v 7 Par le sang de {{deity_pronoun:son|Son}} Fils, nous avons été libérés, et nos fautes sont pardonnées. Voilà combien la grâce de Dieu est riche ! \\v 8 Il l’a répandue sur nous en abondance. Il nous a donné toute sagesse et toute intelligence. \\v 9 Il nous a fait connaître le mystère de ce qu’{{deity_pronoun:il|Il}} voulait faire : {{deity_pronoun:son|Son}} plan, autrefois caché, maintenant révélé. Dieu a eu plaisir à former ce plan, et c’est par le {{christos:Christ|Messie}} qu’{{deity_pronoun:il|Il}} a voulu le réaliser. \\v 10 Voici le plan de Dieu pour le moment qu’{{deity_pronoun:il|Il}} a fixé : réunir tout ce qui est dans le ciel et sur la terre, avec le {{christos:Christ|Messie}} comme chef de tout. \\v 11 Parce que nous sommes unis au {{christos:Christ|Messie}}, Dieu a fait de nous {{deity_pronoun:son|Son}} propre peuple, {{deity_pronoun:sa|Sa}} part précieuse. Il l’avait décidé longtemps à l’avance. Dieu fait tout arriver comme {{deity_pronoun:il|Il}} l’a prévu et voulu. \\v 12 Il l’a fait pour que {{deity_pronoun:sa|Sa}} gloire soit louée grâce à nous, qui avons été les premiers à mettre notre espérance dans le {{christos:Christ|Messie}}."
-        },
         "sw": {
           "L": "Abarikiwe Mungu na Baba wa Bwana wetu Yesu {{christos:Kristo|Masihi}}, aliyetubariki kwa kila baraka ya kiroho katika [mahali pa] mbinguni katika {{christos:Kristo|Masihi}}, \\v 4 kama alivyotuchagua ndani {{deity_pronoun:yake|Yake}} kabla ya kuwekwa misingi ya ulimwengu, ili tuwe watakatifu na bila lawama mbele {{deity_pronoun:yake|Yake}} katika upendo, \\v 5 akiisha kutuamulia tangu awali tufanywe wana kupitia Yesu {{christos:Kristo|Masihi}} {{deity_pronoun:kwake|Kwake}} {{deity_pronoun:mwenyewe|Mwenyewe}}, kulingana na radhi ya mapenzi {{deity_pronoun:yake|Yake}}, \\v 6 kwa sifa ya utukufu wa neema {{deity_pronoun:yake|Yake}}, ambayo alituneemesha nayo katika Mpendwa, \\v 7 ambaye ndani {{deity_pronoun:yake|Yake}} tuna ukombozi kupitia damu {{deity_pronoun:yake|Yake}}, msamaha wa makosa, kulingana na utajiri wa neema {{deity_pronoun:yake|Yake}}, \\v 8 aliyoizidisha kwetu katika hekima yote na ufahamu, \\v 9 akiisha kutufahamisha siri ya mapenzi {{deity_pronoun:yake|Yake}}, kulingana na radhi {{deity_pronoun:yake|Yake}}, aliyoikusudia ndani {{deity_pronoun:yake|Yake}} \\v 10 kwa mpango wa utimilifu wa nyakati: kuviunganisha vitu vyote katika {{christos:Kristo|Masihi}}, vitu vilivyo mbinguni na vitu vilivyo duniani, ndani {{deity_pronoun:yake|Yake}}, \\v 11 ambaye ndani {{deity_pronoun:yake|Yake}} pia tulifanywa urithi [wa Mungu], tukiisha kuamuliwa tangu awali kulingana na kusudi la yule anayetenda vitu vyote kulingana na uamuzi wa mapenzi {{deity_pronoun:yake|Yake}}, \\v 12 ili sisi, tuliokwisha kutumaini mapema katika {{christos:Kristo|Masihi}}, tuwe kwa sifa ya utukufu {{deity_pronoun:wake|Wake}};",
           "B": "Ahimidiwe Mungu na Baba wa Bwana wetu Yesu {{christos:Kristo|Masihi}}. Ndani ya {{christos:Kristo|Masihi}} ametubariki kwa kila baraka itokayo kwa Roho katika ulimwengu wa mbinguni. \\v 4 Hata kabla ulimwengu haujaumbwa, Mungu alituchagua ndani ya {{christos:Kristo|Masihi}}, ili tuwe watakatifu na bila dosari mbele {{deity_pronoun:yake|Yake}} katika upendo. \\v 5 Alitutenga tangu awali tufanywe wana {{deity_pronoun:wake|Wake}} kupitia Yesu {{christos:Kristo|Masihi}}. Ndivyo alivyopenda kufanya kwa moyo mkunjufu, \\v 6 ili neema {{deity_pronoun:yake|Yake}} yenye utukufu isifiwe, neema ambayo ametupa bure katika yule Mpendwa. \\v 7 Ndani {{deity_pronoun:yake|Yake}}, na kupitia damu {{deity_pronoun:yake|Yake}}, tuna ukombozi, msamaha wa makosa yetu. Tunao kwa sababu neema ya Mungu ni tele, \\v 8 neema ambayo ameimimina juu yetu kwa wingi, pamoja na hekima yote na ufahamu. \\v 9 Ametujulisha siri ya mapenzi {{deity_pronoun:yake|Yake}}, kama ilivyompendeza kufanya. Aliweka kusudi hili ndani ya {{christos:Kristo|Masihi}} \\v 10 kuwa mpango {{deity_pronoun:wake|Wake}} kwa wakati nyakati zitakapotimia: kuviunganisha vitu vyote chini ya kichwa kimoja ndani ya {{christos:Kristo|Masihi}}, vitu vya mbinguni na vitu vya duniani, vyote ndani {{deity_pronoun:yake|Yake}}. \\v 11 Ndani {{deity_pronoun:yake|Yake}} sisi pia tumefanywa fungu la Mungu mwenyewe. Tuliamuliwa kwa ajili ya jambo hili tangu awali kwa kusudi la Mungu, anayetenda kila kitu kama mapenzi {{deity_pronoun:yake|Yake}} yanavyoamua, \\v 12 ili sisi, tuliokuwa wa kwanza kuweka tumaini letu katika {{christos:Kristo|Masihi}}, tuuletee utukufu {{deity_pronoun:wake|Wake}} sifa.",
           "R": "Tumsifu Mungu, Baba wa Bwana wetu Yesu {{christos:Kristo|Masihi}}! Kwa sababu tumeunganishwa na {{christos:Kristo|Masihi}}, Mungu ametubariki kwa kila baraka ambayo Roho huleta, baraka kutoka mbinguni. \\v 4 Hata kabla hajaumba ulimwengu, Mungu alituchagua tuunganishwe na {{christos:Kristo|Masihi}}. Alituchagua tuwe watakatifu na bila kosa machoni {{deity_pronoun:pake|Pake}}, na tuishi kwa upendo. \\v 5 Zamani sana Mungu aliamua kutufanya wana {{deity_pronoun:wake|Wake}} kupitia Yesu {{christos:Kristo|Masihi}}, tukiwa na haki zote za watoto {{deity_pronoun:wake|Wake}}. Ndivyo alivyotaka, na jambo hilo lilimfurahisha. \\v 6 Alifanya hivyo ili neema {{deity_pronoun:yake|Yake}} yenye utukufu isifiwe. Ametupa neema hii bure katika Mwana {{deity_pronoun:wake|Wake}} mpendwa. \\v 7 Kupitia damu ya Mwana {{deity_pronoun:wake|Wake}} tumewekwa huru, na makosa yetu yamesamehewa. Ndivyo neema ya Mungu ilivyo tele, \\v 8 naye ameimimina juu yetu kwa wingi. Ametupa hekima yote na ufahamu. \\v 9 Ametujulisha siri ya kile alichotaka kufanya: mpango {{deity_pronoun:wake|Wake}}, uliokuwa umefichwa, sasa umejulishwa. Mungu alifurahi kufanya mpango huu, naye aliufanya ili utimizwe kupitia {{christos:Kristo|Masihi}}. \\v 10 Huu ndio mpango wa Mungu kwa wakati alioupanga: kuunganisha kila kitu kilicho mbinguni na duniani, {{christos:Kristo|Masihi}} akiwa kichwa juu ya vyote. \\v 11 Kwa sababu tumeunganishwa na {{christos:Kristo|Masihi}}, Mungu ametufanya watu {{deity_pronoun:wake|Wake}} mwenyewe, fungu {{deity_pronoun:lake|Lake}} la thamani. Aliamua hivyo zamani sana. Mungu hufanya kila kitu kitokee jinsi alivyopanga na kutaka. \\v 12 Alifanya hivyo ili utukufu {{deity_pronoun:wake|Wake}} usifiwe kwa sababu yetu sisi, tuliokuwa wa kwanza kuweka tumaini letu katika {{christos:Kristo|Masihi}}."
+        },
+        "fr": {
+          "L": "Béni [soit] le Dieu et Père de notre Seigneur Jésus {{christos:Christ|Messie}}, qui nous a bénis de toute bénédiction spirituelle dans les [lieux] célestes {{christos:en Christ|dans le Messie}}, \\v 4 selon qu’{{deity_pronoun:il|Il}} nous a choisis en {{deity_pronoun:lui|Lui}} avant la fondation du monde, pour que nous soyons saints et sans tache devant {{deity_pronoun:lui|Lui}} dans l’amour, \\v 5 nous ayant prédestinés à l’adoption comme {{gender:fils et filles|fils}} par Jésus {{christos:Christ|Messie}} pour {{deity_pronoun:lui-même|Lui-même}}, selon le bon plaisir de {{deity_pronoun:sa|Sa}} volonté, \\v 6 à [la] louange de [la] gloire de {{deity_pronoun:sa|Sa}} grâce, dont {{deity_pronoun:il|Il}} nous a gratifiés dans le Bien-Aimé, \\v 7 en qui nous avons la rédemption par {{deity_pronoun:son|Son}} sang, le pardon des fautes, selon la richesse de {{deity_pronoun:sa|Sa}} grâce, \\v 8 qu’{{deity_pronoun:il|Il}} a fait abonder envers nous en toute sagesse et intelligence, \\v 9 nous ayant fait connaître le mystère de {{deity_pronoun:sa|Sa}} volonté, selon {{deity_pronoun:son|Son}} bon plaisir, qu’{{deity_pronoun:il|Il}} s’était proposé en {{deity_pronoun:lui|Lui}} \\v 10 pour [l’]administration de la plénitude des temps : réunir toutes choses sous un seul chef dans le {{christos:Christ|Messie}}, les choses dans les cieux et les choses sur la terre, en {{deity_pronoun:lui|Lui}}, \\v 11 en qui aussi nous avons été faits [l’]héritage [de Dieu], ayant été prédestinés selon [le] dessein de celui qui opère toutes choses selon le conseil de {{deity_pronoun:sa|Sa}} volonté, \\v 12 pour que nous soyons à [la] louange de {{deity_pronoun:sa|Sa}} gloire, nous qui avons d’avance espéré dans le {{christos:Christ|Messie}} ;",
+          "B": "Béni soit le Dieu et Père de notre Seigneur Jésus {{christos:Christ|le Messie}}. {{christos:En Christ|Dans le Messie}}, {{deity_pronoun:il|Il}} nous a bénis de toutes les bénédictions que donne l’Esprit dans les lieux célestes. \\v 4 Avant même la fondation du monde, Dieu nous a choisis {{christos:en Christ|dans le Messie}}, pour que nous soyons saints et sans tache devant {{deity_pronoun:lui|Lui}} dans l’amour. \\v 5 Il nous a destinés d’avance à être adoptés comme {{deity_pronoun:ses|Ses}} propres {{gender:fils et filles|fils}} par Jésus {{christos:Christ|le Messie}}. C’est ce qu’{{deity_pronoun:il|Il}} a voulu, et {{deity_pronoun:il|Il}} l’a voulu avec joie, \\v 6 pour que soit louée {{deity_pronoun:sa|Sa}} grâce glorieuse, la grâce qu’{{deity_pronoun:il|Il}} nous a donnée gratuitement dans le Bien-Aimé. \\v 7 En {{deity_pronoun:lui|Lui}}, par {{deity_pronoun:son|Son}} sang, nous avons la rédemption, le pardon de nos fautes. Nous l’avons parce que la grâce de Dieu est si riche, \\v 8 cette grâce qu’{{deity_pronoun:il|Il}} a répandue sur nous en abondance, avec toute sagesse et toute intelligence. \\v 9 Il nous a fait connaître le mystère de {{deity_pronoun:sa|Sa}} volonté, comme il {{deity_pronoun:lui|Lui}} a plu de le faire. Ce dessein, {{deity_pronoun:il|Il}} l’a établi {{christos:en Christ|dans le Messie}} \\v 10 comme {{deity_pronoun:son|Son}} plan pour le moment où les temps seraient accomplis : réunir toutes choses sous un seul chef, le {{christos:Christ|Messie}}, ce qui est dans le ciel et ce qui est sur la terre, tout en {{deity_pronoun:lui|Lui}}. \\v 11 En {{deity_pronoun:lui|Lui}}, nous aussi, nous sommes devenus la part qui appartient à Dieu. Nous y avons été destinés d’avance par le dessein de Dieu, qui accomplit tout comme {{deity_pronoun:sa|Sa}} volonté le décide, \\v 12 afin que nous, les premiers à avoir espéré dans le {{christos:Christ|Messie}}, nous servions à la louange de {{deity_pronoun:sa|Sa}} gloire.",
+          "R": "Louons le Dieu et Père de notre Seigneur Jésus {{christos:Christ|le Messie}} ! Parce que nous sommes unis au {{christos:Christ|Messie}}, Dieu nous a donné toutes les bénédictions que l’Esprit apporte, des bénédictions qui viennent du monde céleste. \\v 4 Avant même de créer le monde, Dieu nous a choisis pour que nous soyons unis au {{christos:Christ|Messie}}. Il nous a choisis pour que nous soyons saints et sans défaut à {{deity_pronoun:ses|Ses}} yeux, et pour que nous vivions dans l’amour. \\v 5 Il y a très longtemps, Dieu a décidé de nous adopter par Jésus {{christos:Christ|le Messie}}, pour que nous soyons {{deity_pronoun:ses|Ses}} propres {{gender:fils et filles|fils}}, avec tous les droits de {{deity_pronoun:ses|Ses}} enfants. C’est ce qu’{{deity_pronoun:il|Il}} voulait, et cela {{deity_pronoun:lui|Lui}} a donné de la joie. \\v 6 Il l’a fait pour que tous louent {{deity_pronoun:sa|Sa}} grâce glorieuse. Cette grâce, {{deity_pronoun:il|Il}} nous l’a donnée gratuitement par {{deity_pronoun:son|Son}} Fils bien-aimé. \\v 7 Par le sang de {{deity_pronoun:son|Son}} Fils, nous avons été libérés, et nos fautes sont pardonnées. Voilà combien la grâce de Dieu est riche ! \\v 8 Il l’a répandue sur nous sans compter. Il nous a donné toute la sagesse et toute l’intelligence. \\v 9 Il nous a fait connaître le mystère de ce qu’{{deity_pronoun:il|Il}} voulait faire : {{deity_pronoun:son|Son}} plan, autrefois caché, maintenant révélé. Dieu a été heureux de former ce plan, et {{deity_pronoun:il|Il}} l’a formé pour qu’il se réalise par le {{christos:Christ|Messie}}. \\v 10 Voici le plan de Dieu pour le moment qu’{{deity_pronoun:il|Il}} a fixé : réunir tout ce qui est dans le ciel et sur la terre, avec le {{christos:Christ|Messie}} comme chef de tout. \\v 11 Parce que nous sommes unis au {{christos:Christ|Messie}}, Dieu a fait de nous {{deity_pronoun:son|Son}} propre peuple, {{deity_pronoun:sa|Sa}} part précieuse. Il l’avait décidé bien avant. Dieu fait tout arriver comme {{deity_pronoun:il|Il}} l’a prévu et voulu. \\v 12 Il l’a fait pour que nous, les premiers à mettre notre espérance dans le {{christos:Christ|Messie}}, nous fassions louer {{deity_pronoun:sa|Sa}} gloire."
         }
       },
       "decisions": [
@@ -1387,68 +1406,6 @@
           "footnote": false
         },
         {
-          "id": "r-fr-1",
-          "layer": "rendering",
-          "language": "fr",
-          "levels": [
-            "L",
-            "B",
-            "R"
-          ],
-          "category": "register",
-          "tokens": [
-            "n49001003012",
-            "n49001004002"
-          ],
-          "choice": "passé composé for past events at every level (for the whole letter)",
-          "alternatives": [
-            "passé simple at Literal and Balanced"
-          ],
-          "reason": "Ephesians is a letter: Paul speaks to the readers about what God has done for them (\"il nous a bénis\", \"il nous a choisis\"), and French uses the passé composé for that, as in Colossians.",
-          "uncertain": false,
-          "footnote": false
-        },
-        {
-          "id": "r-fr-2",
-          "layer": "rendering",
-          "language": "fr",
-          "levels": [
-            "L",
-            "B"
-          ],
-          "category": "word_choice",
-          "tokens": [
-            "n49001003020"
-          ],
-          "choice": "dans les [lieux] célestes (L); dans les lieux célestes (B); le monde céleste, le ciel (R) (for the whole letter)",
-          "alternatives": [
-            "dans les cieux",
-            "dans le ciel (L, B)"
-          ],
-          "reason": "The Greek has an adjective, \"the heavenly [ones]\"; \"les lieux célestes\" keeps it and stays distinct from \"les cieux\", which Paul also uses (1:10). The phrase recurs in 1:20, 2:6, 3:10 and 6:12.",
-          "uncertain": false,
-          "footnote": false
-        },
-        {
-          "id": "r-fr-3",
-          "layer": "rendering",
-          "language": "fr",
-          "levels": [
-            "L"
-          ],
-          "category": "word_choice",
-          "tokens": [
-            "n49001010007"
-          ],
-          "choice": "récapituler (L); réunir toutes choses sous un seul chef (B)",
-          "alternatives": [
-            "réunir (L)"
-          ],
-          "reason": "\"Récapituler\" is the word-for-word French for the verb, built on \"head\" as the Greek is, and is the established term in French theology. Balanced keeps both parts of the sense chosen in m19 in plain words.",
-          "uncertain": false,
-          "footnote": false
-        },
-        {
           "id": "r-sw-1",
           "layer": "rendering",
           "language": "sw",
@@ -1531,6 +1488,90 @@
           "reason": "The English Readable makes \"Blessed be\" a call to praise. \"Tumsifu\" says it in everyday Swahili and includes Paul with his readers; \"Ahimidiwe\" (may he be praised) is kept for Balanced.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n49001004005",
+            "n49001004015"
+          ],
+          "choice": "the deity_pronoun span on every French pronoun for God or Christ, subject \"il\" and elided \"l'\" included, and on \"lui\" for the Holy Spirit (for the whole letter)",
+          "alternatives": [],
+          "reason": "As in Colossians and Hebrews: French must write the subject pronoun, so \"il\" for God or Christ carries the span wherever the English \"he\" does, and also where French needs a pronoun the English lacks (\"qu’{{deity_pronoun:il|Il}}\", \"{{deity_pronoun:l’|L’}}a ressuscité\"). The Holy Spirit is \"il\", never \"it\"; the relative \"qui\" takes no span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-2",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n49001003020"
+          ],
+          "choice": "dans les [lieux] célestes (L); dans les lieux célestes (B); le monde céleste, le ciel (R) (for the whole letter, 1:3, 1:20, 2:6, 3:10, 6:12)",
+          "alternatives": [
+            "dans les cieux",
+            "dans le ciel at every level"
+          ],
+          "reason": "The Greek is an adjective, \"the heavenly [ones]\", with no noun (m4). Literal brackets the noun French needs; Balanced keeps \"les lieux célestes\" so the phrase can be traced through the letter; Readable says plainly where it is.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-3",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n49001005004"
+          ],
+          "choice": "l’adoption comme {{gender:fils et filles|fils}} (L); adoptés comme {{deity_pronoun:ses|Ses}} propres {{gender:fils et filles|fils}} (B, R)",
+          "alternatives": [
+            "comme enfants"
+          ],
+          "reason": "As in English: the word is adoption as a son and heir (m10), and women are included. \"Enfants\" would lose the heir's standing; \"fils\" alone remains as the traditional form.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-4",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n49001005001",
+            "n49001011005",
+            "n49001010007"
+          ],
+          "choice": "prédestinés (L), destinés d’avance (B), a décidé (R); réunir toutes choses sous un seul chef (L, B)",
+          "alternatives": [
+            "récapituler"
+          ],
+          "reason": "Literal keeps the traditional \"prédestiner\", built like the Greek verb \"mark out beforehand\" (m9); Balanced says the same in current words. For the verb of verse 10, \"récapituler\" now means \"summarize\" in French; \"réunir sous un seul chef\" keeps both parts of the sense, gathering and the head (m19).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1600,15 +1641,15 @@
           "B": "Y también {{plural_you:ustedes están|vosotros estáis}} en {{deity_pronoun:él|Él}}. {{plural_you:Oyeron|Oísteis}} el mensaje de la verdad, el evangelio que {{plural_you:les|os}} trae salvación, y {{plural_you:creyeron|creísteis}}; y en {{deity_pronoun:él|Él}} {{plural_you:fueron|fuisteis}} sellados con el Espíritu Santo que Dios había prometido. \\v 14 El Espíritu es el anticipo de nuestra herencia, hasta que Dios redima a los que son {{deity_pronoun:su|Su}} propia posesión, para que {{deity_pronoun:su|Su}} gloria sea alabada.",
           "R": "También {{plural_you:ustedes están|vosotros estáis}} unidos {{christos:a Cristo|al Mesías}}. {{plural_you:Oyeron|Oísteis}} el mensaje de la verdad, la buena noticia de que Dios {{plural_you:los|os}} salva. Cuando lo {{plural_you:creyeron|creísteis}}, Dios {{plural_you:les|os}} puso {{deity_pronoun:su|Su}} sello: {{plural_you:les|os}} dio el Espíritu Santo que había prometido. Ese sello muestra que {{plural_you:son|sois}} de {{deity_pronoun:él|Él}}. \\v 14 El Espíritu es como un primer pago que garantiza el resto. Dios nos dará todo lo que ha prometido. Viene el día en que {{deity_pronoun:él|Él}} liberará por completo a {{deity_pronoun:su|Su}} propio pueblo. Entonces {{deity_pronoun:su|Su}} gloria será alabada."
         },
-        "fr": {
-          "L": "En {{deity_pronoun:lui|Lui}} vous aussi, ayant entendu la parole de la vérité, l’Évangile de votre salut, en {{deity_pronoun:lui|Lui}} aussi, ayant cru, vous avez été scellés de l’Esprit Saint de la promesse, \\v 14 qui est l’acompte de notre héritage, en vue de la rédemption de la possession [de Dieu], à la louange de {{deity_pronoun:sa|Sa}} gloire.",
-          "B": "Et vous aussi, vous êtes en {{deity_pronoun:lui|Lui}}. Vous avez entendu la parole de la vérité, l’Évangile qui vous apporte le salut, et vous avez cru ; et en {{deity_pronoun:lui|Lui}} vous avez été marqués du sceau de l’Esprit Saint que Dieu avait promis. \\v 14 L’Esprit est l’acompte de notre héritage, jusqu’au jour où Dieu rachètera ceux qui {{deity_pronoun:lui|Lui}} appartiennent en propre, afin que {{deity_pronoun:sa|Sa}} gloire soit louée.",
-          "R": "Vous aussi, vous êtes unis au {{christos:Christ|Messie}}. Vous avez entendu le message de la vérité, la bonne nouvelle que Dieu vous sauve. Quand vous y avez cru, Dieu a mis {{deity_pronoun:son|Son}} sceau sur vous : {{deity_pronoun:il|Il}} vous a donné l’Esprit Saint qu’{{deity_pronoun:il|Il}} avait promis. Ce sceau montre que vous {{deity_pronoun:lui|Lui}} appartenez. \\v 14 L’Esprit est comme un premier versement qui garantit le reste. Dieu nous donnera tout ce qu’{{deity_pronoun:il|Il}} a promis. Le jour vient où {{deity_pronoun:il|Il}} libérera complètement ceux qui sont {{deity_pronoun:son|Son}} peuple. Alors {{deity_pronoun:sa|Sa}} gloire sera louée."
-        },
         "sw": {
           "L": "Ndani {{deity_pronoun:yake|Yake}} ninyi pia, mliposikia neno la kweli, Injili ya wokovu wenu, ndani {{deity_pronoun:yake|Yake}} pia, mlipoamini, mlitiwa muhuri kwa Roho Mtakatifu wa ahadi, \\v 14 ambaye ni malipo ya awali ya urithi wetu, kwa ukombozi wa mali [ya Mungu], kwa sifa ya utukufu {{deity_pronoun:wake|Wake}}.",
           "B": "Nanyi pia mko ndani {{deity_pronoun:yake|Yake}}. Mlisikia ujumbe wa kweli, Injili inayowaletea wokovu, mkaamini; na ndani {{deity_pronoun:yake|Yake}} mlitiwa muhuri kwa Roho Mtakatifu ambaye Mungu alikuwa ameahidi. \\v 14 Roho ndiye malipo ya awali ya urithi wetu, mpaka Mungu atakapowakomboa wale walio mali {{deity_pronoun:yake|Yake}}, ili utukufu {{deity_pronoun:wake|Wake}} usifiwe.",
           "R": "Ninyi pia mmeunganishwa na {{christos:Kristo|Masihi}}. Mlisikia ujumbe wa kweli, Habari Njema kwamba Mungu anawaokoa. Mlipoiamini, Mungu aliweka muhuri {{deity_pronoun:wake|Wake}} juu yenu: aliwapa Roho Mtakatifu aliyekuwa ameahidi. Muhuri huu unaonyesha kwamba ninyi ni mali {{deity_pronoun:yake|Yake}}. \\v 14 Roho ni kama malipo ya kwanza yanayohakikisha kwamba yaliyobaki yatakuja. Mungu atatupa kila kitu alichoahidi. Siku inakuja ambapo atawaweka huru kabisa watu walio mali {{deity_pronoun:yake|Yake}}. Hapo ndipo utukufu {{deity_pronoun:wake|Wake}} utasifiwa."
+        },
+        "fr": {
+          "L": "En {{deity_pronoun:lui|Lui}} vous aussi, ayant entendu la parole de la vérité, l’Évangile de votre salut, en {{deity_pronoun:lui|Lui}} aussi, ayant cru, vous avez été scellés de l’Esprit Saint de la promesse, \\v 14 qui est [l’]acompte de notre héritage, pour [la] rédemption de [ce que Dieu s’est] acquis, à [la] louange de {{deity_pronoun:sa|Sa}} gloire.",
+          "B": "Vous aussi, vous êtes en {{deity_pronoun:lui|Lui}}. Vous avez entendu le message de la vérité, l’Évangile qui vous apporte le salut, et vous avez cru ; et en {{deity_pronoun:lui|Lui}} vous avez été marqués du sceau de l’Esprit Saint que Dieu avait promis. \\v 14 L’Esprit est l’acompte de notre héritage, en attendant que Dieu rachète pleinement ceux qui {{deity_pronoun:lui|Lui}} appartiennent, pour que {{deity_pronoun:sa|Sa}} gloire soit louée.",
+          "R": "Vous aussi, vous êtes unis au {{christos:Christ|Messie}}. Vous avez entendu le message de la vérité, la bonne nouvelle que Dieu vous sauve. Quand vous y avez cru, Dieu a mis {{deity_pronoun:sa|Sa}} marque sur vous : {{deity_pronoun:il|Il}} vous a donné l’Esprit Saint qu’{{deity_pronoun:il|Il}} avait promis. Cette marque montre que vous {{deity_pronoun:lui|Lui}} appartenez. \\v 14 L’Esprit est comme un premier versement qui garantit le reste : Dieu nous donnera tout ce qu’{{deity_pronoun:il|Il}} a promis. Le jour vient où {{deity_pronoun:il|Il}} libérera complètement ceux qui sont {{deity_pronoun:son|Son}} peuple. Alors {{deity_pronoun:sa|Sa}} gloire sera louée."
         }
       },
       "decisions": [
@@ -1921,50 +1962,6 @@
           "footnote": false
         },
         {
-          "id": "r-fr-1",
-          "layer": "rendering",
-          "language": "fr",
-          "levels": [
-            "L",
-            "B"
-          ],
-          "category": "word_choice",
-          "tokens": [
-            "n49001014003"
-          ],
-          "choice": "l’acompte (L, B); un premier versement qui garantit le reste (R)",
-          "alternatives": [
-            "le gage",
-            "les arrhes",
-            "la garantie"
-          ],
-          "reason": "\"Acompte\" is the everyday French for a first payment on a sum still owed, which is the picture (m8). \"Gage\" is the traditional word but now means a pledge held as security and returned; \"arrhes\" can be forfeited.",
-          "uncertain": false,
-          "footnote": false
-        },
-        {
-          "id": "r-fr-2",
-          "layer": "rendering",
-          "language": "fr",
-          "levels": [
-            "L",
-            "B",
-            "R"
-          ],
-          "category": "word_choice",
-          "tokens": [
-            "n49001013021",
-            "n49001013025"
-          ],
-          "choice": "l’Esprit Saint; l’Esprit (for the whole letter)",
-          "alternatives": [
-            "le Saint-Esprit"
-          ],
-          "reason": "As in John, Hebrews and Colossians. The Spirit is never \"il\" under the deity setting here: French refers back to the noun or uses \"qui\", so no pronoun is needed.",
-          "uncertain": false,
-          "footnote": false
-        },
-        {
           "id": "r-sw-1",
           "layer": "rendering",
           "language": "sw",
@@ -1983,6 +1980,49 @@
             "dhamana"
           ],
           "reason": "\"Arabuni\" is the borrowed trade word but few readers know it today; \"dhamana\" (guarantee, security) keeps only the promise. \"Malipo ya awali\" (first payment) says part is paid now and the rest will follow (m8).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n49001014003"
+          ],
+          "choice": "l’acompte (L, B); un premier versement qui garantit le reste (R)",
+          "alternatives": [
+            "le gage",
+            "la garantie",
+            "les arrhes"
+          ],
+          "reason": "\"Acompte\" is the French trade word for a first part of a price that commits the buyer to pay the rest, which is the picture (m8). \"Gage\" and \"garantie\" keep only the promise; \"arrhes\" can be forfeited, which is not the point.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-2",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n49001013019"
+          ],
+          "choice": "scellés (L); marqués du sceau (B); a mis {{deity_pronoun:sa|Sa}} marque (R)",
+          "alternatives": [
+            "scellés at every level"
+          ],
+          "reason": "French \"sceller\" today mostly means to fix in place or to close a letter; Balanced names the seal itself, a mark of ownership and protection (m5), and Readable says \"marque\" and what it shows.",
           "uncertain": false,
           "footnote": false
         }
@@ -2160,15 +2200,15 @@
           "B": "Por esta razón, desde que oí de la fe que {{plural_you:tienen|tenéis}} en el Señor Jesús y del amor que {{plural_you:tienen|tenéis}} por todo el pueblo santo de Dios, \\v 16 no he dejado de dar gracias a Dios por {{plural_you:ustedes|vosotros}}. {{plural_you:Los|Os}} menciono siempre que oro, \\v 17 y pido al Dios de nuestro Señor Jesús {{christos:Cristo|el Mesías}}, el Padre de la gloria, que {{plural_you:les|os}} dé el Espíritu que trae sabiduría y revelación, para que {{deity_pronoun:lo|Lo}} {{plural_you:conozcan|conozcáis}} cada vez más. \\v 18 Con los ojos de {{plural_you:su|vuestro}} corazón abiertos a la luz, {{plural_you:sabrán|sabréis}} qué esperanza {{plural_you:les|os}} ofrece {{deity_pronoun:su|Su}} llamado, cuán rica y gloriosa es la herencia que {{deity_pronoun:él|Él}} tiene en {{deity_pronoun:su|Su}} pueblo santo, \\v 19 y cuán inmensamente grande es {{deity_pronoun:su|Su}} poder, que actúa a favor de nosotros los que creemos. Es la acción de {{deity_pronoun:su|Su}} poderosa fuerza, \\v 20 que {{deity_pronoun:él|Él}} puso en acción en {{christos:Cristo|el Mesías}} cuando {{deity_pronoun:lo|Lo}} resucitó de entre los muertos y {{deity_pronoun:lo|Lo}} sentó a {{deity_pronoun:su|Su}} derecha en los lugares celestiales, \\v 21 muy por encima de todo gobernante y autoridad, de todo poder y dominio, y de todo nombre que pueda nombrarse, no solo en esta era sino también en la era venidera.",
           "R": "Por eso, desde que supe de la fe que {{plural_you:tienen|tenéis}} en el Señor Jesús y del amor que {{plural_you:tienen|tenéis}} por todo el pueblo de Dios, \\v 16 no he dejado de dar gracias a Dios por {{plural_you:ustedes|vosotros}}. Siempre {{plural_you:los|os}} recuerdo cuando oro. \\v 17 Pido al Dios de nuestro Señor Jesús {{christos:Cristo|el Mesías}}, el Padre glorioso, que {{plural_you:les|os}} dé {{deity_pronoun:su|Su}} Espíritu, que {{plural_you:los|os}} hace sabios y {{plural_you:les|os}} muestra cómo es Dios, para que de verdad {{deity_pronoun:lo|Lo}} {{plural_you:conozcan|conozcáis}}. \\v 18 Pido que {{deity_pronoun:él|Él}} abra los ojos de {{plural_you:su|vuestro}} corazón y los llene de luz, para que {{plural_you:entiendan|entendáis}} tres cosas. {{plural_you:Sabrán|Sabréis}} cuál es la esperanza que {{deity_pronoun:él|Él}} {{plural_you:les|os}} dio cuando {{plural_you:los|os}} llamó. {{plural_you:Sabrán|Sabréis}} cuán glorioso y valioso es para {{deity_pronoun:él|Él}} {{deity_pronoun:su|Su}} pueblo santo: es {{deity_pronoun:su|Su}} propia herencia preciosa. \\v 19 Y {{plural_you:sabrán|sabréis}} cuán grande es {{deity_pronoun:su|Su}} poder para nosotros los que creemos. Nada se puede comparar con él. Es la misma fuerza poderosa \\v 20 que Dios usó cuando resucitó {{christos:a Cristo|al Mesías}} de entre los muertos. Dios {{deity_pronoun:le|Le}} dio el lugar de honor a {{deity_pronoun:su|Su}} derecha en el cielo. \\v 21 Allí {{christos:Cristo|el Mesías}} está muy por encima de todo gobernante y autoridad, de todo poder y señor, y de todo nombre que alguien pueda invocar. Está por encima de ellos, no solo en esta era sino también en la era venidera."
         },
-        "fr": {
-          "L": "C’est pourquoi moi aussi, ayant entendu parler de la foi au Seigneur Jésus [qui est] parmi vous et de l’amour [que vous avez] pour tous les saints, \\v 16 je ne cesse pas de rendre grâce pour vous, faisant mention [de vous] dans mes prières, \\v 17 afin que le Dieu de notre Seigneur Jésus {{christos:Christ|Messie}}, le Père de la gloire, vous donne [l’]Esprit de sagesse et de révélation dans la connaissance de {{deity_pronoun:lui|Lui}}, \\v 18 les yeux de votre cœur ayant été illuminés, pour que vous sachiez quelle est l’espérance de {{deity_pronoun:son|Son}} appel, quelle [est] la richesse de la gloire de {{deity_pronoun:son|Son}} héritage dans les saints, \\v 19 et quelle [est] l’extraordinaire grandeur de {{deity_pronoun:sa|Sa}} puissance envers nous qui croyons, selon l’action de la vigueur de {{deity_pronoun:sa|Sa}} force, \\v 20 qu’{{deity_pronoun:il|Il}} a déployée dans le {{christos:Christ|Messie}}, {{deity_pronoun:l’|L’}}ayant ressuscité des morts et fait asseoir à {{deity_pronoun:sa|Sa}} droite dans les [lieux] célestes, \\v 21 bien au-dessus de toute principauté et autorité et puissance et seigneurie et de tout nom qui est nommé, non seulement dans cet âge-ci, mais aussi dans celui qui vient ;",
-          "B": "C’est pourquoi, depuis que j’ai entendu parler de votre foi dans le Seigneur Jésus et de votre amour pour tout le peuple saint de Dieu, \\v 16 je n’ai pas cessé de remercier Dieu pour vous. Je fais mention de vous chaque fois que je prie, \\v 17 et je demande au Dieu de notre Seigneur Jésus {{christos:Christ|le Messie}}, le Père de gloire, de vous donner l’Esprit qui apporte sagesse et révélation, pour que vous {{deity_pronoun:le|Le}} connaissiez. \\v 18 Les yeux de votre cœur ouverts à la lumière, vous saurez quelle espérance {{deity_pronoun:son|Son}} appel vous offre, combien est riche et glorieux l’héritage qu’{{deity_pronoun:il|Il}} possède dans {{deity_pronoun:son|Son}} peuple saint, \\v 19 et combien est grande, au-delà de toute mesure, {{deity_pronoun:sa|Sa}} puissance à l’œuvre pour nous qui croyons. C’est l’action de {{deity_pronoun:sa|Sa}} force souveraine, \\v 20 qu’{{deity_pronoun:il|Il}} a mise en œuvre {{christos:en Christ|dans le Messie}} quand {{deity_pronoun:il|Il}} {{deity_pronoun:l’|L’}}a ressuscité des morts et {{deity_pronoun:l’|L’}}a fait asseoir à {{deity_pronoun:sa|Sa}} droite dans les lieux célestes, \\v 21 bien au-dessus de toute principauté et de toute autorité, de toute puissance et de toute souveraineté, et de tout nom qu’on peut nommer, non seulement dans l’âge présent, mais aussi dans l’âge à venir.",
-          "R": "C’est pourquoi, depuis que j’ai entendu parler de votre foi dans le Seigneur Jésus et de votre amour pour tout le peuple de Dieu, \\v 16 je n’ai pas cessé de remercier Dieu pour vous. Je pense toujours à vous quand je prie. \\v 17 Je demande au Dieu de notre Seigneur Jésus {{christos:Christ|le Messie}}, le Père glorieux, de vous donner {{deity_pronoun:son|Son}} Esprit, qui vous rend sages et vous montre à quoi Dieu ressemble, pour que vous {{deity_pronoun:le|Le}} connaissiez vraiment. \\v 18 Je {{deity_pronoun:lui|Lui}} demande d’ouvrir les yeux de votre cœur et de les remplir de lumière, pour que vous compreniez trois choses. Vous saurez quelle espérance {{deity_pronoun:il|Il}} vous a donnée quand {{deity_pronoun:il|Il}} vous a appelés. Vous saurez combien {{deity_pronoun:son|Son}} peuple saint est glorieux et précieux à {{deity_pronoun:ses|Ses}} yeux : c’est {{deity_pronoun:son|Son}} héritage, {{deity_pronoun:son|Son}} trésor. \\v 19 Et vous saurez combien {{deity_pronoun:sa|Sa}} puissance est grande pour nous qui croyons. Rien ne peut lui être comparé. C’est la même force puissante \\v 20 que Dieu a utilisée quand {{deity_pronoun:il|Il}} a ressuscité le {{christos:Christ|Messie}} d’entre les morts. Dieu {{deity_pronoun:lui|Lui}} a donné la place d’honneur à {{deity_pronoun:sa|Sa}} droite dans le ciel. \\v 21 Là, le {{christos:Christ|Messie}} est bien au-dessus de tous les chefs et de toutes les autorités, de toutes les puissances et de tous les seigneurs, et de tous les noms qu’on peut invoquer. Il est au-dessus d’eux, non seulement dans le temps présent, mais aussi dans le monde à venir."
-        },
         "sw": {
           "L": "Kwa sababu hii mimi pia, nikiisha kusikia habari ya imani katika Bwana Yesu [iliyo] kwenu na upendo [mlio nao] kwa watakatifu wote, \\v 16 siachi kushukuru kwa ajili yenu, nikiwataja katika maombi yangu, \\v 17 ili Mungu wa Bwana wetu Yesu {{christos:Kristo|Masihi}}, Baba wa utukufu, awape Roho wa hekima na wa ufunuo katika kumjua {{deity_pronoun:yeye|Yeye}}, \\v 18 macho ya moyo wenu yakiwa yametiwa nuru, ili mjue tumaini la wito {{deity_pronoun:wake|Wake}} ni nini, utajiri wa utukufu wa urithi {{deity_pronoun:wake|Wake}} katika watakatifu ni nini, \\v 19 na ukubwa upitao kiasi wa uweza {{deity_pronoun:wake|Wake}} kwetu sisi tunaoamini ni nini, kulingana na utendaji wa ukuu wa nguvu {{deity_pronoun:zake|Zake}}, \\v 20 alioutenda katika {{christos:Kristo|Masihi}}, akimfufua kutoka kwa wafu na akimketisha upande {{deity_pronoun:wake|Wake}} wa kulia katika [mahali pa] mbinguni, \\v 21 juu sana ya kila utawala na mamlaka na uweza na ubwana na kila jina litajwalo, si katika enzi hii tu bali pia katika ile ijayo;",
           "B": "Kwa sababu hiyo, tangu niliposikia habari za imani yenu katika Bwana Yesu na upendo wenu kwa watu wote wa Mungu walio watakatifu, \\v 16 sijaacha kumshukuru Mungu kwa ajili yenu. Ninawataja kila ninaposali, \\v 17 nikimwomba Mungu wa Bwana wetu Yesu {{christos:Kristo|Masihi}}, Baba wa utukufu, awape Roho aletaye hekima na ufunuo mnapozidi kumjua. \\v 18 Macho ya moyo wenu yakiwa yamefunguliwa kwa nuru, mtajua tumaini ambalo wito {{deity_pronoun:wake|Wake}} unawapa, jinsi urithi alio nao katika watu {{deity_pronoun:wake|Wake}} watakatifu ulivyo tajiri na wenye utukufu, \\v 19 na jinsi uweza {{deity_pronoun:wake|Wake}} unaotenda kazi kwa ajili yetu sisi tunaoamini ulivyo mkuu kupita kipimo chochote. Ni utendaji wa nguvu {{deity_pronoun:zake|Zake}} kuu, \\v 20 ambazo alizitumia katika {{christos:Kristo|Masihi}} alipomfufua kutoka kwa wafu na kumketisha upande {{deity_pronoun:wake|Wake}} wa kulia katika ulimwengu wa mbinguni, \\v 21 juu sana ya kila mtawala na mamlaka, kila uweza na ubwana, na kila jina linaloweza kutajwa, si katika enzi hii tu bali pia katika enzi ijayo.",
           "R": "Ndiyo sababu, tangu niliposikia juu ya imani yenu katika Bwana Yesu na upendo wenu kwa watu wote wa Mungu, \\v 16 sijaacha kumshukuru Mungu kwa ajili yenu. Ninaendelea kuwakumbuka ninaposali. \\v 17 Ninamwomba Mungu wa Bwana wetu Yesu {{christos:Kristo|Masihi}}, Baba mwenye utukufu, awape Roho {{deity_pronoun:wake|Wake}}, anayewapa hekima na kuwaonyesha jinsi Mungu alivyo, ili mpate kumjua {{deity_pronoun:yeye|Yeye}} kweli. \\v 18 Ninamwomba afungue macho ya moyo wenu na kuyajaza nuru, ili mwelewe mambo matatu. Mtajua tumaini alilowapa alipowaita. Mtajua jinsi watu {{deity_pronoun:wake|Wake}} watakatifu walivyo na utukufu na thamani kubwa {{deity_pronoun:kwake|Kwake}}: wao ni urithi {{deity_pronoun:wake|Wake}} mwenyewe anaouthamini. \\v 19 Tena mtajua jinsi uweza {{deity_pronoun:wake|Wake}} ulivyo mkuu kwa ajili yetu sisi tunaoamini. Hakuna kitu kinachoweza kulinganishwa nao. Ni nguvu zile zile kuu \\v 20 ambazo Mungu alizitumia alipomfufua {{christos:Kristo|Masihi}} kutoka kwa wafu. Mungu alimpa mahali pa heshima upande {{deity_pronoun:wake|Wake}} wa kulia mbinguni. \\v 21 Huko {{christos:Kristo|Masihi}} yuko juu sana ya kila mtawala na mamlaka, kila uweza na bwana, na kila jina ambalo watu wanaweza kuliitia. Yuko juu yao wote, si katika enzi hii tu bali pia katika enzi ijayo."
+        },
+        "fr": {
+          "L": "C’est pourquoi moi aussi, ayant entendu parler de la foi au Seigneur Jésus [qui est] parmi vous et de l’amour [que vous avez] pour tous les saints, \\v 16 je ne cesse pas de rendre grâce pour vous, faisant mention [de vous] dans mes prières, \\v 17 afin que le Dieu de notre Seigneur Jésus {{christos:Christ|Messie}}, le Père de la gloire, vous donne [l’]Esprit de sagesse et de révélation dans [la] connaissance de {{deity_pronoun:lui|Lui}}, \\v 18 les yeux de votre cœur ayant été illuminés, pour que vous sachiez quelle est l’espérance de {{deity_pronoun:son|Son}} appel, quelle [est] la richesse de la gloire de {{deity_pronoun:son|Son}} héritage dans les saints, \\v 19 et quelle [est] l’extraordinaire grandeur de {{deity_pronoun:sa|Sa}} puissance envers nous qui croyons, selon l’action du pouvoir de {{deity_pronoun:sa|Sa}} force, \\v 20 qu’{{deity_pronoun:il|Il}} a déployée dans le {{christos:Christ|Messie}}, {{deity_pronoun:l’|L’}}ayant ressuscité d’entre les morts et fait asseoir à {{deity_pronoun:sa|Sa}} droite dans les [lieux] célestes, \\v 21 au-dessus de toute principauté et autorité et puissance et seigneurie et de tout nom qui se nomme, non seulement dans cet âge-ci, mais aussi dans celui qui vient ;",
+          "B": "C’est pourquoi, depuis que j’ai entendu parler de votre foi au Seigneur Jésus et de votre amour pour tout le peuple saint de Dieu, \\v 16 je ne cesse de remercier Dieu pour vous. Je pense à vous chaque fois que je prie, \\v 17 et je demande au Dieu de notre Seigneur Jésus {{christos:Christ|le Messie}}, le Père de la gloire, de vous donner l’Esprit qui apporte la sagesse et la révélation, pour que vous {{deity_pronoun:le|Le}} connaissiez. \\v 18 Les yeux de votre cœur ouverts à la lumière, vous saurez quelle espérance {{deity_pronoun:son|Son}} appel vous offre, quelle richesse et quelle gloire {{deity_pronoun:il|Il}} possède en héritage dans {{deity_pronoun:son|Son}} peuple saint, \\v 19 et combien {{deity_pronoun:sa|Sa}} puissance, qui agit pour nous, les croyants, dépasse toute mesure. C’est l’action de {{deity_pronoun:sa|Sa}} force toute-puissante, \\v 20 qu’{{deity_pronoun:il|Il}} a déployée dans le {{christos:Christ|Messie}} quand {{deity_pronoun:il|Il}} {{deity_pronoun:l’|L’}}a ressuscité d’entre les morts et {{deity_pronoun:l’|L’}}a fait asseoir à {{deity_pronoun:sa|Sa}} droite dans les lieux célestes, \\v 21 bien au-dessus de toute principauté et de toute autorité, de toute puissance et de toute souveraineté, et de tout nom qui puisse être nommé, non seulement dans cet âge-ci, mais aussi dans l’âge à venir.",
+          "R": "C’est pour cela que, depuis que j’ai entendu parler de votre foi dans le Seigneur Jésus et de votre amour pour tout le peuple de Dieu, \\v 16 je n’ai pas cessé de remercier Dieu pour vous. Je pense toujours à vous quand je prie. \\v 17 Je demande au Dieu de notre Seigneur Jésus {{christos:Christ|le Messie}}, le Père glorieux, de vous donner {{deity_pronoun:son|Son}} Esprit, qui vous rend sages et vous montre comment est Dieu, pour que vous {{deity_pronoun:le|Le}} connaissiez vraiment. \\v 18 Je {{deity_pronoun:lui|Lui}} demande d’ouvrir les yeux de votre cœur et de les remplir de lumière, pour que vous compreniez trois choses. Vous saurez quelle espérance {{deity_pronoun:il|Il}} vous a donnée quand {{deity_pronoun:il|Il}} vous a appelés. Vous saurez combien {{deity_pronoun:son|Son}} peuple saint est glorieux et précieux pour {{deity_pronoun:lui|Lui}} : c’est {{deity_pronoun:son|Son}} héritage, {{deity_pronoun:son|Son}} trésor. \\v 19 Et vous saurez combien {{deity_pronoun:sa|Sa}} puissance est grande pour nous qui croyons. Rien ne peut se comparer à elle. C’est la même force puissante \\v 20 que Dieu a utilisée quand {{deity_pronoun:il|Il}} a ressuscité le {{christos:Christ|Messie}} d’entre les morts. Dieu {{deity_pronoun:lui|Lui}} a donné la place d’honneur, à {{deity_pronoun:sa|Sa}} droite, dans le ciel. \\v 21 Là, le {{christos:Christ|Messie}} est bien au-dessus de tous les chefs et de toutes les autorités, de toutes les puissances et de tous les seigneurs, et de tout nom que l’on peut invoquer. Il est au-dessus d’eux, non seulement dans le temps présent, mais aussi dans le temps à venir."
         }
       },
       "decisions": [
@@ -2709,31 +2749,6 @@
           "footnote": false
         },
         {
-          "id": "r-fr-1",
-          "layer": "rendering",
-          "language": "fr",
-          "levels": [
-            "L",
-            "B",
-            "R"
-          ],
-          "category": "word_choice",
-          "tokens": [
-            "n49001021003",
-            "n49001021005",
-            "n49001021007",
-            "n49001021009"
-          ],
-          "choice": "principauté, autorité, puissance, seigneurie (L); principauté, autorité, puissance, souveraineté (B); chefs, autorités, puissances, seigneurs (R) (for the whole letter)",
-          "alternatives": [
-            "dominations",
-            "pouvoirs"
-          ],
-          "reason": "The same words as Colossians 1:16, so that 3:10 and 6:12 can be traced back here. \"Principauté\" is the established French word for this rank of unseen powers; Readable says \"chefs\", a plain word.",
-          "uncertain": false,
-          "footnote": false
-        },
-        {
           "id": "r-sw-1",
           "layer": "rendering",
           "language": "sw",
@@ -2776,6 +2791,50 @@
             "falme, enzi, nguvu, usultani"
           ],
           "reason": "The same words as the English list, kept at every level so that the powers of 3:10 and 6:12 can be traced back here. For the whole letter.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n49001021003",
+            "n49001021005",
+            "n49001021007",
+            "n49001021009"
+          ],
+          "choice": "principauté, autorité, puissance, seigneurie (L); principauté, autorité, puissance, souveraineté (B); chefs, autorités, puissances, seigneurs (R) (for the whole letter, 3:10, 6:12)",
+          "alternatives": [
+            "dominations",
+            "pouvoirs"
+          ],
+          "reason": "The same French words as in Colossians 1:16 and 2:10, 2:15, so that the unseen powers (m12) can be traced through both letters. \"Principauté\" is the established French name for this rank of powers; Readable says \"chefs\" because \"principauté\" is now mostly a small country.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-2",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n49001019015",
+            "n49001019017",
+            "n49001019019"
+          ],
+          "choice": "l’action du pouvoir de {{deity_pronoun:sa|Sa}} force (L); l’action de {{deity_pronoun:sa|Sa}} force toute-puissante (B)",
+          "alternatives": [],
+          "reason": "Paul heaps up words for strength (m10), and \"puissance\" is already used for the word in the line before; Literal keeps three distinct French words so the heaping can still be seen.",
           "uncertain": false,
           "footnote": false
         }
@@ -2835,15 +2894,15 @@
           "B": "Dios ha puesto todas las cosas bajo los pies {{christos:de Cristo|del Mesías}}, y {{deity_pronoun:lo|Lo}} ha dado a la iglesia como cabeza sobre todas las cosas. \\v 23 La iglesia es {{deity_pronoun:su|Su}} cuerpo. Es {{deity_pronoun:su|Su}} plenitud, llenada por {{deity_pronoun:él|Él}}, que lo llena todo en todo lugar y de todas las maneras.",
           "R": "Dios ha puesto todo bajo los pies {{christos:de Cristo|del Mesías}}, para que {{deity_pronoun:él|Él}} reine sobre todas las cosas. Dios {{deity_pronoun:lo|Lo}} ha hecho cabeza sobre todas las cosas, y {{deity_pronoun:lo|Lo}} ha dado como regalo a la iglesia. \\v 23 La iglesia es {{deity_pronoun:su|Su}} cuerpo, y está llena de {{deity_pronoun:él|Él}}. Él llena por completo todas las cosas."
         },
-        "fr": {
-          "L": "Et {{deity_pronoun:il|Il}} a soumis toutes choses sous {{deity_pronoun:ses|Ses}} pieds, et {{deity_pronoun:l’|L’}}a donné [comme] tête au-dessus de toutes choses à l’Église, \\v 23 qui est {{deity_pronoun:son|Son}} corps, la plénitude de celui qui remplit tout en tous.",
-          "B": "Dieu a tout mis sous les pieds du {{christos:Christ|Messie}}, et {{deity_pronoun:il|Il}} {{deity_pronoun:l’|L’}}a donné à l’Église comme tête au-dessus de tout. \\v 23 L’Église est {{deity_pronoun:son|Son}} corps. Elle est {{deity_pronoun:sa|Sa}} plénitude, remplie par celui qui remplit tout, en tous lieux et de toutes manières.",
-          "R": "Dieu a tout mis sous les pieds du {{christos:Christ|Messie}} : {{deity_pronoun:il|Il}} règne sur toutes choses. Dieu {{deity_pronoun:l’|L’}}a placé à la tête de tout, et {{deity_pronoun:il|Il}} {{deity_pronoun:l’|L’}}a donné comme un cadeau à l’Église. \\v 23 L’Église est {{deity_pronoun:son|Son}} corps, et elle est pleine de {{deity_pronoun:lui|Lui}}. Il remplit tout complètement."
-        },
         "sw": {
           "L": "Na vitu vyote alivitiisha chini ya miguu {{deity_pronoun:yake|Yake}}, na alimtoa {{deity_pronoun:yeye|Yeye}} [awe] kichwa juu ya vitu vyote kwa kanisa, \\v 23 ambalo ni mwili {{deity_pronoun:wake|Wake}}, utimilifu wa yule anayejaza vitu vyote katika vyote.",
           "B": "Mungu ameweka vitu vyote chini ya miguu ya {{christos:Kristo|Masihi}}, na amemtoa {{deity_pronoun:yeye|Yeye}} kwa kanisa awe kichwa juu ya vitu vyote. \\v 23 Kanisa ni mwili {{deity_pronoun:wake|Wake}}. Ni utimilifu {{deity_pronoun:wake|Wake}}, uliojazwa na {{deity_pronoun:yeye|Yeye}} anayejaza kila kitu kila mahali na kwa kila namna.",
           "R": "Mungu ameweka kila kitu chini ya miguu ya {{christos:Kristo|Masihi}}, ili atawale juu ya vitu vyote. Mungu amemfanya kuwa kichwa juu ya vitu vyote, na amemtoa kama zawadi kwa kanisa. \\v 23 Kanisa ni mwili {{deity_pronoun:wake|Wake}}, naye amelijaza. Yeye hujaza vitu vyote kabisa."
+        },
+        "fr": {
+          "L": "Et {{deity_pronoun:il|Il}} a soumis toutes choses sous {{deity_pronoun:ses|Ses}} pieds, et {{deity_pronoun:il|Il}} {{deity_pronoun:l’|L’}}a donné [pour] tête au-dessus de toutes choses à l’Église, \\v 23 qui est {{deity_pronoun:son|Son}} corps, la plénitude de celui qui remplit tout en tous.",
+          "B": "Dieu a tout mis sous les pieds du {{christos:Christ|Messie}}, et {{deity_pronoun:il|Il}} {{deity_pronoun:l’|L’}}a donné à l’Église pour être la tête au-dessus de tout. \\v 23 L’Église est {{deity_pronoun:son|Son}} corps. Elle est {{deity_pronoun:sa|Sa}} plénitude, remplie par {{deity_pronoun:lui|Lui}}, qui remplit tout, en tout lieu et de toute manière.",
+          "R": "Dieu a tout mis sous les pieds du {{christos:Christ|Messie}} : {{deity_pronoun:il|Il}} règne sur toutes choses. Dieu {{deity_pronoun:l’|L’}}a fait chef de toutes choses, et {{deity_pronoun:il|Il}} {{deity_pronoun:l’|L’}}a donné à l’Église comme un cadeau. \\v 23 L’Église est {{deity_pronoun:son|Son}} corps, et elle est remplie de {{deity_pronoun:lui|Lui}}. Il remplit tout complètement."
         }
       },
       "decisions": [
@@ -3037,28 +3096,6 @@
           "footnote": false
         },
         {
-          "id": "r-fr-1",
-          "layer": "rendering",
-          "language": "fr",
-          "levels": [
-            "L",
-            "B",
-            "R"
-          ],
-          "category": "word_choice",
-          "tokens": [
-            "n49001022015"
-          ],
-          "choice": "l’Église, with a capital (for the whole letter)",
-          "alternatives": [
-            "l’église",
-            "l’assemblée"
-          ],
-          "reason": "In Ephesians the church is always God's people as a whole, Christ's body (m4), so French writes it with the capital, as Colossians does for the same sense.",
-          "uncertain": false,
-          "footnote": false
-        },
-        {
           "id": "r-sw-1",
           "layer": "rendering",
           "language": "sw",
@@ -3075,6 +3112,29 @@
             "ukamilifu"
           ],
           "reason": "\"Ukamilifu\" is completeness or perfection; \"utimilifu\" is fullness, being filled up, and is the word used for \"the fullness of the times\" in verse 10, so the two uses of πλήρωμα stay one word. Readable says it with the verb \"kujaza\" (fill).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n49001022011",
+            "n49001022015"
+          ],
+          "choice": "la tête (L, B), chef (R); l’Église, with a capital, for the whole church (for the whole letter)",
+          "alternatives": [
+            "le chef at every level",
+            "l'assemblée"
+          ],
+          "reason": "\"Tête\" keeps the picture of head and body that the next verse and 4:15-16 and 5:23 build on (m3); Readable says \"chef\" for the ruling sense. As in Colossians, the capital in \"l’Église\" marks God’s people as a whole (m4), not one congregation or a building.",
           "uncertain": false,
           "footnote": false
         }
