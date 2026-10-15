@@ -1,10 +1,11 @@
 """Plain-language descriptions of MACULA Greek and Hebrew morphology codes.
 
 The word extracts (data/grc/) carry Robinson-style codes such as N-DSF or
-V-2AAI-3S. describe() turns one into words a reader can follow, in English,
-Spanish, French or Swahili: "Noun · dative singular feminine", "Verb ·
-second aorist active indicative · 3rd person singular". An unknown code raises ValueError, so a
-new code in the data fails the tests rather than showing a reader nothing.
+V-2AAI-3S. describe() turns one into words a reader can follow, in each
+reading language (English, Spanish, French, Swahili, Vietnamese, Korean):
+"Noun · dative singular feminine", "Verb · second aorist active indicative ·
+3rd person singular". An unknown code raises ValueError, so a new code in the
+data fails the tests rather than showing a reader nothing.
 """
 import re
 
@@ -125,6 +126,64 @@ WORDS = {
         "suffix": {"N": "kanushi", "I": "kiulizi", "S": "kupita yote", "C": "kulinganisha",
                    "ATT": "umbo la Kiatiki", "K": "maneno mawili yaliyounganishwa",
                    "P": "pamoja na kijineno kilichoambatishwa", "ABB": "umbo lililofupishwa"},
+    },
+    "vi": {
+        "pos": {"N": "Danh từ", "V": "Động từ", "A": "Tính từ", "T": "Mạo từ",
+                "P": "Đại từ nhân xưng", "R": "Đại từ quan hệ", "D": "Đại từ chỉ định",
+                "K": "Đại từ tương liên", "X": "Đại từ bất định", "I": "Đại từ nghi vấn",
+                "F": "Đại từ phản thân", "C": "Đại từ hỗ tương", "S": "Đại từ sở hữu",
+                "Q": "Đại từ tương liên hoặc nghi vấn",
+                "ADV": "Trạng từ", "CONJ": "Liên từ", "PREP": "Giới từ", "PRT": "Tiểu từ",
+                "COND": "Liên từ điều kiện", "INJ": "Thán từ",
+                "HEB": "Từ Hê-bơ-rơ", "ARAM": "Từ A-ram"},
+        "indeclinable": {"PRI": "tên riêng, không biến cách", "LI": "chữ cái, không biến cách",
+                         "OI": "không biến cách", "NUI": "số, không biến cách"},
+        "case": {"N": "chủ cách", "G": "sở hữu cách", "D": "tặng cách", "A": "đối cách", "V": "hô cách"},
+        "number": {"S": "số ít", "P": "số nhiều"},
+        "gender": {"M": "giống đực", "F": "giống cái", "N": "giống trung"},
+        "tense": {"P": "thì hiện tại", "I": "thì quá khứ chưa hoàn thành", "F": "thì tương lai",
+                  "A": "thì bất định (aorist)", "R": "thì hoàn thành", "L": "thì quá khứ hoàn thành"},
+        "second": "{} thứ hai",
+        "verb": "{tense}, {mood}, {voice}", "voiced": "thể {}",
+        "voice": {"A": "chủ động", "M": "trung", "P": "bị động", "E": "trung hoặc bị động",
+                  "D": "trung (nghĩa chủ động)", "O": "bị động (nghĩa chủ động)",
+                  "N": "trung hoặc bị động (nghĩa chủ động)", "Q": "chủ động vô nhân xưng", "X": ""},
+        "mood": {"I": "lối trình bày", "S": "lối giả định", "O": "lối ao ước", "M": "lối mệnh lệnh",
+                 "N": "nguyên mẫu", "P": "phân từ", "R": "phân từ (mang nghĩa mệnh lệnh)"},
+        "person": {"1": "ngôi thứ nhất", "2": "ngôi thứ hai", "3": "ngôi thứ ba"},
+        "person_number": "{person}, {number}",
+        "join": ", ",
+        "suffix": {"N": "phủ định", "I": "nghi vấn", "S": "so sánh nhất", "C": "so sánh hơn",
+                   "ATT": "dạng Attic", "K": "hai từ ghép làm một",
+                   "P": "có tiểu từ gắn liền", "ABB": "dạng viết tắt"},
+    },
+    "ko": {
+        "pos": {"N": "명사", "V": "동사", "A": "형용사", "T": "관사",
+                "P": "인칭대명사", "R": "관계대명사", "D": "지시대명사",
+                "K": "상관대명사", "X": "부정대명사", "I": "의문대명사",
+                "F": "재귀대명사", "C": "상호대명사", "S": "소유대명사",
+                "Q": "상관대명사 또는 의문대명사",
+                "ADV": "부사", "CONJ": "접속사", "PREP": "전치사", "PRT": "불변화사",
+                "COND": "조건 접속사", "INJ": "감탄사",
+                "HEB": "히브리어 단어", "ARAM": "아람어 단어"},
+        "indeclinable": {"PRI": "고유명사, 격변화 없음", "LI": "글자, 격변화 없음",
+                         "OI": "격변화 없음", "NUI": "수사, 격변화 없음"},
+        "case": {"N": "주격", "G": "속격", "D": "여격", "A": "대격", "V": "호격"},
+        "number": {"S": "단수", "P": "복수"},
+        "gender": {"M": "남성", "F": "여성", "N": "중성"},
+        "tense": {"P": "현재", "I": "미완료", "F": "미래", "A": "부정과거",
+                  "R": "완료", "L": "과거완료"},
+        "second": "제2{}",
+        "verb": "{tense} {voice} {mood}", "voiced": "{}",
+        "voice": {"A": "능동태", "M": "중간태", "P": "수동태", "E": "중간태 또는 수동태",
+                  "D": "중간태(능동의 뜻)", "O": "수동태(능동의 뜻)",
+                  "N": "중간태 또는 수동태(능동의 뜻)", "Q": "비인칭 능동태", "X": ""},
+        "mood": {"I": "직설법", "S": "가정법", "O": "희구법", "M": "명령법",
+                 "N": "부정사", "P": "분사", "R": "분사(명령의 뜻)"},
+        "person": {"1": "1인칭", "2": "2인칭", "3": "3인칭"},
+        "suffix": {"N": "부정", "I": "의문", "S": "최상급", "C": "비교급",
+                   "ATT": "앗티카 형태", "K": "두 단어가 한 단어로 합쳐진 형태",
+                   "P": "불변화사가 붙은 형태", "ABB": "줄임 형태"},
     },
 }
 

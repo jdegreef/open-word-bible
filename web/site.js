@@ -529,7 +529,7 @@
   var filter = "all";
 
   function fold(s) {
-    return s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+    return s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").normalize("NFC").replace(/\u0111/g, "d");
   }
   var texts = groups.map(function (g) {
     return Array.prototype.slice.call(g.querySelectorAll("li")).map(function (li) {

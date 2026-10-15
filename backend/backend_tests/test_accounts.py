@@ -376,6 +376,8 @@ class RoleTest(TestCase):
         Role.objects.create(user=self.user, kind="language_reviewer", language="es")
         Role.objects.create(user=self.user, kind="language_reviewer", language="fr")
         Role.objects.create(user=self.user, kind="language_reviewer", language="sw")
+        Role.objects.create(user=self.user, kind="language_reviewer", language="vi")
+        Role.objects.create(user=self.user, kind="language_reviewer", language="ko")
         Role.objects.create(user=self.user, kind="editor")
         for kind, language in [("scholar_reviewer", "es"), ("language_reviewer", "grc"),
                                ("language_reviewer", "de"),

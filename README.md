@@ -1,7 +1,8 @@
 # Open Word Bible
 
 Open Word Bible translates the Bible from Hebrew and Greek into modern
-languages: English first, then Spanish, French, Portuguese and Swahili.
+languages: English first, then Spanish, French, Swahili, Vietnamese, Korean
+and Portuguese.
 
 Every translated sentence carries a **reasoning record**: the original words,
 a literal gloss, the translation at three levels, and each translation
@@ -40,8 +41,9 @@ README does not keep a list that every new chapter would have to edit.
 English runs ahead of the other languages; `docs/english-style.md` is the
 brief for drafting it and `data/key_terms.json` the settled key terms.
 `docs/corinthians-terms.md` proposes the recurring choices for 1 and 2
-Corinthians. `docs/french-style.md` and `docs/swahili-style.md` are the
-briefs for French and Swahili.
+Corinthians. `docs/french-style.md`, `docs/swahili-style.md`,
+`docs/vietnamese-style.md` and `docs/korean-style.md` are the briefs for
+French, Swahili, Vietnamese and Korean.
 
 Adding a book needs no shared file edited: `data/books.json` already lists
 all 66 books (names in each language, chapter counts), section headings go

@@ -23,16 +23,21 @@ MB = 1024 * KB
 # Limits, about 25% above the largest measured on 2026-10-12 (in brackets).
 BUDGETS = {
     # The largest chapter page (/<book>/<chapter>/, in any language)
-    # [127 KB, es/jhn/6].
-    "chapter_page_gz": 160 * KB,
+    # [127 KB, es/jhn/6; 165 KB on 2026-10-14 once John 6 had French, since
+    # a page carries every language's renderings; 175 KB (jhn/6) with Vietnamese and
+    # Korean too, though a page now carries only its own language's
+    # rendering decisions].
+    "chapter_page_gz": 220 * KB,
     # The largest script or style sheet [21 KB, reader.js; 26 KB on
     # 2026-10-13 after the verse panel tools, poetry lines and account sync].
     "js_css_asset_gz": 33 * KB,
     # Every file in the site [703 MB; 909 MB on 2026-10-14 with Numbers to
-    # Ruth; 1,150 MB later that day with 1 Samuel to 2 Chronicles; 1,074 MB
-    # on 2026-10-15 once the static search index was no longer built]. Grows
-    # with each book translated.
-    "site_total": 1400 * MB,
+    # Ruth; 1,150 MB later that day with 1 Samuel to 2 Chronicles; 1,810 MB
+    # with Vietnamese and Korean as site languages, each about 250 MB, since
+    # every page is built in every language; less on 2026-10-15 once the
+    # static search index (about 41 MB a language) was no longer built].
+    # Grows with each book translated and each language added.
+    "site_total": 2300 * MB,
 }
 
 

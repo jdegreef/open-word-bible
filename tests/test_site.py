@@ -69,11 +69,11 @@ class SiteTest(unittest.TestCase):
         data = self.chapter_data()
         verses = list(dict.fromkeys(v for r in data["records"] for v in r["refs"]))
         self.assertEqual(verses, [f"JHN.1.{v}" for v in range(1, 52)])
-        # English for every sentence; Spanish for 1:1-18 so far, French and
-        # Swahili for the whole chapter.
-        self.assertEqual(data["languages"], ["en", "es", "fr", "sw"])
-        self.assertTrue(all("fr" in r["renderings"] for r in data["records"]))
-        self.assertTrue(all("sw" in r["renderings"] for r in data["records"]))
+        # English for every sentence; Spanish for 1:1-18 so far, French,
+        # Swahili, Vietnamese and Korean for the whole chapter.
+        self.assertEqual(data["languages"], ["en", "es", "fr", "sw", "vi", "ko"])
+        for lang in ("fr", "sw", "vi", "ko"):
+            self.assertTrue(all(lang in r["renderings"] for r in data["records"]), lang)
         self.assertTrue(all("en" in r["renderings"] for r in data["records"]))
 
     def test_each_verse_words_are_covered_once(self):
@@ -356,8 +356,9 @@ class SiteTest(unittest.TestCase):
             verses = build_site.verses_of_the_day(lang)
             self.assertEqual(len(verses), len(build_site.VERSES_OF_THE_DAY))
             for vid, v in zip(build_site.VERSES_OF_THE_DAY, verses):
-                # The verse ends a sentence, so it reads on its own.
-                self.assertRegex(v["t"], r"[.?!][”’]?$", vid)
+                # The verse ends a sentence, so it reads on its own (a closing
+                # quotation mark may follow: ” ’, or French » after a no-break space).
+                self.assertRegex(v["t"], r"[.?!](?:[”’]|\u00a0»)?$", vid)
         home = (self.out / "index.html").read_text(encoding="utf-8")
         data = re.search(r'<script type="application/json" class="votd-data">(.*?)</script>', home, re.S)[1]
         self.assertEqual(json.loads(data), build_site.verses_of_the_day("en"))
