@@ -1,0 +1,271 @@
+# Spanish and Swahili: recurring terms for the rest of the New Testament
+
+**Status: proposed, awaiting native Spanish and Swahili reviewers.** These
+are the choices used to draft Spanish and Swahili for Matthew, Mark, Luke,
+Acts, 1 and 2 Corinthians, Philippians, the Thessalonian and Pastoral letters,
+Philemon, 1-3 John and Revelation, so the books read alike. They carry over
+what John, Romans, Galatians, Hebrews and the other drafted books already
+settled; `docs/swahili-style.md` and `docs/john-terms.md` still hold, and
+the Spanish follows the patterns of the Spanish already in `content/`. If a
+choice here changes, every passage drafted under it is revised.
+
+Decision text stays in English, quoting the Spanish or Swahili words.
+
+## Both languages
+
+- Translate from the Greek, using the gloss, the English and the meaning
+  decisions to see how a sentence was read; never from a reference Bible.
+  Never reproduce a copyrighted Bible's wording (Reina-Valera 1960 and later,
+  NVI, DHH, NTV; the Swahili Union Version, Habari Njema, Neno).
+- Keep every `\v N ` marker where the English has it, and each language's own
+  poetry line breaks (`\q `) where the English has them.
+- Settings mirror the English spans where the language has the same choice:
+  `christos`, `deity_pronoun` (Swahili only on free pronouns, per its style
+  guide), `units`. Spanish adds `plural_you`; Swahili normally has no
+  `gender` span, and Spanish only where Spanish really has two wordings
+  ("hermanos" already includes sisters, so it stays plain).
+- Measures: metric by default where the English converts to US units; wages
+  for coins, as John 6:7 and 12:5. Where the English has no units span,
+  neither does Spanish or Swahili. Spanish writes thousands with a
+  space (22 000), Swahili with a comma (22,000).
+- Readable may explain, as the English Readable does; follow the English
+  Readable's explanations rather than adding new ones.
+- Rendering decisions: zero to two per sentence, only where the language had
+  to choose. A book-wide choice is recorded once, in its first passage of
+  each book (one file).
+
+## Recurring terms
+
+| Greek (English) | Spanish | Swahili |
+|---|---|---|
+| kingdom of heaven (Matthew) | el reino de los cielos | ufalme wa mbinguni |
+| kingdom of God | el reino de Dios | ufalme wa Mungu |
+| Truly I tell you (single *amēn*) | En verdad {{plural_you:les\|os}} digo (L, B); {{plural_you:Les\|Os}} digo la verdad (R) | Kweli nawaambia (L, B); Nawaambia ukweli (R) |
+| Son of Man | el Hijo del Hombre | Mwana wa Adamu |
+| Son of David | Hijo de David | Mwana wa Daudi |
+| scribes (*grammateis*) | los escribas (L, B); los maestros de la ley (R) | waandishi (L, B); walimu wa sheria (R) |
+| experts in the law (*nomikoi*) | los expertos en la ley | wataalamu wa sheria |
+| Pharisees, Sadducees | los fariseos, los saduceos | Mafarisayo, Masadukayo |
+| Herodians | los herodianos | wafuasi wa Herode |
+| chief priests, elders | los jefes de los sacerdotes, los ancianos | wakuu wa makuhani, wazee |
+| high priest | el sumo sacerdote | kuhani mkuu |
+| tax collectors | los publicanos (L); los cobradores de impuestos (B, R) | watoza ushuru |
+| sinners | pecadores | wenye dhambi |
+| demon; unclean spirit | demonio; espíritu impuro (L, B), espíritu maligno (R) | pepo; pepo mchafu (L, B), pepo mbaya (R) |
+| Gehenna | Gehena (L); el infierno (B, R) | Gehena (L); jehanamu (B, R) |
+| Hades | el Hades (L, B); el lugar de los muertos (R) | Kuzimu |
+| hypocrites | hipócritas | wanafiki |
+| parable | parábola (L, B); historia where the English Readable says "story" (R) | mfano (L, B); hadithi where the English Readable says "story" (R) |
+| repent, repentance | arrepentirse, arrepentimiento | kutubu, toba |
+| gospel, good news | el evangelio (B where it names the message); la buena noticia (R) | Injili; habari njema (R) |
+| baptize | bautizar | kubatiza |
+| Sabbath | el sábado | Sabato |
+| synagogue | la sinagoga | sinagogi |
+| Gentiles, the nations | los gentiles; las naciones | watu wa mataifa; mataifa |
+| church, assembly | la iglesia | kanisa |
+| apostle | apóstol | mtume |
+| saints (*hagioi*) | los santos (L); el pueblo santo de Dios (B); el pueblo de Dios (R) | watakatifu (L); watu watakatifu wa Mungu (B); watu wa Mungu (R) |
+| brothers (*adelphoi*, believers) | hermanos | ndugu |
+| slave (*doulos*) | esclavo (L); siervo (B, R), esclavo where slavery itself is meant | mtumwa (L); mtumishi (B, R), mtumwa where slavery itself is meant |
+| the Lord (Jesus, God) | el Señor | Bwana |
+| Sir (*kyrie*, polite) | señor | bwana |
+| Teacher | Maestro | Mwalimu |
+| Holy Spirit | el Espíritu Santo | Roho Mtakatifu |
+| angel | ángel | malaika |
+| grace, peace, glory | gracia, paz, gloria | neema, amani, utukufu |
+| righteousness | justicia | haki |
+| faith, believe | fe, creer | imani, kuamini |
+| eternal life | vida eterna | uzima wa milele |
+| the Lamb (Revelation) | el Cordero | Mwanakondoo |
+| throne | el trono | kiti cha enzi |
+| Alpha and Omega | el Alfa y la Omega | Alfa na Omega |
+| woe | ¡ay! (L, B); as the English Readable explains it (R) | ole (L, B); as the English Readable (R) |
+| Amen | Amén | Amina |
+| overseer (*episkopos*) | supervisor (L, B); líder de la iglesia (R) | mwangalizi (L, B); kiongozi wa kanisa (R) |
+| elders (church office) | ancianos (L, B); líderes de la iglesia (R) | wazee (L, B); viongozi wa kanisa (R) |
+| godliness (*eusebeia*) | piedad | uchaji wa Mungu |
+| sound teaching | la enseñanza sana | mafundisho mazima |
+| self-controlled, sensible | sensato, sensatez | wenye kiasi |
+| steward (*oikonomos*) | administrador | msimamizi |
+| myths | mitos | ngano |
+| heart (*splanchna*) | entrañas (L); corazón (B, R) | moyo |
+| look (*idou*) | he aquí in narrative, mira in speech (L); omitted or reworded (B, R) as the English | tazama |
+| the Sea of Galilee | follow the English: mar / lago where it has sea / lake | Bahari / Ziwa likewise |
+| wind, winds | viento(s) | upepo (never plural "pepo", which is also "demons") |
+| the evil one | el maligno | yule mwovu |
+| antichrist | anticristo (no christos span) | mpinga-Kristo |
+| little children (*teknia*) | hijitos | watoto wadogo (L); wanangu wapendwa (B, R) |
+| beloved (one person) | amado (L); querido amigo (B, R) | mpendwa (L); rafiki mpendwa (B, R) |
+| regret, change one's mind (*metamelomai*) | cambiar de parecer (not "arrepentirse") | kubadili nia (not "kutubu") |
+| tenant farmers (*geōrgoi*) | labradores (L, R); arrendatarios (B) | wakulima |
+| authority, right (*exousia*) | autoridad; derecho | mamlaka; ruhusa (not "haki") |
+| disciples | discípulos (every level, even where the English Readable says "followers") | wanafunzi (every level) |
+| blessed (*makarioi*) | dichosos | heri |
+| weeds (*zizania*) | cizaña (L, B); mala hierba (R) | magugu |
+| the end of the age | el fin de la era (L, B); el fin del mundo (R) | mwisho wa zama hizi (L, B); mwisho wa dunia (R) |
+| lord, master (in parables) | señor | bwana |
+| tetrarch | tetrarca (L, B); gobernante (R) | mtawala |
+| mighty works (*dynameis*) | obras poderosas (L, B); milagros (R) | matendo ya nguvu (L, B); miujiza (R) |
+| ghost (*phantasma*) | fantasma | mzuka |
+| you of little faith | gente de poca fe | wenye imani ndogo |
+| basket: *kophinos*; *spyris* | canasta; cesto grande | kikapu; kikapu kikubwa |
+| Jesus's brothers | sus hermanos | ndugu zake |
+| centurion | centurión (L, B); oficial del ejército romano (R) | akida (L, B); afisa wa jeshi la Kirumi (R) |
+| lawlessness (*anomia*) | iniquidad (L); maldad (B, R) | uasi |
+| gate (of a city, a road) | puerta | lango |
+| harvest, workers | cosecha, trabajadores | mavuno, wafanyakazi |
+| governor (*hēgemōn*) | gobernador | mkuu wa mkoa (as John 18-19); plural wakuu wa mikoa |
+| synagogues (plural) | sinagogas | masinagogi |
+| mercy (*eleos*) | misericordia | huruma |
+| sacrifice | sacrificio | dhabihu |
+| Beelzebul | Beelzebul | Beelzebuli |
+| servant (*diakonos*), serve | servidor, servir | mhudumu, kuhudumu |
+| phylacteries | filacterias | visanduku vya maandiko |
+| coming (*parousia*) | venida | kuja |
+| the elect | los elegidos | wateule (L); waliochaguliwa (B, R) |
+| lightning | relámpago | umeme wa radi |
+| false christs | falsos {{christos:cristos\|mesías}} | {{christos:makristo\|masihi}} wa uongo |
+| it is written | está escrito (L); la Escritura dice (B, R) | imeandikwa (L); Maandiko yanasema (B, R) |
+| the devil; the tempter | el diablo; el tentador | Ibilisi; mjaribu |
+| wilderness | el desierto | nyika (L, B); jangwa (R) |
+| robbers, bandits (*lēstai*) | bandidos | wanyang'anyi (as John 18:40) |
+| have mercy (*eleēson*) | ten piedad (L, B); ten compasión (R) | nihurumie / tuhurumie |
+| reward (*misthos*) | recompensa | ujira |
+| deny (disown a person, Peter); acknowledge | negar; reconocer | kukana; kutambua |
+| deny oneself | negarse a sí mismo | kujikana |
+| life (*psychē*, lost and saved) | vida | maisha (nafsi where set beside the body) |
+| pagans (*ethnikoi*) | gentiles (L); paganos (B); gente que no conoce a Dios (R) | watu wa mataifa (L); wapagani (B); watu wasiomjua Mungu (R) |
+| divorce (*apolyō* a wife) | divorciarse de | kutaliki |
+| mammon | Mamón (L); el dinero (B, R) as the English | Mamona (L); mali (B, R) |
+| mile, cubit, stadion | milla, codo (no units span where the English has none) | maili, dhiraa |
+| keep watch (*grēgoreō*) | velar (L); estar alerta (B, R) | kesheni (L); kaeni macho (B, R) |
+| foolish, wise (*mōros, phronimos*) | necio, prudente | mjinga, mwenye busara |
+| talents (coins) | as the English span: {{units:bolsas de plata\|talentos}} | {{units:mifuko ya fedha\|talanta}} |
+| worship (*proskyneō*) | adorar | kuabudu (kusujudu where bowing down is the act) |
+| magi | magos (L, B); sabios que estudiaban las estrellas (R) | mamajusi (L, B); wataalamu wa nyota (R) |
+| Satan | Satanás | Shetani |
+| the Twelve | los Doce (L, B); los doce apóstoles (R) | wale Kumi na Wawili (L, B); mitume kumi na wawili (R) |
+| be muzzled, be silent (*phimoō*) | ¡cállate! / queda amordazado (L) | nyamaza / fungwa kinywa (L) |
+| the Sanhedrin, council | el concilio (L); el Consejo (B); el Consejo Supremo (R) | baraza (L, B); baraza kuu (R) |
+| hand over (*paradidōmi*) | entregar (traicionar for Judas at B) | kukabidhi (kumsaliti for Judas at B) |
+| the Power (God) | el Poder (L, B); Dios Todopoderoso (R) | Uweza (L, B); Mungu, Mwenye Uweza (R) |
+| servant girl (*paidiskē*) | criada | kijakazi (L); mtumishi wa kike (B, R) |
+| synagogue leader | jefe de la sinagoga | mkuu wa sinagogi (L); kiongozi wa sinagogi (B, R) |
+| physicians | médicos | matabibu (L, B); madaktari (R) |
+| Most High (God) | el Altísimo | Aliye Juu Kabisa (as Hebrews 7:1) |
+| John the Baptist | Juan el Bautista | Yohana Mbatizaji |
+| immediately (*euthys*, Mark) | al instante (L); enseguida / en seguida, or left out, as the English (B, R) | mara moja |
+| slander (*blasphēmia* in vice lists) | calumnia | kashfa |
+| blasphemy (against God) | blasfemia | kufuru |
+| sigh (*stenazō*) | suspirar, gemir | kupiga kite |
+| trespasses (*paraptōmata*) | ofensas (L); faltas (B) | makosa |
+| pray, prayer | orar, oración | kuomba, maombi |
+| curse | maldecir | kulaani |
+| colt | pollino (L, B); burrito (R) | mwana-punda (L, B); punda mchanga (R) |
+| covenant | pacto | agano |
+| Unleavened Bread (feast) | los Ázimos (L); la fiesta de los Panes sin Levadura (B, R) | [Sikukuu ya] Mikate Isiyotiwa Chachu |
+| tunic (*chitōn*) | túnica | kanzu |
+| mat, pallet (*krabattos*) | camilla | mkeka (L); machela (B, R) |
+| local councils (*synedria*) | consejos | mabaraza |
+| Simon the Cananaean / the Zealot | Simón el cananista (L, B); Simón el Zelote (R and where Luke says Zealot) | Simoni Mkananayo (L, B); Simoni Mzelote (R) |
+| evil, unclean, mute spirit | espíritu impuro / mudo | pepo (roho only for the Holy Spirit and the human spirit) |
+| proclaim the good news (*euangelizomai*) | anunciar la buena noticia | kuhubiri habari njema |
+| Preparation Day | el día de la Preparación | siku ya Maandalio |
+| Joses | Joset | Yose |
+| the age to come | la era venidera | zama zijazo (L, B); ulimwengu ujao (R) |
+| cloak (*himation*) | manto (L, B); capa (R) | vazi (L); vazi la nje (B); koti (R) |
+| treasury (temple) | el tesoro (L); las cajas de las ofrendas (B, R) | hazina (L); masanduku ya sadaka (B, R) |
+| burnt offerings | holocaustos | sadaka za kuteketezwa |
+| Master (*despotēs*) | Soberano (Amo at L) | Bwana Mkuu |
+| manger | pesebre | hori |
+| betrothed | comprometida | ameposwa (L); amechumbiwa (B, R) |
+| bless (God) | bendecir | kumhimidi |
+| Master (*epistata*, Luke) | Maestro | Mkuu |
+| teachers of the law (*nomodidaskaloi*) | maestros de la ley | walimu wa sheria |
+| grumble (*gongyzō*) | murmurar | kunung'unika |
+| Passover | la Pascua | Pasaka |
+| fall away (*skandalizomai*) | caer, tropezar y caer | kujikwaa |
+| Abba | Abba, Padre | Aba, Baba |
+| most excellent (*kratiste*) | excelentísimo | Mheshimiwa |
+| relative (*syngenis*) | pariente | jamaa |
+| scroll (*biblion*) | rollo | gombo |
+| sky (*ouranos* as the sky) | cielo | anga |
+| evil spirits (*pneumata ponēra*) | espíritus malignos | pepo wabaya |
+| door (*thyra*) | puerta | mlango (lango for a city gate) |
+| bier | andas | machela |
+| thanks, credit (*charis* not as grace) | reconocimiento, agradecimiento | shukrani |
+| abyss (*abyssos*) | el abismo | kilindi (L, B); shimo lisilo na mwisho (R) |
+| neighbor (*plēsion*) | prójimo | jirani |
+| inn | posada | nyumba ya wageni |
+| this age / that age | esta era / aquella era | zama hizi / zama zile |
+| footstool | escabel | kiti cha kuwekea miguu |
+| show favoritism (*prosōpolēmpsia*) | hacer favoritismo (B, R) | kupendelea (B, R) |
+| be anxious, worry (*merimnaō*) | inquietarse, preocuparse | kuwa na wasiwasi |
+| night watch | vigilia | zamu ya usiku |
+| truly (*alēthōs*, not amen) | verdaderamente, de verdad | kwa kweli |
+| tents, shelters (*skēnai*) | tiendas (L); chozas (B, R) | hema (L); vibanda (B, R) |
+| mina | mina (no units span) | mina |
+| ruler (*archōn*) | dirigente, jefe | kiongozi |
+| judge; justice in court | juez; justicia | hakimu; haki (court justice may share the word) |
+| criminal (*kakourgos*) | malhechor (L, B); criminal (R) | mhalifu |
+| paradise | paraíso | paradiso |
+| captain of the temple guard | oficial de la guardia del templo | mkuu wa walinzi wa hekalu |
+| chariot | carruaje | gari (L); gari la farasi (B, R) |
+| eunuch | eunuco | towashi |
+| magic, sorcery | magia | uchawi |
+| magistrates (*stratēgoi*, Philippi) | magistrados | mahakimu |
+| jailer | carcelero | mlinzi wa gereza |
+| God-fearers (*sebomenoi*, *phoboumenoi ton theon*) | los que adoraban a Dios / temerosos de Dios | wamchao Mungu |
+| Roman citizen | ciudadano romano | raia wa Rumi |
+| tomb (*mnēmeion*) | el sepulcro (L, B); la tumba (R) | kaburi |
+| at the right (hand) | a la derecha (de) | upande wa kulia (wa) |
+
+## Spanish
+
+- Quotation marks «», with “ ” inside and ‘ ’ inside those. A question or
+  exclamation inside a quotation has both marks: «¿...?».
+- Plural "you": every second-person plural form, pronoun or verb, is a
+  `{{plural_you:ustedes form|vosotros form}}` span, default Latin American;
+  the span covers the smallest whole word or phrase that changes.
+- `christos`: `{{christos:Cristo|el Mesías}}`; "Jesus Christ" is
+  `{{christos:Jesucristo|Jesús, el Mesías}}`; "Christ Jesus" is
+  `{{christos:Cristo Jesús|el Mesías Jesús}}`; take in "de" where the
+  article contracts (`{{christos:de Cristo|del Mesías}}`). With the
+  article, as a title: `el {{christos:Cristo|Mesías}}`.
+- `deity_pronoun`: `{{deity_pronoun:él|Él}}`, `lo|Lo`, `le|Le`, `sí
+  mismo|Sí mismo`, and the possessive `su|Su`, wherever the English marks
+  the pronoun, free clitics and pronouns included (lo, le, te, me, tú, ti, mí, tuyo); a clitic joined to the verb ("sígueme") and "conmigo", "contigo" take no span. "Jesús mismo" is an adjective and takes no
+  span.
+- Jesus's "yo" takes no span (the English "I" has none); Swahili spans
+  free "mimi" as its style guide says.
+- *Idou* said to a group is plural: `{{plural_you:Miren|Mirad}}`.
+- Names in their usual Spanish form: Jesús, Juan, Pedro, Santiago (James),
+  Mateo, Marcos, Lucas, Pablo, Bernabé, Esteban, Felipe, Herodes, Pilato,
+  Jerusalén, Galilea, Cafarnaúm, Nazaret, Belén, Moisés, Elías, Isaías.
+
+- Where "su" with ustedes could be misread, the span spells it out:
+  `{{plural_you:la paz de ustedes|vuestra paz}}`.
+- A gender span goes only where the English has one; it takes in the whole
+  phrase that agrees (`{{gender:una persona sensata|un hombre sensato}}`).
+- A single person is addressed with "tú", never "usted".
+- A singular *adelphos* meaning any believer may take
+  `{{gender:su hermano o hermana|su hermano}}`, as James 1:9 does.
+
+## Swahili
+
+- Quotation marks as in English, straight in `content/`.
+- Names in their usual Swahili form: Yesu, Yohana, Petro, Yakobo, Mathayo,
+  Marko, Luka, Paulo, Barnaba, Stefano, Filipo, Herode, Pilato, Yerusalemu,
+  Galilaya, Kapernaumu, Nazareti, Bethlehemu, Musa, Eliya, Isaya, Daudi,
+  Ibrahimu, Sulemani, Ninawi, Habili, Zakaria, Zakayo, Yusufu (Mary's husband), Yosefu
+  (of Arimathea, as John 19:38),
+  Uyahudi (Judea, as John; never Yudea),
+  Elisabeti, Gabrieli, Theofilo, Haruni, Sila, Timotheo, Filipi, Troa.
+- Hours: the Greek counts from sunrise as Swahili does, so "the ninth hour"
+  is *saa tisa* at every level; Balanced and Readable may add *mchana*,
+  *jioni*. The night watches likewise in Swahili time.
+- The joined pronouns nami, nawe, naye, kwangu, kwako, kwake take the
+  deity_pronoun span whenever they mean God or Jesus, as the style guide says.
+- Narrative: *-li-* for the first verb of a sequence, *-ka-* for those that
+  follow (Balanced and Readable); Literal keeps the historic present
+  ("anasema") where the Greek has it.

@@ -39,6 +39,16 @@
           "L": "Then Jesus comes with them to a place called Gethsemane, and {{deity_pronoun:he|He}} says to the disciples, \"Sit here while I go over there and pray.\"",
           "B": "Jesus then came with them to a place named Gethsemane. He told the disciples, \"Stay seated here while I go on over there and pray.\"",
           "R": "Jesus and {{deity_pronoun:his|His}} followers came to a place called Gethsemane. Jesus said to them, \"Stay here. I am going over there to pray.\""
+        },
+        "es": {
+          "L": "Entonces viene Jesús con ellos a un lugar llamado Getsemaní, y dice a los discípulos: «{{plural_you:Siéntense|Sentaos}} aquí mientras me voy allá y oro».",
+          "B": "Entonces Jesús llegó con ellos a un lugar llamado Getsemaní, y dijo a los discípulos: «{{plural_you:Quédense|Quedaos}} sentados aquí mientras yo voy más allá a orar».",
+          "R": "Jesús y {{deity_pronoun:sus|Sus}} seguidores llegaron a un lugar llamado Getsemaní. Jesús les dijo: «{{plural_you:Quédense|Quedaos}} aquí. Yo voy allá a orar»."
+        },
+        "sw": {
+          "L": "Kisha Yesu anakuja pamoja nao mahali paitwapo Gethsemane, {{deity_pronoun:naye|Naye}} anawaambia wanafunzi, \"Kaeni hapa mpaka nitakapokwenda kule nikaomba.\"",
+          "B": "Kisha Yesu alifika pamoja nao mahali panapoitwa Gethsemane, akawaambia wanafunzi, \"Kaeni hapa wakati ninakwenda pale kuomba.\"",
+          "R": "Yesu na wanafunzi {{deity_pronoun:wake|Wake}} walifika mahali panapoitwa Gethsemane. Yesu akawaambia, \"Kaeni hapa. Mimi ninakwenda kule kuomba.\""
         }
       },
       "decisions": [
@@ -78,6 +88,47 @@
           "reason": "Literal keeps the Greek present tense of narration.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40026036012",
+            "n40026036015"
+          ],
+          "choice": "deity_pronoun spans only on separate pronouns and possessives (sus, lo, le, me, mí, mi, tú, tu); plural_you on every plural \"you\"",
+          "alternatives": [
+            "a span on every pronoun the English marks"
+          ],
+          "reason": "Spanish leaves the subject pronoun out (\"dice\", \"dijo\"), and a pronoun joined to the end of a verb (\"apresarme\") takes no span, so the deity_pronoun setting covers fewer words than in English. Jesus speaks to the disciples and to the crowd, so every plural \"you\" is the ustedes / vosotros setting. The same through the passage.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40026036012"
+          ],
+          "choice": "deity_pronoun spans on free pronouns and possessives only (naye, wake, yangu, nami); none on verbs such as anawaambia",
+          "alternatives": [],
+          "reason": "Swahili carries \"he\" and \"him\" in the verb, where a prefix cannot take a capital, so the setting covers only free pronouns and possessives, as in John. Swahili therefore has fewer spans than English through the passage.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -113,6 +164,16 @@
           "L": "And taking along Peter and the two sons of Zebedee, {{deity_pronoun:he|He}} began to be sorrowful and deeply distressed.",
           "B": "He took Peter and Zebedee's two sons with {{deity_pronoun:him|Him}}, and {{deity_pronoun:he|He}} began to be filled with grief and anguish.",
           "R": "He took Peter, James, and John with {{deity_pronoun:him|Him}}. Jesus began to feel very sad and troubled."
+        },
+        "es": {
+          "L": "Y llevando consigo a Pedro y a los dos hijos de Zebedeo, comenzó a estar triste y profundamente afligido.",
+          "B": "Llevó consigo a Pedro y a los dos hijos de Zebedeo, y comenzó a llenarse de tristeza y de angustia.",
+          "R": "Se llevó a Pedro, a Santiago y a Juan. Jesús empezó a sentirse muy triste y angustiado."
+        },
+        "sw": {
+          "L": "Na akiwachukua Petro na wale wana wawili wa Zebedayo, alianza kujawa na huzuni na dhiki nzito.",
+          "B": "Aliwachukua Petro na wana wawili wa Zebedayo pamoja {{deity_pronoun:naye|Naye}}, akaanza kujawa na huzuni na dhiki kuu.",
+          "R": "Aliwachukua Petro, Yakobo na Yohana. Yesu akaanza kuhisi huzuni nyingi na kufadhaika."
         }
       },
       "decisions": [
@@ -212,6 +273,16 @@
           "L": "Then {{deity_pronoun:he|He}} says to them, \"My soul is very sorrowful, even to death; stay here and keep watch with {{deity_pronoun:me|Me}}.\"",
           "B": "Then {{deity_pronoun:he|He}} said to them, \"My soul is weighed down with grief, even to death. Stay here and keep awake with {{deity_pronoun:me|Me}}.\"",
           "R": "He said to them, \"My heart is so full of sadness that I feel I could die. Stay here and keep watch with {{deity_pronoun:me|Me}}.\""
+        },
+        "es": {
+          "L": "Entonces les dice: «Llena de tristeza está {{deity_pronoun:mi|Mi}} alma, hasta la muerte; {{plural_you:permanezcan|permaneced}} aquí y {{plural_you:vigilen|vigilad}} conmigo».",
+          "B": "Entonces les dijo: «Mi alma está abrumada de tristeza, hasta la muerte. {{plural_you:Quédense|Quedaos}} aquí y {{plural_you:manténganse|manteneos}} despiertos conmigo».",
+          "R": "Les dijo: «Tengo el corazón tan lleno de tristeza que siento que me voy a morir. {{plural_you:Quédense|Quedaos}} aquí y {{plural_you:vigilen|vigilad}} conmigo»."
+        },
+        "sw": {
+          "L": "Kisha anawaambia, \"Nafsi {{deity_pronoun:yangu|Yangu}} ina huzuni nyingi mno, hata kufikia kifo; bakini hapa, mkae macho pamoja {{deity_pronoun:nami|Nami}}.\"",
+          "B": "Kisha akawaambia, \"Nafsi {{deity_pronoun:yangu|Yangu}} imelemewa na huzuni, hata kufikia kifo. Bakini hapa, mkae macho pamoja {{deity_pronoun:nami|Nami}}.\"",
+          "R": "Akawaambia, \"Moyo {{deity_pronoun:wangu|Wangu}} umejaa huzuni kiasi kwamba nahisi naweza kufa. Bakini hapa, mkae macho pamoja {{deity_pronoun:nami|Nami}}.\""
         }
       },
       "decisions": [
@@ -311,6 +382,47 @@
           "reason": "Readable explains the saying.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026038007"
+          ],
+          "choice": "nafsi",
+          "alternatives": [
+            "roho"
+          ],
+          "reason": "The Greek word is the soul as the seat of feeling, the self (meaning decision m1). \"Nafsi\" says that; \"roho\" is kept for \"spirit\" in verse 41, where the Greek uses a different word. Readable says \"moyo\" (heart), as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-2",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026038014"
+          ],
+          "choice": "mkae macho",
+          "alternatives": [
+            "mkeshe"
+          ],
+          "reason": "The Greek verb is to stay awake and alert (meaning decision m3). \"Kukaa macho\" says both plainly and is used at every level here and in verses 40-41; \"kukesha\" is mostly to stay up through the night.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -362,6 +474,16 @@
           "L": "And going a little farther, {{deity_pronoun:he|He}} fell on {{deity_pronoun:his|His}} face, praying and saying, \"My Father, if it is possible, let this cup pass from {{deity_pronoun:me|Me}}; yet not as I will, but as {{deity_pronoun:you|You}} [will].\"",
           "B": "He went a little farther, threw {{deity_pronoun:himself|Himself}} face down on the ground, and prayed, \"My Father, if there is any way, let this cup pass by {{deity_pronoun:me|Me}}. But not what I want; what {{deity_pronoun:you|You}} want.\"",
           "R": "He went a little farther and lay down with {{deity_pronoun:his|His}} face on the ground. He prayed, \"My Father, if it is possible, do not make {{deity_pronoun:me|Me}} drink this cup of suffering. But do what {{deity_pronoun:you|You}} want, not what I want.\""
+        },
+        "es": {
+          "L": "Y avanzando un poco más, cayó sobre {{deity_pronoun:su|Su}} rostro, orando y diciendo: «Padre {{deity_pronoun:mío|Mío}}, si es posible, que se aleje de {{deity_pronoun:mí|Mí}} esta copa; sin embargo, no como yo quiero, sino como {{deity_pronoun:tú|Tú}} [quieres]».",
+          "B": "Avanzó un poco más, se postró con el rostro en tierra y oró: «Padre {{deity_pronoun:mío|Mío}}, si hay alguna manera, que esta copa pase lejos de {{deity_pronoun:mí|Mí}}. Pero no lo que yo quiero, sino lo que {{deity_pronoun:tú|Tú}} quieres».",
+          "R": "Se adelantó un poco y se echó con la cara en el suelo. Oró así: «Padre {{deity_pronoun:mío|Mío}}, si es posible, no {{deity_pronoun:me|Me}} hagas beber esta copa de sufrimiento. Pero haz lo que {{deity_pronoun:tú|Tú}} quieres, no lo que quiero yo»."
+        },
+        "sw": {
+          "L": "Kisha akasogea mbele kidogo, akaanguka juu ya uso {{deity_pronoun:wake|Wake}}, akiomba na kusema, \"Baba {{deity_pronoun:yangu|Yangu}}, ikiwa inawezekana, kikombe hiki na kiondoke {{deity_pronoun:kwangu|Kwangu}}; hata hivyo, si jinsi ninavyotaka {{deity_pronoun:mimi|Mimi}}, ila jinsi unavyotaka {{deity_pronoun:wewe|Wewe}}.\"",
+          "B": "Alienda mbele kidogo, akajitupa chini kifudifudi, akaomba, \"Baba {{deity_pronoun:yangu|Yangu}}, ikiwa kuna njia yoyote, kikombe hiki kinipite mbali. Lakini isiwe ninavyotaka {{deity_pronoun:mimi|Mimi}}, bali unavyotaka {{deity_pronoun:wewe|Wewe}}.\"",
+          "R": "Alisogea mbele kidogo, akalala chini, uso {{deity_pronoun:wake|Wake}} ukigusa ardhi. Akaomba, \"Baba {{deity_pronoun:yangu|Yangu}}, ikiwezekana, usinifanye ninywe kikombe hiki cha mateso. Lakini fanya unavyotaka {{deity_pronoun:wewe|Wewe}}, si ninavyotaka {{deity_pronoun:mimi|Mimi}}.\""
         }
       },
       "decisions": [
@@ -448,6 +570,48 @@
           "reason": "Readable explains the picture of the cup.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40026039011",
+            "n40026039012"
+          ],
+          "choice": "Padre {{deity_pronoun:mío|Mío}}",
+          "alternatives": [
+            "Mi Padre"
+          ],
+          "reason": "The English \"My Father\" begins the prayer and is capitalised either way, so it takes no span. Spanish addresses a person with the possessive after the noun (\"Padre mío\"), so \"mío\" takes the setting like any other \"my\" Jesus says of himself. The same in verse 42.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40026039011",
+            "n40026039012"
+          ],
+          "choice": "Baba {{deity_pronoun:yangu|Yangu}}",
+          "alternatives": [],
+          "reason": "The English \"My Father\" begins the prayer and takes no span. Swahili puts the possessive after the noun, so \"yangu\" takes the setting like any other \"my\" Jesus says of himself. The same in verse 42.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -491,6 +655,16 @@
           "L": "And {{deity_pronoun:he|He}} comes to the disciples and finds them sleeping, and {{deity_pronoun:he|He}} says to Peter, \"So, you could not keep watch with {{deity_pronoun:me|Me}} for one hour?",
           "B": "Then {{deity_pronoun:he|He}} came back to the disciples and found them asleep. He said to Peter, \"So none of you could stay awake with {{deity_pronoun:me|Me}} for even one hour?",
           "R": "Then Jesus went back to {{deity_pronoun:his|His}} followers and found them sleeping. He said to Peter, \"Could you not stay awake with {{deity_pronoun:me|Me}} for just one hour?"
+        },
+        "es": {
+          "L": "Y viene a los discípulos y los encuentra durmiendo, y dice a Pedro: «¿De modo que no {{plural_you:fueron|fuisteis}} capaces de velar ni una hora conmigo?",
+          "B": "Luego volvió adonde estaban los discípulos y los encontró dormidos. Le dijo a Pedro: «¿Así que ninguno de {{plural_you:ustedes|vosotros}} pudo mantenerse despierto conmigo ni una hora?",
+          "R": "Después Jesús volvió adonde estaban {{deity_pronoun:sus|Sus}} seguidores y los encontró durmiendo. Le dijo a Pedro: «¿No {{plural_you:pudieron quedarse|pudisteis quedaros}} despiertos conmigo ni una hora?"
+        },
+        "sw": {
+          "L": "Kisha anawajia wanafunzi, anawakuta wamelala usingizi, na anamwambia Petro, \"Hivyo basi, hamkuwa na uwezo wa kukaa macho saa moja pamoja {{deity_pronoun:nami|Nami}}?",
+          "B": "Kisha alirudi kwa wanafunzi, akawakuta wamelala. Akamwambia Petro, \"Ina maana hakuna hata mmoja wenu aliyeweza kukaa macho pamoja {{deity_pronoun:nami|Nami}} kwa saa moja tu?",
+          "R": "Kisha Yesu alirudi kwa wanafunzi {{deity_pronoun:wake|Wake}}, akawakuta wamelala. Akamwambia Petro, \"Hamkuweza kukaa macho pamoja {{deity_pronoun:nami|Nami}} hata kwa saa moja?"
         }
       },
       "decisions": [
@@ -547,6 +721,26 @@
           "reason": "Balanced shows that the \"you\" is plural.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40026040016"
+          ],
+          "choice": "{{plural_you:fueron|fuisteis}} (L); {{plural_you:pudieron quedarse|pudisteis quedaros}} (R)",
+          "alternatives": [
+            "fuiste"
+          ],
+          "reason": "Jesus speaks to Peter, but the verb is plural: he means all three (meaning decision m1). So it is the ustedes / vosotros setting, not \"tú\". Balanced says \"ninguno de ustedes\", as the English \"none of you\" does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -585,6 +779,16 @@
           "L": "Keep watch and pray, so that you may not enter into temptation; the spirit is willing, but the flesh is weak.\"",
           "B": "Stay alert and pray that you will not come into testing. The spirit is eager, but human nature is weak.\"",
           "R": "Stay awake and pray, so that you will not fail when you are tested. Your spirit wants to do what is right, but your human nature is weak.\""
+        },
+        "es": {
+          "L": "{{plural_you:Vigilen|Vigilad}} y {{plural_you:oren|orad}}, para que no {{plural_you:entren|entréis}} en tentación; el espíritu, en verdad, [está] deseoso, pero la carne [es] débil».",
+          "B": "{{plural_you:Manténganse|Manteneos}} alerta y {{plural_you:oren|orad}} para que no {{plural_you:caigan|caigáis}} en la prueba. El espíritu tiene buena voluntad, pero la naturaleza humana es débil».",
+          "R": "{{plural_you:Quédense|Quedaos}} despiertos y {{plural_you:oren|orad}}, para que no {{plural_you:fallen|falléis}} cuando {{plural_you:sean probados|seáis probados}}. {{plural_you:Su|Vuestro}} espíritu quiere hacer lo correcto, pero {{plural_you:su|vuestra}} naturaleza humana es débil»."
+        },
+        "sw": {
+          "L": "Kaeni macho na mwombe, ili msiingie katika majaribu; roho kweli ina shauku, lakini mwili ni dhaifu.\"",
+          "B": "Kaeni macho na mwombe kwamba msiingie katika kujaribiwa. Roho ina shauku, lakini hali ya kibinadamu ni dhaifu.\"",
+          "R": "Kaeni macho na mwombe, ili msishindwe mnapojaribiwa. Roho zenu zinataka kufanya lililo sawa, lakini hali yenu ya kibinadamu ni dhaifu.\""
         }
       },
       "decisions": [
@@ -664,6 +868,24 @@
           "reason": "\"Flesh\" here means human weakness, not the body alone.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40026041011",
+            "n40026041015"
+          ],
+          "choice": "{{plural_you:Su|Vuestro}} espíritu ... {{plural_you:su|vuestra}} naturaleza",
+          "alternatives": [],
+          "reason": "The English Readable says \"your spirit\", \"your human nature\". In Spanish the possessive changes with the setting and, with vosotros, agrees with the noun (\"vuestro espíritu\", \"vuestra naturaleza\"), so each takes its own span.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -707,6 +929,16 @@
           "L": "Again, for a second time, {{deity_pronoun:he|He}} went away and prayed, saying, \"My Father, if this cannot pass unless I drink it, let {{deity_pronoun:your|Your}} will be done.\"",
           "B": "He went away again, a second time, and prayed: \"My Father, if there is no way for this to pass unless I drink it, then let {{deity_pronoun:your|Your}} will be done.\"",
           "R": "Jesus went away a second time and prayed, \"My Father, if I must drink this cup of suffering, then let what {{deity_pronoun:you|You}} want be done.\""
+        },
+        "es": {
+          "L": "De nuevo, por segunda vez, se fue y oró diciendo: «Padre {{deity_pronoun:mío|Mío}}, si esto no puede pasar sin que yo lo beba, hágase {{deity_pronoun:tu|Tu}} voluntad».",
+          "B": "Se apartó otra vez, por segunda vez, y oró: «Padre {{deity_pronoun:mío|Mío}}, si no hay manera de que esto pase sin que yo lo beba, entonces, hágase {{deity_pronoun:tu|Tu}} voluntad».",
+          "R": "Jesús se fue por segunda vez y oró: «Padre {{deity_pronoun:mío|Mío}}, si tengo que beber esta copa de sufrimiento, entonces que se haga lo que {{deity_pronoun:tú|Tú}} quieres»."
+        },
+        "sw": {
+          "L": "Tena, mara ya pili, alienda kando akaomba, akisema, \"Baba {{deity_pronoun:yangu|Yangu}}, kama hiki hakiwezi kupita nisipokinywa, mapenzi {{deity_pronoun:yako|Yako}} yafanyike.\"",
+          "B": "Alienda kando tena mara ya pili, akaomba, \"Baba {{deity_pronoun:yangu|Yangu}}, ikiwa hakuna njia ya hiki kupita nisipokinywa, basi mapenzi {{deity_pronoun:yako|Yako}} yafanyike.\"",
+          "R": "Yesu alikwenda kando mara ya pili, akaomba, \"Baba {{deity_pronoun:yangu|Yangu}}, ikiwa ni lazima ninywe kikombe hiki cha mateso, basi na yafanyike yale unayotaka {{deity_pronoun:wewe|Wewe}}.\""
         }
       },
       "decisions": [
@@ -771,6 +1003,50 @@
           "reason": "Readable states the condition positively and names the cup of 26:39.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026042018",
+            "n40026042019",
+            "n40026042020",
+            "n40026042021"
+          ],
+          "choice": "hágase tu voluntad",
+          "alternatives": [
+            "que se cumpla tu voluntad"
+          ],
+          "reason": "These are the words of the Lord's Prayer (6:10; meaning decision m1). Literal and Balanced keep the form of the petition so the echo is heard; the Spanish of 6:10 should use the same words when it is drafted. Readable says it plainly, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026042018",
+            "n40026042019",
+            "n40026042020",
+            "n40026042021"
+          ],
+          "choice": "mapenzi yako yafanyike",
+          "alternatives": [],
+          "reason": "These are the words of the Lord's Prayer (6:10; meaning decision m1). Literal and Balanced keep the form of the petition so the echo is heard; the Swahili of 6:10 should use the same words when it is drafted. Readable says it plainly, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -805,6 +1081,16 @@
           "L": "And coming again, {{deity_pronoun:he|He}} found them sleeping, for their eyes were heavy.",
           "B": "When {{deity_pronoun:he|He}} came back, {{deity_pronoun:he|He}} again found them asleep; they could not keep their eyes open.",
           "R": "When Jesus came back, {{deity_pronoun:he|He}} found them sleeping again. They were too tired to keep their eyes open."
+        },
+        "es": {
+          "L": "Y habiendo venido de nuevo, los encontró durmiendo, porque sus ojos estaban pesados.",
+          "B": "Cuando volvió, los encontró otra vez dormidos; no podían mantener los ojos abiertos.",
+          "R": "Cuando Jesús regresó, los encontró durmiendo otra vez. Estaban tan cansados que no podían tener los ojos abiertos."
+        },
+        "sw": {
+          "L": "Na aliporudi tena, aliwakuta wakiwa wamelala usingizi, maana macho yao yalikuwa yamelemewa.",
+          "B": "Aliporudi, aliwakuta tena wamelala; macho yao hayakuweza kukaa wazi.",
+          "R": "Yesu aliporudi, aliwakuta wamelala tena. Walikuwa wamechoka mno hata wasiweze kufumbua macho."
         }
       },
       "decisions": [
@@ -861,6 +1147,16 @@
           "L": "And leaving them again, {{deity_pronoun:he|He}} went away and prayed a third time, saying the same word again.",
           "B": "So {{deity_pronoun:he|He}} left them, went away once more, and prayed a third time, saying the same words.",
           "R": "So {{deity_pronoun:he|He}} left them and went away again. He prayed a third time, saying the same thing."
+        },
+        "es": {
+          "L": "Y, dejándolos, volvió a apartarse y oró por tercera vez, diciendo de nuevo la misma palabra.",
+          "B": "Así que los dejó, se apartó una vez más y oró por tercera vez, con las mismas palabras.",
+          "R": "Entonces los dejó y se fue otra vez. Oró por tercera vez y dijo lo mismo."
+        },
+        "sw": {
+          "L": "Kisha, akiisha kuwaacha, alienda kando tena akaomba kwa mara ya tatu, akirudia neno lile lile.",
+          "B": "Basi aliwaacha, akaenda kando tena, akaomba kwa mara ya tatu, akitumia maneno yale yale.",
+          "R": "Basi aliwaacha, akaenda tena. Akaomba mara ya tatu, akisema mambo yale yale."
         }
       },
       "decisions": [
@@ -929,6 +1225,16 @@
           "L": "Then {{deity_pronoun:he|He}} comes to the disciples and says to them, \"Sleep on now and take your rest. Look, the hour has drawn near, and the Son of Man is betrayed into [the] hands of sinners.",
           "B": "Then {{deity_pronoun:he|He}} came to the disciples and said to them, \"Go on sleeping, then, and resting. The hour is here: the Son of Man is being betrayed into the hands of sinners.",
           "R": "Then {{deity_pronoun:he|He}} came back to the followers and said to them, \"Sleep on, then, and rest! But now the time has come. The Son of Man is being handed over to sinners."
+        },
+        "es": {
+          "L": "Entonces viene a los discípulos y les dice: «{{plural_you:Duerman|Dormid}} lo que queda y {{plural_you:descansen|descansad}}. {{plural_you:Miren|Mirad}}: la hora se ha acercado, y el Hijo del Hombre es entregado en manos de pecadores.",
+          "B": "Luego volvió adonde estaban los discípulos y les dijo: «{{plural_you:Sigan|Seguid}} durmiendo, pues, y {{plural_you:descansen|descansad}}. La hora ya está aquí: el Hijo del Hombre está siendo entregado en manos de pecadores.",
+          "R": "Después volvió adonde estaban los seguidores y les dijo: «¡{{plural_you:Sigan|Seguid}} durmiendo, pues, y {{plural_you:descansen|descansad}}! Pero ya llegó el momento. El Hijo del Hombre está siendo entregado a los pecadores."
+        },
+        "sw": {
+          "L": "Kisha anawaendea wanafunzi, anawaambia, \"Endeleeni kulala na kupumzika; tazameni, saa imesogea karibu, na Mwana wa Adamu anatolewa mikononi mwa wenye dhambi.",
+          "B": "Kisha aliwaendea wanafunzi, akawaambia, \"Basi endeleeni kulala na kupumzika. Saa imefika: Mwana wa Adamu anasalitiwa na kukabidhiwa mikononi mwa wenye dhambi.",
+          "R": "Kisha aliwarudia wanafunzi, akawaambia, \"Haya, laleni na mpumzike! Lakini sasa wakati umefika. Mwana wa Adamu anakabidhiwa kwa wenye dhambi."
         }
       },
       "decisions": [
@@ -1024,6 +1330,48 @@
           "reason": "As in 1:20, Literal uses \"look\" and Balanced and Readable carry the word's force in the flow of the sentence.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026045023"
+          ],
+          "choice": "es entregado (L); está siendo entregado (B, R)",
+          "alternatives": [
+            "está siendo traicionado"
+          ],
+          "reason": "The Greek verb is \"hand over\", here into the hands of sinners. Literal says \"entregar\" for it throughout the chapter. The English Balanced says \"betrayed into the hands of\", but Spanish \"traicionar\" cannot take \"en manos de\", so Balanced says \"entregado\" here and \"traicionar\" in verses 46 and 48.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026045023"
+          ],
+          "choice": "anatolewa (L); anasalitiwa na kukabidhiwa (B); anakabidhiwa (R)",
+          "alternatives": [
+            "anasalitiwa (every level)"
+          ],
+          "reason": "The Greek verb is \"hand over\". Literal says \"kutoa\" for it throughout the chapter. Balanced says \"betrayed\" with the English, and adds \"kukabidhiwa\" because \"kusaliti\" cannot take \"into the hands of\"; Readable says \"handed over\", as the English does. The same verbs in verses 46 and 48.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1053,6 +1401,16 @@
           "L": "Get up, let us go. Look, the [one] who is betraying {{deity_pronoun:me|Me}} has drawn near.\"",
           "B": "Get up; let us be going. Here comes the man who is betraying {{deity_pronoun:me|Me}}.\"",
           "R": "Get up! Let us go. The one who is handing {{deity_pronoun:me|Me}} over is coming!\""
+        },
+        "es": {
+          "L": "{{plural_you:Levántense|Levantaos}}, vámonos; {{plural_you:miren|mirad}}, ya está cerca el que {{deity_pronoun:me|Me}} entrega».",
+          "B": "{{plural_you:Levántense|Levantaos}}; vámonos. Ahí viene el que {{deity_pronoun:me|Me}} traiciona».",
+          "R": "¡{{plural_you:Levántense|Levantaos}}! Vámonos. ¡Ya viene el que {{deity_pronoun:me|Me}} va a entregar!»."
+        },
+        "sw": {
+          "L": "Simameni, twende; tazameni, amekaribia yule anayenitoa.\"",
+          "B": "Simameni, twendeni. Huyu hapa anakuja yule anayenisaliti.\"",
+          "R": "Amkeni! Twendeni. Yule anayenikabidhi anakuja!\""
         }
       },
       "decisions": [
@@ -1140,6 +1498,16 @@
           "L": "And while {{deity_pronoun:he|He}} was still speaking, look, Judas, one of the Twelve, came, and with him a large crowd with swords and clubs, from the chief priests and elders of the people.",
           "B": "Jesus had not finished speaking when Judas, one of the Twelve, came up. A large crowd came with him, carrying swords and clubs. The chief priests and the elders of the people had sent them.",
           "R": "Jesus was still talking when Judas came. He was one of the twelve followers. A big crowd came with him. They carried swords and wooden clubs. The leading priests and older leaders of the people had sent them."
+        },
+        "es": {
+          "L": "Y mientras {{deity_pronoun:él|Él}} todavía hablaba, mira, llegó Judas, uno de los Doce, y con él una gran turba con espadas y garrotes, de parte de los jefes de los sacerdotes y de los ancianos del pueblo.",
+          "B": "Jesús todavía estaba hablando cuando llegó Judas, uno de los Doce. Con él venía una gran multitud armada con espadas y garrotes. Los habían enviado los jefes de los sacerdotes y los ancianos del pueblo.",
+          "R": "Jesús todavía estaba hablando cuando llegó Judas. Era uno de los doce seguidores. Con él venía mucha gente. Traían espadas y palos. Los habían enviado los jefes de los sacerdotes y los ancianos que dirigían al pueblo."
+        },
+        "sw": {
+          "L": "Na akiwa bado anazungumza, tazama, Yuda alifika, mmoja wa wale Kumi na Wawili, na kundi kubwa la watu pamoja naye, wakiwa na panga na virungu, wametumwa na wakuu wa makuhani na wazee wa watu.",
+          "B": "Yesu alikuwa bado anazungumza Yuda alipofika, mmoja wa wale Kumi na Wawili. Kundi kubwa la watu lilikuja pamoja naye, wakiwa wamebeba panga na virungu. Wakuu wa makuhani na wazee wa watu ndio waliowatuma.",
+          "R": "Yesu alipokuwa bado anaongea, Yuda alifika. Yeye alikuwa mmoja wa wanafunzi kumi na wawili. Kundi kubwa la watu lilikuja pamoja naye. Walibeba panga na virungu vya mbao. Wakuu wa makuhani na wazee waliowaongoza watu ndio waliowatuma."
         }
       },
       "decisions": [
@@ -1228,6 +1596,50 @@
           "reason": "Balanced and Readable say what \"from\" means.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026047022",
+            "n40026047024"
+          ],
+          "choice": "los jefes de los sacerdotes; los ancianos del pueblo (L, B), los ancianos que dirigían al pueblo (R)",
+          "alternatives": [],
+          "reason": "The terms used for these groups throughout Matthew, recorded once in this passage.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026047017",
+            "n40026047019",
+            "n40026047022",
+            "n40026047024"
+          ],
+          "choice": "panga (swords), virungu (clubs); wakuu wa makuhani; wazee wa watu (L, B), wazee waliowaongoza watu (R)",
+          "alternatives": [
+            "mapanga"
+          ],
+          "reason": "\"Panga\" is the plural of \"upanga\", the sword, as in 26:51-52; \"mapanga\" would be machetes. The terms for the chief priests and elders are those used throughout Matthew, recorded once in this passage.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1265,6 +1677,16 @@
           "L": "Now the [one] betraying {{deity_pronoun:him|Him}} had given them a sign, saying, \"Whomever I kiss, {{deity_pronoun:he|He}} is [the one]; seize {{deity_pronoun:him|Him}}.\"",
           "B": "The betrayer had given them a sign: \"The man I kiss is the one you want. Arrest {{deity_pronoun:him|Him}}.\"",
           "R": "Judas had given them a sign so they would know which man was Jesus. He had said, \"The man I kiss is the one you want. Arrest {{deity_pronoun:him|Him}}.\""
+        },
+        "es": {
+          "L": "Y el que {{deity_pronoun:lo|Lo}} entregaba les había dado una señal, diciendo: «Al que yo bese, es {{deity_pronoun:él|Él}}; {{plural_you:agárrenlo|agarradlo}}».",
+          "B": "El traidor les había dado una contraseña: «Al que yo bese, ese es el que {{plural_you:buscan|buscáis}}. {{plural_you:Arréstenlo|Arrestadlo}}».",
+          "R": "Judas les había dado una señal para que supieran cuál de ellos era Jesús. Les había dicho: «El hombre al que yo bese es el que {{plural_you:buscan|buscáis}}. {{plural_you:Arréstenlo|Arrestadlo}}»."
+        },
+        "sw": {
+          "L": "Basi yule anayemtoa alikuwa amewapa ishara, akisema, \"Yeyote nitakayembusu, ni {{deity_pronoun:yeye|Yeye}}; mshikeni.\"",
+          "B": "Msaliti huyo alikuwa amewapa ishara: \"Mtu nitakayembusu ndiye mnayemtafuta. Mkamateni.\"",
+          "R": "Yuda alikuwa amewapa ishara ili wajue ni nani kati yao aliyekuwa Yesu. Alikuwa amesema, \"Mtu nitakayembusu ndiye mnayemtaka. Mkamateni.\""
         }
       },
       "decisions": [
@@ -1352,6 +1774,16 @@
           "L": "And immediately coming up to Jesus, he said, \"Greetings, Rabbi!\" and kissed {{deity_pronoun:him|Him}}.",
           "B": "Judas went straight to Jesus and said, \"Greetings, Rabbi!\" Then he kissed {{deity_pronoun:him|Him}}.",
           "R": "Judas went right up to Jesus and said, \"Hello, Teacher!\" Then he kissed {{deity_pronoun:him|Him}}."
+        },
+        "es": {
+          "L": "Y al instante se acercó a Jesús y dijo: «¡Saludos, Rabí!», y {{deity_pronoun:lo|Lo}} besó.",
+          "B": "Judas fue directamente hacia Jesús y {{deity_pronoun:le|Le}} dijo: «¡Saludos, Rabí!». Luego {{deity_pronoun:lo|Lo}} besó.",
+          "R": "Judas se acercó enseguida a Jesús y {{deity_pronoun:le|Le}} dijo: «¡Hola, Maestro!». Luego {{deity_pronoun:lo|Lo}} besó."
+        },
+        "sw": {
+          "L": "Na papo hapo alimsogelea Yesu, akasema, \"Nakusalimu, Rabi!\" na kumbusu.",
+          "B": "Yuda alimwendea Yesu moja kwa moja, akasema, \"Nakusalimu, Rabi!\" Kisha akambusu.",
+          "R": "Yuda alimwendea Yesu mara moja, akasema, \"Hujambo, Mwalimu!\" Kisha akambusu."
         }
       },
       "decisions": [
@@ -1437,6 +1869,16 @@
           "L": "And Jesus said to him, \"Friend, [do] that for which you have come.\"",
           "B": "Jesus said to him, \"Friend, get on with what you are here for.\"",
           "R": "Jesus said to him, \"Friend, do what you came here to do.\""
+        },
+        "es": {
+          "L": "Y Jesús le dijo: «Amigo, [haz] aquello a lo que has venido».",
+          "B": "Jesús le dijo: «Amigo, lleva a cabo aquello a lo que has venido».",
+          "R": "Jesús le dijo: «Amigo, haz lo que viniste a hacer»."
+        },
+        "sw": {
+          "L": "Na Yesu akamwambia, \"Mwenzangu, [timiza] lile ambalo umekuja kwa ajili yake.\"",
+          "B": "Yesu akamwambia, \"Mwenzangu, endelea na kile ulichokuja kufanya.\"",
+          "R": "Yesu akamwambia, \"Mwenzangu, fanya ulichokuja kufanya.\""
         }
       },
       "decisions": [
@@ -1474,6 +1916,27 @@
           "reason": "Matthew uses this word only when someone is in the wrong (20:13; 22:12).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026050006"
+          ],
+          "choice": "Mwenzangu",
+          "alternatives": [
+            "Rafiki"
+          ],
+          "reason": "The Greek word is a companion or comrade, and here it carries a note of reproach (meaning decision m2). \"Mwenzangu\" (my companion) keeps both; \"rafiki\" (friend) is warmer than the Greek word.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1507,6 +1970,16 @@
           "L": "Then they came and laid hands on Jesus and seized {{deity_pronoun:him|Him}}.",
           "B": "At that, the crowd moved in. They laid hands on Jesus and arrested {{deity_pronoun:him|Him}}.",
           "R": "Then the men came and grabbed Jesus. They arrested {{deity_pronoun:him|Him}}."
+        },
+        "es": {
+          "L": "Entonces se acercaron, pusieron las manos sobre Jesús y {{deity_pronoun:lo|Lo}} sujetaron.",
+          "B": "En ese momento la multitud se adelantó. Pusieron las manos sobre Jesús y {{deity_pronoun:lo|Lo}} arrestaron.",
+          "R": "Entonces los hombres se acercaron y agarraron a Jesús. Lo arrestaron."
+        },
+        "sw": {
+          "L": "Kisha wakaja, wakamwekea Yesu mikono, wakamkamata.",
+          "B": "Hapo watu wakasonga mbele, wakamwekea Yesu mikono, wakamtia nguvuni.",
+          "R": "Kisha wale watu wakaja, wakamshika Yesu kwa nguvu. Wakamkamata."
         }
       },
       "decisions": [
@@ -1575,6 +2048,16 @@
           "L": "And look, one of those with Jesus stretched out [his] hand and drew his sword, and striking the slave of the high priest, he cut off his ear.",
           "B": "One of the men with Jesus reached for his sword and drew it. He struck the high priest's servant and cut off his ear.",
           "R": "One of Jesus's followers pulled out his sword. He struck the high priest's servant and cut off the man's ear."
+        },
+        "es": {
+          "L": "Y mira, uno de los que [estaban] con Jesús extendió la mano, desenvainó su espada y, dando un golpe al esclavo del sumo sacerdote, le cortó la oreja.",
+          "B": "Uno de los hombres que estaban con Jesús echó mano a su espada y la sacó. Golpeó al siervo del sumo sacerdote y le cortó la oreja.",
+          "R": "Uno de los seguidores de Jesús sacó su espada. Golpeó al siervo del sumo sacerdote y le cortó una oreja."
+        },
+        "sw": {
+          "L": "Na tazama, mmoja wa wale walioandamana na Yesu alinyoosha mkono wake, akauchomoa upanga wake, na alipompiga mtumwa wa kuhani mkuu, akaliondoa sikio lake.",
+          "B": "Mmoja wa watu waliokuwa pamoja na Yesu alinyoosha mkono, akauchomoa upanga wake. Akampiga mtumishi wa kuhani mkuu, akamkata sikio.",
+          "R": "Mmoja wa wanafunzi wa Yesu alichomoa upanga wake. Akampiga mtumishi wa kuhani mkuu, akamkata yule mtu sikio."
         }
       },
       "decisions": [
@@ -1653,6 +2136,44 @@
           "reason": "\"Servant\" in Balanced and Readable, as the style guide has it; the meaning decision (m2) keeps that the person was owned, and Literal keeps \"slave\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026051017"
+          ],
+          "choice": "esclavo (L); siervo (B, R)",
+          "alternatives": [],
+          "reason": "The book-wide rendering of the Greek word for a slave; meaning decision m2 keeps that the man belonged to the high priest's household.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026051017"
+          ],
+          "choice": "mtumwa (L); mtumishi (B, R)",
+          "alternatives": [],
+          "reason": "The book-wide rendering of the Greek word for a slave; meaning decision m2 keeps that the man belonged to the high priest's household.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1696,6 +2217,16 @@
           "L": "Then Jesus says to him, \"Put your sword back into its place; for all who take [the] sword will perish by [the] sword.",
           "B": "Then Jesus told him, \"Put your sword back where it belongs. Everyone who takes up the sword will die by the sword.",
           "R": "Then Jesus said to him, \"Put your sword away! People who use swords to fight will be killed with swords."
+        },
+        "es": {
+          "L": "Entonces le dice Jesús: «Devuelve tu espada a su sitio, pues todos los que empuñan [la] espada morirán por [la] espada.",
+          "B": "Entonces Jesús le dijo: «Guarda tu espada en su lugar. Todo el que recurre a la espada morirá por la espada.",
+          "R": "Entonces Jesús le dijo: «¡Guarda tu espada! Quienes usan la espada para pelear morirán a espada."
+        },
+        "sw": {
+          "L": "Kisha Yesu anamwambia, \"Uweke upanga wako tena mahali pake; kwa sababu wote wanaotwaa upanga watakufa kwa upanga.",
+          "B": "Kisha Yesu akamwambia, \"Ingiza upanga wako alani. Kila mtu anayetumia upanga atakufa kwa upanga.",
+          "R": "Kisha Yesu akamwambia, \"Weka upanga wako mbali! Watu wanaotumia panga kupigana watauawa kwa panga."
         }
       },
       "decisions": [
@@ -1802,6 +2333,16 @@
           "L": "Or do you think that I cannot call on {{deity_pronoun:my|My}} Father, and {{deity_pronoun:he|He}} will at once provide {{deity_pronoun:me|Me}} more than twelve legions of angels?",
           "B": "Do you not know that I could ask {{deity_pronoun:my|My}} Father, and {{deity_pronoun:he|He}} would send {{deity_pronoun:me|Me}} more than twelve legions of angels right away?",
           "R": "You know I could ask {{deity_pronoun:my|My}} Father for help. And {{deity_pronoun:he|He}} would send {{deity_pronoun:me|Me}} more than twelve armies of angels right away!"
+        },
+        "es": {
+          "L": "¿O piensas que no puedo rogar a {{deity_pronoun:mi|Mi}} Padre, y {{deity_pronoun:él|Él}} {{deity_pronoun:me|Me}} proporcionará ahora mismo más de doce legiones de ángeles?",
+          "B": "¿No sabes que podría pedírselo a {{deity_pronoun:mi|Mi}} Padre, y que {{deity_pronoun:él|Él}} {{deity_pronoun:me|Me}} enviaría al instante más de doce legiones de ángeles?",
+          "R": "Tú sabes que yo podría pedirle ayuda a {{deity_pronoun:mi|Mi}} Padre. ¡Y {{deity_pronoun:él|Él}} {{deity_pronoun:me|Me}} enviaría enseguida más de doce ejércitos de ángeles!"
+        },
+        "sw": {
+          "L": "Au unafikiri siwezi kumwita Baba {{deity_pronoun:yangu|Yangu}} anisaidie, {{deity_pronoun:naye|Naye}} papo hapo akanipa vikosi zaidi ya kumi na viwili vya malaika?",
+          "B": "Hujui kwamba ningeweza kumwomba Baba {{deity_pronoun:yangu|Yangu}}, {{deity_pronoun:naye|Naye}} angenitumia mara moja zaidi ya vikosi kumi na viwili vya malaika?",
+          "R": "Unajua kwamba ningeweza kumwomba Baba {{deity_pronoun:yangu|Yangu}} msaada. Naye angenitumia mara moja majeshi zaidi ya kumi na mawili ya malaika!"
         }
       },
       "decisions": [
@@ -1895,6 +2436,27 @@
           "reason": "Balanced and Readable turn the negative question into a direct claim with the same force.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026053016"
+          ],
+          "choice": "vikosi (L, B); majeshi (R)",
+          "alternatives": [
+            "majeshi (every level)"
+          ],
+          "reason": "A legion was a Roman army unit of about six thousand men (meaning decision m1). \"Kikosi\" names a military unit, as for the Roman cohort in John 18:3; Readable says \"majeshi\" (armies), as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1926,6 +2488,16 @@
           "L": "How then would the Scriptures be fulfilled, that it must happen this way?\"",
           "B": "But if I did, how could the Scriptures come true? They say that all this has to take place.\"",
           "R": "But if I did that, what the Scriptures say would not come true. They say these things must happen.\""
+        },
+        "es": {
+          "L": "¿Cómo se cumplirían entonces las Escrituras, según las cuales así tiene que ocurrir?».",
+          "B": "Pero si lo hiciera, ¿cómo se cumplirían las Escrituras? Ellas dicen que todo esto tiene que suceder así».",
+          "R": "Pero si yo hiciera eso, no se cumpliría lo que dicen las Escrituras. Ellas dicen que estas cosas tienen que pasar»."
+        },
+        "sw": {
+          "L": "Basi Maandiko yangetimizwaje, kwamba ni lazima iwe hivi?\"",
+          "B": "Lakini ningefanya hivyo, Maandiko yangetimiaje? Yanasema kwamba haya yote lazima yatokee.\"",
+          "R": "Lakini ningefanya hivyo, yale yanayosemwa na Maandiko yasingetimia. Maandiko yanasema kwamba mambo haya lazima yatokee.\""
         }
       },
       "decisions": [
@@ -2032,6 +2604,16 @@
           "L": "At that hour Jesus said to the crowds, \"Have you come out as against a robber, with swords and clubs, to capture {{deity_pronoun:me|Me}}?",
           "B": "Then Jesus said to the crowd, \"Am I some bandit, that you come out with swords and clubs to seize {{deity_pronoun:me|Me}}?",
           "R": "Then Jesus said to the crowd, \"Why do you come out with swords and clubs to arrest {{deity_pronoun:me|Me}}? Do you think I am a dangerous criminal?"
+        },
+        "es": {
+          "L": "En aquel momento Jesús dijo a las multitudes: «¿Como si fuera contra un bandido {{plural_you:salieron|salisteis}} con espadas y garrotes a capturarme?",
+          "B": "Entonces Jesús dijo a la multitud: «¿Acaso soy un bandido, para que {{plural_you:vengan|vengáis}} con espadas y garrotes a apresarme?",
+          "R": "Entonces Jesús le dijo a la gente: «¿Por qué {{plural_you:vienen|venís}} con espadas y palos para arrestarme? ¿{{plural_you:Creen|Creéis}} que soy un criminal peligroso?"
+        },
+        "sw": {
+          "L": "Saa ile ile Yesu akayaambia makundi ya watu, \"Kana kwamba ni kwa jambazi, mmetoka na panga na virungu kunikamata?",
+          "B": "Kisha Yesu aliuambia umati, \"Je, {{deity_pronoun:mimi|Mimi}} ni jambazi, hata mje na panga na virungu kunikamata?",
+          "R": "Kisha Yesu aliuambia umati, \"Kwa nini mmekuja na panga na virungu kunikamata? Mnadhani {{deity_pronoun:mimi|Mimi}} ni mhalifu hatari?"
         }
       },
       "decisions": [
@@ -2069,6 +2651,26 @@
           "reason": "Readable gives the force of the word.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026055012"
+          ],
+          "choice": "jambazi",
+          "alternatives": [
+            "mnyang'anyi; mwizi"
+          ],
+          "reason": "The Greek word is an armed bandit, an outlaw (meaning decision m1), not a thief. \"Jambazi\" is the everyday word for an armed robber; \"mwizi\" is a thief who steals in secret.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2102,6 +2704,16 @@
           "L": "Every day I sat in the temple teaching, and you did not seize {{deity_pronoun:me|Me}}.\"",
           "B": "Day after day I sat teaching in the temple courts, and you did not arrest {{deity_pronoun:me|Me}} then.\"",
           "R": "Every day I sat in the temple courtyard and taught the people. You did not arrest {{deity_pronoun:me|Me}} then.\""
+        },
+        "es": {
+          "L": "Cada día me sentaba en el templo enseñando, y no {{deity_pronoun:me|Me}} {{plural_you:apresaron|apresasteis}}».",
+          "B": "Día tras día me sentaba a enseñar en el recinto del templo, y entonces no {{deity_pronoun:me|Me}} {{plural_you:arrestaron|arrestasteis}}».",
+          "R": "Todos los días me sentaba en el patio del templo a enseñar a la gente, y no {{deity_pronoun:me|Me}} {{plural_you:arrestaron|arrestasteis}} entonces»."
+        },
+        "sw": {
+          "L": "Siku kwa siku nilikaa katika hekalu nikifundisha, na hamkunishika.\"",
+          "B": "Siku baada ya siku nilikaa nikifundisha katika eneo la hekalu, wala hamkunikamata wakati huo.\"",
+          "R": "Kila siku nilikaa katika ua wa hekalu nikiwafundisha watu. Wakati huo hamkunikamata.\""
         }
       },
       "decisions": [
@@ -2175,6 +2787,16 @@
           "L": "But all this has taken place so that the Scriptures of the prophets might be fulfilled.",
           "B": "All this took place so that what the prophets wrote in the Scriptures would come true.",
           "R": "All of this happened to make the words of the prophets in the Scriptures come true."
+        },
+        "es": {
+          "L": "Pero todo esto ha ocurrido a fin de que se cumplieran las Escrituras de los profetas.",
+          "B": "Todo esto sucedió para que se hiciera realidad lo que los profetas escribieron en las Escrituras.",
+          "R": "Todo esto pasó para que se cumplieran las palabras de los profetas que están en las Escrituras."
+        },
+        "sw": {
+          "L": "Lakini yote haya yamefanyika ili Maandiko ya manabii yapate kutimia.",
+          "B": "Haya yote yalitokea ili yale ambayo manabii waliandika katika Maandiko yatimie.",
+          "R": "Mambo haya yote yalitokea ili maneno ya manabii yaliyo katika Maandiko yatimie."
         }
       },
       "decisions": [
@@ -2250,6 +2872,16 @@
           "L": "Then all the disciples left {{deity_pronoun:him|Him}} and fled.",
           "B": "At that, every one of the disciples abandoned {{deity_pronoun:him|Him}} and ran off.",
           "R": "Then all the followers left {{deity_pronoun:him|Him}} and ran away."
+        },
+        "es": {
+          "L": "Entonces todos los discípulos {{deity_pronoun:lo|Lo}} dejaron y huyeron.",
+          "B": "En ese momento, todos los discípulos {{deity_pronoun:lo|Lo}} abandonaron y salieron corriendo.",
+          "R": "Entonces todos los seguidores {{deity_pronoun:lo|Lo}} dejaron solo y se escaparon."
+        },
+        "sw": {
+          "L": "Hapo wanafunzi wote, wakiisha kumwacha, walikimbia.",
+          "B": "Wakati huo wanafunzi wote walimtelekeza, wakakimbia.",
+          "R": "Kisha wanafunzi wote walimwacha peke {{deity_pronoun:yake|Yake}}, wakakimbia."
         }
       },
       "decisions": [

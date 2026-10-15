@@ -32,6 +32,16 @@
           "L": "And it happened, when Jesus had finished all these words, {{deity_pronoun:he|He}} said to {{deity_pronoun:his|His}} disciples,",
           "B": "When Jesus had finished all these words, {{deity_pronoun:he|He}} told {{deity_pronoun:his|His}} disciples,",
           "R": "Jesus finished teaching all these things. Then {{deity_pronoun:he|He}} said to {{deity_pronoun:his|His}} followers,"
+        },
+        "es": {
+          "L": "Y sucedió que, cuando Jesús terminó todas estas palabras, dijo a {{deity_pronoun:sus|Sus}} discípulos:",
+          "B": "Cuando Jesús terminó de decir todas estas palabras, dijo a {{deity_pronoun:sus|Sus}} discípulos:",
+          "R": "Jesús terminó de enseñar todas estas cosas. Entonces les dijo a {{deity_pronoun:sus|Sus}} seguidores:"
+        },
+        "sw": {
+          "L": "Na ikatokea kwamba Yesu alipomaliza maneno haya yote, aliwaambia wanafunzi {{deity_pronoun:wake|Wake}},",
+          "B": "Yesu alipomaliza kusema maneno haya yote, aliwaambia wanafunzi {{deity_pronoun:wake|Wake}},",
+          "R": "Yesu alimaliza kufundisha mambo hayo yote. Kisha akawaambia wanafunzi {{deity_pronoun:wake|Wake}},"
         }
       },
       "decisions": [
@@ -87,6 +97,50 @@
           "reason": "Balanced keeps the wording of the same formula at 7:28.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40026001011",
+            "n40026001014"
+          ],
+          "choice": "deity_pronoun spans only on separate pronouns and possessives (sus, le, me, mí, mi)",
+          "alternatives": [
+            "a span on every pronoun the English marks"
+          ],
+          "reason": "Spanish leaves the subject pronoun out (\"dijo\"), and a pronoun joined to the end of a verb (\"matarlo\", \"entregarlo\") takes no span, so the setting covers fewer words than in English. The same through the passage.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40026001011",
+            "n40026001014"
+          ],
+          "choice": "deity_pronoun spans on free pronouns and possessives only (wanafunzi wake); none on verbs such as aliwaambia",
+          "alternatives": [
+            "Yeye aliwaambia"
+          ],
+          "reason": "Swahili carries \"he\" and \"him\" in the verb, where a prefix cannot take a capital, so the setting covers only free pronouns and possessives, as in John. Swahili therefore has fewer spans than English through the passage.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -126,6 +180,16 @@
           "L": "\"You know that after two days the Passover comes, and the Son of Man is handed over to be crucified.\"",
           "B": "\"As you know, the Passover is two days away, and the Son of Man will be handed over to be crucified.\"",
           "R": "\"You know that the Passover festival is two days from now. At that time the Son of Man will be handed over to be killed on a cross.\""
+        },
+        "es": {
+          "L": "«{{plural_you:Saben|Sabéis}} que después de dos días llega la Pascua, y el Hijo del Hombre es entregado para ser crucificado».",
+          "B": "«Como {{plural_you:saben|sabéis}}, dentro de dos días es la Pascua, y el Hijo del Hombre va a ser entregado para ser crucificado».",
+          "R": "«{{plural_you:Saben|Sabéis}} que la fiesta de la Pascua es dentro de dos días. Entonces el Hijo del Hombre será entregado para que muera en una cruz»."
+        },
+        "sw": {
+          "L": "\"Mnajua kwamba baada ya siku mbili Pasaka inakuja, na Mwana wa Adamu anatolewa ili asulubiwe.\"",
+          "B": "\"Kama mnavyojua, zimebaki siku mbili tu kabla ya Pasaka, na Mwana wa Adamu atakabidhiwa ili asulubiwe.\"",
+          "R": "\"Mnajua kwamba sikukuu ya Pasaka itakuwa baada ya siku mbili. Wakati huo Mwana wa Adamu atakabidhiwa ili auawe msalabani.\""
         }
       },
       "decisions": [
@@ -216,6 +280,48 @@
           "reason": "Readable explains crucifixion and links the two events, as the \"and\" of the Greek implies.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026002014"
+          ],
+          "choice": "entregado (every level here)",
+          "alternatives": [
+            "traicionado"
+          ],
+          "reason": "The Greek verb is \"hand over\" (meaning decision m2): Judas gives Jesus up, and so does God's plan. \"Entregar\" says both. \"Traicionar\" is kept for the places where the English says \"betray\" (26:21-25, 26:46-48); Literal says \"entregar\" there too, so the repeated Greek word shows.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026002014"
+          ],
+          "choice": "anatolewa (L); atakabidhiwa (B, R)",
+          "alternatives": [
+            "atasalitiwa"
+          ],
+          "reason": "The Greek verb is \"hand over\" (meaning decision m2). \"Kutoa\" keeps the plain verb at Literal through the chapter; \"kukabidhi\" (to hand someone over to others) says it clearly at Balanced and Readable. \"Kusaliti\" (betray) is kept for the places where the English says \"betray\" (26:21-25, 26:46-48).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -265,6 +371,16 @@
           "L": "Then the chief priests and the elders of the people were gathered in the courtyard of the high priest, who was called Caiaphas, \\v 4 and they plotted together to seize Jesus by deceit and kill {{deity_pronoun:him|Him}}.",
           "B": "Then the chief priests and the elders of the people met in the courtyard of the high priest, a man named Caiaphas. \\v 4 There they made plans to arrest Jesus by some trick and put {{deity_pronoun:him|Him}} to death.",
           "R": "At that time the leading priests and the older leaders of the people met at the home of the high priest. His name was Caiaphas. \\v 4 They made a plan to arrest Jesus secretly and kill {{deity_pronoun:him|Him}}."
+        },
+        "es": {
+          "L": "Entonces se reunieron los jefes de los sacerdotes y los ancianos del pueblo en el patio del sumo sacerdote, el llamado Caifás, \\v 4 y deliberaron juntos para apresar a Jesús con engaño y matarlo.",
+          "B": "Entonces los jefes de los sacerdotes y los ancianos del pueblo se reunieron en el patio del sumo sacerdote, un hombre llamado Caifás. \\v 4 Allí hicieron planes para arrestar a Jesús con alguna trampa y darle muerte.",
+          "R": "En ese tiempo, los jefes de los sacerdotes y los ancianos que dirigían al pueblo se reunieron en la casa del sumo sacerdote. Se llamaba Caifás. \\v 4 Hicieron un plan para arrestar a Jesús en secreto y matarlo."
+        },
+        "sw": {
+          "L": "Kisha wakakusanyika wakuu wa makuhani na wazee wa watu katika ua wa kuhani mkuu, yule aitwaye Kayafa, \\v 4 wakapanga njama pamoja kwamba wamtie Yesu mbaroni kwa udanganyifu na kumuua.",
+          "B": "Kisha wakuu wa makuhani na wazee wa watu walikutana katika ua wa kuhani mkuu, mtu mmoja aitwaye Kayafa. \\v 4 Huko walifanya mipango ya kumkamata Yesu kwa ujanja na kumuua.",
+          "R": "Wakati huo wakuu wa makuhani na wazee waliowaongoza watu walikutana nyumbani kwa kuhani mkuu. Jina lake lilikuwa Kayafa. \\v 4 Walipanga kumkamata Yesu kwa siri na kumuua."
         }
       },
       "decisions": [
@@ -339,6 +455,52 @@
           "reason": "Readable says who these groups were, as in 2:4.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026003004",
+            "n40026003007",
+            "n40026003014"
+          ],
+          "choice": "los jefes de los sacerdotes; los ancianos del pueblo (L, B), los ancianos que dirigían al pueblo (R); el sumo sacerdote",
+          "alternatives": [
+            "los principales sacerdotes"
+          ],
+          "reason": "The terms used for these groups throughout Matthew, recorded once in this passage. Readable says what the elders were, as the English \"older leaders\" does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026003004",
+            "n40026003007",
+            "n40026003014"
+          ],
+          "choice": "wakuu wa makuhani; wazee wa watu (L, B), wazee waliowaongoza watu (R); kuhani mkuu",
+          "alternatives": [
+            "makuhani wakuu"
+          ],
+          "reason": "The terms used for these groups throughout Matthew, recorded once in this passage. Readable says what the elders were, as the English \"older leaders\" does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -374,6 +536,16 @@
           "L": "But they were saying, \"Not during the feast, so that there may not be an uproar among the people.\"",
           "B": "But they kept saying, \"Not at the festival. We do not want the people to riot.\"",
           "R": "But they said, \"We must not do it during the festival. The people might start a riot.\""
+        },
+        "es": {
+          "L": "Pero decían: «No durante la fiesta, para que no haya un alboroto en el pueblo».",
+          "B": "Pero insistían: «No en la fiesta, para que no se amotine el pueblo».",
+          "R": "Pero decían: «No debemos hacerlo durante la fiesta. La gente podría armar un alboroto»."
+        },
+        "sw": {
+          "L": "Lakini walikuwa wakisema, \"Si katika sikukuu, ili pasiwe na fujo miongoni mwa watu.\"",
+          "B": "Lakini waliendelea kusema, \"Tusifanye hivyo wakati wa sikukuu, watu wasije wakaanzisha fujo.\"",
+          "R": "Lakini walisema, \"Tusifanye hivyo wakati wa sikukuu. Watu wanaweza kufanya fujo.\""
         }
       },
       "decisions": [
@@ -485,6 +657,16 @@
           "L": "Now while Jesus was in Bethany, in [the] house of Simon the leper, \\v 7 a woman came to {{deity_pronoun:him|Him}} having an alabaster jar of very costly ointment, and she poured [it] on {{deity_pronoun:his|His}} head as {{deity_pronoun:he|He}} was reclining [at table].",
           "B": "While Jesus was at Bethany in the home of Simon, a man who had suffered from a skin disease, \\v 7 a woman came up to {{deity_pronoun:him|Him}} with an alabaster jar of very expensive perfumed oil. As {{deity_pronoun:he|He}} sat at the table, she poured it over {{deity_pronoun:his|His}} head.",
           "R": "Jesus was in the town of Bethany. He was at the house of a man named Simon, who had once had a bad skin disease. \\v 7 While Jesus was eating there, a woman came to {{deity_pronoun:him|Him}}. She had a beautiful stone jar full of perfume that cost a great deal of money. She poured the perfume on {{deity_pronoun:his|His}} head."
+        },
+        "es": {
+          "L": "Y estando Jesús en Betania, en casa de Simón el leproso, \\v 7 se {{deity_pronoun:le|Le}} acercó una mujer que tenía un frasco de alabastro con perfume muy caro, y [lo] derramó sobre {{deity_pronoun:su|Su}} cabeza mientras {{deity_pronoun:él|Él}} estaba recostado [a la mesa].",
+          "B": "Mientras Jesús estaba en Betania, en casa de Simón, un hombre que había padecido una enfermedad de la piel, \\v 7 se {{deity_pronoun:le|Le}} acercó una mujer con un frasco de alabastro lleno de un perfume muy caro. Mientras {{deity_pronoun:él|Él}} estaba sentado a la mesa, ella derramó el perfume sobre {{deity_pronoun:su|Su}} cabeza.",
+          "R": "Jesús estaba en el pueblo de Betania. Estaba en la casa de un hombre llamado Simón, que antes había tenido una enfermedad grave de la piel. \\v 7 Mientras Jesús comía allí, una mujer se {{deity_pronoun:le|Le}} acercó. Traía un hermoso frasco de piedra lleno de un perfume que costaba muchísimo dinero. Derramó el perfume sobre {{deity_pronoun:su|Su}} cabeza."
+        },
+        "sw": {
+          "L": "Na Yesu alipokuwa Bethania, katika nyumba ya Simoni yule mwenye ukoma, \\v 7 mwanamke mmoja alimwendea, akiwa na chupa ya alabasta yenye mafuta ya manukato ya bei ghali sana, akayamwaga juu ya kichwa {{deity_pronoun:chake|Chake}} alipokuwa ameegemea [mezani].",
+          "B": "Yesu alipokuwa Bethania nyumbani kwa Simoni, mtu aliyewahi kuugua ugonjwa wa ngozi, \\v 7 mwanamke mmoja alimjia akiwa na chupa ya alabasta yenye mafuta ya manukato ya bei ghali mno. Alipokuwa ameketi mezani, mwanamke huyo akayamimina mafuta hayo juu ya kichwa {{deity_pronoun:chake|Chake}}.",
+          "R": "Yesu alikuwa katika mji wa Bethania. Alikuwa nyumbani kwa mtu mmoja aitwaye Simoni, ambaye zamani alikuwa na ugonjwa mbaya wa ngozi. \\v 7 Yesu alipokuwa akila chakula huko, mwanamke mmoja alimjia. Alikuwa na chupa nzuri ya jiwe iliyojaa manukato ya bei kubwa sana. Akayamimina manukato hayo juu ya kichwa {{deity_pronoun:chake|Chake}}."
         }
       },
       "decisions": [
@@ -563,6 +745,25 @@
           "reason": "As in 8:2, Balanced and Readable describe the disease. Saying it was in the past follows meaning decision m1 and is not certain.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026006011"
+          ],
+          "choice": "Simoni yule mwenye ukoma",
+          "alternatives": [
+            "Simoni mkoma"
+          ],
+          "reason": "\"Mwenye ukoma\" (who has leprosy) describes the man; \"mkoma\" makes the disease his name. Balanced and Readable say he had suffered from a skin disease, as the English does (meaning decision m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -596,6 +797,16 @@
           "L": "But when the disciples saw [it], they were indignant, saying, \"Why this waste?",
           "B": "Seeing this, the disciples were indignant. They said, \"What is the point of such waste?",
           "R": "When the followers saw this, they were upset. They said, \"Why waste all that perfume?"
+        },
+        "es": {
+          "L": "Pero al ver[lo], los discípulos se indignaron, diciendo: «¿Para qué este desperdicio?",
+          "B": "Al ver esto, los discípulos se indignaron y dijeron: «¿A qué viene semejante derroche?",
+          "R": "Cuando los seguidores vieron esto, se enojaron. Dijeron: «¿Por qué desperdiciar todo ese perfume?"
+        },
+        "sw": {
+          "L": "Lakini wanafunzi walipoona [hayo], walikasirika, wakisema, \"Hasara hii ni ya nini?",
+          "B": "Wanafunzi walipoona hayo, walikasirika, wakasema, \"Kwa nini kupoteza kitu cha thamani namna hii?",
+          "R": "Wanafunzi walipoona hayo, walichukia. Wakasema, \"Kwa nini kumwaga manukato yote hayo bure?"
         }
       },
       "decisions": [
@@ -661,6 +872,16 @@
           "L": "For this could have been sold for much and given to [the] poor.\"",
           "B": "It could have been sold for a large sum and the money given to the poor.\"",
           "R": "It could have been sold for a lot of money. Then the money could have been given to poor people.\""
+        },
+        "es": {
+          "L": "Porque esto podía haberse vendido por mucho y haberse dado a [los] pobres».",
+          "B": "Se podría haber vendido por una gran suma y haber dado el dinero a los pobres».",
+          "R": "Se podría haber vendido por mucho dinero. Y ese dinero se les podría haber dado a los pobres»."
+        },
+        "sw": {
+          "L": "Kwa maana hii ingeweza kuuzwa kwa [bei] kubwa na kupewa maskini.\"",
+          "B": "Yangeweza kuuzwa kwa fedha nyingi, na fedha hizo wakapewa maskini.\"",
+          "R": "Yangeweza kuuzwa kwa fedha nyingi sana. Kisha fedha hizo zingeweza kugawiwa maskini.\""
         }
       },
       "decisions": [
@@ -733,6 +954,16 @@
           "L": "But Jesus, knowing [this], said to them, \"Why do you cause the woman trouble?",
           "B": "Jesus was aware of this and said to them, \"Why make trouble for this woman?",
           "R": "Jesus knew what they were saying. So {{deity_pronoun:he|He}} said to them, \"Why are you upsetting this woman?"
+        },
+        "es": {
+          "L": "Pero Jesús, conociendo [esto], les dijo: «¿Por qué {{plural_you:causan|causáis}} molestias a la mujer?",
+          "B": "Jesús se dio cuenta y les dijo: «¿Por qué {{plural_you:molestan|molestáis}} a esta mujer?",
+          "R": "Jesús sabía lo que estaban diciendo. Por eso les dijo: «¿Por qué {{plural_you:hacen|hacéis}} sentir mal a esta mujer?"
+        },
+        "sw": {
+          "L": "Lakini Yesu, akijua [hayo], akawaambia, \"Kwa nini mnampa mwanamke taabu?",
+          "B": "Yesu alitambua hayo, akawaambia, \"Mbona mnamsumbua mwanamke huyu?",
+          "R": "Yesu alijua walichokuwa wakisema. Basi akawaambia, \"Kwa nini mnamhuzunisha mwanamke huyu?"
         }
       },
       "decisions": [
@@ -768,6 +999,25 @@
           "reason": "The phrase means to give someone grief or annoyance, here by criticizing her.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40026010009"
+          ],
+          "choice": "{{plural_you:causan|causáis}} and the other plural \"you\" forms",
+          "alternatives": [],
+          "reason": "Jesus speaks to the disciples, so every plural \"you\", pronoun or verb, is the reader setting: ustedes (Latin America, the default) or vosotros (Spain). The same through the passage.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -796,6 +1046,16 @@
           "L": "For she has done a beautiful work for {{deity_pronoun:me|Me}}.",
           "B": "What she has done for {{deity_pronoun:me|Me}} is a beautiful thing.",
           "R": "She has done a good and lovely thing for {{deity_pronoun:me|Me}}."
+        },
+        "es": {
+          "L": "Porque ha hecho una obra hermosa para {{deity_pronoun:mí|Mí}}.",
+          "B": "Lo que ha hecho por {{deity_pronoun:mí|Mí}} es algo hermoso.",
+          "R": "Ha hecho algo bueno y bonito por {{deity_pronoun:mí|Mí}}."
+        },
+        "sw": {
+          "L": "Kwa maana amenifanyia kazi nzuri.",
+          "B": "Alichonifanyia ni jambo zuri sana.",
+          "R": "Amenifanyia jambo jema na zuri."
         }
       },
       "decisions": [
@@ -867,6 +1127,16 @@
           "L": "For you always have the poor with you, but you do not always have {{deity_pronoun:me|Me}}.",
           "B": "The poor will always be among you, but I will not always be with you.",
           "R": "There will always be poor people among you. But I will not always be here with you."
+        },
+        "es": {
+          "L": "Porque a los pobres siempre los {{plural_you:tienen|tenéis}} con {{plural_you:ustedes|vosotros}}, pero a {{deity_pronoun:mí|Mí}} no siempre {{deity_pronoun:me|Me}} {{plural_you:tienen|tenéis}}.",
+          "B": "A los pobres siempre los {{plural_you:tendrán|tendréis}} entre {{plural_you:ustedes|vosotros}}, pero yo no siempre estaré con {{plural_you:ustedes|vosotros}}.",
+          "R": "Siempre habrá gente pobre entre {{plural_you:ustedes|vosotros}}. Pero yo no voy a estar siempre aquí con {{plural_you:ustedes|vosotros}}."
+        },
+        "sw": {
+          "L": "Maana maskini mko nao kila wakati, lakini {{deity_pronoun:mimi|Mimi}} hamko nami kila wakati.",
+          "B": "Maskini watakuwa pamoja nanyi siku zote, lakini {{deity_pronoun:mimi|Mimi}} sitakuwa nanyi siku zote.",
+          "R": "Siku zote kutakuwa na watu maskini kati yenu. Lakini {{deity_pronoun:mimi|Mimi}} sitakuwa hapa pamoja nanyi siku zote."
         }
       },
       "decisions": [
@@ -935,6 +1205,24 @@
           "reason": "Balanced and Readable make Jesus the subject, which is more natural English.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40026011008"
+          ],
+          "choice": "{{deity_pronoun:mimi|Mimi}}",
+          "alternatives": [],
+          "reason": "The English Balanced and Readable say \"I\", which takes no span. Swahili keeps the stressed free pronoun \"mimi\" that the Greek has, and it takes the setting when Jesus speaks of himself, as the Swahili style guide sets out.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -972,6 +1260,16 @@
           "L": "For in pouring this ointment on {{deity_pronoun:my|My}} body, she did [it] to prepare {{deity_pronoun:me|Me}} for burial.",
           "B": "By pouring this perfume over {{deity_pronoun:my|My}} body, she has made {{deity_pronoun:me|Me}} ready to be buried.",
           "R": "She put this perfume on {{deity_pronoun:my|My}} body to get {{deity_pronoun:me|Me}} ready to be buried."
+        },
+        "es": {
+          "L": "Porque al derramar ella este perfume sobre {{deity_pronoun:mi|Mi}} cuerpo, lo hizo para prepararme para la sepultura.",
+          "B": "Al derramar este perfume sobre {{deity_pronoun:mi|Mi}} cuerpo, {{deity_pronoun:me|Me}} ha preparado para ser sepultado.",
+          "R": "Ella puso este perfume sobre {{deity_pronoun:mi|Mi}} cuerpo para prepararme para el entierro."
+        },
+        "sw": {
+          "L": "Kwa maana huyu, kwa kuyamimina manukato haya juu ya mwili {{deity_pronoun:wangu|Wangu}}, amefanya hivyo ili kuniandaa kwa maziko.",
+          "B": "Kwa kumimina manukato haya juu ya mwili {{deity_pronoun:wangu|Wangu}}, amenitayarisha kwa ajili ya kuzikwa.",
+          "R": "Ameyapaka manukato haya mwilini {{deity_pronoun:mwangu|Mwangu}} ili kunitayarisha kwa mazishi."
         }
       },
       "decisions": [
@@ -1056,6 +1354,16 @@
           "L": "Truly I tell you, wherever this gospel is proclaimed in the whole world, what this [woman] has done will also be spoken of in memory of her.\"",
           "B": "Truly I tell you, in every place in the whole world where this gospel is proclaimed, people will also tell what she has done, so that she is remembered.\"",
           "R": "I tell you the truth. This good news will be told all over the world. And wherever it is told, people will also tell what this woman did. They will remember her.\""
+        },
+        "es": {
+          "L": "En verdad {{plural_you:les|os}} digo que, dondequiera que se proclame este evangelio en todo el mundo, también se hablará de lo que ella ha hecho, en memoria de ella».",
+          "B": "En verdad {{plural_you:les|os}} digo que en cualquier lugar del mundo entero donde se proclame este evangelio, también se contará lo que ella ha hecho, para que sea recordada».",
+          "R": "{{plural_you:Les|Os}} digo la verdad: esta buena noticia se anunciará por todo el mundo. Y en cualquier lugar donde se anuncie, la gente contará también lo que hizo esta mujer. Así la recordarán»."
+        },
+        "sw": {
+          "L": "Kweli nawaambia, popote Injili hii itakapohubiriwa katika ulimwengu wote, lile alilofanya huyu [mwanamke] litasimuliwa pia kwa ukumbusho wake.\"",
+          "B": "Kweli nawaambia, mahali popote katika ulimwengu mzima ambapo Injili hii itatangazwa, watu watasimulia pia jambo alilofanya, ili akumbukwe.\"",
+          "R": "Nawaambia ukweli: habari njema hii itahubiriwa duniani kote. Na kila mahali itakapohubiriwa, watu watasimulia pia jambo alilofanya mwanamke huyu. Watamkumbuka.\""
         }
       },
       "decisions": [
@@ -1131,6 +1439,52 @@
           "reason": "Readable uses a simpler word for public announcing.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026013001",
+            "n40026013002",
+            "n40026013003",
+            "n40026013008"
+          ],
+          "choice": "En verdad les digo (L, B), Les digo la verdad (R); el evangelio (L, B), la buena noticia (R)",
+          "alternatives": [],
+          "reason": "The renderings of the single \"amen\" and of \"gospel\" used throughout Matthew, recorded once in this passage.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026013001",
+            "n40026013002",
+            "n40026013003",
+            "n40026013008"
+          ],
+          "choice": "Kweli nawaambia (L, B), Nawaambia ukweli (R); Injili (L, B), habari njema (R)",
+          "alternatives": [
+            "Amin, nawaambia"
+          ],
+          "reason": "The renderings of the single \"amen\" and of \"gospel\" used throughout Matthew, recorded once in this passage.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1175,6 +1529,16 @@
           "L": "Then one of the Twelve, the [one] called Judas Iscariot, went to the chief priests \\v 15 [and] said, \"What are you willing to give me? And I will hand {{deity_pronoun:him|Him}} over to you.\"",
           "B": "Then one of the Twelve, the man called Judas Iscariot, went to the chief priests \\v 15 and asked, \"How much will you pay me to hand {{deity_pronoun:him|Him}} over to you?\"",
           "R": "Then Judas Iscariot, one of the twelve followers, went to the leading priests. \\v 15 He asked them, \"What will you pay me if I hand {{deity_pronoun:him|Him}} over to you?\""
+        },
+        "es": {
+          "L": "Entonces, yendo uno de los Doce, el llamado Judas Iscariote, a los jefes de los sacerdotes, \\v 15 [les] dijo: «¿Qué me {{plural_you:quieren|queréis}} dar? Y yo {{plural_you:se|os}} {{deity_pronoun:lo|Lo}} entregaré».",
+          "B": "Entonces uno de los Doce, el llamado Judas Iscariote, fue a los jefes de los sacerdotes \\v 15 y les preguntó: «¿Cuánto me {{plural_you:pagarán|pagaréis}} si {{plural_you:se|os}} {{deity_pronoun:lo|Lo}} entrego?».",
+          "R": "Entonces Judas Iscariote, uno de los doce seguidores, fue a ver a los jefes de los sacerdotes. \\v 15 Les preguntó: «¿Qué me {{plural_you:darán|daréis}} si {{plural_you:se|os}} {{deity_pronoun:lo|Lo}} entrego?»."
+        },
+        "sw": {
+          "L": "Kisha mmoja wa wale Kumi na Wawili, yule aitwaye Yuda Iskariote, akaenda kwa wakuu wa makuhani, \\v 15 akasema, \"Mko tayari kunipa nini? Nami nitamtoa kwenu.\"",
+          "B": "Kisha mmoja wa wale Kumi na Wawili, mtu aitwaye Yuda Iskariote, aliwaendea wakuu wa makuhani, \\v 15 akawauliza, \"Mtanilipa kiasi gani nikimkabidhi kwenu?\"",
+          "R": "Kisha Yuda Iskariote, mmoja wa wanafunzi kumi na wawili, aliwaendea wakuu wa makuhani. \\v 15 Akawauliza, \"Mtanilipa nini nikimkabidhi kwenu?\""
         }
       },
       "decisions": [
@@ -1255,6 +1619,28 @@
           "reason": "Balanced and Readable state the bargain plainly.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40026015007",
+            "n40026015009"
+          ],
+          "choice": "{{plural_you:se|os}} {{deity_pronoun:lo|Lo}}",
+          "alternatives": [
+            "{{plural_you:se lo|os lo}}"
+          ],
+          "reason": "Two settings meet in \"se lo\" (to you, him): \"se\" is the ustedes form of \"to you\" and \"lo\" is Jesus. Each word takes its own span, so the two settings can be switched apart.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1283,6 +1669,16 @@
           "L": "And they weighed out to him thirty pieces of silver.",
           "B": "They paid him thirty silver coins.",
           "R": "So they paid him thirty silver coins."
+        },
+        "es": {
+          "L": "Y ellos le pesaron treinta piezas de plata.",
+          "B": "Ellos le pagaron treinta monedas de plata.",
+          "R": "Entonces ellos le pagaron treinta monedas de plata."
+        },
+        "sw": {
+          "L": "Nao wakampimia sarafu thelathini za fedha.",
+          "B": "Wakamlipa sarafu thelathini za fedha.",
+          "R": "Basi wakamlipa sarafu thelathini za fedha."
         }
       },
       "decisions": [
@@ -1357,6 +1753,28 @@
           "reason": "Balanced and Readable name coins. Because the coin is not named, no modern equivalent is given; meaning decision m3 gives the likely value. Literal keeps the familiar wording.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026015014",
+            "n40026015015"
+          ],
+          "choice": "sarafu thelathini za fedha (every level)",
+          "alternatives": [
+            "vipande thelathini vya fedha"
+          ],
+          "reason": "The Greek word is \"silver [pieces]\", most likely silver coins (meaning decision m3). \"Sarafu\" names a coin plainly; \"vipande\" (pieces) would leave readers asking pieces of what.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1387,6 +1805,16 @@
           "L": "And from then on he was seeking an opportunity to hand {{deity_pronoun:him|Him}} over.",
           "B": "After that, Judas kept looking for the right moment to hand {{deity_pronoun:him|Him}} over.",
           "R": "From then on, Judas waited for a good time to hand Jesus over to them."
+        },
+        "es": {
+          "L": "Y desde entonces buscaba una ocasión oportuna para entregarlo.",
+          "B": "Desde entonces, Judas andaba buscando el momento oportuno para entregarlo.",
+          "R": "Desde ese momento, Judas esperaba una buena ocasión para entregarles a Jesús."
+        },
+        "sw": {
+          "L": "Na tangu hapo alikuwa akitafuta wakati mwafaka ili amtoe.",
+          "B": "Tangu wakati huo Yuda alikuwa akivizia nafasi nzuri ya kumkabidhi.",
+          "R": "Tangu siku hiyo, Yuda alikuwa akisubiri wakati mzuri wa kumkabidhi Yesu kwao."
         }
       },
       "decisions": [

@@ -37,6 +37,16 @@
           "L": "And Jesus went out from the temple and was going away, and {{deity_pronoun:his|His}} disciples came to point out to {{deity_pronoun:him|Him}} the buildings of the temple.",
           "B": "As Jesus came out of the temple and went on {{deity_pronoun:his|His}} way, {{deity_pronoun:his|His}} disciples approached to point out its buildings to {{deity_pronoun:him|Him}}.",
           "R": "Jesus left the temple courts and was walking away. His followers came up to {{deity_pronoun:him|Him}}. They wanted {{deity_pronoun:him|Him}} to look at the temple buildings."
+        },
+        "es": {
+          "L": "Y saliendo Jesús del templo, se iba, y se acercaron {{deity_pronoun:sus|Sus}} discípulos para mostrarle los edificios del templo.",
+          "B": "Cuando Jesús salió del templo y seguía {{deity_pronoun:su|Su}} camino, {{deity_pronoun:sus|Sus}} discípulos se acercaron para mostrarle los edificios del templo.",
+          "R": "Jesús salió de los patios del templo y se iba alejando. Sus seguidores se {{deity_pronoun:le|Le}} acercaron. Querían que mirara los edificios del templo."
+        },
+        "sw": {
+          "L": "Na Yesu, akiwa ametoka hekaluni, alikuwa akienda zake, na wanafunzi {{deity_pronoun:wake|Wake}} wakamjia ili kumwonyesha majengo ya hekalu.",
+          "B": "Yesu alipotoka hekaluni na kuendelea na safari {{deity_pronoun:yake|Yake}}, wanafunzi {{deity_pronoun:wake|Wake}} walimjia ili kumwonyesha majengo ya hekalu.",
+          "R": "Yesu alitoka katika viwanja vya hekalu, akawa anaondoka. Wafuasi {{deity_pronoun:wake|Wake}} walimjia. Walitaka aangalie majengo ya hekalu."
         }
       },
       "decisions": [
@@ -100,6 +110,68 @@
           "reason": "Readable makes clear that Jesus left the whole temple area, and calls the disciples his followers, as in 12:1.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40024001013",
+            "n40024001015"
+          ],
+          "choice": "deity_pronoun spans on separate pronouns and possessives only: sus, su, le (R)",
+          "alternatives": [
+            "a span on every pronoun the English marks"
+          ],
+          "reason": "Spanish usually leaves the subject pronoun out and joins some object pronouns to the verb (\"mostrarle\"), where there is nothing separate to capitalise. So the setting covers fewer words than in English, as in Mark 16. The same through this passage.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40024001002",
+            "n40024001008"
+          ],
+          "choice": "pretérito and imperfecto at every level (salió, se iba)",
+          "alternatives": [],
+          "reason": "Matthew tells this in the past, so all three levels use the Spanish narrative past; Literal keeps the participle as a gerund (\"saliendo\").",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40024001013",
+            "n40024001015"
+          ],
+          "choice": "spans on the possessives wake, yake; none on the object prefix of wakamjia, kumwonyesha",
+          "alternatives": [],
+          "reason": "The English \"him\" takes the setting. Swahili carries it in the object prefix -m- of the verb, which cannot take a capital, so the setting applies only to free pronouns and possessives, as in John. Swahili therefore has fewer spans than English through this passage.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -131,6 +203,16 @@
           "L": "But {{deity_pronoun:he|He}} answered and said to them, \"Do you not see all these things?",
           "B": "In answer {{deity_pronoun:he|He}} said to them, \"You see all this, do you not?",
           "R": "Jesus answered them, \"Do you see all these buildings?"
+        },
+        "es": {
+          "L": "Pero {{deity_pronoun:él|Él}}, respondiendo, les dijo: «¿No {{plural_you:ven|veis}} todas estas cosas?",
+          "B": "Él les respondió: «{{plural_you:Ven|Veis}} todo esto, ¿verdad?",
+          "R": "Jesús les respondió: «¿{{plural_you:Ven|Veis}} todos estos edificios?"
+        },
+        "sw": {
+          "L": "Naye akajibu, akawaambia, \"Hamvioni vitu hivi vyote?",
+          "B": "Akawajibu, \"Mnaviona hivi vyote, sivyo?",
+          "R": "Yesu akawajibu, \"Mnayaona majengo haya yote?"
         }
       },
       "decisions": [
@@ -206,6 +288,16 @@
           "L": "Truly I tell you, there will certainly not be left here a stone upon a stone that will not be thrown down.\"",
           "B": "Truly I tell you, every stone here will be pulled down, until not one is left resting on another.\"",
           "R": "I tell you the truth, all of this will be torn down. Not one stone will be left on top of another.\""
+        },
+        "es": {
+          "L": "En verdad {{plural_you:les|os}} digo que de ningún modo quedará aquí piedra sobre piedra que no sea derribada».",
+          "B": "En verdad {{plural_you:les|os}} digo que todas las piedras de aquí serán derribadas, hasta que no quede una sobre otra».",
+          "R": "{{plural_you:Les|Os}} digo la verdad: todo esto será derribado. No quedará ni una piedra encima de otra»."
+        },
+        "sw": {
+          "L": "Kweli nawaambia, hakika hapa hapatabaki jiwe juu ya jiwe lisilobomolewa.\"",
+          "B": "Kweli nawaambia, kila jiwe la hapa litabomolewa, hata lisibaki jiwe moja juu ya jingine.\"",
+          "R": "Nawaambia ukweli, haya yote yatabomolewa. Hakuna jiwe hata moja litakalobaki juu ya jingine.\""
         }
       },
       "decisions": [
@@ -319,6 +411,52 @@
           "reason": "Balanced and Readable turn the double negative into a plain statement and keep the picture of the stones.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40024002010",
+            "n40024002011",
+            "n40024002012"
+          ],
+          "choice": "En verdad les digo (L, B); Les digo la verdad (R)",
+          "alternatives": [
+            "De cierto os digo"
+          ],
+          "reason": "The wording used for Jesus's single \"amen\" across the New Testament drafts. \"De cierto\" is older church Spanish.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40024002010",
+            "n40024002011",
+            "n40024002012"
+          ],
+          "choice": "Kweli nawaambia (L, B); Nawaambia ukweli (R)",
+          "alternatives": [
+            "Amin, nawaambia"
+          ],
+          "reason": "The wording used for Jesus's single \"amen\" across the New Testament drafts: plain modern Swahili rather than the borrowed \"Amin\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -372,6 +510,16 @@
           "L": "And as {{deity_pronoun:he|He}} was sitting on the Mount of Olives, the disciples came to {{deity_pronoun:him|Him}} privately, saying, \"Tell us, when will these things be, and what [will be] the sign of {{deity_pronoun:your|Your}} coming and of [the] end of the age?\"",
           "B": "Later, while {{deity_pronoun:he|He}} sat on the Mount of Olives, the disciples came to {{deity_pronoun:him|Him}} by themselves and said, \"Tell us when this will take place. And what sign will mark {{deity_pronoun:your|Your}} coming and the close of the age?\"",
           "R": "Later Jesus was sitting on the Mount of Olives. The disciples came to {{deity_pronoun:him|Him}} when {{deity_pronoun:he|He}} was alone. They said, \"Tell us, when will these things happen? What will be the sign that {{deity_pronoun:you|You}} are coming and that the end of this age is here?\""
+        },
+        "es": {
+          "L": "Y estando {{deity_pronoun:él|Él}} sentado en el monte de los Olivos, se {{deity_pronoun:le|Le}} acercaron los discípulos en privado, diciendo: «Dinos, ¿cuándo será esto, y cuál [será] la señal de {{deity_pronoun:tu|Tu}} venida y del fin de la era?».",
+          "B": "Más tarde, mientras {{deity_pronoun:él|Él}} estaba sentado en el monte de los Olivos, los discípulos se {{deity_pronoun:le|Le}} acercaron a solas y le dijeron: «Dinos cuándo sucederá esto. ¿Y qué señal marcará {{deity_pronoun:tu|Tu}} venida y el final de la era?».",
+          "R": "Más tarde, Jesús estaba sentado en el monte de los Olivos. Los discípulos se {{deity_pronoun:le|Le}} acercaron cuando estaba solo. Le dijeron: «Dinos, ¿cuándo pasarán estas cosas? ¿Cuál será la señal de que {{deity_pronoun:tú|Tú}} vienes y de que ha llegado el fin de esta era?»."
+        },
+        "sw": {
+          "L": "Naye alipokuwa ameketi juu ya Mlima wa Mizeituni, wanafunzi walimjia faraghani, wakisema, \"Tuambie, mambo haya yatakuwa lini, na [itakuwa] ishara gani ya kuja {{deity_pronoun:kwako|Kwako}} na ya mwisho wa enzi?\"",
+          "B": "Baadaye, alipokuwa ameketi juu ya Mlima wa Mizeituni, wanafunzi walimwendea wakiwa peke yao, wakasema, \"Tuambie mambo haya yatatokea lini. Na ni ishara gani itakayoonyesha kuja {{deity_pronoun:kwako|Kwako}} na kufika kwa mwisho wa enzi?\"",
+          "R": "Baadaye Yesu alikuwa ameketi juu ya Mlima wa Mizeituni. Wanafunzi walimjia alipokuwa peke yake. Wakasema, \"Tuambie, mambo haya yatatokea lini? Ni ishara gani itakayoonyesha kwamba {{deity_pronoun:wewe|Wewe}} unakuja, na kwamba mwisho wa enzi hii umefika?\""
         }
       },
       "decisions": [
@@ -478,6 +626,54 @@
           "reason": "Balanced and Readable say what \"privately\" means: away from the crowds.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40024003027",
+            "n40024003029",
+            "n40024003031"
+          ],
+          "choice": "tu venida; el fin de la era",
+          "alternatives": [
+            "el fin del mundo",
+            "el fin del siglo"
+          ],
+          "reason": "The question is about the close of the present age, when God judges and sets things right (meaning decision m3), not about the end of the physical world. \"Siglo\" today means a hundred years. \"Venida\" is the arrival of Jesus in glory (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40024003027",
+            "n40024003029",
+            "n40024003031"
+          ],
+          "choice": "kuja kwako; mwisho wa enzi",
+          "alternatives": [
+            "mwisho wa dunia",
+            "mwisho wa ulimwengu"
+          ],
+          "reason": "The question is about the close of the present age, when God judges and sets things right (meaning decision m3), not the end of the physical world, so \"enzi\" (age) rather than \"dunia\". \"Kuja kwako\" is the arrival of Jesus in glory (m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -511,6 +707,16 @@
           "L": "And Jesus answered and said to them, \"Take care that no one misleads you.",
           "B": "Jesus replied, \"Be on your guard, so that nobody leads you astray.",
           "R": "Jesus answered, \"Be careful! Do not let anyone fool you."
+        },
+        "es": {
+          "L": "Y respondiendo Jesús, les dijo: «{{plural_you:Miren|Mirad}} que nadie {{plural_you:los|os}} engañe.",
+          "B": "Jesús les respondió: «{{plural_you:Tengan|Tened}} cuidado de que nadie {{plural_you:los|os}} extravíe.",
+          "R": "Jesús respondió: «¡{{plural_you:Tengan|Tened}} cuidado! No {{plural_you:dejen|dejéis}} que nadie {{plural_you:los|os}} engañe."
+        },
+        "sw": {
+          "L": "Na Yesu akajibu, akawaambia, \"Jihadharini mtu yeyote asije akawapotosha.",
+          "B": "Yesu aliwajibu, \"Kaeni macho, mtu asije akawapoteza.",
+          "R": "Yesu akajibu, \"Jihadharini! Msikubali mtu yeyote awadanganye."
         }
       },
       "decisions": [
@@ -568,6 +774,26 @@
           "reason": "Each level uses a common English warning for the verb \"see\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40024004007",
+            "n40024004010"
+          ],
+          "choice": "plural_you spans on every plural \"you\" and verb (miren|mirad, los|os)",
+          "alternatives": [],
+          "reason": "Spanish has two plural forms of \"you\", Latin American \"ustedes\" (the default) and Peninsular \"vosotros\"; the reader setting chooses between them. English has no such choice, so these spans have no English counterpart. The same throughout the speech.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -605,6 +831,16 @@
           "L": "For many will come in {{deity_pronoun:my|My}} name, saying, 'I am the {{christos:Christ|Messiah}},' and they will mislead many.",
           "B": "Many will come and use {{deity_pronoun:my|My}} name, saying, 'I am the {{christos:Christ|Messiah}},' and they will lead many astray.",
           "R": "Many people will come and use {{deity_pronoun:my|My}} name. They will say, 'I am the {{christos:Christ|Messiah}}!' And they will fool many people."
+        },
+        "es": {
+          "L": "Porque muchos vendrán en {{deity_pronoun:mi|Mi}} nombre, diciendo: “Yo soy el {{christos:Cristo|Mesías}}”, y engañarán a muchos.",
+          "B": "Muchos vendrán usando {{deity_pronoun:mi|Mi}} nombre y dirán: “Yo soy el {{christos:Cristo|Mesías}}”, y extraviarán a muchos.",
+          "R": "Mucha gente vendrá y usará {{deity_pronoun:mi|Mi}} nombre. Dirán: “¡Yo soy el {{christos:Cristo|Mesías}}!”. Y engañarán a mucha gente."
+        },
+        "sw": {
+          "L": "Kwa maana wengi watakuja katika jina {{deity_pronoun:langu|Langu}}, wakisema, 'Mimi ndiye {{christos:Kristo|Masihi}},' nao watawapotosha watu wengi.",
+          "B": "Wengi watakuja wakilitumia jina {{deity_pronoun:langu|Langu}}, wakisema, 'Mimi ndiye {{christos:Kristo|Masihi}},' nao watawapoteza wengi.",
+          "R": "Watu wengi watakuja wakitumia jina {{deity_pronoun:langu|Langu}}. Watasema, 'Mimi ndiye {{christos:Kristo|Masihi}}!' Nao watawadanganya watu wengi."
         }
       },
       "decisions": [
@@ -706,6 +942,16 @@
           "L": "And you are going to hear of wars and reports of wars. See [that] you are not alarmed; for it must happen, but the end is not yet.",
           "B": "You are going to hear of wars, and of news of wars. Take care not to be shaken. These things have to happen, but that does not mean the end has come.",
           "R": "You will hear the noise of wars nearby and news of wars far away. Do not let it frighten you. These things must happen. But it is not yet the end."
+        },
+        "es": {
+          "L": "Y {{plural_you:van|vais}} a oír de guerras y rumores de guerras. {{plural_you:Miren|Mirad}} que no {{plural_you:se alarmen|os alarméis}}; porque es necesario que suceda, pero aún no es el fin.",
+          "B": "{{plural_you:Oirán|Oiréis}} hablar de guerras y de noticias de guerras. {{plural_you:Procuren no alarmarse|Procurad no alarmaros}}. Estas cosas tienen que suceder, pero eso no quiere decir que haya llegado el fin.",
+          "R": "{{plural_you:Oirán|Oiréis}} el ruido de guerras cercanas y noticias de guerras lejanas. No {{plural_you:dejen|dejéis}} que eso {{plural_you:los|os}} asuste. Estas cosas tienen que pasar. Pero todavía no es el fin."
+        },
+        "sw": {
+          "L": "Tena mtakuwa karibu kusikia vita na uvumi wa vita. Jihadharini, msifadhaike; kwa maana ni lazima yatokee, lakini mwisho haujafika bado.",
+          "B": "Mtasikia juu ya vita na habari za vita. Jihadharini msitikiswe. Mambo hayo lazima yatokee, lakini hiyo haimaanishi kwamba mwisho umefika.",
+          "R": "Mtasikia kelele za vita vilivyo karibu na habari za vita vilivyo mbali. Msiogope kwa sababu ya hayo. Mambo hayo lazima yatokee. Lakini bado si mwisho."
         }
       },
       "decisions": [
@@ -821,6 +1067,16 @@
           "L": "For nation will rise against nation and kingdom against kingdom, and there will be famines and earthquakes in [various] places.",
           "B": "Nation will go to war with nation, and kingdom with kingdom. In one place after another there will be famines and earthquakes.",
           "R": "Countries will fight against each other. Kingdoms will attack other kingdoms. In many places people will go hungry, and there will be earthquakes."
+        },
+        "es": {
+          "L": "Porque se levantará nación contra nación y reino contra reino, y habrá hambrunas y terremotos en [distintos] lugares.",
+          "B": "Una nación entrará en guerra con otra, y un reino con otro. En un lugar tras otro habrá hambrunas y terremotos.",
+          "R": "Unos países pelearán contra otros. Unos reinos atacarán a otros reinos. En muchos lugares la gente pasará hambre, y habrá terremotos."
+        },
+        "sw": {
+          "L": "Kwa maana taifa litainuka dhidi ya taifa na ufalme dhidi ya ufalme, na kutakuwa na njaa na matetemeko ya ardhi mahali [mbalimbali].",
+          "B": "Taifa litapigana na taifa, na ufalme na ufalme. Mahali pamoja baada ya pengine kutakuwa na njaa na matetemeko ya ardhi.",
+          "R": "Nchi zitapigana. Falme zitashambulia falme nyingine. Mahali pengi watu watakuwa na njaa, na kutakuwa na matetemeko ya ardhi."
         }
       },
       "decisions": [
@@ -928,6 +1184,16 @@
           "L": "But all these [are the] beginning of birth pains.",
           "B": "Yet all of this is only the start of the birth pains.",
           "R": "But all these things are only the beginning of the pain. It is like the first pains of a woman about to give birth."
+        },
+        "es": {
+          "L": "Pero todo esto [es el] comienzo de [los] dolores de parto.",
+          "B": "Pero todo esto es solo el comienzo de los dolores de parto.",
+          "R": "Pero todas estas cosas son solo el principio del dolor. Es como los primeros dolores de una mujer que está por dar a luz."
+        },
+        "sw": {
+          "L": "Lakini haya yote [ni] mwanzo wa utungu wa kuzaa.",
+          "B": "Hata hivyo, yote hayo ni mwanzo tu wa utungu wa kuzaa.",
+          "R": "Lakini mambo hayo yote ni mwanzo tu wa maumivu. Ni kama uchungu wa kwanza wa mwanamke anayekaribia kujifungua."
         }
       },
       "decisions": [
@@ -1007,6 +1273,16 @@
           "L": "Then they will hand you over to tribulation and will kill you, and you will be hated by all the nations because of {{deity_pronoun:my|My}} name.",
           "B": "Then they will hand you over for harsh treatment and kill you, and all the nations will hate you because of {{deity_pronoun:my|My}} name.",
           "R": "Then people will arrest you and make you suffer. They will kill you. People of every nation will hate you because you belong to {{deity_pronoun:me|Me}}."
+        },
+        "es": {
+          "L": "Entonces {{plural_you:los|os}} entregarán a tribulación y {{plural_you:los|os}} matarán, y {{plural_you:serán|seréis}} odiados por todas las naciones a causa de {{deity_pronoun:mi|Mi}} nombre.",
+          "B": "Entonces {{plural_you:los|os}} entregarán para que {{plural_you:los|os}} maltraten, y {{plural_you:los|os}} matarán, y todas las naciones {{plural_you:los|os}} odiarán por causa de {{deity_pronoun:mi|Mi}} nombre.",
+          "R": "Entonces la gente {{plural_you:los|os}} arrestará y {{plural_you:los|os}} hará sufrir. {{plural_you:Los|Os}} matarán. La gente de todas las naciones {{plural_you:los|os}} odiará porque me {{plural_you:pertenecen|pertenecéis}}."
+        },
+        "sw": {
+          "L": "Ndipo watawatoa ninyi kwa dhiki na kuwaua, nanyi mtachukiwa na mataifa yote kwa sababu ya jina {{deity_pronoun:langu|Langu}}.",
+          "B": "Hapo watawatia mikononi mwa watesi na kuwaua, na mataifa yote yatawachukia kwa sababu ya jina {{deity_pronoun:langu|Langu}}.",
+          "R": "Wakati huo watu watawakamata na kuwatesa. Watawaua. Watu wa kila taifa watawachukia kwa sababu ninyi ni {{deity_pronoun:wangu|Wangu}}."
         }
       },
       "decisions": [
@@ -1139,6 +1415,16 @@
           "L": "And then many will be caused to stumble, and they will hand one another over and will hate one another.",
           "B": "Many will then fall away, handing each other over and hating each other.",
           "R": "Then many people will stop following {{deity_pronoun:me|Me}}. They will turn against each other and hate each other. They will hand each other over to the authorities."
+        },
+        "es": {
+          "L": "Y entonces muchos serán hechos tropezar, y se entregarán unos a otros, y se odiarán unos a otros.",
+          "B": "Entonces muchos abandonarán la fe, y se entregarán y se odiarán unos a otros.",
+          "R": "Entonces mucha gente dejará de seguirme. Se pondrán unos contra otros y se odiarán. Se entregarán unos a otros a las autoridades."
+        },
+        "sw": {
+          "L": "Na wakati huo wengi watakwazwa, nao watakabidhiana wao kwa wao na kuchukiana wao kwa wao.",
+          "B": "Wakati huo wengi wataiacha imani, wakisalitiana na kuchukiana.",
+          "R": "Wakati huo watu wengi wataacha kunifuata. Watageukana na kuchukiana. Watapelekana kwa wenye mamlaka."
         }
       },
       "decisions": [
@@ -1227,6 +1513,16 @@
           "L": "And many false prophets will arise and will mislead many.",
           "B": "False prophets will rise up in great numbers, and they will lead many astray.",
           "R": "Many people will come who say they speak for God but do not. They will fool many others."
+        },
+        "es": {
+          "L": "Y muchos falsos profetas se levantarán y engañarán a muchos.",
+          "B": "Surgirán falsos profetas en gran número, y extraviarán a muchos.",
+          "R": "Vendrán muchas personas que dicen hablar de parte de Dios, pero no es verdad. Engañarán a muchos otros."
+        },
+        "sw": {
+          "L": "Na manabii wengi wa uongo watainuka na kuwapotosha wengi.",
+          "B": "Manabii wa uongo watatokea kwa wingi, nao watawapoteza watu wengi.",
+          "R": "Watakuja watu wengi wanaodai kwamba wanasema kwa niaba ya Mungu, lakini sivyo. Watawadanganya wengine wengi."
         }
       },
       "decisions": [
@@ -1297,6 +1593,16 @@
           "L": "And because lawlessness will be multiplied, the love of the many will grow cold.",
           "B": "As lawlessness spreads, most people's love will cool.",
           "R": "People will break God's law more and more. Because of this, the love most people have will grow cold."
+        },
+        "es": {
+          "L": "Y por haberse multiplicado el desprecio de la ley, se enfriará el amor de los muchos.",
+          "B": "Como el desprecio por la ley de Dios se extenderá, el amor de la mayoría se enfriará.",
+          "R": "La gente desobedecerá la ley de Dios cada vez más. Por eso, el amor que tiene la mayoría se enfriará."
+        },
+        "sw": {
+          "L": "Na kwa sababu ya kuongezeka kwa kutokujali sheria, upendo wa wengi utapoa.",
+          "B": "Kadiri dharau kwa sheria ya Mungu inavyoenea, upendo wa watu walio wengi utafifia.",
+          "R": "Watu watazidi kuivunja sheria ya Mungu. Kwa sababu hiyo, upendo walio nao watu wengi utapoa."
         }
       },
       "decisions": [
@@ -1354,6 +1660,48 @@
           "reason": "Readable says whose law is meant.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40024012006"
+          ],
+          "choice": "el desprecio de la ley (L); el desprecio por la ley de Dios (B)",
+          "alternatives": [
+            "la iniquidad",
+            "la maldad"
+          ],
+          "reason": "Disregard for God's law (meaning decision m1), with the wording used for the same word in 23:28.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40024012006"
+          ],
+          "choice": "kutokujali sheria (L); dharau kwa sheria ya Mungu (B)",
+          "alternatives": [
+            "maasi",
+            "uovu"
+          ],
+          "reason": "Disregard for God's law (meaning decision m1), with the wording used for the same word in 23:28.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1383,6 +1731,16 @@
           "L": "But the one who endures to [the] end, this [one] will be saved.",
           "B": "But whoever holds out to the end will be saved.",
           "R": "But anyone who stays faithful to the end will be saved."
+        },
+        "es": {
+          "L": "Pero el que persevere hasta [el] fin, ese será salvo.",
+          "B": "Pero quien se mantenga firme hasta el fin será salvo.",
+          "R": "Pero cualquiera que siga siendo fiel hasta el final será salvado."
+        },
+        "sw": {
+          "L": "Lakini yeye atakayevumilia hadi mwisho, huyo ataokolewa.",
+          "B": "Lakini yeyote atakayesimama imara mpaka mwisho ataokolewa.",
+          "R": "Lakini yeyote atakayeendelea kuwa mwaminifu mpaka mwisho ataokolewa."
         }
       },
       "decisions": [
@@ -1503,6 +1861,16 @@
           "L": "And this gospel of the kingdom will be proclaimed in the whole inhabited world as a testimony to all the nations, and then the end will come.",
           "B": "This gospel of the kingdom will be announced throughout the world, so that every nation hears the witness, and only then will the end come.",
           "R": "This good news about God's kingdom will be told everywhere in the world. People of every nation will hear it. Then the end will come."
+        },
+        "es": {
+          "L": "Y este evangelio del reino será proclamado en todo el mundo habitado como testimonio a todas las naciones, y entonces vendrá el fin.",
+          "B": "Este evangelio del reino será anunciado en todo el mundo, para que todas las naciones oigan el testimonio, y solo entonces vendrá el fin.",
+          "R": "Esta buena noticia del reino de Dios se contará en todas partes del mundo. La gente de todas las naciones la oirá. Entonces vendrá el fin."
+        },
+        "sw": {
+          "L": "Na Injili hii ya ufalme itahubiriwa katika dunia yote yenye watu, iwe ushahidi kwa mataifa yote, kisha mwisho utafika.",
+          "B": "Injili hii ya ufalme itatangazwa duniani kote, ili kila taifa lisikie ushahidi wake, na hapo ndipo mwisho utakapokuja.",
+          "R": "Habari njema kuhusu ufalme wa Mungu itaelezwa kila mahali ulimwenguni. Watu wa kila taifa wataisikia. Kisha mwisho utakuja."
         }
       },
       "decisions": [
@@ -1601,6 +1969,46 @@
             "gospel of the kingdom"
           ],
           "reason": "As in 4:23, Readable says \"good news\" and whose kingdom it is.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40024014005"
+          ],
+          "choice": "el evangelio (L, B); la buena noticia (R)",
+          "alternatives": [
+            "las buenas nuevas"
+          ],
+          "reason": "The term used across the New Testament drafts: \"evangelio\" names the message at Literal and Balanced; Readable says what the word means, as the English \"good news\" does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40024014005"
+          ],
+          "choice": "Injili (L, B); habari njema (R)",
+          "alternatives": [],
+          "reason": "The term used across the New Testament drafts: \"Injili\" names the message at Literal and Balanced; Readable says what it means, as the English \"good news\" does.",
           "uncertain": false,
           "footnote": false
         }
