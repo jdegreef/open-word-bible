@@ -1317,6 +1317,27 @@ body.plain .echo-tags { display: none; }
   body.xr-on .text { max-width: min(29em, calc(100% - var(--xr-w) - var(--xr-gap))); }
   body.xr-on .xr-margin { display: block; }
 }
+/* Where the margin has no room: a small dot by the number of a verse with
+   cross-references, which opens their previews. Its tap target is larger
+   than the dot. */
+.xr-mark { display: none; }
+@media (max-width: 1179px) {
+  body.xr-on .xr-mark {
+    display: inline-block; position: relative; width: 6px; height: 6px; margin: 0 1px 0 3px; padding: 0;
+    border: 0; border-radius: 50%; background: var(--accent); opacity: .5; vertical-align: .35em; cursor: pointer;
+  }
+  body.xr-on .xr-mark::after { content: ""; position: absolute; inset: -11px -9px; }
+  body.xr-on .xr-mark[aria-expanded="true"], body.xr-on .xr-mark:hover { opacity: 1; }
+  body.xr-on .xr-mark:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; opacity: 1; }
+}
+/* A cross-reference's preview (a footnote's popover, web/reader.js). */
+.xr-pop { max-height: min(60vh, 440px); overflow: auto; overscroll-behavior: contain; }
+.xr-pop-item + .xr-pop-item { margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--line); }
+.xr-pop-text { font-family: var(--read-font); font-size: 16.5px; line-height: 1.55; margin: 4px 0 6px; }
+.xr-pop-text sup { font-family: var(--sans); font-size: 11px; color: var(--accent); font-weight: 700; margin: 0 2px 0 1px; }
+.xr-pop .xref-src { font-size: 12.5px; color: var(--muted); margin: 0 0 6px; }
+.xr-pop .empty { color: var(--muted); margin: 4px 0 6px; }
+a.fn-pop-more { display: inline-block; text-decoration: none; }
 .xr-list { list-style: none; margin: 0; padding: 0; font-size: 15px; line-height: 1.5; }
 .xr-list li { padding: 3px 0; }
 .xr-list .xr-link { color: var(--accent); }

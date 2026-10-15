@@ -124,6 +124,13 @@ passages on the same subject; the reasoning panel lists a chosen sentence's
 all, so phones have them too. They come from OpenBible.info's crowd-voted
 cross-references (CC BY, credited on the page), not from us: like headings
 they are an aid, not translation, and the reader can hide them.
+Pointing at a reference (tapping it on a touch screen) previews the
+passage without leaving the page; on phones, where the margin has no room, a
+small dot by a verse number opens its references' previews. The margin shows
+in the Study and Interlinear views. Previews read `/verses/<BOOK>/<chapter>.json`,
+one small file per chapter written by the build: our text at every level, with
+its reader-setting spans, or for a verse not translated yet the comparison
+text, labelled as not ours.
 `scripts/extract_crossrefs.py` keeps each verse's most-voted few in
 `data/crossrefs/<BOOK>.json`, with both ends in our verse numbering
 (`owb/crossrefs.py`), so the build needs no source clone.

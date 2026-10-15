@@ -1099,7 +1099,12 @@ def chapter_page(book, chapter, lang="en"):
             "compare": comparison_verses(records, lang),
             "cards": word_cards(records, words, lang),
             "headings": {r["id"]: headings()[r["id"]] for r in records if r["id"] in headings()},
-            "crossrefs": chapter_crossrefs(records)}
+            "crossrefs": chapter_crossrefs(records),
+            # Where previews of other verses come from (verse_files), and the
+            # comparison edition for verses not translated yet: the page
+            # language's, then the World English Bible.
+            "verses": {"url": f"/{VERSES_DIR}/",
+                       "compare": [list(COMPARISON.get(lang, COMPARISON_DEFAULT)), list(COMPARISON_DEFAULT)]}}
     # Each morphology code's description in every language, once per page.
     data["uses"] = word_uses()[1]
     # Names before a chapter number ("Psalm 23:1"), for "Book 1:2" links.
@@ -1490,6 +1495,66 @@ def opening_verse(records, chapter, lang="en"):
     settings: what its Read-page card and its share card quote. In English
     when that sentence is not yet in lang."""
     return verse_text(*opening(records, chapter), lang)
+
+
+# Previews of other verses (web/reader.js, cross-references): one small file
+# per chapter, /verses/<BOOK>/<chapter>.json, fetched only when a reader
+# points at a reference into it. Our text at every level, in every language
+# it has, with its reader-setting spans and poetry lines kept so the preview
+# follows the reader's settings; a verse we have not translated yet has the
+# comparison text instead (data/comparison/), in our verse numbering and
+# labelled as not ours by the reader.
+#   {"v": {"16": {"en": {"L": ..., "B": ..., "R": ...}, ...}},
+#    "c": {"web": {"17": "..."}, "rv1909": {"17": "..."}}}
+VERSES_DIR = "verses"
+COMPARISON_EDITIONS = ("web", "rv1909")
+
+
+def record_verses(r):
+    """{verse id: {lang: {level: text}}} for one record, split at its verse
+    markers. A record's markers follow its refs in order."""
+    out = {}
+    for lang, levels in r["renderings"].items():
+        for level, text in levels.items():
+            parts = markup.split_verses(text)
+            if len(parts) != len(r["refs"]):
+                continue
+            for vid, (_, part) in zip(r["refs"], parts):
+                out.setdefault(vid, {}).setdefault(lang, {})[level] = part.strip()
+    return out
+
+
+def verse_files():
+    """{path: text} for every chapter of the Bible (see VERSES_DIR)."""
+    ours, seen = {}, set()
+    for book, chapter in chapters():
+        for r in load_chapter(book, chapter)[0]:
+            if r["id"] in seen:
+                continue
+            seen.add(r["id"])
+            for vid, langs in record_verses(r).items():
+                into = ours.setdefault(vid, {})
+                for lang, levels in langs.items():
+                    # Two sentences in one verse (Philippians 4:5): one text.
+                    have = into.setdefault(lang, {})
+                    for level, text in levels.items():
+                        have[level] = f"{have[level]} {text}" if level in have else text
+    by_chapter = {}
+    for vid, langs in ours.items():
+        ref = refs.parse(vid)
+        by_chapter.setdefault((ref.book, ref.chapter), {"v": {}})["v"][str(ref.verse)] = langs
+    for code in COMPARISON_EDITIONS:
+        moved = {}
+        for eid, text in comparison_text(code).items():
+            for ref in versification.to_source(refs.parse(eid)):
+                moved[ref] = f"{moved[ref]} {text}" if ref in moved else text
+        for ref, text in moved.items():
+            if str(ref) in ours:
+                continue
+            entry = by_chapter.setdefault((ref.book, ref.chapter), {"v": {}})
+            entry.setdefault("c", {}).setdefault(code, {})[str(ref.verse)] = text
+    return {f"{VERSES_DIR}/{book}/{chapter}.json": json.dumps(entry, ensure_ascii=False, separators=(",", ":"))
+            for (book, chapter), entry in by_chapter.items()}
 
 
 def verse_text(r, vid, lang="en"):
@@ -3729,6 +3794,7 @@ def build(out):
     files["manifest.webmanifest"] = manifest()
     files["sw.js"] = service_worker()
     files["word-uses.json"] = word_uses()[0]
+    files.update(verse_files())
     for lang in LANGUAGES:
         files[f"search-{lang}.json"] = search_index(lang)
         files[f"search-ui-{lang}.json"] = search_ui(lang)

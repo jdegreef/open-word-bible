@@ -572,6 +572,33 @@ class SiteTest(unittest.TestCase):
         self.assertIn('data-setting="crossrefs"', page)
         self.assertIn('id="xr-margin"', page)
 
+    def test_every_chapter_has_a_preview_file(self):
+        # Cross-reference previews fetch /verses/<BOOK>/<chapter>.json: one
+        # for every chapter of the Bible, ours where translated, otherwise
+        # the comparison text in our verse numbering.
+        files = sorted((self.out / build_site.VERSES_DIR).glob("*/*.json"))
+        self.assertEqual(len(files), sum(build_site.BOOK_CHAPTERS.values()))
+        john = json.loads((self.out / "verses" / "JHN" / "3.json").read_text(encoding="utf-8"))
+        record = next(r for r in build_site.load_chapter("JHN", 3)[0] if "JHN.3.16" in r["refs"])
+        self.assertEqual(set(john["v"]["16"]["en"]), {"L", "B", "R"})
+        self.assertIn("{{", john["v"]["16"]["en"]["B"])   # settings kept for the reader
+        self.assertEqual(john["v"]["16"]["en"]["B"], build_site.record_verses(record)["JHN.3.16"]["en"]["B"])
+        self.assertNotIn("c", john)
+        data = self.chapter_data("es/jhn/3")
+        self.assertEqual(data["verses"]["url"], "/verses/")
+        self.assertEqual(data["verses"]["compare"][0][0], "rv1909")
+
+    def test_preview_files_number_untranslated_verses_as_we_do(self):
+        # A chapter with comparison text has it under our verse numbers:
+        # English Psalm 3:1 is our Psalm 3:2, after the title.
+        for path in sorted((self.out / build_site.VERSES_DIR).glob("*/*.json")):
+            data = json.loads(path.read_text(encoding="utf-8"))
+            for code, verses in data.get("c", {}).items():
+                self.assertIn(code, build_site.COMPARISON_EDITIONS)
+                self.assertFalse(set(verses) & set(data.get("v", {})), path)
+        moved = build_site.versification.to_source(build_site.refs.parse("PSA.3.1"))
+        self.assertEqual([str(r) for r in moved], ["PSA.3.2"])
+
     def test_summary_stands_under_the_title(self):
         page = (self.out / "1ti" / "5" / "index.html").read_text(encoding="utf-8")
         summary = html.escape(build_site.summaries()[("1TI", 5)]["en"])
