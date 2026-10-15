@@ -352,9 +352,9 @@ against Postgres (`render.yaml`). It holds:
 - **api**: read-only JSON at `/api/editions/`, `/api/text/<BOOK>/<ch>/`,
   `/api/passages/<BOOK>/<ch>/` and `/api/search/?q=…&lang=…`. The Django
   admin at `/admin/` is the first review tool.
-- **search** (in translation): `import_content` rebuilds the search tables
-  from `search_documents` in `scripts/build_site.py`, in every site
-  language. Words are matched by the
+- **search** (in translation): `import_content` brings the search tables
+  up to date with `search_documents` in `scripts/build_site.py`, in every
+  site language, rewriting only the entries whose documents changed. Words are matched by the
   language of their own text, with accents ignored and stemming for English,
   Spanish and French (Swahili matches whole words and their beginnings).
   `/api/search/` returns the best of each kind (passages, verses, notes,
@@ -374,6 +374,7 @@ Local setup:
     python backend/manage.py test backend_tests           # needs Postgres
 
 On Render (render.yaml) every deploy migrates, runs `import_texts --missing`
-(which fetches and imports only the editions not yet loaded) and reloads
-content/. Errors and warnings go to the log, and to Sentry when `SENTRY_DSN`
+(which fetches and imports only the editions not yet loaded) and imports the
+content/ files changed since the last deploy (`import_content --all` imports
+every file and rewrites all of search). Errors and warnings go to the log, and to Sentry when `SENTRY_DSN`
 is set; no query strings or searches are sent.

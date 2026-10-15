@@ -5,7 +5,7 @@ import sys
 
 from django.conf import settings
 from django.core.cache import cache
-from django.test import TestCase
+from django.test import SimpleTestCase, TestCase
 
 from api import views
 from backend_tests.test_backend import import_content, load_extract_words
@@ -51,15 +51,42 @@ class SearchTest(TestCase):
                          sorted(build_site.LANGUAGES))
         for lang in build_site.LANGUAGES:
             docs = build_site.search_documents(lang)["docs"]
-            entries = SearchEntry.objects.filter(language=lang).order_by("position")
+            entries = SearchEntry.objects.filter(language=lang).order_by("position", "sub")
             self.assertEqual(entries.count(), len(docs), lang)
             self.assertEqual(entries.first().doc, docs[0])
             self.assertFalse(entries.filter(vector__isnull=True).exists())
 
     def test_rebuild_replaces_rather_than_adds(self):
         before = SearchEntry.objects.count()
-        search.rebuild()
+        search.rebuild(full=True)
         self.assertEqual(SearchEntry.objects.count(), before)
+
+    def test_rebuild_rewrites_only_what_changed(self):
+        ids = set(SearchEntry.objects.values_list("id", flat=True))
+        changes = search.rebuild()
+        self.assertEqual(set(SearchEntry.objects.values_list("id", flat=True)), ids)
+        self.assertFalse([c for c in changes.values() if c.added or c.removed])
+        # An entry whose document changed, and one the site no longer has,
+        # are replaced; the new documents' entries go in their place in order.
+        first, second = SearchEntry.objects.filter(language="en", kind="v").order_by("position", "sub")[:2]
+        first.doc = {**first.doc, "u": "/stale/"}
+        first.save()
+        changes = search.rebuild()
+        self.assertEqual((changes["en"].added, changes["en"].removed), (1, 1))
+        self.assertFalse(SearchEntry.objects.filter(id=first.id).exists())
+        self.assertTrue(SearchEntry.objects.filter(id=second.id).exists())
+        docs = build_site.search_documents("en")["docs"]
+        entries = SearchEntry.objects.filter(language="en").order_by("position", "sub")
+        self.assertEqual([e.doc for e in entries], docs)
+        self.assertFalse(entries.filter(vector__isnull=True).exists())
+
+    def test_jsonb_text_matches_postgres(self):
+        # plan() matches stored entries by this key, worked out here for new
+        # documents and by Postgres for stored ones.
+        for e in SearchEntry.objects.filter(language="en").order_by("?")[:200]:
+            self.assertEqual(search.key(e.config, e.doc),
+                             SearchEntry.objects.filter(id=e.id).extra(select={"k": search.KEY_SQL})
+                             .values_list("k", flat=True).get())
 
     # ---- Matching ---------------------------------------------------------
 
@@ -141,7 +168,7 @@ class SearchTest(TestCase):
         in_order = plain(self.every("grace", "note", sort="order"))
         self.assertEqual(len(in_order), self.get(q="grace", lang="en")["totals"]["note"])
         self.assertCountEqual([str(d) for d in in_order], [str(d) for d in by_relevance])
-        positions = {str(e.doc): e.position for e in SearchEntry.objects.filter(language="en", kind="n")}
+        positions = {str(e.doc): (e.position, e.sub) for e in SearchEntry.objects.filter(language="en", kind="n")}
         order = [positions[str(d)] for d in in_order]
         self.assertEqual(order, sorted(order))
         # A page carries every kind's count too, as the site's filters show them.
@@ -207,3 +234,34 @@ class SearchNotReadyTest(TestCase):
     def test_before_the_first_import(self):
         response = self.client.get("/api/search/", {"q": "light"})
         self.assertEqual(response.status_code, 503)
+
+
+class PlanTest(SimpleTestCase):
+    """search.plan: which stored entries a rebuild keeps, and where new ones go."""
+
+    def test_unchanged_keeps_everything(self):
+        old = [(1, 0, 0, "a"), (2, 1, 0, "b")]
+        self.assertEqual(search.plan(old, ["a", "b"]), ([], []))
+
+    def test_insert_goes_after_the_entry_before_it(self):
+        old = [(1, 0, 0, "a"), (2, 1, 0, "b"), (3, 2, 0, "c")]
+        self.assertEqual(search.plan(old, ["a", "x", "y", "b", "c", "z"]),
+                         ([], [(1, 0, 1), (2, 0, 2), (5, 2, 1)]))
+
+    def test_changed_and_removed_are_deleted(self):
+        old = [(1, 0, 0, "a"), (2, 1, 0, "b"), (3, 2, 0, "c")]
+        self.assertEqual(search.plan(old, ["a", "B", "d"]), ([2, 3], [(1, 0, 1), (2, 0, 2)]))
+
+    def test_repeated_keys_match_in_order(self):
+        old = [(1, 0, 0, "a"), (2, 1, 0, "a")]
+        self.assertEqual(search.plan(old, ["a", "a", "a"]), ([], [(2, 1, 1)]))
+
+    def test_no_room_before_the_first_or_between_subs(self):
+        self.assertIsNone(search.plan([(1, 0, 0, "a")], ["x", "a"]))
+        self.assertEqual(search.plan([(1, 3, 0, "a")], ["x", "a"]), ([], [(0, 2, 0)]))
+        old = [(1, 0, 1, "a"), (2, 0, 2, "b")]
+        self.assertIsNone(search.plan(old, ["a", "x", "b"]))
+
+    def test_empty(self):
+        self.assertEqual(search.plan([], ["a", "b"]), ([], [(0, 0, 0), (1, 0, 1)]))
+        self.assertEqual(search.plan([(1, 0, 0, "a")], []), ([1], []))
