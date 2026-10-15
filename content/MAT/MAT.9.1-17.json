@@ -29,6 +29,16 @@
           "L": "And getting into a boat, {{deity_pronoun:he|He}} crossed over and came to {{deity_pronoun:his|His}} own town.",
           "B": "So Jesus got back into the boat, crossed the lake, and came to the town where {{deity_pronoun:he|He}} lived.",
           "R": "Jesus got into a boat and went back across the lake to the town where {{deity_pronoun:he|He}} lived."
+        },
+        "es": {
+          "L": "Y subiendo a una barca, cruzó y llegó a {{deity_pronoun:su|Su}} propia ciudad.",
+          "B": "Jesús subió de nuevo a la barca, cruzó el lago y llegó a la ciudad donde vivía.",
+          "R": "Jesús subió a una barca y volvió al otro lado del lago, a la ciudad donde vivía."
+        },
+        "sw": {
+          "L": "Na akiingia katika mashua, alivuka, akafika katika mji {{deity_pronoun:wake|Wake}} {{deity_pronoun:mwenyewe|Mwenyewe}}.",
+          "B": "Basi Yesu alipanda tena mashua, akavuka ziwa, akafika katika mji alimokuwa akiishi.",
+          "R": "Yesu alipanda mashua, akavuka ziwa kurudi katika mji alimoishi."
         }
       },
       "decisions": [
@@ -69,6 +79,46 @@
           "reason": "Balanced and Readable name Jesus and say what he crossed.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40009001010"
+          ],
+          "choice": "deity_pronoun spans only on separate pronouns, unattached object pronouns and possessives: él, lo, le, su, sus, tus",
+          "alternatives": [
+            "a span on every pronoun the English marks"
+          ],
+          "reason": "Spanish usually leaves the subject pronoun out and joins some object pronouns to the verb (\"sígueme\"), where there is nothing separate to capitalise. So the setting covers fewer words than in English. This holds for the whole passage.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40009001010"
+          ],
+          "choice": "deity_pronoun spans only on free pronouns and possessives (mji wake mwenyewe), not on verb prefixes",
+          "alternatives": [],
+          "reason": "Swahili carries most pronouns in the verb prefixes, which cannot take a capital, so the setting applies only to free pronouns and possessives, as in John and Mark. Swahili therefore has fewer spans than English throughout the passage.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -99,6 +149,16 @@
           "L": "And look, they were bringing to {{deity_pronoun:him|Him}} a paralyzed man lying on a bed.",
           "B": "Some people brought {{deity_pronoun:him|Him}} a paralyzed man lying on a stretcher.",
           "R": "Some people brought to {{deity_pronoun:him|Him}} a man who could not walk. He was lying on a mat."
+        },
+        "es": {
+          "L": "Y mira, {{deity_pronoun:le|Le}} traían un paralítico echado sobre un lecho.",
+          "B": "Unas personas {{deity_pronoun:le|Le}} trajeron un paralítico acostado en una camilla.",
+          "R": "Unas personas {{deity_pronoun:le|Le}} llevaron a un hombre que no podía caminar. Estaba acostado en una estera."
+        },
+        "sw": {
+          "L": "Na tazama, walikuwa wakimletea mtu aliyepooza, amelazwa juu ya kitanda.",
+          "B": "Watu fulani walimletea mtu aliyepooza, akiwa amelala juu ya machela.",
+          "R": "Watu fulani walimletea Yesu mtu ambaye hakuweza kutembea. Alikuwa amelala juu ya mkeka."
         }
       },
       "decisions": [
@@ -176,6 +236,16 @@
           "L": "And seeing their faith, Jesus said to the paralyzed man, \"Take heart, child; your sins are forgiven.\"",
           "B": "Jesus saw their faith and said to the man, \"Be encouraged, my son. Your sins are forgiven.\"",
           "R": "Jesus saw that they had faith in {{deity_pronoun:him|Him}}. He said to the man, \"Cheer up, my friend! Your sins are forgiven.\""
+        },
+        "es": {
+          "L": "Y viendo Jesús la fe de ellos, dijo al paralítico: «Ánimo, hijo; tus pecados son perdonados».",
+          "B": "Al ver la fe de ellos, Jesús le dijo al paralítico: «¡Ánimo, hijo mío! Tus pecados quedan perdonados».",
+          "R": "Jesús vio que tenían fe en {{deity_pronoun:él|Él}}. Le dijo al hombre: «¡Anímate, amigo! Tus pecados están perdonados»."
+        },
+        "sw": {
+          "L": "Na Yesu, alipoiona imani yao, akamwambia yule aliyepooza, \"Jipe moyo, mtoto; dhambi zako zinasamehewa.\"",
+          "B": "Yesu alipoona imani yao, alimwambia yule mtu, \"Jipe moyo, mwanangu. Dhambi zako zimesamehewa.\"",
+          "R": "Yesu aliona kwamba walimwamini. Akamwambia yule mtu, \"Changamka, rafiki yangu! Dhambi zako zimesamehewa.\""
         }
       },
       "decisions": [
@@ -248,6 +318,25 @@
           "reason": "Balanced and Readable use natural English for a kind address.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40009002021"
+          ],
+          "choice": "zinasamehewa (are being forgiven) at Literal; zimesamehewa (have been forgiven) at Balanced and Readable",
+          "alternatives": [
+            "zimesamehewa at every level"
+          ],
+          "reason": "The Greek present says that God forgives them now, and Jesus declares it (meaning decision m2). Literal keeps the present; Balanced and Readable use the perfect, the usual Swahili way to announce something done and standing.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -280,6 +369,16 @@
           "L": "And look, some of the scribes said to themselves, \"This [man] blasphemes.\"",
           "B": "At this some of the scribes said to themselves, \"This man is insulting God!\"",
           "R": "Some of the teachers of the law thought, \"This man is speaking as if he were God!\""
+        },
+        "es": {
+          "L": "Y mira, algunos de los escribas dijeron dentro de sí: «Este blasfema».",
+          "B": "Entonces algunos de los escribas dijeron para sí: «¡Este hombre está insultando a Dios!».",
+          "R": "Algunos de los maestros de la ley pensaron: «¡Este hombre habla como si fuera Dios!»."
+        },
+        "sw": {
+          "L": "Na tazama, baadhi ya waandishi wakasema ndani yao, \"Huyu anakufuru.\"",
+          "B": "Ndipo baadhi ya waandishi walisema mioyoni mwao, \"Mtu huyu anamtukana Mungu!\"",
+          "R": "Baadhi ya walimu wa sheria walifikiri, \"Mtu huyu anazungumza kana kwamba yeye ni Mungu!\""
         }
       },
       "decisions": [
@@ -339,6 +438,48 @@
           "reason": "As in 1:20, Literal uses \"look\" and Balanced and Readable carry the word's force in the flow of the sentence.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40009003005"
+          ],
+          "choice": "escribas (L, B); maestros de la ley (R)",
+          "alternatives": [
+            "maestros de la ley (every level)"
+          ],
+          "reason": "The term used across the New Testament drafts: Literal and Balanced keep the title \"escribas\"; Readable says what these men were, teachers of the law, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40009003005"
+          ],
+          "choice": "waandishi (L, B); walimu wa sheria (R)",
+          "alternatives": [
+            "walimu wa sheria (every level)"
+          ],
+          "reason": "The term used across the New Testament drafts: Literal and Balanced keep the title, \"waandishi\"; Readable says what these men were, teachers of the law, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -376,6 +517,16 @@
           "L": "And Jesus, knowing their thoughts, said, \"Why do you think evil in your hearts?",
           "B": "Jesus knew what they were thinking and said, \"Why do you think such evil things in your hearts?",
           "R": "Jesus knew what they were thinking. So {{deity_pronoun:he|He}} said, \"Why are you thinking such evil things?"
+        },
+        "es": {
+          "L": "Y conociendo Jesús los pensamientos de ellos, dijo: «¿Por qué {{plural_you:piensan|pensáis}} cosas malas en {{plural_you:sus|vuestros}} corazones?",
+          "B": "Jesús sabía lo que estaban pensando, y dijo: «¿Por qué {{plural_you:piensan|pensáis}} cosas tan malas en {{plural_you:su|vuestro}} corazón?",
+          "R": "Jesús sabía lo que estaban pensando. Por eso dijo: «¿Por qué {{plural_you:están|estáis}} pensando cosas tan malas?"
+        },
+        "sw": {
+          "L": "Na Yesu, akijua mawazo yao, akasema, \"Kwa nini mnawaza maovu mioyoni mwenu?",
+          "B": "Yesu alijua walichokuwa wakiwaza, akasema, \"Mbona mnawaza mambo mabaya namna hii mioyoni mwenu?",
+          "R": "Yesu alijua walichokuwa wakifikiri. Kwa hiyo akasema, \"Kwa nini mnafikiri mambo mabaya namna hii?"
         }
       },
       "decisions": [
@@ -415,6 +566,25 @@
           "reason": "Accusing God's agent of blasphemy is itself wrong in God's sight.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40009004010"
+          ],
+          "choice": "plural_you spans on the words addressed to the scribes and others (piensan|pensáis, sus|vuestros)",
+          "alternatives": [],
+          "reason": "Spanish has two plural forms of \"you\", Latin American \"ustedes\" and Peninsular \"vosotros\"; the setting chooses between them, with \"ustedes\" as the default. English has no such choice, so these spans have no English counterpart. The same throughout the passage.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -451,6 +621,16 @@
           "L": "For which is easier, to say, 'Your sins are forgiven,' or to say, 'Get up and walk'?",
           "B": "Which is easier: to say, 'Your sins are forgiven,' or to say, 'Get up and walk'?",
           "R": "Is it easier to say to this man, 'Your sins are forgiven,' or to say, 'Get up and walk'?"
+        },
+        "es": {
+          "L": "Pues ¿qué es más fácil: decir “Tus pecados son perdonados”, o decir “Levántate y camina”?",
+          "B": "¿Qué es más fácil, decir “Tus pecados quedan perdonados” o decir “Levántate y camina”?",
+          "R": "¿Qué es más fácil decirle a este hombre: “Tus pecados están perdonados”, o “Levántate y camina”?"
+        },
+        "sw": {
+          "L": "Kwa maana ni lipi lililo rahisi zaidi, kusema, 'Dhambi zako zinasamehewa,' au kusema, 'Inuka utembee'?",
+          "B": "Ni lipi lililo rahisi zaidi: kusema, 'Dhambi zako zimesamehewa,' au kusema, 'Simama utembee'?",
+          "R": "Je, ni rahisi zaidi kumwambia mtu huyu, 'Dhambi zako zimesamehewa,' au kumwambia, 'Simama, utembee'?"
         }
       },
       "decisions": [
@@ -534,6 +714,16 @@
           "L": "But so that you may know that the Son of Man has authority on earth to forgive sins\"—then {{deity_pronoun:he|He}} says to the paralyzed man—\"Get up, take up your bed and go to your home.\"",
           "B": "But I want you to know that the Son of Man has authority on earth to forgive sins.\" Then {{deity_pronoun:he|He}} said to the paralyzed man, \"Get up, pick up your stretcher, and go home.\"",
           "R": "I will show you that the Son of Man has the right to forgive sins here on earth.\" Then {{deity_pronoun:he|He}} said to the man who could not walk, \"Get up, pick up your mat, and go home.\""
+        },
+        "es": {
+          "L": "Pero para que {{plural_you:sepan|sepáis}} que el Hijo del Hombre tiene autoridad en la tierra para perdonar pecados» —entonces dice al paralítico—: «Levántate, toma tu lecho y vete a tu casa».",
+          "B": "Pues quiero que {{plural_you:sepan|sepáis}} que el Hijo del Hombre tiene autoridad en la tierra para perdonar pecados». Entonces dijo al paralítico: «Levántate, recoge tu camilla y vete a tu casa».",
+          "R": "{{plural_you:Les|Os}} voy a mostrar que el Hijo del Hombre tiene derecho a perdonar pecados aquí en la tierra». Entonces le dijo al hombre que no podía caminar: «Levántate, recoge tu estera y vete a casa»."
+        },
+        "sw": {
+          "L": "Lakini ili mjue kwamba Mwana wa Adamu ana mamlaka duniani ya kusamehe dhambi\"—ndipo anamwambia yule aliyepooza—\"Ukiisha kuinuka, beba kitanda chako, na uende nyumbani kwako.\"",
+          "B": "Lakini nataka mjue kwamba Mwana wa Adamu ana mamlaka duniani ya kusamehe dhambi.\" Kisha alimwambia yule aliyepooza, \"Simama, beba machela yako, uende nyumbani.\"",
+          "R": "Nitawaonyesha kwamba Mwana wa Adamu ana haki ya kusamehe dhambi hapa duniani.\" Kisha alimwambia yule mtu ambaye hakuweza kutembea, \"Simama, beba mkeka wako, uende nyumbani.\""
         }
       },
       "decisions": [
@@ -615,6 +805,92 @@
           "reason": "Literal keeps the Greek present tense.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40009006017"
+          ],
+          "choice": "historic present at Literal (dice); pretérito at Balanced and Readable",
+          "alternatives": [
+            "the present at every level"
+          ],
+          "reason": "Matthew sometimes tells past events in the present. Literal keeps it, as the English Literal does; Balanced and Readable tell the story in the past, as Spanish narrative does. The same in verses 9 and 14.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40009006008",
+            "n40009006009",
+            "n40009006010"
+          ],
+          "choice": "el Hijo del Hombre, with capitals as a title",
+          "alternatives": [],
+          "reason": "The term used across the New Testament drafts, as in John: the title Jesus uses of himself, here with the figure of Daniel 7 behind it (meaning decision m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40009006017"
+          ],
+          "choice": "historic present kept at Literal (anamwambia); past at Balanced and Readable",
+          "alternatives": [
+            "anamwambia at every level"
+          ],
+          "reason": "Matthew sometimes tells past events in the present. Literal keeps it, as the English Literal does; Balanced and Readable use the narrative past. The same in verses 9 and 14.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-2",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40009006008",
+            "n40009006009",
+            "n40009006010"
+          ],
+          "choice": "Mwana wa Adamu",
+          "alternatives": [
+            "Mwana wa Mtu"
+          ],
+          "reason": "The settled Swahili title, used in John and across the New Testament drafts (meaning decision m2). \"Mwana wa Mtu\" is closer to the Greek words; a reviewer may weigh it.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -644,6 +920,16 @@
           "L": "And he got up and went away to his home.",
           "B": "And the man got up and went home.",
           "R": "And the man got up and went home."
+        },
+        "es": {
+          "L": "Y levantándose, se fue a su casa.",
+          "B": "Y el hombre se levantó y se fue a su casa.",
+          "R": "El hombre se levantó y se fue a casa."
+        },
+        "sw": {
+          "L": "Naye akainuka, akaenda zake nyumbani kwake.",
+          "B": "Basi yule mtu aliinuka, akaenda nyumbani kwake.",
+          "R": "Yule mtu alisimama, akaenda nyumbani."
         }
       },
       "decisions": [
@@ -704,6 +990,16 @@
           "L": "And when the crowds saw [it], they were afraid, and they glorified God, who had given such authority to {{gender:human beings|men}}.",
           "B": "When the crowds saw this, they were filled with awe, and they glorified God for giving such authority to human beings.",
           "R": "When the people saw this, they were amazed and afraid. They gave glory to God for giving such power to people."
+        },
+        "es": {
+          "L": "Y al ver[lo] las multitudes, tuvieron temor y glorificaron a Dios, que había dado tal autoridad a {{gender:los seres humanos|los hombres}}.",
+          "B": "Al ver esto, las multitudes quedaron sobrecogidas y glorificaron a Dios por haber dado tal autoridad a los seres humanos.",
+          "R": "Cuando la gente vio esto, se asombró y tuvo miedo. Todos alabaron a Dios por haber dado tanto poder a los seres humanos."
+        },
+        "sw": {
+          "L": "Basi makundi ya watu yalipoona [hayo], yaliingiwa na hofu, yakamtukuza Mungu aliyewapa binadamu mamlaka ya namna hiyo.",
+          "B": "Umati wa watu ulipoona hayo, ulijawa na hofu na heshima, ukamtukuza Mungu kwa kuwapa wanadamu mamlaka kama hayo.",
+          "R": "Watu walipoona jambo hilo, walishangaa na kuogopa. Wakamtukuza Mungu kwa kuwapa wanadamu uwezo mkubwa namna hiyo."
         }
       },
       "decisions": [
@@ -755,6 +1051,25 @@
           "reason": "Many later manuscripts read \"marveled\". Reviewers should check the evidence against the apparatus.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40009008015"
+          ],
+          "choice": "binadamu, with no gender span",
+          "alternatives": [
+            "{{gender:binadamu|wanaume}}"
+          ],
+          "reason": "The English Literal puts \"human beings\" and \"men\" under the gender setting. \"Binadamu\" already means human beings, and \"wanaume\" would mean males only and change the sense (meaning decision m2), so Swahili has nothing for the setting to change.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -799,6 +1114,16 @@
           "L": "And as Jesus passed on from there, {{deity_pronoun:he|He}} saw a man called Matthew sitting at the tax booth, and {{deity_pronoun:he|He}} says to him, \"Follow {{deity_pronoun:me|Me}}.\" And he got up and followed {{deity_pronoun:him|Him}}.",
           "B": "Moving on from there, Jesus noticed a man called Matthew at his seat in the tax office. Jesus said to him, \"Follow {{deity_pronoun:me|Me}}.\" And Matthew rose and followed {{deity_pronoun:him|Him}}.",
           "R": "As Jesus walked on from there, {{deity_pronoun:he|He}} saw a man named Matthew. Matthew was sitting at the place where he collected taxes. Jesus said to him, \"Come, follow {{deity_pronoun:me|Me}}.\" So Matthew got up and followed {{deity_pronoun:him|Him}}."
+        },
+        "es": {
+          "L": "Y pasando Jesús de allí, vio a un hombre sentado en el puesto de impuestos, llamado Mateo, y le dice: «Sígueme». Y levantándose, {{deity_pronoun:lo|Lo}} siguió.",
+          "B": "Al irse de allí, Jesús vio a un hombre llamado Mateo, sentado en su puesto de cobro de impuestos. Jesús le dijo: «Sígueme». Y Mateo se levantó y {{deity_pronoun:lo|Lo}} siguió.",
+          "R": "Jesús siguió su camino y vio a un hombre llamado Mateo. Mateo estaba sentado en el lugar donde cobraba los impuestos. Jesús le dijo: «Ven, sígueme». Entonces Mateo se levantó y {{deity_pronoun:lo|Lo}} siguió."
+        },
+        "sw": {
+          "L": "Na Yesu alipokuwa akiondoka pale, alimwona mtu ameketi kwenye kibanda cha ushuru, jina lake Mathayo, kisha anamwambia, \"Nifuate.\" Basi akasimama, akamfuata.",
+          "B": "Yesu alipokuwa akiondoka hapo, alimwona mtu mmoja jina lake Mathayo, ameketi mahali pake pa kazi katika ofisi ya ushuru. Yesu akamwambia, \"Nifuate.\" Mathayo akasimama, akamfuata.",
+          "R": "Yesu alipokuwa akiendelea kutembea kutoka pale, alimwona mtu jina lake Mathayo. Mathayo alikuwa ameketi mahali alipokuwa akitoza ushuru. Yesu akamwambia, \"Njoo, nifuate.\" Basi Mathayo akasimama, akamfuata."
         }
       },
       "decisions": [
@@ -916,6 +1241,16 @@
           "L": "And it happened, as {{deity_pronoun:he|He}} was reclining [at table] in the house, look, many tax collectors and sinners came and were reclining with Jesus and {{deity_pronoun:his|His}} disciples.",
           "B": "Then, as Jesus sat at table in the house, a crowd of tax collectors and sinners came and joined {{deity_pronoun:him|Him}} and {{deity_pronoun:his|His}} disciples for the meal.",
           "R": "Later Jesus was eating a meal in the house. Many tax collectors and other people known as sinners came and ate with {{deity_pronoun:him|Him}} and {{deity_pronoun:his|His}} followers."
+        },
+        "es": {
+          "L": "Y sucedió que, estando {{deity_pronoun:él|Él}} recostado [a la mesa] en la casa, mira, muchos publicanos y pecadores vinieron y se recostaron con Jesús y {{deity_pronoun:sus|Sus}} discípulos.",
+          "B": "Después, mientras Jesús estaba sentado a la mesa en la casa, llegaron muchos cobradores de impuestos y pecadores y se sentaron a comer con {{deity_pronoun:él|Él}} y con {{deity_pronoun:sus|Sus}} discípulos.",
+          "R": "Más tarde, Jesús estaba comiendo en la casa. Llegaron muchos cobradores de impuestos y otras personas conocidas como pecadores, y comieron con {{deity_pronoun:él|Él}} y con {{deity_pronoun:sus|Sus}} seguidores."
+        },
+        "sw": {
+          "L": "Na ikawa, alipokuwa ameegemea [mezani] nyumbani, tazama, watoza ushuru wengi na wenye dhambi wakaja, wakaegemea [mezani] pamoja na Yesu na wanafunzi {{deity_pronoun:wake|Wake}}.",
+          "B": "Baadaye Yesu alipokuwa ameketi mezani nyumbani, watoza ushuru wengi na wenye dhambi walikuja, wakajumuika {{deity_pronoun:naye|Naye}} pamoja na wanafunzi {{deity_pronoun:wake|Wake}} katika chakula.",
+          "R": "Baadaye Yesu alikuwa akila chakula nyumbani. Watoza ushuru wengi na watu wengine waliojulikana kuwa wenye dhambi walikuja, wakala pamoja {{deity_pronoun:naye|Naye}} na wafuasi {{deity_pronoun:wake|Wake}}."
         }
       },
       "decisions": [
@@ -988,6 +1323,48 @@
           "reason": "As in 1:20, Literal uses \"look\" and Balanced and Readable carry the word's force in the flow of the sentence.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40009010011"
+          ],
+          "choice": "publicanos (L); cobradores de impuestos (B, R)",
+          "alternatives": [
+            "recaudadores de impuestos"
+          ],
+          "reason": "The term used across the New Testament drafts: Literal keeps the traditional name for these men, \"publicanos\"; Balanced and Readable say what they did, which most readers no longer know from the old word.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40009010011"
+          ],
+          "choice": "watoza ushuru",
+          "alternatives": [
+            "wakusanya kodi"
+          ],
+          "reason": "The term used across the New Testament drafts, at every level: \"those who collect duty\", which says what these men did. Literal keeps the reclining at table with \"kuegemea [mezani]\", as in Mark 16:14.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1029,6 +1406,16 @@
           "L": "And when the Pharisees saw [this], they said to {{deity_pronoun:his|His}} disciples, \"Why does your teacher eat with the tax collectors and sinners?\"",
           "B": "When the Pharisees saw it, they asked {{deity_pronoun:his|His}} disciples, \"Why does your teacher eat with tax collectors and sinners?\"",
           "R": "When the Pharisees saw this, they asked {{deity_pronoun:his|His}} followers, \"Why does your teacher eat with tax collectors and sinners?\""
+        },
+        "es": {
+          "L": "Y viendo [esto] los fariseos, decían a {{deity_pronoun:sus|Sus}} discípulos: «¿Por qué con los publicanos y pecadores come {{plural_you:su|vuestro}} maestro?».",
+          "B": "Al ver esto, los fariseos preguntaron a {{deity_pronoun:sus|Sus}} discípulos: «¿Por qué {{plural_you:su|vuestro}} maestro come con cobradores de impuestos y pecadores?».",
+          "R": "Cuando los fariseos vieron esto, les preguntaron a {{deity_pronoun:sus|Sus}} seguidores: «¿Por qué {{plural_you:su|vuestro}} maestro se sienta a comer con cobradores de impuestos y con pecadores?»."
+        },
+        "sw": {
+          "L": "Na Mafarisayo walipoona [hayo], walikuwa wakiwaambia wanafunzi {{deity_pronoun:wake|Wake}}, \"Kwa nini pamoja na watoza ushuru na wenye dhambi anakula mwalimu wenu?\"",
+          "B": "Mafarisayo walipoona hivyo, waliwauliza wanafunzi {{deity_pronoun:wake|Wake}}, \"Kwa nini mwalimu wenu hula na watoza ushuru na wenye dhambi?\"",
+          "R": "Mafarisayo walipoona jambo hilo, waliwauliza wafuasi {{deity_pronoun:wake|Wake}}, \"Mbona mwalimu wenu anakaa kula chakula pamoja na watoza ushuru na wenye dhambi?\""
         }
       },
       "decisions": [
@@ -1083,6 +1470,16 @@
           "L": "But hearing [this], {{deity_pronoun:he|He}} said, \"Those who are strong have no need of a physician, but those who are sick.",
           "B": "Jesus heard them and said, \"People who are well do not need a doctor; sick people do.",
           "R": "Jesus heard this. So {{deity_pronoun:he|He}} said, \"Healthy people do not need a doctor. Sick people do."
+        },
+        "es": {
+          "L": "Pero {{deity_pronoun:él|Él}}, al oír[lo], dijo: «No tienen necesidad de médico los que están fuertes, sino los que están mal.",
+          "B": "Jesús los oyó y dijo: «Los que están sanos no necesitan médico; los enfermos, sí.",
+          "R": "Jesús oyó esto. Entonces dijo: «Las personas sanas no necesitan un médico. Los enfermos sí lo necesitan."
+        },
+        "sw": {
+          "L": "Lakini {{deity_pronoun:yeye|Yeye}} aliposikia, akasema, \"Wenye nguvu hawana haja ya tabibu, bali wale walio katika hali mbaya.",
+          "B": "Yesu aliwasikia, akasema, \"Watu walio wazima hawahitaji daktari; wagonjwa ndio wanaomhitaji.",
+          "R": "Yesu alisikia hayo. Kwa hiyo akasema, \"Watu wenye afya hawahitaji daktari. Wagonjwa ndio wanaohitaji daktari."
         }
       },
       "decisions": [
@@ -1149,6 +1546,16 @@
           "L": "But go and learn what this means: 'I desire mercy, and not sacrifice.' For I did not come to call [the] righteous, but sinners.\"",
           "B": "Go and learn what this saying means: 'I want mercy, not sacrifice.' For I did not come to call righteous people, but sinners.\"",
           "R": "Go and find out what this Scripture means: 'I want you to show mercy to people, more than I want you to offer sacrifices.' I did not come to invite good people. I came to invite sinners.\""
+        },
+        "es": {
+          "L": "Pero, yendo, {{plural_you:aprendan|aprended}} qué es [esto]: “Quiero misericordia y no sacrificio”; porque no vine a llamar a justos, sino a pecadores».",
+          "B": "{{plural_you:Vayan|Id}} y {{plural_you:aprendan|aprended}} lo que quiere decir esta palabra: “Lo que quiero es misericordia, no sacrificios”. Porque no vine a llamar a gente justa, sino a pecadores».",
+          "R": "{{plural_you:Vayan|Id}} y {{plural_you:averigüen|averiguad}} qué significa este pasaje de la Escritura: “Quiero que {{plural_you:tengan|tengáis}} compasión de los demás, más que {{plural_you:me ofrezcan|me ofrezcáis}} sacrificios”. Yo no vine a invitar a los buenos. Vine a invitar a los pecadores»."
+        },
+        "sw": {
+          "L": "Basi mkienda, jifunzeni maana ya [neno] hili: 'Rehema ninataka, na si dhabihu.' Kwa maana sikuja kuwaita watu wenye haki, ila watu wenye dhambi.\"",
+          "B": "Nendeni mkajifunze maana ya maneno haya: 'Ninataka rehema, si dhabihu.' Kwa maana sikuja kuwaita watu wenye haki, bali wenye dhambi.\"",
+          "R": "Nendeni mkatafute maana ya Maandiko haya: 'Ninataka mwahurumie watu, kuliko kunitolea dhabihu.' Sikuja kuwaalika watu wema. Nilikuja kuwaalika wenye dhambi.\""
         }
       },
       "decisions": [
@@ -1226,6 +1633,27 @@
           "reason": "Readable shows that the saying ranks mercy above sacrifice.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40009013010"
+          ],
+          "choice": "dhabihu (sacrifice)",
+          "alternatives": [
+            "sadaka"
+          ],
+          "reason": "The Greek word is an animal sacrifice offered at the altar, set against mercy in Hosea 6:6 (meaning decision m1). \"Sadaka\" is the familiar word, but today it mostly means an offering of money or alms, which would blur the contrast.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1269,6 +1697,16 @@
           "L": "Then the disciples of John come to {{deity_pronoun:him|Him}}, saying, \"Why do we and the Pharisees fast often, but {{deity_pronoun:your|Your}} disciples do not fast?\"",
           "B": "Next John's disciples came and asked {{deity_pronoun:him|Him}}, \"We fast often, and so do the Pharisees. Why do {{deity_pronoun:your|Your}} disciples not fast?\"",
           "R": "Then the followers of John the Baptist came to Jesus. They asked {{deity_pronoun:him|Him}}, \"We and the Pharisees often go without food to pray. Why do {{deity_pronoun:your|Your}} followers not do that?\""
+        },
+        "es": {
+          "L": "Entonces se {{deity_pronoun:le|Le}} acercan los discípulos de Juan, diciendo: «¿Por qué nosotros y los fariseos ayunamos mucho, pero {{deity_pronoun:tus|Tus}} discípulos no ayunan?».",
+          "B": "Después se {{deity_pronoun:le|Le}} acercaron los discípulos de Juan y {{deity_pronoun:le|Le}} preguntaron: «Nosotros ayunamos a menudo, y también los fariseos. ¿Por qué {{deity_pronoun:tus|Tus}} discípulos no ayunan?».",
+          "R": "Entonces los seguidores de Juan el Bautista fueron a ver a Jesús y {{deity_pronoun:le|Le}} preguntaron: «Nosotros y los fariseos muchas veces dejamos de comer para orar. ¿Por qué {{deity_pronoun:tus|Tus}} seguidores no lo hacen?»."
+        },
+        "sw": {
+          "L": "Kisha wanafunzi wa Yohana wanamjia, wakisema, \"Mbona sisi pamoja na Mafarisayo tunafunga sana, lakini wanafunzi {{deity_pronoun:wako|Wako}} hawafungi?\"",
+          "B": "Kisha wanafunzi wa Yohana walimjia, wakamwuliza, \"Sisi tunafunga mara kwa mara, na Mafarisayo pia. Kwa nini wanafunzi {{deity_pronoun:wako|Wako}} hawafungi?\"",
+          "R": "Kisha wafuasi wa Yohana Mbatizaji walimwendea Yesu. Wakamwuliza, \"Sisi na Mafarisayo mara nyingi tunaacha kula ili tuombe. Kwa nini wafuasi {{deity_pronoun:wako|Wako}} hawafanyi hivyo?\""
         }
       },
       "decisions": [
@@ -1367,6 +1805,16 @@
           "L": "And Jesus said to them, \"Can the {{gender:guests|sons}} of the bridal chamber mourn as long as the bridegroom is with them?",
           "B": "Jesus answered, \"How can the wedding guests mourn while the bridegroom is with them?",
           "R": "Jesus said to them, \"Friends of a bridegroom do not feel sad while he is with them at the wedding."
+        },
+        "es": {
+          "L": "Y Jesús les dijo: «¿Acaso pueden {{gender:los invitados|los hijos}} de la cámara nupcial estar de luto mientras el novio está con ellos?",
+          "B": "Jesús les respondió: «¿Cómo van a estar de luto los invitados a la boda mientras el novio está con ellos?",
+          "R": "Jesús les dijo: «Los amigos del novio no se ponen tristes mientras él está con ellos en la boda."
+        },
+        "sw": {
+          "L": "Na Yesu akawaambia, \"Je, wana wa ukumbi wa harusi wanaweza kuomboleza muda wote bwana harusi yuko pamoja nao?",
+          "B": "Yesu aliwajibu, \"Je, wageni wa harusi wanaweza kukaa katika maombolezo wakati bwana harusi yuko kati yao?",
+          "R": "Yesu aliwaambia, \"Marafiki wa bwana harusi hawahuzuniki wakati yeye yuko pamoja nao harusini."
         }
       },
       "decisions": [
@@ -1457,6 +1905,25 @@
           "reason": "The question expects \"no\"; Readable gives the answer.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40009015009"
+          ],
+          "choice": "wana wa ukumbi wa harusi, with no gender span",
+          "alternatives": [
+            "{{gender:wageni|wana}} wa ukumbi wa harusi"
+          ],
+          "reason": "The English Literal sets \"guests\" against \"sons\" under the gender setting. Swahili \"wana\" (children, sons) is not limited to males and keeps the Greek idiom for the wedding guests (meaning decision m1), so no span is needed.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1491,6 +1958,16 @@
           "L": "But days will come when the bridegroom is taken away from them, and then they will fast.",
           "B": "But a time will come when the bridegroom will be taken from them, and then they will fast.",
           "R": "But the time will come when the bridegroom will be taken away from them. Then they will go without food."
+        },
+        "es": {
+          "L": "Pero llegarán días en que el novio será apartado de ellos, y entonces ayunarán.",
+          "B": "Pero llegará el tiempo en que les quitarán al novio, y entonces sí ayunarán.",
+          "R": "Pero llegará el tiempo en que se llevarán al novio lejos de ellos. Entonces sí dejarán de comer."
+        },
+        "sw": {
+          "L": "Lakini siku zitakuja ambapo bwana harusi ataondolewa kutoka kwao, na wakati huo watafunga.",
+          "B": "Lakini wakati unakuja ambapo bwana harusi atachukuliwa kutoka kwao, na ndipo watafunga.",
+          "R": "Lakini wakati utafika ambapo bwana harusi atachukuliwa mbali nao. Hapo ndipo wataacha kula."
         }
       },
       "decisions": [
@@ -1556,6 +2033,16 @@
           "L": "And no one puts a patch of unshrunk cloth on an old garment; for the patch pulls away from the garment, and a worse tear results.",
           "B": "No one sews a patch of new, unshrunk cloth onto an old coat. The patch will pull away from the coat, and the tear will be worse.",
           "R": "No one uses a piece of new cloth to fix a hole in old clothes. The new cloth will shrink and pull away, and the hole will get bigger."
+        },
+        "es": {
+          "L": "Y nadie pone un parche de tela sin encoger sobre una prenda vieja; porque el parche se lleva [parte] de la prenda, y se produce una rotura peor.",
+          "B": "Nadie cose un parche de tela nueva, sin encoger, en un manto viejo, porque el parche se desprende arrastrando parte del manto, y el roto queda peor.",
+          "R": "Nadie usa un pedazo de tela nueva para arreglar un agujero en ropa vieja. La tela nueva se encoge y se desprende, y el agujero se hace más grande."
+        },
+        "sw": {
+          "L": "Na hakuna mtu anayetia kiraka cha kitambaa kisichofuliwa juu ya vazi kuukuu; kwa maana kiraka hicho huvuta [sehemu] ya vazi, na mpasuko unakuwa mbaya zaidi.",
+          "B": "Hakuna mtu anayeshona kiraka cha kitambaa kipya, ambacho hakijasinyaa, juu ya vazi kuukuu. Kiraka hicho kitajivuta kutoka kwenye vazi, na tundu litakuwa kubwa zaidi.",
+          "R": "Hakuna mtu anayetumia kipande cha kitambaa kipya kuziba tundu katika nguo kuukuu. Kitambaa kipya kitasinyaa na kujivuta, na tundu litakuwa kubwa zaidi."
         }
       },
       "decisions": [
@@ -1648,6 +2135,16 @@
           "L": "Nor do they put new wine into old wineskins; otherwise the wineskins burst, and the wine is poured out and the wineskins are destroyed. But they put new wine into fresh wineskins, and both are preserved.\"",
           "B": "And people do not pour new wine into old wineskins. If they do, the skins will split, the wine will run out, and the skins will be ruined. No, they pour new wine into new wineskins, and both are kept safe.\"",
           "R": "People do not put new wine into old leather bags. If they do, the bags will break, the wine will spill, and the bags will be ruined. People always put new wine into new bags. Then both the wine and the bags are kept safe.\""
+        },
+        "es": {
+          "L": "Tampoco ponen vino nuevo en odres viejos; de no ser así, revientan los odres, el vino se vierte y los odres se destruyen; al contrario, ponen vino nuevo en odres frescos, y los dos se conservan».",
+          "B": "Tampoco se guarda vino nuevo en odres viejos. Si se hace, los odres se rajan, el vino se derrama y los odres se echan a perder. Por eso el vino nuevo se guarda en odres nuevos, y así se conservan los dos».",
+          "R": "Nadie pone vino nuevo en bolsas de cuero viejas. Si lo hace, las bolsas se rompen, el vino se cae y las bolsas se pierden. El vino nuevo siempre se pone en bolsas nuevas. Así no se pierde ni el vino ni las bolsas»."
+        },
+        "sw": {
+          "L": "Wala hawaweki divai mpya ndani ya viriba vya zamani; ikiwa sivyo, viriba vinapasuka, divai inamwagika na viriba vinaharibika. Bali huweka divai mpya ndani ya viriba vipya, na vyote viwili vinatunzwa salama.\"",
+          "B": "Tena watu hawamimini divai mpya ndani ya viriba vya zamani. Wakifanya hivyo, viriba vitapasuka, divai itamwagika, na viriba vitaharibika. Hapana, divai mpya humiminwa ndani ya viriba vipya, na hivyo vyote viwili hubaki salama.\"",
+          "R": "Watu hawaweki divai mpya ndani ya mifuko ya ngozi iliyochakaa. Wakifanya hivyo, mifuko itapasuka, divai itamwagika, na mifuko itaharibika. Siku zote watu huweka divai mpya katika mifuko mipya ya ngozi. Hivyo divai na mifuko vyote hubaki salama.\""
         }
       },
       "decisions": [
