@@ -89,7 +89,7 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | steward (*oikonomos*) | administrador | msimamizi |
 | myths | mitos | ngano |
 | heart (*splanchna*) | entrañas (L); corazón (B, R) | moyo |
-| look (*idou*) | mira (L); omitted or reworded (B, R) as the English | tazama |
+| look (*idou*) | he aquí in narrative, mira in speech (L); omitted or reworded (B, R) as the English | tazama |
 | the Sea of Galilee | follow the English: mar / lago where it has sea / lake | Bahari / Ziwa likewise |
 | wind, winds | viento(s) | upepo (never plural "pepo", which is also "demons") |
 | the evil one | el maligno | yule mwovu |
@@ -202,6 +202,9 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | show favoritism (*prosōpolēmpsia*) | hacer favoritismo (B, R) | kupendelea (B, R) |
 | be anxious, worry (*merimnaō*) | inquietarse, preocuparse | kuwa na wasiwasi |
 | night watch | vigilia | zamu ya usiku |
+| truly (*alēthōs*, not amen) | verdaderamente, de verdad | kwa kweli |
+| tents, shelters (*skēnai*) | tiendas (L); chozas (B, R) | hema (L); vibanda (B, R) |
+| mina | mina (no units span) | mina |
 | tomb (*mnēmeion*) | el sepulcro (L, B); la tumba (R) | kaburi |
 | at the right (hand) | a la derecha (de) | upande wa kulia (wa) |
 
@@ -242,7 +245,7 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 - Names in their usual Swahili form: Yesu, Yohana, Petro, Yakobo, Mathayo,
   Marko, Luka, Paulo, Barnaba, Stefano, Filipo, Herode, Pilato, Yerusalemu,
   Galilaya, Kapernaumu, Nazareti, Bethlehemu, Musa, Eliya, Isaya, Daudi,
-  Ibrahimu, Sulemani, Ninawi, Habili, Zakaria, Yusufu (Joseph),
+  Ibrahimu, Sulemani, Ninawi, Habili, Zakaria, Zakayo, Yusufu (Joseph),
   Uyahudi (Judea, as John; never Yudea),
   Elisabeti, Gabrieli, Theofilo, Haruni.
 - Hours: the Greek counts from sunrise as Swahili does, so "the ninth hour"
