@@ -77,7 +77,7 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | the Lamb (Revelation) | el Cordero | Mwanakondoo |
 | throne | el trono | kiti cha enzi |
 | Alpha and Omega | el Alfa y la Omega | Alfa na Omega |
-| woe | ¡ay! | ole |
+| woe | ¡ay! (L, B); as the English Readable explains it (R) | ole (L, B); as the English Readable (R) |
 | Amen | Amén | Amina |
 | overseer (*episkopos*) | supervisor (L, B); líder de la iglesia (R) | mwangalizi (L, B); kiongozi wa kanisa (R) |
 | elders (church office) | ancianos (L, B); líderes de la iglesia (R) | wazee (L, B); viongozi wa kanisa (R) |
@@ -119,6 +119,10 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | Beelzebul | Beelzebul | Beelzebuli |
 | servant (*diakonos*), serve | servidor, servir | mhudumu, kuhudumu |
 | phylacteries | filacterias | visanduku vya maandiko |
+| coming (*parousia*) | venida | kuja |
+| the elect | los elegidos | wateule (L); waliochaguliwa (B, R) |
+| lightning | relámpago | umeme wa radi |
+| false christs | falsos {{christos:cristos\|mesías}} | {{christos:makristo\|masihi}} wa uongo |
 | tomb (*mnēmeion*) | el sepulcro (L, B); la tumba (R) | kaburi |
 | at the right (hand) | a la derecha (de) | upande wa kulia (wa) |
 
@@ -156,7 +160,7 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 - Names in their usual Swahili form: Yesu, Yohana, Petro, Yakobo, Mathayo,
   Marko, Luka, Paulo, Barnaba, Stefano, Filipo, Herode, Pilato, Yerusalemu,
   Galilaya, Kapernaumu, Nazareti, Bethlehemu, Musa, Eliya, Isaya, Daudi,
-  Ibrahimu, Sulemani, Ninawi.
+  Ibrahimu, Sulemani, Ninawi, Habili, Zakaria, Yudea.
 - Narrative: *-li-* for the first verb of a sequence, *-ka-* for those that
   follow (Balanced and Readable); Literal keeps the historic present
   ("anasema") where the Greek has it.
