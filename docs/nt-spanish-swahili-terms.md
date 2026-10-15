@@ -112,7 +112,7 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | lawlessness (*anomia*) | iniquidad (L); maldad (B, R) | uasi |
 | gate (of a city, a road) | puerta | lango |
 | harvest, workers | cosecha, trabajadores | mavuno, wafanyakazi |
-| governors | gobernadores | magavana (L, B); watawala (R) |
+| governor (*hēgemōn*) | gobernador | mkuu wa mkoa (as John 18-19); plural wakuu wa mikoa |
 | synagogues (plural) | sinagogas | masinagogi |
 | mercy (*eleos*) | misericordia | huruma |
 | sacrifice | sacrificio | dhabihu |
@@ -142,6 +142,10 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | Satan | Satanás | Shetani |
 | the Twelve | los Doce (L, B); los doce apóstoles (R) | wale Kumi na Wawili (L, B); mitume kumi na wawili (R) |
 | be muzzled, be silent (*phimoō*) | ¡cállate! / queda amordazado (L) | nyamaza / fungwa kinywa (L) |
+| the Sanhedrin, council | el concilio (L); el Consejo (B); el Consejo Supremo (R) | baraza (L, B); baraza kuu (R) |
+| hand over (*paradidōmi*) | entregar (traicionar for Judas at B) | kukabidhi (kumsaliti for Judas at B) |
+| the Power (God) | el Poder (L, B); Dios Todopoderoso (R) | Uweza (L, B); Mungu, Mwenye Uweza (R) |
+| servant girl (*paidiskē*) | criada | kijakazi (L); mtumishi wa kike (B, R) |
 | tomb (*mnēmeion*) | el sepulcro (L, B); la tumba (R) | kaburi |
 | at the right (hand) | a la derecha (de) | upande wa kulia (wa) |
 
