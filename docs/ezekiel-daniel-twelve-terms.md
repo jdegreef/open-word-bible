@@ -505,6 +505,41 @@ may change any of them.
   level, with the other readings footnoted, since one reading must hold at
   every level.
 
+## Settled while drafting Ezekiel and Daniel
+
+AI-draft choices recorded so later work follows them; the founder may
+change any of them.
+
+- **Quotation marks in Ezekiel.** After "The word of the LORD came to me:"
+  God's oracle takes no quotation marks, and neither does the message
+  Ezekiel is told to deliver ("say to them, Thus says the Lord GOD: ...").
+  Human speech inside an oracle takes double quotes. Narrative dialogue in
+  the visions ("He said to me, ...") follows prose, with double quotes.
+- **Ezekiel's formulas** are fixed by chapters 1–7, whose decisions hold
+  the main notes: "son of man" (2:1), *bet meri* (2:5), *to'evah* (5:9),
+  *shiqqutsim* (5:11), *gillulim* (6:4), the "you will know" refrain (6:7),
+  the hedged vision language (1:28) and the Spirit (2:2). *Mishpatim* is
+  "judgments" / "rulings" / "rules"; *chuqqot* "statutes" / "statutes" /
+  "laws"; *chemah* "wrath" (L, B) / "anger" (R).
+- The figure on the throne in Ezekiel's visions (1:26–28; 8; 10; 43) takes
+  `deity_pronoun` spans.
+- Kebar is "the river Kebar" (L) / "the Kebar Canal" (B, R).
+- *'Ulam* is "porch" at every level (8:16; 40:7), following 1 Kings 6:3.
+- Daniel: "Your Majesty" for "O king" at Readable; "seven periods of time"
+  and "three and a half periods of time" at Readable (4:13; 7:25; 12:7).
+- **Open for the founder:** generic "he" in Ezekiel's case law. Chapter 3
+  (and 33:7–9) use `gender` spans at every level; chapter 18 (and
+  33:10–20) keep "he" at Literal and say "people" / "they" at Balanced and
+  Readable. One convention should hold.
+- **Open for the founder:** poetic passages the note did not list are prose
+  (Ezekiel 7; 23:32–34; 24:3–5; 30; 32:17–32). They may be set in lines.
+- **Open for the founder:** a word nobody can identify (Ezekiel 27:17
+  *pannag*; 30:5 Kub): transliterate at every level, or give the likeliest
+  sense at Balanced and Readable?
+- **Open for the founder:** Ezekiel 44:5–46:18 is one quotation (it opens
+  "He said to me"), so chapters 45 and 46 open with no quotation mark. It
+  could instead be set as an unquoted oracle.
+
 ## Before meaning review: claims to check
 
 The drafts cite the Septuagint, Qumran, Theodotion, other ancient versions
@@ -605,6 +640,80 @@ below against the sources before its sentence is marked meaning reviewed.
 - 1: 1 m2, 1 m3, 3 m3, 7 m3, 8 m2, 11 m2, 13 m2, 14 m2
 - 2: 3 m1, 15 m1, 16 m1
 - 3: 8 m2, 19 m1, 20 m2, 24 m1, 24 m4
+
+**Ezekiel**
+- 1: 1 m1, 1 m2, 2 m1, 4 m1, 6 m1, 10 m1, 15 m2, 18 m1
+- 2: 7 m1
+- 3: 5 m1, 11 m1, 15 m2
+- 4: 1 m1, 1 m2, 2 m1, 5 m1, 9 m2
+- 5: 7 m2, 8 m1, 11 m3, 15 m1
+- 6: 4 m2
+- 7: 2 m3, 5 m1, 10 m1, 13 m2, 23 m1, 24 m1, 27 m1
+- 8: 1 m1, 2 m2, 3 m3, 11 m2, 14 m1, 17 m3
+- 9: 2 m3, 4 m1
+- 10: 1 m1, 14 m1
+- 11: 2 m1, 3 m1, 7 m2, 10 m1, 15 m1, 16 m1, 19 m1, 23 m1
+- 12: 5 m1, 10 m2, 12 m1, 13 m1
+- 13: 11 m1, 18 m1
+- 14: 14 m1
+- 15: 4 m1, 7 m1
+- 16: 3 m1, 6 m2, 24 m1, 27 m2, 41 m1, 50 m2, 57 m1
+- 17: 3 m1, 4 m1, 5 m1, 7 m1, 12 m2, 13 m1, 15 m1, 21 m1
+- 18: 14 m1, 17 m1
+- 19: 2 m1, 3 m1, 5 m1, 7 m1, 10 m1
+- 20: 1 m1, 37 m2
+- 21: 8 m1, 24 m3, 25 m1, 26 m2, 27 m2, 28 m1, 30 m1, 32 m1
+- 22: 16 m1, 24 m1, 25 m1
+- 23: 5 m1, 6 m1, 10 m1, 12 m1, 14 m1, 16 m1, 17 m1, 23 m1, 23 m2, 24 m1,
+  25 m2, 42 m1, 43 m1
+- 24: 1 m1, 11 m1, 14 m1, 21 m2
+- 25: 7 m3, 8 m2, 9 m3, 14 m2
+- 26: 1 m1, 7 m4, 11 m1, 12 m3, 20 m3
+- 27: 5 m1, 6 m3, 7 m3, 9 m1, 10 m1, 11 m1, 12 m2, 13 m1, 14 m1, 15 m1,
+  16 m1, 18 m1, 22 m1, 23 m1, 34 m1
+- 28: 2 m2, 3 m1, 10 m1, 12 m3, 13 m2, 14 m2, 16 m3
+- 29: 1 m1, 2 m2, 5 m2, 7 m2, 10 m1, 11 m1, 14 m1, 15 m1, 17 m1, 18 m2,
+  19 m2
+- 30: 5 m1, 5 m3, 13 m2, 14 m1, 15 m1, 17 m1, 18 m2, 20 m1
+- 31: 1 m1, 3 m1, 10 m1, 11 m1, 17 m1
+- 32: 1 m1, 9 m1, 17 m1, 22 m1, 24 m1, 25 m1, 27 m1, 30 m1
+- 33: 21 m1, 21 m2, 31 m1
+- 34: 2 m1, 3 m1, 16 m2, 26 m2, 29 m1, 31 m1
+- 35: 2 m1, 5 m1, 9 m1, 11 m2, 14 m1, 15 m3
+- 36: 11 m2, 13 m1, 14 m1, 15 m1, 18 m2, 23 m2, 38 m1
+- 37: 16 m1, 22 m1, 23 m1, 26 m2
+- 38: 2 m1, 2 m2, 5 m1, 6 m1, 7 m2, 12 m1, 13 m1, 13 m2, 14 m1, 17 m1,
+  21 m2
+- 39: 1 m1, 2 m1, 11 m1, 11 m3, 14 m1, 25 m1, 26 m1, 28 m2
+- 40: 1 m1, 6 m2, 7 m1, 8 m1, 10 m1, 13 m1, 14 m1, 30 m1, 37 m1, 43 m1,
+  44 m1, 48 m1, 49 m1
+- 41: 1 m2, 6 m1, 21 m1, 22 m2
+- 42: 4 m1, 10 m1, 16 m1, 20 m2
+- 43: 3 m1, 7 m4, 11 m1, 15 m1
+- 44: 2 m2, 7 m1, 7 m3, 19 m2, 28 m2
+- 45: 1 m3, 5 m1, 11 m1, 12 m1, 12 m3, 15 m1, 20 m1, 21 m1
+- 46: 13 m2, 16 m1, 22 m1, 22 m2
+- 47: 9 m1, 10 m1, 15 m2, 15 m3, 16 m1, 17 m1, 18 m2, 19 m1
+- 48: 9 m1, 11 m2, 13 m1
+
+**Daniel**
+- 1: 1 m1, 1 m3, 2 m3, 2 m4, 3 m2, 4 m1, 5 m1, 7 m1, 11 m1, 20 m2, 21 m1
+- 2: 1 m1, 2 m1, 5 m2, 6 m1, 12 m2, 14 m1, 18 m2, 39 m1
+- 3: 1 m2, 1 m3, 2 m1, 5 m1, 6 m1, 7 m1, 12 m2, 21 m1, 23 m1, 25 m1, 29 m2
+- 4: 5 m1, 10 m1, 15 m2, 24 m1, 27 m1, 30 m1, 32 m3
+- 5: 1 m1, 2 m1, 3 m1, 5 m1, 7 m2, 10 m1, 28 m2, 30 m1
+- 6: 1 m2, 2 m2, 3 m1, 8 m2, 8 m3, 25 m2, 29 m1
+- 7: 1 m1, 4 m1, 5 m2, 6 m1, 7 m1, 8 m1, 17 m1, 24 m1, 25 m2
+- 8: 1 m2, 2 m2, 2 m3, 5 m1, 7 m1, 8 m1, 8 m2, 9 m1, 11 m2, 12 m1, 12 m2,
+  14 m1, 14 m2, 20 m1, 21 m2, 22 m1, 23 m1, 25 m2
+- 9: 1 m1, 1 m2, 17 m2, 21 m1, 22 m1, 24 m1, 24 m4, 25 m1, 25 m2, 26 m1,
+  26 m2, 26 m3, 27 m1, 27 m2, 27 m3
+- 10: 1 m1, 2 m2, 4 m2, 13 m1, 13 m3
+- 11: 1 m2, 2 m1, 3 m1, 4 m1, 5 m1, 6 m1, 6 m2, 7 m1, 8 m1, 9 m1, 10 m1,
+  11 m1, 12 m2, 13 m1, 15 m1, 16 m1, 17 m1, 17 m2, 18 m1, 19 m1, 20 m1,
+  21 m1, 22 m2, 24 m1, 25 m1, 27 m1, 28 m2, 29 m1, 30 m1, 30 m2, 31 m1,
+  32 m2, 33 m1, 34 m1, 34 m2, 37 m2, 38 m1, 39 m1, 40 m1, 41 m1, 44 m2
+- 12: 4 m2, 11 m2
 
 ## The founder's rulings (2026-10-15)
 
