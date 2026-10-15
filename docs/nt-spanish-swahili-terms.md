@@ -111,6 +111,9 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | centurion | centurión (L, B); oficial del ejército romano (R) | akida (L, B); afisa wa jeshi la Kirumi (R) |
 | lawlessness (*anomia*) | iniquidad (L); maldad (B, R) | uasi |
 | gate (of a city, a road) | puerta | lango |
+| harvest, workers | cosecha, trabajadores | mavuno, wafanyakazi |
+| governors | gobernadores | magavana (L, B); watawala (R) |
+| synagogues (plural) | sinagogas | masinagogi |
 | tomb (*mnēmeion*) | el sepulcro (L, B); la tumba (R) | kaburi |
 | at the right (hand) | a la derecha (de) | upande wa kulia (wa) |
 
@@ -134,6 +137,8 @@ Decision text stays in English, quoting the Spanish or Swahili words.
   Mateo, Marcos, Lucas, Pablo, Bernabé, Esteban, Felipe, Herodes, Pilato,
   Jerusalén, Galilea, Cafarnaúm, Nazaret, Belén, Moisés, Elías, Isaías.
 
+- Where "su" with ustedes could be misread, the span spells it out:
+  `{{plural_you:la paz de ustedes|vuestra paz}}`.
 - A gender span goes only where the English has one; it takes in the whole
   phrase that agrees (`{{gender:una persona sensata|un hombre sensato}}`).
 - A single person is addressed with "tú", never "usted".
