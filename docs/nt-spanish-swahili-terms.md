@@ -210,6 +210,9 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | criminal (*kakourgos*) | malhechor (L, B); criminal (R) | mhalifu |
 | paradise | paraíso | paradiso |
 | captain of the temple guard | oficial de la guardia del templo | mkuu wa walinzi wa hekalu |
+| chariot | carruaje | gari (L); gari la farasi (B, R) |
+| eunuch | eunuco | towashi |
+| magic, sorcery | magia | uchawi |
 | tomb (*mnēmeion*) | el sepulcro (L, B); la tumba (R) | kaburi |
 | at the right (hand) | a la derecha (de) | upande wa kulia (wa) |
 
