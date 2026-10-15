@@ -207,6 +207,8 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | mina | mina (no units span) | mina |
 | ruler (*archōn*) | dirigente, jefe | kiongozi |
 | judge; justice in court | juez; justicia | hakimu; haki (court justice may share the word) |
+| criminal (*kakourgos*) | malhechor (L, B); criminal (R) | mhalifu |
+| paradise | paraíso | paradiso |
 | tomb (*mnēmeion*) | el sepulcro (L, B); la tumba (R) | kaburi |
 | at the right (hand) | a la derecha (de) | upande wa kulia (wa) |
 
@@ -247,7 +249,8 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 - Names in their usual Swahili form: Yesu, Yohana, Petro, Yakobo, Mathayo,
   Marko, Luka, Paulo, Barnaba, Stefano, Filipo, Herode, Pilato, Yerusalemu,
   Galilaya, Kapernaumu, Nazareti, Bethlehemu, Musa, Eliya, Isaya, Daudi,
-  Ibrahimu, Sulemani, Ninawi, Habili, Zakaria, Zakayo, Yusufu (Joseph),
+  Ibrahimu, Sulemani, Ninawi, Habili, Zakaria, Zakayo, Yusufu (Mary's husband), Yosefu
+  (of Arimathea, as John 19:38),
   Uyahudi (Judea, as John; never Yudea),
   Elisabeti, Gabrieli, Theofilo, Haruni.
 - Hours: the Greek counts from sunrise as Swahili does, so "the ninth hour"
