@@ -262,23 +262,22 @@ in the palette it is the first row, so Enter goes straight there. The
 reader's "Go to…" button, beside the chapter pills, opens the palette.
 A verse opened from a result has the query's words marked.
 
-The site is static, so there is no search server. The build writes one
-index per interface language (`search-en.json`, `search-es.json`):
+The API answers each search (`/api/search/`, below), using Postgres
+full-text search, as Ochorus does. It searches one set of documents per
+interface language, which `search_documents` in `scripts/build_site.py`
+lists:
 
 - every sentence, at each level, with its setting spans kept;
 - every note, both the meaning notes and the wording notes for the shown
   language;
 - the articles and the passages.
 
-`web/search.js` loads the index the first time someone searches and matches
-in the browser. Matching ignores accents and matches from the start of a
-word.
-
-Search is moving to the API, because the index grows by about 2 KB for
-every verse translated. `/api/search/` (below) already answers from the
-same documents, using Postgres full-text search, as Ochorus does. The next
-step switches `web/search.js` over to it, and after that the build stops
-writing the index.
+`web/search.js` asks the API as the reader types. The build writes only a
+small file per language (`search-ui-en.json`, `search-ui-es.json`) with the
+interface text, the palette's page shortcuts and the book names. Until the
+API had search, the build wrote each language's whole index
+(`search-en.json`, 22 MB) and the browser searched it; the service worker
+drops copies of it that browsers kept.
 
 ### Pointing openwordbible.org at Render
 
@@ -314,8 +313,8 @@ against Postgres (`render.yaml`). It holds:
   `/api/passages/<BOOK>/<ch>/` and `/api/search/?q=…&lang=…`. The Django
   admin at `/admin/` is the first review tool.
 - **search** (in translation): `import_content` rebuilds the search tables
-  from `search_documents` in `scripts/build_site.py`, the same documents as
-  the site's search index, in every site language. Words are matched by the
+  from `search_documents` in `scripts/build_site.py`, in every site
+  language. Words are matched by the
   language of their own text, with accents ignored and stemming for English,
   Spanish and French (Swahili matches whole words and their beginnings).
   `/api/search/` returns the best of each kind (passages, verses, notes,

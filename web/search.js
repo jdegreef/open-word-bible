@@ -7,17 +7,12 @@
 // by the meta tag's data-ui). Nothing about a search is logged or sent
 // anywhere but the API; recent searches stay in this browser. All text is
 // inserted with textContent.
-//
-// While SEARCH_STATIC is set in build_site.py, the meta tag names the old
-// static index (search-<lang>.json) instead, and the search runs here over
-// it, answering in the API's shape (see "The static index" below).
 (function () {
   "use strict";
   var meta = document.querySelector('meta[name="owb-search"]');
   if (!meta) return;
   var SOURCE = meta.getAttribute("content");
   var UI_URL = meta.getAttribute("data-ui");
-  var STATIC = /\.json(\?|$)/.test(SOURCE);
   var LANG = document.documentElement.lang || "en";
   var RECENT = "owb.searches";
   var MIN = 2;
@@ -33,9 +28,6 @@
   var FEW = { c: 2, v: 3, n: 2, a: 2 };
   var PAGE = 20;
   var LEVELS = ["B", "L", "R"];
-  var WORD = /[\p{L}\p{N}]/u;
-  // The static index, while SEARCH_STATIC is set (see the end of this file).
-  var indexLoading = null, INDEX = null, vocab = null;
 
   // ---- Text --------------------------------------------------------------
 
@@ -197,12 +189,10 @@
 
   function loadUi() {
     if (!uiLoading) {
-      uiLoading = (STATIC ? loadIndex().then(function (data) {
-        return { ui: data.ui, pages: data.pages, names: data.names };
-      }) : fetch(UI_URL, { credentials: "same-origin" }).then(function (r) {
+      uiLoading = fetch(UI_URL, { credentials: "same-origin" }).then(function (r) {
         if (!r.ok) throw new Error(r.status);
         return r.json();
-      })).then(function (data) { UI = data; return data; })
+      }).then(function (data) { UI = data; return data; })
         .catch(function (e) { uiLoading = null; throw e; });
     }
     return uiLoading;
@@ -219,7 +209,6 @@
   // The API's answer to params ({q, type, sort, offset, limit, per}): see
   // backend/api/views.py. signal (an AbortSignal) cancels it.
   function ask(params, signal) {
-    if (STATIC) return loadIndex().then(function () { return staticAnswer(params); });
     if (navigator.onLine === false) {
       var e = new Error("offline");
       e.name = "Offline";
@@ -960,180 +949,6 @@
       requestAnimationFrame(function () { input.focus(); });
     }
   })();
-
-  // ---- The static index (SEARCH_STATIC in scripts/build_site.py) ---------
-  //
-  // Until the API had search, the site searched here, over the whole index
-  // for the page's language. Kept for one release, so the site can switch
-  // back; this part goes when search-<lang>.json is no longer built.
-
-  function loadIndex() {
-    if (!indexLoading) {
-      indexLoading = fetch(SOURCE, { credentials: "same-origin" })
-        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-        .then(prepare)
-        .catch(function (e) { indexLoading = null; throw e; });
-    }
-    return indexLoading;
-  }
-
-  // Every word a sentence can show: all levels, every option of each span.
-  function everything(levels) {
-    return Object.keys(levels).map(function (l) {
-      return levels[l].replace(SPAN, function (_, n, opts) { return opts.split("|").join(" "); })
-        .replace(/\\v \d+ ?/g, " ").replace(/ ?\\q ?/g, " ");
-    }).join(" \u2016 ");
-  }
-
-  // Each document's searchable fields, folded once, with their weights.
-  function prepare(data) {
-    data.names = {};
-    data.books.forEach(function (b) { data.names[b.code] = b.name; });
-    data.docs.forEach(function (d, i) {
-      Object.defineProperty(d, "i", { value: i });
-      var f;
-      if (d.k === "c") f = [[fold(d.h), 4]];
-      else if (d.k === "v") f = [[fold(everything(d.x)), 1]];
-      else if (d.k === "n") f = [[fold(d.t), 2.5], [fold(d.al.join(" \u2016 ")), 1.5], [fold(d.s), 1]];
-      else f = [[fold(d.t), 3], [fold(d.s), 1.5], [fold(d.x), 0.5]];
-      Object.defineProperty(d, "f", { value: f });
-    });
-    INDEX = data;
-    return data;
-  }
-
-  // Every document that has every term, best first: matches in a title
-  // count for more, and a whole word for more than the start of one.
-  function find(terms) {
-    var hits = [];
-    INDEX.docs.forEach(function (d) {
-      var score = 0;
-      for (var i = 0; i < terms.length; i++) {
-        var got = 0;
-        d.f.forEach(function (field) {
-          var ms = matches(terms[i], field[0], 5);
-          ms.forEach(function (m) {
-            var whole = m[1] >= field[0].length || !WORD.test(field[0].charAt(m[1]));
-            got += field[1] * (whole ? 1.5 : 1);
-          });
-        });
-        if (!got) return;
-        score += got;
-      }
-      hits.push({ doc: d, score: score });
-    });
-    hits.sort(function (a, b) { return b.score - a.score || a.doc.i - b.doc.i; });
-    return hits;
-  }
-
-  // "John 3:16", "jn 3 16", "Filipenses 4:7-9", "1 John 2": a passage, as
-  // the API gives it.
-  function reference(q) {
-    var m = /^\s*(.+?)\.?\s*(\d+)(?:\s*[:.,\s]\s*(\d+)(?:\s*[-\u2013]\s*(\d+))?)?\s*$/.exec(fold(q));
-    if (!m) return null;
-    var key = m[1].replace(/[\s.]+/g, "");
-    if (!key || /^\d+$/.test(key)) return null;
-    var book = INDEX.books.filter(function (b) { return b.aliases.indexOf(key) >= 0; })[0];
-    var chapter = Number(m[2]), verse = m[3] ? Number(m[3]) : null;
-    // The start of a name ("phil") counts only for a book with passages, or
-    // with a verse given, so "son 3" stays a search for words.
-    if (!book && key.replace(/^\d/, "").length >= 3) {
-      book = INDEX.books.filter(function (b) {
-        return (b.chapters || verse) && b.aliases.some(function (a) { return a.indexOf(key) === 0; });
-      })[0];
-    }
-    if (!book) return null;
-    var end = m[4] ? Math.max(Number(m[4]), verse) : verse;
-    var ref = { book: book.code, chapter: chapter, verse: verse, end: end, chapter_label: book.name + " " + chapter,
-                label: book.name + " " + chapter + (verse ? ":" + verse + (end !== verse ? "\u2013" + end : "") : "") };
-    var ch = book.chapters && book.chapters[chapter];
-    if (ch) {
-      ref.shown = verse ? ch.verses.filter(function (v) { return v >= verse && v <= end; }) : [];
-      ref.url = ch.url + (ref.shown.length ? "#v" + ref.shown[0] : "");
-      ref.sentences = INDEX.docs.filter(function (d) {
-        return d.k === "v" && d.bk === book.code && d.c === chapter
-          && d.vv.some(function (v) { return ref.shown.indexOf(v) >= 0; });
-      });
-    }
-    return ref;
-  }
-
-  // "Did you mean": each term that found nothing, swapped for the
-  // commonest word in the index within an edit or two of it.
-  function suggest(terms) {
-    if (!vocab) {
-      vocab = {};
-      INDEX.docs.forEach(function (d) {
-        d.f.forEach(function (f) {
-          (f[0].match(/[\p{L}\p{N}']{3,}/gu) || []).forEach(function (w) { vocab[w] = (vocab[w] || 0) + 1; });
-        });
-      });
-    }
-    var changed = false, words = terms.map(function (t) {
-      if (find([t]).length || / /.test(t.text) || t.text.length < 3) return t.text;
-      var limit = t.text.length > 5 ? 2 : 1, best = null, bestD = limit + 1;
-      for (var w in vocab) {
-        if (Math.abs(w.length - t.text.length) > limit) continue;
-        var dist = distance(t.text, w, limit);
-        if (dist < bestD || (dist === bestD && vocab[w] > vocab[best])) { best = w; bestD = dist; }
-      }
-      if (!best) return t.text;
-      changed = true;
-      return best;
-    });
-    if (!changed) return null;
-    var s = words.join(" ");
-    return find(parse(s)).length ? s : null;
-  }
-
-  function distance(a, b, max) {
-    var prev = [], cur, i, j;
-    for (j = 0; j <= b.length; j++) prev[j] = j;
-    for (i = 1; i <= a.length; i++) {
-      cur = [i];
-      var low = i;
-      for (j = 1; j <= b.length; j++) {
-        cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
-        if (cur[j] < low) low = cur[j];
-      }
-      if (low > max) return max + 1;
-      prev = cur;
-    }
-    return prev[b.length];
-  }
-
-  // The API's answer (backend/translation/search.py), from the index.
-  function staticAnswer(p) {
-    var q = p.q.replace(/\0/g, "").trim().slice(0, 200), terms = parse(q);
-    var answer = { query: q, lang: INDEX.lang };
-    if (q.length < MIN || !terms.length) {
-      answer.reference = null; answer.totals = {}; answer.results = []; answer.suggestion = null;
-      return answer;
-    }
-    var hits = find(terms), totals = {}, by = {};
-    hits.forEach(function (h) {
-      var name = NAMES[h.doc.k];
-      totals[name] = (totals[name] || 0) + 1;
-      (by[name] = by[name] || []).push(h.doc);
-    });
-    if (p.type) {
-      var list = (by[p.type] || []).slice(), offset = p.offset || 0;
-      if (p.sort === "order") list.sort(function (a, b) { return a.i - b.i; });
-      answer.type = p.type; answer.sort = p.sort; answer.offset = offset; answer.total = list.length;
-      answer.totals = totals; answer.results = list.slice(offset, offset + (p.limit || PAGE));
-      return answer;
-    }
-    answer.reference = reference(q);
-    if (answer.reference) {
-      answer.totals = {}; answer.results = []; answer.suggestion = null;
-      return answer;
-    }
-    answer.totals = totals;
-    answer.results = [];
-    GROUPS.forEach(function (g) { answer.results = answer.results.concat((by[NAMES[g]] || []).slice(0, p.per || PER)); });
-    answer.suggestion = hits.length ? null : suggest(terms);
-    return answer;
-  }
 
   // ---- A passage opened from a result: the query's words marked ----------
 
