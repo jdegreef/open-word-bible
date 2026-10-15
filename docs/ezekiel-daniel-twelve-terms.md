@@ -435,13 +435,96 @@ year" but does not convert to a modern calendar.
   decision for Luke 1:17 and Matthew 17:11. A footnoted decision at 3:19 and
   3:23 gives the English numbering (Hebrew 3:19–24 is English 4:1–6).
 
+## Settled while drafting Hosea to Jonah
+
+These conventions came up while the first five books were drafted. They are
+AI-draft choices, recorded here so the later books follow them; the founder
+may change any of them.
+
+- "The LORD God of hosts" (no comma, as in the Psalms): "the LORD God of
+  hosts" at Literal, "the LORD God of Armies" at Balanced and Readable.
+  "The God of hosts" alone is "the God of hosts" / "the God of Armies";
+  *Adonai YHWH hatseva'ot* (Amos 9:5) is "the Lord GOD of hosts" / "of
+  Armies".
+- *'Adon* for God (Hosea 12:15) is "Lord".
+- *'Oy* aimed at others (Hosea 7:13) follows Isaiah's *hoy*: "Woe to them"
+  / "Woe to them" / "How terrible it will be for them". The funeral cry *ho
+  ho* (Amos 5:16) follows Jeremiah 22:18: "Alas" / "Alas" / "How sad".
+- *Sar* is "officials" at Literal and Balanced and "leaders" at Readable.
+- *Shofar*: on its own, "trumpet" / "ram's horn" / "trumpet" (Isaiah,
+  Jeremiah 4:5); beside a metal trumpet (Hosea 5:8), "ram's horn" at every
+  level.
+- The verb *pasha'* is "transgress" / "rebel" / "sin".
+- *'Anakh* (Amos 7:7–8) is "plumb line" at every level, with an uncertain
+  note giving "tin".
+- *Zanah* of literal prostitution (Amos 7:17; Hosea 4:13–14 at Readable)
+  says so plainly ("be a prostitute", "act like prostitutes"); the Hosea
+  table's "be unfaithful" is for Israel's unfaithfulness to God.
+- The Amos refrain's Balanced line is "I will not hold back the punishment",
+  with no brackets: supplied words are bracketed only at Literal.
+- Lines a book repeats keep the wording of their first use at each level:
+  Hosea 6:10 and 5:3, 7:10 and 5:5, 8:13 and 9:9; Joel 4:16 and Amos 1:2;
+  Amos 8:6 and 2:6 (Literal). Obadiah 1–9 reuses Jeremiah 49; Jonah's psalm
+  reuses the published Psalms where it quotes them.
+- Fixed formulas may share a run of twelve or more words with an older
+  Bible (Hosea 1:1, Amos 1:1, the Amos 1–2 refrain at Literal, Amos 3:13,
+  Jonah 1:1). Every other such run is reworded.
+- Headings stand only where the Hebrew starts a paragraph (pe or samekh).
+- **Open for the founder:** quotations of Exodus 34:6 differ on *hesed*.
+  Joel 2:13 uses the prophets' "loyal love"; Jonah 4:2 reuses the published
+  Exodus 34:6 ("steadfast love" at Literal). One wording should be chosen
+  for Joel, Jonah, Nahum 1:3 and Exodus 34:6 itself.
+
 ## Before meaning review: claims to check
 
-These drafts will cite the Septuagint, Qumran, Theodotion and the
-identifications of persons and dates from general knowledge, as the earlier
-prophets did. Every such decision is listed at the end of its book's terms
-section, verse and decision id, once the chapters are drafted. A reviewer
-checks each one before the sentence is marked meaning reviewed.
+The drafts cite the Septuagint, Qumran, Theodotion, other ancient versions
+and the identifications of persons, places and dates from general
+knowledge, as the earlier prophets did. A reviewer checks each decision
+below against the sources before its sentence is marked meaning reviewed.
+
+**Hosea**
+- 1: 1 m1, 1 m2, 4 m1, 4 m4, 7 m2, 8 m1
+- 2: 1 m4, 8 m1, 18 m2, 25 m3
+- 3: 2 m2, 5 m1
+- 4: 2 m4, 4 m1, 7 m2, 13 m3, 15 m1, 15 m2, 17 m1, 18 m1, 19 m2
+- 5: 1 m3, 7 m3, 8 m1, 11 m1, 11 m2, 13 m1, 13 m2
+- 6: 2 m3, 5 m2, 6 m4, 7 m1, 8 m1, 9 m2
+- 7: 3 m1, 5 m2, 6 m1, 9 m1, 11 m2, 12 m3, 14 m3, 15 m2
+- 8: 1 m2, 5 m1, 5 m2, 8 m1, 9 m2, 10 m1, 10 m2, 12 m1
+- 9: 1 m1, 6 m2, 9 m2, 10 m2, 13 m1, 13 m2, 15 m1
+- 10: 3 m2, 4 m2, 5 m1, 6 m2, 8 m3, 10 m3, 12 m5, 13 m2, 14 m1, 15 m1, 15 m4
+- 11: 1 m1, 2 m1, 3 m2, 4 m2, 5 m3
+- 12: 2 m3, 5 m4, 9 m2
+- 13: 1 m1, 4 m3, 5 m2, 7 m2, 9 m1, 10 m1, 10 m2, 11 m1, 14 m2, 14 m5,
+  15 m2, 15 m3, 15 m5
+- 14: 1 m2, 1 m3, 3 m3, 9 m3
+
+**Joel**
+- 1: 1 m2, 4 m2, 17 m1, 18 m1
+- 2: 7 m1, 20 m2, 23 m2
+- 3: 1 m5, 2 m1, 4 m3, 5 m1
+- 4: 1 m2, 2 m2, 2 m3, 4 m1, 6 m1, 8 m1, 11 m1, 11 m2, 18 m3, 19 m1, 21 m1
+
+**Amos**
+- 1: 1 m1, 1 m3, 1 m4, 3 m4, 4 m3, 5 m3, 5 m4, 8 m2, 11 m4, 12 m1, 13 m2,
+  14 m1, 15 m1
+- 2: 2 m1, 5 m1
+- 3: 3 m2, 9 m2, 11 m1, 11 m2, 15 m2
+- 4: 3 m2, 3 m3
+- 5: 8 m2, 11 m1, 25 m2, 26 m1, 26 m2, 27 m1, 27 m2
+- 6: 2 m1, 4 m1, 13 m1, 14 m1, 14 m2
+- 7: 1 m2, 7 m1, 9 m2, 14 m3
+- 8: 9 m1, 14 m1, 14 m3
+- 9: 7 m1, 7 m2, 11 m3, 12 m2
+
+**Obadiah**
+- 1: 1 m1, 7 m2, 9 m2, 11 m1, 17 m3, 19 m2, 20 m3, 21 m1
+
+**Jonah**
+- 1: 1 m1, 2 m1, 3 m1, 8 m1
+- 2: 1 m3, 5 m2
+- 3: 3 m2, 6 m2
+- 4: 6 m1
 
 ## The founder's rulings (2026-10-15)
 
