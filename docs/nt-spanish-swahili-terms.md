@@ -26,7 +26,8 @@ Decision text stays in English, quoting the Spanish or Swahili words.
   ("hermanos" already includes sisters, so it stays plain).
 - Measures: metric by default where the English converts to US units; wages
   for coins, as John 6:7 and 12:5. Where the English has no units span,
-  neither does Spanish or Swahili.
+  neither does Spanish or Swahili. Spanish writes thousands with a
+  space (22 000), Swahili with a comma (22,000).
 - Readable may explain, as the English Readable does; follow the English
   Readable's explanations rather than adding new ones.
 - Rendering decisions: zero to two per sentence, only where the language had
