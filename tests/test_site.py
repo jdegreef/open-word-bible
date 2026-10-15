@@ -354,8 +354,11 @@ class SiteTest(unittest.TestCase):
         self.assertEqual(len(build_site.VERSES_OF_THE_DAY), len(set(build_site.VERSES_OF_THE_DAY)))
         for lang in build_site.LANGUAGES:
             verses = build_site.verses_of_the_day(lang)
-            self.assertEqual(len(verses), len(build_site.VERSES_OF_THE_DAY))
-            for vid, v in zip(build_site.VERSES_OF_THE_DAY, verses):
+            # A language shows only the verses translated into it: never
+            # one in English (Vietnamese and Korean have John so far).
+            self.assertEqual(len(verses), len(build_site.votd_refs(lang)))
+            self.assertTrue(all("l" not in v for v in verses), lang)
+            for vid, v in zip(build_site.votd_refs(lang), verses):
                 # The verse ends a sentence, so it reads on its own (a closing
                 # quotation mark may follow: ” ’, or French » after a no-break space).
                 self.assertRegex(v["t"], r"[.?!](?:[”’]|\u00a0»)?$", vid)
@@ -586,7 +589,7 @@ class SiteTest(unittest.TestCase):
             self.assertEqual(len(entries), build_site.VOTD_FEED_DAYS, lang)
             for entry in entries:
                 day = datetime.date.fromisoformat(entry.find(atom + "updated").text[:10])
-                vid = build_site.votd_for_day(day)
+                vid = build_site.votd_for_day(day, lang)
                 ref = build_site.refs.parse(vid)
                 link = entry.find(atom + "link").get("href")
                 self.assertTrue(link.endswith(f"/{ref.book.lower()}/{ref.chapter}/#v{ref.verse}"), link)
