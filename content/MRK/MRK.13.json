@@ -37,6 +37,16 @@
           "L": "And as {{deity_pronoun:he|He}} was going out of the temple, one of {{deity_pronoun:his|His}} disciples says to {{deity_pronoun:him|Him}}, \"Teacher, look, what stones and what buildings!\"",
           "B": "Jesus was on {{deity_pronoun:his|His}} way out of the temple when one of {{deity_pronoun:his|His}} disciples exclaimed to {{deity_pronoun:him|Him}}, \"Teacher, look! Such stones! Such buildings!\"",
           "R": "Jesus was walking out of the temple courts. One of the disciples called out to {{deity_pronoun:him|Him}}, \"Teacher, look at these huge stones! Look at these wonderful buildings!\""
+        },
+        "vi": {
+          "L": "Và khi {{deity_pronoun:ngài|Ngài}} đang đi ra khỏi đền thờ, một trong các môn đồ {{deity_pronoun:ngài|Ngài}} nói với {{deity_pronoun:ngài|Ngài}}: \"Thưa Thầy, kìa, đá [lớn] biết bao, công trình [đồ sộ] biết bao!\"",
+          "B": "Khi Đức Giê-xu ra khỏi sân đền thờ, một môn đồ trầm trồ nói với {{deity_pronoun:ngài|Ngài}}: \"Thưa Thầy, xem kìa! Đá thật to! Công trình thật đồ sộ!\"",
+          "R": "Đức Giê-xu đang đi ra khỏi sân đền thờ. Một môn đồ gọi {{deity_pronoun:ngài|Ngài}}: \"Thưa Thầy, xem những tảng đá lớn này kìa! Xem những tòa nhà đẹp đẽ này kìa!\""
+        },
+        "ko": {
+          "L": "그리고 그분이 성전에서 나가실 때에, 그분의 제자들 가운데 하나가 그분께 말한다. \"선생님, 보십시오. 얼마나 대단한 돌들이며 얼마나 대단한 건물들입니까!\"",
+          "B": "예수께서 성전에서 나오실 때에, 제자들 가운데 하나가 예수께 말했다. \"선생님, 보십시오! 정말 굉장한 돌들이고 굉장한 건물들입니다!\"",
+          "R": "예수께서 성전 뜰을 떠나 걸어 나오셨다. 그때 제자 하나가 예수께 소리쳤다. \"선생님, 이 커다란 돌들을 보십시오! 이 멋진 건물들을 보십시오!\""
         }
       },
       "decisions": [
@@ -114,6 +124,95 @@
           "reason": "Readable says that Jesus left the temple area and spells out what the disciple was admiring.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n41013001007",
+            "n41013001013"
+          ],
+          "choice": "\"Thưa Thầy\" from the disciple; Jesus answers him as \"con\" (13:2) and the four as \"các con\" (13:5-37); Literal keeps the historic present \"nói\" without \"đã\"",
+          "alternatives": [
+            "\"Thưa ông\"",
+            "\"Thưa Rabbi\""
+          ],
+          "reason": "The style guide's forms of address, as in John: disciples call Jesus \"Thầy\" (Teacher, the sense of the Greek word) and Jesus speaks to them as a teacher to those in his care. Vietnamese has no tense ending, so the historic present is kept at Literal simply by leaving out the past marker.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41013001006"
+          ],
+          "choice": "\"đền thờ\" (L); \"sân đền thờ\" (B, R) for hieron",
+          "alternatives": [
+            "\"đền thờ\" at every level"
+          ],
+          "reason": "As in John: hieron is the whole temple area, so Balanced and Readable say the courts; Literal keeps the single word. Where the whole complex is seen from outside (13:3) every level says \"đền thờ\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n41013001003",
+            "n41013001007",
+            "n41013001013"
+          ],
+          "choice": "No deity_pronoun spans in Korean; the narrative honours Jesus with \"께서\" and -시-, Jesus speaks in the plain style (해라체), the disciples speak to him in 합쇼체 with \"선생님\" and the humble \"저희\", and Mark's historic presents stay present only at Literal (\"말한다\"), through chapter 13",
+          "alternatives": [
+            "Capitalised or honorific pronouns",
+            "Past tense at Literal"
+          ],
+          "reason": "Korean has no capital letters, so the deity_pronoun setting has nothing to change (style guide, sections 4 and 7). Literal keeps Mark's present tense in narrative (13:1); Balanced and Readable use the past, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41013001006"
+          ],
+          "choice": "\"성전\" (L, B); \"성전 뜰\" (R) for hieron, through chapter 13",
+          "alternatives": [
+            "\"성전 뜰\" at Balanced too"
+          ],
+          "reason": "Here Jesus leaves the whole temple complex and the disciple admires its buildings, so Balanced keeps the plain \"성전\" like the English Balanced; Readable says he walked out of the temple courts, as the Korean John does for hieron (2:14; 18:20).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -146,6 +245,16 @@
           "L": "And Jesus said to him, \"Do you see these great buildings?",
           "B": "Jesus replied, \"You see these great buildings?",
           "R": "Jesus answered, \"Do you see these big buildings?"
+        },
+        "vi": {
+          "L": "Và Đức Giê-xu nói với người ấy: \"Con có thấy những công trình lớn này không?",
+          "B": "Đức Giê-xu đáp: \"Con thấy những công trình đồ sộ này sao?",
+          "R": "Đức Giê-xu trả lời: \"Con có thấy những tòa nhà to lớn này không?"
+        },
+        "ko": {
+          "L": "그러자 예수께서 그에게 말씀하셨다. \"너는 이 큰 건물들을 보느냐?",
+          "B": "예수께서 대답하셨다. \"이 큰 건물들을 보고 있느냐?",
+          "R": "예수께서 대답하셨다. \"이 큰 건물들이 보이느냐?"
         }
       },
       "decisions": [
@@ -241,6 +350,16 @@
           "L": "There will not be left here a stone upon a stone that will not be thrown down.\"",
           "B": "Not one stone here will be left resting on another. Every one will be pulled down.\"",
           "R": "Every one of them will be torn down. Not a single stone will be left on top of another.\""
+        },
+        "vi": {
+          "L": "Ở đây sẽ không còn hòn đá nào chồng trên hòn đá [khác] mà không bị phá đổ.\"",
+          "B": "Tại đây sẽ không có một hòn đá nào còn nằm trên một hòn đá khác; tất cả đều sẽ bị phá đổ.\"",
+          "R": "Tất cả sẽ bị phá sập. Sẽ không còn một hòn đá nào nằm chồng lên hòn đá khác.\""
+        },
+        "ko": {
+          "L": "무너지지 않을 돌이 돌 위에 하나도 여기 남지 않을 것이다.\"",
+          "B": "여기 있는 돌 하나도 다른 돌 위에 그대로 얹혀 있지 못할 것이다. 모두 허물어질 것이다.\"",
+          "R": "이 건물들은 모두 허물어질 것이다. 돌 하나도 다른 돌 위에 남아 있지 않을 것이다.\""
         }
       },
       "decisions": [
@@ -377,6 +496,16 @@
           "L": "And as {{deity_pronoun:he|He}} was sitting on the Mount of Olives opposite the temple, Peter and James and John and Andrew were asking {{deity_pronoun:him|Him}} privately:",
           "B": "Then, while {{deity_pronoun:he|He}} sat on the Mount of Olives facing the temple, four of them, Peter, James, John and Andrew, put a question to {{deity_pronoun:him|Him}} in private:",
           "R": "Later Jesus sat down on the Mount of Olives. From there {{deity_pronoun:he|He}} could see the temple across the valley. Peter, James, John, and Andrew came to {{deity_pronoun:him|Him}} alone and asked {{deity_pronoun:him|Him}} a question:"
+        },
+        "vi": {
+          "L": "Và khi {{deity_pronoun:ngài|Ngài}} đang ngồi trên núi Ô-li-ve, đối diện đền thờ, Phi-e-rơ và Gia-cơ và Giăng và Anh-rê hỏi riêng {{deity_pronoun:ngài|Ngài}}:",
+          "B": "Rồi khi {{deity_pronoun:ngài|Ngài}} ngồi trên núi Ô-li-ve, đối diện đền thờ, bốn môn đồ là Phi-e-rơ, Gia-cơ, Giăng và Anh-rê đến hỏi riêng {{deity_pronoun:ngài|Ngài}}:",
+          "R": "Sau đó Đức Giê-xu ngồi trên núi Ô-li-ve. Từ đó {{deity_pronoun:ngài|Ngài}} có thể nhìn thấy đền thờ ở bên kia thung lũng. Phi-e-rơ, Gia-cơ, Giăng và Anh-rê đến gặp riêng {{deity_pronoun:ngài|Ngài}} và hỏi:"
+        },
+        "ko": {
+          "L": "그리고 그분이 성전 맞은편 올리브 산에 앉아 계실 때에, 베드로와 야고보와 요한과 안드레가 따로 그분께 묻고 있었다.",
+          "B": "그 뒤에 예수께서 성전이 마주 보이는 올리브 산에 앉아 계실 때에, 베드로와 야고보와 요한과 안드레, 이 네 사람이 따로 예수께 여쭈었다.",
+          "R": "나중에 예수께서 올리브 산에 앉으셨다. 거기서는 골짜기 건너편으로 성전이 보였다. 그때 베드로와 야고보와 요한과 안드레가 따로 예수께 와서 여쭈었다."
         }
       },
       "decisions": [
@@ -461,6 +590,74 @@
           "reason": "Readable explains what \"opposite\" means here and says the four came to Jesus on their own.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41013003006",
+            "n41013003018"
+          ],
+          "choice": "\"núi Ô-li-ve\"; \"Gia-cơ\" for James",
+          "alternatives": [
+            "\"núi Ô-liu\"",
+            "\"Gia-cô-bê\""
+          ],
+          "reason": "The Protestant forms, as the style guide settles for names: \"núi Ô-li-ve\" as in John 8:1, and \"Gia-cơ\", the traditional Protestant form of James, which the guide's list of names from John does not include.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41013003004",
+            "n41013003005",
+            "n41013003006",
+            "n41013003007",
+            "n41013003008"
+          ],
+          "choice": "\"올리브 산\" at every level",
+          "alternatives": [
+            "\"감람산\""
+          ],
+          "reason": "The style guide prefers the modern word where an older church word competes with it; \"감람산\" is the form of familiar versions and many readers will know it. It is \"올리브 산\" in the Korean John (8:1) too. Open for a native reviewer.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n41013003012"
+          ],
+          "choice": "\"여쭈었다\" (B, R) for asking Jesus",
+          "alternatives": [
+            "\"물었다\""
+          ],
+          "reason": "The humble verb of asking fits disciples speaking to their teacher, as in the Korean Mark 4:10; Literal keeps the plain \"묻고 있었다\" with the Greek imperfect.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -497,6 +694,16 @@
           "L": "\"Tell us, when will these things be, and what [will be] the sign when all these things are about to be accomplished?\"",
           "B": "\"Tell us, when will these things take place? And what sign will there be when all of them are about to reach their completion?\"",
           "R": "\"Tell us, when will this happen? What sign will show us that all these things are about to be completed?\""
+        },
+        "vi": {
+          "L": "\"Xin Thầy nói cho chúng con biết, khi nào những điều này sẽ xảy ra, và [đâu là] dấu hiệu khi tất cả những điều này sắp được hoàn tất?\"",
+          "B": "\"Xin Thầy cho chúng con biết, khi nào những việc ấy sẽ xảy ra? Và khi tất cả những việc ấy sắp đến lúc hoàn tất thì sẽ có dấu hiệu gì?\"",
+          "R": "\"Xin Thầy cho chúng con biết khi nào việc đó sẽ xảy ra? Dấu hiệu nào sẽ cho chúng con biết rằng tất cả những việc ấy sắp được hoàn tất?\""
+        },
+        "ko": {
+          "L": "\"저희에게 말씀해 주십시오. 언제 이런 일들이 있겠으며, 이 모든 일이 이루어지려고 할 때에 무슨 표적이 있겠습니까?\"",
+          "B": "\"저희에게 말씀해 주십시오. 이런 일이 언제 일어나겠습니까? 그리고 이 모든 일이 끝을 맺으려 할 때에는 어떤 표적이 있겠습니까?\"",
+          "R": "\"말씀해 주십시오. 이 일이 언제 일어납니까? 이 모든 일이 곧 다 이루어진다는 것을 무슨 표적을 보고 알 수 있습니까?\""
         }
       },
       "decisions": [
@@ -597,6 +804,71 @@
           "reason": "Balanced and Readable use plain words for coming to an end.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41013004009"
+          ],
+          "choice": "\"dấu hiệu\" for the sign the disciples ask for",
+          "alternatives": [
+            "\"dấu lạ\""
+          ],
+          "reason": "Here the sign is a signal that the end is near, not a miracle, so Vietnamese uses the ordinary word for an indication; \"dấu lạ\", the word for John's signs, is kept for the signs and wonders of false prophets in 13:22.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n41013004001",
+            "n41013004002"
+          ],
+          "choice": "\"Xin Thầy ... chúng con\", not bracketed at Literal",
+          "alternatives": [
+            "\"Hãy nói cho chúng tôi\""
+          ],
+          "reason": "A bare imperative to a teacher would be rude in Vietnamese; the polite \"Xin\" and the disciples' \"chúng con\" are what the grammar of respect requires, so the style guide leaves them unbracketed.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41013004008"
+          ],
+          "choice": "\"표적\" for semeion, every level",
+          "alternatives": [
+            "\"징조\"",
+            "\"기적\""
+          ],
+          "reason": "As in the Korean John, \"표적\" is the word for a sign that points beyond itself; \"징조\" (omen) is the word of some versions here, and \"기적\" (miracle) would miss that it is a sign of what is coming.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -630,6 +902,16 @@
           "L": "And Jesus began to say to them, \"Take care that no one misleads you.",
           "B": "Jesus began to speak to them: \"Be on your guard, so that nobody leads you astray.",
           "R": "Jesus began to answer them. \"Be careful! Do not let anyone fool you."
+        },
+        "vi": {
+          "L": "Đức Giê-xu bắt đầu nói với họ: \"Hãy coi chừng, kẻo có ai làm cho các con lầm lạc.",
+          "B": "Đức Giê-xu bắt đầu nói với họ: \"Hãy đề phòng, đừng để ai lừa gạt các con.",
+          "R": "Đức Giê-xu bắt đầu trả lời họ: \"Hãy cẩn thận! Đừng để ai lừa các con."
+        },
+        "ko": {
+          "L": "그러자 예수께서 그들에게 말씀하기 시작하셨다. \"아무도 너희를 미혹하지 못하도록 주의하여라.",
+          "B": "예수께서 그들에게 말씀하기 시작하셨다. \"아무에게도 속아 넘어가지 않도록 조심하여라.",
+          "R": "예수께서 대답하기 시작하셨다. \"조심하여라! 아무에게도 속지 마라."
         }
       },
       "decisions": [
@@ -703,6 +985,50 @@
           "reason": "Each level keeps the same English for this warning wherever it returns in the speech.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41013005007"
+          ],
+          "choice": "\"Hãy coi chừng\" (L); \"Hãy đề phòng\" (B); \"Hãy cẩn thận\" (R), here and in 13:9, 13:23 and 13:33",
+          "alternatives": [
+            "\"Hãy xem\""
+          ],
+          "reason": "The Greek \"look\" means \"be on guard\" in this speech; each level keeps one Vietnamese word for it through the chapter so the repeated warning stays visible.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41013005007",
+            "n41013005011"
+          ],
+          "choice": "\"주의하여라\" (L); \"조심하여라\" (B, R) for blepete; \"미혹하다\" (L); \"속아 넘어가다\", \"속이다\" (B, R) for planao, through chapter 13",
+          "alternatives": [
+            "\"삼가라\"",
+            "\"현혹하다\""
+          ],
+          "reason": "One word per level for Jesus' repeated \"take heed\" (13:5, 9, 23, 33) lets the warnings be heard as a series; \"삼가라\" is the older form. \"미혹하다\" is the established word for leading astray and suits Literal; Balanced and Readable use the everyday \"속다/속이다\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -738,6 +1064,16 @@
           "L": "Many will come in {{deity_pronoun:my|My}} name, saying, 'I am [he],' and they will mislead many.",
           "B": "Many will come using {{deity_pronoun:my|My}} name and saying, 'I am he,' and they will lead many astray.",
           "R": "Many people will come and use {{deity_pronoun:my|My}} name. They will say, 'I am the one!' They will fool many people."
+        },
+        "vi": {
+          "L": "Nhiều kẻ sẽ đến nhân danh {{deity_pronoun:ta|Ta}}, nói rằng: 'Ta là [Đấng ấy],' và sẽ làm cho nhiều người lầm lạc.",
+          "B": "Nhiều kẻ sẽ nhân danh {{deity_pronoun:ta|Ta}} mà đến và nói: 'Ta chính là Đấng ấy,' và họ sẽ lừa gạt nhiều người.",
+          "R": "Nhiều người sẽ đến và dùng danh {{deity_pronoun:ta|Ta}}. Họ sẽ nói: 'Ta là Đấng ấy!' Họ sẽ lừa được nhiều người."
+        },
+        "ko": {
+          "L": "많은 사람이 내 이름으로 와서 '내가 [그]다' 하고 말하며, 많은 사람을 미혹할 것이다.",
+          "B": "많은 사람이 내 이름을 내세우며 와서 '내가 그다' 하고 말할 것이고, 많은 사람을 속일 것이다.",
+          "R": "많은 사람이 와서 내 이름을 쓰며 '내가 바로 그 사람이다!' 하고 말할 것이다. 그들은 많은 사람을 속일 것이다."
         }
       },
       "decisions": [
@@ -816,6 +1152,52 @@
           "reason": "English needs a word after \"I am\". Literal brackets it; Readable makes the claim plain.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n41013006009",
+            "n41013006010"
+          ],
+          "choice": "'Ta là [Đấng ấy]' (L); 'Ta chính là Đấng ấy' (B); 'Ta là Đấng ấy' (R)",
+          "alternatives": [
+            "'Ta là [người đó]'",
+            "'Chính ta đây'"
+          ],
+          "reason": "Vietnamese cannot end a sentence with \"là\", so the claim needs a complement; \"Đấng ấy\" says \"the one\" with the respect due to the expected deliverer whom they pretend to be. The echo of Jesus's own \"I am\" is given by the meaning decision. These speakers are not Jesus, so their \"Ta\" takes no setting.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n41013006009",
+            "n41013006010"
+          ],
+          "choice": "'내가 [그]다' (L); '내가 그다' (B); '내가 바로 그 사람이다' (R)",
+          "alternatives": [
+            "'나다'",
+            "'내가 있다'"
+          ],
+          "reason": "Korean needs a predicate for \"I am\"; \"그\" (he, the one) is the shortest and keeps the claim open, so that the same words can stand in Jesus' own answer at 14:62. Literal brackets it.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -853,6 +1235,16 @@
           "L": "And when you hear of wars and reports of wars, do not be alarmed; it must happen, but the end [is] not yet.",
           "B": "When you hear of wars, and news of wars far away, do not be shaken. These things have to come, but that is not yet the end.",
           "R": "You will hear about wars close by and news of wars far away. Do not be afraid. These things must happen, but the end has not come yet."
+        },
+        "vi": {
+          "L": "Khi các con nghe về chiến tranh và tin đồn về chiến tranh, đừng hoảng sợ; [điều đó] phải xảy ra, nhưng chưa phải là sự cuối cùng.",
+          "B": "Khi các con nghe tiếng giặc giã và tin tức về những cuộc chiến ở xa, đừng hoảng hốt. Những việc ấy phải xảy ra, nhưng đó chưa phải là lúc cuối cùng.",
+          "R": "Các con sẽ nghe về những cuộc chiến ở gần và tin tức về những cuộc chiến ở xa. Đừng sợ hãi. Những việc ấy phải xảy ra, nhưng thời điểm cuối cùng chưa đến."
+        },
+        "ko": {
+          "L": "그리고 너희가 전쟁들과 전쟁들의 소문을 들을 때에, 놀라지 마라. [그런 일이] 일어나야 하지만, 아직 끝은 아니다.",
+          "B": "너희가 전쟁 소식과 먼 곳에서 일어나는 전쟁 소문을 들어도 놀라지 마라. 이런 일은 반드시 일어나야 하지만, 그것이 아직 끝은 아니다.",
+          "R": "너희는 가까운 곳에서 일어나는 전쟁과 먼 곳에서 들려오는 전쟁 소식을 듣게 될 것이다. 그래도 겁내지 마라. 이런 일은 꼭 일어나야 하지만, 아직 끝이 온 것은 아니다."
         }
       },
       "decisions": [
@@ -928,6 +1320,47 @@
           "reason": "Balanced and Readable say what the second phrase means instead of keeping the old pairing.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41013007015"
+          ],
+          "choice": "\"sự cuối cùng\" (L); \"lúc cuối cùng\" (B); \"thời điểm cuối cùng\" (R)",
+          "alternatives": [
+            "\"tận thế\""
+          ],
+          "reason": "\"Tận thế\" (the end of the world) would decide more than the Greek says; the plain word for \"the end\" leaves it to the meaning decision (the end of the age). The same word is used in 13:10 (R) and 13:13.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n41013007010",
+            "n41013007011"
+          ],
+          "choice": "[그런 일이] (L)",
+          "alternatives": [
+            "No subject"
+          ],
+          "reason": "Korean needs a subject for \"must happen\"; Literal brackets it.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -968,6 +1401,16 @@
           "L": "For nation will rise up against nation and kingdom against kingdom; there will be earthquakes in [various] places; there will be famines. These [are the] beginning of birth pains.",
           "B": "Nation will go to war against nation, and kingdom against kingdom. Earthquakes will strike in one place after another, and there will be famines. All this is only the first of the birth pains.",
           "R": "Nations will fight against each other, and kingdoms will attack other kingdoms. There will be earthquakes in many places, and people will go hungry. But all this is only the start of the pain. It is like the first pains of a woman giving birth."
+        },
+        "vi": {
+          "L": "Vì dân tộc sẽ nổi lên chống lại dân tộc, và vương quốc chống lại vương quốc; sẽ có động đất ở nhiều nơi; sẽ có đói kém. Những điều này [là] khởi đầu của những cơn đau chuyển dạ.",
+          "B": "Dân tộc này sẽ giao chiến với dân tộc khác, vương quốc này với vương quốc khác. Động đất sẽ xảy ra hết nơi này đến nơi khác, và sẽ có đói kém. Tất cả những điều ấy mới chỉ là những cơn đau chuyển dạ đầu tiên.",
+          "R": "Các dân tộc sẽ đánh nhau, các vương quốc sẽ tấn công nhau. Sẽ có động đất ở nhiều nơi, và người ta sẽ đói khổ. Nhưng tất cả những điều đó mới chỉ là khởi đầu của cơn đau, giống như những cơn đau đầu tiên của người phụ nữ sắp sinh con."
+        },
+        "ko": {
+          "L": "민족이 민족을 거슬러, 나라가 나라를 거슬러 일어날 것이기 때문이다. 곳곳에 지진이 있을 것이고, 기근이 있을 것이다. 이것들은 해산하는 고통의 시작이다.",
+          "B": "민족이 민족을 치고, 나라가 나라를 칠 것이다. 곳곳에 지진이 일어나고 기근이 들 것이다. 이 모든 일은 해산의 진통이 막 시작된 것일 뿐이다.",
+          "R": "민족끼리 서로 싸우고, 나라가 다른 나라를 공격할 것이다. 여러 곳에서 지진이 일어나고, 사람들이 굶주릴 것이다. 그러나 이것은 고통의 시작일 뿐이다. 아이를 낳는 여자가 처음 진통을 겪는 것과 같다."
         }
       },
       "decisions": [
@@ -1110,6 +1553,16 @@
           "L": "But you, take care for yourselves. They will hand you over to councils, and in synagogues you will be beaten, and before governors and kings you will stand because of {{deity_pronoun:me|Me}}, as a testimony to them.",
           "B": "As for you, be on your guard. People will hand you over to the councils, and you will be flogged in the synagogues. You will stand before governors and kings for {{deity_pronoun:my|My}} sake, to bear witness to them.",
           "R": "Be careful about what will happen to you. People will take you to court. They will beat you in their meeting places. You will be put on trial in front of governors and kings because you follow {{deity_pronoun:me|Me}}. That way you will be able to tell them about {{deity_pronoun:me|Me}}."
+        },
+        "vi": {
+          "L": "Còn các con, hãy coi chừng chính mình. Người ta sẽ nộp các con cho các hội đồng, và các con sẽ bị đánh đòn trong các nhà hội, và các con sẽ đứng trước các quan tổng đốc và các vua vì cớ {{deity_pronoun:ta|Ta}}, để làm chứng cho họ.",
+          "B": "Về phần các con, hãy đề phòng. Người ta sẽ nộp các con cho các hội đồng xét xử, và các con sẽ bị đánh đòn trong các nhà hội. Các con sẽ phải đứng trước các quan tổng đốc và các vua vì {{deity_pronoun:ta|Ta}}, để làm chứng cho họ.",
+          "R": "Hãy cẩn thận về những gì sẽ xảy đến cho các con. Người ta sẽ đem các con ra tòa. Họ sẽ đánh đòn các con trong các nhà hội của họ. Các con sẽ bị xét xử trước các quan tổng đốc và các vua, vì các con theo {{deity_pronoun:ta|Ta}}. Như vậy các con sẽ có dịp nói cho họ biết về {{deity_pronoun:ta|Ta}}."
+        },
+        "ko": {
+          "L": "그러나 너희는 너희 자신을 주의하여라. 그들이 너희를 공의회들에 넘겨줄 것이고, 너희는 회당들에서 매를 맞을 것이며, 나 때문에 총독들과 왕들 앞에 서게 될 것이다. 그들에게 증언이 되기 위해서이다.",
+          "B": "너희는 스스로 조심하여라. 사람들이 너희를 공의회에 넘겨주고, 너희는 회당에서 매질을 당할 것이다. 너희는 나 때문에 총독들과 왕들 앞에 서서 그들에게 증언하게 될 것이다.",
+          "R": "너희에게 일어날 일을 조심하여라. 사람들이 너희를 재판정으로 끌고 갈 것이다. 그들의 회당에서 너희를 때릴 것이다. 너희가 나를 따른다는 이유로 너희는 총독들과 왕들 앞에서 재판을 받을 것이다. 그렇게 해서 너희는 그들에게 나에 대하여 말할 수 있을 것이다."
         }
       },
       "decisions": [
@@ -1208,6 +1661,92 @@
           "reason": "Readable explains the councils and synagogues and says what the testimony means. \"Tell them about me\" follows the reading chosen above.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41013009005"
+          ],
+          "choice": "\"nộp\" for \"hand over\", here and in 13:11-12",
+          "alternatives": [
+            "\"giao nộp\"",
+            "\"phản bội\""
+          ],
+          "reason": "The meaning decision links this verb to what happens to John and to Jesus; \"nộp\" is the word the Vietnamese John uses for Judas handing Jesus over, so the link stays visible in Vietnamese too.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41013009008"
+          ],
+          "choice": "\"các hội đồng\" (L); \"các hội đồng xét xử\" (B); \"đem ... ra tòa\" (R), lowercase",
+          "alternatives": [
+            "\"Hội đồng Công luận\""
+          ],
+          "reason": "These are local Jewish courts, as the meaning decision says, not the Sanhedrin in Jerusalem, which the Vietnamese John and Mark 14:55 call \"Hội đồng Công luận\" at Balanced.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41013009005"
+          ],
+          "choice": "\"넘겨주다\" for paradidomi, every level in chapter 13 (13:9, 11, 12)",
+          "alternatives": [
+            "\"내주다\"",
+            "\"고발하다\""
+          ],
+          "reason": "The meaning decision links this verb with what happens to John and to Jesus himself; one Korean word keeps that thread visible, as the Korean John uses \"넘겨주다\" for Judas handing Jesus over.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41013009008"
+          ],
+          "choice": "\"공의회들\" (L); \"공의회\" (B); \"재판정\" (R) for synedria",
+          "alternatives": [
+            "\"법정\""
+          ],
+          "reason": "\"공의회\" is the Korean John's word for the council (11:47); here the plural means local Jewish courts, which Literal shows with \"-들\". Readable names what they were for, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1240,6 +1779,16 @@
           "L": "And to all the nations the gospel must first be proclaimed.",
           "B": "And first the gospel has to be proclaimed to all the nations.",
           "R": "Before the end comes, the good news must be told to people of every nation."
+        },
+        "vi": {
+          "L": "Và Tin Lành trước hết phải được rao giảng cho tất cả các dân tộc.",
+          "B": "Trước hết, Tin Lành phải được rao giảng cho mọi dân tộc.",
+          "R": "Trước khi thời điểm cuối cùng đến, Tin Lành phải được loan báo cho người thuộc mọi dân tộc."
+        },
+        "ko": {
+          "L": "그리고 먼저 모든 민족에게 복음이 선포되어야 한다.",
+          "B": "그리고 먼저 복음이 모든 민족에게 전파되어야 한다.",
+          "R": "끝이 오기 전에, 기쁜 소식이 모든 민족에게 전해져야 한다."
         }
       },
       "decisions": [
@@ -1313,6 +1862,49 @@
           "reason": "Readable says what \"first\" is first to.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41013010010"
+          ],
+          "choice": "\"Tin Lành\" at every level, Readable included",
+          "alternatives": [
+            "\"tin mừng\"",
+            "\"Phúc Âm\""
+          ],
+          "reason": "As in the Vietnamese Colossians: \"Tin Lành\" means \"good news\" in plain words, so Readable needs no other word, and it is the Protestant term the style guide settles.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41013010010"
+          ],
+          "choice": "\"복음\" (L, B); \"기쁜 소식\" (R) for euangelion, through Mark",
+          "alternatives": [
+            "\"복음\" at Readable"
+          ],
+          "reason": "Gospel is a key term: \"복음\" at Literal and Balanced; Readable says \"기쁜 소식\" (good news), as the English Readable says \"good news\" and the Korean Mark 3:14 does for preaching.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1366,6 +1958,16 @@
           "L": "And when they lead you [away], handing [you] over, do not be anxious beforehand about what you will say, but whatever is given to you in that hour, speak that; for it is not you who are speaking, but the Holy Spirit.",
           "B": "When they take you away to hand you over, do not be anxious in advance about what you will say. Whatever words are given to you in that hour, speak them. It will not be you who are speaking. It will be the Holy Spirit.",
           "R": "When you are arrested and put on trial, do not worry before it happens about what you will say. When the time comes, God will give you the words. Say what {{deity_pronoun:he|He}} gives you. You will not be the one speaking. The Holy Spirit will speak through you."
+        },
+        "vi": {
+          "L": "Và khi người ta dẫn các con đi [và] nộp [các con], đừng lo trước về điều các con sẽ nói, nhưng điều gì được ban cho các con trong giờ đó, hãy nói điều ấy; vì không phải các con là người nói, nhưng là Đức Thánh Linh.",
+          "B": "Khi người ta bắt dẫn các con đi để nộp, đừng lo trước mình sẽ nói gì. Trong giờ ấy, lời nào được ban cho các con, thì hãy nói lời ấy. Vì không phải các con nói, mà là Đức Thánh Linh nói.",
+          "R": "Khi các con bị bắt và bị đem ra xét xử, đừng lo lắng trước về những gì mình sẽ nói. Đến lúc đó, Đức Chúa Trời sẽ cho các con lời để nói. Hãy nói những gì {{deity_pronoun:ngài|Ngài}} ban cho các con. Không phải chính các con nói đâu, mà Đức Thánh Linh sẽ nói qua các con."
+        },
+        "ko": {
+          "L": "그리고 그들이 너희를 넘겨주려고 끌고 갈 때에, 무엇을 말할지 미리 걱정하지 마라. 오히려 그 때에 너희에게 주어지는 것은 무엇이든지, 그것을 말하여라. 말하는 이는 너희가 아니라 성령이시기 때문이다.",
+          "B": "사람들이 너희를 붙잡아 넘겨줄 때에, 무슨 말을 할지 미리 걱정하지 마라. 그 때에 너희에게 주어지는 말을 하여라. 말하는 이는 너희가 아니라 성령이시다.",
+          "R": "너희가 붙잡혀서 재판을 받게 될 때, 무슨 말을 할지 미리 걱정하지 마라. 그 때가 되면 하나님께서 너희에게 할 말을 주실 것이다. 하나님께서 주시는 그 말을 하여라. 그때 말하는 것은 너희가 아니다. 성령께서 너희를 통하여 말씀하실 것이다."
         }
       },
       "decisions": [
@@ -1453,6 +2055,28 @@
           "reason": "Readable says what being led away and handed over means and names God as the giver.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41013011017"
+          ],
+          "choice": "\"그 때\" for \"that hour\"",
+          "alternatives": [
+            "\"그 시간\"",
+            "\"그 순간\""
+          ],
+          "reason": "The Korean John renders hora as \"때\" at every level; here it means the moment of the trial (meaning decision), which \"그 때\" says plainly.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1492,6 +2116,16 @@
           "L": "And brother will hand over brother to death, and a father [his] child, and children will rise up against parents and have them put to death.",
           "B": "Brothers will hand their brothers over to be killed, and fathers their children. Children will rise up against their parents and send them to their deaths.",
           "R": "Families will turn against each other. Brothers will hand their own brothers over to be killed. Fathers will do this to their children. Children will turn against their parents and have them killed."
+        },
+        "vi": {
+          "L": "Và anh em sẽ nộp anh em mình cho sự chết, cha [nộp] con, và con cái sẽ nổi lên chống lại cha mẹ và làm cho cha mẹ bị giết.",
+          "B": "Anh em sẽ nộp nhau cho người ta giết, cha sẽ nộp con. Con cái sẽ nổi lên chống lại cha mẹ và khiến cha mẹ phải chết.",
+          "R": "Người trong gia đình sẽ quay ra chống lại nhau. Anh em ruột sẽ nộp nhau để bị giết. Cha cũng sẽ làm như vậy với con mình. Con cái sẽ quay lại chống cha mẹ và khiến cha mẹ bị giết."
+        },
+        "ko": {
+          "L": "그리고 형제가 형제를, 아버지가 자식을 죽음에 넘겨줄 것이고, 자식들이 부모를 거슬러 일어나 그들을 죽게 할 것이다.",
+          "B": "형제가 형제를 넘겨주어 죽게 하고, 아버지가 자식을 그렇게 할 것이다. 자식들이 부모에게 맞서 일어나 부모를 죽음으로 몰아넣을 것이다.",
+          "R": "가족끼리 서로 등을 돌릴 것이다. 형제가 자기 형제를 넘겨주어 죽게 할 것이다. 아버지도 자기 자식에게 그렇게 할 것이다. 자식들이 부모에게 대들고 부모를 죽게 할 것이다."
         }
       },
       "decisions": [
@@ -1613,6 +2247,16 @@
           "L": "And you will be hated by all because of {{deity_pronoun:my|My}} name.",
           "B": "Everyone will hate you because of {{deity_pronoun:my|My}} name.",
           "R": "Everyone will hate you because you belong to {{deity_pronoun:me|Me}}."
+        },
+        "vi": {
+          "L": "Và các con sẽ bị mọi người ghét vì danh {{deity_pronoun:ta|Ta}}.",
+          "B": "Mọi người sẽ ghét các con vì danh {{deity_pronoun:ta|Ta}}.",
+          "R": "Mọi người sẽ ghét các con vì các con thuộc về {{deity_pronoun:ta|Ta}}."
+        },
+        "ko": {
+          "L": "그리고 너희는 내 이름 때문에 모든 사람에게 미움을 받을 것이다.",
+          "B": "너희는 내 이름 때문에 모든 사람에게 미움을 받을 것이다.",
+          "R": "너희가 내 사람이라는 이유로, 모든 사람이 너희를 미워할 것이다."
         }
       },
       "decisions": [
@@ -1702,6 +2346,16 @@
           "L": "But the one who has endured to [the] end, this one will be saved.",
           "B": "But whoever holds out to the end will be saved.",
           "R": "But those who do not give up, right to the end, will be saved."
+        },
+        "vi": {
+          "L": "Nhưng người nào chịu đựng đến cuối cùng, người ấy sẽ được cứu.",
+          "B": "Nhưng ai bền chí đến cuối cùng sẽ được cứu.",
+          "R": "Nhưng những ai không bỏ cuộc, giữ vững cho đến cuối cùng, sẽ được cứu."
+        },
+        "ko": {
+          "L": "그러나 끝까지 견딘 사람, 바로 그 사람이 구원을 받을 것이다.",
+          "B": "그러나 끝까지 견디어 내는 사람은 구원을 받을 것이다.",
+          "R": "그러나 끝까지 포기하지 않는 사람은 구원을 받을 것이다."
         }
       },
       "decisions": [
@@ -1850,6 +2504,16 @@
           "L": "But when you see the abomination of desolation standing where he must not (let the one reading understand), then let those in Judea flee to the mountains; \\v 15 let the one on the housetop not come down nor go in to take anything out of {{gender:their|his}} house, \\v 16 and let the one in the field not turn back to the things behind to take {{gender:their|his}} cloak.",
           "B": "But when you see the abomination that brings ruin standing where he has no right to be (let the reader take note), then those who are in Judea must escape to the hills. \\v 15 Anyone who is on the roof must not go down into the house to fetch anything out of it. \\v 16 Anyone who is out in the field must not go back for a cloak.",
           "R": "One day you will see 'the horrible thing that destroys' standing where he should not stand. (Reader, think carefully about what this means.) When that happens, people in Judea must run away to the hills. \\v 15 If someone is up on the roof of a house, they must not go down and go inside to get anything. \\v 16 If someone is working in the field, they must not go back to get their coat."
+        },
+        "vi": {
+          "L": "Nhưng khi các con thấy sự ghê tởm của sự hoang tàn đứng ở nơi hắn không được [đứng] (người đọc hãy hiểu), thì những người ở Giu-đê hãy trốn lên núi; \\v 15 người ở trên mái nhà đừng xuống, cũng đừng vào lấy vật gì ra khỏi nhà mình; \\v 16 và người ở ngoài đồng đừng quay trở lại phía sau để lấy áo choàng mình.",
+          "B": "Nhưng khi các con thấy vật ghê tởm gây ra cảnh hoang tàn đứng ở nơi hắn không có quyền đứng (người đọc hãy lưu ý), thì những ai đang ở Giu-đê phải trốn lên vùng đồi núi. \\v 15 Ai đang ở trên mái nhà thì đừng xuống vào nhà lấy bất cứ thứ gì. \\v 16 Ai đang ở ngoài đồng thì đừng quay về lấy áo choàng.",
+          "R": "Một ngày kia các con sẽ thấy 'vật kinh khủng gây ra sự tàn phá' đứng ở nơi hắn không được đứng. (Người đọc, hãy suy nghĩ kỹ điều này có nghĩa là gì.) Khi điều đó xảy ra, những người ở Giu-đê phải chạy trốn lên vùng đồi núi. \\v 15 Nếu ai đang ở trên mái nhà, thì đừng đi xuống và vào nhà lấy bất cứ thứ gì. \\v 16 Nếu ai đang làm việc ngoài đồng, thì đừng quay về lấy áo khoác."
+        },
+        "ko": {
+          "L": "그러나 너희가 황폐함의 가증한 것이 자기가 서서는 안 될 곳에 서 있는 것을 보거든 (읽는 사람은 깨달아라), 그때에는 유대에 있는 사람들은 산으로 도망하여라. \\v 15 지붕 위에 있는 사람은 내려오지도 말고, 자기 집에서 무엇을 꺼내려고 들어가지도 마라. \\v 16 그리고 밭에 있는 사람은 자기 겉옷을 가지러 뒤로 돌아가지 마라.",
+          "B": "너희는 멸망을 가져오는 가증한 것이 자기가 서서는 안 될 곳에 서 있는 것을 보거든 (읽는 사람은 잘 새겨 두어라), 그때 유대에 있는 사람들은 산으로 피하여라. \\v 15 지붕 위에 있는 사람은 집 안에 있는 물건을 가지러 내려가거나 들어가지 마라. \\v 16 밭에 나가 있는 사람은 겉옷을 가지러 돌아가지 마라.",
+          "R": "언젠가 너희는 '모든 것을 망가뜨리는 끔찍한 것'이 서서는 안 될 곳에 서 있는 것을 보게 될 것이다. (읽는 사람은 이것이 무슨 뜻인지 잘 생각하여라.) 그런 일이 일어나면, 유대에 있는 사람들은 산으로 도망쳐야 한다. \\v 15 지붕 위에 올라가 있는 사람은 무엇을 가지러 내려가거나 집 안에 들어가서는 안 된다. \\v 16 밭에서 일하는 사람은 겉옷을 가지러 돌아가서는 안 된다."
         }
       },
       "decisions": [
@@ -2017,6 +2681,121 @@
           "reason": "Literal keeps Daniel's phrase as it is. Balanced and Readable say what it means. All levels keep Mark's aside in parentheses.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41013014005",
+            "n41013014007",
+            "n41013014008"
+          ],
+          "choice": "\"sự ghê tởm của sự hoang tàn\" (L); \"vật ghê tởm gây ra cảnh hoang tàn\" (B); \"vật kinh khủng gây ra sự tàn phá\" (R); \"hắn\" for the one standing",
+          "alternatives": [
+            "\"sự tàn nát gớm ghiếc\"",
+            "\"nó\""
+          ],
+          "reason": "Literal keeps Daniel's two nouns; Balanced and Readable say what the phrase means. The Greek participle is masculine and points to a person (see the footnoted meaning decision), so the one who stands there is \"hắn\", a pronoun for a hostile person, where \"nó\" would make him a thing.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41013015014",
+            "n41013016014"
+          ],
+          "choice": "\"nhà mình\", \"áo choàng mình\", \"ai\", with no gender span",
+          "alternatives": [
+            "gender setting spans as in the English"
+          ],
+          "reason": "Vietnamese \"người\", \"ai\" and the reflexive \"mình\" already include men and women (style guide section 7), so the English gender spans have no Vietnamese counterpart here or in 13:34.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41013014004",
+            "n41013014005",
+            "n41013014006",
+            "n41013014007"
+          ],
+          "choice": "\"황폐함의 가증한 것\" (L); \"멸망을 가져오는 가증한 것\" (B); \"모든 것을 망가뜨리는 끔찍한 것\" (R)",
+          "alternatives": [
+            "\"멸망의 가증한 것\""
+          ],
+          "reason": "Literal keeps the Greek genitive as Daniel's phrase; Balanced says what the desolation does in natural Korean; Readable uses plain words. \"가증한\" keeps the sense of something detestable to God.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41013014008",
+            "n41013014009",
+            "n41013014010",
+            "n41013014011"
+          ],
+          "choice": "\"자기가 서서는 안 될 곳에\" (L, B)",
+          "alternatives": [
+            "\"서서는 안 될 곳에\" with no subject"
+          ],
+          "reason": "The Greek participle is masculine, pointing to a person (meaning decision). Korean has no grammatical gender, so Literal and Balanced add \"자기가\", which suits a person, while the noun \"가증한 것\" stays as Daniel's word.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-3",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n41013015013",
+            "n41013015014"
+          ],
+          "choice": "No gender span: \"자기 집\", \"자기 겉옷\" (L)",
+          "alternatives": [
+            "A gender span"
+          ],
+          "reason": "Korean \"자기\" (one's own) is not gendered, so the English span \"their/his\" has nothing to change in Korean (style guide, section 7).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2052,6 +2831,16 @@
           "L": "And woe to those who are pregnant and to those who are nursing in those days!",
           "B": "How terrible it will be in those days for women who are expecting a child or nursing a baby!",
           "R": "Those days will be very hard for women who are going to have a baby, and for mothers who are feeding babies."
+        },
+        "vi": {
+          "L": "Nhưng khốn cho những người đang mang thai và những người đang cho con bú trong những ngày ấy!",
+          "B": "Trong những ngày ấy, thật khốn khổ cho những phụ nữ đang mang thai hoặc đang cho con bú!",
+          "R": "Những ngày ấy sẽ rất khổ cho những phụ nữ sắp sinh con và những người mẹ đang cho con bú."
+        },
+        "ko": {
+          "L": "그러나 그 날들에는 아이를 밴 여자들과 젖을 먹이는 여자들에게 화가 있다!",
+          "B": "그 날에는 아이를 밴 여자들과 젖먹이를 둔 여자들이 얼마나 괴롭겠느냐!",
+          "R": "그때가 되면 곧 아기를 낳을 여자들과 아기에게 젖을 먹이는 엄마들은 아주 힘들 것이다."
         }
       },
       "decisions": [
@@ -2108,6 +2897,28 @@
           "reason": "Balanced and Readable express the cry of pity in current English.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41013017001"
+          ],
+          "choice": "\"화가 있다\" (L); \"얼마나 괴롭겠느냐\" (B); \"아주 힘들 것이다\" (R) for ouai",
+          "alternatives": [
+            "\"화로다\"",
+            "\"불행하다\""
+          ],
+          "reason": "Woe here is a cry of grief and pity (meaning decision). Literal keeps the traditional \"화가 있다\" in a modern ending, not the archaic \"화로다\"; Balanced and Readable say the pity in ordinary words.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2136,6 +2947,16 @@
           "L": "And pray that it may not happen in winter.",
           "B": "Pray that this does not come in winter.",
           "R": "Pray that it will not happen in the winter."
+        },
+        "vi": {
+          "L": "Và hãy cầu nguyện để điều đó đừng xảy ra vào mùa đông.",
+          "B": "Hãy cầu nguyện để việc ấy đừng xảy đến vào mùa đông.",
+          "R": "Hãy cầu nguyện để việc đó không xảy ra vào mùa đông."
+        },
+        "ko": {
+          "L": "그리고 그 일이 겨울에 일어나지 않도록 기도하여라.",
+          "B": "이 일이 겨울에 닥치지 않도록 기도하여라.",
+          "R": "그 일이 추운 겨울에 일어나지 않게 해 달라고 기도하여라."
         }
       },
       "decisions": [
@@ -2235,6 +3056,16 @@
           "L": "For those days will be tribulation such as has not happened from [the] beginning of the creation which God created until now, and never will.",
           "B": "For those days will bring distress unlike any there has been from the beginning, when God created the world, until now, or ever will be again.",
           "R": "That will be a time of terrible trouble. Nothing like it has happened since God made the world, and nothing like it will ever happen again."
+        },
+        "vi": {
+          "L": "Vì những ngày ấy sẽ là hoạn nạn, [một hoạn nạn] như chưa từng có từ ban đầu của sự sáng tạo mà Đức Chúa Trời đã sáng tạo cho đến bây giờ, và sẽ không bao giờ có nữa.",
+          "B": "Vì những ngày ấy sẽ có cơn hoạn nạn chưa từng có từ buổi đầu, khi Đức Chúa Trời sáng tạo thế giới, cho đến nay, và về sau cũng sẽ không bao giờ có nữa.",
+          "R": "Đó sẽ là một thời kỳ vô cùng khốn khổ. Từ khi Đức Chúa Trời dựng nên thế giới đến nay, chưa từng có điều gì như vậy, và về sau cũng sẽ không bao giờ có nữa."
+        },
+        "ko": {
+          "L": "그 날들이, 하나님께서 창조하신 창조의 처음부터 지금까지 없었고 앞으로도 결코 없을 그런 환난이 될 것이기 때문이다.",
+          "B": "그 날들에는 큰 고난이 닥칠 것이다. 하나님께서 세상을 창조하신 처음부터 지금까지 그런 고난은 없었고, 앞으로도 다시는 없을 것이다.",
+          "R": "그때는 아주 끔찍한 고통의 때가 될 것이다. 하나님께서 세상을 만드신 뒤로 그런 일은 한 번도 없었고, 앞으로도 결코 없을 것이다."
         }
       },
       "decisions": [
@@ -2353,6 +3184,48 @@
           "reason": "Literal keeps the long-used word. Balanced and Readable use everyday words for great suffering and pressure.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41013019006"
+          ],
+          "choice": "\"hoạn nạn\" (L, B); \"thời kỳ vô cùng khốn khổ\" (R), also in 13:24",
+          "alternatives": [
+            "\"cơn đại nạn\""
+          ],
+          "reason": "\"Hoạn nạn\" is the established word for this distress; Readable says it in everyday words.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41013019006"
+          ],
+          "choice": "\"환난\" (L); \"고난\" (B); \"끔찍한 고통\" (R) for thlipsis, also at 13:24",
+          "alternatives": [
+            "\"환난\" at every level"
+          ],
+          "reason": "\"환난\" is the established church word, kept at Literal as in the Korean John 16:33 and Mark 4:17; Balanced and Readable use words a reader hears every day.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2387,6 +3260,16 @@
           "L": "And if [the] Lord had not shortened the days, no flesh would have been saved.",
           "B": "If the Lord had not cut those days short, no one at all would survive.",
           "R": "If the Lord had not made that time shorter, no one would live through it."
+        },
+        "vi": {
+          "L": "Và nếu Chúa đã không rút ngắn những ngày ấy, thì không một xác thịt nào được cứu.",
+          "B": "Nếu Chúa không rút ngắn những ngày ấy, thì chẳng ai sống sót được.",
+          "R": "Nếu Chúa không làm cho thời gian ấy ngắn lại, thì không ai có thể sống sót qua thời gian đó."
+        },
+        "ko": {
+          "L": "그리고 만일 주님께서 그 날들을 줄이지 않으셨다면, 어떤 육체도 구원받지 못했을 것이다.",
+          "B": "주님께서 그 날들을 줄여 주지 않으셨다면, 살아남을 사람이 하나도 없을 것이다.",
+          "R": "주님께서 그 기간을 짧게 해 주지 않으셨다면, 아무도 그때를 견디고 살아남지 못할 것이다."
         }
       },
       "decisions": [
@@ -2474,6 +3357,72 @@
           "reason": "Balanced and Readable show that physical survival is meant.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41013020005",
+            "n41013020011",
+            "n41013020012"
+          ],
+          "choice": "\"Chúa\" for the Lord, God; \"không một xác thịt nào\" (L)",
+          "alternatives": [
+            "\"Đức Chúa Trời\"",
+            "\"không ai\" at Literal"
+          ],
+          "reason": "\"Chúa\" is the word for the Lord at every level, as in John; the meaning decision says God is meant. Literal keeps the Greek picture \"flesh\" for a human being; Balanced and Readable say \"no one\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41013020005"
+          ],
+          "choice": "\"주님\" for kyrios meaning God",
+          "alternatives": [
+            "\"주\"",
+            "\"하나님\""
+          ],
+          "reason": "The Lord here is God (meaning decision); \"주님께서\" keeps Jesus' word and its honour, as the Korean Colossians does for the Lord.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41013020011",
+            "n41013020012"
+          ],
+          "choice": "\"어떤 육체도\" (L)",
+          "alternatives": [
+            "\"아무도\""
+          ],
+          "reason": "Literal keeps the Hebrew idiom \"flesh\" for a human being; Balanced and Readable say \"no one\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2505,6 +3454,16 @@
           "L": "But because of the elect, whom {{deity_pronoun:he|He}} chose, {{deity_pronoun:he|He}} shortened the days.",
           "B": "But because of the chosen, those {{deity_pronoun:he|He}} chose for {{deity_pronoun:himself|Himself}}, {{deity_pronoun:he|He}} has cut the days short.",
           "R": "But God has chosen people to be {{deity_pronoun:his|His}} own. For their sake {{deity_pronoun:he|He}} has made that time shorter."
+        },
+        "vi": {
+          "L": "Nhưng vì cớ những người được chọn, là những người {{deity_pronoun:ngài|Ngài}} đã chọn, {{deity_pronoun:ngài|Ngài}} đã rút ngắn những ngày ấy.",
+          "B": "Nhưng vì những người được chọn, là những người {{deity_pronoun:ngài|Ngài}} đã chọn cho chính mình, {{deity_pronoun:ngài|Ngài}} đã rút ngắn những ngày ấy.",
+          "R": "Nhưng Đức Chúa Trời đã chọn một dân làm của riêng {{deity_pronoun:ngài|Ngài}}. Vì họ, {{deity_pronoun:ngài|Ngài}} đã làm cho thời gian ấy ngắn lại."
+        },
+        "ko": {
+          "L": "그러나 그분이 택하신 택함 받은 사람들 때문에, 그 날들을 줄이셨다.",
+          "B": "그러나 주님께서는 자기를 위하여 택하신 사람들 때문에 그 날들을 줄여 주셨다.",
+          "R": "하나님께서는 사람들을 택하셔서 자기 백성으로 삼으셨다. 그들을 위하여 하나님께서 그 기간을 짧게 해 주셨다."
         }
       },
       "decisions": [
@@ -2584,6 +3543,51 @@
           "reason": "Readable names God and says what \"the elect\" means.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41013020016"
+          ],
+          "choice": "\"những người được chọn\" (L, B); \"dân được Đức Chúa Trời chọn\" (R), here and in 13:22 and 13:27",
+          "alternatives": [
+            "\"tuyển dân\"",
+            "\"những kẻ được chọn\""
+          ],
+          "reason": "A plain phrase for \"the elect\" that keeps the link with the verb \"chose\"; \"tuyển dân\" is a learned Sino-Vietnamese word and often means Israel alone.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41013020016",
+            "n41013020018"
+          ],
+          "choice": "\"택함 받은 사람들\" (L, B); \"하나님께서 택하신 사람들\" (R) for the elect, through chapter 13; here \"택하신 택함 받은 사람들\" (L)",
+          "alternatives": [
+            "\"택하신 자들\"",
+            "\"선민\""
+          ],
+          "reason": "Literal keeps the doubled phrase \"the elect whom he chose\"; \"택함 받은 사람들\" says plainly that God chose them. \"자들\" sounds old-fashioned, and \"선민\" is used of Israel.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2620,6 +3624,16 @@
           "L": "And then if anyone says to you, 'Look, here [is] the {{christos:Christ|Messiah}},' 'Look, there,' do not believe [it].",
           "B": "At that time, if anyone tells you, 'See, here is {{christos:Christ|the Messiah}}!' or 'See, there he is!' do not believe it.",
           "R": "At that time someone may say to you, 'Look, here is {{christos:Christ|the Messiah}}!' or 'Look, he is over there!' Do not believe it."
+        },
+        "vi": {
+          "L": "Và bấy giờ, nếu có ai nói với các con: 'Kìa, {{christos:Đấng Christ|Đấng Mê-si-a}} ở đây,' [hoặc] 'Kìa, ở đó,' thì đừng tin.",
+          "B": "Lúc ấy, nếu có ai bảo các con: 'Xem kìa, {{christos:Đấng Christ|Đấng Mê-si-a}} ở đây!' hoặc 'Xem kìa, Đấng ấy ở đằng kia!' thì đừng tin.",
+          "R": "Lúc ấy, có thể có người nói với các con: 'Xem này, {{christos:Đấng Christ|Đấng Mê-si-a}} ở đây!' hoặc 'Xem kìa, Đấng ấy ở đằng kia!' Đừng tin điều đó."
+        },
+        "ko": {
+          "L": "그리고 그때에 누가 너희에게 '보아라, 여기 {{christos:그리스도|메시아}}께서 [계신다]', '보아라, 저기 [계신다]' 하더라도, 믿지 마라.",
+          "B": "그때에 누가 너희에게 '보아라, {{christos:그리스도|메시아}}께서 여기 계신다!' 또는 '보아라, 저기 계신다!' 하고 말하더라도 믿지 마라.",
+          "R": "그때 누가 너희에게 '보아라, {{christos:그리스도|메시아}}께서 여기 계신다!' 하거나 '보아라, 저기 계신다!' 하고 말할지도 모른다. 그 말을 믿지 마라."
         }
       },
       "decisions": [
@@ -2695,6 +3709,49 @@
           "reason": "Greek gives only \"look, there\". Balanced and Readable add \"or\" and \"he is\" to make the second claim a full saying.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n41013021009",
+            "n41013021010"
+          ],
+          "choice": "{{christos:Đấng Christ|Đấng Mê-si-a}} at every level",
+          "alternatives": [
+            "\"Đấng Christ\" without a setting"
+          ],
+          "reason": "The style guide's span for the title with the article; \"Đấng\" carries the article's sense, so Vietnamese needs no separate word for it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n41013021010"
+          ],
+          "choice": "{{christos:그리스도|메시아}}께서 [계신다]",
+          "alternatives": [
+            "\"그리스도가 있다\""
+          ],
+          "reason": "The christos span as the style guide gives it; Korean has no article, so the title needs no \"the\". Those who make the claim would speak of the Messiah with honour, so the verb takes the honorific; Literal brackets the verb Greek leaves out.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2734,6 +3791,16 @@
           "L": "For false {{christos:christs|messiahs}} and false prophets will arise and will give signs and wonders so as to mislead, if possible, the elect.",
           "B": "For false {{christos:christs|messiahs}} and false prophets will rise up and do signs and wonders, so as to lead the chosen ones astray, if that could be done.",
           "R": "People will come who falsely claim to be {{christos:Christ|the Messiah}}. Others will falsely claim to be prophets. They will do signs and amazing things to fool God's chosen people, if they can."
+        },
+        "vi": {
+          "L": "Vì sẽ nổi lên những {{christos:Christ giả|Mê-si-a giả}} và những tiên tri giả, và chúng sẽ làm những dấu lạ và điềm lạ để lừa gạt, nếu có thể được, cả những người được chọn.",
+          "B": "Vì những {{christos:Christ giả|Mê-si-a giả}} và những tiên tri giả sẽ nổi lên, làm những dấu lạ và điềm lạ để lừa gạt những người được chọn, nếu điều đó có thể được.",
+          "R": "Sẽ có những kẻ nói dối rằng mình là {{christos:Đấng Christ|Đấng Mê-si-a}}. Cũng có những kẻ nói dối rằng mình là nhà tiên tri. Họ sẽ làm những dấu lạ và những việc lạ lùng để lừa gạt dân được Đức Chúa Trời chọn, nếu họ có thể."
+        },
+        "ko": {
+          "L": "거짓 {{christos:그리스도들|메시아들}}과 거짓 예언자들이 일어나서, 할 수만 있다면 택함 받은 사람들을 미혹하려고 표적들과 기이한 일들을 보일 것이기 때문이다.",
+          "B": "거짓 {{christos:그리스도들|메시아들}}과 거짓 예언자들이 나타나서 표적과 기이한 일들을 보이며, 할 수만 있으면 택함 받은 사람들까지도 속이려 할 것이다.",
+          "R": "자기가 {{christos:그리스도|메시아}}라고 거짓으로 주장하는 사람들이 나타날 것이다. 자기가 예언자라고 거짓으로 주장하는 사람들도 나타날 것이다. 그들은 표적과 놀라운 일들을 보여서, 할 수만 있으면 하나님께서 택하신 사람들까지 속이려고 할 것이다."
         }
       },
       "decisions": [
@@ -2830,6 +3897,70 @@
           "reason": "Readable says what the two compound words mean and whose chosen people they are.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n41013022003"
+          ],
+          "choice": "{{christos:Christ giả|Mê-si-a giả}} (L, B), without \"Đấng\"",
+          "alternatives": [
+            "\"những Đấng Christ giả\""
+          ],
+          "reason": "The honorific \"Đấng\" is not given to impostors, so the span holds the bare title with \"giả\" (false); Readable says what they do and uses the full span for the one they claim to be.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41013022008",
+            "n41013022010"
+          ],
+          "choice": "\"dấu lạ và điềm lạ\" (L, B); \"dấu lạ và những việc lạ lùng\" (R)",
+          "alternatives": [
+            "\"phép lạ\""
+          ],
+          "reason": "\"Dấu lạ\" is the style guide's word for \"sign\"; \"điềm lạ\" is a portent, the sense of \"wonders\". Neither is \"phép lạ\" (miracle), which would grant that the deeds come from God.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41013022003",
+            "n41013022005"
+          ],
+          "choice": "거짓 {{christos:그리스도들|메시아들}}; \"거짓 예언자들\"",
+          "alternatives": [
+            "\"거짓 선지자들\""
+          ],
+          "reason": "The span covers the noun, as the English one does. \"예언자\" is preferred to the older \"선지자\" (style guide, Settled; Korean John).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2858,6 +3989,16 @@
           "L": "But you, take care; I have told you all things beforehand.",
           "B": "So you must be on your guard. I have told you all of it in advance.",
           "R": "So be careful! I have warned you about all this before it happens."
+        },
+        "vi": {
+          "L": "Còn các con, hãy coi chừng; {{deity_pronoun:ta|Ta}} đã nói trước với các con mọi điều.",
+          "B": "Vậy các con phải đề phòng. Ta đã báo trước cho các con mọi điều.",
+          "R": "Vậy hãy cẩn thận! Ta đã cảnh báo các con về mọi điều này trước khi chúng xảy ra."
+        },
+        "ko": {
+          "L": "그러나 너희는 주의하여라. 내가 너희에게 모든 것을 미리 말하였다.",
+          "B": "그러니 너희는 조심하여라. 내가 이 모든 것을 너희에게 미리 말해 두었다.",
+          "R": "그러니 조심하여라! 이 모든 일이 일어나기 전에 내가 너희에게 미리 경고해 두었다."
         }
       },
       "decisions": [
@@ -2970,6 +4111,16 @@
           "L": "But in those days, after that tribulation, the sun will be darkened, and the moon will not give its light, \\v 25 and the stars will be falling out of heaven, and the powers that [are] in the heavens will be shaken.",
           "B": "But in those days, after that time of distress, the sun will grow dark and the moon will give no light. \\v 25 Stars will come falling from the sky, and the powers in the heavens will be shaken.",
           "R": "In those days, after that time of terrible trouble, the sun will become dark. The moon will not shine. \\v 25 Stars will fall from the sky. The powers in the heavens will be shaken."
+        },
+        "vi": {
+          "L": "Nhưng trong những ngày ấy, sau hoạn nạn đó, mặt trời sẽ tối tăm, và mặt trăng sẽ không tỏa ánh sáng của nó, \\v 25 và các ngôi sao sẽ từ trời rơi xuống, và các quyền lực ở trên các tầng trời sẽ bị rúng động.",
+          "B": "Nhưng trong những ngày ấy, sau cơn hoạn nạn đó, mặt trời sẽ tối sầm và mặt trăng không còn chiếu sáng. \\v 25 Các ngôi sao sẽ từ trời sa xuống, và các quyền lực trên các tầng trời sẽ bị rúng động.",
+          "R": "Trong những ngày ấy, sau thời kỳ vô cùng khốn khổ đó, mặt trời sẽ tối đi. Mặt trăng sẽ không chiếu sáng nữa. \\v 25 Các ngôi sao sẽ từ trời rơi xuống. Các quyền lực trên các tầng trời sẽ bị rúng động."
+        },
+        "ko": {
+          "L": "그러나 그 날들에, 그 환난 뒤에, 해가 어둡게 될 것이고, 달은 자기 빛을 주지 않을 것이며, \\v 25 별들이 하늘에서 떨어지고 있을 것이고, 하늘들 안에 있는 능력들이 흔들릴 것이다.",
+          "B": "그러나 그 날에, 그 고난이 지나간 뒤에, 해는 빛을 잃고 달은 빛을 비추지 않을 것이다. \\v 25 별들이 하늘에서 떨어지고, 하늘의 권세들이 흔들릴 것이다.",
+          "R": "그 끔찍한 고통의 때가 지나고 나면, 그 날에 해가 어두워질 것이다. 달도 빛을 내지 않을 것이다. \\v 25 별들이 하늘에서 떨어질 것이다. 하늘에 있는 세력들이 흔들릴 것이다."
         }
       },
       "decisions": [
@@ -3116,6 +4267,28 @@
           "reason": "The same Greek word means both sky and heaven. Where stars fall, Balanced and Readable say sky.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41013025011"
+          ],
+          "choice": "\"능력들\" (L); \"권세들\" (B); \"세력들\" (R) for the powers in the heavens",
+          "alternatives": [
+            "\"천체들\"",
+            "\"권능들\""
+          ],
+          "reason": "The meaning decision leaves open whether the heavenly bodies or spiritual powers are meant; each level uses a word that can carry both, rather than \"천체\" (heavenly bodies), which would decide it.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3153,6 +4326,16 @@
           "L": "And then they will see the Son of Man coming in clouds with great power and glory.",
           "B": "Then people will see the Son of Man come in clouds, with great power and glory.",
           "R": "Then everyone will see the Son of Man come in the clouds. He will come with great power and glory."
+        },
+        "vi": {
+          "L": "Và bấy giờ người ta sẽ thấy Con Người đến trong những đám mây với quyền năng lớn và vinh quang.",
+          "B": "Bấy giờ người ta sẽ thấy Con Người đến trong mây, với quyền năng lớn và vinh quang.",
+          "R": "Bấy giờ mọi người sẽ thấy Con Người đến trong mây. Con Người sẽ đến với quyền năng lớn và vinh quang."
+        },
+        "ko": {
+          "L": "그리고 그때에 그들은 인자가 구름들 가운데 큰 능력과 영광과 함께 오는 것을 볼 것이다.",
+          "B": "그때 사람들은 인자가 큰 권능과 영광을 지니고 구름 가운데 오는 것을 볼 것이다.",
+          "R": "그때 모든 사람이 인자가 구름 가운데 오는 것을 볼 것이다. 인자는 큰 권능과 영광을 지니고 올 것이다."
         }
       },
       "decisions": [
@@ -3236,6 +4419,30 @@
           "reason": "Balanced and Readable say who \"they\" are.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41013026004",
+            "n41013026005",
+            "n41013026006",
+            "n41013026007"
+          ],
+          "choice": "\"인자\" for the Son of Man, every level, through Mark",
+          "alternatives": [
+            "\"사람의 아들\""
+          ],
+          "reason": "A title, as in the Korean John; Jesus speaks of himself, so it takes no honorific in his mouth. Never under the gender setting.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3277,6 +4484,16 @@
           "L": "And then {{deity_pronoun:he|He}} will send out the angels and will gather together the elect from the four winds, from [the] end of earth to [the] end of heaven.",
           "B": "And then {{deity_pronoun:he|He}} will send out the angels and gather the chosen ones from all four winds, from the farthest edge of the earth to the farthest edge of the sky.",
           "R": "Then {{deity_pronoun:he|He}} will send out the angels. They will gather God's chosen people from every direction, from one end of the earth and sky to the other."
+        },
+        "vi": {
+          "L": "Và bấy giờ [Con Người] sẽ sai các thiên sứ đi và sẽ nhóm họp những người được chọn từ bốn phương gió, từ đầu cùng đất đến đầu cùng trời.",
+          "B": "Bấy giờ Con Người sẽ sai các thiên sứ đi và nhóm họp những người được chọn từ bốn phương trời, từ tận cùng mặt đất đến tận cùng bầu trời.",
+          "R": "Rồi Con Người sẽ sai các thiên sứ đi. Họ sẽ tập hợp dân được Đức Chúa Trời chọn từ khắp mọi nơi, từ đầu này đến đầu kia của đất và trời."
+        },
+        "ko": {
+          "L": "그리고 그때에 그가 천사들을 보낼 것이고, 택함 받은 사람들을 네 바람으로부터, 땅 끝에서 하늘 끝까지 모을 것이다.",
+          "B": "그때 인자는 천사들을 보내어, 땅 끝에서 하늘 끝까지 사방에서 택함 받은 사람들을 모을 것이다.",
+          "R": "그때 인자는 천사들을 보낼 것이다. 천사들은 하나님께서 택하신 사람들을 온 세상 모든 곳에서 모을 것이다. 땅 이 끝에서 하늘 저 끝까지 모을 것이다."
         }
       },
       "decisions": [
@@ -3383,6 +4600,70 @@
           "reason": "Readable says whose chosen people they are, as in 13:20.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n41013027003"
+          ],
+          "choice": "\"Con Người\" as the subject, where the English has \"he\" with the deity_pronoun setting",
+          "alternatives": [
+            "\"Ngài\"",
+            "\"Người\""
+          ],
+          "reason": "Vietnamese needs a subject. Jesus is speaking of himself as the Son of Man, and he would not call himself \"Ngài\", the narrator's word for him; repeating the title is how Vietnamese avoids it. Literal brackets it because the Greek has only the verb.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n41013027003"
+          ],
+          "choice": "\"인자는\" (B, R) as the subject",
+          "alternatives": [
+            "\"그가\""
+          ],
+          "reason": "Korean avoids \"he\" for a person it has just named; Balanced and Readable repeat the title from 13:26 so it is clear who sends the angels. Literal keeps \"그가\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41013027011",
+            "n41013027012",
+            "n41013027013"
+          ],
+          "choice": "\"네 바람으로부터\" (L); \"사방에서\" (B)",
+          "alternatives": [
+            "\"사방에서\" at Literal"
+          ],
+          "reason": "Literal keeps the picture; Balanced uses the Korean word for the four directions, which says what the idiom means (meaning decision).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3429,6 +4710,16 @@
           "L": "Now from the fig tree learn the parable: when its branch has already become tender and puts out the leaves, you know that the summer is near.",
           "B": "Learn this parable from the fig tree. Once its branch turns soft and its leaves sprout, you know summer is close.",
           "R": "Learn a lesson from the fig tree. When its branches get soft and green and new leaves begin to grow, you know that summer will soon be here."
+        },
+        "vi": {
+          "L": "Vậy hãy học ví dụ từ cây vả: khi cành nó đã non mềm và nảy lá, các con biết rằng mùa hè đã gần.",
+          "B": "Hãy học lấy ví dụ từ cây vả. Khi cành vả trở nên mềm mại và nảy lộc, các con biết mùa hè đã gần.",
+          "R": "Hãy học một bài học từ cây vả. Khi cành của nó trở nên mềm và xanh, lá non bắt đầu mọc ra, các con biết mùa hè sắp đến."
+        },
+        "ko": {
+          "L": "이제 무화과나무에서 비유를 배워라. 그 가지가 이미 연해지고 잎들을 내면, 너희는 여름이 가까운 줄 안다.",
+          "B": "무화과나무에서 이 비유를 배워라. 가지가 부드러워지고 잎이 돋으면, 너희는 여름이 가까이 온 줄 안다.",
+          "R": "무화과나무에서 한 가지 교훈을 배워라. 가지가 부드럽고 푸르게 되고 새 잎이 돋기 시작하면, 너희는 곧 여름이 온다는 것을 안다."
         }
       },
       "decisions": [
@@ -3501,6 +4792,48 @@
           "reason": "As elsewhere, Readable avoids \"parable\". Here the word means the lesson the fig tree teaches.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41013028007"
+          ],
+          "choice": "\"ví dụ\" (L, B); \"bài học\" (R) for parabole",
+          "alternatives": [
+            "\"dụ ngôn\"",
+            "\"ẩn dụ\"",
+            "\"thí dụ\""
+          ],
+          "reason": "\"Ví dụ\" is the plain modern word for a comparison that teaches, which is the sense here; \"dụ ngôn\" is the Catholic term and \"thí dụ\" the older Protestant one. A reviewer should settle one word for Mark's parables.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41013028007"
+          ],
+          "choice": "\"교훈\" (R)",
+          "alternatives": [
+            "\"비유\" as at Mark 4"
+          ],
+          "reason": "Here the parable is a short comparison that teaches a lesson (meaning decision), not a story; Readable says \"교훈\" (lesson), as the English Readable does. Literal and Balanced keep \"비유\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3536,6 +4869,16 @@
           "L": "So also you, when you see these things happening, know that [it] is near, at [the] doors.",
           "B": "So too with you: when you see these things happening, be sure that it is near, right at the door.",
           "R": "In the same way, when you see these things happening, you can be sure that the time is near. It is right at the door."
+        },
+        "vi": {
+          "L": "Cũng vậy, các con, khi thấy những điều này xảy ra, hãy biết rằng [điều ấy] đã gần, ở ngay trước cửa.",
+          "B": "Các con cũng vậy: khi thấy những điều này xảy ra, hãy biết chắc rằng điều ấy đã gần, ngay trước cửa rồi.",
+          "R": "Cũng vậy, khi các con thấy những điều này xảy ra, các con có thể biết chắc rằng thời điểm ấy đã gần. Nó đã ở ngay trước cửa rồi."
+        },
+        "ko": {
+          "L": "이와 같이 너희도 이런 일들이 일어나는 것을 보거든, [그것이] 가까이, 문들 앞에 와 있는 줄 알아라.",
+          "B": "마찬가지로 너희도 이런 일들이 일어나는 것을 보면, 그것이 가까이 왔다는 것을, 바로 문 앞에 와 있다는 것을 알아라.",
+          "R": "이와 같이 이런 일들이 일어나는 것을 보면, 그때가 가까이 왔다는 것을 알아라. 그때가 바로 문 앞에 와 있다."
         }
       },
       "decisions": [
@@ -3622,6 +4965,27 @@
           "reason": "Readable names the subject as the time of these events, which keeps both readings open as far as English allows.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n41013029011"
+          ],
+          "choice": "[그것이] (L); \"그것이\" (B)",
+          "alternatives": [
+            "\"그가\"",
+            "\"그때가\""
+          ],
+          "reason": "The subject is not stated (meaning decision, footnoted): the end or the coming of the Son of Man. \"그것\" leaves both open, as the English \"it\" does; Readable says \"그때\", as the English Readable says \"the time\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3659,6 +5023,16 @@
           "L": "Truly I say to you that this generation will not pass away until all these things have taken place.",
           "B": "Truly I tell you, this generation will certainly not pass away before all these things take place.",
           "R": "I tell you the truth: all these things will happen before the people now living have all died."
+        },
+        "vi": {
+          "L": "Thật vậy, {{deity_pronoun:ta|Ta}} nói với các con rằng thế hệ này sẽ không qua đi cho đến khi tất cả những điều này xảy ra.",
+          "B": "Thật vậy, {{deity_pronoun:ta|Ta}} nói với các con, thế hệ này chắc chắn sẽ không qua đi trước khi mọi điều này xảy ra.",
+          "R": "Ta nói thật với các con: tất cả những điều này sẽ xảy ra trước khi những người đang sống bây giờ qua đời hết."
+        },
+        "ko": {
+          "L": "진실로 너희에게 말한다. 이 모든 일이 일어날 때까지 이 세대는 결코 지나가지 않을 것이다.",
+          "B": "진실로 너희에게 말한다. 이 모든 일이 일어나기 전에는 이 세대가 결코 지나가지 않을 것이다.",
+          "R": "내가 분명히 말한다. 지금 살아 있는 사람들이 다 죽기 전에 이 모든 일이 일어날 것이다."
         }
       },
       "decisions": [
@@ -3758,6 +5132,53 @@
           "reason": "Readable follows the reading chosen above. If it is wrong, this wording says more than the Greek.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41013030001",
+            "n41013030002",
+            "n41013030003"
+          ],
+          "choice": "\"Thật vậy, Ta nói với các con\" (L, B); \"Ta nói thật với các con\" (R)",
+          "alternatives": [
+            "\"Quả thật\"",
+            "\"A-men\""
+          ],
+          "reason": "The Vietnamese John's form for \"Truly, truly\", with the single word Mark has. Recorded once for the chapter.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41013030001",
+            "n41013030002",
+            "n41013030003"
+          ],
+          "choice": "\"진실로 너희에게 말한다\" (L, B); \"내가 분명히 말한다\" (R), through Mark 13-14",
+          "alternatives": [
+            "\"진실로 너희에게 이르노니\""
+          ],
+          "reason": "As at Mark 3:28, the single form of the Korean John's \"진실로 진실로\"; modern endings replace the archaic \"이르노니\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3793,6 +5214,16 @@
           "L": "Heaven and earth will pass away, but {{deity_pronoun:my|My}} words will by no means pass away.",
           "B": "Heaven and earth will pass away, yet {{deity_pronoun:my|My}} words will never pass away.",
           "R": "The sky and the earth will come to an end, but {{deity_pronoun:my|My}} words will last forever."
+        },
+        "vi": {
+          "L": "Trời và đất sẽ qua đi, nhưng các lời của {{deity_pronoun:ta|Ta}} chắc chắn sẽ không qua đi.",
+          "B": "Trời đất sẽ qua đi, nhưng lời {{deity_pronoun:ta|Ta}} sẽ không bao giờ qua đi.",
+          "R": "Trời và đất sẽ không còn nữa, nhưng lời {{deity_pronoun:ta|Ta}} sẽ còn mãi mãi."
+        },
+        "ko": {
+          "L": "하늘과 땅은 지나갈 것이다. 그러나 내 말들은 결코 지나가지 않을 것이다.",
+          "B": "하늘과 땅은 사라지겠지만, 내 말은 절대로 사라지지 않을 것이다.",
+          "R": "하늘과 땅은 언젠가 끝날 것이다. 그러나 내 말은 영원히 남을 것이다."
         }
       },
       "decisions": [
@@ -3863,6 +5294,26 @@
           "reason": "Readable uses plainer words for passing away and never passing away.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41013031006",
+            "n41013031013"
+          ],
+          "choice": "\"지나가다\" (L), as in 13:30",
+          "alternatives": [
+            "\"없어지다\""
+          ],
+          "reason": "The Greek uses the same verb for the generation in 13:30 and for heaven and earth here; Literal keeps one Korean verb for both.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3907,6 +5358,16 @@
           "L": "But concerning that day or the hour no one knows, not even the angels in heaven, nor the Son, except the Father.",
           "B": "As for that day or hour, nobody knows it, neither the angels in heaven nor the Son. Only the Father knows.",
           "R": "But no one knows the day or the hour when this will happen. The angels in heaven do not know. Even the Son does not know. Only the Father knows."
+        },
+        "vi": {
+          "L": "Nhưng về ngày đó hoặc giờ đó thì không ai biết, ngay cả các thiên sứ trên trời, ngay cả Con cũng không, chỉ có Cha [biết] mà thôi.",
+          "B": "Còn về ngày ấy hay giờ ấy thì không ai biết, kể cả các thiên sứ trên trời hay Con cũng không biết. Chỉ một mình Cha biết mà thôi.",
+          "R": "Nhưng không ai biết ngày nào hay giờ nào việc này sẽ xảy ra. Các thiên sứ trên trời không biết. Ngay cả Con cũng không biết. Chỉ có Cha biết mà thôi."
+        },
+        "ko": {
+          "L": "그러나 그 날이나 그 때에 대해서는 아무도 모른다. 하늘에 있는 천사들도 모르고, 아들도 모르고, 오직 아버지만 아신다.",
+          "B": "그 날이나 그 때는 아무도 모른다. 하늘의 천사들도 모르고 아들도 모른다. 오직 아버지께서만 아신다.",
+          "R": "그러나 이 일이 일어날 날과 때는 아무도 모른다. 하늘에 있는 천사들도 모른다. 아들조차도 모른다. 오직 아버지께서만 아신다."
         }
       },
       "decisions": [
@@ -4006,6 +5467,50 @@
           "reason": "Readable breaks the list into short sentences and says what the day is.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41013032018",
+            "n41013032022"
+          ],
+          "choice": "\"Con\" and \"Cha\", capitalised, with no setting",
+          "alternatives": [
+            "\"Con Đức Chúa Trời\""
+          ],
+          "reason": "As in John, \"Con\" and \"Cha\" are nouns for the Son and the Father, always capitalised; the style guide gives them no setting span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n41013032018",
+            "n41013032022"
+          ],
+          "choice": "\"아들도 모른다\" with no honorific; \"아버지께서만 아신다\" with it",
+          "alternatives": [
+            "\"아들도 모르신다\""
+          ],
+          "reason": "Jesus speaks of himself as the Son, so he does not honour himself, as with \"인자\"; he honours the Father.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4037,6 +5542,16 @@
           "L": "Take care, stay awake; for you do not know when the time is.",
           "B": "Be on your guard and stay alert, because you do not know when the time will come.",
           "R": "So be careful! Stay awake! You do not know when that time will come."
+        },
+        "vi": {
+          "L": "Hãy coi chừng, hãy tỉnh táo; vì các con không biết khi nào là thời điểm ấy.",
+          "B": "Hãy đề phòng và tỉnh táo, vì các con không biết khi nào thời điểm ấy sẽ đến.",
+          "R": "Vậy hãy cẩn thận! Hãy tỉnh táo! Các con không biết khi nào thời điểm ấy sẽ đến."
+        },
+        "ko": {
+          "L": "주의하여라, 깨어 있어라. 그 시기가 언제인지 너희가 알지 못하기 때문이다.",
+          "B": "조심하고 깨어 있어라. 그 때가 언제 올지 너희는 모른다.",
+          "R": "그러니 조심하여라! 잠들지 말고 깨어 있어라! 그 때가 언제 올지 너희는 모른다."
         }
       },
       "decisions": [
@@ -4106,6 +5621,47 @@
           "reason": "Balanced uses a word that covers both keeping awake and being ready.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41013033002"
+          ],
+          "choice": "\"깨어 있어라\" for agrypneo and gregoreo (13:33-37), every level",
+          "alternatives": [
+            "\"정신 차려라\"",
+            "\"지켜라\""
+          ],
+          "reason": "Jesus' repeated call to stay awake ties this speech to Gethsemane (14:34-38); one phrase keeps that link. Readable adds \"잠들지 말고\" to say what it means.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41013033008"
+          ],
+          "choice": "\"그 시기\" (L) for kairos",
+          "alternatives": [
+            "\"그 때\""
+          ],
+          "reason": "Literal keeps \"때\" for hora (13:11, 32) and uses \"시기\" for kairos, so the two Greek words stay apart; Balanced and Readable say \"그 때\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4152,6 +5708,16 @@
           "L": "[It is] like a man away on a journey, who left his house and gave his slaves the authority, to each one {{gender:their|his}} work, and commanded the doorkeeper to keep watch.",
           "B": "It is like a man who goes away from home. He leaves his house, puts his servants in charge, each with a task to do, and orders the doorkeeper to keep watch.",
           "R": "It is like a man who goes on a trip. He leaves his house and puts his servants in charge of it. He gives each one a job to do. He tells the one who guards the door to stay awake and keep watch."
+        },
+        "vi": {
+          "L": "[Điều ấy] giống như một người đi xa, rời nhà mình và giao quyền cho các nô lệ mình, mỗi người một việc, và truyền cho người gác cửa phải thức canh.",
+          "B": "Việc ấy giống như một người đi xa nhà. Ông rời nhà, giao cho các đầy tớ trông coi, mỗi người một việc, và dặn người gác cửa phải thức canh.",
+          "R": "Việc ấy giống như một người đi xa. Ông rời nhà và giao cho các đầy tớ trông coi nhà. Ông giao cho mỗi người một việc. Ông dặn người gác cửa phải thức và canh chừng."
+        },
+        "ko": {
+          "L": "[그것은] 마치 집을 떠나 여행하는 어떤 사람이 자기 집을 떠나면서 자기 종들에게 권한을, 각자에게 자기 일을 주고, 문지기에게는 깨어 있으라고 명령한 것과 같다.",
+          "B": "그것은 마치 집을 떠나 먼 길을 가는 사람과 같다. 그는 집을 떠나면서 종들에게 집안일을 맡기고, 각 사람에게 할 일을 정해 주고, 문지기에게는 깨어 지키라고 명령한다.",
+          "R": "그것은 여행을 떠나는 어떤 사람과 같다. 그는 집을 떠나면서 종들에게 집을 맡긴다. 그리고 한 사람 한 사람에게 할 일을 준다. 문을 지키는 종에게는 잠들지 말고 잘 지키라고 이른다."
         }
       },
       "decisions": [
@@ -4278,6 +5844,91 @@
           "reason": "Balanced tells the comparison in the present, as one tells an example.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41013034011"
+          ],
+          "choice": "\"nô lệ\" (L); \"đầy tớ\" (B, R)",
+          "alternatives": [
+            "\"đầy tớ\" at every level"
+          ],
+          "reason": "The style guide's rendering of doulos, as in John: the hard word at Literal, the household servant at Balanced and Readable.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41013034024"
+          ],
+          "choice": "\"thức canh\" for \"keep watch\", here, in 13:35-37 and in Gethsemane (14:34-38)",
+          "alternatives": [
+            "\"tỉnh thức\""
+          ],
+          "reason": "\"Thức canh\" joins staying awake and keeping guard, the two senses of the verb, and lets the same word return when the disciples fall asleep in Gethsemane, as the meaning decision on 13:35 points out.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41013034011"
+          ],
+          "choice": "\"종\" for doulos, every level",
+          "alternatives": [
+            "\"노예\" (L)",
+            "\"하인\""
+          ],
+          "reason": "The Korean style guide uses \"종\" at every level; it already names someone owned by a master, so Korean needs no change of word between Literal and Balanced. The English decision on \"slave\" and \"servant\" applies to the English only.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n41013034017",
+            "n41013034018",
+            "n41013034019"
+          ],
+          "choice": "No gender span: \"각자에게 자기 일을\" (L)",
+          "alternatives": [
+            "A gender span"
+          ],
+          "reason": "Korean \"자기\" is not gendered, so the English span has nothing to change.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4326,6 +5977,16 @@
           "L": "Keep watch therefore, for you do not know when the lord of the house is coming, whether in the evening, or at midnight, or at rooster-crow, or early in the morning, \\v 36 lest coming suddenly he find you sleeping.",
           "B": "So keep watch, since you cannot know when the master of the house is coming: in the evening, at midnight, at the crowing of the rooster, or at dawn. \\v 36 Otherwise he may arrive suddenly and find you asleep.",
           "R": "So stay awake! You do not know when the owner of the house will come back. It might be in the evening or at midnight. It might be when the rooster crows in the dark, or early in the morning. \\v 36 If he comes suddenly, do not let him find you sleeping."
+        },
+        "vi": {
+          "L": "Vậy hãy thức canh, vì các con không biết khi nào chủ nhà đến, hoặc lúc chiều tối, hoặc lúc nửa đêm, hoặc lúc gà gáy, hoặc lúc sáng sớm; \\v 36 kẻo khi [ông ấy] đến thình lình, thấy các con đang ngủ.",
+          "B": "Vậy hãy thức canh, vì các con không thể biết khi nào chủ nhà sẽ về: lúc chiều tối, lúc nửa đêm, lúc gà gáy, hay lúc rạng đông. \\v 36 Kẻo ông ấy về bất ngờ mà thấy các con đang ngủ.",
+          "R": "Vậy hãy thức canh! Các con không biết khi nào người chủ nhà sẽ trở về. Có thể là lúc chiều tối hay lúc nửa đêm. Có thể là lúc gà gáy khi trời còn tối, hay lúc sáng sớm. \\v 36 Nếu ông ấy về bất ngờ, đừng để ông thấy các con đang ngủ."
+        },
+        "ko": {
+          "L": "그러므로 깨어 있어라. 집의 주인이 언제 올지, 저녁일지, 한밤중일지, 닭 울 때일지, 새벽일지, 너희가 알지 못하기 때문이다. \\v 36 그가 갑자기 와서 너희가 자고 있는 것을 보지 않도록 하여라.",
+          "B": "그러므로 깨어 있어라. 집주인이 언제 돌아올지 너희는 모른다. 저녁일지, 한밤중일지, 닭이 울 무렵일지, 이른 아침일지 모른다. \\v 36 그가 갑자기 돌아와서 너희가 자고 있는 것을 보게 해서는 안 된다.",
+          "R": "그러니 잠들지 말고 깨어 있어라! 집주인이 언제 돌아올지 너희는 모른다. 저녁일 수도 있고 한밤중일 수도 있다. 어두운 새벽에 닭이 울 때일 수도 있고, 이른 아침일 수도 있다. \\v 36 주인이 갑자기 돌아왔을 때, 너희가 자고 있는 모습을 보이지 마라."
         }
       },
       "decisions": [
@@ -4432,6 +6093,51 @@
           "reason": "In the comparison the word is lowercase, since it names the owner of the house. Literal keeps the word that can also mean Lord.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41013035008"
+          ],
+          "choice": "\"chủ nhà\" at every level",
+          "alternatives": [
+            "\"chúa nhà\"",
+            "\"ông chủ\""
+          ],
+          "reason": "The English needs three words (lord, master, owner); the one Vietnamese word \"chủ\" covers all of them in plain language. The master is a figure in a comparison, so \"ông ấy\" takes no setting.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41013035008",
+            "n41013035009",
+            "n41013035010"
+          ],
+          "choice": "\"집의 주인\" (L); \"집주인\" (B, R)",
+          "alternatives": [
+            "\"주\""
+          ],
+          "reason": "Korean \"주인\" covers lord, master and owner, so one word serves every level; \"주\" or \"주님\" would sound like a title of God or Jesus.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4461,6 +6167,16 @@
           "L": "And what I say to you, I say to all: keep watch.\"",
           "B": "What I tell you, I tell everyone: Keep watch!\"",
           "R": "What I am telling you, I am telling everyone: Stay awake!\""
+        },
+        "vi": {
+          "L": "Còn điều {{deity_pronoun:ta|Ta}} nói với các con, {{deity_pronoun:ta|Ta}} nói với mọi người: hãy thức canh.\"",
+          "B": "Điều {{deity_pronoun:ta|Ta}} nói với các con, {{deity_pronoun:ta|Ta}} cũng nói với mọi người: Hãy thức canh!\"",
+          "R": "Điều {{deity_pronoun:ta|Ta}} đang nói với các con, {{deity_pronoun:ta|Ta}} cũng nói với mọi người: Hãy thức canh!\""
+        },
+        "ko": {
+          "L": "그리고 내가 너희에게 말하는 것을 모든 사람에게 말한다. 깨어 있어라.\"",
+          "B": "내가 너희에게 하는 말은 모든 사람에게 하는 말이다. 깨어 있어라!\"",
+          "R": "내가 너희에게 하는 이 말은 모든 사람에게 하는 말이다. 잠들지 말고 깨어 있어라!\""
         }
       },
       "decisions": [

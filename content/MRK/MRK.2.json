@@ -30,6 +30,16 @@
           "L": "And when {{deity_pronoun:he|He}} had entered Capernaum again after [some] days, it was heard that {{deity_pronoun:he|He}} was at home.",
           "B": "Some days later {{deity_pronoun:he|He}} came back to Capernaum, and word got around that {{deity_pronoun:he|He}} was at home.",
           "R": "After a few days Jesus returned to the town of Capernaum. People heard that {{deity_pronoun:he|He}} was staying at a house there."
+        },
+        "vi": {
+          "L": "Và khi {{deity_pronoun:ngài|Ngài}} lại vào Ca-bê-na-um sau [mấy] ngày, người ta nghe rằng {{deity_pronoun:ngài|Ngài}} đang ở nhà.",
+          "B": "Mấy ngày sau, {{deity_pronoun:ngài|Ngài}} trở lại Ca-bê-na-um, và người ta đồn rằng {{deity_pronoun:ngài|Ngài}} đang ở nhà.",
+          "R": "Vài ngày sau, Đức Giê-xu trở lại thị trấn Ca-bê-na-um. Người ta nghe nói {{deity_pronoun:ngài|Ngài}} đang ở trong một ngôi nhà tại đó."
+        },
+        "ko": {
+          "L": "그리고 며칠 후에 그분이 다시 가버나움에 들어가시니, 그분이 집에 계신다는 것이 알려졌다.",
+          "B": "며칠 뒤에 예수께서 다시 가버나움에 오셨다. 예수께서 집에 계신다는 소식이 퍼졌다.",
+          "R": "며칠이 지나서 예수께서 다시 가버나움 마을로 돌아오셨다. 사람들은 예수께서 그곳의 한 집에 계신다는 소식을 들었다."
         }
       },
       "decisions": [
@@ -102,6 +112,28 @@
           "reason": "Readable does not say whose home it was, since Mark does not.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n41002001002",
+            "n41002001012"
+          ],
+          "choice": "no deity_pronoun spans in Korean, through Mark 2",
+          "alternatives": [
+            "a deity_pronoun span on \"그분\""
+          ],
+          "reason": "Korean has no capital letters, so the setting has nothing to change; respect for Jesus is carried at every level by \"께서\", \"그분\" and the honorific -시- (\"계신다\").",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -140,6 +172,16 @@
           "L": "And many were gathered together, so that there was no longer room, not even at the door, and {{deity_pronoun:he|He}} was speaking the word to them.",
           "B": "So many people crowded in that there was no space left, even outside the door, and {{deity_pronoun:he|He}} spoke the word to them.",
           "R": "So many people came that the house was full. There was no room left, even outside the door. Jesus was telling them God's message."
+        },
+        "vi": {
+          "L": "Và nhiều người tụ họp lại, đến nỗi không còn chỗ, ngay cả ở trước cửa, và {{deity_pronoun:ngài|Ngài}} giảng lời cho họ.",
+          "B": "Nhiều người tụ tập đến nỗi không còn chỗ trống, kể cả bên ngoài cửa, và {{deity_pronoun:ngài|Ngài}} giảng đạo cho họ.",
+          "R": "Rất đông người kéo đến, chật cả nhà. Không còn chỗ nào trống, ngay cả bên ngoài cửa. Đức Giê-xu đang giảng sứ điệp của Đức Chúa Trời cho họ."
+        },
+        "ko": {
+          "L": "그러자 많은 사람이 모여서, 문 앞에조차 더 이상 [설] 자리가 없었다. 그리고 그분은 그들에게 말씀을 전하고 계셨다.",
+          "B": "많은 사람이 모여들어, 문 밖까지도 더는 들어설 자리가 없었다. 예수께서는 그들에게 말씀을 전하셨다.",
+          "R": "많은 사람이 몰려와서 집이 가득 찼다. 문 밖에도 더 설 자리가 없었다. 예수께서는 그들에게 하나님의 말씀을 전하고 계셨다."
         }
       },
       "decisions": [
@@ -216,6 +258,50 @@
           "reason": "Readable says whose word it is, since \"the word\" alone means little to new readers.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002002016"
+          ],
+          "choice": "\"giảng lời\" (L); \"giảng đạo\" (B); \"sứ điệp của Đức Chúa Trời\" (R) for \"the word\"",
+          "alternatives": [
+            "\"nói lời\"",
+            "\"giảng Lời Đức Chúa Trời\" (B)"
+          ],
+          "reason": "Literal keeps the bare noun \"lời\"; \"giảng đạo\" is the usual Vietnamese phrase for preaching God's message, which is what the meaning decision says the word is; Readable names it, as the English Readable does. \"Lời\" with a capital is kept for the Word in John.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002002016"
+          ],
+          "choice": "\"말씀\" (L, B); \"하나님의 말씀\" (R)",
+          "alternatives": [
+            "\"말\"",
+            "\"메시지\""
+          ],
+          "reason": "\"the word\" is God's message, the good news Jesus proclaimed (meaning decision); \"말씀\" is the respectful word for it, and Readable names whose word it is, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -247,6 +333,16 @@
           "L": "And they come, bringing to {{deity_pronoun:him|Him}} a paralytic carried by four [men].",
           "B": "Then some people arrived with a paralyzed man for {{deity_pronoun:him|Him}}, carried by four of them.",
           "R": "Four men came carrying a man who could not move his body. They wanted to bring him to Jesus."
+        },
+        "vi": {
+          "L": "Và người ta đến, đem đến với {{deity_pronoun:ngài|Ngài}} một người bại do bốn [người] khiêng.",
+          "B": "Bấy giờ có mấy người đến, đem một người bại liệt đến với {{deity_pronoun:ngài|Ngài}}; bốn người trong số họ khiêng anh.",
+          "R": "Có bốn người khiêng đến một người bị liệt, không cử động được. Họ muốn đem anh đến với Đức Giê-xu."
+        },
+        "ko": {
+          "L": "그리고 사람들이 마비된 사람 하나를 그분께 데리고 오는데, 네 [사람]이 그를 메고 있다.",
+          "B": "그때 사람들이 몸이 마비된 사람 하나를 예수께 데려왔다. 네 사람이 그를 메고 왔다.",
+          "R": "네 사람이 몸을 움직이지 못하는 사람 하나를 메고 왔다. 그들은 그를 예수께 데려가고 싶었다."
         }
       },
       "decisions": [
@@ -318,6 +414,68 @@
           "reason": "\"Four\" in Greek is masculine, so English supplies \"men\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002003006"
+          ],
+          "choice": "\"người bại\" (L); \"người bại liệt\" (B); \"người bị liệt\" (R)",
+          "alternatives": [
+            "\"người bất toại\""
+          ],
+          "reason": "As in John 5:3: the short traditional word at Literal, the full modern word at Balanced, and the plain \"bị liệt\" with an explanation at Readable. \"bất toại\" is archaic.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002003006"
+          ],
+          "choice": "\"마비된 사람\" (L); \"몸이 마비된 사람\" (B); \"몸을 움직이지 못하는 사람\" (R), through Mark 2",
+          "alternatives": [
+            "\"중풍병자\""
+          ],
+          "reason": "\"중풍병자\" is the traditional word, but today \"중풍\" means a stroke, which the text does not say; the Greek word names a man who could not move part or all of his body (meaning decision). The Korean of John 5:3 says \"몸이 마비된 사람\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002003002",
+            "n41002003009"
+          ],
+          "choice": "historic present at Literal (\"데리고 오는데\", \"메고 있다\", \"말씀하신다\"); past at Balanced and Readable, through Mark 2",
+          "alternatives": [
+            "past tense at every level"
+          ],
+          "reason": "Mark tells many past events in the present for vividness (meaning decision); Korean narrative can do the same, so Literal keeps it. One decision for the chapter.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -362,6 +520,16 @@
           "L": "And not being able to bring [him] near to {{deity_pronoun:him|Him}} because of the crowd, they unroofed the roof where {{deity_pronoun:he|He}} was, and having dug through [it], they let down the mat on which the paralytic was lying.",
           "B": "The crowd kept them from getting him near Jesus, so they took off part of the roof above where {{deity_pronoun:he|He}} was. They broke through it and lowered the mat with the paralyzed man lying on it.",
           "R": "But there were too many people, and they could not get him close to Jesus. So they climbed up and made a hole in the roof above {{deity_pronoun:him|Him}}. Then they let the man down on his mat."
+        },
+        "vi": {
+          "L": "Và vì không thể đem [anh] đến gần {{deity_pronoun:ngài|Ngài}} vì đám đông, họ dỡ mái nhà ngay trên chỗ {{deity_pronoun:ngài|Ngài}} ở, và sau khi khoét [một lỗ], họ thả chiếc chiếu mà người bại nằm trên đó xuống.",
+          "B": "Vì đám đông, họ không thể đưa anh đến gần Đức Giê-xu, nên họ dỡ một phần mái nhà phía trên chỗ {{deity_pronoun:ngài|Ngài}} đang ở. Họ khoét một lỗ rồi thả chiếc chiếu có người bại liệt nằm trên đó xuống.",
+          "R": "Nhưng người ta quá đông, nên họ không thể đưa anh đến gần Đức Giê-xu. Vì vậy, họ trèo lên mái nhà và khoét một lỗ ngay phía trên chỗ {{deity_pronoun:ngài|Ngài}}. Rồi họ thả người ấy nằm trên chiếu xuống."
+        },
+        "ko": {
+          "L": "그리고 무리 때문에 그분께 [그를] 데려갈 수 없어서, 그분이 계신 곳의 지붕을 걷어 내고 구멍을 뚫어, 마비된 사람이 누워 있는 자리를 달아 내린다.",
+          "B": "사람들이 많아서 그를 예수께 데려갈 수 없었다. 그래서 그들은 예수께서 계신 곳 위의 지붕을 걷어 내고 구멍을 뚫은 다음, 몸이 마비된 사람이 누운 자리를 달아 내렸다.",
+          "R": "그러나 사람들이 너무 많아서 그를 예수께 가까이 데려갈 수 없었다. 그래서 그들은 지붕 위로 올라가서, 예수께서 계신 곳 바로 위의 지붕에 구멍을 냈다. 그리고 그 사람을 자리에 눕힌 채로 달아 내렸다."
         }
       },
       "decisions": [
@@ -437,6 +605,50 @@
           "reason": "Readable says how they got to the roof, which the meaning note explains.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002004018"
+          ],
+          "choice": "\"chiếu\" (mat)",
+          "alternatives": [
+            "\"giường\"",
+            "\"cáng\""
+          ],
+          "reason": "As in John 5:8: a poor man's bedding that can be rolled up and carried; \"giường\" (bed) would make 2:11-12 sound impossible.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002004018"
+          ],
+          "choice": "\"자리\" for the mat, through Mark 2",
+          "alternatives": [
+            "\"침상\"",
+            "\"들것\""
+          ],
+          "reason": "As John 5:8-11 in Korean: \"자리\" is a simple mat or bedroll, a poor man's bed (meaning decision); \"침상\" suggests a bed frame and \"들것\" a stretcher.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -474,6 +686,16 @@
           "L": "And Jesus, seeing their faith, says to the paralytic, \"Child, your sins are forgiven.\"",
           "B": "Jesus saw how they trusted in {{deity_pronoun:him|Him}}, and {{deity_pronoun:he|He}} said to the paralyzed man, \"My child, your sins are forgiven.\"",
           "R": "Jesus saw that they had faith in {{deity_pronoun:him|Him}}. So {{deity_pronoun:he|He}} said to the man who could not move, \"My child, God forgives your sins.\""
+        },
+        "vi": {
+          "L": "Và Đức Giê-xu, thấy đức tin của họ, nói với người bại: \"Hỡi con, tội lỗi của con được tha.\"",
+          "B": "Thấy đức tin của họ, Đức Giê-xu nói với người bại liệt: \"Con ơi, tội lỗi con đã được tha.\"",
+          "R": "Đức Giê-xu thấy họ có đức tin nơi {{deity_pronoun:ngài|Ngài}}. Vì vậy, {{deity_pronoun:ngài|Ngài}} nói với người bị liệt: \"Con ơi, Đức Chúa Trời tha tội cho con rồi.\""
+        },
+        "ko": {
+          "L": "그리고 예수께서 그들의 믿음을 보시고 마비된 사람에게 말씀하신다. \"아이야, 네 죄들이 용서받는다.\"",
+          "B": "예수께서 그들의 믿음을 보시고 몸이 마비된 사람에게 말씀하셨다. \"얘야, 네 죄가 용서되었다.\"",
+          "R": "예수께서 그들의 믿음을 보셨다. 그래서 몸을 움직이지 못하는 사람에게 말씀하셨다. \"얘야, 하나님께서 네 죄를 용서하신다.\""
         }
       },
       "decisions": [
@@ -585,6 +807,93 @@
           "reason": "Readable names God as the one who forgives, as the meaning note explains.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n41002005011",
+            "n41002005013"
+          ],
+          "choice": "Jesus calls the man \"con\" (\"Hỡi con\" at L, \"Con ơi\" at B, R) and keeps \"con\" for \"you\" through 2:11",
+          "alternatives": [
+            "\"anh\"",
+            "\"ông\""
+          ],
+          "reason": "The Greek word means \"child\" and is warm; Vietnamese says the same with \"con\", which also sets the relation for the rest of the scene.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002005006"
+          ],
+          "choice": "\"đức tin\" (faith) at every level",
+          "alternatives": [
+            "\"lòng tin cậy\" (B)",
+            "\"tin cậy Ngài\" (B)"
+          ],
+          "reason": "The English Balanced says \"trusted in him\"; \"đức tin\" is the ordinary Vietnamese word and the key term for faith, and is plain enough for Readable, so it is kept throughout.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002005006"
+          ],
+          "choice": "\"믿음\" at every level",
+          "alternatives": [
+            "\"그분을 믿는 것\" (B)",
+            "\"신뢰\""
+          ],
+          "reason": "The English Balanced says \"trusted in him\"; Korean keeps the noun \"믿음\" (faith), a key term, at every level, since it is plain enough for every reader.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002005011"
+          ],
+          "choice": "\"아이야\" (L); \"얘야\" (B, R)",
+          "alternatives": [
+            "\"자녀야\"",
+            "\"이 사람아\""
+          ],
+          "reason": "The Greek \"child\" is a warm way to speak to someone (meaning decision), even to a grown man. \"얘야\" is the everyday warm address to a younger person; Literal keeps the noun \"아이\". Jesus speaks in 해라체, through Mark.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -620,6 +929,16 @@
           "L": "Now some of the scribes were sitting there and reasoning in their hearts,",
           "B": "Some of the scribes were sitting there, and they were asking themselves,",
           "R": "Some teachers of God's law were sitting there. They thought to themselves,"
+        },
+        "vi": {
+          "L": "Nhưng có mấy thầy thông giáo đang ngồi ở đó và suy luận trong lòng mình:",
+          "B": "Có mấy thầy thông giáo đang ngồi đó, và họ tự hỏi trong lòng:",
+          "R": "Có mấy thầy dạy luật của Đức Chúa Trời đang ngồi đó. Họ nghĩ thầm:"
+        },
+        "ko": {
+          "L": "그런데 율법학자들 가운데 몇 사람이 거기에 앉아서 자기들의 마음속으로 따지고 있었다.",
+          "B": "그곳에는 율법학자 몇 사람이 앉아 있었는데, 그들은 속으로 생각했다.",
+          "R": "그곳에 율법 선생 몇 사람이 앉아 있었다. 그들은 속으로 이렇게 생각했다."
         }
       },
       "decisions": [
@@ -679,6 +998,48 @@
           "reason": "The same words as at 1:22.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002006005"
+          ],
+          "choice": "\"thầy thông giáo\" (L, B); \"thầy dạy luật\" (R) for the scribes",
+          "alternatives": [
+            "\"kinh sư\""
+          ],
+          "reason": "As in Mark 1:22 and John 8:3: the Protestant term, and the plainer \"teachers of the law\" at Readable.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002006005"
+          ],
+          "choice": "\"율법학자\" (L, B); \"율법 선생\" (R), through Mark",
+          "alternatives": [
+            "\"서기관\""
+          ],
+          "reason": "As Mark 1:22 and John 8:3 in Korean: \"서기관\" suggests a clerk to a modern reader; these were experts in the law of Moses (meaning decision).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -705,6 +1066,16 @@
           "L": "\"Why does this [man] speak like this?",
           "B": "\"Why does this fellow talk this way?",
           "R": "\"How can this man say things like that?"
+        },
+        "vi": {
+          "L": "\"Sao người này nói như vậy?",
+          "B": "\"Sao gã này lại ăn nói như thế?",
+          "R": "\"Sao người này dám nói những lời như vậy?"
+        },
+        "ko": {
+          "L": "\"이 [사람이] 어찌하여 이렇게 말하는가?",
+          "B": "\"이자가 어떻게 이런 식으로 말하는가?",
+          "R": "\"이 사람이 어떻게 저런 말을 할 수 있는가?"
         }
       },
       "decisions": [
@@ -743,6 +1114,48 @@
           "reason": "Greek needs no noun; English does. Balanced keeps the scorn with \"fellow\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n41002007002"
+          ],
+          "choice": "\"người này\" (L); \"gã này\" (B); \"dám nói\" (R); \"ông ta\" in 2:7b",
+          "alternatives": [
+            "\"ông này\""
+          ],
+          "reason": "The meaning decision says \"this one\" is said with contempt. Vietnamese carries it in the word for the man (\"gã\", a slighting word) or in the verb (\"dám\", \"dare\"); the scribes do not honour Jesus with \"Ngài\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n41002007002"
+          ],
+          "choice": "the scribes think about Jesus in the plain style with no honorific; \"이자\" (B)",
+          "alternatives": [
+            "\"이분\"",
+            "\"이 사람\" (B)"
+          ],
+          "reason": "They speak of him with contempt (meaning decision), so Korean gives him no honorific in their words, while the narrator keeps it. \"이자\" (this fellow) carries the scorn at Balanced; Literal brackets the noun Korean needs after \"이\" (this).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -775,6 +1188,16 @@
           "L": "He blasphemes! Who is able to forgive sins except one, God?\"",
           "B": "It is blasphemy! Who but God alone can forgive sins?\"",
           "R": "He is insulting God! Only God can forgive sins!\""
+        },
+        "vi": {
+          "L": "Ông ta phạm thượng! Ai có thể tha tội ngoài một Đấng là Đức Chúa Trời?\"",
+          "B": "Thật là phạm thượng! Ngoài một mình Đức Chúa Trời, ai có thể tha tội?\"",
+          "R": "Ông ta đang xúc phạm Đức Chúa Trời! Chỉ một mình Đức Chúa Trời mới có thể tha tội!\""
+        },
+        "ko": {
+          "L": "그가 신성을 모독한다! 한 분이신 하나님 외에 누가 죄들을 용서할 수 있는가?\"",
+          "B": "이것은 신성 모독이다! 하나님 한 분 말고 누가 죄를 용서할 수 있단 말인가?\"",
+          "R": "그는 하나님을 욕되게 하고 있다! 죄를 용서하실 수 있는 분은 하나님뿐이시다!\""
         }
       },
       "decisions": [
@@ -854,6 +1277,28 @@
           "reason": "Literal keeps the verb. Readable says plainly what blaspheming is.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002007012",
+            "n41002007013",
+            "n41002007014"
+          ],
+          "choice": "\"한 분이신 하나님\" (L), \"하나님 한 분\" (B)",
+          "alternatives": [
+            "\"하나님 외에\""
+          ],
+          "reason": "The Greek \"except one, God\" recalls the confession that God is one (meaning decision); \"한 분\" keeps the word \"one\" at Literal and Balanced.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -898,6 +1343,16 @@
           "L": "And immediately Jesus, knowing in {{deity_pronoun:his|His}} spirit that they were reasoning like this within themselves, says to them, \"Why are you reasoning these things in your hearts?",
           "B": "At once Jesus knew in {{deity_pronoun:his|His}} spirit what they were thinking. \"Why do you turn these things over in your hearts?\" {{deity_pronoun:he|He}} asked them.",
           "R": "Right away Jesus knew in {{deity_pronoun:his|His}} spirit what they were thinking. He said to them, \"Why are you thinking these things?"
+        },
+        "vi": {
+          "L": "Và lập tức Đức Giê-xu, biết trong tâm linh của {{deity_pronoun:ngài|Ngài}} rằng họ đang suy luận như vậy trong lòng, nói với họ: \"Sao các người suy luận những điều này trong lòng mình?",
+          "B": "Ngay lúc ấy, trong tâm linh mình, Đức Giê-xu biết họ đang nghĩ gì. Ngài hỏi họ: \"Sao các người lại nghĩ những điều ấy trong lòng?",
+          "R": "Ngay lập tức, trong tâm linh mình, Đức Giê-xu biết họ đang nghĩ gì. Ngài nói với họ: \"Sao các người lại nghĩ như vậy?"
+        },
+        "ko": {
+          "L": "그리고 곧 예수께서 그들이 속으로 이렇게 따지고 있다는 것을 자신의 영으로 아시고, 그들에게 말씀하신다. \"너희는 어찌하여 마음속으로 이런 것들을 따지느냐?",
+          "B": "예수께서는 그들이 속으로 그렇게 생각하고 있다는 것을 곧바로 그 영으로 아셨다. 그래서 그들에게 물으셨다. \"너희는 왜 마음속으로 그런 생각을 하느냐?",
+          "R": "예수께서는 그들이 무슨 생각을 하는지 마음속으로 바로 아셨다. 예수께서 그들에게 말씀하셨다. \"왜 그런 생각을 하느냐?"
         }
       },
       "decisions": [
@@ -983,6 +1438,113 @@
           "reason": "Balanced closes the quotation here, so the next question (2:9) opens its own.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002008007"
+          ],
+          "choice": "\"tâm linh\" (lowercase) for Jesus' own spirit",
+          "alternatives": [
+            "\"thần linh\"",
+            "\"Thánh Linh\""
+          ],
+          "reason": "The meaning decision reads it as his own inner self, not the Holy Spirit, so the capitalised \"Thánh Linh\" is not used; \"tâm linh\" is the human spirit.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n41002008022"
+          ],
+          "choice": "Jesus speaks to the scribes as \"các người\"",
+          "alternatives": [
+            "\"các ông\""
+          ],
+          "reason": "The style guide's form for Jesus speaking to opponents and crowds; also used to the Pharisees in 2:25.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-3",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "B"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n41002008014",
+            "n41002008015"
+          ],
+          "choice": "\"Ngài hỏi họ\" before the question (B)",
+          "alternatives": [
+            "the question first, as the English Balanced"
+          ],
+          "reason": "Vietnamese introduces a quotation with a colon, so the speaker comes first.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002008002"
+          ],
+          "choice": "\"곧\" (L) for Mark's \"immediately\" throughout; \"곧바로\", \"바로\" as the sentence allows (B, R)",
+          "alternatives": [
+            "\"즉시\" at every level"
+          ],
+          "reason": "Literal keeps one word for Mark's frequent \"immediately\" so the repetition stays visible; Balanced and Readable vary it as natural Korean does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002008006",
+            "n41002008007",
+            "n41002008008"
+          ],
+          "choice": "\"자신의 영으로\" (L), \"그 영으로\" (B), \"마음속으로\" (R)",
+          "alternatives": [
+            "\"성령으로\""
+          ],
+          "reason": "This is Jesus' own inner self (meaning decision), not the Holy Spirit, so Korean says \"영\" with no honorific and never \"성령\"; Readable uses the plain \"마음속으로\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1025,6 +1587,16 @@
           "L": "Which is easier: to say to the paralytic, 'Your sins are forgiven,' or to say, 'Rise, and take up your mat, and walk'?",
           "B": "\"What is easier to say to this paralyzed man: 'Your sins are forgiven,' or 'Get up, take your mat, and walk'?",
           "R": "Is it easier to tell this man, 'Your sins are forgiven,' or to tell him, 'Stand up, take your mat, and walk'?"
+        },
+        "vi": {
+          "L": "Điều nào dễ hơn: nói với người bại: 'Tội lỗi của con được tha,' hay nói: 'Hãy đứng dậy, vác chiếu của con và bước đi'?",
+          "B": "Nói với người bại liệt này: 'Tội con đã được tha,' hay nói: 'Hãy đứng dậy, vác chiếu mà đi,' điều nào dễ hơn?",
+          "R": "Nói với người này: 'Tội con đã được tha' thì dễ hơn, hay nói: 'Hãy đứng dậy, vác chiếu và đi' thì dễ hơn?"
+        },
+        "ko": {
+          "L": "어느 것이 더 쉬우냐? 마비된 사람에게 '네 죄들이 용서받는다' 하고 말하는 것이냐, 아니면 '일어나 네 자리를 들고 걸어가라' 하고 말하는 것이냐?",
+          "B": "이 몸이 마비된 사람에게 '네 죄가 용서되었다'고 말하는 것과 '일어나서 네 자리를 들고 걸어가거라'고 말하는 것 가운데, 어느 쪽이 더 쉽겠느냐?",
+          "R": "이 사람에게 '네 죄가 용서되었다'고 말하는 것이 쉽겠느냐, 아니면 '일어나서 네 자리를 들고 걸어가라'고 말하는 것이 쉽겠느냐?"
         }
       },
       "decisions": [
@@ -1078,6 +1650,27 @@
           "reason": "The verb is the everyday word for getting up, also used of rising from death (16:6). Here the man gets up from his mat (2:12).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n41002009001",
+            "n41002009002",
+            "n41002009003"
+          ],
+          "choice": "\"어느 것이 더 쉬우냐?\" first, then the two sayings as questions (L)",
+          "alternatives": [
+            "the two sayings first, \"... 가운데 어느 것이 더 쉬우냐?\" (L)"
+          ],
+          "reason": "Korean puts the main verb last, but Literal can keep the Greek order by asking the question first and then setting out the two options as questions; Balanced uses the ordinary Korean order.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1118,6 +1711,16 @@
           "L": "But so that you may know that the Son of Man has authority on the earth to forgive sins\"—{{deity_pronoun:he|He}} says to the paralytic—",
           "B": "But I want you to be sure of this: the Son of Man has the right on earth to forgive sins.\" Then {{deity_pronoun:he|He}} turned to the paralyzed man.",
           "R": "I will show you that the Son of Man has the power here on earth to forgive sins.\" Then Jesus spoke to the man who could not move."
+        },
+        "vi": {
+          "L": "Nhưng để các người biết rằng Con Người có thẩm quyền tha tội trên đất\"—{{deity_pronoun:ngài|Ngài}} nói với người bại—",
+          "B": "Nhưng {{deity_pronoun:ta|Ta}} muốn các người biết chắc điều này: Con Người có thẩm quyền tha tội trên đất.\" Rồi {{deity_pronoun:ngài|Ngài}} quay sang người bại liệt.",
+          "R": "Ta sẽ cho các người thấy rằng Con Người có quyền tha tội ngay trên đất này.\" Rồi Đức Giê-xu nói với người bị liệt."
+        },
+        "ko": {
+          "L": "그러나 인자가 땅에서 죄들을 용서하는 권세를 가지고 있다는 것을 너희가 알게 하려고—\" 그분이 마비된 사람에게 말씀하신다—",
+          "B": "그러나 인자가 땅에서 죄를 용서하는 권세를 가지고 있다는 것을 너희에게 알게 해 주겠다.\" 그러고 나서 예수께서 몸이 마비된 사람에게 말씀하셨다.",
+          "R": "이제 인자, 곧 사람의 아들이 이 땅에서 죄를 용서할 권세를 가지고 있다는 것을 너희에게 보여 주겠다.\" 그러고는 예수께서 몸을 움직이지 못하는 사람에게 말씀하셨다."
         }
       },
       "decisions": [
@@ -1235,6 +1838,52 @@
           "reason": "Balanced and Readable close the sentence first, so the reader is not left in a broken one.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002010007",
+            "n41002010008",
+            "n41002010009",
+            "n41002010010"
+          ],
+          "choice": "\"인자\" at every level; \"인자, 곧 사람의 아들\" once (R)",
+          "alternatives": [
+            "\"사람의 아들\" at every level"
+          ],
+          "reason": "\"인자\" is the title at every level and is never under the gender setting (style guide). Readable adds \"곧 사람의 아들\" once in the chapter so new readers know what the title means. Jesus speaks of himself, so the title takes no honorific in his mouth (\"가지고 있다\").",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002010005"
+          ],
+          "choice": "\"권세\" for the authority to forgive",
+          "alternatives": [
+            "\"권위\", as in 1:22 and 1:27",
+            "\"권한\""
+          ],
+          "reason": "The meaning decision gives the sense \"the right and the power\"; \"권세\" names power to act, while \"권위\" (1:22, 1:27) names the weight of a teacher's word.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1270,6 +1919,16 @@
           "L": "\"To you I say, rise, take up your mat, and go to your home.\"",
           "B": "\"Get up, I tell you. Take your mat and go home.\"",
           "R": "He said, \"Stand up! Take your mat and go home!\""
+        },
+        "vi": {
+          "L": "\"Ta bảo chính con: Hãy đứng dậy, vác chiếu của con và đi về nhà con.\"",
+          "B": "\"Ta bảo con: Hãy đứng dậy, vác chiếu mà về nhà.\"",
+          "R": "Ngài nói: \"Hãy đứng dậy! Vác chiếu của con và về nhà đi!\""
+        },
+        "ko": {
+          "L": "\"네게 내가 말한다. 일어나 네 자리를 들고 네 집으로 가거라.\"",
+          "B": "\"내가 너에게 말한다. 일어나서 네 자리를 들고 집으로 가거라.\"",
+          "R": "예수께서 말씀하셨다. \"일어나라! 네 자리를 들고 집으로 가거라!\""
         }
       },
       "decisions": [
@@ -1313,6 +1972,26 @@
             "advice to try to walk"
           ],
           "reason": "The man can do what he is told only if he has been healed.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n41002011001",
+            "n41002011002"
+          ],
+          "choice": "\"네게 내가 말한다\" (L)",
+          "alternatives": [
+            "\"내가 네게 말한다\" (L)"
+          ],
+          "reason": "\"you\" stands first in the Greek for emphasis (meaning decision); Korean word order is free enough before the verb for Literal to keep it first.",
           "uncertain": false,
           "footnote": false
         }
@@ -1359,6 +2038,16 @@
           "L": "And he rose, and immediately, taking up the mat, he went out in front of everyone, so that all were amazed and glorified God, saying, \"We never saw [anything] like this!\"",
           "B": "He got up, picked up his mat at once, and walked out while they all watched. They were all astonished and gave glory to God. \"We have never seen anything like it!\" they said.",
           "R": "The man got up. Right away he took his mat and went out where everyone could see him. All the people were amazed, and they praised God. They said, \"We have never seen anything like this!\""
+        },
+        "vi": {
+          "L": "Và người ấy đứng dậy, và lập tức vác chiếu lên, đi ra trước mặt mọi người, đến nỗi tất cả đều kinh ngạc và tôn vinh Đức Chúa Trời, nói rằng: \"Chúng ta chưa bao giờ thấy [điều gì] như thế này!\"",
+          "B": "Người ấy đứng dậy, liền vác chiếu lên và đi ra trước mắt mọi người. Ai nấy đều kinh ngạc và tôn vinh Đức Chúa Trời. Họ nói: \"Chúng ta chưa bao giờ thấy điều gì như vậy!\"",
+          "R": "Người ấy đứng dậy. Ngay lập tức, anh vác chiếu lên và đi ra trước mặt mọi người. Ai cũng kinh ngạc và ngợi khen Đức Chúa Trời. Họ nói: \"Chúng ta chưa bao giờ thấy chuyện như thế này!\""
+        },
+        "ko": {
+          "L": "그러자 그는 일어나서 곧 자리를 들고 모든 사람 앞에서 나갔다. 그래서 모두가 놀라서 하나님께 영광을 돌리며 말했다. \"우리가 이렇게 [된 것을] 결코 본 적이 없다.\"",
+          "B": "그 사람은 일어나 곧바로 자리를 들고 모든 사람이 보는 앞에서 걸어 나갔다. 모두가 몹시 놀라 하나님께 영광을 돌리며 말했다. \"우리는 이런 일을 한 번도 본 적이 없다!\"",
+          "R": "그 사람은 일어났다. 그리고 바로 자기 자리를 들고, 모든 사람이 보는 앞에서 걸어 나갔다. 사람들은 모두 깜짝 놀랐다. 그들은 하나님을 찬양하며 말했다. \"이런 일은 처음 본다!\""
         }
       },
       "decisions": [
@@ -1432,6 +2121,50 @@
           "reason": "Readable uses an everyday verb with the same meaning.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002012022"
+          ],
+          "choice": "inclusive \"chúng ta\" for the crowd's \"we\"",
+          "alternatives": [
+            "\"chúng tôi\""
+          ],
+          "reason": "The people speak among themselves, so Vietnamese uses the \"we\" that includes the hearers.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002012015",
+            "n41002012016",
+            "n41002012017"
+          ],
+          "choice": "\"하나님께 영광을 돌리다\" (L, B); \"하나님을 찬양하다\" (R)",
+          "alternatives": [
+            "\"하나님을 영광스럽게 하다\""
+          ],
+          "reason": "\"영광을 돌리다\" is the natural Korean idiom for giving God glory and keeps the key term \"영광\", as John 9:24 in Korean does; \"영광스럽게 하다\" is kept for God or Jesus glorifying. Readable says \"찬양하다\" (praise), as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1470,6 +2203,16 @@
           "L": "And {{deity_pronoun:he|He}} went out again beside the sea, and all the crowd was coming to {{deity_pronoun:him|Him}}, and {{deity_pronoun:he|He}} was teaching them.",
           "B": "Once more {{deity_pronoun:he|He}} went out along the lakeshore. The whole crowd kept coming to {{deity_pronoun:him|Him}}, and {{deity_pronoun:he|He}} taught them.",
           "R": "Jesus went to the shore of Lake Galilee again. A big crowd gathered around {{deity_pronoun:him|Him}}, and {{deity_pronoun:he|He}} taught them."
+        },
+        "vi": {
+          "L": "Và {{deity_pronoun:ngài|Ngài}} lại đi ra bờ biển; và cả đoàn dân đến với {{deity_pronoun:ngài|Ngài}}, và {{deity_pronoun:ngài|Ngài}} dạy dỗ họ.",
+          "B": "Ngài lại đi ra bờ biển. Cả đoàn dân cứ kéo đến với {{deity_pronoun:ngài|Ngài}}, và {{deity_pronoun:ngài|Ngài}} dạy dỗ họ.",
+          "R": "Đức Giê-xu lại đi ra bờ biển hồ Ga-li-lê. Rất đông người kéo đến quanh {{deity_pronoun:ngài|Ngài}}, và {{deity_pronoun:ngài|Ngài}} dạy dỗ họ."
+        },
+        "ko": {
+          "L": "그리고 그분이 다시 바닷가로 나가셨다. 그러자 온 무리가 그분께로 오고 있었고, 그분은 그들을 가르치고 계셨다.",
+          "B": "예수께서 다시 바닷가로 나가셨다. 온 무리가 계속 예수께 몰려왔고, 예수께서는 그들을 가르치셨다.",
+          "R": "예수께서 다시 갈릴리 호숫가로 가셨다. 많은 사람이 예수께 몰려왔고, 예수께서는 그들을 가르치셨다."
         }
       },
       "decisions": [
@@ -1527,6 +2270,46 @@
           "reason": "The Sea of Galilee is a lake, as at 1:16.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002013006"
+          ],
+          "choice": "\"biển\" (L, B); \"biển hồ Ga-li-lê\" (R)",
+          "alternatives": [
+            "\"biển\" at every level"
+          ],
+          "reason": "As in Mark 1:16 and John 6:1: Readable names the lake and says that it is one; Literal and Balanced keep \"biển\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002013006"
+          ],
+          "choice": "\"바닷가\" (L, B); \"갈릴리 호숫가\" (R)",
+          "alternatives": [
+            "\"호숫가\" at every level"
+          ],
+          "reason": "As 1:16: Literal and Balanced keep Mark's word \"sea\" for the Sea of Galilee; Readable says it is a lake and names it, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1565,6 +2348,16 @@
           "L": "And passing by, {{deity_pronoun:he|He}} saw Levi the [son] of Alphaeus sitting at the tax office, and {{deity_pronoun:he|He}} says to him, \"Follow {{deity_pronoun:me|Me}}.\"",
           "B": "As {{deity_pronoun:he|He}} walked along, {{deity_pronoun:he|He}} caught sight of Levi son of Alphaeus sitting in the tax office. \"Follow {{deity_pronoun:me|Me}},\" {{deity_pronoun:he|He}} said to him.",
           "R": "As Jesus was walking along, {{deity_pronoun:he|He}} saw a man named Levi, the son of Alphaeus. Levi was sitting at the place where he collected taxes. Jesus said to him, \"Come with {{deity_pronoun:me|Me}} and be {{deity_pronoun:my|My}} follower.\""
+        },
+        "vi": {
+          "L": "Và đang đi ngang qua, {{deity_pronoun:ngài|Ngài}} thấy Lê-vi [con] của A-phê đang ngồi tại trạm thu thuế, và {{deity_pronoun:ngài|Ngài}} nói với ông: \"Hãy theo {{deity_pronoun:ta|Ta}}.\"",
+          "B": "Khi đi ngang qua, {{deity_pronoun:ngài|Ngài}} thấy Lê-vi con A-phê đang ngồi ở trạm thu thuế. Ngài bảo ông: \"Hãy theo {{deity_pronoun:ta|Ta}}.\"",
+          "R": "Đức Giê-xu đang đi dọc đường thì thấy một người tên là Lê-vi, con của A-phê. Lê-vi đang ngồi ở chỗ ông thu thuế. Đức Giê-xu nói với ông: \"Hãy đến đi theo {{deity_pronoun:ta|Ta}} và làm môn đồ của {{deity_pronoun:ta|Ta}}.\""
+        },
+        "ko": {
+          "L": "그리고 지나가시다가 그분은 알패오의 [아들] 레위가 세관에 앉아 있는 것을 보시고, 그에게 말씀하신다. \"나를 따라오너라.\"",
+          "B": "예수께서 길을 가시다가, 알패오의 아들 레위가 세관에 앉아 있는 것을 보시고 말씀하셨다. \"나를 따라오너라.\"",
+          "R": "예수께서 길을 걸어가시다가 레위라는 사람을 보셨다. 그는 알패오의 아들이었다. 레위는 세금을 걷는 자리에 앉아 있었다. 예수께서 그에게 말씀하셨다. \"나와 함께 가자. 나의 제자가 되어라.\""
         }
       },
       "decisions": [
@@ -1639,6 +2432,53 @@
           "reason": "Readable says what following means.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002014004",
+            "n41002014007"
+          ],
+          "choice": "\"Lê-vi\" for Levi; \"A-phê\" for Alphaeus",
+          "alternatives": [
+            "\"Lêvi\"",
+            "\"An-phê\""
+          ],
+          "reason": "Protestant transliterations, in line with the style guide's names; neither is in its list.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002014011",
+            "n41002014004",
+            "n41002014007"
+          ],
+          "choice": "\"세관\" (L, B); \"세금을 걷는 자리\" (R); \"레위\", \"알패오\"",
+          "alternatives": [
+            "\"세무소\"",
+            "\"세리의 자리\""
+          ],
+          "reason": "\"세관\" is a customs or toll post, which the tax office was (meaning decision); \"세무소\" is a modern tax office. \"레위\" and \"알패오\" are the established Protestant spellings.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1665,6 +2505,16 @@
           "L": "And rising, he followed {{deity_pronoun:him|Him}}.",
           "B": "He got up and followed {{deity_pronoun:him|Him}}.",
           "R": "Levi got up and went with {{deity_pronoun:him|Him}}."
+        },
+        "vi": {
+          "L": "Và đứng dậy, ông đi theo {{deity_pronoun:ngài|Ngài}}.",
+          "B": "Ông đứng dậy và đi theo {{deity_pronoun:ngài|Ngài}}.",
+          "R": "Lê-vi đứng dậy và đi theo {{deity_pronoun:ngài|Ngài}}."
+        },
+        "ko": {
+          "L": "그러자 그는 일어나 그분을 따라갔다.",
+          "B": "레위는 일어나 예수를 따라갔다.",
+          "R": "레위는 일어나서 예수와 함께 갔다."
         }
       },
       "decisions": [
@@ -1732,6 +2582,16 @@
           "L": "And it happens that {{deity_pronoun:he|He}} is reclining at table in his house, and many tax collectors and sinners were reclining with Jesus and {{deity_pronoun:his|His}} disciples, for there were many, and they were following {{deity_pronoun:him|Him}}.",
           "B": "Later Jesus was having a meal in Levi's house, and many tax collectors and sinners shared the table with {{deity_pronoun:him|Him}} and {{deity_pronoun:his|His}} disciples. There were many such people among those who followed {{deity_pronoun:him|Him}}.",
           "R": "Later Jesus ate a meal at Levi's house. Many tax collectors and other people known as sinners ate there with {{deity_pronoun:him|Him}} and {{deity_pronoun:his|His}} followers. Many people like that were following Jesus."
+        },
+        "vi": {
+          "L": "Và xảy ra là {{deity_pronoun:ngài|Ngài}} ngả mình dùng bữa trong nhà ông, và nhiều người thu thuế và người tội lỗi cùng ngả mình dùng bữa với Đức Giê-xu và các môn đồ của {{deity_pronoun:ngài|Ngài}}, vì có nhiều người [như vậy], và họ đi theo {{deity_pronoun:ngài|Ngài}}.",
+          "B": "Sau đó, Đức Giê-xu dùng bữa tại nhà Lê-vi. Nhiều người thu thuế và người tội lỗi cùng ngồi ăn với {{deity_pronoun:ngài|Ngài}} và các môn đồ {{deity_pronoun:ngài|Ngài}}, vì trong số những người đi theo {{deity_pronoun:ngài|Ngài}} có nhiều người như thế.",
+          "R": "Sau đó, Đức Giê-xu ăn một bữa tại nhà Lê-vi. Nhiều người thu thuế và những người khác bị coi là tội lỗi cũng ăn với {{deity_pronoun:ngài|Ngài}} và các môn đồ {{deity_pronoun:ngài|Ngài}}. Có rất nhiều người như vậy đi theo Đức Giê-xu."
+        },
+        "ko": {
+          "L": "그리고 그분이 그의 집에서 [식탁에] 기대어 앉아 계시게 된다. 그런데 많은 세리와 죄인이 예수와 그분의 제자들과 함께 기대어 앉아 있었다. 그런 사람이 많았고, 그들이 그분을 따르고 있었기 때문이다.",
+          "B": "그 뒤에 예수께서 레위의 집에서 식사를 하고 계셨는데, 많은 세리와 죄인이 예수와 제자들과 함께 식탁에 앉아 있었다. 예수를 따르는 사람들 가운데 그런 사람이 많았던 것이다.",
+          "R": "그 뒤에 예수께서 레위의 집에서 식사를 하셨다. 많은 세금 걷는 사람들과, 죄인이라고 손가락질받던 사람들이 예수와 제자들과 함께 음식을 먹었다. 그런 사람들 가운데 많은 이가 예수를 따르고 있었다."
         }
       },
       "decisions": [
@@ -1845,6 +2705,93 @@
           "reason": "Readable shows that \"sinners\" is a label others gave them.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002015003",
+            "n41002015014"
+          ],
+          "choice": "\"ngả mình dùng bữa\" (L); \"dùng bữa\", \"ngồi ăn\" (B, R)",
+          "alternatives": [
+            "\"nằm\""
+          ],
+          "reason": "Guests lay on couches at a meal (meaning decision); Literal shows the posture, Balanced and Readable use the ordinary Vietnamese words for eating together.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002015019"
+          ],
+          "choice": "\"môn đồ\" at Readable too",
+          "alternatives": [
+            "\"người đi theo\" (R)"
+          ],
+          "reason": "The English Readable says \"followers\"; the style guide keeps \"môn đồ\" at every level, as in John, because it is the ordinary church word and recurs through the Gospel.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002015011",
+            "n41002015013"
+          ],
+          "choice": "\"세리\" (L, B), \"세금 걷는 사람\" (R); \"죄인\" at every level",
+          "alternatives": [
+            "\"세리\" at every level",
+            "\"세금 징수원\""
+          ],
+          "reason": "\"세리\" is the established word but is not everyday Korean, so Readable says what these men did. \"죄인\" keeps the word the Pharisees used of people known for breaking the law (meaning decision); Readable adds that others pointed at them, as the English Readable adds \"known as\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002015003",
+            "n41002015019"
+          ],
+          "choice": "\"[식탁에] 기대어 앉아\" (L), \"식탁에 앉아\" (B), \"음식을 먹었다\" (R); \"제자들\" at every level",
+          "alternatives": [
+            "\"누워\" (L)",
+            "\"따르는 사람들\" (R)"
+          ],
+          "reason": "Guests lay on couches at a meal (meaning decision); \"기대어 앉다\" gives that picture without suggesting lying in bed, and Literal brackets the table Korean needs. As in John in Korean, \"제자\" stays at Readable where the English says \"followers\", since it is an everyday word for a teacher's pupils.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1891,6 +2838,16 @@
           "L": "And the scribes of the Pharisees, seeing that {{deity_pronoun:he|He}} was eating with the sinners and tax collectors, were saying to {{deity_pronoun:his|His}} disciples, \"Why does {{deity_pronoun:he|He}} eat with the tax collectors and sinners?\"",
           "B": "Some scribes who were Pharisees saw {{deity_pronoun:him|Him}} eating with sinners and tax collectors, and they asked {{deity_pronoun:his|His}} disciples, \"Why is {{deity_pronoun:he|He}} eating with tax collectors and sinners?\"",
           "R": "Some teachers of God's law who were Pharisees saw this. They asked {{deity_pronoun:his|His}} followers, \"Why does {{deity_pronoun:he|He}} share meals with tax collectors and sinners?\""
+        },
+        "vi": {
+          "L": "Và các thầy thông giáo thuộc phái Pha-ri-si, thấy {{deity_pronoun:ngài|Ngài}} ăn với những người tội lỗi và người thu thuế, thì nói với các môn đồ của {{deity_pronoun:ngài|Ngài}}: \"Sao ông ta ăn với người thu thuế và người tội lỗi?\"",
+          "B": "Mấy thầy thông giáo thuộc phái Pha-ri-si thấy {{deity_pronoun:ngài|Ngài}} ăn với người tội lỗi và người thu thuế thì hỏi các môn đồ {{deity_pronoun:ngài|Ngài}}: \"Sao ông ta lại ăn chung với người thu thuế và người tội lỗi?\"",
+          "R": "Mấy thầy dạy luật thuộc nhóm Pha-ri-si thấy vậy. Họ hỏi các môn đồ của {{deity_pronoun:ngài|Ngài}}: \"Sao ông ta lại ăn uống chung với người thu thuế và người tội lỗi?\""
+        },
+        "ko": {
+          "L": "그리고 바리새파의 율법학자들은 그분이 죄인들과 세리들과 함께 잡수시는 것을 보고, 그분의 제자들에게 말하고 있었다. \"어찌하여 그는 세리들과 죄인들과 함께 먹느냐?\"",
+          "B": "바리새파에 속한 율법학자들이 예수께서 죄인들과 세리들과 함께 잡수시는 것을 보고, 그분의 제자들에게 물었다. \"그는 왜 세리들과 죄인들과 함께 먹느냐?\"",
+          "R": "바리새파 사람인 율법 선생 몇 명이 그것을 보았다. 그들이 예수의 제자들에게 물었다. \"그 사람은 왜 세금 걷는 사람들이나 죄인들과 함께 밥을 먹느냐?\""
         }
       },
       "decisions": [
@@ -1974,6 +2931,50 @@
           "reason": "The same words as at 1:22.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n41002016024"
+          ],
+          "choice": "\"ông ta\" in the scribes' question, with no setting span",
+          "alternatives": [
+            "{{deity_pronoun:ngài|Ngài}}",
+            "\"thầy các anh\""
+          ],
+          "reason": "The style guide has opponents speak of Jesus as \"ông ta\"; the English deity_pronoun span has no counterpart, since the speakers do not honour him.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n41002016018",
+            "n41002016024"
+          ],
+          "choice": "the scribes speak to the disciples in 해라체 and of Jesus with no honorific (\"그는 ... 먹느냐?\"); the narrator says \"잡수시는\"",
+          "alternatives": [
+            "\"그분은 ... 잡수십니까?\""
+          ],
+          "reason": "Teachers of the law address a rival teacher's disciples as inferiors, and their disapproval shows in giving Jesus no honorific; the narrator keeps the honorific for Jesus throughout.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2019,6 +3020,16 @@
           "L": "And hearing [this], Jesus says to them, \"Those who are strong have no need of a physician, but those who are sick; I did not come to call righteous [people], but sinners.\"",
           "B": "Jesus heard it and told them, \"People who are well do not need a doctor; sick people do. I came to call sinners, not the righteous.\"",
           "R": "Jesus heard what they said. He told them, \"Healthy people do not need a doctor. Sick people do. I did not come to invite good people. I came to invite sinners.\""
+        },
+        "vi": {
+          "L": "Và nghe [vậy], Đức Giê-xu nói với họ: \"Người mạnh khỏe không cần thầy thuốc, nhưng người đau ốm [mới cần]; {{deity_pronoun:ta|Ta}} đã không đến để gọi người công chính, nhưng [để gọi] người tội lỗi.\"",
+          "B": "Nghe vậy, Đức Giê-xu nói với họ: \"Người khỏe mạnh không cần thầy thuốc, người đau ốm mới cần. Ta đến không phải để kêu gọi người công chính, mà để kêu gọi người tội lỗi.\"",
+          "R": "Đức Giê-xu nghe họ nói vậy. Ngài bảo họ: \"Người khỏe thì không cần bác sĩ. Người bệnh mới cần. Ta không đến để mời người tốt. Ta đến để mời người tội lỗi.\""
+        },
+        "ko": {
+          "L": "그리고 예수께서 들으시고 그들에게 말씀하신다. \"힘센 이들에게는 의사가 필요 없다. 오히려 몸이 좋지 않은 이들에게 [필요하다]. 내가 온 것은 의인들을 부르기 위해서가 아니라 죄인들을 [부르기 위해서다].\"",
+          "B": "예수께서 그 말을 들으시고 그들에게 말씀하셨다. \"몸이 성한 사람에게는 의사가 필요 없다. 의사가 필요한 사람은 아픈 사람이다. 내가 온 것은 의인들이 아니라 죄인들을 부르기 위해서다.\"",
+          "R": "예수께서 그들의 말을 들으셨다. 예수께서 그들에게 말씀하셨다. \"건강한 사람은 의사를 찾지 않는다. 아픈 사람이 의사를 찾는다. 나는 착한 사람들을 초대하러 오지 않았다. 죄인들을 초대하러 왔다.\""
         }
       },
       "decisions": [
@@ -2097,6 +3108,27 @@
           "reason": "Readable uses plain words for those who were counted righteous.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002017020"
+          ],
+          "choice": "\"부르다\" (L, B); \"초대하다\" (R)",
+          "alternatives": [
+            "\"부르다\" at every level"
+          ],
+          "reason": "The verb means both to invite, as to a meal, and to summon to the kingdom (meaning decision); \"부르다\" covers both in Korean, and Readable chooses \"초대하다\" (invite), which fits the meal at Levi's house, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2128,6 +3160,16 @@
           "L": "And the disciples of John and the Pharisees were fasting.",
           "B": "John's disciples and the Pharisees were keeping a fast.",
           "R": "At that time John's followers and the Pharisees were fasting. They went without food for a time to worship God."
+        },
+        "vi": {
+          "L": "Và các môn đồ của Giăng và những người Pha-ri-si đang kiêng ăn.",
+          "B": "Lúc ấy, các môn đồ của Giăng và những người Pha-ri-si đang giữ kỳ kiêng ăn.",
+          "R": "Lúc đó, các môn đồ của Giăng và những người Pha-ri-si đang kiêng ăn, tức là nhịn ăn một thời gian để thờ phượng Đức Chúa Trời."
+        },
+        "ko": {
+          "L": "그리고 요한의 제자들과 바리새파 사람들이 금식하고 있었다.",
+          "B": "그때 요한의 제자들과 바리새파 사람들은 금식을 하고 있었다.",
+          "R": "그 무렵 요한의 제자들과 바리새파 사람들은 금식을 하고 있었다. 그들은 하나님을 섬기는 뜻으로 얼마 동안 음식을 먹지 않았다."
         }
       },
       "decisions": [
@@ -2182,6 +3224,49 @@
           "reason": "Readable explains what fasting is.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002018009"
+          ],
+          "choice": "\"kiêng ăn\" for fasting",
+          "alternatives": [
+            "\"ăn chay\"",
+            "\"nhịn ăn\""
+          ],
+          "reason": "\"ăn chay\" today means eating no meat, a different practice; \"kiêng ăn\" is the Protestant word for going without food. Readable explains it once with \"nhịn ăn\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002018009"
+          ],
+          "choice": "\"금식\" at every level",
+          "alternatives": [
+            "\"단식\""
+          ],
+          "reason": "\"금식\" is the word for going without food as a religious act; \"단식\" suggests a hunger strike or a diet. Readable explains it once, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2226,6 +3311,16 @@
           "L": "And they come and say to {{deity_pronoun:him|Him}}, \"Why do the disciples of John and the disciples of the Pharisees fast, but {{deity_pronoun:your|Your}} disciples do not fast?\"",
           "B": "People came and asked {{deity_pronoun:him|Him}}, \"John's disciples fast, and so do the Pharisees' disciples. Why do {{deity_pronoun:your|Your}} disciples not fast?\"",
           "R": "Some people came to Jesus and asked {{deity_pronoun:him|Him}}, \"John's followers and the Pharisees' followers fast. Why do {{deity_pronoun:your|Your}} followers not fast?\""
+        },
+        "vi": {
+          "L": "Và người ta đến và nói với {{deity_pronoun:ngài|Ngài}}: \"Tại sao các môn đồ của Giăng và các môn đồ của người Pha-ri-si kiêng ăn, còn các môn đồ của Thầy không kiêng ăn?\"",
+          "B": "Có người đến hỏi {{deity_pronoun:ngài|Ngài}}: \"Các môn đồ của Giăng và các môn đồ của người Pha-ri-si đều kiêng ăn. Sao các môn đồ của Thầy lại không kiêng ăn?\"",
+          "R": "Có mấy người đến hỏi Đức Giê-xu: \"Các môn đồ của Giăng và các môn đồ của người Pha-ri-si đều kiêng ăn. Tại sao các môn đồ của Thầy không kiêng ăn?\""
+        },
+        "ko": {
+          "L": "그리고 [사람들이] 와서 그분께 말씀드린다. \"요한의 제자들과 바리새파 사람들의 제자들은 금식하는데, 어찌하여 선생님의 제자들은 금식하지 않습니까?\"",
+          "B": "사람들이 예수께 와서 물었다. \"요한의 제자들도 금식하고 바리새파 사람들의 제자들도 금식합니다. 그런데 왜 선생님의 제자들은 금식하지 않습니까?\"",
+          "R": "몇몇 사람이 예수께 와서 물었다. \"요한의 제자들과 바리새파 사람들의 제자들은 금식합니다. 그런데 왜 선생님의 제자들은 금식하지 않습니까?\""
         }
       },
       "decisions": [
@@ -2260,6 +3355,51 @@
             "a question about Jesus himself"
           ],
           "reason": "The question is about the disciples, but it tests the teacher who trains them.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n41002018028"
+          ],
+          "choice": "the questioners call Jesus \"Thầy\", with no setting span",
+          "alternatives": [
+            "\"ông\"",
+            "{{deity_pronoun:ngài|Ngài}}"
+          ],
+          "reason": "They ask him as a teacher answerable for his disciples (meaning decision), and are not shown as opponents, so they use the respectful noun of address the style guide allows to others who respect him.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n41002018011",
+            "n41002018028"
+          ],
+          "choice": "people speak to Jesus in 합쇼체, with \"선생님의\" for \"your\"; \"[사람들이]\" (L)",
+          "alternatives": [
+            "\"당신의 제자들\"",
+            "no subject (L)"
+          ],
+          "reason": "As the style guide and Mark 1:37: people address Jesus formally, and a title replaces the pronoun \"you\". Korean needs a subject for \"they come\", which the Greek leaves unnamed (meaning decision), so Literal brackets it.",
           "uncertain": false,
           "footnote": false
         }
@@ -2303,6 +3443,16 @@
           "L": "And Jesus said to them, \"The sons of the bridal chamber cannot fast while the bridegroom is with them, can they?",
           "B": "Jesus answered, \"Can the wedding guests fast while the bridegroom is there with them?",
           "R": "Jesus said to them, \"When there is a wedding, the groom's friends do not go without food while he is with them."
+        },
+        "vi": {
+          "L": "Và Đức Giê-xu nói với họ: \"Các con trai của phòng cưới có thể kiêng ăn trong khi chàng rể còn ở với họ sao?",
+          "B": "Đức Giê-xu đáp: \"Khách dự tiệc cưới có thể kiêng ăn khi chàng rể còn ở với họ không?",
+          "R": "Đức Giê-xu nói với họ: \"Khi có đám cưới, bạn bè của chàng rể không kiêng ăn trong lúc chàng rể còn ở với họ."
+        },
+        "ko": {
+          "L": "그러자 예수께서 그들에게 말씀하셨다. \"신랑이 그들과 함께 있는 동안에 신방의 아들들이 금식할 수 있겠느냐?",
+          "B": "예수께서 대답하셨다. \"신랑이 함께 있는 동안에 혼인 잔치의 손님들이 금식할 수 있겠느냐?",
+          "R": "예수께서 그들에게 말씀하셨다. \"결혼 잔치가 열리면, 신랑의 친구들은 신랑이 함께 있는 동안 금식하지 않는다."
         }
       },
       "decisions": [
@@ -2407,6 +3557,55 @@
           "reason": "Readable states the answer the question expects.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002019008",
+            "n41002019009",
+            "n41002019010",
+            "n41002019011"
+          ],
+          "choice": "\"các con trai của phòng cưới\" (L); \"khách dự tiệc cưới\" (B); \"bạn bè của chàng rể\" (R)",
+          "alternatives": [
+            "\"bạn hữu của chàng rể\" (B)"
+          ],
+          "reason": "Literal keeps the Hebrew-style idiom so the reader sees it; Balanced and Readable say who is meant, the guests and the groom's friends (meaning decision).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002019008",
+            "n41002019009",
+            "n41002019010",
+            "n41002019011"
+          ],
+          "choice": "\"신방의 아들들\" (L); \"혼인 잔치의 손님들\" (B); \"신랑의 친구들\" (R)",
+          "alternatives": [
+            "\"혼인 집 손님들\"",
+            "\"들러리들\""
+          ],
+          "reason": "Literal keeps the Hebrew idiom \"sons of the bridal chamber\"; Balanced and Readable say who they are, the groom's friends and guests (meaning decision). \"혼인 잔치\" and \"결혼 잔치\" follow John 2:1 in Korean. The ending \"-겠느냐\" carries the expected answer no.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2439,6 +3638,16 @@
           "L": "As long as they have the bridegroom with them, they are not able to fast.",
           "B": "As long as they have the bridegroom with them, fasting is out of the question.",
           "R": "As long as the groom is there, they cannot fast."
+        },
+        "vi": {
+          "L": "Bao lâu họ còn có chàng rể ở với mình, họ không thể kiêng ăn.",
+          "B": "Bao lâu chàng rể còn ở với họ, họ không thể nào kiêng ăn được.",
+          "R": "Khi chàng rể còn ở đó, họ không thể kiêng ăn."
+        },
+        "ko": {
+          "L": "그들이 신랑을 자기들과 함께 두고 있는 동안에는 금식할 수 없다.",
+          "B": "신랑과 함께 있는 한, 그들은 금식할 수 없다.",
+          "R": "신랑이 함께 있는 동안에는 금식할 수 없다."
         }
       },
       "decisions": [
@@ -2504,6 +3713,16 @@
           "L": "But days will come when the bridegroom is taken away from them, and then they will fast on that day.",
           "B": "But days are coming when the bridegroom will be taken from them; on that day they will fast.",
           "R": "But a day is coming when the groom will be taken away from them. Then they will fast."
+        },
+        "vi": {
+          "L": "Nhưng sẽ có những ngày khi chàng rể bị đem đi khỏi họ, và bấy giờ họ sẽ kiêng ăn trong ngày ấy.",
+          "B": "Nhưng sẽ đến những ngày chàng rể bị đem đi khỏi họ; trong ngày ấy họ sẽ kiêng ăn.",
+          "R": "Nhưng sẽ đến ngày chàng rể bị đem đi khỏi họ. Lúc đó họ sẽ kiêng ăn."
+        },
+        "ko": {
+          "L": "그러나 그들이 신랑을 빼앗길 날들이 올 것이다. 그리고 그때에, 그날에 그들이 금식할 것이다.",
+          "B": "그러나 신랑이 그들에게서 끌려갈 날들이 올 것이다. 그날이 되면 그들은 금식할 것이다.",
+          "R": "그러나 신랑이 그들 곁에서 끌려가는 날이 올 것이다. 그때가 되면 그들은 금식할 것이다."
         }
       },
       "decisions": [
@@ -2544,6 +3763,28 @@
             "only one day a year"
           ],
           "reason": "Mark has \"that day\" in the singular after \"days\" in the plural. Then his disciples will mourn and fast.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002020005"
+          ],
+          "choice": "\"빼앗기다\" (L); \"끌려가다\" (B, R)",
+          "alternatives": [
+            "\"떠나가다\"",
+            "\"데려가다\""
+          ],
+          "reason": "The passive \"is taken away\" is the first hint of Jesus' death (meaning decision); \"빼앗기다\" and \"끌려가다\" keep the sense that he is taken by force, which \"떠나가다\" (go away) would lose.",
           "uncertain": false,
           "footnote": false
         }
@@ -2592,6 +3833,16 @@
           "L": "No one sews a patch of unshrunk cloth on an old garment; otherwise the patch pulls away from it, the new from the old, and a worse tear is made.",
           "B": "Nobody sews a piece of new, unshrunk cloth onto an old coat. If they did, the new patch would shrink and tear away from the old cloth, and the hole would get worse.",
           "R": "People do not use new cloth to fix a hole in old clothes. The new cloth will shrink when it gets wet, and it will tear away from the old cloth. Then the hole will be bigger."
+        },
+        "vi": {
+          "L": "Không ai vá một miếng vải chưa co lên áo cũ; nếu không, miếng vá sẽ kéo rời khỏi nó, cái mới khỏi cái cũ, và chỗ rách càng tệ hơn.",
+          "B": "Không ai lấy miếng vải mới chưa co để vá áo cũ. Nếu làm vậy, miếng vá mới sẽ co lại và kéo rách vải cũ, làm chỗ rách càng lớn hơn.",
+          "R": "Người ta không lấy vải mới để vá chỗ rách trên áo cũ. Vải mới gặp nước sẽ co lại và kéo rách vải cũ. Rồi chỗ rách sẽ còn lớn hơn."
+        },
+        "ko": {
+          "L": "아무도 빨지 않은 천의 조각을 낡은 옷에 대고 깁지 않는다. 그렇지 않으면 채워 댄 것이 그 옷에서, 곧 새것이 낡은 것에서 떨어져 나가고, 더 심하게 찢어진다.",
+          "B": "아무도 물에 빨지 않은 새 천 조각을 낡은 옷에 대고 깁지 않는다. 그렇게 하면 새 조각이 줄어들면서 낡은 옷을 당겨 떨어져 나가고, 구멍이 더 커진다.",
+          "R": "사람들은 헌 옷에 난 구멍을 새 천으로 메우지 않는다. 새 천은 물에 젖으면 줄어들어서 헌 옷에서 찢겨 나간다. 그러면 구멍이 더 커진다."
         }
       },
       "decisions": [
@@ -2671,6 +3922,27 @@
           "reason": "Balanced and Readable say why the patch pulls away, which the meaning note explains.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002021003",
+            "n41002021004"
+          ],
+          "choice": "\"빨지 않은 천\" (L); \"물에 빨지 않은 새 천\" (B)",
+          "alternatives": [
+            "\"생베\""
+          ],
+          "reason": "The cloth is new woollen cloth not yet washed, so it will shrink (meaning decision); \"생베\" is the older Bible word and names hemp cloth.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2716,6 +3988,16 @@
           "L": "And no one puts new wine into old wineskins; otherwise the wine will burst the skins, and the wine is lost, and the skins [too].",
           "B": "And nobody pours new wine into old wineskins. If they did, the wine would split the skins, and both wine and skins would be lost.",
           "R": "And people do not put new wine into old bags made of skin. The new wine would make the old bags burst, and the wine and the bags would both be lost."
+        },
+        "vi": {
+          "L": "Và không ai đổ rượu mới vào bầu da cũ; nếu không, rượu sẽ làm nứt bầu, và rượu mất, và bầu [cũng mất].",
+          "B": "Cũng không ai đổ rượu mới vào bầu da cũ. Nếu làm vậy, rượu sẽ làm bục bầu da, và cả rượu lẫn bầu đều hư mất.",
+          "R": "Người ta cũng không đổ rượu mới vào túi da cũ. Rượu mới sẽ làm túi da cũ bị vỡ, rồi cả rượu lẫn túi đều bị mất."
+        },
+        "ko": {
+          "L": "그리고 아무도 새 포도주를 낡은 가죽 부대에 넣지 않는다. 그렇지 않으면 포도주가 가죽 부대를 터뜨려서, 포도주도 없어지고 부대도 [없어진다].",
+          "B": "또 아무도 새 포도주를 낡은 가죽 부대에 담지 않는다. 그렇게 하면 포도주가 부대를 터뜨려서, 포도주와 부대를 둘 다 잃게 된다.",
+          "R": "또 사람들은 새 포도주를 짐승 가죽으로 만든 낡은 부대에 담지 않는다. 새 포도주가 낡은 부대를 터뜨려서, 포도주도 쏟아지고 부대도 못 쓰게 되기 때문이다."
         }
       },
       "decisions": [
@@ -2779,6 +4061,27 @@
           "reason": "Readable says what a wineskin is.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002022007"
+          ],
+          "choice": "\"bầu da\" (L, B); \"túi da\" (R) for wineskins",
+          "alternatives": [
+            "\"bình da\""
+          ],
+          "reason": "\"bầu da\" is the established word for a skin used as a container; Readable says \"túi da\" (leather bag), which a new reader pictures at once.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2807,6 +4110,16 @@
           "L": "But new wine [goes] into new wineskins.",
           "B": "New wine needs new skins.",
           "R": "New wine must be put into new bags."
+        },
+        "vi": {
+          "L": "Nhưng rượu mới [thì đổ] vào bầu da mới.",
+          "B": "Rượu mới phải đựng trong bầu da mới.",
+          "R": "Rượu mới phải được đổ vào túi da mới."
+        },
+        "ko": {
+          "L": "오히려 새 포도주는 새 가죽 부대에 [넣는다].\"",
+          "B": "새 포도주는 새 부대에 담아야 한다.\"",
+          "R": "새 포도주는 반드시 새 부대에 담아야 한다.\""
         }
       },
       "decisions": [
@@ -2908,6 +4221,16 @@
           "L": "And it happened that on the Sabbath {{deity_pronoun:he|He}} was passing through the grainfields, and {{deity_pronoun:his|His}} disciples began to make [their] way, plucking the heads of grain.",
           "B": "One Sabbath Jesus was going through the grainfields, and as {{deity_pronoun:his|His}} disciples made their way along, they started to pick heads of grain.",
           "R": "One Sabbath day, Jesus was walking through some fields of grain with {{deity_pronoun:his|His}} followers. As they walked, they picked some of the grain to eat."
+        },
+        "vi": {
+          "L": "Và xảy ra là vào ngày Sa-bát {{deity_pronoun:ngài|Ngài}} đi ngang qua các đồng lúa, và các môn đồ của {{deity_pronoun:ngài|Ngài}} vừa đi đường vừa bắt đầu bứt các bông lúa.",
+          "B": "Một ngày Sa-bát, Đức Giê-xu đi ngang qua các đồng lúa. Khi đi đường, các môn đồ {{deity_pronoun:ngài|Ngài}} bắt đầu bứt bông lúa.",
+          "R": "Vào một ngày Sa-bát, Đức Giê-xu cùng các môn đồ đi ngang qua mấy đồng lúa. Vừa đi, các môn đồ vừa bứt bông lúa để ăn."
+        },
+        "ko": {
+          "L": "그리고 안식일에 그분이 곡식밭 사이로 지나가시게 되었다. 그리고 그분의 제자들은 길을 가면서 이삭을 따기 시작했다.",
+          "B": "어느 안식일에 예수께서 곡식밭 사이로 지나가고 계셨다. 제자들은 길을 따라가면서 이삭을 따기 시작했다.",
+          "R": "어느 안식일에 예수께서 제자들과 함께 곡식밭 사이로 걸어가고 계셨다. 제자들은 걸어가면서 먹으려고 곡식 이삭을 땄다."
         }
       },
       "decisions": [
@@ -2981,6 +4304,51 @@
           "reason": "Readable says why they picked it, which 2:25 makes clear: they were hungry.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002023010",
+            "n41002023020"
+          ],
+          "choice": "\"đồng lúa\", \"bông lúa\" for the grainfields and heads of grain",
+          "alternatives": [
+            "\"đồng lúa mì\"",
+            "\"ruộng lúa\""
+          ],
+          "reason": "The crop was wheat or barley; \"lúa\" is used in the general sense of grain, while \"lúa mì\" would name only wheat and \"ruộng\" suggests wet rice paddies. A reviewer may judge whether \"lúa\" reads as rice.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002023010"
+          ],
+          "choice": "\"곡식밭\"",
+          "alternatives": [
+            "\"밀밭\"",
+            "\"보리밭\""
+          ],
+          "reason": "The Greek word means sown fields of grain without naming the crop; \"곡식밭\" keeps it general.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3016,6 +4384,16 @@
           "L": "And the Pharisees were saying to {{deity_pronoun:him|Him}}, \"Look, why are they doing on the Sabbath what is not lawful?\"",
           "B": "The Pharisees said to {{deity_pronoun:him|Him}}, \"See there! Why are they doing something on the Sabbath that the law forbids?\"",
           "R": "The Pharisees said to Jesus, \"Look! Your followers are breaking the Sabbath law. Why are they doing that?\""
+        },
+        "vi": {
+          "L": "Và những người Pha-ri-si nói với {{deity_pronoun:ngài|Ngài}}: \"Kìa, sao họ làm điều không được phép trong ngày Sa-bát?\"",
+          "B": "Những người Pha-ri-si nói với {{deity_pronoun:ngài|Ngài}}: \"Ông xem kìa! Sao họ lại làm điều luật pháp cấm trong ngày Sa-bát?\"",
+          "R": "Những người Pha-ri-si nói với Đức Giê-xu: \"Ông xem kìa! Môn đồ của ông đang vi phạm luật ngày Sa-bát. Sao họ lại làm như vậy?\""
+        },
+        "ko": {
+          "L": "그리고 바리새파 사람들이 그분께 말하고 있었다. \"보십시오, 어찌하여 저들이 안식일에 해서는 안 되는 일을 합니까?\"",
+          "B": "바리새파 사람들이 예수께 말했다. \"보십시오! 저 사람들이 왜 안식일에 율법이 금하는 일을 합니까?\"",
+          "R": "바리새파 사람들이 예수께 말했다. \"보십시오! 선생님의 제자들이 안식일 법을 어기고 있습니다. 왜 저런 일을 합니까?\""
         }
       },
       "decisions": [
@@ -3079,6 +4457,49 @@
           "reason": "Readable says plainly what the complaint is before asking why.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n41002024005",
+            "n41002024006"
+          ],
+          "choice": "the Pharisees call Jesus \"ông\"",
+          "alternatives": [
+            "\"Thầy\""
+          ],
+          "reason": "Opponents do not call him Teacher; \"ông\" is polite but keeps their distance, as the style guide sets for those who do not believe.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n41002024005",
+            "n41002024006"
+          ],
+          "choice": "the Pharisees address Jesus in 합쇼체 (\"보십시오\", \"합니까\")",
+          "alternatives": [
+            "해라체 (\"보아라, ... 하느냐?\")"
+          ],
+          "reason": "Their challenge is in what they say, not in open contempt, so the style guide's default for people speaking to Jesus holds, as for the accusers in John 8:4-5 in Korean.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3119,6 +4540,16 @@
           "L": "And {{deity_pronoun:he|He}} says to them, \"Have you never read what David did when he had need and was hungry, he and those with him?",
           "B": "He answered, \"Have you not read what David did when he and his men were in need and hungry?",
           "R": "Jesus answered, \"You have read in the Scriptures what David did when he and the men with him were hungry and had nothing to eat."
+        },
+        "vi": {
+          "L": "Và {{deity_pronoun:ngài|Ngài}} nói với họ: \"Các người chưa bao giờ đọc điều Đa-vít đã làm khi ông thiếu thốn và đói, ông và những người theo ông sao?",
+          "B": "Ngài đáp: \"Các người chưa đọc việc Đa-vít đã làm khi ông và những người theo ông thiếu thốn và đói khát sao?",
+          "R": "Đức Giê-xu trả lời: \"Các người đã đọc trong Kinh Thánh việc Đa-vít đã làm khi ông và những người đi theo ông bị đói và không có gì ăn."
+        },
+        "ko": {
+          "L": "그러자 그분이 그들에게 말씀하신다. \"너희는 다윗이 궁핍하여 굶주렸을 때, 곧 그와 그와 함께 있던 이들이 [굶주렸을 때], 무엇을 했는지 한 번도 읽지 못했느냐?",
+          "B": "예수께서 대답하셨다. \"다윗과 그 일행이 먹을 것이 없어 배고팠을 때 다윗이 어떻게 했는지 너희는 읽어 보지 못했느냐?",
+          "R": "예수께서 대답하셨다. \"너희는 성경에서 다윗이 한 일을 읽었다. 다윗과 그와 함께 있던 사람들은 먹을 것이 없어서 배가 고팠다."
         }
       },
       "decisions": [
@@ -3188,6 +4619,29 @@
           "reason": "Readable states what the question assumes; the question form is kept at Literal and Balanced.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n41002025014",
+            "n41002025015",
+            "n41002025016",
+            "n41002025017",
+            "n41002025018"
+          ],
+          "choice": "\"곧 그와 그와 함께 있던 이들이 [굶주렸을 때]\" (L)",
+          "alternatives": [
+            "\"그와 그와 함께 있던 이들이 궁핍하여 굶주렸을 때\" (L)"
+          ],
+          "reason": "The Greek adds \"he and those with him\" after the verbs; Korean must put a subject before its verb, so Literal keeps the afterthought by repeating the time clause in brackets.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3241,6 +4695,16 @@
           "L": "How he entered into the house of God in [the time of] Abiathar [the] high priest, and ate the loaves of the presentation, which it is not lawful to eat except for the priests, and he gave also to those who were with him?\"",
           "B": "In the days of Abiathar the high priest, he went into the house of God and ate the bread set out before God, which the law allows only the priests to eat. He even gave some to the men with him.\"",
           "R": "In the time of Abiathar the high priest, David went into God's house and ate the special bread that was offered to God. The law says that only the priests may eat that bread. But David ate it, and he gave some to his men too.\""
+        },
+        "vi": {
+          "L": "thế nào ông đã vào nhà Đức Chúa Trời vào thời A-bi-a-tha [làm] thầy tế lễ thượng phẩm, và ăn các ổ bánh bày ra [trước Đức Chúa Trời], là bánh không ai được phép ăn ngoại trừ các thầy tế lễ, và ông cũng đã cho những người ở với ông?\"",
+          "B": "Vào thời thầy tế lễ thượng phẩm A-bi-a-tha, ông đã vào nhà Đức Chúa Trời và ăn bánh bày ra trước mặt Đức Chúa Trời, là bánh luật pháp chỉ cho phép các thầy tế lễ ăn. Ông còn đưa cho những người đi theo mình nữa.\"",
+          "R": "Vào thời A-bi-a-tha làm thầy tế lễ thượng phẩm, Đa-vít đã vào nhà của Đức Chúa Trời và ăn thứ bánh đặc biệt đã được dâng cho Đức Chúa Trời. Luật pháp nói chỉ các thầy tế lễ mới được ăn bánh đó. Nhưng Đa-vít đã ăn, và ông còn chia cho những người đi theo mình nữa.\""
+        },
+        "ko": {
+          "L": "대제사장 아비아달 때에 그가 어떻게 하나님의 집에 들어가서, 제사장들 말고는 먹어서는 안 되는 차려 놓은 빵을 먹고, 자기와 함께 있던 이들에게도 주었는지 [읽지 못했느냐]?\"",
+          "B": "대제사장 아비아달 때에, 다윗은 하나님의 집에 들어가서 하나님 앞에 차려 놓은 빵을 먹었다. 율법에 따르면 그 빵은 제사장들만 먹을 수 있었다. 그런데도 다윗은 함께 있던 사람들에게도 그 빵을 주었다.\"",
+          "R": "아비아달이 대제사장이었을 때, 다윗은 하나님의 집에 들어가서 하나님께 바친 특별한 빵을 먹었다. 율법은 제사장들만 그 빵을 먹을 수 있다고 말한다. 그러나 다윗은 그 빵을 먹었고, 함께 있던 사람들에게도 나누어 주었다.\""
         }
       },
       "decisions": [
@@ -3371,6 +4835,94 @@
           "reason": "Older names for the loaves are unclear today; the levels say what the bread was.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002026012",
+            "n41002026013",
+            "n41002026014",
+            "n41002026015"
+          ],
+          "choice": "\"các ổ bánh bày ra\" (L); \"bánh bày ra trước mặt Đức Chúa Trời\" (B); \"thứ bánh đặc biệt đã được dâng cho Đức Chúa Trời\" (R)",
+          "alternatives": [
+            "\"bánh trần thiết\""
+          ],
+          "reason": "\"bánh trần thiết\", the older Protestant term, is no longer understood by most readers; the plain words say what the bread was.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002026009"
+          ],
+          "choice": "\"A-bi-a-tha\" for Abiathar",
+          "alternatives": [
+            "\"Áp-bi-a-tha\""
+          ],
+          "reason": "The Protestant transliteration; the name is not in the style guide's list.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002026012",
+            "n41002026013",
+            "n41002026014",
+            "n41002026015"
+          ],
+          "choice": "\"차려 놓은 빵\" (L); \"하나님 앞에 차려 놓은 빵\" (B); \"하나님께 바친 특별한 빵\" (R)",
+          "alternatives": [
+            "\"진설병\""
+          ],
+          "reason": "\"진설병\" is the older church word, unknown to most readers today; the style guide says \"빵\" for bread, never \"떡\". \"차려 놓다\" (set out) gives the meaning of \"presentation\" (meaning decision).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n41002026001"
+          ],
+          "choice": "\"[읽지 못했느냐]\" (L)",
+          "alternatives": [
+            "ending the sentence with \"... 주었는지 [말이다]\""
+          ],
+          "reason": "The Greek \"how he entered ...\" continues the question \"have you never read\" of 2:25; Korean needs the verb at the end of the clause, so Literal repeats it in brackets.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3409,6 +4961,16 @@
           "L": "And {{deity_pronoun:he|He}} was saying to them, \"The Sabbath came to be for the sake of {{gender:humankind|man}}, and not {{gender:humankind|man}} for the sake of the Sabbath;",
           "B": "Then {{deity_pronoun:he|He}} said to them, \"The Sabbath was made for {{gender:people|man}}, not {{gender:people|man}} for the Sabbath.",
           "R": "Then {{deity_pronoun:he|He}} said, \"God made the Sabbath to help people. He did not make people to serve the Sabbath."
+        },
+        "vi": {
+          "L": "Và {{deity_pronoun:ngài|Ngài}} nói với họ: \"Ngày Sa-bát đã được lập nên vì con người, chứ không phải con người vì ngày Sa-bát;",
+          "B": "Rồi {{deity_pronoun:ngài|Ngài}} nói với họ: \"Ngày Sa-bát được lập ra vì con người, chứ không phải con người vì ngày Sa-bát.",
+          "R": "Rồi {{deity_pronoun:ngài|Ngài}} nói: \"Đức Chúa Trời lập ra ngày Sa-bát để giúp ích cho con người. Ngài không dựng nên con người để phục vụ ngày Sa-bát."
+        },
+        "ko": {
+          "L": "그리고 그분이 그들에게 말씀하셨다. \"안식일은 사람을 위하여 생겼고, 사람이 안식일을 위하여 [생긴] 것이 아니다.",
+          "B": "예수께서 또 그들에게 말씀하셨다. \"안식일은 사람을 위해 만들어졌다. 사람이 안식일을 위해 만들어진 것이 아니다.",
+          "R": "그리고 예수께서 말씀하셨다. \"하나님께서 안식일을 만드신 것은 사람을 돕기 위해서다. 안식일을 섬기게 하려고 사람을 만드신 것이 아니다."
         }
       },
       "decisions": [
@@ -3492,6 +5054,50 @@
           "reason": "Readable names God as the one who made the Sabbath, following the meaning note.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n41002027008",
+            "n41002027013"
+          ],
+          "choice": "\"con người\" with no gender span",
+          "alternatives": [
+            "{{gender:con người|loài người}}"
+          ],
+          "reason": "\"con người\" (human beings) already includes men and women; the English traditional alternative \"man\" has no Vietnamese counterpart that means anything different.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n41002027008",
+            "n41002027013"
+          ],
+          "choice": "\"사람\" with no gender span",
+          "alternatives": [
+            "{{gender:사람|남자}}"
+          ],
+          "reason": "The English needs a gender span for \"humankind|man\"; Korean \"사람\" already means human beings of either sex and has no traditional masculine form here, so the setting has nothing to change.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3524,6 +5130,16 @@
           "L": "so that the Son of Man is Lord even of the Sabbath.\"",
           "B": "So the Son of Man is Lord even over the Sabbath.\"",
           "R": "So the Son of Man is the Lord who rules even over the Sabbath day.\""
+        },
+        "vi": {
+          "L": "vì vậy Con Người cũng là Chúa của ngày Sa-bát.\"",
+          "B": "Vậy, Con Người là Chúa ngay cả của ngày Sa-bát.\"",
+          "R": "Vì thế, Con Người là Chúa, Đấng có quyền trên cả ngày Sa-bát.\""
+        },
+        "ko": {
+          "L": "그러므로 인자는 안식일의 주이기도 하다.\"",
+          "B": "그러므로 인자는 안식일까지도 다스리는 주이다.\"",
+          "R": "그러니 인자는 안식일까지도 다스리는 주인이다.\""
         }
       },
       "decisions": [
@@ -3597,6 +5213,27 @@
             "master"
           ],
           "reason": "The word is used here of Jesus' authority over what belongs to God, so it is capitalized, as \"Lord\" is for Jesus elsewhere.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002028002"
+          ],
+          "choice": "\"주\" (L, B); \"주인\" (R)",
+          "alternatives": [
+            "\"주님\""
+          ],
+          "reason": "Jesus speaks of himself as the Son of Man, and a Korean speaker does not use the honorific \"-님\" of himself, so \"주님\" is not possible here. \"주\" keeps the word for Lord; Readable says \"주인\" (master, owner), which new readers understand as the one in charge.",
           "uncertain": false,
           "footnote": false
         }
