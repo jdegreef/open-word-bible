@@ -36,6 +36,21 @@
           "L": "Do not store up for yourselves treasures on earth, where moth and rust destroy, and where thieves break in and steal,",
           "B": "Do not pile up treasures for yourselves on earth, where moths and rust ruin them and thieves dig through walls and steal them.",
           "R": "Do not save up riches for yourselves here on earth. Moths and rust can destroy them, and robbers can break in and steal them."
+        },
+        "es": {
+          "L": "No {{plural_you:atesoren|atesoréis}} para {{plural_you:ustedes|vosotros}} tesoros sobre la tierra, donde la polilla y el óxido destruyen, y donde ladrones abren boquetes y roban;",
+          "B": "No {{plural_you:amontonen|amontonéis}} tesoros para {{plural_you:ustedes|vosotros}} en la tierra, donde la polilla y el óxido los echan a perder y los ladrones perforan las paredes y los roban.",
+          "R": "No {{plural_you:guarden|guardéis}} riquezas para {{plural_you:ustedes|vosotros}} aquí en la tierra. La polilla y el óxido pueden destruirlas, y los ladrones pueden entrar a robarlas."
+        },
+        "fr": {
+          "L": "N’accumulez pas pour vous des trésors sur la terre, où la mite et la rouille détruisent, et où les voleurs entrent par effraction et volent ;",
+          "B": "N’entassez pas des trésors pour vous sur la terre, où les mites et la rouille les abîment, et où les voleurs percent les murs pour les voler.",
+          "R": "Ne gardez pas de richesses pour vous ici, sur la terre. Les mites et la rouille peuvent les abîmer, et des voleurs peuvent entrer chez vous et les voler."
+        },
+        "sw": {
+          "L": "Msijikusanyie hazina juu ya nchi, mahali ambapo nondo na kutu huziharibu, na mahali ambapo wezi hutoboa ukuta na kuiba;",
+          "B": "Msijilimbikizie hazina hapa duniani, ambako nondo na kutu huziharibu, na wezi hutoboa kuta na kuziiba.",
+          "R": "Msijikusanyie mali nyingi hapa duniani. Nondo na kutu zinaweza kuiharibu, na wezi wanaweza kuvunja nyumba na kuiiba."
         }
       },
       "decisions": [
@@ -68,6 +83,65 @@
             "pick a lock"
           ],
           "reason": "Many houses had walls of mud brick, which a thief could dig through.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40006019002",
+            "n40006019003"
+          ],
+          "choice": "plural_you spans on every plural 'you' ({{plural_you:atesoren|atesoréis}}, {{plural_you:ustedes|vosotros}})",
+          "alternatives": [],
+          "reason": "Jesus speaks to the crowd, so each plural \"you\", pronoun or verb, is a reader setting: ustedes (Latin America, the default) or vosotros (Spain). Where the Greek turns to the singular, as in verses 21-23, Spanish uses \"tú\", which has no setting.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40006019002",
+            "n40006019004"
+          ],
+          "choice": "{{plural_you:atesoren|atesoréis}} ... tesoros",
+          "alternatives": [],
+          "reason": "The Greek repeats one root, \"treasure up treasures\". \"Atesorar\" and \"tesoros\" keep the repetition at Literal; Balanced says \"amontonar\", as the English says \"pile up\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40006019016"
+          ],
+          "choice": "hutoboa ukuta (L, B)",
+          "alternatives": [
+            "huvunja"
+          ],
+          "reason": "The verb is to dig through, since a house wall of mud brick could be broken through (meaning decision m2). \"Kutoboa ukuta\" says that; Readable says \"kuvunja nyumba\" (break into a house), as the English says \"break in\".",
           "uncertain": false,
           "footnote": false
         }
@@ -111,6 +185,21 @@
           "L": "but store up for yourselves treasures in heaven, where neither moth nor rust destroys, and where thieves do not break in or steal.",
           "B": "Instead, pile up treasures for yourselves in heaven, where no moth or rust can ruin them and no thief can dig through and steal.",
           "R": "Instead, save up riches for yourselves in heaven. There, moths and rust cannot destroy them, and robbers cannot break in and steal them."
+        },
+        "es": {
+          "L": "sino {{plural_you:atesoren|atesorad}} para {{plural_you:ustedes|vosotros}} tesoros en el cielo, donde ni la polilla ni el óxido destruyen, y donde ladrones no abren boquetes ni roban;",
+          "B": "Más bien, {{plural_you:amontonen|amontonad}} tesoros para {{plural_you:ustedes|vosotros}} en el cielo, donde ni la polilla ni el óxido los echan a perder, ni hay ladrones que perforen las paredes y los roben.",
+          "R": "Más bien, {{plural_you:guarden|guardad}} riquezas para {{plural_you:ustedes|vosotros}} en el cielo. Allí la polilla y el óxido no pueden destruirlas, y los ladrones no pueden entrar a robarlas."
+        },
+        "fr": {
+          "L": "mais accumulez pour vous des trésors dans le ciel, où ni mite ni rouille ne détruisent, et où les voleurs n’entrent pas par effraction et ne volent pas.",
+          "B": "Entassez plutôt des trésors pour vous dans le ciel, où ni les mites ni la rouille ne peuvent les abîmer, et où aucun voleur ne peut percer les murs pour voler.",
+          "R": "Gardez plutôt des richesses pour vous dans le ciel. Là-bas, les mites et la rouille ne peuvent pas les abîmer, et les voleurs ne peuvent pas entrer pour les voler."
+        },
+        "sw": {
+          "L": "bali jikusanyieni hazina mbinguni, mahali ambapo nondo wala kutu haziharibu, na mahali ambapo wezi hawatoboi wala hawaibi;",
+          "B": "Badala yake, jilimbikizieni hazina mbinguni, ambako nondo wala kutu haziwezi kuziharibu, na hakuna wezi wa kutoboa kuta na kuziiba.",
+          "R": "Badala yake, jikusanyieni mali mbinguni. Huko nondo na kutu haziwezi kuiharibu, na wezi hawawezi kuvunja na kuiiba."
         }
       },
       "decisions": [
@@ -168,6 +257,21 @@
           "L": "For where your treasure is, there your heart will be also.",
           "B": "Your heart will always be where your treasure is.",
           "R": "Your heart will be wherever your riches are."
+        },
+        "es": {
+          "L": "Pues donde está tu tesoro, allí también estará tu corazón.",
+          "B": "Tu corazón estará siempre donde esté tu tesoro.",
+          "R": "Tu corazón estará dondequiera que estén tus riquezas."
+        },
+        "fr": {
+          "L": "Car là où se trouve ton trésor, là aussi se trouvera ton cœur.",
+          "B": "Ton cœur sera toujours là où se trouve ton trésor.",
+          "R": "Ton cœur sera là où sont tes richesses."
+        },
+        "sw": {
+          "L": "Kwa maana pale ilipo hazina yako, hapo pia moyo wako utakuwepo.",
+          "B": "Moyo wako utakuwa daima pale ilipo hazina yako.",
+          "R": "Moyo wako utakuwa mahali popote ilipo mali yako."
         }
       },
       "decisions": [
@@ -203,6 +307,48 @@
           "reason": "The saying is put to each listener personally.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40006021006",
+            "n40006021012"
+          ],
+          "choice": "tu, with no plural_you span",
+          "alternatives": [],
+          "reason": "The Greek turns from the plural of 6:19-20 to the singular here (meaning decision m2). Spanish shows it with \"tu\", which has no setting, as the English cannot.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40006021006",
+            "n40006021012"
+          ],
+          "choice": "\"ton\" in 6:21-23",
+          "alternatives": [
+            "\"votre\", as in 6:19-20"
+          ],
+          "reason": "The Greek turns to the singular after the plural of 6:19-20 (m2), so French says \"tu\" to each hearer (style guide §6) until 6:25.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -232,6 +378,21 @@
           "L": "The lamp of the body is the eye.",
           "B": "The eye is the lamp of the body.",
           "R": "Your eye is like a lamp for your body."
+        },
+        "es": {
+          "L": "La lámpara del cuerpo es el ojo.",
+          "B": "El ojo es la lámpara del cuerpo.",
+          "R": "Tu ojo es como una lámpara para tu cuerpo."
+        },
+        "fr": {
+          "L": "La lampe du corps, c’est l’œil.",
+          "B": "L’œil est la lampe du corps.",
+          "R": "Ton œil est comme une lampe pour ton corps."
+        },
+        "sw": {
+          "L": "Taa ya mwili ndiyo jicho.",
+          "B": "Jicho ni taa ya mwili.",
+          "R": "Jicho lako ni kama taa kwa mwili wako."
         }
       },
       "decisions": [
@@ -291,6 +452,21 @@
           "L": "So if your eye is healthy, your whole body will be full of light,",
           "B": "So if your eye is sound, your whole body will be full of light.",
           "R": "If your eyes are good, your whole body will be full of light."
+        },
+        "es": {
+          "L": "Si, pues, tu ojo está sano, todo tu cuerpo será luminoso;",
+          "B": "Así que, si tu ojo está sano, tendrás todo el cuerpo lleno de luz.",
+          "R": "Si tus ojos son buenos, todo tu cuerpo se llenará de luz."
+        },
+        "fr": {
+          "L": "Si donc ton œil est sain, ton corps tout entier sera rempli de lumière ;",
+          "B": "Si donc ton œil est en bon état, ton corps tout entier sera rempli de lumière.",
+          "R": "Si tes yeux sont bons, tout ton corps sera rempli de lumière."
+        },
+        "sw": {
+          "L": "Ikiwa basi jicho lako ni zima, mwili wako wote utakuwa wenye nuru;",
+          "B": "Kwa hiyo, jicho lako likiwa zima, mwili wako wote utajaa nuru.",
+          "R": "Macho yako yakiwa mazuri, mwili wako wote utajaa nuru."
         }
       },
       "decisions": [
@@ -309,6 +485,44 @@
           "reason": "The word means single or undivided, and was used of generosity. Between sayings about treasure (6:19-21) and money (6:24), a healthy eye is an undivided devotion that shows itself in generosity.",
           "uncertain": true,
           "footnote": true
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40006022019"
+          ],
+          "choice": "luminoso (L)",
+          "alternatives": [],
+          "reason": "The Greek adjective means \"full of light\", and its pair in verse 23 \"full of darkness\". Literal says \"luminoso\" and \"oscuro\", one word each, as the Greek does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40006022014"
+          ],
+          "choice": "zima (L, B); mazuri (R)",
+          "alternatives": [
+            "safi"
+          ],
+          "reason": "The word means sound or single, and so perhaps generous (meaning decision m1, uncertain). \"Zima\" is whole and healthy; \"safi\" (clean) is the familiar word but says neither. Readable says \"mazuri\" (good), as the English says \"good\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -344,6 +558,21 @@
           "L": "but if your eye is bad, your whole body will be full of darkness.",
           "B": "But if your eye is bad, your whole body will be full of darkness.",
           "R": "But if your eyes are bad, your whole body will be full of darkness."
+        },
+        "es": {
+          "L": "pero si tu ojo es malo, todo tu cuerpo será oscuro.",
+          "B": "Pero si tu ojo es malo, tendrás todo el cuerpo lleno de oscuridad.",
+          "R": "Pero si tus ojos son malos, todo tu cuerpo se llenará de oscuridad."
+        },
+        "fr": {
+          "L": "mais si ton œil est mauvais, ton corps tout entier sera rempli de ténèbres.",
+          "B": "Mais si ton œil est mauvais, ton corps tout entier sera rempli de ténèbres.",
+          "R": "Mais si tes yeux sont mauvais, tout ton corps sera rempli d’obscurité."
+        },
+        "sw": {
+          "L": "lakini ikiwa jicho lako ni ovu, mwili wako wote utakuwa wenye giza.",
+          "B": "Lakini jicho lako likiwa baya, mwili wako wote utajaa giza.",
+          "R": "Lakini macho yako yakiwa mabaya, mwili wako wote utajaa giza."
         }
       },
       "decisions": [
@@ -366,6 +595,46 @@
           ],
           "reason": "In Hebrew an \"evil eye\" means a grudging, greedy attitude (Deuteronomy 15:9; Proverbs 28:22), and Jesus uses the phrase that way in 20:15.",
           "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40006023006"
+          ],
+          "choice": "malo",
+          "alternatives": [
+            "enfermo"
+          ],
+          "reason": "A \"bad eye\" was an evil eye, a stingy and greedy spirit, as well as a sick one (meaning decision m1, uncertain). Spanish \"malo\" can be said of an eye that does not see well and of a person who does wrong, so it keeps both.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40006023006"
+          ],
+          "choice": "ovu (L); baya (B); mabaya (R)",
+          "alternatives": [
+            "bovu"
+          ],
+          "reason": "A \"bad eye\" was an evil eye, a stingy and greedy spirit (meaning decision m1, uncertain). Literal says \"ovu\" (evil), the Greek word; \"bovu\" would mean only a defective eye. Balanced and Readable say \"baya\" (bad), which covers both, as the English does.",
+          "uncertain": false,
           "footnote": false
         }
       ],
@@ -401,6 +670,21 @@
           "L": "If then the light that [is] in you is darkness, how great the darkness!",
           "B": "So if the light inside you is really darkness, how deep that darkness is!",
           "R": "If the light inside you is really darkness, then you are in very great darkness."
+        },
+        "es": {
+          "L": "Si, pues, la luz que [hay] en ti es oscuridad, ¡cuán grande la oscuridad!",
+          "B": "Así que, si la luz que hay dentro de ti es en realidad oscuridad, ¡qué profunda es esa oscuridad!",
+          "R": "Si la luz que hay dentro de ti es en realidad oscuridad, entonces estás en una oscuridad muy grande."
+        },
+        "fr": {
+          "L": "Si donc la lumière qui [est] en toi est ténèbres, combien grandes [sont] les ténèbres !",
+          "B": "Si donc la lumière qui est en toi n’est en réalité que ténèbres, comme ces ténèbres sont profondes !",
+          "R": "Si la lumière qui est en toi est en fait de l’obscurité, alors tu es dans une très grande obscurité."
+        },
+        "sw": {
+          "L": "Kama basi ile nuru iliyomo ndani yako ni giza, lo, ni giza kuu kiasi gani!",
+          "B": "Kwa hiyo, ikiwa nuru iliyo ndani yako kwa kweli ni giza, giza hilo ni zito mno!",
+          "R": "Ikiwa nuru iliyo ndani yako kwa kweli ni giza, basi uko katika giza kubwa sana."
         }
       },
       "decisions": [
@@ -473,6 +757,21 @@
           "L": "No one can serve two masters, for either {{gender:they|he}} will hate the one and love the other, or {{gender:they|he}} will be devoted to one and despise the other.",
           "B": "No one can serve two masters. Either {{gender:they|he}} will hate one and love the other, or {{gender:they|he}} will be loyal to one and look down on the other.",
           "R": "No one can serve two masters at the same time. {{gender:They|He}} will hate one master and love the other, or {{gender:they|he}} will be loyal to one and not care about the other."
+        },
+        "es": {
+          "L": "Nadie puede servir a dos señores, porque o bien odiará al uno y amará al otro, o bien se apegará a uno y despreciará al otro.",
+          "B": "Nadie puede servir a dos amos. O bien odiará a uno y amará al otro, o bien será leal a uno y menospreciará al otro.",
+          "R": "Nadie puede servir a dos amos al mismo tiempo. Odiará a uno y amará al otro, o será fiel a uno y no le importará el otro."
+        },
+        "fr": {
+          "L": "Personne ne peut servir deux maîtres ; car ou bien il haïra le premier et aimera le second, ou bien il sera dévoué au premier et méprisera le second.",
+          "B": "Personne ne peut être au service de deux maîtres. Ou bien il détestera l’un et aimera l’autre, ou bien il sera fidèle à l’un et regardera l’autre de haut.",
+          "R": "Personne ne peut servir deux maîtres en même temps. Il détestera l’un et aimera l’autre, ou il sera fidèle à l’un et ne s’occupera pas de l’autre."
+        },
+        "sw": {
+          "L": "Hakuna anayeweza kuwatumikia mabwana wawili; kwa maana ama atamchukia mmoja na kumpenda mwingine, ama atashikamana na mmoja na kumdharau mwingine.",
+          "B": "Hakuna mtu anayeweza kuwatumikia mabwana wawili. Atamchukia mmoja na kumpenda mwingine, au atakuwa mwaminifu kwa mmoja na kumdharau mwingine.",
+          "R": "Hakuna mtu anayeweza kuwatumikia mabwana wawili kwa wakati mmoja. Atamchukia mmoja na kumpenda mwingine, au atakuwa mwaminifu kwa mmoja na kumpuuza mwingine."
         }
       },
       "decisions": [
@@ -528,6 +827,65 @@
           "reason": "\"Serve\" in Balanced and Readable, as the style guide has it for the slave words; the meaning decision (m1) keeps that this is a slave's service to a master, and Literal says \"serve\" too.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40006024004"
+          ],
+          "choice": "señores (L); amos (B, R)",
+          "alternatives": [],
+          "reason": "This is a slave's service to a master (meaning decision m1). \"Amo\" is the master who owns a servant; Literal keeps \"señor\", the plain sense of the Greek word.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40006024010"
+          ],
+          "choice": "odiará, amará, with no gender span",
+          "alternatives": [],
+          "reason": "The English offers \"they\" with \"he\" as the traditional form. Spanish needs no subject pronoun, so there is nothing for the setting to change. The same with \"su vida\" in verse 27.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40006024001",
+            "n40006024010"
+          ],
+          "choice": "\"Personne … il\" with no gender span; also \"qui d'entre vous … sa vie\" in 6:27",
+          "alternatives": [
+            "{{gender:il ou elle|il}}"
+          ],
+          "reason": "Where the English needs {{gender:they|he}}, French \"personne\" and \"qui d'entre vous\" already mean anyone, and the \"il\" and \"sa\" that refer back to them are ordinary generic French (style guide §7).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -556,6 +914,21 @@
           "L": "You cannot serve God and mammon.",
           "B": "You cannot serve both God and money.",
           "R": "You cannot serve God and money at the same time."
+        },
+        "es": {
+          "L": "No {{plural_you:pueden|podéis}} servir a Dios y a Mamón.",
+          "B": "No {{plural_you:pueden|podéis}} servir a la vez a Dios y al dinero.",
+          "R": "No {{plural_you:pueden|podéis}} servir a Dios y al dinero al mismo tiempo."
+        },
+        "fr": {
+          "L": "Vous ne pouvez pas servir Dieu et Mammon.",
+          "B": "Vous ne pouvez pas servir à la fois Dieu et l’argent.",
+          "R": "Vous ne pouvez pas servir Dieu et l’argent en même temps."
+        },
+        "sw": {
+          "L": "Hamwezi kumtumikia Mungu na Mamona.",
+          "B": "Hamwezi kumtumikia Mungu na fedha pia.",
+          "R": "Hamwezi kumtumikia Mungu na pesa kwa wakati mmoja."
         }
       },
       "decisions": [
@@ -615,6 +988,62 @@
           "reason": "\"Serve\" in Balanced and Readable, as the style guide has it for the slave words and as in the first half of 6:24, where the meaning decision says this is a slave's service to a master; Literal says \"serve\" too.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40006024027"
+          ],
+          "choice": "Mamón (L), capitalized; el dinero (B, R)",
+          "alternatives": [],
+          "reason": "Literal keeps the Aramaic word for wealth, spoken of as a master (meaning decision m1), as the English does. The capital makes it read as the name of a master and keeps it apart from the everyday word \"mamón\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40006024027"
+          ],
+          "choice": "Mammon, capitalised",
+          "alternatives": [
+            "mammon",
+            "la richesse"
+          ],
+          "reason": "Literal keeps the Aramaic word, as the English does; French writes it with a capital because Jesus speaks of wealth as a master set against God (m1). Balanced and Readable say \"l'argent\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40006024027"
+          ],
+          "choice": "Mamona (L); fedha (B); pesa (R)",
+          "alternatives": [],
+          "reason": "Literal keeps the Aramaic word for wealth, spoken of as a master (meaning decision m1), as the English does. Balanced and Readable say money: \"fedha\" in the careful register, \"pesa\" in the everyday one.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -666,6 +1095,21 @@
           "L": "Therefore I tell you, do not be anxious about your life, what you will eat, nor about your body, what you will put on. Is not life more than food, and the body [more] than clothing?",
           "B": "That is why I tell you not to worry about your life, about what you will eat, or about your body, about what you will wear. Is life not more than food, and the body more than clothes?",
           "R": "So I tell you, do not worry about having enough food to stay alive or enough clothes to wear. Your life is more important than food, and your body is more important than clothes."
+        },
+        "es": {
+          "L": "Por esto {{plural_you:les|os}} digo: no {{plural_you:se inquieten|os inquietéis}} por {{plural_you:su|vuestra}} vida, qué {{plural_you:comerán|comeréis}}, ni por {{plural_you:su|vuestro}} cuerpo, qué {{plural_you:vestirán|vestiréis}}. ¿No es la vida más que el sustento, y el cuerpo [más] que la vestimenta?",
+          "B": "Por eso {{plural_you:les|os}} digo que no {{plural_you:se preocupen|os preocupéis}} por {{plural_you:su|vuestra}} vida, por lo que {{plural_you:van|vais}} a comer, ni por {{plural_you:su|vuestro}} cuerpo, por lo que {{plural_you:van a ponerse|vais a poneros}}. ¿No es la vida más que la comida, y el cuerpo más que la ropa?",
+          "R": "Por eso {{plural_you:les|os}} digo: no {{plural_you:se preocupen|os preocupéis}} por tener suficiente comida para vivir ni suficiente ropa que ponerse. {{plural_you:Su|Vuestra}} vida es más importante que la comida, y {{plural_you:su|vuestro}} cuerpo es más importante que la ropa."
+        },
+        "fr": {
+          "L": "C’est pourquoi je vous dis : ne soyez pas anxieux pour votre vie, [à savoir] ce que vous mangerez, ni pour votre corps, ce dont vous vous vêtirez. La vie n’est-elle pas plus que la nourriture, et le corps que le vêtement ?",
+          "B": "Voilà pourquoi je vous dis de ne pas vous inquiéter pour votre vie, de ce que vous allez manger, ni pour votre corps, de ce que vous allez porter. La vie ne vaut-elle pas plus que la nourriture, et le corps plus que les vêtements ?",
+          "R": "Alors je vous le dis : ne vous faites pas de souci pour avoir assez à manger et rester en vie, ou pour avoir assez de vêtements. Votre vie est plus importante que la nourriture, et votre corps est plus important que les vêtements."
+        },
+        "sw": {
+          "L": "Kwa hiyo nawaambia, msiwe na wasiwasi juu ya uhai wenu, mtakula nini, wala juu ya mwili wenu, mtavaa nini. Je, uhai si mkubwa kuliko chakula, na mwili [mkubwa] kuliko mavazi?",
+          "B": "Ndiyo sababu nawaambia: msiwe na wasiwasi kuhusu uhai wenu, kwamba mtakula nini, wala kuhusu miili yenu, kwamba mtavaa nini. Je, uhai si wa thamani kuliko chakula, na mwili kuliko mavazi?",
+          "R": "Kwa hiyo nawaambia, msiwe na wasiwasi kuhusu kupata chakula cha kuwaweka hai au nguo za kuvaa. Uhai wenu ni muhimu kuliko chakula, na miili yenu ni muhimu kuliko nguo."
         }
       },
       "decisions": [
@@ -769,6 +1213,91 @@
           "reason": "The question expects the answer yes; Readable gives the answer.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40006025006"
+          ],
+          "choice": "inquietarse (L); preocuparse (B, R)",
+          "alternatives": [],
+          "reason": "As the English: Literal says \"inquietarse\", to be anxious, and Balanced and Readable the everyday \"preocuparse\". Each level keeps its word for this verb through verse 34.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40006025006"
+          ],
+          "choice": "être anxieux (L); s'inquiéter (B); se faire du souci (R), for this verb through 6:25-34",
+          "alternatives": [
+            "s'inquiéter at every level"
+          ],
+          "reason": "As in English, Literal keeps the stronger \"anxieux\" for being troubled in mind (m1) and Balanced and Readable use the everyday words.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40006025008",
+            "n40006025020"
+          ],
+          "choice": "uhai",
+          "alternatives": [
+            "maisha",
+            "uzima"
+          ],
+          "reason": "Here the word is the life that food keeps going. \"Uhai\" is being alive; \"uzima\" is kept for life itself, as in eternal life, and \"maisha\" is a lifetime or a way of living.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-2",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40006025006"
+          ],
+          "choice": "kuwa na wasiwasi at every level",
+          "alternatives": [
+            "kujisumbua",
+            "kuhangaika"
+          ],
+          "reason": "The English says \"be anxious\" at Literal and \"worry\" at Balanced and Readable. Swahili \"kuwa na wasiwasi\" is both, so every level keeps it for this verb through verse 34, and the repetition stays visible.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -819,6 +1348,21 @@
           "L": "Look at the birds of the sky: they do not sow or reap or gather into barns, and your heavenly Father feeds them. Are you not worth much more than they?",
           "B": "Look at the birds in the sky. They do not plant or harvest or store food in barns, and yet your heavenly Father feeds them. Are you not worth far more than they are?",
           "R": "Look at the birds. They do not plant seeds or gather crops or store food in barns. But your Father in heaven feeds them. You are worth much more than birds."
+        },
+        "es": {
+          "L": "{{plural_you:Fíjense|Fijaos}} en los pájaros del cielo: no siembran, tampoco siegan ni almacenan en graneros, y {{plural_you:su|vuestro}} Padre celestial los alimenta. ¿No {{plural_you:son|sois}} {{plural_you:ustedes|vosotros}} de mucho más valor que ellos?",
+          "B": "{{plural_you:Miren|Mirad}} los pájaros que vuelan por el cielo. No siembran ni cosechan ni guardan comida en graneros, y aun así {{plural_you:su|vuestro}} Padre celestial los alimenta. ¿Acaso no {{plural_you:valen|valéis}} {{plural_you:ustedes|vosotros}} muchísimo más que ellos?",
+          "R": "{{plural_you:Miren|Mirad}} los pájaros. No siembran semillas, ni recogen cosechas, ni guardan comida en graneros. Pero {{plural_you:su|vuestro}} Padre que está en el cielo les da de comer. {{plural_you:Ustedes valen|Vosotros valéis}} mucho más que los pájaros."
+        },
+        "fr": {
+          "L": "Regardez les oiseaux du ciel : ils ne sèment pas, ils ne moissonnent pas, ils ne rassemblent pas dans des granges, et votre Père céleste les nourrit. Ne valez-vous pas bien plus qu’eux ?",
+          "B": "Regardez les oiseaux dans le ciel. Ils ne plantent rien, ne récoltent rien, ne mettent rien en réserve dans des granges, et pourtant votre Père céleste les nourrit. Ne valez-vous pas beaucoup plus qu’eux ?",
+          "R": "Regardez les oiseaux. Ils ne plantent pas de graines, ils ne font pas de récoltes et ils ne gardent pas de nourriture dans des granges. Pourtant, votre Père qui est dans le ciel leur donne à manger. Vous valez beaucoup plus que les oiseaux !"
+        },
+        "sw": {
+          "L": "Waangalieni kwa makini ndege wa angani: hawapandi mbegu, hawavuni, wala hawaweki chochote ghalani, nao Baba yenu wa mbinguni huwapa chakula. Je, ninyi hamna thamani kubwa zaidi kuliko wao?",
+          "B": "Tazameni ndege wanaoruka angani. Hawapandi wala hawavuni, wala hawahifadhi chakula ghalani, na bado Baba yenu wa mbinguni huwalisha. Je, ninyi hamna thamani kubwa kuliko wao?",
+          "R": "Waangalieni ndege. Hawapandi mbegu, hawavuni mazao, wala hawahifadhi chakula ghalani. Lakini Baba yenu aliye mbinguni huwapa chakula. Ninyi mna thamani kubwa kuliko ndege."
         }
       },
       "decisions": [
@@ -922,6 +1466,21 @@
           "L": "And which of you by being anxious can add one cubit to {{gender:their|his}} span of life?",
           "B": "Can any of you add a single hour to your life by worrying?",
           "R": "You cannot add even one hour to your life by worrying about it."
+        },
+        "es": {
+          "L": "¿Y quién de {{plural_you:ustedes|vosotros}}, por inquietarse, puede añadir un codo a la duración de su vida?",
+          "B": "¿Puede alguno de {{plural_you:ustedes|vosotros}} añadir una sola hora a su vida a fuerza de preocuparse?",
+          "R": "No {{plural_you:pueden|podéis}} añadir ni una hora a {{plural_you:su|vuestra}} vida con la preocupación."
+        },
+        "fr": {
+          "L": "Et qui d’entre vous, à force d’anxiété, peut ajouter une seule coudée à la durée de sa vie ?",
+          "B": "Qui d’entre vous peut, à force de s’inquiéter, ajouter une seule heure à sa vie ?",
+          "R": "Vous ne pouvez pas ajouter même une heure à votre vie en vous faisant du souci."
+        },
+        "sw": {
+          "L": "Na ni nani kati yenu ambaye, kwa kuwa na wasiwasi, anaweza kuongeza dhiraa moja kwa muda wa maisha yake?",
+          "B": "Je, kuna yeyote kati yenu anayeweza kuongeza hata saa moja kwenye maisha yake kwa kuwa na wasiwasi?",
+          "R": "Hamwezi kuongeza hata saa moja kwenye maisha yenu kwa kuwa na wasiwasi."
         }
       },
       "decisions": [
@@ -985,6 +1544,23 @@
           "reason": "The verb means to be anxious or troubled. Balanced and Readable use the everyday word.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40006027012"
+          ],
+          "choice": "dhiraa moja (L)",
+          "alternatives": [],
+          "reason": "Swahili has its own word for the cubit, the length of a forearm, so Literal keeps the measure as the English Literal does. Balanced and Readable speak of an hour, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1012,6 +1588,21 @@
           "L": "And why are you anxious about clothing?",
           "B": "And why do you worry about clothes?",
           "R": "And why do you worry about clothes?"
+        },
+        "es": {
+          "L": "Y por el vestido, ¿por qué {{plural_you:se inquietan|os inquietáis}}?",
+          "B": "¿Y por qué {{plural_you:se preocupan|os preocupáis}} por la ropa?",
+          "R": "¿Y por qué {{plural_you:se preocupan|os preocupáis}} por la ropa?"
+        },
+        "fr": {
+          "L": "Et pour le vêtement, pourquoi êtes-vous anxieux ?",
+          "B": "Et pourquoi vous inquiéter pour des vêtements ?",
+          "R": "Et pourquoi vous faire du souci pour vos vêtements ?"
+        },
+        "sw": {
+          "L": "Na kuhusu mavazi, kwa nini mna wasiwasi?",
+          "B": "Na kwa nini mnakuwa na wasiwasi juu ya mavazi?",
+          "R": "Na kwa nini mnakuwa na wasiwasi kuhusu nguo?"
         }
       },
       "decisions": [
@@ -1068,6 +1659,21 @@
           "L": "Consider the lilies of the field, how they grow: they do not labor or spin,",
           "B": "Think about how the wildflowers grow. They neither toil nor spin thread.",
           "R": "Look at how the wildflowers in the fields grow. They do not work or make clothes for themselves."
+        },
+        "es": {
+          "L": "{{plural_you:Aprendan|Aprended}} de los lirios del campo cómo crecen: no se fatigan ni hilan;",
+          "B": "{{plural_you:Piensen|Pensad}} en cómo crecen las flores silvestres. No se afanan en el trabajo ni hilan.",
+          "R": "{{plural_you:Miren|Mirad}} cómo crecen las flores silvestres en los campos. No trabajan ni se hacen ropa."
+        },
+        "fr": {
+          "L": "Observez les lis des champs, comment ils poussent : ils ne peinent pas et ne filent pas ;",
+          "B": "Voyez comment poussent les fleurs des champs. Elles ne se fatiguent pas au travail et ne filent pas la laine.",
+          "R": "Regardez comment poussent les fleurs sauvages dans les champs. Elles ne travaillent pas et elles ne fabriquent pas leurs vêtements."
+        },
+        "sw": {
+          "L": "Jifunzeni kutoka kwa maua ya kondeni jinsi yanavyokua: hayajitaabishi wala hayasokoti nyuzi;",
+          "B": "Fikirieni jinsi maua ya porini yanavyoota. Hayajitaabishi kwa kazi wala hayasokoti nyuzi.",
+          "R": "Tazameni jinsi maua ya porini yanavyokua mashambani. Hayafanyi kazi wala hayajishonei nguo."
         }
       },
       "decisions": [
@@ -1125,6 +1731,45 @@
           "reason": "Balanced and Readable name what is meant; Literal keeps \"lilies\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40006028008"
+          ],
+          "choice": "les fleurs des champs (B); les fleurs sauvages (R)",
+          "alternatives": [
+            "les lis des champs (B)"
+          ],
+          "reason": "As in English, Literal keeps \"lis\" and Balanced and Readable name the wild flowers in general (m1). \"Fleurs des champs\" is the ordinary French name for wildflowers and keeps the field of the Greek.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40006028008"
+          ],
+          "choice": "maua ya kondeni (L); maua ya porini (B, R)",
+          "alternatives": [
+            "yungiyungi"
+          ],
+          "reason": "The word means wild flowers in general (meaning decision m1). Swahili \"yungiyungi\" is the water lily, which is not what is meant, so Literal says \"maua\" (flowers) too.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1162,6 +1807,21 @@
           "L": "But I tell you that not even Solomon in all his glory was clothed like one of these.",
           "B": "But I tell you, Solomon in all his glory was never dressed as beautifully as one of them.",
           "R": "But I tell you, even King Solomon with all his riches and glory did not have clothes as beautiful as these flowers."
+        },
+        "es": {
+          "L": "Pero {{plural_you:les|os}} digo que ni Salomón, en toda su gloria, estuvo vestido como uno de estos.",
+          "B": "Pero {{plural_you:les|os}} digo que ni Salomón, con toda su gloria, se vistió jamás con tanta belleza como uno de ellos.",
+          "R": "Pero {{plural_you:les|os}} digo que ni siquiera el rey Salomón, con todas sus riquezas y su gloria, tuvo ropa tan hermosa como estas flores."
+        },
+        "fr": {
+          "L": "Or je vous dis que pas même Salomon, dans toute sa gloire, n’a été vêtu comme l’un d’eux.",
+          "B": "Pourtant je vous le dis : même Salomon, dans toute sa gloire, n’a jamais été habillé aussi magnifiquement que l’une d’elles.",
+          "R": "Mais je vous le dis : même le roi Salomon, avec toutes ses richesses et toute sa gloire, n’a jamais eu de vêtements aussi beaux que ces fleurs."
+        },
+        "sw": {
+          "L": "Lakini nawaambia, hata Sulemani, katika utukufu wake wote, hakujivika kama ua moja kati ya haya.",
+          "B": "Lakini nawaambia, Sulemani pamoja na utukufu wake wote hakuwahi kuvaa mavazi mazuri kama ua mojawapo kati ya hayo.",
+          "R": "Lakini nawaambia, hata Mfalme Sulemani, pamoja na utajiri na utukufu wake wote, hakuwa na nguo nzuri kama maua haya."
         }
       },
       "decisions": [
@@ -1230,6 +1890,21 @@
           "L": "But if God so clothes the grass of the field, which is [here] today and tomorrow is thrown into an oven, [will {{deity_pronoun:he|He}}] not much more [clothe] you, you of little faith?",
           "B": "If that is how God clothes the wild grass, which is here today and thrown into the oven tomorrow, will {{deity_pronoun:he|He}} not clothe you much more, you who have so little faith?",
           "R": "God dresses the grass in the fields like that. The grass is there today, and tomorrow it is burned in an oven. So God will surely give you clothes. Your faith is so small!"
+        },
+        "es": {
+          "L": "Pero si la hierba del campo, que hoy está [aquí] y mañana es arrojada al horno, Dios la viste así, ¿no [{{plural_you:los|os}} vestirá] mucho más a {{plural_you:ustedes|vosotros}}, [gente] de poca fe?",
+          "B": "Si así es como Dios viste a la hierba silvestre, que hoy está aquí y mañana se echa al horno, ¿no {{plural_you:los|os}} vestirá mucho más a {{plural_you:ustedes|vosotros}}, que {{plural_you:tienen|tenéis}} tan poca fe?",
+          "R": "Dios viste así a la hierba del campo. La hierba está allí hoy, y mañana la queman en un horno. Así que Dios, sin duda, {{plural_you:les|os}} dará ropa a {{plural_you:ustedes|vosotros}}. ¡Qué poca fe {{plural_you:tienen|tenéis}}!"
+        },
+        "fr": {
+          "L": "Mais si Dieu habille ainsi l’herbe des champs, qui [est là] aujourd’hui et qui demain est jetée au four, ne [fera-t-{{deity_pronoun:il|Il}}] pas bien plus pour vous, gens de peu de foi ?",
+          "B": "Si Dieu habille ainsi l’herbe des champs, qui est là aujourd’hui et qui demain sera jetée au four, ne vous habillera-t-{{deity_pronoun:il|Il}} pas bien plus, vous qui avez si peu de foi ?",
+          "R": "Dieu habille ainsi l’herbe des champs. Cette herbe est là aujourd’hui, et demain on la brûle dans un four. Alors Dieu vous donnera sûrement des vêtements, à vous ! Comme votre foi est petite !"
+        },
+        "sw": {
+          "L": "Ikiwa basi Mungu anayavalisha namna hii majani ya shambani, yaliyoko leo na kesho yanatupwa tanuruni, [je, hatawavalisha] ninyi zaidi sana, enyi wenye imani ndogo?",
+          "B": "Ikiwa Mungu huyavalisha hivyo majani ya porini, ambayo leo yapo na kesho yanatupwa tanuruni, je, hatawavalisha ninyi zaidi sana, enyi wenye imani ndogo?",
+          "R": "Mungu huyavalisha majani ya porini namna hiyo. Majani hayo yapo leo, na kesho yanachomwa katika tanuru. Kwa hiyo hakika Mungu atawapa ninyi nguo. Imani yenu ni ndogo mno!"
         }
       },
       "decisions": [
@@ -1289,6 +1964,42 @@
           "reason": "As in 6:25.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40006030015"
+          ],
+          "choice": "no deity_pronoun span on vestirá (will he clothe)",
+          "alternatives": [],
+          "reason": "The English \"he\" takes the setting. Spanish leaves the subject in the verb ending, where there is nothing to capitalise, so the setting has no word here; \"su\" in verse 33 carries it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40006030015"
+          ],
+          "choice": "no deity_pronoun span on hatawavalisha (will he not clothe)",
+          "alternatives": [],
+          "reason": "The English \"he\" takes the setting. Swahili carries the subject in the verb prefix, which cannot take a capital, so the setting applies only to free pronouns and possessives, such as \"yake\" in verse 33.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1317,6 +2028,21 @@
           "L": "So do not be anxious, saying, 'What shall we eat?'",
           "B": "So do not worry and say, 'What will we eat?'",
           "R": "So do not worry and say, 'What will we eat?'"
+        },
+        "es": {
+          "L": "Así pues, no {{plural_you:se inquieten|os inquietéis}} diciendo: “¿Qué comeremos?”,",
+          "B": "Así que no {{plural_you:se preocupen|os preocupéis}} ni {{plural_you:digan|digáis}}: “¿Qué vamos a comer?”,",
+          "R": "Así que no {{plural_you:se preocupen|os preocupéis}} diciendo: “¿Qué vamos a comer?”,"
+        },
+        "fr": {
+          "L": "Ne soyez donc pas anxieux, en disant : “Que mangerons-nous ?”",
+          "B": "Ne vous inquiétez donc pas, et ne dites pas : “Qu’allons-nous manger ?”",
+          "R": "Ne vous faites donc pas de souci, et ne dites pas : “Qu’est-ce que nous allons manger ?”"
+        },
+        "sw": {
+          "L": "Basi msiwe na wasiwasi mkisema, 'Tutakula nini?'",
+          "B": "Kwa hiyo msiwe na wasiwasi na kusema, 'Tutakula nini?'",
+          "R": "Kwa hiyo msiwe na wasiwasi mkiulizana, 'Tutakula nini?'"
         }
       },
       "decisions": [
@@ -1365,6 +2091,21 @@
           "L": "or, 'What shall we drink?'",
           "B": "or, 'What will we drink?'",
           "R": "or, 'What will we drink?'"
+        },
+        "es": {
+          "L": "o: “¿Qué beberemos?”,",
+          "B": "o: “¿Qué vamos a beber?”,",
+          "R": "o: “¿Qué vamos a beber?”,"
+        },
+        "fr": {
+          "L": "ou : “Que boirons-nous ?”",
+          "B": "ou : “Qu’allons-nous boire ?”",
+          "R": "ou : “Qu’est-ce que nous allons boire ?”"
+        },
+        "sw": {
+          "L": "au, 'Tutakunywa nini?'",
+          "B": "au, 'Tutakunywa nini?'",
+          "R": "au, 'Tutakunywa nini?'"
         }
       },
       "decisions": [
@@ -1410,6 +2151,21 @@
           "L": "or, 'What shall we wear?'",
           "B": "or, 'What will we wear?'",
           "R": "or, 'What will we wear?'"
+        },
+        "es": {
+          "L": "o: “¿Con qué nos vestiremos?”.",
+          "B": "o: “¿Qué nos vamos a poner?”.",
+          "R": "o: “¿Qué ropa vamos a ponernos?”."
+        },
+        "fr": {
+          "L": "ou : “De quoi nous vêtirons-nous ?”",
+          "B": "ou : “Qu’allons-nous porter ?”",
+          "R": "ou : “Qu’est-ce que nous allons mettre comme vêtements ?”"
+        },
+        "sw": {
+          "L": "au, 'Tutavaa nini?'",
+          "B": "au, 'Tutavaa nini?'",
+          "R": "au, 'Tutavaa nguo gani?'"
         }
       },
       "decisions": [
@@ -1428,6 +2184,25 @@
             "a separate saying"
           ],
           "reason": "As in the previous sentence.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n40006031010"
+          ],
+          "choice": "the three questions joined, with a comma after the first two",
+          "alternatives": [],
+          "reason": "The three anxious questions form one list (meaning decision m1). Spanish closes a quoted question with \"?”\" and goes on with a comma, so the first two records end with a comma and the third with a full stop.",
           "uncertain": false,
           "footnote": false
         }
@@ -1469,6 +2244,21 @@
           "L": "For the Gentiles seek after all these things; for your heavenly Father knows that you need them all.",
           "B": "The pagans chase after all these things, and your heavenly Father knows that you need them all.",
           "R": "People who do not know God are always trying to get these things. But your Father in heaven knows that you need them."
+        },
+        "es": {
+          "L": "Porque todas estas cosas las buscan con afán los gentiles; pues {{plural_you:su|vuestro}} Padre celestial sabe que {{plural_you:necesitan|necesitáis}} todas ellas.",
+          "B": "Los gentiles andan tras todas estas cosas, y {{plural_you:su|vuestro}} Padre celestial sabe que las {{plural_you:necesitan|necesitáis}} todas.",
+          "R": "La gente que no conoce a Dios siempre está tratando de conseguir estas cosas. Pero {{plural_you:su|vuestro}} Padre que está en el cielo sabe que {{plural_you:ustedes|vosotros}} las {{plural_you:necesitan|necesitáis}}."
+        },
+        "fr": {
+          "L": "Car ce sont toutes ces choses que les nations recherchent ; car votre Père céleste sait que vous avez besoin de tout cela.",
+          "B": "Ce sont les païens qui courent après toutes ces choses, et votre Père céleste sait que vous en avez besoin.",
+          "R": "Les gens qui ne connaissent pas Dieu cherchent toujours à obtenir ces choses. Mais votre Père qui est dans le ciel sait que vous en avez besoin."
+        },
+        "sw": {
+          "L": "Kwa maana mambo hayo yote watu wa mataifa huyakimbilia; tena Baba yenu wa mbinguni anafahamu kwamba mnayahitaji yote hayo.",
+          "B": "Watu wa mataifa huhangaikia mambo hayo yote, na Baba yenu wa mbinguni anajua kwamba mnayahitaji yote.",
+          "R": "Watu wasiomjua Mungu hujitahidi siku zote kupata vitu hivi. Lakini Baba yenu aliye mbinguni anajua kwamba mnavihitaji."
         }
       },
       "decisions": [
@@ -1504,6 +2294,27 @@
             "the Gentiles"
           ],
           "reason": "As in 5:47.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40006032005"
+          ],
+          "choice": "les nations (L); les païens (B); les gens qui ne connaissent pas Dieu (R)",
+          "alternatives": [
+            "les non-Juifs (B)"
+          ],
+          "reason": "Literal keeps the term sheet's \"les nations\". Balanced follows the English \"pagans\", as in 6:7, since the contrast is with people who do not trust the Father (m1); Readable as in 5:47.",
           "uncertain": false,
           "footnote": false
         }
@@ -1542,6 +2353,21 @@
           "L": "But seek first the kingdom and {{deity_pronoun:his|His}} righteousness, and all these things will be added to you.",
           "B": "Above all, seek the kingdom and {{deity_pronoun:his|His}} righteousness, and you will be given all these things as well.",
           "R": "Above everything else, look for God's kingdom and do what is righteous in {{deity_pronoun:his|His}} eyes. Then God will give you all these other things too."
+        },
+        "es": {
+          "L": "Pero {{plural_you:busquen|buscad}} ante todo el reino y {{deity_pronoun:su|Su}} justicia, y todo esto {{plural_you:les|os}} será añadido.",
+          "B": "Por encima de todo, {{plural_you:busquen|buscad}} el reino y {{deity_pronoun:su|Su}} justicia, y todas estas cosas {{plural_you:se les|se os}} darán también.",
+          "R": "Antes que cualquier otra cosa, {{plural_you:busquen|buscad}} el reino de Dios y {{plural_you:hagan|haced}} lo que es justo a {{deity_pronoun:sus|Sus}} ojos. Entonces Dios {{plural_you:les|os}} dará también todas estas otras cosas."
+        },
+        "fr": {
+          "L": "Mais cherchez d’abord le royaume et {{deity_pronoun:sa|Sa}} justice, et toutes ces choses vous seront ajoutées.",
+          "B": "Avant tout, cherchez le royaume et {{deity_pronoun:sa|Sa}} justice, et tout cela vous sera donné en plus.",
+          "R": "Plus que tout, cherchez le royaume de Dieu et faites ce qui est juste à {{deity_pronoun:ses|Ses}} yeux. Alors Dieu vous donnera aussi tout le reste."
+        },
+        "sw": {
+          "L": "Lakini kwanza tafuteni ufalme na haki {{deity_pronoun:yake|Yake}}, nayo mambo haya yote mtapewa kwa nyongeza.",
+          "B": "Zaidi ya yote, utafuteni ufalme na haki {{deity_pronoun:yake|Yake}}, nanyi mtapewa mambo haya yote pia.",
+          "R": "Kuliko kitu kingine chochote, tafuteni ufalme wa Mungu na kutenda yaliyo haki machoni {{deity_pronoun:pake|Pake}}. Ndipo Mungu atawapa vitu vingine hivi vyote pia."
         }
       },
       "decisions": [
@@ -1658,6 +2484,21 @@
           "L": "So do not be anxious about tomorrow, for tomorrow will be anxious about itself; sufficient for the day [is] its own trouble.",
           "B": "So do not be troubled about tomorrow; tomorrow can take care of its own worries. Today's trouble is enough for today.",
           "R": "So do not worry about tomorrow. Tomorrow will have its own worries. Each day has enough trouble in it."
+        },
+        "es": {
+          "L": "Así que no {{plural_you:se inquieten|os inquietéis}} por el mañana, porque el mañana se inquietará por sí mismo; suficiente [es] para el día su propia aflicción.",
+          "B": "Así que no {{plural_you:se angustien|os angustiéis}} por el mañana; el mañana sabrá ocuparse de sus propias preocupaciones. A cada día le basta con sus propios problemas.",
+          "R": "Así que no {{plural_you:se preocupen|os preocupéis}} por el día de mañana. Mañana tendrá sus propias preocupaciones. Cada día ya tiene bastantes problemas."
+        },
+        "fr": {
+          "L": "Ne soyez donc pas anxieux pour le lendemain, car le lendemain sera anxieux pour lui-même ; au jour suffit sa peine.",
+          "B": "Ne vous tourmentez donc pas pour demain : demain prendra soin de ses propres soucis. La peine d’aujourd’hui suffit pour aujourd’hui.",
+          "R": "Ne vous faites donc pas de souci pour demain. Demain aura ses propres soucis. Chaque jour a déjà assez de difficultés."
+        },
+        "sw": {
+          "L": "Basi msiwe na wasiwasi kwa ajili ya kesho, kwa maana kesho itakuwa na wasiwasi wake yenyewe; inaitosha siku taabu yake.",
+          "B": "Kwa hiyo msiwe na wasiwasi kuhusu kesho; kesho itashughulikia mahangaiko yake yenyewe. Taabu za leo zinatosha kwa leo.",
+          "R": "Kwa hiyo msiwe na wasiwasi kuhusu kesho. Kesho itakuwa na wasiwasi wake. Kila siku ina taabu za kutosha."
         }
       },
       "decisions": [
