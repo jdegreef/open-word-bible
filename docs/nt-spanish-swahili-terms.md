@@ -192,6 +192,7 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | door (*thyra*) | puerta | mlango (lango for a city gate) |
 | bier | andas | machela |
 | thanks, credit (*charis* not as grace) | reconocimiento, agradecimiento | shukrani |
+| abyss (*abyssos*) | el abismo | kilindi (L, B); shimo lisilo na mwisho (R) |
 | tomb (*mnēmeion*) | el sepulcro (L, B); la tumba (R) | kaburi |
 | at the right (hand) | a la derecha (de) | upande wa kulia (wa) |
 
