@@ -137,6 +137,8 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | keep watch (*grēgoreō*) | velar (L); estar alerta (B, R) | kesheni (L); kaeni macho (B, R) |
 | foolish, wise (*mōros, phronimos*) | necio, prudente | mjinga, mwenye busara |
 | talents (coins) | as the English span: {{units:bolsas de plata\|talentos}} | {{units:mifuko ya fedha\|talanta}} |
+| worship (*proskyneō*) | adorar | kuabudu (kusujudu where bowing down is the act) |
+| magi | magos (L, B); sabios que estudiaban las estrellas (R) | mamajusi (L, B); wataalamu wa nyota (R) |
 | tomb (*mnēmeion*) | el sepulcro (L, B); la tumba (R) | kaburi |
 | at the right (hand) | a la derecha (de) | upande wa kulia (wa) |
 
@@ -177,7 +179,8 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 - Names in their usual Swahili form: Yesu, Yohana, Petro, Yakobo, Mathayo,
   Marko, Luka, Paulo, Barnaba, Stefano, Filipo, Herode, Pilato, Yerusalemu,
   Galilaya, Kapernaumu, Nazareti, Bethlehemu, Musa, Eliya, Isaya, Daudi,
-  Ibrahimu, Sulemani, Ninawi, Habili, Zakaria, Yudea.
+  Ibrahimu, Sulemani, Ninawi, Habili, Zakaria, Yusufu (Joseph),
+  Uyahudi (Judea, as John).
 - Hours: the Greek counts from sunrise as Swahili does, so "the ninth hour"
   is *saa tisa* at every level; Balanced and Readable may add *mchana*,
   *jioni*. The night watches likewise in Swahili time.
