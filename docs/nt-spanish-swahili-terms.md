@@ -170,6 +170,10 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | proclaim the good news (*euangelizomai*) | anunciar la buena noticia | kuhubiri habari njema |
 | Preparation Day | el día de la Preparación | siku ya Maandalio |
 | Joses | Joset | Yose |
+| the age to come | la era venidera | zama zijazo (L, B); ulimwengu ujao (R) |
+| cloak (*himation*) | manto (L, B); capa (R) | vazi (L); vazi la nje (B); koti (R) |
+| treasury (temple) | el tesoro (L); las cajas de las ofrendas (B, R) | hazina (L); masanduku ya sadaka (B, R) |
+| burnt offerings | holocaustos | sadaka za kuteketezwa |
 | tomb (*mnēmeion*) | el sepulcro (L, B); la tumba (R) | kaburi |
 | at the right (hand) | a la derecha (de) | upande wa kulia (wa) |
 
