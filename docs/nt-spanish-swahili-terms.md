@@ -130,6 +130,10 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | have mercy (*eleēson*) | ten piedad (L, B); ten compasión (R) | nihurumie / tuhurumie |
 | reward (*misthos*) | recompensa | ujira |
 | deny; acknowledge | negar, renegar de; reconocer | kukataa; kutambua |
+| pagans (*ethnikoi*) | gentiles (L); paganos (B); gente que no conoce a Dios (R) | watu wa mataifa (L); wapagani (B); watu wasiomjua Mungu (R) |
+| divorce (*apolyō* a wife) | divorciarse de | kutaliki |
+| mammon | Mamón (L); el dinero (B, R) as the English | Mamona (L); mali (B, R) |
+| mile, cubit, stadion | milla, codo (no units span where the English has none) | maili, dhiraa |
 | tomb (*mnēmeion*) | el sepulcro (L, B); la tumba (R) | kaburi |
 | at the right (hand) | a la derecha (de) | upande wa kulia (wa) |
 
@@ -149,6 +153,8 @@ Decision text stays in English, quoting the Spanish or Swahili words.
   mismo|Sí mismo`, and the possessive `su|Su`, wherever the English marks
   the pronoun, free clitics and pronouns included (lo, le, te, tú, ti); a clitic joined to the verb ("sígueme") and "conmigo", "contigo" take no span. "Jesús mismo" is an adjective and takes no
   span.
+- Jesus's "yo" takes no span (the English "I" has none); Swahili spans
+  free "mimi" as its style guide says.
 - *Idou* said to a group is plural: `{{plural_you:Miren|Mirad}}`.
 - Names in their usual Spanish form: Jesús, Juan, Pedro, Santiago (James),
   Mateo, Marcos, Lucas, Pablo, Bernabé, Esteban, Felipe, Herodes, Pilato,
