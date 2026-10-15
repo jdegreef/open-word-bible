@@ -25,7 +25,7 @@ sys.path.insert(0, str(ROOT))
 
 from typing import NamedTuple  # noqa: E402
 
-from owb import languages as owb_languages, markup, morph, refs, translit, validate, versification  # noqa: E402
+from owb import crossrefs, languages as owb_languages, markup, morph, refs, translit, validate, versification  # noqa: E402
 
 # The interface languages, English first (data/languages.json; see catalog below).
 LANGUAGES = owb_languages.CODES
@@ -717,20 +717,35 @@ def describe(word, lang):
     return morph.describe(word["morph"], lang)
 
 
+@functools.lru_cache(maxsize=None)
+def _book_records(book):
+    """A book's records, read once, by every chapter each one touches."""
+    by_chapter = {}
+    for path in sorted((ROOT / "content" / book).glob("*.json")):
+        for r in json.loads(path.read_text(encoding="utf-8"))["records"]:
+            r = curl_record(r)
+            for ch in {refs.parse(v).chapter for v in r["refs"]}:
+                by_chapter.setdefault(ch, []).append(r)
+    return by_chapter
+
+
+@functools.lru_cache(maxsize=None)
+def _chapter_words(book, chapter):
+    return json.loads(words_path(book, chapter).read_text(encoding="utf-8"))["verses"]
+
+
 def load_chapter(book, chapter):
     """A chapter's records, and the Greek words of every verse they cover. A
     sentence that runs into the next chapter (John 7:53-8:1) belongs to both:
     without it the next chapter would lose a verse, and John 8 would open
-    without the bracket and the note that begin the disputed passage."""
-    records = []
-    for path in sorted((ROOT / "content" / book).glob("*.json")):
-        for r in json.loads(path.read_text(encoding="utf-8"))["records"]:
-            if any(refs.parse(v).chapter == chapter for v in r["refs"]):
-                records.append(curl_record(r))
-    records.sort(key=lambda r: refs.parse(r["refs"][0]).sort_key() + (r["id"],))
+    without the bracket and the note that begin the disputed passage.
+    Each book is read once (a build asks for every chapter a dozen times);
+    the lists are fresh, the records shared, so don't change them."""
+    records = sorted(_book_records(book).get(chapter, []),
+                     key=lambda r: refs.parse(r["refs"][0]).sort_key() + (r["id"],))
     words = {}
     for ch in sorted({chapter} | {refs.parse(v).chapter for r in records for v in r["refs"]}):
-        words.update(json.loads(words_path(book, ch).read_text(encoding="utf-8"))["verses"])
+        words.update(_chapter_words(book, ch))
     return records, words
 
 
@@ -1098,7 +1113,8 @@ def chapter_page(book, chapter, lang="en"):
             "bookRefs": book_refs(lang),
             "compare": comparison_verses(records, lang),
             "cards": word_cards(records, words, lang),
-            "headings": {r["id"]: headings()[r["id"]] for r in records if r["id"] in headings()}}
+            "headings": {r["id"]: headings()[r["id"]] for r in records if r["id"] in headings()},
+            "crossrefs": chapter_crossrefs(records)}
     # Each morphology code's description in every language, once per page.
     data["uses"] = word_uses()[1]
     # Names before a chapter number ("Psalm 23:1"), for "Book 1:2" links.
@@ -1157,12 +1173,13 @@ def chapter_page(book, chapter, lang="en"):
   {title_control}
   {control("pronouns", "deity_pronoun", [("0", t(lang, "reader.he")), ("1", t(lang, "reader.He"))])}{units}{plural}
   {control("headings", "headings", [("0", t(lang, "reader.show")), ("1", t(lang, "reader.hide"))])}
+  {control("crossrefs", "crossrefs", [("0", t(lang, "reader.show")), ("1", t(lang, "reader.hide"))])}
   </div>
   </div>
   {control("view", "view", [("0", t(lang, "reader.study")), ("1", t(lang, "reader.reading")),
                             ("2", t(lang, "reader.parallel")), ("3", t(lang, "reader.interlinear"))], " view-control")}
 </div>
-<p class="hint"><span id="hint-level"></span> <span id="hint-gender"></span> <span id="hint-{title_setting}"></span> <span id="hint-deity_pronoun"></span> <span id="hint-units"></span> <span id="hint-plural_you"></span> <span id="hint-headings"></span> <span id="hint-view"></span></p>
+<p class="hint"><span id="hint-level"></span> <span id="hint-gender"></span> <span id="hint-{title_setting}"></span> <span id="hint-deity_pronoun"></span> <span id="hint-units"></span> <span id="hint-plural_you"></span> <span id="hint-headings"></span> <span id="hint-crossrefs"></span> <span id="hint-view"></span></p>
 </div>
 <div class="reader">
   <article class="passage">
@@ -1173,6 +1190,7 @@ def chapter_page(book, chapter, lang="en"):
     <p class="sub">{t(lang, "reader.sub" + suffix)}</p>
     <p class="notice" id="partial"{"" if partial else " hidden"}>{html.escape(catalog(lang)["reader.ui"]["partial"]) if partial else ""}</p>
     <noscript><p class="notice">{t(lang, "reader.noscript", level=levels["B"])}</p><style>{NOSCRIPT_STYLE}</style></noscript>
+    <div class="xr-margin" id="xr-margin"></div>
     <div class="text" id="text">{text}</div>
     <section class="notes" id="notes" aria-label="{t(lang, "reader.notes")}" hidden></section>
     {plan_bar(book, chapter, lang)}
@@ -1193,6 +1211,18 @@ def chapter_page(book, chapter, lang="en"):
                 card_alt=t(lang, "meta.chapter_card_alt" + suffix, title=title,
                            verse=opening_verse(records, chapter, lang)),
                 description=t(lang, "meta.chapter_description" + suffix, title=title))
+
+
+def chapter_crossrefs(records):
+    """The cross-references of every verse on a chapter page (owb/crossrefs.py),
+    by verse id, most voted first; the reader shows them in the margin."""
+    out = {}
+    for r in records:
+        for vid in r["refs"]:
+            found = crossrefs.load(vid.split(".")[0]).get(vid)
+            if found:
+                out[vid] = found
+    return out
 
 
 def reader_passages(book, chapter, lang="en"):
@@ -1835,11 +1865,16 @@ def plan_page(plan, lang="en", translated=LANGUAGES):
 def all_records():
     """Every record in content/, in canonical order, once each (a sentence
     across a chapter break is on both chapters' pages)."""
+    return list(_all_records())
+
+
+@functools.lru_cache(maxsize=None)
+def _all_records():
     seen = {}
     for b, c in chapters():
         for r in load_chapter(b, c)[0]:
             seen.setdefault(r["id"], r)
-    return list(seen.values())
+    return tuple(seen.values())
 
 
 def plain(text):
@@ -3658,7 +3693,7 @@ def sitemap(paths):
 
 
 def build(out):
-    for cached in (nav_menus, footer_links, passages, asset, translated_verses, catalog, book_refs, name_cards, term_uses,
+    for cached in (_book_records, _chapter_words, _all_records, nav_menus, footer_links, passages, asset, translated_verses, catalog, book_refs, name_cards, term_uses,
                    search_documents, search_index,
                    search_index_url, word_uses, series_numbers, chapter_articles, load_plans, plans_json, plans_json_url):
         cached.cache_clear()

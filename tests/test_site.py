@@ -2,7 +2,6 @@ import hashlib
 import html
 import json
 import re
-import subprocess
 import sys
 import unittest
 from pathlib import Path
@@ -11,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import build_site  # noqa: E402
+from owb import crossrefs  # noqa: E402
 from tests.site_build import built_site  # noqa: E402
 
 
@@ -282,7 +282,7 @@ class SiteTest(unittest.TestCase):
 
     def test_about_page_credits_sources(self):
         about = (self.out / "about" / "index.html").read_text(encoding="utf-8")
-        for name in ("SBL Greek New Testament", "MACULA Greek", "Open Scriptures Hebrew Bible"):
+        for name in ("SBL Greek New Testament", "MACULA Greek", "Open Scriptures Hebrew Bible", "OpenBible.info"):
             self.assertIn(name, about)
 
     def test_beliefs_page_sets_out_the_creed_vision_and_values(self):
@@ -484,10 +484,11 @@ class SiteTest(unittest.TestCase):
                 self.assertIn(f'href="{ps[i + 1].url}" rel="next"', turns)
 
     def test_home_page_progress_is_for_its_language(self):
+        every, passages = build_site.all_records(), build_site.passages()
         for lang in build_site.LANGUAGES:
             home = (self.out / build_site.url(lang, "/").lstrip("/") / "index.html").read_text(encoding="utf-8")
             progress = home[home.index('class="progress"'):home.index('class="involve"')]
-            records = [r for r in build_site.all_records() if lang in r["renderings"]]
+            records = [r for r in every if lang in r["renderings"]]
             decisions = sum(d["language"] in (None, lang) for r in records for d in r["decisions"])
             self.assertIn(f"<b>{len(records)}</b>", progress)
             self.assertIn(f"<b>{decisions}</b>", progress)
@@ -499,7 +500,7 @@ class SiteTest(unittest.TestCase):
             for book in build_site.refs.BOOK_CODES:
                 link = f'href="{build_site.url(lang, f"/read/#{book.lower()}")}"'
                 self.assertEqual(link in progress, book in shown, (lang, book))
-            for p in build_site.passages():
+            for p in passages:
                 self.assertNotIn(f'href="{build_site.url(lang, p.url)}"', progress, (lang, p.url))
 
     def test_header_footer_and_read_page_list_only_the_page_language(self):
@@ -557,6 +558,20 @@ class SiteTest(unittest.TestCase):
             data = self.chapter_data(f"{book.lower()}/{chapter}")
             self.assertIn(rid, data["paragraphs"], rid)
             self.assertEqual(data["headings"][rid], heading)
+
+    def test_chapter_pages_carry_their_cross_references(self):
+        # Every verse on the page with references has them, and only those:
+        # Psalm 3:1 is the title, so the first references are verse 2's.
+        for path, book in (("jhn/3", "JHN"), ("psa/3", "PSA"), ("es/jhn/3", "JHN")):
+            data = self.chapter_data(path)
+            vids = {vid for r in data["records"] for vid in r["refs"]}
+            table = crossrefs.load(book)
+            self.assertEqual(data["crossrefs"], {v: table[v] for v in vids if v in table}, path)
+        self.assertEqual(self.chapter_data("jhn/3")["crossrefs"]["JHN.3.16"][0], "ROM.5.8")
+        self.assertNotIn("PSA.3.1", self.chapter_data("psa/3")["crossrefs"])
+        page = (self.out / "jhn" / "3" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('data-setting="crossrefs"', page)
+        self.assertIn('id="xr-margin"', page)
 
     def test_summary_stands_under_the_title(self):
         page = (self.out / "1ti" / "5" / "index.html").read_text(encoding="utf-8")
@@ -755,18 +770,6 @@ class SiteTest(unittest.TestCase):
                 for path in json.loads(html.unescape(pages)):
                     self.assertTrue(path.startswith(build_site.url(code, "/")), path)
                     self.assertTrue(self.built(path).is_file(), path)
-
-
-class ExtractTest(unittest.TestCase):
-    def test_extracts_are_up_to_date(self):
-        result = subprocess.run([sys.executable, str(ROOT / "scripts" / "extract_tokens.py"), "--check"],
-                                capture_output=True, text=True)
-        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
-
-    def test_comparison_extracts_are_up_to_date(self):
-        result = subprocess.run([sys.executable, str(ROOT / "scripts" / "extract_comparison.py"), "--check"],
-                                capture_output=True, text=True)
-        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
 
 
 def note(reason, alternatives=()):

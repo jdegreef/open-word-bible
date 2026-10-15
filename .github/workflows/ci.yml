@@ -65,8 +65,6 @@ jobs:
           key: sources-${{ hashFiles('sources.lock.json') }}
       - name: Fetch pinned sources
         run: python3 scripts/fetch_sources.py
-      - name: Unit tests
-        run: python3 -m unittest discover -s tests -t .
       # The reader's copy of the markup rules (web/markup.js) against the
       # same cases (tests/markup_vectors.json); the runner's own Node.
       - name: Reader tests
@@ -75,10 +73,18 @@ jobs:
         run: python3 -m owb.validate content/*/*.json
       - name: Word extracts are up to date
         run: python3 scripts/extract_tokens.py --check
+      # A unit test ran this until the tests began reading CI's build.
+      - name: Comparison extracts are up to date
+        run: python3 scripts/extract_comparison.py --check
       - name: Build the site
         run: python3 scripts/build_site.py
       - name: Site size budgets
         run: python3 scripts/check_budgets.py site
+      # The tests read the build above rather than building the site again.
+      - name: Unit tests
+        env:
+          OWB_BUILT_SITE: site
+        run: python3 -m unittest discover -s tests -t .
 
   backend:
     name: Backend (Django + Postgres)
