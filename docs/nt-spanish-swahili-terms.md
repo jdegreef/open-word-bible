@@ -126,7 +126,7 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | it is written | está escrito (L); la Escritura dice (B, R) | imeandikwa (L); Maandiko yanasema (B, R) |
 | the devil; the tempter | el diablo; el tentador | Ibilisi; mjaribu |
 | wilderness | el desierto | nyika (L, B); jangwa (R) |
-| robbers, bandits (*lēstai*) | bandidos | majambazi |
+| robbers, bandits (*lēstai*) | bandidos | wanyang'anyi (as John 18:40) |
 | have mercy (*eleēson*) | ten piedad (L, B); ten compasión (R) | nihurumie / tuhurumie |
 | reward (*misthos*) | recompensa | ujira |
 | deny; acknowledge | negar, renegar de; reconocer | kukataa; kutambua |
@@ -168,6 +168,8 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | Simon the Cananaean / the Zealot | Simón el cananista (L, B); Simón el Zelote (R and where Luke says Zealot) | Simoni Mkananayo (L, B); Simoni Mzelote (R) |
 | evil, unclean, mute spirit | espíritu impuro / mudo | pepo (roho only for the Holy Spirit and the human spirit) |
 | proclaim the good news (*euangelizomai*) | anunciar la buena noticia | kuhubiri habari njema |
+| Preparation Day | el día de la Preparación | siku ya Maandalio |
+| Joses | Joset | Yose |
 | tomb (*mnēmeion*) | el sepulcro (L, B); la tumba (R) | kaburi |
 | at the right (hand) | a la derecha (de) | upande wa kulia (wa) |
 
