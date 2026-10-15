@@ -43,7 +43,7 @@ El Antiguo Testamento tiene menos casos así, porque casi todas las traducciones
 
 ## 2. Un enfoque distinto
 
-Con el mismo texto, los traductores aún deben decidir hasta qué punto seguir sus palabras. Esa elección, entre la forma y el sentido, es el tema de [¿Palabra por palabra o sentido por sentido?](https://openwordbible.org/articles/word-for-word-or-meaning-for-meaning/) (en inglés). Aquí basta ver su efecto en un versículo.
+Con el mismo texto, los traductores aún deben decidir hasta qué punto seguir sus palabras. Esa elección, entre la forma y el sentido, es el tema de [¿Palabra por palabra o sentido por sentido?](/articles/word-for-word-or-meaning-for-meaning/). Aquí basta ver su efecto en un versículo.
 
 La Young's Literal Translation, obra del editor escocés Robert Young, intentó reproducir los tiempos verbales y el orden de las palabras del griego tan de cerca como lo permite el inglés. Este es Juan 3:16:
 
@@ -81,7 +81,7 @@ Las palabras también cambian de sentido. En 2 Tesalonicenses 2:7 la versión Ki
 
 Las traducciones se hacen dentro de iglesias y comunidades con su propio vocabulario, a menudo más antiguo que cualquier traducción.
 
-La Douay-Rheims se tradujo de la Vulgata latina, la Biblia oficial de la Iglesia católica en su época (véase [Jerónimo y la Vulgata latina](https://openwordbible.org/articles/jerome-and-the-vulgate/) (en inglés)), y su redacción sigue a menudo expresiones latinas usadas desde hacía mucho en la oración y la teología. En el saludo del ángel a María:
+La Douay-Rheims se tradujo de la Vulgata latina, la Biblia oficial de la Iglesia católica en su época (véase [Jerónimo y la Vulgata latina](/articles/jerome-and-the-vulgate/)), y su redacción sigue a menudo expresiones latinas usadas desde hacía mucho en la oración y la teología. En el saludo del ángel a María:
 
 > And the angel being come in, said unto her: Hail, full of grace, the Lord is with thee: blessed art thou among women. (Lucas 1:28, Douay-Rheims)
 
