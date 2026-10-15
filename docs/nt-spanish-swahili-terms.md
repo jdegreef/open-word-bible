@@ -90,6 +90,10 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | look (*idou*) | mira (L); omitted or reworded (B, R) as the English | tazama |
 | the Sea of Galilee | el mar (L); el lago (B, R) | bahari (L); ziwa (B, R) |
 | wind, winds | viento(s) | upepo (never plural "pepo", which is also "demons") |
+| the evil one | el maligno | yule mwovu |
+| antichrist | anticristo (no christos span) | mpinga-Kristo |
+| little children (*teknia*) | hijitos | watoto wadogo (L); wanangu wapendwa (B, R) |
+| beloved (one person) | amado (L); querido amigo (B, R) | mpendwa (L); rafiki mpendwa (B, R) |
 | tomb (*mnēmeion*) | el sepulcro (L, B); la tumba (R) | kaburi |
 | at the right (hand) | a la derecha (de) | upande wa kulia (wa) |
 
@@ -112,6 +116,10 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 - Names in their usual Spanish form: Jesús, Juan, Pedro, Santiago (James),
   Mateo, Marcos, Lucas, Pablo, Bernabé, Esteban, Felipe, Herodes, Pilato,
   Jerusalén, Galilea, Cafarnaúm, Nazaret, Belén, Moisés, Elías, Isaías.
+
+- A single person is addressed with "tú", never "usted".
+- A singular *adelphos* meaning any believer may take
+  `{{gender:su hermano o hermana|su hermano}}`, as James 1:9 does.
 
 ## Swahili
 
