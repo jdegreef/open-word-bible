@@ -146,6 +146,9 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | hand over (*paradidōmi*) | entregar (traicionar for Judas at B) | kukabidhi (kumsaliti for Judas at B) |
 | the Power (God) | el Poder (L, B); Dios Todopoderoso (R) | Uweza (L, B); Mungu, Mwenye Uweza (R) |
 | servant girl (*paidiskē*) | criada | kijakazi (L); mtumishi wa kike (B, R) |
+| synagogue leader | jefe de la sinagoga | mkuu wa sinagogi (L); kiongozi wa sinagogi (B, R) |
+| physicians | médicos | matabibu (L, B); madaktari (R) |
+| Most High (God) | Altísimo | Aliye Juu Kabisa |
 | tomb (*mnēmeion*) | el sepulcro (L, B); la tumba (R) | kaburi |
 | at the right (hand) | a la derecha (de) | upande wa kulia (wa) |
 
