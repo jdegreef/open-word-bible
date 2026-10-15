@@ -895,12 +895,12 @@ class ComparisonTest(unittest.TestCase):
     def test_ranges_are_capped_and_translated_chapters_skipped(self):
         have = build_site.book_refs("en")["chapters"]
         self.assertIn(10, have["LUK"])
-        self.assertNotIn(9, have.get("JER", []))
-        self.assertNotIn(32, have.get("JER", []))
+        self.assertNotIn(16, have.get("EZK", []))
+        self.assertNotIn(32, have.get("EZK", []))
         compare = build_site.comparison_verses(
-            [note("As in Jeremiah 9:9-20, and Luke 10:7.", alternatives=["Jeremiah 32:4"])], "en")
+            [note("As in Ezekiel 16:9-20, and Luke 10:7.", alternatives=["Ezekiel 32:4"])], "en")
         self.assertEqual(set(compare["verses"]),
-                         {"JER.32.4"} | {f"JER.9.{v}" for v in range(9, 9 + build_site.COMPARE_MAX_VERSES)})
+                         {"EZK.32.4"} | {f"EZK.16.{v}" for v in range(9, 9 + build_site.COMPARE_MAX_VERSES)})
         self.assertIsNone(build_site.comparison_verses([note("Luke 10:7 only.")], "en"))
         self.assertIsNone(build_site.comparison_verses([note("No references here.")], "en"))
 
