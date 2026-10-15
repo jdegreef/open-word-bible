@@ -69,11 +69,11 @@ class SiteTest(unittest.TestCase):
         data = self.chapter_data()
         verses = list(dict.fromkeys(v for r in data["records"] for v in r["refs"]))
         self.assertEqual(verses, [f"JHN.1.{v}" for v in range(1, 52)])
-        # English for every sentence; Spanish for 1:1-18 so far, French and
-        # Swahili for the whole chapter.
-        self.assertEqual(data["languages"], ["en", "es", "fr", "sw"])
-        self.assertTrue(all("fr" in r["renderings"] for r in data["records"]))
-        self.assertTrue(all("sw" in r["renderings"] for r in data["records"]))
+        # English for every sentence; Spanish for 1:1-18 so far, French,
+        # Swahili, Vietnamese and Korean for the whole chapter.
+        self.assertEqual(data["languages"], ["en", "es", "fr", "sw", "vi", "ko"])
+        for lang in ("fr", "sw", "vi", "ko"):
+            self.assertTrue(all(lang in r["renderings"] for r in data["records"]), lang)
         self.assertTrue(all("en" in r["renderings"] for r in data["records"]))
 
     def test_each_verse_words_are_covered_once(self):

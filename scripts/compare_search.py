@@ -38,6 +38,8 @@ QUERIES = {
     "es": ["senor", "gracia", "luz", "Verbo", "paz", "wreath", "Juan 3:16"],
     "fr": ["lumiere", "grâce", "Agneau", "vie", "Jean 1:14"],
     "sw": ["neema", "Neno", "nuru", "Mungu", "Yohana 1:14"],
+    "vi": ["an dien", "Ngôi Lời", "ánh sáng", "Đức Chúa Trời", "Giăng 1:14"],
+    "ko": ["은혜", "말씀", "빛", "하나님", "요한복음 1:14"],
 }
 PAGE = 50
 # The API pages no further than this offset (api/views.py).
@@ -60,7 +62,7 @@ VERSE_MARK = re.compile(r"\\v \d+ ?|\\q ?")
 def fold(text):
     """search.js fold(): lower case, accents removed, curly quotes straightened."""
     text = unicodedata.normalize("NFD", text)
-    text = re.sub("[\u0300-\u036f]", "", text).lower()
+    text = unicodedata.normalize("NFC", re.sub("[\u0300-\u036f]", "", text)).lower().replace("\u0111", "d")
     return re.sub("[\u201c\u201d\u00ab\u00bb]", '"', re.sub("[\u2018\u2019\u02bc]", "'", text))
 
 
