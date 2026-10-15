@@ -606,6 +606,9 @@ footer.site a.book-chip.none:not(:hover) { color: var(--muted); }
 .votd-ref:hover { color: var(--accent); }
 .votd-why { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; text-decoration: none; }
 .votd-why:hover { text-decoration: underline; }
+.votd-feed { margin: 12px 0 0; font-size: 13px; }
+.votd-feed a { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); text-decoration: none; }
+.votd-feed a:hover { color: var(--accent); text-decoration: underline; }
 /* Section headings: an icon tile, the title, and an "all" link. */
 .sec-head { display: flex; align-items: center; justify-content: space-between; gap: 8px 16px; flex-wrap: wrap; margin: 0 0 20px; }
 .sec-head h2 {
@@ -1341,6 +1344,27 @@ body.plain .echo-tags { display: none; }
   body.xr-on .text { max-width: min(29em, calc(100% - var(--xr-w) - var(--xr-gap))); }
   body.xr-on .xr-margin { display: block; }
 }
+/* Where the margin has no room: a small dot by the number of a verse with
+   cross-references, which opens their previews. Its tap target is larger
+   than the dot. */
+.xr-mark { display: none; }
+@media (max-width: 1179px) {
+  body.xr-on .xr-mark {
+    display: inline-block; position: relative; width: 6px; height: 6px; margin: 0 1px 0 3px; padding: 0;
+    border: 0; border-radius: 50%; background: var(--accent); opacity: .5; vertical-align: .35em; cursor: pointer;
+  }
+  body.xr-on .xr-mark::after { content: ""; position: absolute; inset: -11px -9px; }
+  body.xr-on .xr-mark[aria-expanded="true"], body.xr-on .xr-mark:hover { opacity: 1; }
+  body.xr-on .xr-mark:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; opacity: 1; }
+}
+/* A cross-reference's preview (a footnote's popover, web/reader.js). */
+.xr-pop { max-height: min(60vh, 440px); overflow: auto; overscroll-behavior: contain; }
+.xr-pop-item + .xr-pop-item { margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--line); }
+.xr-pop-text { font-family: var(--read-font); font-size: 16.5px; line-height: 1.55; margin: 4px 0 6px; }
+.xr-pop-text sup { font-family: var(--sans); font-size: 11px; color: var(--accent); font-weight: 700; margin: 0 2px 0 1px; }
+.xr-pop .xref-src { font-size: 12.5px; color: var(--muted); margin: 0 0 6px; }
+.xr-pop .empty { color: var(--muted); margin: 4px 0 6px; }
+a.fn-pop-more { display: inline-block; text-decoration: none; }
 .xr-list { list-style: none; margin: 0; padding: 0; font-size: 15px; line-height: 1.5; }
 .xr-list li { padding: 3px 0; }
 .xr-list .xr-link { color: var(--accent); }
@@ -2029,6 +2053,40 @@ mark.q-hit { box-shadow: inset 0 -2px 0 var(--gold); border-radius: 2px; }
   .notes li { break-inside: avoid; }
   a { color: #000; text-decoration: none; }
 }
+
+/* The comparison page (web/compare.js): our three levels, then other
+   Bibles, then the decisions behind ours. */
+.cmp-form { max-width: 520px; margin: 0 0 24px; }
+.cmp { max-width: 760px; }
+.cmp[aria-busy="true"] { min-height: 40vh; }
+.cmp-section { margin: 0 0 28px; }
+.cmp-section > .label { margin: 0 0 8px; }
+.cmp-row { padding: 12px 0; border-top: 1px solid var(--line); }
+.cmp-name { margin: 0 0 4px; font-family: var(--sans); font-size: 13px; font-weight: 700; color: var(--muted); }
+.cmp-ours .cmp-name { color: var(--accent); }
+.cmp-text { margin: 0; font-family: var(--read-font); font-size: calc(19px * var(--read-scale)); line-height: 1.6; text-wrap: pretty; }
+.cmp-note { margin: 0 0 8px; font-size: 13.5px; color: var(--muted); }
+.cmp-name .cmp-note { font-weight: 400; margin-left: 6px; }
+.cmp-sub { font-size: 15px; margin: 18px 0 8px; }
+.cmp-card { padding: 14px 16px; margin: 0 0 10px; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--surface); }
+.cmp-cat { margin: 0 0 4px; font-family: var(--sans); font-size: 12.5px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: center; }
+.cmp-choice { margin: 0 0 6px; font-size: 17px; }
+.cmp-also, .cmp-reason { margin: 0 0 6px; font-size: 15px; line-height: 1.55; }
+.cmp-also { color: var(--muted); }
+.cmp-nav { display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; margin: 28px 0 0; }
+.cmp-nav [aria-disabled="true"] { opacity: .45; pointer-events: none; }
+
+/* A dictionary-word page (web/word.js). */
+.word-head h1[lang="grc"], .word-head h1[lang="he"] { font-family: var(--read-font); }
+.word-head h1[lang="he"] { font-family: "Noto Serif Hebrew", var(--read-font); }
+.word { max-width: 760px; }
+.word-section { margin: 0 0 26px; }
+.word-count { color: var(--muted); font-size: .85em; }
+.word-note { margin: 6px 0 8px; font-size: 13.5px; color: var(--muted); }
+.word-total { margin: 0 0 6px; font-size: 16px; font-weight: 600; }
+.word-books { margin: 0 0 10px; font-size: 14px; color: var(--muted); line-height: 1.7; }
+.word-term { margin: 0 0 26px; }
+.cmp-cat a { color: inherit; font-weight: 600; }
 
 /* Parallel view: each sentence beside the same sentence in another
    language, in rows that keep the two in step. */

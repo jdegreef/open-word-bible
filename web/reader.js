@@ -357,7 +357,10 @@
     var w = popover.offsetWidth, gap = 16;
     var left = Math.min(Math.max(gap, r.left + r.width / 2 - w / 2), document.documentElement.clientWidth - w - gap);
     var top = r.bottom + 8;
-    if (top + popover.offsetHeight > window.innerHeight - gap && r.top - popover.offsetHeight - 8 > gap)
+    // Above the opener only where it clears the header.
+    var header = document.querySelector("header.site");
+    var ceiling = header ? Math.max(gap, header.getBoundingClientRect().bottom + 8) : gap;
+    if (top + popover.offsetHeight > window.innerHeight - gap && r.top - popover.offsetHeight - 8 > ceiling)
       top = r.top - popover.offsetHeight - 8;
     popover.style.left = left + window.scrollX + "px";
     popover.style.top = top + window.scrollY + "px";
@@ -454,7 +457,7 @@
           span.appendChild(into);
         }
         if (poem) newLine();
-        if (part[0] !== shown) into.appendChild(el("sup", null, part[0]));
+        if (part[0] !== shown) into.appendChild(verseNumber(part[0]));
         shown = part[0];
         part[1].forEach(function (piece) {
           if (piece[0] === null) {
@@ -706,15 +709,16 @@
   var XREF_MARGIN = 3;
   var BOOK_ORDER = {};
   Object.keys(DATA.bookRefs.abbr || {}).forEach(function (code, i) { BOOK_ORDER[code] = i; });
+  // In Study and Interlinear: Reading and Parallel are for the text alone.
   function xrefsShown() {
-    return settings.crossrefs === 0 && !plain() && Object.keys(DATA.crossrefs).length > 0;
+    return settings.crossrefs === 0 && (!plain() || interlinear()) && Object.keys(DATA.crossrefs).length > 0;
   }
   function parseXref(text) {
     var m = XREF.exec(text);
     if (!m) return null;
     var cv = m[2] + ":" + m[3] + (m[5] ? "\u2013" + (m[4] ? m[4] + ":" : "") + m[5] : "");
     var names = (DATA.bookRefs.abbr && DATA.bookRefs.abbr[m[1]]) || [m[1], m[1]];
-    return { code: m[1], chapter: Number(m[2]), verse: Number(m[3]),
+    return { id: text, code: m[1], chapter: Number(m[2]), verse: Number(m[3]),
              short: names[0] + "\u00a0" + cv, full: names[1] + " " + cv };
   }
   // A verse's references, the best max of them, in the Bible's order.
@@ -724,13 +728,150 @@
     });
   }
   // Into the reader where that chapter is translated, otherwise to search.
+  // Pointing at it shows the passage in a preview; on a touch screen the
+  // first tap shows the preview, which has the link on.
   function xrefLink(x, label) {
     var away = !translated(x.code, x.chapter);
     var a = el("a", "xr-link" + (away ? " xr-away" : ""), label);
     a.href = refUrl(x.code, x.chapter, x.verse, x.full);
-    a.title = away ? t("crossrefs_away").replace("{ref}", x.full) : x.full;
-    a.addEventListener("click", function (e) { e.stopPropagation(); });
+    a.setAttribute("aria-haspopup", "dialog");
+    a.addEventListener("click", function (e) {
+      e.stopPropagation();
+      if (TOUCH && !(popover && popover.opener === a)) { e.preventDefault(); openXrefs(a, [x], true); }
+    });
+    a.addEventListener("mouseenter", function () { if (!TOUCH) hoverXrefs(a, [x]); });
+    a.addEventListener("mouseleave", leaveXrefs);
     return a;
+  }
+
+  // Previews: the passage's words, fetched a chapter at a time from
+  // DATA.verses.url (build_site.verse_files) and kept for the visit. Our
+  // text at the reader's level and settings, in the reading language or
+  // else English; a verse not translated yet in the comparison edition,
+  // labelled as not ours. A range shows its first XREF_VERSES verses.
+  var TOUCH = window.matchMedia && window.matchMedia("(hover: none)").matches;
+  var XREF_VERSES = 4;
+  var chapterFiles = {};
+  function chapterFile(code, chapter) {
+    var key = code + "/" + chapter;
+    if (!chapterFiles[key]) {
+      chapterFiles[key] = fetch(DATA.verses.url + key + ".json").then(function (r) {
+        if (!r.ok) throw new Error(r.status);
+        return r.json();
+      });
+      chapterFiles[key].catch(function () { delete chapterFiles[key]; });
+    }
+    return chapterFiles[key];
+  }
+  // The verses of x, at most XREF_VERSES of them, as [chapter, verse, got]:
+  // its first chapter from its first verse, then the next chapter's from
+  // verse 1 where the range runs on. more: the range is longer than that.
+  function xrefVerses(x) {
+    var m = XREF.exec(x.id);
+    var lastCh = m[5] ? Number(m[4] || m[2]) : x.chapter, lastV = m[5] ? Number(m[5]) : x.verse;
+    var out = [];
+    function walk(c, v) {
+      return chapterFile(x.code, c).then(function (file) {
+        for (; out.length < XREF_VERSES && (c < lastCh || v <= lastV); v++) {
+          var got = verseFrom(file, String(v));
+          if (!got) break;
+          out.push([c, v, got]);
+        }
+        if (out.length < XREF_VERSES && c < lastCh) return walk(c + 1, 1);
+        var end = out[out.length - 1];
+        return { list: out, more: !end || end[0] !== lastCh || end[1] !== lastV };
+      });
+    }
+    return walk(x.chapter, x.verse);
+  }
+  // One verse from a chapter file: {text, lang} or {text, compare: name}.
+  function verseFrom(file, v) {
+    var own = file.v && file.v[v];
+    var lang = own && (own[settings.lang] ? settings.lang : own.en ? "en" : null);
+    if (lang) {
+      var levels = own[lang];
+      return { text: flat(render(levels[settings.level] || levels.B)), lang: lang };
+    }
+    var editions = DATA.verses.compare;
+    for (var i = 0; i < editions.length; i++) {
+      var c = file.c && file.c[editions[i][0]];
+      if (c && c[v]) return { text: c[v], compare: editions[i][1], lang: editions[i][2] };
+    }
+    return null;
+  }
+  function fillXref(body, x) {
+    xrefVerses(x).then(function (span) {
+      if (!span.list.length) throw new Error("no verse");
+      body.textContent = "";
+      var p = el("p", "xr-pop-text"), source = null;
+      span.list.forEach(function (item, i) {
+        var got = item[2];
+        if (span.list.length > 1) p.appendChild(el("sup", null, (item[0] !== x.chapter ? item[0] + ":" : "") + item[1]));
+        var words = el("span", null, got.text + (i < span.list.length - 1 ? " " : ""));
+        if (got.lang !== settings.lang) words.lang = got.lang;
+        p.appendChild(words);
+        if (got.compare) source = got.compare;
+      });
+      if (span.more) p.appendChild(document.createTextNode(" \u2026"));
+      body.appendChild(p);
+      if (source) body.appendChild(el("p", "xref-src", t("xref_nt") + ". " + t("xref_source").replace("{name}", source)));
+      placeNote();
+    }).catch(function () {
+      body.textContent = "";
+      body.appendChild(el("p", "empty", t("xr_failed")));
+      placeNote();
+    });
+  }
+  // A preview of each of list, under opener. focus: move focus into it (a
+  // tap or a key), not on a hover.
+  function openXrefs(opener, list, focus, label) {
+    var same = popover && popover.opener === opener;
+    closeNote(false);
+    if (same) return;
+    var box = el("div", "fn-pop xr-pop");
+    box.id = "fn-pop";
+    box.setAttribute("role", "dialog");
+    box.setAttribute("aria-label", label || list[0].full);
+    var first = null;
+    list.forEach(function (x) {
+      var item = el("div", "xr-pop-item");
+      var head = el("p", "fn-pop-head");
+      head.appendChild(el("span", "note-ref", x.full));
+      item.appendChild(head);
+      var body = el("div", "xr-pop-body");
+      body.appendChild(el("p", "empty", t("xr_loading")));
+      item.appendChild(body);
+      var go = el("a", "fn-pop-more", t("xr_read") + " \u2192");
+      go.href = refUrl(x.code, x.chapter, x.verse, x.full);
+      item.appendChild(go);
+      if (!first) first = go;
+      box.appendChild(item);
+      fillXref(body, x);
+    });
+    box.addEventListener("click", function (e) { e.stopPropagation(); });
+    box.addEventListener("mouseenter", function () { clearTimeout(xrefTimer); });
+    box.addEventListener("mouseleave", leaveXrefs);
+    document.body.appendChild(box);
+    popover = box;
+    box.opener = opener;
+    opener.setAttribute("aria-expanded", "true");
+    opener.setAttribute("aria-controls", "fn-pop");
+    placeNote();
+    if (focus) first.focus({ preventScroll: true });
+  }
+  // On a hover: open after a moment, close a moment after the pointer leaves
+  // both the link and the preview.
+  var xrefTimer = null;
+  function hoverXrefs(a, list) {
+    clearTimeout(xrefTimer);
+    if (popover && popover.opener === a) return;
+    xrefTimer = setTimeout(function () { openXrefs(a, list, false); }, 300);
+  }
+  function leaveXrefs() {
+    clearTimeout(xrefTimer);
+    xrefTimer = setTimeout(function () {
+      if (popover && popover.classList.contains("xr-pop") && !popover.matches(":hover")) closeNote(false);
+    }, 250);
   }
   function xrefLine(node, list, long) {
     list.forEach(function (x, i) {
@@ -789,6 +930,25 @@
     if (text.style.minHeight !== need) text.style.minHeight = need;
   }
   if (window.ResizeObserver) new ResizeObserver(layoutMargin).observe(document.getElementById("text"));
+
+  // A verse number in the text. Where the margin has no room (phones), a
+  // verse with cross-references carries a small mark by its number that
+  // opens their previews; the style sheet shows it only there.
+  function verseNumber(v) {
+    var sup = el("sup", null, v);
+    var vid = verseId(v);
+    if (!xrefsShown() || !DATA.crossrefs[vid]) return sup;
+    var b = el("button", "xr-mark");
+    b.type = "button";
+    var label = t("crossrefs_label").replace("{v}", v);
+    b.setAttribute("aria-label", label);
+    b.setAttribute("aria-haspopup", "dialog");
+    b.setAttribute("aria-expanded", "false");
+    b.addEventListener("click", function (e) { e.stopPropagation(); openXrefs(b, xrefs(vid), true, label); });
+    b.addEventListener("keydown", function (e) { e.stopPropagation(); });
+    sup.appendChild(b);
+    return sup;
+  }
 
   // In the panel: the chosen sentence's references, each verse's in full.
   function xrefSection(r) {
@@ -1167,6 +1327,10 @@
     actions.appendChild(linkButton(currentVerse));
     actions.appendChild(imageButton(currentVerse));
     actions.appendChild(citeButton());
+    // The verse beside other Bibles, with the reasoning (/compare/).
+    var compare = el("a", "copy-link", t("compare"));
+    compare.href = DATA.compare_url + "?v=" + verseId(currentVerse || verseOf(current.refs[0]));
+    actions.appendChild(compare);
     var ask = askLink(null);
     ask.classList.add("copy-link");
     actions.appendChild(ask);
@@ -1225,6 +1389,10 @@
         info.appendChild(el("p", "wi-grammar", DATA.grammar[key][settings.lang]));
         info.appendChild(el("p", "wi-gloss", "\u201c" + (HEBREW ? word.gloss.replace(/\./g, " ") : word.gloss) + "\u201d"));
         info.appendChild(drawUses(word));
+        // Everything about this dictionary form (/word/).
+        var more = el("a", "fn-pop-more", t("word_page") + " \u2192");
+        more.href = DATA.word_url + "?w=" + encodeURIComponent(word.lemma);
+        info.appendChild(more);
         info.hidden = false;
         var ids = [];
         current.decisions.forEach(function (d) { if (d.tokens.includes(word.id)) ids = ids.concat(d.tokens); });
