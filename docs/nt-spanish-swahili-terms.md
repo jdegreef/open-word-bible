@@ -156,6 +156,10 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | slander (*blasphēmia* in vice lists) | calumnia | kashfa |
 | blasphemy (against God) | blasfemia | kufuru |
 | sigh (*stenazō*) | suspirar, gemir | kupiga kite |
+| trespasses (*paraptōmata*) | ofensas (L); faltas (B) | makosa |
+| pray, prayer | orar, oración | kuomba, maombi |
+| curse | maldecir | kulaani |
+| colt | pollino (L, B); burrito (R) | mwana-punda (L, B); punda mchanga (R) |
 | tomb (*mnēmeion*) | el sepulcro (L, B); la tumba (R) | kaburi |
 | at the right (hand) | a la derecha (de) | upande wa kulia (wa) |
 
