@@ -1,6 +1,6 @@
-"""Size budgets for the built site: fails when a page, a script or style, the
-search index or the whole site grows past its limit, so growth like the
-search index's (3 MB to 22 MB a language) is noticed when it happens.
+"""Size budgets for the built site: fails when a page, a script or style or
+the whole site grows past its limit, so growth like the old static search
+index's (3 MB to 22 MB a language) is noticed when it happens.
 
     python3 scripts/build_site.py
     python3 scripts/check_budgets.py [site]
@@ -34,14 +34,10 @@ BUDGETS = {
     # Every file in the site [703 MB; 909 MB on 2026-10-14 with Numbers to
     # Ruth; 1,150 MB later that day with 1 Samuel to 2 Chronicles; 1,810 MB
     # with Vietnamese and Korean as site languages, each about 250 MB, since
-    # every page is built in every language]. Grows with each book translated
-    # and each language added.
+    # every page is built in every language; less on 2026-10-15 once the
+    # static search index (about 41 MB a language) was no longer built].
+    # Grows with each book translated and each language added.
     "site_total": 2300 * MB,
-    # The largest static search index, search-<lang>.json [5.6 MB; 23 MB
-    # unzipped; 7.4 MB on 2026-10-14 with Numbers to Ruth; 9.5 MB with
-    # 1 Samuel to 2 Chronicles]. Delete this entry when the static index
-    # goes; nothing else needs to change.
-    "search_index_gz": 12 * MB,
 }
 
 
@@ -78,9 +74,6 @@ def measure(site):
         found["js_css_asset_gz"] = largest((p for p in files if p.suffix in (".js", ".css")), gzipped)
     if "site_total" in BUDGETS:
         found["site_total"] = (sum(p.stat().st_size for p in files), None)
-    if "search_index_gz" in BUDGETS:
-        found["search_index_gz"] = largest(
-            (p for p in files if p.name.startswith("search-") and p.suffix == ".json"), gzipped)
     return found
 
 
