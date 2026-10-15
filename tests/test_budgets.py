@@ -23,7 +23,6 @@ class BudgetsTest(unittest.TestCase):
         self.write("read/index.html", os.urandom(9000))       # not a chapter page
         self.write("reader.js", b"var a = 1;\n" * 100)
         self.write("style.css", os.urandom(2000))
-        self.write("search-en.json", os.urandom(5000))
 
     def write(self, rel, data):
         path = self.site / rel
@@ -37,11 +36,9 @@ class BudgetsTest(unittest.TestCase):
             return check_budgets.check(self.site, out), out.getvalue()
 
     def test_measures_the_largest_of_each(self):
-        with mock.patch.dict(check_budgets.BUDGETS, {"search_index_gz": 1}):
-            found = check_budgets.measure(self.site)
+        found = check_budgets.measure(self.site)
         self.assertEqual(found["chapter_page_gz"][1], self.site / "es/jhn/1/index.html")
         self.assertEqual(found["js_css_asset_gz"][1], self.site / "style.css")
-        self.assertEqual(found["search_index_gz"][1], self.site / "search-en.json")
         total = sum(p.stat().st_size for p in self.site.rglob("*") if p.is_file())
         self.assertEqual(found["site_total"], (total, None))
 
@@ -63,9 +60,9 @@ class BudgetsTest(unittest.TestCase):
                 self.assertEqual(check_budgets.main([str(self.site)]), 1)
 
     def test_a_budget_can_be_dropped(self):
-        budgets = {k: v for k, v in check_budgets.BUDGETS.items() if k != "search_index_gz"}
+        budgets = {k: v for k, v in check_budgets.BUDGETS.items() if k != "js_css_asset_gz"}
         with mock.patch.object(check_budgets, "BUDGETS", budgets):
-            self.assertNotIn("search_index_gz", check_budgets.measure(self.site))
+            self.assertNotIn("js_css_asset_gz", check_budgets.measure(self.site))
 
 
 if __name__ == "__main__":

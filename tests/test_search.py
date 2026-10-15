@@ -1,6 +1,6 @@
-"""Search: the documents the API searches (and the static index the build
-still writes for each interface language), the /search/ page, and the
-header's search button (web/search.js runs them)."""
+"""Search: the documents the API searches (search_documents, one set per
+interface language), the /search/ page, and the header's search button
+(web/search.js runs them)."""
 import hashlib
 import json
 import re
@@ -25,7 +25,7 @@ class SearchTest(unittest.TestCase):
         cls.records = build_site.all_records()
 
     def index(self, lang):
-        return json.loads((self.out / f"search-{lang}.json").read_text(encoding="utf-8"))
+        return build_site.search_documents(lang)
 
     def page_exists(self, href):
         path = href.split("#")[0].split("?")[0].strip("/")
@@ -47,7 +47,6 @@ class SearchTest(unittest.TestCase):
             self.assertIn(f'class="tool-btn search-btn" href="{build_site.url(lang, "/search/")}"', text, page)
 
     def test_search_asks_the_api(self):
-        self.assertFalse(build_site.SEARCH_STATIC)
         self.assertEqual(build_site.search_source("es"), f"{build_site.API_URL}/api/search/")
         for lang in build_site.LANGUAGES:
             data = json.loads((self.out / f"search-ui-{lang}.json").read_text(encoding="utf-8"))
@@ -59,8 +58,10 @@ class SearchTest(unittest.TestCase):
             self.assertLess(len(json.dumps(data)), 20_000)
             page = (self.out / build_site.url(lang, "/search/").strip("/") / "index.html").read_text(encoding="utf-8")
             self.assertIn('data-offline="', page)
-        # The service worker neither keeps the static indexes nor offers
-        # them to saved books, and drops copies kept before.
+        # The static indexes are no longer built; the service worker neither
+        # keeps them nor offers them to saved books, and drops copies kept
+        # before.
+        self.assertFalse([p.name for p in self.out.glob("search-*.json") if not p.name.startswith("search-ui-")])
         sw = (self.out / "sw.js").read_text(encoding="utf-8")
         current = json.loads(re.search(r"var CURRENT = (.*);", sw)[1])
         dropped = json.loads(re.search(r"var DROPPED = (.*);", sw)[1])
