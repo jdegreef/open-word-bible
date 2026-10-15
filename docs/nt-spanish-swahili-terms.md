@@ -123,6 +123,13 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | the elect | los elegidos | wateule (L); waliochaguliwa (B, R) |
 | lightning | relámpago | umeme wa radi |
 | false christs | falsos {{christos:cristos\|mesías}} | {{christos:makristo\|masihi}} wa uongo |
+| it is written | está escrito (L); la Escritura dice (B, R) | imeandikwa (L); Maandiko yanasema (B, R) |
+| the devil; the tempter | el diablo; el tentador | Ibilisi; mjaribu |
+| wilderness | el desierto | nyika (L, B); jangwa (R) |
+| robbers, bandits (*lēstai*) | bandidos | majambazi |
+| have mercy (*eleēson*) | ten piedad (L, B); ten compasión (R) | nihurumie / tuhurumie |
+| reward (*misthos*) | recompensa | ujira |
+| deny; acknowledge | negar, renegar de; reconocer | kukataa; kutambua |
 | tomb (*mnēmeion*) | el sepulcro (L, B); la tumba (R) | kaburi |
 | at the right (hand) | a la derecha (de) | upande wa kulia (wa) |
 
@@ -142,6 +149,7 @@ Decision text stays in English, quoting the Spanish or Swahili words.
   mismo|Sí mismo`, and the possessive `su|Su`, wherever the English marks
   the pronoun, free clitics and pronouns included (lo, le, te, tú, ti); a clitic joined to the verb ("sígueme") and "conmigo", "contigo" take no span. "Jesús mismo" is an adjective and takes no
   span.
+- *Idou* said to a group is plural: `{{plural_you:Miren|Mirad}}`.
 - Names in their usual Spanish form: Jesús, Juan, Pedro, Santiago (James),
   Mateo, Marcos, Lucas, Pablo, Bernabé, Esteban, Felipe, Herodes, Pilato,
   Jerusalén, Galilea, Cafarnaúm, Nazaret, Belén, Moisés, Elías, Isaías.
@@ -161,6 +169,9 @@ Decision text stays in English, quoting the Spanish or Swahili words.
   Marko, Luka, Paulo, Barnaba, Stefano, Filipo, Herode, Pilato, Yerusalemu,
   Galilaya, Kapernaumu, Nazareti, Bethlehemu, Musa, Eliya, Isaya, Daudi,
   Ibrahimu, Sulemani, Ninawi, Habili, Zakaria, Yudea.
+- Hours: the Greek counts from sunrise as Swahili does, so "the ninth hour"
+  is *saa tisa* at every level; Balanced and Readable may add *mchana*,
+  *jioni*. The night watches likewise in Swahili time.
 - Narrative: *-li-* for the first verb of a sequence, *-ka-* for those that
   follow (Balanced and Readable); Literal keeps the historic present
   ("anasema") where the Greek has it.
