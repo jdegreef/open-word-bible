@@ -134,6 +134,9 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | divorce (*apolyō* a wife) | divorciarse de | kutaliki |
 | mammon | Mamón (L); el dinero (B, R) as the English | Mamona (L); mali (B, R) |
 | mile, cubit, stadion | milla, codo (no units span where the English has none) | maili, dhiraa |
+| keep watch (*grēgoreō*) | velar (L); estar alerta (B, R) | kesheni (L); kaeni macho (B, R) |
+| foolish, wise (*mōros, phronimos*) | necio, prudente | mjinga, mwenye busara |
+| talents (coins) | as the English span: {{units:bolsas de plata\|talentos}} | {{units:mifuko ya fedha\|talanta}} |
 | tomb (*mnēmeion*) | el sepulcro (L, B); la tumba (R) | kaburi |
 | at the right (hand) | a la derecha (de) | upande wa kulia (wa) |
 
