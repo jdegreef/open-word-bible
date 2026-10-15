@@ -92,7 +92,7 @@ C'est un cas où le Textus Receptus et le texte majoritaire se séparent.
 
 ## Lire les crochets
 
-Aucune de ces différences ne change un enseignement chrétien central, qui est enseigné ailleurs dans des passages dont le texte n'est pas douteux. Mais elles touchent ce que le lecteur tient entre ses mains, et les traductions ont le devoir de dire ce qu'elles font. Le pire résultat est un lecteur qui découvre par hasard qu'un verset "manque" et suppose qu'on lui a caché quelque chose. Une courte note suffit largement à l'éviter (voir [Quand les manuscrits ne s'accordent pas](/articles/when-manuscripts-disagree/)).
+Aucune de ces différences ne change un enseignement chrétien central, qui est enseigné ailleurs dans des passages dont le texte n'est pas douteux. Mais elles touchent ce que le lecteur tient entre ses mains, et les traductions ont le devoir de dire ce qu'elles font. Le pire résultat est un lecteur qui découvre par hasard qu'un verset "manque" et suppose qu'on lui a caché quelque chose. Une courte note suffit largement à l'éviter (voir [Quand les manuscrits divergent](/articles/when-manuscripts-disagree/)).
 
 Open Word Bible traduit le Nouveau Testament à partir du Nouveau Testament grec de la SBL, figé dans une version exacte, afin que chaque mot puisse être rattaché à sa source. Là où une variante textuelle touche le sens, ou là où l'édition marque un passage comme douteux, le dossier de raisonnement de cette phrase le dit et nomme les témoignages. Ses brouillons sont faits avec l'aide de l'IA et restent non relus jusqu'à ce que des relecteurs humains nommés les approuvent ; les autres traductions servent uniquement à comparer, jamais de base à sa formulation ; et le résultat est versé dans le domaine public sous CC0.
 

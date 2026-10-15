@@ -5,7 +5,7 @@ date: 2026-10-12
 order: 51
 section: translation
 ---
-Avant les années 1520, il existait une Bible anglaise, mais manuscrite et traduite du latin, et la posséder sans autorisation était dangereux (voir [John Wycliffe et la première Bible anglaise](/articles/the-wycliffe-bible/)). Le premier Nouveau Testament anglais traduit directement du grec, et le premier à être imprimé, fut l'œuvre d'un seul homme, **William Tyndale**. Il y travailla surtout en exil, caché, et fut mis à mort pour cela.
+Avant les années 1520, il existait une Bible anglaise, mais manuscrite et traduite du latin, et la posséder sans autorisation était dangereux (voir [John Wyclif et la première Bible anglaise](/articles/the-wycliffe-bible/)). Le premier Nouveau Testament anglais traduit directement du grec, et le premier à être imprimé, fut l'œuvre d'un seul homme, **William Tyndale**. Il y travailla surtout en exil, caché, et fut mis à mort pour cela.
 
 Son histoire a souvent été racontée avec plus de passion que d'exactitude ; cet article signale où la version familière repose sur une seule source ancienne.
 

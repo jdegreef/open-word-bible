@@ -23,7 +23,7 @@ Taylor n'a jamais prétendu que la Living Bible était une traduction. Sa préfa
 
 C'est exactement ce que trouvèrent les critiques. La Living Bible développe, explique et parfois interprète. Son début de l'Évangile de Jean, par exemple, ne mentionne pas du tout "le Verbe" ; il dit en substance qu'avant que rien n'existe, "there was Christ" ("il y avait le Christ"). Cela rend le sens clair pour un enfant, mais tranche pour le lecteur une identification que Jean réserve à la fin de son prologue, et supprime un terme que Jean a choisi avec soin (voir ["Le Verbe était Dieu" : traduire Jean 1:1](/articles/the-word-was-god/)). Des spécialistes objectèrent que la Living Bible reflétait souvent la théologie évangélique de Taylor et que, faite à partir d'une traduction anglaise, elle ne pouvait pas corriger les erreurs de cette traduction. Certains n'aimaient pas non plus son ton familier dans les passages solennels. Ses partisans répondaient qu'elle avait amené à lire la Bible des millions de personnes qui n'y étaient jamais parvenues, et qu'elle n'avait jamais prétendu être autre chose.
 
-La différence entre paraphrase et traduction, et d'autres paraphrases comme celle de J. B. Phillips et *The Message*, sont traitées dans [Les paraphrases et l'Amplified Bible](/articles/paraphrases-and-amplified/).
+La différence entre paraphrase et traduction, et d'autres paraphrases comme celle de J. B. Phillips et *The Message*, sont traitées dans [Les paraphrases, The Message et l'Amplified Bible](/articles/paraphrases-and-amplified/).
 
 ## De la révision à une nouvelle traduction
 

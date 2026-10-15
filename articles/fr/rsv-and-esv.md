@@ -34,7 +34,7 @@ Il y avait d'autres objections :
 
 Ses défenseurs répondaient que chaque décision suivait les meilleurs arguments philologiques de l'époque, que le comité comptait des spécialistes respectés, et que l'interprétation que le Nouveau Testament donne de passages de l'Ancien n'était pas touchée par le fait de traduire l'Ancien Testament pour lui-même.
 
-Malgré la controverse, la RSV est devenue la Bible de référence du protestantisme américain historique et a été très utilisée dans les universités et les séminaires. Une édition catholique a suivi en 1965–66, et une "Common Bible" (Bible commune) œcuménique avec les apocryphes en 1973. En 1989, la **New Revised Standard Version** lui a succédé (voir [La NRSV et la NRSVue](/articles/nrsv-and-nrsvue/)).
+Malgré la controverse, la RSV est devenue la Bible de référence du protestantisme américain historique et a été très utilisée dans les universités et les séminaires. Une édition catholique a suivi en 1965–66, et une "Common Bible" (Bible commune) œcuménique avec les apocryphes en 1973. En 1989, la **New Revised Standard Version** lui a succédé (voir [La NRSV et la NRSV Updated Edition](/articles/nrsv-and-nrsvue/)).
 
 ## De la RSV à l'ESV
 
@@ -59,7 +59,7 @@ Selon la plupart des estimations, l'ESV a modifié environ six pour cent du text
 
 Plus généralement, l'ESV suit le texte hébreu massorétique de plus près que la RSV, et le corrige moins souvent d'après d'autres témoignages.
 
-Sur le langage inclusif, l'ESV a pris une ligne traditionnelle. Elle emploie "brothers" (frères) pour *adelphoi*, avec une note qui explique que le mot peut désigner les frères et sœurs, et garde en général "man" (homme) et "he" (il) dans les énoncés génériques. Ses partisans y voyaient de la fidélité à la langue même de l'original ; ses critiques, une manière inutile de rendre flou qui est visé (voir [Langage inclusif et traduction](/articles/gender-language-in-translation/)).
+Sur le langage inclusif, l'ESV a pris une ligne traditionnelle. Elle emploie "brothers" (frères) pour *adelphoi*, avec une note qui explique que le mot peut désigner les frères et sœurs, et garde en général "man" (homme) et "he" (il) dans les énoncés génériques. Ses partisans y voyaient de la fidélité à la langue même de l'original ; ses critiques, une manière inutile de rendre flou qui est visé (voir [Le langage et le genre dans les traductions](/articles/gender-language-in-translation/)).
 
 ## Les révisions, et un "texte permanent"
 

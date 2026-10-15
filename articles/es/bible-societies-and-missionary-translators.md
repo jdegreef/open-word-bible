@@ -53,7 +53,7 @@ El historiador de origen gambiano **Lamin Sanneh** propuso una tercera visión, 
 
 ## Un movimiento que continúa
 
-Las sociedades bíblicas siguen existiendo, y desde 1946 colaboran como Sociedades Bíblicas Unidas. Hoy su trabajo lo llevan adelante sobre todo traductores que trabajan en sus propias lenguas (véase [Traducir hoy para todas las lenguas](/articles/translating-for-every-language/)).
+Las sociedades bíblicas siguen existiendo, y desde 1946 colaboran como Sociedades Bíblicas Unidas. Hoy su trabajo lo llevan adelante sobre todo traductores que trabajan en sus propias lenguas (véase [La traducción a todos los idiomas, hoy](/articles/translating-for-every-language/)).
 
 Open Word Bible comparte la convicción de que las Escrituras deben estar en todas las lenguas, y su dedicación CC0 sigue el mismo instinto que llevó a las primeras sociedades a imprimir Biblias lo más baratas posible. También aprende una lección de los traductores sin nombre: en sus registros, cada revisor tendrá nombre.
 

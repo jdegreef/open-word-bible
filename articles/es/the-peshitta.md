@@ -10,7 +10,7 @@ La mayoría de los cristianos occidentales conocen la historia de la Biblia en g
 
 ## Edesa y los primeros Evangelios siríacos
 
-El siríaco es un dialecto del arameo, la familia de lenguas que produjo también los [tárgumes](/articles/the-targums/) judíos. Era la lengua local de **Edesa**, hoy Şanlıurfa, en el sudeste de Turquía, y se convirtió en la lengua literaria de los cristianos desde Siria hasta Persia. A finales del siglo II ya había una comunidad cristiana en Edesa.
+El siríaco es un dialecto del arameo, la familia de lenguas que produjo también los [Targumim](/articles/the-targums/) judíos. Era la lengua local de **Edesa**, hoy Şanlıurfa, en el sudeste de Turquía, y se convirtió en la lengua literaria de los cristianos desde Siria hasta Persia. A finales del siglo II ya había una comunidad cristiana en Edesa.
 
 El primer libro de los Evangelios que conocieron muchos cristianos siríacos no eran cuatro Evangelios, sino uno. Hacia el año 170 d. C., **Taciano**, antiguo discípulo de Justino Mártir, entretejió los cuatro en un único relato, el **Diatésaron** («a través de los cuatro»). Fue el texto evangélico habitual en las iglesias siríacas durante dos siglos o más. En el siglo V, Teodoreto, obispo de Ciro, escribió que había encontrado más de doscientas copias en sus iglesias y que las había sustituido por los cuatro Evangelios separados. No se conserva ninguna copia completa en siríaco.
 

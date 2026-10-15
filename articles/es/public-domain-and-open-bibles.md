@@ -62,7 +62,7 @@ Varios proyectos más pequeños también han usado licencias abiertas:
 
 ## Textos abiertos para traductores
 
-El mayor impulso a favor de las Biblias abiertas ha venido de la traducción a otras lenguas. Quienes traducen a una lengua minoritaria suelen trabajar a partir de una Biblia en una lengua «puente» que conocen bien, como el inglés, el francés, el hindi o el suajili, junto con notas y ayudas. Si esos recursos tienen derechos de autor, adaptarlos requiere permiso (véase [Traducir hoy para todas las lenguas](https://openwordbible.org/articles/translating-for-every-language/) (en inglés)).
+El mayor impulso a favor de las Biblias abiertas ha venido de la traducción a otras lenguas. Quienes traducen a una lengua minoritaria suelen trabajar a partir de una Biblia en una lengua «puente» que conocen bien, como el inglés, el francés, el hindi o el suajili, junto con notas y ayudas. Si esos recursos tienen derechos de autor, adaptarlos requiere permiso (véase [La traducción a todos los idiomas, hoy](/articles/translating-for-every-language/)).
 
 **unfoldingWord**, lanzado en 2013 como proyecto de traducción colaborativa, se propuso ofrecer un conjunto completo de recursos con licencia abierta en lenguas puente. Sus textos principales son:
 

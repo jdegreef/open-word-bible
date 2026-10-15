@@ -15,7 +15,7 @@ La palabra **paráfrasis** se usa en dos sentidos. En sentido estricto, una par�
 
 En un sentido más amplio, se llama «paráfrasis» a cualquier traducción muy libre, que amplía, explica o reformula el original con libertad, aunque se haga a partir del hebreo y del griego. *The Message* se llama a menudo paráfrasis en este sentido, aunque Eugene Peterson trabajó a partir de las lenguas originales.
 
-La frontera no es nítida. Toda traducción traduce algunos modismos por su sentido (véase [¿Palabra por palabra o sentido por sentido?](https://openwordbible.org/articles/word-for-word-or-meaning-for-meaning/) (en inglés)). Lo que distingue a una paráfrasis es el grado: cuánto añade, explica, moderniza o remodela el traductor, y con cuánta libertad se aparta el resultado de la estructura y las imágenes del original. Una prueba útil es si un lector podría, en principio, reconstruir a partir de la versión las afirmaciones principales del original. Con una traducción cuidadosa, en general sí; con una paráfrasis libre, a menudo no.
+La frontera no es nítida. Toda traducción traduce algunos modismos por su sentido (véase [¿Palabra por palabra o sentido por sentido?](/articles/word-for-word-or-meaning-for-meaning/)). Lo que distingue a una paráfrasis es el grado: cuánto añade, explica, moderniza o remodela el traductor, y con cuánta libertad se aparta el resultado de la estructura y las imágenes del original. Una prueba útil es si un lector podría, en principio, reconstruir a partir de la versión las afirmaciones principales del original. Con una traducción cuidadosa, en general sí; con una paráfrasis libre, a menudo no.
 
 Romanos 12:1–2 da una idea del abanico. Estas son dos traducciones inglesas de dominio público:
 

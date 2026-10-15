@@ -62,7 +62,7 @@ Plusieurs projets plus petits ont aussi employé des licences libres :
 
 ## Des textes libres pour les traducteurs
 
-La plus forte poussée en faveur des Bibles libres est venue de la traduction dans d'autres langues. Ceux qui traduisent vers une langue minoritaire travaillent d'ordinaire à partir d'une Bible dans une langue "passerelle" qu'ils connaissent bien, comme l'anglais, le français, le hindi ou le swahili, avec des notes et des aides. Si ces ressources sont protégées, les adapter exige une autorisation (voir [Traduire pour toutes les langues](/articles/translating-for-every-language/)).
+La plus forte poussée en faveur des Bibles libres est venue de la traduction dans d'autres langues. Ceux qui traduisent vers une langue minoritaire travaillent d'ordinaire à partir d'une Bible dans une langue "passerelle" qu'ils connaissent bien, comme l'anglais, le français, le hindi ou le swahili, avec des notes et des aides. Si ces ressources sont protégées, les adapter exige une autorisation (voir [La traduction pour toutes les langues aujourd'hui](/articles/translating-for-every-language/)).
 
 **unfoldingWord**, lancé en 2013 comme projet de traduction collaboratif, s'est donné pour but de fournir un ensemble complet de ressources sous licence libre dans les langues passerelles. Ses principaux textes sont :
 

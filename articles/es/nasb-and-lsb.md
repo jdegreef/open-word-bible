@@ -11,7 +11,7 @@ Su historia empieza con una Biblia más antigua que quiso preservar, y continúa
 
 ## La American Standard Version
 
-La **American Standard Version** (ASV) de 1901 fue la forma estadounidense de la Revised Version (véase [Las traducciones inglesas desde la King James](https://openwordbible.org/articles/modern-english-translations/) (en inglés)). Sus traductores trabajaron a partir de un texto griego cercano al de Westcott y Hort, e intentaron traducir cada palabra griega o hebrea por la misma palabra inglesa siempre que fuera posible, y seguir de cerca la estructura del original.
+La **American Standard Version** (ASV) de 1901 fue la forma estadounidense de la Revised Version (véase [Las traducciones inglesas desde la King James](/articles/modern-english-translations/)). Sus traductores trabajaron a partir de un texto griego cercano al de Westcott y Hort, e intentaron traducir cada palabra griega o hebrea por la misma palabra inglesa siempre que fuera posible, y seguir de cerca la estructura del original.
 
 Los estudiosos la admiraban. Los lectores corrientes la encontraban rígida. El comentario «fuerte en griego, débil en inglés», atribuido a menudo al predicador Charles Spurgeon, se hizo sobre la Revised Version británica, pero describe igual de bien la ASV. Tenía además un rasgo muy visible: traducía el nombre divino del Antiguo Testamento como «Jehovah» (Jehová).
 
@@ -85,7 +85,7 @@ La tradición de la NASB se valora por lo que se propone hacer:
 Las principales críticas se refieren a esos mismos rasgos:
 
 - Su inglés puede resultar forzado, sobre todo en la narración y la poesía, y menos adecuado para la lectura pública que el de la mayoría de las traducciones modernas.
-- Ceñirse a la forma puede inducir a error. Un modismo griego reproducido palabra por palabra puede significar algo distinto, o nada en absoluto, en inglés. Críticos de la equivalencia formal como Gordon Fee y Mark Strauss sostienen que una traducción «literal» no siempre es la más exacta (véase [¿Palabra por palabra o sentido por sentido?](https://openwordbible.org/articles/word-for-word-or-meaning-for-meaning/) (en inglés)).
+- Ceñirse a la forma puede inducir a error. Un modismo griego reproducido palabra por palabra puede significar algo distinto, o nada en absoluto, en inglés. Críticos de la equivalencia formal como Gordon Fee y Mark Strauss sostienen que una traducción «literal» no siempre es la más exacta (véase [¿Palabra por palabra o sentido por sentido?](/articles/word-for-word-or-meaning-for-meaning/)).
 - La coherencia tiene límites. Las palabras de cualquier lengua tienen una gama de sentidos, y usar un único equivalente inglés en todas partes puede forzar un sentido que no encaja en un contexto concreto.
 
 Sus defensores responden que una traducción literal está pensada para leerse junto a otras, o con enseñanza, y que su valor está precisamente en dejar la interpretación al lector siempre que sea posible.
