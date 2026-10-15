@@ -160,6 +160,11 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | pray, prayer | orar, oración | kuomba, maombi |
 | curse | maldecir | kulaani |
 | colt | pollino (L, B); burrito (R) | mwana-punda (L, B); punda mchanga (R) |
+| covenant | pacto | agano |
+| Unleavened Bread (feast) | los Ázimos (L); la fiesta de los Panes sin Levadura (B, R) | [Sikukuu ya] Mikate Isiyotiwa Chachu |
+| tunic (*chitōn*) | túnica | kanzu |
+| mat, pallet (*krabattos*) | camilla | mkeka (L); machela (B, R) |
+| local councils (*synedria*) | consejos | mabaraza |
 | tomb (*mnēmeion*) | el sepulcro (L, B); la tumba (R) | kaburi |
 | at the right (hand) | a la derecha (de) | upande wa kulia (wa) |
 
