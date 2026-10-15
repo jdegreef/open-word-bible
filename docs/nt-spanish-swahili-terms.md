@@ -178,6 +178,9 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | manger | pesebre | hori |
 | betrothed | comprometida | ameposwa (L); amechumbiwa (B, R) |
 | bless (God) | bendecir | kumhimidi |
+| Master (*epistata*, Luke) | Maestro | Mkuu |
+| teachers of the law (*nomodidaskaloi*) | maestros de la ley | walimu wa sheria |
+| grumble (*gongyzō*) | murmurar | kunung'unika |
 | tomb (*mnēmeion*) | el sepulcro (L, B); la tumba (R) | kaburi |
 | at the right (hand) | a la derecha (de) | upande wa kulia (wa) |
 
