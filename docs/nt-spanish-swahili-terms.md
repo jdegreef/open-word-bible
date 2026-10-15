@@ -79,6 +79,14 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | Alpha and Omega | el Alfa y la Omega | Alfa na Omega |
 | woe | ¡ay! | ole |
 | Amen | Amén | Amina |
+| overseer (*episkopos*) | supervisor (L, B); líder de la iglesia (R) | mwangalizi (L, B); kiongozi wa kanisa (R) |
+| elders (church office) | ancianos (L, B); líderes de la iglesia (R) | wazee (L, B); viongozi wa kanisa (R) |
+| godliness (*eusebeia*) | piedad | uchaji wa Mungu |
+| sound teaching | la enseñanza sana | mafundisho mazima |
+| self-controlled, sensible | sensato, sensatez | wenye kiasi |
+| steward (*oikonomos*) | administrador | msimamizi |
+| myths | mitos | ngano |
+| heart (*splanchna*) | entrañas (L); corazón (B, R) | moyo |
 | tomb (*mnēmeion*) | el sepulcro (L, B); la tumba (R) | kaburi |
 | at the right (hand) | a la derecha (de) | upande wa kulia (wa) |
 
