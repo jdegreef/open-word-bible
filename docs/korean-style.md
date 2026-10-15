@@ -193,6 +193,27 @@ Settings change wording, never meaning, exactly as in English.
   original unit. This differs from the English (US units) and needs a
   rendering decision.
 
+## 7a. The Old Testament and poetry
+
+- **The divine name** (YHWH) is `{{divine_name:주|야훼}}` at every level,
+  with the honorific particle outside the span (`{{divine_name:주|야훼}}께서`,
+  `{{divine_name:주|야훼}}는`; both forms end in a vowel, so one particle
+  fits both). *여호와*, the form of the older Protestant Bibles, is not
+  used: the alternative gives the name as most scholars think it was said,
+  as the English "Yahweh" does. Where the Hebrew has *Adonai* ("Lord") it
+  is 주님; *Elohim* is 하나님.
+- **Lines.** A psalm is set in lines, as `docs/english-style.md` section 10
+  describes: mark each break inside a verse with `\q `, following the
+  Hebrew accents' division (`python3 scripts/poetry_lines.py` prints it),
+  at every level. Korean places its own breaks; a verse start is always a
+  line start.
+- **Titles.** A psalm's title is verse 1, as in the Hebrew: 다윗의 시 (L, B),
+  다윗이 지은 노래 (R).
+- **Speech levels in prayer.** The psalmist speaks to God in 합쇼체 with
+  저/제 (주님은 저의 목자이십니다) and speaks about God in the plain written
+  style with the honorific (주께서 나를 인도하신다). God speaking uses
+  해라체 with 나.
+
 ## 8. Status
 
 A Korean rendering added to a record does not change its status. Nothing is

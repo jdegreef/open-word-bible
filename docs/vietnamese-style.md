@@ -209,6 +209,27 @@ Settings change wording, never meaning, exactly as in English.
   original unit. This differs from the English (US units) and needs a
   rendering decision.
 
+## 7a. The Old Testament and poetry
+
+- **The divine name** (YHWH) is `{{divine_name:CHÚA|Gia-vê}}` at every
+  level, written in capitals like the English "the LORD", with its own
+  particles outside the span: `{{divine_name:CHÚA|Gia-vê}} là Đấng chăn giữ
+  tôi`. *Đức Giê-hô-va*, the older Protestant form, is not used: the
+  alternative gives the name as most scholars think it was said, as the
+  English "Yahweh" does. Where the Hebrew has *Adonai* ("Lord") it is
+  *Chúa*, never in capitals. *Elohim* is *Đức Chúa Trời*.
+- **Lines.** A psalm is set in lines, as `docs/english-style.md` section 10
+  describes: mark each break inside a verse with `\q `, following the
+  Hebrew accents' division (`python3 scripts/poetry_lines.py` prints it),
+  at every level. Vietnamese places its own breaks; a verse start is
+  always a line start.
+- **Titles.** A psalm's title is verse 1, as in the Hebrew: "Thi thiên của
+  Đa-vít" (B), "Bài ca của Đa-vít" (R); Literal keeps the Hebrew's words
+  ("[Một] thi thiên của Đa-vít").
+- **Addressing God.** The psalmist says *tôi* and speaks to God as *Ngài*
+  (`{{deity_pronoun:ngài|Ngài}}` in the middle of a sentence) or *Chúa*;
+  God speaking says *Ta*.
+
 ## 8. Status
 
 A Vietnamese rendering added to a record does not change its status. Nothing
