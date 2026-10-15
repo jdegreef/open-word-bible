@@ -209,6 +209,7 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | judge; justice in court | juez; justicia | hakimu; haki (court justice may share the word) |
 | criminal (*kakourgos*) | malhechor (L, B); criminal (R) | mhalifu |
 | paradise | paraíso | paradiso |
+| captain of the temple guard | oficial de la guardia del templo | mkuu wa walinzi wa hekalu |
 | tomb (*mnēmeion*) | el sepulcro (L, B); la tumba (R) | kaburi |
 | at the right (hand) | a la derecha (de) | upande wa kulia (wa) |
 
