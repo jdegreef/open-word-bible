@@ -33,10 +33,20 @@
           "B": "When Jesus had finished saying all these things to the people who were listening, {{deity_pronoun:he|He}} went into Capernaum.",
           "R": "Jesus finished teaching the people. Then {{deity_pronoun:he|He}} went to the town of Capernaum."
         },
+        "es": {
+          "L": "Cuando {{deity_pronoun:él|Él}} hubo completado todas {{deity_pronoun:sus|Sus}} palabras a oídos del pueblo, entró en Cafarnaúm.",
+          "B": "Cuando Jesús terminó de decir todas estas cosas a la gente que escuchaba, entró en Cafarnaúm.",
+          "R": "Jesús terminó de enseñar a la gente. Luego se fue al pueblo de Cafarnaúm."
+        },
         "fr": {
           "L": "Lorsqu’{{deity_pronoun:il|Il}} eut achevé toutes {{deity_pronoun:ses|Ses}} paroles aux oreilles du peuple, {{deity_pronoun:il|Il}} entra dans Capharnaüm.",
           "B": "Quand Jésus eut fini de dire tout cela au peuple qui l’écoutait, {{deity_pronoun:il|Il}} entra dans Capharnaüm.",
           "R": "Jésus a fini d’enseigner les gens. Ensuite, {{deity_pronoun:il|Il}} est allé dans la ville de Capharnaüm."
+        },
+        "sw": {
+          "L": "Alipokwisha kuyamaliza maneno {{deity_pronoun:yake|Yake}} yote masikioni mwa watu, aliingia Kapernaumu.",
+          "B": "Yesu alipomaliza kuwaambia watu waliokuwa wakisikiliza mambo hayo yote, aliingia Kapernaumu.",
+          "R": "Yesu alimaliza kuwafundisha watu. Kisha akaenda katika mji wa Kapernaumu."
         }
       },
       "decisions": [
@@ -103,6 +113,28 @@
           "footnote": false
         },
         {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n42007001002",
+            "n42007001006"
+          ],
+          "choice": "deity_pronoun spans only on separate pronouns and possessives: él, sus (L)",
+          "alternatives": [
+            "a span on every pronoun the English marks"
+          ],
+          "reason": "Spanish usually leaves the subject pronoun out (\"entró\", \"se fue\") and joins some object pronouns to the verb (\"rogándole\", \"verte\"), where there is nothing separate to capitalise. So the setting covers fewer words than in English, here and through the chapter.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
           "id": "r-fr-1",
           "layer": "rendering",
           "language": "fr",
@@ -146,6 +178,26 @@
           "reason": "French must write the subject pronoun, so \"il\" for Jesus carries the span wherever the English \"he\" does, and also where French needs a pronoun the English lacks (\"l’accompagnaient\", 7:11). When people speak to Jesus they say \"tu\", and \"tu\", \"te\", \"toi\" carry the span; when Jesus speaks of himself, \"moi\", \"me\", \"mes\" do, but \"je\" does not. A pronoun at the start of a sentence is written plainly with its capital.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n42007001002",
+            "n42007001006"
+          ],
+          "choice": "{{deity_pronoun:yake|Yake}} and other free pronouns and possessives only; no span on the verbs",
+          "alternatives": [],
+          "reason": "The English \"he\" and \"his\" take the setting. Swahili carries the subject and object in verb prefixes (a-, -m-), which cannot take a capital, so only free pronouns and possessives take the span, as in John. Swahili therefore has fewer spans than English through the chapter.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -181,10 +233,20 @@
           "B": "There was a centurion whose servant was very dear to him, and the servant was ill and close to death.",
           "R": "An army officer called a centurion lived there. He had a servant whom he valued very much. The servant was sick and about to die."
         },
+        "es": {
+          "L": "Y el esclavo de cierto centurión, que era muy estimado por él, estaba enfermo y a punto de morir.",
+          "B": "Había allí un centurión que tenía un siervo a quien apreciaba mucho, y ese siervo estaba enfermo, a punto de morir.",
+          "R": "Allí vivía un centurión, un oficial del ejército romano. Tenía un siervo a quien quería mucho. El siervo estaba enfermo y a punto de morir."
+        },
         "fr": {
           "L": "Or l’esclave d’un certain centurion, qui lui était très précieux, était malade et sur le point de mourir.",
           "B": "Un centurion avait un serviteur qui lui était très cher. Ce serviteur était malade, sur le point de mourir.",
           "R": "Dans cette ville vivait un officier de l’armée romaine qu’on appelait un centurion. Il avait un serviteur qui comptait beaucoup pour lui. Ce serviteur était malade et allait bientôt mourir."
+        },
+        "sw": {
+          "L": "Basi mtumwa wa akida mmoja, akiwa mgonjwa, alikuwa karibu kufa; naye alikuwa wa thamani kubwa kwake.",
+          "B": "Kulikuwa na akida mmoja ambaye mtumishi wake alikuwa mpendwa sana kwake, na mtumishi huyo alikuwa mgonjwa, karibu kufa.",
+          "R": "Huko aliishi akida mmoja, yaani afisa wa jeshi la Kirumi. Alikuwa na mtumishi ambaye alimthamini sana. Mtumishi huyo alikuwa mgonjwa, karibu kufa."
         }
       },
       "decisions": [
@@ -279,6 +341,49 @@
           "footnote": false
         },
         {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007002004"
+          ],
+          "choice": "esclavo (L); siervo (B, R)",
+          "alternatives": [
+            "esclavo (every level)",
+            "criado"
+          ],
+          "reason": "The book-wide choice for the Greek word for a slave: Literal keeps \"esclavo\", the man's real position (meaning decision m2); Balanced and Readable say \"siervo\", as the English says \"servant\", since slavery itself is not the point of the story. The same through verse 10.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007002001"
+          ],
+          "choice": "centurión at every level, explained once at Readable as \"un oficial del ejército romano\"",
+          "alternatives": [
+            "oficial del ejército romano alone (R)"
+          ],
+          "reason": "The book-wide Readable wording is \"oficial del ejército romano\". Here the English Readable keeps the title \"centurion\", explains it, and goes on using it in verses 3-10, so Readable does the same.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
           "id": "r-fr-1",
           "layer": "rendering",
           "language": "fr",
@@ -319,6 +424,49 @@
             "esclave at every level"
           ],
           "reason": "As the English and the style guide: Literal keeps \"esclave\"; Balanced and Readable say \"serviteur\", while the meaning decision keeps that the man was owned.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007002004"
+          ],
+          "choice": "mtumwa (L); mtumishi (B, R)",
+          "alternatives": [
+            "mtumwa (every level)"
+          ],
+          "reason": "The book-wide choice for the Greek word for a slave: Literal keeps \"mtumwa\", the man's real position (meaning decision m2); Balanced and Readable say \"mtumishi\", as the English says \"servant\", since slavery itself is not the point of the story. The same through verse 10.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-2",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007002001"
+          ],
+          "choice": "akida at every level, explained once at Readable as \"afisa wa jeshi la Kirumi\"",
+          "alternatives": [
+            "jemadari",
+            "afisa wa jeshi la Kirumi alone (R)"
+          ],
+          "reason": "\"Akida\" is the standard word for an officer over about a hundred soldiers (meaning decision m1); \"jemadari\" is a general. The book-wide Readable wording is \"afisa wa jeshi la Kirumi\", but here the English Readable keeps the title \"centurion\", explains it, and goes on using it in verses 3-10, so Readable does the same.",
           "uncertain": false,
           "footnote": false
         }
@@ -363,10 +511,20 @@
           "B": "He heard about Jesus and sent some Jewish elders to {{deity_pronoun:him|Him}}, to ask {{deity_pronoun:him|Him}} to come and save his servant's life.",
           "R": "The centurion heard about Jesus. So he sent some leaders of the Jews to {{deity_pronoun:him|Him}}. He wanted them to ask Jesus to come and make his servant well."
         },
+        "es": {
+          "L": "Y habiendo oído hablar de Jesús, {{deity_pronoun:le|Le}} envió unos ancianos de los judíos, rogándole que viniera a salvar a su esclavo.",
+          "B": "Oyó hablar de Jesús y {{deity_pronoun:le|Le}} envió a unos ancianos de los judíos para pedirle que viniera a salvar la vida de su siervo.",
+          "R": "El centurión oyó hablar de Jesús. Entonces {{deity_pronoun:le|Le}} envió a unos líderes de los judíos. Quería que ellos pidieran a Jesús que viniera a sanar a su siervo."
+        },
         "fr": {
           "L": "Et ayant entendu parler de Jésus, il {{deity_pronoun:lui|Lui}} envoya des anciens des Juifs, {{deity_pronoun:le|Le}} priant de venir sauver son esclave.",
           "B": "Il entendit parler de Jésus et {{deity_pronoun:lui|Lui}} envoya quelques anciens des Juifs pour {{deity_pronoun:lui|Lui}} demander de venir sauver la vie de son serviteur.",
           "R": "Le centurion a entendu parler de Jésus. Alors il {{deity_pronoun:lui|Lui}} a envoyé quelques responsables des Juifs. Il voulait qu’ils demandent à Jésus de venir guérir son serviteur."
+        },
+        "sw": {
+          "L": "Naye aliposikia habari za Yesu, alimtumia wazee wa Wayahudi, akimwomba aje amwokoe mtumwa wake.",
+          "B": "Aliposikia habari za Yesu, alimtumia baadhi ya wazee wa Wayahudi ili wamwombe aje kuyaokoa maisha ya mtumishi wake.",
+          "R": "Yule akida alisikia habari za Yesu. Kwa hiyo akawatuma baadhi ya viongozi wa Wayahudi {{deity_pronoun:kwake|Kwake}}. Alitaka wamwombe Yesu aje amponye mtumishi wake."
         }
       },
       "decisions": [
@@ -528,10 +686,20 @@
           "B": "They came to Jesus and pleaded with {{deity_pronoun:him|Him}} urgently. \"He deserves to have {{deity_pronoun:you|You}} do this for him,\" they said. \\v 5 \"He loves our people, and he is the one who built our synagogue for us.\"",
           "R": "They came to Jesus and begged {{deity_pronoun:him|Him}} to help. They said, \"This man deserves {{deity_pronoun:your|Your}} help. \\v 5 He loves our people, and he even paid to build our synagogue.\""
         },
+        "es": {
+          "L": "Y ellos, llegando a Jesús, {{deity_pronoun:le|Le}} suplicaban con insistencia, diciendo: «Es digno de que le concedas esto, \\v 5 porque ama a nuestra nación, y él mismo nos edificó la sinagoga».",
+          "B": "Llegaron a Jesús y {{deity_pronoun:le|Le}} rogaban con insistencia: «Este hombre merece que le hagas este favor. \\v 5 Ama a nuestro pueblo, y fue él quien nos construyó la sinagoga».",
+          "R": "Fueron a Jesús y {{deity_pronoun:le|Le}} rogaron que ayudara. Le dijeron: «Este hombre merece {{deity_pronoun:tu|Tu}} ayuda. \\v 5 Ama a nuestro pueblo, y hasta pagó la construcción de nuestra sinagoga»."
+        },
         "fr": {
           "L": "Et arrivés auprès de Jésus, ils {{deity_pronoun:le|Le}} suppliaient instamment, disant : « Il est digne que {{deity_pronoun:tu|Tu}} lui accordes cela, \\v 5 car il aime notre nation, et la synagogue, c’est lui qui nous l’a bâtie. »",
           "B": "Arrivés auprès de Jésus, ils {{deity_pronoun:le|Le}} supplièrent avec insistance : « Il mérite que {{deity_pronoun:tu|Tu}} fasses cela pour lui, dirent-ils. \\v 5 Il aime notre peuple, et c’est lui qui a construit notre synagogue pour nous. »",
           "R": "Ils sont venus trouver Jésus et {{deity_pronoun:l’|L’}}ont supplié d’intervenir. Ils ont dit : « Cet homme mérite que {{deity_pronoun:tu|Tu}} l’aides. \\v 5 Il aime notre peuple, et il a même payé la construction de notre synagogue. »"
+        },
+        "sw": {
+          "L": "Nao walipofika kwa Yesu, walimsihi kwa bidii, wakisema, \"Anastahili {{deity_pronoun:wewe|Wewe}} umfanyie jambo hili, \\v 5 kwa maana analipenda taifa letu, na yeye mwenyewe alitujengea sinagogi.\"",
+          "B": "Walifika kwa Yesu, wakamsihi kwa bidii, wakisema, \"Mtu huyu anastahili umfanyie jambo hili. \\v 5 Analipenda taifa letu, na yeye ndiye aliyetujengea sinagogi letu.\"",
+          "R": "Walifika kwa Yesu, wakamwomba sana msaada. Wakasema, \"Mtu huyu anastahili msaada {{deity_pronoun:wako|Wako}}. \\v 5 Anawapenda watu wetu, na hata alilipia ujenzi wa sinagogi letu.\""
         }
       },
       "decisions": [
@@ -689,10 +857,20 @@
           "B": "So Jesus went with them.",
           "R": "So Jesus went with them."
         },
+        "es": {
+          "L": "Y Jesús iba con ellos.",
+          "B": "Jesús, pues, fue con ellos.",
+          "R": "Entonces Jesús fue con ellos."
+        },
         "fr": {
           "L": "Et Jésus allait avec eux.",
           "B": "Jésus partit donc avec eux.",
           "R": "Alors Jésus est parti avec eux."
+        },
+        "sw": {
+          "L": "Naye Yesu alikuwa akienda pamoja nao.",
+          "B": "Basi Yesu akaenda pamoja nao.",
+          "R": "Kwa hiyo Yesu akaenda pamoja nao."
         }
       },
       "decisions": [
@@ -762,10 +940,20 @@
           "B": "When {{deity_pronoun:he|He}} was not far from the house, the centurion sent friends to say to {{deity_pronoun:him|Him}}, \"Lord, do not put {{deity_pronoun:yourself|Yourself}} to any trouble. I am not worthy to have {{deity_pronoun:you|You}} come under my roof.",
           "R": "Jesus was getting close to the house when the centurion sent some friends with a message for {{deity_pronoun:him|Him}}. They told {{deity_pronoun:him|Him}}, \"Lord, do not trouble {{deity_pronoun:yourself|Yourself}}. I am not good enough to have {{deity_pronoun:you|You}} come into my house."
         },
+        "es": {
+          "L": "Y cuando {{deity_pronoun:él|Él}} ya no estaba lejos de la casa, el centurión envió a unos amigos, diciéndole: «Señor, no {{deity_pronoun:te|Te}} molestes, porque no soy digno de que entres bajo mi techo;",
+          "B": "Cuando {{deity_pronoun:él|Él}} ya no estaba lejos de la casa, el centurión envió a unos amigos a decirle: «Señor, no {{deity_pronoun:te|Te}} tomes esa molestia. No soy digno de que entres bajo mi techo.",
+          "R": "Jesús ya estaba cerca de la casa cuando el centurión envió a unos amigos con un mensaje para {{deity_pronoun:él|Él}}. Le dijeron: «Señor, no {{deity_pronoun:te|Te}} molestes. Yo no merezco que entres en mi casa."
+        },
         "fr": {
           "L": "Et comme {{deity_pronoun:il|Il}} n’était déjà plus loin de la maison, le centurion envoya des amis {{deity_pronoun:lui|Lui}} dire : « Seigneur, ne {{deity_pronoun:te|Te}} dérange pas, car je ne suis pas digne que {{deity_pronoun:tu|Tu}} entres sous mon toit ;",
           "B": "Il n’était plus très loin de la maison quand le centurion envoya des amis {{deity_pronoun:lui|Lui}} dire : « Seigneur, ne {{deity_pronoun:te|Te}} donne pas cette peine. Je ne suis pas digne de {{deity_pronoun:te|Te}} recevoir sous mon toit.",
           "R": "Jésus approchait de la maison quand le centurion a envoyé des amis avec un message pour {{deity_pronoun:lui|Lui}}. Ils {{deity_pronoun:lui|Lui}} ont dit : « Seigneur, ne {{deity_pronoun:te|Te}} dérange pas. Je ne mérite pas que {{deity_pronoun:tu|Tu}} entres dans ma maison."
+        },
+        "sw": {
+          "L": "Naye alipokuwa tayari si mbali na nyumba, akida aliwatuma rafiki zake, akimwambia, \"Bwana, usijisumbue, kwa maana sistahili {{deity_pronoun:wewe|Wewe}} uingie chini ya paa langu;",
+          "B": "Alipokuwa karibu kufika nyumbani, akida aliwatuma rafiki zake wamwambie, \"Bwana, usijisumbue. Sistahili uingie chini ya paa langu.",
+          "R": "Yesu alipokuwa anakaribia nyumba, yule akida aliwatuma rafiki zake wampelekee ujumbe. Wakamwambia, \"Bwana, usijisumbue. Mimi sistahili uingie nyumbani mwangu."
         }
       },
       "decisions": [
@@ -957,10 +1145,20 @@
           "B": "That is why I did not think myself fit to come to {{deity_pronoun:you|You}} myself. Only speak a command, and let my servant be healed.",
           "R": "That is why I did not come to {{deity_pronoun:you|You}} myself. Just give the order, and my servant will be well."
         },
+        "es": {
+          "L": "por eso ni siquiera me consideré digno de ir a {{deity_pronoun:ti|Ti}}; pero dilo con una palabra, y que sea sanado mi criado.",
+          "B": "Por eso ni siquiera me creí digno de ir yo mismo a {{deity_pronoun:ti|Ti}}. Basta con que des una orden, y que mi siervo quede sano.",
+          "R": "Por eso no fui yo mismo a verte. Solo da la orden, y mi siervo se pondrá bien."
+        },
         "fr": {
           "L": "C’est pourquoi je ne me suis pas non plus jugé digne de venir vers {{deity_pronoun:toi|Toi}} ; mais dis un mot, et que mon serviteur soit guéri ;",
           "B": "C’est pourquoi je ne me suis pas cru digne de venir moi-même jusqu’à {{deity_pronoun:toi|Toi}}. Donne seulement un ordre, et que mon serviteur soit guéri.",
           "R": "C’est pour cela que je ne suis pas venu {{deity_pronoun:te|Te}} voir moi-même. Donne simplement l’ordre, et mon serviteur sera guéri."
+        },
+        "sw": {
+          "L": "kwa sababu hiyo sikujihesabu kuwa ninastahili kuja {{deity_pronoun:kwako|Kwako}}; lakini sema kwa neno, na mtumishi wangu aponywe.",
+          "B": "Ndiyo sababu sikujiona kuwa ninafaa kuja {{deity_pronoun:kwako|Kwako}} mimi mwenyewe. Toa amri tu, na mtumishi wangu apone.",
+          "R": "Ndiyo sababu sikuja {{deity_pronoun:kwako|Kwako}} mimi mwenyewe. Toa amri tu, na mtumishi wangu atapona."
         }
       },
       "decisions": [
@@ -1071,6 +1269,90 @@
           "reason": "Readable says what speaking a word means here.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007007014"
+          ],
+          "choice": "criado (L); siervo (B, R)",
+          "alternatives": [
+            "muchacho",
+            "esclavo"
+          ],
+          "reason": "Here the officer calls the same slave by a household word that can also mean \"boy\" (meaning decision m1). Literal keeps it apart from \"esclavo\" with \"criado\"; Balanced and Readable say \"siervo\", as they do for the other word.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007007009",
+            "n42007007010"
+          ],
+          "choice": "dilo con una palabra",
+          "alternatives": [
+            "di la palabra"
+          ],
+          "reason": "The Greek says \"say with a word\": a command given from a distance (meaning decision m2). Spanish can keep that form, so Literal needs no supplied word.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007007014"
+          ],
+          "choice": "mtumishi, at every level",
+          "alternatives": [
+            "kijana",
+            "mtumwa"
+          ],
+          "reason": "Here the officer calls the same slave by a household word that can also mean \"boy\" (meaning decision m1). Literal keeps \"mtumwa\" for the other word, so \"mtumishi\" marks the difference there; Balanced and Readable use \"mtumishi\" for both.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-2",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007007009",
+            "n42007007010"
+          ],
+          "choice": "sema kwa neno (say with a word)",
+          "alternatives": [
+            "sema neno"
+          ],
+          "reason": "The Greek says \"say with a word\": a command given from a distance (meaning decision m2). Swahili can keep that form, so Literal needs no supplied word.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1125,10 +1407,20 @@
           "B": "For I myself serve under men who have authority over me, and I have soldiers under my command. I say to one, 'Go!' and off he goes; to another, 'Come here!' and he comes; and to my servant, 'Do this!' and he does it.\"",
           "R": "I know about giving orders. I have officers over me, and I have soldiers who obey me. I tell one soldier, 'Go!' and he goes. I tell another, 'Come here!' and he comes. I tell my servant, 'Do this!' and he does it.\""
         },
+        "es": {
+          "L": "Porque también yo soy un hombre puesto bajo autoridad, que tiene soldados bajo su mando, y le digo a este: “Ve”, y va; y a otro: “Ven”, y viene; y a mi esclavo: “Haz esto”, y [lo] hace».",
+          "B": "Yo mismo sirvo bajo hombres que tienen autoridad sobre mí, y tengo soldados a mis órdenes. A uno le digo: “¡Vete!”, y se va; a otro: “¡Ven acá!”, y viene; y a mi siervo: “¡Haz esto!”, y lo hace».",
+          "R": "Yo sé lo que es dar órdenes. Tengo oficiales por encima de mí, y tengo soldados que me obedecen. Le digo a un soldado: “¡Ve!”, y va. Le digo a otro: “¡Ven acá!”, y viene. Le digo a mi siervo: “¡Haz esto!”, y lo hace»."
+        },
         "fr": {
           "L": "Car moi aussi, je suis un homme placé sous une autorité, ayant sous moi des soldats, et je dis à celui-ci : “Va”, et il va, et à un autre : “Viens”, et il vient, et à mon esclave : “Fais ceci”, et il [le] fait. »",
           "B": "Moi-même, en effet, je suis sous les ordres de chefs qui ont autorité sur moi, et j’ai des soldats sous mes ordres. Je dis à l’un : “Va !”, et il part ; à un autre : “Viens ici !”, et il vient ; et à mon serviteur : “Fais cela !”, et il le fait. »",
           "R": "Je sais ce que c’est que de donner des ordres. J’ai des chefs au-dessus de moi, et j’ai des soldats qui m’obéissent. Je dis à un soldat : “Va !”, et il va. Je dis à un autre : “Viens ici !”, et il vient. Je dis à mon serviteur : “Fais ceci !”, et il le fait. »"
+        },
+        "sw": {
+          "L": "Kwa maana mimi pia ni mtu niliyewekwa chini ya mamlaka, nikiwa na askari chini yangu, nami humwambia huyu, 'Nenda,' naye huenda; na mwingine, 'Njoo,' naye huja; na mtumwa wangu, 'Fanya hivi,' naye hufanya.\"",
+          "B": "Kwa maana mimi mwenyewe ninatumika chini ya watu wenye mamlaka juu yangu, na nina askari walio chini ya amri yangu. Nikimwambia mmoja, 'Nenda!' huenda; na mwingine, 'Njoo hapa!' huja; na mtumishi wangu, 'Fanya hivi!' hufanya.\"",
+          "R": "Mimi najua habari za kutoa amri. Nina maafisa walio juu yangu, na nina askari wanaonitii. Nikimwambia askari mmoja, 'Nenda!' anakwenda. Nikimwambia mwingine, 'Njoo hapa!' anakuja. Nikimwambia mtumishi wangu, 'Fanya hivi!' anafanya.\""
         }
       },
       "decisions": [
@@ -1282,10 +1574,20 @@
           "B": "When Jesus heard this, {{deity_pronoun:he|He}} was amazed at the man. Turning to the crowd that followed {{deity_pronoun:him|Him}}, {{deity_pronoun:he|He}} said, \"I tell you, I have not found faith this great even in Israel.\"",
           "R": "Jesus was amazed when {{deity_pronoun:he|He}} heard this. He turned to the crowd that was following {{deity_pronoun:him|Him}} and said, \"I tell you, not even among God's people in Israel have I seen faith as strong as this man's!\""
         },
+        "es": {
+          "L": "Y al oír estas cosas, Jesús se maravilló de él, y volviéndose a la multitud que {{deity_pronoun:lo|Lo}} seguía, dijo: «{{plural_you:Les|Os}} digo que ni siquiera en Israel he hallado una fe tan grande».",
+          "B": "Al oír esto, Jesús se asombró de aquel hombre. Se volvió hacia la multitud que {{deity_pronoun:lo|Lo}} seguía y dijo: «{{plural_you:Les|Os}} digo que ni siquiera en Israel he encontrado una fe tan grande».",
+          "R": "Jesús se asombró al oír esto. Se volvió hacia la gente que {{deity_pronoun:lo|Lo}} seguía y dijo: «{{plural_you:Les|Os}} digo que ni siquiera entre el pueblo de Dios, en Israel, he visto una fe tan fuerte como la de este hombre»."
+        },
         "fr": {
           "L": "En entendant cela, Jésus fut étonné de lui, et se retournant vers la foule qui {{deity_pronoun:le|Le}} suivait, {{deity_pronoun:il|Il}} dit : « Je vous le dis, même en Israël je n’ai pas trouvé une si grande foi. »",
           "B": "Quand Jésus entendit ces paroles, {{deity_pronoun:il|Il}} fut émerveillé par cet homme. Se tournant vers la foule qui {{deity_pronoun:le|Le}} suivait, {{deity_pronoun:il|Il}} dit : « Je vous le dis : même en Israël, je n’ai pas trouvé une foi aussi grande. »",
           "R": "Jésus a été très étonné quand {{deity_pronoun:il|Il}} a entendu cela. Il s’est tourné vers la foule qui {{deity_pronoun:le|Le}} suivait et a dit : « Je vous le dis, même parmi le peuple de Dieu, en Israël, je n’ai jamais vu une foi aussi forte que celle de cet homme ! »"
+        },
+        "sw": {
+          "L": "Naye Yesu aliposikia mambo haya, alimstaajabia, akaugeukia umati uliokuwa ukimfuata, akasema, \"Nawaambia, hata katika Israeli sijapata imani kubwa namna hii.\"",
+          "B": "Yesu aliposikia hayo, alimshangaa mtu huyo. Akaugeukia umati wa watu uliokuwa ukimfuata, akasema, \"Nawaambia, sijaona imani kubwa kama hii hata katika Israeli.\"",
+          "R": "Yesu alishangaa aliposikia hayo. Akaugeukia umati wa watu uliokuwa ukimfuata, akasema, \"Nawaambia, hata kati ya watu wa Mungu katika Israeli sijaona imani yenye nguvu kama ya mtu huyu!\""
         }
       },
       "decisions": [
@@ -1378,6 +1680,25 @@
           "reason": "Readable keeps the key term faith and makes the comparison plain.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n42007009016"
+          ],
+          "choice": "plural_you spans on every plural form addressed to a group ({{plural_you:Les|Os}})",
+          "alternatives": [],
+          "reason": "Spanish has two plural forms of \"you\", Latin American \"ustedes\" and Peninsular \"vosotros\"; the setting chooses between them. English has no such choice, so these spans have no English counterpart. The same through the chapter.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1412,10 +1733,20 @@
           "B": "When the messengers went back to the house, they found the servant well.",
           "R": "The men who had been sent went back to the centurion's house. They found that the servant was well again."
         },
+        "es": {
+          "L": "Y al regresar a la casa, los que habían sido enviados encontraron sano al esclavo.",
+          "B": "Cuando los enviados volvieron a la casa, encontraron sano al siervo.",
+          "R": "Los hombres que habían sido enviados volvieron a la casa del centurión. Encontraron que el siervo ya estaba bien."
+        },
         "fr": {
           "L": "Et de retour à la maison, ceux qui avaient été envoyés trouvèrent l’esclave en bonne santé.",
           "B": "Quand les messagers rentrèrent à la maison, ils trouvèrent le serviteur en pleine santé.",
           "R": "Les hommes qui avaient été envoyés sont retournés à la maison du centurion. Ils ont vu que le serviteur était de nouveau en bonne santé."
+        },
+        "sw": {
+          "L": "Na wale waliotumwa waliporudi nyumbani, walimkuta yule mtumwa yu mzima.",
+          "B": "Wajumbe waliporudi nyumbani, walimkuta mtumishi akiwa mzima.",
+          "R": "Watu waliotumwa walirudi nyumbani kwa yule akida. Wakakuta mtumishi amepona kabisa."
         }
       },
       "decisions": [
@@ -1532,10 +1863,20 @@
           "B": "Soon afterward Jesus went to a town called Nain. His disciples went with {{deity_pronoun:him|Him}}, and so did a large crowd.",
           "R": "Soon after this Jesus went to a town called Nain. His disciples went along with {{deity_pronoun:him|Him}}, and a large crowd of people followed too."
         },
+        "es": {
+          "L": "Y sucedió poco después [que] {{deity_pronoun:él|Él}} fue a una ciudad llamada Naín, e iban con {{deity_pronoun:él|Él}} {{deity_pronoun:sus|Sus}} discípulos y una gran multitud.",
+          "B": "Poco después, Jesús fue a un pueblo llamado Naín. Sus discípulos iban con {{deity_pronoun:él|Él}}, y también una gran multitud.",
+          "R": "Poco después Jesús fue a un pueblo llamado Naín. Sus discípulos {{deity_pronoun:lo|Lo}} acompañaban, y también {{deity_pronoun:lo|Lo}} seguía mucha gente."
+        },
         "fr": {
           "L": "Et il arriva, peu après, qu’{{deity_pronoun:il|Il}} se rendit dans une ville appelée Naïn, et {{deity_pronoun:ses|Ses}} disciples et une foule nombreuse faisaient route avec {{deity_pronoun:lui|Lui}}.",
           "B": "Peu après, Jésus se rendit dans une ville appelée Naïn. Ses disciples {{deity_pronoun:l’|L’}}accompagnaient, ainsi qu’une grande foule.",
           "R": "Peu de temps après, Jésus est allé dans une ville appelée Naïn. Ses disciples sont partis avec {{deity_pronoun:lui|Lui}}, et une grande foule {{deity_pronoun:l’|L’}}a suivi aussi."
+        },
+        "sw": {
+          "L": "Ikawa muda mfupi baadaye, alikwenda katika mji uitwao Naini, na wanafunzi {{deity_pronoun:wake|Wake}} na umati mkubwa wa watu walikuwa wakienda pamoja {{deity_pronoun:naye|Naye}}.",
+          "B": "Muda mfupi baadaye Yesu alikwenda katika mji mmoja uitwao Naini. Wanafunzi {{deity_pronoun:wake|Wake}} walikwenda pamoja {{deity_pronoun:naye|Naye}}, na umati mkubwa wa watu pia.",
+          "R": "Baada ya muda mfupi Yesu alikwenda katika mji uitwao Naini. Wanafunzi {{deity_pronoun:wake|Wake}} walifuatana {{deity_pronoun:naye|Naye}}, na umati mkubwa wa watu ukamfuata pia."
         }
       },
       "decisions": [
@@ -1592,6 +1933,27 @@
           "reason": "Balanced and Readable name Jesus at the start of a new section.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007011008"
+          ],
+          "choice": "ciudad (L); pueblo (B, R)",
+          "alternatives": [
+            "ciudad (every level)"
+          ],
+          "reason": "The Greek word names any town, large or small, and Nain was a village (meaning decision m2). Literal keeps \"ciudad\"; Balanced and Readable say \"pueblo\", which fits a small place. The same in verses 12 and 37.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1643,10 +2005,20 @@
           "B": "As {{deity_pronoun:he|He}} came near the town gate, a dead man was being carried out. He was his mother's only son, and she was a widow. A large crowd from the town was with her.",
           "R": "As Jesus came near the gate of the town, some people were carrying out a dead man to bury him. He was the only son of his mother, and her husband had died. Many people from the town were with her."
         },
+        "es": {
+          "L": "Cuando se acercó a la puerta de la ciudad, y mira, sacaban a un difunto, hijo único de su madre, y ella era viuda; y una considerable multitud de la ciudad estaba con ella.",
+          "B": "Cuando {{deity_pronoun:él|Él}} llegaba cerca de la puerta del pueblo, sacaban a un muerto. Era el único hijo de su madre, y ella era viuda. La acompañaba mucha gente del pueblo.",
+          "R": "Cuando Jesús llegó cerca de la puerta del pueblo, unas personas llevaban a un muerto para enterrarlo. Era el único hijo de su madre, y el esposo de ella ya había muerto. Mucha gente del pueblo iba con ella."
+        },
         "fr": {
           "L": "Comme {{deity_pronoun:il|Il}} approchait de la porte de la ville, voici qu’on emportait un mort, fils unique de sa mère, et elle était veuve ; et une foule considérable de la ville était avec elle.",
           "B": "Comme {{deity_pronoun:il|Il}} arrivait près de la porte de la ville, on emportait un mort. C’était le fils unique de sa mère, qui était veuve. Une foule nombreuse de la ville l’accompagnait.",
           "R": "Quand Jésus est arrivé près de la porte de la ville, des gens sortaient un mort pour aller l’enterrer. C’était le fils unique de sa mère, et le mari de cette femme était mort. Beaucoup de gens de la ville étaient avec elle."
+        },
+        "sw": {
+          "L": "Alipolikaribia lango la mji, na tazama, mtu aliyekufa alikuwa akichukuliwa nje, mwana pekee wa mama yake, naye alikuwa mjane; na umati mkubwa wa watu wa mji ulikuwa pamoja naye.",
+          "B": "Alipolikaribia lango la mji, mtu aliyekufa alikuwa akibebwa kupelekwa nje. Alikuwa mwana pekee wa mama yake, naye mama huyo alikuwa mjane. Umati mkubwa wa watu wa mji ulikuwa pamoja naye.",
+          "R": "Yesu alipolikaribia lango la mji, watu walikuwa wakibeba maiti kwenda kuizika. Marehemu alikuwa mwana pekee wa mama yake, na mume wa mama huyo alikuwa amekwisha kufa. Watu wengi wa mji walikuwa pamoja naye."
         }
       },
       "decisions": [
@@ -1782,6 +2154,27 @@
           "footnote": false
         },
         {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007012009"
+          ],
+          "choice": "y mira (L); not rendered (B, R)",
+          "alternatives": [
+            "y he aquí"
+          ],
+          "reason": "The book-wide wording for the Greek word that draws attention to what follows: Literal keeps it as \"mira\", which is current Spanish (\"he aquí\" sounds archaic); Balanced and Readable let the sentence carry it, as the English does. The same in verse 37; in verse 25 it is said to the crowds and takes the plural \"miren\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
           "id": "r-fr-1",
           "layer": "rendering",
           "language": "fr",
@@ -1800,6 +2193,27 @@
             "voilà que"
           ],
           "reason": "Unlike the English \"behold\", French \"voici\" is still a living word for pointing to what comes next, so Literal uses it for Luke's attention word (also 7:25, 7:27, 7:34, 7:37). Balanced and Readable carry its force in the flow of the sentence, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007012009"
+          ],
+          "choice": "na tazama (L); not rendered (B, R)",
+          "alternatives": [
+            "angalia"
+          ],
+          "reason": "The book-wide wording for the Greek word that draws attention to what follows: Literal keeps it as \"tazama\"; Balanced and Readable let the sentence carry it, as the English does. The same in verses 25 and 37.",
           "uncertain": false,
           "footnote": false
         }
@@ -1838,10 +2252,20 @@
           "B": "When the Lord saw her, pity for her moved {{deity_pronoun:him|Him}} deeply, and {{deity_pronoun:he|He}} said to her, \"Stop weeping.\"",
           "R": "When the Lord Jesus saw her, {{deity_pronoun:he|He}} felt very sorry for her. He said to her, \"Do not cry.\""
         },
+        "es": {
+          "L": "Y al verla, el Señor tuvo compasión de ella y le dijo: «No llores».",
+          "B": "Cuando el Señor la vio, sintió una profunda compasión por ella y le dijo: «Deja de llorar».",
+          "R": "Cuando el Señor Jesús la vio, sintió mucha lástima por ella. Le dijo: «No llores»."
+        },
         "fr": {
           "L": "Et la voyant, le Seigneur fut ému de compassion pour elle et lui dit : « Ne pleure pas. »",
           "B": "En la voyant, le Seigneur fut saisi d’une profonde pitié pour elle, et {{deity_pronoun:il|Il}} lui dit : « Ne pleure plus. »",
           "R": "Quand le Seigneur Jésus l’a vue, {{deity_pronoun:il|Il}} a eu beaucoup de peine pour elle. Il lui a dit : « Ne pleure pas. »"
+        },
+        "sw": {
+          "L": "Na Bwana alipomwona, alimwonea huruma, akamwambia, \"Usilie.\"",
+          "B": "Bwana alipomwona, moyo {{deity_pronoun:wake|Wake}} ulijaa huruma kwa ajili yake, akamwambia, \"Acha kulia.\"",
+          "R": "Bwana Yesu alipomwona, alimhurumia sana. Akamwambia, \"Usilie.\""
         }
       },
       "decisions": [
@@ -1991,10 +2415,20 @@
           "B": "Then {{deity_pronoun:he|He}} went up and touched the bier, and the men carrying it stood still. He said, \"Young man, I tell you, get up!\"",
           "R": "Then Jesus went up and touched the frame they were carrying the body on. The men carrying it stopped. Jesus said, \"Young man, I tell you, get up!\""
         },
+        "es": {
+          "L": "Y acercándose, tocó las andas, y los que [las] llevaban se detuvieron, y dijo: «Joven, a ti te digo, levántate».",
+          "B": "Entonces se acercó y tocó las andas, y los que las llevaban se detuvieron. Dijo: «Joven, te lo digo: ¡levántate!».",
+          "R": "Luego Jesús se acercó y tocó la camilla en que llevaban el cuerpo. Los hombres que la cargaban se detuvieron. Jesús dijo: «Joven, te digo: ¡levántate!»."
+        },
         "fr": {
           "L": "Et s’approchant, {{deity_pronoun:il|Il}} toucha la civière, et ceux qui [la] portaient s’arrêtèrent, et {{deity_pronoun:il|Il}} dit : « Jeune homme, je te le dis, lève-toi. »",
           "B": "Puis {{deity_pronoun:il|Il}} s’approcha et toucha la civière, et ceux qui la portaient s’arrêtèrent. Il dit : « Jeune homme, je te le dis, lève-toi ! »",
           "R": "Ensuite, Jésus s’est approché et a touché le brancard sur lequel on portait le corps. Les hommes qui le portaient se sont arrêtés. Jésus a dit : « Jeune homme, je te le dis, lève-toi ! »"
+        },
+        "sw": {
+          "L": "Naye akakaribia, akaigusa machela, na wale waliokuwa wakiibeba wakasimama, naye akasema, \"Kijana, nakuambia wewe, inuka.\"",
+          "B": "Kisha akasogea, akaigusa machela, na wale waliokuwa wakiibeba wakasimama. Akasema, \"Kijana, nakuambia, amka!\"",
+          "R": "Kisha Yesu akasogea, akakigusa kitanda walichokuwa wakibebea maiti. Wale waliokuwa wakikibeba wakasimama. Yesu akasema, \"Kijana, nakuambia, amka!\""
         }
       },
       "decisions": [
@@ -2068,6 +2502,27 @@
           "footnote": false
         },
         {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007014005"
+          ],
+          "choice": "las andas",
+          "alternatives": [
+            "el féretro",
+            "el ataúd"
+          ],
+          "reason": "The dead were carried on an open frame (meaning decision m1). \"Féretro\" and \"ataúd\" are closed coffins; \"andas\" is the open carrying frame. Readable describes it, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
           "id": "r-fr-1",
           "layer": "rendering",
           "language": "fr",
@@ -2086,6 +2541,26 @@
             "la bière"
           ],
           "reason": "The body lay on an open frame (m1). \"Cercueil\" and \"bière\" are closed coffins, which would be wrong. \"Civière\" is the usual word for a stretcher carried by hand; Readable describes it, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007014005"
+          ],
+          "choice": "machela",
+          "alternatives": [
+            "jeneza"
+          ],
+          "reason": "The dead were carried on an open frame (meaning decision m1). \"Jeneza\" is now mostly a closed coffin; \"machela\" is a carrying frame. Readable describes it, as the English Readable does.",
           "uncertain": false,
           "footnote": false
         }
@@ -2124,10 +2599,20 @@
           "B": "The dead man sat up and began to talk, and Jesus gave him back to his mother.",
           "R": "The dead man sat up and began to talk! And Jesus gave him back to his mother."
         },
+        "es": {
+          "L": "Y el muerto se incorporó y comenzó a hablar, y se lo dio a su madre.",
+          "B": "El muerto se incorporó y comenzó a hablar, y Jesús se lo devolvió a su madre.",
+          "R": "¡El muerto se sentó y empezó a hablar! Y Jesús se lo devolvió a su madre."
+        },
         "fr": {
           "L": "Et le mort se redressa et commença à parler, et {{deity_pronoun:il|Il}} le donna à sa mère.",
           "B": "Le mort se redressa et se mit à parler, et Jésus le rendit à sa mère.",
           "R": "Le mort s’est assis et il a commencé à parler ! Et Jésus l’a rendu à sa mère."
+        },
+        "sw": {
+          "L": "Na yule mfu akaketi, akaanza kusema, naye akampa mama yake.",
+          "B": "Yule aliyekuwa amekufa aliketi, akaanza kuzungumza, na Yesu akamrudisha kwa mama yake.",
+          "R": "Yule aliyekufa aliketi, akaanza kuongea! Naye Yesu akamrudisha kwa mama yake."
         }
       },
       "decisions": [
@@ -2234,10 +2719,20 @@
           "B": "Awe took hold of everyone, and they gave glory to God. \"A great prophet has appeared among us!\" they said, and, \"God has come to help {{deity_pronoun:his|His}} people!\"",
           "R": "Everyone there was filled with fear and wonder, and they gave glory to God. They said, \"A great prophet has come to us!\" They also said, \"God has come to help {{deity_pronoun:his|His}} people!\""
         },
+        "es": {
+          "L": "Y el temor se apoderó de todos, y glorificaban a Dios, diciendo: «Un gran profeta se ha levantado entre nosotros», y: «¡Dios ha visitado a {{deity_pronoun:su|Su}} pueblo!».",
+          "B": "Todos quedaron sobrecogidos de temor, y daban gloria a Dios. Decían: «¡Un gran profeta ha aparecido entre nosotros!», y también: «¡Dios ha venido a ayudar a {{deity_pronoun:su|Su}} pueblo!».",
+          "R": "Todos los que estaban allí se llenaron de temor y asombro, y daban gloria a Dios. Decían: «¡Un gran profeta ha venido a nosotros!». También decían: «¡Dios ha venido a ayudar a {{deity_pronoun:su|Su}} pueblo!»."
+        },
         "fr": {
           "L": "Et la crainte s’empara de tous, et ils glorifiaient Dieu, disant : « Un grand prophète a été suscité parmi nous », et : « Dieu a visité {{deity_pronoun:son|Son}} peuple ! »",
           "B": "Une crainte pleine de respect s’empara de tous, et ils rendaient gloire à Dieu. « Un grand prophète est apparu parmi nous ! » disaient-ils, et : « Dieu est venu au secours de {{deity_pronoun:son|Son}} peuple ! »",
           "R": "Tous ceux qui étaient là ont été remplis de crainte et d’émerveillement, et ils ont rendu gloire à Dieu. Ils ont dit : « Un grand prophète est venu parmi nous ! » Ils ont dit aussi : « Dieu est venu au secours de {{deity_pronoun:son|Son}} peuple ! »"
+        },
+        "sw": {
+          "L": "Hofu ikawashika wote, nao wakawa wakimtukuza Mungu, wakisema, \"Nabii mkuu ameinuliwa kati yetu,\" na, \"Mungu amewatembelea watu {{deity_pronoun:wake|Wake}}!\"",
+          "B": "Wote walijawa na hofu kuu, wakamtukuza Mungu, wakisema, \"Nabii mkuu ametokea kati yetu!\" na, \"Mungu amekuja kuwasaidia watu {{deity_pronoun:wake|Wake}}!\"",
+          "R": "Kila mtu aliyekuwepo alijawa na hofu na mshangao, nao wakamtukuza Mungu. Wakasema, \"Nabii mkuu amekuja kwetu!\" Wakasema pia, \"Mungu amekuja kuwasaidia watu {{deity_pronoun:wake|Wake}}!\""
         }
       },
       "decisions": [
@@ -2424,10 +2919,20 @@
           "B": "This news about {{deity_pronoun:him|Him}} spread through all Judea and the whole region around it.",
           "R": "The news about what Jesus had done spread everywhere in the land of the Jews and in all the places around it."
         },
+        "es": {
+          "L": "Y salió esta noticia acerca de {{deity_pronoun:él|Él}} por toda Judea y por toda la región de alrededor.",
+          "B": "Esta noticia acerca de {{deity_pronoun:él|Él}} se extendió por toda Judea y por toda la región vecina.",
+          "R": "La noticia de lo que Jesús había hecho se extendió por toda la tierra de los judíos y por todos los lugares de alrededor."
+        },
         "fr": {
           "L": "Et cette nouvelle à {{deity_pronoun:son|Son}} sujet se répandit dans toute la Judée et dans toute la région d’alentour.",
           "B": "Ce qu’on disait de {{deity_pronoun:lui|Lui}} se répandit dans toute la Judée et dans toute la région voisine.",
           "R": "La nouvelle de ce que Jésus avait fait s’est répandue partout dans le pays des Juifs et dans toutes les régions autour."
+        },
+        "sw": {
+          "L": "Na neno hili kumhusu {{deity_pronoun:yeye|Yeye}} likaenea katika Uyahudi wote na katika nchi yote ya kandokando.",
+          "B": "Habari hizi kumhusu {{deity_pronoun:yeye|Yeye}} zilienea katika Uyahudi wote na katika eneo lote lililouzunguka.",
+          "R": "Habari za mambo ambayo Yesu alikuwa amefanya zilienea kila mahali katika nchi ya Wayahudi na katika maeneo yote yaliyoizunguka."
         }
       },
       "decisions": [
@@ -2532,10 +3037,20 @@
           "B": "John's disciples told him about all these things.",
           "R": "John's followers told him about everything Jesus was doing."
         },
+        "es": {
+          "L": "Y le informaron a Juan sus discípulos acerca de todas estas cosas.",
+          "B": "Los discípulos de Juan le contaron todas estas cosas.",
+          "R": "Los discípulos de Juan le contaron todo lo que Jesús estaba haciendo."
+        },
         "fr": {
           "L": "Et les disciples de Jean lui rapportèrent toutes ces choses.",
           "B": "Les disciples de Jean lui racontèrent tout cela.",
           "R": "Les disciples de Jean lui ont raconté tout ce que Jésus faisait."
+        },
+        "sw": {
+          "L": "Na wanafunzi wake wakamweleza Yohana habari za mambo haya yote.",
+          "B": "Wanafunzi wa Yohana walimweleza mambo hayo yote.",
+          "R": "Wanafunzi wa Yohana walimweleza kila kitu ambacho Yesu alikuwa akifanya."
         }
       },
       "decisions": [
@@ -2613,6 +3128,25 @@
           "footnote": false
         },
         {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007018005"
+          ],
+          "choice": "discípulos, at Readable too",
+          "alternatives": [
+            "seguidores"
+          ],
+          "reason": "The book-wide choice: \"discípulos\" at every level, even where the English Readable says \"followers\", since the Spanish word is plain and well known. The same in verses 18-19.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
           "id": "r-fr-1",
           "layer": "rendering",
           "language": "fr",
@@ -2629,6 +3163,25 @@
             "les partisans de Jean"
           ],
           "reason": "English Readable says \"followers\" because \"disciples\" sounds like Jesus's Twelve. In French \"disciple\" is the ordinary word for the pupil of any teacher, and \"de Jean\" makes plain whose they were, so Readable keeps it, as Mark's Readable keeps \"disciples\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007018005"
+          ],
+          "choice": "wanafunzi, at Readable too",
+          "alternatives": [
+            "wafuasi"
+          ],
+          "reason": "The book-wide choice: \"wanafunzi\" at every level, even where the English Readable says \"followers\", since the Swahili word is plain and well known. The same in verses 18-19.",
           "uncertain": false,
           "footnote": false
         }
@@ -2676,10 +3229,20 @@
           "B": "So John called two of his disciples \\v 19 and sent them to the Lord to ask, \"Are {{deity_pronoun:you|You}} the one who is to come, or are we to look for someone else?\"",
           "R": "So John called two of his followers. \\v 19 He sent them to the Lord Jesus to ask, \"Are {{deity_pronoun:you|You}} the one God promised would come? Or should we keep waiting for someone else?\""
         },
+        "es": {
+          "L": "Y llamando a dos de sus discípulos, Juan \\v 19 [los] envió al Señor, diciendo: «¿Eres {{deity_pronoun:tú|Tú}} el que viene, o esperamos a otro?».",
+          "B": "Entonces Juan llamó a dos de sus discípulos \\v 19 y los envió al Señor a preguntarle: «¿Eres {{deity_pronoun:tú|Tú}} el que había de venir, o debemos esperar a otro?».",
+          "R": "Entonces Juan llamó a dos de sus discípulos. \\v 19 Los envió al Señor Jesús a preguntarle: «¿Eres {{deity_pronoun:tú|Tú}} aquel que Dios prometió que vendría? ¿O debemos seguir esperando a otro?»."
+        },
         "fr": {
           "L": "Et ayant appelé deux de ses disciples, Jean \\v 19 [les] envoya vers le Seigneur pour dire : « Es-{{deity_pronoun:tu|Tu}} celui qui vient, ou devons-nous en attendre un autre ? »",
           "B": "Jean appela donc deux de ses disciples \\v 19 et les envoya demander au Seigneur : « Es-{{deity_pronoun:tu|Tu}} celui qui doit venir, ou devons-nous en attendre un autre ? »",
           "R": "Alors Jean a appelé deux de ses disciples. \\v 19 Il les a envoyés auprès du Seigneur Jésus pour {{deity_pronoun:lui|Lui}} demander : « Es-{{deity_pronoun:tu|Tu}} celui que Dieu a promis d’envoyer ? Ou devons-nous continuer à attendre quelqu’un d’autre ? »"
+        },
+        "sw": {
+          "L": "Na Yohana, akiwaita wawili kati ya wanafunzi wake, \\v 19 aliwatuma kwa Bwana, akisema, \"Je, {{deity_pronoun:wewe|Wewe}} ndiye yule anayekuja, au tumngoje mwingine?\"",
+          "B": "Basi Yohana aliwaita wanafunzi wake wawili, \\v 19 akawatuma kwa Bwana wamwulize, \"Je, {{deity_pronoun:wewe|Wewe}} ndiye yule atakayekuja, au tumsubiri mtu mwingine?\"",
+          "R": "Kwa hiyo Yohana aliwaita wanafunzi wake wawili. \\v 19 Akawatuma kwa Bwana Yesu wamwulize, \"Je, {{deity_pronoun:wewe|Wewe}} ndiye yule ambaye Mungu aliahidi kwamba atakuja? Au tuendelee kumngoja mtu mwingine?\""
         }
       },
       "decisions": [
@@ -2841,10 +3404,20 @@
           "B": "When the men reached {{deity_pronoun:him|Him}}, they said, \"John the Baptist sent us to {{deity_pronoun:you|You}} to ask, 'Are {{deity_pronoun:you|You}} the one who is to come, or are we to look for someone else?'\"",
           "R": "The men came to Jesus and said, \"John the Baptist sent us to {{deity_pronoun:you|You}}. He wants to know, 'Are {{deity_pronoun:you|You}} the one God promised would come? Or should we keep waiting for someone else?'\""
         },
+        "es": {
+          "L": "Y cuando llegaron a {{deity_pronoun:él|Él}} los hombres, dijeron: «Juan el Bautista nos ha enviado a {{deity_pronoun:ti|Ti}}, diciendo: “¿Eres {{deity_pronoun:tú|Tú}} el que viene, o esperamos a otro?”».",
+          "B": "Cuando los hombres llegaron ante {{deity_pronoun:él|Él}}, {{deity_pronoun:le|Le}} dijeron: «Juan el Bautista nos envió a {{deity_pronoun:ti|Ti}} a preguntarte: “¿Eres {{deity_pronoun:tú|Tú}} el que había de venir, o debemos esperar a otro?”».",
+          "R": "Los hombres llegaron adonde estaba Jesús y {{deity_pronoun:le|Le}} dijeron: «Juan el Bautista nos envió a {{deity_pronoun:ti|Ti}}. Quiere saber: “¿Eres {{deity_pronoun:tú|Tú}} aquel que Dios prometió que vendría? ¿O debemos seguir esperando a otro?”»."
+        },
         "fr": {
           "L": "Arrivés auprès de {{deity_pronoun:lui|Lui}}, les hommes dirent : « Jean le Baptiste nous a envoyés vers {{deity_pronoun:toi|Toi}} pour dire : “Es-{{deity_pronoun:tu|Tu}} celui qui vient, ou devons-nous en attendre un autre ?” »",
           "B": "Quand ils furent arrivés auprès de {{deity_pronoun:lui|Lui}}, les hommes dirent : « Jean le Baptiste nous a envoyés vers {{deity_pronoun:toi|Toi}} pour {{deity_pronoun:te|Te}} demander : “Es-{{deity_pronoun:tu|Tu}} celui qui doit venir, ou devons-nous en attendre un autre ?” »",
           "R": "Les hommes sont venus trouver Jésus et {{deity_pronoun:lui|Lui}} ont dit : « Jean le Baptiste nous a envoyés vers {{deity_pronoun:toi|Toi}}. Il veut savoir : “Es-{{deity_pronoun:tu|Tu}} celui que Dieu a promis d’envoyer ? Ou devons-nous continuer à attendre quelqu’un d’autre ?” »"
+        },
+        "sw": {
+          "L": "Na wale watu walipofika {{deity_pronoun:kwake|Kwake}}, walisema, \"Yohana Mbatizaji ametutuma {{deity_pronoun:kwako|Kwako}}, akisema, 'Je, {{deity_pronoun:wewe|Wewe}} ndiye yule anayekuja, au tumngoje mwingine?'\"",
+          "B": "Wale watu walipomfikia, walisema, \"Yohana Mbatizaji ametutuma {{deity_pronoun:kwako|Kwako}} tukuulize, 'Je, {{deity_pronoun:wewe|Wewe}} ndiye yule atakayekuja, au tumsubiri mtu mwingine?'\"",
+          "R": "Wale watu walikuja kwa Yesu, wakasema, \"Yohana Mbatizaji ametutuma {{deity_pronoun:kwako|Kwako}}. Anataka kujua, 'Je, {{deity_pronoun:wewe|Wewe}} ndiye yule ambaye Mungu aliahidi kwamba atakuja? Au tuendelee kumngoja mtu mwingine?'\""
         }
       },
       "decisions": [
@@ -2975,10 +3548,20 @@
           "B": "Just then {{deity_pronoun:he|He}} healed many people of diseases, painful illnesses and evil spirits, and {{deity_pronoun:he|He}} gave many blind people the gift of sight.",
           "R": "At that very time Jesus was healing many people. Some had diseases or terrible pains, and some had evil spirits. Jesus also made many blind people able to see."
         },
+        "es": {
+          "L": "En aquella hora sanó a muchos de enfermedades, dolencias y espíritus malignos, y a muchos ciegos les concedió ver.",
+          "B": "En ese mismo momento sanó a muchos de enfermedades, de dolencias penosas y de espíritus malignos, y a muchos ciegos les dio el don de la vista.",
+          "R": "En ese mismo momento Jesús estaba sanando a mucha gente. Algunos tenían enfermedades o dolores terribles, y otros tenían espíritus malignos. Jesús también hizo que muchos ciegos pudieran ver."
+        },
         "fr": {
           "L": "À cette heure-là, {{deity_pronoun:il|Il}} guérit beaucoup [de gens] de maladies, d’infirmités et d’esprits mauvais, et à beaucoup d’aveugles {{deity_pronoun:il|Il}} accorda de voir.",
           "B": "Au même moment, {{deity_pronoun:il|Il}} guérit beaucoup de gens de leurs maladies, de leurs souffrances et des esprits mauvais, et {{deity_pronoun:il|Il}} fit à beaucoup d’aveugles le don de la vue.",
           "R": "À ce moment-là, Jésus guérissait beaucoup de gens. Certains avaient des maladies ou de grandes douleurs, et d’autres avaient des esprits mauvais. Jésus a aussi permis à beaucoup d’aveugles de voir."
+        },
+        "sw": {
+          "L": "Saa ile ile aliwaponya wengi magonjwa na mateso na pepo wabaya, na vipofu wengi aliwajalia kuona.",
+          "B": "Wakati huo huo aliwaponya watu wengi waliokuwa na magonjwa, maradhi yenye maumivu makali na pepo wabaya, na akawapa vipofu wengi zawadi ya kuona.",
+          "R": "Wakati huo huo Yesu alikuwa akiponya watu wengi. Baadhi yao walikuwa na magonjwa au maumivu makali, na wengine walikuwa na pepo wabaya. Yesu aliwafanya pia vipofu wengi waweze kuona."
         }
       },
       "decisions": [
@@ -3051,6 +3634,28 @@
           "reason": "Readable names Jesus and breaks the list into short sentences.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007021012",
+            "n42007021013"
+          ],
+          "choice": "pepo wabaya, at every level",
+          "alternatives": [
+            "pepo wachafu"
+          ],
+          "reason": "The Greek here says \"evil spirits\", not \"unclean spirits\", so every level says \"pepo wabaya\" rather than the book-wide \"pepo mchafu\" for the other phrase.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3097,10 +3702,20 @@
           "B": "So {{deity_pronoun:he|He}} answered them, \"Go back and tell John what you have seen and heard. The blind see again, the lame walk, people with leprosy are made clean, the deaf hear, the dead are raised, and the poor hear the good news.",
           "R": "Jesus answered John's followers, \"Go back and tell John what you have seen and heard. Blind people can see. People who could not walk are walking. People with skin diseases are healed and made clean. Deaf people can hear. Dead people are raised to life. And poor people are hearing the good news."
         },
+        "es": {
+          "L": "Y respondiendo, les dijo: «{{plural_you:Vayan|Id}} y {{plural_you:anuncien|anunciad}} a Juan lo que {{plural_you:han visto y oído|habéis visto y oído}}: [los] ciegos recobran la vista, [los] cojos andan, [los] leprosos son limpiados, y [los] sordos oyen, [los] muertos son resucitados, a [los] pobres se les anuncia la buena noticia;",
+          "B": "Así que les respondió: «{{plural_you:Vuelvan|Volved}} y {{plural_you:cuéntenle|contadle}} a Juan lo que {{plural_you:han visto y oído|habéis visto y oído}}. Los ciegos vuelven a ver, los cojos andan, los que tienen lepra quedan limpios, los sordos oyen, los muertos son resucitados y a los pobres se les anuncia la buena noticia.",
+          "R": "Jesús les respondió a los discípulos de Juan: «{{plural_you:Vuelvan|Volved}} y {{plural_you:cuéntenle|contadle}} a Juan lo que {{plural_you:han visto y oído|habéis visto y oído}}. Los ciegos pueden ver. Los que no podían caminar están caminando. Los que tenían enfermedades de la piel son sanados y quedan limpios. Los sordos pueden oír. Los muertos son resucitados. Y los pobres están oyendo la buena noticia."
+        },
         "fr": {
           "L": "Et répondant, {{deity_pronoun:il|Il}} leur dit : « Allez rapporter à Jean ce que vous avez vu et entendu : des aveugles retrouvent la vue, des boiteux marchent, des lépreux sont purifiés, des sourds entendent, des morts sont ressuscités, à des pauvres la bonne nouvelle est annoncée ;",
           "B": "Il leur répondit : « Retournez dire à Jean ce que vous avez vu et entendu. Les aveugles voient de nouveau, les boiteux marchent, les lépreux sont rendus purs, les sourds entendent, les morts sont ressuscités, et les pauvres entendent la bonne nouvelle.",
           "R": "Jésus a répondu aux disciples de Jean : « Retournez dire à Jean ce que vous avez vu et entendu. Les aveugles voient. Ceux qui ne pouvaient pas marcher marchent. Les gens qui avaient une maladie de peau sont guéris et redeviennent purs. Les sourds entendent. Les morts reviennent à la vie. Et les pauvres entendent la bonne nouvelle."
+        },
+        "sw": {
+          "L": "Naye akajibu, akawaambia, \"Nendeni mkamweleze Yohana mliyoyaona na kuyasikia: vipofu wanapata kuona, viwete wanatembea, wakoma wanatakaswa, na viziwi wanasikia, wafu wanafufuliwa, maskini wanahubiriwa habari njema;",
+          "B": "Basi aliwajibu, \"Rudini mkamweleze Yohana mambo mliyoyaona na kuyasikia. Vipofu wanaona tena, viwete wanatembea, wenye ukoma wanafanywa safi, viziwi wanasikia, wafu wanafufuliwa, na maskini wanasikia habari njema.",
+          "R": "Yesu aliwajibu wanafunzi wa Yohana, \"Rudini mkamweleze Yohana mambo mliyoyaona na kuyasikia. Vipofu wanaweza kuona. Watu ambao hawakuweza kutembea wanatembea. Watu wenye magonjwa ya ngozi wanaponywa na kufanywa safi. Viziwi wanaweza kusikia. Wafu wanafufuliwa. Na maskini wanasikia habari njema."
         }
       },
       "decisions": [
@@ -3223,6 +3838,27 @@
           "footnote": false
         },
         {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007022023"
+          ],
+          "choice": "la buena noticia, at every level",
+          "alternatives": [
+            "el evangelio"
+          ],
+          "reason": "The verb is the telling of good news, not the name of the message, so every level says \"la buena noticia\", as the English says \"good news\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
           "id": "r-fr-1",
           "layer": "rendering",
           "language": "fr",
@@ -3262,6 +3898,27 @@
           "reason": "As in Mark: the verb is the one for making clean under the law (m2), so French uses \"pur, purifier\" and not only \"guérir\"; Readable says both, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007022023"
+          ],
+          "choice": "habari njema, at every level",
+          "alternatives": [
+            "Injili"
+          ],
+          "reason": "The verb is the telling of good news, not the name of the message, so every level says \"habari njema\", as the English says \"good news\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3294,10 +3951,20 @@
           "B": "And blessed is anyone who does not find in {{deity_pronoun:me|Me}} a reason to fall away.\"",
           "R": "How blessed is anyone who does not stumble and turn away because of what I do!\""
         },
+        "es": {
+          "L": "Y dichoso es aquel que no tropiece por causa de {{deity_pronoun:mí|Mí}}».",
+          "B": "Y dichoso el que no encuentre en {{deity_pronoun:mí|Mí}} motivo para apartarse».",
+          "R": "¡Qué dichoso es el que no tropieza ni se aparta por causa de lo que hago!»."
+        },
         "fr": {
           "L": "Et heureux est celui qui ne trébuchera pas à cause de {{deity_pronoun:moi|Moi}}. »",
           "B": "Heureux celui qui ne trouve pas en {{deity_pronoun:moi|Moi}} une raison de se détourner. »",
           "R": "Heureux celui qui ne trébuche pas et ne se détourne pas à cause de ce que je fais ! »"
+        },
+        "sw": {
+          "L": "Na heri yeye ambaye hatakwazwa kwa sababu {{deity_pronoun:yangu|Yangu}}.\"",
+          "B": "Na heri mtu yeyote asiyepata ndani {{deity_pronoun:yangu|Yangu}} sababu ya kuniacha.\"",
+          "R": "Heri kweli mtu asiyejikwaa na kuniacha kwa sababu ya mambo ninayoyafanya!\""
         }
       },
       "decisions": [
@@ -3373,6 +4040,28 @@
           "footnote": false
         },
         {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007023002"
+          ],
+          "choice": "dichoso",
+          "alternatives": [
+            "bienaventurado",
+            "feliz"
+          ],
+          "reason": "Fortunate in God's eyes (meaning decision m2). \"Bienaventurado\" is the traditional church word but sounds old to many readers; \"feliz\" can sound like a mood. \"Dichoso\" is current and keeps the sense of good fortune given.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
           "id": "r-fr-1",
           "layer": "rendering",
           "language": "fr",
@@ -3391,6 +4080,27 @@
             "bienheureux"
           ],
           "reason": "The word means fortunate in God's eyes (m2). French \"béni\" belongs to another Greek word, \"blessed\" by God or by people; \"bienheureux\" now sounds like church language. \"Heureux celui qui …\" is the French form of a declaration of happiness, as in the Beatitudes of 6:20-22.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007023002"
+          ],
+          "choice": "heri",
+          "alternatives": [
+            "amebarikiwa"
+          ],
+          "reason": "Fortunate in God's eyes (meaning decision m2). \"Heri\" is the settled word for this saying; \"amebarikiwa\" would make it a statement about a blessing received rather than a declaration of good fortune.",
           "uncertain": false,
           "footnote": false
         }
@@ -3434,10 +4144,20 @@
           "B": "After John's messengers had gone, Jesus began to talk to the crowds about John. \"What did you go out into the wilderness to see?",
           "R": "When John's messengers had left, Jesus began to talk to the crowds about John. He said, \"When you went out into the desert to see John, what did you expect to see?"
         },
+        "es": {
+          "L": "Cuando se fueron los mensajeros de Juan, comenzó a decir a las multitudes acerca de Juan: «¿Qué {{plural_you:salieron|salisteis}} a contemplar al desierto?",
+          "B": "Después de que se fueron los mensajeros de Juan, Jesús comenzó a hablar a la gente acerca de Juan: «¿Qué {{plural_you:salieron|salisteis}} a ver al desierto?",
+          "R": "Cuando los mensajeros de Juan se fueron, Jesús comenzó a hablar a la gente acerca de Juan. Les dijo: «Cuando {{plural_you:fueron|fuisteis}} al desierto a ver a Juan, ¿qué {{plural_you:esperaban|esperabais}} ver?"
+        },
         "fr": {
           "L": "Les messagers de Jean étant partis, {{deity_pronoun:il|Il}} se mit à parler aux foules au sujet de Jean : « Qu’êtes-vous sortis regarder dans le désert ?",
           "B": "Après le départ des messagers de Jean, Jésus se mit à parler de Jean aux foules : « Qu’êtes-vous allés voir au désert ?",
           "R": "Quand les messagers de Jean sont partis, Jésus a commencé à parler de Jean aux foules. Il a dit : « Quand vous êtes allés dans le désert pour voir Jean, qu’est-ce que vous vous attendiez à voir ?"
+        },
+        "sw": {
+          "L": "Wajumbe wa Yohana walipokwisha kuondoka, alianza kuwaambia umati wa watu habari za Yohana, \"Mlitoka kwenda nyikani kutazama nini?",
+          "B": "Wajumbe wa Yohana walipoondoka, Yesu alianza kuzungumza na umati wa watu kuhusu Yohana. \"Mlikwenda nyikani kuona nini?",
+          "R": "Wajumbe wa Yohana walipoondoka, Yesu alianza kuongea na umati wa watu kuhusu Yohana. Akasema, \"Mlipokwenda jangwani kumwona Yohana, mlitarajia kuona nini?"
         }
       },
       "decisions": [
@@ -3575,6 +4295,27 @@
           "reason": "As in Mark: French \"désert\" covers the empty, dry country by the Jordan (m2), not only sand, so one word serves every level where English needs \"wilderness\" and \"desert\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007024017"
+          ],
+          "choice": "nyika (L, B); jangwa (R)",
+          "alternatives": [
+            "jangwa (every level)"
+          ],
+          "reason": "The book-wide choice: \"nyika\" is the dry, open country where John preached (meaning decision m2); Readable says \"jangwa\", as the English Readable says \"desert\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3602,10 +4343,20 @@
           "B": "A reed swaying in the wind?",
           "R": "A tall reed that the wind blows back and forth?"
         },
+        "es": {
+          "L": "¿Una caña sacudida por [el] viento?",
+          "B": "¿Una caña que se mece con el viento?",
+          "R": "¿Una caña alta que el viento mueve de un lado a otro?"
+        },
         "fr": {
           "L": "Un roseau agité par le vent ?",
           "B": "Un roseau qui plie au vent ?",
           "R": "Un grand roseau que le vent fait pencher d’un côté et de l’autre ?"
+        },
+        "sw": {
+          "L": "Mwanzi unaotikiswa na upepo?",
+          "B": "Mwanzi unaoyumba kwa upepo?",
+          "R": "Mwanzi mrefu unaopeperushwa na upepo huku na huko?"
         }
       },
       "decisions": [
@@ -3673,10 +4424,20 @@
           "B": "If not, what did you go out to see?",
           "R": "What else did you expect to see?"
         },
+        "es": {
+          "L": "Pero ¿qué {{plural_you:salieron|salisteis}} a ver?",
+          "B": "Si no, ¿qué {{plural_you:salieron|salisteis}} a ver?",
+          "R": "¿Qué otra cosa {{plural_you:esperaban|esperabais}} ver?"
+        },
         "fr": {
           "L": "Mais qu’êtes-vous sortis voir ?",
           "B": "Sinon, qu’êtes-vous allés voir ?",
           "R": "Qu’est-ce que vous vous attendiez à voir d’autre ?"
+        },
+        "sw": {
+          "L": "Lakini mlitoka kwenda kuona nini?",
+          "B": "Kama sivyo, mlikwenda kuona nini?",
+          "R": "Mlitarajia kuona nini kingine?"
         }
       },
       "decisions": [
@@ -3723,10 +4484,20 @@
           "B": "A man dressed in soft, fine clothes?",
           "R": "A man wearing soft, expensive clothes?"
         },
+        "es": {
+          "L": "¿Un hombre vestido con ropas suaves?",
+          "B": "¿Un hombre vestido con ropa fina y suave?",
+          "R": "¿Un hombre con ropa suave y cara?"
+        },
         "fr": {
           "L": "Un homme vêtu de vêtements doux ?",
           "B": "Un homme habillé de vêtements fins et luxueux ?",
           "R": "Un homme qui porte des habits doux et très chers ?"
+        },
+        "sw": {
+          "L": "Mtu aliyevaa mavazi laini?",
+          "B": "Mtu aliyevaa mavazi laini ya fahari?",
+          "R": "Mtu aliyevaa nguo laini za bei ghali?"
         }
       },
       "decisions": [
@@ -3781,10 +4552,20 @@
           "B": "Those who wear splendid clothes and live in luxury are found in the palaces of kings.",
           "R": "People who wear fine clothes and live in luxury are in the palaces of kings."
         },
+        "es": {
+          "L": "{{plural_you:Miren|Mirad}}, los que viven con ropa espléndida y con lujo están en los palacios reales.",
+          "B": "Los que visten ropa espléndida y viven en el lujo están en los palacios de los reyes.",
+          "R": "La gente que usa ropa fina y vive con lujo está en los palacios de los reyes."
+        },
         "fr": {
           "L": "Voici, ceux qui vivent dans des vêtements somptueux et dans le luxe sont dans les palais royaux.",
           "B": "Ceux qui portent des vêtements magnifiques et vivent dans le luxe, on les trouve dans les palais des rois.",
           "R": "Les gens qui portent de beaux habits et qui vivent dans le luxe habitent dans les palais des rois."
+        },
+        "sw": {
+          "L": "Tazameni, wale walio katika mavazi ya fahari na anasa wako katika majumba ya kifalme.",
+          "B": "Wanaovaa mavazi ya fahari na kuishi maisha ya anasa hupatikana katika majumba ya wafalme.",
+          "R": "Watu wanaovaa nguo nzuri na kuishi maisha ya starehe wako katika majumba ya wafalme."
         }
       },
       "decisions": [
@@ -3853,10 +4634,20 @@
           "B": "Then what did you go out to see?",
           "R": "So what did you go out to see?"
         },
+        "es": {
+          "L": "Pero ¿qué {{plural_you:salieron|salisteis}} a ver?",
+          "B": "Entonces, ¿qué {{plural_you:salieron|salisteis}} a ver?",
+          "R": "Pues ¿qué {{plural_you:salieron|salisteis}} a ver?"
+        },
         "fr": {
           "L": "Mais qu’êtes-vous sortis voir ?",
           "B": "Alors, qu’êtes-vous allés voir ?",
           "R": "Alors, qu’est-ce que vous êtes allés voir ?"
+        },
+        "sw": {
+          "L": "Lakini mlitoka kwenda kuona nini?",
+          "B": "Basi, mlitoka kwenda kuona nini?",
+          "R": "Sasa mlikwenda kuona nini?"
         }
       },
       "decisions": [
@@ -3902,10 +4693,20 @@
           "B": "A prophet?",
           "R": "Did you go to see a prophet?"
         },
+        "es": {
+          "L": "¿Un profeta?",
+          "B": "¿A un profeta?",
+          "R": "¿{{plural_you:Fueron|Fuisteis}} a ver a un profeta?"
+        },
         "fr": {
           "L": "Un prophète ?",
           "B": "Un prophète ?",
           "R": "Êtes-vous allés voir un prophète ?"
+        },
+        "sw": {
+          "L": "Nabii?",
+          "B": "Kumwona nabii?",
+          "R": "Mlikwenda kumwona nabii?"
         }
       },
       "decisions": [
@@ -3972,10 +4773,20 @@
           "B": "Yes, I tell you, and far more than a prophet.",
           "R": "Yes, he is a prophet. But I tell you, he is even more than a prophet."
         },
+        "es": {
+          "L": "Sí, {{plural_you:les|os}} digo, y más que un profeta.",
+          "B": "Sí, {{plural_you:les|os}} digo, y mucho más que un profeta.",
+          "R": "Sí, Juan es un profeta. Pero {{plural_you:les|os}} digo que es todavía más que un profeta."
+        },
         "fr": {
           "L": "Oui, je vous le dis, et plus qu’un prophète.",
           "B": "Oui, je vous le dis, et bien plus qu’un prophète.",
           "R": "Oui, c’est un prophète. Mais je vous le dis, il est même plus qu’un prophète."
+        },
+        "sw": {
+          "L": "Ndiyo, nawaambia, na zaidi ya nabii.",
+          "B": "Ndiyo, nawaambia, na zaidi sana kuliko nabii.",
+          "R": "Ndiyo, yeye ni nabii. Lakini nawaambia, yeye ni zaidi hata ya nabii."
         }
       },
       "decisions": [
@@ -4057,10 +4868,20 @@
           "B": "He is the one of whom Scripture says, 'I am sending {{deity_pronoun:my|My}} messenger to go before {{deity_pronoun:you|You}}; he will make {{deity_pronoun:your|Your}} road ready ahead of {{deity_pronoun:you|You}}.'",
           "R": "John is the one the Scriptures speak about. There God says to the one who is to come, 'I am sending {{deity_pronoun:my|My}} messenger ahead of {{deity_pronoun:you|You}}. He will get the road ready for {{deity_pronoun:you|You}}.'"
         },
+        "es": {
+          "L": "Este es [aquel] de quien está escrito: “Mira, envío a {{deity_pronoun:mi|Mi}} mensajero delante de {{deity_pronoun:tu|Tu}} rostro, el cual preparará {{deity_pronoun:tu|Tu}} camino delante de {{deity_pronoun:ti|Ti}}”.",
+          "B": "Él es aquel de quien dice la Escritura: “Envío a {{deity_pronoun:mi|Mi}} mensajero para que vaya delante de {{deity_pronoun:ti|Ti}}; él dejará listo {{deity_pronoun:tu|Tu}} camino por delante de {{deity_pronoun:ti|Ti}}”.",
+          "R": "Juan es aquel de quien hablan las Escrituras. Allí Dios dice al que había de venir: “Envío a {{deity_pronoun:mi|Mi}} mensajero delante de {{deity_pronoun:ti|Ti}}. Él {{deity_pronoun:te|Te}} preparará el camino”."
+        },
         "fr": {
           "L": "Celui-ci est [celui] dont il est écrit : “Voici, j’envoie {{deity_pronoun:mon|Mon}} messager devant {{deity_pronoun:ta|Ta}} face, qui préparera {{deity_pronoun:ton|Ton}} chemin devant {{deity_pronoun:toi|Toi}}.”",
           "B": "C’est de lui que l’Écriture dit : “J’envoie {{deity_pronoun:mon|Mon}} messager devant {{deity_pronoun:toi|Toi}} ; il préparera {{deity_pronoun:ton|Ton}} chemin devant {{deity_pronoun:toi|Toi}}.”",
           "R": "Jean est celui dont parlent les Écritures. Là, Dieu dit à celui qui doit venir : “J’envoie {{deity_pronoun:mon|Mon}} messager devant {{deity_pronoun:toi|Toi}}. Il préparera la route pour {{deity_pronoun:toi|Toi}}.”"
+        },
+        "sw": {
+          "L": "Huyu ndiye ambaye imeandikwa habari zake, 'Tazama, ninamtuma mjumbe {{deity_pronoun:wangu|Wangu}} mbele ya uso {{deity_pronoun:wako|Wako}}, ambaye ataitengeneza njia {{deity_pronoun:yako|Yako}} mbele {{deity_pronoun:yako|Yako}}.'",
+          "B": "Yeye ndiye ambaye Maandiko yanasema habari zake, 'Ninamtuma mjumbe {{deity_pronoun:wangu|Wangu}} atangulie mbele {{deity_pronoun:yako|Yako}}; yeye ataitayarisha njia {{deity_pronoun:yako|Yako}} mbele {{deity_pronoun:yako|Yako}}.'",
+          "R": "Yohana ndiye yule ambaye Maandiko yanasema habari zake. Huko Mungu anamwambia yule atakayekuja, 'Ninamtuma mjumbe {{deity_pronoun:wangu|Wangu}} akutangulie. Yeye atakuandalia njia.'"
         }
       },
       "decisions": [
@@ -4210,6 +5031,25 @@
           "footnote": false
         },
         {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007027005"
+          ],
+          "choice": "está escrito (L); dice la Escritura (B); hablan las Escrituras (R)",
+          "alternatives": [],
+          "reason": "The book-wide wording for the formula that introduces Scripture: Literal keeps the passive \"está escrito\"; Balanced and Readable name the Scriptures, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
           "id": "r-fr-1",
           "layer": "rendering",
           "language": "fr",
@@ -4228,6 +5068,46 @@
           "choice": "\"j’envoie\" without a span; \"mon\" (God), \"ta\", \"ton\", \"toi\" (Jesus) with the capital-pronoun setting",
           "alternatives": [],
           "reason": "As the English: God speaks of himself and to Jesus, so their pronouns take the setting; \"il\", the messenger, is John and takes none. French writes \"je\" for God without a span, as it does for Jesus.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007027005"
+          ],
+          "choice": "imeandikwa (L); Maandiko yanasema (B, R)",
+          "alternatives": [],
+          "reason": "The book-wide wording for the formula that introduces Scripture: Literal keeps the passive; Balanced and Readable name the Scriptures, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-2",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n42007027010",
+            "n42007027013",
+            "n42007027018"
+          ],
+          "choice": "{{deity_pronoun:wangu|Wangu}} for God; {{deity_pronoun:wako|Wako}}, {{deity_pronoun:yako|Yako}} for the one addressed",
+          "alternatives": [],
+          "reason": "God speaks, and the one he speaks to is Jesus (meaning decision m2), so the possessives for both take the setting. Readable's \"akutangulie\", \"atakuandalia\" carry \"you\" in the verb and take none.",
           "uncertain": false,
           "footnote": false
         }
@@ -4273,10 +5153,20 @@
           "B": "I tell you, of all who have been born of women, there is none greater than John. Yet the least in the kingdom of God is greater than he is.\"",
           "R": "I tell you, no one who has ever been born is greater than John. But even the least important person in the kingdom of God is greater than he is.\""
         },
+        "es": {
+          "L": "{{plural_you:Les|Os}} digo: entre los nacidos de mujeres nadie es mayor que Juan; pero el más pequeño en el reino de Dios es mayor que él».",
+          "B": "{{plural_you:Les|Os}} digo que, de todos los que han nacido de mujer, no hay nadie mayor que Juan. Sin embargo, el más pequeño en el reino de Dios es mayor que él».",
+          "R": "{{plural_you:Les|Os}} digo que nadie que haya nacido jamás es más grande que Juan. Pero aun la persona menos importante en el reino de Dios es más grande que él»."
+        },
         "fr": {
           "L": "Je vous le dis, parmi ceux qui sont nés de femmes, nul n’est plus grand que Jean ; mais le plus petit dans le royaume de Dieu est plus grand que lui. »",
           "B": "Je vous le dis : de tous les êtres nés d’une femme, aucun n’est plus grand que Jean. Pourtant, le plus petit dans le royaume de Dieu est plus grand que lui. »",
           "R": "Je vous le dis, aucun être humain n’a jamais été plus grand que Jean. Mais même celui qui est le moins important dans le royaume de Dieu est plus grand que lui. »"
+        },
+        "sw": {
+          "L": "Nawaambia, miongoni mwa waliozaliwa na wanawake hakuna aliye mkuu kuliko Yohana; lakini aliye mdogo katika ufalme wa Mungu ni mkuu kuliko yeye.\"",
+          "B": "Nawaambia, kati ya wote waliozaliwa na wanawake, hakuna aliye mkuu kuliko Yohana. Hata hivyo, aliye mdogo kabisa katika ufalme wa Mungu ni mkuu kuliko yeye.\"",
+          "R": "Nawaambia, hakuna mtu aliyewahi kuzaliwa aliye mkuu kuliko Yohana. Lakini hata mtu asiye muhimu kabisa katika ufalme wa Mungu ni mkuu kuliko yeye.\""
         }
       },
       "decisions": [
@@ -4383,6 +5273,28 @@
           "footnote": false
         },
         {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007028015",
+            "n42007028017"
+          ],
+          "choice": "el reino de Dios, at every level",
+          "alternatives": [
+            "el reinado de Dios"
+          ],
+          "reason": "The book-wide term, the same phrase at every level, as the English has \"the kingdom of God\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
           "id": "r-fr-1",
           "layer": "rendering",
           "language": "fr",
@@ -4400,6 +5312,28 @@
             "le règne de Dieu"
           ],
           "reason": "As the style guide sets for the New Testament. \"Règne\" would stress the reign over the realm; \"royaume\" is the familiar French term and covers both, as \"kingdom\" does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007028015",
+            "n42007028017"
+          ],
+          "choice": "ufalme wa Mungu, at every level",
+          "alternatives": [
+            "utawala wa Mungu"
+          ],
+          "reason": "The book-wide term, the same phrase at every level, as the English has \"the kingdom of God\".",
           "uncertain": false,
           "footnote": false
         }
@@ -4440,10 +5374,20 @@
           "B": "All the people who heard this, even the tax collectors, agreed that God was in the right, because they had been baptized with John's baptism.",
           "R": "All the people who heard Jesus say this agreed that God's way was right. Even the tax collectors agreed. They were the ones who had let John baptize them."
         },
+        "es": {
+          "L": "Y todo el pueblo, al oír[lo], y aun los publicanos, declararon justo a Dios, habiendo sido bautizados con el bautismo de Juan;",
+          "B": "Todo el pueblo que lo oyó, incluso los cobradores de impuestos, reconoció que Dios tenía razón, porque habían sido bautizados con el bautismo de Juan.",
+          "R": "Toda la gente que oyó a Jesús decir esto estuvo de acuerdo en que el camino de Dios era el correcto. Hasta los cobradores de impuestos estuvieron de acuerdo. Ellos eran los que se habían dejado bautizar por Juan."
+        },
         "fr": {
           "L": "Et tout le peuple qui entendit, et même les collecteurs d’impôts, justifièrent Dieu, ayant été baptisés du baptême de Jean ;",
           "B": "Tout le peuple qui l’entendit, même les collecteurs d’impôts, reconnut que Dieu était dans son droit, car ils avaient été baptisés du baptême de Jean.",
           "R": "Tous les gens qui ont entendu Jésus dire cela ont reconnu que le chemin de Dieu était le bon. Les collecteurs d’impôts aussi l’ont reconnu. C’étaient eux qui s’étaient fait baptiser par Jean."
+        },
+        "sw": {
+          "L": "Na watu wote waliposikia, hata watoza ushuru, walimkiri Mungu kuwa mwenye haki, wakiwa wamebatizwa kwa ubatizo wa Yohana;",
+          "B": "Watu wote waliosikia maneno haya, hata watoza ushuru, walikubali kwamba Mungu yuko sahihi, kwa kuwa walikuwa wamebatizwa kwa ubatizo wa Yohana.",
+          "R": "Watu wote waliomsikia Yesu akisema hivyo walikubali kwamba njia ya Mungu ni sahihi. Hata watoza ushuru walikubali. Wao ndio waliokuwa wamekubali kubatizwa na Yohana."
         }
       },
       "decisions": [
@@ -4565,6 +5509,46 @@
           "footnote": false
         },
         {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007029008"
+          ],
+          "choice": "publicanos (L); cobradores de impuestos (B, R)",
+          "alternatives": [
+            "publicanos (every level)"
+          ],
+          "reason": "The book-wide choice: Literal keeps the traditional word, Balanced and Readable say what these men did (meaning decision m4). The same in verse 34.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007029009"
+          ],
+          "choice": "declararon justo a Dios",
+          "alternatives": [
+            "justificaron a Dios"
+          ],
+          "reason": "\"Declared God right\" (meaning decision m2). \"Justificar\" in Spanish now usually means to excuse, which would point the wrong way.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
           "id": "r-fr-1",
           "layer": "rendering",
           "language": "fr",
@@ -4603,6 +5587,46 @@
             "les publicains"
           ],
           "reason": "As the style guide sets for the New Testament: \"publicains\" is a church word that most readers no longer understand.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007029009"
+          ],
+          "choice": "walimkiri Mungu kuwa mwenye haki (L); walikubali kwamba Mungu yuko sahihi (B, R)",
+          "alternatives": [
+            "walimhesabia Mungu haki"
+          ],
+          "reason": "They declared that God was right (meaning decision m2). \"Kuhesabiwa haki\" is the phrase for being made righteous before God, which would point the wrong way when said of God; Literal says they acknowledged him to be just.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-2",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007029008"
+          ],
+          "choice": "watoza ushuru",
+          "alternatives": [],
+          "reason": "The book-wide word for the tax collectors (meaning decision m4), the same at every level. The same in verse 34.",
           "uncertain": false,
           "footnote": false
         }
@@ -4645,10 +5669,20 @@
           "B": "But the Pharisees and the experts in the law refused what God intended for them, since they had not let John baptize them.",
           "R": "But the Pharisees and the experts in God's law turned away from what God wanted to do for them. They would not let John baptize them."
         },
+        "es": {
+          "L": "Pero los fariseos y los expertos en la ley rechazaron para sí mismos el propósito de Dios, no habiendo sido bautizados por él.",
+          "B": "Pero los fariseos y los expertos en la ley rechazaron lo que Dios quería para ellos, pues no se habían dejado bautizar por Juan.",
+          "R": "Pero los fariseos y los expertos en la ley de Dios se apartaron de lo que Dios quería hacer por ellos. No quisieron que Juan los bautizara."
+        },
         "fr": {
           "L": "Mais les Pharisiens et les experts de la Loi rejetèrent pour eux-mêmes le dessein de Dieu, n’ayant pas été baptisés par lui.",
           "B": "Mais les Pharisiens et les experts de la Loi refusèrent ce que Dieu voulait pour eux, puisqu’ils ne s’étaient pas fait baptiser par Jean.",
           "R": "Mais les Pharisiens et les experts de la Loi ont refusé ce que Dieu voulait faire pour eux. Ils n’ont pas voulu que Jean les baptise."
+        },
+        "sw": {
+          "L": "Lakini Mafarisayo na wataalamu wa sheria walilikataa kusudi la Mungu kwa ajili yao wenyewe, kwa kuwa hawakubatizwa naye.",
+          "B": "Lakini Mafarisayo na wataalamu wa sheria walikataa kile ambacho Mungu alikusudia kwa ajili yao, kwa kuwa hawakukubali kubatizwa na Yohana.",
+          "R": "Lakini Mafarisayo na wataalamu wa sheria ya Mungu walikiacha kile ambacho Mungu alitaka kuwafanyia. Hawakukubali Yohana awabatize."
         }
       },
       "decisions": [
@@ -4759,6 +5793,28 @@
           "footnote": false
         },
         {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007030006"
+          ],
+          "choice": "los expertos en la ley",
+          "alternatives": [
+            "los intérpretes de la ley",
+            "los doctores de la ley"
+          ],
+          "reason": "The book-wide wording for these men trained in the law of Moses (meaning decision m1), kept apart from \"escribas\" for the other word; Readable adds \"de Dios\" as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
           "id": "r-fr-1",
           "layer": "rendering",
           "language": "fr",
@@ -4798,6 +5854,27 @@
           "reason": "As the English: French \"lui\" could be read as Jesus, so Balanced and Readable name John.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007030006"
+          ],
+          "choice": "wataalamu wa sheria",
+          "alternatives": [
+            "walimu wa sheria"
+          ],
+          "reason": "The book-wide wording for these men trained in the law of Moses (meaning decision m1), kept apart from \"walimu wa sheria\", the Readable word for the scribes; Readable adds \"ya Mungu\" as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4833,10 +5910,20 @@
           "B": "Jesus went on, \"Then how shall I picture the {{gender:people|men}} of this generation? What are they like?",
           "R": "Jesus continued, \"How can I describe the {{gender:people|men}} who live today? What are they like?"
         },
+        "es": {
+          "L": "«¿Con qué, pues, compararé a {{gender:las personas|los hombres}} de esta generación, y a qué se parecen?",
+          "B": "Jesús continuó: «¿Con qué compararé entonces a {{gender:las personas|los hombres}} de esta generación? ¿A qué se parecen?",
+          "R": "Jesús siguió diciendo: «¿Cómo puedo describir a {{gender:las personas|los hombres}} que viven hoy? ¿A qué se parecen?"
+        },
         "fr": {
           "L": "« À quoi donc comparerai-je les {{gender:gens|hommes}} de cette génération, et à quoi ressemblent-ils ?",
           "B": "Jésus poursuivit : « À quoi donc vais-je comparer les {{gender:gens|hommes}} de cette génération ? À quoi ressemblent-ils ?",
           "R": "Jésus a continué : « À quoi est-ce que je peux comparer les {{gender:gens|hommes}} d’aujourd’hui ? À quoi ressemblent-ils ?"
+        },
+        "sw": {
+          "L": "\"Basi niwafananishe watu wa kizazi hiki na nini, nao wanafanana na nini?",
+          "B": "Yesu aliendelea kusema, \"Basi niwafananishe watu wa kizazi hiki na nini? Wao ni kama nini?",
+          "R": "Yesu aliendelea kusema, \"Niwaelezeje watu wanaoishi siku hizi? Wao ni kama nini?"
         }
       },
       "decisions": [
@@ -4940,6 +6027,27 @@
           "footnote": false
         },
         {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n42007031005"
+          ],
+          "choice": "{{gender:las personas|los hombres}}",
+          "alternatives": [
+            "{{gender:la gente|los hombres}}"
+          ],
+          "reason": "Spanish has two wordings here, as English does: \"las personas\" for men and women (meaning decision m3), \"los hombres\" as the traditional form. \"Las personas\" rather than \"la gente\" keeps the plural verbs (\"se parecen\", \"viven\") the same under both settings.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
           "id": "r-fr-1",
           "layer": "rendering",
           "language": "fr",
@@ -4957,6 +6065,27 @@
             "les {{gender:humains|hommes}}"
           ],
           "reason": "The word means human beings, men and women (m3). \"Les humains de cette génération\" would sound like a statement about the species; \"les gens\" is the ordinary inclusive word, with the traditional \"les hommes\" as the alternative. The article stays outside the span, since both read naturally.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n42007031005"
+          ],
+          "choice": "watu, no gender span",
+          "alternatives": [
+            "wanaume"
+          ],
+          "reason": "The English has \"people|men\". \"Watu\" already means men and women (meaning decision m3), and \"wanaume\" would mean males only, so there is nothing for the setting to change.",
           "uncertain": false,
           "footnote": false
         }
@@ -5003,10 +6132,20 @@
           "B": "They are like small children who sit in the town square and shout to each other, 'We played wedding music on the flute for you, and you would not dance. We sang a funeral song, and you would not cry.'",
           "R": "They are like children sitting in the town square. They call out to each other, 'We played happy music on the flute for you, but you would not dance! We sang sad songs, but you would not cry!'"
         },
+        "es": {
+          "L": "Se parecen a niños sentados en [la] plaza y que se gritan unos a otros, diciendo: “{{plural_you:Les|Os}} tocamos la flauta, y no {{plural_you:bailaron|bailasteis}}; entonamos lamentos, y no {{plural_you:lloraron|llorasteis}}”.",
+          "B": "Son como niños pequeños que se sientan en la plaza del pueblo y se gritan unos a otros: “{{plural_you:Les|Os}} tocamos música de boda con la flauta, y no {{plural_you:quisieron|quisisteis}} bailar. Cantamos un canto fúnebre, y no {{plural_you:quisieron|quisisteis}} llorar”.",
+          "R": "Son como niños sentados en la plaza del pueblo. Se gritan unos a otros: “¡{{plural_you:Les|Os}} tocamos música alegre con la flauta, pero no {{plural_you:quisieron|quisisteis}} bailar! ¡Cantamos canciones tristes, pero no {{plural_you:quisieron|quisisteis}} llorar!”."
+        },
         "fr": {
           "L": "Ils ressemblent à des enfants assis sur la place du marché et qui s’interpellent les uns les autres, qui disent : “Nous avons joué de la flûte pour vous, et vous n’avez pas dansé ; nous avons chanté un chant de deuil, et vous n’avez pas pleuré.”",
           "B": "Ils sont comme de petits enfants assis sur la place, qui se lancent des appels les uns aux autres : “Nous avons joué pour vous un air de noce à la flûte, et vous n’avez pas voulu danser. Nous avons chanté un chant funèbre, et vous n’avez pas voulu pleurer.”",
           "R": "Ils sont comme des enfants assis sur la place de la ville. Ils crient les uns aux autres : “Nous avons joué de la flûte pour vous, un air joyeux, mais vous n’avez pas voulu danser ! Nous avons chanté des chants tristes, mais vous n’avez pas voulu pleurer !”"
+        },
+        "sw": {
+          "L": "Wanafanana na watoto walioketi sokoni na kuitana wao kwa wao, wakisema, 'Tuliwapigia filimbi, nanyi hamkucheza; tuliomboleza, nanyi hamkulia.'",
+          "B": "Wao ni kama watoto wadogo wanaoketi uwanjani mjini na kuitana wao kwa wao, 'Tuliwapigia filimbi muziki wa harusi, lakini hamkutaka kucheza. Tuliimba wimbo wa maziko, lakini hamkutaka kulia.'",
+          "R": "Wao ni kama watoto walioketi uwanjani mjini. Wanaitana wao kwa wao, 'Tuliwapigia filimbi muziki wa furaha, lakini hamkutaka kucheza! Tuliimba nyimbo za huzuni, lakini hamkutaka kulia!'"
         }
       },
       "decisions": [
@@ -5081,6 +6220,27 @@
           "reason": "Balanced and Readable say what kind of game the children were playing, as the meaning decision explains.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n42007032014",
+            "n42007032017",
+            "n42007032021"
+          ],
+          "choice": "plural_you spans in the children's words",
+          "alternatives": [],
+          "reason": "The children call to the other children, a plural \"you\", so their words take the setting like Jesus's own.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5119,10 +6279,20 @@
           "B": "For John the Baptist has come eating no bread and drinking no wine, and you say, 'There is a demon in him.'",
           "R": "John the Baptist came, and he went without bread and did not drink wine. And you said, 'He has a demon in him!'"
         },
+        "es": {
+          "L": "Porque ha venido Juan el Bautista sin comer pan ni beber vino, y {{plural_you:dicen|decís}}: “Tiene un demonio”.",
+          "B": "Porque ha venido Juan el Bautista, que no come pan ni bebe vino, y {{plural_you:ustedes dicen|vosotros decís}}: “Tiene un demonio dentro”.",
+          "R": "Juan el Bautista vino, y no comía pan ni bebía vino. Y {{plural_you:ustedes dijeron|vosotros dijisteis}}: “¡Tiene un demonio dentro!”."
+        },
         "fr": {
           "L": "Car Jean le Baptiste est venu, ne mangeant pas de pain et ne buvant pas de vin, et vous dites : “Il a un démon.”",
           "B": "En effet, Jean le Baptiste est venu ; il ne mangeait pas de pain et ne buvait pas de vin, et vous dites : “Il y a un démon en lui.”",
           "R": "Jean le Baptiste est venu. Il se privait de pain et ne buvait pas de vin. Et vous avez dit : “Il a un démon en lui !”"
+        },
+        "sw": {
+          "L": "Kwa maana Yohana Mbatizaji amekuja bila kula mkate wala kunywa divai, nanyi mnasema, 'Ana pepo.'",
+          "B": "Kwa maana Yohana Mbatizaji amekuja, hali mkate wala hanywi divai, nanyi mnasema, 'Ana pepo ndani yake.'",
+          "R": "Yohana Mbatizaji alikuja, naye hakula mkate wala hakunywa divai. Nanyi mkasema, 'Ana pepo ndani yake!'"
         }
       },
       "decisions": [
@@ -5238,10 +6408,20 @@
           "B": "The Son of Man has come eating and drinking, and you say, 'Look at the man! He is greedy for food and a heavy drinker, a friend of tax collectors and sinners!'",
           "R": "The Son of Man came, and {{deity_pronoun:he|He}} ate and drank. And you said, 'Look at {{deity_pronoun:him|Him}}! He eats too much and drinks too much wine. He is a friend of tax collectors and sinners!'"
         },
+        "es": {
+          "L": "Ha venido el Hijo del Hombre comiendo y bebiendo, y {{plural_you:dicen|decís}}: “Ahí está un hombre comilón y borracho, amigo de publicanos y pecadores”.",
+          "B": "Ha venido el Hijo del Hombre, que come y bebe, y {{plural_you:dicen|decís}}: “¡{{plural_you:Miren|Mirad}} a ese hombre! Es un glotón y un gran bebedor, amigo de cobradores de impuestos y de pecadores”.",
+          "R": "El Hijo del Hombre vino, y comía y bebía. Y {{plural_you:ustedes dijeron|vosotros dijisteis}}: “¡{{plural_you:Fíjense|Fijaos}} en {{deity_pronoun:él|Él}}! Come demasiado y bebe demasiado vino. ¡Es amigo de cobradores de impuestos y de pecadores!”."
+        },
         "fr": {
           "L": "Le Fils de l’homme est venu, mangeant et buvant, et vous dites : “Voici un homme glouton et ivrogne, ami des collecteurs d’impôts et des pécheurs.”",
           "B": "Le Fils de l’homme est venu ; {{deity_pronoun:il|Il}} mange et boit, et vous dites : “Voyez cet homme ! C’est un gros mangeur et un grand buveur de vin, un ami des collecteurs d’impôts et des pécheurs !”",
           "R": "Le Fils de l’homme est venu, et {{deity_pronoun:il|Il}} a mangé et bu. Et vous avez dit : “Regardez-{{deity_pronoun:le|Le}} ! Il mange trop et {{deity_pronoun:il|Il}} boit trop de vin. C’est un ami des collecteurs d’impôts et des pécheurs !”"
+        },
+        "sw": {
+          "L": "Mwana wa Adamu amekuja akila na kunywa, nanyi mnasema, 'Tazama, mtu mlafi na mlevi, rafiki wa watoza ushuru na wenye dhambi.'",
+          "B": "Mwana wa Adamu amekuja akila na kunywa, nanyi mnasema, 'Mwangalieni mtu huyu! Ni mlafi na mlevi, rafiki wa watoza ushuru na wenye dhambi!'",
+          "R": "Mwana wa Adamu alikuja, naye alikula na kunywa. Nanyi mkasema, 'Mwangalieni! Anakula kupita kiasi na kunywa divai kupita kiasi. Ni rafiki wa watoza ushuru na wenye dhambi!'"
         }
       },
       "decisions": [
@@ -5345,6 +6525,47 @@
           "footnote": false
         },
         {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007034003",
+            "n42007034005"
+          ],
+          "choice": "el Hijo del Hombre",
+          "alternatives": [
+            "el Hijo del Ser Humano"
+          ],
+          "reason": "The book-wide wording for Jesus's name for himself (meaning decision m3), a title, never under the gender setting.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007034011"
+          ],
+          "choice": "Ahí está",
+          "alternatives": [
+            "Mira"
+          ],
+          "reason": "The people say \"look\" to one another, not to one person; \"ahí está\" points at him without choosing a singular or plural \"you\". Balanced and Readable say it to the group, with the plural_you setting.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
           "id": "r-fr-1",
           "layer": "rendering",
           "language": "fr",
@@ -5384,6 +6605,46 @@
           "reason": "Balanced turns the participles into a clause, so French needs a subject pronoun the English lacks, and it carries the capital-pronoun setting.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007034003",
+            "n42007034005"
+          ],
+          "choice": "Mwana wa Adamu",
+          "alternatives": [
+            "Mwana wa Mtu"
+          ],
+          "reason": "The book-wide wording for Jesus's name for himself (meaning decision m3), as in John; never under the gender setting.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-2",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n42007034011",
+            "n42007034012"
+          ],
+          "choice": "Mwangalieni, with no deity_pronoun span",
+          "alternatives": [],
+          "reason": "The English Readable \"Look at him\" takes the setting; Swahili carries \"him\" in the verb (-m-), which cannot take a capital.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5416,10 +6677,20 @@
           "B": "Yet wisdom is shown to be right by all who are her children.\"",
           "R": "But God's wisdom is shown to be right by all the people who accept it.\""
         },
+        "es": {
+          "L": "Y la sabiduría fue reivindicada por todos sus hijos».",
+          "B": "Pero todos los hijos de la sabiduría demuestran que ella tiene razón».",
+          "R": "Pero todas las personas que aceptan la sabiduría de Dios muestran que esa sabiduría tiene razón»."
+        },
         "fr": {
           "L": "Et la sagesse a été justifiée par tous ses enfants. »",
           "B": "Pourtant, tous les enfants de la sagesse montrent qu’elle a raison. »",
           "R": "Mais tous ceux qui acceptent la sagesse de Dieu montrent qu’elle a raison. »"
+        },
+        "sw": {
+          "L": "Na hekima ilionyeshwa kuwa sahihi na watoto wake wote.\"",
+          "B": "Lakini hekima inaonyeshwa kuwa sahihi na wote walio watoto wake.\"",
+          "R": "Lakini watu wote wanaoikubali hekima ya Mungu wanaonyesha kwamba hekima hiyo ni sahihi.\""
         }
       },
       "decisions": [
@@ -5516,6 +6787,25 @@
           "footnote": false
         },
         {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007035002"
+          ],
+          "choice": "fue reivindicada",
+          "alternatives": [
+            "fue justificada"
+          ],
+          "reason": "Shown to be in the right (meaning decision m3). \"Justificada\" in Spanish now usually means excused.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
           "id": "r-fr-1",
           "layer": "rendering",
           "language": "fr",
@@ -5533,6 +6823,27 @@
             "la sagesse est reconnue juste par tous ses enfants"
           ],
           "reason": "French passives with \"par\" are heavy; making the children the subject says the same thing (m3) in natural French, in the present, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007035002"
+          ],
+          "choice": "ilionyeshwa kuwa sahihi (L); inaonyeshwa kuwa sahihi (B); wanaonyesha kwamba ni sahihi (R)",
+          "alternatives": [
+            "ilihesabiwa haki"
+          ],
+          "reason": "Shown to be in the right (meaning decision m3). \"Kuhesabiwa haki\" is the phrase for being made righteous before God, and \"haki\" is kept for righteousness, so it would point the wrong way here.",
           "uncertain": false,
           "footnote": false
         }
@@ -5576,10 +6887,20 @@
           "B": "One of the Pharisees invited Jesus to a meal with him. So {{deity_pronoun:he|He}} went into the Pharisee's house and took {{deity_pronoun:his|His}} place at the table.",
           "R": "A Pharisee invited Jesus to come and eat with him. So Jesus went to the Pharisee's house and lay down on a couch at the table, as people did for a dinner."
         },
+        "es": {
+          "L": "Y uno de los fariseos {{deity_pronoun:le|Le}} rogaba que comiera con él; y entrando en la casa del fariseo, se reclinó [a la mesa].",
+          "B": "Uno de los fariseos invitó a Jesús a comer con él. Entonces Jesús entró en la casa del fariseo y ocupó {{deity_pronoun:su|Su}} lugar a la mesa.",
+          "R": "Un fariseo invitó a Jesús a comer con él. Entonces Jesús fue a la casa del fariseo y se recostó junto a la mesa, como se hacía en las cenas."
+        },
         "fr": {
           "L": "Or un des Pharisiens {{deity_pronoun:le|Le}} priait de manger avec lui ; et étant entré dans la maison du Pharisien, {{deity_pronoun:il|Il}} s’étendit [à table].",
           "B": "Un des Pharisiens invita Jésus à manger avec lui. Il entra donc dans la maison du Pharisien et prit place à table.",
           "R": "Un Pharisien a invité Jésus à venir manger chez lui. Jésus est donc allé chez le Pharisien et s’est allongé sur un divan près de la table, comme on le faisait pour un repas."
+        },
+        "sw": {
+          "L": "Basi mmoja wa Mafarisayo alikuwa akimwomba ale pamoja naye; kisha akaingia nyumbani mwa yule Farisayo, akaegemea [mezani].",
+          "B": "Mmoja wa Mafarisayo alimkaribisha Yesu kula chakula pamoja naye. Basi Yesu akaingia nyumbani kwa yule Farisayo, akakaa mahali {{deity_pronoun:pake|Pake}} mezani.",
+          "R": "Farisayo mmoja alimkaribisha Yesu aje kula pamoja naye. Kwa hiyo Yesu alikwenda nyumbani kwa yule Farisayo, akajilaza kwenye kochi karibu na meza, kama watu walivyofanya wakati wa karamu."
         }
       },
       "decisions": [
@@ -5664,6 +6985,25 @@
           "footnote": false
         },
         {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n42007036018"
+          ],
+          "choice": "se reclinó [a la mesa]",
+          "alternatives": [
+            "se sentó a la mesa"
+          ],
+          "reason": "Guests at a dinner lay on couches around the table (meaning decision m1). Literal keeps the reclining, with the table supplied; Readable describes it, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
           "id": "r-fr-1",
           "layer": "rendering",
           "language": "fr",
@@ -5702,6 +7042,25 @@
             "les pharisiens"
           ],
           "reason": "As in John and Mark: the capital marks the name of the movement (m4 at 7:30).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n42007036018"
+          ],
+          "choice": "akaegemea [mezani] (reclined [at table])",
+          "alternatives": [
+            "akaketi"
+          ],
+          "reason": "Guests at a dinner lay on couches around the table (meaning decision m1). Literal keeps the reclining, with the table supplied; Readable describes it, as the English Readable does.",
           "uncertain": false,
           "footnote": false
         }
@@ -5780,10 +7139,20 @@
           "B": "Now there was a woman in the town who was a sinner. When she found out that Jesus was at table in the Pharisee's house, she came with an alabaster flask of perfume. \\v 38 She stood behind {{deity_pronoun:him|Him}}, at {{deity_pronoun:his|His}} feet, crying, and began to wet {{deity_pronoun:his|His}} feet with her tears. She dried them with the hair of her head, and she kissed {{deity_pronoun:his|His}} feet over and over and anointed them with the perfume.",
           "R": "In that town there was a woman everyone knew as a sinner. She heard that Jesus was eating at the Pharisee's house. So she came, carrying a beautiful stone jar full of expensive perfume. \\v 38 She stood behind Jesus at {{deity_pronoun:his|His}} feet, and she was crying. Her tears fell on {{deity_pronoun:his|His}} feet and made them wet. Then she dried {{deity_pronoun:his|His}} feet with her hair. She kept kissing them and pouring the perfume on them."
         },
+        "es": {
+          "L": "Y mira, una mujer que en la ciudad era pecadora, al saber que {{deity_pronoun:él|Él}} estaba reclinado [a la mesa] en la casa del fariseo, trajo un frasco de alabastro con perfume, \\v 38 y poniéndose detrás, junto a {{deity_pronoun:sus|Sus}} pies, llorando, comenzó a mojar {{deity_pronoun:sus|Sus}} pies con [sus] lágrimas, y [los] secaba con los cabellos de su cabeza, y besaba {{deity_pronoun:sus|Sus}} pies y [los] ungía con el perfume.",
+          "B": "Había en el pueblo una mujer que era pecadora. Cuando supo que Jesús estaba a la mesa en la casa del fariseo, llegó con un frasco de alabastro lleno de perfume. \\v 38 Se puso detrás de {{deity_pronoun:él|Él}}, a {{deity_pronoun:sus|Sus}} pies, llorando, y comenzó a mojar {{deity_pronoun:sus|Sus}} pies con sus lágrimas. Los secaba con los cabellos de su cabeza, {{deity_pronoun:le|Le}} besaba los pies una y otra vez y los ungía con el perfume.",
+          "R": "En aquel pueblo había una mujer a la que todos conocían como pecadora. Ella oyó que Jesús estaba comiendo en la casa del fariseo. Así que fue allá con un hermoso frasco de piedra lleno de un perfume caro. \\v 38 Se puso detrás de Jesús, junto a {{deity_pronoun:sus|Sus}} pies, y lloraba. Las lágrimas de ella caían sobre {{deity_pronoun:sus|Sus}} pies y los mojaban. Después {{deity_pronoun:le|Le}} secó los pies con su cabello. No dejaba de besarlos y de derramar el perfume sobre ellos."
+        },
         "fr": {
           "L": "Et voici, une femme qui était dans la ville une pécheresse, ayant appris qu’{{deity_pronoun:il|Il}} était à table dans la maison du Pharisien, apporta un flacon d’albâtre [plein] de parfum, \\v 38 et se tenant derrière, à {{deity_pronoun:ses|Ses}} pieds, en pleurant, elle se mit à mouiller {{deity_pronoun:ses|Ses}} pieds de [ses] larmes, et elle [les] essuyait avec les cheveux de sa tête, et elle embrassait {{deity_pronoun:ses|Ses}} pieds et [les] oignait du parfum.",
           "B": "Or il y avait dans la ville une femme qui était une pécheresse. Quand elle apprit que Jésus était à table dans la maison du Pharisien, elle vint avec un flacon d’albâtre rempli de parfum. \\v 38 Elle se tint derrière {{deity_pronoun:lui|Lui}}, à {{deity_pronoun:ses|Ses}} pieds, en pleurant, et se mit à mouiller {{deity_pronoun:ses|Ses}} pieds de ses larmes. Elle les essuyait avec ses cheveux, elle couvrait {{deity_pronoun:ses|Ses}} pieds de baisers et les oignait de parfum.",
           "R": "Dans cette ville, il y avait une femme que tout le monde connaissait comme une pécheresse. Elle a appris que Jésus mangeait chez le Pharisien. Alors elle est venue avec un beau vase de pierre plein d’un parfum très cher. \\v 38 Elle s’est tenue derrière Jésus, à {{deity_pronoun:ses|Ses}} pieds, et elle pleurait. Ses larmes tombaient sur les pieds de Jésus et les mouillaient. Puis elle a essuyé {{deity_pronoun:ses|Ses}} pieds avec ses cheveux. Elle n’arrêtait pas de les embrasser et de verser le parfum dessus."
+        },
+        "sw": {
+          "L": "Na tazama, mwanamke mmoja aliyekuwa mwenye dhambi katika mji ule, alipojua kwamba anaegemea [mezani] nyumbani mwa yule Farisayo, alileta chupa ya alabasta yenye manukato, \\v 38 akasimama nyuma karibu na miguu {{deity_pronoun:yake|Yake}} akilia, akaanza kuilowesha miguu {{deity_pronoun:yake|Yake}} kwa machozi, akawa akiipangusa kwa nywele za kichwa chake, akiibusu miguu {{deity_pronoun:yake|Yake}} na kuipaka manukato.",
+          "B": "Basi kulikuwa na mwanamke mmoja katika mji ule ambaye alikuwa mwenye dhambi. Alipojua kwamba Yesu alikuwa mezani nyumbani mwa yule Farisayo, alikuja na chupa ya alabasta yenye manukato. \\v 38 Akasimama nyuma {{deity_pronoun:yake|Yake}}, karibu na miguu {{deity_pronoun:yake|Yake}}, akilia, akaanza kuilowesha miguu {{deity_pronoun:yake|Yake}} kwa machozi yake. Akaipangusa kwa nywele za kichwa chake, akaibusu miguu {{deity_pronoun:yake|Yake}} tena na tena, akaipaka manukato.",
+          "R": "Katika mji ule kulikuwa na mwanamke ambaye kila mtu alimjua kuwa mwenye dhambi. Alisikia kwamba Yesu alikuwa akila nyumbani kwa yule Farisayo. Kwa hiyo akaja, amebeba chupa nzuri ya jiwe iliyojaa manukato ya bei ghali. \\v 38 Akasimama nyuma ya Yesu karibu na miguu {{deity_pronoun:yake|Yake}}, naye alikuwa akilia. Machozi yake yakadondoka juu ya miguu {{deity_pronoun:yake|Yake}} na kuilowesha. Kisha akaipangusa miguu {{deity_pronoun:yake|Yake}} kwa nywele zake. Akaendelea kuibusu na kuimwagia manukato."
         }
       },
       "decisions": [
@@ -6054,10 +7423,20 @@
           "B": "The Pharisee who had invited {{deity_pronoun:him|Him}} saw this and said to himself, \"This man, if {{deity_pronoun:he|He}} were a prophet, would have known who this woman is who is touching {{deity_pronoun:him|Him}}, and what sort of woman she is: a sinner.\"",
           "R": "The Pharisee who had invited Jesus saw what was happening. He thought, \"This man cannot be a prophet. A prophet would know who this woman is, the one touching {{deity_pronoun:him|Him}}. He would know what kind of woman she is. She is a sinner!\""
         },
+        "es": {
+          "L": "Y al ver [esto] el fariseo que {{deity_pronoun:lo|Lo}} había invitado, dijo dentro de sí: «Este, si fuera profeta, sabría quién y qué clase de mujer [es] la que {{deity_pronoun:lo|Lo}} está tocando, que es una pecadora».",
+          "B": "El fariseo que {{deity_pronoun:lo|Lo}} había invitado vio esto y se dijo: «Si este hombre fuera profeta, sabría quién es esta mujer que {{deity_pronoun:lo|Lo}} toca, y qué clase de mujer es: una pecadora».",
+          "R": "El fariseo que había invitado a Jesús vio lo que pasaba. Pensó: «Este hombre no puede ser profeta. Un profeta sabría quién es esta mujer que {{deity_pronoun:lo|Lo}} está tocando. Sabría qué clase de mujer es. ¡Es una pecadora!»."
+        },
         "fr": {
           "L": "Or, voyant [cela], le Pharisien qui {{deity_pronoun:l’|L’}}avait invité se dit en lui-même : « Celui-ci, s’{{deity_pronoun:il|Il}} était prophète, saurait qui et quelle sorte de femme [est celle] qui {{deity_pronoun:le|Le}} touche : que c’est une pécheresse. »",
           "B": "Voyant cela, le Pharisien qui {{deity_pronoun:l’|L’}}avait invité se dit : « Si cet homme était un prophète, {{deity_pronoun:il|Il}} saurait qui est cette femme qui {{deity_pronoun:le|Le}} touche, et quelle sorte de femme elle est : une pécheresse. »",
           "R": "Le Pharisien qui avait invité Jésus a vu ce qui se passait. Il a pensé : « Cet homme ne peut pas être un prophète. Un prophète saurait qui est cette femme, celle qui {{deity_pronoun:le|Le}} touche. Il saurait quel genre de femme elle est. C’est une pécheresse ! »"
+        },
+        "sw": {
+          "L": "Basi yule Farisayo aliyemwalika alipoona [hayo], alinena ndani yake, akisema, \"Huyu, kama angekuwa nabii, angejua ni nani, na ni mwanamke wa namna gani huyu anayemgusa, kwamba ni mwenye dhambi.\"",
+          "B": "Yule Farisayo aliyemwalika alipoona hayo, alisema moyoni, \"Kama mtu huyu angekuwa nabii, angejua mwanamke huyu anayemgusa ni nani, na ni wa namna gani: ni mwenye dhambi.\"",
+          "R": "Yule Farisayo aliyemwalika Yesu aliona yaliyokuwa yakitokea. Akawaza, \"Mtu huyu hawezi kuwa nabii. Nabii angejua mwanamke huyu anayemgusa ni nani. Angejua ni mwanamke wa namna gani. Ni mwenye dhambi!\""
         }
       },
       "decisions": [
@@ -6200,10 +7579,20 @@
           "B": "Jesus answered him, \"Simon, there is something I want to tell you.\"",
           "R": "Jesus answered the Pharisee's thoughts. He said, \"Simon, I have something to tell you.\""
         },
+        "es": {
+          "L": "Y respondiendo, Jesús le dijo: «Simón, tengo algo que decirte».",
+          "B": "Jesús le respondió: «Simón, hay algo que quiero decirte».",
+          "R": "Jesús respondió a lo que el fariseo estaba pensando. Le dijo: «Simón, tengo algo que decirte»."
+        },
         "fr": {
           "L": "Et prenant la parole, Jésus lui dit : « Simon, j’ai quelque chose à te dire. »",
           "B": "Jésus lui répondit : « Simon, il y a une chose que je voudrais te dire. »",
           "R": "Jésus a répondu à ce que pensait le Pharisien. Il a dit : « Simon, j’ai quelque chose à te dire. »"
+        },
+        "sw": {
+          "L": "Naye Yesu akajibu, akamwambia, \"Simoni, nina neno la kukuambia.\"",
+          "B": "Yesu alimjibu, \"Simoni, kuna jambo nataka kukuambia.\"",
+          "R": "Yesu aliyajibu mawazo ya yule Farisayo. Akasema, \"Simoni, nina jambo la kukuambia.\""
         }
       },
       "decisions": [
@@ -6286,10 +7675,20 @@
           "B": "\"Say it, Teacher,\" he replied.",
           "R": "Simon said, \"Tell me, Teacher.\""
         },
+        "es": {
+          "L": "Y él dice: «Maestro, dilo».",
+          "B": "«Dilo, Maestro», respondió él.",
+          "R": "Simón dijo: «Dime, Maestro»."
+        },
         "fr": {
           "L": "Et lui : « Maître, dis[-le] », dit-il.",
           "B": "« Parle, Maître », répondit-il.",
           "R": "Simon a dit : « Dis-moi, Maître. »"
+        },
+        "sw": {
+          "L": "Naye anasema, \"Mwalimu, sema.\"",
+          "B": "Akajibu, \"Sema, Mwalimu.\"",
+          "R": "Simoni akasema, \"Niambie, Mwalimu.\""
         }
       },
       "decisions": [
@@ -6346,6 +7745,27 @@
           "footnote": false
         },
         {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007040017"
+          ],
+          "choice": "historic present at Literal (dice); past at Balanced and Readable (respondió, dijo)",
+          "alternatives": [
+            "the present at every level"
+          ],
+          "reason": "Luke tells this past event in the present (meaning decision m2). Literal keeps it, as the English Literal does; Balanced and Readable tell the story in the past, as Spanish narrative does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
           "id": "r-fr-1",
           "layer": "rendering",
           "language": "fr",
@@ -6381,6 +7801,25 @@
           "choice": "\"dit-il\" after the words, as in the Greek (L)",
           "alternatives": [],
           "reason": "Luke's historic present stands after the words, as a French incise does; with \"dire\" the present and the passé simple are the same form.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007040017"
+          ],
+          "choice": "historic present kept at Literal (anasema); past at Balanced and Readable (akajibu, akasema)",
+          "alternatives": [],
+          "reason": "Luke tells this past event in the present (meaning decision m2). Literal keeps it, as the English Literal does; Balanced and Readable tell the story in the narrative past.",
           "uncertain": false,
           "footnote": false
         }
@@ -6420,10 +7859,20 @@
           "B": "Jesus said, \"A moneylender had two men who owed him money. One owed him 500 denarii, and the other fifty.",
           "R": "Jesus said, \"Two men owed money to a man who lent money. One of them owed him 500 silver coins. The other owed him fifty."
         },
+        "es": {
+          "L": "«Dos deudores tenía cierto prestamista; uno le debía quinientos denarios, y el otro cincuenta.",
+          "B": "Jesús dijo: «Un prestamista tenía dos hombres que le debían dinero. Uno le debía quinientos denarios, y el otro cincuenta.",
+          "R": "Jesús dijo: «Dos hombres le debían dinero a un hombre que prestaba dinero. Uno de ellos le debía quinientas monedas de plata. El otro le debía cincuenta."
+        },
         "fr": {
           "L": "« Un prêteur avait deux débiteurs ; l’un devait 500 deniers, et l’autre cinquante.",
           "B": "Jésus dit : « Un prêteur avait deux hommes qui lui devaient de l’argent. L’un lui devait 500 deniers, l’autre cinquante.",
           "R": "Jésus a dit : « Deux hommes avaient emprunté de l’argent au même prêteur. L’un lui devait 500 pièces d’argent. L’autre lui en devait cinquante."
+        },
+        "sw": {
+          "L": "\"Wadeni wawili walikuwa na mkopeshaji fulani; mmoja alidaiwa dinari mia tano, na yule mwingine hamsini.",
+          "B": "Yesu alisema, \"Mkopeshaji mmoja alikuwa na watu wawili waliokuwa na deni lake. Mmoja alikuwa anadaiwa dinari mia tano, na mwingine hamsini.",
+          "R": "Yesu alisema, \"Watu wawili walikuwa wanadaiwa fedha na mtu mmoja aliyekopesha fedha. Mmoja wao alidaiwa sarafu mia tano za fedha. Yule mwingine alidaiwa hamsini."
         }
       },
       "decisions": [
@@ -6547,6 +7996,27 @@
           "footnote": false
         },
         {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007041009"
+          ],
+          "choice": "denarios (L, B); monedas de plata (R), with no units span",
+          "alternatives": [
+            "a units span giving the sums in wages"
+          ],
+          "reason": "The English names the coin here (meaning decision m1) and has no units span, so Spanish has none either; Readable says \"monedas de plata\" as the English Readable says \"silver coins\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
           "id": "r-fr-1",
           "layer": "rendering",
           "language": "fr",
@@ -6565,6 +8035,27 @@
             "cinq cents deniers"
           ],
           "reason": "\"Denier\" is the usual French name for the Roman coin. The style guide writes numbers above \"cent\" in figures, so \"500\" but \"cinquante\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007041009"
+          ],
+          "choice": "dinari (L, B); sarafu za fedha (R), with no units span",
+          "alternatives": [
+            "a units span giving the sums in wages"
+          ],
+          "reason": "The English names the coin here (meaning decision m1) and has no units span, so Swahili has none either; Readable says \"sarafu za fedha\" as the English Readable says \"silver coins\".",
           "uncertain": false,
           "footnote": false
         }
@@ -6596,10 +8087,20 @@
           "B": "Neither of them could pay him back, so he freely canceled the debts of both.",
           "R": "Neither of them had the money to pay him back. So he kindly canceled what both of them owed."
         },
+        "es": {
+          "L": "Como no tenían [con qué] pagar, les perdonó [la deuda] a ambos.",
+          "B": "Ninguno de los dos podía pagarle, así que él les perdonó generosamente la deuda a ambos.",
+          "R": "Ninguno de los dos tenía dinero para pagarle. Así que él, con bondad, les perdonó a los dos lo que le debían."
+        },
         "fr": {
           "L": "Comme ils n’avaient pas [de quoi] rembourser, il a fait grâce aux deux.",
           "B": "Comme ni l’un ni l’autre ne pouvait le rembourser, il a généreusement annulé la dette des deux.",
           "R": "Aucun des deux n’avait l’argent pour le rembourser. Alors, par bonté, il a annulé ce que les deux lui devaient."
+        },
+        "sw": {
+          "L": "Walipokuwa hawana [cha] kulipa, aliwasamehe wote wawili bure.",
+          "B": "Hakuna hata mmoja wao aliyeweza kumlipa, kwa hiyo aliwafutia wote wawili madeni yao bila malipo.",
+          "R": "Hakuna kati yao aliyekuwa na fedha za kumlipa. Kwa hiyo kwa wema wake aliwafutia wote wawili madeni yao."
         }
       },
       "decisions": [
@@ -6707,10 +8208,20 @@
           "B": "So which of the two will love him more?\"",
           "R": "Which of these two men will love the moneylender more?\""
         },
+        "es": {
+          "L": "¿Cuál de ellos, pues, lo amará más?».",
+          "B": "¿Cuál de los dos lo amará más?».",
+          "R": "¿Cuál de estos dos hombres amará más al prestamista?»."
+        },
         "fr": {
           "L": "Lequel d’entre eux donc l’aimera le plus ? »",
           "B": "Lequel des deux l’aimera donc le plus ? »",
           "R": "Lequel de ces deux hommes aimera le plus le prêteur ? »"
+        },
+        "sw": {
+          "L": "Basi ni yupi kati yao atakayempenda zaidi?\"",
+          "B": "Basi ni yupi kati ya hao wawili atakayempenda zaidi?\"",
+          "R": "Ni yupi kati ya watu hao wawili atakayempenda zaidi yule aliyewakopesha?\""
         }
       },
       "decisions": [
@@ -6780,10 +8291,20 @@
           "B": "Simon answered, \"I would think the one whose larger debt he canceled.\"",
           "R": "Simon answered, \"I think it is the man who owed more and was forgiven more.\""
         },
+        "es": {
+          "L": "Respondiendo Simón, dijo: «Supongo que aquel a quien perdonó más».",
+          "B": "Simón respondió: «Me imagino que aquel a quien le perdonó la deuda más grande».",
+          "R": "Simón respondió: «Creo que el que debía más y recibió más perdón»."
+        },
         "fr": {
           "L": "Simon, répondant, dit : « Je suppose que [c’est] celui à qui il a fait grâce de la plus grande [dette]. »",
           "B": "Simon répondit : « Je pense que c’est celui dont il a annulé la plus grosse dette. »",
           "R": "Simon a répondu : « Je pense que c’est l’homme qui devait le plus et à qui le prêteur a pardonné le plus. »"
+        },
+        "sw": {
+          "L": "Simoni akajibu, akasema, \"Nadhani ni yule aliyesamehewa zaidi.\"",
+          "B": "Simoni alijibu, \"Nadhani ni yule aliyefutiwa deni kubwa zaidi.\"",
+          "R": "Simoni akajibu, \"Nafikiri ni yule aliyekuwa anadaiwa zaidi, akasamehewa zaidi.\""
         }
       },
       "decisions": [
@@ -6851,10 +8372,20 @@
           "B": "Jesus said to him, \"Your judgment is right.\"",
           "R": "Jesus said, \"You are right.\""
         },
+        "es": {
+          "L": "Y {{deity_pronoun:él|Él}} le dijo: «Has juzgado correctamente».",
+          "B": "Jesús le dijo: «Tu juicio es correcto».",
+          "R": "Jesús le dijo: «Tienes razón»."
+        },
         "fr": {
           "L": "Et {{deity_pronoun:il|Il}} lui dit : « Tu as bien jugé. »",
           "B": "Jésus lui dit : « Ton jugement est juste. »",
           "R": "Jésus a dit : « Tu as raison. »"
+        },
+        "sw": {
+          "L": "Naye akamwambia, \"Umehukumu sawasawa.\"",
+          "B": "Yesu alimwambia, \"Umeamua sawa.\"",
+          "R": "Yesu akasema, \"Uko sahihi.\""
         }
       },
       "decisions": [
@@ -6928,10 +8459,20 @@
           "B": "Then {{deity_pronoun:he|He}} turned toward the woman and said to Simon, \"Do you see this woman?",
           "R": "Then Jesus turned toward the woman. But {{deity_pronoun:he|He}} spoke to Simon: \"Do you see this woman?"
         },
+        "es": {
+          "L": "Y volviéndose hacia la mujer, dijo a Simón: «¿Ves a esta mujer?",
+          "B": "Entonces se volvió hacia la mujer y le dijo a Simón: «¿Ves a esta mujer?",
+          "R": "Entonces Jesús se volvió hacia la mujer, pero le habló a Simón: «¿Ves a esta mujer?"
+        },
         "fr": {
           "L": "Et se tournant vers la femme, {{deity_pronoun:il|Il}} dit à Simon : « Vois-tu cette femme ?",
           "B": "Puis {{deity_pronoun:il|Il}} se tourna vers la femme et dit à Simon : « Tu vois cette femme ?",
           "R": "Ensuite, Jésus s’est tourné vers la femme. Mais c’est à Simon qu’{{deity_pronoun:il|Il}} a parlé : « Tu vois cette femme ?"
+        },
+        "sw": {
+          "L": "Naye akimgeukia yule mwanamke, akamwambia Simoni, \"Unamwona mwanamke huyu?",
+          "B": "Kisha akamgeukia yule mwanamke, akamwambia Simoni, \"Je, unamwona mwanamke huyu?",
+          "R": "Kisha Yesu akamgeukia yule mwanamke. Lakini alisema na Simoni, \"Je, unamwona mwanamke huyu?"
         }
       },
       "decisions": [
@@ -7047,10 +8588,20 @@
           "B": "When I came into your house, you gave {{deity_pronoun:me|Me}} no water to wash {{deity_pronoun:my|My}} feet. But she has made {{deity_pronoun:my|My}} feet wet with her tears and dried them with her hair.",
           "R": "I came into your house, and you did not even give {{deity_pronoun:me|Me}} water to wash {{deity_pronoun:my|My}} feet. But this woman has washed {{deity_pronoun:my|My}} feet with her tears and dried them with her hair."
         },
+        "es": {
+          "L": "Entré en tu casa; no {{deity_pronoun:me|Me}} diste agua para [los] pies, pero ella ha mojado {{deity_pronoun:mis|Mis}} pies con [sus] lágrimas y [los] ha secado con sus cabellos.",
+          "B": "Cuando entré en tu casa, no {{deity_pronoun:me|Me}} diste agua para lavarme los pies. Pero ella {{deity_pronoun:me|Me}} ha mojado los pies con sus lágrimas y {{deity_pronoun:me|Me}} los ha secado con sus cabellos.",
+          "R": "Entré en tu casa, y tú ni siquiera {{deity_pronoun:me|Me}} diste agua para lavarme los pies. Pero esta mujer {{deity_pronoun:me|Me}} ha lavado los pies con sus lágrimas y {{deity_pronoun:me|Me}} los ha secado con sus cabellos."
+        },
         "fr": {
           "L": "Je suis entré dans ta maison : tu ne {{deity_pronoun:m’|M’}}as pas donné d’eau pour les pieds ; mais elle, de ses larmes, elle a mouillé {{deity_pronoun:mes|Mes}} pieds, et [les] a essuyés avec ses cheveux.",
           "B": "Quand je suis entré dans ta maison, tu ne {{deity_pronoun:m’|M’}}as pas donné d’eau pour {{deity_pronoun:me|Me}} laver les pieds. Mais elle, elle a mouillé {{deity_pronoun:mes|Mes}} pieds de ses larmes et les a essuyés avec ses cheveux.",
           "R": "Je suis venu chez toi, et tu ne {{deity_pronoun:m’|M’}}as même pas donné d’eau pour {{deity_pronoun:me|Me}} laver les pieds. Mais cette femme a lavé {{deity_pronoun:mes|Mes}} pieds avec ses larmes, et elle les a essuyés avec ses cheveux."
+        },
+        "sw": {
+          "L": "Niliingia nyumbani mwako; hukunipa maji kwa ajili ya miguu [{{deity_pronoun:yangu|Yangu}}], lakini huyu ameilowesha miguu {{deity_pronoun:yangu|Yangu}} kwa machozi [yake] na kuipangusa kwa nywele zake.",
+          "B": "Nilipoingia nyumbani mwako, hukunipa maji ya kunawa miguu {{deity_pronoun:yangu|Yangu}}. Lakini yeye ameilowesha miguu {{deity_pronoun:yangu|Yangu}} kwa machozi yake na kuipangusa kwa nywele zake.",
+          "R": "Nilikuja nyumbani kwako, nawe hukunipa hata maji ya kunawa miguu {{deity_pronoun:yangu|Yangu}}. Lakini mwanamke huyu ameiosha miguu {{deity_pronoun:yangu|Yangu}} kwa machozi yake, na kuipangusa kwa nywele zake."
         }
       },
       "decisions": [
@@ -7135,6 +8686,27 @@
           "footnote": false
         },
         {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n42007044019",
+            "n42007044029"
+          ],
+          "choice": "{{deity_pronoun:me|Me}} on the separate pronoun where English has \"my feet\"",
+          "alternatives": [
+            "{{deity_pronoun:mis|Mis}} pies at every level"
+          ],
+          "reason": "Spanish says \"me ha mojado los pies\" where English says \"my feet\"; the pronoun for Jesus moves to \"me\", which takes the setting. Joined forms (\"lavarme\") take none. The same in verses 45-46.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
           "id": "r-fr-1",
           "layer": "rendering",
           "language": "fr",
@@ -7191,10 +8763,20 @@
           "B": "You did not welcome {{deity_pronoun:me|Me}} with a kiss. But ever since I came in, she has kept on kissing {{deity_pronoun:my|My}} feet.",
           "R": "You did not greet {{deity_pronoun:me|Me}} with a kiss. But from the time I came in, she has not stopped kissing {{deity_pronoun:my|My}} feet."
         },
+        "es": {
+          "L": "No {{deity_pronoun:me|Me}} diste un beso; pero ella, desde que entré, no ha dejado de besar {{deity_pronoun:mis|Mis}} pies.",
+          "B": "No {{deity_pronoun:me|Me}} recibiste con un beso. Pero ella, desde que entré, no ha dejado de besarme los pies.",
+          "R": "Tú no {{deity_pronoun:me|Me}} saludaste con un beso. Pero ella, desde que entré, no ha dejado de besarme los pies."
+        },
         "fr": {
           "L": "Tu ne {{deity_pronoun:m’|M’}}as pas donné de baiser ; mais elle, depuis que je suis entré, n’a pas cessé d’embrasser {{deity_pronoun:mes|Mes}} pieds.",
           "B": "Tu ne {{deity_pronoun:m’|M’}}as pas accueilli par un baiser. Mais elle, depuis que je suis entré, n’a pas arrêté de couvrir {{deity_pronoun:mes|Mes}} pieds de baisers.",
           "R": "Tu ne {{deity_pronoun:m’|M’}}as pas salué avec un baiser. Mais elle, depuis que je suis arrivé, elle n’arrête pas d’embrasser {{deity_pronoun:mes|Mes}} pieds."
+        },
+        "sw": {
+          "L": "Hukunipa busu; lakini huyu, tangu nilipoingia, hajaacha kuibusu miguu {{deity_pronoun:yangu|Yangu}}.",
+          "B": "Hukunikaribisha kwa busu. Lakini tangu nilipoingia, yeye hajaacha kuibusu miguu {{deity_pronoun:yangu|Yangu}}.",
+          "R": "Hukunisalimu kwa busu. Lakini tangu nilipoingia, mwanamke huyu hajaacha kuibusu miguu {{deity_pronoun:yangu|Yangu}}."
         }
       },
       "decisions": [
@@ -7288,10 +8870,20 @@
           "B": "You did not anoint {{deity_pronoun:my|My}} head with olive oil, but she has anointed {{deity_pronoun:my|My}} feet with costly perfume.",
           "R": "You did not put any olive oil on {{deity_pronoun:my|My}} head. But she has rubbed expensive perfume on {{deity_pronoun:my|My}} feet."
         },
+        "es": {
+          "L": "No ungiste {{deity_pronoun:mi|Mi}} cabeza con aceite; pero ella ha ungido {{deity_pronoun:mis|Mis}} pies con perfume.",
+          "B": "No ungiste {{deity_pronoun:mi|Mi}} cabeza con aceite de oliva, pero ella ha ungido {{deity_pronoun:mis|Mis}} pies con un perfume costoso.",
+          "R": "Tú no {{deity_pronoun:me|Me}} pusiste nada de aceite de oliva en la cabeza. Pero ella {{deity_pronoun:me|Me}} ha untado perfume caro en los pies."
+        },
         "fr": {
           "L": "D’huile, tu n’as pas oint {{deity_pronoun:ma|Ma}} tête ; mais elle, de parfum, elle a oint {{deity_pronoun:mes|Mes}} pieds.",
           "B": "Tu n’as pas oint {{deity_pronoun:ma|Ma}} tête d’huile d’olive, mais elle a oint {{deity_pronoun:mes|Mes}} pieds d’un parfum de grand prix.",
           "R": "Tu n’as pas mis un peu d’huile d’olive sur {{deity_pronoun:ma|Ma}} tête. Mais elle, elle a frotté {{deity_pronoun:mes|Mes}} pieds avec un parfum très cher."
+        },
+        "sw": {
+          "L": "Hukukipaka kichwa {{deity_pronoun:changu|Changu}} mafuta; lakini huyu ameipaka miguu {{deity_pronoun:yangu|Yangu}} manukato.",
+          "B": "Hukukipaka kichwa {{deity_pronoun:changu|Changu}} mafuta ya zeituni, lakini yeye ameipaka miguu {{deity_pronoun:yangu|Yangu}} manukato ya thamani.",
+          "R": "Hukunipaka hata mafuta ya zeituni kichwani. Lakini yeye ameipaka miguu {{deity_pronoun:yangu|Yangu}} manukato ya bei ghali."
         }
       },
       "decisions": [
@@ -7395,10 +8987,20 @@
           "B": "So I tell you, her sins, many as they are, stand forgiven; that is why she has shown so much love. But someone who is forgiven little loves little.\"",
           "R": "So I tell you, her many sins are forgiven, and that is why she has shown so much love. But a person who has been forgiven only a little loves only a little.\""
         },
+        "es": {
+          "L": "Por lo cual te digo que sus pecados, que son muchos, han sido perdonados, porque amó mucho; pero aquel a quien poco se le perdona, poco ama».",
+          "B": "Así que te digo que sus pecados, que son muchos, quedan perdonados; por eso ha mostrado tanto amor. Pero aquel a quien se le perdona poco, ama poco».",
+          "R": "Así que te digo que sus muchos pecados están perdonados, y por eso ha mostrado tanto amor. Pero la persona a quien se le ha perdonado solo un poco, ama solo un poco»."
+        },
         "fr": {
           "L": "C’est pourquoi, je te le dis, ses péchés, qui sont nombreux, ont été pardonnés, car elle a beaucoup aimé ; mais celui à qui l’on pardonne peu aime peu. »",
           "B": "C’est pourquoi je te le dis : ses péchés, si nombreux soient-ils, sont pardonnés ; c’est pour cela qu’elle a montré tant d’amour. Mais celui à qui l’on pardonne peu aime peu. »",
           "R": "Alors je te le dis : ses nombreux péchés sont pardonnés, et c’est pour cela qu’elle a montré tant d’amour. Mais celui à qui on a pardonné seulement un peu n’aime que peu. »"
+        },
+        "sw": {
+          "L": "Kwa sababu hiyo, nakuambia, dhambi zake, zilizo nyingi, zimesamehewa, kwa maana alipenda sana; lakini yeye anayesamehewa kidogo, hupenda kidogo.\"",
+          "B": "Kwa hiyo nakuambia, dhambi zake, ingawa ni nyingi, zimesamehewa; ndiyo maana ameonyesha upendo mwingi namna hii. Lakini mtu anayesamehewa kidogo hupenda kidogo.\"",
+          "R": "Kwa hiyo nakuambia, dhambi zake nyingi zimesamehewa, na ndiyo sababu ameonyesha upendo mwingi hivi. Lakini mtu aliyesamehewa kidogo tu, hupenda kidogo tu.\""
         }
       },
       "decisions": [
@@ -7507,10 +9109,20 @@
           "B": "Then {{deity_pronoun:he|He}} said to her, \"Your sins stand forgiven.\"",
           "R": "Then Jesus said to the woman, \"God has forgiven your sins.\""
         },
+        "es": {
+          "L": "Y le dijo: «Tus pecados han sido perdonados».",
+          "B": "Entonces le dijo: «Tus pecados quedan perdonados».",
+          "R": "Luego Jesús le dijo a la mujer: «Dios ha perdonado tus pecados»."
+        },
         "fr": {
           "L": "Et {{deity_pronoun:il|Il}} lui dit : « Tes péchés ont été pardonnés. »",
           "B": "Puis {{deity_pronoun:il|Il}} lui dit : « Tes péchés te sont pardonnés. »",
           "R": "Ensuite, Jésus a dit à la femme : « Dieu a pardonné tes péchés. »"
+        },
+        "sw": {
+          "L": "Naye akamwambia, \"Dhambi zako zimesamehewa.\"",
+          "B": "Kisha akamwambia, \"Dhambi zako zimekwisha kusamehewa.\"",
+          "R": "Kisha Yesu akamwambia yule mwanamke, \"Mungu amekusamehe dhambi zako.\""
         }
       },
       "decisions": [
@@ -7585,10 +9197,20 @@
           "B": "The others at the table with {{deity_pronoun:him|Him}} began to say to one another, \"Who is this man, that {{deity_pronoun:he|He}} even forgives sins?\"",
           "R": "The other guests began to ask each other, \"Who is this man? He even forgives sins!\""
         },
+        "es": {
+          "L": "Y los que estaban reclinados [a la mesa] con [{{deity_pronoun:él|Él}}] comenzaron a decir entre sí: «¿Quién es este, que incluso perdona pecados?».",
+          "B": "Los demás que estaban a la mesa con {{deity_pronoun:él|Él}} comenzaron a decirse unos a otros: «¿Quién es este hombre, que hasta perdona pecados?».",
+          "R": "Los otros invitados comenzaron a preguntarse unos a otros: «¿Quién es este hombre? ¡Hasta perdona pecados!»."
+        },
         "fr": {
           "L": "Et ceux qui étaient à table avec [{{deity_pronoun:lui|Lui}}] se mirent à dire en eux-mêmes : « Qui est celui-ci, qui pardonne même les péchés ? »",
           "B": "Ceux qui étaient à table avec {{deity_pronoun:lui|Lui}} se mirent à se dire entre eux : « Qui est cet homme, pour qu’{{deity_pronoun:il|Il}} aille jusqu’à pardonner les péchés ? »",
           "R": "Les autres invités ont commencé à se demander entre eux : « Qui est cet homme ? Il pardonne même les péchés ! »"
+        },
+        "sw": {
+          "L": "Na wale walioegemea [mezani] pamoja [{{deity_pronoun:naye|Naye}}] wakaanza kusema ndani yao, \"Huyu ni nani, ambaye hata anasamehe dhambi?\"",
+          "B": "Wale wengine waliokuwa mezani pamoja {{deity_pronoun:naye|Naye}} walianza kuambiana, \"Mtu huyu ni nani, hata anasamehe dhambi?\"",
+          "R": "Wageni wengine walianza kuulizana, \"Mtu huyu ni nani? Hata anasamehe dhambi!\""
         }
       },
       "decisions": [
@@ -7666,10 +9288,20 @@
           "B": "But Jesus said to the woman, \"Your faith has saved you. Go in peace.\"",
           "R": "Jesus said to the woman, \"Your faith has saved you. Go home now, and have peace.\""
         },
+        "es": {
+          "L": "Pero {{deity_pronoun:él|Él}} dijo a la mujer: «Tu fe te ha salvado; vete en paz».",
+          "B": "Pero Jesús le dijo a la mujer: «Tu fe te ha salvado. Vete en paz».",
+          "R": "Jesús le dijo a la mujer: «Tu fe te ha salvado. Vete ahora a tu casa, y que tengas paz»."
+        },
         "fr": {
           "L": "Mais {{deity_pronoun:il|Il}} dit à la femme : « Ta foi t’a sauvée ; va en paix. »",
           "B": "Mais Jésus dit à la femme : « Ta foi t’a sauvée. Va en paix. »",
           "R": "Jésus a dit à la femme : « Ta foi t’a sauvée. Maintenant, rentre chez toi, et sois en paix. »"
+        },
+        "sw": {
+          "L": "Lakini akamwambia yule mwanamke, \"Imani yako imekuokoa; nenda kwa amani.\"",
+          "B": "Lakini Yesu alimwambia yule mwanamke, \"Imani yako imekuokoa. Nenda kwa amani.\"",
+          "R": "Yesu alimwambia yule mwanamke, \"Imani yako imekuokoa. Sasa nenda nyumbani, ukawe na amani.\""
         }
       },
       "decisions": [

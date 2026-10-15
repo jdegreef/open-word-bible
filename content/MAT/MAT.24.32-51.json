@@ -42,10 +42,20 @@
           "B": "Take the fig tree as your lesson. When its branches turn soft and leaves start to sprout, you can tell that summer is not far off.",
           "R": "Learn a lesson from the fig tree. When its branches become green and soft and new leaves start to grow, you know that summer is coming soon."
         },
+        "es": {
+          "L": "Y de la higuera {{plural_you:aprendan|aprended}} la parábola: cuando ya su rama se pone tierna y echa las hojas, {{plural_you:saben|sabéis}} que cerca [está] el verano.",
+          "B": "{{plural_you:Aprendan|Aprended}} la lección de la higuera: cuando sus ramas se ponen tiernas y empiezan a brotar las hojas, {{plural_you:saben|sabéis}} que el verano no está lejos.",
+          "R": "{{plural_you:Aprendan|Aprended}} una lección de la higuera. Cuando sus ramas se ponen verdes y tiernas, y le salen hojas nuevas, {{plural_you:saben|sabéis}} que el verano llega pronto."
+        },
         "fr": {
           "L": "Or, du figuier apprenez la parabole : dès que sa branche devient tendre et qu’elle pousse ses feuilles, vous savez que l’été est proche.",
           "B": "Que le figuier vous serve de leçon. Quand ses rameaux deviennent souples et que ses feuilles commencent à pousser, vous savez que l’été n’est pas loin.",
           "R": "Le figuier vous donne une leçon. Quand ses branches deviennent vertes et souples et que de nouvelles feuilles commencent à pousser, vous savez que l’été arrive bientôt."
+        },
+        "sw": {
+          "L": "Basi kutoka kwa mtini jifunzeni mfano: tawi lake likishakuwa laini na kutoa majani, mnajua kwamba kiangazi [kiko] karibu.",
+          "B": "Jifunzeni somo kutoka kwa mtini: matawi yake yanapoanza kuwa laini na majani kuchipua, mnajua kwamba kiangazi kimekaribia.",
+          "R": "Jifunzeni somo kutoka kwa mtini. Matawi yake yanapokuwa mabichi na laini, na majani mapya yanapoanza kuchipua, mnajua kwamba kiangazi kinakuja hivi karibuni."
         }
       },
       "decisions": [
@@ -123,6 +133,47 @@
           "reason": "Here the word means the lesson the fig tree teaches.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40024032005",
+            "n40024032019"
+          ],
+          "choice": "plural_you spans on every plural \"you\" (aprendan|aprended, saben|sabéis)",
+          "alternatives": [],
+          "reason": "Jesus is speaking to his disciples (24:3), so every plural \"you\" in the passage is the ustedes / vosotros setting, a choice English does not have. The same through 24:51.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40024032023"
+          ],
+          "choice": "kiangazi (the hot, dry season)",
+          "alternatives": [
+            "majira ya joto"
+          ],
+          "reason": "In the land of Israel summer is the hot, dry season after the rains (meaning decision m1). \"Kiangazi\" is that season in East Africa; \"majira ya joto\" is a description borrowed from countries with four seasons.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -159,10 +210,20 @@
           "B": "So it is with you: once you see all these things, be sure that it is close, standing at the door.",
           "R": "In the same way, when you see all these things happen, you can be sure that the time is near. It is as close as someone standing at the door."
         },
+        "es": {
+          "L": "Así también {{plural_you:ustedes|vosotros}}, cuando {{plural_you:vean|veáis}} todas estas cosas, {{plural_you:sepan|sabed}} que está cerca, a [las] puertas.",
+          "B": "Así también {{plural_you:ustedes|vosotros}}: cuando {{plural_you:vean|veáis}} todas estas cosas, {{plural_you:tengan|tened}} por seguro que está cerca, ya a la puerta.",
+          "R": "Del mismo modo, cuando {{plural_you:vean|veáis}} que pasan todas estas cosas, {{plural_you:pueden|podéis}} estar seguros de que el momento está cerca. Está tan cerca como alguien que ya está a la puerta."
+        },
         "fr": {
           "L": "Ainsi vous aussi, quand vous verrez toutes ces choses, sachez que [c’]est proche, aux portes.",
           "B": "Il en est de même pour vous : quand vous verrez tout cela, soyez sûrs que c’est proche, juste à la porte.",
           "R": "De la même façon, quand vous verrez toutes ces choses arriver, vous pourrez être sûrs que le moment est proche. Il est aussi près que quelqu’un qui se tient à la porte."
+        },
+        "sw": {
+          "L": "Vivyo hivyo nanyi, mtakapoyaona haya yote, jueni kwamba ni karibu, milangoni.",
+          "B": "Vivyo hivyo nanyi: mtakapoyaona mambo haya yote, jueni kwamba ni karibu, mlangoni kabisa.",
+          "R": "Vivyo hivyo, mtakapoona mambo haya yote yakitokea, mjue kwamba wakati umekaribia. Uko karibu kama mtu aliyesimama mlangoni."
         }
       },
       "decisions": [
@@ -234,6 +295,28 @@
           "reason": "Readable names the subject as the time of these events, which keeps both readings open as far as English allows.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n40024033010",
+            "n40024033011"
+          ],
+          "choice": "ni karibu (it is near), with no subject",
+          "alternatives": [
+            "yu karibu",
+            "iko karibu"
+          ],
+          "reason": "The Greek does not say what is near (meaning decision m1). A Swahili subject prefix names the class of its subject: \"yu karibu\" would decide for the Son of Man and \"iko karibu\" for a thing. \"Ni karibu\" leaves the subject open, as the Greek does; Readable says \"wakati\" (the time), as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -272,10 +355,20 @@
           "B": "Truly I tell you, all these things will happen before this generation has passed away.",
           "R": "I tell you the truth: the people living now will not all die before all these things happen."
         },
+        "es": {
+          "L": "En verdad {{plural_you:les|os}} digo que de ningún modo pasará esta generación hasta que todas estas cosas sucedan.",
+          "B": "En verdad {{plural_you:les|os}} digo que todo esto sucederá antes de que pase esta generación.",
+          "R": "{{plural_you:Les|Os}} digo la verdad: antes de que muera toda la gente que vive ahora, sucederán todas estas cosas."
+        },
         "fr": {
           "L": "En vérité, je vous le dis : cette génération ne passera certainement pas jusqu’à ce que toutes ces choses soient arrivées.",
           "B": "En vérité, je vous le dis : tout cela arrivera avant que cette génération ait passé.",
           "R": "Je vous le dis, c’est la vérité : les gens qui vivent aujourd’hui ne seront pas tous morts avant que tout cela arrive."
+        },
+        "sw": {
+          "L": "Kweli nawaambia kwamba kizazi hiki hakitapita kamwe hadi mambo haya yote yatokee.",
+          "B": "Kweli nawaambia, mambo haya yote yatatokea kabla kizazi hiki hakijapita.",
+          "R": "Nawaambia ukweli: watu wanaoishi sasa hawatakufa wote kabla mambo haya yote hayajatokea."
         }
       },
       "decisions": [
@@ -379,6 +472,27 @@
           "footnote": false
         },
         {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40024034001",
+            "n40024034002",
+            "n40024034003"
+          ],
+          "choice": "En verdad les digo (L, B); Les digo la verdad (R)",
+          "alternatives": [],
+          "reason": "The rendering of Jesus's single \"amen\" used through Matthew; it covers 24:47.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
           "id": "r-fr-1",
           "layer": "rendering",
           "language": "fr",
@@ -399,6 +513,29 @@
             "En vérité, je vous dis que (L)"
           ],
           "reason": "The term sheet's forms for the \"amen\" saying, as in Mark 13:30; Literal too uses the fixed formula and a colon rather than \"que\". The same in 24:47 and 25:12, 25:40, 25:45.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40024034001",
+            "n40024034002",
+            "n40024034003"
+          ],
+          "choice": "Kweli nawaambia (L, B); Nawaambia ukweli (R)",
+          "alternatives": [
+            "Amin, nawaambia"
+          ],
+          "reason": "The rendering of Jesus's single \"amen\" used through Matthew, as John's double form is \"Kweli kweli nawaambia\"; it covers 24:47.",
           "uncertain": false,
           "footnote": false
         }
@@ -437,10 +574,20 @@
           "B": "Heaven and earth will pass away; {{deity_pronoun:my|My}} words never will.",
           "R": "The sky and the earth will come to an end, but {{deity_pronoun:my|My}} words will last forever."
         },
+        "es": {
+          "L": "El cielo y la tierra pasarán, pero {{deity_pronoun:mis|Mis}} palabras de ningún modo pasarán.",
+          "B": "El cielo y la tierra pasarán; {{deity_pronoun:mis|Mis}} palabras, jamás.",
+          "R": "El cielo y la tierra llegarán a su fin, pero {{deity_pronoun:mis|Mis}} palabras durarán para siempre."
+        },
         "fr": {
           "L": "Le ciel et la terre passeront, mais {{deity_pronoun:mes|Mes}} paroles ne passeront certainement pas.",
           "B": "Le ciel et la terre passeront ; {{deity_pronoun:mes|Mes}} paroles, elles, ne passeront jamais.",
           "R": "Le ciel et la terre vont finir, mais {{deity_pronoun:mes|Mes}} paroles dureront pour toujours."
+        },
+        "sw": {
+          "L": "Mbingu na dunia zitapita, lakini maneno {{deity_pronoun:yangu|Yangu}} hayatapita kwa vyovyote.",
+          "B": "Mbingu na dunia zitapita, ila maneno {{deity_pronoun:yangu|Yangu}} hayatapita kamwe.",
+          "R": "Mbingu na dunia zitafikia mwisho, lakini maneno {{deity_pronoun:yangu|Yangu}} yatadumu milele."
         }
       },
       "decisions": [
@@ -509,6 +656,46 @@
           "reason": "Readable uses plainer words for passing away and never passing away.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40024035010"
+          ],
+          "choice": "deity_pronoun spans only on separate pronouns and possessives (mis)",
+          "alternatives": [
+            "a span on every pronoun the English marks"
+          ],
+          "reason": "Spanish leaves most subject pronouns out and marks the person in the verb, where there is nothing separate to capitalise, so the setting covers fewer words than in English (24:44 Readable has none). The same through 24:51.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40024035010"
+          ],
+          "choice": "deity_pronoun span on yangu (my) only",
+          "alternatives": [],
+          "reason": "Swahili marks most pronouns with a prefix inside the verb, which cannot take a capital, so the setting applies only to free pronouns and possessives, as in John. In 24:44 the English Readable marks \"he\"; Swahili says \"atakuja\" with no span. The same through 24:51.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -554,10 +741,20 @@
           "B": "No one knows the day or the hour when that will come. The angels in heaven do not know it, and neither does the Son. Only the Father knows.",
           "R": "But no one knows on what day or at what hour this will happen. The angels in heaven do not know. Even the Son does not know. Only the Father knows."
         },
+        "es": {
+          "L": "Pero acerca de aquel día y hora nadie sabe, ni los ángeles de los cielos, ni el Hijo, sino solo el Padre.",
+          "B": "Nadie sabe el día ni la hora en que eso llegará. No lo saben los ángeles del cielo, ni tampoco el Hijo. Solo el Padre lo sabe.",
+          "R": "Pero nadie sabe qué día ni a qué hora sucederá esto. Los ángeles del cielo no lo saben. Ni siquiera el Hijo lo sabe. Solo el Padre lo sabe."
+        },
         "fr": {
           "L": "Mais au sujet de ce jour-là et de l’heure, personne ne sait, pas même les anges des cieux, ni le Fils, sinon le Père seul.",
           "B": "Personne ne connaît le jour ni l’heure où cela arrivera. Les anges du ciel ne les connaissent pas, et le Fils non plus. Seul le Père les connaît.",
           "R": "Mais personne ne sait quel jour ni à quelle heure cela arrivera. Les anges dans le ciel ne le savent pas. Même le Fils ne le sait pas. Seul le Père le sait."
+        },
+        "sw": {
+          "L": "Lakini kuhusu siku ile na saa hakuna anayejua, wala malaika wa mbinguni, wala Mwana, isipokuwa Baba peke yake.",
+          "B": "Hakuna mtu anayejua siku wala saa jambo hilo litakapotokea. Malaika walio mbinguni hawajui, wala Mwana hajui. Baba peke yake ndiye anayejua.",
+          "R": "Lakini hakuna mtu anayejua ni siku gani au saa ngapi jambo hili litatokea. Malaika wa mbinguni hawajui. Hata Mwana hajui. Baba peke yake ndiye anayejua."
         }
       },
       "decisions": [
@@ -677,10 +874,20 @@
           "B": "The coming of the Son of Man will be like the days of Noah.",
           "R": "When the Son of Man comes, it will be like it was in the time of Noah."
         },
+        "es": {
+          "L": "Porque como [fueron] los días de Noé, así será la venida del Hijo del Hombre.",
+          "B": "La venida del Hijo del Hombre será como los días de Noé.",
+          "R": "Cuando venga el Hijo del Hombre, será como en el tiempo de Noé."
+        },
         "fr": {
           "L": "Car comme [ont été] les jours de Noé, ainsi sera la venue du Fils de l’homme.",
           "B": "La venue du Fils de l’homme sera comme au temps de Noé.",
           "R": "Quand le Fils de l’homme viendra, ce sera comme au temps de Noé."
+        },
+        "sw": {
+          "L": "Kwa maana kama siku za Nuhu [zilivyokuwa], hivyo ndivyo kuja kwa Mwana wa Adamu kutakavyokuwa.",
+          "B": "Kuja kwa Mwana wa Adamu kutakuwa kama siku za Nuhu.",
+          "R": "Mwana wa Adamu atakapokuja, itakuwa kama ilivyokuwa wakati wa Nuhu."
         }
       },
       "decisions": [
@@ -717,6 +924,29 @@
           ],
           "reason": "The same word for the arrival of the Son of Man.",
           "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40024037012",
+            "n40024037013",
+            "n40024037014"
+          ],
+          "choice": "Mwana wa Adamu",
+          "alternatives": [
+            "Mwana wa Mtu"
+          ],
+          "reason": "The settled Swahili title, used through Matthew (\"Adamu\" also means humankind). \"Mwana wa Mtu\" is closer to the Greek words; a reviewer should weigh it.",
+          "uncertain": true,
           "footnote": false
         }
       ],
@@ -785,10 +1015,20 @@
           "B": "Before the flood, people carried on with their meals and their drinking, with weddings for themselves and their children, right up to the day Noah went into the ark. \\v 39 They had no idea what was coming until the flood came and swept every one of them away. The coming of the Son of Man will be like that too.",
           "R": "Before the great flood, people were eating and drinking. They were getting married and giving their children to be married. They kept on doing this until the day Noah went into the big boat. \\v 39 They did not know what was going to happen until the flood came and carried them all away. It will be the same when the Son of Man comes."
         },
+        "es": {
+          "L": "Porque como en los días antes del diluvio estaban comiendo y bebiendo, casándose y dando en casamiento, hasta el día en que Noé entró en el arca, \\v 39 y no se dieron cuenta hasta que vino el diluvio y se los llevó a todos, así será también la venida del Hijo del Hombre.",
+          "B": "Antes del diluvio, la gente seguía comiendo y bebiendo, celebrando bodas para sí y para sus hijos, hasta el mismo día en que Noé entró en el arca. \\v 39 No tenían idea de lo que venía, hasta que llegó el diluvio y los arrastró a todos. Así será también la venida del Hijo del Hombre.",
+          "R": "Antes del gran diluvio, la gente comía y bebía. Se casaban y casaban a sus hijos. Siguieron así hasta el día en que Noé entró en la gran barca. \\v 39 No sabían lo que iba a pasar, hasta que llegó el diluvio y se los llevó a todos. Lo mismo sucederá cuando venga el Hijo del Hombre."
+        },
         "fr": {
           "L": "Car, comme dans les jours qui précédaient le déluge ils mangeaient et buvaient, se mariaient et donnaient en mariage, jusqu’au jour où Noé est entré dans l’arche, \\v 39 et ils n’ont rien su jusqu’à ce que le déluge vienne et les emporte tous, ainsi sera aussi la venue du Fils de l’homme.",
           "B": "Avant le déluge, les gens continuaient à manger et à boire, à se marier et à marier leurs enfants, jusqu’au jour même où Noé est entré dans l’arche. \\v 39 Ils ne se doutaient de rien jusqu’à ce que le déluge arrive et les emporte tous. Il en sera de même à la venue du Fils de l’homme.",
           "R": "Avant le grand déluge, les gens mangeaient et buvaient. Ils se mariaient et mariaient leurs enfants. Ils ont continué ainsi jusqu’au jour où Noé est entré dans le grand bateau. \\v 39 Ils ne savaient pas ce qui allait arriver, jusqu’au moment où le déluge est venu et les a tous emportés. Ce sera la même chose quand le Fils de l’homme viendra."
+        },
+        "sw": {
+          "L": "Kwa kuwa kama walivyokuwa, katika siku zile zilizotangulia gharika, wakila na kunywa, wakioa na kuoza, mpaka siku ambayo Nuhu aliingia ndani ya safina, \\v 39 na hawakufahamu mpaka gharika ilipofika na kuwazoa wote, vivyo hivyo kutakuwa pia kuja kwa Mwana wa Adamu.",
+          "B": "Kabla ya gharika, watu waliendelea kula na kunywa, kuoa na kuwaoza watoto wao, mpaka siku ile Nuhu alipoingia katika safina. \\v 39 Hawakujua lililokuwa likija mpaka gharika ilipofika, ikawazoa wote. Kuja kwa Mwana wa Adamu kutakuwa vivyo hivyo.",
+          "R": "Kabla ya gharika kubwa, watu walikuwa wakila na kunywa. Walikuwa wakioa na kuwaoza watoto wao. Waliendelea hivyo mpaka siku ambayo Nuhu aliingia ndani ya ile mashua kubwa. \\v 39 Hawakujua kitakachotokea mpaka gharika ilipokuja na kuwachukua wote. Ndivyo itakavyokuwa Mwana wa Adamu atakapokuja."
         }
       },
       "decisions": [
@@ -924,6 +1164,27 @@
           "reason": "These are Jesus's words, so the story of Noah is told in the tenses of speech, as the style guide asks for stories told inside speech and as in Luke 17:27.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40024038016"
+          ],
+          "choice": "kuoza (to give in marriage)",
+          "alternatives": [
+            "kuolewa"
+          ],
+          "reason": "Swahili has its own verb for giving a child in marriage, \"kuoza\", beside \"kuoa\" (to marry a wife), so the Greek pair comes through as a pair (meaning decision m2). \"Kuolewa\" (to be married, of a woman) would change the second verb's meaning.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -958,10 +1219,20 @@
           "B": "Two people will then be working in the field: one is taken, and the other is left.",
           "R": "At that time two people will be working in a field. One will be taken, and the other will be left behind."
         },
+        "es": {
+          "L": "Entonces dos estarán en el campo; uno es tomado y uno es dejado.",
+          "B": "Entonces habrá dos personas trabajando en el campo: una es llevada y la otra es dejada.",
+          "R": "En ese momento, dos personas estarán trabajando en un campo. Una será llevada, y la otra será dejada atrás."
+        },
         "fr": {
           "L": "Alors deux seront dans le champ : l’un est pris et l’autre est laissé.",
           "B": "Deux personnes travailleront alors dans les champs : l’une est prise, et l’autre laissée.",
           "R": "À ce moment-là, deux personnes seront en train de travailler dans un champ. L’une sera prise, et l’autre sera laissée."
+        },
+        "sw": {
+          "L": "Wakati huo wawili watakuwa shambani; mmoja anachukuliwa na mmoja anaachwa.",
+          "B": "Wakati huo watu wawili watakuwa wakifanya kazi shambani: mmoja anachukuliwa, na mwingine anaachwa.",
+          "R": "Wakati huo watu wawili watakuwa wakifanya kazi shambani. Mmoja atachukuliwa, na mwingine ataachwa."
         }
       },
       "decisions": [
@@ -1055,10 +1326,20 @@
           "B": "Two women will be grinding grain at the mill: one is taken, and the other is left.",
           "R": "Two women will be grinding grain with a millstone. One will be taken, and the other will be left behind."
         },
+        "es": {
+          "L": "Dos [mujeres estarán] moliendo en el molino; una es tomada y una es dejada.",
+          "B": "Dos mujeres estarán moliendo grano en el molino: una es llevada y la otra es dejada.",
+          "R": "Dos mujeres estarán moliendo grano con una piedra de moler. Una será llevada, y la otra será dejada atrás."
+        },
         "fr": {
           "L": "Deux [femmes] moudront à la meule : l’une est prise et l’autre est laissée.",
           "B": "Deux femmes moudront du grain à la meule : l’une est prise, et l’autre laissée.",
           "R": "Deux femmes seront en train de moudre du grain avec une meule. L’une sera prise, et l’autre sera laissée."
+        },
+        "sw": {
+          "L": "[Wanawake] wawili [watakuwa] wakisaga kwenye jiwe la kusagia; mmoja anachukuliwa na mmoja anaachwa.",
+          "B": "Wanawake wawili watakuwa wakisaga nafaka kwenye jiwe la kusagia: mmoja anachukuliwa, na mwingine anaachwa.",
+          "R": "Wanawake wawili watakuwa wakisaga nafaka kwa jiwe la kusagia. Mmoja atachukuliwa, na mwingine ataachwa."
         }
       },
       "decisions": [
@@ -1102,6 +1383,26 @@
           "reason": "The Greek words are feminine, so every level says women. Balanced and Readable say what was ground.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n40024041001",
+            "n40024041002"
+          ],
+          "choice": "[Wanawake] (L); Wanawake (B, R)",
+          "alternatives": [],
+          "reason": "The Greek shows that the two are women only by the endings of its words (meaning decision m1). \"Wawili\" and \"mmoja\" do not show it in Swahili, so the word for women is supplied, in brackets at Literal, as in English.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1136,10 +1437,20 @@
           "B": "So stay alert, since you do not know which day your Lord will come.",
           "R": "So keep watching and be ready! You do not know what day your Lord will come."
         },
+        "es": {
+          "L": "{{plural_you:Estén|Estad}} en vela, pues, porque no {{plural_you:saben|sabéis}} en qué día viene {{plural_you:su|vuestro}} Señor.",
+          "B": "Así que {{plural_you:manténganse|manteneos}} alerta, pues no {{plural_you:saben|sabéis}} qué día vendrá {{plural_you:su|vuestro}} Señor.",
+          "R": "Por eso, {{plural_you:estén|estad}} atentos y {{plural_you:prepárense|preparaos}}. No {{plural_you:saben|sabéis}} qué día vendrá {{plural_you:su|vuestro}} Señor."
+        },
         "fr": {
           "L": "Veillez donc, car vous ne savez pas quel jour votre Seigneur vient.",
           "B": "Restez donc vigilants, puisque vous ne savez pas quel jour votre Seigneur viendra.",
           "R": "Alors restez éveillés et soyez prêts ! Vous ne savez pas quel jour votre Seigneur viendra."
+        },
+        "sw": {
+          "L": "Basi kesheni, kwa sababu hamjui ni siku ipi Bwana wenu anakuja.",
+          "B": "Kwa hiyo kaeni macho, kwa kuwa hamjui ni siku gani Bwana wenu atakuja.",
+          "R": "Kwa hiyo endeleeni kukesha na kuwa tayari! Hamjui ni siku gani Bwana wenu atakuja."
         }
       },
       "decisions": [
@@ -1278,10 +1589,20 @@
           "B": "Think about this. A homeowner who knew at what time of night a thief was coming would stay awake and not allow anyone to dig through the walls of his house.",
           "R": "Think about this. Suppose the owner of a house knew what time of night a robber would come. He would stay awake. He would not let the robber break into his house."
         },
+        "es": {
+          "L": "Pero {{plural_you:sepan|sabed}} esto: que si el dueño de casa hubiera sabido en qué vigilia viene el ladrón, habría vigilado y no habría permitido que su casa fuera horadada.",
+          "B": "{{plural_you:Piensen|Pensad}} en esto: el dueño de una casa que supiera a qué hora de la noche va a venir el ladrón se quedaría despierto y no dejaría que nadie abriera un boquete en las paredes de su casa.",
+          "R": "{{plural_you:Piensen|Pensad}} en esto. Supongamos que el dueño de una casa supiera a qué hora de la noche va a llegar un ladrón. Se quedaría despierto. No dejaría que el ladrón entrara a la fuerza en su casa."
+        },
         "fr": {
           "L": "Mais sachez ceci : si le maître de maison avait su à quelle veille le voleur venait, il aurait veillé et n’aurait pas laissé percer sa maison.",
           "B": "Réfléchissez à ceci. Un propriétaire qui saurait à quelle heure de la nuit un voleur doit venir resterait éveillé et ne laisserait personne percer les murs de sa maison.",
           "R": "Réfléchissez bien. Imaginez que le propriétaire d’une maison sache à quelle heure de la nuit un voleur va venir. Il resterait éveillé. Il ne laisserait pas le voleur entrer de force chez lui."
+        },
+        "sw": {
+          "L": "Lakini jueni jambo hili, kwamba kama mwenye nyumba angalifahamu ni lindo lipi [la usiku] mwizi anakuja, angalikaa macho, wala asingaliruhusu nyumba yake itobolewe.",
+          "B": "Fikirini jambo hili. Mwenye nyumba ambaye angejua ni saa ngapi za usiku mwizi angekuja, angekaa macho, wala asingemwacha mtu yeyote atoboe ukuta wa nyumba yake.",
+          "R": "Fikirini jambo hili. Tuseme mwenye nyumba angejua ni saa ngapi usiku mwizi atakuja. Angekaa macho. Asingemwacha mwizi avunje na kuingia nyumbani mwake."
         }
       },
       "decisions": [
@@ -1375,6 +1696,26 @@
           "reason": "Balanced and Readable turn the contrary-to-fact sentence into a plain example.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40024043020"
+          ],
+          "choice": "itobolewe (be bored through, L); atoboe ukuta (dig through the wall, B)",
+          "alternatives": [
+            "ivunjwe"
+          ],
+          "reason": "A thief broke into a house by digging through its wall (meaning decision m2). \"Kutoboa\" says that, as it would of a mud-walled house today; \"kuvunjwa\" (be broken into) loses the picture. Readable says \"avunje na kuingia\", as the English Readable says \"break into\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1414,10 +1755,20 @@
           "B": "So you too must stay prepared: the Son of Man is coming at an hour you do not imagine.",
           "R": "So you must always be ready too. The Son of Man will come at a time when you do not think {{deity_pronoun:he|He}} will come."
         },
+        "es": {
+          "L": "Por esto también {{plural_you:ustedes|vosotros}} {{plural_you:estén|estad}} preparados, porque a la hora que no {{plural_you:piensan|pensáis}} viene el Hijo del Hombre.",
+          "B": "Así que también {{plural_you:ustedes|vosotros}} {{plural_you:deben|debéis}} estar preparados: el Hijo del Hombre viene a una hora que no {{plural_you:se imaginan|os imagináis}}.",
+          "R": "Por eso {{plural_you:ustedes|vosotros}} también {{plural_you:deben|debéis}} estar siempre listos. El Hijo del Hombre vendrá a una hora en que no {{plural_you:piensan|pensáis}} que vaya a venir."
+        },
         "fr": {
           "L": "C’est pourquoi vous aussi, soyez prêts, car c’est à une heure que vous ne pensez pas que le Fils de l’homme vient.",
           "B": "Vous aussi, tenez-vous donc prêts : le Fils de l’homme vient à une heure que vous n’imaginez pas.",
           "R": "Alors vous aussi, soyez toujours prêts. Le Fils de l’homme viendra au moment où vous ne {{deity_pronoun:l’|L’}}attendrez pas."
+        },
+        "sw": {
+          "L": "Kwa sababu hiyo nanyi pia iweni tayari, kwa kuwa katika saa msiyoifikiri Mwana wa Adamu anakuja.",
+          "B": "Kwa hiyo ninyi pia muwe tayari, kwa maana Mwana wa Adamu anakuja saa msiyoitazamia.",
+          "R": "Kwa hiyo ninyi pia muwe tayari wakati wote. Mwana wa Adamu atakuja wakati ambao hamfikiri kwamba atakuja."
         }
       },
       "decisions": [
@@ -1518,10 +1869,20 @@
           "B": "Who, then, is the servant that is trustworthy and sensible, whom the master has put in charge of his household staff to give them their food when it is due?",
           "R": "Who is the servant who is faithful and wise? Suppose a master puts one of his servants in charge of the other servants in his house. That servant must give them their food at the right time."
         },
+        "es": {
+          "L": "¿Quién es, pues, el esclavo fiel y prudente a quien el señor puso sobre su servidumbre para darles el alimento a su tiempo?",
+          "B": "¿Quién es, entonces, el siervo digno de confianza y sensato a quien el señor ha puesto al frente de los criados de su casa, para que les dé la comida a su debido tiempo?",
+          "R": "¿Quién es el siervo fiel y sabio? Supongamos que un hombre pone a uno de sus siervos a cargo de los otros siervos de su casa. Ese siervo tiene que darles la comida a la hora debida."
+        },
         "fr": {
           "L": "Qui donc est l’esclave fidèle et avisé que le maître a établi sur les gens de sa maison pour leur donner la nourriture en temps voulu ?",
           "B": "Qui donc est le serviteur digne de confiance et sensé que le maître a chargé des domestiques de sa maison, pour leur donner leur nourriture au moment voulu ?",
           "R": "Qui est le serviteur fidèle et sage ? Imaginez qu’un maître charge un de ses serviteurs de s’occuper des autres serviteurs de sa maison. Ce serviteur doit leur donner leur nourriture au bon moment."
+        },
+        "sw": {
+          "L": "Basi ni nani yule mtumwa mwaminifu na mwenye busara, ambaye bwana [wake] alimweka juu ya watu wa nyumba yake ili awape chakula kwa majira yake?",
+          "B": "Basi ni nani mtumishi anayeaminika na mwenye busara, ambaye bwana wake amemweka kusimamia watumishi wa nyumba yake, ili awape chakula chao wakati unaofaa?",
+          "R": "Ni nani mtumishi mwaminifu na mwenye hekima? Tuseme bwana mmoja anamweka mmoja wa watumishi wake kuwasimamia watumishi wengine wa nyumbani mwake. Mtumishi huyo anapaswa kuwapa chakula chao kwa wakati unaofaa."
         }
       },
       "decisions": [
@@ -1658,6 +2019,49 @@
           "footnote": false
         },
         {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40024045006"
+          ],
+          "choice": "esclavo (L); siervo (B, R)",
+          "alternatives": [
+            "esclavo at every level"
+          ],
+          "reason": "As the English: the Greek word is a slave (meaning decision m2); Balanced and Readable say \"siervo\", since the parable is about faithful service, not slavery itself. The book-wide choice; the same through 24:51.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40024045012",
+            "n40024045016"
+          ],
+          "choice": "señor, lowercase, at every level, with no deity_pronoun span",
+          "alternatives": [
+            "amo"
+          ],
+          "reason": "The master is a figure in a parable, so his pronouns take no setting, as in English. Lowercase \"señor\" is the master of servants and is the same word as \"Señor\" in 24:42, as the Greek uses one word for both. The same through 24:51.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
           "id": "r-fr-1",
           "layer": "rendering",
           "language": "fr",
@@ -1676,6 +2080,46 @@
             "le seigneur"
           ],
           "reason": "The term sheet's forms, as the English and as in Luke 12:42-47. \"Maître\" is the French word for a slave's owner; \"seigneur\" would sound feudal. The master is a figure in a parable, so his pronouns take no span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40024045006"
+          ],
+          "choice": "mtumwa (L); mtumishi (B, R)",
+          "alternatives": [
+            "mtumwa at every level"
+          ],
+          "reason": "As the English: the Greek word is a slave (meaning decision m2); Balanced and Readable say \"mtumishi\", since the parable is about faithful service, not slavery itself. The book-wide choice; the same through 24:51.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-2",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40024045012"
+          ],
+          "choice": "bwana, lowercase, with no deity_pronoun span",
+          "alternatives": [],
+          "reason": "The master is a figure in a parable, so he is \"bwana\" (master) and his pronouns take no setting, as in English. Swahili uses the same word as \"Bwana\" in 24:42, so the link the Greek makes comes through.",
           "uncertain": false,
           "footnote": false
         }
@@ -1713,10 +2157,20 @@
           "B": "That servant will be blessed if, when his master comes, he finds him at that very work.",
           "R": "That servant will be blessed if his master comes back and finds him doing his job."
         },
+        "es": {
+          "L": "Dichoso aquel esclavo a quien su señor, al venir, encuentre haciendo así.",
+          "B": "Dichoso ese siervo si, cuando llegue su señor, lo encuentra haciendo precisamente eso.",
+          "R": "Ese siervo será dichoso si su señor regresa y lo encuentra haciendo su trabajo."
+        },
         "fr": {
           "L": "Heureux cet esclave que son maître, à son arrivée, trouvera en train de faire ainsi.",
           "B": "Heureux ce serviteur, si son maître, en arrivant, le trouve occupé à ce travail même.",
           "R": "Ce serviteur sera heureux si son maître revient et le trouve en train de faire son travail."
+        },
+        "sw": {
+          "L": "Heri mtumwa huyo, ambaye bwana wake akifika atamkuta anafanya hivyo.",
+          "B": "Heri mtumishi huyo ambaye bwana wake atakaporudi atamkuta akifanya kazi hiyo hasa.",
+          "R": "Mtumishi huyo amebarikiwa ikiwa bwana wake atarudi na kumkuta akifanya kazi yake."
         }
       },
       "decisions": [
@@ -1827,10 +2281,20 @@
           "B": "Truly I tell you, the master will put him in charge of everything he owns.",
           "R": "I tell you the truth, the master will put that servant in charge of everything he owns."
         },
+        "es": {
+          "L": "En verdad {{plural_you:les|os}} digo que sobre todos sus bienes lo pondrá.",
+          "B": "En verdad {{plural_you:les|os}} digo que el señor lo pondrá a cargo de todo lo que tiene.",
+          "R": "{{plural_you:Les|Os}} digo la verdad: el señor pondrá a ese siervo a cargo de todo lo que tiene."
+        },
         "fr": {
           "L": "En vérité, je vous le dis : il l’établira sur tous ses biens.",
           "B": "En vérité, je vous le dis : le maître le chargera de tout ce qu’il possède.",
           "R": "Je vous le dis, c’est la vérité : le maître chargera ce serviteur de tout ce qu’il possède."
+        },
+        "sw": {
+          "L": "Kweli nawaambia kwamba juu ya mali yake yote atamweka.",
+          "B": "Kweli nawaambia, bwana wake atamweka kusimamia mali yake yote.",
+          "R": "Nawaambia ukweli: bwana wake atamweka mtumishi huyo kusimamia kila kitu alicho nacho."
         }
       },
       "decisions": [
@@ -1990,10 +2454,20 @@
           "B": "But that servant may be wicked. He may think to himself, 'My master is a long time coming,' \\v 49 and start to beat his fellow servants, while he eats and drinks with drunkards. \\v 50 If so, his master will come on a day he does not look for, at an hour he does not know. \\v 51 The master will cut him in pieces and put him with the hypocrites, where people will weep and grind their teeth.",
           "R": "But suppose that servant is evil. He says to himself, 'My master will not come back for a long time.' \\v 49 So he begins to beat the other servants. He eats and drinks with people who get drunk. \\v 50 Then the master will come back on a day when the servant does not expect him, at a time he does not know. \\v 51 The master will punish him terribly and put him with the hypocrites. There they will cry and grind their teeth."
         },
+        "es": {
+          "L": "Pero si aquel esclavo malo dice en su corazón: “Mi señor tarda”, \\v 49 y comienza a golpear a sus compañeros esclavos, y come y bebe con los borrachos, \\v 50 vendrá el señor de aquel esclavo en un día en que no [lo] espera y a una hora que no conoce, \\v 51 y lo partirá en dos y pondrá su parte con los hipócritas; allí estará el llanto y el rechinar de los dientes.",
+          "B": "Pero puede que ese siervo sea malvado. Puede que piense: “Mi señor tarda mucho en venir”, \\v 49 y comience a golpear a los demás siervos, mientras come y bebe con borrachos. \\v 50 Si es así, su señor vendrá un día en que no lo espera, a una hora que no sabe. \\v 51 El señor lo hará pedazos y lo pondrá con los hipócritas, donde la gente llorará y rechinará los dientes.",
+          "R": "Pero supongamos que ese siervo es malo. Se dice a sí mismo: “Mi señor va a tardar mucho en volver”. \\v 49 Entonces empieza a golpear a los otros siervos. Come y bebe con gente que se emborracha. \\v 50 Entonces el señor volverá un día en que el siervo no lo espera, a una hora que no sabe. \\v 51 El señor lo castigará con mucha dureza y lo pondrá con los hipócritas. Allí llorarán y rechinarán los dientes."
+        },
         "fr": {
           "L": "Mais si ce mauvais esclave dit dans son cœur : “Mon maître tarde”, \\v 49 et qu’il se mette à battre ses compagnons d’esclavage, et qu’il mange et boive avec les ivrognes, \\v 50 le maître de cet esclave viendra un jour où il ne [l’]attend pas et à une heure qu’il ne connaît pas, \\v 51 et il le coupera en deux et lui assignera sa part avec les hypocrites ; là il y aura les pleurs et les grincements de dents.",
           "B": "Mais ce serviteur pourrait être méchant. Il pourrait se dire : “Mon maître tarde à venir”, \\v 49 et se mettre à battre ses compagnons de service, tout en mangeant et en buvant avec des ivrognes. \\v 50 Alors son maître arrivera un jour où il ne s’y attend pas, à une heure qu’il ne connaît pas. \\v 51 Le maître le mettra en pièces et le placera avec les hypocrites, là où l’on pleurera et grincera des dents.",
           "R": "Mais imaginez que ce serviteur soit méchant. Il se dit : “Mon maître ne reviendra pas avant longtemps.” \\v 49 Alors il se met à frapper les autres serviteurs. Il mange et il boit avec des gens qui s’enivrent. \\v 50 Alors le maître reviendra un jour où le serviteur ne l’attend pas, à un moment qu’il ne connaît pas. \\v 51 Le maître le punira terriblement et le mettra avec les hypocrites. Là, ils pleureront et grinceront des dents."
+        },
+        "sw": {
+          "L": "Lakini kama mtumwa huyo mwovu atasema ndani ya moyo wake, 'Bwana wangu anachelewa,' \\v 49 kisha aanze kuwapiga watumwa wenzake, na kula na kunywa pamoja na wale wanaolewa, \\v 50 bwana wa mtumwa huyo atafika siku ambayo hamtarajii, na saa ambayo haijui, \\v 51 naye atampasua vipande viwili na kumpa sehemu yake pamoja na wanafiki; huko kutakuwa na kulia na kusaga meno.",
+          "B": "Lakini huenda mtumishi huyo akawa mwovu. Akajisemea moyoni, 'Bwana wangu anakawia sana kurudi,' \\v 49 akaanza kuwapiga watumishi wenzake, huku akila na kunywa pamoja na walevi. \\v 50 Ikiwa hivyo, bwana wake atakuja siku ambayo hamtazamii, na saa ambayo hajui. \\v 51 Bwana huyo atamkata vipande vipande na kumweka pamoja na wanafiki, mahali ambapo watu watalia na kusaga meno.",
+          "R": "Lakini tuseme mtumishi huyo ni mbaya. Anajisemea, 'Bwana wangu hatarudi hivi karibuni.' \\v 49 Kwa hiyo anaanza kuwapiga watumishi wengine. Anakula na kunywa pamoja na watu wanaolewa. \\v 50 Kisha bwana wake atarudi siku ambayo mtumishi huyo hamtarajii, saa ambayo hajui. \\v 51 Bwana huyo atamwadhibu vikali sana na kumweka pamoja na wanafiki. Huko watalia na kusaga meno."
         }
       },
       "decisions": [

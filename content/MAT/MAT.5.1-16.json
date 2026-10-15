@@ -35,10 +35,20 @@
           "B": "Seeing the crowds, Jesus went up onto the mountain. He sat down, and {{deity_pronoun:his|His}} disciples came to {{deity_pronoun:him|Him}}.",
           "R": "Jesus saw the crowds of people, so {{deity_pronoun:he|He}} went up on a hill and sat down. His followers came to {{deity_pronoun:him|Him}}."
         },
+        "es": {
+          "L": "Y viendo a las multitudes, subió al monte, y cuando se hubo sentado, se {{deity_pronoun:le|Le}} acercaron {{deity_pronoun:sus|Sus}} discípulos,",
+          "B": "Al ver a las multitudes, Jesús subió al monte. Se sentó, y {{deity_pronoun:sus|Sus}} discípulos se {{deity_pronoun:le|Le}} acercaron.",
+          "R": "Jesús vio a toda la gente, así que subió a una colina y se sentó. Sus seguidores se {{deity_pronoun:le|Le}} acercaron."
+        },
         "fr": {
           "L": "Et voyant les foules, {{deity_pronoun:il|Il}} monta sur la montagne, et quand {{deity_pronoun:il|Il}} se fut assis, {{deity_pronoun:ses|Ses}} disciples s’approchèrent de {{deity_pronoun:lui|Lui}},",
           "B": "Voyant les foules, Jésus monta sur la montagne. Il s’assit, et {{deity_pronoun:ses|Ses}} disciples vinrent auprès de {{deity_pronoun:lui|Lui}}.",
           "R": "Jésus a vu les foules, alors {{deity_pronoun:il|Il}} est monté sur une colline et {{deity_pronoun:il|Il}} s’est assis. Ses disciples sont venus près de {{deity_pronoun:lui|Lui}}."
+        },
+        "sw": {
+          "L": "Basi akiyaona makundi ya watu, alipanda juu mlimani, na alipokuwa ameketi, wanafunzi {{deity_pronoun:wake|Wake}} wakamwendea,",
+          "B": "Yesu alipoyaona makundi ya watu, alipanda mlimani. Akaketi, nao wanafunzi {{deity_pronoun:wake|Wake}} wakaja {{deity_pronoun:kwake|Kwake}}.",
+          "R": "Yesu aliona umati wa watu, basi akapanda juu ya kilima, akaketi. Wafuasi {{deity_pronoun:wake|Wake}} wakaja {{deity_pronoun:kwake|Kwake}}."
         }
       },
       "decisions": [
@@ -173,6 +183,26 @@
           "reason": "English Readable says \"followers\". The term sheet keeps \"les disciples\" at every level, as Mark and Luke do; French \"disciple\" is a common word for someone who learns from a master.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40005001013",
+            "n40005001016"
+          ],
+          "choice": "spans only on free pronouns and possessives (wake, kwake)",
+          "alternatives": [],
+          "reason": "Swahili marks most pronouns for Jesus inside the verb (alipanda, wakamwendea), and a prefix cannot take a capital, so only free pronouns and possessives carry the span; this passage has fewer spans than the English.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -204,10 +234,20 @@
           "B": "And {{deity_pronoun:he|He}} began to teach them:",
           "R": "Then {{deity_pronoun:he|He}} began to teach them. He said:"
         },
+        "es": {
+          "L": "y abriendo {{deity_pronoun:su|Su}} boca, les enseñaba, diciendo:",
+          "B": "Y comenzó a enseñarles:",
+          "R": "Entonces comenzó a enseñarles. Les dijo:"
+        },
         "fr": {
           "L": "et ouvrant {{deity_pronoun:sa|Sa}} bouche, {{deity_pronoun:il|Il}} les enseignait, disant :",
           "B": "Et {{deity_pronoun:il|Il}} se mit à les enseigner :",
           "R": "Alors {{deity_pronoun:il|Il}} a commencé à les enseigner. Il disait :"
+        },
+        "sw": {
+          "L": "na akiisha kufungua kinywa {{deity_pronoun:chake|Chake}}, aliwafundisha, akisema:",
+          "B": "Naye akaanza kuwafundisha:",
+          "R": "Kisha akaanza kuwafundisha. Akasema:"
         }
       },
       "decisions": [
@@ -288,10 +328,20 @@
           "B": "\"Blessed are those who are poor in spirit: the kingdom of heaven is theirs.",
           "R": "\"Blessed are those who know they are poor and need God. The kingdom of heaven belongs to them."
         },
+        "es": {
+          "L": "«Dichosos los pobres en espíritu, porque suyo es el reino de los cielos.",
+          "B": "«Dichosos los que son pobres en espíritu: el reino de los cielos es de ellos.",
+          "R": "«Felices los que saben que son pobres y necesitan a Dios. El reino de los cielos les pertenece."
+        },
         "fr": {
           "L": "« Heureux les pauvres en esprit, car à eux est le royaume des cieux.",
           "B": "« Heureux ceux qui sont pauvres en esprit : le royaume des cieux leur appartient.",
           "R": "« Ils sont heureux, ceux qui savent qu’ils sont pauvres et qu’ils ont besoin de Dieu. Le royaume des cieux est à eux."
+        },
+        "sw": {
+          "L": "\"Heri walio maskini rohoni, kwa kuwa wao ndio wenye ufalme wa mbinguni.",
+          "B": "\"Heri wale walio maskini rohoni: ufalme wa mbinguni ni mali yao.",
+          "R": "\"Wamebarikiwa wale wanaojua kwamba ni maskini na wanamhitaji Mungu. Ufalme wa mbinguni ni mali yao."
         }
       },
       "decisions": [
@@ -393,6 +443,51 @@
           "footnote": false
         },
         {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40005003001"
+          ],
+          "choice": "Dichosos (L, B); Felices (R)",
+          "alternatives": [
+            "Bienaventurados"
+          ],
+          "reason": "\"Dichoso\" is the everyday Spanish word for someone in a happy, favored state (meaning decision m1); \"bienaventurado\" is the older church word and sounds remote to many readers. Readable uses the plainest word, \"feliz\". Each level keeps one word through all the sayings.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40005003009",
+            "n40005003010",
+            "n40005003011",
+            "n40005003012"
+          ],
+          "choice": "el reino de los cielos",
+          "alternatives": [
+            "el reino del cielo"
+          ],
+          "reason": "The book-wide Spanish wording for Matthew's phrase at every level, keeping his plural \"cielos\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
           "id": "r-fr-1",
           "layer": "rendering",
           "language": "fr",
@@ -411,6 +506,51 @@
             "Béni soient"
           ],
           "reason": "As in Luke 6:20: \"heureux\" is the usual French word for the beatitudes and says the happy state of those God favours (m1); \"bienheureux\" now sounds churchly or suggests the blessed in heaven, and \"béni\" belongs to another Greek word. Readable turns the exclamation, which has no verb, into a plain sentence; Luke's Readable says \"Vous êtes heureux\" because Luke's sayings are in the second person.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40005003001"
+          ],
+          "choice": "Heri (L, B); Wamebarikiwa (R)",
+          "alternatives": [
+            "Wana furaha"
+          ],
+          "reason": "\"Heri\" is the settled Swahili word for the state of those God favors (meaning decision m1). Readable says \"wamebarikiwa\" (they are blessed), a plain verb new readers know; \"wana furaha\" would say only that they feel happy.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-2",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40005003009",
+            "n40005003010",
+            "n40005003011",
+            "n40005003012"
+          ],
+          "choice": "ufalme wa mbinguni",
+          "alternatives": [
+            "ufalme wa mbingu"
+          ],
+          "reason": "The book-wide wording for Matthew's phrase at every level.",
           "uncertain": false,
           "footnote": false
         }
@@ -442,10 +582,20 @@
           "B": "Blessed are those who mourn: they will be comforted.",
           "R": "Blessed are those who are sad and grieving. God will comfort them."
         },
+        "es": {
+          "L": "Dichosos los que están de duelo, porque ellos serán consolados.",
+          "B": "Dichosos los que están de luto: recibirán consuelo.",
+          "R": "Felices los que están tristes y sufren por una pérdida. Dios los consolará."
+        },
         "fr": {
           "L": "Heureux ceux qui pleurent, car ils seront consolés.",
           "B": "Heureux ceux qui sont en deuil : ils recevront la consolation.",
           "R": "Ils sont heureux, ceux qui sont tristes et en deuil. Dieu les consolera."
+        },
+        "sw": {
+          "L": "Heri wanaoomboleza, kwa kuwa wao watafarijiwa.",
+          "B": "Heri wale wanaoomboleza: watafarijiwa.",
+          "R": "Wamebarikiwa wale walio na huzuni na wanaoomboleza. Mungu atawafariji."
         }
       },
       "decisions": [
@@ -553,10 +703,20 @@
           "B": "Blessed are the gentle: they will inherit the earth.",
           "R": "Blessed are those who are gentle and humble. God will give them the earth as their own."
         },
+        "es": {
+          "L": "Dichosos los mansos, porque ellos heredarán la tierra.",
+          "B": "Dichosos los apacibles: heredarán la tierra.",
+          "R": "Felices los que son amables y humildes. Dios les dará la tierra como suya."
+        },
         "fr": {
           "L": "Heureux les doux, car ils hériteront la terre.",
           "B": "Heureux ceux qui sont doux : la terre leur sera donnée en héritage.",
           "R": "Ils sont heureux, ceux qui sont doux et humbles. Dieu leur donnera la terre pour qu’elle soit à eux."
+        },
+        "sw": {
+          "L": "Heri wapole, kwa kuwa wao watairithi dunia.",
+          "B": "Heri walio wapole: watairithi dunia.",
+          "R": "Wamebarikiwa wale walio wapole na wanyenyekevu. Mungu atawapa dunia iwe mali yao."
         }
       },
       "decisions": [
@@ -652,6 +812,28 @@
           "reason": "\"Meek\" can now suggest weakness. Balanced and Readable use words for the quality meant.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40005005007",
+            "n40005005008"
+          ],
+          "choice": "dunia",
+          "alternatives": [
+            "nchi"
+          ],
+          "reason": "The word can mean the land of Israel, as in Psalm 37:11, or the whole earth (meaning decision m3); \"dunia\" follows the English \"the earth\", while \"nchi\" would point to a country.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -685,10 +867,20 @@
           "B": "Blessed are those who hunger and thirst for righteousness: they will be satisfied.",
           "R": "Blessed are those who long for righteousness the way a hungry person longs for food and a thirsty person for water. God will give them all they long for."
         },
+        "es": {
+          "L": "Dichosos los que padecen hambre y sed de la justicia, porque ellos quedarán saciados.",
+          "B": "Dichosos los hambrientos y sedientos de justicia: serán saciados.",
+          "R": "Felices los que desean la justicia como un hambriento desea la comida y un sediento desea el agua. Dios les dará todo lo que desean."
+        },
         "fr": {
           "L": "Heureux ceux qui ont faim et qui ont soif de la justice, car eux seront rassasiés.",
           "B": "Heureux ceux qui ont faim et soif de justice : ils seront comblés.",
           "R": "Ils sont heureux, ceux qui désirent la justice autant qu’une personne affamée désire manger et qu’une personne assoiffée désire boire. Dieu leur donnera tout ce qu’ils désirent."
+        },
+        "sw": {
+          "L": "Heri wanaoona njaa na kiu ya haki, kwa kuwa wao watashibishwa.",
+          "B": "Heri wale wanaoona njaa na kiu ya haki: watatoshelezwa.",
+          "R": "Wamebarikiwa wale wanaotamani haki kama mtu mwenye njaa anavyotamani chakula, na mwenye kiu anavyotamani maji. Mungu atawapa yote wanayoyatamani."
         }
       },
       "decisions": [
@@ -794,10 +986,20 @@
           "B": "Blessed are the merciful: mercy will be shown to them.",
           "R": "Blessed are those who show mercy to others. God will show mercy to them."
         },
+        "es": {
+          "L": "Dichosos los misericordiosos, porque ellos recibirán misericordia.",
+          "B": "Dichosos los misericordiosos: se les mostrará misericordia.",
+          "R": "Felices los que muestran misericordia a los demás. Dios les mostrará misericordia a ellos."
+        },
         "fr": {
           "L": "Heureux les miséricordieux, car ils recevront miséricorde.",
           "B": "Heureux les miséricordieux : il leur sera fait miséricorde.",
           "R": "Ils sont heureux, ceux qui ont pitié des autres. Dieu aura pitié d’eux."
+        },
+        "sw": {
+          "L": "Heri wenye huruma, kwa kuwa wao watahurumiwa.",
+          "B": "Heri walio na huruma: watahurumiwa.",
+          "R": "Wamebarikiwa wale wanaowahurumia wengine. Mungu atawahurumia."
         }
       },
       "decisions": [
@@ -890,10 +1092,20 @@
           "B": "Blessed are the pure in heart: they will see God.",
           "R": "Blessed are those whose hearts are pure. They will see God."
         },
+        "es": {
+          "L": "Dichosos los puros de corazón, porque ellos verán a Dios.",
+          "B": "Dichosos los puros de corazón: verán a Dios.",
+          "R": "Felices los que tienen un corazón puro. Ellos verán a Dios."
+        },
         "fr": {
           "L": "Heureux les purs de cœur, car ils verront Dieu.",
           "B": "Heureux les cœurs purs : ils verront Dieu.",
           "R": "Ils sont heureux, ceux dont le cœur est pur. Ils verront Dieu."
+        },
+        "sw": {
+          "L": "Heri walio safi moyoni, kwa kuwa wao watamwona Mungu.",
+          "B": "Heri wenye mioyo safi: watamwona Mungu.",
+          "R": "Wamebarikiwa wale wenye mioyo safi. Watamwona Mungu."
         }
       },
       "decisions": [
@@ -983,10 +1195,20 @@
           "B": "Blessed are those who make peace: they will be called {{gender:children|sons}} of God.",
           "R": "Blessed are those who work to bring peace. God will call them {{deity_pronoun:his|His}} {{gender:children|sons}}."
         },
+        "es": {
+          "L": "Dichosos los que hacen la paz, porque ellos serán llamados hijos de Dios.",
+          "B": "Dichosos los que construyen la paz: serán llamados hijos de Dios.",
+          "R": "Felices los que trabajan para traer la paz. Dios los llamará {{deity_pronoun:sus|Sus}} hijos."
+        },
         "fr": {
           "L": "Heureux les artisans de paix, car ils seront appelés {{gender:enfants|fils}} de Dieu.",
           "B": "Heureux ceux qui font la paix : ils seront appelés {{gender:enfants|fils}} de Dieu.",
           "R": "Ils sont heureux, ceux qui travaillent à faire la paix. Dieu les appellera {{deity_pronoun:ses|Ses}} {{gender:enfants|fils}}."
+        },
+        "sw": {
+          "L": "Heri wanaoleta amani, kwa kuwa wao wataitwa wana wa Mungu.",
+          "B": "Heri wale wanaoleta amani: wataitwa wana wa Mungu.",
+          "R": "Wamebarikiwa wale wanaojitahidi kuleta amani. Mungu atawaita watoto {{deity_pronoun:wake|Wake}}."
         }
       },
       "decisions": [
@@ -1063,6 +1285,48 @@
           "reason": "The inclusive default says who is meant; the traditional form keeps \"sons\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40005009006"
+          ],
+          "choice": "hijos, no gender setting",
+          "alternatives": [
+            "hijos e hijas"
+          ],
+          "reason": "Spanish \"hijos\" already means children, daughters and sons, as \"hermanos\" includes sisters (meaning decision m2), so it has no second wording for the English gender setting.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40005009006"
+          ],
+          "choice": "wana (L, B); watoto (R); no gender setting",
+          "alternatives": [
+            "wana wa kiume"
+          ],
+          "reason": "\"Wana\" means children, daughters and sons alike (meaning decision m2), so Swahili has no second wording for the English gender setting.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1098,10 +1362,20 @@
           "B": "Blessed are those who suffer persecution for the sake of righteousness: the kingdom of heaven is theirs.",
           "R": "Blessed are those who are treated badly because they do what is righteous. The kingdom of heaven belongs to them."
         },
+        "es": {
+          "L": "Dichosos los que han sido perseguidos por causa de la justicia, porque suyo es el reino de los cielos.",
+          "B": "Dichosos los que sufren persecución por causa de la justicia: el reino de los cielos es de ellos.",
+          "R": "Felices los que son maltratados por hacer lo que es justo. El reino de los cielos les pertenece."
+        },
         "fr": {
           "L": "Heureux ceux qui ont été persécutés à cause de la justice, car à eux est le royaume des cieux.",
           "B": "Heureux ceux qui sont persécutés pour la cause de la justice : le royaume des cieux leur appartient.",
           "R": "Ils sont heureux, ceux qu’on maltraite parce qu’ils font ce qui est juste. Le royaume des cieux est à eux."
+        },
+        "sw": {
+          "L": "Heri wale walioteswa kwa ajili ya haki, kwa kuwa wao ndio wenye ufalme wa mbinguni.",
+          "B": "Heri wale wanaoteswa kwa sababu ya haki: ufalme wa mbinguni ni mali yao.",
+          "R": "Wamebarikiwa wale wanaotendewa vibaya kwa sababu wanafanya yaliyo haki. Ufalme wa mbinguni ni mali yao."
         }
       },
       "decisions": [
@@ -1200,10 +1474,20 @@
           "B": "You are blessed when people abuse you and persecute you and spread all sorts of evil lies about you for {{deity_pronoun:my|My}} sake.",
           "R": "You are blessed when people say bad things about you and hurt you and tell lies about you because you follow {{deity_pronoun:me|Me}}."
         },
+        "es": {
+          "L": "Dichosos {{plural_you:son|sois}} cuando {{plural_you:los|os}} insulten y [{{plural_you:los|os}}] persigan y digan todo mal contra {{plural_you:ustedes|vosotros}}, mintiendo, por causa de {{deity_pronoun:mí|Mí}}.",
+          "B": "Dichosos {{plural_you:ustedes|vosotros}} cuando la gente {{plural_you:los|os}} insulte, {{plural_you:los|os}} persiga y difunda toda clase de mentiras malvadas contra {{plural_you:ustedes|vosotros}} por causa de {{deity_pronoun:mí|Mí}}.",
+          "R": "Felices {{plural_you:ustedes|vosotros}} cuando la gente hable mal de {{plural_you:ustedes|vosotros}}, {{plural_you:les|os}} haga daño y diga mentiras sobre {{plural_you:ustedes|vosotros}} por ser seguidores {{deity_pronoun:míos|Míos}}."
+        },
         "fr": {
           "L": "Heureux êtes-vous quand on vous insultera, et [vous] persécutera, et dira contre vous toute sorte de mal en mentant, à cause de {{deity_pronoun:moi|Moi}}.",
           "B": "Vous êtes heureux quand on vous insulte, qu’on vous persécute et qu’on répand sur vous toutes sortes de mensonges malveillants à cause de {{deity_pronoun:moi|Moi}}.",
           "R": "Vous êtes heureux quand les gens disent du mal de vous, quand ils vous font souffrir et racontent des mensonges sur vous parce que vous {{deity_pronoun:me|Me}} suivez."
+        },
+        "sw": {
+          "L": "Heri ninyi watakapowatukana na kuwatesa, na kusema kila [neno] baya dhidi yenu, wakisema uongo, kwa ajili {{deity_pronoun:yangu|Yangu}}.",
+          "B": "Heri yenu watu wanapowatukana, wanapowatesa, na kueneza kila aina ya uongo mbaya juu yenu kwa ajili {{deity_pronoun:yangu|Yangu}}.",
+          "R": "Mmebarikiwa watu wanapowasema vibaya, wanapowaumiza na kuwasingizia uongo kwa sababu mnanifuata."
         }
       },
       "decisions": [
@@ -1259,6 +1543,26 @@
           "reason": "Readable says why they are treated this way.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40005011002",
+            "n40005011005"
+          ],
+          "choice": "{{plural_you:ustedes|vosotros}} forms",
+          "alternatives": [],
+          "reason": "Jesus now speaks to his hearers directly (meaning decision m1), so from here every plural \"you\", pronoun or verb, is the plural_you setting: ustedes by default, vosotros as the alternative.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1301,10 +1605,20 @@
           "B": "Rejoice and celebrate, because a great reward is waiting for you in heaven. That is how they persecuted the prophets who came before you.",
           "R": "Be happy and celebrate! You will have a great reward in heaven. People treated the prophets who lived before you in the same way."
         },
+        "es": {
+          "L": "{{plural_you:Alégrense|Alegraos}} y {{plural_you:regocíjense|regocijaos}}, porque {{plural_you:su|vuestra}} recompensa [es] grande en los cielos; pues de esta manera persiguieron a los profetas anteriores a {{plural_you:ustedes|vosotros}}.",
+          "B": "{{plural_you:Alégrense|Alegraos}} y {{plural_you:hagan|haced}} fiesta, porque {{plural_you:les|os}} espera una gran recompensa en el cielo. Así persiguieron a los profetas que vinieron antes que {{plural_you:ustedes|vosotros}}.",
+          "R": "¡{{plural_you:Estén|Estad}} contentos y {{plural_you:celebren|celebrad}}! {{plural_you:Tendrán|Tendréis}} una gran recompensa en el cielo. La gente trató de la misma manera a los profetas que vivieron antes que {{plural_you:ustedes|vosotros}}."
+        },
         "fr": {
           "L": "Réjouissez-vous et exultez, car votre récompense [est] grande dans les cieux ; car ainsi ils ont persécuté les prophètes qui [étaient] avant vous.",
           "B": "Réjouissez-vous, débordez de joie, car une grande récompense vous attend dans le ciel. Les prophètes venus avant vous ont été persécutés de la même façon.",
           "R": "Soyez contents et faites la fête ! Vous aurez une grande récompense dans le ciel. Les gens ont traité de la même façon les prophètes qui ont vécu avant vous."
+        },
+        "sw": {
+          "L": "Furahini na mshangilie, kwa sababu thawabu yenu [ni] kubwa mbinguni; kwa maana hivyo ndivyo walivyowatesa manabii waliowatangulia.",
+          "B": "Furahini na msherehekee, kwa sababu thawabu kubwa inawangoja mbinguni. Ndivyo walivyowatesa manabii waliokuja kabla yenu.",
+          "R": "Furahini na msherehekee! Mtapata thawabu kubwa mbinguni. Watu waliwatendea vivyo hivyo manabii walioishi kabla yenu."
         }
       },
       "decisions": [
@@ -1387,10 +1701,20 @@
           "B": "You are the salt for the earth. But if salt goes flat, what can give it back its saltiness?",
           "R": "You are like salt for all the people on earth. But if salt loses its taste, there is no way to make it salty again."
         },
+        "es": {
+          "L": "{{plural_you:Ustedes son|Vosotros sois}} la sal de la tierra; pero si la sal se vuelve insípida, ¿con qué se la salará?",
+          "B": "{{plural_you:Ustedes son|Vosotros sois}} la sal para la tierra. Pero si la sal pierde su sabor, ¿qué podrá devolverle lo salado?",
+          "R": "{{plural_you:Ustedes son|Vosotros sois}} como sal para toda la gente de la tierra. Pero si la sal pierde su sabor, no hay manera de que vuelva a ser salada."
+        },
         "fr": {
           "L": "Vous êtes le sel de la terre ; mais si le sel devient fade, avec quoi sera-t-il salé ?",
           "B": "Vous êtes le sel pour la terre. Mais si le sel perd sa saveur, qu’est-ce qui pourra lui rendre son goût salé ?",
           "R": "Vous êtes comme du sel pour tous les gens de la terre. Mais si le sel perd son goût, il n’y a aucun moyen de le rendre salé à nouveau."
+        },
+        "sw": {
+          "L": "Ninyi ni chumvi ya dunia; lakini chumvi ikiisha kupoteza ladha yake, itarudishiwa uchumvi wake kwa kitu gani?",
+          "B": "Ninyi ni chumvi kwa ajili ya dunia. Lakini chumvi ikipoteza ladha yake, ni nini kitakachoirudishia uchumvi wake?",
+          "R": "Ninyi ni kama chumvi kwa watu wote duniani. Lakini chumvi ikipoteza ladha yake, hakuna njia ya kuifanya iwe na chumvi tena."
         }
       },
       "decisions": [
@@ -1486,10 +1810,20 @@
           "B": "It is good for nothing anymore but to be thrown out and walked on.",
           "R": "It is not good for anything. It gets thrown out, and people walk on it."
         },
+        "es": {
+          "L": "Ya no sirve para nada, sino para ser arrojada fuera y pisoteada por {{gender:la gente|los hombres}}.",
+          "B": "Ya no sirve para nada, sino para tirarla afuera y que la pisen.",
+          "R": "No sirve para nada. Se tira afuera y la gente la pisa."
+        },
         "fr": {
           "L": "Il n’est plus bon à rien, sinon à être jeté dehors et piétiné par les {{gender:gens|hommes}}.",
           "B": "Il n’est plus bon à rien qu’à être jeté dehors et piétiné.",
           "R": "Il n’est plus bon à rien. On le jette dehors, et les gens marchent dessus."
+        },
+        "sw": {
+          "L": "Haina nguvu tena kwa lolote, ila kutupwa nje ili ikanyagwe na watu.",
+          "B": "Haifai tena kwa chochote ila kutupwa nje na kukanyagwa.",
+          "R": "Haifai kwa kitu chochote. Hutupwa nje, nao watu huikanyaga."
         }
       },
       "decisions": [
@@ -1521,6 +1855,24 @@
           "footnote": false
         },
         {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40005013025",
+            "n40005013026"
+          ],
+          "choice": "{{gender:la gente|los hombres}}",
+          "alternatives": [],
+          "reason": "Spanish has the same two wordings as English here, \"los hombres\" in the older sense of human beings or \"la gente\", so Literal keeps the gender setting, as in 5:16.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
           "id": "r-fr-1",
           "layer": "rendering",
           "language": "fr",
@@ -1536,6 +1888,26 @@
             "les {{gender:humains|hommes}}"
           ],
           "reason": "As in Luke 6:22: the word means people in general, and \"les gens\" is the natural inclusive French for that; \"les humains\" would sound as if humanity were set against something else. The traditional \"les hommes\" is the alternative.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40005013025",
+            "n40005013026"
+          ],
+          "choice": "watu, no gender setting",
+          "alternatives": [
+            "wanaume"
+          ],
+          "reason": "\"Watu\" already means people, men and women; \"wanaume\" would mean males only, so Swahili has no gender span here or in 5:16.",
           "uncertain": false,
           "footnote": false
         }
@@ -1567,10 +1939,20 @@
           "B": "You are the light of the world.",
           "R": "You are like a light for the whole world."
         },
+        "es": {
+          "L": "{{plural_you:Ustedes son|Vosotros sois}} la luz del mundo.",
+          "B": "{{plural_you:Ustedes son|Vosotros sois}} la luz del mundo.",
+          "R": "{{plural_you:Ustedes son|Vosotros sois}} como una luz para todo el mundo."
+        },
         "fr": {
           "L": "Vous êtes la lumière du monde.",
           "B": "Vous êtes la lumière du monde.",
           "R": "Vous êtes comme une lumière pour le monde entier."
+        },
+        "sw": {
+          "L": "Ninyi ni nuru ya ulimwengu.",
+          "B": "Ninyi ni nuru ya ulimwengu.",
+          "R": "Ninyi ni kama nuru kwa ulimwengu wote."
         }
       },
       "decisions": [
@@ -1624,10 +2006,20 @@
           "B": "A town built on a hilltop cannot be hidden.",
           "R": "Everyone can see a town that is built on top of a hill."
         },
+        "es": {
+          "L": "No puede ocultarse una ciudad situada sobre un monte.",
+          "B": "Un pueblo construido en lo alto de un cerro no se puede esconder.",
+          "R": "Todos pueden ver un pueblo que está construido en lo alto de una colina."
+        },
         "fr": {
           "L": "Une ville située sur une colline ne peut pas être cachée.",
           "B": "On ne peut cacher une ville bâtie au sommet d’une colline.",
           "R": "Tout le monde peut voir une ville construite en haut d’une colline."
+        },
+        "sw": {
+          "L": "Mji ulio juu ya kilima hauwezi kufichwa.",
+          "B": "Mji uliojengwa juu ya kilima hauwezi kufichika.",
+          "R": "Kila mtu anaweza kuuona mji uliojengwa juu ya kilima."
         }
       },
       "decisions": [
@@ -1715,10 +2107,20 @@
           "B": "No one lights a lamp and hides it under a basket; it goes on a lampstand, where it shines for everyone in the house.",
           "R": "People do not light a lamp and then cover it with a bowl. They put it up high on a stand, so it gives light to everyone in the house."
         },
+        "es": {
+          "L": "Ni encienden una lámpara y la ponen debajo del cesto, sino sobre el candelero, y alumbra a todos los que [están] en la casa.",
+          "B": "Nadie enciende una lámpara para esconderla debajo de un cesto; se pone sobre el candelero, y desde allí alumbra a todos los de la casa.",
+          "R": "La gente no enciende una lámpara para luego taparla con un recipiente. La pone arriba, en un soporte, y así alumbra a todos los que están en la casa."
+        },
         "fr": {
           "L": "Et on n’allume pas non plus une lampe pour la mettre sous le boisseau, mais sur le porte-lampe, et elle brille pour tous ceux qui [sont] dans la maison.",
           "B": "Personne n’allume une lampe pour la cacher sous un récipient ; on la pose sur son support, et elle éclaire tous ceux qui sont dans la maison.",
           "R": "Les gens n’allument pas une lampe pour la couvrir ensuite avec un seau. Ils la posent en hauteur sur un support, et elle éclaire tout le monde dans la maison."
+        },
+        "sw": {
+          "L": "Wala hawawashi taa na kuiweka chini ya kikapu, bali juu ya kinara chake, nayo inawaangazia wote waliomo ndani ya nyumba.",
+          "B": "Hakuna mtu anayewasha taa na kuificha chini ya kikapu; huiweka juu ya kinara, nayo huwaangazia wote walio nyumbani.",
+          "R": "Watu hawawashi taa kisha kuifunika kwa bakuli. Huiweka juu kwenye kinara, ili iwaangazie wote walio ndani ya nyumba."
         }
       },
       "decisions": [
@@ -1846,10 +2248,20 @@
           "B": "In the same way, your light must shine where people can see it, so that they will see your good deeds and give glory to your Father in heaven.",
           "R": "In the same way, let your light shine for people to see. Then they will see the good things you do, and they will give glory to your Father in heaven."
         },
+        "es": {
+          "L": "De este modo resplandezca {{plural_you:su|vuestra}} luz ante {{gender:la gente|los hombres}}, de manera que vean {{plural_you:sus|vuestras}} obras buenas y den gloria a {{plural_you:su|vuestro}} Padre, el [que está] en los cielos.",
+          "B": "Del mismo modo, {{plural_you:su|vuestra}} luz debe brillar donde la gente pueda verla, para que vean {{plural_you:sus|vuestras}} buenas acciones y den gloria a {{plural_you:su|vuestro}} Padre que está en el cielo.",
+          "R": "De la misma manera, {{plural_you:dejen|dejad}} que {{plural_you:su|vuestra}} luz brille para que la gente la vea. Así verán el bien que {{plural_you:ustedes hacen|hacéis}}, y darán gloria a {{plural_you:su|vuestro}} Padre que está en el cielo."
+        },
         "fr": {
           "L": "De même, que votre lumière brille devant les {{gender:gens|hommes}}, afin qu’ils voient vos bonnes œuvres et qu’ils glorifient votre Père qui [est] dans les cieux.",
           "B": "De la même manière, votre lumière doit briller là où les gens peuvent la voir, afin qu’ils voient le bien que vous faites et rendent gloire à votre Père qui est dans le ciel.",
           "R": "De la même façon, faites briller votre lumière pour que les gens la voient. Alors ils verront le bien que vous faites, et ils rendront gloire à votre Père qui est dans le ciel."
+        },
+        "sw": {
+          "L": "Hivyo nuru yenu na ing'ae mbele ya watu, ili waone kazi zenu nzuri na kumpa utukufu Baba yenu aliye mbinguni.",
+          "B": "Vilevile, nuru yenu inapaswa kung'aa mahali ambapo watu wanaweza kuiona, ili waone matendo yenu mazuri na kumtukuza Baba yenu wa mbinguni.",
+          "R": "Vivyo hivyo, acheni nuru yenu iangaze ili watu waione. Ndipo watakapoyaona mambo mema mnayoyafanya, nao watamtukuza Baba yenu aliye mbinguni."
         }
       },
       "decisions": [

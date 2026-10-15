@@ -34,10 +34,20 @@
           "B": "Pharisees and Sadducees came to put Jesus to the test. They asked {{deity_pronoun:him|Him}} to show them a sign from heaven.",
           "R": "Some Pharisees and Sadducees came to Jesus. They wanted to trap {{deity_pronoun:him|Him}}. So they asked {{deity_pronoun:him|Him}} to show them a sign from heaven to prove that God had sent {{deity_pronoun:him|Him}}."
         },
+        "es": {
+          "L": "Y se acercaron los fariseos y saduceos y, para ponerlo a prueba, {{deity_pronoun:le|Le}} pidieron que les mostrara una señal del cielo.",
+          "B": "Unos fariseos y saduceos vinieron a poner a prueba a Jesús. Le pidieron que les mostrara una señal del cielo.",
+          "R": "Unos fariseos y saduceos se acercaron a Jesús. Querían atraparlo. Así que {{deity_pronoun:le|Le}} pidieron que les mostrara una señal del cielo para probar que Dios {{deity_pronoun:lo|Lo}} había enviado."
+        },
         "fr": {
           "L": "Et les Pharisiens et les Sadducéens s’approchèrent et, pour {{deity_pronoun:le|Le}} mettre à l’épreuve, ils {{deity_pronoun:lui|Lui}} demandèrent de leur montrer un signe venant du ciel.",
           "B": "Des Pharisiens et des Sadducéens vinrent pour mettre Jésus à l’épreuve. Ils {{deity_pronoun:lui|Lui}} demandèrent de leur montrer un signe venant du ciel.",
           "R": "Des Pharisiens et des Sadducéens sont venus voir Jésus. Ils voulaient {{deity_pronoun:le|Le}} prendre au piège. Alors ils {{deity_pronoun:lui|Lui}} ont demandé de leur montrer un signe venant du ciel, pour prouver que Dieu {{deity_pronoun:l’|L’}}avait envoyé."
+        },
+        "sw": {
+          "L": "Na Mafarisayo na Masadukayo walikuja, na wakimjaribu, wakamwomba awaonyeshe ishara kutoka mbinguni.",
+          "B": "Mafarisayo na Masadukayo walikuja ili kumjaribu Yesu. Wakamwomba awaonyeshe ishara kutoka mbinguni.",
+          "R": "Baadhi ya Mafarisayo na Masadukayo walimjia Yesu. Walitaka kumtega. Basi wakamwomba awaonyeshe ishara kutoka mbinguni kuthibitisha kwamba Mungu ndiye aliyemtuma."
         }
       },
       "decisions": [
@@ -139,6 +149,27 @@
           "footnote": false
         },
         {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40016001007",
+            "n40016001009"
+          ],
+          "choice": "spans on separate pronouns (le, lo); none on pronouns joined to the verb (ponerlo, atraparlo)",
+          "alternatives": [
+            "a span on every pronoun the English marks"
+          ],
+          "reason": "Spanish joins some object pronouns to the verb and usually leaves the subject pronoun out, so there is nothing separate to capitalise. The setting covers separate pronouns and possessives only, so Spanish has fewer spans than English throughout the passage.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
           "id": "r-fr-1",
           "layer": "rendering",
           "language": "fr",
@@ -181,6 +212,27 @@
           "reason": "The style guide's terms for the Gospels and Acts: the names of the groups are capitalised, as in John and Mark, so that they read as names.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40016001009"
+          ],
+          "choice": "no deity_pronoun span on the object prefix -m- (wakimjaribu, wakamwomba)",
+          "alternatives": [
+            "a span on every pronoun the English marks"
+          ],
+          "reason": "The English \"him\" takes the setting. Swahili carries it in the object prefix -m- of the verb, which cannot take a capital, so the setting applies only to free pronouns and possessives (yeye, wake, nami). Swahili therefore has fewer spans than English throughout the passage.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -217,10 +269,20 @@
           "B": "He answered them, \"In the evening you say, 'It will be fine weather, because the sky is red.'",
           "R": "Jesus answered, \"In the evening you say, 'The weather will be good tomorrow, because the sky is red.'"
         },
+        "es": {
+          "L": "Pero {{deity_pronoun:él|Él}}, respondiendo, les dijo: «Al caer la tarde {{plural_you:dicen|decís}}: “[Hará] buen tiempo, porque el cielo está rojo”.",
+          "B": "Él les respondió: «Por la tarde {{plural_you:dicen|decís}}: “Va a hacer buen tiempo, porque el cielo está rojo”.",
+          "R": "Jesús les respondió: «Por la tarde {{plural_you:dicen|decís}}: “Mañana va a hacer buen tiempo, porque el cielo está rojo”."
+        },
         "fr": {
           "L": "Mais {{deity_pronoun:il|Il}} répondit et leur dit : « Le soir venu, vous dites : “[Il fera] beau temps, car le ciel est rouge.”",
           "B": "Il leur répondit : « Le soir, vous dites : “Il va faire beau, parce que le ciel est rouge.”",
           "R": "Jésus a répondu : « Le soir, vous dites : “Il va faire beau demain, parce que le ciel est rouge.”"
+        },
+        "sw": {
+          "L": "Lakini {{deity_pronoun:yeye|Yeye}} akajibu, akawaambia, \"Jioni inapofika mnasema, '[Kutakuwa na] hali nzuri ya hewa, kwa maana anga ni jekundu.'",
+          "B": "Aliwajibu, \"Jioni mnasema, 'Hali ya hewa itakuwa nzuri, kwa sababu anga ni jekundu.'",
+          "R": "Yesu aliwajibu, \"Jioni mnasema, 'Kesho hali ya hewa itakuwa nzuri, kwa sababu anga ni jekundu.'"
         }
       },
       "decisions": [
@@ -285,6 +347,25 @@
           "reason": "Readable says that the evening sky was read as a sign of the next day's weather.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40016002008"
+          ],
+          "choice": "{{plural_you:dicen|decís}} and every plural \"you\" in the passage",
+          "alternatives": [],
+          "reason": "Spanish has two plural forms of \"you\", Latin American \"ustedes\" (the default) and Peninsular \"vosotros\"; the setting chooses between them. English has no such choice, so these spans have no English counterpart.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -317,10 +398,20 @@
           "B": "And in the morning you say, 'There will be a storm today, because the sky is red and threatening.'",
           "R": "And in the morning you say, 'There will be a storm today, because the sky is red and dark with clouds.'"
         },
+        "es": {
+          "L": "Y por la mañana: “Hoy [habrá] tormenta, porque el cielo está rojo [y] nublado”.",
+          "B": "Y por la mañana {{plural_you:dicen|decís}}: “Hoy va a haber tormenta, porque el cielo está rojo y amenazante”.",
+          "R": "Y por la mañana {{plural_you:dicen|decís}}: “Hoy va a haber tormenta, porque el cielo está rojo y cubierto de nubes oscuras”."
+        },
         "fr": {
           "L": "Et le matin : “Aujourd’hui, [il y aura] de l’orage, car le ciel est rouge [et] sombre.”",
           "B": "Et le matin, vous dites : “Il y aura de l’orage aujourd’hui, parce que le ciel est rouge et menaçant.”",
           "R": "Et le matin, vous dites : “Il va y avoir un orage aujourd’hui, parce que le ciel est rouge et plein de nuages sombres.”"
+        },
+        "sw": {
+          "L": "Na asubuhi, 'Leo [kutakuwa na] dhoruba, kwa maana anga ni jekundu [na] lenye mawingu mazito.'",
+          "B": "Na asubuhi mnasema, 'Leo kutakuwa na dhoruba, kwa sababu anga ni jekundu na lina dalili mbaya.'",
+          "R": "Na asubuhi mnasema, 'Leo kutakuwa na dhoruba, kwa sababu anga ni jekundu na lina mawingu meusi.'"
         }
       },
       "decisions": [
@@ -420,10 +511,20 @@
           "B": "You know how to read the face of the sky, but you cannot read the signs of the times.",
           "R": "You know how to understand what the sky is telling you. But you cannot understand the signs of what God is doing in your own time."
         },
+        "es": {
+          "L": "El aspecto del cielo {{plural_you:saben|sabéis}} discernir, pero las señales de los tiempos no {{plural_you:pueden|podéis}} [discernir].",
+          "B": "{{plural_you:Saben|Sabéis}} interpretar el aspecto del cielo, pero no {{plural_you:pueden|podéis}} interpretar las señales de los tiempos.",
+          "R": "{{plural_you:Saben|Sabéis}} entender lo que el cielo {{plural_you:les|os}} dice. Pero no {{plural_you:pueden|podéis}} entender las señales de lo que Dios está haciendo en {{plural_you:su|vuestro}} propio tiempo."
+        },
         "fr": {
           "L": "Vous savez discerner l’aspect du ciel, mais les signes des temps, vous ne le pouvez pas.",
           "B": "Vous savez lire le visage du ciel, mais vous êtes incapables de lire les signes des temps.",
           "R": "Vous savez comprendre ce que le ciel vous annonce. Mais vous ne pouvez pas comprendre les signes de ce que Dieu fait à votre époque."
+        },
+        "sw": {
+          "L": "Mnajua kupambanua sura ya anga, lakini ishara za nyakati hamwezi [kuzipambanua].",
+          "B": "Mnajua kusoma sura ya anga, lakini hamwezi kusoma ishara za nyakati.",
+          "R": "Mnajua kuelewa anga linawaambia nini. Lakini hamwezi kuelewa ishara za kile ambacho Mungu anafanya katika wakati wenu wenyewe."
         }
       },
       "decisions": [
@@ -554,10 +655,20 @@
           "B": "An evil, unfaithful generation goes looking for a sign, but the only sign it will be given is the sign of Jonah.\"",
           "R": "The people of today are evil and are not faithful to God. They ask for a sign. But no sign will be given to them except the sign of Jonah.\""
         },
+        "es": {
+          "L": "Una generación malvada y adúltera busca una señal, y no se le dará señal sino la señal de Jonás».",
+          "B": "Una generación malvada e infiel anda buscando una señal, pero la única señal que se le dará es la señal de Jonás».",
+          "R": "La gente de hoy es malvada y no es fiel a Dios. Piden una señal. Pero no se les dará ninguna señal, excepto la señal de Jonás»."
+        },
         "fr": {
           "L": "Une génération mauvaise et adultère recherche un signe, et il ne lui sera pas donné de signe, sinon le signe de Jonas. »",
           "B": "Une génération mauvaise et infidèle réclame un signe, mais le seul signe qui lui sera donné, c’est le signe de Jonas. »",
           "R": "Les gens d’aujourd’hui sont mauvais, et ils ne sont pas fidèles à Dieu. Ils demandent un signe. Mais aucun signe ne leur sera donné, sauf le signe de Jonas. »"
+        },
+        "sw": {
+          "L": "Kizazi kiovu na chenye uzinzi kinatafuta ishara, na hakitapewa ishara isipokuwa ishara ya Yona.\"",
+          "B": "Kizazi kiovu kisicho mwaminifu kinatafuta ishara, lakini ishara pekee kitakayopewa ni ishara ya Yona.\"",
+          "R": "Watu wa siku hizi ni waovu, na si waaminifu kwa Mungu. Wanaomba ishara. Lakini hawatapewa ishara yoyote isipokuwa ishara ya Yona.\""
         }
       },
       "decisions": [
@@ -692,10 +803,20 @@
           "B": "Then {{deity_pronoun:he|He}} left them and went away.",
           "R": "Then Jesus left them and went away."
         },
+        "es": {
+          "L": "Y dejándolos, se fue.",
+          "B": "Entonces los dejó y se fue.",
+          "R": "Entonces Jesús los dejó y se fue."
+        },
         "fr": {
           "L": "Et les laissant, {{deity_pronoun:il|Il}} s’en alla.",
           "B": "Puis {{deity_pronoun:il|Il}} les quitta et s’en alla.",
           "R": "Ensuite, Jésus les a laissés là et s’en est allé."
+        },
+        "sw": {
+          "L": "Na alipokwisha kuwaacha, aliondoka.",
+          "B": "Kisha aliwaacha, akaondoka.",
+          "R": "Kisha Yesu aliwaacha, akaondoka."
         }
       },
       "decisions": [
@@ -747,10 +868,20 @@
           "B": "When the disciples reached the other side of the lake, they found that they had forgotten to bring any bread.",
           "R": "The followers went across to the other side of the lake. But they had forgotten to bring bread."
         },
+        "es": {
+          "L": "Y los discípulos llegaron al otro lado [y] se habían olvidado de tomar panes.",
+          "B": "Cuando los discípulos llegaron al otro lado del lago, se dieron cuenta de que se habían olvidado de llevar pan.",
+          "R": "Los seguidores cruzaron al otro lado del lago. Pero se habían olvidado de llevar pan."
+        },
         "fr": {
           "L": "Et les disciples, arrivés sur l’autre rive, avaient oublié de prendre des pains.",
           "B": "Quand les disciples arrivèrent de l’autre côté du lac, ils s’aperçurent qu’ils avaient oublié de prendre du pain.",
           "R": "Les disciples ont traversé le lac et sont arrivés sur l’autre rive. Mais ils avaient oublié d’apporter du pain."
+        },
+        "sw": {
+          "L": "Na wanafunzi walipofika ng'ambo, walikuwa wamesahau kuchukua mikate.",
+          "B": "Wanafunzi walipofika ng'ambo ya ziwa, waligundua kwamba walikuwa wamesahau kuchukua mkate wowote.",
+          "R": "Wafuasi walivuka kwenda upande wa pili wa ziwa. Lakini walikuwa wamesahau kuleta mkate."
         }
       },
       "decisions": [
@@ -863,10 +994,20 @@
           "B": "Jesus told them, \"Keep your eyes open, and guard yourselves against the yeast of the Pharisees and Sadducees.\"",
           "R": "Jesus said to them, \"Be careful! Watch out for the yeast of the Pharisees and Sadducees.\""
         },
+        "es": {
+          "L": "Y Jesús les dijo: «{{plural_you:Estén|Estad}} atentos y {{plural_you:cuídense|cuidaos}} de la levadura de los fariseos y saduceos».",
+          "B": "Jesús les dijo: «{{plural_you:Tengan|Tened}} los ojos abiertos y {{plural_you:protéjanse|protegeos}} de la levadura de los fariseos y saduceos».",
+          "R": "Jesús les dijo: «¡{{plural_you:Tengan|Tened}} cuidado! {{plural_you:Cuídense|Cuidaos}} de la levadura de los fariseos y saduceos»."
+        },
         "fr": {
           "L": "Et Jésus leur dit : « Voyez et gardez-vous du levain des Pharisiens et des Sadducéens. »",
           "B": "Jésus leur dit : « Ouvrez l’œil, et méfiez-vous du levain des Pharisiens et des Sadducéens. »",
           "R": "Jésus leur a dit : « Faites attention ! Méfiez-vous du levain des Pharisiens et des Sadducéens. »"
+        },
+        "sw": {
+          "L": "Na Yesu akawaambia, \"Tazameni, mjihadhari na chachu ya Mafarisayo na Masadukayo.\"",
+          "B": "Yesu aliwaambia, \"Kaeni macho, na mjilinde dhidi ya chachu ya Mafarisayo na Masadukayo.\"",
+          "R": "Yesu aliwaambia, \"Kuweni waangalifu! Jihadharini na chachu ya Mafarisayo na Masadukayo.\""
         }
       },
       "decisions": [
@@ -927,6 +1068,25 @@
           "footnote": false
         },
         {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40016006011"
+          ],
+          "choice": "levadura (every level)",
+          "alternatives": [],
+          "reason": "English uses \"leaven\" at Literal and \"yeast\" at Balanced and Readable. Spanish \"levadura\" covers both, and is the word for the picture of an influence that spreads through the whole (meaning decision m1). The same in verses 11 and 12.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
           "id": "r-fr-1",
           "layer": "rendering",
           "language": "fr",
@@ -943,6 +1103,27 @@
             "la levure"
           ],
           "reason": "As in Mark 8:15 and Luke 12:1: English Balanced and Readable say \"yeast\" because \"leaven\" is no longer an everyday English word. French \"levain\" still is (\"pain au levain\"), and it is exactly the fermented dough the Greek means, while \"levure\" is modern baker's yeast.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40016006011"
+          ],
+          "choice": "chachu (every level)",
+          "alternatives": [
+            "hamira"
+          ],
+          "reason": "English uses \"leaven\" at Literal and \"yeast\" at Balanced and Readable. Swahili \"chachu\" is the leaven that works through dough, the picture of an influence that spreads through the whole (meaning decision m1); \"hamira\" is the bought baking yeast. The same in verses 11 and 12.",
           "uncertain": false,
           "footnote": false
         }
@@ -978,10 +1159,20 @@
           "B": "They talked it over among themselves and said, \"He says that because we brought no bread.\"",
           "R": "The followers talked about this among themselves. They said, \"He is saying this because we did not bring any bread.\""
         },
+        "es": {
+          "L": "Y ellos discutían entre sí, diciendo: «[Es] porque no trajimos panes».",
+          "B": "Ellos lo comentaron entre sí y dijeron: «Lo dice porque no trajimos pan».",
+          "R": "Los seguidores hablaron de esto entre ellos. Decían: «Dice esto porque no trajimos pan»."
+        },
         "fr": {
           "L": "Mais ils discutaient entre eux, disant : « [C’est] parce que nous n’avons pas pris de pains. »",
           "B": "Ils en discutèrent entre eux et dirent : « Il dit cela parce que nous n’avons pas apporté de pain. »",
           "R": "Les disciples en ont parlé entre eux. Ils ont dit : « Il dit cela parce que nous n’avons pas apporté de pain. »"
+        },
+        "sw": {
+          "L": "Nao wakawa wakijadiliana miongoni mwao, wakisema, \"[Ni] kwa kuwa hatukuleta mikate.\"",
+          "B": "Walijadiliana wao kwa wao, wakasema, \"Anasema hivyo kwa sababu hatukuleta mkate.\"",
+          "R": "Wafuasi walizungumza jambo hilo wao kwa wao. Wakasema, \"Anasema hivi kwa sababu hatukuleta mkate.\""
         }
       },
       "decisions": [
@@ -1057,10 +1248,20 @@
           "B": "Jesus knew what they were saying, and {{deity_pronoun:he|He}} said, \"Why are you talking among yourselves about having no bread, you who have so little faith?",
           "R": "Jesus knew what they were saying. He said, \"Why are you talking about having no bread? Your faith is so small!"
         },
+        "es": {
+          "L": "Pero Jesús, sabiéndo[lo], dijo: «¿Por qué {{plural_you:discuten|discutís}} entre {{plural_you:ustedes|vosotros}}, gente de poca fe, que no {{plural_you:trajeron|trajisteis}} panes?",
+          "B": "Jesús se dio cuenta de lo que decían, y les dijo: «¿Por qué {{plural_you:hablan|habláis}} entre {{plural_you:ustedes|vosotros}} de que no {{plural_you:tienen|tenéis}} pan, {{plural_you:ustedes|vosotros}} que {{plural_you:tienen|tenéis}} tan poca fe?",
+          "R": "Jesús sabía lo que estaban diciendo. Les dijo: «¿Por qué {{plural_you:hablan|habláis}} de que no {{plural_you:tienen|tenéis}} pan? ¡Qué poca fe {{plural_you:tienen|tenéis}}!"
+        },
         "fr": {
           "L": "Mais Jésus, le sachant, dit : « Pourquoi discutez-vous entre vous, gens de peu de foi, de ce que vous n’avez pas pris de pains ?",
           "B": "Jésus savait ce qu’ils disaient, et {{deity_pronoun:il|Il}} leur dit : « Pourquoi parlez-vous entre vous de ce que vous n’avez pas de pain, vous qui avez si peu de foi ?",
           "R": "Jésus savait ce qu’ils disaient. Il leur a dit : « Pourquoi parlez-vous de ce que vous n’avez pas de pain ? Votre foi est si petite !"
+        },
+        "sw": {
+          "L": "Lakini Yesu, akijua [hilo], akasema, \"Kwa nini mnajadiliana miongoni mwenu, enyi wenye imani ndogo, kwamba hamkuchukua mikate?",
+          "B": "Yesu alijua walichokuwa wakisema, akasema, \"Kwa nini mnazungumza wenyewe kwa wenyewe juu ya kutokuwa na mkate, ninyi wenye imani ndogo hivi?",
+          "R": "Yesu alijua walichokuwa wakisema. Akasema, \"Kwa nini mnazungumza juu ya kutokuwa na mkate? Imani yenu ni ndogo sana!"
         }
       },
       "decisions": [
@@ -1099,6 +1300,25 @@
           "reason": "Balanced and Readable spell out what Jesus knew.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40016008010"
+          ],
+          "choice": "gente de poca fe",
+          "alternatives": [
+            "hombres de poca fe"
+          ],
+          "reason": "The Greek is one word, \"little-faiths\", with no word for men; \"gente\" keeps it plain, as the English \"you of little faith\" does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1135,10 +1355,20 @@
           "B": "Do you still not understand? Have you forgotten the five loaves for the five thousand, and how many basketfuls you gathered?",
           "R": "Do you still not understand? Remember the five loaves of bread that fed five thousand people? Remember how many baskets of leftovers you picked up?"
         },
+        "es": {
+          "L": "¿Todavía no {{plural_you:entienden|entendéis}}, ni {{plural_you:recuerdan|recordáis}} los cinco panes de los cinco mil y cuántas canastas {{plural_you:recogieron|recogisteis}}?",
+          "B": "¿Todavía no {{plural_you:entienden|entendéis}}? ¿Ya {{plural_you:olvidaron|olvidasteis}} los cinco panes para los cinco mil, y cuántas canastas llenas {{plural_you:recogieron|recogisteis}}?",
+          "R": "¿Todavía no {{plural_you:entienden|entendéis}}? ¿{{plural_you:Recuerdan|Recordáis}} los cinco panes que alimentaron a cinco mil personas? ¿{{plural_you:Recuerdan|Recordáis}} cuántas canastas de sobras {{plural_you:recogieron|recogisteis}}?"
+        },
         "fr": {
           "L": "Ne comprenez-vous pas encore, et ne vous souvenez-vous pas des cinq pains des cinq mille, et combien de paniers vous avez emportés ?",
           "B": "Vous ne comprenez toujours pas ? Avez-vous oublié les cinq pains pour les cinq mille, et combien de paniers vous avez ramassés ?",
           "R": "Vous ne comprenez toujours pas ? Vous vous souvenez des cinq pains qui ont nourri cinq mille personnes ? Vous vous rappelez combien de paniers de restes vous avez ramassés ?"
+        },
+        "sw": {
+          "L": "Bado hamwelewi, wala hamkumbuki mikate ile mitano ya watu elfu tano, na vikapu mlivyokusanya vilikuwa vingapi?",
+          "B": "Bado hamwelewi? Mmesahau ile mikate mitano kwa ajili ya watu elfu tano, na mlijaza vikapu vingapi?",
+          "R": "Bado hamwelewi? Mnakumbuka ile mikate mitano iliyolisha watu elfu tano? Mnakumbuka mliokota vikapu vingapi vya mabaki?"
         }
       },
       "decisions": [
@@ -1229,10 +1459,20 @@
           "B": "Or the seven loaves for the four thousand, and how many large basketfuls you gathered?",
           "R": "And remember the seven loaves that fed four thousand people? Remember how many big baskets of leftovers you picked up?"
         },
+        "es": {
+          "L": "¿Ni los siete panes de los cuatro mil y cuántos cestos grandes {{plural_you:recogieron|recogisteis}}?",
+          "B": "¿O los siete panes para los cuatro mil, y cuántos cestos grandes llenos {{plural_you:recogieron|recogisteis}}?",
+          "R": "¿Y {{plural_you:recuerdan|recordáis}} los siete panes que alimentaron a cuatro mil personas? ¿{{plural_you:Recuerdan|Recordáis}} cuántos cestos grandes de sobras {{plural_you:recogieron|recogisteis}}?"
+        },
         "fr": {
           "L": "Ni des sept pains des quatre mille, et combien de grandes corbeilles vous avez emportées ?",
           "B": "Ou les sept pains pour les quatre mille, et combien de grandes corbeilles vous avez ramassées ?",
           "R": "Et vous vous souvenez des sept pains qui ont nourri quatre mille personnes ? Vous vous rappelez combien de grandes corbeilles de restes vous avez ramassées ?"
+        },
+        "sw": {
+          "L": "Wala ile mikate saba ya watu elfu nne, na vikapu vikubwa mlivyokusanya vilikuwa vingapi?",
+          "B": "Au ile mikate saba kwa ajili ya watu elfu nne, na mlijaza vikapu vikubwa vingapi?",
+          "R": "Na mnakumbuka ile mikate saba iliyolisha watu elfu nne? Mnakumbuka mliokota vikapu vikubwa vingapi vya mabaki?"
         }
       },
       "decisions": [
@@ -1294,6 +1534,25 @@
           "footnote": false
         },
         {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40016010009"
+          ],
+          "choice": "cestos grandes (here and 15:37); canastas (verse 9 and 14:20)",
+          "alternatives": [],
+          "reason": "Matthew uses two words for the baskets of the two feedings, the ordinary carrying basket and the large hamper (meaning decision m2). Spanish keeps them apart at every level, as the English \"baskets\" and \"large baskets\" do.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
           "id": "r-fr-1",
           "layer": "rendering",
           "language": "fr",
@@ -1311,6 +1570,25 @@
             "paniers in both verses"
           ],
           "reason": "As in 15:37 and Mark 8:19-20: each level keeps the difference between the two kinds of baskets with two different French words.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40016010009"
+          ],
+          "choice": "vikapu vikubwa (here and 15:37); vikapu (verse 9 and 14:20)",
+          "alternatives": [],
+          "reason": "Matthew uses two words for the baskets of the two feedings, the ordinary carrying basket and the large hamper (meaning decision m2). Swahili keeps them apart at every level, as the English \"baskets\" and \"large baskets\" do.",
           "uncertain": false,
           "footnote": false
         }
@@ -1345,10 +1623,20 @@
           "B": "How can you fail to see that I was not talking to you about bread?",
           "R": "Why do you not understand that I was not talking about bread?"
         },
+        "es": {
+          "L": "¿Cómo no {{plural_you:entienden|entendéis}} que no {{plural_you:les|os}} hablé acerca de panes?",
+          "B": "¿Cómo es que no {{plural_you:ven|veis}} que no {{plural_you:les|os}} estaba hablando del pan?",
+          "R": "¿Por qué no {{plural_you:entienden|entendéis}} que yo no estaba hablando del pan?"
+        },
         "fr": {
           "L": "Comment ne comprenez-vous pas que ce n’est pas au sujet des pains que je vous ai parlé ?",
           "B": "Comment pouvez-vous ne pas voir que je ne vous parlais pas de pain ?",
           "R": "Pourquoi ne comprenez-vous pas que je ne parlais pas de pain ?"
+        },
+        "sw": {
+          "L": "Ni vipi hamtambui kwamba sikuwa nikisema nanyi kuhusu mikate?",
+          "B": "Mnashindwaje kuona kwamba sikuwa nikizungumza nanyi juu ya mkate?",
+          "R": "Kwa nini hamwelewi kwamba sikuwa nikizungumza juu ya mkate?"
         }
       },
       "decisions": [
@@ -1407,10 +1695,20 @@
           "B": "Guard yourselves, I say, against the yeast of the Pharisees and Sadducees.\"",
           "R": "Watch out for the yeast of the Pharisees and Sadducees!\""
         },
+        "es": {
+          "L": "Pero {{plural_you:cuídense|cuidaos}} de la levadura de los fariseos y saduceos».",
+          "B": "{{plural_you:Protéjanse|Protegeos}}, {{plural_you:les|os}} digo, de la levadura de los fariseos y saduceos».",
+          "R": "¡{{plural_you:Cuídense|Cuidaos}} de la levadura de los fariseos y saduceos!»."
+        },
         "fr": {
           "L": "Mais gardez-vous du levain des Pharisiens et des Sadducéens. »",
           "B": "Méfiez-vous, je vous le dis, du levain des Pharisiens et des Sadducéens. »",
           "R": "Méfiez-vous du levain des Pharisiens et des Sadducéens ! »"
+        },
+        "sw": {
+          "L": "Lakini mjihadhari na chachu ya Mafarisayo na Masadukayo.\"",
+          "B": "Nawaambia, jilindeni dhidi ya chachu ya Mafarisayo na Masadukayo.\"",
+          "R": "Jihadharini na chachu ya Mafarisayo na Masadukayo!\""
         }
       },
       "decisions": [
@@ -1491,10 +1789,20 @@
           "B": "Then they realized that {{deity_pronoun:he|He}} was not warning them against the yeast used in bread, but against what the Pharisees and Sadducees taught.",
           "R": "Then the followers understood. Jesus was not telling them to watch out for yeast in bread. He was warning them about the teaching of the Pharisees and Sadducees."
         },
+        "es": {
+          "L": "Entonces entendieron que no [les] había dicho que se cuidaran de la levadura de los panes, sino de la enseñanza de los fariseos y saduceos.",
+          "B": "Entonces comprendieron que no los estaba previniendo contra la levadura que se usa en el pan, sino contra lo que enseñaban los fariseos y saduceos.",
+          "R": "Entonces los seguidores entendieron. Jesús no les estaba diciendo que se cuidaran de la levadura del pan. Les estaba advirtiendo sobre la enseñanza de los fariseos y saduceos."
+        },
         "fr": {
           "L": "Alors ils comprirent qu’{{deity_pronoun:il|Il}} n’avait pas dit de se garder du levain des pains, mais de l’enseignement des Pharisiens et des Sadducéens.",
           "B": "Alors ils comprirent qu’{{deity_pronoun:il|Il}} ne les mettait pas en garde contre le levain du pain, mais contre ce qu’enseignaient les Pharisiens et les Sadducéens.",
           "R": "Alors les disciples ont compris. Jésus ne leur disait pas de se méfier du levain qu’on met dans le pain. Il les mettait en garde contre l’enseignement des Pharisiens et des Sadducéens."
+        },
+        "sw": {
+          "L": "Kisha wakaelewa kwamba hakuwa amesema wajihadhari na chachu ya mikate, ila na mafundisho ya Mafarisayo na Masadukayo.",
+          "B": "Hapo walitambua kwamba hakuwa akiwaonya juu ya chachu inayotumika katika mkate, bali juu ya yale ambayo Mafarisayo na Masadukayo walifundisha.",
+          "R": "Kisha wafuasi walielewa. Yesu hakuwa akiwaambia wajihadhari na chachu ya mkate. Alikuwa akiwaonya juu ya mafundisho ya Mafarisayo na Masadukayo."
         }
       },
       "decisions": [
