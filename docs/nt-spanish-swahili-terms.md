@@ -94,6 +94,9 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | antichrist | anticristo (no christos span) | mpinga-Kristo |
 | little children (*teknia*) | hijitos | watoto wadogo (L); wanangu wapendwa (B, R) |
 | beloved (one person) | amado (L); querido amigo (B, R) | mpendwa (L); rafiki mpendwa (B, R) |
+| regret, change one's mind (*metamelomai*) | cambiar de parecer (not "arrepentirse") | kubadili nia (not "kutubu") |
+| tenant farmers (*geōrgoi*) | labradores (L, R); arrendatarios (B) | wakulima |
+| authority, right (*exousia*) | autoridad; derecho | mamlaka; ruhusa (not "haki") |
 | tomb (*mnēmeion*) | el sepulcro (L, B); la tumba (R) | kaburi |
 | at the right (hand) | a la derecha (de) | upande wa kulia (wa) |
 
