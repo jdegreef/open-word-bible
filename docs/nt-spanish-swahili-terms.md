@@ -167,6 +167,7 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | local councils (*synedria*) | consejos | mabaraza |
 | Simon the Cananaean / the Zealot | Simón el cananista (L, B); Simón el Zelote (R and where Luke says Zealot) | Simoni Mkananayo (L, B); Simoni Mzelote (R) |
 | evil, unclean, mute spirit | espíritu impuro / mudo | pepo (roho only for the Holy Spirit and the human spirit) |
+| proclaim the good news (*euangelizomai*) | anunciar la buena noticia | kuhubiri habari njema |
 | tomb (*mnēmeion*) | el sepulcro (L, B); la tumba (R) | kaburi |
 | at the right (hand) | a la derecha (de) | upande wa kulia (wa) |
 
@@ -212,6 +213,8 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 - Hours: the Greek counts from sunrise as Swahili does, so "the ninth hour"
   is *saa tisa* at every level; Balanced and Readable may add *mchana*,
   *jioni*. The night watches likewise in Swahili time.
+- The joined pronouns nami, nawe, naye, kwangu, kwako, kwake take the
+  deity_pronoun span whenever they mean God or Jesus, as the style guide says.
 - Narrative: *-li-* for the first verb of a sequence, *-ka-* for those that
   follow (Balanced and Readable); Literal keeps the historic present
   ("anasema") where the Greek has it.
