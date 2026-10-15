@@ -1864,11 +1864,9 @@ def save_button(book, chaps, lang):
 
 def offline_files(lang):
     """What a saved book needs besides its pages and what web/sw.js keeps
-    anyway: the reader, the word index and the fonts (and the search index
-    while search runs in the browser: SEARCH_STATIC)."""
+    anyway: the reader, the word index and the fonts."""
     fonts = sorted(f"/fonts/{f.name}" for f in (ROOT / "web" / "fonts").glob("*.woff2"))
-    index = [search_index_url(lang)] if SEARCH_STATIC else []
-    return [url(lang, "/read/"), asset("markup.js"), asset("reader.js"), word_uses()[1]] + index + fonts
+    return [url(lang, "/read/"), asset("markup.js"), asset("reader.js"), word_uses()[1]] + fonts
 
 
 def read_page(lang="en"):
@@ -3797,11 +3795,9 @@ def service_worker():
                                   "compare.js", "word.js")]
     current += [word_uses()[1]] + [search_ui_url(lang) for lang in LANGUAGES]
     current += [plans_json_url(lang) for lang in LANGUAGES]
-    # The search indexes, kept by the worker only while search runs in the
-    # browser; otherwise copies kept before are dropped.
-    indexes = [search_index_url(lang) for lang in LANGUAGES]
-    current += indexes if SEARCH_STATIC else []
-    dropped = [] if SEARCH_STATIC else [u.split("?")[0] for u in indexes]
+    # The static search indexes the site no longer builds: copies kept
+    # before are dropped.
+    dropped = [f"/search-{lang}.json" for lang in LANGUAGES]
     text = ((ROOT / "web" / "sw.js").read_text(encoding="utf-8")
             .replace("__PRECACHE__", json.dumps(shell)).replace("__OFFLINE__", json.dumps(offline))
             .replace("__CURRENT__", json.dumps(current)).replace("__DROPPED__", json.dumps(dropped)))
@@ -3825,10 +3821,8 @@ FAVICON = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
 # shortcuts it needs from a small file per language (search_ui).
 #
 # Until the API had search, the build wrote each language's whole index
-# (search-<lang>.json, 22 MB) and the browser searched it. It is still
-# written for one release: set SEARCH_STATIC to True and the site searches
-# it in the browser again, and the service worker keeps it.
-SEARCH_STATIC = False
+# (search-<lang>.json, 22 MB) and the browser searched it. It is no longer
+# built; the service worker drops copies it kept.
 
 # Book abbreviations a reader may type besides each book's names, its USFM
 # code and its OSIS id ("Phil"); and prefixes of the names, from three
@@ -3932,18 +3926,6 @@ def search_documents(lang):
 
 
 @functools.lru_cache(maxsize=None)
-def search_index(lang):
-    """The search index for pages in lang, as JSON text (search_documents)."""
-    return json.dumps(search_documents(lang), ensure_ascii=False, separators=(",", ":"))
-
-
-@functools.lru_cache(maxsize=None)
-def search_index_url(lang):
-    digest = hashlib.sha256(search_index(lang).encode("utf-8")).hexdigest()[:10]
-    return f"/search-{lang}.json?v={digest}"
-
-
-@functools.lru_cache(maxsize=None)
 def search_ui(lang):
     """What search.js needs besides the API's answers, as JSON text: the
     interface text, the palette's page shortcuts and the book names (a few
@@ -3961,9 +3943,8 @@ def search_ui_url(lang):
 
 
 def search_source(lang):
-    """Where search.js searches (<meta name="owb-search">): the API, or the
-    static index while SEARCH_STATIC is set."""
-    return search_index_url(lang) if SEARCH_STATIC else f"{API_URL}/api/search/"
+    """Where search.js searches (<meta name="owb-search">): the API."""
+    return f"{API_URL}/api/search/"
 
 
 def palette(lang):
@@ -4039,8 +4020,7 @@ def sitemap(paths):
 
 def build(out):
     for cached in (_book_records, _chapter_words, _all_records, nav_menus, footer_links, passages, asset, translated_verses, catalog, book_refs, name_cards, term_uses,
-                   search_documents, search_index,
-                   search_index_url, word_uses, series_numbers, chapter_articles, load_plans, plans_json, plans_json_url):
+                   search_documents, word_uses, series_numbers, chapter_articles, load_plans, plans_json, plans_json_url):
         cached.cache_clear()
     if out.exists():
         shutil.rmtree(out)
@@ -4101,7 +4081,6 @@ def build(out):
     files.update(editions_files())
     files.update(word_files())
     for lang in LANGUAGES:
-        files[f"search-{lang}.json"] = search_index(lang)
         files[f"search-ui-{lang}.json"] = search_ui(lang)
         files[f"plans-{lang}.json"] = plans_json(lang)
     for rel, text in files.items():
