@@ -10,7 +10,25 @@ Charter disagree, the Charter wins; fix this file.
 **Status: proposed, awaiting a native Korean reviewer.** Every Korean record
 is `ai_draft`. The level names, the grammar labels in `owb/morph.py`, the
 speech levels and the key terms below are first proposals, and a reviewer is
-expected to change some of them.
+expected to change some of them, except the choices listed under "Settled",
+which the founder has decided.
+
+## Settled
+
+Decided by the founder; a reviewer raises a change with the founder rather
+than making it.
+
+- **Tradition (October 2026).** Names and key terms follow the Protestant
+  tradition, for the whole Bible: 하나님 (not 하느님) and the Protestant
+  spellings of names in section 5. The John 1:1 decision that recorded this
+  as uncertain now says it is settled. Within that tradition the modern word
+  is preferred where an older church word competes with it (예언자 over
+  선지자, 표적, 올리브 산); those stay open for a native reviewer.
+- **Speech levels (October 2026).** As section 4: the narrative in the plain
+  written style with the honorific for God and Jesus; Jesus speaks in
+  해라체; people speak to him in 합쇼체; Jesus prays to the Father in
+  합쇼체. A reviewer may still adjust single scenes (the trial, Jesus and his
+  mother), with a decision.
 
 ## 1. Sources and independence
 
@@ -115,7 +133,7 @@ through the book so a scene does not change relationship between verses.
 
 | Greek (English) | Korean | Notes |
 |---|---|---|
-| God | 하나님 | Every level. *하느님* is the Catholic and Common Translation word; a reviewer may prefer it. Recorded as uncertain in 1:1. |
+| God | 하나님 | Every level. Settled (Protestant tradition); *하느님* is the Catholic and Common Translation word. |
 | the Word | **말씀** | Every level; as a person it takes the honorific (말씀이 계셨다). |
 | grace | 은혜 | Key term: the same word at every level. |
 | truth | 진리 | Key term. *참* for the adjective ("참 빛"); *사실* for a plain fact. |
