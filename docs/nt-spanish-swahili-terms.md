@@ -186,6 +186,8 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | Abba | Abba, Padre | Aba, Baba |
 | most excellent (*kratiste*) | excelentísimo | Mheshimiwa |
 | relative (*syngenis*) | pariente | jamaa |
+| scroll (*biblion*) | rollo | gombo |
+| sky (*ouranos* as the sky) | cielo | anga |
 | tomb (*mnēmeion*) | el sepulcro (L, B); la tumba (R) | kaburi |
 | at the right (hand) | a la derecha (de) | upande wa kulia (wa) |
 
@@ -203,7 +205,7 @@ Decision text stays in English, quoting the Spanish or Swahili words.
   article, as a title: `el {{christos:Cristo|Mesías}}`.
 - `deity_pronoun`: `{{deity_pronoun:él|Él}}`, `lo|Lo`, `le|Le`, `sí
   mismo|Sí mismo`, and the possessive `su|Su`, wherever the English marks
-  the pronoun, free clitics and pronouns included (lo, le, te, tú, ti, mí); a clitic joined to the verb ("sígueme") and "conmigo", "contigo" take no span. "Jesús mismo" is an adjective and takes no
+  the pronoun, free clitics and pronouns included (lo, le, te, me, tú, ti, mí, tuyo); a clitic joined to the verb ("sígueme") and "conmigo", "contigo" take no span. "Jesús mismo" is an adjective and takes no
   span.
 - Jesus's "yo" takes no span (the English "I" has none); Swahili spans
   free "mimi" as its style guide says.
