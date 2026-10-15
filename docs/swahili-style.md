@@ -142,7 +142,10 @@ Settings change wording, never meaning, exactly as in English.
   `jina {{deity_pronoun:lake|Lake}}`, `ndani {{deity_pronoun:yake|Yake}}`,
   `habari {{deity_pronoun:zake|Zake}}`, `kilicho {{deity_pronoun:chake|Chake}}`.
   When Jesus speaks of himself: `mimi|Mimi`, `yangu|Yangu`, `wangu|Wangu`
-  and so on, and when he is spoken to, `wewe|Wewe`, `yako|Yako`. Only the
+  and so on, and when he is spoken to, `wewe|Wewe`, `yako|Yako`. The joined
+  forms are free pronouns too and take the span when they mean God or
+  Jesus: `nami|Nami`, `nawe|Nawe`, `naye|Naye` (and I, with you, with him),
+  and `kwangu|Kwangu`, `kwako|Kwako`, `kwake|Kwake`. Only the
   capitalisation differs. **(checked)** A pronoun at the start of a sentence
   is written plainly with its capital. Swahili therefore has fewer spans than
   English; the first record of a passage notes this once.
