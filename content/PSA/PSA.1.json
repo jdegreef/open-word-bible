@@ -39,6 +39,16 @@
           "L": "How blessed [is] {{gender:the person|the man}} who does not walk in the counsel of the wicked, \\q and in the way of sinners does not stand, \\q and in the seat of mockers does not sit!",
           "B": "How blessed is {{gender:the one|the man}} who does not walk by the advice of the wicked, \\q or stand on the path that sinners tread, \\q or sit where mockers gather!",
           "R": "Life is truly good for the person who does not follow the advice of wicked people, \\q does not stand on the road with sinners, \\q and does not sit down with those who mock."
+        },
+        "vi": {
+          "L": "Phước thay người không bước đi theo mưu kế của kẻ ác, \\q không đứng trên con đường của kẻ tội lỗi, \\q và không ngồi nơi chỗ ngồi của kẻ nhạo báng!",
+          "B": "Phước hạnh thay người không bước theo lời khuyên của kẻ ác, \\q không đứng trên con đường kẻ tội lỗi đi, \\q cũng không ngồi giữa đám người nhạo báng!",
+          "R": "Thật hạnh phúc cho người không nghe theo lời khuyên của kẻ ác, \\q không đứng chung đường với kẻ có tội, \\q và không ngồi chung với những kẻ chế giễu."
+        },
+        "ko": {
+          "L": "얼마나 복된가, 악인들의 꾀를 따라 걷지 않고 \\q 죄인들의 길에 서지 않으며 \\q 조롱하는 자들의 자리에 앉지 않는 사람은!",
+          "B": "악인들의 조언대로 살지 않고 \\q 죄인들이 다니는 길에 서지 않으며 \\q 비웃는 자들이 모이는 자리에 앉지 않는 사람은 얼마나 복된가!",
+          "R": "악한 사람들의 말을 따르지 않고, \\q 죄짓는 사람들과 한길에 서지 않고, \\q 바른 가르침을 비웃는 사람들과 함께 앉지 않는 사람은 참으로 행복하다."
         }
       },
       "decisions": [
@@ -179,6 +189,93 @@
           "reason": "The word is masculine but describes anyone who lives this way (m2), so the gender setting gives inclusive wording by default. Readable says \"the person\", which needs no alternative.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190010010011"
+          ],
+          "choice": "\"Phước thay\" (L), \"Phước hạnh thay\" (B); \"Thật hạnh phúc cho\" (R)",
+          "alternatives": [
+            "\"Phước cho\"",
+            "\"Có phúc thay\""
+          ],
+          "reason": "The exclamation is about a life that goes well. \"Phước thay\" keeps the short cry of the Hebrew; Readable uses the everyday \"hạnh phúc\" (happy, well off), as the English Readable says \"Life is truly good\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190010010022"
+          ],
+          "choice": "\"người\" (a person) with no gender span; \"người ấy\" for him through the psalm",
+          "alternatives": [
+            "gender spans as in the English (\"người đàn ông\" as the alternative)"
+          ],
+          "reason": "\"người\" already means anyone, man or woman, and \"người ấy\" is the plain pronoun for it, so Vietnamese has no second form for a gender setting to switch to. The English spans in 1:1-3 have no Vietnamese counterpart.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o190010010011",
+            "o190010010022",
+            "o190010010051"
+          ],
+          "choice": "The exclamation \"얼마나 복된가\" (L, B) comes first and \"사람은\" (the person) last, after the three relative clauses",
+          "alternatives": [
+            "복 있는 사람은 ... (subject first)"
+          ],
+          "reason": "Korean puts a relative clause before its noun, so \"the person\" cannot stand at the head of the verse as in the Hebrew; the three clauses keep the Hebrew's order (walk, stand, sit) and each line keeps its own colon. Literal and Balanced keep the exclamation (\"How blessed\") at the head as the Hebrew does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190010010022"
+          ],
+          "choice": "\"사람\" (person) with no gender span",
+          "alternatives": [
+            "{{gender:사람|남자}}"
+          ],
+          "reason": "The English offers \"the man\" as an alternative. Korean \"사람\" is the ordinary word for a person of either sex and is what Korean says for the Hebrew here, so Korean has no second wording to offer (style guide section 7). The same holds for \"그\" (that person) in verses 2-3.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -216,6 +313,16 @@
           "L": "But in the instruction of {{divine_name:the LORD|Yahweh}} [is] {{gender:their|his}} delight, \\q and in {{deity_pronoun:his|His}} instruction {{gender:they murmur|he murmurs}} day and night.",
           "B": "Instead, the instruction of {{divine_name:the LORD|Yahweh}} is {{gender:their|his}} delight, \\q and {{gender:they recite it quietly to themselves|he recites it quietly to himself}} day and night.",
           "R": "Instead, that person loves {{divine_name:the LORD|Yahweh}}'s teaching and repeats it, thinking about it day and night."
+        },
+        "vi": {
+          "L": "Nhưng niềm vui thích của người ấy [ở] trong sự dạy dỗ của {{divine_name:CHÚA|Gia-vê}}, \\q và người ấy lẩm nhẩm sự dạy dỗ của {{deity_pronoun:ngài|Ngài}} ngày và đêm.",
+          "B": "Trái lại, người ấy vui thích trong lời dạy dỗ của {{divine_name:CHÚA|Gia-vê}}, \\q và ngày đêm khẽ đọc lời ấy cho chính mình.",
+          "R": "Trái lại, người ấy yêu thích lời dạy của {{divine_name:CHÚA|Gia-vê}}, và ngày đêm đọc đi đọc lại, suy nghĩ về lời ấy."
+        },
+        "ko": {
+          "L": "오직 {{divine_name:주|야훼}}의 가르침에 그의 기쁨이 [있고], \\q 그분의 가르침을 그가 낮과 밤에 읊조린다.",
+          "B": "오히려 그는 {{divine_name:주|야훼}}의 가르침을 기뻐하며, \\q 그 가르침을 낮이나 밤이나 나지막이 되뇐다.",
+          "R": "오히려 그 사람은 {{divine_name:주|야훼}}의 가르침을 좋아해서, 밤낮으로 그 가르침을 되뇌며 깊이 생각한다."
         }
       },
       "decisions": [
@@ -328,6 +435,95 @@
           "reason": "The person of verse 1 stands for anyone who lives this way (1:1, m2), so the pronouns follow the gender setting. Readable avoids the pronoun with \"that person\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190010020032",
+            "o190010020063"
+          ],
+          "choice": "\"sự dạy dỗ\" (L), \"lời dạy dỗ\" (B), \"lời dạy\" (R)",
+          "alternatives": [
+            "\"luật pháp\"",
+            "\"kinh luật\""
+          ],
+          "reason": "The word is the LORD's instruction, his teaching as a whole (see the meaning decision). \"luật pháp\", the familiar word, makes it sound like a legal code; \"lời dạy\" keeps the sense of teaching that a person loves and repeats.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190010020071"
+          ],
+          "choice": "\"lẩm nhẩm\" (L); \"khẽ đọc ... cho chính mình\" (B); \"đọc đi đọc lại, suy nghĩ về\" (R)",
+          "alternatives": [
+            "\"suy gẫm\""
+          ],
+          "reason": "The verb is reading or saying words under the breath. \"suy gẫm\" (meditate) names only the thinking; \"lẩm nhẩm\" and \"khẽ đọc\" keep the sound of the words, and Readable adds the thinking that goes with it, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190010020041"
+          ],
+          "choice": "YHWH is {{divine_name:주|야훼}} at every level, with the particle outside the span ({{divine_name:주|야훼}}의, {{divine_name:주|야훼}}께서)",
+          "alternatives": [
+            "여호와",
+            "주님"
+          ],
+          "reason": "As the style guide (section 7a): \"주\" (Lord) by default, the name \"야훼\" as the alternative, as the English has \"the LORD|Yahweh\". \"여호와\", the form of the older Protestant Bibles, is not used. Both forms end in a vowel, so one particle fits both. This holds for the whole Psalter.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190010020032",
+            "o190010020063"
+          ],
+          "choice": "\"가르침\" (teaching, instruction) at every level",
+          "alternatives": [
+            "율법",
+            "법"
+          ],
+          "reason": "The Hebrew word (torah) is the LORD's teaching (meaning decision m1); \"율법\" is the familiar church word but in Korean it says a law code, which narrows the sense here.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -375,6 +571,16 @@
           "L": "And {{gender:that person is|he is}} like a tree transplanted by channels of water, \\q which gives its fruit in its season, \\q and its leaf does not wither; \\q and all that {{gender:they do|he does}} succeeds.",
           "B": "{{gender:That person is|He is}} like a tree set out beside channels of water, \\q which bears its fruit when its season comes, \\q and whose leaves never dry up. \\q Whatever {{gender:they do|he does}} turns out well.",
           "R": "That person is like a tree planted beside streams of water. \\q It gives its fruit at the right time, \\q and its leaves do not dry up. \\q Everything that person does goes well."
+        },
+        "vi": {
+          "L": "Và người ấy như cây được trồng bên các dòng nước, \\q sinh trái mình theo mùa của nó, \\q và lá nó không héo; \\q và mọi việc người ấy làm đều thành công.",
+          "B": "Người ấy như cây được trồng bên những dòng nước chảy, \\q đến mùa thì kết trái, \\q lá không bao giờ khô. \\q Việc gì người ấy làm cũng đều thành công.",
+          "R": "Người ấy giống như cây trồng bên những dòng suối. \\q Cây ấy ra trái đúng lúc, \\q và lá của nó không bị khô. \\q Người ấy làm việc gì cũng tốt đẹp."
+        },
+        "ko": {
+          "L": "그는 물길들 곁에 옮겨 심은 나무와 같아서, \\q 제철에 그 열매를 내고 \\q 그 잎이 시들지 않으니, \\q 그가 하는 모든 일이 잘된다.",
+          "B": "그는 물길 곁에 심긴 나무와 같아서, \\q 철이 되면 열매를 맺고 \\q 잎이 마르는 일이 없다. \\q 그가 하는 일은 무엇이든 잘된다.",
+          "R": "그런 사람은 물가에 심은 나무와 같다. \\q 그 나무는 때가 되면 열매를 맺고, \\q 잎이 마르지 않는다. \\q 그 사람이 하는 일은 다 잘된다."
         }
       },
       "decisions": [
@@ -499,6 +705,16 @@
           "L": "Not so the wicked, \\q but [they are] like the chaff that wind drives away.",
           "B": "The wicked are nothing like that. \\q They are like chaff, scattered by the wind.",
           "R": "Wicked people are not like that at all. \\q They are like the dry husks of grain that the wind blows away."
+        },
+        "vi": {
+          "L": "Không như vậy đối với kẻ ác, \\q nhưng [chúng] như trấu mà gió thổi bay đi.",
+          "B": "Kẻ ác thì không như thế. \\q Chúng như trấu bị gió cuốn đi.",
+          "R": "Kẻ ác hoàn toàn không như vậy. \\q Chúng giống như vỏ trấu khô bị gió thổi bay mất."
+        },
+        "ko": {
+          "L": "그렇지 않다, 악인들은. \\q [그들은] 오히려 바람이 몰아가는 겨와 같다.",
+          "B": "악인들은 전혀 그렇지 않다. \\q 그들은 바람에 흩어지는 겨와 같다.",
+          "R": "악한 사람들은 결코 그렇지 않다. \\q 그들은 바람에 날아가 버리는 마른 곡식 껍질과 같다."
         }
       },
       "decisions": [
@@ -551,6 +767,70 @@
           "reason": "Readable explains the word, which many readers no longer know (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190010040062"
+          ],
+          "choice": "\"trấu\" (chaff), \"vỏ trấu khô\" (R)",
+          "alternatives": [
+            "\"rơm rác\"",
+            "\"bụi\""
+          ],
+          "reason": "Rice husks blown away at winnowing are a picture every Vietnamese reader knows, and it is the same thing as the chaff of threshed grain: light, dry and worthless.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190010040031",
+            "o190010040032"
+          ],
+          "choice": "\"chúng\" for the wicked",
+          "alternatives": [
+            "\"họ\""
+          ],
+          "reason": "\"chúng\" is the usual pronoun for the wicked in a psalm; it keeps them at a distance, as the contrast with the blessed person does. \"họ\" would be neutral.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o190010040011",
+            "o190010040021"
+          ],
+          "choice": "\"그렇지 않다, 악인들은\" with the subject after the predicate",
+          "alternatives": [
+            "악인들은 그렇지 않다"
+          ],
+          "reason": "Literal keeps the Hebrew's order, where the contrast comes first (meaning decision); Korean allows a subject added after the verb in poetry.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -585,6 +865,16 @@
           "L": "Therefore [the] wicked will not rise in the judgment, \\q nor sinners in [the] assembly of [the] righteous.",
           "B": "That is why the wicked will not stand firm when judgment comes, \\q and sinners will have no place in the gathering of the righteous.",
           "R": "So when God judges, wicked people will not be able to stand. \\q Sinners will have no place among those who do what is right."
+        },
+        "vi": {
+          "L": "Vì vậy kẻ ác sẽ không đứng lên trong cuộc phán xét, \\q và kẻ tội lỗi [không đứng] trong hội của người công chính.",
+          "B": "Vì thế, khi sự phán xét đến, kẻ ác sẽ không đứng vững nổi, \\q và kẻ tội lỗi sẽ không có chỗ trong hội của người công chính.",
+          "R": "Vậy khi Đức Chúa Trời phán xét, kẻ ác sẽ không đứng nổi. \\q Kẻ có tội sẽ không có chỗ giữa những người sống ngay thẳng."
+        },
+        "ko": {
+          "L": "그러므로 악인들은 심판에서 일어서지 못하고, \\q 죄인들은 의인들의 회중에서 [일어서지 못할 것이다].",
+          "B": "그러므로 심판이 닥칠 때 악인들은 견디지 못하고, \\q 죄인들은 의인들의 모임에 설 자리가 없을 것이다.",
+          "R": "그래서 하나님께서 심판하실 때 악한 사람들은 버티지 못할 것이다. \\q 죄인들은 바르게 사는 사람들 사이에 낄 자리가 없을 것이다."
         }
       },
       "decisions": [
@@ -702,6 +992,16 @@
           "L": "For {{divine_name:the LORD|Yahweh}} [is] knowing [the] way of [the] righteous, \\q and [the] way of [the] wicked will perish.",
           "B": "For {{divine_name:the LORD|Yahweh}} knows the path of the righteous and cares for it, \\q but the path of the wicked ends in ruin.",
           "R": "{{divine_name:The LORD|Yahweh}} watches over the lives of those who do right. \\q But the life wicked people live will end in ruin."
+        },
+        "vi": {
+          "L": "Vì {{divine_name:CHÚA|Gia-vê}} biết đường lối của người công chính, \\q và đường lối của kẻ ác sẽ tiêu vong.",
+          "B": "Vì {{divine_name:CHÚA|Gia-vê}} biết và chăm lo con đường của người công chính, \\q còn con đường của kẻ ác sẽ dẫn đến diệt vong.",
+          "R": "{{divine_name:CHÚA|Gia-vê}} luôn chăm lo cho cuộc đời của những người sống ngay thẳng. \\q Còn lối sống của kẻ ác sẽ kết thúc trong tan nát."
+        },
+        "ko": {
+          "L": "이는 {{divine_name:주|야훼}}께서 의인들의 길을 알고 계시고, \\q 악인들의 길은 망할 것이기 때문이다.",
+          "B": "{{divine_name:주|야훼}}께서는 의인들이 가는 길을 아시고 돌보시지만, \\q 악인들의 길은 끝내 망하고 만다.",
+          "R": "{{divine_name:주|야훼}}께서는 바르게 사는 사람들의 삶을 지켜보신다. \\q 그러나 악한 사람들이 사는 방식은 결국 망하고 만다."
         }
       },
       "decisions": [
@@ -788,6 +1088,28 @@
             "way"
           ],
           "reason": "Balanced says \"path\", as in verse 1; Readable says what the path stands for (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190010060031"
+          ],
+          "choice": "the divine name as \"CHÚA\" in capitals, with \"Gia-vê\" as the setting's alternative",
+          "alternatives": [
+            "\"Đức Giê-hô-va\"",
+            "\"Đức Chúa\""
+          ],
+          "reason": "The capitals mark the name YHWH, as \"the LORD\" does in English, and keep it apart from \"Chúa\" for Adonai. \"Đức Giê-hô-va\", the older Protestant form, is not used; \"Gia-vê\" gives the name as it was probably said.",
           "uncertain": false,
           "footnote": false
         }

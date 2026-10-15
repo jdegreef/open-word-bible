@@ -34,6 +34,21 @@
           "L": "And if {{gender:your brother or sister|your brother}} sins against you, go, show {{gender:them|him}} [the] fault between you and {{gender:them|him}} alone.",
           "B": "If {{gender:a brother or sister|your brother}} sins against you, go and confront {{gender:them|him}} about it, with only the two of you present.",
           "R": "If {{gender:a brother or sister|your brother}} in God's family sins against you, go and talk to {{gender:them|him}} alone. Show {{gender:them|him}} what {{gender:they|he}} did wrong."
+        },
+        "es": {
+          "L": "Y si {{gender:tu hermano o hermana|tu hermano}} peca contra ti, ve, hazle ver [su] falta entre tú y {{gender:esa persona|él}} a solas.",
+          "B": "Si {{gender:un hermano o una hermana|tu hermano}} peca contra ti, ve y hazle ver su falta a solas, entre los dos.",
+          "R": "Si {{gender:un hermano o una hermana|tu hermano}} de la familia de Dios peca contra ti, ve y habla a solas con {{gender:esa persona|él}}. Muéstrale lo que hizo mal."
+        },
+        "fr": {
+          "L": "Et si {{gender:ton frère ou ta sœur|ton frère}} pèche contre toi, va, montre-lui sa faute entre vous deux seulement.",
+          "B": "Si {{gender:un frère ou une sœur|ton frère}} pèche contre toi, va lui parler franchement de sa faute, seul à seul.",
+          "R": "Si {{gender:un frère ou une sœur|ton frère}} de la famille de Dieu pèche contre toi, va lui parler seul à seul. Montre-lui ce qu’{{gender:il ou elle|il}} a fait de mal."
+        },
+        "sw": {
+          "L": "Na ndugu yako akikutendea dhambi, nenda, umwonyeshe kosa lake kati yako na yeye peke yake.",
+          "B": "Ndugu yako akikutendea dhambi, nenda ukamwonyeshe kosa lake mkiwa ninyi wawili peke yenu.",
+          "R": "Ndugu yako katika familia ya Mungu akikutendea dhambi, nenda ukaongee naye peke yake. Mwonyeshe kosa alilofanya."
         }
       },
       "decisions": [
@@ -150,6 +165,72 @@
           "reason": "Readable says that a fellow believer is meant.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40018015007",
+            "n40018015008",
+            "n40018015011",
+            "n40018015015"
+          ],
+          "choice": "{{gender:tu hermano o hermana|tu hermano}}; {{gender:esa persona|él}}; \"le\" with no span",
+          "alternatives": [],
+          "reason": "The plural \"hermanos\" covers men and women, but the singular \"tu hermano\" names a man, and Jesus means any fellow disciple (meaning decision m1), so the singular takes the gender setting, as in 1 John 5:16. \"Le\" (hazle, muéstrale) is the same for a man or a woman, so it needs no span. The same through verse 35.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40018015007",
+            "n40018015011",
+            "n40018015015"
+          ],
+          "choice": "{{gender:ton frère ou ta sœur|ton frère}}, with {{gender:il ou elle|il}} for the subject pronoun; \"lui\" with no span (for 18:15-35)",
+          "alternatives": [
+            "la personne … elle"
+          ],
+          "reason": "As Luke 17:3: the brother is any fellow disciple, man or woman (m1). The subject pronoun that agrees with the noun goes under the same setting; the object pronoun \"lui\" serves either sex, so it takes none. Where the English has \"between you and {{gender:them|him}} alone\", French says \"entre vous deux seulement\" (L) and \"seul à seul\" (B, R), which need no setting.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40018015007",
+            "n40018015011",
+            "n40018015015"
+          ],
+          "choice": "ndugu yako, with no gender span",
+          "alternatives": [],
+          "reason": "\"Ndugu\" already means a brother or a sister (meaning decision m1), and the subject prefix a- and \"yeye\" do not mark sex, so the English spans \"brother or sister\" / \"brother\" and \"them\" / \"him\" have nothing to change in Swahili. The same through verse 35.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -179,6 +260,21 @@
           "L": "If {{gender:they|he}} will listen to you, you have gained {{gender:your brother or sister|your brother}};",
           "B": "If {{gender:they|he}} will listen to you, you have won {{gender:your brother or sister|your brother}} back.",
           "R": "Maybe {{gender:they|he}} will listen to you. Then you have won {{gender:your brother or sister|your brother}} back."
+        },
+        "es": {
+          "L": "Si te escucha, has ganado a {{gender:tu hermano o hermana|tu hermano}};",
+          "B": "Si te hace caso, has recuperado a {{gender:tu hermano o hermana|tu hermano}}.",
+          "R": "Tal vez te haga caso. Entonces habrás recuperado a {{gender:tu hermano o hermana|tu hermano}}."
+        },
+        "fr": {
+          "L": "S’{{gender:il ou elle|il}} t’écoute, tu as gagné {{gender:ton frère ou ta sœur|ton frère}} ;",
+          "B": "S’{{gender:il ou elle|il}} t’écoute, tu auras regagné {{gender:ton frère ou ta sœur|ton frère}}.",
+          "R": "Peut-être qu’{{gender:il ou elle|il}} t’écoutera. Alors tu auras retrouvé {{gender:ton frère ou ta sœur|ton frère}}."
+        },
+        "sw": {
+          "L": "Akikusikiliza, umejipatia ndugu yako;",
+          "B": "Akikusikiliza, umemrejesha ndugu yako.",
+          "R": "Huenda akakusikiliza. Hapo utakuwa umemrejesha ndugu yako."
         }
       },
       "decisions": [
@@ -254,6 +350,25 @@
           "reason": "Balanced and Readable say what the gain is.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018015020"
+          ],
+          "choice": "umejipatia (you have gained for yourself) (L); umemrejesha (you have brought back) (B, R)",
+          "alternatives": [
+            "umempata"
+          ],
+          "reason": "The verb is a trader's word for gain (meaning decision m1); Literal keeps that picture with \"kujipatia\", and Balanced and Readable say \"won back\", as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -297,6 +412,21 @@
           "L": "But if {{gender:they|he}} will not listen, take one or two more with you, so that 'by [the] mouth of two or three witnesses every word may be established.'",
           "B": "If {{gender:they|he}} still will not listen, go back with one or two others, so that 'every charge may be settled on the word of two or three witnesses.'",
           "R": "If {{gender:they|he}} will still not listen, take one or two other people with you. The Scriptures say, 'Every charge must be proved by two or three witnesses.'"
+        },
+        "es": {
+          "L": "Pero si no escucha, lleva contigo todavía a uno o dos, para que “por boca de dos o tres testigos quede firme toda palabra”.",
+          "B": "Si aun así no te hace caso, vuelve con uno o dos más, para que “todo asunto quede probado por el testimonio de dos o tres testigos”.",
+          "R": "Si todavía no te hace caso, lleva contigo a una o dos personas más. Las Escrituras dicen: “Toda acusación tiene que ser probada por dos o tres testigos”."
+        },
+        "fr": {
+          "L": "Mais s’{{gender:il ou elle|il}} n’écoute pas, prends avec toi encore une ou deux [personnes], afin que “sur la bouche de deux ou trois témoins toute parole soit établie”.",
+          "B": "S’{{gender:il ou elle|il}} refuse encore d’écouter, retournes-y avec une ou deux autres personnes, afin que “toute affaire soit réglée sur la parole de deux ou trois témoins”.",
+          "R": "S’{{gender:il ou elle|il}} ne veut toujours pas écouter, emmène avec toi une ou deux autres personnes. Les Écritures disent : “Toute accusation doit être prouvée par deux ou trois témoins.”"
+        },
+        "sw": {
+          "L": "Lakini asiposikiliza, chukua pamoja nawe mtu mmoja au wawili zaidi, ili 'kwa kinywa cha mashahidi wawili au watatu kila neno lithibitishwe.'",
+          "B": "Asipokusikiliza bado, rudi pamoja na mtu mmoja au wawili wengine, ili 'kila shtaka lithibitishwe kwa maneno ya mashahidi wawili au watatu.'",
+          "R": "Akikataa bado kusikiliza, chukua mtu mmoja au wawili wengine pamoja nawe. Maandiko yanasema, 'Kila shtaka lazima lithibitishwe na mashahidi wawili au watatu.'"
         }
       },
       "decisions": [
@@ -440,6 +570,21 @@
           "L": "And if {{gender:they|he}} will not heed them, tell [it] to the church; and if {{gender:they|he}} will not heed even the church, let {{gender:them|him}} be to you like the Gentile and the tax collector.",
           "B": "If {{gender:they|he}} will not hear them either, bring the matter before the church. And if {{gender:they|he}} will not hear the church either, regard {{gender:them|him}} as an outsider, like a Gentile or a tax collector.",
           "R": "If {{gender:they|he}} will not listen to them, tell the whole church. If {{gender:they|he}} will not listen even to the church, treat {{gender:them|him}} like someone who does not know God, or like a tax collector."
+        },
+        "es": {
+          "L": "Y si no les hace caso a ellos, díselo a la iglesia; y si tampoco a la iglesia hace caso, sea para ti como el gentil y el publicano.",
+          "B": "Si tampoco les hace caso a ellos, presenta el asunto ante la iglesia. Y si tampoco hace caso a la iglesia, considera a esa persona como alguien de fuera, como a un gentil o a un cobrador de impuestos.",
+          "R": "Si no les hace caso a ellos, cuéntaselo a toda la iglesia. Y si ni siquiera hace caso a la iglesia, trata a esa persona como a alguien que no conoce a Dios, o como a un cobrador de impuestos."
+        },
+        "fr": {
+          "L": "Et s’{{gender:il ou elle|il}} refuse de les écouter, dis-le à l’église ; et s’{{gender:il ou elle|il}} refuse d’écouter même l’église, qu’{{gender:il ou elle|il}} soit pour toi comme le païen et le collecteur d’impôts.",
+          "B": "S’{{gender:il ou elle|il}} ne les écoute pas non plus, porte l’affaire devant l’église. Et s’{{gender:il ou elle|il}} n’écoute pas non plus l’église, considère qu’{{gender:il ou elle|il}} ne fait plus partie des vôtres, comme un païen ou un collecteur d’impôts.",
+          "R": "S’{{gender:il ou elle|il}} ne les écoute pas, dis-le à toute l’église. Et s’{{gender:il ou elle|il}} n’écoute même pas l’église, alors, pour toi, {{gender:il ou elle|il}} sera comme quelqu’un qui ne connaît pas Dieu, ou comme un collecteur d’impôts."
+        },
+        "sw": {
+          "L": "Na asipowasikiliza wao, liambie kanisa; na asipolisikiliza hata kanisa, na awe kwako kama mtu wa mataifa na mtoza ushuru.",
+          "B": "Asipowasikiliza hao pia, lipeleke jambo hilo mbele ya kanisa. Na asipolisikiliza kanisa nalo, umhesabu kuwa mtu wa nje, kama mtu wa mataifa au mtoza ushuru.",
+          "R": "Asipowasikiliza, waambie watu wote wa kanisa. Na asipolisikiliza hata kanisa, mtendee kama mtu asiyemjua Mungu, au kama mtoza ushuru."
         }
       },
       "decisions": [
@@ -559,6 +704,112 @@
           "reason": "As in 18:15.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018017021"
+          ],
+          "choice": "el publicano (L); un cobrador de impuestos (B, R)",
+          "alternatives": [
+            "recaudador"
+          ],
+          "reason": "The term used across the New Testament drafts: Literal keeps the traditional \"publicano\", and Balanced and Readable say what the man did, since \"publicano\" is no longer an everyday word.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40018017014",
+            "n40018017015"
+          ],
+          "choice": "esa persona, with no gender span",
+          "alternatives": [],
+          "reason": "The English needs {{gender:them|him}}. Spanish \"esa persona\" names a man or a woman without choosing, so the sentence needs no span; \"trátalo\" would have made the person a man.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018017007",
+            "n40018017012"
+          ],
+          "choice": "l’église, lowercase",
+          "alternatives": [
+            "l’Église",
+            "l’assemblée",
+            "la communauté"
+          ],
+          "reason": "The style guide writes \"l’église\" for one gathered community and \"l’Église\" for the whole body of believers. Here the disciples who know the offender are meant, gathered to hear the matter (m1), so the lowercase form fits.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-2",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018017018"
+          ],
+          "choice": "le païen (L), un païen (B); quelqu’un qui ne connaît pas Dieu (R)",
+          "alternatives": [
+            "le non-Juif",
+            "l’homme des nations"
+          ],
+          "reason": "The word is an adjective for one of the nations who did not worship Israel's God (m3), and the point is that such a person stood outside the fellowship (m2). French \"païen\" says exactly that; \"non-Juif\", the style guide's word for the plural noun \"Gentiles\", would make the point one of birth rather than worship.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018017018"
+          ],
+          "choice": "mtu wa mataifa",
+          "alternatives": [
+            "Mmataifa",
+            "mpagani"
+          ],
+          "reason": "The term used across the New Testament drafts for one outside Israel (meaning decision m3). The singular \"Mmataifa\" exists but is rare; Readable says what it meant, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -605,6 +856,21 @@
           "L": "Truly I tell you, whatever you bind on earth will have been bound in heaven, and whatever you loose on earth will have been loosed in heaven.",
           "B": "Truly I tell you, what you bind on earth will be bound in heaven, and what you loose on earth will be loosed in heaven.",
           "R": "I tell you the truth, whatever you forbid on earth will be forbidden in heaven. And whatever you allow on earth will be allowed in heaven."
+        },
+        "es": {
+          "L": "En verdad {{plural_you:les|os}} digo: todo lo que {{plural_you:aten|atéis}} en la tierra habrá sido atado en el cielo, y todo lo que {{plural_you:desaten|desatéis}} en la tierra habrá sido desatado en el cielo.",
+          "B": "En verdad {{plural_you:les|os}} digo que lo que {{plural_you:aten|atéis}} en la tierra quedará atado en el cielo, y lo que {{plural_you:desaten|desatéis}} en la tierra quedará desatado en el cielo.",
+          "R": "{{plural_you:Les|Os}} digo la verdad: lo que {{plural_you:ustedes prohíban|vosotros prohibáis}} en la tierra quedará prohibido en el cielo. Y lo que {{plural_you:permitan|permitáis}} en la tierra quedará permitido en el cielo."
+        },
+        "fr": {
+          "L": "En vérité, je vous le dis, tout ce que vous lierez sur la terre aura été lié dans le ciel, et tout ce que vous délierez sur la terre aura été délié dans le ciel.",
+          "B": "En vérité, je vous le dis, ce que vous lierez sur la terre sera lié dans le ciel, et ce que vous délierez sur la terre sera délié dans le ciel.",
+          "R": "Je vous le dis, c’est la vérité : tout ce que vous interdirez sur la terre sera interdit dans le ciel. Et tout ce que vous permettrez sur la terre sera permis dans le ciel."
+        },
+        "sw": {
+          "L": "Kweli nawaambia, chochote mtakachofunga duniani kitakuwa kimefungwa mbinguni, na chochote mtakachofungua duniani kitakuwa kimefunguliwa mbinguni.",
+          "B": "Kweli nawaambia, mtakachofunga duniani kitafungwa mbinguni, na mtakachofungua duniani kitafunguliwa mbinguni.",
+          "R": "Nawaambia ukweli, chochote mtakachokataza duniani kitakatazwa mbinguni. Na chochote mtakachoruhusu duniani kitaruhusiwa mbinguni."
         }
       },
       "decisions": [
@@ -702,6 +968,71 @@
           "reason": "Readable gives the sense of the idiom, following the meaning decision.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40018018003",
+            "n40018018006",
+            "n40018018017"
+          ],
+          "choice": "ustedes / vosotros forms",
+          "alternatives": [],
+          "reason": "Jesus speaks to the disciples together (meaning decision m3), so every plural \"you\" and its verb is the reader setting: ustedes (Latin America, the default) or vosotros (Spain). English has no such choice. The same through verse 20 and in verse 35.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018018001",
+            "n40018018002",
+            "n40018018003"
+          ],
+          "choice": "En verdad {{plural_you:les|os}} digo (L, B); {{plural_you:Les|Os}} digo la verdad (R)",
+          "alternatives": [
+            "De cierto os digo"
+          ],
+          "reason": "The New Testament rendering of the single amen, as at 16:28. \"De cierto\" is the older form and now sounds dated.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018018001",
+            "n40018018002",
+            "n40018018003"
+          ],
+          "choice": "Kweli nawaambia (L, B); Nawaambia ukweli (R)",
+          "alternatives": [],
+          "reason": "The New Testament rendering of the single amen, as at 16:28, matching John's \"Kweli kweli nawaambia\" for the double form.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -752,6 +1083,21 @@
           "L": "Again, truly I tell you that if two of you agree on earth about any matter that they ask, it will be done for them by {{deity_pronoun:my|My}} Father who [is] in [the] heavens.",
           "B": "And again, truly I tell you: if two of you here on earth are of one mind about anything they ask for, it will be done for them by {{deity_pronoun:my|My}} Father in heaven.",
           "R": "I tell you the truth again. Suppose two of you here on earth agree about something and ask God for it. Then {{deity_pronoun:my|My}} Father in heaven will do it for them."
+        },
+        "es": {
+          "L": "Otra vez, en verdad {{plural_you:les|os}} digo que si dos de {{plural_you:ustedes|vosotros}} se ponen de acuerdo en la tierra acerca de cualquier asunto que pidan, les será hecho por {{deity_pronoun:mi|Mi}} Padre que [está] en [los] cielos.",
+          "B": "Y otra vez, en verdad {{plural_you:les|os}} digo que si dos de {{plural_you:ustedes|vosotros}} aquí en la tierra están de acuerdo en cualquier cosa que pidan, {{deity_pronoun:mi|Mi}} Padre que está en el cielo se lo concederá.",
+          "R": "Otra vez {{plural_you:les|os}} digo la verdad. Supongamos que dos de {{plural_you:ustedes|vosotros}} aquí en la tierra se ponen de acuerdo en algo y se lo piden a Dios. Entonces {{deity_pronoun:mi|Mi}} Padre que está en el cielo lo hará por ellos."
+        },
+        "fr": {
+          "L": "De nouveau, en vérité, je vous dis que si deux d’entre vous s’accordent sur la terre au sujet de toute chose qu’ils demanderont, cela leur sera fait par {{deity_pronoun:mon|Mon}} Père qui [est] dans les cieux.",
+          "B": "Je vous le dis encore, en vérité : si deux d’entre vous, ici sur la terre, sont d’accord pour demander quoi que ce soit, {{deity_pronoun:mon|Mon}} Père qui est dans le ciel le leur accordera.",
+          "R": "Je vous le dis encore, c’est la vérité : imaginez que deux d’entre vous, ici sur la terre, soient d’accord pour demander quelque chose à Dieu. Alors {{deity_pronoun:mon|Mon}} Père qui est au ciel le fera pour eux."
+        },
+        "sw": {
+          "L": "Tena, kweli nawaambia kwamba ikiwa wawili kati yenu watakubaliana duniani juu ya jambo lolote watakaloomba, watafanyiwa na Baba {{deity_pronoun:yangu|Yangu}} aliye mbinguni.",
+          "B": "Tena, kweli nawaambia, ikiwa wawili kati yenu hapa duniani watapatana juu ya jambo lolote watakaloliomba, Baba {{deity_pronoun:yangu|Yangu}} aliye mbinguni atawafanyia.",
+          "R": "Tena nawaambia ukweli. Tuseme wawili kati yenu hapa duniani wanakubaliana juu ya jambo fulani, nao wanamwomba Mungu. Basi Baba {{deity_pronoun:yangu|Yangu}} aliye mbinguni atawafanyia jambo hilo."
         }
       },
       "decisions": [
@@ -808,6 +1154,44 @@
           "reason": "Readable says to whom they ask.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40018019025"
+          ],
+          "choice": "{{deity_pronoun:mi|Mi}} Padre",
+          "alternatives": [],
+          "reason": "Jesus speaks of his Father, so \"mi\" takes the deity_pronoun setting, as the English \"my\" does. Spanish leaves most subject pronouns unsaid, so it has fewer spans than English through the passage.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40018019025"
+          ],
+          "choice": "spans only on free pronouns and possessives (Baba {{deity_pronoun:yangu|Yangu}})",
+          "alternatives": [],
+          "reason": "As in John and the rest of Matthew: Swahili marks most pronouns inside the verb, and a prefix cannot take a capital, so the deity_pronoun setting applies only to free pronouns and possessives such as \"yangu\" and \"langu\". Swahili has fewer spans than English through the passage.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -846,6 +1230,21 @@
           "L": "For where two or three are gathered in {{deity_pronoun:my|My}} name, there I am in [the] middle of them.\"",
           "B": "For whenever two or three come together in {{deity_pronoun:my|My}} name, I am there among them.\"",
           "R": "When two or three people meet together because they follow {{deity_pronoun:me|Me}}, I am there with them.\""
+        },
+        "es": {
+          "L": "Porque donde hay dos o tres reunidos en {{deity_pronoun:mi|Mi}} nombre, allí estoy en medio de ellos».",
+          "B": "Porque dondequiera que dos o tres se reúnan en {{deity_pronoun:mi|Mi}} nombre, yo estoy allí entre ellos».",
+          "R": "Cuando dos o tres personas se reúnen porque {{deity_pronoun:me|Me}} siguen, yo estoy allí con ellas»."
+        },
+        "fr": {
+          "L": "Car là où deux ou trois sont rassemblés en {{deity_pronoun:mon|Mon}} nom, je suis là au milieu d’eux. »",
+          "B": "Car chaque fois que deux ou trois se réunissent en {{deity_pronoun:mon|Mon}} nom, je suis là, parmi eux. »",
+          "R": "Quand deux ou trois personnes se réunissent parce qu’elles {{deity_pronoun:me|Me}} suivent, je suis là avec elles. »"
+        },
+        "sw": {
+          "L": "Kwa maana walipo wawili au watatu waliokusanyika katika jina {{deity_pronoun:langu|Langu}}, hapo nipo katikati yao.\"",
+          "B": "Kwa kuwa popote wanapokutana wawili au watatu kwa jina {{deity_pronoun:langu|Langu}}, nipo hapo pamoja nao.\"",
+          "R": "Watu wawili au watatu wanapokutana kwa sababu wananifuata, nipo pamoja nao.\""
         }
       },
       "decisions": [
@@ -986,6 +1385,21 @@
           "L": "Then Peter came to {{deity_pronoun:him|Him}} and said, \"Lord, how many times will {{gender:my brother or sister|my brother}} sin against me and I forgive {{gender:them|him}}?",
           "B": "Then Peter came to Jesus and asked, \"Lord, if {{gender:a brother or sister|my brother}} keeps on sinning against me, how many times must I forgive?",
           "R": "Then Peter came to Jesus and asked, \"Lord, suppose {{gender:a brother or sister|my brother}} in God's family sins against me again and again. How many times should I forgive {{gender:them|him}}?"
+        },
+        "es": {
+          "L": "Entonces Pedro, acercándose a {{deity_pronoun:él|Él}}, dijo: «Señor, ¿cuántas veces pecará contra mí {{gender:mi hermano o hermana|mi hermano}} y yo le perdonaré?",
+          "B": "Entonces Pedro se acercó a Jesús y le preguntó: «Señor, si {{gender:un hermano o una hermana|mi hermano}} sigue pecando contra mí, ¿cuántas veces tengo que perdonarle?",
+          "R": "Entonces Pedro fue a Jesús y le preguntó: «Señor, supongamos que {{gender:un hermano o una hermana|mi hermano}} de la familia de Dios peca contra mí una y otra vez. ¿Cuántas veces debo perdonarle?"
+        },
+        "fr": {
+          "L": "Alors Pierre, s’étant approché, {{deity_pronoun:lui|Lui}} dit : « Seigneur, combien de fois, si {{gender:mon frère ou ma sœur|mon frère}} pèche contre moi, lui pardonnerai-je ?",
+          "B": "Alors Pierre vint trouver Jésus et {{deity_pronoun:lui|Lui}} demanda : « Seigneur, si {{gender:un frère ou une sœur|mon frère}} ne cesse de pécher contre moi, combien de fois dois-je pardonner ?",
+          "R": "Alors Pierre est venu voir Jésus et {{deity_pronoun:lui|Lui}} a demandé : « Seigneur, imagine qu’{{gender:un frère ou une sœur|un frère}} de la famille de Dieu pèche contre moi encore et encore. Combien de fois est-ce que je dois lui pardonner ?"
+        },
+        "sw": {
+          "L": "Kisha Petro akamwendea, akasema, \"Bwana, ndugu yangu atanitendea dhambi mara ngapi, nami nimsamehe?",
+          "B": "Kisha Petro alimjia Yesu, akamwuliza, \"Bwana, ndugu yangu akiendelea kunitendea dhambi, nimsamehe mara ngapi?",
+          "R": "Kisha Petro alimwendea Yesu, akamwuliza, \"Bwana, tuseme ndugu yangu katika familia ya Mungu ananitendea dhambi tena na tena. Nimsamehe mara ngapi?"
         }
       },
       "decisions": [
@@ -1109,6 +1523,48 @@
           "reason": "Peter's question runs over two sentences.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018021016",
+            "n40018021017"
+          ],
+          "choice": "le perdonaré (L); perdonarle (B, R)",
+          "alternatives": [
+            "lo perdonaré"
+          ],
+          "reason": "\"Perdonar\" takes the person forgiven as an indirect object, so \"le\" serves for a brother or a sister and needs no gender span, as in verse 15.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n40018021009",
+            "n40018021016"
+          ],
+          "choice": "combien de fois, si {{gender:mon frère ou ma sœur|mon frère}} pèche contre moi, lui pardonnerai-je ?",
+          "alternatives": [
+            "combien de fois {{gender:mon frère ou ma sœur|mon frère}} péchera-t-{{gender:il ou elle|il}} contre moi"
+          ],
+          "reason": "The Greek joins two futures with \"and\". French inversion would put the gender span inside \"péchera-t-il\", which cannot read naturally as \"il ou elle\", so Literal turns the first verb into a condition and keeps the question on forgiving.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1133,6 +1589,21 @@
           "L": "Up to seven times?\"",
           "B": "As many as seven times?\"",
           "R": "Should I forgive seven times?\""
+        },
+        "es": {
+          "L": "¿Hasta siete veces?».",
+          "B": "¿Hasta siete veces?».",
+          "R": "¿Debo perdonarle siete veces?»."
+        },
+        "fr": {
+          "L": "Jusqu’à sept fois ? »",
+          "B": "Aller jusqu’à sept fois ? »",
+          "R": "Est-ce que je dois pardonner sept fois ? »"
+        },
+        "sw": {
+          "L": "Hata mara saba?\"",
+          "B": "Je, hata mara saba?\"",
+          "R": "Je, nimsamehe mara saba?\""
         }
       },
       "decisions": [
@@ -1207,6 +1678,21 @@
           "L": "Jesus says to him, \"I do not say to you up to seven times, but up to seventy-seven times.",
           "B": "Jesus told him, \"Not just up to seven times, but up to seventy-seven times.",
           "R": "Jesus answered, \"I tell you, not only seven times. You must forgive seventy-seven times."
+        },
+        "es": {
+          "L": "Le dice Jesús: «No te digo hasta siete veces, sino hasta setenta y siete veces.",
+          "B": "Jesús le respondió: «No solo hasta siete veces, sino hasta setenta y siete veces.",
+          "R": "Jesús le contestó: «Te digo que no solo siete veces. Tienes que perdonar setenta y siete veces."
+        },
+        "fr": {
+          "L": "Jésus lui dit : « Je ne te dis pas jusqu’à sept fois, mais jusqu’à soixante-dix-sept fois.",
+          "B": "Jésus lui répondit : « Pas seulement jusqu’à sept fois, mais jusqu’à soixante-dix-sept fois.",
+          "R": "Jésus a répondu : « Je te le dis : pas seulement sept fois. Tu dois pardonner soixante-dix-sept fois."
+        },
+        "sw": {
+          "L": "Yesu anamwambia, \"Sikuambii hata mara saba, bali hata mara sabini na saba.",
+          "B": "Yesu alimjibu, \"Si hadi mara saba tu, bali hadi mara sabini na saba.",
+          "R": "Yesu akajibu, \"Nakuambia, si mara saba tu. Unapaswa kusamehe mara sabini na saba."
         }
       },
       "decisions": [
@@ -1305,6 +1791,44 @@
           "reason": "Readable makes the answer a full sentence.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018022001"
+          ],
+          "choice": "historic present at Literal (le dice); pretérito at Balanced and Readable (respondió, contestó)",
+          "alternatives": [],
+          "reason": "Matthew tells parts of the story in the present (English decision r-en-1). Literal keeps it, as the English Literal does; Balanced and Readable tell the story in the past, as Spanish narrative does. The same in verse 32.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018022001"
+          ],
+          "choice": "historic present kept at Literal (anamwambia); past at Balanced and Readable (alimjibu, akajibu)",
+          "alternatives": [],
+          "reason": "Matthew tells parts of the story in the present (English decision r-en-1). Literal keeps it, as the English Literal does; Balanced and Readable use the narrative past, with -li- for the first verb and -ka- for those that follow. The same in verse 32.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1344,6 +1868,21 @@
           "L": "Because of this, the kingdom of the heavens has been compared to a man, a king, who wanted to settle accounts with his slaves.",
           "B": "That is why the kingdom of heaven is like this: a king decided it was time to go over the accounts of his servants.",
           "R": "So this is what the kingdom of heaven is like. There was a king who decided to have his servants settle what they owed him."
+        },
+        "es": {
+          "L": "Por esto, el reino de los cielos ha sido comparado a un hombre, un rey, que quiso ajustar cuentas con sus esclavos.",
+          "B": "Por eso el reino de los cielos es como un rey que decidió que era hora de revisar las cuentas de sus siervos.",
+          "R": "Así es el reino de los cielos. Había un rey que decidió pedir a sus siervos que le pagaran lo que le debían."
+        },
+        "fr": {
+          "L": "C’est pourquoi le royaume des cieux a été comparé à un homme, un roi, qui a voulu régler ses comptes avec ses esclaves.",
+          "B": "Voilà pourquoi le royaume des cieux ressemble à ceci : un roi a décidé qu’il était temps de vérifier les comptes de ses serviteurs.",
+          "R": "Alors voici à quoi ressemble le royaume des cieux. Il y avait un roi qui a décidé de faire payer à ses serviteurs ce qu’ils lui devaient."
+        },
+        "sw": {
+          "L": "Kwa sababu hiyo, ufalme wa mbinguni umefananishwa na mtu mmoja, mfalme, aliyetaka kufanya hesabu na watumwa wake.",
+          "B": "Ndiyo maana ufalme wa mbinguni ni kama mfalme mmoja aliyeamua kukagua hesabu za watumishi wake.",
+          "R": "Basi ufalme wa mbinguni uko hivi. Palikuwa na mfalme mmoja aliyeamua kwamba watumishi wake walipe madeni waliyokuwa nayo kwake."
         }
       },
       "decisions": [
@@ -1438,6 +1977,133 @@
           "reason": "\"Servant\" in Balanced and Readable, as the style guide has it; the meaning decision (m2) keeps that they were owned, and Literal keeps \"slave\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018023004",
+            "n40018023005",
+            "n40018023006",
+            "n40018023007"
+          ],
+          "choice": "el reino de los cielos (every level)",
+          "alternatives": [],
+          "reason": "Matthew's name for God's kingdom, the term used for it throughout Matthew. The Spanish plural \"los cielos\" is natural in this phrase, so every level keeps it, where English changes to \"heaven\" at Balanced and Readable.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018023016"
+          ],
+          "choice": "esclavos (L); siervos (B, R)",
+          "alternatives": [
+            "criados"
+          ],
+          "reason": "As the term sheet and the English: Literal says what the men were, royal slaves (meaning decision m2); Balanced and Readable say \"siervos\", since these slaves served the king and could hold high office. Verse 25, where the man is to be sold, says \"esclavo\" at Readable. The same through verse 34.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40018023003",
+            "n40018023011"
+          ],
+          "choice": "the parable in the passé composé at every level (\"a voulu\", \"a ordonné\"); the Greek present of 18:32 kept at Literal (\"lui dit\")",
+          "alternatives": [
+            "passé simple at Literal and Balanced"
+          ],
+          "reason": "As the style guide settles for the New Testament (Mark 4, Luke 15): the story is part of Jesus's speech, and French tells a story in speech in the passé composé.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-2",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018023016"
+          ],
+          "choice": "esclaves (L); serviteurs (B, R); compagnon d’esclavage (L), compagnon de service (B) for the fellow slave",
+          "alternatives": [
+            "serviteurs at every level"
+          ],
+          "reason": "The style guide's forms, as the English: Literal keeps \"esclave\" and Balanced and Readable say \"serviteur\"; the meaning decision (m2) keeps that they were owned, and Readable says \"vendu comme esclave\" in 18:25, where being sold is the point. \"Compagnon d’esclavage\" is the Literal form of Colossians 1:7.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018023004",
+            "n40018023005",
+            "n40018023006",
+            "n40018023007"
+          ],
+          "choice": "ufalme wa mbinguni (every level)",
+          "alternatives": [],
+          "reason": "Matthew's name for God's kingdom, the term used for it throughout Matthew. \"Mbinguni\" (in heaven) is the natural Swahili form and stands for the Greek plural at every level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-2",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018023016"
+          ],
+          "choice": "watumwa (L); watumishi (B, R)",
+          "alternatives": [],
+          "reason": "As the term sheet and the English: Literal says what the men were, royal slaves (meaning decision m2); Balanced and Readable say \"watumishi\", since they served the king and could hold high office. Verse 25, where the man is to be sold, says \"mtumwa\" at Readable. The same through verse 34.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1470,6 +2136,21 @@
           "L": "And when he had begun to settle, one was brought to him who was a debtor of ten thousand talents.",
           "B": "As he began, a man was brought before him who owed him {{units:a sum no worker could earn in a hundred thousand years|ten thousand talents}}.",
           "R": "As he began, a servant was brought to him who owed him {{units:a sum no worker could earn in a hundred thousand years|ten thousand talents}}. No one could ever pay back that much money."
+        },
+        "es": {
+          "L": "Y cuando él comenzó a ajustarlas, le fue traído uno que era deudor de diez mil talentos.",
+          "B": "Al comenzar, le trajeron a uno que le debía {{units:una suma que ningún trabajador ganaría en cien mil años|diez mil talentos}}.",
+          "R": "Cuando empezó, le trajeron a un siervo que le debía {{units:una suma que ningún trabajador ganaría en cien mil años|diez mil talentos}}. Nadie podría pagar jamás tanto dinero."
+        },
+        "fr": {
+          "L": "Et quand il a commencé à régler [les comptes], on lui en a amené un qui était débiteur de dix mille talents.",
+          "B": "Comme il commençait, on lui a amené un homme qui lui devait {{units:une somme qu’aucun ouvrier ne pourrait gagner en cent mille ans|dix mille talents}}.",
+          "R": "Au début, on lui a amené un serviteur qui lui devait {{units:une somme qu’aucun ouvrier ne pourrait gagner en cent mille ans|dix mille talents}}. Personne n’aurait jamais pu rembourser autant d’argent."
+        },
+        "sw": {
+          "L": "Naye alipoanza kufanya hesabu, aliletewa mmoja aliyekuwa mdaiwa wa talanta elfu kumi.",
+          "B": "Alipoanza, aliletewa mtu mmoja aliyekuwa akidaiwa naye {{units:kiasi ambacho hakuna mfanyakazi angeweza kukipata hata kwa miaka laki moja|talanta elfu kumi}}.",
+          "R": "Alipoanza, aliletewa mtumishi mmoja aliyekuwa akidaiwa naye {{units:kiasi ambacho hakuna mfanyakazi angeweza kukipata hata kwa miaka laki moja|talanta elfu kumi}}. Hakuna mtu ambaye angeweza kulipa fedha nyingi kiasi hicho."
         }
       },
       "decisions": [
@@ -1547,6 +2228,44 @@
           "reason": "Readable says what the sum meant to the hearers.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40018024009",
+            "n40018024010"
+          ],
+          "choice": "{{units:una suma que ningún trabajador ganaría en cien mil años|diez mil talentos}}",
+          "alternatives": [],
+          "reason": "As in English: the sum is beyond counting (meaning decision m1), so Balanced and Readable give it in working years by default, with the talents one tap away. Literal keeps the talents.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40018024009",
+            "n40018024010"
+          ],
+          "choice": "{{units:kiasi ambacho hakuna mfanyakazi angeweza kukipata hata kwa miaka laki moja|talanta elfu kumi}}",
+          "alternatives": [],
+          "reason": "As in English: the sum is beyond counting (meaning decision m1), so Balanced and Readable give it in working years by default, with the talents as the alternative. \"Laki moja\" is a hundred thousand. Literal keeps the talents.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1591,6 +2310,21 @@
           "L": "And since he did not have [the means] to pay, the master ordered him to be sold, and [his] wife and children and everything he had, and payment to be made.",
           "B": "He had no means of paying, so his master gave orders for him to be sold, together with his wife, his children and all he owned, to pay toward the debt.",
           "R": "The servant could not pay. So the king ordered that he be sold as a slave, along with his wife and children and everything he owned. The money would go toward paying what he owed."
+        },
+        "es": {
+          "L": "Y como no tenía [con qué] pagar, el señor mandó que lo vendieran a él, y a la mujer y a los hijos y todo lo que tenía, y que se pagara.",
+          "B": "Como no tenía con qué pagar, su señor ordenó que lo vendieran a él, junto con su mujer, sus hijos y todo lo que tenía, para saldar en parte la deuda.",
+          "R": "El siervo no podía pagar. Entonces el rey ordenó que lo vendieran como esclavo, junto con su esposa, sus hijos y todo lo que tenía. Con ese dinero se pagaría parte de lo que debía."
+        },
+        "fr": {
+          "L": "Et comme il n’avait pas [de quoi] rendre, le maître a ordonné qu’il soit vendu, ainsi que [sa] femme, [ses] enfants et tout ce qu’il a, et que le remboursement soit fait.",
+          "B": "Comme il n’avait pas les moyens de payer, son maître a donné l’ordre de le vendre, avec sa femme, ses enfants et tout ce qu’il possédait, pour rembourser une partie de la dette.",
+          "R": "Le serviteur ne pouvait pas payer. Alors le roi a ordonné qu’on le vende comme esclave, avec sa femme, ses enfants et tout ce qu’il avait. L’argent servirait à payer une partie de ce qu’il devait."
+        },
+        "sw": {
+          "L": "Naye asipokuwa na [cha] kulipa, bwana aliamuru auzwe, yeye na mke na watoto na vyote alivyokuwa navyo, na malipo yafanyike.",
+          "B": "Kwa kuwa hakuwa na uwezo wa kulipa, bwana wake aliamuru auzwe pamoja na mke wake, watoto wake na vyote alivyokuwa navyo, ili sehemu ya deni ilipwe.",
+          "R": "Mtumishi huyo hakuweza kulipa. Basi mfalme aliamuru auzwe kuwa mtumwa, pamoja na mkewe na watoto wake na vyote alivyokuwa navyo. Fedha hizo zingetumika kulipa sehemu ya deni lake."
         }
       },
       "decisions": [
@@ -1695,6 +2429,44 @@
           "reason": "Readable calls the man \"servant\" in this parable, as the style guide has it, but keeps \"slave\" where the king orders him sold with his family: being sold as property is the point here (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018025009"
+          ],
+          "choice": "el señor (L); su señor (B); el rey (R)",
+          "alternatives": [
+            "el amo"
+          ],
+          "reason": "The master is the king of verse 23 (meaning decision m2). Lowercase \"señor\" is the ordinary word for a master of servants; Readable names him the king, as the English does. The same through verse 34.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018025009"
+          ],
+          "choice": "bwana, lowercase (L, B); mfalme (R)",
+          "alternatives": [],
+          "reason": "The master is the king of verse 23 (meaning decision m2). Lowercase \"bwana\" is a master of servants, and keeps him distinct from \"Bwana\", the Lord, in Peter's question; Readable names him the king, as the English does. The same through verse 34.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1731,6 +2503,21 @@
           "L": "So the slave fell down and was bowing before him, saying, 'Be patient with me, and I will pay you everything.'",
           "B": "At that the servant threw himself to the ground before him and pleaded, 'Give me time, and I will pay back all of it.'",
           "R": "The servant got down on his knees in front of the king and begged, 'Please be patient with me. I will pay you everything.'"
+        },
+        "es": {
+          "L": "Entonces el esclavo, cayendo, se postraba ante él, diciendo: “Ten paciencia conmigo, y todo te lo pagaré”.",
+          "B": "Entonces el siervo se echó al suelo delante de él y le suplicó: “Dame tiempo, y te lo pagaré todo”.",
+          "R": "El siervo se puso de rodillas delante del rey y le rogó: “Por favor, ten paciencia conmigo. Te pagaré todo”."
+        },
+        "fr": {
+          "L": "Alors l’esclave, s’étant jeté à terre, se prosternait devant lui en disant : “Sois patient envers moi, et je te rendrai tout.”",
+          "B": "Le serviteur s’est alors jeté à terre devant lui et l’a supplié : “Accorde-moi un délai, et je te rembourserai tout.”",
+          "R": "Le serviteur s’est mis à genoux devant le roi et l’a supplié : “S’il te plaît, sois patient avec moi. Je te rendrai tout.”"
+        },
+        "sw": {
+          "L": "Basi yule mtumwa, akiisha kuanguka, alikuwa akimsujudia, akisema, 'Nivumilie, nami nitakulipa kila kitu.'",
+          "B": "Basi yule mtumishi alijitupa chini mbele yake, akamsihi, 'Nipe muda, nami nitalilipa deni lote.'",
+          "R": "Yule mtumishi alipiga magoti mbele ya mfalme, akamwomba, 'Tafadhali, nivumilie. Nitakulipa kila kitu.'"
         }
       },
       "decisions": [
@@ -1829,6 +2616,27 @@
           "reason": "\"Servant\" in Balanced and Readable, as the style guide has it, and Literal keeps \"slave\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40018026008"
+          ],
+          "choice": "“ ” for words inside Jesus's speech; the servant says \"tu\" to the king",
+          "alternatives": [
+            "vous to the king"
+          ],
+          "reason": "French typography nests « » and then “ ”. The style guide uses \"tu\" for one person, and the servants of the parable say \"tu\" as people say it to Jesus; \"vous\" would add a court register the Greek does not mark.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1865,6 +2673,21 @@
           "L": "And the master of that slave, moved with compassion, released him and forgave him the loan.",
           "B": "The master was moved with pity for that servant. He set him free and forgave him the debt.",
           "R": "The king felt sorry for the servant. So he let him go free and forgave him the whole debt."
+        },
+        "es": {
+          "L": "Y el señor de aquel esclavo, movido a compasión, lo soltó y le perdonó el préstamo.",
+          "B": "El señor tuvo compasión de aquel siervo. Lo dejó libre y le perdonó la deuda.",
+          "R": "El rey sintió lástima del siervo. Así que lo dejó ir libre y le perdonó toda la deuda."
+        },
+        "fr": {
+          "L": "Et le maître de cet esclave, ému de compassion, l’a relâché et lui a pardonné le prêt.",
+          "B": "Le maître a été pris de pitié pour ce serviteur. Il l’a laissé partir et lui a pardonné sa dette.",
+          "R": "Le roi a eu pitié du serviteur. Alors il l’a laissé partir libre et lui a pardonné toute sa dette."
+        },
+        "sw": {
+          "L": "Na bwana wa mtumwa yule, akiwa ameguswa na huruma, alimwachilia, akamsamehe mkopo.",
+          "B": "Bwana wake alimwonea huruma mtumishi huyo. Alimwachilia huru, akamsamehe deni.",
+          "R": "Mfalme alimhurumia mtumishi huyo. Basi akamwachilia aende zake, akamsamehe deni lote."
         }
       },
       "decisions": [
@@ -1976,6 +2799,28 @@
           "reason": "\"Servant\" in Balanced and Readable, as the style guide has it, and Literal keeps \"slave\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018027013"
+          ],
+          "choice": "pardonner at every level (\"lui a pardonné sa dette\"), as in 18:21-22, 18:32, 18:35",
+          "alternatives": [
+            "remettre la dette",
+            "faire grâce de la dette"
+          ],
+          "reason": "\"Remettre une dette\" is the usual French idiom, but it would break the link the English keeps with Peter's question and with 18:35 (m3). \"Pardonner une dette\" is good French and keeps one verb through the passage.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2022,6 +2867,21 @@
           "L": "But that slave went out and found one of his fellow slaves who owed him a hundred denarii, and seizing him, he began to choke [him], saying, 'Pay back whatever you owe.'",
           "B": "But no sooner had that servant left than he came upon one of his fellow servants who owed him {{units:about a hundred days' wages|a hundred denarii}}. He grabbed him by the throat. 'Pay me what you owe!' he said.",
           "R": "Then that servant went out and found another servant who owed him {{units:about a hundred days' wages|a hundred denarii}}. He grabbed the man and started choking him. He said, 'Pay back the money you owe me!'"
+        },
+        "es": {
+          "L": "Pero al salir, aquel esclavo encontró a uno de sus compañeros de esclavitud que le debía cien denarios, y sujetándolo, lo ahogaba, diciendo: “Paga, si algo debes”.",
+          "B": "Pero en cuanto salió, aquel siervo se encontró con uno de sus compañeros, que le debía {{units:el salario de unos cien días|cien denarios}}. Lo agarró del cuello y le dijo: “¡Págame lo que me debes!”.",
+          "R": "Luego aquel siervo salió y encontró a otro siervo que le debía {{units:el salario de unos cien días|cien denarios}}. Lo agarró y empezó a ahogarlo. Le dijo: “¡Devuélveme el dinero que me debes!”."
+        },
+        "fr": {
+          "L": "Mais cet esclave, étant sorti, a trouvé un de ses compagnons d’esclavage qui lui devait cent deniers, et, l’ayant saisi, il l’étranglait en disant : “Rends ce que tu dois.”",
+          "B": "Mais à peine sorti, ce serviteur est tombé sur l’un de ses compagnons de service qui lui devait {{units:environ cent journées de salaire|cent deniers}}. Il l’a pris à la gorge. “Paie-moi ce que tu me dois !” lui a-t-il dit.",
+          "R": "Ensuite, ce serviteur est sorti et il a trouvé un autre serviteur qui lui devait {{units:environ cent journées de salaire|cent deniers}}. Il a attrapé l’homme et s’est mis à l’étrangler. Il lui a dit : “Rends-moi l’argent que tu me dois !”"
+        },
+        "sw": {
+          "L": "Lakini mtumwa yule alipotoka, alimkuta mmoja wa watumwa wenzake aliyekuwa akidaiwa naye dinari mia moja; akamkamata, akawa akimkaba koo, akisema, 'Lipa ikiwa unadaiwa chochote.'",
+          "B": "Lakini mtumishi huyo alipotoka tu, alikutana na mmoja wa watumishi wenzake aliyekuwa akidaiwa naye {{units:mshahara wa siku mia moja hivi|dinari mia moja}}. Akamkaba koo, akamwambia, 'Lipa deni lako!'",
+          "R": "Kisha mtumishi huyo alitoka, akamkuta mtumishi mwingine aliyekuwa akidaiwa naye {{units:mshahara wa siku mia moja hivi|dinari mia moja}}. Akamkamata, akaanza kumkaba koo. Akamwambia, 'Nilipe deni lako!'"
         }
       },
       "decisions": [
@@ -2117,6 +2977,44 @@
           "reason": "\"Servant\" in Balanced and Readable, as the style guide has it; the man is in the same position as the first, owned by the king, and Literal keeps \"fellow slaves\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40018028014",
+            "n40018028015"
+          ],
+          "choice": "{{units:el salario de unos cien días|cien denarios}}",
+          "alternatives": [],
+          "reason": "As in English and as at John 6:7: a denarius was a day's wage (meaning decision m1), so Balanced and Readable give the sum in days' wages by default, with the coins one tap away. Literal keeps the coins.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40018028014",
+            "n40018028015"
+          ],
+          "choice": "{{units:mshahara wa siku mia moja hivi|dinari mia moja}}",
+          "alternatives": [],
+          "reason": "As in English and as at John 6:7: a denarius was a day's wage (meaning decision m1), so Balanced and Readable give the sum in days' wages by default, with the coins as the alternative. Literal keeps the coins.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2153,6 +3051,21 @@
           "L": "So his fellow slave fell down and was begging him, saying, 'Be patient with me, and I will pay you.'",
           "B": "His fellow servant dropped to the ground and pleaded with him, 'Give me time, and I will pay you back.'",
           "R": "The other servant got down on his knees and begged him, 'Please be patient with me. I will pay you back.'"
+        },
+        "es": {
+          "L": "Entonces su compañero de esclavitud, cayendo, le suplicaba, diciendo: “Ten paciencia conmigo, y te pagaré”.",
+          "B": "Su compañero se echó al suelo y le suplicó: “Dame tiempo, y te lo pagaré”.",
+          "R": "El otro siervo se puso de rodillas y le rogó: “Por favor, ten paciencia conmigo. Te pagaré”."
+        },
+        "fr": {
+          "L": "Alors son compagnon d’esclavage, s’étant jeté à terre, le suppliait en disant : “Sois patient envers moi, et je te rendrai.”",
+          "B": "Son compagnon de service s’est jeté à terre et l’a supplié : “Accorde-moi un délai, et je te rembourserai.”",
+          "R": "L’autre serviteur s’est mis à genoux et l’a supplié : “S’il te plaît, sois patient avec moi. Je te rendrai l’argent.”"
+        },
+        "sw": {
+          "L": "Basi mtumwa mwenzake, akiisha kuanguka, alikuwa akimsihi, akisema, 'Nivumilie, nami nitakulipa.'",
+          "B": "Mtumishi mwenzake alijitupa chini, akamsihi, 'Nipe muda, nami nitakulipa.'",
+          "R": "Yule mtumishi mwingine alipiga magoti, akamwomba, 'Tafadhali, nivumilie. Nitakulipa.'"
         }
       },
       "decisions": [
@@ -2282,6 +3195,21 @@
           "L": "But he was not willing; instead he went and threw him into prison until he should pay what was owed.",
           "B": "But he would not hear of it. He went off and had the man put in prison until the debt was paid.",
           "R": "But the first servant would not wait. He had the other man thrown into prison. He would stay there until he paid back what he owed."
+        },
+        "es": {
+          "L": "Pero él no quiso, sino que fue y lo echó en la cárcel hasta que pagara lo que debía.",
+          "B": "Pero él no quiso saber nada. Fue e hizo que lo metieran en la cárcel hasta que pagara la deuda.",
+          "R": "Pero el primer siervo no quiso esperar. Hizo que metieran al otro en la cárcel. Allí se quedaría hasta que pagara lo que debía."
+        },
+        "fr": {
+          "L": "Mais lui ne voulait pas ; au contraire, il est allé le jeter en prison jusqu’à ce qu’il ait payé ce qui était dû.",
+          "B": "Mais il n’a rien voulu entendre. Il est parti et a fait mettre l’homme en prison jusqu’à ce que la dette soit payée.",
+          "R": "Mais le premier serviteur n’a pas voulu attendre. Il a fait jeter l’autre homme en prison. Celui-ci devait y rester jusqu’à ce qu’il ait rendu ce qu’il devait."
+        },
+        "sw": {
+          "L": "Lakini yeye hakutaka, bali alikwenda akamtupa gerezani mpaka atakapolipa kile alichokuwa akidaiwa.",
+          "B": "Lakini yeye hakukubali hata kidogo. Alikwenda, akaamuru atiwe gerezani mpaka atakapolipa deni.",
+          "R": "Lakini mtumishi wa kwanza hakutaka kungoja. Alimfanya yule mwingine atupwe gerezani. Angekaa humo mpaka alipe deni lote."
         }
       },
       "decisions": [
@@ -2382,6 +3310,21 @@
           "L": "So when his fellow slaves saw what had happened, they were deeply distressed, and they went and reported to their master all that had happened.",
           "B": "When the other servants saw what had taken place, they were deeply upset. They went to their master and told him the whole story.",
           "R": "The other servants saw what happened, and it made them very upset. So they went and told the king everything."
+        },
+        "es": {
+          "L": "Entonces sus compañeros de esclavitud, viendo lo sucedido, se entristecieron mucho, y fueron y le explicaron a su señor todo lo sucedido.",
+          "B": "Cuando los demás siervos vieron lo que había pasado, se quedaron muy dolidos. Fueron a su señor y le contaron todo lo ocurrido.",
+          "R": "Los otros siervos vieron lo que pasó y se pusieron muy tristes. Así que fueron y se lo contaron todo al rey."
+        },
+        "fr": {
+          "L": "Ses compagnons d’esclavage, ayant donc vu ce qui était arrivé, ont été profondément attristés, et ils sont allés exposer à leur maître tout ce qui était arrivé.",
+          "B": "Quand les autres serviteurs ont vu ce qui s’était passé, ils ont été profondément bouleversés. Ils sont allés trouver leur maître et lui ont tout raconté.",
+          "R": "Les autres serviteurs ont vu ce qui s’était passé, et ils ont été très choqués. Alors ils sont allés tout raconter au roi."
+        },
+        "sw": {
+          "L": "Basi watumwa wenzake walipoona yaliyotukia, walihuzunika sana, wakaenda, wakamweleza bwana wao yote yaliyotukia.",
+          "B": "Watumishi wengine walipoona yaliyotokea, walisikitika sana. Wakaenda kwa bwana wao, wakamweleza habari yote.",
+          "R": "Watumishi wengine waliona yaliyotokea, wakahuzunika sana. Basi wakaenda, wakamwambia mfalme kila kitu."
         }
       },
       "decisions": [
@@ -2497,6 +3440,21 @@
           "L": "Then his master summoned him and says to him, 'Wicked slave! I forgave you all that debt, because you begged me.",
           "B": "So the master had him called back and said to him, 'Wicked servant! You pleaded with me, and I forgave you the whole of that debt.",
           "R": "Then the king called the servant in. He said to him, 'You evil servant! You begged me to help you, so I forgave everything you owed me."
+        },
+        "es": {
+          "L": "Entonces su señor, llamándolo, le dice: “¡Esclavo malvado! Toda aquella deuda te perdoné, porque me suplicaste.",
+          "B": "Entonces su señor lo mandó llamar y le dijo: “¡Siervo malvado! Tú me suplicaste, y yo te perdoné toda aquella deuda.",
+          "R": "Entonces el rey hizo llamar al siervo y le dijo: “¡Siervo malvado! Tú me rogaste que te ayudara, y por eso te perdoné todo lo que me debías."
+        },
+        "fr": {
+          "L": "Alors son maître, l’ayant fait appeler, lui dit : “Méchant esclave ! Toute cette dette, je te l’ai pardonnée, puisque tu m’as supplié.",
+          "B": "Le maître l’a alors fait rappeler et lui a dit : “Méchant serviteur ! Tu m’as supplié, et je t’ai pardonné toute cette dette.",
+          "R": "Alors le roi a fait venir le serviteur. Il lui a dit : “Serviteur sans cœur ! Tu m’as supplié de t’aider, alors je t’ai pardonné tout ce que tu me devais."
+        },
+        "sw": {
+          "L": "Kisha bwana wake, akiisha kumwita, anamwambia, 'Mtumwa mwovu! Deni lile lote nilikusamehe kwa kuwa uliniomba kwa bidii.",
+          "B": "Basi bwana wake alimwita, akamwambia, 'Mtumishi mwovu wewe! Ulinisihi, nami nikakusamehe deni lile lote.",
+          "R": "Kisha mfalme alimwita mtumishi huyo, akamwambia, 'Wewe mtumishi mwovu! Uliniomba nikusaidie, kwa hiyo nikakusamehe deni lako lote."
         }
       },
       "decisions": [
@@ -2647,6 +3605,21 @@
           "L": "Should you not also have had mercy on your fellow slave, as I also had mercy on you?'",
           "B": "Should you not have shown your fellow servant the same mercy I showed you?'",
           "R": "You should have shown mercy to the other servant, just as I showed mercy to you.'"
+        },
+        "es": {
+          "L": "¿No era necesario que también tú tuvieras misericordia de tu compañero de esclavitud, como también yo tuve misericordia de ti?”.",
+          "B": "¿No debías haber tratado a tu compañero con la misma misericordia con que yo te traté a ti?”.",
+          "R": "Tú también debías haber tenido misericordia del otro siervo, como yo la tuve de ti”."
+        },
+        "fr": {
+          "L": "Ne fallait-il pas que toi aussi tu aies pitié de ton compagnon d’esclavage, comme moi aussi j’ai eu pitié de toi ?”",
+          "B": "Ne devais-tu pas, toi aussi, avoir pour ton compagnon de service la même pitié que j’ai eue pour toi ?”",
+          "R": "Tu aurais dû avoir pitié de l’autre serviteur, comme j’ai eu pitié de toi.”"
+        },
+        "sw": {
+          "L": "Je, haikukupasa wewe pia kumhurumia mtumwa mwenzako, kama nami nilivyokuhurumia wewe?'",
+          "B": "Je, hukupaswa kumwonea mtumishi mwenzako huruma ile ile niliyokuonea mimi?'",
+          "R": "Ulipaswa kumhurumia mtumishi mwenzako, kama mimi nilivyokuhurumia wewe.'"
         }
       },
       "decisions": [
@@ -2772,6 +3745,21 @@
           "L": "And in anger his master handed him over to the torturers until he should pay all that was owed.",
           "B": "Then the master, now angry, gave him over to the torturers, to stay with them until he had repaid the whole debt.",
           "R": "The king was very angry. He handed the servant over to men who would torture him in prison. He would stay there until he paid back everything he owed."
+        },
+        "es": {
+          "L": "Y enojado, su señor lo entregó a los torturadores hasta que pagara todo lo que debía.",
+          "B": "Entonces su señor, ya enfurecido, lo entregó a los torturadores, y allí se quedaría hasta que pagara toda la deuda.",
+          "R": "El rey se enojó mucho. Entregó al siervo a unos hombres que lo torturarían en la cárcel. Allí se quedaría hasta que pagara todo lo que debía."
+        },
+        "fr": {
+          "L": "Et son maître, mis en colère, l’a livré aux tortionnaires jusqu’à ce qu’il ait payé tout ce qui était dû.",
+          "B": "Alors le maître, en colère, l’a livré aux bourreaux, jusqu’à ce qu’il ait remboursé toute la dette.",
+          "R": "Le roi était très en colère. Il a livré le serviteur à des hommes qui allaient le torturer en prison. Il devait y rester jusqu’à ce qu’il ait rendu tout ce qu’il devait."
+        },
+        "sw": {
+          "L": "Na bwana wake, akiwa amekasirika, alimkabidhi kwa watesaji mpaka atakapolipa yote aliyokuwa akidaiwa.",
+          "B": "Basi bwana wake, sasa akiwa na hasira, alimtia mikononi mwa watesaji, akae nao mpaka alipe deni lote.",
+          "R": "Mfalme alikasirika sana. Alimkabidhi mtumishi huyo kwa watu ambao wangemtesa gerezani. Angekaa humo mpaka alipe deni lote."
         }
       },
       "decisions": [
@@ -2888,6 +3876,21 @@
           "L": "So also {{deity_pronoun:my|My}} heavenly Father will do to you, if you do not each forgive {{gender:your brother or sister|your brother}} from your hearts.\"",
           "B": "My Father in heaven will deal with you in the same way if you do not forgive {{gender:your brother or sister|your brother}} from the heart, each one of you.\"",
           "R": "And {{deity_pronoun:my|My}} Father in heaven will do the same to you if you do not truly forgive {{gender:your brother or sister|your brother}} from your heart.\""
+        },
+        "es": {
+          "L": "Así también {{deity_pronoun:mi|Mi}} Padre celestial hará con {{plural_you:ustedes|vosotros}}, si no {{plural_you:perdonan|perdonáis}} cada uno a {{gender:su hermano o hermana|su hermano}} de {{plural_you:sus|vuestros}} corazones».",
+          "B": "Así tratará también {{deity_pronoun:mi|Mi}} Padre que está en el cielo a cada uno de {{plural_you:ustedes|vosotros}}, si no perdona de corazón a {{gender:su hermano o hermana|su hermano}}».",
+          "R": "Y {{deity_pronoun:mi|Mi}} Padre que está en el cielo hará lo mismo con {{plural_you:ustedes|vosotros}} si cada uno no perdona de verdad, de todo corazón, a {{gender:su hermano o hermana|su hermano}}»."
+        },
+        "fr": {
+          "L": "C’est ainsi que {{deity_pronoun:mon|Mon}} Père céleste vous traitera aussi, si vous ne pardonnez pas, chacun, à {{gender:son frère ou sa sœur|son frère}} du fond de vos cœurs. »",
+          "B": "Mon Père qui est dans le ciel agira de la même manière envers vous si chacun de vous ne pardonne pas à {{gender:son frère ou sa sœur|son frère}} du fond du cœur. »",
+          "R": "Et {{deity_pronoun:mon|Mon}} Père qui est au ciel vous traitera de la même façon si vous ne pardonnez pas vraiment, du fond du cœur, à {{gender:votre frère ou votre sœur|votre frère}}. »"
+        },
+        "sw": {
+          "L": "Ndivyo atakavyowatendea ninyi pia Baba {{deity_pronoun:yangu|Yangu}} wa mbinguni, ikiwa hamtamsamehe kila mmoja ndugu yake kutoka ndani ya mioyo yenu.\"",
+          "B": "Baba {{deity_pronoun:yangu|Yangu}} aliye mbinguni atawatendea vivyo hivyo, ikiwa kila mmoja wenu hatamsamehe ndugu yake kwa moyo wote.\"",
+          "R": "Naye Baba {{deity_pronoun:yangu|Yangu}} aliye mbinguni atawatendea vivyo hivyo kama kila mmoja wenu hatamsamehe ndugu yake kwa kweli, kutoka moyoni.\""
         }
       },
       "decisions": [
@@ -3010,6 +4013,26 @@
             "heavenly"
           ],
           "reason": "Balanced and Readable use the form of 6:9 and 18:10.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n40018035013",
+            "n40018035015",
+            "n40018035016"
+          ],
+          "choice": "cada uno ... a su hermano",
+          "alternatives": [],
+          "reason": "With \"cada uno\" (each one) as the subject, \"su hermano\" is right for both ustedes and vosotros readers, so the brother needs no plural_you span; \"de {{plural_you:sus|vuestros}} corazones\" in Literal does.",
           "uncertain": false,
           "footnote": false
         }

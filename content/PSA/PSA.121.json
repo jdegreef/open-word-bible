@@ -32,6 +32,16 @@
           "L": "A song for the ascents. I lift up my eyes to the mountains; from where will my help come?",
           "B": "A song of ascents. I look up to the mountains. Where will my help come from?",
           "R": "A song for the journey up to Jerusalem. I look up at the hills. Where can I find help?"
+        },
+        "vi": {
+          "L": "Bài ca cho những lần đi lên. \\q Tôi ngước mắt lên các núi; \\q sự giúp đỡ của tôi sẽ đến từ đâu?",
+          "B": "Bài ca đi lên. \\q Tôi nhìn lên núi đồi. \\q Sự giúp đỡ cho tôi sẽ từ đâu đến?",
+          "R": "Bài ca cho cuộc hành trình lên Giê-ru-sa-lem. \\q Tôi nhìn lên những ngọn đồi. \\q Tôi có thể tìm sự giúp đỡ ở đâu?"
+        },
+        "ko": {
+          "L": "올라감을 위한 노래. \\q 내가 산들을 향해 내 눈을 든다. \\q 나의 도움이 어디에서 오겠는가?",
+          "B": "올라가며 부르는 노래. \\q 나는 산들을 바라본다. \\q 나를 도울 힘은 어디에서 오는가?",
+          "R": "예루살렘으로 올라가며 부르는 노래. \\q 나는 언덕들을 올려다본다. \\q 어디에서 도움을 얻을 수 있을까?"
         }
       },
       "decisions": [
@@ -133,6 +143,73 @@
           "reason": "As in 120:1.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191210010011",
+            "o191210010022"
+          ],
+          "choice": "\"Bài ca cho những lần đi lên\" (L); \"Bài ca đi lên\" (B)",
+          "alternatives": [
+            "\"Bài ca lên đền\"",
+            "\"Bài ca hành hương\""
+          ],
+          "reason": "The title says only \"ascents\"; it is probably a pilgrim song for going up to Jerusalem (see the meaning decision), but Literal and Balanced keep the title's own word, and Readable explains it as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191210010011",
+            "o191210010022"
+          ],
+          "choice": "\"올라감을 위한 노래\" (L), \"올라가며 부르는 노래\" (B), \"예루살렘으로 올라가며 부르는 노래\" (R)",
+          "alternatives": [
+            "성전에 올라가는 노래",
+            "순례의 노래"
+          ],
+          "reason": "Balanced says what the title most likely means, a song sung on the way up (meaning decision), without naming the temple, which the Hebrew does not; Readable names Jerusalem as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o191210010041",
+            "o191210010092"
+          ],
+          "choice": "The singer speaks in the plain written style and calls himself \"나\" (verses 1-2)",
+          "alternatives": [
+            "저 and 합쇼체"
+          ],
+          "reason": "Verses 1-2 are not addressed to God, so the plain written style holds (style guide section 7a); see verse 3 for the voice that answers.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -164,6 +241,16 @@
           "L": "My help [is] from {{divine_name:the LORD|Yahweh}}, maker of heaven and earth.",
           "B": "My help is from {{divine_name:the LORD|Yahweh}}, the one who made heaven and earth.",
           "R": "{{divine_name:The LORD|Yahweh}} is the one who helps me. He made the heavens and the earth."
+        },
+        "vi": {
+          "L": "Sự giúp đỡ của tôi [đến] từ nơi {{divine_name:CHÚA|Gia-vê}}, \\q Đấng làm nên trời và đất.",
+          "B": "Sự giúp đỡ của tôi đến từ {{divine_name:CHÚA|Gia-vê}}, \\q Đấng đã tạo nên trời và đất.",
+          "R": "{{divine_name:CHÚA|Gia-vê}} là Đấng giúp đỡ tôi. \\q Ngài đã dựng nên trời và đất."
+        },
+        "ko": {
+          "L": "나의 도움은 {{divine_name:주|야훼}}께로부터 [온다]. \\q 하늘과 땅을 지으신 분이시다.",
+          "B": "내 도움은 {{divine_name:주|야훼}}께로부터 온다. \\q 그분은 하늘과 땅을 만드신 분이시다.",
+          "R": "{{divine_name:주|야훼}}께서 나를 도와주신다. \\q 그분께서 하늘과 땅을 만드셨다."
         }
       },
       "decisions": [
@@ -195,6 +282,28 @@
           "choice": "maker of heaven and earth: the creator of all",
           "alternatives": [],
           "reason": "The LORD is named as the one who made everything (Genesis 1:1; 14:19). Help from the creator of the whole world is greater than any help the hills, or anything in them, could give. The same words close 124:8 and 134:3 and appear in 115:15.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191210020031"
+          ],
+          "choice": "YHWH is {{divine_name:주|야훼}} with the particle outside the span ({{divine_name:주|야훼}}께로부터, {{divine_name:주|야훼}}께서)",
+          "alternatives": [
+            "여호와",
+            "주님"
+          ],
+          "reason": "As the style guide (section 7a); this holds for the whole psalm.",
           "uncertain": false,
           "footnote": false
         }
@@ -229,6 +338,16 @@
           "L": "May {{deity_pronoun:he|He}} not allow your foot to slip; may your keeper not slumber.",
           "B": "May {{deity_pronoun:he|He}} never let your foot stumble; may the one who guards you never doze.",
           "R": "May {{deity_pronoun:he|He}} keep you from falling. May the one who protects you stay awake."
+        },
+        "vi": {
+          "L": "Nguyện {{deity_pronoun:ngài|Ngài}} không để chân bạn trượt ngã; \\q nguyện Đấng gìn giữ bạn không ngủ gật.",
+          "B": "Nguyện {{deity_pronoun:ngài|Ngài}} không bao giờ để chân bạn vấp ngã; \\q nguyện Đấng canh giữ bạn không hề chợp mắt.",
+          "R": "Nguyện {{deity_pronoun:ngài|Ngài}} giữ bạn khỏi vấp ngã. \\q Nguyện Đấng bảo vệ bạn luôn tỉnh thức."
+        },
+        "ko": {
+          "L": "그분께서 네 발이 미끄러지도록 두지 않으시기를. \\q 너를 지키시는 분께서 졸지 않으시기를.",
+          "B": "그분께서 네 발이 결코 헛디디지 않게 하시기를, \\q 너를 지키시는 분께서 결코 졸지 않으시기를 빈다.",
+          "R": "그분께서 너를 넘어지지 않게 지켜 주시기를. \\q 너를 보호하시는 분께서 늘 깨어 계시기를."
         }
       },
       "decisions": [
@@ -300,6 +419,97 @@
           "reason": "The verb shamar comes six times in this psalm (verses 3-8). Each level keeps one English word for it throughout, so that the repetition, which carries the psalm, can be heard.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o191210030042",
+            "o191210030072"
+          ],
+          "choice": "\"bạn\" for the one person spoken to in verses 3-8",
+          "alternatives": [
+            "\"con\"",
+            "\"anh\"",
+            "\"ngươi\""
+          ],
+          "reason": "The voice turns to speak to one person, man or woman, young or old. \"bạn\" is the neutral modern word that fits anyone; \"con\" would make the speaker a parent or priest, \"anh\" fixes age and sex, and \"ngươi\" is archaic.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191210030071"
+          ],
+          "choice": "\"gìn giữ\" (L), \"canh giữ\" (B), \"bảo vệ\" (R) for the psalm's repeated \"keep\"",
+          "alternatives": [
+            "\"giữ gìn\" at every level"
+          ],
+          "reason": "The verb runs through the psalm six times; each level keeps one word for it throughout, as the English does (keep, guard, protect).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o191210030042",
+            "o191210030072"
+          ],
+          "choice": "The one addressed is \"너\", in the plain style (해라체); the wish is \"-기를\"",
+          "alternatives": [
+            "그대",
+            "당신",
+            "합쇼체"
+          ],
+          "reason": "From verse 3 a voice speaks to one person (meaning decision m3), a blessing to a fellow pilgrim or the singer's own heart; 해라체 with 너 is the plain voice of Korean poetry and of a blessing spoken to an equal. \"그대\" is a possible literary alternative.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191210030071"
+          ],
+          "choice": "\"지키다\" (L, B) and \"보호하다\" (R) for the keeper and keeping in verses 3-8; no deity_pronoun spans (Korean has no capitals)",
+          "alternatives": [
+            "돌보다",
+            "보살피다"
+          ],
+          "reason": "One verb runs through the psalm (keep) and Korean keeps one at each level so the repetition is heard; \"지키다\" covers both keep and guard. God is 그분 with the honorific (style guide section 7).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -330,6 +540,16 @@
           "L": "Look, {{deity_pronoun:he|He}} will not slumber and {{deity_pronoun:he|He}} will not sleep, the keeper of Israel.",
           "B": "Indeed, the one who guards Israel never dozes off and never sleeps.",
           "R": "The one who protects Israel never gets sleepy. He never sleeps."
+        },
+        "vi": {
+          "L": "Này, {{deity_pronoun:ngài|Ngài}} sẽ không ngủ gật và {{deity_pronoun:ngài|Ngài}} sẽ không ngủ, \\q Đấng gìn giữ Y-sơ-ra-ên.",
+          "B": "Thật vậy, Đấng canh giữ Y-sơ-ra-ên không bao giờ chợp mắt, \\q cũng chẳng hề ngủ.",
+          "R": "Đấng bảo vệ Y-sơ-ra-ên không bao giờ buồn ngủ. \\q Ngài không bao giờ ngủ."
+        },
+        "ko": {
+          "L": "보아라, 그분은 졸지도 않으시고 주무시지도 않으신다, \\q 이스라엘을 지키시는 분은.",
+          "B": "참으로 그분은 졸지도 주무시지도 않으신다, \\q 이스라엘을 지키시는 그분은.",
+          "R": "이스라엘을 보호하시는 분은 결코 졸지 않으신다. \\q 그분은 한 번도 주무시지 않으신다."
         }
       },
       "decisions": [
@@ -413,6 +633,16 @@
           "L": "{{divine_name:The LORD|Yahweh}} [is] your keeper; {{divine_name:The LORD|Yahweh}} [is] your shade at your right hand.",
           "B": "{{divine_name:The LORD|Yahweh}} is the one who guards you; {{divine_name:The LORD|Yahweh}} is shade at your right side.",
           "R": "{{divine_name:The LORD|Yahweh}} protects you. {{divine_name:The LORD|Yahweh}} stands next to you like shade that keeps off the heat."
+        },
+        "vi": {
+          "L": "{{divine_name:CHÚA|Gia-vê}} [là] Đấng gìn giữ bạn; \\q {{divine_name:CHÚA|Gia-vê}} [là] bóng che bạn ở bên tay phải bạn.",
+          "B": "{{divine_name:CHÚA|Gia-vê}} là Đấng canh giữ bạn; \\q {{divine_name:CHÚA|Gia-vê}} là bóng mát che chở bên phải bạn.",
+          "R": "{{divine_name:CHÚA|Gia-vê}} bảo vệ bạn. \\q {{divine_name:CHÚA|Gia-vê}} đứng ngay cạnh bạn như bóng mát che cái nắng gay gắt."
+        },
+        "ko": {
+          "L": "{{divine_name:주|야훼}}는 너를 지키시는 분이시다. \\q {{divine_name:주|야훼}}는 네 오른손 곁의 너의 그늘이시다.",
+          "B": "{{divine_name:주|야훼}}는 너를 지키시는 분, \\q {{divine_name:주|야훼}}는 네 오른편에서 그늘이 되어 주신다.",
+          "R": "{{divine_name:주|야훼}}께서 너를 보호하신다. \\q {{divine_name:주|야훼}}께서 네 곁에 서서 뜨거운 햇볕을 가려 주는 그늘이 되신다."
         }
       },
       "decisions": [
@@ -516,6 +746,16 @@
           "L": "By day the sun will not strike you, nor the moon by night.",
           "B": "By day the sun will not beat down on you, and by night the moon will do you no harm.",
           "R": "The sun will not hurt you during the day. The moon will not hurt you at night."
+        },
+        "vi": {
+          "L": "Ban ngày mặt trời sẽ không đánh vào bạn, \\q mặt trăng ban đêm cũng không.",
+          "B": "Ban ngày mặt trời sẽ không thiêu đốt bạn, \\q ban đêm mặt trăng cũng chẳng làm hại bạn.",
+          "R": "Ban ngày mặt trời sẽ không làm hại bạn. \\q Ban đêm mặt trăng cũng không làm hại bạn."
+        },
+        "ko": {
+          "L": "낮에 해가 너를 치지 않을 것이요, \\q 밤에 달도 [너를 치지 않을 것이다].",
+          "B": "낮에는 해가 너를 내리쬐어 상하게 하지 않고, \\q 밤에도 달이 너에게 해를 끼치지 못할 것이다.",
+          "R": "낮에는 해가 너를 아프게 하지 못할 것이다. \\q 밤에는 달이 너를 해치지 못할 것이다."
         }
       },
       "decisions": [
@@ -579,6 +819,16 @@
           "L": "{{divine_name:The LORD|Yahweh}} will keep you from all evil; {{deity_pronoun:he|He}} will keep your soul.",
           "B": "{{divine_name:The LORD|Yahweh}} will guard you against every harm; {{deity_pronoun:he|He}} will guard your very life.",
           "R": "{{divine_name:The LORD|Yahweh}} will protect you from every danger. He will protect your life."
+        },
+        "vi": {
+          "L": "{{divine_name:CHÚA|Gia-vê}} sẽ gìn giữ bạn khỏi mọi điều ác; \\q {{deity_pronoun:ngài|Ngài}} sẽ gìn giữ linh hồn bạn.",
+          "B": "{{divine_name:CHÚA|Gia-vê}} sẽ canh giữ bạn khỏi mọi tai họa; \\q {{deity_pronoun:ngài|Ngài}} sẽ canh giữ chính mạng sống bạn.",
+          "R": "{{divine_name:CHÚA|Gia-vê}} sẽ bảo vệ bạn khỏi mọi nguy hiểm. \\q Ngài sẽ bảo vệ mạng sống bạn."
+        },
+        "ko": {
+          "L": "{{divine_name:주|야훼}}께서 모든 악에서 너를 지키실 것이다. \\q 그분께서 네 영혼을 지키실 것이다.",
+          "B": "{{divine_name:주|야훼}}께서 온갖 해로부터 너를 지키시고, \\q 네 목숨을 지켜 주실 것이다.",
+          "R": "{{divine_name:주|야훼}}께서 모든 위험에서 너를 보호하실 것이다. \\q 네 목숨을 보호하실 것이다."
         }
       },
       "decisions": [
@@ -638,6 +888,29 @@
           "reason": "As in 121:3.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191210070071",
+            "o191210070072"
+          ],
+          "choice": "\"영혼\" (L); \"목숨\" (B, R) for nefesh",
+          "alternatives": [
+            "생명",
+            "영혼 at every level"
+          ],
+          "reason": "Balanced and Readable say the life that is kept from harm, as the English does; \"목숨\" is the word kept for this sense (style guide section 6), \"생명\" being kept for life in the fuller sense.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -672,6 +945,16 @@
           "L": "{{divine_name:The LORD|Yahweh}} will keep your going out and your coming in from now and until forever.",
           "B": "{{divine_name:The LORD|Yahweh}} will guard you as you set out and as you return, from now on and for all time.",
           "R": "{{divine_name:The LORD|Yahweh}} will protect you when you leave home and when you come back, now and forever."
+        },
+        "vi": {
+          "L": "{{divine_name:CHÚA|Gia-vê}} sẽ gìn giữ sự ra đi của bạn và sự trở vào của bạn, \\q từ nay cho đến đời đời.",
+          "B": "{{divine_name:CHÚA|Gia-vê}} sẽ canh giữ bạn khi bạn ra đi và khi bạn trở về, \\q từ nay cho đến mãi mãi.",
+          "R": "{{divine_name:CHÚA|Gia-vê}} sẽ bảo vệ bạn khi bạn rời nhà và khi bạn trở về, \\q bây giờ và mãi mãi."
+        },
+        "ko": {
+          "L": "{{divine_name:주|야훼}}께서 너의 나감과 너의 들어옴을 지키실 것이다, \\q 지금부터 영원까지.",
+          "B": "{{divine_name:주|야훼}}께서 네가 길을 떠날 때에도 돌아올 때에도 너를 지키실 것이다, \\q 지금부터 영원토록.",
+          "R": "{{divine_name:주|야훼}}께서 네가 집을 나설 때에도, 집에 돌아올 때에도 너를 보호하실 것이다. \\q 지금도, 그리고 영원히."
         }
       },
       "decisions": [

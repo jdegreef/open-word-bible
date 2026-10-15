@@ -527,7 +527,9 @@ def footer_links(lang):
                (url(lang, "/about/#credits"), t(lang, "nav.credits"), None),
                (url(lang, "/#help"), t(lang, "nav.help"), None),
                (GITHUB_URL, t(lang, "nav.source"), None),
-               (GITHUB_URL + "/issues/new", t(lang, "footer.report"), None)]
+               (GITHUB_URL + "/issues/new", t(lang, "footer.report"), None),
+               (url(lang, "/about/privacy/"), t(lang, "nav.privacy"), None),
+               (url(lang, "/about/terms-of-use/"), t(lang, "nav.terms_of_use"), None)]
     project = items(project).replace('/issues/new"', '/issues/new" data-report', 1)
     learn = f'<nav aria-labelledby="foot-learn"><h2 id="foot-learn">{t(lang, "footer.learn")}</h2><ul>{items(learn)}</ul></nav>\n'
     return (f'{learn}'
@@ -2677,6 +2679,32 @@ def beliefs_page(lang="en"):
                 description=b["description"])
 
 
+def legal_page(lang, key, path):
+    """The privacy notice (key "privacy") or the terms of use
+    ("terms_of_use"), from the catalog entry of that name: a heading, the
+    date it last changed, then titled sections of paragraphs. A paragraph
+    may be a list; {account}, {credits}, {issues}, {source} and {privacy}
+    become links in lang."""
+    c = catalog(lang)[key]
+    links = {"account": url(lang, "/account/"), "credits": url(lang, "/about/#credits"),
+             "issues": GITHUB_URL + "/issues", "source": GITHUB_URL, "privacy": url(lang, "/about/privacy/")}
+
+    def block(text):
+        text = text.format(**links)
+        return text if text.startswith("<ul>") else f"<p>{text}</p>"
+
+    sections = "".join(f"<h2>{heading}</h2>{''.join(map(block, paragraphs))}" for heading, paragraphs in c["sections"])
+    body = f"""
+<div class="prose legal">
+<h1>{c["heading"]}</h1>
+<p class="fine">{c["updated"]}</p>
+<p class="dek">{c["dek"]}</p>
+{sections}
+</div>
+"""
+    return page(lang, c["title"], body, path=path, current="/about/", description=c["description"])
+
+
 # The key-terms glossary: /terms/ lists every key term (data/key_terms.json)
 # and /terms/<slug>/ shows one with every place it is used in the drafted
 # text, so a reader can check that the translation keeps its word.
@@ -3632,7 +3660,7 @@ def login_page(lang="en"):
 <p class="auth-switch" data-for="sign-in">{l("new")} <a href="./" data-mode-link="sign-up">{l("create")}</a></p>
 <p class="auth-switch" data-for="sign-up" hidden>{l("have")} <a href="./" data-mode-link="sign-in">{l("sign_in")}</a></p>
 <p class="auth-switch" data-for="reset" hidden><a href="./" data-mode-link="sign-in">{l("back")}</a></p>
-<p class="fine auth-privacy">{l("privacy")}</p>
+<p class="fine auth-privacy">{l("privacy")} <a href="{url(lang, "/about/privacy/")}">{t(lang, "nav.privacy")}</a> &middot; <a href="{url(lang, "/about/terms-of-use/")}">{t(lang, "nav.terms_of_use")}</a></p>
 </div>
 
 <div class="auth-card auth-message" data-view="sent" hidden>
@@ -4083,6 +4111,8 @@ def build(out):
         add("/read/", read_page(lang))
         add("/about/", about_page(lang))
         add("/about/beliefs/", beliefs_page(lang))
+        add("/about/privacy/", legal_page(lang, "privacy", "/about/privacy/"))
+        add("/about/terms-of-use/", legal_page(lang, "terms_of_use", "/about/terms-of-use/"))
         add("/search/", search_page(lang))
         add("/compare/", compare_page(lang))
         add("/word/", word_page(lang))

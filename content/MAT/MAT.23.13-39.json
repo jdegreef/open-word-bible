@@ -43,6 +43,21 @@
           "L": "But woe to you, scribes and Pharisees, hypocrites! For you shut the kingdom of the heavens in front of {{gender:people|men}}; for you yourselves do not enter, nor do you allow those who are entering to go in.",
           "B": "Woe to you, scribes and Pharisees, you hypocrites! You bar the way into the kingdom of heaven so that people cannot get in. You do not go in yourselves, and when others are on their way in, you stop them.",
           "R": "How terrible it will be for you, teachers of the law and Pharisees! You are hypocrites! You keep people from entering the kingdom of heaven. You will not go in yourselves, and you stop others who are trying to go in."
+        },
+        "es": {
+          "L": "Pero ¡Ay de {{plural_you:ustedes|vosotros}}, escribas y fariseos, hipócritas! Porque {{plural_you:cierran|cerráis}} el reino de los cielos delante de {{gender:la gente|los hombres}}; pues {{plural_you:ustedes|vosotros}} mismos no {{plural_you:entran|entráis}}, ni {{plural_you:dejan|dejáis}} entrar a los que están entrando.",
+          "B": "¡Ay de {{plural_you:ustedes|vosotros}}, escribas y fariseos, hipócritas! {{plural_you:Cierran|Cerráis}} el paso al reino de los cielos para que la gente no pueda entrar. {{plural_you:Ustedes|Vosotros}} no {{plural_you:entran|entráis}}, y a los que van entrando les {{plural_you:impiden|impedís}} el paso.",
+          "R": "¡Qué terrible será para {{plural_you:ustedes|vosotros}}, maestros de la ley y fariseos! ¡{{plural_you:Son|Sois}} unos hipócritas! {{plural_you:Impiden|Impedís}} que la gente entre en el reino de los cielos. {{plural_you:Ustedes|Vosotros}} no {{plural_you:van|vais}} a entrar, y no {{plural_you:dejan|dejáis}} entrar a los que lo intentan."
+        },
+        "fr": {
+          "L": "Mais malheur à vous, scribes et Pharisiens, hypocrites ! Car vous fermez le royaume des cieux devant les {{gender:gens|hommes}} ; car vous-mêmes, vous n’entrez pas, et ceux qui entrent, vous ne les laissez pas entrer.",
+          "B": "Malheur à vous, scribes et Pharisiens, hypocrites que vous êtes ! Vous barrez aux gens l’entrée du royaume des cieux. Vous-mêmes n’y entrez pas, et ceux qui sont en train d’y entrer, vous les en empêchez.",
+          "R": "Quel malheur pour vous, spécialistes de la Loi et Pharisiens ! Vous êtes des hypocrites ! Vous empêchez les gens d’entrer dans le royaume des cieux. Vous-mêmes, vous n’y entrez pas, et vous arrêtez les autres qui essaient d’entrer."
+        },
+        "sw": {
+          "L": "Lakini Ole wenu, waandishi na Mafarisayo, wanafiki! Kwa maana mnaufunga ufalme wa mbinguni mbele ya watu; kwa maana ninyi wenyewe hamwingii, wala hamwaachi wanaoingia waingie.",
+          "B": "Ole wenu, waandishi na Mafarisayo, ninyi wanafiki! Mnaziba njia ya kuingia katika ufalme wa mbinguni ili watu wasiweze kuingia. Ninyi wenyewe hamwingii, na wale walio njiani kuingia mnawazuia.",
+          "R": "Itakuwa vibaya mno kwenu, walimu wa sheria na Mafarisayo! Ninyi ni wanafiki! Mnawazuia watu wasiingie katika ufalme wa mbinguni. Ninyi wenyewe hamtaingia, na mnawazuia wengine wanaojaribu kuingia."
         }
       },
       "decisions": [
@@ -179,6 +194,124 @@
           "reason": "The word means people in general, so the inclusive form is the default.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40023013001",
+            "n40023013003",
+            "n40023013004",
+            "n40023013007",
+            "n40023013011",
+            "n40023013013"
+          ],
+          "choice": "¡Ay de ...! (L, B), ¡Qué terrible será para ...! (R); escribas (L, B), maestros de la ley (R); hipócritas; el reino de los cielos",
+          "alternatives": [
+            "¡Desdichados ustedes!"
+          ],
+          "reason": "The terms used across the New Testament drafts. \"¡Ay de ustedes!\" is the Spanish cry of grief and warning (meaning decision m1); Readable says what it means, as the English Readable does, and names the scribes by what they did. The same in every woe of this chapter.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40023013003",
+            "n40023013009",
+            "n40023013017",
+            "n40023013020",
+            "n40023013024"
+          ],
+          "choice": "plural_you spans on every plural \"you\" and verb (ustedes|vosotros, cierran|cerráis)",
+          "alternatives": [],
+          "reason": "Spanish has two plural forms of \"you\", Latin American \"ustedes\" (the default) and Peninsular \"vosotros\"; the reader setting chooses between them. English has no such choice, so these spans have no English counterpart. The same throughout the passage.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40023013001",
+            "n40023013007"
+          ],
+          "choice": "Malheur à vous, scribes et Pharisiens, hypocrites (L), hypocrites que vous êtes (B); Quel malheur pour vous, spécialistes de la Loi et Pharisiens ! Vous êtes des hypocrites ! (R)",
+          "alternatives": [
+            "Quel malheur ce sera pour vous (R)"
+          ],
+          "reason": "The term sheet's forms, as in Matthew 11:21 and Luke 11:42: \"Malheur à\" is still understood in French and carries both grief and warning (m1), so Balanced keeps it. Every woe in this chapter is worded the same way at each level, as in English.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40023013001",
+            "n40023013003",
+            "n40023013004",
+            "n40023013007"
+          ],
+          "choice": "Ole wenu (L, B), Itakuwa vibaya mno kwenu (R); waandishi (L, B), walimu wa sheria (R); wanafiki",
+          "alternatives": [
+            "Mtapata taabu"
+          ],
+          "reason": "The terms used across the New Testament drafts. \"Ole wenu\" is the Swahili cry of grief and warning (meaning decision m1); Readable says what it means, as the English Readable does, and names the scribes by what they did. The same in every woe of this chapter.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-2",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40023013011",
+            "n40023013012",
+            "n40023013013"
+          ],
+          "choice": "ufalme wa mbinguni at every level",
+          "alternatives": [
+            "ufalme wa mbingu"
+          ],
+          "reason": "The term used across the New Testament drafts for Matthew's \"kingdom of the heavens\". \"Mbinguni\" (in heaven) already covers the Greek plural, so Literal needs nothing more.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -226,6 +359,21 @@
           "L": "Woe to you, scribes and Pharisees, hypocrites! For you travel around sea and dry land to make one proselyte, and when [that] happens, you make {{gender:them|him}} a {{gender:child|son}} of Gehenna twice as much as yourselves.",
           "B": "Woe to you, scribes and Pharisees, you hypocrites! You journey across sea and land to win over one convert. Then, once you have done so, you turn that convert into someone twice as fit for hell as you are.",
           "R": "How terrible it will be for you, teachers of the law and Pharisees! You are hypocrites! You travel over sea and land to get one person to follow your teaching. And when you do, you make that person deserve hell twice as much as you do."
+        },
+        "es": {
+          "L": "¡Ay de {{plural_you:ustedes|vosotros}}, escribas y fariseos, hipócritas! Porque {{plural_you:recorren|recorréis}} el mar y la tierra seca para hacer un solo prosélito, y cuando llega a serlo, lo {{plural_you:hacen|hacéis}} hijo de [la] Gehena el doble que {{plural_you:ustedes|vosotros}}.",
+          "B": "¡Ay de {{plural_you:ustedes|vosotros}}, escribas y fariseos, hipócritas! {{plural_you:Recorren|Recorréis}} mar y tierra para ganar un solo convertido, y cuando lo {{plural_you:logran|lográis}}, {{plural_you:convierten|convertís}} a esa persona en alguien dos veces más merecedor del infierno que {{plural_you:ustedes|vosotros}}.",
+          "R": "¡Qué terrible será para {{plural_you:ustedes|vosotros}}, maestros de la ley y fariseos! ¡{{plural_you:Son|Sois}} unos hipócritas! {{plural_you:Viajan|Viajáis}} por mar y por tierra para lograr que una sola persona siga {{plural_you:sus|vuestras}} enseñanzas. Y cuando lo {{plural_you:consiguen|conseguís}}, {{plural_you:hacen|hacéis}} que esa persona merezca el infierno el doble que {{plural_you:ustedes|vosotros}}."
+        },
+        "fr": {
+          "L": "Malheur à vous, scribes et Pharisiens, hypocrites ! Car vous parcourez la mer et la terre ferme pour faire un seul prosélyte, et quand c’est fait, vous en faites un {{gender:enfant|fils}} de la géhenne deux fois plus que vous.",
+          "B": "Malheur à vous, scribes et Pharisiens, hypocrites que vous êtes ! Vous parcourez la mer et la terre pour gagner un seul converti. Puis, quand vous y êtes parvenus, vous faites de ce converti quelqu’un qui mérite l’enfer deux fois plus que vous.",
+          "R": "Quel malheur pour vous, spécialistes de la Loi et Pharisiens ! Vous êtes des hypocrites ! Vous voyagez sur la mer et sur la terre pour amener une seule personne à suivre votre enseignement. Et quand vous y arrivez, vous faites de cette personne quelqu’un qui mérite l’enfer deux fois plus que vous."
+        },
+        "sw": {
+          "L": "Ole wenu, waandishi na Mafarisayo, wanafiki! Kwa maana mnazunguka bahari na nchi kavu ili kupata mwongofu mmoja, na anapokuwa [mwongofu], mnamfanya mwana wa Gehena mara mbili kuliko ninyi.",
+          "B": "Ole wenu, waandishi na Mafarisayo, ninyi wanafiki! Mnasafiri baharini na nchi kavu ili kumvuta mtu mmoja aingie katika dini yenu. Naye akishaingia, mnamfanya astahili jehanamu mara mbili kuliko ninyi.",
+          "R": "Itakuwa vibaya mno kwenu, walimu wa sheria na Mafarisayo! Ninyi ni wanafiki! Mnasafiri baharini na nchi kavu ili mtu mmoja tu afuate mafundisho yenu. Na mkifaulu, mnamfanya mtu huyo astahili jehanamu mara mbili kuliko ninyi."
         }
       },
       "decisions": [
@@ -365,6 +513,127 @@
           "reason": "The same wording for every woe in this chapter (see 23:13).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40023015023"
+          ],
+          "choice": "Gehena (L); el infierno (B, R)",
+          "alternatives": [
+            "el infierno at every level"
+          ],
+          "reason": "The term used across the New Testament drafts, as the English: Literal keeps the name of the valley Jesus uses for the place of final judgment; Balanced and Readable say \"el infierno\". The same in verse 33.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40023015021",
+            "n40023015022"
+          ],
+          "choice": "lo ... hijo de [la] Gehena, with no gender span",
+          "alternatives": [
+            "{{gender:hacen de esa persona|lo hacen}}"
+          ],
+          "reason": "The English Literal puts \"them\" and \"child\" under the gender setting. Spanish \"un prosélito\" and the idiom \"hijo de\" (one who belongs to, meaning decision m3) are already the general forms, and an inclusive wording would need a different sentence, so Literal has no span; Balanced and Readable say \"esa persona\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40023015021",
+            "n40023015022"
+          ],
+          "choice": "vous en faites un {{gender:enfant|fils}} (L), one span",
+          "alternatives": [
+            "{{gender:faites de cette personne|faites de lui}} un {{gender:enfant|fils}}"
+          ],
+          "reason": "English Literal needs two spans (\"them\", \"child\"). French \"en\" refers to the convert without marking gender, so only the noun takes the setting.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-2",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40023015023"
+          ],
+          "choice": "la géhenne (L); l’enfer (B, R)",
+          "alternatives": [],
+          "reason": "The term sheet's forms, as in 5:22: Literal keeps the place name, as the English does, and Balanced and Readable say \"hell\". The same in 23:33.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40023015023"
+          ],
+          "choice": "Gehena (L); jehanamu (B, R)",
+          "alternatives": [
+            "jehanamu at every level"
+          ],
+          "reason": "The term used across the New Testament drafts, as the English: Literal keeps the name Jesus uses for the place of final judgment; Balanced and Readable say \"jehanamu\", the usual Swahili word for hell. The same in verse 33.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-2",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40023015016"
+          ],
+          "choice": "mwongofu (L); kumvuta mtu mmoja aingie katika dini yenu (B)",
+          "alternatives": [
+            "mgeuzwa"
+          ],
+          "reason": "A proselyte was a Gentile who took on the God of Israel and the law (meaning decision m1). \"Mwongofu\" is a convert; Balanced says what becoming one meant, as the English \"win over one convert\" does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -411,6 +680,21 @@
           "L": "Woe to you, blind guides, who say, 'Whoever swears by the temple, it is nothing; but whoever swears by the gold of the temple is bound [by the oath].'",
           "B": "Woe to you, blind guides! This is what you teach: 'Swearing by the temple counts for nothing. But swear by the gold of the temple, and you must keep your oath.'",
           "R": "How terrible it will be for you! You are like blind people trying to lead others. You say, 'If someone makes a promise and swears by the temple, the promise does not count. But if someone swears by the gold in the temple, that person must keep the promise.'"
+        },
+        "es": {
+          "L": "¡Ay de {{plural_you:ustedes|vosotros}}, guías ciegos, que {{plural_you:dicen|decís}}: “Quien jure por el templo, eso no es nada; pero quien jure por el oro del templo, queda obligado [por el juramento]”!",
+          "B": "¡Ay de {{plural_you:ustedes|vosotros}}, guías ciegos! Esto es lo que {{plural_you:enseñan|enseñáis}}: “Jurar por el templo no vale nada. Pero quien jure por el oro del templo tiene que cumplir su juramento”.",
+          "R": "¡Qué terrible será para {{plural_you:ustedes|vosotros}}! {{plural_you:Son|Sois}} como ciegos que intentan guiar a otros. {{plural_you:Dicen|Decís}}: “Si alguien hace una promesa y jura por el templo, la promesa no cuenta. Pero si alguien jura por el oro del templo, tiene que cumplir la promesa”."
+        },
+        "fr": {
+          "L": "Malheur à vous, guides aveugles, qui dites : “Quiconque jure par le temple, ce n’est rien ; mais quiconque jure par l’or du temple est tenu [par son serment].”",
+          "B": "Malheur à vous, guides aveugles ! Voici ce que vous enseignez : “Jurer par le temple, cela ne compte pas. Mais si l’on jure par l’or du temple, on doit tenir son serment.”",
+          "R": "Quel malheur pour vous ! Vous êtes comme des aveugles qui essaient de guider les autres. Vous dites : “Si quelqu’un fait une promesse et jure par le temple, sa promesse ne compte pas. Mais si quelqu’un jure par l’or du temple, il doit tenir sa promesse.”"
+        },
+        "sw": {
+          "L": "Ole wenu, viongozi vipofu, mnaosema, 'Mtu akiapa kwa hekalu, si kitu; lakini mtu akiapa kwa dhahabu ya hekalu, amefungwa [na kiapo chake].'",
+          "B": "Ole wenu, viongozi vipofu! Hivi ndivyo mnavyofundisha: 'Kuapa kwa hekalu si kitu. Lakini mtu akiapa kwa dhahabu ya hekalu, lazima atimize kiapo chake.'",
+          "R": "Itakuwa vibaya mno kwenu! Mko kama vipofu wanaojaribu kuwaongoza wengine. Mnasema, 'Mtu akitoa ahadi na kuapa kwa hekalu, ahadi hiyo haihesabiki. Lakini mtu akiapa kwa dhahabu iliyo hekaluni, ni lazima atimize ahadi yake.'"
         }
       },
       "decisions": [
@@ -556,6 +840,21 @@
           "L": "Fools and blind [men]! For which is greater, the gold or the temple that has made the gold holy?",
           "B": "Foolish and blind! Which is greater, then: the gold, or the temple that has set the gold apart as holy?",
           "R": "You are foolish and blind! The temple is what makes the gold holy. So which is more important, the gold or the temple?"
+        },
+        "es": {
+          "L": "¡Necios y ciegos! Porque ¿qué es mayor, el oro o el templo que ha santificado el oro?",
+          "B": "¡Necios y ciegos! ¿Qué es mayor, entonces: el oro, o el templo que ha consagrado el oro?",
+          "R": "¡{{plural_you:Son|Sois}} necios y ciegos! El templo es lo que hace sagrado el oro. Entonces, ¿qué es más importante, el oro o el templo?"
+        },
+        "fr": {
+          "L": "Insensés et aveugles ! Car lequel est le plus grand, l’or ou le temple qui a rendu l’or saint ?",
+          "B": "Fous et aveugles ! Qu’est-ce qui est le plus grand, l’or, ou le temple qui a consacré l’or ?",
+          "R": "Vous êtes fous et aveugles ! C’est le temple qui rend l’or saint. Alors qu’est-ce qui est le plus important, l’or ou le temple ?"
+        },
+        "sw": {
+          "L": "Enyi wajinga na vipofu! Kwa maana kipi ni kikuu zaidi, dhahabu au hekalu lililoifanya dhahabu kuwa takatifu?",
+          "B": "Wajinga na vipofu! Basi, kipi ni kikubwa zaidi: dhahabu, au hekalu linaloitenga dhahabu kuwa takatifu?",
+          "R": "Ninyi ni wajinga na vipofu! Hekalu ndilo linaloifanya dhahabu kuwa takatifu. Basi, kipi ni muhimu zaidi, dhahabu au hekalu?"
         }
       },
       "decisions": [
@@ -663,6 +962,21 @@
           "L": "And [you say], 'Whoever swears by the altar, it is nothing; but whoever swears by the gift that is on it is bound [by the oath].'",
           "B": "You also teach: 'Swearing by the altar counts for nothing. But swear by the gift lying on it, and you must keep your oath.'",
           "R": "You also say, 'If someone swears by the altar, the promise does not count. But if someone swears by the gift on the altar, that person must keep the promise.'"
+        },
+        "es": {
+          "L": "Y [{{plural_you:dicen|decís}}]: “Quien jure por el altar, eso no es nada; pero quien jure por la ofrenda que está sobre él, queda obligado [por el juramento]”.",
+          "B": "También {{plural_you:enseñan|enseñáis}}: “Jurar por el altar no vale nada. Pero quien jure por la ofrenda que está sobre él tiene que cumplir su juramento”.",
+          "R": "También {{plural_you:dicen|decís}}: “Si alguien jura por el altar, la promesa no cuenta. Pero si alguien jura por la ofrenda que está sobre el altar, tiene que cumplir la promesa”."
+        },
+        "fr": {
+          "L": "Et [vous dites] : “Quiconque jure par l’autel, ce n’est rien ; mais quiconque jure par l’offrande qui est dessus est tenu [par son serment].”",
+          "B": "Vous enseignez aussi : “Jurer par l’autel, cela ne compte pas. Mais si l’on jure par l’offrande déposée dessus, on doit tenir son serment.”",
+          "R": "Vous dites aussi : “Si quelqu’un jure par l’autel, sa promesse ne compte pas. Mais si quelqu’un jure par l’offrande posée sur l’autel, il doit tenir sa promesse.”"
+        },
+        "sw": {
+          "L": "Na [mnasema], 'Mtu akiapa kwa madhabahu, si kitu; lakini mtu akiapa kwa sadaka iliyo juu yake, amefungwa [na kiapo chake].'",
+          "B": "Tena mnafundisha: 'Kuapa kwa madhabahu si kitu. Lakini mtu akiapa kwa sadaka iliyowekwa juu yake, lazima atimize kiapo chake.'",
+          "R": "Pia mnasema, 'Mtu akiapa kwa madhabahu, ahadi yake haihesabiki. Lakini mtu akiapa kwa sadaka iliyo juu ya madhabahu, ni lazima atimize ahadi yake.'"
         }
       },
       "decisions": [
@@ -719,6 +1033,49 @@
           "reason": "Every level supplies the verb that the Greek leaves understood.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40023018016"
+          ],
+          "choice": "la ofrenda",
+          "alternatives": [
+            "el don",
+            "el regalo"
+          ],
+          "reason": "The gift is the offering laid on the altar (meaning decision m1). \"Don\" is a church word and \"regalo\" a present between people; \"ofrenda\" is what is given to God. The same in verse 19.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40023018016"
+          ],
+          "choice": "sadaka",
+          "alternatives": [
+            "zawadi"
+          ],
+          "reason": "The gift is the offering laid on the altar (meaning decision m1). \"Zawadi\" is a present between people; \"sadaka\" is what is offered to God. The same in verse 19.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -754,6 +1111,21 @@
           "L": "Blind [ones]! For which [is] greater, the gift or the altar that makes the gift holy?",
           "B": "How blind you are! Which is greater, the gift, or the altar that sets the gift apart as holy?",
           "R": "You are blind! The altar is what makes the gift holy. So which is more important, the gift or the altar?"
+        },
+        "es": {
+          "L": "¡Ciegos! Porque ¿qué [es] mayor, la ofrenda o el altar que santifica la ofrenda?",
+          "B": "¡Qué ciegos {{plural_you:están|estáis}}! ¿Qué es mayor: la ofrenda, o el altar que consagra la ofrenda?",
+          "R": "¡{{plural_you:Están|Estáis}} ciegos! El altar es lo que hace sagrada la ofrenda. Entonces, ¿qué es más importante, la ofrenda o el altar?"
+        },
+        "fr": {
+          "L": "Aveugles ! Car lequel est le plus grand, l’offrande ou l’autel qui rend l’offrande sainte ?",
+          "B": "Que vous êtes aveugles ! Qu’est-ce qui est le plus grand, l’offrande, ou l’autel qui consacre l’offrande ?",
+          "R": "Vous êtes aveugles ! C’est l’autel qui rend l’offrande sainte. Alors qu’est-ce qui est le plus important, l’offrande ou l’autel ?"
+        },
+        "sw": {
+          "L": "Vipofu! Kwa maana kipi [ni] kikuu zaidi, sadaka au madhabahu yanayoifanya sadaka kuwa takatifu?",
+          "B": "Ninyi ni vipofu kweli! Kipi ni kikubwa zaidi: sadaka, au madhabahu yanayoitenga sadaka kuwa takatifu?",
+          "R": "Ninyi ni vipofu! Madhabahu ndiyo yanayoifanya sadaka kuwa takatifu. Basi, kipi ni muhimu zaidi, sadaka au madhabahu?"
         }
       },
       "decisions": [
@@ -859,6 +1231,21 @@
           "L": "So the one who swears by the altar swears by it and by everything that is on it.",
           "B": "So whoever swears by the altar is swearing by the altar and by all that lies on it.",
           "R": "So swearing by the altar means swearing by the altar and by everything on it."
+        },
+        "es": {
+          "L": "Así que el que jura por el altar, jura por él y por todo lo que está sobre él.",
+          "B": "Así pues, quien jura por el altar jura por el altar y por todo lo que hay sobre él.",
+          "R": "Por eso, jurar por el altar es jurar por el altar y por todo lo que está encima."
+        },
+        "fr": {
+          "L": "Celui donc qui jure par l’autel jure par lui et par tout ce qui est dessus.",
+          "B": "Ainsi, celui qui jure par l’autel jure par l’autel et par tout ce qui se trouve dessus.",
+          "R": "Alors, jurer par l’autel, c’est jurer par l’autel et par tout ce qui est dessus."
+        },
+        "sw": {
+          "L": "Basi yeye aliyeapa kwa madhabahu anaapa kwa hayo na kwa vitu vyote vilivyo juu yake.",
+          "B": "Kwa hiyo mtu anayeapa kwa madhabahu anaapa kwa madhabahu hayo na kwa vyote vilivyo juu yake.",
+          "R": "Kwa hiyo, kuapa kwa madhabahu ni kuapa kwa madhabahu na kwa kila kitu kilicho juu yake."
         }
       },
       "decisions": [
@@ -913,6 +1300,21 @@
           "L": "And the one who swears by the temple swears by it and by the one who dwells in it.",
           "B": "And whoever swears by the temple is swearing by the temple and by the one who dwells there.",
           "R": "And swearing by the temple means swearing by the temple and by God, who lives there."
+        },
+        "es": {
+          "L": "Y el que jura por el templo, jura por él y por el que habita en él.",
+          "B": "Y quien jura por el templo jura por el templo y por aquel que habita en él.",
+          "R": "Y jurar por el templo es jurar por el templo y por Dios, que vive allí."
+        },
+        "fr": {
+          "L": "Et celui qui jure par le temple jure par lui et par celui qui l’habite.",
+          "B": "Et celui qui jure par le temple jure par le temple et par celui qui y demeure.",
+          "R": "Et jurer par le temple, c’est jurer par le temple et par Dieu, qui y habite."
+        },
+        "sw": {
+          "L": "Na yeye aliyeapa kwa hekalu anaapa kwa hilo na kwa yeye akaaye ndani yake.",
+          "B": "Na mtu anayeapa kwa hekalu anaapa kwa hekalu hilo na kwa yule anayekaa ndani yake.",
+          "R": "Na kuapa kwa hekalu ni kuapa kwa hekalu na kwa Mungu, anayeishi humo."
         }
       },
       "decisions": [
@@ -993,6 +1395,21 @@
           "L": "And the one who swears by heaven swears by the throne of God and by the one who sits on it.",
           "B": "And whoever swears by heaven is swearing by God's throne and by the one seated on it.",
           "R": "And swearing by heaven means swearing by God's throne and by God {{deity_pronoun:himself|Himself}}, who sits on it."
+        },
+        "es": {
+          "L": "Y el que jura por el cielo, jura por el trono de Dios y por el que está sentado sobre él.",
+          "B": "Y quien jura por el cielo jura por el trono de Dios y por aquel que está sentado en él.",
+          "R": "Y jurar por el cielo es jurar por el trono de Dios y por Dios mismo, que está sentado en él."
+        },
+        "fr": {
+          "L": "Et celui qui jure par le ciel jure par le trône de Dieu et par celui qui est assis dessus.",
+          "B": "Et celui qui jure par le ciel jure par le trône de Dieu et par celui qui y siège.",
+          "R": "Et jurer par le ciel, c’est jurer par le trône de Dieu et par Dieu {{deity_pronoun:lui-même|Lui-même}}, qui est assis sur ce trône."
+        },
+        "sw": {
+          "L": "Na yeye aliyeapa kwa mbingu anaapa kwa kiti cha enzi cha Mungu na kwa yeye aketiye juu yake.",
+          "B": "Na mtu anayeapa kwa mbingu anaapa kwa kiti cha enzi cha Mungu na kwa yule aliyeketi juu yake.",
+          "R": "Na kuapa kwa mbingu ni kuapa kwa kiti cha enzi cha Mungu na kwa Mungu {{deity_pronoun:mwenyewe|Mwenyewe}}, aliyeketi juu yake."
         }
       },
       "decisions": [
@@ -1035,6 +1452,26 @@
             "the one who sits on it"
           ],
           "reason": "Readable names the one seated on the throne.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40023022015",
+            "n40023022016"
+          ],
+          "choice": "Dios mismo, with no deity_pronoun span",
+          "alternatives": [
+            "{{deity_pronoun:él mismo|Él mismo}}"
+          ],
+          "reason": "English \"God himself\" puts the pronoun under the setting. Spanish says it with \"mismo\" beside the name, an adjective, not a pronoun, so there is nothing for the setting to capitalise.",
           "uncertain": false,
           "footnote": false
         }
@@ -1095,6 +1532,21 @@
           "L": "Woe to you, scribes and Pharisees, hypocrites! For you tithe mint and dill and cumin, and you have neglected the weightier [matters] of the law: justice and mercy and faithfulness. These you ought to have done, and not neglected those.",
           "B": "Woe to you, scribes and Pharisees, you hypocrites! You set aside for God a tenth even of your mint, dill and cumin, yet you have abandoned what weighs most in the law: justice, mercy and faithfulness. These are what you should have done, while still not abandoning the others.",
           "R": "How terrible it will be for you, teachers of the law and Pharisees! You are hypocrites! You give God one tenth of everything, even of the little plants you grow for flavor, like mint, dill and cumin. But you do not obey the most important parts of the law. You do not treat people fairly, you do not show mercy, and you are not faithful. These are the things you should have done. And you should have kept on giving a tenth as well."
+        },
+        "es": {
+          "L": "¡Ay de {{plural_you:ustedes|vosotros}}, escribas y fariseos, hipócritas! Porque {{plural_you:dan|dais}} el diezmo de la menta y del eneldo y del comino, y {{plural_you:han dejado|habéis dejado}} lo de más peso de la ley: la justicia y la misericordia y la fidelidad. Esto {{plural_you:debían|debíais}} hacer, sin dejar aquello.",
+          "B": "¡Ay de {{plural_you:ustedes|vosotros}}, escribas y fariseos, hipócritas! {{plural_you:Apartan|Apartáis}} para Dios la décima parte hasta de la menta, el eneldo y el comino, pero {{plural_you:han abandonado|habéis abandonado}} lo que más pesa en la ley: la justicia, la misericordia y la fidelidad. Esto es lo que {{plural_you:debían|debíais}} haber hecho, sin abandonar tampoco lo otro.",
+          "R": "¡Qué terrible será para {{plural_you:ustedes|vosotros}}, maestros de la ley y fariseos! ¡{{plural_you:Son|Sois}} unos hipócritas! Le {{plural_you:dan|dais}} a Dios la décima parte de todo, hasta de las plantitas que {{plural_you:cultivan|cultiváis}} para dar sabor, como la menta, el eneldo y el comino. Pero no {{plural_you:obedecen|obedecéis}} las partes más importantes de la ley. No {{plural_you:tratan|tratáis}} a la gente con justicia, no {{plural_you:son|sois}} compasivos y no {{plural_you:son|sois}} fieles. Esto es lo que {{plural_you:debían|debíais}} haber hecho. Y también {{plural_you:debían|debíais}} seguir dando la décima parte."
+        },
+        "fr": {
+          "L": "Malheur à vous, scribes et Pharisiens, hypocrites ! Car vous donnez la dîme de la menthe, de l’aneth et du cumin, et vous avez laissé de côté les [points] les plus importants de la Loi : la justice, la miséricorde et la fidélité ; c’est ceci qu’il fallait faire, sans négliger cela.",
+          "B": "Malheur à vous, scribes et Pharisiens, hypocrites que vous êtes ! Vous donnez à Dieu le dixième même de votre menthe, de votre aneth et de votre cumin, mais vous avez abandonné ce qui a le plus de poids dans la Loi : la justice, la miséricorde et la fidélité. C’est cela qu’il fallait pratiquer, sans abandonner pour autant le reste.",
+          "R": "Quel malheur pour vous, spécialistes de la Loi et Pharisiens ! Vous êtes des hypocrites ! Vous donnez à Dieu un dixième de tout, même des petites plantes que vous cultivez pour donner du goût, comme la menthe, l’aneth et le cumin. Mais vous n’obéissez pas aux parties les plus importantes de la Loi. Vous ne traitez pas les gens avec justice, vous n’avez pas de pitié, et vous n’êtes pas fidèles. C’est cela que vous auriez dû faire. Et vous auriez dû continuer aussi à donner le dixième."
+        },
+        "sw": {
+          "L": "Ole wenu, waandishi na Mafarisayo, wanafiki! Kwa maana mnatoa fungu la kumi la mnanaa na bizari na jira, nanyi mmeyaacha mambo mazito ya sheria: haki na rehema na uaminifu. Haya mlipaswa kuyafanya, bila kuyaacha yale.",
+          "B": "Ole wenu, waandishi na Mafarisayo, ninyi wanafiki! Mnamtengea Mungu fungu la kumi hata la mnanaa, bizari na jira, lakini mmeyaacha yale yenye uzito mkubwa katika sheria: haki, rehema na uaminifu. Hayo ndiyo mliyopaswa kuyafanya, bila kuacha yale mengine pia.",
+          "R": "Itakuwa vibaya mno kwenu, walimu wa sheria na Mafarisayo! Ninyi ni wanafiki! Mnampa Mungu sehemu ya kumi ya kila kitu, hata ya mimea midogo mnayoipanda ili kuongeza ladha, kama mnanaa, bizari na jira. Lakini hamyatii mambo muhimu zaidi ya sheria. Hamwatendei watu haki, hamna huruma, wala ninyi si waaminifu. Hayo ndiyo mliyopaswa kufanya. Na mlipaswa pia kuendelea kutoa sehemu ya kumi."
         }
       },
       "decisions": [
@@ -1242,6 +1694,71 @@
           "reason": "The same wording for every woe in this chapter (see 23:13).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40023023030"
+          ],
+          "choice": "la fidelidad (L, B); no son fieles (R)",
+          "alternatives": [
+            "la fe"
+          ],
+          "reason": "Here the word means being true and reliable toward God and others (meaning decision m2). Spanish \"fe\" would read as believing, so all three levels say \"fiel\", as the English says \"faithful\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40023023030"
+          ],
+          "choice": "la fidélité (L, B); vous n’êtes pas fidèles (R)",
+          "alternatives": [
+            "la foi"
+          ],
+          "reason": "As in English, the word usually rendered \"la foi\" means here being true and reliable toward God and others (m2), which French says with \"fidélité\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40023023024",
+            "n40023023030"
+          ],
+          "choice": "haki; uaminifu (L, B), ninyi si waaminifu (R)",
+          "alternatives": [
+            "imani",
+            "hukumu"
+          ],
+          "reason": "Justice here is fair dealing with others (meaning decision m3), and \"haki\" means both justice and righteousness. The third word means being true and reliable (m2): \"imani\" would read as believing, so every level says \"uaminifu\", faithfulness.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1274,6 +1791,21 @@
           "L": "Blind guides, who strain out the gnat but swallow the camel!",
           "B": "Blind guides! You sieve a gnat out of your drink and swallow a camel whole.",
           "R": "You are like blind people trying to lead others! You pour your drink through a cloth to take out a tiny bug. But then you swallow a whole camel!"
+        },
+        "es": {
+          "L": "¡Guías ciegos, que {{plural_you:cuelan|coláis}} el mosquito pero {{plural_you:se tragan|os tragáis}} el camello!",
+          "B": "¡Guías ciegos! {{plural_you:Cuelan|Coláis}} lo que {{plural_you:beben|bebéis}} para sacar un mosquito, y {{plural_you:se tragan|os tragáis}} un camello entero.",
+          "R": "¡{{plural_you:Son|Sois}} como ciegos que intentan guiar a otros! {{plural_you:Pasan|Pasáis}} la bebida por un trapo para sacar un insecto pequeñito. ¡Pero luego {{plural_you:se tragan|os tragáis}} un camello entero!"
+        },
+        "fr": {
+          "L": "Guides aveugles, qui filtrez le moucheron et avalez le chameau !",
+          "B": "Guides aveugles ! Vous passez votre boisson au filtre pour en ôter un moucheron, et vous avalez un chameau tout entier.",
+          "R": "Vous êtes comme des aveugles qui essaient de guider les autres ! Vous versez votre boisson à travers un tissu pour enlever un tout petit insecte. Mais ensuite, vous avalez un chameau entier !"
+        },
+        "sw": {
+          "L": "Viongozi vipofu, mnaomchuja usubi, lakini ngamia mnammeza!",
+          "B": "Viongozi vipofu! Mnachuja kinywaji chenu ili kumtoa usubi, kisha mnammeza ngamia mzima.",
+          "R": "Mko kama vipofu wanaojaribu kuwaongoza wengine! Mnamimina kinywaji chenu kupitia kitambaa ili kutoa kidudu kidogo. Lakini kisha mnammeza ngamia mzima!"
         }
       },
       "decisions": [
@@ -1334,6 +1866,26 @@
           "reason": "Balanced and Readable say what was strained.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40023024006"
+          ],
+          "choice": "usubi (L, B); kidudu kidogo (R)",
+          "alternatives": [
+            "mbu"
+          ],
+          "reason": "The Greek word is a tiny flying insect that could fall into a drink (meaning decision m2). \"Usubi\", a midge, is the smallest such insect; Readable says \"a tiny bug\", as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1378,6 +1930,21 @@
           "L": "Woe to you, scribes and Pharisees, hypocrites! For you clean the outside of the cup and of the dish, but inside they are full of robbery and lack of self-control.",
           "B": "Woe to you, scribes and Pharisees, you hypocrites! You wash the outside of cup and plate, but inside they are filled by robbery and self-indulgence.",
           "R": "How terrible it will be for you, teachers of the law and Pharisees! You are hypocrites! You wash the outside of your cups and dishes. But the food and drink inside them come from cheating people and from your own greed."
+        },
+        "es": {
+          "L": "¡Ay de {{plural_you:ustedes|vosotros}}, escribas y fariseos, hipócritas! Porque {{plural_you:limpian|limpiáis}} el exterior de la copa y del plato, pero por dentro están llenos de robo y de falta de dominio propio.",
+          "B": "¡Ay de {{plural_you:ustedes|vosotros}}, escribas y fariseos, hipócritas! {{plural_you:Lavan|Laváis}} por fuera la copa y el plato, pero por dentro están llenos de robo y de desenfreno.",
+          "R": "¡Qué terrible será para {{plural_you:ustedes|vosotros}}, maestros de la ley y fariseos! ¡{{plural_you:Son|Sois}} unos hipócritas! {{plural_you:Lavan|Laváis}} por fuera {{plural_you:sus|vuestros}} vasos y {{plural_you:sus|vuestros}} platos. Pero la comida y la bebida que hay dentro vienen de engañar a la gente y de {{plural_you:su|vuestra}} propia codicia."
+        },
+        "fr": {
+          "L": "Malheur à vous, scribes et Pharisiens, hypocrites ! Car vous purifiez l’extérieur de la coupe et du plat, mais à l’intérieur ils sont pleins de rapine et d’intempérance.",
+          "B": "Malheur à vous, scribes et Pharisiens, hypocrites que vous êtes ! Vous lavez l’extérieur de la coupe et du plat, mais au-dedans, ils sont remplis de ce que vous avez volé et de vos excès.",
+          "R": "Quel malheur pour vous, spécialistes de la Loi et Pharisiens ! Vous êtes des hypocrites ! Vous lavez l’extérieur de vos coupes et de vos plats. Mais la nourriture et la boisson qui sont dedans viennent de ce que vous avez pris aux autres en les trompant, et de votre propre avidité."
+        },
+        "sw": {
+          "L": "Ole wenu, waandishi na Mafarisayo, wanafiki! Kwa maana mnasafisha nje ya kikombe na ya sahani, lakini ndani vimejaa unyang'anyi na kukosa kujitawala.",
+          "B": "Ole wenu, waandishi na Mafarisayo, ninyi wanafiki! Mnaosha kikombe na sahani kwa nje, lakini ndani vimejazwa kwa unyang'anyi na anasa.",
+          "R": "Itakuwa vibaya mno kwenu, walimu wa sheria na Mafarisayo! Ninyi ni wanafiki! Mnaosha vikombe na sahani zenu kwa nje. Lakini chakula na kinywaji vilivyomo ndani vinatokana na kuwadanganya watu na tamaa yenu wenyewe."
         }
       },
       "decisions": [
@@ -1525,6 +2092,21 @@
           "L": "Blind Pharisee! First clean the inside of the cup and of the dish, so that the outside of it may become clean too.",
           "B": "Blind Pharisee! Make the inside of cup and plate clean first, so that the outside becomes clean too.",
           "R": "You blind Pharisee! First make the inside of the cup and the dish clean. Then the outside will be clean too."
+        },
+        "es": {
+          "L": "¡Fariseo ciego! Limpia primero el interior de la copa y del plato, para que también el exterior de ella quede limpio.",
+          "B": "¡Fariseo ciego! Limpia primero por dentro la copa y el plato, para que también queden limpios por fuera.",
+          "R": "¡Fariseo ciego! Primero limpia por dentro la copa y el plato. Así también estarán limpios por fuera."
+        },
+        "fr": {
+          "L": "Pharisien aveugle ! Purifie d’abord l’intérieur de la coupe et du plat, afin que l’extérieur aussi devienne pur.",
+          "B": "Pharisien aveugle ! Nettoie d’abord l’intérieur de la coupe et du plat, afin que l’extérieur devienne pur lui aussi.",
+          "R": "Pharisien aveugle ! Rends d’abord propre l’intérieur de la coupe et du plat. Alors l’extérieur sera propre aussi."
+        },
+        "sw": {
+          "L": "Farisayo kipofu! Safisha kwanza ndani ya kikombe na ya sahani, ili nje yake nayo iwe safi.",
+          "B": "Farisayo kipofu! Safisha kwanza kikombe na sahani kwa ndani, ili kwa nje pia viwe safi.",
+          "R": "Wewe Farisayo kipofu! Kwanza safisha ndani ya kikombe na sahani. Ndipo nje yake pia itakuwa safi."
         }
       },
       "decisions": [
@@ -1593,6 +2175,28 @@
           "reason": "Some manuscripts lack \"and of the dish\", and the following \"of it\" is singular. Reviewers should check the evidence against the apparatus.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40023026001",
+            "n40023026003"
+          ],
+          "choice": "\"tu\" to the blind Pharisee",
+          "alternatives": [
+            "vous"
+          ],
+          "reason": "The Greek turns to one Pharisee in the singular, as an example of all (m2). French shows the change that English \"you\" hides, so every level says \"tu\" here and goes back to \"vous\" in 23:27.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1638,6 +2242,21 @@
           "L": "Woe to you, scribes and Pharisees, hypocrites! For you are like whitewashed tombs, which on the outside appear beautiful, but inside are full of the bones of [the] dead and of all uncleanness.",
           "B": "Woe to you, scribes and Pharisees, you hypocrites! You resemble tombs coated with whitewash. From outside they look fine, but within they are full of the bones of the dead and every kind of uncleanness.",
           "R": "How terrible it will be for you, teachers of the law and Pharisees! You are hypocrites! You are like graves that have been painted white. They look beautiful on the outside. But inside they are full of dead people's bones and of everything that makes a person unclean."
+        },
+        "es": {
+          "L": "¡Ay de {{plural_you:ustedes|vosotros}}, escribas y fariseos, hipócritas! Porque {{plural_you:se parecen|os parecéis}} a tumbas encaladas, que por fuera aparecen hermosas, pero por dentro están llenas de huesos de muertos y de toda impureza.",
+          "B": "¡Ay de {{plural_you:ustedes|vosotros}}, escribas y fariseos, hipócritas! {{plural_you:Son|Sois}} como tumbas pintadas de cal: por fuera parecen bonitas, pero por dentro están llenas de huesos de muertos y de toda clase de impureza.",
+          "R": "¡Qué terrible será para {{plural_you:ustedes|vosotros}}, maestros de la ley y fariseos! ¡{{plural_you:Son|Sois}} unos hipócritas! {{plural_you:Son|Sois}} como tumbas pintadas de blanco. Por fuera se ven hermosas. Pero por dentro están llenas de huesos de muertos y de todo lo que hace impura a una persona."
+        },
+        "fr": {
+          "L": "Malheur à vous, scribes et Pharisiens, hypocrites ! Car vous ressemblez à des tombeaux passés à la chaux, qui à l’extérieur paraissent beaux, mais à l’intérieur sont remplis d’os de morts et de toute impureté.",
+          "B": "Malheur à vous, scribes et Pharisiens, hypocrites que vous êtes ! Vous êtes comme des tombeaux passés à la chaux : vus de l’extérieur, ils ont belle apparence, mais au-dedans ils sont pleins d’os de morts et de toutes sortes d’impuretés.",
+          "R": "Quel malheur pour vous, spécialistes de la Loi et Pharisiens ! Vous êtes des hypocrites ! Vous êtes comme des tombes peintes en blanc. De l’extérieur, elles sont belles. Mais à l’intérieur, elles sont pleines d’os de gens morts et de tout ce qui rend une personne impure."
+        },
+        "sw": {
+          "L": "Ole wenu, waandishi na Mafarisayo, wanafiki! Kwa maana mko kama makaburi yaliyopakwa chokaa, ambayo kwa nje yanaonekana ya kupendeza, lakini ndani yamejaa mifupa ya maiti na unajisi wa kila namna.",
+          "B": "Ole wenu, waandishi na Mafarisayo, ninyi wanafiki! Mko kama makaburi yaliyopakwa chokaa nyeupe. Kwa nje yanapendeza, lakini ndani yamejaa mifupa ya maiti na kila aina ya unajisi.",
+          "R": "Itakuwa vibaya mno kwenu, walimu wa sheria na Mafarisayo! Ninyi ni wanafiki! Mko kama makaburi yaliyopakwa rangi nyeupe. Kwa nje yanaonekana mazuri. Lakini ndani yamejaa mifupa ya watu waliokufa na kila kitu kinachomfanya mtu kuwa najisi."
         }
       },
       "decisions": [
@@ -1713,6 +2332,50 @@
           "reason": "The same wording for every woe in this chapter (see 23:13).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40023027009",
+            "n40023027023"
+          ],
+          "choice": "tumbas (every level); impureza",
+          "alternatives": [
+            "sepulcros",
+            "inmundicia"
+          ],
+          "reason": "This is the ordinary word for a grave, not the word the term sheet renders \"sepulcro\", so all levels say \"tumbas\", as in verse 29. \"Impureza\" is the uncleanness that contact with the dead brought (meaning decision m2); \"inmundicia\" sounds like dirt.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40023027023"
+          ],
+          "choice": "unajisi (L, B); kuwa najisi (R)",
+          "alternatives": [
+            "uchafu"
+          ],
+          "reason": "The uncleanness is the impurity that contact with the dead brought under the law (meaning decision m2). \"Uchafu\" is dirt; \"unajisi\" is the word for that impurity.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1751,6 +2414,21 @@
           "L": "So you also outwardly appear righteous to {{gender:people|men}}, but inwardly you are full of hypocrisy and lawlessness.",
           "B": "You are the same. To others you look righteous from the outside, but within you are full of hypocrisy and of disregard for God's law.",
           "R": "You are like that too. On the outside, people think you are righteous and do what God wants. But inside, you are full of pretending, and you do not obey God's law."
+        },
+        "es": {
+          "L": "Así también {{plural_you:ustedes|vosotros}} por fuera {{plural_you:aparecen|aparecéis}} justos ante {{gender:la gente|los hombres}}, pero por dentro {{plural_you:están|estáis}} llenos de hipocresía y de desprecio de la ley.",
+          "B": "Lo mismo {{plural_you:pasa con ustedes|os pasa a vosotros}}: por fuera {{plural_you:parecen|parecéis}} justos a los demás, pero por dentro {{plural_you:están|estáis}} llenos de hipocresía y de desprecio por la ley de Dios.",
+          "R": "Así {{plural_you:son ustedes|sois vosotros}} también. Por fuera, la gente piensa que {{plural_you:son|sois}} justos y que {{plural_you:hacen|hacéis}} lo que Dios quiere. Pero por dentro {{plural_you:están|estáis}} llenos de fingimiento, y no {{plural_you:obedecen|obedecéis}} la ley de Dios."
+        },
+        "fr": {
+          "L": "Ainsi vous aussi, à l’extérieur vous paraissez justes aux {{gender:gens|hommes}}, mais à l’intérieur vous êtes pleins d’hypocrisie et d’iniquité.",
+          "B": "Vous êtes pareils : de l’extérieur, vous paraissez justes aux yeux des autres, mais au-dedans vous êtes pleins d’hypocrisie et de mépris pour la Loi de Dieu.",
+          "R": "Vous êtes comme ça, vous aussi. De l’extérieur, les gens pensent que vous êtes justes et que vous faites ce que Dieu veut. Mais à l’intérieur, vous n’êtes que faux-semblants, et vous n’obéissez pas à la Loi de Dieu."
+        },
+        "sw": {
+          "L": "Hivyo nanyi pia, kwa nje mnaonekana kwa watu kuwa wenye haki, lakini kwa ndani mmejaa unafiki na kutokujali sheria.",
+          "B": "Ndivyo mlivyo nanyi. Kwa nje mnaonekana kwa wengine kuwa wenye haki, lakini ndani mmejaa unafiki na dharau kwa sheria ya Mungu.",
+          "R": "Nanyi mko vivyo hivyo. Kwa nje, watu wanadhani ninyi ni wenye haki na mnafanya yale Mungu anayotaka. Lakini ndani mmejaa kujifanya, wala hamtii sheria ya Mungu."
         }
       },
       "decisions": [
@@ -1825,6 +2503,47 @@
           "reason": "Balanced and Readable say what lawlessness is. Readable explains hypocrisy as pretending.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40023028016"
+          ],
+          "choice": "desprecio de la ley (L); desprecio por la ley de Dios (B)",
+          "alternatives": [
+            "iniquidad",
+            "maldad"
+          ],
+          "reason": "The word is disregard of God's law (meaning decision m2). \"Iniquidad\" is a church word few readers know, and \"maldad\" loses the law, which is the point against teachers of the law.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40023028016"
+          ],
+          "choice": "iniquité (L)",
+          "alternatives": [
+            "mépris de la Loi (L)",
+            "anomie"
+          ],
+          "reason": "The word means disregard of God's law (m2). \"Iniquité\" is the established French word for it, and its make-up (\"without equity\") is close to the Greek \"without law\"; Balanced and Readable say what it is, as the English does. \"Juste\" is the term sheet's word for righteous.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1886,6 +2605,21 @@
           "L": "Woe to you, scribes and Pharisees, hypocrites! For you build the tombs of the prophets and adorn the monuments of the righteous, \\v 30 and you say, 'If we had been [alive] in the days of our fathers, we would not have been partners with them in the blood of the prophets.'",
           "B": "Woe to you, scribes and Pharisees, you hypocrites! You put up tombs for the prophets and adorn the memorials of the righteous. \\v 30 Then you declare, 'If we had been alive when our ancestors were, we would never have joined them in killing the prophets.'",
           "R": "How terrible it will be for you, teachers of the law and Pharisees! You are hypocrites! You build tombs for the prophets. You decorate the graves of righteous people. \\v 30 And you say, 'If we had lived back when our ancestors did, we would not have helped them kill the prophets.'"
+        },
+        "es": {
+          "L": "¡Ay de {{plural_you:ustedes|vosotros}}, escribas y fariseos, hipócritas! Porque {{plural_you:edifican|edificáis}} las tumbas de los profetas y {{plural_you:adornan|adornáis}} los monumentos de los justos, \\v 30 y {{plural_you:dicen|decís}}: “Si hubiéramos [vivido] en los días de nuestros padres, no habríamos sido cómplices de ellos en la sangre de los profetas”.",
+          "B": "¡Ay de {{plural_you:ustedes|vosotros}}, escribas y fariseos, hipócritas! {{plural_you:Levantan|Levantáis}} tumbas para los profetas y {{plural_you:adornan|adornáis}} los monumentos de los justos. \\v 30 Luego {{plural_you:declaran|declaráis}}: “Si hubiéramos vivido en tiempos de nuestros antepasados, nunca nos habríamos unido a ellos para matar a los profetas”.",
+          "R": "¡Qué terrible será para {{plural_you:ustedes|vosotros}}, maestros de la ley y fariseos! ¡{{plural_you:Son|Sois}} unos hipócritas! {{plural_you:Construyen|Construís}} tumbas para los profetas. {{plural_you:Decoran|Decoráis}} las tumbas de la gente justa. \\v 30 Y {{plural_you:dicen|decís}}: “Si hubiéramos vivido en la época de nuestros antepasados, no los habríamos ayudado a matar a los profetas”."
+        },
+        "fr": {
+          "L": "Malheur à vous, scribes et Pharisiens, hypocrites ! Car vous bâtissez les tombeaux des prophètes et vous ornez les monuments des justes, \\v 30 et vous dites : “Si nous avions été [là] aux jours de nos pères, nous n’aurions pas été leurs complices dans le sang des prophètes.”",
+          "B": "Malheur à vous, scribes et Pharisiens, hypocrites que vous êtes ! Vous élevez des tombeaux pour les prophètes et vous décorez les monuments des justes. \\v 30 Puis vous déclarez : “Si nous avions vécu au temps de nos ancêtres, nous ne nous serions jamais joints à eux pour tuer les prophètes.”",
+          "R": "Quel malheur pour vous, spécialistes de la Loi et Pharisiens ! Vous êtes des hypocrites ! Vous construisez des tombeaux pour les prophètes. Vous décorez les tombes des gens justes. \\v 30 Et vous dites : “Si nous avions vécu à l’époque de nos ancêtres, nous ne les aurions pas aidés à tuer les prophètes.”"
+        },
+        "sw": {
+          "L": "Ole wenu, waandishi na Mafarisayo, wanafiki! Kwa maana mnajenga makaburi ya manabii na kupamba makumbusho ya wenye haki, \\v 30 na mnasema, 'Kama tungalikuwa [hai] katika siku za baba zetu, tusingalishirikiana nao katika damu ya manabii.'",
+          "B": "Ole wenu, waandishi na Mafarisayo, ninyi wanafiki! Mnawajengea manabii makaburi na kuyapamba makaburi ya ukumbusho ya wenye haki. \\v 30 Kisha mnasema, 'Kama tungaliishi wakati wa mababu zetu, tusingalijiunga nao kamwe katika kuwaua manabii.'",
+          "R": "Itakuwa vibaya mno kwenu, walimu wa sheria na Mafarisayo! Ninyi ni wanafiki! Mnawajengea manabii makaburi. Mnayapamba makaburi ya watu wenye haki. \\v 30 Kisha mnasema, 'Kama tungaliishi zamani pamoja na mababu zetu, tusingaliwasaidia kuwaua manabii.'"
         }
       },
       "decisions": [
@@ -2027,6 +2761,21 @@
           "L": "So you testify against yourselves that you are sons of those who murdered the prophets.",
           "B": "Your own words are evidence against you: you are the sons of the prophets' murderers.",
           "R": "So your own words show that you belong to the family of the people who murdered the prophets."
+        },
+        "es": {
+          "L": "Así que {{plural_you:dan|dais}} testimonio contra {{plural_you:ustedes mismos|vosotros mismos}} de que {{plural_you:son|sois}} hijos de los que asesinaron a los profetas.",
+          "B": "{{plural_you:Sus|Vuestras}} propias palabras {{plural_you:los|os}} acusan: {{plural_you:son|sois}} hijos de los asesinos de los profetas.",
+          "R": "Así que {{plural_you:sus|vuestras}} propias palabras muestran que {{plural_you:pertenecen|pertenecéis}} a la familia de los que asesinaron a los profetas."
+        },
+        "fr": {
+          "L": "Ainsi vous témoignez contre vous-mêmes que vous êtes fils de ceux qui ont assassiné les prophètes.",
+          "B": "Vos propres paroles témoignent contre vous : vous êtes les fils des assassins des prophètes.",
+          "R": "Alors vos propres paroles montrent que vous faites partie de la famille des gens qui ont assassiné les prophètes."
+        },
+        "sw": {
+          "L": "Kwa hiyo mnatoa ushahidi dhidi yenu wenyewe kwamba ninyi ni wana wa wale waliowaua manabii.",
+          "B": "Maneno yenu wenyewe yanawashuhudia: ninyi ni wana wa wauaji wa manabii.",
+          "R": "Kwa hiyo maneno yenu wenyewe yanaonyesha kwamba ninyi ni wa ukoo wa watu waliowaua manabii."
         }
       },
       "decisions": [
@@ -2116,6 +2865,21 @@
           "L": "And you, fill up the measure of your fathers!",
           "B": "Fill up, then, the measure of your ancestors' sins!",
           "R": "So go ahead and finish the evil things your ancestors started!"
+        },
+        "es": {
+          "L": "¡Y {{plural_you:ustedes|vosotros}}, {{plural_you:colmen|colmad}} la medida de {{plural_you:sus|vuestros}} padres!",
+          "B": "¡{{plural_you:Completen|Completad}}, pues, la medida de los pecados de {{plural_you:sus|vuestros}} antepasados!",
+          "R": "¡{{plural_you:Sigan|Seguid}} adelante y {{plural_you:terminen|terminad}} las maldades que {{plural_you:sus|vuestros}} antepasados comenzaron!"
+        },
+        "fr": {
+          "L": "Et vous, comblez la mesure de vos pères !",
+          "B": "Allez-y donc, comblez la mesure des péchés de vos ancêtres !",
+          "R": "Alors allez-y, finissez le mal que vos ancêtres ont commencé !"
+        },
+        "sw": {
+          "L": "Nanyi jazeni kipimo cha baba zenu!",
+          "B": "Basi, malizieni kujaza kipimo cha dhambi za mababu zenu!",
+          "R": "Haya basi, endeleeni kumaliza mabaya ambayo mababu zenu walianza!"
         }
       },
       "decisions": [
@@ -2221,6 +2985,21 @@
           "L": "Serpents! Offspring of vipers! How will you escape the sentence of Gehenna?",
           "B": "You snakes! You family of snakes! How can you flee from the sentence of hell?",
           "R": "You are snakes! You are like a family of poisonous snakes! There is no way you can escape being judged and sent to hell."
+        },
+        "es": {
+          "L": "¡Serpientes! ¡Crías de víboras! ¿Cómo {{plural_you:escaparán|escaparéis}} de la sentencia de la Gehena?",
+          "B": "¡Serpientes! ¡Camada de víboras! ¿Cómo {{plural_you:podrán|podréis}} huir de la condena al infierno?",
+          "R": "¡{{plural_you:Son|Sois}} serpientes! ¡{{plural_you:Son|Sois}} como una familia de serpientes venenosas! No hay manera de que {{plural_you:escapen|escapéis}} de ser juzgados y enviados al infierno."
+        },
+        "fr": {
+          "L": "Serpents ! Progéniture de vipères ! Comment échapperez-vous au jugement de la géhenne ?",
+          "B": "Serpents ! Enfants de serpents ! Comment pourriez-vous fuir la condamnation à l’enfer ?",
+          "R": "Vous êtes des serpents ! Vous êtes comme une famille de serpents venimeux ! Vous ne pourrez pas échapper au jugement de Dieu qui vous enverra en enfer."
+        },
+        "sw": {
+          "L": "Nyoka! Uzao wa nyoka wenye sumu! Mtaikimbiaje hukumu ya Gehena?",
+          "B": "Ninyi nyoka! Ninyi ukoo wa nyoka! Mtawezaje kuikwepa hukumu ya jehanamu?",
+          "R": "Ninyi ni nyoka! Mko kama familia ya nyoka wenye sumu kali! Hamwezi kamwe kuepuka kuhukumiwa na kutupwa jehanamu."
         }
       },
       "decisions": [
@@ -2343,6 +3122,29 @@
           "reason": "As in 5:22, Literal keeps the place name and Balanced and Readable translate it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40023033002",
+            "n40023033003"
+          ],
+          "choice": "Progéniture de vipères (L); Enfants de serpents (B); une famille de serpents venimeux (R)",
+          "alternatives": [
+            "Race de vipères",
+            "Engeance de vipères"
+          ],
+          "reason": "The wording of 12:34 in French at each level, as the English keeps 3:7 and 12:34; the first word, \"Serpents\", is added before it.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2396,6 +3198,21 @@
           "L": "Because of this, look, I am sending you prophets and wise [ones] and scribes; some of them you will kill and crucify, and some of them you will flog in your synagogues and persecute from town to town,",
           "B": "That is why I am sending you prophets, sages and scribes. Some of them you will kill and crucify; others you will whip in your synagogues and hound from town to town.",
           "R": "That is why I am sending you prophets, wise teachers, and teachers of the law. You will kill some of them. You will even nail some of them to crosses. You will beat others with whips in your synagogues. You will chase them from one town to the next."
+        },
+        "es": {
+          "L": "Por esto, {{plural_you:miren|mirad}}, yo {{plural_you:les|os}} envío profetas y sabios y escribas; a algunos de ellos {{plural_you:matarán|mataréis}} y {{plural_you:crucificarán|crucificaréis}}, y a algunos de ellos {{plural_you:azotarán|azotaréis}} en {{plural_you:sus|vuestras}} sinagogas y {{plural_you:perseguirán|perseguiréis}} de ciudad en ciudad,",
+          "B": "Por eso yo {{plural_you:les|os}} envío profetas, sabios y escribas. A algunos de ellos los {{plural_you:matarán|mataréis}} y los {{plural_you:crucificarán|crucificaréis}}; a otros los {{plural_you:azotarán|azotaréis}} en {{plural_you:sus|vuestras}} sinagogas y los {{plural_you:perseguirán|perseguiréis}} de ciudad en ciudad.",
+          "R": "Por eso yo {{plural_you:les|os}} envío profetas, maestros sabios y maestros de la ley. A algunos de ellos los {{plural_you:matarán|mataréis}}. A algunos hasta los {{plural_you:clavarán|clavaréis}} en cruces. A otros los {{plural_you:golpearán|golpearéis}} con látigos en {{plural_you:sus|vuestras}} sinagogas. Los {{plural_you:perseguirán|perseguiréis}} de un pueblo a otro."
+        },
+        "fr": {
+          "L": "C’est pourquoi, voici, moi j’envoie vers vous des prophètes, des sages et des scribes ; vous en tuerez et [en] crucifierez, et vous en fouetterez dans vos synagogues et [en] poursuivrez de ville en ville,",
+          "B": "C’est pourquoi je vous envoie des prophètes, des sages et des scribes. Vous tuerez et crucifierez les uns ; vous fouetterez les autres dans vos synagogues et vous les pourchasserez de ville en ville.",
+          "R": "C’est pour cela que je vous envoie des prophètes, des enseignants sages et des spécialistes de la Loi. Vous tuerez certains d’entre eux. Vous en clouerez même sur des croix. Vous frapperez les autres à coups de fouet dans vos synagogues. Vous les poursuivrez d’une ville à l’autre."
+        },
+        "sw": {
+          "L": "Kwa sababu hii, tazameni, {{deity_pronoun:mimi|Mimi}} ninawatumia manabii na wenye hekima na waandishi; baadhi yao mtawaua na kuwasulubisha, na baadhi yao mtawapiga mijeledi katika masinagogi yenu na kuwafukuza kutoka mji hadi mji,",
+          "B": "Ndiyo maana ninawatumia manabii, wenye hekima na waandishi. Baadhi yao mtawaua na kuwasulubisha; wengine mtawapiga mijeledi katika masinagogi yenu na kuwawinda kutoka mji mmoja hadi mwingine.",
+          "R": "Ndiyo maana ninawatumia manabii, walimu wenye hekima, na walimu wa sheria. Baadhi yao mtawaua. Wengine hata mtawapigilia misumari msalabani. Wengine mtawachapa mijeledi katika masinagogi yenu. Mtawafukuza kutoka mji mmoja hadi mwingine."
         }
       },
       "decisions": [
@@ -2512,6 +3329,43 @@
           "reason": "The sentence goes on into 23:35. Balanced and Readable begin a new sentence there.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40023034013",
+            "n40023034019"
+          ],
+          "choice": "vous en tuerez ... vous en fouetterez (L)",
+          "alternatives": [
+            "certains d’entre eux"
+          ],
+          "reason": "As in Luke 11:49: the French partitive \"en\" says \"some of them\" just as the Greek \"of them\" does, so Literal needs no bracketed \"some\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40023034004"
+          ],
+          "choice": "{{deity_pronoun:mimi|Mimi}} (L); no span on the verb prefixes",
+          "alternatives": [],
+          "reason": "Swahili marks most pronouns inside the verb (ninawatumia, hamkuniruhusu), where they cannot take a capital, so the setting goes only on free pronouns such as \"mimi\" when Jesus speaks of himself, as in John. Literal keeps the emphatic Greek \"I\"; Swahili therefore has a span here where English has none, and fewer spans elsewhere in the passage.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2565,6 +3419,21 @@
           "L": "so that upon you may come all the righteous blood poured out on the earth, from the blood of Abel the righteous to the blood of Zechariah son of Barachiah, whom you murdered between the temple and the altar.",
           "B": "And so the guilt for all the innocent blood poured out on the earth will fall on you, from the blood of Abel, a righteous man, to the blood of Zechariah son of Barachiah, whom you murdered between the temple and the altar.",
           "R": "So you will be punished for the murder of every innocent person whose blood has been spilled on the earth. That goes from the murder of Abel, who did what was right, to the murder of Zechariah son of Barachiah. You killed him between the temple building and the altar."
+        },
+        "es": {
+          "L": "para que venga sobre {{plural_you:ustedes|vosotros}} toda la sangre justa derramada sobre la tierra, desde la sangre de Abel el justo hasta la sangre de Zacarías hijo de Baraquías, a quien {{plural_you:asesinaron|asesinasteis}} entre el templo y el altar.",
+          "B": "Y así caerá sobre {{plural_you:ustedes|vosotros}} la culpa de toda la sangre inocente derramada sobre la tierra, desde la sangre de Abel, un hombre justo, hasta la sangre de Zacarías hijo de Baraquías, a quien {{plural_you:asesinaron|asesinasteis}} entre el templo y el altar.",
+          "R": "Así que {{plural_you:serán castigados|seréis castigados}} por el asesinato de cada persona inocente cuya sangre se ha derramado en la tierra. Eso va desde el asesinato de Abel, que hizo lo correcto, hasta el asesinato de Zacarías hijo de Baraquías. {{plural_you:Ustedes lo mataron|Vosotros lo matasteis}} entre el edificio del templo y el altar."
+        },
+        "fr": {
+          "L": "afin que vienne sur vous tout le sang juste répandu sur la terre, depuis le sang d’Abel le juste jusqu’au sang de Zacharie, fils de Barachie, que vous avez assassiné entre le temple et l’autel.",
+          "B": "Ainsi la culpabilité pour tout le sang innocent répandu sur la terre retombera sur vous, depuis le sang d’Abel, un homme juste, jusqu’au sang de Zacharie, fils de Barachie, que vous avez assassiné entre le temple et l’autel.",
+          "R": "Ainsi, vous serez punis pour le meurtre de toutes les personnes innocentes dont le sang a coulé sur la terre. Cela va du meurtre d’Abel, qui faisait ce qui est juste, jusqu’au meurtre de Zacharie, fils de Barachie. Vous l’avez tué entre le bâtiment du temple et l’autel."
+        },
+        "sw": {
+          "L": "ili damu yote ya wenye haki inayomwagwa duniani iwajie juu yenu, tangu damu ya Habili mwenye haki mpaka damu ya Zakaria mwana wa Barakia, ambaye mlimuua katikati ya hekalu na madhabahu.",
+          "B": "Kwa hiyo lawama ya damu yote ya watu wasio na hatia iliyomwagwa duniani itawaangukia ninyi, kuanzia damu ya Habili, mtu mwenye haki, hadi damu ya Zakaria mwana wa Barakia, ambaye mlimuua kati ya hekalu na madhabahu.",
+          "R": "Kwa hiyo mtaadhibiwa kwa sababu ya mauaji ya kila mtu asiye na hatia ambaye damu yake imemwagwa duniani. Hiyo ni tangu mauaji ya Habili, aliyetenda yaliyo sawa, mpaka mauaji ya Zakaria mwana wa Barakia. Mlimuua kati ya jengo la hekalu na madhabahu."
         }
       },
       "decisions": [
@@ -2725,6 +3594,21 @@
           "L": "Truly I tell you, all these things will come upon this generation.",
           "B": "Truly I tell you, all these things will fall upon this generation.",
           "R": "I tell you the truth, the people living now will be punished for all these things."
+        },
+        "es": {
+          "L": "En verdad {{plural_you:les|os}} digo: todas estas cosas vendrán sobre esta generación.",
+          "B": "En verdad {{plural_you:les|os}} digo que todo esto caerá sobre esta generación.",
+          "R": "{{plural_you:Les|Os}} digo la verdad: la gente que vive ahora será castigada por todas estas cosas."
+        },
+        "fr": {
+          "L": "En vérité, je vous le dis, toutes ces choses viendront sur cette génération.",
+          "B": "En vérité, je vous le dis : tout cela retombera sur cette génération.",
+          "R": "Je vous le dis, c’est la vérité : les gens qui vivent aujourd’hui seront punis pour tout cela."
+        },
+        "sw": {
+          "L": "Kweli nawaambia, mambo haya yote yatakuja juu ya kizazi hiki.",
+          "B": "Kweli nawaambia, mambo haya yote yatakiangukia kizazi hiki.",
+          "R": "Nawaambia ukweli, watu wanaoishi sasa wataadhibiwa kwa ajili ya mambo haya yote."
         }
       },
       "decisions": [
@@ -2802,6 +3686,73 @@
           "reason": "Readable says what it means for these things to come upon them.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40023036001",
+            "n40023036002",
+            "n40023036003"
+          ],
+          "choice": "En verdad les digo (L, B); Les digo la verdad (R)",
+          "alternatives": [
+            "De cierto os digo"
+          ],
+          "reason": "The wording used for Jesus's single \"amen\" across the New Testament drafts. \"De cierto\" is older church Spanish.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40023036001",
+            "n40023036002",
+            "n40023036003"
+          ],
+          "choice": "En vérité, je vous le dis (L, B); Je vous le dis, c’est la vérité (R)",
+          "alternatives": [],
+          "reason": "The term sheet's forms for the \"amen\" saying, as in Mark 12:43 and Matthew 5:26.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40023036001",
+            "n40023036002",
+            "n40023036003"
+          ],
+          "choice": "Kweli nawaambia (L, B); Nawaambia ukweli (R)",
+          "alternatives": [
+            "Amin, nawaambia"
+          ],
+          "reason": "The wording used for Jesus's single \"amen\" across the New Testament drafts: plain modern Swahili rather than the borrowed \"Amin\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2855,6 +3806,21 @@
           "L": "Jerusalem, Jerusalem, who kills the prophets and stones those who are sent to her, how often I wanted to gather your children together, the way a hen gathers her chicks under [her] wings, and you were not willing?",
           "B": "Jerusalem, Jerusalem! You murder the prophets and stone the messengers sent to you. How many times I have wanted to gather your children together, the way a hen draws her chicks under her wings! But you refused.",
           "R": "Jerusalem, Jerusalem! You kill the prophets. You throw stones at the messengers God sends to you. Many times I wanted to gather your people together and protect them, the way a hen tucks her chicks under her wings. But you would not let {{deity_pronoun:me|Me}}."
+        },
+        "es": {
+          "L": "Jerusalén, Jerusalén, la que mata a los profetas y apedrea a los que le son enviados, ¿cuántas veces quise reunir a tus hijos, como la gallina reúne a sus polluelos bajo [sus] alas, y no {{plural_you:quisieron|quisisteis}}?",
+          "B": "¡Jerusalén, Jerusalén! Matas a los profetas y apedreas a los mensajeros que te son enviados. ¡Cuántas veces he querido reunir a tus hijos, como la gallina recoge a sus polluelos bajo sus alas! Pero {{plural_you:se negaron|os negasteis}}.",
+          "R": "¡Jerusalén, Jerusalén! Matas a los profetas. Apedreas a los mensajeros que Dios te envía. Muchas veces quise reunir a tu gente y protegerla, como la gallina pone a sus pollitos bajo sus alas. Pero no me lo {{plural_you:permitieron|permitisteis}}."
+        },
+        "fr": {
+          "L": "Jérusalem, Jérusalem, [toi] qui tues les prophètes et lapides ceux qui lui sont envoyés, combien de fois j’ai voulu rassembler tes enfants, comme une poule rassemble ses poussins sous les ailes, et vous n’avez pas voulu ?",
+          "B": "Jérusalem, Jérusalem ! Tu assassines les prophètes et tu lapides les messagers qui te sont envoyés. Que de fois j’ai voulu rassembler tes enfants, comme une poule attire ses poussins sous ses ailes ! Mais vous avez refusé.",
+          "R": "Jérusalem, Jérusalem ! Tu tues les prophètes. Tu jettes des pierres aux messagers que Dieu t’envoie. Bien souvent, j’ai voulu rassembler tes habitants pour les protéger, comme une poule met ses poussins à l’abri sous ses ailes. Mais vous ne {{deity_pronoun:m’|M’}}avez pas laissé faire."
+        },
+        "sw": {
+          "L": "Yerusalemu, Yerusalemu, wewe unayewaua manabii na kuwapiga mawe wale waliotumwa kwako, mara ngapi nilitamani kuwakusanya pamoja watoto wako, namna kuku anavyowakusanya vifaranga wake chini ya mabawa [yake], nanyi hamkukubali?",
+          "B": "Yerusalemu, Yerusalemu! Unawaua manabii na kuwapiga mawe wajumbe waliotumwa kwako. Mara ngapi nimetamani kuwakusanya watoto wako pamoja, kama kuku anavyowakusanya vifaranga wake chini ya mabawa yake! Lakini mlikataa.",
+          "R": "Yerusalemu, Yerusalemu! Unawaua manabii. Unawapiga mawe wajumbe ambao Mungu anakutumia. Mara nyingi nilitaka kuwakusanya watu wako pamoja na kuwalinda, kama kuku anavyowaficha vifaranga wake chini ya mabawa yake. Lakini hamkuniruhusu."
         }
       },
       "decisions": [
@@ -3003,6 +3969,90 @@
           "reason": "Readable names God as the sender, explains the idiom, and says what the city refused.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40023037018",
+            "n40023037031"
+          ],
+          "choice": "tus hijos, then a plural verb (no quisieron|no quisisteis)",
+          "alternatives": [
+            "no quisiste"
+          ],
+          "reason": "Jesus speaks to the city as \"you\" in the singular and then says \"you were not willing\" in the plural, turning to its people (meaning decision m1). Spanish keeps both numbers, so the last verb takes the plural_you setting.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40023037031"
+          ],
+          "choice": "me lo permitieron, with no deity_pronoun span",
+          "alternatives": [
+            "{{deity_pronoun:me|Me}} lo permitieron"
+          ],
+          "reason": "The English Readable \"let me\" takes the setting. In Spanish \"me\" is a clitic joined to the verb, and as in John the setting goes on stressed pronouns (mí, él) and on \"lo\" and \"su\", not on \"me\". The same in verse 39.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40023037018",
+            "n40023037031"
+          ],
+          "choice": "\"tu\" to the city, \"vous\" for the refusal",
+          "alternatives": [
+            "tu throughout",
+            "vous throughout"
+          ],
+          "reason": "As in Luke 13:34: the Greek speaks to Jerusalem in the singular and then says \"you were not willing\" in the plural, meaning its people. French can show the change that English \"you\" hides, so every level keeps it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40023037018",
+            "n40023037031"
+          ],
+          "choice": "watoto wako (singular \"you\"), then hamkukubali / mlikataa / hamkuniruhusu (plural)",
+          "alternatives": [],
+          "reason": "Jesus speaks to the city in the singular and then says \"you were not willing\" in the plural, turning to its people (meaning decision m1). Swahili keeps both numbers in the verb prefixes, as the Greek does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3032,6 +4082,21 @@
           "L": "Look, your house is left to you desolate.",
           "B": "Now your house is being abandoned to you, a desolate place.",
           "R": "Now your house will be left to you, empty and deserted."
+        },
+        "es": {
+          "L": "{{plural_you:Miren|Mirad}}, {{plural_you:su|vuestra}} casa {{plural_you:les|os}} es dejada desierta.",
+          "B": "Ahora {{plural_you:su|vuestra}} casa queda abandonada en {{plural_you:sus|vuestras}} manos, convertida en un lugar desolado.",
+          "R": "Ahora {{plural_you:su|vuestra}} casa {{plural_you:les|os}} quedará vacía y abandonada."
+        },
+        "fr": {
+          "L": "Voici, votre maison vous est laissée déserte.",
+          "B": "Désormais, votre maison va vous être abandonnée, livrée à la désolation.",
+          "R": "Maintenant, votre maison va vous être laissée, vide et abandonnée."
+        },
+        "sw": {
+          "L": "Tazameni, nyumba yenu inaachiwa ninyi, ikiwa hame.",
+          "B": "Sasa nyumba yenu inaachwa kwenu ikiwa hame.",
+          "R": "Sasa nyumba yenu itaachwa kwenu, tupu na bila mtu."
         }
       },
       "decisions": [
@@ -3169,6 +4234,21 @@
           "L": "For I tell you, you will by no means see {{deity_pronoun:me|Me}} from now on until you say, 'Blessed [is] the one who comes in [the] name of [the] Lord.'\"",
           "B": "For I tell you, from now on you will not see {{deity_pronoun:me|Me}} again until you say, 'Blessed is the one who comes in the name of the Lord.'\"",
           "R": "I tell you, you will not see {{deity_pronoun:me|Me}} again until you say, 'May God bless the one who comes in the name of the Lord!'\""
+        },
+        "es": {
+          "L": "Porque {{plural_you:les|os}} digo que de ningún modo me {{plural_you:verán|veréis}} desde ahora hasta que {{plural_you:digan|digáis}}: “Bendito el que viene en [el] nombre del Señor”».",
+          "B": "Porque {{plural_you:les|os}} digo que desde ahora no me {{plural_you:volverán|volveréis}} a ver hasta que {{plural_you:digan|digáis}}: “Bendito el que viene en el nombre del Señor”».",
+          "R": "{{plural_you:Les|Os}} digo que no me {{plural_you:volverán|volveréis}} a ver hasta que {{plural_you:digan|digáis}}: “¡Que Dios bendiga al que viene en el nombre del Señor!”»."
+        },
+        "fr": {
+          "L": "Car je vous le dis, vous ne {{deity_pronoun:me|Me}} verrez plus, dès maintenant, jusqu’à ce que vous disiez : “Béni [soit] celui qui vient au nom du Seigneur !” »",
+          "B": "Car je vous le dis : désormais, vous ne {{deity_pronoun:me|Me}} verrez plus jusqu’à ce que vous disiez : “Béni soit celui qui vient au nom du Seigneur !” »",
+          "R": "Je vous le dis : vous ne {{deity_pronoun:me|Me}} reverrez pas avant de dire : “Que Dieu bénisse celui qui vient au nom du Seigneur !” »"
+        },
+        "sw": {
+          "L": "Kwa maana nawaambia, hakika hamtaniona tangu sasa mpaka mtakaposema, 'Amebarikiwa yeye ajaye kwa jina la Bwana.'\"",
+          "B": "Kwa maana nawaambia, tangu sasa hamtaniona tena mpaka mtakaposema, 'Amebarikiwa yeye anayekuja kwa jina la Bwana.'\"",
+          "R": "Nawaambia, hamtaniona tena mpaka mtakaposema, 'Mungu ambariki yeye anayekuja kwa jina la Bwana!'\""
         }
       },
       "decisions": [
@@ -3295,6 +4375,25 @@
             "Yahweh"
           ],
           "reason": "In a New Testament quotation the Greek has \"Lord\", so every level writes \"Lord\"; the first meaning decision notes the divine name in the Hebrew.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40023039013"
+          ],
+          "choice": "the French wording of 21:9 at each level",
+          "alternatives": [],
+          "reason": "As in English, the psalm is worded as when the crowds sang it at 21:9: \"Béni [soit]\" (L), \"Béni soit\" (B), \"Que Dieu bénisse\" (R).",
           "uncertain": false,
           "footnote": false
         }

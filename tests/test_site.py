@@ -295,6 +295,21 @@ class SiteTest(unittest.TestCase):
         # The About menu and the footer both link to it.
         self.assertGreaterEqual(page.count('href="/about/beliefs/"'), 2)
 
+    def test_privacy_and_terms_of_use_pages(self):
+        privacy = (self.out / "about" / "privacy" / "index.html").read_text(encoding="utf-8")
+        self.assertIn("<h1>Privacy</h1>", privacy)
+        self.assertIn('<a href="/account/">account page</a>', privacy)
+        terms = (self.out / "about" / "terms-of-use" / "index.html").read_text(encoding="utf-8")
+        self.assertIn("<h1>Terms of use</h1>", terms)
+        self.assertIn('<a href="/about/#credits">Sources and credits</a>', terms)
+        self.assertIn('<a href="/about/privacy/">privacy notice</a>', terms)
+        # Every placeholder became a link.
+        self.assertNotIn("{", re.search(r'<div class="prose legal">.*?</div>', terms, re.S)[0])
+        # The footer links to both, in each language.
+        self.assertIn('href="/about/terms-of-use/"', privacy)
+        es = (self.out / "es" / "about" / "privacy" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('<a href="/es/about/terms-of-use/">Condiciones de uso</a>', es)
+
     def test_about_page_renders_markdown_links(self):
         about = (self.out / "about" / "index.html").read_text(encoding="utf-8")
         self.assertIn('<a href="https://github.com/seven1m/open-bibles">seven1m/open-bibles</a>', about)
