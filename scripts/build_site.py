@@ -5,7 +5,7 @@ Usage: python3 scripts/build_site.py [-o DIR]
 Needs only the repository: the Greek words come from the committed extracts
 in data/grc/ (see scripts/extract_tokens.py), so a deploy never fetches the
 full sources. Every page is built in each interface language: English at
-the root, Spanish under /es/, French under /fr/, Swahili under /sw/.
+the root, the others under their codes (/es/, /fr/, /sw/, /vi/, /ko/).
 """
 import argparse
 import base64
@@ -1097,6 +1097,15 @@ def chapter_ld(records, book, chapter, title, lang="en"):
     return f'<script type="application/ld+json">{text}</script>'
 
 
+def page_records(records, lang):
+    """The records as a page in lang carries them: every language's
+    renderings (the reader sets two side by side), but only the meaning
+    decisions and lang's own rendering decisions, the only ones the reader
+    shows. Each language's decisions would otherwise weigh on every page."""
+    return [{**r, "decisions": [d for d in r["decisions"] if d["language"] in (None, lang)]}
+            for r in records]
+
+
 def chapter_page(book, chapter, lang="en"):
     records, words = load_chapter(book, chapter)
     title = chapter_name(records, book, chapter, lang)
@@ -1106,7 +1115,7 @@ def chapter_page(book, chapter, lang="en"):
                  if any(code in r["renderings"] for r in records)]
     source = source_language(book)
     data = {"book": book, "chapter": chapter, "title": title, "lang": lang, "languages": languages,
-            "source": source, "ui": catalog(lang)["reader.ui"], "records": records,
+            "source": source, "ui": catalog(lang)["reader.ui"], "records": page_records(records, lang),
             "words": {vid: transliterated(words[vid], source) for r in records for vid in r["refs"]},
             "paragraphs": paragraph_starts(records, words),
             "disputed": disputed_block(records, lang),
@@ -3499,9 +3508,12 @@ SEARCH_PAGES = (("nav.home", "/"), ("nav.read", "/read/"), ("nav.plans", "/plans
 
 
 def fold(text):
-    """Text as search compares it: lower case, without accents."""
+    """Text as search compares it: lower case, without accents, Vietnamese
+    "đ" as "d". The rest is composed again, so a Korean syllable stays one
+    character (NFD splits it into its letters)."""
     import unicodedata
-    return "".join(c for c in unicodedata.normalize("NFD", text.lower()) if not unicodedata.combining(c))
+    return unicodedata.normalize("NFC", "".join(
+        c for c in unicodedata.normalize("NFD", text.lower()) if not unicodedata.combining(c))).replace("\u0111", "d")
 
 
 def book_aliases(code, names):

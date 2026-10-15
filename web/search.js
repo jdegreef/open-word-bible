@@ -40,9 +40,12 @@
   // ---- Text --------------------------------------------------------------
 
   // Lower case, accents removed, curly quotes straightened: what matching
-  // compares, so "corazon" finds "corazón".
+  // compares, so "corazon" finds "corazón" and "duc" finds "Đức". The rest is
+  // composed again, so a Korean syllable stays one character (NFD splits it
+  // into its letters).
   function fold(s) {
-    return s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase()
+    return s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").normalize("NFC").toLowerCase()
+      .replace(/\u0111/g, "d")
       .replace(/[\u2018\u2019\u02bc]/g, "'").replace(/[\u201c\u201d\u00ab\u00bb]/g, '"');
   }
 
