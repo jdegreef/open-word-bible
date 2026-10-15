@@ -201,7 +201,9 @@ class LanguagesTest(unittest.TestCase):
             home = self.read(f"{lang}/index.html")
             if not own:
                 self.assertIn(build_site.catalog(lang)["articles.none"], listing)
-                self.assertNotIn('class="a-card', listing + home)
+                # No article cards; a reading plan's card (a-card plan-card)
+                # may still show once its chapters are translated.
+                self.assertEqual(re.findall(r'class="a-card(?! plan-card)', listing + home), [])
                 self.assertNotIn('id="dd-articles"', home)
 
     def test_an_english_article_switches_languages_to_their_articles_page(self):
