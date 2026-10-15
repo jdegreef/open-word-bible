@@ -79,6 +79,8 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | Alpha and Omega | el Alfa y la Omega | Alfa na Omega |
 | woe | ¡ay! | ole |
 | Amen | Amén | Amina |
+| tomb (*mnēmeion*) | el sepulcro (L, B); la tumba (R) | kaburi |
+| at the right (hand) | a la derecha (de) | upande wa kulia (wa) |
 
 ## Spanish
 
@@ -93,8 +95,9 @@ Decision text stays in English, quoting the Spanish or Swahili words.
   article contracts (`{{christos:de Cristo|del Mesías}}`). With the
   article, as a title: `el {{christos:Cristo|Mesías}}`.
 - `deity_pronoun`: `{{deity_pronoun:él|Él}}`, `lo|Lo`, `le|Le`, `sí
-  mismo|Sí mismo`, and the possessive `su|Su` only where the English marks
-  the pronoun.
+  mismo|Sí mismo`, and the possessive `su|Su`, wherever the English marks
+  the pronoun, clitics included. "Jesús mismo" is an adjective and takes no
+  span.
 - Names in their usual Spanish form: Jesús, Juan, Pedro, Santiago (James),
   Mateo, Marcos, Lucas, Pablo, Bernabé, Esteban, Felipe, Herodes, Pilato,
   Jerusalén, Galilea, Cafarnaúm, Nazaret, Belén, Moisés, Elías, Isaías.
