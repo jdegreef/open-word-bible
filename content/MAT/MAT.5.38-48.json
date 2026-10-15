@@ -28,6 +28,11 @@
           "L": "You have heard that it was said, 'An eye for an eye and a tooth for a tooth.'",
           "B": "You have heard the saying, 'Eye for eye, tooth for tooth.'",
           "R": "You have heard that the law says, 'The punishment must match the harm: an eye for an eye, and a tooth for a tooth.'"
+        },
+        "fr": {
+          "L": "Vous avez entendu qu’il a été dit : “Œil pour œil et dent pour dent.”",
+          "B": "Vous avez entendu cette parole : “Œil pour œil, dent pour dent.”",
+          "R": "Vous avez entendu que la Loi dit : “La punition doit être égale au mal qu’on a fait : œil pour œil, dent pour dent.”"
         }
       },
       "decisions": [
@@ -120,6 +125,11 @@
           "L": "But I say to you not to resist the evil [person]; but whoever strikes you on the right cheek, turn the other to {{gender:them|him}} as well,",
           "B": "But I tell you, do not fight back against an evil person. If anyone slaps you on the right cheek, turn the other cheek to {{gender:them|him}} as well.",
           "R": "But I tell you, do not fight back against someone who does wrong to you. If someone slaps you on the right side of your face, let them slap the other side too."
+        },
+        "fr": {
+          "L": "Mais moi, je vous dis de ne pas vous opposer au méchant ; au contraire, quiconque te gifle sur la joue droite, tourne aussi vers lui l’autre ;",
+          "B": "Mais moi, je vous le dis : ne ripostez pas à celui qui vous fait du mal. Si quelqu’un te gifle sur la joue droite, tends-lui aussi l’autre joue.",
+          "R": "Mais moi, je vous le dis : ne rendez pas le mal à celui qui vous fait du tort. Si quelqu’un te gifle sur la joue droite, laisse-le te gifler aussi sur l’autre joue."
         }
       },
       "decisions": [
@@ -181,6 +191,49 @@
           "reason": "The one who strikes may be anyone, so the inclusive form is the default. Readable uses \"someone ... them\", which already includes everyone.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40005039018"
+          ],
+          "choice": "\"quiconque\", \"quelqu'un\" … \"lui\", \"le\" with no gender span, in 5:39-42",
+          "alternatives": [
+            "{{gender:cette personne|lui}}"
+          ],
+          "reason": "Where the English needs {{gender:them|him}}, French \"quiconque\" and \"quelqu'un\" already mean anyone, and the \"lui\" that refers back to them is ordinary generic French (style guide §7), as in Luke 6:29.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-2",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40005039004",
+            "n40005039011"
+          ],
+          "choice": "\"vous\" for the command, \"tu\" for the examples",
+          "alternatives": [
+            "\"vous\" throughout"
+          ],
+          "reason": "The Greek speaks to all the hearers and then, in 5:39b-42, to each one in the singular; French follows the Greek number (style guide §6), as Luke 6:29-30 does. \"Gifler\" says the slap of the Greek verb (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -218,6 +271,11 @@
           "L": "and to the one who wants to sue you and take your tunic, let {{gender:them|him}} have your cloak as well,",
           "B": "If someone wants to take you to court and take your shirt, let {{gender:them|him}} have your coat as well.",
           "R": "If someone takes you to court to get your shirt, give that person your coat too."
+        },
+        "fr": {
+          "L": "et à celui qui veut te faire un procès et prendre ta tunique, laisse-lui aussi le manteau ;",
+          "B": "Si quelqu’un veut te traîner en justice pour prendre ta chemise, laisse-lui aussi ton manteau.",
+          "R": "Si quelqu’un va au tribunal pour te prendre ta chemise, donne-lui aussi ton manteau."
         }
       },
       "decisions": [
@@ -290,6 +348,11 @@
           "L": "and whoever compels you to go one mile, go with {{gender:them|him}} two.",
           "B": "If someone forces you to carry a load one mile, go two miles with {{gender:them|him}}.",
           "R": "If a soldier makes you carry something for one mile, carry it two miles."
+        },
+        "fr": {
+          "L": "et quiconque te forcera à faire un mille, va avec lui deux [milles].",
+          "B": "Si quelqu’un t’oblige à porter une charge sur {{units:un kilomètre et demi|un mille}}, fais {{units:trois kilomètres|deux milles}} avec lui.",
+          "R": "Si un soldat t’oblige à porter quelque chose sur {{units:un kilomètre et demi|un mille}}, porte-le sur {{units:trois kilomètres|deux milles}}."
         }
       },
       "decisions": [
@@ -346,6 +409,28 @@
           "reason": "Balanced says what was usually demanded; Readable names who usually demanded it. The Greek does not name the person.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40005041005",
+            "n40005041010"
+          ],
+          "choice": "un mille (L); {{units:un kilomètre et demi|un mille}} (B, R)",
+          "alternatives": [
+            "un mille at every level, as the English"
+          ],
+          "reason": "The English keeps \"mile\" at every level because a Roman mile is close to an English one (m2). French readers measure in kilometres, so Balanced and Readable give the metric distance by default (a Roman mile was about 1.5 km) with the original unit as the alternative, as the style guide asks (§7). Literal keeps the original unit.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -380,6 +465,11 @@
           "L": "To the one who asks you, give, and the one who wants to borrow from you, do not turn away.",
           "B": "Give to anyone who asks you, and do not turn your back on someone who wants to borrow from you.",
           "R": "Give to anyone who asks you for something. And do not refuse to lend to anyone who wants to borrow from you."
+        },
+        "fr": {
+          "L": "À celui qui te demande, donne ; et celui qui veut t’emprunter, ne te détourne pas [de lui].",
+          "B": "Donne à celui qui te demande, et ne tourne pas le dos à celui qui veut t’emprunter quelque chose.",
+          "R": "Donne à tous ceux qui te demandent quelque chose. Et ne refuse pas de prêter à celui qui veut t’emprunter."
         }
       },
       "decisions": [
@@ -443,6 +533,11 @@
           "L": "You have heard that it was said, 'You shall love your neighbor and hate your enemy.'",
           "B": "You have heard the saying, 'Love your neighbor and hate your enemy.'",
           "R": "You have heard that people say, 'Love your neighbor and hate your enemy.'"
+        },
+        "fr": {
+          "L": "Vous avez entendu qu’il a été dit : “Tu aimeras ton prochain et tu haïras ton ennemi.”",
+          "B": "Vous avez entendu cette parole : “Aime ton prochain et déteste ton ennemi.”",
+          "R": "Vous avez entendu que les gens disent : “Aime ton prochain et déteste ton ennemi.”"
         }
       },
       "decisions": [
@@ -524,6 +619,11 @@
           "L": "But I say to you, love your enemies and pray for those who persecute you,",
           "B": "But I tell you: love your enemies, and pray for the people who persecute you,",
           "R": "But I tell you, love your enemies. Pray for the people who hurt you."
+        },
+        "fr": {
+          "L": "Mais moi, je vous dis : aimez vos ennemis et priez pour ceux qui vous persécutent,",
+          "B": "Mais moi, je vous le dis : aimez vos ennemis, et priez pour ceux qui vous persécutent,",
+          "R": "Mais moi, je vous le dis : aimez vos ennemis. Priez pour ceux qui vous font souffrir."
         }
       },
       "decisions": [
@@ -613,6 +713,11 @@
           "L": "so that you may become {{gender:children|sons}} of your Father who [is] in [the] heavens, for {{deity_pronoun:he|He}} makes {{deity_pronoun:his|His}} sun rise on [the] evil and [the] good, and sends rain on [the] righteous and [the] unrighteous.",
           "B": "so that you will be {{gender:children|sons}} of your Father in heaven. He makes {{deity_pronoun:his|His}} sun rise on evil people and good people alike, and {{deity_pronoun:he|He}} sends rain on those who do right and those who do wrong.",
           "R": "Then you will show that you are {{gender:children|sons}} of your Father in heaven. He makes the sun shine on bad people and good people. He sends rain to people who do right and to people who do wrong."
+        },
+        "fr": {
+          "L": "afin que vous deveniez {{gender:enfants|fils}} de votre Père qui [est] dans les cieux, car {{deity_pronoun:il|Il}} fait lever {{deity_pronoun:son|Son}} soleil sur les méchants et sur les bons, et fait pleuvoir sur les justes et sur les injustes.",
+          "B": "Ainsi vous serez {{gender:enfants|fils}} de votre Père qui est dans les cieux. Il fait lever {{deity_pronoun:son|Son}} soleil sur les méchants comme sur les bons, et {{deity_pronoun:il|Il}} fait tomber la pluie sur ceux qui font le bien et sur ceux qui font le mal.",
+          "R": "Alors vous montrerez que vous êtes {{gender:enfants|fils}} de votre Père qui est dans le ciel. Il fait briller le soleil sur les gens mauvais et sur les gens bons. Il envoie la pluie sur ceux qui font le bien et sur ceux qui font le mal."
         }
       },
       "decisions": [
@@ -707,6 +812,27 @@
           "reason": "Readable gives the sense of \"become\" here: being seen to be what they are.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40005045003"
+          ],
+          "choice": "{{gender:enfants|fils}} without an article",
+          "alternatives": [
+            "{{gender:des enfants|des fils}}"
+          ],
+          "reason": "As in Luke 6:35. With no article French reads \"enfants de votre Père\" as a status, which is the sense of being like him (m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -738,6 +864,11 @@
           "L": "For if you love those who love you, what reward do you have?",
           "B": "If you love the people who love you, what reward is there in that?",
           "R": "If you love only the people who love you, why should God reward you for that?"
+        },
+        "fr": {
+          "L": "Car si vous aimez ceux qui vous aiment, quelle récompense avez-vous ?",
+          "B": "Si vous aimez ceux qui vous aiment, quelle récompense y a-t-il à cela ?",
+          "R": "Si vous aimez seulement les gens qui vous aiment, pourquoi Dieu vous récompenserait-il pour cela ?"
         }
       },
       "decisions": [
@@ -812,6 +943,11 @@
           "L": "Do not even the tax collectors do the same?",
           "B": "Even tax collectors do that, do they not?",
           "R": "Even tax collectors do that!"
+        },
+        "fr": {
+          "L": "Les collecteurs d’impôts eux-mêmes ne font-ils pas la même chose ?",
+          "B": "Même les collecteurs d’impôts en font autant, n’est-ce pas ?",
+          "R": "Même les collecteurs d’impôts le font !"
         }
       },
       "decisions": [
@@ -855,6 +991,27 @@
           "reason": "The question expects the answer yes; Readable gives the answer.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40005046013"
+          ],
+          "choice": "les collecteurs d'impôts",
+          "alternatives": [
+            "les publicains"
+          ],
+          "reason": "The term sheet's word at every level; \"publicains\" is church language few readers now understand (m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -887,6 +1044,11 @@
           "L": "And if you greet only your {{gender:brothers and sisters|brothers}}, what more are you doing?",
           "B": "And if you greet only your own {{gender:brothers and sisters|brothers}}, what are you doing that is out of the ordinary?",
           "R": "If you are friendly only to your own family and friends, you are doing nothing more than anyone else."
+        },
+        "fr": {
+          "L": "Et si vous saluez seulement vos {{gender:frères et sœurs|frères}}, que faites-vous de plus ?",
+          "B": "Et si vous ne saluez que vos propres {{gender:frères et sœurs|frères}}, que faites-vous d’extraordinaire ?",
+          "R": "Si vous êtes aimables seulement avec votre famille et vos amis, vous ne faites rien de plus que tout le monde."
         }
       },
       "decisions": [
@@ -973,6 +1135,11 @@
           "L": "Do not even the Gentiles do the same?",
           "B": "Even the Gentiles do that, do they not?",
           "R": "Even people who do not know God do that!"
+        },
+        "fr": {
+          "L": "Les gens des nations eux-mêmes ne font-ils pas la même chose ?",
+          "B": "Même les non-Juifs en font autant, n’est-ce pas ?",
+          "R": "Même les gens qui ne connaissent pas Dieu le font !"
         }
       },
       "decisions": [
@@ -1010,6 +1177,28 @@
           "reason": "Readable explains the word and gives the answer the question expects.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40005047014"
+          ],
+          "choice": "les gens des nations (L); les non-Juifs (B); les gens qui ne connaissent pas Dieu (R)",
+          "alternatives": [
+            "les païens",
+            "les nations (L)"
+          ],
+          "reason": "The term sheet gives \"les nations\" at Literal and \"les non-Juifs\" where the English says \"Gentiles\". This word names individual people rather than nations, so Literal says \"les gens des nations\". Readable follows the English Readable's explanation (m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1044,6 +1233,11 @@
           "L": "You therefore shall be perfect, as your heavenly Father is perfect.",
           "B": "You, then, are to be perfect, as your heavenly Father is perfect.",
           "R": "So you must be perfect, the way your Father in heaven is perfect."
+        },
+        "fr": {
+          "L": "Vous serez donc parfaits, vous, comme votre Père céleste est parfait.",
+          "B": "Vous devez donc être parfaits, comme votre Père céleste est parfait.",
+          "R": "Vous devez donc être parfaits, comme votre Père qui est dans le ciel est parfait."
         }
       },
       "decisions": [
