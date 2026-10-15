@@ -150,7 +150,7 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | servant girl (*paidiskē*) | criada | kijakazi (L); mtumishi wa kike (B, R) |
 | synagogue leader | jefe de la sinagoga | mkuu wa sinagogi (L); kiongozi wa sinagogi (B, R) |
 | physicians | médicos | matabibu (L, B); madaktari (R) |
-| Most High (God) | Altísimo | Aliye Juu Kabisa |
+| Most High (God) | el Altísimo | Aliye Juu Kabisa (as Hebrews 7:1) |
 | John the Baptist | Juan el Bautista | Yohana Mbatizaji |
 | immediately (*euthys*, Mark) | al instante (L); enseguida / en seguida, or left out, as the English (B, R) | mara moja |
 | slander (*blasphēmia* in vice lists) | calumnia | kashfa |
@@ -184,6 +184,8 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | Passover | la Pascua | Pasaka |
 | fall away (*skandalizomai*) | caer, tropezar y caer | kujikwaa |
 | Abba | Abba, Padre | Aba, Baba |
+| most excellent (*kratiste*) | excelentísimo | Mheshimiwa |
+| relative (*syngenis*) | pariente | jamaa |
 | tomb (*mnēmeion*) | el sepulcro (L, B); la tumba (R) | kaburi |
 | at the right (hand) | a la derecha (de) | upande wa kulia (wa) |
 
@@ -225,7 +227,8 @@ Decision text stays in English, quoting the Spanish or Swahili words.
   Marko, Luka, Paulo, Barnaba, Stefano, Filipo, Herode, Pilato, Yerusalemu,
   Galilaya, Kapernaumu, Nazareti, Bethlehemu, Musa, Eliya, Isaya, Daudi,
   Ibrahimu, Sulemani, Ninawi, Habili, Zakaria, Yusufu (Joseph),
-  Uyahudi (Judea, as John; never Yudea).
+  Uyahudi (Judea, as John; never Yudea),
+  Elisabeti, Gabrieli, Theofilo, Haruni.
 - Hours: the Greek counts from sunrise as Swahili does, so "the ninth hour"
   is *saa tisa* at every level; Balanced and Readable may add *mchana*,
   *jioni*. The night watches likewise in Swahili time.
