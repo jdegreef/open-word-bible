@@ -176,3 +176,52 @@ Settings change wording, never meaning, exactly as in English.
 
 Every new record keeps its status; a French rendering added to a record does
 not change it. Nothing is marked reviewed by an AI.
+
+## 9. Words for the rest of the New Testament
+
+The table in section 5 holds for every book. These are the recurring choices
+for the Gospels, Acts, the letters and Revelation, settled so that books
+drafted separately read as one translation. Each passage that first uses one
+records it in a rendering decision ("for the whole book"); later passages
+just follow it. Where the English loosens a term at Readable with a decision,
+French may loosen it the same way.
+
+| Greek (English) | French | Notes |
+|---|---|---|
+| the Holy Spirit | l’Esprit Saint; l’Esprit | As in John and Hebrews. |
+| kingdom of God / of heaven | le royaume de Dieu / le royaume des cieux | Every level, as the English keeps "kingdom of heaven" at Readable. |
+| scribes (*grammateis*) | les scribes (L, B); les spécialistes de la Loi (R) | Readable follows the English "teachers of the law". |
+| Pharisees, Sadducees, Herodians | les Pharisiens, les Sadducéens, les Hérodiens | Capitalised, as in John. |
+| chief priests; high priest | les chefs des prêtres; le grand prêtre (no hyphen) | |
+| tax collectors | les collecteurs d’impôts | Every level; not "publicains". |
+| sinners | les pécheurs | |
+| demon; unclean spirit | un démon; un esprit impur | |
+| Satan; the devil | Satan; le diable | |
+| Gehenna / hell; Hades | as the English per level: la géhenne where it keeps the name, l’enfer where it says "hell"; le séjour des morts for Hades (B, R), l’Hadès (L) | |
+| centurion | un centurion (L, B); as the English at R ("un officier romain") | |
+| the Council (*synedrion*) | le Sanhédrin (L, B); le grand conseil des Juifs (R) | |
+| synagogue; Sabbath; Passover | la synagogue; le sabbat (lowercase); la Pâque (never "Pâques") | |
+| Truly I tell you (*amēn legō hymin*) | En vérité, je vous le dis (L, B); Je vous le dis, c’est la vérité (R) | As John's doubled form. |
+| Woe to you | Malheur à vous (L, B); R as the English | |
+| the Twelve | les Douze | |
+| John the Baptist | Jean le Baptiste | |
+| the law (*nomos*, the Law of Moses) | la Loi | Lowercase "la loi" only for law in general or a principle ("une autre loi", Romans 7:23). |
+| righteousness; righteous | la justice; juste | L and B. Readable may say "être en règle avec Dieu" where the English Readable says "right with God", with a decision. |
+| justify (*dikaioō*) | justifier (L); déclarer juste (B); as the English at R ("mettre en règle avec Dieu") | |
+| flesh (*sarx*) | la chair (L, B); R follows the meaning decision and the English ("la nature humaine", "ses propres désirs") | |
+| church (*ekklēsia*) | l’Église for the whole body of believers; l’église for one congregation ("l’église de Corinthe", "l’église qui se réunit chez eux") | |
+| God's holy people (*hagioi*) | les saints (L); le peuple saint de Dieu, les croyants (B, R) | As Colossians. |
+| Gentiles, nations (*ethnē*) | les nations (L); les non-Juifs (B, R) where the English says "Gentiles"; les nations where it says "nations" | |
+| elders; overseer; deacon | les anciens; le surveillant (L, B), le responsable (R); le diacre (L, B), as the English at R | |
+| repent, repentance | se repentir, la repentance (L, B); R as the English ("changer de vie", "se tourner vers Dieu") | |
+| baptize | baptiser | |
+| covenant | l’alliance | |
+| the gospel | l’Évangile (L, B); la bonne nouvelle (R) | As Colossians. In the Gospels, "the good news of the kingdom" is "la bonne nouvelle du royaume" at every level where the English says "good news". |
+| the Lamb (Revelation) | l’Agneau | |
+| living creatures; elders (Revelation 4–5) | les quatre êtres vivants; les vingt-quatre anciens | |
+
+Letters are speech to the readers, so past events are in the *passé composé*
+at every level, as Colossians records; narration inside a letter (Galatians
+1–2, Paul's travels) follows section 3. Acts and the Gospels follow section 3
+(passé simple at B, passé composé at R). In Revelation John tells what he saw:
+"je vis" at L and B, "j’ai vu" at R.
