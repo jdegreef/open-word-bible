@@ -200,6 +200,8 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | this age / that age | esta era / aquella era | zama hizi / zama zile |
 | footstool | escabel | kiti cha kuwekea miguu |
 | show favoritism (*prosōpolēmpsia*) | hacer favoritismo (B, R) | kupendelea (B, R) |
+| be anxious, worry (*merimnaō*) | inquietarse, preocuparse | kuwa na wasiwasi |
+| night watch | vigilia | zamu ya usiku |
 | tomb (*mnēmeion*) | el sepulcro (L, B); la tumba (R) | kaburi |
 | at the right (hand) | a la derecha (de) | upande wa kulia (wa) |
 
