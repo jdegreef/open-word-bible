@@ -356,8 +356,9 @@ class SiteTest(unittest.TestCase):
             verses = build_site.verses_of_the_day(lang)
             self.assertEqual(len(verses), len(build_site.VERSES_OF_THE_DAY))
             for vid, v in zip(build_site.VERSES_OF_THE_DAY, verses):
-                # The verse ends a sentence, so it reads on its own.
-                self.assertRegex(v["t"], r"[.?!][”’]?$", vid)
+                # The verse ends a sentence, so it reads on its own (a closing
+                # quotation mark may follow: ” ’, or French » after a no-break space).
+                self.assertRegex(v["t"], r"[.?!](?:[”’]|\u00a0»)?$", vid)
         home = (self.out / "index.html").read_text(encoding="utf-8")
         data = re.search(r'<script type="application/json" class="votd-data">(.*?)</script>', home, re.S)[1]
         self.assertEqual(json.loads(data), build_site.verses_of_the_day("en"))
