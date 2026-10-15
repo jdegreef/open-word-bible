@@ -97,6 +97,11 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | regret, change one's mind (*metamelomai*) | cambiar de parecer (not "arrepentirse") | kubadili nia (not "kutubu") |
 | tenant farmers (*geōrgoi*) | labradores (L, R); arrendatarios (B) | wakulima |
 | authority, right (*exousia*) | autoridad; derecho | mamlaka; ruhusa (not "haki") |
+| disciples | discípulos (every level, even where the English Readable says "followers") | wanafunzi (every level) |
+| blessed (*makarioi*) | dichosos | heri |
+| weeds (*zizania*) | cizaña (L, B); mala hierba (R) | magugu |
+| the end of the age | el fin de la era (L, B); el fin del mundo (R) | mwisho wa zama hizi (L, B); mwisho wa dunia (R) |
+| lord, master (in parables) | señor | bwana |
 | tomb (*mnēmeion*) | el sepulcro (L, B); la tumba (R) | kaburi |
 | at the right (hand) | a la derecha (de) | upande wa kulia (wa) |
 
