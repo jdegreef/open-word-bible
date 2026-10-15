@@ -213,6 +213,10 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | chariot | carruaje | gari (L); gari la farasi (B, R) |
 | eunuch | eunuco | towashi |
 | magic, sorcery | magia | uchawi |
+| magistrates (*stratēgoi*, Philippi) | magistrados | mahakimu |
+| jailer | carcelero | mlinzi wa gereza |
+| God-fearers (*sebomenoi*, *phoboumenoi ton theon*) | los que adoraban a Dios / temerosos de Dios | wamchao Mungu |
+| Roman citizen | ciudadano romano | raia wa Rumi |
 | tomb (*mnēmeion*) | el sepulcro (L, B); la tumba (R) | kaburi |
 | at the right (hand) | a la derecha (de) | upande wa kulia (wa) |
 
@@ -256,7 +260,7 @@ Decision text stays in English, quoting the Spanish or Swahili words.
   Ibrahimu, Sulemani, Ninawi, Habili, Zakaria, Zakayo, Yusufu (Mary's husband), Yosefu
   (of Arimathea, as John 19:38),
   Uyahudi (Judea, as John; never Yudea),
-  Elisabeti, Gabrieli, Theofilo, Haruni.
+  Elisabeti, Gabrieli, Theofilo, Haruni, Sila, Timotheo, Filipi, Troa.
 - Hours: the Greek counts from sunrise as Swahili does, so "the ninth hour"
   is *saa tisa* at every level; Balanced and Readable may add *mchana*,
   *jioni*. The night watches likewise in Swahili time.
