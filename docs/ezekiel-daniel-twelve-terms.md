@@ -237,7 +237,7 @@ These books also share four rules with the earlier prophets:
 ## The Twelve
 
 **Headings and dates.** Each book's first verse follows the Jeremiah table:
-"The word of the LORD that came to X" and "in the days of X". *Massa'* is
+"The word of the LORD which came to X" (Literal) and "in the days of X". *Massa'* is
 "oracle / oracle / message", as in Isaiah, in Nahum 1:1, Habakkuk 1:1,
 Zechariah 9:1 and 12:1, and Malachi 1:1. Dates in Haggai and Zechariah keep
 the Hebrew form ("in the second year of King Darius, in the sixth month, on
