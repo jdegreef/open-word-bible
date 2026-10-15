@@ -1,15 +1,15 @@
 # Ezekiel, Daniel and the Twelve: recurring terms and book-wide choices
 
-**Status: proposed, awaiting the founder's approval.** Nothing in these books
-is drafted yet. This page sets the choices that every chapter of Ezekiel,
+**Status: approved by the founder (2026-10-15), with "son of man" kept at
+every level.** Nothing in these books was drafted when it was approved. This page sets the choices that every chapter of Ezekiel,
 Daniel and the twelve Minor Prophets (Hosea to Malachi) will be drafted
 from, so that chapters drafted in parallel agree with each other and with the
 prophets already translated. If a choice changes after drafting, every
 chapter drafted under it is revised. Read with `docs/english-style.md`, which
 wins where the two differ, and with `docs/isaiah-terms.md` and
 `docs/jeremiah-lamentations-terms.md`, whose tables apply here unless this
-page says otherwise. The choices that need the founder's decision are listed
-together at the end of this page.
+page says otherwise. The founder's rulings on the questions this page first
+left open are listed at the end.
 
 ## Carried over from Isaiah and Jeremiah
 
@@ -54,7 +54,7 @@ These books also share four rules with the earlier prophets:
 
 | Hebrew | Literal | Balanced | Readable |
 |---|---|---|---|
-| *ben-'adam* (God addressing Ezekiel, about 93 times) | son of man | son of man | mortal man |
+| *ben-'adam* (God addressing Ezekiel, about 93 times) | son of man | son of man | son of man |
 | *ne'um Adonai YHWH* | declares the Lord GOD | declares the Lord GOD | says the Lord GOD |
 | "and you will know that I am the LORD" | and you will know that I [am] the LORD | Then you will know that I am the LORD | Then you will know that I am the LORD |
 | "the hand of the LORD was on me" | the hand of the LORD was upon me | the hand of the LORD came on me | the power of the LORD came on me (as 2 Kings 3:15) |
@@ -75,8 +75,9 @@ These books also share four rules with the earlier prophets:
 
 - **"Son of man".** The phrase means "human being". God uses it to address
   Ezekiel, and it stresses that he is a mortal before God. Ezekiel is a
-  specific man, so it takes no `gender` span (style guide §6). A footnoted
-  meaning decision at 2:1 says so, and adds that this is not the title Jesus
+  specific man, so it takes no `gender` span (style guide §6). Every level,
+  Readable included, keeps "son of man". A footnoted meaning decision at 2:1
+  says what it means, and adds that this is not the title Jesus
   uses for himself in the Gospels. Later uses refer back to 2:1.
 - **The hedged descriptions in chapters 1, 8 and 10** ("something like",
   "the appearance of the likeness of") are deliberate: Ezekiel will not say
@@ -118,11 +119,14 @@ These books also share four rules with the earlier prophets:
   the same English.
 - **The 500 "reeds" of 42:16–20.** A footnoted text_variant decision notes
   that the Septuagint reads "cubits".
-- **Offerings in 45–46.** The units follow the published spans: an ephah is
-  `{{units:about 20 quarts|an ephah}}` and a hin is
-  `{{units:about a gallon|a hin}}`. A homer and a kor are ten ephahs
-  (`{{units:about 6 bushels|a homer}}`). See the open question on the bath
-  below.
+- **Offerings in 45–46.** A hin is `{{units:about a gallon|a hin}}`, as
+  published. 45:11 makes the ephah and the bath the same size, so in Ezekiel
+  both are `{{units:about 6 gallons|an ephah}}` /
+  `{{units:about 6 gallons|a bath}}`, and a homer or kor is ten of them
+  (`{{units:about 60 gallons|a homer}}` for liquids,
+  `{{units:about 6 bushels|a homer}}` for grain). A culture decision at 45:11
+  says the estimates vary and that the published books give an ephah as about
+  20 quarts.
 - **The opening date (1:1–3).** "The thirtieth year" is uncertain. A
   footnoted culture decision gives the usual readings (Ezekiel's age, or
   another reckoning), and the record dates the vision to Jehoiachin's fifth
@@ -155,7 +159,7 @@ These books also share four rules with the earlier prophets:
 | *'elyon* / *'illaya'* | the Most High | the Most High | the Most High |
 | *'attiq yomin* (7:9, 13, 22) | the Ancient of Days | the Ancient of Days | the Ancient One |
 | *kevar 'enash* (7:13) | [one] like a son of man | one like a son of man | someone who looked like a human being |
-| *ben-'adam* (God addressing Daniel, 8:17) | son of man | son of man | mortal man (as Ezekiel) |
+| *ben-'adam* (God addressing Daniel, 8:17) | son of man | son of man | son of man (as Ezekiel) |
 | *qaddishe 'elyonin* (7:18–27) | the holy ones of the Most High | the holy ones of the Most High | God's holy people (uncertain decision) |
 | *'ir* (4:10, 14, 20) | a watcher | a watcher | a heavenly messenger |
 | *bar-'elahin* (3:25) | a son of [the] gods | a son of the gods | a heavenly being |
@@ -257,8 +261,9 @@ year" but does not convert to a modern calendar.
 - **The children's names.** The names are a message, and 2:3 and 2:25 reverse
   them ("Ammi", "Ruhamah"), so Balanced and Readable translate them. A
   word_sense decision at 1:6 and 1:9 gives the Hebrew form. Literal keeps the
-  Hebrew names and gives the meaning in a footnote. This departs from Isaiah,
-  which keeps Maher-shalal-hash-baz at every level; see the open questions.
+  Hebrew names and gives the meaning in a footnote. This departs, by the
+  founder's ruling, from Isaiah, which keeps Maher-shalal-hash-baz at every
+  level, because Hosea's text turns on what the names mean.
 - **Hosea 1:2.** A footnoted, uncertain meaning decision asks whether Gomer was
   unfaithful before the marriage or became so, which the text does not
   settle.
@@ -343,7 +348,10 @@ year" but does not convert to a modern calendar.
   - A footnoted, uncertain theology decision gives the reading "from
     eternity". The text allows it but does not require it.
   - The ruler takes no `deity_pronoun` span.
-- **Micah 6:8.** See the open question on *hesed*. "Walk humbly with your God"
+- **Micah 6:8.** *'Ahavat chesed* is "to love loyal love" at Literal, "to
+  love loyalty" at Balanced and "to love being kind and loyal" at Readable,
+  with a rendering decision on the departure from the settled *hesed*
+  wording. "Walk humbly with your God"
   is kept at Literal and Balanced. Readable says "live humbly, obeying your
   God".
 - **Micah versification.** Hebrew 4:14 is English 5:1, and Hebrew 5:1–14 is
@@ -435,24 +443,17 @@ prophets did. Every such decision is listed at the end of its book's terms
 section, verse and decision id, once the chapters are drafted. A reviewer
 checks each one before the sentence is marked meaning reviewed.
 
-## Open questions for the founder
+## The founder's rulings (2026-10-15)
 
-1. **Hosea's children.** Do Balanced and Readable translate the names ("No
-   Compassion", "Not My People")? This page says yes, because the text turns
-   on their meaning, but it breaks with Isaiah's practice.
-2. **"Son of man" in Ezekiel at Readable.** This page proposes "mortal man".
-   The alternatives are "human" (a vocative: "Human, ...") and keeping "son of
-   man" at every level, as Balanced does.
-3. ***Hesed* in Micah 6:8.** Isaiah's "loyal love" makes "love loyal love".
-   This page proposes Literal "to love loyal love", Balanced "to love
-   loyalty" and Readable "to love being kind and loyal". Each departure from
-   the settled wording would have a decision.
-4. **The bath and the ephah.** Ezekiel 45:11 says they are equal, but the
-   published spans differ: a bath is "about 6 gallons" (Ezra), which is 24
-   quarts, and an ephah is "about 20 quarts". One figure should serve both
-   before Ezekiel 45 is drafted. This page suggests "about 6 gallons" (about
-   22 liters) for both, with a decision noting the estimates vary.
-5. **Number words in unit spans.** The published spans mix "20 cubits" and
-   "fifty cubits". This page writes the alternative as the style guide says,
-   in words up to ninety-nine, and leaves the published books for a separate
-   cleanup.
+1. **Hosea's children.** Balanced and Readable translate the names ("No
+   Compassion", "Not My People"); Literal keeps the Hebrew names.
+2. **"Son of man".** Kept at every level in Ezekiel and in Daniel 8:17,
+   Readable included.
+3. ***Hesed* in Micah 6:8.** "to love loyal love" / "to love loyalty" / "to
+   love being kind and loyal", with a decision.
+4. **The bath and the ephah.** One figure, about 6 gallons, for both in
+   Ezekiel 45–46. The published books keep "about 20 quarts" for the ephah
+   until a separate cleanup decides whether to change them.
+5. **Number words in unit spans.** New spans write the alternative in words
+   up to ninety-nine. The published books' mixed forms are left for a
+   separate cleanup.
