@@ -223,5 +223,8 @@ French may loosen it the same way.
 Letters are speech to the readers, so past events are in the *passé composé*
 at every level, as Colossians records; narration inside a letter (Galatians
 1–2, Paul's travels) follows section 3. Acts and the Gospels follow section 3
-(passé simple at B, passé composé at R). In Revelation John tells what he saw:
+(passé simple at B, passé composé at R). Speech keeps the tenses of speech at
+every level, including a story told inside it: Jesus's parables and the
+retellings of Israel's history in the speeches of Acts are in the *passé
+composé* (Mark 4, Acts 13 and 22). In Revelation John tells what he saw:
 "je vis" at L and B, "j’ai vu" at R.
