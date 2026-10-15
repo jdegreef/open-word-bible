@@ -33,6 +33,11 @@
           "L": "예수 {{christos:그리스도|메시아}}의 복음의 시작.",
           "B": "예수 {{christos:그리스도|메시아}}에 관한 복음의 시작.",
           "R": "예수 {{christos:그리스도|메시아}}에 관한 기쁜 소식은 이렇게 시작되었다."
+        },
+        "es": {
+          "L": "[El] principio del evangelio de Jesús {{christos:Cristo|Mesías}}.",
+          "B": "El comienzo del evangelio acerca de Jesús {{christos:Cristo|el Mesías}}.",
+          "R": "Así comenzó la buena noticia acerca de Jesús {{christos:Cristo|el Mesías}}."
         }
       },
       "decisions": [
@@ -206,6 +211,27 @@
           "reason": "\"복음\" is the established church word and is kept where the English says \"gospel\"; Readable uses the plain \"기쁜 소식\" (good news), as the English Readable and the Korean of Colossians do. The particle after the christos span (\"의\", \"에 관한\") fits both alternatives.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41001001003"
+          ],
+          "choice": "evangelio (L, B); buena noticia (R)",
+          "alternatives": [
+            "las buenas nuevas"
+          ],
+          "reason": "As for the English key term: Literal and Balanced keep the church word \"evangelio\"; Readable says \"buena noticia\", as the Spanish of 1 Peter and Colossians does. This applies throughout Mark.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -258,6 +284,11 @@
           "L": "이사야 예언자의 [책에] 기록된 대로, \"보아라, 내가 내 사자를 네 얼굴 앞에 보낸다. 그가 네 길을 마련할 것이다.",
           "B": "이사야 예언자의 글에 기록된 그대로 일이 이루어졌다. \"보아라, 내가 내 사자를 너보다 앞서 보낸다. 그가 네 길을 닦아 놓을 것이다.",
           "R": "오래전에 하나님께서 이사야 예언자를 통해 말씀하셨다. \"보아라! 내가 내 심부름꾼을 너보다 먼저 보낸다. 그가 너를 위해 길을 준비할 것이다."
+        },
+        "es": {
+          "L": "Tal como está escrito en Isaías el profeta: «He aquí, envío a {{deity_pronoun:mi|Mi}} mensajero delante de {{deity_pronoun:tu|Tu}} rostro, el cual preparará {{deity_pronoun:tu|Tu}} camino;",
+          "B": "Sucedió tal como está escrito en el profeta Isaías: «Mira, envío a {{deity_pronoun:mi|Mi}} mensajero delante de {{deity_pronoun:ti|Ti}}; él {{deity_pronoun:te|Te}} preparará el camino.",
+          "R": "Hace mucho tiempo, Dios habló por medio del profeta Isaías. Dijo: «¡Mira! Envío a {{deity_pronoun:mi|Mi}} mensajero delante de {{deity_pronoun:ti|Ti}}. Él {{deity_pronoun:te|Te}} preparará el camino."
         }
       },
       "decisions": [
@@ -455,6 +486,48 @@
           "reason": "Korean cannot say \"written in Isaiah\" without a word for the book, so Literal brackets it. The Greek word for messenger can also mean angel, but here it is a human messenger (John); \"사자\" (envoy) is the standard word and Readable uses the everyday \"심부름꾼\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n41001002012",
+            "n41001002015",
+            "n41001002020"
+          ],
+          "choice": "deity_pronoun spans on mi, tu, ti, te",
+          "alternatives": [
+            "stressed pronouns only, as in John"
+          ],
+          "reason": "Book-wide rule for Mark in Spanish, following Romans and Hebrews: every pronoun Spanish writes for God or Christ takes the deity_pronoun setting, whether stressed (él, mí, ti), possessive (su, sus, mi, tu) or an object pronoun standing before the verb (lo, le, me, te). A subject that Spanish leaves in the verb ending has no pronoun to span; a pronoun at the start of a sentence is written plain, as English writes \"He\"; and a pronoun joined to the end of a verb (\"síganme\", \"sígueme\") cannot take the capital and stays plain, as in Colossians 3:5. The Spanish of John spans stressed pronouns only; a reviewer should settle one rule for the Gospels.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41001002008"
+          ],
+          "choice": "He aquí (L); Mira (B, R)",
+          "alternatives": [],
+          "reason": "As in John 1:29: \"he aquí\" is formal but still current, so Literal keeps it; Balanced and Readable use the everyday word. The command is singular, spoken to the one who comes.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -515,6 +588,11 @@
           "L": "광야에서 외치는 사람의 소리[가 들린다]. '주님의 길을 준비하여라. 그분의 오솔길들을 곧게 만들어라.'\" \\v 4 세례를 주는 요한이 광야에 나타나서, 죄 용서에 이르는 회개의 세례를 선포하였다.",
           "B": "광야에서 외치는 사람의 소리가 있다. '주님의 길을 준비하여라. 그분이 다니실 길을 곧게 내어라.'\" \\v 4 그리고 세례자 요한이 광야에 나타나서, 사람들에게 회개의 세례를 받아 죄를 용서받으라고 선포했다.",
           "R": "빈 들에서 누군가가 외치고 있다. '주님께서 오실 길을 준비하여라! 그분이 다니실 길을 곧게 만들어라!'\" \\v 4 그 심부름꾼이 바로 세례자 요한이었다. 요한은 빈 들에 와서 사람들에게 죄에서 돌이켜 세례를 받으라고 말했다. 그러면 하나님께서 그들의 죄를 용서해 주실 것이라고 했다."
+        },
+        "es": {
+          "L": "voz de uno que clama en el desierto: “{{plural_you:Preparen|Preparad}} el camino del Señor, {{plural_you:hagan|haced}} rectas {{deity_pronoun:sus|Sus}} sendas”». \\v 4 Apareció Juan, el que bautizaba, en el desierto, proclamando un bautismo de arrepentimiento para perdón de pecados.",
+          "B": "Una voz clama en el desierto: “{{plural_you:Preparen|Preparad}} el camino del Señor; {{plural_you:enderecen|enderezad}} las sendas por donde ha de pasar”». \\v 4 Entonces apareció en el desierto Juan el Bautista, llamando a la gente a un bautismo de arrepentimiento para el perdón de sus pecados.",
+          "R": "Alguien grita en el desierto: “¡{{plural_you:Preparen|Preparad}} el camino para el Señor! ¡{{plural_you:Hagan|Haced}} rectas {{deity_pronoun:sus|Sus}} sendas!”». \\v 4 Ese mensajero era Juan el Bautista. Llegó al desierto y le decía a la gente que se apartara de sus pecados y se bautizara, para que Dios la perdonara."
         }
       },
       "decisions": [
@@ -793,6 +871,47 @@
           "reason": "\"회개\" is the established word and keeps the link with 1:15 and 6:12; it can sound like mere regret to new readers, so Readable says what it means, turning from sin back to God, as the English Readable does in 1:15.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41001004003",
+            "n41001004004"
+          ],
+          "choice": "el que bautizaba (L); el Bautista (B, R)",
+          "alternatives": [
+            "el Bautizador"
+          ],
+          "reason": "Mark calls John \"the one baptizing\", used as a title (meaning decision m3). Literal shows the participle; Balanced and Readable use the title Spanish readers know, which says the same thing.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41001003005"
+          ],
+          "choice": "ustedes / vosotros forms; « » outside, “ ” inside",
+          "alternatives": [],
+          "reason": "Plural \"you\" takes the reader setting: ustedes (Latin America, the default) or vosotros (Spain), here and throughout Mark. The quotation opens with « in 1:2 and closes here; the quotation from Isaiah inside it takes “ ”, as in John.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -849,6 +968,11 @@
           "L": "그리고 온 유대 지방과 모든 예루살렘 사람들이 그에게로 나가고 있었고, 자기들의 죄를 고백하며 요단강에서 그에게 세례를 받고 있었다.",
           "B": "온 유대 지방과 예루살렘의 모든 사람들이 줄지어 요한에게로 나왔다. 그들은 자기 죄를 고백했고, 요한은 요단강에서 그들에게 세례를 주었다.",
           "R": "유대 온 지역과 예루살렘 성에서 사람들이 요한에게 몰려왔다. 그들은 자기가 저지른 잘못을 하나님께 털어놓았고, 요한은 요단강에서 그들에게 세례를 주었다."
+        },
+        "es": {
+          "L": "Y salían hacia él toda la región de Judea y todos los de Jerusalén, y eran bautizados por él en el río Jordán, confesando sus pecados.",
+          "B": "Toda la región de Judea y toda la gente de Jerusalén acudían a él. Confesaban sus pecados, y él los bautizaba en el río Jordán.",
+          "R": "Gente de toda Judea y de la ciudad de Jerusalén venía a verlo. Le contaban a Dios las cosas malas que habían hecho, y Juan los bautizaba en el río Jordán."
         }
       },
       "decisions": [
@@ -1013,6 +1137,11 @@
           "L": "그리고 요한은 낙타 털 [옷을] 입고 허리에 가죽 띠를 [두르고] 있었으며, 메뚜기와 들꿀을 먹고 있었다.",
           "B": "요한은 낙타 털로 만든 옷을 입고 허리에 가죽 띠를 둘렀다. 그는 메뚜기와 들꿀을 먹고 살았다.",
           "R": "요한은 낙타 털로 만든 옷을 입고, 허리에는 가죽 띠를 매고 있었다. 그는 메뚜기와 들에서 찾은 꿀을 먹었다."
+        },
+        "es": {
+          "L": "Y Juan estaba vestido [de] pelo de camello y [llevaba] un cinturón de cuero alrededor de su cintura, y comía langostas y miel silvestre.",
+          "B": "Juan llevaba ropa hecha de pelo de camello y un cinturón de cuero en la cintura. Se alimentaba de langostas y miel silvestre.",
+          "R": "Juan se vestía con ropa de pelo de camello y llevaba un cinturón de cuero en la cintura. Comía langostas, que son una especie de saltamontes, y miel que encontraba en el campo."
         }
       },
       "decisions": [
@@ -1116,6 +1245,24 @@
           "reason": "The English Readable explains \"locusts\" as a kind of grasshopper; the everyday Korean word \"메뚜기\" already covers both, so no explanation is needed.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n41001006005",
+            "n41001006012"
+          ],
+          "choice": "[de], [llevaba]",
+          "alternatives": [],
+          "reason": "Spanish needs a preposition after \"vestido\" and a verb for the belt, which the Greek leaves to the one participle \"clothed\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1168,6 +1315,11 @@
           "L": "그리고 그는 선포하며 말하였다. \"나보다 더 강하신 분이 내 뒤에 오신다. 나는 몸을 굽혀 그분의 신발 끈을 풀 자격도 없다.",
           "B": "요한이 선포한 말은 이러했다. \"나보다 더 능력 있는 분이 내 뒤에 오신다. 나는 몸을 굽혀 그분의 신발 끈을 풀어 드릴 자격조차 없다.",
           "R": "요한은 사람들에게 이렇게 전했다. \"나보다 훨씬 더 크신 분이 내 뒤에 오신다. 나는 몸을 굽혀 그분의 신발을 벗겨 드릴 만한 사람도 못 된다."
+        },
+        "es": {
+          "L": "Y proclamaba, diciendo: «Viene después de mí el que es más fuerte que yo, de quien no soy digno de agacharme a desatar la correa de {{deity_pronoun:sus|Sus}} sandalias.",
+          "B": "Este era su mensaje: «Después de mí viene uno más fuerte que yo. Yo no soy quién para agacharme a desatar la correa de {{deity_pronoun:sus|Sus}} sandalias.",
+          "R": "Le decía a la gente: «Después de mí viene alguien mucho más importante que yo. Yo no valgo ni siquiera para agacharme a desatar {{deity_pronoun:sus|Sus}} sandalias."
         }
       },
       "decisions": [
@@ -1295,6 +1447,49 @@
           "reason": "\"선포하다\" (proclaim, announce publicly) keeps the herald's announcement that the Greek word names, and links John, Jesus and the healed man (1:4, 1:14, 1:38-39, 1:45). \"전파하다\" is older church language; \"설교하다\" suggests a sermon in church. Readable uses the plain \"전하다\" (tell, pass on).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41001007013"
+          ],
+          "choice": "no soy digno (L); no soy quién para (B); no valgo ni siquiera para (R)",
+          "alternatives": [
+            "no soy apto"
+          ],
+          "reason": "The Greek word means fit or good enough for a task. Literal uses the usual Spanish \"digno\"; Balanced and Readable use everyday idioms for not being good enough to do something.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41001007008",
+            "n41001007009"
+          ],
+          "choice": "después de mí",
+          "alternatives": [
+            "detrás de mí"
+          ],
+          "reason": "Meaning decision m3 takes \"after me\" as later in time, so every level says \"después de mí\" rather than \"detrás de mí\", which in Spanish is first heard as a place.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1338,6 +1533,11 @@
           "L": "나는 너희에게 물로 세례를 주었지만, 그분은 너희에게 성령으로 세례를 주실 것이다.\"",
           "B": "나는 너희에게 물로 세례를 주었다. 그러나 그분은 성령으로 너희에게 세례를 주실 것이다.\"",
           "R": "나는 너희에게 세례를 줄 때 물을 썼다. 그러나 그분은 성령으로 너희에게 세례를 주실 것이다.\""
+        },
+        "es": {
+          "L": "Yo {{plural_you:los|os}} bauticé con agua, pero {{deity_pronoun:él|Él}} {{plural_you:los|os}} bautizará en [el] Espíritu Santo».",
+          "B": "Yo {{plural_you:los|os}} he bautizado con agua, pero {{deity_pronoun:él|Él}} {{plural_you:los|os}} bautizará con el Espíritu Santo».",
+          "R": "Yo {{plural_you:los|os}} bauticé con agua. Pero {{deity_pronoun:él|Él}} {{plural_you:los|os}} bautizará con el Espíritu Santo»."
         }
       },
       "decisions": [
@@ -1517,6 +1717,11 @@
           "L": "그리고 그 날들에 [이런] 일이 있었다. 예수께서 갈릴리의 나사렛에서 오셔서, 요단강에 [들어가] 요한에게 세례를 받으셨다.",
           "B": "그 무렵에 예수께서 갈릴리 나사렛에서 오셔서 요단강에서 요한에게 세례를 받으셨다.",
           "R": "그때 예수께서 갈릴리 지방의 나사렛 마을에서 오셨다. 그리고 요단강에서 요한에게 세례를 받으셨다."
+        },
+        "es": {
+          "L": "Y sucedió en aquellos días [que] vino Jesús desde Nazaret de Galilea y fue bautizado en el Jordán por Juan.",
+          "B": "Por aquellos días, Jesús llegó desde Nazaret, en Galilea, y Juan {{deity_pronoun:lo|Lo}} bautizó en el Jordán.",
+          "R": "En ese tiempo, Jesús vino desde el pueblo de Nazaret, en la región de Galilea. Juan {{deity_pronoun:lo|Lo}} bautizó en el río Jordán."
         }
       },
       "decisions": [
@@ -1680,6 +1885,11 @@
           "L": "그리고 곧 물에서 올라오시면서, 그분은 하늘이 찢어지는 것과 성령께서 비둘기처럼 자신에게로 내려오시는 것을 보셨다.",
           "B": "예수께서 물에서 올라오시자마자, 하늘이 찢어져 열리고 성령께서 비둘기처럼 자신에게 내려오시는 것을 보셨다.",
           "R": "예수께서 물에서 올라오실 때, 곧바로 하늘이 찢어지듯 열리는 것을 보셨다. 그리고 성령께서 비둘기처럼 그분 위로 내려오시는 것도 보셨다."
+        },
+        "es": {
+          "L": "Y enseguida, subiendo del agua, vio los cielos rasgándose y al Espíritu, como paloma, descendiendo hacia {{deity_pronoun:él|Él}}.",
+          "B": "En cuanto salió del agua, vio que los cielos se rasgaban y que el Espíritu bajaba sobre {{deity_pronoun:él|Él}} como una paloma.",
+          "R": "Enseguida, cuando Jesús salía del agua, vio que el cielo se rasgaba. Y vio al Espíritu, que bajaba sobre {{deity_pronoun:él|Él}} como una paloma."
         }
       },
       "decisions": [
@@ -1847,6 +2057,49 @@
           "reason": "The Spirit is God and takes \"께서\" and -시- in the narrative, as in John 1:32. Here \"the Spirit\" alone is the Holy Spirit, so Korean says \"성령\" (style guide).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41001010002"
+          ],
+          "choice": "enseguida (L, R); en cuanto, al instante, en ese momento (B)",
+          "alternatives": [
+            "inmediatamente",
+            "en seguida"
+          ],
+          "reason": "Mark's word for moving the story straight on (meaning decision m1). Literal says \"enseguida\" every time so readers can see how often Mark uses it; Balanced uses whatever Spanish says most naturally in the sentence; Readable keeps \"enseguida\". This applies throughout the book.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41001010008"
+          ],
+          "choice": "rasgarse",
+          "alternatives": [
+            "abrirse"
+          ],
+          "reason": "A tearing apart, not a gentle opening (meaning decision m2); Spanish \"abrirse\" would lose the force, and \"rasgar\" is the verb used for the temple curtain in 15:38.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1895,6 +2148,11 @@
           "L": "그리고 하늘들에서 소리가 났다. \"너는 나의 아들, 사랑하는 [아들]이다. 너를 내가 기뻐한다.\"",
           "B": "그때 하늘에서 소리가 들려왔다. \"너는 내가 사랑하는 아들이다. 나는 너를 기뻐한다.\"",
           "R": "그러자 하늘에서 소리가 들렸다. \"너는 내 아들이다. 나는 너를 사랑한다. 나는 너를 무척 기뻐한다.\""
+        },
+        "es": {
+          "L": "Y vino una voz de los cielos: «Tú eres {{deity_pronoun:mi|Mi}} Hijo, el amado; en {{deity_pronoun:ti|Ti}} me he complacido».",
+          "B": "Entonces una voz habló desde el cielo: «Tú eres {{deity_pronoun:mi|Mi}} Hijo amado; en {{deity_pronoun:ti|Ti}} me complazco».",
+          "R": "Entonces una voz del cielo dijo: «Tú eres {{deity_pronoun:mi|Mi}} Hijo, y {{deity_pronoun:te|Te}} amo. En {{deity_pronoun:ti|Ti}} encuentro {{deity_pronoun:mi|Mi}} alegría»."
         }
       },
       "decisions": [
@@ -2018,6 +2276,26 @@
           "reason": "Literal keeps the Greek plural \"heavens\", which Korean can mark with \"-들\"; Balanced and Readable use the ordinary singular. The Greek adds \"the beloved\" after \"my Son\" as a second title; Literal keeps it apart and brackets the noun Korean needs. The Father speaks to the Son in the plain style (해라체), as in 1:2.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n41001011007",
+            "n41001011016"
+          ],
+          "choice": "«Tú eres» plain; no span on the reflexive \"me\"",
+          "alternatives": [],
+          "reason": "\"Tú\" opens the quoted sentence, so it is capitalised either way and written plain. In \"me complazco\" the pronoun only marks the verb as reflexive, as in Hebrews 3:11, and stands for no English word, so it takes no setting.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2059,6 +2337,11 @@
           "L": "그리고 곧 성령께서 그분을 광야로 내모신다.",
           "B": "곧이어 성령께서 예수를 광야로 내모셨다.",
           "R": "그 뒤 바로 성령께서 예수를 빈 들로 떠밀어 보내셨다."
+        },
+        "es": {
+          "L": "Y enseguida el Espíritu {{deity_pronoun:lo|Lo}} echa fuera, al desierto.",
+          "B": "Enseguida el Espíritu {{deity_pronoun:lo|Lo}} impulsó a salir al desierto.",
+          "R": "Enseguida, el Espíritu hizo que Jesús se fuera al desierto."
         }
       },
       "decisions": [
@@ -2167,6 +2450,27 @@
           "reason": "Mark often tells past events in the present for vividness (meaning decision); Korean narrative can do the same, so Literal keeps it, as the Korean of John does. One decision for the chapter.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41001012006"
+          ],
+          "choice": "present tense (L); past tense (B, R)",
+          "alternatives": [
+            "echó (L)"
+          ],
+          "reason": "As in John: Mark often tells his story in the present tense (meaning decision m2). Literal keeps it; Balanced and Readable use the past, as Spanish stories do. This applies throughout the book.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2220,6 +2524,11 @@
           "L": "그리고 그분은 사십 일 동안 광야에 계시면서 사탄에게 시험을 받으셨다. 그리고 들짐승들과 함께 계셨고, 천사들이 그분을 섬기고 있었다.",
           "B": "예수께서는 사십 일 동안 광야에 계시면서 사탄에게 시험을 받으셨다. 들짐승들과 함께 지내셨고, 천사들이 그분의 시중을 들었다.",
           "R": "예수께서는 빈 들에서 사십 일을 지내셨다. 그동안 사탄이 예수를 꾀어 죄를 짓게 하려고 했다. 들짐승들도 그곳에 함께 있었고, 천사들이 예수를 돌보아 드렸다."
+        },
+        "es": {
+          "L": "Y estuvo en el desierto cuarenta días, siendo tentado por Satanás, y estaba con las fieras, y los ángeles {{deity_pronoun:le|Le}} servían.",
+          "B": "Permaneció en el desierto cuarenta días mientras Satanás {{deity_pronoun:lo|Lo}} tentaba. Estaba entre los animales salvajes, y los ángeles {{deity_pronoun:lo|Lo}} atendían.",
+          "R": "Jesús estuvo en el desierto cuarenta días, y Satanás {{deity_pronoun:lo|Lo}} ponía a prueba para que hiciera lo malo. Los animales salvajes estaban allí con {{deity_pronoun:él|Él}}, y los ángeles {{deity_pronoun:lo|Lo}} cuidaban."
         }
       },
       "decisions": [
@@ -2412,6 +2721,11 @@
           "L": "그리고 요한이 넘겨진 뒤에 예수께서 갈릴리로 오셔서 하나님의 복음을 선포하시며 \\v 15 말씀하셨다. \"그 때가 채워졌고 하나님의 나라가 가까이 다가왔다. 회개하여라. 그리고 복음을 믿어라.\"",
           "B": "요한이 잡혀 넘겨진 뒤에 예수께서 갈릴리로 가셔서 하나님의 복음을 선포하셨다. \\v 15 예수께서 말씀하셨다. \"하나님께서 정하신 때가 이제 다 찼다. 하나님의 나라가 가까이 와 있다. 회개하고 복음을 믿어라.\"",
           "R": "요한이 감옥에 갇힌 뒤에 예수께서 갈릴리로 가셔서, 하나님께서 주신 기쁜 소식을 사람들에게 전하셨다. \\v 15 예수께서 말씀하셨다. \"하나님께서 약속하신 때가 왔다. 하나님의 나라가 가까이 오고 있다. 죄에서 돌이켜 하나님께 돌아오너라. 그리고 이 기쁜 소식을 믿어라!\""
+        },
+        "es": {
+          "L": "Y después de que Juan fue entregado, vino Jesús a Galilea proclamando el evangelio de Dios \\v 15 y diciendo: «El tiempo se ha cumplido, y el reino de Dios se ha acercado; {{plural_you:arrepiéntanse|arrepentíos}} y {{plural_you:crean|creed}} en el evangelio».",
+          "B": "Después de que Juan fue entregado, Jesús fue a Galilea a proclamar el evangelio de Dios. \\v 15 «Ha llegado el tiempo señalado —decía—, y el reino de Dios se ha acercado. {{plural_you:Arrepiéntanse|Arrepentíos}} y {{plural_you:crean|creed}} en el evangelio».",
+          "R": "Después de que metieron a Juan en la cárcel, Jesús fue a Galilea y anunciaba la buena noticia que viene de Dios. \\v 15 Decía: «Ha llegado el tiempo que Dios prometió. El reino de Dios está cerca. {{plural_you:Apártense|Apartaos}} de {{plural_you:sus|vuestros}} pecados y {{plural_you:vuelvan|volved}} a Dios, y {{plural_you:crean|creed}} la buena noticia»."
         }
       },
       "decisions": [
@@ -2611,6 +2925,46 @@
           "reason": "The style guide fixes this for the Gospels: Jesus speaks plainly to crowds, disciples and opponents, and people speak to him in 합쇼체, so relationships do not shift between scenes.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41001015010",
+            "n41001015011",
+            "n41001015012"
+          ],
+          "choice": "el reino de Dios",
+          "alternatives": [],
+          "reason": "As in John 3:3 and Galatians 5:21, with a lower-case \"reino\". The same words at every level and throughout Mark.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41001014004"
+          ],
+          "choice": "fue entregado",
+          "alternatives": [
+            "fue arrestado"
+          ],
+          "reason": "Literal keeps the verb \"hand over\", which Mark uses again of Jesus (9:31; 14:41; 15:1); meaning decision m1 says it means arrest, which Readable spells out.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2664,6 +3018,11 @@
           "L": "그리고 갈릴리 바다 곁을 지나가시다가, 그분은 시몬과 시몬의 형제 안드레가 바다에 [그물을] 던지고 있는 것을 보셨다. 그들은 어부였기 때문이다.",
           "B": "예수께서 갈릴리 바닷가를 따라 걸어가시다가, 시몬과 그의 형제 안드레가 바다에 그물을 던지는 것을 보셨다. 그들은 고기잡이로 살아가는 어부였다.",
           "R": "어느 날 예수께서 갈릴리 호숫가를 걷고 계셨다. 그때 시몬과 그의 형제 안드레가 호수에 그물을 던져 고기를 잡고 있는 것을 보셨다. 그들은 어부였다."
+        },
+        "es": {
+          "L": "Y pasando junto al mar de Galilea, vio a Simón y a Andrés, el hermano de Simón, echando [la red] en el mar, porque eran pescadores.",
+          "B": "Mientras Jesús caminaba por la orilla del mar de Galilea, vio a Simón y a Andrés, hermano de Simón, echando la red al agua. Se ganaban la vida pescando.",
+          "R": "Un día Jesús caminaba junto al lago de Galilea. Vio a Simón y a su hermano Andrés, que echaban una red al lago para pescar, porque eran pescadores."
         }
       },
       "decisions": [
@@ -2829,6 +3188,28 @@
           "reason": "Korean usually says whether a brother is older or younger, but Mark does not say which of the two was older, so the neutral \"형제\" is kept, as in John 1:40.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41001016004",
+            "n41001016005",
+            "n41001016006",
+            "n41001016007"
+          ],
+          "choice": "mar de Galilea (L, B); lago de Galilea (R)",
+          "alternatives": [],
+          "reason": "\"Mar de Galilea\" is the name Spanish readers know, as in John 6:1; Readable says plainly that it is a lake (meaning decision m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2875,6 +3256,11 @@
           "L": "예수께서 그들에게 말씀하셨다. \"내 뒤에 오너라. 그러면 너희가 사람들을 낚는 어부가 되도록 내가 만들겠다.\"",
           "B": "예수께서 그들에게 말씀하셨다. \"와서 나를 따라라. 내가 너희를 사람들을 낚는 어부로 삼겠다.\"",
           "R": "예수께서 그들에게 말씀하셨다. \"와서 나를 따라오너라. 이제 너희는 물고기 대신 사람들을 모으게 될 것이다. 내가 그렇게 해 주겠다.\""
+        },
+        "es": {
+          "L": "Y les dijo Jesús: «{{plural_you:Vengan|Venid}} detrás de {{deity_pronoun:mí|Mí}}, y haré que {{plural_you:lleguen|lleguéis}} a ser pescadores de {{gender:personas|hombres}}».",
+          "B": "Jesús les dijo: «{{plural_you:Vengan y síganme|Venid y seguidme}}. Yo {{plural_you:los|os}} haré pescadores de {{gender:personas|hombres}}».",
+          "R": "Jesús les dijo: «{{plural_you:Vengan, síganme|Venid, seguidme}}. Yo {{plural_you:les|os}} enseñaré a pescar {{gender:personas|hombres}} en vez de peces»."
         }
       },
       "decisions": [
@@ -3049,6 +3435,45 @@
           "reason": "Literal and Balanced keep the picture \"사람들을 낚는 어부\". In everyday Korean \"낚다\" also means to trick someone, which a new reader could hear; Readable keeps the contrast with fish and says what the picture means, gathering people (meaning decision).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n41001017006",
+            "n41001017007",
+            "n41001017008"
+          ],
+          "choice": "síganme / seguidme, no deity_pronoun span",
+          "alternatives": [],
+          "reason": "The pronoun for Jesus is joined to the end of the verb, so it cannot take the capital (see 1:2). Literal keeps \"detrás de mí\", where the free pronoun takes the setting.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41001017014"
+          ],
+          "choice": "{{gender:personas|hombres}}",
+          "alternatives": [],
+          "reason": "The Greek word means human beings (meaning decision m3); the reader setting gives the traditional \"hombres\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3088,6 +3513,11 @@
           "L": "그리고 곧 그들은 그물을 버려두고 그분을 따라갔다.",
           "B": "그들은 그 자리에서 그물을 버려두고 예수를 따라갔다.",
           "R": "그들은 바로 그물을 내려놓고 예수를 따라갔다."
+        },
+        "es": {
+          "L": "Y enseguida, dejando las redes, {{deity_pronoun:lo|Lo}} siguieron.",
+          "B": "Al instante dejaron sus redes y {{deity_pronoun:lo|Lo}} siguieron.",
+          "R": "Enseguida dejaron sus redes y {{deity_pronoun:lo|Lo}} siguieron."
         }
       },
       "decisions": [
@@ -3121,6 +3551,25 @@
             "a later decision"
           ],
           "reason": "They leave their nets, their living, at once (see 10:28).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41001018006"
+          ],
+          "choice": "seguir",
+          "alternatives": [],
+          "reason": "Every level keeps \"seguir\", which carries both senses: walking after someone and becoming his disciple (meaning decision m1), as in John 1:37.",
           "uncertain": false,
           "footnote": false
         }
@@ -3181,6 +3630,11 @@
           "L": "그리고 조금 더 가시다가 그분은 세베대의 [아들] 야고보와 그의 형제 요한을 보셨는데, 그들도 배에서 그물을 손질하고 있었다. \\v 20 그리고 곧 그분이 그들을 부르셨다.",
           "B": "예수께서 조금 더 가시다가 세베대의 아들 야고보와 그의 형제 요한을 보셨다. 그들은 배에서 그물을 정리하고 있었다. \\v 20 예수께서 곧바로 그들을 부르셨다.",
           "R": "예수께서 조금 더 걸어가시다가 세베대의 두 아들 야고보와 요한을 보셨다. 그들은 배 안에서 고기잡이 그물을 고치고 있었다. \\v 20 예수께서는 바로 그들에게 함께 가자고 부르셨다."
+        },
+        "es": {
+          "L": "Y avanzando un poco, vio a Santiago, el [hijo] de Zebedeo, y a Juan, su hermano, y ellos [estaban] en la barca remendando las redes, \\v 20 y enseguida los llamó.",
+          "B": "Un poco más adelante vio a Santiago, hijo de Zebedeo, y a su hermano Juan, que estaban en su barca arreglando las redes. \\v 20 Enseguida los llamó.",
+          "R": "Jesús caminó un poco más y vio a Santiago y a Juan, los hijos de Zebedeo. Estaban en su barca arreglando sus redes de pescar. \\v 20 Enseguida Jesús los llamó para que fueran con {{deity_pronoun:él|Él}}."
         }
       },
       "decisions": [
@@ -3275,6 +3729,27 @@
           "reason": "Protestant forms, in line with the style guide's names; James is not in its list. John the apostle is \"Giăng\" as the Baptist is (style guide, section 4).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41001019005"
+          ],
+          "choice": "Santiago",
+          "alternatives": [
+            "Jacobo"
+          ],
+          "reason": "The name most Spanish readers know for this apostle, as the Spanish of Galatians writes it for the Lord's brother.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3322,6 +3797,11 @@
           "L": "그러자 그들은 자기들의 아버지 세베대를 품꾼들과 함께 배에 남겨 두고, 그분의 뒤를 따라 떠나갔다.",
           "B": "그들은 아버지 세베대를 일꾼들과 함께 배에 남겨 두고 예수를 따라나섰다.",
           "R": "그들은 아버지 세베대를, 품삯을 받고 일하는 일꾼들과 함께 배에 두고 예수와 함께 떠났다."
+        },
+        "es": {
+          "L": "Y dejando a su padre Zebedeo en la barca con los jornaleros, se fueron detrás de {{deity_pronoun:él|Él}}.",
+          "B": "Dejaron a su padre Zebedeo en la barca con los trabajadores contratados y se fueron tras {{deity_pronoun:él|Él}}.",
+          "R": "Dejaron a su padre Zebedeo en la barca con los trabajadores a los que él pagaba, y se fueron con Jesús."
         }
       },
       "decisions": [
@@ -3438,6 +3918,11 @@
           "L": "그리고 그들이 가버나움으로 들어간다.",
           "B": "그들은 가버나움으로 갔다.",
           "R": "그런 다음 그들은 가버나움 마을로 갔다."
+        },
+        "es": {
+          "L": "Y entran en Capernaúm.",
+          "B": "Llegaron a Capernaúm.",
+          "R": "Luego fueron al pueblo de Capernaúm."
         }
       },
       "decisions": [
@@ -3492,6 +3977,28 @@
           "reason": "Literal keeps Mark's present tense. Balanced and Readable use the past.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41001021004"
+          ],
+          "choice": "Capernaúm",
+          "alternatives": [
+            "Cafarnaúm",
+            "Cafarnaún"
+          ],
+          "reason": "The usual form in Spanish Protestant Bibles.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3532,6 +4039,11 @@
           "L": "그리고 곧 안식일에 그분은 회당에 [들어가셔서] 가르치셨다.",
           "B": "안식일이 되자 예수께서 곧바로 회당에 들어가셔서 가르치셨다.",
           "R": "안식일, 곧 한 주에 한 번 쉬는 날에 예수께서 회당에 들어가셔서 사람들을 가르치셨다. 회당은 유대인들이 모여 하나님께 예배하는 곳이었다."
+        },
+        "es": {
+          "L": "Y enseguida, el sábado, [entrando] en la sinagoga, enseñaba.",
+          "B": "El sábado fue directamente a la sinagoga y se puso a enseñar.",
+          "R": "El sábado, el día de descanso, Jesús fue a la sinagoga, el lugar donde los judíos se reunían para adorar a Dios, y enseñó a la gente."
         }
       },
       "decisions": [
@@ -3671,6 +4183,11 @@
           "L": "그리고 사람들은 그분의 가르침에 크게 놀라고 있었다. 그분이 율법학자들과 같지 않고, 권위를 가진 [분]과 같이 그들을 가르치고 계셨기 때문이다.",
           "B": "사람들은 그분의 가르침에 깜짝 놀랐다. 그분은 율법학자들과 달리 권위 있는 분으로서 그들을 가르치셨기 때문이다.",
           "R": "사람들은 예수께서 가르치시는 것을 듣고 놀랐다. 예수께서는 율법 선생들과 다르게 가르치셨다. 참된 권위를 가진 분처럼 가르치셨다."
+        },
+        "es": {
+          "L": "Y se asombraban de {{deity_pronoun:su|Su}} enseñanza, porque les enseñaba como [quien] tiene autoridad, y no como los escribas.",
+          "B": "Su enseñanza los dejaba asombrados, porque les enseñaba como alguien que tiene autoridad, y no como los escribas.",
+          "R": "La gente estaba asombrada de {{deity_pronoun:su|Su}} enseñanza. No enseñaba como los maestros de la ley de Dios. Enseñaba como alguien que tiene verdadera autoridad."
         }
       },
       "decisions": [
@@ -3805,6 +4322,25 @@
           "reason": "\"권위\" is the authority that makes a teacher's word carry weight, which is the contrast with the scribes here; \"권세\" is kept for the power to act in 2:10.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41001022018"
+          ],
+          "choice": "escribas (L, B); maestros de la ley de Dios (R)",
+          "alternatives": [],
+          "reason": "As in John 8:3: \"escribas\" is the Spanish name for these experts in the law of Moses (meaning decision m3); Readable says what they did. Throughout Mark.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3858,6 +4394,11 @@
           "L": "그리고 곧 그들의 회당에 더러운 영에 [사로잡힌] 사람이 있었는데, 그가 소리를 지르며 \\v 24 말했다. \"우리와 당신에게 무슨 [상관이 있습니까], 나사렛 사람 예수여?",
           "B": "바로 그때 그들의 회당에 더러운 영이 들린 사람이 하나 있었는데, 그가 소리를 지르며 \\v 24 말했다. \"나사렛 예수여, 당신이 우리와 무슨 상관이 있습니까?",
           "R": "그때 회당에 악한 영이 들어가 있는 사람이 있었다. 그가 큰 소리로 외쳤다. \\v 24 \"나사렛 예수여, 왜 우리를 괴롭힙니까?"
+        },
+        "es": {
+          "L": "Y enseguida había en la sinagoga de ellos un hombre con un espíritu impuro, y gritó, \\v 24 diciendo: «¿Qué [hay] para nosotros y para {{deity_pronoun:ti|Ti}}, Jesús nazareno?",
+          "B": "En ese momento, en la sinagoga de ellos, había un hombre con un espíritu impuro, que se puso a gritar: \\v 24 «¿Qué tienes que ver con nosotros, Jesús de Nazaret?",
+          "R": "En ese momento estaba en la sinagoga un hombre que tenía dentro un espíritu malo. Gritó: \\v 24 «Jesús de Nazaret, ¿por qué nos molestas?"
         }
       },
       "decisions": [
@@ -4045,6 +4586,28 @@
           "reason": "The style guide gives 합쇼체 for those who speak to Jesus and allows 해라체 for open opponents. The spirit both resists Jesus and fears him; formal endings with the cool \"당신\" and no honorific -시- keep that distance, as the envoys' questioning does in John 1:19-25. A reviewer should settle this for all of Mark (also 3:11, 5:7).",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41001023010",
+            "n41001023011"
+          ],
+          "choice": "espíritu impuro (L, B); espíritu malo (R)",
+          "alternatives": [
+            "espíritu inmundo"
+          ],
+          "reason": "\"Impuro\" keeps the Greek word's sense of being unfit for God's presence (meaning decision m2); \"inmundo\" is the traditional word but now sounds like dirt. Readable says \"malo\", as the English says \"evil\". Throughout Mark.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4080,6 +4643,11 @@
           "L": "당신이 우리를 멸망시키려고 왔습니까?",
           "B": "우리를 없애려고 여기 왔습니까?",
           "R": "우리를 없애 버리려고 왔습니까?"
+        },
+        "es": {
+          "L": "¿Viniste a destruirnos?",
+          "B": "¿Has venido a destruirnos?",
+          "R": "¿Has venido para acabar con nosotros?"
         }
       },
       "decisions": [
@@ -4156,6 +4724,11 @@
           "L": "나는 당신을, 당신이 누구인지 압니다. 하나님의 거룩한 분입니다.\"",
           "B": "나는 당신이 누구인지 압니다. 당신은 하나님의 거룩한 분입니다!\"",
           "R": "나는 당신이 누구인지 압니다. 당신은 하나님의 거룩한 분입니다!\""
+        },
+        "es": {
+          "L": "Te conozco, [sé] quién eres: el Santo de Dios».",
+          "B": "Yo sé quién eres: ¡el Santo de Dios!».",
+          "R": "Yo sé quién eres. ¡Eres el Santo de Dios!»."
         }
       },
       "decisions": [
@@ -4225,6 +4798,26 @@
           "reason": "The title names Jesus as set apart and belonging to God (meaning decision); \"분\" is the respectful noun the title calls for even in the spirit's mouth, while \"자\" is old-fashioned and now slightly disparaging.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n41001024011",
+            "n41001024012",
+            "n41001024013",
+            "n41001024014"
+          ],
+          "choice": "Te conozco, [sé] quién eres",
+          "alternatives": [],
+          "reason": "The Greek says \"I know you, who you are\"; Spanish cannot hang the question on \"conocer\", so Literal supplies the verb \"saber\". \"Te\" opens the sentence and is written plain.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4268,6 +4861,11 @@
           "L": "그러자 예수께서 그를 꾸짖으시며 말씀하셨다. \"입을 다물고 그에게서 나와라!\"",
           "B": "예수께서 그 영을 엄하게 꾸짖으셨다. \"조용히 하여라! 그 사람에게서 나오너라!\"",
           "R": "예수께서 그 악한 영에게 단호하게 말씀하셨다. \"입 다물어라! 그 사람에게서 나와라!\""
+        },
+        "es": {
+          "L": "Y Jesús lo reprendió, diciendo: «¡Enmudece, y sal de él!».",
+          "B": "Jesús le dio una orden tajante: «¡Silencio! ¡Sal de este hombre!».",
+          "R": "Jesús le habló con dureza al espíritu malo. Le dijo: «¡Cállate! ¡Sal de este hombre!»."
         }
       },
       "decisions": [
@@ -4383,6 +4981,25 @@
           "reason": "The Greek means \"be muzzled\" (meaning decision); \"입을 다물다\" keeps the picture of the mouth shut. \"잠잠하라\" is the older Bible form.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41001025007"
+          ],
+          "choice": "enmudece",
+          "alternatives": [
+            "cállate"
+          ],
+          "reason": "The Greek verb is passive, \"be muzzled\" (meaning decision m2); \"enmudecer\" keeps the sense of being silenced better than the everyday \"cállate\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4429,6 +5046,11 @@
           "L": "그러자 더러운 영이 그에게 경련을 일으키고 큰 소리로 외치며 그에게서 나왔다.",
           "B": "더러운 영은 그 사람에게 발작을 일으키고 크게 비명을 지르더니 그에게서 나왔다.",
           "R": "악한 영은 그 사람을 마구 뒤흔들었다. 그러고는 크게 소리를 지르며 그에게서 나왔다."
+        },
+        "es": {
+          "L": "Y el espíritu impuro, sacudiéndolo con violencia y gritando a gran voz, salió de él.",
+          "B": "El espíritu impuro sacudió al hombre con convulsiones, dio un fuerte alarido y salió de él.",
+          "R": "El espíritu malo hizo que el hombre se sacudiera con fuerza. Luego dio un grito muy fuerte y salió de él."
         }
       },
       "decisions": [
@@ -4509,6 +5131,11 @@
           "L": "그러자 모두가 크게 놀라서, 서로 논의하며 말하였다. \"이것이 무엇이냐?",
           "B": "모두가 깜짝 놀라 서로 의논했다. \"이게 어찌 된 일이냐?",
           "R": "사람들은 모두 놀랐다. 그들은 서로 물었다. \"도대체 무슨 일이냐?"
+        },
+        "es": {
+          "L": "Y se asombraron todos, de modo que discutían entre sí, diciendo: «¿Qué es esto?",
+          "B": "Todos quedaron asombrados y comentaban entre ellos: «¿Qué es esto?",
+          "R": "Toda la gente estaba asombrada. Se preguntaban unos a otros: «¿Qué está pasando?"
         }
       },
       "decisions": [
@@ -4611,6 +5238,11 @@
           "L": "권위 있는 새 가르침이다! 그분이 더러운 영들에게까지 명령하시고, 그들이 그분께 복종한다.\"",
           "B": "권위가 있는 새로운 가르침이다! 이분은 더러운 영들에게까지 명령하시는데, 그 영들이 이분께 복종한다!\"",
           "R": "이분은 새로운 것을 가르치시는데, 권위가 있다! 이분이 악한 영들에게 명령하시면, 그 영들이 이분의 말에 복종한다!\""
+        },
+        "es": {
+          "L": "¡Una enseñanza nueva con autoridad! Incluso a los espíritus impuros manda, y {{deity_pronoun:le|Le}} obedecen».",
+          "B": "¡Una enseñanza nueva, y con autoridad! Da órdenes hasta a los espíritus impuros, y ellos {{deity_pronoun:le|Le}} obedecen».",
+          "R": "Este hombre enseña algo nuevo, ¡y lo enseña con autoridad! Hasta les da órdenes a los espíritus malos, y ellos {{deity_pronoun:le|Le}} obedecen»."
         }
       },
       "decisions": [
@@ -4759,6 +5391,11 @@
           "L": "그리고 그분에 대한 소문이 곧 사방으로, 갈릴리 일대의 온 지역으로 퍼져 나갔다.",
           "B": "예수에 대한 소식이 곧바로 갈릴리 일대 곳곳으로 퍼져 나갔다.",
           "R": "곧 갈릴리 온 지역 사람들이 예수에 대해 듣게 되었다."
+        },
+        "es": {
+          "L": "Y salió enseguida la noticia acerca de {{deity_pronoun:él|Él}} por todas partes, a toda la región de alrededor de Galilea.",
+          "B": "Muy pronto la noticia acerca de {{deity_pronoun:él|Él}} se extendió por todas partes, por toda la comarca de Galilea.",
+          "R": "Muy pronto, la gente de toda la región de Galilea oyó hablar de Jesús."
         }
       },
       "decisions": [
@@ -4870,6 +5507,11 @@
           "L": "그리고 곧 그들은 회당에서 나와서, 야고보와 요한과 함께 시몬과 안드레의 집으로 들어갔다.",
           "B": "그들은 회당에서 나오자 곧바로 시몬과 안드레가 사는 집으로 갔다. 야고보와 요한도 함께 갔다.",
           "R": "그들은 회당에서 나와 바로 시몬과 안드레의 집으로 갔다. 야고보와 요한도 함께 갔다."
+        },
+        "es": {
+          "L": "Y enseguida, saliendo de la sinagoga, fueron a la casa de Simón y Andrés, con Santiago y Juan.",
+          "B": "En cuanto salieron de la sinagoga, fueron a la casa de Simón y Andrés, y Santiago y Juan fueron con ellos.",
+          "R": "Enseguida salieron de la sinagoga y fueron a la casa de Simón y Andrés. Santiago y Juan fueron con ellos."
         }
       },
       "decisions": [
@@ -4952,6 +5594,11 @@
           "L": "그런데 시몬의 장모가 열병으로 누워 있었다. 그리고 곧 그들이 그분께 그 여자에 관하여 말씀드린다.",
           "B": "시몬의 장모가 열병으로 앓아누워 있었는데, 사람들은 지체 없이 예수께 그 사실을 알려 드렸다.",
           "R": "시몬의 장모는 열이 나서 자리에 누워 있었다. 그들은 바로 예수께 장모가 아프다고 말씀드렸다."
+        },
+        "es": {
+          "L": "Y la suegra de Simón estaba acostada con fiebre, y enseguida {{deity_pronoun:le|Le}} hablan de ella.",
+          "B": "La suegra de Simón estaba en cama con fiebre, y enseguida {{deity_pronoun:le|Le}} hablaron de ella.",
+          "R": "La suegra de Simón estaba acostada con fiebre. Enseguida avisaron a Jesús de que estaba enferma."
         }
       },
       "decisions": [
@@ -5074,6 +5721,11 @@
           "L": "그러자 그분이 다가가셔서 손을 잡고 그 여자를 일으키셨다. 그러자 열이 그 여자에게서 떠났고, 그 여자는 그들을 섬기기 시작했다.",
           "B": "예수께서 다가가셔서 그 여자의 손을 잡아 일으키셨다. 그러자 열이 내렸고, 그 여자는 그들을 대접하기 시작했다.",
           "R": "예수께서 장모에게 가셨다. 예수께서 그 손을 잡고 일으켜 주셨다. 그러자 열이 내렸다. 장모는 그들에게 음식을 차려 주었다."
+        },
+        "es": {
+          "L": "Y acercándose, la levantó tomándola de la mano; y la fiebre la dejó, y ella les servía.",
+          "B": "Él se acercó, la tomó de la mano y la levantó. Se le quitó la fiebre, y se puso a atenderlos.",
+          "R": "Jesús se acercó a ella. La tomó de la mano y la ayudó a levantarse. La fiebre se le fue, y ella comenzó a servirles comida."
         }
       },
       "decisions": [
@@ -5213,6 +5865,11 @@
           "L": "저녁이 되어 해가 졌을 때, 사람들이 모든 앓는 사람들과 귀신 들린 사람들을 그분께로 데려오고 있었다.",
           "B": "저녁이 되어 해가 지자, 사람들이 아픈 사람들과 귀신 들린 사람들을 모두 예수께 데려오기 시작했다.",
           "R": "그날 저녁 해가 진 뒤에, 사람들이 아픈 사람들을 모두 예수께 데려왔다. 귀신 들린 사람들도 데려왔다."
+        },
+        "es": {
+          "L": "Y llegada la tarde, cuando se puso el sol, {{deity_pronoun:le|Le}} traían a todos los que estaban enfermos y a los endemoniados.",
+          "B": "Al anochecer, cuando ya se había puesto el sol, la gente {{deity_pronoun:le|Le}} llevaba a todos los enfermos y a los que estaban dominados por demonios.",
+          "R": "Esa tarde, después de que se puso el sol, la gente llevó a Jesús a todos los enfermos y a todos los que tenían demonios."
         }
       },
       "decisions": [
@@ -5311,6 +5968,25 @@
           "reason": "\"귀신\" is the everyday Korean word for an evil spirit that possesses a person, as in John 10:20-21 in Korean; \"악령\" sounds technical.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41001032017"
+          ],
+          "choice": "endemoniados (L); dominados por demonios (B); que tenían demonios (R)",
+          "alternatives": [],
+          "reason": "\"Endemoniado\" is the Spanish word for the Greek participle; Balanced and Readable say in plain words what it means (meaning decision m2), and use \"demonio\" for the noun, as in John 10:20.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5352,6 +6028,11 @@
           "L": "그리고 온 고을이 문 앞에 모여 있었다.",
           "B": "온 동네 사람들이 그 집 문 앞에 몰려들었다.",
           "R": "마을 사람들이 거의 다 그 집 문 앞으로 몰려왔다."
+        },
+        "es": {
+          "L": "Y toda la ciudad estaba reunida a la puerta.",
+          "B": "Todo el pueblo se había agolpado a la puerta.",
+          "R": "Casi toda la gente del pueblo se juntó frente a la puerta de la casa."
         }
       },
       "decisions": [
@@ -5482,6 +6163,11 @@
           "L": "그리고 그분은 여러 가지 병으로 앓는 많은 사람들을 고치시고, 많은 귀신들을 쫓아내셨다. 그리고 귀신들이 말하는 것을 허락하지 않으셨다. 그들이 그분을 알았기 때문이다.",
           "B": "예수께서는 온갖 병에 걸린 많은 사람을 고쳐 주시고, 많은 귀신을 쫓아내셨다. 그러나 귀신들이 아무 말도 하지 못하게 하셨다. 귀신들은 그분을 알고 있었기 때문이다.",
           "R": "예수께서는 온갖 병을 앓는 많은 사람을 고쳐 주셨다. 또 많은 귀신을 사람들에게서 쫓아내셨다. 그러나 귀신들이 말하지 못하게 하셨다. 귀신들은 예수께서 누구신지 알고 있었기 때문이다."
+        },
+        "es": {
+          "L": "Y sanó a muchos que estaban enfermos de diversas enfermedades, y expulsó muchos demonios, y no dejaba hablar a los demonios, porque {{deity_pronoun:lo|Lo}} conocían.",
+          "B": "Curó a muchos que padecían enfermedades de toda clase y expulsó a muchos demonios. Pero no dejaba que los demonios dijeran nada, porque {{deity_pronoun:lo|Lo}} conocían.",
+          "R": "Jesús sanó a mucha gente que tenía toda clase de enfermedades. Obligó a muchos demonios a salir de la gente. Pero no dejaba hablar a los demonios, porque sabían quién era."
         }
       },
       "decisions": [
@@ -5599,6 +6285,26 @@
           "reason": "\"귀신을 쫓아내다\" is the natural Korean phrase and carries the force the meaning decision describes, so one word serves at every level where the English varies (\"cast out\", \"threw out\", \"forced to leave\").",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41001034011"
+          ],
+          "choice": "expulsar",
+          "alternatives": [
+            "echar fuera"
+          ],
+          "reason": "The Spanish verb for driving out with force (meaning decision m4); it is used for demons throughout Mark. Readable says \"obligar a salir\", as the English says \"forced to leave\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5644,6 +6350,11 @@
           "L": "그리고 아주 이른 새벽, 아직 밤일 때에 그분은 일어나 나가셔서 외딴곳으로 가셨고, 거기에서 기도하고 계셨다.",
           "B": "날이 밝기 훨씬 전에 예수께서 일어나 밖으로 나가셨다. 그리고 외딴곳으로 가셔서 그곳에서 기도하셨다.",
           "R": "다음 날 아주 이른 새벽, 아직 어두울 때 예수께서 일어나 집을 나서셨다. 혼자 있을 수 있는 조용한 곳으로 가셔서 그곳에서 기도하셨다."
+        },
+        "es": {
+          "L": "Y muy de madrugada, siendo aún de noche, levantándose, salió y se fue a un lugar desierto, y allí oraba.",
+          "B": "Mucho antes del amanecer, se levantó y salió. Se fue a un lugar solitario y allí estuvo orando.",
+          "R": "Al día siguiente, muy temprano, antes de que amaneciera, Jesús se levantó y salió de la casa. Se fue a un lugar donde pudiera estar solo, y allí oró."
         }
       },
       "decisions": [
@@ -5760,6 +6471,24 @@
           "reason": "The Greek adjective is the word for the wilderness of 1:3-13 (meaning decision), but this is a lonely spot near Capernaum; \"광야\" would send Jesus into the desert. Korean cannot keep the link, which the meaning decision records.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41001035010",
+            "n41001035011"
+          ],
+          "choice": "lugar desierto (L); lugar solitario (B)",
+          "alternatives": [],
+          "reason": "Literal keeps \"desierto\" so the link with the wilderness of 1:3-13 can be seen (meaning decision m2); Balanced says what kind of place it was.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5811,6 +6540,11 @@
           "L": "그리고 시몬과 그와 함께 있던 이들이 그분을 뒤쫓아 찾아다녔다. \\v 37 그리고 그분을 찾아내고 그분께 말씀드린다. \"모두가 선생님을 찾고 있습니다.\"",
           "B": "시몬과 그 일행이 예수를 찾아 나섰다. \\v 37 그들은 예수를 찾아내고 말씀드렸다. \"모든 사람이 선생님을 찾고 있습니다!\"",
           "R": "시몬과 그 친구들이 예수를 찾으러 다녔다. \\v 37 그들은 예수를 찾아서 말씀드렸다. \"사람들이 모두 선생님을 찾고 있습니다!\""
+        },
+        "es": {
+          "L": "Y Simón y los que [estaban] con él {{deity_pronoun:lo|Lo}} buscaron afanosamente, \\v 37 y {{deity_pronoun:lo|Lo}} encontraron y {{deity_pronoun:le|Le}} dicen: «Todos {{deity_pronoun:te|Te}} buscan».",
+          "B": "Simón y los que estaban con él salieron en {{deity_pronoun:su|Su}} busca. \\v 37 Cuando {{deity_pronoun:lo|Lo}} encontraron, {{deity_pronoun:le|Le}} dijeron: «¡Todo el mundo {{deity_pronoun:te|Te}} está buscando!».",
+          "R": "Simón y sus amigos fueron a buscar a Jesús. \\v 37 Cuando {{deity_pronoun:lo|Lo}} encontraron, {{deity_pronoun:le|Le}} dijeron: «¡Toda la gente {{deity_pronoun:te|Te}} está buscando!»."
         }
       },
       "decisions": [
@@ -5956,6 +6690,11 @@
           "L": "그러자 그분이 그들에게 말씀하신다. \"다른 곳으로, 가까운 고을들로 가자. 거기서도 내가 선포하려는 것이다. 이것을 위하여 내가 나왔기 때문이다.\"",
           "B": "예수께서 대답하셨다. \"가까운 다른 고을들로 가자. 거기서도 내가 말씀을 선포해야 한다. 나는 이 일을 하러 나왔다.\"",
           "R": "예수께서 그들에게 말씀하셨다. \"가까이 있는 다른 마을들로 가자. 거기서도 사람들에게 기쁜 소식을 전해야 한다. 내가 온 것은 바로 그 일 때문이다.\""
+        },
+        "es": {
+          "L": "Y les dice: «Vamos a otra parte, a los pueblos vecinos, para que proclame también allí; porque para esto he salido».",
+          "B": "Él les respondió: «Vamos a los pueblos cercanos, para que también allí anuncie el mensaje. Para eso he salido».",
+          "R": "Jesús les dijo: «Vamos a los otros pueblos que hay por aquí cerca, para anunciar también allí la buena noticia a la gente. Para eso vine»."
         }
       },
       "decisions": [
@@ -6049,6 +6788,25 @@
           "reason": "The meaning decision leaves open whether Jesus came out from Capernaum or came out from God; \"나왔다\" (came out) can be read both ways, as the Greek can. Readable says simply \"온 것\" (came), as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41001038017"
+          ],
+          "choice": "he salido (L, B); vine (R)",
+          "alternatives": [],
+          "reason": "Like the Greek, \"salir\" leaves open whether Jesus means leaving Capernaum or coming from God (meaning decision m2); Readable's \"vine\" also keeps both.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6096,6 +6854,11 @@
           "L": "그리고 그분은 온 갈릴리에 있는 그들의 회당들로 다니시며 선포하시고 귀신들을 쫓아내셨다.",
           "B": "예수께서는 갈릴리 전역에 있는 그들의 회당에 들어가셔서 말씀을 선포하시고 귀신들을 쫓아내셨다.",
           "R": "예수께서는 갈릴리 곳곳을 다니셨다. 회당에서 말씀을 전하시고, 사람들에게서 귀신들을 쫓아내셨다."
+        },
+        "es": {
+          "L": "Y fue proclamando en sus sinagogas por toda Galilea y expulsando los demonios.",
+          "B": "Así recorrió toda Galilea: entraba en sus sinagogas, anunciaba el mensaje y expulsaba demonios.",
+          "R": "Jesús recorrió toda la región de Galilea. Predicaba en las sinagogas de aquella gente y obligaba a los demonios a salir de las personas."
         }
       },
       "decisions": [
@@ -6213,6 +6976,11 @@
           "L": "그리고 나병 환자 한 사람이 그분께 와서 간청하며 무릎을 꿇고 그분께 말씀드린다. \"선생님께서 원하시면, 선생님께서는 저를 깨끗하게 하실 수 있습니다.\"",
           "B": "악성 피부병에 걸린 사람 하나가 예수께 왔다. 그는 무릎을 꿇고 간절히 빌었다. \"선생님께서 원하시기만 하면 저를 깨끗하게 하실 수 있습니다.\"",
           "R": "나병, 곧 심한 피부병을 앓는 사람이 예수께 왔다. 그는 무릎을 꿇고 빌었다. \"선생님께서 원하시면 제 병을 고쳐서 저를 깨끗하게 해 주실 수 있습니다!\""
+        },
+        "es": {
+          "L": "Y viene hacia {{deity_pronoun:él|Él}} un leproso, que {{deity_pronoun:le|Le}} suplica de rodillas y {{deity_pronoun:le|Le}} dice: «Si quieres, puedes limpiarme».",
+          "B": "Un hombre con una grave enfermedad de la piel se acercó a {{deity_pronoun:él|Él}}. Se puso de rodillas y {{deity_pronoun:le|Le}} suplicó: «Si quieres, tienes poder para limpiarme».",
+          "R": "Un hombre que tenía lepra, una enfermedad grave de la piel, se acercó a Jesús. Se arrodilló y {{deity_pronoun:le|Le}} rogó: «¡Si quieres, puedes sanarme y dejarme limpio!»."
         }
       },
       "decisions": [
@@ -6389,6 +7157,27 @@
           "reason": "Korean addresses a respected person with a title rather than \"당신\" (as John 1:49 in Korean); Literal repeats it as the Greek repeats \"you\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41001040017"
+          ],
+          "choice": "limpiar (L, B); sanar y dejar limpio (R)",
+          "alternatives": [
+            "sanar"
+          ],
+          "reason": "The man asks to be made clean under God's law as well as healed (meaning decision m3), so every level keeps \"limpio\"; Readable adds \"sanar\" as the English adds \"heal\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6433,6 +7222,11 @@
           "L": "그러자 그분은 화를 내시며 손을 내밀어 [그를] 만지시고 그에게 말씀하신다. \"내가 원한다. 깨끗하게 되어라.\"",
           "B": "예수께서는 마음속에 분노가 일어, 손을 내밀어 그를 만지시며 말씀하셨다. \"내가 원한다. 깨끗해져라!\"",
           "R": "예수께서는 화가 나셨다. 예수께서 손을 내밀어 그 사람을 만지시며 말씀하셨다. \"그래, 내가 원한다. 병이 나아 깨끗해져라!\""
+        },
+        "es": {
+          "L": "Y enojándose, extendiendo {{deity_pronoun:su|Su}} mano, [lo] tocó, y le dice: «Quiero; queda limpio».",
+          "B": "Movido por la ira, extendió {{deity_pronoun:su|Su}} mano y lo tocó. «Quiero —le dijo—. ¡Queda limpio!».",
+          "R": "Jesús se enojó. Extendió {{deity_pronoun:su|Su}} mano y tocó al hombre. Le dijo: «Sí quiero. ¡Queda sano y limpio!»."
         }
       },
       "decisions": [
@@ -6561,6 +7355,11 @@
           "L": "그러자 곧 나병이 그에게서 떠나가고, 그는 깨끗하게 되었다.",
           "B": "그 순간 그 병이 그에게서 사라지고, 그는 깨끗해졌다.",
           "R": "바로 그 피부병이 없어지고, 그 사람은 병이 나아 깨끗해졌다."
+        },
+        "es": {
+          "L": "Y enseguida la lepra se fue de él, y quedó limpio.",
+          "B": "En ese mismo instante la enfermedad lo dejó, y quedó limpio.",
+          "R": "Enseguida la enfermedad de la piel desapareció, y el hombre quedó sano y limpio."
         }
       },
       "decisions": [
@@ -6659,6 +7458,11 @@
           "L": "그리고 그분은 그에게 엄하게 경고하시고 곧 그를 내보내셨다. \\v 44 그리고 그에게 말씀하신다. \"아무에게도 아무 말도 하지 않도록 주의하여라. 다만 가서 제사장에게 네 자신을 보여라. 그리고 네가 깨끗하게 된 것에 대하여 모세가 명령한 것을 바쳐서, 그들에게 증거가 되게 하여라.\"",
           "B": "예수께서는 그에게 엄하게 경고하시고 곧바로 그를 보내셨다. \\v 44 예수께서 말씀하셨다. \"아무에게도 이 일을 말하지 않도록 조심하여라. 그 대신 가서 제사장에게 네 몸을 보여 검사를 받아라. 그리고 모세가 정한 대로 네가 깨끗해진 것에 대한 예물을 바쳐라. 그것이 그들에게 증거가 될 것이다.\"",
           "R": "예수께서는 그 사람에게 단단히 주의를 주시고 곧 돌려보내셨다. \\v 44 예수께서 말씀하셨다. \"이 일을 아무에게도 말하지 마라. 가서 제사장에게 네 몸을 보여라. 그리고 병이 나아 깨끗해진 사람이 바치도록 모세가 명령한 예물을 바쳐라. 그러면 네가 깨끗해졌다는 것이 그들에게 증명될 것이다.\""
+        },
+        "es": {
+          "L": "Y advirtiéndole severamente, enseguida lo despidió, \\v 44 y le dice: «Mira, no digas nada a nadie, sino ve, muéstrate al sacerdote y ofrece por tu purificación lo que Moisés ordenó, para testimonio a ellos».",
+          "B": "Jesús le hizo una advertencia severa y lo despidió enseguida. \\v 44 «Ten cuidado de no contarle esto a nadie —le dijo—. Más bien, ve a que el sacerdote te examine, y luego presenta por tu purificación la ofrenda que Moisés mandó. Eso les servirá de prueba».",
+          "R": "Jesús lo despidió enseguida con una advertencia muy seria. \\v 44 Le dijo: «No le cuentes esto a nadie. Ve y preséntate ante el sacerdote. Después da la ofrenda que Moisés ordenó para los que quedan limpios. Así les demostrarás que estás limpio»."
         }
       },
       "decisions": [
@@ -6840,6 +7644,11 @@
           "L": "그러나 그는 나가서 [그 일을] 많이 선포하고 그 말을 널리 퍼뜨리기 시작했다. 그 결과 그분은 더 이상 드러내 놓고 고을에 들어가실 수 없어서, 바깥 외딴곳들에 계셨다. 그리고 사람들이 사방에서 그분께로 오고 있었다.",
           "B": "그러나 그 사람은 나가서 이 일을 여기저기 이야기하며 소문을 퍼뜨리기 시작했다. 그 때문에 예수께서는 더 이상 드러내 놓고 어느 동네에도 들어가실 수 없어서, 바깥 외딴곳에서 지내셨다. 그래도 사람들은 사방에서 예수께 모여들었다.",
           "R": "그러나 그 사람은 나가서 많은 사람에게 이 일을 이야기했다. 그는 이 소식을 곳곳에 퍼뜨렸다. 그래서 예수께서는 사람들 눈에 띄게 마을에 들어가실 수 없었다. 그래서 사람들이 없는 조용한 곳에 계셨다. 그래도 사람들은 사방에서 예수께 찾아왔다."
+        },
+        "es": {
+          "L": "Pero él, saliendo, comenzó a proclamar mucho y a divulgar la palabra, de modo que {{deity_pronoun:él|Él}} ya no podía entrar abiertamente en una ciudad, sino que estaba fuera, en lugares desiertos; y venían a {{deity_pronoun:él|Él}} de todas partes.",
+          "B": "Pero el hombre se fue y comenzó a contarlo a todo el mundo, difundiendo la noticia de lo que había pasado, tanto que Jesús ya no podía entrar abiertamente en ningún pueblo. Se quedaba fuera, en lugares despoblados, y aun así la gente acudía a {{deity_pronoun:él|Él}} de todas partes.",
+          "R": "Pero el hombre se fue y le contó a mucha gente lo que había pasado. Difundió la noticia por todas partes. Por eso, Jesús ya no podía entrar en un pueblo sin que la gente {{deity_pronoun:lo|Lo}} viera. Así que se quedaba en lugares solitarios. Pero aun así, la gente venía a {{deity_pronoun:él|Él}} de todas partes."
         }
       },
       "decisions": [
@@ -6956,6 +7765,23 @@
             "\"이야기하고\" (L)"
           ],
           "reason": "Literal keeps \"선포하다\", the word used for John's and Jesus' proclaiming (1:4, 1:14, 1:38-39), so the reader can see that Mark uses the same verb for the man; Balanced and Readable say what he did, talking about it everywhere.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n41001045013"
+          ],
+          "choice": "{{deity_pronoun:él|Él}} ya no podía",
+          "alternatives": [],
+          "reason": "Spanish usually leaves the subject in the verb, but here the subject changes from the healed man to Jesus, so Literal writes the pronoun, with the setting, where the Greek has one for the infinitive.",
           "uncertain": false,
           "footnote": false
         }

@@ -43,6 +43,11 @@
           "L": "Và khi ngày Sa-bát đã qua, Ma-ri Ma-đơ-len, Ma-ri [mẹ] của Gia-cơ, và Sa-lô-mê mua hương liệu để đến xức cho {{deity_pronoun:ngài|Ngài}}.",
           "B": "Sau ngày Sa-bát, Ma-ri Ma-đơ-len, Ma-ri mẹ của Gia-cơ, và Sa-lô-mê mua hương liệu để đến xức thi thể {{deity_pronoun:ngài|Ngài}}.",
           "R": "Ngày Sa-bát đã qua. Bấy giờ có ba người phụ nữ đi mua hương liệu thơm: Ma-ri người làng Ma-đơ-la, Ma-ri mẹ của Gia-cơ, và Sa-lô-mê. Họ muốn đến xức hương liệu lên thi thể Đức Giê-xu."
+        },
+        "ko": {
+          "L": "그리고 안식일이 지나자, 막달라 마리아와 야고보의 [어머니] 마리아와 살로메가 가서 그분께 바르려고 향료를 샀다.",
+          "B": "안식일이 지나자, 막달라 마리아와 야고보의 어머니 마리아와 살로메는 가서 예수의 시신에 바르려고 향료를 샀다.",
+          "R": "안식일이 끝났다. 그러자 세 여자가 좋은 냄새가 나는 향료를 샀다. 막달라 마리아, 야고보의 어머니 마리아, 그리고 살로메였다. 그들은 무덤에 가서 그 향료를 예수의 시신에 바르려고 했다."
         }
       },
       "decisions": [
@@ -162,6 +167,51 @@
           "reason": "\"xức\" is the Bible word for anointing and fits a last honour to the dead; \"ướp\" would suggest embalming, which the meaning decision does not describe.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n41016001019"
+          ],
+          "choice": "No deity_pronoun spans in Korean; the narrative honours Jesus with \"께서\", \"그분\" and -시-, and Mark's historic presents stay present only at Literal (\"간다\", \"본다\", \"말한다\", 16:2-6), through chapter 16",
+          "alternatives": [
+            "deity_pronoun spans as in the English",
+            "historic present at every level"
+          ],
+          "reason": "Korean has no capital letters, so the deity_pronoun setting has nothing to change (style guide, sections 4 and 7); \"친히\" carries the English \"himself\" in 16:8.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41016001016",
+            "n41016001019"
+          ],
+          "choice": "\"향료\" for aromata; \"바르다\" for aleipho",
+          "alternatives": [
+            "\"기름을 붓다\"",
+            "\"향품\""
+          ],
+          "reason": "Fragrant oils put on a body as a last honour (meaning decision); \"향료\" is the word of the Korean John 19:40, and \"바르다\" is what one does with them on a body.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -203,6 +253,11 @@
           "L": "Và rất sớm vào ngày thứ nhất trong tuần, họ đến mộ, khi mặt trời đã mọc.",
           "B": "Vào ngày thứ nhất trong tuần, rất sớm, lúc mặt trời vừa mọc, họ đến mộ.",
           "R": "Sáng sớm Chủ Nhật, khi mặt trời vừa mọc, họ đi đến mộ."
+        },
+        "ko": {
+          "L": "그리고 주간의 첫 [날] 매우 이른 아침, 해가 돋았을 때에 그들이 무덤으로 간다.",
+          "B": "주간의 첫날 아주 이른 아침, 해가 떠오를 무렵에 그들은 무덤으로 갔다.",
+          "R": "일주일의 첫날인 일요일 아주 이른 아침이었다. 해가 막 떠오를 때 여자들은 무덤으로 갔다."
         }
       },
       "decisions": [
@@ -304,6 +359,30 @@
           "reason": "Literal and Balanced keep the Jewish way of counting, as in John 20:1; Readable names the day as Vietnamese readers know it, as the English Readable says \"Sunday\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41016002004",
+            "n41016002005",
+            "n41016002006",
+            "n41016002007"
+          ],
+          "choice": "\"주간의 첫 [날]\" (L); \"주간의 첫날\" (B); \"일주일의 첫날인 일요일\" (R)",
+          "alternatives": [
+            "\"안식 후 첫날\""
+          ],
+          "reason": "The forms of the Korean John 20:1; Readable also names the day, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -345,6 +424,11 @@
           "L": "Và họ cứ nói với nhau: \"Ai sẽ lăn tảng đá khỏi cửa mộ cho chúng ta?\"",
           "B": "Họ đã hỏi nhau: \"Ai sẽ lăn tảng đá ra khỏi cửa mộ giùm chúng ta đây?\"",
           "R": "Trên đường đi, họ cứ hỏi nhau: \"Ai sẽ lăn tảng đá khỏi lối vào mộ cho chúng ta?\""
+        },
+        "ko": {
+          "L": "그리고 그들은 서로 말하고 있었다. \"누가 우리를 위해 무덤 문에서 그 돌을 굴려 내 줄까?\"",
+          "B": "그들은 가면서 서로 말했다. \"누가 무덤 입구에서 그 돌을 굴려 내 줄까?\"",
+          "R": "여자들은 가는 길에 서로 계속 물었다. \"누가 무덤 입구를 막고 있는 돌을 치워 줄까?\""
         }
       },
       "decisions": [
@@ -443,6 +527,11 @@
           "L": "Và ngước mắt lên, họ thấy tảng đá đã được lăn đi rồi; vì tảng đá ấy rất lớn.",
           "B": "Khi ngước lên, họ thấy tảng đá đã được lăn đi rồi; đó là một tảng đá rất to.",
           "R": "Nhưng khi nhìn lên, họ thấy tảng đá đã được lăn đi rồi. Đó là một tảng đá rất lớn!"
+        },
+        "ko": {
+          "L": "그런데 그들이 눈을 들어, 그 돌이 굴려져 있는 것을 본다. 그 돌은 매우 컸기 때문이다.",
+          "B": "그런데 눈을 들어 보니, 돌은 이미 굴려져 있었다. 그것은 아주 큰 돌이었다.",
+          "R": "그런데 여자들이 고개를 들어 보니, 그 돌이 벌써 옆으로 굴려져 있었다. 그 돌은 정말 큰 돌이었다!"
         }
       },
       "decisions": [
@@ -555,6 +644,11 @@
           "L": "Và vào trong mộ, họ thấy một thanh niên ngồi ở bên phải, mặc áo choàng trắng, và họ vô cùng kinh ngạc.",
           "B": "Bước vào trong mộ, họ thấy một thanh niên mặc áo choàng trắng ngồi ở phía bên phải, và họ hoảng hốt.",
           "R": "Họ đi vào trong mộ. Có một thanh niên mặc áo choàng trắng đang ngồi ở phía bên phải. Các bà vừa sửng sốt vừa sợ hãi."
+        },
+        "ko": {
+          "L": "그리고 무덤 안으로 들어가서, 흰옷을 입은 한 청년이 오른쪽에 앉아 있는 것을 보고 몹시 놀랐다.",
+          "B": "무덤 안으로 들어가 보니, 흰옷을 입은 청년 하나가 오른쪽에 앉아 있었다. 그들은 몹시 놀랐다.",
+          "R": "여자들은 무덤 안으로 들어갔다. 그런데 흰옷을 입은 젊은 남자가 오른쪽에 앉아 있었다. 여자들은 깜짝 놀라고 무서웠다."
         }
       },
       "decisions": [
@@ -652,6 +746,27 @@
           "reason": "\"áo dài\" today names the Vietnamese national dress (see John 19:23); \"áo choàng\" is a long outer robe.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41016005007"
+          ],
+          "choice": "\"청년\" (L, B); \"젊은 남자\" (R)",
+          "alternatives": [
+            "\"천사\""
+          ],
+          "reason": "Mark says \"a young man\" and leaves the reader to see a messenger from God (meaning decision); Korean keeps his word rather than naming an angel.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -701,6 +816,11 @@
           "L": "Người ấy nói với họ: \"Đừng kinh ngạc. Các bà tìm Đức Giê-xu người Na-xa-rét, Đấng đã bị đóng đinh. Ngài đã được làm cho sống lại; {{deity_pronoun:ngài|Ngài}} không ở đây. Hãy xem chỗ người ta đã đặt {{deity_pronoun:ngài|Ngài}}.",
           "B": "Nhưng người ấy bảo họ: \"Đừng hoảng sợ. Các bà đến tìm Đức Giê-xu người Na-xa-rét, Đấng đã bị đóng đinh. Ngài đã được làm cho sống lại; {{deity_pronoun:ngài|Ngài}} không còn ở đây. Kìa, đây là chỗ người ta đã đặt {{deity_pronoun:ngài|Ngài}}.",
           "R": "Nhưng người ấy nói với họ: \"Đừng sợ. Các bà đang tìm Đức Giê-xu người Na-xa-rét, Đấng đã bị đóng đinh trên cây thập tự. Đức Chúa Trời đã khiến {{deity_pronoun:ngài|Ngài}} sống lại từ cõi chết! Ngài không có ở đây. Hãy nhìn xem, đây là chỗ người ta đã đặt thi thể của {{deity_pronoun:ngài|Ngài}}."
+        },
+        "ko": {
+          "L": "그러자 그가 그들에게 말한다. \"놀라지 마라. 너희는 십자가에 못 박히신 나사렛 사람 예수를 찾고 있다. 그분은 살아나셨다. 여기에 계시지 않는다. 보아라, 그들이 그분을 모셨던 곳이다.",
+          "B": "청년이 그들에게 말했다. \"놀라지 마라. 너희는 십자가에 못 박히신 나사렛 예수를 찾고 있구나. 그분은 살아나셨다. 여기에 계시지 않는다. 보아라, 여기가 그분을 모셨던 곳이다.",
+          "R": "그러나 청년이 말했다. \"무서워하지 마라. 너희는 십자가에 못 박혀 돌아가신 나사렛 예수를 찾고 있구나. 하나님께서 그분을 죽음에서 다시 살리셨다! 그분은 여기 계시지 않는다. 보아라, 여기가 그분의 시신을 모셨던 곳이다."
         }
       },
       "decisions": [
@@ -834,6 +954,49 @@
           "reason": "The meaning decision reads the passive as God's act. \"đã sống lại\" alone would lose it; Readable names God, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n41016006004"
+          ],
+          "choice": "The young man speaks to the women in the plain style (해라체: \"놀라지 마라\") and honours Jesus (\"못 박히신\", \"계시지 않는다\")",
+          "alternatives": [
+            "합쇼체 to the women"
+          ],
+          "reason": "As the angels speak to Mary in the Korean John 20:13; a messenger from God speaks with authority.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41016006013"
+          ],
+          "choice": "\"살아나셨다\" (L, B); \"하나님께서 그분을 ... 다시 살리셨다\" (R)",
+          "alternatives": [
+            "\"일으킴을 받으셨다\"",
+            "\"살리심을 받으셨다\""
+          ],
+          "reason": "The Greek passive means that God raised him (meaning decision); Korean has no natural passive of \"raise\", so Literal and Balanced use the usual intransitive verb, and Readable names God as the English Readable does.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -882,6 +1045,11 @@
           "L": "Nhưng hãy đi, nói với các môn đồ của {{deity_pronoun:ngài|Ngài}} và với Phi-e-rơ rằng {{deity_pronoun:ngài|Ngài}} đi trước các ông đến Ga-li-lê; tại đó các ông sẽ thấy {{deity_pronoun:ngài|Ngài}}, như {{deity_pronoun:ngài|Ngài}} đã nói với các ông.\"",
           "B": "Nhưng hãy đi báo cho các môn đồ của {{deity_pronoun:ngài|Ngài}}, và cả Phi-e-rơ nữa, rằng {{deity_pronoun:ngài|Ngài}} đi trước các ông đến Ga-li-lê. Các ông sẽ thấy {{deity_pronoun:ngài|Ngài}} ở đó, đúng như {{deity_pronoun:ngài|Ngài}} đã nói với các ông.\"",
           "R": "Bây giờ hãy đi báo cho các môn đồ của {{deity_pronoun:ngài|Ngài}}, và nhớ báo cho cả Phi-e-rơ nữa. Hãy nói với họ: 'Đức Giê-xu đi trước các ông đến Ga-li-lê. Các ông sẽ thấy {{deity_pronoun:ngài|Ngài}} ở đó, đúng như {{deity_pronoun:ngài|Ngài}} đã nói với các ông.'\""
+        },
+        "ko": {
+          "L": "그러니 가서 그분의 제자들과 베드로에게, 그분이 너희보다 먼저 갈릴리로 가신다고 말하여라. 그분이 너희에게 말씀하신 대로, 너희가 거기서 그분을 뵐 것이다.\"",
+          "B": "이제 가서 그분의 제자들과 베드로에게 전하여라. 그분이 너희보다 먼저 갈릴리로 가신다. 그분이 너희에게 말씀하신 대로, 너희는 거기서 그분을 뵐 것이다.\"",
+          "R": "이제 가서 예수의 제자들에게 알려라. 베드로에게도 꼭 알려라. 이렇게 전하여라. '예수께서 너희보다 먼저 갈릴리로 가신다. 예수께서 전에 너희에게 말씀하신 대로, 너희는 거기서 그분을 뵙게 될 것이다.'\""
         }
       },
       "decisions": [
@@ -1022,6 +1190,27 @@
           "reason": "The style guide keeps \"môn đồ\" at every level, Readable included; it is a plain, familiar word.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41016007016"
+          ],
+          "choice": "\"뵙다\" for seeing Jesus",
+          "alternatives": [
+            "\"보다\""
+          ],
+          "reason": "The humble verb for meeting a superior, as in the Korean John 20:18; the messenger speaks of Jesus with honour.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1067,6 +1256,11 @@
           "L": "Và đi ra, họ chạy trốn khỏi mộ, vì sự run rẩy và kinh ngạc đã xâm chiếm họ; và họ không nói gì với ai cả, vì họ sợ.",
           "B": "Họ ra khỏi mộ và bỏ chạy, run rẩy và sững sờ. Họ không nói gì với ai cả, vì họ sợ hãi.",
           "R": "Các bà đi ra và chạy trốn khỏi ngôi mộ. Họ run rẩy và hoảng hốt đến nỗi không nghĩ được gì. Họ không nói với ai điều gì cả, vì họ sợ."
+        },
+        "ko": {
+          "L": "그리고 그들은 나가서 무덤에서 도망쳤다. 떨림과 놀라움이 그들을 사로잡았기 때문이다. 그리고 그들은 아무에게도 아무 말도 하지 않았다. 그들이 두려워했기 때문이다.",
+          "B": "여자들은 무덤에서 나와 도망쳤다. 몸이 떨리고 넋이 나갔던 것이다. 그리고 아무에게도 아무 말을 하지 않았다. 두려웠기 때문이다.",
+          "R": "여자들은 밖으로 나와서 무덤에서 달아났다. 몸이 덜덜 떨리고 정신이 하나도 없었다. 그들은 아무에게도 아무 말도 하지 않았다. 너무 무서웠기 때문이다."
         }
       },
       "decisions": [
@@ -1215,6 +1409,28 @@
           "reason": "The Greek sentence ends on the word \"for\"; Vietnamese cannot end on a conjunction, so Literal ends as close as it can, with \"họ sợ\" last. The meaning decision describes the abrupt ending.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n41016008017",
+            "n41016008018"
+          ],
+          "choice": "The last clause ends with \"때문이다\" at every level",
+          "alternatives": [
+            "\"그들은 두려워서 아무에게도 아무 말도 하지 않았다\""
+          ],
+          "reason": "The Greek sentence ends on the word \"for\" (meaning decision); Korean cannot end there, but keeping the reason as a separate final clause leaves the abrupt close on the women's fear, and \"아무에게도 아무 말도\" keeps the double negative.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1252,6 +1468,11 @@
           "L": "Còn mọi điều đã được truyền dặn, họ thuật lại vắn tắt cho những người ở quanh Phi-e-rơ.",
           "B": "Họ thuật lại vắn tắt cho Phi-e-rơ và những người ở với ông tất cả những gì họ đã được dặn bảo.",
           "R": "Các bà nhanh chóng kể lại cho Phi-e-rơ và những người ở với ông mọi điều người thanh niên đã dặn họ nói."
+        },
+        "ko": {
+          "L": "그리고 그들은 명령받은 모든 것을 베드로 주위에 있는 사람들에게 간략하게 알렸다.",
+          "B": "여자들은 전하라고 들은 모든 것을 베드로와 그 일행에게 간단히 전했다.",
+          "R": "여자들은 청년이 전하라고 한 말을 모두 베드로와 그와 함께 있던 사람들에게 간단히 전했다."
         }
       },
       "decisions": [
@@ -1350,6 +1571,25 @@
           "reason": "Readable names the women and the one who gave them the message. It reads \"briefly\" as \"quickly\", one sense of the word.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41016008027"
+          ],
+          "choice": "\"간단히\" (R)",
+          "alternatives": [
+            "\"서둘러\""
+          ],
+          "reason": "The Greek word means \"in few words\" (meaning decision), so Readable keeps that sense rather than the English Readable's \"quickly\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1400,6 +1640,11 @@
           "L": "Sau đó, chính Đức Giê-xu cũng qua họ mà sai truyền từ phương đông cho đến phương tây lời rao giảng thánh và bất diệt về sự cứu rỗi đời đời.",
           "B": "Sau đó, chính Đức Giê-xu qua họ đã truyền đi từ đông sang tây lời rao giảng thánh và bất diệt về sự cứu rỗi đời đời.",
           "R": "Sau đó, chính Đức Giê-xu dùng họ để truyền đi sứ điệp thánh về sự cứu rỗi đời đời, từ phương đông đến phương tây. Đó là sứ điệp sẽ không bao giờ mất đi."
+        },
+        "ko": {
+          "L": "그리고 이 일들 후에 예수께서 친히 그들을 통하여 동쪽에서부터 서쪽까지, 영원한 구원에 대한 거룩하고 썩지 않는 선포를 내보내셨다.",
+          "B": "그 뒤에 예수께서 친히 그들을 통하여, 해 뜨는 곳에서 해 지는 곳까지 영원한 구원을 알리는 거룩하고 썩지 않는 선포를 내보내셨다.",
+          "R": "그 뒤에 예수께서 직접 그들을 보내셔서, 동쪽 끝에서 서쪽 끝까지 영원한 구원의 거룩한 소식을 전하게 하셨다. 그 소식은 결코 없어지지 않는다."
         }
       },
       "decisions": [
@@ -1536,6 +1781,52 @@
           "reason": "Vietnamese marks \"Jesus himself\" with \"chính\" before the name, with no pronoun, so the English span on \"himself\" has no counterpart.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41016008048",
+            "n41016008047"
+          ],
+          "choice": "\"선포\" (L, B), \"소식\" (R) for kerygma; \"썩지 않는\" (L, B), \"결코 없어지지 않는\" (R) for aphthartos",
+          "alternatives": [
+            "\"복음\"",
+            "\"불멸의\""
+          ],
+          "reason": "\"선포\" keeps the act of proclaiming that the word names; \"썩지 않는\" is the Korean for what cannot decay (meaning decision), and Readable says it plainly.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41016008036",
+            "n41016008037",
+            "n41016008038",
+            "n41016008039",
+            "n41016008040"
+          ],
+          "choice": "\"해 뜨는 곳에서 해 지는 곳까지\" (B)",
+          "alternatives": [
+            "\"동쪽에서 서쪽까지\""
+          ],
+          "reason": "The Korean idiom for the whole world from end to end, which is what the phrase means (meaning decision).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1564,6 +1855,11 @@
           "L": "A-men.",
           "B": "A-men.",
           "R": "A-men."
+        },
+        "ko": {
+          "L": "아멘.",
+          "B": "아멘.",
+          "R": "아멘."
         }
       },
       "decisions": [
@@ -1668,6 +1964,11 @@
           "L": "Sau khi sống lại vào sáng sớm ngày thứ nhất trong tuần, {{deity_pronoun:ngài|Ngài}} hiện ra trước hết cho Ma-ri Ma-đơ-len, là người mà {{deity_pronoun:ngài|Ngài}} đã đuổi bảy quỷ ra khỏi.",
           "B": "Sau khi {{deity_pronoun:ngài|Ngài}} đã sống lại, vào sáng sớm ngày thứ nhất trong tuần, {{deity_pronoun:ngài|Ngài}} hiện ra trước hết cho Ma-ri Ma-đơ-len. Chính bà là người mà {{deity_pronoun:ngài|Ngài}} đã đuổi bảy quỷ ra khỏi.",
           "R": "Đức Giê-xu sống lại từ cõi chết vào sáng sớm Chủ Nhật. Ngài hiện ra trước hết cho Ma-ri, người làng Ma-đơ-la. Trước đó, Đức Giê-xu đã đuổi bảy quỷ ra khỏi bà."
+        },
+        "ko": {
+          "L": "그런데 주간의 첫 [날] 이른 아침에 살아나신 그분은, 전에 일곱 귀신을 쫓아내 주셨던 막달라 마리아에게 먼저 나타나셨다.",
+          "B": "예수께서는 주간의 첫날 이른 아침에 살아나신 뒤, 먼저 막달라 마리아에게 자신을 보이셨다. 예수께서는 전에 그 여자에게서 일곱 귀신을 쫓아내 주셨다.",
+          "R": "예수께서는 일요일 아침 일찍 죽음에서 다시 살아나셨다. 그리고 막달라 마리아에게 맨 먼저 나타나셨다. 전에 예수께서는 마리아에게서 일곱 귀신을 쫓아내 주신 적이 있었다."
         }
       },
       "decisions": [
@@ -1827,6 +2128,29 @@
           "reason": "\"quỷ\" is the word already used for demons in John (8:48); \"ma quỷ\" is kept for the devil. \"đuổi\" keeps the picture of driving out.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41016009013",
+            "n41016009015"
+          ],
+          "choice": "\"귀신\" for daimonion and \"쫓아내다\" for ekballo, as in Mark 3:15 and through the book",
+          "alternatives": [
+            "\"악령\"",
+            "\"마귀\""
+          ],
+          "reason": "The terms of the Korean John and of Mark 3; \"마귀\" stays for the devil.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1864,6 +2188,11 @@
           "L": "Bà đi báo tin cho những người đã từng ở với {{deity_pronoun:ngài|Ngài}}, khi họ đang thương tiếc và khóc lóc;",
           "B": "Bà đi báo tin cho những người đã từng ở với {{deity_pronoun:ngài|Ngài}}, lúc ấy đang buồn rầu khóc lóc.",
           "R": "Bà đi báo tin cho những người đã từng ở với Đức Giê-xu. Lúc ấy họ đang rất buồn và khóc lóc."
+        },
+        "ko": {
+          "L": "그 여자가 가서, 그분과 함께 있던 사람들, 곧 슬퍼하며 울고 있던 사람들에게 알렸다.",
+          "B": "마리아는 가서, 예수와 함께 지내던 사람들에게 이 소식을 전했다. 그들은 슬퍼하며 울고 있었다.",
+          "R": "마리아는 가서 예수와 함께 다니던 사람들에게 이 일을 알렸다. 그들은 몹시 슬퍼하며 울고 있었다."
         }
       },
       "decisions": [
@@ -1960,6 +2289,11 @@
           "L": "Và những người ấy, nghe rằng {{deity_pronoun:ngài|Ngài}} sống và đã được bà thấy, thì không tin.",
           "B": "Nhưng khi nghe rằng {{deity_pronoun:ngài|Ngài}} còn sống và bà đã thấy {{deity_pronoun:ngài|Ngài}}, họ không chịu tin.",
           "R": "Những người ấy nghe nói Đức Giê-xu đang sống và Ma-ri đã thấy {{deity_pronoun:ngài|Ngài}}. Nhưng họ không tin bà."
+        },
+        "ko": {
+          "L": "그러나 그들은 그분이 살아 계시고 그 여자에게 보이셨다는 것을 듣고도 믿지 않았다.",
+          "B": "그들은 예수께서 살아 계시고 마리아가 예수를 뵈었다는 말을 듣고도 믿으려 하지 않았다.",
+          "R": "그 사람들은 예수께서 살아 계시고 마리아가 예수를 뵈었다는 말을 들었다. 그러나 마리아의 말을 믿지 않았다."
         }
       },
       "decisions": [
@@ -2055,6 +2389,11 @@
           "L": "Sau những việc đó, {{deity_pronoun:ngài|Ngài}} hiện ra dưới một hình dạng khác cho hai người trong số họ đang đi đường, lúc đi về miền quê;",
           "B": "Sau đó, {{deity_pronoun:ngài|Ngài}} hiện ra dưới một hình dạng khác cho hai người trong số họ, khi họ đang trên đường về miền quê.",
           "R": "Sau đó, Đức Giê-xu hiện ra cho hai người trong số những người theo {{deity_pronoun:ngài|Ngài}}, khi họ đang đi về miền quê. Ngài trông khác với trước."
+        },
+        "ko": {
+          "L": "그 뒤에 그들 가운데 두 사람이 시골로 걸어가고 있을 때, 그분이 다른 모습으로 나타나셨다.",
+          "B": "그 뒤에 그들 가운데 두 사람이 시골로 걸어가고 있을 때, 예수께서 다른 모습으로 그들에게 나타나셨다.",
+          "R": "얼마 뒤에 예수를 따르던 사람들 가운데 두 사람이 시골로 걸어가고 있었다. 그때 예수께서 그들에게 나타나셨다. 예수의 모습은 전과 달랐다."
         }
       },
       "decisions": [
@@ -2172,6 +2511,11 @@
           "L": "Và những người ấy đi về báo cho những người còn lại; họ cũng không tin hai người ấy.",
           "B": "Hai người này trở về báo cho những người khác, nhưng họ cũng không tin hai người.",
           "R": "Hai người này trở về kể lại cho những người khác. Nhưng những người kia cũng không tin họ."
+        },
+        "ko": {
+          "L": "그리고 그들이 돌아가서 나머지 사람들에게 알렸으나, 그들은 이 사람들의 말도 믿지 않았다.",
+          "B": "이 두 사람이 돌아가서 다른 사람들에게 알렸지만, 그들은 이 두 사람의 말도 믿지 않았다.",
+          "R": "두 사람은 돌아가서 다른 사람들에게 이 일을 알렸다. 그러나 다른 사람들은 두 사람의 말도 믿지 않았다."
         }
       },
       "decisions": [
@@ -2278,6 +2622,11 @@
           "L": "Sau đó, {{deity_pronoun:ngài|Ngài}} hiện ra cho chính mười một [môn đồ] khi họ đang ngồi [ăn], và {{deity_pronoun:ngài|Ngài}} quở trách sự vô tín và lòng cứng cỏi của họ, vì họ đã không tin những người đã thấy {{deity_pronoun:ngài|Ngài}} sau khi {{deity_pronoun:ngài|Ngài}} đã được làm cho sống lại.",
           "B": "Sau đó, {{deity_pronoun:ngài|Ngài}} hiện ra cho chính mười một môn đồ khi họ đang ăn. Ngài quở trách họ vì họ không tin và lòng họ cứng cỏi, vì họ đã không tin những người đã thấy {{deity_pronoun:ngài|Ngài}} sống lại.",
           "R": "Sau đó, Đức Giê-xu hiện ra cho mười một sứ đồ khi họ đang ăn. Ngài trách họ vì họ không tin và lòng họ cứng cỏi. Họ đã không tin những người đã thấy {{deity_pronoun:ngài|Ngài}} sống lại."
+        },
+        "ko": {
+          "L": "그 뒤에 열한 [제자]가 [식탁에] 기대어 앉아 있을 때에 그분이 그들에게 나타나셨다. 그리고 그들의 믿지 않음과 마음의 완고함을 꾸짖으셨다. 그분이 살아나신 뒤에 그분을 본 사람들의 말을 그들이 믿지 않았기 때문이다.",
+          "B": "그 뒤에 열한 제자가 음식을 먹고 있을 때에 예수께서 그들에게 나타나셨다. 그리고 그들이 믿지 않고 마음이 굳어 있는 것을 꾸짖으셨다. 예수께서 살아나신 뒤에 예수를 본 사람들의 말을 그들이 믿지 않았기 때문이다.",
+          "R": "나중에 열한 제자가 함께 밥을 먹고 있을 때, 예수께서 그들에게 나타나셨다. 예수께서는 그들을 꾸짖으셨다. 그들이 믿지 않았고 마음이 고집스러웠기 때문이다. 그들은 다시 살아나신 예수를 본 사람들의 말을 믿지 않았다."
         }
       },
       "decisions": [
@@ -2429,6 +2778,50 @@
           "reason": "Balanced and Readable turn the nouns into the plain verb \"tin\" used through the book; \"cứng cỏi\" keeps the Greek picture of a hard heart.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41016014005",
+            "n41016014006"
+          ],
+          "choice": "\"열한 [제자]\" (L); \"열한 제자\" (B, R)",
+          "alternatives": [
+            "\"열한 사도\" (R)"
+          ],
+          "reason": "Korean cannot use the bare number as a noun here; as \"열둘\" / \"열두 제자\" in Mark 4:10, the book's word for disciples is kept rather than the English Readable's \"apostles\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41016014003",
+            "n41016014014"
+          ],
+          "choice": "\"[식탁에] 기대어 앉다\" (L), \"음식을 먹다\" (B), \"밥을 먹다\" (R); \"마음의 완고함\" (L), \"마음이 굳어 있는 것\" (B), \"마음이 고집스러웠다\" (R)",
+          "alternatives": [
+            "\"마음이 완악함\""
+          ],
+          "reason": "Literal keeps the posture at table with the place supplied; the hardness of heart takes the forms of Mark 3:5. \"완악함\" is the older church word.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2470,6 +2863,11 @@
           "L": "Và {{deity_pronoun:ngài|Ngài}} nói với họ: \"Hãy đi khắp thế gian, rao giảng Tin Lành cho mọi tạo vật.",
           "B": "Ngài bảo họ: \"Hãy đi khắp thế gian và rao giảng Tin Lành cho mọi tạo vật.",
           "R": "Đức Giê-xu bảo họ: \"Hãy đi khắp nơi trên thế gian. Hãy rao báo Tin Lành cho mọi người."
+        },
+        "ko": {
+          "L": "그리고 그분이 그들에게 말씀하셨다. \"온 세상에 가서, 모든 피조물에게 복음을 선포하여라.",
+          "B": "예수께서 그들에게 말씀하셨다. \"온 세상에 나가서 모든 피조물에게 복음을 전하여라.",
+          "R": "예수께서 그들에게 말씀하셨다. \"온 세상 곳곳에 가거라. 그리고 모든 사람에게 기쁜 소식을 전하여라."
         }
       },
       "decisions": [
@@ -2576,6 +2974,29 @@
           "reason": "The Protestant word for the gospel, as in Colossians 1:5; it already means \"good news\", so Readable keeps it where the English Readable says \"good news\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41016015011",
+            "n41016015013",
+            "n41016015014"
+          ],
+          "choice": "\"복음\" (L, B), \"기쁜 소식\" (R); \"모든 피조물\" (L, B), \"모든 사람\" (R)",
+          "alternatives": [
+            "\"만민\""
+          ],
+          "reason": "\"복음\" is the term of the Korean Colossians, and Readable's \"기쁜 소식\" is that of Mark 3:14; all creation here means every human being (meaning decision), which Readable says.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2612,6 +3033,11 @@
           "L": "Người đã tin và đã chịu báp-têm sẽ được cứu, còn người đã không tin sẽ bị kết án.",
           "B": "Ai tin và chịu báp-têm sẽ được cứu; còn ai không chịu tin sẽ bị kết án.",
           "R": "Những ai tin và chịu báp-têm sẽ được cứu. Nhưng những ai không tin sẽ bị kết án."
+        },
+        "ko": {
+          "L": "믿고 세례를 받은 사람은 구원을 받을 것이다. 그러나 믿지 않은 사람은 정죄를 받을 것이다.",
+          "B": "믿고 세례를 받는 사람은 구원을 받을 것이고, 믿기를 거부하는 사람은 정죄를 받을 것이다.",
+          "R": "믿고 세례를 받는 사람은 구원을 받을 것이다. 그러나 믿지 않는 사람은 죄가 있다는 판결을 받을 것이다."
         }
       },
       "decisions": [
@@ -2708,6 +3134,27 @@
           "reason": "The Protestant phrase for receiving baptism (Romans 6), matching \"làm báp-têm\" for the act.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41016016009"
+          ],
+          "choice": "\"정죄를 받다\" (L, B); \"죄가 있다는 판결을 받다\" (R)",
+          "alternatives": [
+            "\"심판을 받다\""
+          ],
+          "reason": "\"정죄\" is the word of the Korean John (3:17-18; 8:10-11); Readable says what it means, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2768,6 +3215,11 @@
           "L": "Và những dấu lạ này sẽ đi theo những người đã tin: trong danh {{deity_pronoun:ta|Ta}} họ sẽ đuổi quỷ; họ sẽ nói những tiếng mới; \\v 18 họ sẽ cầm rắn lên, và nếu họ uống phải thứ gì độc chết người, thì cũng chẳng hại gì cho họ; họ sẽ đặt tay trên người bệnh, và người bệnh sẽ được lành.\"",
           "B": "Những dấu lạ này sẽ đi kèm những người tin: nhân danh {{deity_pronoun:ta|Ta}} họ sẽ đuổi quỷ và nói những tiếng mới; \\v 18 họ sẽ cầm rắn lên; nếu họ uống phải chất độc chết người, chất độc ấy cũng không làm hại họ; họ sẽ đặt tay trên người bệnh, và người bệnh sẽ được khỏe lại.\"",
           "R": "Những dấu lạ này sẽ đi theo những người tin. Họ sẽ nhân danh {{deity_pronoun:ta|Ta}} mà đuổi quỷ ra khỏi người ta. Họ sẽ nói những ngôn ngữ mới. \\v 18 Họ sẽ cầm rắn lên. Nếu họ uống phải chất độc chết người, họ cũng không bị hại gì. Họ sẽ đặt tay trên người bệnh, và người bệnh sẽ được lành.\""
+        },
+        "ko": {
+          "L": "그리고 믿은 사람들에게는 이런 표적들이 따를 것이다. 그들은 내 이름으로 귀신들을 쫓아내고, 새 방언으로 말하고, \\v 18 뱀들을 집어 들고, 죽게 하는 무엇을 마셔도 결코 해를 입지 않고, 아픈 사람들에게 손을 얹으면 그들이 나을 것이다.\"",
+          "B": "믿는 사람들에게는 이런 표적들이 따를 것이다. 그들은 내 이름으로 귀신을 쫓아내고, 새 방언으로 말할 것이다. \\v 18 뱀을 집어 들 것이고, 무슨 독을 마셔도 전혀 해를 입지 않을 것이다. 그들이 아픈 사람들에게 손을 얹으면 아픈 사람들이 나을 것이다.\"",
+          "R": "그리고 믿는 사람들에게는 이런 표적들이 함께 나타날 것이다. 표적은 하나님께서 일하고 계심을 보여 주는 일이다. 그들은 내 이름의 힘으로 귀신을 사람들에게서 쫓아낼 것이다. 그들은 배우지 않은 새로운 언어로 말할 것이다. \\v 18 그들은 뱀을 집어 들 것이다. 사람을 죽이는 독을 마셔도 해를 입지 않을 것이다. 그들이 아픈 사람들에게 손을 얹으면 아픈 사람들이 나을 것이다.\""
         }
       },
       "decisions": [
@@ -2940,6 +3392,50 @@
           "reason": "Readable uses the everyday word for a language; \"tiếng lạ\" would add \"strange\", which the Greek \"new\" does not say.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41016017001"
+          ],
+          "choice": "\"표적\" at every level; Readable explains it once",
+          "alternatives": [
+            "\"기적\""
+          ],
+          "reason": "The key term of the Korean John (style guide, section 6), never \"기적\"; Readable says what a sign is, following the meaning decision.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41016017013",
+            "n41016017014",
+            "n41016017015"
+          ],
+          "choice": "\"새 방언\" (L, B); \"배우지 않은 새로운 언어\" (R)",
+          "alternatives": [
+            "\"새 언어\" (L, B)"
+          ],
+          "reason": "\"방언\" is the established Korean word for speech given by the Spirit; Readable says what it is, as the meaning decision and the English Readable do.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2986,6 +3482,11 @@
           "L": "Vậy, Chúa Giê-xu, sau khi nói với họ, được cất lên trời và ngồi bên phải Đức Chúa Trời.",
           "B": "Vậy, sau khi nói với họ, Chúa Giê-xu được cất lên trời và ngồi bên phải Đức Chúa Trời.",
           "R": "Khi Chúa Giê-xu nói với họ xong, Đức Chúa Trời đem {{deity_pronoun:ngài|Ngài}} lên trời. Tại đó {{deity_pronoun:ngài|Ngài}} ngồi bên phải Đức Chúa Trời, là chỗ tôn quý nhất."
+        },
+        "ko": {
+          "L": "그러므로 주 예수께서는 그들에게 말씀하신 뒤에 하늘로 들려 올라가셔서 하나님의 오른편에 앉으셨다.",
+          "B": "주 예수께서는 그들에게 말씀하신 뒤에 하늘로 들려 올라가셔서 하나님의 오른편에 앉으셨다.",
+          "R": "주 예수께서 그들에게 말씀을 마치시자, 하나님께서 예수를 하늘로 데려가셨다. 예수께서는 거기서 하나님의 오른편, 가장 높은 영광의 자리에 앉으셨다."
         }
       },
       "decisions": [
@@ -3084,6 +3585,30 @@
           "reason": "\"Chúa\" is itself the title of honour, so \"Đức\" is not added before the name, as in Colossians 3:17.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41016019010",
+            "n41016019016",
+            "n41016019017"
+          ],
+          "choice": "\"들려 올라가다\" (L, B) for the passive \"was taken up\"; \"오른편\" at every level",
+          "alternatives": [
+            "\"승천하셨다\"",
+            "\"오른쪽\""
+          ],
+          "reason": "\"들려 올라가다\" keeps the passive (God took him up); \"오른편\" is the dignified word of the Korean Colossians 3:1 for the place of honour.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3127,6 +3652,11 @@
           "L": "Còn những người ấy ra đi rao giảng khắp nơi, trong khi Chúa cùng làm việc với [họ] và xác nhận lời ấy qua các dấu lạ đi kèm.",
           "B": "Họ ra đi và rao giảng sứ điệp khắp nơi. Chúa cùng làm việc với họ và xác nhận lời ấy bằng những dấu lạ đi kèm.",
           "R": "Rồi các môn đồ ra đi và rao báo sứ điệp ấy khắp nơi. Chúa cùng làm việc với họ. Ngài chứng tỏ sứ điệp của họ là thật bằng những dấu lạ xảy ra kèm theo."
+        },
+        "ko": {
+          "L": "그리고 그들은 나가서 곳곳에서 선포했다. 주님께서 [그들과] 함께 일하시며, [말씀에] 따르는 표적들을 통하여 말씀을 확증하셨다.",
+          "B": "제자들은 나가서 곳곳에서 말씀을 전했다. 주님께서 그들과 함께 일하시고, 말씀에 따르는 표적들로 그 말씀이 참되다는 것을 확증해 주셨다.",
+          "R": "그 뒤에 제자들은 나가서 모든 곳에 다니며 기쁜 소식을 전했다. 주님께서 그들과 함께 일하셨다. 그리고 표적들을 일으키셔서 그들이 전하는 말씀이 참되다는 것을 보여 주셨다."
         }
       },
       "decisions": [
@@ -3213,6 +3743,28 @@
             "proclaimed"
           ],
           "reason": "Balanced and Readable say what they proclaimed. Readable names who went out and says \"proved that their message was true\" for confirmed.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41016020006",
+            "n41016020011"
+          ],
+          "choice": "\"주님\" for the risen Lord; \"말씀\" for the message",
+          "alternatives": [
+            "\"주\""
+          ],
+          "reason": "\"주님\" is how the Korean John names the risen Jesus (20:18); \"말씀\" is the book's word for God's message (Mark 4:14).",
           "uncertain": false,
           "footnote": false
         }
