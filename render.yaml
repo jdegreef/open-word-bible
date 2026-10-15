@@ -73,7 +73,8 @@ services:
 
   # Django API and admin (backend/). Every deploy loads whatever source
   # texts are missing (import_texts --missing: nothing to do once they are
-  # all in, so no sources are fetched), then reloads content/. Each deploy
+  # all in, so no sources are fetched), then imports the content/ files that
+  # changed and updates the search entries that changed. Each deploy
   # starts with a fresh disk, so the command fetches just the sources it
   # needs, and imports one edition per process to stay within the starter
   # plan's 512 MB. A failed fetch or import is logged and retried on the next
@@ -88,8 +89,10 @@ services:
     # As for the site: deploy main only once its CI checks pass.
     autoDeployTrigger: checksPass
     buildCommand: pip install -r backend/requirements.txt && python backend/manage.py collectstatic --noinput
-    # Migrate, load any missing source texts, then reload content/ so the API
-    # matches main. Management commands have no statement timeout; web
+    # Migrate, load any missing source texts, then import what changed in
+    # content/ so the API matches main. Render stops a pre-deploy command after
+    # 30 minutes, and reloading all of content/ and search came to take
+    # longer than that; import_content explains. Management commands have no statement timeout; web
     # requests give up on a query after DB_STATEMENT_TIMEOUT_MS (15 s).
     preDeployCommand: python backend/manage.py migrate --noinput && python backend/manage.py import_texts --missing && python backend/manage.py import_content --if-texts-loaded
     # Threads, so a slow request (such as sending a sign-in email) does not
