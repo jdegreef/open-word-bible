@@ -188,6 +188,10 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | relative (*syngenis*) | pariente | jamaa |
 | scroll (*biblion*) | rollo | gombo |
 | sky (*ouranos* as the sky) | cielo | anga |
+| evil spirits (*pneumata ponēra*) | espíritus malignos | pepo wabaya |
+| door (*thyra*) | puerta | mlango (lango for a city gate) |
+| bier | andas | machela |
+| thanks, credit (*charis* not as grace) | reconocimiento, agradecimiento | shukrani |
 | tomb (*mnēmeion*) | el sepulcro (L, B); la tumba (R) | kaburi |
 | at the right (hand) | a la derecha (de) | upande wa kulia (wa) |
 
