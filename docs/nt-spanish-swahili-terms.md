@@ -165,6 +165,8 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | tunic (*chitōn*) | túnica | kanzu |
 | mat, pallet (*krabattos*) | camilla | mkeka (L); machela (B, R) |
 | local councils (*synedria*) | consejos | mabaraza |
+| Simon the Cananaean / the Zealot | Simón el cananista (L, B); Simón el Zelote (R and where Luke says Zealot) | Simoni Mkananayo (L, B); Simoni Mzelote (R) |
+| evil, unclean, mute spirit | espíritu impuro / mudo | pepo (roho only for the Holy Spirit and the human spirit) |
 | tomb (*mnēmeion*) | el sepulcro (L, B); la tumba (R) | kaburi |
 | at the right (hand) | a la derecha (de) | upande wa kulia (wa) |
 
