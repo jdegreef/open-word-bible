@@ -174,6 +174,10 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | cloak (*himation*) | manto (L, B); capa (R) | vazi (L); vazi la nje (B); koti (R) |
 | treasury (temple) | el tesoro (L); las cajas de las ofrendas (B, R) | hazina (L); masanduku ya sadaka (B, R) |
 | burnt offerings | holocaustos | sadaka za kuteketezwa |
+| Master (*despotēs*) | Soberano (Amo at L) | Bwana Mkuu |
+| manger | pesebre | hori |
+| betrothed | comprometida | ameposwa (L); amechumbiwa (B, R) |
+| bless (God) | bendecir | kumhimidi |
 | tomb (*mnēmeion*) | el sepulcro (L, B); la tumba (R) | kaburi |
 | at the right (hand) | a la derecha (de) | upande wa kulia (wa) |
 
@@ -215,7 +219,7 @@ Decision text stays in English, quoting the Spanish or Swahili words.
   Marko, Luka, Paulo, Barnaba, Stefano, Filipo, Herode, Pilato, Yerusalemu,
   Galilaya, Kapernaumu, Nazareti, Bethlehemu, Musa, Eliya, Isaya, Daudi,
   Ibrahimu, Sulemani, Ninawi, Habili, Zakaria, Yusufu (Joseph),
-  Uyahudi (Judea, as John).
+  Uyahudi (Judea, as John; never Yudea).
 - Hours: the Greek counts from sunrise as Swahili does, so "the ninth hour"
   is *saa tisa* at every level; Balanced and Readable may add *mchana*,
   *jioni*. The night watches likewise in Swahili time.
