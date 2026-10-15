@@ -18,9 +18,8 @@ imported is skipped (ImportedFile keeps each file's digest). A deploy uses
 it: reloading all of content/ outgrew Render's 30-minute pre-deploy limit.
 Run by hand without it, every file named is reloaded, as before. With
 --budget SECONDS, the command stops starting new files once that long has
-passed and leaves the rest, which are still unchanged-or-not by digest, to
-the next run; so a deploy after a big change still finishes, and catches up
-over the next deploys.
+passed and leaves the rest to the next run, so a deploy after a big change
+still finishes and the next deploys catch up.
 
 Afterwards the search tables are rebuilt (translation/search.py), from all
 of content/ and articles/, whichever files were imported.
@@ -109,9 +108,8 @@ class Command(BaseCommand):
     @staticmethod
     def key(path):
         """The path ImportedFile records: from the repository root when inside it."""
-        path = Path(path).resolve()
-        return str(path.relative_to(settings.REPO_ROOT.resolve())) if path.is_relative_to(
-            settings.REPO_ROOT.resolve()) else str(path)
+        path, root = Path(path).resolve(), settings.REPO_ROOT.resolve()
+        return str(path.relative_to(root) if path.is_relative_to(root) else path)
 
     def validate_records(self, records):
         verse_ids = {v for r in records for v in r.get("refs", [])}
