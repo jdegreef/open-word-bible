@@ -205,6 +205,8 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | truly (*alēthōs*, not amen) | verdaderamente, de verdad | kwa kweli |
 | tents, shelters (*skēnai*) | tiendas (L); chozas (B, R) | hema (L); vibanda (B, R) |
 | mina | mina (no units span) | mina |
+| ruler (*archōn*) | dirigente, jefe | kiongozi |
+| judge; justice in court | juez; justicia | hakimu; haki (court justice may share the word) |
 | tomb (*mnēmeion*) | el sepulcro (L, B); la tumba (R) | kaburi |
 | at the right (hand) | a la derecha (de) | upande wa kulia (wa) |
 
