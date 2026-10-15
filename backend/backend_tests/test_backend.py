@@ -13,7 +13,7 @@ from django.core.management import CommandError, call_command
 from django.test import TestCase
 
 from texts.models import Edition, Verse, Word
-from translation.models import Decision, Rendering, ReviewEvent, Sentence
+from translation.models import Decision, ImportedFile, Rendering, ReviewEvent, Sentence
 
 CONTENT = settings.REPO_ROOT / "content"
 
@@ -108,6 +108,39 @@ class ImportContentTest(TestCase):
         s.refresh_from_db()
         self.assertNotEqual(s.literal_gloss, "changed")
         self.assertFalse(s.renderings.filter(text="changed").exists())
+
+    def test_changed_only_skips_files_unchanged_since_last_import(self):
+        # A deploy reloads only what changed: reloading all of content/ outgrew
+        # Render's 30-minute pre-deploy limit.
+        john = content_files("JHN/JHN.1.1-18.json")
+        import_content(*john)
+        s = Sentence.objects.get(record_id="JHN.1.12.s1")
+        s.renderings.update(text="changed")
+        out = io.StringIO()
+        import_content("--changed-only", *john, stdout=out)
+        self.assertIn("1 unchanged file(s) skipped", out.getvalue())
+        self.assertTrue(s.renderings.filter(text="changed").exists())
+        # A file whose bytes changed is reloaded.
+        data = json.loads((CONTENT / "JHN" / "JHN.1.1-18.json").read_text())
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "JHN.1.1-18.json"
+            path.write_text(json.dumps(data))
+            import_content("--changed-only", str(path))
+            s.renderings.update(text="changed")
+            data["records"][0]["literal_gloss"] += " (edited)"
+            path.write_text(json.dumps(data))
+            import_content("--changed-only", str(path))
+        self.assertFalse(s.renderings.filter(text="changed").exists())
+
+    def test_budget_leaves_the_rest_for_the_next_run(self):
+        files = content_files("PHP/PHP.4.*.json", "JHN/JHN.1.*.json")
+        self.assertGreater(len(files), 1)
+        out = io.StringIO()
+        import_content("--changed-only", "--budget", "0", *files, stdout=out)
+        self.assertIn("file(s) left for the next run", out.getvalue())
+        self.assertFalse(Sentence.objects.exists())
+        import_content("--changed-only", "--budget", "100000", *files)
+        self.assertEqual(ImportedFile.objects.count(), len(files))
 
     def test_file_with_an_unknown_word_is_not_imported(self):
         data = json.loads((CONTENT / "JHN" / "JHN.1.1-18.json").read_text())

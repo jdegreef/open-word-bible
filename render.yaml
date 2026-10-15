@@ -88,10 +88,12 @@ services:
     # As for the site: deploy main only once its CI checks pass.
     autoDeployTrigger: checksPass
     buildCommand: pip install -r backend/requirements.txt && python backend/manage.py collectstatic --noinput
-    # Migrate, load any missing source texts, then reload content/ so the API
-    # matches main. Management commands have no statement timeout; web
+    # Migrate, load any missing source texts, then reload the content/ files
+    # that changed since the last deploy, so the API matches main. Render stops
+    # a pre-deploy at 30 minutes; reloading every file outgrew that, and
+    # --budget leaves files past 15 minutes for the next deploy. Management commands have no statement timeout; web
     # requests give up on a query after DB_STATEMENT_TIMEOUT_MS (15 s).
-    preDeployCommand: python backend/manage.py migrate --noinput && python backend/manage.py import_texts --missing && python backend/manage.py import_content --if-texts-loaded
+    preDeployCommand: python backend/manage.py migrate --noinput && python backend/manage.py import_texts --missing && python backend/manage.py import_content --if-texts-loaded --changed-only --budget 900
     # Threads, so a slow request (such as sending a sign-in email) does not
     # hold up reading.
     startCommand: gunicorn --chdir backend config.wsgi --workers 2 --threads 4 --worker-class gthread --timeout 60
@@ -102,6 +104,10 @@ services:
       # The version CI tests with (.github/workflows/ci.yml).
       - key: PYTHON_VERSION
         value: "3.13"
+      # Logs line by line, not in blocks, so the deploy log shows where a
+      # slow pre-deploy actually is.
+      - key: PYTHONUNBUFFERED
+        value: "1"
       - key: DATABASE_URL
         fromDatabase:
           name: owb-db

@@ -1,7 +1,7 @@
 """Load the sentence records in content/ into the database.
 
     python manage.py import_content
-    python manage.py import_content --if-texts-loaded   # run on every deploy
+    python manage.py import_content --if-texts-loaded --changed-only --budget 900   # every deploy
 
 Every record is checked first with owb.validate against the words already in
 the database (run import_texts before this). A file with any error is not
@@ -13,10 +13,22 @@ Renderings and decisions are replaced from the file, since content/
 is still the master copy. A sentence's status is set only when it is created:
 once review starts, the review trail owns it and a re-import never resets it.
 
+With --changed-only, a file whose bytes are the same as when it was last
+imported is skipped (ImportedFile keeps each file's digest). A deploy uses
+it: reloading all of content/ outgrew Render's 30-minute pre-deploy limit.
+Run by hand without it, every file named is reloaded, as before. With
+--budget SECONDS, the command stops starting new files once that long has
+passed and leaves the rest, which are still unchanged-or-not by digest, to
+the next run; so a deploy after a big change still finishes, and catches up
+over the next deploys.
+
 Afterwards the search tables are rebuilt (translation/search.py), from all
 of content/ and articles/, whichever files were imported.
 """
+import hashlib
 import json
+import time
+from pathlib import Path
 
 from django.conf import settings
 from django.core.management.base import BaseCommand, CommandError
@@ -25,7 +37,7 @@ from django.db import transaction
 from owb import refs, validate
 from texts.models import Edition, Word
 from translation import search
-from translation.models import Decision, Rendering, Sentence
+from translation.models import Decision, ImportedFile, Rendering, Sentence
 
 TEXT_ID_EDITION = {"SBLGNT@v1.2": "sblgnt", "WLC@macula-hebrew": "wlc"}
 
@@ -37,8 +49,13 @@ class Command(BaseCommand):
         parser.add_argument("paths", nargs="*", help="Content files (default: content/*/*.json)")
         parser.add_argument("--if-texts-loaded", action="store_true",
                             help="Skip quietly if import_texts has not been run yet")
+        parser.add_argument("--changed-only", action="store_true",
+                            help="Skip files unchanged since they were last imported")
+        parser.add_argument("--budget", type=float, metavar="SECONDS",
+                            help="Start no new file after this long; the rest wait for the next run")
 
-    def handle(self, *args, paths, if_texts_loaded=False, **options):
+    def handle(self, *args, paths, if_texts_loaded=False, changed_only=False, budget=None, **options):
+        started = time.monotonic()
         if if_texts_loaded and not Word.objects.exists():
             self.stdout.write("No source texts in the database yet; run import_texts, "
                               "then import_content. Nothing imported.")
@@ -46,11 +63,21 @@ class Command(BaseCommand):
         files = paths or sorted(str(p) for p in (settings.REPO_ROOT / "content").glob("*/*.json"))
         if not files:
             raise CommandError("No content files found")
-        total = 0
+        total = unchanged = 0
+        left = []
         loaded = set(Edition.objects.filter(words__isnull=False).distinct().values_list("code", flat=True))
         editions = {e.code: e for e in Edition.objects.all()}
-        for path in files:
-            records = json.loads(open(path, encoding="utf-8").read())["records"]
+        digests = dict(ImportedFile.objects.values_list("path", "digest")) if changed_only else {}
+        for i, path in enumerate(files):
+            data = Path(path).read_bytes()
+            key, digest = self.key(path), hashlib.sha256(data).hexdigest()
+            if changed_only and digests.get(key) == digest:
+                unchanged += 1
+                continue
+            if budget is not None and time.monotonic() - started > budget:
+                left = files[i:]
+                break
+            records = json.loads(data)["records"]
             missing = sorted({TEXT_ID_EDITION[r["source"]["text_id"]] for r in records} - loaded)
             if missing:
                 message = (f"{path}: the {', '.join(missing)} text is not in the database; "
@@ -66,11 +93,25 @@ class Command(BaseCommand):
                 raise CommandError(f"{path}: {len(errors)} error(s); nothing imported from it")
             with transaction.atomic():
                 self.save(records, editions)
+                ImportedFile.objects.update_or_create(path=key, defaults={"digest": digest})
             total += len(records)
             self.stdout.write(f"{path}: {len(records)} records")
-        self.stdout.write(f"{total} records imported")
+        self.stdout.write(f"{total} records imported in {time.monotonic() - started:.0f} s"
+                          + (f"; {unchanged} unchanged file(s) skipped" if changed_only else ""))
+        if left:
+            self.stdout.write(f"Budget of {budget:.0f} s used up: {len(left)} file(s) left for the next "
+                              f"run, from {left[0]}")
+        rebuilding = time.monotonic()
         counts = search.rebuild()
-        self.stdout.write("search: " + ", ".join(f"{lang} {n}" for lang, n in counts.items()))
+        self.stdout.write("search: " + ", ".join(f"{lang} {n}" for lang, n in counts.items())
+                          + f" ({time.monotonic() - rebuilding:.0f} s)")
+
+    @staticmethod
+    def key(path):
+        """The path ImportedFile records: from the repository root when inside it."""
+        path = Path(path).resolve()
+        return str(path.relative_to(settings.REPO_ROOT.resolve())) if path.is_relative_to(
+            settings.REPO_ROOT.resolve()) else str(path)
 
     def validate_records(self, records):
         verse_ids = {v for r in records for v in r.get("refs", [])}

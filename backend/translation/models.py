@@ -117,6 +117,17 @@ class ReviewEvent(models.Model):
         return f"{self.sentence} {self.action} by {self.user}"
 
 
+class ImportedFile(models.Model):
+    """A content file as import_content last loaded it, so a deploy
+    (import_content --changed-only) reloads only the files that changed."""
+    path = models.CharField(max_length=255, primary_key=True, help_text="e.g. content/JHN/JHN.1.1-18.json")
+    digest = models.CharField(max_length=64, help_text="SHA-256 of the file as imported")
+    imported_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.path
+
+
 # Search (GET /api/search/, translation/search.py). import_content rebuilds
 # these tables from the same documents the site's own search file holds
 # (search_documents in scripts/build_site.py), one set per site language.
