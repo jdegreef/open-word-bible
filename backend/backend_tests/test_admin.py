@@ -2,6 +2,9 @@
 the progress numbers, the team, accounts, the inbox, jobs and team email."""
 import io
 import json
+import shutil
+import tempfile
+from pathlib import Path
 from unittest import mock
 
 from django.conf import settings
@@ -15,6 +18,7 @@ from rest_framework.test import APIClient
 
 from accounts.models import ApiToken, Mark, Role, new_secret
 from feedback.models import ReaderMessage
+from staff import articles as staff_articles
 from staff import jobs as staff_jobs
 from staff.models import AdminAction, Broadcast
 from staff.permissions import AREAS
@@ -526,3 +530,62 @@ class TextTest(AdminTestCase):
         self.assertEqual(grace["uses"], 1)
         self.assertEqual((grace["by_language"]["fr"], grace["by_language"]["es"]), (1, 0))
         self.assertEqual(grace["first"], [{"verse": "JHN.1.1", "label": "John 1:1"}])
+
+
+class ArticlesTest(AdminTestCase):
+    def setUp(self):
+        super().setUp()
+        self.root = Path(tempfile.mkdtemp())
+        self.addCleanup(shutil.rmtree, self.root)
+        english = '---\ntitle: "On \\"words\\""\nsummary: S\ndate: 2026-10-01\n---\nBody one.\n'
+        (self.root / "one.md").write_text(english, encoding="utf-8")
+        (self.root / "two.md").write_text("---\ntitle: Two\nsummary: S\ndate: 2026-10-02\n---\nBody two.\n",
+                                          encoding="utf-8")
+        (self.root / "es").mkdir()
+        es = self.root / "es" / "one.md"
+        es.write_text("---\ntitle: Uno\nsummary: S\ndate: 2026-10-01\n---\nCuerpo.\n", encoding="utf-8")
+        staff_articles.check_translations.stamp(es, english)
+        (self.root / "fr").mkdir()
+        (self.root / "fr" / "one.md").write_text("---\ntitle: Un\nsummary: S\ndate: 2026-10-01\nsource: old\n---\n.\n",
+                                                 encoding="utf-8")
+        real = staff_articles._articles
+        patcher = mock.patch.object(staff_articles, "_articles", lambda root=None: real(self.root))
+        patcher.start()
+        self.addCleanup(patcher.stop)
+
+    def test_states_for_the_team(self):
+        reporter = client_for(account("rep@example.org", (K.REPORTING,)))
+        data = reporter.get("/api/admin/articles/").json()
+        one = next(a for a in data["articles"] if a["slug"] == "one")
+        self.assertEqual(one["title"], 'On "words"')
+        self.assertEqual((one["languages"]["es"], one["languages"]["fr"], one["languages"]["sw"]),
+                         ("current", "out_of_date", "missing"))
+        self.assertEqual(data["totals"]["es"]["missing"], 1)
+        self.assertFalse(data["can_file"])
+        self.assertEqual(reporter.post("/api/admin/articles/", {"language": "es", "slugs": ["two"]},
+                                       format="json").status_code, 403)
+
+    @override_settings(OWB_GITHUB_TOKEN="t")
+    def test_file_a_job_for_what_needs_work(self):
+        calls = []
+
+        def github(path, method="GET", body=None):
+            calls.append((path, method, body))
+            if method == "POST":
+                return {"number": 11, "html_url": "https://github.com/x/y/issues/11"}
+            return [{"number": 10, "title": "t", "html_url": "u", "created_at": "2026-10-16T00:00:00Z",
+                     "body": 'x\n<!-- article-job {"language": "sw", "slugs": ["two"]} -->'}]
+        with mock.patch.object(staff_jobs, "_github", side_effect=github):
+            current = self.admin.post("/api/admin/articles/", {"language": "es", "slugs": ["one"]}, format="json")
+            self.assertEqual(current.json()["code"], "nothing_to_do")
+            dup = self.admin.post("/api/admin/articles/", {"language": "sw", "slugs": ["two"]}, format="json")
+            self.assertEqual(dup.json()["code"], "duplicate")
+            r = self.admin.post("/api/admin/articles/", {"language": "fr", "slugs": ["one", "two", "nope"]},
+                                format="json")
+        self.assertEqual(r.status_code, 201, r.content)
+        path, method, body = calls[-1]
+        self.assertEqual(body["labels"], ["article-job"])
+        self.assertEqual(body["title"], "Articles in French: 2 to translate or update")
+        self.assertIn('- `one` (On "words"): bring up to date with the English', body["body"])
+        self.assertIn("- `two` (Two): translate", body["body"])
+        self.assertIn('<!-- article-job {"language": "fr", "slugs": ["one", "two"]} -->', body["body"])

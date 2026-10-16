@@ -156,6 +156,7 @@
     { id: "decisions", label: "Uncertain decisions", area: "overview", group: "Text" },
     { id: "terms", label: "Key terms", area: "overview", group: "Text" },
     { id: "fixes", label: "Fix requests", area: "inbox", group: "Text" },
+    { id: "articles", label: "Articles", area: "overview", group: "Text" },
     { id: "inbox", label: "Reader inbox", area: "inbox", group: "Readers" },
     { id: "users", label: "Users", area: "users", group: "Readers" },
     { id: "engagement", label: "Engagement", area: "overview", group: "Readers" },
@@ -761,6 +762,68 @@
     });
   };
 
+  // Articles: each English article's state in every language, and jobs for
+  // the ones missing or behind their English.
+  var ARTICLE_STATE = { current: ["Current", "good"], out_of_date: ["Out of date", "warn"],
+    not_stamped: ["Not stamped", "warn"], missing: ["Missing", ""] };
+  var ARTICLES = { lang: "", todo: false };
+  VIEWS.articles = function () {
+    return api("/api/admin/articles/").then(function (d) {
+      var f = ARTICLES;
+      if (!f.lang) f.lang = d.languages[0].code;
+      var status = h("p", { class: "admin-note", role: "status" });
+      var tiles = h("div", { class: "admin-tiles" }, d.languages.map(function (l) {
+        var t = d.totals[l.code], done = d.articles.length - t.missing;
+        return tile(done + " / " + d.articles.length, l.name + " translated" + (t.out_of_date ? ", " + t.out_of_date + " out of date" : "") +
+          (t.not_stamped ? ", " + t.not_stamped + " not stamped" : ""));
+      }));
+      var langSel = select("article-lang", d.languages.map(function (l) { return [l.code, l.name]; }), f.lang);
+      langSel.setAttribute("aria-label", "Language to act on");
+      langSel.addEventListener("change", function () { f.lang = langSel.value; route(); });
+      var todo = h("label", null, h("input", { type: "checkbox", id: "article-todo", checked: f.todo }), " Only what needs work in that language");
+      todo.querySelector("input").addEventListener("change", function (e) { f.todo = e.target.checked; route(); });
+      var shown = d.articles.filter(function (a) { return !f.todo || a.languages[f.lang] !== "current"; });
+      var rows = shown.map(function (a) {
+        var state = a.languages[f.lang];
+        return h("tr", null,
+          d.can_file ? h("td", null, state !== "current" ? h("input", { type: "checkbox", value: a.slug, "aria-label": "Choose " + a.title }) : null) : null,
+          h("td", null, h("a", { href: SITE + "/articles/" + a.slug + "/", rel: "noopener" }, a.title), h("span", { class: "admin-sub" }, a.slug + " \u00b7 " + num(a.words) + " words \u00b7 " + a.date)),
+          d.languages.map(function (l) {
+            var st = ARTICLE_STATE[a.languages[l.code]];
+            return h("td", { class: "admin-cell" + (l.code === f.lang ? " on" : "") }, pill(st[0], st[1]));
+          }));
+      });
+      var out = [head("Text", "Articles", "Each English article and its translations, from scripts/check_translations.py: a translation is out of date when its English has changed since it was stamped."), tiles,
+        h("div", { class: "admin-toolbar" }, h("span", null, "Act on ", langSel), todo)];
+      if (d.can_file) {
+        if (!d.configured) out.push(h("p", { class: "notice" }, "Filing is off: set OWB_GITHUB_TOKEN on the API service in Render."));
+        if (d.error) out.push(h("p", { class: "notice" }, d.error));
+        var noteField = h("input", { id: "article-note", maxlength: 2000, placeholder: "A note for the session (optional)", "aria-label": "Note" });
+        var file = h("button", { type: "button", class: "admin-btn primary", disabled: !d.configured }, "File a job for the chosen articles");
+        var all = h("button", { type: "button", class: "admin-btn" }, "Choose all that need work");
+        all.addEventListener("click", function () { main.querySelectorAll("tbody input[type=checkbox]").forEach(function (c) { c.checked = true; }); });
+        file.addEventListener("click", function () {
+          var slugs = Array.prototype.map.call(main.querySelectorAll("tbody input:checked"), function (c) { return c.value; });
+          if (!slugs.length) { note(status, "Choose at least one article.", true); return; }
+          busy(file, true);
+          api("/api/admin/articles/", { method: "POST", body: { language: f.lang, slugs: slugs, note: noteField.value } }).then(function (r) {
+            FLASH = "Filed as #" + r.number + "."; route();
+          }, function (err) { busy(file, false); note(status, err, true); });
+        });
+        out.push(h("div", { class: "admin-actions" }, all, noteField, file), status);
+      }
+      out.push(table((d.can_file ? [""] : []).concat(["Article"], d.languages.map(function (l) { return [l.code, { class: "admin-cell", title: l.name }]; })), rows));
+      if (d.can_file) {
+        out.push(h("section", { class: "admin-block" }, h("h2", null, "Open article jobs"),
+          d.jobs && d.jobs.length ? table(["Issue", "Language", "Articles", "Filed"], d.jobs.map(function (j) {
+            return h("tr", null, h("td", null, h("a", { href: j.url, rel: "noopener" }, "#" + j.number)), h("td", null, j.language || "\u2014"),
+              h("td", { class: "admin-wrap" }, (j.slugs || []).join(", ")), h("td", null, when(j.created_at)));
+          })) : empty("No open article jobs.")));
+      }
+      return out;
+    });
+  };
+
   // Users.
   var USERS = { q: "", role: "", offset: 0 };
   VIEWS.users = function () {
@@ -894,7 +957,7 @@
     "role.grant": "granted a role to", "role.revoke": "removed a role from", "role.invite": "invited",
     "user.delete": "deleted the account", "user.sign_out": "signed out the devices of",
     "message.reply": "answered", "message.done": "marked done", "message.declined": "declined", "message.new": "reopened",
-    "job.file": "filed drafting job", "email.send": "emailed the team:", "fix.request": "requested fix"
+    "job.file": "filed drafting job", "article.job": "filed article job", "email.send": "emailed the team:", "fix.request": "requested fix"
   };
   function activityList(actions) {
     return h("ul", { class: "admin-feed" }, actions.map(function (a) {

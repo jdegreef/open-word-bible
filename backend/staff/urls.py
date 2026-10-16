@@ -1,6 +1,6 @@
 from django.urls import path
 
-from . import emails, fixes, inbox, jobs, progress, team, text, users, verses
+from . import articles, emails, fixes, inbox, jobs, progress, team, text, users, verses
 
 urlpatterns = [
     path("overview/", progress.overview),
@@ -19,6 +19,7 @@ urlpatterns = [
     path("fixes/", fixes.fixes),
     path("decisions/", text.decisions),
     path("terms/", text.terms),
+    path("articles/", articles.articles),
     path("emails/", emails.emails),
     path("jobs/", jobs.jobs),
     path("team/", team.team),
