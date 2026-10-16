@@ -49,6 +49,11 @@
           "L": "Và cả đoàn người của họ đứng dậy, giải {{deity_pronoun:ngài|Ngài}} đến Phi-lát.",
           "B": "Bấy giờ cả hội đồng đứng dậy và giải {{deity_pronoun:ngài|Ngài}} đến trước Phi-lát.",
           "R": "Rồi cả hội đồng đứng dậy và đưa Đức Giê-xu đến Phi-lát, quan tổng đốc La Mã."
+        },
+        "ko": {
+          "L": "그리고 그들의 온 무리가 일어나서 그분을 빌라도에게로 끌고 갔다.",
+          "B": "그러자 온 무리가 일어나 예수를 빌라도 앞으로 끌고 갔다.",
+          "R": "그 뒤에 유대 최고 의회의 의원들이 모두 일어나 예수를 로마 총독 빌라도에게 끌고 갔다."
         }
       },
       "decisions": [
@@ -189,6 +194,47 @@
           "reason": "Literal keeps the Greek \"the whole multitude of them\"; Balanced and Readable say who they were, the council that had questioned Jesus (meaning decision).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n42023001008"
+          ],
+          "choice": "No deity_pronoun spans in Korean; the narrative honours Jesus with \"께서\" and -시- (\"그분\" at Literal), Jesus speaks in 해라체, Pilate, Herod's men and the mockers speak to him without honorifics, and Jesus prays to the Father in 합쇼체, through chapter 23",
+          "alternatives": [
+            "deity_pronoun spans as in English"
+          ],
+          "reason": "Korean has no capital letters, so the deity_pronoun setting has nothing to change (Korean style guide, sections 4 and 7); the speech levels are those of the Korean Mark 15 and John 18-19.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42023001005",
+            "n42023001011"
+          ],
+          "choice": "\"유대 최고 의회의 의원들\" and \"로마 총독 빌라도\" (R)",
+          "alternatives": [
+            "\"온 무리\""
+          ],
+          "reason": "The multitude is the council (meaning decision); Readable names it and Pilate's office with the words of the Korean Mark 15:1 Readable.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -253,6 +299,11 @@
           "L": "Họ bắt đầu tố cáo {{deity_pronoun:ngài|Ngài}}, nói rằng: \"Chúng tôi thấy người này làm cho dân tộc chúng tôi lầm lạc, ngăn cấm nộp thuế cho Sê-sa, và nói rằng chính mình là {{christos:Đấng Christ|Đấng Mê-si-a}}, một vị vua.\"",
           "B": "Họ bắt đầu buộc tội {{deity_pronoun:ngài|Ngài}}: \"Chúng tôi đã bắt gặp người này xúi giục dân tộc chúng tôi đi theo đường sai. Ông ta cấm nộp thuế cho Sê-sa, và tự xưng là {{christos:Đấng Christ|Đấng Mê-si-a}}, là vua.\"",
           "R": "Họ bắt đầu tố cáo Đức Giê-xu. Họ nói: \"Chúng tôi bắt được người này đang dẫn dân chúng tôi đi sai đường. Ông ta bảo dân đừng nộp thuế cho Sê-sa. Ông ta còn nói mình là {{christos:Đấng Christ|Đấng Mê-si-a}}, là vua nữa!\""
+        },
+        "ko": {
+          "L": "그리고 그들이 그분을 고발하기 시작하며 말했다. \"우리는 이 사람이 우리 민족을 그릇된 길로 이끌고, 가이사에게 세금 바치는 것을 금하고, 자기가 {{christos:그리스도|메시아}}, 곧 왕이라고 말하는 것을 보았습니다.\"",
+          "B": "그들은 예수를 고발하기 시작했다. \"우리가 보니 이 사람은 우리 민족을 그릇된 길로 이끌고 있습니다. 가이사에게 세금을 바치지 못하게 하고, 자기가 {{christos:그리스도|메시아}}, 곧 왕이라고 주장합니다.\"",
+          "R": "그들은 예수를 고발하기 시작했다. 그들이 말했다. \"이 사람이 우리 백성을 잘못된 길로 이끄는 것을 우리가 직접 보았습니다. 이 사람은 로마 황제 가이사에게 세금을 내지 말라고 합니다. 그리고 자기가 {{christos:그리스도|메시아}}, 곧 왕이라고 합니다!\""
         }
       },
       "decisions": [
@@ -405,6 +456,51 @@
           "reason": "The Protestant transliteration for Caesar, as the style guide lists it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n42023002007"
+          ],
+          "choice": "The accusers speak to Pilate in 합쇼체 (\"보았습니다\"); the crowd shouts its demands in 하오체 (23:18, 23:21); Pilate answers in 해라체",
+          "alternatives": [
+            "해라체 for the accusers",
+            "합쇼체 for the crowd's shouts"
+          ],
+          "reason": "Officials making a formal charge before the governor speak up to him; the shouted demands keep the firm 하오체 and Pilate's replies the plain style of the Korean Mark 15:9-14.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42023002015",
+            "n42023002020",
+            "n42023002021"
+          ],
+          "choice": "\"가이사\" (L, B), \"로마 황제 가이사\" (R); \"{{christos:그리스도|메시아}}, 곧 왕\"",
+          "alternatives": [
+            "\"황제\" alone"
+          ],
+          "reason": "\"가이사\" is the Protestant form of the style guide; Readable says who he was. \"곧\" sets the king beside the title, as the meaning decision explains it as a political claim; the particle after the span fits both forms.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -459,6 +555,11 @@
           "L": "Và Phi-lát hỏi {{deity_pronoun:ngài|Ngài}}, nói: \"Anh là Vua của người Do Thái sao?\"",
           "B": "Phi-lát hỏi {{deity_pronoun:ngài|Ngài}}: \"Anh là Vua dân Do Thái sao?\"",
           "R": "Phi-lát hỏi Đức Giê-xu: \"Anh có phải là vua của dân Do Thái không?\""
+        },
+        "ko": {
+          "L": "그러자 빌라도가 그분께 물으며 말했다. \"네가 유대인의 왕이냐?\"",
+          "B": "빌라도가 예수께 물었다. \"네가 유대인의 왕이냐?\"",
+          "R": "빌라도가 예수께 물었다. \"네가 유대인의 왕이냐?\""
         }
       },
       "decisions": [
@@ -583,6 +684,27 @@
           "reason": "As in the Vietnamese Mark 15:2 and Matthew 27:11: a governor questioning a prisoner speaks down to him but not crudely; \"anh\" has no capital form for the setting.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n42023003007"
+          ],
+          "choice": "Pilate speaks to Jesus in the plain style (\"네가 ... 왕이냐?\")",
+          "alternatives": [
+            "합쇼체"
+          ],
+          "reason": "As in the Korean Mark 15:2 and John 18:33: the governor questions a prisoner; \"네가\" in front carries the stressed \"you\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -632,6 +754,11 @@
           "L": "Ngài trả lời ông và nói: \"Ông nói [vậy].\"",
           "B": "Ngài đáp: \"Chính ông đã nói vậy.\"",
           "R": "Đức Giê-xu trả lời: \"Đó là lời của ông.\""
+        },
+        "ko": {
+          "L": "그러자 그분이 그에게 대답하여 말씀하셨다. \"네가 말한다.\"",
+          "B": "예수께서 대답하셨다. \"그것은 네가 한 말이다.\"",
+          "R": "예수께서 대답하셨다. \"그것은 네 입으로 한 말이다.\""
         }
       },
       "decisions": [
@@ -690,6 +817,28 @@
           "choice": "Jesus to Pilate: \"ông\"",
           "alternatives": [],
           "reason": "As in the Vietnamese Mark 15:2: courteous without deference; the words are left with Pilate (meaning decision).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42023003018",
+            "n42023003019"
+          ],
+          "choice": "\"네가 말한다\" (L); \"그것은 네가 한 말이다\" (B); \"그것은 네 입으로 한 말이다\" (R)",
+          "alternatives": [
+            "\"네 말이 옳다\""
+          ],
+          "reason": "The Greek is the same as Mark 15:2, so the Korean is the same; the reply leaves the title in Pilate's mouth without denying it (meaning decision).",
           "uncertain": false,
           "footnote": false
         }
@@ -751,6 +900,11 @@
           "L": "Và Phi-lát nói với các thầy tế lễ cả và các đám đông: \"Tôi không tìm thấy tội gì nơi người này.\"",
           "B": "Phi-lát nói với các thầy tế lễ cả và đám đông: \"Tôi không thấy người này phạm tội gì cả.\"",
           "R": "Rồi Phi-lát nói với các thầy tế lễ cả và đám đông: \"Tôi không thấy người này đã làm điều gì sai.\""
+        },
+        "ko": {
+          "L": "그러자 빌라도가 대제사장들과 무리에게 말했다. \"나는 이 사람에게서 아무 죄도 찾지 못한다.\"",
+          "B": "빌라도가 대제사장들과 무리에게 말했다. \"나는 이 사람에게서 아무 죄목도 찾지 못하겠다.\"",
+          "R": "그러자 빌라도가 대제사장들과 무리에게 말했다. \"내가 보기에 이 사람은 아무 잘못도 하지 않았다.\""
         }
       },
       "decisions": [
@@ -914,6 +1068,27 @@
           "reason": "As in the Vietnamese Mark 15:9: the governor keeps his distance with plain \"tôi\", neither humble nor archaic.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42023004013"
+          ],
+          "choice": "\"죄\" (L); \"죄목\" (B); \"잘못\" (R) for aition",
+          "alternatives": [
+            "\"허물\""
+          ],
+          "reason": "The word is a ground for a charge in law (meaning decision); \"죄목\" names that, and Readable says it plainly.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -976,6 +1151,11 @@
           "L": "Nhưng họ càng nài ép mà nói: \"Ông ta xúi giục dân chúng, giảng dạy khắp cả xứ Giu-đê, bắt đầu từ Ga-li-lê cho đến tận đây.\"",
           "B": "Nhưng họ càng nói quyết liệt hơn: \"Ông ta dùng lời giảng dạy của mình mà khuấy động dân chúng khắp xứ Giu-đê. Ông ta bắt đầu từ Ga-li-lê và nay đã đến tận đây.\"",
           "R": "Nhưng họ cứ nói mãi: \"Những điều ông ta dạy làm cho dân chúng nổi loạn. Ông ta đã làm như vậy khắp xứ Giu-đê. Ông ta bắt đầu từ Ga-li-lê, và bây giờ đã đến tận đây!\""
+        },
+        "ko": {
+          "L": "그러나 그들은 더욱 우기며 말했다. \"그는 온 유대에 두루 가르치면서 백성을 선동합니다. 갈릴리에서부터 시작하여 여기까지 [왔습니다].\"",
+          "B": "그러나 그들은 더욱 거세게 주장했다. \"그는 온 유대를 다니며 가르쳐서 백성을 선동하고 있습니다. 갈릴리에서 시작해서 이곳까지 왔습니다.\"",
+          "R": "그러나 그들은 계속 우겼다. \"이 사람은 가르치는 것으로 백성을 들쑤셔 놓고 있습니다. 유대 온 땅에서 그렇게 했습니다. 갈릴리에서 시작해서 이제 여기까지 왔습니다!\""
         }
       },
       "decisions": [
@@ -1072,6 +1252,32 @@
           "reason": "The Swahili name for Judea used in John and across these drafts. Here it means the whole land of the Jews (meaning decision m2), which \"Uyahudi\" covers naturally.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n42023005015",
+            "n42023005016",
+            "n42023005017",
+            "n42023005018",
+            "n42023005019",
+            "n42023005020"
+          ],
+          "choice": "Galilee in the last sentence at every level; [왔습니다] supplied (L)",
+          "alternatives": [
+            "one sentence ending on the verb \"선동합니다\""
+          ],
+          "reason": "Korean puts the verb last; a separate last sentence keeps \"Galilee\" where the Greek has it, leading into 23:6 (meaning decision). The Greek phrase has no verb, which Literal brackets.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1145,6 +1351,11 @@
           "L": "Nghe [vậy], Phi-lát hỏi xem người này có phải là người Ga-li-lê không, \\v 7 và khi biết {{deity_pronoun:ngài|Ngài}} thuộc quyền cai trị của Hê-rốt, ông giải {{deity_pronoun:ngài|Ngài}} lên Hê-rốt, là người cũng đang ở Giê-ru-sa-lem trong những ngày ấy.",
           "B": "Nghe vậy, Phi-lát hỏi người này có phải là người Ga-li-lê không. \\v 7 Khi biết {{deity_pronoun:ngài|Ngài}} thuộc quyền cai trị của Hê-rốt, ông chuyển {{deity_pronoun:ngài|Ngài}} sang cho Hê-rốt, vì lúc ấy Hê-rốt cũng đang ở Giê-ru-sa-lem.",
           "R": "Nghe vậy, Phi-lát hỏi xem Đức Giê-xu có phải từ Ga-li-lê đến không. \\v 7 Ông biết được rằng Đức Giê-xu đến từ miền do Hê-rốt cai trị. Vì vậy ông gửi Đức Giê-xu sang cho Hê-rốt. Lúc ấy Hê-rốt cũng đang ở Giê-ru-sa-lem."
+        },
+        "ko": {
+          "L": "그런데 빌라도가 [이 말을] 듣고 그 사람이 갈릴리 사람이냐고 물었다. \\v 7 그리고 그분이 헤롯의 관할 아래 있는 것을 알고, 그분을 헤롯에게 보냈다. 헤롯 자신도 그 무렵에 예루살렘에 있었다.",
+          "B": "빌라도는 이 말을 듣고, 그 사람이 갈릴리 사람이냐고 물었다. \\v 7 그리고 예수께서 헤롯의 관할에 속한 것을 알고, 예수를 헤롯에게 보냈다. 그때 헤롯도 예루살렘에 와 있었다.",
+          "R": "빌라도는 이 말을 듣고, 예수께서 갈릴리 출신인지 물었다. \\v 7 그리고 예수께서 헤롯이 다스리는 지역에서 오신 것을 알게 되었다. 그래서 빌라도는 예수를 헤롯에게 보냈다. 헤롯도 그때 예루살렘에 와 있었다."
         }
       },
       "decisions": [
@@ -1280,6 +1491,27 @@
           "reason": "The Greek verb is used of referring a case to another authority (meaning decision); Literal keeps \"up\", the other levels say the case was passed on. Herod is \"Hê-rốt\" as in Luke 3:1.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42023007006"
+          ],
+          "choice": "\"관할\" (L, B); \"헤롯이 다스리는 지역\" (R) for exousia",
+          "alternatives": [
+            "\"권한\""
+          ],
+          "reason": "The word here is the area under Herod's authority (meaning decision); \"관할\" is the Korean legal word, and Readable says it plainly.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1351,6 +1583,11 @@
           "L": "Còn Hê-rốt, khi thấy Đức Giê-xu thì rất vui mừng, vì từ lâu ông đã muốn gặp {{deity_pronoun:ngài|Ngài}}, bởi đã nghe nói về {{deity_pronoun:ngài|Ngài}}, và ông hy vọng được thấy {{deity_pronoun:ngài|Ngài}} làm một dấu lạ nào đó.",
           "B": "Hê-rốt rất mừng khi thấy Đức Giê-xu. Từ lâu ông đã muốn gặp {{deity_pronoun:ngài|Ngài}}, vì ông đã nghe nhiều về {{deity_pronoun:ngài|Ngài}}, và ông mong được xem {{deity_pronoun:ngài|Ngài}} làm một dấu lạ nào đó.",
           "R": "Hê-rốt rất vui khi gặp Đức Giê-xu. Ông đã nghe nói về Đức Giê-xu, và từ lâu ông đã muốn gặp {{deity_pronoun:ngài|Ngài}}. Ông mong Đức Giê-xu sẽ làm một dấu lạ nào đó cho ông xem."
+        },
+        "ko": {
+          "L": "헤롯은 예수를 보고 매우 기뻐했다. 그분에 관하여 들어 왔기 때문에 오래전부터 그분을 보고 싶어 하고 있었고, 그분이 어떤 표적을 행하시는 것을 보기를 바라고 있었기 때문이다.",
+          "B": "헤롯은 예수를 보고 몹시 기뻐했다. 예수에 관한 소문을 들어서 오래전부터 만나 보고 싶어 했기 때문이다. 그리고 예수께서 어떤 표적을 행하시는 것을 직접 보기를 바랐다.",
+          "R": "헤롯은 예수를 보고 무척 기뻤다. 헤롯은 예수에 대해 많이 들었고, 오래전부터 예수를 만나고 싶어 했다. 그는 예수께서 어떤 표적, 곧 놀라운 일을 일으키시는 것을 보고 싶었다."
         }
       },
       "decisions": [
@@ -1462,6 +1699,27 @@
           "reason": "The book-wide word for sign, as in John 2:11 and the Vietnamese Mark 16:17; Readable does not add \"phép lạ\", since the style guide keeps the two apart.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42023008025"
+          ],
+          "choice": "\"표적\" at every level; Readable adds \"놀라운 일\"",
+          "alternatives": [
+            "\"기적\""
+          ],
+          "reason": "\"표적\" is the key term of the Korean John and Mark, never \"기적\"; Readable explains it in plain words rather than with the English Readable's \"miracle\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1515,6 +1773,11 @@
           "L": "Ông hỏi {{deity_pronoun:ngài|Ngài}} nhiều lời, nhưng chính {{deity_pronoun:ngài|Ngài}} chẳng trả lời ông điều gì.",
           "B": "Ông hỏi {{deity_pronoun:ngài|Ngài}} hết câu này đến câu khác, nhưng Đức Giê-xu không trả lời ông một lời nào.",
           "R": "Hê-rốt hỏi Đức Giê-xu nhiều câu. Nhưng Đức Giê-xu không trả lời ông gì cả."
+        },
+        "ko": {
+          "L": "그래서 그는 여러 말로 그분께 계속 물었으나, 그분은 그에게 아무것도 대답하지 않으셨다.",
+          "B": "헤롯이 이것저것 많이 물었으나, 예수께서는 그에게 한마디도 대답하지 않으셨다.",
+          "R": "헤롯은 예수께 많은 질문을 했다. 그러나 예수께서는 아무 대답도 하지 않으셨다."
         }
       },
       "decisions": [
@@ -1624,6 +1887,11 @@
           "L": "Các thầy tế lễ cả và các thầy thông giáo đứng [đó], kịch liệt tố cáo {{deity_pronoun:ngài|Ngài}}.",
           "B": "Các thầy tế lễ cả và các thầy thông giáo đứng đó, ra sức tố cáo {{deity_pronoun:ngài|Ngài}}.",
           "R": "Các thầy tế lễ cả và các thầy dạy luật đứng đó. Họ cứ tố cáo Đức Giê-xu thật gay gắt."
+        },
+        "ko": {
+          "L": "그리고 대제사장들과 율법학자들이 서서 맹렬하게 그분을 고발하고 있었다.",
+          "B": "대제사장들과 율법학자들은 곁에 서서 예수를 격렬하게 고발했다.",
+          "R": "대제사장들과 율법을 가르치는 선생들도 거기 서 있었다. 그들은 계속해서 예수를 심하게 고발했다."
         }
       },
       "decisions": [
@@ -1745,6 +2013,28 @@
           "reason": "The settled Gospel terms, as in the Vietnamese Mark 15:1 and 15:31.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42023010004",
+            "n42023010007"
+          ],
+          "choice": "\"대제사장들\" at every level; \"율법학자들\" (L, B), \"율법을 가르치는 선생들\" (R)",
+          "alternatives": [
+            "\"서기관들\""
+          ],
+          "reason": "The terms settled for the Korean Gospels, as in Mark 15:1 and Luke 9:22.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1806,6 +2096,11 @@
           "L": "Còn Hê-rốt cùng với các binh lính của ông khinh miệt {{deity_pronoun:ngài|Ngài}} và chế nhạo [{{deity_pronoun:ngài|Ngài}}], rồi khoác cho [{{deity_pronoun:ngài|Ngài}}] một áo rực rỡ, ông giải {{deity_pronoun:ngài|Ngài}} trả lại cho Phi-lát.",
           "B": "Hê-rốt và quân lính của ông khinh bỉ và chế giễu {{deity_pronoun:ngài|Ngài}}. Hê-rốt cho khoác lên {{deity_pronoun:ngài|Ngài}} một áo choàng lộng lẫy, rồi gửi {{deity_pronoun:ngài|Ngài}} trả lại cho Phi-lát.",
           "R": "Rồi Hê-rốt và lính của ông cười nhạo Đức Giê-xu và đối xử với {{deity_pronoun:ngài|Ngài}} như một người chẳng ra gì. Họ khoác lên {{deity_pronoun:ngài|Ngài}} một áo choàng sáng chói, như thể {{deity_pronoun:ngài|Ngài}} là vua. Rồi Hê-rốt gửi {{deity_pronoun:ngài|Ngài}} trả lại cho Phi-lát."
+        },
+        "ko": {
+          "L": "그리고 헤롯도 자기 병사들과 함께 그분을 업신여기고 조롱하고 나서, [그분께] 빛나는 옷을 입혀 그분을 빌라도에게 돌려보냈다.",
+          "B": "헤롯은 자기 병사들과 함께 예수를 업신여기며 조롱했다. 그리고 예수께 화려한 옷을 입혀 빌라도에게 돌려보냈다.",
+          "R": "헤롯과 그의 병사들은 예수를 아무것도 아닌 사람처럼 대하며 놀렸다. 그들은 마치 왕에게 입히듯이 예수께 번쩍이는 옷을 입혔다. 그러고 나서 헤롯은 예수를 빌라도에게 돌려보냈다."
         }
       },
       "decisions": [
@@ -1898,6 +2193,48 @@
           "reason": "A fine, shining robe put on in mockery (meaning decision); \"áo choàng\" for a long outer robe, as in the Vietnamese Mark 15:17, while Literal keeps the Greek's plain \"clothing\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42023011009",
+            "n42023011012"
+          ],
+          "choice": "\"병사들\" for the troops; \"조롱하다\" (L, B), \"놀리다\" (R) for empaizo",
+          "alternatives": [
+            "\"군인들\"",
+            "\"희롱하다\""
+          ],
+          "reason": "The words of the Korean Mark 15:16-20, so the two mockeries read alike.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n42023011013"
+          ],
+          "choice": "[그분께]",
+          "alternatives": [
+            "no bracket"
+          ],
+          "reason": "Korean \"입히다\" needs the person dressed; the Greek leaves it understood, as the English Literal brackets it.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1962,6 +2299,11 @@
           "L": "Và ngay trong ngày ấy, Hê-rốt và Phi-lát trở thành bạn với nhau, vì trước [đó] họ vốn thù nghịch nhau.",
           "B": "Ngay hôm ấy, Hê-rốt và Phi-lát trở thành bạn của nhau. Trước đó hai người vốn thù ghét nhau.",
           "R": "Trước đây Hê-rốt và Phi-lát là kẻ thù của nhau. Nhưng ngay hôm ấy, họ trở thành bạn."
+        },
+        "ko": {
+          "L": "그리고 바로 그날 헤롯과 빌라도가 서로 친구가 되었다. 전에는 그들이 서로 원수로 지냈기 때문이다.",
+          "B": "바로 그날 헤롯과 빌라도는 서로 친구가 되었다. 그전까지는 두 사람 사이에 적대감이 있었다.",
+          "R": "헤롯과 빌라도는 전에 서로 원수였다. 그러나 그날 둘은 친구가 되었다."
         }
       },
       "decisions": [
@@ -2139,6 +2481,11 @@
           "L": "Phi-lát triệu tập các thầy tế lễ cả, các nhà lãnh đạo và dân chúng, \\v 14 rồi nói với họ: \"Các người đã đem người này đến cho tôi như một kẻ xúi dân làm loạn, và kìa, chính tôi đã tra hỏi [ông ta] trước mặt các người mà không thấy người này có tội gì về những điều các người tố cáo ông ta.",
           "B": "Phi-lát triệu tập các thầy tế lễ cả, các nhà lãnh đạo và dân chúng, \\v 14 rồi nói với họ: \"Các người đã giải người này đến cho tôi, cho rằng ông ta xúi dân chúng chống lại nhà cầm quyền. Tôi đã tra hỏi ông ta ngay trước mặt các người, nhưng không thấy ông ta có tội gì như các người tố cáo.",
           "R": "Phi-lát gọi các thầy tế lễ cả, các nhà lãnh đạo khác và dân chúng đến. \\v 14 Ông nói với họ: \"Các người đã đem người này đến cho tôi. Các người nói ông ta xúi dân chúng nổi loạn. Tôi đã tra hỏi ông ta ngay trước mặt các người. Nhưng tôi không thấy ông ta có tội gì như các người nói."
+        },
+        "ko": {
+          "L": "그리고 빌라도는 대제사장들과 지도자들과 백성을 불러 모으고 \\v 14 그들에게 말했다. \"너희는 이 사람이 백성을 돌아서게 하는 자라고 하여 내게 끌고 왔다. 그리고 보라, 내가 너희 앞에서 [그를] 심문해 보았으나, 너희가 그를 고발하는 그 일들에 대하여 이 사람에게서 아무 죄도 찾지 못했다.",
+          "B": "빌라도는 대제사장들과 지도자들과 백성을 불러 모으고 \\v 14 그들에게 말했다. \"너희는 이 사람이 백성을 선동하여 등을 돌리게 한다고 하면서 나에게 끌고 왔다. 내가 너희 앞에서 그를 심문해 보았지만, 너희가 고발하는 그 일들 가운데 어느 것에서도 이 사람의 죄를 찾지 못했다.",
+          "R": "빌라도는 대제사장들과 다른 지도자들과 백성을 불러 모았다. \\v 14 그리고 그들에게 말했다. \"너희는 이 사람을 나에게 끌고 와서, 이 사람이 백성을 부추겨 반란을 일으키게 한다고 했다. 내가 너희 앞에서 이 사람을 직접 심문해 보았다. 그러나 너희가 고발한 일 가운데 이 사람이 잘못한 것은 하나도 찾지 못했다."
         }
       },
       "decisions": [
@@ -2363,6 +2710,49 @@
           "reason": "Pilate's own word for Jesus, as in the Vietnamese Mark 15:12 and Matthew 27:23; it has no reverent capital form, so the English spans in his speech have no counterpart.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42023014014"
+          ],
+          "choice": "\"보라\" (L) for idou; not rendered (B, R), here and through chapters 23-24",
+          "alternatives": [
+            "\"보아라\"",
+            "\"자\""
+          ],
+          "reason": "Literal keeps the Greek attention word with the short written form \"보라\"; in Balanced and Readable it has no separate word, as in English.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n42023014007"
+          ],
+          "choice": "Pilate speaks of Jesus as \"이 사람\" and \"그\" with no honorific",
+          "alternatives": [
+            "\"이분\""
+          ],
+          "reason": "A Roman official speaking of a prisoner, as in the Korean Mark 15:14; the narrator still honours Jesus.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2421,6 +2811,11 @@
           "L": "Ngay cả Hê-rốt cũng không [thấy], vì ông ấy đã giải ông ta trả lại cho chúng ta; và kìa, ông ta chẳng làm điều gì đáng chết cả.",
           "B": "Hê-rốt cũng không thấy, vì ông ấy đã gửi ông ta trả về đây. Rõ ràng ông ta không làm điều gì đáng tội chết.",
           "R": "Hê-rốt cũng không thấy ông ta có tội. Vì vậy Hê-rốt mới gửi ông ta trả về đây. Người này không làm điều gì đáng bị xử tử cả."
+        },
+        "ko": {
+          "L": "헤롯도 [찾지 못했다]. 그가 그를 우리에게 돌려보냈기 때문이다. 그리고 보라, 그가 한 일 가운데 죽어야 할 만한 것은 아무것도 없다.",
+          "B": "헤롯도 마찬가지였다. 그래서 그를 우리에게 돌려보낸 것이다. 분명히 이 사람은 죽어야 할 만한 일을 하나도 하지 않았다.",
+          "R": "헤롯도 이 사람에게서 아무 죄도 찾지 못했다. 그래서 이 사람을 우리에게 돌려보냈다. 이 사람은 사형을 받을 만한 일을 하나도 하지 않았다."
         }
       },
       "decisions": [
@@ -2543,6 +2938,27 @@
           "reason": "Vietnamese must choose whether \"us\" includes the hearers; the case now lies before all who are gathered, so Literal says \"chúng ta\", and Balanced and Readable avoid the choice with \"về đây\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n42023015001",
+            "n42023015002",
+            "n42023015003"
+          ],
+          "choice": "[찾지 못했다]",
+          "alternatives": [
+            "\"헤롯도 [그렇다]\""
+          ],
+          "reason": "The Greek says only \"nor Herod\"; Korean needs the verb, taken from 23:14.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2589,6 +3005,11 @@
           "L": "Vậy tôi sẽ trừng phạt ông ta rồi tha [ông ta].\"",
           "B": "Vì vậy, tôi sẽ cho đánh đòn ông ta rồi thả ra.\"",
           "R": "Vì vậy, tôi sẽ cho lính lấy roi đánh ông ta, rồi thả ông ta ra.\""
+        },
+        "ko": {
+          "L": "그러므로 나는 그를 징계하고 놓아주겠다.\"",
+          "B": "그러니 그를 매질하게 한 뒤에 풀어 주겠다.\"",
+          "R": "그러니 이 사람을 매로 때리게 한 다음에 풀어 주겠다.\""
         }
       },
       "decisions": [
@@ -2665,6 +3086,28 @@
           "reason": "A beating as a warning, short of death (meaning decision); \"đánh roi\" is kept for the flogging before crucifixion in Mark 15:15, so the two are not confused.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42023016001",
+            "n42023016004"
+          ],
+          "choice": "\"징계하다\" (L), \"매질하게 하다\" (B), \"매로 때리게 하다\" (R) for paideuo; \"놓아주다\" (L), \"풀어 주다\" (B, R) for apolyo, here and in 23:22",
+          "alternatives": [
+            "\"채찍질하다\""
+          ],
+          "reason": "A beating as a warning (meaning decision), a different word from the flogging of Mark 15:15 (\"채찍질하다\"); the release verbs are those of the Korean Mark 15:6-15.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2718,6 +3161,11 @@
           "L": "Nhưng tất cả cùng nhau la lên: \"Trừ khử người này đi, và tha Ba-ra-ba cho chúng tôi!\"",
           "B": "Nhưng cả đám đông đồng thanh la lên: \"Trừ khử người này đi! Thả Ba-ra-ba cho chúng tôi!\"",
           "R": "Nhưng cả đám đông cùng la lên: \"Giết người này đi! Thả Ba-ra-ba cho chúng tôi!\""
+        },
+        "ko": {
+          "L": "그러나 그들은 다 함께 소리 질러 말했다. \"이 자를 없애 버리시오! 그리고 바라바를 우리에게 놓아주시오!\"",
+          "B": "그러자 무리가 한목소리로 소리쳤다. \"이 사람을 없애 버리시오! 바라바를 풀어 주시오!\"",
+          "R": "그러나 무리가 다 함께 소리쳤다. \"이 사람을 죽이시오! 바라바를 풀어 주시오!\""
         }
       },
       "decisions": [
@@ -2809,6 +3257,28 @@
           "reason": "The cry demands his death (meaning decision); a literal \"take away\" would not say that in Vietnamese, while \"trừ khử\" (get rid of) keeps the Greek's indirectness at Literal and Balanced.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42023018005",
+            "n42023018006"
+          ],
+          "choice": "\"없애 버리시오\" (L, B); \"죽이시오\" (R)",
+          "alternatives": [
+            "\"데려가시오\""
+          ],
+          "reason": "The cry demands his death (meaning decision); \"없애 버리다\" says that without losing the picture of taking away, and Readable says it outright, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2866,6 +3336,11 @@
           "L": "Kẻ này đã bị tống vào ngục vì một cuộc nổi loạn đã xảy ra trong thành, và vì tội giết người.",
           "B": "Hắn đã bị bỏ tù vì một cuộc bạo loạn xảy ra trong thành và vì tội giết người.",
           "R": "Ba-ra-ba đang ở tù vì đã tham gia một cuộc nổi loạn trong thành. Hắn cũng đã giết người."
+        },
+        "ko": {
+          "L": "그는 성안에서 일어난 어떤 반란과 살인 때문에 감옥에 던져진 [사람]이었다.",
+          "B": "바라바는 성안에서 일어난 폭동과 살인 때문에 감옥에 갇혀 있던 사람이었다.",
+          "R": "바라바는 성안에서 폭동에 가담했다가 감옥에 갇혀 있었다. 그는 사람을 죽이기도 했다."
         }
       },
       "decisions": [
@@ -2940,6 +3415,27 @@
           "reason": "The narrator's plain words for a man jailed for revolt and murder; \"hắn\" is the narrator's word for wrongdoers elsewhere in the Vietnamese Luke.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42023019004"
+          ],
+          "choice": "\"반란\" (L), \"폭동\" (B, R) for stasis",
+          "alternatives": [
+            "\"민란\""
+          ],
+          "reason": "The words of the Korean Mark 15:7 for the same uprising.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2991,6 +3487,11 @@
           "L": "Phi-lát lại nói với [họ], vì muốn tha Đức Giê-xu.",
           "B": "Phi-lát lên tiếng với họ một lần nữa, vì ông muốn thả Đức Giê-xu.",
           "R": "Phi-lát muốn thả Đức Giê-xu. Vì vậy ông lại nói với đám đông."
+        },
+        "ko": {
+          "L": "그러자 빌라도가 예수를 놓아주기를 원하여 다시 [그들에게] 소리쳐 말했다.",
+          "B": "빌라도는 예수를 풀어 주고 싶어서, 다시 그들에게 말했다.",
+          "R": "빌라도는 예수를 풀어 주고 싶었다. 그래서 다시 무리에게 말했다."
         }
       },
       "decisions": [
@@ -3088,6 +3589,11 @@
           "L": "Nhưng họ cứ la lên: \"Đóng đinh, đóng đinh ông ta!\"",
           "B": "Nhưng họ cứ la lại: \"Đóng đinh ông ta đi! Đóng đinh ông ta đi!\"",
           "R": "Nhưng họ cứ la lên: \"Hãy đóng đinh ông ta trên cây thập tự! Hãy đóng đinh ông ta trên cây thập tự!\""
+        },
+        "ko": {
+          "L": "그러나 그들은 계속 소리 질러 말했다. \"십자가에 못 박으시오, 그를 십자가에 못 박으시오!\"",
+          "B": "그러나 그들은 계속 맞받아 외쳤다. \"십자가에 못 박으시오! 십자가에 못 박으시오!\"",
+          "R": "그러나 사람들은 계속 소리쳤다. \"저 사람을 십자가에 못 박으시오! 십자가에 못 박으시오!\""
         }
       },
       "decisions": [
@@ -3201,6 +3707,28 @@
           "reason": "Readable adds \"on the cross\" so a new reader sees what kind of death is meant, as in the Vietnamese Mark 15:13.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42023021005",
+            "n42023021006"
+          ],
+          "choice": "\"십자가에 못 박다\" for stauroo at every level, through chapters 23-24",
+          "alternatives": [
+            "\"처형하다\""
+          ],
+          "reason": "The word of the Korean Mark 15:13 and John 19:6; it already says \"nail to a cross\", so Readable needs no other wording.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3254,6 +3782,11 @@
           "L": "Ông nói với họ lần thứ ba: \"Sao vậy, người này đã làm điều ác gì?",
           "B": "Phi-lát nói với họ lần thứ ba: \"Tại sao? Người này đã làm điều gì sai trái?",
           "R": "Phi-lát nói với họ lần thứ ba: \"Tại sao? Người này đã làm gì sai?"
+        },
+        "ko": {
+          "L": "빌라도가 세 번째로 그들에게 말했다. \"도대체 이 사람이 무슨 악한 일을 했느냐?",
+          "B": "빌라도가 세 번째로 그들에게 말했다. \"어째서냐? 이 사람이 무슨 죄를 지었느냐?",
+          "R": "빌라도가 세 번째로 그들에게 말했다. \"왜? 이 사람이 무슨 나쁜 짓을 했느냐?"
         }
       },
       "decisions": [
@@ -3308,6 +3841,31 @@
           "reason": "Readable names the speaker.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42023022007",
+            "n42023022008",
+            "n42023022009",
+            "n42023022010",
+            "n42023022011"
+          ],
+          "choice": "The question as in the Korean Mark 15:14",
+          "alternatives": [
+            "new wording"
+          ],
+          "reason": "The Greek of Pilate's question is the same in Mark 15:14 apart from \"this man\", so the Korean reads alike.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3360,6 +3918,11 @@
           "L": "Tôi không thấy nơi ông ta có tội gì đáng chết; vậy tôi sẽ trừng phạt ông ta rồi tha [ông ta].\"",
           "B": "Tôi không tìm thấy lý do gì để xử tử ông ta. Vậy tôi sẽ cho đánh đòn ông ta rồi thả ra.\"",
           "R": "Tôi không thấy ông ta làm điều gì đáng phải chết. Vì vậy, tôi sẽ cho lính lấy roi đánh ông ta, rồi thả ông ta ra.\""
+        },
+        "ko": {
+          "L": "나는 그에게서 죽일 만한 죄를 아무것도 찾지 못했다. 그러므로 나는 그를 징계하고 놓아주겠다.\"",
+          "B": "나는 그에게서 사형에 처할 만한 죄를 찾지 못했다. 그러니 그를 매질하게 한 뒤에 풀어 주겠다.\"",
+          "R": "나는 이 사람이 죽어야 할 이유를 하나도 찾지 못했다. 그러니 이 사람을 매로 때리게 한 다음에 풀어 주겠다.\""
         }
       },
       "decisions": [
@@ -3490,6 +4053,11 @@
           "L": "Nhưng họ cứ lớn tiếng nài ép, đòi {{deity_pronoun:ngài|Ngài}} phải bị đóng đinh, và tiếng la của họ thắng thế.",
           "B": "Nhưng họ cứ la to, một mực đòi đóng đinh {{deity_pronoun:ngài|Ngài}}, và tiếng la hét của họ đã thắng.",
           "R": "Nhưng họ cứ la thật to. Họ đòi phải đóng đinh Đức Giê-xu trên cây thập tự. Cuối cùng tiếng la hét của họ đã thắng."
+        },
+        "ko": {
+          "L": "그러나 그들은 큰 소리로 그분을 십자가에 못 박으라고 요구하며 계속 다그쳤다. 그리고 그들의 소리가 이겼다.",
+          "B": "그러나 그들은 예수를 십자가에 못 박으라고 큰 소리로 끈질기게 요구했다. 결국 그들의 외침이 이겼다.",
+          "R": "그러나 사람들은 계속 큰 소리로 외쳤다. 예수를 십자가에 못 박으라고 요구했다. 결국 그들이 고집한 대로 되었다."
         }
       },
       "decisions": [
@@ -3591,6 +4159,11 @@
           "L": "Và Phi-lát phán quyết cho điều họ đòi được thực hiện.",
           "B": "Vậy Phi-lát quyết định làm theo điều họ đòi.",
           "R": "Vậy Phi-lát quyết định chiều theo ý họ."
+        },
+        "ko": {
+          "L": "그래서 빌라도는 그들의 요구대로 되도록 판결했다.",
+          "B": "그리하여 빌라도는 그들이 요구한 대로 하라고 판결을 내렸다.",
+          "R": "그래서 빌라도는 그들이 원하는 대로 해 주기로 했다."
         }
       },
       "decisions": [
@@ -3703,6 +4276,11 @@
           "L": "Ông tha kẻ đã bị bỏ vào ngục vì nổi loạn và giết người, là kẻ họ đã xin, còn Đức Giê-xu thì ông nộp theo ý muốn của họ.",
           "B": "Ông thả người mà họ xin, là kẻ đã bị bỏ tù vì tội nổi loạn và giết người. Còn Đức Giê-xu thì ông nộp cho họ, để họ làm theo ý họ muốn.",
           "R": "Ông thả người mà họ muốn, là kẻ đang ở tù vì tội nổi loạn và giết người. Còn Đức Giê-xu thì ông nộp cho họ, để họ muốn làm gì thì làm."
+        },
+        "ko": {
+          "L": "그리고 그는 반란과 살인 때문에 감옥에 던져진 자, 곧 그들이 요구하던 자를 놓아주고, 예수는 그들의 뜻에 넘겨주었다.",
+          "B": "빌라도는 폭동과 살인 때문에 감옥에 갇혀 있던 사람, 곧 그들이 요구한 사람을 풀어 주었다. 그리고 예수는 그들의 뜻대로 하도록 넘겨주었다.",
+          "R": "빌라도는 폭동과 살인 때문에 감옥에 갇혀 있던 사람을 풀어 주었다. 사람들이 풀어 달라고 한 사람이었다. 그리고 예수는 사람들 뜻대로 하도록 그들에게 넘겨주었다."
         }
       },
       "decisions": [
@@ -3831,6 +4409,27 @@
           "reason": "The verb of Jesus' predictions (Luke 9:44) and of the passion story in the Vietnamese Mark 15:1, kept as one Vietnamese verb so the echo stays (meaning decision).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42023025016"
+          ],
+          "choice": "\"넘겨주다\" for paradidomi at every level",
+          "alternatives": [
+            "\"내주다\""
+          ],
+          "reason": "The verb of Jesus' predictions that he would be handed over (meaning decision), as in the Korean Mark 15:15 and Luke 9:44.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3892,6 +4491,11 @@
           "L": "Khi họ dẫn {{deity_pronoun:ngài|Ngài}} đi, họ bắt một người tên Si-môn, người Sy-ren, đang từ ngoài đồng về, và đặt cây thập tự trên ông để vác theo sau Đức Giê-xu.",
           "B": "Khi dẫn {{deity_pronoun:ngài|Ngài}} đi, họ bắt một người tên là Si-môn, quê ở Sy-ren, đang từ ngoài đồng vào thành. Họ đặt cây thập tự lên vai ông và bắt ông vác đi theo sau Đức Giê-xu.",
           "R": "Những người lính dẫn Đức Giê-xu đi. Dọc đường họ bắt một người tên là Si-môn, quê ở thành Sy-ren, ở Bắc Phi. Ông đang từ ngoài đồng đi vào Giê-ru-sa-lem. Họ đặt cây thập tự lên vai ông và bắt ông vác đi sau Đức Giê-xu."
+        },
+        "ko": {
+          "L": "그리고 그들이 그분을 끌고 갈 때에, 시골에서 오고 있던 구레네 사람 시몬이라는 어떤 사람을 붙잡아, 그에게 십자가를 지워 예수의 뒤에서 지고 가게 했다.",
+          "B": "그들은 예수를 끌고 가다가, 시골에서 들어오던 구레네 사람 시몬을 붙잡았다. 그리고 그에게 십자가를 지워 예수의 뒤를 따라가게 했다.",
+          "R": "병사들이 예수를 끌고 갔다. 가는 길에 그들은 시몬이라는 사람을 붙잡았다. 그는 북아프리카의 구레네에서 온 사람이었는데, 밭에서 성안으로 들어오고 있었다. 병사들은 시몬에게 십자가를 지우고 예수의 뒤에서 지고 가게 했다."
         }
       },
       "decisions": [
@@ -4005,6 +4609,31 @@
           "reason": "The Protestant forms used in the Vietnamese Mark 15:21 and John 19:17.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42023026008",
+            "n42023026016",
+            "n42023026017",
+            "n42023026018",
+            "n42023026019"
+          ],
+          "choice": "\"구레네\" as in the Korean Mark 15:21; \"예수의 뒤에서\" / \"뒤를 따라\" for \"behind Jesus\"",
+          "alternatives": [
+            "\"예수를 따라\" alone"
+          ],
+          "reason": "Carrying the cross behind Jesus is the picture of a disciple (meaning decision, Luke 9:23 \"자기 십자가를 지고 나를 따라야\"); every level keeps \"behind\" so the echo is heard.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4061,6 +4690,11 @@
           "L": "Có một đoàn dân rất đông đi theo {{deity_pronoun:ngài|Ngài}}, cùng những người phụ nữ đấm ngực và than khóc {{deity_pronoun:ngài|Ngài}}.",
           "B": "Một đoàn dân đông đi theo {{deity_pronoun:ngài|Ngài}}, trong đó có những người phụ nữ khóc than thương tiếc {{deity_pronoun:ngài|Ngài}}.",
           "R": "Một đám đông rất lớn đi theo Đức Giê-xu. Trong đó có những người phụ nữ vừa khóc vừa đấm ngực vì thương xót {{deity_pronoun:ngài|Ngài}}."
+        },
+        "ko": {
+          "L": "그리고 백성의 큰 무리와 여자들이 그분을 따라갔다. 그 여자들은 그분을 위하여 가슴을 치며 슬피 울고 있었다.",
+          "B": "많은 백성이 예수를 따라갔다. 그 가운데는 예수를 위하여 가슴을 치며 통곡하는 여자들도 있었다.",
+          "R": "많은 사람이 예수를 따라갔다. 그 가운데에는 여자들도 있었는데, 그들은 예수 때문에 슬퍼하며 가슴을 치고 울었다."
         }
       },
       "decisions": [
@@ -4205,6 +4839,11 @@
           "L": "Đức Giê-xu quay lại phía họ và nói: \"Hỡi các con gái Giê-ru-sa-lem, đừng khóc cho {{deity_pronoun:ta|Ta}}; nhưng hãy khóc cho chính các con và cho con cái các con, \\v 29 vì kìa, những ngày sẽ đến, trong những ngày ấy người ta sẽ nói: 'Phước cho những người son sẻ, những dạ chưa từng sinh nở và những bầu vú chưa từng cho bú!'",
           "B": "Đức Giê-xu quay lại nói với họ: \"Hỡi các con gái Giê-ru-sa-lem, đừng khóc cho {{deity_pronoun:ta|Ta}}. Hãy khóc cho chính các con và cho con cái các con. \\v 29 Vì sắp đến những ngày người ta sẽ nói: 'Phước cho những người phụ nữ son sẻ, cho những dạ không hề sinh nở và những bầu ngực không hề cho con bú!'",
           "R": "Đức Giê-xu quay lại nói với những người phụ nữ ấy: \"Hỡi phụ nữ Giê-ru-sa-lem, đừng khóc cho {{deity_pronoun:ta|Ta}}. Hãy khóc cho chính các con và cho con cái các con. \\v 29 Sắp đến lúc người ta sẽ nói: 'Phước cho những người phụ nữ không có con. Phước cho những người chưa bao giờ sinh con và chưa bao giờ cho con bú!'"
+        },
+        "ko": {
+          "L": "예수께서 그들에게로 돌아서서 말씀하셨다. \"예루살렘의 딸들아, 나를 위하여 울지 마라. 오히려 너희 자신과 너희 자녀들을 위하여 울어라. \\v 29 보라, 사람들이 '임신하지 못하는 여자들과, 낳아 보지 못한 태와, 젖을 먹여 보지 못한 가슴은 복이 있다' 하고 말할 날들이 오고 있기 때문이다.",
+          "B": "예수께서 그 여자들을 돌아보시며 말씀하셨다. \"예루살렘의 딸들아, 나를 위하여 울지 마라. 너희 자신과 너희 자녀들을 위하여 울어라. \\v 29 사람들이 '아이를 낳지 못하는 여자들은 복이 있다. 아기를 낳아 보지 못한 태와 젖을 먹여 보지 못한 가슴은 복이 있다' 하고 말할 날이 올 것이다.",
+          "R": "예수께서 여자들 쪽으로 돌아서서 말씀하셨다. \"예루살렘의 여자들아, 나 때문에 울지 마라. 너희 자신과 너희 아이들 때문에 울어라. \\v 29 사람들이 이렇게 말하게 될 때가 오고 있다. '아이를 낳지 못한 여자들은 복이 있다. 아기를 낳아 본 적도, 젖을 먹여 본 적도 없는 여자들은 복이 있다.'"
         }
       },
       "decisions": [
@@ -4409,6 +5048,49 @@
           "reason": "\"Phước cho\" as in the Vietnamese Luke 6:20-23; \"son sẻ\" is the plain word for a woman who cannot bear children.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n42023028008",
+            "n42023028009"
+          ],
+          "choice": "Jesus speaks to the women in 해라체; \"예루살렘의 딸들아\" (L, B), \"예루살렘의 여자들아\" (R)",
+          "alternatives": [
+            "\"여러분\" with 합쇼체"
+          ],
+          "reason": "Jesus speaks in the plain style to everyone (style guide, section 4); \"딸들\" keeps the Hebrew idiom for the women of the city (meaning decision), which Readable says plainly.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42023029008"
+          ],
+          "choice": "\"복이 있다\" for makariai",
+          "alternatives": [
+            "\"행복하다\""
+          ],
+          "reason": "The word of the Korean Beatitudes (Matthew 5, Luke 6), so the reversal (meaning decision) is heard.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4464,6 +5146,11 @@
           "L": "Bấy giờ người ta sẽ bắt đầu nói với các núi: 'Hãy đổ xuống trên chúng tôi,' và với các đồi: 'Hãy che lấp chúng tôi.'",
           "B": "Lúc ấy người ta sẽ bắt đầu nói với núi: 'Hãy đổ xuống đè lên chúng tôi!' và nói với đồi: 'Hãy che lấp chúng tôi!'",
           "R": "Người ta sẽ kêu với núi: 'Hãy sập xuống đè lên chúng tôi!' Họ sẽ kêu với đồi: 'Hãy chôn vùi chúng tôi đi!'"
+        },
+        "ko": {
+          "L": "그때에 사람들이 산들에게 '우리 위에 무너져라' 하고, 언덕들에게 '우리를 덮어라' 하고 말하기 시작할 것이다.",
+          "B": "그때 사람들은 산을 향해 '우리 위에 무너져 내려라!' 하고, 언덕을 향해 '우리를 덮어라!' 하고 말하기 시작할 것이다.",
+          "R": "사람들이 산들을 향해 '우리 위로 무너져라!' 하고 외칠 것이다. 언덕들을 향해서는 '우리를 덮어 버려라!' 하고 소리칠 것이다."
         }
       },
       "decisions": [
@@ -4582,6 +5269,11 @@
           "L": "Vì nếu người ta làm những điều này với cây gỗ xanh, thì với cây khô sẽ ra sao?\"",
           "B": "Vì nếu người ta đối xử với cây còn xanh như thế, thì cây khô sẽ ra thế nào?\"",
           "R": "Nếu người ta làm như thế với một cây đang xanh tươi, thì một cây khô sẽ bị gì?\""
+        },
+        "ko": {
+          "L": "그들이 푸른 나무에 이런 일들을 한다면, 마른 [나무]에는 무슨 일이 일어나겠느냐?\"",
+          "B": "푸른 나무에도 이렇게 한다면, 마른 나무는 어떻게 되겠느냐?\"",
+          "R": "푸르게 살아 있는 나무에도 이렇게 한다면, 마른 나무에는 어떤 일이 일어나겠느냐?\""
         }
       },
       "decisions": [
@@ -4670,6 +5362,26 @@
           "reason": "The saying's sense is footnoted in the meaning decision; Vietnamese keeps the picture rather than explaining it, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n42023031010",
+            "n42023031011"
+          ],
+          "choice": "[나무]",
+          "alternatives": [
+            "\"마른 것\""
+          ],
+          "reason": "The Greek says \"the dry\" with the noun understood; Korean needs it.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4721,6 +5433,11 @@
           "L": "Họ cũng dẫn hai người khác, là những kẻ gian ác, đi cùng với {{deity_pronoun:ngài|Ngài}} để bị xử tử.",
           "B": "Có hai người khác, đều là tội phạm, cũng bị dẫn đi cùng với {{deity_pronoun:ngài|Ngài}} để xử tử.",
           "R": "Có hai người khác cũng bị đem đi giết cùng với Đức Giê-xu. Họ là những tội phạm."
+        },
+        "ko": {
+          "L": "그리고 다른 두 사람, 곧 범죄자들도 그분과 함께 처형되려고 끌려가고 있었다.",
+          "B": "다른 두 사람도 처형되려고 예수와 함께 끌려갔다. 그들은 범죄자들이었다.",
+          "R": "다른 두 사람도 예수와 함께 죽임을 당하려고 끌려가고 있었다. 그들은 범죄자들이었다."
         }
       },
       "decisions": [
@@ -4839,6 +5556,29 @@
           "reason": "Luke's word means evildoers; \"kẻ cướp\" belongs to Mark's different word. The order \"hai người khác, là ...\" keeps Jesus out of the class of criminals (meaning decision).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42023032004",
+            "n42023032005"
+          ],
+          "choice": "\"범죄자\" for kakourgos at every level, through chapter 23; \"다른 두 사람\" first",
+          "alternatives": [
+            "\"강도\"",
+            "\"행악자\""
+          ],
+          "reason": "Luke's word means one who does evil; \"강도\" stays for lestes (Mark 15:27). Naming the two as \"other\" men first and then calling them criminals keeps Jesus out of that word (meaning decision).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4904,6 +5644,11 @@
           "L": "Khi đến nơi gọi là Cái Sọ, tại đó họ đóng đinh {{deity_pronoun:ngài|Ngài}} và những kẻ gian ác, một kẻ bên phải và một kẻ bên trái.",
           "B": "Khi đến nơi gọi là Cái Sọ, họ đóng đinh {{deity_pronoun:ngài|Ngài}} tại đó, cùng với hai tội phạm, một tên bên phải và một tên bên trái {{deity_pronoun:ngài|Ngài}}.",
           "R": "Họ đến một nơi gọi là Cái Sọ. Ở đó những người lính đóng đinh Đức Giê-xu trên cây thập tự. Họ cũng đóng đinh hai tội phạm, một tên ở bên phải và một tên ở bên trái {{deity_pronoun:ngài|Ngài}}."
+        },
+        "ko": {
+          "L": "그리고 그들이 해골이라고 불리는 곳에 이르러, 거기서 그분과 범죄자들을 십자가에 못 박았다. 한 사람은 오른쪽에, 한 사람은 왼쪽에 [못 박았다].",
+          "B": "해골이라고 하는 곳에 이르자, 그들은 거기서 예수를 십자가에 못 박고, 범죄자들도 하나는 예수의 오른쪽에, 하나는 왼쪽에 못 박았다.",
+          "R": "그들은 '해골'이라고 불리는 곳에 이르렀다. 거기서 병사들은 예수를 십자가에 못 박았다. 그리고 그 두 범죄자도 십자가에 못 박았다. 한 사람은 예수의 오른쪽에, 다른 한 사람은 왼쪽에 있었다."
         }
       },
       "decisions": [
@@ -5071,6 +5816,27 @@
           "reason": "Luke gives only the Greek name, so Vietnamese translates it, as the Vietnamese Mark 15:22 does after the Aramaic; \"Đồi Sọ\" would add a hill the text does not mention.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42023033009"
+          ],
+          "choice": "\"해골\" at every level",
+          "alternatives": [
+            "\"골고다\""
+          ],
+          "reason": "Luke gives only the Greek name, not the Aramaic \"골고다\" of Mark 15:22 and John 19:17, so Korean translates it.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5125,6 +5891,11 @@
           "L": "Còn Đức Giê-xu thì nói: \"Lạy Cha, xin tha cho họ, vì họ không biết điều họ đang làm.\"",
           "B": "Đức Giê-xu cứ nói: \"Lạy Cha, xin tha thứ cho họ, vì họ không biết việc họ đang làm.\"",
           "R": "Đức Giê-xu cầu nguyện: \"Lạy Cha, xin tha thứ cho những người này. Họ không hiểu việc mình đang làm.\""
+        },
+        "ko": {
+          "L": "그런데 예수께서 말씀하고 계셨다. \"아버지, 저들을 용서해 주십시오. 저들은 자기들이 무엇을 하는지 알지 못합니다.\"",
+          "B": "예수께서 거듭 말씀하셨다. \"아버지, 저 사람들을 용서해 주십시오. 저들은 자기들이 무엇을 하는지 알지 못합니다.\"",
+          "R": "예수께서 말씀하셨다. \"아버지, 이 사람들을 용서해 주십시오. 이 사람들은 자기들이 무슨 일을 하는지 모릅니다.\""
         }
       },
       "decisions": [
@@ -5222,6 +5993,27 @@
           "reason": "Jesus' address to the Father in prayer, as in the Vietnamese Luke 10:21 and 11:2; \"Cha\" is a noun of address and takes no setting span.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n42023034005"
+          ],
+          "choice": "Jesus prays to the Father in 합쇼체 (\"용서해 주십시오\", \"알지 못합니다\"), here and in 23:46",
+          "alternatives": [
+            "해라체"
+          ],
+          "reason": "As Jesus prays to the Father in the Korean John 17 and Mark 15:34 (style guide, section 4).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5271,6 +6063,11 @@
           "L": "Và chia nhau áo xống của {{deity_pronoun:ngài|Ngài}}, họ bắt thăm.",
           "B": "Họ bắt thăm để chia nhau quần áo của {{deity_pronoun:ngài|Ngài}}.",
           "R": "Những người lính chia nhau quần áo của {{deity_pronoun:ngài|Ngài}}. Họ bắt thăm để định ai được món nào."
+        },
+        "ko": {
+          "L": "그리고 그들은 그분의 옷을 나누면서 제비를 뽑았다.",
+          "B": "그들은 제비를 뽑아 예수의 옷을 나누어 가졌다.",
+          "R": "병사들은 예수의 옷을 자기들끼리 나누어 가졌다. 누가 어느 옷을 가질지 제비를 뽑아 정했다."
         }
       },
       "decisions": [
@@ -5373,6 +6170,28 @@
           "reason": "As in the Vietnamese Mark 15:24 and John 19:24: the plain word for deciding by lot, which keeps the echo of Psalm 22.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42023034018",
+            "n42023034019"
+          ],
+          "choice": "\"제비를 뽑다\" at every level",
+          "alternatives": [
+            "\"주사위를 던지다\""
+          ],
+          "reason": "The words of the Korean Mark 15:24 and John 19:24, and of Psalm 22 that the verse echoes.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5420,6 +6239,11 @@
           "L": "Và dân chúng đứng đó nhìn xem.",
           "B": "Dân chúng đứng đó xem.",
           "R": "Dân chúng đứng đó nhìn."
+        },
+        "ko": {
+          "L": "그리고 백성은 서서 지켜보고 있었다.",
+          "B": "백성은 서서 바라보고 있었다.",
+          "R": "사람들은 거기 서서 지켜보았다."
         }
       },
       "decisions": [
@@ -5518,6 +6342,11 @@
           "L": "Còn các nhà lãnh đạo cũng chế nhạo mà nói: \"Ông ta đã cứu những người khác; hãy để ông ta tự cứu mình đi, nếu người này là {{christos:Đấng Christ|Đấng Mê-si-a}} của Đức Chúa Trời, Đấng được chọn!\"",
           "B": "Các nhà lãnh đạo cũng buông lời nhạo báng: \"Ông ta đã cứu người khác. Nếu người này đúng là {{christos:Đấng Christ|Đấng Mê-si-a}} của Đức Chúa Trời, người được Đức Chúa Trời chọn, thì hãy để ông ta tự cứu mình đi!\"",
           "R": "Các nhà lãnh đạo cũng cười nhạo {{deity_pronoun:ngài|Ngài}}. Họ nói: \"Ông ta đã cứu người khác. Nếu ông ta thật là {{christos:Đấng Christ|Đấng Mê-si-a}} mà Đức Chúa Trời sai đến, là người Đức Chúa Trời đã chọn, thì bây giờ hãy để ông ta tự cứu mình đi!\""
+        },
+        "ko": {
+          "L": "그리고 지도자들도 비웃으며 말했다. \"그가 남들은 구원했다. 이자가 하나님의 {{christos:그리스도|메시아}}, 곧 택함을 받은 자라면, 자기 자신을 구원하라.\"",
+          "B": "지도자들도 비웃으며 말했다. \"남들은 구원하더니! 이자가 하나님의 {{christos:그리스도|메시아}}, 하나님께서 택하신 자라면 자기 자신이나 구원해 보라지!\"",
+          "R": "지도자들도 예수를 비웃었다. 그들이 말했다. \"다른 사람들은 구해 주더니! 이 사람이 정말 하나님께서 보내신 {{christos:그리스도|메시아}}이고 하나님께서 택하신 사람이라면, 이제 자기 자신이나 구해 보라지!\""
         }
       },
       "decisions": [
@@ -5696,6 +6525,30 @@
           "reason": "As in the Vietnamese Mark 15:31: the leaders speak of Jesus as \"ông ta\", and \"mình\" is a plain reflexive; neither has a reverent capital form.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42023035012",
+            "n42023035013",
+            "n42023035014",
+            "n42023035015"
+          ],
+          "choice": "\"구원하다\" (L, B), \"구하다\" (R) for sozo, here and in 23:37 and 23:39; mockers give Jesus no honorific; a scornful third-person command, \"구원하라\" (L), \"-해 보라지\" (B, R)",
+          "alternatives": [
+            "\"구출하다\""
+          ],
+          "reason": "As in the Korean Mark 15:31-32: the scorn says more than it means (meaning decision), so \"구원하다\" keeps the word of salvation. The particles after the christos span fit both forms.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5760,6 +6613,11 @@
           "L": "Các binh lính cũng chế nhạo {{deity_pronoun:ngài|Ngài}}, đến gần, đưa rượu chua cho {{deity_pronoun:ngài|Ngài}} \\v 37 và nói: \"Nếu ông là Vua của người Do Thái, hãy tự cứu mình đi!\"",
           "B": "Bọn lính cũng chế giễu {{deity_pronoun:ngài|Ngài}}. Họ đến gần, đưa rượu chua cho {{deity_pronoun:ngài|Ngài}} \\v 37 và nói: \"Nếu ông là Vua dân Do Thái thì hãy tự cứu mình đi!\"",
           "R": "Những người lính cũng chế giễu {{deity_pronoun:ngài|Ngài}}. Họ đến gần và đưa cho {{deity_pronoun:ngài|Ngài}} rượu chua rẻ tiền. \\v 37 Họ nói: \"Nếu ông là vua của dân Do Thái thì hãy tự cứu mình đi!\""
+        },
+        "ko": {
+          "L": "그리고 병사들도 다가와서 그분께 신 포도주를 내밀며 조롱하여 \\v 37 말했다. \"네가 유대인의 왕이면 너 자신을 구원하여라.\"",
+          "B": "병사들도 예수를 조롱했다. 그들은 다가와서 예수께 신 포도주를 내밀며 \\v 37 말했다. \"네가 유대인의 왕이라면 너 자신이나 구원해 보아라!\"",
+          "R": "병사들도 예수를 놀렸다. 그들은 가까이 와서 값싼 신 포도주를 예수께 내밀었다. \\v 37 그리고 말했다. \"네가 유대인의 왕이라면, 너 자신이나 구해 보아라!\""
         }
       },
       "decisions": [
@@ -5898,6 +6756,27 @@
           "reason": "As in the Vietnamese Mark 15:36 and John 19:29: \"giấm\" today means cooking vinegar.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42023036008"
+          ],
+          "choice": "\"신 포도주\" at every level",
+          "alternatives": [
+            "\"초\""
+          ],
+          "reason": "The word of the Korean Mark 15:36 and John 19:29; \"초\" (vinegar) misleads, since it was cheap wine gone sour.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5951,6 +6830,11 @@
           "L": "Phía trên {{deity_pronoun:ngài|Ngài}} cũng có một bản ghi: \"Người này [là] Vua của người Do Thái.\"",
           "B": "Phía trên {{deity_pronoun:ngài|Ngài}} cũng có một tấm bảng ghi: \"Đây là Vua dân Do Thái.\"",
           "R": "Người ta đã treo một tấm bảng phía trên đầu {{deity_pronoun:ngài|Ngài}}. Trên đó ghi: \"Đây là vua của dân Do Thái.\""
+        },
+        "ko": {
+          "L": "그리고 그분 위에는 \"이 사람은 유대인의 왕이다\"라고 쓴 패도 있었다.",
+          "B": "예수의 위쪽에는 \"이 사람은 유대인의 왕이다\"라고 쓴 패도 붙어 있었다.",
+          "R": "예수의 머리 위에는 팻말도 붙어 있었다. 거기에는 \"이 사람은 유대인의 왕이다\"라고 쓰여 있었다."
         }
       },
       "decisions": [
@@ -6027,6 +6911,27 @@
           "reason": "Readable says where the notice was placed.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42023038004"
+          ],
+          "choice": "\"쓴 패\" (L, B); \"팻말\" (R)",
+          "alternatives": [
+            "\"죄패\""
+          ],
+          "reason": "Luke's word is \"inscription\", without Mark's \"of the charge\", so Korean does not use \"죄패\" (Mark 15:26 Balanced); Readable uses the everyday word, as in Mark.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6082,6 +6987,11 @@
           "L": "Một trong những kẻ gian ác bị treo [trên cây thập tự] cứ nhục mạ {{deity_pronoun:ngài|Ngài}} mà nói: \"Ông không phải là {{christos:Đấng Christ|Đấng Mê-si-a}} sao?",
           "B": "Một trong hai tên tội phạm bị treo bên cạnh cứ sỉ nhục {{deity_pronoun:ngài|Ngài}}: \"Ông là {{christos:Đấng Christ|Đấng Mê-si-a}} kia mà, phải không?",
           "R": "Một trong hai tên tội phạm bị treo ở đó bắt đầu nói những lời độc ác với Đức Giê-xu. Hắn nói: \"Ông là {{christos:Đấng Christ|Đấng Mê-si-a}} phải không?"
+        },
+        "ko": {
+          "L": "그런데 [십자가에] 매달린 범죄자들 가운데 하나가 그분을 모독하며 말했다. \"너는 {{christos:그리스도|메시아}}가 아니냐?",
+          "B": "함께 매달린 범죄자 가운데 하나가 예수께 욕설을 퍼부었다. \"너는 {{christos:그리스도|메시아}}가 아니냐?",
+          "R": "거기 매달린 범죄자 가운데 하나가 예수께 못된 말을 하기 시작했다. \"너는 {{christos:그리스도|메시아}}가 아니냐?"
         }
       },
       "decisions": [
@@ -6179,6 +7089,27 @@
           "reason": "He mocks Jesus as the other mockers do (23:37); \"ông\" has no capital form for the setting.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42023039006"
+          ],
+          "choice": "\"모독하다\" (L), \"욕설을 퍼붓다\" (B), \"못된 말을 하다\" (R) for blasphemeo; the criminal speaks in 해라체 with \"너\"",
+          "alternatives": [
+            "\"비방하다\""
+          ],
+          "reason": "As in the Korean Mark 15:29; Korean \"-가 아니냐?\" already expects the answer yes (meaning decision), so no level needs the English reordering.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6225,6 +7156,11 @@
           "L": "Hãy cứu chính ông và chúng tôi!\"",
           "B": "Vậy hãy tự cứu mình và cứu cả chúng tôi nữa đi!\"",
           "R": "Vậy thì hãy tự cứu mình đi, và cứu chúng tôi nữa!\""
+        },
+        "ko": {
+          "L": "너 자신과 우리를 구원하여라!\"",
+          "B": "그렇다면 너 자신과 우리를 구원해 보아라!\"",
+          "R": "그렇다면 너 자신도 구하고 우리도 구해 보아라!\""
         }
       },
       "decisions": [
@@ -6324,6 +7260,11 @@
           "L": "Nhưng kẻ kia đáp lại, quở trách hắn mà nói: \"Anh không sợ cả Đức Chúa Trời sao, vì anh đang chịu cùng một án phạt?",
           "B": "Nhưng tên kia quở trách hắn: \"Anh không biết sợ Đức Chúa Trời sao, khi chính anh cũng đang chịu cùng một án tử hình?",
           "R": "Nhưng tên tội phạm kia bảo hắn là hắn sai. Người ấy nói: \"Anh phải biết sợ Đức Chúa Trời chứ! Anh đang bị trừng phạt bằng cái chết giống như người này."
+        },
+        "ko": {
+          "L": "그러나 다른 하나가 대답하여 그를 꾸짖으며 말했다. \"너는 같은 판결을 받은 처지인데, 하나님도 두려워하지 않느냐?",
+          "B": "그러자 다른 범죄자가 그를 꾸짖었다. \"너도 같은 사형 선고를 받았으면서, 하나님이 두렵지도 않으냐?",
+          "R": "그러나 다른 범죄자는 그가 잘못했다고 나무랐다. \"너는 하나님이 두렵지도 않으냐? 너도 저분과 똑같이 죽는 벌을 받고 있지 않으냐."
         }
       },
       "decisions": [
@@ -6454,6 +7395,27 @@
           "reason": "The criminal speaks of Jesus to the other man as \"người này\", as he does in 23:41; it has no capital form.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n42023040004"
+          ],
+          "choice": "The second criminal rebukes the other in 해라체, speaks of Jesus with honour (\"저분\" R, 23:40; \"이분\" B, R, 23:41) and to him in 합쇼체 (23:42)",
+          "alternatives": [
+            "no honorific for Jesus in his words"
+          ],
+          "reason": "His words show that he sees who Jesus is (meaning decisions), unlike the mocking criminal; Literal keeps the Greek \"this man\" in 23:41, as the Korean Mark 15:39 does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6510,6 +7472,11 @@
           "L": "Còn chúng ta thì [chịu] cách công bằng, vì chúng ta nhận [hình phạt] xứng với những việc chúng ta đã làm; nhưng người này không làm điều gì sai trái.\"",
           "B": "Chúng ta bị như vậy là đúng, vì chúng ta đang lãnh hậu quả xứng đáng với việc mình đã làm. Nhưng người này chẳng làm điều gì sai cả.\"",
           "R": "Chúng ta đáng bị phạt. Chúng ta đang nhận lấy điều chúng ta đáng phải chịu vì những việc chúng ta đã làm. Nhưng người này chưa hề làm điều gì sai.\""
+        },
+        "ko": {
+          "L": "그리고 우리는 마땅히 [이런 벌을 받는다]. 우리가 한 일에 합당한 것을 받고 있기 때문이다. 그러나 이 사람은 아무 잘못된 일도 하지 않았다.\"",
+          "B": "우리는 당연히 벌을 받는 것이다. 우리가 저지른 일의 대가를 받고 있으니까. 그러나 이분은 아무 잘못도 하지 않으셨다.\"",
+          "R": "우리는 벌을 받아도 싸다. 우리가 한 나쁜 짓에 대한 대가를 받는 것이다. 그러나 이분은 아무 잘못도 하지 않으셨다.\""
         }
       },
       "decisions": [
@@ -6604,6 +7571,25 @@
           "reason": "The speaker includes the man he is rebuking: both are under the same sentence.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n42023041004"
+          ],
+          "choice": "[이런 벌을 받는다]",
+          "alternatives": [
+            "no bracket"
+          ],
+          "reason": "The Greek has only \"justly\"; the verb is understood, as the English Literal brackets it.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6657,6 +7643,11 @@
           "L": "Rồi người ấy nói: \"Lạy Đức Giê-xu, xin nhớ đến tôi khi {{deity_pronoun:ngài|Ngài}} đến trong vương quốc của {{deity_pronoun:ngài|Ngài}}.\"",
           "B": "Rồi anh ta nói: \"Lạy Đức Giê-xu, xin nhớ đến tôi khi {{deity_pronoun:ngài|Ngài}} đến trong vương quốc của {{deity_pronoun:ngài|Ngài}}.\"",
           "R": "Rồi anh ta nói: \"Lạy Đức Giê-xu, khi {{deity_pronoun:ngài|Ngài}} đến làm vua, xin nhớ đến tôi.\""
+        },
+        "ko": {
+          "L": "그리고 그가 말했다. \"예수님, 예수님의 나라에 오실 때에 저를 기억해 주십시오.\"",
+          "B": "그리고 그가 말했다. \"예수님, 예수님의 나라에 오실 때에 저를 기억해 주십시오.\"",
+          "R": "그리고 그가 말했다. \"예수님, 왕으로 오실 때에 저를 꼭 기억해 주십시오.\""
         }
       },
       "decisions": [
@@ -6779,6 +7770,28 @@
           "reason": "As the blind man pleads in the Vietnamese Mark 10:47: \"Lạy\" is a humble plea and the bare name would be disrespectful. Addressed in the second person, \"ngài\" carries the setting, as in the Vietnamese Luke 8:28.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n42023042003",
+            "n42023042011"
+          ],
+          "choice": "\"예수님\" and 합쇼체 with \"저\"; \"예수님의 나라\" for \"your kingdom\" (L, B)",
+          "alternatives": [
+            "\"당신의 나라\""
+          ],
+          "reason": "Korean addresses someone honoured by title rather than by \"당신\", which would sound distant or rude here; repeating the title is the natural Korean way to say \"your\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6834,6 +7847,11 @@
           "L": "Và {{deity_pronoun:ngài|Ngài}} nói với anh ta: \"Thật vậy, {{deity_pronoun:ta|Ta}} nói với anh, hôm nay anh sẽ ở với {{deity_pronoun:ta|Ta}} trong Ba-ra-đi.\"",
           "B": "Đức Giê-xu đáp: \"Thật vậy, {{deity_pronoun:ta|Ta}} nói với anh, ngay hôm nay anh sẽ ở với {{deity_pronoun:ta|Ta}} trong Ba-ra-đi.\"",
           "R": "Đức Giê-xu trả lời anh ta: \"Ta nói thật với anh: ngay trong ngày hôm nay, anh sẽ ở với {{deity_pronoun:ta|Ta}} trên thiên đàng.\""
+        },
+        "ko": {
+          "L": "그러자 그분이 그에게 말씀하셨다. \"진실로 너에게 말한다. 오늘 네가 나와 함께 낙원에 있을 것이다.\"",
+          "B": "예수께서 그에게 말씀하셨다. \"진실로 너에게 말한다. 바로 오늘 네가 나와 함께 낙원에 있을 것이다.\"",
+          "R": "예수께서 그에게 대답하셨다. \"내가 너에게 분명히 말한다. 오늘이 다 가기 전에 너는 나와 함께 낙원에 있을 것이다.\""
         }
       },
       "decisions": [
@@ -7041,6 +8059,51 @@
           "reason": "The borrowed word for paradise, the place of the righteous dead with God (meaning decision); Readable uses the everyday word for where God's people go.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42023043004",
+            "n42023043005",
+            "n42023043006",
+            "n42023043007"
+          ],
+          "choice": "\"진실로 너에게 말한다\" (L, B); \"내가 너에게 분명히 말한다\" (R); \"오늘\" after the formula",
+          "alternatives": [
+            "\"오늘 진실로 너에게 말한다\""
+          ],
+          "reason": "The settled Korean amen formula, with the singular \"너에게\" of Mark 14:30. The formula closes with its own full stop, so \"오늘\" plainly belongs to what follows (meaning decision).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42023043013"
+          ],
+          "choice": "\"낙원\" at every level",
+          "alternatives": [
+            "\"천국\""
+          ],
+          "reason": "The established Korean word for paradise, the place of the righteous dead with God (meaning decision); \"천국\" is kept for the kingdom of heaven.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -7110,6 +8173,11 @@
           "L": "Lúc ấy đã khoảng giờ thứ sáu, và bóng tối bao trùm khắp cả xứ cho đến giờ thứ chín, \\v 45 mặt trời thôi [chiếu sáng]; và bức màn của đền thờ bị xé ra ở giữa.",
           "B": "Lúc ấy đã khoảng giữa trưa. Bóng tối bao phủ khắp xứ cho đến ba giờ chiều. \\v 45 Mặt trời không còn chiếu sáng, và bức màn trong đền thờ bị xé đôi ở giữa.",
           "R": "Lúc ấy là khoảng mười hai giờ trưa. Rồi cả xứ trở nên tối tăm, và trời tối như vậy cho đến ba giờ chiều. \\v 45 Mặt trời không còn chiếu sáng. Bức màn dày trong đền thờ bị xé toạc làm hai."
+        },
+        "ko": {
+          "L": "그리고 이미 여섯째 시쯤 되었는데, 온 땅에 어둠이 임하여 아홉째 시까지 계속되었다. \\v 45 해가 [빛을] 잃었고, 성소의 휘장이 한가운데가 찢어졌다.",
+          "B": "그때가 벌써 낮 열두 시쯤이었는데, 온 땅에 어둠이 덮여 오후 세 시까지 계속되었다. \\v 45 해가 빛을 잃었다. 그리고 성소의 휘장이 한가운데가 둘로 찢어졌다.",
+          "R": "어느새 낮 열두 시쯤이 되었다. 그때 온 땅이 캄캄해지더니 오후 세 시까지 계속 어두웠다. \\v 45 햇빛이 사라졌다. 그리고 성전 안에 드리워져 있던 휘장이 한가운데가 찢어졌다."
         }
       },
       "decisions": [
@@ -7358,6 +8426,54 @@
           "reason": "The style guide gives \"đền thờ\" for naos at every level; the curtain shows the temple building itself is meant (meaning decision).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42023044005",
+            "n42023044006",
+            "n42023044015",
+            "n42023044016"
+          ],
+          "choice": "\"여섯째 시\", \"아홉째 시\" (L); \"낮 열두 시\", \"오후 세 시\" (B, R)",
+          "alternatives": [
+            "the Greek count at every level"
+          ],
+          "reason": "Literal keeps the Greek count, Balanced and Readable give the modern time (style guide, section 5), as the Korean Mark 15:33.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42023045006",
+            "n42023045007",
+            "n42023045008",
+            "n42023045009"
+          ],
+          "choice": "\"성소의 휘장\" (L, B); \"성전 안에 드리워져 있던 휘장\" (R)",
+          "alternatives": [
+            "\"성전 휘장\""
+          ],
+          "reason": "The words of the Korean Mark 15:38 for the curtain of the sanctuary (meaning decision).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -7415,6 +8531,11 @@
           "L": "Và Đức Giê-xu kêu lớn tiếng mà nói: \"Lạy Cha, vào tay Cha, Con xin giao phó thần linh Con.\"",
           "B": "Rồi Đức Giê-xu kêu lớn: \"Lạy Cha, Con xin phó thác thần linh Con trong tay Cha.\"",
           "R": "Rồi Đức Giê-xu kêu lớn tiếng: \"Lạy Cha, Con xin giao thần linh Con cho Cha gìn giữ!\""
+        },
+        "ko": {
+          "L": "그리고 예수께서 큰 소리로 외쳐 말씀하셨다. \"아버지, 아버지의 손에 제 영을 맡깁니다.\"",
+          "B": "예수께서 큰 소리로 외치셨다. \"아버지, 제 영을 아버지의 손에 맡깁니다.\"",
+          "R": "그리고 예수께서 큰 소리로 외치셨다. \"아버지, 제 영을 아버지께 맡깁니다!\""
         }
       },
       "decisions": [
@@ -7592,6 +8713,29 @@
           "reason": "As in John 19:30, where Jesus gives up his spirit; the meaning decision reads it as his life, his very self.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42023046010",
+            "n42023046011",
+            "n42023046014"
+          ],
+          "choice": "\"아버지의 손에\" (L, B), \"아버지께\" (R); \"영\" for pneuma",
+          "alternatives": [
+            "\"목숨\""
+          ],
+          "reason": "Korean addresses the Father by title, not \"당신\"; Readable says \"to you\" without the picture of hands, as the English Readable does. \"영\" keeps the words of Psalm 31 (meaning decision).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -7638,6 +8782,11 @@
           "L": "Nói xong điều này, {{deity_pronoun:ngài|Ngài}} tắt thở.",
           "B": "Nói xong, {{deity_pronoun:ngài|Ngài}} trút hơi thở cuối cùng.",
           "R": "Nói xong, {{deity_pronoun:ngài|Ngài}} qua đời."
+        },
+        "ko": {
+          "L": "그리고 이 말씀을 하시고 숨을 거두셨다.",
+          "B": "이 말씀을 하시고 숨을 거두셨다.",
+          "R": "이렇게 말씀하시고 예수께서는 돌아가셨다."
         }
       },
       "decisions": [
@@ -7694,6 +8843,27 @@
             "aliikabidhi roho yake (as John 19:30)"
           ],
           "reason": "The verb is to breathe out, to breathe one's last (meaning decision m1), the same verb as in Mark 15:37, so Swahili uses the same words: the last breath at Literal, the everyday idiom \"kukata roho\" at Balanced, and plainly \"died\" at Readable, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42023046019"
+          ],
+          "choice": "\"숨을 거두다\" (L, B); \"돌아가시다\" (R)",
+          "alternatives": [
+            "\"죽으셨다\""
+          ],
+          "reason": "The words of the Korean Mark 15:37.",
           "uncertain": false,
           "footnote": false
         }
@@ -7754,6 +8924,11 @@
           "L": "Viên đội trưởng thấy việc đã xảy ra thì tôn vinh Đức Chúa Trời mà nói: \"Thật, người này đã là người công chính.\"",
           "B": "Viên đội trưởng thấy những gì đã xảy ra thì tôn vinh Đức Chúa Trời và nói: \"Người này thật là người công chính!\"",
           "R": "Một sĩ quan La Mã thấy những gì đã xảy ra. Ông tôn vinh Đức Chúa Trời và nói: \"Người này thật là người công chính. Ông ấy không làm điều gì sai cả!\""
+        },
+        "ko": {
+          "L": "그런데 백부장이 일어난 일을 보고 하나님께 영광을 돌리며 말했다. \"참으로 이 사람은 의인이었다.\"",
+          "B": "백부장은 일어난 일을 보고 하나님께 영광을 돌리며 말했다. \"이분은 참으로 의로운 분이셨다.\"",
+          "R": "로마 군대의 장교가 이 일을 보고 하나님께 영광을 돌리며 말했다. \"이분은 정말 의로운 분이셨다. 아무 잘못도 하지 않으셨다!\""
         }
       },
       "decisions": [
@@ -7989,6 +9164,27 @@
           "reason": "The key term \"công chính\" keeps both senses the meaning decision gives, innocent of the charge and right before God; Readable adds the first sense in a second sentence, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n42023047015"
+          ],
+          "choice": "\"이 사람은 ... 의인이었다\" (L); \"이분은 ... 의로운 분이셨다\" (B, R); \"백부장\" (L, B)",
+          "alternatives": [
+            "\"이 사람\" at every level"
+          ],
+          "reason": "As in the Korean Mark 15:39: Literal keeps \"this man\", and in Balanced and Readable the centurion's verdict would sound grudging without the honorific. \"의\" is the key term for righteous.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -8047,6 +9243,11 @@
           "L": "Và tất cả các đám đông đã tụ họp lại để xem cảnh tượng này, khi thấy những việc đã xảy ra, thì đấm ngực mà trở về.",
           "B": "Tất cả đám đông kéo đến xem cảnh tượng ấy, khi thấy những việc đã xảy ra, đều đấm ngực mà trở về nhà.",
           "R": "Có rất nhiều người đã kéo đến xem. Khi thấy những việc đã xảy ra, họ đấm ngực tỏ lòng buồn rầu rồi đi về nhà."
+        },
+        "ko": {
+          "L": "그리고 이 구경거리를 보려고 함께 모여든 모든 무리가 일어난 일들을 보고, 가슴을 치며 돌아갔다.",
+          "B": "이 광경을 보려고 모여든 무리도 모두 일어난 일을 보고 가슴을 치며 돌아갔다.",
+          "R": "많은 사람이 이 일을 구경하러 와 있었다. 그들은 일어난 일을 보고 슬퍼서 가슴을 치며 집으로 돌아갔다."
         }
       },
       "decisions": [
@@ -8192,6 +9393,11 @@
           "L": "Còn tất cả những người quen biết {{deity_pronoun:ngài|Ngài}} đều đứng ở xa, cùng những người phụ nữ đã theo {{deity_pronoun:ngài|Ngài}} từ Ga-li-lê, nhìn xem những việc này.",
           "B": "Tất cả những người quen biết {{deity_pronoun:ngài|Ngài}} đều đứng đằng xa. Những người phụ nữ đã theo {{deity_pronoun:ngài|Ngài}} từ Ga-li-lê cũng đứng đó và nhìn thấy những việc này.",
           "R": "Tất cả bạn bè của Đức Giê-xu đứng ở đằng xa. Những người phụ nữ đã theo {{deity_pronoun:ngài|Ngài}} từ Ga-li-lê cũng ở đó. Họ nhìn thấy mọi việc đã xảy ra."
+        },
+        "ko": {
+          "L": "그리고 그분을 아는 모든 사람이 멀리 서 있었고, 갈릴리에서부터 그분을 따라온 여자들도 이 일들을 보고 있었다.",
+          "B": "예수를 아는 사람들은 모두 멀리 서 있었다. 갈릴리에서부터 예수를 따라온 여자들도 거기 서서 이 일들을 지켜보았다.",
+          "R": "예수의 친구들은 모두 멀리 떨어져 서 있었다. 갈릴리에서부터 예수를 따라온 여자들도 거기 있었다. 그들은 이 모든 일을 지켜보았다."
         }
       },
       "decisions": [
@@ -8396,6 +9602,11 @@
           "L": "Và kìa, có một người tên là Giô-sép, là một nghị viên, một người tốt lành và công chính \\v 51 (người này đã không đồng ý với mưu định và việc làm của họ), [quê] ở A-ri-ma-thê, một thành của người Do Thái, là người trông đợi vương quốc của Đức Chúa Trời. \\v 52 Người này đến gặp Phi-lát và xin thi thể của Đức Giê-xu, \\v 53 rồi hạ [thi thể] xuống, ông quấn thi thể trong vải gai, và đặt {{deity_pronoun:ngài|Ngài}} trong một ngôi mộ đục trong đá, là nơi chưa từng có ai được đặt vào.",
           "B": "Có một người tên là Giô-sép, thành viên của Hội đồng Công luận, một người tốt lành và công chính. \\v 51 Ông đã không đồng ý với những gì hội đồng đã bàn định và thực hiện. Ông quê ở A-ri-ma-thê, một thành của người Do Thái, và ông đang trông đợi vương quốc của Đức Chúa Trời. \\v 52 Ông đến gặp Phi-lát và xin thi thể của Đức Giê-xu. \\v 53 Ông hạ thi thể xuống khỏi cây thập tự, lấy một tấm vải gai quấn lại, rồi đặt {{deity_pronoun:ngài|Ngài}} vào một ngôi mộ đục trong đá, nơi chưa hề có ai được chôn.",
           "R": "Có một người tên là Giô-sép. Ông là một thành viên của hội đồng tối cao của người Do Thái. Ông là người tốt, sống ngay thẳng trước mặt Đức Chúa Trời. \\v 51 Ông đã không đồng ý với kế hoạch và việc làm của các nhà lãnh đạo khác. Ông quê ở A-ri-ma-thê, một thị trấn của người Do Thái, và ông đang trông đợi Đức Chúa Trời thiết lập vương quốc của {{deity_pronoun:ngài|Ngài}}. \\v 52 Giô-sép đến gặp Phi-lát và xin thi thể của Đức Giê-xu. \\v 53 Ông hạ thi thể xuống khỏi cây thập tự và quấn trong một tấm vải gai. Rồi ông đặt {{deity_pronoun:ngài|Ngài}} vào một ngôi mộ được đục trong vách đá. Chưa có ai được chôn trong mộ ấy."
+        },
+        "ko": {
+          "L": "그리고 보라, 요셉이라는 이름의 사람이 있었는데, 그는 공의회 의원이었고 선하고 의로운 사람이었다. \\v 51 (이 사람은 그들의 결정과 행동에 동의하지 않았다.) 그는 유대인의 도시 아리마대 출신이었고, 하나님의 나라를 기다리고 있었다. \\v 52 이 사람이 빌라도에게 가서 예수의 시신을 달라고 요청했다. \\v 53 그리고 [시신을] 내려 고운 베로 싸고, 바위를 깎아 만든 무덤, 아직 아무도 놓인 적이 없는 [무덤]에 그분을 모셨다.",
+          "B": "요셉이라는 사람이 있었다. 그는 공의회 의원이었고, 선하고 의로운 사람이었다. \\v 51 그는 공의회의 결정과 행동에 찬성하지 않았다. 그는 유대인의 마을 아리마대 출신으로, 하나님의 나라를 기다리고 있었다. \\v 52 그가 빌라도에게 가서 예수의 시신을 내어 달라고 청했다. \\v 53 그리고 시신을 십자가에서 내려 고운 베로 감싸고, 바위를 파서 만든 무덤에 예수를 모셨다. 그 무덤에는 아직 아무도 묻힌 적이 없었다.",
+          "R": "요셉이라는 사람이 있었다. 그는 유대 최고 의회의 의원이었다. 그는 선한 사람이었고, 하나님 보시기에 옳은 일을 하는 사람이었다. \\v 51 그는 다른 지도자들의 계획에도, 그들이 한 일에도 찬성하지 않았다. 그는 유대인의 마을 아리마대에서 왔다. 그리고 하나님께서 그분의 나라를 세우시기를 기다리고 있었다. \\v 52 요셉은 빌라도에게 가서 예수의 시신을 달라고 부탁했다. \\v 53 그리고 시신을 십자가에서 내려 고운 베 천으로 감쌌다. 그다음에 바위를 파서 만든 무덤에 예수를 모셨다. 그 무덤에는 전에 아무도 묻힌 적이 없었다."
         }
       },
       "decisions": [
@@ -8741,6 +9952,31 @@
           "reason": "Literal keeps Luke's change from \"it\" (the body) to \"him\" (meaning decision); Vietnamese has no neuter pronoun, so it names the body.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42023050006",
+            "n42023052007",
+            "n42023053005",
+            "n42023053007"
+          ],
+          "choice": "\"공의회 의원\" (L, B), \"유대 최고 의회의 의원\" (R); \"시신\"; \"고운 베\" (L, B), \"고운 베 천\" (R); \"모시다\" for laying Jesus in the tomb",
+          "alternatives": [
+            "\"세마포\"",
+            "\"시체\""
+          ],
+          "reason": "The words of the Korean Mark 15:43-46 and John 19:38-42; \"시신\" is the respectful word. Literal keeps the shift from the body (\"[시신을]\") to Jesus himself (\"그분을\"), as the meaning decision notes.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -8790,6 +10026,11 @@
           "L": "Và hôm ấy là ngày Chuẩn Bị, và [ngày] Sa-bát đang rạng đến.",
           "B": "Hôm ấy là ngày Chuẩn Bị, và ngày Sa-bát sắp bắt đầu.",
           "R": "Hôm ấy là Thứ Sáu, ngày người ta chuẩn bị cho ngày Sa-bát. Ngày Sa-bát sẽ bắt đầu lúc mặt trời lặn."
+        },
+        "ko": {
+          "L": "그날은 준비일이었고, 안식일이 밝아 오고 있었다.",
+          "B": "그날은 준비일이었고, 안식일이 다가오고 있었다.",
+          "R": "그날은 금요일, 곧 안식일을 준비하는 날이었다. 해가 지면 안식일이 시작될 참이었다."
         }
       },
       "decisions": [
@@ -8904,6 +10145,30 @@
           "reason": "\"ngày Chuẩn Bị\" as in the Vietnamese Mark 15:42; Readable names the weekday, as the English Readable does. Literal keeps the Greek word for dawning, though the Sabbath began at sunset (meaning decision).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42023054002",
+            "n42023054003",
+            "n42023054004",
+            "n42023054007"
+          ],
+          "choice": "\"준비일\" (L, B), \"안식일을 준비하는 날\" (R); \"밝아 오다\" (L), \"다가오다\" (B)",
+          "alternatives": [
+            "\"예비일\""
+          ],
+          "reason": "The words of the Korean Mark 15:42. Literal keeps the Greek picture of dawning, though the Sabbath began at sunset (meaning decision).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -8973,6 +10238,11 @@
           "L": "Còn những người phụ nữ đã cùng {{deity_pronoun:ngài|Ngài}} từ Ga-li-lê đến thì đi theo sau, nhìn thấy ngôi mộ và thi thể {{deity_pronoun:ngài|Ngài}} được đặt [thế nào], \\v 56 rồi trở về, họ chuẩn bị hương liệu và dầu thơm.",
           "B": "Những người phụ nữ đã cùng {{deity_pronoun:ngài|Ngài}} từ Ga-li-lê đến thì đi theo Giô-sép. Họ thấy ngôi mộ và thấy thi thể {{deity_pronoun:ngài|Ngài}} được đặt vào đó thế nào. \\v 56 Rồi họ trở về và chuẩn bị hương liệu và dầu thơm.",
           "R": "Những người phụ nữ đã đi với Đức Giê-xu từ Ga-li-lê đi theo Giô-sép. Họ thấy ngôi mộ và thấy người ta đặt thi thể Đức Giê-xu vào đó như thế nào. \\v 56 Rồi họ về nhà và chuẩn bị hương liệu và dầu thơm để xức lên thi thể."
+        },
+        "ko": {
+          "L": "그리고 갈릴리에서 그분과 함께 온 여자들이 뒤따라가서, 무덤과 그분의 시신이 어떻게 놓였는지를 보았다. \\v 56 그리고 돌아가서 향료와 향유를 준비했다.",
+          "B": "갈릴리에서부터 예수와 함께 온 여자들이 요셉의 뒤를 따라가서, 무덤과 예수의 시신이 어떻게 놓였는지를 보았다. \\v 56 그리고 돌아가서 향료와 향유를 마련했다.",
+          "R": "갈릴리에서부터 예수와 함께 온 여자들이 요셉을 따라갔다. 그들은 무덤을 보았고, 예수의 시신이 어떻게 놓였는지도 보았다. \\v 56 그러고 나서 집으로 돌아가, 시신에 바를 향료와 향유를 준비했다."
         }
       },
       "decisions": [
@@ -9080,6 +10350,28 @@
           "reason": "Spices and perfumed oils for the body (meaning decision); \"hương liệu\" as in the Vietnamese Mark 16:1.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42023056004",
+            "n42023056006"
+          ],
+          "choice": "\"향료\" for aromata, \"향유\" for myra",
+          "alternatives": [
+            "\"향품\""
+          ],
+          "reason": "\"향료\" is the word of the Korean Mark 16:1 and John 19:40; \"향유\" is the ordinary word for perfumed oil.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -9130,6 +10422,11 @@
           "L": "Và trong ngày Sa-bát, họ nghỉ ngơi theo điều răn.",
           "B": "Trong ngày Sa-bát, họ nghỉ ngơi theo như điều răn dạy.",
           "R": "Vào ngày Sa-bát, họ nghỉ ngơi, vì luật của Đức Chúa Trời đòi hỏi như vậy."
+        },
+        "ko": {
+          "L": "그리고 안식일에는 계명에 따라 쉬었다.",
+          "B": "그리고 안식일에는 계명대로 쉬었다.",
+          "R": "안식일에는 하나님의 율법이 정한 대로 쉬었다."
         }
       },
       "decisions": [
