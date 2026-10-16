@@ -142,8 +142,10 @@ class LanguagesTest(unittest.TestCase):
                 page = re.sub(r'<script type="application/json" id="owb-data">.*?</script>'
                               r'|<div class="text" id="text">.*?</div>\s*<section class="notes"', "",
                               self.read(Path(lang) / rel), flags=re.S)
-                # So may a key-term page's English sentences and notes.
-                page = re.sub(r'<p class="term-(text|note|why-text)" lang="en">.*?</p>', "", page, flags=re.S)
+                # So may a key-term page's English sentences and notes, and
+                # the share card's description, which quotes the opening verse.
+                page = re.sub(r'<p class="term-(text|note|why-text)" lang="en">.*?</p>'
+                              r'|<meta property="og:image:alt" content="[^"]*">', "", page, flags=re.S)
                 for key in keys:
                     self.assertNotIn(en[key], page, (lang, rel, key))
                     self.assertIn(cat[key], page, (lang, rel, key))
