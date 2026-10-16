@@ -66,6 +66,13 @@ class SiteTest(unittest.TestCase):
             self.assertIn(f'<a class="sign-in-btn" href="{build_site.url(lang, "/login/")}" data-login>', text, path)
             self.assertIn(f'<a class="pop-item" href="{build_site.url(lang, "/account/")}">', text, path)
 
+    def test_account_page_lists_the_readers_messages(self):
+        page = (self.out / "es" / "account" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('<section class="set-block" id="my-messages" hidden', page)
+        self.assertIn(build_site.t("es", "account.messages"), page)
+        # Book names in the page's language, for the verse links.
+        self.assertIn("&quot;JHN&quot;: &quot;Juan&quot;", page)
+
     def test_admin_page_is_built_in_english_only_and_not_indexed(self):
         page = (self.out / "admin" / "index.html").read_text(encoding="utf-8")
         self.assertIn('<meta name="robots" content="noindex">', page)

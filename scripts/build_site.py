@@ -3789,6 +3789,11 @@ def account_page(lang="en"):
 <p class="synced">{a("synced")} <a href="{url(lang, "/saved/")}">{a("synced_link")}</a></p>
 <p><button class="button ghost" type="button" id="sign-out">{a("sign_out")}</button></p>
 </section>
+<section class="set-block" id="my-messages" hidden data-books="{html.escape(json.dumps({b: chapter_book(b, lang) for b in BOOK_CHAPTERS}, ensure_ascii=False))}">
+<h2>{a("messages")}</h2>
+<p>{a("messages_text")}</p>
+<ul class="my-messages" id="messages-list"></ul>
+</section>
 <div class="soon">
 <h2>{a("soon")}</h2>
 <p>{a("soon_text")}</p>
