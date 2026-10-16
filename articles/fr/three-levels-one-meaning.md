@@ -5,6 +5,7 @@ date: 2026-10-10
 order: 3
 nav_title: Trois niveaux, un seul sens
 section: method
+source: 3a335d853818
 ---
 On lit la Bible pour des raisons différentes. Un étudiant qui compare un verset avec le grec veut en voir la structure. Celui qui lit un chapitre à voix haute à l'église veut un français naturel. Un nouveau lecteur, ou un enfant, veut des mots simples. Une seule traduction ne peut pas servir les trois aussi bien, alors Open Word Bible donne chaque phrase à trois niveaux.
 

@@ -4,6 +4,7 @@ summary: Desde el siglo XIX, traductores judíos han vertido la Biblia hebrea al
 date: 2026-10-14
 order: 72
 section: compare
+source: e986ec7ee79e
 ---
 La Biblia hebrea es la Biblia de dos comunidades. Para los cristianos es el Antiguo Testamento, que se lee junto con el Nuevo. Para los judíos es toda la Escritura, llamada **Tanaj**, y se lee con una larga tradición de interpretación rabínica. Cuando los judíos de habla inglesa quisieron tener la Biblia en su propia lengua, podían usar la versión King James, y durante mucho tiempo muchos lo hicieron. Pero la habían hecho cristianos, sus encabezados de capítulo y algunas de sus traducciones reflejaban lecturas cristianas, y el orden de sus libros no era el suyo. Traductores judíos se propusieron hacer Biblias inglesas propias.
 

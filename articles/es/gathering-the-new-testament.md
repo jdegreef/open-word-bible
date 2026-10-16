@@ -5,6 +5,7 @@ date: 2026-10-11
 order: 38
 section: history
 part: nt
+source: d942276f5685
 ---
 ¿Por qué contiene el Nuevo Testamento estos veintisiete libros, y no otros? Una historia popular dice que el emperador Constantino, o el Concilio de Nicea en el 325, eligió los libros y suprimió los demás. Esa historia, que las novelas hicieron famosa, no es cierta: el Concilio de Nicea no trató el canon en absoluto. La historia real es más larga, más gradual y, en muchos sentidos, más interesante.
 

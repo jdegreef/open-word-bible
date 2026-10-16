@@ -4,6 +4,7 @@ summary: Cómo una traducción que Arthur Farstad empezó en 1984 se convirtió 
 date: 2026-10-14
 order: 69
 section: compare
+source: 57f33dec6fd1
 ---
 La **Christian Standard Bible** (CSB) es una de las grandes traducciones inglesas más jóvenes, y una de las que más rápido crecen. Es una revisión a fondo de la **Holman Christian Standard Bible** (HCSB), publicada completa por primera vez en 2004. Ambas las publica Holman Bible Publishers, que forma parte de **LifeWay Christian Resources**, el brazo editorial de la Convención Bautista del Sur, aunque sus traductores procedían de muchas denominaciones.
 

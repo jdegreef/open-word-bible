@@ -5,6 +5,7 @@ date: 2026-10-11
 order: 36
 section: history
 part: nt
+source: a6a86ecb32a0
 ---
 Essayez de recopier à la main une page de texte, avec soin, puis demandez à quelqu'un de la vérifier par rapport à l'original. À moins d'être très entraîné, vous trouverez sans doute quelques fautes : un mot oublié, une ligne sautée, une lettre fausse, peut-être un mot dont vous étiez sûr qu'il y était et qui n'y était pas. Les scribes de l'Antiquité étaient bien plus entraînés que la plupart d'entre nous, mais ils étaient humains, et ils faisaient le même genre de fautes.
 

@@ -4,6 +4,7 @@ summary: Maandishi asili ya Biblia yana maelfu ya miaka, lakini karibu kila tafs
 date: 2026-10-14
 order: 78
 section: compare
+source: 5a58fcfb7f0f
 ---
 Fungua karibu Biblia yoyote ya kisasa ya Kiingereza kwenye kurasa zake za kwanza na utakuta tangazo la hakimiliki, mara nyingi likifuatwa na aya ya ruhusa: ni mistari mingapi inayoweza kunukuliwa bila kuomba, ni maneno gani ya kutaja chanzo lazima yatumike, na uandikie nani kwa jambo lolote zaidi. Wasomaji wakati mwingine hushangaa. Maandishi ya Kiebrania na ya Kigiriki ni ya kale, na Biblia imekusudiwa kusomwa na kushirikiwa. Mtu yeyote anawezaje kuimiliki?
 

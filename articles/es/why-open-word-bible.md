@@ -4,6 +4,7 @@ summary: Casi todas las traducciones modernas tienen derechos de autor, y casi t
 date: 2026-10-10
 order: 1
 section: method
+source: 5121a977337c
 ---
 Ya existen muchas buenas traducciones de la Biblia. Entonces, ¿por qué empezar otra?
 

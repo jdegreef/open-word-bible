@@ -4,6 +4,7 @@ summary: Comment le vingtième siècle a fait de la traduction de la Bible une e
 date: 2026-10-12
 order: 58
 section: translation
+source: f6ad6f3b1e4b
 ---
 Il existe plus de sept mille langues vivantes dans le monde. Certaines sont parlées par des centaines de millions de personnes, d'autres par quelques centaines. Pendant la plus grande partie de l'histoire, la traduction de la Bible n'en a atteint qu'une petite fraction. Au vingtième siècle, cela a changé. La traduction est devenue un effort délibéré, organisé et de plus en plus professionnel pour atteindre toutes les langues et, au cours des dernières décennies, elle est devenue avant tout le travail des locuteurs de ces langues eux-mêmes.
 

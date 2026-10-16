@@ -4,6 +4,7 @@ summary: Jinsi New Revised Standard Version ya mwaka 1989 ilivyoupeleka mapokeo 
 date: 2026-10-14
 order: 66
 section: compare
+source: 8aa9e48c3ea4
 ---
 Ukifungua Biblia katika mhadhara wa chuo kikuu kuhusu Agano la Kale au Agano Jipya, kuna uwezekano mkubwa kwamba ni **New Revised Standard Version**. Kwa zaidi ya miaka thelathini NRSV imekuwa Biblia ya kawaida ya Kiingereza ya taaluma ya Biblia, ya makanisa mengi ya Kiprotestanti ya mkondo mkuu, na ya sehemu kubwa ya kazi ya kiekumeni kati ya makanisa. Mwaka 2021 ilirekebishwa tena kama **NRSV Updated Edition** (NRSVue, "Toleo Lililosasishwa").
 

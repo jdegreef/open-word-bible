@@ -4,6 +4,7 @@ summary: Le premier Nouveau Testament anglais traduit du grec et imprimé fut l'
 date: 2026-10-12
 order: 51
 section: translation
+source: 10ecb77faba3
 ---
 Avant les années 1520, il existait une Bible anglaise, mais manuscrite et traduite du latin, et la posséder sans autorisation était dangereux (voir [John Wyclif et la première Bible anglaise](/articles/the-wycliffe-bible/)). Le premier Nouveau Testament anglais traduit directement du grec, et le premier à être imprimé, fut l'œuvre d'un seul homme, **William Tyndale**. Il y travailla surtout en exil, caché, et fut mis à mort pour cela.
 

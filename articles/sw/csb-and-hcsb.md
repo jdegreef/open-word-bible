@@ -4,6 +4,7 @@ summary: Jinsi tafsiri iliyoanzishwa na Arthur Farstad mwaka 1984 ilivyokuwa Hol
 date: 2026-10-14
 order: 69
 section: compare
+source: 57f33dec6fd1
 ---
 **Christian Standard Bible** (CSB) ni mojawapo ya tafsiri kuu za Kiingereza zilizo changa zaidi, na mojawapo ya zile zinazokua kwa kasi zaidi. Ni marekebisho ya kina ya **Holman Christian Standard Bible** (HCSB), iliyochapishwa kamili kwa mara ya kwanza mwaka 2004. Zote mbili zinachapishwa na Holman Bible Publishers, sehemu ya **LifeWay Christian Resources**, tawi la uchapishaji la Southern Baptist Convention (Muungano wa Wabaptisti wa Kusini), ingawa watafsiri wake walitoka katika madhehebu mengi.
 

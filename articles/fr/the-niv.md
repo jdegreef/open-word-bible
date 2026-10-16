@@ -4,6 +4,7 @@ summary: Comment une rencontre de spécialistes évangéliques dans l'Illinois e
 date: 2026-10-14
 order: 67
 section: compare
+source: 233adc006214
 ---
 Pendant plusieurs décennies, la **New International Version** a été la Bible anglaise moderne la plus lue. Selon ses éditeurs, plus de 450 millions d'exemplaires avaient été diffusés au début des années 2010, et elle a été la Bible par défaut d'une grande partie du monde évangélique anglophone : sur les bancs des églises, dans les Bibles d'étude, dans les groupes de jeunes et dans les applications bibliques.
 

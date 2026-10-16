@@ -5,6 +5,7 @@ date: 2026-10-10
 order: 3
 nav_title: Viwango vitatu, maana moja
 section: method
+source: 3a335d853818
 ---
 Watu husoma Biblia kwa sababu tofauti. Mwanafunzi anayelinganisha mstari na Kigiriki anataka kuona muundo wake. Mtu anayesoma sura kwa sauti kanisani anataka Kiswahili cha kawaida. Msomaji mpya, au mtoto, anataka maneno rahisi. Tafsiri moja haiwezi kuwahudumia wote watatu kwa usawa, kwa hiyo Open Word Bible inatoa kila sentensi katika viwango vitatu.
 

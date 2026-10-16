@@ -4,6 +4,7 @@ summary: Durante más de dos siglos la versión King James estuvo prácticamente
 date: 2026-10-12
 order: 59
 section: translation
+source: ec2d359d9e12
 ---
 Durante unos doscientos cincuenta años después de 1611, los protestantes de habla inglesa tuvieron, en la práctica, una sola Biblia: la versión King James (véase [La versión King James](/articles/the-king-james-version/)). Los católicos de habla inglesa tenían otra, la Douay-Rheims, revisada por el obispo Richard Challoner en las décadas de 1740 y 1750. Aparecieron traducciones privadas, pero ninguna estuvo cerca de sustituirlas.
 

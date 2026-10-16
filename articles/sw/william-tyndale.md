@@ -4,6 +4,7 @@ summary: Agano Jipya la kwanza la Kiingereza lililotafsiriwa kutoka Kigiriki na 
 date: 2026-10-12
 order: 51
 section: translation
+source: 10ecb77faba3
 ---
 Kabla ya miaka ya 1520 kulikuwa na Biblia ya Kiingereza, lakini ilikuwa Biblia ya miswada iliyotafsiriwa kutoka Kilatini, na kuimiliki bila ruhusa kulikuwa hatari (ona [John Wycliffe na Biblia ya kwanza ya Kiingereza](/articles/the-wycliffe-bible/)). Agano Jipya la kwanza la Kiingereza lililotafsiriwa moja kwa moja kutoka Kigiriki, na la kwanza kuchapishwa, lilikuwa kazi ya mtu mmoja, **William Tyndale**. Aliifanya sehemu kubwa yake akiwa uhamishoni, akijificha, na aliuawa kwa sababu yake.
 

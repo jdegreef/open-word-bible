@@ -4,6 +4,7 @@ summary: Les plus anciens manuscrits grecs n'ont presque pas de ponctuation ni d
 date: 2026-10-11
 order: 14
 section: method
+source: c22b704e68b7
 ---
 Les plus anciens manuscrits du Nouveau Testament étaient écrits en lettres capitales, souvent sans espace entre les mots, avec très peu de ponctuation et sans aucun guillemet. Les virgules, les points, les points d'interrogation et les guillemets de toutes les Bibles modernes, dans toutes les langues, y ont été mis par des éditeurs et des traducteurs.
 

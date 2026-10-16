@@ -4,6 +4,7 @@ summary: Tafsiri mbili makini na aminifu za mstari uleule zinaweza kusomeka tofa
 date: 2026-10-14
 order: 61
 section: compare
+source: e2c5ab9a6c0e
 ---
 Weka Biblia mbili za Kiingereza kando kwa kando na usome mstari uleule katika kila moja. Mara nyingi maneno yanakaribiana. Wakati mwingine ni tofauti kabisa, na mara chache Biblia moja ina maneno, au mstari mzima, ambayo nyingine haina. Msomaji anaweza kuhitimisha kwa urahisi kwamba mojawapo lazima imekosea, au kwamba watafsiri husema tu wanachotaka.
 

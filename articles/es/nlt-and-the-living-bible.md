@@ -4,6 +4,7 @@ summary: Cómo la paráfrasis que un padre hizo para sus hijos se convirtió en 
 date: 2026-10-14
 order: 68
 section: compare
+source: fc255dd9446f
 ---
 Pocas Biblias empezaron de forma tan modesta como **The Living Bible**. Nació en la mesa de una familia de Illinois, donde un padre intentaba que sus hijos entendieran la Biblia. Llegó a ser uno de los libros más vendidos de Estados Unidos, levantó una editorial, y después su propio autor la dejó de lado deliberadamente en favor de algo más riguroso: la **New Living Translation** (NLT).
 

@@ -5,6 +5,7 @@ date: 2026-10-11
 order: 26
 section: history
 part: ot
+source: d99d28e96146
 ---
 Katika majira ya baridi ya 1946–47, mchungaji kijana Mbedui aitwaye **Muhammed edh-Dhib**, wa kabila la Ta'amireh, alikuwa akimtafuta mbuzi aliyepotea kati ya majabali karibu na pwani ya kaskazini-magharibi ya Bahari ya Chumvi. Alitupa jiwe ndani ya tundu kwenye mwamba na akasikia kitu kikivunjika. Yeye na wenzake walipoingia baadaye, walikuta mitungi mirefu ya udongo, na ndani ya baadhi yake, mafurushi ya ngozi ya zamani yaliyofungwa kwa kitani.
 

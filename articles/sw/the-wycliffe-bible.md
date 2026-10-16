@@ -4,6 +4,7 @@ summary: Mwishoni mwa karne ya kumi na nne, wataalamu waliovuviwa na mwanatheolo
 date: 2026-10-12
 order: 49
 section: translation
+source: 939114ed8acb
 ---
 Biblia ya kwanza kamili kwa Kiingereza haikuchapishwa. Ilinakiliwa kwa mkono, katika mamia ya miswada, katika miongo ya karibu mwaka 1400. Haikutafsiriwa kutoka Kiebrania na Kigiriki bali kutoka **Vulgata** ya Kilatini, Biblia ya kanisa la Magharibi la Zama za Kati. Na imepewa jina la mtu ambaye pengine aliitafsiri kidogo tu au hakuitafsiri kabisa yeye mwenyewe: mwanatheolojia wa Oxford **John Wycliffe**.
 

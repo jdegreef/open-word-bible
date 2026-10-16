@@ -5,6 +5,7 @@ date: 2026-10-12
 order: 42
 nav_title: La Peshitta
 section: translation
+source: f7ed61e6c809
 ---
 La mayoría de los cristianos occidentales conocen la historia de la Biblia en griego y en latín. Menos conocen que, al mismo tiempo, al este del mundo romano, surgió una tercera gran tradición, en una lengua cercana a la que hablaba Jesús. Esa lengua es el **siríaco**, y su Biblia, la **Peshitta**, se sigue leyendo en iglesias desde Oriente Medio hasta el sur de la India.
 

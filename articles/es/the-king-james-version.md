@@ -4,6 +4,7 @@ summary: Cómo una conferencia celebrada en Hampton Court en 1604 condujo a la B
 date: 2026-10-12
 order: 53
 section: translation
+source: a6443eb61b96
 ---
 Durante unos trescientos años, la Biblia de casi todos los angloparlantes fue la **versión King James** («del rey Jacobo»), publicada en 1611. En Gran Bretaña suele llamarse **Authorized Version** («versión autorizada»). Sus expresiones están entretejidas en el inglés, y muchas iglesias y lectores aún la usan.
 

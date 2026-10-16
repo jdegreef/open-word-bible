@@ -4,6 +4,7 @@ summary: A finales del siglo XIV, estudiosos inspirados por el teólogo de Oxfor
 date: 2026-10-12
 order: 49
 section: translation
+source: 939114ed8acb
 ---
 La primera Biblia completa en inglés no se imprimió. Se copió a mano, en cientos de manuscritos, en las décadas en torno a 1400. No se tradujo del hebreo y del griego, sino de la **Vulgata** latina, la Biblia de la iglesia occidental medieval. Y lleva el nombre de un hombre que probablemente tradujo poco o nada de ella: el teólogo de Oxford **John Wycliffe**.
 

@@ -4,6 +4,7 @@ summary: Qué significa estar hechos a imagen de Dios, quiénes son «nosotros»
 date: 2026-10-11
 order: 17
 section: passage
+source: 25d014a930ab
 ---
 Génesis 1 avanza hacia un punto culminante. Después de la luz, el mar, la tierra, las plantas y los animales, Dios hace a los seres humanos:
 

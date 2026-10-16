@@ -4,6 +4,7 @@ summary: Hacia el año 400, el erudito Jerónimo revisó los Evangelios latinos 
 date: 2026-10-12
 order: 43
 section: translation
+source: 42dd42a32d80
 ---
 Durante unos mil años, quien oía leer la Biblia en una iglesia de Europa occidental la oía en latín, y la mayor parte de lo que oía era obra de un solo hombre. **Jerónimo** fue un erudito brillante, quisquilloso e incansable que pasó las últimas décadas de su vida en Belén traduciendo las Escrituras. La Biblia latina que nació de su trabajo llegó a llamarse la **Vulgata**, la versión «común».
 

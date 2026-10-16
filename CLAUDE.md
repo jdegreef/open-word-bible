@@ -27,6 +27,10 @@ summarises the data model.
   named human reviewer approves them.
 - Don't use or redistribute MACULA's `ln` / `domain` fields (UBS MARBLE,
   used with permission, not openly licensed).
+- **Stamp article translations.** After writing or updating
+  `articles/<lang>/<slug>.md`, run `python3 scripts/check_translations.py
+  --stamp articles/<lang>/<slug>.md` so the report can tell when its English
+  changes later.
 - **A new interface message goes in every catalog in `i18n/`**, not only the
   languages a branch started with: merge main first, since languages get
   added. `scripts/check_catalogs.py` names anything missing.

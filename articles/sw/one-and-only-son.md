@@ -4,6 +4,7 @@ summary: Yohana 1:14 na 1:18 zinatumia neno ambalo Biblia za zamani za Kiingerez
 date: 2026-10-10
 order: 6
 section: passage
+source: f7ccd10c2f20
 ---
 Wasomaji waliokua na Biblia za zamani za Kiingereza wanazifahamu Yohana 1:14 na 3:16 kwa maneno "only begotten", yaani "aliyezaliwa pekee". Tafsiri nyingi za kisasa zinasema "wa pekee". Open Word Bible inasema hivyo pia. Sababu ziko katika rekodi za Yohana 1:14 na 1:18.
 

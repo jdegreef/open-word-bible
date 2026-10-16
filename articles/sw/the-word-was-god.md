@@ -5,6 +5,7 @@ date: 2026-10-10
 order: 5
 nav_title: Kutafsiri Yohana 1:1
 section: passage
+source: 0c821692ddd5
 ---
 Injili ya Yohana inaanza na mojawapo ya sentensi zinazojadiliwa zaidi katika Biblia:
 

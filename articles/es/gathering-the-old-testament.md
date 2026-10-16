@@ -5,6 +5,7 @@ date: 2026-10-11
 order: 30
 section: history
 part: ot
+source: df9d825658b7
 ---
 Escribir un libro es una cosa. Reconocer una colección de libros como Escritura, una lista fija con un principio y un final, es otra. La palabra para esa lista es **canon**, de un término griego que designaba una vara de medir o una regla. Este artículo examina cómo los libros de la Biblia hebrea, el Antiguo Testamento cristiano, llegaron a reunirse en un canon, y por qué las Biblias judías, protestantes, católicas y ortodoxas todavía no tienen exactamente la misma lista.
 

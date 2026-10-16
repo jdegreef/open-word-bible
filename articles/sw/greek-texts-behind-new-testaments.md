@@ -4,6 +4,7 @@ summary: Kila Agano Jipya la Kiingereza limetafsiriwa kutoka maandishi ya Kigiri
 date: 2026-10-14
 order: 74
 section: compare
+source: d4cccefe6f3b
 ---
 Hakuna mtafsiri anayefanya kazi kutoka miswada ya asili ya Agano Jipya. Haipo tena. Kilichobaki ni zaidi ya miswada elfu tano ya Kigiriki, kuanzia vipande vidogo vya mafunjo hadi Biblia kamili za Zama za Kati, inayotofautiana kwa njia nyingi ndogo na chache kubwa (ona [Maandishi ya Biblia yanaaminika kiasi gani?](/articles/how-reliable-is-the-text/)). Wataalamu wanailinganisha na kuchapisha toleo la maandishi ya Kigiriki, na watafsiri wanatafsiri toleo.
 

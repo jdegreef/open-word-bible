@@ -4,6 +4,7 @@ summary: De la Douay-Rheims des collèges anglais en exil à la Bible de Jérusa
 date: 2026-10-14
 order: 71
 section: compare
+source: af7a51e30830
 ---
 La plupart des histoires de la Bible anglaise suivent la lignée protestante qui va de Tyndale à la version King James et à ses révisions. À côté d'elle court une seconde tradition, avec ses propres traducteurs, ses propres débats et ses propres contraintes. Les Bibles catholiques en anglais diffèrent des Bibles protestantes de trois manières principales : elles contiennent plus de livres, elles sont approuvées par des évêques, et beaucoup d'entre elles sont façonnées par les besoins de la liturgie, où la Bible est lue à voix haute à la messe.
 

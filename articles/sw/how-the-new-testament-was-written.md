@@ -5,6 +5,7 @@ date: 2026-10-11
 order: 31
 section: history
 part: nt
+source: 3f79bcd16944
 ---
 Agano Jipya liliandikwa kwa haraka zaidi kuliko Agano la Kale. Vitabu vyake ishirini na saba vyote viliandikwa ndani ya miaka sabini hivi baada ya kifo cha Yesu, na vingi vyao huenda ndani ya miaka arobaini au hamsini. Viliandikwa kwa Kigiriki, lugha ya kawaida ya upande wa mashariki wa Dola la Kirumi, na idadi ndogo ya waandishi, wengi wao wakiwa wafuasi wa Yesu wa Kiyahudi. Makala hii inaangalia jinsi vilivyoandikwa na jinsi vilivyosambaa mwanzoni.
 

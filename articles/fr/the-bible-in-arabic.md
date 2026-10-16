@@ -4,6 +4,7 @@ summary: Moins de deux siècles après l'essor de l'islam, chrétiens et juifs t
 date: 2026-10-12
 order: 47
 section: translation
+source: da551baa3acb
 ---
 Quand les apôtres parlèrent à la Pentecôte, la foule de Jérusalem comptait des visiteurs venus de nombreux pays, et ils disaient :
 

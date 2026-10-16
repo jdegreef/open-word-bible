@@ -4,6 +4,7 @@ summary: El primer Nuevo Testamento inglés traducido del griego e impreso fue o
 date: 2026-10-12
 order: 51
 section: translation
+source: 10ecb77faba3
 ---
 Antes de la década de 1520 había una Biblia inglesa, pero era una Biblia manuscrita traducida del latín, y poseerla sin permiso era peligroso (véase [John Wycliffe y la primera Biblia inglesa](/articles/the-wycliffe-bible/)). El primer Nuevo Testamento inglés traducido directamente del griego, y el primero que se imprimió, fue obra de un solo hombre, **William Tyndale**. Hizo la mayor parte en el exilio, escondido, y lo mataron por ello.
 

@@ -4,6 +4,7 @@ summary: La plupart des traductions modernes sont protégées par le droit d'aut
 date: 2026-10-10
 order: 1
 section: method
+source: 5121a977337c
 ---
 Il existe déjà beaucoup de bonnes traductions de la Bible. Alors pourquoi en commencer une autre ?
 

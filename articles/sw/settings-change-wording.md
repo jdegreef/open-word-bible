@@ -4,6 +4,7 @@ summary: Jumuishi au kimapokeo, Kristo au Masihi, yeye au Yeye. Kwa nini haya ni
 date: 2026-10-10
 order: 4
 section: method
+source: 580d031480d0
 ---
 Wasomaji wa Biblia hutofautiana kuhusu mambo fulani ambayo, kwa usahihi, ni mambo ya maneno tu. Je, mahali ambapo wanaume na wanawake wote wanamaanishwa, maandiko yaseme "wahenga" au "mababu"? Je, cheo cha Yesu kiwe "Kristo" au "Masihi"? Je, viwakilishi vya Mungu viandikwe kwa herufi kubwa? Open Word Bible inamwachia kila msomaji achague.
 

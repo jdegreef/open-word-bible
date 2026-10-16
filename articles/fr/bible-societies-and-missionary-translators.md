@@ -4,6 +4,7 @@ summary: Au dix-neuvième siècle, de nouvelles sociétés bibliques et des miss
 date: 2026-10-12
 order: 57
 section: translation
+source: 3582bc9932c0
 ---
 Selon une estimation courante, en 1800, la Bible, en tout ou en partie, avait été imprimée dans environ soixante-dix langues, européennes pour la plupart. En 1900, on en comptait plusieurs centaines. Ce changement fut porté par deux nouveautés : des sociétés qui n'existaient que pour imprimer et diffuser des Bibles, et une vague de missionnaires protestants qui apprirent des langues rarement, voire jamais, mises par écrit.
 

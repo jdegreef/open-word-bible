@@ -4,6 +4,7 @@ summary: Desde las Biblias iluminadas del París medieval hasta la Biblia reform
 date: 2026-10-12
 order: 55
 section: translation
+source: e10960820a3f
 ---
 El francés lleva unos ochocientos años siendo lengua de traducción bíblica. Ha dado Biblias para reyes y para refugiados, para católicos, para protestantes y para ambos a la vez. Hoy la mayoría de los francófonos viven fuera de Europa, y la Biblia francesa se lee en Kinsasa y en Abiyán tanto como en París o en Ginebra.
 

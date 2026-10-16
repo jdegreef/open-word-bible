@@ -5,6 +5,7 @@ date: 2026-10-11
 order: 40
 section: history
 part: today
+source: 4e7e5b90d44f
 ---
 Mfululizo huu umeifuata Biblia kuanzia ilipoandikwa kwa mara ya kwanza, kupitia vizazi vya wanakili, hadi miswada na matoleo yaliyochapishwa yaliyo nyuma ya tafsiri za kisasa. Makala hii ya mwisho inauliza swali lililo nyuma ya mengine yote: tunaweza kuwa na uhakika kiasi gani kwamba Biblia tunayoisoma leo inasema kile ambacho waandishi wake waliandika?
 

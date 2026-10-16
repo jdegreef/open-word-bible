@@ -4,6 +4,7 @@ summary: Jinsi tafsiri fafanuzi ambayo baba aliiandaa kwa ajili ya watoto wake i
 date: 2026-10-14
 order: 68
 section: compare
+source: fc255dd9446f
 ---
 Biblia chache zilianza kwa unyenyekevu kama **The Living Bible**. Ilianza kwenye meza ya familia huko Illinois, ambapo baba alijaribu kuwafanya watoto wake waielewe Biblia. Ikawa mojawapo ya vitabu vilivyouzwa zaidi Amerika, ikajenga kampuni ya uchapishaji, na kisha ikawekwa kando kwa makusudi na mwandishi wake mwenyewe kwa ajili ya kitu cha kina zaidi: **New Living Translation** (NLT).
 

@@ -4,6 +4,7 @@ summary: Miswada ya zamani zaidi ya Kigiriki karibu haina alama za uakifishaji, 
 date: 2026-10-11
 order: 14
 section: method
+source: c22b704e68b7
 ---
 Miswada ya kwanza kabisa ya Agano Jipya iliandikwa kwa herufi kubwa, mara nyingi bila nafasi kati ya maneno, ikiwa na alama chache sana za uakifishaji na bila alama za kunukuu hata kidogo. Koma, nukta, alama za kuuliza na alama za kunukuu katika kila Biblia ya kisasa, katika kila lugha, ziliwekwa pale na wahariri na watafsiri.
 

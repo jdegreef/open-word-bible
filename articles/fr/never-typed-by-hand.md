@@ -4,6 +4,7 @@ summary: Une règle ferme protège l'exactitude de tout ce qu'Open Word Bible mo
 date: 2026-10-10
 order: 9
 section: method
+source: 7442e601ce26
 ---
 Open Word Bible a une règle qui surprend : personne, ni humain ni IA, ne tape jamais un mot grec ou hébreu dans la traduction ou dans ses notes. Chaque mot en langue originale que vous voyez sur ce site, y compris le grec de ces articles, est copié par un logiciel à partir de données sources fixes.
 

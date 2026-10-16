@@ -5,6 +5,7 @@ date: 2026-10-11
 order: 40
 section: history
 part: today
+source: 4e7e5b90d44f
 ---
 Cette série a suivi la Bible depuis sa première rédaction, à travers des générations de scribes, jusqu'aux manuscrits et aux éditions imprimées qui sous-tendent les traductions modernes. Ce dernier article pose la question qui se cache derrière toutes les autres : avec quelle assurance pouvons-nous dire que la Bible que nous lisons aujourd'hui dit ce que ses auteurs ont écrit ?
 

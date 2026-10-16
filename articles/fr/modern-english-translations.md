@@ -4,6 +4,7 @@ summary: Pendant plus de deux siècles, la version King James fut presque seule.
 date: 2026-10-12
 order: 59
 section: translation
+source: ec2d359d9e12
 ---
 Pendant environ deux cent cinquante ans après 1611, les protestants anglophones n'eurent, en pratique, qu'une Bible : la version King James (voir [La version King James](/articles/the-king-james-version/)). Les catholiques anglophones en avaient une autre, la Douay-Rheims, révisée par l'évêque Richard Challoner dans les années 1740 et 1750. Des traductions privées parurent, mais aucune ne fut près de les remplacer.
 

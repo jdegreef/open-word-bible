@@ -4,6 +4,7 @@ summary: Escondido en el castillo de Wartburg en 1521–22, Martín Lutero tradu
 date: 2026-10-12
 order: 50
 section: translation
+source: 4a214dff1341
 ---
 En mayo de 1521, cuando volvía de la Dieta imperial de Worms, donde se había negado a retractarse de sus escritos, **Martín Lutero** fue apresado por jinetes armados. El «secuestro» lo había organizado su protector, el elector **Federico el Sabio** de Sajonia. Llevaron a Lutero al **Wartburg**, un castillo que domina Eisenach, donde vivió disfrazado de «Junker Jörg», un caballero, se dejó crecer la barba y escribió.
 

@@ -4,6 +4,7 @@ summary: La plus ancienne querelle de la traduction porte sur ce qu'il faut suiv
 date: 2026-10-12
 order: 60
 section: translation
+source: 4076e700cb50
 ---
 Tout traducteur fait face au même choix bien des fois à chaque page. Dois-je suivre les mots et la structure de l'original d'aussi près que ma langue le permet, pour que les lecteurs voient ce que l'auteur a réellement écrit ? Ou dois-je dire ce que l'auteur voulait dire, comme le dirait quelqu'un dont c'est la langue maternelle, pour que les lecteurs comprennent sans effort ?
 

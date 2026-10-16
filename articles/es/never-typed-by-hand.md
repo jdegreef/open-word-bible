@@ -4,6 +4,7 @@ summary: Una regla firme protege la exactitud de todo lo que Open Word Bible mue
 date: 2026-10-10
 order: 9
 section: method
+source: 7442e601ce26
 ---
 Open Word Bible tiene una regla que sorprende a la gente: nadie, ni humano ni IA, escribe jamás una palabra griega o hebrea en la traducción ni en sus notas. Cada palabra en idioma original que ves en este sitio, incluido el griego de estos artículos, la copia el software de datos fuente fijos.
 

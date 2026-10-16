@@ -4,6 +4,7 @@ summary: En Efesios 2:8 Pablo dice «esto no viene de ustedes; es don de Dios».
 date: 2026-10-11
 order: 13
 section: passage
+source: b60ac5eadf68
 ---
 Efesios 2:8–9 es una de las afirmaciones más claras del Nuevo Testamento sobre cómo se salva una persona:
 

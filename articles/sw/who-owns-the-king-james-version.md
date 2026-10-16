@@ -4,6 +4,7 @@ summary: Katika sehemu kubwa ya dunia King James Version iko katika mali ya umma
 date: 2026-10-14
 order: 79
 section: compare
+source: 99d6265e2543
 ---
 King James Version ina zaidi ya miaka mia nne, na nchini Marekani, Kanada, Australia na nchi nyingine nyingi mtu yeyote anaweza kuichapisha, kuinukuu, kuirekodi au kuiweka mtandaoni bila kuomba. Ndiyo Biblia ya mali ya umma inayotumika zaidi duniani, na tovuti na programu nyingi za Biblia za bure zimejengwa juu yake.
 

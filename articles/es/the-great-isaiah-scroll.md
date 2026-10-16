@@ -5,6 +5,7 @@ date: 2026-10-11
 order: 27
 section: history
 part: ot
+source: 3dec12dd8876
 ---
 De todos los Rollos del Mar Muerto, uno se ha convertido en símbolo de todo el descubrimiento: el **Gran Rollo de Isaías**, que los especialistas llaman **1QIsa-a** (Cueva 1, Qumrán, Isaías, primera copia). Estaba entre los siete primeros rollos hallados en 1947, y es el único libro bíblico de los rollos que se conserva completo, los sesenta y seis capítulos, del primer versículo al último.
 

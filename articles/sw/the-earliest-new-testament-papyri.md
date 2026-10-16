@@ -5,6 +5,7 @@ date: 2026-10-11
 order: 34
 section: history
 part: nt
+source: d81ede2d97be
 ---
 Hati za asili za Agano Jipya, barua ambazo Paulo aliwasomea waandishi na Injili kama waandishi wake walivyozimaliza, zimepotea zamani. Nakala za zamani zaidi tulizo nazo zimeandikwa juu ya mafunjo, karibu zote zilipatikana Misri, na nyingi zao ni vipande. Zinaitwa **mafunjo ya Agano Jipya**, na zinapewa namba kwa herufi P (mara nyingi huandikwa kwa herufi ya Kigothi) ikifuatiwa na namba, kwa mpangilio zilivyoorodheshwa: P1, P2, na kadhalika. Zaidi ya 140 zimesajiliwa na Taasisi ya Utafiti wa Maandishi ya Agano Jipya huko Münster, inayotunza orodha rasmi.
 

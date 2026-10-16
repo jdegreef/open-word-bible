@@ -4,6 +4,7 @@ summary: Je, "brothers" (ndugu wa kiume) liwajumuishe dada? Je, "man" ni kila mt
 date: 2026-10-14
 order: 77
 section: compare
+source: 28e8481b5341
 ---
 Maswali machache katika tafsiri ya kisasa ya Biblia yamesababisha mabishano mengi kama hili: pale ambapo Kiebrania au Kigiriki kinatumia neno la kiume kwa watu kwa ujumla, Kiingereza kiseme nini?
 

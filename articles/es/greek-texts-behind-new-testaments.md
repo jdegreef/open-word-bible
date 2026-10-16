@@ -4,6 +4,7 @@ summary: Todo Nuevo Testamento en inglés se traduce de un texto griego impreso,
 date: 2026-10-14
 order: 74
 section: compare
+source: d4cccefe6f3b
 ---
 Ningún traductor trabaja con los manuscritos originales del Nuevo Testamento. No se conservan. Lo que se conserva son más de cinco mil manuscritos griegos, desde diminutos fragmentos de papiro hasta Biblias medievales completas, que difieren entre sí en muchos detalles pequeños y en unos pocos grandes (véase [¿Qué tan fiable es el texto de la Biblia?](/articles/how-reliable-is-the-text/)). Los estudiosos los comparan e imprimen una edición del texto griego, y los traductores traducen una edición.
 

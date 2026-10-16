@@ -6,6 +6,7 @@ order: 23
 nav_title: Las reglas de un rollo de la Torá
 section: history
 part: ot
+source: c9c4ea88d489
 ---
 Si hoy visitas una sinagoga, quizá veas cómo se saca el rollo de la Torá del arca, se desenrolla y se lee en voz alta. Ese rollo lo escribió a mano un escriba formado, siguiendo reglas que tienen más de mil años. Una sola letra que faltara lo haría no apto para la lectura pública.
 

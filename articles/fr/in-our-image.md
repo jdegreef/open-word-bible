@@ -4,6 +4,7 @@ summary: Ce que veut dire être fait à l'image de Dieu, qui est ce "nous", pour
 date: 2026-10-11
 order: 17
 section: passage
+source: 25d014a930ab
 ---
 Genèse 1 monte vers un sommet. Après la lumière, la mer, la terre, les plantes et les animaux, Dieu fait les êtres humains :
 

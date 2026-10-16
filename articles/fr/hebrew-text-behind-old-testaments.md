@@ -4,6 +4,7 @@ summary: Presque tout Ancien Testament moderne est traduit du texte massorétiqu
 date: 2026-10-14
 order: 75
 section: compare
+source: 3f3ae1c5422d
 ---
 L'Ancien Testament de presque toutes les Bibles modernes, juives ou chrétiennes, est traduit du même texte hébreu : le **texte massorétique**, la forme de la Bible hébraïque conservée par les scribes juifs et fixée, avec ses voyelles, ses accents et ses notes, par les savants appelés massorètes au début du Moyen Âge (voir [Les massorètes : gardiens du texte hébreu](/articles/the-masoretes/)). Cet accord est remarquable, et il fait que les traductions de l'Ancien Testament diffèrent beaucoup moins par leur texte de base que celles du Nouveau (comparer [Les textes grecs à la base des Nouveaux Testaments](/articles/greek-texts-behind-new-testaments/)).
 

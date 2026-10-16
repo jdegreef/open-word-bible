@@ -4,6 +4,7 @@ summary: Kuumbwa kwa mfano wa Mungu kunamaanisha nini, "sisi" ni nani, kwa nini 
 date: 2026-10-11
 order: 17
 section: passage
+source: 25d014a930ab
 ---
 Mwanzo 1 inapanda hadi kilele. Baada ya nuru, bahari, nchi kavu, mimea na wanyama, Mungu anawaumba wanadamu. Mwanzo bado haujatafsiriwa kwa Kiswahili, kwa hiyo manukuu ya Open Word Bible katika makala hii yanatoka katika tafsiri yake ya Kiingereza:
 

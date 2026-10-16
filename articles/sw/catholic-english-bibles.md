@@ -4,6 +4,7 @@ summary: Kuanzia Douay-Rheims ya vyuo vya Kiingereza vilivyokuwa uhamishoni hadi
 date: 2026-10-14
 order: 71
 section: compare
+source: af7a51e30830
 ---
 Historia nyingi za Biblia ya Kiingereza zinafuata mstari wa Kiprotestanti kutoka Tyndale hadi King James Version na marekebisho yake. Kando yake kuna mapokeo ya pili, yenye watafsiri wake, mijadala yake na mipaka yake. Biblia za Kikatoliki za Kiingereza zinatofautiana na za Kiprotestanti kwa njia tatu kuu: zina vitabu vingi zaidi, zinaidhinishwa na maaskofu, na nyingi kati yake zimeundwa na mahitaji ya liturujia, ambamo Biblia inasomwa kwa sauti katika Misa.
 

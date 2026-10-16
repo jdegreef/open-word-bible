@@ -4,6 +4,7 @@ summary: Depuis le dix-neuvième siècle, des traducteurs juifs rendent la Bible
 date: 2026-10-14
 order: 72
 section: compare
+source: e986ec7ee79e
 ---
 La Bible hébraïque est la Bible de deux communautés. Pour les chrétiens, c'est l'Ancien Testament, lu avec le Nouveau. Pour les juifs, c'est l'Écriture tout entière, appelée le **Tanakh**, et elle est lue avec une longue tradition d'interprétation rabbinique. Quand les juifs anglophones voulurent la Bible dans leur propre langue, ils pouvaient utiliser la version King James, et beaucoup le firent longtemps. Mais elle avait été faite par des chrétiens, ses titres de chapitres et certaines de ses traductions reflétaient des lectures chrétiennes, et l'ordre de ses livres n'était pas le leur. Des traducteurs juifs entreprirent de faire leurs propres Bibles anglaises.
 

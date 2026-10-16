@@ -5,6 +5,7 @@ date: 2026-10-11
 order: 26
 section: history
 part: ot
+source: d99d28e96146
 ---
 Au cours de l'hiver 1946–47, un jeune berger bédouin nommé **Mohammed edh-Dhib**, de la tribu des Ta'amireh, cherchait une chèvre égarée parmi les falaises proches de la rive nord-ouest de la mer Morte. Il lança une pierre dans une ouverture de la roche et entendit quelque chose se briser. Quand, plus tard, ses compagnons et lui y grimpèrent, ils trouvèrent de hautes jarres de terre cuite et, dans certaines d'entre elles, des rouleaux de vieux cuir enveloppés de lin.
 

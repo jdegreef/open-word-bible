@@ -5,6 +5,7 @@ date: 2026-10-10
 order: 7
 nav_title: Cuando una decisión es incierta
 section: passage
+source: 67d13acd619a
 ---
 Toda traducción esconde sus decisiones reñidas. Un comité vota, la lectura de la mayoría entra en el texto y el lector nunca se entera de que la votación fue ajustada. Open Word Bible marca esas decisiones como *inciertas*, explica las dos posturas y muestra una etiqueta en el lector. Aquí van dos.
 

@@ -4,6 +4,7 @@ summary: Karibu mwaka 400 B.K., mtaalamu Yeronimo alirekebisha Injili za Kilatin
 date: 2026-10-12
 order: 43
 section: translation
+source: 42dd42a32d80
 ---
 Kwa takriban miaka elfu moja, kama ungeisikia Biblia ikisomwa katika kanisa la Ulaya ya magharibi, ungeisikia kwa Kilatini, na sehemu kubwa ya ulichokisikia ilikuwa kazi ya mtu mmoja. **Yeronimo** alikuwa mtaalamu mwenye akili nyingi, mkali na asiyechoka, aliyetumia miongo ya mwisho ya maisha yake huko Bethlehemu akitafsiri maandiko. Biblia ya Kilatini iliyotokana na kazi yake ilikuja kuitwa **Vulgata**, toleo "la kawaida."
 

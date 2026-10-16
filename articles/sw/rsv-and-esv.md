@@ -4,6 +4,7 @@ summary: Revised Standard Version ya 1952 ilikuwa Biblia ya Uprotestanti mkuu wa
 date: 2026-10-14
 order: 65
 section: compare
+source: 2f89c954a037
 ---
 Tafsiri chache zimependwa na kushambuliwa kama **Revised Standard Version** (RSV). Chache zimekuwa na maisha ya baadaye ya kushangaza kama yake. Miaka hamsini baada ya Waprotestanti wa kihafidhina kuilaani, marekebisho ya maandishi yake yaliyofanywa na Waprotestanti wa kihafidhina yakawa **English Standard Version** (ESV), ambayo sasa ni mojawapo ya Biblia za Kiingereza zinazotumiwa zaidi miongoni mwa wainjilisti. Makala hii inafuatilia mfululizo huo, na inaeleza kile ESV ilichobaki nacho, kile ilichokirudisha, na jinsi maandishi yake yenyewe yalivyoendelea kubadilika.
 

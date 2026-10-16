@@ -4,6 +4,7 @@ summary: Kanuni moja thabiti inalinda usahihi wa kila kitu ambacho Open Word Bib
 date: 2026-10-10
 order: 9
 section: method
+source: 7442e601ce26
 ---
 Open Word Bible ina kanuni inayowashangaza watu: hakuna mtu, binadamu wala AI, anayeandika kamwe neno la Kigiriki au la Kiebrania katika tafsiri au maelezo yake. Kila neno la lugha ya asili unaloliona kwenye tovuti hii, pamoja na Kigiriki katika makala hizi, linanakiliwa na programu kutoka data ya chanzo iliyowekwa.
 

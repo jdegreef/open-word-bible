@@ -5,6 +5,7 @@ date: 2026-10-11
 order: 27
 section: history
 part: ot
+source: 3dec12dd8876
 ---
 De tous les manuscrits de la mer Morte, l'un est devenu le symbole de toute la découverte : le **grand rouleau d'Isaïe**, que les spécialistes appellent **1QIsa-a** (grotte 1, Qumrân, Isaïe, première copie). Il faisait partie des sept premiers rouleaux trouvés en 1947, et c'est le seul livre biblique parmi les rouleaux qui nous soit parvenu complet : les soixante-six chapitres, du premier verset au dernier.
 

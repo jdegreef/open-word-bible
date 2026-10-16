@@ -4,6 +4,7 @@ summary: Kila kitu kwenye tovuti hii leo kimetafsiriwa kwa msaada wa AI. Hii ndi
 date: 2026-10-10
 order: 10
 section: method
+source: c8b5c57ed02e
 ---
 Open Word Bible inatafsiriwa kwa msaada wa AI. Tunasema hivyo waziwazi, kwa sababu mradi unaoahidi kuonyesha kazi yake hauwezi kuficha nani aliyefanya kazi hiyo.
 

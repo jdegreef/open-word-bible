@@ -4,6 +4,7 @@ summary: Herufi nne za Kiebrania YHWH zinaonekana maelfu ya mara katika Agano la
 date: 2026-10-14
 order: 76
 section: compare
+source: 1a5721e02bd2
 ---
 Nomino inayotokea mara nyingi zaidi katika Biblia ya Kiebrania ni jina. Jina binafsi la Mungu, linaloandikwa kwa konsonanti nne ambazo kwa kawaida huandikwa kwa herufi za Kilatini **YHWH**, linatokea karibu mara 6,800 kwa hesabu ya kawaida. Wataalamu wanaliita **Tetragrammaton**, neno la Kigiriki lenye maana ya "herufi nne." Kila tafsiri ya Agano la Kale lazima iamue la kufanya nalo, na maamuzi machache yanaonekana wazi hivyo: mstari uleule unaweza kusomeka "the LORD," "Jehovah" au "Yahweh," kutegemea Biblia iliyo mkononi mwa msomaji.
 

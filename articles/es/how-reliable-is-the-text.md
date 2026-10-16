@@ -5,6 +5,7 @@ date: 2026-10-11
 order: 40
 section: history
 part: today
+source: 4e7e5b90d44f
 ---
 Esta serie ha seguido a la Biblia desde su primera escritura, a través de generaciones de escribas, hasta los manuscritos y las ediciones impresas que están detrás de las traducciones modernas. Este último artículo plantea la pregunta que subyace a todas las demás: ¿con cuánta confianza podemos decir que la Biblia que leemos hoy dice lo que escribieron sus autores?
 

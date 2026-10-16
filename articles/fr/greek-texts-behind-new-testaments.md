@@ -4,6 +4,7 @@ summary: Tout Nouveau Testament anglais est traduit d'un texte grec imprimé, et
 date: 2026-10-14
 order: 74
 section: compare
+source: d4cccefe6f3b
 ---
 Aucun traducteur ne travaille à partir des manuscrits originaux du Nouveau Testament. Ils n'ont pas survécu. Ce qui a survécu, ce sont plus de cinq mille manuscrits grecs, des minuscules fragments de papyrus aux Bibles médiévales complètes, qui diffèrent les uns des autres en beaucoup de petites choses et en quelques grandes (voir [Le texte de la Bible est-il fiable ?](/articles/how-reliable-is-the-text/)). Les spécialistes les comparent et impriment une édition du texte grec, et les traducteurs traduisent une édition.
 

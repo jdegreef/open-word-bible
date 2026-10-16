@@ -4,6 +4,7 @@ summary: Biblia ya Kihispania inayopendwa kuliko zote ilitafsiriwa na mtawa aliy
 date: 2026-10-12
 order: 54
 section: translation
+source: 68311788d9b1
 ---
 Kwa zaidi ya karne nne, Biblia ya Waprotestanti wengi wanaozungumza Kihispania imekuwa **Reina-Valera**. Marekebisho yake bado ni miongoni mwa Biblia zinazosomwa zaidi duniani, kuanzia Madrid hadi Mexico City hadi Buenos Aires. Ilianza kama kazi ya mtaalamu mmoja mkimbizi, **Casiodoro de Reina**, aliyeitafsiri kwa miaka mingi huku akihama kutoka mji mmoja hadi mwingine, na ilichapishwa mbali na Hispania kwa sababu isingeweza kuchapishwa huko.
 

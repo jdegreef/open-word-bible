@@ -4,6 +4,7 @@ summary: Comment la paraphrase d'un père pour ses enfants est devenue l'un des 
 date: 2026-10-14
 order: 68
 section: compare
+source: fc255dd9446f
 ---
 Peu de Bibles ont eu des débuts aussi modestes que **The Living Bible**. Elle est née à une table familiale de l'Illinois, où un père essayait de rendre la Bible compréhensible à ses enfants. Elle est devenue l'un des livres les plus vendus des États-Unis, a fait naître une maison d'édition, puis a été délibérément mise de côté par son propre auteur au profit de quelque chose de plus rigoureux : la **New Living Translation**.
 
