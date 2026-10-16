@@ -47,7 +47,7 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 | experts in the law (*nomikoi*) | los expertos en la ley | wataalamu wa sheria |
 | Pharisees, Sadducees | los fariseos, los saduceos | Mafarisayo, Masadukayo |
 | Herodians | los herodianos | wafuasi wa Herode |
-| chief priests, elders | los jefes de los sacerdotes, los ancianos | wakuu wa makuhani, wazee |
+| chief priests, elders | los principales sacerdotes (L), los jefes de los sacerdotes (B, R); los ancianos | wakuu wa makuhani, wazee |
 | high priest | el sumo sacerdote | kuhani mkuu |
 | tax collectors | los publicanos (L); los cobradores de impuestos (B, R) | watoza ushuru |
 | sinners | pecadores | wenye dhambi |
