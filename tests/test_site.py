@@ -175,6 +175,91 @@ class SiteTest(unittest.TestCase):
         if len(missing) > 1:
             self.assertIn(f'href="/read/">{build_site.t("en", "footer.not_started", n=len(missing))}</a>', index)
 
+    def notes_section(self, path):
+        page = (self.out / path / "index.html").read_text(encoding="utf-8")
+        return re.search(r'<section class="notes" id="notes"[^>]*>(.*?)</section>', page, re.S)[1]
+
+    def test_footnotes_are_in_the_page(self):
+        # Without JavaScript (and for crawlers) the footnotes the text's
+        # letters point to are listed under it, as the reader first lists them.
+        for path, book, chapter, lang in (("jhn/3", "JHN", 3, "en"), ("jhn/8", "JHN", 8, "en"),
+                                          ("fr/jhn/3", "JHN", 3, "fr")):
+            text = self.chapter_text(path)[1]
+            notes = self.notes_section(path)
+            marks = re.findall(r'<span class="fn-mark">([a-z]+)</span>', text)
+            self.assertTrue(marks, path)
+            self.assertEqual(re.findall(r'<span class="note-mark">([a-z]+)</span>', notes), marks, path)
+            records = build_site.load_chapter(book, chapter)[0]
+            r, d = next((r, d) for r in records for d in build_site.footnote_decisions(r, lang))
+            self.assertIn(f'<span class="note-text">{build_site.note_html(d, lang)}</span>', notes)
+            self.assertIn(html.escape(build_site.markup.render(d["choice"]), quote=False), notes)
+            self.assertNotIn("{{", notes)
+        # A note spans chapters as the reader's verse ranges do.
+        self.assertIn('<span class="note-ref">7:53–8:1</span>', self.notes_section("jhn/8"))
+        # Meaning notes are written in English; another language's page says so.
+        self.assertIn('<span class="note-text"><span lang="en">', self.notes_section("fr/jhn/3"))
+        self.assertNotIn('lang="en"', self.notes_section("jhn/3"))
+
+    def test_footnote_text_follows_the_reader(self):
+        # build_site.note_html() writes what reader.js's noteText() writes.
+        d = {"layer": "meaning", "category": "lexical", "choice": "from above",
+             "alternatives": ["again", "anew"], "uncertain": True}
+        self.assertEqual(build_site.note_html(d, "en"), "from above. Or: again; anew (Uncertain).")
+        self.assertEqual(build_site.note_html({**d, "uncertain": False}, "en"),
+                         "from above. Also considered: again; anew.")
+        self.assertEqual(build_site.note_html({**d, "category": "text_variant", "uncertain": False}, "en"),
+                         "from above. Other manuscripts: again; anew.")
+        self.assertEqual(build_site.note_html({**d, "alternatives": []}, "fr"),
+                         '<span lang="en">from above</span> (Incertain).')
+        reader = (self.out / "reader.js").read_text(encoding="utf-8")
+        self.assertIn('text += ". " + t(label) + alts.join("; ");', reader)
+        self.assertIn('if (d.uncertain) text += " (" + t("uncertain") + ")";', reader)
+
+    def test_status_page_counts_the_records(self):
+        counts = build_site.status_counts()
+        records = build_site._all_records()
+        self.assertEqual(counts["all"], len(records))
+        self.assertEqual(sum(counts["statuses"].values()), len(records))
+        self.assertEqual(sum(b["all"] for b in counts["books"].values()), len(records))
+        approved = sum(r["status"] in build_site.APPROVED for r in records)
+        self.assertEqual(counts["approved"], approved)
+        sitemap = (self.out / "sitemap.xml").read_text(encoding="utf-8")
+        for lang in build_site.LANGUAGES:
+            path = build_site.url(lang, "/about/status/")
+            page = (self.out / path.strip("/") / "index.html").read_text(encoding="utf-8")
+            self.assertIn(f"<b>{build_site.number(len(records), lang)}</b>", page)
+            self.assertIn(f"<b>{build_site.number(approved, lang)}</b>", page)
+            self.assertIn(f"<loc>{build_site.SITE_URL}{path}</loc>", sitemap)
+            self.assertIn(f'href="{path}"', (self.out / build_site.url(lang, "/").strip("/") / "index.html")
+                          .read_text(encoding="utf-8"))
+            self.assertIn(f'href="{build_site.url(lang, "/articles/" + build_site.REVIEW_ARTICLE + "/")}"', page)
+
+    def ld(self, path, kind):
+        page = (self.out / path / "index.html").read_text(encoding="utf-8")
+        found = [json.loads(m) for m in re.findall(r'<script type="application/ld\+json">(.*?)</script>', page)]
+        return next((d for d in found if d["@type"] == kind), None)
+
+    def test_articles_and_the_dataset_have_linked_data(self):
+        article = self.ld("articles/showing-the-work", "Article")
+        self.assertEqual(article["url"], build_site.SITE_URL + "/articles/showing-the-work/")
+        self.assertEqual(article["author"]["@type"], "Organization")
+        self.assertRegex(article["datePublished"], r"^\d{4}-\d\d-\d\d$")
+        self.assertEqual(self.ld("fr/articles/showing-the-work", "Article")["inLanguage"], "fr")
+        dataset = self.ld("about", "Dataset")
+        self.assertEqual(dataset["license"], build_site.CC0_URL)
+        self.assertIn("own licences", dataset["description"])
+        self.assertTrue(dataset["distribution"][0]["contentUrl"].startswith(build_site.GITHUB_URL))
+        self.assertIsNone(self.ld("fr/about", "Dataset"))
+        self.assertEqual(self.ld("jhn/3", "Chapter")["license"], build_site.CC0_URL)
+
+    def test_llms_txt_describes_the_site(self):
+        text = (self.out / "llms.txt").read_text(encoding="utf-8")
+        counts = build_site.status_counts()
+        self.assertTrue(text.startswith("# Open Word Bible\n\n> "))
+        self.assertIn(f"{counts['all']:,} sentences are drafted and {counts['approved']:,} are reviewed", text)
+        self.assertIn(f"({build_site.SITE_URL}/about/status/)", text)
+        self.assertIn(f"({build_site.SITE_URL}/articles/showing-the-work/)", text)
+
     def test_chapter_has_a_notes_section(self):
         page = (self.out / "jhn" / "1" / "index.html").read_text(encoding="utf-8")
         self.assertIn('id="notes"', page)
