@@ -17,8 +17,9 @@ from feedback.models import ReaderMessage
 from staff import jobs as staff_jobs
 from staff.models import AdminAction, Broadcast
 from staff.permissions import AREAS
+from staff.verses import covers
 from texts.models import Edition
-from translation.models import Decision, ImportRun, Rendering, Sentence
+from translation.models import ContentFile, Decision, ImportRun, Rendering, Sentence
 
 SITE = "https://openwordbible.org"
 User = get_user_model()
@@ -391,3 +392,95 @@ class EmailTest(AdminTestCase):
                      {"subject": "s", "body": "", "audience": "team"},
                      {"subject": "s", "body": "x", "audience": "readers"}):
             self.assertEqual(self.admin.post("/api/admin/emails/", body, format="json").status_code, 400, body)
+
+
+class VerseTest(AdminTestCase):
+    def setUp(self):
+        super().setUp()
+        self.s1 = sentence("JHN.1.1.s1", ("en", "fr"))
+        self.s2 = sentence("JHN.1.2.s1", ("en",))
+        Decision.objects.create(sentence=self.s1, key="m1", order=0, layer="meaning", category="allusion",
+                                choice="In the beginning", reason="Genesis 1:1", footnote=True)
+        ContentFile.objects.create(path="content/JHN/JHN.1.1-18.json", digest="x")
+        ContentFile.objects.create(path="content/JHN/JHN.3.json", digest="x")
+
+    def test_covers(self):
+        self.assertTrue(covers("content/JHN/JHN.3.json", 3, 16))
+        self.assertFalse(covers("content/JHN/JHN.3.json", 4, 1))
+        self.assertTrue(covers("content/JHN/JHN.1.1-18.json", 1, 18))
+        self.assertFalse(covers("content/JHN/JHN.1.1-18.json", 1, 19))
+        self.assertTrue(covers("content/JHN/JHN.7.53-8.11.json", 8, 2))
+        self.assertTrue(covers("content/JHN/JHN.7.53-8.11.json", 7, 53))
+        self.assertFalse(covers("content/JHN/JHN.7.53-8.11.json", 7, 52))
+        self.assertTrue(covers("content/1JN/1JN.1.json", 1, 1))
+
+    def test_a_verse_whole(self):
+        ReaderMessage.objects.create(user=self.boss, kind="question", verse="JHN.1.1", language="fr", text="?")
+        data = self.admin.get("/api/admin/verses/jhn.1.1/").json()
+        self.assertEqual((data["verse"], data["label"]), ("JHN.1.1", "John 1:1"))
+        record = data["records"][0]
+        self.assertEqual(record["id"], "JHN.1.1.s1")
+        self.assertEqual(sorted(record["renderings"]), ["en", "fr"])
+        self.assertEqual(record["decisions"][0]["choice"], "In the beginning")
+        self.assertEqual(data["files"], {"JHN.1.1.s1": "content/JHN/JHN.1.1-18.json"})
+        self.assertEqual(data["neighbours"], [None, "JHN.1.2"])
+        self.assertEqual(len(data["messages"]), 1)
+        # Reporting sees the text, not who wrote in.
+        reporter = client_for(account("rep@example.org", (K.REPORTING,)))
+        self.assertNotIn("messages", reporter.get("/api/admin/verses/JHN.1.1/").json())
+        self.assertEqual(self.admin.get("/api/admin/verses/nonsense/").status_code, 404)
+
+    def test_find(self):
+        self.assertEqual(self.admin.get("/api/admin/verses/?q=JHN.1.2").json(), {"verse": "JHN.1.2"})
+        self.assertEqual(self.admin.get("/api/admin/verses/?q=no such").status_code, 400)
+
+
+class FixTest(AdminTestCase):
+    def setUp(self):
+        super().setUp()
+        self.s = sentence("JHN.1.1.s1", ("en", "fr"))
+        ContentFile.objects.create(path="content/JHN/JHN.1.1-18.json", digest="x")
+        self.body = {"record": "JHN.1.1.s1", "verse": "JHN.1.1", "language": "fr", "levels": ["B", "R"],
+                     "change": "Use la Parole", "reason": "Readers hear grammar in le Verbe"}
+
+    def test_not_configured_and_only_for_the_inbox(self):
+        self.assertEqual(self.admin.post("/api/admin/fixes/", self.body, format="json").status_code, 503)
+        reporter = client_for(account("rep@example.org", (K.REPORTING,)))
+        self.assertEqual(reporter.post("/api/admin/fixes/", self.body, format="json").status_code, 403)
+
+    @override_settings(OWB_GITHUB_TOKEN="t")
+    def test_file_a_fix_from_a_reader_message(self):
+        reader = account("reader@example.org")
+        message = ReaderMessage.objects.create(user=reader, kind="suggestion", verse="JHN.1.1", language="fr",
+                                               text="La Parole, s'il vous plaît")
+        calls = []
+
+        def github(path, method="GET", body=None):
+            calls.append((path, method, body))
+            if method == "POST":
+                return {"number": 9, "html_url": "https://github.com/x/y/issues/9"}
+            return [{"number": 9, "title": "t", "html_url": "u", "created_at": "2026-10-16T00:00:00Z",
+                     "body": 'x\n<!-- fix-request {"record": "JHN.1.1.s1", "verse": "JHN.1.1", "language": "fr"} -->'}]
+        editor = client_for(account("ed@example.org", (K.EDITOR,)))
+        with mock.patch.object(staff_jobs, "_github", side_effect=github):
+            bad = editor.post("/api/admin/fixes/", {**self.body, "language": "es"}, format="json")
+            self.assertEqual(bad.json()["code"], "not_drafted")
+            r = editor.post("/api/admin/fixes/", {**self.body, "message": message.id}, format="json")
+            self.assertEqual(r.status_code, 201, r.content)
+            listed = editor.get("/api/admin/fixes/").json()
+        self.assertEqual(listed["fixes"][0]["record"], "JHN.1.1.s1")
+        path, method, body = calls[-2]
+        self.assertEqual((path, method, body["labels"]), ("issues", "POST", ["fix-request"]))
+        self.assertEqual(body["title"], "Fix John 1:1 (French): Use la Parole")
+        self.assertIn("**File:** `content/JHN/JHN.1.1-18.json`", body["body"])
+        self.assertIn("- Balanced: x", body["body"])
+        self.assertNotIn("- Literal:", body["body"])
+        self.assertIn("> La Parole, s'il vous plaît", body["body"])
+        self.assertIn(f'"message": {message.id}', body["body"])
+        message.refresh_from_db()
+        self.assertEqual(message.note, "Fix requested: #9")
+        action = AdminAction.objects.get(action="fix.request")
+        self.assertEqual((action.target, action.detail["verse"]), ("#9 JHN.1.1.s1", "JHN.1.1"))
+        # The inspector lists it.
+        fixes = editor.get("/api/admin/verses/JHN.1.1/").json()["fixes"]
+        self.assertEqual(fixes[0]["number"], 9)
