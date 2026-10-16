@@ -68,11 +68,13 @@ def fold(text):
 # ---- Building the tables ----------------------------------------------------
 
 def site_build():
-    """scripts/build_site.py, with its caches cleared, so it reads content/ afresh."""
+    """scripts/build_site.py, with its caches cleared, so it reads content/ afresh,
+    keeping only what search needs of each record (SEARCH_ONLY)."""
     scripts = str(settings.REPO_ROOT / "scripts")
     if scripts not in sys.path:
         sys.path.insert(0, scripts)
     import build_site
+    build_site.SEARCH_ONLY = True
     for value in vars(build_site).values():
         if hasattr(value, "cache_clear"):
             value.cache_clear()
@@ -202,6 +204,8 @@ def rebuild(full=False):
 @transaction.atomic
 def _rebuild_language(site, lang, full):
     data = site.search_documents(lang)
+    # One language's documents at a time: search_documents caches each.
+    site.search_documents.cache_clear()
     SearchLanguage.objects.update_or_create(code=lang, defaults=dict(books=data["books"], pages=data["pages"]))
     docs = [(doc, config(doc.get("l", lang))) for doc in data["docs"]]
     new = [key(c, doc) for doc, c in docs]
@@ -223,10 +227,10 @@ def _rebuild_language(site, lang, full):
         cursor.execute("""CREATE TEMPORARY TABLE search_load (language text, kind text,
             position integer, sub integer, config text, title text, extra text, body text, doc jsonb)
             ON COMMIT DROP""")
-        rows = []
-        for i, position, sub in places:
-            doc, c = docs[i]
-            rows.append((lang, doc["k"], position, sub, c, *fields(doc), json.dumps(doc, ensure_ascii=False)))
+        # A generator: a full rebuild's rows, held at once, are as big again
+        # as the documents.
+        rows = ((lang, docs[i][0]["k"], position, sub, docs[i][1], *fields(docs[i][0]),
+                 json.dumps(docs[i][0], ensure_ascii=False)) for i, position, sub in places)
         _copy(cursor, "search_load", ENTRY_COLUMNS, rows)
         cursor.execute(f"""INSERT INTO {entries} ({', '.join(ENTRY_COLUMNS)}, vector)
             SELECT {', '.join(ENTRY_COLUMNS)},
@@ -249,7 +253,7 @@ def _rebuild_language(site, lang, full):
         # once for every entry: hours instead of milliseconds.
         for model in (SearchEntry, SearchWord, SearchLanguage):
             cursor.execute(f"ANALYZE {model._meta.db_table}")
-    return Change(len(docs), len(rows), len(delete))
+    return Change(len(docs), len(places), len(delete))
 
 
 # ---- Queries ------------------------------------------------------------
