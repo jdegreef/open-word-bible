@@ -50,6 +50,11 @@
           "L": "Môn đồ không hơn thầy, nô lệ cũng không hơn chủ mình.",
           "B": "Không có môn đồ nào hơn thầy, cũng không có đầy tớ nào hơn chủ.",
           "R": "Học trò không quan trọng hơn thầy mình. Đầy tớ cũng không quan trọng hơn chủ mình."
+        },
+        "ko": {
+          "L": "제자가 스승보다 높지 않고, 종이 자기 주인보다 높지 않다.",
+          "B": "제자가 스승보다 높을 수 없고, 종이 주인보다 높을 수 없다.",
+          "R": "제자는 스승보다 더 높은 사람이 아니다. 종도 주인보다 더 높은 사람이 아니다."
         }
       },
       "decisions": [
@@ -261,6 +266,31 @@
           "reason": "The saying is a general proverb about any pupil and teacher, as the English Readable \"students\" shows; Literal and Balanced keep \"môn đồ\", the word for Jesus's disciples, so the link to them stays visible.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40010024003",
+            "n40010024006",
+            "n40010024008",
+            "n40010024011"
+          ],
+          "choice": "\"제자\", \"스승\", \"종\", \"주인\" at every level; no gender span",
+          "alternatives": [
+            "\"학생\" and \"선생\" (R)",
+            "\"노예\" (L)"
+          ],
+          "reason": "\"제자\" is the word for disciples at every level (docs/korean-style.md section 6), so Readable keeps it where the English Readable says \"students\". \"종\" is the style guide's word for doulos at every level and already covers both the English \"slave\" and \"servant\"; slavery itself is not the point here. Korean needs no pronoun for the master's servant, so the English gender span has nothing to change.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -319,6 +349,11 @@
           "L": "Môn đồ được như thầy mình, và nô lệ được như chủ mình, [thế là] đủ rồi.",
           "B": "Môn đồ được như thầy, đầy tớ được như chủ, thế là đủ rồi.",
           "R": "Học trò nên bằng lòng khi được giống như thầy mình. Đầy tớ nên bằng lòng khi được giống như chủ mình."
+        },
+        "ko": {
+          "L": "제자가 자기 스승처럼 되고, 종이 자기 주인처럼 되면 [그것으로] 충분하다.",
+          "B": "제자는 스승처럼 되고, 종은 주인처럼 되면 그것으로 충분하다.",
+          "R": "제자는 스승과 같은 대접을 받는 것으로 만족해야 한다. 종도 주인과 같은 대접을 받는 것으로 만족해야 한다."
         }
       },
       "decisions": [
@@ -355,6 +390,25 @@
             "slaves"
           ],
           "reason": "\"Servant\" in Balanced and Readable, as the style guide has it, and Literal keeps \"slave\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n40010025001"
+          ],
+          "choice": "\"같은 대접을 받는 것으로 만족해야 한다\" (R)",
+          "alternatives": [
+            "\"처럼 되면 충분하다\""
+          ],
+          "reason": "Enough means they should expect no better treatment than their master's (meaning decision); Readable says so, as the English Readable says \"be content\".",
           "uncertain": false,
           "footnote": false
         }
@@ -409,6 +463,11 @@
           "L": "Nếu người ta đã gọi chủ nhà là Bê-ên-xê-bun, thì những người nhà của ông càng [bị gọi như vậy] biết bao!",
           "B": "Nếu người ta đã gọi chủ nhà là Bê-ên-xê-bun, thì họ còn sỉ nhục những người trong nhà ông đến đâu nữa!",
           "R": "Người ta đã gọi chủ nhà là Bê-ên-xê-bun, tức là kẻ cầm đầu các quỷ. Vậy họ lại càng dễ sỉ nhục những người khác trong gia đình ông hơn nữa."
+        },
+        "ko": {
+          "L": "그들이 집주인을 바알세불이라고 불렀다면, 그의 집 식구들은 얼마나 더 [그렇게 부르겠느냐]!",
+          "B": "사람들이 집주인을 바알세불이라고 불렀다면, 그 집 식구들은 얼마나 더 심한 모욕을 당하겠느냐!",
+          "R": "사람들은 집주인을 귀신들의 우두머리인 바알세불이라고 불렀다. 그러니 그 집의 다른 식구들은 더욱더 심한 욕을 듣게 될 것이다."
         }
       },
       "decisions": [
@@ -566,6 +625,29 @@
           "reason": "The Protestant spelling, as in Mark 3:22. The master of the house is Jesus (meaning decision), but he speaks of him through the picture, so the pronoun belongs to the picture, as the English decision says.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40010025019",
+            "n40010025020"
+          ],
+          "choice": "\"바알세불\"; \"집주인\" without honorific",
+          "alternatives": [
+            "\"바알제불\"",
+            "\"베엘제불\""
+          ],
+          "reason": "\"바알세불\" is the Protestant form used in the Korean Mark 3:22, a name for Satan (meaning decision). The master of the house is Jesus himself (meaning decision), but he speaks of himself in a picture, and a Korean speaker does not use honorifics of himself, so \"집주인\" stays plain, as the English has no deity_pronoun span here.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -624,6 +706,11 @@
           "L": "Vậy đừng sợ họ; vì không có gì che giấu mà sẽ không bị bày tỏ ra, và [không có gì] bí mật mà sẽ không được biết đến.",
           "B": "Vậy, đừng sợ họ. Mọi điều đang bị che đậy sẽ được bày tỏ ra, và mọi điều bí mật sẽ được mọi người biết.",
           "R": "Vậy đừng sợ những người ấy. Mọi điều bây giờ đang bị giấu kín rồi sẽ được bày ra. Mọi điều bí mật rồi sẽ được mọi người biết."
+        },
+        "ko": {
+          "L": "그러므로 그들을 두려워하지 마라. 덮여 있는 것 가운데 드러나지 않을 것이 없고, 숨겨진 것 가운데 알려지지 않을 것이 없기 때문이다.",
+          "B": "그러므로 그들을 두려워하지 마라. 지금 덮여 있는 것은 모두 드러나고, 숨겨진 것은 모두 알려질 것이다.",
+          "R": "그러니 그런 사람들을 무서워하지 마라. 지금 숨겨져 있는 것은 모두 드러날 것이다. 비밀은 모두 알려지게 될 것이다."
         }
       },
       "decisions": [
@@ -753,6 +840,11 @@
           "L": "Điều {{deity_pronoun:ta|Ta}} nói với các con trong bóng tối, hãy nói ra giữa ánh sáng; và điều các con nghe [nói] vào tai, hãy rao giảng trên mái nhà.",
           "B": "Những điều {{deity_pronoun:ta|Ta}} nói với các con trong bóng tối, các con hãy nói ra giữa ánh sáng. Những điều các con nghe nói nhỏ bên tai, hãy rao lớn từ trên mái nhà.",
           "R": "Bây giờ {{deity_pronoun:ta|Ta}} đang nói riêng với các con. Hãy nói những điều ấy công khai cho mọi người. Những gì các con nghe {{deity_pronoun:ta|Ta}} nói thầm bên tai, hãy nói lớn lên từ trên mái nhà."
+        },
+        "ko": {
+          "L": "내가 너희에게 어둠 속에서 말하는 것을 너희는 빛 가운데서 말하고, 너희가 귀에 대고 [하는 말로] 듣는 것을 지붕 위에서 선포하여라.",
+          "B": "내가 너희에게 어두운 데서 말하는 것을 너희는 밝은 데서 말하여라. 귓속말로 듣는 것을 너희는 지붕 위에서 외쳐라.",
+          "R": "내가 지금 너희에게만 조용히 말하는 것을 너희는 모든 사람에게 드러내 놓고 말하여라. 나에게서 귓속말로 들은 것을 지붕 위에 올라가 큰 소리로 외쳐라."
         }
       },
       "decisions": [
@@ -879,6 +971,30 @@
           "reason": "The flat roofs were a place to call out to the whole street (meaning decision); \"mái nhà\" keeps the Bible's picture, and the verb \"rao\" (announce aloud) shows its use.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40010027004",
+            "n40010027005",
+            "n40010027006",
+            "n40010027008",
+            "n40010027009",
+            "n40010027010"
+          ],
+          "choice": "\"너희에게만 조용히\" and \"모든 사람에게 드러내 놓고\" (R)",
+          "alternatives": [
+            "\"어둠 속에서\" and \"빛 가운데서\""
+          ],
+          "reason": "Dark and light mean private and public (meaning decision); Readable says what the picture means, as the English Readable does. Flat roofs were a place to call out to the whole street (meaning decision), so \"지붕 위\" stays at every level.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -947,6 +1063,11 @@
           "L": "Và đừng sợ những kẻ giết thân thể nhưng không thể giết linh hồn; nhưng thà hãy sợ Đấng có thể hủy diệt cả linh hồn lẫn thân thể trong Ghê-hen-na.",
           "B": "Những kẻ giết thân thể không thể giết được linh hồn, vậy đừng sợ họ. Nhưng hãy sợ Đấng có thể hủy diệt cả linh hồn lẫn thân thể trong địa ngục.",
           "R": "Đừng sợ người ta. Họ có thể giết thân thể các con, nhưng không thể giết linh hồn các con. Đấng các con phải kính sợ là Đức Chúa Trời. Ngài có thể hủy diệt cả thân thể lẫn linh hồn các con trong địa ngục."
+        },
+        "ko": {
+          "L": "그리고 몸은 죽여도 영혼은 죽일 수 없는 자들을 두려워하지 마라. 오히려 영혼과 몸을 둘 다 게헨나에서 멸망시키실 수 있는 분을 두려워하여라.",
+          "B": "몸은 죽여도 영혼은 죽이지 못하는 사람들을 두려워하지 마라. 오히려 영혼과 몸을 함께 지옥에서 멸망시키실 수 있는 분을 두려워하여라.",
+          "R": "사람들을 무서워하지 마라. 그들은 너희 몸을 죽일 수는 있어도 너희 영혼은 죽이지 못한다. 너희가 두려워해야 할 분은 하나님이시다. 하나님께서는 너희 몸과 영혼을 둘 다 지옥에서 멸망시키실 수 있다."
         }
       },
       "decisions": [
@@ -1225,6 +1346,50 @@
           "reason": "The one who can destroy is God (meaning decision). Vietnamese has no pronoun in this place; \"Đấng\", the noun for a revered being, shows who is meant and is always capitalised, so it takes no setting span. Readable names God, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40010028011",
+            "n40010028021"
+          ],
+          "choice": "\"영혼\" for psyche here",
+          "alternatives": [
+            "\"목숨\""
+          ],
+          "reason": "The style guide's word for psyche is \"목숨\", but here the word is set against the body and means the self that lives on beyond bodily death (meaning decision); \"목숨\" would say the soul can be killed by no one, which loses the contrast. 10:39 keeps \"목숨\".",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40010028019",
+            "n40010028026"
+          ],
+          "choice": "\"게헨나\" (L); \"지옥\" (B, R); \"멸망시키실 수 있는 분\" with honorific",
+          "alternatives": [
+            "\"지옥\" at Literal"
+          ],
+          "reason": "As in the Korean Mark 9:43-47. The one able to destroy is God (meaning decision), so Jesus speaks of him with the honorific -시- and \"분\"; Readable names him, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1272,6 +1437,11 @@
           "L": "Chẳng phải hai con chim sẻ bán được một đồng át-xa-ri-ôn sao?",
           "B": "Hai con chim sẻ chỉ bán được {{units:một đồng xu nhỏ|một đồng át-xa-ri-ôn}}, phải không?",
           "R": "Hai con chim sẻ chỉ bán được {{units:một đồng xu nhỏ|một đồng át-xa-ri-ôn}}."
+        },
+        "ko": {
+          "L": "참새 두 마리가 한 앗사리온에 팔리지 않느냐?",
+          "B": "참새 두 마리가 {{units:한 푼|한 앗사리온}}에 팔리지 않느냐?",
+          "R": "참새 두 마리는 {{units:동전 한 닢|한 앗사리온}}에 팔린다."
         }
       },
       "decisions": [
@@ -1419,6 +1589,26 @@
           "reason": "Vietnamese has no coin like the English \"penny\"; \"một đồng xu nhỏ\" says what matters, that the birds were almost worthless (meaning decision). The alternative gives the Roman coin in Vietnamese syllables, which Literal keeps.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40010029004"
+          ],
+          "choice": "{{units:한 푼|한 앗사리온}} (B), {{units:동전 한 닢|한 앗사리온}} (R); Literal keeps \"앗사리온\"",
+          "alternatives": [
+            "a sum in won"
+          ],
+          "reason": "As the Korean Matthew 5:26: the modern default is a word for a coin of almost no value, which is the point (meaning decision); the original coin is the alternative. Literal keeps the original unit. The particle \"에\" fits both forms.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1474,6 +1664,11 @@
           "L": "Thế mà không một con nào trong chúng rơi xuống đất ngoài [ý] Cha các con.",
           "B": "Thế nhưng không một con nào rơi xuống đất mà Cha các con không cho phép.",
           "R": "Nhưng không một con nào rơi xuống đất mà chết nếu Cha các con không cho phép."
+        },
+        "ko": {
+          "L": "그러나 그것들 가운데 하나도 너희 아버지의 [뜻] 없이는 땅에 떨어지지 않을 것이다.",
+          "B": "그러나 너희 아버지께서 허락하지 않으시면, 그 가운데 한 마리도 땅에 떨어지지 않는다.",
+          "R": "그러나 너희 아버지께서 허락하지 않으시면, 그 가운데 한 마리도 땅에 떨어져 죽지 않는다."
         }
       },
       "decisions": [
@@ -1576,6 +1771,30 @@
           "reason": "\"apart from your Father\" means without his will and care (meaning decision); Vietnamese needs the bracketed noun to say it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n40010029015",
+            "n40010029016",
+            "n40010029017",
+            "n40010029018"
+          ],
+          "choice": "\"아버지의 [뜻] 없이는\" (L); \"아버지께서 허락하지 않으시면\" (B, R)",
+          "alternatives": [
+            "\"너희 아버지 없이는\""
+          ],
+          "reason": "\"Apart from your Father\" means without his will and care (meaning decision); Korean \"아버지 없이는\" alone would say the Father is absent, so Literal brackets \"뜻\" and Balanced and Readable say it with the verb, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1628,6 +1847,11 @@
           "L": "Còn các con, ngay cả tóc trên đầu cũng đã được đếm hết rồi.",
           "B": "Còn các con, ngay cả từng sợi tóc trên đầu các con cũng đã được đếm cả rồi.",
           "R": "Đức Chúa Trời còn biết trên đầu các con có bao nhiêu sợi tóc."
+        },
+        "ko": {
+          "L": "너희에게는 머리카락까지도 모두 세어져 있다.",
+          "B": "하나님께서는 너희 머리카락까지도 하나하나 다 세어 두셨다.",
+          "R": "하나님께서는 너희 머리카락이 몇 개인지까지 다 알고 계신다."
         }
       },
       "decisions": [
@@ -1665,6 +1889,25 @@
             "are numbered"
           ],
           "reason": "Readable names God and says what the counting shows.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "B"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n40010030009"
+          ],
+          "choice": "\"하나님께서는 ... 세어 두셨다\" (B)",
+          "alternatives": [
+            "passive \"세어져 있다\""
+          ],
+          "reason": "God has counted them (meaning decision); a Korean passive of counting sounds stiff, so Balanced names the one who counts, as Readable does.",
           "uncertain": false,
           "footnote": false
         }
@@ -1716,6 +1959,11 @@
           "L": "Vậy đừng sợ; các con quý hơn nhiều chim sẻ.",
           "B": "Vậy, đừng sợ. Các con quý hơn cả một đàn chim sẻ.",
           "R": "Vậy, đừng sợ. Đối với Đức Chúa Trời, các con quý hơn nhiều con chim sẻ."
+        },
+        "ko": {
+          "L": "그러므로 두려워하지 마라. 너희는 많은 참새보다 더 귀하다.",
+          "B": "그러므로 두려워하지 마라. 너희는 참새 떼보다 훨씬 더 귀하다.",
+          "R": "그러니 무서워하지 마라. 하나님께는 너희가 참새 여러 마리보다 훨씬 더 귀하다."
         }
       },
       "decisions": [
@@ -1818,6 +2066,11 @@
           "L": "Vậy, mọi người xưng nhận {{deity_pronoun:ta|Ta}} trước mặt người ta, thì chính {{deity_pronoun:ta|Ta}} cũng sẽ xưng nhận người ấy trước mặt Cha {{deity_pronoun:ta|Ta}}, Đấng ở trên các tầng trời;",
           "B": "Vậy, ai công khai xưng nhận {{deity_pronoun:ta|Ta}} trước mặt người ta, thì {{deity_pronoun:ta|Ta}} cũng sẽ xưng nhận người ấy trước mặt Cha {{deity_pronoun:ta|Ta}} ở trên trời.",
           "R": "Ai dám nói công khai trước mặt người khác rằng mình thuộc về {{deity_pronoun:ta|Ta}}, thì {{deity_pronoun:ta|Ta}} cũng sẽ nói với Cha {{deity_pronoun:ta|Ta}} ở trên trời rằng người ấy thuộc về {{deity_pronoun:ta|Ta}}."
+        },
+        "ko": {
+          "L": "그러므로 누구든지 사람들 앞에서 나를 시인하는 사람은, 나도 하늘에 계신 내 아버지 앞에서 그를 시인할 것이다.",
+          "B": "그러므로 누구든지 사람들 앞에서 나를 떳떳이 시인하면, 나도 하늘에 계신 내 아버지 앞에서 그 사람을 시인할 것이다.",
+          "R": "누구든지 사람들 앞에서 자기가 내 제자라고 떳떳이 말하면, 나도 하늘에 계신 내 아버지께 그 사람이 내 사람이라고 말할 것이다."
         }
       },
       "decisions": [
@@ -1992,6 +2245,32 @@
           "reason": "The forms settled for \"my Father in the heavens\" in Matthew; also in 10:33.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40010032004",
+            "n40010032010",
+            "n40010032016",
+            "n40010032019",
+            "n40010032020"
+          ],
+          "choice": "\"시인하다\" (L, B); \"하늘에 계신 내 아버지\" at every level; no gender span for \"사람들\"",
+          "alternatives": [
+            "\"고백하다\"",
+            "\"인정하다\""
+          ],
+          "reason": "To confess \"in me\" is to declare openly that one belongs to Jesus (meaning decision); \"시인하다\" is to acknowledge openly, while \"고백하다\" now suggests confessing a fault. \"하늘에 계신\" for the Father in the heavens, as the Korean Matthew 7:11 and 7:21 at every level. Korean \"사람\" already includes men and women.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2052,6 +2331,11 @@
           "L": "nhưng ai chối {{deity_pronoun:ta|Ta}} trước mặt người ta, thì chính {{deity_pronoun:ta|Ta}} cũng sẽ chối người ấy trước mặt Cha {{deity_pronoun:ta|Ta}}, Đấng ở trên các tầng trời.",
           "B": "Nhưng ai chối bỏ {{deity_pronoun:ta|Ta}} trước mặt người ta, thì {{deity_pronoun:ta|Ta}} cũng sẽ chối bỏ người ấy trước mặt Cha {{deity_pronoun:ta|Ta}} ở trên trời.",
           "R": "Nhưng ai nói trước mặt người khác rằng mình không biết {{deity_pronoun:ta|Ta}}, thì {{deity_pronoun:ta|Ta}} cũng sẽ nói với Cha {{deity_pronoun:ta|Ta}} ở trên trời rằng {{deity_pronoun:ta|Ta}} không biết người ấy."
+        },
+        "ko": {
+          "L": "그러나 누구든지 사람들 앞에서 나를 부인하는 사람은, 나도 하늘에 계신 내 아버지 앞에서 그를 부인할 것이다.",
+          "B": "그러나 누구든지 사람들 앞에서 나를 부인하면, 나도 하늘에 계신 내 아버지 앞에서 그 사람을 부인할 것이다.",
+          "R": "그러나 누구든지 사람들 앞에서 나를 모른다고 말하면, 나도 하늘에 계신 내 아버지께 그 사람을 모른다고 말할 것이다."
         }
       },
       "decisions": [
@@ -2176,6 +2460,28 @@
           "reason": "To deny is to refuse to own, to disown (meaning decision).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40010033004",
+            "n40010033009"
+          ],
+          "choice": "\"부인하다\" (L, B); \"모른다고 말하다\" (R)",
+          "alternatives": [
+            "\"저버리다\""
+          ],
+          "reason": "To deny is to disown (meaning decision); \"부인하다\" is the word of Peter's denial in the Korean John 13:38 and 18:25-27, which this saying anticipates. Readable says the plain thing.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2233,6 +2539,11 @@
           "L": "Đừng tưởng rằng {{deity_pronoun:ta|Ta}} đến để đem bình an trên đất; {{deity_pronoun:ta|Ta}} không đến để đem bình an, nhưng [để đem] gươm giáo.",
           "B": "Đừng nghĩ rằng {{deity_pronoun:ta|Ta}} đến để đem bình an cho thế gian. {{deity_pronoun:ta|Ta}} đến không phải để đem bình an, mà để đem gươm giáo.",
           "R": "Đừng nghĩ rằng {{deity_pronoun:ta|Ta}} đến để đem bình an cho mọi người trên đất. Ta không đến để đem bình an. Ta đến để đem gươm giáo, là sự chia rẽ giữa người ta với nhau."
+        },
+        "ko": {
+          "L": "내가 땅에 평화를 주려고 왔다고 생각하지 마라. 평화를 주려고 온 것이 아니라 칼을 [주려고 왔다].",
+          "B": "내가 세상에 평화를 가져오려고 왔다고 생각하지 마라. 나는 평화가 아니라 칼을 가져오려고 왔다.",
+          "R": "내가 세상 모든 사람에게 평화를 주려고 왔다고 생각하지 마라. 나는 평화를 주려고 오지 않았다. 사람들을 서로 갈라놓는 칼을 주려고 왔다."
         }
       },
       "decisions": [
@@ -2349,6 +2660,29 @@
           "reason": "The sword is division, not war (meaning decision); Readable says so, as the English Readable does. \"trên đất\" (L) keeps \"on the earth\"; Balanced says \"thế gian\", the people of the world.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40010034006",
+            "n40010034015"
+          ],
+          "choice": "\"평화\" (not \"평안\"); \"칼\"; \"사람들을 서로 갈라놓는 칼\" (R)",
+          "alternatives": [
+            "\"평안\"",
+            "\"검\""
+          ],
+          "reason": "The peace here is peace among people on earth, set against division (meaning decision), so the everyday \"평화\", as in 10:13; \"평안\" stays the key term for the peace Jesus gives in John. The sword stands for division, not war (meaning decision), which Readable says, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2419,6 +2753,11 @@
           "L": "Vì {{deity_pronoun:ta|Ta}} đến để làm cho con trai nghịch với cha mình, con gái nghịch với mẹ mình, con dâu nghịch với mẹ chồng mình; \\v 36 và kẻ thù của người ta [sẽ là] chính những người nhà mình.",
           "B": "Vì {{deity_pronoun:ta|Ta}} đến để khiến con trai chống lại cha, con gái chống lại mẹ, con dâu chống lại mẹ chồng. \\v 36 Kẻ thù của mỗi người lại là chính những người trong nhà mình.",
           "R": "Ta đến để làm cho con trai chống lại cha mình, con gái chống lại mẹ mình. Ta đến để làm cho con dâu chống lại mẹ chồng mình. \\v 36 Kẻ thù của một người sẽ là những người trong chính gia đình người ấy."
+        },
+        "ko": {
+          "L": "내가 온 것은 사람이 자기 아버지와, 딸이 자기 어머니와, 며느리가 자기 시어머니와 맞서게 하려는 것이기 때문이다. \\v 36 그리고 사람의 원수가 자기 집안 식구들일 것이다.",
+          "B": "나는 아들이 아버지와, 딸이 어머니와, 며느리가 시어머니와 맞서게 하려고 왔다. \\v 36 사람의 원수가 바로 자기 집안 식구일 것이다.",
+          "R": "나는 아들이 아버지에게, 딸이 어머니에게 등을 돌리게 하려고 왔다. 며느리가 시어머니에게 등을 돌리게 하려고 왔다. \\v 36 사람의 원수가 바로 자기 가족이 될 것이다."
         }
       },
       "decisions": [
@@ -2600,6 +2939,28 @@
           "reason": "\"a man against his father\" means a son (meaning decision), and the enemies are anyone's (meaning decision); Vietnamese words for people are inclusive, so the English Literal gender spans have no counterpart. The words of Micah 7:6.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40010035004",
+            "n40010036004"
+          ],
+          "choice": "\"사람\" (L), \"아들\" (B, R) for the man set against his father; \"사람의 원수\" with no gender span",
+          "alternatives": [
+            "\"남자\""
+          ],
+          "reason": "The man set against his father is a son (meaning decision); Literal keeps the Greek word, Balanced and Readable say \"son\", as the English does. In 10:36 anyone's enemies are meant (meaning decision), and Korean \"사람\" already says so.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2665,6 +3026,11 @@
           "L": "Ai yêu cha hay mẹ hơn {{deity_pronoun:ta|Ta}} thì không xứng đáng với {{deity_pronoun:ta|Ta}}; và ai yêu con trai hay con gái hơn {{deity_pronoun:ta|Ta}} thì không xứng đáng với {{deity_pronoun:ta|Ta}};",
           "B": "Ai yêu cha mẹ hơn {{deity_pronoun:ta|Ta}} thì không xứng đáng với {{deity_pronoun:ta|Ta}}. Ai yêu con trai hay con gái hơn {{deity_pronoun:ta|Ta}} thì không xứng đáng với {{deity_pronoun:ta|Ta}}.",
           "R": "Ai yêu cha mẹ mình hơn yêu {{deity_pronoun:ta|Ta}} thì không xứng đáng làm môn đồ của {{deity_pronoun:ta|Ta}}. Ai yêu con trai hay con gái mình hơn yêu {{deity_pronoun:ta|Ta}} thì không xứng đáng làm môn đồ của {{deity_pronoun:ta|Ta}}."
+        },
+        "ko": {
+          "L": "나보다 아버지나 어머니를 더 사랑하는 사람은 나에게 합당하지 않다. 그리고 나보다 아들이나 딸을 더 사랑하는 사람도 나에게 합당하지 않다.",
+          "B": "나보다 아버지나 어머니를 더 사랑하는 사람은 나에게 합당하지 않다. 나보다 아들이나 딸을 더 사랑하는 사람도 나에게 합당하지 않다.",
+          "R": "자기 아버지나 어머니를 나보다 더 사랑하는 사람은 내 제자가 될 자격이 없다. 자기 아들이나 딸을 나보다 더 사랑하는 사람도 내 제자가 될 자격이 없다."
         }
       },
       "decisions": [
@@ -2748,6 +3114,28 @@
           "reason": "Worthy of me means fit to belong to me as my disciple (meaning decision). Readable says \"môn đồ\", the word for disciples at every level, where the English Readable says \"followers\"; the same in 10:38.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40010037010",
+            "n40010037011"
+          ],
+          "choice": "\"나에게 합당하지 않다\" (L, B); \"내 제자가 될 자격이 없다\" (R), through 10:37-38",
+          "alternatives": [
+            "\"나에게 어울리지 않는다\""
+          ],
+          "reason": "Worthy of me means fit to belong to Jesus as his disciple (meaning decision); Readable says so, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2805,6 +3193,11 @@
           "L": "và ai không vác thập tự giá mình mà theo sau {{deity_pronoun:ta|Ta}} thì không xứng đáng với {{deity_pronoun:ta|Ta}}.",
           "B": "Ai không vác thập tự giá của mình mà theo {{deity_pronoun:ta|Ta}} thì không xứng đáng với {{deity_pronoun:ta|Ta}}.",
           "R": "Ai không chịu vác thập tự giá của mình và đi theo {{deity_pronoun:ta|Ta}} thì không xứng đáng làm môn đồ của {{deity_pronoun:ta|Ta}}."
+        },
+        "ko": {
+          "L": "그리고 자기 십자가를 지고 내 뒤를 따르지 않는 사람은 나에게 합당하지 않다.",
+          "B": "자기 십자가를 지고 나를 따르지 않는 사람은 나에게 합당하지 않다.",
+          "R": "자기 십자가를 지고 나를 따라오지 않는 사람은 내 제자가 될 자격이 없다."
         }
       },
       "decisions": [
@@ -2888,6 +3281,29 @@
           "reason": "The Protestant word, as in Mark 8:34. A condemned man carried his cross to execution (meaning decision).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40010038004",
+            "n40010038006",
+            "n40010038007"
+          ],
+          "choice": "\"자기 십자가를 지고\", as the Korean Mark 8:34",
+          "alternatives": [
+            "\"짊어지고\""
+          ],
+          "reason": "The picture is a condemned man carrying his cross to execution (meaning decision); Korean keeps it plainly at every level, worded as the Korean Mark 8:34 Balanced.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2947,6 +3363,11 @@
           "L": "Ai tìm được mạng sống mình thì sẽ mất nó, còn ai mất mạng sống mình vì {{deity_pronoun:ta|Ta}} thì sẽ tìm lại được nó.",
           "B": "Ai cố giữ lấy mạng sống mình thì sẽ mất nó, còn ai mất mạng sống mình vì {{deity_pronoun:ta|Ta}} thì sẽ tìm lại được nó.",
           "R": "Ai cố giữ mạng sống cho riêng mình thì sẽ mất nó. Nhưng ai chịu mất mạng sống mình vì {{deity_pronoun:ta|Ta}} thì sẽ tìm lại được nó."
+        },
+        "ko": {
+          "L": "자기 목숨을 얻은 사람은 그것을 잃을 것이고, 나 때문에 자기 목숨을 잃은 사람은 그것을 얻을 것이다.",
+          "B": "자기 목숨을 지키는 사람은 그것을 잃을 것이고, 나 때문에 자기 목숨을 잃는 사람은 그것을 얻을 것이다.",
+          "R": "자기만을 위해 목숨을 지키려는 사람은 그 목숨을 잃을 것이다. 그러나 나를 위해 자기 목숨을 내놓는 사람은 그 목숨을 얻을 것이다."
         }
       },
       "decisions": [
@@ -3048,6 +3469,31 @@
           "reason": "As in Mark 8:35: one's life and self, here and in the age to come (meaning decision).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40010039002",
+            "n40010039004",
+            "n40010039012",
+            "n40010039016"
+          ],
+          "choice": "\"목숨\" for psyche; \"얻다\" (L) and \"지키다\" (B, R) for the first \"find\"; \"얻다\" for the second",
+          "alternatives": [
+            "\"생명\"",
+            "\"찾다\""
+          ],
+          "reason": "\"목숨\" is the style guide's word for psyche: the life one has and can lose, here and in the age to come (meaning decision). \"Has found\" means has secured or kept safe (meaning decision); Literal keeps one verb, \"얻다\", for both finds, and Balanced and Readable say \"keep\" in the first.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3103,6 +3549,11 @@
           "L": "Ai tiếp nhận các con là tiếp nhận {{deity_pronoun:ta|Ta}}, và ai tiếp nhận {{deity_pronoun:ta|Ta}} là tiếp nhận Đấng đã sai {{deity_pronoun:ta|Ta}}.",
           "B": "Ai tiếp đón các con là tiếp đón {{deity_pronoun:ta|Ta}}, và ai tiếp đón {{deity_pronoun:ta|Ta}} là tiếp đón Đấng đã sai {{deity_pronoun:ta|Ta}}.",
           "R": "Khi người ta tiếp đón các con, là họ tiếp đón {{deity_pronoun:ta|Ta}}. Và khi họ tiếp đón {{deity_pronoun:ta|Ta}}, là họ tiếp đón Đức Chúa Trời, Đấng đã sai {{deity_pronoun:ta|Ta}} đến."
+        },
+        "ko": {
+          "L": "너희를 맞아들이는 사람은 나를 맞아들이는 것이고, 나를 맞아들이는 사람은 나를 보내신 분을 맞아들이는 것이다.",
+          "B": "너희를 맞아들이는 사람은 나를 맞아들이는 것이고, 나를 맞아들이는 사람은 나를 보내신 분을 맞아들이는 것이다.",
+          "R": "누구든지 너희를 맞아들이면 나를 맞아들이는 것이다. 그리고 나를 맞아들이면 나를 보내신 하나님을 맞아들이는 것이다."
         }
       },
       "decisions": [
@@ -3230,6 +3681,25 @@
           "reason": "The one who sent me is God the Father (meaning decision); \"Đấng\", always capitalised, stands where the English Balanced has \"him\" with the setting, as in Mark 9:37.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n40010040011"
+          ],
+          "choice": "\"나를 보내신 하나님\" (R)",
+          "alternatives": [
+            "\"나를 보내신 분\""
+          ],
+          "reason": "The one who sent Jesus is God the Father (meaning decision); Readable names him, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3291,6 +3761,11 @@
           "L": "Ai tiếp nhận một nhà tiên tri vì danh nhà tiên tri, sẽ nhận phần thưởng của nhà tiên tri; và ai tiếp nhận một người công chính vì danh người công chính, sẽ nhận phần thưởng của người công chính.",
           "B": "Ai tiếp đón một nhà tiên tri vì người ấy là nhà tiên tri, sẽ được phần thưởng của nhà tiên tri. Ai tiếp đón một người công chính vì người ấy là người công chính, sẽ được phần thưởng của người công chính.",
           "R": "Ai tiếp đón một nhà tiên tri vì người ấy nói thay cho Đức Chúa Trời, sẽ được cùng một phần thưởng như nhà tiên tri. Ai tiếp đón một người công chính vì người ấy sống ngay thẳng trước mặt Đức Chúa Trời, sẽ được cùng một phần thưởng như người công chính."
+        },
+        "ko": {
+          "L": "예언자를 예언자라는 이름으로 맞아들이는 사람은 예언자의 상을 받을 것이고, 의인을 의인이라는 이름으로 맞아들이는 사람은 의인의 상을 받을 것이다.",
+          "B": "예언자를 예언자이기 때문에 맞아들이는 사람은 예언자가 받는 상을 받을 것이고, 의인을 의인이기 때문에 맞아들이는 사람은 의인이 받는 상을 받을 것이다.",
+          "R": "하나님의 말씀을 전하는 예언자를 그가 예언자라는 이유로 맞아들이는 사람은, 예언자가 받는 것과 같은 상을 받을 것이다. 하나님 앞에서 올바르게 사는 의인을 그가 의인이라는 이유로 맞아들이는 사람은, 의인이 받는 것과 같은 상을 받을 것이다."
         }
       },
       "decisions": [
@@ -3433,6 +3908,31 @@
           "reason": "\"in the name of a prophet\" means because he is a prophet (meaning decision); \"nhân danh\" would mean acting on someone's authority, so Literal says \"vì danh\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40010041003",
+            "n40010041005",
+            "n40010041013",
+            "n40010041015"
+          ],
+          "choice": "\"예언자\"; \"의인\"; \"이름으로\" (L), \"이기 때문에\" (B), \"라는 이유로\" (R)",
+          "alternatives": [
+            "\"선지자\"",
+            "\"의로운 사람\""
+          ],
+          "reason": "\"In the name of a prophet\" means because he is a prophet (meaning decision); Literal keeps the idiom, the other levels say what it means. \"예언자\" as the style guide prefers; \"의인\" is the established word for a righteous person, and Readable explains both, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3498,6 +3998,11 @@
           "L": "Và ai cho một trong những kẻ nhỏ nhất này chỉ một chén nước lạnh để uống vì danh môn đồ, thật vậy, {{deity_pronoun:ta|Ta}} nói với các con, người ấy chắc chắn sẽ không mất phần thưởng của mình.\"",
           "B": "Ai cho một trong những người nhỏ bé này dù chỉ một chén nước lạnh, vì người ấy là môn đồ, thì thật vậy, {{deity_pronoun:ta|Ta}} nói với các con, người cho ấy sẽ không bao giờ mất phần thưởng của mình.\"",
           "R": "Những môn đồ này của {{deity_pronoun:ta|Ta}} có vẻ nhỏ bé và không quan trọng. Nhưng nếu ai cho một người trong họ dù chỉ một chén nước lạnh vì người ấy là môn đồ của {{deity_pronoun:ta|Ta}}, thì {{deity_pronoun:ta|Ta}} nói thật với các con, người cho ấy chắc chắn sẽ được thưởng.\""
+        },
+        "ko": {
+          "L": "그리고 누구든지 이 작은 이들 가운데 하나에게 제자라는 이름으로 찬 [물] 한 잔만이라도 마시게 하면, 진실로 너희에게 말한다. 그 사람은 결코 자기 상을 잃지 않을 것이다.\"",
+          "B": "누구든지 이 작은 사람들 가운데 하나에게 그가 제자이기 때문에 찬물 한 잔이라도 주면, 진실로 너희에게 말한다. 그 사람은 결코 상을 잃지 않을 것이다.\"",
+          "R": "내 제자들은 작고 보잘것없어 보일지도 모른다. 그러나 누가 그들 가운데 하나에게, 그가 내 제자라는 이유로 찬물 한 잔이라도 준다고 하자. 내가 분명히 말한다. 그 사람은 반드시 상을 받을 것이다.\""
         }
       },
       "decisions": [
@@ -3727,6 +4232,54 @@
             "\"Ta nói thật\""
           ],
           "reason": "The settled Readable form, here inside the sentence, so the pronoun takes the setting span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40010042005",
+            "n40010042006",
+            "n40010042007",
+            "n40010042008"
+          ],
+          "choice": "\"이 작은 이들\" (L); \"이 작은 사람들\" (B); \"작고 보잘것없어 보이는 내 제자들\" (R)",
+          "alternatives": [
+            "\"소자\""
+          ],
+          "reason": "The little ones are Jesus's disciples, humble and of no account in the world (meaning decision); \"소자\" is the older church word. Readable says who they are, as the English Readable does. The quotation that opened at 10:5 closes here.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40010042018",
+            "n40010042019",
+            "n40010042020",
+            "n40010042021",
+            "n40010042022",
+            "n40010042023"
+          ],
+          "choice": "\"반드시 상을 받을 것이다\" (R)",
+          "alternatives": [
+            "\"결코 상을 잃지 않을 것이다\""
+          ],
+          "reason": "The double negative means God will surely reward him (meaning decision); Readable says it positively, as the English Readable does.",
           "uncertain": false,
           "footnote": false
         }
