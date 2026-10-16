@@ -5,6 +5,7 @@ import re
 import sys
 import unittest
 from pathlib import Path
+from unittest import mock
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -901,7 +902,20 @@ def note(reason, alternatives=()):
 class ComparisonTest(unittest.TestCase):
     """A note's reference to a chapter not translated yet carries that
     verse from a public-domain Bible, for comparison: only the verses the
-    page's notes name, so the page stays small."""
+    page's notes name, so the page stays small. Every book now has English,
+    so these tests take Ecclesiastes out of the translated chapters."""
+
+    def setUp(self):
+        real = build_site.book_refs
+
+        def without_ecclesiastes(lang="en"):
+            out = dict(real(lang))
+            out["chapters"] = {b: c for b, c in out["chapters"].items() if b != "ECC"}
+            return out
+
+        patcher = mock.patch.object(build_site, "book_refs", without_ecclesiastes)
+        patcher.start()
+        self.addCleanup(patcher.stop)
 
     def test_notes_bring_only_untranslated_verses(self):
         records, _ = build_site.load_chapter("PRO", 21)
@@ -933,7 +947,7 @@ class ComparisonTest(unittest.TestCase):
         self.assertIsNone(build_site.comparison_verses([note("No references here.")], "en"))
 
     def test_chapter_pages_embed_the_comparison(self):
-        page = (built_site() / "pro" / "21" / "index.html").read_text(encoding="utf-8")
+        page = build_site.chapter_page("PRO", 21)
         data = json.loads(re.search(r'<script type="application/json" id="owb-data">(.*?)</script>', page, re.S)[1])
         self.assertIn("ECC.1.2", data["compare"]["verses"])
         # A page's comparison verses are a few kilobytes at most.
