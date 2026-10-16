@@ -20,6 +20,10 @@ Configuration comes from the environment:
                         server, in ms (default 15000; 0 for no limit).
                         Management commands, tests included, have no limit.
   DJANGO_LOG_LEVEL      level for Django's own log messages (default WARNING)
+  OWB_GITHUB_TOKEN      lets the admin file drafting jobs as GitHub issues
+                        (staff/jobs.py); the health page reads CI on main
+                        without it, more slowly rate-limited
+  OWB_GITHUB_REPO       where those issues go (default jdegreef/open-word-bible)
   SENTRY_DSN            report errors to Sentry (config/sentry.py); without
                         it errors are only logged
 """
@@ -64,6 +68,8 @@ INSTALLED_APPS = [
     "translation",
     "api",
     "accounts",
+    "feedback",
+    "staff",
 ]
 
 MIDDLEWARE = [
@@ -157,6 +163,10 @@ CORS_ALLOWED_ORIGINS = env_list("CORS_ALLOWED_ORIGINS", OWB_SITE_URL) + (
     ["http://localhost:8000", "http://127.0.0.1:8000", "http://localhost:8080"] if DEBUG else [])
 OWB_SUPER_ADMIN_EMAILS = [e.lower() for e in env_list("OWB_SUPER_ADMIN_EMAILS")]
 SIGN_IN_LINK_MINUTES = 20
+
+# The admin (backend/staff/).
+OWB_GITHUB_TOKEN = os.environ.get("OWB_GITHUB_TOKEN", "")
+OWB_GITHUB_REPO = os.environ.get("OWB_GITHUB_REPO", "jdegreef/open-word-bible")
 GOOGLE_CLIENT_ID = os.environ.get("GOOGLE_CLIENT_ID", "")
 GOOGLE_CLIENT_SECRET = os.environ.get("GOOGLE_CLIENT_SECRET", "")
 

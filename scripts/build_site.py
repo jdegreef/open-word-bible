@@ -228,7 +228,7 @@ def account_menu(lang):
         f'<div class="account-pop" id="account-pop" role="group" aria-label="{t(lang, "tools.your_account")}" hidden>'
         '<p class="who"><strong class="who-name"></strong><span class="who-email"></span></p>'
         f'<a class="pop-item" href="{url(lang, "/account/")}">{t(lang, "tools.account")}</a>'
-        f'<a class="pop-item admin-link" href="{API_URL}/admin/" hidden>{t(lang, "tools.admin")}</a>'
+        f'<a class="pop-item admin-link" href="/admin/" hidden>{t(lang, "tools.admin")}</a>'
         f'<button type="button" class="pop-item sign-out">{t(lang, "tools.sign_out")}</button>'
         '</div></div>')
 
@@ -1131,6 +1131,8 @@ def chapter_page(book, chapter, lang="en"):
             # comparison edition for verses not translated yet: the page
             # language's, then the World English Bible.
             "compare_url": compare_url(lang),
+            # Signing in to send a suggestion or question (reader.js noteBox).
+            "login": url(lang, "/login/"),
             "word_url": word_url(lang),
             "verses": {"url": f"/{VERSES_DIR}/",
                        "compare": [list(COMPARISON.get(lang, COMPARISON_DEFAULT)), list(COMPARISON_DEFAULT)]}}
@@ -3789,6 +3791,30 @@ def account_page(lang="en"):
     return page(lang, a("title"), body, unlisted="/account/")
 
 
+def admin_page():
+    """The admin (web/admin.js), after Ochorus's: one page whose sections
+    (#coverage, #team, ...) the script draws from the API (backend/staff/),
+    showing only the parts the signed-in account's roles open. In English
+    only, as Ochorus's admin is. Not in the sitemap, and not indexed."""
+    lang = "en"
+    body = f"""
+<div class="admin" id="admin" data-site="{html.escape(SITE_URL)}" data-github="{html.escape(GITHUB_URL)}">
+<nav class="admin-rail" id="admin-rail" aria-label="Admin sections" hidden></nav>
+<section class="admin-main" id="admin-main" aria-live="polite">
+<header class="page-head compact">
+<p class="eyebrow">Admin</p>
+<h1>Open Word Bible admin</h1>
+<p class="dek" id="admin-status">Loading&hellip;</p>
+</header>
+<noscript><p class="notice">The admin needs JavaScript.</p></noscript>
+</section>
+</div>
+<script src="{asset("admin.js")}" defer></script>
+"""
+    head = f'\n<link rel="stylesheet" href="{asset("admin.css")}">'
+    return page(lang, "Admin", body, unlisted="/admin/", translated=(lang,), head=head)
+
+
 def not_found_page():
     """One 404 page serves every address, so it speaks each language."""
     lang = "en"
@@ -4138,6 +4164,8 @@ def build(out):
         add("/reset-password/", reset_page(lang), index=False)
         add("/offline/", offline_page(lang), index=False)
         add("/saved/", saved_page(lang), index=False)
+    # The admin is in English only (admin_page).
+    pages["/admin/"] = admin_page()
     # A plan's page is in the languages that offer it.
     offered = {code: {p.id for p in available_plans(code)} for code in LANGUAGES}
     for plan in load_plans():
@@ -4166,12 +4194,13 @@ def build(out):
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(text, encoding="utf-8")
     for name in ("style.css", "markup.js", "reader.js", "site.js", "account.js", "search.js", "plans.js", "compare.js",
-                 "word.js"):
+                 "word.js", "admin.js", "admin.css"):
         shutil.copy(ROOT / "web" / name, out / name)
     shutil.copytree(ROOT / "web" / "fonts", out / "fonts")
     shutil.copytree(ROOT / "web" / "icons", out / "icons")
     shutil.copytree(OG, out / "og", ignore=shutil.ignore_patterns("*.digest"))
-    return sorted(files) + ["compare.js", "word.js", "markup.js", "plans.js", "reader.js", "search.js", "site.js", "style.css"]
+    return sorted(files) + ["admin.css", "admin.js", "compare.js", "word.js", "markup.js", "plans.js", "reader.js",
+                            "search.js", "site.js", "style.css"]
 
 
 def main():

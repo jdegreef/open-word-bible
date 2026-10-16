@@ -65,6 +65,19 @@ class SiteTest(unittest.TestCase):
             self.assertIn(f'<a class="sign-in-btn" href="{build_site.url(lang, "/login/")}" data-login>', text, path)
             self.assertIn(f'<a class="pop-item" href="{build_site.url(lang, "/account/")}">', text, path)
 
+    def test_admin_page_is_built_in_english_only_and_not_indexed(self):
+        page = (self.out / "admin" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('<meta name="robots" content="noindex">', page)
+        self.assertIn('id="admin"', page)
+        self.assertIn(build_site.asset("admin.js"), page)
+        self.assertIn(build_site.asset("admin.css"), page)
+        self.assertTrue((self.out / "admin.js").is_file())
+        self.assertFalse((self.out / "es" / "admin").exists())
+        self.assertNotIn("/admin/", (self.out / "sitemap.xml").read_text(encoding="utf-8"))
+        # The account menu's Admin link opens it, for anyone on the team.
+        self.assertIn('<a class="pop-item admin-link" href="/admin/" hidden>',
+                      (self.out / "es" / "index.html").read_text(encoding="utf-8"))
+
     def test_chapter_has_every_verse_in_order(self):
         data = self.chapter_data()
         verses = list(dict.fromkeys(v for r in data["records"] for v in r["refs"]))

@@ -1,9 +1,10 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
 
 from accounts import google
 from accounts import views as accounts
 from api import views
+from feedback import views as feedback
 
 admin.site.site_header = "Open Word Bible"
 admin.site.site_title = "Open Word Bible admin"
@@ -26,5 +27,7 @@ urlpatterns = [
     path("api/auth/sign-out", accounts.sign_out),
     path("api/me", accounts.me),
     path("api/reading", accounts.reading),
+    path("api/messages", feedback.messages),
+    path("api/admin/", include("staff.urls")),
     path("healthz", views.healthz),
 ]

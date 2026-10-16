@@ -283,12 +283,15 @@ def sync_super_admin(user):
 
 
 def user_json(user):
+    from staff.permissions import areas
     roles = list(user.roles.all())
     return {
         "email": user.username,
         "display_name": user.first_name,
         "roles": [r.as_json() for r in roles],
         "is_super_admin": any(r.kind == Role.Kind.SUPER_ADMIN for r in roles),
+        # The parts of the admin (staff/permissions.py) the roles open.
+        "admin": areas(user),
         "joined": user.date_joined.date().isoformat(),
         "has_password": has_password(user),
     }

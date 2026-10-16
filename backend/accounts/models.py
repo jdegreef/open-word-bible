@@ -11,6 +11,9 @@ are granted by a super admin:
 - scholar reviewer, for Greek or Hebrew: approves the meaning;
 - editor: triages suggestions and questions, revises drafts, writes
   articles, but never approves their own work;
+- reporting, user records, email: the admin's operations grants (staff/),
+  for someone who helps run the site without translating: seeing the
+  progress pages, seeing readers' accounts, and emailing the team;
 - super admin: everything, including granting roles.
 
 A sentence is "reviewed" only when a scholar reviewer and a language
@@ -41,12 +44,19 @@ def hash_secret(secret):
     return hashlib.sha256(secret.encode("utf-8")).hexdigest()
 
 
+# Roles that take no language.
+UNSCOPED_ROLES = ["super_admin", "editor", "reporting", "users", "email"]
+
+
 class Role(models.Model):
     class Kind(models.TextChoices):
         SUPER_ADMIN = "super_admin", "Super admin"
         EDITOR = "editor", "Editor"
         SCHOLAR_REVIEWER = "scholar_reviewer", "Scholar reviewer"
         LANGUAGE_REVIEWER = "language_reviewer", "Language reviewer"
+        REPORTING = "reporting", "Reporting"
+        USERS = "users", "User records"
+        EMAIL = "email", "Email"
 
     # Original languages a scholar reviews, and reading languages a language
     # reviewer reviews (data/languages.json). A language added there changes
@@ -70,7 +80,7 @@ class Role(models.Model):
                 name="role_language_matches_kind",
                 condition=(Q(kind="scholar_reviewer", language__in=list(languages.ORIGINAL))
                            | Q(kind="language_reviewer", language__in=list(languages.READING))
-                           | (Q(kind__in=["super_admin", "editor"]) & Q(language=""))),
+                           | (Q(kind__in=UNSCOPED_ROLES) & Q(language=""))),
             ),
         ]
         ordering = ["user", "kind", "language"]
