@@ -215,7 +215,9 @@ class SearchTest(TestCase):
         self.assertNotIn("url", ref)
         ref = self.get(q="John 4:60", lang="en")["reference"]
         self.assertEqual((ref["url"], ref["shown"], ref["sentences"]), ("/jhn/4/", [], []))
-        self.assertIsNone(self.get(q="son 3", lang="en")["reference"])
+        # Words and a number, not the start of any book's name. ("son 3" was
+        # the example until Song of Songs was drafted.)
+        self.assertIsNone(self.get(q="love 3", lang="en")["reference"])
 
     # ---- The request ------------------------------------------------------
 
