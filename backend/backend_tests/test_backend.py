@@ -13,7 +13,7 @@ from django.core.management import CommandError, call_command
 from django.test import TestCase
 
 from texts.models import Edition, Verse, Word
-from translation.models import Decision, Rendering, ReviewEvent, Sentence
+from translation.models import ContentFile, Decision, Rendering, ReviewEvent, Sentence
 
 CONTENT = settings.REPO_ROOT / "content"
 
@@ -130,6 +130,18 @@ class ImportContentTest(TestCase):
             path.write_text(json.dumps(data))
             import_content(str(path))
         self.assertNotEqual(Sentence.objects.get(record_id="JHN.1.12.s1").literal_gloss, "changed")
+
+    def test_budget_leaves_the_rest_for_the_next_run(self):
+        # A deploy stops starting files after --budget seconds, so it finishes
+        # inside Render's 30-minute pre-deploy limit and the next one catches up.
+        files = content_files("PHP/PHP.4.*.json", "JHN/JHN.1.*.json")
+        self.assertGreater(len(files), 1)
+        out = io.StringIO()
+        import_content("--budget", "0", *files, stdout=out)
+        self.assertIn("file(s) left for the next run", out.getvalue())
+        self.assertFalse(Sentence.objects.exists())
+        import_content("--budget", "100000", *files)
+        self.assertEqual(ContentFile.objects.count(), len(files))
 
     def test_file_with_an_unknown_word_is_not_imported(self):
         data = json.loads((CONTENT / "JHN" / "JHN.1.1-18.json").read_text())
