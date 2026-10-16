@@ -56,6 +56,11 @@
           "L": "Ngài đặt ra cho họ một ngụ ngôn khác rằng: \"Vương quốc thiên đàng được ví như một người đã gieo giống tốt trong ruộng mình.",
           "B": "Rồi Đức Giê-xu kể cho họ nghe một ngụ ngôn khác: \"Vương quốc thiên đàng giống như chuyện một người gieo giống tốt trong ruộng mình.",
           "R": "Rồi Đức Giê-xu kể cho họ một ngụ ngôn khác. Ngài nói: \"Vương quốc thiên đàng giống như chuyện xảy ra khi một người gieo giống tốt trong ruộng mình."
+        },
+        "ko": {
+          "L": "그분이 그들 앞에 다른 비유를 내놓으며 말씀하셨다. \"천국은 자기 밭에 좋은 씨를 뿌린 사람에게 비유되었다.",
+          "B": "예수께서 또 다른 비유를 그들에게 들려주셨다. \"천국은 자기 밭에 좋은 씨를 뿌린 어떤 사람의 이야기와 같다.",
+          "R": "예수께서 그들에게 또 다른 비유를 들려주셨다. \"천국은 이런 일과 같다. 어떤 사람이 자기 밭에 좋은 씨를 심었다."
         }
       },
       "decisions": [
@@ -362,6 +367,48 @@
           "reason": "The kingdom is like the whole story, not like the man alone (meaning decision); Balanced and Readable say \"chuyện\" (the story of), as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40013024003"
+          ],
+          "choice": "No deity_pronoun spans in Korean, through Matthew 13:24-43; \"그분\" (L), \"예수\" (B, R) in the narrative; \"천국\" at every level",
+          "alternatives": [
+            "capitalised pronouns"
+          ],
+          "reason": "Korean has no capital letters, so respect for Jesus is carried by -시-, 께서 and 그분 (docs/korean-style.md sections 4 and 7). \"천국\" is the Korean Matthew's word for the kingdom of the heavens.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013024006"
+          ],
+          "choice": "\"비유되었다\" (L); \"... 이야기와 같다\" (B); \"이런 일과 같다\" (R)",
+          "alternatives": [
+            "\"같다\" at Literal"
+          ],
+          "reason": "The kingdom is like the whole story that follows (meaning decision). Literal keeps the Greek passive \"has been likened\"; Balanced and Readable say that it is the story, not the man, that pictures the kingdom, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -423,6 +470,11 @@
           "L": "Nhưng trong khi người ta ngủ, kẻ thù của người ấy đến gieo cỏ lùng vào giữa lúa mì rồi bỏ đi.",
           "B": "Nhưng trong lúc mọi người đang ngủ, kẻ thù của người ấy đến gieo cỏ lùng khắp ruộng lúa mì rồi bỏ đi.",
           "R": "Nhưng một đêm kia, trong lúc mọi người đều ngủ, kẻ thù của người ấy đến. Kẻ ấy gieo hạt cỏ dại vào giữa lúa mì rồi bỏ đi."
+        },
+        "ko": {
+          "L": "그런데 사람들이 자는 동안에 그의 원수가 와서 밀 사이에 가라지를 덧뿌리고 갔다.",
+          "B": "그런데 사람들이 자는 사이에 그의 원수가 와서 밀 사이사이에 가라지를 뿌려 놓고 가 버렸다.",
+          "R": "그런데 어느 날 밤 모두가 잠든 사이에, 그 사람의 원수가 왔다. 원수는 밀 사이에 잡초 씨를 뿌리고 가 버렸다."
         }
       },
       "decisions": [
@@ -704,6 +756,51 @@
           "reason": "\"Người ta\" (people) is already inclusive (style guide, section 7).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013025013"
+          ],
+          "choice": "\"가라지\" (L, B); \"잡초\" (R), through 13:24-40",
+          "alternatives": [
+            "\"독보리\"",
+            "\"잡초\" at every level"
+          ],
+          "reason": "The weed is darnel, a grass that looks like wheat until it forms heads (meaning decision). \"가라지\" is the ordinary Korean name for a weed grass among grain and is how Korean readers know this parable; \"독보리\" names the plant exactly but is unfamiliar. Readable says plainly \"weeds\". A reviewer may prefer \"독보리\".",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013025004",
+            "n40013025005",
+            "n40013025006"
+          ],
+          "choice": "\"사람들\" with no gender span; \"어느 날 밤\" (R)",
+          "alternatives": [
+            "{{gender:사람들|남자들}}"
+          ],
+          "reason": "Korean \"사람들\" already includes men and women. The sowing was done at night (meaning decision), which Readable says, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -759,6 +856,11 @@
           "L": "Khi cây lúa mọc lên và kết hạt, thì cỏ lùng cũng hiện ra.",
           "B": "Khi lúa mì mọc lên và trổ bông, thì cỏ lùng cũng lộ ra.",
           "R": "Lúa mì lớn lên và trổ bông. Lúc ấy mọi người mới thấy có cả cỏ dại nữa."
+        },
+        "ko": {
+          "L": "그리고 싹이 나서 열매를 맺었을 때에, 그때에 가라지도 드러났다.",
+          "B": "밀이 자라서 이삭이 패자, 가라지도 드러났다.",
+          "R": "밀이 자라서 이삭이 생겼다. 그러자 잡초도 눈에 띄었다."
         }
       },
       "decisions": [
@@ -873,6 +975,11 @@
           "L": "Các nô lệ của chủ nhà đến nói với ông: 'Thưa chủ, chẳng phải chủ đã gieo giống tốt trong ruộng của chủ sao?",
           "B": "Các đầy tớ của chủ ruộng đến thưa với ông: 'Thưa chủ, chẳng phải chủ đã gieo giống tốt trong ruộng mình sao?",
           "R": "Các đầy tớ của ông chủ đến gặp ông. Họ nói: 'Thưa chủ, chủ đã gieo giống tốt trong ruộng mình, phải không?"
+        },
+        "ko": {
+          "L": "그러자 집주인의 종들이 와서 그에게 말했다. '주인님, 주인님의 밭에 좋은 씨를 뿌리지 않으셨습니까?",
+          "B": "집주인의 종들이 와서 그에게 말했다. '주인님, 밭에 좋은 씨를 뿌리지 않으셨습니까?",
+          "R": "주인의 종들이 그에게 와서 말했다. '주인님, 주인님의 밭에 좋은 씨를 심으셨지요?"
         }
       },
       "decisions": [
@@ -1109,6 +1216,51 @@
           "reason": "Servants speak to the owner by his position, the respectful address the meaning decision describes. The owner is a figure in the story, so no deity_pronoun span.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013027004",
+            "n40013027006",
+            "n40013027009"
+          ],
+          "choice": "\"종\" at every level; \"집주인\" (L, B), \"주인\" (R); \"주인님\" for kyrie",
+          "alternatives": [
+            "\"노예\" (L)",
+            "\"주님\""
+          ],
+          "reason": "\"종\" is the style guide's word for doulos at every level (section 6), and \"집주인\" is the Korean Matthew 10:25's word for the householder. Kyrie here is the servants' address to their master (meaning decision), so \"주인님\", not \"주님\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40013027010"
+          ],
+          "choice": "The servants speak to their master in 합쇼체 (L, B) and in the softer 합쇼체-with-\"-지요\" question (R); \"주인님의\" for \"your\"",
+          "alternatives": [
+            "\"당신\""
+          ],
+          "reason": "Servants address their master in the honorific style; Korean names him rather than saying \"you\". The question expects \"yes\" (meaning decision), which Korean marks with \"-지 않으셨습니까?\" and, at Readable, \"-지요?\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1155,6 +1307,11 @@
           "L": "Vậy thì cỏ lùng từ đâu ra?'",
           "B": "Vậy những cây cỏ lùng này từ đâu mà ra?'",
           "R": "Vậy sao lại có nhiều cỏ dại như thế?'"
+        },
+        "ko": {
+          "L": "그러면 어디서 가라지가 [생겼습니까]?'",
+          "B": "그런데 이 가라지는 어디서 생겼습니까?'",
+          "R": "그런데 이 많은 잡초는 다 어디서 나왔습니까?'"
         }
       },
       "decisions": [
@@ -1174,6 +1331,25 @@
             "a request for advice"
           ],
           "reason": "\"Then\" draws the conclusion: if the seed was good, the weeds came from somewhere else.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n40013027019"
+          ],
+          "choice": "\"[생겼습니까]\" (L)",
+          "alternatives": [
+            "\"가지고 있습니까\""
+          ],
+          "reason": "The Greek \"where does it have weeds from\" needs a Korean verb; Literal brackets it.",
           "uncertain": false,
           "footnote": false
         }
@@ -1226,6 +1402,11 @@
           "L": "Ông nói với họ: 'Một người kẻ thù đã làm điều này.'",
           "B": "Ông bảo họ: 'Kẻ thù đã làm việc này.'",
           "R": "Ông trả lời: 'Có kẻ ghét ta đã làm điều này.'"
+        },
+        "ko": {
+          "L": "그러자 그가 그들에게 말했다. '원수인 사람이 이 일을 했다.'",
+          "B": "주인이 그들에게 말했다. '원수가 이렇게 했구나.'",
+          "R": "주인이 대답했다. '나를 미워하는 사람이 이렇게 했다.'"
         }
       },
       "decisions": [
@@ -1288,6 +1469,27 @@
           "reason": "A master speaks to his servants as \"ta\", lowercase and without a setting, since he is a figure in the story; \"các ngươi\" is archaic, so he calls them \"các anh\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40013028002"
+          ],
+          "choice": "The master speaks to his servants in 해라체",
+          "alternatives": [
+            "해요체"
+          ],
+          "reason": "A master speaking to his servants uses the plain style; the servants answer in 합쇼체.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1340,6 +1542,11 @@
           "L": "Các nô lệ nói với ông: 'Vậy chủ có muốn chúng tôi đi nhổ chúng không?'",
           "B": "Các đầy tớ hỏi: 'Vậy chủ có muốn chúng tôi đi nhổ cỏ lùng không?'",
           "R": "Các đầy tớ hỏi ông: 'Chủ có muốn chúng tôi đi nhổ hết cỏ dại không?'"
+        },
+        "ko": {
+          "L": "그러자 종들이 그에게 말한다. '그러면 저희가 가서 그것들을 뽑아 모으기를 원하십니까?'",
+          "B": "종들이 물었다. '그러면 저희가 가서 그것들을 뽑아 모을까요?'",
+          "R": "종들이 그에게 물었다. '저희가 가서 그 잡초를 뽑아 버릴까요?'"
         }
       },
       "decisions": [
@@ -1457,6 +1664,28 @@
           "reason": "Matthew tells these two steps of the story in the present (\"say\", \"says\"); Literal keeps that by leaving out \"đã\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40013028013",
+            "n40013028014"
+          ],
+          "choice": "Historic present \"말한다\" (L), past (B, R); \"저희\"; \"원하십니까\" (L), \"-ㄹ까요\" (B, R)",
+          "alternatives": [
+            "\"우리\""
+          ],
+          "reason": "Literal keeps Matthew's present of narration, as the Korean Matthew does through chapters 2-9. The servants speak of themselves humbly; Balanced and Readable turn the polite request for orders (meaning decision) into the Korean \"shall we\", in the softer polite style servants would use.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1512,6 +1741,11 @@
           "L": "Nhưng ông nói: 'Không, kẻo khi nhổ cỏ lùng, các anh nhổ luôn cả lúa mì.",
           "B": "Ông đáp: 'Không, vì khi nhổ cỏ lùng, các anh có thể nhổ luôn cả lúa mì.",
           "R": "Ông trả lời: 'Không được. Khi các anh nhổ cỏ dại, các anh có thể nhổ luôn một số cây lúa mì."
+        },
+        "ko": {
+          "L": "그러나 그가 말한다. '아니다. 너희가 가라지를 뽑아 모으다가 그것들과 함께 밀까지 뽑을까 [염려된다].",
+          "B": "주인이 대답했다. '아니다. 가라지를 뽑다가 밀까지 함께 뽑을지도 모른다.",
+          "R": "주인이 대답했다. '아니다. 잡초를 뽑다가 밀까지 같이 뽑을 수도 있다."
         }
       },
       "decisions": [
@@ -1573,6 +1807,25 @@
           "choice": "plural_you spans on the verbs addressed to the servants",
           "alternatives": [],
           "reason": "Spanish has two plural forms of \"you\", Latin American \"ustedes\" and Peninsular \"vosotros\"; the setting chooses between them, here and in verse 30, and for every plural \"you\" in the passage. English has no such choice, so these spans have no English counterpart.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n40013029004"
+          ],
+          "choice": "\"[염려된다]\" (L)",
+          "alternatives": [
+            "no verb"
+          ],
+          "reason": "\"Lest\" needs a Korean verb of fearing; Literal brackets it.",
           "uncertain": false,
           "footnote": false
         }
@@ -1652,6 +1905,11 @@
           "L": "Cứ để cả hai cùng lớn lên cho đến mùa gặt; và vào lúc mùa gặt, ta sẽ bảo những người gặt: \"Hãy nhổ cỏ lùng trước và bó lại thành từng bó để đốt, còn lúa mì thì thu vào kho của ta.\"'\"",
           "B": "Cứ để cả hai cùng mọc cho đến mùa gặt. Đến mùa gặt, ta sẽ bảo các thợ gặt: \"Hãy nhổ cỏ lùng trước, bó lại từng bó mà đốt đi. Còn lúa mì thì hãy thu vào kho của ta.\"'\"",
           "R": "Hãy để lúa mì và cỏ dại cùng lớn lên cho đến mùa gặt. Lúc ấy ta sẽ bảo các thợ gặt: \"Trước hết hãy nhổ cỏ dại và bó lại. Chúng sẽ bị đốt đi. Rồi hãy đem lúa mì vào kho của ta.\"'\""
+        },
+        "ko": {
+          "L": "둘 다 추수 때까지 함께 자라게 두어라. 그리고 추수 때에 내가 추수하는 일꾼들에게 말하겠다. \"먼저 가라지를 거두어 태우려고 단으로 묶고, 밀은 내 곳간으로 모아들여라.\"'\"",
+          "B": "추수 때까지 둘 다 함께 자라게 내버려 두어라. 추수할 때가 되면 내가 일꾼들에게 이르겠다. \"먼저 가라지를 뽑아 불태우게 단으로 묶어라. 그리고 밀은 거두어 내 곳간에 들여라.\"'\"",
+          "R": "추수할 때까지 밀과 잡초가 함께 자라게 두어라. 추수할 때가 되면 내가 일꾼들에게 말하겠다. \"먼저 잡초를 뽑아서 묶어라. 그것은 불에 태울 것이다. 그다음에 밀을 거두어 내 곳간에 들여라.\"'\""
         }
       },
       "decisions": [
@@ -1789,6 +2047,28 @@
           "reason": "Plain words for the reapers; the harvest pictures God's final judgment (meaning decision), which 13:39 makes explicit.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013030014",
+            "n40013030027"
+          ],
+          "choice": "\"추수하는 일꾼들\" (L), \"일꾼들\" (B, R); \"곳간\"",
+          "alternatives": [
+            "\"추수꾼\""
+          ],
+          "reason": "Korean names reapers by their work; \"곳간\" is the storehouse word of 12:35. The quotation inside the quotation inside Jesus's words uses double marks again, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1852,6 +2132,11 @@
           "L": "Ngài đặt ra cho họ một ngụ ngôn khác rằng: \"Vương quốc thiên đàng giống như một hạt cải mà một người lấy gieo trong ruộng mình;",
           "B": "Ngài đưa ra cho họ một ngụ ngôn khác: \"Hãy hình dung một hạt cải được một người lấy gieo trong ruộng mình. Vương quốc thiên đàng giống như vậy.",
           "R": "Đức Giê-xu kể cho họ một ngụ ngôn khác. Ngài nói: \"Vương quốc thiên đàng giống như một hạt cải rất nhỏ. Có một người gieo hạt ấy trong ruộng mình."
+        },
+        "ko": {
+          "L": "그분이 그들 앞에 다른 비유를 내놓으며 말씀하셨다. \"천국은 겨자씨 한 알과 같다. 어떤 사람이 그것을 가져다가 자기 밭에 뿌렸다.",
+          "B": "예수께서 또 다른 비유를 들려주셨다. \"어떤 사람이 겨자씨 한 알을 가져다가 자기 밭에 뿌렸다고 생각해 보아라. 천국은 그와 같다.",
+          "R": "예수께서 또 다른 비유를 들려주셨다. \"천국은 아주 작은 겨자씨 한 알과 같다. 어떤 사람이 그 씨를 자기 밭에 심었다."
         }
       },
       "decisions": [
@@ -1961,6 +2246,28 @@
           "reason": "As in Mark 4:31: the seed of the mustard plant and the word Vietnamese Bible readers know.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013031012",
+            "n40013031013"
+          ],
+          "choice": "\"겨자씨 한 알\"; the picture first, then the comparison (B)",
+          "alternatives": [
+            "\"겨자 알갱이\""
+          ],
+          "reason": "\"겨자씨\" is the word of the Korean Mark 4:31. Balanced puts the picture first, as the English Balanced does, so that the kingdom is like what happens to the seed (meaning decision).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2032,6 +2339,11 @@
           "L": "hạt ấy nhỏ hơn mọi hạt giống, nhưng khi đã lớn lên thì lớn hơn các thứ rau và trở thành một cây, đến nỗi chim trời đến làm tổ trên các cành của nó.\"",
           "B": "Trong mọi hạt giống, nó là hạt nhỏ nhất, nhưng khi lớn lên, nó cao hơn các cây rau khác trong vườn và trở thành một cây lớn, đến nỗi chim trời đến làm tổ giữa các cành của nó.\"",
           "R": "Đó là hạt nhỏ nhất mà người ta gieo trồng. Nhưng khi lớn lên, nó lớn hơn tất cả các cây khác trong vườn. Nó trở thành một cây lớn. Chim chóc đến làm tổ trên các cành của nó.\""
+        },
+        "ko": {
+          "L": "그것은 모든 씨보다 작지만, 자라면 채소들보다 커져서 나무가 되니, 하늘의 새들이 와서 그 가지들에 깃들게 된다.\"",
+          "B": "겨자씨는 모든 씨 가운데 가장 작지만, 자라면 어떤 밭 채소보다도 커져서 나무가 된다. 그래서 하늘의 새들이 와서 그 가지에 깃든다.\"",
+          "R": "겨자씨는 사람들이 심는 씨 가운데 가장 작은 씨다. 그러나 자라면 밭에 있는 다른 어떤 식물보다 커진다. 나무처럼 자란다. 그래서 새들이 와서 그 가지에 둥지를 튼다.\""
         }
       },
       "decisions": [
@@ -2136,6 +2448,27 @@
           "reason": "A plant as big as a tree (meaning decision); \"cây\" alone in Vietnamese also means any plant, so Balanced and Readable add \"lớn\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013032025"
+          ],
+          "choice": "\"깃들다\" (L, B); \"둥지를 틀다\" (R)",
+          "alternatives": [
+            "\"살다\""
+          ],
+          "reason": "As the Korean Mark 4:32.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2201,6 +2534,11 @@
           "L": "Ngài nói với họ một ngụ ngôn khác: \"Vương quốc thiên đàng giống như men mà một người đàn bà lấy trộn vào ba đấu bột, cho đến khi tất cả [bột] đều dậy men.\"",
           "B": "Ngài kể cho họ một ngụ ngôn khác: \"Vương quốc thiên đàng giống như men. Một người phụ nữ lấy men trộn vào {{units:khoảng 18 kg|ba đấu}} bột, cho đến khi cả khối bột đều dậy men.\"",
           "R": "Đức Giê-xu kể cho họ một ngụ ngôn khác: \"Vương quốc thiên đàng giống như men. Một người phụ nữ lấy một chút men trộn vào rất nhiều bột, {{units:khoảng 18 kg|ba đấu}}. Ít lâu sau, cả khối bột đều dậy men.\""
+        },
+        "ko": {
+          "L": "그분이 그들에게 다른 비유를 말씀하셨다. \"천국은 누룩과 같다. 한 여자가 그것을 가져다가 밀가루 세 사톤 속에 숨겨 넣었더니, 마침내 전부가 부풀어 올랐다.\"",
+          "B": "예수께서 또 다른 비유를 말씀하셨다. \"천국은 누룩과 같다. 한 여자가 누룩을 가져다가 {{units:약 18킬로그램|세 사톤}}의 밀가루에 섞어 넣었더니, 마침내 반죽 전체가 부풀어 올랐다.\"",
+          "R": "예수께서 또 다른 비유를 말씀하셨다. \"천국은 누룩과 같다. 한 여자가 누룩을 조금 가져다가 아주 많은 밀가루, {{units:약 18킬로그램|세 사톤}}에 섞었다. 그러자 얼마 뒤에 반죽 전체가 부풀어 올랐다.\""
         }
       },
       "decisions": [
@@ -2508,6 +2846,49 @@
           "reason": "Vietnamese uses metric by default, with the original measure as the alternative (style guide, section 7); the English default is in US pounds. \"Đấu\" is the Vietnamese word for a grain measure, as in Mark 4:21.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40013033018",
+            "n40013033019"
+          ],
+          "choice": "{{units:약 18킬로그램|세 사톤}} (B, R); \"세 사톤\" (L)",
+          "alternatives": [
+            "the English US measure"
+          ],
+          "reason": "Korean measures default to metric with the original unit as the alternative (style guide section 7), so this differs from the English \"about 40 pounds\". Literal keeps the original measure. Both forms end in a consonant, so the particle fits both.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013033011",
+            "n40013033015"
+          ],
+          "choice": "\"누룩\" at every level; \"숨겨 넣다\" (L), \"섞어 넣다\" (B), \"섞다\" (R)",
+          "alternatives": [
+            "\"효모\""
+          ],
+          "reason": "\"누룩\" is the Korean word for the old dough kept to raise the next batch (meaning decision); \"효모\" is the laboratory word. Literal keeps the Greek \"hid\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2565,6 +2946,11 @@
           "L": "Đức Giê-xu dùng ngụ ngôn nói với đoàn dân tất cả những điều này, và không dùng ngụ ngôn thì {{deity_pronoun:ngài|Ngài}} chẳng nói gì với họ,",
           "B": "Đức Giê-xu dùng ngụ ngôn nói với đoàn dân mọi điều ấy; thật vậy, {{deity_pronoun:ngài|Ngài}} không nói điều gì với họ mà không dùng ngụ ngôn.",
           "R": "Đức Giê-xu dùng ngụ ngôn để dạy đoàn dân tất cả những điều này. Khi dạy họ, {{deity_pronoun:ngài|Ngài}} luôn luôn dùng ngụ ngôn."
+        },
+        "ko": {
+          "L": "예수께서 이 모든 것을 비유로 무리에게 말씀하셨고, 비유 없이는 그들에게 아무것도 말씀하지 않으셨다.",
+          "B": "예수께서는 이 모든 것을 무리에게 비유로 말씀하셨다. 비유를 들지 않고는 그들에게 아무것도 말씀하지 않으셨다.",
+          "R": "예수께서는 이 모든 것을 비유를 들어 무리에게 가르치셨다. 무리를 가르치실 때에는 언제나 비유를 들어 말씀하셨다."
         }
       },
       "decisions": [
@@ -2712,6 +3098,11 @@
           "L": "để lời đã được phán qua nhà tiên tri được ứng nghiệm, rằng: \"Ta sẽ mở miệng ra mà nói bằng ngụ ngôn; {{deity_pronoun:ta|Ta}} sẽ công bố những điều bị giấu kín từ [buổi] sáng thế.\"",
           "B": "Như vậy là để ứng nghiệm lời đã phán qua nhà tiên tri: \"Ta sẽ mở miệng nói bằng ngụ ngôn; {{deity_pronoun:ta|Ta}} sẽ tuôn ra những điều được giấu kín từ khi sáng thế.\"",
           "R": "Điều này làm cho lời nhà tiên tri đã nói trở thành sự thật: \"Ta sẽ dùng ngụ ngôn mà nói. Ta sẽ kể ra những điều đã được giữ kín từ khi Đức Chúa Trời dựng nên thế giới.\""
+        },
+        "ko": {
+          "L": "이것은 예언자를 통하여 하신 말씀이 이루어지게 하려는 것이었다. \"내가 비유로 내 입을 열고, 창세 때부터 숨겨진 것들을 쏟아 내겠다.\"",
+          "B": "이것은 예언자를 통하여 하신 말씀을 이루려는 것이었다. \"내가 입을 열어 비유로 말하고, 세상을 지을 때부터 감추어진 것을 쏟아 놓겠다.\"",
+          "R": "이렇게 해서 예언자가 한 말이 그대로 이루어졌다. \"나는 비유를 들어 말하겠다. 하나님께서 세상을 만드신 때부터 숨겨져 있던 것을 알려 주겠다.\""
         }
       },
       "decisions": [
@@ -2883,6 +3274,53 @@
           "reason": "\"Sáng thế\" (the creation of the world) supplies what \"from the foundation\" means; Literal brackets the supplied word, and Readable says who made it, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013035001",
+            "n40013035002",
+            "n40013035003",
+            "n40013035005",
+            "n40013035006",
+            "n40013035007"
+          ],
+          "choice": "\"예언자를 통하여 하신 말씀이 이루어지다\" for the fulfilment formula; the quotation in 해라체 with \"나\"; no deity_pronoun span",
+          "alternatives": [
+            "\"선지자\""
+          ],
+          "reason": "As the Korean Matthew 8:17. The psalm's speaker says \"I\"; Korean uses no honorific for a speaker of himself, so the English span on \"my\" has nothing to change.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n40013035018"
+          ],
+          "choice": "\"창세 때부터\" (L); \"세상을 지을 때부터\" (B); \"하나님께서 세상을 만드신 때부터\" (R)",
+          "alternatives": [
+            "\"기초부터\""
+          ],
+          "reason": "\"From the foundation\" means from the founding of the world; the Korean \"창세\" says that in one word, so Literal needs no brackets.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2933,6 +3371,11 @@
           "L": "Bấy giờ, rời đoàn dân, {{deity_pronoun:ngài|Ngài}} vào nhà.",
           "B": "Rồi Đức Giê-xu cho đoàn dân về và đi vào nhà.",
           "R": "Sau đó Đức Giê-xu rời đoàn dân và đi vào nhà."
+        },
+        "ko": {
+          "L": "그때에 그분이 무리를 떠나보내시고 집으로 들어가셨다.",
+          "B": "그 뒤에 예수께서 무리를 보내시고 집으로 들어가셨다.",
+          "R": "그 뒤에 예수께서 사람들을 떠나 집으로 들어가셨다."
         }
       },
       "decisions": [
@@ -3046,6 +3489,11 @@
           "L": "Và các môn đồ {{deity_pronoun:ngài|Ngài}} đến với {{deity_pronoun:ngài|Ngài}} và nói: \"Xin giải thích cho chúng con ngụ ngôn về cỏ lùng trong ruộng.\"",
           "B": "Các môn đồ đến gần {{deity_pronoun:ngài|Ngài}} và thưa: \"Xin Thầy giải thích rõ cho chúng con ý nghĩa của ngụ ngôn về cỏ lùng trong ruộng.\"",
           "R": "Các môn đồ đến với {{deity_pronoun:ngài|Ngài}} và nói: \"Xin Thầy giải thích cho chúng con ngụ ngôn về cỏ dại trong ruộng.\""
+        },
+        "ko": {
+          "L": "그러자 그분의 제자들이 그분께 다가와서 말했다. \"밭의 가라지 비유를 저희에게 자세히 설명해 주십시오.\"",
+          "B": "제자들이 예수께 다가와서 말했다. \"밭에 난 가라지 비유가 무슨 뜻인지 저희에게 분명히 설명해 주십시오.\"",
+          "R": "제자들이 예수께 와서 말했다. \"밭에 난 잡초 비유를 저희에게 설명해 주십시오.\""
         }
       },
       "decisions": [
@@ -3098,6 +3546,28 @@
           "choice": "\"xin\" with the command; \"Thầy\" (B, R); \"chúng con\" for the disciples",
           "alternatives": [],
           "reason": "Disciples cannot give their teacher a bare order in Vietnamese; \"xin\" makes it a request and \"chúng con\" is the disciples' form (style guide, section 6). Literal adds no \"Thầy\", which the Greek lacks.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40013036015",
+            "n40013036016"
+          ],
+          "choice": "The disciples speak to Jesus in 합쇼체 with \"저희\"",
+          "alternatives": [
+            "\"우리\""
+          ],
+          "reason": "People speak to Jesus in 합쇼체 and of themselves as \"저희\" (style guide section 4).",
           "uncertain": false,
           "footnote": false
         }
@@ -3156,6 +3626,11 @@
           "L": "Và {{deity_pronoun:ngài|Ngài}} đáp lời rằng: \"Người gieo giống tốt là Con Người;",
           "B": "Ngài đáp: \"Người gieo giống tốt là Con Người.",
           "R": "Đức Giê-xu trả lời: \"Người gieo giống tốt là Con Người."
+        },
+        "ko": {
+          "L": "그러자 그분이 대답하여 말씀하셨다. \"좋은 씨를 뿌리는 이는 인자이다.",
+          "B": "예수께서 대답하셨다. \"좋은 씨를 뿌리는 이는 인자이다.",
+          "R": "예수께서 대답하셨다. \"좋은 씨를 심은 사람은 인자, 곧 사람의 아들이다."
         }
       },
       "decisions": [
@@ -3238,6 +3713,30 @@
             "Mwana wa Mtu"
           ],
           "reason": "The term-sheet title, recorded once in this passage: Jesus's name for himself (meaning decision m1). It is never under the gender setting.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013037011",
+            "n40013037012",
+            "n40013037013",
+            "n40013037014"
+          ],
+          "choice": "\"인자\" at every level; \"인자, 곧 사람의 아들\" once (R); no honorific for Jesus of himself",
+          "alternatives": [
+            "\"사람의 아들\" alone"
+          ],
+          "reason": "As the Korean Matthew 8:20: the title stays at every level and Readable explains it once in the passage. Jesus speaks of himself, so Korean uses no honorific (\"이는\", not \"분은\").",
           "uncertain": false,
           "footnote": false
         }
@@ -3327,6 +3826,11 @@
           "L": "và ruộng là thế gian; và giống tốt, đó là con cái của vương quốc; còn cỏ lùng là con cái của kẻ ác, \\v 39 và kẻ thù đã gieo chúng là ma quỷ; và mùa gặt là sự kết thúc của đời này, còn những người gặt là các thiên sứ.",
           "B": "Ruộng là thế gian. Giống tốt là những người thuộc về vương quốc, còn cỏ lùng là những người thuộc về kẻ ác. \\v 39 Kẻ thù đã gieo cỏ lùng là ma quỷ. Mùa gặt là lúc kết thúc của đời này, và các thợ gặt là các thiên sứ.",
           "R": "Ruộng là thế gian. Giống tốt là những người thuộc về vương quốc của Đức Chúa Trời. Cỏ dại là những người thuộc về kẻ ác. \\v 39 Kẻ thù đã gieo cỏ dại là ma quỷ. Mùa gặt là ngày tận thế, và những thợ gặt là các thiên sứ."
+        },
+        "ko": {
+          "L": "그리고 밭은 세상이고, 좋은 씨, 이것은 그 나라의 {{gender:자녀들|아들들}}이며, 가라지는 악한 자의 {{gender:자녀들|아들들}}이다. \\v 39 그리고 그것들을 뿌린 원수는 마귀이고, 추수는 시대의 끝이며, 추수하는 일꾼들은 천사들이다.",
+          "B": "밭은 세상이다. 좋은 씨는 그 나라에 속한 사람들이고, 가라지는 악한 자에게 속한 사람들이다. \\v 39 가라지를 뿌린 원수는 마귀이다. 추수는 이 시대의 끝이고, 일꾼들은 천사들이다.",
+          "R": "밭은 세상이다. 좋은 씨는 천국에 속한 사람들이다. 잡초는 악한 자에게 속한 사람들이다. \\v 39 잡초를 심은 원수는 마귀이다. 추수 때는 세상의 끝 날이고, 추수하는 일꾼들은 천사들이다."
         }
       },
       "decisions": [
@@ -3621,6 +4125,53 @@
           "reason": "\"Đời này\" is the present age, as in 12:32; Readable uses the everyday \"tận thế\" (the end of the world), as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40013038014",
+            "n40013038015",
+            "n40013038022",
+            "n40013038023"
+          ],
+          "choice": "{{gender:자녀들|아들들}} (L), with \"이\" after the span; \"... 속한 사람들\" (B, R)",
+          "alternatives": [
+            "\"아들들\" with no span"
+          ],
+          "reason": "As the Korean Matthew 8:12: \"sons of\" means those who belong to (meaning decision), men and women; both forms end in a consonant, so one particle fits. Balanced and Readable say it plainly, so they need no span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013039009",
+            "n40013039013",
+            "n40013039014"
+          ],
+          "choice": "\"마귀\"; \"시대의 끝\" (L), \"이 시대의 끝\" (B), \"세상의 끝 날\" (R); \"천사들\"",
+          "alternatives": [
+            "\"세상 끝\" at every level"
+          ],
+          "reason": "\"마귀\" is the Korean Matthew's word for the devil (4:1). The end of the age is the completion of this age at the judgment (meaning decision); Literal and Balanced keep \"시대\" for aion, as in 12:32, and Readable uses the familiar \"세상의 끝\", as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3678,6 +4229,11 @@
           "L": "Vậy, như cỏ lùng bị gom lại và bị đốt trong lửa thế nào, thì vào lúc kết thúc của đời này cũng sẽ như vậy.",
           "B": "Người ta gom cỏ lùng lại và đốt trong lửa thể nào, thì lúc kết thúc của đời này cũng sẽ như vậy.",
           "R": "Cỏ dại bị gom lại và bị đốt trong lửa. Đến ngày tận thế, mọi việc cũng sẽ xảy ra giống như vậy."
+        },
+        "ko": {
+          "L": "그러므로 가라지가 거두어져 불에 태워지는 것처럼, 시대의 끝에도 그렇게 될 것이다.",
+          "B": "가라지를 거두어 불에 태워 버리듯이, 이 시대의 끝에도 그렇게 될 것이다.",
+          "R": "잡초를 뽑아서 불에 태우는 것처럼, 세상의 끝 날에도 그렇게 될 것이다."
         }
       },
       "decisions": [
@@ -3813,6 +4369,11 @@
           "L": "Con Người sẽ sai các thiên sứ {{deity_pronoun:ngài|Ngài}} đi, và họ sẽ gom ra khỏi vương quốc {{deity_pronoun:ngài|Ngài}} mọi điều gây vấp ngã và những kẻ làm điều trái luật pháp, \\v 42 và sẽ quăng chúng vào lò lửa; ở đó sẽ có khóc lóc và nghiến răng.",
           "B": "Con Người sẽ sai các thiên sứ của {{deity_pronoun:ngài|Ngài}} đi, và họ sẽ loại ra khỏi vương quốc của {{deity_pronoun:ngài|Ngài}} mọi điều khiến người ta phạm tội và mọi kẻ vi phạm luật pháp của Đức Chúa Trời. \\v 42 Họ sẽ quăng những kẻ ấy vào lò lửa, là nơi người ta sẽ khóc lóc và nghiến răng.",
           "R": "Con Người sẽ sai các thiên sứ của {{deity_pronoun:ngài|Ngài}} đi. Họ sẽ đem ra khỏi vương quốc của {{deity_pronoun:ngài|Ngài}} mọi điều làm cho người ta phạm tội, và mọi người làm điều ác. \\v 42 Các thiên sứ sẽ ném họ vào ngọn lửa cháy như lò lửa. Ở đó họ sẽ khóc lóc và nghiến răng."
+        },
+        "ko": {
+          "L": "인자가 자기 천사들을 보낼 것이고, 그들은 그의 나라에서 걸려 넘어지게 하는 모든 것과 불법을 행하는 자들을 거두어 내어, \\v 42 그들을 불가마 속에 던져 넣을 것이다. 거기에는 울음과 이를 가는 일이 있을 것이다.",
+          "B": "인자가 자기 천사들을 보낼 것이다. 천사들은 그의 나라에서 사람들을 죄짓게 하는 모든 것과 하나님의 법을 어기는 모든 사람을 거두어 내어, \\v 42 불타는 가마 속에 던져 넣을 것이다. 거기서 그들은 울며 이를 갈 것이다.",
+          "R": "인자는 자기 천사들을 보낼 것이다. 천사들은 그의 나라에서 사람들을 죄짓게 하는 모든 것을 없애 버릴 것이다. 악한 일을 하는 사람들도 모두 끌어낼 것이다. \\v 42 그리고 천사들은 그들을 가마처럼 뜨겁게 타는 불 속에 던져 넣을 것이다. 거기서 그들은 울며 이를 갈 것이다."
         }
       },
       "decisions": [
@@ -4050,6 +4611,56 @@
           "reason": "The words of 8:12 in the Vietnamese Matthew; the meaning decision explains the idiom.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40013041002",
+            "n40013041003",
+            "n40013041004",
+            "n40013041005",
+            "n40013041006",
+            "n40013041007"
+          ],
+          "choice": "Jesus speaks of the Son of Man, that is himself, with no honorific (\"보낼\", \"그의 나라\")",
+          "alternatives": [
+            "\"보내실\""
+          ],
+          "reason": "Jesus speaks in 해라체 and a Korean speaker does not honour himself; the English deity_pronoun spans have nothing to change.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013041017",
+            "n40013041021",
+            "n40013042007",
+            "n40013042008"
+          ],
+          "choice": "\"걸려 넘어지게 하는 것\" (L), \"죄짓게 하는 것\" (B, R); \"불법\" (L); \"불가마\" (L), \"불타는 가마\" (B); \"울며 이를 갈다\" (B, R)",
+          "alternatives": [
+            "\"풀무 불\""
+          ],
+          "reason": "Worded as the Korean Matthew 5:29 and 8:12. \"불가마\" is a plain modern word for the furnace of Daniel 3:6 (meaning decision); \"풀무\" is the older one.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4105,6 +4716,11 @@
           "L": "Bấy giờ, những người công chính sẽ chiếu sáng như mặt trời trong vương quốc của Cha họ.",
           "B": "Bấy giờ, trong vương quốc của Cha mình, những người công chính sẽ rực sáng như mặt trời.",
           "R": "Lúc ấy, những người làm theo ý muốn của Đức Chúa Trời sẽ chiếu sáng như mặt trời trong vương quốc của Cha họ."
+        },
+        "ko": {
+          "L": "그때에 의인들은 그들의 아버지의 나라에서 해처럼 빛날 것이다.",
+          "B": "그때에 의인들은 자기 아버지의 나라에서 해와 같이 환하게 빛날 것이다.",
+          "R": "그때에 하나님께서 원하시는 일을 한 사람들은 그들의 아버지 하나님의 나라에서 해처럼 빛날 것이다."
         }
       },
       "decisions": [
@@ -4181,6 +4797,27 @@
           "reason": "\"Công chính\" is the key term; Readable says what it means here (meaning decision), as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013043003"
+          ],
+          "choice": "\"의인들\" (L, B); \"하나님께서 원하시는 일을 한 사람들\" (R)",
+          "alternatives": [
+            "\"의로운 사람들\""
+          ],
+          "reason": "The righteous are those who do God's will (meaning decision); Readable says so, as the English Readable does, and names their Father.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4227,6 +4864,11 @@
           "L": "Ai có tai, hãy nghe.",
           "B": "Ai có tai thì hãy lắng nghe.",
           "R": "Ai có tai thì hãy nghe cho kỹ!"
+        },
+        "ko": {
+          "L": "귀가 있는 사람은 들어라.",
+          "B": "귀가 있는 사람은 잘 들어라.",
+          "R": "귀가 있으면 잘 들어라!"
         }
       },
       "decisions": [
@@ -4284,6 +4926,27 @@
             "The one who has ears, let him hear"
           ],
           "reason": "As at 11:15 and 13:9. The speech goes on, so no quotation mark closes here.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013043016"
+          ],
+          "choice": "\"귀가 있는 사람\", as in 13:9",
+          "alternatives": [
+            "\"들을 귀\""
+          ],
+          "reason": "The SBLGNT reads \"ears\" alone (meaning decision), as in 13:9.",
           "uncertain": false,
           "footnote": false
         }
