@@ -4,6 +4,7 @@ import io
 import json
 from unittest import mock
 
+from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.core import mail
 from django.core.management import CommandError, call_command
@@ -162,7 +163,8 @@ class ProgressTest(AdminTestCase):
 
     def test_health_lists_import_runs(self):
         with self.assertRaises(CommandError):
-            call_command("import_content", "../content/PHM/PHM.1.json", stdout=io.StringIO(),
+            call_command("import_content", str(settings.REPO_ROOT / "content" / "PHM" / "PHM.1.json"),
+                         stdout=io.StringIO(),
                          stderr=io.StringIO())
         run = ImportRun.objects.get()
         self.assertTrue(run.finished_at)
