@@ -48,6 +48,11 @@
           "L": "너희는 '눈은 눈으로, 이는 이로' 하신 말씀을 들었다.",
           "B": "너희는 '눈에는 눈, 이에는 이'라고 하신 말씀을 들었다.",
           "R": "너희는 율법에 '벌은 입힌 해만큼만 받아야 한다. 눈에는 눈, 이에는 이로 갚아라'라고 한 말을 들었다."
+        },
+        "vi": {
+          "L": "Các con đã nghe có lời nói rằng: 'Mắt đền mắt và răng đền răng.'",
+          "B": "Các con đã nghe câu: 'Mắt đền mắt, răng đền răng.'",
+          "R": "Các con đã nghe luật pháp dạy: 'Hình phạt phải tương xứng với thiệt hại: mắt đền mắt, răng đền răng.'"
         }
       },
       "decisions": [
@@ -217,6 +222,11 @@
           "L": "그러나 나는 너희에게 말한다. 악한 [사람]에게 맞서지 마라. 오히려 누구든지 네 오른쪽 뺨을 치거든, 그에게 다른 [뺨]도 돌려 대어라.",
           "B": "그러나 나는 너희에게 말한다. 악한 사람에게 맞서 싸우지 마라. 누가 네 오른쪽 뺨을 때리거든, 그 사람에게 다른 쪽 뺨도 돌려 대어라.",
           "R": "그러나 내가 너희에게 말한다. 너에게 잘못하는 사람에게 앙갚음하지 마라. 누가 네 오른쪽 뺨을 때리면, 다른 쪽 뺨도 때리게 내버려 두어라."
+        },
+        "vi": {
+          "L": "Nhưng {{deity_pronoun:ta|Ta}} nói với các con, đừng chống cự kẻ ác; nhưng ai vả má bên phải của con, hãy đưa luôn má kia cho người ấy,",
+          "B": "Nhưng {{deity_pronoun:ta|Ta}} nói với các con, đừng chống trả người làm điều ác. Nếu ai tát má bên phải của con, hãy đưa luôn má bên kia cho người ấy.",
+          "R": "Nhưng {{deity_pronoun:ta|Ta}} nói với các con, đừng đánh trả người làm hại mình. Nếu có ai tát vào má phải của con, hãy để người ấy tát luôn má bên kia."
         }
       },
       "decisions": [
@@ -397,6 +407,46 @@
           "reason": "Korean \"그 사람\" and \"누가\" are neither male nor female, so the English gender setting has nothing to change in Korean.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40005039018"
+          ],
+          "choice": "\"người ấy\" with no gender span (also 5:40-41)",
+          "alternatives": [
+            "\"{{gender:người ấy|anh ta}}\""
+          ],
+          "reason": "\"Người ấy\" already means a man or a woman, so Vietnamese has no traditional form to set against it; the English {{gender:them|him}} has no counterpart.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40005039007",
+            "n40005039008"
+          ],
+          "choice": "\"kẻ ác\" (L); \"người làm điều ác\" (B); \"người làm hại mình\" (R)",
+          "alternatives": [
+            "\"điều ác\""
+          ],
+          "reason": "The meaning decision reads it as the evil person who wrongs you; Literal keeps the word used in 5:37, and Balanced and Readable say who is meant.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -454,6 +504,11 @@
           "L": "그리고 너를 고소하여 네 속옷을 가지려는 사람에게는 겉옷까지 내주어라.",
           "B": "누가 너를 고소해서 네 옷을 가져가려고 하거든, 겉옷까지 내주어라.",
           "R": "누가 네가 입고 있는 옷을 가져가려고 너를 고소하면, 그 사람에게 외투까지 주어라."
+        },
+        "vi": {
+          "L": "và người nào muốn kiện con để lấy áo trong của con, hãy để người ấy lấy luôn áo ngoài,",
+          "B": "Nếu ai muốn kiện con ra tòa để lấy áo sơ mi của con, hãy để người ấy lấy luôn áo khoác.",
+          "R": "Nếu có ai kiện con ra tòa để lấy áo của con, hãy cho người ấy luôn cả áo khoác."
         }
       },
       "decisions": [
@@ -538,6 +593,29 @@
           "reason": "The Greek names the tunic worn next to the skin and the outer cloak (meaning decision). Literal keeps the pair \"속옷/겉옷\"; since \"속옷\" now means underwear, Balanced and Readable name the tunic as the clothes one wears.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40005040008",
+            "n40005040015"
+          ],
+          "choice": "\"áo trong\", \"áo ngoài\" (L); \"áo sơ mi\", \"áo khoác\" (B); \"áo\", \"áo khoác\" (R)",
+          "alternatives": [
+            "\"áo dài\"",
+            "\"áo choàng\""
+          ],
+          "reason": "Literal names the inner and outer garments, as the meaning decision describes them; Balanced and Readable use the everyday clothes the English names.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -590,6 +668,11 @@
           "L": "그리고 누구든지 너에게 억지로 일 마일을 가게 하거든, 그와 함께 이 마일을 가 주어라.",
           "B": "누가 너에게 억지로 짐을 지워 {{units:1.5킬로미터를|1마일을}} 가게 하거든, 그 사람과 함께 {{units:3킬로미터를|2마일을}} 가 주어라.",
           "R": "군인이 너에게 억지로 짐을 지워 {{units:1.5킬로미터를|1마일을}} 가게 하면, {{units:3킬로미터를|2마일을}} 져다 주어라."
+        },
+        "vi": {
+          "L": "và ai bắt con đi một dặm, hãy đi với người ấy hai [dặm].",
+          "B": "Nếu ai bắt con mang đồ đi {{units:1,5 km|một dặm}}, hãy đi với người ấy {{units:3 km|hai dặm}}.",
+          "R": "Nếu một người lính bắt con mang đồ đi {{units:1,5 km|một dặm}}, hãy mang giúp người ấy {{units:3 km|hai dặm}}."
         }
       },
       "decisions": [
@@ -726,6 +809,27 @@
           "reason": "The Roman mile was a thousand paces, about one and a half kilometers (meaning decision). As docs/korean-style.md section 7 asks, the metric distance is the default and the original unit the alternative, which differs from the English (US miles, no span); the particle goes inside the spans because the two forms end differently. Literal keeps the original unit. \"오 리\" is the older Korean Bibles' rendering.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40005041005",
+            "n40005041010"
+          ],
+          "choice": "{{units:1,5 km|một dặm}} and {{units:3 km|hai dặm}} (B, R); Literal keeps \"một dặm\"",
+          "alternatives": [
+            "\"một dặm\" with no setting"
+          ],
+          "reason": "The style guide gives modern measures in metric by default in Vietnamese, with the original unit as the alternative; the English needs no span here because \"mile\" is already its modern unit. A Roman mile was about 1.5 km.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -780,6 +884,11 @@
           "L": "네게 구하는 사람에게는 주고, 네게서 꾸려고 하는 사람을 외면하지 마라.",
           "B": "너에게 달라는 사람에게는 주고, 너에게 빌리려는 사람을 외면하지 마라.",
           "R": "너에게 무엇을 달라고 하는 사람에게는 주어라. 너에게 빌려 달라는 사람을 거절하지 마라."
+        },
+        "vi": {
+          "L": "Ai xin con, hãy cho; và người muốn vay mượn của con, đừng quay lưng đi.",
+          "B": "Ai xin gì, hãy cho; và đừng quay lưng với người muốn vay mượn của con.",
+          "R": "Ai xin con điều gì, hãy cho người ấy. Và đừng từ chối người nào muốn vay mượn của con."
         }
       },
       "decisions": [
@@ -863,6 +972,11 @@
           "L": "너희는 '네 이웃을 사랑하고 네 원수를 미워하여라'라고 한 말을 들었다.",
           "B": "너희는 '네 이웃을 사랑하고 네 원수를 미워하여라'라는 말을 들었다.",
           "R": "너희는 사람들이 '네 이웃을 사랑하고 네 원수를 미워하여라'라고 하는 말을 들었다."
+        },
+        "vi": {
+          "L": "Các con đã nghe có lời nói rằng: 'Ngươi phải yêu thương người lân cận và ghét kẻ thù mình.'",
+          "B": "Các con đã nghe câu: 'Hãy yêu thương người lân cận và ghét kẻ thù mình.'",
+          "R": "Các con đã nghe người ta nói: 'Hãy yêu thương người gần gũi mình và ghét kẻ thù mình.'"
         }
       },
       "decisions": [
@@ -929,6 +1043,28 @@
           "reason": "\"Hate your enemy\" is not in the law (meaning decision), so Korean does not use the honorific that would make God its speaker.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40005043006"
+          ],
+          "choice": "\"người lân cận\" (L, B); \"người gần gũi mình\" (R) for neighbor",
+          "alternatives": [
+            "\"người khác\" (R)",
+            "\"hàng xóm\""
+          ],
+          "reason": "As in Mark 12:31 for Literal and Balanced. Mark's Readable says \"người khác\", but here the neighbor is set against the enemy, so Readable says \"người gần gũi mình\", those close to you.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -985,6 +1121,11 @@
           "L": "그러나 나는 너희에게 말한다. 너희의 원수들을 사랑하고, 너희를 박해하는 사람들을 위하여 기도하여라.",
           "B": "그러나 나는 너희에게 말한다. 너희 원수를 사랑하여라. 그리고 너희를 박해하는 사람들을 위해 기도하여라.",
           "R": "그러나 내가 너희에게 말한다. 너희 원수를 사랑하여라. 너희를 괴롭히는 사람들을 위해 기도하여라."
+        },
+        "vi": {
+          "L": "Nhưng {{deity_pronoun:ta|Ta}} nói với các con: hãy yêu thương kẻ thù của các con và cầu nguyện cho những người bắt bớ các con,",
+          "B": "Nhưng {{deity_pronoun:ta|Ta}} nói với các con: hãy yêu thương kẻ thù mình và cầu nguyện cho những người bắt bớ các con,",
+          "R": "Nhưng {{deity_pronoun:ta|Ta}} nói với các con, hãy yêu thương kẻ thù của mình. Hãy cầu nguyện cho những người làm hại các con."
         }
       },
       "decisions": [
@@ -1091,9 +1232,14 @@
           "R": "Hivyo mtaonyesha kwamba ninyi ni wana wa Baba yenu aliye mbinguni. Yeye hufanya jua liwaangazie watu wabaya na watu wema. Huwanyeshea mvua watu wanaotenda haki na watu wanaotenda mabaya."
         },
         "ko": {
-          "L": "그래야 너희가 하늘들에 계신 너희 아버지의 {{gender:자녀들|아들들}}이 될 것이다. 그분은 자기 해를 악한 사람들과 선한 사람들 위에 떠오르게 하시고, 의로운 사람들과 불의한 사람들 위에 비를 내리시기 때문이다.",
-          "B": "그러면 너희는 하늘에 계신 너희 아버지의 {{gender:자녀들|아들들}}이 될 것이다. 아버지께서는 악한 사람에게나 선한 사람에게나 똑같이 해를 떠오르게 하시고, 의로운 사람에게나 불의한 사람에게나 비를 내려 주신다.",
-          "R": "그러면 너희가 하늘에 계신 너희 아버지의 {{gender:자녀들|아들들}}이라는 것을 보여 주게 될 것이다. 아버지께서는 나쁜 사람에게도 좋은 사람에게도 해를 비추어 주신다. 옳은 일을 하는 사람에게도, 잘못된 일을 하는 사람에게도 비를 내려 주신다."
+          "L": "그래야 너희가 하늘들에 계신 너희 아버지의 {{gender:자녀|아들}}들이 될 것이다. 그분은 자기 해를 악한 사람들과 선한 사람들 위에 떠오르게 하시고, 의로운 사람들과 불의한 사람들 위에 비를 내리시기 때문이다.",
+          "B": "그러면 너희는 하늘에 계신 너희 아버지의 {{gender:자녀|아들}}들이 될 것이다. 아버지께서는 악한 사람에게나 선한 사람에게나 똑같이 해를 떠오르게 하시고, 의로운 사람에게나 불의한 사람에게나 비를 내려 주신다.",
+          "R": "그러면 너희가 하늘에 계신 너희 아버지의 {{gender:자녀|아들}}들이라는 것을 보여 주게 될 것이다. 아버지께서는 나쁜 사람에게도 좋은 사람에게도 해를 비추어 주신다. 옳은 일을 하는 사람에게도, 잘못된 일을 하는 사람에게도 비를 내려 주신다."
+        },
+        "vi": {
+          "L": "để các con trở nên con cái của Cha các con, Đấng ở trên các tầng trời, vì {{deity_pronoun:ngài|Ngài}} khiến mặt trời của {{deity_pronoun:ngài|Ngài}} mọc lên trên kẻ ác và người thiện, và cho mưa xuống trên người công chính và kẻ bất chính.",
+          "B": "để các con trở nên con cái của Cha các con ở trên trời. Ngài cho mặt trời của {{deity_pronoun:ngài|Ngài}} mọc lên trên người ác cũng như người tốt, và cho mưa xuống trên người làm điều đúng lẫn người làm điều sai.",
+          "R": "Như vậy các con sẽ cho thấy mình là con cái của Cha các con ở trên trời. Ngài làm cho mặt trời chiếu sáng trên người xấu lẫn người tốt. Ngài cho mưa xuống trên người làm điều đúng lẫn người làm điều sai."
         }
       },
       "decisions": [
@@ -1261,9 +1407,30 @@
           "tokens": [
             "n40005045003"
           ],
-          "choice": "{{gender:자녀들|아들들}}",
+          "choice": "{{gender:자녀|아들}}들",
           "alternatives": [],
-          "reason": "As in 5:9: the Greek \"sons\" means all God's children, and Korean has two ways of saying it. Both forms end alike, so one particle fits.",
+          "reason": "As in 5:9: the Greek \"sons\" means all God's children, and Korean has two ways of saying it; the plural ending stands outside the span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40005045003"
+          ],
+          "choice": "\"con cái\" with no gender span",
+          "alternatives": [
+            "\"{{gender:con cái|con trai}}\""
+          ],
+          "reason": "As in 5:9: \"con cái\" is how Vietnamese says children of a father, and \"con trai\" would not serve as a traditional alternative with the same sense.",
           "uncertain": false,
           "footnote": false
         }
@@ -1317,6 +1484,11 @@
           "L": "너희가 너희를 사랑하는 사람들을 사랑하면, 너희에게 무슨 상이 있겠느냐?",
           "B": "너희를 사랑하는 사람들을 사랑한다면, 거기에 무슨 상이 있겠느냐?",
           "R": "너희를 사랑하는 사람들만 사랑한다면, 하나님께서 왜 너희에게 상을 주시겠느냐?"
+        },
+        "vi": {
+          "L": "Vì nếu các con yêu thương những người yêu thương các con, các con có phần thưởng gì?",
+          "B": "Nếu các con yêu thương những người yêu thương mình, thì có gì đáng thưởng đâu?",
+          "R": "Nếu các con chỉ yêu thương những người yêu thương mình, tại sao Đức Chúa Trời phải ban thưởng cho các con?"
         }
       },
       "decisions": [
@@ -1432,6 +1604,11 @@
           "L": "세리들도 똑같이 하지 않느냐?",
           "B": "세리들도 그만큼은 하지 않느냐?",
           "R": "세리들도 그렇게는 한다!"
+        },
+        "vi": {
+          "L": "Chẳng phải những người thu thuế cũng làm như vậy sao?",
+          "B": "Ngay cả những người thu thuế cũng làm như vậy, phải không?",
+          "R": "Ngay cả những người thu thuế cũng làm như vậy!"
         }
       },
       "decisions": [
@@ -1583,9 +1760,14 @@
           "R": "Ikiwa mnawachangamkia tu watu wa familia yenu na rafiki zenu, hamfanyi zaidi ya kile anachofanya kila mtu."
         },
         "ko": {
-          "L": "그리고 너희가 너희 {{gender:형제자매들|형제들}}에게만 인사하면, 무엇을 더 하는 것이냐?",
-          "B": "또 너희가 너희 {{gender:형제자매들|형제들}}에게만 인사한다면, 남보다 더 하는 것이 무엇이냐?",
+          "L": "그리고 너희가 너희 {{gender:형제자매|형제}}들에게만 인사하면, 무엇을 더 하는 것이냐?",
+          "B": "또 너희가 너희 {{gender:형제자매|형제}}들에게만 인사한다면, 남보다 더 하는 것이 무엇이냐?",
           "R": "너희 가족과 친구들에게만 친절하게 대한다면, 너희는 다른 사람들보다 나을 것이 하나도 없다."
+        },
+        "vi": {
+          "L": "Và nếu các con chỉ chào hỏi {{gender:anh chị em|anh em}} mình, các con làm gì hơn [người khác]?",
+          "B": "Và nếu các con chỉ chào hỏi {{gender:anh chị em|anh em}} của mình, thì các con có làm gì hơn người khác đâu?",
+          "R": "Nếu các con chỉ thân thiện với gia đình và bạn bè mình, thì các con cũng chẳng làm gì hơn những người khác."
         }
       },
       "decisions": [
@@ -1692,7 +1874,7 @@
           "tokens": [
             "n40005047005"
           ],
-          "choice": "{{gender:형제자매들|형제들}} (L, B)",
+          "choice": "{{gender:형제자매|형제}}들 (L, B)",
           "alternatives": [],
           "reason": "The Greek \"brothers\" means one's own people, men and women (meaning decision), so the span from docs/korean-style.md section 7 applies; Readable says \"family and friends\" with no span, as the English does.",
           "uncertain": false,
@@ -1743,9 +1925,14 @@
           "R": "Hata watu wasiomjua Mungu hufanya hivyo!"
         },
         "ko": {
-          "L": "이방 사람들도 똑같이 하지 않느냐?",
+          "L": "이방인들도 똑같이 하지 않느냐?",
           "B": "이방 사람들도 그만큼은 하지 않느냐?",
           "R": "하나님을 모르는 사람들도 그렇게는 한다!"
+        },
+        "vi": {
+          "L": "Chẳng phải dân ngoại cũng làm như vậy sao?",
+          "B": "Ngay cả dân ngoại cũng làm như vậy, phải không?",
+          "R": "Ngay cả những người không biết Đức Chúa Trời cũng làm như vậy!"
         }
       },
       "decisions": [
@@ -1805,6 +1992,26 @@
           "reason": "The term sheet gives \"les nations\" at Literal and \"les non-Juifs\" where the English says \"Gentiles\". This word names individual people rather than nations, so Literal says \"les gens des nations\". Readable follows the English Readable's explanation (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40005047014"
+          ],
+          "choice": "\"dân ngoại\" (L, B) for the Gentiles",
+          "alternatives": [
+            "\"người ngoại đạo\""
+          ],
+          "reason": "As in 4:15: the word Vietnamese Bible readers know for peoples outside Israel; Readable says who they are, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1859,6 +2066,11 @@
           "L": "그러므로 너희는 온전한 사람이 되어야 한다. 너희의 하늘 아버지께서 온전하신 것처럼.",
           "B": "그러므로 너희의 하늘 아버지께서 온전하신 것처럼, 너희도 온전하여라.",
           "R": "그러므로 하늘에 계신 너희 아버지께서 완전하신 것처럼, 너희도 완전해야 한다."
+        },
+        "vi": {
+          "L": "Vậy các con phải trọn vẹn, như Cha trên trời của các con là trọn vẹn.",
+          "B": "Vậy các con phải trọn vẹn, như Cha các con ở trên trời là Đấng trọn vẹn.",
+          "R": "Vậy các con phải trọn vẹn, giống như Cha các con ở trên trời là Đấng trọn vẹn."
         }
       },
       "decisions": [
@@ -1969,6 +2181,49 @@
           "choice": "the comparison after the main clause in Literal",
           "alternatives": [],
           "reason": "Literal keeps the Greek order, command first and the comparison after it; Balanced and Readable put the comparison first, as Korean normally does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40005048004",
+            "n40005048011"
+          ],
+          "choice": "\"trọn vẹn\" for perfect",
+          "alternatives": [
+            "\"hoàn hảo\"",
+            "\"toàn thiện\""
+          ],
+          "reason": "The meaning decision reads the word as complete, whole and undivided, above all in love; \"trọn vẹn\" says wholeness, while \"hoàn hảo\" suggests being without any flaw.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n40005048009",
+            "n40005048010"
+          ],
+          "choice": "\"Cha trên trời của các con\" (L)",
+          "alternatives": [
+            "\"Cha các con, Đấng ở trên các tầng trời\""
+          ],
+          "reason": "Here the Greek has the adjective \"heavenly\", not \"in the heavens\" (5:16, 5:45), so Literal does not use the plural phrase.",
           "uncertain": false,
           "footnote": false
         }
