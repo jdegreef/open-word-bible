@@ -117,18 +117,18 @@ class ReviewEvent(models.Model):
         return f"{self.sentence} {self.action} by {self.user}"
 
 
-class ImportedFile(models.Model):
-    """A content file as import_content last loaded it, so a deploy
-    (import_content --changed-only) reloads only the files that changed."""
-    path = models.CharField(max_length=255, primary_key=True, help_text="e.g. content/JHN/JHN.1.1-18.json")
-    digest = models.CharField(max_length=64, help_text="SHA-256 of the file as imported")
-    imported_at = models.DateTimeField(auto_now=True)
+class ContentFile(models.Model):
+    """A file in content/ as import_content last imported it, so a deploy
+    imports only the files that have changed since."""
+    path = models.CharField(max_length=200, primary_key=True,
+                            help_text="Relative to the repository, e.g. content/JHN/JHN.1.json")
+    digest = models.CharField(max_length=64)
 
     def __str__(self):
         return self.path
 
 
-# Search (GET /api/search/, translation/search.py). import_content rebuilds
+# Search (GET /api/search/, translation/search.py). import_content updates
 # these tables from the same documents the site's own search file holds
 # (search_documents in scripts/build_site.py), one set per site language.
 
@@ -150,6 +150,8 @@ class SearchEntry(models.Model):
     language = models.CharField(max_length=3, help_text="The site language")
     kind = models.CharField(max_length=1)
     position = models.PositiveIntegerField(help_text="Canonical order: the order the site lists them in")
+    sub = models.IntegerField(default=0, help_text="Order after position: entries added later "
+                                      "between two that were kept (search.plan)")
     config = models.CharField(max_length=16, help_text="Text search configuration for the entry's own language")
     title = models.TextField(blank=True)
     extra = models.TextField(blank=True, help_text="A note's alternatives, an article's summary")

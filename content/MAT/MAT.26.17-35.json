@@ -36,6 +36,21 @@
           "L": "Now on the first [day] of Unleavened Bread the disciples came to Jesus, saying, \"Where do {{deity_pronoun:you|You}} want us to prepare for {{deity_pronoun:you|You}} to eat the Passover?\"",
           "B": "On the first day of the Feast of Unleavened Bread, the disciples came to Jesus and asked, \"Where would {{deity_pronoun:you|You}} like us to get the Passover meal ready for {{deity_pronoun:you|You}}?\"",
           "R": "On the first day of the Festival of Bread Without Yeast, the followers came to Jesus. They asked, \"Where do {{deity_pronoun:you|You}} want us to get the Passover meal ready for {{deity_pronoun:you|You}}?\""
+        },
+        "es": {
+          "L": "Y el primer [día] de los Ázimos se acercaron los discípulos a Jesús, diciendo: «¿Dónde quieres que {{deity_pronoun:te|Te}} preparemos para comer la Pascua?».",
+          "B": "El primer día de la fiesta de los Panes sin Levadura, los discípulos se acercaron a Jesús y {{deity_pronoun:le|Le}} preguntaron: «¿Dónde quieres que {{deity_pronoun:te|Te}} preparemos la cena de la Pascua?».",
+          "R": "El primer día de la fiesta de los Panes sin Levadura, los seguidores fueron a ver a Jesús. Le preguntaron: «¿Dónde quieres que {{deity_pronoun:te|Te}} preparemos la cena de la Pascua?»."
+        },
+        "fr": {
+          "L": "Or le premier [jour] des Pains sans levain, les disciples s’approchèrent de Jésus, disant : « Où veux-{{deity_pronoun:tu|Tu}} que nous {{deity_pronoun:te|Te}} préparions [de quoi] manger la Pâque ? »",
+          "B": "Le premier jour de la fête des Pains sans levain, les disciples vinrent trouver Jésus et {{deity_pronoun:lui|Lui}} demandèrent : « Où veux-{{deity_pronoun:tu|Tu}} que nous {{deity_pronoun:te|Te}} préparions le repas de la Pâque ? »",
+          "R": "C’était le premier jour de la fête des Pains sans levain. Les disciples sont venus voir Jésus. Ils {{deity_pronoun:lui|Lui}} ont demandé : « Où veux-{{deity_pronoun:tu|Tu}} que nous préparions pour {{deity_pronoun:toi|Toi}} le repas de la Pâque ? »"
+        },
+        "sw": {
+          "L": "Basi siku ya kwanza ya [Mikate] Isiyotiwa Chachu wanafunzi walimwendea Yesu, wakisema, \"Wapi unapenda tukuandalie [mahali] ili ule Pasaka?\"",
+          "B": "Siku ya kwanza ya Sikukuu ya Mikate Isiyotiwa Chachu, wanafunzi walimjia Yesu, wakamwuliza, \"Ungependa tukuandalie chakula cha Pasaka mahali gani?\"",
+          "R": "Siku ya kwanza ya Sikukuu ya Mikate Isiyotiwa Chachu, wanafunzi walimwendea Yesu. Wakamwuliza, \"Unataka tukutayarishie chakula cha Pasaka wapi?\""
         }
       },
       "decisions": [
@@ -115,6 +130,113 @@
           "reason": "Balanced and Readable say that the meal is meant.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026017005"
+          ],
+          "choice": "los Ázimos (L); la fiesta de los Panes sin Levadura (B, R)",
+          "alternatives": [
+            "la fiesta del Pan sin Levadura"
+          ],
+          "reason": "The Greek names the feast by its bread alone, \"the unleavened\" (meaning decision m1). \"Ázimo\" is the Spanish word for unleavened bread and keeps that short name at Literal, but few readers know it, so Balanced and Readable spell the name out.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40026017013",
+            "n40026017015"
+          ],
+          "choice": "deity_pronoun spans on separate pronouns only (te, le, me, mí, mi)",
+          "alternatives": [
+            "a span on every pronoun the English marks"
+          ],
+          "reason": "\"Quieres\" carries \"you\" in the verb and a pronoun joined to a verb takes no span, so the setting covers fewer words than in English. The same through the passage.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026017006",
+            "n40026017011"
+          ],
+          "choice": "narration in the passé simple (L, B) and the passé composé (R); historic presents kept as presents at Literal (26:25, 26:31, 26:35)",
+          "alternatives": [
+            "passé composé at every level"
+          ],
+          "reason": "As set for Matthew and in Mark 14: the passé simple is the normal tense of written narrative; Readable uses the passé composé, as French is spoken and as young readers meet stories. Speech keeps its own tenses at every level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-2",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026017005"
+          ],
+          "choice": "les Pains sans levain (L); la fête des Pains sans levain (B, R)",
+          "alternatives": [
+            "les Azymes"
+          ],
+          "reason": "As in Mark 14:1 and 14:12: \"les Azymes\" is the older technical name and few readers know it; \"les Pains sans levain\" already says what English Readable explains with \"Bread Without Yeast\", so Readable needs no other wording.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026017005"
+          ],
+          "choice": "[Mikate] Isiyotiwa Chachu (L); Sikukuu ya Mikate Isiyotiwa Chachu (B, R)",
+          "alternatives": [
+            "isiyochachwa"
+          ],
+          "reason": "The Greek says only \"the unleavened\" (meaning decision m1). \"Chachu\" is the everyday word for yeast or leaven, so \"Mikate Isiyotiwa Chachu\" (bread with no yeast put in) is clear at every level, and Readable needs no other wording. Swahili carries \"you\" in the verbs here, so there is no deity_pronoun span in this verse.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -167,6 +289,21 @@
           "L": "And {{deity_pronoun:he|He}} said, \"Go into the city to a certain man and say to him, 'The Teacher says: My time is near; at your [house] I am keeping the Passover with {{deity_pronoun:my|My}} disciples.'\"",
           "B": "He told them, \"Go into the city to a certain man and tell him, 'The Teacher says: My appointed time is near. I will celebrate the Passover at your house with {{deity_pronoun:my|My}} disciples.'\"",
           "R": "Jesus answered, \"Go into the city to a certain man. Say to him, 'The Teacher says: The time God has set for {{deity_pronoun:me|Me}} is near. I will eat the Passover meal at your house with {{deity_pronoun:my|My}} followers.'\""
+        },
+        "es": {
+          "L": "Y {{deity_pronoun:él|Él}} dijo: «{{plural_you:Vayan|Id}} a la ciudad, a [ver a] cierto hombre, y {{plural_you:díganle|decidle}}: “El Maestro dice: Mi tiempo está cerca; en tu [casa] celebro la Pascua con {{deity_pronoun:mis|Mis}} discípulos”».",
+          "B": "Él les respondió: «{{plural_you:Vayan|Id}} a la ciudad, a casa de cierto hombre, y {{plural_you:díganle|decidle}}: “El Maestro dice: Mi tiempo señalado está cerca. Voy a celebrar la Pascua en tu casa con {{deity_pronoun:mis|Mis}} discípulos”».",
+          "R": "Jesús les contestó: «{{plural_you:Vayan|Id}} a la ciudad, a casa de cierto hombre. {{plural_you:Díganle|Decidle}}: “El Maestro dice: Ya se acerca el tiempo que Dios {{deity_pronoun:me|Me}} ha señalado. Voy a comer la cena de la Pascua en tu casa con {{deity_pronoun:mis|Mis}} seguidores”»."
+        },
+        "fr": {
+          "L": "Et {{deity_pronoun:il|Il}} dit : « Allez à la ville chez un tel et dites-lui : “Le Maître dit : {{deity_pronoun:mon|Mon}} temps est proche ; c’est chez toi que je fais la Pâque avec {{deity_pronoun:mes|Mes}} disciples.” »",
+          "B": "Il leur répondit : « Allez à la ville, chez un certain homme, et dites-lui : “Le Maître te fait dire : Le moment fixé pour {{deity_pronoun:moi|Moi}} est proche. C’est chez toi que je célébrerai la Pâque avec {{deity_pronoun:mes|Mes}} disciples.” »",
+          "R": "Jésus a répondu : « Allez dans la ville, chez un certain homme. Dites-lui : “Le Maître dit : Le moment que Dieu a fixé pour {{deity_pronoun:moi|Moi}} est tout proche. Je vais manger le repas de la Pâque chez toi avec {{deity_pronoun:mes|Mes}} disciples.” »"
+        },
+        "sw": {
+          "L": "Naye akasema, \"Nendeni mjini kwa mtu fulani, mkamwambie, 'Mwalimu anasema: Wakati {{deity_pronoun:wangu|Wangu}} umekaribia; nyumbani kwako ninaadhimisha Pasaka pamoja na wanafunzi {{deity_pronoun:wangu|Wangu}}.'\"",
+          "B": "Akawaambia, \"Nendeni mjini kwa mtu fulani, mkamwambie, 'Mwalimu anasema hivi: Wakati {{deity_pronoun:wangu|Wangu}} niliowekewa umekaribia. Nitaiadhimisha Pasaka nyumbani kwako pamoja na wanafunzi {{deity_pronoun:wangu|Wangu}}.'\"",
+          "R": "Yesu akajibu, \"Nendeni mjini kwa mtu fulani. Mwambieni, 'Mwalimu anasema: Wakati ambao Mungu ameniwekea umekaribia. Nitakula chakula cha Pasaka nyumbani kwako pamoja na wanafunzi {{deity_pronoun:wangu|Wangu}}.'\""
         }
       },
       "decisions": [
@@ -227,6 +364,48 @@
           "reason": "Readable says whose appointment it is. That God set the time is implied by the word and the context.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026018010",
+            "n40026018015"
+          ],
+          "choice": "chez un tel (L), chez un certain homme (B, R); le Maître",
+          "alternatives": [
+            "chez Untel",
+            "l’Enseignant"
+          ],
+          "reason": "French \"un tel\" is the set way of speaking of someone not named (m1), as the Greek does; Balanced and Readable say \"un certain homme\", as the English. \"Le Maître\" is the title used for Jesus as teacher in the parallel, Mark 14:14.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40026018018",
+            "n40026018019"
+          ],
+          "choice": "Wakati {{deity_pronoun:wangu|Wangu}}",
+          "alternatives": [],
+          "reason": "The English \"My time\" begins the message and is capitalised either way, so it takes no span. Swahili puts the possessive after the noun (\"wakati wangu\"), so it takes the setting like any other \"my\" Jesus says of himself.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -262,6 +441,21 @@
           "L": "And the disciples did as Jesus had directed them, and they prepared the Passover.",
           "B": "So the disciples followed Jesus's instructions and got the Passover meal ready.",
           "R": "The followers did what Jesus told them. They prepared the Passover meal."
+        },
+        "es": {
+          "L": "E hicieron los discípulos como les había ordenado Jesús, y prepararon la Pascua.",
+          "B": "Los discípulos siguieron las instrucciones de Jesús y prepararon la cena de la Pascua.",
+          "R": "Los seguidores hicieron lo que Jesús les dijo. Prepararon la cena de la Pascua."
+        },
+        "fr": {
+          "L": "Et les disciples firent comme Jésus le leur avait ordonné, et ils préparèrent la Pâque.",
+          "B": "Les disciples suivirent les instructions de Jésus et préparèrent le repas de la Pâque.",
+          "R": "Les disciples ont fait ce que Jésus leur avait dit. Ils ont préparé le repas de la Pâque."
+        },
+        "sw": {
+          "L": "Na wanafunzi wakatenda jinsi Yesu alivyowaelekeza, wakaitayarisha Pasaka.",
+          "B": "Basi wanafunzi walifuata maelekezo ya Yesu, wakaandaa chakula cha Pasaka.",
+          "R": "Wanafunzi walifanya yale Yesu aliyowaambia. Wakatayarisha chakula cha Pasaka."
         }
       },
       "decisions": [
@@ -326,6 +520,21 @@
           "L": "Now when evening came, {{deity_pronoun:he|He}} was reclining [at table] with the twelve disciples. \\v 21 And while they were eating, {{deity_pronoun:he|He}} said, \"Truly I tell you that one of you will betray {{deity_pronoun:me|Me}}.\"",
           "B": "When evening came, Jesus took {{deity_pronoun:his|His}} place at the table with the twelve disciples. \\v 21 During the meal {{deity_pronoun:he|He}} said, \"Truly I tell you, one of you is going to betray {{deity_pronoun:me|Me}}.\"",
           "R": "In the evening Jesus was at the table with the twelve followers. \\v 21 While they were eating, {{deity_pronoun:he|He}} said, \"I tell you the truth. One of you is going to turn against {{deity_pronoun:me|Me}} and hand {{deity_pronoun:me|Me}} over to {{deity_pronoun:my|My}} enemies.\""
+        },
+        "es": {
+          "L": "Llegada la tarde, estaba recostado [a la mesa] con los doce discípulos. \\v 21 Y mientras ellos comían, dijo: «En verdad {{plural_you:les|os}} digo que uno de {{plural_you:ustedes|vosotros}} {{deity_pronoun:me|Me}} entregará».",
+          "B": "Al caer la tarde, Jesús se sentó a la mesa con los doce discípulos. \\v 21 Durante la cena dijo: «En verdad {{plural_you:les|os}} digo que uno de {{plural_you:ustedes|vosotros}} {{deity_pronoun:me|Me}} va a traicionar».",
+          "R": "Por la tarde, Jesús estaba a la mesa con los doce seguidores. \\v 21 Mientras comían, les dijo: «{{plural_you:Les|Os}} digo la verdad: uno de {{plural_you:ustedes|vosotros}} se va a volver contra {{deity_pronoun:mí|Mí}} y {{deity_pronoun:me|Me}} va a entregar a {{deity_pronoun:mis|Mis}} enemigos»."
+        },
+        "fr": {
+          "L": "Le soir venu, {{deity_pronoun:il|Il}} était étendu [à table] avec les douze disciples. \\v 21 Et tandis qu’ils mangeaient, {{deity_pronoun:il|Il}} dit : « En vérité, je vous le dis : l’un de vous {{deity_pronoun:me|Me}} trahira. »",
+          "B": "Le soir venu, Jésus prit place à table avec les douze disciples. \\v 21 Pendant le repas, {{deity_pronoun:il|Il}} dit : « En vérité, je vous le dis, l’un de vous va {{deity_pronoun:me|Me}} trahir. »",
+          "R": "Le soir, Jésus était à table avec {{deity_pronoun:ses|Ses}} douze disciples. \\v 21 Pendant qu’ils mangeaient, {{deity_pronoun:il|Il}} a dit : « Je vous le dis, c’est la vérité : l’un de vous va se tourner contre {{deity_pronoun:moi|Moi}} et {{deity_pronoun:me|Me}} livrer à {{deity_pronoun:mes|Mes}} ennemis. »"
+        },
+        "sw": {
+          "L": "Jioni ilipofika, alikuwa ameegemea [mezani] pamoja na wale wanafunzi kumi na wawili. \\v 21 Na walipokuwa wakila, akasema, \"Kweli nawaambia, mmoja wenu atanitoa.\"",
+          "B": "Ilipofika jioni, Yesu aliketi mezani pamoja na wanafunzi wale kumi na wawili. \\v 21 Walipokuwa wakila, akasema, \"Kweli nawaambia, mmoja wenu atanisaliti.\"",
+          "R": "Jioni Yesu alikuwa mezani pamoja na wanafunzi kumi na wawili. \\v 21 Walipokuwa wakila, akasema, \"Nawaambia ukweli: mmoja wenu atanigeuka na kunikabidhi kwa adui {{deity_pronoun:zangu|Zangu}}.\""
         }
       },
       "decisions": [
@@ -399,6 +608,92 @@
           "reason": "Readable spells out what betrayal means here.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026021012"
+          ],
+          "choice": "entregará (L); va a traicionar (B); se va a volver contra mí y me va a entregar (R)",
+          "alternatives": [
+            "traicionará (every level)"
+          ],
+          "reason": "The Greek verb is \"hand over\", here to enemies (meaning decision m2). Literal says \"entregar\" for it throughout the chapter, so the repeated word shows; Balanced says \"traicionar\" where the English says \"betray\"; Readable spells it out, as the English does. The same in 26:23-25.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026021005",
+            "n40026021006",
+            "n40026021007"
+          ],
+          "choice": "En verdad les digo (L, B); Les digo la verdad (R)",
+          "alternatives": [],
+          "reason": "The rendering of the single \"amen\" used throughout Matthew, recorded once in this passage; it covers 26:34 (\"te digo\", to Peter alone). Jesus speaks to the Twelve, so every plural \"you\" is the ustedes / vosotros setting.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026021012"
+          ],
+          "choice": "atanitoa (L); atanisaliti (B); atanigeuka na kunikabidhi (R)",
+          "alternatives": [
+            "atanisaliti (every level)"
+          ],
+          "reason": "The Greek verb is \"hand over\", here to enemies (meaning decision m2). Literal says \"kutoa\" for it throughout the chapter, so the repeated word shows; Balanced says \"kusaliti\" where the English says \"betray\"; Readable spells it out, as the English does. The same in 26:23-25.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-2",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026021005",
+            "n40026021006",
+            "n40026021007"
+          ],
+          "choice": "Kweli nawaambia (L, B); Nawaambia ukweli (R)",
+          "alternatives": [
+            "Amin, nawaambia"
+          ],
+          "reason": "The rendering of the single \"amen\" used throughout Matthew, recorded once in this passage; it covers 26:34 (\"nakuambia\", to Peter alone).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -433,6 +728,21 @@
           "L": "And being exceedingly grieved, they began to say to {{deity_pronoun:him|Him}}, each one, \"Surely it is not I, Lord?\"",
           "B": "They were deeply upset, and one after another they began to ask {{deity_pronoun:him|Him}}, \"Lord, it is not me, is it?\"",
           "R": "The followers were very sad. One by one they asked {{deity_pronoun:him|Him}}, \"Lord, {{deity_pronoun:you|You}} do not mean me, do {{deity_pronoun:you|You}}?\""
+        },
+        "es": {
+          "L": "Y muy entristecidos, comenzaron a decirle cada uno: «¿Acaso soy yo, Señor?».",
+          "B": "Ellos se pusieron muy tristes, y uno tras otro comenzaron a preguntarle: «Señor, no seré yo, ¿verdad?».",
+          "R": "Los seguidores se pusieron muy tristes. Uno por uno {{deity_pronoun:le|Le}} preguntaron: «Señor, no estarás hablando de mí, ¿verdad?»."
+        },
+        "fr": {
+          "L": "Et, profondément attristés, ils commencèrent à {{deity_pronoun:lui|Lui}} dire, chacun : « Serait-ce moi, Seigneur ? »",
+          "B": "Ils en furent très peinés, et ils se mirent à {{deity_pronoun:lui|Lui}} demander l’un après l’autre : « Seigneur, ce n’est pas moi, n’est-ce pas ? »",
+          "R": "Les disciples sont devenus très tristes. L’un après l’autre, ils {{deity_pronoun:lui|Lui}} ont demandé : « Seigneur, {{deity_pronoun:tu|Tu}} ne parles pas de moi, n’est-ce pas ? »"
+        },
+        "sw": {
+          "L": "Nao, wakiwa na huzuni nyingi mno, wakaanza kumwambia kila mmoja, \"Hakika si mimi, Bwana?\"",
+          "B": "Walisikitika sana, na mmoja baada ya mwingine wakaanza kumwuliza, \"Bwana, si mimi, sivyo?\"",
+          "R": "Wanafunzi walihuzunika sana. Kila mmoja akamwuliza, \"Bwana, humaanishi mimi, sivyo?\""
         }
       },
       "decisions": [
@@ -493,6 +803,28 @@
           "reason": "Balanced and Readable use an English question that also expects no.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026022009",
+            "n40026022010",
+            "n40026022011"
+          ],
+          "choice": "Serait-ce moi ? (L)",
+          "alternatives": [
+            "Est-ce moi ?",
+            "Ce n’est pas moi ?"
+          ],
+          "reason": "As in Mark 14:19: the Greek question expects the answer no (m1), and French marks that hope with the conditional, which keeps Literal short; Balanced and Readable add \"n’est-ce pas ?\", as the English adds \"is it?\". The same in 26:25.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -531,6 +863,21 @@
           "L": "And answering, {{deity_pronoun:he|He}} said, \"The [one] who has dipped the hand in the dish with {{deity_pronoun:me|Me}}, he will betray {{deity_pronoun:me|Me}}.",
           "B": "He replied, \"Someone who has dipped his hand in the bowl along with {{deity_pronoun:me|Me}}, he is the one who will betray {{deity_pronoun:me|Me}}.",
           "R": "Jesus answered, \"One of you who has eaten from the same bowl with {{deity_pronoun:me|Me}} will hand {{deity_pronoun:me|Me}} over."
+        },
+        "es": {
+          "L": "Y {{deity_pronoun:él|Él}}, respondiendo, dijo: «El que mojó conmigo la mano en el plato, ese {{deity_pronoun:me|Me}} entregará.",
+          "B": "Él respondió: «Alguien que ha mojado la mano en el plato conmigo, ese es el que {{deity_pronoun:me|Me}} va a traicionar.",
+          "R": "Jesús respondió: «Uno de {{plural_you:ustedes|vosotros}} que ha comido del mismo plato conmigo {{deity_pronoun:me|Me}} va a entregar."
+        },
+        "fr": {
+          "L": "Et {{deity_pronoun:il|Il}} répondit : « Celui qui a trempé avec {{deity_pronoun:moi|Moi}} la main dans le plat, c’est lui qui {{deity_pronoun:me|Me}} trahira.",
+          "B": "Il répondit : « Quelqu’un qui a trempé sa main dans le plat avec {{deity_pronoun:moi|Moi}}, voilà celui qui va {{deity_pronoun:me|Me}} trahir.",
+          "R": "Jésus a répondu : « L’un de vous a mangé dans le même plat que {{deity_pronoun:moi|Moi}}. C’est lui qui va {{deity_pronoun:me|Me}} livrer."
+        },
+        "sw": {
+          "L": "Naye akajibu, akasema, \"Yeye aliyechovya mkono pamoja {{deity_pronoun:nami|Nami}} katika bakuli, huyo ndiye atakayenitoa.",
+          "B": "Akajibu, \"Mtu aliyechovya mkono wake katika bakuli pamoja {{deity_pronoun:nami|Nami}}, huyo ndiye atakayenisaliti.",
+          "R": "Yesu akajibu, \"Mmoja wenu ambaye amekula pamoja {{deity_pronoun:nami|Nami}} katika bakuli moja atanikabidhi."
         }
       },
       "decisions": [
@@ -610,6 +957,26 @@
           "reason": "Readable says plainly what dipping in the dish means.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40026023007",
+            "n40026023008"
+          ],
+          "choice": "conmigo, with no span",
+          "alternatives": [],
+          "reason": "\"Conmigo\" is one word, \"with me\", and is written plain, as in the rest of the Spanish; the \"me\" that is a separate word takes the span.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -663,6 +1030,21 @@
           "L": "The Son of Man goes as it is written about {{deity_pronoun:him|Him}}, but woe to that man through whom the Son of Man is betrayed! It would be good for him if that man had not been born.\"",
           "B": "The Son of Man goes on {{deity_pronoun:his|His}} way as the Scriptures have written of {{deity_pronoun:him|Him}}, but woe to the one through whom the Son of Man is betrayed! Better for that man if he had never been born.\"",
           "R": "The Son of Man will die, just as the Scriptures say. But how terrible it will be for the man who hands over the Son of Man! It would be better for that man if he had never been born.\""
+        },
+        "es": {
+          "L": "El Hijo del Hombre se va, como está escrito acerca de {{deity_pronoun:él|Él}}, pero ¡ay de aquel hombre por medio del cual el Hijo del Hombre es entregado! Bueno sería para él si aquel hombre no hubiera nacido».",
+          "B": "El Hijo del Hombre sigue {{deity_pronoun:su|Su}} camino, tal como las Escrituras dicen de {{deity_pronoun:él|Él}}; pero ¡ay de aquel por medio de quien el Hijo del Hombre es traicionado! Mejor habría sido para ese hombre no haber nacido nunca».",
+          "R": "El Hijo del Hombre va a morir, tal como dicen las Escrituras. ¡Pero qué terrible será para el hombre que entrega al Hijo del Hombre! Para ese hombre habría sido mejor no nacer»."
+        },
+        "fr": {
+          "L": "Le Fils de l’homme s’en va selon ce qui est écrit à {{deity_pronoun:son|Son}} sujet, mais malheur à cet homme par qui le Fils de l’homme est trahi ! Il aurait été bon pour lui que cet homme ne soit pas né. »",
+          "B": "Le Fils de l’homme s’en va, comme les Écritures l’annoncent à {{deity_pronoun:son|Son}} sujet ; mais malheur à celui par qui le Fils de l’homme est trahi ! Mieux vaudrait pour cet homme n’être jamais né. »",
+          "R": "Le Fils de l’homme va mourir, comme le disent les Écritures. Mais ce sera terrible pour l’homme qui livre le Fils de l’homme ! Il aurait mieux valu pour lui ne jamais naître. »"
+        },
+        "sw": {
+          "L": "Mwana wa Adamu anakwenda zake kama ilivyoandikwa kumhusu {{deity_pronoun:yeye|Yeye}}, lakini ole wake mtu huyo ambaye kupitia kwake Mwana wa Adamu anatolewa! Lingekuwa jambo jema kwake, kama mtu huyo hangezaliwa.\"",
+          "B": "Mwana wa Adamu anakwenda njia {{deity_pronoun:yake|Yake}} kama Maandiko yalivyoandika juu {{deity_pronoun:yake|Yake}}, lakini ole wake yule ambaye Mwana wa Adamu anasalitiwa kupitia kwake! Ingekuwa afadhali kwa mtu huyo kama hangezaliwa kamwe.\"",
+          "R": "Mwana wa Adamu atakufa, kama Maandiko yanavyosema. Lakini mtu yule anayemkabidhi Mwana wa Adamu atapata taabu kubwa mno! Ingekuwa bora kwa mtu huyo kama hangezaliwa kabisa.\""
         }
       },
       "decisions": [
@@ -781,6 +1163,27 @@
           "reason": "Readable explains the cry of woe; Literal and Balanced keep \"woe\", as in 11:21.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026024011"
+          ],
+          "choice": "malheur à (L, B); ce sera terrible pour (R)",
+          "alternatives": [
+            "quel malheur pour (R)"
+          ],
+          "reason": "The term sheet's form for \"woe to\", as in Mark 14:21; Readable follows the English \"how terrible it will be\". \"Cet homme\" is Judas, a particular man, so no gender setting applies.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -814,6 +1217,21 @@
           "L": "And Judas, the [one] betraying {{deity_pronoun:him|Him}}, answered, \"Surely it is not I, Rabbi?\"",
           "B": "Then Judas, who was betraying {{deity_pronoun:him|Him}}, said, \"Rabbi, it is not me, is it?\"",
           "R": "Then Judas spoke. He was the one who was going to hand Jesus over. He said, \"Teacher, {{deity_pronoun:you|You}} do not mean me, do {{deity_pronoun:you|You}}?\""
+        },
+        "es": {
+          "L": "Y respondiendo Judas, el que {{deity_pronoun:lo|Lo}} entregaba, dijo: «¿Acaso soy yo, Rabí?».",
+          "B": "Entonces Judas, el que {{deity_pronoun:lo|Lo}} estaba traicionando, dijo: «Rabí, no seré yo, ¿verdad?».",
+          "R": "Entonces habló Judas, el que iba a entregar a Jesús. Dijo: «Maestro, no estarás hablando de mí, ¿verdad?»."
+        },
+        "fr": {
+          "L": "Et Judas, celui qui {{deity_pronoun:le|Le}} trahissait, répondit : « Serait-ce moi, Rabbi ? »",
+          "B": "Alors Judas, qui {{deity_pronoun:le|Le}} trahissait, prit la parole : « Rabbi, ce n’est pas moi, n’est-ce pas ? »",
+          "R": "Alors Judas a parlé. C’était lui qui allait livrer Jésus. Il a dit : « Maître, {{deity_pronoun:tu|Tu}} ne parles pas de moi, n’est-ce pas ? »"
+        },
+        "sw": {
+          "L": "Na Yuda, yule aliyekuwa akimtoa, akajibu, akasema, \"Hakika si mimi, Rabi?\"",
+          "B": "Kisha Yuda, aliyekuwa akimsaliti, akasema, \"Rabi, si mimi, sivyo?\"",
+          "R": "Kisha Yuda akazungumza. Yeye ndiye ambaye angemkabidhi Yesu. Akasema, \"Mwalimu, humaanishi mimi, sivyo?\""
         }
       },
       "decisions": [
@@ -851,6 +1269,27 @@
           "reason": "Readable gives the meaning of the title.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026025011"
+          ],
+          "choice": "Rabbi (L, B); Maître (R)",
+          "alternatives": [
+            "Enseignant (R)"
+          ],
+          "reason": "As in Mark 14:45: Readable gives the meaning of the title, as the English says \"Teacher\", with \"Maître\", the French title used for \"the Teacher\" in 26:18.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -877,6 +1316,21 @@
           "L": "He says to him, \"You have said [so].\"",
           "B": "Jesus told him, \"You have said it yourself.\"",
           "R": "Jesus said to him, \"You have said it yourself.\""
+        },
+        "es": {
+          "L": "Le dice: «Tú [lo] has dicho».",
+          "B": "Jesús le respondió: «Tú mismo lo has dicho».",
+          "R": "Jesús le dijo: «Tú mismo lo has dicho»."
+        },
+        "fr": {
+          "L": "Il lui dit : « Tu l’as dit. »",
+          "B": "Jésus lui répondit : « C’est toi qui l’as dit. »",
+          "R": "Jésus lui a dit : « C’est toi qui le dis. »"
+        },
+        "sw": {
+          "L": "Anamwambia, \"Wewe umesema [hivyo].\"",
+          "B": "Yesu akamwambia, \"Wewe mwenyewe umesema.\"",
+          "R": "Yesu akamwambia, \"Umesema mwenyewe.\""
         }
       },
       "decisions": [
@@ -936,6 +1390,28 @@
           "reason": "Balanced and Readable bring out the stress on \"you\" in the Greek.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026025014",
+            "n40026025015"
+          ],
+          "choice": "Tu l’as dit (L); C’est toi qui l’as dit (B); C’est toi qui le dis (R)",
+          "alternatives": [
+            "Tu le dis"
+          ],
+          "reason": "The answer says yes, but in Judas's words (m1). French needs the object \"l’\"; Balanced and Readable bring out the stress on \"you\" with \"c’est toi qui\", as the English adds \"yourself\". Readable uses the present, which is how the reply is said in speech today.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -980,6 +1456,21 @@
           "L": "And while they were eating, Jesus took bread, and after blessing [it] {{deity_pronoun:he|He}} broke [it], and giving [it] to the disciples, {{deity_pronoun:he|He}} said, \"Take, eat; this is {{deity_pronoun:my|My}} body.\"",
           "B": "During the meal Jesus took a loaf, said the blessing, and broke it. He gave it to the disciples and said, \"Take it and eat. This is {{deity_pronoun:my|My}} body.\"",
           "R": "While they were eating, Jesus took some bread. He thanked God for it and broke it into pieces. He gave it to {{deity_pronoun:his|His}} followers and said, \"Take this and eat it. This is {{deity_pronoun:my|My}} body.\""
+        },
+        "es": {
+          "L": "Y mientras ellos comían, Jesús tomó pan y, habiendo pronunciado la bendición, [lo] partió y, dándo[lo] a los discípulos, dijo: «{{plural_you:Tomen|Tomad}}, {{plural_you:coman|comed}}; esto es {{deity_pronoun:mi|Mi}} cuerpo».",
+          "B": "Durante la cena, Jesús tomó un pan, pronunció la bendición y lo partió. Se lo dio a los discípulos y dijo: «{{plural_you:Tómenlo|Tomadlo}} y {{plural_you:coman|comed}}. Esto es {{deity_pronoun:mi|Mi}} cuerpo».",
+          "R": "Mientras comían, Jesús tomó pan. Le dio gracias a Dios por él y lo partió en pedazos. Se lo dio a {{deity_pronoun:sus|Sus}} seguidores y les dijo: «{{plural_you:Tomen|Tomad}} esto y {{plural_you:cómanlo|comedlo}}. Esto es {{deity_pronoun:mi|Mi}} cuerpo»."
+        },
+        "fr": {
+          "L": "Et tandis qu’ils mangeaient, Jésus, ayant pris du pain et ayant béni [Dieu], [le] rompit et, [le] donnant aux disciples, dit : « Prenez, mangez ; ceci est {{deity_pronoun:mon|Mon}} corps. »",
+          "B": "Pendant le repas, Jésus prit un pain, prononça la bénédiction et le rompit. Il le donna aux disciples en disant : « Prenez et mangez. Ceci est {{deity_pronoun:mon|Mon}} corps. »",
+          "R": "Pendant qu’ils mangeaient, Jésus a pris du pain. Il a remercié Dieu pour ce pain, puis {{deity_pronoun:il|Il}} l’a rompu en morceaux. Il l’a donné à {{deity_pronoun:ses|Ses}} disciples et {{deity_pronoun:il|Il}} a dit : « Prenez ceci et mangez-le. C’est {{deity_pronoun:mon|Mon}} corps. »"
+        },
+        "sw": {
+          "L": "Na walipokuwa wakila, Yesu akachukua mkate, na akiisha kusema baraka akaumega, na alipokuwa akiwapa wanafunzi akasema, \"Chukueni, mle; huu ni mwili {{deity_pronoun:wangu|Wangu}}.\"",
+          "B": "Walipokuwa wakila, Yesu alichukua mkate, akasema maneno ya baraka, akaumega. Akawapa wanafunzi, akasema, \"Chukueni mle. Huu ni mwili {{deity_pronoun:wangu|Wangu}}.\"",
+          "R": "Walipokuwa wakila, Yesu alichukua mkate. Akamshukuru Mungu kwa ajili yake, akaumega vipande vipande. Akawapa wanafunzi {{deity_pronoun:wake|Wake}}, akasema, \"Chukueni mkate huu mle. Huu ni mwili {{deity_pronoun:wangu|Wangu}}.\""
         }
       },
       "decisions": [
@@ -1037,6 +1528,46 @@
           "reason": "Readable says to whom the blessing was spoken.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n40026026009"
+          ],
+          "choice": "ayant béni [Dieu] (L)",
+          "alternatives": [
+            "l’ayant béni"
+          ],
+          "reason": "The blessing praised God over the bread (m1). French \"bénir le pain\" would say that Jesus blessed the bread itself, so Literal supplies God as the one blessed, as in Mark 14:22, where the English supplies \"[it]\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026026016"
+          ],
+          "choice": "Chukueni",
+          "alternatives": [
+            "Twaeni"
+          ],
+          "reason": "\"Kuchukua\" is the everyday verb for \"take\"; \"kutwaa\" is older and literary. The plain verb suits a meal at which Jesus hands bread to his friends.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1087,6 +1618,21 @@
           "L": "And taking a cup and giving thanks, {{deity_pronoun:he|He}} gave [it] to them, saying, \"Drink from it, all [of you], \\v 28 for this is {{deity_pronoun:my|My}} blood of the covenant, which is poured out for many for [the] forgiveness of sins.",
           "B": "Then {{deity_pronoun:he|He}} took a cup, gave thanks, and passed it to them, saying, \"Every one of you, drink from it. \\v 28 For this is {{deity_pronoun:my|My}} covenant blood, poured out for many to bring forgiveness of sins.",
           "R": "Then {{deity_pronoun:he|He}} took a cup of wine and thanked God for it. He gave it to them and said, \"All of you drink from this cup. \\v 28 This is {{deity_pronoun:my|My}} blood, which makes the covenant, God's agreement with {{deity_pronoun:his|His}} people. It is poured out for many people, so that their sins can be forgiven."
+        },
+        "es": {
+          "L": "Y tomando una copa y dando gracias, les [la] dio, diciendo: «{{plural_you:Beban|Bebed}} todos de ella, \\v 28 pues esto es {{deity_pronoun:mi|Mi}} sangre del pacto, derramada por muchos para el perdón de los pecados.",
+          "B": "Luego tomó una copa, dio gracias y se la pasó, diciendo: «{{plural_you:Beban|Bebed}} de ella, cada uno de {{plural_you:ustedes|vosotros}}. \\v 28 Porque esto es {{deity_pronoun:mi|Mi}} sangre, la sangre del pacto, que se derrama por muchos para traer el perdón de los pecados.",
+          "R": "Después tomó una copa de vino y le dio gracias a Dios por ella. Se la dio a ellos y les dijo: «{{plural_you:Beban|Bebed}} todos de esta copa. \\v 28 Esta es {{deity_pronoun:mi|Mi}} sangre, que establece el pacto, el acuerdo de Dios con {{deity_pronoun:su|Su}} pueblo. Se derrama por mucha gente, para que sus pecados puedan ser perdonados."
+        },
+        "fr": {
+          "L": "Et ayant pris une coupe et ayant rendu grâces, {{deity_pronoun:il|Il}} [la] leur donna, disant : « Buvez-en tous, \\v 28 car ceci est {{deity_pronoun:mon|Mon}} sang de l’alliance, qui est répandu pour beaucoup, pour le pardon des péchés.",
+          "B": "Puis {{deity_pronoun:il|Il}} prit une coupe, rendit grâces et la leur donna en disant : « Buvez-en, vous tous. \\v 28 Car ceci est {{deity_pronoun:mon|Mon}} sang, le sang de l’alliance, versé pour beaucoup, pour le pardon des péchés.",
+          "R": "Ensuite, {{deity_pronoun:il|Il}} a pris une coupe de vin et {{deity_pronoun:il|Il}} a remercié Dieu pour cette coupe. Il la leur a donnée et {{deity_pronoun:il|Il}} a dit : « Buvez tous de cette coupe. \\v 28 Ceci est {{deity_pronoun:mon|Mon}} sang. Par lui, Dieu établit l’alliance, {{deity_pronoun:son|Son}} engagement envers {{deity_pronoun:son|Son}} peuple. Il est versé pour beaucoup de gens, pour que leurs péchés soient pardonnés."
+        },
+        "sw": {
+          "L": "Na alipochukua kikombe na kutoa shukrani, akawapa, akisema, \"Nyweni kutoka humo, ninyi nyote, \\v 28 kwa maana hii ni damu {{deity_pronoun:yangu|Yangu}} ya agano, inayomiminwa kwa ajili ya wengi kwa msamaha wa dhambi.",
+          "B": "Kisha akachukua kikombe, akatoa shukrani, akawapa, akisema, \"Kila mmoja wenu anywe kutoka humo. \\v 28 Kwa maana hii ni damu {{deity_pronoun:yangu|Yangu}} ya agano, inayomiminwa kwa ajili ya wengi ili dhambi zisamehewe.",
+          "R": "Kisha akachukua kikombe cha divai, akamshukuru Mungu kwa ajili yake. Akawapa, akasema, \"Nyote nyweni kutoka katika kikombe hiki. \\v 28 Hii ni damu {{deity_pronoun:yangu|Yangu}}, inayoweka agano, yaani mapatano ya Mungu na watu {{deity_pronoun:wake|Wake}}. Inamiminwa kwa ajili ya watu wengi, ili dhambi zao zisamehewe."
         }
       },
       "decisions": [
@@ -1181,6 +1727,69 @@
           "reason": "Readable says what was in the cup and what a covenant is.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026028008"
+          ],
+          "choice": "pacto",
+          "alternatives": [
+            "alianza"
+          ],
+          "reason": "The word used for the covenant in the Spanish of Hebrews and Galatians, so that this verse and the covenant passages of Hebrews 8-9 read alike (meaning decision m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026028008",
+            "n40026028014"
+          ],
+          "choice": "l’alliance (every level); le pardon des péchés (L, B)",
+          "alternatives": [
+            "la rémission des péchés",
+            "l’accord de Dieu (R)"
+          ],
+          "reason": "\"L’alliance\" is the term sheet's word for the covenant, as in Mark 14:24; Readable says what it is, as the English does (\"God's agreement with his people\"), with \"engagement\" so as not to repeat the term. \"La rémission des péchés\" is church language few readers now understand; \"le pardon\" says it plainly.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026028014"
+          ],
+          "choice": "msamaha wa dhambi",
+          "alternatives": [
+            "ondoleo la dhambi"
+          ],
+          "reason": "\"Msamaha\" is the everyday word for forgiveness and is used at every level (Balanced and Readable say \"ili dhambi zisamehewe\"); \"ondoleo\" is older and less familiar.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1233,6 +1842,21 @@
           "L": "But I tell you, I will by no means drink of this fruit of the vine from now on until that day when I drink it new with you in the kingdom of {{deity_pronoun:my|My}} Father.\"",
           "B": "But I tell you this: from now on I will not drink this fruit of the vine again until the day comes when I share it with you, new, in {{deity_pronoun:my|My}} Father's kingdom.\"",
           "R": "I tell you, I will not drink wine again until the day when I drink it with you in a new way in {{deity_pronoun:my|My}} Father's kingdom.\""
+        },
+        "es": {
+          "L": "Pero {{plural_you:les|os}} digo que de ningún modo volveré a beber, desde ahora, de este producto de la vid, hasta aquel día en que lo beba nuevo con {{plural_you:ustedes|vosotros}} en el reino de {{deity_pronoun:mi|Mi}} Padre».",
+          "B": "Pero {{plural_you:les|os}} digo esto: desde ahora no volveré a beber de este fruto de la vid hasta el día en que lo comparta nuevo con {{plural_you:ustedes|vosotros}} en el reino de {{deity_pronoun:mi|Mi}} Padre».",
+          "R": "{{plural_you:Les|Os}} digo que no volveré a beber vino hasta el día en que lo beba con {{plural_you:ustedes|vosotros}} de una manera nueva en el reino de {{deity_pronoun:mi|Mi}} Padre»."
+        },
+        "fr": {
+          "L": "Mais je vous dis : je ne boirai plus du tout, désormais, de ce fruit de la vigne, jusqu’à ce jour-là où je le boirai nouveau avec vous dans le royaume de {{deity_pronoun:mon|Mon}} Père. »",
+          "B": "Je vous le dis : désormais, je ne boirai plus de ce fruit de la vigne jusqu’au jour où je le boirai, nouveau, avec vous, dans le royaume de {{deity_pronoun:mon|Mon}} Père. »",
+          "R": "Je vous le dis : je ne boirai plus de vin jusqu’au jour où je le boirai avec vous d’une manière nouvelle, dans le royaume de {{deity_pronoun:mon|Mon}} Père. »"
+        },
+        "sw": {
+          "L": "Lakini nawaambia, kuanzia sasa sitakunywa kamwe zao hili la mzabibu, mpaka siku ile nitakapolinywa likiwa jipya pamoja nanyi katika ufalme wa Baba {{deity_pronoun:yangu|Yangu}}.\"",
+          "B": "Lakini nawaambia hivi: tangu sasa sitakunywa tena zao hili la mzabibu mpaka siku ile nitakaposhiriki nanyi, likiwa jipya, katika ufalme wa Baba {{deity_pronoun:yangu|Yangu}}.\"",
+          "R": "Nawaambia, sitakunywa divai tena mpaka siku ile nitakapoinywa pamoja nanyi kwa namna mpya katika ufalme wa Baba {{deity_pronoun:yangu|Yangu}}.\""
         }
       },
       "decisions": [
@@ -1293,6 +1917,43 @@
           "reason": "Readable says what the phrase means and how \"new\" applies.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026029012"
+          ],
+          "choice": "producto de la vid (L); fruto de la vid (B)",
+          "alternatives": [],
+          "reason": "The Greek word is \"what is produced\", the yield of the vine (meaning decision m1). Literal says \"producto\"; Balanced uses the familiar \"fruto\"; Readable says \"vino\", as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026029012"
+          ],
+          "choice": "zao hili la mzabibu",
+          "alternatives": [
+            "uzao huu wa mzabibu"
+          ],
+          "reason": "\"Zao\" is a crop or yield, the sense of the Greek word, the drink the vine produces (meaning decision m1). Readable says \"divai\" (wine), as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1323,6 +1984,21 @@
           "L": "And after singing a hymn, they went out to the Mount of Olives.",
           "B": "Then they sang a hymn and went out to the Mount of Olives.",
           "R": "They sang a song of praise. Then they went out to the Mount of Olives."
+        },
+        "es": {
+          "L": "Y después de cantar un himno, salieron al monte de los Olivos.",
+          "B": "Luego cantaron un himno y salieron hacia el monte de los Olivos.",
+          "R": "Cantaron un canto de alabanza. Después salieron hacia el monte de los Olivos."
+        },
+        "fr": {
+          "L": "Et après avoir chanté un hymne, ils sortirent vers le mont des Oliviers.",
+          "B": "Puis ils chantèrent un hymne et sortirent vers le mont des Oliviers.",
+          "R": "Ils ont chanté un chant de louange à Dieu. Puis ils sont partis vers le mont des Oliviers."
+        },
+        "sw": {
+          "L": "Na baada ya kuimba wimbo, walitoka kwenda Mlima wa Mizeituni.",
+          "B": "Kisha waliimba wimbo, wakatoka kwenda Mlima wa Mizeituni.",
+          "R": "Waliimba wimbo wa kumsifu Mungu. Kisha wakatoka, wakaenda Mlima wa Mizeituni."
         }
       },
       "decisions": [
@@ -1426,6 +2102,21 @@
           "L": "Then Jesus says to them, \"All of you will fall away because of {{deity_pronoun:me|Me}} this night, for it is written, 'I will strike the shepherd, and the sheep of the flock will be scattered.'",
           "B": "Then Jesus told them, \"This very night every one of you will fall away because of {{deity_pronoun:me|Me}}. For it is written: 'I will strike down the shepherd, and the sheep of the flock will scatter in all directions.'",
           "R": "Then Jesus said to them, \"Tonight all of you will turn away and leave {{deity_pronoun:me|Me}}. In the Scriptures God says, 'I will strike down the shepherd, and the sheep will run off in every direction.'"
+        },
+        "es": {
+          "L": "Entonces les dice Jesús: «Todos {{plural_you:ustedes|vosotros}} {{plural_you:tropezarán|tropezaréis}} por causa de {{deity_pronoun:mí|Mí}} esta noche, porque está escrito: “Golpearé al pastor, y se dispersarán las ovejas del rebaño”.",
+          "B": "Entonces Jesús les dijo: «Esta misma noche todos {{plural_you:ustedes|vosotros}} {{plural_you:se apartarán|os apartaréis}} por causa de {{deity_pronoun:mí|Mí}}. Porque está escrito: “Derribaré al pastor, y las ovejas del rebaño se dispersarán en todas direcciones”.",
+          "R": "Entonces Jesús les dijo: «Esta noche todos {{plural_you:ustedes|vosotros}} {{plural_you:se van a alejar|os vais a alejar}} de {{deity_pronoun:mí|Mí}} y {{deity_pronoun:me|Me}} {{plural_you:dejarán|dejaréis}} solo. En las Escrituras Dios dice: “Derribaré al pastor, y las ovejas huirán en todas direcciones”."
+        },
+        "fr": {
+          "L": "Alors Jésus leur dit : « Vous tous, vous trébucherez à cause de {{deity_pronoun:moi|Moi}} cette nuit, car il est écrit : “Je frapperai le berger, et les brebis du troupeau seront dispersées.”",
+          "B": "Alors Jésus leur dit : « Cette nuit même, vous allez tous trébucher à cause de {{deity_pronoun:moi|Moi}} et {{deity_pronoun:m’|M’}}abandonner. Car il est écrit : “Je frapperai le berger, et les brebis du troupeau se disperseront de tous côtés.”",
+          "R": "Puis Jésus leur a dit : « Cette nuit, vous allez tous vous détourner de {{deity_pronoun:moi|Moi}} et {{deity_pronoun:m’|M’}}abandonner. Dans les Écritures, Dieu dit : “Je frapperai le berger, et les moutons s’enfuiront de tous les côtés.”"
+        },
+        "sw": {
+          "L": "Kisha Yesu anawaambia, \"Ninyi nyote mtajikwaa kwa sababu {{deity_pronoun:yangu|Yangu}} usiku huu, kwa maana imeandikwa, 'Nitampiga mchungaji, na kondoo wa kundi lake watasambazwa.'",
+          "B": "Kisha Yesu akawaambia, \"Usiku huu huu ninyi nyote mtakwazika kwa sababu {{deity_pronoun:yangu|Yangu}}, mkaniacha. Kwa maana imeandikwa, 'Nitamwangusha mchungaji, na kondoo wa kundi watasambaa kila upande.'",
+          "R": "Kisha Yesu akawaambia, \"Usiku wa leo ninyi nyote mtageuka na kuniacha. Katika Maandiko Mungu anasema, 'Nitamwangusha mchungaji, na kondoo watakimbia kila upande.'"
         }
       },
       "decisions": [
@@ -1530,6 +2221,70 @@
           "reason": "Readable names the speaker of the quoted words, as meaning decision m2 explains.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026031008"
+          ],
+          "choice": "tropezarán (L); se apartarán (B); se van a alejar ... y me dejarán solo (R)",
+          "alternatives": [
+            "se escandalizarán"
+          ],
+          "reason": "The Greek verb is \"be made to stumble\": here, to falter and desert Jesus (meaning decision m1). Literal keeps the picture; Balanced says \"apartarse\", the sense of the English \"fall away\"; Readable says what they will do. \"Escandalizarse\" now means to be shocked, which is not the sense. The same verbs in 26:33.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026031008"
+          ],
+          "choice": "trébucher (L); trébucher et m’abandonner (B); vous détourner de moi et m’abandonner (R)",
+          "alternatives": [
+            "être scandalisé",
+            "tomber"
+          ],
+          "reason": "As in Mark 14:27: \"être scandalisé\" is the traditional rendering, but in French today it means \"to be outraged\", which is not the sense (m1). \"Trébucher\" keeps the Greek image; Balanced adds that they will desert him, and Readable says it plainly, as the English \"turn away and leave\". The same words in 26:33.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026031008"
+          ],
+          "choice": "mtajikwaa (L); mtakwazika ... mkaniacha (B); mtageuka na kuniacha (R)",
+          "alternatives": [
+            "mtachukizwa"
+          ],
+          "reason": "The Greek verb is \"be made to stumble\": here, to falter and desert Jesus (meaning decision m1). Literal keeps the picture (\"kujikwaa\", to stumble); Balanced says \"kukwazika\" (to be made to fall) and adds that they will leave him, as the English \"fall away\" means; Readable says what they will do. The same verbs in 26:33.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1562,6 +2317,21 @@
           "L": "But after I am raised, I will go ahead of you into Galilee.\"",
           "B": "But after I have been raised, I will go to Galilee ahead of you.\"",
           "R": "But after God raises {{deity_pronoun:me|Me}} from death, I will go to Galilee ahead of you.\""
+        },
+        "es": {
+          "L": "Pero después de ser yo resucitado, iré delante de {{plural_you:ustedes|vosotros}} a Galilea».",
+          "B": "Pero después de haber sido resucitado, iré a Galilea antes que {{plural_you:ustedes|vosotros}}».",
+          "R": "Pero después de que Dios {{deity_pronoun:me|Me}} resucite de la muerte, iré a Galilea antes que {{plural_you:ustedes|vosotros}}»."
+        },
+        "fr": {
+          "L": "Mais après que je serai ressuscité, je vous précéderai en Galilée. »",
+          "B": "Mais quand je serai ressuscité, j’irai en Galilée avant vous. »",
+          "R": "Mais quand Dieu {{deity_pronoun:m’|M’}}aura ressuscité, j’irai en Galilée avant vous. »"
+        },
+        "sw": {
+          "L": "Lakini baada ya {{deity_pronoun:mimi|Mimi}} kufufuliwa, nitawatangulia mpaka Galilaya.\"",
+          "B": "Lakini baada ya kufufuliwa, nitatangulia mbele yenu kwenda Galilaya.\"",
+          "R": "Lakini baada ya Mungu kunifufua kutoka kwa wafu, nitatangulia kwenda Galilaya kabla yenu.\""
         }
       },
       "decisions": [
@@ -1651,6 +2421,21 @@
           "L": "But Peter answered and said to {{deity_pronoun:him|Him}}, \"If all fall away because of {{deity_pronoun:you|You}}, I will never fall away.\"",
           "B": "Peter answered, \"The others may all fall away because of {{deity_pronoun:you|You}}, but I will never fall away.\"",
           "R": "Peter said to {{deity_pronoun:him|Him}}, \"All the others may turn away from {{deity_pronoun:you|You}}. But I will never do that!\""
+        },
+        "es": {
+          "L": "Y respondiendo Pedro, {{deity_pronoun:le|Le}} dijo: «Si todos tropiezan por causa de {{deity_pronoun:ti|Ti}}, yo jamás tropezaré».",
+          "B": "Pedro {{deity_pronoun:le|Le}} respondió: «Aunque todos los demás se aparten por causa de {{deity_pronoun:ti|Ti}}, yo jamás me apartaré».",
+          "R": "Pedro {{deity_pronoun:le|Le}} dijo: «Puede que todos los demás se alejen de {{deity_pronoun:ti|Ti}}. ¡Pero yo nunca haré eso!»."
+        },
+        "fr": {
+          "L": "Mais Pierre, prenant la parole, {{deity_pronoun:lui|Lui}} dit : « Si tous trébuchent à cause de {{deity_pronoun:toi|Toi}}, moi, je ne trébucherai jamais. »",
+          "B": "Pierre {{deity_pronoun:lui|Lui}} répondit : « Même si tous les autres trébuchent à cause de {{deity_pronoun:toi|Toi}}, moi, jamais je ne trébucherai. »",
+          "R": "Pierre {{deity_pronoun:lui|Lui}} a dit : « Tous les autres peuvent se détourner de {{deity_pronoun:toi|Toi}}. Mais moi, je ne le ferai jamais ! »"
+        },
+        "sw": {
+          "L": "Lakini Petro akamjibu, akasema, \"Hata kama wote watajikwaa kwa sababu {{deity_pronoun:yako|Yako}}, mimi sitajikwaa kamwe.\"",
+          "B": "Petro akamjibu, \"Hata kama wengine wote watakwazika kwa sababu {{deity_pronoun:yako|Yako}}, mimi sitakwazika kamwe.\"",
+          "R": "Petro akamwambia, \"Huenda wengine wote wakakugeuka na kukuacha. Lakini mimi sitafanya hivyo kamwe!\""
         }
       },
       "decisions": [
@@ -1716,6 +2501,21 @@
           "L": "Jesus said to him, \"Truly I tell you that this night, before a rooster crows, you will deny {{deity_pronoun:me|Me}} three times.\"",
           "B": "Jesus told him, \"Truly I tell you, three times this very night you will deny {{deity_pronoun:me|Me}}, before a rooster crows.\"",
           "R": "Jesus said to him, \"I tell you the truth. Tonight, before the rooster crows, you will say three times that you do not know {{deity_pronoun:me|Me}}.\""
+        },
+        "es": {
+          "L": "Jesús le dijo: «En verdad te digo que en esta noche, antes de que un gallo cante, tres veces {{deity_pronoun:me|Me}} negarás».",
+          "B": "Jesús le respondió: «En verdad te digo que esta misma noche, antes de que cante un gallo, {{deity_pronoun:me|Me}} vas a negar tres veces».",
+          "R": "Jesús le dijo: «Te digo la verdad: esta noche, antes de que cante el gallo, vas a decir tres veces que no {{deity_pronoun:me|Me}} conoces»."
+        },
+        "fr": {
+          "L": "Jésus lui dit : « En vérité, je te le dis : cette nuit même, avant qu’un coq chante, tu {{deity_pronoun:me|Me}} renieras trois fois. »",
+          "B": "Jésus lui déclara : « En vérité, je te le dis, cette nuit même, avant que le coq chante, tu {{deity_pronoun:m’|M’}}auras renié trois fois. »",
+          "R": "Jésus lui a dit : « Je te le dis, c’est la vérité : cette nuit, avant que le coq chante, tu diras trois fois que tu ne {{deity_pronoun:me|Me}} connais pas. »"
+        },
+        "sw": {
+          "L": "Yesu akamwambia, \"Kweli nakuambia kwamba katika usiku huu, kabla ya jogoo kuwika, mara tatu utanikana.\"",
+          "B": "Yesu akamwambia, \"Kweli nakuambia, usiku huu huu utanikana mara tatu, kabla jogoo hajawika.\"",
+          "R": "Yesu akamwambia, \"Nakuambia ukweli: usiku wa leo, kabla jogoo hajawika, utasema mara tatu kwamba hunijui.\""
         }
       },
       "decisions": [
@@ -1772,6 +2572,27 @@
           "reason": "Readable says what the denial will be.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026034007"
+          ],
+          "choice": "je te le dis",
+          "alternatives": [
+            "je vous le dis"
+          ],
+          "reason": "As in Mark 14:30: Jesus speaks to Peter alone (the Greek has the singular), so the formula takes \"te\", following the rule of tu for one person.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1808,6 +2629,21 @@
           "L": "Peter says to {{deity_pronoun:him|Him}}, \"Even if I must die with {{deity_pronoun:you|You}}, I will by no means deny {{deity_pronoun:you|You}}.\"",
           "B": "But Peter insisted, \"I will never deny {{deity_pronoun:you|You}}, not even if it means dying with {{deity_pronoun:you|You}}!\"",
           "R": "Peter said, \"I will never say I do not know {{deity_pronoun:you|You}}! I will even die with {{deity_pronoun:you|You}} if I have to!\""
+        },
+        "es": {
+          "L": "Le dice Pedro: «Incluso si debo morir contigo, de ningún modo {{deity_pronoun:te|Te}} negaré».",
+          "B": "Pero Pedro insistió: «¡Jamás {{deity_pronoun:te|Te}} negaré, aunque tenga que morir contigo!».",
+          "R": "Pedro dijo: «¡Yo nunca diré que no {{deity_pronoun:te|Te}} conozco! ¡Hasta moriré contigo si hace falta!»."
+        },
+        "fr": {
+          "L": "Pierre {{deity_pronoun:lui|Lui}} dit : « Même s’il me faut mourir avec {{deity_pronoun:toi|Toi}}, non, je ne {{deity_pronoun:te|Te}} renierai pas. »",
+          "B": "Mais Pierre insista : « Je ne {{deity_pronoun:te|Te}} renierai jamais, même s’il me faut mourir avec {{deity_pronoun:toi|Toi}} ! »",
+          "R": "Pierre a dit : « Je ne dirai jamais que je ne {{deity_pronoun:te|Te}} connais pas ! Je mourrai même avec {{deity_pronoun:toi|Toi}}, s’il le faut ! »"
+        },
+        "sw": {
+          "L": "Petro anamwambia, \"Hata ikinipasa kufa pamoja {{deity_pronoun:nawe|Nawe}}, hakika sitakukana.\"",
+          "B": "Lakini Petro akasisitiza, \"Sitakukana kamwe, hata ikibidi nife pamoja {{deity_pronoun:nawe|Nawe}}!\"",
+          "R": "Petro akasema, \"Sitasema kamwe kwamba sikujui! Nitakufa hata pamoja {{deity_pronoun:nawe|Nawe}} ikibidi!\""
         }
       },
       "decisions": [
@@ -1905,6 +2741,21 @@
           "L": "Likewise all the disciples also said [so].",
           "B": "Every one of the disciples said the same.",
           "R": "All the other followers said the same thing."
+        },
+        "es": {
+          "L": "Del mismo modo dijeron también todos los discípulos.",
+          "B": "Y todos los discípulos dijeron lo mismo.",
+          "R": "Todos los demás seguidores dijeron lo mismo."
+        },
+        "fr": {
+          "L": "Et tous les disciples aussi dirent de même.",
+          "B": "Et tous les disciples dirent la même chose.",
+          "R": "Tous les autres disciples ont dit la même chose."
+        },
+        "sw": {
+          "L": "Na vivyo hivyo wanafunzi wote pia walisema.",
+          "B": "Kila mmoja wa wanafunzi alisema hivyo hivyo.",
+          "R": "Wanafunzi wengine wote nao walisema maneno hayo hayo."
         }
       },
       "decisions": [

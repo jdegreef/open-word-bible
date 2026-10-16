@@ -10,8 +10,24 @@ founder's Translation Charter disagree, the Charter wins; fix this file.
 **Status: proposed, awaiting a native Vietnamese reviewer.** Every
 Vietnamese record is `ai_draft`. The level names, the grammar labels in
 `owb/morph.py`, the forms of address and the key terms below are first
-proposals, and a reviewer is expected to change some of them. The biggest
-open question is the tradition the names and key terms follow (section 4).
+proposals, and a reviewer is expected to change some of them, except the
+choices listed under "Settled", which the founder has decided.
+
+## Settled
+
+Decided by the founder; a reviewer raises a change with the founder rather
+than making it.
+
+- **Tradition (October 2026).** Names and key terms follow the Protestant
+  tradition, for the whole Bible: Đức Chúa Trời (not Thiên Chúa), Giăng,
+  Phi-e-rơ, Đức Giê-xu, làm báp-têm, Y-sơ-ra-ên, các thầy tế lễ cả, nhà hội
+  and the other forms in sections 4 and 5. The John decisions that recorded
+  this as uncertain (1:1, 1:6, 1:25, 1:31, 1:42, 10:40, 11:47, 11:49, 12:42)
+  now say it is settled.
+- **The verb for Jesus speaking (October 2026).** *nói* at every level, as
+  for every other speaker, so the narrative stays modern and the three
+  levels agree; *phán* is kept for God speaking. Recorded in John 6:5, 6:26,
+  12:7 and 13:31.
 
 ## 1. Sources and independence
 
@@ -64,7 +80,7 @@ English bracketed "[the]" has no counterpart, and the aspect words *đã*,
 *đang*, *sẽ* are added only where the sense needs them, without brackets.
 Respect words that Vietnamese grammar requires in a form of address (*Đức*,
 *Ngài*, *thưa*) are not bracketed. Keep the historic present where the Greek
-has it ("Ngài phán", "ông nói") by leaving out *đã*.
+has it ("Ngài nói", "ông nói") by leaving out *đã*.
 
 **Balanced (OWB-B).** Careful standard modern Vietnamese, the register of a
 good public reading. Tracks the Greek closely; no brackets.
@@ -92,9 +108,8 @@ English Readable does, with a decision where the English has one.
   Xê-bê-đê, Cơ-lê-ô-pát, Bết-sai-đa, Ê-nôn, Sa-lim, Si-kha, Bê-tết-đa,
   Ép-ra-im, Ga-ba-tha, Sê-sa, Sa-lô-môn, Giu-đê, Giô-đanh, Đa-vít; peoples:
   người Do Thái, người Pha-ri-si, người Lê-vi, người Sa-ma-ri, người Hy Lạp,
-  người La Mã. A Catholic reviewer may prefer Gio-an, Phê-rô, Đức Giê-su,
-  Thiên Chúa; that is a book-wide change and is recorded as uncertain in
-  John 1:1 and 1:6.
+  người La Mã. Catholic forms (Gio-an, Phê-rô, Đức Giê-su, Thiên Chúa) are
+  not used: the tradition is settled (see "Settled").
 - Capitals: Đức Chúa Trời, Cha, Con, Đức Thánh Linh, Chúa (the Lord), Con
   Người, Chiên Con của Đức Chúa Trời, Kinh Thánh, Ngôi Lời. "luật pháp" (the
   Law) is lowercase, as "law" is in English.
@@ -107,7 +122,7 @@ English Readable does, with a decision where the English has one.
 
 | Greek (English) | Vietnamese | Notes |
 |---|---|---|
-| God | Đức Chúa Trời | Every level. *Thiên Chúa* is the Catholic word; see section 4. |
+| God | Đức Chúa Trời | Every level. Settled (Protestant tradition); *Thiên Chúa* is the Catholic word. |
 | Jesus | Đức Giê-xu | Every level. A bare name for a revered person is disrespectful in Vietnamese, so the honorific *Đức* is not bracketed even at Literal; one decision in 1:17 says so. |
 | the Word | **Ngôi Lời** | Every level. *Ngôi* marks a person, as John's Word is. |
 | grace | ân điển | Key term: the same word at every level. |
@@ -138,10 +153,10 @@ English Readable does, with a decision where the English has one.
 | Woman (2:4; 19:26) | Thưa bà (L); Mẹ ơi / Thưa mẹ (B, R) where it is his mother | Needs a decision where it first appears. |
 | temple (*hieron*; *naos*) | đền thờ (L), sân đền thờ (B, R); đền thờ | As `docs/john-terms.md`. |
 | "I am" (*egō eimi* with no predicate) | Ta là [Đấng Hằng Hữu] (L), Ta là Đấng Hằng Hữu (B, R), 8:24, 8:28, 13:19; Ta Hằng Hữu, 8:58; Ta đây, 6:20 and 18:5-8 | *là* cannot end a sentence. *Hằng Hữu* echoes God's name in Exodus 3:14. Uncertain. |
-| say (of Jesus) | nói | Every level; *phán* only for God speaking (1:33; 9:29; 12:28). Uncertain: many readers expect *phán* for Jesus. |
+| say (of Jesus) | nói | Every level; *phán* only for God speaking (1:33; 9:29; 12:28). Settled. |
 | life (*psychē*) | mạng sống | *sự sống* stays for *zōē*. |
 | prophet; the Prophet | nhà tiên tri; Đấng Tiên Tri | |
-| baptize | làm báp-têm | The Catholic *làm phép rửa* is the alternative. |
+| baptize | làm báp-têm | Settled (Protestant tradition); the Catholic word is *làm phép rửa*. |
 | commandment | điều răn | |
 | Passover; Sabbath; synagogue | Lễ Vượt Qua; ngày Sa-bát; nhà hội | |
 | chief priests; high priest | các thầy tế lễ cả; thầy tế lễ thượng phẩm | |
@@ -193,6 +208,27 @@ Settings change wording, never meaning, exactly as in English.
   French and Swahili: `{{units:3 km|mười lăm ếch-ta-đơ}}`. Literal keeps the
   original unit. This differs from the English (US units) and needs a
   rendering decision.
+
+## 7a. The Old Testament and poetry
+
+- **The divine name** (YHWH) is `{{divine_name:CHÚA|Gia-vê}}` at every
+  level, written in capitals like the English "the LORD", with its own
+  particles outside the span: `{{divine_name:CHÚA|Gia-vê}} là Đấng chăn giữ
+  tôi`. *Đức Giê-hô-va*, the older Protestant form, is not used: the
+  alternative gives the name as most scholars think it was said, as the
+  English "Yahweh" does. Where the Hebrew has *Adonai* ("Lord") it is
+  *Chúa*, never in capitals. *Elohim* is *Đức Chúa Trời*.
+- **Lines.** A psalm is set in lines, as `docs/english-style.md` section 10
+  describes: mark each break inside a verse with `\q `, following the
+  Hebrew accents' division (`python3 scripts/poetry_lines.py` prints it),
+  at every level. Vietnamese places its own breaks; a verse start is
+  always a line start.
+- **Titles.** A psalm's title is verse 1, as in the Hebrew: "Thi thiên của
+  Đa-vít" (B), "Bài ca của Đa-vít" (R); Literal keeps the Hebrew's words
+  ("[Một] thi thiên của Đa-vít").
+- **Addressing God.** The psalmist says *tôi* and speaks to God as *Ngài*
+  (`{{deity_pronoun:ngài|Ngài}}` in the middle of a sentence) or *Chúa*;
+  God speaking says *Ta*.
 
 ## 8. Status
 

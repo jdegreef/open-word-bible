@@ -13,7 +13,7 @@ from django.core.management import CommandError, call_command
 from django.test import TestCase
 
 from texts.models import Edition, Verse, Word
-from translation.models import Decision, ImportedFile, Rendering, ReviewEvent, Sentence
+from translation.models import ContentFile, Decision, Rendering, ReviewEvent, Sentence
 
 CONTENT = settings.REPO_ROOT / "content"
 
@@ -102,45 +102,46 @@ class ImportContentTest(TestCase):
         s.literal_gloss = "changed"
         s.save()
         s.renderings.update(text="changed")
-        import_content(*john)
+        import_content("--all", *john)
         self.assertEqual(dict(Sentence.objects.values_list("record_id", "id")), ids)
         self.assertEqual((Rendering.objects.count(), Decision.objects.count()), counts)
         s.refresh_from_db()
         self.assertNotEqual(s.literal_gloss, "changed")
         self.assertFalse(s.renderings.filter(text="changed").exists())
 
-    def test_changed_only_skips_files_unchanged_since_last_import(self):
-        # A deploy reloads only what changed: reloading all of content/ outgrew
-        # Render's 30-minute pre-deploy limit.
+    def test_reimport_skips_unchanged_files(self):
+        # A deploy imports only the files changed since the last import.
         john = content_files("JHN/JHN.1.1-18.json")
         import_content(*john)
-        s = Sentence.objects.get(record_id="JHN.1.12.s1")
-        s.renderings.update(text="changed")
+        Sentence.objects.filter(record_id="JHN.1.12.s1").update(literal_gloss="changed")
         out = io.StringIO()
-        import_content("--changed-only", *john, stdout=out)
-        self.assertIn("1 unchanged file(s) skipped", out.getvalue())
-        self.assertTrue(s.renderings.filter(text="changed").exists())
-        # A file whose bytes changed is reloaded.
-        data = json.loads((CONTENT / "JHN" / "JHN.1.1-18.json").read_text())
+        import_content(*john, stdout=out)
+        self.assertIn("0 records imported; 1 files unchanged", out.getvalue())
+        self.assertEqual(Sentence.objects.get(record_id="JHN.1.12.s1").literal_gloss, "changed")
+        # A changed file is imported again.
+        data = json.loads(Path(john[0]).read_text())
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / "JHN.1.1-18.json"
             path.write_text(json.dumps(data))
-            import_content("--changed-only", str(path))
-            s.renderings.update(text="changed")
+            import_content(str(path))
+            self.assertNotEqual(Sentence.objects.get(record_id="JHN.1.12.s1").literal_gloss, "changed")
+            Sentence.objects.filter(record_id="JHN.1.12.s1").update(literal_gloss="changed")
             data["records"][0]["literal_gloss"] += " (edited)"
             path.write_text(json.dumps(data))
-            import_content("--changed-only", str(path))
-        self.assertFalse(s.renderings.filter(text="changed").exists())
+            import_content(str(path))
+        self.assertNotEqual(Sentence.objects.get(record_id="JHN.1.12.s1").literal_gloss, "changed")
 
     def test_budget_leaves_the_rest_for_the_next_run(self):
+        # A deploy stops starting files after --budget seconds, so it finishes
+        # inside Render's 30-minute pre-deploy limit and the next one catches up.
         files = content_files("PHP/PHP.4.*.json", "JHN/JHN.1.*.json")
         self.assertGreater(len(files), 1)
         out = io.StringIO()
-        import_content("--changed-only", "--budget", "0", *files, stdout=out)
+        import_content("--budget", "0", *files, stdout=out)
         self.assertIn("file(s) left for the next run", out.getvalue())
         self.assertFalse(Sentence.objects.exists())
-        import_content("--changed-only", "--budget", "100000", *files)
-        self.assertEqual(ImportedFile.objects.count(), len(files))
+        import_content("--budget", "100000", *files)
+        self.assertEqual(ContentFile.objects.count(), len(files))
 
     def test_file_with_an_unknown_word_is_not_imported(self):
         data = json.loads((CONTENT / "JHN" / "JHN.1.1-18.json").read_text())
