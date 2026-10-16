@@ -153,6 +153,8 @@
     { id: "health", label: "Content health", area: "overview", group: "Progress" },
     { id: "jobs", label: "Drafting jobs", area: "jobs", group: "Progress" },
     { id: "verse", label: "Verse inspector", area: "overview", group: "Text" },
+    { id: "decisions", label: "Uncertain decisions", area: "overview", group: "Text" },
+    { id: "terms", label: "Key terms", area: "overview", group: "Text" },
     { id: "fixes", label: "Fix requests", area: "inbox", group: "Text" },
     { id: "inbox", label: "Reader inbox", area: "inbox", group: "Readers" },
     { id: "users", label: "Users", area: "users", group: "Readers" },
@@ -688,6 +690,74 @@
             h("td", null, f.language || "\u2014"), h("td", null, when(f.created_at)), h("td", null, f.assignees.join(", ") || "\u2014"));
         })) : empty("No open fix requests.")));
       return out;
+    });
+  };
+
+  // Uncertain decisions, filtered; each opens in the inspector, where a fix
+  // can be requested.
+  var DECISIONS = { layer: "", category: "", book: "", q: "", offset: 0 };
+  VIEWS.decisions = function () {
+    var f = DECISIONS;
+    var q = "?offset=" + f.offset + ["layer", "category", "book", "q"].map(function (k) {
+      return f[k] ? "&" + k + "=" + encodeURIComponent(f[k]) : "";
+    }).join("");
+    return api("/api/admin/decisions/" + q).then(function (d) {
+      function pick(id, label, options, key) {
+        var s = select(id, [["", label]].concat(options), f[key]);
+        s.setAttribute("aria-label", label);
+        s.addEventListener("change", function () {
+          f[key] = s.value; f.offset = 0;
+          if (key === "layer") { f.category = ""; f.book = ""; }
+          route();
+        });
+        return s;
+      }
+      var search = h("input", { type: "search", id: "decision-q", value: f.q, placeholder: "Words in the choice or reason", "aria-label": "Search decisions" });
+      var form = h("form", { class: "admin-toolbar", role: "search" },
+        pick("decision-layer", "Every layer", d.layers.map(function (l) { return [l.code, l.name + " (" + num(l.count) + ")"]; }), "layer"),
+        pick("decision-category", "Every category", d.categories.map(function (c) { return [c.code, c.code.replace(/_/g, " ") + " (" + num(c.count) + ")"]; }), "category"),
+        pick("decision-book", "Every book", d.books.map(function (b) { return [b.code, b.name + " (" + num(b.count) + ")"]; }), "book"),
+        search, h("button", { type: "submit", class: "admin-btn" }, "Search"));
+      form.addEventListener("submit", function (e) { e.preventDefault(); f.q = search.value.trim(); f.offset = 0; route(); });
+      var pager = h("div", { class: "admin-actions" });
+      if (d.offset > 0) pager.appendChild(h("button", { type: "button", class: "admin-btn", onclick: function () { f.offset = Math.max(0, d.offset - d.page); route(); } }, "\u2039 Earlier"));
+      if (d.offset + d.page < d.total) pager.appendChild(h("button", { type: "button", class: "admin-btn", onclick: function () { f.offset = d.offset + d.page; route(); } }, "Later \u203a"));
+      var names = {};
+      d.layers.forEach(function (l) { names[l.code] = l.name; });
+      return [head("Text", "Uncertain decisions", num(d.total) + " decisions the drafts mark uncertain" + (f.layer || f.category || f.book || f.q ? " match" : "") +
+        ", in Bible order. Open one in the inspector to read the sentence whole or request a fix."), form,
+        d.decisions.length ? h("div", { class: "admin-decisions" }, d.decisions.map(function (x) {
+          return h("div", { class: "admin-decision uncertain" },
+            h("p", null, h("a", { href: "#verse/" + x.verse }, x.label), " ", h("code", null, x.record + " " + x.key), " ",
+              h("span", { class: "admin-sub" }, (x.layer === "meaning" ? "meaning" : names[x.language] || x.language) + " \u00b7 " + x.category.replace(/_/g, " ") +
+                (x.levels.length ? " \u00b7 " + x.levels.join("") : "")), x.footnote ? [" ", pill("footnote", "info")] : null),
+            h("p", null, h("strong", null, x.choice), x.alternatives.length ? h("span", { class: "admin-sub" }, " not: " + x.alternatives.join("; ")) : null),
+            h("p", { class: "admin-sub" }, x.reason));
+        })) : empty("No decisions match."),
+        h("p", { class: "admin-sub" }, d.total ? "Showing " + num(d.offset + 1) + "\u2013" + num(d.offset + d.decisions.length) + " of " + num(d.total) + "." : ""),
+        pager];
+    });
+  };
+
+  // Key terms: the settled words, and where the drafts use them.
+  VIEWS.terms = function () {
+    return api("/api/admin/terms/").then(function (d) {
+      var rows = d.terms.map(function (t) {
+        var english = Array.isArray(t.english) ? t.english.join(", ") : Object.keys(t.english).map(function (lv) {
+          return lv + ": " + t.english[lv].join(", ");
+        }).join("; ");
+        return h("tr", null,
+          h("th", { scope: "row" }, h("span", { class: "admin-term", lang: t.language }, t.lemma), h("span", { class: "admin-sub" }, t.sense + " \u00b7 " + (t.language === "hbo" ? "H" : "G") + t.strong)),
+          h("td", null, english, h("span", { class: "admin-sub" }, t.note)),
+          h("td", { class: "admin-num" }, num(t.uses)),
+          h("td", { class: "admin-sub" }, d.languages.filter(function (l) { return l.code !== "en"; }).map(function (l) {
+            return l.code + " " + num(t.by_language[l.code]);
+          }).join(" \u00b7 ")),
+          h("td", { class: "admin-wrap" }, t.first.map(function (v) { return [h("a", { href: "#verse/" + v.verse }, v.label), " "]; }),
+            h("a", { href: SITE + "/terms/" + t.slug + "/", rel: "noopener" }, "All on the site")));
+      });
+      return [head("Text", "Key terms", "Greek and Hebrew words whose English is settled at every level (data/key_terms.json); owb.validate holds the English to them. Changing one is a change for every use, so it goes to the founder, not a single fix request."),
+        table(["Term", "English", ["Sentences", { class: "admin-num" }], "In other languages", "First uses"], rows)];
     });
   };
 

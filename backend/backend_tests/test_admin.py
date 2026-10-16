@@ -7,6 +7,7 @@ from unittest import mock
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.core import mail
+from django.core.cache import cache
 from django.core.management import CommandError, call_command
 from django.test import TestCase, override_settings
 from django.urls import get_resolver
@@ -18,7 +19,7 @@ from staff import jobs as staff_jobs
 from staff.models import AdminAction, Broadcast
 from staff.permissions import AREAS
 from staff.verses import covers
-from texts.models import Edition
+from texts.models import Edition, Word
 from translation.models import ContentFile, Decision, ImportRun, Rendering, Sentence
 
 SITE = "https://openwordbible.org"
@@ -484,3 +485,44 @@ class FixTest(AdminTestCase):
         # The inspector lists it.
         fixes = editor.get("/api/admin/verses/JHN.1.1/").json()["fixes"]
         self.assertEqual(fixes[0]["number"], 9)
+
+
+class TextTest(AdminTestCase):
+    def setUp(self):
+        super().setUp()
+        cache.clear()
+        self.a = sentence("JHN.1.1.s1", ("en", "fr"))
+        self.b = sentence("GEN.1.1.s1", ("en",))
+        for s, key, lang, cat, unc in ((self.a, "m1", "", "word_sense", True),
+                                       (self.a, "r-fr-1", "fr", "word_choice", True),
+                                       (self.b, "m1", "", "grammar", True), (self.b, "m2", "", "grammar", False)):
+            Decision.objects.create(sentence=s, key=key, order=0, layer="rendering" if lang else "meaning",
+                                    language=lang, category=cat, choice=f"choice {key}", reason=f"reason {s.book}",
+                                    uncertain=unc)
+
+    def test_uncertain_decisions_in_bible_order_with_filters(self):
+        data = self.admin.get("/api/admin/decisions/").json()
+        self.assertEqual(data["total"], 3)
+        self.assertEqual([x["record"] for x in data["decisions"]], ["GEN.1.1.s1", "JHN.1.1.s1", "JHN.1.1.s1"])
+        layers = {x["code"]: x["count"] for x in data["layers"]}
+        self.assertEqual((layers["meaning"], layers["fr"], layers["es"]), (2, 1, 0))
+        fr = self.admin.get("/api/admin/decisions/?layer=fr").json()
+        self.assertEqual([x["key"] for x in fr["decisions"]], ["r-fr-1"])
+        self.assertEqual(self.admin.get("/api/admin/decisions/?layer=meaning&category=grammar").json()["total"], 1)
+        self.assertEqual(self.admin.get("/api/admin/decisions/?book=jhn").json()["total"], 2)
+        self.assertEqual(self.admin.get("/api/admin/decisions/?q=reason GEN").json()["total"], 1)
+        self.assertEqual(self.admin.get("/api/admin/decisions/?all=1").json()["total"], 4)
+
+    def test_key_terms_count_their_uses(self):
+        edition = Edition.objects.get(code="sblgnt")
+        Word.objects.create(id="n43001001001", edition=edition, book="JHN", chapter=1, verse=1, position=1, seq=1,
+                            text="charis", strong="5485", lang="grc")
+        Sentence.objects.filter(id=self.a.id).update(tokens=["n43001001001"])
+        # A Hebrew word with the same number is not the Greek term.
+        Word.objects.create(id="o010010010011", edition=edition, book="GEN", chapter=1, verse=1, position=1, seq=2,
+                            text="x", strong="5485", lang="H")
+        Sentence.objects.filter(id=self.b.id).update(tokens=["o010010010011"])
+        grace = next(t for t in self.admin.get("/api/admin/terms/").json()["terms"] if t["slug"] == "grace")
+        self.assertEqual(grace["uses"], 1)
+        self.assertEqual((grace["by_language"]["fr"], grace["by_language"]["es"]), (1, 0))
+        self.assertEqual(grace["first"], [{"verse": "JHN.1.1", "label": "John 1:1"}])
