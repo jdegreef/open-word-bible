@@ -4,7 +4,8 @@ The site's static build already decides what search can find in each site
 language: search_documents in scripts/build_site.py lists every passage,
 sentence, note and article, with what the page needs to show each one.
 rebuild() stores those same documents here, so the site and the API never
-disagree about what exists. import_content calls it after every import.
+disagree about what exists. import_content calls it after every import; it
+rewrites only the entries whose documents changed (plan).
 
 Matching follows the language of each document's own text, not the
 site's: notes are written in English, and a sentence not yet translated is
@@ -18,6 +19,8 @@ forms, in the entry's own language only, or word for word as the start of a
 word (tsquery explains why). A "quoted phrase" matches word for word, in order.
 """
 import functools
+import hashlib
+import itertools
 import json
 import re
 import sys
@@ -96,7 +99,7 @@ def fields(doc):
     return doc["t"], doc["s"], doc["x"]
 
 
-ENTRY_COLUMNS = ("language", "kind", "position", "config", "title", "extra", "body", "doc")
+ENTRY_COLUMNS = ("language", "kind", "position", "sub", "config", "title", "extra", "body", "doc")
 
 
 def _copy(cursor, table, columns, rows):
@@ -107,50 +110,146 @@ def _copy(cursor, table, columns, rows):
             copy.write_row(row)
 
 
-@transaction.atomic
-def rebuild():
-    """Replace the search tables with the site's documents in every site
-    language. Returns {language: number of entries}."""
+def jsonb_text(value):
+    """value as Postgres prints it as jsonb (doc::text): keys shortest first,
+    then in byte order. key() hashes this, so a document built here can be
+    matched with the one already stored without sending it to the database."""
+    if isinstance(value, dict):
+        keys = sorted(value, key=lambda k: (len(k.encode()), k.encode()))
+        return "{" + ", ".join(f"{json.dumps(k, ensure_ascii=False)}: {jsonb_text(value[k])}"
+                               for k in keys) + "}"
+    if isinstance(value, list):
+        return "[" + ", ".join(jsonb_text(v) for v in value) + "]"
+    return json.dumps(value, ensure_ascii=False)
+
+
+# The same key, worked out by the database for the entries it holds. An
+# entry's title, extra, body and vector follow from its config and doc.
+KEY_SQL = "md5(config || doc::text)"
+
+
+def key(config_name, doc):
+    return hashlib.md5((config_name + jsonb_text(doc)).encode()).hexdigest()
+
+
+class Change(NamedTuple):
+    entries: int
+    added: int
+    removed: int
+
+
+def plan(old, new):
+    """Which entries to keep, and where the new ones go.
+
+    old: the stored entries as (id, position, sub, key), in order; new: the
+    documents' keys, in order. Returns (ids to delete, [(position, sub)] for
+    and [(index in new, position, sub)] for each document that is not kept),
+    or None when the new ones cannot be fitted between those kept.
+
+    An entry whose document is unchanged keeps its row, vector and place, so
+    a rebuild writes only what changed: computing the vectors is most of the
+    work, and on a small database a full rebuild takes longer than a deploy
+    may. The order is (position, sub): documents added after a kept entry at
+    (p, s) take (p, s + 1), (p, s + 2), ..., so nothing else moves."""
+    stored = {}
+    for row in old:
+        stored.setdefault(row[3], []).append(row)
+    kept, last = [], (-1, -1)
+    for i, k in enumerate(new):
+        # A key can repeat (two identical notes): match them in order. A
+        # stored entry that has moved behind one kept already is replaced.
+        rows = stored.get(k)
+        if rows and (rows[0][1], rows[0][2]) > last:
+            row = rows.pop(0)
+            kept.append((i, row))
+            last = (row[1], row[2])
+    keep_ids = {row[0] for _, row in kept}
+    delete = [row[0] for row in old if row[0] not in keep_ids]
+    places = []
+    bounds = [(-1, None)] + [(i, (row[1], row[2])) for i, row in kept] + [(len(new), None)]
+    for (i, before), (j, after) in itertools.pairwise(bounds):
+        count = j - i - 1
+        if not count:
+            continue
+        if before is None:
+            # Before the first entry kept: the position below it.
+            if after is not None and after[0] == 0:
+                return None
+            p = after[0] - 1 if after is not None else 0
+            places += [(i + 1 + n, p, n) for n in range(count)]
+        else:
+            p, s = before
+            if after is not None and after[0] == p and after[1] - s <= count:
+                return None
+            places += [(i + n, p, s + n) for n in range(1, count + 1)]
+    return delete, places
+
+
+def rebuild(full=False):
+    """Bring the search tables up to date with the site's documents in every
+    site language, rewriting only the entries whose documents changed (all
+    of them with full=True). Each language is a transaction of its own, so
+    a deploy stopped part way keeps the languages it finished, and the next
+    picks up from there. Returns {language: Change}."""
     site = site_build()
-    SearchEntry.objects.all().delete()
-    SearchWord.objects.all().delete()
-    SearchLanguage.objects.all().delete()
-    entries, words, counts = _table(), SearchWord._meta.db_table, {}
+    with transaction.atomic():
+        SearchLanguage.objects.exclude(code__in=site.LANGUAGES).delete()
+        SearchEntry.objects.exclude(language__in=site.LANGUAGES).delete()
+        SearchWord.objects.exclude(language__in=site.LANGUAGES).delete()
+    return {lang: _rebuild_language(site, lang, full) for lang in site.LANGUAGES}
+
+
+@transaction.atomic
+def _rebuild_language(site, lang, full):
+    data = site.search_documents(lang)
+    SearchLanguage.objects.update_or_create(code=lang, defaults=dict(books=data["books"], pages=data["pages"]))
+    docs = [(doc, config(doc.get("l", lang))) for doc in data["docs"]]
+    new = [key(c, doc) for doc, c in docs]
+    entries, words = _table(), SearchWord._meta.db_table
     with connection.cursor() as cursor:
-        # Entries go through a scratch table, so each row is written once,
-        # with its vector, rather than inserted and then updated.
+        cursor.execute(f"SELECT id, position, sub, {KEY_SQL} FROM {entries} "
+                       "WHERE language = %s ORDER BY position, sub", [lang])
+        old = cursor.fetchall()
+        # When the new documents don't fit between the ones kept (rare:
+        # one added before the first), every entry is replaced.
+        delete, places = (None if full else plan(old, new)) or (
+            [row[0] for row in old], [(i, i, 0) for i in range(len(new))])
+        if not delete and not places and SearchWord.objects.filter(language=lang).exists():
+            return Change(len(docs), 0, 0)
+        if delete:
+            cursor.execute(f"DELETE FROM {entries} WHERE id = ANY(%s)", [delete])
+        # New entries go through a scratch table, so each row is written
+        # once, with its vector, rather than inserted and then updated.
         cursor.execute("""CREATE TEMPORARY TABLE search_load (language text, kind text,
-            position integer, config text, title text, extra text, body text, doc jsonb)
+            position integer, sub integer, config text, title text, extra text, body text, doc jsonb)
             ON COMMIT DROP""")
-        for lang in site.LANGUAGES:
-            data = site.search_documents(lang)
-            SearchLanguage.objects.create(code=lang, books=data["books"], pages=data["pages"])
-            rows, found = [], Counter()
-            for position, doc in enumerate(data["docs"]):
-                title, extra, body = fields(doc)
-                rows.append((lang, doc["k"], position, config(doc.get("l", lang)),
-                             title, extra, body, json.dumps(doc, ensure_ascii=False)))
-                found.update(w for w in re.findall(r"[^\W\d_][\w']{2,62}", fold(f"{title} {extra} {body}")))
-            _copy(cursor, "search_load", ENTRY_COLUMNS, rows)
-            _copy(cursor, words, ("language", "word", "count"), ((lang, w, n) for w, n in found.items()))
-            counts[lang] = len(rows)
+        rows = []
+        for i, position, sub in places:
+            doc, c = docs[i]
+            rows.append((lang, doc["k"], position, sub, c, *fields(doc), json.dumps(doc, ensure_ascii=False)))
+        _copy(cursor, "search_load", ENTRY_COLUMNS, rows)
         cursor.execute(f"""INSERT INTO {entries} ({', '.join(ENTRY_COLUMNS)}, vector)
             SELECT {', '.join(ENTRY_COLUMNS)},
               setweight(to_tsvector(config::regconfig, title), 'A')
               || setweight(to_tsvector(config::regconfig, extra), 'B')
               || setweight(to_tsvector(config::regconfig, body), 'C')
               || setweight(to_tsvector('{SIMPLE}', concat_ws(' ', title, extra, body)), 'D')
-            FROM search_load ORDER BY language, position""")
+            FROM search_load ORDER BY position, sub""")
         # Dropped now as well as at commit: inside a test the transaction
         # never commits, and the next rebuild would find it still there.
         cursor.execute("DROP TABLE search_load")
+        found = Counter()
+        for doc, _ in docs:
+            found.update(w for w in re.findall(r"[^\W\d_][\w']{2,62}", fold(" ".join(fields(doc)))))
+        SearchWord.objects.filter(language=lang).delete()
+        _copy(cursor, words, ("language", "word", "count"), ((lang, w, n) for w, n in found.items()))
         # Fresh statistics for the planner. Without them it can take the
-        # tables for empty (after the delete above, or a vacuum that ran
-        # while they were) and plan a search that ranks every match once
-        # for every entry: hours instead of milliseconds.
+        # tables for empty (after a full rebuild's delete, or a vacuum that
+        # ran while they were) and plan a search that ranks every match
+        # once for every entry: hours instead of milliseconds.
         for model in (SearchEntry, SearchWord, SearchLanguage):
             cursor.execute(f"ANALYZE {model._meta.db_table}")
-    return counts
+    return Change(len(docs), len(rows), len(delete))
 
 
 # ---- Queries ------------------------------------------------------------
@@ -263,7 +362,7 @@ def best_of_each(lang, query, per):
     rows = _rows(f"""WITH q AS ({query.sql})
         SELECT h.doc, {_headline(query, "h")} FROM (
           SELECT e.doc, e.kind, e.config, e.body, row_number() OVER (
-            PARTITION BY e.kind ORDER BY ts_rank_cd(e.vector, {query.own()}) DESC, e.position) AS n
+            PARTITION BY e.kind ORDER BY ts_rank_cd(e.vector, {query.own()}) DESC, e.position, e.sub) AS n
           FROM {_table()} e, q WHERE e.language = %s AND {query.match}) h, q
         WHERE h.n <= %s ORDER BY h.kind = 'c' DESC, h.kind = 'v' DESC, h.kind = 'n' DESC, h.n""",
                  [*query.params, lang, per])
@@ -271,7 +370,7 @@ def best_of_each(lang, query, per):
 
 
 def page(lang, query, kind, offset, limit, sort):
-    order = "e.position" if sort == "order" else f"ts_rank_cd(e.vector, {query.own()}) DESC, e.position"
+    order = "e.position, e.sub" if sort == "order" else f"ts_rank_cd(e.vector, {query.own()}) DESC, e.position, e.sub"
     rows = _rows(f"""WITH q AS ({query.sql})
         SELECT e.doc, {_headline(query)} FROM {_table()} e, q
         WHERE e.language = %s AND e.kind = %s AND {query.match}
@@ -321,7 +420,7 @@ def sentences_for(ref, lang):
     the reference card, at the reader's own settings)."""
     shown = set(ref["shown"])
     docs = SearchEntry.objects.filter(language=lang, kind="v", doc__bk=ref["book"],
-                                      doc__c=ref["chapter"]).order_by("position").values_list("doc", flat=True)
+                                      doc__c=ref["chapter"]).order_by("position", "sub").values_list("doc", flat=True)
     return [d for d in docs if shown & set(d["vv"])]
 
 

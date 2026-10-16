@@ -28,6 +28,16 @@
           "L": "For the director. Of David. A psalm. {{divine_name:LORD|Yahweh}}, {{deity_pronoun:you|You}} have searched me, and {{deity_pronoun:you|You}} know [me].",
           "B": "For the music director. Of David. A psalm. {{divine_name:LORD|Yahweh}}, {{deity_pronoun:you|You}} have looked deep into me, and {{deity_pronoun:you|You}} know me.",
           "R": "For the leader of the music. A song of David. {{divine_name:LORD|Yahweh}}, {{deity_pronoun:you|You}} have looked deep inside me, and {{deity_pronoun:you|You}} know all about me."
+        },
+        "vi": {
+          "L": "Cho người chỉ huy [ban nhạc]. Của Đa-vít. [Một] thi thiên. \\q Lạy {{divine_name:CHÚA|Gia-vê}}, {{deity_pronoun:ngài|Ngài}} đã dò xét tôi, và {{deity_pronoun:ngài|Ngài}} biết [tôi].",
+          "B": "Cho nhạc trưởng. Thi thiên của Đa-vít. \\q Lạy {{divine_name:CHÚA|Gia-vê}}, {{deity_pronoun:ngài|Ngài}} đã dò xét thấu tôi, và {{deity_pronoun:ngài|Ngài}} biết tôi.",
+          "R": "Cho người hướng dẫn ban nhạc. Bài ca của Đa-vít. \\q Lạy {{divine_name:CHÚA|Gia-vê}}, {{deity_pronoun:ngài|Ngài}} đã nhìn thấu tận đáy lòng tôi, và {{deity_pronoun:ngài|Ngài}} biết mọi điều về tôi."
+        },
+        "ko": {
+          "L": "지휘자를 위하여. 다윗의 시. \\q {{divine_name:주|야훼}}여, 주님께서 저를 살피셨고, [저를] 아십니다.",
+          "B": "음악 지휘자를 위하여. 다윗의 시. \\q {{divine_name:주|야훼}}여, 주님께서는 제 속을 깊이 들여다보셨고, 저를 알고 계십니다.",
+          "R": "찬양 인도자를 위해 다윗이 지은 노래. \\q {{divine_name:주|야훼}}여, 주님께서는 제 마음속 깊은 곳까지 살펴보셔서 저에 대해 모든 것을 알고 계십니다."
         }
       },
       "decisions": [
@@ -112,6 +122,95 @@
           "reason": "Readable brings out how complete God's knowledge is (verses 2-4).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o191390010041",
+            "o191390010051"
+          ],
+          "choice": "\"Lạy CHÚA\" for the name called out to God, and \"Ngài\" for \"you\" through the psalm",
+          "alternatives": [
+            "the bare name \"CHÚA,\"",
+            "\"Chúa\" for \"you\""
+          ],
+          "reason": "Vietnamese calls on God with \"Lạy\", a word of address the grammar of prayer requires, so Literal does not bracket it. The singer speaks to God as \"Ngài\" with the deity_pronoun setting, as in Psalm 23:4.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o191390010012"
+          ],
+          "choice": "\"người chỉ huy [ban nhạc]\"",
+          "alternatives": [
+            "\"nhạc trưởng\" (as in Balanced)"
+          ],
+          "reason": "\"người chỉ huy\" alone would be any leader; the bracketed words say what he led, as the meaning decision explains.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o191390010041",
+            "o191390010051",
+            "o191390010062"
+          ],
+          "choice": "The whole psalm is spoken to God in 합쇼체; the singer is \"저/제\"; God is addressed by title, \"주님\" (주님께서, 주님의), and called by name with \"{{divine_name:주|야훼}}여\"",
+          "alternatives": [
+            "나 and 해라체",
+            "당신",
+            "주께서"
+          ],
+          "reason": "Style guide section 7a (speech levels in prayer). Korean addresses a superior by title, not by a pronoun. The vocative particle \"여\" stands outside the divine_name span and fits both forms (주여, 야훼여). There are no deity_pronoun spans in Korean (no capitals); respect is carried by 주님, 께서 and -시-.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191390010041"
+          ],
+          "choice": "YHWH is {{divine_name:주|야훼}} with the particle outside the span (verses 1, 4, 21)",
+          "alternatives": [
+            "여호와",
+            "주님"
+          ],
+          "reason": "As the style guide (section 7a). The second-person \"you\" is \"주님\", a title of address, not the divine name, so it has no span.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -147,6 +246,16 @@
           "L": "You know my sitting and my rising; {{deity_pronoun:you|You}} understand my thought from afar.",
           "B": "Whether I sit down or get up, {{deity_pronoun:you|You}} know it; even from far away {{deity_pronoun:you|You}} grasp what I am thinking.",
           "R": "Whether I sit down or stand up, {{deity_pronoun:you|You}} know it. Even from far away, {{deity_pronoun:you|You}} understand my thoughts."
+        },
+        "vi": {
+          "L": "Chính {{deity_pronoun:ngài|Ngài}} biết lúc tôi ngồi và lúc tôi đứng dậy; \\q {{deity_pronoun:ngài|Ngài}} hiểu ý nghĩ của tôi từ xa.",
+          "B": "Dù tôi ngồi xuống hay đứng lên, {{deity_pronoun:ngài|Ngài}} đều biết; \\q dù ở xa, {{deity_pronoun:ngài|Ngài}} vẫn thấu hiểu điều tôi đang nghĩ.",
+          "R": "Dù tôi ngồi xuống hay đứng dậy, {{deity_pronoun:ngài|Ngài}} đều biết. \\q Dù ở thật xa, {{deity_pronoun:ngài|Ngài}} vẫn hiểu những ý nghĩ của tôi."
+        },
+        "ko": {
+          "L": "바로 주님께서 제가 앉음과 제가 일어섬을 아시고, \\q 멀리서 제 생각을 깨달으십니다.",
+          "B": "제가 앉든지 일어서든지 주님께서는 아십니다. \\q 멀리 계셔도 제 생각을 꿰뚫어 보십니다.",
+          "R": "제가 앉을 때나 일어설 때나 주님께서는 다 아십니다. \\q 멀리서도 제 생각을 다 알아차리십니다."
         }
       },
       "decisions": [
@@ -244,6 +353,16 @@
           "L": "My traveling and my lying down {{deity_pronoun:you|You}} sift, and {{deity_pronoun:you|You}} are familiar with all my ways.",
           "B": "When I travel and when I lie down, {{deity_pronoun:you|You}} sift through it all; every path I take is well known to {{deity_pronoun:you|You}}.",
           "R": "You watch closely when I go out and when I lie down to rest. You know every path I take."
+        },
+        "vi": {
+          "L": "Lúc tôi đi đường và lúc tôi nằm, {{deity_pronoun:ngài|Ngài}} sàng xét, \\q và {{deity_pronoun:ngài|Ngài}} quen thuộc mọi đường lối của tôi.",
+          "B": "Khi tôi đi đường hay khi tôi nằm nghỉ, {{deity_pronoun:ngài|Ngài}} đều xem xét kỹ càng; \\q mọi nẻo đường tôi đi, {{deity_pronoun:ngài|Ngài}} đều biết rõ.",
+          "R": "Ngài theo dõi kỹ khi tôi ra ngoài và khi tôi nằm nghỉ. \\q Ngài biết mọi con đường tôi đi."
+        },
+        "ko": {
+          "L": "제가 길을 가는 것과 제가 눕는 것을 주님께서 키질하시고, \\q 제 모든 길을 잘 알고 계십니다.",
+          "B": "제가 길을 나설 때나 누울 때나 주님께서는 그 모두를 샅샅이 살피십니다. \\q 제가 가는 모든 길을 주님께서는 훤히 아십니다.",
+          "R": "제가 밖에 나갈 때도, 누워서 쉴 때도 주님께서는 저를 자세히 지켜보십니다. \\q 제가 가는 길을 주님께서는 하나하나 다 아십니다."
         }
       },
       "decisions": [
@@ -298,6 +417,25 @@
           "reason": "Readable gives the sense of the picture (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191390030031"
+          ],
+          "choice": "\"키질하시고\" (winnow, sift) at Literal",
+          "alternatives": [
+            "살피시고"
+          ],
+          "reason": "Literal keeps the Hebrew image of sifting grain; Balanced and Readable give its sense, examining closely (meaning decision).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -331,6 +469,16 @@
           "L": "For [there is] not a word on my tongue, [but] look, {{divine_name:LORD|Yahweh}}, {{deity_pronoun:you|You}} know it all.",
           "B": "No word is yet on my tongue, and already, {{divine_name:LORD|Yahweh}}, {{deity_pronoun:you|You}} know the whole of it.",
           "R": "{{divine_name:LORD|Yahweh}}, even before I say something, {{deity_pronoun:you|You}} know all that I am going to say."
+        },
+        "vi": {
+          "L": "Vì chưa có một lời nào trên lưỡi tôi, \\q [mà] kìa, lạy {{divine_name:CHÚA|Gia-vê}}, {{deity_pronoun:ngài|Ngài}} đã biết hết cả rồi.",
+          "B": "Lời chưa ra đến đầu lưỡi tôi, \\q thì lạy {{divine_name:CHÚA|Gia-vê}}, {{deity_pronoun:ngài|Ngài}} đã biết trọn cả rồi.",
+          "R": "Lạy {{divine_name:CHÚA|Gia-vê}}, ngay cả trước khi tôi nói ra, \\q {{deity_pronoun:ngài|Ngài}} đã biết hết những gì tôi sắp nói."
+        },
+        "ko": {
+          "L": "참으로 제 혀에 말이 [아직] 없는데도, \\q 보십시오, {{divine_name:주|야훼}}여, 주님께서는 그것을 다 아십니다.",
+          "B": "제 혀에 아직 말 한마디 오르지 않았는데도, \\q {{divine_name:주|야훼}}여, 주님께서는 벌써 그 모두를 아십니다.",
+          "R": "{{divine_name:주|야훼}}여, 제가 무슨 말을 하기도 전에 \\q 주님께서는 제가 할 말을 다 아십니다."
         }
       },
       "decisions": [
@@ -398,6 +546,16 @@
           "L": "Behind and before {{deity_pronoun:you|You}} enclose me, and {{deity_pronoun:you|You}} set {{deity_pronoun:your|Your}} palm on me.",
           "B": "You close me in from behind and from in front; {{deity_pronoun:you|You}} have placed {{deity_pronoun:your|Your}} hand on me.",
           "R": "You are all around me, behind me and in front of me. You keep {{deity_pronoun:your|Your}} hand on me."
+        },
+        "vi": {
+          "L": "Phía sau và phía trước {{deity_pronoun:ngài|Ngài}} vây bọc tôi, \\q và {{deity_pronoun:ngài|Ngài}} đặt bàn tay của {{deity_pronoun:ngài|Ngài}} trên tôi.",
+          "B": "Ngài vây quanh tôi cả phía sau lẫn phía trước; \\q {{deity_pronoun:ngài|Ngài}} đã đặt tay {{deity_pronoun:ngài|Ngài}} trên tôi.",
+          "R": "Ngài ở khắp quanh tôi, phía sau và phía trước. \\q Ngài luôn đặt tay {{deity_pronoun:ngài|Ngài}} trên tôi."
+        },
+        "ko": {
+          "L": "뒤에서와 앞에서 주님께서 저를 에워싸시고, \\q 제 위에 주님의 손바닥을 얹으십니다.",
+          "B": "주님께서 뒤에서도 앞에서도 저를 둘러싸시고, \\q 제게 주님의 손을 얹어 주셨습니다.",
+          "R": "주님께서는 제 뒤에도 앞에도 계셔서 저를 감싸 주십니다. \\q 주님의 손을 늘 제 위에 얹고 계십니다."
         }
       },
       "decisions": [
@@ -462,6 +620,16 @@
           "L": "[Such] knowledge [is] too wonderful for me; it is high; I am not able [to reach] it.",
           "B": "Knowledge like this is beyond me, too wonderful; it towers so high that I cannot reach it.",
           "R": "How well {{deity_pronoun:you|You}} know me is too wonderful for me. It is so far above me that I cannot understand it."
+        },
+        "vi": {
+          "L": "Sự hiểu biết [như thế] quá lạ lùng đối với tôi; \\q nó cao [vời], tôi không thể [vươn tới] nó.",
+          "B": "Sự hiểu biết như thế vượt quá sức tôi, thật quá diệu kỳ; \\q nó cao vời vợi đến nỗi tôi không thể nào với tới.",
+          "R": "Ngài biết tôi rõ đến thế, thật là điều quá kỳ diệu đối với tôi. \\q Điều đó cao hơn tôi rất xa, tôi không thể nào hiểu thấu."
+        },
+        "ko": {
+          "L": "[이런] 앎은 저에게 너무 놀랍습니다. \\q [그것은] 높아서 제가 [거기에] 이를 수 없습니다.",
+          "B": "이런 앎은 저에게 너무나 놀라워 감당할 수 없습니다. \\q 너무 높아서 제가 미칠 수 없습니다.",
+          "R": "주님께서 저를 이렇게 잘 아시는 것이 너무나 놀랍습니다. \\q 너무 높아서 저는 다 깨달을 수 없습니다."
         }
       },
       "decisions": [
@@ -544,6 +712,16 @@
           "L": "Where shall I go from {{deity_pronoun:your|Your}} Spirit, and where shall I flee from {{deity_pronoun:your|Your}} face?",
           "B": "Where could I go to get away from {{deity_pronoun:your|Your}} Spirit? Where could I run to escape {{deity_pronoun:your|Your}} presence?",
           "R": "Is there any place I could go to get away from {{deity_pronoun:your|Your}} Spirit? Where could I run to hide from {{deity_pronoun:you|You}}?"
+        },
+        "vi": {
+          "L": "Tôi sẽ đi đâu khỏi Thần Linh của {{deity_pronoun:ngài|Ngài}}, \\q và tôi sẽ trốn đâu khỏi mặt {{deity_pronoun:ngài|Ngài}}?",
+          "B": "Tôi có thể đi đâu để tránh khỏi Thần Linh của {{deity_pronoun:ngài|Ngài}}? \\q Tôi có thể chạy trốn đâu cho khỏi sự hiện diện của {{deity_pronoun:ngài|Ngài}}?",
+          "R": "Có nơi nào tôi đi mà tránh được Thần Linh của {{deity_pronoun:ngài|Ngài}} không? \\q Tôi có thể chạy đi đâu để trốn {{deity_pronoun:ngài|Ngài}}?"
+        },
+        "ko": {
+          "L": "제가 주님의 영을 떠나 어디로 가겠습니까? \\q 주님의 얼굴을 피해 어디로 도망하겠습니까?",
+          "B": "제가 어디로 가야 주님의 영을 벗어날 수 있겠습니까? \\q 어디로 달아나야 주님 앞을 피할 수 있겠습니까?",
+          "R": "제가 어디에 가야 주님의 영을 피할 수 있겠습니까? \\q 어디로 달아나야 주님을 피해 숨을 수 있겠습니까?"
         }
       },
       "decisions": [
@@ -609,6 +787,28 @@
           "reason": "Balanced and Readable give the sense of the idiom (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191390070032"
+          ],
+          "choice": "\"Thần Linh của Ngài\" (your Spirit), capitalised",
+          "alternatives": [
+            "\"Đức Thánh Linh\"",
+            "\"Thần của Ngài\""
+          ],
+          "reason": "The meaning decision takes \"your Spirit\" as God himself, present everywhere. The Hebrew does not say \"holy\", so \"Đức Thánh Linh\" would add a word; \"Thần Linh\" with a capital names God's Spirit without it, and is plainer than the older \"Thần Ngài\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -641,6 +841,16 @@
           "L": "If I climb [to the] heavens, there {{deity_pronoun:you|You}} [are]; and [if] I lay out my bed [in] Sheol, here {{deity_pronoun:you|You}} [are]!",
           "B": "Should I climb up to the heavens, {{deity_pronoun:you|You}} are there; should I lie down in Sheol, there {{deity_pronoun:you|You}} are as well.",
           "R": "If I could climb up into the sky, I would find {{deity_pronoun:you|You}} there. If I lay down in the place of the dead, {{deity_pronoun:you|You}} would be there too."
+        },
+        "vi": {
+          "L": "Nếu tôi lên [đến] các tầng trời, {{deity_pronoun:ngài|Ngài}} [ở] đó; \\q và [nếu] tôi trải giường [mình] [nơi] Âm Phủ, kìa, {{deity_pronoun:ngài|Ngài}} [ở đó]!",
+          "B": "Nếu tôi lên đến các tầng trời, {{deity_pronoun:ngài|Ngài}} ở đó; \\q nếu tôi nằm xuống nơi Âm Phủ, {{deity_pronoun:ngài|Ngài}} cũng ở đó.",
+          "R": "Nếu tôi có thể trèo lên tận bầu trời, tôi sẽ gặp {{deity_pronoun:ngài|Ngài}} ở đó. \\q Nếu tôi nằm xuống nơi của người chết, {{deity_pronoun:ngài|Ngài}} cũng ở đó."
+        },
+        "ko": {
+          "L": "제가 하늘로 올라가도 주님께서 거기 [계시고], \\q 제가 스올에 침상을 펴도, 보십시오, 주님께서 [계십니다]!",
+          "B": "제가 하늘로 올라간다 해도 주님께서는 거기에 계시고, \\q 스올에 눕는다 해도 주님께서는 거기에도 계십니다.",
+          "R": "제가 하늘 위로 올라가도 주님께서 거기 계실 것입니다. \\q 제가 죽은 사람들이 있는 곳에 눕는다 해도 주님께서 거기에도 계실 것입니다."
         }
       },
       "decisions": [
@@ -707,6 +917,49 @@
           "reason": "Readable says what Sheol is (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191390080071"
+          ],
+          "choice": "\"Âm Phủ\" for Sheol (L, B); \"nơi của người chết\" (R)",
+          "alternatives": [
+            "\"Sê-ôn\"",
+            "\"âm ty\""
+          ],
+          "reason": "\"Âm Phủ\" is the word Vietnamese Bible readers know for the place of the dead; a transliteration of Sheol would mean nothing to most. Readable says what it is, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191390080071"
+          ],
+          "choice": "\"스올\" (Sheol) at Literal and Balanced",
+          "alternatives": [
+            "음부",
+            "무덤",
+            "지옥"
+          ],
+          "reason": "The name is kept, as the English keeps \"Sheol\"; \"음부\" is an older church word few readers know, \"무덤\" is one grave, and \"지옥\" (hell) says a place of punishment, which the word does not mean here. Readable says \"죽은 사람들이 있는 곳\" (the place of the dead).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -736,6 +989,16 @@
           "L": "[If] I lift up [the] wings of [the] dawn, [if] I settle at the far end of the sea,",
           "B": "If I take flight on the wings of the dawn and go to live beyond the farthest sea,",
           "R": "I might fly off to the east, where the sun comes up, or go to live far across the sea in the west."
+        },
+        "vi": {
+          "L": "[Nếu] tôi cất [lên] đôi cánh của rạng đông, \\q [nếu] tôi cư ngụ nơi tận cùng của biển,",
+          "B": "Nếu tôi bay trên đôi cánh của bình minh \\q và đến sống bên kia biển xa nhất,",
+          "R": "Có thể tôi bay về phía đông, nơi mặt trời mọc, \\q hoặc đến sống thật xa bên kia biển, ở phía tây."
+        },
+        "ko": {
+          "L": "제가 새벽의 날개를 들어 올려, \\q 바다 맨 끝에 자리 잡는다 해도,",
+          "B": "제가 새벽의 날개를 타고 날아올라 \\q 가장 먼 바다 건너편에 가서 산다 해도,",
+          "R": "제가 해가 뜨는 동쪽 끝으로 날아갈 수도 있고, \\q 서쪽 바다 건너 먼 곳에 가서 살 수도 있을 것입니다."
         }
       },
       "decisions": [
@@ -824,6 +1087,16 @@
           "L": "also there {{deity_pronoun:your|Your}} hand will lead me, and {{deity_pronoun:your|Your}} right hand will seize me.",
           "B": "there too {{deity_pronoun:your|Your}} hand would be leading me, and {{deity_pronoun:your|Your}} right hand would take hold of me.",
           "R": "Even there {{deity_pronoun:you|You}} would lead me by the hand. Your strong right hand would hold on to me."
+        },
+        "vi": {
+          "L": "thì ngay cả ở đó tay {{deity_pronoun:ngài|Ngài}} sẽ dẫn tôi, \\q và tay phải {{deity_pronoun:ngài|Ngài}} sẽ nắm lấy tôi.",
+          "B": "thì ngay tại đó tay {{deity_pronoun:ngài|Ngài}} cũng sẽ dẫn dắt tôi, \\q và tay phải {{deity_pronoun:ngài|Ngài}} sẽ nắm giữ tôi.",
+          "R": "Ngay cả ở đó, {{deity_pronoun:ngài|Ngài}} vẫn sẽ nắm tay dẫn tôi đi. \\q Bàn tay phải mạnh mẽ của {{deity_pronoun:ngài|Ngài}} sẽ giữ chặt lấy tôi."
+        },
+        "ko": {
+          "L": "또한 거기에서 주님의 손이 저를 이끄시고, \\q 주님의 오른손이 저를 움켜잡으실 것입니다.",
+          "B": "거기서도 주님께서 손수 저를 이끌고 계시고, \\q 오른손으로 저를 꼭 붙잡고 계실 것입니다.",
+          "R": "그래도 거기서 주님께서는 제 손을 잡고 이끄실 것입니다. \\q 주님의 힘센 오른손이 저를 꼭 붙들어 주실 것입니다."
         }
       },
       "decisions": [
@@ -889,6 +1162,16 @@
           "L": "And [if] I say, surely darkness will crush me, and [the] light around me [will be] night,",
           "B": "If I tell myself that the darkness will surely overwhelm me and the light around me will turn to night,",
           "R": "I might think that the darkness will swallow me up and the light around me will become night."
+        },
+        "vi": {
+          "L": "Và [nếu] tôi nói: chắc chắn bóng tối sẽ đè bẹp tôi, \\q và ánh sáng quanh tôi [sẽ thành] đêm,",
+          "B": "Nếu tôi tự nhủ rằng bóng tối chắc chắn sẽ nhận chìm tôi, \\q và ánh sáng quanh tôi sẽ hóa thành đêm,",
+          "R": "Có thể tôi nghĩ rằng bóng tối sẽ nuốt chửng tôi, \\q và ánh sáng quanh tôi sẽ trở thành đêm."
+        },
+        "ko": {
+          "L": "또 제가 정녕 어둠이 저를 짓누를 것이요 \\q 제 주위의 빛이 밤이 될 것이라고 말한다 해도,",
+          "B": "제가 어둠이 틀림없이 저를 덮쳐 버리고 \\q 제 주위의 빛이 밤으로 바뀔 것이라고 혼잣말을 한다 해도,",
+          "R": "어둠이 저를 삼켜 버리고 \\q 제 주위의 빛이 밤이 될 거라고 생각할 때도 있을 것입니다."
         }
       },
       "decisions": [
@@ -942,6 +1225,27 @@
           "reason": "Balanced and Readable give the sense of the conditional (m2) and report the thought without quotation marks, since these are the singer's own words.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o191390110012"
+          ],
+          "choice": "The singer's words are reported indirectly (\"...라고 말한다 해도\"), with no quotation marks",
+          "alternatives": [
+            "a direct quotation with 나"
+          ],
+          "reason": "Korean puts the verb of saying after the words said; a direct quotation would make the singer call himself \"나\" inside a prayer that otherwise says \"저\". Reported speech keeps \"저\" throughout.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -979,6 +1283,16 @@
           "L": "even darkness does not darken [anything] from {{deity_pronoun:you|You}}, and night shines like the day; darkness [is] like light.",
           "B": "even the darkness hides nothing from {{deity_pronoun:you|You}}; night shines as bright as day, and dark and light are the same to {{deity_pronoun:you|You}}.",
           "R": "But even darkness cannot hide anything from {{deity_pronoun:you|You}}. For {{deity_pronoun:you|You}}, night is as bright as day. Darkness and light are the same to {{deity_pronoun:you|You}}."
+        },
+        "vi": {
+          "L": "thì ngay cả bóng tối cũng không tối đối với {{deity_pronoun:ngài|Ngài}}, \\q và đêm chiếu sáng như ngày; \\q bóng tối [cũng] như ánh sáng.",
+          "B": "thì ngay cả bóng tối cũng chẳng che giấu được gì khỏi {{deity_pronoun:ngài|Ngài}}; \\q đêm sáng rực như ngày, \\q và tối hay sáng đối với {{deity_pronoun:ngài|Ngài}} đều như nhau.",
+          "R": "Nhưng ngay cả bóng tối cũng không thể che giấu điều gì khỏi {{deity_pronoun:ngài|Ngài}}. \\q Với {{deity_pronoun:ngài|Ngài}}, đêm cũng sáng như ngày. \\q Bóng tối và ánh sáng đối với {{deity_pronoun:ngài|Ngài}} đều như nhau."
+        },
+        "ko": {
+          "L": "어둠조차 주님 앞에서는 [아무것도] 어둡게 하지 못하고, \\q 밤이 낮처럼 빛나니, \\q 어둠이 빛과 같습니다.",
+          "B": "어둠도 주님께는 아무것도 감추지 못하고, \\q 밤도 낮처럼 환하게 빛나니, \\q 주님께는 어둠과 빛이 다르지 않습니다.",
+          "R": "그러나 어둠도 주님께는 아무것도 숨기지 못합니다. \\q 주님께는 밤도 낮처럼 환합니다. \\q 어둠과 빛이 주님께는 똑같습니다."
         }
       },
       "decisions": [
@@ -1063,6 +1377,16 @@
           "L": "For {{deity_pronoun:you|You}} created my kidneys; {{deity_pronoun:you|You}} wove me together in the womb of my mother.",
           "B": "It was {{deity_pronoun:you|You}} who made the deepest parts of me; {{deity_pronoun:you|You}} wove my body together while I was still in my mother's womb.",
           "R": "You made my inner self. You formed me piece by piece inside my mother's body."
+        },
+        "vi": {
+          "L": "Vì {{deity_pronoun:ngài|Ngài}} đã tạo nên thận tôi; \\q {{deity_pronoun:ngài|Ngài}} đã dệt tôi trong lòng mẹ tôi.",
+          "B": "Chính {{deity_pronoun:ngài|Ngài}} đã tạo nên những phần sâu kín nhất trong tôi; \\q {{deity_pronoun:ngài|Ngài}} đã dệt nên thân thể tôi khi tôi còn trong lòng mẹ.",
+          "R": "Ngài đã tạo nên con người bên trong của tôi. \\q Ngài đã nắn nên tôi từng chút một trong bụng mẹ."
+        },
+        "ko": {
+          "L": "참으로 주님께서 제 콩팥을 지으셨고, \\q 제 어머니의 태 속에서 저를 엮으셨습니다.",
+          "B": "제 몸 가장 깊은 곳을 지으신 분은 바로 주님이십니다. \\q 제가 아직 어머니 태 속에 있을 때 주님께서 제 몸을 짜 맞추셨습니다.",
+          "R": "주님께서 제 속사람을 만드셨습니다. \\q 어머니 배 속에서 저를 하나하나 빚어 만드셨습니다."
         }
       },
       "decisions": [
@@ -1148,6 +1472,26 @@
           "reason": "Readable says what the kidneys stand for (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191390130041"
+          ],
+          "choice": "\"thận tôi\" (my kidneys) at Literal",
+          "alternatives": [
+            "\"lòng dạ tôi\"",
+            "\"tâm can tôi\""
+          ],
+          "reason": "Literal keeps the body word so the reader sees the Hebrew picture; Vietnamese also speaks of the inner self through organs (\"ruột gan\", \"tâm can\"), so the image is not foreign. Balanced and Readable give the sense, the inmost self.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1184,6 +1528,16 @@
           "L": "I will give {{deity_pronoun:you|You}} thanks, because I am made awesomely [and] wonderfully; wonderful [are] {{deity_pronoun:your|Your}} works, and my soul knows [it] very well.",
           "B": "I give {{deity_pronoun:you|You}} thanks, for the way I was made is awe-inspiring and marvelous. What {{deity_pronoun:you|You}} make is wonderful, and deep within I know it well.",
           "R": "I thank {{deity_pronoun:you|You}} because {{deity_pronoun:you|You}} made me in such an amazing and wonderful way. Everything {{deity_pronoun:you|You}} make is wonderful. I am completely sure of that."
+        },
+        "vi": {
+          "L": "Tôi sẽ cảm tạ {{deity_pronoun:ngài|Ngài}}, vì tôi được làm nên một cách đáng kính sợ [và] lạ lùng; \\q các công việc của {{deity_pronoun:ngài|Ngài}} [thật] lạ lùng, \\q và linh hồn tôi biết [điều đó] rất rõ.",
+          "B": "Tôi cảm tạ {{deity_pronoun:ngài|Ngài}}, vì cách tôi được tạo nên thật đáng kinh ngạc và diệu kỳ. \\q Những gì {{deity_pronoun:ngài|Ngài}} làm đều tuyệt diệu, \\q và tận sâu trong lòng, tôi biết rõ điều đó.",
+          "R": "Tôi cảm tạ {{deity_pronoun:ngài|Ngài}} vì {{deity_pronoun:ngài|Ngài}} đã tạo nên tôi thật lạ lùng và tuyệt vời. \\q Mọi điều {{deity_pronoun:ngài|Ngài}} làm đều tuyệt vời. \\q Tôi hoàn toàn chắc chắn về điều đó."
+        },
+        "ko": {
+          "L": "제가 주님께 감사드리겠습니다. 제가 두렵고 놀랍게 지음 받았기 때문입니다. \\q 주님께서 하신 일들이 놀라우니, \\q 제 영혼이 [그것을] 매우 잘 압니다.",
+          "B": "제가 주님께 감사드립니다. 제가 지음 받은 모습이 경이롭고 놀랍기 때문입니다. \\q 주님께서 만드신 것은 놀랍습니다. \\q 저는 마음 깊이 그것을 잘 압니다.",
+          "R": "주님께서 저를 이토록 놀랍고 신기하게 만드셨으니 감사드립니다. \\q 주님께서 만드신 것은 모두 놀랍습니다. \\q 저는 그것을 확실히 압니다."
         }
       },
       "decisions": [
@@ -1271,6 +1625,27 @@
           "reason": "Readable names the maker, as verse 13 does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o191390140011"
+          ],
+          "choice": "\"cảm tạ\" at every level",
+          "alternatives": [
+            "\"cảm ơn\" (R)"
+          ],
+          "reason": "\"cảm tạ\" is the respectful word for thanking God and is still everyday church language; \"cảm ơn\" would sound casual toward God even at Readable.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1307,6 +1682,16 @@
           "L": "My bones were not hidden from {{deity_pronoun:you|You}} when I was made in the hidden [place], woven in [the] lowest [parts] of [the] earth.",
           "B": "Not one of my bones was hidden from {{deity_pronoun:you|You}} as I was being formed out of sight, worked like fine embroidery deep within the earth.",
           "R": "You could see my bones while I was being made in secret. It was as if I were being woven together deep down in the earth."
+        },
+        "vi": {
+          "L": "Xương cốt tôi không bị giấu khỏi {{deity_pronoun:ngài|Ngài}} \\q khi tôi được làm nên trong [nơi] kín, \\q được dệt trong những [phần] thấp nhất của đất.",
+          "B": "Không một đốt xương nào của tôi bị giấu khỏi {{deity_pronoun:ngài|Ngài}} \\q khi tôi đang được hình thành nơi kín đáo, \\q được kết dệt tinh xảo như thêu nơi sâu thẳm của lòng đất.",
+          "R": "Ngài thấy rõ xương cốt tôi \\q khi tôi đang được tạo nên trong nơi kín. \\q Như thể tôi được dệt nên ở tận sâu dưới lòng đất."
+        },
+        "ko": {
+          "L": "제 뼈가 주님께 숨겨지지 않았습니다, \\q 제가 은밀한 곳에서 지음 받을 때, \\q 땅 가장 낮은 곳에서 수놓아지듯 짜일 때에.",
+          "B": "제 뼈 하나도 주님께 감추어진 것이 없었습니다. \\q 제가 보이지 않는 곳에서 지어지고 \\q 땅 깊은 곳에서 고운 수를 놓듯 짜일 때에도 그러했습니다.",
+          "R": "제가 남모르는 곳에서 만들어지고 있을 때에도 \\q 주님께서는 제 뼈를 보실 수 있었습니다. \\q 마치 땅속 깊은 곳에서 제가 짜이는 것 같았습니다."
         }
       },
       "decisions": [
@@ -1374,6 +1759,26 @@
           "reason": "Readable marks the depths of the earth as a picture (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o191390150011",
+            "o191390150041"
+          ],
+          "choice": "The two \"when\" clauses follow the main clause (\"..., 제가 ... 지음 받을 때, ... 짜일 때에\")",
+          "alternatives": [
+            "제가 ... 짜일 때에도 제 뼈가 주님께 숨겨지지 않았습니다"
+          ],
+          "reason": "Korean normally puts a time clause first; Literal places it after, as poetry allows, so the three lines keep the Hebrew's three cola in order. \"수놓아지듯\" gives the verb's sense of embroidered work (meaning decision).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1416,6 +1821,16 @@
           "L": "My unformed body {{deity_pronoun:your|Your}} eyes saw, and in {{deity_pronoun:your|Your}} book all of them were written, [the] days [that] were formed, and for it one among them.",
           "B": "Your eyes saw me while I was still unshaped; in {{deity_pronoun:your|Your}} book they were all written down, the days that were shaped for me, each one of them set in place.",
           "R": "You saw me before my body had taken shape. Every day planned for me was written in {{deity_pronoun:your|Your}} book, each one of them."
+        },
+        "vi": {
+          "L": "Thân thể chưa thành hình của tôi, mắt {{deity_pronoun:ngài|Ngài}} đã thấy, và trong sách của {{deity_pronoun:ngài|Ngài}} tất cả chúng đều được ghi chép, \\q những ngày đã được nắn nên, \\q và cho nó một trong số chúng.",
+          "B": "Mắt {{deity_pronoun:ngài|Ngài}} đã thấy tôi khi tôi còn chưa thành hình; trong sách của {{deity_pronoun:ngài|Ngài}} tất cả đều đã được ghi chép: \\q những ngày đã được định sẵn cho tôi, \\q từng ngày đều được sắp đặt.",
+          "R": "Ngài đã thấy tôi trước khi thân thể tôi thành hình. \\q Mọi ngày đã định cho đời tôi đều được ghi trong sách của {{deity_pronoun:ngài|Ngài}}, \\q từng ngày một."
+        },
+        "ko": {
+          "L": "아직 형체를 갖추지 못한 저를 주님의 눈이 보셨고, 주님의 책에 그것들이 모두 기록되었습니다. \\q [그] 날들이 지어졌고, \\q 그것을 위해 그 가운데 하나하나가 [있었습니다].",
+          "B": "제가 아직 형체를 갖추기도 전에 주님의 눈은 저를 보셨습니다. 주님의 책에는 그 모든 날이 적혀 있었습니다. \\q 저를 위해 지어진 날들, \\q 그 하나하나가 다 정해져 있었습니다.",
+          "R": "제 몸이 아직 모양을 갖추기도 전에 주님께서는 저를 보셨습니다. \\q 저를 위해 계획하신 날들이 하나하나 다 \\q 주님의 책에 적혀 있었습니다."
         }
       },
       "decisions": [
@@ -1504,6 +1919,27 @@
           "reason": "Balanced and Readable give the read form's sense, that every one of the days was assigned (m3).",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o191390160111",
+            "o191390160112",
+            "o191390160113"
+          ],
+          "choice": "\"그것을 위해 그 가운데 하나하나가 [있었습니다]\"",
+          "alternatives": [
+            "그 가운데 하나도 [있기 전에]"
+          ],
+          "reason": "Literal follows the form to be read, as the English does (meaning decision m3); \"하나하나\" (each one) gives the distributive sense the Korean needs, and the verb is supplied in brackets.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1538,6 +1974,16 @@
           "L": "And to me, how precious [are] {{deity_pronoun:your|Your}} thoughts, God! How great are their totals!",
           "B": "God, how I treasure {{deity_pronoun:your|Your}} thoughts! How immense their number is!",
           "R": "God, I treasure {{deity_pronoun:your|Your}} thoughts. There are so very many of them!"
+        },
+        "vi": {
+          "L": "Và đối với tôi, các tư tưởng của {{deity_pronoun:ngài|Ngài}} quý báu biết bao, lạy Đức Chúa Trời! \\q Tổng số của chúng lớn biết bao!",
+          "B": "Lạy Đức Chúa Trời, tôi quý trọng các tư tưởng của {{deity_pronoun:ngài|Ngài}} biết bao! \\q Số lượng của chúng thật vô cùng!",
+          "R": "Lạy Đức Chúa Trời, tôi rất quý những ý nghĩ của {{deity_pronoun:ngài|Ngài}}. \\q Chúng nhiều vô kể!"
+        },
+        "ko": {
+          "L": "그리고 제게는, 하나님, 주님의 생각들이 얼마나 귀합니까! \\q 그것들의 합이 얼마나 큽니까!",
+          "B": "하나님, 주님의 생각들을 저는 참으로 귀하게 여깁니다. \\q 그 수가 어찌 그리 많습니까!",
+          "R": "하나님, 저는 주님의 생각들을 소중히 여깁니다. \\q 그 생각들은 정말 많고도 많습니다!"
         }
       },
       "decisions": [
@@ -1618,6 +2064,16 @@
           "L": "[If] I count them, they are more numerous than sand; I awake, and I [am] still with {{deity_pronoun:you|You}}.",
           "B": "Should I try to count them, they would outnumber the sand. I wake up, and I am with {{deity_pronoun:you|You}} still.",
           "R": "If I tried to count them, there would be more of them than grains of sand. When I wake up, I am with {{deity_pronoun:you|You}} still."
+        },
+        "vi": {
+          "L": "[Nếu] tôi đếm chúng, chúng nhiều hơn cát; \\q tôi thức dậy, và tôi vẫn [ở] với {{deity_pronoun:ngài|Ngài}}.",
+          "B": "Nếu tôi thử đếm, chúng sẽ nhiều hơn cát. \\q Khi tôi thức dậy, tôi vẫn ở cùng {{deity_pronoun:ngài|Ngài}}.",
+          "R": "Nếu tôi thử đếm, chúng còn nhiều hơn những hạt cát. \\q Khi tôi thức dậy, tôi vẫn ở với {{deity_pronoun:ngài|Ngài}}."
+        },
+        "ko": {
+          "L": "제가 그것들을 세어 보면, 모래보다 많습니다. \\q 제가 깨어나도 저는 여전히 주님과 함께 있습니다.",
+          "B": "그것들을 세어 보려 해도 모래알보다 많을 것입니다. \\q 제가 잠에서 깨어 보면 저는 여전히 주님과 함께 있습니다.",
+          "R": "그것을 세어 보려고 하면 모래알보다도 더 많을 것입니다. \\q 제가 잠에서 깨어나도 저는 여전히 주님 곁에 있습니다."
         }
       },
       "decisions": [
@@ -1682,6 +2138,16 @@
           "L": "If only {{deity_pronoun:you|You}} would kill the wicked, God! And {{gender:people|men}} of bloodshed, depart from me,",
           "B": "God, if only {{deity_pronoun:you|You}} would put the wicked to death! Murderers, get away from me,",
           "R": "God, I wish {{deity_pronoun:you|You}} would kill wicked people! Murderers, get away from me!"
+        },
+        "vi": {
+          "L": "Ước gì {{deity_pronoun:ngài|Ngài}} giết kẻ ác, lạy Đức Chúa Trời! \\q Và hỡi những kẻ đổ máu, hãy lìa xa tôi,",
+          "B": "Lạy Đức Chúa Trời, ước gì {{deity_pronoun:ngài|Ngài}} trừ diệt kẻ ác! \\q Hỡi những kẻ giết người, hãy tránh xa tôi,",
+          "R": "Lạy Đức Chúa Trời, tôi mong {{deity_pronoun:ngài|Ngài}} giết những kẻ gian ác! \\q Hỡi những kẻ giết người, hãy tránh xa tôi!"
+        },
+        "ko": {
+          "L": "하나님, 주님께서 악인을 죽이시기만 한다면! \\q 피의 사람들아, 내게서 물러가라!",
+          "B": "하나님, 주님께서 악인들을 죽여 주신다면 얼마나 좋겠습니까! \\q 살인자들아, 내게서 썩 물러가라!",
+          "R": "하나님, 주님께서 악한 사람들을 죽여 주시면 좋겠습니다! \\q 살인자들아, 내게서 떠나가라!"
         }
       },
       "decisions": [
@@ -1768,6 +2234,69 @@
           "reason": "Verse 20 describes these people, so the verse ends with a comma at Literal and Balanced.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191390190052"
+          ],
+          "choice": "\"những kẻ đổ máu\" with no gender span",
+          "alternatives": [
+            "a gender span as in the English (\"people\"/\"men\")"
+          ],
+          "reason": "\"kẻ\" already covers men and women, so there is no second Vietnamese form for the setting to give.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o191390190071",
+            "o191390190081",
+            "o191390190082"
+          ],
+          "choice": "The words to the violent men are in 해라체 with \"내게서\" (나)",
+          "alternatives": [
+            "저에게서 물러가라",
+            "합쇼체"
+          ],
+          "reason": "Here the singer turns from God to speak to the murderers (meaning decision), and Korean speaks to them as one speaks to those one sends away, calling oneself \"나\"; the prayer to God resumes in 합쇼체 with \"저\" in verse 20.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191390190052",
+            "o191390190061"
+          ],
+          "choice": "\"피의 사람들\" with no gender span",
+          "alternatives": [
+            "{{gender:피의 사람들|피의 남자들}}"
+          ],
+          "reason": "Korean \"사람들\" is inclusive and is the natural word for the Hebrew phrase; Korean has no second wording to offer for the English \"people|men\" span.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1800,6 +2329,16 @@
           "L": "who speak of {{deity_pronoun:you|You}} for wicked scheming; {{deity_pronoun:your|Your}} enemies lift [{{deity_pronoun:your|Your}} name] up for falsehood.",
           "B": "those who name {{deity_pronoun:you|You}} as they plot their wickedness; {{deity_pronoun:your|Your}} enemies speak {{deity_pronoun:your|Your}} name in falsehood.",
           "R": "They say {{deity_pronoun:your|Your}} name when they make evil plans. Your enemies use {{deity_pronoun:your|Your}} name to tell lies."
+        },
+        "vi": {
+          "L": "là những kẻ nói về {{deity_pronoun:ngài|Ngài}} để mưu ác; \\q những kẻ thù của {{deity_pronoun:ngài|Ngài}} nâng [danh {{deity_pronoun:ngài|Ngài}}] lên cho điều dối trá.",
+          "B": "là những kẻ nhắc đến {{deity_pronoun:ngài|Ngài}} khi âm mưu điều gian ác; \\q kẻ thù của {{deity_pronoun:ngài|Ngài}} dùng danh {{deity_pronoun:ngài|Ngài}} cách dối trá.",
+          "R": "Chúng nhắc đến danh {{deity_pronoun:ngài|Ngài}} khi bày mưu ác. \\q Kẻ thù của {{deity_pronoun:ngài|Ngài}} dùng danh {{deity_pronoun:ngài|Ngài}} để nói dối."
+        },
+        "ko": {
+          "L": "그들은 악한 꾀로 주님을 말하고, \\q 주님의 원수들은 [주님의 이름을] 거짓되이 들어 올립니다.",
+          "B": "그들은 악한 일을 꾸미면서 주님의 이름을 들먹이고, \\q 주님의 원수들은 거짓으로 주님의 이름을 부릅니다.",
+          "R": "그들은 악한 계획을 세우면서 주님의 이름을 입에 올립니다. \\q 주님의 원수들은 주님의 이름을 이용해 거짓말을 합니다."
         }
       },
       "decisions": [
@@ -1870,6 +2409,45 @@
           "reason": "The object of \"lift up\" is supplied from the commandment (m2); Literal brackets it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191390200021"
+          ],
+          "choice": "\"Chúng\" for the wicked",
+          "alternatives": [
+            "\"Họ\""
+          ],
+          "reason": "As in Psalm 1, \"chúng\" is the usual distancing pronoun for the wicked and for God's enemies in a psalm.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o191390200011"
+          ],
+          "choice": "The verse is a sentence of its own beginning \"그들은\" (they), and verse 19 ends with \"!\"",
+          "alternatives": [
+            "a relative clause on \"피의 사람들\" carried over from verse 19"
+          ],
+          "reason": "The Hebrew \"who speak of you\" describes the men of verse 19, which the English keeps by ending verse 19 with a comma. A Korean relative clause must come before its noun, which would move this verse's content into verse 19, so Korean begins a new sentence.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1903,6 +2481,16 @@
           "L": "Is it not those who hate {{deity_pronoun:you|You}}, {{divine_name:LORD|Yahweh}}, [that] I hate, and those who rise against {{deity_pronoun:you|You}} [that] I loathe?",
           "B": "{{divine_name:LORD|Yahweh}}, how could I not hate those who hate {{deity_pronoun:you|You}}, or feel disgust for those who rise up against {{deity_pronoun:you|You}}?",
           "R": "{{divine_name:LORD|Yahweh}}, I hate people who hate {{deity_pronoun:you|You}}! I cannot stand people who turn against {{deity_pronoun:you|You}}."
+        },
+        "vi": {
+          "L": "Chẳng phải những kẻ ghét {{deity_pronoun:ngài|Ngài}}, lạy {{divine_name:CHÚA|Gia-vê}}, tôi ghét sao, \\q và những kẻ nổi lên chống {{deity_pronoun:ngài|Ngài}} tôi ghê tởm sao?",
+          "B": "Lạy {{divine_name:CHÚA|Gia-vê}}, làm sao tôi không ghét những kẻ ghét {{deity_pronoun:ngài|Ngài}}, \\q hay không ghê tởm những kẻ nổi lên chống lại {{deity_pronoun:ngài|Ngài}}?",
+          "R": "Lạy {{divine_name:CHÚA|Gia-vê}}, tôi ghét những kẻ ghét {{deity_pronoun:ngài|Ngài}}! \\q Tôi không chịu nổi những kẻ chống lại {{deity_pronoun:ngài|Ngài}}."
+        },
+        "ko": {
+          "L": "{{divine_name:주|야훼}}여, 주님을 미워하는 자들을 제가 미워하지 않습니까? \\q 주님께 맞서 일어나는 자들을 제가 역겨워하지 않습니까?",
+          "B": "{{divine_name:주|야훼}}여, 주님을 미워하는 자들을 제가 어찌 미워하지 않겠습니까? \\q 주님께 맞서 일어서는 자들을 어찌 혐오하지 않겠습니까?",
+          "R": "{{divine_name:주|야훼}}여, 저는 주님을 미워하는 사람들을 미워합니다! \\q 주님께 등을 돌리는 사람들을 저는 참을 수 없습니다."
         }
       },
       "decisions": [
@@ -1983,6 +2571,16 @@
           "L": "[With] complete hatred I hate them; they have become enemies to me.",
           "B": "My hatred for them is total; they have become my own enemies.",
           "R": "I hate them completely. Your enemies are my enemies."
+        },
+        "vi": {
+          "L": "[Với] lòng căm ghét trọn vẹn tôi ghét chúng; \\q chúng đã trở thành kẻ thù đối với tôi.",
+          "B": "Lòng căm ghét của tôi đối với chúng thật trọn vẹn; \\q chúng đã trở thành kẻ thù của chính tôi.",
+          "R": "Tôi ghét chúng hoàn toàn. \\q Kẻ thù của {{deity_pronoun:ngài|Ngài}} là kẻ thù của tôi."
+        },
+        "ko": {
+          "L": "완전한 미움으로 제가 그들을 미워하니, \\q 그들이 제게 원수가 되었습니다.",
+          "B": "제가 그들을 미워하는 마음에는 남김이 없으니, \\q 그들은 바로 저의 원수가 되었습니다.",
+          "R": "저는 그들을 철저히 미워합니다. \\q 주님의 원수는 곧 저의 원수입니다."
         }
       },
       "decisions": [
@@ -2055,6 +2653,16 @@
           "L": "Search me, God, and know my heart; try me and know my troubled thoughts.",
           "B": "God, look deep into me and know my heart; put me to the test and know my restless thoughts.",
           "R": "God, look deep inside me and see what is in my heart. Test me and learn what my troubled thoughts are."
+        },
+        "vi": {
+          "L": "Xin dò xét tôi, lạy Đức Chúa Trời, và biết lòng tôi; \\q xin thử thách tôi và biết những ý nghĩ lo âu của tôi.",
+          "B": "Lạy Đức Chúa Trời, xin dò xét thấu tôi và biết lòng tôi; \\q xin thử thách tôi và biết những ý nghĩ bồn chồn của tôi.",
+          "R": "Lạy Đức Chúa Trời, xin nhìn thấu vào trong tôi và xem lòng tôi có gì. \\q Xin thử thách tôi và biết những ý nghĩ rối bời của tôi."
+        },
+        "ko": {
+          "L": "하나님, 저를 살피셔서 제 마음을 알아 주시고, \\q 저를 시험하셔서 제 불안한 생각들을 알아 주십시오.",
+          "B": "하나님, 저를 깊이 들여다보시고 제 마음을 알아 주십시오. \\q 저를 시험해 보시고 제 안의 걱정스러운 생각들을 알아 주십시오.",
+          "R": "하나님, 제 속을 깊이 들여다보시고 제 마음에 무엇이 있는지 보아 주십시오. \\q 저를 시험해 보시고 제가 무슨 걱정을 하고 있는지 알아 주십시오."
         }
       },
       "decisions": [
@@ -2100,6 +2708,50 @@
           "reason": "The verb (bachan) is used of testing metal to see what is in it (17:3; 26:2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o191390230011",
+            "o191390230051"
+          ],
+          "choice": "\"xin\" before each request to God, unbracketed at Literal",
+          "alternatives": [
+            "the bare imperative (\"dò xét tôi\")"
+          ],
+          "reason": "A bare imperative to God is rude in Vietnamese; \"xin\" is the word of request the grammar of prayer requires, like \"Lạy\", so it is not a supplied word. Balanced and Readable repeat verse 1's \"dò xét thấu\" and \"nhìn thấu\", as the Hebrew repeats its words.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191390230011",
+            "o191390230032"
+          ],
+          "choice": "\"살피다\" (L) and \"깊이 들여다보다\" (B), the same verbs as in verse 1",
+          "alternatives": [
+            "찾다",
+            "조사하다"
+          ],
+          "reason": "The prayer repeats the words of verse 1 (meaning decision); each level uses the verb it used there so the echo is heard.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2135,6 +2787,16 @@
           "L": "And see if [there is] a way of pain in me, and lead me in the way everlasting.",
           "B": "Look and see whether I am on a path that brings harm, and guide me along the road that never ends.",
           "R": "See if I am following any path that leads to pain. Then lead me along the road that lasts forever."
+        },
+        "vi": {
+          "L": "Và xin xem nếu [có] con đường đau đớn nào trong tôi, \\q và xin dẫn tôi trên con đường đời đời.",
+          "B": "Xin xem tôi có đang đi trên con đường dẫn đến tổn hại không, \\q và xin dắt tôi trên con đường không bao giờ dứt.",
+          "R": "Xin xem tôi có đang theo con đường nào dẫn đến đau khổ không. \\q Rồi xin dẫn tôi đi trên con đường còn mãi mãi."
+        },
+        "ko": {
+          "L": "그리고 제 안에 고통의 길이 있는지 보시고, \\q 영원한 길로 저를 인도하여 주십시오.",
+          "B": "제가 해로운 길에 서 있지는 않은지 살펴보시고, \\q 끝없이 이어지는 길로 저를 이끌어 주십시오.",
+          "R": "제가 아픔으로 이끄는 길을 걷고 있지는 않은지 보아 주십시오. \\q 그리고 영원히 이어지는 길로 저를 이끌어 주십시오."
         }
       },
       "decisions": [

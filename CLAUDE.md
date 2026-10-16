@@ -9,6 +9,9 @@ summarises the data model.
 
 - Everything is pushed to https://github.com/jdegreef/open-word-bible.
   `main` is what Render deploys to openwordbible.org.
+- Before translating a book, run the `check-book-before-translating` skill:
+  other sessions draft in parallel, and a book may already be done or in an
+  open pull request.
 
 ## Rules that are easy to break
 
