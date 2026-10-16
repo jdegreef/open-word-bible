@@ -5,6 +5,7 @@ date: 2026-10-11
 order: 39
 section: history
 part: today
+source: 2e6ea2fb56e3
 ---
 Durante la mayor parte de su historia, cada copia de la Biblia fue única. Cada una se escribía a mano, y cada una tenía sus propios pequeños errores y correcciones. La invención de la imprenta de tipos móviles en el siglo XV cambió eso. Por primera vez se podían hacer miles de copias idénticas de un mismo texto. Fue un gran regalo, pero también trajo un problema nuevo: el texto que se imprimiera primero, fuera cual fuera, podía quedar fijado durante siglos, con errores y todo.
 

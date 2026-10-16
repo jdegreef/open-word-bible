@@ -4,6 +4,7 @@ summary: Inclusif ou traditionnel, Christ ou Messie, il ou Il. Pourquoi ce sont 
 date: 2026-10-10
 order: 4
 section: method
+source: 580d031480d0
 ---
 Les lecteurs de la Bible ne s'accordent pas sur certaines questions qui sont, à strictement parler, des questions de formulation. Faut-il dire "frères et sœurs" plutôt que "frères" quand toute l'Église est visée ? Le titre de Jésus doit-il être "Christ" ou "Messie" ? Les pronoms qui désignent Dieu prennent-ils une majuscule ? Open Word Bible laisse chaque lecteur choisir.
 

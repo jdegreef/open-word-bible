@@ -4,6 +4,7 @@ summary: Ni nini kinachoifanya Biblia kuwa tafsiri fafanuzi badala ya tafsiri, n
 date: 2026-10-14
 order: 70
 section: compare
+source: f63189809815
 ---
 Kando ya tafsiri za kamati zinazoelezwa mahali pengine katika mfululizo huu, wasomaji wa Kiingereza wana rafu ya matoleo huru zaidi: Agano Jipya la J. B. Phillips, Living Bible, *The Message*, *The Voice* na *The Passion Translation*. Pia kuna **Amplified Bible**, inayokwenda upande mwingine, ikitoa si maneno machache kuliko asili bali mengi zaidi sana. Matoleo haya yamewafikia mamilioni ya wasomaji, ambao wengi wao walipata ndani yake Biblia ya kwanza waliyoweza kuisoma kwa furaha. Pia yamekosolewa, wakati mwingine kwa ukali.
 

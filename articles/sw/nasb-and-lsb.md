@@ -4,6 +4,7 @@ summary: New American Standard Bible ilikusudia kuhifadhi usahihi wa American St
 date: 2026-10-14
 order: 64
 section: compare
+source: 427ee00533e6
 ---
 Watu wanapotaka mfano wa Biblia ya kisasa ya Kiingereza iliyo halisi sana, kwa kawaida wanataja **New American Standard Bible** (NASB). Kwa zaidi ya nusu karne imekuwa tafsiri inayopendelewa na wanafunzi wengi wa lugha za asili, na ile ambayo tafsiri nyingine hulinganishwa nayo swali linapokuwa "Kigiriki kinasema nini hasa?"
 

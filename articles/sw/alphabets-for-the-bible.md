@@ -4,6 +4,7 @@ summary: Alfabeti kadhaa za dunia ziliundwa ili Biblia iweze kuandikwa katika lu
 date: 2026-10-12
 order: 45
 section: translation
+source: 7e4217cb6375
 ---
 Lugha nyingi katika historia hazijawahi kuandikwa. Ili kuitafsiri Biblia katika lugha kama hiyo, mtafsiri kwanza lazima aamue jinsi ya kuiandika, na wakati mwingine hilo linamaanisha kubuni alfabeti.
 

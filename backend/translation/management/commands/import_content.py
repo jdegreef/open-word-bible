@@ -1,7 +1,7 @@
 """Load the sentence records in content/ into the database.
 
     python manage.py import_content
-    python manage.py import_content --if-texts-loaded   # run on every deploy
+    python manage.py import_content --if-texts-loaded --budget 900   # every deploy
     python manage.py import_content --all               # every file, all of search
 
 Every record is checked first with owb.validate against the words already in
@@ -18,7 +18,13 @@ A file is imported only if it has changed since it was last imported
 (ContentFile keeps each file's digest), or the texts it is checked against
 have, or this command has (IMPORT_VERSION); --all imports every file. A
 deploy usually changes a few chapters, and importing all of content/ every
-time came to take longer than Render allows a pre-deploy command.
+time came to take longer than Render allows a pre-deploy command. With
+--budget SECONDS, no new file is started once that long has passed: the rest
+are left for the next run, so a deploy after a big change (or the first one,
+with no digests yet) still finishes, and the next deploys catch up.
+
+Each run is recorded (ImportRun), so the admin's health page can show
+when content/ last reached the database and what failed.
 
 Afterwards the search tables are brought up to date (translation/search.py)
 from all of content/ and articles/, whichever files were imported: only the
@@ -26,6 +32,7 @@ entries whose documents changed are rewritten, or all of them with --all.
 """
 import hashlib
 import json
+import time
 from pathlib import Path
 
 from django.conf import settings
@@ -35,7 +42,7 @@ from django.db import transaction
 from owb import refs, validate
 from texts.models import Edition, Word
 from translation import search
-from translation.models import ContentFile, Decision, Rendering, Sentence
+from translation.models import ContentFile, Decision, ImportRun, Rendering, Sentence
 
 TEXT_ID_EDITION = {"SBLGNT@v1.2": "sblgnt", "WLC@macula-hebrew": "wlc"}
 # Raise when save() or validate_records() changes what they do with a file,
@@ -52,12 +59,27 @@ class Command(BaseCommand):
                             help="Skip quietly if import_texts has not been run yet")
         parser.add_argument("--all", action="store_true", dest="everything",
                             help="Import files even if unchanged, and rewrite every search entry")
+        parser.add_argument("--budget", type=float, metavar="SECONDS",
+                            help="Start no new file after this long; the rest wait for the next run")
 
-    def handle(self, *args, paths, if_texts_loaded=False, everything=False, **options):
+    def handle(self, *args, paths, if_texts_loaded=False, everything=False, budget=None, **options):
+        started = time.monotonic()
         if if_texts_loaded and not Word.objects.exists():
             self.stdout.write("No source texts in the database yet; run import_texts, "
                               "then import_content. Nothing imported.")
             return
+        self.run = ImportRun.objects.create(everything=everything)
+        try:
+            self.import_files(paths, if_texts_loaded, everything, budget, started)
+        except CommandError as e:
+            self.run.finish(error=str(e))
+            raise
+        except Exception as e:
+            self.run.finish(error=f"{type(e).__name__}: {e}")
+            raise
+        self.run.finish()
+
+    def import_files(self, paths, if_texts_loaded, everything, budget, started):
         files = paths or sorted(str(p) for p in (settings.REPO_ROOT / "content").glob("*/*.json"))
         if not files:
             raise CommandError("No content files found")
@@ -66,13 +88,17 @@ class Command(BaseCommand):
         editions = {e.code: e for e in Edition.objects.all()}
         imported = dict(ContentFile.objects.values_list("path", "digest"))
         texts = " ".join(sorted(f"{e.code}@{e.source_commit}" for e in editions.values()))
-        for path in files:
+        left = []
+        for i, path in enumerate(files):
             data = open(path, "rb").read()
             name = self.relative(path)
             digest = hashlib.sha256(f"{IMPORT_VERSION} {texts}\n".encode() + data).hexdigest()
             if not everything and imported.get(name) == digest:
                 unchanged += 1
                 continue
+            if budget is not None and time.monotonic() - started > budget:
+                left = files[i:]
+                break
             records = json.loads(data.decode("utf-8"))["records"]
             missing = sorted({TEXT_ID_EDITION[r["source"]["text_id"]] for r in records} - loaded)
             if missing:
@@ -80,6 +106,7 @@ class Command(BaseCommand):
                            f"run import_texts {' '.join(missing)}")
                 if if_texts_loaded:
                     self.stdout.write(f"{message}. Skipped.")
+                    self.run.skipped.append(message)
                     continue
                 raise CommandError(message)
             errors = self.validate_records(records)
@@ -91,8 +118,16 @@ class Command(BaseCommand):
                 self.save(records, editions)
                 ContentFile.objects.update_or_create(path=name, defaults={"digest": digest})
             total += len(records)
+            self.run.files += 1
+            self.run.records += len(records)
             self.stdout.write(f"{path}: {len(records)} records")
+        self.run.unchanged = unchanged
         self.stdout.write(f"{total} records imported" + (f"; {unchanged} files unchanged" if unchanged else ""))
+        if left:
+            message = (f"Budget of {budget:.0f} s used up: {len(left)} file(s) left for the next "
+                       f"run, from {left[0]}")
+            self.stdout.write(message)
+            self.run.skipped.append(message)
         self.stdout.flush()
         changes = search.rebuild(full=everything)
         self.stdout.write("search: " + ", ".join(

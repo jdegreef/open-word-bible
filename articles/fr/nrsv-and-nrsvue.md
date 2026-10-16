@@ -4,6 +4,7 @@ summary: Comment la New Revised Standard Version de 1989 a fait passer la tradit
 date: 2026-10-14
 order: 66
 section: compare
+source: 8aa9e48c3ea4
 ---
 Dans un cours universitaire sur l'Ancien ou le Nouveau Testament, la Bible ouverte sera très probablement la **New Revised Standard Version**. Depuis plus de trente ans, la NRSV est la Bible anglaise de référence des biblistes, de nombreuses Églises protestantes historiques et d'une bonne part du travail œcuménique. En 2021, elle a été révisée de nouveau sous le nom de **NRSV Updated Edition** (NRSVue).
 

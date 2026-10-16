@@ -5,6 +5,7 @@ date: 2026-10-12
 order: 44
 nav_title: Biblia za Kikopti na Kige'ez
 section: translation
+source: 2d93d8cce756
 ---
 Ni rahisi kusimulia historia ya Biblia kama habari inayosonga kutoka Yerusalemu hadi Roma kisha kaskazini kuingia Ulaya. Lakini baadhi ya tafsiri za kwanza kabisa za Biblia zilifanywa Afrika. Huko Misri, Wakristo walitafsiri maandiko kwa **Kikopti** kuanzia karne ya tatu na kuendelea. Katika ufalme wa Aksum, katika eneo ambalo sasa ni Ethiopia na Eritrea, yalitafsiriwa kwa **Kige'ez**, pengine kuanzia karne ya nne au ya tano. Tafsiri zote mbili bado zinasomwa katika ibada leo.
 

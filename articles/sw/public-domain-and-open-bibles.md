@@ -4,6 +4,7 @@ summary: Biblia nyingi za kisasa zina hakimiliki, lakini idadi inayoongezeka ni 
 date: 2026-10-14
 order: 80
 section: compare
+source: b612a80c7797
 ---
 Biblia nyingi za kisasa zina hakimiliki, na kuzitumia kwa urefu kunamaanisha kuomba ruhusa na wakati mwingine kulipa (ona [Kwa nini tafsiri za Biblia zina hakimiliki](/articles/why-bible-translations-are-copyrighted/)). Kando yake, familia ndogo zaidi ya tafsiri inaweza kunakiliwa, kuchapishwa, kurekodiwa, kuwekwa katika programu na kurekebishwa bila kumwomba mtu yeyote. Baadhi ni huru kwa sababu ni za zamani. Nyingine zilifanywa huru kwa makusudi.
 

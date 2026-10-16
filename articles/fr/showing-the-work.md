@@ -5,6 +5,7 @@ date: 2026-10-10
 order: 2
 nav_title: Ce qu'est un dossier de raisonnement
 section: method
+source: 2dd446537468
 ---
 Ouvrez n'importe quel verset sur ce site, et un panneau s'ouvre à côté. Ce que vous y voyez est le *dossier de raisonnement* du verset. C'est le cœur du projet, et il vaut la peine de savoir ce qu'il contient.
 

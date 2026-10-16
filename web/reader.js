@@ -1331,12 +1331,14 @@
     var compare = el("a", "copy-link", t("compare"));
     compare.href = DATA.compare_url + "?v=" + verseId(currentVerse || verseOf(current.refs[0]));
     actions.appendChild(compare);
+    actions.appendChild(noteButton());
     var ask = askLink(null);
     ask.classList.add("copy-link");
     actions.appendChild(ask);
     title.appendChild(actions);
     panel.appendChild(title);
     panel.appendChild(citeBox(currentVerse));
+    panel.appendChild(noteBox(currentVerse || verseOf(current.refs[0])));
     panel.appendChild(toolRow());
     panel.appendChild(markRow(currentVerse));
     // On phones the sheet opens at 60% height: its footnotes and uncertain
@@ -1621,6 +1623,105 @@
     // Settings may have changed since the panel was drawn.
     a.addEventListener("click", function (e) { e.stopPropagation(); a.href = issueUrl(d); });
     return a;
+  }
+
+  // "Suggest or ask": a suggestion or question about the verse, sent to the
+  // editors (POST /api/messages; backend/feedback/), who answer by email.
+  // It needs an account, so the reply has somewhere to go; signed out, the
+  // box offers sign-in and comes back to the verse.
+  var noteOpen = false, noteKind = "suggestion", noteDraft = "";
+  function noteButton() {
+    var b = el("button", "copy-link note-toggle", t("note"));
+    b.type = "button";
+    b.setAttribute("aria-expanded", noteOpen ? "true" : "false");
+    b.setAttribute("aria-controls", "note-box");
+    b.addEventListener("click", function () {
+      noteOpen = !noteOpen;
+      b.setAttribute("aria-expanded", noteOpen ? "true" : "false");
+      var box = document.getElementById("note-box");
+      if (box) {
+        box.hidden = !noteOpen;
+        var field = box.querySelector("textarea, a");
+        if (noteOpen && field) field.focus();
+      }
+    });
+    return b;
+  }
+  function account() {
+    try { return JSON.parse(localStorage.getItem("owb.account") || "null"); } catch (e) { return null; }
+  }
+  function noteBox(verse) {
+    var box = el("div", "note-box");
+    box.id = "note-box";
+    box.hidden = !noteOpen;
+    var me = account();
+    if (!me || !me.token) {
+      var p = el("p", "note-sign-in", t("note_sign_in") + " ");
+      var a = el("a", null, t("note_sign_in_link"));
+      a.href = DATA.login + "?redirect=" + encodeURIComponent(location.pathname + "#v" + verse);
+      p.appendChild(a);
+      box.appendChild(p);
+      return box;
+    }
+    var kinds = el("div", "seg seg-small");
+    kinds.setAttribute("role", "group");
+    kinds.setAttribute("aria-label", t("note_kind"));
+    var field = el("textarea", "cite-text note-text");
+    field.id = "note-text";
+    field.rows = 3;
+    field.maxLength = 2000;
+    field.value = noteDraft;
+    function setKind(k) {
+      noteKind = k;
+      kinds.querySelectorAll("button").forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.kind === k ? "true" : "false"); });
+      field.placeholder = t("note_placeholder_" + k);
+    }
+    ["suggestion", "question"].forEach(function (k) {
+      var b = el("button", null, t("note_" + k));
+      b.type = "button";
+      b.dataset.kind = k;
+      b.addEventListener("click", function () { setKind(k); });
+      kinds.appendChild(b);
+    });
+    var label = el("label", "cite-label", t("note_label").replace("{ref}", verseName(verse)));
+    label.htmlFor = "note-text";
+    field.addEventListener("input", function () { noteDraft = field.value; });
+    var send = el("button", "copy-link note-send", t("note_send"));
+    send.type = "button";
+    var status = el("p", "note-status");
+    status.setAttribute("role", "status");
+    send.addEventListener("click", function () {
+      if (!field.value.trim()) { status.textContent = t("note_empty"); field.focus(); return; }
+      send.disabled = true;
+      var api = document.querySelector('meta[name="owb-api"]').content;
+      fetch(api + "/api/messages", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Authorization: "Bearer " + me.token },
+        body: JSON.stringify({ kind: noteKind, verse: verseId(verse), lang: settings.lang, level: settings.level,
+                               text: field.value })
+      }).then(function (r) {
+        if (r.status === 401) {
+          try { localStorage.removeItem("owb.account"); } catch (e) { /* none */ }
+          status.textContent = t("note_sign_in");
+        } else if (r.status === 429) {
+          status.textContent = t("note_limited");
+        } else if (!r.ok) {
+          status.textContent = t("note_error");
+        } else {
+          noteDraft = field.value = "";
+          status.textContent = t("note_sent");
+        }
+      }, function () { status.textContent = t("note_error"); }).then(function () { send.disabled = false; });
+    });
+    box.appendChild(label);
+    box.appendChild(kinds);
+    box.appendChild(field);
+    var row = el("div", "note-row");
+    row.appendChild(send);
+    row.appendChild(status);
+    box.appendChild(row);
+    setKind(noteKind);
+    return box;
   }
 
   // Cite: the verse as a citation, as plain text and as Markdown, each

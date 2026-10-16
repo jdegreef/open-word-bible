@@ -4,6 +4,7 @@ summary: ¿Incluye «brothers» a las hermanas? ¿Es «man» todo el mundo? De l
 date: 2026-10-14
 order: 77
 section: compare
+source: 28e8481b5341
 ---
 Pocas cuestiones de la traducción bíblica moderna han provocado tanta discusión: cuando el hebreo o el griego usan una palabra masculina para referirse a las personas en general, ¿qué debe decir el inglés?
 

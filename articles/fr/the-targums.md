@@ -5,6 +5,7 @@ date: 2026-10-12
 order: 41
 nav_title: Les targoums
 section: translation
+source: 011db4460219
 ---
 Imaginons une synagogue de Galilée au IIIe siècle. Un lecteur se lève et lit un verset de la Torah en hébreu, dans un rouleau. À côté de lui se tient un second homme, sans rouleau, qui répète le verset à voix haute en araméen, la langue de la rue et du marché. Puis le lecteur lit le verset suivant, et le traducteur le rend à son tour. Verset après verset, l'assemblée entend l'Écriture deux fois : une fois dans la langue sainte, une fois dans la sienne.
 

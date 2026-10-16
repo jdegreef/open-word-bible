@@ -10,6 +10,7 @@ from django.contrib.postgres.fields import ArrayField
 from django.contrib.postgres.indexes import GinIndex
 from django.contrib.postgres.search import SearchVectorField
 from django.db import models
+from django.utils import timezone
 
 from texts.models import Edition
 
@@ -126,6 +127,30 @@ class ContentFile(models.Model):
 
     def __str__(self):
         return self.path
+
+
+class ImportRun(models.Model):
+    """One run of import_content: when it ran, what it imported and what
+    stopped it. The admin's health page lists the latest."""
+    started_at = models.DateTimeField(auto_now_add=True, db_index=True)
+    finished_at = models.DateTimeField(null=True, blank=True)
+    everything = models.BooleanField(default=False, help_text="--all")
+    files = models.PositiveIntegerField(default=0, help_text="Files imported")
+    records = models.PositiveIntegerField(default=0)
+    unchanged = models.PositiveIntegerField(default=0, help_text="Files skipped as unchanged")
+    skipped = models.JSONField(default=list, blank=True, help_text="Files left for a missing source text")
+    error = models.TextField(blank=True)
+
+    class Meta:
+        ordering = ["-started_at"]
+
+    def __str__(self):
+        return f"import {self.started_at:%Y-%m-%d %H:%M}"
+
+    def finish(self, error=""):
+        self.finished_at = timezone.now()
+        self.error = error[:5000]
+        self.save()
 
 
 # Search (GET /api/search/, translation/search.py). import_content updates

@@ -4,6 +4,7 @@ summary: Los manuscritos griegos más antiguos casi no tienen puntuación ni com
 date: 2026-10-11
 order: 14
 section: method
+source: ee5f3dc579a4
 ---
 Los primeros manuscritos del Nuevo Testamento se escribieron en mayúsculas, a menudo sin espacios entre las palabras, con muy poca puntuación y sin ninguna comilla. Las comas, los puntos, los signos de interrogación y las comillas de cualquier Biblia moderna, en cualquier idioma, los pusieron editores y traductores.
 

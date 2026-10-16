@@ -76,10 +76,11 @@ class LanguagesTest(unittest.TestCase):
 
     def english_pages(self):
         """Every English page but the articles and the reading plans, which
-        a language has only once they are translated."""
+        a language has only once they are translated, and the admin, which
+        is in English only."""
         langs = set(OTHERS)
         rels = (p.relative_to(self.out) for p in self.out.rglob("index.html"))
-        return [rel for rel in rels if rel.parts[0] not in langs
+        return [rel for rel in rels if rel.parts[0] not in langs and rel.parts[0] != "admin"
                 and (rel.parts[0] not in ("articles", "plans") or len(rel.parts) == 2)]
 
     def test_every_page_is_built_in_every_language(self):
@@ -142,8 +143,10 @@ class LanguagesTest(unittest.TestCase):
                 page = re.sub(r'<script type="application/json" id="owb-data">.*?</script>'
                               r'|<div class="text" id="text">.*?</div>\s*<section class="notes"', "",
                               self.read(Path(lang) / rel), flags=re.S)
-                # So may a key-term page's English sentences and notes.
-                page = re.sub(r'<p class="term-(text|note|why-text)" lang="en">.*?</p>', "", page, flags=re.S)
+                # So may a key-term page's English sentences and notes, and
+                # the share card's description, which quotes the opening verse.
+                page = re.sub(r'<p class="term-(text|note|why-text)" lang="en">.*?</p>'
+                              r'|<meta property="og:image:alt" content="[^"]*">', "", page, flags=re.S)
                 for key in keys:
                     self.assertNotIn(en[key], page, (lang, rel, key))
                     self.assertIn(cat[key], page, (lang, rel, key))

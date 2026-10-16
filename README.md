@@ -226,6 +226,14 @@ An article is translated by adding `articles/<lang>/<slug>.md` with the same
 slug. Until then, the other language's page shows the English under a note,
 names the English page as canonical and stays out of the sitemap.
 
+A translation copies its English article's `date`, `order`, `section` and
+`part`, and records the English it was made from as `source:`, a digest
+written by `python3 scripts/check_translations.py --stamp
+articles/<lang>/<slug>.md`. Stamp a translation when you write it and again
+when you bring it up to date. `python3 scripts/check_translations.py` lists,
+for each language, the articles not yet translated and the translations whose
+English has changed since they were stamped (`scripts/check.sh` prints it).
+
 To add a language: list it in `data/languages.json` (its code, English and
 own names, quotation marks, and any reader setting only it has), add every
 book's name in it to `data/books.json`, write `i18n/<lang>.json`, add its

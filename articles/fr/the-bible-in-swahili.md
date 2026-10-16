@@ -4,6 +4,7 @@ summary: Comment une langue de commerce côtière, dotée d'une longue tradition
 date: 2026-10-12
 order: 56
 section: translation
+source: 661304774af6
 ---
 Le swahili est la langue africaine de la famille bantoue la plus parlée. C'est une langue nationale de la Tanzanie et du Kenya, elle est utilisée en Ouganda, au Rwanda, au Burundi et dans l'est du Congo, et l'Union africaine l'a adoptée comme l'une de ses langues de travail. Les estimations du nombre de ses locuteurs varient beaucoup, d'environ 100 millions à plus de 200 millions, parce que la plupart l'apprennent comme langue seconde et que les décomptes ne prennent pas tous en compte les mêmes personnes.
 

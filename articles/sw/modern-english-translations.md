@@ -4,6 +4,7 @@ summary: Kwa zaidi ya karne mbili King James Version ilisimama karibu peke yake.
 date: 2026-10-12
 order: 59
 section: translation
+source: ec2d359d9e12
 ---
 Kwa karibu miaka mia mbili na hamsini baada ya mwaka 1611, Waprotestanti wanaozungumza Kiingereza walikuwa, kwa vitendo, na Biblia moja: King James Version (ona [King James Version](/articles/the-king-james-version/)). Wakatoliki wanaozungumza Kiingereza walikuwa na nyingine, Douay-Rheims, kama ilivyorekebishwa na Askofu Richard Challoner katika miaka ya 1740 na 1750. Tafsiri za watu binafsi zilitokea, lakini hakuna iliyokaribia kuzichukua nafasi.
 

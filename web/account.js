@@ -110,6 +110,7 @@
     var magic = document.getElementById("magic");
     var titleTail = document.title.replace(/^.*?( · )/, "$1");
     var mode = "sign-in";
+    var google = false;   // until /api/auth/methods says Google is set up
     var again = null;   // repeats the last request that sent an email
     var MODES = { signup: "sign-up", reset: "reset" };
 
@@ -133,6 +134,7 @@
       root.querySelectorAll("[data-for]").forEach(function (n) {
         n.hidden = n.getAttribute("data-for").split(" ").indexOf(m) < 0;
       });
+      if (!google) root.querySelector(".google").hidden = true;
       root.querySelectorAll("[data-mode-link]").forEach(function (a) {
         a.href = href(a.getAttribute("data-mode-link"));
       });
@@ -254,7 +256,9 @@
       location.href = API + "/api/auth/google/start?" + q.toString();
     });
     fetch(API + "/api/auth/methods").then(function (r) { return r.json(); }).then(function (m) {
-      root.querySelector(".google").hidden = !m.google;
+      google = !!m.google;
+      var g = root.querySelector(".google");
+      g.hidden = !google || g.getAttribute("data-for").split(" ").indexOf(mode) < 0;
     }).catch(function () { /* offline: no Google button */ });
 
     passwordToggles(root, T);

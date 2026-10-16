@@ -4,6 +4,7 @@ summary: New King James Version ilikusudia kusasisha lugha ya King James Version
 date: 2026-10-14
 order: 63
 section: compare
+source: 312c0747ee9d
 ---
 Biblia nyingi za kisasa za Kiingereza zinatokana, kwa umbali fulani, na King James Version ya 1611. **New King James Version** (NKJV) inatokana nayo moja kwa moja. Ilitengenezwa kufanya jambo ambalo hakuna marekebisho ya awali yaliyojaribu: kusasisha Kiingereza cha King James Version huku ikibaki na maandishi yaleyale ya Kigiriki ya msingi, **Textus Receptus**, au Maandishi Yaliyopokelewa.
 

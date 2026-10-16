@@ -5,6 +5,7 @@ date: 2026-10-11
 order: 32
 section: history
 part: nt
+source: e07e370c3cd8
 ---
 Avant de se demander avec quelle exactitude la Bible a été copiée, il est utile de poser une question plus simple : *sur quoi* a-t-elle été copiée ? Les matériaux qu'utilisaient les scribes de l'Antiquité, et la forme de leurs livres, expliquent beaucoup de choses : quels manuscrits ont survécu, où on les a trouvés, et pourquoi les Écritures chrétiennes ont l'aspect qu'elles ont. Ils expliquent aussi l'un des faits les plus surprenants de l'histoire du livre : les premiers chrétiens ont été parmi les premiers à adopter le codex, l'ancêtre du livre moderne.
 

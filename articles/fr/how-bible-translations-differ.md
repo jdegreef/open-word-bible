@@ -4,6 +4,7 @@ summary: Deux traductions soigneuses et fidèles du même verset peuvent se lire
 date: 2026-10-14
 order: 61
 section: compare
+source: e2c5ab9a6c0e
 ---
 Mettez deux Bibles anglaises côte à côte et lisez le même verset dans chacune. Souvent, la formulation est proche. Parfois, elle est très différente, et il arrive qu'une Bible ait des mots, voire un verset entier, qui manquent dans l'autre. On peut facilement en conclure que l'une des deux se trompe, ou que les traducteurs disent ce qu'ils veulent.
 

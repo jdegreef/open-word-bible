@@ -228,7 +228,7 @@ def account_menu(lang):
         f'<div class="account-pop" id="account-pop" role="group" aria-label="{t(lang, "tools.your_account")}" hidden>'
         '<p class="who"><strong class="who-name"></strong><span class="who-email"></span></p>'
         f'<a class="pop-item" href="{url(lang, "/account/")}">{t(lang, "tools.account")}</a>'
-        f'<a class="pop-item admin-link" href="{API_URL}/admin/" hidden>{t(lang, "tools.admin")}</a>'
+        f'<a class="pop-item admin-link" href="/admin/" hidden>{t(lang, "tools.admin")}</a>'
         f'<button type="button" class="pop-item sign-out">{t(lang, "tools.sign_out")}</button>'
         '</div></div>')
 
@@ -721,6 +721,19 @@ def describe(word, lang):
     return morph.describe(word["morph"], lang)
 
 
+# What search_documents reads of a record, and of a decision. The API's
+# search rebuild (backend/translation/search.py) sets SEARCH_ONLY, so the
+# records it holds keep only these: all of content/ in memory otherwise
+# outgrows the API's 512 MB.
+SEARCH_DECISION_KEYS = ("layer", "language", "category", "choice", "alternatives", "reason")
+SEARCH_ONLY = False
+
+
+def search_only(r):
+    return {"id": r["id"], "refs": r["refs"], "renderings": r["renderings"],
+            "decisions": [{k: d[k] for k in SEARCH_DECISION_KEYS} for d in r["decisions"]]}
+
+
 @functools.lru_cache(maxsize=None)
 def _book_records(book):
     """A book's records, read once, by every chapter each one touches."""
@@ -728,6 +741,8 @@ def _book_records(book):
     for path in sorted((ROOT / "content" / book).glob("*.json")):
         for r in json.loads(path.read_text(encoding="utf-8"))["records"]:
             r = curl_record(r)
+            if SEARCH_ONLY:
+                r = search_only(r)
             for ch in {refs.parse(v).chapter for v in r["refs"]}:
                 by_chapter.setdefault(ch, []).append(r)
     return by_chapter
@@ -738,6 +753,20 @@ def _chapter_words(book, chapter):
     return json.loads(words_path(book, chapter).read_text(encoding="utf-8"))["verses"]
 
 
+def chapter_records(book, chapter):
+    """A chapter's records, in order, without its words (see load_chapter)."""
+    return sorted(_book_records(book).get(chapter, []),
+                  key=lambda r: refs.parse(r["refs"][0]).sort_key() + (r["id"],))
+
+
+@functools.lru_cache(maxsize=None)
+def chapter_verses(book, chapter):
+    """The verse ids in a chapter's word extract. Listing the chapters needs
+    only these: the words themselves are hundreds of megabytes for the whole
+    Bible, more than the API's search rebuild has room for."""
+    return tuple(json.loads(words_path(book, chapter).read_text(encoding="utf-8"))["verses"])
+
+
 def load_chapter(book, chapter):
     """A chapter's records, and the Greek words of every verse they cover. A
     sentence that runs into the next chapter (John 7:53-8:1) belongs to both:
@@ -745,8 +774,7 @@ def load_chapter(book, chapter):
     without the bracket and the note that begin the disputed passage.
     Each book is read once (a build asks for every chapter a dozen times);
     the lists are fresh, the records shared, so don't change them."""
-    records = sorted(_book_records(book).get(chapter, []),
-                     key=lambda r: refs.parse(r["refs"][0]).sort_key() + (r["id"],))
+    records = chapter_records(book, chapter)
     words = {}
     for ch in sorted({chapter} | {refs.parse(v).chapter for r in records for v in r["refs"]}):
         words.update(_chapter_words(book, ch))
@@ -866,9 +894,9 @@ def passages():
     the header, Read page, home page, footer and reader all list it."""
     out = []
     for b, c in chapters():
-        records, words = load_chapter(b, c)
+        records = chapter_records(b, c)
         verses = len(own_verses(records, c))
-        total = sum(refs.parse(v).chapter == c for v in words)
+        total = sum(refs.parse(v).chapter == c for v in chapter_verses(b, c))
         out.append(Passage(b, c, chapter_url(b, c), chapter_name(records, b, c), records,
                            verses, verses == total))
     return tuple(out)
@@ -952,7 +980,7 @@ def chapter_title(records, book, chapter, lang="en"):
 def chapter_name(records, book, chapter, lang="en"):
     """What the site calls a passage: "Philippians 2" for a whole chapter,
     "John 1:1–18" for part of one. (Share cards keep chapter_title.)"""
-    total = len(json.loads(words_path(book, chapter).read_text(encoding="utf-8"))["verses"])
+    total = len(chapter_verses(book, chapter))
     verses = own_verses(records, chapter)
     return f"{chapter_book(book, lang)} {chapter}" if len(verses) == total else chapter_title(records, book, chapter, lang)
 
@@ -1195,6 +1223,8 @@ def chapter_page(book, chapter, lang="en"):
             # comparison edition for verses not translated yet: the page
             # language's, then the World English Bible.
             "compare_url": compare_url(lang),
+            # Signing in to send a suggestion or question (reader.js noteBox).
+            "login": url(lang, "/login/"),
             "word_url": word_url(lang),
             "verses": {"url": f"/{VERSES_DIR}/",
                        "compare": [list(COMPARISON.get(lang, COMPARISON_DEFAULT)), list(COMPARISON_DEFAULT)]}}
@@ -1633,7 +1663,7 @@ def verse_files():
     """{path: text} for every chapter of the Bible (see VERSES_DIR)."""
     ours, seen = {}, set()
     for book, chapter in chapters():
-        for r in load_chapter(book, chapter)[0]:
+        for r in chapter_records(book, chapter):
             if r["id"] in seen:
                 continue
             seen.add(r["id"])
@@ -1879,7 +1909,7 @@ def passage_card(book, chapter, lang="en"):
     """A passage as a card in the article-card style: its opening verse at
     the default settings, and how much of it is translated into lang and
     recorded (its meaning decisions and its rendering decisions for lang)."""
-    every = load_chapter(book, chapter)[0]
+    every = chapter_records(book, chapter)
     records = [r for r in every if lang in r["renderings"]] or every
     verses = own_verses(records, chapter)
     shown = [d for r in records for d in r["decisions"] if d["language"] in (None, lang)]
@@ -2202,7 +2232,7 @@ def all_records():
 def _all_records():
     seen = {}
     for b, c in chapters():
-        for r in load_chapter(b, c)[0]:
+        for r in chapter_records(b, c):
             seen.setdefault(r["id"], r)
     return tuple(seen.values())
 
@@ -2244,7 +2274,7 @@ def examples(lang="en"):
     translated into lang, so none is shown in another language; all of
     them while lang has none."""
     return [e for e in EXAMPLES if any(r["id"] == e[2] and lang in r["renderings"]
-                                       for r in load_chapter(e[0], e[1])[0])] or list(EXAMPLES)
+                                       for r in chapter_records(e[0], e[1]))] or list(EXAMPLES)
 # The reader settings an example can switch, with the reader's labels for
 # the setting and its options.
 EXAMPLE_SETTINGS = {"divine_name": ("reader.name", ("reader.lord", "reader.yahweh")),
@@ -2390,7 +2420,7 @@ def example_html(lang="en"):
     for n, example in enumerate(examples(lang)):
         book, chapter, record_id, _ = example
         ref = refs.parse(record_id.rsplit(".", 1)[0])
-        decision = next(d for r in load_chapter(book, chapter)[0] if r["id"] == record_id
+        decision = next(d for r in chapter_records(book, chapter) if r["id"] == record_id
                         for d in r["decisions"] if d["id"] == example[3])
         script = ("home.tab_uncertain" if decision["uncertain"] else
                   "home.tab_hebrew" if book in refs.OT_CODES else "home.tab_greek")
@@ -2468,7 +2498,7 @@ VERSES_OF_THE_DAY = json.loads((ROOT / "data" / "verse_of_the_day.json").read_te
 
 def votd_record(vid):
     ref = refs.parse(vid)
-    return next(r for r in load_chapter(ref.book, ref.chapter)[0] if vid in r["refs"])
+    return next(r for r in chapter_records(ref.book, ref.chapter) if vid in r["refs"])
 
 
 @functools.lru_cache(maxsize=None)
@@ -3307,7 +3337,7 @@ def _owb(m, lang="en"):
     if it is not in lang yet), with default settings."""
     record_id, level = m[1], m[2]
     ref = refs.parse(record_id.rsplit(".s", 1)[0])
-    record = next((r for r in load_chapter(ref.book, ref.chapter)[0] if r["id"] == record_id), None)
+    record = next((r for r in chapter_records(ref.book, ref.chapter) if r["id"] == record_id), None)
     if record is None:
         raise SystemExit(f"no record {record_id} in content/")
     return html.escape(plain(record["renderings"][text_lang(record, lang)][level]))
@@ -3877,6 +3907,10 @@ def login_page(lang="en"):
 <p class="auth-dek">{l("dek")}</p>
 </header>
 <form class="auth-card" id="login-form" novalidate>
+<div class="google" data-for="sign-in sign-up" hidden>
+<button class="button ghost wide google-btn" type="button" id="google">{GOOGLE_G}<span>{l("google")}</span></button>
+<p class="or"><span>{l("or")}</span></p>
+</div>
 <label for="email">{l("email")}</label>
 <input id="email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required aria-describedby="login-error">
 <div class="pw" data-for="sign-in sign-up">
@@ -3886,10 +3920,6 @@ def login_page(lang="en"):
 <button class="button wide" type="submit">{modes(**{"sign-in": l("submit_sign_in"), "sign-up": l("submit_sign_up"), "reset": l("submit_reset")})}</button>
 <div class="auth-alt" data-for="sign-in sign-up">
 <button class="button ghost wide" type="button" id="magic">{l("magic")}</button>
-<div class="google" hidden>
-<p class="or"><span>{l("or")}</span></p>
-<button class="button ghost wide google-btn" type="button" id="google">{GOOGLE_G}<span>{l("google")}</span></button>
-</div>
 </div>
 <p class="forgot" data-for="sign-in"><a href="?mode=reset" data-mode-link="reset">{l("forgot")}</a></p>
 </form>
@@ -4023,6 +4053,30 @@ def account_page(lang="en"):
 <script src="{asset("account.js")}" defer></script>
 """
     return page(lang, a("title"), body, unlisted="/account/")
+
+
+def admin_page():
+    """The admin (web/admin.js), after Ochorus's: one page whose sections
+    (#coverage, #team, ...) the script draws from the API (backend/staff/),
+    showing only the parts the signed-in account's roles open. In English
+    only, as Ochorus's admin is. Not in the sitemap, and not indexed."""
+    lang = "en"
+    body = f"""
+<div class="admin" id="admin" data-site="{html.escape(SITE_URL)}" data-github="{html.escape(GITHUB_URL)}">
+<nav class="admin-rail" id="admin-rail" aria-label="Admin sections" hidden></nav>
+<section class="admin-main" id="admin-main" aria-live="polite">
+<header class="page-head compact">
+<p class="eyebrow">Admin</p>
+<h1>Open Word Bible admin</h1>
+<p class="dek" id="admin-status">Loading&hellip;</p>
+</header>
+<noscript><p class="notice">The admin needs JavaScript.</p></noscript>
+</section>
+</div>
+<script src="{asset("admin.js")}" defer></script>
+"""
+    head = f'\n<link rel="stylesheet" href="{asset("admin.css")}">'
+    return page(lang, "Admin", body, unlisted="/admin/", translated=(lang,), head=head)
 
 
 def not_found_page():
@@ -4331,7 +4385,7 @@ def sitemap(paths):
 
 
 def build(out):
-    for cached in (status_counts, _book_records, _chapter_words, _all_records, nav_menus, footer_links, passages, asset, translated_verses, catalog, book_refs, name_cards, term_uses,
+    for cached in (status_counts, _book_records, _chapter_words, chapter_verses, _all_records, nav_menus, footer_links, passages, asset, translated_verses, catalog, book_refs, name_cards, term_uses,
                    search_documents, word_uses, series_numbers, chapter_articles, load_plans, plans_json, plans_json_url):
         cached.cache_clear()
     if out.exists():
@@ -4375,6 +4429,8 @@ def build(out):
         add("/reset-password/", reset_page(lang), index=False)
         add("/offline/", offline_page(lang), index=False)
         add("/saved/", saved_page(lang), index=False)
+    # The admin is in English only (admin_page).
+    pages["/admin/"] = admin_page()
     # A plan's page is in the languages that offer it.
     offered = {code: {p.id for p in available_plans(code)} for code in LANGUAGES}
     for plan in load_plans():
@@ -4404,12 +4460,13 @@ def build(out):
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(text, encoding="utf-8")
     for name in ("style.css", "markup.js", "reader.js", "site.js", "account.js", "search.js", "plans.js", "compare.js",
-                 "word.js"):
+                 "word.js", "admin.js", "admin.css"):
         shutil.copy(ROOT / "web" / name, out / name)
     shutil.copytree(ROOT / "web" / "fonts", out / "fonts")
     shutil.copytree(ROOT / "web" / "icons", out / "icons")
     shutil.copytree(OG, out / "og", ignore=shutil.ignore_patterns("*.digest"))
-    return sorted(files) + ["compare.js", "word.js", "markup.js", "plans.js", "reader.js", "search.js", "site.js", "style.css"]
+    return sorted(files) + ["admin.css", "admin.js", "compare.js", "word.js", "markup.js", "plans.js", "reader.js",
+                            "search.js", "site.js", "style.css"]
 
 
 def main():

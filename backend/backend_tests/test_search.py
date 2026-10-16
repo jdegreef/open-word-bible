@@ -208,12 +208,16 @@ class SearchTest(TestCase):
         self.assertEqual(ref["shown"], [6, 7])
 
     def test_references_not_translated_and_words_that_look_like_one(self):
-        ref = self.get(q="mal 3:1", lang="en")["reference"]
-        self.assertEqual(ref["label"], "Malachi 3:1")
+        # A chapter the site has no page for (Malachi has three), so this
+        # holds however much of the Bible has been drafted.
+        ref = self.get(q="mal 9:1", lang="en")["reference"]
+        self.assertEqual(ref["label"], "Malachi 9:1")
         self.assertNotIn("url", ref)
         ref = self.get(q="John 4:60", lang="en")["reference"]
         self.assertEqual((ref["url"], ref["shown"], ref["sentences"]), ("/jhn/4/", [], []))
-        self.assertIsNone(self.get(q="son 3", lang="en")["reference"])
+        # Words and a number, not the start of any book's name. ("son 3" was
+        # the example until Song of Songs was drafted.)
+        self.assertIsNone(self.get(q="love 3", lang="en")["reference"])
 
     # ---- The request ------------------------------------------------------
 

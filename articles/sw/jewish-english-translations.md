@@ -4,6 +4,7 @@ summary: Watafsiri Wayahudi wameitafsiri Biblia ya Kiebrania kwa Kiingereza kwa 
 date: 2026-10-14
 order: 72
 section: compare
+source: e986ec7ee79e
 ---
 Biblia ya Kiebrania ni Biblia ya jumuiya mbili. Kwa Wakristo ni Agano la Kale, linalosomwa pamoja na Agano Jipya. Kwa Wayahudi ni Maandiko yote, yanayoitwa **Tanakh**, nayo yanasomwa pamoja na mapokeo marefu ya ufafanuzi wa kirabi. Wayahudi wanaozungumza Kiingereza walipotaka Biblia katika lugha yao wenyewe, waliweza kutumia King James Version, na kwa muda mrefu wengi walifanya hivyo. Lakini ilikuwa imetengenezwa na Wakristo, vichwa vya sura zake na baadhi ya tafsiri zake viliakisi usomaji wa Kikristo, na mpangilio wake wa vitabu haukuwa wao. Watafsiri Wayahudi waliazimia kutengeneza Biblia zao wenyewe za Kiingereza.
 

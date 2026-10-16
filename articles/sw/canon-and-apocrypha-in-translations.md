@@ -4,6 +4,7 @@ summary: Biblia ya Kiprotestanti ina vitabu 66, ya Kikatoliki 73, na Biblia za K
 date: 2026-10-14
 order: 73
 section: compare
+source: e6b078f738c1
 ---
 Chukua Biblia katika duka la vitabu la Kiprotestanti na uhesabu vitabu vyake: vitakuwa 66. Biblia ya Kikatoliki ina 73. Biblia ya Kiorthodoksi ya Kigiriki ina zaidi tena, na Biblia ya Kanisa la Kiorthodoksi la Tewahedo la Ethiopia zaidi kuliko hiyo. Agano Jipya ni lilelile katika zote, isipokuwa jambo moja linalojadiliwa hapa chini. Tofauti ziko katika Agano la Kale.
 

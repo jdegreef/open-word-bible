@@ -4,6 +4,7 @@ summary: Los textos originales de la Biblia tienen miles de años, pero casi tod
 date: 2026-10-14
 order: 78
 section: compare
+source: 5a58fcfb7f0f
 ---
 Abre casi cualquier Biblia inglesa moderna por sus primeras páginas y encontrarás un aviso de derechos de autor, seguido a menudo de un párrafo de permisos: cuántos versículos pueden citarse sin pedir permiso, qué línea de crédito debe usarse y a quién escribir para algo más. A veces los lectores se sorprenden. Los textos hebreos y griegos son antiguos, y la Biblia está hecha para leerse y compartirse. ¿Cómo puede alguien ser su dueño?
 

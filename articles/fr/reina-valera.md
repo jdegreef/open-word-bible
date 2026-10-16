@@ -4,6 +4,7 @@ summary: La Bible espagnole la plus aimée fut traduite par un moine qui avait f
 date: 2026-10-12
 order: 54
 section: translation
+source: 68311788d9b1
 ---
 Depuis plus de quatre siècles, la Bible de la plupart des protestants hispanophones est la **Reina-Valera**. Ses révisions comptent encore parmi les Bibles les plus lues au monde, de Madrid à Mexico et à Buenos Aires. Elle fut d'abord l'œuvre d'un savant réfugié, **Casiodoro de Reina**, qui la traduisit pendant de longues années en allant de ville en ville, et elle fut imprimée loin de l'Espagne parce qu'elle ne pouvait pas l'être là-bas.
 

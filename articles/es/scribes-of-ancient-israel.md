@@ -5,6 +5,7 @@ date: 2026-10-11
 order: 22
 section: history
 part: ot
+source: f431f8fc7b2c
 ---
 Toda Biblia que se imprime hoy depende de personas en las que la mayoría de los lectores nunca piensa: los escribas. Durante mucho más de dos mil años, la única manera de tener una copia de un libro bíblico era que alguien la escribiera a mano, letra por letra, a partir de otra copia. La exactitud de la Biblia que leemos depende, en gran parte, de lo bien que esas personas hacían su trabajo.
 

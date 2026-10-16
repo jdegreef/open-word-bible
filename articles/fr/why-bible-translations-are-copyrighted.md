@@ -4,6 +4,7 @@ summary: Les textes originaux de la Bible ont des milliers d'années, mais presq
 date: 2026-10-14
 order: 78
 section: compare
+source: 5a58fcfb7f0f
 ---
 Ouvrez presque n'importe quelle Bible anglaise moderne à ses premières pages et vous y trouverez une mention de droit d'auteur, souvent suivie d'un paragraphe d'autorisations : combien de versets on peut citer sans demander, quelle mention de source employer, et à qui écrire pour tout le reste. Les lecteurs s'en étonnent parfois. Les textes hébreu et grec sont anciens, et la Bible est faite pour être lue et partagée. Comment quelqu'un peut-il la posséder ?
 

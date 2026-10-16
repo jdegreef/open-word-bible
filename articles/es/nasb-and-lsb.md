@@ -4,6 +4,7 @@ summary: La New American Standard Bible se propuso conservar en inglés moderno 
 date: 2026-10-14
 order: 64
 section: compare
+source: 427ee00533e6
 ---
 Cuando se busca un ejemplo de Biblia inglesa moderna muy literal, se suele nombrar la **New American Standard Bible** (NASB). Durante más de medio siglo ha sido la traducción preferida de muchos estudiantes de las lenguas originales, y aquella con la que se comparan las demás cuando la pregunta es «¿qué dice realmente el griego?».
 

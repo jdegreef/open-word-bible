@@ -4,6 +4,7 @@ summary: Las cuatro letras hebreas YHWH aparecen miles de veces en el Antiguo Te
 date: 2026-10-14
 order: 76
 section: compare
+source: 1a5721e02bd2
 ---
 El sustantivo más frecuente de la Biblia hebrea es un nombre. El nombre personal de Dios, escrito con cuatro consonantes que suelen transliterarse **YHWH**, aparece unas 6.800 veces según el recuento habitual. Los estudiosos lo llaman **tetragrámaton**, que en griego significa «cuatro letras». Toda traducción del Antiguo Testamento debe decidir qué hacer con él, y pocas decisiones son tan visibles: el mismo versículo puede decir «the LORD» («el SEÑOR»), «Jehovah» («Jehová») o «Yahweh» («Yahvé»), según la Biblia que se tenga en la mano.
 

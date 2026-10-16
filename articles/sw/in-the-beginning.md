@@ -4,6 +4,7 @@ summary: Mistari miwili ya kwanza ya Biblia ina maamuzi mawili magumu na mengine
 date: 2026-10-11
 order: 16
 section: passage
+source: fe28aa9d788a
 ---
 Biblia inaanza na maneno saba ya Kiebrania:
 

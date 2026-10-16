@@ -4,6 +4,7 @@ summary: Des siècles avant Wyclif, les Anglo-Saxons mettaient déjà la Bible e
 date: 2026-10-12
 order: 48
 section: translation
+source: 6c95bca19335
 ---
 La première Bible anglaise complète fut l'œuvre des disciples de John Wyclif, au quatorzième siècle. Mais ceux qui parlaient anglais mettaient des parties de la Bible dans leur langue depuis quelque sept cents ans déjà, en **vieil anglais**.
 

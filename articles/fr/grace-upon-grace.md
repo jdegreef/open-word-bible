@@ -5,6 +5,7 @@ date: 2026-10-10
 order: 7
 nav_title: Quand une décision est incertaine
 section: passage
+source: 67d13acd619a
 ---
 Toute traduction cache ses choix serrés. Un comité vote, la lecture majoritaire entre dans le texte, et le lecteur n'apprend jamais que le vote a été serré. Open Word Bible marque ces décisions comme *incertaines*, explique les deux positions et affiche une étiquette dans le lecteur. En voici deux.
 

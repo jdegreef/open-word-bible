@@ -4,6 +4,7 @@ summary: Comment une conférence à Hampton Court en 1604 aboutit à la Bible an
 date: 2026-10-12
 order: 53
 section: translation
+source: a6443eb61b96
 ---
 Pendant environ trois cents ans, la Bible de la plupart des anglophones fut la **version King James** (King James Version) de 1611, dite en Grande-Bretagne l'**Authorized Version**, la "version autorisée". Ses expressions sont tissées dans l'anglais, et beaucoup d'Églises et de lecteurs l'utilisent encore.
 

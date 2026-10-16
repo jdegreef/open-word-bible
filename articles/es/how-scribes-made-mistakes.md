@@ -5,6 +5,7 @@ date: 2026-10-11
 order: 36
 section: history
 part: nt
+source: a6a86ecb32a0
 ---
 Intenten copiar a mano una página de texto, con cuidado, y luego pidan a alguien que la compare con el original. A menos que tengan mucha práctica, probablemente encontrarán algunos errores: una palabra omitida, una línea saltada, una letra equivocada, quizá una palabra que estaban seguros de haber visto pero que no estaba. Los escribas antiguos tenían mucha más práctica que la mayoría de nosotros, pero eran humanos, y cometían el mismo tipo de errores.
 

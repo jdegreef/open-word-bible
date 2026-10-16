@@ -5,6 +5,7 @@ date: 2026-10-11
 order: 37
 section: history
 part: nt
+source: df07ae868ffd
 ---
 Toda traducción de la Biblia empieza con una decisión que la mayoría de los lectores nunca ven: qué texto traducir. Como la Biblia se copió a mano durante siglos, no hay dos manuscritos de cierta extensión que sean exactamente iguales. Antes de que un traductor pueda preguntar qué significa una frase, alguien tiene que preguntar qué *dice* la frase. La disciplina que responde a esa pregunta se llama **crítica textual**.
 

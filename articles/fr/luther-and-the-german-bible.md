@@ -4,6 +4,7 @@ summary: Caché au château de la Wartbourg en 1521–22, Martin Luther traduisi
 date: 2026-10-12
 order: 50
 section: translation
+source: 4a214dff1341
 ---
 En mai 1521, alors qu'il rentrait de la Diète impériale de Worms, où il avait refusé de rétracter ses écrits, **Martin Luther** fut enlevé par des cavaliers armés. Cet "enlèvement" avait été organisé par son protecteur, l'Électeur **Frédéric le Sage** de Saxe. Luther fut conduit à la **Wartbourg**, un château qui domine Eisenach, où il vécut déguisé en chevalier sous le nom de "Junker Jörg", se laissa pousser la barbe, et écrivit.
 

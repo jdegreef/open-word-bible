@@ -5,6 +5,7 @@ date: 2026-10-11
 order: 25
 section: history
 part: ot
+source: b521ec1952d6
 ---
 Si quieres saber exactamente qué dice el texto hebreo del Antiguo Testamento, ¿dónde buscas? No en los Rollos del Mar Muerto, por valiosos que sean: en su mayoría son fragmentos, y difieren entre sí. Los especialistas y los traductores recurren en cambio a dos libros medievales, escritos ambos por los escribas más cuidadosos de la tradición masorética, y ambos con historias notables. Son el **Códice de Alepo** y el **Códice de Leningrado**.
 

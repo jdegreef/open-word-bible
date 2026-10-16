@@ -1439,6 +1439,15 @@ a.fn-pop-more { display: inline-block; text-decoration: none; }
 }
 .cite-text:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 .cite-chapter { margin: 10px 0 0; }
+/* Suggest or ask (web/reader.js noteBox): a message to the editors. */
+.note-box { margin: 4px 0 12px; padding: 10px 12px 12px; border-radius: var(--radius-sm); background: var(--surface-2); font-family: var(--sans); }
+.note-box[hidden] { display: none; }
+.note-box .cite-label { display: block; margin: 0 0 6px; }
+.note-box .seg { margin: 0 0 8px; }
+.note-text { max-height: 14em; }
+.note-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin: 8px 0 0; }
+.note-status { margin: 0; font-size: 13px; color: var(--muted); }
+.note-sign-in { margin: 0; font-size: 14px; }
 .cite-scratch { position: fixed; top: 0; left: -9999px; opacity: 0; }
 /* A note's reference to a chapter not translated yet, with the verse from
    a public-domain Bible for comparison. */
@@ -1776,7 +1785,10 @@ html.signed-in .sign-in-btn { visibility: hidden; }
 .button[aria-busy="true"] { opacity: .7; cursor: progress; }
 .button:disabled { cursor: default; transform: none; }
 .auth-alt { display: grid; }
-.or { display: flex; align-items: center; gap: 12px; margin: 14px 0 0; color: var(--muted); font-size: 13.5px; }
+/* Google comes first, as on Ochorus; the email form follows the "or". */
+.google { display: grid; }
+.google .button.wide { margin-top: 0; }
+.or { display: flex; align-items: center; gap: 12px; margin: 16px 0 4px; color: var(--muted); font-size: 13.5px; }
 .or::before, .or::after { content: ""; flex: 1; border-top: 1px solid var(--line); }
 .google-btn svg { flex: none; }
 .forgot { margin: 6px 0 0; text-align: center; font-size: 15px; }

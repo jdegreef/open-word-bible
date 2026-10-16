@@ -5,6 +5,7 @@ date: 2026-10-11
 order: 36
 section: history
 part: nt
+source: a6a86ecb32a0
 ---
 Jaribu kunakili ukurasa wa maandishi kwa mkono, kwa uangalifu, kisha mwombe mtu aukague dhidi ya ule wa asili. Usipokuwa umezoea sana, huenda utakuta makosa machache: neno lililoachwa, mstari uliorukwa, herufi isiyo sahihi, labda neno ambalo ulikuwa na uhakika lilikuwepo lakini halikuwepo. Wanakili wa zamani walikuwa wamezoea zaidi sana kuliko wengi wetu, lakini walikuwa binadamu, na walifanya makosa ya aina hiyohiyo.
 

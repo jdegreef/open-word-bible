@@ -4,6 +4,7 @@ summary: Akiwa amefichwa katika ngome ya Wartburg mwaka 1521–22, Martin Luther
 date: 2026-10-12
 order: 50
 section: translation
+source: 4a214dff1341
 ---
 Mwezi Mei 1521, akiwa njiani kurudi nyumbani kutoka Baraza la Kifalme huko Worms, ambako alikuwa amekataa kuyakana maandishi yake, **Martin Luther** alikamatwa na wapanda farasi wenye silaha. "Utekaji nyara" huo ulikuwa umepangwa na mlinzi wake, Mteule **Frederick Mwenye Hekima** wa Saksonia. Luther alipelekwa **Wartburg**, ngome iliyo juu ya Eisenach, ambako aliishi akiwa amejificha kama "Junker Jörg," shujaa wa farasi, akafuga ndevu, na akaandika.
 

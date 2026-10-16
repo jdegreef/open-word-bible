@@ -5,6 +5,7 @@ date: 2026-10-11
 order: 21
 section: history
 part: ot
+source: cb2915562c6f
 ---
 Agano la Kale si kitabu kimoja bali ni maktaba. Wakristo huhesabu vitabu thelathini na tisa ndani yake; mapokeo ya Kiyahudi huyahesabu maandiko hayo hayo kuwa vitabu ishirini na vinne. Ndani yake kuna sheria, historia, mashairi, methali, unabii na hata aina fulani ya barua, vilivyoandikwa kwa Kiebrania katika kipindi cha karne nyingi, pamoja na sura chache kwa Kiaramu. Hakuna mtu aliyeketi chini na kukiandika kuanzia mwanzo hadi mwisho. Basi, kiliandikwaje?
 

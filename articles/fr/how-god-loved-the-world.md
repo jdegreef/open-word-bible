@@ -4,6 +4,7 @@ summary: Le verset le plus connu de la Bible tient à un petit mot grec. Dit-il 
 date: 2026-10-11
 order: 11
 section: passage
+source: e258b0e80ed9
 ---
 Beaucoup de lecteurs connaissent Jean 3:16 par cœur, dans les mots "Car Dieu a tant aimé le monde", et les lecteurs anglais dans ceux de "For God so loved the world". Le niveau Équilibrée d'Open Word Bible dit les choses un peu autrement :
 

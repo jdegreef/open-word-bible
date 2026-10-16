@@ -5,6 +5,7 @@ date: 2026-10-11
 order: 22
 section: history
 part: ot
+source: f431f8fc7b2c
 ---
 Chaque Bible imprimée aujourd'hui dépend de personnes auxquelles la plupart des lecteurs ne pensent jamais : les scribes. Pendant bien plus de deux mille ans, la seule manière d'avoir un exemplaire d'un livre biblique était que quelqu'un le recopie à la main, lettre après lettre, à partir d'un autre exemplaire. L'exactitude de la Bible que nous lisons dépend, pour une large part, de la qualité du travail de ces personnes.
 

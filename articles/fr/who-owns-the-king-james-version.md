@@ -4,6 +4,7 @@ summary: Dans la plupart des pays, la version King James est dans le domaine pub
 date: 2026-10-14
 order: 79
 section: compare
+source: 99d6265e2543
 ---
 La version King James a plus de quatre cents ans, et aux États-Unis, au Canada, en Australie et dans la plupart des autres pays, n'importe qui peut l'imprimer, la citer, l'enregistrer ou la mettre en ligne sans rien demander. C'est la Bible du domaine public la plus utilisée au monde, et beaucoup de sites et d'applications bibliques gratuits reposent sur elle.
 

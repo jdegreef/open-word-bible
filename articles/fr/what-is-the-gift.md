@@ -4,6 +4,7 @@ summary: En Éphésiens 2:8, Paul dit "cela ne vient pas de vous ; c'est le don 
 date: 2026-10-11
 order: 13
 section: passage
+source: 134dbe4ffb68
 ---
 Éphésiens 2:8–9 est l'une des affirmations les plus claires du Nouveau Testament sur la manière dont une personne est sauvée.
 

@@ -4,6 +4,7 @@ summary: Ce qui fait d'une Bible une paraphrase plutôt qu'une traduction, et ce
 date: 2026-10-14
 order: 70
 section: compare
+source: f63189809815
 ---
 À côté des traductions faites par des comités, décrites ailleurs dans cette série, les lecteurs anglophones disposent de tout un rayon de versions plus libres : le Nouveau Testament de J. B. Phillips, la Living Bible, *The Message*, *The Voice* et *The Passion Translation*. Il y a aussi l'**Amplified Bible**, qui va dans l'autre sens : elle ne donne pas moins de mots que l'original, mais beaucoup plus. Ces versions ont touché des millions de lecteurs, dont beaucoup y ont trouvé la première Bible qu'ils pouvaient lire avec plaisir. Elles ont aussi été critiquées, parfois durement.
 

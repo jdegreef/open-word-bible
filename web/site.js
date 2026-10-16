@@ -184,7 +184,7 @@
 // Ochorus. Signed out, "Sign in" leads to /login/ and back to this page.
 // Signed in (web/account.js keeps a copy of the account in localStorage),
 // the reader's initial opens a menu: their name and email, the account
-// page, Admin for a super admin, and signing out.
+// page, Admin for the team, and signing out.
 (function () {
   "use strict";
   var box = document.querySelector(".account-menu");
@@ -213,7 +213,8 @@
   box.querySelector(".account-initial").textContent = name.charAt(0).toUpperCase();
   box.querySelector(".who-name").textContent = user.display_name || "";
   box.querySelector(".who-email").textContent = user.email;
-  box.querySelector(".admin-link").hidden = !user.is_super_admin;
+  // Admin for anyone whose roles open part of it (backend/staff/permissions.py).
+  box.querySelector(".admin-link").hidden = !(user.is_super_admin || (user.admin && user.admin.length));
   button.setAttribute("aria-label", button.getAttribute("aria-label") + " (" + name + ")");
   signIn.hidden = true;
   button.hidden = false;

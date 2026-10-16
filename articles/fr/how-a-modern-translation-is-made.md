@@ -4,6 +4,7 @@ summary: Derrière chaque Bible anglaise moderne, il y a un promoteur, un comit�
 date: 2026-10-14
 order: 62
 section: compare
+source: bf8beef2f37a
 ---
 La version King James a été faite par une cinquantaine de spécialistes répartis en six équipes, qui suivaient une liste de quinze règles (voir [La version King James](/articles/the-king-james-version/)). Les traductions modernes se font à peu près de la même manière, par des comités qui suivent des principes écrits, mais avec plus d'étapes, plus de relecteurs, plus de technique et un éditeur qui attend au bout.
 

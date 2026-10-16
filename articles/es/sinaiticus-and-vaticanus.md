@@ -5,6 +5,7 @@ date: 2026-10-11
 order: 35
 section: history
 part: nt
+source: fcf07aaa2945
 ---
 Si los papiros son los testimonios más antiguos del Nuevo Testamento, los dos grandes códices de pergamino del siglo IV son los más completos. El **Códice Sinaítico** y el **Códice Vaticano** son los manuscritos conservados más antiguos que contuvieron en su día toda la Biblia cristiana, Antiguo y Nuevo Testamento, en griego. Han dado forma a todas las ediciones críticas del Nuevo Testamento griego desde el siglo XIX y, con ellas, a casi todas las traducciones modernas.
 

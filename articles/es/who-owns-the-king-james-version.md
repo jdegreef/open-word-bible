@@ -4,6 +4,7 @@ summary: En la mayor parte del mundo, la versión King James es de dominio públ
 date: 2026-10-14
 order: 79
 section: compare
+source: 99d6265e2543
 ---
 La versión King James tiene más de cuatrocientos años, y en Estados Unidos, Canadá, Australia y la mayoría de los demás países cualquiera puede imprimirla, citarla, grabarla o publicarla en internet sin pedir permiso. Es la Biblia de dominio público más usada del mundo, y muchos sitios web y aplicaciones bíblicas gratuitos se basan en ella.
 

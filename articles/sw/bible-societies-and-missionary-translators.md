@@ -4,6 +4,7 @@ summary: Katika karne ya kumi na tisa, vyama vipya vya Biblia na wamisionari wa 
 date: 2026-10-12
 order: 57
 section: translation
+source: 3582bc9932c0
 ---
 Kwa mujibu wa makadirio moja yanayotajwa mara nyingi, mwaka 1800 Biblia, nzima au sehemu yake, ilikuwa imechapishwa katika lugha karibu sabini, nyingi zikiwa za Ulaya. Kufikia mwaka 1900 idadi ilikuwa mamia kadhaa. Badiliko hilo liliendeshwa na mambo mawili mapya: vyama vilivyokuwepo kwa ajili ya kuchapisha na kusambaza Biblia tu, na wimbi la wamisionari wa Kiprotestanti waliojifunza lugha ambazo mara chache, au hata kamwe, hazikuwa zimeandikwa.
 

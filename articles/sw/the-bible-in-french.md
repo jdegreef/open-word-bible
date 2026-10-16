@@ -4,6 +4,7 @@ summary: Kuanzia Biblia zenye picha za Paris ya Zama za Kati hadi Biblia ya Mate
 date: 2026-10-12
 order: 55
 section: translation
+source: e10960820a3f
 ---
 Kifaransa kimekuwa lugha ya tafsiri ya Biblia kwa karibu miaka mia nane. Kimetoa Biblia kwa ajili ya wafalme na kwa ajili ya wakimbizi, kwa ajili ya Wakatoliki, Waprotestanti na wote kwa pamoja. Leo wazungumzaji wengi wa Kifaransa wanaishi nje ya Ulaya, na Biblia ya Kifaransa inasomwa Kinshasa na Abidjan kama inavyosomwa Paris au Geneva.
 

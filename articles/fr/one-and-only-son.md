@@ -4,6 +4,7 @@ summary: Jean 1:14 et 1:18 emploient un mot que la tradition latine a compris co
 date: 2026-10-10
 order: 6
 section: passage
+source: f7ccd10c2f20
 ---
 Le latin traduisait le mot de Jean 1:14 et 3:16 par *unigenitus*, "unique engendré", et cette idée d'engendrement est passée dans d'anciennes traductions, comme l'anglais "only begotten". Open Word Bible dit "Fils unique". Les raisons se trouvent dans les dossiers de Jean 1:14 et 1:18.
 

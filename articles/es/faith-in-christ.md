@@ -4,6 +4,7 @@ summary: Dos pequeñas palabras griegas de Gálatas pueden leerse de dos maneras
 date: 2026-10-11
 order: 12
 section: passage
+source: 2782e8dbb7c9
 ---
 Gálatas 2:16 está en el centro del argumento de Pablo en esta carta. En Antioquía, Pedro había dejado de comer con los creyentes gentiles. Pablo le recuerda lo que los dos ya saben:
 

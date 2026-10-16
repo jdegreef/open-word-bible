@@ -4,6 +4,7 @@ summary: Il n'existe pas deux copies manuscrites du Nouveau Testament exactement
 date: 2026-10-11
 order: 15
 section: method
+source: f140a6abeed7
 ---
 Avant l'imprimerie, chaque exemplaire du Nouveau Testament était copié à la main. Plus de cinq mille manuscrits grecs nous sont parvenus, des bouts de papyrus aux Bibles complètes, et il n'y en a pas deux qui soient exactement identiques. La plupart des différences sont minimes : une orthographe, un ordre des mots, un "le" ajouté ou omis. Quelques-unes sont plus importantes. Les spécialistes appellent ces différences des *variantes*, et le travail qui consiste à les peser la *critique textuelle*. Voir [Comment la critique textuelle retrouve le texte](/articles/how-textual-criticism-works/) pour la méthode elle-même.
 

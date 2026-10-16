@@ -5,6 +5,7 @@ date: 2026-10-11
 order: 27
 section: history
 part: ot
+source: 3dec12dd8876
 ---
 Kati ya Hati-kunjo zote za Bahari ya Chumvi, moja imekuwa ishara ya ugunduzi mzima: **Hati-kunjo Kuu ya Isaya**, inayojulikana na wasomi kama **1QIsa-a** (Pango la 1, Qumran, Isaya, nakala ya kwanza). Ilikuwa miongoni mwa hati-kunjo saba za kwanza zilizopatikana mwaka 1947, na ndicho kitabu pekee cha Biblia miongoni mwa hati-kunjo hizo kilichobaki kikiwa kamili, sura zote sitini na sita, kuanzia mstari wa kwanza hadi wa mwisho.
 

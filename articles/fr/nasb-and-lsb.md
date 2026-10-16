@@ -4,6 +4,7 @@ summary: La New American Standard Bible a voulu garder la précision de l'Americ
 date: 2026-10-14
 order: 64
 section: compare
+source: 427ee00533e6
 ---
 Quand on cherche l'exemple d'une Bible anglaise moderne très littérale, on cite en général la **New American Standard Bible** (NASB). Depuis plus d'un demi-siècle, elle est la traduction préférée de beaucoup d'étudiants des langues originales, et celle à laquelle on compare les autres quand la question est : "que dit vraiment le grec ?"
 

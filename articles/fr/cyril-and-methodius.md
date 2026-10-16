@@ -4,6 +4,7 @@ summary: Dans les années 860, deux frères de Thessalonique inventèrent un alp
 date: 2026-10-12
 order: 46
 section: translation
+source: 56dc2fab6d01
 ---
 Des centaines de millions de personnes écrivent le russe, l'ukrainien, le bulgare, le serbe et d'autres langues avec l'alphabet **cyrillique**. Il porte le nom d'un savant byzantin du neuvième siècle, **Constantin**, mieux connu sous le nom monastique qu'il prit peu avant sa mort : **Cyrille**. Pourtant, Cyrille n'a presque certainement pas inventé le cyrillique. Il a inventé un autre alphabet, le **glagolitique**, pour que les Slaves puissent entendre la Bible dans leur propre langue.
 

@@ -4,6 +4,7 @@ summary: Vers l'an 400, le savant Jérôme révisa les Évangiles latins et trad
 date: 2026-10-12
 order: 43
 section: translation
+source: 42dd42a32d80
 ---
 Pendant un millier d'années environ, si l'on entendait lire la Bible dans une église d'Europe occidentale, on l'entendait en latin, et l'essentiel de ce que l'on entendait était l'œuvre d'un seul homme. **Jérôme** était un savant brillant, ombrageux et infatigable, qui passa les dernières décennies de sa vie à Bethléem à traduire les Écritures. La Bible latine issue de son travail a fini par s'appeler la **Vulgate**, la version "commune".
 

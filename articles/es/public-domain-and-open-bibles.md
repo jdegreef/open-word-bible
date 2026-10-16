@@ -4,6 +4,7 @@ summary: La mayoría de las Biblias modernas tienen derechos de autor, pero un n
 date: 2026-10-14
 order: 80
 section: compare
+source: b612a80c7797
 ---
 La mayoría de las Biblias modernas tienen derechos de autor, y usarlas extensamente supone pedir permiso y a veces pagar (véase [Por qué las traducciones de la Biblia tienen derechos de autor](/articles/why-bible-translations-are-copyrighted/)). Junto a ellas, una familia más pequeña de traducciones puede copiarse, imprimirse, grabarse, incluirse en aplicaciones y adaptarse sin pedir permiso a nadie. Algunas son libres porque son antiguas. Otras se hicieron libres a propósito.
 

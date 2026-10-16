@@ -56,6 +56,16 @@
           "L": "Lakini Mwana wa Adamu atakapokuja katika utukufu {{deity_pronoun:wake|Wake}}, na malaika wote wakiwa pamoja {{deity_pronoun:naye|Naye}}, wakati huo ataketi juu ya kiti cha enzi cha utukufu {{deity_pronoun:wake|Wake}};",
           "B": "Mwana wa Adamu atakuja katika utukufu {{deity_pronoun:wake|Wake}}, na malaika wote pamoja {{deity_pronoun:naye|Naye}}. Kisha ataketi juu ya kiti cha enzi cha utukufu {{deity_pronoun:wake|Wake}}.",
           "R": "Mwana wa Adamu atakuja katika utukufu {{deity_pronoun:wake|Wake}}, na malaika wote watakuja pamoja {{deity_pronoun:naye|Naye}}. Kisha ataketi juu ya kiti {{deity_pronoun:chake|Chake}} cha enzi chenye utukufu."
+        },
+        "vi": {
+          "L": "Và khi Con Người đến trong vinh quang của {{deity_pronoun:ngài|Ngài}}, cùng với tất cả các thiên sứ với {{deity_pronoun:ngài|Ngài}}, thì bấy giờ {{deity_pronoun:ngài|Ngài}} sẽ ngồi trên ngai vinh quang của {{deity_pronoun:ngài|Ngài}};",
+          "B": "Con Người sẽ đến trong vinh quang của {{deity_pronoun:ngài|Ngài}}, cùng với tất cả các thiên sứ. Bấy giờ {{deity_pronoun:ngài|Ngài}} sẽ ngồi trên ngai vinh quang của {{deity_pronoun:ngài|Ngài}}.",
+          "R": "Con Người sẽ đến trong vinh quang của {{deity_pronoun:ngài|Ngài}}, và tất cả các thiên sứ sẽ đến với {{deity_pronoun:ngài|Ngài}}. Rồi {{deity_pronoun:ngài|Ngài}} sẽ ngồi trên ngai vinh hiển của {{deity_pronoun:ngài|Ngài}}."
+        },
+        "ko": {
+          "L": "그런데 인자가 자기 영광 가운데 오고 모든 천사가 그와 함께 [올] 때에, 그때에 그는 자기 영광의 보좌에 앉을 것이다.",
+          "B": "인자가 자기 영광에 싸여 모든 천사와 함께 올 것이다. 그때 그는 영광스러운 보좌에 앉을 것이다.",
+          "R": "인자가 영광 가운데 올 것이다. 모든 천사도 인자와 함께 올 것이다. 그때 인자는 영광스러운 보좌에 앉을 것이다."
         }
       },
       "decisions": [
@@ -223,6 +233,77 @@
           "reason": "Swahili marks most pronouns with a prefix inside the verb (ataketi, mlinipa, tulikuona), which cannot take a capital, so the setting applies only to free pronouns and possessives, as in John. Swahili therefore has fewer spans than English through 25:46.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40025031011",
+            "n40025031017",
+            "n40025031019",
+            "n40025031023"
+          ],
+          "choice": "{{deity_pronoun:ngài|Ngài}} for the Son of Man through 25:31-46; the King speaks as \"Ta\"",
+          "alternatives": [],
+          "reason": "As in 16:27 and 19:28: Jesus speaks of the Son of Man in the third person, and Vietnamese gives him the narrator's \"Ngài\" with the setting, as the English gives the deity_pronoun span. When the King speaks (25:34-45) he is Jesus himself and says \"Ta\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40025031004",
+            "n40025031005",
+            "n40025031006",
+            "n40025031007",
+            "n40025031019"
+          ],
+          "choice": "No deity_pronoun spans in Korean, through Matthew 25:31-46; Jesus speaks of the Son of Man and the King, that is himself, with no honorific (\"올\", \"앉을\", \"그는\")",
+          "alternatives": [
+            "\"오실\", \"앉으실\""
+          ],
+          "reason": "Korean has no capital letters, so the setting has nothing to change; and a Korean speaker does not honour himself, as in the Korean Matthew 16:27 and 19:28. Those who speak to the King use 합쇼체 with \"주님\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40025031020",
+            "n40025031021",
+            "n40025031022",
+            "n40025031023"
+          ],
+          "choice": "\"자기 영광의 보좌\" (L); \"영광스러운 보좌\" (B, R)",
+          "alternatives": [
+            "\"왕좌\""
+          ],
+          "reason": "The wording of the Korean Matthew 19:28.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -295,6 +376,16 @@
           "L": "Na mataifa yote yatakusanywa mbele {{deity_pronoun:yake|Yake}}, {{deity_pronoun:naye|Naye}} atawatenganisha wao kwa wao, kama vile mchungaji anavyowatenganisha kondoo na mbuzi, \\v 33 {{deity_pronoun:naye|Naye}} atawaweka kondoo upande wa kulia {{deity_pronoun:wake|Wake}}, lakini mbuzi upande wa kushoto.",
           "B": "Mataifa yote yatakusanywa mbele {{deity_pronoun:yake|Yake}}. Kisha atawagawa watu katika makundi mawili, kama mchungaji anavyowatenga kondoo na mbuzi. \\v 33 Atawaweka kondoo upande wa kulia {{deity_pronoun:wake|Wake}} na mbuzi upande wa kushoto {{deity_pronoun:wake|Wake}}.",
           "R": "Watu wa kila taifa watakusanywa mbele {{deity_pronoun:yake|Yake}}. Kisha atawatenga katika makundi mawili, kama mchungaji anavyowatenga kondoo na mbuzi. \\v 33 Atawaweka kondoo upande wa kulia {{deity_pronoun:wake|Wake}}, na mbuzi upande wa kushoto {{deity_pronoun:wake|Wake}}."
+        },
+        "vi": {
+          "L": "Và tất cả các dân tộc sẽ được nhóm lại trước mặt {{deity_pronoun:ngài|Ngài}}, và {{deity_pronoun:ngài|Ngài}} sẽ tách họ ra khỏi nhau, như người chăn chiên tách chiên ra khỏi dê, \\v 33 và {{deity_pronoun:ngài|Ngài}} sẽ đặt chiên ở bên phải {{deity_pronoun:ngài|Ngài}}, còn dê ở bên trái.",
+          "B": "Mọi dân tộc sẽ được tập hợp trước mặt {{deity_pronoun:ngài|Ngài}}. Rồi {{deity_pronoun:ngài|Ngài}} sẽ chia họ ra làm hai, như người chăn chiên tách chiên ra khỏi dê. \\v 33 Ngài sẽ đặt chiên ở bên phải {{deity_pronoun:ngài|Ngài}}, còn dê ở bên trái.",
+          "R": "Người thuộc mọi dân tộc sẽ được tập hợp trước mặt {{deity_pronoun:ngài|Ngài}}. Rồi {{deity_pronoun:ngài|Ngài}} sẽ chia họ ra làm hai nhóm, giống như người chăn chiên tách chiên ra khỏi dê. \\v 33 Ngài sẽ để chiên ở bên phải {{deity_pronoun:ngài|Ngài}}, và dê ở bên trái."
+        },
+        "ko": {
+          "L": "그리고 모든 민족이 그 앞에 모일 것이고, 그는 목자가 양들을 염소들에게서 갈라내듯이 그들을 서로 갈라낼 것이다. \\v 33 그리고 양들은 자기 오른쪽에, 염소들은 왼쪽에 세울 것이다.",
+          "B": "모든 민족이 그 앞에 모일 것이다. 그러면 그는 목자가 양과 염소를 가르듯이 사람들을 두 무리로 가를 것이다. \\v 33 양은 자기 오른쪽에, 염소는 왼쪽에 세울 것이다.",
+          "R": "모든 나라 사람들이 그 앞에 모일 것이다. 그러면 그는 사람들을 두 무리로 나눌 것이다. 목자가 양과 염소를 따로 나누는 것과 같다. \\v 33 그는 양들을 자기 오른쪽에 두고 염소들은 왼쪽에 둘 것이다."
         }
       },
       "decisions": [
@@ -405,6 +496,50 @@
           "reason": "\"Brebis\" is the usual word for sheep in a shepherd's flock and keeps the biblical image at Literal; \"moutons\" is the everyday word. \"Les boucs\" names only the males and now sounds like a fixed phrase; the Greek word means goats, often young ones, and \"chèvres\" says it plainly.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40025032005",
+            "n40025032006",
+            "n40025032007"
+          ],
+          "choice": "\"tất cả các dân tộc\" (L); \"mọi dân tộc\" (B, R)",
+          "alternatives": [
+            "\"các dân ngoại\""
+          ],
+          "reason": "All people of every nation (meaning decision), as in 24:9 and 24:14, not the Gentiles alone.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n40025032009",
+            "n40025032010"
+          ],
+          "choice": "\"사람들을 두 무리로\" (B, R)",
+          "alternatives": [
+            "\"그들을\""
+          ],
+          "reason": "As the English Balanced and Readable say, the nations are the people of every nation (meaning decision), divided into two groups.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -464,6 +599,16 @@
           "L": "Wakati huo Mfalme atasema kwa wale walio upande wa kulia {{deity_pronoun:wake|Wake}}, 'Njooni, ninyi mlio wabarikiwa wa Baba {{deity_pronoun:yangu|Yangu}}; pokeeni urithi wa ufalme ulioandaliwa kwa ajili yenu tangu misingi ya ulimwengu ilipowekwa.",
           "B": "Kisha Mfalme atawaambia wale walio upande wa kulia {{deity_pronoun:wake|Wake}}, 'Njooni, ninyi ambao Baba {{deity_pronoun:yangu|Yangu}} amewabariki. Ufalme umekuwa tayari kwa ajili yenu tangu ulimwengu ulipoumbwa; sasa ni urithi wenu.",
           "R": "Kisha Mfalme atawaambia watu walio upande wa kulia {{deity_pronoun:wake|Wake}}, 'Njooni, ninyi ambao Baba {{deity_pronoun:yangu|Yangu}} amewabariki! Pokeeni ufalme uwe wenu. Umekuwa tayari ukiwasubiri tangu ulimwengu ulipoumbwa."
+        },
+        "vi": {
+          "L": "Bấy giờ Vua sẽ nói với những người ở bên phải {{deity_pronoun:ngài|Ngài}}: 'Hãy đến, hỡi những người được Cha {{deity_pronoun:ta|Ta}} ban phước, hãy thừa hưởng vương quốc đã được chuẩn bị cho các người từ khi sáng lập thế giới.",
+          "B": "Bấy giờ Vua sẽ nói với những người ở bên phải {{deity_pronoun:ngài|Ngài}}: 'Hãy đến, hỡi những người được Cha {{deity_pronoun:ta|Ta}} ban phước! Vương quốc đã được chuẩn bị sẵn cho các người từ khi sáng tạo thế giới; nay hãy nhận lấy làm cơ nghiệp.",
+          "R": "Bấy giờ Vua sẽ nói với những người ở bên phải {{deity_pronoun:ngài|Ngài}}: 'Hãy đến đây, hỡi những người được Cha {{deity_pronoun:ta|Ta}} ban phước! Hãy nhận lấy vương quốc làm của mình. Vương quốc ấy đã được chuẩn bị sẵn cho các người từ khi thế giới được dựng nên."
+        },
+        "ko": {
+          "L": "그때에 왕이 자기 오른쪽에 있는 사람들에게 말할 것이다. '오너라, 내 아버지의 복을 받은 사람들아. 세상의 기초가 놓일 때부터 너희를 위하여 준비된 나라를 상속하여라.",
+          "B": "그때 왕이 자기 오른쪽에 있는 사람들에게 말할 것이다. '내 아버지께 복을 받은 사람들아, 오너라. 이 나라는 세상이 창조된 때부터 너희를 위하여 준비되어 있었다. 이제 이 나라를 물려받아라.",
+          "R": "그때 왕이 자기 오른쪽에 있는 사람들에게 말할 것이다. '내 아버지께서 복을 주신 사람들아, 오너라! 이 나라를 너희 것으로 받아라. 이 나라는 세상이 만들어진 때부터 너희를 위하여 준비되어 기다리고 있었다."
         }
       },
       "decisions": [
@@ -600,6 +745,93 @@
           "reason": "As the English: the title belongs to the Son of Man. Readable says what inheriting means without the legal word (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40025034004"
+          ],
+          "choice": "\"Vua\", with a capital",
+          "alternatives": [],
+          "reason": "The King is the Son of Man himself (meaning decision); Vietnamese capitalises the title as the English does, and it takes no setting span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40025034018"
+          ],
+          "choice": "\"các người\" for the gathered nations, both on the right and on the left (25:34-45)",
+          "alternatives": [
+            "\"các con\""
+          ],
+          "reason": "Vietnamese must choose how the King speaks to the peoples before his throne; \"các người\" is the neutral plural the style guide gives for crowds, and the same word for both groups keeps the two speeches parallel, as in the Greek.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40025034003",
+            "n40025034004"
+          ],
+          "choice": "\"왕\" with no honorific in Jesus' telling",
+          "alternatives": [
+            "\"임금\"",
+            "\"왕께서\""
+          ],
+          "reason": "The King is the Son of Man himself (meaning decision); Korean has no capital to mark it, and Jesus does not honour himself, so the title stands plainly.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40025034015",
+            "n40025034020",
+            "n40025034021",
+            "n40025034022"
+          ],
+          "choice": "\"상속하다\" (L); \"물려받다\" (B); \"너희 것으로 받다\" (R); \"세상의 기초가 놓일 때부터\" (L)",
+          "alternatives": [
+            "\"차지하다\""
+          ],
+          "reason": "Inherit means receive as a gift that belongs to God's children (meaning decision); Literal keeps the Greek picture of the world's foundation, the others say \"since the world was made\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -668,6 +900,16 @@
           "L": "Kwa maana niliona njaa nanyi mkanipa [kitu] cha kula, niliona kiu nanyi mkanipa cha kunywa, nilikuwa mgeni nanyi mkanipokea, \\v 36 [nilikuwa] uchi nanyi mkanivalisha, niliugua nanyi mkanitembelea, nilikuwa gerezani nanyi mkaja {{deity_pronoun:kwangu|Kwangu}}.'",
           "B": "Kwa maana nilipokuwa na njaa, mlinipa chakula; nilipokuwa na kiu, mlinipa maji ya kunywa; nilipokuwa mgeni, mlinikaribisha nyumbani kwenu; \\v 36 nilipokuwa sina nguo, mlinivalisha; nilipokuwa mgonjwa, mlinihudumia; nilipokuwa gerezani, mlikuja kuniona.'",
           "R": "Nilipokuwa na njaa, mlinilisha. Nilipokuwa na kiu, mlinipa maji. Nilipokuwa mgeni, mliniruhusu nikae kwenu. \\v 36 Nilipokuwa sina nguo, mlinipa nguo za kuvaa. Nilipokuwa mgonjwa, mlinitunza. Nilipokuwa gerezani, mlikuja kunitembelea.'"
+        },
+        "vi": {
+          "L": "Vì {{deity_pronoun:ta|Ta}} đói và các người đã cho {{deity_pronoun:ta|Ta}} ăn, {{deity_pronoun:ta|Ta}} khát và các người đã cho {{deity_pronoun:ta|Ta}} uống, {{deity_pronoun:ta|Ta}} là khách lạ và các người đã tiếp rước {{deity_pronoun:ta|Ta}}, \\v 36 {{deity_pronoun:ta|Ta}} trần truồng và các người đã cho {{deity_pronoun:ta|Ta}} mặc, {{deity_pronoun:ta|Ta}} đau ốm và các người đã thăm viếng {{deity_pronoun:ta|Ta}}, {{deity_pronoun:ta|Ta}} ở trong ngục và các người đã đến với {{deity_pronoun:ta|Ta}}.'",
+          "B": "Vì khi {{deity_pronoun:ta|Ta}} đói, các người đã cho {{deity_pronoun:ta|Ta}} ăn; khi {{deity_pronoun:ta|Ta}} khát, các người đã cho {{deity_pronoun:ta|Ta}} uống; khi {{deity_pronoun:ta|Ta}} là khách lạ, các người đã tiếp {{deity_pronoun:ta|Ta}} vào nhà; \\v 36 khi {{deity_pronoun:ta|Ta}} không có áo mặc, các người đã cho {{deity_pronoun:ta|Ta}} mặc; khi {{deity_pronoun:ta|Ta}} đau ốm, các người đã chăm sóc {{deity_pronoun:ta|Ta}}; khi {{deity_pronoun:ta|Ta}} ở trong ngục, các người đã đến thăm {{deity_pronoun:ta|Ta}}.'",
+          "R": "Khi {{deity_pronoun:ta|Ta}} đói, các người đã cho {{deity_pronoun:ta|Ta}} ăn. Khi {{deity_pronoun:ta|Ta}} khát, các người đã cho {{deity_pronoun:ta|Ta}} nước uống. Khi {{deity_pronoun:ta|Ta}} là người lạ, các người đã cho {{deity_pronoun:ta|Ta}} ở với mình. \\v 36 Khi {{deity_pronoun:ta|Ta}} không có quần áo, các người đã cho {{deity_pronoun:ta|Ta}} quần áo để mặc. Khi {{deity_pronoun:ta|Ta}} đau ốm, các người đã chăm sóc {{deity_pronoun:ta|Ta}}. Khi {{deity_pronoun:ta|Ta}} ở trong tù, các người đã đến thăm {{deity_pronoun:ta|Ta}}.'"
+        },
+        "ko": {
+          "L": "내가 굶주렸을 때에 너희가 나에게 [무엇을] 먹게 해 주었고, 내가 목말랐을 때에 너희가 나에게 마실 것을 주었고, 내가 나그네였을 때에 너희가 나를 맞아들였고, \\v 36 헐벗었을 때에 너희가 나에게 옷을 입혀 주었고, 내가 병들었을 때에 너희가 나를 돌보아 주었고, 내가 감옥에 있었을 때에 너희가 나에게 찾아왔기 때문이다.'",
+          "B": "너희는 내가 굶주렸을 때에 먹을 것을 주었고, 목말랐을 때에 마실 것을 주었고, 나그네였을 때에 너희 집에 맞아들였다. \\v 36 내가 헐벗었을 때에 옷을 입혀 주었고, 병들었을 때에 돌보아 주었고, 감옥에 갇혔을 때에 찾아와 주었다.'",
+          "R": "내가 배고팠을 때에 너희는 나에게 먹을 것을 주었다. 내가 목말랐을 때에 마실 물을 주었다. 내가 낯선 나그네였을 때에 너희 집에서 묵게 해 주었다. \\v 36 내가 입을 옷이 없었을 때에 옷을 주었다. 내가 아팠을 때에 돌보아 주었다. 내가 감옥에 있었을 때에 찾아와 주었다.'"
         }
       },
       "decisions": [
@@ -758,6 +1000,70 @@
           "reason": "The King is the Son of Man speaking of himself, so \"me\" takes the usual span.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40025035011",
+            "n40025036001"
+          ],
+          "choice": "\"khách lạ\" (L, B), \"người lạ\" (R); \"trần truồng\" (L), \"không có áo mặc\" (B), \"không có quần áo\" (R)",
+          "alternatives": [],
+          "reason": "A stranger is a traveler far from home who needs a place to stay, and \"naked\" means without enough clothing (meaning decisions); Literal keeps the Greek word, Balanced and Readable say the need.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n40025035001",
+            "n40025035002",
+            "n40025035003",
+            "n40025035004",
+            "n40025035005"
+          ],
+          "choice": "\"내가 ...했을 때에 너희가 ...\" for each pair; \"... 때문이다\" closing the list (L)",
+          "alternatives": [
+            "\"내가 굶주렸고 너희가 먹을 것을 주었다\""
+          ],
+          "reason": "Korean links each need to the deed with \"-을 때에\", which keeps the Greek pairs in order; Literal closes the whole list with \"때문이다\" for the Greek \"for\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n40025035004"
+          ],
+          "choice": "[무엇을] (L)",
+          "alternatives": [
+            "No object"
+          ],
+          "reason": "Korean needs an object for \"gave me to eat\"; Literal brackets it.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -812,6 +1118,16 @@
           "L": "Wakati huo wenye haki watamjibu, wakisema, 'Bwana, tulikuona lini ukiwa na njaa tukakupa chakula, au ukiwa na kiu tukakupa cha kunywa?",
           "B": "Kisha wenye haki watajibu, 'Bwana, ni lini tulikuona ukiwa na njaa tukakupa chakula, au ukiwa na kiu tukakupa maji ya kunywa?",
           "R": "Kisha watu wenye haki watajibu, 'Bwana, ni lini tuliwahi kukuona ukiwa na njaa tukakupa chakula? Ni lini tulikuona ukiwa na kiu tukakupa kitu cha kunywa?"
+        },
+        "vi": {
+          "L": "Bấy giờ những người công chính sẽ trả lời {{deity_pronoun:ngài|Ngài}} rằng: 'Lạy Chúa, có khi nào chúng con thấy Chúa đói mà cho ăn, hoặc khát mà cho uống?",
+          "B": "Bấy giờ những người công chính sẽ thưa: 'Lạy Chúa, có bao giờ chúng con thấy Chúa đói mà cho Chúa ăn, hoặc khát mà cho Chúa uống đâu?",
+          "R": "Bấy giờ những người công chính sẽ thưa: 'Lạy Chúa, có bao giờ chúng con thấy Chúa đói và cho Chúa ăn đâu? Có bao giờ chúng con thấy Chúa khát và cho Chúa uống đâu?"
+        },
+        "ko": {
+          "L": "그때에 의인들이 그에게 대답하여 말할 것이다. '주님, 언제 저희가 주님께서 굶주리신 것을 보고 [주님을] 먹여 드렸으며, 목마르신 것을 보고 [주님께] 마실 것을 드렸습니까?",
+          "B": "그러면 의인들이 대답할 것이다. '주님, 저희가 언제 주님께서 굶주리신 것을 보고 잡수실 것을 드렸으며, 언제 목마르신 것을 보고 마실 것을 드렸습니까?",
+          "R": "그러면 의로운 사람들이 대답할 것이다. '주님, 저희가 언제 주님께서 배고프신 것을 보고 음식을 드렸습니까? 언제 주님께서 목마르신 것을 보고 마실 것을 드렸습니까?"
         }
       },
       "decisions": [
@@ -898,6 +1214,68 @@
           "reason": "The term sheet's word for the righteous; it stays at Readable too, since the English Readable keeps \"righteous\" and the word returns in 25:46.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40025037007",
+            "n40025037009"
+          ],
+          "choice": "\"Lạy Chúa\", \"Chúa\" for \"you\" and \"chúng con\" for \"we\", with no deity_pronoun span",
+          "alternatives": [],
+          "reason": "Those who call him Lord speak to him as \"Chúa\", a noun of address that takes no setting (style guide, section 6), and of themselves as \"chúng con\", as in 7:22.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40025037008",
+            "n40025037009"
+          ],
+          "choice": "The righteous speak to the King in 합쇼체 with \"주님\" for \"you\" and the humble \"저희\" (25:37-39, 44)",
+          "alternatives": [
+            "\"당신\""
+          ],
+          "reason": "Korean does not say \"you\" to a king; kyrie is \"주님\" in the Korean Matthew, and those who address him use honorifics on his every act (\"굶주리신\", \"잡수실\").",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40025037005"
+          ],
+          "choice": "\"의인들\" (L, B); \"의로운 사람들\" (R)",
+          "alternatives": [
+            "\"의로운 사람들\" at every level"
+          ],
+          "reason": "\"의인\" is the Korean Matthew's word (13:43); Readable spells it out.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -946,6 +1324,16 @@
           "L": "Na ni lini tulikuona ukiwa mgeni tukakupokea, au uchi tukakuvalisha?",
           "B": "Ni lini tulikuona ukiwa mgeni tukakukaribisha nyumbani, au huna nguo tukakuvalisha?",
           "R": "Ni lini tulikuona ukiwa mgeni tukakukaribisha nyumbani kwetu? Ni lini tulikuona huna nguo tukakupa nguo za kuvaa?"
+        },
+        "vi": {
+          "L": "Và có khi nào chúng con thấy Chúa là khách lạ mà tiếp rước, hoặc trần truồng mà cho mặc?",
+          "B": "Có bao giờ chúng con thấy Chúa là khách lạ mà tiếp Chúa vào nhà, hoặc không có áo mặc mà cho Chúa mặc đâu?",
+          "R": "Có bao giờ chúng con thấy Chúa là người lạ và mời Chúa vào nhà mình đâu? Có bao giờ chúng con thấy Chúa không có quần áo và cho Chúa quần áo để mặc đâu?"
+        },
+        "ko": {
+          "L": "그리고 언제 저희가 주님께서 나그네 되신 것을 보고 [주님을] 맞아들였으며, 헐벗으신 것을 보고 [주님께] 옷을 입혀 드렸습니까?",
+          "B": "언제 주님께서 나그네 되신 것을 보고 집에 모셔 들였으며, 헐벗으신 것을 보고 옷을 입혀 드렸습니까?",
+          "R": "언제 주님께서 낯선 나그네로 오신 것을 보고 저희 집에 모셨습니까? 언제 주님께서 입을 옷이 없으신 것을 보고 옷을 드렸습니까?"
         }
       },
       "decisions": [
@@ -972,6 +1360,26 @@
             "new questions"
           ],
           "reason": "The righteous repeat each need the King named in 25:35-36.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n40025038006",
+            "n40025038010"
+          ],
+          "choice": "[주님을], [주님께] (L)",
+          "alternatives": [
+            "No object"
+          ],
+          "reason": "The Greek leaves the object understood after each verb; Korean prefers to name it, which Literal brackets, as in 25:37.",
           "uncertain": false,
           "footnote": false
         }
@@ -1023,6 +1431,16 @@
           "L": "Na ni lini tulikuona ukiwa mgonjwa au gerezani tukaja {{deity_pronoun:kwako|Kwako}}?'",
           "B": "Ni lini tulikuona ukiwa mgonjwa au gerezani tukaja {{deity_pronoun:kwako|Kwako}}?'",
           "R": "Ni lini tulikuona ukiwa mgonjwa au gerezani tukaja kukutembelea?'"
+        },
+        "vi": {
+          "L": "Và có khi nào chúng con thấy Chúa đau ốm hoặc ở trong ngục mà đến với Chúa?'",
+          "B": "Có bao giờ chúng con thấy Chúa đau ốm hoặc ở trong ngục mà đến thăm Chúa đâu?'",
+          "R": "Có bao giờ chúng con thấy Chúa đau ốm hay ở trong tù và đến thăm Chúa đâu?'"
+        },
+        "ko": {
+          "L": "그리고 언제 저희가 주님께서 병드시거나 감옥에 계신 것을 보고 주님께 찾아갔습니까?'",
+          "B": "언제 주님께서 병드시거나 감옥에 갇히신 것을 보고 찾아가 뵈었습니까?'",
+          "R": "언제 주님께서 아프시거나 감옥에 갇히신 것을 보고 찾아가 뵈었습니까?'"
         }
       },
       "decisions": [
@@ -1100,6 +1518,16 @@
           "L": "Na Mfalme, akijibu, atawaambia, 'Kweli nawaambia, kila mlichomfanyia mmoja wa hawa ndugu {{deity_pronoun:zangu|Zangu}}, hata aliye mdogo kuliko wote, mlinifanyia {{deity_pronoun:mimi|Mimi}}.'",
           "B": "Mfalme atawajibu, 'Kweli nawaambia, kila mara mlipomfanyia jambo hilo mmoja wa hawa ndugu {{deity_pronoun:zangu|Zangu}}, hata yule mdogo kuliko wote, mlinifanyia {{deity_pronoun:mimi|Mimi}}.'",
           "R": "Mfalme atajibu, 'Nawaambia ukweli: kila mlipomfanyia mambo haya hata yule asiye na umuhimu kati ya ndugu {{deity_pronoun:zangu|Zangu}}, mlikuwa mkinifanyia {{deity_pronoun:mimi|Mimi}}.'"
+        },
+        "vi": {
+          "L": "Và Vua sẽ đáp lời và nói với họ: 'Thật vậy, {{deity_pronoun:ta|Ta}} nói với các người, khi các người đã làm [điều đó] cho một người trong những {{gender:anh chị em|anh em}} hèn mọn nhất này của {{deity_pronoun:ta|Ta}}, là các người đã làm cho {{deity_pronoun:ta|Ta}}.'",
+          "B": "Vua sẽ đáp: 'Thật vậy, {{deity_pronoun:ta|Ta}} nói với các người, mỗi khi các người làm điều đó cho một người trong những {{gender:anh chị em|anh em}} này của {{deity_pronoun:ta|Ta}}, dù là người nhỏ bé nhất, là các người đã làm cho chính {{deity_pronoun:ta|Ta}}.'",
+          "R": "Vua sẽ trả lời: 'Ta nói thật với các người, mỗi khi các người làm những việc ấy cho một người trong những {{gender:anh chị em|anh em}} của {{deity_pronoun:ta|Ta}}, dù là người nhỏ bé nhất, là các người đã làm cho {{deity_pronoun:ta|Ta}}.'"
+        },
+        "ko": {
+          "L": "그러면 왕이 대답하여 그들에게 말할 것이다. '진실로 너희에게 말한다. 너희가 여기 있는 내 {{gender:형제자매|형제}}들 가운데 가장 작은 사람 하나에게 [그것을] 한 만큼, 너희가 나에게 [그것을] 한 것이다.'",
+          "B": "왕이 그들에게 대답할 것이다. '진실로 너희에게 말한다. 너희가 여기 있는 내 {{gender:형제자매|형제}}들 가운데 하나에게, 그것도 가장 작은 사람 하나에게 이 일을 할 때마다, 그것은 곧 나에게 한 것이다.'",
+          "R": "왕이 대답할 것이다. '내가 분명히 말한다. 너희가 내 {{gender:형제자매|형제}}들 가운데 가장 보잘것없는 사람에게 이런 일을 할 때마다, 너희는 그 일을 나에게 한 것이다.'"
         }
       },
       "decisions": [
@@ -1304,6 +1732,89 @@
           "reason": "The English has \"brothers and sisters|brothers\" (meaning decision m2). Swahili \"ndugu\" already means brothers and sisters, so no setting applies.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40025040016"
+          ],
+          "choice": "{{gender:anh chị em|anh em}}",
+          "alternatives": [],
+          "reason": "The style guide's span for brothers meaning men and women alike (meaning decision).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40025040007",
+            "n40025040009"
+          ],
+          "choice": "\"Thật vậy, Ta nói với các người\" (L, B); \"Ta nói thật với các người\" (R); \"hèn mọn nhất\" (L), \"nhỏ bé nhất\" (B, R)",
+          "alternatives": [],
+          "reason": "The Gospels' form for \"Truly I tell you\", recorded once for this passage (also 25:45), with the King's \"các người\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40025040016"
+          ],
+          "choice": "{{gender:형제자매|형제}}들",
+          "alternatives": [
+            "\"형제들\" with no span"
+          ],
+          "reason": "The settled Korean span for adelphoi meaning men and women alike (meaning decision), as in the Korean Matthew 12:50 and 23:8; the plural ending stands outside it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40025040007",
+            "n40025040008",
+            "n40025040009"
+          ],
+          "choice": "\"진실로 너희에게 말한다\" (L, B); \"내가 분명히 말한다\" (R) in the King's mouth",
+          "alternatives": [
+            "Another formula"
+          ],
+          "reason": "The King uses Jesus' own formula; the settled words keep it.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1365,6 +1876,16 @@
           "L": "Kisha atasema pia kwa wale walio upande wa kushoto, 'Ondokeni mbele {{deity_pronoun:yangu|Yangu}}, ninyi mliolaaniwa, mwende katika moto ule wa milele ulioandaliwa kwa ajili ya Ibilisi na malaika zake.",
           "B": "Kisha atawaambia wale walio upande wa kushoto {{deity_pronoun:wake|Wake}}, 'Ondokeni mbele {{deity_pronoun:yangu|Yangu}}, ninyi mlio chini ya laana, mwende kwenye moto wa milele ambao umeandaliwa kwa ajili ya Ibilisi na malaika zake.",
           "R": "Kisha atawaambia watu walio upande wa kushoto {{deity_pronoun:wake|Wake}}, 'Ondokeni mbele {{deity_pronoun:yangu|Yangu}}, ninyi mlio chini ya laana! Nendeni kwenye moto wa milele. Uliandaliwa kwa ajili ya Ibilisi na malaika zake."
+        },
+        "vi": {
+          "L": "Bấy giờ {{deity_pronoun:ngài|Ngài}} cũng sẽ nói với những người ở bên trái: 'Hỡi những kẻ bị rủa sả, hãy lui ra khỏi {{deity_pronoun:ta|Ta}} mà vào lửa đời đời đã chuẩn bị cho ma quỷ và các thiên sứ của nó.",
+          "B": "Bấy giờ {{deity_pronoun:ngài|Ngài}} sẽ nói với những người ở bên trái {{deity_pronoun:ngài|Ngài}}: 'Hỡi những kẻ bị rủa sả, hãy đi khỏi {{deity_pronoun:ta|Ta}} mà vào lửa đời đời, là lửa đã được chuẩn bị cho ma quỷ và các thiên sứ của nó.",
+          "R": "Rồi {{deity_pronoun:ngài|Ngài}} sẽ nói với những người ở bên trái {{deity_pronoun:ngài|Ngài}}: 'Hỡi những kẻ bị rủa sả, hãy đi khỏi {{deity_pronoun:ta|Ta}}! Hãy vào lửa đời đời. Lửa ấy đã được chuẩn bị cho ma quỷ và các thiên sứ của nó."
+        },
+        "ko": {
+          "L": "그때에 그는 왼쪽에 있는 사람들에게도 말할 것이다. '저주받은 사람들아, 나에게서 떠나, 마귀와 그의 천사들을 위하여 준비된 영원한 불 속으로 들어가거라.",
+          "B": "그때 그는 자기 왼쪽에 있는 사람들에게도 말할 것이다. '저주를 받은 사람들아, 나에게서 물러가라. 마귀와 그 부하들을 위하여 마련된 영원한 불 속으로 들어가거라.",
+          "R": "그때 그는 자기 왼쪽에 있는 사람들에게 말할 것이다. '저주를 받은 사람들아, 나에게서 떠나가라! 영원한 불 속으로 들어가거라. 그 불은 마귀와 그 부하들을 위하여 마련된 것이다."
         }
       },
       "decisions": [
@@ -1489,6 +2010,73 @@
           "reason": "As the English \"depart\" and \"go away\". Literal brackets \"[allez]\" because French cannot attach \"dans le feu\" to \"retirez-vous\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40025041011",
+            "n40025041016",
+            "n40025041020",
+            "n40025041024"
+          ],
+          "choice": "\"bị rủa sả\"; \"lửa đời đời\"; \"ma quỷ\"; \"nó\" for the devil",
+          "alternatives": [],
+          "reason": "\"Ma quỷ\" is the settled word for the devil; \"đời đời\" is the word of \"sự sống đời đời\" (25:46), so the two ends are heard together; the devil's angels are \"các thiên sứ của nó\", with the plain pronoun the English leaves without a span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40025041007",
+            "n40025041008",
+            "n40025041009"
+          ],
+          "choice": "\"나에게서 떠나\" (L); \"물러가라\" (B); \"떠나가라\" (R)",
+          "alternatives": [
+            "\"물러가라\" at every level"
+          ],
+          "reason": "The command echoes 7:23 (meaning decision), where the Korean Matthew has \"물러가라\" (L) and \"떠나가라\" (B); the levels keep those words, Literal joining the clauses as the Greek does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40025041022",
+            "n40025041023",
+            "n40025041024"
+          ],
+          "choice": "\"그의 천사들\" (L); \"그 부하들\" (B, R) for the devil's angels",
+          "alternatives": [
+            "\"그의 천사들\" at every level"
+          ],
+          "reason": "Korean \"천사\" names God's angels; Balanced and Readable say the devil's messengers are his underlings, so no reader mistakes them for God's. The English gives the devil's \"his\" no span.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1558,6 +2146,16 @@
           "L": "Kwa maana niliona njaa nanyi hamkunipa [kitu] cha kula, niliona kiu nanyi hamkunipa cha kunywa, \\v 43 nilikuwa mgeni nanyi hamkunipokea, [nilikuwa] uchi nanyi hamkunivalisha, mgonjwa na gerezani nanyi hamkunitembelea.'",
           "B": "Kwa maana nilipokuwa na njaa, hamkunipa chakula; nilipokuwa na kiu, hamkunipa maji ya kunywa; \\v 43 nilipokuwa mgeni, hamkunikaribisha nyumbani kwenu; nilipokuwa sina nguo, hamkunivalisha; nilipokuwa mgonjwa na gerezani, hamkunihudumia.'",
           "R": "Nilipokuwa na njaa, hamkunilisha. Nilipokuwa na kiu, hamkunipa maji. \\v 43 Nilipokuwa mgeni, hamkuniruhusu nikae kwenu. Nilipokuwa sina nguo, hamkunipa nguo za kuvaa. Nilipokuwa mgonjwa na gerezani, hamkuja kunitunza.'"
+        },
+        "vi": {
+          "L": "Vì {{deity_pronoun:ta|Ta}} đói và các người đã không cho {{deity_pronoun:ta|Ta}} ăn, {{deity_pronoun:ta|Ta}} khát và các người đã không cho {{deity_pronoun:ta|Ta}} uống, \\v 43 {{deity_pronoun:ta|Ta}} là khách lạ và các người đã không tiếp rước {{deity_pronoun:ta|Ta}}, trần truồng và các người đã không cho {{deity_pronoun:ta|Ta}} mặc, đau ốm và ở trong ngục và các người đã không thăm viếng {{deity_pronoun:ta|Ta}}.'",
+          "B": "Vì khi {{deity_pronoun:ta|Ta}} đói, các người đã không cho {{deity_pronoun:ta|Ta}} ăn; khi {{deity_pronoun:ta|Ta}} khát, các người đã không cho {{deity_pronoun:ta|Ta}} uống; \\v 43 khi {{deity_pronoun:ta|Ta}} là khách lạ, các người đã không tiếp {{deity_pronoun:ta|Ta}} vào nhà; khi {{deity_pronoun:ta|Ta}} không có áo mặc, các người đã không cho {{deity_pronoun:ta|Ta}} mặc; khi {{deity_pronoun:ta|Ta}} đau ốm và ở trong ngục, các người đã không chăm sóc {{deity_pronoun:ta|Ta}}.'",
+          "R": "Khi {{deity_pronoun:ta|Ta}} đói, các người đã không cho {{deity_pronoun:ta|Ta}} ăn. Khi {{deity_pronoun:ta|Ta}} khát, các người đã không cho {{deity_pronoun:ta|Ta}} nước uống. \\v 43 Khi {{deity_pronoun:ta|Ta}} là người lạ, các người đã không cho {{deity_pronoun:ta|Ta}} ở với mình. Khi {{deity_pronoun:ta|Ta}} không có quần áo, các người đã không cho {{deity_pronoun:ta|Ta}} quần áo để mặc. Khi {{deity_pronoun:ta|Ta}} đau ốm và ở trong tù, các người đã không đến chăm sóc {{deity_pronoun:ta|Ta}}.'"
+        },
+        "ko": {
+          "L": "내가 굶주렸을 때에 너희가 나에게 [아무것도] 먹게 해 주지 않았고, 내가 목말랐을 때에 너희가 나에게 마실 것을 주지 않았고, \\v 43 내가 나그네였을 때에 너희가 나를 맞아들이지 않았고, 헐벗었을 때에 너희가 나에게 옷을 입혀 주지 않았고, 병들고 감옥에 있었을 때에 너희가 나를 돌보아 주지 않았기 때문이다.'",
+          "B": "너희는 내가 굶주렸을 때에 먹을 것을 주지 않았고, 목말랐을 때에 마실 것을 주지 않았다. \\v 43 내가 나그네였을 때에 너희 집에 맞아들이지 않았고, 헐벗었을 때에 옷을 입혀 주지 않았고, 병들고 감옥에 갇혔을 때에 돌보아 주지 않았다.'",
+          "R": "내가 배고팠을 때에 너희는 나에게 먹을 것을 주지 않았다. 내가 목말랐을 때에 마실 물을 주지 않았다. \\v 43 내가 낯선 나그네였을 때에 너희 집에서 묵게 해 주지 않았다. 내가 입을 옷이 없었을 때에 옷을 주지 않았다. 내가 아프고 감옥에 있었을 때에 찾아와 돌보아 주지 않았다.'"
         }
       },
       "decisions": [
@@ -1628,6 +2226,28 @@
           "reason": "Each level repeats its own wording of 25:35-36 so the two lists can be compared.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40025042006",
+            "n40025043019"
+          ],
+          "choice": "The wording of 25:35-36 at each level, made negative",
+          "alternatives": [
+            "New wording"
+          ],
+          "reason": "The list repeats the first one with each act left undone (meaning decision); Korean keeps the same words so the reader hears it. Literal brackets \"아무것도\" (anything).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1690,6 +2310,16 @@
           "L": "Kisha wao pia watajibu, wakisema, 'Bwana, ni lini tulikuona ukiwa na njaa, au kiu, au mgeni, au uchi, au mgonjwa, au gerezani, na hatukukuhudumia?'",
           "B": "Kisha wao nao watajibu, 'Bwana, ni lini tulikuona ukiwa na njaa au kiu, ukiwa mgeni au huna nguo, ukiwa mgonjwa au gerezani, nasi hatukuja kukusaidia?'",
           "R": "Kisha watu hao watajibu, 'Bwana, ni lini tuliwahi kukuona ukiwa na njaa, au kiu, au ukiwa mgeni, au huna nguo, au ukiwa mgonjwa, au gerezani, nasi hatukukusaidia?'"
+        },
+        "vi": {
+          "L": "Bấy giờ họ cũng sẽ trả lời rằng: 'Lạy Chúa, có khi nào chúng tôi thấy Chúa đói, hoặc khát, hoặc là khách lạ, hoặc trần truồng, hoặc đau ốm, hoặc ở trong ngục, mà không phục vụ Chúa đâu?'",
+          "B": "Bấy giờ họ cũng sẽ thưa: 'Lạy Chúa, có bao giờ chúng tôi thấy Chúa đói hay khát, là khách lạ hay không có áo mặc, đau ốm hay ở trong ngục, mà không giúp đỡ Chúa đâu?'",
+          "R": "Bấy giờ những người ấy sẽ thưa: 'Lạy Chúa, có bao giờ chúng tôi thấy Chúa đói, hay khát, hay là người lạ, hay không có quần áo, hay đau ốm, hay ở trong tù, mà không giúp Chúa đâu?'"
+        },
+        "ko": {
+          "L": "그때에 그들도 대답하여 말할 것이다. '주님, 언제 저희가 주님께서 굶주리시거나 목마르시거나 나그네 되시거나 헐벗으시거나 병드시거나 감옥에 계신 것을 보고 주님을 섬기지 않았습니까?'",
+          "B": "그러면 그들도 대답할 것이다. '주님, 저희가 언제 주님께서 굶주리시거나 목마르시거나, 나그네 되시거나 헐벗으시거나, 병드시거나 감옥에 갇히신 것을 보고 돕지 않았습니까?'",
+          "R": "그러면 이 사람들도 대답할 것이다. '주님, 저희가 언제 주님께서 배고프시거나 목마르신 것을 보았습니까? 언제 주님께서 나그네로 오시거나, 입을 옷이 없으시거나, 아프시거나, 감옥에 갇히신 것을 보고도 돕지 않았습니까?'"
         }
       },
       "decisions": [
@@ -1761,6 +2391,49 @@
           "reason": "Balanced says what serving meant here; Literal keeps \"serve\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40025044006",
+            "n40025044009"
+          ],
+          "choice": "\"chúng tôi\" for those on the left; \"Lạy Chúa\" and \"Chúa\" as for the righteous",
+          "alternatives": [
+            "\"chúng con\""
+          ],
+          "reason": "Vietnamese marks relationship in its pronouns: the righteous speak as the King's own (\"chúng con\", 25:37), while those he does not own (7:23) say the neutral \"chúng tôi\", though they too call him Lord.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40025044024"
+          ],
+          "choice": "\"섬기다\" (L); \"돕다\" (B, R) for diakoneo",
+          "alternatives": [
+            "\"섬기다\" at every level"
+          ],
+          "reason": "Serve here means meet someone's needs (meaning decision); Balanced and Readable say \"help\", as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1816,6 +2489,16 @@
           "L": "Kisha atawajibu, akisema, 'Kweli nawaambia, kila ambacho hamkumfanyia mmoja wa hawa walio wadogo kuliko wote, hamkunifanyia {{deity_pronoun:mimi|Mimi}} pia.'",
           "B": "Kisha atawajibu, 'Kweli nawaambia, kila mara mliposhindwa kumfanyia jambo hilo mmoja wa hawa, hata yule mdogo kuliko wote, mlishindwa kunifanyia {{deity_pronoun:mimi|Mimi}}.'",
           "R": "Kisha Mfalme atajibu, 'Nawaambia ukweli: msipomfanyia mambo haya hata yule asiye na umuhimu kati ya hawa, hamkunifanyia {{deity_pronoun:mimi|Mimi}} pia.'"
+        },
+        "vi": {
+          "L": "Bấy giờ {{deity_pronoun:ngài|Ngài}} sẽ trả lời họ rằng: 'Thật vậy, {{deity_pronoun:ta|Ta}} nói với các người, khi các người đã không làm [điều đó] cho một người trong những người hèn mọn nhất này, là các người cũng đã không làm cho {{deity_pronoun:ta|Ta}}.'",
+          "B": "Bấy giờ {{deity_pronoun:ngài|Ngài}} sẽ đáp: 'Thật vậy, {{deity_pronoun:ta|Ta}} nói với các người, mỗi khi các người không làm điều đó cho một người trong những người này, dù là người nhỏ bé nhất, là các người đã không làm cho {{deity_pronoun:ta|Ta}}.'",
+          "R": "Bấy giờ Vua sẽ trả lời: 'Ta nói thật với các người, khi các người không làm những việc ấy cho một người trong những người này, dù là người nhỏ bé nhất, là các người đã không làm cho {{deity_pronoun:ta|Ta}}.'"
+        },
+        "ko": {
+          "L": "그때에 그가 그들에게 대답하여 말할 것이다. '진실로 너희에게 말한다. 너희가 이 가장 작은 사람들 가운데 하나에게 [그것을] 하지 않은 만큼, 너희가 나에게도 [그것을] 하지 않은 것이다.'",
+          "B": "그러면 그가 대답할 것이다. '진실로 너희에게 말한다. 너희가 이 사람들 가운데 하나에게, 그것도 가장 작은 사람 하나에게 이 일을 하지 않을 때마다, 그것은 곧 나에게 하지 않은 것이다.'",
+          "R": "그러면 왕이 대답할 것이다. '내가 분명히 말한다. 너희가 이 사람들 가운데 가장 보잘것없는 사람에게 이런 일을 하지 않을 때마다, 너희는 그 일을 나에게 하지 않은 것이다.'"
         }
       },
       "decisions": [
@@ -1874,6 +2557,25 @@
           "reason": "Readable names the speaker.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n40025045002"
+          ],
+          "choice": "\"왕이\" (R)",
+          "alternatives": [
+            "\"그가\""
+          ],
+          "reason": "Readable names the King, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1923,6 +2625,16 @@
           "L": "Na hawa wataondoka kwenda katika adhabu ya milele, lakini wenye haki [wataenda] katika uzima wa milele.\"",
           "B": "Hawa wataondoka kwenda kwenye adhabu ya milele, na wenye haki wataenda kwenye uzima wa milele.\"",
           "R": "Kisha watu hao wataondoka kwenda kwenye adhabu ya milele. Lakini watu wenye haki wataenda kwenye uzima wa milele.\""
+        },
+        "vi": {
+          "L": "Và những kẻ này sẽ đi vào hình phạt đời đời, còn những người công chính vào sự sống đời đời.\"",
+          "B": "Những kẻ ấy sẽ đi vào hình phạt đời đời, còn những người công chính sẽ vào sự sống đời đời.\"",
+          "R": "Rồi những kẻ ấy sẽ đi vào hình phạt đời đời. Còn những người công chính sẽ đi vào sự sống đời đời.\""
+        },
+        "ko": {
+          "L": "그리고 이 사람들은 영원한 형벌로 들어가고, 의인들은 영원한 생명으로 [들어갈 것이다].\"",
+          "B": "이 사람들은 영원한 형벌을 받으러 들어가고, 의인들은 영원한 생명으로 들어갈 것이다.\"",
+          "R": "그리고 이 사람들은 영원한 벌을 받는 곳으로 갈 것이다. 그러나 의로운 사람들은 영원한 생명으로 들어갈 것이다.\""
         }
       },
       "decisions": [
@@ -2026,6 +2738,52 @@
             "maisha ya milele"
           ],
           "reason": "The Greek uses the same word for the punishment and for the life (meaning decision m1), so Swahili says \"ya milele\" and \"wa milele\" for both. \"Uzima wa milele\" is the term for eternal life used through the New Testament.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40025046005",
+            "n40025046006",
+            "n40025046011",
+            "n40025046012"
+          ],
+          "choice": "\"hình phạt đời đời\" and \"sự sống đời đời\"",
+          "alternatives": [],
+          "reason": "The Greek uses one adjective for both, so Vietnamese keeps one word, \"đời đời\", the style guide's word for eternal life, at every level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40025046005",
+            "n40025046006",
+            "n40025046011",
+            "n40025046012"
+          ],
+          "choice": "\"영원한 형벌\" (L, B), \"영원한 벌\" (R); \"영원한 생명\" at every level",
+          "alternatives": [
+            "\"영생\""
+          ],
+          "reason": "The same adjective for both, as in the Greek (meaning decision); \"영원한 생명\" is the style guide's key term. Literal brackets the verb the Greek leaves understood.",
           "uncertain": false,
           "footnote": false
         }

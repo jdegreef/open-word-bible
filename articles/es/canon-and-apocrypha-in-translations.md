@@ -4,6 +4,7 @@ summary: Una Biblia protestante tiene 66 libros, una católica 73, y las Biblias
 date: 2026-10-14
 order: 73
 section: compare
+source: e6b078f738c1
 ---
 Tome una Biblia en una librería protestante y cuente sus libros: serán 66. Una Biblia católica tiene 73. Una Biblia ortodoxa griega tiene más todavía, y la Biblia de la Iglesia Ortodoxa Etíope Tewahedo, aún más. El Nuevo Testamento es el mismo en todas ellas, con una excepción de la que se habla más adelante. Las diferencias están en el Antiguo Testamento.
 

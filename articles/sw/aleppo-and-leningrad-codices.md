@@ -5,6 +5,7 @@ date: 2026-10-11
 order: 25
 section: history
 part: ot
+source: b521ec1952d6
 ---
 Ukitaka kujua hasa maandiko ya Kiebrania ya Agano la Kale yanasema nini, utaangalia wapi? Si kwenye Hati-kunjo za Bahari ya Chumvi, ingawa zina thamani kubwa: nyingi ni vipande tu, na zinatofautiana zenyewe kwa zenyewe. Badala yake wasomi na watafsiri wanageukia vitabu viwili vya zama za kati, vyote viwili vimeandikwa na waandishi makini kabisa wa mapokeo ya Kimasoreti, na vyote viwili vina historia za kushangaza. Hivyo ni **Kodeksi ya Aleppo** na **Kodeksi ya Leningrad**.
 
