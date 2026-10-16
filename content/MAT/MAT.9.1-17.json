@@ -44,6 +44,16 @@
           "L": "Na akiingia katika mashua, alivuka, akafika katika mji {{deity_pronoun:wake|Wake}} {{deity_pronoun:mwenyewe|Mwenyewe}}.",
           "B": "Basi Yesu alipanda tena mashua, akavuka ziwa, akafika katika mji alimokuwa akiishi.",
           "R": "Yesu alipanda mashua, akavuka ziwa kurudi katika mji alimoishi."
+        },
+        "vi": {
+          "L": "Và bước xuống thuyền, {{deity_pronoun:ngài|Ngài}} đi qua [bờ bên kia] và đến thành của mình.",
+          "B": "Đức Giê-xu xuống thuyền trở qua biển và về đến thành mình ở.",
+          "R": "Đức Giê-xu xuống thuyền và đi qua hồ trở về thị trấn nơi {{deity_pronoun:ngài|Ngài}} sống."
+        },
+        "ko": {
+          "L": "그리고 그분이 배에 오르셔서 건너가셨고, 자기 고을로 오셨다.",
+          "B": "예수께서 배에 오르셔서 바다를 건너, 사시던 고을로 돌아오셨다.",
+          "R": "예수께서 배를 타고 호수를 건너, 사시던 마을로 돌아오셨다."
         }
       },
       "decisions": [
@@ -147,6 +157,30 @@
           "reason": "Swahili carries most pronouns in the verb prefixes, which cannot take a capital, so the setting applies only to free pronouns and possessives, as in John and Mark. Swahili therefore has fewer spans than English throughout the passage.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40009001002",
+            "n40009001009",
+            "n40009001010",
+            "n40009001011"
+          ],
+          "choice": "no deity_pronoun spans in Korean, through Matthew 9:1-17; \"그분\" (L), \"예수\" (B, R); historic presents kept only at Literal",
+          "alternatives": [
+            "a deity_pronoun span on \"그분\""
+          ],
+          "reason": "As in Matthew 8 and Mark: respect for Jesus is carried by \"께서\" and -시-; Jesus speaks in 해라체 and people speak to him in 합쇼체. \"고을\" (L, B) and \"마을\" (R) for his own town, Capernaum (meaning decision), as Mark's Korean uses them; Balanced and Readable add the lake, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -192,6 +226,16 @@
           "L": "Na tazama, walikuwa wakimletea mtu aliyepooza, amelazwa juu ya kitanda.",
           "B": "Watu fulani walimletea mtu aliyepooza, akiwa amelala juu ya machela.",
           "R": "Watu fulani walimletea Yesu mtu ambaye hakuweza kutembea. Alikuwa amelala juu ya mkeka."
+        },
+        "vi": {
+          "L": "Và kìa, người ta đem đến với {{deity_pronoun:ngài|Ngài}} một người bại nằm trên giường.",
+          "B": "Có mấy người đem đến với {{deity_pronoun:ngài|Ngài}} một người bại liệt nằm trên cáng.",
+          "R": "Có mấy người đem đến với {{deity_pronoun:ngài|Ngài}} một người bị liệt, không đi được. Anh nằm trên một chiếc chiếu."
+        },
+        "ko": {
+          "L": "그리고 보아라, 사람들이 침상에 누운 마비된 사람 하나를 그분께 데려오고 있었다.",
+          "B": "사람들이 들것에 누운, 몸이 마비된 사람 하나를 예수께 데려왔다.",
+          "R": "사람들이 몸을 움직이지 못하는 사람 하나를 예수께 데려왔다. 그는 들것에 누워 있었다."
         }
       },
       "decisions": [
@@ -250,6 +294,51 @@
           "reason": "As in Luke and in chapter 8: French \"voici\" is still current for pointing to what follows, so Literal keeps it where English Literal says \"look\". Balanced and Readable carry its force in the sentence, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40009002005",
+            "n40009002007"
+          ],
+          "choice": "\"người bại\" (L); \"người bại liệt\" (B); \"người bị liệt\" (R); \"giường\" (L), \"cáng\" (B), \"chiếu\" (R) for the bed",
+          "alternatives": [
+            "chõng"
+          ],
+          "reason": "As in Mark 2:3 for the man. The bed was a light pallet or stretcher on which he was carried (meaning decision): Literal keeps the word \"giường\", Balanced says \"cáng\" (stretcher) and Readable \"chiếu\" (mat), as the English does. The same words return in 9:6.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40009002005",
+            "n40009002007"
+          ],
+          "choice": "\"마비된 사람\" (L), \"몸이 마비된 사람\" (B), \"몸을 움직이지 못하는 사람\" (R); \"침상\" (L), \"들것\" (B, R)",
+          "alternatives": [
+            "\"중풍병자\"",
+            "\"자리\", as in Mark 2"
+          ],
+          "reason": "The words for the man are those of the parallel Mark 2:3-12. Matthew's word for what he lay on is the ordinary word for a bed, not Mark's mat; Literal says \"침상\", and Balanced and Readable \"들것\", since he was carried on it (meaning decision). The same in 9:6.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -303,6 +392,16 @@
           "L": "Na Yesu, alipoiona imani yao, akamwambia yule aliyepooza, \"Jipe moyo, mtoto; dhambi zako zinasamehewa.\"",
           "B": "Yesu alipoona imani yao, alimwambia yule mtu, \"Jipe moyo, mwanangu. Dhambi zako zimesamehewa.\"",
           "R": "Yesu aliona kwamba walimwamini. Akamwambia yule mtu, \"Changamka, rafiki yangu! Dhambi zako zimesamehewa.\""
+        },
+        "vi": {
+          "L": "Và thấy đức tin của họ, Đức Giê-xu nói với người bại: \"Hỡi con, hãy vững lòng; tội lỗi của con được tha.\"",
+          "B": "Thấy đức tin của họ, Đức Giê-xu nói với người bại liệt: \"Con ơi, hãy vững lòng! Tội lỗi con đã được tha.\"",
+          "R": "Đức Giê-xu thấy họ có đức tin nơi {{deity_pronoun:ngài|Ngài}}. Ngài nói với người ấy: \"Con ơi, hãy vui lên! Tội lỗi con đã được tha rồi.\""
+        },
+        "ko": {
+          "L": "그리고 예수께서 그들의 믿음을 보시고 마비된 사람에게 말씀하셨다. \"아이야, 안심하여라. 네 죄들이 용서받는다.\"",
+          "B": "예수께서 그들의 믿음을 보시고 몸이 마비된 사람에게 말씀하셨다. \"얘야, 용기를 내라. 네 죄가 용서되었다.\"",
+          "R": "예수께서는 그들이 예수를 믿는 믿음을 보셨다. 그래서 그 사람에게 말씀하셨다. \"얘야, 힘을 내라! 네 죄가 용서되었다.\""
         }
       },
       "decisions": [
@@ -394,6 +493,51 @@
           "reason": "The Greek present says that God forgives them now, and Jesus declares it (meaning decision m2). Literal keeps the present; Balanced and Readable use the perfect, the usual Swahili way to announce something done and standing.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40009002020"
+          ],
+          "choice": "\"Hỡi con\" (L); \"Con ơi\" (B, R), with \"con\" for \"you\" through 9:6",
+          "alternatives": [
+            "anh",
+            "bạn ơi"
+          ],
+          "reason": "As in Mark 2:5: the Greek word means \"child\" and is warm (meaning decision); Vietnamese says the same with \"con\". The English Readable \"my friend\" has no better counterpart than the warm \"con ơi\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40009002019",
+            "n40009002020"
+          ],
+          "choice": "\"아이야\" (L), \"얘야\" (B, R); \"안심하여라\" (L), \"용기를 내라\" (B), \"힘을 내라\" (R)",
+          "alternatives": [
+            "\"아들아\"",
+            "\"친구여\""
+          ],
+          "reason": "As in Mark 2:5, the affectionate address \"child\" (meaning decision) is \"아이야\" at Literal and the warm everyday \"얘야\" at Balanced and Readable, which fits Jesus's 해라체. Matthew adds \"take courage\", which each level says in its own register.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -441,6 +585,16 @@
           "L": "Na tazama, baadhi ya waandishi wakasema ndani yao, \"Huyu anakufuru.\"",
           "B": "Ndipo baadhi ya waandishi walisema mioyoni mwao, \"Mtu huyu anamtukana Mungu!\"",
           "R": "Baadhi ya walimu wa sheria walifikiri, \"Mtu huyu anazungumza kana kwamba yeye ni Mungu!\""
+        },
+        "vi": {
+          "L": "Và kìa, mấy thầy thông giáo nói trong lòng: \"Người này phạm thượng.\"",
+          "B": "Thấy vậy, mấy thầy thông giáo nghĩ thầm: \"Người này xúc phạm Đức Chúa Trời!\"",
+          "R": "Có mấy thầy dạy luật nghĩ thầm: \"Người này nói như thể mình là Đức Chúa Trời!\""
+        },
+        "ko": {
+          "L": "그리고 보아라, 율법학자들 가운데 몇 사람이 속으로 말했다. \"이 [사람이] 신성을 모독한다.\"",
+          "B": "그러자 율법학자 몇 사람이 속으로 말했다. \"이자가 하나님을 모독하고 있다!\"",
+          "R": "율법 선생 몇 사람이 속으로 생각했다. \"이 사람은 자기가 하나님인 것처럼 말하고 있다!\""
         }
       },
       "decisions": [
@@ -565,6 +719,48 @@
           "reason": "The term used across the New Testament drafts: Literal and Balanced keep the title, \"waandishi\"; Readable says what these men were, teachers of the law, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40009003010"
+          ],
+          "choice": "\"phạm thượng\" (L); \"xúc phạm Đức Chúa Trời\" (B); \"nói như thể mình là Đức Chúa Trời\" (R)",
+          "alternatives": [
+            "lộng ngôn"
+          ],
+          "reason": "Literal keeps the usual term, as in Mark 2:7. Balanced and Readable say what it means, as the meaning decision and the English do. The scribes do not honour Jesus: \"người này\", not \"Ngài\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40009003005",
+            "n40009003010"
+          ],
+          "choice": "the scribes think about Jesus in the plain style with no honorific (\"이 사람\", \"이자\")",
+          "alternatives": [
+            "\"이분\""
+          ],
+          "reason": "As in Mark 2:6-7: the scribes reject Jesus's claim, so they do not honour him. \"율법학자\" (L, B) and \"율법 선생\" (R) as settled.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -617,6 +813,16 @@
           "L": "Na Yesu, akijua mawazo yao, akasema, \"Kwa nini mnawaza maovu mioyoni mwenu?",
           "B": "Yesu alijua walichokuwa wakiwaza, akasema, \"Mbona mnawaza mambo mabaya namna hii mioyoni mwenu?",
           "R": "Yesu alijua walichokuwa wakifikiri. Kwa hiyo akasema, \"Kwa nini mnafikiri mambo mabaya namna hii?"
+        },
+        "vi": {
+          "L": "Và Đức Giê-xu, biết ý nghĩ của họ, nói: \"Sao các người nghĩ điều ác trong lòng mình?",
+          "B": "Biết họ đang nghĩ gì, Đức Giê-xu nói: \"Sao các người lại nghĩ những điều ác như vậy trong lòng?",
+          "R": "Đức Giê-xu biết họ đang nghĩ gì. Vì vậy, {{deity_pronoun:ngài|Ngài}} nói: \"Sao các người lại nghĩ những điều xấu xa như vậy?"
+        },
+        "ko": {
+          "L": "그리고 예수께서 그들의 생각들을 아시고 말씀하셨다. \"어찌하여 너희는 마음속으로 악한 것들을 생각하느냐?",
+          "B": "예수께서 그들의 생각을 아시고 말씀하셨다. \"너희는 왜 마음속으로 악한 생각을 하느냐?",
+          "R": "예수께서는 그들이 무슨 생각을 하는지 아셨다. 그래서 말씀하셨다. \"왜 그런 악한 생각을 하느냐?"
         }
       },
       "decisions": [
@@ -675,6 +881,27 @@
           "reason": "Spanish has two plural forms of \"you\", Latin American \"ustedes\" and Peninsular \"vosotros\"; the setting chooses between them, with \"ustedes\" as the default. English has no such choice, so these spans have no English counterpart. The same throughout the passage.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40009004010"
+          ],
+          "choice": "\"các người\" for the scribes",
+          "alternatives": [
+            "các ông"
+          ],
+          "reason": "The style guide's form for Jesus speaking to opponents, as in Mark 2:8.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -726,6 +953,16 @@
           "L": "Kwa maana ni lipi lililo rahisi zaidi, kusema, 'Dhambi zako zinasamehewa,' au kusema, 'Inuka utembee'?",
           "B": "Ni lipi lililo rahisi zaidi: kusema, 'Dhambi zako zimesamehewa,' au kusema, 'Simama utembee'?",
           "R": "Je, ni rahisi zaidi kumwambia mtu huyu, 'Dhambi zako zimesamehewa,' au kumwambia, 'Simama, utembee'?"
+        },
+        "vi": {
+          "L": "Vì điều nào dễ hơn: nói: 'Tội lỗi của con được tha,' hay nói: 'Hãy đứng dậy mà đi'?",
+          "B": "Nói: 'Tội con đã được tha,' hay nói: 'Hãy đứng dậy mà đi,' điều nào dễ hơn?",
+          "R": "Nói với người này: 'Tội con đã được tha' thì dễ hơn, hay nói: 'Hãy đứng dậy và đi' thì dễ hơn?"
+        },
+        "ko": {
+          "L": "어느 것이 더 쉬우냐? '네 죄들이 용서받는다' 하고 말하는 것이냐, 아니면 '일어나 걸어가라' 하고 말하는 것이냐?",
+          "B": "'네 죄가 용서되었다'고 말하는 것과 '일어나서 걸어가거라'고 말하는 것 가운데, 어느 쪽이 더 쉽겠느냐?",
+          "R": "이 사람에게 '네 죄가 용서되었다'고 말하는 것이 쉽겠느냐, 아니면 '일어나서 걸어가라'고 말하는 것이 쉽겠느냐?"
         }
       },
       "decisions": [
@@ -824,6 +1061,16 @@
           "L": "Lakini ili mjue kwamba Mwana wa Adamu ana mamlaka duniani ya kusamehe dhambi\"—ndipo anamwambia yule aliyepooza—\"Ukiisha kuinuka, beba kitanda chako, na uende nyumbani kwako.\"",
           "B": "Lakini nataka mjue kwamba Mwana wa Adamu ana mamlaka duniani ya kusamehe dhambi.\" Kisha alimwambia yule aliyepooza, \"Simama, beba machela yako, uende nyumbani.\"",
           "R": "Nitawaonyesha kwamba Mwana wa Adamu ana haki ya kusamehe dhambi hapa duniani.\" Kisha alimwambia yule mtu ambaye hakuweza kutembea, \"Simama, beba mkeka wako, uende nyumbani.\""
+        },
+        "vi": {
+          "L": "Nhưng để các người biết rằng Con Người có thẩm quyền trên đất để tha tội\"—bấy giờ {{deity_pronoun:ngài|Ngài}} nói với người bại—\"Hãy đứng dậy, vác giường của con và đi về nhà con.\"",
+          "B": "Nhưng {{deity_pronoun:ta|Ta}} muốn các người biết rằng Con Người có thẩm quyền tha tội trên đất.\" Rồi {{deity_pronoun:ngài|Ngài}} bảo người bại liệt: \"Hãy đứng dậy, vác cáng của con và về nhà.\"",
+          "R": "Ta sẽ cho các người thấy rằng Con Người có quyền tha tội ngay trên đất này.\" Rồi {{deity_pronoun:ngài|Ngài}} nói với người bị liệt: \"Hãy đứng dậy, cuộn chiếu lại và về nhà đi!\""
+        },
+        "ko": {
+          "L": "그러나 인자가 땅에서 죄들을 용서하는 권세를 가지고 있다는 것을 너희가 알게 하려고—\" 그때에 그분이 마비된 사람에게 말씀하신다— \"일어나 네 침상을 들고 네 집으로 가거라.\"",
+          "B": "그러나 인자가 땅에서 죄를 용서하는 권세를 가지고 있다는 것을 너희에게 알게 해 주겠다.\" 그러고 나서 예수께서 몸이 마비된 사람에게 말씀하셨다. \"일어나서 네 들것을 들고 집으로 가거라.\"",
+          "R": "이제 인자, 곧 사람의 아들이 이 땅에서 죄를 용서할 권세를 가지고 있다는 것을 너희에게 보여 주겠다.\" 그러고는 예수께서 몸을 움직이지 못하는 사람에게 말씀하셨다. \"일어나라! 네 들것을 들고 집으로 가거라!\""
         }
       },
       "decisions": [
@@ -1013,6 +1260,50 @@
           "reason": "The settled Swahili title, used in John and across the New Testament drafts (meaning decision m2). \"Mwana wa Mtu\" is closer to the Greek words; a reviewer may weigh it.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40009006017"
+          ],
+          "choice": "\"nói\" with no \"đã\" (L) for the historic present",
+          "alternatives": [
+            "đã nói"
+          ],
+          "reason": "As in 8:4 and Mark: Literal keeps the Greek present by leaving out \"đã\"; also in 9:9 and 9:14. The broken-off sentence is set with dashes, as in Mark 2:10.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40009006005",
+            "n40009006008",
+            "n40009006009",
+            "n40009006010"
+          ],
+          "choice": "\"인자\" at every level, \"인자, 곧 사람의 아들\" once (R); \"권세\"",
+          "alternatives": [
+            "\"사람의 아들\"",
+            "\"권위\""
+          ],
+          "reason": "As in the parallel Mark 2:10: the title \"인자\" with the gloss once in the passage at Readable, and \"권세\" for the authority to forgive sins. Literal keeps the broken-off sentence with dashes, as the Greek and the English do.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1057,6 +1348,16 @@
           "L": "Naye akainuka, akaenda zake nyumbani kwake.",
           "B": "Basi yule mtu aliinuka, akaenda nyumbani kwake.",
           "R": "Yule mtu alisimama, akaenda nyumbani."
+        },
+        "vi": {
+          "L": "Và người ấy đứng dậy và đi về nhà mình.",
+          "B": "Người ấy đứng dậy và về nhà.",
+          "R": "Người ấy liền đứng dậy và về nhà."
+        },
+        "ko": {
+          "L": "그러자 그가 일어나 자기 집으로 갔다.",
+          "B": "그 사람은 일어나 집으로 돌아갔다.",
+          "R": "그 사람은 일어나서 집으로 갔다."
         }
       },
       "decisions": [
@@ -1132,6 +1433,16 @@
           "L": "Basi makundi ya watu yalipoona [hayo], yaliingiwa na hofu, yakamtukuza Mungu aliyewapa binadamu mamlaka ya namna hiyo.",
           "B": "Umati wa watu ulipoona hayo, ulijawa na hofu na heshima, ukamtukuza Mungu kwa kuwapa wanadamu mamlaka kama hayo.",
           "R": "Watu walipoona jambo hilo, walishangaa na kuogopa. Wakamtukuza Mungu kwa kuwapa wanadamu uwezo mkubwa namna hiyo."
+        },
+        "vi": {
+          "L": "Và đoàn dân thấy [vậy] thì sợ hãi, và tôn vinh Đức Chúa Trời, Đấng đã ban thẩm quyền như thế cho loài người.",
+          "B": "Thấy vậy, đoàn dân đông đầy lòng kính sợ và tôn vinh Đức Chúa Trời, vì {{deity_pronoun:ngài|Ngài}} đã ban thẩm quyền như thế cho loài người.",
+          "R": "Dân chúng thấy vậy thì vừa kinh ngạc vừa sợ hãi. Họ tôn vinh Đức Chúa Trời, vì {{deity_pronoun:ngài|Ngài}} đã ban quyền năng như vậy cho loài người."
+        },
+        "ko": {
+          "L": "무리가 [그것을] 보고 두려워하며, 이런 권세를 사람들에게 주신 하나님께 영광을 돌렸다.",
+          "B": "무리는 이 일을 보고 두려운 마음이 들어, 사람에게 이런 권세를 주신 하나님께 영광을 돌렸다.",
+          "R": "사람들은 이 일을 보고 놀라고 두려워했다. 그리고 사람에게 이런 권세를 주신 하나님을 찬양했다."
         }
       },
       "decisions": [
@@ -1221,6 +1532,71 @@
           "reason": "The English Literal puts \"human beings\" and \"men\" under the gender setting. \"Binadamu\" already means human beings, and \"wanaume\" would mean males only and change the sense (meaning decision m2), so Swahili has nothing for the setting to change.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40009008014",
+            "n40009008015"
+          ],
+          "choice": "\"loài người\" with no gender span",
+          "alternatives": [
+            "a gender span with \"đàn ông\""
+          ],
+          "reason": "\"loài người\" (human beings) already includes men and women; Vietnamese has no traditional masculine word here that means anything different, as with \"con người\" in Mark 2:27.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40009008005"
+          ],
+          "choice": "\"đầy lòng kính sợ\" (B) for \"were afraid\"",
+          "alternatives": [
+            "sợ hãi (B)"
+          ],
+          "reason": "The meaning decision reads the fear as awe at God's power; \"kính sợ\" is the Vietnamese word for that reverent fear.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40009008007",
+            "n40009008014",
+            "n40009008015"
+          ],
+          "choice": "\"사람들\" (L), \"사람\" (B, R) with no gender span; \"영광을 돌리다\" (L, B), \"찬양하다\" (R)",
+          "alternatives": [
+            "\"인간들\"",
+            "a gender span"
+          ],
+          "reason": "The English needs a span for \"human beings/men\"; Korean \"사람\" already includes everyone, so none is needed. The verb is rendered as in Mark 2:12.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1280,6 +1656,16 @@
           "L": "Na Yesu alipokuwa akiondoka pale, alimwona mtu ameketi kwenye kibanda cha ushuru, jina lake Mathayo, kisha anamwambia, \"Nifuate.\" Basi akasimama, akamfuata.",
           "B": "Yesu alipokuwa akiondoka hapo, alimwona mtu mmoja jina lake Mathayo, ameketi mahali pake pa kazi katika ofisi ya ushuru. Yesu akamwambia, \"Nifuate.\" Mathayo akasimama, akamfuata.",
           "R": "Yesu alipokuwa akiendelea kutembea kutoka pale, alimwona mtu jina lake Mathayo. Mathayo alikuwa ameketi mahali alipokuwa akitoza ushuru. Yesu akamwambia, \"Njoo, nifuate.\" Basi Mathayo akasimama, akamfuata."
+        },
+        "vi": {
+          "L": "Và Đức Giê-xu, đi ngang qua từ đó, thấy một người tên là Ma-thi-ơ đang ngồi tại trạm thu thuế, và {{deity_pronoun:ngài|Ngài}} nói với ông: \"Hãy theo {{deity_pronoun:ta|Ta}}.\" Và ông đứng dậy đi theo {{deity_pronoun:ngài|Ngài}}.",
+          "B": "Rời khỏi đó, Đức Giê-xu thấy một người tên là Ma-thi-ơ đang ngồi ở trạm thu thuế. Ngài bảo ông: \"Hãy theo {{deity_pronoun:ta|Ta}}.\" Ma-thi-ơ liền đứng dậy đi theo {{deity_pronoun:ngài|Ngài}}.",
+          "R": "Đức Giê-xu đi tiếp và thấy một người tên là Ma-thi-ơ. Ma-thi-ơ đang ngồi ở chỗ ông thu thuế. Đức Giê-xu nói với ông: \"Hãy đến đi theo {{deity_pronoun:ta|Ta}}.\" Ma-thi-ơ đứng dậy và đi theo {{deity_pronoun:ngài|Ngài}}."
+        },
+        "ko": {
+          "L": "그리고 예수께서 거기에서 지나가시다가, 세관에 앉아 있는 마태라는 사람을 보시고 그에게 말씀하신다. \"나를 따라오너라.\" 그러자 그가 일어나 그분을 따라갔다.",
+          "B": "예수께서 거기를 떠나 길을 가시다가, 세관에 앉아 있는 마태라는 사람을 보시고 말씀하셨다. \"나를 따라오너라.\" 마태는 일어나 예수를 따라갔다.",
+          "R": "예수께서 그곳을 떠나 길을 걸어가시다가 마태라는 사람을 보셨다. 마태는 세금을 걷는 자리에 앉아 있었다. 예수께서 그에게 말씀하셨다. \"자, 나를 따라오너라.\" 그러자 마태는 일어나 예수를 따라갔다."
         }
       },
       "decisions": [
@@ -1354,6 +1740,54 @@
           "reason": "Literal keeps the Greek present tense.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40009009012",
+            "n40009009009",
+            "n40009009010",
+            "n40009009011"
+          ],
+          "choice": "\"Ma-thi-ơ\" for Matthew; \"trạm thu thuế\" for the tax booth",
+          "alternatives": [
+            "Mát-thêu (Catholic form)"
+          ],
+          "reason": "The Protestant transliteration, settled with the tradition; \"trạm thu thuế\" as for Levi in Mark 2:14.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40009009011",
+            "n40009009012",
+            "n40009009017"
+          ],
+          "choice": "\"마태\"; \"세관\" (L, B), \"세금을 걷는 자리\" (R); \"나를 따라오너라\"",
+          "alternatives": [
+            "\"세관 자리\"",
+            "\"나를 따르라\""
+          ],
+          "reason": "\"마태\" is the established Protestant form. The tax booth and the call are worded as in the parallel Mark 2:14 (Levi), so the two accounts read alike.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1412,6 +1846,16 @@
           "L": "Na ikawa, alipokuwa ameegemea [mezani] nyumbani, tazama, watoza ushuru wengi na wenye dhambi wakaja, wakaegemea [mezani] pamoja na Yesu na wanafunzi {{deity_pronoun:wake|Wake}}.",
           "B": "Baadaye Yesu alipokuwa ameketi mezani nyumbani, watoza ushuru wengi na wenye dhambi walikuja, wakajumuika {{deity_pronoun:naye|Naye}} pamoja na wanafunzi {{deity_pronoun:wake|Wake}} katika chakula.",
           "R": "Baadaye Yesu alikuwa akila chakula nyumbani. Watoza ushuru wengi na watu wengine waliojulikana kuwa wenye dhambi walikuja, wakala pamoja {{deity_pronoun:naye|Naye}} na wafuasi {{deity_pronoun:wake|Wake}}."
+        },
+        "vi": {
+          "L": "Và xảy ra là, khi {{deity_pronoun:ngài|Ngài}} đang ngả mình dùng bữa trong nhà, kìa, nhiều người thu thuế và người tội lỗi đến cùng ngả mình dùng bữa với Đức Giê-xu và các môn đồ {{deity_pronoun:ngài|Ngài}}.",
+          "B": "Sau đó, khi Đức Giê-xu đang dùng bữa trong nhà, có nhiều người thu thuế và người tội lỗi đến cùng ngồi ăn với {{deity_pronoun:ngài|Ngài}} và các môn đồ {{deity_pronoun:ngài|Ngài}}.",
+          "R": "Sau đó, Đức Giê-xu ăn một bữa trong nhà. Nhiều người thu thuế và những người khác bị coi là tội lỗi đến cùng ăn với {{deity_pronoun:ngài|Ngài}} và các môn đồ {{deity_pronoun:ngài|Ngài}}."
+        },
+        "ko": {
+          "L": "그리고 [이런 일이] 일어났다. 그분이 그 집에서 [식탁에] 기대어 앉아 계실 때에, 보아라, 많은 세리와 죄인이 와서 예수와 그분의 제자들과 함께 기대어 앉아 있었다.",
+          "B": "그 뒤에 예수께서 그 집에서 식사를 하고 계셨는데, 많은 세리와 죄인이 와서 예수와 제자들과 함께 식탁에 앉았다.",
+          "R": "그 뒤에 예수께서 그 집에서 식사를 하셨다. 그때 많은 세금 걷는 사람들과, 죄인이라고 손가락질받던 사람들이 와서 예수와 제자들과 함께 음식을 먹었다."
         }
       },
       "decisions": [
@@ -1549,6 +1993,51 @@
           "reason": "The term used across the New Testament drafts, at every level: \"those who collect duty\", which says what these men did. Literal keeps the reclining at table with \"kuegemea [mezani]\", as in Mark 16:14.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40009010004",
+            "n40009010015"
+          ],
+          "choice": "\"ngả mình dùng bữa\" (L); \"dùng bữa\", \"ngồi ăn\" (B, R)",
+          "alternatives": [
+            "nằm ăn"
+          ],
+          "reason": "As in Mark 2:15: guests lay on couches at a meal (meaning decision). Literal shows the posture; Balanced and Readable use the ordinary words for eating together.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40009010012",
+            "n40009010013",
+            "n40009010015"
+          ],
+          "choice": "\"세리\" (L, B), \"세금 걷는 사람\" (R); \"죄인\" at every level; \"[식탁에] 기대어 앉아\" (L)",
+          "alternatives": [
+            "\"세금 징수원\""
+          ],
+          "reason": "As in the parallel Mark 2:15. Literal keeps Matthew's \"it happened\" with the subject in brackets and the reclining posture at the meal (meaning decision).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1605,6 +2094,16 @@
           "L": "Na Mafarisayo walipoona [hayo], walikuwa wakiwaambia wanafunzi {{deity_pronoun:wake|Wake}}, \"Kwa nini pamoja na watoza ushuru na wenye dhambi anakula mwalimu wenu?\"",
           "B": "Mafarisayo walipoona hivyo, waliwauliza wanafunzi {{deity_pronoun:wake|Wake}}, \"Kwa nini mwalimu wenu hula na watoza ushuru na wenye dhambi?\"",
           "R": "Mafarisayo walipoona jambo hilo, waliwauliza wafuasi {{deity_pronoun:wake|Wake}}, \"Mbona mwalimu wenu anakaa kula chakula pamoja na watoza ushuru na wenye dhambi?\""
+        },
+        "vi": {
+          "L": "Và những người Pha-ri-si thấy [vậy] thì nói với các môn đồ của {{deity_pronoun:ngài|Ngài}}: \"Sao thầy của các anh ăn với người thu thuế và người tội lỗi?\"",
+          "B": "Thấy vậy, những người Pha-ri-si hỏi các môn đồ {{deity_pronoun:ngài|Ngài}}: \"Sao thầy các anh lại ăn chung với người thu thuế và người tội lỗi?\"",
+          "R": "Những người Pha-ri-si thấy vậy thì hỏi các môn đồ của {{deity_pronoun:ngài|Ngài}}: \"Sao thầy các anh lại ăn uống chung với người thu thuế và người tội lỗi?\""
+        },
+        "ko": {
+          "L": "바리새파 사람들이 [이것을] 보고 그분의 제자들에게 말하고 있었다. \"어찌하여 너희 선생은 세리들과 죄인들과 함께 먹느냐?\"",
+          "B": "바리새파 사람들이 이것을 보고 예수의 제자들에게 물었다. \"너희 선생은 왜 세리들과 죄인들과 함께 먹느냐?\"",
+          "R": "바리새파 사람들이 이것을 보고 예수의 제자들에게 물었다. \"너희 선생은 왜 세금 걷는 사람들이나 죄인들과 함께 밥을 먹느냐?\""
         }
       },
       "decisions": [
@@ -1641,6 +2140,50 @@
             "mange-t-il with no span"
           ],
           "reason": "French repeats the subject as a pronoun in the question, and that pronoun refers to Jesus, so it takes the span, as in the French of Mark 2:16.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40009011018",
+            "n40009011019"
+          ],
+          "choice": "\"thầy các anh\" with a small letter, and \"các anh\" for the disciples",
+          "alternatives": [
+            "Thầy của các anh"
+          ],
+          "reason": "The Pharisees speak to the disciples as \"các anh\" and of Jesus as their teacher; they do not honour him themselves, so the word is not the capitalised \"Thầy\" of disciples' address.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40009011004",
+            "n40009011017"
+          ],
+          "choice": "the Pharisees speak to the disciples in 해라체 and of Jesus with no honorific (\"너희 선생\", \"먹느냐\")",
+          "alternatives": [
+            "\"너희 선생님은 ... 잡수시느냐\""
+          ],
+          "reason": "As in Mark 2:16: the question is a reproach, and the Pharisees do not honour Jesus; the narrative still does.",
           "uncertain": false,
           "footnote": false
         }
@@ -1694,6 +2237,16 @@
           "L": "Lakini {{deity_pronoun:yeye|Yeye}} aliposikia, akasema, \"Wenye nguvu hawana haja ya tabibu, bali wale walio katika hali mbaya.",
           "B": "Yesu aliwasikia, akasema, \"Watu walio wazima hawahitaji daktari; wagonjwa ndio wanaomhitaji.",
           "R": "Yesu alisikia hayo. Kwa hiyo akasema, \"Watu wenye afya hawahitaji daktari. Wagonjwa ndio wanaohitaji daktari."
+        },
+        "vi": {
+          "L": "Nhưng nghe [vậy], {{deity_pronoun:ngài|Ngài}} nói: \"Người mạnh khỏe không cần thầy thuốc, nhưng người đau ốm [mới cần].",
+          "B": "Nghe vậy, Đức Giê-xu nói: \"Người khỏe mạnh không cần thầy thuốc, người đau ốm mới cần.",
+          "R": "Đức Giê-xu nghe họ nói vậy. Ngài nói: \"Người khỏe thì không cần bác sĩ. Người bệnh mới cần."
+        },
+        "ko": {
+          "L": "그러나 그분이 들으시고 말씀하셨다. \"힘센 이들에게는 의사가 필요 없다. 오히려 몸이 좋지 않은 이들에게 [필요하다].",
+          "B": "예수께서 그 말을 들으시고 말씀하셨다. \"몸이 성한 사람에게는 의사가 필요 없다. 의사가 필요한 사람은 아픈 사람이다.",
+          "R": "예수께서 그 말을 들으셨다. 그래서 말씀하셨다. \"건강한 사람은 의사를 찾지 않는다. 아픈 사람이 의사를 찾는다."
         }
       },
       "decisions": [
@@ -1775,6 +2328,16 @@
           "L": "Basi mkienda, jifunzeni maana ya [neno] hili: 'Rehema ninataka, na si dhabihu.' Kwa maana sikuja kuwaita watu wenye haki, ila watu wenye dhambi.\"",
           "B": "Nendeni mkajifunze maana ya maneno haya: 'Ninataka rehema, si dhabihu.' Kwa maana sikuja kuwaita watu wenye haki, bali wenye dhambi.\"",
           "R": "Nendeni mkatafute maana ya Maandiko haya: 'Ninataka mwahurumie watu, kuliko kunitolea dhabihu.' Sikuja kuwaalika watu wema. Nilikuja kuwaalika wenye dhambi.\""
+        },
+        "vi": {
+          "L": "Hãy đi và học [cho biết] điều này nghĩa là gì: 'Ta muốn lòng thương xót, chứ không phải của lễ.' Vì {{deity_pronoun:ta|Ta}} đã không đến để gọi người công chính, nhưng [để gọi] người tội lỗi.\"",
+          "B": "Hãy đi và học cho biết lời này có nghĩa gì: 'Ta muốn lòng thương xót, chứ không phải của lễ.' Vì {{deity_pronoun:ta|Ta}} đến không phải để kêu gọi người công chính, mà để kêu gọi người tội lỗi.\"",
+          "R": "Hãy đi tìm hiểu xem lời Kinh Thánh này có nghĩa gì: 'Ta muốn các con thương xót người khác hơn là dâng của lễ cho {{deity_pronoun:ta|Ta}}.' Ta không đến để mời người tốt. Ta đến để mời người tội lỗi.\""
+        },
+        "ko": {
+          "L": "너희는 가서 '나는 자비를 원하고, 제사를 [원하지] 않는다'가 무슨 뜻인지 배워라. 나는 의인들을 부르러 온 것이 아니라 죄인들을 [부르러 왔다].\"",
+          "B": "가서 '나는 자비를 원하지, 제사를 원하지 않는다'는 말씀이 무슨 뜻인지 배워라. 나는 의인들을 부르러 온 것이 아니라 죄인들을 부르러 왔다.\"",
+          "R": "가서 성경에 있는 이 말씀이 무슨 뜻인지 알아보아라. '나는 너희가 제물을 바치는 것보다, 사람들에게 자비를 베푸는 것을 더 원한다.' 나는 착한 사람들을 초대하러 오지 않았다. 죄인들을 초대하러 왔다.\""
         }
       },
       "decisions": [
@@ -1873,6 +2436,55 @@
           "reason": "The Greek word is an animal sacrifice offered at the altar, set against mercy in Hosea 6:6 (meaning decision m1). \"Sadaka\" is the familiar word, but today it mostly means an offering of money or alms, which would blur the contrast.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40009013006",
+            "n40009013007",
+            "n40009013008",
+            "n40009013009",
+            "n40009013010"
+          ],
+          "choice": "\"Ta muốn lòng thương xót, chứ không phải của lễ\" for Hosea 6:6",
+          "alternatives": [
+            "Ta chuộng sự nhân từ"
+          ],
+          "reason": "God speaks in the words of Hosea 6:6 (meaning decision), so he says \"Ta\" for himself, written plainly at the start of the quotation and with the setting span inside it. Readable has God speak to his people as \"các con\", the warm form, rather than the archaic \"các ngươi\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40009013006",
+            "n40009013010",
+            "n40009013014"
+          ],
+          "choice": "\"자비\"; \"제사\" (L, B), \"제물을 바치는 것\" (R); \"부르다\" (L, B), \"초대하다\" (R)",
+          "alternatives": [
+            "\"긍휼\"",
+            "\"인애\""
+          ],
+          "reason": "Hosea 6:6 (meaning decision): \"자비\" is the current word for the mercy God wants; \"긍휼\" is the older church word. God speaks in the quotation in 해라체 with \"나\". The verb \"call\" is rendered as in Mark 2:17, where Readable says \"invite\", as to a feast.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1931,6 +2543,16 @@
           "L": "Kisha wanafunzi wa Yohana wanamjia, wakisema, \"Mbona sisi pamoja na Mafarisayo tunafunga sana, lakini wanafunzi {{deity_pronoun:wako|Wako}} hawafungi?\"",
           "B": "Kisha wanafunzi wa Yohana walimjia, wakamwuliza, \"Sisi tunafunga mara kwa mara, na Mafarisayo pia. Kwa nini wanafunzi {{deity_pronoun:wako|Wako}} hawafungi?\"",
           "R": "Kisha wafuasi wa Yohana Mbatizaji walimwendea Yesu. Wakamwuliza, \"Sisi na Mafarisayo mara nyingi tunaacha kula ili tuombe. Kwa nini wafuasi {{deity_pronoun:wako|Wako}} hawafanyi hivyo?\""
+        },
+        "vi": {
+          "L": "Bấy giờ các môn đồ của Giăng đến với {{deity_pronoun:ngài|Ngài}} và nói: \"Tại sao chúng tôi và những người Pha-ri-si kiêng ăn nhiều lần, mà các môn đồ của Thầy lại không kiêng ăn?\"",
+          "B": "Bấy giờ các môn đồ của Giăng đến hỏi {{deity_pronoun:ngài|Ngài}}: \"Chúng tôi và những người Pha-ri-si thường kiêng ăn. Sao các môn đồ của Thầy lại không kiêng ăn?\"",
+          "R": "Rồi các môn đồ của Giăng Báp-tít đến gặp Đức Giê-xu. Họ hỏi {{deity_pronoun:ngài|Ngài}}: \"Chúng tôi và những người Pha-ri-si thường nhịn ăn để cầu nguyện. Sao các môn đồ của Thầy lại không làm vậy?\""
+        },
+        "ko": {
+          "L": "그때에 요한의 제자들이 그분께 와서 말한다. \"저희와 바리새파 사람들은 자주 금식하는데, 어찌하여 선생님의 제자들은 금식하지 않습니까?\"",
+          "B": "그때 요한의 제자들이 예수께 와서 물었다. \"저희도 자주 금식하고 바리새파 사람들도 그렇게 하는데, 왜 선생님의 제자들은 금식하지 않습니까?\"",
+          "R": "그때 세례자 요한의 제자들이 예수께 와서 물었다. \"저희와 바리새파 사람들은 자주 금식을 합니다. 그런데 왜 선생님의 제자들은 금식하지 않습니까?\""
         }
       },
       "decisions": [
@@ -2008,6 +2630,49 @@
           "reason": "Readable names John with the term sheet's form, as the English does, and says what fasting is, as the English \"go without food to pray\" does; Literal and Balanced keep \"jeûner\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40009014019"
+          ],
+          "choice": "\"Thầy\" for \"your\" in the question, with no deity_pronoun span; \"chúng tôi\" for \"we\"",
+          "alternatives": [
+            "ông"
+          ],
+          "reason": "As in Mark 2:18: the questioners ask Jesus as a teacher and are not shown as opponents, so they use the respectful noun of address. \"kiêng ăn\" for fasting, as in Matthew 6:16.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40009014010"
+          ],
+          "choice": "John's disciples speak to Jesus in 합쇼체 with \"저희\" and \"선생님의\" for \"your\"; \"금식\" at every level",
+          "alternatives": [
+            "\"우리\"",
+            "\"당신의\""
+          ],
+          "reason": "As settled, people speaking to Jesus use 합쇼체 and the humble \"저희\" for themselves, and Korean says \"선생님의\" where the English has \"your\", as in Mark 2:18. \"금식\" was explained at Readable in 6:16 and is kept here.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2064,6 +2729,16 @@
           "L": "Na Yesu akawaambia, \"Je, wana wa ukumbi wa harusi wanaweza kuomboleza muda wote bwana harusi yuko pamoja nao?",
           "B": "Yesu aliwajibu, \"Je, wageni wa harusi wanaweza kukaa katika maombolezo wakati bwana harusi yuko kati yao?",
           "R": "Yesu aliwaambia, \"Marafiki wa bwana harusi hawahuzuniki wakati yeye yuko pamoja nao harusini."
+        },
+        "vi": {
+          "L": "Và Đức Giê-xu nói với họ: \"Các con trai của phòng cưới có thể buồn rầu bao lâu chàng rể còn ở với họ sao?",
+          "B": "Đức Giê-xu đáp: \"Khách dự tiệc cưới làm sao buồn rầu được khi chàng rể còn ở với họ?",
+          "R": "Đức Giê-xu nói với họ: \"Khi có đám cưới, bạn bè của chàng rể không buồn rầu trong lúc chàng rể còn ở với họ."
+        },
+        "ko": {
+          "L": "그러자 예수께서 그들에게 말씀하셨다. \"신랑이 그들과 함께 있는 동안에 신방의 {{gender:손님들|아들들}}이 슬퍼할 수 있겠느냐?",
+          "B": "예수께서 대답하셨다. \"신랑이 함께 있는 동안에 혼인 잔치의 손님들이 어떻게 슬퍼할 수 있겠느냐?",
+          "R": "예수께서 그들에게 말씀하셨다. \"결혼 잔치에서 신랑의 친구들은 신랑이 함께 있는 동안 슬퍼하지 않는다."
         }
       },
       "decisions": [
@@ -2196,6 +2871,52 @@
           "reason": "The English Literal sets \"guests\" against \"sons\" under the gender setting. Swahili \"wana\" (children, sons) is not limited to males and keeps the Greek idiom for the wedding guests (meaning decision m1), so no span is needed.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40009015009",
+            "n40009015010",
+            "n40009015011"
+          ],
+          "choice": "\"các con trai của phòng cưới\" (L) with no gender span; \"khách dự tiệc cưới\" (B); \"bạn bè của chàng rể\" (R)",
+          "alternatives": [
+            "a gender span (L)"
+          ],
+          "reason": "As in Mark 2:19: Literal keeps the Hebrew-style idiom; Balanced and Readable say who is meant. The English Literal puts \"sons\" under the gender setting, but the idiom names the groom's friends at a wedding, and Vietnamese has no second wording that would mean the same, so no span is used.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40009015009",
+            "n40009015010",
+            "n40009015011"
+          ],
+          "choice": "\"신방의 {{gender:손님들|아들들}}\" (L), with \"이\" after the span; \"혼인 잔치의 손님들\" (B); \"신랑의 친구들\" (R)",
+          "alternatives": [
+            "\"신방의 아들들\" with no span, as in Mark 2:19"
+          ],
+          "reason": "The English Literal here puts the Hebrew-style \"sons of the bridal chamber\", the guests at a wedding (meaning decision), under the gender setting, so Korean does the same; both forms end in \"들\", so one particle fits. Balanced and Readable use the words of Mark 2:19.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2245,6 +2966,16 @@
           "L": "Lakini siku zitakuja ambapo bwana harusi ataondolewa kutoka kwao, na wakati huo watafunga.",
           "B": "Lakini wakati unakuja ambapo bwana harusi atachukuliwa kutoka kwao, na ndipo watafunga.",
           "R": "Lakini wakati utafika ambapo bwana harusi atachukuliwa mbali nao. Hapo ndipo wataacha kula."
+        },
+        "vi": {
+          "L": "Nhưng sẽ có những ngày khi chàng rể bị đem đi khỏi họ, và bấy giờ họ sẽ kiêng ăn.",
+          "B": "Nhưng sẽ đến lúc chàng rể bị đem đi khỏi họ, và bấy giờ họ sẽ kiêng ăn.",
+          "R": "Nhưng sẽ đến lúc chàng rể bị đem đi khỏi họ. Lúc đó họ sẽ nhịn ăn."
+        },
+        "ko": {
+          "L": "그러나 그들이 신랑을 빼앗길 날들이 올 것이다. 그리고 그때에 그들이 금식할 것이다.",
+          "B": "그러나 신랑이 그들에게서 끌려갈 날이 올 것이다. 그때에는 그들도 금식할 것이다.",
+          "R": "그러나 신랑이 그들 곁에서 끌려가는 날이 올 것이다. 그때가 되면 그들은 금식할 것이다."
         }
       },
       "decisions": [
@@ -2325,6 +3056,16 @@
           "L": "Na hakuna mtu anayetia kiraka cha kitambaa kisichofuliwa juu ya vazi kuukuu; kwa maana kiraka hicho huvuta [sehemu] ya vazi, na mpasuko unakuwa mbaya zaidi.",
           "B": "Hakuna mtu anayeshona kiraka cha kitambaa kipya, ambacho hakijasinyaa, juu ya vazi kuukuu. Kiraka hicho kitajivuta kutoka kwenye vazi, na tundu litakuwa kubwa zaidi.",
           "R": "Hakuna mtu anayetumia kipande cha kitambaa kipya kuziba tundu katika nguo kuukuu. Kitambaa kipya kitasinyaa na kujivuta, na tundu litakuwa kubwa zaidi."
+        },
+        "vi": {
+          "L": "Không ai vá miếng vải chưa co lên áo cũ, vì miếng vá sẽ kéo rách áo, và chỗ rách càng tệ hơn.",
+          "B": "Không ai lấy miếng vải mới chưa co để vá áo cũ. Miếng vá sẽ co lại kéo rách áo, và chỗ rách càng lớn hơn.",
+          "R": "Người ta không lấy vải mới để vá chỗ rách trên áo cũ. Vải mới sẽ co lại và kéo rách vải cũ. Rồi chỗ rách sẽ còn lớn hơn."
+        },
+        "ko": {
+          "L": "아무도 빨지 않은 천 조각을 낡은 옷에 대고 깁지 않는다. 그렇게 하면 그 채워 댄 조각이 옷을 당겨서, 더 심하게 찢어지기 때문이다.",
+          "B": "아무도 물에 빨지 않은 새 천 조각을 낡은 옷에 대고 깁지 않는다. 그렇게 하면 새 조각이 줄어들면서 옷을 당겨 떨어져 나가고, 찢어진 곳이 더 커진다.",
+          "R": "사람들은 헌 옷에 난 구멍을 새 천으로 메우지 않는다. 새 천은 물에 젖으면 줄어들어서 헌 옷에서 찢겨 나간다. 그러면 구멍이 더 커진다."
         }
       },
       "decisions": [
@@ -2432,6 +3173,16 @@
           "L": "Wala hawaweki divai mpya ndani ya viriba vya zamani; ikiwa sivyo, viriba vinapasuka, divai inamwagika na viriba vinaharibika. Bali huweka divai mpya ndani ya viriba vipya, na vyote viwili vinatunzwa salama.\"",
           "B": "Tena watu hawamimini divai mpya ndani ya viriba vya zamani. Wakifanya hivyo, viriba vitapasuka, divai itamwagika, na viriba vitaharibika. Hapana, divai mpya humiminwa ndani ya viriba vipya, na hivyo vyote viwili hubaki salama.\"",
           "R": "Watu hawaweki divai mpya ndani ya mifuko ya ngozi iliyochakaa. Wakifanya hivyo, mifuko itapasuka, divai itamwagika, na mifuko itaharibika. Siku zote watu huweka divai mpya katika mifuko mipya ya ngozi. Hivyo divai na mifuko vyote hubaki salama.\""
+        },
+        "vi": {
+          "L": "Người ta cũng không đổ rượu mới vào bầu da cũ; nếu không, bầu da sẽ nứt, rượu chảy ra, và bầu da hư mất. Nhưng người ta đổ rượu mới vào bầu da mới, và cả hai đều được giữ gìn.\"",
+          "B": "Người ta cũng không đổ rượu mới vào bầu da cũ. Nếu làm vậy, bầu da sẽ bục, rượu đổ ra, và bầu da cũng hư. Không, người ta đổ rượu mới vào bầu da mới, và cả hai đều được giữ an toàn.\"",
+          "R": "Người ta cũng không đổ rượu mới vào túi da cũ. Nếu làm vậy, túi da sẽ bị vỡ, rượu đổ ra hết, và túi da cũng bị hư. Người ta luôn đổ rượu mới vào túi da mới. Như vậy cả rượu lẫn túi da đều được giữ an toàn.\""
+        },
+        "ko": {
+          "L": "또 새 포도주를 낡은 가죽 부대에 넣지도 않는다. 그렇게 하면 부대가 터져서 포도주는 쏟아지고 부대는 못 쓰게 된다. 오히려 새 포도주는 새 가죽 부대에 넣는다. 그러면 둘 다 보존된다.\"",
+          "B": "또 새 포도주를 낡은 가죽 부대에 담지 않는다. 그렇게 하면 부대가 터져 포도주는 쏟아지고 부대는 못 쓰게 된다. 새 포도주는 새 부대에 담아야 포도주도 부대도 상하지 않는다.\"",
+          "R": "또 사람들은 새 포도주를 짐승 가죽으로 만든 낡은 부대에 담지 않는다. 그렇게 하면 부대가 터져서 포도주는 쏟아지고 부대도 못 쓰게 된다. 사람들은 늘 새 포도주를 새 부대에 담는다. 그러면 포도주도 부대도 둘 다 안전하다.\""
         }
       },
       "decisions": [
@@ -2486,6 +3237,49 @@
             "wineskins"
           ],
           "reason": "Readable describes them.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40009017006",
+            "n40009017028"
+          ],
+          "choice": "\"bầu da\" (L, B); \"túi da\" (R) for wineskins",
+          "alternatives": [
+            "bình da"
+          ],
+          "reason": "As in Mark 2:22.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40009017006"
+          ],
+          "choice": "\"가죽 부대\" (L, B), \"짐승 가죽으로 만든 부대\" (R)",
+          "alternatives": [
+            "\"가죽 자루\""
+          ],
+          "reason": "As in the parallel Mark 2:22: wineskins were bags of goatskin (meaning decision), and Readable says so.",
           "uncertain": false,
           "footnote": false
         }

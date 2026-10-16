@@ -41,6 +41,16 @@
           "L": "Kitabu cha asili ya Yesu {{christos:Kristo|Masihi}}, mwana wa Daudi, mwana wa Ibrahimu.",
           "B": "Kumbukumbu ya ukoo wa Yesu {{christos:Kristo|Masihi}}, mwana wa Daudi, mwana wa Ibrahimu.",
           "R": "Hii ni orodha ya mababu wa Yesu {{christos:Kristo|Masihi}}. Alitoka katika jamaa ya Mfalme Daudi, na katika jamaa ya Ibrahimu."
+        },
+        "ko": {
+          "L": "다윗의 아들, 아브라함의 아들 예수 {{christos:그리스도|메시아}}의 기원의 책.",
+          "B": "다윗의 자손이요 아브라함의 자손인 예수 {{christos:그리스도|메시아}}의 계보.",
+          "R": "이것은 예수 {{christos:그리스도|메시아}}의 조상들을 적은 목록이다. 예수께서는 다윗 왕의 집안에서 나셨고, 아브라함의 집안에서 나셨다."
+        },
+        "vi": {
+          "L": "Sách gốc tích của Đức Giê-xu {{christos:Christ|Mê-si-a}}, con của Đa-vít, con của Áp-ra-ham.",
+          "B": "Gia phả của Đức Giê-xu {{christos:Christ|Mê-si-a}}, con cháu Đa-vít, con cháu Áp-ra-ham.",
+          "R": "Đây là danh sách tổ tiên của Đức Giê-xu {{christos:Christ|Mê-si-a}}. Ngài thuộc dòng dõi vua Đa-vít, và cũng thuộc dòng dõi Áp-ra-ham."
         }
       },
       "decisions": [
@@ -226,6 +236,78 @@
           "reason": "Literal keeps \"book\" and \"origin\" (meaning decision m1). Balanced says what follows is a record of the family line, and Readable that it is a list of ancestors, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40001001001",
+            "n40001001002",
+            "n40001001005",
+            "n40001001007"
+          ],
+          "choice": "\"기원의 책\" (L); \"계보\" (B); \"조상들을 적은 목록\" (R); \"아들\" (L), \"자손\" (B, R) for son of David and of Abraham",
+          "alternatives": [
+            "\"족보\" (B)",
+            "\"아들\" at every level"
+          ],
+          "reason": "Literal keeps the two Greek words, book and origin, so the echo of Genesis 2:4 and 5:1 stays visible. Balanced uses \"계보\", the usual word for a family line. Korean says \"자손\" (descendant) for a son many generations later; Literal keeps \"아들\" as the Greek has it. Korean puts the description before the name, so \"son of David, son of Abraham\" comes first.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40001001003",
+            "n40001001004"
+          ],
+          "choice": "\"Đức Giê-xu {{christos:Christ|Mê-si-a}}\" with the name",
+          "alternatives": [
+            "\"Giê-xu Christ\""
+          ],
+          "reason": "The style guide's form for Christ joined to the name, as in Mark 1:1. The honorific \"Đức\" is not bracketed even at Literal, since a bare name for Jesus is disrespectful in Vietnamese narrative; this holds for all of Matthew.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40001001001",
+            "n40001001002",
+            "n40001001005",
+            "n40001001007"
+          ],
+          "choice": "\"Sách gốc tích ... con của\" (L); \"Gia phả ... con cháu\" (B); \"danh sách tổ tiên ... dòng dõi\" (R)",
+          "alternatives": [
+            "\"Sách ghi sự ra đời\"",
+            "\"dòng dõi\" at every level"
+          ],
+          "reason": "\"Gia phả\" is the everyday Vietnamese word for a written family record, which is what the phrase introduces; Literal keeps \"sách\" and \"gốc tích\" (origin) to show the two Greek words. \"Con\" means descendant here: Literal keeps the word, Balanced says \"con cháu\", Readable \"dòng dõi\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -349,6 +431,16 @@
           "L": "Ibrahimu alimzaa Isaka, naye Isaka alimzaa Yakobo, naye Yakobo aliwazaa Yuda na ndugu zake, \\v 3 naye Yuda aliwazaa Peresi na Zera kutoka kwa Tamari, naye Peresi alimzaa Hesroni, naye Hesroni alimzaa Ramu, \\v 4 naye Ramu alimzaa Aminadabu, naye Aminadabu alimzaa Nashoni, naye Nashoni alimzaa Salmoni, \\v 5 naye Salmoni alimzaa Boazi kutoka kwa Rahabu, naye Boazi alimzaa Obedi kutoka kwa Ruthu, naye Obedi alimzaa Yese, \\v 6 naye Yese alimzaa Daudi mfalme.",
           "B": "Ibrahimu alikuwa baba wa Isaka, Isaka baba wa Yakobo, na Yakobo baba wa Yuda na ndugu zake. \\v 3 Yuda alikuwa baba wa Peresi na Zera, ambao mama yao alikuwa Tamari. Peresi alikuwa baba wa Hesroni, na Hesroni baba wa Ramu. \\v 4 Ramu alikuwa baba wa Aminadabu, Aminadabu baba wa Nashoni, na Nashoni baba wa Salmoni. \\v 5 Salmoni alikuwa baba wa Boazi, ambaye mama yake alikuwa Rahabu. Boazi alikuwa baba wa Obedi, ambaye mama yake alikuwa Ruthu. Obedi alikuwa baba wa Yese, \\v 6 na Yese alikuwa baba wa Mfalme Daudi.",
           "R": "Ibrahimu alikuwa baba wa Isaka. Isaka alikuwa baba wa Yakobo. Yakobo alikuwa baba wa Yuda na ndugu zake Yuda. \\v 3 Yuda alikuwa baba wa Peresi na Zera, na mama yao alikuwa Tamari. Peresi alikuwa baba wa Hesroni. Hesroni alikuwa baba wa Ramu. \\v 4 Ramu alikuwa baba wa Aminadabu. Aminadabu alikuwa baba wa Nashoni. Nashoni alikuwa baba wa Salmoni. \\v 5 Salmoni alikuwa baba wa Boazi, na mama yake Boazi alikuwa Rahabu. Boazi alikuwa baba wa Obedi, na mama yake Obedi alikuwa Ruthu. Obedi alikuwa baba wa Yese. \\v 6 Yese alikuwa baba wa Daudi, ambaye baadaye alikuwa mfalme."
+        },
+        "ko": {
+          "L": "아브라함이 이삭을 낳았고, 이삭이 야곱을 낳았고, 야곱이 유다와 그의 형제들을 낳았고, \\v 3 유다가 다말에게서 베레스와 세라를 낳았고, 베레스가 헤스론을 낳았고, 헤스론이 람을 낳았고, \\v 4 람이 아미나답을 낳았고, 아미나답이 나손을 낳았고, 나손이 살몬을 낳았고, \\v 5 살몬이 라합에게서 보아스를 낳았고, 보아스가 룻에게서 오벳을 낳았고, 오벳이 이새를 낳았고, \\v 6 이새가 다윗 왕을 낳았다.",
+          "B": "아브라함은 이삭을 낳았고, 이삭은 야곱을, 야곱은 유다와 그 형제들을 낳았다. \\v 3 유다는 다말에게서 베레스와 세라를 낳았다. 베레스는 헤스론을, 헤스론은 람을 낳았다. \\v 4 람은 아미나답을, 아미나답은 나손을, 나손은 살몬을 낳았다. \\v 5 살몬은 라합에게서 보아스를 낳았다. 보아스는 룻에게서 오벳을 낳았다. 오벳은 이새를 낳았고, \\v 6 이새는 다윗 왕을 낳았다.",
+          "R": "아브라함은 이삭의 아버지였다. 이삭은 야곱의 아버지였다. 야곱은 유다와 유다의 형제들의 아버지였다. \\v 3 유다는 베레스와 세라의 아버지였고, 그들의 어머니는 다말이었다. 베레스는 헤스론의 아버지였다. 헤스론은 람의 아버지였다. \\v 4 람은 아미나답의 아버지였다. 아미나답은 나손의 아버지였다. 나손은 살몬의 아버지였다. \\v 5 살몬은 보아스의 아버지였고, 보아스의 어머니는 라합이었다. 보아스는 오벳의 아버지였고, 오벳의 어머니는 룻이었다. 오벳은 이새의 아버지였다. \\v 6 이새는 다윗의 아버지였다. 다윗은 나중에 왕이 되었다."
+        },
+        "vi": {
+          "L": "Áp-ra-ham sinh Y-sác, Y-sác sinh Gia-cốp, Gia-cốp sinh Giu-đa và các anh em của ông, \\v 3 Giu-đa sinh Pha-rê và Xa-ra với Tha-ma, Pha-rê sinh Ếch-rôm, Ếch-rôm sinh A-ram, \\v 4 A-ram sinh A-mi-na-đáp, A-mi-na-đáp sinh Na-ách-son, Na-ách-son sinh Sanh-môn, \\v 5 Sanh-môn sinh Bô-ô với Ra-háp, Bô-ô sinh Ô-bết với Ru-tơ, Ô-bết sinh Gie-sê, \\v 6 Gie-sê sinh Đa-vít là vua.",
+          "B": "Áp-ra-ham là cha của Y-sác; Y-sác là cha của Gia-cốp; Gia-cốp là cha của Giu-đa và các anh em ông. \\v 3 Giu-đa là cha của Pha-rê và Xa-ra, mẹ là Tha-ma. Pha-rê là cha của Ếch-rôm; Ếch-rôm là cha của A-ram. \\v 4 A-ram là cha của A-mi-na-đáp; A-mi-na-đáp là cha của Na-ách-son; Na-ách-son là cha của Sanh-môn. \\v 5 Sanh-môn là cha của Bô-ô, mẹ là Ra-háp. Bô-ô là cha của Ô-bết, mẹ là Ru-tơ. Ô-bết là cha của Gie-sê, \\v 6 và Gie-sê là cha của vua Đa-vít.",
+          "R": "Áp-ra-ham là cha của Y-sác. Y-sác là cha của Gia-cốp. Gia-cốp là cha của Giu-đa và các anh em của Giu-đa. \\v 3 Giu-đa là cha của Pha-rê và Xa-ra, và mẹ của họ là Tha-ma. Pha-rê là cha của Ếch-rôm. Ếch-rôm là cha của A-ram. \\v 4 A-ram là cha của A-mi-na-đáp. A-mi-na-đáp là cha của Na-ách-son. Na-ách-son là cha của Sanh-môn. \\v 5 Sanh-môn là cha của Bô-ô, và mẹ của Bô-ô là Ra-háp. Bô-ô là cha của Ô-bết, và mẹ của Ô-bết là Ru-tơ. Ô-bết là cha của Gie-sê. \\v 6 Gie-sê là cha của Đa-vít, người về sau làm vua."
         }
       },
       "decisions": [
@@ -639,6 +731,126 @@
           "reason": "As the English uses the Old Testament forms, so does the Swahili, so readers can find these people in Genesis, Ruth and Chronicles. Spellings vary between Swahili Bibles (Hesroni or Hezroni); a native reviewer should settle them for the whole genealogy.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40001002002",
+            "n40001002007",
+            "n40001002012"
+          ],
+          "choice": "\"낳았다\" (L, B); \"~의 아버지였다\" (R), through the genealogy",
+          "alternatives": [
+            "\"~의 아버지였다\" at every level"
+          ],
+          "reason": "In Korean a father \"낳다\" a son is ordinary, current wording for a family line, not archaic as \"begat\" is in English, so Balanced keeps the Greek verb and, like the English Balanced, leaves it out of the later links of a series. Readable spells out the relationship in short sentences, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40001003005",
+            "n40001003016",
+            "n40001003021"
+          ],
+          "choice": "names in their established Protestant Korean forms: 베레스, 세라, 다말, 헤스론, 람, 아미나답, 나손, 살몬, 라합, 보아스, 룻, 오벳, 이새",
+          "alternatives": [],
+          "reason": "As docs/korean-style.md section 5: the forms Korean Protestant readers know from the Old Testament, so the names can be found there.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40001002002",
+            "n40001002007",
+            "n40001002012"
+          ],
+          "choice": "\"sinh\" (L); \"là cha của\" (B, R)",
+          "alternatives": [
+            "\"sanh\"",
+            "\"sinh ra\""
+          ],
+          "reason": "\"Sinh\" is the plain verb Vietnamese family records use for a father's begetting; \"sanh\" is the older spelling. Balanced and Readable state the relationship directly, as the English does. Holds for 1:2-16.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40001003005",
+            "n40001003016",
+            "n40001003021",
+            "n40001005006",
+            "n40001005013",
+            "n40001005016"
+          ],
+          "choice": "names in the forms of the Vietnamese Protestant tradition, which follow the Greek: Pha-rê, Ếch-rôm, A-ram, Na-ách-son, Sanh-môn, Bô-ô, Ra-háp, Ô-bết, Ru-tơ, Gie-sê",
+          "alternatives": [
+            "forms nearer the Hebrew, as the English Old Testament forms (Perez, Hezron, Ram)"
+          ],
+          "reason": "Vietnamese Bible readers know the genealogy in these transliterations (style guide, section 4). A reviewer should check them against the forms the Vietnamese Old Testament will use for the same people.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-3",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n40001003009",
+            "n40001003010",
+            "n40001003011",
+            "n40001005006",
+            "n40001005007",
+            "n40001005008"
+          ],
+          "choice": "\"với Tha-ma\" (L); \"mẹ là Tha-ma\" (B); \"mẹ của họ là Tha-ma\" (R)",
+          "alternatives": [
+            "\"bởi Tha-ma\""
+          ],
+          "reason": "The Greek \"out of Tamar\" names the mother; \"bởi\" in this sense is archaic, so Literal says \"với\" and Balanced and Readable name her as the mother.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -763,6 +975,16 @@
           "L": "Naye Daudi alimzaa Solomoni kutoka kwa [mke] wa Uria, \\v 7 naye Solomoni alimzaa Rehoboamu, naye Rehoboamu alimzaa Abiya, naye Abiya alimzaa Asafu, \\v 8 naye Asafu alimzaa Yehoshafati, naye Yehoshafati alimzaa Yoramu, naye Yoramu alimzaa Uzia, \\v 9 naye Uzia alimzaa Yothamu, naye Yothamu alimzaa Ahazi, naye Ahazi alimzaa Hezekia, \\v 10 naye Hezekia alimzaa Manase, naye Manase alimzaa Amosi, naye Amosi alimzaa Yosia, \\v 11 naye Yosia aliwazaa Yekonia na ndugu zake wakati wa uhamisho wa Babeli.",
           "B": "Daudi alikuwa baba wa Solomoni, ambaye mama yake alikuwa mke wa Uria. \\v 7 Solomoni alikuwa baba wa Rehoboamu, Rehoboamu baba wa Abiya, na Abiya baba wa Asa. \\v 8 Asa alikuwa baba wa Yehoshafati, Yehoshafati baba wa Yoramu, na Yoramu baba wa Uzia. \\v 9 Uzia alikuwa baba wa Yothamu, Yothamu baba wa Ahazi, na Ahazi baba wa Hezekia. \\v 10 Hezekia alikuwa baba wa Manase, Manase baba wa Amoni, na Amoni baba wa Yosia. \\v 11 Yosia alikuwa baba wa Yekonia na ndugu zake wakati wa uhamisho kwenda Babeli.",
           "R": "Daudi alikuwa baba wa Solomoni, na mama yake Solomoni alikuwa mke wa Uria zamani. \\v 7 Solomoni alikuwa baba wa Rehoboamu. Rehoboamu alikuwa baba wa Abiya. Abiya alikuwa baba wa Asa. \\v 8 Asa alikuwa baba wa Yehoshafati. Yehoshafati alikuwa baba wa Yoramu. Yoramu alikuwa baba wa Uzia. \\v 9 Uzia alikuwa baba wa Yothamu. Yothamu alikuwa baba wa Ahazi. Ahazi alikuwa baba wa Hezekia. \\v 10 Hezekia alikuwa baba wa Manase. Manase alikuwa baba wa Amoni. Amoni alikuwa baba wa Yosia. \\v 11 Yosia alikuwa baba wa Yekonia na ndugu zake. Huo ndio wakati watu wa Yuda walipochukuliwa kwa nguvu kupelekwa Babeli."
+        },
+        "ko": {
+          "L": "다윗이 우리야의 [아내]에게서 솔로몬을 낳았고, \\v 7 솔로몬이 르호보암을 낳았고, 르호보암이 아비야를 낳았고, 아비야가 아삽을 낳았고, \\v 8 아삽이 여호사밧을 낳았고, 여호사밧이 요람을 낳았고, 요람이 웃시야를 낳았고, \\v 9 웃시야가 요담을 낳았고, 요담이 아하스를 낳았고, 아하스가 히스기야를 낳았고, \\v 10 히스기야가 므낫세를 낳았고, 므낫세가 아모스를 낳았고, 아모스가 요시야를 낳았고, \\v 11 요시야가 바빌론 이주 때에 여고냐와 그의 형제들을 낳았다.",
+          "B": "다윗은 우리야의 아내였던 여인에게서 솔로몬을 낳았다. \\v 7 솔로몬은 르호보암을, 르호보암은 아비야를, 아비야는 아사를 낳았다. \\v 8 아사는 여호사밧을, 여호사밧은 요람을, 요람은 웃시야를 낳았다. \\v 9 웃시야는 요담을, 요담은 아하스를, 아하스는 히스기야를 낳았다. \\v 10 히스기야는 므낫세를, 므낫세는 아몬을, 아몬은 요시야를 낳았다. \\v 11 요시야는 바빌론으로 끌려갈 무렵에 여고냐와 그 형제들을 낳았다.",
+          "R": "다윗은 솔로몬의 아버지였다. 솔로몬의 어머니는 전에 우리야의 아내였다. \\v 7 솔로몬은 르호보암의 아버지였다. 르호보암은 아비야의 아버지였다. 아비야는 아사의 아버지였다. \\v 8 아사는 여호사밧의 아버지였다. 여호사밧은 요람의 아버지였다. 요람은 웃시야의 아버지였다. \\v 9 웃시야는 요담의 아버지였다. 요담은 아하스의 아버지였다. 아하스는 히스기야의 아버지였다. \\v 10 히스기야는 므낫세의 아버지였다. 므낫세는 아몬의 아버지였다. 아몬은 요시야의 아버지였다. \\v 11 요시야는 여고냐와 그 형제들의 아버지였다. 그때는 유다 사람들이 바빌론으로 끌려간 때였다."
+        },
+        "vi": {
+          "L": "Đa-vít sinh Sa-lô-môn với [vợ] của U-ri, \\v 7 Sa-lô-môn sinh Rô-bô-am, Rô-bô-am sinh A-bi-gia, A-bi-gia sinh A-sáp, \\v 8 A-sáp sinh Giô-sa-phát, Giô-sa-phát sinh Giô-ram, Giô-ram sinh Ô-xia, \\v 9 Ô-xia sinh Giô-tham, Giô-tham sinh A-cha, A-cha sinh Ê-xê-chia, \\v 10 Ê-xê-chia sinh Ma-na-se, Ma-na-se sinh A-mốt, A-mốt sinh Giô-si-a, \\v 11 Giô-si-a sinh Giê-chô-nia và các anh em của ông vào [thời] lưu đày [sang] Ba-by-lôn.",
+          "B": "Đa-vít là cha của Sa-lô-môn, mẹ là người vợ của U-ri. \\v 7 Sa-lô-môn là cha của Rô-bô-am; Rô-bô-am là cha của A-bi-gia; A-bi-gia là cha của A-sa. \\v 8 A-sa là cha của Giô-sa-phát; Giô-sa-phát là cha của Giô-ram; Giô-ram là cha của Ô-xia. \\v 9 Ô-xia là cha của Giô-tham; Giô-tham là cha của A-cha; A-cha là cha của Ê-xê-chia. \\v 10 Ê-xê-chia là cha của Ma-na-se; Ma-na-se là cha của A-môn; A-môn là cha của Giô-si-a. \\v 11 Giô-si-a là cha của Giê-chô-nia và các anh em ông vào thời bị lưu đày sang Ba-by-lôn.",
+          "R": "Đa-vít là cha của Sa-lô-môn, và mẹ của Sa-lô-môn trước kia là vợ của U-ri. \\v 7 Sa-lô-môn là cha của Rô-bô-am. Rô-bô-am là cha của A-bi-gia. A-bi-gia là cha của A-sa. \\v 8 A-sa là cha của Giô-sa-phát. Giô-sa-phát là cha của Giô-ram. Giô-ram là cha của Ô-xia. \\v 9 Ô-xia là cha của Giô-tham. Giô-tham là cha của A-cha. A-cha là cha của Ê-xê-chia. \\v 10 Ê-xê-chia là cha của Ma-na-se. Ma-na-se là cha của A-môn. A-môn là cha của Giô-si-a. \\v 11 Giô-si-a là cha của Giê-chô-nia và các anh em của Giê-chô-nia. Đó là thời dân Giu-đa bị bắt đưa sang Ba-by-lôn."
         }
       },
       "decisions": [
@@ -963,6 +1185,75 @@
           "reason": "After \"fue padre de\", a bare \"de la mujer de Urías\" would read as a second son. Balanced names the mother in a phrase of her own, as with Tamar, Rahab and Ruth in 1:3-5; \"había sido\" keeps meaning decision m1, that she had been Uriah's wife.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40001011010",
+            "n40001011011",
+            "n40001011012",
+            "n40001011013"
+          ],
+          "choice": "\"바빌론\"; \"바빌론 이주 때에\" (L); \"바빌론으로 끌려갈 무렵에\" (B); \"유다 사람들이 바빌론으로 끌려간 때\" (R)",
+          "alternatives": [
+            "\"바벨론\"",
+            "\"바빌론 포로기\""
+          ],
+          "reason": "\"바빌론\" is the current standard spelling of the city, used by modern Protestant versions alongside the older \"바벨론\"; a reviewer may prefer the older form. Literal renders the Greek noun (a removal of people) with the neutral \"이주\"; Balanced and Readable say what it was, a forced deportation.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40001007015",
+            "n40001008001",
+            "n40001010010",
+            "n40001010011"
+          ],
+          "choice": "\"아삽\", \"아모스\" (L); \"아사\", \"아몬\" (B, R)",
+          "alternatives": [],
+          "reason": "The Korean follows the English rendering decision and the footnoted meaning decision: Literal keeps the SBLGNT names, Balanced and Readable give the kings' names in their Korean Old Testament forms.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40001011010",
+            "n40001011011"
+          ],
+          "choice": "\"lưu đày\" (L, B); \"bị bắt đưa sang\" (R) for the deportation",
+          "alternatives": [
+            "\"lưu vong\""
+          ],
+          "reason": "\"Lưu đày\" is forced removal to a foreign land, which is what happened; \"lưu vong\" is exile one goes into to escape. Readable says what happened in plain words. Also 1:12 and 1:17.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1078,6 +1369,16 @@
           "L": "Na baada ya uhamisho wa Babeli, Yekonia alimzaa Shealtieli, naye Shealtieli alimzaa Zerubabeli, \\v 13 naye Zerubabeli alimzaa Abiudi, naye Abiudi alimzaa Eliakimu, naye Eliakimu alimzaa Azori, \\v 14 naye Azori alimzaa Sadoki, naye Sadoki alimzaa Akimu, naye Akimu alimzaa Eliudi, \\v 15 naye Eliudi alimzaa Eleazari, naye Eleazari alimzaa Mathani, naye Mathani alimzaa Yakobo, \\v 16 naye Yakobo alimzaa Yusufu mume wa Mariamu, ambaye kutoka kwake alizaliwa Yesu, aitwaye {{christos:Kristo|Masihi}}.",
           "B": "Baada ya uhamisho kwenda Babeli, Yekonia alikuwa baba wa Shealtieli, na Shealtieli baba wa Zerubabeli. \\v 13 Zerubabeli alikuwa baba wa Abiudi, Abiudi baba wa Eliakimu, na Eliakimu baba wa Azori. \\v 14 Azori alikuwa baba wa Sadoki, Sadoki baba wa Akimu, na Akimu baba wa Eliudi. \\v 15 Eliudi alikuwa baba wa Eleazari, Eleazari baba wa Mathani, na Mathani baba wa Yakobo. \\v 16 Yakobo alikuwa baba wa Yusufu, mume wa Mariamu, na Mariamu ndiye aliyemzaa Yesu, anayeitwa {{christos:Kristo|Masihi}}.",
           "R": "Baada ya watu kupelekwa Babeli, Yekonia alikuwa baba wa Shealtieli. Shealtieli alikuwa baba wa Zerubabeli. \\v 13 Zerubabeli alikuwa baba wa Abiudi. Abiudi alikuwa baba wa Eliakimu. Eliakimu alikuwa baba wa Azori. \\v 14 Azori alikuwa baba wa Sadoki. Sadoki alikuwa baba wa Akimu. Akimu alikuwa baba wa Eliudi. \\v 15 Eliudi alikuwa baba wa Eleazari. Eleazari alikuwa baba wa Mathani. Mathani alikuwa baba wa Yakobo. \\v 16 Yakobo alikuwa baba wa Yusufu. Yusufu alikuwa mume wa Mariamu, na Mariamu alikuwa mama wa Yesu, anayeitwa {{christos:Kristo|Masihi}}."
+        },
+        "ko": {
+          "L": "그리고 바빌론 이주 뒤에 여고냐가 스알디엘을 낳았고, 스알디엘이 스룹바벨을 낳았고, \\v 13 스룹바벨이 아비훗을 낳았고, 아비훗이 엘리아김을 낳았고, 엘리아김이 아소르를 낳았고, \\v 14 아소르가 사독을 낳았고, 사독이 아킴을 낳았고, 아킴이 엘리웃을 낳았고, \\v 15 엘리웃이 엘르아살을 낳았고, 엘르아살이 맛단을 낳았고, 맛단이 야곱을 낳았고, \\v 16 야곱이 마리아의 남편 요셉을 낳았다. 마리아에게서 {{christos:그리스도|메시아}}라고 불리는 예수께서 나셨다.",
+          "B": "바빌론으로 끌려간 뒤에, 여고냐는 스알디엘을, 스알디엘은 스룹바벨을 낳았다. \\v 13 스룹바벨은 아비훗을, 아비훗은 엘리아김을, 엘리아김은 아소르를 낳았다. \\v 14 아소르는 사독을, 사독은 아킴을, 아킴은 엘리웃을 낳았다. \\v 15 엘리웃은 엘르아살을, 엘르아살은 맛단을, 맛단은 야곱을 낳았다. \\v 16 야곱은 마리아의 남편 요셉을 낳았다. 이 마리아에게서 {{christos:그리스도|메시아}}라고 불리는 예수께서 태어나셨다.",
+          "R": "사람들이 바빌론으로 끌려간 뒤에, 여고냐는 스알디엘의 아버지였다. 스알디엘은 스룹바벨의 아버지였다. \\v 13 스룹바벨은 아비훗의 아버지였다. 아비훗은 엘리아김의 아버지였다. 엘리아김은 아소르의 아버지였다. \\v 14 아소르는 사독의 아버지였다. 사독은 아킴의 아버지였다. 아킴은 엘리웃의 아버지였다. \\v 15 엘리웃은 엘르아살의 아버지였다. 엘르아살은 맛단의 아버지였다. 맛단은 야곱의 아버지였다. \\v 16 야곱은 요셉의 아버지였다. 요셉은 마리아의 남편이었고, 마리아는 예수의 어머니였다. 예수께서는 {{christos:그리스도|메시아}}라고 불리신다."
+        },
+        "vi": {
+          "L": "Và sau cuộc lưu đày [sang] Ba-by-lôn, Giê-chô-nia sinh Sa-la-thi-ên, Sa-la-thi-ên sinh Xô-rô-ba-bên, \\v 13 Xô-rô-ba-bên sinh A-bi-út, A-bi-út sinh Ê-li-a-kim, Ê-li-a-kim sinh A-xô, \\v 14 A-xô sinh Sa-đốc, Sa-đốc sinh A-chim, A-chim sinh Ê-li-út, \\v 15 Ê-li-út sinh Ê-lê-a-xa, Ê-lê-a-xa sinh Ma-than, Ma-than sinh Gia-cốp, \\v 16 Gia-cốp sinh Giô-sép, chồng của Ma-ri, và từ Ma-ri sinh ra Đức Giê-xu, Đấng được gọi là {{christos:Christ|Mê-si-a}}.",
+          "B": "Sau cuộc lưu đày sang Ba-by-lôn, Giê-chô-nia là cha của Sa-la-thi-ên; Sa-la-thi-ên là cha của Xô-rô-ba-bên. \\v 13 Xô-rô-ba-bên là cha của A-bi-út; A-bi-út là cha của Ê-li-a-kim; Ê-li-a-kim là cha của A-xô. \\v 14 A-xô là cha của Sa-đốc; Sa-đốc là cha của A-chim; A-chim là cha của Ê-li-út. \\v 15 Ê-li-út là cha của Ê-lê-a-xa; Ê-lê-a-xa là cha của Ma-than; Ma-than là cha của Gia-cốp. \\v 16 Gia-cốp là cha của Giô-sép, chồng của Ma-ri; và Ma-ri là người sinh ra Đức Giê-xu, Đấng được gọi là {{christos:Christ|Mê-si-a}}.",
+          "R": "Sau khi dân chúng bị đưa sang Ba-by-lôn, Giê-chô-nia là cha của Sa-la-thi-ên. Sa-la-thi-ên là cha của Xô-rô-ba-bên. \\v 13 Xô-rô-ba-bên là cha của A-bi-út. A-bi-út là cha của Ê-li-a-kim. Ê-li-a-kim là cha của A-xô. \\v 14 A-xô là cha của Sa-đốc. Sa-đốc là cha của A-chim. A-chim là cha của Ê-li-út. \\v 15 Ê-li-út là cha của Ê-lê-a-xa. Ê-lê-a-xa là cha của Ma-than. Ma-than là cha của Gia-cốp. \\v 16 Gia-cốp là cha của Giô-sép. Giô-sép là chồng của Ma-ri, và Ma-ri là mẹ của Đức Giê-xu, Đấng được gọi là {{christos:Christ|Mê-si-a}}."
         }
       },
       "decisions": [
@@ -1274,6 +1575,76 @@
           "reason": "The chain of \"alimzaa\" breaks here: the verb turns passive and only Mary is named (meaning decision m1). Literal keeps the passive \"alizaliwa\"; Balanced says \"Mariamu ndiye aliyemzaa Yesu\", which keeps Joseph out of the verb as the Greek does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n40001016009",
+            "n40001016010",
+            "n40001016011",
+            "n40001016012"
+          ],
+          "choice": "a new sentence for \"of whom was born Jesus\": \"마리아에게서 ... 예수께서 나셨다\" (L), \"태어나셨다\" (B); \"마리아는 예수의 어머니였다\" (R)",
+          "alternatives": [
+            "one sentence with a relative clause on 마리아"
+          ],
+          "reason": "Korean relative clauses come before the noun, so a clause hung on Mary at the end of the long list would have to move before her name. A new sentence keeps the order of the Greek and the change from \"낳았다\" to the passive \"나셨다\" with Mary alone named, which the meaning decision points out. The honorific -시- marks Jesus from his birth on.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40001016013",
+            "n40001016014",
+            "n40001016015"
+          ],
+          "choice": "\"Đấng được gọi là {{christos:Christ|Mê-si-a}}\"",
+          "alternatives": [
+            "\"người được gọi là {{christos:Đấng Christ|Đấng Mê-si-a}}\""
+          ],
+          "reason": "\"Đấng\" already stands before \"được gọi là\", so the span gives the title in the form used with the name, avoiding \"Đấng ... Đấng\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n40001016009",
+            "n40001016010",
+            "n40001016011"
+          ],
+          "choice": "\"từ Ma-ri sinh ra\" (L); \"Ma-ri là người sinh ra\" (B); \"Ma-ri là mẹ của\" (R)",
+          "alternatives": [
+            "\"Giô-sép sinh Đức Giê-xu\""
+          ],
+          "reason": "The pattern \"X sinh Y\" stops here: Mary alone is named as the parent, as the meaning decision says, and every level keeps that.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1340,6 +1711,16 @@
           "L": "Basi vizazi vyote tangu Ibrahimu hadi Daudi [vilikuwa] vizazi kumi na vinne, na tangu Daudi hadi uhamisho wa Babeli vizazi kumi na vinne, na tangu uhamisho wa Babeli hadi {{christos:Kristo|Masihi}} vizazi kumi na vinne.",
           "B": "Kwa hiyo kulikuwa na vizazi kumi na vinne kwa jumla tangu Ibrahimu hadi Daudi, vizazi kumi na vinne tangu Daudi hadi uhamisho kwenda Babeli, na vizazi kumi na vinne tangu uhamisho kwenda Babeli hadi {{christos:Kristo|Masihi}}.",
           "R": "Basi kulikuwa na vizazi kumi na vinne tangu Ibrahimu hadi Daudi. Kulikuwa na vizazi vingine kumi na vinne tangu Daudi hadi wakati watu walipopelekwa Babeli. Tena kulikuwa na vizazi vingine kumi na vinne tangu wakati huo hadi {{christos:Kristo|Masihi}} alipokuja."
+        },
+        "ko": {
+          "L": "그러므로 아브라함부터 다윗까지 모든 세대가 열네 세대이고, 다윗부터 바빌론 이주까지 열네 세대이며, 바빌론 이주부터 {{christos:그리스도|메시아}}까지 열네 세대이다.",
+          "B": "그러므로 아브라함부터 다윗까지 모두 열네 세대, 다윗부터 바빌론으로 끌려갈 때까지 열네 세대, 바빌론으로 끌려간 때부터 {{christos:그리스도|메시아}}까지 열네 세대이다.",
+          "R": "그래서 아브라함부터 다윗까지는 열네 세대였다. 다윗부터 사람들이 바빌론으로 끌려간 때까지 또 열네 세대였다. 그리고 그때부터 {{christos:그리스도|메시아}}께서 오실 때까지 또 열네 세대였다."
+        },
+        "vi": {
+          "L": "Vậy tất cả các thế hệ từ Áp-ra-ham đến Đa-vít [là] mười bốn thế hệ, và từ Đa-vít đến cuộc lưu đày [sang] Ba-by-lôn mười bốn thế hệ, và từ cuộc lưu đày [sang] Ba-by-lôn đến {{christos:Đấng Christ|Đấng Mê-si-a}} mười bốn thế hệ.",
+          "B": "Như vậy, từ Áp-ra-ham đến Đa-vít có tất cả mười bốn thế hệ, từ Đa-vít đến thời lưu đày sang Ba-by-lôn có mười bốn thế hệ, và từ thời lưu đày sang Ba-by-lôn đến {{christos:Đấng Christ|Đấng Mê-si-a}} cũng có mười bốn thế hệ.",
+          "R": "Vậy từ Áp-ra-ham đến Đa-vít có mười bốn thế hệ. Từ Đa-vít đến thời dân chúng bị đưa sang Ba-by-lôn có thêm mười bốn thế hệ nữa. Và từ thời đó cho đến khi {{christos:Đấng Christ|Đấng Mê-si-a}} đến cũng có mười bốn thế hệ."
         }
       },
       "decisions": [
@@ -1420,6 +1801,28 @@
           "reason": "Readable completes the time phrase with a verb, since \"until Christ\" alone is hard for new readers.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40001017004",
+            "n40001017009"
+          ],
+          "choice": "\"thế hệ\" for generations",
+          "alternatives": [
+            "\"đời\""
+          ],
+          "reason": "\"Thế hệ\" is the modern word for one generation in a line; \"đời\" also means a lifetime or an age, which would blur the count.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1465,6 +1868,16 @@
           "L": "Basi asili ya Yesu {{christos:Kristo|Masihi}} ilikuwa hivi.",
           "B": "Hivi ndivyo Yesu {{christos:Kristo|Masihi}} alivyozaliwa.",
           "R": "Hii ndiyo habari ya jinsi Yesu {{christos:Kristo|Masihi}} alivyozaliwa."
+        },
+        "ko": {
+          "L": "그런데 예수 {{christos:그리스도|메시아}}의 기원은 이러하였다.",
+          "B": "예수 {{christos:그리스도|메시아}}께서 태어나신 일은 이러하다.",
+          "R": "예수 {{christos:그리스도|메시아}}께서 어떻게 태어나셨는지 이야기하면 이렇다."
+        },
+        "vi": {
+          "L": "Còn sự ra đời của Đức Giê-xu {{christos:Christ|Mê-si-a}} là như thế này.",
+          "B": "Đức Giê-xu {{christos:Christ|Mê-si-a}} đã ra đời như sau.",
+          "R": "Đây là chuyện Đức Giê-xu {{christos:Christ|Mê-si-a}} ra đời."
         }
       },
       "decisions": [
@@ -1519,6 +1932,27 @@
             "the birth of Jesus was as follows"
           ],
           "reason": "Balanced and Readable say \"born\", since that is what the account goes on to tell. Literal keeps \"origin\", the word of 1:1.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40001018006"
+          ],
+          "choice": "\"기원\" (L), as in 1:1; \"태어나신 일\" (B, R)",
+          "alternatives": [
+            "\"탄생\""
+          ],
+          "reason": "The Greek word is the one used in 1:1, so Literal repeats \"기원\". Here it means his birth, as the meaning decision says, and Balanced and Readable say so with the honorific for Jesus.",
           "uncertain": false,
           "footnote": false
         }
@@ -1576,6 +2010,16 @@
           "L": "Mama {{deity_pronoun:yake|Yake}} Mariamu akiwa ameposwa na Yusufu, kabla ya wao kuja pamoja, ilijulikana kwamba ana mimba tumboni kutoka kwa Roho Mtakatifu.",
           "B": "Mama {{deity_pronoun:yake|Yake}}, Mariamu, alikuwa ameposwa na Yusufu. Lakini kabla hawajaanza kuishi pamoja, ilibainika kwamba alikuwa amechukua mimba kutoka kwa Roho Mtakatifu.",
           "R": "Mama {{deity_pronoun:yake|Yake}}, Mariamu, alikuwa ameposwa na Yusufu. Lakini kabla hawajaanza kuishi pamoja, ilijulikana kwamba atapata mtoto. Mtoto huyo alitoka kwa Roho Mtakatifu."
+        },
+        "ko": {
+          "L": "그분의 어머니 마리아가 요셉과 약혼하였을 때, 그들이 함께하기 전에 [마리아가] 성령으로 말미암아 배 속에 [아이를] 가진 것이 드러났다.",
+          "B": "예수의 어머니 마리아는 요셉과 약혼한 사이였다. 그런데 두 사람이 함께 살기 전에, 마리아가 성령으로 아이를 가진 것이 드러났다.",
+          "R": "예수의 어머니 마리아는 요셉과 약혼한 사이였다. 그런데 두 사람이 함께 살기 전에 마리아가 아기를 가진 것이 알려졌다. 그 아기는 성령께서 생기게 하신 아기였다."
+        },
+        "vi": {
+          "L": "Khi mẹ {{deity_pronoun:ngài|Ngài}} là Ma-ri đã đính hôn với Giô-sép, trước khi họ về chung sống, cô được thấy là đã có thai bởi Đức Thánh Linh.",
+          "B": "Ma-ri, mẹ của {{deity_pronoun:ngài|Ngài}}, đã đính hôn với Giô-sép; nhưng trước khi hai người về chung sống, người ta thấy cô đã mang thai bởi Đức Thánh Linh.",
+          "R": "Ma-ri, mẹ của Đức Giê-xu, đã đính hôn với Giô-sép. Nhưng trước khi hai người về sống chung, người ta thấy cô đã có thai. Đứa bé ấy đến từ Đức Thánh Linh."
         }
       },
       "decisions": [
@@ -1771,6 +2215,92 @@
           "reason": "English Balanced and Readable begin with \"His\", capitalised either way, so they have no span. The Swahili possessive follows its noun, so it takes the span at every level. As in John, spans go only on free pronouns and possessives, never on verb prefixes (alimzaa, utamwita), so Swahili has fewer spans than English through Matthew.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40001018012"
+          ],
+          "choice": "no deity_pronoun spans in Korean, through Matthew 1-2: \"그분의\" (L), \"예수의\" (B, R)",
+          "alternatives": [
+            "a deity_pronoun span"
+          ],
+          "reason": "Korean has no capital letters, so the setting has nothing to change (docs/korean-style.md section 7). Respect for Jesus is carried by \"께서\", \"그분\" and the honorific -시- at every level, even of the child; Balanced and Readable often use the name where English has a pronoun.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40001018009"
+          ],
+          "choice": "\"약혼하다\" for the Greek betrothal",
+          "alternatives": [
+            "\"정혼하다\""
+          ],
+          "reason": "\"약혼\" is the plain current word; the meaning decision explains that a Jewish betrothal was binding, which is why 1:19 speaks of ending it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40001018013",
+            "n40001018020"
+          ],
+          "choice": "\"cô\" for Mary in the narrative of 1:18-25",
+          "alternatives": [
+            "\"bà\"",
+            "\"nàng\""
+          ],
+          "reason": "Mary is a young woman pledged to be married; \"cô\" is the respectful plain word for her. \"Bà\" would make her older, and \"nàng\" is literary.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40001018018"
+          ],
+          "choice": "\"về chung sống\" (L, B); \"về sống chung\" (R) for came together",
+          "alternatives": [
+            "\"ăn ở với nhau\""
+          ],
+          "reason": "The meaning decision says the phrase means beginning to live together as husband and wife, including sexual union; \"về chung sống\" says that without being blunt, as the Greek is not.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1824,6 +2354,16 @@
           "L": "Naye Yusufu mumewe, kwa kuwa alikuwa mwenye haki na hakutaka kumfedhehesha mbele ya watu, alikusudia kumwachilia kisirisiri.",
           "B": "Yusufu mumewe alikuwa mtu mwenye haki, na hakutaka kumwaibisha mbele ya watu, kwa hiyo aliamua kumpa talaka faraghani.",
           "R": "Yusufu, mwanamume aliyekuwa amemposa, alikuwa mtu aliyeishika sheria ya Mungu. Hakutaka kumwaibisha mbele ya kila mtu. Kwa hiyo aliamua kuvunja ndoa yao kimya kimya."
+        },
+        "ko": {
+          "L": "그런데 그녀의 남편 요셉은 의로운 사람이어서, 그녀를 공공연히 드러내어 수치를 주기를 원하지 않았으므로, 남몰래 그녀를 돌려보내기로 마음먹었다.",
+          "B": "마리아의 남편 요셉은 의로운 사람이었다. 그는 마리아를 사람들 앞에서 부끄럽게 하고 싶지 않아서, 조용히 파혼하기로 마음먹었다.",
+          "R": "마리아와 약혼한 요셉은 하나님의 법을 지키는 사람이었다. 그는 마리아가 사람들 앞에서 망신을 당하게 하고 싶지 않았다. 그래서 조용히 약혼을 끝내기로 했다."
+        },
+        "vi": {
+          "L": "Còn Giô-sép, chồng cô, vốn là người công chính và không muốn bêu xấu cô trước công chúng, đã định bí mật cho cô đi.",
+          "B": "Giô-sép, chồng cô, là người công chính và không muốn làm cô bị nhục nhã trước mặt mọi người, nên định âm thầm ly dị cô.",
+          "R": "Giô-sép, người đã hứa hôn với cô, là người sống theo luật pháp của Đức Chúa Trời. Ông không muốn làm cô bị xấu hổ trước mặt mọi người. Vì vậy, ông định lặng lẽ hủy bỏ hôn ước."
         }
       },
       "decisions": [
@@ -1968,6 +2508,89 @@
           "reason": "The Greek verb is \"release, send away\", here of divorce (meaning decision m3). Literal keeps the picture with \"kumwachilia\"; Balanced names the divorce plainly, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40001019015"
+          ],
+          "choice": "\"돌려보내다\" (L); \"파혼하다\" (B); \"약혼을 끝내다\" (R)",
+          "alternatives": [
+            "\"이혼하다\" (B)",
+            "\"관계를 끊다\""
+          ],
+          "reason": "The Greek verb is the usual word for divorce (meaning decision). Since Korean has called the two \"약혼한 사이\", \"이혼\" would sound as if they were already living as a married couple; \"파혼\" names the formal ending of a binding betrothal. Literal keeps the picture of the Greek verb, sending her away.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40001019005"
+          ],
+          "choice": "\"그녀\" in Literal; the name in Balanced and Readable",
+          "alternatives": [
+            "\"그 여자\""
+          ],
+          "reason": "Literal keeps the Greek pronouns; Korean prose for reading aloud prefers the name, as Balanced and Readable do.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40001019006"
+          ],
+          "choice": "\"người công chính\" (L, B); \"người sống theo luật pháp của Đức Chúa Trời\" (R)",
+          "alternatives": [
+            "\"người công bình\""
+          ],
+          "reason": "\"Công chính\" is the key term for righteousness (style guide, section 5); Readable says what it means here, as the meaning decision does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40001019015"
+          ],
+          "choice": "\"cho cô đi\" (L); \"ly dị\" (B); \"hủy bỏ hôn ước\" (R)",
+          "alternatives": [
+            "\"bỏ cô\""
+          ],
+          "reason": "Literal keeps the Greek picture of sending away; Balanced uses the legal word, since a betrothal could only be ended by divorce; Readable \"hủy bỏ hôn ước\" (break off the betrothal) is how Vietnamese readers would picture ending it before the wedding.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2036,6 +2659,16 @@
           "L": "Naye alipokuwa akiyatafakari mambo hayo, tazama, malaika wa Bwana alimtokea ndotoni, akisema, \"Yusufu, mwana wa Daudi, usiogope kumchukua Mariamu [awe] mke wako, kwa sababu kilichotungwa ndani yake kimetoka kwa Roho Mtakatifu.",
           "B": "Alipokuwa bado akilitafakari jambo hili, malaika wa Bwana alimjia katika ndoto, akamwambia, \"Yusufu, mwana wa Daudi, usiogope kumchukua Mariamu nyumbani kwako awe mke wako. Mtoto aliyemchukua mimbani ametoka kwa Roho Mtakatifu.",
           "R": "Alipokuwa bado akifikiri juu ya jambo hili, malaika wa Bwana alimjia katika ndoto. Malaika akasema, \"Yusufu, mzao wa Daudi, usiogope kumwoa Mariamu. Mtoto wake ametoka kwa Roho Mtakatifu."
+        },
+        "ko": {
+          "L": "그러나 그가 이 일들을 곰곰이 생각하고 있을 때, 보라, 주님의 천사가 꿈에 그에게 나타나서 말하였다. \"다윗의 아들 요셉아, 네 아내 마리아를 맞아들이기를 두려워하지 마라. 그녀 안에 잉태된 것은 성령으로 말미암은 것이기 때문이다.",
+          "B": "요셉이 이 일을 깊이 생각하고 있을 때, 주님의 천사가 꿈에 그에게 나타나서 말했다. \"다윗의 자손 요셉아, 마리아를 네 아내로 집에 맞아들이기를 두려워하지 마라. 마리아가 가진 아이는 성령으로 생긴 것이다.",
+          "R": "요셉이 아직 이 일을 생각하고 있을 때, 주님의 천사가 꿈에 나타났다. 천사가 말했다. \"다윗의 자손 요셉아, 마리아를 아내로 맞아들이기를 두려워하지 마라. 마리아의 아기는 성령께서 생기게 하신 아기다."
+        },
+        "vi": {
+          "L": "Nhưng khi ông đang suy tính những điều ấy, kìa, một thiên sứ của Chúa hiện ra với ông trong giấc mơ và nói: \"Hỡi Giô-sép, con của Đa-vít, đừng sợ đón Ma-ri [về làm] vợ mình, vì điều đã thành thai trong cô là từ Đức Thánh Linh.",
+          "B": "Đang khi ông suy nghĩ về việc ấy, một thiên sứ của Chúa hiện đến với ông trong giấc mơ và nói: \"Giô-sép, con cháu Đa-vít, đừng ngại đón Ma-ri về làm vợ. Đứa con cô đang mang trong lòng là do Đức Thánh Linh.",
+          "R": "Ông đang còn suy nghĩ về chuyện này thì một thiên sứ của Chúa đến với ông trong giấc mơ. Thiên sứ nói: \"Giô-sép, con cháu của Đa-vít, đừng sợ cưới Ma-ri làm vợ. Đứa bé trong lòng cô là do Đức Thánh Linh."
         }
       },
       "decisions": [
@@ -2284,6 +2917,67 @@
           "reason": "As in English: Literal keeps the word that draws attention; Balanced and Readable let the sentence carry it. The same throughout Matthew.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40001020005"
+          ],
+          "choice": "\"보라\" (L) for the Greek \"behold\" in narrative, through Matthew 1-4; not rendered (B, R)",
+          "alternatives": [
+            "\"보아라\""
+          ],
+          "reason": "Literal keeps the narrator's pointer with the short written form \"보라\"; inside speech the address form \"보아라\" is used, as in Mark. Balanced and Readable leave it out, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40001020013",
+            "n40001020014",
+            "n40001020015"
+          ],
+          "choice": "the angel speaks to Joseph in 해라체 (\"요셉아\", \"하지 마라\")",
+          "alternatives": [
+            "합쇼체"
+          ],
+          "reason": "A messenger from God speaks with God's authority, as God speaks in 해라체 in the Korean Psalms and prophets; the vocative \"-아\" goes with that level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40001020005"
+          ],
+          "choice": "\"kìa\" (L) for the narrator's \"look\"",
+          "alternatives": [
+            "\"này\""
+          ],
+          "reason": "In narrative the Greek word points to something happening before the reader's eyes, which \"kìa\" does; \"này\" is kept where a speaker calls attention (1:23). Balanced and Readable leave it out, as the English does. Holds for Matthew 1-4.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2340,6 +3034,16 @@
           "L": "Naye atamzaa mwana, nawe utaliita jina {{deity_pronoun:lake|Lake}} Yesu, kwa sababu {{deity_pronoun:yeye|Yeye}} {{deity_pronoun:mwenyewe|Mwenyewe}} atawaokoa watu {{deity_pronoun:wake|Wake}} kutoka kwenye dhambi zao.\"",
           "B": "Atazaa mtoto wa kiume, nawe utampa jina Yesu, kwa sababu ni {{deity_pronoun:yeye|Yeye}} atakayewaokoa watu {{deity_pronoun:wake|Wake}} kutoka katika dhambi zao.\"",
           "R": "Atapata mtoto wa kiume, nawe lazima umpe jina Yesu, maana yake 'Bwana anaokoa.' Yeye atawaokoa watu {{deity_pronoun:wake|Wake}} kutoka katika dhambi zao.\""
+        },
+        "ko": {
+          "L": "그리고 그녀가 아들을 낳을 것이니, 너는 그분의 이름을 예수라고 부를 것이다. 그분이 자기 백성을 그들의 죄들에서 구원하실 것이기 때문이다.\"",
+          "B": "마리아가 아들을 낳을 것이다. 너는 그 이름을 예수라고 하여라. 그분이 바로 자기 백성을 그들의 죄에서 구원하실 분이다.\"",
+          "R": "마리아가 아들을 낳을 것이다. 너는 그 아기의 이름을 예수라고 지어라. 예수라는 이름은 '주님께서 구원하신다'라는 뜻이다. 그분이 자기 백성을 그들의 죄에서 구원하실 것이다.\""
+        },
+        "vi": {
+          "L": "Cô sẽ sinh một con trai, và ông sẽ gọi tên {{deity_pronoun:ngài|Ngài}} là Giê-xu, vì chính {{deity_pronoun:ngài|Ngài}} sẽ cứu dân {{deity_pronoun:ngài|Ngài}} khỏi tội lỗi của họ.\"",
+          "B": "Cô sẽ sinh một con trai, và ông phải đặt tên cho {{deity_pronoun:ngài|Ngài}} là Giê-xu, vì chính {{deity_pronoun:ngài|Ngài}} là Đấng sẽ cứu dân {{deity_pronoun:ngài|Ngài}} khỏi tội lỗi của họ.\"",
+          "R": "Cô sẽ sinh một con trai, và ông phải đặt tên cho {{deity_pronoun:ngài|Ngài}} là Giê-xu, nghĩa là 'Chúa cứu rỗi.' Ngài sẽ cứu dân {{deity_pronoun:ngài|Ngài}} khỏi tội lỗi của họ.\""
         }
       },
       "decisions": [
@@ -2473,6 +3177,89 @@
           "reason": "Spanish normally leaves the subject pronoun out, so a bare \"él\" would not show the emphasis of meaning decision m3. \"Él mismo\" keeps it at Literal; Balanced says \"él es quien\", as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40001021010",
+            "n40001021012"
+          ],
+          "choice": "the angel speaks of the unborn child with the honorific: \"그분이 ... 구원하실\"",
+          "alternatives": [
+            "\"그가 ... 구원할\""
+          ],
+          "reason": "The honorific -시- for Jesus holds at every level and from his birth on (docs/korean-style.md section 4); the angel's words to Joseph stay in 해라체, but the child he speaks of is honored.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40001021005"
+          ],
+          "choice": "\"너는 그 이름을 예수라고 하여라\" (B), \"지어라\" (R): a command",
+          "alternatives": [
+            "\"부를 것이다\" (B)"
+          ],
+          "reason": "The Greek future here is a command (meaning decision); Literal keeps the future, Balanced and Readable use the imperative.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40001021005"
+          ],
+          "choice": "the angel calls Joseph \"ông\"",
+          "alternatives": [
+            "\"ngươi\""
+          ],
+          "reason": "\"Ông\" is the respectful word for a grown man; \"ngươi\" is archaic and sounds like a superior talking down. The same for the angel in 2:13 and 2:20.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40001021009"
+          ],
+          "choice": "\"Giê-xu\" without \"Đức\" where the name itself is given (also 1:25)",
+          "alternatives": [
+            "\"Đức Giê-xu\""
+          ],
+          "reason": "The angel says what the child is to be called; the honorific belongs to how the narrator speaks of him, not to the name given.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2524,6 +3311,16 @@
           "L": "Na haya yote yamefanyika ili kitimizwe kile kilichosemwa na Bwana kupitia nabii, akisema,",
           "B": "Haya yote yalitokea ili neno ambalo Bwana alilisema kupitia nabii litimie:",
           "R": "Mambo haya yote yalitokea ili yale Bwana aliyosema kupitia nabii Isaya yatimie. Nabii huyo alisema,"
+        },
+        "ko": {
+          "L": "그런데 이 모든 일이 일어난 것은 주님께서 예언자를 통하여 말씀하신 것이 이루어지게 하려는 것이었다. [그 말씀은] 이러하다.",
+          "B": "이 모든 일은 주님께서 예언자를 통해 하신 말씀을 이루시려고 일어난 것이다. 그 말씀은 이렇다.",
+          "R": "이 모든 일이 일어나서, 주님께서 이사야 예언자를 통해 하신 말씀이 그대로 이루어졌다. 예언자는 이렇게 말했다."
+        },
+        "vi": {
+          "L": "Vả, mọi việc này đã xảy ra để lời Chúa đã phán qua nhà tiên tri được ứng nghiệm, rằng:",
+          "B": "Mọi việc này đã xảy ra để ứng nghiệm lời Chúa đã phán qua nhà tiên tri:",
+          "R": "Mọi việc này xảy ra để lời Chúa đã phán qua nhà tiên tri Ê-sai trở thành sự thật. Nhà tiên tri nói:"
         }
       },
       "decisions": [
@@ -2624,6 +3421,70 @@
           "reason": "Here the narrator steps out of the story to comment on it (m1), and the Greek perfect speaks of a past event whose result stands; French uses the passé composé for that even inside a narrative in the passé simple.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40001022006"
+          ],
+          "choice": "\"이루어지다\" for \"be fulfilled\", in every fulfillment formula of Matthew 1-4",
+          "alternatives": [
+            "\"성취되다\""
+          ],
+          "reason": "\"이루어지다\" is the plain native verb and keeps the formula recognizable each time it recurs (2:15, 2:17, 2:23, 4:14); \"성취\" is the Sino-Korean equivalent and the alternative.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40001022006"
+          ],
+          "choice": "\"được ứng nghiệm\", \"ứng nghiệm\" (L, B); \"trở thành sự thật\" (R)",
+          "alternatives": [
+            "\"được làm trọn\""
+          ],
+          "reason": "\"Ứng nghiệm\" is the usual Vietnamese word for a prophecy coming to pass; Readable uses the plain phrase, as the English does. Kept for Matthew's fulfilment sayings (2:15, 2:17, 2:23, 4:14).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40001022008",
+            "n40001022010"
+          ],
+          "choice": "\"phán\" for the Lord speaking",
+          "alternatives": [
+            "\"nói\""
+          ],
+          "reason": "\"Phán\" is kept for God speaking (style guide, Settled); here the Lord is God, speaking through the prophet.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2683,6 +3544,16 @@
           "L": "\"Tazama, bikira atakuwa na [mimba] tumboni na atazaa mwana, nao watamwita jina {{deity_pronoun:lake|Lake}} Imanueli,\" maana yake ikitafsiriwa ni, \"Mungu pamoja nasi.\"",
           "B": "\"Bikira atapata mimba, naye atazaa mwana, nao watu watamwita Imanueli.\" Jina hilo maana yake ni \"Mungu yuko pamoja nasi.\"",
           "R": "\"Bikira atapata mimba, naye atazaa mtoto wa kiume. Watu watamwita Imanueli.\" Jina Imanueli maana yake ni \"Mungu yuko pamoja nasi.\""
+        },
+        "ko": {
+          "L": "\"보아라, 그 처녀가 배 속에 [아이를] 가져 아들을 낳을 것이다. 그리고 사람들이 그분의 이름을 임마누엘이라고 부를 것이다.\" 이것을 번역하면 \"우리와 함께 [계신] 하나님\"이다.",
+          "B": "\"보아라, 처녀가 아이를 가져 아들을 낳을 것이다. 사람들은 그를 임마누엘이라고 부를 것이다.\" 임마누엘은 \"하나님께서 우리와 함께 계신다\"라는 뜻이다.",
+          "R": "\"처녀가 아기를 가져서 아들을 낳을 것이다. 사람들은 그 아들을 임마누엘이라고 부를 것이다.\" 임마누엘이라는 이름은 \"하나님께서 우리와 함께 계신다\"라는 뜻이다."
+        },
+        "vi": {
+          "L": "\"Này, trinh nữ sẽ có thai và sinh một con trai, và người ta sẽ gọi tên {{deity_pronoun:ngài|Ngài}} là Em-ma-nu-ên,\" dịch ra là: \"Đức Chúa Trời ở cùng chúng ta.\"",
+          "B": "\"Này, trinh nữ sẽ mang thai và sinh một con trai, và người ta sẽ gọi {{deity_pronoun:ngài|Ngài}} là Em-ma-nu-ên.\" Tên ấy có nghĩa là \"Đức Chúa Trời ở với chúng ta.\"",
+          "R": "\"Một trinh nữ sẽ có thai và sinh một con trai. Người ta sẽ gọi {{deity_pronoun:ngài|Ngài}} là Em-ma-nu-ên.\" Tên Em-ma-nu-ên có nghĩa là \"Đức Chúa Trời ở với chúng ta.\""
         }
       },
       "decisions": [
@@ -2862,6 +3733,72 @@
           "reason": "The English says \"people\" to show that \"they\" is no one in particular (m3); French \"on\" does that by itself. \"Emmanuel\" is the usual French spelling of the name.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40001023003"
+          ],
+          "choice": "\"처녀\" at every level",
+          "alternatives": [
+            "\"젊은 여자\"",
+            "\"동정녀\""
+          ],
+          "reason": "\"처녀\" means a young woman who has not had sexual relations, which is the sense of the Greek word in Matthew (meaning decision, footnoted). \"동정녀\" is the church word and sounds technical; \"젊은 여자\" would lose the point.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "B"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40001023011",
+            "n40001023012",
+            "n40001023013",
+            "n40001023014"
+          ],
+          "choice": "\"그를\" (B) inside the quotation of Isaiah",
+          "alternatives": [
+            "\"그분을\""
+          ],
+          "reason": "In the prophecy as quoted, the child is spoken of plainly, as in the Old Testament text; Literal and Matthew's own narration keep the honorific.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40001023003"
+          ],
+          "choice": "\"trinh nữ\" for the virgin",
+          "alternatives": [
+            "\"cô gái\"",
+            "\"thiếu nữ\""
+          ],
+          "reason": "The meaning decision reads the word as a woman who has never had sexual relations; \"trinh nữ\" says exactly that, while \"thiếu nữ\" would only say \"young woman\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2918,6 +3855,16 @@
           "L": "Na Yusufu akiisha kuinuka kutoka usingizini, alitenda kama alivyoamriwa na malaika wa Bwana, akampokea mke wake [nyumbani].",
           "B": "Yusufu alipoinuka kutoka usingizini, alifanya yale aliyoagizwa na malaika wa Bwana. Akamleta mke wake nyumbani kwake.",
           "R": "Kisha Yusufu akaamka. Alimtii malaika wa Bwana, akamchukua Mariamu nyumbani kwake awe mke wake."
+        },
+        "ko": {
+          "L": "그리고 요셉이 잠에서 일어나서, 주님의 천사가 그에게 명령한 대로 행하여 자기 아내를 맞아들였다.",
+          "B": "요셉은 잠에서 깨어 일어나, 주님의 천사가 명령한 대로 하였다. 그는 자기 아내를 집으로 맞아들였다.",
+          "R": "요셉은 잠에서 깨어났다. 그는 주님의 천사가 말한 대로 마리아를 집으로 데려와 아내로 맞았다."
+        },
+        "vi": {
+          "L": "Giô-sép thức dậy khỏi giấc ngủ, làm như thiên sứ của Chúa đã truyền cho ông, và đón vợ mình [về].",
+          "B": "Khi Giô-sép thức dậy, ông làm đúng như thiên sứ của Chúa đã truyền dặn và đón vợ về nhà.",
+          "R": "Rồi Giô-sép thức dậy. Ông vâng lời thiên sứ của Chúa và đón Ma-ri về nhà làm vợ mình."
         }
       },
       "decisions": [
@@ -3033,6 +3980,16 @@
           "L": "Wala hakumjua hata alipozaa mwana; naye akaliita jina {{deity_pronoun:lake|Lake}} Yesu.",
           "B": "Lakini hakukutana naye kimwili mpaka alipojifungua mtoto wa kiume, naye akampa jina Yesu.",
           "R": "Lakini Yusufu hakulala naye mpaka mwanawe alipozaliwa. Naye Yusufu akampa jina Yesu."
+        },
+        "ko": {
+          "L": "그리고 [요셉은] 마리아가 아들을 낳을 때까지 그녀를 알지 않았다. 그리고 그는 그분의 이름을 예수라고 불렀다.",
+          "B": "그러나 요셉은 마리아가 아들을 낳을 때까지 마리아와 동침하지 않았다. 그리고 그 아들의 이름을 예수라고 지었다.",
+          "R": "그러나 요셉은 아들이 태어날 때까지 마리아와 함께 잠자리에 들지 않았다. 아기가 태어나자 요셉은 그 아기의 이름을 예수라고 지었다."
+        },
+        "vi": {
+          "L": "Và ông không ăn ở với cô cho đến khi cô sinh một con trai; và ông gọi tên {{deity_pronoun:ngài|Ngài}} là Giê-xu.",
+          "B": "Nhưng ông không ăn nằm với cô cho đến khi cô sinh một con trai, và ông đặt tên cho {{deity_pronoun:ngài|Ngài}} là Giê-xu.",
+          "R": "Nhưng Giô-sép không ngủ với cô cho đến khi cô sinh con trai. Và Giô-sép đặt tên cho {{deity_pronoun:ngài|Ngài}} là Giê-xu."
         }
       },
       "decisions": [
@@ -3149,6 +4106,50 @@
             "he"
           ],
           "reason": "Readable names Joseph so that \"he\" is not taken for the child.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40001025002",
+            "n40001025003",
+            "n40001025004"
+          ],
+          "choice": "\"알지 않았다\" (L); \"동침하지 않았다\" (B); \"함께 잠자리에 들지 않았다\" (R)",
+          "alternatives": [],
+          "reason": "Literal keeps the Hebrew-style idiom of the Greek, which Korean readers can follow from the context; Balanced uses the plain, decent word for sexual union, and Readable an everyday phrase.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40001025002",
+            "n40001025003",
+            "n40001025004"
+          ],
+          "choice": "\"không ăn ở với cô\" (L); \"không ăn nằm với cô\" (B); \"không ngủ với cô\" (R)",
+          "alternatives": [
+            "\"không biết cô\""
+          ],
+          "reason": "Vietnamese \"biết\" (know) does not carry the Hebrew and Greek sense of sexual union, so even Literal uses a Vietnamese expression for it, as the meaning decision explains the idiom.",
           "uncertain": false,
           "footnote": false
         }
