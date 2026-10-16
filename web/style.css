@@ -2363,3 +2363,14 @@ button.button { font-family: inherit; cursor: pointer; }
   .plan-today { padding: 18px 18px 20px; }
   .plan-bar { padding: 12px 14px; }
 }
+/* The notes as the page is served (build_site.chapter_notes): plain text
+   until reader.js redraws them as buttons. */
+.notes span.note { cursor: auto; }
+.notes span.note:hover { background: none; }
+/* The translation status page (build_site.status_page). */
+.status-table { width: 100%; border-collapse: collapse; margin: 0 0 8px; font-size: 15px; }
+.status-table th, .status-table td { padding: 7px 10px; border-bottom: 1px solid var(--line); text-align: left; }
+.status-table thead th { font-size: 13px; color: var(--muted); font-weight: 600; }
+.status-table td { text-align: right; font-variant-numeric: tabular-nums; }
+.status-table th[scope="row"] { font-weight: 400; }
+.status-table thead th + th { text-align: right; }
