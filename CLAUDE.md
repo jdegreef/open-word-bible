@@ -27,6 +27,9 @@ summarises the data model.
   named human reviewer approves them.
 - Don't use or redistribute MACULA's `ln` / `domain` fields (UBS MARBLE,
   used with permission, not openly licensed).
+- **A new interface message goes in every catalog in `i18n/`**, not only the
+  languages a branch started with: merge main first, since languages get
+  added. `scripts/check_catalogs.py` names anything missing.
 
 `.claude/hooks/guard_edits.py` refuses edits that add Greek or Hebrew not
 found in the source data, or a status other than `ai_draft`; CI's
