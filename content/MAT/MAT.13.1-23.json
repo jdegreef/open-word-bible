@@ -46,6 +46,16 @@
           "L": "Siku ile Yesu, akiwa ametoka nyumbani, alikuwa ameketi kando ya bahari;",
           "B": "Siku hiyo hiyo Yesu alitoka nyumbani, akaenda kuketi kando ya ziwa.",
           "R": "Siku hiyo hiyo Yesu alitoka katika nyumba aliyokuwa akikaa. Akaenda kuketi kando ya Ziwa Galilaya."
+        },
+        "vi": {
+          "L": "Trong ngày ấy, Đức Giê-xu ra khỏi nhà và ngồi bên bờ biển.",
+          "B": "Cũng trong ngày ấy, Đức Giê-xu rời khỏi nhà và ngồi bên bờ biển.",
+          "R": "Cũng ngày hôm ấy, Đức Giê-xu rời khỏi ngôi nhà {{deity_pronoun:ngài|Ngài}} đang ở. Ngài đi ra và ngồi bên bờ hồ Ga-li-lê."
+        },
+        "ko": {
+          "L": "그날에 예수께서 집에서 나가셔서 바닷가에 앉아 계셨다.",
+          "B": "그날 예수께서 집에서 나오셔서 바닷가에 앉으셨다.",
+          "R": "그날 예수께서 머무르시던 집에서 나오셨다. 그리고 갈릴리 호숫가에 가서 앉으셨다."
         }
       },
       "decisions": [
@@ -210,6 +220,70 @@
           "reason": "Swahili \"bahari\" is the open sea; the Sea of Galilee is a freshwater lake (meaning decision m2), which Swahili calls \"ziwa\", as in Ziwa Viktoria. Literal keeps \"bahari\", the word of the Greek.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40013001005",
+            "n40013001006"
+          ],
+          "choice": "No deity_pronoun spans in Korean, through Matthew 13:1-23; \"그분\" (L), \"예수\" (B, R) in the narrative; Jesus speaks in 해라체, the disciples speak to him in 합쇼체",
+          "alternatives": [
+            "capitalised pronouns"
+          ],
+          "reason": "Korean has no capital letters, so the deity_pronoun setting has nothing to change; respect for Jesus is carried by -시-, 께서 and 그분 (docs/korean-style.md sections 4 and 7), as in the Korean Matthew 8-12.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013001013"
+          ],
+          "choice": "\"바닷가\" (L, B); \"갈릴리 호숫가\" (R)",
+          "alternatives": [
+            "\"호숫가\" at every level"
+          ],
+          "reason": "As the Korean Matthew 4:18 and Mark 4:1: \"바다\" keeps Matthew's word, and Readable names the lake, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013001013"
+          ],
+          "choice": "\"biển\" (L, B); \"hồ Ga-li-lê\", \"hồ\" (R) for the sea (whole chapter)",
+          "alternatives": [
+            "\"hồ\" at every level"
+          ],
+          "reason": "As in Mark 4:1: Literal and Balanced keep Matthew's word; Readable says what it is, a freshwater lake.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -267,6 +341,16 @@
           "L": "Na makundi mengi ya watu yakakusanyika {{deity_pronoun:kwake|Kwake}}, hivi kwamba {{deity_pronoun:yeye|Yeye}} aliingia katika mashua akaketi, na umati wote ulikuwa umesimama ufuoni.",
           "B": "Makundi makubwa ya watu yalikusanyika {{deity_pronoun:kwake|Kwake}}, hata akaingia katika mashua na kuketi ndani yake, nao watu wote walisimama ufuoni.",
           "R": "Watu wengi sana walikuja {{deity_pronoun:kwake|Kwake}}, hata akaingia katika mashua, akaketi ndani yake. Watu wote walisimama ufuoni."
+        },
+        "vi": {
+          "L": "Và có nhiều đoàn dân đông tụ họp đến với {{deity_pronoun:ngài|Ngài}}, đến nỗi {{deity_pronoun:ngài|Ngài}} bước xuống một chiếc thuyền mà ngồi, còn cả đoàn dân thì đứng trên bờ.",
+          "B": "Đoàn dân tụ họp quanh {{deity_pronoun:ngài|Ngài}} đông đến nỗi {{deity_pronoun:ngài|Ngài}} phải bước xuống một chiếc thuyền và ngồi trong đó, còn tất cả dân chúng thì đứng trên bờ.",
+          "R": "Rất đông người đến với {{deity_pronoun:ngài|Ngài}}, nên {{deity_pronoun:ngài|Ngài}} bước xuống một chiếc thuyền và ngồi trong thuyền. Còn mọi người thì đứng trên bờ."
+        },
+        "ko": {
+          "L": "그러자 많은 무리가 그분께 모여들어서, 그분은 배에 올라 앉으셨고, 온 무리는 물가에 서 있었다.",
+          "B": "아주 많은 무리가 예수께 모여들었으므로, 예수께서는 배에 오르셔서 앉으셨고, 무리는 모두 물가에 서 있었다.",
+          "R": "사람들이 아주 많이 예수께 모여들었다. 그래서 예수께서는 배에 올라가 앉으셨다. 사람들은 모두 물가에 서 있었다."
         }
       },
       "decisions": [
@@ -396,6 +480,16 @@
           "L": "Naye alisema nao mambo mengi kwa mifano, akisema, \"Angalieni, mpandaji alitoka ili apande.",
           "B": "Aliwaeleza mambo mengi kwa mifano. Akasema, \"Sikilizeni! Mpandaji mmoja alikwenda kupanda mbegu.",
           "R": "Aliwafundisha mambo mengi kwa kutumia mifano. Mifano ni hadithi zinazofundisha somo. Yesu akasema, \"Sikilizeni! Mkulima mmoja alikwenda shambani kupanda mbegu."
+        },
+        "vi": {
+          "L": "Và {{deity_pronoun:ngài|Ngài}} dùng ngụ ngôn mà nói với họ nhiều điều rằng: \"Kìa, người gieo giống đi ra để gieo.",
+          "B": "Ngài dùng ngụ ngôn mà nói với họ nhiều điều. Ngài nói: \"Hãy lắng nghe! Có một người đi ra gieo giống.",
+          "R": "Ngài dùng ngụ ngôn để dạy họ nhiều điều. Ngụ ngôn là những câu chuyện có bài học. Đức Giê-xu nói: \"Hãy nghe đây! Có một người nông dân ra đồng gieo hạt."
+        },
+        "ko": {
+          "L": "그리고 그분이 비유로 그들에게 많은 것을 말씀하셨다. \"보라, 씨 뿌리는 사람이 씨를 뿌리러 나갔다.",
+          "B": "예수께서 비유로 그들에게 많은 것을 말씀하셨다. \"잘 들어라! 씨 뿌리는 사람이 씨를 뿌리러 나갔다.",
+          "R": "예수께서는 비유를 들어 많은 것을 가르치셨다. 비유는 무엇에 빗대어 하는 이야기이다. 예수께서 말씀하셨다. \"잘 들어라! 한 농부가 씨를 뿌리러 밭에 나갔다."
         }
       },
       "decisions": [
@@ -597,6 +691,92 @@
           "reason": "The term-sheet word for the Gospels, recorded once in this passage. \"Mfano\" is a comparison or picture-story, the usual word for these stories (meaning decision m1); \"fumbo\" is a riddle. Readable explains it, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013003006"
+          ],
+          "choice": "\"비유\" at every level; Readable explains it once",
+          "alternatives": [
+            "\"이야기\""
+          ],
+          "reason": "As the Korean Mark 3:23 and 4:2: \"비유\" is the established word and is plain enough for Readable once explained, so the whole chapter speaks of the same thing.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013003008",
+            "n40013003010",
+            "n40013003011"
+          ],
+          "choice": "\"보라\" (L), \"잘 들어라\" (B, R); \"씨 뿌리는 사람\" (L, B), \"농부\" (R)",
+          "alternatives": [
+            "\"보아라\""
+          ],
+          "reason": "Literal keeps Jesus's \"look\" as \"보라\", the word for it through the Korean Matthew; Balanced and Readable use the call to listen, as the English does. The sower is worded as in the Korean Mark 4:3, which keeps the link with 13:18.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013003006"
+          ],
+          "choice": "\"ngụ ngôn\" (L, B) for the parables (whole chapter); Readable names the genre once here (\"Ngụ ngôn là những câu chuyện có bài học\") and then says \"câu chuyện\"",
+          "alternatives": [
+            "\"câu chuyện\" at Readable, as in Mark",
+            "\"ví dụ\""
+          ],
+          "reason": "\"Ngụ ngôn\" is the word settled for the Gospels at Literal and Balanced. Readable says \"câu chuyện\" for a story told to teach, as in Mark (4:2; 12:1) and Luke (8:4); this sentence names the genre, as the English Readable does, so it keeps \"ngụ ngôn\" and explains it, and the rest of the chapter (13:10-53) says \"câu chuyện\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013003010",
+            "n40013003011"
+          ],
+          "choice": "\"người gieo giống\" (L); \"một người ... gieo giống\" (B); \"một người nông dân\" (R)",
+          "alternatives": [],
+          "reason": "As in Mark 4:3. A figure in the story, not Jesus, so no deity_pronoun span.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -651,6 +831,16 @@
           "L": "Na katika kupanda kwake, [mbegu] nyingine zilianguka kando ya njia, na ndege walipokuja walizimeza.",
           "B": "Alipokuwa akipanda, baadhi ya mbegu zilianguka kando ya njia, nao ndege wakaja wakazidonoa zote.",
           "R": "Alipokuwa akirusha mbegu, nyingine zilianguka juu ya njia. Ndege walikuja wakazila."
+        },
+        "vi": {
+          "L": "Và trong khi người ấy gieo, có [những hạt] rơi dọc theo đường, và chim chóc đến ăn nuốt hết.",
+          "B": "Trong khi người ấy gieo, có một số hạt rơi bên lối đi, và chim đến ăn sạch.",
+          "R": "Khi người ấy rải hạt, có một số hạt rơi trên lối đi. Chim bay đến ăn hết."
+        },
+        "ko": {
+          "L": "그리고 그가 씨를 뿌리는데, 어떤 것들은 길가에 떨어졌고, 새들이 와서 그것들을 먹어 버렸다.",
+          "B": "그가 씨를 뿌리는데, 어떤 씨는 길가에 떨어져서 새들이 와서 다 먹어 버렸다.",
+          "R": "농부가 씨를 뿌릴 때, 어떤 씨는 길 위에 떨어졌다. 그러자 새들이 와서 그 씨를 먹어 버렸다."
         }
       },
       "decisions": [
@@ -705,6 +895,25 @@
             "the road at every level"
           ],
           "reason": "The word means a way or road. In a field it is a footpath.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013004011"
+          ],
+          "choice": "\"đường\" (L); \"lối đi\" (B, R)",
+          "alternatives": [],
+          "reason": "The hard path through or around the field (meaning decision); Balanced and Readable use the word of Mark 4:4.",
           "uncertain": false,
           "footnote": false
         }
@@ -776,6 +985,16 @@
           "L": "Na nyingine zilianguka juu ya mahali penye miamba, ambapo hapakuwa na udongo mwingi, na mara moja zikachipuka kwa sababu ya kutokuwa na kina cha udongo; \\v 6 lakini jua lilipochomoza, ziliungua, na kwa sababu ya kutokuwa na mizizi, zikanyauka.",
           "B": "Nyingine zilianguka kwenye sehemu zenye miamba ambapo udongo ulikuwa kidogo. Zilichipuka upesi kwa kuwa udongo haukuwa na kina, \\v 6 lakini jua lilipochomoza, mimea hiyo michanga iliungua, na kwa kuwa haikuwa na mizizi, ikanyauka.",
           "R": "Mbegu nyingine zilianguka kwenye ardhi yenye mawe mengi, ambapo udongo ulikuwa mchache. Mimea iliota haraka, kwa sababu udongo haukuwa na kina. \\v 6 Lakini jua lilipochomoza, joto lake likaiunguza mimea hiyo. Ikakauka na kufa, kwa sababu mizizi yake haikwenda chini sana."
+        },
+        "vi": {
+          "L": "Và [những hạt] khác rơi trên những nơi có đá, là nơi không có nhiều đất, và lập tức mọc lên vì đất không sâu; \\v 6 nhưng khi mặt trời mọc lên, chúng bị cháy nắng, và vì không có rễ nên khô héo.",
+          "B": "Có hạt rơi trên nơi đất đá, chỉ có một lớp đất mỏng. Hạt ấy mọc lên ngay vì đất không sâu. \\v 6 Nhưng khi mặt trời lên, các cây non bị cháy nắng, và vì không có rễ nên chúng khô héo.",
+          "R": "Có hạt rơi trên chỗ đất có nhiều đá, ở đó chỉ có một chút đất. Cây non mọc lên rất nhanh, vì đất không sâu. \\v 6 Nhưng khi mặt trời lên, nắng làm cháy các cây non. Chúng khô héo và chết, vì rễ không ăn sâu xuống đất."
+        },
+        "ko": {
+          "L": "또 다른 것들은 흙이 많지 않은 돌밭에 떨어졌는데, 흙이 깊지 않아서 곧 싹이 돋았다. \\v 6 그러나 해가 떠오르자 볕에 타 버렸고, 뿌리가 없어서 말라 버렸다.",
+          "B": "어떤 씨는 흙이 얕은 돌밭에 떨어졌다. 흙이 깊지 않아서 싹이 곧바로 돋아났다. \\v 6 그러나 해가 뜨자 싹이 볕에 타고, 뿌리가 없어서 말라 버렸다.",
+          "R": "어떤 씨는 돌이 많은 땅에 떨어졌다. 그곳에는 흙이 조금밖에 없었다. 흙이 깊지 않아서 싹이 바로 나왔다. \\v 6 그런데 해가 뜨자 뜨거운 햇볕에 어린 싹들이 타 버렸다. 뿌리가 깊지 않아서 말라 죽고 말았다."
         }
       },
       "decisions": [
@@ -833,6 +1052,65 @@
           "reason": "Readable says plainly what the sun did.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013005006"
+          ],
+          "choice": "\"돌밭\" (L, B); \"돌이 많은 땅\" (R)",
+          "alternatives": [
+            "\"돌짝밭\""
+          ],
+          "reason": "As the Korean Mark 4:5: rocky ground is a thin layer of soil over rock (meaning decision), and \"돌밭\" is the everyday word.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013005015"
+          ],
+          "choice": "\"곧\" (L); \"곧바로\" (B); \"바로\" (R) for \"immediately\", through Matthew 13",
+          "alternatives": [
+            "\"즉시\""
+          ],
+          "reason": "The Korean Matthew and Mark keep one word per level for euthys and eutheos (Matthew 3:16; 8:3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013005013"
+          ],
+          "choice": "\"lập tức\" (L) for the Greek \"immediately\"",
+          "alternatives": [],
+          "reason": "The word settled for Literal in the Gospels.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -883,6 +1161,16 @@
           "L": "Na nyingine zilianguka kati ya miiba, na miiba ikapanda juu ikazikaba.",
           "B": "Nyingine zilianguka kati ya vichaka vya miiba, nayo miiba ikakua ikazikaba.",
           "R": "Mbegu nyingine zilianguka mahali palipokuwa na magugu yenye miiba. Magugu hayo yalikua, yakaibana mimea michanga isiweze kukua."
+        },
+        "vi": {
+          "L": "Và [những hạt] khác rơi vào giữa bụi gai, và gai mọc lên làm nghẹt chúng.",
+          "B": "Có hạt khác rơi vào giữa bụi gai; gai mọc lên làm nghẹt chúng.",
+          "R": "Có hạt rơi giữa đám cỏ gai. Cỏ gai mọc lên, chèn ép các cây non."
+        },
+        "ko": {
+          "L": "또 다른 것들은 가시덤불 위에 떨어졌는데, 가시덤불이 자라 올라 그것들을 숨 막히게 했다.",
+          "B": "어떤 씨는 가시덤불 속에 떨어졌다. 가시덤불이 자라서 싹을 짓눌러 버렸다.",
+          "R": "어떤 씨는 가시덤불 사이에 떨어졌다. 가시덤불이 자라서 어린 싹들을 덮어 버렸다."
         }
       },
       "decisions": [
@@ -978,6 +1266,16 @@
           "L": "Na nyingine zilianguka kwenye ardhi nzuri, zikaendelea kutoa mazao, nyingine [mara] mia, nyingine sitini, nyingine thelathini.",
           "B": "Lakini nyingine zilianguka kwenye udongo mzuri, zikatoa nafaka: mara mia ya kile kilichopandwa, au mara sitini, au mara thelathini.",
           "R": "Lakini mbegu nyingine zilianguka kwenye udongo mzuri. Zilikua, zikatoa mavuno mengi. Mimea mingine ilitoa nafaka mara mia ya mbegu zilizopandwa. Mingine ilitoa mara sitini, na mingine mara thelathini."
+        },
+        "vi": {
+          "L": "Và [những hạt] khác rơi trên đất tốt và sinh trái, hạt thì một trăm, hạt thì sáu mươi, hạt thì ba mươi.",
+          "B": "Nhưng có những hạt khác rơi vào đất tốt và sinh hoa lợi, gấp một trăm, gấp sáu mươi, hoặc gấp ba mươi lần số hạt đã gieo.",
+          "R": "Nhưng có những hạt rơi vào đất tốt. Cây lớn lên và cho một vụ mùa lớn. Có cây cho gấp một trăm lần số hạt đã gieo, có cây gấp sáu mươi lần, có cây gấp ba mươi lần."
+        },
+        "ko": {
+          "L": "또 다른 것들은 좋은 땅에 떨어져서 열매를 맺었는데, 어떤 것은 백 배, 어떤 것은 예순 배, 어떤 것은 서른 배를 냈다.",
+          "B": "그러나 어떤 씨는 좋은 땅에 떨어져서 열매를 맺었는데, 뿌린 것의 백 배나 예순 배나 서른 배를 냈다.",
+          "R": "그러나 어떤 씨는 좋은 땅에 떨어졌다. 그 씨는 자라서 곡식을 많이 냈다. 어떤 것은 뿌린 것보다 백 배를 냈고, 어떤 것은 예순 배, 어떤 것은 서른 배를 냈다."
         }
       },
       "decisions": [
@@ -1034,6 +1332,46 @@
           "reason": "Balanced and Readable say what the numbers count.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013008011"
+          ],
+          "choice": "\"열매\" (L, B); \"곡식\" (R)",
+          "alternatives": [
+            "\"열매\" at every level"
+          ],
+          "reason": "As the Korean Mark 4:7-8: \"열매를 맺다\" is said of any crop and keeps the word used again of people in 13:23; Readable names the crop.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013008014",
+            "n40013008017",
+            "n40013008020"
+          ],
+          "choice": "\"hạt thì một trăm, hạt thì sáu mươi, hạt thì ba mươi\"",
+          "alternatives": [],
+          "reason": "As in Mark 4:8, in Matthew's order (from the largest). The pattern says each seed's yield and keeps the Greek's repeated \"one\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1075,6 +1413,16 @@
           "L": "Aliye na masikio, na asikie.\"",
           "B": "Yeyote aliye na masikio na asikilize.\"",
           "R": "Kama mnaweza kunisikia, yasikilizeni haya kwa makini!\""
+        },
+        "vi": {
+          "L": "Ai có tai, hãy nghe.\"",
+          "B": "Ai có tai thì hãy lắng nghe.\"",
+          "R": "Ai có tai thì hãy nghe cho kỹ!\""
+        },
+        "ko": {
+          "L": "귀가 있는 사람은 들어라.\"",
+          "B": "귀가 있는 사람은 잘 들어라.\"",
+          "R": "귀가 있으면 잘 들어라!\""
         }
       },
       "decisions": [
@@ -1134,6 +1482,51 @@
           "reason": "Readable gives the force of the saying in plain words, as at 11:15.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013009001",
+            "n40013009002",
+            "n40013009003"
+          ],
+          "choice": "\"귀가 있는 사람\", not \"들을 귀\"; no gender span",
+          "alternatives": [
+            "\"들을 귀가 있는 사람\""
+          ],
+          "reason": "The SBLGNT reads \"ears\" alone here (meaning decision), so Korean does not add \"to hear\" as the Korean Mark 4:9 does, where the Greek has it. \"사람\" already includes men and women.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013009001",
+            "n40013009002",
+            "n40013009003",
+            "n40013009004"
+          ],
+          "choice": "\"Ai có tai thì hãy nghe cho kỹ!\" (R)",
+          "alternatives": [
+            "\"Nếu các người nghe được lời {{deity_pronoun:ta|Ta}}...\""
+          ],
+          "reason": "The Readable form of Mark 4:9. \"Ai\" (whoever) is already inclusive, so no gender span is needed, and the saying stays general as in the Greek.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1183,6 +1576,16 @@
           "L": "Na wanafunzi, wakiwa wamemkaribia, walimwambia, \"Mbona kwa mifano unaongea nao?\"",
           "B": "Wanafunzi walimjia Yesu, wakamuuliza, \"Kwa nini unatumia mifano unapozungumza nao?\"",
           "R": "Kisha wanafunzi wa Yesu walimjia, wakamuuliza, \"Kwa nini unatumia mifano unapowafundisha watu?\""
+        },
+        "vi": {
+          "L": "Và các môn đồ đến gần và nói với {{deity_pronoun:ngài|Ngài}}: \"Sao Thầy dùng ngụ ngôn mà nói với họ?\"",
+          "B": "Các môn đồ đến gần Đức Giê-xu và hỏi {{deity_pronoun:ngài|Ngài}}: \"Sao Thầy lại dùng ngụ ngôn khi nói với họ?\"",
+          "R": "Sau đó các môn đồ của Đức Giê-xu đến gần {{deity_pronoun:ngài|Ngài}}. Họ hỏi: \"Sao Thầy dùng những câu chuyện khi dạy dân chúng?\""
+        },
+        "ko": {
+          "L": "그리고 제자들이 다가와서 그분께 말했다. \"왜 그들에게 비유로 말씀하십니까?\"",
+          "B": "제자들이 예수께 다가와서 여쭈었다. \"왜 저 사람들에게 비유로 말씀하십니까?\"",
+          "R": "그때 제자들이 예수께 와서 여쭈었다. \"왜 사람들을 가르치실 때 비유를 들어 말씀하십니까?\""
         }
       },
       "decisions": [
@@ -1235,6 +1638,49 @@
             "him"
           ],
           "reason": "A new paragraph begins, so Balanced and Readable name Jesus.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40013010010",
+            "n40013010012"
+          ],
+          "choice": "The disciples speak to Jesus in 합쇼체 (\"말씀하십니까\"); \"여쭈다\" (B, R)",
+          "alternatives": [
+            "해요체"
+          ],
+          "reason": "People speak to Jesus in 합쇼체 (style guide section 4); Korean needs no pronoun for \"you\" here, and the honorific verb carries the respect.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40013010011"
+          ],
+          "choice": "\"Thầy\" for \"you\", with no deity_pronoun span",
+          "alternatives": [
+            "\"Chúa\""
+          ],
+          "reason": "The disciples speak to their teacher; with no \"Lord\" in the Greek, Vietnamese uses \"Thầy\", a noun of address that takes no setting (style guide, section 6), as in Mark 4:10-13.",
           "uncertain": false,
           "footnote": false
         }
@@ -1293,6 +1739,16 @@
           "L": "Naye akajibu akawaambia, \"Kwa sababu kwenu imetolewa kuzijua siri za ufalme wa mbinguni, lakini kwa wale haikutolewa.",
           "B": "Akawajibu, \"Kwa sababu ninyi mmejaliwa kuzifahamu siri za ufalme wa mbinguni, lakini wao hawakujaliwa.",
           "R": "Yesu akajibu, \"Mungu amewawezesha ninyi kuzijua siri za ufalme wa mbinguni. Hizi ni siri ambazo Mungu sasa anazifunua. Lakini wale watu wengine Mungu hajawawezesha kuzijua."
+        },
+        "vi": {
+          "L": "Và {{deity_pronoun:ngài|Ngài}} đáp lời họ: \"Vì các con đã được ban cho biết những sự mầu nhiệm của vương quốc thiên đàng, còn họ thì không được ban cho.",
+          "B": "Ngài đáp: \"Vì các con được ban cho biết những sự mầu nhiệm của vương quốc thiên đàng, còn họ thì không.",
+          "R": "Đức Giê-xu trả lời: \"Đức Chúa Trời đã cho các con biết những sự mầu nhiệm của vương quốc thiên đàng. Đó là những điều bí mật mà bây giờ Đức Chúa Trời đang bày tỏ. Nhưng Đức Chúa Trời không cho những người kia biết."
+        },
+        "ko": {
+          "L": "그러자 그분이 대답하여 그들에게 말씀하셨다. \"너희에게는 천국의 비밀들을 아는 것이 주어졌으나, 저 사람들에게는 주어지지 않았기 때문이다.",
+          "B": "예수께서 대답하셨다. \"너희에게는 천국의 비밀을 아는 것이 허락되었지만, 저 사람들에게는 허락되지 않았다.",
+          "R": "예수께서 대답하셨다. \"하나님께서는 너희에게 천국의 비밀을 알게 해 주셨다. 그것은 하나님께서 이제 알려 주시는 숨겨진 뜻이다. 그러나 다른 사람들에게는 알게 해 주지 않으셨다."
         }
       },
       "decisions": [
@@ -1435,6 +1891,72 @@
           "reason": "\"Kujaliwa\" is to be granted something by God, so Balanced says who gives (meaning decision m2) without adding a word; Literal keeps the impersonal passive and Readable names God, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013011011",
+            "n40013011013",
+            "n40013011014",
+            "n40013011015"
+          ],
+          "choice": "\"천국\" at every level, through Matthew 13; \"비밀들\" (L), \"비밀\" (B, R)",
+          "alternatives": [
+            "\"하늘들의 나라\"",
+            "\"신비\""
+          ],
+          "reason": "\"천국\" is the Korean Matthew's word for the kingdom of the heavens (3:2; 7:21). \"비밀\" is a secret now told, as in the Korean Mark 4:11; Literal keeps the Greek plural.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n40013011008",
+            "n40013011011"
+          ],
+          "choice": "\"하나님께서는 ... 알게 해 주셨다\" and \"하나님께서 이제 알려 주시는 숨겨진 뜻\" (R)",
+          "alternatives": [
+            "passive \"주어졌다\""
+          ],
+          "reason": "God is the giver (meaning decision); Readable names him and explains the word, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013011011"
+          ],
+          "choice": "\"sự mầu nhiệm\" for mystery; \"vương quốc thiên đàng\"",
+          "alternatives": [
+            "\"huyền bí\""
+          ],
+          "reason": "As in Mark 4:11: \"sự mầu nhiệm\" is God's plan once hidden and now made known; Readable adds \"điều bí mật\" to explain it. \"Vương quốc thiên đàng\" is the form settled for Matthew.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1489,6 +2011,16 @@
           "L": "Kwa maana yeyote aliye na kitu atapewa, naye atakuwa na zaidi ya kutosha; lakini yule asiye na kitu, hata kile anachokimiliki kitaondolewa kwake.",
           "B": "Wale walio na kitu watapewa zaidi, nao watakuwa na vingi. Lakini wale wasio na kitu watapoteza hata kile walicho nacho.",
           "R": "Watu ambao tayari wana kitu watapewa zaidi. Watakuwa na zaidi ya kutosha. Lakini watu wasio na kitu watapoteza hata kile kidogo walicho nacho."
+        },
+        "vi": {
+          "L": "Vì ai có, sẽ được cho thêm, và sẽ có dư dật; còn ai không có, thì ngay cả điều người ấy có cũng sẽ bị lấy đi.",
+          "B": "Ai đã có sẽ được cho thêm, và sẽ có dư dật. Còn ai không có thì ngay cả điều mình có cũng sẽ bị lấy mất.",
+          "R": "Ai có một chút gì thì sẽ được cho thêm, và sẽ có thật nhiều. Ai không có gì thì ngay cả chút ít mình có cũng sẽ bị lấy mất."
+        },
+        "ko": {
+          "L": "누구든지 가진 사람은 받아서 넘치게 될 것이고, 누구든지 가지지 않은 사람은 가진 것마저 빼앗길 것이기 때문이다.",
+          "B": "가진 사람은 더 받아서 넉넉해질 것이고, 가지지 못한 사람은 가진 것마저 빼앗길 것이다.",
+          "R": "무엇이든 가진 사람은 더 받게 된다. 그래서 차고 넘치게 된다. 그러나 아무것도 갖지 못한 사람은 그나마 가진 조금마저 빼앗기게 된다."
         }
       },
       "decisions": [
@@ -1622,6 +2154,46 @@
           "reason": "The English Literal offers \"him\" as a traditional alternative, but \"yeyote\", \"yule\" and the verbs say nothing about sex, so the setting has nothing to change, here or in verses 19-21.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013012001",
+            "n40013012008"
+          ],
+          "choice": "\"사람\" with no gender span",
+          "alternatives": [
+            "gender spans on the pronouns"
+          ],
+          "reason": "Korean says \"사람\" and needs no pronoun for the English \"them/him\", so the English gender spans have nothing to change (style guide section 7).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013012001",
+            "n40013012008"
+          ],
+          "choice": "\"ai\", \"người ấy\", with no gender span",
+          "alternatives": [],
+          "reason": "As in Mark 4:25: these words are already inclusive (style guide, section 7).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1675,6 +2247,16 @@
           "L": "Ndiyo maana kwa mifano ninaongea nao, kwa kuwa ingawa wanaona, hawaoni, na ingawa wanasikia, hawasikii wala hawafahamu.",
           "B": "Kwa hiyo nasema nao kwa mifano, kwa sababu wanatazama bila kuona, na wanasikiliza bila kusikia wala kuelewa.",
           "R": "Ndiyo sababu ninatumia mifano ninapozungumza nao. Wanatazama, lakini hawaoni kwa kweli. Wanasikiliza, lakini hawasikii kwa kweli, wala hawaelewi."
+        },
+        "vi": {
+          "L": "Vì thế {{deity_pronoun:ta|Ta}} dùng ngụ ngôn mà nói với họ, vì họ nhìn mà không thấy, nghe mà không nghe, cũng không hiểu.",
+          "B": "Vì vậy {{deity_pronoun:ta|Ta}} dùng ngụ ngôn nói với họ, vì họ nhìn mà không thấy, lắng nghe mà không nghe được, cũng chẳng hiểu.",
+          "R": "Đó là lý do {{deity_pronoun:ta|Ta}} dùng những câu chuyện khi nói với họ. Họ nhìn, nhưng không thật sự thấy. Họ nghe, nhưng không thật sự nghe được, cũng không hiểu."
+        },
+        "ko": {
+          "L": "이 때문에 내가 그들에게 비유로 말한다. 그들이 보면서도 보지 못하고, 들으면서도 듣지 못하고 깨닫지도 못하기 때문이다.",
+          "B": "그래서 내가 그들에게 비유로 말하는 것이다. 그들은 보아도 보지 못하고, 들어도 듣지 못하고 깨닫지도 못하기 때문이다.",
+          "R": "그래서 나는 그들에게 비유를 들어 말한다. 그들은 보기는 하지만 제대로 보지 못한다. 듣기는 하지만 제대로 듣지도 못하고 깨닫지도 못한다."
         }
       },
       "decisions": [
@@ -1795,6 +2377,16 @@
           "L": "Na kwao unatimizwa unabii wa Isaya unaosema, 'Kwa masikio mtasikia, lakini hamtaelewa kamwe; na mkiona mtaona, lakini hamtatambua kamwe.",
           "B": "Kwao unatimia unabii wa Isaya: 'Mtasikiliza na kusikiliza, lakini hamtaelewa kamwe; mtatazama na kutazama, lakini hamtatambua kamwe.",
           "R": "Kwa hiyo maneno ya nabii Isaya yanatimia kwao. Alisema, 'Mtasikiliza na kusikiliza, lakini hamtaelewa kamwe. Mtatazama na kutazama, lakini hamtaona kamwe kwa kweli."
+        },
+        "vi": {
+          "L": "Và nơi họ, lời tiên tri của Ê-sai đang được ứng nghiệm, là lời nói rằng: 'Các người sẽ nghe đi nghe lại mà chẳng hề hiểu, và nhìn đi nhìn lại mà chẳng hề thấy.",
+          "B": "Nơi họ, lời tiên tri của Ê-sai đang được ứng nghiệm: 'Các người cứ nghe đi nghe lại mà không bao giờ hiểu; cứ nhìn đi nhìn lại mà không bao giờ thấy.",
+          "R": "Họ làm cho lời của nhà tiên tri Ê-sai trở thành sự thật. Ông đã nói: 'Các người nghe đi nghe lại nhưng sẽ không bao giờ hiểu. Các người nhìn đi nhìn lại nhưng sẽ không bao giờ thật sự thấy."
+        },
+        "ko": {
+          "L": "그리고 그들에게서 이사야의 예언이 이루어지고 있으니, 이렇게 말한다. '너희가 듣기는 들어도 결코 깨닫지 못할 것이고, 보기는 보아도 결코 알아보지 못할 것이다.",
+          "B": "이사야의 예언이 그들에게서 이루어지고 있다. '너희는 듣고 또 들어도 결코 깨닫지 못하고, 보고 또 보아도 결코 알아보지 못할 것이다.",
+          "R": "그들을 보면 예언자 이사야가 한 말이 그대로 이루어지고 있다. 이사야는 이렇게 말했다. '너희는 듣고 또 들어도 깨닫지 못할 것이다. 보고 또 보아도 제대로 보지 못할 것이다."
         }
       },
       "decisions": [
@@ -1883,6 +2475,55 @@
           "reason": "Balanced and Readable repeat the verb to show the force of the Hebrew idiom, as at Mark 4:12.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013014002",
+            "n40013014009",
+            "n40013014010",
+            "n40013014016",
+            "n40013014017"
+          ],
+          "choice": "\"이루어지다\" for the fulfilment; \"듣기는 들어도\" (L), \"듣고 또 들어도\" (B, R)",
+          "alternatives": [
+            "\"성취되다\""
+          ],
+          "reason": "\"이루어지다\" is the Korean Matthew's verb for fulfilment (1:22). The Greek doubles each verb (meaning decision); Literal keeps the doubling with the Korean \"-기는 -어도\", and Balanced and Readable repeat the verb, as the Korean Mark 4:12 does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013014009",
+            "n40013014010",
+            "n40013014016",
+            "n40013014017"
+          ],
+          "choice": "\"nghe đi nghe lại\", \"nhìn đi nhìn lại\" at every level",
+          "alternatives": [
+            "\"lấy tai nghe\" (L)"
+          ],
+          "reason": "The Greek doubles each verb for emphasis (meaning decision); Vietnamese says the same with its own doubling, as in Mark 4:12. \"Các người\" is the plain plural for the people addressed in the prophecy.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1954,6 +2595,16 @@
           "L": "Kwa maana moyo wa watu hawa umenenepa, na kwa masikio yao wamesikia kwa uzito, na wameyafunga macho yao; isije ikawa waone kwa macho, na wasikie kwa masikio, na waelewe kwa moyo, na wageuke, nami nitawaponya.'",
           "B": "Moyo wa watu hawa umepumbaa. Masikio yao hayasikii ila kwa shida, na macho yao wameyafunga kabisa. La sivyo, wangeona kwa macho yao na kusikia kwa masikio yao, wangeelewa kwa moyo wao na kurudi, nami ningewaponya.'",
           "R": "Mioyo ya watu hawa imekuwa migumu. Masikio yao hayasikii vizuri, na wamefunga macho yao. Kama wasingefanya hivyo, macho yao yangeona na masikio yao yangesikia. Akili zao zingeelewa, nao wangenirudia {{deity_pronoun:mimi|Mimi}}. Kisha ningewaponya.'"
+        },
+        "vi": {
+          "L": "Vì lòng dân này đã trở nên chai lì, tai họ nghe nặng nề, và họ đã nhắm mắt lại, kẻo mắt họ thấy được, tai họ nghe được, lòng họ hiểu được, và họ quay lại, và {{deity_pronoun:ta|Ta}} chữa lành họ.'",
+          "B": "Vì lòng dân này đã trở nên chai lì. Tai họ nghe nặng, và mắt họ nhắm chặt. Nếu không, mắt họ đã có thể thấy, tai họ đã có thể nghe, lòng họ đã có thể hiểu và họ quay trở lại, rồi {{deity_pronoun:ta|Ta}} sẽ chữa lành họ.'",
+          "R": "Lòng dân này đã trở nên cứng cỏi. Tai họ gần như không nghe, và họ đã nhắm mắt lại. Nếu không như vậy, mắt họ có thể thấy, tai họ có thể nghe. Lòng họ có thể hiểu, và họ có thể quay về với {{deity_pronoun:ta|Ta}}. Rồi {{deity_pronoun:ta|Ta}} sẽ chữa lành họ.'"
+        },
+        "ko": {
+          "L": "이 백성의 마음이 살쪄서 무디어졌고, 그들이 귀로는 둔하게 들었고, 자기들의 눈은 감아 버렸기 때문이다. 이는 그들이 눈으로 보고, 귀로 듣고, 마음으로 깨닫고 돌이켜서, 내가 그들을 고쳐 주는 일이 없도록 하려는 것이다.'",
+          "B": "이 백성의 마음이 무디어졌다. 그들은 귀가 어두워 잘 듣지 못하고, 눈은 꼭 감아 버렸다. 그러지 않았다면 그들이 눈으로 보고 귀로 듣고 마음으로 깨달아 돌이켰을 것이고, 나는 그들을 고쳐 주었을 것이다.'",
+          "R": "이 사람들은 마음이 굳어졌다. 그들은 귀로 잘 들으려 하지 않고, 눈은 감아 버렸다. 그러지 않았다면 그들은 눈으로 보고 귀로 들었을 것이다. 마음으로 깨닫고 나에게 돌아왔을 것이다. 그러면 나는 그들을 고쳐 주었을 것이다.'"
         }
       },
       "decisions": [
@@ -2085,6 +2736,86 @@
           "reason": "As the English: Literal keeps the picture of fat, Balanced says the heart has become dull and heavy, and Readable uses the familiar French picture of a hard heart (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013015001"
+          ],
+          "choice": "\"살쪄서 무디어졌다\" (L); \"무디어졌다\" (B); \"굳어졌다\" (R)",
+          "alternatives": [
+            "\"기름졌다\""
+          ],
+          "reason": "A heart grown fat is a mind and will grown dull (meaning decision); a fat heart is not a Korean picture, so Literal keeps it with the result beside it, Balanced says \"dull\" and Readable \"hard\", as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40013015033"
+          ],
+          "choice": "God speaks in 해라체 with \"나\" in the quotation",
+          "alternatives": [
+            "합쇼체"
+          ],
+          "reason": "In Isaiah God speaks; God speaking takes the plain style with \"나\" (style guide section 7a), and Jesus quotes him so.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013015001"
+          ],
+          "choice": "\"chai lì\" (L, B); \"cứng cỏi\" (R) for the heart grown fat",
+          "alternatives": [],
+          "reason": "The Hebrew picture of a fat heart means a mind and will grown dull (meaning decision). A \"fat\" heart (\"béo\") means nothing in Vietnamese, so every level uses the Vietnamese picture of a heart grown callous or hard.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40013015033"
+          ],
+          "choice": "\"{{deity_pronoun:ta|Ta}}\" for God speaking in the prophecy",
+          "alternatives": [],
+          "reason": "God is the speaker in Isaiah 6:10 (meaning decision); the style guide gives God speaking \"Ta\", with the setting in the middle of a sentence.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2135,6 +2866,16 @@
           "L": "Lakini ninyi, heri [ni] macho yenu, kwa sababu yanaona, na masikio yenu, kwa sababu yanasikia.",
           "B": "Lakini ninyi, macho yenu yamebarikiwa kwa sababu yanaona, na masikio yenu pia kwa sababu yanasikia.",
           "R": "Lakini Mungu amewabariki ninyi! Macho yenu yanaona kwa kweli, na masikio yenu yanasikia kwa kweli."
+        },
+        "vi": {
+          "L": "Nhưng phước cho mắt các con, vì chúng thấy được, và tai các con, vì chúng nghe được.",
+          "B": "Nhưng phước cho mắt các con vì được thấy, và phước cho tai các con vì được nghe.",
+          "R": "Nhưng Đức Chúa Trời đã ban phước cho các con! Mắt các con thật sự thấy, và tai các con thật sự nghe."
+        },
+        "ko": {
+          "L": "그러나 너희의 눈은 보니 복이 있고, 너희의 귀는 들으니 [복이 있다].",
+          "B": "그러나 너희의 눈은 보고 있으니 복이 있고, 너희의 귀는 듣고 있으니 복이 있다.",
+          "R": "그러나 하나님께서 너희에게 복을 주셨다! 너희 눈은 제대로 보고, 너희 귀는 제대로 듣는다."
         }
       },
       "decisions": [
@@ -2229,6 +2970,46 @@
           "reason": "\"Heureux\", as in the Beatitudes and Luke 10:23, the plain word that still carries the sense of God's favor (m1); Readable follows the English \"God has blessed you\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013016003"
+          ],
+          "choice": "\"복이 있다\" (L, B); \"하나님께서 너희에게 복을 주셨다\" (R)",
+          "alternatives": [
+            "\"행복하다\""
+          ],
+          "reason": "\"복이 있다\" is the Korean Matthew's word for \"blessed\" (5:3); Readable names God as the one who blesses, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013016003"
+          ],
+          "choice": "\"phước cho\" (L, B); \"đã ban phước cho\" (R)",
+          "alternatives": [],
+          "reason": "As in 5:3: God's favour rests on them (meaning decision). Readable names God as the giver, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2289,6 +3070,16 @@
           "L": "Kwa maana kweli nawaambia kwamba manabii wengi na [watu] wenye haki walitamani sana kuona mambo mnayoyaona, lakini hawakuyaona, na kusikia mambo mnayoyasikia, lakini hawakuyasikia.",
           "B": "Kweli nawaambia, manabii wengi na watu wenye haki walitamani kuyaona mambo mnayoyaona sasa, lakini hawakuyaona; walitamani kuyasikia mambo mnayoyasikia sasa, lakini hawakuyasikia.",
           "R": "Nawaambia ukweli: manabii wengi na watu wengi wenye haki walitaka kuona mambo mnayoyaona sasa. Lakini hawakuyaona. Walitaka kusikia mambo mnayoyasikia. Lakini hawakuyasikia."
+        },
+        "vi": {
+          "L": "Vì thật vậy, {{deity_pronoun:ta|Ta}} nói với các con rằng nhiều nhà tiên tri và người công chính đã mong ước được thấy những điều các con thấy mà không được thấy, và được nghe những điều các con nghe mà không được nghe.",
+          "B": "Thật vậy, {{deity_pronoun:ta|Ta}} nói với các con, nhiều nhà tiên tri và người công chính đã ao ước được thấy những điều các con đang thấy, mà không được thấy; ao ước được nghe những điều các con đang nghe, mà không được nghe.",
+          "R": "Ta nói thật với các con, nhiều nhà tiên tri và nhiều người công chính đã muốn thấy những gì các con đang thấy. Nhưng họ đã không được thấy. Họ đã muốn nghe những gì các con đang nghe. Nhưng họ đã không được nghe."
+        },
+        "ko": {
+          "L": "진실로 너희에게 말한다. 많은 예언자와 의인들이 너희가 보는 것을 보기를 간절히 바랐으나 보지 못했고, 너희가 듣는 것을 듣기를 [바랐으나] 듣지 못했다.",
+          "B": "진실로 너희에게 말한다. 많은 예언자와 의인이 너희가 지금 보는 것을 보고 싶어 했으나 보지 못했고, 너희가 지금 듣는 것을 듣고 싶어 했으나 듣지 못했다.",
+          "R": "내가 분명히 말한다. 옛날에 많은 예언자와 의로운 사람들이 너희가 지금 보는 것을 보고 싶어 했다. 그러나 보지 못했다. 그들은 너희가 지금 듣는 것을 듣고 싶어 했다. 그러나 듣지 못했다."
         }
       },
       "decisions": [
@@ -2427,6 +3218,73 @@
           "reason": "The term-sheet rendering of Jesus's single \"amen\" for the Gospels, recorded once in this passage; \"Kweli kweli nawaambia\" stays for John's doubled form.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013017001",
+            "n40013017002",
+            "n40013017003"
+          ],
+          "choice": "\"진실로 너희에게 말한다\" (L, B); \"내가 분명히 말한다\" (R), through Matthew 13",
+          "alternatives": [
+            "\"진실로 너희에게 이르노니\""
+          ],
+          "reason": "The Korean Matthew's form of the amen saying (5:18; 10:15).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013017007",
+            "n40013017009"
+          ],
+          "choice": "\"예언자\"; \"의인\" (L, B), \"의로운 사람\" (R)",
+          "alternatives": [
+            "\"선지자\""
+          ],
+          "reason": "As the Korean Matthew 10:41; Readable uses the plainer phrase. Literal brackets the second \"longed\", which the Greek leaves to be understood.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013017001",
+            "n40013017002",
+            "n40013017003",
+            "n40013017004"
+          ],
+          "choice": "\"Thật vậy, Ta nói với các con\" (L, B); \"Ta nói thật với các con\" (R)",
+          "alternatives": [],
+          "reason": "The form settled for the Vietnamese Gospels; \"các con\" because Jesus speaks to his disciples.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2471,6 +3329,16 @@
           "L": "Ninyi basi, usikieni mfano wa yule aliyepanda.",
           "B": "Basi ninyi, sikilizeni maana ya mfano wa mpandaji.",
           "R": "Basi sikilizeni, nitawaeleza maana ya mfano wa yule mkulima."
+        },
+        "vi": {
+          "L": "Vậy, chính các con hãy nghe ngụ ngôn về người gieo giống.",
+          "B": "Còn các con, hãy nghe ý nghĩa của ngụ ngôn về người gieo giống.",
+          "R": "Vậy hãy nghe đây, {{deity_pronoun:ta|Ta}} sẽ giải thích cho các con câu chuyện về người nông dân."
+        },
+        "ko": {
+          "L": "그러므로 너희는 씨 뿌린 사람의 비유를 들어라.",
+          "B": "그러면 너희는 씨 뿌리는 사람의 비유가 무슨 뜻인지 들어 보아라.",
+          "R": "이제 내가 농부의 비유를 너희에게 설명해 줄 테니 잘 들어라."
         }
       },
       "decisions": [
@@ -2524,6 +3392,23 @@
             "hear the parable"
           ],
           "reason": "Balanced and Readable make clear that the explanation follows.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013018001"
+          ],
+          "choice": "\"chính các con\" (L); \"còn các con\" (B)",
+          "alternatives": [],
+          "reason": "The Greek \"you\" is stressed, setting the disciples apart from the crowds (meaning decision).",
           "uncertain": false,
           "footnote": false
         }
@@ -2590,6 +3475,16 @@
           "L": "Kila mtu anayelisikia neno la ufalme bila kulielewa, anakuja yule mwovu na kukinyakua kilichopandwa ndani ya moyo wake; huyu ni yule aliyepandwa kando ya njia.",
           "B": "Mbegu iliyopandwa kando ya njia ni mtu anayesikia ujumbe wa ufalme bila kuuelewa. Yule mwovu anakuja na kukinyakua kile kilichopandwa moyoni mwake.",
           "R": "Watu wengine husikia ujumbe kuhusu ufalme wa Mungu, lakini hawauelewi. Wao ni kama mbegu zilizoanguka njiani. Yule mwovu, Shetani, anakuja na kuchukua kile kilichopandwa mioyoni mwao."
+        },
+        "vi": {
+          "L": "Khi có ai nghe lời của vương quốc mà không hiểu, thì kẻ ác đến và cướp lấy điều đã được gieo trong lòng người ấy; đó là [hạt] được gieo dọc theo đường.",
+          "B": "Đây là hạt giống gieo bên lối đi: những người nghe sứ điệp về vương quốc mà không hiểu. Kẻ ác đến cướp mất điều đã được gieo trong lòng họ.",
+          "R": "Có những người nghe sứ điệp về vương quốc của Đức Chúa Trời nhưng không hiểu. Họ giống như hạt giống rơi trên lối đi. Kẻ ác là Sa-tan đến và lấy đi điều đã được gieo trong lòng họ."
+        },
+        "ko": {
+          "L": "누구든지 그 나라의 말씀을 듣고 깨닫지 못하면, 악한 자가 와서 그의 마음에 뿌려진 것을 빼앗아 간다. 이 사람이 길가에 뿌려진 [씨]이다.",
+          "B": "길가에 뿌려진 씨는 이런 사람이다. 그는 그 나라의 말씀을 듣고도 깨닫지 못한다. 그러면 악한 자가 와서 그 사람의 마음에 뿌려진 것을 빼앗아 간다.",
+          "R": "어떤 사람들은 천국에 관한 말씀을 듣지만 깨닫지 못한다. 그런 사람들은 길 위에 떨어진 씨와 같다. 악한 자, 곧 마귀가 와서 그들의 마음에 뿌려진 것을 빼앗아 간다."
         }
       },
       "decisions": [
@@ -2716,6 +3611,114 @@
           "reason": "As in Mark 4:14, \"la parole\" lowercase is the message Jesus preaches; Readable follows the English \"message\". \"Le Mauvais\", capitalised, names the devil (m1) in plain French; \"le Malin\" is older church wording. Literal \"son cœur\" needs no gender span, since the French possessive does not mark the owner's sex.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013019005",
+            "n40013019006"
+          ],
+          "choice": "\"그 나라의 말씀\" (L, B); \"천국에 관한 말씀\" (R)",
+          "alternatives": [
+            "\"하나님 나라의 말씀\""
+          ],
+          "reason": "Matthew says only \"the kingdom\" here; Literal and Balanced keep that, and Readable names it with the book's word \"천국\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013019011",
+            "n40013019012"
+          ],
+          "choice": "\"악한 자\" (L, B); \"악한 자, 곧 마귀\" (R)",
+          "alternatives": [
+            "\"사탄\" (R)"
+          ],
+          "reason": "The evil one is the devil (meaning decision); Readable names him as the Korean Matthew 5:37 does, with \"마귀\", the Korean Matthew's word for the devil (4:1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-3",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n40013019026"
+          ],
+          "choice": "\"[씨]\" (L), through 13:19-23",
+          "alternatives": [
+            "no noun"
+          ],
+          "reason": "The Greek says \"the one sown\"; Korean needs the noun, which Literal brackets.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013019011",
+            "n40013019012"
+          ],
+          "choice": "\"kẻ ác\" (L, B); \"kẻ ác là Sa-tan\" (R)",
+          "alternatives": [
+            "\"ma quỷ\""
+          ],
+          "reason": "The evil one is the devil (meaning decision); Literal and Balanced keep Matthew's title, and Readable names him, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013019003",
+            "n40013019004",
+            "n40013019005",
+            "n40013019006"
+          ],
+          "choice": "\"lời\" (L); \"sứ điệp về vương quốc\" (B, R)",
+          "alternatives": [
+            "\"đạo\""
+          ],
+          "reason": "The word is the message that God's kingdom has come near (meaning decision). Literal keeps \"lời\", as Mark 4:14 does; Balanced and Readable say \"sứ điệp\", since \"lời của vương quốc\" is unclear in Vietnamese. \"Lời\" stays at Literal and Balanced elsewhere in the passage.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2791,6 +3794,16 @@
           "L": "Na yule aliyepandwa kwenye sehemu zenye miamba, huyu ndiye anayelisikia neno na mara moja analipokea kwa furaha, \\v 21 lakini hana mzizi ndani yake mwenyewe, bali ni wa kitambo tu; na inapotokea taabu au mateso kwa sababu ya neno, mara moja anajikwaa.",
           "B": "Mbegu iliyopandwa kwenye sehemu yenye miamba ni mtu anayesikia neno na mara moja kulipokea kwa furaha. \\v 21 Lakini neno halitii mizizi ndani yake, naye hushikilia kwa muda mfupi tu. Mara tu taabu au mateso yanapokuja kwa sababu ya neno, anajikwaa na kuanguka.",
           "R": "Watu wengine ni kama ardhi yenye mawe. Wanasikia ujumbe, na mara moja wanaupokea kwa furaha. \\v 21 Lakini hawauruhusu ujumbe kutia mizizi ndani yao, kwa hiyo wanadumu muda mfupi tu. Kisha taabu zinakuja, au watu wanawatesa kwa sababu ya ujumbe huo. Mara moja wanaacha kuufuata."
+        },
+        "vi": {
+          "L": "Còn [hạt] được gieo trên những nơi có đá, đó là người nghe lời và lập tức vui mừng tiếp nhận lời ấy, \\v 21 nhưng không có rễ trong mình, mà chỉ tạm thời; và khi hoạn nạn hay bắt bớ xảy đến vì lời ấy, lập tức người ấy vấp ngã.",
+          "B": "Hạt giống gieo trên nơi đất đá là người nghe lời và liền vui mừng đón nhận. \\v 21 Nhưng lời không đâm rễ trong người ấy, nên người ấy chỉ bền được ít lâu. Khi gặp hoạn nạn hay bị bắt bớ vì lời ấy, người ấy liền vấp ngã.",
+          "R": "Có những người khác giống như chỗ đất có đá. Họ nghe sứ điệp và vui mừng nhận ngay. \\v 21 Nhưng họ không để sứ điệp ăn sâu vào lòng, nên họ chỉ theo được một thời gian ngắn. Rồi khi gặp khó khăn, hoặc khi bị người ta ngược đãi vì sứ điệp ấy, họ liền từ bỏ niềm tin."
+        },
+        "ko": {
+          "L": "그리고 돌밭에 뿌려진 [씨], 이 사람은 말씀을 듣고 곧 기쁨으로 받아들이는 사람이다. \\v 21 그러나 자기 속에 뿌리가 없어서 잠시뿐이니, 말씀 때문에 환난이나 박해가 일어나면 곧 걸려 넘어진다.",
+          "B": "돌밭에 뿌려진 씨는 말씀을 듣고 곧바로 기쁨으로 받아들이는 사람이다. \\v 21 그러나 말씀이 그 사람 속에 뿌리를 내리지 못해서 잠깐 동안만 견딘다. 그래서 말씀 때문에 어려움이나 박해가 닥치면 곧바로 넘어지고 만다.",
+          "R": "또 어떤 사람들은 돌이 많은 땅과 같다. 그들은 하나님의 말씀을 들으면 바로 기쁨으로 받아들인다. \\v 21 그러나 말씀이 마음속 깊이 뿌리내리지 못하게 해서 오래가지 못한다. 그러다가 말씀 때문에 어려운 일이 생기거나 사람들이 괴롭히면, 바로 말씀에서 떠나 버린다."
         }
       },
       "decisions": [
@@ -2884,6 +3897,92 @@
           "reason": "English Literal puts the pronouns under the gender setting and English Balanced turns to \"they\". French \"celui qui\" and the pronouns that refer back to it are generic and include everyone, so they take no span (style guide §7); the same holds in 13:22-23.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013021019"
+          ],
+          "choice": "\"걸려 넘어지다\" (L); \"넘어지다\" (B); \"말씀에서 떠나 버리다\" (R)",
+          "alternatives": [
+            "\"실족하다\""
+          ],
+          "reason": "As the Korean Mark 4:17: Literal keeps the picture of stumbling over a trap, Balanced the plain verb, and Readable says what it means.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013020007",
+            "n40013020012"
+          ],
+          "choice": "\"말씀\" (L, B); \"하나님의 말씀\" (R) at first mention, through 13:20-23; \"기쁨\" at every level",
+          "alternatives": [
+            "\"메시지\""
+          ],
+          "reason": "As the Korean Mark 4:14-20; joy is a key term, kept as the noun at every level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013021019"
+          ],
+          "choice": "\"vấp ngã\" (L, B); \"từ bỏ niềm tin\" (R)",
+          "alternatives": [
+            "\"sa ngã\""
+          ],
+          "reason": "As in Mark 4:17: \"vấp ngã\" keeps the picture of being tripped up; Readable says plainly what it is, stopping following (meaning decision).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013021001",
+            "n40013021002",
+            "n40013021003",
+            "n40013021004",
+            "n40013021005",
+            "n40013021006"
+          ],
+          "choice": "\"người ấy\", \"trong mình\", with no gender span",
+          "alternatives": [],
+          "reason": "These words are already inclusive (style guide, section 7).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2950,6 +4049,16 @@
           "L": "Na yule aliyepandwa kati ya miiba, huyu ndiye anayelisikia neno, na wasiwasi wa zama hizi na hila ya utajiri vinalikaba neno, nalo linakuwa bila matunda.",
           "B": "Mbegu iliyopandwa kati ya miiba ni mtu anayesikia neno, lakini masumbufu ya maisha ya sasa na ahadi za uongo za utajiri hulikaba neno hilo, nalo halitoi mavuno.",
           "R": "Watu wengine ni kama ardhi yenye magugu ya miiba. Wanasikia ujumbe, lakini kisha wanahangaika na mambo ya maisha haya. Wanadanganyika wakidhani kwamba kuwa matajiri kutawafanya wawe na furaha. Mambo hayo yanaubana ujumbe, kwa hiyo hauzai chochote katika maisha yao."
+        },
+        "vi": {
+          "L": "Còn [hạt] được gieo vào giữa bụi gai, đó là người nghe lời, nhưng sự lo toan của đời này và sự lừa dối của giàu sang làm nghẹt lời, và lời trở nên không kết quả.",
+          "B": "Hạt giống gieo vào giữa bụi gai là người nghe lời, nhưng những lo toan của đời này và sự quyến rũ giả dối của giàu sang làm nghẹt lời, nên lời không sinh hoa kết quả.",
+          "R": "Có những người khác giống như chỗ đất có cỏ gai. Họ nghe sứ điệp, nhưng rồi họ lo lắng về những việc của đời này. Họ bị lừa, tưởng rằng giàu có sẽ làm cho mình hạnh phúc. Những điều ấy chèn ép sứ điệp, nên sứ điệp không sinh ra điều gì tốt trong đời sống họ."
+        },
+        "ko": {
+          "L": "그리고 가시덤불 속에 뿌려진 [씨], 이 사람은 말씀을 듣지만, 이 시대의 염려와 재물의 속임수가 말씀을 숨 막히게 하여, [말씀이] 열매를 맺지 못하게 되는 사람이다.",
+          "B": "가시덤불 속에 뿌려진 씨는 말씀을 듣기는 하지만, 이 세상살이의 걱정과 재물의 헛된 약속이 말씀을 막아 버려서, 말씀이 열매를 맺지 못하는 사람이다.",
+          "R": "또 어떤 사람들은 가시덤불이 있는 땅과 같다. 그들은 하나님의 말씀을 듣는다. 그러나 이 세상 일들을 걱정한다. 부자가 되면 행복할 것이라는 생각에 속는다. 이런 것들이 말씀을 덮어 버려서, 말씀이 그들의 삶에서 아무 열매도 맺지 못한다."
         }
       },
       "decisions": [
@@ -3027,6 +4136,53 @@
           "reason": "Readable explains how wealth deceives.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013022015",
+            "n40013022017",
+            "n40013022018",
+            "n40013022021"
+          ],
+          "choice": "\"이 시대\" (L); \"이 세상살이\" (B); \"이 세상 일들\" (R); \"재물의 속임수\" (L), \"재물의 헛된 약속\" (B)",
+          "alternatives": [
+            "\"이 세대\""
+          ],
+          "reason": "Worded as the Korean Mark 4:19, which keeps \"시대\" for aion at Literal and \"세대\" for genea.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013022015",
+            "n40013022016",
+            "n40013022017",
+            "n40013022018"
+          ],
+          "choice": "\"những lo toan của đời này\"",
+          "alternatives": [
+            "\"thời đại này\""
+          ],
+          "reason": "As in Mark 4:19: life in the present world (meaning decision).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3093,6 +4249,16 @@
           "L": "Lakini yule aliyepandwa juu ya ardhi nzuri, huyu ndiye anayelisikia neno na kulielewa, ndiye hasa anayezaa matunda na kuyatoa, mmoja [mara] mia, mwingine sitini, mwingine thelathini.\"",
           "B": "Lakini mbegu iliyopandwa kwenye udongo mzuri ni mtu anayesikia neno na kulielewa. Mtu huyo kweli hutoa mazao, mara mia ya kile kilichopandwa, au mara sitini, au mara thelathini.\"",
           "R": "Lakini watu wengine ni kama udongo mzuri. Wanasikia ujumbe na kuuelewa. Kisha wanatoa mavuno mazuri. Wengine wanatoa mavuno mara mia ya kile kilichopandwa, wengine mara sitini, na wengine mara thelathini.\""
+        },
+        "vi": {
+          "L": "Còn [hạt] được gieo trên đất tốt, đó là người nghe lời và hiểu, là người thật sự sinh trái và kết quả, người thì một trăm, người thì sáu mươi, người thì ba mươi.\"",
+          "B": "Còn hạt giống gieo trên đất tốt là người nghe lời và hiểu lời. Chính người ấy sinh hoa kết quả, gấp một trăm, gấp sáu mươi, hoặc gấp ba mươi lần số hạt đã gieo.\"",
+          "R": "Nhưng có những người giống như đất tốt. Họ nghe sứ điệp và hiểu sứ điệp ấy. Rồi họ sinh ra một vụ mùa tốt. Có người sinh ra gấp một trăm lần số hạt đã gieo, có người gấp sáu mươi lần, có người gấp ba mươi lần.\""
+        },
+        "ko": {
+          "L": "그러나 좋은 땅에 뿌려진 [씨], 이 사람은 말씀을 듣고 깨닫는 사람이다. 그는 정말로 열매를 맺어, 어떤 이는 백 배, 어떤 이는 예순 배, 어떤 이는 서른 배를 낸다.\"",
+          "B": "그러나 좋은 땅에 뿌려진 씨는 말씀을 듣고 깨닫는 사람이다. 그런 사람은 반드시 열매를 맺어, 뿌린 것의 백 배나 예순 배나 서른 배를 낸다.\"",
+          "R": "그러나 어떤 사람들은 좋은 땅과 같다. 그들은 하나님의 말씀을 듣고 깨닫는다. 그래서 좋은 열매를 많이 맺는다. 어떤 사람은 뿌린 것보다 백 배를, 어떤 사람은 예순 배를, 어떤 사람은 서른 배를 낸다.\""
         }
       },
       "decisions": [
@@ -3143,6 +4309,28 @@
             "a simple relative clause"
           ],
           "reason": "The small word adds emphasis.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40013023016",
+            "n40013023017"
+          ],
+          "choice": "\"정말로\" (L); \"반드시\" (B); \"그래서\" (R)",
+          "alternatives": [
+            "no rendering"
+          ],
+          "reason": "\"Who indeed\" stresses that this hearer, and no other, bears fruit (meaning decision); each level marks it in its own way.",
           "uncertain": false,
           "footnote": false
         }

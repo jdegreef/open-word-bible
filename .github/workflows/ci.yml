@@ -4,6 +4,9 @@ name: CI
 
 on:
   pull_request:
+  # A merge queue (if enabled for main) tests each pull request merged onto
+  # the latest main, so two that pass alone can't break main together.
+  merge_group:
   push:
     branches: [main]
 
@@ -58,6 +61,10 @@ jobs:
       # can't fail a pull request that changed nothing it checks.
       - name: Lint
         run: pipx run --spec ruff==0.16.9 ruff check .
+      # Seconds, and names each missing message: a pull request that adds a
+      # message to some catalogs only fails here, not after the build.
+      - name: Message catalogs match English
+        run: python3 scripts/check_catalogs.py
       # The pinned sources only change when sources.lock.json does.
       - uses: actions/cache@v6
         with:

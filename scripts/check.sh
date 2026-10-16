@@ -30,6 +30,9 @@ uvx ruff@0.16.9 check .
 step "Reader tests"
 node --test tests/js/*.test.mjs
 
+step "Message catalogs match English"
+python3 scripts/check_catalogs.py
+
 if $fast; then
   # Every record in a book that has a changed file, committed or not.
   books=$( { git diff --name-only origin/main...HEAD -- content; git diff --name-only HEAD -- content;

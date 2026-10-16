@@ -41,6 +41,16 @@
           "L": "Et moi, quand je suis venu chez vous, {{gender:frères et sœurs|frères}}, je ne suis pas venu avec une supériorité de parole ou de sagesse, en vous annonçant le témoignage de Dieu.",
           "B": "Pour ma part, {{gender:frères et sœurs|frères}}, quand je suis venu chez vous vous annoncer le témoignage de Dieu, je ne suis pas venu avec des discours impressionnants ou une sagesse supérieure.",
           "R": "Il en a été de même pour moi, {{gender:frères et sœurs|frères}}. Quand je suis venu chez vous, je suis venu vous dire ce que Dieu a fait. Mais je n’ai pas cherché à vous impressionner avec de beaux discours ou des idées habiles."
+        },
+        "sw": {
+          "L": "Nami, nilipokuja kwenu, ndugu, sikuja kwa ubora wa maneno au wa hekima, nikiwatangazia ushuhuda wa Mungu.",
+          "B": "Kwa upande wangu, ndugu, nilipokuja kwenu na kuwatangazia ushuhuda wa Mungu, sikuja na maneno ya kuvutia wala hekima ya hali ya juu.",
+          "R": "Ndivyo ilivyokuwa kwangu pia, ndugu. Nilipokuja kwenu, nilikuja kuwaambia yale ambayo Mungu ametenda. Lakini sikujaribu kuwavutia kwa hotuba nzuri wala mawazo ya ujanja."
+        },
+        "es": {
+          "L": "Y yo, cuando fui a {{plural_you:ustedes|vosotros}}, hermanos, no fui con superioridad de palabra o de sabiduría, {{plural_you:anunciándoles|anunciándoos}} el testimonio de Dios.",
+          "B": "Por mi parte, hermanos, cuando fui a {{plural_you:verlos|veros}} y {{plural_you:les|os}} anuncié el testimonio de Dios, no llegué con discursos impresionantes ni con una sabiduría superior.",
+          "R": "Lo mismo pasó conmigo, hermanos. Cuando fui a {{plural_you:verlos|veros}}, fui a {{plural_you:contarles|contaros}} lo que Dios ha hecho. Pero no traté de {{plural_you:impresionarlos|impresionaros}} con discursos elegantes ni con ideas ingeniosas."
         }
       },
       "decisions": [
@@ -201,6 +211,27 @@
           "reason": "Readable spells out the link to 1:26-31 (m1) and what the testimony was about (m5).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n46002001014"
+          ],
+          "choice": "{{plural_you:anunciándoles|anunciándoos}}; {{plural_you:verlos|veros}}",
+          "alternatives": [
+            "anunciándo{{plural_you:les|os}}"
+          ],
+          "reason": "Where the plural \"you\" is joined to the end of a verb, the two Spanish forms differ in the ending, so the span covers the whole verb, as in Romans 1:11 (\"{{plural_you:verlos|veros}}\").",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -242,6 +273,16 @@
           "L": "Car j’ai décidé de ne rien savoir parmi vous, sinon Jésus {{christos:Christ|Messie}}, et {{deity_pronoun:lui|Lui}} crucifié.",
           "B": "Voici ce que j’avais décidé : tant que je serais parmi vous, la seule chose que je voudrais connaître, ce serait Jésus {{christos:Christ|le Messie}}, et {{deity_pronoun:lui|Lui}} comme celui qui a été crucifié.",
           "R": "Quand j’étais avec vous, j’ai décidé de ne penser et de ne parler que de Jésus {{christos:Christ|le Messie}}, et de la manière dont {{deity_pronoun:il|Il}} est mort sur la croix."
+        },
+        "sw": {
+          "L": "Kwa maana niliamua kutojua kitu chochote kati yenu isipokuwa Yesu {{christos:Kristo|Masihi}}, na {{deity_pronoun:yeye|Yeye}} aliyesulubiwa.",
+          "B": "Niliamua hivi: nilipokuwa kati yenu, nisijue kitu kingine chochote ila Yesu {{christos:Kristo|Masihi}}, na {{deity_pronoun:yeye|Yeye}} kama yule aliyesulubiwa.",
+          "R": "Nilipokuwa pamoja nanyi, niliamua kwamba jambo pekee nitakalofikiri na kulizungumzia ni Yesu {{christos:Kristo|Masihi}}, na jinsi alivyokufa msalabani."
+        },
+        "es": {
+          "L": "Porque decidí no saber nada entre {{plural_you:ustedes|vosotros}} sino a {{christos:Jesucristo|Jesús, el Mesías,}} y a {{deity_pronoun:él|Él}} crucificado.",
+          "B": "Tomé esta decisión: mientras estuviera entre {{plural_you:ustedes|vosotros}}, no sabría de ninguna otra cosa sino de {{christos:Jesucristo|Jesús, el Mesías,}} y de {{deity_pronoun:él|Él}} como el crucificado.",
+          "R": "Mientras estuve con {{plural_you:ustedes|vosotros}}, decidí pensar y hablar solamente de {{christos:Jesucristo|Jesús, el Mesías,}} y de cómo {{deity_pronoun:él|Él}} murió en la cruz."
         }
       },
       "decisions": [
@@ -354,6 +395,27 @@
           "reason": "Readable says what \"know\" means here (m2) and spells out \"crucified\" for young readers.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n46002002012"
+          ],
+          "choice": "spans only on free pronouns (yeye)",
+          "alternatives": [
+            "a span on every pronoun, as in English"
+          ],
+          "reason": "As in chapter 1: Swahili marks most pronouns for God and Christ inside the verb (\"alivyokufa\", \"wanaompenda\" in verse 9), and a prefix cannot take a capital, so the deity_pronoun setting applies only to free pronouns and possessives.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -427,6 +489,16 @@
           "L": "Et moi, j’ai été auprès de vous dans la faiblesse, et dans la crainte, et dans un grand tremblement, \\v 4 et ma parole et ma prédication [n’étaient] pas dans la persuasion de la sagesse, mais dans la démonstration de l’Esprit et de la puissance, \\v 5 afin que votre foi ne soit pas dans la sagesse {{gender:des humains|des hommes}}, mais dans la puissance de Dieu.",
           "B": "Pendant que j’étais avec vous, j’étais faible et craintif, et je tremblais beaucoup. \\v 4 Mon message et ma prédication ne reposaient pas sur le pouvoir de persuasion de la sagesse ; ils étaient une preuve donnée par l’Esprit et par la puissance, \\v 5 pour que votre foi soit fondée non sur la sagesse humaine, mais sur la puissance de Dieu.",
           "R": "Quand j’étais avec vous, je me sentais faible. J’avais peur, et je tremblais de tout mon corps. \\v 4 Quand je vous ai parlé et que je vous ai annoncé le message, je n’ai pas essayé de vous convaincre avec des arguments habiles. Au contraire, l’Esprit de Dieu a agi avec puissance, et cela a prouvé que mon message était vrai. \\v 5 C’était pour que votre foi ne dépende pas de la sagesse humaine, mais de la puissance de Dieu."
+        },
+        "sw": {
+          "L": "Nami nilikaa pamoja nanyi nikiwa katika udhaifu, na katika hofu, na katika kutetemeka sana, \\v 4 na neno langu na mahubiri yangu [hayakuwa] katika ushawishi wa hekima, bali katika udhihirisho wa Roho na wa nguvu, \\v 5 ili imani yenu isisimame katika hekima ya wanadamu, bali katika nguvu ya Mungu.",
+          "B": "Nilipokuwa pamoja nanyi, nilikuwa dhaifu na mwenye hofu, na nilitetemeka sana. \\v 4 Ujumbe wangu na mahubiri yangu havikutegemea uwezo wa hekima wa kushawishi; vilikuwa uthibitisho uliotolewa na Roho na kwa nguvu, \\v 5 ili imani yenu ijengwe si juu ya hekima ya kibinadamu, bali juu ya nguvu ya Mungu.",
+          "R": "Nilipokuwa pamoja nanyi, nilijisikia dhaifu. Niliogopa, na mwili wangu wote ulikuwa ukitetemeka. \\v 4 Nilipozungumza na kuhubiri kwenu, sikujaribu kuwashawishi kwa hoja za ujanja. Badala yake, Roho wa Mungu alifanya kazi kwa nguvu, na hilo lilithibitisha kwamba ujumbe wangu ni wa kweli. \\v 5 Hii ilikuwa ili imani yenu isitegemee hekima ya kibinadamu, bali itegemee nguvu ya Mungu."
+        },
+        "es": {
+          "L": "Y yo estuve con {{plural_you:ustedes|vosotros}} en debilidad, y en temor, y en mucho temblor, \\v 4 y mi palabra y mi predicación [no fueron] con persuasión de sabiduría, sino con demostración del Espíritu y de poder, \\v 5 para que {{plural_you:su|vuestra}} fe no estuviera en sabiduría de {{gender:seres humanos|hombres}}, sino en poder de Dios.",
+          "B": "Mientras estuve con {{plural_you:ustedes|vosotros}}, me sentía débil y con miedo, y temblaba mucho. \\v 4 Mi mensaje y mi predicación no se apoyaron en el poder de persuasión de la sabiduría; fueron una demostración dada por el Espíritu y por el poder, \\v 5 para que {{plural_you:su|vuestra}} fe no se basara en la sabiduría humana, sino en el poder de Dios.",
+          "R": "Cuando estuve con {{plural_you:ustedes|vosotros}}, me sentía débil. Tenía miedo y temblaba de pies a cabeza. \\v 4 Cuando {{plural_you:les|os}} hablaba y predicaba, no traté de {{plural_you:convencerlos|convenceros}} con argumentos ingeniosos. En cambio, el Espíritu de Dios actuó con poder, y eso demostró que mi mensaje era verdadero. \\v 5 Así {{plural_you:su|vuestra}} fe no dependería de la sabiduría humana. Dependería del poder de Dios."
         }
       },
       "decisions": [
@@ -620,6 +692,44 @@
           "reason": "As in English, the word means human beings in general. French puts the setting on the noun only; pronouns that refer back to it (\"lui\", \"il\", 2:11, 2:14) are ordinary generic French and take no span, as the style guide says. Balanced and Readable say \"humaine\", which needs no setting.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n46002005009"
+          ],
+          "choice": "{{gender:seres humanos|hombres}}",
+          "alternatives": [
+            "hombres, with no setting"
+          ],
+          "reason": "Spanish follows the English setting: the Greek word means human beings of either sex, so \"seres humanos\" is the default and \"hombres\" the traditional alternative, as in Romans 1:18.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n46002005009"
+          ],
+          "choice": "wanadamu, no gender span",
+          "alternatives": [
+            "watu wanaume"
+          ],
+          "reason": "\"Wanadamu\" (human beings) is already inclusive, so Swahili has no counterpart to the English Literal span; a \"traditional\" alternative would mean males only and change the meaning.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -667,6 +777,16 @@
           "L": "Pourtant, nous parlons d’une sagesse parmi ceux qui sont mûrs, mais d’une sagesse qui n’est pas de cet âge ni des dirigeants de cet âge, qui sont en train d’être réduits à néant.",
           "B": "Il y a pourtant une sagesse dont nous parlons parmi ceux qui sont mûrs. Ce n’est pas la sagesse de l’âge présent, ni celle de ses dirigeants, dont le pouvoir est déjà en train de prendre fin.",
           "R": "Mais nous enseignons bien une sagesse aux gens qui ont grandi dans leur foi. Ce n’est pas le genre de sagesse que les gens admirent à l’époque présente. Ce n’est pas non plus la sagesse des dirigeants de cette époque, et leur pouvoir est déjà en train de finir."
+        },
+        "sw": {
+          "L": "Lakini tunanena hekima kati ya waliokomaa, lakini hekima isiyo ya zama hizi, wala ya watawala wa zama hizi, wanaobatilishwa.",
+          "B": "Hata hivyo, kuna hekima tunayoinena kati ya wale waliokomaa. Si hekima ya zama hizi za sasa, wala ya watawala wake, ambao mamlaka yao tayari yanakomeshwa.",
+          "R": "Lakini tunawafundisha hekima watu waliokomaa katika imani yao. Si hekima ambayo watu wa zama hizi za sasa wanaithamini. Wala si hekima ya watawala wa zama hizi, na mamlaka yao tayari yanafikia mwisho."
+        },
+        "es": {
+          "L": "Sin embargo, hablamos sabiduría entre los maduros, pero una sabiduría no de esta era ni de los gobernantes de esta era, que están siendo reducidos a nada.",
+          "B": "Con todo, hay una sabiduría que enseñamos entre los que son maduros. No es la sabiduría de esta era presente ni de sus gobernantes, cuyo poder ya está siendo anulado.",
+          "R": "Pero sí enseñamos sabiduría a los que han crecido en su fe. No es la clase de sabiduría que la gente valora en esta era presente. Tampoco es la sabiduría de los gobernantes de esta era, y su poder ya se está acabando."
         }
       },
       "decisions": [
@@ -844,6 +964,70 @@
           "reason": "\"Princes\" today means royal sons. \"Dirigeants\" covers the human authorities who crucified Jesus and leaves room for the powers behind them (m4); \"chefs\" was used in Colossians for the unseen powers paired with authorities.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46002006005",
+            "n46002006006"
+          ],
+          "choice": "los maduros (L); los que son maduros (B); los que han crecido en su fe (R)",
+          "alternatives": [
+            "los perfectos"
+          ],
+          "reason": "The word means grown up, mature in faith (m2), not a spiritual elite. Spanish \"perfectos\", an older rendering, would suggest people without fault, so every level speaks of maturity.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46002006015"
+          ],
+          "choice": "watawala",
+          "alternatives": [
+            "viongozi"
+          ],
+          "reason": "Elsewhere this Greek word is \"kiongozi\" (leader). Here the rulers of this age are those with power who crucified Jesus, and perhaps the powers behind them (meaning decision), so \"watawala\" (those who rule) is used, here and in verse 8.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-2",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46002006006"
+          ],
+          "choice": "waliokomaa",
+          "alternatives": [
+            "wakamilifu"
+          ],
+          "reason": "\"Wakamilifu\" (perfect, complete) would suggest people without fault or a spiritual elite; the meaning decision describes believers who have grown up, which \"waliokomaa\" (matured, grown up) says. Readable adds \"katika imani yao\", as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -889,6 +1073,16 @@
           "L": "mais nous parlons de la sagesse de Dieu en mystère, [la sagesse] qui a été cachée, que Dieu a déterminée d’avance avant les âges pour notre gloire.",
           "B": "Au contraire, la sagesse dont nous parlons est celle de Dieu, un mystère qui a été tenu caché. Dieu l’a prévue avant les âges pour notre gloire.",
           "R": "Nous parlons de la sagesse de Dieu, qui était autrefois un secret. Dieu l’a tenue cachée. Mais bien avant la création du monde, {{deity_pronoun:il|Il}} l’avait prévue pour que nous ayons part à {{deity_pronoun:sa|Sa}} gloire."
+        },
+        "sw": {
+          "L": "bali tunanena hekima ya Mungu katika siri, [hekima] iliyofichwa, ambayo Mungu aliikusudia kabla ya nyakati kwa ajili ya utukufu wetu.",
+          "B": "Badala yake, hekima tunayoinena ni ya Mungu mwenyewe, siri ambayo imekuwa imefichwa. Mungu aliipanga kabla ya nyakati kwa ajili ya utukufu wetu.",
+          "R": "Tunazungumza kuhusu hekima ya Mungu, ambayo zamani ilikuwa siri. Mungu aliificha. Lakini muda mrefu kabla ulimwengu haujaanza, aliipanga ili tushiriki utukufu {{deity_pronoun:wake|Wake}}."
+        },
+        "es": {
+          "L": "sino que hablamos sabiduría de Dios en misterio, la que ha estado escondida, que Dios predestinó antes de los siglos para nuestra gloria.",
+          "B": "Más bien, la sabiduría que enseñamos es la de Dios mismo, un misterio que ha estado escondido. Dios la planeó antes de los siglos para nuestra gloria.",
+          "R": "Hablamos de la sabiduría de Dios, que antes era un misterio, un plan secreto. Dios la mantuvo escondida. Pero mucho antes de que el mundo comenzara, {{deity_pronoun:él|Él}} la planeó para que nosotros tuviéramos parte en {{deity_pronoun:su|Su}} gloria."
         }
       },
       "decisions": [
@@ -1025,6 +1219,67 @@
           "reason": "The Corinthians term sheet has Readable say \"secret\", as the English does, since \"mystère\" can suggest something that can never be understood; Readable says that the secret is now told (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46002007006"
+          ],
+          "choice": "un misterio, un plan secreto",
+          "alternatives": [
+            "un secreto"
+          ],
+          "reason": "As in Colossians, \"misterio\" is kept at every level; where the English Readable says \"secret\", the Spanish Readable keeps \"misterio\" and explains it as a secret plan, now made known (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46002007014",
+            "n46002007015"
+          ],
+          "choice": "antes de los siglos",
+          "alternatives": [
+            "antes de las eras"
+          ],
+          "reason": "\"Before the ages\" is said in Spanish as \"antes de los siglos\", a set phrase for \"before time began\"; \"antes de las eras\" is not used. Elsewhere \"this age\" stays \"esta era\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46002007006"
+          ],
+          "choice": "siri",
+          "alternatives": [
+            "fumbo"
+          ],
+          "reason": "\"Siri\" (secret, mystery) is the word Swahili Colossians uses for this Greek word, and it serves every level: a secret once hidden and now made known. \"Fumbo\" is a riddle.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1070,6 +1325,16 @@
           "L": "laquelle aucun des dirigeants de cet âge n’a connue, car s’ils [l’]avaient connue, ils n’auraient pas crucifié le Seigneur de la gloire.",
           "B": "Aucun des dirigeants de l’âge présent n’a compris cette sagesse. S’ils l’avaient comprise, ils n’auraient pas crucifié le Seigneur de gloire.",
           "R": "Aucun des dirigeants de l’époque présente n’a compris la sagesse de Dieu. S’ils l’avaient comprise, ils n’auraient pas tué le Seigneur glorieux sur une croix."
+        },
+        "sw": {
+          "L": "ambayo hakuna hata mmoja wa watawala wa zama hizi aliyeielewa; kwa maana kama wangeielewa, wasingemsulubisha Bwana wa utukufu.",
+          "B": "Hakuna hata mmoja wa watawala wa zama hizi aliyeifahamu hekima hii. Kama wangeifahamu, wasingemsulubisha Bwana wa utukufu.",
+          "R": "Hakuna hata mmoja wa watawala wa zama hizi za sasa aliyeielewa hekima ya Mungu. Kama wangeielewa, wasingemuua Bwana mwenye utukufu msalabani."
+        },
+        "es": {
+          "L": "la cual ninguno de los gobernantes de esta era ha conocido; porque si [la] hubieran conocido, no habrían crucificado al Señor de la gloria.",
+          "B": "Ninguno de los gobernantes de esta era comprendió esta sabiduría. Si la hubieran comprendido, no habrían crucificado al Señor de la gloria.",
+          "R": "Ninguno de los gobernantes de esta era presente entendió la sabiduría de Dios. Si la hubieran entendido, no habrían matado en una cruz al Señor glorioso."
         }
       },
       "decisions": [
@@ -1218,6 +1483,16 @@
           "L": "Mais, comme il est écrit : « Ce que l’œil n’a pas vu, et ce que l’oreille n’a pas entendu, et ce qui n’est pas monté au cœur {{gender:de l’être humain|de l’homme}}, tout ce que Dieu a préparé pour ceux qui {{deity_pronoun:l’|L’}}aiment. »",
           "B": "Mais voici ce que décrit l’Écriture : « Ce qu’aucun œil n’a jamais vu, ce qu’aucune oreille n’a jamais entendu, ce qui n’est jamais venu à l’esprit d’aucun être humain, voilà ce que Dieu a préparé pour ceux qui {{deity_pronoun:l’|L’}}aiment. »",
           "R": "Mais voici ce que disent les Écritures : « Personne ne l’a jamais vu, ni n’en a jamais entendu parler. Personne n’en a même jamais rêvé. Voilà ce que Dieu a préparé pour ceux qui {{deity_pronoun:l’|L’}}aiment. »"
+        },
+        "sw": {
+          "L": "Lakini, kama ilivyoandikwa, \"Yale ambayo jicho halijayaona, na sikio halijayasikia, na hayajapanda juu ya moyo wa mwanadamu, yote ambayo Mungu amewaandalia wanaompenda.\"",
+          "B": "Lakini haya ndiyo yanayoelezwa na Maandiko: \"Mambo ambayo hakuna jicho lililowahi kuyaona, wala sikio lililowahi kuyasikia, mambo ambayo hayajawahi kuingia katika fikira za mwanadamu yeyote: hayo ndiyo Mungu amewaandalia wale wanaompenda.\"",
+          "R": "Lakini Maandiko yanasema hivi: \"Hakuna mtu aliyewahi kuyaona wala kuyasikia. Hakuna aliyewahi hata kuyawazia. Hayo ndiyo mambo ambayo Mungu amewaandalia watu wanaompenda.\""
+        },
+        "es": {
+          "L": "Pero, así como está escrito: «Lo que ojo no vio y oído no oyó, y [lo que] no subió al corazón del {{gender:ser humano|hombre}}, cuanto Dios ha preparado para los que {{deity_pronoun:lo|Lo}} aman».",
+          "B": "Pero esto es lo que describe la Escritura: «Lo que ningún ojo vio jamás y ningún oído oyó, lo que nunca surgió en ningún corazón humano: eso ha preparado Dios para los que {{deity_pronoun:lo|Lo}} aman».",
+          "R": "Pero esto es lo que dicen las Escrituras: «Nadie lo ha visto nunca ni ha oído hablar de ello. Nadie se lo ha imaginado siquiera. Eso es lo que Dios ha preparado para los que {{deity_pronoun:lo|Lo}} aman»."
         }
       },
       "decisions": [
@@ -1392,6 +1667,30 @@
           "reason": "Readable breaks the quotation into short sentences and puts the sense of the idioms (m3) in everyday words. It makes a complete sentence of the unfinished quotation (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46002009012",
+            "n46002009013",
+            "n46002009014",
+            "n46002009015",
+            "n46002009016",
+            "n46002009017"
+          ],
+          "choice": "hayajapanda juu ya moyo wa mwanadamu",
+          "alternatives": [
+            "hayajaingia moyoni mwa mwanadamu"
+          ],
+          "reason": "Literal keeps the Hebrew-shaped picture of something coming up upon the heart; Balanced and Readable say what the idiom means, never imagined (\"hayajawahi kuingia katika fikira\", \"kuyawazia\").",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1437,6 +1736,16 @@
           "L": "Car à nous, Dieu [les] a révélées par l’Esprit ; car l’Esprit scrute tout, même les profondeurs de Dieu.",
           "B": "Et c’est à nous que Dieu les a fait connaître, par l’Esprit. Car rien n’échappe aux recherches de l’Esprit, pas même les profondeurs de Dieu.",
           "R": "Mais Dieu nous a montré ces choses par {{deity_pronoun:son|Son}} Esprit. L’Esprit examine tout, même ce qu’il y a de plus profond en Dieu."
+        },
+        "sw": {
+          "L": "Kwa maana Mungu ametufunulia sisi [mambo hayo] kupitia Roho; kwa maana Roho huchunguza mambo yote, hata vina vya Mungu.",
+          "B": "Ni sisi ambao Mungu ametujulisha mambo hayo kupitia Roho. Kwa maana hakuna kitu kisichoweza kuchunguzwa na Roho, hata mambo ya ndani kabisa ya Mungu.",
+          "R": "Lakini Mungu ametuonyesha mambo haya kupitia Roho {{deity_pronoun:wake|Wake}}. Roho anachunguza kila kitu, hata mambo yaliyo ndani kabisa ya Mungu."
+        },
+        "es": {
+          "L": "Porque a nosotros Dios [nos lo] reveló por medio del Espíritu; porque el Espíritu escudriña todas las cosas, aun las profundidades de Dios.",
+          "B": "Y es a nosotros a quienes Dios se lo ha dado a conocer por medio del Espíritu. Pues nada escapa a la búsqueda del Espíritu, ni siquiera las profundidades de Dios.",
+          "R": "Pero Dios nos ha mostrado estas cosas por medio de {{deity_pronoun:su|Su}} Espíritu. El Espíritu lo conoce todo a fondo, hasta las cosas más profundas de Dios."
         }
       },
       "decisions": [
@@ -1539,6 +1848,47 @@
           "reason": "Readable says whose Spirit is meant (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46002010013"
+          ],
+          "choice": "escudriña (L); nada escapa a la búsqueda (B)",
+          "alternatives": [
+            "examina",
+            "investiga"
+          ],
+          "reason": "The verb is the Spirit's thorough knowing (m4). \"Escudriñar\" is to search to the bottom; \"examinar\" is kept for the courtroom verb of 2:14-15 and 4:3-4. Readable says plainly that the Spirit knows everything to the depths.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46002010016"
+          ],
+          "choice": "vina",
+          "alternatives": [
+            "kina",
+            "mafumbo"
+          ],
+          "reason": "\"Vina\" (depths) keeps the Greek picture at Literal; Balanced and Readable say \"the things deep inside God\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1582,6 +1932,16 @@
           "L": "Car qui, parmi {{gender:les humains|les hommes}}, connaît les choses {{gender:de l’être humain|de l’homme}}, sinon l’esprit {{gender:de l’être humain|de l’homme}} qui est en lui ?",
           "B": "Après tout, quel être humain sait ce qui se passe à l’intérieur d’un autre ? Seul l’esprit de cette personne, en elle, le sait.",
           "R": "Réfléchissez : personne ne peut savoir ce que pense quelqu’un d’autre. Seul l’esprit de cette personne, tout au fond d’elle, le sait."
+        },
+        "sw": {
+          "L": "Kwa maana ni nani kati ya wanadamu anayejua mambo ya mtu isipokuwa roho ya mtu iliyo ndani yake?",
+          "B": "Baada ya yote, ni mwanadamu gani anayejua yanayoendelea ndani ya mtu mwingine? Ni roho ya mtu huyo mwenyewe iliyo ndani yake tu inayoyajua.",
+          "R": "Fikirini jambo hili: hakuna mtu anayeweza kujua mtu mwingine anafikiri nini. Ni roho ya mtu huyo mwenyewe tu, ndani kabisa, inayojua."
+        },
+        "es": {
+          "L": "Porque ¿quién de entre los {{gender:seres humanos|hombres}} conoce las cosas del {{gender:ser humano|hombre}}, sino el espíritu del {{gender:ser humano|hombre}} que está en él?",
+          "B": "Después de todo, ¿qué ser humano sabe lo que pasa dentro de otra persona? Solo el propio espíritu de esa persona, en su interior, lo sabe.",
+          "R": "{{plural_you:Piénsenlo|Pensadlo}}: nadie puede saber lo que otra persona está pensando. Solo el propio espíritu de esa persona, en lo más profundo, lo sabe."
         }
       },
       "decisions": [
@@ -1709,6 +2069,70 @@
           "reason": "The setting goes on the nouns. \"Lui\" refers back to \"l'être humain\", a masculine noun in both options, so it reads as generic and needs no span, where the English needs {{gender:that person|him}}.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n46002011004",
+            "n46002011007",
+            "n46002011013",
+            "n46002011016"
+          ],
+          "choice": "{{gender:ser humano|hombre}}; en él, no span",
+          "alternatives": [
+            "la persona ... en ella"
+          ],
+          "reason": "Spanish follows the English setting for the noun. Both \"ser humano\" and \"hombre\" are masculine words, so the pronoun \"él\" that refers back to them is the same in both options and needs no span of its own.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n46002011004",
+            "n46002011007",
+            "n46002011016"
+          ],
+          "choice": "no gender spans (wanadamu, mtu, yake)",
+          "alternatives": [
+            "spans as in the English Literal"
+          ],
+          "reason": "\"Wanadamu\", \"mtu\" and the pronoun \"yeye\" with its possessive \"yake\" do not mark sex, so the English Literal's gender spans here and in verses 14–15 have nothing to switch in Swahili.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-2",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46002011012"
+          ],
+          "choice": "roho ya mtu (lowercase, class 9)",
+          "alternatives": [
+            "Roho"
+          ],
+          "reason": "A person's own spirit is \"roho\" in lowercase with the agreement of a thing (\"iliyo\", \"inayojua\"); the Spirit of God in the next sentence is \"Roho\" with a capital and the personal agreement Swahili gives him (\"Roho anachunguza\"), so the two are kept apart.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1749,6 +2173,16 @@
           "L": "De même aussi, les choses de Dieu, personne ne les a connues, sinon l’Esprit de Dieu.",
           "B": "De la même manière, les choses de Dieu ne sont connues de personne, sinon de l’Esprit de Dieu.",
           "R": "De la même manière, seul l’Esprit de Dieu sait ce que pense Dieu."
+        },
+        "sw": {
+          "L": "Vivyo hivyo pia hakuna aliyeyajua mambo ya Mungu isipokuwa Roho wa Mungu.",
+          "B": "Vivyo hivyo, mambo ya Mungu hayajulikani na mtu yeyote isipokuwa Roho wa Mungu.",
+          "R": "Vivyo hivyo, ni Roho wa Mungu peke yake anayejua mawazo ya Mungu."
+        },
+        "es": {
+          "L": "Así también nadie ha conocido las cosas de Dios sino el Espíritu de Dios.",
+          "B": "Del mismo modo, nadie conoce las cosas de Dios sino el Espíritu de Dios.",
+          "R": "De la misma manera, solo el Espíritu de Dios sabe lo que Dios piensa."
         }
       },
       "decisions": [
@@ -1860,6 +2294,16 @@
           "L": "Or nous, nous n’avons pas reçu l’esprit du monde, mais l’Esprit qui vient de Dieu, afin que nous connaissions les choses qui nous ont été données gratuitement par Dieu.",
           "B": "Nous, de notre côté, nous n’avons pas reçu l’esprit du monde. Nous avons reçu l’Esprit qui vient de Dieu, afin de reconnaître tout ce que Dieu nous a donné dans {{deity_pronoun:sa|Sa}} grâce.",
           "R": "Nous n’avons pas reçu l’esprit qui appartient à ce monde. Dieu nous a donné {{deity_pronoun:son|Son}} propre Esprit. Maintenant, nous pouvons comprendre toutes les bonnes choses que Dieu nous a données gratuitement."
+        },
+        "sw": {
+          "L": "Lakini sisi hatukuipokea roho ya ulimwengu, bali Roho aliyetoka kwa Mungu, ili tuyajue mambo tuliyokirimiwa na Mungu.",
+          "B": "Sisi, kwa upande wetu, hatukupokea roho ya ulimwengu. Tumempokea Roho anayetoka kwa Mungu, ili tutambue yote ambayo Mungu ametukirimia.",
+          "R": "Hatukupewa roho ya ulimwengu huu. Mungu ametupa Roho {{deity_pronoun:wake|Wake}} mwenyewe. Sasa tunaweza kuelewa mambo yote mazuri ambayo Mungu ametupa bure."
+        },
+        "es": {
+          "L": "Y nosotros no recibimos el espíritu del mundo, sino el Espíritu que [viene] de Dios, para que sepamos las cosas que Dios nos ha dado gratuitamente.",
+          "B": "Nosotros, por nuestra parte, no hemos recibido el espíritu del mundo. Hemos recibido el Espíritu que viene de Dios, para que reconozcamos todo lo que Dios nos ha concedido por gracia.",
+          "R": "No se nos ha dado el espíritu que pertenece a este mundo. Dios nos ha dado {{deity_pronoun:su|Su}} propio Espíritu. Ahora podemos entender todas las cosas buenas que Dios nos ha dado gratuitamente."
         }
       },
       "decisions": [
@@ -1955,6 +2399,26 @@
           "reason": "Readable names the giver and says plainly that the Spirit is God's.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46002012022"
+          ],
+          "choice": "kukirimiwa (L); kukirimia (B)",
+          "alternatives": [
+            "kupewa kwa neema"
+          ],
+          "reason": "\"Kukirimia\" is to give generously as a free gift, the sense the meaning decision gives, without using \"neema\", which is kept for the Greek word for grace.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1998,6 +2462,16 @@
           "L": "Et c’est de cela aussi que nous parlons, non avec des paroles enseignées par la sagesse humaine, mais avec [des paroles] enseignées par l’Esprit, interprétant les choses spirituelles par des [paroles] spirituelles.",
           "B": "Quand nous parlons de ces choses, nos paroles ne sont pas des leçons apprises de la sagesse humaine. C’est l’Esprit qui nous les enseigne, et ainsi nous expliquons les choses spirituelles avec des paroles que donne l’Esprit.",
           "R": "C’est de cela que nous parlons. Nous n’utilisons pas des mots que la sagesse humaine nous a appris. Nous utilisons des mots que l’Esprit nous a appris. Ainsi, nous expliquons avec les mots de l’Esprit les choses qui viennent de l’Esprit."
+        },
+        "sw": {
+          "L": "Mambo hayo pia tunayanena, si kwa maneno yanayofundishwa na hekima ya kibinadamu, bali kwa [yale] yanayofundishwa na Roho, tukifasiri mambo ya kiroho kwa [maneno] ya kiroho.",
+          "B": "Tunaponena juu ya mambo hayo, maneno yetu si mafundisho tuliyojifunza kutoka kwa hekima ya kibinadamu. Roho ndiye anayetufundisha, na hivyo tunaeleza mambo ya kiroho kwa maneno ambayo Roho anatupa.",
+          "R": "Hayo ndiyo tunayozungumzia. Hatutumii maneno ambayo hekima ya kibinadamu imetufundisha. Tunatumia maneno ambayo Roho ametufundisha. Kwa hiyo tunatumia maneno ya Roho kueleza mambo yanayotoka kwa Roho."
+        },
+        "es": {
+          "L": "Estas cosas también hablamos, no con palabras enseñadas por sabiduría humana, sino con [las] enseñadas por [el] Espíritu, interpretando lo espiritual con [palabras] espirituales.",
+          "B": "Cuando hablamos de estas cosas, nuestras palabras no son lecciones aprendidas de la sabiduría humana. Es el Espíritu quien las enseña, y así explicamos lo espiritual con palabras que da el Espíritu.",
+          "R": "De eso es de lo que hablamos. No usamos palabras que nos haya enseñado la sabiduría humana. Usamos palabras que el Espíritu nos ha enseñado. Así usamos las palabras del Espíritu para explicar las cosas que vienen del Espíritu."
         }
       },
       "decisions": [
@@ -2171,6 +2645,16 @@
           "L": "Or {{gender:l’être humain naturel|l’homme naturel}} n’accepte pas les choses de l’Esprit de Dieu, car elles sont folie pour lui, et il ne peut pas [les] connaître, parce que c’est spirituellement qu’elles sont examinées.",
           "B": "Une personne qui n’a que la vie naturelle n’accueille pas ce qui vient de l’Esprit de Dieu. Tout cela lui paraît une folie, et elle ne peut pas le comprendre, parce qu’on ne peut en juger correctement que par l’Esprit.",
           "R": "Les gens qui n’ont pas l’Esprit de Dieu n’acceptent pas les choses qui viennent de l’Esprit. Ils pensent que ce sont des folies. Ils ne peuvent pas les comprendre, parce que seul l’Esprit peut aider les gens à voir ce que ces choses veulent vraiment dire."
+        },
+        "sw": {
+          "L": "Lakini mtu wa asili hayapokei mambo ya Roho wa Mungu, kwa maana kwake ni upumbavu, wala hawezi kuyajua, kwa sababu yanachunguzwa kiroho.",
+          "B": "Mtu aliye na uhai wa asili tu hayakaribishi mambo ya Roho wa Mungu. Kwake yote yanaonekana upumbavu, naye hawezi kuyaelewa, kwa sababu yanaweza kupimwa ipasavyo kwa msaada wa Roho peke yake.",
+          "R": "Watu wasio na Roho wa Mungu hawayakubali mambo yanayotoka kwa Roho. Wanaona kwamba mambo hayo ni upumbavu. Hawawezi kuyaelewa, kwa sababu ni Roho peke yake anayeweza kuwasaidia watu kuona maana halisi ya mambo hayo."
+        },
+        "es": {
+          "L": "Pero {{gender:el ser humano natural|el hombre natural}} no acepta las cosas del Espíritu de Dios, porque para él son necedad, y no [las] puede conocer, porque se examinan espiritualmente.",
+          "B": "Quien tiene solo la vida natural no recibe lo que es del Espíritu de Dios. Todo le parece necedad, y no puede entenderlo, porque solo se puede evaluar rectamente por medio del Espíritu.",
+          "R": "Las personas que no tienen el Espíritu de Dios no aceptan las cosas que vienen del Espíritu. Piensan que esas cosas son una tontería. No las pueden entender, porque solo el Espíritu puede ayudar a la gente a ver lo que realmente significan."
         }
       },
       "decisions": [
@@ -2322,6 +2806,89 @@
           "reason": "The Corinthians term sheet keeps \"examine\" at Literal, so that the courtroom sense can come through in chapter 4; Balanced says what the examining is for, weighing rightly (m4).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n46002014001",
+            "n46002014003"
+          ],
+          "choice": "{{gender:el ser humano natural|el hombre natural}}; para él, no span",
+          "alternatives": [
+            "la persona natural"
+          ],
+          "reason": "Spanish follows the English setting for the noun. Both options are masculine words, so \"para él\" agrees with either and needs no span; the English needs spans on its pronouns as well.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46002014021"
+          ],
+          "choice": "se examinan (L); evaluar (B)",
+          "alternatives": [
+            "discernir",
+            "juzgar"
+          ],
+          "reason": "The verb is the one used for examining and judging in 2:15 and 4:3-4. Literal says \"examinar\" each time; Balanced says \"evaluar\" here and in 2:15, where the sense is weighing something rightly, and keeps the courtroom words in chapter 4.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46002014001"
+          ],
+          "choice": "mtu wa asili (L); mtu aliye na uhai wa asili tu (B); watu wasio na Roho wa Mungu (R)",
+          "alternatives": [
+            "mtu wa tabia ya asili",
+            "mtu wa kidunia"
+          ],
+          "reason": "Follows the meaning decision: someone with only ordinary human life, without God's Spirit. \"Kidunia\" (worldly) would blur this word with \"ulimwengu\" (world).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-2",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46002014021"
+          ],
+          "choice": "kuchunguza (L); kupima (B)",
+          "alternatives": [
+            "kuhukumu"
+          ],
+          "reason": "Book-wide choice for this Greek verb (2:14–15; 4:3–4): Literal always \"kuchunguza\" (examine); Balanced \"kupima\" (weigh, assess) here, and the courtroom sense in chapter 4.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2360,6 +2927,16 @@
           "L": "Mais celui qui est spirituel examine tout, et lui-même n’est examiné par personne.",
           "B": "Mais celui qui est spirituel peut évaluer toutes choses, et personne n’est en mesure de l’évaluer.",
           "R": "Mais ceux qui ont l’Esprit peuvent juger ce qui est vrai en toutes choses. Et ceux qui n’ont pas l’Esprit ne peuvent pas les juger."
+        },
+        "sw": {
+          "L": "Lakini mtu wa kiroho huchunguza mambo yote, lakini yeye mwenyewe hachunguzwi na mtu yeyote.",
+          "B": "Lakini mtu wa kiroho anaweza kupima mambo yote, wakati hakuna mtu aliye na nafasi ya kumpima yeye.",
+          "R": "Lakini watu walio na Roho wanaweza kuamua kilicho kweli kuhusu kila kitu. Na hakuna mtu asiye na Roho anayeweza kuwahukumu wao."
+        },
+        "es": {
+          "L": "Pero el espiritual examina todas las cosas, pero {{gender:esa persona no es examinada|él mismo no es examinado}} por nadie.",
+          "B": "Pero la persona espiritual puede evaluar todas las cosas, mientras que nadie está en condiciones de evaluarla a ella.",
+          "R": "Pero las personas que tienen el Espíritu pueden juzgar lo que es verdad acerca de todo. Y nadie que no tenga el Espíritu puede juzgarlas a ellas."
         }
       },
       "decisions": [
@@ -2476,6 +3053,25 @@
           "reason": "French \"celui qui\" is generic and needs no gender setting, where the English needs {{gender:that person|he himself}}. \"Le spirituel\" alone would read as an abstract noun.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n46002015007"
+          ],
+          "choice": "{{gender:esa persona no es examinada|él mismo no es examinado}}",
+          "alternatives": [
+            "él mismo no es examinado, with no setting"
+          ],
+          "reason": "Spanish follows the English setting. The participle has to agree with \"persona\" (feminine) or \"él\" (masculine), so the span takes in the whole clause up to the participle.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2511,6 +3107,16 @@
           "L": "Car « qui a connu la pensée du Seigneur, qui {{deity_pronoun:l’|L’}}instruira ? »",
           "B": "Car « qui a jamais connu la pensée du Seigneur au point de pouvoir {{deity_pronoun:l’|L’}}instruire ? »",
           "R": "Les Écritures demandent : « Qui sait ce que pense le Seigneur ? Qui peut {{deity_pronoun:lui|Lui}} apprendre quoi que ce soit ? »"
+        },
+        "sw": {
+          "L": "Kwa maana \"ni nani aliyeijua nia ya Bwana, ni nani atakayemfundisha?\"",
+          "B": "Kwa maana \"ni nani amewahi kuijua nia ya Bwana kiasi cha kuweza kumfundisha?\"",
+          "R": "Maandiko yanauliza, \"Ni nani anayejua Bwana anafikiri nini? Ni nani anayeweza kumfundisha {{deity_pronoun:yeye|Yeye}} jambo lolote?\""
+        },
+        "es": {
+          "L": "Porque «¿quién ha conocido [la] mente [del] Señor, quién {{deity_pronoun:lo|Lo}} instruirá?».",
+          "B": "Porque «¿quién ha conocido jamás la mente del Señor como para darle instrucciones?».",
+          "R": "Las Escrituras preguntan: «¿Quién sabe lo que piensa el Señor? ¿Quién {{deity_pronoun:le|Le}} puede enseñar algo?»."
         }
       },
       "decisions": [
@@ -2640,6 +3246,16 @@
           "L": "Mais nous, nous avons la pensée du {{christos:Christ|Messie}}.",
           "B": "Mais nous, nous avons la pensée du {{christos:Christ|Messie}}.",
           "R": "Mais nous, nous avons reçu la pensée du {{christos:Christ|Messie}}. Par l’Esprit, nous comprenons comment {{deity_pronoun:il|Il}} pense."
+        },
+        "sw": {
+          "L": "Lakini sisi tunayo nia ya {{christos:Kristo|Masihi}}.",
+          "B": "Lakini sisi tunayo nia ya {{christos:Kristo|Masihi}}.",
+          "R": "Lakini sisi tumepewa nia ya {{christos:Kristo|Masihi}}. Kupitia Roho tunaelewa jinsi {{deity_pronoun:yeye|Yeye}} anavyofikiri."
+        },
+        "es": {
+          "L": "Pero nosotros tenemos [la] mente de {{christos:Cristo|Mesías}}.",
+          "B": "Pero nosotros tenemos la mente {{christos:de Cristo|del Mesías}}.",
+          "R": "Pero a nosotros se nos ha dado la mente {{christos:de Cristo|del Mesías}}. Por medio del Espíritu entendemos cómo piensa {{deity_pronoun:él|Él}}."
         }
       },
       "decisions": [
@@ -2750,6 +3366,28 @@
             "l'esprit du Christ"
           ],
           "reason": "The same French word in both halves of the verse keeps the link Paul makes: Christ stands where Isaiah has the Lord (m2). \"L'esprit\" would be confused with the Spirit.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46002016011"
+          ],
+          "choice": "nia",
+          "alternatives": [
+            "akili",
+            "mawazo"
+          ],
+          "reason": "\"Nia\" (mind, way of thinking) for the Greek word in both halves of verse 16, so the Lord's mind in Isaiah and the mind of Christ stay the same word, as in 1:10.",
           "uncertain": false,
           "footnote": false
         }

@@ -1,18 +1,18 @@
 # Ecclesiastes and Song of Songs: recurring terms and book-wide choices
 
-**Status: proposed, awaiting the founder's approval.** Nothing in either book
-is drafted yet. These are the choices each chapter will be drafted from. Read
+**Status: approved by the founder (2026-10-16), with every suggestion below
+adopted.** Nothing in either book was drafted when it was approved. These are the choices each chapter will be drafted from. Read
 with `docs/english-style.md`, which wins where the two differ, and with the
 Proverbs and Psalms already published, whose wording both books reuse where
-they share it. The questions that need the founder's decision are listed at
-the end.
+they share it. The founder's rulings on the questions this page first left open are
+listed at the end.
 
 ## Ecclesiastes
 
 | Hebrew | Literal | Balanced | Readable |
 |---|---|---|---|
-| *hevel* | breath | a breath | (see the open question) |
-| *havel havalim* (1:2; 12:8) | Breath of breaths | Breath upon breath | (see the open question) |
+| *hevel* | breath | a breath | like a breath / nothing lasts |
+| *havel havalim* (1:2; 12:8) | Breath of breaths | Breath upon breath | Nothing lasts! Everything passes like a breath |
 | *qohelet* | Qoheleth | the Teacher | the Teacher |
 | *tachat hashemesh* | under the sun | under the sun | here on earth / in this world |
 | *re'ut ruach* / *ra'yon ruach* | a chasing of wind | chasing the wind | like trying to catch the wind |
@@ -33,8 +33,10 @@ the end.
   main meaning decision at 1:2 gives the range: brief, elusive, empty and,
   for some readers, absurd. Each later use has a word_sense decision where
   the sense leans one way. The traditional "vanity" and the common
-  "meaningless" are named as alternatives. The Readable wording is open
-  question 1.
+  "meaningless" are named as alternatives. Readable says what passes like a breath,
+  keeping the picture ("Nothing lasts! Everything passes like a breath";
+  elsewhere "like a breath", "does not last", or "cannot be grasped", as the
+  sense needs, with the word_sense decision).
 - **Qoheleth.** The word means one who gathers or addresses an assembly. At
   Literal it is kept as a name. Balanced and Readable say "the Teacher",
   with a decision at 1:1 naming "the Preacher" and "the Speaker" as
@@ -80,8 +82,9 @@ the end.
   meaning decision at the first record of each speech names the speaker.
   Where the speaker is unclear it is marked uncertain and footnoted (for
   example 1:4b; 5:9; 8:5a). Speech takes no quotation marks, as in Psalms,
-  except speech quoted inside a speech (5:2; 3:3). Whether section headings
-  may name the speaker is open question 3.
+  except speech quoted inside a speech (5:2; 3:3). Section headings may name the speaker where the
+  grammar fixes who speaks ("She longs for him"), and not where it is
+  uncertain.
 - **Frankness.** The Song is love poetry, often sensual. Literal and
   Balanced keep each image (the breasts like fawns, the garden, the
   fountain), so the poem keeps its metaphors and its reserve. Readable may
@@ -108,26 +111,59 @@ the end.
   English 7:1–13. A footnoted decision at 7:1 and 7:2 says so.
 - **Poetry.** The whole Song is set in lines, following the accents.
 
-## Open questions for the founder
+## The founder's rulings (2026-10-16)
 
-1. ***Hevel* at Readable.** Literal "breath" and Balanced "a breath" keep the
-   picture. For Readable this page suggests "Nothing lasts! Everything
-   passes like a breath", which says the main sense plainly and keeps the
-   image. The alternatives are:
-   - "meaningless", the most common modern choice, though it narrows the
-     word to one sense;
-   - "a puff of air", the image alone, as in Job 7:16.
-2. **Qoheleth.** Should Literal keep the Hebrew name "Qoheleth", or say "the
-   Teacher" like the other levels? This page suggests keeping the name at
-   Literal.
-3. **Speakers in the Song.** May section headings name the speaker ("She
-   longs for him", "He praises her beauty")? Headings must not settle a
-   question of interpretation, but most speakers are fixed by the grammar.
-   This page suggests yes where the grammar fixes the speaker, and no where
-   it is uncertain.
-4. **The Song's title.** Literal "The Song of Songs" keeps the Hebrew
-   superlative. Should Balanced and Readable spell out the sense ("the
-   greatest of songs", "the most beautiful of songs"), or keep the
-   traditional title, which the book list in `data/books.json` already uses?
-   This page suggests the title stays "Song of Songs" everywhere it names
-   the book. The verse 1:1 explains it at Balanced and Readable.
+1. ***Hevel* at Readable:** "Nothing lasts! Everything passes like a breath"
+   at 1:2 and 12:8; elsewhere the breath picture with the sense the context
+   needs. Not "meaningless".
+2. **Qoheleth:** kept as a name at Literal; "the Teacher" at Balanced and
+   Readable.
+3. **Speakers in the Song:** headings may name the speaker where the grammar
+   fixes who speaks, and not where it is uncertain.
+4. **The Song's title:** "Song of Songs" names the book everywhere; 1:1 at
+   Balanced and Readable spells out the superlative.
+
+## Settled while drafting
+
+AI-draft choices recorded so later work follows them; the founder may
+change any of them.
+
+- *Ruach* as life-breath (Ecclesiastes 3:19–21; 12:7) is "spirit" at every
+  level, so it is never confused with *hevel*, rendered "breath".
+- The gain words: *yitron* "gain" (L, B) / "what good it does" (R); *motar*
+  "advantage" / "advantage" / "better off"; *kishron* "skill" or "profit".
+- *Sakal* is rendered like *kesil* ("fool" / "fool" / "foolish person").
+- "Under the sun" at Readable is "here on earth" or "in this world".
+- The shepherd of Ecclesiastes 12:11 stays lowercase at every level.
+- *'Eved* in Ecclesiastes 10:7 is "slaves" at every level, since slave set
+  against official is the point.
+- Song of Songs: *dodim* at 5:1 is read as a call ("beloved ones"), with
+  "drink deeply of love" footnoted; "my sister" alone (5:2) is "my dearest"
+  at Readable; "daughters of Zion" (3:11) follows the Jerusalem row.
+
+## Before meaning review: claims to check
+
+Decisions that cite an ancient witness, a reading outside the vowelled text,
+or a historical or linguistic claim from general knowledge. A reviewer
+checks each before its sentence is marked meaning reviewed.
+
+**Ecclesiastes**
+- 1: 1 m1, 1 m2, 2 m1, 3 m1, 3 m3, 13 m4, 14 m1, 16 m3, 17 m1
+- 2: 5 m1, 8 m1, 8 m2, 24 m1, 25 m1
+- 3: 5 m1, 17 m2, 21 m1
+- 4: 2 m3, 13 m2, 14 m2
+- 5: 5 m1, 8 m1, 16 m2
+- 7: 27 m2
+- 8: 10 m2
+- 9: 1 m3, 2 m2, 4 m1, 14 m2
+- 12: 1 m1, 3 m1, 5 m3, 6 m3, 14 m4
+
+**Song of Songs**
+- 1: 1 m2, 1 m3, 5 m4, 7 m4, 9 m3, 12 m3, 13 m2, 14 m1, 14 m2, 17 m1
+- 2: 1 m2, 1 m3, 3 m2, 7 m2, 11 m1, 12 m2, 15 m2, 17 m3
+- 3: 6 m3, 9 m1, 9 m2, 10 m1, 10 m3, 11 m3
+- 4: 1 m2, 1 m4, 4 m1, 4 m3, 8 m2, 9 m2, 12 m2, 13 m2, 14 m1, 14 m2
+- 5: 4 m3, 13 m2, 14 m1, 14 m2, 15 m1
+- 6: 4 m2, 8 m1, 12 m2
+- 7: 1 m3, 1 m4, 3 m2, 5 m2, 5 m3, 6 m1, 7 m1, 10 m4, 14 m1
+- 8: 6 m5, 6 m6, 11 m2
