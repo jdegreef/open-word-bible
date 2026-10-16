@@ -4,6 +4,7 @@ summary: Desde la Douay-Rheims de los colegios ingleses en el exilio hasta la Je
 date: 2026-10-14
 order: 71
 section: compare
+source: af7a51e30830
 ---
 La mayoría de las historias de la Biblia inglesa siguen la línea protestante que va de Tyndale a la versión King James y sus revisiones. Junto a ella corre una segunda tradición, con sus propios traductores, sus propios debates y sus propias condiciones. Las Biblias católicas en inglés se diferencian de las protestantes en tres aspectos principales: contienen más libros, las aprueban los obispos, y muchas de ellas están moldeadas por las necesidades de la liturgia, donde la Biblia se lee en voz alta en la misa.
 

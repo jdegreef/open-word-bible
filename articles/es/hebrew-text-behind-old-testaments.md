@@ -4,6 +4,7 @@ summary: Casi todos los Antiguos Testamentos modernos se traducen del texto maso
 date: 2026-10-14
 order: 75
 section: compare
+source: 3f3ae1c5422d
 ---
 El Antiguo Testamento de casi todas las Biblias modernas, judías o cristianas, se traduce del mismo texto hebreo: el **texto masorético**, la forma de la Biblia hebrea que conservaron los escribas judíos y que fijaron, con vocales, acentos y notas, los estudiosos conocidos como masoretas a comienzos de la Edad Media (véase [Los masoretas: guardianes del texto hebreo](/articles/the-masoretes/)). Ese acuerdo es notable, y significa que las traducciones del Antiguo Testamento difieren mucho menos en su texto base que las del Nuevo (compárese con [Los textos griegos detrás de las traducciones del Nuevo Testamento](/articles/greek-texts-behind-new-testaments/)).
 

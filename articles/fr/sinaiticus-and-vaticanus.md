@@ -5,6 +5,7 @@ date: 2026-10-11
 order: 35
 section: history
 part: nt
+source: fcf07aaa2945
 ---
 Si les papyrus sont les plus anciens témoins du Nouveau Testament, les deux grands codex sur parchemin du quatrième siècle en sont les plus complets. Le **Codex Sinaiticus** et le **Codex Vaticanus** sont les plus anciens manuscrits conservés qui aient contenu toute la Bible chrétienne, Ancien et Nouveau Testament, en grec. Ils ont façonné toutes les éditions critiques du Nouveau Testament grec depuis le dix-neuvième siècle, et avec elles presque toutes les traductions modernes.
 

@@ -6,6 +6,7 @@ order: 23
 nav_title: Les règles d'un rouleau de la Torah
 section: history
 part: ot
+source: c9c4ea88d489
 ---
 Entrez aujourd'hui dans une synagogue, et vous verrez peut-être le rouleau de la Torah sortir de l'arche, être déroulé et lu à voix haute. Ce rouleau a été écrit à la main par un scribe formé, selon des règles vieilles de plus de mille ans. Une seule lettre manquante le rendrait impropre à la lecture publique.
 

@@ -4,6 +4,7 @@ summary: Tafsiri nyingi za kisasa zina hakimiliki, na karibu zote huficha sababu
 date: 2026-10-10
 order: 1
 section: method
+source: 5121a977337c
 ---
 Tayari kuna Biblia nyingi nzuri. Basi kwa nini kuanzisha nyingine?
 

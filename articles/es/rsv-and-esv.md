@@ -4,6 +4,7 @@ summary: La Revised Standard Version de 1952 fue la Biblia del protestantismo hi
 date: 2026-10-14
 order: 65
 section: compare
+source: 2f89c954a037
 ---
 Pocas traducciones han sido tan queridas y tan atacadas como la **Revised Standard Version** (RSV). Pocas han tenido una vida posterior tan sorprendente. Cincuenta años después de que los protestantes conservadores la denunciaran, una revisión de su texto hecha por protestantes conservadores se convirtió en la **English Standard Version** (ESV), hoy una de las Biblias inglesas más usadas entre los evangélicos. Este artículo sigue esa línea y describe lo que la ESV conservó, lo que devolvió a su forma anterior y cómo su propio texto ha seguido cambiando.
 

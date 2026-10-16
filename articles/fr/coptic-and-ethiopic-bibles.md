@@ -5,6 +5,7 @@ date: 2026-10-12
 order: 44
 nav_title: Bibles copte et guèze
 section: translation
+source: 2d93d8cce756
 ---
 Il est facile de raconter l'histoire de la Bible comme un récit qui va de Jérusalem à Rome, puis vers le nord, en Europe. Mais certaines des premières traductions de la Bible ont été faites en Afrique. En Égypte, des chrétiens ont traduit les Écritures en **copte** à partir du IIIe siècle. Dans le royaume d'Aksoum, dans l'actuelle Éthiopie et l'actuelle Érythrée, elles ont été traduites en **guèze**, probablement à partir du IVe ou du Ve siècle. Les deux traductions sont encore lues dans le culte aujourd'hui.
 

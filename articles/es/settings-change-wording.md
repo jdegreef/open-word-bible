@@ -4,6 +4,7 @@ summary: Lenguaje inclusivo o tradicional, Cristo o Mesías, él o Él, ustedes 
 date: 2026-10-10
 order: 4
 section: method
+source: 580d031480d0
 ---
 Los lectores de la Biblia no se ponen de acuerdo en algunas cosas que, en rigor, son cuestiones de redacción. ¿Hay que decir «toda la humanidad» o «los hombres» cuando el original se refiere a todos? ¿El título de Jesús debe ser «Cristo» o «Mesías»? ¿Los pronombres que se refieren a Dios deben llevar mayúscula? ¿Ustedes o vosotros? Open Word Bible deja que cada lector elija.
 

@@ -5,6 +5,7 @@ date: 2026-10-11
 order: 33
 section: history
 part: nt
+source: 70113394b152
 ---
 Chaque manuscrit conservé du Nouveau Testament a été copié par quelqu'un. Pendant les trois premiers siècles de l'Église, ce n'étaient pas des moines dans le scriptorium d'un monastère, et encore moins des imprimeurs. C'étaient des chrétiens, et parfois des professionnels rémunérés, qui copiaient des livres pour leurs Églises, pour des amis ou pour eux-mêmes, dans un monde où le christianisme était un mouvement restreint et parfois persécuté. Que savons-nous d'eux, et dans quelle mesure faisaient-ils bien leur travail ?
 

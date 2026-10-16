@@ -4,6 +4,7 @@ summary: Les deux premiers versets de la Bible contiennent deux choix serrés et
 date: 2026-10-11
 order: 16
 section: passage
+source: fe28aa9d788a
 ---
 La Bible s'ouvre sur sept mots hébreux :
 

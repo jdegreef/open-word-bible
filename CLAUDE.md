@@ -27,6 +27,10 @@ summarises the data model.
   named human reviewer approves them.
 - Don't use or redistribute MACULA's `ln` / `domain` fields (UBS MARBLE,
   used with permission, not openly licensed).
+- **Stamp article translations.** After writing or updating
+  `articles/<lang>/<slug>.md`, run `python3 scripts/check_translations.py
+  --stamp articles/<lang>/<slug>.md` so the report can tell when its English
+  changes later.
 
 `.claude/hooks/guard_edits.py` refuses edits that add Greek or Hebrew not
 found in the source data, or a status other than `ai_draft`; CI's

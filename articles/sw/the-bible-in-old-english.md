@@ -4,6 +4,7 @@ summary: Karne nyingi kabla ya Wycliffe, Waanglo-Saksoni walikuwa wakiigeuza Bib
 date: 2026-10-12
 order: 48
 section: translation
+source: 6c95bca19335
 ---
 Biblia ya kwanza kamili ya Kiingereza ilitengenezwa na wafuasi wa John Wycliffe katika karne ya kumi na nne. Lakini wazungumzaji wa Kiingereza walikuwa wakitia sehemu za Biblia katika lugha yao kwa karibu miaka mia saba kabla ya hapo, katika **Kiingereza cha Kale**.
 

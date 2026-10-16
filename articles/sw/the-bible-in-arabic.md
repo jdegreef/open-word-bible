@@ -4,6 +4,7 @@ summary: Wakristo na Wayahudi walikuwa wakitafsiri Biblia kwa Kiarabu ndani ya k
 date: 2026-10-12
 order: 47
 section: translation
+source: da551baa3acb
 ---
 Mitume waliposema siku ya Pentekoste, umati wa Yerusalemu ulikuwa na wageni kutoka nchi nyingi, nao wakasema:
 

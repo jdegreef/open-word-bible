@@ -4,6 +4,7 @@ summary: Des Bibles enluminées du Paris médiéval à la Bible de la Réforme d
 date: 2026-10-12
 order: 55
 section: translation
+source: e10960820a3f
 ---
 Le français est une langue de traduction biblique depuis environ huit cents ans. Il a produit des Bibles pour des rois et pour des réfugiés, pour des catholiques, pour des protestants et pour les deux ensemble. Aujourd'hui, la plupart des francophones vivent hors d'Europe, et la Bible française se lit à Kinshasa et à Abidjan autant qu'à Paris ou à Genève.
 

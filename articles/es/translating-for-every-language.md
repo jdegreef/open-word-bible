@@ -4,6 +4,7 @@ summary: Cómo el siglo XX convirtió la traducción de la Biblia en una empresa
 date: 2026-10-12
 order: 58
 section: translation
+source: f6ad6f3b1e4b
 ---
 En el mundo hay más de siete mil lenguas vivas. Algunas las hablan cientos de millones de personas; otras, unos pocos cientos. Durante la mayor parte de la historia, la traducción de la Biblia llegó solo a una pequeña parte de ellas. En el siglo XX eso cambió. La traducción se convirtió en un esfuerzo deliberado, organizado y cada vez más profesional por llegar a todas las lenguas, y en las últimas décadas ha pasado a ser, sobre todo, obra de los propios hablantes de esas lenguas.
 

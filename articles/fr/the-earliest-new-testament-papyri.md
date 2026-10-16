@@ -5,6 +5,7 @@ date: 2026-10-11
 order: 34
 section: history
 part: nt
+source: d81ede2d97be
 ---
 Les documents originaux du Nouveau Testament, les lettres que Paul a dictées et les Évangiles tels que leurs auteurs les ont achevés, ont disparu depuis longtemps. Les plus anciennes copies que nous avons sont écrites sur papyrus, presque toutes trouvées en Égypte, et la plupart sont des fragments. On les appelle les **papyrus du Nouveau Testament**, et on les numérote avec un P (souvent écrit en lettre gothique) suivi d'un nombre, dans l'ordre où ils ont été catalogués : P1, P2, et ainsi de suite. Plus de 140 ont été enregistrés par l'Institut de recherche textuelle sur le Nouveau Testament de Münster, qui tient la liste officielle.
 

@@ -4,6 +4,7 @@ summary: En el siglo XIX, las nuevas sociedades bíblicas y los misioneros prote
 date: 2026-10-12
 order: 57
 section: translation
+source: 3582bc9932c0
 ---
 Según un cálculo muy repetido, en 1800 la Biblia, entera o en parte, se había impreso en unas setenta lenguas, la mayoría europeas. En 1900 eran varios cientos. El cambio lo impulsaron dos novedades: sociedades que existían solo para imprimir y distribuir Biblias, y una oleada de misioneros protestantes que aprendieron lenguas que rara vez o nunca se habían escrito.
 

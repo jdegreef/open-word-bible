@@ -4,6 +4,7 @@ summary: Dans les soixante-quinze ans qui séparent la mort de Tyndale de la ver
 date: 2026-10-12
 order: 52
 section: translation
+source: 5814bbf5e674
 ---
 Quand William Tyndale fut exécuté en 1536, il n'existait aucune Bible anglaise que l'on pût lire légalement en Angleterre (voir [William Tyndale et le Nouveau Testament anglais](/articles/william-tyndale/)). Deux ans plus tard, chaque église paroissiale d'Angleterre était tenue d'en avoir une. À la fin du siècle, les lecteurs anglais pouvaient choisir entre plusieurs traductions, chacune avec son caractère, ses partisans et sa politique. Toutes ont nourri la version King James de 1611.
 

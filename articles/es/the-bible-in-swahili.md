@@ -4,6 +4,7 @@ summary: Cómo una lengua comercial de la costa, con una larga tradición escrit
 date: 2026-10-12
 order: 56
 section: translation
+source: 661304774af6
 ---
 El suajili es la lengua africana de la familia bantú con más hablantes. Es lengua nacional de Tanzania y de Kenia, se usa en Uganda, Ruanda, Burundi y el este del Congo, y la Unión Africana lo ha adoptado como una de sus lenguas de trabajo. Las estimaciones de cuántas personas lo hablan varían mucho, desde unos 100 millones hasta más de 200 millones, porque la mayoría de los hablantes lo aprenden como segunda lengua y los recuentos difieren en lo que incluyen.
 

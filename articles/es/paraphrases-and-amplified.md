@@ -4,6 +4,7 @@ summary: Qué hace que una Biblia sea una paráfrasis y no una traducción, y qu
 date: 2026-10-14
 order: 70
 section: compare
+source: f63189809815
 ---
 Junto a las traducciones de comité que se describen en otros artículos de esta serie, los lectores de habla inglesa tienen una estantería de versiones más libres: el Nuevo Testamento de J. B. Phillips, la Living Bible, *The Message*, *The Voice* y *The Passion Translation*. Está también la **Amplified Bible**, que va en la dirección contraria y no da menos palabras que el original, sino muchas más. Estas versiones han llegado a millones de lectores, muchos de los cuales encontraron en ellas la primera Biblia que podían leer con gusto. También han recibido críticas, a veces duras.
 

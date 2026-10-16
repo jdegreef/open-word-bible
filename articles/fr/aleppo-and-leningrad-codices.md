@@ -5,6 +5,7 @@ date: 2026-10-11
 order: 25
 section: history
 part: ot
+source: b521ec1952d6
 ---
 Si vous voulez savoir exactement ce que dit le texte hébreu de l'Ancien Testament, où regardez-vous ? Pas dans les manuscrits de la mer Morte, si précieux soient-ils : ce sont pour la plupart des fragments, et ils diffèrent entre eux. Les spécialistes et les traducteurs se tournent plutôt vers deux livres médiévaux, tous deux écrits par les scribes les plus soigneux de la tradition massorétique, et tous deux porteurs d'une histoire remarquable. Ce sont le **Codex d'Alep** et le **Codex de Leningrad**.
 

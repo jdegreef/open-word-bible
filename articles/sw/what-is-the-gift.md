@@ -4,6 +4,7 @@ summary: Katika Waefeso 2:8 Paulo anasema "hili si kutoka kwenu; ni zawadi ya Mu
 date: 2026-10-11
 order: 13
 section: passage
+source: 134dbe4ffb68
 ---
 Waefeso 2:8–9 ni mojawapo ya maelezo yaliyo wazi zaidi katika Agano Jipya kuhusu jinsi mtu anavyookolewa:
 

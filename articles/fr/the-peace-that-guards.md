@@ -5,6 +5,7 @@ date: 2026-10-10
 order: 8
 nav_title: La paix qui monte la garde
 section: passage
+source: 429473eabf1d
 ---
 Philippiens 4:6–7 est l'un des passages les plus aimés des lettres de Paul, et l'un des plus cités aux personnes angoissées. Lu de près, il dit plus que "ne vous inquiétez pas".
 

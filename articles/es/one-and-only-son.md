@@ -4,6 +4,7 @@ summary: Juan 1:14 y 1:18 usan una palabra que la Reina-Valera traduce «unigén
 date: 2026-10-10
 order: 6
 section: passage
+source: f7ccd10c2f20
 ---
 Quien creció con la Reina-Valera conoce Juan 1:14 y 3:16 con la palabra «unigénito». Open Word Bible, en sus niveles Equilibrada y Sencilla, dice «Hijo único». Las razones están en los registros de Juan 1:14 y 1:18.
 

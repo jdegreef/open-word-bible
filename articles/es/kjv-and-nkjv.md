@@ -4,6 +4,7 @@ summary: La New King James Version se propuso actualizar el lenguaje de la versi
 date: 2026-10-14
 order: 63
 section: compare
+source: 312c0747ee9d
 ---
 La mayoría de las Biblias inglesas modernas descienden, a cierta distancia, de la versión King James de 1611. La **New King James Version** (la «Nueva King James», NKJV) desciende de ella directamente. Se hizo para algo que ninguna de las revisiones anteriores había intentado: poner al día el inglés de la versión King James manteniendo el mismo texto griego de base, el **Textus Receptus** o Texto Recibido.
 

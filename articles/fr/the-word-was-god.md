@@ -5,6 +5,7 @@ date: 2026-10-10
 order: 5
 nav_title: Traduire Jean 1:1
 section: passage
+source: 0c821692ddd5
 ---
 L'Évangile de Jean s'ouvre sur l'une des phrases les plus discutées de la Bible :
 

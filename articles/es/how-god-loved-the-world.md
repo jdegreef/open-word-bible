@@ -4,6 +4,7 @@ summary: El versículo más conocido de la Biblia depende de una pequeña palabr
 date: 2026-10-11
 order: 11
 section: passage
+source: 88b21be3700d
 ---
 Muchos lectores saben Juan 3:16 de memoria, a menudo con las palabras «tanto amó Dios al mundo». La versión Equilibrada de Open Word Bible dice algo un poco distinto:
 

@@ -4,6 +4,7 @@ summary: Nyuma ya kila Biblia ya kisasa ya Kiingereza kuna mfadhili, kamati, tam
 date: 2026-10-14
 order: 62
 section: compare
+source: bf8beef2f37a
 ---
 King James Version ilitengenezwa na wataalamu karibu hamsini katika vikundi sita, wakifuata orodha ya kanuni kumi na tano (ona [King James Version](/articles/the-king-james-version/)). Tafsiri za kisasa zinatengenezwa kwa njia inayofanana sana, na kamati zinazofuata kanuni zilizoandikwa, lakini zikiwa na hatua nyingi zaidi, wakaguzi wengi zaidi, teknolojia zaidi na mchapishaji anayesubiri mwishoni.
 

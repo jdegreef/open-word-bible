@@ -4,6 +4,7 @@ summary: À la fin du quatorzième siècle, des savants inspirés par le théolo
 date: 2026-10-12
 order: 49
 section: translation
+source: 939114ed8acb
 ---
 La première Bible complète en anglais ne fut pas imprimée. Elle fut copiée à la main, en des centaines de manuscrits, dans les décennies autour de 1400. Elle ne fut pas traduite de l'hébreu et du grec, mais de la **Vulgate** latine, la Bible de l'Église d'Occident au Moyen Âge. Et elle porte le nom d'un homme qui n'en traduisit sans doute que peu de chose, ou rien du tout : le théologien d'Oxford **John Wyclif**.
 

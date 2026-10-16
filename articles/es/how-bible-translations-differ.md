@@ -4,6 +4,7 @@ summary: Dos traducciones cuidadosas y fieles del mismo versículo pueden decir 
 date: 2026-10-14
 order: 61
 section: compare
+source: e2c5ab9a6c0e
 ---
 Ponga dos Biblias inglesas una al lado de la otra y lea el mismo versículo en cada una. A menudo la redacción es parecida. A veces es bastante distinta, y de vez en cuando una Biblia tiene palabras, o un versículo entero, que a la otra le faltan. El lector puede concluir que una de las dos se equivoca, o que los traductores dicen lo que les parece.
 

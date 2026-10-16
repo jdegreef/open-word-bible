@@ -18,6 +18,12 @@ fast=false
 
 step() { printf '\n== %s\n' "$1"; }
 
+# A report, not a check: English articles run ahead of their translations.
+translations() {
+  step "Article translations (missing or out of date; report only)"
+  python3 scripts/check_translations.py
+}
+
 step "Lint"
 uvx ruff@0.16.9 check .
 
@@ -37,6 +43,7 @@ if $fast; then
   else
     step "No changed books: validation and extract checks skipped"
   fi
+  translations
   printf '\nFast checks passed. Run scripts/check.sh without --fast before pushing.\n'
   exit 0
 fi
@@ -57,5 +64,7 @@ python3 scripts/check_budgets.py site
 # The tests read the build above (OWB_BUILT_SITE) rather than building again.
 step "Unit tests"
 OWB_BUILT_SITE=site python3 -m unittest discover -s tests -t .
+
+translations
 
 printf '\nAll checks passed.\n'

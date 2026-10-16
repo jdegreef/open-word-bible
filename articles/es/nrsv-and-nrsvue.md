@@ -4,6 +4,7 @@ summary: Cómo la New Revised Standard Version de 1989 llevó la tradición de l
 date: 2026-10-14
 order: 66
 section: compare
+source: 8aa9e48c3ea4
 ---
 En una clase universitaria de Antiguo o Nuevo Testamento en el mundo anglófono, la Biblia abierta probablemente sea la **New Revised Standard Version**. Durante más de treinta años la NRSV ha sido la Biblia inglesa de referencia de los estudios bíblicos, de muchas iglesias protestantes históricas y de buena parte del trabajo ecuménico. En 2021 volvió a revisarse como la **NRSV Updated Edition** (NRSVue).
 

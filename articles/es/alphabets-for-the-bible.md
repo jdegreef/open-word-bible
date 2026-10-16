@@ -4,6 +4,7 @@ summary: Varios alfabetos del mundo se crearon para que la Biblia pudiera escrib
 date: 2026-10-12
 order: 45
 section: translation
+source: 7e4217cb6375
 ---
 La mayoría de las lenguas de la historia nunca se han escrito. Para traducir la Biblia a una de ellas, el traductor tiene que decidir primero cómo escribirla, y a veces eso significa inventar un alfabeto.
 

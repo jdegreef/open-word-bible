@@ -4,6 +4,7 @@ summary: "\"Frères\" doit-il inclure les sœurs ? \"L'homme\", est-ce tout le m
 date: 2026-10-14
 order: 77
 section: compare
+source: 28e8481b5341
 ---
 Peu de questions ont suscité autant de débats dans la traduction moderne de la Bible : quand l'hébreu ou le grec emploie un mot masculin pour les gens en général, que doit dire l'anglais ?
 

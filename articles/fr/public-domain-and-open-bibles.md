@@ -4,6 +4,7 @@ summary: La plupart des Bibles modernes sont protégées par le droit d'auteur, 
 date: 2026-10-14
 order: 80
 section: compare
+source: b612a80c7797
 ---
 La plupart des Bibles modernes sont protégées par le droit d'auteur, et les utiliser longuement oblige à demander une autorisation, et parfois à payer (voir [Pourquoi les traductions de la Bible sont protégées par le droit d'auteur](/articles/why-bible-translations-are-copyrighted/)). À côté d'elles, une famille plus petite de traductions peut être copiée, imprimée, enregistrée, mise dans des applications et adaptée sans rien demander à personne. Certaines sont libres parce qu'elles sont anciennes. D'autres ont été rendues libres à dessein.
 

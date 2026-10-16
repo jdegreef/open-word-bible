@@ -4,6 +4,7 @@ summary: Les quatre lettres hébraïques YHWH apparaissent des milliers de fois 
 date: 2026-10-14
 order: 76
 section: compare
+source: 1a5721e02bd2
 ---
 Le nom le plus fréquent de la Bible hébraïque est un nom propre : le nom personnel de Dieu, écrit avec quatre consonnes que l'on translittère d'ordinaire **YHWH**, y figure environ 6 800 fois selon le décompte habituel. Les spécialistes l'appellent le **Tétragramme**, du grec "quatre lettres". Toute traduction de l'Ancien Testament doit décider qu'en faire, et peu de décisions sont aussi visibles : selon la Bible, le même verset peut dire "the LORD", "Jehovah" ou "Yahweh".
 

@@ -5,6 +5,7 @@ date: 2026-10-12
 order: 41
 nav_title: Targumu
 section: translation
+source: 011db4460219
 ---
 Hebu fikiria sinagogi huko Galilaya katika karne ya tatu. Msomaji anasimama na kusoma mstari mmoja wa Torati kwa Kiebrania, kutoka hati-kunjo. Kando yake anasimama mtu wa pili, bila hati-kunjo, anayeurudia mstari huo kwa sauti kwa Kiaramu, lugha ya mtaani na ya sokoni. Kisha msomaji anasoma mstari unaofuata, na mtafsiri naye anautafsiri. Mstari kwa mstari, kusanyiko linayasikia maandiko mara mbili: mara moja katika lugha takatifu, mara moja katika lugha yao wenyewe.
 

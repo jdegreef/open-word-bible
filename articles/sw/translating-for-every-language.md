@@ -4,6 +4,7 @@ summary: Jinsi karne ya ishirini ilivyoifanya tafsiri ya Biblia kuwa kazi ya uli
 date: 2026-10-12
 order: 58
 section: translation
+source: f6ad6f3b1e4b
 ---
 Kuna zaidi ya lugha hai elfu saba ulimwenguni. Baadhi zinazungumzwa na mamia ya mamilioni ya watu, nyingine na watu mia chache. Kwa sehemu kubwa ya historia, tafsiri ya Biblia ilifikia sehemu ndogo tu ya lugha hizo. Katika karne ya ishirini hilo lilibadilika. Tafsiri ikawa juhudi ya makusudi, iliyopangwa na inayozidi kuwa ya kitaalamu ya kufikia kila lugha, na katika miongo ya karibuni imekuwa, zaidi ya yote, kazi ya wazungumzaji wa lugha hizo wenyewe.
 

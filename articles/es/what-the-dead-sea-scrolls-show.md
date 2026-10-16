@@ -5,6 +5,7 @@ date: 2026-10-11
 order: 28
 section: history
 part: ot
+source: a067bebd487f
 ---
 Cuando se anunciaron por primera vez los Rollos del Mar Muerto, mucha gente se hizo una pregunta: ¿mostrarían que la Biblia había sido alterada? La respuesta resultó ser más interesante que un simple sí o un simple no.
 

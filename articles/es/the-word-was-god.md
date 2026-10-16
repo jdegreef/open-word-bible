@@ -5,6 +5,7 @@ date: 2026-10-10
 order: 5
 nav_title: Cómo se traduce Juan 1:1
 section: passage
+source: 0c821692ddd5
 ---
 El Evangelio de Juan empieza con una de las frases más discutidas de la Biblia:
 

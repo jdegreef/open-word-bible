@@ -4,6 +4,7 @@ summary: Jinsi lugha ya biashara ya pwani, yenye mapokeo marefu ya maandishi, il
 date: 2026-10-12
 order: 56
 section: translation
+source: 661304774af6
 ---
 Kiswahili ndiyo lugha ya Kiafrika ya jamii ya Kibantu inayozungumzwa na watu wengi zaidi. Ni lugha ya taifa ya Tanzania na Kenya, inatumika kote Uganda, Rwanda, Burundi na mashariki mwa Kongo, na Umoja wa Afrika umekichagua kuwa mojawapo ya lugha zake za kazi. Makadirio ya idadi ya wanaokizungumza yanatofautiana sana, kutoka karibu milioni 100 hadi zaidi ya milioni 200, kwa sababu wazungumzaji wengi hujifunza kama lugha ya pili na hesabu zinatofautiana katika kile zinachojumuisha.
 

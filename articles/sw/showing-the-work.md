@@ -5,6 +5,7 @@ date: 2026-10-10
 order: 2
 nav_title: Rekodi ya sababu ni nini
 section: method
+source: 2dd446537468
 ---
 Fungua mstari wowote kwenye tovuti hii na paneli inafunguka kando yake. Unachokiona pale ni *rekodi ya sababu* ya mstari huo. Ndiyo kiini cha mradi, na inafaa kujua kilichomo ndani yake.
 

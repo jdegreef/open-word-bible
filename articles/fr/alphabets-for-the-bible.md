@@ -4,6 +4,7 @@ summary: Plusieurs alphabets du monde ont été créés pour que la Bible puisse
 date: 2026-10-12
 order: 45
 section: translation
+source: 7e4217cb6375
 ---
 La plupart des langues de l'histoire n'ont jamais été écrites. Pour traduire la Bible dans une telle langue, un traducteur doit d'abord décider comment l'écrire, et cela signifie parfois inventer un alphabet.
 

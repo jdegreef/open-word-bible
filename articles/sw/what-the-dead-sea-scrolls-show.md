@@ -5,6 +5,7 @@ date: 2026-10-11
 order: 28
 section: history
 part: ot
+source: a067bebd487f
 ---
 Hati-kunjo za Bahari ya Chumvi zilipotangazwa kwa mara ya kwanza, watu wengi waliuliza swali moja: je, zingeonyesha kwamba Biblia ilikuwa imebadilishwa? Jibu likaonekana kuwa la kuvutia zaidi kuliko "ndiyo" rahisi au "hapana" rahisi.
 

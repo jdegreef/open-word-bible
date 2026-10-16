@@ -5,6 +5,7 @@ date: 2026-10-10
 order: 7
 nav_title: Uamuzi usio na uhakika
 section: passage
+source: 67d13acd619a
 ---
 Kila tafsiri huficha maamuzi yake yaliyokuwa magumu. Kamati inapiga kura, usomaji wa wengi unaingia katika maandishi, na msomaji hajui kamwe kwamba kura zilikaribiana. Open Word Bible inayawekea maamuzi kama hayo alama ya *kutokuwa na uhakika*, inaeleza pande zote mbili, na inaonyesha alama hiyo katika msomaji. Hii hapa ni miwili.
 

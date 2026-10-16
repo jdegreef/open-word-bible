@@ -4,6 +4,7 @@ summary: La discusión más antigua de la traducción es si seguir las palabras 
 date: 2026-10-12
 order: 60
 section: translation
+source: 4076e700cb50
 ---
 Todo traductor se enfrenta a la misma elección muchas veces en cada página. ¿Debo seguir las palabras y la estructura del original tan de cerca como mi lengua lo permita, para que los lectores vean lo que el autor escribió realmente? ¿O debo decir lo que el autor quiso decir como lo diría un hablante nativo de mi lengua, para que los lectores entiendan sin esfuerzo?
 

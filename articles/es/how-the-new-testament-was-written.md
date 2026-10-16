@@ -5,6 +5,7 @@ date: 2026-10-11
 order: 31
 section: history
 part: nt
+source: 3f79bcd16944
 ---
 El Nuevo Testamento se escribió mucho más rápido que el Antiguo. Sus veintisiete libros se compusieron todos en unos setenta años desde la muerte de Jesús, y la mayoría probablemente en cuarenta o cincuenta. Se escribieron en griego, la lengua común del Oriente romano, por un pequeño número de autores, en su mayoría seguidores judíos de Jesús. Este artículo examina cómo se escribieron y cómo circularon al principio.
 

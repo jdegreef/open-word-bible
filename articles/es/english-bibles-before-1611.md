@@ -4,6 +4,7 @@ summary: En los setenta y cinco años que van de la muerte de Tyndale a la versi
 date: 2026-10-12
 order: 52
 section: translation
+source: 5814bbf5e674
 ---
 Cuando William Tyndale fue ejecutado en 1536, no había ninguna Biblia inglesa que pudiera leerse legalmente en Inglaterra (véase [William Tyndale y el Nuevo Testamento inglés](/articles/william-tyndale/)). Dos años después, todas las iglesias parroquiales de Inglaterra estaban obligadas a tener una. A finales de siglo, los lectores ingleses podían elegir entre varias traducciones, cada una con su propio carácter, sus propios partidarios y su propia política. Todas ellas desembocaron en la versión King James de 1611.
 

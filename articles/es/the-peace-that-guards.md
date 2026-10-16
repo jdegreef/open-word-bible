@@ -5,6 +5,7 @@ date: 2026-10-10
 order: 8
 nav_title: La paz que monta guardia
 section: passage
+source: 429473eabf1d
 ---
 Filipenses 4:6–7 es uno de los pasajes más queridos de las cartas de Pablo, y uno de los que más se citan a las personas angustiadas. Leído de cerca, dice más que «no te preocupes». Esta es la versión Equilibrada:
 

@@ -4,6 +4,7 @@ summary: No hay dos copias a mano del Nuevo Testamento exactamente iguales. Cóm
 date: 2026-10-11
 order: 15
 section: method
+source: c9674e4b1c98
 ---
 Antes de la imprenta, cada copia del Nuevo Testamento se hacía a mano. Se conservan miles de esas copias, y no hay dos exactamente iguales. La mayoría de las diferencias son pequeñas: una grafía, el orden de las palabras, un artículo añadido u omitido. Unas pocas son mayores. Los estudiosos llaman a estas diferencias *variantes*, y al trabajo de sopesarlas, *crítica textual*.
 

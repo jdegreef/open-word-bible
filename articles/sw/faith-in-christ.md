@@ -4,6 +4,7 @@ summary: Maneno mawili madogo ya Kigiriki katika Wagalatia yanaweza kusomwa kwa 
 date: 2026-10-11
 order: 12
 section: passage
+source: 2e6dcc9e8146
 ---
 Wagalatia 2:16 iko katika kiini cha hoja ya Paulo katika Wagalatia. Ina maneno ambayo yamewagawanya wasomaji makini kwa kizazi kizima: je, Paulo anasema juu ya imani yetu katika Kristo, au juu ya uaminifu wa Kristo mwenyewe? Makala hii inapitia mstari huo, sarufi yake, historia ya mjadala, na kile ambacho Open Word Bible ilichagua katika kila kiwango.
 

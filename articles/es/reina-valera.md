@@ -4,6 +4,7 @@ summary: La Biblia española más querida la tradujo un monje que huyó de la In
 date: 2026-10-12
 order: 54
 section: translation
+source: 68311788d9b1
 ---
 Durante más de cuatro siglos, la Biblia de la mayoría de los protestantes de habla hispana ha sido la **Reina-Valera**. Sus revisiones siguen estando entre las Biblias más leídas del mundo, de Madrid a Ciudad de México y a Buenos Aires. Empezó siendo la obra de un solo erudito refugiado, **Casiodoro de Reina**, que la tradujo a lo largo de muchos años mientras iba de ciudad en ciudad, y se imprimió lejos de España porque allí no podía imprimirse.
 

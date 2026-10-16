@@ -5,6 +5,7 @@ date: 2026-10-11
 order: 22
 section: history
 part: ot
+source: f431f8fc7b2c
 ---
 Kila Biblia inayochapishwa leo inawategemea watu ambao wasomaji wengi hawawafikirii kamwe: waandishi. Kwa zaidi ya miaka elfu mbili, njia pekee ya kupata nakala ya kitabu cha Biblia ilikuwa mtu kukiandika kwa mkono, herufi kwa herufi, kutoka nakala nyingine. Usahihi wa Biblia tunayoisoma unategemea, kwa kiasi kikubwa, jinsi watu hao walivyokuwa hodari katika kazi yao.
 

@@ -4,6 +4,7 @@ summary: Cómo una reunión de estudiosos evangélicos en Illinois en 1965 dio o
 date: 2026-10-14
 order: 67
 section: compare
+source: 233adc006214
 ---
 Durante varias décadas la **New International Version** (NIV) ha sido la Biblia inglesa moderna más leída. Según el recuento de sus editores, a comienzos de la década de 2010 se habían distribuido más de 450 millones de ejemplares, y ha sido la Biblia por defecto de una gran parte del mundo evangélico de habla inglesa: en los bancos de las iglesias, en las Biblias de estudio, en los grupos de jóvenes y en las aplicaciones bíblicas.
 

@@ -4,6 +4,7 @@ summary: Detrás de cada Biblia inglesa moderna hay un patrocinador, un comité,
 date: 2026-10-14
 order: 62
 section: compare
+source: bf8beef2f37a
 ---
 La versión King James la hicieron unos cincuenta estudiosos repartidos en seis grupos, que trabajaban según una lista de quince reglas (véase [La versión King James](/articles/the-king-james-version/)). Las traducciones modernas se hacen de un modo muy parecido, por comités que trabajan según principios escritos, pero con más etapas, más revisores, más tecnología y una editorial esperando al final.
 

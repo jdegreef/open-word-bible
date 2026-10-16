@@ -4,6 +4,7 @@ summary: Tout ce qui se trouve aujourd'hui sur ce site est traduit avec l'aide d
 date: 2026-10-10
 order: 10
 section: method
+source: c8b5c57ed02e
 ---
 Open Word Bible est traduite avec l'aide de l'IA. Nous le disons clairement, car un projet qui promet de montrer son travail ne peut pas rester vague sur qui a fait ce travail.
 

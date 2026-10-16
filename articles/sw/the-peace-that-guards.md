@@ -5,6 +5,7 @@ date: 2026-10-10
 order: 8
 nav_title: Amani inayolinda
 section: passage
+source: 429473eabf1d
 ---
 Wafilipi 4:6–7 ni mojawapo ya vifungu vinavyopendwa zaidi katika barua za Paulo, na mojawapo ya vinavyonukuliwa zaidi kwa watu wenye wasiwasi. Ukikisoma kwa makini, kinasema zaidi ya "usijali". Wafilipi bado haijatafsiriwa kwa Kiswahili, kwa hiyo manukuu ya kifungu hiki katika makala hii yanatoka katika tafsiri ya Kiingereza ya Open Word Bible. Hiki hapa ni kiwango cha Linganifu:
 

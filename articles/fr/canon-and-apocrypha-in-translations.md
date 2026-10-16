@@ -4,6 +4,7 @@ summary: Une Bible protestante compte 66 livres, une Bible catholique 73, et les
 date: 2026-10-14
 order: 73
 section: compare
+source: e6b078f738c1
 ---
 Prenez une Bible dans une librairie protestante et comptez ses livres : il y en aura 66. Une Bible catholique en a 73. Une Bible orthodoxe grecque en a plus encore, et la Bible de l'Église orthodoxe éthiopienne Tewahedo davantage encore. Le Nouveau Testament est le même dans toutes, à une exception près, examinée plus bas. Les différences portent sur l'Ancien Testament.
 

@@ -4,6 +4,7 @@ summary: Deux petits mots grecs de l'épître aux Galates peuvent se lire de deu
 date: 2026-10-11
 order: 12
 section: passage
+source: 2e6dcc9e8146
 ---
 Galates 2:16 est au cœur de l'argumentation de Paul dans l'épître aux Galates. Le verset contient une expression qui divise depuis une génération des lecteurs attentifs : Paul parle-t-il de notre foi en Christ, ou de la fidélité du Christ lui-même ? Cet article parcourt le verset, la grammaire, l'histoire du débat, et ce qu'Open Word Bible a choisi à chaque niveau.
 

@@ -5,6 +5,7 @@ date: 2026-10-12
 order: 42
 nav_title: Peshitta
 section: translation
+source: f7ed61e6c809
 ---
 Wakristo wengi wa Magharibi wanaijua habari ya Biblia kwa Kigiriki na Kilatini. Wachache wanajua kwamba mapokeo makuu ya tatu yalikua wakati huohuo, mashariki ya ulimwengu wa Kirumi, katika lugha iliyo karibu na ile aliyoizungumza Yesu. Lugha hiyo ni **Kisiria**, na Biblia yake, **Peshitta**, bado inasomwa katika makanisa kuanzia Mashariki ya Kati hadi kusini mwa India.
 

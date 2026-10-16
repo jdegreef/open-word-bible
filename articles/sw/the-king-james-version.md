@@ -4,6 +4,7 @@ summary: Jinsi mkutano wa Hampton Court mwaka 1604 ulivyozaa Biblia ya Kiingerez
 date: 2026-10-12
 order: 53
 section: translation
+source: a6443eb61b96
 ---
 Kwa karibu miaka mia tatu, Biblia ya Kiingereza kwa wazungumzaji wengi wa Kiingereza ilikuwa **King James Version**, iliyochapishwa mwaka 1611. Nchini Uingereza kwa kawaida inaitwa **Authorized Version** ("Toleo Lililoidhinishwa"). Misemo yake imefumwa ndani ya lugha ya Kiingereza, na makanisa na wasomaji wengi bado wanaitumia leo.
 

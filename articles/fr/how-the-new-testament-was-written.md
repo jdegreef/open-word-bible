@@ -5,6 +5,7 @@ date: 2026-10-11
 order: 31
 section: history
 part: nt
+source: 3f79bcd16944
 ---
 Le Nouveau Testament a été écrit bien plus vite que l'Ancien. Ses vingt-sept livres ont tous été composés dans les soixante-dix ans environ qui ont suivi la mort de Jésus, la plupart sans doute dans les quarante ou cinquante ans. Ils ont été écrits en grec, la langue commune de l'Orient romain, par un petit nombre d'auteurs, pour la plupart des disciples juifs de Jésus. Cet article examine comment ils ont été écrits et comment ils ont d'abord circulé.
 

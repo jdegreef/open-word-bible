@@ -5,6 +5,7 @@ date: 2026-10-12
 order: 44
 nav_title: Biblias copta y ge'ez
 section: translation
+source: 2d93d8cce756
 ---
 Es fácil contar la historia de la Biblia como un relato que va de Jerusalén a Roma y luego hacia el norte, a Europa. Pero algunas de las primeras traducciones de la Biblia se hicieron en África. En Egipto, los cristianos tradujeron las Escrituras al **copto** desde el siglo III. En el reino de Aksum, en lo que hoy son Etiopía y Eritrea, se tradujeron al **ge'ez**, probablemente a partir del siglo IV o V. Las dos traducciones se siguen leyendo hoy en el culto.
 

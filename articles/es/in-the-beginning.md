@@ -4,6 +4,7 @@ summary: Los dos primeros versículos de la Biblia contienen dos decisiones reñ
 date: 2026-10-11
 order: 16
 section: passage
+source: c0243d3b8851
 ---
 La Biblia empieza con siete palabras hebreas:
 

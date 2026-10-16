@@ -4,6 +4,7 @@ summary: Katika miaka sabini na mitano kati ya kifo cha Tyndale na King James Ve
 date: 2026-10-12
 order: 52
 section: translation
+source: 5814bbf5e674
 ---
 William Tyndale alipouawa mwaka 1536, hapakuwa na Biblia ya Kiingereza ambayo ingeweza kusomwa kihalali Uingereza (ona [William Tyndale na Agano Jipya la Kiingereza](/articles/william-tyndale/)). Miaka miwili baadaye, kila kanisa la parokia Uingereza lilitakiwa kuwa na moja. Kufikia mwisho wa karne hiyo wasomaji wa Kiingereza waliweza kuchagua kati ya tafsiri kadhaa, kila moja ikiwa na tabia yake, wafuasi wake na siasa zake. Zote ziliingia katika King James Version ya 1611.
 

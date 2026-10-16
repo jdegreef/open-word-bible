@@ -5,6 +5,7 @@ date: 2026-10-11
 order: 37
 section: history
 part: nt
+source: df07ae868ffd
 ---
 Toute traduction de la Bible commence par une décision que la plupart des lecteurs ne voient jamais : quel texte traduire. Comme la Bible a été copiée à la main pendant des siècles, il n'existe pas deux manuscrits d'une certaine longueur qui soient exactement identiques. Avant qu'un traducteur puisse se demander ce que veut dire une phrase, quelqu'un doit se demander ce que la phrase *dit*. La discipline qui répond à cette question s'appelle la **critique textuelle**.
 

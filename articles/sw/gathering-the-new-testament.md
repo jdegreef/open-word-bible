@@ -5,6 +5,7 @@ date: 2026-10-11
 order: 38
 section: history
 part: nt
+source: d942276f5685
 ---
 Kwa nini Agano Jipya lina vitabu hivi ishirini na saba, na si vingine? Hadithi inayopendwa na wengi inasema kwamba mfalme Konstantino, au Baraza la Nikea mwaka 325, ndiye aliyechagua vitabu na kuvikandamiza vingine. Hadithi hiyo, iliyofanywa maarufu na riwaya, si kweli: Baraza la Nikea halikujadili kanoni hata kidogo. **Kanoni** ni orodha ya vitabu vinavyokubaliwa kuwa Maandiko. Historia halisi ni ndefu zaidi, ilikwenda hatua kwa hatua zaidi, na kwa njia nyingi inavutia zaidi.
 

@@ -4,6 +4,7 @@ summary: Mstari unaojulikana zaidi katika Biblia unategemea neno moja dogo la Ki
 date: 2026-10-11
 order: 11
 section: passage
+source: e258b0e80ed9
 ---
 Wasomaji wengi wanaujua Yohana 3:16 kwa moyo, katika maneno yanayojulikana ya tafsiri zao za Biblia; kwa Kiingereza ni "For God so loved the world" (Kwa maana Mungu aliupenda ulimwengu hivi, au hivyo sana). Kiwango cha Linganifu cha Open Word Bible kinasoma hivi:
 

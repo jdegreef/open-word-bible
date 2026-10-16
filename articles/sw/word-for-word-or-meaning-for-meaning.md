@@ -4,6 +4,7 @@ summary: Mabishano ya zamani kabisa katika tafsiri ni kama ufuate maneno ya asil
 date: 2026-10-12
 order: 60
 section: translation
+source: 4076e700cb50
 ---
 Kila mtafsiri anakabiliwa na uchaguzi uleule mara nyingi katika kila ukurasa. Je, nifuate maneno na muundo wa asili kwa karibu kadiri lugha yangu inavyoruhusu, ili wasomaji waone kile ambacho mwandishi aliandika hasa? Au niseme kile ambacho mwandishi alimaanisha kwa namna ambayo mzungumzaji wa lugha yangu kama lugha ya kwanza angekisema, ili wasomaji waelewe bila shida?
 

@@ -4,6 +4,7 @@ summary: Jinsi mkutano wa wataalamu wa kiinjili huko Illinois mwaka 1965 ulivyoz
 date: 2026-10-14
 order: 67
 section: compare
+source: 233adc006214
 ---
 Kwa miongo kadhaa **New International Version** imekuwa Biblia ya kisasa ya Kiingereza inayosomwa zaidi. Kufikia mwanzoni mwa miaka ya 2010, kwa hesabu ya wachapishaji wake, nakala zaidi ya milioni 450 zilikuwa zimesambazwa, na imekuwa Biblia ya kawaida ya sehemu kubwa ya ulimwengu wa kiinjili unaozungumza Kiingereza: kwenye viti vya makanisa, katika Biblia za kujifunza, katika vikundi vya vijana na katika programu za Biblia.
 

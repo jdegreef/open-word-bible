@@ -4,6 +4,7 @@ summary: Cristianos y judíos traducían la Biblia al árabe menos de dos siglos
 date: 2026-10-12
 order: 47
 section: translation
+source: da551baa3acb
 ---
 Cuando los apóstoles hablaron en Pentecostés, entre la multitud de Jerusalén había visitantes de muchas tierras, y decían:
 

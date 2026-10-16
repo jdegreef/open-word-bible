@@ -4,6 +4,7 @@ summary: En la década de 860, dos hermanos de Tesalónica inventaron un alfabet
 date: 2026-10-12
 order: 46
 section: translation
+source: 56dc2fab6d01
 ---
 Cientos de millones de personas escriben ruso, ucraniano, búlgaro, serbio y otras lenguas con el alfabeto **cirílico**. Debe su nombre a un estudioso bizantino del siglo IX, **Constantino**, más conocido por el nombre monástico que tomó poco antes de morir: **Cirilo**. Y, sin embargo, es casi seguro que Cirilo no inventó el cirílico. Inventó otro alfabeto, el **glagolítico**, para que los eslavos pudieran oír la Biblia en su propia lengua.
 

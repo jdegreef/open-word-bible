@@ -4,6 +4,7 @@ summary: Katika miaka ya 860 ndugu wawili kutoka Thesalonike walibuni alfabeti k
 date: 2026-10-12
 order: 46
 section: translation
+source: 56dc2fab6d01
 ---
 Mamia ya mamilioni ya watu huandika Kirusi, Kiukreni, Kibulgaria, Kiserbia na lugha nyingine kwa alfabeti ya **Kisiriliki**. Imepewa jina la mtaalamu wa Bizanti wa karne ya tisa, **Konstantino**, anayejulikana zaidi kwa jina la kitawa alilolichukua muda mfupi kabla ya kifo chake: **Kirili**. Hata hivyo karibu ni hakika kwamba Kirili hakubuni Kisiriliki. Alibuni alfabeti tofauti, **Kiglagoliti**, ili Waslavi waweze kuisikia Biblia kwa lugha yao wenyewe.
 

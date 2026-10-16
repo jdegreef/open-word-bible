@@ -5,6 +5,7 @@ date: 2026-10-10
 order: 2
 nav_title: Qué es un registro de razonamiento
 section: method
+source: 2dd446537468
 ---
 Abre cualquier versículo en este sitio y se abrirá un panel a su lado. Lo que ves ahí es el *registro de razonamiento* del versículo. Es el corazón del proyecto, y vale la pena saber qué contiene.
 

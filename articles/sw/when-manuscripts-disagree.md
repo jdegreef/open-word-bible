@@ -4,6 +4,7 @@ summary: Hakuna nakala mbili za Agano Jipya zilizoandikwa kwa mkono zinazofanana
 date: 2026-10-11
 order: 15
 section: method
+source: f140a6abeed7
 ---
 Kabla ya uchapishaji, kila nakala ya Agano Jipya ilitengenezwa kwa mkono. Zaidi ya miswada elfu tano ya Kigiriki imedumu, kuanzia vipande vya mafunjo hadi Biblia kamili, na hakuna miwili inayofanana kabisa. Tofauti nyingi ni ndogo: tahajia, mpangilio wa maneno, kibainishi (kama "the" ya Kiingereza) kilichoongezwa au kuachwa. Chache ni kubwa zaidi. Wataalamu wanaziita tofauti hizi *tofauti za maandishi* (kwa Kiingereza *variants*), na kazi ya kuzipima *uhakiki wa maandishi*. Ona [Jinsi uhakiki wa maandishi unavyorejesha maneno ya asili](/articles/how-textual-criticism-works/) kwa njia yenyewe.
 

@@ -5,6 +5,7 @@ date: 2026-10-12
 order: 41
 nav_title: Los Targumim
 section: translation
+source: 011db4460219
 ---
 Imagina una sinagoga de Galilea en el siglo III. Un lector se pone de pie y lee en hebreo un versículo de la Torá, desde un rollo. A su lado hay un segundo hombre, sin rollo, que repite el versículo en voz alta en arameo, la lengua de la calle y del mercado. Luego el lector lee el versículo siguiente, y el traductor lo vierte a su vez. Versículo a versículo, la congregación oye la Escritura dos veces: una en la lengua santa y otra en la suya.
 

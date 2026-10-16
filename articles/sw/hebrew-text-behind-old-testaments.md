@@ -4,6 +4,7 @@ summary: Karibu kila Agano la Kale la kisasa limetafsiriwa kutoka maandishi ya K
 date: 2026-10-14
 order: 75
 section: compare
+source: 3f3ae1c5422d
 ---
 Agano la Kale katika karibu kila Biblia ya kisasa, ya Kiyahudi au ya Kikristo, limetafsiriwa kutoka maandishi yaleyale ya Kiebrania: **maandishi ya Kimasoreti**, umbo la Biblia ya Kiebrania lililohifadhiwa na wanakili Wayahudi na kuthibitishwa, pamoja na irabu, alama za kiimbo na maelezo, na wataalamu wanaojulikana kama Wamasoreti mwanzoni mwa Zama za Kati (ona [Wamasoreti: walinzi wa maandiko ya Kiebrania](/articles/the-masoretes/)). Makubaliano hayo ni ya ajabu, na yanamaanisha kwamba tafsiri za Agano la Kale zinatofautiana kidogo zaidi sana katika maandishi yao ya msingi kuliko zile za Agano Jipya (linganisha [Maandishi ya Kigiriki nyuma ya tafsiri za Agano Jipya](/articles/greek-texts-behind-new-testaments/)).
 

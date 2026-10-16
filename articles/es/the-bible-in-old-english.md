@@ -4,6 +4,7 @@ summary: Siglos antes de Wycliffe, los anglosajones ya ponían la Biblia en ingl
 date: 2026-10-12
 order: 48
 section: translation
+source: 6c95bca19335
 ---
 La primera Biblia inglesa completa la hicieron los seguidores de John Wycliffe en el siglo XIV. Pero los hablantes de inglés llevaban unos setecientos años poniendo partes de la Biblia en su lengua, en **inglés antiguo**.
 
