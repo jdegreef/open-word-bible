@@ -49,6 +49,16 @@
           "L": "Na ndugu yako akikutendea dhambi, nenda, umwonyeshe kosa lake kati yako na yeye peke yake.",
           "B": "Ndugu yako akikutendea dhambi, nenda ukamwonyeshe kosa lake mkiwa ninyi wawili peke yenu.",
           "R": "Ndugu yako katika familia ya Mungu akikutendea dhambi, nenda ukaongee naye peke yake. Mwonyeshe kosa alilofanya."
+        },
+        "vi": {
+          "L": "Và nếu {{gender:anh chị em|anh em}} con phạm tội cùng con, hãy đi, chỉ ra lỗi của người ấy, giữa con và người ấy mà thôi.",
+          "B": "Nếu {{gender:anh chị em|anh em}} con phạm tội với con, hãy đi gặp riêng người ấy và chỉ ra lỗi của người ấy, chỉ có hai người với nhau.",
+          "R": "Nếu một {{gender:anh chị em|anh em}} trong gia đình của Đức Chúa Trời làm điều sai trái với con, hãy đi gặp riêng người ấy. Hãy cho người ấy thấy điều mình đã làm sai."
+        },
+        "ko": {
+          "L": "그리고 만일 네 {{gender:형제자매|형제}}가 너에게 죄를 지으면, 가서 너와 그 사람 단둘이 있는 자리에서 그의 잘못을 드러내 보여라.",
+          "B": "네 {{gender:형제자매|형제}}가 너에게 죄를 짓거든, 가서 단둘이 만나 그 잘못을 깨우쳐 주어라.",
+          "R": "하나님의 가족인 {{gender:형제자매|형제}}가 너에게 잘못을 하면, 그 사람을 따로 만나서 이야기하여라. 그 사람이 무엇을 잘못했는지 알려 주어라."
         }
       },
       "decisions": [
@@ -231,6 +241,109 @@
           "reason": "\"Ndugu\" already means a brother or a sister (meaning decision m1), and the subject prefix a- and \"yeye\" do not mark sex, so the English spans \"brother or sister\" / \"brother\" and \"them\" / \"him\" have nothing to change in Swahili. The same through verse 35.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40018015007"
+          ],
+          "choice": "\"{{gender:anh chị em|anh em}}\"; \"người ấy\" for \"him\", with no gender span",
+          "alternatives": [
+            "\"anh em\" alone"
+          ],
+          "reason": "As in Matthew 5:22 and 7:3: a fellow disciple, man or woman, is \"anh chị em\" by default; the pronoun \"người ấy\" is already inclusive.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40018015005"
+          ],
+          "choice": "\"con\" for the singular \"you\" in 18:15-17",
+          "alternatives": [
+            "\"các con\""
+          ],
+          "reason": "The Greek addresses each disciple; as in Matthew 5:23-26, Jesus says \"con\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40018015007"
+          ],
+          "choice": "{{gender:형제자매|형제}} for adelphos, through Matthew 18:15-35; \"그 사람\", \"그\" with no gender span",
+          "alternatives": [
+            "\"형제\" alone"
+          ],
+          "reason": "The brother is a fellow disciple, man or woman (meaning decision); the settled Korean Matthew span gives \"형제자매\" by default. Both forms end in a vowel, so one particle fits both. Korean refers to the person without a gendered pronoun, so the English pronoun spans have nothing to change (style guide, section 7).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40018015001"
+          ],
+          "choice": "No deity_pronoun spans in Korean, through Matthew 18:15-35; Jesus speaks in 해라체, Peter speaks to him in 합쇼체",
+          "alternatives": [
+            "capitalised pronouns"
+          ],
+          "reason": "Korean has no capital letters, so the deity_pronoun setting has nothing to change (style guide, sections 4 and 7).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-3",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n40018015007"
+          ],
+          "choice": "\"하나님의 가족인\" (R)",
+          "alternatives": [
+            "no supplement"
+          ],
+          "reason": "Readable says who the brother is, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -275,6 +388,16 @@
           "L": "Akikusikiliza, umejipatia ndugu yako;",
           "B": "Akikusikiliza, umemrejesha ndugu yako.",
           "R": "Huenda akakusikiliza. Hapo utakuwa umemrejesha ndugu yako."
+        },
+        "vi": {
+          "L": "Nếu người ấy nghe con, con đã được lại {{gender:anh chị em|anh em}} mình;",
+          "B": "Nếu người ấy chịu nghe con, con đã giành lại được {{gender:anh chị em|anh em}} mình.",
+          "R": "Có thể người ấy sẽ nghe con. Như vậy con đã đem {{gender:anh chị em|anh em}} mình trở lại."
+        },
+        "ko": {
+          "L": "그가 네 말을 들으면, 너는 네 {{gender:형제자매|형제}}를 얻은 것이다.",
+          "B": "그 사람이 네 말을 들으면, 너는 네 {{gender:형제자매|형제}}를 되찾은 것이다.",
+          "R": "그 사람이 네 말을 들을 수도 있다. 그러면 너는 네 {{gender:형제자매|형제}}를 다시 얻은 것이다."
         }
       },
       "decisions": [
@@ -369,6 +492,47 @@
           "reason": "The verb is a trader's word for gain (meaning decision m1); Literal keeps that picture with \"kujipatia\", and Balanced and Readable say \"won back\", as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018015020"
+          ],
+          "choice": "\"được lại\" (L); \"giành lại được\" (B); \"đem ... trở lại\" (R)",
+          "alternatives": [
+            "\"được\" alone"
+          ],
+          "reason": "The verb means to gain; here it is winning a person back to God and to the community, so each level keeps the idea of \"back\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018015020"
+          ],
+          "choice": "\"얻다\" (L); \"되찾다\" (B); \"다시 얻다\" (R)",
+          "alternatives": [
+            "\"얻다\" at every level"
+          ],
+          "reason": "To gain the brother is to win him back to God and to the community (meaning decision); Balanced and Readable say \"back\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -427,6 +591,16 @@
           "L": "Lakini asiposikiliza, chukua pamoja nawe mtu mmoja au wawili zaidi, ili 'kwa kinywa cha mashahidi wawili au watatu kila neno lithibitishwe.'",
           "B": "Asipokusikiliza bado, rudi pamoja na mtu mmoja au wawili wengine, ili 'kila shtaka lithibitishwe kwa maneno ya mashahidi wawili au watatu.'",
           "R": "Akikataa bado kusikiliza, chukua mtu mmoja au wawili wengine pamoja nawe. Maandiko yanasema, 'Kila shtaka lazima lithibitishwe na mashahidi wawili au watatu.'"
+        },
+        "vi": {
+          "L": "Nhưng nếu người ấy không nghe, hãy đem thêm một hay hai người cùng đi với con, để 'mọi lời được xác lập bởi miệng hai hay ba nhân chứng.'",
+          "B": "Nếu người ấy vẫn không chịu nghe, hãy đem thêm một hai người khác cùng đi với con, để 'mọi lời buộc tội được xác định dựa trên lời của hai hoặc ba nhân chứng.'",
+          "R": "Nếu người ấy vẫn không chịu nghe, hãy đem thêm một hai người nữa cùng đi với con. Kinh Thánh có nói: 'Mọi lời buộc tội phải được hai hoặc ba nhân chứng xác nhận.'"
+        },
+        "ko": {
+          "L": "그러나 만일 그가 듣지 않으면, 한두 사람을 더 너와 함께 데리고 가거라. '두세 증인의 입으로 모든 말이 확정되게' 하려는 것이다.",
+          "B": "그래도 듣지 않으면, 한두 사람을 더 데리고 가거라. '모든 일은 두세 증인의 말로 확정되어야 한다'는 말씀대로 하려는 것이다.",
+          "R": "그래도 그 사람이 듣지 않으면, 다른 사람 한두 명을 함께 데리고 가거라. 성경에 '모든 일은 두세 증인의 말로 증명되어야 한다' 하고 쓰여 있다."
         }
       },
       "decisions": [
@@ -527,6 +701,61 @@
           "reason": "As in 18:15.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018016012",
+            "n40018016013",
+            "n40018016014",
+            "n40018016015",
+            "n40018016016",
+            "n40018016017",
+            "n40018016018",
+            "n40018016019",
+            "n40018016020",
+            "n40018016021"
+          ],
+          "choice": "\"xác lập\" (L); \"được xác định\" (B); \"được ... xác nhận\" (R); \"nhân chứng\"",
+          "alternatives": [
+            "\"được lập vững\""
+          ],
+          "reason": "Deuteronomy 19:15 in plain modern words; \"nhân chứng\" is the style guide's word for witness.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018016014",
+            "n40018016015",
+            "n40018016016",
+            "n40018016020",
+            "n40018016021"
+          ],
+          "choice": "\"두세 증인의 입으로\" (L); \"두세 증인의 말로\" (B, R); \"모든 말\" (L), \"모든 일\" (B, R)",
+          "alternatives": [
+            "\"모든 말\" at every level"
+          ],
+          "reason": "The words of Deuteronomy 19:15 (meaning decision): \"every word\" is every matter or charge, and Balanced and Readable say so; Readable says that it is Scripture, as the English Readable does. \"증인\" is the word of the style guide (section 6).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -585,6 +814,16 @@
           "L": "Na asipowasikiliza wao, liambie kanisa; na asipolisikiliza hata kanisa, na awe kwako kama mtu wa mataifa na mtoza ushuru.",
           "B": "Asipowasikiliza hao pia, lipeleke jambo hilo mbele ya kanisa. Na asipolisikiliza kanisa nalo, umhesabu kuwa mtu wa nje, kama mtu wa mataifa au mtoza ushuru.",
           "R": "Asipowasikiliza, waambie watu wote wa kanisa. Na asipolisikiliza hata kanisa, mtendee kama mtu asiyemjua Mungu, au kama mtoza ushuru."
+        },
+        "vi": {
+          "L": "Nếu người ấy không chịu nghe họ, hãy nói với Hội Thánh; và nếu người ấy cũng không chịu nghe Hội Thánh, hãy coi người ấy như người ngoại và người thu thuế đối với con.",
+          "B": "Nếu người ấy không chịu nghe họ, hãy trình việc ấy với Hội Thánh. Và nếu người ấy cũng không chịu nghe Hội Thánh, hãy coi người ấy như người ngoài, như một người ngoại hay một người thu thuế.",
+          "R": "Nếu người ấy vẫn không chịu nghe họ, hãy nói cho cả Hội Thánh biết. Nếu người ấy cũng không chịu nghe Hội Thánh, hãy đối xử với người ấy như với một người không biết Đức Chúa Trời, hoặc như với một người thu thuế."
+        },
+        "ko": {
+          "L": "그리고 만일 그가 그들의 말을 듣지 않으면, 교회에 말하여라. 그리고 만일 교회의 말도 듣지 않으면, 그가 너에게 이방인과 세리처럼 되게 하여라.",
+          "B": "그 사람이 그들의 말도 듣지 않으면, 교회에 알려라. 교회의 말까지 듣지 않으면, 그 사람을 이방 사람이나 세리처럼 공동체 밖의 사람으로 여겨라.",
+          "R": "그래도 듣지 않으면, 교회 전체에 알려라. 교회의 말까지 듣지 않으면, 그 사람을 하나님을 모르는 사람이나 세리처럼 대하여라."
         }
       },
       "decisions": [
@@ -810,6 +1049,95 @@
           "reason": "The term used across the New Testament drafts for one outside Israel (meaning decision m3). The singular \"Mmataifa\" exists but is rare; Readable says what it meant, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018017007",
+            "n40018017012"
+          ],
+          "choice": "\"Hội Thánh\", capitalised, as in Matthew 16:18",
+          "alternatives": [
+            "\"hội chúng\"",
+            "\"cộng đồng\""
+          ],
+          "reason": "The word the Vietnamese Matthew and the letters use for the gathered community of Jesus's disciples.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018017018"
+          ],
+          "choice": "\"người ngoại\" (L, B); \"người không biết Đức Chúa Trời\" (R) for the Gentile",
+          "alternatives": [
+            "\"dân ngoại\""
+          ],
+          "reason": "A single person is meant, so \"người ngoại\" rather than the collective \"dân ngoại\" of 5:47; Readable follows the sense, as in 6:7.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018017007",
+            "n40018017012"
+          ],
+          "choice": "\"교회\" at every level",
+          "alternatives": [
+            "\"공동체\"",
+            "\"모임\""
+          ],
+          "reason": "The church is the gathered community of Jesus's disciples (meaning decision); \"교회\" is the word every Korean reader knows for it, and Balanced adds \"공동체 밖의 사람\" for the outsider, as the English Balanced does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018017018",
+            "n40018017021"
+          ],
+          "choice": "\"이방인\" (L); \"이방 사람\" (B); \"하나님을 모르는 사람\" (R); \"세리\" at every level",
+          "alternatives": [
+            "\"이방인\" at every level"
+          ],
+          "reason": "The settled Korean Matthew forms for the Gentile; \"세리\" as in the Korean Matthew 5:46 and 11:19.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -871,6 +1199,16 @@
           "L": "Kweli nawaambia, chochote mtakachofunga duniani kitakuwa kimefungwa mbinguni, na chochote mtakachofungua duniani kitakuwa kimefunguliwa mbinguni.",
           "B": "Kweli nawaambia, mtakachofunga duniani kitafungwa mbinguni, na mtakachofungua duniani kitafunguliwa mbinguni.",
           "R": "Nawaambia ukweli, chochote mtakachokataza duniani kitakatazwa mbinguni. Na chochote mtakachoruhusu duniani kitaruhusiwa mbinguni."
+        },
+        "vi": {
+          "L": "Thật vậy, {{deity_pronoun:ta|Ta}} nói với các con, những gì các con buộc ở dưới đất sẽ là điều đã bị buộc ở trên trời, và những gì các con mở ở dưới đất sẽ là điều đã được mở ở trên trời.",
+          "B": "Thật vậy, {{deity_pronoun:ta|Ta}} nói với các con, điều gì các con buộc ở dưới đất cũng sẽ bị buộc ở trên trời, và điều gì các con mở ở dưới đất cũng sẽ được mở ở trên trời.",
+          "R": "Ta nói thật với các con, điều gì các con cấm ở dưới đất thì trên trời cũng sẽ cấm. Và điều gì các con cho phép ở dưới đất thì trên trời cũng sẽ cho phép."
+        },
+        "ko": {
+          "L": "진실로 너희에게 말한다. 너희가 땅에서 무엇이든지 매면 하늘에서 매여 있을 것이고, 너희가 땅에서 무엇이든지 풀면 하늘에서 풀려 있을 것이다.",
+          "B": "진실로 너희에게 말한다. 너희가 땅에서 매는 것은 하늘에서도 매일 것이고, 너희가 땅에서 푸는 것은 하늘에서도 풀릴 것이다.",
+          "R": "내가 분명히 말한다. 너희가 땅에서 금지하는 것은 하늘에서도 금지될 것이다. 그리고 너희가 땅에서 허락하는 것은 하늘에서도 허락될 것이다."
         }
       },
       "decisions": [
@@ -1033,6 +1371,54 @@
           "reason": "The New Testament rendering of the single amen, as at 16:28, matching John's \"Kweli kweli nawaambia\" for the double form.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018018006",
+            "n40018018017"
+          ],
+          "choice": "\"buộc\" and \"mở\" (L, B); \"cấm\" and \"cho phép\" (R)",
+          "alternatives": [
+            "\"trói\" and \"cởi\""
+          ],
+          "reason": "Literal and Balanced keep the picture of binding and loosing; Readable gives what it means, as the English Readable does. \"các con\" is plural: the disciples together.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018018006",
+            "n40018018010",
+            "n40018018011",
+            "n40018018017",
+            "n40018018021",
+            "n40018018022"
+          ],
+          "choice": "\"매다\", \"풀다\" (L, B); \"금지하다\", \"허락하다\" (R); \"매여 있을 것이다\" (L), \"매일 것이다\" (B)",
+          "alternatives": [
+            "\"금하다\", \"허하다\""
+          ],
+          "reason": "Binding and loosing is deciding what is forbidden and what is allowed (meaning decision, footnoted); Literal and Balanced keep the picture, Readable says what it means, as the English does. Literal keeps the Greek's completed state (\"will have been bound\") with \"-여 있을 것이다\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1098,6 +1484,16 @@
           "L": "Tena, kweli nawaambia kwamba ikiwa wawili kati yenu watakubaliana duniani juu ya jambo lolote watakaloomba, watafanyiwa na Baba {{deity_pronoun:yangu|Yangu}} aliye mbinguni.",
           "B": "Tena, kweli nawaambia, ikiwa wawili kati yenu hapa duniani watapatana juu ya jambo lolote watakaloliomba, Baba {{deity_pronoun:yangu|Yangu}} aliye mbinguni atawafanyia.",
           "R": "Tena nawaambia ukweli. Tuseme wawili kati yenu hapa duniani wanakubaliana juu ya jambo fulani, nao wanamwomba Mungu. Basi Baba {{deity_pronoun:yangu|Yangu}} aliye mbinguni atawafanyia jambo hilo."
+        },
+        "vi": {
+          "L": "Lại nữa, thật vậy, {{deity_pronoun:ta|Ta}} nói với các con rằng nếu hai người trong các con ở dưới đất đồng lòng về bất cứ việc gì mà họ cầu xin, thì việc ấy sẽ được Cha {{deity_pronoun:ta|Ta}}, Đấng ở trên các tầng trời, làm cho họ.",
+          "B": "Thật vậy, {{deity_pronoun:ta|Ta}} cũng nói với các con: nếu ở dưới đất này có hai người trong các con đồng lòng cầu xin bất cứ điều gì, thì Cha {{deity_pronoun:ta|Ta}} ở trên trời sẽ làm điều ấy cho họ.",
+          "R": "Ta lại nói thật với các con: giả sử có hai người trong các con ở dưới đất này đồng ý với nhau về một điều và cùng cầu xin Đức Chúa Trời điều ấy. Thì Cha {{deity_pronoun:ta|Ta}} ở trên trời sẽ làm điều ấy cho họ."
+        },
+        "ko": {
+          "L": "다시 진실로 너희에게 말한다. 너희 가운데 두 사람이 땅에서 무슨 일이든지 구하는 것에 대하여 마음을 같이하면, 하늘들에 계신 내 아버지께로부터 그들에게 이루어질 것이다.",
+          "B": "내가 다시 진실로 너희에게 말한다. 너희 가운데 두 사람이 이 땅에서 한마음이 되어 무엇이든 구하면, 하늘에 계신 내 아버지께서 그들에게 그대로 이루어 주실 것이다.",
+          "R": "내가 다시 분명히 말한다. 너희 가운데 두 사람이 이 땅에서 마음을 모아 하나님께 무엇을 구한다고 하자. 그러면 하늘에 계신 내 아버지께서 그 일을 이루어 주실 것이다."
         }
       },
       "decisions": [
@@ -1192,6 +1588,70 @@
           "reason": "As in John and the rest of Matthew: Swahili marks most pronouns inside the verb, and a prefix cannot take a capital, so the deity_pronoun setting applies only to free pronouns and possessives such as \"yangu\" and \"langu\". Swahili has fewer spans than English through the passage.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018019001",
+            "n40018019002",
+            "n40018019003",
+            "n40018019004",
+            "n40018019005"
+          ],
+          "choice": "\"Thật vậy, Ta cũng nói với các con\" (B) for \"Again, truly I tell you\"",
+          "alternatives": [
+            "\"Lại nữa, thật vậy, Ta nói với các con\""
+          ],
+          "reason": "Balanced keeps the Gospels' amen formula (\"Thật vậy, Ta nói với...\") and folds \"again\" into it as \"cũng\", so that it does not open with a stack of connectives.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018019008"
+          ],
+          "choice": "\"đồng lòng\" (L, B); \"đồng ý với nhau\" (R)",
+          "alternatives": [
+            "\"hiệp ý\""
+          ],
+          "reason": "To agree is to be of one mind; \"đồng lòng\" says it in common words.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018019008"
+          ],
+          "choice": "\"마음을 같이하다\" (L); \"한마음이 되다\" (B); \"마음을 모으다\" (R)",
+          "alternatives": [
+            "\"합의하다\""
+          ],
+          "reason": "To agree here is to be of one mind (meaning decision), not to sign an agreement; Korean says it with \"마음\" at every level.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1245,6 +1705,16 @@
           "L": "Kwa maana walipo wawili au watatu waliokusanyika katika jina {{deity_pronoun:langu|Langu}}, hapo nipo katikati yao.\"",
           "B": "Kwa kuwa popote wanapokutana wawili au watatu kwa jina {{deity_pronoun:langu|Langu}}, nipo hapo pamoja nao.\"",
           "R": "Watu wawili au watatu wanapokutana kwa sababu wananifuata, nipo pamoja nao.\""
+        },
+        "vi": {
+          "L": "Vì nơi nào có hai hoặc ba người họp lại nhân danh {{deity_pronoun:ta|Ta}}, thì {{deity_pronoun:ta|Ta}} ở đó, giữa họ.\"",
+          "B": "Vì nơi nào có hai ba người nhóm lại nhân danh {{deity_pronoun:ta|Ta}}, thì {{deity_pronoun:ta|Ta}} ở đó với họ.\"",
+          "R": "Khi hai hoặc ba người họp lại với nhau vì họ theo {{deity_pronoun:ta|Ta}}, thì {{deity_pronoun:ta|Ta}} ở đó với họ.\""
+        },
+        "ko": {
+          "L": "두세 사람이 내 이름으로 모여 있는 곳, 거기에 내가 그들 가운데 있기 때문이다.\"",
+          "B": "두세 사람이 내 이름으로 모이는 곳에는 언제나 내가 그들 가운데 있다.\"",
+          "R": "두세 사람이 나를 따르는 사람으로서 함께 모이면, 나도 거기에 그들과 함께 있다.\""
         }
       },
       "decisions": [
@@ -1346,6 +1816,50 @@
           "reason": "Peter's question in 18:21 breaks into the speech, so the quotation closes here and reopens at 18:22.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018020008",
+            "n40018020009",
+            "n40018020010",
+            "n40018020011"
+          ],
+          "choice": "\"vì họ theo Ta\" (R) for \"in my name\"",
+          "alternatives": [
+            "\"nhân danh Ta\""
+          ],
+          "reason": "Readable says what meeting in his name means, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018020008",
+            "n40018020009",
+            "n40018020010",
+            "n40018020011"
+          ],
+          "choice": "\"내 이름으로\" (L, B); \"나를 따르는 사람으로서\" (R)",
+          "alternatives": [
+            "\"내 이름으로\" at every level"
+          ],
+          "reason": "Gathered in my name is meeting as those who belong to him (meaning decision); Readable says so, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1400,6 +1914,16 @@
           "L": "Kisha Petro akamwendea, akasema, \"Bwana, ndugu yangu atanitendea dhambi mara ngapi, nami nimsamehe?",
           "B": "Kisha Petro alimjia Yesu, akamwuliza, \"Bwana, ndugu yangu akiendelea kunitendea dhambi, nimsamehe mara ngapi?",
           "R": "Kisha Petro alimwendea Yesu, akamwuliza, \"Bwana, tuseme ndugu yangu katika familia ya Mungu ananitendea dhambi tena na tena. Nimsamehe mara ngapi?"
+        },
+        "vi": {
+          "L": "Bấy giờ Phi-e-rơ đến gần {{deity_pronoun:ngài|Ngài}} và nói: \"Lạy Chúa, {{gender:anh chị em|anh em}} con phạm tội cùng con bao nhiêu lần thì con phải tha thứ cho người ấy?",
+          "B": "Bấy giờ Phi-e-rơ đến hỏi Đức Giê-xu: \"Lạy Chúa, nếu {{gender:anh chị em|anh em}} cứ phạm lỗi với con, thì con phải tha thứ bao nhiêu lần?",
+          "R": "Rồi Phi-e-rơ đến hỏi Đức Giê-xu: \"Lạy Chúa, giả sử có một {{gender:anh chị em|anh em}} trong gia đình của Đức Chúa Trời cứ làm điều sai trái với con hết lần này đến lần khác. Con phải tha thứ cho người ấy bao nhiêu lần?"
+        },
+        "ko": {
+          "L": "그때에 베드로가 그분께 나아와 말했다. \"주님, 제 {{gender:형제자매|형제}}가 저에게 죄를 지으면, 제가 몇 번이나 용서해 주어야 합니까?",
+          "B": "그때에 베드로가 예수께 와서 여쭈었다. \"주님, {{gender:형제자매|형제}}가 저에게 거듭 죄를 지으면, 몇 번이나 용서해 주어야 합니까?",
+          "R": "그때 베드로가 예수께 와서 여쭈었다. \"주님, 하나님의 가족인 {{gender:형제자매|형제}}가 저에게 자꾸 잘못을 한다면, 제가 그 사람을 몇 번이나 용서해 주어야 합니까?"
         }
       },
       "decisions": [
@@ -1565,6 +2089,71 @@
           "reason": "The Greek joins two futures with \"and\". French inversion would put the gender span inside \"péchera-t-il\", which cannot read naturally as \"il ou elle\", so Literal turns the first verb into a condition and keeps the question on forgiving.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40018021007"
+          ],
+          "choice": "\"Lạy Chúa\" and \"con\" in Peter's words, with no deity_pronoun span",
+          "alternatives": [
+            "\"Thưa Thầy\""
+          ],
+          "reason": "As settled for Matthew (8:21, 14:28): disciples who call Jesus Lord say \"Lạy Chúa\" and \"con\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018021016"
+          ],
+          "choice": "\"tha thứ\" for forgive, through 18:35",
+          "alternatives": [
+            "\"tha\" alone"
+          ],
+          "reason": "One verb for Peter's question, the king's release of the debt (18:27, 18:32) and the warning of 18:35, so the link is kept.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40018021006",
+            "n40018021007",
+            "n40018021013"
+          ],
+          "choice": "\"주님\" for kyrie; Peter speaks in 합쇼체 and says \"저\", \"제\" of himself",
+          "alternatives": [
+            "\"선생님\""
+          ],
+          "reason": "The settled address of the Korean Matthew; people speaking to Jesus about themselves use the humble forms.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1604,6 +2193,16 @@
           "L": "Hata mara saba?\"",
           "B": "Je, hata mara saba?\"",
           "R": "Je, nimsamehe mara saba?\""
+        },
+        "vi": {
+          "L": "Cho đến bảy lần chăng?\"",
+          "B": "Đến bảy lần không?\"",
+          "R": "Con phải tha thứ đến bảy lần sao?\""
+        },
+        "ko": {
+          "L": "일곱 번까지입니까?\"",
+          "B": "일곱 번까지 하면 됩니까?\"",
+          "R": "일곱 번 용서하면 됩니까?\""
         }
       },
       "decisions": [
@@ -1693,6 +2292,16 @@
           "L": "Yesu anamwambia, \"Sikuambii hata mara saba, bali hata mara sabini na saba.",
           "B": "Yesu alimjibu, \"Si hadi mara saba tu, bali hadi mara sabini na saba.",
           "R": "Yesu akajibu, \"Nakuambia, si mara saba tu. Unapaswa kusamehe mara sabini na saba."
+        },
+        "vi": {
+          "L": "Đức Giê-xu nói với ông: \"Ta không bảo con đến bảy lần, nhưng đến bảy mươi bảy lần.",
+          "B": "Đức Giê-xu đáp: \"Không phải chỉ đến bảy lần, mà đến bảy mươi bảy lần.",
+          "R": "Đức Giê-xu trả lời: \"Ta bảo con, không phải chỉ bảy lần thôi đâu. Con phải tha thứ đến bảy mươi bảy lần."
+        },
+        "ko": {
+          "L": "예수께서 그에게 말씀하신다. \"나는 너에게 일곱 번까지라고 말하지 않는다. 일흔일곱 번까지라고 [말한다].",
+          "B": "예수께서 그에게 말씀하셨다. \"일곱 번까지만이 아니다. 일흔일곱 번까지라도 용서해야 한다.",
+          "R": "예수께서 대답하셨다. \"내가 너에게 말한다. 일곱 번만이 아니다. 너는 일흔일곱 번이라도 용서해야 한다."
         }
       },
       "decisions": [
@@ -1829,6 +2438,88 @@
           "reason": "Matthew tells parts of the story in the present (English decision r-en-1). Literal keeps it, as the English Literal does; Balanced and Readable use the narrative past, with -li- for the first verb and -ka- for those that follow. The same in verse 32.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018022001"
+          ],
+          "choice": "\"nói\" with no \"đã\" (L) for the historic present \"says\"",
+          "alternatives": [
+            "\"đã nói\""
+          ],
+          "reason": "As the style guide asks and as elsewhere in Matthew (8:4, 9:6), Literal keeps the present by leaving out \"đã\"; also 18:32.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018022012",
+            "n40018022013"
+          ],
+          "choice": "\"bảy mươi bảy lần\" at every level",
+          "alternatives": [
+            "\"bảy mươi lần bảy\""
+          ],
+          "reason": "The meaning decision reads seventy-seven, echoing Genesis 4:24; the familiar \"bảy mươi lần bảy\" is the footnoted alternative.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018022012",
+            "n40018022013"
+          ],
+          "choice": "\"일흔일곱 번\"; present \"말씀하신다\" (L)",
+          "alternatives": [
+            "\"일곱 번씩 일흔 번\""
+          ],
+          "reason": "The English reads seventy-seven, with the other reading in the meaning decision's footnote; Korean follows it. Literal keeps Matthew's present tense of narration.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n40018022005"
+          ],
+          "choice": "[말한다]",
+          "alternatives": [
+            "no supplement"
+          ],
+          "reason": "The Greek leaves \"I say\" to be understood in the second half; Korean needs the verb, and Literal brackets it. The quotation stays open to the end of 18:35.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1883,6 +2574,16 @@
           "L": "Kwa sababu hiyo, ufalme wa mbinguni umefananishwa na mtu mmoja, mfalme, aliyetaka kufanya hesabu na watumwa wake.",
           "B": "Ndiyo maana ufalme wa mbinguni ni kama mfalme mmoja aliyeamua kukagua hesabu za watumishi wake.",
           "R": "Basi ufalme wa mbinguni uko hivi. Palikuwa na mfalme mmoja aliyeamua kwamba watumishi wake walipe madeni waliyokuwa nayo kwake."
+        },
+        "vi": {
+          "L": "Vì thế, vương quốc thiên đàng được ví như một người kia, là một vị vua, muốn tính sổ với các nô lệ của mình.",
+          "B": "Vì vậy, vương quốc thiên đàng giống như chuyện một vị vua kia muốn tính sổ với các đầy tớ của mình.",
+          "R": "Vì thế, vương quốc thiên đàng giống như chuyện sau đây. Có một vị vua muốn các đầy tớ của mình trả lại những gì họ nợ ông."
+        },
+        "ko": {
+          "L": "이 때문에 천국은 자기 종들과 셈을 정리하려고 한 어떤 사람, 곧 왕에게 비유되었다.",
+          "B": "그러므로 천국은 이런 왕과 같다. 그 왕은 자기 종들과 빚을 정산하기로 했다.",
+          "R": "그래서 천국은 이런 이야기와 같다. 어떤 왕이 자기 종들에게 빌려준 돈을 갚게 하기로 했다."
         }
       },
       "decisions": [
@@ -2104,6 +2805,88 @@
           "reason": "As the term sheet and the English: Literal says what the men were, royal slaves (meaning decision m2); Balanced and Readable say \"watumishi\", since they served the king and could hold high office. Verse 25, where the man is to be sold, says \"mtumwa\" at Readable. The same through verse 34.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018023016"
+          ],
+          "choice": "\"nô lệ\" (L); \"đầy tớ\" (B, R) through the parable",
+          "alternatives": [
+            "\"tôi tớ\""
+          ],
+          "reason": "As settled in Matthew 10:24 and 13:27; the master and the king are \"ông\" and \"vua\", with no deity_pronoun span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n40018023003"
+          ],
+          "choice": "\"giống như chuyện\" (B, R)",
+          "alternatives": [
+            "\"giống như một vị vua\""
+          ],
+          "reason": "As in Matthew 13:24: the kingdom is like the whole story, not like the king.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018023016"
+          ],
+          "choice": "\"종\" for doulos at every level, through the parable; the king takes no honorific",
+          "alternatives": [
+            "\"노예\"",
+            "\"신하\""
+          ],
+          "reason": "\"종\" is the style guide's word for doulos (section 6); these royal slaves might hold high office (meaning decision), which \"종\" allows. The king is a figure in the story, so the narrator speaks of him without the honorific, while his servants speak to him in 합쇼체.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018023003"
+          ],
+          "choice": "\"비유되었다\" (L)",
+          "alternatives": [
+            "\"같다\""
+          ],
+          "reason": "As in the Korean Matthew 13:24: Literal keeps the passive \"has been compared\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2151,6 +2934,16 @@
           "L": "Naye alipoanza kufanya hesabu, aliletewa mmoja aliyekuwa mdaiwa wa talanta elfu kumi.",
           "B": "Alipoanza, aliletewa mtu mmoja aliyekuwa akidaiwa naye {{units:kiasi ambacho hakuna mfanyakazi angeweza kukipata hata kwa miaka laki moja|talanta elfu kumi}}.",
           "R": "Alipoanza, aliletewa mtumishi mmoja aliyekuwa akidaiwa naye {{units:kiasi ambacho hakuna mfanyakazi angeweza kukipata hata kwa miaka laki moja|talanta elfu kumi}}. Hakuna mtu ambaye angeweza kulipa fedha nyingi kiasi hicho."
+        },
+        "vi": {
+          "L": "Khi ông bắt đầu tính sổ, có người đem đến cho ông một người mắc nợ mười nghìn ta-lâng.",
+          "B": "Khi vua bắt đầu, người ta dẫn đến trước mặt vua một người nợ vua {{units:một số tiền mà một người làm công có làm cả trăm nghìn năm cũng không đủ trả|mười nghìn ta-lâng}}.",
+          "R": "Khi vua bắt đầu, người ta dẫn đến một đầy tớ nợ vua {{units:một số tiền mà một người làm công có làm cả trăm nghìn năm cũng không đủ trả|mười nghìn ta-lâng}}. Không ai có thể trả lại được một số tiền lớn như thế."
+        },
+        "ko": {
+          "L": "그리고 그가 셈을 정리하기 시작했을 때에, 만 달란트를 빚진 사람 하나가 그에게 끌려왔다.",
+          "B": "정산을 시작하자, {{units:일꾼의 이십만 년 치 품삯|만 달란트}}에 이르는 빚을 진 사람 하나가 왕 앞에 끌려왔다.",
+          "R": "왕이 정산을 시작하자, 종 하나가 왕 앞에 끌려왔다. 그 종은 왕에게 {{units:일꾼이 이십만 년 동안 일해야 버는 돈|만 달란트}}에 이르는 빚을 지고 있었다. 아무도 그렇게 많은 돈을 갚을 수 없었다."
         }
       },
       "decisions": [
@@ -2266,6 +3059,50 @@
           "reason": "As in English: the sum is beyond counting (meaning decision m1), so Balanced and Readable give it in working years by default, with the talents as the alternative. \"Laki moja\" is a hundred thousand. Literal keeps the talents.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40018024009",
+            "n40018024010"
+          ],
+          "choice": "\"mười nghìn ta-lâng\" (L, and the alternative at B, R); the size of the sum by default (B, R)",
+          "alternatives": [
+            "\"mười ngàn nén bạc\""
+          ],
+          "reason": "\"ta-lâng\" is the transliteration Vietnamese Bibles use; as with the English, the default says how vast the sum was.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40018024009",
+            "n40018024010"
+          ],
+          "choice": "{{units:일꾼의 이십만 년 치 품삯|만 달란트}} (B), {{units:일꾼이 이십만 년 동안 일해야 버는 돈|만 달란트}} (R), with \"에 이르는\" outside the span; \"만 달란트\" (L)",
+          "alternatives": [
+            "\"만 달란트\" at every level",
+            "\"십만 년\", as the English has"
+          ],
+          "reason": "Ten thousand talents is a sum beyond counting (meaning decision). As the Korean Mark does for denarii (6:37; 14:5), the default gives it in wages and the alternative keeps the original unit; Literal keeps the unit. The figure follows the meaning decisions: sixty million days' wages, at about twenty years' wages a talent (25:14-15), so two hundred thousand years, the same rate the Korean Readable gives at 25:15. \"에 이르는\" fits both forms, whatever their last letter.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2325,6 +3162,16 @@
           "L": "Naye asipokuwa na [cha] kulipa, bwana aliamuru auzwe, yeye na mke na watoto na vyote alivyokuwa navyo, na malipo yafanyike.",
           "B": "Kwa kuwa hakuwa na uwezo wa kulipa, bwana wake aliamuru auzwe pamoja na mke wake, watoto wake na vyote alivyokuwa navyo, ili sehemu ya deni ilipwe.",
           "R": "Mtumishi huyo hakuweza kulipa. Basi mfalme aliamuru auzwe kuwa mtumwa, pamoja na mkewe na watoto wake na vyote alivyokuwa navyo. Fedha hizo zingetumika kulipa sehemu ya deni lake."
+        },
+        "vi": {
+          "L": "Vì người ấy không có [gì] để trả, nên chủ ra lệnh bán người ấy, cả vợ, con cái và mọi thứ người ấy có, để trả nợ.",
+          "B": "Vì người ấy không có gì để trả, nên chủ ra lệnh bán người ấy cùng với vợ con và mọi tài sản của người ấy để trả nợ.",
+          "R": "Người đầy tớ ấy không thể trả nợ. Vì vậy vua ra lệnh bán người ấy làm nô lệ, cùng với vợ con và mọi thứ người ấy có. Tiền bán được sẽ dùng để trả bớt món nợ."
+        },
+        "ko": {
+          "L": "그런데 그가 갚을 [것이] 없었으므로, 주인은 그와 [그의] 아내와 자녀들과 그가 가진 모든 것을 팔아서 갚으라고 명령했다.",
+          "B": "그가 갚을 길이 없자, 주인은 그 사람과 그의 아내와 자녀들과 그가 가진 모든 것을 팔아서 빚을 갚게 하라고 명령했다.",
+          "R": "그 종은 빚을 갚을 수 없었다. 그래서 왕은 그 종을 노예로 팔고, 그의 아내와 자녀들과 그가 가진 모든 것도 팔라고 명령했다. 그 돈으로 빚을 조금이라도 갚게 하려는 것이었다."
         }
       },
       "decisions": [
@@ -2467,6 +3314,69 @@
           "reason": "The master is the king of verse 23 (meaning decision m2). Lowercase \"bwana\" is a master of servants, and keeps him distinct from \"Bwana\", the Lord, in Peter's question; Readable names him the king, as the English does. The same through verse 34.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018025009"
+          ],
+          "choice": "\"chủ\" (L, B); \"vua\" (R) for the master",
+          "alternatives": [
+            "\"chúa\""
+          ],
+          "reason": "The master is the king of 18:23; \"chủ\" keeps the Greek word, Readable names him as the king, as the English Readable does. Lowercase \"chủ\", with no deity_pronoun span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018025009",
+            "n40018025010"
+          ],
+          "choice": "\"주인\" (L, B), \"왕\" (R) for kyrios; \"노예로 팔다\" (R)",
+          "alternatives": [
+            "\"주님\""
+          ],
+          "reason": "The master is the king of 18:23 (meaning decision); \"주님\" is kept for God and Jesus, so the story uses \"주인\", and Readable says \"the king\" as the English does. Readable says what being sold meant.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n40018025002",
+            "n40018025013"
+          ],
+          "choice": "[것이]; [그의]",
+          "alternatives": [
+            "no supplement"
+          ],
+          "reason": "Korean needs a noun for \"to pay\" and a possessive before \"wife\"; Literal brackets both.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2518,6 +3428,16 @@
           "L": "Basi yule mtumwa, akiisha kuanguka, alikuwa akimsujudia, akisema, 'Nivumilie, nami nitakulipa kila kitu.'",
           "B": "Basi yule mtumishi alijitupa chini mbele yake, akamsihi, 'Nipe muda, nami nitalilipa deni lote.'",
           "R": "Yule mtumishi alipiga magoti mbele ya mfalme, akamwomba, 'Tafadhali, nivumilie. Nitakulipa kila kitu.'"
+        },
+        "vi": {
+          "L": "Vậy người nô lệ sấp mình xuống lạy ông và nói: 'Xin chủ kiên nhẫn với tôi, tôi sẽ trả hết cho chủ.'",
+          "B": "Người đầy tớ ấy liền sấp mình xuống trước mặt vua mà nài xin: 'Xin chủ cho tôi thêm thời gian, tôi sẽ trả hết cho chủ.'",
+          "R": "Người đầy tớ quỳ xuống trước mặt vua và van xin: 'Xin chủ hãy kiên nhẫn với tôi. Tôi sẽ trả hết cho chủ.'"
+        },
+        "ko": {
+          "L": "그러자 그 종이 엎드려 그에게 절하며 말했다. '저에게 참아 주십시오. 그러면 제가 모든 것을 갚아 드리겠습니다.'",
+          "B": "그러자 그 종은 땅에 엎드려 왕에게 절하며 애원했다. '조금만 기다려 주십시오. 다 갚아 드리겠습니다.'",
+          "R": "그 종은 왕 앞에 무릎을 꿇고 빌었다. '제발 참아 주십시오. 제가 다 갚겠습니다.'"
         }
       },
       "decisions": [
@@ -2637,6 +3557,71 @@
           "reason": "French typography nests « » and then “ ”. The style guide uses \"tu\" for one person, and the servants of the parable say \"tu\" as people say it to Jesus; \"vous\" would add a court register the Greek does not mark.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40018026010",
+            "n40018026014"
+          ],
+          "choice": "\"chủ\" for \"you\" and \"tôi\" for \"I\" in the servant's plea",
+          "alternatives": [
+            "\"bệ hạ\" and \"hạ thần\""
+          ],
+          "reason": "The Greek calls the king \"master\"; as in Matthew 13:27, servants speak to their master as \"chủ\" and of themselves as \"tôi\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40018026008",
+            "n40018026009"
+          ],
+          "choice": "The servant pleads with the king in 합쇼체 with \"저\", \"제\"",
+          "alternatives": [
+            "해요체"
+          ],
+          "reason": "A slave speaking to his royal master uses the most deferential style; the same plea returns in 18:29.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018026005"
+          ],
+          "choice": "\"엎드려 절하다\" (L, B); \"무릎을 꿇다\" (R)",
+          "alternatives": [
+            "\"경배하다\""
+          ],
+          "reason": "Bowing low before a king (meaning decision); the Korean Matthew keeps \"경배하다\" for worship (15:25 note).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2688,6 +3673,16 @@
           "L": "Na bwana wa mtumwa yule, akiwa ameguswa na huruma, alimwachilia, akamsamehe mkopo.",
           "B": "Bwana wake alimwonea huruma mtumishi huyo. Alimwachilia huru, akamsamehe deni.",
           "R": "Mfalme alimhurumia mtumishi huyo. Basi akamwachilia aende zake, akamsamehe deni lote."
+        },
+        "vi": {
+          "L": "Chủ của người nô lệ ấy động lòng thương xót, thả người ấy ra và tha thứ món nợ cho người ấy.",
+          "B": "Chủ động lòng thương xót người đầy tớ ấy, nên thả cho người ấy về và tha thứ món nợ.",
+          "R": "Vua thấy thương người đầy tớ ấy. Vì vậy vua cho người ấy về tự do và tha thứ hết cả món nợ."
+        },
+        "ko": {
+          "L": "그러자 그 종의 주인은 불쌍히 여겨 그를 놓아주고 그에게 빌린 돈을 용서해 주었다.",
+          "B": "주인은 그 종을 불쌍히 여겨, 그를 놓아주고 빚을 용서해 주었다.",
+          "R": "왕은 그 종이 불쌍했다. 그래서 그를 놓아주고 빚을 모두 용서해 주었다."
         }
       },
       "decisions": [
@@ -2821,6 +3816,68 @@
           "reason": "\"Remettre une dette\" is the usual French idiom, but it would break the link the English keeps with Peter's question and with 18:35 (m3). \"Pardonner une dette\" is good French and keeps one verb through the passage.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018027001"
+          ],
+          "choice": "\"động lòng thương xót\" (L, B); \"thấy thương\" (R)",
+          "alternatives": [
+            "\"thương hại\""
+          ],
+          "reason": "As in Matthew 9:36 and 14:14.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018027013"
+          ],
+          "choice": "\"용서하다\" for the debt at every level",
+          "alternatives": [
+            "\"탕감하다\""
+          ],
+          "reason": "It is the verb of Peter's question (18:21) and of 18:35 (meaning decision); the Korean Matthew already says \"빚을 용서하다\" in 6:12, so the parable keeps the one verb. \"빌린 돈\" (L) keeps the Greek \"loan\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018027001"
+          ],
+          "choice": "\"불쌍히 여기다\" (L, B); \"불쌍했다\" (R)",
+          "alternatives": [
+            "\"측은히 여기다\""
+          ],
+          "reason": "Moved with compassion, deeply moved (meaning decision); the words of the Korean Matthew 15:32.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2882,6 +3939,16 @@
           "L": "Lakini mtumwa yule alipotoka, alimkuta mmoja wa watumwa wenzake aliyekuwa akidaiwa naye dinari mia moja; akamkamata, akawa akimkaba koo, akisema, 'Lipa ikiwa unadaiwa chochote.'",
           "B": "Lakini mtumishi huyo alipotoka tu, alikutana na mmoja wa watumishi wenzake aliyekuwa akidaiwa naye {{units:mshahara wa siku mia moja hivi|dinari mia moja}}. Akamkaba koo, akamwambia, 'Lipa deni lako!'",
           "R": "Kisha mtumishi huyo alitoka, akamkuta mtumishi mwingine aliyekuwa akidaiwa naye {{units:mshahara wa siku mia moja hivi|dinari mia moja}}. Akamkamata, akaanza kumkaba koo. Akamwambia, 'Nilipe deni lako!'"
+        },
+        "vi": {
+          "L": "Nhưng người nô lệ ấy đi ra, gặp một trong những người bạn nô lệ của mình, là người nợ mình một trăm đơ-ni-ê, và nắm lấy người ấy, bóp cổ mà nói: 'Hãy trả những gì anh nợ.'",
+          "B": "Nhưng vừa ra khỏi đó, người đầy tớ ấy gặp một người bạn cùng làm đầy tớ, là người nợ mình {{units:khoảng một trăm ngày công|một trăm đơ-ni-ê}}. Người ấy túm lấy cổ bạn mình mà nói: 'Trả hết những gì anh nợ tôi đây!'",
+          "R": "Sau đó người đầy tớ ấy đi ra và gặp một đầy tớ khác, là người nợ mình {{units:khoảng một trăm ngày công|một trăm đơ-ni-ê}}. Người ấy túm lấy người kia và bắt đầu bóp cổ. Người ấy nói: 'Trả tiền anh nợ tôi đây!'"
+        },
+        "ko": {
+          "L": "그러나 그 종이 나가서, 자기에게 백 데나리온을 빚진 동료 종 하나를 만났다. 그러자 그를 붙잡고 목을 조르며 말했다. '네가 빚진 것이 있으면 갚아라.'",
+          "B": "그런데 그 종은 나가자마자, 자기에게 {{units:백 일 치 품삯|백 데나리온}}을 빚진 동료 종 하나를 만났다. 그는 그 동료의 멱살을 잡고 말했다. '빚진 것을 갚아라!'",
+          "R": "그런데 그 종이 밖에 나가서, 자기에게 {{units:백 일 동안 일해서 번 돈|백 데나리온}}을 빚진 다른 종을 만났다. 그는 그 사람을 붙잡고 목을 조르기 시작했다. 그리고 말했다. '나한테 빚진 돈을 갚아라!'"
         }
       },
       "decisions": [
@@ -3015,6 +4082,95 @@
           "reason": "As in English and as at John 6:7: a denarius was a day's wage (meaning decision m1), so Balanced and Readable give the sum in days' wages by default, with the coins as the alternative. Literal keeps the coins.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40018028014",
+            "n40018028015"
+          ],
+          "choice": "\"một trăm đơ-ni-ê\" (L, and the alternative at B, R); {{units:khoảng một trăm ngày công|...}} by default (B, R)",
+          "alternatives": [
+            "\"một trăm đồng bạc\""
+          ],
+          "reason": "\"đơ-ni-ê\" is the form the Vietnamese Mark uses (6:37, 14:5); the default gives the value in days' wages, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40018028021",
+            "n40018028022",
+            "n40018028023",
+            "n40018028024"
+          ],
+          "choice": "\"anh\" and \"tôi\" between the two servants",
+          "alternatives": [
+            "\"mày\" and \"tao\""
+          ],
+          "reason": "They are equals; the harshness is in the act and the command, not in a crude pronoun.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40018028014",
+            "n40018028015"
+          ],
+          "choice": "{{units:백 일 치 품삯|백 데나리온}} (B), {{units:백 일 동안 일해서 번 돈|백 데나리온}} (R); \"백 데나리온\" (L)",
+          "alternatives": [
+            "\"백 데나리온\" at every level"
+          ],
+          "reason": "As in the Korean Mark 6:37 and 14:5: the default gives the sum in days' wages (meaning decision), the alternative keeps the coin; Literal keeps the coin. Both forms end in a consonant, so \"을\" fits both.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40018028021",
+            "n40018028022"
+          ],
+          "choice": "The servant speaks to his fellow servant in 해라체",
+          "alternatives": [
+            "합쇼체"
+          ],
+          "reason": "A creditor seizing a debtor of his own rank speaks plainly and roughly.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3066,6 +4222,16 @@
           "L": "Basi mtumwa mwenzake, akiisha kuanguka, alikuwa akimsihi, akisema, 'Nivumilie, nami nitakulipa.'",
           "B": "Mtumishi mwenzake alijitupa chini, akamsihi, 'Nipe muda, nami nitakulipa.'",
           "R": "Yule mtumishi mwingine alipiga magoti, akamwomba, 'Tafadhali, nivumilie. Nitakulipa.'"
+        },
+        "vi": {
+          "L": "Vậy người bạn nô lệ ấy sấp mình xuống nài xin người ấy rằng: 'Xin anh kiên nhẫn với tôi, tôi sẽ trả cho anh.'",
+          "B": "Người bạn đầy tớ ấy sấp mình xuống van nài: 'Xin anh cho tôi thêm thời gian, tôi sẽ trả cho anh.'",
+          "R": "Người đầy tớ kia quỳ xuống và van xin: 'Xin anh hãy kiên nhẫn với tôi. Tôi sẽ trả cho anh.'"
+        },
+        "ko": {
+          "L": "그러자 그의 동료 종이 엎드려 그에게 간청하며 말했다. '저에게 참아 주십시오. 그러면 제가 갚아 드리겠습니다.'",
+          "B": "그러자 동료 종은 땅에 엎드려 애원했다. '조금만 기다려 주십시오. 갚아 드리겠습니다.'",
+          "R": "그 동료 종은 무릎을 꿇고 빌었다. '제발 참아 주십시오. 제가 갚겠습니다.'"
         }
       },
       "decisions": [
@@ -3158,6 +4324,58 @@
           "reason": "\"Servant\" in Balanced and Readable, as the style guide has it, and Literal keeps \"slave\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018029009",
+            "n40018029010",
+            "n40018029011",
+            "n40018029012",
+            "n40018029013",
+            "n40018029014"
+          ],
+          "choice": "the plea of 18:26 at each level, with \"anh\" in place of \"chủ\"",
+          "alternatives": [
+            "different wording"
+          ],
+          "reason": "The same words as the first servant's plea, so the reader hears the echo.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018029009",
+            "n40018029010",
+            "n40018029011",
+            "n40018029012",
+            "n40018029013",
+            "n40018029014"
+          ],
+          "choice": "The same words as 18:26 at each level, in 합쇼체",
+          "alternatives": [
+            "해라체 between fellow servants"
+          ],
+          "reason": "The plea is the same as the first servant's (meaning decision), and the English keeps the same words; Korean keeps them too, speech level included, so the reader hears the echo. A debtor begging his creditor naturally uses the deferential style.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3210,6 +4428,16 @@
           "L": "Lakini yeye hakutaka, bali alikwenda akamtupa gerezani mpaka atakapolipa kile alichokuwa akidaiwa.",
           "B": "Lakini yeye hakukubali hata kidogo. Alikwenda, akaamuru atiwe gerezani mpaka atakapolipa deni.",
           "R": "Lakini mtumishi wa kwanza hakutaka kungoja. Alimfanya yule mwingine atupwe gerezani. Angekaa humo mpaka alipe deni lote."
+        },
+        "vi": {
+          "L": "Nhưng người ấy không chịu, mà đi bỏ người kia vào ngục cho đến khi trả xong món nợ.",
+          "B": "Nhưng người ấy không chịu, lại còn đi tống người kia vào ngục cho đến khi trả hết nợ.",
+          "R": "Nhưng người đầy tớ thứ nhất không chịu chờ. Người ấy cho bắt người kia bỏ tù. Người kia sẽ phải ở tù cho đến khi trả hết số tiền mình nợ."
+        },
+        "ko": {
+          "L": "그러나 그는 원하지 않았다. 오히려 가서, 그가 빚진 것을 갚을 때까지 그를 감옥에 던져 넣었다.",
+          "B": "그러나 그는 들어주지 않았다. 오히려 가서, 그 동료가 빚을 다 갚을 때까지 감옥에 가두게 했다.",
+          "R": "그러나 빚을 용서받은 그 종은 기다려 주지 않았다. 그는 다른 종을 감옥에 넣게 했다. 빚진 돈을 다 갚을 때까지 감옥에 있게 한 것이다."
         }
       },
       "decisions": [
@@ -3270,6 +4498,26 @@
           "reason": "Balanced and Readable say that he did this through others, following the meaning decision.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018030007"
+          ],
+          "choice": "\"던져 넣었다\" (L); \"가두게 했다\" (B); \"넣게 했다\" (R)",
+          "alternatives": [
+            "\"던져 넣었다\" at every level"
+          ],
+          "reason": "He had him imprisoned by legal means, as a creditor could (meaning decision); Balanced and Readable say he had it done, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3325,6 +4573,16 @@
           "L": "Basi watumwa wenzake walipoona yaliyotukia, walihuzunika sana, wakaenda, wakamweleza bwana wao yote yaliyotukia.",
           "B": "Watumishi wengine walipoona yaliyotokea, walisikitika sana. Wakaenda kwa bwana wao, wakamweleza habari yote.",
           "R": "Watumishi wengine waliona yaliyotokea, wakahuzunika sana. Basi wakaenda, wakamwambia mfalme kila kitu."
+        },
+        "vi": {
+          "L": "Vậy các bạn nô lệ của người ấy thấy những việc đã xảy ra thì rất buồn rầu, và họ đến thuật lại cho chủ mình mọi việc đã xảy ra.",
+          "B": "Các đầy tớ khác thấy sự việc như vậy thì rất buồn bực. Họ đến trình bày với chủ mọi việc đã xảy ra.",
+          "R": "Các đầy tớ khác thấy chuyện ấy thì rất buồn và bực tức. Vì vậy họ đến kể cho vua nghe mọi chuyện."
+        },
+        "ko": {
+          "L": "그러자 그의 동료 종들이 일어난 일들을 보고 몹시 슬퍼했다. 그리고 가서 자기들의 주인에게 일어난 모든 일을 자세히 알렸다.",
+          "B": "다른 동료 종들이 이 일을 보고 몹시 마음이 상했다. 그들은 주인에게 가서 일어난 일을 모두 알렸다.",
+          "R": "다른 종들이 이 일을 보고 매우 속상했다. 그래서 왕에게 가서 모든 일을 말씀드렸다."
         }
       },
       "decisions": [
@@ -3455,6 +4713,16 @@
           "L": "Kisha bwana wake, akiisha kumwita, anamwambia, 'Mtumwa mwovu! Deni lile lote nilikusamehe kwa kuwa uliniomba kwa bidii.",
           "B": "Basi bwana wake alimwita, akamwambia, 'Mtumishi mwovu wewe! Ulinisihi, nami nikakusamehe deni lile lote.",
           "R": "Kisha mfalme alimwita mtumishi huyo, akamwambia, 'Wewe mtumishi mwovu! Uliniomba nikusaidie, kwa hiyo nikakusamehe deni lako lote."
+        },
+        "vi": {
+          "L": "Bấy giờ chủ gọi người ấy đến và nói với người ấy: 'Hỡi tên nô lệ gian ác kia! Ta đã tha thứ cho ngươi tất cả món nợ ấy, vì ngươi đã nài xin ta.",
+          "B": "Bấy giờ chủ cho gọi người ấy đến và bảo: 'Tên đầy tớ gian ác kia! Ngươi đã nài xin ta, và ta đã tha thứ cho ngươi tất cả món nợ ấy.",
+          "R": "Rồi vua cho gọi người đầy tớ ấy vào. Vua nói với người ấy: 'Tên đầy tớ độc ác kia! Ngươi đã van xin ta giúp ngươi, nên ta đã tha thứ hết số tiền ngươi nợ ta."
+        },
+        "ko": {
+          "L": "그때에 주인이 그를 불러들여 그에게 말한다. '악한 종아, 네가 나에게 간청하였기에 내가 너에게 그 빚을 모두 용서해 주었다.",
+          "B": "그러자 주인은 그 종을 불러다가 말했다. '이 악한 종아! 네가 애원하기에 내가 그 많은 빚을 다 용서해 주었다.",
+          "R": "그러자 왕은 그 종을 불러들였다. 그리고 말했다. '이 악한 종아! 네가 도와 달라고 빌었기에, 나는 네 빚을 모두 용서해 주었다."
         }
       },
       "decisions": [
@@ -3571,6 +4839,50 @@
           "reason": "\"Servant\" in Balanced and Readable, as the style guide has it, and Literal keeps \"slave\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40018032009",
+            "n40018032016"
+          ],
+          "choice": "the master says \"ta\" (lowercase, no span) and calls the servant \"ngươi\" (18:32-33)",
+          "alternatives": [
+            "\"tôi\" and \"anh\""
+          ],
+          "reason": "A king rebuking a servant; as in 13:28, a master in a parable takes no deity_pronoun span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40018032007",
+            "n40018032009"
+          ],
+          "choice": "The king speaks to the servant in 해라체; present \"말한다\" (L)",
+          "alternatives": [
+            "합쇼체"
+          ],
+          "reason": "A king rebuking his slave speaks plainly; Literal keeps Matthew's present tense of narration.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3620,6 +4932,16 @@
           "L": "Je, haikukupasa wewe pia kumhurumia mtumwa mwenzako, kama nami nilivyokuhurumia wewe?'",
           "B": "Je, hukupaswa kumwonea mtumishi mwenzako huruma ile ile niliyokuonea mimi?'",
           "R": "Ulipaswa kumhurumia mtumishi mwenzako, kama mimi nilivyokuhurumia wewe.'"
+        },
+        "vi": {
+          "L": "Chẳng phải ngươi cũng nên thương xót bạn nô lệ của ngươi, như ta cũng đã thương xót ngươi sao?'",
+          "B": "Chẳng lẽ ngươi không nên thương xót bạn đầy tớ của ngươi như ta đã thương xót ngươi sao?'",
+          "R": "Ngươi đáng lẽ cũng phải thương xót người đầy tớ kia, như ta đã thương xót ngươi.'"
+        },
+        "ko": {
+          "L": "내가 너를 불쌍히 여긴 것처럼, 너도 네 동료 종을 불쌍히 여겨야 하지 않았느냐?'",
+          "B": "내가 너에게 자비를 베푼 것처럼, 너도 네 동료 종에게 자비를 베풀었어야 하지 않느냐?'",
+          "R": "내가 너에게 자비를 베푼 것처럼, 너도 다른 종에게 자비를 베풀었어야 했다.'"
         }
       },
       "decisions": [
@@ -3708,6 +5030,28 @@
           "reason": "\"Servant\" in Balanced and Readable, as the style guide has it, and Literal keeps \"slave\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018033005",
+            "n40018033012"
+          ],
+          "choice": "\"불쌍히 여기다\" (L); \"자비를 베풀다\" (B, R)",
+          "alternatives": [
+            "\"긍휼히 여기다\""
+          ],
+          "reason": "Literal keeps the verb of the Korean Matthew's \"have mercy on me\" (9:27; 15:22); Balanced and Readable use the settled noun \"자비\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3760,6 +5104,16 @@
           "L": "Na bwana wake, akiwa amekasirika, alimkabidhi kwa watesaji mpaka atakapolipa yote aliyokuwa akidaiwa.",
           "B": "Basi bwana wake, sasa akiwa na hasira, alimtia mikononi mwa watesaji, akae nao mpaka alipe deni lote.",
           "R": "Mfalme alikasirika sana. Alimkabidhi mtumishi huyo kwa watu ambao wangemtesa gerezani. Angekaa humo mpaka alipe deni lote."
+        },
+        "vi": {
+          "L": "Và chủ người ấy nổi giận, giao người ấy cho những kẻ tra tấn cho đến khi trả xong tất cả món nợ.",
+          "B": "Rồi chủ nổi giận, giao người ấy cho bọn cai ngục tra tấn cho đến khi trả hết món nợ.",
+          "R": "Vua rất giận. Vua giao người đầy tớ ấy cho những người sẽ hành hạ người ấy trong ngục. Người ấy sẽ phải ở đó cho đến khi trả hết số tiền mình nợ."
+        },
+        "ko": {
+          "L": "그리고 그의 주인은 노하여, 그가 빚진 것을 다 갚을 때까지 그를 고문하는 사람들에게 넘겨주었다.",
+          "B": "주인은 화가 나서, 그 종이 빚을 다 갚을 때까지 고문하는 간수들에게 넘겨주었다.",
+          "R": "왕은 몹시 화가 났다. 그래서 그 종을 감옥에서 고문하는 사람들에게 넘겨주었다. 그 종은 빚을 다 갚을 때까지 거기에 있어야 했다."
         }
       },
       "decisions": [
@@ -3834,6 +5188,48 @@
           "reason": "Readable says who the torturers were.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018034009"
+          ],
+          "choice": "\"những kẻ tra tấn\" (L); \"bọn cai ngục tra tấn\" (B); \"những người sẽ hành hạ người ấy trong ngục\" (R)",
+          "alternatives": [
+            "\"đao phủ\""
+          ],
+          "reason": "The torturers were jailers who used torture; Balanced and Readable say who they were.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018034009"
+          ],
+          "choice": "\"고문하는 사람들\" (L, R); \"고문하는 간수들\" (B)",
+          "alternatives": [
+            "\"옥졸\""
+          ],
+          "reason": "The torturers were jailers who used torture (meaning decision); Balanced names them as jailers.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3891,6 +5287,16 @@
           "L": "Ndivyo atakavyowatendea ninyi pia Baba {{deity_pronoun:yangu|Yangu}} wa mbinguni, ikiwa hamtamsamehe kila mmoja ndugu yake kutoka ndani ya mioyo yenu.\"",
           "B": "Baba {{deity_pronoun:yangu|Yangu}} aliye mbinguni atawatendea vivyo hivyo, ikiwa kila mmoja wenu hatamsamehe ndugu yake kwa moyo wote.\"",
           "R": "Naye Baba {{deity_pronoun:yangu|Yangu}} aliye mbinguni atawatendea vivyo hivyo kama kila mmoja wenu hatamsamehe ndugu yake kwa kweli, kutoka moyoni.\""
+        },
+        "vi": {
+          "L": "Cha {{deity_pronoun:ta|Ta}} ở trên trời cũng sẽ làm như vậy với các con, nếu mỗi người trong các con không tha thứ cho {{gender:anh chị em|anh em}} mình từ trong lòng.\"",
+          "B": "Cha {{deity_pronoun:ta|Ta}} ở trên trời cũng sẽ đối xử với các con như vậy, nếu mỗi người trong các con không hết lòng tha thứ cho {{gender:anh chị em|anh em}} mình.\"",
+          "R": "Cha {{deity_pronoun:ta|Ta}} ở trên trời cũng sẽ làm như thế với các con nếu các con không thật lòng tha thứ cho {{gender:anh chị em|anh em}} mình.\""
+        },
+        "ko": {
+          "L": "너희가 각자 마음으로부터 자기 {{gender:형제자매|형제}}를 용서하지 않으면, 내 하늘 아버지께서도 너희에게 이와 같이 하실 것이다.\"",
+          "B": "너희가 저마다 진심으로 {{gender:형제자매|형제}}를 용서하지 않으면, 하늘에 계신 내 아버지께서도 너희에게 이와 같이 하실 것이다.\"",
+          "R": "너희가 {{gender:형제자매|형제}}를 진심으로 용서하지 않으면, 하늘에 계신 내 아버지께서도 너희에게 똑같이 하실 것이다.\""
         }
       },
       "decisions": [
@@ -4033,6 +5439,71 @@
           "choice": "cada uno ... a su hermano",
           "alternatives": [],
           "reason": "With \"cada uno\" (each one) as the subject, \"su hermano\" is right for both ustedes and vosotros readers, so the brother needs no plural_you span; \"de {{plural_you:sus|vuestros}} corazones\" in Literal does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018035007"
+          ],
+          "choice": "\"Cha Ta ở trên trời\" (L) for \"my heavenly Father\"",
+          "alternatives": [
+            "\"Cha Ta, Đấng ở trên các tầng trời\""
+          ],
+          "reason": "The Greek here has the adjective \"heavenly\", not \"who is in the heavens\", so Literal does not use the longer phrase it keeps for that wording.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40018035015"
+          ],
+          "choice": "\"{{gender:anh chị em|anh em}} mình\"",
+          "alternatives": [
+            "\"anh em mình\""
+          ],
+          "reason": "As in 18:15: a fellow disciple, man or woman.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018035007",
+            "n40018035017",
+            "n40018035018",
+            "n40018035019",
+            "n40018035020"
+          ],
+          "choice": "\"내 하늘 아버지\" (L); \"하늘에 계신 내 아버지\" (B, R); \"마음으로부터\" (L), \"진심으로\" (B, R)",
+          "alternatives": [
+            "\"하늘에 계신\" at every level"
+          ],
+          "reason": "Literal keeps the adjective \"heavenly\" as the Korean Matthew 6:14 and 15:13 do. From the heart means truly (meaning decision). Korean puts the condition first, as its word order needs; the quotation closes here.",
           "uncertain": false,
           "footnote": false
         }

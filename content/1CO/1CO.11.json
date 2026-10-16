@@ -29,6 +29,16 @@
           "L": "Devenez mes imitateurs, comme moi aussi [je le suis] du {{christos:Christ|Messie}}.",
           "B": "Prenez-moi pour modèle, comme je prends moi-même le {{christos:Christ|Messie}} pour modèle.",
           "R": "Imitez ma façon de vivre, comme j’imite la façon dont le {{christos:Christ|Messie}} a vécu."
+        },
+        "es": {
+          "L": "{{plural_you:Sean|Sed}} imitadores míos, así como yo también [lo soy] de {{christos:Cristo|el Mesías}}.",
+          "B": "{{plural_you:Tómenme|Tomadme}} como modelo, así como yo tomo como modelo {{christos:a Cristo|al Mesías}}.",
+          "R": "{{plural_you:Imiten|Imitad}} mi manera de vivir, así como yo imito la manera en que vivió {{christos:Cristo|el Mesías}}."
+        },
+        "sw": {
+          "L": "Kuweni waigaji wangu, kama mimi nami [nilivyo mwigaji] wa {{christos:Kristo|Masihi}}.",
+          "B": "Nifanyeni kuwa kielelezo chenu, kama mimi ninavyomfanya {{christos:Kristo|Masihi}} kuwa kielelezo changu.",
+          "R": "Igeni jinsi ninavyoishi, kama mimi ninavyoiga jinsi {{christos:Kristo|Masihi}} alivyoishi."
         }
       },
       "decisions": [
@@ -136,6 +146,24 @@
           "reason": "French needs the article with \"Messie\", and \"le Christ\" reads naturally beside it, so the article stays outside the span and both options read as French. \"In Christ\" is \"{{christos:en Christ|dans le Messie}}\", as in Colossians.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n46011001005",
+            "n46011001006"
+          ],
+          "choice": "[lo soy] de {{christos:Cristo|el Mesías}}",
+          "alternatives": [],
+          "reason": "Spanish needs the verb that the Greek leaves out, so Literal supplies \"[lo soy]\". The alternative keeps the article Spanish needs before \"Mesías\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -177,6 +205,16 @@
           "L": "Or je vous loue de ce que vous vous souvenez de moi en toutes choses et de ce que vous retenez les traditions telles que je vous [les] ai transmises.",
           "B": "Je vous félicite de ce que vous pensez à moi en tout et de ce que vous gardez fermement les traditions telles que je vous les ai transmises.",
           "R": "Je vous félicite, parce que vous vous souvenez de moi en tout et que vous restez fidèles aux enseignements que je vous ai transmis, tels que je vous les ai donnés."
+        },
+        "es": {
+          "L": "Ahora bien, {{plural_you:los|os}} alabo porque en todo se {{plural_you:acuerdan|acordáis}} de mí y {{plural_you:retienen|retenéis}} las tradiciones tal como {{plural_you:se las|os las}} entregué.",
+          "B": "{{plural_you:Los|Os}} alabo, porque en todo me {{plural_you:tienen|tenéis}} presente, y {{plural_you:se mantienen|os mantenéis}} firmes en las tradiciones tal como {{plural_you:se las|os las}} transmití.",
+          "R": "{{plural_you:Los|Os}} alabo, porque se {{plural_you:acuerdan|acordáis}} de mí en todo, y {{plural_you:siguen|seguís}} las enseñanzas que {{plural_you:les|os}} transmití, tal como {{plural_you:se las|os las}} di."
+        },
+        "sw": {
+          "L": "Basi nawasifu kwa sababu mnanikumbuka katika mambo yote, na mnayashika mapokeo kama nilivyowakabidhi.",
+          "B": "Nawasifu kwa sababu mnanikumbuka katika kila jambo, na mnayashika imara mapokeo kwa namna ileile nilivyowakabidhi.",
+          "R": "Nawasifu kwa sababu mnanikumbuka kwa kila namna, na mnayafuata mafundisho niliyowapa, kama nilivyoyatoa."
         }
       },
       "decisions": [
@@ -253,6 +291,70 @@
           "reason": "\"Louer\" said of people sounds old-fashioned and is mostly kept for praising God in modern French. Balanced and Readable use \"féliciter\", the ordinary word for praising people for what they do; the same verb returns in verses 17 and 22, so the link Paul makes between them stays visible.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46011002012",
+            "n46011002013"
+          ],
+          "choice": "tradiciones (L, B); enseñanzas (R)",
+          "alternatives": [
+            "enseñanzas",
+            "instrucciones"
+          ],
+          "reason": "The word is the teaching and practice Paul received and passed on (m1). \"Tradiciones\" keeps the Greek word, without the sense of mere human custom; Readable says \"enseñanzas\", as the English says \"teachings\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46011002004"
+          ],
+          "choice": "{{plural_you:los|os}} alabo",
+          "alternatives": [
+            "elogiar",
+            "felicitar"
+          ],
+          "reason": "Spanish \"alabar\" is used for praising people as well as God, and is kept through the chapter (verses 17 and 22), so the reader hears verse 22 look back to verse 2.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46011002010"
+          ],
+          "choice": "kukabidhi",
+          "alternatives": [
+            "kupokeza",
+            "kuwapa"
+          ],
+          "reason": "\"Kukabidhi\" (hand over into someone's keeping) for passing on a tradition, the same verb used for Jesus being handed over in verse 23, as the Greek uses one verb for both (paradidomi).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -303,6 +405,16 @@
           "L": "Mais je veux que vous sachiez que la tête de tout homme est le {{christos:Christ|Messie}}, que la tête de la femme [est] l’homme, et que la tête du {{christos:Christ|Messie}} [est] Dieu.",
           "B": "Mais il y a une chose que je veux vous faire comprendre : le {{christos:Christ|Messie}} est la tête de tout homme, l’homme est la tête de la femme, et Dieu est la tête du {{christos:Christ|Messie}}.",
           "R": "Je veux que vous compreniez ceci. Le {{christos:Christ|Messie}} est la tête de tout homme. L’homme est la tête de la femme. Et Dieu est la tête du {{christos:Christ|Messie}}."
+        },
+        "es": {
+          "L": "Pero quiero que {{plural_you:sepan|sepáis}} que la cabeza de todo hombre es el {{christos:Cristo|Mesías}}, y [la] cabeza de la mujer [es] el hombre, y [la] cabeza del {{christos:Cristo|Mesías}} [es] Dios.",
+          "B": "Pero hay algo que quiero que {{plural_you:entiendan|entendáis}}: {{christos:Cristo|el Mesías}} es la cabeza de todo hombre, el hombre es la cabeza de la mujer, y Dios es la cabeza {{christos:de Cristo|del Mesías}}.",
+          "R": "Quiero que {{plural_you:entiendan|entendáis}} esto. {{christos:Cristo|El Mesías}} es la cabeza de todo hombre. El hombre es la cabeza de la mujer. Y Dios es la cabeza {{christos:de Cristo|del Mesías}}."
+        },
+        "sw": {
+          "L": "Lakini nataka mjue kwamba kichwa cha kila mwanamume ni {{christos:Kristo|Masihi}}, na kichwa cha mwanamke [ni] mwanamume, na kichwa cha {{christos:Kristo|Masihi}} [ni] Mungu.",
+          "B": "Lakini kuna jambo ninalotaka mlielewe: {{christos:Kristo|Masihi}} ni kichwa cha kila mwanamume, mwanamume ni kichwa cha mwanamke, na Mungu ni kichwa cha {{christos:Kristo|Masihi}}.",
+          "R": "Nataka mwelewe jambo hili. {{christos:Kristo|Masihi}} ni kichwa cha kila mwanamume. Mwanamume ni kichwa cha mwanamke. Na Mungu ni kichwa cha {{christos:Kristo|Masihi}}."
         }
       },
       "decisions": [
@@ -421,6 +533,101 @@
           "reason": "\"Le chef\" would settle the sense of \"head\", which is debated (m1), and \"la source\" would settle it the other way. \"La tête\" keeps Paul's image at every level, as the English \"head\" does, and French already uses it for the one who is at the head of something. \"Homme\" and \"femme\" here mean men and women, not human beings in general, so they take no gender setting.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46011003009",
+            "n46011003013",
+            "n46011003018"
+          ],
+          "choice": "cabeza",
+          "alternatives": [
+            "jefe",
+            "autoridad"
+          ],
+          "reason": "Spanish \"cabeza\" also means the one who leads (\"cabeza de familia\"), as the meaning decision reads it (m1, footnoted), so every level keeps the Greek picture, which verses 4-7 turn on.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46011003007",
+            "n46011003015",
+            "n46011003017"
+          ],
+          "choice": "hombre, mujer",
+          "alternatives": [
+            "varón",
+            "marido, esposa"
+          ],
+          "reason": "The words mean men and women in general (m2), so every level says \"hombre\" and \"mujer\", not \"marido\" and \"esposa\" as in chapter 7; \"hombre\" here is a male, so it takes no gender setting.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46011003009",
+            "n46011003013",
+            "n46011003018"
+          ],
+          "choice": "kichwa",
+          "alternatives": [
+            "kiongozi",
+            "chanzo"
+          ],
+          "reason": "\"Kichwa\" at every level, as the English keeps \"head\": Swahili uses it for a leader as well as the body part, and verses 4-7 play on both senses (meaning decision, footnoted).",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-2",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46011003007",
+            "n46011003015",
+            "n46011003017"
+          ],
+          "choice": "mwanamume, mwanamke",
+          "alternatives": [
+            "mume, mke"
+          ],
+          "reason": "\"Mwanamume\" and \"mwanamke\" (man, woman), not \"mume\" and \"mke\" (husband, wife), because the meaning decision reads the passage as men and women in general.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -460,6 +667,16 @@
           "L": "Tout homme qui prie ou prophétise en ayant [quelque chose] qui pend de la tête déshonore sa tête ;",
           "B": "Tout homme qui prie ou prophétise la tête couverte fait honte à sa tête.",
           "R": "Si un homme prie ou prophétise, c’est-à-dire s’il transmet un message de Dieu, avec quelque chose sur la tête, il fait honte à sa tête."
+        },
+        "es": {
+          "L": "Todo hombre que ora o profetiza teniendo [algo] que le cuelga de la cabeza, deshonra su cabeza;",
+          "B": "Todo hombre que ora o profetiza con algo que le cubre la cabeza, avergüenza a su cabeza.",
+          "R": "Si un hombre ora o profetiza, comunicando un mensaje de parte de Dios, con algo que le cubre la cabeza, trae vergüenza a su cabeza."
+        },
+        "sw": {
+          "L": "Kila mwanamume anayeomba au kutoa unabii akiwa na [kitu] kinachoning'inia kichwani anakiaibisha kichwa chake.",
+          "B": "Mwanamume yeyote anayeomba au kutoa unabii akiwa amefunika kichwa chake anakiletea aibu kichwa chake.",
+          "R": "Mwanamume akiomba au akitoa unabii, yaani akisema ujumbe kutoka kwa Mungu, huku kichwa chake kimefunikwa, anakiletea aibu kichwa chake."
         }
       },
       "decisions": [
@@ -578,6 +795,46 @@
           "reason": "\"Voile\" would name a particular garment, while the Greek speaks only of the head being covered or not, and what the covering was is uncertain (m1 here, m1 at verse 5). French says \"se couvrir la tête\" and \"la tête découverte\", as the English says \"covering\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46011004005"
+          ],
+          "choice": "profetiza, comunicando un mensaje de parte de Dios",
+          "alternatives": [
+            "predicar"
+          ],
+          "reason": "Readable keeps the verb \"profetizar\" and explains it, as Romans 12:6 says \"comunicar mensajes de parte de Dios\" (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46011004005"
+          ],
+          "choice": "kutoa unabii",
+          "alternatives": [
+            "kutabiri"
+          ],
+          "reason": "\"Kutoa unabii\" (speak a prophecy), as in Romans 12:6, rather than \"kutabiri\", which in everyday Swahili suggests foretelling the future; Readable adds what it means, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -626,6 +883,16 @@
           "L": "Mais toute femme qui prie ou prophétise la tête découverte déshonore sa tête, car c’est une seule et même [chose] que la [femme] rasée.",
           "B": "Mais une femme qui prie ou prophétise sans rien sur la tête fait honte à sa tête ; cela revient au même que d’avoir la tête rasée.",
           "R": "Mais si une femme prie ou prophétise sans avoir la tête couverte, elle fait honte à sa tête. C’est comme si elle s’était rasé la tête."
+        },
+        "es": {
+          "L": "Pero toda mujer que ora o profetiza con la cabeza descubierta deshonra su cabeza, porque es una y la misma cosa que [la] que está rapada.",
+          "B": "Pero la mujer que ora o profetiza sin nada que le cubra la cabeza avergüenza a su cabeza; es lo mismo que si se la hubiera rapado.",
+          "R": "Pero si una mujer ora o profetiza sin cubrirse la cabeza, trae vergüenza a su cabeza. Es lo mismo que si se hubiera rapado la cabeza."
+        },
+        "sw": {
+          "L": "Lakini kila mwanamke anayeomba au kutoa unabii akiwa na kichwa kisichofunikwa anakiaibisha kichwa chake, kwa maana ni sawasawa na yule aliyenyolewa.",
+          "B": "Lakini mwanamke anayeomba au kutoa unabii bila kitu cha kufunika kichwa chake anakiaibisha kichwa chake; si tofauti na kunyolewa kichwa.",
+          "R": "Lakini mwanamke akiomba au akitoa unabii bila kufunika kichwa chake, anakiletea aibu kichwa chake. Ni sawa na kama amenyoa kichwa chake."
         }
       },
       "decisions": [
@@ -747,6 +1014,16 @@
           "L": "Car si une femme n’est pas couverte, qu’elle se fasse aussi tondre ; mais si [c’est] une honte pour une femme d’être tondue ou d’être rasée, qu’elle soit couverte.",
           "B": "Si une femme ne se couvre pas la tête, qu’elle se fasse aussi couper les cheveux court. Mais s’il est honteux pour une femme d’avoir les cheveux coupés court ou rasés, alors qu’elle se couvre la tête.",
           "R": "Si une femme ne veut pas se couvrir la tête, alors qu’elle se coupe aussi les cheveux. Mais c’est une honte pour une femme de se couper les cheveux ou de se raser la tête. Donc elle doit se couvrir la tête."
+        },
+        "es": {
+          "L": "Porque si una mujer no se cubre, que también se corte el pelo; pero si [es] vergonzoso para una mujer cortarse el pelo o raparse, que se cubra.",
+          "B": "Si una mujer no se cubre la cabeza, que se corte también el pelo. Pero si es vergonzoso para una mujer cortarse el pelo al rape o raparse, entonces que se cubra.",
+          "R": "Si una mujer no quiere cubrirse la cabeza, que se corte también el pelo. Pero es vergonzoso para una mujer cortarse el pelo o raparse la cabeza. Así que debe cubrirse la cabeza."
+        },
+        "sw": {
+          "L": "Kwa maana mwanamke asipofunikwa, na akatwe nywele pia; lakini ikiwa [ni] aibu kwa mwanamke kukatwa nywele au kunyolewa, na afunikwe.",
+          "B": "Ikiwa mwanamke hafuniki kichwa, basi na akatwe nywele fupi kabisa pia. Lakini ikiwa ni aibu kwa mwanamke kukatwa nywele fupi kabisa au kunyolewa, basi na afunike kichwa chake.",
+          "R": "Kama mwanamke hataki kufunika kichwa chake, basi na akate nywele zake pia. Lakini ni aibu kwa mwanamke kukata nywele zake zote au kunyoa kichwa. Kwa hiyo afunike kichwa chake."
         }
       },
       "decisions": [
@@ -822,6 +1099,29 @@
           "reason": "Readable states the condition Paul takes as true as a plain fact (m3) and breaks the sentence into three short ones.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46011006007",
+            "n46011006013",
+            "n46011006015"
+          ],
+          "choice": "kukatwa nywele ... kunyolewa",
+          "alternatives": [
+            "kunyolewa ... kunyolewa"
+          ],
+          "reason": "Two verbs for the two Greek words: cutting the hair close (\"kukatwa nywele\", Balanced adding \"fupi kabisa\") and shaving the head bare (\"kunyolewa\").",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -868,6 +1168,16 @@
           "L": "Car l’homme, certes, ne doit pas se couvrir la tête, étant l’image et la gloire de Dieu ; mais la femme est la gloire de l’homme.",
           "B": "Un homme ne doit pas avoir la tête couverte, puisqu’il est l’image et la gloire de Dieu. La femme, elle, est la gloire de l’homme.",
           "R": "Un homme ne doit pas se couvrir la tête, parce qu’il est créé à l’image de Dieu et qu’il montre la gloire de Dieu. Et la femme montre la gloire de l’homme."
+        },
+        "es": {
+          "L": "Porque el hombre ciertamente no debe cubrirse la cabeza, siendo imagen y gloria de Dios; pero la mujer es gloria del hombre.",
+          "B": "El hombre no debe cubrirse la cabeza, porque es imagen y gloria de Dios. La mujer, por su parte, es la gloria del hombre.",
+          "R": "Un hombre no debe cubrirse la cabeza, porque fue creado a la imagen de Dios y muestra la gloria de Dios. Y la mujer muestra la gloria del hombre."
+        },
+        "sw": {
+          "L": "Kwa maana mwanamume kwa kweli haimpasi kufunika kichwa, kwa kuwa yeye ni sura na utukufu wa Mungu; lakini mwanamke ni utukufu wa mwanamume.",
+          "B": "Mwanamume hapaswi kufunika kichwa chake, kwa sababu yeye ni sura na utukufu wa Mungu. Naye mwanamke ni utukufu wa mwanamume.",
+          "R": "Mwanamume hapaswi kufunika kichwa chake, kwa sababu ameumbwa kwa sura ya Mungu, naye anaonyesha utukufu wa Mungu. Na mwanamke anaonyesha utukufu wa mwanamume."
         }
       },
       "decisions": [
@@ -947,6 +1257,24 @@
           "reason": "Readable says what it means to be someone's image and glory (m1, m2), keeping the word \"glory\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n46011007009",
+            "n46011007017"
+          ],
+          "choice": "imagen y gloria, no brackets",
+          "alternatives": [],
+          "reason": "Spanish can leave out the article before \"imagen\" and \"gloria\" after \"siendo\" and \"es\", as the Greek does, so Literal needs none of the words the English brackets.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -984,6 +1312,16 @@
           "L": "Car l’homme n’est pas [issu] de la femme, mais la femme de l’homme ;",
           "B": "L’homme n’a pas été tiré de la femme ; c’est la femme qui a été tirée de l’homme.",
           "R": "Au commencement, Dieu n’a pas fait l’homme à partir de la femme. Il a fait la femme à partir de l’homme."
+        },
+        "es": {
+          "L": "Porque el hombre no procede de la mujer, sino la mujer del hombre;",
+          "B": "El hombre no fue hecho de la mujer; la mujer fue hecha del hombre.",
+          "R": "Al principio, Dios no hizo al hombre de la mujer. Hizo a la mujer del hombre."
+        },
+        "sw": {
+          "L": "Kwa maana mwanamume hakutoka kwa mwanamke, bali mwanamke [alitoka] kwa mwanamume;",
+          "B": "Mwanamume hakuumbwa kutoka kwa mwanamke; mwanamke aliumbwa kutoka kwa mwanamume.",
+          "R": "Hapo mwanzo, Mungu hakumuumba mwanamume kutoka kwa mwanamke. Alimuumba mwanamke kutoka kwa mwanamume."
         }
       },
       "decisions": [
@@ -1056,6 +1394,25 @@
           "reason": "Readable names the creation that Paul refers to (m1), so that the sentence is not read as a claim about how people are born now, which verse 12 states the other way round.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n46011008009"
+          ],
+          "choice": "[alitoka]",
+          "alternatives": [
+            "no verb"
+          ],
+          "reason": "Swahili needs a verb in the second clause where the Greek leaves it out; it is bracketed, while the verb of the first clause, which stands for the Greek \"is\", is not.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1096,6 +1453,16 @@
           "L": "Et en effet, l’homme n’a pas été créé à cause de la femme, mais la femme à cause de l’homme.",
           "B": "Et l’homme n’a pas été créé pour la femme ; c’est la femme qui a été créée pour l’homme.",
           "R": "Dieu n’a pas créé l’homme pour la femme. Il a créé la femme pour l’homme."
+        },
+        "es": {
+          "L": "Y tampoco fue creado el hombre por causa de la mujer, sino la mujer por causa del hombre.",
+          "B": "Ni fue creado el hombre para la mujer, sino que la mujer fue creada para el hombre.",
+          "R": "Dios no creó al hombre para el bien de la mujer. Creó a la mujer para el bien del hombre."
+        },
+        "sw": {
+          "L": "Na tena mwanamume hakuumbwa kwa ajili ya mwanamke, bali mwanamke kwa ajili ya mwanamume.",
+          "B": "Wala mwanamume hakuumbwa kwa ajili ya mwanamke; mwanamke aliumbwa kwa ajili ya mwanamume.",
+          "R": "Mungu hakumuumba mwanamume kwa ajili ya mwanamke. Alimuumba mwanamke kwa ajili ya mwanamume."
         }
       },
       "decisions": [
@@ -1195,6 +1562,16 @@
           "L": "C’est pourquoi la femme doit avoir une autorité sur la tête, à cause des anges.",
           "B": "Pour cette raison, et à cause des anges, la femme doit avoir autorité sur sa tête.",
           "R": "Pour cette raison, une femme doit avoir autorité sur sa propre tête. Les anges sont une autre raison."
+        },
+        "es": {
+          "L": "Por esto la mujer debe tener autoridad sobre la cabeza, por causa de los ángeles.",
+          "B": "Por esta razón, y por causa de los ángeles, la mujer debe tener autoridad sobre su cabeza.",
+          "R": "Por esta razón la mujer debe tener autoridad sobre su propia cabeza. Los ángeles son otra razón."
+        },
+        "sw": {
+          "L": "Kwa sababu hiyo mwanamke anapaswa kuwa na mamlaka juu ya kichwa [chake], kwa sababu ya malaika.",
+          "B": "Kwa sababu hiyo, na kwa sababu ya malaika, mwanamke anapaswa kuwa na mamlaka juu ya kichwa chake.",
+          "R": "Kwa sababu hiyo mwanamke anapaswa kuwa na mamlaka juu ya kichwa chake mwenyewe. Malaika ni sababu nyingine."
         }
       },
       "decisions": [
@@ -1317,6 +1694,47 @@
           "reason": "Like the Greek and the English Literal, French \"avoir une autorité sur la tête\" can mean both authority over the head and something worn on it; Literal keeps that openness, and needs no bracket, since French uses the article for a part of the body. Balanced and Readable say \"sur sa tête\", following m2.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n46011010008"
+          ],
+          "choice": "sobre la cabeza, no brackets",
+          "alternatives": [
+            "sobre [su] cabeza"
+          ],
+          "reason": "Spanish says \"sobre la cabeza\" for one's own head with the article alone, so Literal needs no bracketed \"[su]\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46011010006"
+          ],
+          "choice": "mamlaka",
+          "alternatives": [
+            "ruhusa",
+            "ishara ya mamlaka"
+          ],
+          "reason": "Exousia here is authority exercised over her head (meaning decision, footnoted), so \"mamlaka\", not \"ruhusa\" (a right), the word used for exousia in chapters 8-9; no \"sign of\" is added.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1355,6 +1773,16 @@
           "L": "Toutefois, ni la femme [n’est] sans l’homme, ni l’homme sans la femme, dans le Seigneur ;",
           "B": "Pourtant, dans le Seigneur, la femme n’existe pas sans l’homme, ni l’homme sans la femme.",
           "R": "Mais parmi ceux qui appartiennent au Seigneur, la femme n’est pas indépendante de l’homme, et l’homme n’est pas indépendant de la femme."
+        },
+        "es": {
+          "L": "Sin embargo, ni la mujer [es] sin el hombre, ni el hombre sin la mujer, en [el] Señor;",
+          "B": "Con todo, en el Señor ni la mujer existe sin el hombre, ni el hombre sin la mujer.",
+          "R": "Pero entre los que pertenecen al Señor, la mujer no está separada del hombre, y el hombre no está separado de la mujer."
+        },
+        "sw": {
+          "L": "Hata hivyo, wala mwanamke [hayuko] bila mwanamume, wala mwanamume bila mwanamke, katika Bwana;",
+          "B": "Lakini katika Bwana, mwanamke hawezi kuwa bila mwanamume, wala mwanamume bila mwanamke.",
+          "R": "Lakini kati ya wale walio wa Bwana, mwanamke hajitegemei mbali na mwanamume, wala mwanamume hajitegemei mbali na mwanamke."
         }
       },
       "decisions": [
@@ -1476,6 +1904,16 @@
           "L": "Car de même que la femme [vient] de l’homme, de même aussi l’homme [vient] par la femme ; mais tout [vient] de Dieu.",
           "B": "De même que la femme a été tirée de l’homme, de même l’homme naît de la femme, et tout a sa source en Dieu.",
           "R": "La première femme a été faite à partir de l’homme, mais depuis, chaque homme est né d’une femme. Et tout vient de Dieu."
+        },
+        "es": {
+          "L": "Porque así como la mujer [procede] del hombre, así también el hombre [nace] por medio de la mujer; pero todas las cosas [proceden] de Dios.",
+          "B": "Así como la mujer fue hecha del hombre, así también el hombre nace de la mujer, y todo tiene su origen en Dios.",
+          "R": "La primera mujer fue hecha del hombre, pero desde entonces todo hombre ha nacido de una mujer. Y todo viene de Dios."
+        },
+        "sw": {
+          "L": "Kwa maana kama vile mwanamke [alitoka] kwa mwanamume, vivyo hivyo mwanamume pia [anazaliwa] kupitia mwanamke; lakini vitu vyote [vinatoka] kwa Mungu.",
+          "B": "Kama vile mwanamke aliumbwa kutoka kwa mwanamume, ndivyo mwanamume huzaliwa kupitia mwanamke; na vitu vyote vina chanzo chake kwa Mungu.",
+          "R": "Mwanamke wa kwanza aliumbwa kutoka kwa mwanamume, lakini tangu wakati huo kila mwanamume amezaliwa na mwanamke. Na kila kitu kinatoka kwa Mungu."
         }
       },
       "decisions": [
@@ -1589,6 +2027,16 @@
           "L": "Jugez entre vous-mêmes : est-il convenable qu’une femme prie Dieu sans être couverte ?",
           "B": "Jugez-en vous-mêmes. Quand une femme prie Dieu, convient-il qu’elle ait la tête découverte ?",
           "R": "Réfléchissez par vous-mêmes. Une femme doit-elle prier Dieu sans rien sur la tête ?"
+        },
+        "es": {
+          "L": "{{plural_you:Juzguen|Juzgad}} entre {{plural_you:ustedes|vosotros}} mismos: ¿es apropiado que una mujer ore a Dios descubierta?",
+          "B": "{{plural_you:Juzguen|Juzgad}} {{plural_you:ustedes|vosotros}} mismos. Cuando una mujer ora a Dios, ¿es apropiado que lleve la cabeza descubierta?",
+          "R": "{{plural_you:Piénsenlo|Pensadlo}} por {{plural_you:ustedes|vosotros}} mismos. ¿Debe una mujer orar a Dios sin cubrirse la cabeza?"
+        },
+        "sw": {
+          "L": "Hukumuni ninyi wenyewe: je, inafaa mwanamke kumwomba Mungu bila kufunikwa [kichwa]?",
+          "B": "Tumieni busara yenu wenyewe. Mwanamke anapomwomba Mungu, je, inafaa kichwa chake kiwe wazi?",
+          "R": "Fikirini wenyewe. Je, mwanamke anapaswa kumwomba Mungu bila kufunika kichwa chake?"
         }
       },
       "decisions": [
@@ -1697,6 +2145,16 @@
           "L": "La nature elle-même ne vous enseigne-t-elle pas que si un homme porte les cheveux longs, c’est un déshonneur pour lui, \\v 15 mais que si une femme porte les cheveux longs, c’est une gloire pour elle ?",
           "B": "N’est-ce pas la nature elle-même qui vous l’enseigne : pour un homme, les cheveux longs sont un déshonneur, \\v 15 mais pour une femme, les cheveux longs sont sa gloire ?",
           "R": "Même l’ordre naturel des choses vous le montre : les cheveux longs sont une honte pour un homme. \\v 15 Mais pour une femme, les cheveux longs sont sa gloire."
+        },
+        "es": {
+          "L": "¿No {{plural_you:les|os}} enseña la naturaleza misma que si el hombre se deja crecer el pelo, le es deshonra, \\v 15 pero si la mujer se deja crecer el pelo, le es gloria?",
+          "B": "¿No es la naturaleza misma la que {{plural_you:les|os}} enseña esto: que para el hombre es una deshonra llevar el pelo largo, \\v 15 pero que para la mujer el pelo largo es su gloria?",
+          "R": "Hasta el orden natural de las cosas {{plural_you:les|os}} muestra que el pelo largo es una vergüenza para el hombre. \\v 15 Pero para la mujer, el pelo largo es su gloria."
+        },
+        "sw": {
+          "L": "Je, hata maumbile yenyewe hayawafundishi kwamba mwanamume akiwa na nywele ndefu, ni aibu kwake, \\v 15 lakini mwanamke akiwa na nywele ndefu, ni utukufu kwake?",
+          "B": "Je, si maumbile yenyewe yanayowafundisha jambo hili: kwa mwanamume, nywele ndefu ni aibu, \\v 15 lakini kwa mwanamke, nywele ndefu ni utukufu wake?",
+          "R": "Hata jinsi mambo yalivyo kwa kawaida inawaonyesha kwamba nywele ndefu ni aibu kwa mwanamume. \\v 15 Lakini kwa mwanamke, nywele ndefu ni heshima yake."
         }
       },
       "decisions": [
@@ -1804,6 +2262,50 @@
           "reason": "Readable explains \"nature\" in plain words (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46011015005"
+          ],
+          "choice": "gloria",
+          "alternatives": [
+            "honra",
+            "adorno"
+          ],
+          "reason": "The word here means honor, something that becomes her (m3). Spanish keeps \"gloria\", the key term, at every level, as the English keeps \"glory\", so it answers verse 7.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46011014003",
+            "n46011015005"
+          ],
+          "choice": "maumbile; utukufu (L, B), heshima (R)",
+          "alternatives": [
+            "asili; fahari"
+          ],
+          "reason": "\"Maumbile\" (the way things are made) for nature; \"utukufu\" keeps the link with the glory of verse 7, and Readable says \"heshima\" (honor), the sense here (meaning decision).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1837,6 +2339,16 @@
           "L": "Car la chevelure [lui] a été donnée en guise de couverture.",
           "B": "Les cheveux longs lui ont été donnés pour la couvrir.",
           "R": "Dieu lui a donné les cheveux longs pour la couvrir."
+        },
+        "es": {
+          "L": "Porque el pelo largo [le] ha sido dado en lugar de velo.",
+          "B": "El pelo largo se le dio para que le sirva de velo.",
+          "R": "Dios le ha dado a la mujer el pelo largo como velo."
+        },
+        "sw": {
+          "L": "Kwa maana nywele ndefu amepewa [ziwe] kama kifuniko.",
+          "B": "Nywele ndefu alipewa ziwe kifuniko chake.",
+          "R": "Mungu amempa nywele ndefu ziwe kifuniko chake."
         }
       },
       "decisions": [
@@ -1903,6 +2415,28 @@
           "reason": "Readable names the giver (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46011015012"
+          ],
+          "choice": "velo",
+          "alternatives": [
+            "manto",
+            "cubierta"
+          ],
+          "reason": "The word is a wrap or mantle around the head or body (m2). Spanish \"velo\" is the plain word for a woman's head covering; \"manto\" is kept for the outer garment in the Gospels.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1946,6 +2480,16 @@
           "L": "Mais si quelqu’un paraît aimer la querelle, nous n’avons pas une telle coutume, ni les églises de Dieu.",
           "B": "Si quelqu’un veut contester ce point, nous ne connaissons pas une telle coutume, et les églises de Dieu non plus.",
           "R": "Quelqu’un voudra peut-être discuter de cela. Mais ni nous ni aucune des églises de Dieu n’avons pour coutume que les femmes prient la tête découverte."
+        },
+        "es": {
+          "L": "Pero si alguno parece ser contencioso, nosotros no tenemos tal costumbre, ni las iglesias de Dios.",
+          "B": "Si alguien quiere discutirlo, nosotros no reconocemos tal costumbre, y tampoco las iglesias de Dios.",
+          "R": "Puede que alguien quiera discutir sobre esto. Pero nosotros no tenemos la costumbre de que las mujeres oren con la cabeza descubierta, y tampoco la tiene ninguna de las iglesias de Dios."
+        },
+        "sw": {
+          "L": "Lakini mtu yeyote akionekana kuwa mpenda mabishano, sisi hatuna desturi kama hiyo, wala makanisa ya Mungu.",
+          "B": "Mtu yeyote akitaka kubishana juu ya jambo hili, sisi hatutambui desturi kama hiyo, wala makanisa ya Mungu hayaitambui.",
+          "R": "Huenda mtu akataka kubishana juu ya jambo hili. Lakini sisi hatuna desturi ya wanawake kuomba bila kufunika vichwa vyao, wala makanisa yoyote ya Mungu hayana."
         }
       },
       "decisions": [
@@ -2107,6 +2651,16 @@
           "L": "Mais en vous donnant cette instruction, je ne [vous] loue pas, parce que vous vous réunissez non pour le meilleur, mais pour le pire.",
           "B": "Mais en vous donnant la consigne qui suit, je ne vous félicite pas, car vos réunions vous font du tort au lieu de vous faire du bien.",
           "R": "Mais dans ce que je dois vous dire maintenant, je ne peux pas vous féliciter. Vos réunions font plus de mal que de bien."
+        },
+        "es": {
+          "L": "Pero al dar esta instrucción no [{{plural_you:los|os}}] alabo, porque no {{plural_you:se reúnen|os reunís}} para lo mejor sino para lo peor.",
+          "B": "Pero al {{plural_you:darles|daros}} esta otra instrucción, no {{plural_you:los|os}} alabo, porque cuando {{plural_you:se reúnen|os reunís}}, las cosas empeoran en lugar de mejorar.",
+          "R": "Pero en lo que ahora tengo que {{plural_you:decirles|deciros}}, no {{plural_you:los|os}} puedo alabar. {{plural_you:Sus|Vuestras}} reuniones hacen que las cosas vayan peor en lugar de mejor."
+        },
+        "sw": {
+          "L": "Lakini katika kutoa agizo hili siwasifu, kwa sababu mnakutana si kwa ajili ya mema zaidi bali kwa ajili ya mabaya zaidi.",
+          "B": "Lakini ninapowapa agizo hili linalofuata, siwasifu, kwa sababu mnapokutana, mambo yanakuwa mabaya zaidi badala ya kuwa bora.",
+          "R": "Lakini katika yale ninayopaswa kuwaambia sasa, siwezi kuwasifu. Mikutano yenu inafanya mambo kuwa mabaya zaidi badala ya kuwa bora."
         }
       },
       "decisions": [
@@ -2170,6 +2724,25 @@
           "reason": "The Greek \"for the better ... for the worse\" is turned round into plain speech; Literal keeps it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n46011017005"
+          ],
+          "choice": "siwasifu",
+          "alternatives": [
+            "sisifu [ninyi]"
+          ],
+          "reason": "The English brackets [you]; in Swahili the object is the marker -wa- inside the verb, which is not bracketed.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2213,6 +2786,16 @@
           "L": "Car d’abord, quand vous vous réunissez en église, j’entends dire qu’il existe des divisions parmi vous, et je [le] crois en partie.",
           "B": "Tout d’abord, on me dit que, lorsque vous vous réunissez en église, vous êtes divisés en groupes, et je le crois en partie.",
           "R": "D’abord, on me dit que, quand vous vous réunissez comme église, vous vous séparez en groupes. Et je crois qu’il y a du vrai là-dedans."
+        },
+        "es": {
+          "L": "Porque, en primer lugar, cuando {{plural_you:se reúnen|os reunís}} en asamblea, oigo que hay divisiones entre {{plural_you:ustedes|vosotros}}, y en parte [lo] creo.",
+          "B": "Para empezar, me dicen que cuando {{plural_you:se reúnen|os reunís}} como iglesia, {{plural_you:se dividen|os dividís}} en grupos, y en parte lo creo.",
+          "R": "Primero, me cuentan que cuando {{plural_you:se reúnen|os reunís}} como iglesia, {{plural_you:se dividen|os dividís}} en grupos. Y creo que algo de eso es verdad."
+        },
+        "sw": {
+          "L": "Kwa maana kwanza, mnapokutana kama kanisa, nasikia kwamba kuna mafarakano kati yenu, nami naamini kwa sehemu.",
+          "B": "Kwanza kabisa, naambiwa kwamba mnapokusanyika kama kanisa mmegawanyika katika makundi, nami naamini baadhi ya habari hizo.",
+          "R": "Kwanza, watu wananiambia kwamba mnapokutana pamoja kama kanisa, mnagawanyika katika makundi. Nami naamini kwamba baadhi ya habari hizo ni kweli."
         }
       },
       "decisions": [
@@ -2283,6 +2866,86 @@
           "reason": "As at 1:10, Balanced and Readable describe the splitting rather than using the abstract noun; Literal keeps \"divisions\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46011018006",
+            "n46011018007"
+          ],
+          "choice": "en asamblea",
+          "alternatives": [
+            "en la iglesia"
+          ],
+          "reason": "The word here means the gathering of believers (m1), not a building, so Literal says \"en asamblea\" rather than \"en la iglesia\"; Balanced and Readable say \"como iglesia\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46011018009"
+          ],
+          "choice": "divisiones",
+          "alternatives": [
+            "cismas"
+          ],
+          "reason": "The same word as in 1:10, where Spanish says \"divisiones\"; \"facciones\" is kept for the different word of verse 19.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46011018006",
+            "n46011018007"
+          ],
+          "choice": "mnapokutana kama kanisa",
+          "alternatives": [
+            "kanisani"
+          ],
+          "reason": "\"Kanisani\" would suggest a church building; the meaning decision reads \"in church\" as the believers gathered as an assembly.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-2",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46011018009"
+          ],
+          "choice": "mafarakano",
+          "alternatives": [
+            "migawanyiko"
+          ],
+          "reason": "The word Literal used for schismata in 1:10.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2325,6 +2988,16 @@
           "L": "Car il faut aussi qu’il y ait des factions parmi vous, afin que ceux qui sont approuvés deviennent aussi manifestes parmi vous.",
           "B": "Il faut bien qu’il y ait des factions parmi vous, pour que ceux qui résistent à l’épreuve soient reconnus pour ce qu’ils sont.",
           "R": "Ces groupes doivent forcément apparaître, et ils montrent clairement lesquels d’entre vous sont authentiques."
+        },
+        "es": {
+          "L": "Porque también es necesario que haya facciones entre {{plural_you:ustedes|vosotros}}, para que también los aprobados se hagan evidentes entre {{plural_you:ustedes|vosotros}}.",
+          "B": "Porque es inevitable que surjan facciones entre {{plural_you:ustedes|vosotros}}, para que se vea quiénes pasan la prueba.",
+          "R": "Es inevitable que haya grupos así, y eso deja claro quiénes de {{plural_you:ustedes|vosotros}} son auténticos."
+        },
+        "sw": {
+          "L": "Kwa maana lazima kuwe na makundi kati yenu, ili wale waliothibitika pia wadhihirike kati yenu.",
+          "B": "Kwa maana makundi yanayopingana kati yenu hayana budi kutokea, ili wale wanaostahimili kujaribiwa waonekane jinsi walivyo.",
+          "R": "Makundi kama hayo hayana budi kutokea, nayo yanaonyesha wazi ni nani kati yenu walio wa kweli."
         }
       },
       "decisions": [
@@ -2385,6 +3058,26 @@
           "reason": "Balanced gives the sense of δόκιμοι, those tested and found genuine.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46011019011"
+          ],
+          "choice": "los aprobados (L); quiénes pasan la prueba (B)",
+          "alternatives": [
+            "los probados"
+          ],
+          "reason": "The word is the one for being tested and found genuine. Literal says \"aprobados\", the word kept for this family in the Corinthian letters; Balanced and Readable say what it means.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2440,6 +3133,16 @@
           "L": "Quand donc vous vous réunissez au même [endroit], ce n’est pas le repas du Seigneur [que vous] mangez, \\v 21 car en mangeant chacun prend d’avance son propre repas, et l’un a faim, l’autre est ivre.",
           "B": "Ainsi, quand vous vous réunissez en un même lieu, ce n’est pas vraiment le repas du Seigneur que vous prenez. \\v 21 Car au moment de manger, chacun se hâte de prendre son propre repas ; l’un reste sur sa faim, et l’autre est ivre.",
           "R": "Quand vous vous réunissez, vous ne prenez pas vraiment le repas du Seigneur. \\v 21 Chacun mange sa propre nourriture sans attendre les autres. Certains ont faim, tandis que d’autres boivent tellement qu’ils sont ivres."
+        },
+        "es": {
+          "L": "Así pues, cuando {{plural_you:se reúnen|os reunís}} en un mismo [lugar], no es [la] cena del Señor [lo que] {{plural_you:comen|coméis}}, \\v 21 porque al comer cada uno se adelanta a tomar su propia cena, y uno pasa hambre y otro se emborracha.",
+          "B": "Así que, cuando {{plural_you:se reúnen|os reunís}} en un mismo lugar, lo que {{plural_you:comen|coméis}} no es realmente la Cena del Señor. \\v 21 Al comer, cada uno se adelanta a tomar su propia comida, y uno se queda con hambre mientras otro se emborracha.",
+          "R": "Cuando {{plural_you:se reúnen|os reunís}}, no {{plural_you:están|estáis}} comiendo realmente la Cena del Señor. \\v 21 Cada uno come su propia comida sin esperar a los demás. Algunos se quedan con hambre, mientras otros beben tanto que se emborrachan."
+        },
+        "sw": {
+          "L": "Basi mnapokutana mahali pamoja, si chakula cha Bwana mnachokula, \\v 21 kwa maana katika kula kila mmoja hutangulia kula chakula chake mwenyewe, na mmoja ana njaa, na mwingine amelewa.",
+          "B": "Kwa hiyo mnapokusanyika mahali pamoja, mnachokula si Chakula cha Bwana kwa kweli. \\v 21 Mnapokula, kila mmoja wenu huendelea na chakula chake mwenyewe; mmoja anabaki na njaa, na mwingine amelewa.",
+          "R": "Mnapokutana pamoja, hamli Chakula cha Bwana kwa kweli. \\v 21 Kila mmoja wenu anakula chakula chake mwenyewe bila kuwangoja wengine. Wengine wanabaki na njaa, na wengine wanakunywa mpaka wanalewa."
         }
       },
       "decisions": [
@@ -2577,6 +3280,52 @@
           "reason": "\"La Cène\" is the church name, but it hides that Paul is speaking of a real shared meal (m1), and it is unfamiliar to new readers. \"Le repas du Seigneur\" is both a description and a name still used in French churches, so it serves every level; French has no capital to mark the difference the English makes between Literal and the other levels.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46011020009",
+            "n46011020010"
+          ],
+          "choice": "cena del Señor (L); la Cena del Señor (B, R)",
+          "alternatives": [
+            "la Santa Cena",
+            "la Eucaristía"
+          ],
+          "reason": "Balanced and Readable write \"la Cena del Señor\" with a capital, as the name of the meal (as Acts 20:7 does in Spanish); Literal keeps the plain words of the Greek (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46011020009",
+            "n46011020010"
+          ],
+          "choice": "chakula cha Bwana (L); Chakula cha Bwana (B, R)",
+          "alternatives": [
+            "Meza ya Bwana",
+            "Ushirika Mtakatifu"
+          ],
+          "reason": "\"Chakula\" because this was a full shared meal (meaning decision); the church names \"Meza ya Bwana\" and \"Ushirika Mtakatifu\" would hide that, and \"meza\" is kept for the table of 10:21.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2614,6 +3363,16 @@
           "L": "Car n’avez-vous pas de maisons pour manger et boire ?",
           "B": "N’avez-vous pas, tout de même, vos maisons pour manger et boire ?",
           "R": "Vous n’avez pas de maison pour manger et boire ?"
+        },
+        "es": {
+          "L": "¿Pues no {{plural_you:tienen|tenéis}} casas para comer y beber?",
+          "B": "¿Acaso no {{plural_you:tienen|tenéis}} casas propias para comer y beber?",
+          "R": "¿No {{plural_you:tienen|tenéis}} casas donde comer y beber?"
+        },
+        "sw": {
+          "L": "Kwa maana je, hamna nyumba za kula na kunywa?",
+          "B": "Kwani hamna nyumba zenu wenyewe mnamoweza kula na kunywa?",
+          "R": "Je, hamna nyumba ambamo mnaweza kula na kunywa?"
         }
       },
       "decisions": [
@@ -2695,6 +3454,16 @@
           "L": "Ou bien méprisez-vous l’Église de Dieu et faites-vous honte à ceux qui n’ont [rien] ?",
           "B": "Ou méprisez-vous l’Église de Dieu, et humiliez-vous ceux qui n’ont rien ?",
           "R": "Ou bien traitez-vous l’Église de Dieu avec mépris, et faites-vous honte aux croyants pauvres ?"
+        },
+        "es": {
+          "L": "¿O {{plural_you:desprecian|despreciáis}} la iglesia de Dios y {{plural_you:avergüenzan|avergonzáis}} a los que no tienen?",
+          "B": "¿O es que {{plural_you:menosprecian|menospreciáis}} la iglesia de Dios y {{plural_you:humillan|humilláis}} a los que no tienen nada?",
+          "R": "¿O es que {{plural_you:tratan|tratáis}} con desprecio a la iglesia de Dios y {{plural_you:hacen|hacéis}} que los creyentes pobres se sientan avergonzados?"
+        },
+        "sw": {
+          "L": "Au mnalidharau kanisa la Mungu, na kuwaaibisha wale wasio nacho?",
+          "B": "Au mnalidharau kanisa la Mungu na kuwaaibisha wale wasio na kitu chochote?",
+          "R": "Au mnalitendea kanisa la Mungu kwa dharau, na kuwafanya waumini maskini waone aibu?"
         }
       },
       "decisions": [
@@ -2806,6 +3575,16 @@
           "L": "Que vous dirai-je ?",
           "B": "Que dois-je vous dire ?",
           "R": "Que puis-je vous dire ?"
+        },
+        "es": {
+          "L": "¿Qué {{plural_you:les|os}} diré?",
+          "B": "¿Qué voy a {{plural_you:decirles|deciros}}?",
+          "R": "¿Qué puedo {{plural_you:decirles|deciros}}?"
+        },
+        "sw": {
+          "L": "Niwaambie nini?",
+          "B": "Niwaambie nini basi?",
+          "R": "Niwaambie nini?"
         }
       },
       "decisions": [
@@ -2820,6 +3599,24 @@
           "choice": "what should I say: a deliberative question, expressing dismay",
           "alternatives": [],
           "reason": "εἴπω is a subjunctive of deliberation: Paul is at a loss for words.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n46011022024"
+          ],
+          "choice": "{{plural_you:decirles|deciros}}",
+          "alternatives": [],
+          "reason": "Where the plural \"you\" is joined to the end of a verb, the two Spanish forms differ in the ending, so the span covers the whole verb, as in 2:1.",
           "uncertain": false,
           "footnote": false
         }
@@ -2851,6 +3648,16 @@
           "L": "Vous louerai-je ?",
           "B": "Faut-il vous féliciter ?",
           "R": "Est-ce que je dois vous féliciter pour cela ?"
+        },
+        "es": {
+          "L": "¿{{plural_you:Los|Os}} alabaré?",
+          "B": "¿Debo {{plural_you:alabarlos|alabaros}}?",
+          "R": "¿Debo {{plural_you:alabarlos|alabaros}} por esto?"
+        },
+        "sw": {
+          "L": "Je, niwasifu?",
+          "B": "Je, niwasifu?",
+          "R": "Je, niwasifu kwa jambo hili?"
         }
       },
       "decisions": [
@@ -2917,6 +3724,16 @@
           "L": "En cela je ne [vous] loue pas.",
           "B": "Sur ce point, non, je ne vous félicite pas.",
           "R": "Non, je ne vais pas vous féliciter pour cela."
+        },
+        "es": {
+          "L": "En esto no [{{plural_you:los|os}}] alabo.",
+          "B": "En esto, no, no {{plural_you:los|os}} alabo.",
+          "R": "No, no {{plural_you:los|os}} alabaré por esto."
+        },
+        "sw": {
+          "L": "Katika hili siwasifu.",
+          "B": "Katika jambo hili, hapana, siwasifu.",
+          "R": "Hapana, sitawasifu kwa jambo hili."
         }
       },
       "decisions": [
@@ -3006,6 +3823,16 @@
           "L": "Car moi, j’ai reçu du Seigneur ce que je vous ai aussi transmis, [à savoir] que le Seigneur Jésus, dans la nuit où {{deity_pronoun:il|Il}} était livré, prit du pain \\v 24 et, ayant rendu grâce, [le] rompit et dit : « Ceci est {{deity_pronoun:mon|Mon}} corps, qui [est] pour vous ; faites ceci en {{deity_pronoun:ma|Ma}} mémoire. »",
           "B": "Ce que je vous ai transmis, je l’ai moi-même reçu du Seigneur : la nuit où {{deity_pronoun:il|Il}} fut livré, le Seigneur Jésus prit du pain, \\v 24 rendit grâce, le rompit et dit : « Ceci est {{deity_pronoun:mon|Mon}} corps ; il est pour vous. Faites cela pour vous souvenir de {{deity_pronoun:moi|Moi}}. »",
           "R": "J’ai reçu cela du Seigneur, et je vous l’ai transmis. La nuit où {{deity_pronoun:il|Il}} a été livré à {{deity_pronoun:ses|Ses}} ennemis, le Seigneur Jésus a pris du pain. \\v 24 Il a remercié Dieu pour ce pain, {{deity_pronoun:il|Il}} l’a rompu et {{deity_pronoun:il|Il}} a dit : « Ceci est {{deity_pronoun:mon|Mon}} corps. Il est pour vous. Faites cela pour vous souvenir de {{deity_pronoun:moi|Moi}}. »"
+        },
+        "es": {
+          "L": "Porque yo recibí del Señor lo que también {{plural_you:les|os}} transmití: que el Señor Jesús, en la noche en que era entregado, tomó pan, \\v 24 y habiendo dado gracias, [lo] partió y dijo: «Esto es {{deity_pronoun:mi|Mi}} cuerpo, que [es] por {{plural_you:ustedes|vosotros}}; {{plural_you:hagan|haced}} esto en recuerdo {{deity_pronoun:mío|Mío}}».",
+          "B": "Lo que {{plural_you:les|os}} transmití, yo mismo lo recibí del Señor: la noche en que fue entregado, el Señor Jesús tomó pan, \\v 24 dio gracias, lo partió y dijo: «Esto es {{deity_pronoun:mi|Mi}} cuerpo; es por {{plural_you:ustedes|vosotros}}. {{plural_you:Hagan|Haced}} esto en recuerdo de {{deity_pronoun:mí|Mí}}».",
+          "R": "Yo recibí esto del Señor, y {{plural_you:se lo|os lo}} transmití a {{plural_you:ustedes|vosotros}}. La noche en que fue entregado a {{deity_pronoun:sus|Sus}} enemigos, el Señor Jesús tomó un pan. \\v 24 Dio gracias a Dios por él, lo partió y dijo: «Esto es {{deity_pronoun:mi|Mi}} cuerpo. Es por {{plural_you:ustedes|vosotros}}. {{plural_you:Hagan|Haced}} esto {{plural_you:para acordarse|para acordaros}} de {{deity_pronoun:mí|Mí}}»."
+        },
+        "sw": {
+          "L": "Kwa maana mimi nilipokea kutoka kwa Bwana kile ambacho pia niliwakabidhi ninyi: kwamba Bwana Yesu, katika usiku ambao alikuwa akikabidhiwa, alichukua mkate \\v 24 na, baada ya kutoa shukrani, akaumega, akasema, \"Huu ni mwili {{deity_pronoun:wangu|Wangu}}, [ambao] ni kwa ajili yenu; fanyeni hivi kwa ajili ya kumbukumbu {{deity_pronoun:yangu|Yangu}}.\"",
+          "B": "Kile nilichowakabidhi ninyi, mimi mwenyewe nilikipokea kutoka kwa Bwana: usiku ule alipokabidhiwa, Bwana Yesu alichukua mkate, \\v 24 akashukuru, akaumega, akasema, \"Huu ni mwili {{deity_pronoun:wangu|Wangu}}; ni kwa ajili yenu. Fanyeni hivi ili mnikumbuke.\"",
+          "R": "Mimi nilipokea jambo hili kutoka kwa Bwana, nami nikawapa ninyi. Usiku ule Bwana Yesu alipokabidhiwa kwa adui {{deity_pronoun:zake|Zake}}, alichukua mkate. \\v 24 Akamshukuru Mungu kwa ajili yake, akaumega, akasema, \"Huu ni mwili {{deity_pronoun:wangu|Wangu}}. Ni kwa ajili yenu. Fanyeni hivi ili mnikumbuke.\""
         }
       },
       "decisions": [
@@ -3226,6 +4053,93 @@
           "reason": "Literal keeps the Greek possessive with the noun (\"my remembrance\"); Balanced and Readable use the verb, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46011024016",
+            "n46011024017",
+            "n46011024018",
+            "n46011024019"
+          ],
+          "choice": "en recuerdo {{deity_pronoun:mío|Mío}} (L); en recuerdo de {{deity_pronoun:mí|Mí}} (B); {{plural_you:para acordarse|para acordaros}} de {{deity_pronoun:mí|Mí}} (R)",
+          "alternatives": [
+            "en memoria de mí"
+          ],
+          "reason": "The same Spanish words as Luke 22:19, where the Greek is the same, so the two accounts of the Supper read alike.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46011023019"
+          ],
+          "choice": "era entregado (L); fue entregado (B, R), no pronoun",
+          "alternatives": [
+            "traicionado"
+          ],
+          "reason": "Spanish leaves the subject in the verb, so there is no pronoun for the English deity_pronoun span. \"Entregar\" keeps the Greek verb, which is also \"handed on\" in this verse (m1, m3); \"traicionar\" would name only Judas.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46011023019"
+          ],
+          "choice": "alikuwa akikabidhiwa (L); alipokabidhiwa (B, R)",
+          "alternatives": [
+            "alisalitiwa"
+          ],
+          "reason": "\"Kukabidhi\" for paradidomi, as for the tradition handed on in this verse and verse 2; \"kusaliti\" (betray) would name Judas alone, while the meaning decision sees God's purpose behind it too.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-2",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n46011024007",
+            "n46011024018"
+          ],
+          "choice": "mwili wangu, kumbukumbu yangu with spans; mnikumbuke and alipokabidhiwa without",
+          "alternatives": [
+            "spans as in English on every pronoun"
+          ],
+          "reason": "Only the free possessives (wangu, yangu, zake) take the deity_pronoun span; \"Me\" in \"mnikumbuke\" and \"he\" in \"alipokabidhiwa\" are inside the verb, which cannot take a capital.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3281,6 +4195,16 @@
           "L": "De même aussi la coupe, après avoir soupé, disant : « Cette coupe est la nouvelle alliance en {{deity_pronoun:mon|Mon}} sang ; faites ceci, toutes les fois que vous [en] boirez, en {{deity_pronoun:ma|Ma}} mémoire. »",
           "B": "Il fit de même avec la coupe, une fois le repas terminé, en disant : « Cette coupe est la nouvelle alliance en {{deity_pronoun:mon|Mon}} sang. Chaque fois que vous en boirez, faites cela pour vous souvenir de {{deity_pronoun:moi|Moi}}. »",
           "R": "À la fin du repas, {{deity_pronoun:il|Il}} a pris la coupe de la même façon et {{deity_pronoun:il|Il}} a dit : « Cette coupe est la nouvelle alliance de Dieu, conclue par {{deity_pronoun:mon|Mon}} sang. Chaque fois que vous en buvez, faites cela pour vous souvenir de {{deity_pronoun:moi|Moi}}. »"
+        },
+        "es": {
+          "L": "Asimismo también la copa, después de haber cenado, diciendo: «Esta copa es el nuevo pacto en {{deity_pronoun:mi|Mi}} sangre; {{plural_you:hagan|haced}} esto, cada vez que [la] {{plural_you:beban|bebáis}}, en recuerdo {{deity_pronoun:mío|Mío}}».",
+          "B": "Del mismo modo, después de la cena tomó la copa y dijo: «Esta copa es el nuevo pacto en {{deity_pronoun:mi|Mi}} sangre. Cada vez que la {{plural_you:beban|bebáis}}, {{plural_you:hagan|haced}} esto en recuerdo de {{deity_pronoun:mí|Mí}}».",
+          "R": "Cuando terminó la cena, tomó la copa de la misma manera y dijo: «Esta copa es el nuevo pacto de Dios, hecho con {{deity_pronoun:mi|Mi}} sangre. Cada vez que {{plural_you:beban|bebáis}} de ella, {{plural_you:hagan|haced}} esto {{plural_you:para acordarse|para acordaros}} de {{deity_pronoun:mí|Mí}}»."
+        },
+        "sw": {
+          "L": "[Alichukua] pia kikombe vivyo hivyo, baada ya kula chakula, akisema, \"Kikombe hiki ni agano jipya katika damu {{deity_pronoun:yangu|Yangu}}; fanyeni hivi, kila mara mnapokunywa, kwa ajili ya kumbukumbu {{deity_pronoun:yangu|Yangu}}.\"",
+          "B": "Vivyo hivyo, chakula kilipokwisha, alichukua kikombe, akasema, \"Kikombe hiki ni agano jipya lililofanywa kwa damu {{deity_pronoun:yangu|Yangu}}. Kila mara mnapokunywa kutoka humo, fanyeni hivi ili mnikumbuke.\"",
+          "R": "Chakula kilipokwisha, alichukua kikombe vivyo hivyo, akasema, \"Kikombe hiki ni agano jipya la Mungu, lililofanywa kupitia damu {{deity_pronoun:yangu|Yangu}}. Kila mara mnapokunywa kutoka humo, fanyeni hivi ili mnikumbuke.\""
         }
       },
       "decisions": [
@@ -3413,6 +4337,51 @@
           "reason": "\"Alliance\" is the style guide's word for covenant in every book; it keeps the link with Jeremiah 31:31 (m1), where God promises a new covenant. \"Testament\" would now be read as a will or as the name of the second part of the Bible.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46011025013",
+            "n46011025014"
+          ],
+          "choice": "pacto",
+          "alternatives": [
+            "testamento",
+            "alianza"
+          ],
+          "reason": "As in Luke 22:20: the new covenant God promised through Jeremiah (m1). \"Testamento\" would read as a will.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n46011025001",
+            "n46011025002",
+            "n46011025003",
+            "n46011025004"
+          ],
+          "choice": "[Alichukua]",
+          "alternatives": [
+            "no verb"
+          ],
+          "reason": "The Greek carries the verb over from verse 23 (\"likewise also the cup\"); Swahili needs it stated, so Literal supplies it in brackets.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3459,6 +4428,16 @@
           "L": "Car toutes les fois que vous mangez ce pain et que vous buvez la coupe, vous proclamez la mort du Seigneur, jusqu’à ce qu’{{deity_pronoun:il|Il}} vienne.",
           "B": "Car chaque fois que vous mangez ce pain et que vous buvez la coupe, vous annoncez la mort du Seigneur, jusqu’à ce qu’{{deity_pronoun:il|Il}} vienne.",
           "R": "Chaque fois que vous mangez ce pain et que vous buvez à la coupe, vous faites connaître la nouvelle de la mort du Seigneur. Et vous continuerez à le faire jusqu’à ce qu’{{deity_pronoun:il|Il}} revienne."
+        },
+        "es": {
+          "L": "Porque cada vez que {{plural_you:comen|coméis}} este pan y {{plural_you:beben|bebéis}} la copa, {{plural_you:proclaman|proclamáis}} la muerte del Señor, hasta que venga.",
+          "B": "Porque cada vez que {{plural_you:comen|coméis}} este pan y {{plural_you:beben|bebéis}} la copa, {{plural_you:anuncian|anunciáis}} la muerte del Señor, hasta que {{deity_pronoun:él|Él}} venga.",
+          "R": "Cada vez que {{plural_you:comen|coméis}} este pan y {{plural_you:beben|bebéis}} de la copa, {{plural_you:están|estáis}} contando la noticia de la muerte del Señor. Y lo {{plural_you:seguirán|seguiréis}} haciendo hasta que {{deity_pronoun:él|Él}} vuelva."
+        },
+        "sw": {
+          "L": "Kwa maana kila mara mnapokula mkate huu na kunywa kikombe, mnatangaza kifo cha Bwana, mpaka atakapokuja.",
+          "B": "Kwa maana kila mnapokula mkate huu na kunywa kikombe, mnatangaza kifo cha Bwana mpaka atakapokuja.",
+          "R": "Kila mara mnapokula mkate huu na kunywa kutoka kikombe, mnawaambia watu habari ya kifo cha Bwana. Nanyi mtaendelea kufanya hivyo mpaka atakapokuja tena."
         }
       },
       "decisions": [
@@ -3550,6 +4529,25 @@
           "reason": "Readable spells out that the proclaiming goes on until his return (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n46011026017",
+            "n46011026018",
+            "n46011026019"
+          ],
+          "choice": "hasta que venga, no pronoun",
+          "alternatives": [],
+          "reason": "Literal leaves the subject in the verb, as the Greek does, so there is no pronoun for the English span; Balanced and Readable say \"él\" for clarity, with the deity_pronoun setting.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3599,6 +4597,16 @@
           "L": "Ainsi donc, quiconque mange le pain ou boit la coupe du Seigneur indignement sera coupable du corps et du sang du Seigneur.",
           "B": "Ainsi, celui qui mange le pain ou boit la coupe du Seigneur d’une manière indigne aura à répondre du corps et du sang du Seigneur.",
           "R": "Donc ceux qui mangent le pain ou boivent la coupe du Seigneur sans respecter ce repas seront coupables d’un péché contre le corps et le sang du Seigneur."
+        },
+        "es": {
+          "L": "De manera que cualquiera que coma el pan o beba la copa del Señor indignamente será culpable del cuerpo y de la sangre del Señor.",
+          "B": "Así que, quien coma el pan o beba la copa del Señor de una manera indigna tendrá que responder por el cuerpo y la sangre del Señor.",
+          "R": "Así que las personas que comen el pan o beben la copa del Señor de una manera que la deshonra serán culpables de pecar contra el cuerpo y la sangre del Señor."
+        },
+        "sw": {
+          "L": "Kwa hiyo yeyote atakayekula mkate au kunywa kikombe cha Bwana isivyostahili, atakuwa na hatia ya mwili na ya damu ya Bwana.",
+          "B": "Kwa hiyo yeyote anayekula mkate au kunywa kikombe cha Bwana kwa namna isiyofaa atawajibika kwa mwili na damu ya Bwana.",
+          "R": "Kwa hiyo watu wanaokula mkate au kunywa kikombe cha Bwana kwa namna inayokivunjia heshima watakuwa na hatia ya kutenda dhambi dhidi ya mwili na damu ya Bwana."
         }
       },
       "decisions": [
@@ -3720,6 +4728,16 @@
           "L": "Mais que {{gender:chacun|l’homme}} s’examine lui-même, et qu’ainsi il mange du pain et boive de la coupe ;",
           "B": "Chacun de vous doit d’abord s’examiner lui-même, puis manger du pain et boire de la coupe.",
           "R": "Alors regardez bien votre propre vie avant de manger le pain et de boire à la coupe."
+        },
+        "es": {
+          "L": "Pero que {{gender:el ser humano|el hombre}} se examine a sí mismo, y así coma del pan y beba de la copa;",
+          "B": "Cada uno debe examinarse primero a sí mismo, y entonces comer del pan y beber de la copa.",
+          "R": "Así que cada uno debe mirar bien su propia vida antes de comer el pan y beber de la copa."
+        },
+        "sw": {
+          "L": "Lakini mtu ajichunguze mwenyewe, na hivyo ale kutoka mkate huo na anywe kutoka kikombe hicho;",
+          "B": "Kila mmoja wenu ajichunguze kwanza, kisha ale mkate na anywe kutoka kikombe.",
+          "R": "Kwa hiyo yachunguzeni maisha yenu kwa makini kabla ya kula mkate na kunywa kutoka kikombe."
         }
       },
       "decisions": [
@@ -3793,6 +4811,43 @@
           "reason": "The English needs spans on \"themselves\" and \"them\" as well as on \"person\". French puts the setting on the noun it has to choose for the Greek \"man\" (m2), with \"chacun\" as the inclusive default, and the \"il\" and \"lui-même\" that refer back to it are ordinary generic French with no span. For the same reason \"celui qui ... lui-même\" in verse 29 and \"quelqu’un ... qu’il mange\" in verse 34 take none.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n46011028003"
+          ],
+          "choice": "{{gender:el ser humano|el hombre}}; a sí mismo, no span",
+          "alternatives": [],
+          "reason": "Spanish follows the English setting for the noun, as in 2:11. Both options are masculine words, so \"a sí mismo\" and the verbs agree with either and need no span; Balanced and Readable say \"cada uno\", which covers everyone.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n46011028003",
+            "n46011028004"
+          ],
+          "choice": "mtu ajichunguze mwenyewe: no gender span",
+          "alternatives": [
+            "a gender span as in English"
+          ],
+          "reason": "\"Mtu\", the reflexive \"ji-\" and \"mwenyewe\" already mean he or she, so the gender spans of verses 28-29 and 34 have nothing to change in Swahili.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3834,6 +4889,16 @@
           "L": "Car celui qui mange et boit mange et boit un jugement contre lui-même, ne discernant pas le corps.",
           "B": "Quiconque mange et boit sans discerner le corps attire sur lui-même un jugement par ce qu’il mange et boit.",
           "R": "Si vous mangez et buvez sans reconnaître le corps du Seigneur, vous attirez sur vous un jugement en mangeant et en buvant."
+        },
+        "es": {
+          "L": "Porque el que come y bebe, come y bebe juicio sobre sí mismo, no discerniendo el cuerpo.",
+          "B": "Quien come y bebe sin discernir el cuerpo, trae juicio sobre sí mismo al comer y beber.",
+          "R": "Quien come y bebe sin reconocer el cuerpo del Señor, trae juicio sobre sí mismo al comer y beber."
+        },
+        "sw": {
+          "L": "Kwa maana yeye alaye na kunywa, hula na kunywa hukumu juu yake mwenyewe, asipoupambanua mwili.",
+          "B": "Yeyote anayekula na kunywa bila kuupambanua mwili, anajiletea hukumu kwa kula na kunywa huko.",
+          "R": "Mkila na kunywa bila kuutambua mwili wa Bwana, mnajiletea hukumu mnapokula na kunywa."
         }
       },
       "decisions": [
@@ -3923,6 +4988,47 @@
           "reason": "Readable adds \"the Lord's\", which is true on each reading of m1, since the church is also the Lord's body. It does not decide between them.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46011029012"
+          ],
+          "choice": "discernir; juicio, juzgados (verses 29-32)",
+          "alternatives": [
+            "reconocer"
+          ],
+          "reason": "The verbs for judging and discerning run through verses 29-32 (m4). Literal and Balanced keep \"discernir\" for one and \"juicio\" and \"juzgar\" for the other so the play can be followed. \"Sí mismo\" is the ordinary form for anyone, so the English gender spans have no Spanish counterpart.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46011029012",
+            "n46011029006"
+          ],
+          "choice": "kupambanua; hukumu, kuhukumiwa",
+          "alternatives": [
+            "kutambua"
+          ],
+          "reason": "\"Kupambanua\" (discern) here and in verse 31, and \"hukumu / kuhukumiwa\" in verses 29-32, so the play on judging and discerning stays visible; Readable says \"kutambua\" (recognise).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3961,6 +5067,16 @@
           "L": "C’est pour cela que beaucoup parmi vous [sont] faibles et malades, et qu’un bon nombre dorment.",
           "B": "Voilà pourquoi tant de gens parmi vous sont faibles et malades, et un bon nombre sont morts.",
           "R": "C’est pour cela que beaucoup d’entre vous sont faibles et malades, et qu’un certain nombre sont morts."
+        },
+        "es": {
+          "L": "Por esto hay entre {{plural_you:ustedes|vosotros}} muchos débiles y enfermos, y bastantes duermen.",
+          "B": "Por esta razón hay entre {{plural_you:ustedes|vosotros}} tantos débiles y enfermos, y bastantes han muerto.",
+          "R": "Por eso muchos de {{plural_you:ustedes|vosotros}} están débiles y enfermos, y unos cuantos han muerto."
+        },
+        "sw": {
+          "L": "Kwa sababu hii wengi kati yenu [ni] dhaifu na wagonjwa, na wengi kiasi wanalala.",
+          "B": "Hii ndiyo sababu wengi kati yenu ni dhaifu na wagonjwa, na idadi kubwa wamekufa.",
+          "R": "Kwa sababu hiyo, wengi wenu ni dhaifu na wagonjwa, na si wachache wamekufa."
         }
       },
       "decisions": [
@@ -4022,6 +5138,48 @@
           "reason": "Balanced and Readable give the meaning of the idiom (m1), as at 7:39; Literal keeps \"sleeping\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46011030010"
+          ],
+          "choice": "duermen (L); han muerto (B, R)",
+          "alternatives": [
+            "descansan"
+          ],
+          "reason": "As in 7:39: Literal keeps the Greek picture of sleep for death (m1), and Balanced and Readable say it plainly.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46011030010"
+          ],
+          "choice": "wanalala (L); wamekufa (B, R)",
+          "alternatives": [
+            "wamelala mauti"
+          ],
+          "reason": "As 7:39: Literal keeps the image of sleep for death, Balanced and Readable say plainly that they have died.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4056,6 +5214,16 @@
           "L": "Mais si nous nous discernions nous-mêmes, nous ne serions pas jugés ;",
           "B": "Si nous nous examinions nous-mêmes avec discernement, nous ne tomberions pas sous le jugement.",
           "R": "Si nous regardions attentivement notre propre vie, le Seigneur n’aurait pas besoin de nous juger."
+        },
+        "es": {
+          "L": "Pero si nos discerniéramos a nosotros mismos, no seríamos juzgados;",
+          "B": "Si nos examináramos a nosotros mismos con discernimiento, no caeríamos bajo juicio.",
+          "R": "Si nos examináramos bien a nosotros mismos, el Señor no necesitaría juzgarnos."
+        },
+        "sw": {
+          "L": "Lakini kama tungejipambanua wenyewe, tusingehukumiwa;",
+          "B": "Kama tungejichunguza na kujipambanua wenyewe ipasavyo, tusingekuwa tukiingia hukumuni.",
+          "R": "Kama tungejiangalia wenyewe kwa makini, Bwana asingehitaji kutuhukumu."
         }
       },
       "decisions": [
@@ -4149,6 +5317,16 @@
           "L": "Mais étant jugés par le Seigneur, nous sommes corrigés, afin que nous ne soyons pas condamnés avec le monde.",
           "B": "Mais quand le Seigneur nous juge, {{deity_pronoun:il|Il}} nous corrige, pour que nous ne soyons pas condamnés avec le monde.",
           "R": "Mais quand le Seigneur nous juge, {{deity_pronoun:il|Il}} nous corrige comme un père ou une mère corrige son enfant. Ainsi, nous ne serons pas condamnés avec le reste du monde."
+        },
+        "es": {
+          "L": "Pero siendo juzgados por [el] Señor, somos disciplinados, para que no seamos condenados con el mundo.",
+          "B": "Pero cuando el Señor nos juzga, nos está corrigiendo, para que no seamos condenados junto con el mundo.",
+          "R": "Pero cuando el Señor nos juzga, nos está corrigiendo como un padre, para que no terminemos condenados con el resto del mundo."
+        },
+        "sw": {
+          "L": "Lakini tukihukumiwa na Bwana, tunarudiwa, ili tusihukumiwe adhabu pamoja na ulimwengu.",
+          "B": "Lakini Bwana anapotuhukumu, {{deity_pronoun:yeye|Yeye}} anaturudi, ili tusije tukahukumiwa adhabu pamoja na ulimwengu.",
+          "R": "Lakini Bwana anapotuhukumu, anaturudi kama mzazi, ili tusije tukaishia kuhukumiwa adhabu pamoja na watu wengine wa ulimwengu."
         }
       },
       "decisions": [
@@ -4231,6 +5409,45 @@
           "reason": "French \"un parent\" in the singular usually means a relative, not a father or mother, so Readable names both to bring out the picture of the English \"like a parent\" (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n46011032005"
+          ],
+          "choice": "nos está corrigiendo, no pronoun",
+          "alternatives": [],
+          "reason": "Spanish leaves the subject in the verb, so the English \"he\" has no Spanish word and no deity_pronoun span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46011032005"
+          ],
+          "choice": "kurudi (to correct)",
+          "alternatives": [
+            "kuadhibu"
+          ],
+          "reason": "\"Kurudi\" is the word for a parent correcting and training a child, the sense of the meaning decision; \"kuadhibu\" (punish) would lose the purpose of correction.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4267,6 +5484,16 @@
           "L": "Ainsi, mes {{gender:frères et sœurs|frères}}, en vous réunissant pour manger, attendez-vous les uns les autres.",
           "B": "Ainsi, mes {{gender:frères et sœurs|frères}}, quand vous vous réunissez pour le repas, attendez-vous les uns les autres.",
           "R": "Donc, mes {{gender:frères et sœurs|frères}}, quand vous vous réunissez pour manger ensemble, attendez-vous les uns les autres."
+        },
+        "es": {
+          "L": "Así que, hermanos míos, cuando {{plural_you:se reúnan|os reunáis}} para comer, {{plural_you:espérense|esperaos}} unos a otros.",
+          "B": "Así que, hermanos míos, cuando {{plural_you:se reúnan|os reunáis}} para la comida, {{plural_you:espérense|esperaos}} unos a otros.",
+          "R": "Así que, hermanos míos, cuando {{plural_you:se reúnan|os reunáis}} para comer juntos, {{plural_you:espérense|esperaos}} unos a otros."
+        },
+        "sw": {
+          "L": "Kwa hiyo, ndugu zangu, mnapokutana kwa ajili ya kula, ngojaneni.",
+          "B": "Basi, ndugu zangu, mnapokutana kwa ajili ya chakula, ngojaneni.",
+          "R": "Kwa hiyo, ndugu zangu, mnapokutana kula pamoja, ngojaneni."
         }
       },
       "decisions": [
@@ -4356,6 +5583,16 @@
           "L": "Si quelqu’un a faim, qu’il mange à la maison, afin que vous ne vous réunissiez pas pour un jugement.",
           "B": "Si quelqu’un a faim, qu’il mange chez lui, afin que vos réunions n’attirent pas sur vous un jugement.",
           "R": "Si vous avez faim, mangez d’abord chez vous. Alors vos réunions n’attireront pas de jugement sur vous."
+        },
+        "es": {
+          "L": "Si alguno tiene hambre, que coma en casa, para que no {{plural_you:se reúnan|os reunáis}} para juicio.",
+          "B": "Si alguien tiene hambre, que coma en casa, para que {{plural_you:sus|vuestras}} reuniones no {{plural_you:les|os}} traigan juicio.",
+          "R": "Si {{plural_you:tienen|tenéis}} hambre, {{plural_you:coman|comed}} primero en casa. Así {{plural_you:sus|vuestras}} reuniones no {{plural_you:les|os}} traerán juicio."
+        },
+        "sw": {
+          "L": "Mtu yeyote akiwa na njaa, ale nyumbani, ili msikutane kwa ajili ya hukumu.",
+          "B": "Mtu akiwa na njaa, ale nyumbani kwake, ili kukutana kwenu kusilete hukumu.",
+          "R": "Kama mna njaa, kuleni nyumbani kwanza. Hapo mikutano yenu haitawaletea hukumu."
         }
       },
       "decisions": [
@@ -4435,6 +5672,24 @@
           "reason": "Readable speaks to the reader directly, which avoids a gendered pronoun.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n46011034004"
+          ],
+          "choice": "que coma, no gender span",
+          "alternatives": [],
+          "reason": "The Spanish verb does not show whether \"anyone\" is a man or a woman, as in 3:14, so the English gender spans have nothing to change.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4469,6 +5724,16 @@
           "L": "Quant au reste, je [le] réglerai quand je viendrai.",
           "B": "Les autres questions, je les réglerai quand je viendrai.",
           "R": "Je m’occuperai des autres questions quand je viendrai vous voir."
+        },
+        "es": {
+          "L": "Y las demás cosas las pondré en orden cuando vaya.",
+          "B": "Los demás asuntos los arreglaré cuando vaya.",
+          "R": "Me ocuparé de los otros asuntos cuando {{plural_you:los|os}} visite."
+        },
+        "sw": {
+          "L": "Na mambo yaliyobaki nitayapanga nitakapokuja.",
+          "B": "Mambo mengine yaliyobaki nitayaweka sawa nitakapokuja.",
+          "R": "Nitashughulikia mambo mengine nitakapowatembelea."
         }
       },
       "decisions": [
