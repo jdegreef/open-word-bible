@@ -91,9 +91,12 @@ jobs:
     needs: changes
     if: needs.changes.outputs.backend == 'true'
     runs-on: ubuntu-latest
-    # The tests take a few minutes; a hang (a search query once ran for
-    # hours on a bad plan) should fail the run, not hold a runner for six.
-    timeout-minutes: 20
+    # A hang (a search query once ran for hours on a bad plan) should fail
+    # the run, not hold a runner for six. The tests themselves take 15 to 20
+    # minutes now (the search rebuild tests grow with content/), so the limit
+    # leaves room for a slow runner: on 2026-10-16 a run that passed every
+    # test was cancelled at 20 minutes while it tore down the test database.
+    timeout-minutes: 30
     services:
       postgres:
         image: postgres:16

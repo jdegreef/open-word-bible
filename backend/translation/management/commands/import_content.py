@@ -23,6 +23,9 @@ time came to take longer than Render allows a pre-deploy command. With
 are left for the next run, so a deploy after a big change (or the first one,
 with no digests yet) still finishes, and the next deploys catch up.
 
+Each run is recorded (ImportRun), so the admin's health page can show
+when content/ last reached the database and what failed.
+
 Afterwards the search tables are brought up to date (translation/search.py)
 from all of content/ and articles/, whichever files were imported: only the
 entries whose documents changed are rewritten, or all of them with --all.
@@ -39,7 +42,7 @@ from django.db import transaction
 from owb import refs, validate
 from texts.models import Edition, Word
 from translation import search
-from translation.models import ContentFile, Decision, Rendering, Sentence
+from translation.models import ContentFile, Decision, ImportRun, Rendering, Sentence
 
 TEXT_ID_EDITION = {"SBLGNT@v1.2": "sblgnt", "WLC@macula-hebrew": "wlc"}
 # Raise when save() or validate_records() changes what they do with a file,
@@ -65,6 +68,18 @@ class Command(BaseCommand):
             self.stdout.write("No source texts in the database yet; run import_texts, "
                               "then import_content. Nothing imported.")
             return
+        self.run = ImportRun.objects.create(everything=everything)
+        try:
+            self.import_files(paths, if_texts_loaded, everything, budget, started)
+        except CommandError as e:
+            self.run.finish(error=str(e))
+            raise
+        except Exception as e:
+            self.run.finish(error=f"{type(e).__name__}: {e}")
+            raise
+        self.run.finish()
+
+    def import_files(self, paths, if_texts_loaded, everything, budget, started):
         files = paths or sorted(str(p) for p in (settings.REPO_ROOT / "content").glob("*/*.json"))
         if not files:
             raise CommandError("No content files found")
@@ -91,6 +106,7 @@ class Command(BaseCommand):
                            f"run import_texts {' '.join(missing)}")
                 if if_texts_loaded:
                     self.stdout.write(f"{message}. Skipped.")
+                    self.run.skipped.append(message)
                     continue
                 raise CommandError(message)
             errors = self.validate_records(records)
@@ -102,11 +118,16 @@ class Command(BaseCommand):
                 self.save(records, editions)
                 ContentFile.objects.update_or_create(path=name, defaults={"digest": digest})
             total += len(records)
+            self.run.files += 1
+            self.run.records += len(records)
             self.stdout.write(f"{path}: {len(records)} records")
+        self.run.unchanged = unchanged
         self.stdout.write(f"{total} records imported" + (f"; {unchanged} files unchanged" if unchanged else ""))
         if left:
-            self.stdout.write(f"Budget of {budget:.0f} s used up: {len(left)} file(s) left for the next "
-                              f"run, from {left[0]}")
+            message = (f"Budget of {budget:.0f} s used up: {len(left)} file(s) left for the next "
+                       f"run, from {left[0]}")
+            self.stdout.write(message)
+            self.run.skipped.append(message)
         self.stdout.flush()
         changes = search.rebuild(full=everything)
         self.stdout.write("search: " + ", ".join(
