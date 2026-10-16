@@ -134,6 +134,19 @@ class SignInTest(TestCase):
         self.assertTrue(account.is_staff and account.is_superuser)
         self.assertFalse(self.sign_in("someone@example.org")["user"]["is_super_admin"])
 
+    def test_an_address_listed_after_sign_in_counts_on_the_next_load(self):
+        token = self.sign_in("late@example.org")["token"]
+        self.client.credentials(HTTP_AUTHORIZATION=f"Bearer {token}")
+
+        def me():
+            return self.client.get("/api/me").json()
+
+        self.assertFalse(me()["is_super_admin"])
+        with override_settings(OWB_SUPER_ADMIN_EMAILS=["boss@example.org", "late@example.org"]):
+            self.assertTrue(me()["is_super_admin"])
+            self.assertIn("team", me()["admin"])
+        self.assertTrue(get_user_model().objects.get(username="late@example.org").is_superuser)
+
     def test_super_admin_follows_the_sign_in_address_not_the_email_field(self):
         user = get_user_model().objects.create(username="other@example.org", email="boss@example.org")
         sync_super_admin(user)

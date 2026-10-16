@@ -267,7 +267,8 @@ def delete_account(user):
 
 def sync_super_admin(user):
     """Accounts whose sign-in address is in OWB_SUPER_ADMIN_EMAILS are made
-    super admins at every sign-in. The list lives in the environment, not
+    super admins at every sign-in and whenever the site loads the account
+    (/api/me). The list lives in the environment, not
     the repository, so the address is not published. It bootstraps the first
     super admin; to revoke one, remove the address there and the role here.
 

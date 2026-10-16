@@ -224,6 +224,9 @@ def me(request):
             raise ValidationError({"display_name": "Keep it under 80 characters."})
         user.first_name = name
         user.save(update_fields=["first_name"])
+    # Checked on every load as well as at sign-in, so an address added to
+    # OWB_SUPER_ADMIN_EMAILS takes effect without signing out.
+    auth.sync_super_admin(user)
     return Response(auth.user_json(user))
 
 
