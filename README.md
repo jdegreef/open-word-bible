@@ -198,6 +198,16 @@ Python 3. Preview it with:
 The build also writes `sitemap.xml`, `robots.txt` and a canonical link on
 every page, all using `SITE_URL` in `scripts/build_site.py`.
 
+For search engines and AI tools, which mostly read a page as served:
+
+- A chapter page has its Balanced text and its footnotes in the HTML
+  (`chapter_text`, `chapter_notes`); the reader redraws both in place.
+- Chapter pages, articles and the English about page (the records as a
+  dataset) carry schema.org data.
+- `/about/status/` counts the sentences drafted and reviewed, by status,
+  language and book, from `content/` at every build.
+- `llms.txt` is a short guide to the site for AI tools, with the same counts.
+
 ### Languages
 
 The whole site, menus and controls included, is built once per interface

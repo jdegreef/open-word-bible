@@ -524,6 +524,7 @@ def footer_links(lang):
     learn.append((url(lang, "/terms/"), t(lang, "nav.terms"), None))
     project = [(url(lang, "/about/"), t(lang, "footer.about"), None),
                (url(lang, "/about/beliefs/"), t(lang, "nav.beliefs"), None),
+               (url(lang, "/about/status/"), catalog(lang)["status"]["nav"], None),
                (url(lang, "/about/#credits"), t(lang, "nav.credits"), None),
                (url(lang, "/#help"), t(lang, "nav.help"), None),
                (GITHUB_URL, t(lang, "nav.source"), None),
@@ -1018,6 +1019,65 @@ def footnote_letter(n):
     return out
 
 
+def footnote_decisions(r, lang):
+    """A record's decisions with a footnote, in the reader's order: its
+    meaning decisions, then lang's Balanced rendering decisions."""
+    meaning = [d for d in r["decisions"] if d["layer"] == "meaning"]
+    rendering = [d for d in r["decisions"] if d["layer"] != "meaning"
+                 and d.get("language") == lang and "B" in d.get("levels", [])]
+    return [d for d in meaning + rendering if d.get("footnote")]
+
+
+def verse_range(r, chapter):
+    """A record's verses as reader.js's verseRange() writes them: "12",
+    "12\u201313", or "7:53\u20138:1" across a chapter break."""
+    ends = [refs.parse(r["refs"][0]), refs.parse(r["refs"][-1])]
+    across = ends[0].chapter != ends[1].chapter
+    names = [f"{e.chapter}:{e.verse}" if across or e.chapter != chapter else str(e.verse) for e in ends]
+    return names[0] if names[0] == names[1] else f"{names[0]}\u2013{names[1]}"
+
+
+def note_html(d, lang):
+    """A footnote's text as reader.js's noteText() writes it: the choice,
+    the alternatives, and whether it is uncertain. Meaning decisions are
+    written in English, so on another language's page their words say so
+    (the labels between them are in the page's language)."""
+    ui = catalog(lang)["reader.ui"]
+
+    def words(text):
+        text = html.escape(markup.render(text), quote=False)
+        return f'<span lang="en">{text}</span>' if d["layer"] == "meaning" and lang != "en" else text
+
+    out = words(d["choice"])
+    alts = d.get("alternatives", [])
+    if alts:
+        label = "fn_other" if d["category"] == "text_variant" else "fn_or" if d.get("uncertain") else "also"
+        out += ". " + html.escape(ui[label], quote=False) + words("; ".join(alts))
+    if d.get("uncertain"):
+        out += f" ({html.escape(ui['uncertain'], quote=False)})"
+    return out + "."
+
+
+def chapter_notes(records, chapter, lang="en"):
+    """The notes section under the chapter, with its footnotes listed as
+    reader.js's drawNotes() first lists them. Written into the page so the
+    footnotes are there without JavaScript (and for crawlers and AI search,
+    which mostly read a page as served); the reader redraws the section in
+    place."""
+    esc = html.escape
+    label = f'aria-label="{esc(t(lang, "reader.notes"))}"'
+    notes = [(r, d) for r in records for d in footnote_decisions(r, lang)]
+    if not notes:
+        return f'<section class="notes" id="notes" {label} hidden></section>'
+    items = "".join(f'<li><span class="note"><span class="note-mark">{footnote_letter(i)}</span>'
+                    f'<span class="note-ref">{esc(verse_range(r, chapter))}</span>'
+                    f'<span class="note-text">{note_html(d, lang)}</span></span></li>'
+                    for i, (r, d) in enumerate(notes))
+    heading = esc(catalog(lang)["reader.ui"]["notes"], quote=False)
+    return (f'<section class="notes" id="notes" {label}><div class="notes-head">'
+            f'<h2>{heading}</h2></div><ol>{items}</ol></section>')
+
+
 def chapter_text(records, chapter, paragraphs, disputed_info, lang="en"):
     """The chapter as reader.js's drawText() first draws it: Balanced, every
     setting at its default, headings shown, Study view. Written into the
@@ -1068,15 +1128,11 @@ def chapter_text(records, chapter, paragraphs, disputed_info, lang="en"):
         if para is None or heading or r["id"] in starts:
             close()
             para = ['<p class="para">']
-        # Footnote letters, counted through the page as the reader counts
-        # them: every meaning decision with a footnote, and this language's
-        # Balanced rendering decisions with one.
+        # Footnote letters, counted through the page as the reader counts them.
         marks = []
-        for d in r["decisions"]:
-            if d.get("footnote") and (d["layer"] == "meaning" or (
-                    d.get("language") == lang and "B" in d.get("levels", []))):
-                marks.append(footnote_letter(notes))
-                notes += 1
+        for _ in footnote_decisions(r, lang):
+            marks.append(footnote_letter(notes))
+            notes += 1
         parts = markup.VERSE.split(r["renderings"][tl]["B"])
         verses = [(verse_of(r["refs"][0]), parts[0].lstrip())]
         verses += [(marker_verse(r, n), text) for n, text in zip(parts[1::2], parts[2::2])]
@@ -1107,8 +1163,7 @@ CC0_URL = "https://creativecommons.org/publicdomain/zero/1.0/"
 
 
 def chapter_ld(records, book, chapter, title, lang="en"):
-    """schema.org data for a chapter page, as a script element. Every "<" is
-    written as an escape, so nothing in it can close the element."""
+    """schema.org data for a chapter page, as a script element."""
     source = SOURCE_TEXTS[source_language(book)]
     data = {
         "@context": "https://schema.org",
@@ -1124,8 +1179,17 @@ def chapter_ld(records, book, chapter, title, lang="en"):
         "translationOfWork": source,
         "isBasedOn": source,
     }
+    return ld_script(data)
+
+
+def ld_script(data):
+    """schema.org data as a script element. Every "<" is written as an
+    escape, so nothing in it can close the element."""
     text = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
     return f'<script type="application/ld+json">{text}</script>'
+
+
+ORGANIZATION = {"@type": "Organization", "name": SITE_NAME, "url": SITE_URL}
 
 
 def page_records(records, lang):
@@ -1241,7 +1305,7 @@ def chapter_page(book, chapter, lang="en"):
     <noscript><p class="notice">{t(lang, "reader.noscript", level=levels["B"])}</p><style>{NOSCRIPT_STYLE}</style></noscript>
     <div class="xr-margin" id="xr-margin"></div>
     <div class="text" id="text">{text}</div>
-    <section class="notes" id="notes" aria-label="{t(lang, "reader.notes")}" hidden></section>
+    {chapter_notes(records, chapter, lang)}
     {plan_bar(book, chapter, lang)}
     {chapter_turns(book, chapter, lang)}
     {chapter_articles_html(book, chapter, lang)}
@@ -2676,9 +2740,165 @@ def about_page(lang="en"):
 <p>{t(lang, "about.source")} <a href="{GITHUB_URL}">github.com/jdegreef/open-word-bible</a>.</p>
 {credits}
 </div>
+{dataset_ld() if lang == "en" else ""}
 """
     return page(lang, t(lang, "about.title"), body, path="/about/", current="/about/",
                 description=t(lang, "meta.about_description"))
+
+
+def dataset_ld():
+    """schema.org data describing the translation's records as a dataset,
+    for dataset search. It is given once, on the English about page. The
+    translation is CC0, but each record also holds the original-language
+    words of its source, which keep their own licences, so the description
+    says so."""
+    langs = [code for code in LANGUAGES if any(code in r["renderings"] for r in _all_records())]
+    return ld_script({
+        "@context": "https://schema.org", "@type": "Dataset",
+        "name": "Open Word Bible reasoning records",
+        "description": ("A Bible translation from Hebrew and Greek with the reasoning behind every sentence. "
+                        "Each record holds one source sentence: its original-language words, a literal gloss, "
+                        "the translation at three levels (Literal, Balanced, Readable) in each language, and each "
+                        "translation decision with its alternatives and reason. Every record is an AI-assisted "
+                        "draft until a named human reviewer approves it. The translation, notes, records and "
+                        "alignments are CC0; the original-language words come from the SBL Greek New Testament, "
+                        "the Open Scriptures Hebrew Bible and the MACULA datasets, which keep their own licences "
+                        "(credited on this page)."),
+        "url": SITE_URL + "/about/", "sameAs": GITHUB_URL,
+        "license": CC0_URL, "isAccessibleForFree": True,
+        "creator": ORGANIZATION, "publisher": ORGANIZATION,
+        "inLanguage": langs, "creativeWorkStatus": "Draft",
+        "isBasedOn": list(SOURCE_TEXTS.values()),
+        "keywords": ["Bible", "Bible translation", "Greek New Testament", "Hebrew Bible", "translation notes"],
+        "distribution": [{"@type": "DataDownload", "encodingFormat": "application/zip",
+                          "contentUrl": GITHUB_URL + "/archive/refs/heads/main.zip"}],
+    })
+
+
+# Review statuses in the schema's order; the last two mean a named reviewer
+# has approved the sentence's wording.
+REVIEW_STATUSES = tuple(validate._PROPS["status"]["enum"])
+APPROVED = REVIEW_STATUSES[2:]
+
+
+@functools.lru_cache(maxsize=None)
+def status_counts():
+    """The records counted for the status page and llms.txt: in all, by
+    review status, by language and by book (in canonical order)."""
+    records = _all_records()
+    statuses = dict.fromkeys(REVIEW_STATUSES, 0)
+    by_lang = dict.fromkeys(LANGUAGES, 0)
+    by_book = {}
+    for r in records:
+        statuses[r["status"]] += 1
+        for code in r["renderings"]:
+            by_lang[code] += 1
+        counts = by_book.setdefault(refs.parse(r["refs"][0]).book, {"all": 0, "approved": 0})
+        counts["all"] += 1
+        counts["approved"] += r["status"] in APPROVED
+    order = {code: i for i, code in enumerate(refs.BOOK_CODES)}
+    return {"all": len(records), "statuses": statuses, "drafts": statuses[REVIEW_STATUSES[0]],
+            "approved": sum(statuses[k] for k in APPROVED),
+            "languages": {code: n for code, n in by_lang.items() if n},
+            "books": dict(sorted(by_book.items(), key=lambda kv: order[kv[0]]))}
+
+
+def number(n, lang):
+    """A count with the language's thousands separator."""
+    return f"{n:,}".replace(",", catalog(lang)["status"]["thousands"])
+
+
+REVIEW_ARTICLE = "ai-assisted-translation-and-human-review"
+
+
+def status_page(lang="en"):
+    """Where the translation stands: how many sentences are drafted and how
+    many a named reviewer has approved, counted from content/ at every
+    build, so it cannot fall out of date or claim more than the records."""
+    s = catalog(lang)["status"]
+    labels = catalog(lang)["reader.ui"]["review_status"]
+    c = status_counts()
+    esc = html.escape
+
+    def table(key, head, rows):
+        heads = "".join(f'<th scope="col">{h}</th>' for h in head)
+        cells = "".join(f'<tr><th scope="row">{row[0]}</th>{"".join(f"<td>{x}</td>" for x in row[1:])}</tr>'
+                        for row in rows)
+        return (f'<h2 id="{key}">{s[key]}</h2>\n<table class="status-table" aria-labelledby="{key}">'
+                f'<thead><tr>{heads}</tr></thead><tbody>{cells}</tbody></table>')
+
+    by_status = table("by_status", (s["status"], s["count"]),
+                      [(esc(labels[k]), number(n, lang)) for k, n in c["statuses"].items()])
+    by_lang = table("by_language", (s["language"], s["count"]),
+                    [(f'<span lang="{code}">{owb_languages.native(code)}</span>', number(n, lang))
+                     for code, n in c["languages"].items()])
+    by_book = table("by_book", (s["book"], s["count"], s["reviewed"]),
+                    [(f'<a href="{url(lang, "/read/")}#{book.lower()}">{esc(BOOK_NAMES[book][lang])}</a>',
+                      number(n["all"], lang), number(n["approved"], lang))
+                     for book, n in c["books"].items()])
+    # The article on review, in the page's language where it has one.
+    article = next((a for a in load_articles(lang) if a["slug"] == REVIEW_ARTICLE), None)
+    article_lang = lang if article else "en"
+    article = article or next(a for a in load_articles("en") if a["slug"] == REVIEW_ARTICLE)
+    attr = "" if article_lang == lang else ' hreflang="en" lang="en"'
+    body = f"""
+<div class="prose status">
+<p class="eyebrow">{s["title"]}</p>
+<h1>{s["heading"]}</h1>
+<p class="dek">{s["dek"]}</p>
+<div class="stats">
+<div><b>{number(c["all"], lang)}</b><span>{s["sentences"]}</span></div>
+<div><b>{number(c["drafts"], lang)}</b><span>{s["drafts"]}</span></div>
+<div><b>{number(c["approved"], lang)}</b><span>{s["reviewed"]}</span></div>
+</div>
+<p><a href="{url(article_lang, article_url(article))}"{attr}>{s["how"]}&nbsp;&rarr;</a></p>
+<p>{s["report"].replace("{issues}", GITHUB_URL + "/issues/new")}</p>
+{by_status}
+{by_lang}
+{by_book}
+</div>
+"""
+    return page(lang, s["title"], body, path="/about/status/", current="/about/", description=s["description"])
+
+
+def llms_txt():
+    """/llms.txt: a short Markdown guide to the site for AI tools
+    (https://llmstxt.org): what it is, how its pages are laid out, where the
+    method and the data are, and how far review has got."""
+    c = status_counts()
+    other = ", ".join(f"/{code}/" for code in LANGUAGES if code != "en")
+    method = sorted((a for a in load_articles("en") if a["section"] == "method"), key=lambda a: a["order"])
+    articles = "".join(f"- [{a['title']}]({SITE_URL}{article_url(a)}): {a['summary']}\n" for a in method)
+    names = ", ".join(owb_languages.READING[code]["name"] for code in c["languages"])
+    return f"""# {SITE_NAME}
+
+> A free Bible translation from Hebrew and Greek with the reasoning behind every sentence. The translation, its notes and its reasoning records are in the public domain (CC0 1.0). Every sentence is drafted with AI help and stays marked as a draft until a named human reviewer who reads the original language approves it.
+
+At this build, {c["all"]:,} sentences are drafted and {c["approved"]:,} are reviewed by a person. Languages so far: {names}. Quote a sentence as a draft unless its page says it is reviewed.
+
+## Reading the site
+
+- A chapter is at {SITE_URL}/<book>/<chapter>/, with the book's three-letter code in lower case: {SITE_URL}/jhn/3/ is John 3. Other languages have a prefix ({other}).
+- A chapter page has the Balanced text and its footnotes as HTML. The full reasoning record of each sentence (the original words, a literal gloss, three levels of translation and every decision with its alternatives and reason) is in the page's data and opens beside the verse in the reader.
+- Old Testament verses are numbered as in the Hebrew text, so a psalm's title is verse 1.
+
+## Key pages
+
+- [Read]({SITE_URL}/read/): every book and chapter translated so far.
+- [Translation status]({SITE_URL}/about/status/): sentences drafted and reviewed, by language and book.
+- [Key terms]({SITE_URL}/terms/): the key Greek and Hebrew words and the English each keeps.
+- [Articles]({SITE_URL}/articles/): the method, close readings and the history of the Bible's text.
+- [About]({SITE_URL}/about/): licences and source credits.
+- [What we believe]({SITE_URL}/about/beliefs/)
+
+## Method
+
+{articles}
+## Data
+
+- [Source code and data]({GITHUB_URL}): one JSON file of reasoning records per passage in content/.
+- The original-language words come from the SBL Greek New Testament, the Open Scriptures Hebrew Bible and the MACULA datasets, which keep their own licences: {SITE_URL}/about/#credits
+"""
 
 
 def beliefs_page(lang="en"):
@@ -3594,6 +3814,7 @@ def article_page(article, articles, lang="en"):
 <section class="more" aria-labelledby="more-h"><h2 id="more-h">{t(lang, "article.keep_reading")}</h2>
 {f'<ul class="a-grid">{article_list(more, lang)}</ul>' if more else ""}
 <p><a href="{url(lang, "/articles/")}">{t(lang, "article.all")}</a></p></section>
+{article_ld(article, lang)}
 """
     return page(lang, article["title"], body, path=article_url(article), current="/articles/",
                 card=og_card_article(article),
@@ -3601,6 +3822,21 @@ def article_page(article, articles, lang="en"):
                            title=article["title"], summary=article["summary"]),
                 description=article["summary"],
                 translated=article_languages(article))
+
+
+def article_ld(article, lang):
+    """schema.org data for an article. Its author is the project: every
+    article is drafted with AI help, as the articles page says, so it names
+    no person."""
+    data = {"@context": "https://schema.org", "@type": "Article",
+            "headline": article["title"], "description": article["summary"],
+            "url": SITE_URL + url(lang, article_url(article)), "inLanguage": lang,
+            "datePublished": article["date"], "author": ORGANIZATION, "publisher": ORGANIZATION,
+            "isPartOf": {"@type": "WebSite", "name": SITE_NAME, "url": SITE_URL + url(lang, "/")}}
+    card = og_card_article(article)
+    if (OG / f"{card}.jpg").is_file():
+        data["image"] = f"{SITE_URL}/og/{card}.jpg"
+    return ld_script(data)
 
 
 @functools.lru_cache(maxsize=None)
@@ -4154,7 +4390,7 @@ def sitemap(paths):
 
 
 def build(out):
-    for cached in (_book_records, _chapter_words, chapter_verses, _all_records, nav_menus, footer_links, passages, asset, translated_verses, catalog, book_refs, name_cards, term_uses,
+    for cached in (status_counts, _book_records, _chapter_words, chapter_verses, _all_records, nav_menus, footer_links, passages, asset, translated_verses, catalog, book_refs, name_cards, term_uses,
                    search_documents, word_uses, series_numbers, chapter_articles, load_plans, plans_json, plans_json_url):
         cached.cache_clear()
     if out.exists():
@@ -4170,6 +4406,7 @@ def build(out):
         add("/read/", read_page(lang))
         add("/about/", about_page(lang))
         add("/about/beliefs/", beliefs_page(lang))
+        add("/about/status/", status_page(lang))
         add("/about/privacy/", legal_page(lang, "privacy", "/about/privacy/"))
         add("/about/terms-of-use/", legal_page(lang, "terms_of_use", "/about/terms-of-use/"))
         add("/search/", search_page(lang))
@@ -4212,6 +4449,7 @@ def build(out):
     files["404.html"] = not_found_page()
     files["sitemap.xml"] = sitemap(indexed)
     files["robots.txt"] = f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n"
+    files["llms.txt"] = llms_txt()
     files["favicon.svg"] = FAVICON
     files["manifest.webmanifest"] = manifest()
     files["sw.js"] = service_worker()
