@@ -1785,7 +1785,10 @@ html.signed-in .sign-in-btn { visibility: hidden; }
 .button[aria-busy="true"] { opacity: .7; cursor: progress; }
 .button:disabled { cursor: default; transform: none; }
 .auth-alt { display: grid; }
-.or { display: flex; align-items: center; gap: 12px; margin: 14px 0 0; color: var(--muted); font-size: 13.5px; }
+/* Google comes first, as on Ochorus; the email form follows the "or". */
+.google { display: grid; }
+.google .button.wide { margin-top: 0; }
+.or { display: flex; align-items: center; gap: 12px; margin: 16px 0 4px; color: var(--muted); font-size: 13.5px; }
 .or::before, .or::after { content: ""; flex: 1; border-top: 1px solid var(--line); }
 .google-btn svg { flex: none; }
 .forgot { margin: 6px 0 0; text-align: center; font-size: 15px; }
