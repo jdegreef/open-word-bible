@@ -232,7 +232,10 @@ class SiteTest(unittest.TestCase):
             self.assertIn(f"<loc>{build_site.SITE_URL}{path}</loc>", sitemap)
             self.assertIn(f'href="{path}"', (self.out / build_site.url(lang, "/").strip("/") / "index.html")
                           .read_text(encoding="utf-8"))
-            self.assertIn(f'href="{build_site.url(lang, "/articles/" + build_site.REVIEW_ARTICLE + "/")}"', page)
+            # The article on review, in the page's language where it has one.
+            has = any(a["slug"] == build_site.REVIEW_ARTICLE for a in build_site.load_articles(lang))
+            review = build_site.url(lang if has else "en", "/articles/" + build_site.REVIEW_ARTICLE + "/")
+            self.assertIn(f'href="{review}"', page)
 
     def ld(self, path, kind):
         page = (self.out / path / "index.html").read_text(encoding="utf-8")
