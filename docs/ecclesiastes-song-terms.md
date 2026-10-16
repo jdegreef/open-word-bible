@@ -122,3 +122,48 @@ listed at the end.
    fixes who speaks, and not where it is uncertain.
 4. **The Song's title:** "Song of Songs" names the book everywhere; 1:1 at
    Balanced and Readable spells out the superlative.
+
+## Settled while drafting
+
+AI-draft choices recorded so later work follows them; the founder may
+change any of them.
+
+- *Ruach* as life-breath (Ecclesiastes 3:19–21; 12:7) is "spirit" at every
+  level, so it is never confused with *hevel*, rendered "breath".
+- The gain words: *yitron* "gain" (L, B) / "what good it does" (R); *motar*
+  "advantage" / "advantage" / "better off"; *kishron* "skill" or "profit".
+- *Sakal* is rendered like *kesil* ("fool" / "fool" / "foolish person").
+- "Under the sun" at Readable is "here on earth" or "in this world".
+- The shepherd of Ecclesiastes 12:11 stays lowercase at every level.
+- *'Eved* in Ecclesiastes 10:7 is "slaves" at every level, since slave set
+  against official is the point.
+- Song of Songs: *dodim* at 5:1 is read as a call ("beloved ones"), with
+  "drink deeply of love" footnoted; "my sister" alone (5:2) is "my dearest"
+  at Readable; "daughters of Zion" (3:11) follows the Jerusalem row.
+
+## Before meaning review: claims to check
+
+Decisions that cite an ancient witness, a reading outside the vowelled text,
+or a historical or linguistic claim from general knowledge. A reviewer
+checks each before its sentence is marked meaning reviewed.
+
+**Ecclesiastes**
+- 1: 1 m1, 1 m2, 2 m1, 3 m1, 3 m3, 13 m4, 14 m1, 16 m3, 17 m1
+- 2: 5 m1, 8 m1, 8 m2, 24 m1, 25 m1
+- 3: 5 m1, 17 m2, 21 m1
+- 4: 2 m3, 13 m2, 14 m2
+- 5: 5 m1, 8 m1, 16 m2
+- 7: 27 m2
+- 8: 10 m2
+- 9: 1 m3, 2 m2, 4 m1, 14 m2
+- 12: 1 m1, 3 m1, 5 m3, 6 m3, 14 m4
+
+**Song of Songs**
+- 1: 1 m2, 1 m3, 5 m4, 7 m4, 9 m3, 12 m3, 13 m2, 14 m1, 14 m2, 17 m1
+- 2: 1 m2, 1 m3, 3 m2, 7 m2, 11 m1, 12 m2, 15 m2, 17 m3
+- 3: 6 m3, 9 m1, 9 m2, 10 m1, 10 m3, 11 m3
+- 4: 1 m2, 1 m4, 4 m1, 4 m3, 8 m2, 9 m2, 12 m2, 13 m2, 14 m1, 14 m2
+- 5: 4 m3, 13 m2, 14 m1, 14 m2, 15 m1
+- 6: 4 m2, 8 m1, 12 m2
+- 7: 1 m3, 1 m4, 3 m2, 5 m2, 5 m3, 6 m1, 7 m1, 10 m4, 14 m1
+- 8: 6 m5, 6 m6, 11 m2
