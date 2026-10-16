@@ -957,13 +957,13 @@
     "role.grant": "granted a role to", "role.revoke": "removed a role from", "role.invite": "invited",
     "user.delete": "deleted the account", "user.sign_out": "signed out the devices of",
     "message.reply": "answered", "message.done": "marked done", "message.declined": "declined", "message.new": "reopened",
-    "job.file": "filed drafting job", "article.job": "filed article job", "digest.send": "the weekly digest went to", "email.send": "emailed the team:", "fix.request": "requested fix"
+    "job.file": "filed drafting job", "article.job": "filed article job", "digest.send": "sent the weekly digest to", "email.send": "emailed the team:", "fix.request": "requested fix"
   };
   function activityList(actions) {
     return h("ul", { class: "admin-feed" }, actions.map(function (a) {
       var extra = a.detail.role ? " (" + a.detail.role + ")" : a.detail.recipients !== undefined ? " (" + plural(a.detail.recipients, "person", "people") + ")" : "";
       return h("li", null, h("time", { datetime: a.at, title: new Date(a.at).toLocaleString("en-GB") }, when(a.at)),
-        h("span", null, h("strong", null, a.actor || "someone"), " " + (ACTION_LABEL[a.action] || a.action) + " " + a.target + extra));
+        h("span", null, h("strong", null, a.actor || "The admin"), " " + (ACTION_LABEL[a.action] || a.action) + " " + a.target + extra));
     }));
   }
   VIEWS.activity = function () {
