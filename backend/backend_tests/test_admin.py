@@ -4,6 +4,7 @@ import io
 import json
 import shutil
 import tempfile
+from datetime import timedelta
 from pathlib import Path
 from unittest import mock
 
@@ -14,6 +15,7 @@ from django.core.cache import cache
 from django.core.management import CommandError, call_command
 from django.test import TestCase, override_settings
 from django.urls import get_resolver
+from django.utils import timezone
 from rest_framework.test import APIClient
 
 from accounts.models import ApiToken, Mark, Role, new_secret
@@ -589,3 +591,32 @@ class ArticlesTest(AdminTestCase):
         self.assertIn('- `one` (On "words"): bring up to date with the English', body["body"])
         self.assertIn("- `two` (Two): translate", body["body"])
         self.assertIn('<!-- article-job {"language": "fr", "slugs": ["one", "two"]} -->', body["body"])
+
+
+class DigestTest(AdminTestCase):
+    def test_nothing_to_report_sends_nothing(self):
+        # A super admin who joined long ago and has signed in: nothing waits.
+        User.objects.filter(id=self.boss.id).update(date_joined=timezone.now() - timedelta(days=30),
+                                                     last_login=timezone.now())
+        out = io.StringIO()
+        call_command("send_digest", stdout=out)
+        self.assertIn("Nothing to report", out.getvalue())
+        self.assertEqual(mail.outbox, [])
+
+    def test_the_super_admins_hear_what_waits(self):
+        account("boss2@example.org", (K.SUPER_ADMIN,))
+        account("ed@example.org", (K.EDITOR,))
+        reader = account("reader@example.org")
+        ReaderMessage.objects.create(user=reader, kind="question", verse="JHN.1.1", language="en", text="Why?")
+        call_command("send_digest", stdout=io.StringIO())
+        self.assertEqual(sorted(m.to[0] for m in mail.outbox), ["boss2@example.org", "boss@example.org"])
+        body = mail.outbox[0].body
+        self.assertIn("1 waits for an answer", body)
+        self.assertIn(f"{SITE}/admin/#inbox", body)
+        self.assertIn("haven’t signed in yet", body)   # the super admins and the editor never have
+        self.assertTrue(mail.outbox[0].subject.startswith("Open Word Bible: "))
+        self.assertEqual(AdminAction.objects.get(action="digest.send").target, "2 super admin(s)")
+        out = io.StringIO()
+        call_command("send_digest", "--dry-run", stdout=out)
+        self.assertIn("To: boss2@example.org, boss@example.org", out.getvalue())
+        self.assertEqual(len(mail.outbox), 2)

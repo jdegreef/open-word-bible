@@ -957,7 +957,7 @@
     "role.grant": "granted a role to", "role.revoke": "removed a role from", "role.invite": "invited",
     "user.delete": "deleted the account", "user.sign_out": "signed out the devices of",
     "message.reply": "answered", "message.done": "marked done", "message.declined": "declined", "message.new": "reopened",
-    "job.file": "filed drafting job", "article.job": "filed article job", "email.send": "emailed the team:", "fix.request": "requested fix"
+    "job.file": "filed drafting job", "article.job": "filed article job", "digest.send": "the weekly digest went to", "email.send": "emailed the team:", "fix.request": "requested fix"
   };
   function activityList(actions) {
     return h("ul", { class: "admin-feed" }, actions.map(function (a) {
