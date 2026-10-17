@@ -156,6 +156,7 @@
     { id: "verse", label: "Verse inspector", area: "overview", group: "Text" },
     { id: "decisions", label: "Uncertain decisions", area: "overview", group: "Text" },
     { id: "terms", label: "Key terms", area: "overview", group: "Text" },
+    { id: "consistency", label: "Consistency", area: "overview", group: "Text" },
     { id: "fixes", label: "Fix requests", area: "inbox", group: "Text" },
     { id: "articles", label: "Articles", area: "overview", group: "Text" },
     { id: "export", label: "Export", area: "export", group: "Text" },
@@ -1325,6 +1326,42 @@
         " (it needs a password: run manage.py changepassword with your address in the Render shell)."));
     }
     return out;
+  };
+
+  // Consistency: how one language words each key term across the sentences
+  // that use it, the terms split between wordings first.
+  var CONSISTENCY = { lang: "en", level: "B" };
+  VIEWS.consistency = function () {
+    var f = CONSISTENCY;
+    return api("/api/admin/consistency/?lang=" + f.lang + "&level=" + f.level).then(function (d) {
+      var langSel = select("consistency-lang", d.languages.map(function (l) { return [l.code, l.name]; }), f.lang);
+      langSel.setAttribute("aria-label", "Language");
+      langSel.addEventListener("change", function () { f.lang = langSel.value; route(); });
+      var fixes = ME.admin.indexOf("inbox") >= 0;
+      function examples(list) {
+        return h("ul", { class: "admin-examples" }, list.map(function (e) {
+          return h("li", null, h("a", { href: "#verse/" + e.verse }, e.label), " ", h("span", { class: "admin-sub" }, e.record),
+            fixes ? [" \u00b7 ", h("a", { href: "#verse/" + e.verse }, "File a fix request")] : null);
+        }));
+      }
+      var split = d.terms.filter(function (t) { return t.split; }).length;
+      var blocks = d.terms.filter(function (t) { return t.rendered; }).map(function (t) {
+        return h("section", { class: "admin-block" },
+          h("h2", null, h("span", { class: "admin-term", lang: t.language }, t.lemma), " ", t.sense, " ",
+            t.split ? pill("split", "warn") : pill("consistent", "good")),
+          h("p", { class: "admin-sub" }, plural(t.rendered, "sentence") + " in this language and level, of " + num(t.uses) + " that use the term."),
+          h("div", { class: "admin-bars" }, t.forms.map(function (form) {
+            return h("details", null, h("summary", { class: "admin-bar-row" }, h("span", null, form.form), bar(form.sentences, t.rendered),
+              h("span", { class: "admin-num" }, num(form.sentences) + " \u00b7 " + form.books.join(", "))), examples(form.examples));
+          }), t.other.sentences ? h("details", null, h("summary", { class: "admin-bar-row" }, h("span", null, "None of these"),
+            bar(t.other.sentences, t.rendered, "warn"), h("span", { class: "admin-num" }, num(t.other.sentences))), examples(t.other.examples)) : null));
+      });
+      return [head("Text", "Consistency", "How each key term is worded across the sentences that use it, from the wordings the records give it (alignments, decisions and, for English, the key term list). A term worded two ways in two or more sentences each is split; open a wording for its sentences."),
+        h("div", { class: "admin-toolbar" }, langSel,
+          seg([["L", "Literal"], ["B", "Balanced"], ["R", "Readable"]], f.level, function (v) { f.level = v; route(); })),
+        h("p", null, plural(split, "key term") + " split in " + langSel.selectedOptions[0].textContent + " at this level."),
+        blocks.length ? blocks : empty("No sentence that uses a key term is drafted in this language yet.")];
+    });
   };
 
   // ---- Start ---------------------------------------------------------
