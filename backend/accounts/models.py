@@ -146,10 +146,12 @@ class ApiToken(models.Model):
 
 
 class Mark(models.Model):
-    """A reader's bookmark and highlight on one verse, synced from the reader
-    (web/reader.js keeps them in the browser as owb.marks; accounts/reading.py
-    merges them). A mark cleared on one device stays as a row with neither, so
-    the clearing reaches the reader's other devices. updated_at is the
+    """A reader's bookmark, highlight and note on one verse, synced from the
+    reader (web/reader.js keeps them in the browser as owb.marks;
+    accounts/reading.py merges them). A note is private: it is never shown to
+    anyone but its reader, staff included. A mark cleared on one device stays
+    as a row with none of them, so the clearing reaches the reader's other
+    devices. updated_at is the
     device's clock in milliseconds: the latest change to a verse wins."""
     HUES = ("yellow", "green", "blue", "pink")
 
@@ -157,6 +159,7 @@ class Mark(models.Model):
     verse = models.CharField(max_length=16, help_text='A verse id, "JHN.3.16"')
     bookmark = models.BooleanField(default=False)
     highlight = models.CharField(max_length=8, blank=True)
+    note = models.TextField(blank=True, help_text="The reader's own note, private to them")
     text = models.TextField(blank=True, help_text="The verse's words as shown when it was marked")
     lang = models.CharField(max_length=3, blank=True)
     updated_at = models.BigIntegerField()

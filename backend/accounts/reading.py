@@ -7,7 +7,8 @@ the latest change to each verse, by the device's clock, and the answer is the
 merged whole, which the browser takes in the same way. Sending the same copy
 twice changes nothing, so a device can sync whenever it likes.
 
-    marks: {"JHN.3.16": {"b": true, "h": "yellow", "text": "...", "lang": "en", "at": 1791760739987}}
+    marks: {"JHN.3.16": {"b": true, "h": "yellow", "n": "...", "text": "...", "lang": "en",
+                         "at": 1791760739987}}
     place: {"book": "JHN", "chapter": 3, "verse": "16", "at": 1791760739987}
     plans: {"active": "mark", "at": 1791760739987,
             "plans": {"mark": {"start": "2026-10-12", "done": [1, 2], "at": 1791760739987}}}
@@ -18,8 +19,8 @@ Plans merge like marks, each plan by its own time and the active plan by
 reader's own choices, checked only for shape: web/reader.js reads the names
 it knows and ignores the rest.
 
-A mark with neither b nor h is a cleared one, kept so the clearing reaches
-the other devices.
+n is the reader's own note on the verse. A mark with none of b, h and n is a
+cleared one, kept so the clearing reaches the other devices.
 """
 import re
 import time
@@ -33,6 +34,7 @@ from .models import Mark, ReaderState, ReadingPlace
 
 MAX_MARKS = 10000
 MAX_TEXT = 2000
+MAX_NOTE = 5000
 LANGS = set(languages.CODES)  # the site's languages (data/languages.json)
 VERSE_ID = re.compile(r"^[1-4A-Z]{3}\.\d{1,3}\.\d{1,3}$")
 PLACE_VERSE = re.compile(r"^\d{1,3}(:\d{1,3})?$")
@@ -68,7 +70,10 @@ def _mark(verse, data):
         raise Invalid(f"Not a highlight colour: {hue}")
     lang = data.get("lang") or ""
     text = data.get("text") or ""
-    return Mark(verse=verse, bookmark=data.get("b") is True, highlight=hue,
+    note = data.get("n") or ""
+    if not isinstance(note, str):
+        raise Invalid(f"A note is text: {verse}")
+    return Mark(verse=verse, bookmark=data.get("b") is True, highlight=hue, note=note[:MAX_NOTE],
                 text=str(text)[:MAX_TEXT], lang=lang if lang in LANGS else "",
                 updated_at=_when(data.get("at")))
 
@@ -79,7 +84,9 @@ def mark_json(m):
         out["b"] = True
     if m.highlight:
         out["h"] = m.highlight
-    if m.bookmark or m.highlight:
+    if m.note:
+        out["n"] = m.note
+    if m.bookmark or m.highlight or m.note:
         out["text"] = m.text
         out["lang"] = m.lang
     return out
@@ -177,11 +184,11 @@ def merge(user, data):
                 m.user = user
                 new.append(m)
             elif m.updated_at > old.updated_at:
-                for field in ("bookmark", "highlight", "text", "lang", "updated_at"):
+                for field in ("bookmark", "highlight", "note", "text", "lang", "updated_at"):
                     setattr(old, field, getattr(m, field))
                 changed.append(old)
         Mark.objects.bulk_create(new)
-        Mark.objects.bulk_update(changed, ["bookmark", "highlight", "text", "lang", "updated_at"])
+        Mark.objects.bulk_update(changed, ["bookmark", "highlight", "note", "text", "lang", "updated_at"])
         if place is not None:
             current = ReadingPlace.objects.filter(user=user).first()
             if current is None or place_at > current.updated_at:

@@ -63,6 +63,24 @@ class ReadingSyncTest(TestCase):
         self.assertEqual(out["marks"]["JHN.3.16"], {"at": 200})
         self.assertEqual(Mark.objects.get().highlight, "")
 
+    def test_a_note_is_kept_synced_and_cleared_like_a_mark(self):
+        out = self.sync(marks={"JHN.3.16": {"n": "Read this at the funeral.", "text": "For God", "lang": "en",
+                                            "at": 100}})
+        self.assertEqual(out["marks"]["JHN.3.16"],
+                         {"n": "Read this at the funeral.", "text": "For God", "lang": "en", "at": 100})
+        # A newer edit on another device wins; clearing it reaches every device.
+        phone = device(self.user)
+        self.assertEqual(self.sync(phone, marks={"JHN.3.16": {"n": "Edited", "at": 200}})["marks"]["JHN.3.16"]["n"],
+                         "Edited")
+        self.assertEqual(self.sync(marks={"JHN.3.16": {"at": 300}})["marks"]["JHN.3.16"], {"at": 300})
+        self.assertEqual(Mark.objects.get().note, "")
+
+    def test_a_note_is_text_and_overlong_ones_are_cut(self):
+        r = self.client.post("/api/reading", {"marks": {"JHN.3.16": {"n": ["x"], "at": 1}}}, format="json")
+        self.assertEqual(r.status_code, 400)
+        out = self.sync(marks={"JHN.3.16": {"n": "x" * 9000, "at": 1}})
+        self.assertEqual(len(out["marks"]["JHN.3.16"]["n"]), 5000)
+
     def test_the_latest_place_wins(self):
         self.sync(place={"book": "JHN", "chapter": 3, "verse": "16", "at": 200})
         self.sync(place={"book": "ROM", "chapter": 1, "verse": "1", "at": 100})

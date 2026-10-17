@@ -459,6 +459,7 @@
         var m = marked[verseId(part[0])];
         if (m && m.h) span.classList.add("hl-" + m.h);
         if (m && m.b) span.classList.add("bookmarked");
+        if (m && m.n) span.classList.add("noted");
         if (current && current.id === r.id) span.setAttribute("aria-current", "true");
         // Poetry: the verse is a block of lines, each a block with a
         // hanging indent; a space between lines keeps copied text apart.
@@ -1353,6 +1354,8 @@
     panel.appendChild(noteBox(currentVerse || verseOf(current.refs[0])));
     panel.appendChild(toolRow());
     panel.appendChild(markRow(currentVerse));
+    var mine = myNoteBox(currentVerse);
+    if (mine) panel.appendChild(mine);
     // On phones the sheet opens at 60% height: its footnotes and uncertain
     // decisions come first, ahead of the word list (hidden on wide screens,
     // where the full notes are a scroll away).
@@ -1470,12 +1473,13 @@
     if (xr) panel.appendChild(xr);
   }
 
-  // Bookmarks and highlights, kept in this browser as owb.marks by verse
-  // ("JHN.3.16"), so they hold whatever the settings or language. Each
-  // keeps the verse's words as shown when it was marked, for the saved
-  // verses page (site.js). {b: true, h: "yellow", text, lang, at}; a mark
-  // cleared is kept as {at} so a signed-in reader's other devices clear it
-  // too (site.js syncs owb.marks with the account).
+  // Bookmarks, highlights and the reader's own notes, kept in this browser
+  // as owb.marks by verse ("JHN.3.16"), so they hold whatever the settings
+  // or language. Each keeps the verse's words as shown when it was marked,
+  // for the saved verses page (site.js). {b: true, h: "yellow", n: "note",
+  // text, lang, at}; a mark cleared is kept as {at} so a signed-in reader's
+  // other devices clear it too (site.js syncs owb.marks with the account).
+  // A note is private: only its reader sees it.
   var MARKS = "owb.marks";
   var HUES = ["yellow", "green", "blue", "pink"];
   function marks() {
@@ -1499,7 +1503,7 @@
   function setMark(v, change) {
     var all = marks(), id = verseId(v), m = all[id] || {};
     for (var k in change) { if (change[k]) m[k] = change[k]; else delete m[k]; }
-    if (m.b || m.h) {
+    if (m.b || m.h || m.n) {
       var span = verseEl(v);
       m.text = verseWords(v);
       m.lang = (span && span.lang) || settings.lang;
@@ -1538,10 +1542,78 @@
       hues.appendChild(h);
     });
     row.appendChild(hues);
+    if (!m.n && myNoteEditing !== verseId(v)) {
+      var add = el("button", "mark-note", t("my_note_add"));
+      add.type = "button";
+      add.addEventListener("click", function () { editMyNote(v, ""); });
+      row.appendChild(add);
+    }
     var all = el("a", "mark-all", t("saved_all"));
     all.href = DATA.saved;
     row.appendChild(all);
     return row;
+  }
+
+  // The reader's own note on the verse, under the mark row: the note with
+  // an edit button, or the box to write it in. The draft outlives a redraw
+  // (a sync from another device), so nothing typed is lost.
+  var myNoteEditing = null, myNoteDraft = "";
+  function editMyNote(v, text) {
+    myNoteEditing = verseId(v);
+    myNoteDraft = text;
+    var top = panelEl.scrollTop;
+    drawPanel();
+    panelEl.scrollTop = top;
+    var field = document.getElementById("my-note-text");
+    if (field) field.focus();
+  }
+  function myNoteBox(v) {
+    var m = marks()[verseId(v)] || {};
+    var box = el("div", "my-note");
+    if (myNoteEditing !== verseId(v)) {
+      if (!m.n) return null;
+      box.appendChild(el("p", "my-note-label", t("my_note")));
+      box.appendChild(el("p", "my-note-text", m.n));
+      var edit = el("button", "plan-undo", t("my_note_edit"));
+      edit.type = "button";
+      edit.addEventListener("click", function () { editMyNote(v, m.n); });
+      box.appendChild(edit);
+      return box;
+    }
+    var label = el("label", "my-note-label", t("my_note"));
+    label.htmlFor = "my-note-text";
+    box.appendChild(label);
+    var field = el("textarea", "cite-text my-note-field");
+    field.id = "my-note-text";
+    field.rows = 4;
+    field.maxLength = 5000;
+    field.value = myNoteDraft;
+    field.addEventListener("input", function () { myNoteDraft = field.value; });
+    box.appendChild(field);
+    box.appendChild(el("p", "fine my-note-private", t("my_note_private")));
+    var buttons = el("p", "my-note-buttons");
+    function done(change) {
+      myNoteEditing = null;
+      myNoteDraft = "";
+      if (change) setMark(v, change);
+      else { var top = panelEl.scrollTop; drawPanel(); panelEl.scrollTop = top; }
+    }
+    var save = el("button", "button", t("my_note_save"));
+    save.type = "button";
+    save.addEventListener("click", function () { done({ n: field.value.trim() || null }); });
+    buttons.appendChild(save);
+    var cancel = el("button", "plan-undo", t("my_note_cancel"));
+    cancel.type = "button";
+    cancel.addEventListener("click", function () { done(null); });
+    buttons.appendChild(cancel);
+    if (m.n) {
+      var del = el("button", "plan-undo", t("my_note_delete"));
+      del.type = "button";
+      del.addEventListener("click", function () { done({ n: null }); });
+      buttons.appendChild(del);
+    }
+    box.appendChild(buttons);
+    return box;
   }
 
   // By the panel's title: the previous and next verse (as k and j do).

@@ -412,8 +412,9 @@
 })();
 
 // The saved verses page (saved_page in scripts/build_site.py): the
-// bookmarks and highlights web/reader.js keeps as owb.marks, by book in
-// canonical order, each with its words as they were shown when marked.
+// bookmarks, highlights and notes web/reader.js keeps as owb.marks, by book
+// in canonical order, each with its words as they were shown when marked
+// and the reader's note.
 (function () {
   "use strict";
   var box = document.getElementById("saved");
@@ -445,7 +446,7 @@
       var m = all[id], book = id.split(".")[0];
       if (data.order.indexOf(book) < 0) return false;
       // A cleared mark ({at}) is kept only for syncing.
-      return filter === "all" ? m.b || m.h : filter === "bookmarks" ? m.b : m.h;
+      return filter === "all" ? m.b || m.h || m.n : filter === "bookmarks" ? m.b : filter === "notes" ? m.n : m.h;
     }).sort(function (a, b) {
       var p = a.split("."), q = b.split(".");
       return (data.order.indexOf(p[0]) - data.order.indexOf(q[0])) || (p[1] - q[1]) || (p[2] - q[2]);
@@ -472,13 +473,24 @@
       }
       var x = el("button", "saved-remove", data.remove);
       x.type = "button";
-      x.addEventListener("click", function () { remove(id); });
+      // Removing takes the note too: a verse with one asks for a second click.
+      x.addEventListener("click", function () {
+        if (!m.n || x.classList.contains("armed")) { remove(id); return; }
+        x.classList.add("armed");
+        x.textContent = data.confirm;
+        setTimeout(function () { x.classList.remove("armed"); x.textContent = data.remove; }, 4000);
+      });
       head.appendChild(x);
       li.appendChild(head);
       if (m.text) {
         var q = el("p", "saved-text", m.text);
         if (m.lang && m.lang !== document.documentElement.lang) q.lang = m.lang;
         li.appendChild(q);
+      }
+      if (m.n) {
+        var n = el("p", "saved-note", m.n);
+        n.setAttribute("aria-label", data.note);
+        li.appendChild(n);
       }
       group.appendChild(li);
     });
