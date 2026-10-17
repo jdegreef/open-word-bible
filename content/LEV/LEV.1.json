@@ -32,6 +32,21 @@
           "L": "And {{deity_pronoun:he|He}} called to Moses, and {{divine_name:the LORD|Yahweh}} spoke to him from the tent of meeting, saying,",
           "B": "From the tent of meeting {{divine_name:the LORD|Yahweh}} called to Moses and spoke to him. He said,",
           "R": "{{divine_name:The LORD|Yahweh}} called to Moses from the meeting tent. He said to him,"
+        },
+        "es": {
+          "L": "Y llamó a Moisés, y habló {{divine_name:el SEÑOR|Yahvé}} con él desde la Tienda del Encuentro, diciendo:",
+          "B": "Desde la Tienda del Encuentro, {{divine_name:el SEÑOR|Yahvé}} llamó a Moisés y le habló. Le dijo:",
+          "R": "{{divine_name:El SEÑOR|Yahvé}} llamó a Moisés desde la Tienda del Encuentro y le dijo:"
+        },
+        "fr": {
+          "L": "Et {{deity_pronoun:il|Il}} appela Moïse, et {{divine_name:le SEIGNEUR|Yahvé}} lui parla depuis la tente de la Rencontre, en disant :",
+          "B": "De la tente de la Rencontre, {{divine_name:le SEIGNEUR|Yahvé}} appela Moïse et lui parla. Il dit :",
+          "R": "{{divine_name:Le SEIGNEUR|Yahvé}} a appelé Moïse depuis la tente de la Rencontre. Il lui a dit :"
+        },
+        "sw": {
+          "L": "Akamwita Musa, na {{divine_name:BWANA|Yahwe}} akasema naye kutoka katika Hema la Kukutania, akisema,",
+          "B": "Kutoka katika Hema la Kukutania, {{divine_name:BWANA|Yahwe}} alimwita Musa na kusema naye. Akasema,",
+          "R": "{{divine_name:BWANA|Yahwe}} alimwita Musa kutoka Hema la Kukutania. Akamwambia,"
         }
       },
       "decisions": [
@@ -105,6 +120,224 @@
           "reason": "\"Saying\" introduces God's words. Balanced and Readable turn it into \"He said\" and put \"from the tent\" where it reads naturally.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o030010010051"
+          ],
+          "choice": "\"el SEÑOR\" (default); \"Yahvé\" with the divine name setting",
+          "alternatives": [
+            "\"Jehová\" (the Reina-Valera tradition)",
+            "\"Yavé\""
+          ],
+          "reason": "For the whole of Leviticus, as in Genesis and Exodus: the name YHWH is written \"el SEÑOR\" in capitals by default, like the English \"the LORD\"; the divine name setting gives \"Yahvé\", the usual Spanish form of the name. The span takes in the article and its contraction (\"del SEÑOR|de Yahvé\", \"al SEÑOR|a Yahvé\"). Adonai YHWH, where it occurs, is \"Señor {{divine_name:DIOS|Yahvé}}\". \"Jehová\", the form of the Reina-Valera tradition, is the alternative a reviewer may prefer.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o030010010012"
+          ],
+          "choice": "no deity pronoun span on \"llamó\"",
+          "alternatives": [
+            "\"Y él llamó\""
+          ],
+          "reason": "For the whole of Leviticus, as in Genesis and Exodus: the deity pronoun setting goes on the Spanish words for God that Spanish writes out (él, lo, le, su, mí, me, mi, tú, te, ti, tu), lowercase by default and capitalised as the alternative. Here the subject of \"llamó\" is only in the verb, as in the Hebrew, so Spanish has no span where the English \"he\" has one.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-3",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010010072",
+            "o030010010081"
+          ],
+          "choice": "\"la Tienda del Encuentro\" at every level",
+          "alternatives": [
+            "\"el tabernáculo de reunión\" (the Reina-Valera wording)",
+            "\"la tienda de reunión\""
+          ],
+          "reason": "For the whole of Leviticus, as in Exodus: \"Encuentro\" says plainly that this is where God meets with Moses and Israel (m1), and is clear enough for Readable too, where the English says \"the meeting tent\". \"Tabernáculo\" is kept for the dwelling (mishkan).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o030010010051"
+          ],
+          "choice": "\"le SEIGNEUR\" (default); \"Yahvé\" with the divine name setting",
+          "alternatives": [
+            "\"l'Éternel\" (the Segond tradition)"
+          ],
+          "reason": "For the whole of Leviticus, as in Genesis and Exodus: the name YHWH is written \"le SEIGNEUR\" in capitals by default, like the English \"the LORD\" and the Spanish \"el SEÑOR\"; the divine name setting gives \"Yahvé\", the usual French form of the name. The span takes in the article and its contraction (\"du SEIGNEUR|de Yahvé\", \"au SEIGNEUR|à Yahvé\"). Adonai YHWH, where it occurs, is \"le Seigneur {{divine_name:DIEU|Yahvé}}\". \"L'Éternel\", used in French Protestant Bibles since the Reformation, is the alternative a native reviewer may prefer; it was not made the default because it interprets the name rather than giving either the name or the traditional title \"Lord\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-2",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o030010010012"
+          ],
+          "choice": "{{deity_pronoun:il|Il}}",
+          "alternatives": [
+            "\"il\" without a setting",
+            "\"Il\" always capitalised"
+          ],
+          "reason": "For the whole of Leviticus, as in Genesis and Exodus: every pronoun for God takes the deity pronoun setting, lowercase by default and capitalised as the alternative (il, lui, le, l', son, sa, ses, and moi, me, m', mon, ma, mes, toi, te, tu, ton when God speaks or is spoken to, including an inverted \"-tu\"). \"Je\" has no span, and a pronoun opening a sentence is written plainly with its capital (Balanced and Readable \"Il dit\", \"Il lui a dit\").",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-3",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010010072",
+            "o030010010081"
+          ],
+          "choice": "\"la tente de la Rencontre\" at every level",
+          "alternatives": [
+            "\"la tente d'assignation\" (the Segond wording)",
+            "\"la tente du rendez-vous\""
+          ],
+          "reason": "For the whole of Leviticus, as in Exodus: \"la Rencontre\" says plainly that this is where God meets with Moses and Israel (m1), and serves Readable as well, where the English says \"the meeting tent\". \"Assignation\" is now a legal word to most readers.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-4",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o030010010012",
+            "o030010010042"
+          ],
+          "choice": "passé simple for the narrative at Literal and Balanced (\"appela\", \"parla\", \"dit\"); passé composé at Readable (\"a appelé\", \"a dit\")",
+          "alternatives": [
+            "passé composé at every level"
+          ],
+          "reason": "As docs/french-style.md section 3, for the narrative verses of Leviticus. The laws that follow are in the forms French uses for commands (see the next verse).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o030010010051"
+          ],
+          "choice": "\"BWANA\" (default); \"Yahwe\" with the divine name setting",
+          "alternatives": [
+            "\"Yehova\"",
+            "\"Yahweh\""
+          ],
+          "reason": "For the whole of Leviticus, as in Genesis and Exodus: the name YHWH is written \"BWANA\" (Lord) in capitals by default, like the English \"the LORD\"; the divine name setting gives \"Yahwe\", the name in Swahili spelling. Adonai YHWH, where it occurs, is \"Bwana {{divine_name:MUNGU|Yahwe}}\". \"Yehova\" is the older form some Swahili readers know; a reviewer may prefer it as the alternative.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-2",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o030010010012"
+          ],
+          "choice": "no deity pronoun span: \"Akamwita Musa\"",
+          "alternatives": [
+            "\"Yeye akamwita Musa\""
+          ],
+          "reason": "For the whole of Leviticus, as in Genesis and Exodus: Swahili marks most pronouns for God inside the verb, where no capital is possible, so the deity pronoun setting goes only on free pronouns for God (yeye, naye, mimi, nami, wewe, and the possessives wake, yake, wangu, yako...), even where the English has none. Here the subject is only in the verb, so there is no span. In Leviticus God speaks in the first person (\"mimi ni BWANA\"), and those free pronouns take the span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-3",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010010072",
+            "o030010010081"
+          ],
+          "choice": "\"Hema la Kukutania\" at every level",
+          "alternatives": [
+            "\"hema ya kukutania\"",
+            "\"Hema la Mkutano\""
+          ],
+          "reason": "For the whole of Leviticus, as in Exodus: \"kukutania\" says that this is the tent where God meets with Moses and Israel (m1), not a hall for meetings, as \"mkutano\" would suggest. \"Hema\" takes class 5 agreement (\"la\"), as in standard Swahili.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -157,6 +390,21 @@
           "L": "\"Speak to the {{gender:children|sons}} of Israel and say to them, 'When anyone among you brings near an offering to {{divine_name:the LORD|Yahweh}}, from the livestock, from the herd and from the flock, you shall bring near your offering.",
           "B": "\"Speak to the {{gender:Israelites|sons of Israel}} and tell them: 'If one of you brings an animal to {{divine_name:the LORD|Yahweh}} as an offering, it is to come from the herd or from the flock.",
           "R": "\"Tell the {{gender:Israelites|sons of Israel}}: 'When you bring an animal as an offering to {{divine_name:the LORD|Yahweh}}, it must be one of your cattle, sheep or goats."
+        },
+        "es": {
+          "L": "«Habla a los hijos de Israel y diles: “Cuando alguno de {{plural_you:ustedes|vosotros}} presente una ofrenda {{divine_name:al SEÑOR|a Yahvé}}, del ganado, de la vacada y del rebaño {{plural_you:presentarán|presentaréis}} {{plural_you:su|vuestra}} ofrenda.",
+          "B": "«Habla a los israelitas y diles: “Si alguno de {{plural_you:ustedes|vosotros}} trae un animal como ofrenda {{divine_name:al SEÑOR|a Yahvé}}, será del ganado vacuno o del rebaño.",
+          "R": "«Diles a los israelitas: “Cuando {{plural_you:traigan|traigáis}} un animal como ofrenda {{divine_name:al SEÑOR|a Yahvé}}, tiene que ser de {{plural_you:sus|vuestras}} vacas, ovejas o cabras."
+        },
+        "fr": {
+          "L": "« Parle aux {{gender:enfants|fils}} d’Israël et dis-leur : “Lorsque quelqu’un d’entre vous fera approcher une offrande {{divine_name:au SEIGNEUR|à Yahvé}}, c’est du bétail, du gros et du petit bétail, que vous ferez approcher votre offrande.",
+          "B": "« Parle aux {{gender:Israélites|fils d’Israël}} et dis-leur : “Si l’un de vous présente un animal en offrande {{divine_name:au SEIGNEUR|à Yahvé}}, il le prendra dans le gros ou le petit bétail.",
+          "R": "« Dis aux {{gender:Israélites|fils d’Israël}} : “Quand vous apportez un animal en offrande {{divine_name:au SEIGNEUR|à Yahvé}}, il doit être pris parmi vos bœufs, vos moutons ou vos chèvres."
+        },
+        "sw": {
+          "L": "\"Sema na wana wa Israeli, uwaambie, 'Mtu yeyote miongoni mwenu atakapomsogezea {{divine_name:BWANA|Yahwe}} sadaka, kutoka kwa mifugo, kutoka kwa ng'ombe na kutoka kwa kondoo na mbuzi, mtasogeza sadaka yenu.",
+          "B": "\"Sema na Waisraeli, uwaambie, 'Mtu wa kwenu akimletea {{divine_name:BWANA|Yahwe}} mnyama kuwa sadaka, mnyama huyo atatoka katika kundi la ng'ombe au la kondoo na mbuzi.",
+          "R": "\"Waambie Waisraeli, 'Mnapomletea {{divine_name:BWANA|Yahwe}} mnyama kuwa sadaka, lazima awe mmoja wa ng'ombe wenu, kondoo au mbuzi."
         }
       },
       "decisions": [
@@ -245,6 +493,155 @@
           "reason": "The Hebrew word is already inclusive, so no gender setting is needed. In the laws that follow the Hebrew says \"he\" for this person; Literal keeps \"he\", Balanced uses \"the worshiper\", \"they\" or a passive, and Readable speaks to the reader as \"you\", as this verse already does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010020031",
+            "o030010020041"
+          ],
+          "choice": "\"los hijos de Israel\" (L); \"los israelitas\" (B, R), with no gender span",
+          "alternatives": [
+            "{{gender:los israelitas|los hijos de Israel}}"
+          ],
+          "reason": "For the whole of Leviticus, as in Exodus: the phrase means the whole people, women as well as men. Spanish \"hijos\" already includes daughters, so Literal keeps \"los hijos de Israel\" and Balanced and Readable say \"los israelitas\", both without the gender setting the English needs.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o030010020101",
+            "o030010020191",
+            "o030010020212"
+          ],
+          "choice": "ustedes forms by default (ustedes, presentarán, su, traigan); vosotros forms with the plural-you setting (vosotros, presentaréis, vuestra, traigáis)",
+          "alternatives": [],
+          "reason": "For the whole of Leviticus, as in Genesis and Exodus: whenever several people are addressed, Spanish must choose a plural form of address. The default is the \"ustedes\" form used by most Spanish speakers; the plural-you setting gives the \"vosotros\" form of Spain. The span covers each verb, pronoun or possessive that changes. Where a law speaks of one worshiper, Literal and Balanced use the third person, and Readable addresses that person as \"tú\" (verse 3), with no span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-3",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o030010020191"
+          ],
+          "choice": "future for the laws at Literal and Balanced (\"presentarán\", \"será\"); \"tiene que\", \"debe\" or the imperative at Readable (\"tiene que ser\", \"Llévalo\")",
+          "alternatives": [
+            "the subjunctive (\"que sea\") at Balanced"
+          ],
+          "reason": "For the whole of Leviticus: the laws are given in the forms Spanish uses for commands. Literal and Balanced keep the future of legal style, as the Hebrew uses its future-like form; Readable uses \"tener que\", \"deber\" or a plain imperative, as the English Readable uses \"must\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o030010020031",
+            "o030010020041"
+          ],
+          "choice": "les {{gender:enfants|fils}} d’Israël (L); les {{gender:Israélites|fils d’Israël}} (B, R)",
+          "alternatives": [
+            "\"les fils d'Israël\" without a setting",
+            "\"les enfants d'Israël\" at every level"
+          ],
+          "reason": "For the whole of Leviticus, as in Exodus: the phrase means the whole people, women as well as men, so the default is inclusive, as in English: \"les enfants d'Israël\" at Literal, which keeps the family word, and \"les Israélites\" at Balanced and Readable. The setting gives the traditional \"fils d'Israël\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-2",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o030010020191"
+          ],
+          "choice": "future for the laws at Literal and Balanced (\"vous ferez approcher\", \"il le prendra\", \"il amènera\"); \"tu dois\", \"il doit\" or the imperative at Readable (\"il doit être pris\", \"Amène-le\")",
+          "alternatives": [
+            "the present of legal style at Balanced"
+          ],
+          "reason": "For the whole of Leviticus: the laws are given in the forms French uses for commands. Literal and Balanced use the future, the classic form of French legal and biblical commands; Readable uses \"devoir\" or a plain imperative, as the English Readable uses \"must\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010020031",
+            "o030010020041"
+          ],
+          "choice": "\"wana wa Israeli\" (L); \"Waisraeli\" (B, R), with no gender span",
+          "alternatives": [
+            "\"wana wa Israeli\" at every level"
+          ],
+          "reason": "For the whole of Leviticus, as in Exodus: the phrase means the whole people, women as well as men. Swahili \"wana\" already includes daughters, so no setting is needed; Balanced and Readable say \"Waisraeli\", the plain name of the people.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-2",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o030010020191"
+          ],
+          "choice": "-ta- future or the subjunctive for the laws at Literal and Balanced (\"mtasogeza\", \"atatoka\", \"atamleta\"); \"lazima\" or plain commands at Readable (\"lazima awe\", \"Mlete\")",
+          "alternatives": [],
+          "reason": "For the whole of Leviticus: the laws are given in the forms Swahili uses for commands. Literal and Balanced use the -ta- future or the subjunctive; Readable says \"lazima\" or gives a plain command, as the English Readable uses \"must\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -291,6 +688,21 @@
           "L": "If his offering [is] a burnt offering from the herd, he shall bring near a male, unblemished; to the entrance of the tent of meeting he shall bring it near, for his acceptance before {{divine_name:the LORD|Yahweh}}.",
           "B": "A burnt offering from the herd must be a male without defect. It is to be brought to the entrance of the tent of meeting, so that {{divine_name:the LORD|Yahweh}} will accept the one who offers it.",
           "R": "If you bring a burnt offering from your cattle, it must be a male with nothing wrong with it. Bring it to the entrance of the meeting tent. Then {{divine_name:the LORD|Yahweh}} will accept you."
+        },
+        "es": {
+          "L": "Si su ofrenda [es] holocausto de la vacada, presentará un macho sin defecto; a la entrada de la Tienda del Encuentro lo presentará, para ser aceptado delante {{divine_name:del SEÑOR|de Yahvé}}.",
+          "B": "El holocausto de ganado vacuno será un macho sin defecto. Se llevará a la entrada de la Tienda del Encuentro, para que {{divine_name:el SEÑOR|Yahvé}} acepte a quien lo ofrece.",
+          "R": "Si traes un holocausto de tus vacas, tiene que ser un macho que no tenga nada malo. Llévalo a la entrada de la Tienda del Encuentro. Así {{divine_name:el SEÑOR|Yahvé}} te aceptará."
+        },
+        "fr": {
+          "L": "Si son offrande [est] un holocauste de gros bétail, il fera approcher un mâle sans défaut ; il le fera approcher à l’entrée de la tente de la Rencontre, afin d’être agréé devant {{divine_name:le SEIGNEUR|Yahvé}}.",
+          "B": "L’holocauste pris dans le gros bétail sera un mâle sans défaut. On l’amènera à l’entrée de la tente de la Rencontre, afin que {{divine_name:le SEIGNEUR|Yahvé}} accueille favorablement celui qui l’offre.",
+          "R": "Si tu offres un holocauste pris parmi tes bœufs, ce doit être un mâle qui n’a rien d’abîmé. Amène-le à l’entrée de la tente de la Rencontre. Alors {{divine_name:le SEIGNEUR|Yahvé}} t’acceptera."
+        },
+        "sw": {
+          "L": "Ikiwa sadaka yake [ni] sadaka ya kuteketezwa kutoka kwa ng'ombe, atasogeza dume asiye na kasoro; atamsogeza kwenye mlango wa Hema la Kukutania, ili akubaliwe mbele za {{divine_name:BWANA|Yahwe}}.",
+          "B": "Sadaka ya kuteketezwa kutoka kwa kundi la ng'ombe itakuwa dume asiye na kasoro. Ataletwa kwenye mlango wa Hema la Kukutania, ili {{divine_name:BWANA|Yahwe}} amkubali yule anayemtoa.",
+          "R": "Ukileta sadaka ya kuteketezwa kutoka kwa ng'ombe wako, lazima awe dume asiye na tatizo lolote. Mlete kwenye mlango wa Hema la Kukutania. Ndipo {{divine_name:BWANA|Yahwe}} atakukubali."
         }
       },
       "decisions": [
@@ -379,6 +791,130 @@
           "reason": "Readable explains \"unblemished\" in common words and speaks to the reader directly, as in verse 2.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010030021"
+          ],
+          "choice": "\"el holocausto\" at every level",
+          "alternatives": [
+            "\"la ofrenda quemada\""
+          ],
+          "reason": "For the whole of Leviticus: \"holocausto\" is the established Spanish word for the offering burned whole (m1) and is still understood in that sense. \"Ofrenda quemada\" is kept for the food offering (verse 9).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010030071"
+          ],
+          "choice": "\"sin defecto\" (L, B); \"que no tenga nada malo\" (R, as the English)",
+          "alternatives": [
+            "\"sin mancha\""
+          ],
+          "reason": "For the whole of Leviticus: \"sin defecto\" says what the word means of an animal, no physical defect (m2); \"sin mancha\" suggests a stain.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010030021"
+          ],
+          "choice": "\"l'holocauste\" at every level",
+          "alternatives": [
+            "\"l'offrande brûlée\""
+          ],
+          "reason": "For the whole of Leviticus: \"holocauste\" is the established French word for the offering burned whole (m1) and, despite its modern historical sense, every French Bible reader knows it in this one.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-2",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o030010030081"
+          ],
+          "choice": "Readable speaks to the worshiper as \"tu\" (\"Si tu offres\", \"Amène-le\")",
+          "alternatives": [
+            "\"vous\" as in verse 2"
+          ],
+          "reason": "Where the English Readable says \"you\" for the one who brings the offering, French Readable uses \"tu\": the Hebrew laws speak of one worshiper (\"he\"), and Readable addresses that person directly, as Spanish \"tú\" and Swahili \"wewe\" do.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010030021"
+          ],
+          "choice": "\"sadaka ya kuteketezwa\" at every level",
+          "alternatives": [
+            "\"sadaka ya kuchomwa\""
+          ],
+          "reason": "For the whole of Leviticus: the burnt offering is wholly consumed by fire (m1); \"kuteketezwa\" says it is burned up, not merely burned. The food offering (verse 9) is \"sadaka ya kuteketezwa kwa moto\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-2",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010030071"
+          ],
+          "choice": "\"asiye na kasoro\" (L, B); \"asiye na tatizo lolote\" (R, as the English)",
+          "alternatives": [
+            "\"asiye na waa\""
+          ],
+          "reason": "For the whole of Leviticus: \"kasoro\" is a physical fault or defect (m2), the agreement following the animal (\"dume asiye na kasoro\", \"isiyo na kasoro\" for a class 9 noun). Readable speaks to the worshiper as \"wewe\" (\"Ukileta\", \"Mlete\"), as the English Readable says \"you\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -417,6 +953,21 @@
           "L": "And he shall lean his hand on the head of the burnt offering, and it will be accepted for him, to make atonement for him.",
           "B": "The worshiper is to lay their hand on the head of the burnt offering, which will then be accepted for them and make atonement for them.",
           "R": "Put your hand on the head of the animal. Then it will be accepted for you, to make atonement for you."
+        },
+        "es": {
+          "L": "Y apoyará su mano sobre la cabeza del holocausto, y le será aceptado para hacer expiación por él.",
+          "B": "El oferente pondrá la mano sobre la cabeza del holocausto, el cual será aceptado en su favor para hacer expiación por él.",
+          "R": "Pon tu mano sobre la cabeza del animal. Entonces será aceptado en tu favor, para hacer expiación por ti."
+        },
+        "fr": {
+          "L": "Et il appuiera sa main sur la tête de l’holocauste, et il sera agréé en sa faveur, pour faire l’expiation pour lui.",
+          "B": "Celui qui l’offre posera la main sur la tête de l’holocauste, qui sera alors agréé en sa faveur et fera l’expiation pour lui.",
+          "R": "Pose ta main sur la tête de l’animal. Alors il sera accepté en ta faveur, pour faire l’expiation pour toi."
+        },
+        "sw": {
+          "L": "Naye ataegemeza mkono wake juu ya kichwa cha sadaka ya kuteketezwa, nayo itakubaliwa kwa ajili yake, ili kufanya upatanisho kwa ajili yake.",
+          "B": "Anayeitoa ataweka mkono wake juu ya kichwa cha sadaka ya kuteketezwa, nayo itakubaliwa kwa ajili yake na kumfanyia upatanisho.",
+          "R": "Weka mkono wako juu ya kichwa cha mnyama huyo. Ndipo atakubaliwa kwa ajili yako, ili kukufanyia upatanisho."
         }
       },
       "decisions": [
@@ -491,6 +1042,72 @@
           "reason": "Literal says \"lean\", which is closer to the Hebrew verb. Balanced keeps the familiar \"lay his hand on\", with \"their\" for a worshiper who may be a man or a woman; Readable says \"put\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010040082"
+          ],
+          "choice": "\"hacer expiación por\" at every level",
+          "alternatives": [
+            "\"expiar\"",
+            "\"hacer reconciliación\""
+          ],
+          "reason": "For the whole of Leviticus: \"hacer expiación por\" keeps the Hebrew verb as one recurring term (m2); Readable keeps it too, as the English Readable keeps \"make atonement\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010040082"
+          ],
+          "choice": "\"faire l'expiation pour\" at every level",
+          "alternatives": [
+            "\"expier\"",
+            "\"faire propitiation\""
+          ],
+          "reason": "For the whole of Leviticus: \"faire l'expiation pour\" keeps the Hebrew verb as one recurring term with the worshiper as the one it is done for (m2); Readable keeps it, as the English Readable keeps \"make atonement\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010040082"
+          ],
+          "choice": "\"kufanya upatanisho kwa ajili ya\" (L); \"kumfanyia upatanisho\" (B, R)",
+          "alternatives": [
+            "\"kumlipia fidia\"",
+            "\"kumtakasa\""
+          ],
+          "reason": "For the whole of Leviticus: \"upatanisho\" (reconciliation) keeps the Hebrew verb as one recurring term and says what it achieves, putting right what stands between the worshiper and God (m2). Balanced and Readable use the applied form \"-fanyia\" for \"for him\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -544,6 +1161,21 @@
           "L": "And he shall slaughter the young bull before {{divine_name:the LORD|Yahweh}}, and the sons of Aaron, the priests, shall bring near the blood and throw the blood against the altar all around, which [is at] the entrance of the tent of meeting.",
           "B": "The one who brought the young bull is to slaughter it there before {{divine_name:the LORD|Yahweh}}. Aaron's sons, the priests, are then to present the blood and splash it on every side of the altar that stands at the entrance of the tent of meeting.",
           "R": "Then you must kill the young bull there in front of {{divine_name:the LORD|Yahweh}}. Aaron's sons, the priests, will bring the blood. They will splash it on all sides of the altar at the entrance of the meeting tent."
+        },
+        "es": {
+          "L": "Y degollará al novillo delante {{divine_name:del SEÑOR|de Yahvé}}, y los hijos de Aarón, los sacerdotes, presentarán la sangre y arrojarán la sangre contra el altar, alrededor, [el altar] que [está a] la entrada de la Tienda del Encuentro.",
+          "B": "El que trajo el novillo lo degollará allí, delante {{divine_name:del SEÑOR|de Yahvé}}. Después los hijos de Aarón, los sacerdotes, presentarán la sangre y la salpicarán por todos los lados del altar que está a la entrada de la Tienda del Encuentro.",
+          "R": "Luego tienes que matar el novillo allí, delante {{divine_name:del SEÑOR|de Yahvé}}. Los hijos de Aarón, los sacerdotes, llevarán la sangre. La salpicarán por todos los lados del altar, a la entrada de la Tienda del Encuentro."
+        },
+        "fr": {
+          "L": "Et il égorgera le jeune taureau devant {{divine_name:le SEIGNEUR|Yahvé}}, et les fils d’Aaron, les prêtres, feront approcher le sang et jetteront le sang contre l’autel, tout autour, [l’autel] qui [est à] l’entrée de la tente de la Rencontre.",
+          "B": "Celui qui a amené le jeune taureau l’égorgera là, devant {{divine_name:le SEIGNEUR|Yahvé}}. Les fils d’Aaron, les prêtres, présenteront ensuite le sang et le projetteront sur tous les côtés de l’autel qui se trouve à l’entrée de la tente de la Rencontre.",
+          "R": "Ensuite, tu dois tuer le jeune taureau là, devant {{divine_name:le SEIGNEUR|Yahvé}}. Les fils d’Aaron, les prêtres, apporteront le sang. Ils le projetteront sur tous les côtés de l’autel, à l’entrée de la tente de la Rencontre."
+        },
+        "sw": {
+          "L": "Naye atamchinja fahali mchanga mbele za {{divine_name:BWANA|Yahwe}}, nao wana wa Haruni, makuhani, wataisogeza damu na kuirusha damu kwenye madhabahu pande zote, [madhabahu] iliyo [penye] mlango wa Hema la Kukutania.",
+          "B": "Yule aliyemleta fahali mchanga atamchinja hapo mbele za {{divine_name:BWANA|Yahwe}}. Kisha wana wa Haruni, makuhani, wataileta damu na kuirusha pande zote za madhabahu iliyo kwenye mlango wa Hema la Kukutania.",
+          "R": "Kisha lazima umchinje fahali huyo mchanga hapo mbele za {{divine_name:BWANA|Yahwe}}. Wana wa Haruni, makuhani, wataleta damu. Watairusha pande zote za madhabahu, kwenye mlango wa Hema la Kukutania."
         }
       },
       "decisions": [
@@ -627,6 +1259,70 @@
           "reason": "The Hebrew says \"he\". Balanced names the worshiper so that the reader does not take \"he\" for the priest, who is first mentioned later in the verse.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010050132"
+          ],
+          "choice": "\"arrojar\" (L); \"salpicar\" (B, R)",
+          "alternatives": [
+            "\"rociar\""
+          ],
+          "reason": "For the whole of Leviticus: the verb means to throw blood in quantity from a bowl (m3). \"Rociar\" is kept for sprinkling with a finger (4:6), so the two acts stay distinct, as in the English.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010050132"
+          ],
+          "choice": "\"jeter\" (L); \"projeter\" (B, R)",
+          "alternatives": [
+            "\"asperger\"",
+            "\"répandre\""
+          ],
+          "reason": "For the whole of Leviticus: the verb means to throw blood in quantity from a bowl (m3). \"Asperger\" is kept for sprinkling with a finger (4:6), so the two acts stay distinct, as in the English; \"répandre\" is kept for pouring out (4:7).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010050132"
+          ],
+          "choice": "\"kurusha\" at every level",
+          "alternatives": [
+            "\"kunyunyiza\""
+          ],
+          "reason": "For the whole of Leviticus: the verb means to throw blood in quantity from a bowl (m3). \"Kunyunyiza\" is kept for sprinkling with a finger (4:6), so the two acts stay distinct, as in the English.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -661,6 +1357,21 @@
           "L": "And he shall skin the burnt offering and cut it into its pieces.",
           "B": "The worshiper is then to skin the burnt offering and cut it up into its parts.",
           "R": "Then you must take off the animal's skin and cut the animal into its parts."
+        },
+        "es": {
+          "L": "Y desollará el holocausto y lo cortará en sus piezas.",
+          "B": "Luego el oferente desollará el holocausto y lo cortará en sus partes.",
+          "R": "Después tienes que quitarle la piel al animal y cortarlo en pedazos."
+        },
+        "fr": {
+          "L": "Et il dépouillera l’holocauste et le découpera en ses morceaux.",
+          "B": "Celui qui l’offre dépouillera ensuite l’holocauste et le découpera en ses différentes parties.",
+          "R": "Ensuite, tu dois enlever la peau de l’animal et le couper en morceaux."
+        },
+        "sw": {
+          "L": "Naye ataichuna ngozi sadaka ya kuteketezwa na kuikata vipande vyake.",
+          "B": "Kisha anayeitoa ataichuna ngozi sadaka ya kuteketezwa na kuikata vipande vyake.",
+          "R": "Kisha lazima umchune ngozi mnyama huyo na kumkata vipande vipande."
         }
       },
       "decisions": [
@@ -733,6 +1444,21 @@
           "L": "And the sons of Aaron the priest shall put fire on the altar and arrange wood on the fire.",
           "B": "The sons of Aaron the priest are to put fire on the altar and lay wood in order on the fire.",
           "R": "The sons of Aaron the priest will start a fire on the altar and stack wood on it."
+        },
+        "es": {
+          "L": "Y los hijos de Aarón el sacerdote pondrán fuego sobre el altar y dispondrán leña sobre el fuego.",
+          "B": "Los hijos del sacerdote Aarón pondrán fuego en el altar y colocarán leña en orden sobre el fuego.",
+          "R": "Los hijos del sacerdote Aarón encenderán fuego en el altar y apilarán leña encima."
+        },
+        "fr": {
+          "L": "Et les fils d’Aaron le prêtre mettront du feu sur l’autel et disposeront du bois sur le feu.",
+          "B": "Les fils du prêtre Aaron mettront du feu sur l’autel et arrangeront du bois sur le feu.",
+          "R": "Les fils du prêtre Aaron allumeront un feu sur l’autel et ils empileront du bois dessus."
+        },
+        "sw": {
+          "L": "Na wana wa Haruni kuhani wataweka moto juu ya madhabahu na kupanga kuni juu ya moto.",
+          "B": "Wana wa kuhani Haruni wataweka moto juu ya madhabahu na kupanga kuni kwa utaratibu juu ya moto.",
+          "R": "Wana wa kuhani Haruni watawasha moto juu ya madhabahu na kupanga kuni juu yake."
         }
       },
       "decisions": [
@@ -833,6 +1559,21 @@
           "L": "And the sons of Aaron, the priests, shall arrange the pieces, the head and the suet on the wood that [is] on the fire that [is] on the altar.",
           "B": "Aaron's sons, the priests, are to set out the pieces on the burning wood of the altar, along with the head and the suet.",
           "R": "Then they will place the pieces, the head and the fat on the burning wood on the altar."
+        },
+        "es": {
+          "L": "Y los hijos de Aarón, los sacerdotes, dispondrán las piezas, la cabeza y el sebo, sobre la leña que [está] sobre el fuego que [está] sobre el altar.",
+          "B": "Los hijos de Aarón, los sacerdotes, colocarán las piezas, junto con la cabeza y el sebo, sobre la leña encendida del altar.",
+          "R": "Luego ellos pondrán los pedazos, la cabeza y la grasa sobre la leña que arde en el altar."
+        },
+        "fr": {
+          "L": "Et les fils d’Aaron, les prêtres, disposeront les morceaux, la tête et le suif, sur le bois qui [est] sur le feu qui [est] sur l’autel.",
+          "B": "Les fils d’Aaron, les prêtres, disposeront les morceaux, avec la tête et le suif, sur le bois qui brûle sur l’autel.",
+          "R": "Ensuite, ils placeront les morceaux, la tête et la graisse sur le bois qui brûle sur l’autel."
+        },
+        "sw": {
+          "L": "Na wana wa Haruni, makuhani, watapanga vipande, kichwa na shahamu, juu ya kuni zilizo juu ya moto ulio juu ya madhabahu.",
+          "B": "Wana wa Haruni, makuhani, watapanga vipande hivyo pamoja na kichwa na shahamu juu ya kuni zinazowaka juu ya madhabahu.",
+          "R": "Kisha watapanga vipande, kichwa na shahamu juu ya kuni zinazowaka juu ya madhabahu."
         }
       },
       "decisions": [
@@ -884,6 +1625,69 @@
           "reason": "Readable says \"the fat\" for the rare word Literal and Balanced render \"suet\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010080102"
+          ],
+          "choice": "\"el sebo\" (L, B); \"la grasa\" (R)",
+          "alternatives": [
+            "\"la grasa\" at every level"
+          ],
+          "reason": "\"Sebo\" keeps this rare word (m1) apart from \"la grasa\", used for the common word for the fat in chapter 3, as the English keeps \"suet\" apart from \"fat\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010080102"
+          ],
+          "choice": "\"le suif\" (L, B); \"la graisse\" (R)",
+          "alternatives": [
+            "\"la graisse\" at every level"
+          ],
+          "reason": "\"Suif\" keeps this rare word (m1) apart from \"la graisse\", used for the common word for the fat in chapter 3, as the English keeps \"suet\" apart from \"fat\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010080102"
+          ],
+          "choice": "\"shahamu\" at every level",
+          "alternatives": [
+            "\"mafuta\""
+          ],
+          "reason": "Swahili has no common word for suet apart from fat, so \"shahamu\" (animal fat) is used here and for the fat of chapter 3; \"mafuta\" is kept for oil (2:1), so that the two never mix.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -931,6 +1735,21 @@
           "L": "And its entrails and its legs he shall wash with water, and the priest shall make the whole smoke on the altar, a burnt offering, an offering by fire, an aroma of soothing to {{divine_name:the LORD|Yahweh}}.",
           "B": "The internal organs and the legs are to be washed with water, and the priest is to turn the whole animal into smoke on the altar. It is a burnt offering, a food offering, a soothing aroma to {{divine_name:the LORD|Yahweh}}.",
           "R": "You must wash the inner organs and the legs with water. Then the priest must burn all of it on the altar. It is a burnt offering, a food offering burned on the fire, a smell that pleases {{divine_name:the LORD|Yahweh}}."
+        },
+        "es": {
+          "L": "Y sus entrañas y sus patas las lavará con agua, y el sacerdote hará humear todo sobre el altar, holocausto, ofrenda quemada, aroma grato {{divine_name:al SEÑOR|a Yahvé}}.",
+          "B": "Las vísceras y las patas se lavarán con agua, y el sacerdote hará subir todo en humo sobre el altar. Es un holocausto, una ofrenda quemada, de aroma grato {{divine_name:al SEÑOR|a Yahvé}}.",
+          "R": "Tienes que lavar con agua los órganos internos y las patas. Después, el sacerdote tiene que quemarlo todo en el altar. Es un holocausto, una ofrenda quemada en el fuego, de olor agradable para {{divine_name:el SEÑOR|Yahvé}}."
+        },
+        "fr": {
+          "L": "Et ses entrailles et ses pattes, il les lavera dans l’eau, et le prêtre fera fumer le tout sur l’autel, holocauste, offrande consumée par le feu, odeur apaisante pour {{divine_name:le SEIGNEUR|Yahvé}}.",
+          "B": "On lavera dans l’eau les viscères et les pattes, et le prêtre fera monter le tout en fumée sur l’autel. C’est un holocauste, une offrande consumée par le feu, une odeur apaisante pour {{divine_name:le SEIGNEUR|Yahvé}}.",
+          "R": "Tu dois laver dans l’eau les organes du ventre et les pattes. Ensuite, le prêtre doit brûler le tout sur l’autel. C’est un holocauste, une offrande brûlée sur le feu, une odeur qui plaît {{divine_name:au SEIGNEUR|à Yahvé}}."
+        },
+        "sw": {
+          "L": "Na matumbo yake na miguu yake atayaosha kwa maji, naye kuhani atakifukiza kitu chote juu ya madhabahu, sadaka ya kuteketezwa, sadaka ya kuteketezwa kwa moto, harufu ya kupendeza kwa {{divine_name:BWANA|Yahwe}}.",
+          "B": "Viungo vya ndani na miguu vitaoshwa kwa maji, naye kuhani atamfukiza mnyama mzima juu ya madhabahu. Ni sadaka ya kuteketezwa, sadaka ya kuteketezwa kwa moto, harufu ya kupendeza kwa {{divine_name:BWANA|Yahwe}}.",
+          "R": "Lazima uoshe kwa maji viungo vya ndani na miguu. Kisha kuhani atamchoma mnyama mzima juu ya madhabahu. Ni sadaka ya kuteketezwa, sadaka iliyochomwa kwa moto, harufu inayompendeza {{divine_name:BWANA|Yahwe}}."
         }
       },
       "decisions": [
@@ -1034,6 +1853,140 @@
           "reason": "Balanced says \"internal organs\" for \"entrails\" and \"turn into smoke\" for the verb \"make smoke\"; Readable says \"burn\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010090111",
+            "o030010090121",
+            "o030010090131"
+          ],
+          "choice": "\"ofrenda quemada\" for the food offering (L, B; \"ofrenda quemada en el fuego\" at R); \"aroma grato\" (L, B), \"olor agradable\" (R)",
+          "alternatives": [
+            "\"ofrenda de alimento\"",
+            "\"olor suave\""
+          ],
+          "reason": "For the whole of Leviticus: the food offering (m2) is named by what is done with it, as at English Literal, so that one Spanish term serves every level; the English Balanced \"food offering\" has no natural Spanish equivalent. \"Aroma grato\" says that God accepts the offering (m3); Readable says it more plainly.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010090052"
+          ],
+          "choice": "\"hacer humear\" (L); \"hacer subir en humo\" (B); \"quemar\" (R)",
+          "alternatives": [
+            "\"quemar\" at every level"
+          ],
+          "reason": "For the whole of Leviticus: the verb is not the ordinary word for burning but means making something go up as smoke (m1). Literal and Balanced keep that picture; Readable says \"quemar\", as the English Readable says \"burn\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010090111",
+            "o030010090121",
+            "o030010090131"
+          ],
+          "choice": "\"offrande consumée par le feu\" for the food offering (L, B; \"offrande brûlée sur le feu\" at R); \"odeur apaisante\" (L, B), \"odeur qui plaît\" (R)",
+          "alternatives": [
+            "\"offrande alimentaire\"",
+            "\"parfum agréable\""
+          ],
+          "reason": "For the whole of Leviticus: the food offering (m2) is named by what is done with it, as at English Literal, so that one French term serves Literal and Balanced; \"offrande alimentaire\" would sound odd. \"Odeur apaisante\" keeps the Hebrew picture of a smell that calms and pleases (m3); Readable says plainly that it pleases the LORD.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-2",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010090052"
+          ],
+          "choice": "\"faire fumer\" (L); \"faire monter en fumée\" (B); \"brûler\" (R)",
+          "alternatives": [
+            "\"brûler\" at every level"
+          ],
+          "reason": "For the whole of Leviticus: the verb is not the ordinary word for burning but means making something go up as smoke (m1). Literal and Balanced keep that picture; Readable says \"brûler\", as the English Readable says \"burn\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010090111",
+            "o030010090121",
+            "o030010090131"
+          ],
+          "choice": "\"sadaka ya kuteketezwa kwa moto\" for the food offering (L, B; \"sadaka iliyochomwa kwa moto\" at R); \"harufu ya kupendeza\" (L, B), \"harufu inayompendeza BWANA\" (R)",
+          "alternatives": [
+            "\"sadaka ya chakula\""
+          ],
+          "reason": "For the whole of Leviticus: the food offering (m2) is named by what is done with it, as at English Literal. Beside \"sadaka ya kuteketezwa\" (the burnt offering) it reads like a repetition; a reviewer may prefer \"sadaka ya chakula\", nearer the English Balanced. \"Harufu ya kupendeza\" says that God accepts the offering (m3).",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-2",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010090052"
+          ],
+          "choice": "\"kufukiza\" (L, B); \"kuchoma\" (R)",
+          "alternatives": [
+            "\"kuteketeza\""
+          ],
+          "reason": "For the whole of Leviticus: the verb means making something go up as smoke (m1), the sense of \"kufukiza\", used also for incense. Readable says \"kuchoma\" (burn), as the English Readable says \"burn\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1076,6 +2029,21 @@
           "L": "And if his offering [is] from the flock, from the sheep or from the goats, for a burnt offering, he shall bring near a male, unblemished.",
           "B": "If the animal for the burnt offering comes from the flock, from the sheep or the goats, it must be a male without defect.",
           "R": "If you bring a sheep or a goat as a burnt offering, it must be a male. It must be healthy and perfect."
+        },
+        "es": {
+          "L": "Y si su ofrenda [es] del ganado menor, de los corderos o de las cabras, para holocausto, presentará un macho sin defecto.",
+          "B": "Si el animal para el holocausto es del rebaño, de las ovejas o de las cabras, será un macho sin defecto.",
+          "R": "Si traes como holocausto una de tus ovejas o de tus cabras, tiene que ser un macho. Tiene que estar sano y no tener ningún defecto."
+        },
+        "fr": {
+          "L": "Et si son offrande [est] du petit bétail, des agneaux ou des chèvres, pour un holocauste, il fera approcher un mâle sans défaut.",
+          "B": "Si l’animal destiné à l’holocauste est pris dans le petit bétail, parmi les moutons ou les chèvres, ce sera un mâle sans défaut.",
+          "R": "Si tu offres en holocauste une bête de ton petit bétail, un mouton ou une chèvre, ce doit être un mâle. Il doit être en bonne santé et parfait."
+        },
+        "sw": {
+          "L": "Na ikiwa sadaka yake [ni] kutoka kwa kondoo na mbuzi, kutoka kwa wana-kondoo au kutoka kwa mbuzi, kwa sadaka ya kuteketezwa, atasogeza dume asiye na kasoro.",
+          "B": "Kama mnyama wa sadaka ya kuteketezwa ni wa kundi la kondoo na mbuzi, yaani kondoo au mbuzi, atakuwa dume asiye na kasoro.",
+          "R": "Ukileta kondoo au mbuzi kuwa sadaka ya kuteketezwa, lazima awe dume. Lazima awe mzima na mkamilifu."
         }
       },
       "decisions": [
@@ -1174,6 +2142,21 @@
           "L": "And he shall slaughter it at the side of the altar northward before {{divine_name:the LORD|Yahweh}}, and the sons of Aaron, the priests, shall throw its blood against the altar all around.",
           "B": "It is to be slaughtered before {{divine_name:the LORD|Yahweh}} on the north side of the altar, and Aaron's sons, the priests, are to splash its blood on every side of the altar.",
           "R": "You must kill it in front of {{divine_name:the LORD|Yahweh}} on the north side of the altar. Aaron's sons, the priests, will splash its blood on all sides of the altar."
+        },
+        "es": {
+          "L": "Y lo degollará al lado del altar, hacia el norte, delante {{divine_name:del SEÑOR|de Yahvé}}, y los hijos de Aarón, los sacerdotes, arrojarán su sangre contra el altar, alrededor.",
+          "B": "Se degollará delante {{divine_name:del SEÑOR|de Yahvé}}, en el lado norte del altar, y los hijos de Aarón, los sacerdotes, salpicarán su sangre por todos los lados del altar.",
+          "R": "Tienes que matarlo delante {{divine_name:del SEÑOR|de Yahvé}}, en el lado norte del altar. Los hijos de Aarón, los sacerdotes, salpicarán su sangre por todos los lados del altar."
+        },
+        "fr": {
+          "L": "Et il l’égorgera sur le côté de l’autel, vers le nord, devant {{divine_name:le SEIGNEUR|Yahvé}}, et les fils d’Aaron, les prêtres, jetteront son sang contre l’autel, tout autour.",
+          "B": "On l’égorgera devant {{divine_name:le SEIGNEUR|Yahvé}}, du côté nord de l’autel, et les fils d’Aaron, les prêtres, projetteront son sang sur tous les côtés de l’autel.",
+          "R": "Tu dois le tuer devant {{divine_name:le SEIGNEUR|Yahvé}}, du côté nord de l’autel. Les fils d’Aaron, les prêtres, projetteront son sang sur tous les côtés de l’autel."
+        },
+        "sw": {
+          "L": "Naye atamchinja ubavuni mwa madhabahu upande wa kaskazini mbele za {{divine_name:BWANA|Yahwe}}, nao wana wa Haruni, makuhani, watairusha damu yake kwenye madhabahu pande zote.",
+          "B": "Atachinjwa mbele za {{divine_name:BWANA|Yahwe}} upande wa kaskazini wa madhabahu, na wana wa Haruni, makuhani, watairusha damu yake pande zote za madhabahu.",
+          "R": "Lazima umchinje mbele za {{divine_name:BWANA|Yahwe}} upande wa kaskazini wa madhabahu. Wana wa Haruni, makuhani, watairusha damu yake pande zote za madhabahu."
         }
       },
       "decisions": [
@@ -1260,6 +2243,21 @@
           "L": "And he shall cut it into its pieces, with its head and its suet, and the priest shall arrange them on the wood that [is] on the fire that [is] on the altar.",
           "B": "It is to be cut into its pieces, and the priest is to set them out, with the head and the suet, on the burning wood of the altar.",
           "R": "Then you must cut it into pieces. The priest will place the pieces, the head and the fat on the burning wood on the altar."
+        },
+        "es": {
+          "L": "Y lo cortará en sus piezas, con su cabeza y su sebo, y el sacerdote las dispondrá sobre la leña que [está] sobre el fuego que [está] sobre el altar.",
+          "B": "Se cortará en sus partes, y el sacerdote las colocará, junto con la cabeza y el sebo, sobre la leña encendida del altar.",
+          "R": "Luego tienes que cortarlo en pedazos. El sacerdote pondrá los pedazos, la cabeza y la grasa sobre la leña que arde en el altar."
+        },
+        "fr": {
+          "L": "Et il le découpera en ses morceaux, avec sa tête et son suif, et le prêtre les disposera sur le bois qui [est] sur le feu qui [est] sur l’autel.",
+          "B": "On le découpera en ses différentes parties, et le prêtre les disposera, avec la tête et le suif, sur le bois qui brûle sur l’autel.",
+          "R": "Ensuite, tu dois le couper en morceaux. Le prêtre placera les morceaux, la tête et la graisse sur le bois qui brûle sur l’autel."
+        },
+        "sw": {
+          "L": "Naye atamkata vipande vyake, pamoja na kichwa chake na shahamu yake, naye kuhani atavipanga juu ya kuni zilizo juu ya moto ulio juu ya madhabahu.",
+          "B": "Atakatwa vipande vyake, naye kuhani atavipanga pamoja na kichwa na shahamu juu ya kuni zinazowaka juu ya madhabahu.",
+          "R": "Kisha lazima umkate vipande vipande. Kuhani atapanga vipande hivyo, kichwa na shahamu juu ya kuni zinazowaka juu ya madhabahu."
         }
       },
       "decisions": [
@@ -1328,6 +2326,21 @@
           "L": "And the entrails and the legs he shall wash with water, and the priest shall bring near the whole and make [it] smoke on the altar; it [is] a burnt offering, an offering by fire, an aroma of soothing to {{divine_name:the LORD|Yahweh}}.",
           "B": "The internal organs and the legs are to be washed with water. The priest is to present all of it and turn it into smoke on the altar. It is a burnt offering, a food offering, a soothing aroma to {{divine_name:the LORD|Yahweh}}.",
           "R": "You must wash the inner organs and the legs with water. The priest will offer all of it and burn it on the altar. It is a burnt offering, a food offering burned on the fire, a smell that pleases {{divine_name:the LORD|Yahweh}}."
+        },
+        "es": {
+          "L": "Y las entrañas y las patas las lavará con agua, y el sacerdote presentará todo y [lo] hará humear sobre el altar; holocausto [es], ofrenda quemada, aroma grato {{divine_name:al SEÑOR|a Yahvé}}.",
+          "B": "Las vísceras y las patas se lavarán con agua. El sacerdote presentará todo y lo hará subir en humo sobre el altar. Es un holocausto, una ofrenda quemada, de aroma grato {{divine_name:al SEÑOR|a Yahvé}}.",
+          "R": "Tienes que lavar con agua los órganos internos y las patas. El sacerdote ofrecerá todo y lo quemará en el altar. Es un holocausto, una ofrenda quemada en el fuego, de olor agradable para {{divine_name:el SEÑOR|Yahvé}}."
+        },
+        "fr": {
+          "L": "Et les entrailles et les pattes, il les lavera dans l’eau, et le prêtre fera approcher le tout et [le] fera fumer sur l’autel ; c’[est] un holocauste, une offrande consumée par le feu, une odeur apaisante pour {{divine_name:le SEIGNEUR|Yahvé}}.",
+          "B": "On lavera dans l’eau les viscères et les pattes. Le prêtre présentera le tout et le fera monter en fumée sur l’autel. C’est un holocauste, une offrande consumée par le feu, une odeur apaisante pour {{divine_name:le SEIGNEUR|Yahvé}}.",
+          "R": "Tu dois laver dans l’eau les organes du ventre et les pattes. Le prêtre offrira le tout et le brûlera sur l’autel. C’est un holocauste, une offrande brûlée sur le feu, une odeur qui plaît {{divine_name:au SEIGNEUR|à Yahvé}}."
+        },
+        "sw": {
+          "L": "Na matumbo na miguu atayaosha kwa maji, naye kuhani atakisogeza kitu chote na kukifukiza juu ya madhabahu; [ni] sadaka ya kuteketezwa, sadaka ya kuteketezwa kwa moto, harufu ya kupendeza kwa {{divine_name:BWANA|Yahwe}}.",
+          "B": "Viungo vya ndani na miguu vitaoshwa kwa maji. Kuhani atavitoa vyote na kuvifukiza juu ya madhabahu. Ni sadaka ya kuteketezwa, sadaka ya kuteketezwa kwa moto, harufu ya kupendeza kwa {{divine_name:BWANA|Yahwe}}.",
+          "R": "Lazima uoshe kwa maji viungo vya ndani na miguu. Kuhani atavitoa vyote na kuvichoma juu ya madhabahu. Ni sadaka ya kuteketezwa, sadaka iliyochomwa kwa moto, harufu inayompendeza {{divine_name:BWANA|Yahwe}}."
         }
       },
       "decisions": [
@@ -1390,6 +2403,21 @@
           "L": "And if his offering to {{divine_name:the LORD|Yahweh}} [is] a burnt offering from the birds, then he shall bring near his offering from the turtledoves or from the young pigeons.",
           "B": "If someone's burnt offering to {{divine_name:the LORD|Yahweh}} is a bird, they are to bring a turtledove or a young pigeon.",
           "R": "If you offer a bird as a burnt offering to {{divine_name:the LORD|Yahweh}}, choose a dove or a young pigeon."
+        },
+        "es": {
+          "L": "Y si su ofrenda {{divine_name:al SEÑOR|a Yahvé}} [es] holocausto de aves, presentará su ofrenda de las tórtolas o de los pichones.",
+          "B": "Si alguien ofrece un ave {{divine_name:al SEÑOR|a Yahvé}} como holocausto, traerá una tórtola o un pichón.",
+          "R": "Si ofreces un ave como holocausto {{divine_name:al SEÑOR|a Yahvé}}, escoge una paloma o un pichón."
+        },
+        "fr": {
+          "L": "Et si son offrande {{divine_name:au SEIGNEUR|à Yahvé}} [est] un holocauste d’oiseaux, il fera approcher son offrande parmi les tourterelles ou parmi les jeunes pigeons.",
+          "B": "Si quelqu’un offre {{divine_name:au SEIGNEUR|à Yahvé}} un oiseau en holocauste, il apportera une tourterelle ou un jeune pigeon.",
+          "R": "Si tu offres un oiseau en holocauste {{divine_name:au SEIGNEUR|à Yahvé}}, choisis une colombe ou un jeune pigeon."
+        },
+        "sw": {
+          "L": "Na ikiwa sadaka yake kwa {{divine_name:BWANA|Yahwe}} [ni] sadaka ya kuteketezwa ya ndege, atasogeza sadaka yake kutoka kwa hua au kutoka kwa makinda ya njiwa.",
+          "B": "Mtu akimtolea {{divine_name:BWANA|Yahwe}} ndege kuwa sadaka ya kuteketezwa, ataleta hua au kinda la njiwa.",
+          "R": "Ukimtolea {{divine_name:BWANA|Yahwe}} ndege kuwa sadaka ya kuteketezwa, chagua hua au kinda la njiwa."
         }
       },
       "decisions": [
@@ -1487,6 +2515,21 @@
           "L": "And the priest shall bring it near to the altar and nip off its head and make [it] smoke on the altar, and its blood shall be drained out on the side of the altar.",
           "B": "The priest is to take it to the altar. He is to nip off its head and turn the head into smoke on the altar, and the bird's blood is to be squeezed out against the altar's side.",
           "R": "The priest will take the bird to the altar. He will pull off its head and burn the head on the altar. Then he will let its blood drain out on the side of the altar."
+        },
+        "es": {
+          "L": "Y el sacerdote lo acercará al altar, le arrancará la cabeza con los dedos y [la] hará humear sobre el altar, y su sangre será exprimida sobre la pared del altar.",
+          "B": "El sacerdote lo llevará al altar. Le arrancará la cabeza con los dedos y hará subir la cabeza en humo sobre el altar, y la sangre del ave se exprimirá contra el costado del altar.",
+          "R": "El sacerdote llevará el ave al altar. Le arrancará la cabeza y quemará la cabeza en el altar. Luego dejará que la sangre se escurra por el costado del altar."
+        },
+        "fr": {
+          "L": "Et le prêtre l’approchera de l’autel, lui détachera la tête en la pinçant et [la] fera fumer sur l’autel, et son sang sera exprimé sur la paroi de l’autel.",
+          "B": "Le prêtre l’apportera à l’autel. Il lui détachera la tête en la pinçant et fera monter la tête en fumée sur l’autel, et le sang de l’oiseau sera pressé contre la paroi de l’autel.",
+          "R": "Le prêtre apportera l’oiseau à l’autel. Il lui arrachera la tête et brûlera la tête sur l’autel. Ensuite, il laissera couler son sang sur le côté de l’autel."
+        },
+        "sw": {
+          "L": "Naye kuhani atamsogeza kwenye madhabahu, atakinyofoa kichwa chake na kukifukiza juu ya madhabahu; nayo damu yake itakamuliwa ubavuni mwa madhabahu.",
+          "B": "Kuhani atamleta madhabahuni. Atakinyofoa kichwa chake na kukifukiza kichwa hicho juu ya madhabahu, nayo damu ya ndege huyo itakamuliwa ubavuni mwa madhabahu.",
+          "R": "Kuhani atampeleka ndege huyo kwenye madhabahu. Atang'oa kichwa chake na kukichoma kichwa hicho juu ya madhabahu. Kisha ataiacha damu yake itiririke ubavuni mwa madhabahu."
         }
       },
       "decisions": [
@@ -1593,6 +2636,21 @@
           "L": "And he shall remove its crop with its feathers and throw it beside the altar, eastward, to the place of the fatty ashes.",
           "B": "He is to take out its crop along with its feathers and throw it down on the east side of the altar, at the place for the ashes.",
           "R": "He will remove the bird's crop and its feathers. He will throw them on the east side of the altar, where the ashes are piled."
+        },
+        "es": {
+          "L": "Y quitará su buche con sus plumas y lo arrojará junto al altar, hacia el oriente, al lugar de las cenizas grasas.",
+          "B": "Le quitará el buche junto con las plumas y lo echará al lado oriental del altar, en el lugar de las cenizas.",
+          "R": "Le quitará al ave el buche y las plumas. Los echará en el lado este del altar, donde se amontonan las cenizas."
+        },
+        "fr": {
+          "L": "Et il ôtera son jabot avec ses plumes et le jettera à côté de l’autel, vers l’orient, au lieu des cendres grasses.",
+          "B": "Il enlèvera son jabot avec ses plumes et le jettera du côté est de l’autel, à l’endroit des cendres.",
+          "R": "Il enlèvera le jabot de l’oiseau et ses plumes. Il les jettera du côté est de l’autel, là où on entasse les cendres."
+        },
+        "sw": {
+          "L": "Naye ataliondoa gole lake pamoja na manyoya yake na kulitupa kando ya madhabahu, upande wa mashariki, mahali pa majivu ya mafuta.",
+          "B": "Ataliondoa gole lake pamoja na manyoya yake na kulitupa upande wa mashariki wa madhabahu, mahali pa majivu.",
+          "R": "Ataondoa gole la ndege huyo na manyoya yake. Atavitupa upande wa mashariki wa madhabahu, mahali majivu yanapolundikwa."
         }
       },
       "decisions": [
@@ -1713,6 +2771,21 @@
           "L": "And he shall tear it open by its wings; he shall not divide [it]; and the priest shall make it smoke on the altar, on the wood that [is] on the fire; it [is] a burnt offering, an offering by fire, an aroma of soothing to {{divine_name:the LORD|Yahweh}}.",
           "B": "Taking it by the wings, he is to tear it open but not split it in two. Then the priest is to turn it into smoke on the altar, on the burning wood. It is a burnt offering, a food offering, a soothing aroma to {{divine_name:the LORD|Yahweh}}.",
           "R": "He will hold it by its wings and tear it open, but not into two parts. Then the priest will burn it on the fire on the altar. It is a burnt offering, a food offering burned on the fire, a smell that pleases {{divine_name:the LORD|Yahweh}}."
+        },
+        "es": {
+          "L": "Y lo rasgará por sus alas; no [lo] dividirá; y el sacerdote lo hará humear sobre el altar, sobre la leña que [está] sobre el fuego; holocausto [es], ofrenda quemada, aroma grato {{divine_name:al SEÑOR|a Yahvé}}.",
+          "B": "Tomándolo por las alas, lo abrirá sin partirlo en dos. Después el sacerdote lo hará subir en humo sobre el altar, sobre la leña encendida. Es un holocausto, una ofrenda quemada, de aroma grato {{divine_name:al SEÑOR|a Yahvé}}.",
+          "R": "Lo agarrará por las alas y lo abrirá, pero sin partirlo en dos. Luego el sacerdote lo quemará sobre el fuego del altar. Es un holocausto, una ofrenda quemada en el fuego, de olor agradable para {{divine_name:el SEÑOR|Yahvé}}."
+        },
+        "fr": {
+          "L": "Et il le déchirera par ses ailes ; il ne [le] séparera pas ; et le prêtre le fera fumer sur l’autel, sur le bois qui [est] sur le feu ; c’[est] un holocauste, une offrande consumée par le feu, une odeur apaisante pour {{divine_name:le SEIGNEUR|Yahvé}}.",
+          "B": "Le tenant par les ailes, il le fendra sans le séparer en deux. Puis le prêtre le fera monter en fumée sur l’autel, sur le bois qui brûle. C’est un holocauste, une offrande consumée par le feu, une odeur apaisante pour {{divine_name:le SEIGNEUR|Yahvé}}.",
+          "R": "Il le tiendra par les ailes et le déchirera, mais sans le couper en deux. Puis le prêtre le brûlera sur le feu de l’autel. C’est un holocauste, une offrande brûlée sur le feu, une odeur qui plaît {{divine_name:au SEIGNEUR|à Yahvé}}."
+        },
+        "sw": {
+          "L": "Naye atampasua kwa mabawa yake; hatamtenganisha; naye kuhani atamfukiza juu ya madhabahu, juu ya kuni zilizo juu ya moto; [ni] sadaka ya kuteketezwa, sadaka ya kuteketezwa kwa moto, harufu ya kupendeza kwa {{divine_name:BWANA|Yahwe}}.",
+          "B": "Akimshika kwa mabawa, atampasua bila kumgawa sehemu mbili. Kisha kuhani atamfukiza juu ya madhabahu, juu ya kuni zinazowaka. Ni sadaka ya kuteketezwa, sadaka ya kuteketezwa kwa moto, harufu ya kupendeza kwa {{divine_name:BWANA|Yahwe}}.",
+          "R": "Atamshika kwa mabawa na kumpasua, lakini si kumgawa vipande viwili. Kisha kuhani atamchoma juu ya moto wa madhabahu. Ni sadaka ya kuteketezwa, sadaka iliyochomwa kwa moto, harufu inayompendeza {{divine_name:BWANA|Yahwe}}."
         }
       },
       "decisions": [
