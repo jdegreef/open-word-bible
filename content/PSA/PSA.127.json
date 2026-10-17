@@ -52,6 +52,11 @@
           "L": "Wimbo wa kupanda. Wa Sulemani. Kama {{divine_name:BWANA|Yahwe}} hajengi nyumba, wajenzi wake wamejitaabisha bure juu yake; kama {{divine_name:BWANA|Yahwe}} haulindi mji, mlinzi amekesha bure.",
           "B": "Wimbo wa kupanda. Wa Sulemani. Ikiwa {{divine_name:BWANA|Yahwe}} si {{deity_pronoun:yeye|Yeye}} anayejenga nyumba, kazi ya wajenzi wake inakuwa bure. Ikiwa {{divine_name:BWANA|Yahwe}} haulindi mji, kukesha kwa mlinzi usiku kucha ni bure.",
           "R": "Wimbo wa safari ya kupanda kwenda Yerusalemu. Wa Sulemani. Kama {{divine_name:BWANA|Yahwe}} si {{deity_pronoun:yeye|Yeye}} anayejenga nyumba, wajenzi wanapoteza kazi yao. Kama {{divine_name:BWANA|Yahwe}} si {{deity_pronoun:yeye|Yeye}} anayeulinda mji, walinzi wanapoteza muda wao kukaa macho."
+        },
+        "es": {
+          "L": "Cántico de las subidas. De Salomón. Si {{divine_name:el SEÑOR|Yahvé}} no edifica una casa, en vano se han fatigado en ella sus constructores; si {{divine_name:el SEÑOR|Yahvé}} no guarda una ciudad, en vano ha velado el centinela.",
+          "B": "Cántico de las subidas. De Salomón. Si {{divine_name:el SEÑOR|Yahvé}} no construye la casa, el trabajo de los constructores no sirve de nada. Si {{divine_name:el SEÑOR|Yahvé}} no cuida la ciudad, la noche en vela del centinela se pierde.",
+          "R": "Canto para el viaje de subida a Jerusalén. De Salomón. Si no es {{divine_name:el SEÑOR|Yahvé}} quien construye una casa, los constructores están desperdiciando su trabajo. Si no es {{divine_name:el SEÑOR|Yahvé}} quien cuida una ciudad, los guardias pierden el tiempo quedándose despiertos."
         }
       },
       "decisions": [
@@ -205,6 +210,11 @@
           "L": "[Ni] bure kwenu ninyi mnaoamka mapema, mnaochelewa kukaa, mnaokula mkate wa taabu; hivyo humpa mpendwa {{deity_pronoun:wake|Wake}} usingizi.",
           "B": "Haiwafaidii kitu kuamka mapema na kuchelewa kulala, mkila chakula kilichopatikana kwa kazi ya wasiwasi; {{deity_pronoun:yeye|Yeye}} humpa usingizi yule ampendaye.",
           "R": "Hakuna faida kuamka mapema na kuchelewa kwenda kulala, mkifanya kazi ngumu ili tu kupata chakula. Mungu huwapa usingizi watu anaowapenda."
+        },
+        "es": {
+          "L": "En vano [es] para {{plural_you:ustedes|vosotros}} madrugar, acostarse tarde, comer el pan de los trabajos penosos; así da {{deity_pronoun:él|Él}} a {{deity_pronoun:su|Su}} amado el sueño.",
+          "B": "De nada {{plural_you:les|os}} sirve levantarse temprano y acostarse tarde, comiendo el pan ganado con trabajo y angustia; {{deity_pronoun:él|Él}} da el sueño al que {{deity_pronoun:él|Él}} ama.",
+          "R": "No sirve de nada levantarse temprano e irse a dormir tarde, trabajando tanto solo para tener algo que comer. Dios da el sueño a la gente que {{deity_pronoun:él|Él}} ama."
         }
       },
       "decisions": [
@@ -295,6 +305,26 @@
           "reason": "The Hebrew \"for you\" is plural, addressed to all who toil; French uses \"vous\". Readable turns it into a general statement with infinitives, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191270020022"
+          ],
+          "choice": "plural_you on \"ustedes\" (L) and \"les\" (B)",
+          "alternatives": [
+            "a singular \"tú\""
+          ],
+          "reason": "The Hebrew \"for you\" is plural, spoken to all who wear themselves out; Spanish marks it with the plural_you setting. Readable, like the English Readable, says it without addressing anyone.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -335,6 +365,11 @@
           "L": "Tazama, urithi kutoka kwa {{divine_name:BWANA|Yahwe}} [ni] watoto; tuzo [ni] uzao wa tumbo.",
           "B": "Watoto ni zawadi ya urithi itokayo kwa {{divine_name:BWANA|Yahwe}}; uzao wa tumbo ni tuzo.",
           "R": "Watoto ni zawadi kutoka kwa {{divine_name:BWANA|Yahwe}}. Mtoto anapozaliwa, ni tuzo kutoka {{deity_pronoun:kwake|Kwake}}."
+        },
+        "es": {
+          "L": "Mira, herencia {{divine_name:del SEÑOR|de Yahvé}} [son] los hijos; una recompensa [es] el fruto del vientre.",
+          "B": "Los hijos son un regalo que se recibe {{divine_name:del SEÑOR|de Yahvé}}; el fruto del vientre es una recompensa.",
+          "R": "Los hijos son un regalo {{divine_name:del SEÑOR|de Yahvé}}. Cuando nace un bebé, es una recompensa que viene de {{deity_pronoun:él|Él}}."
         }
       },
       "decisions": [
@@ -450,6 +485,27 @@
           "reason": "The Hebrew \"sons\" here means children (see the meaning decision). Swahili says \"watoto\"; \"wana wa kiume\" would mean boys only and change the sense, so there is no setting, unlike the English.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191270030041"
+          ],
+          "choice": "hijos, with no gender setting",
+          "alternatives": [
+            "hijos e hijas"
+          ],
+          "reason": "The English has a setting for \"children\" or \"sons\". Spanish \"hijos\" already means children of both sexes as well as sons, so it stays plain here and in verse 4.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -491,6 +547,11 @@
           "L": "Kama mishale mkononi mwa shujaa, ndivyo [walivyo] watoto wa ujanani.",
           "B": "Watoto wanaozaliwa na wazazi vijana ni kama mishale mkononi mwa mpiganaji.",
           "R": "Watoto wanaozaliwa wazazi wao wakiwa bado vijana ni kama mishale mkononi mwa askari. Wanasaidia kuilinda familia."
+        },
+        "es": {
+          "L": "Como flechas en la mano de un guerrero, así [son] los hijos de la juventud.",
+          "B": "Los hijos que se tienen de joven son como flechas en la mano de un guerrero.",
+          "R": "Los hijos que nacen cuando sus padres son jóvenes son como flechas en la mano de un soldado. Ayudan a proteger a la familia."
         }
       },
       "decisions": [
@@ -611,6 +672,11 @@
           "L": "Heri mtu ambaye amelijaza podo lake kwa hao! Hawataaibishwa watakaposema na adui langoni.",
           "B": "Heri mtu aliye na podo lililojaa hao! Hawataaibika wanaposhindana na adui kwenye lango la mji.",
           "R": "Maisha ni mazuri kweli kwa mtu ambaye podo lake limejaa mishale ya namna hiyo! Wanapokutana na adui mahakamani kwenye lango la mji, hawataaibika."
+        },
+        "es": {
+          "L": "¡{{gender:Dichosa la persona|Dichoso el hombre}} que ha llenado su aljaba de ellos! No serán avergonzados cuando hablen con los enemigos en la puerta.",
+          "B": "¡Qué {{gender:dichosa es la persona|dichoso es el hombre}} que tiene la aljaba llena de ellos! No quedarán en vergüenza cuando discutan con los enemigos en la puerta de la ciudad.",
+          "R": "¡Qué buena es la vida de quien tiene la aljaba llena de esas flechas! Cuando se encuentren con sus enemigos en el tribunal, a la puerta de la ciudad, no quedarán en vergüenza."
         }
       },
       "decisions": [
@@ -737,6 +803,27 @@
             "\"Ana furaha mtu\""
           ],
           "reason": "\"Heri\" is the Swahili word that declares someone truly happy; it is not \"amebarikiwa\", which would say God has blessed him. Readable spells it out as the English Readable does. \"Mtu\" means a man or a woman, so the English gender setting has nothing to change.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191270050011"
+          ],
+          "choice": "Dichosa la persona / Dichoso el hombre (L, B); Qué buena es la vida de quien (R)",
+          "alternatives": [
+            "Bienaventurado"
+          ],
+          "reason": "The Hebrew ashre says how well a life goes. Literal and Balanced use \"dichoso\", agreeing with its noun inside the gender setting; Readable says the person's life is good, as the English Readable does, and as earlier Psalms do.",
           "uncertain": false,
           "footnote": false
         }

@@ -40,6 +40,11 @@
           "L": "Msifuni {{divine_name:BWANA|Yah}}! Heri yule anayemcha {{divine_name:BWANA|Yahwe}}, apendezwaye sana na amri {{deity_pronoun:zake|Zake}}!",
           "B": "Msifuni {{divine_name:BWANA|Yah}}! Heri wote wanaomcha {{divine_name:BWANA|Yahwe}}, ambao furaha yao kuu iko katika amri {{deity_pronoun:zake|Zake}}!",
           "R": "Msifuni {{divine_name:BWANA|Yah}}! Maisha ni mazuri kweli kwa watu wanaomcha {{divine_name:BWANA|Yahwe}} na kupenda kufanya anayoyaamuru."
+        },
+        "es": {
+          "L": "¡{{plural_you:Alaben|Alabad}} {{divine_name:al SEÑOR|a Yah}}! ¡{{gender:Dichosa la persona|Dichoso el hombre}} [que] teme {{divine_name:al SEÑOR|a Yahvé}}, [que] en {{deity_pronoun:sus|Sus}} mandamientos se deleita mucho!",
+          "B": "¡{{plural_you:Alaben|Alabad}} {{divine_name:al SEÑOR|a Yah}}! ¡Qué dichosos son todos los que temen {{divine_name:al SEÑOR|a Yahvé}}, los que encuentran su gran deleite en {{deity_pronoun:sus|Sus}} mandamientos!",
+          "R": "¡{{plural_you:Alaben|Alabad}} {{divine_name:al SEÑOR|a Yah}}! Qué buena es la vida de quienes temen {{divine_name:al SEÑOR|a Yahvé}} y aman hacer lo que {{deity_pronoun:él|Él}} manda."
         }
       },
       "decisions": [
@@ -216,6 +221,45 @@
           "reason": "Swahili singular pronouns and verbs do not mark male or female, so \"yule\" and \"yake\" already include women and men, and the gender setting has nothing to change. Balanced and Readable use the plural, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191120010041"
+          ],
+          "choice": "{{gender:Dichosa la persona|Dichoso el hombre}}",
+          "alternatives": [
+            "Dichoso el hombre"
+          ],
+          "reason": "The Hebrew ʾish is the man who fears the LORD, a picture of anyone who does. As in Psalm 1, Literal has a gender setting: \"la persona\" by default, \"el hombre\" as the alternative, with the agreeing words inside the span. Later lines of the psalm use Spanish forms that name no gender (\"su\", verbs without a pronoun), so the setting is needed only where an adjective agrees.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191120010041"
+          ],
+          "choice": "plural: los que temen ... (B, R)",
+          "alternatives": [
+            "singular"
+          ],
+          "reason": "Balanced and Readable speak of all who fear the LORD in the plural, as the English does, so the psalm reads as being about anyone who lives this way.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -257,6 +301,11 @@
           "L": "Uzao wake utakuwa hodari katika nchi; kizazi cha wanyofu kitabarikiwa.",
           "B": "Wazao wao watakuwa na nguvu katika nchi, kwa maana jamaa ya wanyofu imebarikiwa.",
           "R": "Watoto wao watakuwa na nguvu na heshima katika nchi. Mungu huzibariki jamaa za watu wanaotenda yaliyo haki."
+        },
+        "es": {
+          "L": "Poderosa en la tierra será su descendencia; la generación de los rectos será bendita.",
+          "B": "Sus descendientes serán poderosos en la tierra, porque la familia de los rectos es bendecida.",
+          "R": "Sus hijos llegarán a ser fuertes e importantes en la tierra. Dios bendice a las familias de los que hacen lo correcto."
         }
       },
       "decisions": [
@@ -390,6 +439,11 @@
           "L": "Mali na utajiri [vimo] nyumbani mwake, na haki yake inadumu milele.",
           "B": "Nyumba zao zimejaa mali na utajiri, na haki yao inadumu nyakati zote.",
           "R": "Nyumba zao zimejaa vitu vizuri, na haki yao haitakoma kamwe."
+        },
+        "es": {
+          "L": "Bienes y riquezas [hay] en su casa, y su justicia permanece para siempre.",
+          "B": "Sus casas están llenas de bienes y riquezas, y su justicia permanece para siempre.",
+          "R": "Sus hogares están llenos de cosas buenas, y su justicia nunca se acabará."
         }
       },
       "decisions": [
@@ -506,6 +560,11 @@
           "L": "Nuru huwazukia wanyofu gizani; [yeye ni] mwenye neema na huruma na haki.",
           "B": "Giza linapoingia, nuru huwaangazia wanyofu: wao ni wenye neema, wamejaa huruma, na ni wenye haki.",
           "R": "Nyakati za giza, nuru itawaangazia watu wanaotenda yaliyo haki. Wao ni wema na wenye huruma, nao huishi kwa haki."
+        },
+        "es": {
+          "L": "Resplandece en las tinieblas la luz para los rectos; [es] clemente, {{gender:compasiva y justa|compasivo y justo}}.",
+          "B": "Cuando cae la oscuridad, una luz brilla para los rectos: son clementes, llenos de compasión y justos.",
+          "R": "Cuando llegan tiempos oscuros, la luz brillará para los que hacen lo correcto. Son bondadosos y compasivos, y viven con rectitud."
         }
       },
       "decisions": [
@@ -622,6 +681,11 @@
           "L": "Ni vema kwa mtu anayefadhili na kukopesha; huendesha mambo yake kwa haki.",
           "B": "Mambo huwaendea vema watu walio wema na kuwakopesha wengine, na wanaoshughulikia mambo yao kwa haki.",
           "R": "Maisha huwaendea vema watu wanaowakopesha kwa moyo mkunjufu wale wenye shida. Wao ni waadilifu katika biashara zao zote."
+        },
+        "es": {
+          "L": "Bien [le va] a {{gender:la persona|al hombre}} que se compadece y presta; conduce sus asuntos con justicia.",
+          "B": "Les va bien a los que son generosos y prestan a otros, y llevan sus negocios con justicia.",
+          "R": "A la gente que presta con gusto a los necesitados le va bien en la vida. Son justos en todos sus negocios."
         }
       },
       "decisions": [
@@ -754,6 +818,11 @@
           "L": "Kwa maana milele hatatikiswa; mwenye haki atakuwa [katika] ukumbusho milele.",
           "B": "Hawatapinduliwa kamwe; mwenye haki atakumbukwa nyakati zote.",
           "R": "Hakuna kitakachowaangusha kamwe. Watu watawakumbuka daima wale wanaotenda yaliyo haki."
+        },
+        "es": {
+          "L": "Porque jamás vacilará; en memoria eterna estará [el] justo.",
+          "B": "Nunca serán derribados; el justo será recordado para siempre.",
+          "R": "Nada los derribará jamás. La gente siempre recordará a los que hacen lo correcto."
         }
       },
       "decisions": [
@@ -884,6 +953,11 @@
           "L": "Habari mbaya hataziogopa; moyo wake [ni] thabiti, ukimtumaini {{divine_name:BWANA|Yahwe}}.",
           "B": "Habari mbaya haziwatishi; mioyo yao iko imara kwa sababu wanamtumaini {{divine_name:BWANA|Yahwe}}.",
           "R": "Hawaogopi habari mbaya. Hubaki watulivu na wenye uhakika, kwa sababu wanamtumaini {{divine_name:BWANA|Yahwe}}."
+        },
+        "es": {
+          "L": "De malas noticias no tendrá temor; firme [está] su corazón, confiado en {{divine_name:el SEÑOR|Yahvé}}.",
+          "B": "Las malas noticias no los asustan; su corazón se mantiene firme porque confían en {{divine_name:el SEÑOR|Yahvé}}.",
+          "R": "No tienen miedo de las malas noticias. Se mantienen tranquilos y seguros, porque confían en {{divine_name:el SEÑOR|Yahvé}}."
         }
       },
       "decisions": [
@@ -1019,6 +1093,11 @@
           "L": "Moyo wake umetegemezwa; hataogopa, hadi atakapowatazama watesi wake.",
           "B": "Mioyo yao imeshikiliwa imara wala hawataogopa, mpaka waone yatakayowapata adui zao.",
           "R": "Mioyo yao ina nguvu, kwa hiyo hawataogopa. Siku moja watawaona adui zao wameshindwa."
+        },
+        "es": {
+          "L": "Sostenido [está] su corazón; no temerá, hasta que mire a sus adversarios.",
+          "B": "Su corazón se mantiene firme y no tendrán miedo, hasta que vean lo que les pasa a sus enemigos.",
+          "R": "Su corazón es fuerte, así que no tendrán miedo. Un día verán derrotados a sus enemigos."
         }
       },
       "decisions": [
@@ -1158,6 +1237,11 @@
           "L": "Ametawanya, amewapa wahitaji; haki yake inadumu milele; pembe yake itainuliwa kwa heshima.",
           "B": "Wametoa kwa ukarimu, wakigawa zawadi zao kwa wahitaji; haki yao inadumu nyakati zote, na nguvu zao zitainuliwa kwa heshima.",
           "R": "Huwapa maskini bila kujinyima. Haki yao haitakoma kamwe. Watafanywa wenye nguvu na kuheshimiwa."
+        },
+        "es": {
+          "L": "Ha repartido, ha dado a los necesitados; su justicia permanece para siempre; su cuerno será exaltado con honra.",
+          "B": "Han dado con generosidad, repartiendo sus dones entre los necesitados; su justicia permanece para siempre, y su fuerza se alzará con honor.",
+          "R": "Dan con generosidad a los pobres. Su justicia nunca se acabará. Serán fuertes y honrados."
         }
       },
       "decisions": [
@@ -1311,6 +1395,11 @@
           "L": "Mwovu ataona na kuudhika; atasaga meno yake na kuyeyuka; tamaa ya waovu itapotea.",
           "B": "Waovu wanaona hayo wakachukizwa; wanasaga meno na kuyeyuka; kile wanachokitamani waovu kinapotea.",
           "R": "Watu waovu wataona hayo na kukasirika. Watasaga meno, nao watatoweka. Wanachokitaka hakitatokea kamwe."
+        },
+        "es": {
+          "L": "El malvado [lo] verá y se irritará; rechinará sus dientes y se consumirá; el deseo de los malvados perecerá.",
+          "B": "Los malvados lo ven y se enfurecen; rechinan los dientes y se consumen; lo que los malvados anhelan se pierde.",
+          "R": "Los malvados verán esto y se enojarán. Rechinarán los dientes y se irán desvaneciendo. Lo que ellos quieren nunca sucederá."
         }
       },
       "decisions": [

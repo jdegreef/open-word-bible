@@ -40,6 +40,11 @@
           "L": "Mshukuruni {{divine_name:BWANA|Yahwe}}; liitieni jina {{deity_pronoun:lake|Lake}}; julisheni kati ya mataifa matendo {{deity_pronoun:yake|Yake}}.",
           "B": "Mshukuruni {{divine_name:BWANA|Yahwe}}, liitieni jina {{deity_pronoun:lake|Lake}}; waambieni mataifa yote aliyoyatenda.",
           "R": "Mshukuruni {{divine_name:BWANA|Yahwe}}! Mwombeni kwa jina {{deity_pronoun:lake|Lake}}. Waambieni watu kila mahali aliyoyatenda."
+        },
+        "es": {
+          "L": "{{plural_you:Den|Dad}} gracias {{divine_name:al SEÑOR|a Yahvé}}; {{plural_you:invoquen|invocad}} {{deity_pronoun:su|Su}} nombre; {{plural_you:den|dad}} a conocer entre los pueblos {{deity_pronoun:sus|Sus}} obras.",
+          "B": "{{plural_you:Den|Dad}} gracias {{divine_name:al SEÑOR|a Yahvé}} e {{plural_you:invoquen|invocad}} {{deity_pronoun:su|Su}} nombre; {{plural_you:cuenten|contad}} a todos los pueblos lo que {{deity_pronoun:él|Él}} ha hecho.",
+          "R": "¡{{plural_you:Den|Dad}} gracias {{divine_name:al SEÑOR|a Yahvé}}! ¡{{plural_you:Invóquenlo|Invocadlo}} por {{deity_pronoun:su|Su}} nombre! {{plural_you:Cuenten|Contad}} a la gente de todas partes lo que {{deity_pronoun:él|Él}} ha hecho."
         }
       },
       "decisions": [
@@ -171,6 +176,51 @@
           "reason": "Swahili marks most pronouns inside the verb (\"aliyoyatenda\", \"mwombeni\"), and a verb prefix cannot take a capital, so these psalms have fewer deity_pronoun spans than the English. Only the separate words (possessives like \"lake\", \"yake\", \"wake\", and \"yeye\", \"naye\") change with the setting.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191050010021"
+          ],
+          "choice": "{{divine_name:el SEÑOR|Yahvé}}",
+          "alternatives": [
+            "el Eterno"
+          ],
+          "reason": "God's name YHWH is \"el SEÑOR\" in capitals by default, as in the rest of the Spanish Old Testament, with \"Yahvé\" as the reader's alternative. The span takes in the article and its contraction (del SEÑOR, al SEÑOR); in address it is \"SEÑOR\" alone. These psalms (105 to 118) use the same forms throughout.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191050010011",
+            "o191050010031",
+            "o191050010061"
+          ],
+          "choice": "{{plural_you:Den|Dad}} and the other plural commands",
+          "alternatives": [
+            "ustedes forms only",
+            "vosotros forms only"
+          ],
+          "reason": "The psalm calls on the whole people, so every command is plural. Spanish has two plural forms: \"ustedes\" (Latin America, the default) and \"vosotros\" (Spain), so each plural verb or pronoun carries the plural you setting. The same is done wherever these psalms speak to a group.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -214,6 +264,11 @@
           "L": "Mwimbieni, mpigieni muziki; simulieni maajabu {{deity_pronoun:yake|Yake}} yote.",
           "B": "Mwimbieni, pigeni vinanda mkimsifu; zungumzeni mambo yote ya ajabu aliyoyatenda.",
           "R": "Mwimbieni! Mpigieni muziki! Zungumzeni juu ya mambo yote ya ajabu aliyoyafanya."
+        },
+        "es": {
+          "L": "{{plural_you:Canten|Cantad}} a {{deity_pronoun:él|Él}}, {{plural_you:toquen|tocad}} música para {{deity_pronoun:él|Él}}; {{plural_you:hablen|hablad}} de todas {{deity_pronoun:sus|Sus}} maravillas.",
+          "B": "{{plural_you:Canten|Cantad}} a {{deity_pronoun:él|Él}}, {{plural_you:canten|cantad}} {{deity_pronoun:sus|Sus}} alabanzas con instrumentos; {{plural_you:cuenten|contad}} todas las maravillas que {{deity_pronoun:él|Él}} ha hecho.",
+          "R": "¡{{plural_you:Canten|Cantad}} a {{deity_pronoun:él|Él}}! ¡{{plural_you:Toquen|Tocad}} música para {{deity_pronoun:él|Él}}! {{plural_you:Hablen|Hablad}} de todas las cosas asombrosas que {{deity_pronoun:él|Él}} ha hecho."
         }
       },
       "decisions": [
@@ -303,6 +358,11 @@
           "L": "Jisifuni katika jina {{deity_pronoun:lake|Lake}} takatifu; moyo wa wale wamtafutao {{divine_name:BWANA|Yahwe}} ufurahi.",
           "B": "Oneni fahari katika jina {{deity_pronoun:lake|Lake}} takatifu; wote wanaomtafuta {{divine_name:BWANA|Yahwe}} wafurahi mioyoni mwao.",
           "R": "Jivunieni jina {{deity_pronoun:lake|Lake}} takatifu. Kila anayemtafuta {{divine_name:BWANA|Yahwe}} na afurahi."
+        },
+        "es": {
+          "L": "{{plural_you:Gloríense|Gloriaos}} en {{deity_pronoun:su|Su}} santo nombre; alégrese el corazón de los que buscan {{divine_name:al SEÑOR|a Yahvé}}.",
+          "B": "{{plural_you:Siéntanse|Sentíos}} orgullosos de {{deity_pronoun:su|Su}} santo nombre; que se alegren de corazón todos los que acuden {{divine_name:al SEÑOR|a Yahvé}}.",
+          "R": "{{plural_you:Estén|Estad}} orgullosos de {{deity_pronoun:su|Su}} santo nombre. Todos los que buscan {{divine_name:al SEÑOR|a Yahvé}} deben estar contentos."
         }
       },
       "decisions": [
@@ -389,6 +449,11 @@
           "L": "Mtafuteni {{divine_name:BWANA|Yahwe}} na nguvu {{deity_pronoun:zake|Zake}}; utafuteni uso {{deity_pronoun:wake|Wake}} daima.",
           "B": "Mgeukieni {{divine_name:BWANA|Yahwe}} na nguvu {{deity_pronoun:zake|Zake}}; njooni mbele {{deity_pronoun:zake|Zake}} tena na tena.",
           "R": "Mgeukieni {{divine_name:BWANA|Yahwe}} na mtegemee nguvu {{deity_pronoun:zake|Zake}}. Msiache kamwe kuja kumwabudu."
+        },
+        "es": {
+          "L": "{{plural_you:Busquen|Buscad}} {{divine_name:al SEÑOR|a Yahvé}} y {{deity_pronoun:su|Su}} fuerza; {{plural_you:busquen|buscad}} {{deity_pronoun:su|Su}} rostro continuamente.",
+          "B": "{{plural_you:Acudan|Acudid}} {{divine_name:al SEÑOR|a Yahvé}} y a {{deity_pronoun:su|Su}} fuerza; {{plural_you:vengan|venid}} a {{deity_pronoun:su|Su}} presencia una y otra vez.",
+          "R": "{{plural_you:Vuélvanse|Volveos}} {{divine_name:al SEÑOR|a Yahvé}} y {{plural_you:confíen|confiad}} en {{deity_pronoun:su|Su}} fuerza. Nunca {{plural_you:dejen|dejéis}} de venir ante {{deity_pronoun:él|Él}} para adorar."
         }
       },
       "decisions": [
@@ -501,6 +566,11 @@
           "L": "Kumbukeni maajabu {{deity_pronoun:yake|Yake}} aliyoyatenda, ishara {{deity_pronoun:zake|Zake}} na hukumu za kinywa {{deity_pronoun:chake|Chake}},",
           "B": "Yakumbukeni maajabu aliyoyafanya, ishara {{deity_pronoun:zake|Zake}}, na hukumu alizozitamka,",
           "R": "Kumbukeni mambo ya ajabu aliyoyafanya. Kumbukeni miujiza {{deity_pronoun:yake|Yake}} na hukumu alizozitangaza."
+        },
+        "es": {
+          "L": "{{plural_you:Recuerden|Recordad}} {{deity_pronoun:sus|Sus}} maravillas que {{deity_pronoun:él|Él}} ha hecho, {{deity_pronoun:sus|Sus}} señales y los juicios de {{deity_pronoun:su|Su}} boca,",
+          "B": "{{plural_you:Traigan|Traed}} a la memoria las maravillas que {{deity_pronoun:él|Él}} ha obrado, {{deity_pronoun:sus|Sus}} señales y los veredictos que {{deity_pronoun:él|Él}} pronunció,",
+          "R": "{{plural_you:Recuerden|Recordad}} las cosas asombrosas que {{deity_pronoun:él|Él}} ha hecho. {{plural_you:Recuerden|Recordad}} {{deity_pronoun:sus|Sus}} milagros y los juicios que {{deity_pronoun:él|Él}} anunció."
         }
       },
       "decisions": [
@@ -589,6 +659,11 @@
           "L": "ninyi uzao wa Abrahamu, mtumishi {{deity_pronoun:wake|Wake}}, ninyi wana wa Yakobo, wateule {{deity_pronoun:wake|Wake}}.",
           "B": "ninyi wazao wa mtumishi {{deity_pronoun:wake|Wake}} Abrahamu, ninyi watoto wa Yakobo, aliowachagua.",
           "R": "Fanyeni hivyo, ninyi mlio wa uzao wa Abrahamu, mtumishi {{deity_pronoun:wake|Wake}}, ninyi wazao wa Yakobo, aliowachagua."
+        },
+        "es": {
+          "L": "oh descendencia de Abraham {{deity_pronoun:su|Su}} siervo, oh hijos de Jacob, {{deity_pronoun:sus|Sus}} escogidos.",
+          "B": "{{plural_you:ustedes|vosotros}}, descendientes de {{deity_pronoun:su|Su}} siervo Abraham, hijos de Jacob, los que {{deity_pronoun:él|Él}} escogió.",
+          "R": "{{plural_you:Háganlo|Hacedlo}} {{plural_you:ustedes|vosotros}}, los que {{plural_you:vienen|venís}} de Abraham, {{deity_pronoun:su|Su}} siervo, los descendientes de Jacob, a quienes {{deity_pronoun:él|Él}} escogió."
         }
       },
       "decisions": [
@@ -702,6 +777,28 @@
           "reason": "The Hebrew word covers both a slave and a king's or God's trusted servant. In the Psalms Swahili says \"mtumishi\" for ʿeved at every level, Literal included, for God's servants and the psalmist's name for himself; \"mtumwa\" is kept for slavery itself (Joseph sold, 105:17; the slaves of 123:2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191050060031",
+            "o191050060061"
+          ],
+          "choice": "siervo",
+          "alternatives": [
+            "esclavo"
+          ],
+          "reason": "The Hebrew ʿeved for God's servants (Abraham, Moses, Israel, and the psalmist's \"tu siervo\") is \"siervo\" at every level in the Spanish Psalms: it is a title of honor, belonging to God and serving him. Only literal slavery, as Joseph sold in verse 17, is \"esclavo\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -744,6 +841,11 @@
           "L": "Yeye [ni] {{divine_name:BWANA|Yahwe}} Mungu wetu; katika dunia yote [zipo] hukumu {{deity_pronoun:zake|Zake}}.",
           "B": "Yeye, {{divine_name:BWANA|Yahwe}}, ndiye Mungu wetu; maamuzi {{deity_pronoun:yake|Yake}} yanaifikia dunia yote.",
           "R": "Yeye ni {{divine_name:BWANA|Yahwe}}, Mungu wetu. Anahukumu yanayotokea kila mahali duniani."
+        },
+        "es": {
+          "L": "Él [es] {{divine_name:el SEÑOR|Yahvé}} nuestro Dios; en toda la tierra [están] {{deity_pronoun:sus|Sus}} juicios.",
+          "B": "Él, {{divine_name:el SEÑOR|Yahvé}}, es nuestro Dios; {{deity_pronoun:sus|Sus}} decisiones alcanzan toda la tierra.",
+          "R": "Él es {{divine_name:el SEÑOR|Yahvé}}, nuestro Dios. Él juzga lo que pasa en toda la tierra."
         }
       },
       "decisions": [
@@ -817,6 +919,11 @@
           "L": "Analikumbuka agano {{deity_pronoun:lake|Lake}} milele, neno aliloliamuru kwa vizazi elfu,",
           "B": "Analiweka agano {{deity_pronoun:lake|Lake}} moyoni milele, ahadi aliyoiweka kwa vizazi elfu,",
           "R": "Kamwe hasahau agano {{deity_pronoun:lake|Lake}}, ahadi aliyoifanya idumu kwa vizazi elfu."
+        },
+        "es": {
+          "L": "Se acuerda para siempre de {{deity_pronoun:su|Su}} pacto, de la palabra que {{deity_pronoun:él|Él}} ordenó para mil generaciones,",
+          "B": "Tiene presente para siempre {{deity_pronoun:su|Su}} pacto, la promesa que {{deity_pronoun:él|Él}} estableció para mil generaciones,",
+          "R": "Nunca olvida {{deity_pronoun:su|Su}} pacto, la promesa que {{deity_pronoun:él|Él}} hizo para que durara mil generaciones."
         }
       },
       "decisions": [
@@ -925,6 +1032,11 @@
           "L": "ambalo alilikata pamoja na Abrahamu, na kiapo {{deity_pronoun:chake|Chake}} kwa Isaka,",
           "B": "agano alilofanya na Abrahamu, kiapo alichomwapia Isaka,",
           "R": "Alilifanya na Abrahamu, na akamwahidi Isaka kwa kiapo."
+        },
+        "es": {
+          "L": "que {{deity_pronoun:él|Él}} concertó con Abraham, y {{deity_pronoun:su|Su}} juramento a Isaac,",
+          "B": "el pacto que {{deity_pronoun:él|Él}} hizo con Abraham, lo que {{deity_pronoun:él|Él}} juró a Isaac,",
+          "R": "Lo hizo con Abraham, y {{deity_pronoun:él|Él}} se lo prometió a Isaac con juramento."
         }
       },
       "decisions": [
@@ -954,6 +1066,25 @@
           "choice": "the covenant with Abraham and the oath to Isaac",
           "alternatives": [],
           "reason": "God made his covenant with Abraham and promised him the land (Genesis 15:18; 17:7-8), swore by himself to bless him (Genesis 22:16-18), and confirmed the oath to Isaac (Genesis 26:3-4).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191050090021"
+          ],
+          "choice": "concertó",
+          "alternatives": [
+            "cortó"
+          ],
+          "reason": "The Hebrew says a covenant is \"cut\". The English Literal keeps \"cut\", but in Spanish \"cortar un pacto\" does not read as an idiom at all, so Literal says \"concertó\" (agreed on, made) and the meaning note explains the Hebrew picture.",
           "uncertain": false,
           "footnote": false
         }
@@ -999,6 +1130,11 @@
           "L": "{{deity_pronoun:naye|Naye}} akalithibitisha kwa Yakobo kuwa kanuni, kwa Israeli [kuwa] agano la milele,",
           "B": "{{deity_pronoun:naye|Naye}} akaliweka imara kwa Yakobo kuwa agizo, kwa Israeli kuwa agano linalodumu milele,",
           "R": "Alilifanya kuwa sheria thabiti kwa Yakobo, agano na Israeli litakalodumu milele."
+        },
+        "es": {
+          "L": "y {{deity_pronoun:él|Él}} lo confirmó a Jacob como estatuto, a Israel como pacto eterno,",
+          "B": "y {{deity_pronoun:él|Él}} lo estableció para Jacob como decreto, para Israel como un pacto que dura para siempre,",
+          "R": "Lo convirtió en una ley firme para Jacob, un pacto con Israel que durará para siempre."
         }
       },
       "decisions": [
@@ -1093,6 +1229,11 @@
           "L": "akisema, \"Kwako nitakupa nchi ya Kanaani, fungu lililopimwa la urithi wenu.\"",
           "B": "akisema, \"Nchi ya Kanaani nakupa wewe, fungu lililopimiwa ninyi kuwa urithi wenu.\"",
           "R": "Alisema, \"Nchi ya Kanaani itakuwa yako. Nawapa ninyi kuwa fungu lenu wenyewe.\""
+        },
+        "es": {
+          "L": "diciendo: «A ti te daré la tierra de Canaán, la porción medida de {{plural_you:la herencia de ustedes|vuestra herencia}}».",
+          "B": "diciendo: «Te doy la tierra de Canaán, una parte señalada para que {{plural_you:ustedes la hereden|vosotros la heredéis}}».",
+          "R": "Les dijo: «{{plural_you:Les daré|Os daré}} la tierra de Canaán. Será la parte que {{plural_you:les toca|os toca}}»."
         }
       },
       "decisions": [
@@ -1159,6 +1300,28 @@
           "reason": "Readable starts a new sentence and names the speaker, God.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "grammar",
+          "tokens": [
+            "o191050110022",
+            "o191050110082"
+          ],
+          "choice": "a ti ... de ustedes (L, B); plural throughout (R)",
+          "alternatives": [
+            "singular throughout"
+          ],
+          "reason": "The Hebrew speaks to one (\"to you\", the people as one) and then to many (\"your inheritance\"). Literal and Balanced keep the change from \"ti\" to \"ustedes\"; Readable, which explains, speaks to all of them in the plural, so the promise is not read as made to one person only.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1202,6 +1365,11 @@
           "L": "Walipokuwa watu wa hesabu [ndogo], wachache sana, na wageni ndani yake,",
           "B": "Walipokuwa kikundi kidogo tu cha watu, wageni wachache walioishi katika nchi ile,",
           "R": "Wakati huo walikuwa wachache tu. Walikuwa wageni walioishi Kanaani."
+        },
+        "es": {
+          "L": "Cuando eran hombres de [poco] número, muy pocos, y extranjeros en ella,",
+          "B": "Cuando eran solo un puñado de gente, unos pocos extranjeros que vivían en aquella tierra,",
+          "R": "En aquel tiempo eran muy pocos. Eran extranjeros que vivían en Canaán."
         }
       },
       "decisions": [
@@ -1288,6 +1456,28 @@
           "reason": "These psalms tell Israel's story inside a song addressed to the people and to God. Like the song of Exodus 15 and the retellings in the speeches of Acts, that is speech, so French uses the tenses of speech at every level.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191050120052"
+          ],
+          "choice": "extranjeros",
+          "alternatives": [
+            "forasteros",
+            "inmigrantes"
+          ],
+          "reason": "The Hebrew gerim are foreigners who live in a land without owning it. Spanish \"extranjeros\" is the ordinary word, used for the same Hebrew in the books of Moses.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1331,6 +1521,11 @@
           "L": "nao walizunguka kutoka taifa hadi taifa, kutoka ufalme mmoja hadi kwa watu wengine,",
           "B": "wakitangatanga kutoka taifa moja hadi jingine, kutoka ufalme mmoja hadi kwa watu wengine,",
           "R": "Walitangatanga kutoka nchi moja hadi nyingine, kutoka ufalme mmoja hadi mwingine."
+        },
+        "es": {
+          "L": "y anduvieron de nación en nación, de un reino a otro pueblo,",
+          "B": "vagando de una nación a otra, de un reino a otro pueblo,",
+          "R": "Iban de un país a otro, de un reino al siguiente."
         }
       },
       "decisions": [
@@ -1404,6 +1599,11 @@
           "L": "hakumruhusu mtu yeyote awaonee, na kwa ajili yao akawakemea wafalme:",
           "B": "hakumwacha mtu yeyote awadhulumu, na kwa ajili yao akawakaripia wafalme:",
           "R": "Lakini Mungu hakumwacha mtu yeyote awatendee mabaya. Aliwaonya wafalme wawaache. Alisema,"
+        },
+        "es": {
+          "L": "no permitió {{deity_pronoun:él|Él}} que nadie los oprimiera, y por causa de ellos reprendió a reyes:",
+          "B": "{{deity_pronoun:él|Él}} no dejó que nadie les hiciera daño, y por ellos reprendió duramente a reyes:",
+          "R": "Pero Dios no dejó que nadie los maltratara. Advirtió a los reyes que los dejaran en paz. Les dijo:"
         }
       },
       "decisions": [
@@ -1494,6 +1694,11 @@
           "L": "\"Msiwaguse wapakwa mafuta {{deity_pronoun:wangu|Wangu}}, wala msiwadhuru manabii {{deity_pronoun:wangu|Wangu}}.\"",
           "B": "\"Msinyooshe mkono juu ya wapakwa mafuta {{deity_pronoun:wangu|Wangu}}; msiwaumize manabii {{deity_pronoun:wangu|Wangu}}.\"",
           "R": "\"Msiwadhuru watu niliowatenga kuwa {{deity_pronoun:wangu|Wangu}}. Msiwaumize manabii {{deity_pronoun:wangu|Wangu}}.\""
+        },
+        "es": {
+          "L": "«No {{plural_you:toquen|toquéis}} a {{deity_pronoun:mis|Mis}} ungidos, y no {{plural_you:hagan|hagáis}} daño a {{deity_pronoun:mis|Mis}} profetas».",
+          "B": "«No {{plural_you:pongan|pongáis}} la mano sobre {{deity_pronoun:mis|Mis}} ungidos; no {{plural_you:hagan|hagáis}} daño a {{deity_pronoun:mis|Mis}} profetas».",
+          "R": "«No {{plural_you:hagan|hagáis}} daño a las personas que he apartado para {{deity_pronoun:mí|Mí}}. No {{plural_you:lastimen|lastiméis}} a {{deity_pronoun:mis|Mis}} profetas»."
         }
       },
       "decisions": [
@@ -1599,6 +1804,11 @@
           "L": "Naye akaita njaa juu ya nchi; kila tegemeo la mkate akalivunja.",
           "B": "Aliita njaa iijie nchi, akaondoa kila akiba ya chakula.",
           "R": "Kisha akaleta njaa juu ya nchi, akawaondolea chakula chao chote."
+        },
+        "es": {
+          "L": "Y {{deity_pronoun:él|Él}} llamó al hambre sobre la tierra; todo bastón de pan quebró.",
+          "B": "Convocó al hambre sobre la tierra y cortó toda provisión de pan.",
+          "R": "Luego {{deity_pronoun:él|Él}} envió hambre a la tierra y les quitó toda la comida."
         }
       },
       "decisions": [
@@ -1665,6 +1875,26 @@
           "reason": "Balanced and Readable say what the picture means (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191050160061",
+            "o191050160071"
+          ],
+          "choice": "bastón de pan",
+          "alternatives": [
+            "sustento de pan"
+          ],
+          "reason": "Literal keeps the Hebrew picture of bread as the staff that holds life up, as the English Literal keeps \"staff of bread\"; Balanced and Readable say what it means, the supply of food.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1706,6 +1936,11 @@
           "L": "Alimtuma mtu mbele yao; Yusufu aliuzwa kuwa mtumwa.",
           "B": "Lakini alikuwa amekwisha kumtuma mtu awatangulie: Yusufu, aliyeuzwa awe mtumwa.",
           "R": "Lakini alikuwa amekwisha kumtuma mtu awatangulie kwenda Misri. Mtu huyo alikuwa Yusufu, aliyekuwa ameuzwa kama mtumwa."
+        },
+        "es": {
+          "L": "Envió delante de ellos a un hombre; José fue vendido como esclavo.",
+          "B": "Pero {{deity_pronoun:él|Él}} ya había enviado a un hombre delante de ellos: José, que fue vendido como esclavo.",
+          "R": "Pero {{deity_pronoun:él|Él}} ya había enviado a un hombre delante de ellos a Egipto. Ese hombre era José, que había sido vendido como esclavo."
         }
       },
       "decisions": [
@@ -1858,6 +2093,11 @@
           "L": "Waliitesa miguu yake kwa pingu; shingo yake iliingia katika chuma,",
           "B": "Pingu ziliichubua miguu yake, na shingo yake ilifungwa kwa chuma,",
           "R": "Miguu yake iliumizwa na minyororo, naye akavishwa pete ya chuma shingoni."
+        },
+        "es": {
+          "L": "Afligieron con grilletes sus pies; en el hierro entró su cuello,",
+          "B": "Los grilletes le lastimaron los pies, y su cuello quedó encerrado en hierro,",
+          "R": "Le hicieron daño en los pies con cadenas y le pusieron un collar de hierro en el cuello."
         }
       },
       "decisions": [
@@ -1945,6 +2185,11 @@
           "L": "mpaka wakati neno lake lilipotimia, tamko la {{divine_name:BWANA|Yahwe}} lilimjaribu.",
           "B": "mpaka siku maneno yake yenyewe yalipotimia; neno la {{divine_name:BWANA|Yahwe}} lilimsafisha.",
           "R": "Hali hiyo iliendelea mpaka yale aliyoyasema Yusufu yalipotimia. Neno la {{divine_name:BWANA|Yahwe}} lilimjaribu, kama moto unavyojaribu chuma."
+        },
+        "es": {
+          "L": "hasta el tiempo en que llegó su palabra, el dicho {{divine_name:del SEÑOR|de Yahvé}} lo probó.",
+          "B": "hasta el día en que se cumplieron sus propias palabras; la palabra {{divine_name:del SEÑOR|de Yahvé}} lo purificó.",
+          "R": "Esto duró hasta que se cumplió lo que José había dicho. Lo que {{divine_name:el SEÑOR|Yahvé}} había dicho lo puso a prueba, como el fuego prueba el metal."
         }
       },
       "decisions": [
@@ -2039,6 +2284,11 @@
           "L": "Mfalme alituma akamfungua, mtawala wa mataifa, akamwacha huru.",
           "B": "Mfalme alituma watu wamfungue; mtawala wa mataifa mengi akamwachilia.",
           "R": "Kisha mfalme wa Misri alimwita Yusufu, akaamuru afunguliwe. Mtawala wa mataifa mengi alimwachilia aende."
+        },
+        "es": {
+          "L": "[El] rey envió y lo soltó, el gobernante de pueblos, y lo dejó libre.",
+          "B": "El rey mandó que lo liberaran; el gobernante de muchos pueblos lo dejó suelto.",
+          "R": "Entonces el rey de Egipto mandó llamar a José y lo hizo liberar. El gobernante de muchas naciones lo dejó ir."
         }
       },
       "decisions": [
@@ -2131,6 +2381,11 @@
           "L": "Alimfanya bwana wa nyumba yake na mtawala juu ya mali yake yote,",
           "B": "Alimweka kuwa msimamizi wa jumba lake la kifalme, akampa mamlaka juu ya mali yake yote,",
           "R": "Farao alimweka Yusufu kuwa msimamizi wa jumba lake la kifalme na wa kila kitu alichokuwa nacho."
+        },
+        "es": {
+          "L": "Lo puso como señor de su casa y gobernante sobre toda su posesión,",
+          "B": "Lo puso al frente de su palacio y le dio poder sobre todas sus riquezas,",
+          "R": "El faraón puso a José al frente de su palacio y de todo lo que tenía."
         }
       },
       "decisions": [
@@ -2222,6 +2477,11 @@
           "L": "kuwafunga wakuu wake kwa mapenzi yake, na kuwafanya wazee wake wawe na hekima.",
           "B": "akiwa na mamlaka ya kuwatia maafisa wake minyororo akipenda, na kuwafundisha washauri wake hekima.",
           "R": "Yusufu aliweza hata kuamuru maafisa wa mfalme wakamatwe akitaka. Aliwafundisha washauri wa mfalme kuwa na hekima."
+        },
+        "es": {
+          "L": "para atar a sus príncipes a su voluntad y para hacer sabios a sus ancianos.",
+          "B": "con poder para encadenar a sus funcionarios si así lo quería, y para hacer sabios a sus consejeros.",
+          "R": "José incluso podía mandar arrestar a los funcionarios del rey si quería. Enseñó a los consejeros del rey a ser sabios."
         }
       },
       "decisions": [
@@ -2328,6 +2588,11 @@
           "L": "Naye Israeli akaingia Misri; Yakobo akakaa kama mgeni katika nchi ya Hamu.",
           "B": "Ndipo Israeli akaingia Misri, na Yakobo akakaa kama mgeni katika nchi ya Hamu.",
           "R": "Kisha Yakobo na jamaa yake walikuja Misri. Waliishi huko kama wageni, katika nchi ya Hamu."
+        },
+        "es": {
+          "L": "Y entró Israel [en] Egipto; Jacob habitó como extranjero en la tierra de Cam.",
+          "B": "Así llegó Israel a Egipto, y Jacob se quedó como huésped en la tierra de Cam.",
+          "R": "Luego Jacob y su familia llegaron a Egipto. Vivieron allí como extranjeros, en la tierra de Cam."
         }
       },
       "decisions": [
@@ -2423,6 +2688,11 @@
           "L": "Naye akawazidisha sana watu {{deity_pronoun:wake|Wake}}, akawafanya wenye nguvu kuliko adui zao.",
           "B": "Huko aliwafanya watu {{deity_pronoun:wake|Wake}} waongezeke sana kwa idadi, hata wakawa na nguvu kuliko adui zao.",
           "R": "Huko aliwakuza watu {{deity_pronoun:wake|Wake}} wakawa taifa kubwa, wenye nguvu kuliko adui zao."
+        },
+        "es": {
+          "L": "E hizo {{deity_pronoun:él|Él}} muy fecundo a {{deity_pronoun:su|Su}} pueblo y lo hizo más fuerte que sus adversarios.",
+          "B": "Allí {{deity_pronoun:él|Él}} hizo crecer mucho en número a {{deity_pronoun:su|Su}} pueblo, hasta que fueron demasiado fuertes para sus enemigos.",
+          "R": "Allí {{deity_pronoun:él|Él}} hizo que {{deity_pronoun:su|Su}} pueblo creciera hasta ser una nación grande, más fuerte que sus enemigos."
         }
       },
       "decisions": [
@@ -2500,6 +2770,11 @@
           "L": "Aliugeuza moyo wao wawachukie watu {{deity_pronoun:wake|Wake}}, wawatendee hila watumishi {{deity_pronoun:wake|Wake}}.",
           "B": "Aliigeuza mioyo ya Wamisri wawachukie watu {{deity_pronoun:wake|Wake}} na kuwafanyia hila watumishi {{deity_pronoun:wake|Wake}}.",
           "R": "Aliwaacha Wamisri wawachukie watu {{deity_pronoun:wake|Wake}}. Walipanga mipango ya hila dhidi ya watumishi {{deity_pronoun:wake|Wake}}."
+        },
+        "es": {
+          "L": "Cambió el corazón de ellos para que odiaran a {{deity_pronoun:su|Su}} pueblo, para que obraran con astucia contra {{deity_pronoun:sus|Sus}} siervos.",
+          "B": "Volvió el corazón de los egipcios al odio contra {{deity_pronoun:su|Su}} pueblo y a tramar contra {{deity_pronoun:sus|Sus}} siervos.",
+          "R": "Dejó que los egipcios llegaran a odiar a {{deity_pronoun:su|Su}} pueblo. Hicieron planes astutos contra {{deity_pronoun:sus|Sus}} siervos."
         }
       },
       "decisions": [
@@ -2609,6 +2884,11 @@
           "L": "Alimtuma Musa mtumishi {{deity_pronoun:wake|Wake}}, Haruni ambaye alikuwa amemchagua.",
           "B": "Alimtuma mtumishi {{deity_pronoun:wake|Wake}} Musa, na pamoja naye Haruni, mteule {{deity_pronoun:wake|Wake}}.",
           "R": "Kisha akamtuma mtumishi {{deity_pronoun:wake|Wake}} Musa, pamoja na Haruni, aliyekuwa amemchagua."
+        },
+        "es": {
+          "L": "Envió a Moisés {{deity_pronoun:su|Su}} siervo, a Aarón, a quien {{deity_pronoun:él|Él}} había escogido.",
+          "B": "Envió a {{deity_pronoun:su|Su}} siervo Moisés, y con él a Aarón, {{deity_pronoun:su|Su}} escogido.",
+          "R": "Luego {{deity_pronoun:él|Él}} envió a {{deity_pronoun:su|Su}} siervo Moisés, junto con Aarón, a quien {{deity_pronoun:él|Él}} había elegido."
         }
       },
       "decisions": [
@@ -2683,6 +2963,11 @@
           "L": "Waliweka kati yao maneno ya ishara {{deity_pronoun:zake|Zake}}, na maajabu katika nchi ya Hamu.",
           "B": "Kati ya Wamisri walizifanya ishara alizokuwa amezisema, na maajabu katika nchi yote ya Hamu.",
           "R": "Walifanya ishara za miujiza alizowaambia wazifanye. Walifanya mambo ya ajabu huko Misri, nchi ya Hamu."
+        },
+        "es": {
+          "L": "Pusieron entre ellos las palabras de {{deity_pronoun:sus|Sus}} señales, y prodigios en la tierra de Cam.",
+          "B": "Entre los egipcios realizaron las señales que {{deity_pronoun:él|Él}} había anunciado, y prodigios por toda la tierra de Cam.",
+          "R": "Hicieron las señales milagrosas que {{deity_pronoun:él|Él}} les dijo que hicieran. Hicieron cosas asombrosas en Egipto, la tierra de Cam."
         }
       },
       "decisions": [
@@ -2778,6 +3063,11 @@
           "L": "Alituma giza akafanya [kuwe na] giza, nao hawakuliasi neno {{deity_pronoun:lake|Lake}}.",
           "B": "Alituma giza, nchi ikawa na giza; nao hawakulipinga neno {{deity_pronoun:lake|Lake}}.",
           "R": "Alituma giza, akaifanya nchi iwe na giza. Musa na Haruni hawakwenda kinyume na yale aliyosema."
+        },
+        "es": {
+          "L": "Envió tinieblas e hizo oscurecer [todo], y no se rebelaron contra {{deity_pronoun:su|Su}} palabra.",
+          "B": "Envió tinieblas y la tierra quedó a oscuras; y ellos no desafiaron {{deity_pronoun:su|Su}} palabra.",
+          "R": "Envió tinieblas y dejó la tierra a oscuras. Moisés y Aarón no se opusieron a lo que {{deity_pronoun:él|Él}} dijo."
         }
       },
       "decisions": [
@@ -2886,6 +3176,11 @@
           "L": "Aligeuza maji yao kuwa damu, akawaua samaki wao.",
           "B": "Aliyafanya maji yao kuwa damu, akawaacha samaki wao wamekufa.",
           "R": "Aligeuza mito yao kuwa damu, na samaki wakafa."
+        },
+        "es": {
+          "L": "Convirtió sus aguas en sangre e hizo morir sus peces.",
+          "B": "Convirtió en sangre sus aguas y dejó muertos sus peces.",
+          "R": "Convirtió sus ríos en sangre, y los peces murieron."
         }
       },
       "decisions": [
@@ -2942,6 +3237,11 @@
           "L": "Nchi yao ilijaa vyura, katika vyumba vya wafalme wao.",
           "B": "Vyura walijaa katika nchi yao, hata ndani ya vyumba vya ndani vya wafalme wao.",
           "R": "Vyura walijaa nchi yao. Waliingia hata katika vyumba vya kulala vya mfalme."
+        },
+        "es": {
+          "L": "Su tierra hirvió [de] ranas, en las alcobas de sus reyes.",
+          "B": "Las ranas invadieron su tierra, hasta las habitaciones más interiores de sus reyes.",
+          "R": "Las ranas llenaron su tierra. Hasta se metieron en los dormitorios del rey."
         }
       },
       "decisions": [
@@ -3027,6 +3327,11 @@
           "L": "Alisema, na yakaja makundi [ya inzi], mbu katika mipaka yao yote.",
           "B": "Kwa amri {{deity_pronoun:yake|Yake}} yalikuja makundi ya inzi, na mbu wakaenea kila sehemu ya nchi yao.",
           "R": "Alitoa amri, na makundi ya inzi yakaja. Mbu walijaa nchi nzima."
+        },
+        "es": {
+          "L": "Habló, y vinieron enjambres, mosquitos en todo su territorio.",
+          "B": "A {{deity_pronoun:su|Su}} orden vinieron enjambres de moscas, y los mosquitos cubrieron toda su tierra.",
+          "R": "Dio la orden, y vinieron enjambres de moscas. Los mosquitos llenaron todo el país."
         }
       },
       "decisions": [
@@ -3137,6 +3442,11 @@
           "L": "Aliwapa mvua ya mawe [badala ya] mvua, moto wa miali katika nchi yao.",
           "B": "Badala ya mvua aliwapa mvua ya mawe, na moto ukimulika katika nchi yao yote.",
           "R": "Badala ya mvua, alileta mvua ya mawe, na radi zikamulika kila mahali katika nchi yao."
+        },
+        "es": {
+          "L": "Les dio granizo [por] lluvia, fuego llameante en su tierra.",
+          "B": "En lugar de lluvia {{deity_pronoun:él|Él}} les dio granizo, con fuego que relampagueaba por su tierra.",
+          "R": "En vez de lluvia, {{deity_pronoun:él|Él}} envió granizo, y los relámpagos brillaron por toda su tierra."
         }
       },
       "decisions": [
@@ -3232,6 +3542,11 @@
           "L": "Naye akaipiga mizabibu yao na mitini yao, akaivunja miti ya mipaka yao.",
           "B": "Aliiangusha mizabibu yao na mitini yao, akaivunjavunja miti yote ya nchi yao.",
           "R": "Aliharibu mizabibu yao na mitini, akavunja miti kila mahali katika nchi yao."
+        },
+        "es": {
+          "L": "Y {{deity_pronoun:él|Él}} golpeó sus vides y sus higueras, y quebró los árboles de su territorio.",
+          "B": "Derribó sus viñas y sus higueras y astilló todos los árboles de su tierra.",
+          "R": "Destruyó sus viñas y sus higueras, y derribó los árboles de todo su país."
         }
       },
       "decisions": [
@@ -3290,6 +3605,11 @@
           "L": "Alisema, na nzige wakaja, na tunutu bila hesabu,",
           "B": "Kwa neno {{deity_pronoun:lake|Lake}} nzige walifika, makundi ya tunutu wasiohesabika,",
           "R": "Alitoa neno, na nzige wakaja, wengi kuliko mtu yeyote angeweza kuhesabu."
+        },
+        "es": {
+          "L": "Habló, y vinieron langostas, y saltamontes jóvenes sin número,",
+          "B": "A {{deity_pronoun:su|Su}} palabra llegaron las langostas, enjambres de langostas jóvenes imposibles de contar,",
+          "R": "Dio la orden, y vinieron langostas, más de las que nadie podía contar."
         }
       },
       "decisions": [
@@ -3386,6 +3706,11 @@
           "L": "nao wakala kila mmea katika nchi yao, wakala matunda ya ardhi yao.",
           "B": "nao wakala kila mmea wa kijani katika nchi yao, wakayameza mavuno ya mashamba yao.",
           "R": "Walikula kila mmea nchini na mazao yote mashambani."
+        },
+        "es": {
+          "L": "y devoraron toda la vegetación de su tierra, y devoraron el fruto de su suelo.",
+          "B": "y se tragaron toda planta verde de su tierra y devoraron la cosecha de sus campos.",
+          "R": "Se comieron todas las plantas de la tierra y todos los cultivos de los campos."
         }
       },
       "decisions": [
@@ -3461,6 +3786,11 @@
           "L": "Naye akampiga kila mzaliwa wa kwanza katika nchi yao, malimbuko ya nguvu zao zote.",
           "B": "Naye akamwua mzaliwa wa kwanza wa kila familia katika nchi yao, wana wa kwanza waliozaliwa kwa nguvu zao.",
           "R": "Kisha akamwua mzaliwa wa kwanza katika kila nyumba huko Misri, mtoto wa kwanza wa kila baba."
+        },
+        "es": {
+          "L": "E hirió {{deity_pronoun:él|Él}} a todo primogénito en su tierra, las primicias de todo su vigor.",
+          "B": "Y {{deity_pronoun:él|Él}} mató a los primogénitos de todas las familias de su tierra, los primeros hijos nacidos de su vigor.",
+          "R": "Luego {{deity_pronoun:él|Él}} hirió de muerte a los primogénitos de cada hogar de Egipto, el primer hijo de cada padre."
         }
       },
       "decisions": [
@@ -3559,6 +3889,11 @@
           "L": "Naye akawatoa pamoja na fedha na dhahabu, wala katika makabila {{deity_pronoun:yake|Yake}} hapakuwa na aliyejikwaa.",
           "B": "Aliwatoa watu {{deity_pronoun:wake|Wake}} wakiwa wamebeba fedha na dhahabu, na katika makabila {{deity_pronoun:yake|Yake}} yote hakuna hata mtu mmoja aliyejikwaa.",
           "R": "Aliwaongoza watu {{deity_pronoun:wake|Wake}} kutoka Misri wakiwa na fedha na dhahabu. Hakuna hata mtu mmoja katika makabila {{deity_pronoun:yake|Yake}} aliyekuwa dhaifu kiasi cha kushindwa kutembea."
+        },
+        "es": {
+          "L": "Y {{deity_pronoun:él|Él}} los sacó con plata y oro, y entre {{deity_pronoun:sus|Sus}} tribus no [hubo] quien tropezara.",
+          "B": "Sacó a {{deity_pronoun:su|Su}} pueblo cargado de plata y oro, y en todas {{deity_pronoun:sus|Sus}} tribus nadie tropezó.",
+          "R": "Sacó a {{deity_pronoun:su|Su}} pueblo de Egipto con plata y oro. Nadie en {{deity_pronoun:sus|Sus}} tribus estaba demasiado débil para caminar."
         }
       },
       "decisions": [
@@ -3669,6 +4004,11 @@
           "L": "Misri ilifurahi walipotoka, kwa maana hofu yao ilikuwa imewaangukia.",
           "B": "Misri ilifurahi kuwaona wakiondoka, kwa kuwa watu wake walikuwa wameingiwa na hofu yao.",
           "R": "Wamisri walifurahi Waisraeli walipoondoka, kwa sababu walikuwa wamewaogopa."
+        },
+        "es": {
+          "L": "Egipto se alegró cuando salieron, porque el pavor de ellos había caído sobre ellos.",
+          "B": "Egipto se alegró de verlos partir, pues el miedo a ellos se había apoderado de su gente.",
+          "R": "Los egipcios se alegraron cuando Israel se fue, porque les habían llegado a tener miedo."
         }
       },
       "decisions": [
@@ -3759,6 +4099,11 @@
           "L": "Alitandaza wingu kuwa kifuniko, na moto kuangaza usiku.",
           "B": "Alitandaza wingu juu yao kama pazia la kuwakinga, na moto wa kuangaza usiku.",
           "R": "Alitandaza wingu juu yao ili kuwapa kivuli mchana. Aliwapa moto wa kuwamulikia njia usiku."
+        },
+        "es": {
+          "L": "Extendió una nube por cubierta, y fuego para alumbrar [de] noche.",
+          "B": "Extendió una nube sobre ellos como un toldo, y fuego para iluminar la noche.",
+          "R": "Extendió una nube sobre ellos para darles sombra de día. Les dio fuego para alumbrar su camino de noche."
         }
       },
       "decisions": [
@@ -3848,6 +4193,11 @@
           "L": "[Watu] waliomba, {{deity_pronoun:naye|Naye}} akaleta kware, na kwa mkate wa mbinguni akawashibisha.",
           "B": "Walipoomba, aliwaletea kware, akawashibisha kwa mkate kutoka mbinguni.",
           "R": "Watu waliomba chakula, {{deity_pronoun:naye|Naye}} akawaletea kware. Aliwalisha mkate kutoka mbinguni mpaka wakashiba."
+        },
+        "es": {
+          "L": "[El pueblo] pidió, y {{deity_pronoun:él|Él}} trajo codornices, y con pan del cielo {{deity_pronoun:él|Él}} los sació.",
+          "B": "Cuando pidieron, {{deity_pronoun:él|Él}} envió codornices, y {{deity_pronoun:él|Él}} los sació con pan del cielo.",
+          "R": "El pueblo pidió comida, y {{deity_pronoun:él|Él}} les envió codornices. Los alimentó con pan del cielo hasta que quedaron satisfechos."
         }
       },
       "decisions": [
@@ -3956,6 +4306,11 @@
           "L": "Aliufungua mwamba, maji yakabubujika; yalipita mahali pakavu [kama] mto.",
           "B": "Aliupasua mwamba, maji yakatiririka, yakipita katika nchi kavu kama mto.",
           "R": "Aliupasua mwamba, na maji yakatoka kwa nguvu. Yalitiririka jangwani kama mto."
+        },
+        "es": {
+          "L": "Abrió una roca, y brotaron aguas; corrieron por los lugares secos [como] un río.",
+          "B": "Abrió una roca y salió agua a chorros, que corría como un río por la tierra reseca.",
+          "R": "Partió una roca, y el agua salió a borbotones. Corría por el desierto como un río."
         }
       },
       "decisions": [
@@ -4028,6 +4383,11 @@
           "L": "Kwa maana alilikumbuka neno {{deity_pronoun:lake|Lake}} takatifu, pamoja na Abrahamu mtumishi {{deity_pronoun:wake|Wake}}.",
           "B": "Kwa maana alilikumbuka neno takatifu alilomwambia Abrahamu, mtumishi {{deity_pronoun:wake|Wake}}.",
           "R": "Alifanya hayo yote kwa sababu aliikumbuka ahadi takatifu aliyomwahidi mtumishi {{deity_pronoun:wake|Wake}} Abrahamu."
+        },
+        "es": {
+          "L": "Porque {{deity_pronoun:él|Él}} se acordó de {{deity_pronoun:su|Su}} santa palabra con Abraham {{deity_pronoun:su|Su}} siervo.",
+          "B": "Porque {{deity_pronoun:él|Él}} se acordó de la santa palabra que {{deity_pronoun:él|Él}} había dado a Abraham, {{deity_pronoun:su|Su}} siervo.",
+          "R": "Hizo todo esto porque {{deity_pronoun:él|Él}} se acordó de la santa promesa que {{deity_pronoun:él|Él}} hizo a {{deity_pronoun:su|Su}} siervo Abraham."
         }
       },
       "decisions": [
@@ -4134,6 +4494,11 @@
           "L": "Naye akawatoa watu {{deity_pronoun:wake|Wake}} kwa furaha, wateule {{deity_pronoun:wake|Wake}} kwa kelele za shangwe.",
           "B": "Hivyo akawaongoza watu {{deity_pronoun:wake|Wake}} watoke wakishangilia, wateule {{deity_pronoun:wake|Wake}} wakiimba kwa sauti kuu kwa furaha.",
           "R": "Aliwaongoza watu {{deity_pronoun:wake|Wake}} aliowachagua watoke, nao walifurahi na kupiga kelele za shangwe."
+        },
+        "es": {
+          "L": "Y {{deity_pronoun:él|Él}} sacó a {{deity_pronoun:su|Su}} pueblo con gozo, con gritos de júbilo a {{deity_pronoun:sus|Sus}} escogidos.",
+          "B": "Así {{deity_pronoun:él|Él}} sacó a {{deity_pronoun:su|Su}} pueblo lleno de alegría, a {{deity_pronoun:sus|Sus}} escogidos cantando de júbilo.",
+          "R": "Sacó a {{deity_pronoun:su|Su}} pueblo escogido, y ellos estaban felices y gritaban de alegría."
         }
       },
       "decisions": [
@@ -4207,6 +4572,11 @@
           "L": "Naye akawapa nchi za mataifa, nao wakamiliki taabu ya mataifa,",
           "B": "Aliwapa nchi za mataifa mengine, nao wakachukua kile ambacho watu hao walikuwa wamekifanyia kazi,",
           "R": "Aliwapa nchi walimoishi mataifa mengine. Walichukua mashamba na nyumba ambazo wengine walikuwa wamejitahidi sana kuzijenga."
+        },
+        "es": {
+          "L": "Y {{deity_pronoun:él|Él}} les dio las tierras de las naciones, y se adueñaron del trabajo de los pueblos,",
+          "B": "Les dio las tierras de otras naciones, y se quedaron con lo que esos pueblos habían trabajado,",
+          "R": "Les dio la tierra donde vivían otras naciones. Se quedaron con campos y casas que otros habían trabajado mucho para construir."
         }
       },
       "decisions": [
@@ -4300,6 +4670,11 @@
           "L": "ili wazishike kanuni {{deity_pronoun:zake|Zake}} na kuyatii maelekezo {{deity_pronoun:yake|Yake}}. Msifuni {{divine_name:BWANA|Yah}}.",
           "B": "ili wazishike kanuni {{deity_pronoun:zake|Zake}} na kuyafuata maelekezo {{deity_pronoun:yake|Yake}} kwa uaminifu. Msifuni {{divine_name:BWANA|Yah}}!",
           "R": "Alifanya hivyo ili wazitii sheria {{deity_pronoun:zake|Zake}} na kufuata mafundisho {{deity_pronoun:yake|Yake}}. Msifuni {{divine_name:BWANA|Yah}}!"
+        },
+        "es": {
+          "L": "para que guardaran {{deity_pronoun:sus|Sus}} estatutos y observaran {{deity_pronoun:sus|Sus}} instrucciones. {{plural_you:Alaben|Alabad}} {{divine_name:al SEÑOR|a Yah}}.",
+          "B": "para que cumplieran {{deity_pronoun:sus|Sus}} decretos y se mantuvieran fieles a {{deity_pronoun:sus|Sus}} instrucciones. ¡{{plural_you:Alaben|Alabad}} {{divine_name:al SEÑOR|a Yah}}!",
+          "R": "Hizo esto para que obedecieran {{deity_pronoun:sus|Sus}} leyes y siguieran {{deity_pronoun:su|Su}} enseñanza. ¡{{plural_you:Alaben|Alabad}} {{divine_name:al SEÑOR|a Yah}}!"
         }
       },
       "decisions": [
@@ -4432,6 +4807,49 @@
             "\"Haleluya\" at every level"
           ],
           "reason": "The Hebrew is a plural command, \"praise Yah\"; \"Msifuni\" says it to the whole people, and the setting shows the short name Yah. \"Haleluya\" is the familiar church word but gives a Swahili reader no meaning.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191050450061",
+            "o191050450071"
+          ],
+          "choice": "{{plural_you:Alaben|Alabad}} {{divine_name:al SEÑOR|a Yah}}",
+          "alternatives": [
+            "Aleluya"
+          ],
+          "reason": "Hallelu Yah is a plural command, \"praise Yah\", Yah being the short form of God's name. Spanish translates it, as the English does, with the plural you setting on the verb and \"al SEÑOR\" by default, \"a Yah\" with the name setting. \"Aleluya\" is the familiar borrowed word, but it hides that the line is a call to the hearers.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191050450042"
+          ],
+          "choice": "instrucciones (L, B); enseñanza (R)",
+          "alternatives": [
+            "leyes"
+          ],
+          "reason": "The Hebrew torot are God's teachings for life. As in Psalm 1, Literal and Balanced say \"instrucciones\", Readable \"enseñanza\"; the statutes (ḥuqqim) are \"estatutos\" or \"decretos\", and \"leyes\" at Readable.",
           "uncertain": false,
           "footnote": false
         }
