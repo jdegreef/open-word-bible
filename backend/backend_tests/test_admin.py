@@ -107,7 +107,7 @@ class AccessTest(AdminTestCase):
             me = client_for(user).get("/api/me").json()
             self.assertEqual(me["admin"], expected, kind)
         reviewer = account("fr@example.org", (K.LANGUAGE_REVIEWER, "fr"))
-        self.assertEqual(client_for(reviewer).get("/api/me").json()["admin"], ["overview", "export"])
+        self.assertEqual(client_for(reviewer).get("/api/me").json()["admin"], ["overview", "export", "review"])
         self.assertEqual(client_for(account("r@example.org")).get("/api/me").json()["admin"], [])
 
     def test_an_editor_cannot_open_the_team(self):

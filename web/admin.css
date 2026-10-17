@@ -170,3 +170,10 @@ form.admin-toolbar { justify-content: flex-start; }
 .admin-actions input { flex: 1 1 220px; }
 .admin-tile.bad b { color: #b3412f; }
 .admin-high { color: #b3412f; font-weight: 700; }
+
+/* Changes: a rendering before and after, word by word. */
+.admin-diff ins { text-decoration: none; background: color-mix(in srgb, #2f7a45 16%, transparent); border-radius: 3px; }
+.admin-diff del, .admin-wrap > del { color: #b3412f; background: color-mix(in srgb, #b3412f 12%, transparent); border-radius: 3px; }
+:root[data-theme="dark"] .admin-diff del, :root[data-theme="night"] .admin-diff del,
+:root[data-theme="dark"] .admin-wrap > del, :root[data-theme="night"] .admin-wrap > del { color: #f0a093; }
+.admin-table tr[aria-current="true"] th { font-weight: 700; }
