@@ -48,6 +48,16 @@
           "L": "Jacques, esclave de Dieu et du Seigneur Jésus {{christos:Christ|Messie}}, aux douze tribus [qui sont] dans la dispersion : salut.",
           "B": "De la part de Jacques, serviteur de Dieu et du Seigneur Jésus {{christos:Christ|le Messie}}, aux douze tribus dispersées parmi les nations : salut.",
           "R": "Cette lettre vient de Jacques, serviteur de Dieu et du Seigneur Jésus {{christos:Christ|le Messie}}. J’écris aux douze tribus du peuple de Dieu, qui sont dispersées dans de nombreux pays. Je vous salue !"
+        },
+        "ko": {
+          "L": "하나님과 주 예수 {{christos:그리스도|메시아}}의 종 야고보가 흩어져 있는 열두 지파에게 문안합니다.",
+          "B": "하나님과 주 예수 {{christos:그리스도|메시아}}의 종 야고보가 여러 나라에 흩어져 사는 열두 지파에게 문안드립니다.",
+          "R": "이 편지는 하나님과 주 예수 {{christos:그리스도|메시아}}의 종인 야고보가 보냅니다. 나는 여러 지역에 흩어져 사는 하나님의 백성, 곧 열두 지파에게 이 편지를 씁니다. 여러분에게 인사드립니다!"
+        },
+        "vi": {
+          "L": "Gia-cơ, nô lệ của Đức Chúa Trời và của Chúa Giê-xu {{christos:Christ|Mê-si-a}}, gửi đến mười hai chi phái đang sống trong cảnh tản lạc: kính chào.",
+          "B": "Gia-cơ, đầy tớ của Đức Chúa Trời và của Chúa Giê-xu {{christos:Christ|Mê-si-a}}, kính gửi mười hai chi phái đang sống tản lạc giữa các dân tộc: kính chào.",
+          "R": "Thư này của Gia-cơ, đầy tớ của Đức Chúa Trời và của Chúa Giê-xu {{christos:Christ|Mê-si-a}}. Tôi viết cho mười hai chi phái của dân Đức Chúa Trời, là những người đang sống rải rác ở nhiều xứ. Kính chào anh chị em!"
         }
       },
       "decisions": [
@@ -310,6 +320,120 @@
           "reason": "The word is the ordinary greeting at the head of a Greek letter (m4), not a call to rejoice; French \"salut\" is the short traditional form of a written greeting.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n59001001015"
+          ],
+          "choice": "the whole letter in 합쇼체 (-습니다, -십시오) at every level; the readers are \"여러분\"; James speaks of himself as \"나\"; God and Christ take the subject honorific (-시-, 께서); no deity_pronoun spans (for the whole letter)",
+          "alternatives": [
+            "해라체 (-다, -라), the style of the older Korean Bibles",
+            "\"저\" (humble first person) for James"
+          ],
+          "reason": "As in the Korean of Colossians and Romans: a letter read aloud to the gathered church calls for the formal style of a public address, so every level uses 합쇼체 and its imperatives (-십시오), and \"여러분\" is the respectful plural \"you\". James writes as a teacher with authority (3:1), so he says \"나\". Korean has no capital letters, so the deity_pronoun setting has nothing to change; respect for God and Christ is carried by -시-, 께서 and \"그분\".",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n59001001006"
+          ],
+          "choice": "주 예수 {{christos:그리스도|메시아}}; {{gender:형제자매|형제}} for the readers as brothers, plural and singular (for the whole letter)",
+          "alternatives": [
+            "\"형제들\" with no setting"
+          ],
+          "reason": "As in Colossians and Romans: Korean has no article, so the christos alternative is plain \"메시아\", and both forms end in a vowel, so the particles that follow fit either. \"형제자매\" (brothers and sisters) is the inclusive default for believers, with \"형제\" as the traditional form; the same span serves for a single believer (1:9), as in the Korean of Matthew 18:15. Where the Greek itself says \"brother or sister\" (2:15) no span is needed.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-3",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59001001007",
+            "n59001001015"
+          ],
+          "choice": "\"종\" for the slave at every level; \"문안합니다\" (L), \"문안드립니다\" (B), \"인사드립니다\" (R) for the greeting",
+          "alternatives": [
+            "\"노예\"",
+            "\"기뻐하십시오\" for the greeting"
+          ],
+          "reason": "The Korean style guide gives \"종\" at every level: it says plainly that James belongs wholly to a master (meaning decision), without the picture of modern slavery that \"노예\" brings. The greeting is the ordinary opening word of a Greek letter (meaning decision), so Korean uses its own letter greeting rather than \"rejoice\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n59001001001"
+          ],
+          "choice": "\"tôi\" for James, \"anh chị em\" for \"you\" (plural), \"thưa {{gender:anh chị em|anh em}} của tôi\" for \"my brothers\", and \"bạn\" for the singular \"you\" of an imagined hearer (2:18-22; 4:12), through the whole letter",
+          "alternatives": [
+            "\"anh em\" for \"you\"",
+            "\"các con\"",
+            "\"quý vị\""
+          ],
+          "reason": "Vietnamese has no neutral word for \"you\": the pronoun names the relation. James writes as a teacher to fellow believers he calls brothers, so he is \"tôi\" and they are \"anh chị em\", as Paul and his readers are in the Vietnamese Romans and Colossians. \"Anh chị em\" for \"you\" is plain text; the gender span is kept for the word brothers itself. Where James argues with an imagined single person, Vietnamese uses \"bạn\", as the Vietnamese Romans does in the same kind of argument (2:1; 11:17).",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59001001007",
+            "n59001001004",
+            "n59001001005",
+            "n59001001006"
+          ],
+          "choice": "\"nô lệ\" (L); \"đầy tớ\" (B, R) for doulos; \"Chúa Giê-xu {{christos:Christ|Mê-si-a}}\" for \"the Lord Jesus Christ\"",
+          "alternatives": [
+            "\"tôi tớ\" at every level",
+            "\"nô lệ\" at every level"
+          ],
+          "reason": "Literal keeps the hard edge of the word, one owned by a master (m1); Balanced and Readable say \"đầy tớ\", as the English says \"servant\" and as the Vietnamese Romans does for Paul (1:1). With \"Lord\", \"Chúa\" takes the place of the honorific \"Đức\", the form used through the letter.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -366,6 +490,16 @@
           "L": "Estimez [que c’est] une joie totale, mes {{gender:frères et sœurs|frères}}, quand vous tombez dans des épreuves diverses, \\v 3 sachant que la mise à l’épreuve de votre foi produit l’endurance ;",
           "B": "Mes {{gender:frères et sœurs|frères}}, quand vous traversez des épreuves de toutes sortes, considérez-le comme un motif de grande joie, \\v 3 car vous savez que votre foi, quand elle est mise à l’épreuve, produit l’endurance.",
           "R": "Mes {{gender:frères et sœurs|frères}}, vous allez connaître toutes sortes de moments difficiles. Quand ils arrivent, soyez pleins de joie. \\v 3 Vous le savez : quand votre foi est mise à l’épreuve, cette épreuve fait grandir en vous l’endurance."
+        },
+        "ko": {
+          "L": "내 {{gender:형제자매|형제}} 여러분, 여러분이 여러 가지 시험에 빠질 때마다 [그것을] 온전한 기쁨으로 여기십시오. \\v 3 여러분의 믿음의 검증이 인내를 이루어 낸다는 것을 알기 때문입니다.",
+          "B": "내 {{gender:형제자매|형제}} 여러분, 온갖 시험을 만날 때마다 그것을 큰 기쁨의 이유로 여기십시오. \\v 3 여러분도 알다시피, 여러분의 믿음이 시험을 거쳐 참된 것으로 드러날 때 인내가 생겨납니다.",
+          "R": "내 {{gender:형제자매|형제}} 여러분, 여러분에게 온갖 어려운 일이 닥쳐올 것입니다. 그럴 때 마음껏 기뻐하십시오. \\v 3 여러분도 알다시피, 믿음이 시험을 받으면 그 시험을 통해 끝까지 참고 견디는 힘이 자랍니다."
+        },
+        "vi": {
+          "L": "Hãy coi [đó] là trọn niềm vui, thưa {{gender:anh chị em|anh em}} của tôi, mỗi khi anh chị em rơi vào đủ loại thử thách, \\v 3 vì biết rằng sự thử nghiệm đức tin của anh chị em sinh ra sự kiên trì;",
+          "B": "Thưa {{gender:anh chị em|anh em}} của tôi, mỗi khi anh chị em gặp đủ mọi thử thách, hãy coi đó là lý do để vui mừng trọn vẹn, \\v 3 vì anh chị em biết rằng khi đức tin được thử luyện thì sinh ra sự kiên trì.",
+          "R": "Thưa {{gender:anh chị em|anh em}} của tôi, anh chị em sẽ gặp đủ thứ khó khăn. Khi điều đó xảy ra, hãy vui mừng thật nhiều. \\v 3 Anh chị em biết rằng khi đức tin bị thử thách, sự thử thách ấy giúp anh chị em kiên trì hơn."
         }
       },
       "decisions": [
@@ -651,6 +785,54 @@
           "reason": "The same Greek word family covers hardship that tests faith and the pull toward sin. Here it means trials (m1), so French says \"épreuves\"; in 1:13-14, where James speaks of being drawn toward evil, it says \"tenter\". \"Endurance\" is the word Hebrews uses for holding firm under pressure (m4); \"patience\" is kept for the other word in 5:7-10.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59001002007",
+            "n59001003004",
+            "n59001003009"
+          ],
+          "choice": "\"시험\" for the trials, here and in 1:12-14 for the related verb \"tempt\"; \"검증\" (L) for the testing that proves faith; \"인내\" for endurance",
+          "alternatives": [
+            "\"시련\" for the trials",
+            "\"연단\" for the testing"
+          ],
+          "reason": "Korean \"시험\" covers both a hardship that tests and a pull toward sin, as in the Korean of Luke 8:13 and 11:4, so the link James draws between trials (1:2, 12) and temptation (1:13-14) stays visible. \"연단\" is older church language; \"검증\" says plainly that the testing proves faith genuine (meaning decision). Readable explains endurance as \"끝까지 참고 견디는 힘\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59001002007",
+            "n59001003009"
+          ],
+          "choice": "\"thử thách\" for trials; \"sự kiên trì\", \"kiên trì\" for endurance at every level, through the letter (1:12; 5:11)",
+          "alternatives": [
+            "\"cám dỗ\" for trials",
+            "\"sự nhịn nhục\"",
+            "\"sự bền đỗ\""
+          ],
+          "reason": "The trials here are hardships that test faith (m1), so Vietnamese says \"thử thách\" and keeps \"cám dỗ\" for the pull toward sin in 1:13-14 (the Greek uses one word family for both). \"Kiên trì\" is holding on firmly without giving way (m4); \"nhịn nhục\" stresses putting up with insults, and \"bền đỗ\" is older church language.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -702,6 +884,16 @@
           "L": "Et que l’endurance ait une œuvre accomplie, afin que vous soyez accomplis et entiers, ne manquant de rien.",
           "B": "Laissez l’endurance mener son œuvre jusqu’au bout, afin que vous soyez mûrs et entiers, sans que rien ne vous manque.",
           "R": "Continuez à tenir bon jusqu’à ce que l’endurance ait fini son œuvre en vous. Alors vous serez pleinement mûrs et entiers, et il ne vous manquera rien."
+        },
+        "ko": {
+          "L": "그리고 인내가 [그] 온전한 일을 이루게 하십시오. 이는 여러분이 온전하고 완전한 사람이 되어, 아무것에도 모자람이 없게 하려는 것입니다.",
+          "B": "인내가 끝까지 제 일을 다 하게 하십시오. 그러면 여러분이 성숙하고 온전한 사람이 되어, 아무것도 모자라지 않게 될 것입니다.",
+          "R": "끝까지 참고 견디십시오. 그러면 인내가 여러분 안에서 할 일을 다 마칠 것입니다. 그때 여러분은 다 자라고 온전한 사람이 되어, 모자란 것이 하나도 없을 것입니다."
+        },
+        "vi": {
+          "L": "Và hãy để sự kiên trì có công việc trọn vẹn [của nó], để anh chị em được trọn vẹn và toàn vẹn, không thiếu sót điều gì.",
+          "B": "Hãy để sự kiên trì hoàn tất công việc của nó, để anh chị em được trưởng thành và toàn vẹn, không thiếu điều gì.",
+          "R": "Hãy cứ kiên trì cho đến khi sự kiên trì làm xong công việc của nó trong anh chị em. Khi đó anh chị em sẽ trưởng thành và toàn vẹn, không thiếu điều gì."
         }
       },
       "decisions": [
@@ -809,6 +1001,49 @@
           "reason": "\"Parfait\" would suggest being without fault; the word means complete, having reached its goal (m1). As in Colossians and Hebrews, Literal says \"accompli\" and keeps the repeated word.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59001004014"
+          ],
+          "choice": "\"모자라다\" for \"lacking\" in verse 4 and \"lacks\" in verse 5, at every level",
+          "alternatives": [
+            "\"부족하다\""
+          ],
+          "reason": "The meaning decision says the last word of verse 4 leads into verse 5. Using the same Korean verb in both verses (\"모자람이 없게\", \"지혜가 모자라면\") keeps the link.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59001004014"
+          ],
+          "choice": "\"thiếu\" for lacking, so that verse 5 can pick up the same word (\"thiếu sự khôn ngoan\")",
+          "alternatives": [
+            "\"khiếm khuyết\"",
+            "\"kém\""
+          ],
+          "reason": "James links verse 4 to verse 5 with the same verb (m3): lacking nothing, and then, if anyone lacks wisdom. Vietnamese keeps the link with \"thiếu\" in both verses at every level.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -865,6 +1100,16 @@
           "L": "Et si l’un de vous manque de sagesse, qu’il [la] demande au Dieu qui donne à tous généreusement et sans faire de reproche, et elle lui sera donnée ;",
           "B": "Si l’un de vous manque de sagesse, qu’il la demande à Dieu, qui donne à tous sans compter et sans faire de reproches, et elle lui sera donnée.",
           "R": "L’un de vous a-t-il besoin de sagesse ? Qu’il la demande à Dieu. Dieu donne volontiers à tout le monde, et {{deity_pronoun:il|Il}} ne fait de reproches à personne quand on {{deity_pronoun:lui|Lui}} demande quelque chose. Il lui donnera la sagesse."
+        },
+        "ko": {
+          "L": "그런데 여러분 가운데 누구든지 지혜가 모자라면, 그 사람은 모든 사람에게 아낌없이 주시고 꾸짖지 않으시는 하나님께 구해야 합니다. 그러면 그에게 주어질 것입니다.",
+          "B": "여러분 가운데 누구든지 지혜가 모자라면, 모든 사람에게 아낌없이 주시고 나무라지 않으시는 하나님께 구하십시오. 그러면 하나님께서 주실 것입니다.",
+          "R": "여러분 가운데 지혜가 필요한 사람이 있습니까? 그러면 하나님께 구하십시오. 하나님께서는 모든 사람에게 넉넉히 주시고, 구한다고 나무라지 않으십니다. 하나님께서 여러분에게 지혜를 주실 것입니다."
+        },
+        "vi": {
+          "L": "Nhưng nếu ai trong anh chị em thiếu sự khôn ngoan, người ấy hãy xin Đức Chúa Trời, Đấng ban cho mọi người cách rộng rãi và không trách móc, và [sự khôn ngoan] sẽ được ban cho người ấy;",
+          "B": "Nếu ai trong anh chị em thiếu sự khôn ngoan, hãy xin Đức Chúa Trời, Đấng rộng tay ban cho mọi người mà không quở trách, và anh chị em sẽ được ban cho.",
+          "R": "Có ai trong anh chị em cần sự khôn ngoan không? Hãy xin Đức Chúa Trời ban cho. Đức Chúa Trời rộng rãi ban cho mọi người, và {{deity_pronoun:ngài|Ngài}} không trách ai vì đã xin. Ngài sẽ ban sự khôn ngoan cho anh chị em."
         }
       },
       "decisions": [
@@ -1041,6 +1286,50 @@
           "reason": "Where the English needs {{gender:they|he}} for a pronoun, French keeps the third person of the Greek with the generic \"il\" that refers back to \"l’un de vous\", \"quelqu’un\" or \"celui qui\", which already mean anyone; the style guide adds no span there. The gender setting is kept for the nouns French has to choose (\"être humain\" / \"homme\").",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n59001005003",
+            "n59001005019"
+          ],
+          "choice": "\"누구든지\", \"그 사람\", \"그\" with no gender span (for the whole letter)",
+          "alternatives": [
+            "gender setting spans as in the English"
+          ],
+          "reason": "Korean \"사람\", \"누구든지\" and \"그\" already include men and women, and Korean has no other pronoun to switch to (Korean style guide, section 7), so the gender setting has nothing to change in the English places that offer \"them\" or \"him\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n59001005003",
+            "n59001005019"
+          ],
+          "choice": "\"ai\", \"người ấy\", \"mình\" with no gender span, here and through the letter",
+          "alternatives": [
+            "a gender span as in the English"
+          ],
+          "reason": "Vietnamese \"ai\" and \"người ấy\" already mean a person of either sex, so there is no second, traditional wording for the gender setting to offer, as in the Vietnamese John (3:3) and Romans.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1093,6 +1382,16 @@
           "L": "Mais qu’il demande avec foi, sans douter en rien, car celui qui doute ressemble à une vague de la mer, poussée par le vent et agitée ;",
           "B": "Mais qu’il demande avec foi, sans hésiter, car celui qui hésite est comme une vague du large, que le vent pousse et soulève de tous côtés.",
           "R": "Mais quand vous demandez, demandez avec foi, sans douter. Celui qui doute est comme une vague sur la mer : le vent souffle sur elle et la pousse de tous côtés."
+        },
+        "ko": {
+          "L": "그러나 그는 아무것도 의심하지 말고 믿음으로 구해야 합니다. 의심하는 사람은 바람에 밀려 이리저리 흔들리는 바다 물결과 같기 때문입니다.",
+          "B": "그러나 흔들리지 말고 믿음으로 구하십시오. 흔들리는 사람은 바람에 밀려 이리저리 출렁이는 바다 물결과 같습니다.",
+          "R": "구할 때에는 믿음으로 구하고 의심하지 마십시오. 의심하는 사람은 바다의 물결과 같습니다. 바람이 불면 물결은 이리저리 밀려다닙니다."
+        },
+        "vi": {
+          "L": "Nhưng người ấy hãy xin trong đức tin, không nghi ngờ chút nào, vì người nghi ngờ giống như sóng biển bị gió đẩy đi và bị dồi dập;",
+          "B": "Nhưng anh chị em phải xin bằng đức tin, không hề phân vân. Vì người phân vân giống như con sóng ngoài biển khơi, bị gió đẩy đưa và quăng quật.",
+          "R": "Nhưng khi xin, hãy xin với đức tin và đừng nghi ngờ. Người nghi ngờ giống như sóng trên biển. Gió thổi và xô đẩy nó đi khắp nơi."
         }
       },
       "decisions": [
@@ -1184,6 +1483,27 @@
           "reason": "Balanced and Readable go on speaking to \"you\", as in verse 5.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59001006004"
+          ],
+          "choice": "\"믿음\" for faith at every level (for the whole letter); \"믿다\" for the verb",
+          "alternatives": [
+            "\"신앙\""
+          ],
+          "reason": "\"믿음\" is the key-term word in the Korean of John, Romans and Colossians and is plain enough for Readable. \"신앙\" means religious faith in general. The same word carries James's argument about faith and works in chapter 2.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1242,6 +1562,16 @@
           "L": "Car que {{gender:cet être humain|cet homme}}-là ne s’imagine pas qu’il recevra quoi que ce soit du Seigneur, \\v 8 [lui qui est] {{gender:un être|un homme}} à l’âme double, instable dans toutes ses voies.",
           "B": "{{gender:Un tel être humain|Un tel homme}} ne doit pas s’attendre à recevoir quoi que ce soit du Seigneur. \\v 8 Il a l’âme partagée, et il est instable dans tout ce qu’il fait.",
           "R": "{{gender:Quelqu’un comme lui|Un homme comme lui}} ne doit pas penser que le Seigneur lui donnera quoi que ce soit. \\v 8 Il est tiré dans deux directions à la fois, et rien de ce qu’il fait n’est solide."
+        },
+        "ko": {
+          "L": "그런 사람은 주님께로부터 무엇을 받으리라고 생각하지 말아야 합니다. \\v 8 [그는] 두 마음을 품은 사람이고, 자기의 모든 길에서 안정되지 못한 사람입니다.",
+          "B": "그런 사람은 주님께 무엇을 받을 것이라고 기대하지 말아야 합니다. \\v 8 그는 두 마음을 품고 있어서, 하는 일마다 흔들립니다.",
+          "R": "그런 사람은 주님께서 자기에게 무엇을 주시리라고 생각하지 말아야 합니다. \\v 8 그 사람은 마음이 두 갈래로 나뉘어 있어서, 무엇을 하든지 갈팡질팡합니다."
+        },
+        "vi": {
+          "L": "Vì người ấy chớ tưởng rằng mình sẽ nhận được điều gì từ Chúa, \\v 8 [vì là] người hai lòng, không vững vàng trong mọi đường lối mình.",
+          "B": "Người như thế đừng mong nhận được gì từ Chúa. \\v 8 Người ấy hai lòng và không vững vàng trong mọi việc mình làm.",
+          "R": "Người như vậy đừng nghĩ rằng Chúa sẽ ban cho mình điều gì. \\v 8 Người ấy bị giằng co giữa hai đường, và chẳng việc gì người ấy làm được vững vàng."
         }
       },
       "decisions": [
@@ -1407,6 +1737,27 @@
           "reason": "The word is built on \"soul\" and \"two\" (m1): a loyalty divided between God and something else. Literal keeps the picture; Balanced says it in current French. \"Indécis\" would make it a matter of temperament.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59001008002"
+          ],
+          "choice": "\"hai lòng\" for double-minded",
+          "alternatives": [
+            "\"lưỡng lự\"",
+            "\"do dự\""
+          ],
+          "reason": "\"Hai lòng\" says a heart divided in its loyalty, which is the sense of m1; \"lưỡng lự\" and \"do dự\" would mean only that the person cannot make up their mind.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1467,6 +1818,16 @@
           "L": "Que {{gender:le frère ou la sœur|le frère}} de condition humble se glorifie de son élévation, \\v 10 et le riche de son abaissement, parce que, comme la fleur de l’herbe, il passera.",
           "B": "{{gender:Le frère ou la sœur|Le frère}} de condition modeste doit se glorifier de son élévation, \\v 10 et le riche, de son abaissement, car le riche passera comme la fleur des champs.",
           "R": "{{gender:Le frère ou la sœur|Le frère}} qui est pauvre et que les gens méprisent doit tirer fierté de la place d’honneur que Dieu lui donne. \\v 10 Et le riche doit tirer fierté d’être abaissé, car les riches disparaîtront comme une fleur dans l’herbe."
+        },
+        "ko": {
+          "L": "낮은 처지에 있는 {{gender:형제자매|형제}}는 자기가 높아진 것을 자랑하고, \\v 10 부자는 자기가 낮아진 것을 [자랑해야 합니다]. 그가 풀의 꽃처럼 사라질 것이기 때문입니다.",
+          "B": "낮은 처지에 있는 {{gender:형제자매|형제}}는 자기가 높아진 것을 자랑으로 여기고, \\v 10 부자는 자기가 낮아진 것을 자랑으로 여겨야 합니다. 부자는 들꽃처럼 사라질 것이기 때문입니다.",
+          "R": "가난하고 업신여김을 받는 {{gender:형제자매|형제}}는 하나님께서 자기를 높여 주셨다는 것을 자랑스럽게 여겨야 합니다. \\v 10 부자는 자기가 낮아진 것을 자랑스럽게 여겨야 합니다. 부자는 풀밭의 꽃처럼 사라져 버릴 것이기 때문입니다."
+        },
+        "vi": {
+          "L": "Nhưng người {{gender:anh chị em|anh em}} thấp hèn hãy khoe mình về sự được nâng cao của mình, \\v 10 còn người giàu [hãy khoe mình] về sự bị hạ thấp của mình, vì người ấy sẽ qua đi như hoa của cỏ.",
+          "B": "Người {{gender:anh chị em|anh em}} ở địa vị thấp hèn hãy hãnh diện vì được nâng cao, \\v 10 còn người giàu hãy hãnh diện vì bị hạ xuống, vì người giàu sẽ qua đi như hoa dại ngoài đồng.",
+          "R": "Người {{gender:anh chị em|anh em}} nghèo khó và bị coi thường hãy tự hào vì Đức Chúa Trời đã nâng mình lên. \\v 10 Còn người giàu hãy tự hào vì bị hạ xuống, vì người giàu sẽ qua đi, như bông hoa giữa đám cỏ."
         }
       },
       "decisions": [
@@ -1684,6 +2045,70 @@
           "reason": "\"Se glorifier\" is the traditional rendering of the verb and is kept at Literal and Balanced, as for this word family elsewhere; it reads the same with either option of the setting. Readable says \"tirer fierté\", since the boast is good: \"être fier\" would have to agree with \"la sœur\" in the inclusive option, and \"se vanter\" would sound like empty boasting.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59001009001"
+          ],
+          "choice": "\"자랑하다\" (L); \"자랑으로 여기다\" (B); \"자랑스럽게 여기다\" (R)",
+          "alternatives": [
+            "\"기뻐하다\"",
+            "\"뽐내다\""
+          ],
+          "reason": "The verb is \"boast\", used here of a right pride in what God does (meaning decision). Korean \"자랑\" can be good or bad, like the Greek; Balanced and Readable soften it to taking pride, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59001009001"
+          ],
+          "choice": "\"khoe mình\" (L); \"hãnh diện\" (B); \"tự hào\" (R) for boast",
+          "alternatives": [
+            "\"khoe khoang\" at every level"
+          ],
+          "reason": "The boasting here is good pride in what God has done (m2). Literal keeps \"khoe mình\", the word the Vietnamese Romans uses at Literal (11:17), so the word can be traced; Balanced and Readable say \"hãnh diện\" and \"tự hào\", since \"khoe khoang\" always sounds bad, as the English says \"take pride\" and \"be proud\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n59001009004"
+          ],
+          "choice": "{{gender:anh chị em|anh em}} for one believer (\"the brother\")",
+          "alternatives": [
+            "\"anh em\" with no span"
+          ],
+          "reason": "The word means any believer, man or woman, so Vietnamese uses the same span as for brothers in the plural, as the Vietnamese Romans does (14:10).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1753,6 +2178,16 @@
           "L": "Car le soleil s’est levé avec la chaleur brûlante et a desséché l’herbe, et sa fleur est tombée et la beauté de son aspect a péri ; ainsi aussi le riche se flétrira dans ses allées et venues.",
           "B": "Le soleil se lève avec sa chaleur brûlante et dessèche l’herbe ; sa fleur tombe, et toute sa beauté disparaît. C’est ainsi que le riche se fanera, au milieu même de ses affaires.",
           "R": "Le soleil se lève, et sa chaleur brûle l’herbe jusqu’à la dessécher. Ses fleurs tombent, et leur beauté disparaît. Il en est de même pour les riches : ils se faneront pendant qu’ils sont encore occupés par leurs affaires."
+        },
+        "ko": {
+          "L": "해가 뜨거운 열기와 함께 떠올라 풀을 말려 버렸고, 그 꽃은 떨어졌고 그 모양의 아름다움은 사라졌습니다. 이와 같이 부자도 자기 길을 가는 가운데 시들어 버릴 것입니다.",
+          "B": "해가 떠올라 뜨거운 열기로 풀을 말리면, 꽃은 떨어지고 그 아름다움도 사라집니다. 부자도 이와 같이 바쁘게 자기 일을 하는 동안에 시들어 버릴 것입니다.",
+          "R": "해가 뜨면 그 열기에 풀이 타서 말라 버립니다. 꽃은 떨어지고 그 아름다움도 사라집니다. 부자도 그와 같습니다. 그들은 자기 일로 바쁘게 돌아다니는 동안에 시들어 사라질 것입니다."
+        },
+        "vi": {
+          "L": "Vì mặt trời đã mọc lên với sức nóng thiêu đốt và làm cỏ khô đi, hoa của nó đã rụng, và vẻ đẹp của diện mạo nó đã tiêu tan; người giàu cũng vậy, sẽ tàn héo giữa những bước đường của mình.",
+          "B": "Mặt trời mọc lên với sức nóng gay gắt làm cỏ khô héo; hoa rụng xuống, và vẻ đẹp của nó không còn nữa. Người giàu cũng sẽ tàn lụi như vậy, ngay giữa lúc đang bận rộn với công việc của mình.",
+          "R": "Mặt trời mọc lên, sức nóng của nó đốt cỏ cho đến khi cỏ khô héo. Hoa rụng xuống, và vẻ đẹp của hoa mất đi. Người giàu cũng như vậy. Họ sẽ tàn lụi trong khi vẫn đang bận rộn lo làm ăn."
         }
       },
       "decisions": [
@@ -1848,6 +2283,52 @@
           "reason": "The word means a person’s goings, journeys and business (m3). \"Allées et venues\" keeps the picture of movement at Literal; Balanced and Readable say what the movement is about.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n59001011001",
+            "n59001011009",
+            "n59001011016",
+            "n59001011023"
+          ],
+          "choice": "past tenses in Literal (\"말려 버렸고\", \"떨어졌고\", \"사라졌습니다\"); the present in Balanced and Readable",
+          "alternatives": [
+            "the present at every level"
+          ],
+          "reason": "The Greek tells what always happens in past tenses (meaning decision). Literal keeps them so the reader sees the form; Balanced and Readable use the Korean present for a general truth.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59001011001",
+            "n59001011009",
+            "n59001011016",
+            "n59001011023"
+          ],
+          "choice": "\"đã\" with the verbs (L); no time word (B, R)",
+          "alternatives": [
+            "\"đã\" at every level"
+          ],
+          "reason": "The Greek tells in past tenses what always happens (m1). Literal marks the past with \"đã\" so the reader sees the form; Balanced and Readable leave it out, and Vietnamese then reads as what happens every time.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1903,6 +2384,16 @@
           "L": "Bienheureux {{gender:celui|l’homme}} qui endure l’épreuve, car, devenu éprouvé, il recevra la couronne de la vie, que [Dieu] a promise à ceux qui {{deity_pronoun:l’|L’}}aiment.",
           "B": "Bienheureux {{gender:celui|l’homme}} qui tient bon dans l’épreuve. Quand il aura fait ses preuves, il recevra la couronne de la vie, que Dieu a promise à ceux qui {{deity_pronoun:l’|L’}}aiment.",
           "R": "Dieu bénit celui qui continue à tenir bon dans les épreuves. Quand il aura été mis à l’épreuve et que sa foi se sera montrée vraie, il recevra la couronne de la vie. Dieu a promis ce prix à tous ceux qui {{deity_pronoun:l’|L’}}aiment."
+        },
+        "ko": {
+          "L": "시험을 견디는 사람은 복이 있습니다. 그가 인정을 받은 뒤에, [하나님께서] 그분을 사랑하는 사람들에게 약속하신 생명의 면류관을 받을 것이기 때문입니다.",
+          "B": "시험을 끝까지 견디는 사람은 복이 있습니다. 그는 시험을 거쳐 참된 사람으로 드러난 뒤에, 하나님께서 그분을 사랑하는 사람들에게 약속하신 생명의 면류관을 받을 것입니다.",
+          "R": "시험을 계속 견뎌 내는 사람에게 하나님께서 복을 주십니다. 그 사람은 시험을 받고 참된 사람으로 드러나면 생명의 면류관을 받을 것입니다. 하나님께서는 그분을 사랑하는 모든 사람에게 이 상을 약속하셨습니다."
+        },
+        "vi": {
+          "L": "Phước cho người chịu đựng thử thách, vì khi đã được chứng nghiệm, người ấy sẽ nhận mão miện của sự sống, là [mão miện mà Đức Chúa Trời] đã hứa ban cho những người yêu mến {{deity_pronoun:ngài|Ngài}}.",
+          "B": "Phước cho người kiên trì vượt qua thử thách. Khi đã được chứng tỏ là chân thật, người ấy sẽ nhận mão miện của sự sống mà Đức Chúa Trời đã hứa ban cho những người yêu mến {{deity_pronoun:ngài|Ngài}}.",
+          "R": "Đức Chúa Trời ban phước cho người cứ kiên trì qua những thử thách. Khi người ấy đã chịu thử thách và được chứng tỏ là chân thật, người ấy sẽ nhận mão miện của sự sống. Đức Chúa Trời đã hứa ban phần thưởng này cho mọi người yêu mến {{deity_pronoun:ngài|Ngài}}."
         }
       },
       "decisions": [
@@ -2116,6 +2607,51 @@
           "reason": "The Greek has \"man\" in the sense of anyone. \"Celui qui\" is the natural inclusive French and keeps \"il\" in what follows, where \"la personne\" would make the next words feminine in one option only.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59001012001",
+            "n59001012011"
+          ],
+          "choice": "\"복이 있습니다\" for blessed (L, B); \"면류관\" for the crown at every level",
+          "alternatives": [
+            "\"행복합니다\"",
+            "\"관\", \"화관\""
+          ],
+          "reason": "\"복이 있다\" says that God's favor rests on a person, as the meaning decision describes; \"행복하다\" would make it a feeling. \"면류관\" is the established word for the victor's crown in Korean Christian use and is understood by readers; the meaning decision explains that the crown is life itself.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59001012011"
+          ],
+          "choice": "\"mão miện\" for the crown",
+          "alternatives": [
+            "\"vòng hoa\"",
+            "\"vương miện\""
+          ],
+          "reason": "The crown is the wreath given to a victor (m3). \"Mão miện\" is the word Vietnamese churches use for this crown; \"vương miện\" would make it a king's crown, and \"vòng hoa\" alone would lose the sense of a prize.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2170,6 +2706,16 @@
           "L": "Que personne, quand il est tenté, ne dise : « Je suis tenté par Dieu » ; car Dieu ne peut être tenté par les [choses] mauvaises, et {{deity_pronoun:il|Il}} ne tente {{deity_pronoun:lui-même|Lui-même}} personne.",
           "B": "Que personne, quand il est tenté, ne dise : « Dieu me tente. » Car Dieu est hors d’atteinte de la tentation du mal, et {{deity_pronoun:il|Il}} ne tente jamais personne.",
           "R": "Quand vous êtes tentés de faire le mal, ne dites pas : « C’est Dieu qui me tente. » Le mal ne peut pas tenter Dieu, et Dieu ne pousse jamais personne à faire le mal."
+        },
+        "ko": {
+          "L": "시험을 받을 때에 아무도 \"나는 하나님께 시험을 받고 있다\"라고 말하지 마십시오. 하나님께서는 악한 것들에게 시험을 받지 않으시며, 그분 자신도 아무도 시험하지 않으십니다.",
+          "B": "시험을 받을 때에 아무도 \"하나님께서 나를 시험하고 계신다\"라고 말해서는 안 됩니다. 하나님께서는 악에 시험을 받으실 수 없는 분이시고, 아무도 시험하지 않으십니다.",
+          "R": "나쁜 일을 하고 싶은 유혹을 받을 때 \"하나님께서 나를 시험하고 계신다\" 하고 말하지 마십시오. 악은 하나님을 시험할 수 없고, 하나님께서도 아무에게도 나쁜 일을 하라고 시험하지 않으십니다."
+        },
+        "vi": {
+          "L": "Khi bị cám dỗ, chớ ai nói: \"Tôi bị Đức Chúa Trời cám dỗ\"; vì Đức Chúa Trời không thể bị điều ác cám dỗ, và chính {{deity_pronoun:ngài|Ngài}} không cám dỗ ai.",
+          "B": "Khi bị cám dỗ, đừng ai nói: \"Đức Chúa Trời đang cám dỗ tôi.\" Vì điều ác không thể cám dỗ Đức Chúa Trời, và {{deity_pronoun:ngài|Ngài}} cũng chẳng hề cám dỗ ai.",
+          "R": "Khi anh chị em bị cám dỗ làm điều sai, đừng nói: \"Đức Chúa Trời đang cám dỗ tôi.\" Điều ác không thể cám dỗ Đức Chúa Trời, và Đức Chúa Trời không bao giờ cám dỗ ai làm điều sai."
         }
       },
       "decisions": [
@@ -2346,6 +2892,49 @@
           "reason": "Here the verb means drawing someone toward sin (m1), so French uses \"tenter\", where 1:2 and 1:12 say \"épreuve\" for the same word family. French cannot keep one word for both senses, as the English cannot.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n59001013002",
+            "n59001013014"
+          ],
+          "choice": "\"나쁜 일을 하고 싶은 유혹\" and \"나쁜 일을 하라고\" (R)",
+          "alternatives": [
+            "\"시험\" alone in Readable"
+          ],
+          "reason": "Here the verb means drawing someone toward sin (meaning decision). Korean \"시험\" can also mean a test, so Readable says what kind of testing is meant, as the English Readable adds \"to do wrong\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59001013002",
+            "n59001013007",
+            "n59001013014"
+          ],
+          "choice": "\"cám dỗ\" for tempt here and in verse 14, against \"thử thách\" for the trials of verses 2 and 12",
+          "alternatives": [
+            "\"thử thách\" here too"
+          ],
+          "reason": "The Greek word family covers both testing and tempting; here it means drawing someone toward sin (m1), which Vietnamese can only say with \"cám dỗ\". God tests his people but does not tempt them (m4), and the two Vietnamese words keep that clear.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2393,6 +2982,16 @@
           "L": "Mais chacun est tenté par son propre désir, étant entraîné et appâté ;",
           "B": "Chacun, au contraire, est tenté par son propre désir, qui l’entraîne et le séduit comme un appât.",
           "R": "Les gens sont tentés par les mauvaises choses qu’ils désirent. Leurs propres désirs les entraînent et les prennent au piège, comme l’appât attrape un poisson."
+        },
+        "ko": {
+          "L": "그러나 각 사람은 자기 자신의 욕심에 끌려가고 미혹되어 시험을 받습니다.",
+          "B": "오히려 사람은 저마다 자기 욕심에 이끌려 나가고, 미끼에 걸리듯 꾀임을 받아 시험을 받습니다.",
+          "R": "사람들은 자기가 원하는 나쁜 것들 때문에 시험을 받습니다. 자기 욕심이 그들을 끌어내어 덫에 걸리게 합니다. 물고기가 미끼에 걸리는 것과 같습니다."
+        },
+        "vi": {
+          "L": "Nhưng mỗi người bị cám dỗ bởi chính lòng ham muốn của mình, bị lôi kéo và bị dụ dỗ;",
+          "B": "Trái lại, mỗi người bị cám dỗ bởi chính lòng ham muốn của mình, nó lôi người ấy đi và nhử người ấy như mồi câu.",
+          "R": "Người ta bị cám dỗ bởi những điều sai trái mà chính mình ham muốn. Chính những ham muốn ấy kéo họ đi và bẫy họ, như mồi câu bắt con cá."
         }
       },
       "decisions": [
@@ -2481,6 +3080,28 @@
           "reason": "\"Each one\" means everyone, so the pronouns take the gender setting.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59001014007"
+          ],
+          "choice": "\"lòng ham muốn\" for desire, here and in verse 15",
+          "alternatives": [
+            "\"dục vọng\"",
+            "\"tư dục\""
+          ],
+          "reason": "The desire is a craving for what is wrong (m1). \"Dục vọng\" is heard by many readers as sexual lust only, which would narrow James's meaning.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2530,6 +3151,16 @@
           "L": "Puis le désir, ayant conçu, enfante le péché, et le péché, étant parvenu à son terme, met au monde la mort.",
           "B": "Le désir conçoit et enfante le péché, et le péché, une fois pleinement développé, donne naissance à la mort.",
           "R": "Le mauvais désir est comme une mère. Il grandit à l’intérieur d’une personne et met au monde le péché. Puis le péché grandit, et il donne naissance à la mort."
+        },
+        "ko": {
+          "L": "그다음에 욕심이 잉태하면 죄를 낳고, 죄가 다 자라면 죽음을 낳습니다.",
+          "B": "욕심이 잉태하여 죄를 낳고, 죄가 다 자라면 죽음을 낳습니다.",
+          "R": "나쁜 욕심은 어머니와 같습니다. 그것이 사람 안에서 자라서 죄로 태어납니다. 그리고 죄가 다 자라면 죽음을 낳습니다."
+        },
+        "vi": {
+          "L": "Rồi lòng ham muốn, khi đã thụ thai, sinh ra tội lỗi, và tội lỗi, khi đã trưởng thành, sinh hạ sự chết.",
+          "B": "Lòng ham muốn thụ thai và sinh ra tội lỗi; còn tội lỗi, khi đã lớn lên trọn vẹn, thì sinh ra sự chết.",
+          "R": "Lòng ham muốn sai trái giống như người mẹ. Nó lớn lên bên trong một người và sinh ra tội lỗi. Rồi tội lỗi lớn lên và sinh ra sự chết."
         }
       },
       "decisions": [
@@ -2642,6 +3273,26 @@
           "reason": "Swahili \"kuzaa\" is the ordinary verb for a mother giving birth and serves for both Greek verbs, and for God in verse 18 (\"alituzaa\"), so the two births stand side by side as the meaning decision explains. \"Kifo\" is the everyday word for death; \"mauti\" is older and literary.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59001015005",
+            "n59001015011"
+          ],
+          "choice": "\"sinh ra\" and \"sinh hạ\" for the two verbs of birth (L), with \"sinh hạ\" again in verse 18",
+          "alternatives": [
+            "\"sinh ra\" for both"
+          ],
+          "reason": "Greek uses two verbs here, and the second is the one James uses in verse 18 for God giving us birth (m3). Literal shows the difference and the link with two Vietnamese words; Balanced and Readable say \"sinh ra\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2684,6 +3335,16 @@
           "L": "Ne vous égarez pas, mes {{gender:frères et sœurs|frères}} bien-aimés.",
           "B": "Ne vous laissez pas tromper, mes chers {{gender:frères et sœurs|frères}}.",
           "R": "Mes chers {{gender:frères et sœurs|frères}}, ne laissez personne vous tromper à ce sujet."
+        },
+        "ko": {
+          "L": "속지 마십시오, 사랑하는 내 {{gender:형제자매|형제}} 여러분.",
+          "B": "사랑하는 내 {{gender:형제자매|형제}} 여러분, 속지 마십시오.",
+          "R": "사랑하는 {{gender:형제자매|형제}} 여러분, 이 일에 대해 아무에게도 속지 마십시오."
+        },
+        "vi": {
+          "L": "Chớ để bị lừa dối, thưa {{gender:anh chị em|anh em}} yêu dấu của tôi.",
+          "B": "Đừng để mình bị lừa gạt, thưa {{gender:anh chị em|anh em}} yêu dấu của tôi.",
+          "R": "Thưa {{gender:anh chị em|anh em}} yêu dấu của tôi, đừng để ai lừa gạt anh chị em về điều này."
         }
       },
       "decisions": [
@@ -2736,6 +3397,28 @@
             "dear friends"
           ],
           "reason": "James speaks to the whole church, men and women, so the gender setting applies; the traditional \"brothers\" is the alternative. ἀγαπητοί is \"loved\": \"my dear\" says it in everyday words.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59001016003",
+            "n59001016005"
+          ],
+          "choice": "\"사랑하는 내 {{gender:형제자매|형제}} 여러분\" for \"my beloved brothers\" (for the whole letter)",
+          "alternatives": [
+            "\"나의 사랑하는 형제들아\""
+          ],
+          "reason": "The respectful address of the letter: \"사랑하는\" for the beloved, then the inclusive span and \"여러분\". The older form with \"-아\" belongs to 해라체 and would break the letter's 합쇼체.",
           "uncertain": false,
           "footnote": false
         }
@@ -2798,6 +3481,16 @@
           "L": "Tout don bon et tout présent parfait est d’en haut, descendant du Père des lumières, auprès de qui il n’y a ni variation ni ombre de rotation.",
           "B": "Toute bonne manière de donner et tout don parfait viennent d’en haut. Ils descendent du Père des lumières du ciel, en qui il n’y a ni changement, ni ombre projetée par un mouvement.",
           "R": "Tout cadeau bon et parfait vient du ciel. Il descend de Dieu le Père, qui a créé le soleil, la lune et les étoiles. Leur lumière se déplace et change, et leurs ombres bougent, mais Dieu, {{deity_pronoun:lui|Lui}}, ne change jamais."
+        },
+        "ko": {
+          "L": "모든 좋은 베풂과 모든 완전한 선물은 위에서 온 것으로, 빛들의 아버지께로부터 내려옵니다. 그분께는 변함이나 돌아감으로 생기는 그림자가 없습니다.",
+          "B": "모든 좋은 베풂과 모든 완전한 선물은 위에서 옵니다. 그것은 하늘에 있는 빛들의 아버지께로부터 내려옵니다. 그분께는 변함도 없고, 돌면서 생기는 그림자도 없습니다.",
+          "R": "좋고 완전한 선물은 모두 하늘에서 옵니다. 해와 달과 별을 만드신 아버지 하나님께로부터 내려옵니다. 하늘의 빛들은 움직이고 바뀌며, 그 그림자도 이리저리 옮겨 다닙니다. 그러나 하나님께서는 결코 변하지 않으십니다."
+        },
+        "vi": {
+          "L": "Mọi sự ban tặng tốt lành và mọi món quà trọn vẹn đều từ trên cao, từ Cha của các vì sáng mà xuống; nơi {{deity_pronoun:ngài|Ngài}} không có sự thay đổi, cũng không có bóng của sự xoay vần.",
+          "B": "Mọi sự ban tặng tốt lành và mọi món quà trọn vẹn đều từ trên cao. Những điều ấy đến từ Cha của các vì sáng trên bầu trời; nơi {{deity_pronoun:ngài|Ngài}} không có sự thay đổi, cũng không có bóng nào do xoay chuyển mà ra.",
+          "R": "Mọi món quà tốt lành và trọn vẹn đều đến từ trời. Những món quà ấy đến từ Đức Chúa Trời là Cha, Đấng đã dựng nên mặt trời, mặt trăng và các ngôi sao. Ánh sáng của chúng di chuyển và thay đổi, bóng của chúng cũng đổi dời, nhưng Đức Chúa Trời không bao giờ thay đổi."
         }
       },
       "decisions": [
@@ -2939,6 +3632,27 @@
           "reason": "\"Nuru\" is light itself, the word kept for light as a figure. James means the heavenly bodies that give light (see the meaning decision), which Swahili calls \"mianga\"; Balanced adds \"ya angani\", as the English Balanced adds \"in the sky\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59001017015"
+          ],
+          "choice": "\"các vì sáng\" for the lights",
+          "alternatives": [
+            "\"các nguồn sáng\"",
+            "\"ánh sáng\""
+          ],
+          "reason": "The lights are the sun, moon and stars, which God made (m2). \"Các vì sáng\" is the Vietnamese way of naming the heavenly bodies as lights; \"ánh sáng\" would be light itself.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2990,6 +3704,16 @@
           "L": "Ayant voulu [cela], {{deity_pronoun:il|Il}} nous a mis au monde par [la] parole de vérité, pour que nous soyons comme des prémices de {{deity_pronoun:ses|Ses}} créatures.",
           "B": "C’est par {{deity_pronoun:sa|Sa}} volonté qu’{{deity_pronoun:il|Il}} nous a donné naissance par la parole de vérité, pour que nous soyons en quelque sorte les prémices de tout ce qu’{{deity_pronoun:il|Il}} a créé.",
           "R": "Dieu a choisi de nous donner une vie nouvelle par {{deity_pronoun:son|Son}} message de vérité. Il voulait que nous soyons comme la première partie de la récolte, celle qui {{deity_pronoun:lui|Lui}} appartient : les premiers de tout ce qu’{{deity_pronoun:il|Il}} a fait."
+        },
+        "ko": {
+          "L": "[그분은] 뜻을 정하시고 진리의 말씀으로 우리를 낳으셨습니다. 우리가 그분이 지으신 것들 가운데 일종의 첫 열매가 되게 하려는 것입니다.",
+          "B": "하나님께서는 뜻하셔서 진리의 말씀으로 우리를 낳으셨습니다. 우리가 그분이 지으신 모든 것 가운데 첫 열매와 같은 사람들이 되게 하시려는 것입니다.",
+          "R": "하나님께서는 진리의 말씀을 통해 우리에게 새 생명을 주시기로 하셨습니다. 하나님께서는 우리가 추수할 때 맨 먼저 거두는 열매처럼 되기를 원하셨습니다. 그 첫 열매는 하나님의 것이고, 하나님께서 만드신 모든 것 가운데 처음입니다."
+        },
+        "vi": {
+          "L": "Vì đã muốn [như vậy], {{deity_pronoun:ngài|Ngài}} đã sinh hạ chúng ta bởi lời của chân lý, để chúng ta trở nên một thứ trái đầu mùa trong các tạo vật của {{deity_pronoun:ngài|Ngài}}.",
+          "B": "Chính {{deity_pronoun:ngài|Ngài}} đã muốn sinh chúng ta ra bởi lời chân lý, để chúng ta trở nên như trái đầu mùa giữa mọi loài {{deity_pronoun:ngài|Ngài}} đã dựng nên.",
+          "R": "Đức Chúa Trời đã chọn ban cho chúng ta sự sống mới qua sứ điệp chân lý của {{deity_pronoun:ngài|Ngài}}. Ngài muốn chúng ta giống như phần đầu tiên của mùa gặt, là phần thuộc về {{deity_pronoun:ngài|Ngài}}, phần đầu tiên trong mọi vật {{deity_pronoun:ngài|Ngài}} đã dựng nên."
         }
       },
       "decisions": [
@@ -3092,6 +3816,67 @@
           "reason": "James uses the same verb for sin giving birth to death and for God giving birth to his people (m3 on 1:15). Literal and Balanced use the same French verb in both verses so the contrast can be heard.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59001018002"
+          ],
+          "choice": "\"낳으셨습니다\" (L, B), the same verb as \"죽음을 낳습니다\" in verse 15; \"새 생명을 주시다\" (R)",
+          "alternatives": [
+            "\"새로 태어나게 하셨습니다\""
+          ],
+          "reason": "The meaning decision points out that James uses the verb of verse 15 here: sin gives birth to death, but God gives birth to us. Literal and Balanced keep the one Korean verb \"낳다\" so the contrast is heard; Readable says what the birth is, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59001018005"
+          ],
+          "choice": "\"진리\" for truth at every level (for the whole letter)",
+          "alternatives": [
+            "\"참\""
+          ],
+          "reason": "\"진리\" is the key term for truth in the Korean of John and Colossians; \"참\" is kept for the adjective.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59001018010"
+          ],
+          "choice": "\"trái đầu mùa\" (L, B); \"phần đầu tiên của mùa gặt\" (R)",
+          "alternatives": [
+            "\"của đầu mùa\""
+          ],
+          "reason": "Firstfruits are the first part of the harvest, given to God as a pledge of the rest (m4). \"Trái đầu mùa\" is the Vietnamese church phrase; Readable explains it, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3133,6 +3918,16 @@
           "L": "Sachez [cela], mes {{gender:frères et sœurs|frères}} bien-aimés.",
           "B": "Soyez-en sûrs, mes chers {{gender:frères et sœurs|frères}}.",
           "R": "Mes chers {{gender:frères et sœurs|frères}}, retenez bien ceci."
+        },
+        "ko": {
+          "L": "[이것을] 아십시오, 사랑하는 내 {{gender:형제자매|형제}} 여러분.",
+          "B": "사랑하는 내 {{gender:형제자매|형제}} 여러분, 이것을 꼭 알아 두십시오.",
+          "R": "사랑하는 {{gender:형제자매|형제}} 여러분, 이것을 기억하십시오."
+        },
+        "vi": {
+          "L": "Hãy biết [điều này], thưa {{gender:anh chị em|anh em}} yêu dấu của tôi.",
+          "B": "Hãy nắm chắc điều này, thưa {{gender:anh chị em|anh em}} yêu dấu của tôi.",
+          "R": "Thưa {{gender:anh chị em|anh em}} yêu dấu của tôi, hãy nhớ điều này."
         }
       },
       "decisions": [
@@ -3250,6 +4045,16 @@
           "L": "Que {{gender:tout être humain|tout homme}} soit prompt à écouter, lent à parler, lent à la colère ; \\v 20 car la colère de l’{{gender:être humain|homme}} n’accomplit pas la justice de Dieu.",
           "B": "Chacun doit être prompt à écouter, lent à parler et lent à se mettre en colère, \\v 20 car la colère {{gender:humaine|de l’homme}} ne produit pas la justice que Dieu demande.",
           "R": "Chacun doit être prêt à écouter et lent à parler. Ne vous mettez pas vite en colère. \\v 20 Quand les gens se mettent en colère, ils ne vivent pas de la manière juste que Dieu veut."
+        },
+        "ko": {
+          "L": "사람은 누구나 듣기는 빨리 하고, 말하기는 더디 하고, 화내기도 더디 해야 합니다. \\v 20 사람의 화는 하나님의 의를 이루지 못하기 때문입니다.",
+          "B": "누구나 듣기는 빨리 하고, 말하기는 더디 하고, 화내기도 더디 하십시오. \\v 20 사람의 화는 하나님의 의를 이루지 못합니다.",
+          "R": "누구나 남의 말을 잘 듣고, 말은 천천히 하십시오. 쉽게 화내지 마십시오. \\v 20 사람이 화를 낼 때에는 하나님께서 원하시는 의로운 삶을 살지 못합니다."
+        },
+        "vi": {
+          "L": "Nhưng mọi người hãy mau nghe, chậm nói, chậm giận; \\v 20 vì cơn giận của con người không làm nên sự công chính của Đức Chúa Trời.",
+          "B": "Mỗi người phải mau lắng nghe, chậm nói và chậm giận, \\v 20 vì cơn giận của con người không thực hiện được sự công chính của Đức Chúa Trời.",
+          "R": "Mọi người nên mau lắng nghe và chậm nói. Đừng vội nổi giận. \\v 20 Khi người ta nổi giận, họ không sống đời sống công chính mà Đức Chúa Trời muốn."
         }
       },
       "decisions": [
@@ -3447,6 +4252,50 @@
           "reason": "\"Justice\" is the key term for righteousness at every level in Hebrews; here it is the right conduct God requires (m1), which Readable says plainly while keeping \"juste\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59001020004"
+          ],
+          "choice": "\"하나님의 의\" (L, B); \"하나님께서 원하시는 의로운 삶\" (R) (for the whole letter: \"의\" for righteousness, \"의로운 사람\" for the righteous)",
+          "alternatives": [
+            "\"정의\"",
+            "\"올바름\""
+          ],
+          "reason": "\"의\" is the key term the Korean style guide gives for righteousness, as in the Korean of Romans. The meaning decision reads it here as the right conduct God requires, so Readable keeps the root in \"의로운\" and says what it is.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59001020004",
+            "n59001020005"
+          ],
+          "choice": "\"sự công chính\" for righteousness (L, B); \"đời sống công chính\" (R), through the letter",
+          "alternatives": [
+            "\"sự công bình\""
+          ],
+          "reason": "\"Sự công chính\" is the key term of the Vietnamese style guide, used in John and Romans. Here it is the right conduct God requires (m1), which Readable says plainly, as the English Readable does. \"Mọi người\" and \"con người\" need no gender span.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3503,6 +4352,16 @@
           "L": "C’est pourquoi, vous étant débarrassés de toute saleté et de [tout] excès de méchanceté, recevez avec douceur la parole implantée, qui peut sauver vos âmes.",
           "B": "Débarrassez-vous donc de toute impureté et du mal qui déborde, et accueillez avec douceur la parole plantée en vous, qui a le pouvoir de sauver vos âmes.",
           "R": "Alors, rejetez tout ce qui est sale et mauvais dans votre vie. Soyez humbles, et accueillez le message que Dieu a planté dans votre cœur. Il a le pouvoir de vous sauver."
+        },
+        "ko": {
+          "L": "그러므로 모든 더러움과 넘치는 악을 벗어 버리고, 여러분 안에 심어진 말씀을 온유함으로 받아들이십시오. 그 말씀은 여러분의 영혼을 구원할 수 있습니다.",
+          "B": "그러므로 모든 더러운 것과 넘쳐 나는 악을 벗어 버리고, 여러분 안에 뿌리내린 말씀을 온유한 마음으로 받아들이십시오. 그 말씀에는 여러분의 영혼을 구원할 능력이 있습니다.",
+          "R": "그러니 여러분의 삶에서 더럽고 악한 것을 모두 버리십시오. 겸손한 마음으로, 하나님께서 여러분 마음에 심어 주신 말씀을 받아들이십시오. 그 말씀은 여러분을 구원할 능력이 있습니다."
+        },
+        "vi": {
+          "L": "Vậy, hãy cởi bỏ mọi sự dơ bẩn và sự gian ác tràn lan, và với lòng nhu mì tiếp nhận lời đã được gieo vào [lòng], là lời có thể cứu linh hồn anh chị em.",
+          "B": "Vậy hãy cởi bỏ mọi điều dơ bẩn và sự gian ác đang tràn lan, rồi với tinh thần nhu mì, hãy đón nhận lời đã được gieo vào lòng anh chị em, là lời có quyền năng cứu linh hồn anh chị em.",
+          "R": "Vậy hãy loại bỏ mọi điều dơ bẩn và gian ác trong đời sống mình. Hãy khiêm nhường đón nhận sứ điệp mà Đức Chúa Trời đã gieo vào lòng anh chị em. Sứ điệp ấy có quyền năng cứu anh chị em."
         }
       },
       "decisions": [
@@ -3631,6 +4490,48 @@
           "reason": "\"Kuvua\" is the verb for taking off clothes, which keeps the picture of the meaning decision (dirty clothes put off). Readable says plainly \"achaneni na\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59001021018"
+          ],
+          "choice": "\"영혼\" (L, B); \"여러분\" (R)",
+          "alternatives": [
+            "\"목숨\"",
+            "\"생명\""
+          ],
+          "reason": "The meaning decision reads \"souls\" as the whole person saved at the last day. \"목숨\" (the style guide's word for this noun in John) would mean physical life here; \"영혼\" is the ordinary Korean for the self that God saves. Readable says \"you\", as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59001021002"
+          ],
+          "choice": "\"cởi bỏ\" (L, B) for put off",
+          "alternatives": [
+            "\"từ bỏ\"",
+            "\"loại bỏ\" (R)"
+          ],
+          "reason": "The verb pictures taking off dirty clothes (m1); \"cởi bỏ\" keeps the picture, as the Vietnamese Colossians does (3:8). Readable says plainly \"loại bỏ\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3678,6 +4579,16 @@
           "L": "Et devenez des gens qui pratiquent [la] parole, et non des auditeurs seulement, vous trompant vous-mêmes.",
           "B": "Mettez la parole en pratique, au lieu de vous contenter de l’écouter : ce serait vous tromper vous-mêmes.",
           "R": "Écouter le message de Dieu ne suffit pas. Vous devez aussi faire ce qu’il dit, sinon vous vous trompez vous-mêmes."
+        },
+        "ko": {
+          "L": "그리고 말씀을 행하는 사람이 되고, 듣기만 하여 자기 자신을 속이는 사람이 되지 마십시오.",
+          "B": "말씀을 듣기만 하는 사람이 되지 말고 실천하는 사람이 되십시오. 그렇지 않으면 여러분은 자신을 속이는 것입니다.",
+          "R": "하나님의 말씀을 듣는 것만으로는 충분하지 않습니다. 말씀대로 행해야 합니다. 그렇지 않으면 여러분은 자기 자신을 속이고 있을 뿐입니다."
+        },
+        "vi": {
+          "L": "Và hãy trở nên những người làm theo lời, chứ không chỉ là những người nghe mà thôi, tự lừa dối chính mình.",
+          "B": "Hãy là những người làm theo lời, chứ không chỉ nghe lời mà thôi; nếu không, anh chị em đang tự lừa dối mình.",
+          "R": "Nghe sứ điệp của Đức Chúa Trời thôi thì chưa đủ. Anh chị em còn phải làm theo điều sứ điệp ấy dạy, nếu không thì anh chị em chỉ đang tự lừa mình mà thôi."
         }
       },
       "decisions": [
@@ -3762,6 +4673,27 @@
           "reason": "French has no current noun for \"doer\": \"faiseur\" is pejorative and \"pratiquant\" means someone who keeps up religious observance. Literal uses the verb \"pratiquer\" each time the noun occurs, and keeps the noun \"auditeur\" beside it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59001022003",
+            "n59001022007"
+          ],
+          "choice": "\"행하는 사람\" (L); \"실천하는 사람\" (B); \"듣는 사람\" for the hearer, through verse 25",
+          "alternatives": [
+            "\"행위자\", \"청자\""
+          ],
+          "reason": "Korean has no everyday nouns for \"doer\" and \"hearer\", so it says \"the one who does\" and \"the one who hears\". Balanced uses \"실천하다\", the common word for putting teaching into practice.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3830,6 +4762,16 @@
           "L": "Car si quelqu’un est auditeur de [la] parole et ne la pratique pas, celui-là ressemble à un homme qui observe dans un miroir le visage de sa naissance ; \\v 24 car il s’est observé et s’en est allé, et aussitôt il a oublié comment il était.",
           "B": "Celui qui écoute la parole sans la mettre en pratique ressemble à un homme qui examine son propre visage dans un miroir. \\v 24 Il se regarde, il s’en va, et il oublie aussitôt de quoi il avait l’air.",
           "R": "Certaines personnes écoutent le message de Dieu mais ne font pas ce qu’il dit. Elles sont comme un homme qui regarde son visage dans un miroir. \\v 24 Il se voit, puis il s’en va, et bientôt il ne se rappelle plus à quoi ressemblait son visage."
+        },
+        "ko": {
+          "L": "누구든지 말씀을 듣기만 하고 행하지 않으면, 그는 거울로 자기의 타고난 얼굴을 자세히 보는 사람과 같습니다. \\v 24 그는 자기를 보고 떠나가서, 곧 자기가 어떠했는지를 잊어버립니다.",
+          "B": "말씀을 듣고도 행하지 않는 사람은 거울에 비친 자기 얼굴을 자세히 들여다보는 사람과 같습니다. \\v 24 그는 자기 모습을 살펴보고 떠나가서는 곧 자기가 어떻게 생겼는지 잊어버립니다.",
+          "R": "하나님의 말씀을 듣고도 그대로 하지 않는 사람들이 있습니다. 그들은 거울로 자기 얼굴을 보는 사람과 같습니다. \\v 24 그는 자기 얼굴을 보고 나서 그 자리를 떠나면, 곧 자기 얼굴이 어떻게 생겼는지 기억하지 못합니다."
+        },
+        "vi": {
+          "L": "Vì nếu ai là người nghe lời mà không phải là người làm theo, người ấy giống như một người đàn ông nhìn kỹ khuôn mặt bẩm sinh của mình trong gương; \\v 24 vì anh ta đã nhìn chính mình rồi bỏ đi, và lập tức quên mất mình như thế nào.",
+          "B": "Ai nghe lời mà không làm theo thì giống như một người đàn ông chăm chú xem mặt mình trong gương. \\v 24 Anh ta ngắm mình xong, bỏ đi, và lập tức quên mất mặt mình trông ra sao.",
+          "R": "Có những người nghe sứ điệp của Đức Chúa Trời nhưng không làm theo. Họ giống như một người đàn ông soi mặt mình trong gương. \\v 24 Anh ta thấy mình, rồi bỏ đi, và chẳng bao lâu đã không nhớ mặt mình trông như thế nào."
         }
       },
       "decisions": [
@@ -3963,6 +4905,48 @@
           "reason": "\"The face he was born with\" keeps the Greek \"of his birth\" and means his natural face, as the meaning decision explains.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59001023015",
+            "n59001023017"
+          ],
+          "choice": "\"타고난 얼굴\" (L)",
+          "alternatives": [
+            "\"나면서부터 가진 얼굴\"",
+            "\"자기 얼굴\""
+          ],
+          "reason": "\"The face of his birth\" is the face a person was born with (meaning decision); Korean \"타고난\" (born with) keeps the idiom at Literal, and Balanced and Readable say \"자기 얼굴\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59001023012"
+          ],
+          "choice": "\"một người đàn ông\", \"anh ta\" for the man at the mirror, with no gender span",
+          "alternatives": [
+            "\"một người\""
+          ],
+          "reason": "James's picture uses the word for a man, as the English keeps \"a man\"; Vietnamese names him as a man and gives him the everyday pronoun \"anh ta\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4025,6 +5009,16 @@
           "L": "Mais celui qui s’est penché sur [la] loi parfaite, celle de la liberté, et qui [y] est resté, n’étant pas devenu un auditeur oublieux mais quelqu’un qui pratique l’œuvre, celui-là sera bienheureux dans ce qu’il fait.",
           "B": "Mais celui qui plonge son regard dans la loi parfaite, la loi de la liberté, et qui s’y tient, sans écouter pour oublier ensuite mais en accomplissant l’œuvre, celui-là sera bienheureux dans ce qu’il fait.",
           "R": "Mais d’autres regardent avec attention la loi parfaite de Dieu, la loi qui rend libre, et ils continuent à la regarder. Ils n’oublient pas ce qu’ils entendent. Ils font ce qu’elle dit. Dieu les bénira dans tout ce qu’ils font."
+        },
+        "ko": {
+          "L": "그러나 완전한 율법, 곧 자유의 [율법을] 들여다보고 [그 곁에] 머무는 사람은, 잊어버리는 듣는 사람이 아니라 일을 행하는 사람이 되어, 자기가 행하는 일에서 복을 받을 것입니다.",
+          "B": "그러나 자유를 주는 완전한 율법을 자세히 들여다보고 그 곁을 떠나지 않는 사람, 곧 듣고 잊어버리는 사람이 아니라 실천하는 사람은 자기가 하는 일에서 복을 받을 것입니다.",
+          "R": "그러나 하나님의 완전한 율법, 곧 자유를 주는 율법을 자세히 들여다보고, 계속해서 들여다보는 사람들이 있습니다. 그들은 들은 것을 잊어버리지 않고, 그 말씀대로 행합니다. 하나님께서는 그들이 하는 일에 복을 주실 것입니다."
+        },
+        "vi": {
+          "L": "Nhưng người đã cúi xuống nhìn kỹ vào luật pháp trọn vẹn, là [luật pháp] của sự tự do, và đã ở lại [với luật ấy], không trở thành người nghe rồi quên, nhưng là người làm theo công việc, thì người ấy sẽ được phước trong việc mình làm.",
+          "B": "Nhưng ai chăm chú xem xét luật pháp trọn vẹn của sự tự do và cứ gắn bó với luật ấy, không nghe rồi quên nhưng thực hành điều mình nghe, thì người ấy sẽ được phước trong việc mình làm.",
+          "R": "Nhưng có những người chăm chú nhìn vào luật pháp trọn vẹn của Đức Chúa Trời, là luật pháp đem lại tự do, và họ cứ tiếp tục nhìn vào đó. Họ không quên điều mình nghe. Họ làm theo điều luật pháp ấy dạy. Đức Chúa Trời sẽ ban phước cho họ trong việc họ làm."
         }
       },
       "decisions": [
@@ -4184,6 +5178,27 @@
           "reason": "The French style guide capitalises \"la Loi\" for the Law of Moses. Here James describes God’s law as he understands it, perfect and giving freedom (m2), and the description carries the meaning, so the common noun is used; where the commandments of Sinai are quoted and weighed, French writes \"la Loi\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59001025008",
+            "n59001025009"
+          ],
+          "choice": "\"자유를 주는 율법\" (B, R); \"자유의 [율법]\" (L)",
+          "alternatives": [
+            "\"자유의 율법\" at every level"
+          ],
+          "reason": "\"The law of freedom\" is God's law received through Jesus's teaching, which sets people free to obey (meaning decision). The bare genitive \"자유의 율법\" reads oddly in Korean, so Balanced and Readable say how law and freedom are related.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4238,6 +5253,16 @@
           "L": "Si quelqu’un pense être religieux, ne tenant pas sa langue en bride mais trompant son cœur, la religion de celui-là est vaine.",
           "B": "Si quelqu’un se croit pieux mais ne met pas de bride à sa langue, il se trompe lui-même, et sa religion est vide.",
           "R": "Certains pensent qu’ils servent bien Dieu, mais ils ne contrôlent pas ce qu’ils disent. Ils se trompent eux-mêmes, et leur religion ne vaut rien."
+        },
+        "ko": {
+          "L": "누구든지 자기가 종교적이라고 생각하면서도 자기 혀에 재갈을 물리지 않고 자기 마음을 속이면, 이 사람의 종교는 헛된 것입니다.",
+          "B": "누구든지 스스로 신앙생활을 잘한다고 생각하면서도 자기 혀에 재갈을 물리지 않는다면, 그는 자기를 속이는 것이고 그의 신앙생활은 헛된 것입니다.",
+          "R": "어떤 사람들은 자기가 하나님을 잘 섬긴다고 생각하지만, 자기가 하는 말을 다스리지 못합니다. 그들은 자기 자신을 속이고 있고, 그들의 신앙생활은 아무 쓸모가 없습니다."
+        },
+        "vi": {
+          "L": "Nếu ai nghĩ mình là người sùng đạo, mà không kìm cương lưỡi mình, nhưng lừa dối lòng mình, thì sự sùng đạo của người ấy là vô ích.",
+          "B": "Nếu ai nghĩ mình sùng đạo mà không biết kìm cương lưỡi mình, thì người ấy đang tự lừa dối mình, và sự sùng đạo của người ấy là trống rỗng.",
+          "R": "Có người nghĩ rằng mình đang phụng sự Đức Chúa Trời cách tốt đẹp, nhưng lại không giữ gìn lời nói. Họ đang tự lừa dối mình, và việc giữ đạo của họ chẳng có giá trị gì."
         }
       },
       "decisions": [
@@ -4343,6 +5368,51 @@
           "reason": "\"Hatamu\" is a bridle, so Literal and Balanced keep James's picture of a rider controlling a horse, which he develops in 3:2-3. Readable says plainly \"hawazuii maneno yao\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59001026004",
+            "n59001026017"
+          ],
+          "choice": "\"종교적이다 / 종교\" (L); \"신앙생활\" (B, R), here and in verse 27",
+          "alternatives": [
+            "\"경건하다 / 경건\""
+          ],
+          "reason": "The words mean the outward practice of worship (meaning decision). Literal keeps the plain \"종교\"; Balanced and Readable say \"신앙생활\", the everyday word for practising one's faith. \"경건\" is kept for the different word for godliness in 1 and 2 Peter, so the two do not blur.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59001026004",
+            "n59001026017"
+          ],
+          "choice": "\"sùng đạo\", \"sự sùng đạo\" (L, B); \"việc giữ đạo\" (R) for religious, religion (also verse 27)",
+          "alternatives": [
+            "\"tôn giáo\"",
+            "\"mộ đạo\""
+          ],
+          "reason": "The words mean the outward practice of worship (m1). \"Tôn giáo\" names a religion as a system or institution, which is not James's point; \"sùng đạo\" says a person devoted to the practice of faith, and Readable says \"giữ đạo\", keeping one's religious duties.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4405,6 +5475,16 @@
           "L": "[La] religion pure et sans souillure devant [notre] Dieu et Père est celle-ci : visiter les orphelins et les veuves dans leur détresse, [et] se garder sans tache loin du monde.",
           "B": "Aux yeux de Dieu le Père, la religion pure et sans souillure consiste à venir en aide aux orphelins et aux veuves dans leur détresse, et à ne pas se laisser souiller par le monde.",
           "R": "Voici la religion que Dieu le Père considère comme pure et bonne : prendre soin des orphelins et des veuves quand ils souffrent, et ne pas se laisser salir par le mal du monde."
+        },
+        "ko": {
+          "L": "하나님, 곧 아버지 앞에서 깨끗하고 더럽혀지지 않은 종교는 이것입니다. 곧 환난 가운데 있는 고아들과 과부들을 돌보고, 자기를 세상으로부터 물들지 않게 지키는 것입니다.",
+          "B": "하나님 아버지께서 보시기에 깨끗하고 흠 없는 신앙생활은 이런 것입니다. 곤경에 처한 고아와 과부를 찾아가 돕고, 자기를 지켜 세상에 물들지 않는 것입니다.",
+          "R": "하나님 아버지께서 깨끗하고 좋다고 여기시는 신앙생활은 이런 것입니다. 고통당하는 고아와 과부를 돌보고, 세상의 악에 물들지 않게 자신을 지키는 것입니다."
+        },
+        "vi": {
+          "L": "Sự sùng đạo trong sạch và không ô uế trước mặt Đức Chúa Trời [chúng ta], là Cha, là thế này: thăm viếng trẻ mồ côi và người góa bụa trong cơn hoạn nạn của họ, [và] giữ mình không bị thế gian làm hoen ố.",
+          "B": "Đối với Đức Chúa Trời là Cha, sự sùng đạo trong sạch và không tì vết là như thế này: đến giúp đỡ trẻ mồ côi và người góa bụa trong cơn khốn khó của họ, và giữ mình khỏi bị thế gian làm vấy bẩn.",
+          "R": "Đây là cách giữ đạo mà Đức Chúa Trời là Cha coi là trong sạch và tốt đẹp: chăm sóc trẻ mồ côi và người góa bụa khi họ gặp khổ đau, và không để điều xấu xa của thế gian làm vấy bẩn mình."
         }
       },
       "decisions": [
@@ -4612,6 +5692,49 @@
             "rendre visite"
           ],
           "reason": "The verb means coming to help and care for someone (m1). French \"visiter\" keeps the Greek word at Literal; at Balanced and Readable a plain \"rendre visite\" would sound like a social call.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59001027025"
+          ],
+          "choice": "\"세상\" for the world at every level (for the whole letter)",
+          "alternatives": [
+            "\"세속\""
+          ],
+          "reason": "\"세상\" is the style guide's word for the world; the meaning decision reads it here as human life organized without God, which Readable makes explicit with \"세상의 악\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59001027025"
+          ],
+          "choice": "\"thế gian\" for the world at every level, through the letter",
+          "alternatives": [
+            "\"thế giới\"",
+            "\"đời\""
+          ],
+          "reason": "The world here is human life organised without and against God (m3). \"Thế gian\" is the key term of the Vietnamese John for this sense; \"thế giới\" is the physical world.",
           "uncertain": false,
           "footnote": false
         }
