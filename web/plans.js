@@ -3,15 +3,19 @@
 // browser only, in localStorage under one key, owb.plans:
 //
 //   {"active": "mark",                       the plan being read, or null
+//    "at": 1791760739987,                     when that last changed
 //    "plans": {"mark": {"start": "2026-10-12", the day it was started
-//                       "done": [1, 2, 3]}}}  the days marked done
+//                       "done": [1, 2, 3],    the days marked done
+//                       "at": 1791760739987}}} when this plan last changed
 //
 // A day is done only when the reader says so (a button), and "today" is
 // simply the first day not done yet: a plan waits for its reader, so there
 // are no streaks and nothing is ever overdue. Everything that reads or
 // writes owb.plans goes through load() and save() below, which are also
-// window.OWBPlans, so account sync can merge progress later; save()
-// announces each change as an "owb:plans-change" event on document.
+// window.OWBPlans. save() stamps the times, so a signed-in reader's progress
+// merges with their other devices' (site.js; backend accounts/reading.py),
+// and announces each change as an "owb:plans-change" event on document; a
+// sync that brings changes in announces "owb:synced".
 //
 // The plans themselves, their names and each day's chapters in the page's
 // language, come from /plans-<lang>.json (plans_json); a plan started in
@@ -34,6 +38,12 @@
   }
 
   function save(s) {
+    var before = load(), now = Date.now();
+    Object.keys(s.plans).forEach(function (id) {
+      var p = s.plans[id], was = before.plans[id];
+      p.at = was && was.start === p.start && String(was.done) === String(p.done) ? was.at : now;
+    });
+    s.at = s.active === before.active ? before.at : now;
     try { localStorage.setItem(KEY, JSON.stringify(s)); } catch (e) { /* storage blocked: this page only */ }
     try { document.dispatchEvent(new CustomEvent("owb:plans-change")); } catch (e) { /* old browser */ }
   }
@@ -374,8 +384,9 @@
     markCards();
   }
   drawAll();
-  // Progress changed in another tab.
+  // Progress changed in another tab, or on another device (a sync).
   window.addEventListener("storage", function (e) { if (e.key === KEY || e.key === null) drawAll(); });
+  document.addEventListener("owb:synced", drawAll);
   // ...or here, by the plan's page (the current plan above its list).
   document.addEventListener("owb:plans-change", function () {
     todays.forEach(drawToday);
