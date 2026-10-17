@@ -75,13 +75,15 @@ class LanguagesTest(unittest.TestCase):
         return (self.out / rel).read_text(encoding="utf-8")
 
     def english_pages(self):
-        """Every English page but the articles and the reading plans, which
-        a language has only once they are translated, and the admin, which
-        is in English only."""
+        """Every English page but the articles, the reading plans and the
+        books' pages, which a language has only once they are translated,
+        and the admin, which is in English only."""
         langs = set(OTHERS)
+        books = {p.stem.lower() for p in build_site.INTROS.glob("*.md")}
         rels = (p.relative_to(self.out) for p in self.out.rglob("index.html"))
         return [rel for rel in rels if rel.parts[0] not in langs and rel.parts[0] != "admin"
-                and (rel.parts[0] not in ("articles", "plans") or len(rel.parts) == 2)]
+                and (rel.parts[0] not in ("articles", "plans") or len(rel.parts) == 2)
+                and not (rel.parts[0] in books and len(rel.parts) == 2)]
 
     def test_every_page_is_built_in_every_language(self):
         pages = self.english_pages()
