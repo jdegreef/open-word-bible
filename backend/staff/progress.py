@@ -34,6 +34,7 @@ from owb import languages, refs
 from texts.models import Edition, Verse
 from translation.models import ContentFile, Decision, ImportRun, Rendering, Sentence
 
+from . import inbox
 from .models import AdminAction
 from .permissions import admin_view
 
@@ -276,10 +277,20 @@ def overview(request):
     sentences = sum(b["sentences"] for b in books)
     attention = []
     if "inbox" in mine:
-        new = ReaderMessage.objects.filter(status=ReaderMessage.Status.NEW).count()
-        if new:
-            attention.append({"key": "inbox", "count": new, "tone": "hot",
+        waiting = ReaderMessage.objects.filter(status=ReaderMessage.Status.NEW).aggregate(
+            new=Count("id"),
+            late=Count("id", filter=Q(created_at__lt=timezone.now() - timedelta(days=inbox.WAITING_DAYS))),
+            mine=Count("id", filter=Q(assigned_to=request.user)))
+        if waiting["late"]:
+            attention.append({"key": "inbox_late", "count": waiting["late"], "tone": "hot",
+                              "label": f"reader messages waiting more than {inbox.WAITING_DAYS} days",
+                              "href": "#inbox"})
+        if waiting["new"]:
+            attention.append({"key": "inbox", "count": waiting["new"], "tone": "hot",
                               "label": "reader messages waiting for an answer", "href": "#inbox"})
+        if waiting["mine"]:
+            attention.append({"key": "inbox_mine", "count": waiting["mine"], "tone": "warn",
+                              "label": "reader messages assigned to you", "href": "#inbox/mine"})
     if "team" in mine:
         pending = (get_user_model().objects.filter(last_login__isnull=True, roles__isnull=False)
                    .distinct().count())
