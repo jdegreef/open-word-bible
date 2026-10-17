@@ -583,15 +583,18 @@ def book_index(lang):
 def language_items(lang, path, translated=LANGUAGES, mark=""):
     """Each language in its own name, as list items: the current one as plain
     text (followed by mark) and the others as links to this page in that
-    language: the home page from a page without a path, and the articles
-    page from an article not in that language. web/site.js remembers the
-    choice."""
+    language: the home page from a page without a path, the plans or
+    articles page from a plan or article not in that language, and the Read
+    page from a book's page not in that language. web/site.js remembers
+    the choice."""
     def target(code):
         if path is None:
             return "/"
         if code in translated:
             return path
-        return "/plans/" if path.startswith("/plans/") else "/articles/"
+        if path.startswith("/plans/"):
+            return "/plans/"
+        return "/articles/" if path.startswith("/articles/") else "/read/"
 
     return "".join(
         f'<li><span lang="{code}" aria-current="true">{owb_languages.native(code)}{mark}</span></li>' if code == lang
@@ -1316,6 +1319,7 @@ def chapter_page(book, chapter, lang="en"):
 {edge_turns(book, chapter, lang)}
 <script type="application/json" id="owb-data">{blob}</script>
 {chapter_ld(records, book, chapter, title, lang)}
+{breadcrumb_ld(lang, book_crumbs(book, lang) + [(title, chapter_url(book, chapter))])}
 <script src="{asset("markup.js")}"></script>
 <script src="{asset("reader.js")}"></script>
 {plans_script()}
@@ -1349,6 +1353,100 @@ def reader_passages(book, chapter, lang="en"):
     return list(passages())
 
 
+# A book's introduction: data/intros/<BOOK>.md in English and
+# data/intros/<lang>/<BOOK>.md in another language, each with a front
+# matter block holding its summary, then Markdown as in an article. A book
+# has a page (/<book>/) in each language its introduction is written in.
+INTROS = ROOT / "data" / "intros"
+
+
+@functools.lru_cache(maxsize=None)
+def load_intro(book, lang="en"):
+    """A book's introduction in lang ({"summary", "body"}), or None."""
+    path = (INTROS if lang == "en" else INTROS / lang) / f"{book}.md"
+    if not path.is_file():
+        return None
+    m = re.match(r"---\nsummary: (.*?)\n---\n(.*)", path.read_text(encoding="utf-8"), re.S)
+    if not m:
+        raise SystemExit(f"{path.name}: needs a front matter block with its summary")
+    return {"summary": smart_quotes(m[1]), "body": m[2]}
+
+
+def book_url(book):
+    return f"/{book.lower()}/"
+
+
+@functools.lru_cache(maxsize=None)
+def book_languages(book):
+    """The languages a book's page is built in: those its introduction is
+    written in and that have some of its chapters."""
+    return tuple(code for code in LANGUAGES
+                 if load_intro(book, code) and any(b == book for b, _ in books(code)))
+
+
+def breadcrumb_ld(lang, crumbs):
+    """schema.org data for the trail to a page: (name, path) pairs from the
+    home page down, the page itself last."""
+    return ld_script({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+        {"@type": "ListItem", "position": i, "name": name, "item": SITE_URL + url(lang, path)}
+        for i, (name, path) in enumerate(crumbs, 1)]})
+
+
+def book_crumbs(book, lang):
+    """The trail to a book: the home page, Read, then the book where it has
+    a page."""
+    crumbs = [(SITE_NAME, "/"), (t(lang, "read.title"), "/read/")]
+    if lang in book_languages(book):
+        crumbs.append((BOOK_NAMES[book][lang], book_url(book)))
+    return crumbs
+
+
+def book_page(book, lang="en"):
+    """A book: its introduction, an outline of its chapters from the section
+    headings, and the articles that read it. Like the translation, the
+    introduction is a draft until a named reviewer has checked it."""
+    intro = load_intro(book, lang)
+    ui = catalog(lang)["book_page"]
+    name = BOOK_NAMES[book][lang]
+    chaps = dict(books(lang))[book]
+    outline = []
+    for p in chaps:
+        heads = [markup.render(headings()[r["id"]][lang]) for r in p.records
+                 if r["id"] in headings() and headings()[r["id"]].get(lang)]
+        sections = f'<span class="outline-heads">{html.escape(" · ".join(heads))}</span>' if heads else ""
+        outline.append(f'<li><a href="{url(lang, chapter_url(book, p.chapter))}">'
+                       f'{html.escape(ui["chapter"].replace("{n}", str(p.chapter)))}</a>{sections}</li>')
+    articles = [a for a in sorted(load_articles(lang), key=lambda a: a["order"])
+                if any(b == book for b, _, _ in a["passages"])]
+    more = (f'<section class="more" aria-labelledby="book-articles-h"><h2 id="book-articles-h">'
+            f'{html.escape(ui["articles"].replace("{book}", name))}</h2>'
+            f'<ul class="a-grid">{article_list(articles, lang)}</ul></section>' if articles else "")
+    body = f"""
+<div class="book-layout">
+<article class="article book-intro">
+<header class="article-head">
+<p class="eyebrow"><a href="{url(lang, "/read/")}">{t(lang, "read.title")}</a></p>
+<h1>{html.escape(name)}</h1>
+<p class="dek">{display(intro["summary"])}</p>
+<p class="notice">{ui["draft"]}</p>
+<p class="actions"><a class="button" href="{url(lang, chapter_url(book, chaps[0].chapter))}">{ui["start"]}&nbsp;&rarr;</a></p>
+</header>
+<div class="article-body">
+{article_html(intro["body"], None, lang, lang)}
+</div>
+<section aria-labelledby="book-chapters-h">
+<h2 id="book-chapters-h">{ui["chapters"]}</h2>
+<ol class="book-outline">{"".join(outline)}</ol>
+</section>
+</article>
+</div>
+{more}
+{breadcrumb_ld(lang, book_crumbs(book, lang))}
+"""
+    return page(lang, ui["title"].replace("{book}", name), body, path=book_url(book), current="/read/",
+                description=intro["summary"], translated=book_languages(book))
+
+
 def chapter_strip(book, chapter, lang="en"):
     """Above a passage: its book, how far the book has got, and a pill for
     each chapter translated so far, this one marked."""
@@ -1356,7 +1454,8 @@ def chapter_strip(book, chapter, lang="en"):
     name = BOOK_NAMES[book][lang]
     progress = book_progress(book, chaps, lang)[2]
     return (f'<nav class="chapstrip" aria-label="{t(lang, "reader.strip", book=name)}">'
-            f'<a class="chap-book" href="{url(lang, f"/read/#{book.lower()}")}">{icon(ICONS["book"], 16)}{name}</a>'
+            f'<a class="chap-book" href="{url(lang, book_url(book) if lang in book_languages(book) else f"/read/#{book.lower()}")}">'
+            f'{icon(ICONS["book"], 16)}{name}</a>'
             f'<span class="chap-pills">{chapter_pills(chaps, lang, chapter, BOOK_CHAPTERS[book])}</span>'
             f'<button type="button" class="chap-goto" data-open-search aria-keyshortcuts="/">'
             f'{icon(ICONS["search"], 15)}{t(lang, "reader.goto")}</button>'
@@ -1960,6 +2059,8 @@ def read_page(lang="en"):
     for book, chaps in books(lang):
         done, total, progress = book_progress(book, chaps, lang)
         name = BOOK_NAMES[book][lang]
+        # The book's name leads to its page, where it has one.
+        heading = f'<a href="{url(lang, book_url(book))}">{name}</a>' if lang in book_languages(book) else name
         testament = "old_testament" if book in refs.OT_CODES else "new_testament"
         tiles[testament].append(
             f'<li><a class="book-tile" href="#{book.lower()}"><span class="book-tile-name">{name}</span>'
@@ -1967,7 +2068,7 @@ def read_page(lang="en"):
             f'{meter(done, total)}</a></li>')
         groups.append(
             f'<section class="book-group" id="{book.lower()}" aria-labelledby="book-{book.lower()}">'
-            f'<div class="book-head"><h2 id="book-{book.lower()}">{name}</h2>'
+            f'<div class="book-head"><h2 id="book-{book.lower()}">{heading}</h2>'
             f'<span class="book-progress{" done" if done == total else ""}">{progress}</span>'
             f'{meter(done, total)}{save_button(book, chaps, lang)}</div>'
             f'<div class="chap-pills">{chapter_pills(chaps, lang, total=total)}</div>'
@@ -2857,6 +2958,8 @@ def llms_txt():
     method = sorted((a for a in load_articles("en") if a["section"] == "method"), key=lambda a: a["order"])
     articles = "".join(f"- [{a['title']}]({SITE_URL}{article_url(a)}): {a['summary']}\n" for a in method)
     names = ", ".join(owb_languages.READING[code]["name"] for code in c["languages"])
+    intros = "".join(f"- [{BOOK_NAMES[b]['en']}]({SITE_URL}{book_url(b)}): {load_intro(b)['summary']}\n"
+                     for b, _ in books("en") if "en" in book_languages(b))
     return f"""# {SITE_NAME}
 
 > A free Bible translation from Hebrew and Greek with the reasoning behind every sentence. The translation, its notes and its reasoning records are in the public domain (CC0 1.0). Every sentence is drafted with AI help and stays marked as a draft until a named human reviewer who reads the original language approves it.
@@ -2872,7 +2975,7 @@ At this build, {c["all"]:,} sentences are drafted and {c["approved"]:,} are revi
 ## Key pages
 
 - [Read]({SITE_URL}/read/): every book and chapter translated so far.
-- [Translation status]({SITE_URL}/about/status/): sentences drafted and reviewed, by language and book.
+{intros}- [Translation status]({SITE_URL}/about/status/): sentences drafted and reviewed, by language and book.
 - [Key terms]({SITE_URL}/terms/): the key Greek and Hebrew words and the English each keeps.
 - [Articles]({SITE_URL}/articles/): the method, close readings and the history of the Bible's text.
 - [About]({SITE_URL}/about/): licences and source credits.
@@ -4377,7 +4480,7 @@ def sitemap(paths):
 
 
 def build(out):
-    for cached in (status_counts, _book_records, _chapter_words, chapter_verses, _all_records, nav_menus, footer_links, passages, asset, translated_verses, catalog, book_refs, name_cards, term_uses,
+    for cached in (load_intro, book_languages, status_counts, _book_records, _chapter_words, chapter_verses, _all_records, nav_menus, footer_links, passages, asset, translated_verses, catalog, book_refs, name_cards, term_uses,
                    search_documents, word_uses, series_numbers, chapter_articles, load_plans, plans_json, plans_json_url):
         cached.cache_clear()
     if out.exists():
@@ -4409,6 +4512,9 @@ def build(out):
                     add(term_path(term, book), term_book_page(term, book, lang))
         for book, chapter in chapters():
             add(chapter_url(book, chapter), chapter_page(book, chapter, lang))
+        for book, _ in books(lang):
+            if lang in book_languages(book):
+                add(book_url(book), book_page(book, lang))
         articles = load_articles(lang)
         add("/articles/", articles_page(articles, lang), index=bool(articles))
         if articles:

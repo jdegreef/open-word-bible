@@ -242,6 +242,18 @@ accounts` so it can have language reviewers. The site, the validator and the
 backend all read the list from `owb/languages.py`. A drafting brief in `docs/<language>-style.md` settles
 the book-wide wording choices.
 
+### Book pages
+
+A book has a page (`/jhn/`) once it has an introduction:
+`data/intros/<BOOK>.md` in English, `data/intros/<lang>/<BOOK>.md` in
+another language. The file starts with a front matter block holding only
+`summary:` (one sentence, for the page and link previews), and its body is
+Markdown as in an article, placeholders included. The page adds an outline
+of the chapters from their section headings and the articles that read the
+book. Chapter pages link to it and carry a breadcrumb trail
+(Read › book › chapter) in their schema.org data. An introduction is a draft
+until a named reviewer has checked it, and its page says so.
+
 ### Articles
 
 Articles live in `articles/*.md`, one file each, starting with a front
