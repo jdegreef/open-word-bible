@@ -441,6 +441,12 @@
       } else {
         out.push(h("p", { class: "notice" }, "GitHub couldn't be reached, so CI on main isn't shown."));
       }
+      out.push(h("section", { class: "admin-block" }, h("h2", null, "Alerts"),
+        h("p", { class: "admin-sub" }, "Super admins are emailed once about each of these, and again only when it changes."),
+        d.alerts.length ? h("ul", null, d.alerts.map(function (a) {
+          return h("li", null, h("a", { href: a.href }, a.title), " · ",
+            a.emailed_at ? "emailed " + when(a.emailed_at) : pill("not emailed yet", "warn"));
+        })) : h("p", { class: "admin-ok" }, "Nothing has broken.")));
       out.push(h("div", { class: "admin-tiles" },
         tile(num(d.sentences), "sentences in the database"),
         tile(num(d.content_files), "content files imported"),

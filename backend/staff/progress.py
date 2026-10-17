@@ -7,7 +7,8 @@ GET /api/admin/coverage/        every book: chapters and sentences drafted,
                                 and sentences in each language
 GET /api/admin/languages/       each reading language's progress and team
 GET /api/admin/books/<BOOK>/    one book, chapter by chapter
-GET /api/admin/health/          the last imports, the loaded texts and CI on main
+GET /api/admin/health/          the last imports, the loaded texts, CI on main and
+                                what the super admins are alerted to (staff/alerts.py)
 GET /api/admin/engagement/      what signed-in readers keep: totals only
 
 A sentence counts as drafted in a language when it has any rendering in it;
@@ -222,6 +223,7 @@ def _run_json(run):
 
 @admin_view("overview")
 def health(request):
+    from . import alerts   # alerts reads jobs, which reads this module
     return Response({
         "imports": [_run_json(r) for r in ImportRun.objects.all()[:15]],
         "content_files": ContentFile.objects.count(),
@@ -232,6 +234,7 @@ def health(request):
                       "source_commit": e.source_commit[:7]}
                      for e in Edition.objects.order_by("kind", "code")],
         "ci": _ci_status(),
+        "alerts": alerts.current(),
     })
 
 
