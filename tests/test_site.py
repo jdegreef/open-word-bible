@@ -4,6 +4,7 @@ import json
 import re
 import sys
 import unittest
+import zipfile
 from pathlib import Path
 from unittest import mock
 
@@ -257,6 +258,44 @@ class SiteTest(unittest.TestCase):
             has = any(a["slug"] == build_site.REVIEW_ARTICLE for a in build_site.load_articles(lang))
             review = build_site.url(lang if has else "en", "/articles/" + build_site.REVIEW_ARTICLE + "/")
             self.assertIn(f'href="{review}"', page)
+
+    def test_downloads_are_built_for_every_language_and_level(self):
+        records = build_site._all_records()
+        languages = build_site.status_counts()["languages"]
+        built = build_site.downloads()
+        self.assertEqual(set(built), {(lang, level, fmt) for lang in languages for level in "LBR"
+                                      for fmt in build_site.DOWNLOAD_FORMATS})
+        # Each zip holds its text, the manifest, a README and the licence.
+        name, data, manifest = built["en", "B", "usfm"]
+        self.assertEqual(name, "owb-en-b-usfm.zip")
+        self.assertEqual((self.out / "downloads" / name).read_bytes(), data)
+        z = zipfile.ZipFile(self.out / "downloads" / name)
+        self.assertIn("43-JHN.usfm", z.namelist())
+        self.assertIn("CC0", z.read("LICENSE").decode())
+        self.assertIn("AI-assisted", z.read("README.txt").decode())
+        self.assertEqual(json.loads(z.read("manifest.json")), manifest)
+        name, _, manifest = built["fr", "R", "json"]
+        self.assertEqual(name, "owb-fr-r-json.zip")
+        z = zipfile.ZipFile(self.out / "downloads" / name)
+        self.assertEqual(sorted(z.namelist()), ["LICENSE", "README.txt", "manifest.json", "owb-fr-r.json"])
+        self.assertEqual(json.loads(z.read("owb-fr-r.json"))["manifest"], manifest)
+        # The manifest counts statuses and lists what isn't translated yet.
+        self.assertEqual(manifest["licence"], "CC0 1.0 Universal (public domain dedication)")
+        self.assertEqual(sum(manifest["status"].values()),
+                         sum(1 for r in records if "R" in r["renderings"].get("fr", {})))
+        self.assertEqual(manifest["missing"]["count"], len(manifest["missing"]["verses"]))
+        self.assertGreater(manifest["missing"]["count"], 0)
+        self.assertEqual(built["en", "L", "json"][2]["missing"]["count"], 0)
+        # The page lists every file, in every site language, and the footer links it.
+        for lang in build_site.LANGUAGES:
+            path = build_site.url(lang, "/download/")
+            page = (self.out / path.strip("/") / "index.html").read_text(encoding="utf-8")
+            for name, _, _ in built.values():
+                self.assertIn(f'href="/downloads/{name}" download', page)
+            self.assertIn(f'href="{path}"', (self.out / build_site.url(lang, "/").strip("/") / "index.html")
+                          .read_text(encoding="utf-8"))
+        # The service worker never keeps them.
+        self.assertIn('"/downloads/"', (self.out / "sw.js").read_text(encoding="utf-8"))
 
     def ld(self, path, kind):
         page = (self.out / path / "index.html").read_text(encoding="utf-8")

@@ -1096,6 +1096,8 @@
       return [head("Text", "Export", "Download the translation in one language at one level, for Bible software and for the apps that carry our text. Settings are applied, poetry runs on one line, and untranslated verses are left out, never filled from another Bible. A manifest.json in each file says what it holds."),
         h("p", { class: "notice" }, "Every sentence is an AI-assisted draft until a named reviewer approves it, and the manifest says so. " +
           "The text is " + d.licence + ". It is the text as of the last deploy" + (d.imported_at ? " (" + when(d.imported_at) + ")" : "") + "."),
+        h("p", null, "Every language at every level, at the default settings, is also on the public ",
+          h("a", { href: SITE + "/download/", rel: "noopener" }, "download page"), ", rebuilt with the site; send people there."),
         h("section", { class: "admin-block" }, form, result),
         h("section", { class: "admin-block" }, h("h2", null, "Recent downloads"),
           d.recent.length ? table(["When", "File", "Verses", "By"], d.recent.map(function (a) {
