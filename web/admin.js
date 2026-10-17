@@ -305,7 +305,8 @@
       return [head("Progress", "Coverage", "Every book in every language. A tick is a book drafted whole; a percentage is the share of its drafted sentences in that language. Open a book for its chapters."),
         h("div", { class: "admin-toolbar" }, seg([["ot", "Old Testament"], ["nt", "New Testament"]], tab, function (v) {
           rememberTab("coverage", v); draw(v);
-        }), legend()), body];
+        }), legend()),
+        ME.admin.indexOf("jobs") >= 0 ? h("p", null, h("a", { href: "#jobs" }, "Queue missing books"), " on the drafting jobs board.") : null, body];
     });
   };
   function legend() {
@@ -1270,6 +1271,7 @@
         }, function (err) { busy(file, false); note(status, err, true); });
       });
       out.push(h("section", { class: "admin-block" }, h("h2", null, "New job"), form));
+      out.push(jobBoard(d), bulkForm(d));
       out.push(h("section", { class: "admin-block" }, h("h2", null, "Open jobs"),
         d.jobs.length ? table(["Issue", "Book", "Languages", "Filed", "Taken by"], d.jobs.map(function (j) {
           return h("tr", null, h("td", null, h("a", { href: j.url, rel: "noopener" }, "#" + j.number)),
@@ -1282,6 +1284,85 @@
   function firstUndrafted(d) {
     var b = d.books.filter(function (x) { return d.coverage[x.code].en === "none"; })[0];
     return b ? b.code : d.books[0].code;
+  }
+
+  // The queue board: every book in every language, drafted, with a job
+  // filed, or with the job's pull request open.
+  var BOARD_LABEL = { none: "Not started", partial: "Partly drafted", filed: "Job filed", pr: "Pull request open", drafted: "Drafted" };
+  function jobBoard(d) {
+    var tab = sessionTab("jobs-board", "ot");
+    var body = h("div");
+    function draw(which) {
+      body.textContent = "";
+      var rows = d.books.filter(function (b) { return b.testament === which; }).map(function (b) {
+        return h("tr", null, h("th", { scope: "row" }, h("a", { href: "#book/" + b.code }, b.name)),
+          d.languages.map(function (l) {
+            var c = (d.board[b.code] || {})[l.code] || { state: "none" };
+            var mark = h("span", { class: "admin-state " + c.state, title: l.name + ": " + BOARD_LABEL[c.state] + (c.number ? " (#" + c.number + ")" : "") },
+              c.state === "drafted" ? "✓" : c.number ? "#" + c.number : "");
+            return h("td", { class: "admin-cell" }, c.url ? h("a", { href: c.url, rel: "noopener" }, mark) : mark);
+          }));
+      });
+      body.appendChild(table(["Book"].concat(d.languages.map(function (l) { return [l.code, { title: l.name, class: "admin-cell" }]; })), rows, "admin-coverage"));
+    }
+    draw(tab);
+    return h("section", { class: "admin-block", id: "queue" }, h("h2", null, "Queue board"),
+      h("div", { class: "admin-toolbar" }, seg([["ot", "Old Testament"], ["nt", "New Testament"]], tab, function (v) {
+        rememberTab("jobs-board", v); draw(v);
+      }), h("p", { class: "admin-legend" }, ["none", "partial", "filed", "pr", "drafted"].map(function (s) {
+        return h("span", null, h("span", { class: "admin-state " + s }), BOARD_LABEL[s]);
+      }))), body);
+  }
+
+  // Queue missing books: one job per book that still lacks any of the
+  // languages, previewed first.
+  function bulkForm(d) {
+    var status = h("p", { class: "admin-note", role: "status" });
+    var boxes = h("fieldset", { class: "admin-checks-row" }, h("legend", null, "Languages"),
+      d.languages.map(function (l) {
+        return h("label", null, h("input", { type: "checkbox", value: l.code, disabled: !d.configured }), " " + l.name);
+      }));
+    var testament = select("bulk-testament", [["ot", "Old Testament"], ["nt", "New Testament"], ["all", "Whole Bible"]], "ot");
+    var text = h("textarea", { id: "bulk-note", rows: 2, maxlength: 2000, placeholder: "Added to every job (optional)" });
+    var preview = h("button", { type: "submit", class: "admin-btn", disabled: !d.configured }, "Preview");
+    var result = h("div");
+    function payload(dry) {
+      return { languages: Array.prototype.map.call(boxes.querySelectorAll("input:checked"), function (x) { return x.value; }),
+        testament: testament.value, note: text.value, dry_run: dry };
+    }
+    function line(j) { return h("li", null, bookName(d, j.book) + ": " + j.languages.join(", ")); }
+    var form = h("form", { class: "admin-form stacked" }, boxes,
+      h("label", { class: "admin-field", for: "bulk-testament" }, "Books", testament),
+      h("label", { class: "admin-field", for: "bulk-note" }, "Note", text), preview, status, result);
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      busy(preview, true);
+      result.textContent = "";
+      note(status, "");
+      var asked = payload(false);
+      api("/api/admin/jobs/bulk/", { method: "POST", body: payload(true) }).then(function (r) {
+        if (!r.plan.length) {
+          note(status, "Nothing to file: " + (r.skipped.length ? plural(r.skipped.length, "book") + " already drafted or asked for." : "no books."));
+          return;
+        }
+        add(result, [h("p", null, plural(r.plan.length, "job") + " to file" + (r.remaining ? " now; " + r.remaining + " more after these (at most " + r.limit + " at a time)" : "") + ":"),
+          h("ul", { class: "admin-roles" }, r.plan.map(line)),
+          r.skipped.length ? h("details", null, h("summary", null, plural(r.skipped.length, "book") + " left out"),
+            h("ul", null, r.skipped.map(function (s) { return h("li", null, bookName(d, s.book) + ": " + s.reason); }))) : null,
+          confirmButton("File " + plural(r.plan.length, "job"), "File them?", function (b) {
+            api("/api/admin/jobs/bulk/", { method: "POST", body: asked }).then(function (f) {
+              FLASH = "Filed " + plural(f.filed.length, "job") + (f.error ? ". " + f.error : f.remaining ? "; " + f.remaining + " more to queue." : ".");
+              route();
+            }, function (err) { busy(b, false); note(status, err, true); });
+          }, "admin-btn primary")]);
+      }, function (err) { note(status, err, true); }).then(function () { busy(preview, false); });
+    });
+    return h("section", { class: "admin-block" }, h("h2", null, "Queue missing books"),
+      h("p", null, "Files one job per book that still lacks any of the languages, in Bible order, skipping languages an open job already asks for."), form);
+  }
+  function bookName(d, code) {
+    var b = d.books.filter(function (x) { return x.code === code; })[0];
+    return b ? b.name : code;
   }
 
   // Team email.

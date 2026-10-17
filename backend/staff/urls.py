@@ -27,6 +27,7 @@ urlpatterns = [
     path("overlap/<str:code>/", overlap.overlap),
     path("emails/", emails.emails),
     path("jobs/", jobs.jobs),
+    path("jobs/bulk/", jobs.bulk),
     path("team/", team.team),
     path("team/roles/<int:role_id>/", team.revoke),
     path("team/invite/", team.resend),
