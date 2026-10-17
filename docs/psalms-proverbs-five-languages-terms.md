@@ -55,7 +55,7 @@ Decision text stays in English, quoting the words of the language.
 
 | Hebrew (English L / B / R) | French | Spanish | Swahili | Vietnamese | Korean |
 |---|---|---|---|---|---|
-| *lamnatseach* (For the director / For the music director / For the leader of the music) | Au chef de chœur (L, B); Pour le chef des musiciens (R) | Al director del coro (L, B); Para el director de la música (R) | Kwa kiongozi wa kwaya (L, B); Kwa kiongozi wa waimbaji (R) | Cho trưởng ban nhạc (L, B); Cho người điều khiển ban nhạc (R) | 음악 지휘자에게 (L, B); 찬양을 이끄는 사람에게 (R) |
+| *lamnatseach* (For the director / For the music director / For the leader of the music) | Au chef de chœur (L, B); Pour le chef des musiciens (R) | Al director del coro (L, B); Para el director de la música (R) | Kwa kiongozi wa kwaya (L, B); Kwa kiongozi wa waimbaji (R) | Cho người chỉ huy [ban nhạc] (L); Cho nhạc trưởng (B); Cho người hướng dẫn ban nhạc (R), as Psalm 139:1 | 지휘자를 위하여 (L); 음악 지휘자를 위하여 (B); 찬양 인도자를 위해 (R), as Psalm 139:1 |
 | *mizmor* (a psalm / a song at R) | un psaume; un chant (R) | un salmo; un canto (R) | zaburi; wimbo (R) | thi thiên; bài ca (R) | 시; 노래 (R) |
 | *shir* (a song) | un cantique (L, B); un chant (R) | un cántico (L, B); un canto (R) | wimbo | bài ca | 노래 |
 | *maskil*, *miktam*, *shiggayon* | maskil, miktam, shiggayon | masquil, mictam, sigayón | maskili, mikitamu, shigayoni | bài Mát-kin, bài Mích-tam, bài Si-ga-giôn | 마스길, 믹담, 식가욘 |
@@ -66,15 +66,17 @@ Instruments, tunes ("to the tune of ...") and the terms whose meaning is lost
 names where the English keeps them, translated where it translates, with the
 English decision's uncertainty carried into the language's own decision. The
 Songs of Ascents (120–134) are *Cantique des montées*, *Cántico de las
-subidas*, *Wimbo wa kupanda*, *Bài ca lên đền*, 성전에 올라가는 노래 (L: 오르는
-노래), at R as the English R explains them.
+subidas*, *Wimbo wa kupanda*, *Bài ca cho những lần đi lên* (L), *Bài ca đi lên* (B), *Bài ca cho cuộc hành
+trình lên Giê-ru-sa-lem* (R), and 올라감을 위한 노래 (L), 올라가며 부르는 노래 (B),
+예루살렘으로 올라가며 부르는 노래 (R), as the published Psalm 121:1; French, Spanish
+and Swahili at R as the English R explains them.
 
 ## Recurring terms
 
 | Hebrew (English) | French | Spanish | Swahili | Vietnamese | Korean |
 |---|---|---|---|---|---|
-| *ḥesed* (loyal love L, B / faithful love R; "kindness" where the English has it) | amour loyal (L); amour fidèle (B, R); bonté | amor leal (L); amor fiel (B, R); bondad | upendo usiokoma; fadhili | tình yêu thành tín (L, B); tình thương thành tín (R); lòng nhân từ | 변함없는 사랑 (all); 인자 (kindness) |
-| the refrain "for his loyal love [is] forever" (106; 107; 118; 136) | car son amour loyal [est] pour toujours (L); car son amour fidèle dure toujours (B, R) | porque su amor leal [es] para siempre (L); su amor fiel dura para siempre (B, R) | kwa maana upendo wake usiokoma [ni] wa milele (L); upendo wake usiokoma unadumu milele (B, R) | vì tình yêu thành tín của Ngài [là] đời đời (L); tình yêu thành tín của Ngài còn đến đời đời (B, R) | 그분의 변함없는 사랑은 영원하다 (L); 그분의 변함없는 사랑이 영원하시다 (B, R) |
+| *ḥesed* (loyal love L, B / faithful love R; "kindness" where the English has it) | amour loyal (L); amour fidèle (B, R); bonté | amor leal (L); amor fiel (B, R); bondad | upendo usiokoma; fadhili | tình yêu thương thành tín (L, B); tình thương không hề thay đổi (R), as Psalm 23:6; lòng nhân từ | 한결같은 사랑 (L, B); 변함없는 사랑 (R), as Psalm 23:6; 인자 (kindness) |
+| the refrain "for his loyal love [is] forever" (106; 107; 118; 136) | car son amour loyal [est] pour toujours (L); car son amour fidèle dure toujours (B, R) | porque su amor leal [es] para siempre (L); su amor fiel dura para siempre (B, R) | kwa maana upendo wake usiokoma [ni] wa milele (L); upendo wake usiokoma unadumu milele (B, R) | vì tình yêu thương thành tín của {{deity_pronoun:ngài\|Ngài}} [là] đời đời (L); tình yêu thương thành tín của {{deity_pronoun:ngài\|Ngài}} còn đến đời đời (B); R with "tình thương không hề thay đổi" | 그분의 한결같은 사랑은 영원하다 (L); 그분의 한결같은 사랑이 영원하다 (B); 그분의 변함없는 사랑은 영원하다 (R) |
 | *ʾemunah*, *ʾemet* (faithfulness, truth) | fidélité, vérité | fidelidad, verdad | uaminifu, kweli | sự thành tín, chân thật | 신실하심, 진실 |
 | *nefesh* (soul; life, self at B and R) | âme (L) | alma (L) | nafsi (L) | linh hồn (L) | 영혼 (L) |
 | the wicked (*reshaʿim*) | les méchants | los malvados | waovu | kẻ ác | 악인 (L, B); 악한 사람 (R) |
