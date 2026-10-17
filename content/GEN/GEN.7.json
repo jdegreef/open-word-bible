@@ -49,6 +49,16 @@
           "L": "Y dijo {{divine_name:el SEÑOR|Yahvé}} a Noé: «Ve, tú y toda tu casa, al arca, porque he visto que tú [eres] justo delante de {{deity_pronoun:mí|Mí}} en esta generación.",
           "B": "Entonces {{divine_name:el SEÑOR|Yahvé}} dijo a Noé: «Entra en el arca con toda tu familia, porque he visto que tú eres justo ante {{deity_pronoun:mí|Mí}} entre la gente de esta generación.",
           "R": "Entonces {{divine_name:el SEÑOR|Yahvé}} le dijo a Noé: «Entra en el arca con toda tu familia. De toda la gente que vive hoy, veo que tú eres el único que hace lo que está bien."
+        },
+        "fr": {
+          "L": "Et {{divine_name:le SEIGNEUR|Yahvé}} dit à Noé : « Entre, toi et toute ta maison, dans l’arche, car je t’ai vu juste devant {{deity_pronoun:moi|Moi}} dans cette génération.",
+          "B": "Alors {{divine_name:le SEIGNEUR|Yahvé}} dit à Noé : « Entre dans l’arche, toi et toute ta famille, car j’ai vu que tu es juste devant {{deity_pronoun:moi|Moi}} parmi les gens de cette génération.",
+          "R": "Alors {{divine_name:le SEIGNEUR|Yahvé}} a dit à Noé : « Entre dans l’arche avec toute ta famille. De tous les gens qui vivent aujourd’hui, c’est toi que je vois faire ce qui est bien."
+        },
+        "sw": {
+          "L": "Na {{divine_name:BWANA|Yahwe}} akamwambia Nuhu, \"Ingia, wewe na nyumba yako yote, ndani ya safina, kwa maana nimekuona wewe kuwa mwenye haki mbele {{deity_pronoun:yangu|Yangu}} katika kizazi hiki.",
+          "B": "Kisha {{divine_name:BWANA|Yahwe}} akamwambia Nuhu, \"Ingia ndani ya safina, wewe na jamaa yako yote, kwa sababu nimeona kwamba wewe ni mwenye haki mbele {{deity_pronoun:yangu|Yangu}} kati ya watu wa kizazi hiki.",
+          "R": "Kisha {{divine_name:BWANA|Yahwe}} akamwambia Nuhu, \"Ingia ndani ya safina pamoja na familia yako yote. Kati ya watu wote wa wakati huu, ninaona kwamba wewe ndiye unayefanya yaliyo sawa."
         }
       },
       "decisions": [
@@ -150,6 +160,66 @@
           "reason": "English Readable says \"boat\" because \"ark\" is an unfamiliar word in English. In Spanish \"el arca de Noé\" is the everyday name, known to children, so Readable keeps \"el arca\" throughout the account.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o010070010012"
+          ],
+          "choice": "passé simple at Literal and Balanced (\"dit\", \"entra\"); passé composé at Readable (\"a dit\", \"est entré\")",
+          "alternatives": [
+            "passé composé at every level"
+          ],
+          "reason": "As the French style guide sets out: the passé simple is the normal tense of written narrative, while Readable uses the passé composé, the tense of spoken French and of school reading. Speech keeps the tenses of speech at every level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-2",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010070010092"
+          ],
+          "choice": "\"l'arche\" at Readable too",
+          "alternatives": [
+            "\"le bateau\", as the English Readable \"boat\""
+          ],
+          "reason": "\"L'arche\" is the settled word for Noah's ark and is well known to French readers, children included, so Readable keeps it where the English Readable says \"boat\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010070010092"
+          ],
+          "choice": "\"safina\" at Readable too",
+          "alternatives": [
+            "\"mashua\" (boat)",
+            "\"meli\" (ship)"
+          ],
+          "reason": "\"Safina\" is the settled word for Noah's ark and an everyday Swahili word for a large vessel, so Readable keeps it where the English Readable says \"boat\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -205,6 +275,16 @@
           "L": "De todo animal puro tomarás para ti siete [y] siete, un macho y su hembra; y de los animales que no [son] puros, dos, un macho y su hembra;",
           "B": "Toma contigo siete parejas de cada especie de animal puro, un macho y su hembra, y una pareja de cada especie de animal que no es puro, un macho y su hembra,",
           "R": "Lleva contigo siete parejas de cada especie de animal puro, un macho y una hembra de cada una. Lleva también una pareja, un macho y una hembra, de cada especie de animal impuro."
+        },
+        "fr": {
+          "L": "De tout animal pur tu prendras pour toi sept [et] sept, un mâle et sa femelle ; et des animaux qui ne [sont] pas purs, deux, un mâle et sa femelle ;",
+          "B": "Prends avec toi sept couples de chaque espèce d’animal pur, un mâle et sa femelle, et un couple de chaque espèce d’animal qui n’est pas pur, un mâle et sa femelle,",
+          "R": "Prends avec toi sept couples de chaque sorte d’animal pur, un mâle et une femelle. Et prends un couple, un mâle et une femelle, de chaque sorte d’animal impur."
+        },
+        "sw": {
+          "L": "Katika kila mnyama aliye safi utajitwalia saba saba, dume na jike lake; na katika wanyama wasio safi, wawili, dume na jike lake;",
+          "B": "Chukua pamoja nawe jozi saba za kila aina ya mnyama aliye safi, dume na jike lake, na jozi moja ya kila aina ya mnyama asiye safi, dume na jike lake,",
+          "R": "Chukua pamoja nawe jozi saba za kila aina ya mnyama aliye safi, dume na jike wa kila aina. Chukua pia jozi moja, dume na jike, ya kila aina ya mnyama aliye najisi."
         }
       },
       "decisions": [
@@ -297,6 +377,26 @@
           "reason": "Readable uses the one plain word \"impuro\", here and in verse 8; the sense is the same as \"not clean\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o010070020061",
+            "o010070020071"
+          ],
+          "choice": "\"saba saba\" without \"na\"",
+          "alternatives": [
+            "\"saba [na] saba\", as the English Literal \"seven [and] seven\""
+          ],
+          "reason": "Swahili itself repeats a number to give a distributive sense (\"wawili wawili\", \"two by two\"), just as the Hebrew does, so Literal can copy the Hebrew without a supplied word.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -342,6 +442,16 @@
           "L": "también de las aves de los cielos siete [y] siete, macho y hembra, para conservar con vida [la] descendencia sobre la faz de toda la tierra.",
           "B": "y siete parejas de cada especie de ave del cielo, macho y hembra, para que sus especies se conserven con vida sobre la faz de toda la tierra.",
           "R": "Lleva también siete parejas de cada especie de ave, machos y hembras, para que cada especie siga viviendo en toda la tierra."
+        },
+        "fr": {
+          "L": "aussi des oiseaux des cieux sept [et] sept, mâle et femelle, pour garder en vie une descendance sur la face de toute la terre.",
+          "B": "et sept couples de chaque espèce d’oiseau du ciel, mâle et femelle, pour que leurs espèces restent en vie sur toute la surface de la terre.",
+          "R": "Prends aussi sept couples de chaque sorte d’oiseau, des mâles et des femelles, pour que chaque espèce continue à vivre sur toute la terre."
+        },
+        "sw": {
+          "L": "pia katika ndege wa angani saba saba, dume na jike, ili kuhifadhi hai uzao juu ya uso wa dunia yote.",
+          "B": "na jozi saba za kila aina ya ndege wa angani, dume na jike, ili kuzihifadhi hai aina zao juu ya uso wa dunia yote.",
+          "R": "Chukua pia jozi saba za kila aina ya ndege, madume na majike, ili kila aina iendelee kuishi duniani kote."
         }
       },
       "decisions": [
@@ -414,6 +524,16 @@
           "L": "Porque dentro de siete días más yo haré llover sobre la tierra cuarenta días y cuarenta noches, y borraré de sobre la faz del suelo todo ser viviente que he hecho».",
           "B": "Dentro de siete días haré llover sobre la tierra durante cuarenta días y cuarenta noches, y borraré de la faz de la tierra a todos los seres vivientes que he hecho».",
           "R": "Dentro de siete días haré que llueva sobre la tierra durante cuarenta días y cuarenta noches. Borraré a todos los seres vivos que hice»."
+        },
+        "fr": {
+          "L": "Car dans sept jours encore, je vais faire pleuvoir sur la terre quarante jours et quarante nuits, et j’effacerai de la face du sol tout être vivant que j’ai fait. »",
+          "B": "Dans sept jours, je ferai pleuvoir sur la terre pendant quarante jours et quarante nuits, et j’effacerai de la surface de la terre tous les êtres vivants que j’ai faits. »",
+          "R": "Dans sept jours, je vais faire tomber la pluie sur la terre pendant quarante jours et quarante nuits. Je ferai disparaître tous les êtres vivants que j’ai créés. »"
+        },
+        "sw": {
+          "L": "Kwa maana zimesalia siku saba, kisha {{deity_pronoun:mimi|Mimi}} nitanyeshea dunia mvua siku arobaini na usiku arobaini, na kila kiumbe hai nilichokifanya nitakifuta kutoka juu ya uso wa ardhi.\"",
+          "B": "Baada ya siku saba nitaleta mvua juu ya dunia kwa siku arobaini na usiku arobaini, na nitaondoa juu ya uso wa dunia kila kiumbe hai nilichokifanya.\"",
+          "R": "Baada ya siku saba nitanyesha mvua duniani kwa siku arobaini na usiku arobaini. Nitaangamiza kila kiumbe hai nilichokiumba.\""
         }
       },
       "decisions": [
@@ -483,6 +603,16 @@
           "L": "E hizo Noé conforme a todo lo que le había mandado {{divine_name:el SEÑOR|Yahvé}}.",
           "B": "Noé hizo todo lo que {{divine_name:el SEÑOR|Yahvé}} le había mandado.",
           "R": "Noé hizo todo lo que {{divine_name:el SEÑOR|Yahvé}} le dijo que hiciera."
+        },
+        "fr": {
+          "L": "Et Noé fit selon tout ce que {{divine_name:le SEIGNEUR|Yahvé}} lui avait commandé.",
+          "B": "Noé fit tout ce que {{divine_name:le SEIGNEUR|Yahvé}} lui avait ordonné.",
+          "R": "Noé a fait tout ce que {{divine_name:le SEIGNEUR|Yahvé}} lui avait dit de faire."
+        },
+        "sw": {
+          "L": "Naye Nuhu akafanya sawasawa na yote aliyomwamuru {{divine_name:BWANA|Yahwe}}.",
+          "B": "Nuhu akafanya kila kitu {{divine_name:BWANA|Yahwe}} alichomwamuru.",
+          "R": "Nuhu akafanya yote ambayo {{divine_name:BWANA|Yahwe}} alimwambia afanye."
         }
       },
       "decisions": [
@@ -543,6 +673,16 @@
           "L": "Y Noé [tenía] 600 años cuando vino el diluvio, agua sobre la tierra.",
           "B": "Noé tenía 600 años cuando las aguas del diluvio vinieron sobre la tierra.",
           "R": "Noé tenía 600 años cuando llegó el diluvio y el agua cubrió la tierra."
+        },
+        "fr": {
+          "L": "Et Noé [avait] 600 ans quand le déluge arriva, des eaux sur la terre.",
+          "B": "Noé avait 600 ans quand les eaux du déluge vinrent sur la terre.",
+          "R": "Noé avait 600 ans quand le déluge est arrivé et que l’eau a recouvert la terre."
+        },
+        "sw": {
+          "L": "Naye Nuhu [alikuwa na] miaka 600 gharika ilipokuja, maji juu ya dunia.",
+          "B": "Nuhu alikuwa na umri wa miaka 600 maji ya gharika yalipokuja juu ya dunia.",
+          "R": "Nuhu alikuwa na miaka 600 gharika ilipokuja na maji yakafunika dunia."
         }
       },
       "decisions": [
@@ -612,6 +752,16 @@
           "L": "Y entró Noé, y sus hijos y su mujer y las mujeres de sus hijos con él, en el arca a causa de las aguas del diluvio.",
           "B": "Y Noé, sus hijos, su esposa y las esposas de sus hijos entraron en el arca para escapar de las aguas del diluvio.",
           "R": "Noé entró en el arca con su esposa, sus hijos y sus nueras, para escapar del agua del diluvio."
+        },
+        "fr": {
+          "L": "Et Noé entra, et ses fils et sa femme et les femmes de ses fils avec lui, dans l’arche, à cause des eaux du déluge.",
+          "B": "Noé entra dans l’arche avec ses fils, sa femme et les femmes de ses fils, pour échapper aux eaux du déluge.",
+          "R": "Noé est entré dans l’arche avec sa femme, ses fils et leurs femmes, pour échapper à l’eau du déluge."
+        },
+        "sw": {
+          "L": "Naye Nuhu akaingia, na wanawe na mkewe na wake wa wanawe pamoja naye, ndani ya safina kwa sababu ya maji ya gharika.",
+          "B": "Nuhu na wanawe, mkewe na wake wa wanawe wakaingia ndani ya safina ili kuyaepuka maji ya gharika.",
+          "R": "Nuhu akaingia ndani ya safina pamoja na mke wake, wanawe na wake zao, ili kujiokoa na maji ya gharika."
         }
       },
       "decisions": [
@@ -683,6 +833,16 @@
           "L": "De los animales puros, y de los animales que no [eran] puros, y de las aves, y de todo lo que se arrastra sobre el suelo,",
           "B": "Los animales puros y los que no son puros, las aves y todos los animales que se mueven por el suelo",
           "R": "Animales puros e impuros, aves y animales pequeños que se arrastran por el suelo"
+        },
+        "fr": {
+          "L": "Des animaux purs, et des animaux qui [n’étaient] pas purs, et des oiseaux, et de tout ce qui rampe sur le sol,",
+          "B": "Les animaux purs et ceux qui ne l’étaient pas, les oiseaux et toutes les bêtes qui se déplacent sur le sol",
+          "R": "Des animaux purs et des animaux impurs, des oiseaux et des petites bêtes qui rampent sur le sol"
+        },
+        "sw": {
+          "L": "Katika wanyama walio safi, na katika wanyama ambao [hawakuwa] safi, na katika ndege, na katika kila kitambaacho juu ya ardhi,",
+          "B": "Wanyama walio safi na wanyama wasio safi, ndege na kila kiumbe kinachotambaa juu ya ardhi",
+          "R": "Wanyama safi na wanyama najisi, ndege, na viumbe vidogo vinavyotambaa ardhini"
         }
       },
       "decisions": [],
@@ -728,6 +888,16 @@
           "L": "dos [y] dos vinieron a Noé al arca, macho y hembra, como había mandado Dios a Noé.",
           "B": "vinieron a Noé por parejas y entraron en el arca, macho y hembra, como Dios le había ordenado a Noé.",
           "R": "vinieron a Noé en parejas, un macho y una hembra, y entraron en el arca, tal como Dios le había mandado a Noé."
+        },
+        "fr": {
+          "L": "deux [et] deux ils vinrent vers Noé dans l’arche, mâle et femelle, comme Dieu l’avait ordonné à Noé.",
+          "B": "vinrent vers Noé deux par deux et entrèrent dans l’arche, mâle et femelle, comme Dieu l’avait ordonné à Noé.",
+          "R": "sont venus vers Noé deux par deux, un mâle et une femelle, et sont entrés dans l’arche, exactement comme Dieu l’avait ordonné à Noé."
+        },
+        "sw": {
+          "L": "wawili wawili walimjia Nuhu ndani ya safina, dume na jike, kama Mungu alivyomwamuru Nuhu.",
+          "B": "walimjia Nuhu wawili wawili, wakaingia ndani ya safina, dume na jike, kama Mungu alivyomwamuru Nuhu.",
+          "R": "walimjia Nuhu jozi kwa jozi, dume na jike, wakaingia ndani ya safina, sawasawa na Mungu alivyokuwa amemwamuru Nuhu."
         }
       },
       "decisions": [
@@ -802,6 +972,16 @@
           "L": "Y sucedió que después de los siete días las aguas del diluvio vinieron sobre la tierra.",
           "B": "Al cabo de los siete días, las aguas del diluvio vinieron sobre la tierra.",
           "R": "Siete días después, las aguas del diluvio cubrieron la tierra."
+        },
+        "fr": {
+          "L": "Et il arriva, après les sept jours, que les eaux du déluge vinrent sur la terre.",
+          "B": "Au bout des sept jours, les eaux du déluge vinrent sur la terre.",
+          "R": "Sept jours plus tard, les eaux du déluge ont recouvert la terre."
+        },
+        "sw": {
+          "L": "Ikawa baada ya zile siku saba, maji ya gharika yakaja juu ya dunia.",
+          "B": "Baada ya siku hizo saba, maji ya gharika yalikuja juu ya dunia.",
+          "R": "Siku saba baadaye, maji ya gharika yalifunika dunia."
         }
       },
       "decisions": [
@@ -880,6 +1060,16 @@
           "L": "En el año seiscientos de la vida de Noé, en el mes segundo, el día diecisiete del mes, en ese día se rompieron todas las fuentes del gran abismo, y las ventanas de los cielos se abrieron.",
           "B": "En el año seiscientos de la vida de Noé, el día diecisiete del segundo mes, ese mismo día reventaron todas las fuentes del gran abismo y se abrieron las compuertas de los cielos.",
           "R": "Cuando Noé tenía 600 años, el día diecisiete del segundo mes, todas las fuentes de agua que había muy abajo, bajo la tierra, se abrieron de golpe. Las ventanas del cielo se abrieron, y la lluvia cayó con fuerza."
+        },
+        "fr": {
+          "L": "En l’an six cent de la vie de Noé, au deuxième mois, le dix-septième jour du mois, en ce jour-là, toutes les sources du grand abîme furent fendues, et les fenêtres des cieux furent ouvertes.",
+          "B": "En l’an six cent de la vie de Noé, le dix-septième jour du deuxième mois, ce jour-là même, toutes les sources du grand abîme éclatèrent, et les vannes des cieux s’ouvrirent.",
+          "R": "Quand Noé avait 600 ans, le dix-septième jour du deuxième mois, toutes les sources cachées tout au fond de la terre se sont ouvertes d’un coup. Les fenêtres du ciel se sont ouvertes, et il s’est mis à pleuvoir très fort."
+        },
+        "sw": {
+          "L": "Katika mwaka wa mia sita wa maisha ya Nuhu, katika mwezi wa pili, siku ya kumi na saba ya mwezi, siku hiyo hiyo chemchemi zote za kilindi kikuu zilipasuliwa, na madirisha ya mbingu yakafunguliwa.",
+          "B": "Katika mwaka wa mia sita wa maisha ya Nuhu, siku ya kumi na saba ya mwezi wa pili, siku hiyo hiyo chemchemi zote za kilindi kikuu zilipasuka, na milango ya maji ya mbinguni ikafunguka.",
+          "R": "Nuhu alipokuwa na miaka 600, siku ya kumi na saba ya mwezi wa pili, chemchemi zote zilizo chini kabisa ya ardhi zilipasuka ghafla. Madirisha ya anga yakafunguka, na mvua kubwa ikanyesha."
         }
       },
       "decisions": [
@@ -1042,6 +1232,45 @@
           "reason": "Spanish normally names a high ordinal year with the cardinal number; \"sexcentésimo\" is correct but unknown to most readers. The date (second month, seventeenth day) has no modern equivalent, so it takes no units setting.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010070110202"
+          ],
+          "choice": "\"les vannes des cieux\"",
+          "alternatives": [
+            "\"les écluses des cieux\"",
+            "\"les fenêtres des cieux\""
+          ],
+          "reason": "Balanced names what the windows do, as the English \"floodgates\" does; \"vannes\" are the gates that hold back or release water. Literal and Readable keep \"fenêtres\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010070110202"
+          ],
+          "choice": "\"milango ya maji ya mbinguni\" (the water gates of heaven)",
+          "alternatives": [
+            "\"madirisha ya mbinguni\""
+          ],
+          "reason": "Swahili has no single word for floodgates, so Balanced says \"gates of the waters\", following the English \"floodgates\"; Literal and Readable keep \"madirisha\" (windows).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1081,6 +1310,16 @@
           "L": "Y la lluvia cayó sobre la tierra cuarenta días y cuarenta noches.",
           "B": "Y llovió sobre la tierra durante cuarenta días y cuarenta noches.",
           "R": "Llovió sobre la tierra cuarenta días y cuarenta noches."
+        },
+        "fr": {
+          "L": "Et la pluie fut sur la terre quarante jours et quarante nuits.",
+          "B": "Et la pluie tomba sur la terre pendant quarante jours et quarante nuits.",
+          "R": "Il a plu sur la terre pendant quarante jours et quarante nuits."
+        },
+        "sw": {
+          "L": "Na mvua ikawa juu ya dunia siku arobaini na usiku arobaini.",
+          "B": "Mvua ikanyesha juu ya dunia kwa siku arobaini na usiku arobaini.",
+          "R": "Ilinyesha mvua duniani siku arobaini na usiku arobaini."
         }
       },
       "decisions": [],
@@ -1138,6 +1377,16 @@
           "L": "En ese mismo día entró Noé, y Sem y Cam y Jafet, los hijos de Noé, y la mujer de Noé, y las tres mujeres de sus hijos con ellos, en el arca,",
           "B": "Ese mismo día Noé y sus hijos, Sem, Cam y Jafet, junto con su esposa y las esposas de sus tres hijos, entraron en el arca,",
           "R": "Ese mismo día Noé entró en el arca con su esposa, sus hijos Sem, Cam y Jafet, y las tres esposas de sus hijos."
+        },
+        "fr": {
+          "L": "En ce jour même entra Noé, et Sem et Cham et Japhet, les fils de Noé, et la femme de Noé, et les trois femmes de ses fils avec eux, dans l’arche,",
+          "B": "Ce jour-là même, Noé et ses fils, Sem, Cham et Japhet, ainsi que sa femme et les trois femmes de ses fils, entrèrent dans l’arche,",
+          "R": "Ce jour-là, Noé est entré dans l’arche avec sa femme, ses fils Sem, Cham et Japhet, et les trois femmes de ses fils."
+        },
+        "sw": {
+          "L": "Siku hiyo hiyo aliingia Nuhu, na Shemu na Hamu na Yafethi, wana wa Nuhu, na mke wa Nuhu, na wake watatu wa wanawe pamoja nao, ndani ya safina,",
+          "B": "Siku ile ile Nuhu na wanawe, Shemu, Hamu na Yafethi, pamoja na mkewe na wake wa wanawe watatu, waliingia ndani ya safina,",
+          "R": "Siku hiyo hiyo Nuhu aliingia ndani ya safina pamoja na mke wake, wanawe Shemu, Hamu na Yafethi, na wake zao watatu."
         }
       },
       "decisions": [
@@ -1224,6 +1473,16 @@
           "L": "ellos y todo animal según su especie, y todo el ganado según su especie, y todo animal rastrero que se arrastra sobre la tierra según su especie, y toda ave según su especie, todo pájaro, todo [ser] alado.",
           "B": "ellos y todos los animales salvajes según su especie, todo el ganado según su especie, todos los animales que se mueven por el suelo según su especie, y todas las aves según su especie, todo lo que tiene alas.",
           "R": "Con ellos entraron todas las especies de animales salvajes, de animales de granja y de animales pequeños que se arrastran por el suelo, y todas las especies de aves, todo lo que tiene alas."
+        },
+        "fr": {
+          "L": "eux et tout animal selon son espèce, et tout le bétail selon son espèce, et toute bestiole qui rampe sur la terre selon son espèce, et tout oiseau selon son espèce, tout oiseau, tout [être] ailé.",
+          "B": "eux et toutes les bêtes sauvages selon leur espèce, tout le bétail selon son espèce, toutes les bêtes qui se déplacent sur le sol selon leur espèce, et tous les oiseaux selon leur espèce, tout ce qui a des ailes.",
+          "R": "Avec eux sont entrées toutes les sortes d’animaux sauvages, d’animaux de la ferme et de petites bêtes qui rampent sur le sol, et toutes les sortes d’oiseaux, tout ce qui a des ailes."
+        },
+        "sw": {
+          "L": "wao na kila mnyama kwa aina yake, na mifugo yote kwa aina zake, na kila kiumbe kitambaacho juu ya dunia kwa aina yake, na kila ndege kwa aina yake, kila ndege, kila [kiumbe] chenye mabawa.",
+          "B": "wao na kila mnyama wa porini kwa aina yake, mifugo yote kwa aina zake, kila kiumbe kinachotambaa juu ya ardhi kwa aina yake, na kila ndege kwa aina yake, kila kitu chenye mabawa.",
+          "R": "Pamoja nao waliingia kila aina ya mnyama wa porini, kila aina ya mfugo, kila aina ya kiumbe kidogo kinachotambaa ardhini, na kila aina ya ndege, kila kiumbe chenye mabawa."
         }
       },
       "decisions": [
@@ -1290,6 +1549,16 @@
           "L": "Y vinieron a Noé al arca, dos [y] dos de toda carne en que [había] aliento de vida.",
           "B": "Vinieron a Noé y entraron en el arca por parejas, de todas las criaturas que tienen aliento de vida.",
           "R": "Parejas de todos los seres vivos que respiran vinieron a Noé y entraron en el arca."
+        },
+        "fr": {
+          "L": "Et ils vinrent vers Noé dans l’arche, deux [et] deux de toute chair en qui [était] le souffle de vie.",
+          "B": "Ils vinrent vers Noé et entrèrent dans l’arche deux par deux, de toutes les créatures qui ont en elles le souffle de vie.",
+          "R": "Des couples de tous les êtres vivants qui respirent sont venus vers Noé et sont entrés dans l’arche."
+        },
+        "sw": {
+          "L": "Wakamjia Nuhu ndani ya safina, wawili wawili katika kila chenye mwili ambacho ndani yake [mna] pumzi ya uhai.",
+          "B": "Walimjia Nuhu wawili wawili, wakaingia ndani ya safina, wa kila kiumbe chenye pumzi ya uhai.",
+          "R": "Jozi za kila kiumbe hai kinachopumua zilimjia Nuhu, zikaingia ndani ya safina."
         }
       },
       "decisions": [],
@@ -1339,6 +1608,16 @@
           "L": "Y los que vinieron, macho y hembra de toda carne, vinieron como Dios le había mandado. Y {{divine_name:el SEÑOR|Yahvé}} cerró [la puerta] detrás de él.",
           "B": "Los que entraron eran macho y hembra de toda criatura, como Dios había ordenado a Noé. Luego {{divine_name:el SEÑOR|Yahvé}} cerró la puerta tras él.",
           "R": "Los animales entraron, macho y hembra de cada especie, como Dios le había dicho a Noé. Después {{divine_name:el SEÑOR|Yahvé}} cerró la puerta detrás de él."
+        },
+        "fr": {
+          "L": "Et ceux qui vinrent, mâle et femelle de toute chair, vinrent comme Dieu le lui avait ordonné. Et {{divine_name:le SEIGNEUR|Yahvé}} ferma [la porte] derrière lui.",
+          "B": "Ceux qui entrèrent étaient mâle et femelle de toute créature, comme Dieu l’avait ordonné à Noé. Puis {{divine_name:le SEIGNEUR|Yahvé}} ferma la porte sur lui.",
+          "R": "Les animaux sont entrés, un mâle et une femelle de chaque sorte, comme Dieu l’avait dit à Noé. Ensuite, {{divine_name:le SEIGNEUR|Yahvé}} a fermé la porte derrière lui."
+        },
+        "sw": {
+          "L": "Na wale walioingia, dume na jike wa kila chenye mwili, waliingia kama Mungu alivyomwamuru. Na {{divine_name:BWANA|Yahwe}} akafunga [mlango] nyuma yake.",
+          "B": "Walioingia walikuwa dume na jike wa kila kiumbe, kama Mungu alivyomwamuru Nuhu. Kisha {{divine_name:BWANA|Yahwe}} akamfungia ndani.",
+          "R": "Wanyama waliingia, dume na jike wa kila aina, kama Mungu alivyomwambia Nuhu. Kisha {{divine_name:BWANA|Yahwe}} akaufunga mlango nyuma yake."
         }
       },
       "decisions": [
@@ -1450,6 +1729,16 @@
           "L": "Y estuvo el diluvio cuarenta días sobre la tierra, y crecieron las aguas y alzaron el arca, y se elevó muy por encima de la tierra.",
           "B": "Durante cuarenta días el diluvio siguió cayendo sobre la tierra. Las aguas crecieron y levantaron el arca, y esta flotó muy por encima de la tierra.",
           "R": "Durante cuarenta días el agua del diluvio se hizo cada vez más profunda. El agua levantó el arca del suelo, muy por encima de la tierra."
+        },
+        "fr": {
+          "L": "Et le déluge fut quarante jours sur la terre, et les eaux augmentèrent et soulevèrent l’arche, et elle s’éleva au-dessus de la terre.",
+          "B": "Pendant quarante jours, le déluge ne cessa de venir sur la terre. Les eaux montèrent et soulevèrent l’arche, qui flotta bien au-dessus de la terre.",
+          "R": "Pendant quarante jours, l’eau du déluge est devenue de plus en plus profonde. Elle a soulevé l’arche du sol, bien au-dessus de la terre."
+        },
+        "sw": {
+          "L": "Na gharika ikawa juu ya dunia siku arobaini, na maji yakaongezeka, yakaiinua safina, nayo ikapanda juu ya dunia.",
+          "B": "Kwa siku arobaini gharika iliendelea kuja juu ya dunia. Maji yakaongezeka, yakaiinua safina, nayo ikaelea juu sana ya dunia.",
+          "R": "Kwa siku arobaini maji ya gharika yaliendelea kuongezeka. Maji yakaiinua safina kutoka ardhini, ikawa juu sana ya dunia."
         }
       },
       "decisions": [
@@ -1513,6 +1802,16 @@
           "L": "Y prevalecieron las aguas y crecieron mucho sobre la tierra, y el arca iba sobre la faz de las aguas.",
           "B": "Las aguas crecieron con fuerza y subieron cada vez más sobre la tierra, y el arca flotaba sobre la superficie de las aguas.",
           "R": "El agua siguió subiendo más y más, y el arca flotaba encima."
+        },
+        "fr": {
+          "L": "Et les eaux prévalurent et augmentèrent beaucoup sur la terre, et l’arche alla sur la face des eaux.",
+          "B": "Les eaux grossirent et montèrent de plus en plus sur la terre, et l’arche flottait à la surface des eaux.",
+          "R": "L’eau a continué à monter, toujours plus haut, et l’arche flottait dessus."
+        },
+        "sw": {
+          "L": "Na maji yakashinda, yakaongezeka sana juu ya dunia, na safina ikaenda juu ya uso wa maji.",
+          "B": "Maji yakazidi nguvu na kupanda juu zaidi na zaidi juu ya dunia, na safina ikaelea juu ya maji.",
+          "R": "Maji yaliendelea kupanda juu zaidi na zaidi, na safina ikaelea juu yake."
         }
       },
       "decisions": [
@@ -1577,6 +1876,16 @@
           "L": "Y las aguas prevalecieron muchísimo sobre la tierra, y fueron cubiertos todos los montes altos que [había] debajo de todos los cielos.",
           "B": "Las aguas subieron tanto sobre la tierra que quedaron cubiertas todas las montañas altas que hay bajo el cielo entero.",
           "R": "El agua subió tanto que cubrió todas las montañas altas que había bajo el cielo."
+        },
+        "fr": {
+          "L": "Et les eaux prévalurent extrêmement sur la terre, et toutes les hautes montagnes qui [étaient] sous tous les cieux furent couvertes.",
+          "B": "Les eaux montèrent si haut sur la terre que toutes les hautes montagnes sous le ciel entier furent recouvertes.",
+          "R": "L’eau est montée si haut qu’elle a recouvert toutes les hautes montagnes sous le ciel."
+        },
+        "sw": {
+          "L": "Na maji yakashinda sana sana juu ya dunia, na milima yote mirefu iliyo chini ya mbingu zote ikafunikwa.",
+          "B": "Maji yakapanda juu sana juu ya dunia hata milima yote mirefu chini ya anga lote ikafunikwa.",
+          "R": "Maji yalipanda juu sana, yakafunika milima yote mirefu chini ya anga."
         }
       },
       "decisions": [
@@ -1659,6 +1968,16 @@
           "L": "Quince codos hacia arriba prevalecieron las aguas, y fueron cubiertos los montes.",
           "B": "Las aguas subieron {{units:casi 7 metros|quince codos}} por encima de ellas, y las montañas quedaron cubiertas.",
           "R": "El agua llegó a {{units:casi 7 metros|quince codos}} por encima de las cimas de las montañas."
+        },
+        "fr": {
+          "L": "Quinze coudées au-dessus les eaux prévalurent, et les montagnes furent couvertes.",
+          "B": "Les eaux montèrent de {{units:près de 7 mètres|quinze coudées}} au-dessus d’elles, et les montagnes furent recouvertes.",
+          "R": "L’eau atteignait {{units:près de 7 mètres|quinze coudées}} au-dessus du sommet des montagnes."
+        },
+        "sw": {
+          "L": "Dhiraa kumi na tano kwenda juu maji yakashinda, na milima ikafunikwa.",
+          "B": "Maji yalipanda {{units:karibu mita 7|dhiraa kumi na tano}} juu yake, na milima ikafunikwa.",
+          "R": "Kina cha maji kilikuwa {{units:karibu mita 7|dhiraa kumi na tano}} juu ya vilele vya milima."
         }
       },
       "decisions": [
@@ -1780,6 +2099,16 @@
           "L": "Y murió toda carne que se mueve sobre la tierra: aves y ganado y animales salvajes y todo lo que pulula sobre la tierra, y {{gender:toda la humanidad|todos los hombres}}.",
           "B": "Murió todo ser vivo que se movía sobre la tierra: aves, ganado, animales salvajes, todos los animales que pululan por la tierra y {{gender:todos los seres humanos|todos los hombres}}.",
           "R": "Murió todo ser vivo de la tierra: aves, animales de granja, animales salvajes, todos los animales pequeños y {{gender:todas las personas|todos los hombres}}."
+        },
+        "fr": {
+          "L": "Et toute chair qui se meut sur la terre expira, oiseaux et bétail et bêtes sauvages et toute bestiole qui grouille sur la terre, et {{gender:tous les humains|tous les hommes}}.",
+          "B": "Toute créature vivante qui se mouvait sur la terre périt : les oiseaux, le bétail, les bêtes sauvages, toutes les bestioles qui grouillent sur la terre, et {{gender:tous les êtres humains|tous les hommes}}.",
+          "R": "Tous les êtres vivants de la terre sont morts : les oiseaux, les animaux de la ferme, les animaux sauvages, toutes les petites bêtes, et {{gender:tous les gens|tous les hommes}}."
+        },
+        "sw": {
+          "L": "Na wote wenye mwili waendao juu ya dunia wakafa, ndege na mifugo na wanyama wa porini na viumbe vyote vinavyojaa tele juu ya dunia, na wanadamu wote.",
+          "B": "Kila kiumbe hai kilichokwenda juu ya dunia kilikufa: ndege, mifugo, wanyama wa porini, viumbe vyote vinavyojaa tele duniani, na wanadamu wote.",
+          "R": "Kila kiumbe hai duniani kilikufa: ndege, mifugo, wanyama wa porini, viumbe vidogo vyote, na watu wote."
         }
       },
       "decisions": [
@@ -1894,6 +2223,16 @@
           "L": "Todo lo que [tenía] aliento del espíritu de vida en sus narices, de todo lo que [había] en la tierra seca, murió.",
           "B": "Todo lo que había en tierra firme y tenía en sus narices aliento de vida murió.",
           "R": "Todo lo que vivía en la tierra y respiraba aire murió."
+        },
+        "fr": {
+          "L": "Tout ce qui [avait] dans ses narines le souffle de l’esprit de vie, de tout ce qui [était] sur la terre sèche, mourut.",
+          "B": "Tout ce qui vivait sur la terre ferme et avait dans ses narines le souffle de vie mourut.",
+          "R": "Tout ce qui vivait sur la terre et respirait l’air est mort."
+        },
+        "sw": {
+          "L": "Kila kitu ambacho [kilikuwa na] pumzi ya roho ya uhai puani mwake, katika vyote vilivyokuwa katika nchi kavu, kilikufa.",
+          "B": "Kila kitu katika nchi kavu kilichokuwa na pumzi ya uhai puani mwake kilikufa.",
+          "R": "Kila kitu kilichoishi nchi kavu na kuvuta hewa kilikufa."
         }
       },
       "decisions": [
@@ -1993,6 +2332,16 @@
           "L": "Y {{deity_pronoun:él|Él}} borró todo ser viviente que [había] sobre la faz del suelo, desde {{gender:el ser humano|el hombre}} hasta los animales, hasta lo que se arrastra y hasta las aves de los cielos; y fueron borrados de la tierra. Solo quedó Noé, y los que [estaban] con él en el arca.",
           "B": "Así fue borrado todo ser vivo de la faz de la tierra, desde {{gender:los seres humanos|el hombre}} hasta los animales, los que se arrastran por el suelo y las aves del cielo. Fueron borrados de la tierra. Solo quedó Noé, y los que estaban con él en el arca.",
           "R": "Dios borró a todos los seres vivos de la tierra: {{gender:las personas|los hombres}}, los animales, los animales pequeños y las aves. Todos desaparecieron. Solo quedaron con vida Noé y los que estaban con él en el arca."
+        },
+        "fr": {
+          "L": "Et {{deity_pronoun:il|Il}} effaça tout être vivant qui [était] sur la face du sol, depuis {{gender:l’être humain|l’homme}} jusqu’aux animaux, jusqu’aux bestioles et jusqu’aux oiseaux des cieux ; et ils furent effacés de la terre. Seul Noé resta, et ceux qui [étaient] avec lui dans l’arche.",
+          "B": "Ainsi tout être vivant fut effacé de la surface de la terre, {{gender:les humains|l’homme}} comme les animaux, les bêtes qui se déplacent sur le sol et les oiseaux du ciel. Ils furent effacés de la terre. Il ne resta que Noé, et ceux qui étaient avec lui dans l’arche.",
+          "R": "Dieu a fait disparaître tous les êtres vivants de la terre : {{gender:les humains|les hommes}}, les animaux, les petites bêtes et les oiseaux. Ils avaient tous disparu. Seuls Noé et ceux qui étaient avec lui dans l’arche sont restés en vie."
+        },
+        "sw": {
+          "L": "Akafuta kila kiumbe hai kilichokuwa juu ya uso wa ardhi, tangu mwanadamu hadi wanyama, hadi vitambaavyo, na hadi ndege wa angani; vikafutwa kutoka duniani. Akabaki Nuhu peke yake, na wale [waliokuwa] pamoja naye ndani ya safina.",
+          "B": "Hivyo kila kiumbe hai juu ya uso wa dunia kilifutiliwa mbali, tangu wanadamu hadi wanyama, viumbe vitambaavyo ardhini na ndege wa angani. Vilifutwa kutoka duniani. Alibaki Nuhu peke yake, na wale waliokuwa pamoja naye ndani ya safina.",
+          "R": "Mungu aliangamiza kila kiumbe hai duniani: watu, wanyama, viumbe vidogo na ndege. Wote walitoweka. Ni Nuhu tu na wale waliokuwa pamoja naye ndani ya safina waliobaki hai."
         }
       },
       "decisions": [
@@ -2046,6 +2395,25 @@
           "reason": "Balanced puts the sentence in the passive, since the next words say \"they were wiped out\"; God is the one who acts, as Literal and Readable say.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o010070230012"
+          ],
+          "choice": "\"Akafuta\", with no deity pronoun span",
+          "alternatives": [
+            "\"Naye akafuta\" with a span on \"naye\""
+          ],
+          "reason": "The Hebrew has only the verb, and Swahili marks \"he\" inside the verb, where no capital is possible, so the English span on \"He\" has no Swahili counterpart.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2084,6 +2452,16 @@
           "L": "Y prevalecieron las aguas sobre la tierra 150 días.",
           "B": "Las aguas inundaron la tierra durante 150 días.",
           "R": "El agua se mantuvo alta sobre la tierra durante 150 días."
+        },
+        "fr": {
+          "L": "Et les eaux prévalurent sur la terre 150 jours.",
+          "B": "Les eaux inondèrent la terre pendant 150 jours.",
+          "R": "L’eau est restée haute sur la terre pendant 150 jours."
+        },
+        "sw": {
+          "L": "Na maji yakashinda juu ya dunia siku 150.",
+          "B": "Maji yaliifunika dunia kwa siku 150.",
+          "R": "Maji yalibaki juu sana duniani kwa siku 150."
         }
       },
       "decisions": [

@@ -38,6 +38,16 @@
           "L": "Este [es] el libro de las generaciones de Adán. En el día en que Dios creó {{gender:a los seres humanos|al hombre}}, a semejanza de Dios {{gender:los|lo}} hizo.",
           "B": "Este es el registro escrito de la descendencia de Adán. Cuando Dios creó {{gender:a los seres humanos|al hombre}}, {{gender:los|lo}} hizo a semejanza de Dios.",
           "R": "Esta es la lista de la familia de Adán. Cuando Dios creó {{gender:a las personas|al hombre}}, {{gender:las hizo parecidas|lo hizo parecido}} a Dios."
+        },
+        "fr": {
+          "L": "Ceci [est] le livre des générations d’Adam. Au jour où Dieu créa {{gender:l’humanité|l’homme}}, à la ressemblance de Dieu {{deity_pronoun:il|Il}} {{gender:la|le}} fit.",
+          "B": "Voici le récit écrit de la descendance d’Adam. Lorsque Dieu créa {{gender:les êtres humains|l’homme}}, {{deity_pronoun:il|Il}} {{gender:les fit|le fit}} à la ressemblance de Dieu.",
+          "R": "Voici la liste de la famille d’Adam. Quand Dieu a créé {{gender:les humains|l’homme}}, {{deity_pronoun:il|Il}} {{gender:les a faits semblables|l’a fait semblable}} à Dieu."
+        },
+        "sw": {
+          "L": "Hiki [ni] kitabu cha vizazi vya Adamu. Siku ile Mungu alipowaumba wanadamu, aliwafanya kwa mfano wa Mungu.",
+          "B": "Hii ni kumbukumbu iliyoandikwa ya ukoo wa Adamu. Mungu alipowaumba wanadamu, aliwafanya kwa mfano wa Mungu.",
+          "R": "Hii ni orodha ya jamaa ya Adamu. Mungu alipowaumba watu, aliwafanya wafanane {{deity_pronoun:naye|Naye}}."
         }
       },
       "decisions": [
@@ -131,6 +141,72 @@
           "reason": "As in English: the word means human beings of both sexes, so the default is inclusive and plural; the gender setting gives the traditional singular \"al hombre ... lo\". Spanish puts the object pronoun (and at Readable the agreeing adjective, \"parecidas\" / \"parecido\") inside the span so that it agrees with the noun chosen.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o010050010111"
+          ],
+          "choice": "passé simple (L, B); passé composé (R)",
+          "alternatives": [
+            "passé composé at every level"
+          ],
+          "reason": "French narrative tense by level, as the French style guide sets it: the passé simple of written narrative at Literal and Balanced (\"créa\", \"vécut\", \"engendra\"), the passé composé of spoken French at Readable (\"a créé\", \"a vécu\").",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-2",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o010050010081",
+            "o010050010121",
+            "o010050010122"
+          ],
+          "choice": "{{gender:l’humanité|l’homme}} (L), {{gender:les êtres humains|l’homme}} (B), {{gender:les humains|l’homme}} (R)",
+          "alternatives": [
+            "l'homme without a setting"
+          ],
+          "reason": "As the English: the word means human beings of both sexes, so the default is inclusive and the gender setting gives the traditional \"l'homme\". The pronoun and the verb that agree with the noun (\"la\", \"les fit\", \"les a faits semblables\") are under the same setting, so each option reads as one sentence.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o010050010081"
+          ],
+          "choice": "wanadamu (L, B), watu (R), with no gender span",
+          "alternatives": [
+            "mwanadamu",
+            "binadamu"
+          ],
+          "reason": "Swahili \"wanadamu\" and \"watu\" already mean human beings of both sexes, and the only \"traditional\" alternative, \"wanaume\", would mean males and change the meaning, so the Swahili has no gender span here or in verse 2 (style guide). The plural follows the English default \"them\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -177,6 +253,16 @@
           "L": "Varón y hembra los creó, y los bendijo, y llamó su nombre {{gender:Humanidad|Hombre}} en el día en que fueron creados.",
           "B": "Los creó hombre y mujer, los bendijo y les dio el nombre de {{gender:Humanidad|Hombre}} cuando fueron creados.",
           "R": "Los hizo hombre y mujer. Los bendijo y les puso el nombre de {{gender:Humanidad|Hombre}} el día en que los hizo."
+        },
+        "fr": {
+          "L": "Mâle et femelle {{deity_pronoun:il|Il}} les créa ; {{deity_pronoun:il|Il}} les bénit et appela leur nom {{gender:Humanité|Homme}} au jour où ils furent créés.",
+          "B": "Il les créa homme et femme. Il les bénit et leur donna le nom d’{{gender:Humanité|Homme}} lorsqu’ils furent créés.",
+          "R": "Il les a faits homme et femme. Il les a bénis et leur a donné le nom d’{{gender:Humain|Homme}} le jour où {{deity_pronoun:il|Il}} les a faits."
+        },
+        "sw": {
+          "L": "Mwanamume na mwanamke aliwaumba, akawabariki, akawaita jina lao Mwanadamu siku ile walipoumbwa.",
+          "B": "Aliwaumba mwanamume na mwanamke. Akawabariki, akawaita Mwanadamu walipoumbwa.",
+          "R": "Aliwafanya mwanamume na mwanamke. Akawabariki, akawapa jina Mwanadamu siku ile alipowafanya."
         }
       },
       "decisions": [
@@ -291,6 +377,16 @@
           "L": "Y vivió Adán 130 años y engendró [un hijo] en su semejanza, según su imagen, y le dio el nombre de Set.",
           "B": "Cuando Adán había vivido 130 años, tuvo un hijo a su propia semejanza y a su propia imagen, y le puso por nombre Set.",
           "R": "Cuando Adán tenía 130 años, tuvo un hijo que se parecía a él, y lo llamó Set."
+        },
+        "fr": {
+          "L": "Et Adam vécut 130 ans et engendra [un fils] à sa ressemblance, selon son image, et il appela son nom Seth.",
+          "B": "Lorsqu’Adam eut vécu 130 ans, il eut un fils à sa propre ressemblance, à sa propre image, et il l’appela Seth.",
+          "R": "Quand Adam avait 130 ans, il a eu un fils qui lui ressemblait, et il l’a appelé Seth."
+        },
+        "sw": {
+          "L": "Naye Adamu akaishi miaka 130, akazaa [mwana] kwa mfano wake, kwa sura yake, akamwita jina lake Sethi.",
+          "B": "Adamu alipokuwa ameishi miaka 130, alipata mwana aliyefanana naye, kwa sura yake mwenyewe, akamwita Sethi.",
+          "R": "Adamu alipokuwa na umri wa miaka 130, alipata mtoto wa kiume aliyefanana naye, akamwita Sethi."
         }
       },
       "decisions": [
@@ -457,6 +553,50 @@
           "reason": "At Literal the Hebrew \"called his name\" is kept as \"llamó su nombre\" only where the object is a group (5:2); for one person Spanish \"le dio el nombre de\" keeps the act of naming without the Hebraism.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o010050030031",
+            "o010050030042"
+          ],
+          "choice": "130 ans; numbers over ninety-nine in figures, smaller numbers in words (\"quatre-vingt-dix\", \"soixante-cinq\")",
+          "alternatives": [
+            "cent trente ans"
+          ],
+          "reason": "As the English, French gives the larger number first and writes the ages over ninety-nine in figures through the chapter, so the list can be read and compared at a glance.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o010050030031",
+            "o010050030042"
+          ],
+          "choice": "miaka 130; numbers over ninety-nine in figures, smaller numbers in words (\"tisini\", \"sitini na tano\")",
+          "alternatives": [
+            "miaka mia moja na thelathini"
+          ],
+          "reason": "As the English, Swahili writes the ages over ninety-nine in figures through the chapter; the long Swahili number words (\"mia tisa na kumi na mbili\") would make the list hard to follow.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -501,6 +641,16 @@
           "L": "Y fueron los días de Adán, después de engendrar a Set, 800 años, y engendró hijos e hijas.",
           "B": "Después del nacimiento de Set, Adán vivió 800 años y tuvo otros hijos e hijas.",
           "R": "Después de tener a Set, Adán vivió 800 años más. Tuvo también otros hijos e hijas."
+        },
+        "fr": {
+          "L": "Et les jours d’Adam, après qu’il eut engendré Seth, furent 800 ans, et il engendra des fils et des filles.",
+          "B": "Après la naissance de Seth, Adam vécut 800 ans et eut d’autres fils et d’autres filles.",
+          "R": "Après la naissance de Seth, Adam a encore vécu 800 ans. Il a eu aussi d’autres fils et d’autres filles."
+        },
+        "sw": {
+          "L": "Na siku za Adamu baada ya kumzaa Sethi zilikuwa miaka 800, akazaa wana wa kiume na wa kike.",
+          "B": "Baada ya Sethi kuzaliwa, Adamu aliishi miaka 800, akapata wana wengine wa kiume na wa kike.",
+          "R": "Baada ya Sethi kuzaliwa, Adamu aliishi miaka 800 zaidi. Alipata pia watoto wengine wa kiume na wa kike."
         }
       },
       "decisions": [
@@ -586,6 +736,16 @@
           "L": "Y fueron todos los días que vivió Adán 930 años, y murió.",
           "B": "En total, Adán vivió 930 años, y después murió.",
           "R": "Adán vivió hasta los 930 años, y luego murió."
+        },
+        "fr": {
+          "L": "Et tous les jours qu’Adam vécut furent 930 ans, et il mourut.",
+          "B": "En tout, Adam vécut 930 ans, puis il mourut.",
+          "R": "Adam a vécu jusqu’à l’âge de 930 ans, et puis il est mort."
+        },
+        "sw": {
+          "L": "Na siku zote alizoishi Adamu zilikuwa miaka 930, akafa.",
+          "B": "Kwa jumla, Adamu aliishi miaka 930, kisha akafa.",
+          "R": "Adamu aliishi mpaka umri wa miaka 930, kisha akafa."
         }
       },
       "decisions": [
@@ -662,6 +822,16 @@
           "L": "Y vivió Set 105 años y engendró a Enós.",
           "B": "Cuando Set había vivido 105 años, fue padre de Enós.",
           "R": "Cuando Set tenía 105 años, tuvo un hijo llamado Enós."
+        },
+        "fr": {
+          "L": "Et Seth vécut 105 ans et engendra Énosh.",
+          "B": "Lorsque Seth eut vécu 105 ans, il devint le père d’Énosh.",
+          "R": "Quand Seth avait 105 ans, il a eu un fils appelé Énosh."
+        },
+        "sw": {
+          "L": "Naye Sethi akaishi miaka 105, akamzaa Enoshi.",
+          "B": "Sethi alipokuwa ameishi miaka 105, akawa baba wa Enoshi.",
+          "R": "Sethi alipokuwa na umri wa miaka 105, alipata mtoto wa kiume aliyeitwa Enoshi."
         }
       },
       "decisions": [],
@@ -709,6 +879,16 @@
           "L": "Y vivió Set, después de engendrar a Enós, 807 años, y engendró hijos e hijas.",
           "B": "Después del nacimiento de Enós, Set vivió 807 años y tuvo otros hijos e hijas.",
           "R": "Después de tener a Enós, Set vivió 807 años más. Tuvo también otros hijos e hijas."
+        },
+        "fr": {
+          "L": "Et Seth vécut, après avoir engendré Énosh, 807 ans, et il engendra des fils et des filles.",
+          "B": "Après la naissance d’Énosh, Seth vécut 807 ans et eut d’autres fils et d’autres filles.",
+          "R": "Après la naissance d’Énosh, Seth a encore vécu 807 ans. Il a eu aussi d’autres fils et d’autres filles."
+        },
+        "sw": {
+          "L": "Naye Sethi akaishi baada ya kumzaa Enoshi miaka 807, akazaa wana wa kiume na wa kike.",
+          "B": "Baada ya Enoshi kuzaliwa, Sethi aliishi miaka 807, akapata wana wengine wa kiume na wa kike.",
+          "R": "Baada ya Enoshi kuzaliwa, Sethi aliishi miaka 807 zaidi. Alipata pia watoto wengine wa kiume na wa kike."
         }
       },
       "decisions": [],
@@ -751,6 +931,16 @@
           "L": "Y fueron todos los días de Set 912 años, y murió.",
           "B": "En total, Set vivió 912 años, y después murió.",
           "R": "Set vivió hasta los 912 años, y luego murió."
+        },
+        "fr": {
+          "L": "Et tous les jours de Seth furent 912 ans, et il mourut.",
+          "B": "En tout, Seth vécut 912 ans, puis il mourut.",
+          "R": "Seth a vécu jusqu’à l’âge de 912 ans, et puis il est mort."
+        },
+        "sw": {
+          "L": "Na siku zote za Sethi zilikuwa miaka 912, akafa.",
+          "B": "Kwa jumla, Sethi aliishi miaka 912, kisha akafa.",
+          "R": "Sethi aliishi mpaka umri wa miaka 912, kisha akafa."
         }
       },
       "decisions": [],
@@ -788,6 +978,16 @@
           "L": "Y vivió Enós noventa años y engendró a Cainán.",
           "B": "Cuando Enós había vivido noventa años, fue padre de Cainán.",
           "R": "Cuando Enós tenía noventa años, tuvo un hijo llamado Cainán."
+        },
+        "fr": {
+          "L": "Et Énosh vécut quatre-vingt-dix ans et engendra Kénan.",
+          "B": "Lorsqu’Énosh eut vécu quatre-vingt-dix ans, il devint le père de Kénan.",
+          "R": "Quand Énosh avait quatre-vingt-dix ans, il a eu un fils appelé Kénan."
+        },
+        "sw": {
+          "L": "Naye Enoshi akaishi miaka tisini, akamzaa Kenani.",
+          "B": "Enoshi alipokuwa ameishi miaka tisini, akawa baba wa Kenani.",
+          "R": "Enoshi alipokuwa na umri wa miaka tisini, alipata mtoto wa kiume aliyeitwa Kenani."
         }
       },
       "decisions": [
@@ -802,6 +1002,49 @@
           "choice": "Kenan: names like those in Cain's line",
           "alternatives": [],
           "reason": "Several names in this line resemble names in Cain's (4:17-18): Kenan and Cain, Jared and Irad, Enoch, Methuselah and Methushael, Lamech. The two lines are set side by side, and the two men named Enoch and Lamech are very different (4:23-24; 5:24, 29).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010050090071"
+          ],
+          "choice": "Kénan",
+          "alternatives": [
+            "Qénân",
+            "Kaïnan"
+          ],
+          "reason": "The Hebrew name (Qenan) is transcribed as the English does; \"Kaïnan\", the form in Luke 3:37, follows the Greek of the Septuagint and belongs to Luke.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010050090071"
+          ],
+          "choice": "Kenani",
+          "alternatives": [
+            "Kainani"
+          ],
+          "reason": "The Hebrew name (Qenan) is transcribed as the English does; \"Kainani\", the form in Luke 3:37, follows the Greek and belongs to Luke.",
           "uncertain": false,
           "footnote": false
         }
@@ -851,6 +1094,16 @@
           "L": "Y vivió Enós, después de engendrar a Cainán, 815 años, y engendró hijos e hijas.",
           "B": "Después del nacimiento de Cainán, Enós vivió 815 años y tuvo otros hijos e hijas.",
           "R": "Después de tener a Cainán, Enós vivió 815 años más. Tuvo también otros hijos e hijas."
+        },
+        "fr": {
+          "L": "Et Énosh vécut, après avoir engendré Kénan, 815 ans, et il engendra des fils et des filles.",
+          "B": "Après la naissance de Kénan, Énosh vécut 815 ans et eut d’autres fils et d’autres filles.",
+          "R": "Après la naissance de Kénan, Énosh a encore vécu 815 ans. Il a eu aussi d’autres fils et d’autres filles."
+        },
+        "sw": {
+          "L": "Naye Enoshi akaishi baada ya kumzaa Kenani miaka 815, akazaa wana wa kiume na wa kike.",
+          "B": "Baada ya Kenani kuzaliwa, Enoshi aliishi miaka 815, akapata wana wengine wa kiume na wa kike.",
+          "R": "Baada ya Kenani kuzaliwa, Enoshi aliishi miaka 815 zaidi. Alipata pia watoto wengine wa kiume na wa kike."
         }
       },
       "decisions": [],
@@ -892,6 +1145,16 @@
           "L": "Y fueron todos los días de Enós 905 años, y murió.",
           "B": "En total, Enós vivió 905 años, y después murió.",
           "R": "Enós vivió hasta los 905 años, y luego murió."
+        },
+        "fr": {
+          "L": "Et tous les jours d’Énosh furent 905 ans, et il mourut.",
+          "B": "En tout, Énosh vécut 905 ans, puis il mourut.",
+          "R": "Énosh a vécu jusqu’à l’âge de 905 ans, et puis il est mort."
+        },
+        "sw": {
+          "L": "Na siku zote za Enoshi zilikuwa miaka 905, akafa.",
+          "B": "Kwa jumla, Enoshi aliishi miaka 905, kisha akafa.",
+          "R": "Enoshi aliishi mpaka umri wa miaka 905, kisha akafa."
         }
       },
       "decisions": [],
@@ -929,6 +1192,16 @@
           "L": "Y vivió Cainán setenta años y engendró a Mahalaleel.",
           "B": "Cuando Cainán había vivido setenta años, fue padre de Mahalaleel.",
           "R": "Cuando Cainán tenía setenta años, tuvo un hijo llamado Mahalaleel."
+        },
+        "fr": {
+          "L": "Et Kénan vécut soixante-dix ans et engendra Mahalaleel.",
+          "B": "Lorsque Kénan eut vécu soixante-dix ans, il devint le père de Mahalaleel.",
+          "R": "Quand Kénan avait soixante-dix ans, il a eu un fils appelé Mahalaleel."
+        },
+        "sw": {
+          "L": "Naye Kenani akaishi miaka sabini, akamzaa Mahalaleli.",
+          "B": "Kenani alipokuwa ameishi miaka sabini, akawa baba wa Mahalaleli.",
+          "R": "Kenani alipokuwa na umri wa miaka sabini, alipata mtoto wa kiume aliyeitwa Mahalaleli."
         }
       },
       "decisions": [],
@@ -976,6 +1249,16 @@
           "L": "Y vivió Cainán, después de engendrar a Mahalaleel, 840 años, y engendró hijos e hijas.",
           "B": "Después del nacimiento de Mahalaleel, Cainán vivió 840 años y tuvo otros hijos e hijas.",
           "R": "Después de tener a Mahalaleel, Cainán vivió 840 años más. Tuvo también otros hijos e hijas."
+        },
+        "fr": {
+          "L": "Et Kénan vécut, après avoir engendré Mahalaleel, 840 ans, et il engendra des fils et des filles.",
+          "B": "Après la naissance de Mahalaleel, Kénan vécut 840 ans et eut d’autres fils et d’autres filles.",
+          "R": "Après la naissance de Mahalaleel, Kénan a encore vécu 840 ans. Il a eu aussi d’autres fils et d’autres filles."
+        },
+        "sw": {
+          "L": "Naye Kenani akaishi baada ya kumzaa Mahalaleli miaka 840, akazaa wana wa kiume na wa kike.",
+          "B": "Baada ya Mahalaleli kuzaliwa, Kenani aliishi miaka 840, akapata wana wengine wa kiume na wa kike.",
+          "R": "Baada ya Mahalaleli kuzaliwa, Kenani aliishi miaka 840 zaidi. Alipata pia watoto wengine wa kiume na wa kike."
         }
       },
       "decisions": [],
@@ -1017,6 +1300,16 @@
           "L": "Y fueron todos los días de Cainán 910 años, y murió.",
           "B": "En total, Cainán vivió 910 años, y después murió.",
           "R": "Cainán vivió hasta los 910 años, y luego murió."
+        },
+        "fr": {
+          "L": "Et tous les jours de Kénan furent 910 ans, et il mourut.",
+          "B": "En tout, Kénan vécut 910 ans, puis il mourut.",
+          "R": "Kénan a vécu jusqu’à l’âge de 910 ans, et puis il est mort."
+        },
+        "sw": {
+          "L": "Na siku zote za Kenani zilikuwa miaka 910, akafa.",
+          "B": "Kwa jumla, Kenani aliishi miaka 910, kisha akafa.",
+          "R": "Kenani aliishi mpaka umri wa miaka 910, kisha akafa."
         }
       },
       "decisions": [],
@@ -1057,6 +1350,16 @@
           "L": "Y vivió Mahalaleel sesenta y cinco años y engendró a Jared.",
           "B": "Cuando Mahalaleel había vivido sesenta y cinco años, fue padre de Jared.",
           "R": "Cuando Mahalaleel tenía sesenta y cinco años, tuvo un hijo llamado Jared."
+        },
+        "fr": {
+          "L": "Et Mahalaleel vécut soixante-cinq ans et engendra Jared.",
+          "B": "Lorsque Mahalaleel eut vécu soixante-cinq ans, il devint le père de Jared.",
+          "R": "Quand Mahalaleel avait soixante-cinq ans, il a eu un fils appelé Jared."
+        },
+        "sw": {
+          "L": "Naye Mahalaleli akaishi miaka sitini na tano, akamzaa Yaredi.",
+          "B": "Mahalaleli alipokuwa ameishi miaka sitini na tano, akawa baba wa Yaredi.",
+          "R": "Mahalaleli alipokuwa na umri wa miaka sitini na tano, alipata mtoto wa kiume aliyeitwa Yaredi."
         }
       },
       "decisions": [],
@@ -1104,6 +1407,16 @@
           "L": "Y vivió Mahalaleel, después de engendrar a Jared, 830 años, y engendró hijos e hijas.",
           "B": "Después del nacimiento de Jared, Mahalaleel vivió 830 años y tuvo otros hijos e hijas.",
           "R": "Después de tener a Jared, Mahalaleel vivió 830 años más. Tuvo también otros hijos e hijas."
+        },
+        "fr": {
+          "L": "Et Mahalaleel vécut, après avoir engendré Jared, 830 ans, et il engendra des fils et des filles.",
+          "B": "Après la naissance de Jared, Mahalaleel vécut 830 ans et eut d’autres fils et d’autres filles.",
+          "R": "Après la naissance de Jared, Mahalaleel a encore vécu 830 ans. Il a eu aussi d’autres fils et d’autres filles."
+        },
+        "sw": {
+          "L": "Naye Mahalaleli akaishi baada ya kumzaa Yaredi miaka 830, akazaa wana wa kiume na wa kike.",
+          "B": "Baada ya Yaredi kuzaliwa, Mahalaleli aliishi miaka 830, akapata wana wengine wa kiume na wa kike.",
+          "R": "Baada ya Yaredi kuzaliwa, Mahalaleli aliishi miaka 830 zaidi. Alipata pia watoto wengine wa kiume na wa kike."
         }
       },
       "decisions": [],
@@ -1147,6 +1460,16 @@
           "L": "Y fueron todos los días de Mahalaleel 895 años, y murió.",
           "B": "En total, Mahalaleel vivió 895 años, y después murió.",
           "R": "Mahalaleel vivió hasta los 895 años, y luego murió."
+        },
+        "fr": {
+          "L": "Et tous les jours de Mahalaleel furent 895 ans, et il mourut.",
+          "B": "En tout, Mahalaleel vécut 895 ans, puis il mourut.",
+          "R": "Mahalaleel a vécu jusqu’à l’âge de 895 ans, et puis il est mort."
+        },
+        "sw": {
+          "L": "Na siku zote za Mahalaleli zilikuwa miaka 895, akafa.",
+          "B": "Kwa jumla, Mahalaleli aliishi miaka 895, kisha akafa.",
+          "R": "Mahalaleli aliishi mpaka umri wa miaka 895, kisha akafa."
         }
       },
       "decisions": [],
@@ -1189,6 +1512,16 @@
           "L": "Y vivió Jared 162 años y engendró a Enoc.",
           "B": "Cuando Jared había vivido 162 años, fue padre de Enoc.",
           "R": "Cuando Jared tenía 162 años, tuvo un hijo llamado Enoc."
+        },
+        "fr": {
+          "L": "Et Jared vécut 162 ans et engendra Hénoch.",
+          "B": "Lorsque Jared eut vécu 162 ans, il devint le père d’Hénoch.",
+          "R": "Quand Jared avait 162 ans, il a eu un fils appelé Hénoch."
+        },
+        "sw": {
+          "L": "Naye Yaredi akaishi miaka 162, akamzaa Henoko.",
+          "B": "Yaredi alipokuwa ameishi miaka 162, akawa baba wa Henoko.",
+          "R": "Yaredi alipokuwa na umri wa miaka 162, alipata mtoto wa kiume aliyeitwa Henoko."
         }
       },
       "decisions": [],
@@ -1233,6 +1566,16 @@
           "L": "Y vivió Jared, después de engendrar a Enoc, 800 años, y engendró hijos e hijas.",
           "B": "Después del nacimiento de Enoc, Jared vivió 800 años y tuvo otros hijos e hijas.",
           "R": "Después de tener a Enoc, Jared vivió 800 años más. Tuvo también otros hijos e hijas."
+        },
+        "fr": {
+          "L": "Et Jared vécut, après avoir engendré Hénoch, 800 ans, et il engendra des fils et des filles.",
+          "B": "Après la naissance d’Hénoch, Jared vécut 800 ans et eut d’autres fils et d’autres filles.",
+          "R": "Après la naissance d’Hénoch, Jared a encore vécu 800 ans. Il a eu aussi d’autres fils et d’autres filles."
+        },
+        "sw": {
+          "L": "Naye Yaredi akaishi baada ya kumzaa Henoko miaka 800, akazaa wana wa kiume na wa kike.",
+          "B": "Baada ya Henoko kuzaliwa, Yaredi aliishi miaka 800, akapata wana wengine wa kiume na wa kike.",
+          "R": "Baada ya Henoko kuzaliwa, Yaredi aliishi miaka 800 zaidi. Alipata pia watoto wengine wa kiume na wa kike."
         }
       },
       "decisions": [],
@@ -1276,6 +1619,16 @@
           "L": "Y fueron todos los días de Jared 962 años, y murió.",
           "B": "En total, Jared vivió 962 años, y después murió.",
           "R": "Jared vivió hasta los 962 años, y luego murió."
+        },
+        "fr": {
+          "L": "Et tous les jours de Jared furent 962 ans, et il mourut.",
+          "B": "En tout, Jared vécut 962 ans, puis il mourut.",
+          "R": "Jared a vécu jusqu’à l’âge de 962 ans, et puis il est mort."
+        },
+        "sw": {
+          "L": "Na siku zote za Yaredi zilikuwa miaka 962, akafa.",
+          "B": "Kwa jumla, Yaredi aliishi miaka 962, kisha akafa.",
+          "R": "Yaredi aliishi mpaka umri wa miaka 962, kisha akafa."
         }
       },
       "decisions": [],
@@ -1315,6 +1668,16 @@
           "L": "Y vivió Enoc sesenta y cinco años y engendró a Matusalén.",
           "B": "Cuando Enoc había vivido sesenta y cinco años, fue padre de Matusalén.",
           "R": "Cuando Enoc tenía sesenta y cinco años, tuvo un hijo llamado Matusalén."
+        },
+        "fr": {
+          "L": "Et Hénoch vécut soixante-cinq ans et engendra Mathusalem.",
+          "B": "Lorsqu’Hénoch eut vécu soixante-cinq ans, il devint le père de Mathusalem.",
+          "R": "Quand Hénoch avait soixante-cinq ans, il a eu un fils appelé Mathusalem."
+        },
+        "sw": {
+          "L": "Naye Henoko akaishi miaka sitini na tano, akamzaa Methusela.",
+          "B": "Henoko alipokuwa ameishi miaka sitini na tano, akawa baba wa Methusela.",
+          "R": "Henoko alipokuwa na umri wa miaka sitini na tano, alipata mtoto wa kiume aliyeitwa Methusela."
         }
       },
       "decisions": [],
@@ -1362,6 +1725,16 @@
           "L": "Y anduvo Enoc con Dios, después de engendrar a Matusalén, 300 años, y engendró hijos e hijas.",
           "B": "Después del nacimiento de Matusalén, Enoc anduvo con Dios 300 años y tuvo otros hijos e hijas.",
           "R": "Después de tener a Matusalén, Enoc vivió muy unido a Dios durante 300 años. Tuvo también otros hijos e hijas."
+        },
+        "fr": {
+          "L": "Et Hénoch marcha avec Dieu, après avoir engendré Mathusalem, 300 ans, et il engendra des fils et des filles.",
+          "B": "Après la naissance de Mathusalem, Hénoch marcha avec Dieu 300 ans et eut d’autres fils et d’autres filles.",
+          "R": "Après la naissance de Mathusalem, Hénoch a vécu proche de Dieu pendant 300 ans. Il a eu aussi d’autres fils et d’autres filles."
+        },
+        "sw": {
+          "L": "Naye Henoko akatembea pamoja na Mungu baada ya kumzaa Methusela miaka 300, akazaa wana wa kiume na wa kike.",
+          "B": "Baada ya Methusela kuzaliwa, Henoko alitembea pamoja na Mungu miaka 300, akapata wana wengine wa kiume na wa kike.",
+          "R": "Baada ya Methusela kuzaliwa, Henoko aliishi karibu na Mungu kwa miaka 300. Alipata pia watoto wengine wa kiume na wa kike."
         }
       },
       "decisions": [
@@ -1467,6 +1840,16 @@
           "L": "Y fueron todos los días de Enoc 365 años.",
           "B": "En total, Enoc vivió 365 años.",
           "R": "Enoc vivió 365 años en la tierra."
+        },
+        "fr": {
+          "L": "Et tous les jours d’Hénoch furent 365 ans.",
+          "B": "En tout, Hénoch vécut 365 ans.",
+          "R": "Hénoch a vécu 365 ans sur la terre."
+        },
+        "sw": {
+          "L": "Na siku zote za Henoko zilikuwa miaka 365.",
+          "B": "Kwa jumla, Henoko aliishi miaka 365.",
+          "R": "Henoko aliishi duniani miaka 365."
         }
       },
       "decisions": [
@@ -1544,6 +1927,16 @@
           "L": "Y anduvo Enoc con Dios, y ya no estaba, porque lo tomó Dios.",
           "B": "Enoc anduvo con Dios, y después ya no estuvo más, porque Dios se lo llevó.",
           "R": "Enoc vivió muy unido a Dios. Un día desapareció, porque Dios se lo llevó."
+        },
+        "fr": {
+          "L": "Et Hénoch marcha avec Dieu, et il ne fut plus, car Dieu le prit.",
+          "B": "Hénoch marcha avec Dieu, puis on ne le vit plus, car Dieu l’avait enlevé.",
+          "R": "Hénoch a vécu proche de Dieu. Puis un jour, il n’était plus là, parce que Dieu l’avait emmené."
+        },
+        "sw": {
+          "L": "Naye Henoko akatembea pamoja na Mungu, naye hakuwepo, kwa maana Mungu alimchukua.",
+          "B": "Henoko alitembea pamoja na Mungu, kisha hakuonekana tena, kwa sababu Mungu alimchukua.",
+          "R": "Henoko aliishi karibu na Mungu. Kisha siku moja hakuwepo tena, kwa sababu Mungu alikuwa amemchukua."
         }
       },
       "decisions": [
@@ -1633,6 +2026,16 @@
           "L": "Y vivió Matusalén 187 años y engendró a Lamec.",
           "B": "Cuando Matusalén había vivido 187 años, fue padre de Lamec.",
           "R": "Cuando Matusalén tenía 187 años, tuvo un hijo llamado Lamec."
+        },
+        "fr": {
+          "L": "Et Mathusalem vécut 187 ans et engendra Lamech.",
+          "B": "Lorsque Mathusalem eut vécu 187 ans, il devint le père de Lamech.",
+          "R": "Quand Mathusalem avait 187 ans, il a eu un fils appelé Lamech."
+        },
+        "sw": {
+          "L": "Naye Methusela akaishi miaka 187, akamzaa Lameki.",
+          "B": "Methusela alipokuwa ameishi miaka 187, akawa baba wa Lameki.",
+          "R": "Methusela alipokuwa na umri wa miaka 187, alipata mtoto wa kiume aliyeitwa Lameki."
         }
       },
       "decisions": [],
@@ -1682,6 +2085,16 @@
           "L": "Y vivió Matusalén, después de engendrar a Lamec, 782 años, y engendró hijos e hijas.",
           "B": "Después del nacimiento de Lamec, Matusalén vivió 782 años y tuvo otros hijos e hijas.",
           "R": "Después de tener a Lamec, Matusalén vivió 782 años más. Tuvo también otros hijos e hijas."
+        },
+        "fr": {
+          "L": "Et Mathusalem vécut, après avoir engendré Lamech, 782 ans, et il engendra des fils et des filles.",
+          "B": "Après la naissance de Lamech, Mathusalem vécut 782 ans et eut d’autres fils et d’autres filles.",
+          "R": "Après la naissance de Lamech, Mathusalem a encore vécu 782 ans. Il a eu aussi d’autres fils et d’autres filles."
+        },
+        "sw": {
+          "L": "Naye Methusela akaishi baada ya kumzaa Lameki miaka 782, akazaa wana wa kiume na wa kike.",
+          "B": "Baada ya Lameki kuzaliwa, Methusela aliishi miaka 782, akapata wana wengine wa kiume na wa kike.",
+          "R": "Baada ya Lameki kuzaliwa, Methusela aliishi miaka 782 zaidi. Alipata pia watoto wengine wa kiume na wa kike."
         }
       },
       "decisions": [],
@@ -1725,6 +2138,16 @@
           "L": "Y fueron todos los días de Matusalén 969 años, y murió.",
           "B": "En total, Matusalén vivió 969 años, y después murió.",
           "R": "Matusalén vivió hasta los 969 años, y luego murió."
+        },
+        "fr": {
+          "L": "Et tous les jours de Mathusalem furent 969 ans, et il mourut.",
+          "B": "En tout, Mathusalem vécut 969 ans, puis il mourut.",
+          "R": "Mathusalem a vécu jusqu’à l’âge de 969 ans, et puis il est mort."
+        },
+        "sw": {
+          "L": "Na siku zote za Methusela zilikuwa miaka 969, akafa.",
+          "B": "Kwa jumla, Methusela aliishi miaka 969, kisha akafa.",
+          "R": "Methusela aliishi mpaka umri wa miaka 969, kisha akafa."
         }
       },
       "decisions": [
@@ -1783,6 +2206,16 @@
           "L": "Y vivió Lamec 182 años y engendró un hijo.",
           "B": "Cuando Lamec había vivido 182 años, tuvo un hijo.",
           "R": "Cuando Lamec tenía 182 años, tuvo un hijo."
+        },
+        "fr": {
+          "L": "Et Lamech vécut 182 ans et engendra un fils.",
+          "B": "Lorsque Lamech eut vécu 182 ans, il eut un fils.",
+          "R": "Quand Lamech avait 182 ans, il a eu un fils."
+        },
+        "sw": {
+          "L": "Naye Lameki akaishi miaka 182, akazaa mwana.",
+          "B": "Lameki alipokuwa ameishi miaka 182, alipata mwana.",
+          "R": "Lameki alipokuwa na umri wa miaka 182, alipata mtoto wa kiume."
         }
       },
       "decisions": [
@@ -1852,6 +2285,16 @@
           "L": "Y le dio el nombre de Noé, diciendo: «Este nos consolará en nuestro trabajo y en la dolorosa fatiga de nuestras manos, [a causa] del suelo que {{divine_name:el SEÑOR|Yahvé}} ha maldecido».",
           "B": "Le puso por nombre Noé, y dijo: «Este nos dará alivio en nuestro trabajo y en la dura fatiga de nuestras manos, causada por el suelo que {{divine_name:el SEÑOR|Yahvé}} ha maldecido».",
           "R": "Le puso por nombre Noé. Dijo: «Este niño nos dará descanso de nuestro duro trabajo, de todo lo que tenemos que trabajar en la tierra que {{divine_name:el SEÑOR|Yahvé}} ha maldecido»."
+        },
+        "fr": {
+          "L": "Et il appela son nom Noé, disant : « Celui-ci nous consolera de notre travail et de la peine de nos mains, [qui vient] du sol que {{divine_name:le SEIGNEUR|Yahvé}} a maudit. »",
+          "B": "Il l’appela Noé, en disant : « Il nous apportera du soulagement dans notre travail et dans la peine de nos mains, causée par le sol que {{divine_name:le SEIGNEUR|Yahvé}} a maudit. »",
+          "R": "Il l’a appelé Noé. Il a dit : « Ce garçon nous donnera du repos dans notre travail pénible, dans tout ce dur labeur que nous devons faire sur la terre que {{divine_name:le SEIGNEUR|Yahvé}} a maudite. »"
+        },
+        "sw": {
+          "L": "Naye akamwita jina lake Nuhu, akisema, \"Huyu atatufariji katika kazi yetu na katika taabu ya mikono yetu, [itokayo] katika ardhi ambayo {{divine_name:BWANA|Yahwe}} ameilaani.\"",
+          "B": "Akamwita Nuhu, akisema, \"Yeye atatupumzisha kutoka katika kazi yetu na taabu ya mikono yetu, inayosababishwa na ardhi ambayo {{divine_name:BWANA|Yahwe}} ameilaani.\"",
+          "R": "Akamwita Nuhu. Akasema, \"Mtoto huyu atatupa pumziko kutoka katika kazi yetu ngumu, na kazi yote nzito tunayofanya katika ardhi ambayo {{divine_name:BWANA|Yahwe}} ameilaani.\""
         }
       },
       "decisions": [
@@ -1976,6 +2419,16 @@
           "L": "Y vivió Lamec, después de engendrar a Noé, 595 años, y engendró hijos e hijas.",
           "B": "Después del nacimiento de Noé, Lamec vivió 595 años y tuvo otros hijos e hijas.",
           "R": "Después de tener a Noé, Lamec vivió 595 años más. Tuvo también otros hijos e hijas."
+        },
+        "fr": {
+          "L": "Et Lamech vécut, après avoir engendré Noé, 595 ans, et il engendra des fils et des filles.",
+          "B": "Après la naissance de Noé, Lamech vécut 595 ans et eut d’autres fils et d’autres filles.",
+          "R": "Après la naissance de Noé, Lamech a encore vécu 595 ans. Il a eu aussi d’autres fils et d’autres filles."
+        },
+        "sw": {
+          "L": "Naye Lameki akaishi baada ya kumzaa Nuhu miaka 595, akazaa wana wa kiume na wa kike.",
+          "B": "Baada ya Nuhu kuzaliwa, Lameki aliishi miaka 595, akapata wana wengine wa kiume na wa kike.",
+          "R": "Baada ya Nuhu kuzaliwa, Lameki aliishi miaka 595 zaidi. Alipata pia watoto wengine wa kiume na wa kike."
         }
       },
       "decisions": [],
@@ -2019,6 +2472,16 @@
           "L": "Y fueron todos los días de Lamec 777 años, y murió.",
           "B": "En total, Lamec vivió 777 años, y después murió.",
           "R": "Lamec vivió hasta los 777 años, y luego murió."
+        },
+        "fr": {
+          "L": "Et tous les jours de Lamech furent 777 ans, et il mourut.",
+          "B": "En tout, Lamech vécut 777 ans, puis il mourut.",
+          "R": "Lamech a vécu jusqu’à l’âge de 777 ans, et puis il est mort."
+        },
+        "sw": {
+          "L": "Na siku zote za Lameki zilikuwa miaka 777, akafa.",
+          "B": "Kwa jumla, Lameki aliishi miaka 777, kisha akafa.",
+          "R": "Lameki aliishi mpaka umri wa miaka 777, kisha akafa."
         }
       },
       "decisions": [],
@@ -2064,6 +2527,16 @@
           "L": "Y tenía Noé 500 años, y engendró Noé a Sem, a Cam y a Jafet.",
           "B": "Después de cumplir 500 años, Noé fue padre de Sem, Cam y Jafet.",
           "R": "Cuando Noé tenía 500 años, tuvo tres hijos: Sem, Cam y Jafet."
+        },
+        "fr": {
+          "L": "Et Noé était âgé de 500 ans, et Noé engendra Sem, Cham et Japhet.",
+          "B": "Quand Noé eut 500 ans, il devint le père de Sem, de Cham et de Japhet.",
+          "R": "Quand Noé avait 500 ans, il a eu trois fils : Sem, Cham et Japhet."
+        },
+        "sw": {
+          "L": "Naye Nuhu alikuwa na umri wa miaka 500, naye Nuhu akawazaa Shemu, Hamu na Yafethi.",
+          "B": "Nuhu alipokuwa na umri wa miaka 500, akawa baba wa Shemu, Hamu na Yafethi.",
+          "R": "Nuhu alipokuwa na umri wa miaka 500, alipata wana watatu: Shemu, Hamu na Yafethi."
         }
       },
       "decisions": [
