@@ -169,13 +169,16 @@
     { id: "coverage", label: "Coverage", area: "overview", group: "Progress" },
     { id: "languages", label: "Languages", area: "overview", group: "Progress" },
     { id: "health", label: "Content health", area: "overview", group: "Progress" },
+    { id: "changes", label: "Changes", area: "overview", group: "Progress" },
     { id: "jobs", label: "Drafting jobs", area: "jobs", group: "Progress" },
     { id: "work", label: "Work in progress", area: "overview", group: "Progress" },
+    { id: "review", label: "Review", area: "review", group: "Text" },
     { id: "verse", label: "Verse inspector", area: "overview", group: "Text" },
     { id: "decisions", label: "Uncertain decisions", area: "overview", group: "Text" },
     { id: "terms", label: "Key terms", area: "overview", group: "Text" },
     { id: "consistency", label: "Consistency", area: "overview", group: "Text" },
     { id: "fixes", label: "Fix requests", area: "inbox", group: "Text" },
+    { id: "flags", label: "Reviewer flags", area: "inbox", group: "Text" },
     { id: "articles", label: "Articles", area: "overview", group: "Text" },
     { id: "export", label: "Export", area: "export", group: "Text" },
     { id: "overlap", label: "Similarity", area: "overview", group: "Text" },
@@ -1436,15 +1439,16 @@
   // Help & roles.
   var ROLES = [
     ["Super admin", "Everything, including the team, jobs and deleting accounts. Set by OWB_SUPER_ADMIN_EMAILS on the server."],
-    ["Editor", "The progress pages and the reader inbox."],
+    ["Editor", "The progress pages, the reader inbox, fix requests and reviewers' flags."],
     ["Reporting", "The progress pages only: dashboard, coverage, languages, content health, engagement."],
     ["User records", "The progress pages and readers' accounts (sign devices out; only a super admin deletes)."],
     ["Email", "The progress pages and team email."],
-    ["Scholar reviewer, language reviewer", "The progress pages for now. Review in the admin comes later; until then every sentence stays an AI-assisted draft."]
+    ["Scholar reviewer", "The progress pages and Review: approving or flagging the meaning of the sentences translated from their language (Greek: the New Testament; Hebrew: the Old)."],
+    ["Language reviewer", "The progress pages and Review: approving or flagging the wording in their language. Approving the meaning moves a sentence on from AI-assisted; wording approvals are kept per language."]
   ];
   VIEWS.help = function () {
     var sections = SECTIONS.filter(function (s) { return s.id !== "help"; });
-    var AREA = { overview: "Anyone on the team", export: "Anyone on the team", inbox: "Editors", users: "User records", email: "Email",
+    var AREA = { overview: "Anyone on the team", export: "Anyone on the team", review: "Reviewers", inbox: "Editors", users: "User records", email: "Email",
       jobs: "Super admins", team: "Super admins" };
     var out = [head("Team", "Help & roles", "What each role opens, and where things live. The admin shows you only the sections your roles open; the server checks every request again."),
       h("section", { class: "admin-block" }, h("h2", null, "Roles"),
@@ -1455,7 +1459,7 @@
         }))),
       h("section", { class: "admin-block" }, h("h2", null, "Good to know"), h("ul", null,
         h("li", null, "Numbers come from the database, which each deploy brings up to date from content/ on main. A merged pull request shows here after its deploy."),
-        h("li", null, "Nothing in the admin marks a sentence reviewed. Every sentence stays AI-assisted until review opens and a named person approves it."),
+        h("li", null, "Only a person marks a sentence reviewed, in Review, and every approval names who made it. A sentence an import changes after its approval goes back in the reviewer's queue."),
         h("li", null, "Your roles: " + (ME.roles.length ? ME.roles.map(function (r) { return r.label; }).join(", ") : "none") + ".")))];
     if (ME.is_super_admin) {
       out.push(h("p", null, "Records the admin doesn't cover yet are in the ", h("a", { href: API + "/admin/", rel: "noopener" }, "database admin"),
@@ -1604,6 +1608,226 @@
     SEARCH = { wrap: wrap, input: input };
     return wrap;
   }
+  // Review: a reviewer's queue for one layer (the meaning of the Greek or
+  // Hebrew, or one language's wording), then one sentence at a time.
+  var REVIEW_STATE = { not_reviewed: ["Not reviewed", ""], approved: ["Approved", "good"], changed: ["Changed since approval", "warn"],
+    flagged: ["Flagged", "bad"] };
+  function reviewPill(state) { return pill(REVIEW_STATE[state][0], REVIEW_STATE[state][1]); }
+  VIEWS.review = function (arg) {
+    var parts = arg ? arg.split("/") : [];
+    return parts[1] ? reviewSentence(parts[0], parts[1]) : reviewQueue(parts[0] || sessionTab("review.layer", ""));
+  };
+  function reviewQueue(layer) {
+    var filters = { book: sessionTab("review.book", ""), state: sessionTab("review.state", "todo") };
+    var body = h("div");
+    var more = h("button", { type: "button", class: "admin-btn", hidden: true }, "More");
+    var offset = 0, d = null, rows = null;
+    function query() {
+      return "/api/admin/review/?layer=" + encodeURIComponent(layer) + "&book=" + filters.book + "&state=" + filters.state + "&offset=" + offset;
+    }
+    function draw(page) {
+      if (!offset) {
+        body.textContent = "";
+        rows = h("tbody");
+        var c = page.counts;
+        body.appendChild(h("div", { class: "admin-tiles" },
+          tile(num(c.not_reviewed), "not reviewed"), tile(num(c.approved), "approved", "good"),
+          tile(num(c.changed), "changed since approval", c.changed ? "warn" : ""), tile(num(c.flagged), "flagged", c.flagged ? "bad" : "")));
+        body.appendChild(page.sentences.length ? h("div", { class: "admin-scroll" }, h("table", { class: "admin-table" },
+          h("thead", null, h("tr", null, h("th", null, "Sentence"), h("th", null, page.layer.kind === "meaning" ? "Literal gloss" : "Balanced"),
+            h("th", null, "State"), h("th", null, "Last"))), rows)) : empty("Nothing here with these filters."));
+      }
+      page.sentences.forEach(function (s) {
+        rows.appendChild(h("tr", null,
+          h("th", { scope: "row" }, h("a", { href: "#review/" + layer + "/" + s.record }, s.label), h("div", { class: "admin-sub" }, s.record)),
+          h("td", { class: "admin-wrap", lang: page.layer.kind === "meaning" ? "en" : layer }, rendering(s.preview)),
+          h("td", null, reviewPill(s.state)),
+          h("td", { class: "admin-sub" }, s.last ? s.last.label + ", " + s.last.by + ", " + when(s.last.at) : "—")));
+      });
+      more.hidden = !page.more;
+    }
+    function load() {
+      busy(more, true);
+      return api(query()).then(function (page) { d = d || page; layer = page.layer.code; draw(page); busy(more, false); return page; });
+    }
+    more.addEventListener("click", function () { offset += 50; load(); });
+    var status = h("p", { class: "admin-note", role: "status" });
+    function refilter() { offset = 0; rememberTab("review.book", filters.book); rememberTab("review.state", filters.state); load(); }
+    // A layer remembered from before may no longer be the account's.
+    return load().catch(function (e) {
+      if (e.status !== 403 || !layer) throw e;
+      layer = "";
+      return load();
+    }).then(function () {
+      rememberTab("review.layer", layer);
+      var layerSel = d.layers.length > 1 ? select("review-layer", d.layers.map(function (l) { return [l.code, l.name]; }), layer) : null;
+      if (layerSel) layerSel.addEventListener("change", function () { location.hash = "#review/" + layerSel.value; });
+      var bookSel = select("review-book", [["", "Every book"]].concat(d.books.map(function (b) { return [b.code, b.name]; })), filters.book);
+      bookSel.addEventListener("change", function () { filters.book = bookSel.value; refilter(); });
+      var stateSel = select("review-state", [["todo", "To review"], ["", "Every sentence"], ["not_reviewed", "Not reviewed"],
+        ["changed", "Changed since approval"], ["flagged", "Flagged"], ["approved", "Approved"]], filters.state);
+      stateSel.addEventListener("change", function () { filters.state = stateSel.value; refilter(); });
+      return [head("Text", "Review: " + d.layer.name, d.layer.kind === "meaning"
+        ? "Check what the " + d.layer.books + " says: the literal gloss and the meaning decisions behind every language. Approving moves a sentence on from AI-assisted."
+        : "Check how " + d.layer.name.replace(/ wording$/, "") + " says it, at every level, against the meaning. Each approval names you and holds until the wording changes."),
+        h("div", { class: "admin-toolbar" }, layerSel ? h("label", null, "Layer ", layerSel) : null,
+          h("label", null, "Book ", bookSel), h("label", null, "Show ", stateSel)),
+        status, body, more];
+    });
+  }
+  function reviewSentence(layer, record) {
+    return api("/api/admin/review/" + encodeURIComponent(record) + "/?layer=" + encodeURIComponent(layer)).then(function (d) {
+      var r = d.record, kind = d.layer.kind;
+      var names = {};
+      d.languages.forEach(function (l) { names[l.code] = l.name; });
+      var source = r.source.tokens.map(function (t) { return d.words[t]; });
+      var dir = r.source.language === "hbo" ? "rtl" : null;
+      var words = h("p", { class: "admin-source", lang: r.source.language, dir: dir }, source.length && source.every(Boolean)
+        ? source.map(function (w) { return [h("span", { title: [w.lemma, w.gloss, w.morph].filter(Boolean).join(" · ") }, w.text), " "]; })
+        : r.source.text);
+      var langs = kind === "meaning" ? Object.keys(r.renderings) : [layer];
+      var renderings = table(["Language", "Literal", "Balanced", "Readable"], langs.map(function (code) {
+        return h("tr", null, h("th", { scope: "row" }, names[code] || code), ["L", "B", "R"].map(function (lv) {
+          var t = r.renderings[code] && r.renderings[code][lv];
+          return h("td", { class: "admin-wrap", lang: code }, t ? rendering(t) : "—");
+        }));
+      }), "admin-renderings");
+      var meaning = r.decisions.filter(function (x) { return x.layer === "meaning"; });
+      var mine = r.decisions.filter(function (x) { return x.layer !== "meaning" && x.language === layer; });
+      var noteBox = h("textarea", { id: "review-note", rows: 3, maxlength: 4000,
+        placeholder: "A note: what is wrong (needed to flag), or anything the next reviewer should know" });
+      var status = h("p", { class: "admin-note", role: "status" });
+      function act(action, button) {
+        busy(button, true);
+        api("/api/admin/review/" + encodeURIComponent(record) + "/", { method: "POST", body: { layer: layer, action: action, note: noteBox.value } })
+          .then(function (res) {
+            FLASH = { approve: "Approved ", flag: "Flagged ", comment: "Comment added to " }[action] + d.label + ".";
+            if (action === "comment") route();
+            else location.hash = res.next ? "#review/" + layer + "/" + res.next : "#review/" + layer;
+          }, function (e) { busy(button, false); note(status, e, true); });
+      }
+      var buttons = h("div", { class: "admin-actions" },
+        h("button", { type: "button", class: "admin-btn primary", onclick: function () { act("approve", this); } },
+          kind === "meaning" ? "Approve the meaning" : "Approve the " + d.layer.name.replace(/ wording$/, "") + " wording"),
+        h("button", { type: "button", class: "admin-btn", onclick: function () { act("flag", this); } }, "Flag a problem"),
+        h("button", { type: "button", class: "admin-btn", onclick: function () { act("comment", this); } }, "Comment"),
+        d.next ? h("a", { href: "#review/" + layer + "/" + d.next }, "Skip to the next ›") : null);
+      var trail = d.trail.length ? h("ul", { class: "admin-feed" }, d.trail.map(function (e) {
+        return h("li", null, h("time", { datetime: e.at, title: new Date(e.at).toLocaleString("en-GB") }, when(e.at)),
+          h("span", null, h("strong", null, e.by), " " + e.label.toLowerCase() + " (" + (e.language ? names[e.language] || e.language : "meaning") + ")",
+            e.changed ? [" ", pill("changed since", "warn")] : null, e.note ? h("span", { class: "admin-sub" }, ": " + e.note) : null));
+      })) : empty("No one has reviewed this sentence yet.");
+      return [head("Review: " + d.layer.name, d.label, r.id + " · " + (r.status === "ai_draft" ? "AI-assisted" : r.status.replace(/_/g, " "))),
+        h("div", { class: "admin-actions" }, h("a", { href: "#review/" + layer }, "‹ The queue"),
+          d.layers.length > 1 ? d.layers.filter(function (l) { return l.code !== layer; }).map(function (l) {
+            return h("a", { href: "#review/" + l.code + "/" + record }, l.name);
+          }) : null,
+          h("a", { href: "#verse/" + d.verse }, ME.admin.indexOf("inbox") >= 0 ? "Request a fix in the verse inspector" : "Verse inspector")),
+        h("section", { class: "admin-block admin-record" }, h("header", { class: "admin-toolbar" }, h("h2", null, "State"), reviewPill(d.state)),
+          words, h("p", { class: "admin-gloss" }, "Literal gloss: " + r.literal_gloss), renderings,
+          meaning.length ? [h("h3", { class: "admin-h3" }, "Meaning decisions"), h("div", { class: "admin-decisions" }, meaning.map(decision))] : null,
+          mine.length ? [h("h3", { class: "admin-h3" }, (names[layer] || layer) + " decisions"), h("div", { class: "admin-decisions" }, mine.map(decision))] : null),
+        h("section", { class: "admin-block" }, h("h2", null, "Your review"), h("label", { class: "admin-field" }, "Note", noteBox), buttons, status),
+        h("section", { class: "admin-block" }, h("h2", null, "Review trail"), trail)];
+    });
+  }
+
+  // Reviewer flags: problems reviewers have raised, open until the layer is
+  // approved again. Editors act on them with a fix request.
+  VIEWS.flags = function () {
+    return api("/api/admin/review/flags/").then(function (d) {
+      var reviews = ME.admin.indexOf("review") >= 0;
+      return [head("Text", "Reviewer flags", "Problems reviewers have flagged, newest first. A flag stays open until the layer is approved again; request a fix from the verse inspector."),
+        d.flags.length ? h("ul", { class: "admin-feed" }, d.flags.map(function (f) {
+          return h("li", null, h("time", { datetime: f.at }, when(f.at)), h("span", null,
+            h("a", { href: "#verse/" + f.verse }, f.label), " ", h("span", { class: "admin-sub" }, f.record + " · " + f.layer.name),
+            reviews ? [" ", h("a", { href: "#review/" + f.layer.code + "/" + f.record }, "Review")] : null,
+            h("br"), h("strong", null, f.by), ": " + f.note));
+        })) : h("p", { class: "admin-ok" }, "No open flags.")];
+    });
+  };
+
+  // Changes: what each import (each deploy) changed in sentences already
+  // drafted, word by word.
+  function wordDiff(before, after) {
+    var a = before.split(/(\s+)/), b = after.split(/(\s+)/);
+    var n = a.length, m = b.length, i, j;
+    var lcs = [];
+    for (i = 0; i <= n; i++) { lcs.push(new Array(m + 1).fill(0)); }
+    for (i = n - 1; i >= 0; i--) for (j = m - 1; j >= 0; j--) {
+      lcs[i][j] = a[i] === b[j] ? lcs[i + 1][j + 1] + 1 : Math.max(lcs[i + 1][j], lcs[i][j + 1]);
+    }
+    var out = h("span", { class: "admin-diff" });
+    i = 0; j = 0;
+    while (i < n || j < m) {
+      if (i < n && j < m && a[i] === b[j]) { add(out, a[i]); i++; j++; }
+      else if (i < n && (j === m || lcs[i + 1][j] >= lcs[i][j + 1])) { out.appendChild(h("del", null, a[i])); i++; }
+      else { out.appendChild(h("ins", null, b[j])); j++; }
+    }
+    return out;
+  }
+  var CHANGE_KIND = { added: ["added", "good"], changed: ["changed", "info"], removed: ["removed", "bad"] };
+  VIEWS.changes = function (runId) {
+    var filters = { lang: "", book: "" };
+    return api("/api/admin/changes/" + (runId ? "?run=" + encodeURIComponent(runId) : "")).then(function (d) {
+      var names = {};
+      d.languages.forEach(function (l) { names[l.code] = l.name; });
+      function drafted(counts) {
+        return Object.keys(counts).map(function (c) { return (names[c] || c) + " " + num(counts[c]); }).join(", ");
+      }
+      var runs = table(["Import", ["Files", { class: "admin-num" }], ["Changed renderings", { class: "admin-num" }], "Drafted for the first time"],
+        d.runs.map(function (r) {
+          return h("tr", { "aria-current": d.run && d.run.id === r.id ? "true" : null },
+            h("th", { scope: "row" }, h("a", { href: "#changes/" + r.id }, when(r.started_at)), r.error ? [" ", pill("failed", "bad")] : null),
+            h("td", { class: "admin-num" }, num(r.files)), h("td", { class: "admin-num" }, num(r.changed)),
+            h("td", { class: "admin-sub" }, drafted(r.drafted) || "—"));
+        }));
+      var out = [head("Progress", "Changes", "What each deploy's import changed in sentences already drafted, before and after. A sentence drafted in a language for the first time is only counted."),
+        h("section", { class: "admin-block" }, h("h2", null, "Imports"), d.runs.length ? runs : empty("No imports yet."))];
+      if (!d.run) {
+        out.push(empty("No import has changed a drafted sentence yet."));
+        return out;
+      }
+      var run = d.run, list = h("div"), offset = 0;
+      var more = h("button", { type: "button", class: "admin-btn", hidden: !d.more }, "More");
+      function draw(changes) {
+        var byRecord = {}, order = [];
+        changes.forEach(function (c) {
+          if (!byRecord[c.record]) { byRecord[c.record] = []; order.push(c.record); }
+          byRecord[c.record].push(c);
+        });
+        order.forEach(function (rec) {
+          var first = byRecord[rec][0];
+          list.appendChild(h("section", { class: "admin-block" },
+            h("header", { class: "admin-toolbar" }, h("h3", { class: "admin-h3" }, h("a", { href: "#verse/" + first.verse }, first.label)), h("span", { class: "admin-sub" }, rec)),
+            table(["Language", "Level", "Change"], byRecord[rec].map(function (c) {
+              return h("tr", null, h("th", { scope: "row" }, names[c.language] || c.language), h("td", null, LEVEL_NAMES[c.level] || c.level),
+                h("td", { class: "admin-wrap", lang: c.language }, pill(CHANGE_KIND[c.kind][0], CHANGE_KIND[c.kind][1]), " ",
+                  c.kind === "changed" ? wordDiff(c.before, c.after) : c.kind === "added" ? c.after : h("del", null, c.before)));
+            }))));
+        });
+        if (!changes.length && !offset) list.appendChild(empty("No changes with these filters."));
+      }
+      function load() {
+        busy(more, true);
+        var q = "?run=" + run.id + "&lang=" + filters.lang + "&book=" + filters.book + "&offset=" + offset;
+        return api("/api/admin/changes/" + q).then(function (page) { draw(page.changes); more.hidden = !page.more; busy(more, false); });
+      }
+      more.addEventListener("click", function () { offset += 100; load(); });
+      var langSel = select("changes-lang", [["", "Every language"]].concat(d.languages.map(function (l) { return [l.code, l.name]; })), "");
+      var bookSel = select("changes-book", [["", "Every book"]].concat(run.books.map(function (b) { return [b.code, b.name + " (" + b.changes + ")"]; })), "");
+      [langSel, bookSel].forEach(function (sel) {
+        sel.addEventListener("change", function () { filters.lang = langSel.value; filters.book = bookSel.value; offset = 0; list.textContent = ""; load(); });
+      });
+      draw(d.changes);
+      out.push(h("section", { class: "admin-block" }, h("h2", null, "Import of " + date(run.started_at) + ": " + plural(run.changed, "changed rendering")),
+        run.drafted_books.length ? h("p", { class: "admin-sub" }, "Drafted for the first time: " + run.drafted_books.map(function (b) {
+          return b.name + " (" + drafted(b.languages) + ")";
+        }).join("; ") + ".") : null,
+        h("div", { class: "admin-toolbar" }, h("label", null, "Language ", langSel), h("label", null, "Book ", bookSel))), list, more);
+      return out;
+    });
+  };
 
   // ---- Start ---------------------------------------------------------
 

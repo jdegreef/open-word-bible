@@ -32,11 +32,12 @@ from accounts.models import ApiToken, Mark, ReadingPlace, Role
 from feedback.models import ReaderMessage
 from owb import languages, refs
 from texts.models import Edition
-from translation.models import ContentFile, Decision, ImportRun, Rendering, Sentence
+from translation.models import ContentFile, Decision, ImportRun, Rendering, ReviewEvent, Sentence
 
 from . import inbox
 from .models import AdminAction
 from .permissions import admin_view
+from .review import open_flags
 
 log = logging.getLogger(__name__)
 
@@ -58,11 +59,13 @@ def _languages():
 def _by_book():
     """{book: {"sentences", "chapters", "statuses": {status: n}, "langs": {lang: n}}}
     for every book with a sentence. Counting every rendering takes seconds,
-    so the answer is cached until a sentence is added or saved again:
-    import_content saves a sentence, bumping its updated_at, whenever its
-    renderings change."""
+    so the answer is cached until a sentence is added or saved again
+    (import_content saves a sentence, bumping its updated_at, whenever its
+    renderings change) or reviewed."""
     stamp = Sentence.objects.aggregate(n=Count("id"), t=Max("updated_at"))
-    key = "staff.by_book.{}.{}".format(stamp["n"], stamp["t"].timestamp() if stamp["t"] else 0)
+    # Approving the meaning changes a status without touching updated_at.
+    review = ReviewEvent.objects.aggregate(i=Max("id"))["i"] or 0
+    key = "staff.by_book.{}.{}.{}".format(stamp["n"], stamp["t"].timestamp() if stamp["t"] else 0, review)
     out = cache.get(key)
     if out is None:
         out = _count_by_book()
@@ -290,6 +293,11 @@ def overview(request):
         if waiting["mine"]:
             attention.append({"key": "inbox_mine", "count": waiting["mine"], "tone": "warn",
                               "label": "reader messages assigned to you", "href": "#inbox/mine"})
+    if "inbox" in mine:
+        flagged = len(open_flags())
+        if flagged:
+            attention.append({"key": "flags", "count": flagged, "tone": "hot",
+                              "label": "sentences flagged by reviewers", "href": "#flags"})
     if "team" in mine:
         pending = (get_user_model().objects.filter(last_login__isnull=True, roles__isnull=False)
                    .distinct().count())

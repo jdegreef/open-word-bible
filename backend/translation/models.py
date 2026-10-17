@@ -110,6 +110,9 @@ class ReviewEvent(models.Model):
     action = models.CharField(max_length=20, choices=Action.choices)
     language = models.CharField(max_length=3, blank=True, help_text="For wording reviews")
     note = models.TextField(blank=True)
+    digest = models.CharField(max_length=64, blank=True,
+                              help_text="What was reviewed (staff/review.py digest): an approval whose "
+                                        "sentence no longer matches it has changed since")
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
@@ -140,6 +143,8 @@ class ImportRun(models.Model):
     records = models.PositiveIntegerField(default=0)
     unchanged = models.PositiveIntegerField(default=0, help_text="Files skipped as unchanged")
     skipped = models.JSONField(default=list, blank=True, help_text="Files left for a missing source text")
+    drafted = models.JSONField(default=dict, blank=True,
+                               help_text="Sentences drafted in a language for the first time: {book: {lang: n}}")
     error = models.TextField(blank=True)
 
     class Meta:
@@ -152,6 +157,35 @@ class ImportRun(models.Model):
         self.finished_at = timezone.now()
         self.error = error[:5000]
         self.save()
+
+
+class SentenceChange(models.Model):
+    """A rendering an import changed, added or removed in a sentence that was
+    already drafted in that language, with its text before and after (the
+    admin's Changes page). A sentence drafted in a language for the first
+    time is only counted, in ImportRun.drafted."""
+    class Kind(models.TextChoices):
+        ADDED = "added", "Added"
+        CHANGED = "changed", "Changed"
+        REMOVED = "removed", "Removed"
+
+    run = models.ForeignKey(ImportRun, on_delete=models.CASCADE, related_name="changes")
+    record_id = models.CharField(max_length=24)
+    verse = models.CharField(max_length=16, help_text="The sentence's first verse, e.g. JHN.1.12")
+    book = models.CharField(max_length=3)
+    chapter = models.PositiveSmallIntegerField()
+    language = models.CharField(max_length=3)
+    level = models.CharField(max_length=1, choices=Rendering.Level.choices)
+    kind = models.CharField(max_length=7, choices=Kind.choices)
+    before = models.TextField(blank=True)
+    after = models.TextField(blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["id"]
+
+    def __str__(self):
+        return f"{self.record_id} {self.language}/{self.level} {self.kind}"
 
 
 # Search (GET /api/search/, translation/search.py). import_content updates

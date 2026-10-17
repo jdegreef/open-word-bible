@@ -24,7 +24,10 @@ are left for the next run, so a deploy after a big change (or the first one,
 with no digests yet) still finishes, and the next deploys catch up.
 
 Each run is recorded (ImportRun), so the admin's health page can show
-when content/ last reached the database and what failed.
+when content/ last reached the database and what failed. So is each
+rendering it changed, added or removed in a sentence already drafted in that
+language (SentenceChange, the admin's Changes page); sentences drafted in a
+language for the first time are only counted (ImportRun.drafted).
 
 Afterwards the search tables are brought up to date (translation/search.py)
 from all of content/ and articles/, whichever files were imported: only the
@@ -42,7 +45,7 @@ from django.db import transaction
 from owb import refs, validate
 from texts.models import Edition, Word
 from translation import search
-from translation.models import ContentFile, Decision, ImportRun, Rendering, Sentence
+from translation.models import ContentFile, Decision, ImportRun, Rendering, Sentence, SentenceChange
 
 TEXT_ID_EDITION = {"SBLGNT@v1.2": "sblgnt", "WLC@macula-hebrew": "wlc"}
 # Raise when save() or validate_records() changes what they do with a file,
@@ -165,9 +168,44 @@ class Command(BaseCommand):
                        for e in validate.validate_record(record, mine, original_language=False)]
         return errors
 
+    def record_changes(self, records):
+        """Note what this file changes in the renderings already in the
+        database, in one query, before save() replaces them."""
+        before = {}
+        for rid, lang, level, text in (Rendering.objects.filter(sentence__record_id__in=[r["id"] for r in records])
+                                       .values_list("sentence__record_id", "language", "level", "text")):
+            before.setdefault(rid, {}).setdefault(lang, {})[level] = text
+        Kind = SentenceChange.Kind
+        changes = []
+        for record in records:
+            first = refs.parse(record["refs"][0])
+            was = before.get(record["id"], {})
+            found = []   # (language, level, kind, before, after)
+            for lang, levels in record["renderings"].items():
+                if not was.get(lang):
+                    drafted = self.run.drafted.setdefault(first.book, {})
+                    drafted[lang] = drafted.get(lang, 0) + 1
+                    continue
+                for level, text in levels.items():
+                    if level not in was[lang]:
+                        found.append((lang, level, Kind.ADDED, "", text))
+                    elif was[lang][level] != text:
+                        found.append((lang, level, Kind.CHANGED, was[lang][level], text))
+                found += [(lang, level, Kind.REMOVED, was[lang][level], "")
+                          for level in was[lang].keys() - levels.keys()]
+            for lang in was.keys() - record["renderings"].keys():
+                found += [(lang, level, Kind.REMOVED, text, "") for level, text in was[lang].items()]
+            changes += [SentenceChange(run=self.run, record_id=record["id"],
+                                       verse=f"{first.book}.{first.chapter}.{first.verse}", book=first.book,
+                                       chapter=first.chapter, language=lang, level=level, kind=kind,
+                                       before=old, after=new)
+                        for lang, level, kind, old, new in found]
+        SentenceChange.objects.bulk_create(changes, batch_size=2000)
+
     def save(self, records, editions):
         """Save one file's records, a handful of queries for the whole file."""
         records = list({r["id"]: r for r in records}.values())
+        self.record_changes(records)
         sentences = []
         for record in records:
             first = refs.parse(record["refs"][0])
