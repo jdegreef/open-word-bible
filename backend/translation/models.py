@@ -40,7 +40,8 @@ class Sentence(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
-        indexes = [models.Index(fields=["book", "chapter"])]
+        # updated_at: the admin's progress counts are cached until it changes.
+        indexes = [models.Index(fields=["book", "chapter"]), models.Index(fields=["updated_at"])]
         ordering = ["book", "chapter", "verse", "number"]
 
     def __str__(self):

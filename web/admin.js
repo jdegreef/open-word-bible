@@ -189,7 +189,12 @@
     rail.hidden = false;
   }
 
+  // Each drawing gets a number, so a slow answer for a section that has
+  // since been left (or a stop()) doesn't overwrite the page.
+  var drawing = 0;
+
   function route() {
+    var mine = ++drawing;
     var hash = location.hash.replace(/^#/, "") || "dashboard";
     var parts = hash.split("/");
     var name = parts[0], arg = decodeURIComponent(parts.slice(1).join("/"));
@@ -201,16 +206,19 @@
     main.setAttribute("aria-busy", "true");
     var draw = VIEWS[name];
     Promise.resolve().then(function () { return draw(arg); }).then(function (nodes) {
+      if (mine !== drawing) return;
       main.textContent = "";
       add(main, nodes);
       var status = main.querySelector(".admin-note");
       if (FLASH && status) note(status, FLASH);
       FLASH = "";
     }).catch(function (e) {
+      if (mine !== drawing) return;
       main.textContent = "";
       main.appendChild(head("Admin", section.label));
       main.appendChild(h("p", { class: "notice" }, e.message));
     }).then(function () {
+      if (mine !== drawing) return;
       main.removeAttribute("aria-busy");
       document.title = section.label + " · Admin · Open Word Bible";
     });
@@ -1322,6 +1330,10 @@
   // ---- Start ---------------------------------------------------------
 
   function stop(title, text, link) {
+    drawing++;
+    window.removeEventListener("hashchange", route);
+    rail.hidden = true;
+    main.removeAttribute("aria-busy");
     main.textContent = "";
     main.appendChild(head("Admin", title, text));
     if (link) main.appendChild(h("p", null, h("a", { class: "button", href: link[0] }, link[1])));
@@ -1332,20 +1344,35 @@
     stop("Sign in to use the admin", "The admin is for the Open Word Bible team.", ["/login/?redirect=/admin/", "Sign in"]);
     return;
   }
+  // The account saved at the last visit draws the admin at once, while
+  // /api/me checks it; the API checks every request anyway. If the roles
+  // have changed since, the admin is drawn again.
+  var started = false;
+  function start() {
+    if (!started) window.addEventListener("hashchange", route);
+    started = true;
+    route();
+  }
+  function areasOf(me) { return JSON.stringify([me.admin, me.is_super_admin]); }
+  var known = account.user;
+  if (known && known.email && known.admin && known.admin.length) {
+    ME = known;
+    start();
+  }
   api("/api/me").then(function (me) {
+    var changed = !ME || areasOf(ME) !== areasOf(me);
     ME = me;
     try { account.user = me; localStorage.setItem(KEY, JSON.stringify(account)); } catch (e) { /* none */ }
     if (!me.admin || !me.admin.length) {
       stop("No admin access", "Your account (" + me.email + ") has no role that opens the admin. A super admin can grant one in Team & access.");
       return;
     }
-    window.addEventListener("hashchange", route);
-    route();
+    if (!started || changed) start();
   }, function (e) {
     if (e.status === 401) {
       try { localStorage.removeItem(KEY); } catch (x) { /* none */ }
       stop("Sign in again", "Your sign-in on this device has ended.", ["/login/?redirect=/admin/", "Sign in"]);
-    } else {
+    } else if (!started) {
       stop("The admin couldn't load", e.message);
     }
   });

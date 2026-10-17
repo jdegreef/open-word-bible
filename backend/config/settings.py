@@ -125,6 +125,18 @@ DATABASES = {
 }
 DATABASES["default"].setdefault("OPTIONS", {}).update(database_options(statement_timeout_ms()))
 
+# One cache in the database, shared by every gunicorn worker and kept across
+# deploys (each process's memory is neither). The admin keeps its progress
+# counts and GitHub lookups here. render.yaml's pre-deploy runs
+# createcachetable; the test runner makes the table itself.
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.db.DatabaseCache",
+        "LOCATION": "owb_cache",
+        "OPTIONS": {"MAX_ENTRIES": 2000},
+    },
+}
+
 AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
     {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
