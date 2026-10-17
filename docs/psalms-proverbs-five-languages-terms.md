@@ -84,7 +84,7 @@ subidas*, *Wimbo wa kupanda*, *Bài ca lên đền*, 성전에 올라가는 노�
 | salvation, save | le salut, sauver | la salvación, salvar | wokovu, kuokoa | sự cứu rỗi, giải cứu (B, R as the English) | 구원, 구원하다 |
 | refuge, rock, fortress, shield | refuge, rocher, forteresse, bouclier | refugio, roca, fortaleza, escudo | kimbilio, mwamba, ngome, ngao | nơi ẩn náu, vầng đá, đồn lũy, cái khiên | 피난처, 반석, 요새, 방패 |
 | Zion; Jerusalem | Sion; Jérusalem | Sion; Jerusalén | Sayuni; Yerusalemu | Si-ôn; Giê-ru-sa-lem | 시온; 예루살렘 |
-| Sheol | le Shéol (L); le séjour des morts (B, R) | el Seol (L); el lugar de los muertos (B, R) | Kuzimu | Sê-ôn (L); cõi chết (B, R) | 스올 (L); 죽음의 세계 (B, R) |
+| Sheol | le Shéol (L); le séjour des morts (B, R) | el Seol (L); el lugar de los muertos (B, R) | Kuzimu | Âm Phủ (L, B); nơi của người chết (R), as Psalm 139:8 | 스올 (L, B); 죽은 사람들이 있는 곳 (R), as Psalm 139:8 |
 | the nations; the peoples | les nations; les peuples | las naciones; los pueblos | mataifa; watu, mataifa | các dân tộc; các dân | 민족들; 백성들 |
 | the fear of the LORD (Readable: honoring the LORD with awe) | la crainte du SEIGNEUR (span on *du SEIGNEUR*); R: honorer le SEIGNEUR avec respect | el temor del SEÑOR; R: honrar al SEÑOR con reverencia | kumcha BWANA; R: kumheshimu BWANA kwa hofu takatifu | sự kính sợ CHÚA; R: tôn kính CHÚA | 주를 경외함; R: 주를 두려운 마음으로 섬김 |
 | the anointed (*mashiach*, the king) | l’oint | el ungido | masihi wake, mpakwa mafuta | người được xức dầu | 기름 부음 받은 이 |
