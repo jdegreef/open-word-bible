@@ -1,9 +1,11 @@
 from django.urls import path
 
-from . import articles, emails, export, fixes, inbox, jobs, overlap, progress, team, text, users, verses, work
+from . import (articles, changes, consistency, emails, export, fixes, inbox, jobs, overlap, progress, review, search,
+               team, text, users, verses, work)
 
 urlpatterns = [
     path("overview/", progress.overview),
+    path("search/", search.find),
     path("coverage/", progress.coverage),
     path("languages/", progress.language_list),
     path("books/<str:code>/", progress.book),
@@ -14,11 +16,16 @@ urlpatterns = [
     path("users/", users.user_list),
     path("users/<int:user_id>/", users.user_detail),
     path("users/<int:user_id>/sign-out/", users.sign_out),
+    path("changes/", changes.changes),
+    path("review/", review.queue),
+    path("review/flags/", review.flags),
+    path("review/<str:record_id>/", review.sentence),
     path("verses/", verses.find),
     path("verses/<str:vid>/", verses.verse),
     path("fixes/", fixes.fixes),
     path("decisions/", text.decisions),
     path("terms/", text.terms),
+    path("consistency/", consistency.consistency),
     path("articles/", articles.articles),
     path("export/", export.options),
     path("export/preview/", export.preview),
@@ -27,6 +34,7 @@ urlpatterns = [
     path("overlap/<str:code>/", overlap.overlap),
     path("emails/", emails.emails),
     path("jobs/", jobs.jobs),
+    path("jobs/bulk/", jobs.bulk),
     path("team/", team.team),
     path("team/roles/<int:role_id>/", team.revoke),
     path("team/invite/", team.resend),

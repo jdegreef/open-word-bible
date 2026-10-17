@@ -67,16 +67,22 @@ def fetch_work(days=DAYS):
     return out
 
 
-@admin_view("overview")
-def work(request):
+def cached_work():
+    """fetch_work without the bodies, cached two minutes. Raises
+    jobs.GitHubError when GitHub can't be reached."""
     cached = cache.get("staff.work")
     if cached is None:
-        try:
-            items = fetch_work()
-        except jobs.GitHubError:
-            return Response({"items": [], "error": "GitHub could not be reached, so the work isn't listed."})
-        cached = [{k: v for k, v in item.items() if k != "body"} for item in items]
+        cached = [{k: v for k, v in item.items() if k != "body"} for item in fetch_work()]
         cache.set("staff.work", cached, 120)
+    return cached
+
+
+@admin_view("overview")
+def work(request):
+    try:
+        cached = cached_work()
+    except jobs.GitHubError:
+        return Response({"items": [], "error": "GitHub could not be reached, so the work isn't listed."})
     counts = {"open": sum(1 for w in cached if w["state"] == "open"),
               "stale": sum(1 for w in cached if w["stale"]),
               "in_review": sum(1 for w in cached if w["state"] == "open"

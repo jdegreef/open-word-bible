@@ -107,7 +107,7 @@ class AccessTest(AdminTestCase):
             me = client_for(user).get("/api/me").json()
             self.assertEqual(me["admin"], expected, kind)
         reviewer = account("fr@example.org", (K.LANGUAGE_REVIEWER, "fr"))
-        self.assertEqual(client_for(reviewer).get("/api/me").json()["admin"], ["overview", "export"])
+        self.assertEqual(client_for(reviewer).get("/api/me").json()["admin"], ["overview", "export", "review"])
         self.assertEqual(client_for(account("r@example.org")).get("/api/me").json()["admin"], [])
 
     def test_an_editor_cannot_open_the_team(self):
@@ -138,6 +138,16 @@ class ProgressTest(AdminTestCase):
         self.assertEqual(books["JHN"]["languages"]["fr"], {"sentences": 1, "state": "partial"})
         self.assertEqual(books["JHN"]["statuses"], {"ai_draft": 2})
         self.assertEqual(books["GEN"]["sentences"], 0)
+
+    def test_coverage_is_cached_until_sentences_change(self):
+        def jhn():
+            books = self.admin.get("/api/admin/coverage/").json()["books"]
+            return next(b for b in books if b["code"] == "JHN")["sentences"]
+        self.assertEqual(jhn(), 2)
+        with mock.patch("staff.progress._count_by_book", side_effect=AssertionError("counted again")):
+            self.assertEqual(jhn(), 2)
+        sentence("JHN.1.3.s1", ("en",))
+        self.assertEqual(jhn(), 3)
 
     def test_languages(self):
         data = self.admin.get("/api/admin/languages/").json()

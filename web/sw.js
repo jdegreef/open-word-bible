@@ -143,6 +143,8 @@ self.addEventListener("fetch", function (e) {
   // The API (sign-in, accounts, search) and other sites are left alone:
   // search answers are never kept.
   if (url.origin !== self.location.origin || url.pathname.indexOf("/api/") === 0) return;
+  // The ready-made downloads (/download/) are megabytes each: never kept.
+  if (url.pathname.indexOf("/downloads/") === 0) return;
   if (req.mode === "navigate") { e.respondWith(page(e)); return; }
   // Share-card images are for link previews, not for reading; and what
   // site.js fetches to save a book (a page, or any file with cache:

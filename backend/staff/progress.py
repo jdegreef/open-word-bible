@@ -7,7 +7,8 @@ GET /api/admin/coverage/        every book: chapters and sentences drafted,
                                 and sentences in each language
 GET /api/admin/languages/       each reading language's progress and team
 GET /api/admin/books/<BOOK>/    one book, chapter by chapter
-GET /api/admin/health/          the last imports, the loaded texts and CI on main
+GET /api/admin/health/          the last imports, the loaded texts, CI on main and
+                                what the super admins are alerted to (staff/alerts.py)
 GET /api/admin/engagement/      what signed-in readers keep: totals only
 
 A sentence counts as drafted in a language when it has any rendering in it;
@@ -31,11 +32,13 @@ from rest_framework.response import Response
 from accounts.models import ApiToken, Mark, ReadingPlace, Role
 from feedback.models import ReaderMessage
 from owb import languages, refs
-from texts.models import Edition, Verse
-from translation.models import ContentFile, Decision, ImportRun, Rendering, Sentence
+from texts.models import Edition
+from translation.models import ContentFile, Decision, ImportRun, Rendering, ReviewEvent, Sentence
 
+from . import inbox
 from .models import AdminAction
 from .permissions import admin_view
+from .review import open_flags
 
 log = logging.getLogger(__name__)
 
@@ -56,7 +59,22 @@ def _languages():
 
 def _by_book():
     """{book: {"sentences", "chapters", "statuses": {status: n}, "langs": {lang: n}}}
-    for every book with a sentence."""
+    for every book with a sentence. Counting every rendering takes seconds,
+    so the answer is cached until a sentence is added or saved again
+    (import_content saves a sentence, bumping its updated_at, whenever its
+    renderings change) or reviewed."""
+    stamp = Sentence.objects.aggregate(n=Count("id"), t=Max("updated_at"))
+    # Approving the meaning changes a status without touching updated_at.
+    review = ReviewEvent.objects.aggregate(i=Max("id"))["i"] or 0
+    key = "staff.by_book.{}.{}.{}".format(stamp["n"], stamp["t"].timestamp() if stamp["t"] else 0, review)
+    out = cache.get(key)
+    if out is None:
+        out = _count_by_book()
+        cache.set(key, out, 7 * 86400)
+    return out
+
+
+def _count_by_book():
     out = {}
     for row in Sentence.objects.values("book").annotate(n=Count("id"), chapters=Count("chapter", distinct=True)):
         out[row["book"]] = {"sentences": row["n"], "chapters": row["chapters"], "statuses": {}, "langs": {}}
@@ -205,17 +223,18 @@ def _run_json(run):
 
 @admin_view("overview")
 def health(request):
-    verses = dict(Verse.objects.values("edition").annotate(n=Count("id")).values_list("edition", "n"))
+    from . import alerts   # alerts reads jobs, which reads this module
     return Response({
         "imports": [_run_json(r) for r in ImportRun.objects.all()[:15]],
         "content_files": ContentFile.objects.count(),
         "sentences": Sentence.objects.count(),
         "last_sentence_update": Sentence.objects.aggregate(t=Max("updated_at"))["t"],
         "editions": [{"code": e.code, "name": e.name, "kind": e.kind, "language": e.language,
-                      "verses": verses.get(e.id, 0), "imported_at": e.imported_at,
+                      "verses": e.verse_count, "imported_at": e.imported_at,
                       "source_commit": e.source_commit[:7]}
                      for e in Edition.objects.order_by("kind", "code")],
         "ci": _ci_status(),
+        "alerts": alerts.current(),
     })
 
 
@@ -263,10 +282,25 @@ def overview(request):
     sentences = sum(b["sentences"] for b in books)
     attention = []
     if "inbox" in mine:
-        new = ReaderMessage.objects.filter(status=ReaderMessage.Status.NEW).count()
-        if new:
-            attention.append({"key": "inbox", "count": new, "tone": "hot",
+        waiting = ReaderMessage.objects.filter(status=ReaderMessage.Status.NEW).aggregate(
+            new=Count("id"),
+            late=Count("id", filter=Q(created_at__lt=timezone.now() - timedelta(days=inbox.WAITING_DAYS))),
+            mine=Count("id", filter=Q(assigned_to=request.user)))
+        if waiting["late"]:
+            attention.append({"key": "inbox_late", "count": waiting["late"], "tone": "hot",
+                              "label": f"reader messages waiting more than {inbox.WAITING_DAYS} days",
+                              "href": "#inbox"})
+        if waiting["new"]:
+            attention.append({"key": "inbox", "count": waiting["new"], "tone": "hot",
                               "label": "reader messages waiting for an answer", "href": "#inbox"})
+        if waiting["mine"]:
+            attention.append({"key": "inbox_mine", "count": waiting["mine"], "tone": "warn",
+                              "label": "reader messages assigned to you", "href": "#inbox/mine"})
+    if "inbox" in mine:
+        flagged = len(open_flags())
+        if flagged:
+            attention.append({"key": "flags", "count": flagged, "tone": "hot",
+                              "label": "sentences flagged by reviewers", "href": "#flags"})
     if "team" in mine:
         pending = (get_user_model().objects.filter(last_login__isnull=True, roles__isnull=False)
                    .distinct().count())
@@ -291,7 +325,10 @@ def overview(request):
     activity = []
     if "team" in mine:
         activity = [_action_json(a) for a in AdminAction.objects.all()[:8]]
-    statuses = dict(Sentence.objects.values("status").annotate(n=Count("id")).values_list("status", "n"))
+    statuses = {}
+    for b in books:
+        for status, n in b["statuses"].items():
+            statuses[status] = statuses.get(status, 0) + n
     return Response({
         "totals": {
             "sentences": sentences,

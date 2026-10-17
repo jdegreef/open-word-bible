@@ -187,6 +187,8 @@ class Command(BaseCommand):
         n_verses = bulk_create(
             Verse, (Verse(edition=edition, book=b, chapter=c, verse=v, text=t) for b, c, v, t in verses))
         n_words = bulk_create(Word, (Word(edition=edition, **w) for w in words))
+        edition.verse_count = n_verses
+        edition.save(update_fields=["verse_count"])
         return n_verses, n_words
 
 
