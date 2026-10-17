@@ -95,9 +95,11 @@ services:
     # 30 minutes, and reloading all of content/ and search came to take
     # longer than that; import_content explains. Management commands have no statement timeout; web
     # requests give up on a query after DB_STATEMENT_TIMEOUT_MS (15 s).
-    # Last, sync_fixes emails readers whose suggestion led to a merged fix;
-    # it never fails the deploy.
-    preDeployCommand: python backend/manage.py migrate --noinput && python backend/manage.py createcachetable && python backend/manage.py import_texts --missing && python backend/manage.py import_content --if-texts-loaded --budget 900 && (python backend/manage.py sync_fixes || true)
+    # Then send_alerts emails the super admins if the import failed (it
+    # runs whatever the import's outcome, and the deploy still fails if the
+    # import did). Last, sync_fixes emails readers whose suggestion led to a
+    # merged fix. Neither fails the deploy.
+    preDeployCommand: python backend/manage.py migrate --noinput && python backend/manage.py createcachetable && python backend/manage.py import_texts --missing && (python backend/manage.py import_content --if-texts-loaded --budget 900; s=$?; python backend/manage.py send_alerts; exit $s) && (python backend/manage.py sync_fixes || true)
     # Threads, so a slow request (such as sending a sign-in email) does not
     # hold up reading.
     startCommand: gunicorn --chdir backend config.wsgi --workers 2 --threads 4 --worker-class gthread --timeout 60
@@ -152,4 +154,62 @@ services:
       - key: GOOGLE_CLIENT_SECRET
         sync: false
       - key: SENTRY_DSN
+        sync: false
+
+  # Alerts (backend/staff/alerts.py) every 30 minutes: emails the super
+  # admins once when CI on main fails, a content import fails, a drafting
+  # job or fix request stalls, or a reader message waits more than three
+  # days. CI failing on main never reaches the pre-deploy above (main isn't
+  # deployed), so this is what catches it. A cron job is billed separately
+  # from the API service; without it, alerts still go out before each
+  # deploy. Remove this service to stop them.
+  - type: cron
+    name: owb-alerts
+    runtime: python
+    plan: starter
+    schedule: "*/30 * * * *"
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: python backend/manage.py send_alerts
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.13"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: owb-db
+          property: connectionString
+      - key: DJANGO_SECRET_KEY
+        fromService:
+          type: web
+          name: owb-api
+          envVarKey: DJANGO_SECRET_KEY
+      - key: OWB_SITE_URL
+        value: https://openwordbible.org
+      - key: OWB_SUPER_ADMIN_EMAILS
+        fromService:
+          type: web
+          name: owb-api
+          envVarKey: OWB_SUPER_ADMIN_EMAILS
+      - key: EMAIL_HOST
+        fromService:
+          type: web
+          name: owb-api
+          envVarKey: EMAIL_HOST
+      - key: EMAIL_HOST_USER
+        fromService:
+          type: web
+          name: owb-api
+          envVarKey: EMAIL_HOST_USER
+      - key: EMAIL_HOST_PASSWORD
+        fromService:
+          type: web
+          name: owb-api
+          envVarKey: EMAIL_HOST_PASSWORD
+      - key: DEFAULT_FROM_EMAIL
+        fromService:
+          type: web
+          name: owb-api
+          envVarKey: DEFAULT_FROM_EMAIL
+      # Set in the dashboard as for owb-api: the jobs and CI are read from
+      # GitHub with it (without it, stalled jobs aren't checked).
+      - key: OWB_GITHUB_TOKEN
         sync: false
