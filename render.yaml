@@ -137,6 +137,10 @@ services:
       # https://api.openwordbible.org/api/auth/google/callback.
       # SENTRY_DSN: optional; errors go to Sentry as well as the log. Events
       # carry no cookies, headers, query strings or searches (config/sentry.py).
+      # SENTRY_TRACES_SAMPLE_RATE: optional, 0 to 1; that share of requests
+      # also sends its timings (database spans without their parameters), to
+      # find slow pages. Unset is 0. Every API answer carries a
+      # Server-Timing header either way.
       - key: OWB_SUPER_ADMIN_EMAILS
         sync: false
       - key: EMAIL_HOST
@@ -152,4 +156,6 @@ services:
       - key: GOOGLE_CLIENT_SECRET
         sync: false
       - key: SENTRY_DSN
+        sync: false
+      - key: SENTRY_TRACES_SAMPLE_RATE
         sync: false

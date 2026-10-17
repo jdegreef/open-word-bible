@@ -59,9 +59,27 @@
   function plural(n, one, many) { return num(n) + " " + (n === 1 ? one : (many || one + "s")); }
   function ghFile(path) { return GITHUB + "/blob/main/" + path; }
 
+  // Admin reads are kept for a minute, so going back to a section (or to
+  // one fetched ahead) draws at once. Anything that changes something
+  // forgets them all, so the next drawing asks again. Each caller gets its
+  // own copy, as views may change what they are given.
+  var READ_MS = 60000;
+  var reads = {};
+
   // The API, with the saved token. A 401 means the token is gone.
   function api(path, options) {
     options = options || {};
+    var method = options.method || "GET";
+    if (method !== "GET") reads = {};
+    if (method !== "GET" || path.indexOf("/api/admin/") !== 0) return request(path, options);
+    var hit = reads[path];
+    if (!hit || Date.now() - hit.at > READ_MS) {
+      hit = reads[path] = { at: Date.now(), data: request(path, options) };
+      hit.data.catch(function () { if (reads[path] === hit) delete reads[path]; });
+    }
+    return hit.data.then(function (data) { return JSON.parse(JSON.stringify(data)); });
+  }
+  function request(path, options) {
     var account = saved();
     var headers = { "Content-Type": "application/json" };
     if (account && account.token) headers.Authorization = "Bearer " + account.token;
@@ -267,6 +285,12 @@
           h("p", null, h("a", { href: "#activity" }, "All activity")));
       }
       if (side.length) out.push(h("section", { class: "admin-block" }, side));
+      // The pages most often opened next, fetched once the dashboard is up.
+      setTimeout(function () {
+        ["/api/admin/coverage/", "/api/admin/languages/"].forEach(function (path) {
+          api(path).catch(function () { /* drawn with its own error if opened */ });
+        });
+      }, 300);
       return out;
     });
   };

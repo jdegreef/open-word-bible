@@ -31,7 +31,7 @@ from rest_framework.response import Response
 from accounts.models import ApiToken, Mark, ReadingPlace, Role
 from feedback.models import ReaderMessage
 from owb import languages, refs
-from texts.models import Edition, Verse
+from texts.models import Edition
 from translation.models import ContentFile, Decision, ImportRun, Rendering, Sentence
 
 from . import inbox
@@ -219,14 +219,13 @@ def _run_json(run):
 
 @admin_view("overview")
 def health(request):
-    verses = dict(Verse.objects.values("edition").annotate(n=Count("id")).values_list("edition", "n"))
     return Response({
         "imports": [_run_json(r) for r in ImportRun.objects.all()[:15]],
         "content_files": ContentFile.objects.count(),
         "sentences": Sentence.objects.count(),
         "last_sentence_update": Sentence.objects.aggregate(t=Max("updated_at"))["t"],
         "editions": [{"code": e.code, "name": e.name, "kind": e.kind, "language": e.language,
-                      "verses": verses.get(e.id, 0), "imported_at": e.imported_at,
+                      "verses": e.verse_count, "imported_at": e.imported_at,
                       "source_commit": e.source_commit[:7]}
                      for e in Edition.objects.order_by("kind", "code")],
         "ci": _ci_status(),
