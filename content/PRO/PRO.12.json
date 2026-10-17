@@ -46,6 +46,11 @@
           "L": "Ai yêu sự sửa dạy thì yêu tri thức, \\q còn ai ghét lời quở trách [là] ngu muội.",
           "B": "Yêu sự sửa dạy là yêu tri thức; \\q ghét lời sửa trách là ngu xuẩn.",
           "R": "Ai muốn học hỏi thì vui lòng nhận sự sửa dạy. \\q Chỉ kẻ ngu xuẩn mới ghét bị sửa sai."
+        },
+        "ko": {
+          "L": "훈계를 사랑하는 자는 지식을 사랑하지만, \\q 책망을 미워하는 자는 우둔하다.",
+          "B": "훈계를 사랑하는 것은 지식을 사랑하는 것이요, \\q 꾸지람을 미워하는 것은 짐승처럼 우둔한 일이다.",
+          "R": "훈계를 좋아하는 사람은 배우기를 좋아한다. \\q 바로잡아 주는 말을 싫어하는 사람은 정말 멍청하다."
         }
       },
       "decisions": [
@@ -193,6 +198,53 @@
           "reason": "The word is not the usual word for a fool but one related to cattle (see the meaning decision). \"ngu dại\" is kept for the fool (kesil, ewil), so this word gets a stronger one of its own.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o200120010011"
+          ],
+          "choice": "The sayings are in the plain written style (해라체: -다), and a hearer addressed is \"너\"",
+          "alternatives": [
+            "해요체",
+            "합쇼체"
+          ],
+          "reason": "Proverbs speaks as a teacher to a learner and as general truths; the plain written style is the voice of Korean proverbs and of the psalms already drafted (style guide section 7a). This holds for chapters 12-22.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200120010021",
+            "o200120010041",
+            "o200120010071"
+          ],
+          "choice": "\"훈계\" for musar and \"지식\" for da'at at every level; \"우둔하다\" (L, B) and \"멍청하다\" (R) for \"stupid\"",
+          "alternatives": [
+            "교훈",
+            "어리석다",
+            "미련하다"
+          ],
+          "reason": "\"훈계\" and \"지식\" are the terms used for these words through Psalms and Proverbs. \"Stupid\" here is a rare word for an animal's dullness (meaning decision m1); \"어리석은\" and \"미련한\" are kept for the simple and the fool, so a different word is used. Balanced adds \"짐승처럼\" (like an animal) to carry the picture.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -244,6 +296,11 @@
           "L": "[Người] lành được ơn từ {{divine_name:CHÚA|Gia-vê}}, \\q còn kẻ mưu mô thì {{deity_pronoun:ngài|Ngài}} kết tội.",
           "B": "Người lành được {{divine_name:CHÚA|Gia-vê}} ban ơn, \\q nhưng {{deity_pronoun:ngài|Ngài}} kết tội kẻ toan tính điều ác.",
           "R": "{{divine_name:CHÚA|Gia-vê}} hài lòng về người tốt. \\q Nhưng {{deity_pronoun:ngài|Ngài}} xét phạt kẻ lập mưu làm điều ác."
+        },
+        "ko": {
+          "L": "선한 사람은 {{divine_name:주|야훼}}께 은총을 얻지만, \\q 악한 꾀를 품은 사람은 그분께서 정죄하신다.",
+          "B": "선한 사람은 {{divine_name:주|야훼}}께 은총을 입지만, \\q 악한 일을 꾸미는 사람은 그분께서 정죄하신다.",
+          "R": "{{divine_name:주|야훼}}께서는 선한 사람을 기뻐하신다. \\q 그러나 악한 일을 꾸미는 사람은 심판하신다."
         }
       },
       "decisions": [
@@ -326,6 +383,47 @@
           "reason": "As in the Psalms: the capitals mark the name YHWH, as \"the LORD\" does in English, and the deity_pronoun setting gives \"ngài\" or \"Ngài\" in the middle of a sentence, the only difference being the capital. Kept through these chapters.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o200120020042"
+          ],
+          "choice": "YHWH is {{divine_name:주|야훼}} at every level, with the particle outside the span ({{divine_name:주|야훼}}께, {{divine_name:주|야훼}}께서)",
+          "alternatives": [
+            "여호와",
+            "주님"
+          ],
+          "reason": "As the style guide (section 7a): \"주\" (Lord) by default and the name \"야훼\" as the alternative, as the English has \"the LORD|Yahweh\". Both forms end in a vowel, so one particle fits both. This holds for chapters 12-22.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o200120020071"
+          ],
+          "choice": "No deity_pronoun span: God is \"그분\" with the honorific -시- (정죄하신다)",
+          "alternatives": [],
+          "reason": "Korean has no capital letters, so the setting has nothing to change; respect for God is carried by the honorific (style guide section 7). This holds for chapters 12-22.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -378,6 +476,11 @@
           "L": "Con người không được vững lập bởi sự gian ác, \\q nhưng rễ của người công chính sẽ không bị lay chuyển.",
           "B": "Không ai được vững vàng nhờ gian ác, \\q nhưng rễ của người công chính không gì nhổ bật được.",
           "R": "Làm điều ác không giúp ai được an toàn. \\q Nhưng người công chính giống như cây đâm rễ sâu."
+        },
+        "ko": {
+          "L": "사람은 악으로 굳게 서지 못하지만, \\q 의인들의 뿌리는 흔들리지 않는다.",
+          "B": "누구도 악한 짓으로 든든히 설 수 없지만, \\q 의인들의 뿌리는 뽑히지 않는다.",
+          "R": "나쁜 짓을 해서는 아무도 안전해질 수 없다. \\q 그러나 바르게 사는 사람은 뿌리가 깊은 나무와 같다."
         }
       },
       "decisions": [
@@ -510,6 +613,11 @@
           "L": "Người vợ tài đức [là] mão miện của chồng mình, \\q nhưng [người] gây hổ thẹn [thì] như sự mục nát trong xương cốt của chồng.",
           "B": "Người vợ tài đức là mão miện trên đầu chồng, \\q còn người vợ làm chồng xấu hổ là sự mục nát trong xương cốt chồng.",
           "R": "Người vợ giỏi giang và tốt nết làm cho chồng hãnh diện. \\q Nhưng người vợ làm chồng xấu hổ thì như bệnh tật gặm mòn xương cốt chồng."
+        },
+        "ko": {
+          "L": "힘 있는 아내는 남편의 면류관이지만, \\q 수치를 끼치는 [아내]는 그의 뼈 속의 썩음과 같다.",
+          "B": "유능한 아내는 남편의 머리에 얹힌 면류관이지만, \\q 남편을 부끄럽게 하는 아내는 그 뼈를 썩게 하는 병과 같다.",
+          "R": "착하고 유능한 아내는 남편을 자랑스럽게 한다. \\q 그러나 남편을 부끄럽게 하는 아내는 뼈를 갉아먹는 병과 같다."
         }
       },
       "decisions": [
@@ -609,6 +717,28 @@
           "reason": "Hayil is strength, ability and worth together (see the meaning decision). \"tài đức\" (gifted and good) holds ability and worth; \"mạnh mẽ\" would speak only of strength, and \"đảm đang\" only of running a home.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200120040021"
+          ],
+          "choice": "\"힘 있는 아내\" (L); \"유능한 아내\" (B); \"착하고 유능한 아내\" (R)",
+          "alternatives": [
+            "현숙한 아내",
+            "덕 있는 아내"
+          ],
+          "reason": "Literal keeps the Hebrew word strength (hayil); Balanced and Readable say what it means here, a capable and worthy wife (meaning decision m1). \"현숙한\" is the familiar older wording and says mainly a gentle, virtuous character, which is narrower.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -657,6 +787,11 @@
           "L": "Kế hoạch của người công chính [là] công minh; \\q mưu kế của kẻ ác [là] lừa dối.",
           "B": "Kế hoạch của người công chính là công minh, \\q còn lời khuyên của kẻ ác đầy lừa dối.",
           "R": "Người công chính dự tính làm điều công bằng. \\q Kẻ ác dự tính lừa gạt người khác."
+        },
+        "ko": {
+          "L": "의인들의 생각은 공정하고, \\q 악인들의 계략은 속임수이다.",
+          "B": "의인들이 세우는 계획은 공정하지만, \\q 악인들의 조언은 속임수로 가득하다.",
+          "R": "바르게 사는 사람은 공정한 일을 계획한다. \\q 악한 사람은 남을 속일 궁리를 한다."
         }
       },
       "decisions": [
@@ -716,6 +851,29 @@
           "reason": "Where the English Readable says 'good people' for the righteous, Spanish Readable says 'las personas buenas'; 'los justos', used at Literal and Balanced, can sound like a court word to a young reader. 'Los malvados' is already plain and stays at every level.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200120050021",
+            "o200120050051"
+          ],
+          "choice": "\"의인\" and \"악인\" (L, B); \"바르게 사는 사람\" and \"악한 사람\" (R)",
+          "alternatives": [
+            "선인",
+            "죄인"
+          ],
+          "reason": "These are the terms used for the righteous and the wicked through Psalms and Proverbs. Readable uses plain phrases a young reader knows without the Sino-Korean words. This holds for chapters 12-22.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -767,6 +925,11 @@
           "L": "Lời của kẻ ác [là] rình chờ [làm đổ] máu, \\q nhưng miệng của người ngay thẳng giải cứu họ.",
           "B": "Khi kẻ ác nói, chúng đang giăng bẫy để giết người, \\q nhưng lời người ngay thẳng giải cứu họ.",
           "R": "Kẻ ác dùng lời nói để gài bẫy và giết hại người khác. \\q Nhưng lời của người ngay thẳng cứu mạng người."
+        },
+        "ko": {
+          "L": "악인들의 말은 피를 노리는 매복이지만, \\q 정직한 사람들의 입은 그들을 건져 낸다.",
+          "B": "악인들은 말로 사람을 죽이려고 숨어 기다리지만, \\q 정직한 사람들의 말은 그들을 구해 낸다.",
+          "R": "악한 사람은 말로 덫을 놓아 남을 죽이려 한다. \\q 그러나 정직한 사람의 말은 생명을 구한다."
         }
       },
       "decisions": [
@@ -893,6 +1056,11 @@
           "L": "Kẻ ác bị lật đổ và không còn nữa, \\q nhưng nhà của người công chính sẽ đứng vững.",
           "B": "Kẻ ác bị lật đổ rồi biến mất, \\q còn nhà của người công chính sẽ đứng vững.",
           "R": "Kẻ ác bị tiêu diệt và không còn nữa. \\q Nhưng gia đình người công chính sẽ tồn tại lâu dài."
+        },
+        "ko": {
+          "L": "악인들은 뒤엎어져 없어지지만, \\q 의인들의 집은 서 있을 것이다.",
+          "B": "악인들은 쓰러져 사라지지만, \\q 의인들의 집은 굳게 설 것이다.",
+          "R": "악한 사람들은 망하여 없어진다. \\q 그러나 바르게 사는 사람의 집안은 오래간다."
         }
       },
       "decisions": [
@@ -964,6 +1132,11 @@
           "L": "Một người được khen ngợi tùy theo sự sáng suốt của mình, \\q nhưng kẻ có lòng gian tà sẽ bị khinh bỉ.",
           "B": "Người có sự sáng suốt thì được khen ngợi, \\q còn kẻ có tâm trí lệch lạc thì bị coi khinh.",
           "R": "Người ta khen những ai biết suy xét đúng. \\q Nhưng họ coi thường những kẻ có lối suy nghĩ lệch lạc."
+        },
+        "ko": {
+          "L": "사람은 자기 슬기만큼 칭찬을 받지만, \\q 마음이 비뚤어진 자는 멸시를 받을 것이다.",
+          "B": "사람은 분별력이 있으면 칭찬을 받고, \\q 생각이 비뚤어진 사람은 업신여김을 받는다.",
+          "R": "사람들은 지혜롭게 판단하는 사람을 칭찬한다. \\q 그러나 생각이 비뚤어진 사람은 깔본다."
         }
       },
       "decisions": [
@@ -1037,6 +1210,25 @@
           "reason": "\"của mình\" (one's own) already means his or her, so Vietnamese has no second form for the gender setting to switch to. The English gender spans in these chapters have no Vietnamese counterpart.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o200120080021"
+          ],
+          "choice": "No gender span: \"사람\" and \"자기\" already speak of anyone",
+          "alternatives": [],
+          "reason": "Where the English has \"their|his\", Korean says \"자기\" (one's own) or nothing, and \"사람\" covers men and women, so there are not two ways to say it (style guide section 7). This holds for chapters 12-22.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1090,6 +1282,11 @@
           "L": "Thà [là người] bị xem nhẹ mà có đầy tớ, \\q còn hơn kẻ tự tôn mình mà thiếu bánh.",
           "B": "Thà làm người tầm thường mà có kẻ hầu, \\q còn hơn làm ra vẻ quan trọng mà không có gì ăn.",
           "R": "Thà làm một người bình thường mà đủ ăn đủ mặc, \\q còn hơn tỏ ra quan trọng mà không có gì để ăn."
+        },
+        "ko": {
+          "L": "업신여김을 받아도 종을 둔 사람이, \\q 스스로 높이면서 빵이 없는 사람보다 낫다.",
+          "B": "보잘것없어도 종을 부리는 것이, \\q 잘난 체하면서 먹을 것이 없는 것보다 낫다.",
+          "R": "평범하게 살아도 넉넉한 것이 \\q 잘난 척하면서 굶는 것보다 낫다."
         }
       },
       "decisions": [
@@ -1214,6 +1411,11 @@
           "L": "Người công chính biết nhu cầu của súc vật mình, \\q nhưng lòng thương xót của kẻ ác [là] tàn nhẫn.",
           "B": "Người công chính chăm sóc súc vật của mình, \\q còn ngay cả lòng tốt của kẻ ác cũng tàn nhẫn.",
           "R": "Người công chính đối xử tử tế ngay cả với súc vật của mình. \\q Nhưng ngay cả khi kẻ ác tỏ ra tử tế, chúng vẫn tàn nhẫn."
+        },
+        "ko": {
+          "L": "의인은 자기 가축의 생명을 알지만, \\q 악인들의 긍휼은 잔인하다.",
+          "B": "의인은 자기 가축을 돌보지만, \\q 악인들은 베푸는 친절마저 잔인하다.",
+          "R": "바르게 사는 사람은 자기 가축에게도 친절하다. \\q 그러나 악한 사람은 친절하려 해도 잔인하다."
         }
       },
       "decisions": [
@@ -1283,6 +1485,11 @@
           "L": "Ai cày cấy đất mình sẽ được no bánh, \\q còn ai chạy theo những điều hư không [là] thiếu trí khôn.",
           "B": "Ai chăm làm ruộng đất mình sẽ có dư dật thức ăn, \\q còn ai chạy theo ảo tưởng là kẻ thiếu trí khôn.",
           "R": "Người chăm chỉ làm ruộng sẽ có nhiều thức ăn. \\q Người phí thì giờ vào những việc vô ích là người dại dột."
+        },
+        "ko": {
+          "L": "자기 땅을 일구는 자는 빵으로 배부를 것이지만, \\q 헛된 것을 좇는 자는 마음이 모자란다.",
+          "B": "자기 땅을 가꾸는 사람은 먹을 것이 넉넉하지만, \\q 헛된 꿈을 좇는 사람은 생각이 없는 사람이다.",
+          "R": "자기 밭에서 부지런히 일하는 사람은 먹을 것이 많다. \\q 쓸데없는 일에 시간을 버리는 사람은 분별이 없다."
         }
       },
       "decisions": [
@@ -1383,6 +1590,27 @@
           "reason": "The heart here is the seat of thought, and \"thiếu lòng\" would be read as lacking feeling or kindness. Literal keeps \"lòng\" for heart wherever the sense allows it, but says \"trí khôn\" in this phrase.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200120110081"
+          ],
+          "choice": "\"마음이 모자란다\" (L); \"생각이 없다\" (B); \"분별이 없다\" (R) for \"lacking heart\"",
+          "alternatives": [
+            "지각이 없다"
+          ],
+          "reason": "The Hebrew says \"lacking heart\": the heart is where a person thinks (the terms note: 마음). Literal keeps the heart; Balanced and Readable say the sense, having no good sense. This holds for chapters 12-22.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1433,6 +1661,11 @@
           "L": "Kẻ ác thèm muốn [mẻ] lưới của kẻ xấu xa, \\q nhưng rễ của người công chính sinh [trái].",
           "B": "Kẻ ác thèm muốn những gì bọn gian ác đã cướp được, \\q nhưng rễ của người công chính sinh hoa trái.",
           "R": "Kẻ ác thèm muốn những gì bọn gian ác khác đã cướp được. \\q Nhưng người công chính như cây khỏe mạnh sinh nhiều trái."
+        },
+        "ko": {
+          "L": "악인은 악한 자들의 노획물을 탐내지만, \\q 의인들의 뿌리는 [열매를] 낸다.",
+          "B": "악인은 악한 자들이 잡은 것을 탐내지만, \\q 의인들의 뿌리는 열매를 맺는다.",
+          "R": "악한 사람은 다른 악한 사람이 빼앗은 것을 갖고 싶어 한다. \\q 그러나 바르게 사는 사람은 열매를 맺는 튼튼한 나무와 같다."
         }
       },
       "decisions": [
@@ -1504,6 +1737,11 @@
           "L": "Trong sự vi phạm của môi miệng [có] cái bẫy độc hại, \\q nhưng người công chính thoát khỏi hoạn nạn.",
           "B": "Kẻ ác bị mắc bẫy vì lời nói tội lỗi của mình, \\q còn người công chính thoát khỏi hoạn nạn.",
           "R": "Kẻ ác bị mắc bẫy bởi những lời sai trái chúng nói ra. \\q Nhưng người công chính thoát khỏi rắc rối."
+        },
+        "ko": {
+          "L": "입술의 허물에는 악한 올무가 있지만, \\q 의인은 환난에서 벗어난다.",
+          "B": "악인은 자기의 죄 된 말에 걸려들지만, \\q 의인은 곤경에서 빠져나온다.",
+          "R": "악한 사람은 자기가 한 나쁜 말 때문에 덫에 걸린다. \\q 그러나 바르게 사는 사람은 어려움에서 벗어난다."
         }
       },
       "decisions": [
@@ -1577,6 +1815,11 @@
           "L": "Nhờ bông trái của miệng mình, một người được no đầy điều tốt, \\q và việc tay một người làm sẽ trở lại với người ấy.",
           "B": "Nhờ bông trái của lời mình nói, người ta được no đầy điều tốt, \\q và việc tay họ làm sẽ trở lại với họ.",
           "R": "Lời nói tốt đem lại điều tốt cho người nói ra. \\q Và người ta được đền đáp xứng với việc mình làm."
+        },
+        "ko": {
+          "L": "사람은 자기 입의 열매로 좋은 것을 배불리 얻고, \\q 사람의 손이 한 일은 자기에게 돌아온다.",
+          "B": "사람은 자기가 한 말의 열매로 좋은 것을 넉넉히 얻고, \\q 자기 손으로 한 일은 자기에게 되돌아온다.",
+          "R": "좋은 말을 하는 사람에게는 좋은 일이 생긴다. \\q 사람은 자기가 일한 만큼 보상을 받는다."
         }
       },
       "decisions": [
@@ -1663,6 +1906,11 @@
           "L": "Đường lối của kẻ ngu dại [là] đúng trong mắt mình, \\q nhưng ai nghe lời khuyên [là] khôn ngoan.",
           "B": "Kẻ ngu dại cho đường lối mình là đúng, \\q còn người khôn ngoan biết nghe lời khuyên.",
           "R": "Người ngu dại nghĩ mình luôn đúng. \\q Người khôn ngoan biết lắng nghe lời khuyên."
+        },
+        "ko": {
+          "L": "미련한 자의 길은 자기 눈에 옳지만, \\q 조언을 듣는 자는 지혜롭다.",
+          "B": "미련한 자는 자기 길이 옳다고 여기지만, \\q 지혜로운 사람은 조언에 귀를 기울인다.",
+          "R": "미련한 사람은 자기가 늘 옳다고 생각한다. \\q 지혜로운 사람은 남의 조언을 듣는다."
         }
       },
       "decisions": [
@@ -1767,6 +2015,28 @@
           "reason": "The fool of Proverbs is not slow of mind but closed to wisdom; \"ngu dại\" is kept for him through the book. Readable says \"người\" rather than \"kẻ\", which sounds less harsh to new readers.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200120150021"
+          ],
+          "choice": "\"미련한 자\" (L, B); \"미련한 사람\" (R) for the fool",
+          "alternatives": [
+            "바보",
+            "어리석은 자"
+          ],
+          "reason": "The term used for the fool (kesil, 'ewil) through Proverbs; \"어리석은\" is kept for the simple (peti), who can still learn, so the two are not confused. This holds for chapters 12-22.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1819,6 +2089,11 @@
           "L": "Cơn giận của kẻ ngu dại lộ ra ngay tức khắc, \\q nhưng ai che đậy sự sỉ nhục [là] khôn khéo.",
           "B": "Kẻ ngu dại nổi giận ra mặt ngay, \\q còn người khôn khéo bỏ qua lời sỉ nhục.",
           "R": "Người ngu dại để lộ cơn giận ngay lập tức. \\q Người khôn ngoan bỏ qua lời lăng mạ."
+        },
+        "ko": {
+          "L": "미련한 자는 그날로 분노가 드러나지만, \\q 모욕을 덮어 두는 자는 슬기롭다.",
+          "B": "미련한 자는 짜증을 곧바로 드러내지만, \\q 슬기로운 사람은 모욕을 못 본 체한다.",
+          "R": "미련한 사람은 화가 나면 바로 드러낸다. \\q 슬기로운 사람은 모욕을 받아도 참고 넘어간다."
         }
       },
       "decisions": [
@@ -1892,6 +2167,28 @@
           "reason": "The same word can mean crafty (Genesis 3:1), but in Proverbs it is the good sense that thinks before acting. \"khôn khéo\" is that sense; \"xảo quyệt\" would be the bad one. Readable says \"khôn ngoan\", as the English Readable says \"wise\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200120160071"
+          ],
+          "choice": "\"슬기롭다\" for the prudent ('arum) at every level",
+          "alternatives": [
+            "지혜롭다",
+            "영리하다"
+          ],
+          "reason": "\"지혜\" is kept for the word wisdom (hokmah); \"슬기\" says the practical good sense of the prudent person without the shade of cunning that \"영리하다\" can carry. This holds for chapters 12-22.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1942,6 +2239,11 @@
           "L": "Ai thốt ra sự chân thật thì công bố điều ngay thẳng, \\q nhưng nhân chứng gian dối [công bố] sự lừa gạt.",
           "B": "Nhân chứng trung thực nói ra điều ngay thẳng, \\q còn nhân chứng gian dối nói điều dối trá.",
           "R": "Nhân chứng trung thực nói sự thật trước tòa. \\q Nhân chứng gian dối thì nói dối."
+        },
+        "ko": {
+          "L": "진실을 내쉬는 자는 옳은 것을 알리지만, \\q 거짓 증인은 속임수를 [알린다].",
+          "B": "정직한 증인은 옳은 것을 말하지만, \\q 거짓 증인은 거짓을 말한다.",
+          "R": "정직한 증인은 법정에서 사실대로 말한다. \\q 거짓 증인은 거짓말을 한다."
         }
       },
       "decisions": [
@@ -2010,6 +2312,11 @@
           "L": "Có kẻ nói liều như những nhát gươm đâm, \\q nhưng lưỡi của người khôn ngoan [là] sự chữa lành.",
           "B": "Lời nói thiếu suy nghĩ đâm như lưỡi gươm, \\q còn lời người khôn ngoan đem lại sự chữa lành.",
           "R": "Lời nói bừa bãi có thể làm tổn thương như dao đâm. \\q Nhưng lời của người khôn ngoan giúp chữa lành vết thương."
+        },
+        "ko": {
+          "L": "칼로 찌르듯이 함부로 말하는 자가 있지만, \\q 지혜로운 자들의 혀는 치유이다.",
+          "B": "생각 없이 내뱉은 말은 칼처럼 찌르지만, \\q 지혜로운 사람의 말은 상처를 낫게 한다.",
+          "R": "함부로 한 말은 칼처럼 마음을 다치게 할 수 있다. \\q 그러나 지혜로운 사람의 말은 상처가 낫도록 돕는다."
         }
       },
       "decisions": [
@@ -2078,6 +2385,11 @@
           "L": "Môi chân thật sẽ đứng vững đời đời, \\q nhưng lưỡi giả dối [chỉ còn] trong chớp mắt.",
           "B": "Lời chân thật tồn tại mãi mãi, \\q còn lời dối trá chỉ trong nháy mắt là tan biến.",
           "R": "Sự thật còn mãi mãi. \\q Nhưng lời nói dối chỉ tồn tại một thời gian ngắn."
+        },
+        "ko": {
+          "L": "진실한 입술은 영원히 굳게 서지만, \\q 거짓된 혀는 눈 깜짝할 동안[만 간다].",
+          "B": "진실한 말은 영원히 남지만, \\q 거짓말은 눈 깜짝할 사이에 사라진다.",
+          "R": "진실은 영원히 남는다. \\q 그러나 거짓말은 잠깐밖에 가지 못한다."
         }
       },
       "decisions": [
@@ -2167,6 +2479,11 @@
           "L": "Sự lừa dối [ở] trong lòng những kẻ mưu điều ác, \\q nhưng những người khuyên [làm] hòa bình [có] niềm vui.",
           "B": "Trong lòng kẻ mưu điều ác có sự dối trá, \\q còn người vun đắp hòa bình thì có niềm vui.",
           "R": "Kẻ lập mưu làm điều ác đầy dối trá. \\q Nhưng người tìm cách giảng hòa thì đầy niềm vui."
+        },
+        "ko": {
+          "L": "악을 꾀하는 자들의 마음에는 속임수가 있지만, \\q 평화를 권하는 자들에게는 기쁨이 [있다].",
+          "B": "악을 꾸미는 사람의 마음에는 속임수가 있지만, \\q 평화를 위해 애쓰는 사람에게는 기쁨이 있다.",
+          "R": "악한 일을 꾸미는 사람은 마음에 거짓이 가득하다. \\q 그러나 평화를 이루려는 사람은 기쁨이 가득하다."
         }
       },
       "decisions": [
@@ -2258,6 +2575,11 @@
           "L": "Không tai họa nào xảy đến cho người công chính, \\q nhưng kẻ ác đầy dẫy hoạn nạn.",
           "B": "Không có tai họa thật sự nào đến với người công chính, \\q còn kẻ ác thì đầy dẫy rắc rối.",
           "R": "Không có điều thật sự tồi tệ nào xảy đến cho người công chính. \\q Nhưng kẻ ác sẽ gặp nhiều rắc rối."
+        },
+        "ko": {
+          "L": "의인에게는 어떤 해도 닥치지 않지만, \\q 악인들은 재앙으로 가득하다.",
+          "B": "의인에게는 참된 해가 닥치지 않지만, \\q 악인들에게는 재앙이 가득하다.",
+          "R": "바르게 사는 사람에게는 정말 나쁜 일이 일어나지 않는다. \\q 그러나 악한 사람에게는 어려운 일이 많을 것이다."
         }
       },
       "decisions": [
@@ -2326,6 +2648,11 @@
           "L": "Môi giả dối [là] điều gớm ghiếc đối với {{divine_name:CHÚA|Gia-vê}}, \\q nhưng những người làm [điều] thành tín [là] niềm vui thích của {{deity_pronoun:ngài|Ngài}}.",
           "B": "{{divine_name:CHÚA|Gia-vê}} ghê tởm môi miệng dối trá, \\q còn những người giữ lòng thành tín là niềm vui của {{deity_pronoun:ngài|Ngài}}.",
           "R": "{{divine_name:CHÚA|Gia-vê}} ghét sự dối trá. \\q Nhưng {{deity_pronoun:ngài|Ngài}} vui lòng về những người trung thực."
+        },
+        "ko": {
+          "L": "거짓된 입술은 {{divine_name:주|야훼}}께서 역겨워하시는 것이지만, \\q 신실하게 행하는 자들은 그분의 기쁨이다.",
+          "B": "{{divine_name:주|야훼}}께서는 거짓말하는 입술을 몹시 싫어하시지만, \\q 신실하게 사는 사람들은 기뻐하신다.",
+          "R": "{{divine_name:주|야훼}}께서는 거짓말을 미워하신다. \\q 그러나 정직한 사람들을 기뻐하신다."
         }
       },
       "decisions": [
@@ -2381,6 +2708,27 @@
           "reason": "Literal keeps one noun for this word each time it comes in Proverbs; Balanced and Readable turn it into a verb (\"ghê tởm\", \"ghét\"), as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200120220011"
+          ],
+          "choice": "\"역겨워하시는 것\" (L); \"몹시 싫어하시다\" (B); \"미워하시다\" (R) for \"abomination\"",
+          "alternatives": [
+            "가증한 것"
+          ],
+          "reason": "\"가증한 것\" is the older church word and is hard for many readers today; Literal keeps a noun phrase for the Hebrew noun, the other levels a verb. This holds for chapters 12-22.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2432,6 +2780,11 @@
           "L": "Người khôn khéo che giấu tri thức, \\q nhưng lòng kẻ ngu dại công bố sự ngu dại.",
           "B": "Người khôn khéo giữ kín điều mình biết, \\q còn lòng kẻ ngu dại buột ra điều ngu dại.",
           "R": "Người khôn ngoan không khoe khoang điều mình biết. \\q Người ngu dại nói những điều dại dột cho mọi người nghe."
+        },
+        "ko": {
+          "L": "슬기로운 사람은 지식을 감추지만, \\q 미련한 자들의 마음은 미련함을 외친다.",
+          "B": "슬기로운 사람은 아는 것을 드러내지 않지만, \\q 미련한 자들은 마음에 있는 미련함을 떠벌린다.",
+          "R": "슬기로운 사람은 아는 것을 자랑하지 않는다. \\q 미련한 사람은 모두가 듣도록 미련한 말을 한다."
         }
       },
       "decisions": [
@@ -2518,6 +2871,11 @@
           "L": "Tay của người siêng năng sẽ cai trị, \\q nhưng [kẻ] biếng nhác sẽ bị bắt làm lao dịch.",
           "B": "Người chăm chỉ rồi sẽ nắm quyền, \\q còn kẻ biếng nhác sẽ bị bắt làm việc cho người khác.",
           "R": "Người làm việc chăm chỉ sẽ trở thành người lãnh đạo. \\q Người lười biếng rồi sẽ bị bắt làm lao dịch."
+        },
+        "ko": {
+          "L": "부지런한 자들의 손은 다스리지만, \\q 게으른 자는 강제 노역에 처해질 것이다.",
+          "B": "부지런한 사람은 남을 다스리게 되지만, \\q 게으른 사람은 남의 일을 억지로 하게 된다.",
+          "R": "열심히 일하는 사람은 지도자가 된다. \\q 게으른 사람은 결국 억지로 남의 일을 하게 된다."
         }
       },
       "decisions": [
@@ -2627,6 +2985,11 @@
           "L": "Lo âu trong lòng một người đè nặng nó, \\q nhưng một lời tốt làm nó vui lên.",
           "B": "Nỗi lo làm lòng nặng trĩu, \\q còn một lời tử tế làm lòng phấn chấn.",
           "R": "Lo lắng làm người ta buồn rầu. \\q Nhưng một lời tử tế làm họ vui lên."
+        },
+        "ko": {
+          "L": "사람의 마음속 근심은 그것을 짓누르지만, \\q 좋은 말은 그것을 기쁘게 한다.",
+          "B": "걱정은 마음을 무겁게 짓누르지만, \\q 따뜻한 말 한마디는 마음을 일으켜 세운다.",
+          "R": "걱정이 있으면 마음이 무거워진다. \\q 그러나 친절한 말은 마음을 기쁘게 한다."
         }
       },
       "decisions": [
@@ -2695,6 +3058,11 @@
           "L": "Người công chính dẫn đường cho người lân cận mình, \\q nhưng đường lối của kẻ ác làm chúng lạc lối.",
           "B": "Người công chính chỉ đường đúng cho bạn bè mình, \\q còn con đường kẻ ác đi làm chúng lầm lạc.",
           "R": "Người công chính giúp bạn bè tìm đúng đường. \\q Nhưng kẻ ác dẫn người khác đi sai đường."
+        },
+        "ko": {
+          "L": "의인은 자기 이웃을 인도하지만, \\q 악인들의 길은 그들을 헤매게 한다.",
+          "B": "의인은 친구에게 바른길을 알려 주지만, \\q 악인들이 가는 길은 그들을 잘못된 데로 이끈다.",
+          "R": "바르게 사는 사람은 친구가 바른길을 찾도록 돕는다. \\q 그러나 악한 사람은 다른 사람을 잘못된 길로 이끈다."
         }
       },
       "decisions": [
@@ -2765,6 +3133,11 @@
           "L": "[Kẻ] biếng nhác không nướng thịt săn của mình, \\q nhưng của cải của người siêng năng [thì] quý giá.",
           "B": "Kẻ biếng nhác chẳng bao giờ nấu con thú mình săn được, \\q còn người siêng năng biết quý những gì mình có.",
           "R": "Người lười biếng không làm xong việc mình bắt đầu. \\q Người chăm chỉ biết giữ gìn những gì mình có."
+        },
+        "ko": {
+          "L": "게으른 자는 자기 사냥감을 굽지 않지만, \\q 부지런한 사람의 재물은 귀하다.",
+          "B": "게으른 사람은 잡은 것도 요리하지 않지만, \\q 부지런한 사람은 가진 것을 소중히 여긴다.",
+          "R": "게으른 사람은 시작한 일을 끝내지 않는다. \\q 부지런한 사람은 가진 것을 잘 돌본다."
         }
       },
       "decisions": [
@@ -2835,6 +3208,11 @@
           "L": "Trong lối đi công chính [có] sự sống, \\q và trên đường [của] lối ấy không [có] sự chết.",
           "B": "Trên con đường công chính có sự sống; \\q dọc theo lối ấy không có sự chết.",
           "R": "Làm điều đúng dẫn đến sự sống. \\q Con đường ấy không dẫn đến cái chết."
+        },
+        "ko": {
+          "L": "의의 길에는 생명이 [있고], \\q 그 길에는 죽음이 없다.",
+          "B": "의의 길에는 생명이 있고, \\q 그 길을 따라가면 죽음이 없다.",
+          "R": "옳은 일을 하면 생명을 얻는다. \\q 그 길은 죽음으로 이어지지 않는다."
         }
       },
       "decisions": [
