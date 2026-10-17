@@ -37,6 +37,11 @@
           "L": "Cantique des montées. Vers {{divine_name:le SEIGNEUR|Yahvé}}, dans ma détresse, j’ai crié, et {{deity_pronoun:il|Il}} m’a répondu.",
           "B": "Cantique des montées. Quand j’étais dans la détresse, j’ai crié vers {{divine_name:le SEIGNEUR|Yahvé}}, et {{deity_pronoun:il|Il}} m’a donné une réponse.",
           "R": "Chant pour la montée vers Jérusalem. Quand j’étais en difficulté, j’ai appelé {{divine_name:le SEIGNEUR|Yahvé}}. Et {{deity_pronoun:il|Il}} m’a répondu."
+        },
+        "sw": {
+          "L": "Wimbo wa kupanda. Kwa {{divine_name:BWANA|Yahwe}} katika dhiki yangu nililia, {{deity_pronoun:naye|Naye}} akanijibu.",
+          "B": "Wimbo wa kupanda. Nilipokuwa katika taabu nilimlilia {{divine_name:BWANA|Yahwe}}, {{deity_pronoun:naye|Naye}} akanijibu.",
+          "R": "Wimbo wa safari ya kupanda kwenda Yerusalemu. Nilipokuwa na shida, nilimwita {{divine_name:BWANA|Yahwe}}. Naye akanijibu."
         }
       },
       "decisions": [
@@ -156,6 +161,51 @@
           "reason": "The French default writes the name as \"le SEIGNEUR\" in capitals, like the English \"the LORD\"; \"l'Éternel\", the Segond tradition, is the form a reviewer may prefer. In these psalms the speaker addresses God with \"tu\", the ordinary French of prayer.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191200010011",
+            "o191200010022"
+          ],
+          "choice": "\"Wimbo wa kupanda\" (L, B); \"Wimbo wa safari ya kupanda kwenda Yerusalemu\" (R), in every title of Psalms 120-134",
+          "alternatives": [
+            "\"Wimbo wa kwenda juu\"",
+            "\"Wimbo wa safari ya ibada\""
+          ],
+          "reason": "The title says only \"a song of the ascents\". Literal and Balanced keep that word, \"kupanda\" (going up); Readable says where the pilgrims went up to, as the English Readable does, since these were probably songs for the road up to Jerusalem (see the meaning decision).",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-2",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191200010041",
+            "o191200010082"
+          ],
+          "choice": "BWANA in capitals, with Yahwe as the alternative; free pronouns for God such as \"naye\" carry the deity_pronoun setting",
+          "alternatives": [
+            "\"Yahwe\" as the default"
+          ],
+          "reason": "As in the rest of the Swahili Old Testament. Swahili marks most pronouns inside the verb (\"akanijibu\", he answered me), where a capital is impossible, so only free pronouns and possessives for God carry the setting.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -194,6 +244,11 @@
           "L": "{{divine_name:SEIGNEUR|Yahvé}}, délivre mon âme de la lèvre de mensonge, de la langue de tromperie.",
           "B": "{{divine_name:SEIGNEUR|Yahvé}}, arrache-moi aux gens dont les lèvres mentent, dont la langue trompe.",
           "R": "{{divine_name:SEIGNEUR|Yahvé}}, sauve-moi des menteurs et des gens qui trompent les autres."
+        },
+        "sw": {
+          "L": "Ee {{divine_name:BWANA|Yahwe}}, uiokoe nafsi yangu na mdomo wa uongo, na ulimi wa hila.",
+          "B": "Ee {{divine_name:BWANA|Yahwe}}, uniokoe na watu ambao midomo yao husema uongo, ambao ndimi zao hudanganya.",
+          "R": "{{divine_name:BWANA|Yahwe}}, niokoe kutoka kwa waongo na kwa watu wanaowadanganya wengine."
         }
       },
       "decisions": [
@@ -288,6 +343,29 @@
           "reason": "Nefesh is \"âme\" at Literal, as the terms note sets; here it stands for the whole person, so Balanced and Readable say \"me\", as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191200020031",
+            "o191200020032"
+          ],
+          "choice": "\"nafsi yangu\" (my soul) at Literal; \"mimi\" (me) at Balanced and Readable, through Psalms 120-150",
+          "alternatives": [
+            "\"nafsi yangu\" at every level",
+            "\"roho yangu\""
+          ],
+          "reason": "The Hebrew nefesh is the whole living person. Literal keeps the word \"nafsi\"; Balanced and Readable say the person, as the English does. \"Roho\" would suggest the spirit apart from the body.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -326,6 +404,11 @@
           "L": "Que te donnera-t-{{deity_pronoun:il|Il}}, et que t’ajoutera-t-{{deity_pronoun:il|Il}}, langue de tromperie ?",
           "B": "Langue trompeuse, que te donnera-t-{{deity_pronoun:il|Il}}, et que fera-t-{{deity_pronoun:il|Il}} pleuvoir encore sur toi ?",
           "R": "Menteurs, que va-t-il vous arriver de la part de Dieu ? Que va-t-{{deity_pronoun:il|Il}} encore ajouter ?"
+        },
+        "sw": {
+          "L": "Atakupa nini, na atakuongezea nini, [wewe] ulimi wa hila?",
+          "B": "Ewe ulimi wa udanganyifu, atakupa nini, na atakuzidishia nini zaidi?",
+          "R": "Ninyi waongo, Mungu atawapa nini kama malipo? Ataongeza nini zaidi?"
         }
       },
       "decisions": [
@@ -446,6 +529,11 @@
           "L": "Des flèches de guerrier, aiguisées, avec des braises de genêt !",
           "B": "Les flèches aiguisées d’un combattant, et des braises ardentes de genêt !",
           "R": "Voici ce que vous recevrez : les flèches pointues d’un soldat et des braises brûlantes qui restent chaudes longtemps."
+        },
+        "sw": {
+          "L": "Mishale ya shujaa, iliyonolewa, pamoja na makaa ya [mti wa] mretemu!",
+          "B": "Mishale mikali ya mpiganaji hodari, na makaa ya moto ya mti wa mretemu!",
+          "R": "Hiki ndicho mtakachopata: mishale mikali ya askari, na makaa ya moto yanayowaka kwa muda mrefu."
         }
       },
       "decisions": [
@@ -517,6 +605,26 @@
           "reason": "The rotem is the white broom of the desert, \"genêt\" in French; its charcoal burns hot and long, which Readable explains instead of naming the plant.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191200040061"
+          ],
+          "choice": "\"mretemu\" for the broom bush",
+          "alternatives": [
+            "\"mti wa jangwani\""
+          ],
+          "reason": "\"Mretemu\" is the Swahili name of the broom bush of the desert, whose wood makes hot, long-lasting coals; Readable says what the coals do instead of naming the plant, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -554,6 +662,11 @@
           "L": "Malheur à moi, car je séjourne [à] Méshek, [car] je demeure parmi les tentes de Qédar !",
           "B": "Quel malheur pour moi de vivre en étranger à Méshek, d’habiter parmi les tentes de Qédar !",
           "R": "Comme c’est dur pour moi ! Je suis comme un étranger qui vit loin, à Méshek, ou parmi les tentes de Qédar."
+        },
+        "sw": {
+          "L": "Ole wangu, kwa kuwa ninakaa kama mgeni [katika] Mesheki, [kwamba] ninaishi kati ya mahema ya Kedari!",
+          "B": "Ni taabu kwangu, kuishi kama mgeni huko Mesheki, kufanya makao yangu kati ya mahema ya Kedari!",
+          "R": "Ni vibaya mno kwangu! Mimi ni kama mgeni anayeishi mbali huko Mesheki, au kati ya mahema ya Kedari."
         }
       },
       "decisions": [
@@ -664,6 +777,11 @@
           "L": "Longtemps mon âme a demeuré pour elle-même avec [celui qui] hait la paix.",
           "B": "Depuis bien trop longtemps je dois vivre à côté de gens qui haïssent la paix.",
           "R": "J’ai passé trop de temps de ma vie près de gens qui détestent la paix."
+        },
+        "sw": {
+          "L": "Muda mrefu nafsi yangu imekaa pamoja na achukiaye amani.",
+          "B": "Kwa muda mrefu mno nimelazimika kuishi karibu na watu wanaochukia amani.",
+          "R": "Nimeishi muda mrefu sana karibu na watu wanaochukia amani."
         }
       },
       "decisions": [
@@ -770,6 +888,11 @@
           "L": "Moi, [je suis] paix ; mais quand je parle, eux [sont] pour la guerre.",
           "B": "Moi, je suis pour la paix, mais dès que j’ouvre la bouche, ils choisissent la guerre.",
           "R": "Moi, je veux la paix. Mais chaque fois que je parle, ils veulent se battre."
+        },
+        "sw": {
+          "L": "Mimi [ni] amani; lakini ninaposema, wao [ni] kwa ajili ya vita.",
+          "B": "Mimi ninasimama upande wa amani, lakini ninapofungua kinywa changu, wao wanachagua vita.",
+          "R": "Mimi ninataka amani. Lakini kila ninaposema, wao wanataka kupigana."
         }
       },
       "decisions": [
