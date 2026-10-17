@@ -27,6 +27,31 @@
           "L": "Hear, sons, [the] discipline of a father, \\q and pay attention to know understanding.",
           "B": "Listen, sons, to the correction a father gives; \\q pay attention, and you will gain understanding.",
           "R": "Sons, listen to your father when he corrects you. \\q Pay attention, and you will learn to understand."
+        },
+        "fr": {
+          "L": "Écoutez, fils, la discipline d’un père, \\q et soyez attentifs pour connaître l’intelligence.",
+          "B": "Écoutez, mes fils, les reproches d’un père ; \\q soyez attentifs, et vous acquerrez l’intelligence.",
+          "R": "Mes fils, écoutez votre père quand il vous corrige. \\q Faites attention, et vous apprendrez à comprendre."
+        },
+        "sw": {
+          "L": "Sikieni, enyi wana, nidhamu ya baba, \\q na sikilizeni ili kujua ufahamu.",
+          "B": "Sikilizeni, enyi wana, maonyo ya baba; \\q tegeni sikio, nanyi mtapata ufahamu.",
+          "R": "Wana, msikilizeni baba yenu anapowaonya. \\q Sikilizeni kwa makini, nanyi mtajifunza kuelewa."
+        },
+        "es": {
+          "L": "{{plural_you:Escuchen|Escuchad}}, hijos, [la] disciplina de un padre, \\q y {{plural_you:estén|estad}} atentos para conocer el entendimiento.",
+          "B": "{{plural_you:Escuchen|Escuchad}}, hijos, la corrección que da un padre; \\q {{plural_you:presten|prestad}} atención, y {{plural_you:adquirirán|adquiriréis}} entendimiento.",
+          "R": "Hijos, {{plural_you:escuchen|escuchad}} a {{plural_you:su|vuestro}} padre cuando {{plural_you:los|os}} corrige. \\q {{plural_you:Presten|Prestad}} atención, y {{plural_you:aprenderán|aprenderéis}} a entender."
+        },
+        "vi": {
+          "L": "Hỡi các con, hãy nghe sự sửa dạy của người cha, \\q và hãy chú ý để biết sự thông sáng.",
+          "B": "Hỡi các con, hãy lắng nghe lời sửa dạy của cha; \\q hãy chú tâm, thì các con sẽ được thông sáng.",
+          "R": "Các con ơi, hãy nghe khi cha sửa dạy các con. \\q Hãy chú ý, thì các con sẽ học được cách hiểu biết."
+        },
+        "ko": {
+          "L": "아들들아, 아버지의 훈계를 들어라. \\q 명철을 알도록 귀를 기울여라.",
+          "B": "아들들아, 아버지가 주는 훈계를 들어라. \\q 귀를 기울이면 명철을 얻을 것이다.",
+          "R": "아들들아, 아버지가 훈계할 때 잘 들어라. \\q 귀를 기울이면 깨닫게 될 것이다."
         }
       },
       "decisions": [
@@ -81,6 +106,113 @@
           "reason": "As with \"my son\" (1:8), the father speaks to his sons, so the word stays at every level.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o200040010021"
+          ],
+          "choice": "\"vous\" for the sons addressed together, with no gender setting on \"fils\"",
+          "alternatives": [
+            "\"mes enfants\""
+          ],
+          "reason": "The father speaks to several sons here, so French uses the plural \"vous\"; as with \"mon fils\", the address stays as the Hebrew has it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o200040010021"
+          ],
+          "choice": "\"wana\" (sons, children) with no gender span",
+          "alternatives": [
+            "\"wavulana\"",
+            "\"watoto\""
+          ],
+          "reason": "\"Wana\" names a father's children or a teacher's pupils without stressing that they are male, so Swahili has no second wording for the setting; the English keeps \"sons\" for the same reason.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200040010021"
+          ],
+          "choice": "hijos, with no gender setting",
+          "alternatives": [
+            "hijos e hijas"
+          ],
+          "reason": "The father speaks to his sons, as the English keeps \"sons\"; Spanish \"hijos\" can take in daughters too, so no setting is needed. The plural address takes the ustedes/vosotros setting.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o200040010021"
+          ],
+          "choice": "\"các con\" with no gender span",
+          "alternatives": [
+            "\"các con trai\""
+          ],
+          "reason": "The father's \"sons\" may be his children or a teacher's pupils (see the meaning decision); \"các con\" is how a Vietnamese parent speaks to his children, sons and daughters, so there is no second form for the setting, as in the English.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o200040010021"
+          ],
+          "choice": "\"아들들아\" with no gender span",
+          "alternatives": [
+            "자녀들아",
+            "{{gender:자녀들|아들들}}아"
+          ],
+          "reason": "The English keeps \"sons\" without a setting here, since the father is speaking to his sons (meaning decision m1), and Korean does the same.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -113,6 +245,31 @@
           "L": "For good teaching I give to you; \\q my instruction do not abandon.",
           "B": "What I am giving you is sound teaching; \\q do not walk away from my instruction.",
           "R": "What I am teaching you is good. \\q Do not turn away from it."
+        },
+        "fr": {
+          "L": "Car un bon enseignement, je vous [le] donne ; \\q mon instruction, ne l’abandonnez pas.",
+          "B": "Ce que je vous donne, c’est un enseignement solide ; \\q ne vous éloignez pas de mon instruction.",
+          "R": "Ce que je vous enseigne est bon. \\q Ne vous en détournez pas."
+        },
+        "sw": {
+          "L": "Kwa maana nawapa mafunzo mema; \\q mafundisho yangu msiyaache.",
+          "B": "Ninachowapa ni mafundisho ya kweli; \\q msiyaache mafundisho yangu.",
+          "R": "Ninayowafundisha ni mema. \\q Msiyaache."
+        },
+        "es": {
+          "L": "Porque buena enseñanza {{plural_you:les|os}} doy; \\q mi instrucción no {{plural_you:abandonen|abandonéis}}.",
+          "B": "Lo que {{plural_you:les|os}} estoy dando es una enseñanza sana; \\q no {{plural_you:se alejen|os alejéis}} de mi instrucción.",
+          "R": "Lo que {{plural_you:les|os}} enseño es bueno. \\q No {{plural_you:le den|le deis}} la espalda."
+        },
+        "vi": {
+          "L": "Vì ta ban cho các con sự dạy dỗ tốt lành; \\q lời dạy của ta, đừng lìa bỏ.",
+          "B": "Những gì cha trao cho các con là sự dạy dỗ đúng đắn; \\q đừng bỏ lời dạy của cha.",
+          "R": "Những điều cha dạy các con là tốt. \\q Đừng quay lưng với chúng."
+        },
+        "ko": {
+          "L": "참으로 내가 너희에게 좋은 교훈을 주니, \\q 내 가르침을 버리지 마라.",
+          "B": "내가 너희에게 주는 것은 건전한 교훈이니, \\q 내 가르침을 저버리지 마라.",
+          "R": "내가 가르쳐 주는 것은 좋은 것이다. \\q 그것을 떠나지 마라."
         }
       },
       "decisions": [
@@ -128,6 +285,27 @@
           "choice": "teaching ... instruction",
           "alternatives": [],
           "reason": "Teaching (leqah) is what is received, learning (1:5); instruction (torah) is the father's teaching, as in 1:8 and 3:1.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200040020021",
+            "o200040020061"
+          ],
+          "choice": "\"교훈\" for leqah and \"가르침\" for torah",
+          "alternatives": [
+            "가르침 for both"
+          ],
+          "reason": "The verse has two words for teaching; \"가르침\" is kept for the parent's torah, as in 1:8, and leqah, the lesson received, is \"교훈\", so the pair stays two words.",
           "uncertain": false,
           "footnote": false
         }
@@ -165,6 +343,31 @@
           "L": "For I was a son to my father, \\q tender and [the] only [one] before my mother,",
           "B": "When I was a boy in my father's house, \\q young and tender, my mother's dearest child,",
           "R": "When I was a young boy, my father loved me, \\q and my mother treated me as her only child."
+        },
+        "fr": {
+          "L": "Car j’étais un fils pour mon père, \\q tendre et unique devant ma mère,",
+          "B": "Quand j’étais un garçon dans la maison de mon père, \\q jeune et tendre, l’enfant chéri de ma mère,",
+          "R": "Quand j’étais petit garçon, mon père m’aimait, \\q et ma mère me traitait comme son fils unique."
+        },
+        "sw": {
+          "L": "Kwa maana nilikuwa mwana kwa baba yangu, \\q mwororo na [wa] pekee mbele ya mama yangu,",
+          "B": "Nilipokuwa mvulana nyumbani kwa baba yangu, \\q mdogo na mwororo, mtoto mpendwa wa mama yangu,",
+          "R": "Nilipokuwa mvulana mdogo, baba yangu alinipenda, \\q na mama yangu alinitendea kama mtoto wake wa pekee."
+        },
+        "es": {
+          "L": "Porque yo fui hijo para mi padre, \\q tierno y único delante de mi madre,",
+          "B": "Cuando yo era niño en la casa de mi padre, \\q pequeño y tierno, el hijo más querido de mi madre,",
+          "R": "Cuando yo era un niño pequeño, mi padre me amaba, \\q y mi madre me trataba como si fuera su único hijo."
+        },
+        "vi": {
+          "L": "Vì ta [đã] là con đối với cha ta, \\q non nớt và [là] đứa con duy nhất trước mặt mẹ ta,",
+          "B": "Khi cha còn là một cậu bé trong nhà cha mình, \\q còn non trẻ, là đứa con yêu dấu nhất của mẹ,",
+          "R": "Khi cha còn nhỏ, ông nội các con rất thương cha, \\q và bà nội đối xử với cha như đứa con duy nhất."
+        },
+        "ko": {
+          "L": "참으로 나도 내 아버지에게 아들이었고, \\q 내 어머니 앞에서 여리고 하나뿐인 [자식]이었다.",
+          "B": "나도 내 아버지 집에서 어린 아들이었을 때, \\q 어머니가 가장 아끼는 여린 자식이었을 때,",
+          "R": "내가 어린 소년이었을 때 아버지께서는 나를 사랑하셨고, \\q 어머니께서는 나를 하나뿐인 자식처럼 아끼셨다."
         }
       },
       "decisions": [
@@ -196,6 +399,26 @@
           "choice": "for I was a son: the father tells his own story",
           "alternatives": [],
           "reason": "The father shows that what he teaches was taught to him: the teaching passes from one generation to the next (Deuteronomy 6:6–7).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o200040030042",
+            "o200040030081"
+          ],
+          "choice": "\"ông nội các con\" and \"bà nội\" for \"my father\" and \"my mother\"",
+          "alternatives": [
+            "\"cha của cha\" and \"mẹ của cha\""
+          ],
+          "reason": "The father tells his own story (see the meaning decision). Vietnamese names a speaker's parents to his children as their grandparents; \"cha của cha\" is clumsy. Literal and Balanced keep \"my father\" and \"my mother\".",
           "uncertain": false,
           "footnote": false
         }
@@ -237,6 +460,31 @@
           "L": "and he taught me and said to me, \\q \"Let your heart hold fast my words; \\q keep my commandments and live.",
           "B": "he taught me and said to me, \\q \"Hold on to my words with all your heart; \\q keep my commands and you will live.",
           "R": "My father taught me and said, \"Remember what I say. \\q Obey my commands, and you will live."
+        },
+        "fr": {
+          "L": "et il m’enseignait et me disait : \\q « Que ton cœur retienne mes paroles ; \\q garde mes commandements et vis.",
+          "B": "il m’a enseigné et m’a dit : \\q « Tiens à mes paroles de tout ton cœur ; \\q garde mes commandements, et tu vivras.",
+          "R": "Mon père m’a enseigné et m’a dit : « Souviens-toi de ce que je dis. \\q Obéis à mes commandements, et tu vivras."
+        },
+        "sw": {
+          "L": "naye alinifundisha akaniambia, \\q \"Moyo wako uyashike maneno yangu; \\q zishike amri zangu ukaishi.",
+          "B": "alinifundisha akaniambia, \\q \"Yashike maneno yangu kwa moyo wako wote; \\q zishike amri zangu nawe utaishi.",
+          "R": "Baba yangu alinifundisha akasema, \"Kumbuka ninayokuambia. \\q Tii amri zangu, nawe utaishi."
+        },
+        "es": {
+          "L": "y él me enseñaba y me decía: \\q «Retenga tu corazón mis palabras; \\q guarda mis mandamientos y vive.",
+          "B": "él me enseñaba y me decía: \\q «Aférrate de todo corazón a mis palabras; \\q guarda mis mandatos y vivirás.",
+          "R": "Mi padre me enseñaba y me decía: «Recuerda lo que te digo. \\q Obedece mis mandatos, y vivirás."
+        },
+        "vi": {
+          "L": "và người dạy ta và nói với ta: \\q \"Lòng con hãy giữ chặt lời ta; \\q hãy giữ các điều răn của ta thì con sẽ sống.",
+          "B": "người đã dạy cha và bảo cha rằng: \\q \"Hãy hết lòng giữ chặt lời cha; \\q hãy giữ các điều răn của cha, thì con sẽ được sống.",
+          "R": "Ông dạy cha rằng: \"Hãy nhớ những gì cha nói. \\q Hãy vâng theo các điều răn của cha, thì con sẽ được sống."
+        },
+        "ko": {
+          "L": "[아버지께서] 나를 가르치시며 내게 말씀하셨다. \\q \"네 마음이 내 말을 굳게 붙들게 하여라. \\q 내 계명을 지켜라. 그러면 살 것이다.",
+          "B": "아버지께서는 나를 가르치시며 이렇게 말씀하셨다. \\q \"온 마음으로 내 말을 붙들어라. \\q 내 명령을 지켜라. 그러면 살 것이다.",
+          "R": "아버지께서는 나를 가르치시며 말씀하셨다. \"내 말을 기억하여라. \\q 내 명령을 지켜라. 그러면 살 것이다."
         }
       },
       "decisions": [
@@ -269,6 +517,48 @@
           "choice": "keep my commandments and live: obedience leads to life",
           "alternatives": [],
           "reason": "\"And live\" is a command that is also a promise: the life that follows from keeping them (7:2; Leviticus 18:5).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o200040040012"
+          ],
+          "choice": "the father's own story in the passé composé (\"il m'a enseigné\") at Balanced and Readable; the imperfect (\"il m'enseignait\") at Literal",
+          "alternatives": [
+            "the passé simple, as in narrative"
+          ],
+          "reason": "The father is speaking to his sons and tells his own childhood as people tell things in speech. Literal keeps the Hebrew's continuing action with the imperfect.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o200040040012",
+            "o200040040022"
+          ],
+          "choice": "The father speaks of his own father with the honorific (아버지께서, 말씀하셨다); the grandfather's words are in 해라체",
+          "alternatives": [
+            "아버지가 ... 말했다"
+          ],
+          "reason": "A Korean speaker speaks of his own parents with respect, and the honorific marks the grandfather's words as the voice of an elder, which runs to the end of verse 9 (meaning decision m1). The supplied subject is bracketed at Literal.",
           "uncertain": false,
           "footnote": false
         }
@@ -306,6 +596,31 @@
           "L": "Acquire wisdom, acquire understanding; \\q do not forget, and do not turn aside from [the] sayings of my mouth.",
           "B": "Get wisdom, get understanding; \\q do not forget what I have said, or turn away from it.",
           "R": "Get wisdom. Get understanding. \\q Do not forget what I tell you, and do not stop doing it."
+        },
+        "fr": {
+          "L": "Acquiers la sagesse, acquiers l’intelligence ; \\q n’oublie pas et ne te détourne pas des paroles de ma bouche.",
+          "B": "Procure-toi la sagesse, procure-toi l’intelligence ; \\q n’oublie pas ce que j’ai dit et ne t’en écarte pas.",
+          "R": "Obtiens la sagesse. Obtiens l’intelligence. \\q N’oublie pas ce que je te dis, et continue à le faire."
+        },
+        "sw": {
+          "L": "Jipatie hekima, jipatie ufahamu; \\q usisahau, wala usigeuke na kuacha maneno ya kinywa changu.",
+          "B": "Pata hekima, pata ufahamu; \\q usisahau niliyosema, wala usiyaache.",
+          "R": "Pata hekima. Pata ufahamu. \\q Usisahau ninayokuambia, wala usiache kuyatenda."
+        },
+        "es": {
+          "L": "Adquiere sabiduría, adquiere entendimiento; \\q no olvides ni te apartes de [los] dichos de mi boca.",
+          "B": "Consigue sabiduría, consigue entendimiento; \\q no olvides lo que te he dicho ni te apartes de ello.",
+          "R": "Consigue sabiduría. Consigue entendimiento. \\q No olvides lo que te digo, y no dejes de hacerlo."
+        },
+        "vi": {
+          "L": "Hãy thu lấy sự khôn ngoan, hãy thu lấy sự thông sáng; \\q đừng quên, và đừng lìa khỏi những lời của miệng ta.",
+          "B": "Hãy có lấy sự khôn ngoan, hãy có lấy sự thông sáng; \\q đừng quên lời cha đã nói, cũng đừng xây bỏ.",
+          "R": "Hãy có được sự khôn ngoan. Hãy có được sự hiểu biết. \\q Đừng quên những gì cha bảo con, và đừng thôi làm theo."
+        },
+        "ko": {
+          "L": "지혜를 얻어라, 명철을 얻어라. \\q 잊지 말고, 내 입의 말에서 돌아서지 마라.",
+          "B": "지혜를 얻고 명철을 얻어라. \\q 내가 한 말을 잊지 말고 거기서 떠나지 마라.",
+          "R": "지혜를 얻어라. 깨달음을 얻어라. \\q 내가 하는 말을 잊지 말고, 그대로 살기를 그치지 마라."
         }
       },
       "decisions": [
@@ -321,6 +636,26 @@
           "choice": "acquire: get, even by buying",
           "alternatives": [],
           "reason": "The verb (qanah) is used of buying (Genesis 47:20; Ruth 4:9). Wisdom is to be acquired at any price (verse 7; 23:23).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200040050011"
+          ],
+          "choice": "\"thu lấy\" (L), \"có lấy\" (B) for acquire",
+          "alternatives": [
+            "\"mua lấy\""
+          ],
+          "reason": "The verb is to get, even by buying (see the meaning decision). \"mua\" would make it only a purchase; \"thu lấy\" keeps the sense of gaining something you go after, and verse 7 repeats it.",
           "uncertain": false,
           "footnote": false
         }
@@ -356,6 +691,31 @@
           "L": "Do not abandon her, and she will keep you; \\q love her, and she will guard you.",
           "B": "Do not leave her, and she will watch over you; \\q love her, and she will protect you.",
           "R": "Stay with wisdom, and she will take care of you. \\q Love her, and she will keep you safe."
+        },
+        "fr": {
+          "L": "Ne l’abandonne pas, et elle te gardera ; \\q aime-la, et elle te protégera.",
+          "B": "Ne la quitte pas, et elle veillera sur toi ; \\q aime-la, et elle te protégera.",
+          "R": "Reste avec la sagesse, et elle prendra soin de toi. \\q Aime-la, et elle te gardera en sécurité."
+        },
+        "sw": {
+          "L": "Usimwache, naye atakulinda; \\q mpende, naye atakuhifadhi.",
+          "B": "Usimwache, naye atakuangalia; \\q mpende, naye atakulinda.",
+          "R": "Kaa na hekima, naye atakutunza. \\q Mpende, naye atakuweka salama."
+        },
+        "es": {
+          "L": "No la abandones, y ella te guardará; \\q ámala, y ella te protegerá.",
+          "B": "No la dejes, y ella velará por ti; \\q ámala, y ella te protegerá.",
+          "R": "Quédate con la sabiduría, y ella te cuidará. \\q Ámala, y ella te mantendrá a salvo."
+        },
+        "vi": {
+          "L": "Đừng lìa bỏ nàng, thì nàng sẽ gìn giữ con; \\q hãy yêu nàng, thì nàng sẽ canh giữ con.",
+          "B": "Đừng rời bỏ nàng, thì nàng sẽ trông nom con; \\q hãy yêu nàng, thì nàng sẽ bảo vệ con.",
+          "R": "Hãy ở cùng sự khôn ngoan, thì nàng sẽ chăm sóc con. \\q Hãy yêu nàng, thì nàng sẽ giữ con an toàn."
+        },
+        "ko": {
+          "L": "[지혜를] 버리지 마라. 그러면 [지혜가] 너를 지킬 것이다. \\q [지혜를] 사랑하여라. 그러면 너를 보호할 것이다.",
+          "B": "지혜를 떠나지 마라. 그러면 지혜가 너를 지켜 줄 것이다. \\q 지혜를 사랑하여라. 그러면 지혜가 너를 보호할 것이다.",
+          "R": "지혜 곁에 머물러라. 그러면 지혜가 너를 돌보아 줄 것이다. \\q 지혜를 사랑하여라. 그러면 지혜가 너를 안전하게 지켜 줄 것이다."
         }
       },
       "decisions": [
@@ -406,6 +766,31 @@
           "L": "[The] beginning of wisdom: acquire wisdom, \\q and with all your acquiring acquire understanding.",
           "B": "This is where wisdom starts: get wisdom. \\q Spend all you have, if you must, to get understanding.",
           "R": "The first step to being wise is to decide that you want wisdom. \\q Even if it costs everything you have, get understanding."
+        },
+        "fr": {
+          "L": "Le commencement de la sagesse : acquiers la sagesse, \\q et avec tout ce que tu acquiers, acquiers l’intelligence.",
+          "B": "Voici où commence la sagesse : procure-toi la sagesse. \\q Dépense tout ce que tu as, s’il le faut, pour obtenir l’intelligence.",
+          "R": "Pour devenir sage, il faut d’abord décider qu’on veut la sagesse. \\q Même si cela te coûte tout ce que tu as, obtiens l’intelligence."
+        },
+        "sw": {
+          "L": "Mwanzo wa hekima [ni huu]: jipatie hekima, \\q na kwa vyote ulivyojipatia jipatie ufahamu.",
+          "B": "Hekima huanzia hapa: pata hekima. \\q Tumia vyote ulivyo navyo, ikibidi, ili upate ufahamu.",
+          "R": "Hatua ya kwanza ya kuwa na hekima ni kuamua kwamba unaitaka hekima. \\q Hata ikikugharimu kila kitu ulicho nacho, pata ufahamu."
+        },
+        "es": {
+          "L": "[El] principio de la sabiduría: adquiere sabiduría, \\q y con todo lo que adquieras adquiere entendimiento.",
+          "B": "Aquí es donde empieza la sabiduría: consigue sabiduría. \\q Gasta todo lo que tienes, si hace falta, para conseguir entendimiento.",
+          "R": "El primer paso para ser sabio es decidir que quieres la sabiduría. \\q Aunque te cueste todo lo que tienes, consigue entendimiento."
+        },
+        "vi": {
+          "L": "Khởi đầu của sự khôn ngoan: hãy thu lấy sự khôn ngoan, \\q và với tất cả những gì con thu được, hãy thu lấy sự thông sáng.",
+          "B": "Sự khôn ngoan bắt đầu từ đây: hãy có lấy sự khôn ngoan. \\q Dù phải trả bằng tất cả những gì con có, hãy có lấy sự thông sáng.",
+          "R": "Bước đầu tiên để trở nên khôn ngoan là quyết tâm muốn có sự khôn ngoan. \\q Dù phải trả bằng mọi thứ con có, hãy có được sự hiểu biết."
+        },
+        "ko": {
+          "L": "지혜의 시작은 이것이다. 지혜를 얻어라. \\q 네가 얻은 모든 것으로 명철을 얻어라.",
+          "B": "지혜는 여기서 시작된다. 지혜를 얻어라. \\q 필요하다면 가진 것을 다 들여서라도 명철을 얻어라.",
+          "R": "지혜로워지는 첫걸음은 지혜를 원하기로 마음먹는 것이다. \\q 가진 것을 다 내주더라도 깨달음을 얻어라."
         }
       },
       "decisions": [
@@ -512,6 +897,31 @@
           "L": "Prize her, and she will exalt you; \\q she will honor you when you embrace her.",
           "B": "Cherish her, and she will lift you up; \\q hold her close, and she will bring you honor.",
           "R": "Value wisdom highly, and she will make you great. \\q Hold her close, and she will bring you honor."
+        },
+        "fr": {
+          "L": "Estime-la, et elle t’élèvera ; \\q elle t’honorera quand tu l’embrasseras.",
+          "B": "Chéris-la, et elle t’élèvera ; \\q serre-la contre toi, et elle te couvrira d’honneur.",
+          "R": "Donne une grande valeur à la sagesse, et elle te rendra grand. \\q Serre-la contre toi, et elle t’apportera l’honneur."
+        },
+        "sw": {
+          "L": "Mthamini, naye atakuinua; \\q atakuheshimu utakapomkumbatia.",
+          "B": "Mpende sana, naye atakupandisha juu; \\q mkumbatie, naye atakuletea heshima.",
+          "R": "Ithamini hekima sana, naye atakufanya mkuu. \\q Mkumbatie, naye atakuletea heshima."
+        },
+        "es": {
+          "L": "Estímala, y ella te enaltecerá; \\q ella te honrará cuando la abraces.",
+          "B": "Apréciala, y ella te levantará; \\q abrázala, y ella te dará honra.",
+          "R": "Valora mucho la sabiduría, y ella te hará grande. \\q Abrázala, y ella te dará honra."
+        },
+        "vi": {
+          "L": "Hãy quý trọng nàng, thì nàng sẽ nâng con lên; \\q nàng sẽ làm con được tôn trọng khi con ôm lấy nàng.",
+          "B": "Hãy quý mến nàng, thì nàng sẽ đưa con lên cao; \\q hãy ôm ấp nàng, thì nàng sẽ đem vinh dự đến cho con.",
+          "R": "Hãy coi trọng sự khôn ngoan, thì nàng sẽ làm cho con lớn lên. \\q Hãy ôm chặt nàng, thì nàng sẽ đem danh dự đến cho con."
+        },
+        "ko": {
+          "L": "[지혜를] 높이 여겨라. 그러면 [지혜가] 너를 높일 것이다. \\q 네가 [지혜를] 품으면 너를 영화롭게 할 것이다.",
+          "B": "지혜를 소중히 여겨라. 그러면 지혜가 너를 높여 줄 것이다. \\q 지혜를 품에 안아라. 그러면 지혜가 너를 영예롭게 할 것이다.",
+          "R": "지혜를 귀하게 여겨라. 그러면 지혜가 너를 크게 만들어 줄 것이다. \\q 지혜를 꼭 안아라. 그러면 지혜가 너에게 영예를 줄 것이다."
         }
       },
       "decisions": [
@@ -576,6 +986,31 @@
           "L": "She will put on your head a wreath of grace; \\q a crown of beauty she will bestow on you.\"",
           "B": "She will set a lovely wreath on your head \\q and present you with a glorious crown.\"",
           "R": "She will make you honored and admired, \\q like a person wearing a beautiful crown.\""
+        },
+        "fr": {
+          "L": "Elle mettra sur ta tête une couronne de grâce ; \\q un diadème de beauté, elle te [le] remettra. »",
+          "B": "Elle posera sur ta tête une belle couronne \\q et te fera don d’un diadème magnifique. »",
+          "R": "Elle te fera honorer et admirer, \\q comme quelqu’un qui porte une belle couronne. »"
+        },
+        "sw": {
+          "L": "Ataweka kichwani pako shada la neema; \\q taji la uzuri atakukabidhi.\"",
+          "B": "Atakuvika kichwani shada zuri \\q na kukupa taji la fahari.\"",
+          "R": "Atakufanya uheshimiwe na kupendwa, \\q kama mtu aliyevaa taji zuri.\""
+        },
+        "es": {
+          "L": "Ella pondrá en tu cabeza una corona de gracia; \\q una diadema de hermosura te entregará».",
+          "B": "Ella pondrá en tu cabeza una hermosa corona \\q y te regalará una diadema gloriosa».",
+          "R": "Ella hará que te honren y te admiren, \\q como a alguien que lleva una hermosa corona»."
+        },
+        "vi": {
+          "L": "Nàng sẽ đặt trên đầu con một vòng hoa duyên dáng; \\q một mão miện vinh hoa nàng sẽ trao cho con.\"",
+          "B": "Nàng sẽ đội cho con một vòng hoa xinh đẹp \\q và trao cho con một mão miện rực rỡ.\"",
+          "R": "Nàng sẽ làm cho con được tôn trọng và ngưỡng mộ, \\q như người đội một mão miện đẹp đẽ.\""
+        },
+        "ko": {
+          "L": "[지혜가] 네 머리에 은혜의 화관을 씌우고, \\q 아름다움의 면류관을 네게 줄 것이다.\"",
+          "B": "지혜가 네 머리에 아름다운 화관을 씌우고, \\q 영광스러운 면류관을 너에게 안겨 줄 것이다.\"",
+          "R": "지혜는 너를 존귀하고 칭찬받는 사람으로 만들어 줄 것이다, \\q 아름다운 면류관을 쓴 사람처럼.\""
         }
       },
       "decisions": [
@@ -642,6 +1077,31 @@
           "L": "Hear, my son, and receive my sayings, \\q and the years of your life will be many.",
           "B": "Listen, my son, and take in what I say, \\q and you will have many years of life.",
           "R": "My son, listen and accept what I say. \\q Then you will live a long life."
+        },
+        "fr": {
+          "L": "Écoute, mon fils, et reçois mes paroles, \\q et les années de ta vie seront nombreuses.",
+          "B": "Écoute, mon fils, accueille ce que je dis, \\q et tu auras de nombreuses années de vie.",
+          "R": "Mon fils, écoute et accepte ce que je dis. \\q Alors tu vivras longtemps."
+        },
+        "sw": {
+          "L": "Sikia, mwanangu, uyapokee maneno yangu, \\q na miaka ya maisha yako itakuwa mingi.",
+          "B": "Sikiliza, mwanangu, uyapokee ninayokuambia, \\q nawe utakuwa na miaka mingi ya maisha.",
+          "R": "Mwanangu, sikiliza na uyakubali ninayokuambia. \\q Ndipo utaishi maisha marefu."
+        },
+        "es": {
+          "L": "Escucha, hijo mío, y recibe mis dichos, \\q y los años de tu vida serán muchos.",
+          "B": "Escucha, hijo mío, y acoge lo que te digo, \\q y tendrás muchos años de vida.",
+          "R": "Hijo mío, escucha y acepta lo que te digo. \\q Así tendrás una vida larga."
+        },
+        "vi": {
+          "L": "Hỡi con ta, hãy nghe và nhận lấy những lời ta, \\q thì năm tháng đời con sẽ nhiều thêm.",
+          "B": "Con ơi, hãy lắng nghe và tiếp nhận lời cha, \\q thì con sẽ được sống thêm nhiều năm tháng.",
+          "R": "Con ơi, hãy lắng nghe và nhận lấy những gì cha nói. \\q Bấy giờ con sẽ được sống lâu."
+        },
+        "ko": {
+          "L": "들어라, 내 아들아, 내 말을 받아들여라. \\q 그러면 네 생명의 햇수가 많아질 것이다.",
+          "B": "내 아들아, 내 말을 듣고 받아들여라. \\q 그러면 네 생명의 날이 길어질 것이다.",
+          "R": "내 아들아, 내 말을 듣고 받아들여라. \\q 그러면 너는 오래 살 것이다."
         }
       },
       "decisions": [
@@ -690,6 +1150,31 @@
           "L": "In [the] way of wisdom I have taught you; \\q I have led you in tracks of uprightness.",
           "B": "I have taught you the way of wisdom \\q and guided you along straight paths.",
           "R": "I have taught you how to live wisely. \\q I have shown you the right way to go."
+        },
+        "fr": {
+          "L": "Dans le chemin de la sagesse je t’ai instruit ; \\q je t’ai conduit dans les pistes de la droiture.",
+          "B": "Je t’ai enseigné le chemin de la sagesse \\q et je t’ai guidé sur des sentiers droits.",
+          "R": "Je t’ai appris à vivre avec sagesse. \\q Je t’ai montré le bon chemin."
+        },
+        "sw": {
+          "L": "Katika njia ya hekima nimekufundisha; \\q nimekuongoza katika mapito ya unyofu.",
+          "B": "Nimekufundisha njia ya hekima \\q na kukuongoza katika mapito yaliyonyooka.",
+          "R": "Nimekufundisha jinsi ya kuishi kwa hekima. \\q Nimekuonyesha njia iliyo sawa ya kufuata."
+        },
+        "es": {
+          "L": "En [el] camino de la sabiduría te he enseñado; \\q te he guiado por senderos de rectitud.",
+          "B": "Te he enseñado el camino de la sabiduría \\q y te he guiado por sendas derechas.",
+          "R": "Te he enseñado a vivir con sabiduría. \\q Te he mostrado el camino correcto."
+        },
+        "vi": {
+          "L": "Ta đã dạy con trong đường lối của sự khôn ngoan; \\q ta đã dẫn con trong những nẻo ngay thẳng.",
+          "B": "Cha đã dạy con con đường của sự khôn ngoan \\q và dẫn con đi trên những lối ngay thẳng.",
+          "R": "Cha đã dạy con cách sống khôn ngoan. \\q Cha đã chỉ cho con con đường đúng để đi."
+        },
+        "ko": {
+          "L": "지혜의 길로 내가 너를 가르쳤고, \\q 정직의 길로 너를 이끌었다.",
+          "B": "나는 너에게 지혜의 길을 가르쳤고, \\q 곧은 길로 너를 이끌었다.",
+          "R": "나는 너에게 지혜롭게 사는 법을 가르쳤다. \\q 바른길을 보여 주었다."
         }
       },
       "decisions": [
@@ -741,6 +1226,31 @@
           "L": "When you walk, your step will not be cramped, \\q and if you run, you will not stumble.",
           "B": "When you walk, nothing will hem in your steps; \\q when you run, you will not trip.",
           "R": "As you go through life, nothing will block your way. \\q Even if you run, you will not fall."
+        },
+        "fr": {
+          "L": "Quand tu marcheras, ton pas ne sera pas gêné, \\q et si tu cours, tu ne trébucheras pas.",
+          "B": "Quand tu marcheras, rien n’entravera tes pas ; \\q quand tu courras, tu ne trébucheras pas.",
+          "R": "Tout au long de ta vie, rien ne bloquera ton chemin. \\q Même si tu cours, tu ne tomberas pas."
+        },
+        "sw": {
+          "L": "Unapotembea, hatua zako hazitabanwa, \\q na ukikimbia, hutajikwaa.",
+          "B": "Unapotembea, hakuna kitakachozibana hatua zako; \\q unapokimbia, hutajikwaa.",
+          "R": "Katika safari ya maisha yako, hakuna kitakachokuzuia njia. \\q Hata ukikimbia, hutaanguka."
+        },
+        "es": {
+          "L": "Cuando andes, tu paso no será estrecho, \\q y si corres, no tropezarás.",
+          "B": "Cuando camines, nada estorbará tus pasos; \\q cuando corras, no tropezarás.",
+          "R": "Mientras avances en la vida, nada te cerrará el paso. \\q Aunque corras, no te caerás."
+        },
+        "vi": {
+          "L": "Khi con bước đi, bước chân con sẽ không bị chật hẹp, \\q và nếu con chạy, con sẽ không vấp ngã.",
+          "B": "Khi con bước đi, chẳng gì cản bước chân con; \\q khi con chạy, con sẽ không vấp.",
+          "R": "Trên đường đời, sẽ không có gì chặn lối con. \\q Ngay cả khi con chạy, con cũng sẽ không té ngã."
+        },
+        "ko": {
+          "L": "네가 걸을 때 네 걸음이 좁아지지 않고, \\q 네가 달려도 넘어지지 않을 것이다.",
+          "B": "걸을 때 네 걸음을 가로막는 것이 없고, \\q 달릴 때에도 걸려 넘어지지 않을 것이다.",
+          "R": "살아가는 동안 아무것도 네 길을 막지 못할 것이다. \\q 달려도 넘어지지 않을 것이다."
         }
       },
       "decisions": [
@@ -791,6 +1301,31 @@
           "L": "Take hold of discipline; do not let go; \\q guard her, for she [is] your life.",
           "B": "Grip discipline tightly and do not let it go; \\q guard it well, for it is your life.",
           "R": "Hold on to what you have been taught, and do not let go. \\q Protect it, because it gives you life."
+        },
+        "fr": {
+          "L": "Saisis la discipline ; ne lâche pas ; \\q garde-la, car elle [est] ta vie.",
+          "B": "Tiens ferme la discipline et ne la lâche pas ; \\q garde-la bien, car elle est ta vie.",
+          "R": "Tiens bien ce qu’on t’a enseigné, et ne le lâche pas. \\q Protège-le, parce que cela te donne la vie."
+        },
+        "sw": {
+          "L": "Shika nidhamu; usiiache; \\q ilinde, kwa maana ndiyo uzima wako.",
+          "B": "Ishike nidhamu kwa nguvu wala usiiachilie; \\q uilinde vizuri, kwa maana ndiyo uzima wako.",
+          "R": "Shikamana na yale uliyofundishwa, wala usiyaache. \\q Yalinde, kwa sababu yanakupa uzima."
+        },
+        "es": {
+          "L": "Aférrate a la disciplina; no [la] sueltes; \\q guárdala, porque ella [es] tu vida.",
+          "B": "Agarra con fuerza la disciplina y no la sueltes; \\q guárdala bien, porque es tu vida.",
+          "R": "Agárrate a lo que te han enseñado y no lo sueltes. \\q Cuídalo, porque te da vida."
+        },
+        "vi": {
+          "L": "Hãy nắm lấy sự sửa dạy; đừng buông ra; \\q hãy canh giữ nó, vì nó [là] sự sống của con.",
+          "B": "Hãy nắm chặt sự sửa dạy và đừng buông ra; \\q hãy gìn giữ nó cho kỹ, vì nó là sự sống của con.",
+          "R": "Hãy giữ chặt những điều con đã được dạy, và đừng buông ra. \\q Hãy bảo vệ chúng, vì chúng đem lại sự sống cho con."
+        },
+        "ko": {
+          "L": "훈계를 붙잡고 놓지 마라. \\q 그것을 지켜라. 그것이 네 생명이다.",
+          "B": "훈계를 꽉 붙잡고 놓치지 마라. \\q 그것을 잘 지켜라. 그것이 네 생명이다.",
+          "R": "배운 것을 꼭 붙잡고 놓지 마라. \\q 그것을 지켜라. 그것이 너에게 생명을 준다."
         }
       },
       "decisions": [
@@ -832,6 +1367,47 @@
           "reason": "Balanced and Readable say \"it\", since the subject named is discipline (m1). Literal keeps \"her\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200040130052",
+            "o200040130071"
+          ],
+          "choice": "\"elle\" for discipline at Literal and Balanced, where the English Balanced says \"it\"",
+          "alternatives": [
+            "\"cela\""
+          ],
+          "reason": "French \"la discipline\" is feminine, so \"elle\" is simply the pronoun French needs; it also keeps the Hebrew's feminine \"her\" (meaning decision m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200040130052",
+            "o200040130071"
+          ],
+          "choice": "\"nó\" for discipline, where the English Literal has \"her\"",
+          "alternatives": [
+            "\"nàng\""
+          ],
+          "reason": "The Hebrew uses a feminine pronoun because discipline is spoken of as a form of wisdom (see the meaning decision). \"nàng\" is kept for Wisdom pictured as a woman; for discipline it would sound strange, so every level says \"nó\", as the English Balanced and Readable say \"it\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -865,6 +1441,31 @@
           "L": "Into [the] path of [the] wicked do not enter, \\q and do not walk straight on in [the] way of evil [people].",
           "B": "Do not step onto the road the wicked take, \\q or go marching along the way of evil people.",
           "R": "Do not follow wicked people. \\q Do not live the way evil people live."
+        },
+        "fr": {
+          "L": "Dans le sentier des méchants n’entre pas, \\q et ne marche pas droit devant toi dans le chemin des mauvais.",
+          "B": "Ne mets pas le pied sur la route que prennent les méchants, \\q et n’avance pas sur le chemin des gens mauvais.",
+          "R": "Ne suis pas les méchants. \\q Ne vis pas comme vivent les gens mauvais."
+        },
+        "sw": {
+          "L": "Katika mapito ya waovu usiingie, \\q wala usiende mbele katika njia ya watu wabaya.",
+          "B": "Usikanyage njia wanayoipita waovu, \\q wala usitembee kwa hatua katika njia ya watu wabaya.",
+          "R": "Usiwafuate watu waovu. \\q Usiishi kama watu wabaya wanavyoishi."
+        },
+        "es": {
+          "L": "En [la] senda de [los] malvados no entres, \\q y no avances por [el] camino de [los] malos.",
+          "B": "No pongas el pie en el camino que toman los malvados, \\q ni vayas por la senda de la gente mala.",
+          "R": "No sigas a los malvados. \\q No vivas como vive la gente mala."
+        },
+        "vi": {
+          "L": "Vào lối của kẻ ác, đừng bước vào, \\q và đừng thẳng bước trên đường của những kẻ gian ác.",
+          "B": "Đừng đặt chân lên con đường kẻ ác đi, \\q cũng đừng sải bước theo lối của những kẻ gian ác.",
+          "R": "Đừng đi theo kẻ ác. \\q Đừng sống như những kẻ gian ác sống."
+        },
+        "ko": {
+          "L": "악인들의 길에 들어가지 말고, \\q 악한 [자들]의 길로 곧장 걸어가지 마라.",
+          "B": "악인들이 가는 길에 발을 들여놓지 말고, \\q 악한 사람들의 길로 걸어가지 마라.",
+          "R": "악한 사람들을 따라가지 마라. \\q 나쁜 사람들처럼 살지 마라."
         }
       },
       "decisions": [
@@ -917,6 +1518,31 @@
           "L": "Avoid it; do not pass on it; \\q turn aside from it and pass on.",
           "B": "Keep clear of it, and do not travel on it; \\q turn away from it and keep going.",
           "R": "Stay away from that path. Do not even step on it. \\q Turn away and keep going."
+        },
+        "fr": {
+          "L": "Évite-le ; n’y passe pas ; \\q détourne-toi de lui et passe.",
+          "B": "Tiens-toi à l’écart de ce chemin, ne t’y engage pas ; \\q détourne-t’en et continue ta route.",
+          "R": "Reste loin de ce chemin. N’y mets même pas le pied. \\q Détourne-toi et continue ta route."
+        },
+        "sw": {
+          "L": "Iepuke; usipite juu yake; \\q geuka uiache, ukapite.",
+          "B": "Kaa mbali nayo, wala usisafiri humo; \\q geuka uiache na uendelee na safari yako.",
+          "R": "Kaa mbali na njia hiyo. Usiikanyage hata kidogo. \\q Geuka uendelee mbele."
+        },
+        "es": {
+          "L": "Evítalo; no pases por él; \\q apártate de él y sigue adelante.",
+          "B": "Mantente lejos de él, y no viajes por él; \\q aléjate de él y sigue tu camino.",
+          "R": "Aléjate de ese camino. Ni siquiera lo pises. \\q Date la vuelta y sigue adelante."
+        },
+        "vi": {
+          "L": "Hãy tránh nó; đừng đi qua trên nó; \\q hãy rẽ khỏi nó và đi qua.",
+          "B": "Hãy tránh xa nó, đừng đi trên nó; \\q hãy quay khỏi nó và cứ đi tiếp.",
+          "R": "Hãy tránh xa con đường ấy. Đừng đặt chân lên đó. \\q Hãy quay đi và cứ bước tiếp."
+        },
+        "ko": {
+          "L": "그것을 피하고, 그 위로 지나가지 마라. \\q 그것에서 돌아서서 지나가라.",
+          "B": "그 길을 멀리하고 그 길로 다니지 마라. \\q 그 길에서 돌아서서 네 길을 계속 가라.",
+          "R": "그 길에서 멀리 떨어져라. 발도 들여놓지 마라. \\q 돌아서서 가던 길을 계속 가라."
         }
       },
       "decisions": [
@@ -971,6 +1597,31 @@
           "L": "For they do not sleep unless they do evil, \\q and their sleep is robbed unless they make [someone] stumble.",
           "B": "For they cannot sleep until they have done some harm; \\q they lie awake unless they have brought someone down.",
           "R": "Evil people cannot sleep until they have done something bad. \\q They stay awake until they have hurt someone."
+        },
+        "fr": {
+          "L": "Car ils ne dorment pas s’ils n’ont pas fait le mal, \\q et leur sommeil leur est ravi s’ils n’ont pas fait trébucher [quelqu’un].",
+          "B": "Car ils ne peuvent pas dormir tant qu’ils n’ont pas fait de mal ; \\q ils restent éveillés s’ils n’ont fait tomber personne.",
+          "R": "Les méchants ne peuvent pas dormir tant qu’ils n’ont pas fait quelque chose de mal. \\q Ils restent éveillés jusqu’à ce qu’ils aient fait du mal à quelqu’un."
+        },
+        "sw": {
+          "L": "Kwa maana hawalali wasipotenda maovu, \\q na usingizi wao huibiwa wasipomkwaza [mtu].",
+          "B": "Kwa maana hawawezi kulala mpaka wamefanya madhara fulani; \\q hukesha macho mpaka wamemwangusha mtu.",
+          "R": "Watu waovu hawawezi kulala mpaka wamefanya jambo baya. \\q Hukesha mpaka wamemwumiza mtu."
+        },
+        "es": {
+          "L": "Porque no duermen si no hacen el mal, \\q y se les quita el sueño si no hacen tropezar [a alguien].",
+          "B": "Porque no pueden dormir hasta que han hecho algún daño; \\q pasan la noche en vela si no han hecho caer a alguien.",
+          "R": "La gente mala no puede dormir hasta que ha hecho algo malo. \\q Se queda despierta hasta que ha hecho daño a alguien."
+        },
+        "vi": {
+          "L": "Vì chúng không ngủ nếu chưa làm điều ác, \\q và giấc ngủ chúng bị cướp mất nếu chưa làm cho [ai] vấp ngã.",
+          "B": "Vì chúng không thể ngủ khi chưa làm hại được ai; \\q chúng thức trắng nếu chưa quật ngã được người nào.",
+          "R": "Kẻ ác không ngủ được khi chưa làm điều xấu. \\q Chúng thức cho đến khi đã làm hại được ai đó."
+        },
+        "ko": {
+          "L": "참으로 그들은 악을 행하지 않으면 잠을 자지 못하고, \\q [누구를] 넘어뜨리지 않으면 그들의 잠을 빼앗긴다.",
+          "B": "그들은 해를 끼치기 전에는 잠을 이루지 못하고, \\q 누군가를 쓰러뜨리지 않으면 뜬눈으로 지새운다.",
+          "R": "악한 사람들은 나쁜 짓을 하기 전에는 잠을 자지 못한다. \\q 누군가를 해치기 전에는 깨어 있다."
         }
       },
       "decisions": [
@@ -1033,6 +1684,31 @@
           "L": "For they eat [the] bread of wickedness, \\q and [the] wine of violence they drink.",
           "B": "Wickedness is the bread they eat, \\q and violence the wine they drink.",
           "R": "Doing evil is like food and drink to them."
+        },
+        "fr": {
+          "L": "Car ils mangent le pain de la méchanceté, \\q et le vin de la violence ils boivent.",
+          "B": "La méchanceté est le pain qu’ils mangent, \\q et la violence le vin qu’ils boivent.",
+          "R": "Faire le mal, c’est pour eux comme manger et boire."
+        },
+        "sw": {
+          "L": "Kwa maana wanakula mkate wa uovu, \\q na divai ya jeuri wanakunywa.",
+          "B": "Uovu ndio mkate wanaoula, \\q na jeuri ndiyo divai wanayoinywa.",
+          "R": "Kutenda maovu ni kama chakula na kinywaji kwao."
+        },
+        "es": {
+          "L": "Porque comen [el] pan de la maldad, \\q y [el] vino de la violencia beben.",
+          "B": "La maldad es el pan que comen, \\q y la violencia, el vino que beben.",
+          "R": "Hacer el mal es para ellos como la comida y la bebida."
+        },
+        "vi": {
+          "L": "Vì chúng ăn bánh của sự gian ác, \\q và uống rượu của sự hung bạo.",
+          "B": "Sự gian ác là bánh chúng ăn, \\q và sự hung bạo là rượu chúng uống.",
+          "R": "Làm điều ác giống như cơm ăn nước uống của chúng."
+        },
+        "ko": {
+          "L": "참으로 그들은 악의 빵을 먹고, \\q 폭력의 포도주를 마신다.",
+          "B": "그들이 먹는 빵은 악이고, \\q 그들이 마시는 포도주는 폭력이다.",
+          "R": "그들에게는 악한 짓이 먹을 것이고 마실 것이다."
         }
       },
       "decisions": [
@@ -1089,6 +1765,31 @@
           "L": "But [the] path of [the] righteous [is] like [the] light of dawn, \\q going on and shining until the full day.",
           "B": "But the road the righteous walk is like the light at daybreak, \\q shining brighter and brighter until it is broad day.",
           "R": "The way good people live is like the sunrise. \\q It gets brighter and brighter until it is full daylight."
+        },
+        "fr": {
+          "L": "Mais le sentier des justes [est] comme la lumière de l’aube, \\q qui va et brille jusqu’au plein jour.",
+          "B": "Mais la route des justes est comme la lumière du point du jour, \\q qui brille de plus en plus jusqu’au grand jour.",
+          "R": "La façon de vivre des gens de bien ressemble au lever du soleil. \\q Elle devient de plus en plus lumineuse, jusqu’au plein jour."
+        },
+        "sw": {
+          "L": "Bali mapito ya wenye haki [ni] kama nuru ya alfajiri, \\q inayozidi kung'aa mpaka mchana kamili.",
+          "B": "Bali njia wanayoiendea wenye haki ni kama mwanga wa alfajiri, \\q unaozidi kung'aa zaidi na zaidi mpaka mchana kweupe.",
+          "R": "Njia ya maisha ya watu wema ni kama jua linapochomoza. \\q Huzidi kung'aa mpaka mchana kamili."
+        },
+        "es": {
+          "L": "Pero [la] senda de [los] justos [es] como [la] luz del alba, \\q que avanza y brilla hasta el pleno día.",
+          "B": "Pero el camino de los justos es como la luz del amanecer, \\q que brilla cada vez más hasta que es pleno día.",
+          "R": "La manera de vivir de la gente buena es como la salida del sol. \\q Se hace cada vez más brillante, hasta que es de día del todo."
+        },
+        "vi": {
+          "L": "Nhưng lối của người công chính [thì] như ánh sáng bình minh, \\q cứ chiếu sáng thêm cho đến giữa ban ngày.",
+          "B": "Nhưng con đường người công chính đi giống như ánh sáng lúc rạng đông, \\q càng lúc càng sáng tỏ cho đến khi trời sáng rõ.",
+          "R": "Lối sống của người tốt giống như lúc mặt trời mọc. \\q Nó càng lúc càng sáng hơn cho đến khi trời sáng hẳn."
+        },
+        "ko": {
+          "L": "그러나 의인들의 길은 새벽빛 같아서, \\q 점점 더 빛나서 온전한 낮에 이른다.",
+          "B": "그러나 의인들이 걷는 길은 동틀 녘의 빛과 같아서, \\q 점점 더 밝아져 대낮에 이른다.",
+          "R": "바르게 사는 사람들의 삶은 해 뜨는 것과 같다. \\q 점점 밝아져서 환한 대낮이 된다."
         }
       },
       "decisions": [
@@ -1151,6 +1852,31 @@
           "L": "[The] way of [the] wicked [is] like deep darkness; \\q they do not know over what they stumble.",
           "B": "The way of the wicked is like deep darkness; \\q they do not even know what makes them fall.",
           "R": "But the way evil people live is like a very dark night. \\q They trip and fall, and they do not know why."
+        },
+        "fr": {
+          "L": "Le chemin des méchants [est] comme l’obscurité profonde ; \\q ils ne savent pas sur quoi ils trébuchent.",
+          "B": "Le chemin des méchants est comme une obscurité épaisse ; \\q ils ne savent même pas ce qui les fait tomber.",
+          "R": "Mais la façon de vivre des méchants ressemble à une nuit très noire. \\q Ils trébuchent et tombent, et ils ne savent pas pourquoi."
+        },
+        "sw": {
+          "L": "Njia ya waovu [ni] kama giza nene; \\q hawajui ni nini kinachowakwaza.",
+          "B": "Njia ya waovu ni kama giza nene; \\q hata hawajui ni nini kinachowaangusha.",
+          "R": "Lakini njia ya maisha ya watu waovu ni kama usiku wa giza kuu. \\q Hujikwaa na kuanguka, wala hawajui kwa nini."
+        },
+        "es": {
+          "L": "[El] camino de [los] malvados [es] como densa oscuridad; \\q no saben en qué tropiezan.",
+          "B": "El camino de los malvados es como una oscuridad profunda; \\q ni siquiera saben con qué se caen.",
+          "R": "Pero la manera de vivir de la gente mala es como una noche muy oscura. \\q Tropiezan y caen, y no saben por qué."
+        },
+        "vi": {
+          "L": "Đường lối của kẻ ác [thì] như bóng tối dày đặc; \\q chúng không biết mình vấp phải gì.",
+          "B": "Đường lối của kẻ ác như bóng tối mịt mù; \\q chúng chẳng biết vì đâu mình ngã.",
+          "R": "Nhưng lối sống của kẻ ác giống như một đêm thật tối. \\q Chúng vấp ngã mà không biết tại sao."
+        },
+        "ko": {
+          "L": "악인들의 길은 캄캄함과 같아서, \\q 그들은 무엇에 걸려 넘어지는지 알지 못한다.",
+          "B": "악인들의 길은 짙은 어둠과 같아서, \\q 무엇 때문에 넘어지는지도 모른다.",
+          "R": "그러나 악한 사람들의 삶은 아주 캄캄한 밤과 같다. \\q 그들은 걸려 넘어지면서도 왜 그런지 모른다."
         }
       },
       "decisions": [
@@ -1202,6 +1928,31 @@
           "L": "My son, to my words pay attention; \\q to my sayings incline your ear.",
           "B": "My son, pay attention to what I say; \\q turn your ear to my words.",
           "R": "My son, pay attention to what I say. \\q Listen carefully to my words."
+        },
+        "fr": {
+          "L": "Mon fils, à mes paroles sois attentif ; \\q à mes discours incline ton oreille.",
+          "B": "Mon fils, sois attentif à ce que je dis ; \\q tends l’oreille à mes paroles.",
+          "R": "Mon fils, fais attention à ce que je dis. \\q Écoute bien mes paroles."
+        },
+        "sw": {
+          "L": "Mwanangu, maneno yangu yasikilize; \\q kwa maneno yangu tega sikio lako.",
+          "B": "Mwanangu, sikiliza kwa makini ninayokuambia; \\q tega sikio lako kwa maneno yangu.",
+          "R": "Mwanangu, sikiliza kwa makini ninayokuambia. \\q Yasikilize maneno yangu vizuri."
+        },
+        "es": {
+          "L": "Hijo mío, a mis palabras atiende; \\q a mis dichos inclina tu oído.",
+          "B": "Hijo mío, presta atención a lo que digo; \\q vuelve tu oído hacia mis palabras.",
+          "R": "Hijo mío, presta atención a lo que te digo. \\q Escucha con cuidado mis palabras."
+        },
+        "vi": {
+          "L": "Hỡi con ta, hãy chú ý đến những lời ta; \\q hãy nghiêng tai nghe những điều ta nói.",
+          "B": "Con ơi, hãy chú ý đến những gì cha nói; \\q hãy lắng tai nghe lời cha.",
+          "R": "Con ơi, hãy chú ý đến những gì cha nói. \\q Hãy lắng nghe kỹ lời cha."
+        },
+        "ko": {
+          "L": "내 아들아, 내 말에 주의를 기울이고, \\q 내 말들에 네 귀를 기울여라.",
+          "B": "내 아들아, 내가 하는 말에 마음을 쓰고, \\q 내 말에 귀를 기울여라.",
+          "R": "내 아들아, 내 말에 주의를 기울여라. \\q 내 말을 잘 들어라."
         }
       },
       "decisions": [
@@ -1251,6 +2002,31 @@
           "L": "Let them not slip from your eyes; \\q keep them in [the] middle of your heart.",
           "B": "Do not let them out of your sight; \\q keep them deep within your heart.",
           "R": "Keep them in front of you all the time. \\q Remember them always."
+        },
+        "fr": {
+          "L": "Qu’elles ne s’écartent pas de tes yeux ; \\q garde-les au milieu de ton cœur.",
+          "B": "Ne les perds pas de vue ; \\q garde-les au fond de ton cœur.",
+          "R": "Garde-les toujours devant toi. \\q Souviens-t’en sans cesse."
+        },
+        "sw": {
+          "L": "Yasiondoke machoni pako; \\q yahifadhi katikati ya moyo wako.",
+          "B": "Usiyaache yatoke mbele ya macho yako; \\q yaweke ndani kabisa ya moyo wako.",
+          "R": "Yaweke mbele yako wakati wote. \\q Yakumbuke siku zote."
+        },
+        "es": {
+          "L": "Que no se aparten de tus ojos; \\q guárdalas en [el] centro de tu corazón.",
+          "B": "No las pierdas de vista; \\q guárdalas en lo profundo de tu corazón.",
+          "R": "Tenlas siempre delante de ti. \\q Recuérdalas siempre."
+        },
+        "vi": {
+          "L": "Đừng để chúng lìa khỏi mắt con; \\q hãy giữ chúng giữa lòng con.",
+          "B": "Đừng để chúng khuất khỏi mắt con; \\q hãy giữ chúng sâu trong lòng con.",
+          "R": "Hãy luôn để chúng trước mắt con. \\q Hãy luôn nhớ chúng."
+        },
+        "ko": {
+          "L": "그것들이 네 눈에서 벗어나지 않게 하고, \\q 네 마음 한가운데 지켜라.",
+          "B": "그 말이 네 눈앞에서 떠나지 않게 하고, \\q 네 마음 깊은 곳에 간직하여라.",
+          "R": "그 말을 늘 눈앞에 두어라. \\q 언제나 기억하여라."
         }
       },
       "decisions": [
@@ -1301,6 +2077,31 @@
           "L": "For they [are] life to those who find them, \\q and healing to all {{gender:their|his}} flesh.",
           "B": "To those who find them they are life, \\q and health for their whole body.",
           "R": "They give life to everyone who finds them, \\q and they make the whole body healthy."
+        },
+        "fr": {
+          "L": "Car elles [sont] vie pour ceux qui les trouvent, \\q et guérison pour toute sa chair.",
+          "B": "Pour ceux qui les trouvent, elles sont la vie \\q et la santé de tout le corps.",
+          "R": "Elles donnent la vie à tous ceux qui les trouvent, \\q et elles gardent tout le corps en bonne santé."
+        },
+        "sw": {
+          "L": "Kwa maana [ni] uzima kwa wale wanaoyapata, \\q na uponyaji kwa mwili wake wote.",
+          "B": "Kwa wale wanaoyapata ni uzima, \\q na afya kwa mwili wao wote.",
+          "R": "Yanampa uzima kila anayeyapata, \\q na yanaufanya mwili wote kuwa na afya."
+        },
+        "es": {
+          "L": "Porque ellas [son] vida para los que las hallan, \\q y medicina para toda su carne.",
+          "B": "Para los que las encuentran son vida, \\q y salud para todo su cuerpo.",
+          "R": "Dan vida a todos los que las encuentran, \\q y hacen que todo el cuerpo esté sano."
+        },
+        "vi": {
+          "L": "Vì chúng [là] sự sống cho những ai tìm được chúng, \\q và [là] sự chữa lành cho toàn thân thể họ.",
+          "B": "Với những ai tìm được, chúng là sự sống, \\q và là sức khỏe cho cả thân thể.",
+          "R": "Chúng ban sự sống cho mọi người tìm được chúng, \\q và làm cho cả thân thể khỏe mạnh."
+        },
+        "ko": {
+          "L": "참으로 그것들은 찾는 자들에게 생명이 되고, \\q 그 온몸에 치유가 된다.",
+          "B": "그것을 찾는 사람에게 그 말은 생명이 되고, \\q 온몸의 건강이 된다.",
+          "R": "그 말은 찾는 사람 누구에게나 생명을 주고, \\q 온몸을 건강하게 해 준다."
         }
       },
       "decisions": [
@@ -1364,6 +2165,31 @@
           "L": "More than all [that you] guard, guard your heart, \\q for from it [are the] outgoings of life.",
           "B": "More than anything you protect, protect your heart, \\q because the whole course of your life flows out of it.",
           "R": "Protect your mind and your heart more than anything else. \\q They control everything you do."
+        },
+        "fr": {
+          "L": "Plus que tout [ce que l’on] garde, garde ton cœur, \\q car de lui [viennent] les sources de la vie.",
+          "B": "Plus que tout ce que tu protèges, protège ton cœur, \\q car c’est de lui que découle tout le cours de ta vie.",
+          "R": "Protège tes pensées et ton cœur plus que tout le reste. \\q Ils dirigent tout ce que tu fais."
+        },
+        "sw": {
+          "L": "Kuliko yote [unayoyalinda], ulinde moyo wako, \\q kwa maana kutoka humo [ndiko] kutokako kwa uzima.",
+          "B": "Kuliko kitu kingine chochote unachokilinda, ulinde moyo wako, \\q kwa sababu mwenendo wote wa maisha yako hububujika kutoka humo.",
+          "R": "Linda akili yako na moyo wako kuliko kitu kingine chochote. \\q Ndivyo vinavyoongoza kila kitu unachofanya."
+        },
+        "es": {
+          "L": "Más que todo [lo que] guardas, guarda tu corazón, \\q porque de él [brotan las] salidas de la vida.",
+          "B": "Más que todo lo que proteges, protege tu corazón, \\q porque de él brota todo el curso de tu vida.",
+          "R": "Cuida tu mente y tu corazón más que ninguna otra cosa. \\q Ellos dirigen todo lo que haces."
+        },
+        "vi": {
+          "L": "Hơn mọi [điều con] canh giữ, hãy canh giữ lòng con, \\q vì từ đó [ra] những dòng chảy của sự sống.",
+          "B": "Hơn hết mọi điều con gìn giữ, hãy gìn giữ lòng con, \\q vì cả dòng đời con tuôn chảy từ đó.",
+          "R": "Hãy giữ gìn tâm trí và lòng con hơn bất cứ điều gì khác. \\q Chúng điều khiển mọi việc con làm."
+        },
+        "ko": {
+          "L": "지킬 모든 것보다 더 네 마음을 지켜라. \\q 참으로 생명이 나가는 길들이 거기에서 [시작된다].",
+          "B": "네가 지키는 그 무엇보다도 네 마음을 지켜라. \\q 네 삶의 모든 길이 거기서 흘러나온다.",
+          "R": "무엇보다도 네 마음과 생각을 지켜라. \\q 네가 하는 모든 일이 거기에 달려 있다."
         }
       },
       "decisions": [
@@ -1420,6 +2246,27 @@
           "reason": "In English \"heart\" suggests feelings; Readable adds \"mind\" so that the Hebrew sense is kept (2:2 m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200040230041"
+          ],
+          "choice": "corazón (L, B); tu mente y tu corazón (R)",
+          "alternatives": [
+            "tu mente"
+          ],
+          "reason": "The heart (lev) is the seat of thought and will. Spanish \"corazón\" is kept at Literal and Balanced throughout Proverbs; Readable adds \"mente\" here, as the English Readable does, so that the reader does not take it as feelings alone.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1453,6 +2300,31 @@
           "L": "Remove from you crookedness of mouth, \\q and deviousness of lips put far from you.",
           "B": "Rid yourself of a crooked mouth; \\q keep lying lips far away from you.",
           "R": "Do not say things that are dishonest or misleading. \\q Stay far away from lies."
+        },
+        "fr": {
+          "L": "Écarte de toi la tortuosité de la bouche, \\q et la fausseté des lèvres, éloigne-la de toi.",
+          "B": "Débarrasse-toi d’une bouche tortueuse ; \\q tiens loin de toi les lèvres menteuses.",
+          "R": "Ne dis pas de choses malhonnêtes ou trompeuses. \\q Reste bien loin du mensonge."
+        },
+        "sw": {
+          "L": "Ondoa kwako upotovu wa kinywa, \\q na ukaidi wa midomo uweke mbali nawe.",
+          "B": "Jiepushe na kinywa kilichopotoka; \\q weka midomo ya uongo mbali nawe.",
+          "R": "Usiseme maneno yasiyo ya kweli au ya kudanganya. \\q Kaa mbali kabisa na uongo."
+        },
+        "es": {
+          "L": "Aparta de ti la perversidad de boca, \\q y la falsedad de labios aleja de ti.",
+          "B": "Líbrate de una boca torcida; \\q mantén lejos de ti los labios mentirosos.",
+          "R": "No digas cosas deshonestas ni engañosas. \\q Mantente muy lejos de las mentiras."
+        },
+        "vi": {
+          "L": "Hãy loại bỏ khỏi con sự gian xảo của miệng, \\q và sự quanh co của môi, hãy để cách xa con.",
+          "B": "Hãy dẹp bỏ khỏi con miệng lưỡi gian tà; \\q hãy giữ đôi môi dối trá cách xa con.",
+          "R": "Đừng nói những điều gian dối hay lừa lọc. \\q Hãy tránh xa sự dối trá."
+        },
+        "ko": {
+          "L": "입의 비뚤어짐을 네게서 없애고, \\q 입술의 굽은 것을 네게서 멀리하여라.",
+          "B": "비뚤어진 입을 버리고, \\q 거짓된 입술을 멀리하여라.",
+          "R": "정직하지 않은 말이나 남을 속이는 말을 하지 마라. \\q 거짓말을 멀리하여라."
         }
       },
       "decisions": [
@@ -1503,6 +2375,31 @@
           "L": "Let your eyes look straight ahead, \\q and let your eyelids look straight before you.",
           "B": "Keep your eyes on what is in front of you, \\q and fix your gaze on the road ahead.",
           "R": "Keep looking at where you are going. \\q Do not let anything distract you."
+        },
+        "fr": {
+          "L": "Que tes yeux regardent droit devant, \\q et que tes paupières regardent droit devant toi.",
+          "B": "Garde les yeux sur ce qui est devant toi, \\q et fixe ton regard sur la route.",
+          "R": "Regarde toujours où tu vas. \\q Ne laisse rien te distraire."
+        },
+        "sw": {
+          "L": "Macho yako yaangalie mbele moja kwa moja, \\q na kope zako ziangalie sawasawa mbele yako.",
+          "B": "Macho yako yakae juu ya kilicho mbele yako, \\q na uelekeze macho yako katika njia iliyo mbele.",
+          "R": "Endelea kuangalia unakokwenda. \\q Usikubali kitu chochote kikuvuruge."
+        },
+        "es": {
+          "L": "Que tus ojos miren de frente, \\q y que tus párpados miren derecho delante de ti.",
+          "B": "Mantén los ojos en lo que tienes delante, \\q y fija la mirada en el camino que sigue.",
+          "R": "Mira siempre hacia donde vas. \\q No dejes que nada te distraiga."
+        },
+        "vi": {
+          "L": "Hãy để mắt con nhìn thẳng phía trước, \\q và mí mắt con nhìn thẳng trước mặt con.",
+          "B": "Hãy giữ mắt con nhìn vào điều ở trước mặt, \\q và chăm chú nhìn con đường phía trước.",
+          "R": "Hãy luôn nhìn về nơi con đang đi tới. \\q Đừng để điều gì làm con xao lãng."
+        },
+        "ko": {
+          "L": "네 눈은 앞을 똑바로 보고, \\q 네 눈꺼풀은 네 앞을 곧게 보게 하여라.",
+          "B": "네 눈은 앞을 바라보고, \\q 네 시선은 앞길에 고정하여라.",
+          "R": "네가 가는 곳을 계속 바라보아라. \\q 다른 것에 한눈팔지 마라."
         }
       },
       "decisions": [
@@ -1551,6 +2448,31 @@
           "L": "Make level [the] track of your foot, \\q and all your ways will be firm.",
           "B": "Make the path for your feet level, \\q and every road you take will be firm.",
           "R": "Think carefully about where you are going, \\q and you will stay on the right road."
+        },
+        "fr": {
+          "L": "Aplanis la piste de ton pied, \\q et tous tes chemins seront fermes.",
+          "B": "Rends plat le sentier où vont tes pieds, \\q et toutes les routes que tu prendras seront sûres.",
+          "R": "Réfléchis bien à l’endroit où tu vas, \\q et tu resteras sur le bon chemin."
+        },
+        "sw": {
+          "L": "Sawazisha mapito ya mguu wako, \\q na njia zako zote zitakuwa imara.",
+          "B": "Ifanye sawa njia ya miguu yako, \\q na kila njia utakayoifuata itakuwa imara.",
+          "R": "Fikiri kwa makini juu ya unakokwenda, \\q nawe utabaki katika njia iliyo sawa."
+        },
+        "es": {
+          "L": "Allana [la] senda de tu pie, \\q y todos tus caminos serán firmes.",
+          "B": "Haz llana la senda para tus pies, \\q y todo camino que tomes será firme.",
+          "R": "Piensa bien adónde vas, \\q y te mantendrás en el buen camino."
+        },
+        "vi": {
+          "L": "Hãy san bằng lối chân con đi, \\q thì mọi đường lối con sẽ vững vàng.",
+          "B": "Hãy làm cho phẳng con đường dưới chân con, \\q thì mọi nẻo con đi sẽ vững chắc.",
+          "R": "Hãy suy nghĩ kỹ về nơi con đang đi, \\q thì con sẽ luôn ở trên đường đúng."
+        },
+        "ko": {
+          "L": "네 발의 길을 평평하게 하여라. \\q 그러면 네 모든 길이 든든할 것이다.",
+          "B": "네 발이 갈 길을 평탄하게 하여라. \\q 그러면 네가 가는 모든 길이 굳건할 것이다.",
+          "R": "어디로 가는지 잘 생각하여라. \\q 그러면 바른길에서 벗어나지 않을 것이다."
         }
       },
       "decisions": [
@@ -1615,6 +2537,31 @@
           "L": "Do not turn aside [to the] right or [to the] left; \\q turn your foot away from evil.",
           "B": "Do not veer off to either side; \\q keep your feet away from evil.",
           "R": "Do not leave the right road, not even a little. \\q Stay away from evil."
+        },
+        "fr": {
+          "L": "Ne dévie pas [à] droite ou [à] gauche ; \\q détourne ton pied du mal.",
+          "B": "Ne t’écarte ni d’un côté ni de l’autre ; \\q tiens tes pieds loin du mal.",
+          "R": "Ne quitte pas le bon chemin, pas même un peu. \\q Reste loin du mal."
+        },
+        "sw": {
+          "L": "Usigeuke [kwenda] kuume wala kushoto; \\q ondoa mguu wako katika uovu.",
+          "B": "Usipotoke kwenda upande wowote; \\q iepushe miguu yako na uovu.",
+          "R": "Usiiache njia iliyo sawa, hata kidogo. \\q Kaa mbali na uovu."
+        },
+        "es": {
+          "L": "No te desvíes [a la] derecha ni [a la] izquierda; \\q aparta tu pie del mal.",
+          "B": "No te salgas ni a un lado ni al otro; \\q mantén tus pies lejos del mal.",
+          "R": "No te salgas del buen camino, ni siquiera un poco. \\q Mantente lejos del mal."
+        },
+        "vi": {
+          "L": "Đừng rẽ [sang] phải hay [sang] trái; \\q hãy cất chân con khỏi điều ác.",
+          "B": "Đừng tạt sang bên nào cả; \\q hãy giữ chân con xa khỏi điều ác.",
+          "R": "Đừng rời con đường đúng, dù chỉ một chút. \\q Hãy tránh xa điều ác."
+        },
+        "ko": {
+          "L": "오른쪽이나 왼쪽으로 기울지 마라. \\q 네 발을 악에서 돌이켜라.",
+          "B": "어느 쪽으로도 벗어나지 마라. \\q 네 발을 악에서 멀리하여라.",
+          "R": "조금도 바른길을 떠나지 마라. \\q 악을 멀리하여라."
         }
       },
       "decisions": [
