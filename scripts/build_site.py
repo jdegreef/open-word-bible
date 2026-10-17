@@ -13,12 +13,15 @@ import datetime
 import functools
 import hashlib
 import html
+import io
 import json
 import os
 import re
 import shutil
+import subprocess
 import sys
 import urllib.parse
+import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -26,7 +29,7 @@ sys.path.insert(0, str(ROOT))
 
 from typing import NamedTuple  # noqa: E402
 
-from owb import crossrefs, languages as owb_languages, markup, morph, refs, translit, validate, versification  # noqa: E402
+from owb import crossrefs, export, languages as owb_languages, markup, morph, refs, translit, validate, versification  # noqa: E402
 from owb.export import record_verses  # noqa: E402
 
 # The interface languages, English first (data/languages.json; see catalog below).
@@ -526,6 +529,7 @@ def footer_links(lang):
     project = [(url(lang, "/about/"), t(lang, "footer.about"), None),
                (url(lang, "/about/beliefs/"), t(lang, "nav.beliefs"), None),
                (url(lang, "/about/status/"), catalog(lang)["status"]["nav"], None),
+               (url(lang, "/download/"), catalog(lang)["download"]["nav"], None),
                (url(lang, "/about/#credits"), t(lang, "nav.credits"), None),
                (url(lang, "/#help"), t(lang, "nav.help"), None),
                (GITHUB_URL, t(lang, "nav.source"), None),
@@ -2949,6 +2953,143 @@ def status_page(lang="en"):
     return page(lang, s["title"], body, path="/about/status/", current="/about/", description=s["description"])
 
 
+# Ready-made downloads of the text (owb/export.py, which the admin's Export
+# uses for one file at a time): every reading language at every level, as
+# USFM books and as JSON, at the default settings, for Bible software and
+# apps. Each is a zip holding the text, its manifest, a README and the
+# licence. Zipping the JSON as well keeps the set near 25 MB (the JSON alone
+# would be 54 MB). The files are named for what they hold, not the deploy,
+# so a link to one keeps working; the service worker leaves them alone.
+DOWNLOADS_DIR = "downloads"
+DOWNLOAD_FORMATS = ("usfm", "json")
+
+
+def build_commit():
+    """(commit, ISO date) of the build's source, or ("", "") outside git."""
+    commit = os.environ.get("RENDER_GIT_COMMIT", "")
+    try:
+        out = subprocess.run(["git", "log", "-1", "--format=%H %cI", *([commit] if commit else [])], cwd=ROOT,
+                             capture_output=True, text=True, timeout=10, check=True).stdout.split()
+        return out[0], out[1]
+    except (OSError, subprocess.SubprocessError, IndexError):
+        return commit, ""
+
+
+def download_readme(m, fmt):
+    missing = m["missing"]["count"]
+    what = ("one USFM file per book, numbered in canonical order" if fmt == "usfm"
+            else f"{m['edition']}.json: the books, chapters and verses as JSON")
+    return f"""{m["title"]}, {m["language_name"]}, {m["level_name"]}
+{"=" * 40}
+
+{m["verses"]:,} verses; {missing:,} not yet translated (listed in manifest.json).
+This zip holds {what}, and manifest.json, which describes the edition: its
+numbering, the reader settings it uses, review status counts and the
+source commit.
+
+{m["note"]}
+
+Licence: {m["licence"]} ({m["licence_url"]}). See LICENSE.
+Please credit "{m["credit"]}" where you can; you don't have to.
+
+The latest files and the reasoning behind every sentence: {m["url"]}
+Built {m["generated_at"] or "from a working copy"}{f" from commit {m['commit']}" if m["commit"] else ""}.
+"""
+
+
+@functools.lru_cache(maxsize=None)
+def downloads():
+    """{(lang, level, fmt): (filename, zip bytes, manifest)} for every reading
+    language with text, at every level, in every format."""
+    records = _all_records()
+    expected = [v for book, chapter in chapters() for v in chapter_verses(book, chapter)]
+    commit, date = build_commit()
+    licence = (ROOT / "LICENSE").read_text(encoding="utf-8")
+    have = status_counts()["languages"]
+    out = {}
+    for lang in owb_languages.READING:
+        if lang not in have:
+            continue
+        for level in export.LEVELS:
+            for fmt in DOWNLOAD_FORMATS:
+                name, _, data, m = export.build(records, lang, level, fmt, expected=expected,
+                                                generated_at=date, commit=commit)
+                buf = io.BytesIO()
+                if fmt == "usfm":
+                    buf.write(data)   # manifest.json and the books, to which the README and licence are added
+                    mode = "a"
+                else:
+                    mode, name = "w", name.replace(".json", "-json.zip")
+                with zipfile.ZipFile(buf, mode, zipfile.ZIP_DEFLATED) as z:
+                    def put(path, text):
+                        info = zipfile.ZipInfo(path, export.ZIP_DATE)
+                        info.compress_type = zipfile.ZIP_DEFLATED
+                        z.writestr(info, text.encode())
+                    if fmt == "json":
+                        put(f"{m['edition']}.json", data.decode())
+                        put("manifest.json", json.dumps(m, ensure_ascii=False, indent=1) + "\n")
+                    put("README.txt", download_readme(m, fmt))
+                    put("LICENSE", licence)
+                out[lang, level, fmt] = (name, buf.getvalue(), m)
+    return out
+
+
+def download_url(name):
+    return f"/{DOWNLOADS_DIR}/{name}"
+
+
+def file_size(size, lang):
+    """A file's size in MB (or KB under one MB), in lang's way of writing numbers."""
+    d = catalog(lang)["download"]
+    if size < 1024 * 1024:
+        return d["kb"].format(n=number(max(1, round(size / 1024)), lang))
+    return d["mb"].format(n=f"{size / 1024 / 1024:.1f}".replace(".", d["decimal"]))
+
+
+def download_page(lang="en"):
+    """/download/: the ready-made files, the page's language first."""
+    d = catalog(lang)["download"]
+    levels = catalog(lang)["levels"]
+    files = downloads()
+    langs = sorted({code for code, _, _ in files}, key=lambda code: code != lang)
+    sections = []
+    for code in langs:
+        rows = []
+        for level in export.LEVELS:
+            cells = []
+            for fmt in DOWNLOAD_FORMATS:
+                name, data, _ = files[code, level, fmt]
+                cells.append(f'<td><a href="{download_url(name)}" download>{d[fmt]}</a> '
+                             f'<span class="fine">{file_size(len(data), lang)}</span></td>')
+            rows.append(f'<tr><th scope="row">{html.escape(levels[level])}</th>{"".join(cells)}</tr>')
+        m = files[code, "B", "usfm"][2]
+        counts = d["counts"].format(verses=number(m["verses"], lang), missing=number(m["missing"]["count"], lang))
+        sections.append(f'<h2 id="dl-{code}"><span lang="{code}">{owb_languages.native(code)}</span></h2>\n'
+                        f'<p>{counts}</p>\n'
+                        f'<table class="status-table" aria-labelledby="dl-{code}"><thead><tr>'
+                        f'<th scope="col">{d["level"]}</th><th scope="col">{d["usfm"]}</th>'
+                        f'<th scope="col">{d["json"]}</th></tr></thead><tbody>{"".join(rows)}</tbody></table>')
+    m = next(iter(files.values()))[2]
+    built = d["built"].format(date=m["generated_at"][:10]) if m["generated_at"] else ""
+    body = f"""
+<div class="prose status">
+<p class="eyebrow">{d["title"]}</p>
+<h1>{d["heading"]}</h1>
+<p class="dek">{d["dek"]}</p>
+<p class="notice">{d["draft"].replace("{status}", url(lang, "/about/status/"))}</p>
+<ul>
+<li>{d["usfm_note"]}</li>
+<li>{d["json_note"]}</li>
+<li>{d["settings_note"]}</li>
+</ul>
+<p>{d["licence"]}</p>
+{"".join(sections)}
+<p class="fine">{built}</p>
+</div>
+"""
+    return page(lang, d["title"], body, path="/download/", current="/about/", description=d["description"])
+
+
 def llms_txt():
     """/llms.txt: a short Markdown guide to the site for AI tools
     (https://llmstxt.org): what it is, how its pages are laid out, where the
@@ -4482,7 +4623,8 @@ def sitemap(paths):
 
 def build(out):
     for cached in (load_intro, book_languages, status_counts, _book_records, _chapter_words, chapter_verses, _all_records, nav_menus, footer_links, passages, asset, translated_verses, catalog, book_refs, name_cards, term_uses,
-                   search_documents, word_uses, series_numbers, chapter_articles, load_plans, plans_json, plans_json_url):
+                   search_documents, word_uses, series_numbers, chapter_articles, load_plans, plans_json, plans_json_url,
+                   downloads):
         cached.cache_clear()
     if out.exists():
         shutil.rmtree(out)
@@ -4498,6 +4640,7 @@ def build(out):
         add("/about/", about_page(lang))
         add("/about/beliefs/", beliefs_page(lang))
         add("/about/status/", status_page(lang))
+        add("/download/", download_page(lang))
         add("/about/privacy/", legal_page(lang, "privacy", "/about/privacy/"))
         add("/about/terms-of-use/", legal_page(lang, "terms_of_use", "/about/terms-of-use/"))
         add("/search/", search_page(lang))
@@ -4558,13 +4701,18 @@ def build(out):
         path = out / rel
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(text, encoding="utf-8")
+    blobs = {f"{DOWNLOADS_DIR}/{name}": data for name, data, _ in downloads().values()}
+    for rel, data in blobs.items():
+        path = out / rel
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes(data)
     for name in ("style.css", "markup.js", "reader.js", "site.js", "account.js", "search.js", "plans.js", "compare.js",
                  "word.js", "admin.js", "admin.css"):
         shutil.copy(ROOT / "web" / name, out / name)
     shutil.copytree(ROOT / "web" / "fonts", out / "fonts")
     shutil.copytree(ROOT / "web" / "icons", out / "icons")
     shutil.copytree(OG, out / "og", ignore=shutil.ignore_patterns("*.digest"))
-    return sorted(files) + ["admin.css", "admin.js", "compare.js", "word.js", "markup.js", "plans.js", "reader.js",
+    return sorted(files) + sorted(blobs) + ["admin.css", "admin.js", "compare.js", "word.js", "markup.js", "plans.js", "reader.js",
                             "search.js", "site.js", "style.css"]
 
 

@@ -27,6 +27,9 @@ class ReaderMessage(models.Model):
                                    blank=True, related_name="+")
     replied_at = models.DateTimeField(null=True, blank=True)
     note = models.TextField(blank=True, help_text="For editors only")
+    assigned_to = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True,
+                                    blank=True, related_name="+", help_text="The editor dealing with it")
+    assigned_at = models.DateTimeField(null=True, blank=True)
     fixed_at = models.DateTimeField(null=True, blank=True,
                                     help_text="When a fix it led to was merged and the reader was told")
     fix_url = models.URLField(blank=True, help_text="The pull request that made the change")

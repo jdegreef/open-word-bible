@@ -8,6 +8,7 @@ import json
 import re
 import sys
 import unittest
+import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -52,9 +53,15 @@ class LicensingTest(unittest.TestCase):
         cls.site = built_site()
         cls.extracts = {p: json.loads(p.read_text(encoding="utf-8"))
                         for p in sorted((ROOT / "data").rglob("*.json"))}
-        # Every text file the site serves; fonts, share images and icons are binary.
-        cls.pages = {p: p.read_text(encoding="utf-8") for p in sorted(cls.site.rglob("*"))
-                     if p.is_file() and p.suffix not in (".woff2", ".jpg", ".png")}
+        # Every text file the site serves, and each file in the downloads'
+        # zips; fonts, share images and icons are binary.
+        cls.pages = {}
+        for p in sorted(cls.site.rglob("*")):
+            if p.suffix == ".zip":
+                with zipfile.ZipFile(p) as z:
+                    cls.pages.update({f"{p}/{name}": z.read(name).decode("utf-8") for name in z.namelist()})
+            elif p.is_file() and p.suffix not in (".woff2", ".jpg", ".png"):
+                cls.pages[p] = p.read_text(encoding="utf-8")
 
     def test_extracts_have_no_restricted_fields(self):
         self.assertTrue(self.extracts)

@@ -22,6 +22,7 @@ class Edition(models.Model):
     source_path = models.CharField(max_length=200, blank=True)
     attribution = models.TextField(blank=True)
     imported_at = models.DateTimeField(auto_now=True)
+    verse_count = models.PositiveIntegerField(default=0, help_text="Verses loaded, kept by import_texts")
 
     class Meta:
         ordering = ["kind", "language", "code"]
