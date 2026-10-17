@@ -152,11 +152,13 @@
     { id: "languages", label: "Languages", area: "overview", group: "Progress" },
     { id: "health", label: "Content health", area: "overview", group: "Progress" },
     { id: "jobs", label: "Drafting jobs", area: "jobs", group: "Progress" },
+    { id: "work", label: "Work in progress", area: "overview", group: "Progress" },
     { id: "verse", label: "Verse inspector", area: "overview", group: "Text" },
     { id: "decisions", label: "Uncertain decisions", area: "overview", group: "Text" },
     { id: "terms", label: "Key terms", area: "overview", group: "Text" },
     { id: "fixes", label: "Fix requests", area: "inbox", group: "Text" },
     { id: "articles", label: "Articles", area: "overview", group: "Text" },
+    { id: "overlap", label: "Similarity", area: "overview", group: "Text" },
     { id: "inbox", label: "Reader inbox", area: "inbox", group: "Readers" },
     { id: "users", label: "Users", area: "users", group: "Readers" },
     { id: "engagement", label: "Engagement", area: "overview", group: "Readers" },
@@ -345,7 +347,8 @@
         head(b.testament === "ot" ? "Old Testament" : "New Testament", b.name,
           drafted + " of " + b.chapters.length + " chapters drafted" + (b.updated ? "; last changed " + when(b.updated) : "") + "."),
         h("div", { class: "admin-toolbar" }, legend(),
-          b.open_messages && ME.admin.indexOf("inbox") >= 0 ? h("a", { href: "#inbox" }, plural(b.open_messages, "open reader message")) : null),
+          h("span", { class: "admin-actions" }, h("a", { href: "#overlap/" + b.code }, "Similarity to reference Bibles"),
+            b.open_messages && ME.admin.indexOf("inbox") >= 0 ? h("a", { href: "#inbox" }, plural(b.open_messages, "open reader message")) : null)),
         table(["Chapter", ["Sentences", { class: "admin-num" }]].concat(langs.map(function (l) {
           return [l.code, { title: l.name, class: "admin-cell" }];
         })), rows, "admin-coverage"),
@@ -491,6 +494,10 @@
             b.addEventListener("click", function () { FIX_FROM = m; location.hash = "#verse/" + m.verse; });
             return b;
           })())]);
+      if (m.fixed_at) {
+        card.appendChild(h("p", null, pill("Led to a change", "good"), " ", h("a", { href: m.fix_url, rel: "noopener" }, "the pull request"),
+          h("span", { class: "admin-sub" }, " \u00b7 the reader was told " + when(m.fixed_at))));
+      }
       if (m.reply) {
         card.appendChild(h("div", { class: "admin-reply" }, h("p", { class: "admin-sub" }, "Answered by " + m.replied_by + ", " + when(m.replied_at)), h("p", null, m.reply)));
       }
@@ -824,6 +831,75 @@
     });
   };
 
+  // Work in progress: every job handed to Claude sessions, with its pull
+  // requests.
+  var WORK = { kind: "", state: "open" };
+  var PR_TONE = { merged: "good", open: "info", draft: "", closed: "bad" };
+  VIEWS.work = function () {
+    return api("/api/admin/work/").then(function (d) {
+      var items = d.items.filter(function (w) {
+        return (!WORK.kind || w.kind === WORK.kind) && (WORK.state === "all" || (WORK.state === "stale" ? w.stale : w.state === WORK.state));
+      });
+      var kind = select("work-kind", [["", "Every kind"], ["drafting-job", "Drafting jobs"], ["fix-request", "Fix requests"], ["article-job", "Article jobs"]], WORK.kind);
+      kind.setAttribute("aria-label", "Kind");
+      kind.addEventListener("change", function () { WORK.kind = kind.value; route(); });
+      var rows = items.map(function (w) {
+        var state = w.state === "closed" ? pill(w.state_reason === "not_planned" ? "Closed, not done" : "Done", w.state_reason === "not_planned" ? "" : "good")
+          : w.stale ? pill("Stalled", "bad") : w.prs.length ? pill("In review", "info") : pill("Waiting", "warn");
+        return h("tr", null,
+          h("td", null, h("a", { href: w.url, rel: "noopener" }, "#" + w.number), h("span", { class: "admin-sub" }, w.kind_label)),
+          h("td", { class: "admin-wrap" }, w.title, w.assignees.length ? h("span", { class: "admin-sub" }, "taken by " + w.assignees.join(", ")) : null),
+          h("td", null, state),
+          h("td", null, w.prs.length ? h("ul", { class: "admin-roles" }, w.prs.map(function (p) {
+            return h("li", null, pill(p.state, PR_TONE[p.state]), " ", h("a", { href: p.url, rel: "noopener" }, "#" + p.number));
+          })) : "\u2014"),
+          h("td", null, when(w.created_at), w.closed_at ? h("span", { class: "admin-sub" }, "closed " + when(w.closed_at)) : null));
+      });
+      return [head("Progress", "Work in progress", "Drafting jobs, fix requests and article jobs from the last " + d.days + " days, with the pull requests that name them. A job open for more than " + d.stale_hours + " hours with no pull request has stalled."),
+        d.error ? h("p", { class: "notice" }, d.error) : null,
+        d.counts ? h("div", { class: "admin-tiles" }, tile(num(d.counts.open), "open"), tile(num(d.counts.in_review), "with a pull request open"),
+          tile(num(d.counts.stale), "stalled", d.counts.stale ? "bad" : ""), tile(num(d.counts.done), "closed in " + d.days + " days")) : null,
+        h("div", { class: "admin-toolbar" }, seg([["open", "Open"], ["stale", "Stalled"], ["closed", "Closed"], ["all", "All"]], WORK.state, function (v) { WORK.state = v; route(); }), kind),
+        items.length ? table(["Issue", "What", "State", "Pull requests", "Filed"], rows) : empty("Nothing here.")];
+    });
+  };
+
+  // Similarity to the reference Bibles, per book (scripts/ngram_overlap.py).
+  var OVERLAP = { book: "JHN", lang: "en", min: 6 };
+  VIEWS.overlap = function (arg) {
+    if (arg) OVERLAP.book = arg.toUpperCase();
+    var f = OVERLAP;
+    return api("/api/admin/overlap/" + f.book + "/?lang=" + f.lang + "&min=" + f.min).then(function (d) {
+      var book = h("input", { id: "overlap-book", value: f.book, size: 6, "aria-label": "Book code", placeholder: "JHN" });
+      var lang = select("overlap-lang", [["en", "English"], ["es", "Spanish"]], f.lang);
+      lang.setAttribute("aria-label", "Language");
+      var min = select("overlap-min", [["5", "5+ words"], ["6", "6+ words"], ["8", "8+ words"], ["10", "10+ words"]], String(f.min));
+      min.setAttribute("aria-label", "Shortest run");
+      var form = h("form", { class: "admin-toolbar" }, book, lang, min, h("button", { type: "submit", class: "admin-btn" }, "Compare"));
+      form.addEventListener("submit", function (e) {
+        e.preventDefault(); f.book = book.value.trim().toUpperCase() || "JHN"; f.lang = lang.value; f.min = +min.value;
+        location.hash = "#overlap/" + f.book; route();
+      });
+      var rows = d.editions.map(function (e) {
+        return h("tr", null, h("th", { scope: "row" }, e.name, h("span", { class: "admin-sub" }, e.code)),
+          ["L", "B", "R"].map(function (lv) {
+            var v = e.share[lv];
+            return h("td", { class: "admin-num" + (v >= 50 ? " admin-high" : "") }, v === null ? "\u2014" : v + "%");
+          }), h("td", { class: "admin-num" }, num(e.longest) + " words"));
+      });
+      return [head("Text", "Similarity to reference Bibles", "The share of " + d.name + "'s drafted words that sit in runs of " + d.min + " or more words also found in the same verses of a public-domain Bible. Shared phrasing is often the common heritage of Bible English; a high share or long runs is where to check a draft wasn't built on a reference Bible."),
+        form,
+        d.editions.length ? table(["Bible", ["Literal", { class: "admin-num" }], ["Balanced", { class: "admin-num" }], ["Readable", { class: "admin-num" }], ["Longest run", { class: "admin-num" }]], rows)
+          : empty("No reference Bibles in this language are loaded, so there's nothing to compare against."),
+        h("p", { class: "admin-sub" }, num(d.sentences) + " sentences; words compared: L " + num(d.words.L) + ", B " + num(d.words.B) + ", R " + num(d.words.R) + ". Copyrighted Bibles are compared locally with scripts/ngram_overlap.py --extra."),
+        d.longest_runs.length ? h("section", { class: "admin-block" }, h("h2", null, "Longest shared runs"),
+          table(["Verse", "Level", "Bible", ["Words", { class: "admin-num" }], "Run"], d.longest_runs.map(function (r) {
+            return h("tr", null, h("td", null, h("a", { href: "#verse/" + r.verse }, r.record)), h("td", null, r.level), h("td", null, r.edition),
+              h("td", { class: "admin-num" }, num(r.length)), h("td", { class: "admin-wrap" }, r.text));
+          }))) : null];
+    });
+  };
+
   // Users.
   var USERS = { q: "", role: "", offset: 0 };
   VIEWS.users = function () {
@@ -957,7 +1033,7 @@
     "role.grant": "granted a role to", "role.revoke": "removed a role from", "role.invite": "invited",
     "user.delete": "deleted the account", "user.sign_out": "signed out the devices of",
     "message.reply": "answered", "message.done": "marked done", "message.declined": "declined", "message.new": "reopened",
-    "job.file": "filed drafting job", "article.job": "filed article job", "digest.send": "sent the weekly digest to", "email.send": "emailed the team:", "fix.request": "requested fix"
+    "job.file": "filed drafting job", "article.job": "filed article job", "digest.send": "sent the weekly digest to", "message.fixed": "told the reader their message led to a change:", "email.send": "emailed the team:", "fix.request": "requested fix"
   };
   function activityList(actions) {
     return h("ul", { class: "admin-feed" }, actions.map(function (a) {

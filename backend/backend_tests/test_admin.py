@@ -4,7 +4,7 @@ import io
 import json
 import shutil
 import tempfile
-from datetime import timedelta
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from unittest import mock
 
@@ -25,7 +25,7 @@ from staff import jobs as staff_jobs
 from staff.models import AdminAction, Broadcast
 from staff.permissions import AREAS
 from staff.verses import covers
-from texts.models import Edition, Word
+from texts.models import Edition, Verse, Word
 from translation.models import ContentFile, Decision, ImportRun, Rendering, Sentence
 
 SITE = "https://openwordbible.org"
@@ -620,3 +620,94 @@ class DigestTest(AdminTestCase):
         call_command("send_digest", "--dry-run", stdout=out)
         self.assertIn("To: boss2@example.org, boss@example.org", out.getvalue())
         self.assertEqual(len(mail.outbox), 2)
+
+
+ISSUES = [
+    {"number": 20, "title": "Fix John 1:1 (French): la Parole", "html_url": "https://github.com/x/y/issues/20",
+     "state": "closed", "state_reason": "completed", "created_at": "2026-10-10T00:00:00Z",
+     "closed_at": "2026-10-11T00:00:00Z", "labels": [{"name": "fix-request"}], "assignees": [],
+     "body": 'x\n<!-- fix-request {"record": "JHN.1.1.s1", "verse": "JHN.1.1", "language": "fr", "message": MSG} -->'},
+    {"number": 21, "title": "Draft Ezekiel in English", "html_url": "u21", "state": "open",
+     "created_at": "2026-10-01T00:00:00Z", "labels": [{"name": "drafting-job"}],
+     "assignees": [{"login": "claude"}], "body": ""},
+    {"number": 22, "title": "Articles in Korean", "html_url": "u22", "state": "open",
+     "created_at": "2026-10-16T00:00:00Z", "labels": [{"name": "article-job"}], "assignees": [], "body": ""},
+    {"number": 23, "title": "A bug", "html_url": "u23", "state": "open", "created_at": "2026-10-16T00:00:00Z",
+     "labels": [{"name": "bug"}], "assignees": [], "body": ""},
+]
+PULLS = [
+    {"number": 30, "title": "French John 1:1: la Parole", "body": "Fixes #20",
+     "html_url": "https://github.com/x/y/pull/30", "state": "closed", "merged_at": "2026-10-11T00:00:00Z",
+     "draft": False},
+    {"number": 31, "title": "Ezekiel 1-10 in English", "body": "Part of #21", "html_url": "p31",
+     "state": "open", "merged_at": None, "draft": False},
+]
+
+
+class WorkTest(AdminTestCase):
+    def setUp(self):
+        super().setUp()
+        cache.clear()
+        self.reader = account("reader@example.org")
+        self.message = ReaderMessage.objects.create(user=self.reader, kind="suggestion", verse="JHN.1.1",
+                                                    language="fr", text="La Parole ?")
+        issues = json.loads(json.dumps(ISSUES).replace("MSG", str(self.message.id)))
+
+        def github(path, method="GET", body=None):
+            return PULLS if path.startswith("pulls") else issues
+        patcher = mock.patch.object(staff_jobs, "_github", side_effect=github)
+        patcher.start()
+        self.addCleanup(patcher.stop)
+
+    def test_jobs_with_their_pull_requests(self):
+        with mock.patch("staff.work.timezone.now", return_value=datetime(2026, 10, 17, 12, tzinfo=UTC)):
+            data = self.admin.get("/api/admin/work/").json()
+        items = {w["number"]: w for w in data["items"]}
+        self.assertEqual(sorted(items), [20, 21, 22])   # not the bug
+        self.assertEqual([p["state"] for p in items[20]["prs"]], ["merged"])
+        self.assertEqual(items[21]["prs"][0]["number"], 31)
+        self.assertFalse(items[21]["stale"])   # it has a pull request
+        self.assertTrue(items[22]["stale"])    # a day old with none
+        self.assertEqual(data["counts"], {"open": 2, "stale": 1, "in_review": 1, "done": 1})
+
+    @override_settings(OWB_GITHUB_TOKEN="t")
+    def test_a_reader_is_told_once_when_their_fix_merges(self):
+        call_command("sync_fixes", stdout=io.StringIO())
+        self.message.refresh_from_db()
+        self.assertEqual(self.message.status, "done")
+        self.assertEqual(self.message.fix_url, "https://github.com/x/y/pull/30")
+        self.assertEqual(mail.outbox[0].to, ["reader@example.org"])
+        self.assertIn("> La Parole ?", mail.outbox[0].body)
+        self.assertIn(f"{SITE}/fr/jhn/1/#v1", mail.outbox[0].body)
+        call_command("sync_fixes", stdout=io.StringIO())
+        self.assertEqual(len(mail.outbox), 1)
+        inbox = self.admin.get("/api/admin/inbox/?status=done").json()["messages"]
+        self.assertEqual(inbox[0]["fix_url"], "https://github.com/x/y/pull/30")
+
+    def test_sync_fixes_needs_a_token(self):
+        out = io.StringIO()
+        call_command("sync_fixes", stdout=out)
+        self.assertIn("not set", out.getvalue())
+        self.assertEqual(mail.outbox, [])
+
+
+class OverlapTest(AdminTestCase):
+    def test_shared_runs_with_a_reference_bible(self):
+        cache.clear()
+        s = sentence("JHN.1.1.s1", ())
+        for level, text in (("L", "In the beginning was the Word and the Word was with God"),
+                            ("B", "At the start there was a Word who stood beside God himself"),
+                            ("R", "x")):
+            Rendering.objects.create(sentence=s, language="en", level=level, text=text)
+        web = Edition.objects.create(code="web", name="World English Bible", language="eng", kind="reference",
+                                     licence="Public domain", source="web", source_commit="0" * 40)
+        Verse.objects.create(edition=web, book="JHN", chapter=1, verse=1,
+                             text="In the beginning was the Word, and the Word was with God, and the Word was God.")
+        data = self.admin.get("/api/admin/overlap/jhn/?lang=en&min=6").json()
+        self.assertEqual(data["sentences"], 1)
+        edition = data["editions"][0]
+        self.assertEqual((edition["code"], edition["share"]["L"], edition["share"]["B"]), ("web", 100.0, 0.0))
+        self.assertEqual(edition["longest"], 12)
+        self.assertEqual(data["longest_runs"][0]["verse"], "JHN.1.1")
+        self.assertEqual(self.admin.get("/api/admin/overlap/jhn/?lang=sw").json()["editions"], [])
+        self.assertEqual(self.admin.get("/api/admin/overlap/xyz/").status_code, 404)
