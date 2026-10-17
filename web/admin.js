@@ -176,6 +176,7 @@
 
   function drawRail(current) {
     rail.textContent = "";
+    rail.appendChild(searchBox());
     var group = null, list = null;
     SECTIONS.filter(opens).forEach(function (s) {
       if (s.group !== group || !list) {
@@ -1474,6 +1475,111 @@
         blocks.length ? blocks : empty("No sentence that uses a key term is drafted in this language yet.")];
     });
   };
+
+  // ---- Search --------------------------------------------------------
+
+  // The box at the top of the rail (GET /api/admin/search/): verses,
+  // sentences, terms, articles, decisions, and accounts and reader messages
+  // for the roles that open them. "/" focuses it; arrows, Enter and Escape
+  // work the list. Made once and kept across drawings of the rail.
+  var SEARCH = null;
+  function searchBox() {
+    if (SEARCH) return SEARCH.wrap;
+    var input = h("input", { type: "search", id: "admin-search", placeholder: "Search the admin", autocomplete: "off",
+      spellcheck: "false", role: "combobox", "aria-expanded": "false", "aria-controls": "admin-search-list",
+      "aria-autocomplete": "list", "aria-label": "Search the admin (press /)" });
+    var list = h("div", { class: "admin-search-list", id: "admin-search-list", role: "listbox", hidden: true });
+    var wrap = h("div", { class: "admin-search", role: "search" }, input, list);
+    var timer = null, asked = 0, active = -1, options = [];
+
+    function close() {
+      list.hidden = true;
+      input.setAttribute("aria-expanded", "false");
+      input.removeAttribute("aria-activedescendant");
+      active = -1;
+    }
+    function mark(i) {
+      if (!options.length) return;
+      active = (i + options.length) % options.length;
+      options.forEach(function (o, j) { o.setAttribute("aria-selected", j === active ? "true" : "false"); });
+      input.setAttribute("aria-activedescendant", options[active].id);
+      options[active].scrollIntoView({ block: "nearest" });
+    }
+    function go(href) {
+      close();
+      input.value = "";
+      input.blur();
+      if (location.hash === href) route(); else location.hash = href;
+    }
+    function show(d) {
+      list.textContent = "";
+      options = [];
+      if (!d.groups.length) {
+        list.appendChild(h("p", { class: "admin-empty" }, "Nothing found for “" + d.q + "”."));
+      }
+      d.groups.forEach(function (g) {
+        list.appendChild(h("p", { class: "admin-search-group", role: "presentation" }, g.label));
+        g.results.forEach(function (r) {
+          var o = h("a", { href: r.href, role: "option", id: "admin-search-" + options.length, "aria-selected": "false",
+            tabindex: "-1" }, h("span", null, r.title), r.detail ? h("span", { class: "admin-sub" }, r.detail) : null);
+          o.addEventListener("mousedown", function (e) { e.preventDefault(); });
+          o.addEventListener("click", function (e) { e.preventDefault(); go(r.href); });
+          options.push(o);
+          list.appendChild(o);
+        });
+      });
+      list.hidden = false;
+      input.setAttribute("aria-expanded", "true");
+      if (options.length) mark(0);
+    }
+    function ask() {
+      var q = input.value.trim();
+      var mine = ++asked;
+      if (q.length < 2) { close(); return; }
+      api("/api/admin/search/?q=" + encodeURIComponent(q)).then(function (d) {
+        if (mine === asked) show(d);
+      }, function (e) {
+        if (mine !== asked) return;
+        list.textContent = "";
+        options = [];
+        list.appendChild(h("p", { class: "admin-empty" }, e.message));
+        list.hidden = false;
+        input.setAttribute("aria-expanded", "true");
+      });
+    }
+    input.addEventListener("input", function () {
+      clearTimeout(timer);
+      timer = setTimeout(ask, 200);
+    });
+    input.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+        if (list.hidden) { ask(); return; }
+        e.preventDefault();
+        mark(active + (e.key === "ArrowDown" ? 1 : -1));
+      } else if (e.key === "Enter") {
+        e.preventDefault();
+        clearTimeout(timer);
+        if (!list.hidden && active >= 0) go(options[active].getAttribute("href"));
+        else ask();
+      } else if (e.key === "Escape") {
+        if (!list.hidden) close(); else { input.value = ""; input.blur(); }
+      }
+    });
+    input.addEventListener("blur", close);
+    input.addEventListener("focus", function () { if (input.value.trim().length >= 2) ask(); });
+    // On the window, before the site's search palette (search.js) takes "/"
+    // on the document; Ctrl K or Cmd K still opens the palette.
+    window.addEventListener("keydown", function (e) {
+      if (e.key !== "/" || e.ctrlKey || e.metaKey || e.altKey || rail.hidden || !wrap.isConnected) return;
+      var t = e.target;
+      if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
+      e.preventDefault();
+      e.stopPropagation();
+      input.focus();
+    }, true);
+    SEARCH = { wrap: wrap, input: input };
+    return wrap;
+  }
 
   // ---- Start ---------------------------------------------------------
 

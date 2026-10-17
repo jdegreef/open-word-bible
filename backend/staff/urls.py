@@ -1,10 +1,11 @@
 from django.urls import path
 
-from . import (articles, consistency, emails, export, fixes, inbox, jobs, overlap, progress, team, text, users, verses,
-               work)
+from . import (articles, consistency, emails, export, fixes, inbox, jobs, overlap, progress, search, team, text, users,
+               verses, work)
 
 urlpatterns = [
     path("overview/", progress.overview),
+    path("search/", search.find),
     path("coverage/", progress.coverage),
     path("languages/", progress.language_list),
     path("books/<str:code>/", progress.book),
