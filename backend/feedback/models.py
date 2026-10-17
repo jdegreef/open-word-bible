@@ -27,6 +27,9 @@ class ReaderMessage(models.Model):
                                    blank=True, related_name="+")
     replied_at = models.DateTimeField(null=True, blank=True)
     note = models.TextField(blank=True, help_text="For editors only")
+    fixed_at = models.DateTimeField(null=True, blank=True,
+                                    help_text="When a fix it led to was merged and the reader was told")
+    fix_url = models.URLField(blank=True, help_text="The pull request that made the change")
     created_at = models.DateTimeField(auto_now_add=True, db_index=True)
 
     class Meta:

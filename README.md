@@ -242,6 +242,18 @@ accounts` so it can have language reviewers. The site, the validator and the
 backend all read the list from `owb/languages.py`. A drafting brief in `docs/<language>-style.md` settles
 the book-wide wording choices.
 
+### Book pages
+
+A book has a page (`/jhn/`) once it has an introduction:
+`data/intros/<BOOK>.md` in English, `data/intros/<lang>/<BOOK>.md` in
+another language. The file starts with a front matter block holding only
+`summary:` (one sentence, for the page and link previews), and its body is
+Markdown as in an article, placeholders included. The page adds an outline
+of the chapters from their section headings and the articles that read the
+book. Chapter pages link to it and carry a breadcrumb trail
+(Read › book › chapter) in their schema.org data. An introduction is a draft
+until a named reviewer has checked it, and its page says so.
+
 ### Articles
 
 Articles live in `articles/*.md`, one file each, starting with a front
@@ -370,6 +382,13 @@ against Postgres (`render.yaml`). It holds:
 - **api**: read-only JSON at `/api/editions/`, `/api/text/<BOOK>/<ch>/`,
   `/api/passages/<BOOK>/<ch>/` and `/api/search/?q=…&lang=…`. The Django
   admin at `/admin/` is the first review tool.
+- **export** (in staff): the site admin's Export section downloads one
+  language at one level as a zip of USFM books or as JSON, for Bible
+  software and the apps that carry our text (`owb/export.py`). Reader
+  settings are applied, poetry runs on one line, Old Testament verses take
+  English numbers by default (a psalm title becomes the chapter's `\d`
+  title), and untranslated verses are left out; each file's
+  `manifest.json` gives its licence, review states and missing verses.
 - **search** (in translation): `import_content` brings the search tables
   up to date with `search_documents` in `scripts/build_site.py`, in every
   site language, rewriting only the entries whose documents changed. Words are matched by the
