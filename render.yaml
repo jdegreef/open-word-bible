@@ -94,7 +94,9 @@ services:
     # 30 minutes, and reloading all of content/ and search came to take
     # longer than that; import_content explains. Management commands have no statement timeout; web
     # requests give up on a query after DB_STATEMENT_TIMEOUT_MS (15 s).
-    preDeployCommand: python backend/manage.py migrate --noinput && python backend/manage.py import_texts --missing && python backend/manage.py import_content --if-texts-loaded --budget 900
+    # Last, sync_fixes emails readers whose suggestion led to a merged fix;
+    # it never fails the deploy.
+    preDeployCommand: python backend/manage.py migrate --noinput && python backend/manage.py import_texts --missing && python backend/manage.py import_content --if-texts-loaded --budget 900 && (python backend/manage.py sync_fixes || true)
     # Threads, so a slow request (such as sending a sign-in email) does not
     # hold up reading.
     startCommand: gunicorn --chdir backend config.wsgi --workers 2 --threads 4 --worker-class gthread --timeout 60
