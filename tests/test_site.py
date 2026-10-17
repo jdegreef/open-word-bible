@@ -276,6 +276,56 @@ class SiteTest(unittest.TestCase):
         self.assertIsNone(self.ld("fr/about", "Dataset"))
         self.assertEqual(self.ld("jhn/3", "Chapter")["license"], build_site.CC0_URL)
 
+    def test_book_pages_introduce_the_books_that_have_one(self):
+        sitemap = (self.out / "sitemap.xml").read_text(encoding="utf-8")
+        intros = sorted(p.stem for p in build_site.INTROS.glob("*.md"))
+        self.assertTrue(intros)
+        for book in intros:
+            path = self.out / book.lower() / "index.html"
+            page = path.read_text(encoding="utf-8")
+            self.assertIn(f"<h1>{build_site.BOOK_NAMES[book]['en']}</h1>", page)
+            self.assertIn(build_site.catalog("en")["book_page"]["draft"], page)
+            self.assertNotIn("{{", page)
+            self.assertIn(f"<loc>{build_site.SITE_URL}/{book.lower()}/</loc>", sitemap)
+            # Every chapter in the outline, each with its section headings.
+            chaps = dict(build_site.books("en"))[book]
+            self.assertEqual(re.findall(r'<li><a href="/[a-z0-9]+/(\d+)/">', page), [str(p.chapter) for p in chaps])
+            for href in re.findall(r'href="(/[^"#?]*)', page):
+                target = self.out / href.lstrip("/")
+                self.assertTrue(target.is_file() or (target / "index.html").is_file(), (book, href))
+            # Only in the languages the introduction is written in.
+            for lang in build_site.LANGUAGES:
+                if lang != "en" and not build_site.load_intro(book, lang):
+                    self.assertFalse((self.out / lang / book.lower() / "index.html").exists(), (lang, book))
+            # Its chapters and the Read page lead to it.
+            first = (self.out / book.lower() / str(chaps[0].chapter) / "index.html").read_text(encoding="utf-8")
+            self.assertIn(f'class="chap-book" href="/{book.lower()}/"', first)
+            read = (self.out / "read" / "index.html").read_text(encoding="utf-8")
+            self.assertIn(f'<h2 id="book-{book.lower()}"><a href="/{book.lower()}/">', read)
+            llms = (self.out / "llms.txt").read_text(encoding="utf-8")
+            self.assertIn(f"({build_site.SITE_URL}/{book.lower()}/)", llms)
+
+    def test_intros_type_no_greek_or_hebrew(self):
+        for path in sorted(build_site.INTROS.rglob("*.md")):
+            text = path.read_text(encoding="utf-8")
+            for script, (pattern, _) in build_site.validate._SCRIPTS.items():
+                self.assertEqual(pattern.findall(text), [], f"{path.name}: {script} typed by hand")
+
+    def test_chapters_have_a_breadcrumb_trail(self):
+        def trail(path):
+            return [(i["name"], i["item"]) for i in self.ld(path, "BreadcrumbList")["itemListElement"]]
+
+        site = build_site.SITE_URL
+        self.assertEqual(trail("php/2"), [("Open Word Bible", site + "/"), ("Read", site + "/read/"),
+                                          ("Philippians", site + "/php/"), ("Philippians 2", site + "/php/2/")])
+        # A book without a page goes straight from Read to the chapter.
+        self.assertEqual(trail("mrk/2"), [("Open Word Bible", site + "/"), ("Read", site + "/read/"),
+                                          ("Mark 2", site + "/mrk/2/")])
+        mark = (self.out / "mrk" / "2" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('class="chap-book" href="/read/#mrk"', mark)
+        self.assertEqual(trail("fr/php/2")[-1][1], site + "/fr/php/2/")
+        self.assertEqual(len(trail("fr/php/2")), 3)
+
     def test_llms_txt_describes_the_site(self):
         text = (self.out / "llms.txt").read_text(encoding="utf-8")
         counts = build_site.status_counts()
