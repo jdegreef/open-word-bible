@@ -1,16 +1,16 @@
 ---
 title: Tân Ước trích dẫn Cựu Ước như thế nào
-summary: Khi trích dẫn Cựu Ước, các sứ đồ thường dùng bản Bảy Mươi tiếng Hy Lạp, và đôi khi lời văn của bản này khác với bản Hê-bơ-rơ. Bài này xem xét sáu trường hợp nổi tiếng, từ “trinh nữ” trong Ma-thi-ơ 1:23 đến “Ngài đã chuẩn bị cho tôi một thân thể” trong Hê-bơ-rơ 10:5, và cách Open Word Bible cho thấy cả hai bản văn.
+summary: Khi trích dẫn Cựu Ước, các sứ đồ thường dùng bản Bảy Mươi tiếng Hy Lạp, và đôi khi lời văn của bản này khác với bản Hê-bơ-rơ. Bài này xem xét sáu trường hợp nổi tiếng, từ “trinh nữ” trong Ma-thi-ơ 1:23 đến “Ngài đã chuẩn bị cho Con một thân thể” trong Hê-bơ-rơ 10:5, và cách Open Word Bible cho thấy cả hai bản văn.
 date: 2026-10-17
 order: 105
 section: passage
 source: 56441c83d73d
 ---
-Người đọc tra một câu trích dẫn Cựu Ước trong Kinh Thánh của mình đôi khi sẽ ngạc nhiên. Hê-bơ-rơ 10:5 trích Thi Thiên 40 với lời “Ngài đã chuẩn bị cho tôi một thân thể”. Mở thi thiên ấy ra, ta sẽ thấy một câu đại loại như “Ngài đã mở tai tôi”. Ma-thi-ơ trích Ê-sai rằng “trinh nữ sẽ mang thai”. Nhiều bản Kinh Thánh hiện đại ghi “người thiếu nữ” trong sách Ê-sai. Gia-cơ, tại hội nghị ở Giê-ru-sa-lem, trích A-mốt nói về “những người còn lại trong loài người” tìm kiếm Chúa. Còn A-mốt, trong bản Hê-bơ-rơ, lại nói về việc Y-sơ-ra-ên chiếm lấy “phần còn sót lại của Ê-đôm”.
+Người đọc tra một câu trích dẫn Cựu Ước trong Kinh Thánh của mình đôi khi sẽ ngạc nhiên. Hê-bơ-rơ 10:5 trích Thi Thiên 40 với lời “Ngài đã chuẩn bị cho Con một thân thể”. Mở thi thiên ấy ra, ta sẽ thấy một câu đại loại như “Ngài đã mở tai tôi”. Ma-thi-ơ trích Ê-sai rằng “trinh nữ sẽ mang thai”. Nhiều bản Kinh Thánh hiện đại ghi “người thiếu nữ” trong sách Ê-sai. Gia-cơ, tại hội nghị ở Giê-ru-sa-lem, trích A-mốt nói về “những người còn lại của loài người” tìm kiếm Chúa. Còn A-mốt, trong bản Hê-bơ-rơ, lại nói về việc Y-sơ-ra-ên chiếm lấy “phần còn sót lại của Ê-đôm”.
 
 Đây không phải là lỗi in. Chúng xảy ra vì Tân Ước được viết bằng tiếng Hy Lạp, và các tác giả của nó thường cũng trích dẫn Cựu Ước bằng tiếng Hy Lạp. Bản Cựu Ước tiếng Hy Lạp mà họ dùng nhiều nhất, bản Bảy Mươi (Septuagint), là một bản dịch do các học giả Do Thái thực hiện trong những thế kỷ trước Đấng Christ (xem [Bản Bảy Mươi, bản dịch Kinh Thánh đầu tiên](/articles/the-septuagint/)). Phần lớn các bản Cựu Ước hiện đại, kể cả của Open Word Bible, được dịch từ tiếng Hê-bơ-rơ. Chỗ nào bản Bảy Mươi và bản Hê-bơ-rơ khác nhau, câu trích dẫn trong Tân Ước và đoạn văn trong Cựu Ước cũng sẽ khác nhau.
 
-Bài này xem xét sáu trường hợp nổi tiếng, điều chúng cho thấy về cách các sứ đồ đọc Kinh Thánh, và cách một bản dịch có thể giúp người đọc thấy cả hai bản văn. Phần lớn các đoạn được trích dưới đây thuộc những sách chưa được dịch sang tiếng Việt (Ê-sai, Thi Thiên, Hê-bơ-rơ, Công Vụ Các Sứ Đồ, A-mốt), nên trang này hiển thị chúng theo bản tiếng Anh của Open Word Bible.
+Bài này xem xét sáu trường hợp nổi tiếng, điều chúng cho thấy về cách các sứ đồ đọc Kinh Thánh, và cách một bản dịch có thể giúp người đọc thấy cả hai bản văn. Các đoạn Cựu Ước được trích dưới đây (Ê-sai, Thi Thiên, A-mốt) chưa được dịch sang tiếng Việt, nên trang này hiển thị chúng theo bản tiếng Anh của Open Word Bible; các đoạn Tân Ước thì hiển thị bằng tiếng Việt.
 
 ## Vì sao lời văn khác nhau
 
@@ -42,9 +42,9 @@ Còn một khác biệt thứ hai, nhỏ hơn. Trong bản Hê-bơ-rơ, “nàng
 
 Câu này đã bị tranh cãi qua nhiều thế kỷ, thường rất gay gắt. Các bản ghi không cố giải quyết cuộc tranh cãi bằng cách dịch bản văn này cho khớp với bản văn kia. Các bản ghi dịch mỗi bản văn đúng như nó vốn có và nói rõ vì sao chúng khác nhau. Bản ghi của sách Ê-sai cũng ghi nhận điều mà cả hai bản văn cùng có: dấu lạ ấy thuộc về thời vua A-cha, và lời hứa của Ê-sai vươn xa hơn, đến một con trẻ sẽ trị vì trên ngai Đa-vít (9:5–6).
 
-## 2. “Ngài đã chuẩn bị cho tôi một thân thể” (Hê-bơ-rơ 10:5; Thi Thiên 40:7)
+## 2. “Ngài đã chuẩn bị cho Con một thân thể” (Hê-bơ-rơ 10:5; Thi Thiên 40:7)
 
-Sách Hê-bơ-rơ đặt những lời của Thi Thiên 40 vào miệng Đấng Christ khi Ngài đến trong thế gian. Cấp độ Cân bằng của chúng tôi, trong bản tiếng Anh:
+Sách Hê-bơ-rơ đặt những lời của Thi Thiên 40 vào miệng Đấng Christ khi Ngài đến trong thế gian. Cấp độ Cân bằng của chúng tôi:
 
 > {{OWB:HEB.10.5.s1:B}}
 
@@ -56,13 +56,13 @@ Quyết định về nghĩa cho thi thiên giải thích thành ngữ này: đà
 
 Không ai biết chắc vì sao bản Hy Lạp lại có chữ “thân thể”. Có người nghĩ các dịch giả đã dịch thoát, lấy cả con người thay cho bộ phận dùng để nghe. Những người khác cho rằng đó là lỗi sao chép trong tiếng Hy Lạp. Bản ghi của chúng tôi cho sách Hê-bơ-rơ chỉ nói điều đã rõ: “bản Thi Thiên tiếng Hy Lạp, mà sách Hê-bơ-rơ trích dẫn, khác với bản Hê-bơ-rơ”, và “một vài bản chép tay của Thi Thiên tiếng Hy Lạp có chữ ‘tai’, giống bản Hê-bơ-rơ”.
 
-Điều quan trọng đối với người đọc là lập luận của sách Hê-bơ-rơ dựa trên chữ “thân thể”. Vài câu sau, tác giả rút ra kết luận: chúng ta đã được nên thánh “nhờ thân thể của Đức Giê-xu Christ được dâng lên một lần đủ cả” (10:10). Thế nhưng về ý nghĩa, hai bản văn không cách xa nhau. Cả hai đều nói rằng Đức Chúa Trời muốn sự vâng lời hơn của tế lễ. Thi thiên nói rằng Đức Chúa Trời đã ban cho người nói đôi tai để nghe và vâng lời. Sách Hê-bơ-rơ nói rằng Đức Chúa Trời đã ban cho Đấng Christ một thân thể để vâng lời, đến mức dâng chính thân thể ấy.
+Điều quan trọng đối với người đọc là lập luận của sách Hê-bơ-rơ dựa trên chữ “thân thể”. Vài câu sau, tác giả rút ra kết luận: chúng ta đã được nên thánh “nhờ thân thể của Đức Giê-xu Christ đã được dâng một lần đủ cả” (10:10). Thế nhưng về ý nghĩa, hai bản văn không cách xa nhau. Cả hai đều nói rằng Đức Chúa Trời muốn sự vâng lời hơn của tế lễ. Thi thiên nói rằng Đức Chúa Trời đã ban cho người nói đôi tai để nghe và vâng lời. Sách Hê-bơ-rơ nói rằng Đức Chúa Trời đã ban cho Đấng Christ một thân thể để vâng lời, đến mức dâng chính thân thể ấy.
 
 Bản ghi của Hê-bơ-rơ 10:6 ghi nhận một thay đổi nhỏ hơn. Phần lớn các bản chép tay của thi thiên tiếng Hy Lạp nói Đức Chúa Trời “không đòi hỏi” tế lễ thiêu; sách Hê-bơ-rơ nói Ngài “không vui lòng” về chúng. Và câu 10:7 rút gọn thi thiên, dừng lại ở chữ “để làm theo ý muốn Ngài”, để cả câu xoay quanh cụm từ ấy.
 
-## 3. “Những người còn lại trong loài người” (Công Vụ 15:16–17; A-mốt 9:11–12)
+## 3. “Những người còn lại của loài người” (Công Vụ 15:16–17; A-mốt 9:11–12)
 
-Tại hội nghị ở Giê-ru-sa-lem, Hội Thánh phải quyết định xem các tín hữu dân ngoại có phải giữ luật pháp Môi-se hay không. Gia-cơ trả lời bằng sách A-mốt. Trong bản tiếng Anh, ở cấp độ Cân bằng (“the rest of humankind may seek the Lord”: “những người còn lại trong loài người tìm kiếm Chúa”):
+Tại hội nghị ở Giê-ru-sa-lem, Hội Thánh phải quyết định xem các tín hữu dân ngoại có phải giữ luật pháp Môi-se hay không. Gia-cơ trả lời bằng sách A-mốt. Ở cấp độ Cân bằng (“những người còn lại của nhân loại tìm kiếm Chúa”; trong tiếng Anh là “the rest of humankind may seek the Lord”):
 
 > {{OWB:ACT.15.16.s1:B}}
 
@@ -70,11 +70,11 @@ Trong bản Hê-bơ-rơ của A-mốt 9:12, mục đích của việc xây lại
 
 > {{OWB:AMO.9.12.s1:B}}
 
-Các bản ghi ở cả hai phía giải thích điều đã xảy ra, và đó là một ví dụ nổi bật về việc đọc cùng những phụ âm theo hai cách. Từ Hê-bơ-rơ chỉ “Ê-đôm” và từ chỉ “loài người” được viết bằng cùng những phụ âm, *ʾdm*. Động từ “chiếm hữu” và “tìm kiếm” chỉ khác nhau một chữ cái. Các dịch giả Hy Lạp đã đọc là “loài người” và “tìm kiếm”. Vì vậy, “để họ chiếm lấy phần còn sót lại của Ê-đôm” trở thành “để những người còn lại trong loài người tìm kiếm Chúa”.
+Các bản ghi ở cả hai phía giải thích điều đã xảy ra, và đó là một ví dụ nổi bật về việc đọc cùng những phụ âm theo hai cách. Từ Hê-bơ-rơ chỉ “Ê-đôm” và từ chỉ “loài người” được viết bằng cùng những phụ âm, *ʾdm*. Động từ “chiếm hữu” và “tìm kiếm” chỉ khác nhau một chữ cái. Các dịch giả Hy Lạp đã đọc là “loài người” và “tìm kiếm”. Vì vậy, “để họ chiếm lấy phần còn sót lại của Ê-đôm” trở thành “để những người còn lại của loài người tìm kiếm Chúa”.
 
 Bản Hê-bơ-rơ mô tả vương quốc Đa-vít được khôi phục, lại cai trị các dân tộc mà Đa-vít từng cai trị. Bản Hy Lạp mô tả các dân tộc tìm kiếm Chúa. Gia-cơ trích bản Hy Lạp. Nhưng như bản ghi của chúng tôi cho A-mốt 9:12 chỉ ra, bản Hê-bơ-rơ đã nói một điều quan trọng cho lập luận của Gia-cơ: các dân tộc được “gọi bằng danh Ta”, nghĩa là họ thuộc về CHÚA. Bản ghi của Công Vụ 15 diễn đạt như sau: “Cả hai hình thức đều nói rằng các dân tộc sẽ ở dưới danh của Đức Chúa Trời của Y-sơ-ra-ên, và đó chính là ý của Gia-cơ.”
 
-Gia-cơ cũng thay đổi phần mở đầu. A-mốt nói “Trong ngày ấy Ta sẽ dựng lại”; Gia-cơ nói “Sau những việc này Ta sẽ trở lại”, có lẽ vang lại Giê-rê-mi 12:15.
+Gia-cơ cũng thay đổi phần mở đầu. A-mốt nói “Trong ngày ấy Ta sẽ dựng lại”; Gia-cơ nói “Sau những điều này Ta sẽ trở lại”, có lẽ vang lại Giê-rê-mi 12:15.
 
 ## 4. Một chuỗi bản văn (Rô-ma 3:10–18)
 
@@ -90,9 +90,9 @@ Phao-lô theo bản Bảy Mươi trong phần lớn những dòng này, và ông
 
 Chuỗi trích dẫn này có một số phận về sau khá lạ lùng. Một số bản chép tay tiếng Hy Lạp của Thi Thiên 14 (13 theo cách đánh số Hy Lạp) chứa toàn bộ Rô-ma 3:13–18 ngay trong thi thiên, gần như chắc chắn vì những người chép tay Cơ Đốc đã điền thêm vào từ thư Rô-ma. Hình thức dài hơn ấy đi vào bản La-tinh, và từ đó đi vào bản Thi Thiên tiếng Anh cổ trong sách Book of Common Prayer. Đó là một lời nhắc rằng câu trích dẫn có thể ảnh hưởng đến bản văn được trích, cũng như theo chiều ngược lại (xem [Khi các bản chép tay không khớp nhau](/articles/when-manuscripts-disagree/)).
 
-## 5. “Mọi thiên sứ của Đức Chúa Trời hãy thờ lạy Ngài” (Hê-bơ-rơ 1:6)
+## 5. “Mọi thiên sứ của Đức Chúa Trời hãy thờ lạy Người” (Hê-bơ-rơ 1:6)
 
-Hê-bơ-rơ 1 đưa ra một chuỗi bản văn Cựu Ước để chứng tỏ Đức Con cao trọng hơn các thiên sứ. Một trong số đó, trong bản tiếng Anh, là:
+Hê-bơ-rơ 1 đưa ra một chuỗi bản văn Cựu Ước để chứng tỏ Đức Con cao trọng hơn các thiên sứ. Một trong số đó là:
 
 > {{OWB:HEB.1.6.s1:B}}
 
@@ -108,7 +108,7 @@ Tân Ước không phải lúc nào cũng theo bản Bảy Mươi. Hai câu trí
 
 **“Ta đã gọi con Ta ra khỏi Ai Cập”** (Ma-thi-ơ 2:15; Ô-sê 11:1). Ma-thi-ơ trích lời Ô-sê về cuộc xuất hành của Y-sơ-ra-ên và áp dụng cho Đức Giê-xu. Ở đây Ma-thi-ơ khớp với bản Hê-bơ-rơ, “con Ta”. Bản Bảy Mươi của sách Ô-sê ghi “con cái nó”. Bản ghi của chúng tôi cho Ô-sê 11:1 ghi nhận điều này, và thành thật nói rằng phần mô tả bản Hy Lạp của nó được “viết dựa trên hiểu biết chung”, để người duyệt kiểm tra. Dù thế nào đi nữa, Ma-thi-ơ đã không lấy dòng ấy từ bản Bảy Mươi như chúng ta có. Bản ghi của Ma-thi-ơ 2:15 giải thích cách Ma-thi-ơ đọc câu ấy: “Trong sách Ô-sê, người con là Y-sơ-ra-ên.” Ma-thi-ơ thấy Đức Giê-xu, Con Đức Chúa Trời, sống lại câu chuyện của Y-sơ-ra-ên, đi vào Ai Cập rồi ra khỏi đó. Bản tiếng Việt viết chữ “con” ở đây bằng chữ thường, để giữ được cả hai nghĩa ấy.
 
-**“Ngài đã ban các ân tứ cho loài người”** (Ê-phê-sô 4:8; Thi Thiên 68:19). Phao-lô trích Thi Thiên 68, một bài ca chiến thắng trong đó Đức Chúa Trời lên núi thánh của Ngài, dẫn theo những kẻ bị bắt. Nhưng ở chỗ cả bản Hê-bơ-rơ lẫn bản Hy Lạp của thi thiên đều nói Đức Chúa Trời “đã nhận lễ vật” từ loài người, Phao-lô lại nói Ngài “đã ban các ân tứ”. Các bản ghi của chúng tôi ở cả hai phía đều có chú thích về sự khác biệt này. Chúng ghi nhận rằng một bản diễn ý cổ bằng tiếng A-ram của sách Thi Thiên, và bản dịch Sy-ri, cũng đọc là “đã ban”, nên có thể Phao-lô đang theo một cách hiểu đã có về câu này. Bản ghi của Thi Thiên 68:19 gợi ý cách hai bản văn ăn khớp với nhau: “vị chiến thắng nhận cống vật cũng là người phân phát nó cho dân mình”. Bản ghi của Ê-phê-sô đánh dấu điểm này là chưa chắc chắn và nói rõ mục đích của Phao-lô: Đấng Christ sống lại ban các ân tứ cho Hội Thánh Ngài, những ân tứ mà các câu 11–16 tiếp tục liệt kê.
+**“Ngài ban các món quà cho loài người”** (Ê-phê-sô 4:8; Thi Thiên 68:19). Phao-lô trích Thi Thiên 68, một bài ca chiến thắng trong đó Đức Chúa Trời lên núi thánh của Ngài, dẫn theo những kẻ bị bắt. Nhưng ở chỗ cả bản Hê-bơ-rơ lẫn bản Hy Lạp của thi thiên đều nói Đức Chúa Trời “đã nhận lễ vật” từ loài người, Phao-lô lại nói Ngài “ban các món quà”. Các bản ghi của chúng tôi ở cả hai phía đều có chú thích về sự khác biệt này. Chúng ghi nhận rằng một bản diễn ý cổ bằng tiếng A-ram của sách Thi Thiên, và bản dịch Sy-ri, cũng đọc là “đã ban”, nên có thể Phao-lô đang theo một cách hiểu đã có về câu này. Bản ghi của Thi Thiên 68:19 gợi ý cách hai bản văn ăn khớp với nhau: “vị chiến thắng nhận cống vật cũng là người phân phát nó cho dân mình”. Bản ghi của Ê-phê-sô đánh dấu điểm này là chưa chắc chắn và nói rõ mục đích của Phao-lô: Đấng Christ sống lại ban các ân tứ cho Hội Thánh Ngài, những ân tứ mà các câu 11–16 tiếp tục liệt kê.
 
 Một ví dụ nhỏ hơn là **Rô-ma 10:18**, nơi Phao-lô trích Thi Thiên 19:5 (19:4 trong các bản Kinh Thánh thông dụng): “tiếng của họ đã vang ra khắp đất”. Bản Bảy Mươi, mà Phao-lô trích từng chữ, ghi “tiếng của họ” hay “âm thanh của họ”. Bản Hê-bơ-rơ có một từ chỉ sợi dây đo. Cấp độ Sát nghĩa của thi thiên (bản tiếng Anh) giữ “their line” (“dây đo của chúng”), và một chú thích, được đánh dấu là chưa chắc chắn, giải thích bản Hy Lạp.
 
@@ -132,7 +132,7 @@ Nó có thể **dịch mỗi bản văn đúng như nó vốn có** và để ng
 
 Hoặc nó có thể **dịch mỗi bản văn đúng như nó vốn có và nói rõ vì sao chúng khác nhau**. Open Word Bible theo cách này. Trong các bản ghi của chúng tôi, một câu trích dẫn hay một âm vang được đánh dấu bằng một quyết định về nghĩa thuộc loại *âm vang của phần Kinh Thánh khác*, có nêu tên nguồn. Có hàng nghìn quyết định như thế trong các bản nháp. Chỗ nào lời văn Tân Ước khác với bản Hê-bơ-rơ theo cách có ý nghĩa, quyết định ấy giải thích sự khác biệt và thường được hiển thị thành một chú thích. Chỗ nào đoạn Cựu Ước được trích trong Tân Ước, chính bản ghi của nó chỉ về phía trước, đến câu trích dẫn. Người đọc Thi Thiên 40 biết rằng sách Hê-bơ-rơ đọc là “thân thể”; người đọc Hê-bơ-rơ 10 biết rằng thi thiên trong tiếng Hê-bơ-rơ đọc là “tai”.
 
-Danh của Đức Chúa Trời là một trường hợp đặc biệt. Khi một tác giả Tân Ước trích một đoạn Cựu Ước có danh YHWH, bản Hy Lạp có chữ *kyrios*, nên Tân Ước của chúng tôi nói “Chúa”, và một quyết định về nghĩa ghi nhận từ Hê-bơ-rơ đằng sau. Công Vụ 15:17 là một ví dụ: bản ghi lưu ý rằng trong sách A-mốt, người phán là “Chúa, được viết bằng danh riêng của Đức Chúa Trời”, còn bản tiếng Anh, theo bản Hy Lạp, nói “the Lord” (“Chúa”) (xem [Danh của Đức Chúa Trời trong bản dịch](/articles/the-divine-name-in-translation/)).
+Danh của Đức Chúa Trời là một trường hợp đặc biệt. Khi một tác giả Tân Ước trích một đoạn Cựu Ước có danh YHWH, bản Hy Lạp có chữ *kyrios*, nên Tân Ước của chúng tôi nói “Chúa”, và một quyết định về nghĩa ghi nhận từ Hê-bơ-rơ đằng sau. Công Vụ 15:17 là một ví dụ: bản ghi lưu ý rằng trong sách A-mốt, người phán là “Chúa, được viết bằng danh riêng của Đức Chúa Trời”, còn bản dịch của chúng tôi, theo bản Hy Lạp, nói “Chúa” (trong tiếng Anh là “the Lord”) (xem [Danh của Đức Chúa Trời trong bản dịch](/articles/the-divine-name-in-translation/)).
 
 Một số bản Kinh Thánh còn đánh dấu các câu trích dẫn ngay trên trang, chẳng hạn in các câu trích Cựu Ước bằng chữ hoa nhỏ, như bản New American Standard Bible. Open Word Bible đánh dấu chúng trong bản ghi thay vì bằng kiểu chữ, để lời giải thích luôn đi kèm với dấu hiệu. Các bản nháp này được soạn với sự hỗ trợ của AI và chưa được duyệt, và nhiều bản ghi đề nghị người duyệt kiểm tra phần mô tả bản Hy Lạp. Những câu trích dẫn như thế này chính là nơi việc kiểm tra ấy quan trọng nhất.
 

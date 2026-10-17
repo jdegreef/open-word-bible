@@ -80,7 +80,7 @@ Không có câu này, câu chuyện đi thẳng từ câu hỏi của viên ho�
 
 ## Một câu văn dài hơn
 
-**Công Vụ 24:7** hơi khác một chút, vì nó là một phần của một câu văn chứ không phải trọn một câu. Diễn giả Tẹt-tu-lu đang buộc tội Phao-lô trước quan tổng đốc Phê-lít. Trong bản văn dài hơn, ông than phiền rằng các nhà lãnh đạo Do Thái đã muốn xét xử Phao-lô theo luật của họ, nhưng viên chỉ huy Ly-sia đã đến và dùng vũ lực đem ông ra khỏi tay họ. Trong Open Word Bible, Tẹt-tu-lu đi thẳng từ việc nói rằng họ đã bắt Phao-lô sang việc bảo Phê-lít hãy tra hỏi ông. Chương này chưa được dịch sang tiếng Việt, nên dưới đây là bản Cân bằng tiếng Anh:
+**Công Vụ 24:7** hơi khác một chút, vì nó là một phần của một câu văn chứ không phải trọn một câu. Diễn giả Tẹt-tu-lu đang buộc tội Phao-lô trước quan tổng đốc Phê-lít. Trong bản văn dài hơn, ông than phiền rằng các nhà lãnh đạo Do Thái đã muốn xét xử Phao-lô theo luật của họ, nhưng viên chỉ huy Ly-sia đã đến và dùng vũ lực đem ông ra khỏi tay họ. Trong Open Word Bible, Tẹt-tu-lu đi thẳng từ việc nói rằng họ đã bắt Phao-lô sang việc bảo Phê-lít hãy tra hỏi ông. Đây là bản Cân bằng:
 
 > {{OWB:ACT.24.5.s1:B}}
 

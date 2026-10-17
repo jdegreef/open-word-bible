@@ -16,7 +16,7 @@ Tiếng Hy Lạp, cũng như tiếng Tây Ban Nha hay tiếng Pháp, dùng số 
 
 Đôi khi văn mạch nói là không. Trong Ma-thi-ơ 12:46, mẹ và các anh em của Đức Giê-xu đến tìm Ngài, và bản ghi nói họ là các anh em ruột của Ngài, những người được nêu tên trong 13:55. Không có cài đặt nào áp dụng ở đó; từ ấy chỉ nam giới.
 
-Đôi khi văn mạch nói là có, một cách rõ ràng. Trong Phi-líp 4:1, Phao-lô viết “anh em của tôi”, và ngay câu kế tiếp ông nêu tên hai phụ nữ trong hội thánh ấy, Ê-yô-đi và Sin-ty-cơ, và nài xin họ đồng lòng với nhau. Quyết định về ý nghĩa của chúng tôi cho câu 4:1 xác định nghĩa là “các anh chị em tín hữu, cả nữ lẫn nam”, và lấy câu 2 làm lý do:
+Đôi khi văn mạch nói là có, một cách rõ ràng. Trong Phi-líp 4:1, Phao-lô viết “anh em của tôi”, và ngay câu kế tiếp ông nêu tên hai phụ nữ trong hội thánh ấy, Ê-vô-đi và Sin-ti-cơ, và nài xin họ đồng lòng với nhau. Quyết định về ý nghĩa của chúng tôi cho câu 4:1 xác định nghĩa là “các anh chị em tín hữu, cả nữ lẫn nam”, và lấy câu 2 làm lý do:
 
 > {{OWB:PHP.4.1.s1:B}}
 
@@ -36,13 +36,13 @@ Có hai điều đáng chú ý về cài đặt này.
 
 **Nó áp dụng ở mọi cấp độ, kể cả Sát nghĩa.** Người ta có thể chờ đợi một bản dịch sát nghĩa giữ “anh em”. Nhưng cài đặt được lưu một lần trong mỗi câu, dưới dạng một cặp lựa chọn, và lựa chọn của người đọc áp dụng ở mọi nơi. Người đọc muốn “anh em” ở cấp Sát nghĩa có thể có, và ở cấp Cân bằng và Dễ đọc cũng vậy.
 
-**Nó theo ngữ pháp của câu.** Cài đặt này không phải là thao tác tìm và thay thế. Trong bản tiếng Anh, *adelphos* số ít trở thành “a brother or sister”, như trong Ma-thi-ơ 5:22, nơi cơn giận đối với “a brother or sister” bị đưa ra xét xử; bản tiếng Việt ở đó nói “anh chị em mình”, với “anh em mình” là lựa chọn truyền thống. Một cụm như “brotherly love” trở thành “love for brothers and sisters”, tình yêu dành cho anh chị em. Và ở chỗ có đại từ theo sau, đại từ cũng thay đổi. Trong cấp Sát nghĩa tiếng Anh của 1 Giăng 3:17, lựa chọn truyền thống viết “sees his brother having need, and shuts his heart against him”, với các đại từ giống đực “his” và “him”; lựa chọn mặc định viết “sees their brother or sister having need, and shuts their heart against them”, với các đại từ không chỉ giới tính. Tiếng Việt ít gặp vấn đề này hơn, vì những từ như “mình” hay “người ấy” vốn không chỉ giới tính.
+**Nó theo ngữ pháp của câu.** Cài đặt này không phải là thao tác tìm và thay thế. Trong bản tiếng Anh, *adelphos* số ít trở thành “a brother or sister”, như trong Ma-thi-ơ 5:22, nơi cơn giận đối với “a brother or sister” bị đưa ra xét xử; bản tiếng Việt ở đó nói “anh chị em mình”, với “anh em mình” là lựa chọn truyền thống. Một cụm như “brotherly love” trở thành “love for brothers and sisters”, tình yêu dành cho anh chị em. Và ở chỗ có đại từ theo sau, đại từ cũng thay đổi. Trong cấp Sát nghĩa tiếng Anh của 1 Giăng 3:17, lựa chọn truyền thống viết “sees his brother having need, and shuts his heart against him”, với các đại từ giống đực “his” và “him”; lựa chọn mặc định viết “sees their brother or sister having need, and shuts their heart against them”, với các đại từ không chỉ giới tính. Tiếng Việt ít gặp vấn đề này hơn, vì những từ như “mình” hay “người ấy” vốn không chỉ giới tính: cấp Sát nghĩa tiếng Việt của 1 Giăng 3:17 nói “thấy anh chị em mình có cần mà đóng lòng thương xót lại với người ấy”, và chỉ có “anh chị em” thay đổi theo cài đặt.
 
 ## Khi không cần cài đặt
 
 Đôi khi chính tiếng Hy Lạp nêu cả hai. Gia-cơ 2:15 nói {{GREEK:JAS.2.15:2-4}}, “một anh em hay một chị em”. Quyết định về cách diễn đạt ở đó ghi nhận rằng vì tiếng Hy Lạp nêu cả hai, bản dịch cũng nêu cả hai, và không cần cài đặt. Ma-thi-ơ 12:50 cũng tương tự: Đức Giê-xu nói rằng ai làm theo ý muốn của Cha Ngài thì “người ấy là anh em, chị em và mẹ” của Ngài, với chữ “chị em” có trong tiếng Hy Lạp. Bản ghi nhận xét rằng không có chị em nào được nêu tên ở ngoài cửa, vậy mà Đức Giê-xu vẫn kể các chị em vào số những người làm theo ý muốn của Đức Chúa Trời.
 
-Và đôi khi cấp Dễ đọc tránh hẳn từ chỉ quan hệ gia đình, để nói rõ ai được nhắc đến. Trong bản tiếng Anh, ở Công Vụ 1:15 cấp này nói “the followers of Jesus” (những người theo Đức Giê-xu); ở 1 Giăng 3:17 nó nói “a fellow believer” (một anh chị em tín hữu). Đó vẫn là những quyết định về cách diễn đạt, xây dựng trên cùng một quyết định về ý nghĩa, và bản ghi nêu rõ chúng.
+Và đôi khi cấp Dễ đọc tránh hẳn từ chỉ quan hệ gia đình, để nói rõ ai được nhắc đến. Ở Công Vụ 1:15, cấp này nói “những người theo Đức Giê-xu”, như bản tiếng Anh nói “the followers of Jesus”. Ở 1 Giăng 3:17, bản tiếng Anh nói “a fellow believer” (một tín hữu); bản tiếng Việt nói “một anh chị em cùng đức tin”, vẫn là từ chỉ quan hệ gia đình nhưng không có cài đặt, và thêm “cùng đức tin” để nói rõ ai được nhắc đến. Đó vẫn là những quyết định về cách diễn đạt, xây dựng trên cùng một quyết định về ý nghĩa, và bản ghi nêu rõ chúng.
 
 ## Khi điều đó chưa rõ ràng
 
@@ -50,7 +50,7 @@ Không phải trường hợp nào cũng dễ, và các bản ghi của chúng t
 
 Khó nhất là Công Vụ 1:16. Phi-e-rơ đứng lên giữa 120 người và mở đầu bằng một lối xưng hô trang trọng dùng để mở đầu các bài nói trong sách Công Vụ: {{GREEK:ACT.1.16:1-2}}, sát chữ là “hỡi những người nam, hỡi anh em”. Từ đầu tiên là từ tiếng Hy Lạp dùng cho nam giới và người chồng, không phải từ chung chỉ con người. Quyết định về ý nghĩa của chúng tôi được đánh dấu là chưa chắc chắn và có kèm một chú thích. Những người nói trong sách Công Vụ dùng công thức này để mở đầu một bài nói (2:29; 13:26; 15:7), và Phi-e-rơ đang nói với một hội chúng có cả phụ nữ. Nhưng ông sắp đề nghị chọn một người nam thay thế Giu-đa (1:21), và có thể ở đây ông quay sang nói với những người nam. Bản ghi nói thẳng rằng điều này “không thể xác định được từ lời văn”.
 
-Vì thế, cách dịch khác nhau theo cấp độ. Trong bản tiếng Anh, Sát nghĩa giữ cả hai từ Hy Lạp, “Men, brothers”, không có cài đặt. Cân bằng và Dễ đọc dùng mặc định bao hàm, với “brothers” là lựa chọn thay thế, vì hội chúng có cả phụ nữ; quyết định về cách diễn đạt ghi nhận rằng ghi chú về ý nghĩa đánh dấu điều này là chưa chắc chắn.
+Vì thế, cách dịch khác nhau theo cấp độ. Trong bản tiếng Anh, Sát nghĩa giữ cả hai từ Hy Lạp, “Men, brothers”, không có cài đặt. Trong bản tiếng Việt, Sát nghĩa nói “Thưa các anh em”, cũng không có cài đặt: quyết định về cách diễn đạt ghi rằng đó là lối xưng hô trang trọng trước một buổi nhóm trong tiếng Việt, và chữ “anh em” của nó vốn đã chỉ nam giới, nên không cần thêm chữ nào cho “những người nam”. Cân bằng và Dễ đọc, trong cả hai ngôn ngữ, dùng mặc định bao hàm, “Thưa anh chị em”, với “anh em” (“brothers”) là lựa chọn thay thế, vì hội chúng có cả nam lẫn nữ; quyết định về cách diễn đạt tiếng Anh ghi nhận rằng ghi chú về ý nghĩa đánh dấu điều này là chưa chắc chắn.
 
 > {{OWB:ACT.1.16.s1:L}}
 
@@ -58,7 +58,7 @@ Những câu khác có những câu hỏi nhỏ hơn. Trong Ga-la-ti 1:2, Phao-l
 
 ## Anh chị em của Đức Giê-xu
 
-Có một cách dùng vừa mang tính thần học vừa mang tính ngôn ngữ. Hê-bơ-rơ 2:11 nói rằng Đức Giê-xu “không hổ thẹn gọi họ là anh em”, rồi trích Thi Thiên 22: “Tôi sẽ rao truyền danh Ngài cho anh em tôi”. Điều tác giả muốn nói là Đức Chúa Con dự phần vào đời sống của những người Ngài cứu, cả huyết nhục, sự cám dỗ lẫn sự chết (2:14–18). Quyết định về ý nghĩa của chúng tôi nói rằng những người Đức Giê-xu gọi là anh em bao gồm cả phụ nữ, và vì thế cài đặt được áp dụng. Với lựa chọn mặc định, câu này nói rằng Đức Giê-xu không hổ thẹn gọi họ là “anh chị em” của Ngài.
+Có một cách dùng vừa mang tính thần học vừa mang tính ngôn ngữ. Hê-bơ-rơ 2:11 nói rằng Đức Giê-xu “không hổ thẹn gọi họ là anh em”, rồi trích Thi Thiên 22: “Con sẽ rao truyền danh Ngài cho anh em của Con”. Điều tác giả muốn nói là Đức Chúa Con dự phần vào đời sống của những người Ngài cứu, cả huyết nhục, sự cám dỗ lẫn sự chết (2:14–18). Quyết định về ý nghĩa của chúng tôi nói rằng những người Đức Giê-xu gọi là anh em bao gồm cả phụ nữ, và vì thế cài đặt được áp dụng. Với lựa chọn mặc định, câu này nói rằng Đức Giê-xu không hổ thẹn gọi họ là “anh chị em” của Ngài.
 
 Một số người đọc cảm thấy “anh em” giữ mối liên kết với thi thiên rõ hơn. Những người khác cảm thấy “anh chị em” làm cho điều tác giả muốn nói rõ hơn: Đức Chúa Con đã trở nên giống như tất cả chúng ta. Vì cả hai lựa chọn có cùng một nghĩa, Open Word Bible không phải chọn thay người đọc. Nó quyết định ý nghĩa, ghi lại lý do, và để lời văn cho cài đặt đọc.
 

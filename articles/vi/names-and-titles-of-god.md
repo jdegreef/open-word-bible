@@ -69,7 +69,7 @@ Các lựa chọn chính trong tiếng Anh được điểm qua trong bài [Danh
 
 > {{OWB:ISA.6.3.s1:B}}
 
-Tân Ước hai lần giữ nguyên từ Hê-bơ-rơ ấy bằng chữ cái Hy Lạp, “Chúa Sa-ba-ốt” (Rô-ma 9:29; Gia-cơ 5:4). Cấp độ Sát nghĩa giữ “Sabaoth” ở cả hai chỗ. Ở cấp độ Cân bằng tiếng Anh, các bản nháp chưa nhất quán: Gia-cơ 5:4 nói “the Lord of Armies”, nhưng Rô-ma 9:29 lại nói “the Lord of hosts”. Đó là loại khác biệt mà người duyệt sẽ phải giải quyết. (Bản tiếng Việt của Rô-ma 9:29 nói “Chúa Sa-ba-ốt” ở cấp độ Sát nghĩa và “Chúa vạn quân” ở cấp độ Cân bằng; sách Gia-cơ chưa được dịch sang tiếng Việt.) Sách Khải Huyền dùng một từ Hy Lạp khác, “Đấng Toàn Năng”, cho cùng danh hiệu ấy (Khải Huyền 4:8), và bản ghi ở đó lưu ý rằng từ này “thay cho chữ ‘vạn quân’”.
+Tân Ước hai lần giữ nguyên từ Hê-bơ-rơ ấy bằng chữ cái Hy Lạp, “Chúa Sa-ba-ốt” (Rô-ma 9:29; Gia-cơ 5:4). Cấp độ Sát nghĩa giữ “Sabaoth” ở cả hai chỗ. Ở cấp độ Cân bằng tiếng Anh, các bản nháp chưa nhất quán: Gia-cơ 5:4 nói “the Lord of Armies”, nhưng Rô-ma 9:29 lại nói “the Lord of hosts”. Đó là loại khác biệt mà người duyệt sẽ phải giải quyết. (Bản tiếng Việt nói “Chúa Sa-ba-ốt” ở cấp độ Sát nghĩa trong cả hai câu. Ở cấp độ Cân bằng, Rô-ma 9:29 nói “Chúa vạn quân” và Gia-cơ 5:4 nói “Chúa Vạn Quân”, nên hai câu dùng cùng một danh hiệu, chỉ khác nhau ở chữ hoa, điều người duyệt cũng nên thống nhất.) Sách Khải Huyền dùng một từ Hy Lạp khác, “Đấng Toàn Năng”, cho cùng danh hiệu ấy (Khải Huyền 4:8), và bản ghi ở đó lưu ý rằng từ này “thay cho chữ ‘vạn quân’”.
 
 ## Đấng Thánh của Y-sơ-ra-ên
 

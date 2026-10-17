@@ -42,27 +42,25 @@ Cùng những chữ, hai chiều ngược nhau. Một bản dịch luôn dịch 
 
 ## Khi văn mạch kém rõ ràng hơn: 1 Giăng 2:5
 
-Đôi khi văn mạch nghiêng về một phía mà không định đoạt hẳn. Trong 1 Giăng 2:5, Giăng viết rằng ai giữ lời Đức Chúa Trời thì "nơi người ấy, tình yêu của Đức Chúa Trời thật đã đạt đến mục đích của nó".
+Đôi khi văn mạch nghiêng về một phía mà không định đoạt hẳn. Trong 1 Giăng 2:5, Giăng viết rằng ai giữ lời Đức Chúa Trời thì "trong người ấy tình yêu thương của Đức Chúa Trời thật đã đạt đến mục đích của nó".
 
 Bản ghi của câu này đánh dấu quyết định về nghĩa là *chưa chắc chắn* và thêm một chú thích. Nó trình bày bằng chứng: bức thư dùng cụm từ này theo cả hai chiều, cho tình yêu hướng về Đức Chúa Trời trong 5:3 và tình yêu Đức Chúa Trời dành cho chúng ta trong 4:9. Ở đây động từ nói rằng tình yêu được làm cho trọn vẹn, như tình yêu của Đức Chúa Trời trong 4:12. Vì vậy bản ghi chọn tình yêu Đức Chúa Trời dành cho chúng ta, đang được thực hiện trọn vẹn nơi những người giữ lời Ngài. Tình yêu dành cho Đức Chúa Trời, được bày tỏ qua việc giữ lời Ngài (5:3), vẫn là một khả năng, và chú thích nói như vậy. Một gợi ý thứ ba, loại tình yêu đến từ Đức Chúa Trời, cũng được liệt kê trong các phương án khác.
 
 > {{OWB:1JN.2.5.s1:B}}
 
-(Câu trích nào chưa có bản tiếng Việt sẽ hiện ra theo bản tiếng Anh của Open Word Bible.)
-
-Trong bản tiếng Anh, Cân bằng và Dễ đọc giữ cụm từ "the love of God" (tình yêu của Đức Chúa Trời) hoặc "God's love" (tình yêu của Đức Chúa Trời) mà không nói rõ hơn về chiều của nó. Khi quyết định về nghĩa chưa chắc chắn, lời dịch không tỏ ra chắc chắn hơn quyết định ấy.
+Cả ba cấp độ đều giữ cụm từ "tình yêu thương của Đức Chúa Trời" mà không nói rõ hơn về chiều của nó; trong bản tiếng Anh, Cân bằng và Dễ đọc cũng vậy, với "the love of God" hoặc "God's love". Khi quyết định về nghĩa chưa chắc chắn, lời dịch không tỏ ra chắc chắn hơn quyết định ấy.
 
 ## Tình yêu của Đấng Christ: 2 Cô-rinh-tô 5:14 và Rô-ma 8:35
 
-"Tình yêu của Đấng Christ" đặt ra cùng câu hỏi. Trong 2 Cô-rinh-tô 5:14, Phao-lô giải thích vì sao ông và các bạn đồng công làm những gì họ làm: {{GREEK:2CO.5.14:1-6}}, "vì tình yêu của Đấng Christ nắm chặt chúng tôi".
+"Tình yêu của Đấng Christ" đặt ra cùng câu hỏi. Trong 2 Cô-rinh-tô 5:14, Phao-lô giải thích vì sao ông và các bạn đồng công làm những gì họ làm: {{GREEK:2CO.5.14:1-6}}, "vì tình yêu thương của Đấng Christ nắm giữ chúng tôi".
 
 Đó là tình yêu của Đấng Christ dành cho Phao-lô, hay tình yêu của Phao-lô dành cho Đấng Christ? Bản ghi quyết định đó là tình yêu của Đấng Christ, và đưa ra lý do. Những lời tiếp theo nói về việc Đấng Christ chết cho mọi người, và ở chỗ khác Phao-lô nói về "Con Đức Chúa Trời, là Đấng đã yêu tôi và phó chính mình vì tôi" (Ga-la-ti 2:20). Bản ghi thêm một điều kiện xác đáng: tình yêu như vậy cũng khơi dậy tình yêu đáp lại. Cách hiểu kia, tình yêu của chúng ta dành cho Đấng Christ, nằm trong một chú thích.
 
-Ở đây ba cấp độ cho thấy một quyết định về nghĩa có thể được thực hiện bằng những lời văn khác nhau như thế nào. Trong bản tiếng Anh, Sát nghĩa giữ nguyên cụm từ. Cân bằng cũng vậy, vì trong văn mạch này, "the love of Christ" (tình yêu của Đấng Christ) "drives us on" (thúc đẩy chúng tôi) tự nhiên được hiểu là tình yêu của Ngài. Dễ đọc nói rõ ra:
+Ở đây ba cấp độ cho thấy một quyết định về nghĩa có thể được thực hiện bằng những lời văn khác nhau như thế nào. Sát nghĩa giữ nguyên cụm từ. Cân bằng cũng vậy, vì trong văn mạch này, "Chính tình yêu thương của Đấng Christ thôi thúc chúng tôi" tự nhiên được hiểu là tình yêu của Ngài (bản tiếng Anh nói "the love of Christ drives us on"). Dễ đọc nói rõ ra:
 
 > {{OWB:2CO.5.14.s1:R}}
 
-Quyết định về cách diễn đạt cho cấp độ Dễ đọc nói lý do: nó làm rõ ý nghĩa của quyết định, rằng đó là tình yêu của Đấng Christ dành cho họ.
+Trong bản tiếng Anh, quyết định về cách diễn đạt cho cấp độ Dễ đọc nói lý do: nó làm rõ ý nghĩa của quyết định, rằng đó là tình yêu của Đấng Christ dành cho họ. Bản tiếng Việt nói rõ theo cùng cách: "vì Đấng Christ yêu thương chúng tôi, và tình yêu thương của Ngài thôi thúc chúng tôi".
 
 Rô-ma 8:35 hỏi: "Ai sẽ phân cách chúng ta khỏi tình yêu thương của Đấng Christ?" Bản ghi hiểu đó là tình yêu của Đấng Christ dành cho chúng ta, vì câu 37 nói về "Đấng đã yêu thương chúng ta" và câu 39 nói về "tình yêu thương của Đức Chúa Trời". Dễ đọc một lần nữa nói thẳng ra:
 
@@ -70,11 +68,11 @@ Rô-ma 8:35 hỏi: "Ai sẽ phân cách chúng ta khỏi tình yêu thương c�
 
 ## Hai sở hữu cách trong một lời cầu nguyện: 2 Tê-sa-lô-ni-ca 3:5
 
-Có những câu đặt câu hỏi ấy hai lần. Trong 2 Tê-sa-lô-ni-ca 3:5, Phao-lô cầu nguyện: "Nguyện Chúa hướng dẫn lòng anh em vào tình yêu của Đức Chúa Trời và vào sự kiên nhẫn của Đấng Christ."
+Có những câu đặt câu hỏi ấy hai lần. Trong 2 Tê-sa-lô-ni-ca 3:5, Phao-lô cầu nguyện: "Nguyện Chúa hướng lòng anh chị em vào tình yêu thương của Đức Chúa Trời và vào sự kiên trì của Đấng Christ."
 
-Mỗi sở hữu cách đều có thể hiểu theo cả hai chiều. Tình yêu của Đức Chúa Trời có thể là tình yêu Đức Chúa Trời dành cho họ hoặc tình yêu của họ dành cho Đức Chúa Trời. Sự kiên nhẫn của Đấng Christ có thể là sự kiên nhẫn chính Đấng Christ đã bày tỏ, hoặc sự kiên nhẫn chờ đợi Ngài của họ. Bản ghi đánh dấu quyết định là chưa chắc chắn và đưa phương án kia vào chú thích. Lựa chọn của nó là Phao-lô nhiều khả năng muốn nói họ được kéo vào sâu hơn trong tình yêu Đức Chúa Trời dành cho họ và được chia sẻ sự bền vững Đấng Christ đã bày tỏ trong đau khổ.
+Mỗi sở hữu cách đều có thể hiểu theo cả hai chiều. Tình yêu của Đức Chúa Trời có thể là tình yêu Đức Chúa Trời dành cho họ hoặc tình yêu của họ dành cho Đức Chúa Trời. Sự kiên trì của Đấng Christ có thể là sự kiên trì chính Đấng Christ đã bày tỏ, hoặc sự kiên nhẫn chờ đợi Ngài của họ. Bản ghi đánh dấu quyết định là chưa chắc chắn và đưa phương án kia vào chú thích. Lựa chọn của nó là Phao-lô nhiều khả năng muốn nói họ được kéo vào sâu hơn trong tình yêu Đức Chúa Trời dành cho họ và được chia sẻ sự bền vững Đấng Christ đã bày tỏ trong đau khổ.
 
-Trong bản tiếng Anh, Sát nghĩa và Cân bằng giữ "the love of God and the endurance of Christ" (tình yêu của Đức Chúa Trời và sự kiên nhẫn của Đấng Christ), để cả hai cụm từ cũng để ngỏ trong tiếng Anh như trong tiếng Hy Lạp. Dễ đọc, vốn nhắm đến việc nói rõ điều bản văn muốn nói, phải chọn:
+Sát nghĩa và Cân bằng giữ "tình yêu thương của Đức Chúa Trời" và "sự kiên trì của Đấng Christ", với chữ "của", để cả hai cụm từ cũng để ngỏ trong tiếng Việt như trong tiếng Hy Lạp; bản tiếng Anh làm như vậy với "the love of God and the endurance of Christ". Dễ đọc, vốn nhắm đến việc nói rõ điều bản văn muốn nói, phải chọn:
 
 > {{OWB:2TH.3.5.s1:R}}
 
@@ -88,15 +86,15 @@ Bản ghi quyết định rằng trước hết đó là sự mặc khải đế
 
 Một số nhà ngữ pháp có tên gọi cho khả năng sau cùng ấy. Sách ngữ pháp Hy Lạp của Daniel Wallace gọi nó là *sở hữu cách trọn vẹn* (plenary genitive): một sở hữu cách vừa là chủ thể vừa là đối tượng cùng một lúc, khi tác giả muốn nói cả hai. Phần lớn các sở hữu cách không như vậy, và giới học giả thận trọng khi dùng ý niệm này để né tránh một lựa chọn khó. Nhưng trong một câu như Khải Huyền 1:1, nơi Đức Giê-xu vừa là Đấng chỉ ra vừa là Đấng được chỉ ra, nó mô tả bản văn rất đúng.
 
-Cũng câu ấy kết thúc bằng một cụm từ mơ hồ khác. Giăng đã làm chứng "về lời chứng của Đức Giê-xu Christ". Đó có thể là lời chứng Đức Giê-xu đã đưa ra, hoặc lời chứng về Đức Giê-xu mà các tín hữu đưa ra. Bản ghi, được đánh dấu chưa chắc chắn và có chú thích, chọn lời chứng Đức Giê-xu đã đưa ra, vì câu 5 gọi Ngài là "nhân chứng thành tín". Nó lưu ý rằng hai điều này gần nhau, vì điều Đức Giê-xu đã làm chứng chính là điều Giăng làm chứng, và cụm từ này còn trở lại nhiều lần trong sách.
+Cũng câu ấy kết thúc bằng một cụm từ mơ hồ khác. Giăng đã làm chứng "về lời chứng của Đức Giê-xu Christ". Đó có thể là lời chứng Đức Giê-xu đã đưa ra, hoặc lời chứng về Đức Giê-xu mà các tín hữu đưa ra. Bản ghi, được đánh dấu chưa chắc chắn và có chú thích, chọn lời chứng Đức Giê-xu đã đưa ra, vì câu 5 gọi Ngài là "nhân chứng trung tín". Nó lưu ý rằng hai điều này gần nhau, vì điều Đức Giê-xu đã làm chứng chính là điều Giăng làm chứng, và cụm từ này còn trở lại nhiều lần trong sách.
 
 ## Không phải lúc nào cũng là chủ thể hay đối tượng
 
 Cách dùng chủ thể và đối tượng là những cách dùng nổi tiếng, nhưng những cách dùng khác cũng cần cẩn thận.
 
-**Nguồn gốc.** Trong 1 Tê-sa-lô-ni-ca 1:3, Phao-lô nhớ đến "công việc của đức tin, sự lao khổ của tình yêu và sự kiên nhẫn của niềm hy vọng" của người Tê-sa-lô-ni-ca. Bản ghi hiểu mỗi sở hữu cách là chỉ nguồn gốc: đức tin hành động, tình yêu lao khổ, niềm hy vọng bền đỗ. Bản Cân bằng tiếng Anh dịch là "the work your faith does, the labor your love takes on, and the endurance your hope ... gives you" (công việc đức tin anh em làm, sự lao khổ tình yêu anh em gánh lấy, và sự kiên nhẫn niềm hy vọng ... ban cho anh em), và Dễ đọc nói rõ hơn nữa: "what your faith leads you to do, how hard you work because you love others, and how you keep going because you hope" (những gì đức tin dẫn anh em đến chỗ làm, anh em làm việc vất vả thế nào vì yêu thương người khác, và anh em tiếp tục bước đi thế nào vì anh em hy vọng).
+**Nguồn gốc.** Trong 1 Tê-sa-lô-ni-ca 1:3, Phao-lô nhớ đến "công việc của đức tin, sự lao khổ của tình yêu thương và sự kiên trì của niềm hy vọng" của người Tê-sa-lô-ni-ca. Bản ghi hiểu mỗi sở hữu cách là chỉ nguồn gốc: đức tin hành động, tình yêu lao khổ, niềm hy vọng bền đỗ. Cấp độ Cân bằng nói "công việc mà đức tin của anh chị em làm, sự lao khổ mà tình yêu thương của anh chị em gánh vác, và sự kiên trì mà niềm hy vọng ... ban cho anh chị em", và Dễ đọc nói rõ hơn nữa: "những việc đức tin đã giúp anh chị em làm, việc anh chị em làm việc khó nhọc vì yêu thương người khác, và việc anh chị em cứ bền lòng vì anh chị em hy vọng". Bản tiếng Anh làm như vậy ở cả hai cấp độ ("the work your faith does, the labor your love takes on, and the endurance your hope ... gives you").
 
-**Mô tả.** Đôi khi một sở hữu cách hoạt động như một tính từ, một mẫu thường phản ánh tiếng Hê-bơ-rơ, vốn có ít tính từ và dùng những cụm "của" thay vào đó. Trong Lu-ca 16:8, "người quản gia của sự bất chính" chỉ đơn giản là người quản gia bất lương, và bản ghi gọi đó là cách nói của tiếng Hê-bơ-rơ thay cho "bất chính". Bản tiếng Việt nói "người quản gia bất chính" (Sát nghĩa) và "người quản gia bất lương" (Cân bằng). Trong Phi-líp 3:21, Đấng Christ sẽ biến đổi "thân thể của sự hèn mọn chúng ta" để giống như "thân thể của vinh quang Ngài". Bản Cân bằng tiếng Anh nói "these bodies of our humble state" (những thân thể trong tình trạng thấp hèn này) và "his glorious body" (thân thể vinh hiển của Ngài). Một chú thích của câu ấy giải thích vì sao lời văn cũ, "our vile body" (thân thể hèn hạ của chúng ta, theo bản King James), làm người đọc hiểu sai: từ Hy Lạp có nghĩa là sự thấp hèn, không phải sự gian ác.
+**Mô tả.** Đôi khi một sở hữu cách hoạt động như một tính từ, một mẫu thường phản ánh tiếng Hê-bơ-rơ, vốn có ít tính từ và dùng những cụm "của" thay vào đó. Trong Lu-ca 16:8, "người quản gia của sự bất chính" chỉ đơn giản là người quản gia bất lương, và bản ghi gọi đó là cách nói của tiếng Hê-bơ-rơ thay cho "bất chính". Bản tiếng Việt nói "người quản gia bất chính" (Sát nghĩa) và "người quản gia bất lương" (Cân bằng). Trong Phi-líp 3:21, Đấng Christ sẽ biến đổi "thân thể của sự hèn mọn chúng ta" để giống như "thân thể của vinh quang Ngài". Cấp độ Cân bằng nói "thân thể hèn mọn này của chúng ta" và "thân thể vinh quang của Ngài", như bản tiếng Anh nói "these bodies of our humble state" và "his glorious body". Một chú thích của câu ấy giải thích vì sao lời văn cũ, "our vile body" (thân thể hèn hạ của chúng ta, theo bản King James), làm người đọc hiểu sai: từ Hy Lạp có nghĩa là sự thấp hèn, không phải sự gian ác.
 
 **Về, hay bởi?** "Tin Lành của Đức Giê-xu Christ" trong Mác 1:1 có thể là Tin Lành Đức Giê-xu đã rao giảng, hoặc Tin Lành nói về Ngài. Bản ghi lưu ý rằng cả hai đều đúng trong sách Mác, vì Đức Giê-xu rao giảng Tin Lành của Đức Chúa Trời (1:14), nhưng ở đầu một câu chuyện về Ngài, Đức Giê-xu nhiều khả năng là chủ đề của nó. Vì vậy Cân bằng và Dễ đọc nói "về" (trong bản tiếng Anh là "about"), và quyết định về cách diễn đạt của bản tiếng Anh nêu lý do: "of" có thể có nghĩa là cả hai, và chữ "của" cũng vậy.
 

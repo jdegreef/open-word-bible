@@ -6,7 +6,7 @@ order: 87
 section: passage
 source: 2d027fefa8ba
 ---
-Ít cụm từ nào trong Kinh Thánh vừa phổ biến vừa dễ bị nghe sai như “sự kính sợ CHÚA”. Đó là phương châm của sách Châm Ngôn. Nó được nói về Áp-ra-ham trong cuộc thử thách lớn nhất của ông, được hứa ban cho vị vua sẽ đến trong sách Ê-sai, và vẫn được dùng để nói về Hội Thánh trong sách Công Vụ. Thế nhưng thư thứ nhất của Giăng lại nói rằng “tình yêu trọn vẹn thì đuổi sự sợ hãi ra ngoài”. Người đọc ngày nay có lý khi hỏi: Đức Chúa Trời có muốn được kính sợ hay không, và đó là loại sợ nào?
+Ít cụm từ nào trong Kinh Thánh vừa phổ biến vừa dễ bị nghe sai như “sự kính sợ CHÚA”. Đó là phương châm của sách Châm Ngôn. Nó được nói về Áp-ra-ham trong cuộc thử thách lớn nhất của ông, được hứa ban cho vị vua sẽ đến trong sách Ê-sai, và vẫn được dùng để nói về Hội Thánh trong sách Công Vụ. Thế nhưng thư thứ nhất của Giăng lại nói rằng “tình yêu thương trọn vẹn đuổi sự sợ hãi ra ngoài”. Người đọc ngày nay có lý khi hỏi: Đức Chúa Trời có muốn được kính sợ hay không, và đó là loại sợ nào?
 
 ## Một từ, nhiều sắc thái
 
@@ -48,25 +48,25 @@ Một chú thích ở Ê-sai 11:2 thêm một mẩu lịch sử. Bản Bảy Mư
 
 ## Trong Tân Ước
 
-Cụm từ này đi thẳng vào Tân Ước, giờ đây thường là “sự kính sợ Chúa”, với Chúa là Đức Giê-xu trong tầm nhìn. Sau khi Phao-lô quy đạo, Lu-ca thuật lại rằng Hội Thánh được bình an và “bước đi trong sự kính sợ Chúa”, ngày càng phát triển nhờ sự khích lệ của Đức Thánh Linh (Công Vụ 9:31). Phao-lô viết: “vì biết sự kính sợ Chúa, chúng tôi ra sức thuyết phục người ta” (2 Cô-rinh-tô 5:11). Bản ghi của chúng tôi ở đó liên kết sự kính sợ này với tòa phán xét của Đấng Christ ở câu trước, và với Châm Ngôn 1:7: đó là “lòng tôn kính trước Đấng Christ, Đấng sẽ phán xét”.
+Cụm từ này đi thẳng vào Tân Ước, giờ đây thường là “sự kính sợ Chúa”, với Chúa là Đức Giê-xu trong tầm nhìn. Sau khi Phao-lô quy đạo, Lu-ca thuật lại rằng Hội Thánh được bình an và “bước đi trong sự kính sợ Chúa”, ngày càng phát triển nhờ sự khích lệ của Đức Thánh Linh (Công Vụ 9:31). Phao-lô viết: “vì biết sự kính sợ Chúa, chúng tôi tìm cách thuyết phục người ta” (2 Cô-rinh-tô 5:11). Bản ghi của chúng tôi ở đó liên kết sự kính sợ này với tòa phán xét của Đấng Christ ở câu trước, và với Châm Ngôn 1:7: đó là “lòng tôn kính trước Đấng Christ, Đấng sẽ phán xét”.
 
 Phi-líp 2:12 bảo Hội Thánh hãy làm nên sự cứu rỗi của mình “với lòng kính sợ và run rẩy”. Bản ghi xem đây là một cụm từ quen dùng để chỉ lòng tôn kính nghiêm túc và khiêm nhường, cụm từ mà Phao-lô cũng dùng khi nói về chính lúc ông đến Cô-rinh-tô (1 Cô-rinh-tô 2:3). Nó loại bỏ các cách hiểu “trong nỗi khiếp sợ Đức Chúa Trời” và “lo âu, không chắc mình được cứu”, và đưa ra lý do từ câu kế tiếp: họ làm việc vì Đức Chúa Trời đang hành động trong họ.
 
 Chính Đức Giê-xu đặt sự kính sợ và sự tin cậy trong cùng một hơi thở. Trong Lu-ca 12:5, Ngài bảo hãy sợ Đấng, sau khi giết rồi, còn có quyền ném vào địa ngục, và rồi ngay lập tức nói về những con chim sẻ mà Đức Chúa Trời không quên. Bản ghi của chúng tôi ghi nhận rằng Đấng phải kính sợ cũng chính là Đức Chúa Trời, Đấng chăm sóc, và việc kính sợ Đức Chúa Trời giải phóng con người khỏi nỗi sợ người ta.
 
-## “Tình yêu trọn vẹn đuổi sự sợ hãi ra ngoài”
+## “Tình yêu thương trọn vẹn đuổi sự sợ hãi ra ngoài”
 
 Rồi đến 1 Giăng 4:18, câu dường như nói điều ngược lại:
 
 > {{OWB:1JN.4.18.s1:B}}
 
-Từ Hy Lạp là {{LEMMA:1JN.4.18:1}}, *phobos*, từ thông thường chỉ sự sợ hãi. Quyết định về ý nghĩa của chúng tôi nói rõ đó là nỗi sợ nào, và đưa điều này vào một chú thích. Văn mạch là ngày phán xét (4:17). Nỗi sợ mà tình yêu đuổi ra là nỗi kinh hãi của người chờ đợi bị kết án, “không phải sự kính sợ Đức Chúa Trời mà Kinh Thánh khen ngợi ở những chỗ khác”. Chính câu này nêu ra đối tượng của nỗi sợ ấy: nó “liên quan đến hình phạt”.
+Từ Hy Lạp là {{LEMMA:1JN.4.18:1}}, *phobos*, từ thông thường chỉ sự sợ hãi. Quyết định về ý nghĩa của chúng tôi nói rõ đó là nỗi sợ nào, và đưa điều này vào một chú thích. Văn mạch là ngày phán xét (4:17). Nỗi sợ mà tình yêu đuổi ra là nỗi kinh hãi của người chờ đợi bị kết án, “không phải sự kính sợ Đức Chúa Trời mà Kinh Thánh khen ngợi ở những chỗ khác”. Chính câu này nêu ra đối tượng của nỗi sợ ấy: nó “liên quan đến sự hình phạt”.
 
 Như vậy, hai cách nói của Kinh Thánh đồng thuận với nhau. Xuất Ai Cập Ký 20 đã nói cùng một điều theo cách của nó: đừng khiếp sợ, nhưng hãy giữ sự kính sợ Đức Chúa Trời. Những người đọc thư Giăng không cần kinh hãi sự phán xét, vì tình yêu của Đức Chúa Trời đã được làm cho trọn vẹn trong họ. Điều đó không khiến họ thiếu lòng tôn kính.
 
 ## Các cấp độ diễn đạt thế nào
 
-Đây là chỗ công việc dịch thuật bước vào. Trong tiếng Anh hiện đại, chữ “fear” đứng một mình thường có nghĩa là sợ hãi. Các bản ghi của chúng tôi giữ cùng một ý nghĩa ở mọi cấp độ, là lòng tôn kính sâu xa, và chỉ thay đổi lời văn cho hợp với người đọc. Những câu được nói đến dưới đây phần lớn chưa được dịch sang tiếng Việt, nên những gì mô tả ở đây là bản tiếng Anh.
+Đây là chỗ công việc dịch thuật bước vào. Trong tiếng Anh hiện đại, chữ “fear” đứng một mình thường có nghĩa là sợ hãi. Các bản ghi của chúng tôi giữ cùng một ý nghĩa ở mọi cấp độ, là lòng tôn kính sâu xa, và chỉ thay đổi lời văn cho hợp với người đọc. Các câu Cựu Ước được nói đến dưới đây chưa được dịch sang tiếng Việt, nên những gì mô tả về chúng là bản tiếng Anh; các câu Tân Ước thì đã có bản tiếng Việt, được nói đến ở cuối phần này.
 
 Trong bản tiếng Anh, **Sát nghĩa** và **Cân bằng** giữ “the fear of the LORD” (sự kính sợ CHÚA) xuyên suốt. Đó là cụm từ người đọc đã quen và là cụm từ Kinh Thánh lặp đi lặp lại, và giữ nó giúp những tiếng vọng giữa Châm Ngôn, Ê-sai, Công Vụ và 2 Cô-rinh-tô vẫn được nhìn thấy.
 
@@ -76,7 +76,7 @@ Trong bản tiếng Anh, **Sát nghĩa** và **Cân bằng** giữ “the fear o
 
 Quyết định về cách diễn đạt nêu lý do: “Trong tiếng Anh hiện đại, chỉ riêng chữ ‘fear’ gợi ý sự sợ hãi. Dễ đọc nói rõ sự kính sợ CHÚA là gì.” Những câu Dễ đọc khác dùng những cụm từ khác cho cùng một nghĩa: “you honor God above all else” (ngươi tôn kính Đức Chúa Trời trên hết mọi sự) cho Áp-ra-ham, “fear and respect him” (kính sợ và tôn trọng Ngài) trong Xuất Ai Cập Ký 20:20, “deep respect for the LORD” (lòng tôn kính sâu xa đối với CHÚA) trong Ê-sai 11, “lived with deep respect for the Lord” (sống với lòng tôn kính sâu xa đối với Chúa) trong Công Vụ 9:31, “with deep awe and respect for God” (với lòng kính sợ và tôn trọng sâu xa đối với Đức Chúa Trời) trong Phi-líp 2:12. Ở những chỗ chính Kinh Thánh đặt sự khiếp sợ đối lập với lòng tôn kính, như trong Xuất Ai Cập Ký 20:20, Dễ đọc nói “Do not be afraid” (Đừng sợ) cho vế đầu và “fear and respect” (kính sợ và tôn trọng) cho vế sau.
 
-Tiếng Việt có sẵn một lợi thế ở đây: từ “kính sợ” vốn ghép “kính” với “sợ”, nên khó bị nghe thành nỗi khiếp sợ đơn thuần. Trong những câu đã dịch sang tiếng Việt, bản Dễ đọc cũng đi theo cùng hướng ấy. Ở Lu-ca 12:5, Sát nghĩa và Cân bằng nói “hãy sợ”, còn Dễ đọc nói “Hãy kính sợ Đức Chúa Trời”.
+Tiếng Việt có sẵn một lợi thế ở đây: từ “kính sợ” vốn ghép “kính” với “sợ”, nên khó bị nghe thành nỗi khiếp sợ đơn thuần. Trong những câu đã dịch sang tiếng Việt, bản Dễ đọc cũng đi theo cùng hướng ấy. Ở Lu-ca 12:5, Sát nghĩa và Cân bằng nói “hãy sợ”, còn Dễ đọc nói “Hãy kính sợ Đức Chúa Trời”. Ở Công Vụ 9:31 và 2 Cô-rinh-tô 5:11, Sát nghĩa và Cân bằng giữ “sự kính sợ Chúa”; Dễ đọc nói “Các tín hữu sống với lòng kính sợ Chúa” ở Công Vụ 9:31, và “Chúa đáng được tôn kính và kính sợ biết bao” ở 2 Cô-rinh-tô 5:11. Ở Phi-líp 2:12, Sát nghĩa và Cân bằng nói “hãy lấy lòng kính sợ và run rẩy”, còn Dễ đọc nói “với lòng kính sợ và tôn kính sâu xa đối với Đức Chúa Trời”.
 
 Đây là sự lựa chọn về lời văn, không phải về ý nghĩa. Người đọc muốn cụm từ truyền thống sẽ tìm thấy nó ở cấp Cân bằng. Người đọc dễ nghe chữ “sợ” thành sự hoảng sợ sẽ thấy ý nghĩa được nói rõ ở cấp Dễ đọc. Cả ba cấp độ đều chỉ về cùng một điều: lòng kính sợ của những người biết Đức Chúa Trời là ai, dẫn đến sự vâng phục và tin cậy, và tình yêu không xóa bỏ nó mà làm cho nó trọn vẹn. (Xem [Ba cấp độ, một ý nghĩa](/articles/three-levels-one-meaning/) về cách các cấp độ vận hành.)
 

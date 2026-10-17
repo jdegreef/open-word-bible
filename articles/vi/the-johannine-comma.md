@@ -12,11 +12,11 @@ Những người đọc so sánh một bản Kinh Thánh cũ với một bản m
 
 Tạm dịch: “Vì có ba đấng làm chứng ở trên trời: Cha, Ngôi Lời và Đức Thánh Linh; và ba đấng ấy là một. Lại có ba làm chứng ở dưới đất: Thánh Linh, nước và huyết; và ba điều ấy cùng quy về một.”
 
-Open Word Bible, cũng như hầu hết mọi bản dịch được thực hiện trong một trăm năm mươi năm qua, có một bản văn ngắn hơn nhiều. Thư 1 Giăng chưa được dịch sang tiếng Việt, nên dưới đây là bản Cân bằng tiếng Anh:
+Open Word Bible, cũng như hầu hết mọi bản dịch được thực hiện trong một trăm năm mươi năm qua, có một bản văn ngắn hơn nhiều. Đây là bản Cân bằng:
 
 > {{OWB:1JN.5.7.s1:B}}
 
-(Nghĩa là: “Vì có ba làm chứng: Thánh Linh, nước và huyết, và ba điều ấy đồng thuận với nhau.”)
+(Chữ “đồng nhất với nhau” ở cấp Cân bằng tiếng Việt có thể bị hiểu là “ba điều ấy là một”, trong khi quyết định về nghĩa, như được giải thích dưới đây, nói rằng ba nhân chứng đồng thuận với nhau. Đó là một chỗ người duyệt tiếng Việt nên xem lại.)
 
 Những chữ vắng mặt trong bản văn hiện đại, “ở trên trời: Cha, Ngôi Lời và Đức Thánh Linh; và ba đấng ấy là một. Lại có ba làm chứng ở dưới đất”, được gọi là *Comma Johanneum*, hay Comma Giăng. “Comma” ở đây là một từ cũ chỉ một mệnh đề ngắn, từ chữ Hy Lạp có nghĩa là một mảnh bị cắt ra. Đây là phần thêm vào bản văn Tân Ước nổi tiếng nhất và bị tranh cãi nhiều nhất, vì đó là câu duy nhất trong Kinh Thánh nêu Cha, Ngôi Lời và Thánh Linh cùng với nhau và nói rằng ba đấng ấy là một.
 
@@ -24,21 +24,19 @@ Bài này lần theo việc những chữ ấy đã được viết ra như th�
 
 ## Giăng muốn nói gì
 
-Nên bắt đầu với đoạn văn như các bản chép tay cổ nhất có. Giăng đã viết về niềm tin nơi Đức Giê-xu là Con Đức Chúa Trời. Trong câu 6, ông nói (ở đây cũng là bản Cân bằng tiếng Anh):
+Nên bắt đầu với đoạn văn như các bản chép tay cổ nhất có. Giăng đã viết về niềm tin nơi Đức Giê-xu là Con Đức Chúa Trời. Trong câu 6, ông nói (ở đây cũng là bản Cân bằng):
 
 > {{OWB:1JN.5.6.s1:B}}
-
-(Nghĩa là: Đấng đã đến bởi nước và huyết chính là Đức Giê-xu Christ; Ngài không chỉ đến với nước mà thôi, nhưng với nước và với huyết; và chính Thánh Linh là Đấng làm chứng, vì Thánh Linh là chân lý.)
 
 Bản ghi của 5:6 đánh dấu cách hiểu của mình về “nước và huyết” là chưa chắc chắn, nhưng cho rằng nhiều khả năng đó là phép báp-têm của Đức Giê-xu và sự chết của Ngài trên thập tự giá: khởi đầu và kết thúc chức vụ công khai của Ngài, cả hai đều là những lúc Đức Chúa Trời làm chứng về Ngài. Rồi câu 7 và câu 8 giải thích vì sao lời chứng ấy đáng tin. Luật pháp Môi-se nói rằng một việc được xác lập bởi hai hoặc ba nhân chứng (Phục Truyền Luật Lệ Ký 19:15). Ở đây có ba: Thánh Linh, nước và huyết.
 
 Mệnh đề cuối của câu 8 là {{GREEK:1JN.5.8:10-15}}, *hoi treis eis to hen eisin*, dịch từng chữ là “ba [điều ấy] là hướng vào một”. Quyết định về thành ngữ của bản ghi giải thích đây là sự hội tụ: ba điều ấy cùng chỉ về một chân lý duy nhất, là lời chứng duy nhất về Đức Con trong các câu 9 đến 11. Bản ghi liệt kê cách hiểu “ba điều ấy là một bản thể” như một phương án khác và bác bỏ nó. Cụm từ này nói rằng các nhân chứng đồng thuận với nhau, chứ không nói rằng họ là một.
 
-Mỗi cấp độ nói điều này theo cách riêng. Bản Sát nghĩa (tiếng Anh) giữ hình dạng của câu tiếng Hy Lạp:
+Mỗi cấp độ nói điều này theo cách riêng. Bản Sát nghĩa giữ hình dạng của câu tiếng Hy Lạp, kể cả chữ “ba” ở giống đực như khi nói về người, mà bản tiếng Việt thể hiện bằng “ba [đấng]” trong ngoặc vuông:
 
 > {{OWB:1JN.5.7.s1:L}}
 
-Bản Dễ đọc (tiếng Anh) diễn đạt thành ngữ ấy bằng lời lẽ thường ngày, “và cả ba đều nói cùng một điều”, như một quyết định về cách diễn đạt ghi lại:
+Bản Dễ đọc diễn đạt thành ngữ ấy bằng lời lẽ thường ngày, “và cả ba đều nói cùng một điều”, như một quyết định về cách diễn đạt của bản tiếng Anh ghi lại, và gọi ba điều ấy là “ba nhân chứng”:
 
 > {{OWB:1JN.5.7.s1:R}}
 

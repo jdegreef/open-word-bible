@@ -72,33 +72,33 @@ Open Word Bible xử lý vấn đề này như với những từ khó khác: m�
 
 **Ý nghĩa luôn được nói rõ.** Mỗi câu có *doulos* hay *ʿeved* đều có một quyết định về nghĩa cho biết địa vị của người ấy: bị sở hữu, không phải được thuê. Quyết định ấy áp dụng cho mọi cấp độ và mọi ngôn ngữ.
 
-**Cấp độ Sát nghĩa nói “nô lệ”.** Người đọc muốn thấy cạnh sắc của từ này sẽ thấy nó: “Phao-lô, nô lệ của Đấng Christ Giê-xu” (Rô-ma 1:1); trong bản tiếng Anh, “Moses the slave of the LORD” (“Môi-se, nô lệ của CHÚA”, Giô-suê 1:1) và “the form of a slave” (“hình thể của nô lệ”, Phi-líp 2:7).
+**Cấp độ Sát nghĩa nói “nô lệ”.** Người đọc muốn thấy cạnh sắc của từ này sẽ thấy nó: “Phao-lô, nô lệ của Đấng Christ Giê-xu” (Rô-ma 1:1), “mang lấy hình thể một nô lệ” (Phi-líp 2:7); và trong bản tiếng Anh, “Moses the slave of the LORD” (“Môi-se, nô lệ của CHÚA”, Giô-suê 1:1).
 
 **Cấp độ Cân bằng và Dễ đọc thường nói “đầy tớ”.** Các quyết định về cách diễn đạt nhắc lại lý do: quyết định về nghĩa giữ điều “người ấy bị sở hữu”, còn hai cấp độ dễ hiểu hơn tránh “hình ảnh của chế độ nô lệ sở hữu thời hiện đại mà chữ ‘nô lệ’ gợi ra cho phần lớn người đọc”. Vì vậy, Rô-ma 1:1 ở cấp độ Cân bằng là “đầy tớ của Đức Giê-xu Christ”, và Ma-ri ở cấp độ Cân bằng nói: “Tôi là đầy tớ của Chúa.” Cấp độ Dễ đọc thì giải thích lời của cô: “Tôi thuộc về Chúa, và tôi sẵn sàng làm theo ý Ngài.”
 
-**“Nô lệ” được giữ ở mọi cấp độ khi chính chế độ nô lệ là điều muốn nói.** Hướng dẫn văn phong liệt kê các trường hợp: khi nô lệ được đặt đối lập với người tự do hay người được trả tự do; khi người ta bị mua, bị bán, bị sở hữu hay được giải phóng; cảnh nô lệ của Y-sơ-ra-ên ở Ai Cập; làm nô lệ cho tội lỗi, đối lập với sự tự do; và những câu nói mà “nô lệ” được đặt đối lập với “đầy tớ” như một bậc thấp hơn. Mỗi câu như thế đều kèm một quyết định về cách diễn đạt nói rõ lý do. Trong bản tiếng Anh, Xuất Ai Cập Ký 21:2 và Lê-vi Ký 25:39–42 nói “slave” ở mọi cấp độ, vì các luật ấy nói về việc mua, bán và trả tự do. Ga-la-ti 3:28 nói “no slave or free person” (“không có nô lệ hay người tự do”). Trong Mác 10:43–44, Đức Giê-xu nói rằng ai muốn làm lớn thì phải làm “người phục vụ”, và ai muốn đứng đầu thì phải làm “nô lệ cho mọi người”. Ở đây có hai từ Hy Lạp khác nhau đứng cạnh nhau, và quyết định về cách diễn đạt giải thích rằng “bước xuống từ người phục vụ đến nô lệ chính là điều muốn nói”. Bản tiếng Việt cũng giữ “nô lệ” ở mọi cấp độ trong câu này.
+**“Nô lệ” được giữ ở mọi cấp độ khi chính chế độ nô lệ là điều muốn nói.** Hướng dẫn văn phong liệt kê các trường hợp: khi nô lệ được đặt đối lập với người tự do hay người được trả tự do; khi người ta bị mua, bị bán, bị sở hữu hay được giải phóng; cảnh nô lệ của Y-sơ-ra-ên ở Ai Cập; làm nô lệ cho tội lỗi, đối lập với sự tự do; và những câu nói mà “nô lệ” được đặt đối lập với “đầy tớ” như một bậc thấp hơn. Mỗi câu như thế đều kèm một quyết định về cách diễn đạt nói rõ lý do. Trong bản tiếng Anh, Xuất Ai Cập Ký 21:2 và Lê-vi Ký 25:39–42 nói “slave” ở mọi cấp độ, vì các luật ấy nói về việc mua, bán và trả tự do. Ga-la-ti 3:28 nói “no slave or free person”, và bản tiếng Việt cũng giữ “nô lệ” ở mọi cấp độ: “không còn nô lệ hay người tự do”. Trong Mác 10:43–44, Đức Giê-xu nói rằng ai muốn làm lớn thì phải làm “người phục vụ”, và ai muốn đứng đầu thì phải làm “nô lệ cho mọi người”. Ở đây có hai từ Hy Lạp khác nhau đứng cạnh nhau, và quyết định về cách diễn đạt giải thích rằng “bước xuống từ người phục vụ đến nô lệ chính là điều muốn nói”. Bản tiếng Việt cũng giữ “nô lệ” ở mọi cấp độ trong câu này.
 
-**Ê-phê-sô 6 giữ chữ “nô lệ”.** Bản ghi nói rằng Phao-lô “nói với nô lệ như một tầng lớp xã hội, những người thật sự bị sở hữu”, và chữ “đầy tớ” sẽ làm thay đổi ý nghĩa. Quyết định về nghĩa của câu ấy nói thêm rằng bức thư “không bàn đến việc chế độ nô lệ có nên tồn tại hay không; nó nói với những người đang ở trong chế độ ấy và đặt cả nô lệ lẫn chủ dưới quyền một Chúa”.
+**Ê-phê-sô 6 giữ chữ “nô lệ”.** Bản ghi nói rằng Phao-lô “nói với nô lệ như một tầng lớp xã hội, những người thật sự bị sở hữu”, và chữ “đầy tớ” sẽ làm thay đổi ý nghĩa. Quyết định về nghĩa của câu ấy nói thêm rằng bức thư “không bàn đến việc chế độ nô lệ có nên tồn tại hay không; nó nói với những người đang ở trong chế độ ấy và đặt cả nô lệ lẫn chủ dưới quyền một Chúa”. Bản tiếng Việt cũng giữ “nô lệ” ở mọi cấp độ trong 6:5–9, như bản tiếng Việt của Cô-lô-se (3:22).
 
 ## Phi-lê-môn
 
-Bức thư ngắn gửi Phi-lê-môn là phép thử gay gắt nhất. Ô-nê-sim là một nô lệ trong nhà Phi-lê-môn. Anh đã đến với Phao-lô, và qua Phao-lô đã trở thành một tín hữu. Quan điểm truyền thống cho rằng anh đã bỏ trốn; một số học giả lại cho rằng anh đến gặp Phao-lô để xin giúp đỡ trong một vụ tranh chấp với chủ. Phao-lô gửi anh trở về cùng với bức thư này, và ở câu 16 mô tả anh là {{GREEK:PHM.1.16:1-8}}. Sách Phi-lê-môn chưa được dịch sang tiếng Việt; đây là cấp độ Cân bằng của bản tiếng Anh:
+Bức thư ngắn gửi Phi-lê-môn là phép thử gay gắt nhất. Ô-nê-sim là một nô lệ trong nhà Phi-lê-môn. Anh đã đến với Phao-lô, và qua Phao-lô đã trở thành một tín hữu. Quan điểm truyền thống cho rằng anh đã bỏ trốn; một số học giả lại cho rằng anh đến gặp Phao-lô để xin giúp đỡ trong một vụ tranh chấp với chủ. Phao-lô gửi anh trở về cùng với bức thư này, và ở câu 16 mô tả anh là {{GREEK:PHM.1.16:1-8}}. Đây là cấp độ Cân bằng:
 
 > {{OWB:PHM.1.15.s1:B}}
 
-Quyết định về cách diễn đạt giữ chữ “slave” ở mọi cấp độ tại đây, vì câu này đặt địa vị của Ô-nê-sim như một người bị sở hữu đối lập với vị trí mới của anh như một người anh em. “Không còn như một đầy tớ” sẽ làm mất hết ý chính.
+Quyết định về cách diễn đạt giữ chữ “nô lệ” ở mọi cấp độ tại đây (bản tiếng Anh giữ “slave”), vì câu này đặt địa vị của Ô-nê-sim như một người bị sở hữu đối lập với vị trí mới của anh như một người anh em. “Không còn như một đầy tớ” sẽ làm mất hết ý chính.
 
 Điều Phao-lô thật sự xin là một vấn đề còn tranh luận. Quyết định về nghĩa được đánh dấu là chưa chắc chắn, và một chú thích đưa ra quan điểm khác. Quyết định ấy hiểu “không còn như một nô lệ” có nghĩa là Phi-lê-môn phải tiếp nhận và đối xử với Ô-nê-sim như một người anh em, và ghi chú rằng “việc Phao-lô có xin cho anh được tự do về mặt pháp lý hay không thì không được nói ra”. Câu 21, “anh sẽ làm còn hơn điều tôi nói”, có thể ngụ ý sự tự do, hoặc việc Ô-nê-sim trở lại giúp Phao-lô. Bản ghi để ngỏ điều đó, như chính bức thư.
 
 ## 1 Cô-rinh-tô 7
 
-Lời khuyên của Phao-lô dành cho nô lệ ở Cô-rinh-tô đặt ra một vấn đề ngữ pháp nổi tiếng. Cấp độ Sát nghĩa của chúng tôi (bản tiếng Anh; sách này chưa được dịch sang tiếng Việt) dịch 1 Cô-rinh-tô 7:21 như sau:
+Lời khuyên của Phao-lô dành cho nô lệ ở Cô-rinh-tô đặt ra một vấn đề ngữ pháp nổi tiếng. Cấp độ Sát nghĩa của chúng tôi dịch 1 Cô-rinh-tô 7:21 như sau:
 
 > {{OWB:1CO.7.21.s1:L}} {{OWB:1CO.7.21.s2:L}}
 
-Những chữ cuối cùng trong tiếng Hy Lạp chỉ là “đúng hơn hãy dùng”, không có tân ngữ, nên cấp độ Sát nghĩa đặt “of it” (“điều ấy”) trong ngoặc vuông. Dùng gì? Sự tự do, hay tình trạng nô lệ hiện tại?
+Những chữ cuối cùng trong tiếng Hy Lạp chỉ là “đúng hơn hãy dùng”, không có tân ngữ. Dùng gì? Sự tự do, hay tình trạng nô lệ hiện tại? Bản tiếng Anh ở cấp độ Sát nghĩa chỉ đặt “of it” (“điều ấy”) trong ngoặc vuông, để ngỏ câu hỏi. Bản tiếng Việt đặt “[cơ hội ấy]” trong ngoặc vuông, nên ngay ở cấp độ Sát nghĩa nó đã nghiêng về cách hiểu “cơ hội được tự do”; người đọc nên biết rằng chữ trong ngoặc vuông ấy là một lựa chọn chứ không có trong tiếng Hy Lạp.
 
-Open Word Bible hiểu là “hãy nắm lấy cơ hội để được tự do”, và cấp độ Cân bằng nói “make the most of it” (“hãy tận dụng cơ hội ấy”), nhưng quyết định này được đánh dấu là chưa chắc chắn, và chú thích của nó nói thẳng rằng “cả hai cách hiểu đều đã có người theo từ lâu, và bằng chứng ngang nhau”. Câu tiếp theo đảo ngược cả hai địa vị:
+Open Word Bible hiểu là “hãy nắm lấy cơ hội để được tự do”, và cấp độ Cân bằng nói “hãy tận dụng cơ hội ấy” (trong tiếng Anh là “make the most of it”), nhưng quyết định này được đánh dấu là chưa chắc chắn, và chú thích của nó nói thẳng rằng “cả hai cách hiểu đều đã có người theo từ lâu, và bằng chứng ngang nhau”. Câu tiếp theo đảo ngược cả hai địa vị:
 
 > {{OWB:1CO.7.22.s1:B}}
 

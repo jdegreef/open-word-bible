@@ -22,7 +22,7 @@ Bản King James giữ cách đếm xưa; phần lớn các bản dịch hiện 
 
 > {{OWB:MRK.15.25.s1:B}}
 
-Cùng một khuôn mẫu ấy xuyên suốt các bản nháp. Vào Lễ Ngũ Tuần, Phi-e-rơ nói các môn đồ không thể say rượu, vì mới chỉ là “giờ thứ ba trong ngày” (Công Vụ Các Sứ Đồ 2:15). Công Vụ chưa được dịch sang tiếng Việt; trong bản tiếng Anh, cấp độ Cân bằng giữ cả cách đếm lẫn giờ đồng hồ: “The day is only three hours old; it is nine in the morning” (“Ngày mới bắt đầu được ba giờ; bây giờ là chín giờ sáng”).
+Cùng một khuôn mẫu ấy xuyên suốt các bản nháp. Vào Lễ Ngũ Tuần, Phi-e-rơ nói các môn đồ không thể say rượu, vì mới chỉ là “giờ thứ ba trong ngày” (Công Vụ Các Sứ Đồ 2:15). Bản tiếng Việt theo đúng khuôn mẫu ấy: Sát nghĩa giữ “giờ thứ ba trong ngày”, còn Cân bằng và Dễ đọc nói “chín giờ sáng”, như quyết định về cách diễn đạt ở đó ghi. Bản tiếng Anh ở cấp độ Cân bằng thì giữ cả cách đếm lẫn giờ đồng hồ: “The day is only three hours old; it is nine in the morning” (“Ngày mới bắt đầu được ba giờ; bây giờ là chín giờ sáng”).
 
 ## Các giờ trong sách Giăng
 

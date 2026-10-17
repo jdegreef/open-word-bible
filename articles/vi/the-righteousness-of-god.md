@@ -12,7 +12,7 @@ Rô-ma 1:16–17 là luận đề của bức thư dài nhất của Phao-lô. �
 
 Mọi điều trong thư Rô-ma xoay quanh cụm từ ở đầu câu ấy, {{GREEK:ROM.1.17:1-3}}, “sự công chính của Đức Chúa Trời”. Cụm từ này trở lại ở bước ngoặt của bức thư (3:21–26), trong nỗi đau của Phao-lô về Y-sơ-ra-ên (10:3), và trong hai thư khác (2 Cô-rinh-tô 5:21; Phi-líp 3:9). Nhưng có thể hiểu cụm từ này theo nhiều cách, và cách người đọc hiểu nó sẽ thay đổi việc Tin Lành nói về điều gì. Bài viết này trình bày các cách hiểu, cho thấy các bản dịch đã chọn phe ra sao, và giải thích điều Open Word Bible làm.
 
-Một lưu ý: Rô-ma đã được dịch sang tiếng Việt, nhưng Thi Thiên 98, Ê-sai, Ha-ba-cúc, Phi-líp và 2 Cô-rinh-tô thì chưa. Câu trích từ Thi Thiên 98 dưới đây hiện ra bằng bản tiếng Anh, và những gì bài viết nói về lời văn của các sách ấy là nói về bản tiếng Anh.
+Một lưu ý: Rô-ma, Phi-líp và 2 Cô-rinh-tô đã được dịch sang tiếng Việt, nhưng Thi Thiên 98, Ê-sai và Ha-ba-cúc thì chưa. Câu trích từ Thi Thiên 98 dưới đây hiện ra bằng bản tiếng Anh, và những gì bài viết nói về lời văn của các sách Cựu Ước ấy là nói về bản tiếng Anh.
 
 ## Một từ mà tiếng Anh tách làm hai
 
@@ -38,7 +38,7 @@ Quyết định về nghĩa cho Rô-ma 1:17 được đánh dấu *chưa chắc 
 
 **Một phẩm chất Đức Chúa Trời có.** Sự công chính của Đức Chúa Trời là sự công bằng hay sự thành tín của chính Đức Chúa Trời: Đức Chúa Trời là công chính. Phao-lô chắc chắn dùng cụm từ này theo cách đó trong Rô-ma 3:5, nơi sự gian ác của con người “làm nổi bật sự công chính của Đức Chúa Trời”, và trong 3:25–26, nơi Đức Chúa Trời chứng tỏ Ngài là công chính. Theo cách hiểu này, Tin Lành bày tỏ Đức Chúa Trời là như thế nào.
 
-**Một món quà Đức Chúa Trời ban.** Sự công chính của Đức Chúa Trời là sự công chính *đến từ* Đức Chúa Trời: một vị thế đúng đắn mà Đức Chúa Trời ban cho những người tin. Phi-líp 3:9 nói đúng như vậy. Phao-lô muốn được thấy ở trong Đấng Christ, “không có sự công chính của riêng tôi đến từ luật pháp, nhưng có sự công chính đến bởi đức tin nơi Đấng Christ, là sự công chính đến từ Đức Chúa Trời dựa trên đức tin”. Ở đó tiếng Hy Lạp có {{GREEK:PHP.3.9:18-20}}, “từ Đức Chúa Trời”, chứ không chỉ là “của Đức Chúa Trời”. Theo cách hiểu này, Tin Lành bày tỏ cách con người nhận lãnh một sự công chính không phải của chính mình.
+**Một món quà Đức Chúa Trời ban.** Sự công chính của Đức Chúa Trời là sự công chính *đến từ* Đức Chúa Trời: một vị thế đúng đắn mà Đức Chúa Trời ban cho những người tin. Phi-líp 3:9 nói đúng như vậy. Phao-lô muốn được thấy ở trong Đấng Christ, “không có sự công chính của riêng tôi đến từ luật pháp, nhưng có sự công chính đến qua đức tin nơi Đấng Christ, là sự công chính đến từ Đức Chúa Trời dựa trên đức tin”. Ở đó tiếng Hy Lạp có {{GREEK:PHP.3.9:18-20}}, “từ Đức Chúa Trời”, chứ không chỉ là “của Đức Chúa Trời”. Theo cách hiểu này, Tin Lành bày tỏ cách con người nhận lãnh một sự công chính không phải của chính mình.
 
 **Một điều Đức Chúa Trời làm.** Sự công chính của Đức Chúa Trời là hành động cứu rỗi của Ngài: Đức Chúa Trời làm cho thế giới được ngay thẳng, giữ lời hứa của Ngài, giải cứu và giải phóng. Đây là nghĩa trong Thi Thiên và Ê-sai. Theo cách hiểu này, Tin Lành bày tỏ Đức Chúa Trời đang hành động.
 
@@ -116,7 +116,7 @@ Rô-ma 10:3 cho thấy cụm từ này trong sự tương phản. Phao-lô nói 
 
 Phi-líp 3:9, đã trích ở trên, nêu cùng sự tương phản ấy trong chính đời sống của Phao-lô, và quyết định về nghĩa ở đó mô tả sự công chính là một vị thế đúng đắn trước mặt Đức Chúa Trời, không chỉ đơn giản là hạnh kiểm tốt.
 
-Và trong 2 Cô-rinh-tô 5:21, cụm từ này đạt đến hình thức táo bạo nhất. Đức Chúa Trời đã khiến Đấng không hề biết tội trở nên tội vì chúng ta, “để trong Ngài chúng ta trở nên sự công chính của Đức Chúa Trời”. Quyết định về nghĩa lưu ý sự cân xứng của câu: như Đấng Christ được làm cho thành tội, là điều không phải của Ngài, thì các tín hữu trở nên sự công chính của Đức Chúa Trời, là điều không phải của họ. Nó cũng lưu ý rằng Phao-lô nói “trở nên”, không chỉ là “nhận lãnh”.
+Và trong 2 Cô-rinh-tô 5:21, cụm từ này đạt đến hình thức táo bạo nhất. Đức Chúa Trời đã khiến Đấng không hề biết tội trở nên tội vì chúng ta, “để trong Đấng ấy chúng ta trở nên sự công chính của Đức Chúa Trời”. Quyết định về nghĩa lưu ý sự cân xứng của câu: như Đấng Christ được làm cho thành tội, là điều không phải của Ngài, thì các tín hữu trở nên sự công chính của Đức Chúa Trời, là điều không phải của họ. Nó cũng lưu ý rằng Phao-lô nói “trở nên”, không chỉ là “nhận lãnh”.
 
 ## Vì sao cụm từ được để ngỏ ở chỗ có thể
 

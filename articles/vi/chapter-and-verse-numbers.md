@@ -22,7 +22,7 @@ source: ddaa7f257d1b
 
 Vì các con số được thêm vào bản văn, đôi khi chúng rơi vào những chỗ không thích hợp. Một chỗ ngắt chương là tín hiệu mạnh cho người đọc rằng một điều đã kết thúc và một điều khác bắt đầu, và thỉnh thoảng nó lại nằm sai chỗ.
 
-**1 Cô-rinh-tô 12:31 và 13:1.** Trong phần lớn các bản Kinh Thánh, chương nổi tiếng của Phao-lô về tình yêu thương bắt đầu bằng câu “Nếu tôi nói được tiếng của loài người và của thiên sứ”. Nhưng lời Phao-lô dẫn nhập cho chương ấy lại là câu văn cuối cùng của chương 12. Thư này chưa được dịch sang tiếng Việt, nên dưới đây là bản Cân bằng tiếng Anh (nghĩa là: “Và bây giờ tôi sẽ chỉ cho anh chị em một con đường vượt hơn mọi sự so sánh”):
+**1 Cô-rinh-tô 12:31 và 13:1.** Trong phần lớn các bản Kinh Thánh, chương nổi tiếng của Phao-lô về tình yêu thương bắt đầu bằng câu “Nếu tôi nói được tiếng của loài người và của thiên sứ”. Nhưng lời Phao-lô dẫn nhập cho chương ấy lại là câu văn cuối cùng của chương 12. Đây là câu ấy ở cấp độ Cân bằng:
 
 > {{OWB:1CO.12.31.s2:B}}
 
@@ -32,7 +32,7 @@ Bản ghi của câu văn này nói rõ rằng con đường ấy là tình yêu
 
 **Giăng 7:53 và 8:1.** “Sau đó ai nấy đều về nhà. Còn Đức Giê-xu thì đi lên núi Ô-li-ve.” Trong tiếng Hy Lạp, hai mệnh đề này hợp thành một câu, và bản ghi của Open Word Bible cho chúng là một câu văn. Chỗ ngắt chương rơi vào giữa câu. Xin xem [Người phụ nữ bị bắt quả tang ngoại tình](/articles/the-woman-caught-in-adultery/).
 
-**Công Vụ 21:40 và 22:1.** Phao-lô đứng trên bậc thềm của đồn lính, làm cho đám đông im lặng và bắt đầu nói. Chương sách kết thúc trước khi ông nói được một lời. Ở đây cũng là bản Cân bằng tiếng Anh:
+**Công Vụ 21:40 và 22:1.** Phao-lô đứng trên bậc thềm của đồn lính, làm cho đám đông im lặng và bắt đầu nói. Chương sách kết thúc trước khi ông nói được một lời. Đây cũng là cấp độ Cân bằng:
 
 > {{OWB:ACT.21.40.s1:B}}
 

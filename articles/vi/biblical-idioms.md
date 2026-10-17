@@ -30,11 +30,11 @@ Cũng hình ảnh ấy được dùng theo nghĩa đen trong 1 Các Vua 18:46, k
 
 Đức Giê-xu dùng nó như một mệnh lệnh trong Lu-ca 12:35: "Hãy thắt lưng các con lại và để đèn các con cháy sáng", như bản Sát nghĩa tiếng Việt nói. Bản Cân bằng tiếng Việt nói "Hãy luôn sẵn sàng làm việc, lưng thắt gọn gàng", và quyết định về cách diễn đạt của bản tiếng Anh giải thích rằng "gird" là một từ cổ.
 
-Phi-e-rơ đưa hình ảnh ấy đi thêm một bước. Trong 1 Phi-e-rơ 1:13, ông bảo người đọc hãy thắt "lưng của tâm trí anh em". Quyết định về nghĩa nối câu này với bữa ăn Lễ Vượt Qua và với lời Đức Giê-xu trong sách Lu-ca, và nói rằng Phi-e-rơ áp dụng hình ảnh ấy cho tâm trí. Sát nghĩa giữ nó; Cân bằng và Dễ đọc đưa ra ý nghĩa:
+Phi-e-rơ đưa hình ảnh ấy đi thêm một bước. Trong 1 Phi-e-rơ 1:13, ông bảo người đọc hãy thắt "lưng của tâm trí anh em". Quyết định về nghĩa nối câu này với bữa ăn Lễ Vượt Qua và với lời Đức Giê-xu trong sách Lu-ca, và nói rằng Phi-e-rơ áp dụng hình ảnh ấy cho tâm trí. Sát nghĩa giữ nó: “hãy thắt lưng tâm trí anh chị em lại”. Cân bằng và Dễ đọc đưa ra ý nghĩa:
 
 > {{OWB:1PE.1.13.s1:B}}
 
-Quyết định về cách diễn đạt nêu lý do trong một câu: người đọc ngày nay không mặc áo dài buộc thắt lưng. Bài viết [Dịch từng chữ hay dịch theo ý?](/articles/word-for-word-or-meaning-for-meaning/) mở đầu bằng câu này.
+Quyết định về cách diễn đạt của bản tiếng Việt giải thích rằng hình ảnh là việc giắt áo dài vào thắt lưng để sẵn sàng làm việc hay lên đường; chữ “thắt lưng” giữ hình ảnh ấy ở cấp Sát nghĩa, còn Cân bằng và Dễ đọc nói ra ý nghĩa của nó. Quyết định của bản tiếng Anh nêu lý do trong một câu: người đọc ngày nay không mặc áo dài buộc thắt lưng. Bài viết [Dịch từng chữ hay dịch theo ý?](/articles/word-for-word-or-meaning-for-meaning/) mở đầu bằng câu này.
 
 ## Chất than lửa đỏ
 
@@ -97,6 +97,8 @@ Bản King James để Phao-lô nói, trong Phi-líp 1:8, "how greatly I long af
 Từ Hy Lạp là {{LEMMA:PHP.1.8:11}} (*splanchna*). Quyết định về nghĩa đưa ra ý nghĩa của nó: tình thương sâu đậm, được cảm nhận trong con người bên trong. Nó liệt kê "ruột (các cơ quan theo nghĩa đen)" trong số các phương án khác và gạt nó sang một bên. Một quyết định thứ hai thêm một điểm về toàn bộ cụm từ: Phao-lô không yêu họ chỉ bằng cảm xúc của riêng mình, mà bằng tình yêu dịu dàng của Đấng Christ Giê-xu đang hành động trong ông.
 
 > {{OWB:PHP.1.8.s1:B}}
+
+Bản tiếng Việt không giữ chữ “ruột” ở cấp độ nào: Sát nghĩa nói “lòng thương yêu tha thiết của Đấng Christ Giê-xu”, Cân bằng nói “tình yêu sâu xa”, và Dễ đọc nói “tình yêu dịu dàng”. Quyết định về cách diễn đạt nêu lý do: tiếng Việt nói về cảm xúc ở “lòng” chứ không ở ruột, và “ruột gan” sẽ nghe buồn cười.
 
 Tiếng Hê-bơ-rơ cũng có cùng một cách nói. Khi Giô-sép thấy em mình là Bên-gia-min trong Sáng Thế Ký 43:30, bản Sát nghĩa tiếng Anh nói "his compassion grew warm toward his brother" (lòng thương xót của ông nóng lên đối với em mình). Quyết định về nghĩa giải thích rằng từ Hê-bơ-rơ chỉ lòng thương xót nói về các bộ phận bên trong, được cảm nhận như nơi của tình thương dịu dàng, và theo nghĩa đen là chúng "nóng lên". Cân bằng nói "his heart was so stirred for his brother" (lòng ông xúc động mạnh vì em mình), đổi một thành ngữ về bộ phận cơ thể lấy một thành ngữ khác mà người đọc tiếng Anh hiểu được.
 
