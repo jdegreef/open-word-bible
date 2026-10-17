@@ -381,8 +381,9 @@
         .then(function () { store(null); location.replace(PREFIX + "/"); });
     });
 
-    // Your data: the account, the bookmarks, highlights and place kept with
-    // it (/api/reading), and this device's reading, as JSON.
+    // Your data: the account, the bookmarks, highlights, place, plan progress
+    // and settings kept with it (/api/reading), and this device's reading,
+    // as JSON.
     document.getElementById("download").addEventListener("click", function () {
       function read(key) {
         try { var v = localStorage.getItem(key); return v && v.charAt(0) === "{" ? JSON.parse(v) : v; }
@@ -397,7 +398,7 @@
           account: saved() && saved().user,
           reading: reading,
           messages: messages,
-          device: { settings: read("owb.settings"), place: read("owb.place"), marks: read("owb.marks"),
+          device: { settings: read("owb.settings"), place: read("owb.place"), marks: read("owb.marks"), plans: read("owb.plans"),
                     theme: read("owb-theme"), language: read("owb-lang") }
         });
       });

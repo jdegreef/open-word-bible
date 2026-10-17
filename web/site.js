@@ -412,8 +412,9 @@
 })();
 
 // The saved verses page (saved_page in scripts/build_site.py): the
-// bookmarks and highlights web/reader.js keeps as owb.marks, by book in
-// canonical order, each with its words as they were shown when marked.
+// bookmarks, highlights and notes web/reader.js keeps as owb.marks, by book
+// in canonical order, each with its words as they were shown when marked
+// and the reader's note.
 (function () {
   "use strict";
   var box = document.getElementById("saved");
@@ -445,7 +446,7 @@
       var m = all[id], book = id.split(".")[0];
       if (data.order.indexOf(book) < 0) return false;
       // A cleared mark ({at}) is kept only for syncing.
-      return filter === "all" ? m.b || m.h : filter === "bookmarks" ? m.b : m.h;
+      return filter === "all" ? m.b || m.h || m.n : filter === "bookmarks" ? m.b : filter === "notes" ? m.n : m.h;
     }).sort(function (a, b) {
       var p = a.split("."), q = b.split(".");
       return (data.order.indexOf(p[0]) - data.order.indexOf(q[0])) || (p[1] - q[1]) || (p[2] - q[2]);
@@ -472,13 +473,24 @@
       }
       var x = el("button", "saved-remove", data.remove);
       x.type = "button";
-      x.addEventListener("click", function () { remove(id); });
+      // Removing takes the note too: a verse with one asks for a second click.
+      x.addEventListener("click", function () {
+        if (!m.n || x.classList.contains("armed")) { remove(id); return; }
+        x.classList.add("armed");
+        x.textContent = data.confirm;
+        setTimeout(function () { x.classList.remove("armed"); x.textContent = data.remove; }, 4000);
+      });
       head.appendChild(x);
       li.appendChild(head);
       if (m.text) {
         var q = el("p", "saved-text", m.text);
         if (m.lang && m.lang !== document.documentElement.lang) q.lang = m.lang;
         li.appendChild(q);
+      }
+      if (m.n) {
+        var n = el("p", "saved-note", m.n);
+        n.setAttribute("aria-label", data.note);
+        li.appendChild(n);
       }
       group.appendChild(li);
     });
@@ -579,12 +591,15 @@
 })();
 
 // Sync for a signed-in reader (backend accounts/reading.py): bookmarks,
-// highlights (owb.marks) and the reading place (owb.place) go to the account
-// and come back merged, the latest change to each verse winning, so they
-// follow the reader between devices. A sync sends this browser's whole copy;
-// it runs on loading a page when anything changed since the last sync (or
-// every two minutes, for the other devices' changes), soon after a mark
-// changes, on signing in, and, as best it can, when the page is hidden.
+// highlights (owb.marks), the reading place (owb.place), reading-plan
+// progress (owb.plans, web/plans.js) and the reader's settings
+// (owb.settings, web/reader.js) go to the account and come back merged, the
+// latest change to each verse and each plan winning, and the latest copy of
+// the settings, so they follow the reader between devices. A sync sends this
+// browser's whole copy; it runs on loading a page when anything changed since
+// the last sync (or every two minutes, for the other devices' changes), soon
+// after a mark, a plan or a setting changes, on signing in, and, as best it
+// can, when the page is hidden.
 // Offline, or signed out, everything stays in this browser as before.
 (function () {
   "use strict";
@@ -602,7 +617,18 @@
     try { localStorage.setItem(key, JSON.stringify(value)); } catch (e) { /* full or blocked */ }
   }
   function token() { var a = read("owb.account", null); return a && a.token; }
-  function body() { return JSON.stringify({ marks: read("owb.marks", {}), place: read("owb.place", null) }); }
+  // Settings are sent once the reader has changed one here (they carry its
+  // time), without the page's language.
+  function settings() {
+    var all = read("owb.settings", null), v = {};
+    if (!all || !all.at) return null;
+    Object.keys(all).forEach(function (k) { if (k !== "at" && k !== "lang") v[k] = all[k]; });
+    return { v: v, at: all.at };
+  }
+  function body() {
+    return JSON.stringify({ marks: read("owb.marks", {}), place: read("owb.place", null),
+                            plans: read("owb.plans", null), settings: settings() });
+  }
   function hash(text) {
     for (var h = 5381, i = 0; i < text.length; i++) h = (h * 33 + text.charCodeAt(i)) | 0;
     return text.length + ":" + h;
@@ -619,6 +645,24 @@
     if (changed) write("owb.marks", marks);
     var place = read("owb.place", null);
     if (merged.place && (!place || merged.place.at > (place.at || 0))) { write("owb.place", merged.place); changed = true; }
+    if (merged.plans) {
+      var plans = read("owb.plans", {}), moved = false;
+      if (!plans.plans) plans.plans = {};
+      Object.keys(merged.plans.plans || {}).forEach(function (id) {
+        var theirs = merged.plans.plans[id], ours = plans.plans[id];
+        if (!ours || theirs.at > (ours.at || 0)) { plans.plans[id] = theirs; moved = true; }
+      });
+      if (merged.plans.at > (plans.at || 0)) { plans.active = merged.plans.active; plans.at = merged.plans.at; moved = true; }
+      if (moved) { write("owb.plans", plans); changed = true; }
+    }
+    var mine = settings();
+    if (merged.settings && merged.settings.at > (mine ? mine.at : 0)) {
+      var kept = read("owb.settings", {}) || {};
+      Object.keys(merged.settings.v).forEach(function (k) { kept[k] = merged.settings.v[k]; });
+      kept.at = merged.settings.at;
+      write("owb.settings", kept);
+      changed = true;
+    }
     try { sessionStorage.setItem(SINCE, String(Date.now())); } catch (e) { /* ignore */ }
     if (changed) document.dispatchEvent(new Event("owb:synced"));
   }
@@ -656,6 +700,8 @@
 
   function soon() { clearTimeout(timer); timer = setTimeout(sync, 1500); }
   document.addEventListener("owb:marks", soon);
+  document.addEventListener("owb:plans-change", soon);
+  document.addEventListener("owb:settings", soon);
   document.addEventListener("owb:account", function () { stopped = false; sync(); });
   document.addEventListener("visibilitychange", function () { if (document.visibilityState === "hidden") sync(true); });
   window.addEventListener("online", soon);

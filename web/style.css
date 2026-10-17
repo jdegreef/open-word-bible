@@ -2270,6 +2270,21 @@ body.listening { padding-bottom: calc(var(--listen-h, 64px) + 12px); }
 .mark-hue { width: 26px; height: 26px; border-radius: 50%; border: 1px solid var(--line-strong); background: var(--hl); cursor: pointer; padding: 0; }
 .mark-hue[aria-pressed="true"] { box-shadow: 0 0 0 2px var(--surface), 0 0 0 4px var(--accent); }
 .mark-all { margin-left: auto; font-size: 13px; }
+/* The reader's own note: a pencil after the verse number, and the note
+   under the mark row (web/reader.js myNoteBox; the saved verses page). */
+.verse.noted > sup:not(.fn):first-child::after,
+.verse.noted > .line:first-child > sup:not(.fn):first-child::after { content: "\00a0\270E"; color: var(--accent); font-size: .85em; }
+.mark-note {
+  padding: 4px 12px; border: 1px solid var(--line-strong); border-radius: 999px; background: var(--surface);
+  color: var(--text); font: inherit; font-size: 13px; font-weight: 600; cursor: pointer;
+}
+.my-note { margin: -4px 0 16px; padding: 10px 12px 12px; border-radius: var(--radius-sm); background: var(--surface-2); font-family: var(--sans); }
+.my-note-label { display: block; margin: 0 0 6px; font-size: 13px; font-weight: 700; }
+.my-note-text, .saved-note { margin: 0 0 6px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.my-note-field { max-height: 18em; }
+.my-note-private { margin: 6px 0 8px; }
+.my-note-buttons { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 0; }
+.saved-note { margin: 8px 0 0; padding: 8px 12px; border-radius: var(--radius-sm); background: var(--surface-2); font-family: var(--sans); font-size: 15px; }
 .saved-filter { margin: 0 0 24px; }
 .saved-book { font-family: var(--display); font-weight: 600; font-size: 24px; margin: 28px 0 12px; }
 .saved-items { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }

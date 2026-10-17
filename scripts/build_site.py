@@ -4197,16 +4197,17 @@ def not_found_page():
 
 
 def saved_page(lang="en"):
-    """The reader's bookmarks and highlights, from owb.marks in this browser
+    """The reader's bookmarks, highlights and notes, from owb.marks in this browser
     (web/reader.js keeps them, web/site.js lists them here). The page
     carries the book names and canonical order in lang, and its labels."""
     order = [b for b, _ in books()]
     names = {b: chapter_book(b, lang) for b in order}
     data = {"order": order, "names": names,
             "chapters": {b: url(lang, chapter_url(b, 0)).replace("/0/", "/{c}/") for b in order},
-            "remove": t(lang, "saved.remove"), "bookmark": t(lang, "saved.bookmark")}
+            "remove": t(lang, "saved.remove"), "bookmark": t(lang, "saved.bookmark"),
+            "note": t(lang, "saved.note"), "confirm": t(lang, "saved.confirm")}
     filters = "".join(f'<button type="button" data-filter="{k}" aria-pressed="{"true" if k == "all" else "false"}">'
-                      f'{t(lang, "saved." + k)}</button>' for k in ("all", "bookmarks", "highlights"))
+                      f'{t(lang, "saved." + k)}</button>' for k in ("all", "bookmarks", "highlights", "notes"))
     return page(lang, t(lang, "saved.title"), f"""
 <header class="page-head">
 <p class="eyebrow">{t(lang, "saved.title")}</p>
