@@ -63,6 +63,16 @@
           "L": "Masimulizi ya kwanza niliyafanya, ee Theofilo, kuhusu mambo yote ambayo Yesu alianza kufanya na pia kufundisha, \\v 2 hadi siku ile ambayo, akiisha kuwapa maagizo kupitia Roho Mtakatifu mitume aliowachagua, alichukuliwa juu.",
           "B": "Theofilo, katika kitabu changu cha kwanza niliandika juu ya yote ambayo Yesu alianza kufanya na kufundisha, \\v 2 hadi siku alipochukuliwa juu. Kabla ya hapo, kupitia Roho Mtakatifu, alikuwa amewapa maagizo mitume aliowachagua.",
           "R": "Mpendwa Theofilo, kitabu changu cha kwanza kilihusu kila kitu ambacho Yesu alianza kufanya na kufundisha. \\v 2 Kilieleza mambo hadi siku ile Mungu alipomchukua kwenda mbinguni. Kabla hajaondoka, aliwapa maagizo mitume aliowachagua. Alifanya hivyo kupitia Roho Mtakatifu."
+        },
+        "vi": {
+          "L": "Thưa ngài Thê-ô-phi-lơ, bản tường thuật thứ nhất tôi đã viết là về mọi điều Đức Giê-xu đã bắt đầu làm và dạy, \\v 2 cho đến ngày {{deity_pronoun:ngài|Ngài}} được cất lên, sau khi {{deity_pronoun:ngài|Ngài}} đã nhờ Đức Thánh Linh truyền lệnh cho các sứ đồ mà {{deity_pronoun:ngài|Ngài}} đã chọn.",
+          "B": "Thưa ngài Thê-ô-phi-lơ, trong cuốn sách thứ nhất, tôi đã thuật lại mọi điều Đức Giê-xu đã bắt đầu làm và dạy dỗ, \\v 2 cho đến ngày {{deity_pronoun:ngài|Ngài}} được cất lên. Trước đó, qua Đức Thánh Linh, {{deity_pronoun:ngài|Ngài}} đã truyền lệnh cho các sứ đồ {{deity_pronoun:ngài|Ngài}} đã chọn.",
+          "R": "Kính gửi ngài Thê-ô-phi-lơ: Cuốn sách trước của tôi kể về mọi điều Đức Giê-xu đã bắt đầu làm và dạy. \\v 2 Sách ấy kể cho đến ngày Đức Chúa Trời đem {{deity_pronoun:ngài|Ngài}} lên trời. Trước khi đi, {{deity_pronoun:ngài|Ngài}} đã truyền lệnh cho các sứ đồ mà {{deity_pronoun:ngài|Ngài}} đã chọn. Ngài làm điều đó qua Đức Thánh Linh."
+        },
+        "ko": {
+          "L": "데오빌로 각하, 저는 첫 번째 글에서 예수께서 행하시고 가르치기 시작하신 모든 일에 관하여 썼습니다. \\v 2 [그 글은] 그분이 택하신 사도들에게 성령을 통하여 명령하신 뒤에 들려 올라가신 날까지[의 일입니다].",
+          "B": "데오빌로 각하, 저는 첫 번째 책에서 예수께서 행하시고 가르치기 시작하신 모든 일을 기록하였습니다. \\v 2 그 책은 예수께서 하늘로 들려 올라가신 날까지의 일을 담고 있습니다. 그 전에 예수께서는 성령을 통하여, 택하신 사도들에게 분부하셨습니다.",
+          "R": "데오빌로 각하께 드립니다. 저는 첫 번째 책에 예수께서 하시고 가르치기 시작하신 모든 일을 썼습니다. \\v 2 그 책은 하나님께서 예수를 하늘로 데려가신 날까지의 이야기입니다. 예수께서는 떠나시기 전에 직접 뽑으신 사도들에게 할 일을 일러 주셨습니다. 성령을 통하여 그렇게 하셨습니다."
         }
       },
       "decisions": [
@@ -272,6 +282,120 @@
           "reason": "Swahili marks the pronouns for Jesus inside the verb, and a prefix cannot take a capital, so only free pronouns and possessives (yeye, wake, yake) carry the deity_pronoun span, as in Luke. Swahili therefore has fewer spans than English through the chapter.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n44001001008",
+            "n44001001009"
+          ],
+          "choice": "Theophilus is addressed as \"ngài\": \"Thưa ngài Thê-ô-phi-lơ\" (L, B), \"Kính gửi ngài Thê-ô-phi-lơ\" at the start (R), as in the Vietnamese Luke 1:3",
+          "alternatives": [
+            "\"Hỡi Thê-ô-phi-lơ\"",
+            "\"anh Thê-ô-phi-lơ\""
+          ],
+          "reason": "Acts is addressed to the same man as Luke's Gospel (meaning decision), so he is spoken to in the same way: \"ngài\", the respectful \"you\" for a person of standing, lowercase and with no deity_pronoun span. Here the Greek has no title, so none is added.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44001002006",
+            "n44001002008",
+            "n44001002009"
+          ],
+          "choice": "\"sứ đồ\" for apostle and \"Đức Thánh Linh\" for the Holy Spirit at every level (for the whole book)",
+          "alternatives": [
+            "\"Thánh Thần\"",
+            "\"những người được sai đi\""
+          ],
+          "reason": "These are the Protestant forms already used in the Vietnamese Gospels and letters. \"Thánh Linh\" alone stands for \"the Spirit\" where the Greek does not add \"holy\"; \"Thánh Thần\" is the Catholic form and is not used.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n44001001008",
+            "n44001001009",
+            "n44001001005"
+          ],
+          "choice": "the opening sentence (1:1-2) in 합쇼체, with Luke as \"저\" and Theophilus as \"데오빌로 각하\"; the story from 1:3 in the plain written style",
+          "alternatives": [
+            "\"데오빌로여\" (L)",
+            "\"데오빌로 님\"",
+            "the plain written style throughout"
+          ],
+          "reason": "Acts is the second volume to the same Theophilus (meaning decision), so the Korean takes up the courtesy of the Korean Luke 1:1-4, where he is \"각하\". The Greek here has only the name, without the title of honor of Luke 1:3, but Korean cannot address a man of rank by his bare name in a formal letter. From 1:3 the narrative uses the plain written style of the Korean Gospels (style guide, section 4).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n44001002011",
+            "n44001002012"
+          ],
+          "choice": "no deity_pronoun spans in Korean, through Acts 1-14; the narrative honours Jesus with \"께서\" and -시- (\"그분\" at Literal), and God and the Holy Spirit likewise",
+          "alternatives": [
+            "the English spans copied"
+          ],
+          "reason": "Korean has no capital letters, so the setting has nothing to change (style guide, section 7). As in the Korean Luke, respect is carried by the honorific. The apostles and other people take no honorific in the narrative (\"베드로가 말했다\").",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-3",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44001002012"
+          ],
+          "choice": "\"들려 올라가다\" (L, B); \"하나님께서 ... 하늘로 데려가셨다\" (R) for the passive \"was taken up\"",
+          "alternatives": [
+            "\"승천하시다\""
+          ],
+          "reason": "The same words as the Korean Luke 24:51, where this book's first volume ends. The passive means God took him up (meaning decision), which Readable says, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -334,6 +458,16 @@
           "L": "Kwao pia alijionyesha akiwa hai baada ya mateso {{deity_pronoun:yake|Yake}}, kwa ithibati nyingi, akiwatokea katika siku arobaini na kusema mambo yahusuyo ufalme wa Mungu.",
           "B": "Kwao pia alikuwa amejionyesha kwamba yu hai baada ya mateso {{deity_pronoun:yake|Yake}}, kwa ithibati nyingi zilizo wazi, kwa kuwa kwa siku arobaini aliwatokea na kuwaeleza habari za ufalme wa Mungu.",
           "R": "Baada ya Yesu kuteswa na kufa, aliwaonyesha mitume kwamba yu hai tena. Aliwapa ithibati nyingi zisizoacha nafasi ya shaka. Kwa siku arobaini aliendelea kuwatokea na kuzungumza nao kuhusu ufalme wa Mungu."
+        },
+        "vi": {
+          "L": "Với họ, {{deity_pronoun:ngài|Ngài}} cũng đã tỏ mình ra là đang sống sau khi chịu khổ, bằng nhiều bằng chứng chắc chắn; trong bốn mươi ngày {{deity_pronoun:ngài|Ngài}} hiện ra với họ và nói về những điều thuộc về vương quốc của Đức Chúa Trời.",
+          "B": "Sau khi chịu khổ, {{deity_pronoun:ngài|Ngài}} đã cho họ thấy {{deity_pronoun:ngài|Ngài}} đang sống, với nhiều bằng chứng rõ ràng. Trong bốn mươi ngày, {{deity_pronoun:ngài|Ngài}} hiện ra cho họ thấy và nói với họ về vương quốc của Đức Chúa Trời.",
+          "R": "Sau khi Đức Giê-xu chịu khổ và chết, {{deity_pronoun:ngài|Ngài}} cho các sứ đồ thấy rằng {{deity_pronoun:ngài|Ngài}} đã sống lại. Ngài cho họ nhiều bằng chứng, khiến họ không còn nghi ngờ gì nữa. Suốt bốn mươi ngày, {{deity_pronoun:ngài|Ngài}} nhiều lần hiện ra với họ và nói chuyện với họ về vương quốc của Đức Chúa Trời."
+        },
+        "ko": {
+          "L": "그분은 고난을 받으신 뒤에 많은 확실한 증거로 그들에게 자신이 살아 계심을 보이셨다. 사십 일 동안 그들에게 나타나 보이시며 하나님 나라에 관한 일들을 말씀하셨다.",
+          "B": "예수께서는 고난을 받으신 뒤에, 여러 가지 확실한 증거로 그들에게 자신이 살아 계신 것을 보여 주셨다. 사십 일 동안 그들에게 나타나셔서 하나님 나라에 관하여 말씀하셨다.",
+          "R": "예수께서는 고난을 받고 돌아가셨다. 그 뒤에 예수께서는 사도들에게 자신이 다시 살아나신 것을 보여 주셨다. 아무도 의심할 수 없는 증거를 많이 보여 주셨다. 예수께서는 사십 일 동안 여러 번 그들에게 나타나셔서, 하나님 나라에 관하여 이야기해 주셨다."
         }
       },
       "decisions": [
@@ -480,6 +614,55 @@
           "reason": "The Greek word is a proof that settles the matter (meaning decision m1). \"Ithibati\" is a proof that can be counted, so it can be \"many\"; \"ushahidi\" would blur it with the witness and testimony words (\"shahidi\", \"ushuhuda\") that Acts uses for the apostles.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44001003023",
+            "n44001003024",
+            "n44001003025"
+          ],
+          "choice": "\"vương quốc của Đức Chúa Trời\" for the kingdom of God at every level, as in the Vietnamese Luke",
+          "alternatives": [
+            "\"nước Đức Chúa Trời\"",
+            "\"Đức Chúa Trời cai trị\""
+          ],
+          "reason": "The meaning decision calls this the theme that opens and closes Acts, so it keeps the wording of Luke's Gospel here and in 28:31. Readable keeps it too, where the English Readable says \"God's kingdom\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44001003012",
+            "n44001003023",
+            "n44001003024",
+            "n44001003025"
+          ],
+          "choice": "\"확실한 증거\" (L, B), \"아무도 의심할 수 없는 증거\" (R); \"하나님 나라\" at every level",
+          "alternatives": [
+            "\"증거\" alone",
+            "\"하나님의 나라\""
+          ],
+          "reason": "Convincing proofs settle the matter (meaning decision), so Korean adds \"확실한\". \"하나님 나라\" is the form of the Korean Luke for the kingdom of God, God's rule.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -534,6 +717,16 @@
           "L": "Na alipokuwa akila pamoja [nao], aliwaagiza wasiondoke Yerusalemu, bali waingoje ahadi ya Baba, \"ambayo mliisikia kutoka {{deity_pronoun:kwangu|Kwangu}}.",
           "B": "Alipokuwa akila chakula pamoja nao, aliwaamuru wasiondoke Yerusalemu, bali wangoje huko kile ambacho Baba aliahidi: \"ile ahadi ambayo mmenisikia nikiinena.",
           "R": "Alipokuwa akila pamoja nao, aliwaambia, \"Msiondoke Yerusalemu. Kaeni hapa mngoje kile ambacho Baba aliahidi kutuma. Nimekwisha kuwaambia habari zake."
+        },
+        "vi": {
+          "L": "Và khi ăn chung [với họ], {{deity_pronoun:ngài|Ngài}} truyền cho họ đừng rời khỏi Giê-ru-sa-lem, nhưng hãy chờ đợi lời hứa của Cha, \"là điều các con đã nghe {{deity_pronoun:ta|Ta}} nói.",
+          "B": "Trong một bữa ăn với họ, {{deity_pronoun:ngài|Ngài}} dặn họ đừng rời khỏi Giê-ru-sa-lem, nhưng hãy ở đó chờ đợi điều Cha đã hứa: \"là lời hứa các con đã nghe {{deity_pronoun:ta|Ta}} nói đến.",
+          "R": "Trong khi đang ăn với họ, {{deity_pronoun:ngài|Ngài}} dặn họ: \"Đừng rời khỏi Giê-ru-sa-lem. Hãy ở lại đây và chờ đợi điều Cha đã hứa sẽ ban. Ta đã nói với các con về điều này rồi."
+        },
+        "ko": {
+          "L": "그리고 그분은 [그들과] 함께 음식을 드시면서, 그들에게 예루살렘을 떠나지 말고 아버지의 약속을 기다리라고 명령하셨다. \"[그것은] 너희가 나에게서 들은 것이다.",
+          "B": "예수께서는 그들과 함께 음식을 잡수시면서, 예루살렘을 떠나지 말고 거기서 아버지께서 약속하신 것을 기다리라고 그들에게 분부하셨다. \"그것은 너희가 나에게서 들은 약속이다.",
+          "R": "예수께서는 그들과 함께 음식을 잡수시면서 말씀하셨다. \"예루살렘을 떠나지 마라. 여기 머물면서 아버지께서 보내 주시겠다고 약속하신 것을 기다려라. 내가 이 일에 관하여 너희에게 말해 주었다."
         }
       },
       "decisions": [
@@ -654,6 +847,52 @@
           "reason": "Every plural \"you\", pronoun or verb, is the plural_you setting: the ustedes form (Latin America) by default, the vosotros form (Spain) as the alternative; English has no such choice. Spanish quotations take « », opening where the English opens its quotation (meaning decision m2). The same through the book.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n44001004016",
+            "n44001004017"
+          ],
+          "choice": "Jesus says \"Ta\" (with the setting span in mid-sentence) and calls the apostles \"các con\"; the narrator calls him \"Ngài\" (1:4-8)",
+          "alternatives": [
+            "\"Thầy\"",
+            "\"anh em\""
+          ],
+          "reason": "The forms of the Vietnamese Luke, which the same writer continues here: the risen Jesus speaks to his apostles as a teacher to his disciples.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n44001004003",
+            "n44001004016",
+            "n44001004017"
+          ],
+          "choice": "Jesus speaks to the apostles in 해라체 (\"너희\", \"기다려라\"), as in the Korean Gospels; the quotation opens where the English opens it",
+          "alternatives": [
+            "the order reported indirectly at every level"
+          ],
+          "reason": "Luke slips from reporting into quoting (meaning decision); Korean can do the same, and Jesus's words take the speech level of the Korean Luke. \"잡수시다\" is the honorific for eating.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -707,6 +946,16 @@
           "L": "Kwa kuwa Yohana alibatiza kwa maji, lakini ninyi mtabatizwa katika Roho Mtakatifu si siku nyingi baada ya hizi.\"",
           "B": "Kwa maana Yohana alibatiza kwa maji, lakini ninyi mtabatizwa kwa Roho Mtakatifu kabla siku nyingi hazijapita.\"",
           "R": "Yohana aliwabatiza watu kwa maji. Lakini baada ya siku chache tu, Mungu atawabatiza ninyi kwa Roho Mtakatifu.\""
+        },
+        "vi": {
+          "L": "Vì Giăng đã làm báp-têm bằng nước, nhưng các con sẽ chịu báp-têm trong Đức Thánh Linh, không lâu sau những ngày này.\"",
+          "B": "Giăng đã làm báp-têm bằng nước, nhưng chẳng bao lâu nữa, các con sẽ chịu báp-têm bằng Đức Thánh Linh.\"",
+          "R": "Giăng làm báp-têm cho người ta bằng nước. Nhưng chỉ ít ngày nữa thôi, Đức Chúa Trời sẽ làm báp-têm cho các con bằng Đức Thánh Linh.\""
+        },
+        "ko": {
+          "L": "요한은 물로 세례를 주었으나, 너희는 이제 며칠 지나지 않아 성령으로 세례를 받을 것이다.\"",
+          "B": "요한은 물로 세례를 주었지만, 너희는 머지않아 성령으로 세례를 받을 것이다.\"",
+          "R": "요한은 사람들에게 물로 세례를 주었다. 그러나 며칠 지나지 않아 하나님께서 너희에게 성령으로 세례를 주실 것이다.\""
         }
       },
       "decisions": [
@@ -833,6 +1082,58 @@
           "reason": "Literal keeps the Greek \"in\", the picture of being dipped in the Spirit as in water (meaning decision m2); Balanced and Readable use \"kwa\", as with \"kwa maji\" just before, the usual Swahili for the means of baptism.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44001005008",
+            "n44001005009",
+            "n44001005010",
+            "n44001005011"
+          ],
+          "choice": "\"chịu báp-têm trong Đức Thánh Linh\" (L); \"bằng Đức Thánh Linh\" (B, R)",
+          "alternatives": [
+            "\"được làm phép rửa\""
+          ],
+          "reason": "The wording of John's saying in the Vietnamese Luke 3:16, which Jesus now takes up (meaning decision). \"làm báp-têm\" is settled for baptize; \"chịu báp-têm\" is its passive, as in Luke 3:21.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44001005004",
+            "n44001005010",
+            "n44001005012",
+            "n44001005013",
+            "n44001005014",
+            "n44001005015",
+            "n44001005016"
+          ],
+          "choice": "\"세례\" at every level; \"이제 며칠 지나지 않아\" (L), \"머지않아\" (B) for \"not many days after these\"",
+          "alternatives": [
+            "\"침례\"",
+            "\"많은 날이 지나지 않아\" (L)"
+          ],
+          "reason": "\"세례\" is the word of the Korean Gospels (Luke 3:16). Literal says \"not many days\" in the natural Korean way; the sense is soon (meaning decision).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -888,6 +1189,16 @@
           "L": "Basi wale waliokusanyika walikuwa wakimwuliza, wakisema, \"Bwana, je, ni wakati huu unaourejesha ufalme kwa Israeli?\"",
           "B": "Walipokuwa wamekusanyika, waliendelea kumwuliza, \"Bwana, je, huu ndio wakati utakaourejesha ufalme kwa Israeli?\"",
           "R": "Mitume walipokutana na Yesu, walimwuliza, \"Bwana, je, sasa ndio wakati utakaoirudishia Israeli ufalme wake?\""
+        },
+        "vi": {
+          "L": "Vậy những người đã nhóm lại cứ hỏi {{deity_pronoun:ngài|Ngài}}: \"Lạy Chúa, có phải trong lúc này Chúa khôi phục vương quốc cho Y-sơ-ra-ên không?\"",
+          "B": "Khi đã nhóm lại, họ cứ hỏi {{deity_pronoun:ngài|Ngài}}: \"Lạy Chúa, có phải đây là lúc Chúa sẽ khôi phục vương quốc cho Y-sơ-ra-ên không?\"",
+          "R": "Khi các sứ đồ nhóm lại với Đức Giê-xu, họ hỏi {{deity_pronoun:ngài|Ngài}}: \"Lạy Chúa, có phải bây giờ Chúa sẽ trả lại vương quốc cho Y-sơ-ra-ên không?\""
+        },
+        "ko": {
+          "L": "그래서 함께 모인 사람들이 그분께 여쭈었다. \"주님, 주님께서 이스라엘에게 나라를 회복하시는 때가 바로 이때입니까?\"",
+          "B": "사도들이 함께 모였을 때에 예수께 거듭 여쭈었다. \"주님, 이스라엘에게 나라를 다시 세워 주실 때가 지금입니까?\"",
+          "R": "사도들은 예수와 함께 모였을 때에 이렇게 여쭈었다. \"주님, 이제 이스라엘에게 나라를 되돌려 주시려는 것입니까?\""
         }
       },
       "decisions": [
@@ -983,6 +1294,49 @@
           "reason": "Readable names those present and says \"restore\" in common words.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n44001006008"
+          ],
+          "choice": "\"Lạy Chúa\", and \"Chúa\" for \"you\", with no setting span",
+          "alternatives": [
+            "\"Ngài\""
+          ],
+          "reason": "As in the Vietnamese Luke, disciples who call Jesus Lord use \"Chúa\" for \"you\"; it is a word of address and takes no span, where the English marks \"You\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n44001006005",
+            "n44001006008"
+          ],
+          "choice": "the apostles speak to Jesus in 합쇼체 with \"주님\" (\"여쭈었다\", \"-입니까?\"), and repeat \"주님\" where English has \"you\"",
+          "alternatives": [
+            "\"당신\""
+          ],
+          "reason": "As in the Korean Luke, people speak to Jesus in the formal polite style, and Korean names him by his title rather than use a pronoun.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1068,6 +1422,16 @@
           "L": "Akawaambia, \"Si yenu kujua vipindi au nyakati ambazo Baba ameziweka kwa mamlaka {{deity_pronoun:yake|Yake}} mwenyewe, \\v 8 bali mtapokea nguvu, Roho Mtakatifu akiwa amekuja juu yenu, nanyi mtakuwa mashahidi {{deity_pronoun:wangu|Wangu}} katika Yerusalemu, na kote Uyahudi na Samaria, na hadi mwisho wa dunia.\"",
           "B": "Akawajibu, \"Vipindi na nyakati ambazo Baba amezipanga kwa mamlaka {{deity_pronoun:yake|Yake}} si mambo yenu kuyajua. \\v 8 Lakini Roho Mtakatifu atakapowajia, mtapokea nguvu, nanyi mtanishuhudia huko Yerusalemu, kote Uyahudi na Samaria, hadi miisho ya dunia.\"",
           "R": "Yesu akawaambia, \"Si kwa ajili yenu kujua nyakati hizo na tarehe hizo. Baba ndiye aliyeziweka, na ni juu {{deity_pronoun:yake|Yake}} kuamua. \\v 8 Lakini Roho Mtakatifu atakuja juu yenu, nanyi mtapokea nguvu. Ndipo mtawaambia watu habari {{deity_pronoun:zangu|Zangu}}. Mtawaambia huko Yerusalemu, kote Uyahudi na Samaria, na mpaka sehemu za mbali kabisa duniani.\""
+        },
+        "vi": {
+          "L": "Nhưng {{deity_pronoun:ngài|Ngài}} nói với họ: \"Việc biết thời gian hay thời điểm mà Cha đã định bởi quyền riêng của {{deity_pronoun:ngài|Ngài}} không phải là việc của các con; \\v 8 nhưng các con sẽ nhận lãnh quyền năng khi Đức Thánh Linh ngự xuống trên các con, và các con sẽ làm nhân chứng của {{deity_pronoun:ta|Ta}} tại Giê-ru-sa-lem, khắp cả Giu-đê và Sa-ma-ri, cho đến tận cùng trái đất.\"",
+          "B": "Ngài đáp: \"Thời gian và thời điểm mà Cha đã ấn định bằng quyền riêng của {{deity_pronoun:ngài|Ngài}}, các con không được biết. \\v 8 Nhưng khi Đức Thánh Linh ngự xuống trên các con, các con sẽ nhận được quyền năng và sẽ làm chứng về {{deity_pronoun:ta|Ta}} tại Giê-ru-sa-lem, khắp miền Giu-đê và Sa-ma-ri, cho đến tận cùng trái đất.\"",
+          "R": "Đức Giê-xu nói với họ: \"Các con không được biết khi nào những việc ấy xảy ra. Cha đã định thời gian ấy, và chính {{deity_pronoun:ngài|Ngài}} quyết định. \\v 8 Nhưng Đức Thánh Linh sẽ ngự xuống trên các con, và các con sẽ nhận được quyền năng. Rồi các con sẽ đi nói cho mọi người biết về {{deity_pronoun:ta|Ta}}. Các con sẽ nói tại Giê-ru-sa-lem, khắp miền Giu-đê và Sa-ma-ri, và đến những nơi xa nhất trên trái đất.\""
+        },
+        "ko": {
+          "L": "그분이 그들에게 말씀하셨다. \"아버지께서 자기 권한으로 정해 두신 시간이나 때는 너희가 알 바가 아니다. \\v 8 그러나 성령께서 너희에게 임하시면, 너희는 능력을 받을 것이다. 그리고 너희는 예루살렘과 온 유대와 사마리아에서, 그리고 땅끝까지 나의 증인이 될 것이다.\"",
+          "B": "예수께서 그들에게 대답하셨다. \"아버지께서 자기 권한으로 정하신 시간이나 때는 너희가 알 일이 아니다. \\v 8 그러나 성령께서 너희에게 내려오시면, 너희는 능력을 받을 것이다. 그리고 너희는 예루살렘과 온 유대와 사마리아와 땅끝에 이르기까지 나를 증언할 것이다.\"",
+          "R": "예수께서 그들에게 말씀하셨다. \"그때가 언제인지는 너희가 알 수 없다. 그것은 아버지께서 정하시는 일이다. \\v 8 그러나 성령께서 너희에게 오시면, 너희는 능력을 받을 것이다. 그러면 너희는 사람들에게 나에 관하여 알릴 것이다. 예루살렘에서, 온 유대와 사마리아에서, 그리고 땅의 가장 먼 곳까지 가서 알릴 것이다.\""
         }
       },
       "decisions": [
@@ -1224,6 +1588,78 @@
           "reason": "The book-wide name for Judea in these drafts, as in John: \"Uyahudi\" is the land of the Jews in everyday Swahili, while \"Yudea\" copies the Greek and is less familiar.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44001008011",
+            "n44001008012",
+            "n44001008013"
+          ],
+          "choice": "\"nhân chứng của Ta\" (L); \"làm chứng về Ta\" (B); \"nói cho mọi người biết về Ta\" (R)",
+          "alternatives": [
+            "\"chứng nhân\""
+          ],
+          "reason": "\"nhân chứng\" and \"làm chứng\" are the style guide's words for witness; Literal keeps the possessive (meaning decision: they belong to Jesus), Balanced turns it into the verb, as the English Balanced does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44001008013",
+            "n44001008025",
+            "n44001008026",
+            "n44001008027",
+            "n44001008028"
+          ],
+          "choice": "\"증인\" (L), \"증언하다\" (B), \"알리다\" (R); \"땅끝\" (L, B), \"땅의 가장 먼 곳\" (R)",
+          "alternatives": [
+            "\"증거하다\""
+          ],
+          "reason": "The witnesses saw and now tell what they saw (meaning decision); \"증인\" and \"증언하다\" are the words of the Korean John and Luke 24:48. Balanced and Readable follow the English in making it a verb.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n44001008004",
+            "n44001008005",
+            "n44001008006",
+            "n44001008007"
+          ],
+          "choice": "the honorific for the Holy Spirit (\"성령께서 ... 임하시면\"), through Acts",
+          "alternatives": [
+            "no honorific for the Spirit"
+          ],
+          "reason": "As in the Korean Luke 12:12, the Holy Spirit is spoken of as God is, with \"께서\" and -시-.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1275,6 +1711,16 @@
           "L": "Na baada ya kusema mambo haya, huku wakimtazama, aliinuliwa juu, na wingu likamchukua kutoka mbele ya macho yao.",
           "B": "Baada ya maneno hayo, aliinuliwa juu wao wakitazama, na wingu likamchukua, hata macho yao yasiweze kumwona tena.",
           "R": "Yesu alipomaliza kusema hayo, aliinuliwa juu angani huku wakiangalia. Kisha wingu likamfunika, na hawakuweza kumwona tena."
+        },
+        "vi": {
+          "L": "Nói xong những điều ấy, trong khi họ đang nhìn, {{deity_pronoun:ngài|Ngài}} được cất lên, và một đám mây tiếp {{deity_pronoun:ngài|Ngài}} khuất khỏi mắt họ.",
+          "B": "Nói xong những lời ấy, {{deity_pronoun:ngài|Ngài}} được cất lên ngay trước mắt họ, và một đám mây tiếp đón {{deity_pronoun:ngài|Ngài}}, khiến họ không còn thấy {{deity_pronoun:ngài|Ngài}} nữa.",
+          "R": "Đức Giê-xu nói xong thì được cất lên bầu trời trong khi họ đang nhìn theo. Rồi một đám mây che khuất {{deity_pronoun:ngài|Ngài}}, và họ không còn thấy {{deity_pronoun:ngài|Ngài}} nữa."
+        },
+        "ko": {
+          "L": "그리고 이 말씀을 하시고 나서, 그들이 보고 있는 가운데 그분이 들려 올라가셨다. 그리고 구름이 그분을 받아 그들의 눈에서 [가렸다].",
+          "B": "이 말씀을 하신 뒤에, 그들이 보는 앞에서 예수께서 들려 올라가셨다. 그리고 구름이 예수를 감싸, 그들의 눈에 더 이상 보이지 않게 되었다.",
+          "R": "이렇게 말씀하신 뒤에, 예수께서는 사도들이 보는 앞에서 하늘로 들려 올라가셨다. 그러자 구름이 예수를 가렸고, 그들은 더 이상 예수를 볼 수 없었다."
         }
       },
       "decisions": [
@@ -1365,6 +1811,28 @@
           "reason": "\"Une nuée\" is the word French uses for the cloud of God's presence in the Scriptures (m2), and it keeps that echo at Literal and Balanced. Readable says \"un nuage\", the everyday word.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44001009006",
+            "n44001009009"
+          ],
+          "choice": "\"들려 올라가다\" for the passive \"was lifted up\"; \"구름이 ... 받아\" (L), \"감싸\" (B), \"가렸다\" (R)",
+          "alternatives": [
+            "\"올라가셨다\" (active)"
+          ],
+          "reason": "God lifted him (meaning decision), so Korean keeps the passive \"들리다\", as the Korean Luke 24:51 does. The cloud received him and bore him out of sight; each level says it in its own words.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1432,6 +1900,16 @@
           "L": "Na walipokuwa wakikodolea macho angani, {{deity_pronoun:yeye|Yeye}} akienda, basi tazama, wanaume wawili waliovaa nguo nyeupe walisimama kando yao, \\v 11 nao pia walisema, \"Wanaume wa Galilaya, kwa nini mnasimama mkiangalia angani?",
           "B": "Alipokuwa akienda, wao waliendelea kukaza macho angani, na ghafla wanaume wawili waliovaa nguo nyeupe walikuwa wamesimama kando yao. \\v 11 Wakasema, \"Wanaume wa Galilaya, kwa nini mnasimama hapo mkiangalia juu angani?",
           "R": "Mitume walikuwa bado wakiangalia angani alipokuwa akiondoka. Ghafla wanaume wawili waliovaa nguo nyeupe walisimama karibu nao. \\v 11 Wakasema, \"Wanaume kutoka Galilaya, kwa nini mmesimama hapa mkiangalia angani?"
+        },
+        "vi": {
+          "L": "Và khi họ đang chăm chú nhìn lên trời trong lúc {{deity_pronoun:ngài|Ngài}} đi, thì kìa, có hai người nam mặc áo trắng đứng bên cạnh họ, \\v 11 và nói: \"Hỡi những người Ga-li-lê, sao các ông đứng nhìn lên trời?",
+          "B": "Trong khi {{deity_pronoun:ngài|Ngài}} đi lên, họ cứ chăm chú nhìn lên trời; bỗng có hai người nam mặc áo trắng đứng bên cạnh họ. \\v 11 Hai người ấy nói: \"Hỡi các ông người Ga-li-lê, sao các ông đứng đó nhìn lên trời?",
+          "R": "Các sứ đồ vẫn còn đang nhìn chăm chú lên bầu trời khi {{deity_pronoun:ngài|Ngài}} đi. Bỗng nhiên có hai người nam mặc áo trắng đứng bên cạnh họ. \\v 11 Họ nói: \"Này các ông người Ga-li-lê, sao các ông đứng đây nhìn lên bầu trời?"
+        },
+        "ko": {
+          "L": "그리고 그분이 가실 때에 그들이 하늘을 뚫어지게 쳐다보고 있었는데, 보라, 흰옷을 입은 두 남자가 그들 곁에 서 있었다. \\v 11 그들이 말했다. \"갈릴리 사람들아, 왜 하늘을 쳐다보며 서 있느냐?",
+          "B": "예수께서 올라가시는 동안 그들이 하늘을 뚫어지게 바라보고 있는데, 갑자기 흰옷을 입은 두 남자가 그들 곁에 서 있었다. \\v 11 그들이 말했다. \"갈릴리 사람들아, 왜 여기 서서 하늘을 쳐다보고 있느냐?",
+          "R": "예수께서 떠나가시는 동안 사도들은 하늘만 쳐다보고 있었다. 그런데 갑자기 흰옷을 입은 두 사람이 그들 곁에 서 있었다. \\v 11 그 두 사람이 말했다. \"갈릴리에서 온 사람들아, 왜 여기 서서 하늘만 쳐다보고 있느냐?"
         }
       },
       "decisions": [
@@ -1574,6 +2052,94 @@
           "reason": "The Greek word means both sky and heaven (meaning decision m2). Swahili has two words, as English does: \"anga\" where the apostles stare up at the sky, \"mbingu\" where Jesus is taken into heaven, following the English.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n44001011004",
+            "n44001011005"
+          ],
+          "choice": "The two men in white call the apostles \"các ông\": \"Hỡi những người Ga-li-lê\" (L), \"Hỡi các ông người Ga-li-lê\" (B), \"Này các ông người Ga-li-lê\" (R)",
+          "alternatives": [
+            "\"các anh\"",
+            "\"các ngươi\""
+          ],
+          "reason": "The messengers from God (meaning decision) speak to grown men with the courteous \"các ông\", as the angel in the Vietnamese Luke 1:13 speaks to Zechariah as \"ông\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44001010011"
+          ],
+          "choice": "\"kìa\" (L); \"bỗng\" (B); \"Bỗng nhiên\" (R) for \"look\"",
+          "alternatives": [
+            "\"này\""
+          ],
+          "reason": "As in the English, Literal keeps the pointing word and the other levels turn it into \"suddenly\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n44001010012",
+            "n44001010013",
+            "n44001011003",
+            "n44001011004",
+            "n44001011005"
+          ],
+          "choice": "the two men speak to the apostles in 해라체 (\"사람들아\", \"-느냐\"), as the angels do in the Korean Luke 24:5",
+          "alternatives": [
+            "합쇼체"
+          ],
+          "reason": "They are messengers from God (meaning decision); the Korean Luke has angels speak to people in the plain style (Luke 1:13; 24:5). \"두 남자\" (L, B), as in the Korean Luke 24:4.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44001010011"
+          ],
+          "choice": "\"보라\" (L), \"갑자기\" (B, R) for idou",
+          "alternatives": [
+            "\"보라\" at every level"
+          ],
+          "reason": "As the Korean Luke: Literal keeps \"보라\", Balanced and Readable say what it signals, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1631,6 +2197,16 @@
           "L": "Yesu huyu aliyeondolewa kwenu na kupandishwa mbinguni atakuja kwa namna ileile ambayo mmemwona akienda mbinguni.\"",
           "B": "Yesu huyu aliyechukuliwa kutoka kwenu kwenda mbinguni atakuja kwa namna ileile mliyomwona akiondoka kwenda mbinguni.\"",
           "R": "Yesu amechukuliwa kutoka kwenu kwenda mbinguni. Lakini siku moja atarudi. Atakuja kwa namna ileile mliyomwona akienda.\""
+        },
+        "vi": {
+          "L": "Đức Giê-xu này, Đấng đã được cất lên khỏi các ông vào trời, cũng sẽ đến theo cách như các ông đã thấy {{deity_pronoun:ngài|Ngài}} đi vào trời.\"",
+          "B": "Đức Giê-xu này đã được cất lên khỏi các ông vào trời, và {{deity_pronoun:ngài|Ngài}} sẽ trở lại đúng như cách các ông đã thấy {{deity_pronoun:ngài|Ngài}} lên trời.\"",
+          "R": "Đức Giê-xu đã được đem lên trời, rời khỏi các ông. Nhưng một ngày kia {{deity_pronoun:ngài|Ngài}} sẽ trở lại. Ngài sẽ trở lại giống như cách các ông đã thấy {{deity_pronoun:ngài|Ngài}} ra đi.\""
+        },
+        "ko": {
+          "L": "너희에게서 하늘로 들려 올라가신 이 예수께서는, 너희가 그분이 하늘로 가시는 것을 본 그대로 그렇게 오실 것이다.\"",
+          "B": "너희를 떠나 하늘로 들려 올라가신 이 예수께서는, 너희가 본 대로 하늘로 가신 그 모습 그대로 다시 오실 것이다.\"",
+          "R": "예수께서는 너희를 떠나 하늘로 올라가셨다. 그러나 언젠가 다시 오실 것이다. 너희가 본 것처럼, 하늘로 가신 모습 그대로 오실 것이다.\""
         }
       },
       "decisions": [
@@ -1695,6 +2271,29 @@
           "reason": "Readable shows that the coming is still future and is a return.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n44001011014",
+            "n44001011016",
+            "n44001011023"
+          ],
+          "choice": "the two men speak of Jesus with the honorific (\"올라가신\", \"오실\")",
+          "alternatives": [
+            "no honorific"
+          ],
+          "reason": "Messengers from God speak of Jesus with respect, as the angels of the Korean Luke 24:5-7 do of \"살아 계신 분\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1748,6 +2347,16 @@
           "L": "Ndipo walirudi Yerusalemu kutoka mlima uitwao Shamba la Mizeituni, ulio karibu na Yerusalemu, umbali wa safari ya Sabato.",
           "B": "Kisha walirudi Yerusalemu kutoka kilima kiitwacho Mlima wa Mizeituni. Kiko karibu na mji, {{units:chini ya kilomita moja|mwendo wa siku ya Sabato}} kutoka huko.",
           "R": "Kisha mitume walitembea kurudi Yerusalemu kutoka Mlima wa Mizeituni. Ulikuwa {{units:chini ya kilomita moja|mwendo wa siku ya Sabato}} tu kutoka mjini."
+        },
+        "vi": {
+          "L": "Bấy giờ họ trở về Giê-ru-sa-lem từ núi gọi là [núi] Ô-li-ve, là núi gần Giê-ru-sa-lem, cách một quãng đường ngày Sa-bát.",
+          "B": "Rồi họ từ ngọn đồi gọi là núi Ô-li-ve trở về Giê-ru-sa-lem. Núi này ở gần thành, cách {{units:chừng một cây số|một quãng đường ngày Sa-bát}}.",
+          "R": "Sau đó các sứ đồ đi bộ từ núi Ô-li-ve trở về Giê-ru-sa-lem. Núi ấy chỉ cách thành {{units:chừng một cây số|một quãng đường ngày Sa-bát}}."
+        },
+        "ko": {
+          "L": "그때에 그들은 올리브 밭이라고 불리는 산에서 예루살렘으로 돌아왔다. 그 산은 예루살렘에서 가까워, 안식일에 [걸을 수 있는] 길만큼 떨어져 있다.",
+          "B": "그 뒤에 그들은 올리브 산이라고 하는 산에서 예루살렘으로 돌아왔다. 그 산은 예루살렘에서 가까워, {{units:800미터쯤|안식일에 걸어도 되는 거리만큼}} 떨어져 있다.",
+          "R": "사도들은 올리브 산에서 걸어서 예루살렘으로 돌아왔다. 그 산은 예루살렘에서 {{units:800미터쯤|안식일에 걸어도 되는 거리만큼}}밖에 떨어져 있지 않았다."
         }
       },
       "decisions": [
@@ -1896,6 +2505,94 @@
           "reason": "Swahili measures in metric units, so the default is \"under a kilometre\" where the English gives \"about half a mile\": the Sabbath limit was about 2,000 cubits (meaning decision m1). The alternative keeps the Greek measure. This differs from the English US units.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n44001012014",
+            "n44001012015",
+            "n44001012016"
+          ],
+          "choice": "{{units:chừng một cây số|một quãng đường ngày Sa-bát}} (B, R); Literal keeps \"một quãng đường ngày Sa-bát\"",
+          "alternatives": [
+            "\"nửa dặm\""
+          ],
+          "reason": "The style guide gives metric measures by default, with the original measure as the alternative; the English gives US units. A Sabbath day's walk was about 2,000 cubits (meaning decision), somewhat under a kilometre.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44001012009"
+          ],
+          "choice": "\"núi Ô-li-ve\" for the Mount of Olives, as in the Vietnamese Luke 19:29",
+          "alternatives": [
+            "\"Vườn Ô-liu\""
+          ],
+          "reason": "The Greek name means \"Olive Grove\"; Vietnamese readers know the place as \"núi Ô-li-ve\", the form of the Gospels.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n44001012014",
+            "n44001012015",
+            "n44001012016"
+          ],
+          "choice": "{{units:800미터쯤|안식일에 걸어도 되는 거리만큼}} (B, R); Literal keeps the Sabbath's journey",
+          "alternatives": [
+            "\"1킬로미터쯤\""
+          ],
+          "reason": "The distance a Jew could walk on the Sabbath was about 2,000 cubits (meaning decision). Korean gives the metric distance by default and the original measure as the alternative (style guide, section 7), where the English gives US units; the particle after it fits both forms.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44001012006",
+            "n44001012008",
+            "n44001012009"
+          ],
+          "choice": "\"올리브 밭이라고 불리는 산\" (L); \"올리브 산\" (B, R)",
+          "alternatives": [
+            "\"감람산\""
+          ],
+          "reason": "Literal keeps the Greek name, \"Olive Grove\"; Balanced and Readable say \"올리브 산\", the form of the Korean Luke 19:29 and 21:37 (style guide, Settled: the modern word over \"감람\").",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1967,6 +2664,16 @@
           "L": "Na walipokwisha kuingia [mjini], walipanda kwenda chumba cha juu walimokuwa wakikaa: Petro na Yohana na Yakobo na Andrea, Filipo na Tomaso, Bartholomayo na Mathayo, Yakobo [mwana] wa Alfayo na Simoni Mzelote na Yuda [mwana] wa Yakobo.",
           "B": "Walipofika mjini, walipanda kwenda chumba cha ghorofani walimokuwa wakikaa. Walikuwepo Petro, Yohana, Yakobo na Andrea, Filipo na Tomaso, Bartholomayo na Mathayo, Yakobo mwana wa Alfayo, Simoni Mzelote, na Yuda mwana wa Yakobo.",
           "R": "Waliporudi mjini, walipanda kwenda chumba cha juu ya nyumba walimokuwa wakikaa. Hawa ndio waliokuwa mitume: Petro, Yohana, Yakobo, Andrea, Filipo, Tomaso, Bartholomayo, Mathayo, Yakobo mwana wa Alfayo, Simoni Mzelote, na Yuda mwana wa Yakobo."
+        },
+        "vi": {
+          "L": "Và khi đã vào [thành], họ lên phòng cao, là nơi họ đang ở: Phi-e-rơ và Giăng và Gia-cơ và Anh-rê, Phi-líp và Thô-ma, Ba-thê-lê-my và Ma-thi-ơ, Gia-cơ [con] của A-phê và Si-môn người Xê-lốt và Giu-đa [con] của Gia-cơ.",
+          "B": "Vào đến thành, họ lên căn phòng trên lầu, nơi họ vẫn ở. Có mặt ở đó là Phi-e-rơ, cùng với Giăng, Gia-cơ và Anh-rê, Phi-líp và Thô-ma, Ba-thê-lê-my và Ma-thi-ơ, Gia-cơ con A-phê, Si-môn người Xê-lốt, và Giu-đa con Gia-cơ.",
+          "R": "Khi về đến thành, họ lên căn phòng trên lầu, nơi họ đang ở. Đây là các sứ đồ: Phi-e-rơ, Giăng, Gia-cơ, Anh-rê, Phi-líp, Thô-ma, Ba-thê-lê-my, Ma-thi-ơ, Gia-cơ con của A-phê, Si-môn \"người Nhiệt Thành\", và Giu-đa con của Gia-cơ."
+        },
+        "ko": {
+          "L": "그리고 그들은 [성에] 들어가서, 묵고 있던 다락방으로 올라갔다. [그들은] 베드로와 요한과 야고보와 안드레, 빌립과 도마, 바돌로매와 마태, 알패오의 [아들] 야고보와 열심당원 시몬과 야고보의 [아들] 유다였다.",
+          "B": "그들은 성안으로 들어가서, 머물고 있던 다락방으로 올라갔다. 거기에는 베드로와 요한과 야고보와 안드레, 빌립과 도마, 바돌로매와 마태, 알패오의 아들 야고보와 열심당원 시몬과 야고보의 아들 유다가 있었다.",
+          "R": "사도들은 성안으로 돌아와서, 묵고 있던 집의 위층 방으로 올라갔다. 사도들은 베드로, 요한, 야고보, 안드레, 빌립, 도마, 바돌로매, 마태, 알패오의 아들 야고보, 열심당원 시몬, 야고보의 아들 유다였다."
         }
       },
       "decisions": [
@@ -2129,6 +2836,74 @@
           "reason": "As in Luke 6:15: Luke uses the Greek word \"Zealot\" itself (meaning decision m2), so every level says \"Mzelote\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44001013013",
+            "n44001013014",
+            "n44001013015",
+            "n44001013016",
+            "n44001013017",
+            "n44001013018",
+            "n44001013019",
+            "n44001013020",
+            "n44001013021",
+            "n44001013022",
+            "n44001013023",
+            "n44001013024",
+            "n44001013025",
+            "n44001013026",
+            "n44001013027",
+            "n44001013028",
+            "n44001013029",
+            "n44001013030",
+            "n44001013031",
+            "n44001013032",
+            "n44001013033",
+            "n44001013034"
+          ],
+          "choice": "The apostles' names as in the Vietnamese Luke 6:14-16; \"người Xê-lốt\" (L, B), \"người Nhiệt Thành\" (R)",
+          "alternatives": [
+            "\"Phê-rô\"",
+            "\"Gio-an\""
+          ],
+          "reason": "The Protestant forms are settled. Readable translates \"Zealot\" as the Vietnamese Luke's Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44001013006",
+            "n44001013013",
+            "n44001013023",
+            "n44001013027",
+            "n44001013031"
+          ],
+          "choice": "the apostles' names in the forms of the Korean Luke 6:14-16 (\"바돌로매\", \"알패오\", \"열심당원 시몬\"); \"다락방\" (L, B), \"위층 방\" (R)",
+          "alternatives": [
+            "\"셀롯인 시몬\""
+          ],
+          "reason": "The names as the Korean Luke gives them, so the list reads the same in both volumes. \"다락방\" is the Korean Luke 22:12's word for the upper room; Readable says plainly that it was upstairs, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2186,6 +2961,16 @@
           "L": "Hawa wote walikuwa wakijitoa kwa nia moja kwa maombi, pamoja na wanawake na Mariamu, mama wa Yesu, na pamoja na ndugu {{deity_pronoun:zake|Zake}}.",
           "B": "Wote hao walijitoa kwa bidii kwa maombi, wakiwa na nia moja. Pamoja nao walikuwepo wale wanawake, Mariamu mama wa Yesu, na ndugu {{deity_pronoun:zake|Zake}}.",
           "R": "Wote walikutana mara kwa mara na kuomba kwa moyo mmoja. Wanawake waliokuwa wamemfuata Yesu nao walikuwa pamoja nao, na pia Mariamu, mama wa Yesu, na ndugu {{deity_pronoun:zake|Zake}}."
+        },
+        "vi": {
+          "L": "Tất cả những người này đều một lòng chuyên tâm cầu nguyện, cùng với [các] phụ nữ, với Ma-ri, mẹ của Đức Giê-xu, và với các anh em của {{deity_pronoun:ngài|Ngài}}.",
+          "B": "Tất cả những người ấy đều một lòng chuyên tâm cầu nguyện. Cùng ở với họ có các phụ nữ, Ma-ri mẹ của Đức Giê-xu, và các anh em của {{deity_pronoun:ngài|Ngài}}.",
+          "R": "Họ thường xuyên nhóm lại và cùng một lòng cầu nguyện. Những phụ nữ đã theo Đức Giê-xu cũng ở với họ, cùng với Ma-ri, mẹ của Đức Giê-xu, và các anh em của {{deity_pronoun:ngài|Ngài}}."
+        },
+        "ko": {
+          "L": "이 사람들은 모두 여자들과 예수의 어머니 마리아와 그분의 형제들과 함께, 한마음으로 기도에 힘쓰고 있었다.",
+          "B": "이들은 모두 한마음이 되어 기도에 힘썼다. 여자들과 예수의 어머니 마리아와 예수의 형제들도 그들과 함께 있었다.",
+          "R": "그들은 모두 자주 모여서 한마음으로 기도했다. 예수를 따르던 여자들도 함께 있었다. 예수의 어머니 마리아와 예수의 형제들도 함께 있었다."
         }
       },
       "decisions": [
@@ -2280,6 +3065,49 @@
           "reason": "Readable says which women, as the meaning note explains.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44001014019",
+            "n44001014020"
+          ],
+          "choice": "\"các anh em của Ngài\" for his brothers, with no gender span, as in the Vietnamese Luke 8:19",
+          "alternatives": [
+            "\"các em trai\""
+          ],
+          "reason": "Vietnamese must otherwise say whether a brother is older (\"anh\") or younger (\"em\"); \"anh em\" leaves that open, as the Greek does. These are his brothers by family, not believers, so there is no setting span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44001014019"
+          ],
+          "choice": "\"형제들\", not \"동생들\", with no gender span",
+          "alternatives": [
+            "\"동생들\""
+          ],
+          "reason": "As in the Korean Luke 8:19 and Mark 6:3: \"동생들\" would decide that they were younger, which the text does not say. Specific men are meant (meaning decision).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2339,6 +3167,16 @@
           "L": "Na katika siku hizi Petro alisimama katikati ya ndugu akasema (na palikuwa na umati wa majina pamoja, kama mia moja na ishirini):",
           "B": "Katika siku hizo Petro alisimama kuzungumza kati ya ndugu, kundi la watu wapatao mia moja na ishirini waliokusanyika mahali pamoja.",
           "R": "Katika siku hizo, wafuasi wa Yesu walikutana pamoja. Walikuwa watu wapatao mia moja na ishirini. Petro alisimama mbele ya kundi hilo akazungumza."
+        },
+        "vi": {
+          "L": "Trong những ngày ấy, Phi-e-rơ đứng dậy giữa các {{gender:anh chị em|anh em}} và nói (lúc ấy có một đám đông chừng một trăm hai mươi người nhóm lại):",
+          "B": "Trong những ngày ấy, Phi-e-rơ đứng lên nói giữa các {{gender:anh chị em|anh em}}, lúc ấy có chừng một trăm hai mươi người đang nhóm lại tại một chỗ.",
+          "R": "Trong những ngày ấy, những người theo Đức Giê-xu nhóm lại với nhau. Có chừng một trăm hai mươi người. Phi-e-rơ đứng lên trước mọi người và nói:"
+        },
+        "ko": {
+          "L": "그리고 이 무렵에 베드로가 {{gender:형제자매|형제}}들 가운데 일어나서 말했다. (모인 무리의 수는 이름으로 백이십쯤 되었다.)",
+          "B": "그 무렵에 베드로가 {{gender:형제자매|형제}}들 가운데서 일어나 말했다. 그 자리에는 백이십 명쯤 되는 사람들이 모여 있었다.",
+          "R": "그 무렵 예수를 따르는 사람들이 함께 모였다. 모두 백이십 명쯤 되었다. 베드로가 그들 앞에서 일어나 말했다."
         }
       },
       "decisions": [
@@ -2480,6 +3318,87 @@
           "reason": "\"Ndugu\" already means brothers and sisters (meaning decision m1), so there is no second wording for the gender setting to choose. The same in 1:16 and through the book.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n44001015010",
+            "n44001015011"
+          ],
+          "choice": "{{gender:anh chị em|anh em}} for the believers (L, B); \"những người theo Đức Giê-xu\" (R)",
+          "alternatives": [
+            "\"các môn đồ\""
+          ],
+          "reason": "The brothers are the believers, men and women (meaning decision); this is the gender span the Vietnamese letters use for \"adelphoi\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44001015015",
+            "n44001015016"
+          ],
+          "choice": "\"một đám đông chừng một trăm hai mươi người\" (L) for \"a crowd of names\"",
+          "alternatives": [
+            "\"một đám đông chừng một trăm hai mươi danh\""
+          ],
+          "reason": "\"names\" for persons is an idiom (meaning decision) that Vietnamese cannot copy; \"danh\" would read as titles or reputations.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n44001015011"
+          ],
+          "choice": "{{gender:형제자매|형제}}들 for the believers (L, B); \"예수를 따르는 사람들\" (R)",
+          "alternatives": [
+            "\"형제들\" with no span"
+          ],
+          "reason": "The brothers are the believers, men and women (meaning decision); the settled Korean span gives \"형제자매\" by default, with the plural ending outside it. Readable follows the English Readable.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n44001015015",
+            "n44001015016"
+          ],
+          "choice": "\"이름으로 백이십쯤\" (L) for \"a crowd of names\"",
+          "alternatives": [
+            "\"백이십 명\" (L)"
+          ],
+          "reason": "Literal keeps the Greek's count of names; Balanced and Readable count people.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2553,6 +3472,16 @@
           "L": "\"Wanaume, ndugu, ilibidi Maandiko yatimie, ambayo Roho Mtakatifu aliyatabiri kupitia kinywa cha Daudi kuhusu Yuda, aliyewaongoza njia wale waliomkamata Yesu, \\v 17 kwa kuwa alikuwa amehesabiwa kati yetu, naye alipewa kwa kura sehemu yake katika huduma hii.",
           "B": "\"Ndugu, ilibidi yatimie yale ambayo Roho Mtakatifu alitabiri katika Maandiko kwa kinywa cha Daudi. Alinena habari za Yuda, aliyewaongoza wale waliomkamata Yesu. \\v 17 Yuda alihesabiwa kuwa mmoja wetu, na alipewa sehemu yake katika huduma hii.",
           "R": "\"Ndugu zangu, zamani sana Roho Mtakatifu alinena kupitia Mfalme Daudi katika Maandiko. Alieleza mambo ambayo yangempata Yuda, mtu aliyewaonyesha njia watu waliomkamata Yesu. Maneno hayo yalipaswa kutimia. \\v 17 Yuda alikuwa mmoja wa kikundi chetu, na alikuwa na sehemu yake katika kazi tunayofanya."
+        },
+        "vi": {
+          "L": "\"Thưa các anh em, lời Kinh Thánh mà Đức Thánh Linh đã dùng miệng Đa-vít nói trước về Giu-đa, kẻ đã dẫn đường cho những người bắt Đức Giê-xu, phải được ứng nghiệm; \\v 17 vì người ấy đã được kể vào số chúng tôi và đã nhận phần trong chức vụ này.",
+          "B": "\"Thưa {{gender:anh chị em|anh em}}, lời Kinh Thánh mà Đức Thánh Linh đã dùng miệng Đa-vít báo trước phải được ứng nghiệm. Lời ấy nói về Giu-đa, kẻ đã dẫn đường cho những người bắt Đức Giê-xu. \\v 17 Giu-đa đã được kể vào số chúng tôi, và đã được giao phần trong chức vụ này.",
+          "R": "\"Thưa {{gender:anh chị em|anh em}} của tôi, từ lâu Đức Thánh Linh đã nói qua vua Đa-vít trong Kinh Thánh. Ngài đã cho biết điều sẽ xảy đến với Giu-đa, kẻ đã chỉ đường cho những người bắt Đức Giê-xu. Những lời ấy phải trở thành sự thật. \\v 17 Giu-đa từng là một người trong nhóm chúng tôi, và đã có phần trong công việc chúng tôi làm."
+        },
+        "ko": {
+          "L": "\"형제 여러분, 성령께서 다윗의 입을 통하여 유다에 관하여 미리 말씀하신 성경이 이루어져야 했습니다. 유다는 예수를 잡은 사람들의 길잡이가 되었습니다. \\v 17 그는 우리 가운데 하나로 헤아려졌고, 이 직무의 몫을 받았기 때문입니다.",
+          "B": "\"{{gender:형제자매|형제}} 여러분, 성령께서 다윗의 입을 빌려 성경에 미리 말씀하신 일이 이루어져야 했습니다. 성령께서는 예수를 잡은 사람들의 앞잡이가 된 유다에 관하여 말씀하셨습니다. \\v 17 유다는 우리 가운데 한 사람으로 꼽혔고, 이 직무를 자기 몫으로 받았습니다.",
+          "R": "\"{{gender:형제자매|형제}} 여러분, 오래전에 성령께서 다윗 왕을 통하여 성경에 말씀하셨습니다. 성령께서는 유다에게 일어날 일을 미리 알려 주셨습니다. 유다는 예수를 잡으러 온 사람들에게 길을 알려 준 사람입니다. 성경의 그 말씀은 꼭 이루어져야 했습니다. \\v 17 유다는 우리 무리의 한 사람이었고, 우리가 하는 일에 자기 몫을 맡았습니다."
         }
       },
       "decisions": [
@@ -2751,6 +3680,97 @@
           "reason": "Literal keeps both words of the formal address (meaning decision m1), as the English Literal does. Balanced and Readable say \"ndugu\", which already includes the women present.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n44001016001",
+            "n44001016002"
+          ],
+          "choice": "\"Thưa các anh em\" (L); \"Thưa {{gender:anh chị em|anh em}}\" (B, R) for \"Men, brothers\"",
+          "alternatives": [
+            "\"Hỡi các người nam, anh em\"",
+            "\"Thưa các ông\""
+          ],
+          "reason": "The Greek is a formal address to an assembly (meaning decision). \"Thưa các anh em\" is the Vietnamese formal address to a gathering, and its \"anh em\" already names men, so Literal adds no word for \"men\". Balanced and Readable follow the English setting for a gathering of men and women believers. The same pattern is used wherever Acts has this address.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n44001017005"
+          ],
+          "choice": "\"chúng tôi\" for \"us\" when Peter means the apostles (1:17, 1:21-22)",
+          "alternatives": [
+            "\"chúng ta\""
+          ],
+          "reason": "Vietnamese must say whether \"we\" includes the hearers. Judas was numbered among the Twelve, and the new witness must join the apostles, so it is the exclusive \"chúng tôi\"; \"chúng ta\" is kept for the whole group in 1:21 at Readable.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n44001016001",
+            "n44001016002"
+          ],
+          "choice": "Peter speaks to the assembly in 합쇼체 and says \"나\" and \"우리\"; \"형제 여러분\" (L) and {{gender:형제자매|형제}} 여러분 (B, R) for \"Men, brothers\", through Acts",
+          "alternatives": [
+            "\"남자 형제들이여\" (L)",
+            "\"형제들아\""
+          ],
+          "reason": "\"Men, brothers\" is a formal address to an assembly (meaning decision). Korean addresses a gathering with \"여러분\" in the formal polite style of a public speech, and \"여러분\" already carries the formality of \"men\", so Korean does not add a separate word for it. Balanced and Readable use the settled span for believers, as the English does; the speeches to Jewish gatherings take the same style. As in the Korean letters, an apostle speaking with authority says \"나\", not the humble \"저\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44001016020",
+            "n44001016021",
+            "n44001016022",
+            "n44001017011"
+          ],
+          "choice": "\"길잡이\" (L), \"앞잡이\" (B), \"길을 알려 준 사람\" (R); \"직무\" (L, B), \"하는 일\" (R) for diakonia",
+          "alternatives": [
+            "\"안내자\""
+          ],
+          "reason": "Judas guided the arresting party; \"앞잡이\" says it with the reproach the context carries. The ministry is the apostles' service (meaning decision).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2808,6 +3828,16 @@
           "L": "(Basi huyu alipata shamba kutokana na ujira wa uovu [wake], na alipoanguka kichwa chini alipasuka katikati, na utumbo wake wote ukamwagika.",
           "B": "(Mtu huyu alipata shamba lililolipiwa kwa fedha alizopata kwa uhalifu wake. Alianguka kichwa chini, akapasuka katikati, na utumbo wake wote ukatoka nje.",
           "R": "(Yuda alilipwa fedha kwa ajili ya ubaya alioutenda, na fedha hizo zilinunua shamba. Yuda alianguka kichwa chini, mwili wake ukapasuka, na vyote vilivyokuwa tumboni vikamwagika nje."
+        },
+        "vi": {
+          "L": "(Vậy người này đã có được một thửa ruộng nhờ tiền công của việc gian ác, rồi té đâm đầu xuống, bị vỡ toang ở giữa, và mọi ruột gan đều đổ ra.",
+          "B": "(Người này đã có được một thửa ruộng, mua bằng số tiền nhận được do tội ác của mình. Rồi ông ta té đâm đầu xuống, thân thể vỡ toang ra, và ruột gan đổ ra hết.",
+          "R": "(Giu-đa được trả tiền cho việc ác ông ta đã làm, và số tiền ấy đã mua một thửa ruộng. Giu-đa té đâm đầu xuống, thân thể vỡ ra, và ruột gan đổ ra hết."
+        },
+        "ko": {
+          "L": "(그런데 이 사람은 불의의 삯으로 밭을 얻었고, 곤두박질하여 몸 한가운데가 터져서 그의 창자가 모두 쏟아져 나왔다.",
+          "B": "(이 사람은 자기 악행의 대가로 받은 돈으로 밭을 샀는데, 거꾸로 떨어져 배가 터지고 창자가 다 쏟아져 나왔다.",
+          "R": "(유다는 나쁜 짓을 한 대가로 돈을 받았는데, 그 돈으로 밭을 샀다. 유다는 거꾸로 떨어졌다. 그의 몸이 터져서 배 속에 있던 것이 모두 쏟아져 나왔다."
         }
       },
       "decisions": [
@@ -2886,6 +3916,29 @@
           "reason": "Readable names Judas and says what his \"wickedness\" was in plain words.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n44001018001",
+            "n44001018004",
+            "n44001018005"
+          ],
+          "choice": "Luke's aside (1:18-19) in round brackets and in the plain written style, outside Peter's polite speech",
+          "alternatives": [
+            "Peter's 합쇼체 kept through the aside"
+          ],
+          "reason": "The aside is Luke's, for his readers (meaning decision), so it takes the narrative's speech level, as the English marks it off with brackets.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2944,6 +3997,16 @@
           "L": "Na jambo hili likajulikana na wote waishio Yerusalemu, hivi kwamba shamba lile likaitwa kwa lugha yao wenyewe Hakeldamaki, yaani, Shamba la Damu.)",
           "B": "Habari hiyo ilienea kwa wote walioishi Yerusalemu, na hivyo shamba hilo likaja kuitwa kwa lugha yao Hakeldama, maana yake Shamba la Damu.)",
           "R": "Watu wote wa Yerusalemu walisikia habari hii. Kwa hiyo wakaliita shamba hilo Hakeldama. Kwa lugha yao jina hilo linamaanisha Shamba la Damu.)"
+        },
+        "vi": {
+          "L": "Việc này đã được mọi người ở Giê-ru-sa-lem biết đến, đến nỗi thửa ruộng ấy được gọi theo tiếng riêng của họ là Ha-ken-đa-mạch, nghĩa là Ruộng Máu.)",
+          "B": "Mọi người sống tại Giê-ru-sa-lem đều biết chuyện này, nên thửa ruộng ấy được gọi theo tiếng của họ là Ha-ken-đa-ma, nghĩa là Ruộng Máu.)",
+          "R": "Mọi người ở Giê-ru-sa-lem đều biết chuyện này. Vì vậy họ đặt tên cho thửa ruộng ấy là Ha-ken-đa-ma. Trong tiếng của họ, tên này có nghĩa là Ruộng Máu.)"
+        },
+        "ko": {
+          "L": "그리고 [이 일이] 예루살렘에 사는 모든 사람에게 알려져서, 그 밭은 그들의 말로 아겔다마, 곧 피의 밭이라고 불리게 되었다.)",
+          "B": "이 일은 예루살렘에 사는 모든 사람에게 알려졌다. 그래서 그 땅은 그들의 말로 아겔다마, 곧 '피의 밭'이라고 불리게 되었다.)",
+          "R": "예루살렘에 사는 사람들은 모두 이 일을 알게 되었다. 그래서 사람들은 그 밭을 아겔다마라고 불렀다. 그들의 말로 '피의 밭'이라는 뜻이다.)"
         }
       },
       "decisions": [
@@ -3028,6 +4091,50 @@
           "reason": "Literal spells out the Greek letters as the English Literal does, with Spanish \"j\" for the final sound; Balanced and Readable use \"Acéldama\", the form Spanish readers know. The name is Aramaic (meaning decision m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44001019017"
+          ],
+          "choice": "\"Ha-ken-đa-mạch\" (L); \"Ha-ken-đa-ma\" (B, R)",
+          "alternatives": [
+            "\"A-ken-đa-ma\""
+          ],
+          "reason": "As the English, Literal spells the Greek form with its final consonant and the other levels give the familiar form of the name.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44001019017",
+            "n44001019020",
+            "n44001019021"
+          ],
+          "choice": "\"아겔다마\" at every level; \"피의 밭\"",
+          "alternatives": [
+            "\"하겔다막\" (L)"
+          ],
+          "reason": "\"아겔다마\" is the established Protestant form of the name (style guide, Settled); Korean does not keep the variant ending of the Greek spelling at Literal, where the English does, since the reader would not recognize it.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3088,6 +4195,16 @@
           "L": "Kwa maana imeandikwa katika kitabu cha Zaburi, 'Makao yake na yawe ukiwa, wala asiwepo mtu wa kukaa ndani yake,' na, 'Mwingine na achukue nafasi yake ya usimamizi.'",
           "B": "Kwa maana kitabu cha Zaburi kinasema, 'Nyumba yake na iwe magofu, asiwepo mtu wa kuishi ndani yake,' na tena, 'Mtu mwingine na ashike wadhifa wake.'",
           "R": "Kitabu cha Zaburi kinasema hivi: 'Nyumba yake na ibaki tupu. Mtu yeyote asiishi ndani yake.' Tena kinasema, 'Mtu mwingine na achukue kazi yake ya uongozi.'"
+        },
+        "vi": {
+          "L": "Vì có lời chép trong sách Thi Thiên: 'Nguyện chỗ ở của người ấy trở nên hoang vắng, và đừng có ai ở trong đó,' và: 'Nguyện người khác lấy chức vụ của người ấy.'",
+          "B": "Vì trong sách Thi Thiên có chép: 'Nguyện nhà của người ấy trở nên hoang tàn, không còn ai ở đó nữa,' và: 'Nguyện người khác nhận lấy chức vụ của người ấy.'",
+          "R": "Đây là điều đã được viết trong sách Thi Thiên: 'Nguyện nhà của người ấy bị bỏ trống. Đừng để ai ở trong đó.' Sách ấy cũng nói: 'Hãy để người khác nhận lấy công việc lãnh đạo của người ấy.'"
+        },
+        "ko": {
+          "L": "시편에 이렇게 기록되어 있기 때문입니다. '그의 거처가 황폐하게 되고, 그 안에 사는 사람이 없게 하여라.' 그리고 '그의 직분을 다른 사람이 차지하게 하여라.'",
+          "B": "시편에 이렇게 기록되어 있습니다. '그의 집이 폐허가 되고, 거기 사는 사람이 아무도 없게 하소서.' 또 '그의 자리를 다른 사람이 맡게 하소서.'",
+          "R": "시편에 이렇게 쓰여 있습니다. '그의 집을 비게 하소서. 아무도 거기 살지 못하게 하소서.' 또 '그가 맡았던 지도자의 일을 다른 사람이 맡게 하소서.'"
         }
       },
       "decisions": [
@@ -3250,6 +4367,73 @@
           "reason": "Peter's speech is already inside « », so the psalms he quotes take the inner French quotation marks “ ”, as the English uses single marks.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44001020001",
+            "n44001020020"
+          ],
+          "choice": "\"Có lời chép\" (L), \"có chép\" (B) for \"it is written\"; \"chức vụ\" (L, B), \"công việc lãnh đạo\" (R) for his office",
+          "alternatives": [
+            "\"chức giám mục\"",
+            "\"chức giám sát\""
+          ],
+          "reason": "\"Có lời chép\" is the Vietnamese Luke's Literal for \"it is written\". The word for office is the one used for oversight (meaning decision); \"chức vụ\" says it without suggesting a later church rank.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n44001020006",
+            "n44001020013",
+            "n44001020022"
+          ],
+          "choice": "the psalm's wishes as commands, \"-하여라\" (L), and as a prayer to God, \"-하소서\" (B, R)",
+          "alternatives": [
+            "\"-하여라\" at every level"
+          ],
+          "reason": "The Greek has third-person commands, which Korean has no form for. Literal keeps a command; in the psalms the wish is spoken to God, so Balanced and Readable say it as a prayer.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44001020020"
+          ],
+          "choice": "\"직분\" (L), \"자리\" (B), \"지도자의 일\" (R) for episkopē",
+          "alternatives": [
+            "\"감독직\""
+          ],
+          "reason": "His office is his post, his task of oversight (meaning decision); \"감독\" is kept for the church office of the letters (Titus 1:7).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3327,6 +4511,16 @@
           "L": "Basi ni lazima kwamba katika wanaume walioambatana nasi wakati wote ambao Bwana Yesu aliingia na kutoka kati yetu, \\v 22 kuanzia ubatizo wa Yohana hadi siku ile alipochukuliwa juu kutoka kwetu, mmoja wa hawa awe shahidi pamoja nasi wa ufufuo {{deity_pronoun:wake|Wake}}.\"",
           "B": "Kwa hiyo tunahitaji mmoja wa wanaume walioambatana nasi muda wote Bwana Yesu alipokuwa akienda na kurudi kati yetu, \\v 22 tangu siku Yohana alipobatiza hadi siku alipochukuliwa kutoka kwetu. Mmoja wao lazima aungane nasi kuwa shahidi wa ufufuo {{deity_pronoun:wake|Wake}}.\"",
           "R": "Kwa hiyo ni lazima tumchague mtu mmoja aungane nasi. Ni lazima awe mtu aliyekuwa pamoja nasi wakati wote Bwana Yesu alipotembea pamoja nasi. \\v 22 Wakati huo ulianza Yohana alipokuwa akiwabatiza watu. Uliisha siku ile Yesu alipochukuliwa kutoka kwetu kwenda mbinguni. Mtu huyo lazima awe mmoja anayeweza kuwaambia watu, kama sisi tunavyofanya, kwamba Yesu alifufuka.\""
+        },
+        "vi": {
+          "L": "Vậy, trong số những người nam đã cùng đi với chúng tôi suốt thời gian Chúa Giê-xu ra vào giữa chúng tôi, \\v 22 bắt đầu từ phép báp-têm của Giăng cho đến ngày {{deity_pronoun:ngài|Ngài}} được cất lên khỏi chúng tôi, cần phải có một người trở thành nhân chứng cùng với chúng tôi về sự sống lại của {{deity_pronoun:ngài|Ngài}}.\"",
+          "B": "Vậy chúng tôi cần một người trong số những người nam đã luôn đi cùng chúng tôi suốt thời gian Chúa Giê-xu đi lại giữa chúng tôi, \\v 22 từ khi Giăng làm báp-têm cho đến ngày {{deity_pronoun:ngài|Ngài}} được cất lên khỏi chúng tôi. Một trong những người ấy phải cùng với chúng tôi làm nhân chứng về sự sống lại của {{deity_pronoun:ngài|Ngài}}.\"",
+          "R": "Vì vậy, chúng ta phải chọn một người để cùng làm việc với chúng tôi. Người ấy phải là người đã ở với chúng tôi suốt thời gian Chúa Giê-xu đi lại với chúng tôi. \\v 22 Thời gian ấy bắt đầu từ khi Giăng làm báp-têm cho người ta, và kết thúc vào ngày Đức Giê-xu được cất lên trời, rời khỏi chúng tôi. Người này phải là người có thể cùng chúng tôi nói cho mọi người biết rằng Đức Giê-xu đã sống lại.\""
+        },
+        "ko": {
+          "L": "그러므로 주 예수께서 우리 가운데 드나드시던 모든 기간에 우리와 함께 다니던 사람들 가운데서, \\v 22 요한의 세례로부터 시작하여 그분이 우리에게서 들려 올라가신 날까지, 이들 가운데 한 사람이 우리와 함께 그분의 부활의 증인이 되어야 합니다.\"",
+          "B": "그러므로 주 예수께서 우리와 함께 지내시던 그 모든 기간에 우리와 늘 함께 다니던 사람들 가운데서, \\v 22 곧 요한이 세례를 주던 때부터 예수께서 우리를 떠나 들려 올라가신 날까지 함께 있던 사람들 가운데서, 한 사람이 우리와 함께 예수의 부활을 증언하는 사람이 되어야 합니다.\"",
+          "R": "그러므로 우리는 한 사람을 뽑아서 우리와 함께 일하게 해야 합니다. 그 사람은 주 예수께서 우리와 함께 다니시는 동안 늘 우리와 함께 있던 사람이어야 합니다. \\v 22 그 기간은 요한이 사람들에게 세례를 주던 때에 시작되었고, 예수께서 우리를 떠나 하늘로 올라가신 날에 끝났습니다. 이 사람은 우리처럼 예수께서 다시 살아나신 것을 사람들에게 알릴 수 있는 사람이어야 합니다.\""
         }
       },
       "decisions": [
@@ -3423,6 +4617,50 @@
           "reason": "Readable says what \"it is necessary\" leads to (1:23-26) and where Jesus was taken.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44001021006"
+          ],
+          "choice": "\"những người nam\" for the men (L, B)",
+          "alternatives": [
+            "\"những người\""
+          ],
+          "reason": "The Greek word is male (meaning decision), and Vietnamese \"người\" alone would not say so; Readable says \"người\" as the English Readable says \"a man\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44001021011",
+            "n44001021013",
+            "n44001022013",
+            "n44001022015"
+          ],
+          "choice": "\"드나드시다\" (L); \"함께 지내시다\" (B); \"함께 다니시다\" (R); \"부활의 증인\" (L), \"부활을 증언하는 사람\" (B)",
+          "alternatives": [
+            "\"왕래하시다\""
+          ],
+          "reason": "To go in and out among people is to live and work among them day by day (meaning decision). The resurrection is the center of the apostles' task, so Korean keeps \"부활\" at Literal and Balanced and says it plainly at Readable.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3472,6 +4710,16 @@
           "L": "Na wakawasimamisha wawili, Yusufu aitwaye Barsaba, aliyejulikana pia kwa jina la Yusto, na Mathia.",
           "B": "Walipendekeza wanaume wawili: Yusufu aliyeitwa Barsaba, aliyejulikana pia kama Yusto, na Mathia.",
           "R": "Kikundi kiliwataja wanaume wawili. Mmoja alikuwa Yusufu, aliyeitwa Barsaba. Jina lake jingine lilikuwa Yusto. Mwingine alikuwa Mathia."
+        },
+        "vi": {
+          "L": "Và họ đề cử hai người: Giô-sép, gọi là Ba-sa-ba, cũng có tên là Giu-tu, và Ma-thia.",
+          "B": "Họ đề cử hai người: Giô-sép, gọi là Ba-sa-ba, còn có tên là Giu-tu, và Ma-thia.",
+          "R": "Cả nhóm nêu tên hai người. Một người là Giô-sép, được gọi là Ba-sa-ba. Ông còn có tên khác là Giu-tu. Người kia là Ma-thia."
+        },
+        "ko": {
+          "L": "그리고 그들은 두 사람을 세웠다. 바사바라고 불리고 유스도라는 별명을 가진 요셉과 맛디아였다.",
+          "B": "그들은 두 사람을 추천했다. 바사바라고도 하고 유스도라고도 불리는 요셉과, 맛디아였다.",
+          "R": "그 무리는 두 사람을 내세웠다. 한 사람은 바사바라고 불리는 요셉이었다. 그에게는 유스도라는 이름도 있었다. 다른 한 사람은 맛디아였다."
         }
       },
       "decisions": [
@@ -3530,6 +4778,54 @@
             "the group chose"
           ],
           "reason": "Readable avoids \"chose\", since the choice is God's in 1:24.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44001023007",
+            "n44001023010",
+            "n44001023012"
+          ],
+          "choice": "\"Ba-sa-ba\", \"Giu-tu\", \"Ma-thia\"",
+          "alternatives": [
+            "\"Mát-thi-a\""
+          ],
+          "reason": "The forms of the Protestant tradition, kept apart from \"Ma-thi-ơ\" (Matthew) in 1:13.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44001023004",
+            "n44001023007",
+            "n44001023010",
+            "n44001023012"
+          ],
+          "choice": "\"요셉\", \"바사바\", \"유스도\", \"맛디아\"",
+          "alternatives": [
+            "\"유스투스\"",
+            "\"마티아\""
+          ],
+          "reason": "The established Protestant forms of the names (style guide, Settled).",
           "uncertain": false,
           "footnote": false
         }
@@ -3603,6 +4899,16 @@
           "L": "Na baada ya kuomba, walisema, \"Wewe, Bwana, mjuzi wa mioyo ya wote, dhihirisha yupi kati ya hawa wawili umemteua, \\v 25 ili ashike nafasi ya huduma hii na ya utume, ambayo Yuda aliikengeuka ili aende mahali palipo pake.\"",
           "B": "Kisha wakaomba, \"Bwana, {{deity_pronoun:wewe|Wewe}} unayeijua mioyo ya watu wote, tuonyeshe wazi ni yupi kati ya hawa wawili uliyemteua \\v 25 kushika nafasi katika huduma hii ya utume ambayo Yuda aliiacha ili aende mahali pake.\"",
           "R": "Kisha wakaomba, \"Bwana, {{deity_pronoun:wewe|Wewe}} unajua yaliyo ndani ya moyo wa kila mtu. Tuonyeshe ni yupi kati ya watu hawa wawili uliyemchagua. \\v 25 Yuda aliiacha kazi yake ya utume akaenda mahali alipostahili kwenda. Tuonyeshe yule atakayechukua nafasi yake katika kazi hii.\""
+        },
+        "vi": {
+          "L": "Và họ cầu nguyện rằng: \"Lạy Chúa, Chúa là Đấng biết lòng mọi người, xin chỉ cho thấy trong hai người này, Chúa đã chọn người nào \\v 25 để nhận lấy chỗ trong chức vụ và chức sứ đồ này, là chức mà Giu-đa đã bỏ để đi đến chỗ riêng của ông ta.\"",
+          "B": "Rồi họ cầu nguyện: \"Lạy Chúa, Chúa biết lòng của mọi người. Xin cho chúng con biết rõ trong hai người này, ai là người Chúa đã chọn \\v 25 để nhận lấy vị trí trong chức vụ sứ đồ này, là chức vụ Giu-đa đã bỏ để đi đến chỗ dành cho ông ta.\"",
+          "R": "Rồi họ cầu nguyện: \"Lạy Chúa, Chúa biết lòng của mọi người. Xin chỉ cho chúng con thấy Chúa đã chọn ai trong hai người này. \\v 25 Giu-đa đã bỏ công việc sứ đồ và đi đến nơi dành cho ông ta. Xin chỉ cho chúng con người sẽ thay chỗ ông ta trong công việc này.\""
+        },
+        "ko": {
+          "L": "그리고 그들이 기도하며 말했다. \"모든 사람의 마음을 아시는 주님, 이 두 사람 가운데 주님께서 택하신 한 사람을 보여 주십시오. \\v 25 그가 이 섬기는 일과 사도의 직분의 자리를 맡게 해 주십시오. 유다는 이 자리를 버리고 자기 곳으로 갔습니다.\"",
+          "B": "그리고 그들이 기도했다. \"모든 사람의 마음을 아시는 주님, 이 두 사람 가운데 누구를 택하셨는지 밝히 보여 주십시오. \\v 25 유다가 이 섬기는 일과 사도의 직분을 저버리고 제 갈 곳으로 갔으니, 그 자리를 채울 사람을 보여 주십시오.\"",
+          "R": "그런 다음 그들은 기도했다. \"주님, 주님께서는 모든 사람의 마음속을 다 아십니다. 이 두 사람 가운데 주님께서 뽑으신 사람이 누구인지 저희에게 보여 주십시오. \\v 25 유다는 사도로서 하던 일을 버리고 자기가 가야 할 곳으로 갔습니다. 유다를 대신하여 이 일을 맡을 사람을 보여 주십시오.\""
         }
       },
       "decisions": [
@@ -3707,6 +5013,51 @@
           "reason": "The Greek clause about Judas hangs on \"place\"; Readable makes it a sentence of its own.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n44001024004",
+            "n44001024005"
+          ],
+          "choice": "\"Lạy Chúa\", \"Chúa\" for \"you\" and \"chúng con\" for those praying, with no setting span",
+          "alternatives": [
+            "\"Ngài\""
+          ],
+          "reason": "The Lord here is Jesus, who chose the apostles (meaning decision), and the believers speak to him as the disciples do in the Vietnamese Luke; words of address take no span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n44001024004",
+            "n44001024005",
+            "n44001024008"
+          ],
+          "choice": "the prayer in 합쇼체 to \"주님\" (\"보여 주십시오\"), with \"저희\" (R), as the Korean Luke has people pray",
+          "alternatives": [
+            "\"당신\""
+          ],
+          "reason": "The Lord here is Jesus, who chose the apostles (meaning decision); prayer to him takes the style the Korean Gospels use for speaking to him, and names him \"주님\" where English has \"you\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3760,6 +5111,16 @@
           "L": "Na wakawatolea kura, na kura ikamwangukia Mathia, naye akaongezwa katika hesabu ya mitume kumi na mmoja.",
           "B": "Walipiga kura kwa ajili ya hao wawili, nayo ikamwangukia Mathia, na tangu hapo akahesabiwa pamoja na mitume kumi na mmoja.",
           "R": "Kisha walitumia kura kuamua kati ya watu hao wawili. Kura ilionyesha kwamba Mathia ndiye. Kwa hiyo Mathia akawa mtume pamoja na wale kumi na mmoja wengine."
+        },
+        "vi": {
+          "L": "Rồi họ bắt thăm cho hai người, và thăm trúng Ma-thia; và ông được kể chung với mười một sứ đồ.",
+          "B": "Họ bắt thăm cho hai người; thăm trúng Ma-thia, và từ đó ông được kể vào số mười một sứ đồ.",
+          "R": "Rồi họ bắt thăm để chọn một trong hai người. Thăm cho thấy Ma-thia là người được chọn. Vậy Ma-thia trở thành sứ đồ cùng với mười một người kia."
+        },
+        "ko": {
+          "L": "그리고 그들이 그들을 위하여 제비를 주었더니, 제비가 맛디아에게 떨어졌다. 그래서 그는 열한 사도와 함께 헤아려졌다.",
+          "B": "그들이 두 사람을 두고 제비를 뽑으니, 맛디아가 뽑혔다. 그래서 맛디아는 열한 사도와 함께 사도의 수에 들게 되었다.",
+          "R": "그들은 두 사람 가운데 누가 될지 제비를 뽑아 정했다. 제비는 맛디아를 가리켰다. 그래서 맛디아는 다른 열한 사람과 함께 사도가 되었다."
         }
       },
       "decisions": [
@@ -3878,6 +5239,30 @@
           ],
           "reason": "\"Kura\" is the Swahili word for a lot that is cast, and also for a vote. Here it is lots, marked stones shaken until one fell out (meaning decision m1), and \"ikamwangukia\" (fell on him) shows that; \"bahati nasibu\" is a lottery for money.",
           "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44001026002",
+            "n44001026003",
+            "n44001026006",
+            "n44001026008"
+          ],
+          "choice": "\"제비를 주다\", \"제비가 ... 떨어지다\" (L); \"제비를 뽑다\" (B, R)",
+          "alternatives": [
+            "\"제비를 던지다\""
+          ],
+          "reason": "Literal keeps the Greek's \"gave lots\" and \"the lot fell\"; Balanced and Readable use the ordinary Korean idiom for casting lots, as the Korean Luke 1:9 does.",
+          "uncertain": false,
           "footnote": false
         }
       ],
