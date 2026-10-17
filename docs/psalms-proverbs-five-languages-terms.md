@@ -126,7 +126,50 @@ their published form.
 AI-draft choices recorded so later work follows them; reviewers may change
 any of them.
 
-## Before meaning review
+**All five languages**
+- God's *torah* is one word family per language at every level, never a
+  legal code: French *la loi* (L), *l'instruction* (B), *l'enseignement* (R);
+  Spanish *instrucción* (L, B), *enseñanza* (R); Swahili *sheria* (L),
+  *mafundisho* (B, R), but *mafundisho* at every level in Psalm 119 (a
+  reviewer should choose); Vietnamese *sự dạy dỗ* / *lời dạy dỗ* / *lời dạy*
+  and Korean 가르침, as the published Psalm 1:2.
+- *ʿEved*: the psalmist's "your servant" and a named servant of God (Abraham,
+  Moses, David) are "servant" at every level in every language. Elsewhere
+  French keeps *esclave* at Literal for God's servants in general (the
+  Pentateuch rule); Spanish, Swahili, Vietnamese and Korean say "servant" at
+  every level. Literal slavery (Psalm 105:17; 123:2) is "slave".
+- Psalm 119's eight words each have one fixed word per level in every
+  language, recorded at 119:1–11.
+- "LORD of hosts": *le SEIGNEUR des armées*; *el SEÑOR de los ejércitos* (L),
+  *de los Ejércitos* (B, R); *BWANA wa majeshi*; *CHÚA Vạn Quân* (as James
+  5:4); 만군의 (L, B), 하늘의 군대를 거느리신 (R).
+- Where the English Readable turns *ḥesed* into a verb or adjective, or
+  *nefesh* means appetite, throat or life, the languages follow the sense
+  with a decision.
+- Where a Hebrew sentence runs across verses, Korean and Vietnamese close
+  each verse as its own sentence, with a decision.
 
-Rendering decisions only were added; the meaning decisions are the English
-records' own and keep their claims-to-check lists in the English notes.
+**Language by language**
+- French: gender spans go on nouns (with an agreeing adjective inside the
+  span), never on pronouns; past events in the psalms use the passé composé;
+  Sheol is *le Shéol* (L), *le séjour des morts* (B, R).
+- Spanish: *ḥesed* is *amor leal* (L), *amor fiel* (B, R); every plural
+  address carries `plural_you`; no gender span where *su*, *él*, *hijos* or
+  *padres* already covers both.
+- Swahili: no gender spans except where two wordings exist (22:5); Kuzimu
+  for Sheol at every level; deity_pronoun spans only on free pronouns.
+- Vietnamese: "chúng con" for the people praying to God; God says *Ta*
+  (spanned mid-sentence); "Lord GOD" is *Chúa là CHÚA*; Proverbs' father
+  says *ta* (L) and *cha* (B, R).
+- Korean: the speech level follows the Hebrew's turns between speaking to
+  God (합쇼체, 저) and about God (plain style, 나), as Psalm 23; communal
+  prayer says 저희; "Lord GOD" is 주 {{divine_name:하나님|야훼}}; Psalm 22:2
+  opens 나의 하나님, as Matthew 27:46.
+
+## Before review
+
+Only rendering decisions were added; the meaning decisions are the English
+records' own. Reviewers of each language should look first at the decisions
+marked uncertain, the Swahili *torah* split above, French *esclave* at
+Literal, and the Korean and Vietnamese address forms in psalms that change
+speaker.
