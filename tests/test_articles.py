@@ -63,6 +63,13 @@ class ArticlesTest(unittest.TestCase):
             with self.assertRaises(SystemExit, msg=wrong):
                 build_site.article_html(wrong)
 
+    def test_links_to_untranslated_articles_stay_english(self):
+        missing = next(a["slug"] for a in self.articles
+                       if not (ROOT / "articles" / "vi" / f"{a['slug']}.md").is_file())
+        page = build_site.article_html(f"[a](/articles/{missing}/) [b](/jhn/1/)", lang="vi")
+        self.assertIn(f'href="/articles/{missing}/"', page)
+        self.assertIn('href="/vi/jhn/1/"', page)
+
     def test_internal_links_resolve(self):
         for path in (self.out / "articles").rglob("index.html"):
             for href in re.findall(r'href="(/[^"#?]*)', path.read_text(encoding="utf-8")):
