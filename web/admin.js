@@ -471,10 +471,15 @@
   };
 
   // Reader inbox.
-  var INBOX = { status: "new", kind: "", lang: "" };
-  VIEWS.inbox = function () {
-    var q = "?status=" + INBOX.status + (INBOX.kind ? "&kind=" + INBOX.kind : "") + (INBOX.lang ? "&lang=" + INBOX.lang : "");
+  // #inbox/mine opens the messages assigned to you (the dashboard links it).
+  var INBOX = { status: "new", kind: "", lang: "", assigned: "" };
+  var INBOX_TEAM = [];
+  VIEWS.inbox = function (arg) {
+    if (arg === "mine") INBOX.assigned = "me";
+    var q = "?status=" + INBOX.status + (INBOX.kind ? "&kind=" + INBOX.kind : "") + (INBOX.lang ? "&lang=" + INBOX.lang : "") +
+      (INBOX.assigned ? "&assigned=" + INBOX.assigned : "");
     return api("/api/admin/inbox/" + q).then(function (d) {
+      INBOX_TEAM = d.team;
       var tabs = seg([["new", "New (" + d.counts.new + ")"], ["answered", "Answered (" + d.counts.answered + ")"],
         ["done", "Done (" + d.counts.done + ")"], ["declined", "Declined (" + d.counts.declined + ")"]], INBOX.status, function (v) {
         INBOX.status = v; route();
@@ -482,20 +487,25 @@
       var kind = select("inbox-kind", [["", "Suggestions and questions"], ["suggestion", "Suggestions"], ["question", "Questions"]], INBOX.kind);
       kind.addEventListener("change", function () { INBOX.kind = kind.value; route(); });
       kind.setAttribute("aria-label", "Kind");
-      return [head("Readers", "Reader inbox", "Suggestions and questions readers send from a verse. A reply is emailed to the reader once; mark a message done when it's dealt with."),
-        h("div", { class: "admin-toolbar" }, tabs, kind),
+      var whose = seg([["me", "Mine"], ["none", "Unassigned"], ["", "All"]], INBOX.assigned, function (v) {
+        INBOX.assigned = v; location.hash === "#inbox" ? route() : (location.hash = "#inbox");
+      });
+      return [head("Readers", "Reader inbox", "Suggestions and questions readers send from a verse. New messages come oldest first; assign one to say you're dealing with it. A reply is emailed to the reader once; mark a message done when it's dealt with."),
+        h("div", { class: "admin-toolbar" }, tabs, whose, kind),
         d.messages.length ? h("div", { class: "admin-messages" }, d.messages.map(messageCard)) : empty("No messages here."),
-        d.total > d.messages.length ? h("p", { class: "admin-sub" }, "Showing the newest " + d.messages.length + " of " + num(d.total) + ".") : null];
+        d.total > d.messages.length ? h("p", { class: "admin-sub" }, "Showing " + (INBOX.status === "new" ? "the longest waiting " : "the newest ") + d.messages.length + " of " + num(d.total) + ".") : null];
     });
   };
   function messageCard(m) {
     var card = h("article", { class: "admin-message" });
+    var draft = "";   // the reply being written, kept when the card is drawn again
     function draw() {
       card.textContent = "";
       add(card, [
         h("header", null, pill(m.kind === "question" ? "Question" : "Suggestion", m.kind === "question" ? "info" : ""),
           " ", h("a", { href: m.url, rel: "noopener" }, m.verse_label), " · ", m.language + (m.level ? " " + m.level : ""),
-          h("span", { class: "admin-sub" }, " from " + (m.from.name ? m.from.name + " <" + m.from.email + ">" : m.from.email) + ", " + when(m.created_at))),
+          h("span", { class: "admin-sub" }, " from " + (m.from.name ? m.from.name + " <" + m.from.email + ">" : m.from.email) + ", " + when(m.created_at)),
+          m.status === "new" ? [" ", pill(m.age_days ? plural(m.age_days, "day") + " waiting" : "today", m.waiting ? "warn" : "")] : null),
         h("blockquote", null, m.text),
         h("p", { class: "admin-actions" }, h("a", { href: "#verse/" + m.verse }, "Inspect " + m.verse_label),
           (function () {
@@ -511,8 +521,17 @@
         card.appendChild(h("div", { class: "admin-reply" }, h("p", { class: "admin-sub" }, "Answered by " + m.replied_by + ", " + when(m.replied_at)), h("p", null, m.reply)));
       }
       var status = h("p", { class: "admin-note", role: "status" });
+      card.appendChild(assignee(status));
       if (!m.reply) {
-        var text = h("textarea", { rows: 3, id: "reply-" + m.id, maxlength: 4000, placeholder: "Reply to the reader (emailed to them)" });
+        var text = h("textarea", { rows: 3, id: "reply-" + m.id, maxlength: 4000, placeholder: "Reply to the reader (emailed to them)",
+          value: draft, oninput: function () { draft = text.value; } });
+        var saved = select("saved-" + m.id, [["", "Start from a saved reply…"]].concat(m.replies.map(function (r) { return [r.key, r.label]; })), "");
+        saved.setAttribute("aria-label", "Saved replies");
+        saved.addEventListener("change", function () {
+          var r = m.replies.filter(function (x) { return x.key === saved.value; })[0];
+          if (r) { text.value = draft = r.text; text.focus(); }
+          saved.value = "";
+        });
         var send = h("button", { type: "button", class: "admin-btn primary" }, "Send reply");
         send.addEventListener("click", function () {
           if (!text.value.trim()) { note(status, "Write a reply first.", true); return; }
@@ -520,6 +539,7 @@
           update({ reply: text.value }).catch(function (e) { busy(send, false); note(status, e, true); });
         });
         card.appendChild(h("label", { class: "admin-label", for: "reply-" + m.id }, "Reply"));
+        card.appendChild(saved);
         card.appendChild(text);
         card.appendChild(h("div", { class: "admin-actions" }, send, statusButtons()));
       } else {
@@ -532,6 +552,16 @@
       card.appendChild(h("label", { class: "admin-label", for: "note-" + m.id }, "Editors' note"));
       card.appendChild(noteField);
       card.appendChild(status);
+      function assignee(status) {
+        var pick = select("assign-" + m.id, [["", "Nobody"]].concat(INBOX_TEAM.map(function (u) {
+          return [String(u.id), (u.name ? u.name + " (" + u.email + ")" : u.email) + (u.email === ME.email ? " — you" : "")];
+        })), m.assigned_to ? String(m.assigned_to.id) : "");
+        pick.addEventListener("change", function () {
+          update({ assigned_to: pick.value ? Number(pick.value) : null }).catch(function (e) { note(status, e, true); });
+        });
+        return h("p", { class: "admin-actions" }, h("label", { for: "assign-" + m.id }, "Assigned to "), pick,
+          m.assigned_to && m.assigned_at ? h("span", { class: "admin-sub" }, " since " + when(m.assigned_at)) : null);
+      }
       function statusButtons() {
         return [["done", "Mark done"], ["declined", "Decline"], ["new", "Back to new"]]
           .filter(function (s) { return s[0] !== m.status; }).map(function (s) {
