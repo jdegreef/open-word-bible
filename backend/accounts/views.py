@@ -14,8 +14,10 @@ POST   /api/auth/sign-out                   forget this device's token
 GET    /api/me                              the signed-in account
 PATCH  /api/me              {display_name}  change the display name
 DELETE /api/me                              delete the account
-GET    /api/reading                         the reader's marks and place
-POST   /api/reading         {marks, place}  merge a device's copy (reading.py)
+GET    /api/reading                         the reader's marks, place, plans
+                                            and settings
+POST   /api/reading         {marks, place,  merge a device's copy (reading.py)
+                             plans, settings}
 
 The sign-in endpoints take JSON only, which a browser cannot send from
 another site without a CORS preflight, and ignore any Authorization header,

@@ -16,13 +16,21 @@
   function t(key) { return HEBREW && (key + "_hbo") in UI ? UI[key + "_hbo"] : UI[key]; }
 
   // The reading language is the page's (/es/... is Spanish); the footer
-  // switches it. The other settings are kept across pages and languages.
+  // switches it. The other settings are kept across pages and languages,
+  // with "at", when the reader last changed one, so that a signed-in
+  // reader's settings follow them to their other devices (site.js syncs
+  // owb.settings with the account; the latest device's copy wins whole).
   var settings = { level: "B", gender: 0, christos: 0, divine_name: 0, deity_pronoun: 0, units: 0, plural_you: 0, view: 0,
                    headings: 0, crossrefs: 0, uncertain: 0, partner: "", script: 0 };
-  try {
-    var saved = JSON.parse(localStorage.getItem(STORE) || "{}");
-    for (var k in settings) if (k in saved) settings[k] = saved[k];
-  } catch (e) { /* storage unavailable: use defaults */ }
+  var settingsAt = 0;
+  function loadSettings() {
+    try {
+      var saved = JSON.parse(localStorage.getItem(STORE) || "{}") || {};
+      for (var k in settings) if (k in saved && k !== "lang") settings[k] = saved[k];
+      settingsAt = saved.at || 0;
+    } catch (e) { /* storage unavailable: use defaults */ }
+  }
+  loadSettings();
   settings.lang = DATA.lang;
 
   // A shared link may carry the sender's settings (?level=L&title=1): they
@@ -169,7 +177,11 @@
   }
 
   function save() {
-    try { localStorage.setItem(STORE, JSON.stringify(settings)); } catch (e) { /* ignore */ }
+    var kept = {};
+    for (var k in settings) if (k !== "lang") kept[k] = settings[k];
+    kept.at = settingsAt = Date.now();
+    try { localStorage.setItem(STORE, JSON.stringify(kept)); } catch (e) { /* ignore */ }
+    document.dispatchEvent(new Event("owb:settings"));
   }
 
   function decisionsFor(record) {
@@ -2721,9 +2733,12 @@
     window.addEventListener("pageshow", function (e) { if (e.persisted && listen.on) stopListening(); });
   }
 
-  // Marks from the reader's other devices (site.js, after a sync).
+  // Marks and settings from the reader's other devices (site.js, after a
+  // sync). Settings a shared link carried give way only to newer ones.
   document.addEventListener("owb:synced", function () {
-    var top = panelEl.scrollTop;
+    var top = panelEl.scrollTop, stored = {};
+    try { stored = JSON.parse(localStorage.getItem(STORE) || "{}") || {}; } catch (e) { /* none */ }
+    if ((stored.at || 0) > settingsAt) { loadSettings(); drawControls(); }
     drawText();
     if (current) { drawPanel(); panelEl.scrollTop = top; }
   });

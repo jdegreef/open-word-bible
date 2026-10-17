@@ -179,3 +179,19 @@ class ReadingPlace(models.Model):
 
     def __str__(self):
         return f"{self.book} {self.chapter}:{self.verse} ({self.user})"
+
+
+class ReaderState(models.Model):
+    """A reader's reading-plan progress and reader settings, synced like Mark
+    (accounts/reading.py). plans is the browser's owb.plans (web/plans.js):
+    {"active": id or null, "at": ms, "plans": {id: {"start", "done", "at"}}},
+    the latest change to each plan winning, and to which plan is being read.
+    prefs is the reader's owb.settings (web/reader.js), the wording and view
+    choices, taken whole: the latest device to change one wins."""
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="reader_state")
+    plans = models.JSONField(default=dict)
+    prefs = models.JSONField(default=dict)
+    prefs_at = models.BigIntegerField(default=0)
+
+    def __str__(self):
+        return f"Reading state ({self.user})"
