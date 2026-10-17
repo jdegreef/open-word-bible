@@ -1808,6 +1808,18 @@ html.signed-in .sign-in-btn { visibility: hidden; }
 .account { max-width: 680px; }
 .account .page-head { padding-bottom: 20px; }
 .set-block { margin: 0 0 28px; padding: 22px 24px; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); }
+/* The account page's suggestions and questions (web/account.js). */
+.my-messages { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 14px; }
+.my-message { padding: 12px 14px; border: 1px solid var(--line); border-radius: var(--radius-sm); }
+.my-message-head { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: baseline; margin: 0; font-size: 14px; }
+.my-message-kind { font-weight: 700; }
+.my-message-date, .my-message-status { color: var(--muted); }
+.my-message-status { margin-left: auto; }
+.my-message blockquote { margin: 8px 0 0; padding: 0 0 0 12px; border-left: 3px solid var(--line-strong); font-family: var(--serif); white-space: pre-wrap; }
+.my-message-reply { margin: 10px 0 0; padding: 10px 12px; border-radius: var(--radius-sm); background: var(--surface-2); white-space: pre-wrap; }
+.my-message-reply p { margin: 0; }
+.my-message-label { font-size: 13px; font-weight: 700; color: var(--muted); }
+.my-message-empty { color: var(--muted); }
 .set-block h2 { font-size: 18px; margin: 0 0 12px; }
 .set-block > p { margin: 0 0 12px; }
 .set-block > p:last-child { margin-bottom: 0; }

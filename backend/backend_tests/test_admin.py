@@ -2,23 +2,31 @@
 the progress numbers, the team, accounts, the inbox, jobs and team email."""
 import io
 import json
+import shutil
+import tempfile
+from datetime import timedelta
+from pathlib import Path
 from unittest import mock
 
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.core import mail
+from django.core.cache import cache
 from django.core.management import CommandError, call_command
 from django.test import TestCase, override_settings
 from django.urls import get_resolver
+from django.utils import timezone
 from rest_framework.test import APIClient
 
 from accounts.models import ApiToken, Mark, Role, new_secret
 from feedback.models import ReaderMessage
+from staff import articles as staff_articles
 from staff import jobs as staff_jobs
 from staff.models import AdminAction, Broadcast
 from staff.permissions import AREAS
-from texts.models import Edition
-from translation.models import Decision, ImportRun, Rendering, Sentence
+from staff.verses import covers
+from texts.models import Edition, Word
+from translation.models import ContentFile, Decision, ImportRun, Rendering, Sentence
 
 SITE = "https://openwordbible.org"
 User = get_user_model()
@@ -391,3 +399,224 @@ class EmailTest(AdminTestCase):
                      {"subject": "s", "body": "", "audience": "team"},
                      {"subject": "s", "body": "x", "audience": "readers"}):
             self.assertEqual(self.admin.post("/api/admin/emails/", body, format="json").status_code, 400, body)
+
+
+class VerseTest(AdminTestCase):
+    def setUp(self):
+        super().setUp()
+        self.s1 = sentence("JHN.1.1.s1", ("en", "fr"))
+        self.s2 = sentence("JHN.1.2.s1", ("en",))
+        Decision.objects.create(sentence=self.s1, key="m1", order=0, layer="meaning", category="allusion",
+                                choice="In the beginning", reason="Genesis 1:1", footnote=True)
+        ContentFile.objects.create(path="content/JHN/JHN.1.1-18.json", digest="x")
+        ContentFile.objects.create(path="content/JHN/JHN.3.json", digest="x")
+
+    def test_covers(self):
+        self.assertTrue(covers("content/JHN/JHN.3.json", 3, 16))
+        self.assertFalse(covers("content/JHN/JHN.3.json", 4, 1))
+        self.assertTrue(covers("content/JHN/JHN.1.1-18.json", 1, 18))
+        self.assertFalse(covers("content/JHN/JHN.1.1-18.json", 1, 19))
+        self.assertTrue(covers("content/JHN/JHN.7.53-8.11.json", 8, 2))
+        self.assertTrue(covers("content/JHN/JHN.7.53-8.11.json", 7, 53))
+        self.assertFalse(covers("content/JHN/JHN.7.53-8.11.json", 7, 52))
+        self.assertTrue(covers("content/1JN/1JN.1.json", 1, 1))
+
+    def test_a_verse_whole(self):
+        ReaderMessage.objects.create(user=self.boss, kind="question", verse="JHN.1.1", language="fr", text="?")
+        data = self.admin.get("/api/admin/verses/jhn.1.1/").json()
+        self.assertEqual((data["verse"], data["label"]), ("JHN.1.1", "John 1:1"))
+        record = data["records"][0]
+        self.assertEqual(record["id"], "JHN.1.1.s1")
+        self.assertEqual(sorted(record["renderings"]), ["en", "fr"])
+        self.assertEqual(record["decisions"][0]["choice"], "In the beginning")
+        self.assertEqual(data["files"], {"JHN.1.1.s1": "content/JHN/JHN.1.1-18.json"})
+        self.assertEqual(data["neighbours"], [None, "JHN.1.2"])
+        self.assertEqual(len(data["messages"]), 1)
+        # Reporting sees the text, not who wrote in.
+        reporter = client_for(account("rep@example.org", (K.REPORTING,)))
+        self.assertNotIn("messages", reporter.get("/api/admin/verses/JHN.1.1/").json())
+        self.assertEqual(self.admin.get("/api/admin/verses/nonsense/").status_code, 404)
+
+    def test_find(self):
+        self.assertEqual(self.admin.get("/api/admin/verses/?q=JHN.1.2").json(), {"verse": "JHN.1.2"})
+        self.assertEqual(self.admin.get("/api/admin/verses/?q=no such").status_code, 400)
+
+
+class FixTest(AdminTestCase):
+    def setUp(self):
+        super().setUp()
+        self.s = sentence("JHN.1.1.s1", ("en", "fr"))
+        ContentFile.objects.create(path="content/JHN/JHN.1.1-18.json", digest="x")
+        self.body = {"record": "JHN.1.1.s1", "verse": "JHN.1.1", "language": "fr", "levels": ["B", "R"],
+                     "change": "Use la Parole", "reason": "Readers hear grammar in le Verbe"}
+
+    def test_not_configured_and_only_for_the_inbox(self):
+        self.assertEqual(self.admin.post("/api/admin/fixes/", self.body, format="json").status_code, 503)
+        reporter = client_for(account("rep@example.org", (K.REPORTING,)))
+        self.assertEqual(reporter.post("/api/admin/fixes/", self.body, format="json").status_code, 403)
+
+    @override_settings(OWB_GITHUB_TOKEN="t")
+    def test_file_a_fix_from_a_reader_message(self):
+        reader = account("reader@example.org")
+        message = ReaderMessage.objects.create(user=reader, kind="suggestion", verse="JHN.1.1", language="fr",
+                                               text="La Parole, s'il vous plaît")
+        calls = []
+
+        def github(path, method="GET", body=None):
+            calls.append((path, method, body))
+            if method == "POST":
+                return {"number": 9, "html_url": "https://github.com/x/y/issues/9"}
+            return [{"number": 9, "title": "t", "html_url": "u", "created_at": "2026-10-16T00:00:00Z",
+                     "body": 'x\n<!-- fix-request {"record": "JHN.1.1.s1", "verse": "JHN.1.1", "language": "fr"} -->'}]
+        editor = client_for(account("ed@example.org", (K.EDITOR,)))
+        with mock.patch.object(staff_jobs, "_github", side_effect=github):
+            bad = editor.post("/api/admin/fixes/", {**self.body, "language": "es"}, format="json")
+            self.assertEqual(bad.json()["code"], "not_drafted")
+            r = editor.post("/api/admin/fixes/", {**self.body, "message": message.id}, format="json")
+            self.assertEqual(r.status_code, 201, r.content)
+            listed = editor.get("/api/admin/fixes/").json()
+        self.assertEqual(listed["fixes"][0]["record"], "JHN.1.1.s1")
+        path, method, body = calls[-2]
+        self.assertEqual((path, method, body["labels"]), ("issues", "POST", ["fix-request"]))
+        self.assertEqual(body["title"], "Fix John 1:1 (French): Use la Parole")
+        self.assertIn("**File:** `content/JHN/JHN.1.1-18.json`", body["body"])
+        self.assertIn("- Balanced: x", body["body"])
+        self.assertNotIn("- Literal:", body["body"])
+        self.assertIn("> La Parole, s'il vous plaît", body["body"])
+        self.assertIn(f'"message": {message.id}', body["body"])
+        message.refresh_from_db()
+        self.assertEqual(message.note, "Fix requested: #9")
+        action = AdminAction.objects.get(action="fix.request")
+        self.assertEqual((action.target, action.detail["verse"]), ("#9 JHN.1.1.s1", "JHN.1.1"))
+        # The inspector lists it.
+        fixes = editor.get("/api/admin/verses/JHN.1.1/").json()["fixes"]
+        self.assertEqual(fixes[0]["number"], 9)
+
+
+class TextTest(AdminTestCase):
+    def setUp(self):
+        super().setUp()
+        cache.clear()
+        self.a = sentence("JHN.1.1.s1", ("en", "fr"))
+        self.b = sentence("GEN.1.1.s1", ("en",))
+        for s, key, lang, cat, unc in ((self.a, "m1", "", "word_sense", True),
+                                       (self.a, "r-fr-1", "fr", "word_choice", True),
+                                       (self.b, "m1", "", "grammar", True), (self.b, "m2", "", "grammar", False)):
+            Decision.objects.create(sentence=s, key=key, order=0, layer="rendering" if lang else "meaning",
+                                    language=lang, category=cat, choice=f"choice {key}", reason=f"reason {s.book}",
+                                    uncertain=unc)
+
+    def test_uncertain_decisions_in_bible_order_with_filters(self):
+        data = self.admin.get("/api/admin/decisions/").json()
+        self.assertEqual(data["total"], 3)
+        self.assertEqual([x["record"] for x in data["decisions"]], ["GEN.1.1.s1", "JHN.1.1.s1", "JHN.1.1.s1"])
+        layers = {x["code"]: x["count"] for x in data["layers"]}
+        self.assertEqual((layers["meaning"], layers["fr"], layers["es"]), (2, 1, 0))
+        fr = self.admin.get("/api/admin/decisions/?layer=fr").json()
+        self.assertEqual([x["key"] for x in fr["decisions"]], ["r-fr-1"])
+        self.assertEqual(self.admin.get("/api/admin/decisions/?layer=meaning&category=grammar").json()["total"], 1)
+        self.assertEqual(self.admin.get("/api/admin/decisions/?book=jhn").json()["total"], 2)
+        self.assertEqual(self.admin.get("/api/admin/decisions/?q=reason GEN").json()["total"], 1)
+        self.assertEqual(self.admin.get("/api/admin/decisions/?all=1").json()["total"], 4)
+
+    def test_key_terms_count_their_uses(self):
+        edition = Edition.objects.get(code="sblgnt")
+        Word.objects.create(id="n43001001001", edition=edition, book="JHN", chapter=1, verse=1, position=1, seq=1,
+                            text="charis", strong="5485", lang="grc")
+        Sentence.objects.filter(id=self.a.id).update(tokens=["n43001001001"])
+        # A Hebrew word with the same number is not the Greek term.
+        Word.objects.create(id="o010010010011", edition=edition, book="GEN", chapter=1, verse=1, position=1, seq=2,
+                            text="x", strong="5485", lang="H")
+        Sentence.objects.filter(id=self.b.id).update(tokens=["o010010010011"])
+        grace = next(t for t in self.admin.get("/api/admin/terms/").json()["terms"] if t["slug"] == "grace")
+        self.assertEqual(grace["uses"], 1)
+        self.assertEqual((grace["by_language"]["fr"], grace["by_language"]["es"]), (1, 0))
+        self.assertEqual(grace["first"], [{"verse": "JHN.1.1", "label": "John 1:1"}])
+
+
+class ArticlesTest(AdminTestCase):
+    def setUp(self):
+        super().setUp()
+        self.root = Path(tempfile.mkdtemp())
+        self.addCleanup(shutil.rmtree, self.root)
+        english = '---\ntitle: "On \\"words\\""\nsummary: S\ndate: 2026-10-01\n---\nBody one.\n'
+        (self.root / "one.md").write_text(english, encoding="utf-8")
+        (self.root / "two.md").write_text("---\ntitle: Two\nsummary: S\ndate: 2026-10-02\n---\nBody two.\n",
+                                          encoding="utf-8")
+        (self.root / "es").mkdir()
+        es = self.root / "es" / "one.md"
+        es.write_text("---\ntitle: Uno\nsummary: S\ndate: 2026-10-01\n---\nCuerpo.\n", encoding="utf-8")
+        staff_articles.check_translations.stamp(es, english)
+        (self.root / "fr").mkdir()
+        (self.root / "fr" / "one.md").write_text("---\ntitle: Un\nsummary: S\ndate: 2026-10-01\nsource: old\n---\n.\n",
+                                                 encoding="utf-8")
+        real = staff_articles._articles
+        patcher = mock.patch.object(staff_articles, "_articles", lambda root=None: real(self.root))
+        patcher.start()
+        self.addCleanup(patcher.stop)
+
+    def test_states_for_the_team(self):
+        reporter = client_for(account("rep@example.org", (K.REPORTING,)))
+        data = reporter.get("/api/admin/articles/").json()
+        one = next(a for a in data["articles"] if a["slug"] == "one")
+        self.assertEqual(one["title"], 'On "words"')
+        self.assertEqual((one["languages"]["es"], one["languages"]["fr"], one["languages"]["sw"]),
+                         ("current", "out_of_date", "missing"))
+        self.assertEqual(data["totals"]["es"]["missing"], 1)
+        self.assertFalse(data["can_file"])
+        self.assertEqual(reporter.post("/api/admin/articles/", {"language": "es", "slugs": ["two"]},
+                                       format="json").status_code, 403)
+
+    @override_settings(OWB_GITHUB_TOKEN="t")
+    def test_file_a_job_for_what_needs_work(self):
+        calls = []
+
+        def github(path, method="GET", body=None):
+            calls.append((path, method, body))
+            if method == "POST":
+                return {"number": 11, "html_url": "https://github.com/x/y/issues/11"}
+            return [{"number": 10, "title": "t", "html_url": "u", "created_at": "2026-10-16T00:00:00Z",
+                     "body": 'x\n<!-- article-job {"language": "sw", "slugs": ["two"]} -->'}]
+        with mock.patch.object(staff_jobs, "_github", side_effect=github):
+            current = self.admin.post("/api/admin/articles/", {"language": "es", "slugs": ["one"]}, format="json")
+            self.assertEqual(current.json()["code"], "nothing_to_do")
+            dup = self.admin.post("/api/admin/articles/", {"language": "sw", "slugs": ["two"]}, format="json")
+            self.assertEqual(dup.json()["code"], "duplicate")
+            r = self.admin.post("/api/admin/articles/", {"language": "fr", "slugs": ["one", "two", "nope"]},
+                                format="json")
+        self.assertEqual(r.status_code, 201, r.content)
+        path, method, body = calls[-1]
+        self.assertEqual(body["labels"], ["article-job"])
+        self.assertEqual(body["title"], "Articles in French: 2 to translate or update")
+        self.assertIn('- `one` (On "words"): bring up to date with the English', body["body"])
+        self.assertIn("- `two` (Two): translate", body["body"])
+        self.assertIn('<!-- article-job {"language": "fr", "slugs": ["one", "two"]} -->', body["body"])
+
+
+class DigestTest(AdminTestCase):
+    def test_nothing_to_report_sends_nothing(self):
+        # A super admin who joined long ago and has signed in: nothing waits.
+        User.objects.filter(id=self.boss.id).update(date_joined=timezone.now() - timedelta(days=30),
+                                                     last_login=timezone.now())
+        out = io.StringIO()
+        call_command("send_digest", stdout=out)
+        self.assertIn("Nothing to report", out.getvalue())
+        self.assertEqual(mail.outbox, [])
+
+    def test_the_super_admins_hear_what_waits(self):
+        account("boss2@example.org", (K.SUPER_ADMIN,))
+        account("ed@example.org", (K.EDITOR,))
+        reader = account("reader@example.org")
+        ReaderMessage.objects.create(user=reader, kind="question", verse="JHN.1.1", language="en", text="Why?")
+        call_command("send_digest", stdout=io.StringIO())
+        self.assertEqual(sorted(m.to[0] for m in mail.outbox), ["boss2@example.org", "boss@example.org"])
+        body = mail.outbox[0].body
+        self.assertIn("1 waits for an answer", body)
+        self.assertIn(f"{SITE}/admin/#inbox", body)
+        self.assertIn("haven’t signed in yet", body)   # the super admins and the editor never have
+        self.assertTrue(mail.outbox[0].subject.startswith("Open Word Bible: "))
+        self.assertEqual(AdminAction.objects.get(action="digest.send").target, "2 super admin(s)")
+        out = io.StringIO()
+        call_command("send_digest", "--dry-run", stdout=out)
+        self.assertIn("To: boss2@example.org, boss@example.org", out.getvalue())
+        self.assertEqual(len(mail.outbox), 2)

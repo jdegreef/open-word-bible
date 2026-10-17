@@ -152,6 +152,11 @@
     { id: "languages", label: "Languages", area: "overview", group: "Progress" },
     { id: "health", label: "Content health", area: "overview", group: "Progress" },
     { id: "jobs", label: "Drafting jobs", area: "jobs", group: "Progress" },
+    { id: "verse", label: "Verse inspector", area: "overview", group: "Text" },
+    { id: "decisions", label: "Uncertain decisions", area: "overview", group: "Text" },
+    { id: "terms", label: "Key terms", area: "overview", group: "Text" },
+    { id: "fixes", label: "Fix requests", area: "inbox", group: "Text" },
+    { id: "articles", label: "Articles", area: "overview", group: "Text" },
     { id: "inbox", label: "Reader inbox", area: "inbox", group: "Readers" },
     { id: "users", label: "Users", area: "users", group: "Readers" },
     { id: "engagement", label: "Engagement", area: "overview", group: "Readers" },
@@ -479,7 +484,13 @@
         h("header", null, pill(m.kind === "question" ? "Question" : "Suggestion", m.kind === "question" ? "info" : ""),
           " ", h("a", { href: m.url, rel: "noopener" }, m.verse_label), " · ", m.language + (m.level ? " " + m.level : ""),
           h("span", { class: "admin-sub" }, " from " + (m.from.name ? m.from.name + " <" + m.from.email + ">" : m.from.email) + ", " + when(m.created_at))),
-        h("blockquote", null, m.text)]);
+        h("blockquote", null, m.text),
+        h("p", { class: "admin-actions" }, h("a", { href: "#verse/" + m.verse }, "Inspect " + m.verse_label),
+          (function () {
+            var b = h("button", { type: "button", class: "admin-link" }, "Request a fix");
+            b.addEventListener("click", function () { FIX_FROM = m; location.hash = "#verse/" + m.verse; });
+            return b;
+          })())]);
       if (m.reply) {
         card.appendChild(h("div", { class: "admin-reply" }, h("p", { class: "admin-sub" }, "Answered by " + m.replied_by + ", " + when(m.replied_at)), h("p", null, m.reply)));
       }
@@ -520,6 +531,298 @@
     draw();
     return card;
   }
+
+  // ---- The verse inspector and fix requests ----------------------------
+
+  // The reader message a fix request comes from, set by its "Request a fix"
+  // button and used by the next verse drawn.
+  var FIX_FROM = null;
+  var LEVEL_NAMES = { L: "Literal", B: "Balanced", R: "Readable" };
+
+  // A rendering as text, with each reader setting's default shown and its
+  // alternative in the tooltip, verse numbers raised and poetry breaks as " / ".
+  function rendering(text) {
+    var span = h("span");
+    var re = /\{\{([a-z_]+):([^{}|]*)\|([^{}]*)\}\}|\\v (\d+) ?|\\q ?/g, last = 0, m;
+    while ((m = re.exec(text))) {
+      add(span, text.slice(last, m.index));
+      if (m[1]) add(span, h("span", { class: "admin-setting", title: m[1].replace(/_/g, " ") + ": " + m[3] }, m[2]));
+      else if (m[4]) add(span, h("sup", null, m[4]));
+      else add(span, " / ");
+      last = re.lastIndex;
+    }
+    add(span, text.slice(last));
+    return span;
+  }
+
+  function verseSearch(value) {
+    var input = h("input", { type: "search", id: "verse-q", value: value || "", placeholder: "John 1:1, jn 3 16, Juan 3:16 or JHN.1.1",
+      "aria-label": "Verse" });
+    var status = h("span", { class: "admin-note", role: "status" });
+    var form = h("form", { class: "admin-toolbar", role: "search" }, input, h("button", { type: "submit", class: "admin-btn" }, "Inspect"), status);
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      api("/api/admin/verses/?q=" + encodeURIComponent(input.value)).then(function (r) {
+        location.hash = "#verse/" + r.verse;
+      }, function (err) { note(status, err, true); });
+    });
+    return form;
+  }
+
+  VIEWS.verse = function (vid) {
+    if (!vid) {
+      return [head("Text", "Verse inspector", "Any verse's sentence records whole: the source words, every language at every level, every decision with its reason, and the file it lives in."),
+        verseSearch("")];
+    }
+    return api("/api/admin/verses/" + encodeURIComponent(vid) + "/").then(function (d) {
+      var names = {};
+      d.languages.forEach(function (l) { names[l.code] = l.name; });
+      var from = FIX_FROM && FIX_FROM.verse === d.verse ? FIX_FROM : null;
+      FIX_FROM = null;
+      var nav = h("div", { class: "admin-actions" },
+        d.neighbours[0] ? h("a", { href: "#verse/" + d.neighbours[0] }, "\u2039 " + d.neighbours[0]) : null,
+        d.neighbours[1] ? h("a", { href: "#verse/" + d.neighbours[1] }, d.neighbours[1] + " \u203a") : null,
+        h("a", { href: d.url, rel: "noopener" }, "Read it on the site"));
+      var out = [head("Verse inspector", d.label, d.records.length ? plural(d.records.length, "sentence") + " hold this verse" +
+        (d.updated ? "; last changed " + when(d.updated) : "") + "." : "No sentence holds this verse yet."), verseSearch(d.label), nav];
+      if (from) {
+        out.push(h("div", { class: "admin-reply" }, h("p", { class: "admin-sub" }, "Requesting a fix for " + (from.from.name || from.from.email) +
+          "'s " + from.kind + " (" + from.language + "):"), h("p", null, from.text)));
+      }
+      d.records.forEach(function (r) { out.push(recordCard(r, d, names, from)); });
+      if (d.messages && d.messages.length) {
+        out.push(h("section", { class: "admin-block" }, h("h2", null, "Reader messages"),
+          h("div", { class: "admin-messages" }, d.messages.map(messageCard))));
+      }
+      if (d.fixes.length) {
+        out.push(h("section", { class: "admin-block" }, h("h2", null, "Fix requests"), h("ul", { class: "admin-feed" }, d.fixes.map(function (f) {
+          return h("li", null, h("time", { datetime: f.at }, when(f.at)), h("span", null, h("a", { href: f.url, rel: "noopener" }, "#" + f.number),
+            " " + (names[f.language] || f.language) + ", by " + f.by));
+        }))));
+      }
+      return out;
+    });
+  };
+
+  function recordCard(r, d, names, from) {
+    var source = r.source.tokens.map(function (t) { return d.words[t]; });
+    var words = source.every(Boolean) && source.length ? h("p", { class: "admin-source", lang: r.source.language, dir: r.source.language === "hbo" ? "rtl" : null },
+      source.map(function (w) { return [h("span", { title: [w.lemma, w.gloss, w.morph].filter(Boolean).join(" \u00b7 ") }, w.text), " "]; }))
+      : h("p", { class: "admin-source", lang: r.source.language, dir: r.source.language === "hbo" ? "rtl" : null }, r.source.text);
+    var langs = Object.keys(r.renderings);
+    var rows = langs.map(function (code) {
+      return h("tr", null, h("th", { scope: "row" }, names[code] || code), ["L", "B", "R"].map(function (lv) {
+        var t = r.renderings[code][lv];
+        return h("td", { class: "admin-wrap", lang: code }, t ? rendering(t) : "\u2014");
+      }));
+    });
+    var meaning = r.decisions.filter(function (x) { return x.layer === "meaning"; });
+    var byLang = {};
+    r.decisions.filter(function (x) { return x.layer !== "meaning"; }).forEach(function (x) { (byLang[x.language] = byLang[x.language] || []).push(x); });
+    var file = d.files[r.id];
+    var card = h("section", { class: "admin-block admin-record" },
+      h("header", { class: "admin-toolbar" }, h("h2", null, r.id), h("span", null, pill(r.status === "ai_draft" ? "AI draft" : r.status.replace(/_/g, " "), r.status === "ai_draft" ? "" : "good"),
+        " ", file ? h("a", { href: ghFile(file), rel: "noopener" }, file.split("/").pop()) : null)),
+      words, h("p", { class: "admin-gloss" }, "Literal gloss: " + r.literal_gloss),
+      table(["Language", "Literal", "Balanced", "Readable"], rows, "admin-renderings"),
+      meaning.length ? [h("h3", { class: "admin-h3" }, "Meaning decisions"), h("div", { class: "admin-decisions" }, meaning.map(decision))] : null,
+      langs.filter(function (c) { return byLang[c]; }).map(function (c) {
+        return [h("h3", { class: "admin-h3" }, (names[c] || c) + " decisions"), h("div", { class: "admin-decisions" }, byLang[c].map(decision))];
+      }));
+    if (ME.admin.indexOf("inbox") >= 0) card.appendChild(fixForm(r, langs, names, from));
+    return card;
+  }
+
+  function decision(x) {
+    return h("div", { class: "admin-decision" + (x.uncertain ? " uncertain" : "") },
+      h("p", null, h("code", null, x.id), " ", h("span", { class: "admin-sub" }, x.category.replace(/_/g, " ") + (x.levels && x.levels.length ? " \u00b7 " + x.levels.join("") : "")),
+        x.uncertain ? [" ", pill("uncertain", "warn")] : null, x.footnote ? [" ", pill("footnote", "info")] : null),
+      h("p", null, h("strong", null, x.choice), x.alternatives.length ? h("span", { class: "admin-sub" }, " not: " + x.alternatives.join("; ")) : null),
+      h("p", { class: "admin-sub" }, x.reason));
+  }
+
+  function fixForm(r, langs, names, from) {
+    var open = !!from;
+    var box = h("div", { class: "admin-fix", hidden: !open });
+    var toggle = h("button", { type: "button", class: "admin-btn" }, "Request a fix");
+    toggle.addEventListener("click", function () { box.hidden = !box.hidden; if (!box.hidden) change.focus(); });
+    var lang = select("fix-lang-" + r.id, langs.map(function (c) { return [c, names[c] || c]; }),
+      from && langs.indexOf(from.language) >= 0 ? from.language : langs[0]);
+    var levels = h("fieldset", { class: "admin-checks-row" }, h("legend", null, "Levels"), ["L", "B", "R"].map(function (lv) {
+      return h("label", null, h("input", { type: "checkbox", value: lv, checked: !from || !from.level || from.level === lv }), " " + LEVEL_NAMES[lv]);
+    }));
+    var change = h("textarea", { id: "fix-change-" + r.id, rows: 3, maxlength: 2000, placeholder: "What should change, e.g. use “la Parole” for “le Verbe”" });
+    var reason = h("textarea", { id: "fix-reason-" + r.id, rows: 3, maxlength: 4000, placeholder: "Why (optional): the source, the style brief, a reader's point" });
+    var send = h("button", { type: "submit", class: "admin-btn primary" }, "File fix request");
+    var status = h("p", { class: "admin-note", role: "status" });
+    var form = h("form", { class: "admin-form stacked" },
+      h("label", { class: "admin-field", for: "fix-lang-" + r.id }, "Language", lang), levels,
+      h("label", { class: "admin-field", for: "fix-change-" + r.id }, "Change", change),
+      h("label", { class: "admin-field", for: "fix-reason-" + r.id }, "Reason", reason),
+      h("p", { class: "admin-sub" }, "A Claude session weighs it against the source and the style brief, then opens a pull request or explains why not. The sentence stays an AI draft."),
+      send, status);
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var picked = Array.prototype.map.call(levels.querySelectorAll("input:checked"), function (x) { return x.value; });
+      busy(send, true);
+      api("/api/admin/fixes/", { method: "POST", body: { record: r.id, verse: location.hash.split("/")[1], language: lang.value,
+        levels: picked, change: change.value, reason: reason.value, message: from ? from.id : null } }).then(function (res) {
+        status.textContent = "";
+        add(status, ["Filed as ", h("a", { href: res.url, rel: "noopener" }, "#" + res.number), "."]);
+        status.className = "admin-note";
+        change.value = reason.value = "";
+        busy(send, false);
+      }, function (err) { busy(send, false); note(status, err, true); });
+    });
+    box.appendChild(form);
+    return h("div", { class: "admin-fix-wrap" }, toggle, box);
+  }
+
+  VIEWS.fixes = function () {
+    return api("/api/admin/fixes/").then(function (d) {
+      var out = [head("Text", "Fix requests", "Wording changes asked for from the verse inspector or the reader inbox. Each is a GitHub issue labelled fix-request that a Claude session works into a pull request; nothing here marks a sentence reviewed."),
+        verseSearch("")];
+      if (!d.configured) out.push(h("p", { class: "notice" }, "Filing is off: set OWB_GITHUB_TOKEN on the API service in Render (a token that can create issues in " + d.repo + ")."));
+      if (d.error) out.push(h("p", { class: "notice" }, d.error));
+      out.push(h("section", { class: "admin-block" }, h("h2", null, "Open"),
+        d.fixes.length ? table(["Issue", "Sentence", "Language", "Filed", "Taken by"], d.fixes.map(function (f) {
+          return h("tr", null, h("td", null, h("a", { href: f.url, rel: "noopener" }, "#" + f.number)),
+            h("td", null, f.verse ? h("a", { href: "#verse/" + f.verse }, f.record || f.verse) : f.title),
+            h("td", null, f.language || "\u2014"), h("td", null, when(f.created_at)), h("td", null, f.assignees.join(", ") || "\u2014"));
+        })) : empty("No open fix requests.")));
+      return out;
+    });
+  };
+
+  // Uncertain decisions, filtered; each opens in the inspector, where a fix
+  // can be requested.
+  var DECISIONS = { layer: "", category: "", book: "", q: "", offset: 0 };
+  VIEWS.decisions = function () {
+    var f = DECISIONS;
+    var q = "?offset=" + f.offset + ["layer", "category", "book", "q"].map(function (k) {
+      return f[k] ? "&" + k + "=" + encodeURIComponent(f[k]) : "";
+    }).join("");
+    return api("/api/admin/decisions/" + q).then(function (d) {
+      function pick(id, label, options, key) {
+        var s = select(id, [["", label]].concat(options), f[key]);
+        s.setAttribute("aria-label", label);
+        s.addEventListener("change", function () {
+          f[key] = s.value; f.offset = 0;
+          if (key === "layer") { f.category = ""; f.book = ""; }
+          route();
+        });
+        return s;
+      }
+      var search = h("input", { type: "search", id: "decision-q", value: f.q, placeholder: "Words in the choice or reason", "aria-label": "Search decisions" });
+      var form = h("form", { class: "admin-toolbar", role: "search" },
+        pick("decision-layer", "Every layer", d.layers.map(function (l) { return [l.code, l.name + " (" + num(l.count) + ")"]; }), "layer"),
+        pick("decision-category", "Every category", d.categories.map(function (c) { return [c.code, c.code.replace(/_/g, " ") + " (" + num(c.count) + ")"]; }), "category"),
+        pick("decision-book", "Every book", d.books.map(function (b) { return [b.code, b.name + " (" + num(b.count) + ")"]; }), "book"),
+        search, h("button", { type: "submit", class: "admin-btn" }, "Search"));
+      form.addEventListener("submit", function (e) { e.preventDefault(); f.q = search.value.trim(); f.offset = 0; route(); });
+      var pager = h("div", { class: "admin-actions" });
+      if (d.offset > 0) pager.appendChild(h("button", { type: "button", class: "admin-btn", onclick: function () { f.offset = Math.max(0, d.offset - d.page); route(); } }, "\u2039 Earlier"));
+      if (d.offset + d.page < d.total) pager.appendChild(h("button", { type: "button", class: "admin-btn", onclick: function () { f.offset = d.offset + d.page; route(); } }, "Later \u203a"));
+      var names = {};
+      d.layers.forEach(function (l) { names[l.code] = l.name; });
+      return [head("Text", "Uncertain decisions", num(d.total) + " decisions the drafts mark uncertain" + (f.layer || f.category || f.book || f.q ? " match" : "") +
+        ", in Bible order. Open one in the inspector to read the sentence whole or request a fix."), form,
+        d.decisions.length ? h("div", { class: "admin-decisions" }, d.decisions.map(function (x) {
+          return h("div", { class: "admin-decision uncertain" },
+            h("p", null, h("a", { href: "#verse/" + x.verse }, x.label), " ", h("code", null, x.record + " " + x.key), " ",
+              h("span", { class: "admin-sub" }, (x.layer === "meaning" ? "meaning" : names[x.language] || x.language) + " \u00b7 " + x.category.replace(/_/g, " ") +
+                (x.levels.length ? " \u00b7 " + x.levels.join("") : "")), x.footnote ? [" ", pill("footnote", "info")] : null),
+            h("p", null, h("strong", null, x.choice), x.alternatives.length ? h("span", { class: "admin-sub" }, " not: " + x.alternatives.join("; ")) : null),
+            h("p", { class: "admin-sub" }, x.reason));
+        })) : empty("No decisions match."),
+        h("p", { class: "admin-sub" }, d.total ? "Showing " + num(d.offset + 1) + "\u2013" + num(d.offset + d.decisions.length) + " of " + num(d.total) + "." : ""),
+        pager];
+    });
+  };
+
+  // Key terms: the settled words, and where the drafts use them.
+  VIEWS.terms = function () {
+    return api("/api/admin/terms/").then(function (d) {
+      var rows = d.terms.map(function (t) {
+        var english = Array.isArray(t.english) ? t.english.join(", ") : Object.keys(t.english).map(function (lv) {
+          return lv + ": " + t.english[lv].join(", ");
+        }).join("; ");
+        return h("tr", null,
+          h("th", { scope: "row" }, h("span", { class: "admin-term", lang: t.language }, t.lemma), h("span", { class: "admin-sub" }, t.sense + " \u00b7 " + (t.language === "hbo" ? "H" : "G") + t.strong)),
+          h("td", null, english, h("span", { class: "admin-sub" }, t.note)),
+          h("td", { class: "admin-num" }, num(t.uses)),
+          h("td", { class: "admin-sub" }, d.languages.filter(function (l) { return l.code !== "en"; }).map(function (l) {
+            return l.code + " " + num(t.by_language[l.code]);
+          }).join(" \u00b7 ")),
+          h("td", { class: "admin-wrap" }, t.first.map(function (v) { return [h("a", { href: "#verse/" + v.verse }, v.label), " "]; }),
+            h("a", { href: SITE + "/terms/" + t.slug + "/", rel: "noopener" }, "All on the site")));
+      });
+      return [head("Text", "Key terms", "Greek and Hebrew words whose English is settled at every level (data/key_terms.json); owb.validate holds the English to them. Changing one is a change for every use, so it goes to the founder, not a single fix request."),
+        table(["Term", "English", ["Sentences", { class: "admin-num" }], "In other languages", "First uses"], rows)];
+    });
+  };
+
+  // Articles: each English article's state in every language, and jobs for
+  // the ones missing or behind their English.
+  var ARTICLE_STATE = { current: ["Current", "good"], out_of_date: ["Out of date", "warn"],
+    not_stamped: ["Not stamped", "warn"], missing: ["Missing", ""] };
+  var ARTICLES = { lang: "", todo: false };
+  VIEWS.articles = function () {
+    return api("/api/admin/articles/").then(function (d) {
+      var f = ARTICLES;
+      if (!f.lang) f.lang = d.languages[0].code;
+      var status = h("p", { class: "admin-note", role: "status" });
+      var tiles = h("div", { class: "admin-tiles" }, d.languages.map(function (l) {
+        var t = d.totals[l.code], done = d.articles.length - t.missing;
+        return tile(done + " / " + d.articles.length, l.name + " translated" + (t.out_of_date ? ", " + t.out_of_date + " out of date" : "") +
+          (t.not_stamped ? ", " + t.not_stamped + " not stamped" : ""));
+      }));
+      var langSel = select("article-lang", d.languages.map(function (l) { return [l.code, l.name]; }), f.lang);
+      langSel.setAttribute("aria-label", "Language to act on");
+      langSel.addEventListener("change", function () { f.lang = langSel.value; route(); });
+      var todo = h("label", null, h("input", { type: "checkbox", id: "article-todo", checked: f.todo }), " Only what needs work in that language");
+      todo.querySelector("input").addEventListener("change", function (e) { f.todo = e.target.checked; route(); });
+      var shown = d.articles.filter(function (a) { return !f.todo || a.languages[f.lang] !== "current"; });
+      var rows = shown.map(function (a) {
+        var state = a.languages[f.lang];
+        return h("tr", null,
+          d.can_file ? h("td", null, state !== "current" ? h("input", { type: "checkbox", value: a.slug, "aria-label": "Choose " + a.title }) : null) : null,
+          h("td", null, h("a", { href: SITE + "/articles/" + a.slug + "/", rel: "noopener" }, a.title), h("span", { class: "admin-sub" }, a.slug + " \u00b7 " + num(a.words) + " words \u00b7 " + a.date)),
+          d.languages.map(function (l) {
+            var st = ARTICLE_STATE[a.languages[l.code]];
+            return h("td", { class: "admin-cell" + (l.code === f.lang ? " on" : "") }, pill(st[0], st[1]));
+          }));
+      });
+      var out = [head("Text", "Articles", "Each English article and its translations, from scripts/check_translations.py: a translation is out of date when its English has changed since it was stamped."), tiles,
+        h("div", { class: "admin-toolbar" }, h("span", null, "Act on ", langSel), todo)];
+      if (d.can_file) {
+        if (!d.configured) out.push(h("p", { class: "notice" }, "Filing is off: set OWB_GITHUB_TOKEN on the API service in Render."));
+        if (d.error) out.push(h("p", { class: "notice" }, d.error));
+        var noteField = h("input", { id: "article-note", maxlength: 2000, placeholder: "A note for the session (optional)", "aria-label": "Note" });
+        var file = h("button", { type: "button", class: "admin-btn primary", disabled: !d.configured }, "File a job for the chosen articles");
+        var all = h("button", { type: "button", class: "admin-btn" }, "Choose all that need work");
+        all.addEventListener("click", function () { main.querySelectorAll("tbody input[type=checkbox]").forEach(function (c) { c.checked = true; }); });
+        file.addEventListener("click", function () {
+          var slugs = Array.prototype.map.call(main.querySelectorAll("tbody input:checked"), function (c) { return c.value; });
+          if (!slugs.length) { note(status, "Choose at least one article.", true); return; }
+          busy(file, true);
+          api("/api/admin/articles/", { method: "POST", body: { language: f.lang, slugs: slugs, note: noteField.value } }).then(function (r) {
+            FLASH = "Filed as #" + r.number + "."; route();
+          }, function (err) { busy(file, false); note(status, err, true); });
+        });
+        out.push(h("div", { class: "admin-actions" }, all, noteField, file), status);
+      }
+      out.push(table((d.can_file ? [""] : []).concat(["Article"], d.languages.map(function (l) { return [l.code, { class: "admin-cell", title: l.name }]; })), rows));
+      if (d.can_file) {
+        out.push(h("section", { class: "admin-block" }, h("h2", null, "Open article jobs"),
+          d.jobs && d.jobs.length ? table(["Issue", "Language", "Articles", "Filed"], d.jobs.map(function (j) {
+            return h("tr", null, h("td", null, h("a", { href: j.url, rel: "noopener" }, "#" + j.number)), h("td", null, j.language || "\u2014"),
+              h("td", { class: "admin-wrap" }, (j.slugs || []).join(", ")), h("td", null, when(j.created_at)));
+          })) : empty("No open article jobs.")));
+      }
+      return out;
+    });
+  };
 
   // Users.
   var USERS = { q: "", role: "", offset: 0 };
@@ -654,13 +957,13 @@
     "role.grant": "granted a role to", "role.revoke": "removed a role from", "role.invite": "invited",
     "user.delete": "deleted the account", "user.sign_out": "signed out the devices of",
     "message.reply": "answered", "message.done": "marked done", "message.declined": "declined", "message.new": "reopened",
-    "job.file": "filed drafting job", "email.send": "emailed the team:"
+    "job.file": "filed drafting job", "article.job": "filed article job", "digest.send": "sent the weekly digest to", "email.send": "emailed the team:", "fix.request": "requested fix"
   };
   function activityList(actions) {
     return h("ul", { class: "admin-feed" }, actions.map(function (a) {
       var extra = a.detail.role ? " (" + a.detail.role + ")" : a.detail.recipients !== undefined ? " (" + plural(a.detail.recipients, "person", "people") + ")" : "";
       return h("li", null, h("time", { datetime: a.at, title: new Date(a.at).toLocaleString("en-GB") }, when(a.at)),
-        h("span", null, h("strong", null, a.actor || "someone"), " " + (ACTION_LABEL[a.action] || a.action) + " " + a.target + extra));
+        h("span", null, h("strong", null, a.actor || "The admin"), " " + (ACTION_LABEL[a.action] || a.action) + " " + a.target + extra));
     }));
   }
   VIEWS.activity = function () {
