@@ -26,8 +26,9 @@ BUDGETS = {
     # [127 KB, es/jhn/6; 165 KB on 2026-10-14 once John 6 had French, since
     # a page carries every language's renderings; 175 KB (jhn/6) with Vietnamese and
     # Korean too, though a page now carries only its own language's
-    # rendering decisions].
-    "chapter_page_gz": 220 * KB,
+    # rendering decisions; 231 KB (psa/119, the longest chapter, 176
+    # verses) on 2026-10-17 once Psalms had all six languages].
+    "chapter_page_gz": 290 * KB,
     # The largest script or style sheet [21 KB, reader.js; 26 KB on
     # 2026-10-13 after the verse panel tools, poetry lines and account sync;
     # 33.1 KB on 2026-10-17 with personal verse notes].
