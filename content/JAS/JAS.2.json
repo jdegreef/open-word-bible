@@ -48,6 +48,11 @@
           "L": "Mes {{gender:frères et sœurs|frères}}, vous ne tenez pas la foi de notre Seigneur Jésus {{christos:Christ|Messie}} de gloire en faisant des acceptions de personnes, [n’est-ce pas] ?",
           "B": "Mes {{gender:frères et sœurs|frères}}, vous ne gardez tout de même pas la foi en notre glorieux Seigneur Jésus {{christos:Christ|le Messie}} tout en faisant du favoritisme ?",
           "R": "Mes {{gender:frères et sœurs|frères}}, vous croyez en notre glorieux Seigneur Jésus {{christos:Christ|le Messie}}. Alors comment pouvez-vous traiter certaines personnes comme plus importantes que d’autres ?"
+        },
+        "ko": {
+          "L": "내 {{gender:형제자매|형제}} 여러분, 여러분은 영광의 [주], 우리 주 예수 {{christos:그리스도|메시아}}에 대한 믿음을 차별하는 행위들과 함께 가지고 있는 것은 아니겠지요?",
+          "B": "내 {{gender:형제자매|형제}} 여러분, 영광스러운 우리 주 예수 {{christos:그리스도|메시아}}를 믿는다고 하면서 사람을 차별하는 것은 아니겠지요?",
+          "R": "내 {{gender:형제자매|형제}} 여러분, 여러분은 영광스러운 우리 주 예수 {{christos:그리스도|메시아}}를 믿습니다. 그런데 어떻게 어떤 사람은 더 귀하게 대하고 어떤 사람은 덜 귀하게 대할 수 있습니까?"
         }
       },
       "decisions": [
@@ -297,6 +302,48 @@
           "reason": "As in Colossians 3:25: \"faire acception de personnes\" is the French phrase built on the same picture as the Greek word, judging by the face (m2), so Literal keeps it; Balanced uses the everyday word.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n59002001003",
+            "n59002001006"
+          ],
+          "choice": "\"... 것은 아니겠지요?\" (L, B) for a question expecting \"no\"",
+          "alternatives": [
+            "a plain command, \"차별하지 마십시오\""
+          ],
+          "reason": "The meaning decision follows the SBLGNT, which punctuates the sentence as a question expecting the answer no, and footnotes the reading as a command. Korean \"아니겠지요?\" asks in a way that expects the reader to agree that they do not; Readable turns it into a statement and a question, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59002001005"
+          ],
+          "choice": "\"차별하다\" for favoritism, here and in verse 9",
+          "alternatives": [
+            "\"외모로 사람을 취하다\""
+          ],
+          "reason": "The word means treating people differently by how they look or what they own (meaning decision); \"차별하다\" is the plain current word. The older phrase \"외모로 사람을 취하다\" copies a Hebrew idiom that most readers no longer understand.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -391,6 +438,11 @@
           "L": "Car s’il entre dans votre assemblée un homme aux bagues d’or, en vêtement éclatant, et qu’il entre aussi un pauvre en vêtement sale, \\v 3 et que vous portiez vos regards sur celui qui porte le vêtement éclatant et [lui] disiez : « Toi, assieds-toi ici, à une bonne [place] », et que vous disiez au pauvre : « Toi, tiens-toi debout », ou : « Assieds-toi là, au bas de mon marchepied », \\v 4 n’avez-vous pas fait des distinctions entre vous, et n’êtes-vous pas devenus des juges aux pensées mauvaises ?",
           "B": "Supposons qu’un homme entre dans votre assemblée avec des bagues d’or aux doigts et des vêtements magnifiques, et qu’entre aussi un pauvre aux vêtements sales. \\v 3 Vous accordez toute votre attention à l’homme aux vêtements magnifiques et vous lui dites : « Prends cette bonne place, ici », tandis qu’au pauvre vous dites : « Toi, reste debout », ou : « Assieds-toi par terre, au pied de mon marchepied. » \\v 4 N’avez-vous pas fait des distinctions entre vous, et n’êtes-vous pas devenus des juges aux raisonnements mauvais ?",
           "R": "Imaginez qu’un homme entre dans votre réunion avec des bagues en or et de beaux vêtements. Puis un pauvre entre aussi, avec des vêtements sales. \\v 3 Vous faites très attention à l’homme aux beaux vêtements et vous lui dites : « Viens t’asseoir ici, à cette bonne place. » Mais au pauvre, vous dites : « Reste debout », ou : « Assieds-toi par terre, à mes pieds. » \\v 4 Si vous faites cela, ne traitez-vous pas les gens de manière inégale ? Ne les jugez-vous pas avec de mauvaises pensées ?"
+        },
+        "ko": {
+          "L": "만일 여러분의 회당에 금반지를 끼고 화려한 옷을 입은 사람이 들어오고, 또 더러운 옷을 입은 가난한 사람도 들어오는데, \\v 3 여러분이 화려한 옷을 입은 사람을 눈여겨보고 \"당신은 여기 좋은 자리에 앉으십시오\" 하고, 가난한 사람에게는 \"너는 거기 서 있어라\" 하거나 \"내 발판 아래에 앉아라\" 한다면, \\v 4 여러분은 여러분끼리 차별하고 악한 생각으로 판단하는 사람들이 된 것이 아닙니까?",
+          "B": "금반지를 끼고 화려한 옷을 입은 사람이 여러분의 모임에 들어오고, 더러운 옷을 입은 가난한 사람도 들어왔다고 합시다. \\v 3 여러분이 화려한 옷을 입은 사람에게는 관심을 보이며 \"여기 좋은 자리에 앉으십시오\" 하고, 가난한 사람에게는 \"거기 서 있어라\" 하거나 \"내 발판 밑 바닥에 앉아라\" 한다면, \\v 4 여러분은 서로 차별하고, 악한 생각으로 사람을 판단하는 재판관이 된 것이 아닙니까?",
+          "R": "어떤 사람이 금반지를 끼고 좋은 옷을 입고 여러분의 모임에 들어온다고 생각해 보십시오. 그리고 가난한 사람도 더러운 옷을 입고 들어옵니다. \\v 3 여러분은 좋은 옷을 입은 사람을 특별히 대접하며 \"여기 좋은 자리에 앉으십시오\" 하고 말합니다. 그러나 가난한 사람에게는 \"거기 서 있어라\" 하거나 \"내 발밑 바닥에 앉아라\" 하고 말합니다. \\v 4 이렇게 한다면, 여러분은 사람을 차별하고 있는 것이 아닙니까? 악한 생각으로 사람을 판단하고 있는 것이 아닙니까?"
         }
       },
       "decisions": [
@@ -578,6 +630,48 @@
           "reason": "The word can mean the gathering of believers or the place where it meets (m1). French \"synagogue\" would point only to a Jewish building; \"assemblée\" covers both the meeting and the place, as the English \"assembly\" does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n59002003012",
+            "n59002003020"
+          ],
+          "choice": "the rich man is spoken to in 합쇼체 (\"앉으십시오\"), the poor man in 해라체 (\"서 있어라\", \"앉아라\")",
+          "alternatives": [
+            "the same speech level for both"
+          ],
+          "reason": "Korean must choose a speech level for each, and the choice itself shows the favoritism James describes: polite words for the rich visitor, the plain style one uses to an inferior for the poor one. The Greek shows the same contrast with \"well\" and \"under my footstool\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59002002005"
+          ],
+          "choice": "\"회당\" (L); \"모임\" (B, R)",
+          "alternatives": [
+            "\"회당\" at every level",
+            "\"교회\""
+          ],
+          "reason": "The word is the one used for a synagogue, here the gathering of believers or the place where it meets (meaning decision). Literal keeps the word so the reader sees it; Balanced and Readable say \"모임\", which covers both senses.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -619,6 +713,11 @@
           "L": "Écoutez, mes {{gender:frères et sœurs|frères}} bien-aimés.",
           "B": "Écoutez, mes chers {{gender:frères et sœurs|frères}}.",
           "R": "Écoutez-moi, mes chers {{gender:frères et sœurs|frères}}."
+        },
+        "ko": {
+          "L": "들으십시오, 사랑하는 내 {{gender:형제자매|형제}} 여러분.",
+          "B": "사랑하는 내 {{gender:형제자매|형제}} 여러분, 잘 들으십시오.",
+          "R": "사랑하는 내 {{gender:형제자매|형제}} 여러분, 잘 들으십시오."
         }
       },
       "decisions": [
@@ -715,6 +814,11 @@
           "L": "Dieu n’a-t-il pas choisi les pauvres aux yeux du monde [pour être] riches en foi et héritiers du royaume qu’{{deity_pronoun:il|Il}} a promis à ceux qui {{deity_pronoun:l’|L’}}aiment ?",
           "B": "Dieu n’a-t-il pas choisi ceux qui sont pauvres aux yeux du monde pour qu’ils soient riches en foi et qu’ils héritent du royaume qu’{{deity_pronoun:il|Il}} a promis à ceux qui {{deity_pronoun:l’|L’}}aiment ?",
           "R": "Dieu a choisi des gens qui sont pauvres aux yeux du monde pour qu’ils soient riches en foi, n’est-ce pas ? Ils recevront le royaume qu’{{deity_pronoun:il|Il}} a promis à ceux qui {{deity_pronoun:l’|L’}}aiment."
+        },
+        "ko": {
+          "L": "하나님께서 세상에서 가난한 사람들을 택하셔서 믿음에 부요한 사람들이 되게 하시고, 그분을 사랑하는 사람들에게 약속하신 나라의 상속자들이 되게 하지 않으셨습니까?",
+          "B": "하나님께서는 세상이 보기에 가난한 사람들을 택하셔서 믿음에 부요하게 하시고, 그분을 사랑하는 사람들에게 약속하신 나라를 상속받게 하지 않으셨습니까?",
+          "R": "하나님께서는 세상이 보기에 가난한 사람들을 택하셔서 믿음에 부자가 되게 하셨습니다. 그렇지 않습니까? 그들은 하나님께서 그분을 사랑하는 사람들에게 약속하신 나라를 받을 것입니다."
         }
       },
       "decisions": [
@@ -833,6 +937,27 @@
           "reason": "Readable turns the question into a statement with \"has he not?\" so that the expected answer, yes, is plain.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59002005017"
+          ],
+          "choice": "\"상속자\" (L); \"상속받다\" (B); \"받다\" (R)",
+          "alternatives": [
+            "\"후사\"",
+            "\"기업을 이을 자\""
+          ],
+          "reason": "\"후사\" and \"기업\" are older church words; \"상속\" (inheritance) is the current word for receiving what was promised as one's share. Readable says simply that they will receive it, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -875,6 +1000,11 @@
           "L": "Mais vous, vous avez déshonoré le pauvre.",
           "B": "Mais vous, vous avez humilié le pauvre.",
           "R": "Mais vous, vous avez traité les pauvres avec mépris."
+        },
+        "ko": {
+          "L": "그런데 여러분은 가난한 사람을 업신여겼습니다.",
+          "B": "그런데 여러분은 가난한 사람을 업신여겼습니다.",
+          "R": "그런데 여러분은 가난한 사람들을 무시하고 깔보았습니다."
         }
       },
       "decisions": [
@@ -977,6 +1107,11 @@
           "L": "N’est-ce pas les riches qui vous oppriment, et eux-mêmes qui vous traînent devant les tribunaux ?",
           "B": "Ne sont-ce pas les riches qui vous exploitent ? Ne sont-ce pas eux-mêmes qui vous traînent devant les tribunaux ?",
           "R": "Pourtant, ce sont les riches qui vous font souffrir, n’est-ce pas ? Ce sont bien eux qui vous traînent devant les juges ?"
+        },
+        "ko": {
+          "L": "여러분을 억압하는 사람들은 부자들이 아닙니까? 또 그들 자신이 여러분을 법정으로 끌고 가지 않습니까?",
+          "B": "여러분을 짓누르는 사람들은 바로 부자들이 아닙니까? 여러분을 법정으로 끌고 가는 사람들도 바로 그들이 아닙니까?",
+          "R": "여러분을 못살게 구는 사람들은 부자들이 아닙니까? 여러분을 재판정으로 끌고 가는 사람들도 그들이 아닙니까?"
         }
       },
       "decisions": [
@@ -1073,6 +1208,11 @@
           "L": "N’est-ce pas eux qui blasphèment le beau nom qui a été invoqué sur vous ?",
           "B": "Ne sont-ce pas eux qui insultent le nom honorable qui a été prononcé sur vous ?",
           "R": "Ce sont bien eux qui insultent le beau nom du Seigneur, ce nom qui montre que vous êtes {{deity_pronoun:son|Son}} peuple, n’est-ce pas ?"
+        },
+        "ko": {
+          "L": "그들은 여러분 위에 불린 그 아름다운 이름을 모독하지 않습니까?",
+          "B": "여러분에게 붙여진 그 존귀한 이름을 헐뜯는 사람들도 바로 그들이 아닙니까?",
+          "R": "여러분이 주님의 백성이라는 표가 되는 그 좋은 이름, 곧 주님의 이름을 욕하는 사람들도 그들이 아닙니까?"
         }
       },
       "decisions": [
@@ -1151,6 +1291,29 @@
           "reason": "Readable names whose name it is and explains the idiom.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59002007006",
+            "n59002007008",
+            "n59002007009",
+            "n59002007010"
+          ],
+          "choice": "\"여러분 위에 불린 이름\" (L); \"여러분에게 붙여진 이름\" (B); \"여러분이 주님의 백성이라는 표가 되는 이름\" (R)",
+          "alternatives": [
+            "\"여러분에게 일컫는 바 그 아름다운 이름\""
+          ],
+          "reason": "The idiom means the name that marks the readers as belonging to the Lord (meaning decision). Literal keeps the picture of a name called over them; Balanced says it plainly; Readable names the Lord, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1204,6 +1367,11 @@
           "L": "Si vraiment vous accomplissez [la] loi royale selon l’Écriture : « Tu aimeras ton prochain comme toi-même », vous faites bien ;",
           "B": "Si vous accomplissez vraiment la loi royale, telle que l’Écriture la donne : « Tu aimeras ton prochain comme toi-même », vous faites bien.",
           "R": "La grande loi du Roi se trouve dans l’Écriture : « Aime ton prochain comme tu t’aimes toi-même. » Si vous obéissez vraiment à cette loi, vous faites ce qui est juste."
+        },
+        "ko": {
+          "L": "여러분이 참으로 성경을 따라 \"너는 네 이웃을 너 자신과 같이 사랑할 것이다\" 한 으뜸가는 법을 지킨다면, 잘하고 있는 것입니다.",
+          "B": "여러분이 성경에 기록된 대로 \"네 이웃을 너 자신처럼 사랑하여라\" 한 으뜸 법을 참으로 지킨다면, 잘하는 것입니다.",
+          "R": "왕이신 분의 큰 법이 성경에 있습니다. \"네 이웃을 너 자신을 사랑하는 것만큼 사랑하여라.\" 여러분이 그 법을 참으로 지킨다면, 옳은 일을 하고 있는 것입니다."
         }
       },
       "decisions": [
@@ -1321,6 +1489,54 @@
           "reason": "\"Sheria ya kifalme\" (the royal law) is the settled term for James, an adjective like βασιλικὸν; Readable names the King, \"sheria kuu ya Mfalme\", as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59002008009",
+            "n59002008010",
+            "n59002008011",
+            "n59002008012",
+            "n59002008013",
+            "n59002008014"
+          ],
+          "choice": "the quotation in 해라체 with \"너\", in the words of the Korean Matthew 22:39 (\"너는 네 이웃을 너 자신과 같이 사랑할 것이다\" L; \"네 이웃을 너 자신처럼 사랑하여라\" B; R as Matthew 22:39 R with \"이웃\")",
+          "alternatives": [
+            "the letter's 합쇼체 for the quotation"
+          ],
+          "reason": "Quotations of Scripture are in 해라체, as settled in the Korean of Romans, and this command from Leviticus 19:18 reads as it does in the Korean Gospels.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59002008005"
+          ],
+          "choice": "\"으뜸가는 법\" (L); \"으뜸 법\" (B); \"왕이신 분의 큰 법\" (R)",
+          "alternatives": [
+            "\"최고의 법\"",
+            "\"왕의 법\""
+          ],
+          "reason": "\"Royal\" means the law of the King, supreme over the rest (meaning decision). \"으뜸\" says that it ranks first; Readable says whose law it is, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1369,6 +1585,11 @@
           "L": "Mais si vous faites acception de personnes, vous commettez un péché, et vous êtes convaincus par la Loi comme transgresseurs.",
           "B": "Mais si vous faites du favoritisme, vous commettez un péché, et la Loi vous condamne comme des gens qui l’enfreignent.",
           "R": "Mais si vous préférez certaines personnes à d’autres, vous péchez. La Loi montre que vous êtes coupables de lui désobéir."
+        },
+        "ko": {
+          "L": "그러나 여러분이 차별한다면, 여러분은 죄를 짓는 것이고, 율법에 의해 범법자로 판정을 받습니다.",
+          "B": "그러나 여러분이 차별한다면, 그것은 죄를 짓는 것이고, 율법이 여러분을 범법자로 판정합니다.",
+          "R": "그러나 여러분이 어떤 사람을 다른 사람보다 더 귀하게 대한다면, 여러분은 죄를 짓고 있는 것입니다. 율법은 여러분이 율법을 어긴 죄인이라는 것을 보여 줍니다."
         }
       },
       "decisions": [
@@ -1483,6 +1704,11 @@
           "L": "Car quiconque garde toute la Loi, mais trébuche sur un seul [point], est devenu coupable de tout.",
           "B": "Car si quelqu’un observe la Loi tout entière mais trébuche sur un seul point, il est devenu coupable de l’avoir enfreinte tout entière.",
           "R": "Imaginez quelqu’un qui obéit à toute la Loi, sauf à un seul commandement. Il est coupable d’avoir désobéi à toute la Loi."
+        },
+        "ko": {
+          "L": "누구든지 율법 전체를 지키다가 한 [조항]에서 걸려 넘어지면, 모든 것에 대해 죄가 있는 사람이 됩니다.",
+          "B": "누구든지 율법 전체를 지키다가도 한 가지에서 걸려 넘어지면, 율법 전체를 어긴 죄가 있는 사람이 됩니다.",
+          "R": "어떤 사람이 율법의 계명을 다 지키고 하나만 지키지 않았다고 해 봅시다. 그 사람은 율법 전체를 어긴 죄인입니다."
         }
       },
       "decisions": [
@@ -1597,6 +1823,11 @@
           "L": "Car celui qui a dit : « Ne commets pas d’adultère », a dit aussi : « Ne commets pas de meurtre. » Or si tu ne commets pas d’adultère mais que tu commets un meurtre, tu es devenu transgresseur de [la] Loi.",
           "B": "Car celui qui a dit : « Ne commets pas d’adultère » a dit aussi : « Ne commets pas de meurtre. » Si donc tu ne commets pas d’adultère mais que tu commets un meurtre, tu as tout de même enfreint la Loi.",
           "R": "Dieu a donné le commandement : « Ne commets pas d’adultère », et {{deity_pronoun:il|Il}} a aussi donné le commandement : « Ne tue pas. » Alors, si tu ne commets jamais d’adultère mais que tu tues quelqu’un, tu as quand même désobéi à la Loi."
+        },
+        "ko": {
+          "L": "\"간음하지 마라\" 하신 분이 \"살인하지 마라\"고도 하셨기 때문입니다. 그러므로 여러분이 간음하지 않더라도 살인하면, 율법을 범한 사람이 된 것입니다.",
+          "B": "\"간음하지 마라\" 하신 분이 \"살인하지 마라\"고도 하셨습니다. 그러니 여러분이 간음하지 않았더라도 살인했다면, 여러분은 율법을 어긴 것입니다.",
+          "R": "하나님께서 \"간음하지 마라\" 하는 계명을 주셨고, \"살인하지 마라\" 하는 계명도 주셨습니다. 그러니 여러분이 간음은 하지 않았더라도 사람을 죽였다면, 여러분은 율법을 어긴 사람입니다."
         }
       },
       "decisions": [
@@ -1710,6 +1941,30 @@
           "reason": "After the plural of verses 1-9, James turns to one reader with singular verbs, as in a debate. French can show this, so every level says \"tu\" here, where English \"you\" is the same for one or many.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59002011004",
+            "n59002011005",
+            "n59002011008",
+            "n59002011009"
+          ],
+          "choice": "\"간음하지 마라\", \"살인하지 마라\", the commandments in the words of the Korean Matthew 19:18",
+          "alternatives": [
+            "\"간음하지 말라\""
+          ],
+          "reason": "The Ten Commandments read as they do in the Korean Gospels, in the plain 해라체 of Scripture quoted. \"-지 말라\" is the written form used in the Korean Romans 13:9; the Gospels' \"-지 마라\" is kept here because it is the form of speech, and God is the speaker (meaning decision).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1758,6 +2013,11 @@
           "L": "Parlez ainsi et agissez ainsi, comme [des gens] qui doivent être jugés par [la] loi de la liberté.",
           "B": "Parlez et agissez comme des gens qui vont être jugés par la loi de la liberté.",
           "R": "Un jour, vous serez jugés par la loi qui rend libre. Que cela guide donc votre manière de parler et votre manière d’agir."
+        },
+        "ko": {
+          "L": "여러분은 자유의 율법으로 심판을 받을 사람들답게 그렇게 말하고 그렇게 행하십시오.",
+          "B": "자유를 주는 율법으로 심판을 받을 사람답게 말하고 행동하십시오.",
+          "R": "언젠가 여러분은 자유를 주는 율법으로 심판을 받을 것입니다. 그러니 그것을 생각하며 말하고 행동하십시오."
         }
       },
       "decisions": [
@@ -1891,6 +2151,11 @@
           "L": "Car le jugement [sera] sans miséricorde pour celui qui n’a pas fait miséricorde ; la miséricorde se glorifie face au jugement.",
           "B": "Le jugement sera sans miséricorde pour celui qui n’a pas fait preuve de miséricorde. La miséricorde l’emporte sur le jugement.",
           "R": "Ceux qui n’ont pas été miséricordieux envers les autres seront jugés sans miséricorde. Mais la miséricorde est plus forte que le jugement."
+        },
+        "ko": {
+          "L": "긍휼을 베풀지 않은 사람에게는 긍휼 없는 심판이 [있을 것이기] 때문입니다. 긍휼은 심판을 이기고 자랑합니다.",
+          "B": "긍휼을 베풀지 않은 사람은 긍휼 없는 심판을 받을 것입니다. 긍휼은 심판을 이깁니다.",
+          "R": "다른 사람을 불쌍히 여기지 않은 사람은 하나님께서도 불쌍히 여기지 않고 심판하실 것입니다. 그러나 불쌍히 여기는 마음은 심판보다 강합니다."
         }
       },
       "decisions": [
@@ -1985,6 +2250,47 @@
           "reason": "The verb is a compound of the one rendered \"se glorifier\" in 1:9 (m2): mercy stands before the judgment unafraid. Literal keeps the link; Balanced and Readable say that mercy wins.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59002013008",
+            "n59002013010"
+          ],
+          "choice": "\"긍휼\" (L, B); \"불쌍히 여기다\" (R)",
+          "alternatives": [
+            "\"자비\"",
+            "\"궁휼\""
+          ],
+          "reason": "\"긍휼\" is the established word for God's and people's mercy and is still understood; Readable uses the everyday \"불쌍히 여기다\". Readable names God as the judge, as the English Readable implies with \"will be judged\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59002013009"
+          ],
+          "choice": "\"심판을 이기고 자랑합니다\" (L); \"심판을 이깁니다\" (B); \"심판보다 강합니다\" (R)",
+          "alternatives": [
+            "\"심판을 향하여 자랑합니다\""
+          ],
+          "reason": "The verb is \"boast against\", used here for triumphing over judgment (meaning decision). Literal keeps \"자랑하다\" so the word can be traced; Balanced and Readable say what it means.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2035,6 +2341,11 @@
           "L": "Quel [est le] profit, mes {{gender:frères et sœurs|frères}}, si quelqu’un dit avoir la foi mais n’a pas d’œuvres ?",
           "B": "À quoi cela sert-il, mes {{gender:frères et sœurs|frères}}, que quelqu’un prétende avoir la foi s’il n’a pas d’œuvres ?",
           "R": "Mes {{gender:frères et sœurs|frères}}, à quoi cela sert-il de dire qu’on a la foi, si l’on n’a pas d’actes qui vont avec ?"
+        },
+        "ko": {
+          "L": "내 {{gender:형제자매|형제}} 여러분, 누가 믿음이 있다고 말하면서 행함이 없다면, 무슨 유익이 [있겠습니까]?",
+          "B": "내 {{gender:형제자매|형제}} 여러분, 어떤 사람이 믿음이 있다고 말하면서도 행함이 없다면, 그것이 무슨 소용이 있겠습니까?",
+          "R": "내 {{gender:형제자매|형제}} 여러분, 어떤 사람이 믿음이 있다고 말하지만 그 믿음에 따르는 행동이 없다면, 그것이 무슨 쓸모가 있겠습니까?"
         }
       },
       "decisions": [
@@ -2190,6 +2501,28 @@
           "reason": "\"Les œuvres\" is the established French word for the deeds faith does (m2), and Literal and Balanced keep it through 2:14-26 so the argument can be followed. Readable says \"les actes\" or \"ce qu’on fait\", as the English Readable says \"actions\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59002014010"
+          ],
+          "choice": "\"행함\" (L, B); \"행동\" (R) for works, through the chapter",
+          "alternatives": [
+            "\"행위\", the word of the Korean Romans",
+            "\"선행\""
+          ],
+          "reason": "The meaning decision reads works here as the deeds that faith does, above all deeds of love and mercy. \"행함\" (doing) links with \"행하는 사람\" (the doers of 1:22-25), as the Greek words link; Readable says \"행동\" (actions), as the English Readable does. The Korean Romans uses \"행위\" for the works of the law, and a reader comparing the two letters can see the different question each answers (meaning decision at 2:24).",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2233,6 +2566,11 @@
           "L": "Cette foi ne peut pas le sauver, [n’est-ce pas] ?",
           "B": "Cette foi-là ne peut pas le sauver, n’est-ce pas ?",
           "R": "Ce genre de foi ne peut sauver personne, n’est-ce pas ?"
+        },
+        "ko": {
+          "L": "그 믿음이 그를 구원할 수는 없지 않습니까?",
+          "B": "그런 믿음이 그 사람을 구원할 수 있겠습니까?",
+          "R": "그런 믿음은 아무도 구원할 수 없습니다. 그렇지 않습니까?"
         }
       },
       "decisions": [
@@ -2373,6 +2711,11 @@
           "L": "Si un frère ou une sœur sont nus et manquent de la nourriture du jour, \\v 16 et que l’un de vous leur dise : « Allez en paix, chauffez-vous et rassasiez-vous », sans que vous leur donniez ce qui est nécessaire au corps, quel [en est le] profit ?",
           "B": "Supposons qu’un frère ou une sœur n’ait pas de quoi se vêtir et manque de la nourriture de chaque jour, \\v 16 et que l’un de vous leur dise : « Allez en paix ; tenez-vous au chaud et mangez à votre faim », mais que vous ne leur donniez pas ce dont le corps a besoin : à quoi cela sert-il ?",
           "R": "Imaginez un frère ou une sœur qui n’a rien à se mettre et rien à manger aujourd’hui. \\v 16 L’un de vous leur dit : « Allez en paix ! Restez au chaud et mangez autant que vous voulez ! » Mais personne parmi vous ne leur donne ce dont leur corps a besoin. À quoi cela sert-il ?"
+        },
+        "ko": {
+          "L": "만일 형제나 자매가 헐벗고 그날 먹을 양식이 모자라는데, \\v 16 여러분 가운데 누가 그들에게 \"평안히 가십시오. 몸을 따뜻하게 하고 배불리 드십시오\" 하고 말하면서도, 몸에 필요한 것들을 그들에게 주지 않는다면, 무슨 유익이 [있겠습니까]?",
+          "B": "어떤 형제나 자매가 입을 옷도 변변치 않고 그날 먹을 양식도 없다고 합시다. \\v 16 그런데 여러분 가운데 누가 그들에게 \"평안히 가십시오. 따뜻하게 입고 배불리 드십시오\" 하면서, 몸에 필요한 것은 주지 않는다면, 그것이 무슨 소용이 있겠습니까?",
+          "R": "입을 것도 없고 오늘 먹을 것도 없는 형제나 자매가 있다고 생각해 보십시오. \\v 16 여러분 가운데 누가 그들에게 \"평안히 가십시오! 따뜻하게 지내고 많이 드십시오!\" 하고 말합니다. 그러나 여러분 가운데 아무도 그들의 몸에 필요한 것을 주지 않습니다. 그것이 무슨 소용이 있습니까?"
         }
       },
       "decisions": [
@@ -2531,6 +2874,51 @@
           "reason": "Swahili \"ndugu\" covers both ἀδελφὸς and ἀδελφὴ, so \"wa kiume\" and \"wa kike\" are added to keep James's two words apart. \"Dada\" would also work but is more often a sister by birth.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n59002015002",
+            "n59002015004"
+          ],
+          "choice": "\"형제나 자매\" with no gender span",
+          "alternatives": [
+            "{{gender:형제자매|형제}}"
+          ],
+          "reason": "The Greek names both, a brother or a sister, so Korean says both in every setting, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59002016007",
+            "n59002016008",
+            "n59002016009"
+          ],
+          "choice": "\"평안히 가십시오\" for the farewell",
+          "alternatives": [
+            "\"잘 가십시오\""
+          ],
+          "reason": "\"Go in peace\" was a customary farewell (meaning decision); Korean \"평안히 가십시오\" is natural and keeps the word \"peace\", which the hollow wish makes ironic.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2580,6 +2968,11 @@
           "L": "Ainsi aussi la foi, si elle n’a pas d’œuvres, est morte en elle-même.",
           "B": "Il en est de même de la foi : si elle n’a pas d’œuvres, elle est morte en elle-même.",
           "R": "La foi, c’est pareil. Si elle n’est pas accompagnée d’actes, elle est complètement morte."
+        },
+        "ko": {
+          "L": "이와 같이 믿음도 행함이 없으면 그 자체로 죽은 것입니다.",
+          "B": "믿음도 마찬가지입니다. 행함이 없으면 그 자체로 죽은 것입니다.",
+          "R": "믿음도 그와 같습니다. 믿음에 행동이 없으면, 그 믿음은 완전히 죽은 것입니다."
         }
       },
       "decisions": [
@@ -2679,6 +3072,11 @@
           "L": "Mais quelqu’un dira : « Toi, tu as la foi, et moi, j’ai des œuvres. »",
           "B": "Mais quelqu’un dira : « Toi, tu as la foi, et moi, j’ai des œuvres. »",
           "R": "Mais quelqu’un dira : « L’un a la foi, l’autre a des actes. »"
+        },
+        "ko": {
+          "L": "그러나 어떤 사람은 \"당신은 믿음이 있고, 나는 행함이 있습니다\" 하고 말할 것입니다.",
+          "B": "그러나 어떤 사람은 \"당신은 믿음이 있고, 나는 행함이 있습니다\" 하고 말할 것입니다.",
+          "R": "그러나 어떤 사람은 \"어떤 사람에게는 믿음이 있고, 또 어떤 사람에게는 행동이 있습니다\" 하고 말할 것입니다."
         }
       },
       "decisions": [
@@ -2767,6 +3165,28 @@
           "reason": "Readable says \"actions\" for ἔργον, a common word for what people do; Literal and Balanced keep \"works\" through 2:14-26 so that the argument's key word stays visible.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n59002018004"
+          ],
+          "choice": "\"당신\" with 합쇼체 for the singular \"you\" of the imagined objector and of James's answer, through verse 22",
+          "alternatives": [
+            "\"너\" with 해라체",
+            "\"그대\""
+          ],
+          "reason": "James argues with an imagined speaker in the singular. As in the Korean of Romans 2:1 and 8:2, the letter's 합쇼체 is kept and \"당신\" gives the singular \"you\" of a debate; the plain 해라체 would sound like contempt.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2821,6 +3241,11 @@
           "L": "Montre-moi ta foi sans les œuvres, et moi, je te montrerai, par mes œuvres, [ma] foi.",
           "B": "Montre-moi ta foi sans aucune œuvre, et moi, c’est par mes œuvres que je te montrerai ma foi.",
           "R": "Montre-moi ta foi, si tu n’as pas d’actes ! Moi, je te montrerai ma foi par ce que je fais."
+        },
+        "ko": {
+          "L": "행함이 없는 당신의 믿음을 내게 보여 주십시오. 그러면 나는 내 행함으로 [내] 믿음을 당신에게 보여 주겠습니다.",
+          "B": "행함이 없는 당신의 믿음을 내게 보여 주십시오. 나는 내 행함으로 내 믿음을 당신에게 보여 주겠습니다.",
+          "R": "행동이 없는데 믿음이 있다면, 그 믿음을 나에게 보여 주십시오! 나는 내가 하는 일로 내 믿음을 당신에게 보여 주겠습니다."
         }
       },
       "decisions": [
@@ -2930,6 +3355,11 @@
           "L": "Toi, tu crois que Dieu est un ?",
           "B": "Tu crois que Dieu est un ?",
           "R": "Crois-tu que Dieu est un, qu’il n’y a qu’un seul Dieu ?"
+        },
+        "ko": {
+          "L": "당신은 하나님께서 한 분이시라는 것을 믿습니까?",
+          "B": "당신은 하나님께서 한 분이시라는 것을 믿습니까?",
+          "R": "당신은 하나님께서 한 분이시라는 것, 곧 하나님은 오직 한 분뿐이시라는 것을 믿습니까?"
         }
       },
       "decisions": [
@@ -3051,6 +3481,11 @@
           "L": "Tu fais bien ; les démons aussi croient, et ils frissonnent.",
           "B": "C’est très bien ! Les démons aussi le croient, et ils tremblent.",
           "R": "C’est bien ! Mais les démons le croient aussi, et ils tremblent de peur."
+        },
+        "ko": {
+          "L": "잘하는 것입니다. 귀신들도 믿고 떱니다.",
+          "B": "잘하는 일입니다! 귀신들도 그것을 믿고 떱니다.",
+          "R": "좋습니다! 그러나 귀신들도 그것을 믿고, 두려워서 벌벌 떱니다."
         }
       },
       "decisions": [
@@ -3094,6 +3529,27 @@
           "choice": "shudder: tremble with terror",
           "alternatives": [],
           "reason": "φρίσσουσιν means to bristle or shudder with fear. The demons' belief brings no peace, only dread of the God they know will judge them.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59002019012"
+          ],
+          "choice": "\"귀신들\" for the demons",
+          "alternatives": [
+            "\"마귀들\", kept for the devil"
+          ],
+          "reason": "\"마귀\" is the word for the devil (4:7), so the demons are \"귀신\", as in the Korean of the Gospels.",
           "uncertain": false,
           "footnote": false
         }
@@ -3147,6 +3603,11 @@
           "L": "Mais veux-tu savoir, ô {{gender:personne vide|homme vide}}, que la foi sans les œuvres est inutile ?",
           "B": "Veux-tu donc qu’on te montre, {{gender:tête vide|homme vide}}, que la foi sans les œuvres ne produit rien ?",
           "R": "{{gender:Personne insensée|Homme insensé}} ! Veux-tu que je te montre que la foi sans actes ne sert à rien ?"
+        },
+        "ko": {
+          "L": "그런데 오, 허망한 사람이여, 행함이 없는 믿음이 쓸모없다는 것을 알고 싶습니까?",
+          "B": "생각이 텅 빈 사람이여, 행함이 없는 믿음은 아무 일도 하지 못한다는 것을 보여 줄까요?",
+          "R": "어리석은 사람이여! 행동이 없는 믿음은 아무짝에도 쓸모없다는 것을 내가 보여 줄까요?"
         }
       },
       "decisions": [
@@ -3299,6 +3760,27 @@
           "reason": "The word means a human being, man or woman. The adjective goes inside the span, since in the Readable default it must agree with \"personne\"; nothing else in the sentence refers back to the noun, so \"personne\" can be used here.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n59002020005"
+          ],
+          "choice": "\"사람이여\" with no gender span",
+          "alternatives": [
+            "{{gender:사람이여|남자여}}"
+          ],
+          "reason": "The Greek word is \"human being\", used as a scornful address to anyone (meaning decision). Korean \"사람\" already covers men and women, and \"남자여\" would add a sense the Greek does not have.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3352,6 +3834,11 @@
           "L": "Abraham notre père ne fut-il pas justifié par les œuvres, ayant offert Isaac son fils sur l’autel ?",
           "B": "Ainsi Abraham, notre père : n’est-ce pas par les œuvres qu’il fut justifié, quand il offrit son fils Isaac sur l’autel ?",
           "R": "Pense à notre père Abraham. N’a-t-il pas été déclaré juste à cause de ses actes, quand il a offert son fils Isaac sur l’autel ?"
+        },
+        "ko": {
+          "L": "우리 조상 아브라함은 그의 아들 이삭을 제단 위에 바쳤을 때, 행함으로 의롭다고 인정받은 것이 아닙니까?",
+          "B": "우리 조상 아브라함을 생각해 보십시오. 그가 자기 아들 이삭을 제단에 바쳤을 때, 행함으로 의롭다고 인정받은 것이 아닙니까?",
+          "R": "우리 조상 아브라함을 생각해 보십시오. 그가 자기 아들 이삭을 제단에 바쳤을 때, 그 행동 때문에 하나님께 의로운 사람으로 인정받지 않았습니까?"
         }
       },
       "decisions": [
@@ -3527,6 +4014,49 @@
           "reason": "\"Justifier\" is the French theological word, and its everyday sense (to give reasons for something) does not get in the way here, so Literal and Balanced keep it, matching Paul’s word. Readable says \"déclaré juste\", as in Romans and Galatians: God’s verdict that a person is in the right (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59002021008"
+          ],
+          "choice": "\"의롭다고 인정받다\" (L, B); \"하나님께 의로운 사람으로 인정받다\" (R), here and in verses 24-25",
+          "alternatives": [
+            "\"의롭다 함을 받다\"",
+            "\"칭의를 받다\""
+          ],
+          "reason": "The same Korean as the Korean Romans (\"의롭다고 인정하다\") for the same verb, so the reader can compare the two letters, as the meaning decision at 2:24 asks; that decision and the one here say what James means by it. Readable names God, as the English Readable says \"counted righteous\".",
+          "uncertain": true,
+          "footnote": true
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59002021003"
+          ],
+          "choice": "\"우리 조상\" for \"our father\"",
+          "alternatives": [
+            "\"우리 아버지\""
+          ],
+          "reason": "Abraham is the ancestor of God's people (meaning decision); \"아버지\" would suggest a parent.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3600,6 +4130,11 @@
           "L": "Tu vois que la foi agissait avec ses œuvres, et que par les œuvres la foi fut menée à son accomplissement, \\v 23 et l’Écriture fut accomplie, qui dit : « Or Abraham crut Dieu, et cela lui fut compté comme justice », et il fut appelé ami de Dieu.",
           "B": "Tu vois que sa foi agissait avec ses œuvres, et que par ses œuvres sa foi atteignit son but. \\v 23 Ainsi s’accomplit l’Écriture qui dit : « Abraham crut Dieu, et cela lui fut compté comme justice », et il fut appelé ami de Dieu.",
           "R": "Tu vois que sa foi et ses actes agissaient ensemble. Sa foi a été rendue complète par ce qu’il a fait. \\v 23 C’est ainsi que les paroles de l’Écriture se sont réalisées : « Abraham a cru Dieu, et Dieu a compté cela comme justice pour lui. » Et Abraham a été appelé l’ami de Dieu."
+        },
+        "ko": {
+          "L": "당신이 보는 대로, 믿음이 그의 행함과 함께 일했고, 행함으로 믿음이 완전하게 되었습니다. \\v 23 그리하여 \"아브라함이 하나님을 믿었고, 그것이 그에게 의로 여겨졌다\"고 말하는 성경이 이루어졌고, 그는 하나님의 친구라고 불렸습니다.",
+          "B": "당신도 알 수 있듯이, 그의 믿음은 그의 행함과 함께 일했고, 그 행함으로 그의 믿음은 목적을 이루었습니다. \\v 23 이렇게 해서 \"아브라함이 하나님을 믿으니, 그것이 그에게 의로 여겨졌다\" 한 성경 말씀이 이루어졌고, 그는 하나님의 친구라고 불렸습니다.",
+          "R": "당신도 알 수 있듯이, 그의 믿음과 행동은 함께 일하고 있었습니다. 그가 한 일로 그의 믿음이 완전해졌습니다. \\v 23 이렇게 해서 성경 말씀이 이루어졌습니다. \"아브라함이 하나님을 믿었고, 하나님께서는 그것을 의로 여겨 주셨다.\" 그리고 아브라함은 하나님의 친구라고 불렸습니다."
         }
       },
       "decisions": [
@@ -3797,6 +4332,29 @@
           "reason": "The Greek has God in the dative, without a preposition: Abraham believed what God said to him (Genesis 15:6). French \"croire quelqu’un\" says exactly that, where \"croire en Dieu\" would mean believing that God exists or trusting him in general.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59002023007",
+            "n59002023013",
+            "n59002023016"
+          ],
+          "choice": "Genesis 15:6 in the words of the Korean Romans 4:3 at each level",
+          "alternatives": [
+            "new wording for the quotation"
+          ],
+          "reason": "Paul quotes the same verse in Romans 4:3; giving it the same Korean lets the reader see that both letters stand on one Scripture.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3845,6 +4403,11 @@
           "L": "Vous voyez que par les œuvres {{gender:un être humain|un homme}} est justifié, et non par la foi seulement.",
           "B": "Vous voyez donc que c’est par les œuvres qu’on est justifié, et non par la foi seulement.",
           "R": "Vous voyez donc qu’on est déclaré juste à cause de ses actes, et pas seulement à cause de sa foi."
+        },
+        "ko": {
+          "L": "여러분이 보는 대로, 사람은 행함으로 의롭다고 인정받는 것이지, 믿음으로만 [인정받는 것이] 아닙니다.",
+          "B": "그러니 여러분도 알 수 있듯이, 사람은 행함으로 의롭다고 인정받는 것이지, 믿음만으로 인정받는 것이 아닙니다.",
+          "R": "그러니 여러분도 알 수 있듯이, 사람은 행동으로 하나님께 의로운 사람으로 인정받는 것이지, 믿음만으로 인정받는 것이 아닙니다."
         }
       },
       "decisions": [
@@ -3938,6 +4501,27 @@
           "reason": "The word means a human being, man or woman. Literal keeps the noun and carries the setting; Balanced and Readable use the already inclusive \"on\". \"Vous voyez\" is plural again (m3), after the singular of 2:18-23.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n59002024001"
+          ],
+          "choice": "\"여러분\" again for the plural \"you see\"",
+          "alternatives": [
+            "\"당신\""
+          ],
+          "reason": "The verb is now plural (meaning decision): James turns from the imagined objector back to all his readers, and Korean shows it by returning to \"여러분\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3992,6 +4576,11 @@
           "L": "Et de même Rahab la prostituée aussi ne fut-elle pas justifiée par les œuvres, ayant accueilli les messagers et [les] ayant fait sortir par un autre chemin ?",
           "B": "De même, Rahab la prostituée ne fut-elle pas, elle aussi, justifiée par les œuvres, quand elle accueillit les messagers et les fit repartir par un autre chemin ?",
           "R": "C’est la même chose pour Rahab, la prostituée. N’a-t-elle pas été déclarée juste à cause de ses actes ? Elle a accueilli les hommes venus comme messagers et les a aidés à s’enfuir par un autre chemin."
+        },
+        "ko": {
+          "L": "또 마찬가지로 창녀 라합도 사자들을 맞아들이고 다른 길로 내보냈을 때, 행함으로 의롭다고 인정받은 것이 아닙니까?",
+          "B": "마찬가지로 창녀 라합도 정탐꾼들을 맞아들였다가 다른 길로 떠나보냈을 때, 행함으로 의롭다고 인정받은 것이 아닙니까?",
+          "R": "창녀 라합도 마찬가지였습니다. 그 여자도 행동 때문에 의로운 사람으로 인정받지 않았습니까? 라합은 정탐하러 온 사람들을 맞아들였고, 그들이 다른 길로 도망치도록 도와주었습니다."
         }
       },
       "decisions": [
@@ -4091,6 +4680,50 @@
           "reason": "Readable says who the messengers were and what sending them out by another way meant.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59002025013"
+          ],
+          "choice": "\"사자들\" (L); \"정탐꾼들\" (B); \"정탐하러 온 사람들\" (R)",
+          "alternatives": [
+            "\"천사들\"",
+            "\"심부름꾼들\""
+          ],
+          "reason": "The word can mean angels, but here it is the men Joshua sent (meaning decision). \"사자\" (envoy) keeps the Greek word at Literal; Balanced and Readable say who they were, from Joshua 2.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59002025004",
+            "n59002025006"
+          ],
+          "choice": "\"라합\"; \"창녀\" at every level",
+          "alternatives": [
+            "\"기생\""
+          ],
+          "reason": "\"라합\" is the established Protestant form. The meaning decision says her status as an outsider is the point, set beside Abraham; \"기생\" softens it to an entertainer.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4144,6 +4777,11 @@
           "L": "Car, comme le corps sans esprit est mort, ainsi aussi la foi sans œuvres est morte.",
           "B": "Comme un corps sans esprit est mort, de même la foi sans œuvres est morte.",
           "R": "Un corps sans esprit est mort. De la même façon, la foi sans actes est morte."
+        },
+        "ko": {
+          "L": "영이 없는 몸이 죽은 것과 같이, 행함이 없는 믿음도 죽은 것입니다.",
+          "B": "영이 없는 몸이 죽은 것처럼, 행함이 없는 믿음도 죽은 것입니다.",
+          "R": "영이 없는 몸은 죽은 것입니다. 마찬가지로, 행동이 없는 믿음도 죽은 것입니다."
         }
       },
       "decisions": [
@@ -4219,6 +4857,28 @@
             "works"
           ],
           "reason": "Readable says \"actions\" for ἔργον, a common word for what people do; Literal and Balanced keep \"works\" through 2:14-26 so that the argument's key word stays visible.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59002026006"
+          ],
+          "choice": "\"영\" for the spirit of the body",
+          "alternatives": [
+            "\"숨\"",
+            "\"영혼\""
+          ],
+          "reason": "The spirit is the life God breathes into a body (meaning decision); \"영\" is the word used for the human spirit, lowercase in sense, and not \"성령\".",
           "uncertain": false,
           "footnote": false
         }
