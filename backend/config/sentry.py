@@ -49,6 +49,15 @@ def scrub_event(event, hint=None):
     return _clean(event)
 
 
+def scrub_transaction(event, hint=None):
+    """A timed request (SENTRY_TRACES_SAMPLE_RATE), scrubbed as an error
+    is; its database spans keep their SQL but never its parameters."""
+    for span in event.get("spans") or []:
+        if isinstance(span.get("data"), dict):
+            span["data"].pop("db.params", None)
+    return scrub_event(event, hint)
+
+
 def init(dsn, environment, **options):
     import sentry_sdk
     from sentry_sdk.integrations.django import DjangoIntegration
@@ -72,6 +81,7 @@ def init(dsn, environment, **options):
         include_local_variables=False,
         max_request_body_size="never",
         before_send=scrub_event,
+        before_send_transaction=scrub_transaction,
         before_breadcrumb=scrub_breadcrumb,
         **options,
     )
