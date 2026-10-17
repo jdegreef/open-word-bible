@@ -139,6 +139,16 @@ class ProgressTest(AdminTestCase):
         self.assertEqual(books["JHN"]["statuses"], {"ai_draft": 2})
         self.assertEqual(books["GEN"]["sentences"], 0)
 
+    def test_coverage_is_cached_until_sentences_change(self):
+        def jhn():
+            books = self.admin.get("/api/admin/coverage/").json()["books"]
+            return next(b for b in books if b["code"] == "JHN")["sentences"]
+        self.assertEqual(jhn(), 2)
+        with mock.patch("staff.progress._count_by_book", side_effect=AssertionError("counted again")):
+            self.assertEqual(jhn(), 2)
+        sentence("JHN.1.3.s1", ("en",))
+        self.assertEqual(jhn(), 3)
+
     def test_languages(self):
         data = self.admin.get("/api/admin/languages/").json()
         fr = next(row for row in data["languages"] if row["code"] == "fr")

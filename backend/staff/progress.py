@@ -56,7 +56,20 @@ def _languages():
 
 def _by_book():
     """{book: {"sentences", "chapters", "statuses": {status: n}, "langs": {lang: n}}}
-    for every book with a sentence."""
+    for every book with a sentence. Counting every rendering takes seconds,
+    so the answer is cached until a sentence is added or saved again:
+    import_content saves a sentence, bumping its updated_at, whenever its
+    renderings change."""
+    stamp = Sentence.objects.aggregate(n=Count("id"), t=Max("updated_at"))
+    key = "staff.by_book.{}.{}".format(stamp["n"], stamp["t"].timestamp() if stamp["t"] else 0)
+    out = cache.get(key)
+    if out is None:
+        out = _count_by_book()
+        cache.set(key, out, 7 * 86400)
+    return out
+
+
+def _count_by_book():
     out = {}
     for row in Sentence.objects.values("book").annotate(n=Count("id"), chapters=Count("chapter", distinct=True)):
         out[row["book"]] = {"sentences": row["n"], "chapters": row["chapters"], "statuses": {}, "langs": {}}
@@ -291,7 +304,10 @@ def overview(request):
     activity = []
     if "team" in mine:
         activity = [_action_json(a) for a in AdminAction.objects.all()[:8]]
-    statuses = dict(Sentence.objects.values("status").annotate(n=Count("id")).values_list("status", "n"))
+    statuses = {}
+    for b in books:
+        for status, n in b["statuses"].items():
+            statuses[status] = statuses.get(status, 0) + n
     return Response({
         "totals": {
             "sentences": sentences,
