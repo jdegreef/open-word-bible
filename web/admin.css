@@ -45,8 +45,12 @@ td .admin-sub, th .admin-sub { display: block; }
 .admin-bars { display: grid; gap: 8px; }
 .admin-bar-row { display: grid; grid-template-columns: minmax(90px, 160px) minmax(0, 1fr) auto; gap: 12px; align-items: center; color: var(--text); text-decoration: none; font-size: 14px; }
 a.admin-bar-row:hover span:first-child { color: var(--accent); }
+summary.admin-bar-row { cursor: pointer; list-style: none; }
+summary.admin-bar-row::-webkit-details-marker { display: none; }
+.admin-examples { margin: 4px 0 10px; font-size: 14px; }
 .admin-bar { display: block; height: 10px; min-width: 60px; border-radius: 999px; background: var(--surface-2); box-shadow: inset 0 0 0 1px var(--line); overflow: hidden; }
 .admin-bar i { display: block; height: 100%; background: var(--accent); border-radius: 999px; }
+.admin-bar i.warn { background: var(--gold); }
 td .admin-bar { margin: 4px 0; }
 
 .admin-columns { display: flex; gap: 6px; align-items: flex-end; height: 160px; padding-top: 18px; }
