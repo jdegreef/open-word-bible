@@ -46,6 +46,11 @@
           "L": "[Người nào] ở trong nơi kín đáo của Đấng Chí Cao \\q sẽ trú đêm dưới bóng của Đấng Toàn Năng.",
           "B": "Ai lấy nơi che chở của Đấng Chí Cao làm chỗ ở \\q sẽ được nghỉ đêm dưới bóng mát của Đấng Toàn Năng.",
           "R": "Người sống gần gũi với Đức Chúa Trời, Đấng cao hơn hết, \\q sẽ được nghỉ ngơi an toàn dưới bóng mát của Đấng Toàn Năng."
+        },
+        "ko": {
+          "L": "가장 높으신 분의 은신처에 사는 [사람은] \\q 전능하신 분의 그늘에서 밤을 지낼 것이다.",
+          "B": "가장 높으신 분의 보호 아래 거처를 정한 사람은 \\q 전능하신 분의 그늘에서 밤을 보낼 것이다.",
+          "R": "모든 것 위에 계신 하나님 가까이에 사는 사람은 \\q 전능하신 분의 그늘에서 안전하게 쉴 것이다."
         }
       },
       "decisions": [
@@ -218,6 +223,51 @@
           "reason": "Shaddai is the old title \"the Almighty\" (see the meaning decision); \"Đấng Toàn Năng\" is the form Vietnamese Bible readers know, and it says the same thing plainly.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190910010031",
+            "o190910010051"
+          ],
+          "choice": "\"가장 높으신 분\" (L, B; \"모든 것 위에 계신 하나님\" at R) for Elyon; \"전능하신 분\" for Shaddai",
+          "alternatives": [
+            "\"지존자\"",
+            "\"전능자\""
+          ],
+          "reason": "Plain modern words for the two titles (meaning decision m2), with the honorific; \"지존자\" and \"전능자\" are the older church forms. Elyon is \"지극히 높으신 분\" where it stands as a name in a statement (87:5), and \"가장 높으신 분\" here, with the same sense.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o190910010011"
+          ],
+          "choice": "Verses 1-8 and 10-13 are in the plain written style; the one addressed in verses 3-13 is \"너\"",
+          "alternatives": [
+            "합쇼체",
+            "\"그대\""
+          ],
+          "reason": "The psalm speaks about God and to a person who trusts him (meaning decision m1 on verse 3), not to God, so Korean uses the plain voice of poetry and 해라체 with \"너\", as the published Psalm 121:3-8 does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -273,6 +323,11 @@
           "L": "Tôi sẽ nói về {{divine_name:CHÚA|Gia-vê}}: \"[Ngài là] nơi ẩn náu của tôi và đồn lũy của tôi, \\q Đức Chúa Trời của tôi, tôi tin cậy nơi {{deity_pronoun:ngài|Ngài}}.\"",
           "B": "Đây là điều tôi nói về {{divine_name:CHÚA|Gia-vê}}: \"Ngài là nơi ẩn náu và đồn lũy của tôi, \\q là Đức Chúa Trời của tôi, Đấng tôi nương cậy.\"",
           "R": "Tôi nói về {{divine_name:CHÚA|Gia-vê}} thế này: \"Ngài giữ tôi an toàn. Ngài là đồn lũy vững chắc của tôi. \\q Ngài là Đức Chúa Trời của tôi, và tôi tin cậy {{deity_pronoun:ngài|Ngài}}.\""
+        },
+        "ko": {
+          "L": "나는 {{divine_name:주|야훼}}께 아뢴다. \"나의 피난처, 나의 요새, \\q 내가 신뢰하는 나의 하나님.\"",
+          "B": "나는 {{divine_name:주|야훼}}를 두고 이렇게 말한다. \"그분은 나의 피난처, 나의 요새, \\q 내가 의지하는 나의 하나님이시다.\"",
+          "R": "나는 {{divine_name:주|야훼}}에 대해 이렇게 말한다. \"그분은 나를 지켜 주신다. 그분은 나의 든든한 요새이시다. \\q 그분은 나의 하나님이시니, 나는 그분을 믿는다.\""
         }
       },
       "decisions": [
@@ -328,6 +383,26 @@
           "reason": "The terms for these books keep one word for each of these pictures of safety, so that they read the same from psalm to psalm.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190910020011",
+            "o190910020022"
+          ],
+          "choice": "\"{{divine_name:주|야훼}}께 아뢴다\" (L), \"{{divine_name:주|야훼}}를 두고 말한다\" (B, R)",
+          "alternatives": [
+            "\"{{divine_name:주|야훼}}에 대해 말한다\" at every level"
+          ],
+          "reason": "The Hebrew \"say to the LORD\" can mean saying of him or to him (meaning decision m1); Literal keeps the preposition's own sense, while Balanced and Readable say \"about\" as the English does. The words quoted speak of God in the third person either way.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -380,6 +455,11 @@
           "L": "Vì chính {{deity_pronoun:ngài|Ngài}}, {{deity_pronoun:ngài|Ngài}} sẽ giải cứu bạn khỏi bẫy của người bắt chim, \\q khỏi dịch bệnh hủy diệt.",
           "B": "Chính {{deity_pronoun:ngài|Ngài}} sẽ giải cứu bạn khỏi cái bẫy của kẻ bẫy chim \\q và khỏi bệnh dịch chết người.",
           "R": "Đức Chúa Trời sẽ cứu bạn khỏi những cạm bẫy giấu kín, như con chim được cứu khỏi lưới của thợ săn. \\q Ngài sẽ cứu bạn khỏi bệnh tật chết người."
+        },
+        "ko": {
+          "L": "참으로 그분께서, 그분께서 너를 새 사냥꾼의 덫에서, \\q 멸망의 역병에서 건지실 것이다.",
+          "B": "그분께서 너를 새 잡는 사람의 덫에서 건지시고 \\q 사람을 죽이는 역병에서 구해 내실 것이다.",
+          "R": "새가 사냥꾼의 그물에서 빠져나오듯, 하나님께서 너를 숨겨진 덫에서 구해 주실 것이다. \\q 죽음을 부르는 병에서 너를 구해 주실 것이다."
         }
       },
       "decisions": [
@@ -551,6 +631,11 @@
           "L": "Ngài sẽ lấy lông cánh {{deity_pronoun:ngài|Ngài}} che phủ bạn, và dưới cánh {{deity_pronoun:ngài|Ngài}} bạn sẽ ẩn náu; \\q sự thành tín của {{deity_pronoun:ngài|Ngài}} [là] cái khiên và bức tường thành.",
           "B": "Ngài sẽ giương lông cánh {{deity_pronoun:ngài|Ngài}} che trên bạn, và dưới cánh {{deity_pronoun:ngài|Ngài}} bạn sẽ tìm được chỗ trú ẩn. \\q Sự thành tín của {{deity_pronoun:ngài|Ngài}} bao quanh bạn như cái khiên và bức tường thành.",
           "R": "Như chim mẹ che chở chim con, Đức Chúa Trời sẽ giương cánh {{deity_pronoun:ngài|Ngài}} ra che bạn, và bạn sẽ được an toàn dưới đó. \\q Vì {{deity_pronoun:ngài|Ngài}} thành tín, {{deity_pronoun:ngài|Ngài}} sẽ bảo vệ bạn như cái khiên và bức tường vững chắc."
+        },
+        "ko": {
+          "L": "그분께서 그분의 깃으로 너를 덮으시니, 너는 그분의 날개 아래로 피할 것이다. \\q 그분의 신실하심은 방패요 성벽이다.",
+          "B": "그분께서 깃털을 펼쳐 너를 덮으시고, 너는 그분의 날개 아래에서 피난처를 얻을 것이다. \\q 그분의 신실하심이 방패와 성벽처럼 너를 둘러싼다.",
+          "R": "어미 새가 새끼를 품듯 하나님께서 날개를 펴서 너를 덮어 주시니, 너는 그 아래에서 안전할 것이다. \\q 그분은 신실하시니, 방패와 튼튼한 성벽처럼 너를 지켜 주실 것이다."
         }
       },
       "decisions": [
@@ -669,6 +754,11 @@
           "L": "Bạn sẽ không sợ sự kinh hoàng ban đêm, \\q [cũng không sợ] mũi tên bay ban ngày,",
           "B": "Bạn chẳng cần sợ những nỗi kinh hoàng đến lúc đêm khuya, \\q hay mũi tên vút qua giữa ban ngày,",
           "R": "Bạn sẽ không sợ những nguy hiểm ban đêm, \\q hay những mũi tên bắn vào bạn ban ngày."
+        },
+        "ko": {
+          "L": "너는 밤의 공포를 두려워하지 않고, \\q 낮에 날아오는 화살도 [두려워하지 않을 것이다].",
+          "B": "너는 밤에 닥치는 공포도, \\q 대낮에 날아드는 화살도 두려워할 필요가 없다.",
+          "R": "너는 밤의 위험을 두려워하지 않을 것이다. \\q 낮에 너를 향해 날아오는 화살도 두려워하지 않을 것이다."
         }
       },
       "decisions": [
@@ -753,6 +843,11 @@
           "L": "[hay] dịch bệnh đi lại trong bóng tối, \\q [hay] sự hủy diệt tàn phá [lúc] giữa trưa.",
           "B": "hay bệnh dịch rình rập trong bóng tối, \\q hay sự tàn phá hoành hành lúc giữa trưa.",
           "R": "Bạn sẽ không sợ bệnh tật lan ra trong bóng tối, \\q hay tai họa ập đến giữa ban ngày."
+        },
+        "ko": {
+          "L": "어둠 속에 다니는 역병도, \\q 한낮에 휩쓰는 재앙도 [두려워하지 않을 것이다].",
+          "B": "어둠 속에서 퍼지는 병도, \\q 한낮에 덮치는 재앙도 두려워할 필요가 없다.",
+          "R": "어둠 속에서 퍼지는 병도 두려워하지 않을 것이다. \\q 한낮에 닥치는 재난도 두려워하지 않을 것이다."
         }
       },
       "decisions": [
@@ -841,6 +936,11 @@
           "L": "Một nghìn [người] sẽ ngã bên cạnh bạn, \\q và một vạn [người] bên tay phải bạn; \\q [nhưng] nó sẽ không đến gần bạn.",
           "B": "Dù một nghìn người ngã gục bên bạn, \\q một vạn người ngay bên tay phải bạn, \\q tai họa cũng sẽ không chạm đến bạn.",
           "R": "Có thể một nghìn người chết bên cạnh bạn, \\q và một vạn người chết quanh bạn, \\q nhưng nguy hiểm sẽ không chạm đến bạn."
+        },
+        "ko": {
+          "L": "네 곁에서 천 [명이] 쓰러지고, \\q 네 오른편에서 만 [명이 쓰러져도], \\q 그것이 너에게는 가까이 오지 못할 것이다.",
+          "B": "네 곁에서 천 명이 쓰러지고, \\q 네 오른편에서 만 명이 쓰러져도, \\q 그것이 너에게는 미치지 못할 것이다.",
+          "R": "네 옆에서 천 명이 죽고, \\q 네 둘레에서 만 명이 죽어도, \\q 그 위험이 너는 건드리지 못할 것이다."
         }
       },
       "decisions": [
@@ -942,6 +1042,11 @@
           "L": "Chỉ bằng mắt mình bạn sẽ nhìn, \\q và sự báo trả cho kẻ ác bạn sẽ thấy.",
           "B": "Bạn chỉ đứng nhìn tận mắt \\q và thấy kẻ ác bị báo trả.",
           "R": "Bạn chỉ đứng nhìn \\q khi kẻ ác bị trừng phạt đúng như chúng đáng phải chịu."
+        },
+        "ko": {
+          "L": "너는 오직 네 눈으로 바라보고, \\q 악인들이 받는 보응을 보게 될 것이다.",
+          "B": "너는 그저 네 눈으로 지켜보며, \\q 악인들이 갚음을 받는 것을 보게 될 것이다.",
+          "R": "너는 그저 지켜보기만 할 것이다. \\q 악한 사람들이 마땅히 받을 벌을 받는 것을 보게 될 것이다."
         }
       },
       "decisions": [
@@ -1023,6 +1128,11 @@
           "L": "Vì {{deity_pronoun:ngài|Ngài}}, lạy {{divine_name:CHÚA|Gia-vê}}, [là] nơi ẩn náu của tôi! \\q Bạn đã lấy Đấng Chí Cao làm nơi ở của mình.",
           "B": "Vì lạy {{divine_name:CHÚA|Gia-vê}}, {{deity_pronoun:ngài|Ngài}} là nơi ẩn náu của tôi! \\q Bạn đã lấy Đấng Chí Cao làm nhà mình.",
           "R": "Lạy {{divine_name:CHÚA|Gia-vê}}, {{deity_pronoun:ngài|Ngài}} là Đấng giữ tôi an toàn! \\q Còn bạn đã lấy Đức Chúa Trời, Đấng cao hơn hết, làm nhà của mình."
+        },
+        "ko": {
+          "L": "참으로 주님은, {{divine_name:주|야훼}}여, 나의 피난처이십니다! \\q 너는 가장 높으신 분을 네 거처로 삼았다.",
+          "B": "{{divine_name:주|야훼}}여, 주님은 나의 피난처이십니다! \\q 너는 가장 높으신 분을 너의 집으로 삼았다.",
+          "R": "{{divine_name:주|야훼}}여, 주님께서 나를 지켜 주십니다! \\q 너는 모든 것 위에 계신 하나님을 너의 집으로 삼았다."
         }
       },
       "decisions": [
@@ -1097,6 +1207,28 @@
           "reason": "The verse turns from the psalmist's word to God (first line) back to the one being encouraged (second line), as the English does with \"you\". Readable says \"Et toi\", as the English Readable says \"And you\".",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o190910090021",
+            "o190910090061"
+          ],
+          "choice": "The first line speaks to God in 합쇼체; the second returns to \"너\" in 해라체; the speaker here says \"나\"",
+          "alternatives": [
+            "one speech level for the whole verse"
+          ],
+          "reason": "The verse changes speaker and addressee suddenly (meaning decision m1), and Korean marks the change with the speech level of each line. The speaker keeps \"나\" because the line is a cry inside a poem spoken to a fellow believer, not a prayer of the whole psalm.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1151,6 +1283,11 @@
           "L": "Tai họa sẽ không xảy đến cho bạn, \\q và tai ương sẽ không đến gần lều bạn.",
           "B": "Không điều ác nào giáng trên bạn; \\q không bệnh dịch nào đến gần nhà bạn.",
           "R": "Không điều xấu nào xảy đến cho bạn. \\q Không bệnh tật nào đến gần nhà bạn."
+        },
+        "ko": {
+          "L": "재앙이 너에게 닥치지 않고, \\q 재난이 네 장막 가까이 오지 못할 것이다.",
+          "B": "어떤 해도 너를 덮치지 못하고, \\q 어떤 재앙도 네 집에 다가오지 못할 것이다.",
+          "R": "너에게 나쁜 일이 생기지 않을 것이다. \\q 어떤 병도 너의 집에 가까이 오지 못할 것이다."
         }
       },
       "decisions": [
@@ -1256,6 +1393,11 @@
           "L": "Vì {{deity_pronoun:ngài|Ngài}} sẽ truyền lệnh cho các thiên sứ của {{deity_pronoun:ngài|Ngài}} về bạn, \\q để gìn giữ bạn trong mọi đường lối của bạn.",
           "B": "Vì {{deity_pronoun:ngài|Ngài}} sẽ ra lệnh cho các thiên sứ của {{deity_pronoun:ngài|Ngài}} về bạn, \\q để bảo vệ bạn bất cứ nơi đâu bạn đi.",
           "R": "Đức Chúa Trời sẽ bảo các thiên sứ của {{deity_pronoun:ngài|Ngài}} chăm sóc bạn \\q và giữ bạn an toàn bất cứ nơi nào bạn đi."
+        },
+        "ko": {
+          "L": "참으로 그분께서 너를 두고 그분의 천사들에게 명령하셔서, \\q 네 모든 길에서 너를 지키게 하실 것이다.",
+          "B": "그분께서 너를 위해 그분의 천사들에게 명령하셔서 \\q 네가 어디로 가든지 너를 지키게 하실 것이다.",
+          "R": "하나님께서 천사들에게 너를 돌보라고 명령하셔서, \\q 네가 어디로 가든지 너를 안전하게 지키게 하실 것이다."
         }
       },
       "decisions": [
@@ -1374,6 +1516,11 @@
           "L": "Trên lòng bàn tay [họ], họ sẽ nâng bạn lên, \\q kẻo chân bạn vấp vào đá.",
           "B": "Các thiên sứ sẽ đỡ bạn trên tay, \\q để chân bạn không bị thương vì vấp đá.",
           "R": "Họ sẽ nâng bạn lên và mang bạn đi, \\q để bạn không vấp phải dù chỉ một hòn đá."
+        },
+        "ko": {
+          "L": "그들이 손바닥으로 너를 떠받쳐, \\q 네 발이 돌에 부딪히지 않게 할 것이다.",
+          "B": "그들이 손으로 너를 받들어서 \\q 네 발이 돌에 걸려 다치지 않게 할 것이다.",
+          "R": "천사들이 너를 들어 올려 안고 가서, \\q 네가 돌부리에 걸려 넘어지지도 않게 할 것이다."
         }
       },
       "decisions": [
@@ -1473,6 +1620,11 @@
           "L": "Bạn sẽ bước trên sư tử và rắn hổ mang; \\q bạn sẽ giày đạp sư tử con và con rắn.",
           "B": "Bạn sẽ đi trên sư tử và rắn hổ mang; \\q bạn sẽ giẫm nát sư tử tơ và rắn độc dưới chân.",
           "R": "Bạn sẽ bước đi trên sư tử và rắn độc. \\q Bạn sẽ giẫm nát sư tử mạnh mẽ và rắn dữ dưới chân."
+        },
+        "ko": {
+          "L": "너는 사자와 독사를 밟고, \\q 젊은 사자와 큰 뱀을 짓밟을 것이다.",
+          "B": "너는 사자와 독사 위를 걸어 다니고, \\q 젊은 사자와 큰 뱀을 발로 짓밟을 것이다.",
+          "R": "너는 사자와 독뱀을 밟고 다닐 것이다. \\q 힘센 사자와 큰 뱀을 발로 짓밟을 것이다."
         }
       },
       "decisions": [
@@ -1577,6 +1729,11 @@
           "L": "\"Vì người ấy đã đặt tình yêu nơi {{deity_pronoun:ta|Ta}}, {{deity_pronoun:ta|Ta}} sẽ giải cứu người ấy; \\q {{deity_pronoun:ta|Ta}} sẽ đặt người ấy lên nơi cao, vì người ấy biết danh {{deity_pronoun:ta|Ta}}.",
           "B": "\"Ai gắn bó với {{deity_pronoun:ta|Ta}} bằng tình yêu, {{deity_pronoun:ta|Ta}} sẽ giải cứu; \\q {{deity_pronoun:ta|Ta}} sẽ nâng họ lên cao, ngoài tầm nguy hiểm, vì họ biết danh {{deity_pronoun:ta|Ta}}.",
           "R": "\"Ta sẽ cứu những ai yêu mến {{deity_pronoun:ta|Ta}}. \\q Ta sẽ giữ họ an toàn ở nơi không gì chạm tới được, vì họ biết {{deity_pronoun:ta|Ta}} là ai."
+        },
+        "ko": {
+          "L": "\"그가 나를 사랑하여 매달리니, 내가 그를 건지리라. \\q 그가 내 이름을 아니, 내가 그를 높이 두리라.",
+          "B": "\"나를 사랑하여 매달리는 사람을 내가 구해 주리라. \\q 그가 내 이름을 아니, 내가 그를 위험이 닿지 않는 높은 곳에 두리라.",
+          "R": "\"나를 사랑하는 사람을 내가 구원하겠다. \\q 그는 내가 누구인지 아니, 내가 그를 위험이 닿지 않는 곳에서 안전하게 지키겠다."
         }
       },
       "decisions": [
@@ -1742,6 +1899,29 @@
           "reason": "God speaks of anyone who loves him (see the meaning decision). \"người ấy\" and \"họ\" already include men and women, so Vietnamese has no second form for the English gender setting to switch to; God says \"Ta\", with the deity_pronoun setting.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o190910140011",
+            "o190910140042"
+          ],
+          "choice": "God speaks (verses 14-16) in 해라체 with \"나\" and speaks of the one who loves him as \"그\" (L) or \"사람\" (B, R), with no gender spans",
+          "alternatives": [
+            "{{gender:그들|그}}",
+            "합쇼체"
+          ],
+          "reason": "God himself speaks here (meaning decision m1), as the terms note sets. Korean \"그\" and \"사람\" are used of anyone, man or woman, in this kind of general statement (as in the published Psalm 1), so there is no second wording to offer for the English spans.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1799,6 +1979,11 @@
           "L": "Người ấy sẽ kêu cầu {{deity_pronoun:ta|Ta}}, và {{deity_pronoun:ta|Ta}} sẽ đáp lời người ấy; \\q {{deity_pronoun:ta|Ta}} [sẽ ở] với người ấy trong lúc gian nan; \\q {{deity_pronoun:ta|Ta}} sẽ giải thoát người ấy và làm cho người ấy được tôn trọng.",
           "B": "Họ sẽ kêu cầu {{deity_pronoun:ta|Ta}}, và {{deity_pronoun:ta|Ta}} sẽ đáp lời; \\q trong cơn hoạn nạn, {{deity_pronoun:ta|Ta}} sẽ ở bên họ; \\q {{deity_pronoun:ta|Ta}} sẽ giải thoát họ và ban cho họ vinh dự.",
           "R": "Khi họ kêu cầu {{deity_pronoun:ta|Ta}}, {{deity_pronoun:ta|Ta}} sẽ trả lời. \\q Khi họ gặp khó khăn, {{deity_pronoun:ta|Ta}} sẽ ở ngay bên cạnh họ. \\q Ta sẽ cứu họ và làm cho họ được tôn trọng."
+        },
+        "ko": {
+          "L": "그가 나를 부르면 내가 그에게 응답하고, \\q 그가 고난 가운데 있을 때 내가 그와 함께 [있으며], \\q 내가 그를 건지고 그를 영화롭게 하리라.",
+          "B": "그가 나를 부르면 내가 대답하고, \\q 그가 괴로움을 당할 때 내가 그 곁에 있으며, \\q 내가 그를 구해 내어 존귀하게 하리라.",
+          "R": "그가 나를 부르면 내가 대답하겠다. \\q 그가 어려움을 당할 때 내가 바로 그 곁에 있겠다. \\q 내가 그를 구원하고 높여 주겠다."
         }
       },
       "decisions": [
@@ -1882,6 +2067,11 @@
           "L": "Ta sẽ cho người ấy no đủ [với] những ngày dài lâu, \\q và {{deity_pronoun:ta|Ta}} sẽ cho người ấy thấy sự cứu rỗi của {{deity_pronoun:ta|Ta}}.\"",
           "B": "Ta sẽ cho họ được sống lâu thỏa nguyện \\q và cho họ thấy ơn giải cứu của {{deity_pronoun:ta|Ta}}.\"",
           "R": "Ta sẽ cho họ được sống lâu và trọn vẹn, \\q và họ sẽ thấy {{deity_pronoun:ta|Ta}} giải cứu họ.\""
+        },
+        "ko": {
+          "L": "[긴] 날들로 내가 그를 만족하게 하고, \\q 그에게 나의 구원을 보여 주리라.\"",
+          "B": "내가 그를 오래 살게 하여 만족하게 하고, \\q 나의 구원을 그에게 보여 주리라.\"",
+          "R": "나는 그가 오래도록 넉넉한 삶을 누리게 하겠다. \\q 그는 내가 그를 구원하는 것을 보게 될 것이다.\""
         }
       },
       "decisions": [

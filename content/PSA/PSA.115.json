@@ -57,6 +57,11 @@
           "L": "Không phải cho chúng con, lạy {{divine_name:CHÚA|Gia-vê}}, không phải cho chúng con, nhưng xin ban vinh quang cho danh {{deity_pronoun:ngài|Ngài}}, vì tình yêu thương thành tín của {{deity_pronoun:ngài|Ngài}}, vì sự thành tín của {{deity_pronoun:ngài|Ngài}}.",
           "B": "Lạy {{divine_name:CHÚA|Gia-vê}}, xin đừng ban vinh quang cho chúng con, xin đừng ban cho chúng con. Xin ban vinh quang ấy cho danh {{deity_pronoun:ngài|Ngài}}, vì tình yêu thương thành tín và sự thành tín của {{deity_pronoun:ngài|Ngài}}.",
           "R": "Lạy {{divine_name:CHÚA|Gia-vê}}, xin đừng đem vinh dự đến cho chúng con. Xin đừng đem đến cho chúng con! Xin đem vinh dự đến cho chính danh {{deity_pronoun:ngài|Ngài}}, vì tình thương không hề thay đổi của {{deity_pronoun:ngài|Ngài}} và vì {{deity_pronoun:ngài|Ngài}} luôn giữ lời hứa."
+        },
+        "ko": {
+          "L": "저희에게가 아니라, {{divine_name:주|야훼}}여, 저희에게가 아니라, 주님의 이름에 영광을 돌리십시오. 주님의 한결같은 사랑 때문에, 주님의 신실하심 때문에 [그리하십시오].",
+          "B": "{{divine_name:주|야훼}}여, 저희에게 영광을 돌리지 마십시오. 저희에게는 돌리지 마십시오. 주님의 한결같은 사랑과 신실하심을 위하여 주님의 이름에 영광을 돌리십시오.",
+          "R": "{{divine_name:주|야훼}}여, 저희를 높이지 마십시오. 저희가 영광을 받지 않게 하십시오! 주님의 변함없는 사랑 때문에, 주님께서 약속을 지키시기 때문에 주님의 이름을 높이십시오."
         }
       },
       "decisions": [
@@ -169,6 +174,29 @@
           "reason": "As in Psalm 106, the humble \"chúng con\" of prayer is used to God, and the inclusive \"chúng ta\" when the singers speak of God to one another. |",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o191150010022",
+            "o191150010081"
+          ],
+          "choice": "Verses 1-2 are prayer to God in 합쇼체 with \"저희\"; from verse 3 the psalm speaks about God in the plain style, with \"우리\" (verses 3, 12, 18), and to the worshippers with \"너희\" (verses 9-11, 14-15)",
+          "alternatives": [
+            "저희 throughout",
+            "우리 throughout"
+          ],
+          "reason": "The Hebrew turns from \"you\" (the LORD, verse 1) to \"our God ... he\" (verse 3), and to calls and blessings spoken to the people. Korean marks each voice by its speech level, using the humble \"저희\" only where the people speak to God.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -220,6 +248,11 @@
           "L": "Tại sao các dân tộc lại nói: \"Bây giờ Đức Chúa Trời của chúng [ở] đâu?\"",
           "B": "Sao lại để các dân tộc nói: \"Vậy Đức Chúa Trời của chúng ở đâu?\"",
           "R": "Tại sao lại để các dân tộc khác chế nhạo chúng con mà nói: \"Đức Chúa Trời của chúng ở đâu?\""
+        },
+        "ko": {
+          "L": "어찌하여 민족들이 \"이제 그들의 하나님이 어디 [있느냐]?\" 하고 말하게 [하십니까]?",
+          "B": "어찌하여 민족들이 \"그래, 그들의 하나님이 어디 있느냐?\" 하고 말하게 두십니까?",
+          "R": "어찌하여 다른 민족들이 저희를 비웃으며 \"그들의 하나님이 어디 있느냐?\" 하고 말하게 하십니까?"
         }
       },
       "decisions": [
@@ -252,6 +285,27 @@
           "choice": "make fun of us",
           "alternatives": [],
           "reason": "Readable says what the question is: mockery.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191150020061"
+          ],
+          "choice": "In the nations' taunt \"그들의 하나님이\" has no honorific",
+          "alternatives": [
+            "그들의 하나님께서"
+          ],
+          "reason": "The mockers speak of Israel's God with contempt, so Korean gives them no honorific particle; the psalm's own speech honours him (\"우리 하나님께서\", verse 3).",
           "uncertain": false,
           "footnote": false
         }
@@ -305,6 +359,11 @@
           "L": "Nhưng Đức Chúa Trời chúng ta [ở] trên các tầng trời; mọi điều {{deity_pronoun:ngài|Ngài}} muốn, {{deity_pronoun:ngài|Ngài}} đều làm.",
           "B": "Nhưng Đức Chúa Trời chúng ta ở trên các tầng trời, và điều gì {{deity_pronoun:ngài|Ngài}} muốn, {{deity_pronoun:ngài|Ngài}} đều làm.",
           "R": "Nhưng Đức Chúa Trời của chúng ta ở trên trời, và {{deity_pronoun:ngài|Ngài}} làm bất cứ điều gì {{deity_pronoun:ngài|Ngài}} muốn."
+        },
+        "ko": {
+          "L": "그러나 우리 하나님께서는 하늘에 [계시고], 원하시는 모든 것을 행하신다.",
+          "B": "그러나 우리 하나님께서는 하늘에 계시고, 무엇이든 뜻하시는 대로 행하신다.",
+          "R": "그러나 우리 하나님께서는 하늘에 계시고, 하고 싶으신 일은 무엇이든지 하신다."
         }
       },
       "decisions": [
@@ -387,6 +446,11 @@
           "L": "Thần tượng của chúng [là] bạc và vàng, công việc của tay loài người.",
           "B": "Thần tượng của chúng làm bằng bạc và vàng, do bàn tay loài người nắn nên.",
           "R": "Thần tượng của các dân tộc chỉ là bạc và vàng. Con người đã làm ra chúng bằng chính đôi tay mình."
+        },
+        "ko": {
+          "L": "그들의 우상들은 은과 금이요, 사람의 손으로 만든 것이다.",
+          "B": "그들의 우상은 은과 금으로 만든 것, 사람의 손으로 빚은 것이다.",
+          "R": "민족들의 우상은 은과 금일 뿐이다. 사람들이 자기 손으로 만든 것이다."
         }
       },
       "decisions": [
@@ -492,6 +556,11 @@
           "L": "Chúng có miệng, nhưng chúng không nói; chúng có mắt, nhưng chúng không thấy.",
           "B": "Chúng có miệng mà chẳng nói được gì; có mắt mà chẳng thấy gì.",
           "R": "Thần tượng có miệng, nhưng không nói được. Chúng có mắt, nhưng không thấy được."
+        },
+        "ko": {
+          "L": "그것들에게 입이 있으나 말하지 못하고, 눈이 있으나 보지 못한다.",
+          "B": "입이 있어도 아무 말을 못 하고, 눈이 있어도 아무것도 보지 못한다.",
+          "R": "우상은 입이 있어도 말을 못 한다. 눈이 있어도 보지 못한다."
         }
       },
       "decisions": [
@@ -583,6 +652,11 @@
           "L": "Chúng có tai, nhưng chúng không nghe; chúng có mũi, nhưng chúng không ngửi.",
           "B": "Chúng có tai mà chẳng nghe gì; có mũi mà chẳng ngửi được gì.",
           "R": "Chúng có tai, nhưng không nghe được. Chúng có mũi, nhưng không ngửi được."
+        },
+        "ko": {
+          "L": "그것들에게 귀가 있으나 듣지 못하고, 코가 있으나 냄새 맡지 못한다.",
+          "B": "귀가 있어도 아무것도 듣지 못하고, 코가 있어도 아무 냄새도 맡지 못한다.",
+          "R": "귀가 있어도 듣지 못한다. 코가 있어도 냄새를 맡지 못한다."
         }
       },
       "decisions": [
@@ -658,6 +732,11 @@
           "L": "Tay của chúng, nhưng chúng không sờ; chân của chúng, nhưng chúng không đi; chúng không phát ra tiếng nơi cổ họng.",
           "B": "Chúng có tay mà chẳng sờ được gì, có chân mà chẳng bao giờ bước đi; cổ họng chúng không phát ra một tiếng nào.",
           "R": "Chúng có tay, nhưng không sờ được. Chúng có chân, nhưng không đi được. Cổ họng chúng không phát ra được một tiếng nào."
+        },
+        "ko": {
+          "L": "그것들의 손, 그러나 만지지 못하고, 그것들의 발, 그러나 걷지 못하며, 그 목구멍으로 소리를 내지 못한다.",
+          "B": "손이 있어도 아무것도 느끼지 못하고, 발이 있어도 걷지 못하며, 목구멍에서는 아무 소리도 나오지 않는다.",
+          "R": "손이 있어도 만지지 못한다. 발이 있어도 걷지 못한다. 목으로 아무 소리도 내지 못한다."
         }
       },
       "decisions": [
@@ -744,6 +823,11 @@
           "L": "Giống như chúng sẽ là những kẻ làm ra chúng, mọi kẻ tin cậy nơi chúng.",
           "B": "Những kẻ làm ra chúng rồi sẽ giống như chúng, và mọi kẻ nương cậy chúng cũng vậy.",
           "R": "Những người làm ra thần tượng sẽ trở nên vô dụng như thần tượng, và tất cả những ai tin cậy chúng cũng vậy."
+        },
+        "ko": {
+          "L": "그것들을 만드는 자들, 그것들을 신뢰하는 모든 이가 그것들과 같이 될 것이다.",
+          "B": "우상을 만드는 사람들도 그것들처럼 되고 말 것이요, 그것을 의지하는 사람도 모두 그렇게 될 것이다.",
+          "R": "우상을 만드는 사람들은 우상처럼 쓸모없게 될 것이다. 우상을 믿는 사람도 모두 그렇게 될 것이다."
         }
       },
       "decisions": [
@@ -848,6 +932,11 @@
           "L": "Hỡi Y-sơ-ra-ên, hãy tin cậy nơi {{divine_name:CHÚA|Gia-vê}}! Sự giúp đỡ của họ và cái khiên của họ [là] {{deity_pronoun:ngài|Ngài}}.",
           "B": "Hỡi dân Y-sơ-ra-ên, hãy đặt lòng tin cậy nơi {{divine_name:CHÚA|Gia-vê}}! Ngài là Đấng giúp đỡ họ và che chở họ.",
           "R": "Hỡi dân Y-sơ-ra-ên, hãy tin cậy {{divine_name:CHÚA|Gia-vê}}! Ngài giúp đỡ những ai tin cậy {{deity_pronoun:ngài|Ngài}}, và {{deity_pronoun:ngài|Ngài}} bảo vệ họ như cái khiên."
+        },
+        "ko": {
+          "L": "이스라엘아, {{divine_name:주|야훼}}를 신뢰하여라! 그분은 그들의 도움이시요 그들의 방패이시다.",
+          "B": "이스라엘 백성아, {{divine_name:주|야훼}}를 신뢰하여라! 그분께서 그들을 도우시고 방패가 되어 지켜 주신다.",
+          "R": "이스라엘 백성아, {{divine_name:주|야훼}}를 믿고 의지하여라! 그분께서는 그분을 믿는 사람들을 도우시고 방패처럼 지켜 주신다."
         }
       },
       "decisions": [
@@ -961,6 +1050,28 @@
           "reason": "The response is sung about the worshipers, not to them (see the meaning decision), so Vietnamese keeps \"họ\"; \"cái khiên\" is the terms note's word for the shield. |",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191150090041",
+            "o191150090052"
+          ],
+          "choice": "The response keeps \"그들의\" (their) after the call to \"you\", in verses 9-11 alike",
+          "alternatives": [
+            "너희의 도움"
+          ],
+          "reason": "The Hebrew changes from \"trust\" (to you) to \"their help\", perhaps a reply sung by another voice (meaning decision); Korean keeps the change rather than smoothing it.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1014,6 +1125,11 @@
           "L": "Hỡi nhà A-rôn, hãy tin cậy nơi {{divine_name:CHÚA|Gia-vê}}! Sự giúp đỡ của họ và cái khiên của họ [là] {{deity_pronoun:ngài|Ngài}}.",
           "B": "Hỡi nhà A-rôn, hãy đặt lòng tin cậy nơi {{divine_name:CHÚA|Gia-vê}}! Ngài là Đấng giúp đỡ họ và che chở họ.",
           "R": "Hỡi các thầy tế lễ thuộc dòng họ A-rôn, hãy tin cậy {{divine_name:CHÚA|Gia-vê}}! Ngài giúp đỡ những ai tin cậy {{deity_pronoun:ngài|Ngài}}, và {{deity_pronoun:ngài|Ngài}} bảo vệ họ như cái khiên."
+        },
+        "ko": {
+          "L": "아론의 집아, {{divine_name:주|야훼}}를 신뢰하여라! 그분은 그들의 도움이시요 그들의 방패이시다.",
+          "B": "아론의 집안아, {{divine_name:주|야훼}}를 신뢰하여라! 그분께서 그들을 도우시고 방패가 되어 지켜 주신다.",
+          "R": "아론 집안의 제사장들아, {{divine_name:주|야훼}}를 믿고 의지하여라! 그분께서는 그분을 믿는 사람들을 도우시고 방패처럼 지켜 주신다."
         }
       },
       "decisions": [
@@ -1120,6 +1236,11 @@
           "L": "Hỡi những người kính sợ {{divine_name:CHÚA|Gia-vê}}, hãy tin cậy nơi {{divine_name:CHÚA|Gia-vê}}! Sự giúp đỡ của họ và cái khiên của họ [là] {{deity_pronoun:ngài|Ngài}}.",
           "B": "Hỡi những người kính sợ {{divine_name:CHÚA|Gia-vê}}, hãy đặt lòng tin cậy nơi {{divine_name:CHÚA|Gia-vê}}! Ngài là Đấng giúp đỡ họ và che chở họ.",
           "R": "Hỡi tất cả những ai kính sợ và tôn kính {{divine_name:CHÚA|Gia-vê}}, hãy tin cậy {{deity_pronoun:ngài|Ngài}}! Ngài giúp đỡ những ai tin cậy {{deity_pronoun:ngài|Ngài}}, và {{deity_pronoun:ngài|Ngài}} bảo vệ họ như cái khiên."
+        },
+        "ko": {
+          "L": "{{divine_name:주|야훼}}를 경외하는 이들아, {{divine_name:주|야훼}}를 신뢰하여라! 그분은 그들의 도움이시요 그들의 방패이시다.",
+          "B": "{{divine_name:주|야훼}}를 경외하는 이들아, {{divine_name:주|야훼}}를 신뢰하여라! 그분께서 그들을 도우시고 방패가 되어 지켜 주신다.",
+          "R": "{{divine_name:주|야훼}}를 두려운 마음으로 섬기는 사람들아, 그분을 믿고 의지하여라! 그분께서는 그분을 믿는 사람들을 도우시고 방패처럼 지켜 주신다."
         }
       },
       "decisions": [
@@ -1228,6 +1349,11 @@
           "L": "{{divine_name:CHÚA|Gia-vê}} đã nhớ đến chúng ta; {{deity_pronoun:ngài|Ngài}} sẽ ban phước; {{deity_pronoun:ngài|Ngài}} sẽ ban phước cho nhà Y-sơ-ra-ên; {{deity_pronoun:ngài|Ngài}} sẽ ban phước cho nhà A-rôn.",
           "B": "{{divine_name:CHÚA|Gia-vê}} đã ghi nhớ chúng ta, và {{deity_pronoun:ngài|Ngài}} sẽ ban phước: {{deity_pronoun:ngài|Ngài}} sẽ ban phước cho dân Y-sơ-ra-ên, {{deity_pronoun:ngài|Ngài}} sẽ ban phước cho gia đình A-rôn.",
           "R": "{{divine_name:CHÚA|Gia-vê}} đã không quên chúng ta, và {{deity_pronoun:ngài|Ngài}} sẽ ban phước cho chúng ta: cho dân Y-sơ-ra-ên và cho các thầy tế lễ thuộc dòng họ A-rôn."
+        },
+        "ko": {
+          "L": "{{divine_name:주|야훼}}께서 우리를 기억하셨으니, 그분께서 복을 주실 것이다. 이스라엘의 집에 복을 주시고, 아론의 집에 복을 주실 것이다.",
+          "B": "{{divine_name:주|야훼}}께서 우리를 잊지 않으셨으니 복을 주실 것이다. 이스라엘 백성에게 복을 주시고, 아론의 집안에 복을 주실 것이다.",
+          "R": "{{divine_name:주|야훼}}께서는 우리를 잊지 않으셨다. 그분께서 우리에게, 곧 이스라엘 백성과 아론 집안의 제사장들에게 복을 주실 것이다."
         }
       },
       "decisions": [
@@ -1328,6 +1454,11 @@
           "L": "Ngài sẽ ban phước cho những người kính sợ {{divine_name:CHÚA|Gia-vê}}, người nhỏ cùng với người lớn.",
           "B": "Ngài sẽ ban phước cho mọi người kính sợ {{divine_name:CHÚA|Gia-vê}}, từ người nhỏ nhất đến người lớn nhất.",
           "R": "Ngài sẽ ban phước cho mọi người kính sợ và tôn kính {{divine_name:CHÚA|Gia-vê}}, dù họ là người quan trọng hay không."
+        },
+        "ko": {
+          "L": "그분께서 {{divine_name:주|야훼}}를 경외하는 이들에게, 작은 자와 큰 자에게 함께 복을 주실 것이다.",
+          "B": "그분께서 {{divine_name:주|야훼}}를 경외하는 모든 이에게, 낮은 사람에게나 높은 사람에게나 복을 주실 것이다.",
+          "R": "그분께서는 {{divine_name:주|야훼}}를 두려운 마음으로 섬기는 사람이면 누구에게나, 대단한 사람이든 아니든 복을 주실 것이다."
         }
       },
       "decisions": [
@@ -1416,6 +1547,11 @@
           "L": "Nguyện {{divine_name:CHÚA|Gia-vê}} gia thêm cho các bạn, cho các bạn và cho con cái các bạn.",
           "B": "Nguyện {{divine_name:CHÚA|Gia-vê}} làm cho các bạn thêm đông, các bạn và cả con cái các bạn.",
           "R": "Nguyện {{divine_name:CHÚA|Gia-vê}} làm cho gia đình các bạn ngày càng đông đúc, gia đình các bạn và gia đình con cái các bạn."
+        },
+        "ko": {
+          "L": "{{divine_name:주|야훼}}께서 너희를, 너희와 너희 자녀들을 더하여 주시기를 빈다.",
+          "B": "{{divine_name:주|야훼}}께서 너희를 번성하게 하시고, 너희 자녀들도 번성하게 하시기를 빈다.",
+          "R": "{{divine_name:주|야훼}}께서 너희와 너희 자녀들의 집안을 점점 더 크게 해 주시기를 빈다."
         }
       },
       "decisions": [
@@ -1453,6 +1589,28 @@
             "\"anh chị em\""
           ],
           "reason": "The priest's blessing turns to the people as \"you\"; \"các bạn\" is the plain modern plural used for fellow worshipers in Psalm 69:33. \"các ngươi\" is archaic and \"anh chị em\" belongs to the church.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o191150140032"
+          ],
+          "choice": "The blessing is spoken to the worshippers as \"너희\", with the wish \"-하시기를 빈다\"",
+          "alternatives": [
+            "여러분",
+            "합쇼체"
+          ],
+          "reason": "A blessing spoken by priests over the people (meaning decision on verse 15) in the plain style of the psalm; \"너희\" is the plural of address used in calls to the congregation through this block.",
           "uncertain": true,
           "footnote": false
         }
@@ -1505,6 +1663,11 @@
           "L": "Các bạn [được] {{divine_name:CHÚA|Gia-vê}} ban phước, Đấng làm nên trời và đất.",
           "B": "Các bạn được {{divine_name:CHÚA|Gia-vê}} ban phước, Đấng đã dựng nên trời và đất.",
           "R": "{{divine_name:CHÚA|Gia-vê}} đã dựng nên bầu trời và mặt đất, và {{deity_pronoun:ngài|Ngài}} ban phước cho các bạn!"
+        },
+        "ko": {
+          "L": "너희는 하늘과 땅을 지으신 {{divine_name:주|야훼}}께 복을 받은 이들이다.",
+          "B": "너희는 하늘과 땅을 만드신 {{divine_name:주|야훼}}께 복을 받았다.",
+          "R": "{{divine_name:주|야훼}}께서는 하늘과 땅을 만드셨다. 그리고 그분께서 너희에게 복을 주신다!"
         }
       },
       "decisions": [
@@ -1591,6 +1754,11 @@
           "L": "Các tầng trời [là] các tầng trời của {{divine_name:CHÚA|Gia-vê}}, nhưng đất {{deity_pronoun:ngài|Ngài}} đã ban cho con cái loài người.",
           "B": "Các tầng trời là trời của riêng {{divine_name:CHÚA|Gia-vê}}; còn đất {{deity_pronoun:ngài|Ngài}} đã giao cho loài người.",
           "R": "Bầu trời trên cao thuộc về {{divine_name:CHÚA|Gia-vê}}, nhưng {{deity_pronoun:ngài|Ngài}} đã ban mặt đất cho con người."
+        },
+        "ko": {
+          "L": "하늘, 그 하늘은 {{divine_name:주|야훼}}의 것이나, 땅은 그분께서 사람의 자녀들에게 주셨다.",
+          "B": "하늘은 {{divine_name:주|야훼}}께 속한 하늘이요, 땅은 그분께서 사람들에게 맡겨 주셨다.",
+          "R": "저 위의 하늘은 {{divine_name:주|야훼}}의 것이지만, 땅은 그분께서 사람들에게 주셨다."
         }
       },
       "decisions": [
@@ -1666,6 +1834,25 @@
           "reason": "The English Literal offers \"children of humankind\" or \"sons of men\"; the Vietnamese \"con cái\" already takes in sons and daughters, as in Psalm 107:8. |",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191150160051"
+          ],
+          "choice": "\"사람의 자녀들\" with no gender span",
+          "alternatives": [
+            "a gender span offering \"사람의 아들들\" (sons of men)"
+          ],
+          "reason": "Korean \"자녀\" (children) and \"사람\" are already inclusive and are the natural words for the Hebrew phrase, so Korean has no second wording to offer (style guide section 7).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1718,6 +1905,11 @@
           "L": "Không phải những kẻ chết ca ngợi {{divine_name:CHÚA|Gia}}, cũng không phải bất cứ ai đi xuống [chốn] im lặng.",
           "B": "Kẻ chết không ca ngợi {{divine_name:CHÚA|Gia}}, cũng không ai trong những kẻ chìm vào cõi im lặng.",
           "R": "Người chết không thể ca ngợi {{divine_name:CHÚA|Gia}}. Không ai đã xuống nấm mồ im lặng còn có thể hát ca ngợi {{deity_pronoun:ngài|Ngài}}."
+        },
+        "ko": {
+          "L": "{{divine_name:주|야}}를 찬양하는 것은 죽은 이들이 아니요, 침묵 [속으로] 내려가는 그 누구도 아니다.",
+          "B": "죽은 이들은 {{divine_name:주|야}}를 찬양하지 못하고, 침묵 속으로 내려가는 이들도 아무도 찬양하지 못한다.",
+          "R": "죽은 사람들은 {{divine_name:주|야}}를 찬양할 수 없다. 고요한 무덤으로 내려간 사람은 아무도 그분께 노래할 수 없다."
         }
       },
       "decisions": [
@@ -1841,6 +2033,11 @@
           "L": "Nhưng chúng ta, chúng ta sẽ chúc tụng {{divine_name:CHÚA|Gia}} từ nay cho đến đời đời. Hãy ca ngợi {{divine_name:CHÚA|Gia}}!",
           "B": "Còn chúng ta, chúng ta sẽ chúc tụng {{divine_name:CHÚA|Gia}} từ nay cho đến muôn đời. Hãy ca ngợi {{divine_name:CHÚA|Gia}}!",
           "R": "Nhưng chúng ta là những người đang sống sẽ ca ngợi {{divine_name:CHÚA|Gia}} bây giờ và mãi mãi. Hãy ca ngợi {{divine_name:CHÚA|Gia}}!"
+        },
+        "ko": {
+          "L": "그러나 우리, 우리는 지금부터 영원까지 {{divine_name:주|야}}를 송축할 것이다. {{divine_name:주|야}}를 찬양하여라!",
+          "B": "그러나 우리는 이제부터 영원토록 {{divine_name:주|야}}를 송축할 것이다. {{divine_name:주|야}}를 찬양하여라!",
+          "R": "그러나 살아 있는 우리는 지금도 언제까지나 {{divine_name:주|야}}를 찬양할 것이다. {{divine_name:주|야}}를 찬양하여라!"
         }
       },
       "decisions": [

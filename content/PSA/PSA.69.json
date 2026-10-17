@@ -44,6 +44,11 @@
           "L": "Cho người chỉ huy [ban nhạc]: theo Sô-sa-nim. Của Đa-vít.",
           "B": "Cho nhạc trưởng. Theo Sô-sa-nim. Của Đa-vít.",
           "R": "Cho người hướng dẫn ban nhạc. Theo điệu \"Hoa huệ\". Của Đa-vít."
+        },
+        "ko": {
+          "L": "지휘자를 위하여. 소산님에 맞추어. 다윗의 [시].",
+          "B": "음악 지휘자를 위하여. 소산님에 맞추어. 다윗의 시.",
+          "R": "찬양 인도자를 위해. \"백합화\" 곡조에 맞추어. 다윗이 지은 노래."
         }
       },
       "decisions": [
@@ -288,6 +293,52 @@
           "reason": "Literal and Balanced keep the Hebrew word as a name, as the English does; Readable says what it probably means, a tune called \"Lilies\", as the English Readable does (see the meaning decision).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190690010011",
+            "o190690010012"
+          ],
+          "choice": "The director line is \"지휘자를 위하여\" (L), \"음악 지휘자를 위하여\" (B), \"찬양 인도자를 위해\" (R), as the published Psalm 139:1, for every psalm of Psalms 69-83",
+          "alternatives": [
+            "\"인도자를 따라\"",
+            "\"성가대 지휘자를 위하여\""
+          ],
+          "reason": "One wording for the director line keeps the psalm titles of this block alike, and matches the psalms already published.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o190690010031",
+            "o190690010042"
+          ],
+          "choice": "\"소산님에 맞추어\" (L, B), \"\\\"백합화\\\" 곡조에 맞추어\" (R); \"다윗의 [시]\" (L), \"다윗의 시\" (B), \"다윗이 지은 노래\" (R)",
+          "alternatives": [
+            "\"다윗의.\" with no noun",
+            "\"백합화 곡조\" at every level"
+          ],
+          "reason": "Literal and Balanced keep the Hebrew word as a name, as the English does; Readable gives its likely sense, a tune called \"Lilies\", as the English Readable does. Korean cannot leave \"of David\" without a noun, so Literal supplies \"[시]\" in brackets and Balanced says \"시\", the way Korean titles psalms; Readable follows the published titles (\"다윗이 지은 노래\").",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -338,6 +389,11 @@
           "L": "Lạy Đức Chúa Trời, xin cứu tôi, \\q vì nước đã dâng lên đến cổ [tôi].",
           "B": "Lạy Đức Chúa Trời, xin giải cứu tôi, \\q vì nước đã dâng lên tận cổ họng tôi.",
           "R": "Lạy Đức Chúa Trời, xin cứu tôi! \\q Nước đã ngập đến cổ tôi rồi."
+        },
+        "ko": {
+          "L": "하나님, 저를 구원하여 주십시오. \\q 물이 [제] 목까지 차올랐습니다.",
+          "B": "하나님, 저를 건져 주십시오. \\q 물이 제 목구멍까지 차올랐습니다.",
+          "R": "하나님, 저를 구해 주십시오! \\q 물이 목까지 차올랐습니다."
         }
       },
       "decisions": [
@@ -436,6 +492,29 @@
           "reason": "Vietnamese calls on God with \"Lạy\" and puts the address at the start of a prayer. \"Lạy\" is a word the grammar of prayer requires, so Literal does not bracket it (as Psalm 139:1). The singer says \"tôi\" and speaks to God as \"Ngài\" through the psalm, as in Psalm 23.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o190690020011",
+            "o190690020021"
+          ],
+          "choice": "The psalm is a prayer to God in 합쇼체; the singer is \"저/제\", and God is called \"하나님\" or addressed by title, \"주님\"; there are no deity_pronoun spans in Korean",
+          "alternatives": [
+            "나 and 해라체",
+            "당신"
+          ],
+          "reason": "Style guide section 7a (speech levels in prayer) and the published Psalms 23 and 139. Hangul has no capitals, so the deity_pronoun setting has nothing to change; respect is carried by 주님, 께서 and -시-. Verses that speak about God rather than to him (31-37) return to the plain written style with \"나\". This holds for Psalms 69-83.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -493,6 +572,11 @@
           "L": "Tôi đã lún sâu trong bùn lầy của vực sâu, và không có chỗ đứng; \\q tôi đã sa vào [những] chỗ nước sâu, và dòng lũ đã cuốn ngập tôi.",
           "B": "Tôi đang lún xuống bùn sâu, không có chỗ nào để đứng; \\q tôi đã chìm xuống nước sâu, và dòng nước đang cuốn tôi đi.",
           "R": "Tôi đang lún xuống bùn sâu. Không có chỗ nào vững để đứng. \\q Tôi ở trong nước sâu, và cơn lũ đang tràn qua tôi."
+        },
+        "ko": {
+          "L": "제가 깊은 수렁에 빠졌는데, 디딜 곳이 없습니다. \\q 제가 깊은 물속에 들어왔는데, 큰물이 저를 휩쓸었습니다.",
+          "B": "제가 깊은 진흙 속으로 빠져 들어가는데, 발 디딜 곳이 없습니다. \\q 깊은 물속으로 내려가니, 물살이 저를 휩쓸어 갑니다.",
+          "R": "저는 깊은 진흙 속으로 빠져 들어가고 있습니다. 단단히 디딜 곳이 없습니다. \\q 저는 깊은 물속에 있고, 홍수가 저를 덮칩니다."
         }
       },
       "decisions": [
@@ -579,6 +663,11 @@
           "L": "Tôi mệt lả vì kêu la; cổ họng tôi khô rát; \\q mắt tôi đã mờ đi, \\q vì trông đợi Đức Chúa Trời của tôi.",
           "B": "Tôi kiệt sức vì kêu cầu; cổ họng tôi khô bỏng. \\q Mắt tôi đã mờ đi \\q vì trông chờ Đức Chúa Trời của tôi.",
           "R": "Tôi kêu cứu đến mệt lả. Cổ họng tôi khô và đau rát. \\q Tôi trông chờ Đức Chúa Trời của tôi lâu đến nỗi mắt tôi mỏi mòn."
+        },
+        "ko": {
+          "L": "제가 부르짖느라 지쳤고, 제 목은 말라 탔습니다. \\q 제 눈이 흐려졌습니다. \\q 제 하나님을 기다리느라.",
+          "B": "부르짖다가 저는 기진했고, 목은 타는 듯이 말랐습니다. \\q 제 눈이 흐려졌습니다. \\q 제 하나님을 기다리다 지쳐서입니다.",
+          "R": "도와 달라고 부르짖다가 저는 지쳐 버렸습니다. 목이 마르고 아픕니다. \\q 제 하나님을 너무 오래 기다려서 눈이 다 짓물렀습니다."
         }
       },
       "decisions": [
@@ -671,6 +760,11 @@
           "L": "Nhiều hơn tóc trên đầu tôi là những kẻ ghét tôi vô cớ; \\q mạnh thay những kẻ muốn hủy diệt tôi, là những kẻ thù [nói] dối của tôi; \\q điều tôi không cướp, bấy giờ tôi phải trả lại.",
           "B": "Người ghét tôi vô cớ còn nhiều hơn tóc trên đầu tôi; \\q những kẻ tìm cách hủy hoại tôi thật mạnh thế, là những kẻ thù dối trá của tôi. \\q Lẽ nào tôi phải trả lại điều tôi chưa hề lấy?",
           "R": "Người ghét tôi còn nhiều hơn tóc trên đầu tôi, mà họ chẳng có lý do gì. \\q Kẻ thù tôi rất mạnh và nói dối về tôi. Chúng muốn hủy diệt tôi. \\q Chúng bắt tôi phải đền những thứ tôi chưa hề lấy cắp."
+        },
+        "ko": {
+          "L": "까닭 없이 저를 미워하는 자들이 제 머리털보다 많습니다. \\q 저를 멸하려는 자들, 거짓[을 말하는] 제 원수들이 강합니다. \\q 제가 빼앗지 않은 것을 그때 제가 돌려주어야 합니다.",
+          "B": "이유 없이 저를 미워하는 사람이 제 머리카락보다 많습니다. \\q 저를 망하게 하려는 자들, 거짓말하는 제 원수들이 강합니다. \\q 제가 빼앗지도 않은 것을 물어내야 합니다.",
+          "R": "저를 미워하는 사람이 제 머리카락보다 많은데, 그들에게는 아무 이유도 없습니다. \\q 제 원수들은 힘이 세고 저에 대해 거짓말을 합니다. 저를 없애려고 합니다. \\q 제가 훔치지도 않은 것을 갚으라고 합니다."
         }
       },
       "decisions": [
@@ -779,6 +873,11 @@
           "L": "Lạy Đức Chúa Trời, {{deity_pronoun:ngài|Ngài}} biết sự dại dột của tôi, \\q và những tội lỗi của tôi không giấu khỏi {{deity_pronoun:ngài|Ngài}}.",
           "B": "Lạy Đức Chúa Trời, {{deity_pronoun:ngài|Ngài}} biết sự ngu dại của tôi; \\q không một tội lỗi nào của tôi giấu được {{deity_pronoun:ngài|Ngài}}.",
           "R": "Lạy Đức Chúa Trời, {{deity_pronoun:ngài|Ngài}} biết những điều dại dột tôi đã làm. \\q Ngài thấy hết mọi tội lỗi của tôi."
+        },
+        "ko": {
+          "L": "하나님, 주님께서는 저의 어리석음을 아십니다. \\q 저의 죄들이 주님께 감추어져 있지 않습니다.",
+          "B": "하나님, 주님께서는 제가 얼마나 어리석은지 아십니다. \\q 저의 허물은 하나도 주님 앞에 숨겨지지 않습니다.",
+          "R": "하나님, 주님께서는 제가 저지른 어리석은 일들을 아십니다. \\q 주님께서는 저의 죄를 다 보십니다."
         }
       },
       "decisions": [
@@ -892,6 +991,11 @@
           "L": "Xin đừng để những người trông đợi {{deity_pronoun:ngài|Ngài}} phải hổ thẹn vì tôi, lạy Chúa [là] {{divine_name:CHÚA|Gia-vê}} Vạn Quân; \\q xin đừng để những người tìm kiếm {{deity_pronoun:ngài|Ngài}} phải nhục nhã vì tôi, \\q lạy Đức Chúa Trời của Y-sơ-ra-ên.",
           "B": "Lạy Chúa là {{divine_name:CHÚA|Gia-vê}} Vạn Quân, xin đừng để ai trông đợi {{deity_pronoun:ngài|Ngài}} phải xấu hổ vì tôi; \\q xin đừng để ai tìm kiếm {{deity_pronoun:ngài|Ngài}} phải nhục nhã vì tôi, \\q lạy Đức Chúa Trời của Y-sơ-ra-ên.",
           "R": "Lạy Chúa là {{divine_name:CHÚA|Gia-vê}} Vạn Quân, những người tin cậy {{deity_pronoun:ngài|Ngài}} đang trông đợi {{deity_pronoun:ngài|Ngài}} giúp đỡ. Xin đừng để họ phải xấu hổ vì tôi. \\q Lạy Đức Chúa Trời của Y-sơ-ra-ên, xin đừng để những người hướng về {{deity_pronoun:ngài|Ngài}} phải nhục nhã vì tôi."
+        },
+        "ko": {
+          "L": "주님을 기다리는 자들이 저 때문에 부끄러움을 당하지 않게 하십시오, 나의 주 만군의 {{divine_name:하나님|야훼}}여. \\q 주님을 찾는 자들이 저 때문에 수치를 당하지 않게 하십시오, \\q 이스라엘의 하나님이여.",
+          "B": "만군의 주 {{divine_name:하나님|야훼}}여, 주님을 기다리는 사람이 저 때문에 부끄러움을 당하지 않게 하여 주십시오. \\q 주님을 찾는 사람이 저 때문에 욕을 보지 않게 하여 주십시오, \\q 이스라엘의 하나님.",
+          "R": "하늘의 군대를 거느리신 주 {{divine_name:하나님|야훼}}여, 주님을 믿는 사람들이 주님의 도움을 기다리고 있습니다. 저 때문에 그들이 창피를 당하지 않게 해 주십시오. \\q 이스라엘의 하나님, 주님을 바라보는 사람들이 저 때문에 부끄러움을 당하지 않게 해 주십시오."
         }
       },
       "decisions": [
@@ -1062,6 +1166,31 @@
           "reason": "Vietnamese says \"Chúa\" (Lord) for Adonai and \"CHÚA\" for the divine name, so the two side by side would read \"Chúa CHÚA\". Joining them with \"là\" (\"the Lord, who is the LORD\") keeps both words, and the divine_name setting still switches the second to \"Gia-vê\". \"vạn quân\" (of the countless armies) serves for \"of hosts\" at Literal and \"of Armies\" at Balanced and Readable: it is the plain Vietnamese way to say the LORD commands armies, heavenly and earthly.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190690070051",
+            "o190690070061",
+            "o190690070071"
+          ],
+          "choice": "Adonai YHWH is \"주 {{divine_name:하나님|야훼}}\": \"주\" for Adonai, and the divine name, where the English has \"GOD\", as a divine_name span whose default is \"하나님\"; \"of hosts\" is \"만군의\" (L, B), \"하늘의 군대를 거느리신\" (R)",
+          "alternatives": [
+            "\"주 주\"",
+            "\"주님 여호와\"",
+            "\"만군의 주 하나님\" with no span"
+          ],
+          "reason": "The default form of the name, \"주\", would stand beside \"주\" for Adonai and read \"Lord Lord\"; the English writes \"GOD\" for the same reason. \"하나님\" as the default keeps both words apart, and the setting still gives \"야훼\". Readable says what \"hosts\" means, as the English Readable does with \"Armies\". This holds wherever Adonai YHWH stands in Psalms 69-83.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1113,6 +1242,11 @@
           "L": "Vì cớ {{deity_pronoun:ngài|Ngài}} tôi đã chịu sỉ nhục; \\q sự nhục nhã đã che phủ mặt tôi.",
           "B": "Vì {{deity_pronoun:ngài|Ngài}} mà tôi phải mang lấy sự khinh miệt; \\q nỗi nhục phủ đầy mặt tôi.",
           "R": "Tôi bị sỉ nhục vì tôi thuộc về {{deity_pronoun:ngài|Ngài}}. \\q Mặt tôi nóng bừng vì xấu hổ."
+        },
+        "ko": {
+          "L": "참으로 주님 때문에 제가 모욕을 짊어졌고, \\q 수치가 제 얼굴을 덮었습니다.",
+          "B": "주님 때문에 제가 비웃음을 받았고, \\q 수치가 제 얼굴을 덮습니다.",
+          "R": "제가 주님께 속한 사람이라서 모욕을 당합니다. \\q 부끄러워서 얼굴이 화끈거립니다."
         }
       },
       "decisions": [
@@ -1219,6 +1353,11 @@
           "L": "Tôi đã trở nên xa lạ với anh em tôi, \\q và [thành] người ngoại quốc với các con trai của mẹ tôi.",
           "B": "Chính anh em tôi đối xử với tôi như người lạ; \\q với các con của mẹ tôi, tôi là người dưng.",
           "R": "Ngay cả anh em tôi cũng làm như không quen biết tôi. \\q Chính gia đình tôi đối xử với tôi như người nước ngoài."
+        },
+        "ko": {
+          "L": "제가 제 형제들에게 낯선 사람이 되었고, \\q 제 어머니의 아들들에게 이방인[이 되었습니다].",
+          "B": "제 형제들마저 저를 낯선 사람처럼 대하고, \\q 제 어머니의 아들들에게 저는 남이 되었습니다.",
+          "R": "제 형제들조차 저를 모르는 사람처럼 대합니다. \\q 제 가족이 저를 외국 사람처럼 대합니다."
         }
       },
       "decisions": [
@@ -1306,6 +1445,11 @@
           "L": "Vì lòng nhiệt thành đối với nhà {{deity_pronoun:ngài|Ngài}} đã thiêu nuốt tôi, \\q và những lời sỉ nhục của những kẻ sỉ nhục {{deity_pronoun:ngài|Ngài}} đã đổ trên tôi.",
           "B": "Lòng sốt sắng vì nhà {{deity_pronoun:ngài|Ngài}} thiêu đốt tôi, \\q và những lời chế nhạo nhắm vào {{deity_pronoun:ngài|Ngài}} đã giáng xuống tôi.",
           "R": "Tôi quá lo cho nhà {{deity_pronoun:ngài|Ngài}} đến nỗi lòng tôi như bị thiêu đốt. \\q Khi người ta sỉ nhục {{deity_pronoun:ngài|Ngài}}, những lời sỉ nhục ấy đổ lên tôi."
+        },
+        "ko": {
+          "L": "참으로 주님의 집을 향한 열심이 저를 삼켰고, \\q 주님을 모욕하는 자들의 모욕이 제게 떨어졌습니다.",
+          "B": "주님의 집을 향한 열정이 저를 불태우고, \\q 주님을 향한 조롱이 제게 쏟아졌습니다.",
+          "R": "저는 주님의 집을 너무나 아끼기 때문에 속이 다 타 버립니다. \\q 사람들이 주님을 모욕하면 그 모욕이 저에게 떨어집니다."
         }
       },
       "decisions": [
@@ -1410,6 +1554,11 @@
           "L": "Và tôi đã khóc, [hạ] linh hồn tôi [xuống] bằng sự kiêng ăn, \\q và điều đó đã trở thành những lời sỉ nhục cho tôi.",
           "B": "Tôi khóc lóc và kiêng ăn, \\q thế mà vì vậy chúng lại chế giễu tôi.",
           "R": "Khi tôi khóc và nhịn ăn, \\q người ta lại chế giễu tôi."
+        },
+        "ko": {
+          "L": "제가 울며 금식으로 제 영혼을 [낮추었더니], \\q 그것이 제게 모욕거리가 되었습니다.",
+          "B": "제가 울며 금식하였더니, \\q 그 일로 그들이 저를 조롱하였습니다.",
+          "R": "제가 울면서 음식을 먹지 않았더니, \\q 사람들이 저를 놀렸습니다."
         }
       },
       "decisions": [
@@ -1505,6 +1654,25 @@
           "reason": "The Hebrew nefesh is \"soul\", the living self. Literal keeps \"alma\", as in the other psalms; Balanced and Readable say only what he did, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190690110031"
+          ],
+          "choice": "\"영혼\" for nefesh at Literal, with \"[낮추었더니]\" supplied",
+          "alternatives": [
+            "\"제 자신을\""
+          ],
+          "reason": "The terms note gives \"영혼\" for nefesh at Literal; here it stands for the whole self, humbled by fasting, and Balanced and Readable say \"금식하였더니\" without it, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1559,6 +1727,11 @@
           "L": "Và tôi đã lấy vải sô làm áo mặc của tôi, \\q và tôi đã trở thành câu cửa miệng cho chúng.",
           "B": "Khi tôi mặc vải sô làm áo, \\q chúng lấy tôi làm đề tài để giễu cợt.",
           "R": "Khi tôi mặc áo vải thô để tỏ lòng buồn rầu, \\q chúng đem tôi ra làm trò cười."
+        },
+        "ko": {
+          "L": "제가 굵은 베를 제 옷으로 삼았더니, \\q 제가 그들에게 웃음거리 말이 되었습니다.",
+          "B": "제가 굵은 베옷을 입었더니, \\q 그들은 저를 두고 빈정대는 말을 지어냈습니다.",
+          "R": "제가 슬퍼하는 마음을 보이려고 거친 베옷을 입었더니, \\q 사람들이 저를 두고 농담을 했습니다."
         }
       },
       "decisions": [
@@ -1679,6 +1852,11 @@
           "L": "Những kẻ ngồi [nơi] cổng [thành] bàn tán về tôi, \\q và [tôi là] những bài hát của những kẻ uống rượu mạnh.",
           "B": "Những người ngồi nơi cổng thành xì xào về tôi, \\q và những kẻ say rượu hát những bài chế nhạo tôi.",
           "R": "Các bậc lãnh đạo ngồi nơi cổng thành bàn tán về tôi. \\q Những kẻ say rượu đặt bài hát về tôi."
+        },
+        "ko": {
+          "L": "성문에 앉은 자들이 저에 대해 수군거리고, \\q [저는] 독주를 마시는 자들의 노래들[이 되었습니다].",
+          "B": "성문에 앉은 사람들이 저를 두고 험담하고, \\q 술꾼들은 저를 놀리는 노래를 부릅니다.",
+          "R": "성문에 앉은 지도자들이 저에 대해 이야기합니다. \\q 술 취한 사람들은 저에 대한 노래를 지어 부릅니다."
         }
       },
       "decisions": [
@@ -1793,6 +1971,11 @@
           "L": "Còn tôi, lời cầu nguyện của tôi [dâng lên] {{deity_pronoun:ngài|Ngài}}, lạy {{divine_name:CHÚA|Gia-vê}}, [vào] kỳ ân huệ; \\q lạy Đức Chúa Trời, theo sự lớn lao của tình yêu thương thành tín của {{deity_pronoun:ngài|Ngài}}, \\q xin đáp lời tôi bằng sự thành tín của sự cứu rỗi của {{deity_pronoun:ngài|Ngài}}.",
           "B": "Còn tôi, tôi cầu nguyện cùng {{deity_pronoun:ngài|Ngài}}, lạy {{divine_name:CHÚA|Gia-vê}}, vào lúc {{deity_pronoun:ngài|Ngài}} sẵn lòng nhậm lời; \\q lạy Đức Chúa Trời, vì tình yêu thương thành tín lớn lao của {{deity_pronoun:ngài|Ngài}}, \\q xin đáp lời tôi bằng sự giải cứu thành tín của {{deity_pronoun:ngài|Ngài}}.",
           "R": "Nhưng tôi vẫn cầu nguyện cùng {{deity_pronoun:ngài|Ngài}}, lạy {{divine_name:CHÚA|Gia-vê}}. Bây giờ là lúc xin {{deity_pronoun:ngài|Ngài}} tỏ lòng nhân từ với tôi. \\q Lạy Đức Chúa Trời, tình thương không hề thay đổi của {{deity_pronoun:ngài|Ngài}} thật lớn lao! \\q Xin đáp lời tôi, vì {{deity_pronoun:ngài|Ngài}} thành tín giải cứu."
+        },
+        "ko": {
+          "L": "그러나 저는, 제 기도가 주님께 [드려집니다], {{divine_name:주|야훼}}여, 은혜의 때에. \\q 하나님, 주님의 크신 한결같은 사랑으로 \\q 주님의 구원의 신실하심으로 제게 응답하여 주십시오.",
+          "B": "그러나 저는, {{divine_name:주|야훼}}여, 주님께서 받아 주실 때에 주님께 기도합니다. \\q 하나님, 주님의 크신 한결같은 사랑으로 \\q 주님의 신실한 구원으로 제게 응답하여 주십시오.",
+          "R": "그래도 저는 {{divine_name:주|야훼}}께 계속 기도합니다. 지금이 저에게 인자를 베푸실 때입니다. \\q 하나님, 주님의 변함없는 사랑은 정말 큽니다! \\q 주님께서는 신실하게 구원하시니, 제게 응답해 주십시오."
         }
       },
       "decisions": [
@@ -1975,6 +2158,28 @@
           "reason": "Hesed is love that keeps faith (see the meaning decision). These are the words of the published Psalm 23:6, kept for every use in this block of psalms. Readable says \"tỏ lòng nhân từ\" (show kindness) where the English Readable says \"show me kindness\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190690140091"
+          ],
+          "choice": "\"한결같은 사랑\" (L, B), \"변함없는 사랑\" (R) for chesed, as the published Psalm 23:6 and the terms note; Readable also has \"인자를 베푸실\" where the English Readable says \"show me kindness\"",
+          "alternatives": [
+            "\"인자하심\"",
+            "\"자비\""
+          ],
+          "reason": "Chesed is love that keeps faith; one Korean term holds through the Psalter. \"인자\" is the terms note word for \"kindness\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2032,6 +2237,11 @@
           "L": "Xin giải cứu tôi khỏi bùn, và đừng để tôi chìm xuống; \\q xin cho tôi được giải cứu khỏi những kẻ ghét tôi và khỏi [những] chỗ nước sâu.",
           "B": "Xin kéo tôi lên khỏi bùn lầy, đừng để tôi chìm nghỉm; \\q xin giật tôi ra khỏi tay những kẻ ghét tôi, ra khỏi vùng nước sâu.",
           "R": "Xin kéo tôi ra khỏi bùn! Đừng để tôi chìm xuống. \\q Xin cứu tôi khỏi những người ghét tôi. Xin đưa tôi ra khỏi vùng nước sâu này."
+        },
+        "ko": {
+          "L": "진흙에서 저를 건지시고 제가 빠지지 않게 하여 주십시오. \\q 저를 미워하는 자들에게서, 그리고 깊은 물에서 제가 건짐을 받게 하여 주십시오.",
+          "B": "진흙에서 저를 끌어내 주시고, 가라앉지 않게 하여 주십시오. \\q 저를 미워하는 사람들에게서, 깊은 물에서 저를 낚아채 주십시오.",
+          "R": "진흙에서 저를 끌어내 주십시오! 가라앉지 않게 해 주십시오. \\q 저를 미워하는 사람들에게서 구해 주십시오. 이 깊은 물에서 꺼내 주십시오."
         }
       },
       "decisions": [
@@ -2125,6 +2335,11 @@
           "L": "Xin đừng để dòng nước lũ cuốn ngập tôi, và đừng để vực sâu nuốt tôi, \\q và đừng để hố sâu khép miệng nó trên tôi.",
           "B": "Xin đừng để nước lũ tràn ngập tôi, hay vực sâu nuốt chửng tôi, \\q hay hố sâu ngậm miệng lại trên tôi.",
           "R": "Xin đừng để cơn lũ tràn qua tôi. Đừng để nước sâu nuốt mất tôi. \\q Đừng để mồ mả khép miệng lại trên tôi."
+        },
+        "ko": {
+          "L": "큰물의 물결이 저를 휩쓸지 않게 하시고, 깊음이 저를 삼키지 않게 하시고, \\q 구덩이가 제 위에서 그 입을 닫지 않게 하여 주십시오.",
+          "B": "큰물이 저를 덮치거나 깊은 물이 저를 삼키지 않게 하시고, \\q 구덩이가 제 위로 입을 다물지 않게 하여 주십시오.",
+          "R": "홍수가 저를 덮치지 않게 해 주십시오. 깊은 물이 저를 삼키지 않게 해 주십시오. \\q 무덤이 제 위로 입을 다물지 않게 해 주십시오."
         }
       },
       "decisions": [
@@ -2216,6 +2431,11 @@
           "L": "Xin đáp lời tôi, lạy {{divine_name:CHÚA|Gia-vê}}, vì tình yêu thương thành tín của {{deity_pronoun:ngài|Ngài}} [là] tốt lành; \\q theo sự lớn lao của lòng thương xót của {{deity_pronoun:ngài|Ngài}}, xin quay lại cùng tôi.",
           "B": "Lạy {{divine_name:CHÚA|Gia-vê}}, xin đáp lời tôi, vì tình yêu thương thành tín của {{deity_pronoun:ngài|Ngài}} thật tốt lành; \\q theo lòng thương xót lớn lao của {{deity_pronoun:ngài|Ngài}}, xin quay mặt về phía tôi.",
           "R": "Lạy {{divine_name:CHÚA|Gia-vê}}, xin đáp lời tôi, vì tình thương không hề thay đổi của {{deity_pronoun:ngài|Ngài}} thật tốt lành. \\q Ngài đầy lòng thương xót, xin quay lại nhìn tôi."
+        },
+        "ko": {
+          "L": "{{divine_name:주|야훼}}여, 제게 응답하여 주십시오. 주님의 한결같은 사랑이 좋기 때문입니다. \\q 주님의 크신 긍휼에 따라 저에게로 돌아보아 주십시오.",
+          "B": "{{divine_name:주|야훼}}여, 제게 응답하여 주십시오. 주님의 한결같은 사랑은 선합니다. \\q 주님의 크신 긍휼로 저를 돌아보아 주십시오.",
+          "R": "{{divine_name:주|야훼}}여, 제게 응답해 주십시오. 주님의 변함없는 사랑은 정말 좋습니다. \\q 주님께서는 불쌍히 여기는 마음이 가득하시니, 저를 돌아보아 주십시오."
         }
       },
       "decisions": [
@@ -2340,6 +2560,11 @@
           "L": "Và xin đừng giấu mặt {{deity_pronoun:ngài|Ngài}} khỏi đầy tớ của {{deity_pronoun:ngài|Ngài}}, \\q vì tôi đang gặp gian nan; xin mau đáp lời tôi.",
           "B": "Xin đừng ngoảnh mặt khỏi tôi, là đầy tớ của {{deity_pronoun:ngài|Ngài}}; \\q tôi đang bị dồn ép, xin mau đáp lời tôi.",
           "R": "Tôi là đầy tớ của {{deity_pronoun:ngài|Ngài}}. Xin đừng quay mặt khỏi tôi. \\q Tôi đang gặp hoạn nạn, xin mau đáp lời tôi!"
+        },
+        "ko": {
+          "L": "주님의 얼굴을 주님의 종에게서 숨기지 마십시오. \\q 제가 고난 중에 있으니 속히 제게 응답하여 주십시오.",
+          "B": "주님의 종인 저를 외면하지 마십시오. \\q 제가 궁지에 몰렸으니 어서 응답하여 주십시오.",
+          "R": "저는 주님의 종입니다. 저를 외면하지 마십시오. \\q 제가 어려움에 빠졌으니 어서 응답해 주십시오!"
         }
       },
       "decisions": [
@@ -2479,6 +2704,28 @@
           "reason": "The psalmist calls himself God's servant, one who belongs to him (see the meaning decision). As the English keeps \"servant\" at Literal, Vietnamese keeps \"đầy tớ\" at every level; \"nô lệ\" would sound like a man in chains, not a worshiper.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190690180042",
+            "o190690180043"
+          ],
+          "choice": "\"주님의 종\" for the psalmist as God's servant at every level",
+          "alternatives": [
+            "\"주님의 노예\""
+          ],
+          "reason": "\"종\" is the word for one who belongs to and serves a master (style guide, slave); the psalmist names himself so before God.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2533,6 +2780,11 @@
           "L": "Xin đến gần linh hồn tôi; xin cứu chuộc nó; \\q vì cớ những kẻ thù tôi, xin chuộc tôi ra.",
           "B": "Xin đến gần tôi và chuộc tôi về; \\q xin giải thoát tôi vì cớ những kẻ thù tôi.",
           "R": "Xin đến gần và cứu mạng sống tôi. \\q Xin giải thoát tôi, để kẻ thù tôi không thắng được."
+        },
+        "ko": {
+          "L": "제 영혼에게 가까이 오셔서 그것을 속량하여 주십시오. \\q 제 원수들 때문에 저를 대속하여 주십시오.",
+          "B": "저에게 가까이 오셔서 저를 되찾아 주십시오. \\q 제 원수들이 있으니 저를 풀어 주십시오.",
+          "R": "가까이 오셔서 제 목숨을 구해 주십시오. \\q 제 원수들이 이기지 못하도록 저를 풀어 주십시오."
         }
       },
       "decisions": [
@@ -2659,6 +2911,11 @@
           "L": "Ngài biết sự sỉ nhục của tôi, sự xấu hổ của tôi và sự nhục nhã của tôi; \\q trước mặt {{deity_pronoun:ngài|Ngài}} [là] tất cả những kẻ thù địch của tôi.",
           "B": "Ngài biết sự khinh miệt tôi phải chịu, nỗi xấu hổ và sự ô nhục của tôi; \\q mọi kẻ thù của tôi đều ở trước mắt {{deity_pronoun:ngài|Ngài}}.",
           "R": "Ngài biết chúng sỉ nhục tôi, làm tôi xấu hổ và khiến tôi trông thật ngu dại thế nào. \\q Ngài thấy hết mọi kẻ thù của tôi."
+        },
+        "ko": {
+          "L": "주님께서는 저의 모욕과 저의 수치와 저의 부끄러움을 아십니다. \\q 주님 앞에 제 모든 대적이 [있습니다].",
+          "B": "주님께서는 제가 받는 비웃음과 수치와 모욕을 아십니다. \\q 제 원수들이 하나도 빠짐없이 주님 눈앞에 있습니다.",
+          "R": "그들이 저를 얼마나 모욕하고 창피를 주고 우습게 만드는지 주님께서는 아십니다. \\q 주님께서는 제 원수들을 다 보십니다."
         }
       },
       "decisions": [
@@ -2752,6 +3009,11 @@
           "L": "Sự sỉ nhục đã làm tan nát lòng tôi, và tôi đau yếu; \\q và tôi đã trông đợi sự cảm thông, nhưng chẳng có, \\q và [trông đợi] những người an ủi, nhưng tôi chẳng tìm thấy [ai].",
           "B": "Sự khinh miệt đã làm tan nát lòng tôi, khiến tôi đau ốm; \\q tôi mong có người thương xót, nhưng chẳng có ai, \\q mong có người an ủi, nhưng chẳng tìm được một người nào.",
           "R": "Những lời sỉ nhục của chúng làm tan nát lòng tôi. Tôi thấy đau yếu. \\q Tôi mong có ai đó thương hại tôi, nhưng chẳng có ai. \\q Tôi tìm người an ủi tôi, nhưng không tìm thấy ai cả."
+        },
+        "ko": {
+          "L": "모욕이 제 마음을 부수어서 제가 병들었습니다. \\q 제가 동정을 기다렸으나 없었고, \\q 위로하는 자들을 [기다렸으나] 찾지 못했습니다.",
+          "B": "비웃음이 제 마음을 무너뜨려 저는 병들었습니다. \\q 누가 저를 불쌍히 여겨 주기를 바랐으나 아무도 없었고, \\q 누가 저를 위로해 주기를 바랐으나 한 사람도 찾지 못했습니다.",
+          "R": "그들의 모욕 때문에 제 마음이 무너졌습니다. 몸까지 아픕니다. \\q 누가 저를 가엾게 여겨 주기를 바랐지만 아무도 없었습니다. \\q 저를 위로해 줄 사람을 찾았지만 한 사람도 없었습니다."
         }
       },
       "decisions": [
@@ -2854,6 +3116,11 @@
           "L": "Và chúng đã bỏ chất độc vào thức ăn của tôi, \\q và trong cơn khát của tôi chúng đã cho tôi uống giấm.",
           "B": "Chúng bỏ chất độc đắng vào thức ăn của tôi, \\q và khi tôi khát, chúng đưa cho tôi rượu chua.",
           "R": "Chúng bỏ thuốc độc vào thức ăn của tôi. \\q Khi tôi khát, chúng cho tôi uống rượu chua."
+        },
+        "ko": {
+          "L": "그들이 제 음식에 독을 넣었고, \\q 제가 목마를 때 그들이 제게 식초를 마시게 했습니다.",
+          "B": "그들이 제 음식에 쓴 독을 넣고, \\q 목마른 제게 신 포도주를 내밀었습니다.",
+          "R": "그들은 제 음식에 독을 넣었습니다. \\q 제가 목마를 때 신 포도주를 주었습니다."
         }
       },
       "decisions": [
@@ -2976,6 +3243,11 @@
           "L": "Nguyện bàn ăn của chúng trước mặt chúng trở thành cái bẫy, \\q và cho [những kẻ đang] bình an [thành] cái lưới.",
           "B": "Nguyện bữa ăn dọn ra trước mặt chúng trở thành cái bẫy cho chúng, \\q thành cái lưới khi chúng tưởng mình được an ổn.",
           "R": "Nguyện chính những bữa tiệc của chúng trở thành cái bẫy cho chúng. \\q Khi chúng tưởng mình an toàn, nguyện chúng bị sa bẫy."
+        },
+        "ko": {
+          "L": "그들 앞의 그들의 밥상이 덫이 되게 하시고, \\q 평안한 자들에게는 올무가 [되게 하여 주십시오].",
+          "B": "그들 앞에 차려진 밥상이 그들에게 덫이 되게 하시고, \\q 그들이 마음 놓고 있을 때 올무가 되게 하여 주십시오.",
+          "R": "그들의 잔치가 오히려 그들을 잡는 덫이 되게 해 주십시오. \\q 그들이 안전하다고 느낄 때 걸려들게 해 주십시오."
         }
       },
       "decisions": [
@@ -3078,6 +3350,11 @@
           "L": "Nguyện mắt chúng bị tối tăm không thấy được, \\q và xin làm cho hông chúng run rẩy luôn luôn.",
           "B": "Nguyện mắt chúng mờ đi đến nỗi không còn thấy; \\q xin làm cho thân thể chúng run rẩy không ngừng.",
           "R": "Xin làm cho mắt chúng tối đi để chúng không thấy được. \\q Xin làm cho chúng lúc nào cũng run sợ."
+        },
+        "ko": {
+          "L": "그들의 눈이 어두워져 보지 못하게 하시고, \\q 그들의 허리가 늘 떨리게 하여 주십시오.",
+          "B": "그들의 눈이 흐려져 보지 못하게 하시고, \\q 그들의 몸이 끝없이 떨리게 하여 주십시오.",
+          "R": "그들의 눈을 어둡게 하셔서 보지 못하게 해 주십시오. \\q 그들이 늘 두려워 떨게 해 주십시오."
         }
       },
       "decisions": [
@@ -3197,6 +3474,11 @@
           "L": "Xin đổ cơn phẫn nộ của {{deity_pronoun:ngài|Ngài}} trên chúng, \\q và nguyện cơn giận bừng cháy của {{deity_pronoun:ngài|Ngài}} đuổi kịp chúng.",
           "B": "Xin trút cơn thịnh nộ của {{deity_pronoun:ngài|Ngài}} trên chúng; \\q nguyện cơn giận như lửa của {{deity_pronoun:ngài|Ngài}} đuổi kịp chúng.",
           "R": "Nguyện cơn giận của {{deity_pronoun:ngài|Ngài}} đổ xuống trên chúng. \\q Nguyện cơn giận nóng bừng của {{deity_pronoun:ngài|Ngài}} bắt kịp chúng."
+        },
+        "ko": {
+          "L": "그들 위에 주님의 분노를 쏟으시고, \\q 주님의 진노의 불길이 그들에게 미치게 하여 주십시오.",
+          "B": "주님의 격노를 그들에게 쏟아부으시고, \\q 불타는 주님의 진노가 그들을 따라잡게 하여 주십시오.",
+          "R": "주님의 분노를 그들 위에 쏟아 주십시오. \\q 불같은 주님의 진노가 그들을 붙잡게 해 주십시오."
         }
       },
       "decisions": [
@@ -3280,6 +3562,11 @@
           "L": "Nguyện nơi đóng trại của chúng bị hoang vắng; \\q trong các lều của chúng nguyện không có ai ở.",
           "B": "Nguyện trại của chúng trở nên hoang tàn, \\q không một ai sống trong lều của chúng.",
           "R": "Nguyện nhà cửa của chúng thành đống đổ nát trống không. \\q Nguyện không còn ai sống trong lều của chúng."
+        },
+        "ko": {
+          "L": "그들의 진영이 황폐하게 하시고, \\q 그들의 장막들에 사는 자가 없게 하여 주십시오.",
+          "B": "그들의 진영이 폐허가 되게 하시고, \\q 그들의 장막에 아무도 살지 않게 하여 주십시오.",
+          "R": "그들의 집이 텅 빈 폐허가 되게 해 주십시오. \\q 그들의 장막에 아무도 살지 못하게 해 주십시오."
         }
       },
       "decisions": [
@@ -3379,6 +3666,11 @@
           "L": "Vì [kẻ] mà chính {{deity_pronoun:ngài|Ngài}} đã đánh, chúng đã đuổi bắt, \\q và về nỗi đau của những [người] bị thương của {{deity_pronoun:ngài|Ngài}}, chúng bàn tán.",
           "B": "Vì chúng săn đuổi người mà {{deity_pronoun:ngài|Ngài}} đã đánh, \\q và đồn đại về nỗi đau của những người {{deity_pronoun:ngài|Ngài}} đã làm cho bị thương.",
           "R": "Chúng săn đuổi người mà {{deity_pronoun:ngài|Ngài}} đã đánh ngã. \\q Chúng chế nhạo nỗi đau của những người {{deity_pronoun:ngài|Ngài}} đã làm cho bị thương."
+        },
+        "ko": {
+          "L": "참으로 주님께서 친히 치신 [사람]을 그들이 뒤쫓고, \\q 주님께서 상처 입히신 이들의 고통에 대해 그들이 떠들어 댑니다.",
+          "B": "그들은 주님께서 치신 사람을 쫓아가 괴롭히고, \\q 주님께서 상처 입히신 사람들의 아픔을 두고 수군거립니다.",
+          "R": "그들은 주님께서 치신 사람을 뒤쫓습니다. \\q 주님께서 상처 입히신 사람들이 아파하는 것을 비웃습니다."
         }
       },
       "decisions": [
@@ -3500,6 +3792,11 @@
           "L": "Xin chất tội trên tội của chúng, \\q và đừng để chúng vào trong sự công chính của {{deity_pronoun:ngài|Ngài}}.",
           "B": "Xin thêm tội vào tội của chúng; \\q đừng cho chúng dự phần vào sự công chính giải cứu của {{deity_pronoun:ngài|Ngài}}.",
           "R": "Xin kể hết mọi tội của chúng ra mà buộc tội chúng. \\q Xin đừng để chúng được tha bổng khi {{deity_pronoun:ngài|Ngài}} xét xử."
+        },
+        "ko": {
+          "L": "그들의 죄악 위에 죄악을 더하시고, \\q 그들이 주님의 의에 들어가지 못하게 하여 주십시오.",
+          "B": "그들의 죄에 죄를 더하시고, \\q 주님의 구원하시는 의에 그들이 참여하지 못하게 하여 주십시오.",
+          "R": "그들이 지은 죄를 하나하나 다 따지십시오. \\q 주님께서 심판하실 때 그들이 벌을 면하지 못하게 해 주십시오."
         }
       },
       "decisions": [
@@ -3608,6 +3905,11 @@
           "L": "Nguyện chúng bị xóa khỏi sách sự sống, \\q và đừng để chúng được ghi chép với [những người] công chính.",
           "B": "Nguyện tên chúng bị xóa khỏi sách sự sống, \\q không bao giờ được ghi chung với người công chính.",
           "R": "Nguyện tên chúng bị xóa khỏi sách sự sống. \\q Xin đừng để tên chúng được ghi chung với những người sống ngay lành."
+        },
+        "ko": {
+          "L": "그들이 생명의 책에서 지워지게 하시고, \\q 의인들과 함께 기록되지 않게 하여 주십시오.",
+          "B": "그들의 이름이 생명의 책에서 지워지게 하시고, \\q 의인들과 함께 올라가지 못하게 하여 주십시오.",
+          "R": "그들의 이름을 생명의 책에서 지워 주십시오. \\q 바르게 사는 사람들과 함께 적히지 못하게 해 주십시오."
         }
       },
       "decisions": [
@@ -3657,6 +3959,27 @@
           "choice": "their names",
           "alternatives": [],
           "reason": "Balanced and Readable say what is written in the book.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190690290051"
+          ],
+          "choice": "\"의인\" (L, B), \"바르게 사는 사람\" (R) for tsaddiqim, as the terms note",
+          "alternatives": [
+            "\"옳은 사람\""
+          ],
+          "reason": "The terms note settles these words for the righteous across Psalms and Proverbs.",
           "uncertain": false,
           "footnote": false
         }
@@ -3711,6 +4034,11 @@
           "L": "Nhưng tôi, [tôi] khốn khổ và đau đớn; \\q nguyện sự cứu rỗi của {{deity_pronoun:ngài|Ngài}}, lạy Đức Chúa Trời, đặt tôi lên nơi cao.",
           "B": "Nhưng tôi nghèo khổ và đau đớn; \\q lạy Đức Chúa Trời, nguyện ơn giải cứu của {{deity_pronoun:ngài|Ngài}} nâng tôi lên nơi an toàn.",
           "R": "Nhưng tôi nghèo khổ và đau đớn. \\q Lạy Đức Chúa Trời, xin cứu tôi và giữ tôi an toàn."
+        },
+        "ko": {
+          "L": "그러나 저는 고난받고 아픕니다. \\q 하나님, 주님의 구원이 저를 높은 곳에 두게 하여 주십시오.",
+          "B": "그러나 저는 가난하고 아픕니다. \\q 하나님, 주님의 구원이 저를 안전한 높은 곳으로 들어 올리게 하여 주십시오.",
+          "R": "그러나 저는 가난하고 아픕니다. \\q 하나님, 저를 구원하셔서 안전하게 지켜 주십시오."
         }
       },
       "decisions": [
@@ -3808,6 +4136,11 @@
           "L": "Tôi sẽ ca ngợi danh Đức Chúa Trời bằng bài ca, \\q và tôi sẽ tôn cao {{deity_pronoun:ngài|Ngài}} bằng lời cảm tạ.",
           "B": "Tôi sẽ hát ca ngợi danh Đức Chúa Trời \\q và cảm tạ, rao truyền sự vĩ đại của {{deity_pronoun:ngài|Ngài}}.",
           "R": "Tôi sẽ hát ca ngợi Đức Chúa Trời. \\q Tôi sẽ cảm tạ {{deity_pronoun:ngài|Ngài}} và nói ra {{deity_pronoun:ngài|Ngài}} vĩ đại biết bao."
+        },
+        "ko": {
+          "L": "나는 노래로 하나님의 이름을 찬양하고, \\q 감사로 그분을 높일 것이다.",
+          "B": "나는 노래로 하나님의 이름을 찬양하고, \\q 감사하며 그분의 위대하심을 선포할 것이다.",
+          "R": "나는 노래를 불러 하나님을 찬양할 것이다. \\q 그분께 감사하고 그분이 얼마나 위대하신지 말할 것이다."
         }
       },
       "decisions": [
@@ -3851,6 +4184,27 @@
           "alternatives": [],
           "reason": "To magnify God (gadal, intensive) is to tell how great he is (34:4).",
           "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o190690310011"
+          ],
+          "choice": "From verse 31 the psalm speaks about God, so it is in the plain written style with \"나\" and the honorific for God",
+          "alternatives": [
+            "합쇼체 and 저 to the end"
+          ],
+          "reason": "Style guide section 7a: speech about God is in the plain written style. Verses 31-37 speak of God in the third person (\"his name\", \"the LORD listens\").",
+          "uncertain": true,
           "footnote": false
         }
       ],
@@ -3903,6 +4257,11 @@
           "L": "Và điều đó sẽ đẹp lòng {{divine_name:CHÚA|Gia-vê}} hơn một con bò, \\q một con bò đực có sừng [và] có móng.",
           "B": "Điều ấy sẽ làm {{divine_name:CHÚA|Gia-vê}} vui lòng hơn một con bò, \\q hay một con bò tơ sừng và móng đã mọc đầy đủ.",
           "R": "{{divine_name:CHÚA|Gia-vê}} sẽ thích điều này hơn là lễ vật một con bò, \\q dù là một con bò đực trưởng thành có sừng và móng."
+        },
+        "ko": {
+          "L": "그것이 소보다, \\q 뿔과 굽이 [있는] 황소보다 {{divine_name:주|야훼}}를 기쁘시게 할 것이다.",
+          "B": "그것이 소보다, \\q 뿔과 굽이 다 자란 수소보다 {{divine_name:주|야훼}}를 더 기쁘시게 할 것이다.",
+          "R": "{{divine_name:주|야훼}}께서는 소를 제물로 드리는 것보다 이것을 더 좋아하실 것이다. \\q 뿔과 굽이 다 자란 황소보다도 더 좋아하실 것이다."
         }
       },
       "decisions": [
@@ -4003,6 +4362,11 @@
           "L": "Những người khiêm nhường đã thấy; họ vui mừng; \\q hỡi những người tìm kiếm Đức Chúa Trời, nguyện lòng các bạn được sống.",
           "B": "Người khiêm nhường sẽ thấy và vui mừng; \\q hỡi những người tìm kiếm Đức Chúa Trời, hãy vững lòng mà sống!",
           "R": "Những người khiêm nhường sẽ thấy điều Đức Chúa Trời đã làm và vui mừng. \\q Hỡi những ai trông cậy Đức Chúa Trời, hãy vững lòng lên!"
+        },
+        "ko": {
+          "L": "겸손한 자들이 보았으니 기뻐한다. \\q 하나님을 찾는 너희여, 너희 마음이 살아나게 하여라.",
+          "B": "겸손한 사람들이 이것을 보고 기뻐할 것이다. \\q 하나님을 찾는 사람들아, 힘을 내어 살아라!",
+          "R": "겸손한 사람들이 하나님께서 하신 일을 보고 기뻐할 것이다. \\q 하나님을 바라보는 사람들아, 힘을 내어라!"
         }
       },
       "decisions": [
@@ -4165,6 +4529,11 @@
           "L": "Vì {{divine_name:CHÚA|Gia-vê}} lắng nghe những người thiếu thốn, \\q và những tù nhân của {{deity_pronoun:ngài|Ngài}}, {{deity_pronoun:ngài|Ngài}} không khinh dể.",
           "B": "Vì {{divine_name:CHÚA|Gia-vê}} nghe tiếng người nghèo \\q và không khinh bỏ dân {{deity_pronoun:ngài|Ngài}} đang bị xiềng xích.",
           "R": "{{divine_name:CHÚA|Gia-vê}} lắng nghe những người đang thiếu thốn. \\q Ngài không quay lưng với dân {{deity_pronoun:ngài|Ngài}} đang ở trong tù."
+        },
+        "ko": {
+          "L": "참으로 {{divine_name:주|야훼}}께서는 궁핍한 자들의 [말을] 들으시고, \\q 그분의 갇힌 자들을 업신여기지 않으신다.",
+          "B": "{{divine_name:주|야훼}}께서는 가난한 사람들의 소리를 들으시고, \\q 사슬에 묶인 그분의 백성을 멸시하지 않으신다.",
+          "R": "{{divine_name:주|야훼}}께서는 도움이 필요한 사람들의 말을 들어 주신다. \\q 감옥에 갇힌 그분의 백성을 모른 체하지 않으신다."
         }
       },
       "decisions": [
@@ -4251,6 +4620,11 @@
           "L": "Nguyện trời và đất ca ngợi {{deity_pronoun:ngài|Ngài}}, \\q biển cả và mọi vật chuyển động trong đó.",
           "B": "Nguyện các tầng trời và đất ca ngợi {{deity_pronoun:ngài|Ngài}}, \\q cùng biển cả và mọi loài lúc nhúc trong đó.",
           "R": "Nguyện bầu trời và mặt đất ca ngợi {{deity_pronoun:ngài|Ngài}}. \\q Nguyện biển cả và mọi sinh vật trong biển cũng ca ngợi {{deity_pronoun:ngài|Ngài}}."
+        },
+        "ko": {
+          "L": "하늘과 땅아, 그분을 찬양하여라. \\q 바다들과 그 안에서 움직이는 모든 것아, [찬양하여라].",
+          "B": "하늘과 땅아, 그분을 찬양하여라. \\q 바다와 그 안에 우글거리는 모든 것도 찬양하여라.",
+          "R": "하늘과 땅아, 그분을 찬양하여라. \\q 바다와 그 속에 사는 모든 생물도 그분을 찬양하여라."
         }
       },
       "decisions": [
@@ -4339,6 +4713,11 @@
           "L": "Vì Đức Chúa Trời sẽ cứu Si-ôn và xây dựng các thành của Giu-đa, \\q và họ sẽ ở đó và chiếm hữu nó,",
           "B": "Vì Đức Chúa Trời sẽ giải cứu Si-ôn và xây dựng lại các thành của Giu-đa; \\q dân {{deity_pronoun:ngài|Ngài}} sẽ sống ở đó và nhận đất làm của mình,",
           "R": "Đức Chúa Trời sẽ giải cứu Giê-ru-sa-lem và xây lại các thành của Giu-đa. \\q Dân {{deity_pronoun:ngài|Ngài}} sẽ sống ở đó, và đất ấy sẽ thuộc về họ."
+        },
+        "ko": {
+          "L": "참으로 하나님께서 시온을 구원하시고 유다의 성읍들을 세우실 것이니, \\q 그들이 거기에 살며 그곳을 차지할 것이다.",
+          "B": "하나님께서 시온을 구원하시고 유다의 성읍들을 다시 세우실 것이니, \\q 그분의 백성이 거기에 살며 그 땅을 자기 것으로 삼을 것이다.",
+          "R": "하나님께서 예루살렘을 구하시고 유다의 마을들을 다시 세우실 것이다. \\q 그분의 백성이 거기에 살고, 그 땅은 그들의 것이 될 것이다."
         }
       },
       "decisions": [
@@ -4466,6 +4845,11 @@
           "L": "và dòng dõi các đầy tớ của {{deity_pronoun:ngài|Ngài}} sẽ thừa hưởng nó, \\q và những người yêu mến danh {{deity_pronoun:ngài|Ngài}} sẽ ở trong đó.",
           "B": "con cháu các đầy tớ của {{deity_pronoun:ngài|Ngài}} sẽ nhận nó làm cơ nghiệp, \\q và mọi người yêu mến danh {{deity_pronoun:ngài|Ngài}} sẽ định cư tại đó.",
           "R": "Con cháu các đầy tớ của {{deity_pronoun:ngài|Ngài}} sẽ nhận đất ấy làm của mình. \\q Mọi người yêu mến danh {{deity_pronoun:ngài|Ngài}} sẽ sống ở đó."
+        },
+        "ko": {
+          "L": "그분의 종들의 자손이 그것을 상속하고, \\q 그분의 이름을 사랑하는 자들이 그 안에 살 것이다.",
+          "B": "그분의 종들의 자손이 그 땅을 유산으로 받고, \\q 그분의 이름을 사랑하는 사람들이 거기에 보금자리를 마련할 것이다.",
+          "R": "그분의 종들의 자녀가 그 땅을 물려받을 것이다. \\q 그분의 이름을 사랑하는 사람은 모두 거기에서 살 것이다."
         }
       },
       "decisions": [

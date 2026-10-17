@@ -44,6 +44,11 @@
           "L": "Cho người chỉ huy [ban nhạc]: với đàn dây. [Một] thi thiên; [một] bài ca.",
           "B": "Cho nhạc trưởng. Với đàn dây. Thi thiên. Bài ca.",
           "R": "Cho người hướng dẫn ban nhạc. Để chơi bằng đàn dây. Bài ca."
+        },
+        "ko": {
+          "L": "지휘자를 위하여. 현악기로. 시. 노래.",
+          "B": "음악 지휘자를 위하여. 현악기에 맞추어. 시. 노래.",
+          "R": "찬양 인도자를 위해. 현악기로 연주하는 노래."
         }
       },
       "decisions": [
@@ -167,6 +172,11 @@
           "L": "Đức Chúa Trời, nguyện {{deity_pronoun:ngài|Ngài}} làm ơn cho chúng ta và ban phước cho chúng ta; \\q nguyện {{deity_pronoun:ngài|Ngài}} làm cho mặt {{deity_pronoun:ngài|Ngài}} chiếu sáng giữa chúng ta. Sê-la",
           "B": "Nguyện Đức Chúa Trời ban ơn cho chúng ta và ban phước cho chúng ta; \\q nguyện {{deity_pronoun:ngài|Ngài}} cho ánh sáng của mặt {{deity_pronoun:ngài|Ngài}} soi trên chúng ta. Sê-la",
           "R": "Nguyện Đức Chúa Trời tử tế với chúng ta và ban phước cho chúng ta. \\q Nguyện {{deity_pronoun:ngài|Ngài}} mỉm cười nhìn chúng ta với lòng ưu ái. Sê-la"
+        },
+        "ko": {
+          "L": "하나님께서 우리에게 은혜를 베푸시고 우리에게 복을 주시기를. \\q 그분의 얼굴을 우리 가운데 비추시기를. 셀라.",
+          "B": "하나님께서 우리에게 은혜를 베푸시고 복을 주시기를. \\q 그분의 얼굴빛을 우리에게 비추시기를. 셀라.",
+          "R": "하나님께서 우리에게 친절을 베푸시고 복을 주시기를. \\q 그분께서 우리를 기쁘게 바라보시기를. 셀라."
         }
       },
       "decisions": [
@@ -296,6 +306,50 @@
           "reason": "The psalm moves between a blessing spoken about God among the people and praise spoken to him; Vietnamese marks this with \"chúng ta\", which includes the hearers, as in the priestly blessing it echoes (see the meaning decision).",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o190670020011",
+            "o190670020022"
+          ],
+          "choice": "The wishes about God (verses 2, 7-8) are in the plain written style with \"우리\"; the prayer to God (verses 3-6) is in 합쇼체",
+          "alternatives": [
+            "합쇼체 throughout",
+            "저희 in verse 2"
+          ],
+          "reason": "Style guide section 7a: about God in the plain style, to God in 합쇼체. Verse 2 speaks of God in the third person (the English \"may he\"), so its \"us\" is \"우리\"; the Literal opening \"God, may he\" is given as a wish with God as subject, since Korean cannot address God and speak of him as \"he\" in one breath.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190670020071"
+          ],
+          "choice": "\"셀라\" kept at the end of the verse",
+          "alternatives": [
+            "(쉼)"
+          ],
+          "reason": "A word whose meaning is no longer known, probably a musical direction (meaning decision m4); see Psalm 46:4.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -349,6 +403,11 @@
           "L": "Để [người ta] biết đường lối của {{deity_pronoun:ngài|Ngài}} trên đất, \\q [và biết] sự cứu rỗi của {{deity_pronoun:ngài|Ngài}} giữa mọi dân tộc.",
           "B": "Khi ấy cả đất sẽ biết các đường lối của {{deity_pronoun:ngài|Ngài}}, \\q và mọi dân tộc sẽ biết quyền năng giải cứu của {{deity_pronoun:ngài|Ngài}}.",
           "R": "Khi ấy mọi người trên đất sẽ biết {{deity_pronoun:ngài|Ngài}} là Đấng thế nào. \\q Mọi dân tộc sẽ thấy {{deity_pronoun:ngài|Ngài}} giải cứu ra sao."
+        },
+        "ko": {
+          "L": "땅에서 주님의 길을, \\q 모든 민족들 가운데서 주님의 구원을 알게 하시려는 것입니다.",
+          "B": "그러면 온 땅이 주님의 길을 알고, \\q 모든 민족이 주님의 구원하시는 능력을 알 것입니다.",
+          "R": "그러면 땅 위의 모든 사람이 주님이 어떤 분이신지 알게 될 것입니다. \\q 모든 민족이 주님께서 어떻게 구원하시는지 보게 될 것입니다."
         }
       },
       "decisions": [
@@ -466,6 +525,11 @@
           "L": "Các dân sẽ ca ngợi {{deity_pronoun:ngài|Ngài}}, lạy Đức Chúa Trời; \\q các dân sẽ ca ngợi {{deity_pronoun:ngài|Ngài}}, tất cả họ.",
           "B": "Lạy Đức Chúa Trời, nguyện các dân cảm tạ {{deity_pronoun:ngài|Ngài}}; \\q nguyện mọi dân tộc đều cảm tạ {{deity_pronoun:ngài|Ngài}}!",
           "R": "Lạy Đức Chúa Trời, nguyện người của mọi dân tộc ca ngợi {{deity_pronoun:ngài|Ngài}}! \\q Nguyện tất cả họ đều ca ngợi {{deity_pronoun:ngài|Ngài}}!"
+        },
+        "ko": {
+          "L": "민족들이 주님을 찬양할 것입니다, 하나님. \\q 모든 민족들이 주님을 찬양할 것입니다.",
+          "B": "하나님, 민족들이 주님께 감사하게 해 주십시오. \\q 모든 민족이 주님께 감사하게 해 주십시오!",
+          "R": "하나님, 모든 나라 사람들이 주님을 찬양하게 해 주십시오! \\q 그들 모두가 주님을 찬양하게 해 주십시오!"
         }
       },
       "decisions": [
@@ -570,6 +634,11 @@
           "L": "Các nước sẽ vui mừng và reo hát, \\q vì {{deity_pronoun:ngài|Ngài}} xét xử các dân [bằng] sự ngay thẳng, \\q và các nước trên đất, {{deity_pronoun:ngài|Ngài}} dẫn dắt họ. Sê-la",
           "B": "Nguyện các nước ăn mừng và reo hò vui vẻ, \\q vì {{deity_pronoun:ngài|Ngài}} xét xử các dân công minh \\q và dẫn dắt các nước trên khắp đất. Sê-la",
           "R": "Nguyện các dân tộc vui mừng và ca hát! \\q {{deity_pronoun:ngài|Ngài}} xét xử người ta cách công bằng, \\q và {{deity_pronoun:ngài|Ngài}} dẫn dắt các dân tộc trên thế giới. Sê-la"
+        },
+        "ko": {
+          "L": "나라들이 기뻐하며 기뻐 노래할 것입니다. \\q 주님께서 민족들을 공정하게 재판하시고, \\q 땅 위의 나라들을 인도하시기 때문입니다. 셀라.",
+          "B": "나라들이 즐거워하며 기뻐 외치게 해 주십시오. \\q 주님께서 민족들을 공평하게 재판하시고 \\q 온 땅의 나라들을 이끄십니다. 셀라.",
+          "R": "나라들이 기뻐하며 노래하게 해 주십시오! \\q 주님께서는 사람들을 공정하게 재판하시고, \\q 세상의 나라들을 이끄십니다. 셀라."
         }
       },
       "decisions": [
@@ -709,6 +778,11 @@
           "L": "Các dân sẽ ca ngợi {{deity_pronoun:ngài|Ngài}}, lạy Đức Chúa Trời; \\q các dân sẽ ca ngợi {{deity_pronoun:ngài|Ngài}}, tất cả họ.",
           "B": "Lạy Đức Chúa Trời, nguyện các dân cảm tạ {{deity_pronoun:ngài|Ngài}}; \\q nguyện mọi dân tộc đều cảm tạ {{deity_pronoun:ngài|Ngài}}!",
           "R": "Lạy Đức Chúa Trời, nguyện người của mọi dân tộc ca ngợi {{deity_pronoun:ngài|Ngài}}! \\q Nguyện tất cả họ đều ca ngợi {{deity_pronoun:ngài|Ngài}}!"
+        },
+        "ko": {
+          "L": "민족들이 주님을 찬양할 것입니다, 하나님. \\q 모든 민족들이 주님을 찬양할 것입니다.",
+          "B": "하나님, 민족들이 주님께 감사하게 해 주십시오. \\q 모든 민족이 주님께 감사하게 해 주십시오!",
+          "R": "하나님, 모든 나라 사람들이 주님을 찬양하게 해 주십시오! \\q 그들 모두가 주님을 찬양하게 해 주십시오!"
         }
       },
       "decisions": [
@@ -777,6 +851,11 @@
           "L": "Đất đã sinh hoa lợi của nó; \\q Đức Chúa Trời, Đức Chúa Trời của chúng ta, sẽ ban phước cho chúng ta.",
           "B": "Đất đã sinh sản mùa màng; \\q Đức Chúa Trời, chính Đức Chúa Trời của chúng ta, sẽ ban phước cho chúng ta.",
           "R": "Đất đã cho mùa màng. \\q Đức Chúa Trời, Đức Chúa Trời của chúng ta, sẽ tiếp tục làm điều tốt cho chúng ta."
+        },
+        "ko": {
+          "L": "땅이 그 소산을 내었으니, \\q 하나님, 우리 하나님께서 우리에게 복을 주실 것이다.",
+          "B": "땅이 곡식을 내었으니, \\q 하나님, 우리의 하나님께서 우리에게 복을 주실 것이다.",
+          "R": "땅이 곡식을 내었다. \\q 하나님, 곧 우리 하나님께서 앞으로도 우리에게 좋은 것을 주실 것이다."
         }
       },
       "decisions": [
@@ -884,6 +963,11 @@
           "L": "Đức Chúa Trời sẽ ban phước cho chúng ta, \\q và mọi nơi tận cùng trái đất sẽ kính sợ {{deity_pronoun:ngài|Ngài}}.",
           "B": "Đức Chúa Trời sẽ ban phước cho chúng ta, \\q và mọi nơi xa xôi nhất trên đất sẽ kính sợ {{deity_pronoun:ngài|Ngài}}.",
           "R": "Đức Chúa Trời sẽ ban phước cho chúng ta. \\q Khi ấy người ta ở khắp nơi, ngay cả những nơi xa nhất, sẽ tôn kính {{deity_pronoun:ngài|Ngài}}."
+        },
+        "ko": {
+          "L": "하나님께서 우리에게 복을 주실 것이요, \\q 땅의 모든 끝이 그분을 경외할 것이다.",
+          "B": "하나님께서 우리에게 복을 주시리니, \\q 땅의 먼 끝까지 모두 그분을 경외할 것이다.",
+          "R": "하나님께서 우리에게 복을 주실 것이다. \\q 그러면 가장 먼 곳에 사는 사람들까지 모두 그분을 두려운 마음으로 섬길 것이다."
         }
       },
       "decisions": [

@@ -55,6 +55,11 @@
           "L": "Của Đa-vít. Xin xét xử tôi, lạy {{divine_name:CHÚA|Gia-vê}}, vì tôi đã bước đi trong sự trọn vẹn của tôi, và nơi {{divine_name:CHÚA|Gia-vê}} tôi đã tin cậy; tôi sẽ không trượt ngã.",
           "B": "Của Đa-vít. Lạy {{divine_name:CHÚA|Gia-vê}}, xin phân xử cho tôi, vì tôi đã sống ngay thật trọn vẹn; tôi vẫn tin cậy nơi {{divine_name:CHÚA|Gia-vê}}, và tôi sẽ không vấp ngã.",
           "R": "Của Đa-vít. Lạy {{divine_name:CHÚA|Gia-vê}}, xin cho mọi người thấy tôi là người ngay. Tôi đã sống một đời ngay thật. Tôi đã tin cậy {{divine_name:CHÚA|Gia-vê}}, và tôi sẽ không bị ngã."
+        },
+        "ko": {
+          "L": "다윗의 [시]. 저를 판단해 주십시오, {{divine_name:주|야훼}}여. 참으로 저는 제 온전함 가운데 걸어왔고, {{divine_name:주|야훼}}를 신뢰하였습니다. 저는 미끄러지지 않을 것입니다.",
+          "B": "다윗의 시. {{divine_name:주|야훼}}여, 제 사정을 판결해 주십시오. 저는 온전하게 살아왔습니다. 제가 {{divine_name:주|야훼}}를 신뢰해 왔으니 흔들리지 않을 것입니다.",
+          "R": "다윗이 지은 노래. {{divine_name:주|야훼}}여, 제가 옳다는 것을 밝혀 주십시오. 저는 정직하게 살아왔습니다. 저는 {{divine_name:주|야훼}}를 믿어 왔으니 넘어지지 않을 것입니다."
         }
       },
       "decisions": [
@@ -291,6 +296,53 @@
           "reason": "The Hebrew title here is only \"of David\", with no word for psalm, so no level adds \"thi thiên\"; \"của\" keeps the Hebrew's open sense (by, for or about David).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o190260010022",
+            "o190260010031",
+            "o190260010051"
+          ],
+          "choice": "The psalm is spoken to God in 합쇼체; the singer is \"저/제\"; God is called by name with \"{{divine_name:주|야훼}}여\" and addressed by title, \"주님\" (주님께서, 주님의); no deity_pronoun spans",
+          "alternatives": [
+            "나 and 해라체",
+            "당신"
+          ],
+          "reason": "Style guide section 7a (speech levels in prayer), as in the published Psalms 23 and 139. Korean addresses a superior by title, not by a pronoun. Hangul has no capitals, so the English deity_pronoun setting has nothing to change; respect is carried by 주님, 께서 and -시-. This holds for Psalms 26-44 wherever the singer speaks to God; where a psalm speaks about God, it uses the plain written style with the honorific and \"나\".",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o190260010011",
+            "o190260010012"
+          ],
+          "choice": "The short title \"Of David\" is \"다윗의 [시]\" (L), \"다윗의 시\" (B), \"다윗이 지은 노래\" (R)",
+          "alternatives": [
+            "다윗의 (with no noun)",
+            "다윗에게 속한 것"
+          ],
+          "reason": "A Korean genitive cannot stand without a noun, so Literal supplies \"poem\" in brackets and Balanced gives it plainly; Readable says \"a song David made\", as the published titles do (\"다윗이 지은 노래\"). The same form serves every psalm titled \"Of David\" in this block.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -346,6 +398,11 @@
           "L": "Xin dò xét tôi, lạy {{divine_name:CHÚA|Gia-vê}}, và thử thách tôi; xin luyện lọc tim gan và lòng tôi.",
           "B": "Lạy {{divine_name:CHÚA|Gia-vê}}, xin dò xét tôi và đem tôi qua thử thách; xin luyện lọc những cảm xúc sâu kín nhất và tâm trí tôi.",
           "R": "Lạy {{divine_name:CHÚA|Gia-vê}}, xin thử tôi và xem tôi thật sự là người thế nào. Xin nhìn sâu vào trong tôi, thấy điều tôi muốn và điều tôi nghĩ."
+        },
+        "ko": {
+          "L": "{{divine_name:주|야훼}}여, 저를 살피시고 시험해 보십시오. 제 콩팥과 제 마음을 제련하십시오.",
+          "B": "{{divine_name:주|야훼}}여, 저를 살피시고 시련으로 시험해 보십시오. 제 가장 깊은 속마음과 생각을 단련해 주십시오.",
+          "R": "{{divine_name:주|야훼}}여, 저를 시험하셔서 제가 정말 어떤 사람인지 보아 주십시오. 제 속 깊은 곳을 들여다보시고, 제가 무엇을 바라고 무엇을 생각하는지 살펴 주십시오."
         }
       },
       "decisions": [
@@ -472,6 +529,11 @@
           "L": "Vì tình yêu thương thành tín của {{deity_pronoun:ngài|Ngài}} [ở] trước mắt tôi, và tôi đã bước đi trong sự thành tín của {{deity_pronoun:ngài|Ngài}}.",
           "B": "Tôi luôn giữ tình yêu thương thành tín của {{deity_pronoun:ngài|Ngài}} trước mắt mình, và tôi đã sống theo sự thành tín của {{deity_pronoun:ngài|Ngài}}.",
           "R": "Tôi luôn nghĩ đến tình thương không hề thay đổi của {{deity_pronoun:ngài|Ngài}}. Mỗi ngày tôi sống trong niềm tin rằng {{deity_pronoun:ngài|Ngài}} giữ lời {{deity_pronoun:ngài|Ngài}} đã hứa."
+        },
+        "ko": {
+          "L": "참으로 주님의 한결같은 사랑이 제 눈앞에 [있고], 저는 주님의 신실하심 가운데 걸어왔습니다.",
+          "B": "저는 주님의 한결같은 사랑을 늘 눈앞에 두었고, 주님의 신실하심을 따라 살아왔습니다.",
+          "R": "저는 주님의 변함없는 사랑을 늘 생각합니다. 주님께서 약속을 지키신다고 믿으며 날마다 살아갑니다."
         }
       },
       "decisions": [
@@ -653,6 +715,30 @@
           "reason": "As in the published Psalm 23:6: the word is love that keeps faith (see the meaning decision); \"thành tín\" carries the loyalty, and Readable says it in everyday words.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190260030021",
+            "o190260030062"
+          ],
+          "choice": "\"한결같은 사랑\" (L, B), \"변함없는 사랑\" (R) for hesed; \"신실하심\" for emet (faithfulness)",
+          "alternatives": [
+            "인자하심",
+            "자비",
+            "진리"
+          ],
+          "reason": "As the published Psalm 23:6 and the Psalms terms note: the word is love that keeps faith (meaning decision m1). \"인자하심\" is the older church word and unclear to many readers; \"자비\" says mercy only. The same terms hold through this block.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -705,6 +791,11 @@
           "L": "Tôi đã không ngồi với những kẻ giả dối, và với những kẻ che giấu [con người thật của mình] tôi sẽ không đi cùng.",
           "B": "Tôi không ngồi chung với những kẻ dối trá, và tôi sẽ không kết bạn với những kẻ che giấu con người thật của mình.",
           "R": "Tôi không la cà với những kẻ nói dối. Tôi không đi chung với những người giả vờ tốt lành."
+        },
+        "ko": {
+          "L": "저는 거짓된 사람들과 함께 앉지 않았고, [속을] 감추는 자들과 함께 다니지 않을 것입니다.",
+          "B": "저는 거짓된 자들 사이에 앉지 않았고, 속을 감추는 자들과 어울리지 않을 것입니다.",
+          "R": "저는 거짓말하는 사람들과 시간을 보내지 않습니다. 착한 척하는 사람들과 어울려 다니지 않습니다."
         }
       },
       "decisions": [
@@ -790,6 +881,25 @@
           "reason": "Vietnamese \"kẻ\" and \"người\" name people of either sex, so there is no second wording for the gender setting to choose.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190260040041"
+          ],
+          "choice": "\"사람들\" (people) with no gender span",
+          "alternatives": [
+            "a gender span offering 남자들 (men)"
+          ],
+          "reason": "The English Literal offers \"men\" as an alternative. Korean \"사람\" is the ordinary word for a person of either sex and is what Korean says for this Hebrew, so there is no second wording to offer (style guide section 7). The same holds wherever the English has a gender span in this block.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -840,6 +950,11 @@
           "L": "Tôi đã ghét hội của những kẻ làm ác, và với kẻ ác tôi sẽ không ngồi.",
           "B": "Tôi ghét bọn người tụ tập để làm điều ác; tôi sẽ không ngồi chung với kẻ ác.",
           "R": "Tôi ghét khi người ta tụ họp lại để làm điều ác. Tôi sẽ không ngồi chung với kẻ ác."
+        },
+        "ko": {
+          "L": "저는 악을 행하는 자들의 모임을 미워하였고, 악인들과 함께 앉지 않을 것입니다.",
+          "B": "저는 악을 꾀하려고 모이는 무리를 미워하며, 악인들 사이에 자리 잡고 앉지 않을 것입니다.",
+          "R": "저는 사람들이 모여서 악한 일을 하는 것을 싫어합니다. 저는 악한 사람들과 함께 앉지 않겠습니다."
         }
       },
       "decisions": [
@@ -944,6 +1059,11 @@
           "L": "Tôi rửa tay mình trong sự vô tội, và tôi đi quanh bàn thờ của {{deity_pronoun:ngài|Ngài}}, lạy {{divine_name:CHÚA|Gia-vê}},",
           "B": "Tôi rửa tay để tỏ ra mình vô tội, và tôi đi quanh bàn thờ của {{deity_pronoun:ngài|Ngài}}, lạy {{divine_name:CHÚA|Gia-vê}},",
           "R": "Tôi rửa tay để cho thấy tôi không làm điều gì sai. Rồi tôi đi quanh bàn thờ của {{deity_pronoun:ngài|Ngài}}, lạy {{divine_name:CHÚA|Gia-vê}}."
+        },
+        "ko": {
+          "L": "제가 무죄함 속에서 제 손바닥을 씻고, {{divine_name:주|야훼}}여, 주님의 제단을 두루 돌며,",
+          "B": "{{divine_name:주|야훼}}여, 저는 죄 없음을 보이려고 손을 씻고, 주님의 제단을 돌며,",
+          "R": "{{divine_name:주|야훼}}여, 저는 아무 잘못도 하지 않았음을 보이려고 손을 씻습니다. 그리고 주님의 제단을 돌며 걷습니다."
         }
       },
       "decisions": [
@@ -1063,6 +1183,11 @@
           "L": "để làm vang lên tiếng cảm tạ và để thuật lại mọi việc diệu kỳ của {{deity_pronoun:ngài|Ngài}}.",
           "B": "cất tiếng hát cảm tạ cho mọi người nghe và kể ra mọi việc diệu kỳ {{deity_pronoun:ngài|Ngài}} đã làm.",
           "R": "Tôi cất tiếng hát cảm tạ {{deity_pronoun:ngài|Ngài}}. Tôi kể lại mọi việc kỳ diệu {{deity_pronoun:ngài|Ngài}} đã làm."
+        },
+        "ko": {
+          "L": "감사의 소리를 들리게 하고 주님의 모든 기이한 일들을 이야기합니다.",
+          "B": "감사의 노래를 소리 높여 부르고, 주님께서 하신 놀라운 일들을 하나하나 전합니다.",
+          "R": "저는 주님께 감사의 노래를 부릅니다. 주님께서 하신 놀라운 일들을 모두 이야기합니다."
         }
       },
       "decisions": [
@@ -1162,6 +1287,11 @@
           "L": "Lạy {{divine_name:CHÚA|Gia-vê}}, tôi yêu mến nơi ở của nhà {{deity_pronoun:ngài|Ngài}} và nơi ngự của vinh quang {{deity_pronoun:ngài|Ngài}}.",
           "B": "Lạy {{divine_name:CHÚA|Gia-vê}}, tôi yêu mến ngôi nhà là nơi {{deity_pronoun:ngài|Ngài}} ở, nơi vinh quang của {{deity_pronoun:ngài|Ngài}} ngự.",
           "R": "Lạy {{divine_name:CHÚA|Gia-vê}}, tôi yêu mến nhà của {{deity_pronoun:ngài|Ngài}}, nơi {{deity_pronoun:ngài|Ngài}} ở. Vinh quang rực rỡ của {{deity_pronoun:ngài|Ngài}} ở đó."
+        },
+        "ko": {
+          "L": "{{divine_name:주|야훼}}여, 저는 주님의 집의 거처와 주님의 영광이 거하는 처소를 사랑합니다.",
+          "B": "{{divine_name:주|야훼}}여, 저는 주님께서 계시는 집, 주님의 영광이 머무는 곳을 사랑합니다.",
+          "R": "{{divine_name:주|야훼}}여, 저는 주님께서 계시는 주님의 집을 사랑합니다. 그곳에 주님의 빛나는 영광이 있습니다."
         }
       },
       "decisions": [
@@ -1265,6 +1395,11 @@
           "L": "Xin đừng cất linh hồn tôi đi cùng với những kẻ tội lỗi, cũng đừng cất mạng sống tôi đi cùng với những kẻ làm đổ máu,",
           "B": "Xin đừng mang tôi đi chung với những kẻ tội lỗi, hay cất mạng sống tôi đi chung với những kẻ làm đổ máu,",
           "R": "Khi {{deity_pronoun:ngài|Ngài}} cất bỏ những kẻ tội lỗi, xin đừng mang tôi đi với chúng. Xin đừng để tôi chết chung với những kẻ giết người."
+        },
+        "ko": {
+          "L": "제 영혼을 죄인들과 함께 거두지 마시고, 제 생명을 피 흘린 사람들과 함께 [거두지] 마십시오.",
+          "B": "저를 죄인들과 함께 쓸어 가지 마시고, 제 목숨을 피 흘리는 자들과 함께 앗아 가지 마십시오.",
+          "R": "주님께서 죄인들을 데려가실 때 저까지 데려가지 마십시오. 살인자들과 함께 제가 죽지 않게 해 주십시오."
         }
       },
       "decisions": [
@@ -1418,6 +1553,11 @@
           "L": "là những kẻ trong tay [có] mưu ác, và tay phải của chúng đầy của hối lộ.",
           "B": "là những kẻ có bàn tay thực hiện mưu đồ xấu xa và tay phải đầy của hối lộ.",
           "R": "Chúng luôn tính chuyện ác, và chúng nhận tiền để làm điều sai."
+        },
+        "ko": {
+          "L": "그들의 손에는 악한 계략이 [있고], 그들의 오른손에는 뇌물이 가득합니다.",
+          "B": "그들은 손으로 부끄러운 음모를 꾸미고, 오른손에는 뇌물이 가득한 자들입니다.",
+          "R": "그들은 늘 악한 일을 꾸미고, 돈을 받고 나쁜 일을 합니다."
         }
       },
       "decisions": [
@@ -1465,6 +1605,27 @@
             "their right hand is full of bribery"
           ],
           "reason": "Readable says what the bribes are for (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o190260100011"
+          ],
+          "choice": "The relative \"who\" that ties verse 10 to verse 9 becomes a new sentence about \"그들\" (them)",
+          "alternatives": [
+            "a relative clause placed before \"사람들\" in verse 9"
+          ],
+          "reason": "Korean puts a relative clause before its noun, so keeping it would move verse 10 into verse 9; a new sentence keeps each verse with its own words.",
           "uncertain": false,
           "footnote": false
         }
@@ -1520,6 +1681,11 @@
           "L": "Còn tôi, trong sự trọn vẹn của tôi tôi sẽ bước đi; xin chuộc tôi và thương xót tôi.",
           "B": "Còn tôi, tôi sẽ sống ngay thật trọn vẹn; xin giải thoát tôi và tỏ ân huệ cho tôi.",
           "R": "Còn tôi, tôi sẽ tiếp tục sống ngay thật. Xin giải cứu tôi và thương xót tôi."
+        },
+        "ko": {
+          "L": "그러나 저는 제 온전함 가운데 걷겠습니다. 저를 속량하시고 저에게 은혜를 베풀어 주십시오.",
+          "B": "그러나 저는 온전하게 살겠습니다. 저를 건져 주시고 은혜를 베풀어 주십시오.",
+          "R": "그러나 저는 계속 정직하게 살겠습니다. 저를 구해 주시고 저를 불쌍히 여겨 주십시오."
         }
       },
       "decisions": [
@@ -1601,6 +1767,11 @@
           "L": "Chân tôi đã đứng trên đất bằng; trong [các] hội chúng tôi sẽ chúc tụng {{divine_name:CHÚA|Gia-vê}}.",
           "B": "Tôi đứng vững trên đất bằng; trong các hội chúng tôi sẽ chúc tụng {{divine_name:CHÚA|Gia-vê}}.",
           "R": "Tôi đang đứng trên đất bằng và an toàn. Khi dân của Đức Chúa Trời nhóm lại, tôi sẽ ca ngợi {{divine_name:CHÚA|Gia-vê}}."
+        },
+        "ko": {
+          "L": "제 발이 평탄한 곳에 섰습니다. 회중들 가운데서 제가 {{divine_name:주|야훼}}를 송축하겠습니다.",
+          "B": "저는 평탄한 땅에 굳게 서 있습니다. 모임들 가운데서 {{divine_name:주|야훼}}를 송축하겠습니다.",
+          "R": "저는 안전하고 평평한 땅에 서 있습니다. 하나님의 백성이 함께 모일 때 저는 {{divine_name:주|야훼}}를 찬양하겠습니다."
         }
       },
       "decisions": [

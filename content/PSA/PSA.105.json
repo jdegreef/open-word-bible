@@ -50,6 +50,11 @@
           "L": "Hãy cảm tạ {{divine_name:CHÚA|Gia-vê}}; hãy kêu cầu danh {{deity_pronoun:ngài|Ngài}}; hãy làm cho các dân biết những công việc của {{deity_pronoun:ngài|Ngài}}.",
           "B": "Hãy cảm tạ {{divine_name:CHÚA|Gia-vê}} và kêu cầu danh {{deity_pronoun:ngài|Ngài}}; hãy thuật cho mọi dân biết những việc {{deity_pronoun:ngài|Ngài}} đã làm.",
           "R": "Hãy cảm tạ {{divine_name:CHÚA|Gia-vê}}! Hãy gọi tên {{deity_pronoun:ngài|Ngài}} mà cầu nguyện. Hãy kể cho người khắp nơi biết những việc {{deity_pronoun:ngài|Ngài}} đã làm."
+        },
+        "ko": {
+          "L": "{{divine_name:주|야훼}}께 감사하여라. 그분의 이름을 불러라. 백성들 가운데 그분께서 하신 일들을 알려라.",
+          "B": "{{divine_name:주|야훼}}께 감사하고 그분의 이름을 불러라. 모든 백성에게 그분께서 하신 일을 전하여라.",
+          "R": "{{divine_name:주|야훼}}께 감사하여라! 그분의 이름을 부르며 기도하여라. 온 세상 사람들에게 그분께서 하신 일을 알려라."
         }
       },
       "decisions": [
@@ -271,6 +276,52 @@
           "reason": "The psalm calls on the whole people, Abraham's descendants (verse 6). Vietnamese can give a command without naming the hearers, which avoids fixing a relation between the singer and the crowd; \"các ngươi\" is archaic and \"anh chị em\" belongs to the church. |",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o191050010011",
+            "o191050010031",
+            "o191050010051"
+          ],
+          "choice": "Calls to praise are plain-style commands to the gathered people (\"감사하여라\", \"불러라\", \"알려라\"); God is spoken of in the plain written style with the honorific (께서, -시-, 그분), and there are no deity_pronoun spans",
+          "alternatives": [
+            "합쇼체 commands (\"감사하십시오\")",
+            "해요체"
+          ],
+          "reason": "The psalm speaks to the worshippers about God, not to God, so the plain written style with the honorific holds (style guide section 7a), and a call to a congregation in Korean poetry uses the plain command \"-하여라\". Hangul has no capitals, so the deity_pronoun setting has nothing to change; respect is carried by 그분, 께서 and -시-. This holds for Psalms 105-118 wherever God is spoken of.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191050010022"
+          ],
+          "choice": "YHWH is {{divine_name:주|야훼}} with the particle outside the span ({{divine_name:주|야훼}}께, {{divine_name:주|야훼}}를)",
+          "alternatives": [
+            "여호와",
+            "주님"
+          ],
+          "reason": "As the style guide (section 7a); \"여호와\", the form of the older Protestant Bibles, is not used. Both forms end in a vowel, so one particle fits both.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -324,6 +375,11 @@
           "L": "Hãy hát cho {{deity_pronoun:ngài|Ngài}}, hãy đàn ca cho {{deity_pronoun:ngài|Ngài}}; hãy kể về mọi việc kỳ diệu của {{deity_pronoun:ngài|Ngài}}.",
           "B": "Hãy hát cho {{deity_pronoun:ngài|Ngài}}, hãy gảy đàn ca ngợi {{deity_pronoun:ngài|Ngài}}; hãy nói về mọi việc kỳ diệu {{deity_pronoun:ngài|Ngài}} đã làm.",
           "R": "Hãy hát cho {{deity_pronoun:ngài|Ngài}}! Hãy chơi nhạc cho {{deity_pronoun:ngài|Ngài}}! Hãy kể về mọi điều tuyệt vời {{deity_pronoun:ngài|Ngài}} đã làm."
+        },
+        "ko": {
+          "L": "그분께 노래하여라, 그분께 찬송을 연주하여라. 그분의 모든 놀라운 일들을 말하여라.",
+          "B": "그분께 노래하고 악기를 타며 찬양하여라. 그분께서 하신 모든 놀라운 일을 이야기하여라.",
+          "R": "그분께 노래하여라! 그분을 위해 악기를 연주하여라! 그분께서 하신 놀라운 일들을 모두 이야기하여라."
         }
       },
       "decisions": [
@@ -423,6 +479,11 @@
           "L": "Hãy tự hào trong danh thánh của {{deity_pronoun:ngài|Ngài}}; nguyện lòng những người tìm kiếm {{divine_name:CHÚA|Gia-vê}} được vui mừng.",
           "B": "Hãy lấy danh thánh của {{deity_pronoun:ngài|Ngài}} làm niềm hãnh diện; nguyện mọi người hướng về {{divine_name:CHÚA|Gia-vê}} được vui mừng trong lòng.",
           "R": "Hãy hãnh diện về danh thánh của {{deity_pronoun:ngài|Ngài}}. Mọi người tìm đến {{divine_name:CHÚA|Gia-vê}} hãy vui lên."
+        },
+        "ko": {
+          "L": "그분의 거룩한 이름을 자랑하여라. {{divine_name:주|야훼}}를 찾는 이들의 마음이 기뻐하게 하여라.",
+          "B": "그분의 거룩한 이름을 자랑으로 삼아라. {{divine_name:주|야훼}}를 바라보는 사람은 모두 마음으로 기뻐하여라.",
+          "R": "그분의 거룩한 이름을 자랑스럽게 여겨라. {{divine_name:주|야훼}}를 찾는 사람은 누구나 기뻐하여라."
         }
       },
       "decisions": [
@@ -519,6 +580,11 @@
           "L": "Hãy tìm kiếm {{divine_name:CHÚA|Gia-vê}} và sức mạnh của {{deity_pronoun:ngài|Ngài}}; hãy tìm kiếm mặt {{deity_pronoun:ngài|Ngài}} luôn luôn.",
           "B": "Hãy hướng về {{divine_name:CHÚA|Gia-vê}} và sức mạnh của {{deity_pronoun:ngài|Ngài}}; hãy đến trước mặt {{deity_pronoun:ngài|Ngài}} hết lần này đến lần khác.",
           "R": "Hãy hướng về {{divine_name:CHÚA|Gia-vê}} và nương cậy sức mạnh của {{deity_pronoun:ngài|Ngài}}. Đừng bao giờ thôi đến thờ phượng {{deity_pronoun:ngài|Ngài}}."
+        },
+        "ko": {
+          "L": "{{divine_name:주|야훼}}와 그분의 능력을 찾아라. 그분의 얼굴을 늘 찾아라.",
+          "B": "{{divine_name:주|야훼}}께 나아가고 그분의 능력을 구하여라. 그분 앞에 거듭거듭 나아가라.",
+          "R": "{{divine_name:주|야훼}}께 나아가고 그분의 힘에 기대어라. 그분께 예배하러 나아가기를 멈추지 마라."
         }
       },
       "decisions": [
@@ -641,6 +707,11 @@
           "L": "Hãy nhớ những việc kỳ diệu {{deity_pronoun:ngài|Ngài}} đã làm, những dấu lạ của {{deity_pronoun:ngài|Ngài}} và những sự phán xét từ miệng {{deity_pronoun:ngài|Ngài}},",
           "B": "Hãy ghi nhớ những việc kỳ diệu {{deity_pronoun:ngài|Ngài}} đã làm, những dấu lạ của {{deity_pronoun:ngài|Ngài}}, và những phán quyết {{deity_pronoun:ngài|Ngài}} đã tuyên ra,",
           "R": "Hãy nhớ những điều tuyệt vời {{deity_pronoun:ngài|Ngài}} đã làm. Hãy nhớ những dấu lạ của {{deity_pronoun:ngài|Ngài}} và những phán xét {{deity_pronoun:ngài|Ngài}} đã công bố."
+        },
+        "ko": {
+          "L": "그분께서 행하신 그분의 놀라운 일들을, 그분의 표적들과 그분 입의 판결들을 기억하여라,",
+          "B": "그분께서 이루신 놀라운 일들과 그분의 표적들과 그분께서 말씀하신 판결들을 마음에 새겨라,",
+          "R": "그분께서 하신 놀라운 일들을 기억하여라. 그분께서 보이신 표적들과 그분께서 선포하신 심판을 기억하여라."
         }
       },
       "decisions": [
@@ -761,6 +832,11 @@
           "L": "hỡi dòng dõi Áp-ra-ham, đầy tớ {{deity_pronoun:ngài|Ngài}}, hỡi con cháu Gia-cốp, những người được chọn của {{deity_pronoun:ngài|Ngài}}.",
           "B": "hỡi dòng dõi của Áp-ra-ham, đầy tớ {{deity_pronoun:ngài|Ngài}}, hỡi con cháu Gia-cốp, những người {{deity_pronoun:ngài|Ngài}} đã chọn.",
           "R": "Hãy làm như vậy, hỡi con cháu Áp-ra-ham, đầy tớ của {{deity_pronoun:ngài|Ngài}}, hỡi dòng dõi Gia-cốp, những người {{deity_pronoun:ngài|Ngài}} đã chọn."
+        },
+        "ko": {
+          "L": "그분의 종 아브라함의 씨야, 그분께서 택하신 이들인 야곱의 아들들아.",
+          "B": "그분의 종 아브라함의 후손들아, 그분께서 택하신 야곱의 자손들아.",
+          "R": "그분의 종 아브라함에게서 난 사람들아, 그분께서 택하신 야곱의 자손들아, 그렇게 하여라."
         }
       },
       "decisions": [
@@ -918,6 +994,28 @@
           "reason": "\"servant of the LORD\" is a title of honor here, not slavery; \"đầy tớ của Ngài\" is the form used in the earlier Psalms. \"nô lệ\" is kept for Joseph sold as a slave (verse 17). |",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191050060031"
+          ],
+          "choice": "\"종\" for \"his servant\" (Abraham here, Moses in verse 26)",
+          "alternatives": [
+            "노예",
+            "하인"
+          ],
+          "reason": "The Hebrew word (ʿeved) is a servant or slave; as a title given by God it is the honoured \"종\", as in the New Testament. Where a man is sold into slavery (verse 17), Korean says \"노예\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -970,6 +1068,11 @@
           "L": "Chính {{deity_pronoun:ngài|Ngài}} [là] {{divine_name:CHÚA|Gia-vê}}, Đức Chúa Trời chúng ta; trên khắp đất [là] những sự phán xét của {{deity_pronoun:ngài|Ngài}}.",
           "B": "Chính {{deity_pronoun:ngài|Ngài}}, {{divine_name:CHÚA|Gia-vê}}, là Đức Chúa Trời của chúng ta; phán quyết của {{deity_pronoun:ngài|Ngài}} vươn tới khắp đất.",
           "R": "Ngài là {{divine_name:CHÚA|Gia-vê}}, Đức Chúa Trời của chúng ta. Ngài xét xử mọi việc xảy ra khắp nơi trên đất."
+        },
+        "ko": {
+          "L": "바로 그분께서 {{divine_name:주|야훼}} 우리 하나님이시다. 온 땅에 그분의 판결들이 [있다].",
+          "B": "바로 그분, {{divine_name:주|야훼}}께서 우리 하나님이시다. 그분의 다스림이 온 땅에 미친다.",
+          "R": "그분은 {{divine_name:주|야훼}}, 우리 하나님이시다. 그분께서 온 땅에서 일어나는 일을 심판하신다."
         }
       },
       "decisions": [
@@ -1053,6 +1156,11 @@
           "L": "Ngài nhớ giao ước của {{deity_pronoun:ngài|Ngài}} đến đời đời, lời {{deity_pronoun:ngài|Ngài}} đã truyền cho một ngàn thế hệ,",
           "B": "Ngài ghi nhớ giao ước của {{deity_pronoun:ngài|Ngài}} mãi mãi, lời hứa {{deity_pronoun:ngài|Ngài}} đã định cho một ngàn thế hệ,",
           "R": "Ngài không bao giờ quên giao ước của {{deity_pronoun:ngài|Ngài}}, lời hứa {{deity_pronoun:ngài|Ngài}} đã lập để còn mãi đến một ngàn thế hệ."
+        },
+        "ko": {
+          "L": "그분께서는 그분의 언약을 영원히 기억하신다. 천 대에 명령하신 말씀을,",
+          "B": "그분께서는 그분의 언약을 영원히 잊지 않으신다. 천 대에 이르도록 세우신 약속을 기억하신다.",
+          "R": "그분께서는 그분의 언약을 결코 잊지 않으신다. 천 대까지 이어지게 하신 약속을 잊지 않으신다."
         }
       },
       "decisions": [
@@ -1171,6 +1279,11 @@
           "L": "[giao ước] mà {{deity_pronoun:ngài|Ngài}} đã cắt với Áp-ra-ham, và lời thề của {{deity_pronoun:ngài|Ngài}} với Y-sác,",
           "B": "giao ước {{deity_pronoun:ngài|Ngài}} đã lập với Áp-ra-ham, lời thề {{deity_pronoun:ngài|Ngài}} đã thề với Y-sác,",
           "R": "Ngài đã lập giao ước ấy với Áp-ra-ham, và {{deity_pronoun:ngài|Ngài}} đã thề hứa điều đó với Y-sác."
+        },
+        "ko": {
+          "L": "아브라함과 맺으신 [그 언약을], 이삭에게 하신 그분의 맹세를 [기억하신다].",
+          "B": "그것은 그분께서 아브라함과 맺으신 언약이요, 이삭에게 맹세하신 맹세이다.",
+          "R": "그분께서는 아브라함과 그 언약을 맺으셨고, 이삭에게 그것을 맹세로 약속하셨다."
         }
       },
       "decisions": [
@@ -1293,6 +1406,11 @@
           "L": "và {{deity_pronoun:ngài|Ngài}} đã lập điều ấy vững bền cho Gia-cốp làm một luật lệ, cho Y-sơ-ra-ên làm một giao ước đời đời,",
           "B": "và {{deity_pronoun:ngài|Ngài}} đã xác lập điều ấy cho Gia-cốp như một sắc lệnh, cho Y-sơ-ra-ên như một giao ước còn đến đời đời,",
           "R": "Ngài lập điều ấy thành luật vững chắc cho Gia-cốp, một giao ước với Y-sơ-ra-ên sẽ còn mãi mãi."
+        },
+        "ko": {
+          "L": "그리고 그분께서 그것을 야곱에게 율례로, 이스라엘에게 영원한 언약으로 세우셨다.",
+          "B": "그분께서 그것을 야곱에게 규례로, 이스라엘에게 영원히 이어지는 언약으로 굳게 세우셨다.",
+          "R": "그분께서는 그것을 야곱에게 굳은 법으로 삼으셨다. 이스라엘과 맺으신 영원한 언약으로 삼으셨다."
         }
       },
       "decisions": [
@@ -1397,6 +1515,11 @@
           "L": "rằng: \"Cho con, {{deity_pronoun:ta|Ta}} sẽ ban đất Ca-na-an, phần đã đo làm sản nghiệp của các con.\"",
           "B": "rằng: \"Ta ban cho con đất Ca-na-an, phần đất đã định cho các con thừa hưởng.\"",
           "R": "Ngài phán: \"Đất Ca-na-an sẽ thuộc về các con. Ta ban đất ấy cho các con làm phần riêng của mình.\""
+        },
+        "ko": {
+          "L": "말씀하시기를, \"너에게 내가 가나안 땅을 주겠다, 너희 유업의 [측량된] 몫으로.\" 하셨다.",
+          "B": "\"내가 가나안 땅을 너에게 주어, 너희가 물려받을 몫으로 삼게 하겠다.\" 하고 말씀하셨다.",
+          "R": "그분께서 말씀하셨다. \"가나안 땅이 너의 것이 될 것이다. 내가 그것을 너희의 몫으로 주겠다.\""
         }
       },
       "decisions": [
@@ -1561,6 +1684,11 @@
           "L": "Khi họ [chỉ] là những người [ít] về số, rất ít ỏi, và là khách kiều ngụ trong [đất] ấy,",
           "B": "Khi họ chỉ là một nhóm nhỏ, ít người, là những người ngoại kiều sống trên đất ấy,",
           "R": "Lúc ấy họ chỉ có ít người. Họ là người nước ngoài sống ở Ca-na-an."
+        },
+        "ko": {
+          "L": "그들이 수가 [적은] 사람들, 아주 적은 무리, 그곳에서 나그네로 [살] 때에,",
+          "B": "그들이 겨우 몇 안 되는 사람들, 그 땅에 몸 붙여 사는 소수의 나그네였을 때에,",
+          "R": "그때에 그들은 몇 사람 되지 않았다. 그들은 가나안에서 나그네로 살았다."
         }
       },
       "decisions": [
@@ -1722,6 +1850,11 @@
           "L": "và họ đi từ dân tộc này đến dân tộc kia, từ một vương quốc đến một dân khác,",
           "B": "lang thang từ dân tộc này sang dân tộc khác, từ vương quốc này đến dân kia,",
           "R": "Họ lang thang từ nước này sang nước khác, từ vương quốc này đến vương quốc kia."
+        },
+        "ko": {
+          "L": "그리고 그들이 이 민족에게서 저 민족에게로, 한 나라에서 다른 백성에게로 떠돌아다닐 때에,",
+          "B": "이 민족에게서 저 민족에게로, 이 나라에서 다른 백성에게로 떠돌던 그때에,",
+          "R": "그들은 이 나라 저 나라로, 이 왕국에서 저 왕국으로 떠돌아다녔다."
         }
       },
       "decisions": [
@@ -1805,6 +1938,11 @@
           "L": "{{deity_pronoun:ngài|Ngài}} không cho phép ai áp bức họ, và {{deity_pronoun:ngài|Ngài}} quở trách các vua vì cớ họ:",
           "B": "{{deity_pronoun:ngài|Ngài}} không để ai làm hại họ, và {{deity_pronoun:ngài|Ngài}} trách phạt các vua vì họ:",
           "R": "Nhưng Đức Chúa Trời không để ai đối xử tệ với họ. Ngài cảnh cáo các vua phải để họ yên. Ngài phán:"
+        },
+        "ko": {
+          "L": "그분께서는 아무도 그들을 억압하도록 두지 않으시고, 그들 때문에 왕들을 꾸짖으셨다.",
+          "B": "그분께서는 누구도 그들을 해치지 못하게 하셨고, 그들 일로 왕들을 꾸짖으셨다.",
+          "R": "그러나 하나님께서는 아무도 그들을 괴롭히지 못하게 하셨다. 왕들에게 그들을 건드리지 말라고 경고하시며 말씀하셨다."
         }
       },
       "decisions": [
@@ -1905,6 +2043,11 @@
           "L": "\"Đừng đụng đến những người được xức dầu của {{deity_pronoun:ta|Ta}}, và đừng làm hại các nhà tiên tri của {{deity_pronoun:ta|Ta}}.\"",
           "B": "\"Đừng tra tay trên những người {{deity_pronoun:ta|Ta}} đã xức dầu; đừng làm hại các nhà tiên tri của {{deity_pronoun:ta|Ta}}.\"",
           "R": "\"Đừng làm hại những người {{deity_pronoun:ta|Ta}} đã biệt riêng cho chính {{deity_pronoun:ta|Ta}}. Đừng làm hại các nhà tiên tri của {{deity_pronoun:ta|Ta}}.\""
+        },
+        "ko": {
+          "L": "\"나의 기름 부은 이들을 건드리지 말고, 나의 예언자들에게 해를 끼치지 마라.\"",
+          "B": "\"내가 기름 부은 이들에게 손대지 말고, 내 예언자들을 해치지 마라.\"",
+          "R": "\"내가 따로 세운 사람들을 해치지 마라. 내 예언자들을 다치게 하지 마라.\""
         }
       },
       "decisions": [
@@ -1988,6 +2131,29 @@
           "reason": "The terms note's \"người được xức dầu\" is put in the plural for the fathers of Israel, whom God set apart (see the meaning decision); Readable says \"biệt riêng\" (set apart) as the English Readable does. |",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o191050150021",
+            "o191050150043"
+          ],
+          "choice": "God speaks in the plain style (해라체) and calls himself \"나\"; \"예언자\" for prophet",
+          "alternatives": [
+            "합쇼체",
+            "선지자"
+          ],
+          "reason": "Style guide section 7a: God speaking uses 해라체 with 나. \"예언자\" is the modern word the style guide prefers over the older \"선지자\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2040,6 +2206,11 @@
           "L": "Và {{deity_pronoun:ngài|Ngài}} gọi nạn đói đến trên đất; mọi cây gậy của bánh, {{deity_pronoun:ngài|Ngài}} đều bẻ gãy.",
           "B": "Ngài gọi nạn đói đến trên xứ và cắt đứt mọi nguồn lương thực.",
           "R": "Rồi {{deity_pronoun:ngài|Ngài}} sai nạn đói đến trên đất và lấy đi hết lương thực của họ."
+        },
+        "ko": {
+          "L": "그리고 그분께서 그 땅에 기근을 부르셨고, 빵의 지팡이를 모두 꺾으셨다.",
+          "B": "그분께서 그 땅에 기근을 불러들이시고, 먹을 양식을 모두 끊으셨다.",
+          "R": "그 뒤에 그분께서 그 땅에 기근을 보내셔서 먹을 것을 모두 없애셨다."
         }
       },
       "decisions": [
@@ -2126,6 +2297,27 @@
           "reason": "Literal keeps the Hebrew picture of bread as the staff that holds life up, as the English Literal keeps \"staff of bread\"; Balanced and Readable say what it means, the supply of food.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191050160061",
+            "o191050160071"
+          ],
+          "choice": "\"빵의 지팡이\" (staff of bread) at Literal",
+          "alternatives": [
+            "양식",
+            "떡"
+          ],
+          "reason": "Literal keeps the Hebrew picture of bread as the staff one leans on; Balanced and Readable give its sense, the food supply (meaning decision). \"빵\" rather than \"떡\", as the style guide sets for bread.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2177,6 +2369,11 @@
           "L": "Ngài đã sai một người đi trước họ; Giô-sép bị bán làm nô lệ.",
           "B": "Nhưng {{deity_pronoun:ngài|Ngài}} đã sai một người đi trước họ: Giô-sép, người bị bán làm nô lệ.",
           "R": "Nhưng {{deity_pronoun:ngài|Ngài}} đã sai một người đến Ai Cập trước họ. Người đó là Giô-sép, người đã bị bán làm nô lệ."
+        },
+        "ko": {
+          "L": "그분께서 그들보다 앞서 한 사람을 보내셨으니, 요셉이 노예로 팔렸다.",
+          "B": "그러나 그분께서는 이미 그들보다 앞서 한 사람을 보내 두셨다. 노예로 팔려 간 요셉이었다.",
+          "R": "그러나 그분께서는 그들보다 먼저 한 사람을 이집트로 보내 두셨다. 그 사람은 노예로 팔려 간 요셉이었다."
         }
       },
       "decisions": [
@@ -2288,6 +2485,27 @@
           "reason": "Joseph was sold, so real slavery is meant; \"mtumishi\" would hide that he was bought and owned.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191050170042"
+          ],
+          "choice": "\"노예\" (slave) for Joseph sold",
+          "alternatives": [
+            "종"
+          ],
+          "reason": "Here the word (ʿeved) is what Joseph was sold to be, so slavery itself is the point and Korean says \"노예\"; as a title of honour (verses 6, 26, 42) it is \"종\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2339,6 +2557,11 @@
           "L": "Người ta làm đau chân ông bằng xiềng; cổ ông vào [trong] sắt,",
           "B": "Xiềng xích làm chân ông bầm dập, cổ ông bị khóa trong vòng sắt,",
           "R": "Chân ông bị xiềng xích làm đau, và cổ ông bị đeo một vòng sắt."
+        },
+        "ko": {
+          "L": "그들이 족쇄로 그의 발을 괴롭혔고, 그의 목이 쇠 [안으로] 들어갔다.",
+          "B": "족쇄가 그의 발을 짓눌렀고, 그의 목은 쇠틀에 갇혔다.",
+          "R": "그의 발은 사슬에 묶여 상처를 입었고, 그의 목에는 쇠 고리가 채워졌다."
         }
       },
       "decisions": [
@@ -2436,6 +2659,11 @@
           "L": "cho đến thời điểm lời ông xảy đến, lời phán của {{divine_name:CHÚA|Gia-vê}} đã thử luyện ông.",
           "B": "cho đến ngày lời ông nói thành sự thật; lời của {{divine_name:CHÚA|Gia-vê}} đã tinh luyện ông.",
           "R": "Việc ấy kéo dài cho đến khi điều Giô-sép đã nói trở thành sự thật. Lời {{divine_name:CHÚA|Gia-vê}} phán đã thử thách ông, như lửa thử kim loại."
+        },
+        "ko": {
+          "L": "그의 말이 이루어진 그때까지, {{divine_name:주|야훼}}의 말씀이 그를 단련하였다.",
+          "B": "그가 한 말이 이루어지는 날까지 {{divine_name:주|야훼}}의 말씀이 그를 연단하였다.",
+          "R": "이 고생은 요셉이 한 말이 이루어질 때까지 계속되었다. {{divine_name:주|야훼}}께서 하신 말씀이, 불이 쇠붙이를 시험하듯 그를 시험하였다."
         }
       },
       "decisions": [
@@ -2540,6 +2768,11 @@
           "L": "Vua đã sai [người] và tháo [xiềng] cho ông, người cai trị các dân, và thả ông ra.",
           "B": "Vua truyền lệnh thả ông; người cai trị nhiều dân đã cởi trói cho ông.",
           "R": "Rồi vua Ai Cập sai người đưa Giô-sép ra và trả tự do cho ông. Người cai trị nhiều dân tộc đã thả ông."
+        },
+        "ko": {
+          "L": "왕이 [사람을] 보내어 그를 풀어 주었고, 백성들의 통치자가 그를 놓아주었다.",
+          "B": "왕이 명령을 내려 그를 풀어 주었다. 여러 백성을 다스리는 이가 그를 놓아주었다.",
+          "R": "그때 이집트 왕이 요셉을 불러 풀어 주었다. 여러 나라를 다스리던 왕이 그를 놓아주었다."
         }
       },
       "decisions": [
@@ -2642,6 +2875,11 @@
           "L": "[Vua] lập ông làm chủ nhà mình và làm người cai trị trên mọi tài sản mình,",
           "B": "Vua giao cho ông cai quản cung điện và trao cho ông quyền trên mọi của cải của mình,",
           "R": "Pha-ra-ôn giao cho Giô-sép cai quản cung điện và mọi thứ vua có."
+        },
+        "ko": {
+          "L": "그가 그를 자기 집의 주인으로, 자기 모든 소유의 통치자로 세워,",
+          "B": "왕은 그를 자기 궁전의 책임자로 세우고 자기의 모든 재산을 다스리게 하여,",
+          "R": "바로는 요셉에게 자기 궁전과 자기가 가진 모든 것을 맡겼다."
         }
       },
       "decisions": [
@@ -2762,6 +3000,11 @@
           "L": "để [ông] trói các quan của vua theo ý mình, và dạy các trưởng lão của vua [nên] khôn ngoan.",
           "B": "với quyền bắt giam các quan chức của vua nếu ông muốn, và dạy các cố vấn của vua nên khôn ngoan.",
           "R": "Giô-sép thậm chí có thể bắt giam các quan của vua nếu ông muốn. Ông dạy các cố vấn của vua trở nên khôn ngoan."
+        },
+        "ko": {
+          "L": "자기 뜻대로 그의 대신들을 묶고 그의 원로들을 지혜롭게 하게 하였다.",
+          "B": "원하면 왕의 신하들을 옥에 가둘 수도 있고 왕의 고문들을 지혜롭게 할 수도 있게 하였다.",
+          "R": "요셉은 원하면 왕의 신하들을 잡아 가둘 수도 있었다. 그는 왕의 조언자들에게 지혜를 가르쳤다."
         }
       },
       "decisions": [
@@ -2878,6 +3121,11 @@
           "L": "Và Y-sơ-ra-ên đã vào Ai Cập; Gia-cốp kiều ngụ trong đất Cham.",
           "B": "Vậy Y-sơ-ra-ên vào Ai Cập, và Gia-cốp đến sống như khách lạ trên đất Cham.",
           "R": "Rồi Gia-cốp và gia đình ông đến Ai Cập. Họ sống ở đó như người nước ngoài, trên đất Cham."
+        },
+        "ko": {
+          "L": "그리고 이스라엘이 이집트로 들어갔고, 야곱이 함의 땅에서 나그네로 살았다.",
+          "B": "이렇게 이스라엘이 이집트로 들어갔고, 야곱이 함의 땅에 나그네로 머물러 살았다.",
+          "R": "그 뒤에 야곱과 그 가족이 이집트로 왔다. 그들은 함의 땅에서 나그네로 살았다."
         }
       },
       "decisions": [
@@ -3004,6 +3252,11 @@
           "L": "Và {{deity_pronoun:ngài|Ngài}} làm cho dân {{deity_pronoun:ngài|Ngài}} sinh sản rất nhiều, và làm cho họ mạnh hơn kẻ thù của họ.",
           "B": "Ở đó {{deity_pronoun:ngài|Ngài}} làm cho dân {{deity_pronoun:ngài|Ngài}} gia tăng rất đông, cho đến khi họ mạnh hơn kẻ thù.",
           "R": "Ở đó {{deity_pronoun:ngài|Ngài}} làm cho dân {{deity_pronoun:ngài|Ngài}} trở thành một dân tộc đông đúc, mạnh hơn kẻ thù của họ."
+        },
+        "ko": {
+          "L": "그리고 그분께서 그분의 백성을 크게 번성하게 하시고, 그들을 그들의 대적들보다 강하게 하셨다.",
+          "B": "그곳에서 그분께서는 그분의 백성을 크게 불어나게 하셔서, 그들이 원수들보다 강해지게 하셨다.",
+          "R": "그곳에서 그분께서는 그분의 백성을 큰 민족으로 자라게 하셔서, 그들의 원수들보다 더 강하게 하셨다."
         }
       },
       "decisions": [
@@ -3091,6 +3344,11 @@
           "L": "Ngài đã xoay lòng họ để ghét dân {{deity_pronoun:ngài|Ngài}}, để dùng mưu mẹo với các đầy tớ {{deity_pronoun:ngài|Ngài}}.",
           "B": "Ngài khiến lòng người Ai Cập trở nên căm ghét dân {{deity_pronoun:ngài|Ngài}} và lập mưu hại các đầy tớ {{deity_pronoun:ngài|Ngài}}.",
           "R": "Ngài để cho người Ai Cập ghét dân {{deity_pronoun:ngài|Ngài}}. Họ bày mưu xảo quyệt chống lại các đầy tớ {{deity_pronoun:ngài|Ngài}}."
+        },
+        "ko": {
+          "L": "그분께서 그들의 마음을 바꾸셔서 그분의 백성을 미워하게 하시고, 그분의 종들에게 교활하게 행하게 하셨다.",
+          "B": "그분께서 이집트 사람들의 마음을 돌려 그분의 백성을 미워하게 하시고, 그분의 종들을 해치려고 꾀를 부리게 하셨다.",
+          "R": "그분께서는 이집트 사람들이 그분의 백성을 미워하게 되도록 하셨다. 그들은 그분의 종들을 해칠 교활한 계획을 세웠다."
         }
       },
       "decisions": [
@@ -3210,6 +3468,11 @@
           "L": "Ngài sai Môi-se, đầy tớ {{deity_pronoun:ngài|Ngài}}, A-rôn, người {{deity_pronoun:ngài|Ngài}} đã chọn.",
           "B": "Ngài sai Môi-se, đầy tớ {{deity_pronoun:ngài|Ngài}}, cùng với A-rôn, người {{deity_pronoun:ngài|Ngài}} đã chọn.",
           "R": "Rồi {{deity_pronoun:ngài|Ngài}} sai Môi-se, đầy tớ {{deity_pronoun:ngài|Ngài}}, cùng với A-rôn, người {{deity_pronoun:ngài|Ngài}} đã chọn."
+        },
+        "ko": {
+          "L": "그분께서 그분의 종 모세와 그분께서 택하신 아론을 보내셨다.",
+          "B": "그분께서 그분의 종 모세를 보내시고, 그와 함께 그분께서 택하신 아론을 보내셨다.",
+          "R": "그러자 그분께서는 그분의 종 모세를, 그분께서 고르신 아론과 함께 보내셨다."
         }
       },
       "decisions": [
@@ -3294,6 +3557,11 @@
           "L": "Họ đặt giữa chúng những lời về các dấu lạ của {{deity_pronoun:ngài|Ngài}}, và những điềm lạ trong đất Cham.",
           "B": "Giữa người Ai Cập, họ đã làm những dấu lạ {{deity_pronoun:ngài|Ngài}} đã phán, và những điềm lạ khắp đất Cham.",
           "R": "Họ làm những dấu lạ {{deity_pronoun:ngài|Ngài}} bảo họ làm. Họ làm những việc kỳ diệu tại Ai Cập, đất của Cham."
+        },
+        "ko": {
+          "L": "그들이 그들 가운데 그분 표적들의 말씀들을 두었고, 함의 땅에 이적들을 [두었다].",
+          "B": "그들은 이집트 사람들 가운데서 그분께서 말씀하신 표적들을 행하고, 함의 땅 곳곳에서 이적들을 일으켰다.",
+          "R": "그들은 그분께서 하라고 하신 표적들을 행하였다. 함의 땅 이집트에서 놀라운 일들을 일으켰다."
         }
       },
       "decisions": [
@@ -3419,6 +3687,11 @@
           "L": "Ngài sai bóng tối đến và làm cho [đất] tối tăm, và họ đã không chống lại lời {{deity_pronoun:ngài|Ngài}}.",
           "B": "Ngài sai bóng tối đến và cả xứ tối sầm; và họ không chống lại lời {{deity_pronoun:ngài|Ngài}}.",
           "R": "Ngài sai bóng tối đến và làm cho cả xứ tối đen. Môi-se và A-rôn không làm trái điều {{deity_pronoun:ngài|Ngài}} phán."
+        },
+        "ko": {
+          "L": "그분께서 어둠을 보내셔서 어둡게 하셨고, 그들은 그분의 말씀을 거역하지 않았다.",
+          "B": "그분께서 어둠을 보내시니 그 땅이 캄캄해졌다. 그들은 그분의 말씀을 거스르지 않았다.",
+          "R": "그분께서 어둠을 보내셔서 그 땅을 캄캄하게 하셨다. 모세와 아론은 그분께서 하신 말씀을 거스르지 않았다."
         }
       },
       "decisions": [
@@ -3537,6 +3810,11 @@
           "L": "Ngài biến nước của họ thành máu và làm cho cá của họ chết.",
           "B": "Ngài biến nước của họ thành máu và để cá của họ chết.",
           "R": "Ngài biến sông ngòi của họ thành máu, và cá đều chết."
+        },
+        "ko": {
+          "L": "그분께서 그들의 물을 피로 바꾸시고, 그들의 물고기를 죽게 하셨다.",
+          "B": "그분께서 그들의 물을 피가 되게 하시고, 그들의 물고기를 죽게 하셨다.",
+          "R": "그분께서 그들의 강물을 피로 바꾸시니, 물고기들이 죽었다."
         }
       },
       "decisions": [
@@ -3603,6 +3881,11 @@
           "L": "Đất của họ tràn ngập ếch nhái, trong các phòng của vua chúa họ.",
           "B": "Ếch nhái tràn khắp xứ họ, vào cả những phòng trong cung của các vua họ.",
           "R": "Ếch nhái đầy khắp đất của họ. Chúng còn vào cả phòng ngủ của vua."
+        },
+        "ko": {
+          "L": "그들의 땅에, 그들 왕들의 방들에까지 개구리가 들끓었다.",
+          "B": "개구리 떼가 그들의 땅을 뒤덮고, 그들 왕들의 깊은 방에까지 들어갔다.",
+          "R": "개구리가 그들의 땅을 가득 채웠다. 왕의 침실에까지 들어갔다."
         }
       },
       "decisions": [
@@ -3698,6 +3981,11 @@
           "L": "Ngài phán, và các đàn ruồi đến, muỗi mắt trong khắp bờ cõi của họ.",
           "B": "Theo lệnh của {{deity_pronoun:ngài|Ngài}}, những đàn ruồi kéo đến, và muỗi mắt phủ khắp xứ họ.",
           "R": "Ngài ra lệnh, và từng đàn ruồi kéo đến. Muỗi mắt bay đầy cả xứ."
+        },
+        "ko": {
+          "L": "그분께서 말씀하시니 [파리] 떼가 왔고, 그들의 온 지역에 각다귀가 [들끓었다].",
+          "B": "그분께서 명령하시자 파리 떼가 몰려오고, 각다귀가 그들의 온 땅을 덮었다.",
+          "R": "그분께서 명령하시자 파리 떼가 몰려왔다. 모기 같은 작은 벌레들이 온 나라를 뒤덮었다."
         }
       },
       "decisions": [
@@ -3767,6 +4055,28 @@
           "reason": "Balanced and Readable say what kind of swarm (m2).",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191050310041"
+          ],
+          "choice": "\"각다귀\" (gnats) at Literal and Balanced; \"모기 같은 작은 벌레들\" at Readable",
+          "alternatives": [
+            "이",
+            "모기"
+          ],
+          "reason": "The insect (kinnim) is small and biting, but its kind is not known (meaning decision). \"이\" (lice) names one kind; \"각다귀\" is a gnat-like fly, and Readable describes it in common words.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3818,6 +4128,11 @@
           "L": "Ngài ban cho họ mưa đá [làm] mưa, lửa bừng cháy trong đất họ.",
           "B": "Thay vì mưa, {{deity_pronoun:ngài|Ngài}} ban cho họ mưa đá, cùng lửa chớp lóe khắp xứ họ.",
           "R": "Thay vì mưa, {{deity_pronoun:ngài|Ngài}} sai mưa đá đến, và chớp lóe sáng khắp xứ họ."
+        },
+        "ko": {
+          "L": "그분께서 그들의 비 [대신] 우박을 주셨고, 그들의 땅에 불꽃의 불을 [주셨다].",
+          "B": "그분께서 비 대신 우박을 내리시고, 그들의 땅에 번쩍이는 불을 내리셨다.",
+          "R": "그분께서 비 대신 우박을 보내셨고, 그들의 온 땅에 번개가 번쩍였다."
         }
       },
       "decisions": [
@@ -3923,6 +4238,11 @@
           "L": "Và {{deity_pronoun:ngài|Ngài}} đánh cây nho và cây vả của họ, và bẻ gãy cây cối trong bờ cõi họ.",
           "B": "Ngài đánh tan các vườn nho và cây vả của họ, và đập gãy mọi cây trong xứ.",
           "R": "Ngài phá hủy vườn nho và cây vả của họ, và làm gãy đổ cây cối khắp xứ."
+        },
+        "ko": {
+          "L": "그리고 그분께서 그들의 포도나무와 그들의 무화과나무를 치시고, 그들 지역의 나무들을 부러뜨리셨다.",
+          "B": "그분께서 그들의 포도나무와 무화과나무를 쳐서 쓰러뜨리시고, 그 땅의 나무를 모두 꺾으셨다.",
+          "R": "그분께서 그들의 포도나무와 무화과나무를 망가뜨리시고, 온 나라의 나무들을 부러뜨리셨다."
         }
       },
       "decisions": [
@@ -3991,6 +4311,11 @@
           "L": "Ngài phán, và cào cào đến, và châu chấu non vô số,",
           "B": "Theo lời {{deity_pronoun:ngài|Ngài}}, cào cào kéo đến, những đàn châu chấu non nhiều không đếm được,",
           "R": "Ngài ra lệnh, và cào cào kéo đến, nhiều đến nỗi không ai đếm được."
+        },
+        "ko": {
+          "L": "그분께서 말씀하시니 메뚜기가 왔고, 셀 수 없는 어린 메뚜기들이 [왔다].",
+          "B": "그분께서 말씀하시자 메뚜기 떼가 몰려왔다. 셀 수도 없이 많은 어린 메뚜기 떼였다.",
+          "R": "그분께서 명령하시자 메뚜기 떼가 몰려왔다. 아무도 셀 수 없을 만큼 많았다."
         }
       },
       "decisions": [
@@ -4097,6 +4422,11 @@
           "L": "và chúng ăn hết mọi cây cỏ trong đất họ, và ăn hết hoa quả của đồng ruộng họ.",
           "B": "và chúng nuốt sạch mọi cây xanh trong xứ, ngốn hết mùa màng ngoài đồng ruộng.",
           "R": "Chúng ăn hết mọi cây cỏ trong xứ và mọi hoa màu ngoài đồng."
+        },
+        "ko": {
+          "L": "그것들이 그들 땅의 모든 푸성귀를 먹어 치우고, 그들 토지의 열매를 먹어 치웠다.",
+          "B": "그것들이 그 땅의 푸른 것을 모조리 먹어 치우고 들판의 소출을 삼켜 버렸다.",
+          "R": "메뚜기들은 그 땅의 모든 풀과 밭의 곡식을 다 먹어 버렸다."
         }
       },
       "decisions": [
@@ -4182,6 +4512,11 @@
           "L": "Và {{deity_pronoun:ngài|Ngài}} đánh hạ mọi con đầu lòng trong đất họ, phần đầu tiên của mọi sức lực họ.",
           "B": "Và {{deity_pronoun:ngài|Ngài}} giết con đầu lòng của mọi gia đình trong xứ họ, những con trai đầu tiên sinh ra từ sức mạnh của họ.",
           "R": "Rồi {{deity_pronoun:ngài|Ngài}} đánh chết con đầu lòng trong mọi nhà ở Ai Cập, đứa con đầu tiên của mỗi người cha."
+        },
+        "ko": {
+          "L": "그리고 그분께서 그들 땅의 모든 맏이를, 그들 모든 힘의 첫 열매를 치셨다.",
+          "B": "그분께서 그들 땅의 집집마다 맏아들을, 그들이 힘으로 처음 얻은 아들들을 죽이셨다.",
+          "R": "그 뒤에 그분께서는 이집트의 모든 집에서 맏자식을 치셨다. 아버지마다 처음 얻은 자식이었다."
         }
       },
       "decisions": [
@@ -4290,6 +4625,11 @@
           "L": "Và {{deity_pronoun:ngài|Ngài}} đem họ ra với bạc và vàng, và trong các chi tộc {{deity_pronoun:ngài|Ngài}} không [có ai] vấp ngã.",
           "B": "Ngài đem dân {{deity_pronoun:ngài|Ngài}} ra, mang theo bạc và vàng, và trong mọi chi tộc {{deity_pronoun:ngài|Ngài}} không một ai vấp ngã.",
           "R": "Ngài dẫn dân {{deity_pronoun:ngài|Ngài}} ra khỏi Ai Cập với bạc và vàng. Trong các chi tộc {{deity_pronoun:ngài|Ngài}}, không một người nào yếu đến nỗi không đi được."
+        },
+        "ko": {
+          "L": "그리고 그분께서 은과 금을 지닌 그들을 이끌어 내셨으니, 그분의 지파들 가운데 비틀거리는 이가 없었다.",
+          "B": "그분께서 은과 금을 지니게 하여 그분의 백성을 이끌어 내셨고, 그분의 모든 지파 가운데 비틀거리는 사람이 하나도 없었다.",
+          "R": "그분께서는 그분의 백성이 은과 금을 가지고 이집트에서 나오게 하셨다. 그분의 지파들 가운데 힘이 없어 걷지 못하는 사람은 한 명도 없었다."
         }
       },
       "decisions": [
@@ -4410,6 +4750,11 @@
           "L": "Ai Cập vui mừng khi họ ra đi, vì sự kinh hãi về họ đã giáng trên chúng.",
           "B": "Ai Cập mừng rỡ thấy họ ra đi, vì nỗi sợ hãi họ đã bao trùm dân xứ ấy.",
           "R": "Người Ai Cập vui mừng khi Y-sơ-ra-ên ra đi, vì họ đã trở nên sợ hãi dân này."
+        },
+        "ko": {
+          "L": "그들이 나갈 때에 이집트가 기뻐하였으니, 그들에 대한 두려움이 그들 위에 떨어졌기 때문이다.",
+          "B": "이집트는 그들이 떠나는 것을 보고 기뻐하였다. 그들을 두려워하는 마음이 이집트 사람들을 사로잡았기 때문이다.",
+          "R": "이스라엘이 떠나자 이집트 사람들은 기뻐하였다. 이스라엘을 무서워하게 되었기 때문이다."
         }
       },
       "decisions": [
@@ -4510,6 +4855,11 @@
           "L": "Ngài giăng một đám mây làm màn che, và lửa để chiếu sáng [ban] đêm.",
           "B": "Ngài giăng một đám mây trên họ như tấm màn, và lửa để soi sáng ban đêm.",
           "R": "Ngài giăng một đám mây trên họ để che nắng ban ngày. Ngài ban lửa để soi đường cho họ ban đêm."
+        },
+        "ko": {
+          "L": "그분께서 구름을 펴서 덮개로 삼으시고, 불로 밤에 비추게 하셨다.",
+          "B": "그분께서 그들 위에 구름을 가리개처럼 펼치시고, 불로 밤을 밝히셨다.",
+          "R": "그분께서 낮에는 구름을 펼쳐 그들에게 그늘을 주셨다. 밤에는 불을 주셔서 길을 밝혀 주셨다."
         }
       },
       "decisions": [
@@ -4609,6 +4959,11 @@
           "L": "[Dân] đã xin, và {{deity_pronoun:ngài|Ngài}} đem chim cút đến, và lấy bánh từ trời {{deity_pronoun:ngài|Ngài}} cho họ được no nê.",
           "B": "Khi họ cầu xin, {{deity_pronoun:ngài|Ngài}} sai chim cút đến, và {{deity_pronoun:ngài|Ngài}} cho họ ăn no bánh từ trời.",
           "R": "Dân chúng xin thức ăn, và {{deity_pronoun:ngài|Ngài}} sai chim cút đến cho họ. Ngài cho họ ăn bánh từ trời cho đến khi no nê."
+        },
+        "ko": {
+          "L": "[백성이] 구하니, 그분께서 메추라기를 가져오셨고, 하늘의 빵으로 그들을 배부르게 하셨다.",
+          "B": "그들이 구하자 그분께서 메추라기를 보내 주시고, 하늘에서 내린 빵으로 그들을 배불리 먹이셨다.",
+          "R": "백성이 먹을 것을 구하자, 그분께서 메추라기를 보내 주셨다. 하늘에서 내린 빵으로 그들을 배부르게 먹이셨다."
         }
       },
       "decisions": [
@@ -4727,6 +5082,11 @@
           "L": "Ngài mở tảng đá, và nước tuôn ra; chảy trong những nơi khô hạn [như] một dòng sông.",
           "B": "Ngài chẻ tảng đá ra và nước tuôn trào, chảy như dòng sông qua vùng đất khô cằn.",
           "R": "Ngài chẻ một tảng đá ra, và nước tuôn chảy. Nước chảy qua sa mạc như một dòng sông."
+        },
+        "ko": {
+          "L": "그분께서 바위를 여시니 물이 솟아 나왔고, 마른 땅에 강[처럼] 흘렀다.",
+          "B": "그분께서 바위를 여시자 물이 쏟아져 나와 메마른 땅에 강처럼 흘렀다.",
+          "R": "그분께서 바위를 쪼개시자 물이 콸콸 쏟아져 나왔다. 그 물은 사막에서 강처럼 흘렀다."
         }
       },
       "decisions": [
@@ -4809,6 +5169,11 @@
           "L": "Vì {{deity_pronoun:ngài|Ngài}} đã nhớ lời thánh của {{deity_pronoun:ngài|Ngài}} với Áp-ra-ham, đầy tớ {{deity_pronoun:ngài|Ngài}}.",
           "B": "Vì {{deity_pronoun:ngài|Ngài}} đã nhớ lời thánh {{deity_pronoun:ngài|Ngài}} đã phán với Áp-ra-ham, đầy tớ {{deity_pronoun:ngài|Ngài}}.",
           "R": "Ngài làm tất cả những điều ấy vì {{deity_pronoun:ngài|Ngài}} nhớ lời hứa thánh {{deity_pronoun:ngài|Ngài}} đã lập với Áp-ra-ham, đầy tớ của {{deity_pronoun:ngài|Ngài}}."
+        },
+        "ko": {
+          "L": "참으로 그분께서는 그분의 거룩한 말씀을, 그분의 종 아브라함과 [맺으신 것을] 기억하셨다.",
+          "B": "그분께서 그분의 종 아브라함에게 하신 거룩한 말씀을 기억하셨기 때문이다.",
+          "R": "그분께서 이 모든 일을 하신 것은 그분의 종 아브라함에게 하신 거룩한 약속을 기억하셨기 때문이다."
         }
       },
       "decisions": [
@@ -4925,6 +5290,11 @@
           "L": "Và {{deity_pronoun:ngài|Ngài}} đem dân {{deity_pronoun:ngài|Ngài}} ra trong vui mừng, những người được chọn của {{deity_pronoun:ngài|Ngài}} trong tiếng reo hò.",
           "B": "Vậy {{deity_pronoun:ngài|Ngài}} dẫn dân {{deity_pronoun:ngài|Ngài}} ra trong niềm hân hoan, những người {{deity_pronoun:ngài|Ngài}} đã chọn cất tiếng hát vang mừng rỡ.",
           "R": "Ngài dẫn dân {{deity_pronoun:ngài|Ngài}} đã chọn ra đi, và họ vui mừng reo hò."
+        },
+        "ko": {
+          "L": "그리고 그분께서 그분의 백성을 기쁨으로, 그분의 택하신 이들을 기쁨의 외침으로 이끌어 내셨다.",
+          "B": "그리하여 그분께서는 그분의 백성을 기뻐하며 나오게 하시고, 그분께서 택하신 이들을 기쁨의 노래를 부르며 나오게 하셨다.",
+          "R": "그분께서 택하신 백성을 이끌어 내시니, 그들이 기뻐하며 환호하였다."
         }
       },
       "decisions": [
@@ -5008,6 +5378,11 @@
           "L": "Và {{deity_pronoun:ngài|Ngài}} ban cho họ những đất của các dân tộc, và họ chiếm hữu công lao của các dân,",
           "B": "Ngài ban cho họ đất đai của các dân tộc khác, và họ tiếp nhận thành quả lao nhọc của các dân ấy,",
           "R": "Ngài ban cho họ đất nơi các dân tộc khác từng sống. Họ nhận lấy ruộng đồng và nhà cửa mà người khác đã vất vả gây dựng."
+        },
+        "ko": {
+          "L": "그리고 그분께서 그들에게 민족들의 땅을 주셨고, 그들은 백성들의 수고를 차지하였다.",
+          "B": "그분께서 그들에게 다른 민족들의 땅을 주셨고, 그들은 그 백성들이 힘들여 일군 것을 차지하였다.",
+          "R": "그분께서 다른 민족들이 살던 땅을 그들에게 주셨다. 그들은 다른 사람들이 애써 일군 밭과 집을 차지하였다."
         }
       },
       "decisions": [
@@ -5111,6 +5486,11 @@
           "L": "để họ giữ các luật lệ của {{deity_pronoun:ngài|Ngài}} và tuân theo những lời chỉ dạy của {{deity_pronoun:ngài|Ngài}}. Hãy ca ngợi {{divine_name:CHÚA|Gia}}.",
           "B": "để họ gìn giữ các mệnh lệnh của {{deity_pronoun:ngài|Ngài}} và giữ vững những lời chỉ dạy của {{deity_pronoun:ngài|Ngài}}. Hãy ca ngợi {{divine_name:CHÚA|Gia}}!",
           "R": "Ngài làm điều đó để họ vâng giữ luật lệ của {{deity_pronoun:ngài|Ngài}} và làm theo lời dạy của {{deity_pronoun:ngài|Ngài}}. Hãy ca ngợi {{divine_name:CHÚA|Gia}}!"
+        },
+        "ko": {
+          "L": "[이는] 그들이 그분의 율례들을 지키고 그분의 가르침들을 준수하게 하시려는 것이었다. {{divine_name:주|야}}를 찬양하여라.",
+          "B": "그것은 그들이 그분의 규례를 지키고 그분의 가르침을 굳게 따르게 하시려는 것이었다. {{divine_name:주|야}}를 찬양하여라!",
+          "R": "그분께서 이렇게 하신 것은 그들이 그분의 법을 지키고 그분의 가르침을 따르게 하시려는 것이었다. {{divine_name:주|야}}를 찬양하여라!"
         }
       },
       "decisions": [
@@ -5328,6 +5708,51 @@
             "\"luật pháp\""
           ],
           "reason": "The meaning decision reads torot as God's instructions; Vietnamese follows the English levels' \"instructions\" and \"teaching\" rather than the narrower \"luật pháp\" (law). |",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191050450061",
+            "o191050450071"
+          ],
+          "choice": "\"Hallelu-yah\" is \"{{divine_name:주|야}}를 찬양하여라\", a plain-style command to the people, with 야 (Yah) as the alternative",
+          "alternatives": [
+            "할렐루야",
+            "주님을 찬양하라"
+          ],
+          "reason": "The cry is a command to a group to praise Yah, the short form of the divine name (meaning decision). Korean gives its sense rather than the borrowed \"할렐루야\", as the English does, and keeps the plain command of the psalm's calls to praise; the particle stands outside the span and fits both 주 and 야.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191050450042"
+          ],
+          "choice": "\"가르침\" for God's torot (instructions) at every level",
+          "alternatives": [
+            "율법",
+            "법도"
+          ],
+          "reason": "The word (torah) is instruction or teaching (meaning decision); \"율법\" sounds like a legal code. \"가르침\" is also the Korean word for a parent's torah in Proverbs.",
           "uncertain": false,
           "footnote": false
         }

@@ -47,6 +47,11 @@
           "L": "Cho người chỉ huy [ban nhạc]: theo ghít-tít. Của con cháu Cô-ra. [Một] thi thiên.",
           "B": "Cho nhạc trưởng. Theo ghít-tít. Thi thiên của con cháu Cô-ra.",
           "R": "Cho người hướng dẫn ban nhạc. Theo điệu \"Ghít-tít\". Bài ca của gia đình Cô-ra."
+        },
+        "ko": {
+          "L": "지휘자를 위하여. 깃딧에 맞추어. 고라 자손의 [것]. 시.",
+          "B": "음악 지휘자를 위하여. 깃딧에 맞추어. 고라 자손의 시.",
+          "R": "찬양 인도자를 위해 '깃딧'에 맞추어 부르는, 고라 집안 사람들이 지은 노래."
         }
       },
       "decisions": [
@@ -276,6 +281,53 @@
           "reason": "\"Sons\" here means descendants, a family of Levite singers (see the meaning decision). \"con cháu\" says that; Readable says \"family\", as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190840010011",
+            "o190840010012",
+            "o190840010061"
+          ],
+          "choice": "\"지휘자를 위하여\" (L), \"음악 지휘자를 위하여\" (B), \"찬양 인도자를 위해\" (R); \"시\" (L, B), \"노래\" (R)",
+          "alternatives": [
+            "\"인도자를 따라\"",
+            "\"찬송\""
+          ],
+          "reason": "As the published Psalm 139:1 and the terms note, so that every psalm title reads alike; Readable says \"song\" as the English Readable does. This holds for the titles of Psalms 84-104.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190840010032",
+            "o190840010042",
+            "o190840010051"
+          ],
+          "choice": "\"깃딧\" kept as a name; \"고라 자손\" (L, B), \"고라 집안 사람들\" (R)",
+          "alternatives": [
+            "a guessed translation of gittith"
+          ],
+          "reason": "The meaning of gittith is not known (meaning decision m3), so Korean keeps it as a name, as the English does, in the form Korean Bible readers know. Readable says \"family\" for the sons of Korah, as the English Readable does.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -324,6 +376,11 @@
           "L": "Các nơi ngự của {{deity_pronoun:ngài|Ngài}} đáng yêu dấu biết bao, \\q lạy {{divine_name:CHÚA|Gia-vê}} Vạn Quân!",
           "B": "Nơi {{deity_pronoun:ngài|Ngài}} ngự thật đáng yêu quý biết bao, \\q lạy {{divine_name:CHÚA|Gia-vê}} Vạn Quân!",
           "R": "Lạy {{divine_name:CHÚA|Gia-vê}} Vạn Quân, \\q tôi yêu mến biết bao nơi {{deity_pronoun:ngài|Ngài}} ở!"
+        },
+        "ko": {
+          "L": "[주님의] 거처들이 얼마나 사랑스러운지요, \\q 만군의 {{divine_name:주|야훼}}여!",
+          "B": "만군의 {{divine_name:주|야훼}}여, \\q 주님께서 계시는 곳이 얼마나 사랑스러운지요!",
+          "R": "하늘의 군대를 거느리신 {{divine_name:주|야훼}}여, \\q 주님께서 계시는 곳이 저는 정말 좋습니다!"
         }
       },
       "decisions": [
@@ -523,6 +580,52 @@
           "reason": "The title names the LORD as the commander of armies. Literal says it word for word; Balanced and Readable use \"Vạn Quân\" (of ten thousand armies), the short form Vietnamese Bible readers know, as the English says \"of Armies\". It is used so through this block of psalms.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o190840020032",
+            "o190840020041"
+          ],
+          "choice": "The psalm speaks to God in 합쇼체 (here the polite exclamation \"-ㄴ지요\"), addresses him by the title \"주님\" and by name as \"{{divine_name:주|야훼}}여\"; there are no deity_pronoun spans",
+          "alternatives": [
+            "당신",
+            "해라체 throughout"
+          ],
+          "reason": "As the style guide (section 7a) and the published Psalm 139: Korean speaks to a superior by title, not by a pronoun, and respect is carried by 주님, 께서 and -시-, so there is nothing for the English capitalisation setting to change. Where the psalmist speaks about God (verses 6-8, 12) the plain written style with the honorific is used. The singer is \"저/제\" when speaking to God. This holds for Psalms 84-104.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190840020041",
+            "o190840020051"
+          ],
+          "choice": "\"만군의 {{divine_name:주|야훼}}\" (L, B); \"하늘의 군대를 거느리신 {{divine_name:주|야훼}}\" (R)",
+          "alternatives": [
+            "\"군대의 주\"",
+            "\"여호와 사바오트\""
+          ],
+          "reason": "The title means the LORD who commands the armies of heaven (the English decision). \"만군\" is the established Korean word for these hosts, used in the Korean James 5:4; Readable says what it means. The particle stands outside the divine_name span, which holds for the whole block.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -583,6 +686,11 @@
           "L": "Linh hồn tôi đã mong mỏi, và còn mòn mỏi, vì các sân của {{divine_name:CHÚA|Gia-vê}}; \\q lòng tôi và xác thịt tôi \\q reo hò vui mừng với Đức Chúa Trời hằng sống.",
           "B": "Cả con người tôi khao khát, thậm chí héo hon, mong đến các sân của {{divine_name:CHÚA|Gia-vê}}; \\q cả lòng và thân xác, \\q tôi reo mừng với Đức Chúa Trời hằng sống.",
           "R": "Tôi ao ước được ở trong sân nhà của {{divine_name:CHÚA|Gia-vê}} đến nỗi thấy mình kiệt sức. \\q Với cả tấm lòng và thân thể, tôi hát vui mừng cho Đức Chúa Trời, Đấng đang sống."
+        },
+        "ko": {
+          "L": "내 영혼이 {{divine_name:주|야훼}}의 뜰을 사모하다가 지치기까지 하였으니, \\q 내 마음과 내 육체가 \\q 살아 계신 하나님께 기뻐 외칩니다.",
+          "B": "내 온 존재가 {{divine_name:주|야훼}}의 뜰을 그리워하다 못해 애가 탑니다. \\q 몸과 마음을 다하여 \\q 살아 계신 하나님께 기뻐 외칩니다.",
+          "R": "{{divine_name:주|야훼}}의 집 뜰에 너무나 가고 싶어서 힘이 빠질 지경입니다. \\q 온 마음과 온몸으로 살아 계신 하나님께 기쁘게 노래합니다."
         }
       },
       "decisions": [
@@ -748,6 +856,28 @@
           "reason": "The Hebrew word (nefesh) is the whole living self (see the meaning decision). Literal keeps the familiar word; Balanced and Readable say the self, as the English does. The block follows this wherever the word means the person.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190840030041",
+            "o190840030042"
+          ],
+          "choice": "\"내 영혼\" (L), \"내 온 존재\" (B), the plain subject (R) for nefesh; the singer says \"내\" here, between lines addressed to God",
+          "alternatives": [
+            "\"제 영혼\""
+          ],
+          "reason": "\"영혼\" is the term note's word at Literal; Balanced and Readable say the whole self, as the English does (meaning decision m1). The verse speaks about the LORD in the third person, so the singer's \"내\" belongs to the plain voice; Korean poetry allows the first-person 나 in a line not spoken to God.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -813,6 +943,11 @@
           "L": "Ngay cả con chim cũng đã tìm được một cái nhà, và chim én [tìm được] một cái tổ cho mình, nơi nó đặt con nhỏ của nó: \\q [là] các bàn thờ của {{deity_pronoun:ngài|Ngài}}, lạy {{divine_name:CHÚA|Gia-vê}} Vạn Quân, \\q Vua của tôi và Đức Chúa Trời của tôi.",
           "B": "Chim sẻ cũng đã tìm được chỗ ở, và chim én có tổ để nuôi con nhỏ, \\q bên cạnh các bàn thờ của {{deity_pronoun:ngài|Ngài}}, lạy {{divine_name:CHÚA|Gia-vê}} Vạn Quân, \\q là Vua tôi và Đức Chúa Trời tôi.",
           "R": "Ngay cả những con chim nhỏ cũng tìm được chỗ ở tại đó. \\q Chúng làm tổ cho chim con gần các bàn thờ của {{deity_pronoun:ngài|Ngài}}, lạy {{divine_name:CHÚA|Gia-vê}} Vạn Quân, \\q là Vua tôi và Đức Chúa Trời tôi."
+        },
+        "ko": {
+          "L": "새도 집을 찾았고, 제비도 제 새끼를 둘 보금자리를 얻었습니다. \\q 그곳은 주님의 제단들, 만군의 {{divine_name:주|야훼}}여, \\q 나의 왕, 나의 하나님이시여.",
+          "B": "참새도 제 집을 찾았고, 제비도 새끼 칠 둥지를 얻었습니다. \\q 주님의 제단 곁에서입니다, 만군의 {{divine_name:주|야훼}}여, \\q 저의 왕, 저의 하나님이시여.",
+          "R": "작은 새들도 거기에 집을 마련했습니다. \\q 하늘의 군대를 거느리신 {{divine_name:주|야훼}}여, 새들이 주님의 제단 가까이에 새끼들을 위한 둥지를 틉니다. \\q 주님은 저의 왕, 저의 하나님이십니다."
         }
       },
       "decisions": [
@@ -949,6 +1084,11 @@
           "L": "Phước thay [những người] ở [trong] nhà {{deity_pronoun:ngài|Ngài}}; \\q họ vẫn ca ngợi {{deity_pronoun:ngài|Ngài}}. Sê-la",
           "B": "Phước hạnh thay những người được sống trong nhà {{deity_pronoun:ngài|Ngài}}; \\q họ không ngừng ca ngợi {{deity_pronoun:ngài|Ngài}}. Sê-la",
           "R": "Thật hạnh phúc cho những người sống trong nhà {{deity_pronoun:ngài|Ngài}}. \\q Họ luôn luôn ca ngợi {{deity_pronoun:ngài|Ngài}}. Sê-la"
+        },
+        "ko": {
+          "L": "주님의 집에 사는 사람들은 얼마나 복된지요. \\q 그들은 여전히 주님을 찬양합니다. 셀라",
+          "B": "주님의 집에 사는 사람들은 얼마나 복됩니까! \\q 그들은 쉬지 않고 주님을 찬양합니다. 셀라",
+          "R": "주님의 집에서 사는 사람들은 참으로 행복합니다. \\q 그들은 언제나 주님을 찬양합니다. 셀라"
         }
       },
       "decisions": [
@@ -1211,6 +1351,46 @@
           "reason": "No one now knows what Selah means; it is probably a direction for the music (see the meaning decision). Vietnamese keeps the word, in the form Bible readers know, wherever the Hebrew has it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190840050061"
+          ],
+          "choice": "\"셀라\", kept at the end of the verse",
+          "alternatives": [
+            "a translation such as \"쉼\""
+          ],
+          "reason": "Selah is a word whose meaning is no longer known, probably a musical direction (meaning decision m4). Korean keeps it as a name, as the English keeps \"Selah\", in the form Korean readers know. This holds wherever it appears in Psalms 84-104.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190840050011"
+          ],
+          "choice": "\"참으로 행복합니다\" for ashrei at Readable; \"복되다\" at Literal and Balanced",
+          "alternatives": [
+            "\"복이 있습니다\""
+          ],
+          "reason": "Readable says what the blessing means in plain words, as the English Readable \"life is truly good\" does (meaning decision m2), and as the published Psalm 1:1 Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1264,6 +1444,11 @@
           "L": "Phước thay người có sức mạnh ở trong {{deity_pronoun:ngài|Ngài}}, \\q [có] những đại lộ trong lòng mình.",
           "B": "Phước hạnh thay những người tìm được sức mạnh nơi {{deity_pronoun:ngài|Ngài}} \\q và để lòng hướng về những con đường hành hương.",
           "R": "Thật hạnh phúc cho những người nhận sức mạnh từ {{deity_pronoun:ngài|Ngài}}. \\q Họ thích đi trên những con đường dẫn đến nhà {{deity_pronoun:ngài|Ngài}}."
+        },
+        "ko": {
+          "L": "주님 안에 힘이 있는 사람은 얼마나 복된지요, \\q 그 마음에 큰길들이 [있는 사람은].",
+          "B": "주님에게서 힘을 얻고 \\q 순례의 길을 마음에 품은 사람들은 얼마나 복됩니까!",
+          "R": "주님에게서 힘을 얻는 사람들은 참으로 행복합니다. \\q 그들은 주님의 집으로 가는 길을 걷기를 좋아합니다."
         }
       },
       "decisions": [
@@ -1397,6 +1582,27 @@
           "reason": "\"người\" already means anyone, man or woman, so Vietnamese has no second form for the English gender setting to switch to, as in Psalm 1:1.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190840060021"
+          ],
+          "choice": "\"사람\" with no gender span",
+          "alternatives": [
+            "{{gender:사람|남자}}"
+          ],
+          "reason": "The English offers \"man\" as an alternative to \"person\". Korean \"사람\" is the ordinary word for anyone, man or woman, so Korean has no second wording to offer (style guide section 7). This holds for the gender spans of the English through Psalms 84-104.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1451,6 +1657,11 @@
           "L": "Khi đi qua thung lũng Ba-ca, họ làm cho nó thành một dòng suối; \\q mưa đầu mùa cũng phủ [nó bằng] những phước lành.",
           "B": "Khi đi ngang qua thung lũng Ba-ca, họ biến nơi ấy thành vùng đất có nhiều suối nước; \\q mưa đầu mùa bao phủ nơi ấy bằng phước lành.",
           "R": "Trên đường đi, họ băng qua thung lũng Ba-ca và biến nơi ấy thành chỗ có suối nước chảy. \\q Những cơn mưa đầu mùa phủ đầy phước lành trên nơi ấy."
+        },
+        "ko": {
+          "L": "바카 골짜기를 지나가며 그들이 그곳을 샘으로 만들고, \\q 이른 비도 [그곳을] 복으로 덮습니다.",
+          "B": "그들이 바카 골짜기를 지날 때 그곳은 샘이 솟는 땅이 되고, \\q 이른 비가 그곳을 복으로 감쌉니다.",
+          "R": "그들은 가는 길에 바카 골짜기를 지나는데, 그곳을 샘물이 흐르는 곳으로 바꾸어 놓습니다. \\q 첫 비가 내려 그곳을 복으로 덮습니다."
         }
       },
       "decisions": [
@@ -1498,6 +1709,28 @@
           "choice": "the early rain: the first autumn rain",
           "alternatives": [],
           "reason": "The first rains fell in October and November, after the dry summer, softening the ground for sowing (Deuteronomy 11:14).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190840070032"
+          ],
+          "choice": "\"바카\" kept as a name",
+          "alternatives": [
+            "\"눈물 골짜기\"",
+            "\"메마른 골짜기\""
+          ],
+          "reason": "The name may mean a dry valley or the valley of weeping (meaning decision m1); Korean keeps the name, as the English does, and does not choose between the senses.",
           "uncertain": false,
           "footnote": false
         }
@@ -1552,6 +1785,11 @@
           "L": "Họ đi từ sức mạnh đến sức mạnh; \\q [mỗi người] ra mắt Đức Chúa Trời tại Si-ôn.",
           "B": "Họ cứ đi, sức mạnh càng thêm sức mạnh, \\q cho đến khi mỗi người đến trước mặt Đức Chúa Trời tại Si-ôn.",
           "R": "Họ càng đi càng mạnh mẽ hơn, \\q cho đến khi tất cả đứng trước mặt Đức Chúa Trời tại Si-ôn."
+        },
+        "ko": {
+          "L": "그들은 힘에서 힘으로 나아가, \\q [각 사람이] 시온에서 하나님 앞에 나타납니다.",
+          "B": "그들은 갈수록 힘을 얻어 걸어가서, \\q 마침내 모두가 시온에서 하나님 앞에 섭니다.",
+          "R": "그들은 갈수록 더 힘이 납니다. \\q 그리고 마침내 모두 시온에서 하나님 앞에 섭니다."
         }
       },
       "decisions": [
@@ -1676,6 +1914,11 @@
           "L": "Lạy {{divine_name:CHÚA|Gia-vê}}, Đức Chúa Trời Vạn Quân, xin nghe lời cầu nguyện của tôi; \\q xin lắng tai, lạy Đức Chúa Trời của Gia-cốp! Sê-la",
           "B": "Lạy {{divine_name:CHÚA|Gia-vê}} là Đức Chúa Trời Vạn Quân, xin nghe lời tôi cầu nguyện; \\q lạy Đức Chúa Trời của Gia-cốp, xin nghiêng tai {{deity_pronoun:ngài|Ngài}} nghe tôi! Sê-la",
           "R": "Lạy {{divine_name:CHÚA|Gia-vê}} là Đức Chúa Trời Vạn Quân, xin lắng nghe khi tôi cầu nguyện. \\q Lạy Đức Chúa Trời của dân Gia-cốp, xin nghe tôi! Sê-la"
+        },
+        "ko": {
+          "L": "만군의 하나님 {{divine_name:주|야훼}}여, 제 기도를 들어 주십시오. \\q 야곱의 하나님이시여, 귀를 기울여 주십시오! 셀라",
+          "B": "만군의 하나님 {{divine_name:주|야훼}}여, 제 기도를 들어 주십시오. \\q 야곱의 하나님이시여, 제게 귀를 기울여 주십시오! 셀라",
+          "R": "하늘의 군대를 거느리신 하나님 {{divine_name:주|야훼}}여, 제가 기도하오니 들어 주십시오. \\q 야곱 자손의 하나님이시여, 제 말을 들어 주십시오! 셀라"
         }
       },
       "decisions": [
@@ -1830,6 +2073,11 @@
           "L": "Cái khiên của chúng tôi, xin hãy xem, lạy Đức Chúa Trời, \\q và xin nhìn mặt của người được xức dầu của {{deity_pronoun:ngài|Ngài}}.",
           "B": "Lạy Đức Chúa Trời, xin đoái xem cái khiên của chúng tôi; \\q xin ân cần nhìn đến mặt người được xức dầu của {{deity_pronoun:ngài|Ngài}}.",
           "R": "Lạy Đức Chúa Trời, xin đoái xem vị vua đang bảo vệ chúng tôi như cái khiên. \\q Xin tỏ lòng tốt với vị vua mà {{deity_pronoun:ngài|Ngài}} đã chọn."
+        },
+        "ko": {
+          "L": "저희의 방패를 보십시오, 하나님, \\q 주님의 기름 부음 받은 이의 얼굴을 살펴 주십시오.",
+          "B": "하나님, 저희의 방패를 보아 주십시오. \\q 주님께서 기름 부으신 이의 얼굴을 돌보아 주십시오.",
+          "R": "하나님, 방패처럼 저희를 지켜 주는 왕을 보아 주십시오. \\q 주님께서 세우신 왕에게 은혜를 베풀어 주십시오."
         }
       },
       "decisions": [
@@ -1939,6 +2187,27 @@
           "reason": "The Hebrew mashiach here is the king of Israel, anointed with oil. Spanish says \"ungido\", the plain word for one anointed, so that the reader does not take it as a later title; Readable says \"el rey\", as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190840100061"
+          ],
+          "choice": "\"기름 부음 받은 이\" (L), \"주님께서 기름 부으신 이\" (B); \"주님께서 세우신 왕\" (R)",
+          "alternatives": [
+            "\"메시아\"",
+            "\"기름 부은 자\""
+          ],
+          "reason": "The anointed is the king (meaning decision m2); the term note's \"기름 부음 받은 이\" keeps the Hebrew picture at Literal and Balanced, and Readable names the king, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2000,6 +2269,11 @@
           "L": "Vì một ngày trong các sân của {{deity_pronoun:ngài|Ngài}} tốt hơn cả nghìn [ngày]; \\q tôi đã chọn đứng nơi ngưỡng cửa trong nhà Đức Chúa Trời của tôi \\q hơn là ở trong [các] lều của sự gian ác.",
           "B": "Thật vậy, một ngày ở trong các sân của {{deity_pronoun:ngài|Ngài}} quý hơn cả nghìn ngày ở nơi khác; \\q tôi thà đứng nơi ngưỡng cửa nhà Đức Chúa Trời tôi \\q còn hơn sống trong lều trại của kẻ ác.",
           "R": "Được ở một ngày trong sân nhà {{deity_pronoun:ngài|Ngài}} còn tốt hơn ở một nghìn ngày nơi khác. \\q Tôi thà đứng ở cửa nhà Đức Chúa Trời tôi \\q còn hơn sống trong nhà của những kẻ gian ác."
+        },
+        "ko": {
+          "L": "참으로 주님의 뜰에서의 하루가 천 [날]보다 낫습니다. \\q 제 하나님의 집 문지방에 서 있기를 택하겠습니다, \\q 악의 장막들에 사는 것보다.",
+          "B": "참으로 주님의 뜰에서 보내는 하루가 다른 곳에서 보내는 천 날보다 낫습니다. \\q 악한 사람들의 장막에서 사는 것보다 \\q 차라리 제 하나님의 집 문간에 서 있기를 택하겠습니다.",
+          "R": "주님의 집 뜰에서 하루를 보내는 것이 다른 곳에서 천 날을 보내는 것보다 낫습니다. \\q 악한 사람들의 집에서 사는 것보다 \\q 차라리 제 하나님의 집 문 앞에 서 있겠습니다."
         }
       },
       "decisions": [
@@ -2066,6 +2340,28 @@
           "reason": "Balanced and Readable say where the thousand days are spent (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o190840110101",
+            "o190840110102",
+            "o190840110111"
+          ],
+          "choice": "The comparison (\"악한 사람들의 장막에서 사는 것보다\") comes before the choice at Balanced and Readable; Literal keeps the Hebrew order with the comparison after",
+          "alternatives": [
+            "the Hebrew order at every level"
+          ],
+          "reason": "Korean puts the standard of comparison (\"-보다\") before what is preferred; Literal, as poetry allows, leaves it at the end so the lines follow the Hebrew's cola in order.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2126,6 +2422,11 @@
           "L": "Vì mặt trời và cái khiên [là] {{divine_name:CHÚA|Gia-vê}} Đức Chúa Trời; \\q ơn và vinh hiển {{divine_name:CHÚA|Gia-vê}} ban cho; \\q {{deity_pronoun:ngài|Ngài}} không giữ lại điều tốt khỏi những người bước đi trong sự trọn vẹn.",
           "B": "Vì {{divine_name:CHÚA|Gia-vê}} Đức Chúa Trời vừa là mặt trời vừa là cái khiên; \\q {{divine_name:CHÚA|Gia-vê}} ban ơn và vinh dự; \\q {{deity_pronoun:ngài|Ngài}} chẳng tiếc điều tốt lành nào với những người sống trọn vẹn.",
           "R": "{{divine_name:CHÚA|Gia-vê}} Đức Chúa Trời ban ánh sáng như mặt trời và bảo vệ như cái khiên. \\q {{divine_name:CHÚA|Gia-vê}} tỏ lòng tốt và ban danh dự. \\q Ngài không giữ lại điều tốt nào khỏi những người sống không có gì đáng trách."
+        },
+        "ko": {
+          "L": "{{divine_name:주|야훼}} 하나님은 해와 방패이시니, \\q {{divine_name:주|야훼}}께서 은혜와 영광을 주시고, \\q 흠 없이 걷는 사람들에게서 좋은 것을 거두지 않으신다.",
+          "B": "{{divine_name:주|야훼}} 하나님은 해와 방패이시다. \\q {{divine_name:주|야훼}}께서 은혜와 영광을 베푸시고, \\q 흠 없이 사는 사람들에게 좋은 것을 아끼지 않으신다.",
+          "R": "{{divine_name:주|야훼}} 하나님은 해처럼 빛을 주시고 방패처럼 지켜 주신다. \\q {{divine_name:주|야훼}}께서 은혜를 베푸시고 영광을 주신다. \\q 흠 없이 사는 사람들에게 좋은 것을 하나도 아끼지 않으신다."
         }
       },
       "decisions": [
@@ -2210,6 +2511,28 @@
           "reason": "Readable says what the pictures mean (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o190840120041",
+            "o190840120081"
+          ],
+          "choice": "This verse speaks about the LORD in the plain written style with the honorific (-시-, 께서)",
+          "alternatives": [
+            "합쇼체, continuing the prayer"
+          ],
+          "reason": "The psalmist speaks of God in the third person here, so Korean uses the voice the style guide (section 7a) gives to speech about God; verse 13 turns back to address him.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2259,6 +2582,11 @@
           "L": "Lạy {{divine_name:CHÚA|Gia-vê}} Vạn Quân, \\q phước thay người tin cậy nơi {{deity_pronoun:ngài|Ngài}}!",
           "B": "Lạy {{divine_name:CHÚA|Gia-vê}} Vạn Quân, \\q phước hạnh thay người nào tin cậy {{deity_pronoun:ngài|Ngài}}!",
           "R": "Lạy {{divine_name:CHÚA|Gia-vê}} Vạn Quân, \\q thật hạnh phúc cho người nào tin cậy {{deity_pronoun:ngài|Ngài}}!"
+        },
+        "ko": {
+          "L": "만군의 {{divine_name:주|야훼}}여, \\q 주님을 신뢰하는 사람은 얼마나 복된지요!",
+          "B": "만군의 {{divine_name:주|야훼}}여, \\q 주님을 신뢰하는 사람은 누구나 얼마나 복됩니까!",
+          "R": "하늘의 군대를 거느리신 {{divine_name:주|야훼}}여, \\q 주님을 믿고 의지하는 사람은 누구나 참으로 행복합니다!"
         }
       },
       "decisions": [

@@ -52,6 +52,11 @@
           "L": "Bài ca cho những lần đi lên. Tôi đã kêu cầu {{divine_name:CHÚA|Gia-vê}} trong cơn khốn quẫn của tôi, và {{deity_pronoun:ngài|Ngài}} đã đáp lời tôi.",
           "B": "Bài ca đi lên. Khi tôi gặp hoạn nạn, tôi kêu cầu {{divine_name:CHÚA|Gia-vê}}, và {{deity_pronoun:ngài|Ngài}} đã đáp lời tôi.",
           "R": "Bài ca cho cuộc hành trình lên Giê-ru-sa-lem. Khi tôi gặp khó khăn, tôi đã kêu lên cùng {{divine_name:CHÚA|Gia-vê}}. Và {{deity_pronoun:ngài|Ngài}} đã trả lời tôi."
+        },
+        "ko": {
+          "L": "올라감을 위한 노래. {{divine_name:주|야훼}}께 내 고난 중에 내가 부르짖었고, 그분께서 내게 응답하셨다.",
+          "B": "올라가며 부르는 노래. 내가 고난을 당할 때 {{divine_name:주|야훼}}께 부르짖었더니, 그분께서 내게 응답해 주셨다.",
+          "R": "예루살렘으로 올라가며 부르는 노래. 내가 어려움을 겪을 때 {{divine_name:주|야훼}}를 불렀다. 그러자 그분께서 내게 대답하셨다."
         }
       },
       "decisions": [
@@ -262,6 +267,54 @@
           "reason": "The title says only \"ascents\"; it is probably a pilgrim song for going up to Jerusalem (see the meaning decision). Literal and Balanced keep the title's own word and Readable explains it, as in Psalm 121, and the same titles stand through Psalms 120-134.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191200010011",
+            "o191200010022"
+          ],
+          "choice": "\"올라감을 위한 노래\" (L), \"올라가며 부르는 노래\" (B), \"예루살렘으로 올라가며 부르는 노래\" (R), the wording of the published Psalm 121:1, through Psalms 120-134",
+          "alternatives": [
+            "성전에 올라가는 노래",
+            "순례의 노래"
+          ],
+          "reason": "The fifteen Songs of Ascents share one title, so Korean keeps one wording for it at each level. Balanced says what the title most likely means, a song sung on the way up (meaning decision), without naming the temple, which the Hebrew does not; Readable names Jerusalem as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o191200010031",
+            "o191200010041",
+            "o191200010071"
+          ],
+          "choice": "The singer speaks about the LORD in the plain written style with the honorific (께서, -시-) and calls himself \"나\"; YHWH is {{divine_name:주|야훼}} with the particle outside the span; no deity_pronoun spans",
+          "alternatives": [
+            "합쇼체 throughout",
+            "여호와",
+            "capitalised pronouns (not possible in Hangul)"
+          ],
+          "reason": "Style guide section 7a: speech about God in the plain style, speech to God in 합쇼체 with 저 (from verse 2). Hangul has no capital letters, so the deity_pronoun setting has nothing to change; respect is carried by 그분, 께서 and -시-. This holds for Psalms 120-150.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -315,6 +368,11 @@
           "L": "Lạy {{divine_name:CHÚA|Gia-vê}}, xin giải cứu linh hồn tôi khỏi môi giả dối, khỏi lưỡi lừa gạt.",
           "B": "Lạy {{divine_name:CHÚA|Gia-vê}}, xin cứu tôi khỏi những kẻ có môi nói dối, có lưỡi lừa gạt.",
           "R": "Lạy {{divine_name:CHÚA|Gia-vê}}, xin cứu tôi khỏi những kẻ nói dối và những kẻ lừa gạt người khác."
+        },
+        "ko": {
+          "L": "{{divine_name:주|야훼}}여, 거짓의 입술에서, 속임의 혀에서 제 영혼을 건져 주십시오.",
+          "B": "{{divine_name:주|야훼}}여, 거짓말하는 입술과 속이는 혀를 가진 사람들에게서 저를 건져 주십시오.",
+          "R": "{{divine_name:주|야훼}}여, 거짓말쟁이들과 남을 속이는 사람들에게서 저를 구해 주십시오."
         }
       },
       "decisions": [
@@ -475,6 +533,52 @@
           "reason": "Vietnamese calls on God with \"Lạy\" and asks with \"xin\"; both belong to the grammar of prayer, as in the published Psalm 139, so Literal does not bracket them.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o191200020011",
+            "o191200020021"
+          ],
+          "choice": "Speaking to God the singer turns to 합쇼체 and calls himself \"저/제\"; God is called \"{{divine_name:주|야훼}}여\" and, where a \"you\" is needed, addressed by the title \"주님\"",
+          "alternatives": [
+            "나 and 해라체",
+            "당신"
+          ],
+          "reason": "Style guide section 7a (speech levels in prayer), as the published Psalms 23 and 139. Korean addresses a superior by title, not by a pronoun. The vocative \"여\" stands outside the span and fits both forms.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191200020022",
+            "o191200020031"
+          ],
+          "choice": "\"제 영혼\" (L); \"저\" (B, R) for nefesh",
+          "alternatives": [
+            "영혼 at every level",
+            "목숨"
+          ],
+          "reason": "Literal keeps the word the terms note gives for nefesh; Balanced and Readable say the person, as the English \"me\" does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -528,6 +632,11 @@
           "L": "Ngài sẽ ban cho ngươi điều gì, và {{deity_pronoun:ngài|Ngài}} sẽ thêm cho ngươi điều gì nữa, hỡi lưỡi lừa gạt kia?",
           "B": "Hỡi lưỡi lừa gạt kia, {{deity_pronoun:ngài|Ngài}} sẽ ban cho ngươi điều gì, và {{deity_pronoun:ngài|Ngài}} sẽ giáng thêm trên ngươi điều gì nữa?",
           "R": "Hỡi những kẻ nói dối, Đức Chúa Trời sẽ báo trả các ngươi điều gì? Ngài sẽ thêm cho các ngươi điều gì nữa?"
+        },
+        "ko": {
+          "L": "그분께서 너에게 무엇을 주시고, 너에게 무엇을 더하시겠느냐, 속임의 혀야?",
+          "B": "속이는 혀야, 그분께서 너에게 무엇을 주시겠느냐? 무엇을 더 얹어 주시겠느냐?",
+          "R": "거짓말쟁이들아, 하나님께서 너희에게 무엇으로 갚으시겠느냐? 무엇을 더 내리시겠느냐?"
         }
       },
       "decisions": [
@@ -658,6 +767,29 @@
           "reason": "The psalmist turns on the liar with scorn. \"ngươi\" is the stern literary word of address to an enemy; \"mày\" would be coarse and \"anh\" friendly. Readable speaks to the liars as a group, as the English Readable does.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o191200030071",
+            "o191200030081"
+          ],
+          "choice": "The liar is spoken to in 해라체 (\"너\", \"-느냐\"); Readable \"거짓말쟁이들아\" with \"너희\"",
+          "alternatives": [
+            "합쇼체",
+            "그대"
+          ],
+          "reason": "The singer turns to address the deceitful tongue (meaning decision); Korean speaks to an opponent in the plain style. Readable names the liars, as the English Readable does, and so speaks to them in the plural.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -706,6 +838,11 @@
           "L": "Những mũi tên của dũng sĩ, đã mài nhọn, cùng với than hồng của [cây] đậu chổi!",
           "B": "Những mũi tên nhọn sắc của người chiến binh, và than hồng bằng gỗ cây đậu chổi!",
           "R": "Đây là điều các ngươi sẽ nhận: những mũi tên sắc của người lính, và những cục than đỏ rực cháy rất lâu."
+        },
+        "ko": {
+          "L": "용사의 화살들, 날카롭게 간 것들, 로뎀 [나무] 숯불과 함께!",
+          "B": "용사의 활에서 나온 날카로운 화살과 로뎀나무의 뜨거운 숯불이다!",
+          "R": "너희가 받을 것은 이것이다. 군인의 날카로운 화살과, 오래도록 타는 시뻘건 숯불이다."
         }
       },
       "decisions": [
@@ -818,6 +955,27 @@
           "reason": "The plant is a desert shrub whose wood makes coals that burn hot and long (see the meaning decision). \"đậu chổi\" names the broom plant plainly; Readable says only what matters, that the coals burn a long time, as the English Readable does.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191200040061"
+          ],
+          "choice": "\"로뎀 [나무]\" (L), \"로뎀나무\" (B) for the broom shrub; Readable describes its coals",
+          "alternatives": [
+            "싸리나무",
+            "대싸리"
+          ],
+          "reason": "\"로뎀나무\" is the name Korean readers know for this desert shrub (1 Kings 19:4); Readable says what matters here, coals that burn a long time, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -870,6 +1028,11 @@
           "L": "Khốn cho tôi, vì tôi ngụ [ở] Mê-siếc, [vì] tôi ở giữa [các] trại của Kê-đa!",
           "B": "Tôi khốn khổ biết bao, phải sống như kẻ lạ ở Mê-siếc, phải ở giữa những trại của Kê-đa!",
           "R": "Thật khổ cho tôi! Tôi như một người xa lạ sống tận Mê-siếc, hay giữa những trại của Kê-đa."
+        },
+        "ko": {
+          "L": "내게 화가 있다, 내가 메섹에 나그네로 머물고, 게달의 장막들 가운데 거하니!",
+          "B": "아, 비참한 내 신세여! 메섹에서 나그네로 살며 게달의 장막들 사이에 거처를 두다니!",
+          "R": "아, 나는 정말 괴롭다! 나는 먼 메섹 땅에 사는 나그네 같고, 게달 사람들의 장막 사이에 사는 사람 같다."
         }
       },
       "decisions": [
@@ -1018,6 +1181,11 @@
           "L": "Linh hồn tôi đã ở lâu với [kẻ] ghét sự bình an.",
           "B": "Đã quá lâu tôi phải sống bên cạnh những kẻ ghét sự bình an.",
           "R": "Tôi đã sống quá lâu gần những người ghét hòa bình."
+        },
+        "ko": {
+          "L": "오랫동안 내 영혼이 평화를 미워하는 [자]와 함께 거하였다.",
+          "B": "평화를 미워하는 사람들 곁에서 내가 너무도 오래 살아왔다.",
+          "R": "나는 평화를 싫어하는 사람들 가까이에서 너무 오랫동안 살았다."
         }
       },
       "decisions": [
@@ -1108,6 +1276,28 @@
           "reason": "Here peace is good relations between neighbours (see the meaning decision). Readable uses the everyday word for not fighting; Literal and Balanced keep the key term.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191200060071"
+          ],
+          "choice": "\"평화\" for shalom between people and over a city (120:6-7; 122; 125:5; 128:6)",
+          "alternatives": [
+            "평안",
+            "화평"
+          ],
+          "reason": "Here the word is the opposite of war (verse 7), so Korean says \"평화\"; \"평안\", the word kept for inner peace in John, would miss the contrast.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1158,6 +1348,11 @@
           "L": "Tôi [là] sự bình an; nhưng khi tôi nói, chúng [là] vì chiến tranh.",
           "B": "Tôi muốn sự bình an, nhưng hễ tôi mở miệng, chúng lại chọn chiến tranh.",
           "R": "Tôi muốn hòa bình. Nhưng mỗi lần tôi nói, chúng lại muốn đánh nhau."
+        },
+        "ko": {
+          "L": "나는 평화[이다]. 그러나 내가 말할 때 그들은 전쟁을 [원한다].",
+          "B": "나는 평화의 편에 서 있지만, 내가 입을 열기만 하면 그들은 전쟁을 택한다.",
+          "R": "나는 평화를 바란다. 그러나 내가 말할 때마다 그들은 싸우려고 한다."
         }
       },
       "decisions": [
