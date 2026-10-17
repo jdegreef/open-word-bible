@@ -157,6 +157,7 @@
     { id: "terms", label: "Key terms", area: "overview", group: "Text" },
     { id: "fixes", label: "Fix requests", area: "inbox", group: "Text" },
     { id: "articles", label: "Articles", area: "overview", group: "Text" },
+    { id: "export", label: "Export", area: "export", group: "Text" },
     { id: "inbox", label: "Reader inbox", area: "inbox", group: "Readers" },
     { id: "users", label: "Users", area: "users", group: "Readers" },
     { id: "engagement", label: "Engagement", area: "overview", group: "Readers" },
@@ -824,6 +825,136 @@
     });
   };
 
+  // Export: the translation as a file (staff/export.py, owb/export.py), for
+  // Bible software and the apps that carry our text. The file is fetched
+  // with the account's token and saved from the browser.
+  var EXPORT = { lang: "en", level: "B", type: "usfm", numbering: "english", books: "", settings: {} };
+  var BOOK_SETS = { OT: [0, 39], NT: [39, 66] };
+  var SETTING_NAME = { gender: "Gender", christos: "Title", divine_name: "Name of God", deity_pronoun: "Pronouns for God",
+    units: "Measures", plural_you: "Plural you" };
+  function exportQuery(d) {
+    var f = EXPORT, books = f.books;
+    if (BOOK_SETS[books]) books = d.books.slice(BOOK_SETS[books][0], BOOK_SETS[books][1]).map(function (b) { return b.code; }).join(",");
+    var settings = Object.keys(f.settings).filter(function (k) { return f.settings[k] > 0; })
+      .map(function (k) { return k + ":" + f.settings[k]; }).join(",");
+    return "?lang=" + f.lang + "&level=" + f.level + "&type=" + f.type + "&numbering=" + f.numbering +
+      (books ? "&books=" + books : "") + (settings ? "&settings=" + settings : "");
+  }
+  function saveFile(path) {
+    var account = saved();
+    return fetch(API + path, { headers: account && account.token ? { Authorization: "Bearer " + account.token } : {} })
+      .catch(function () { throw new Error("Can't reach the server. Check your connection and try again."); })
+      .then(function (r) {
+        if (!r.ok) return r.json().catch(function () { return {}; }).then(function (data) {
+          throw new Error(message(data) || "Something went wrong (" + r.status + ").");
+        });
+        var m = /filename="([^"]+)"/.exec(r.headers.get("Content-Disposition") || "");
+        return r.blob().then(function (blob) {
+          var url = URL.createObjectURL(blob);
+          var a = h("a", { href: url, download: m ? m[1] : "open-word-bible" });
+          document.body.appendChild(a);
+          a.click();
+          a.remove();
+          setTimeout(function () { URL.revokeObjectURL(url); }, 10000);
+          return m ? m[1] : "the file";
+        });
+      });
+  }
+  VIEWS.export = function () {
+    return api("/api/admin/export/").then(function (d) {
+      var f = EXPORT;
+      var status = h("p", { class: "admin-note", role: "status" });
+      var result = h("div");
+      function language() { return d.languages.filter(function (l) { return l.code === f.lang; })[0]; }
+      var langSel = select("export-lang", d.languages.map(function (l) {
+        return [l.code, l.name + " (" + num(l.sentences.B || 0) + " sentences)"];
+      }), f.lang);
+      var levelSel = select("export-level", d.levels.map(function (l) { return [l.code, l.name]; }), f.level);
+      var typeSel = select("export-type", [["usfm", "USFM: a zip of one file per book"], ["json", "JSON: one file"]], f.type);
+      var numberingSel = select("export-numbering", [["english", "English Bible verse numbers"],
+        ["source", "Ours (Hebrew numbering in the Old Testament)"]], f.numbering);
+      var bookSel = select("export-books", [["", "The whole Bible"], ["OT", "Old Testament"], ["NT", "New Testament"]]
+        .concat(d.books.map(function (b) { return [b.code, b.name]; })), f.books);
+      var settingsBox = h("fieldset", { class: "admin-checks-row" }, h("legend", null, "Wording settings"));
+      function drawSettings() {
+        settingsBox.querySelectorAll("label").forEach(function (l) { l.remove(); });
+        language().settings.forEach(function (s) {
+          var sel = select("export-setting-" + s.name, s.options.map(function (o, i) {
+            return [String(i), o + (i === 0 ? " (default)" : "")];
+          }), String(f.settings[s.name] || 0));
+          sel.addEventListener("change", function () { f.settings[s.name] = +sel.value; changed(); });
+          settingsBox.appendChild(h("label", { class: "admin-field" }, SETTING_NAME[s.name] || s.name, sel));
+        });
+      }
+      function changed() {
+        f.lang = langSel.value; f.level = levelSel.value; f.type = typeSel.value;
+        f.numbering = numberingSel.value; f.books = bookSel.value;
+        var keep = {};
+        language().settings.forEach(function (s) { if (f.settings[s.name]) keep[s.name] = f.settings[s.name]; });
+        f.settings = keep;
+        result.textContent = "";
+        note(status, "");
+      }
+      [levelSel, typeSel, numberingSel, bookSel].forEach(function (s) { s.addEventListener("change", changed); });
+      langSel.addEventListener("change", function () { f.lang = langSel.value; f.settings = {}; drawSettings(); changed(); });
+      drawSettings();
+
+      var previewBtn = h("button", { type: "button", class: "admin-btn" }, "Preview");
+      var downloadBtn = h("button", { type: "submit", class: "admin-btn primary" }, "Download");
+      previewBtn.addEventListener("click", function () {
+        busy(previewBtn, true);
+        note(status, "Reading the text…");
+        api("/api/admin/export/preview/" + exportQuery(d)).then(function (p) {
+          note(status, "");
+          result.textContent = "";
+          var statuses = Object.keys(p.status).map(function (k) { return num(p.status[k]) + " " + k.replace(/_/g, " "); }).join(", ");
+          result.appendChild(h("div", { class: "admin-tiles" }, tile(num(p.verses), "verses"),
+            tile(num(p.books.length), "books"), tile(num(p.missing), "verses not translated yet", p.missing ? "warn" : "")));
+          result.appendChild(h("p", { class: "admin-sub" }, "Sentences by review state: " + (statuses || "none") + "."));
+          if (p.combined.length) {
+            result.appendChild(h("p", { class: "admin-sub" }, "Held under one verse, as no verse bridge crosses chapters: " +
+              p.combined.map(function (c) { return c.holds.join(" + ") + " (as " + c.verse + ")"; }).join("; ") + "."));
+          }
+          var missingBooks = Object.keys(p.missing_by_book);
+          if (missingBooks.length) {
+            result.appendChild(h("p", { class: "admin-sub" }, "Not translated yet, by book: " + missingBooks.slice(0, 20).map(function (b) {
+              return b + " " + num(p.missing_by_book[b]);
+            }).join(", ") + (missingBooks.length > 20 ? ", and " + (missingBooks.length - 20) + " more books" : "") +
+              ". The manifest lists each verse."));
+          }
+          result.appendChild(p.samples.length ? table(["Verse", "Text (our numbering)"], p.samples.map(function (s) {
+            return h("tr", null, h("th", { scope: "row" }, s.label), h("td", { class: "admin-wrap" }, s.text));
+          })) : empty("Nothing in this language at this level yet."));
+        }, function (err) { note(status, err, true); }).then(function () { busy(previewBtn, false); });
+      });
+      var form = h("form", { class: "admin-form stacked" },
+        h("label", { class: "admin-field", for: "export-lang" }, "Language", langSel),
+        h("label", { class: "admin-field", for: "export-level" }, "Level", levelSel),
+        h("label", { class: "admin-field", for: "export-books" }, "Books", bookSel),
+        h("label", { class: "admin-field", for: "export-type" }, "File", typeSel),
+        h("label", { class: "admin-field", for: "export-numbering" }, "Verse numbers", numberingSel),
+        settingsBox,
+        h("div", { class: "admin-actions" }, previewBtn, downloadBtn), status);
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        busy(downloadBtn, true);
+        note(status, "Making the file…");
+        saveFile("/api/admin/export/file/" + exportQuery(d)).then(function (name) {
+          note(status, "Saved " + name + ".");
+        }, function (err) { note(status, err, true); }).then(function () { busy(downloadBtn, false); });
+      });
+      return [head("Text", "Export", "Download the translation in one language at one level, for Bible software and for the apps that carry our text. Settings are applied, poetry runs on one line, and untranslated verses are left out, never filled from another Bible. A manifest.json in each file says what it holds."),
+        h("p", { class: "notice" }, "Every sentence is an AI-assisted draft until a named reviewer approves it, and the manifest says so. " +
+          "The text is " + d.licence + ". It is the text as of the last deploy" + (d.imported_at ? " (" + when(d.imported_at) + ")" : "") + "."),
+        h("section", { class: "admin-block" }, form, result),
+        h("section", { class: "admin-block" }, h("h2", null, "Recent downloads"),
+          d.recent.length ? table(["When", "File", "Verses", "By"], d.recent.map(function (a) {
+            return h("tr", null, h("td", null, when(a.at)), h("td", null, a.target, h("span", { class: "admin-sub" }, (a.detail.books || []).join(", ") || "whole Bible")),
+              h("td", { class: "admin-num" }, num(a.detail.verses)), h("td", null, a.by));
+          })) : empty("Nothing downloaded yet."))];
+    });
+  };
+
   // Users.
   var USERS = { q: "", role: "", offset: 0 };
   VIEWS.users = function () {
@@ -957,7 +1088,8 @@
     "role.grant": "granted a role to", "role.revoke": "removed a role from", "role.invite": "invited",
     "user.delete": "deleted the account", "user.sign_out": "signed out the devices of",
     "message.reply": "answered", "message.done": "marked done", "message.declined": "declined", "message.new": "reopened",
-    "job.file": "filed drafting job", "article.job": "filed article job", "digest.send": "sent the weekly digest to", "email.send": "emailed the team:", "fix.request": "requested fix"
+    "job.file": "filed drafting job", "article.job": "filed article job", "digest.send": "sent the weekly digest to", "email.send": "emailed the team:", "fix.request": "requested fix",
+    "export.download": "downloaded"
   };
   function activityList(actions) {
     return h("ul", { class: "admin-feed" }, actions.map(function (a) {
@@ -1091,14 +1223,14 @@
   ];
   VIEWS.help = function () {
     var sections = SECTIONS.filter(function (s) { return s.id !== "help"; });
-    var AREA = { overview: "Anyone on the team", inbox: "Editors", users: "User records", email: "Email",
+    var AREA = { overview: "Anyone on the team", export: "Anyone on the team", inbox: "Editors", users: "User records", email: "Email",
       jobs: "Super admins", team: "Super admins" };
     var out = [head("Team", "Help & roles", "What each role opens, and where things live. The admin shows you only the sections your roles open; the server checks every request again."),
       h("section", { class: "admin-block" }, h("h2", null, "Roles"),
         table(["Role", "Opens"], ROLES.map(function (r) { return h("tr", null, h("th", { scope: "row" }, r[0]), h("td", null, r[1])); }))),
       h("section", { class: "admin-block" }, h("h2", null, "Sections"),
         table(["Section", "Who"], sections.map(function (s) {
-          return h("tr", null, h("th", { scope: "row" }, opens(s) ? h("a", { href: "#" + s.id }, s.label) : s.label), h("td", null, AREA[s.area] + (s.area === "overview" ? "" : " (and super admins)")));
+          return h("tr", null, h("th", { scope: "row" }, opens(s) ? h("a", { href: "#" + s.id }, s.label) : s.label), h("td", null, AREA[s.area] + (AREA[s.area] === "Anyone on the team" ? "" : " (and super admins)")));
         }))),
       h("section", { class: "admin-block" }, h("h2", null, "Good to know"), h("ul", null,
         h("li", null, "Numbers come from the database, which each deploy brings up to date from content/ on main. A merged pull request shows here after its deploy."),

@@ -370,6 +370,13 @@ against Postgres (`render.yaml`). It holds:
 - **api**: read-only JSON at `/api/editions/`, `/api/text/<BOOK>/<ch>/`,
   `/api/passages/<BOOK>/<ch>/` and `/api/search/?q=…&lang=…`. The Django
   admin at `/admin/` is the first review tool.
+- **export** (in staff): the site admin's Export section downloads one
+  language at one level as a zip of USFM books or as JSON, for Bible
+  software and the apps that carry our text (`owb/export.py`). Reader
+  settings are applied, poetry runs on one line, Old Testament verses take
+  English numbers by default (a psalm title becomes the chapter's `\d`
+  title), and untranslated verses are left out; each file's
+  `manifest.json` gives its licence, review states and missing verses.
 - **search** (in translation): `import_content` brings the search tables
   up to date with `search_documents` in `scripts/build_site.py`, in every
   site language, rewriting only the entries whose documents changed. Words are matched by the

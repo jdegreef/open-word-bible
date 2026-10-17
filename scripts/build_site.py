@@ -27,6 +27,7 @@ sys.path.insert(0, str(ROOT))
 from typing import NamedTuple  # noqa: E402
 
 from owb import crossrefs, languages as owb_languages, markup, morph, refs, translit, validate, versification  # noqa: E402
+from owb.export import record_verses  # noqa: E402
 
 # The interface languages, English first (data/languages.json; see catalog below).
 LANGUAGES = owb_languages.CODES
@@ -1631,20 +1632,6 @@ def opening_verse(records, chapter, lang="en"):
 #    "c": {"web": {"17": "..."}, "rv1909": {"17": "..."}}}
 VERSES_DIR = "verses"
 COMPARISON_EDITIONS = ("web", "rv1909")
-
-
-def record_verses(r):
-    """{verse id: {lang: {level: text}}} for one record, split at its verse
-    markers. A record's markers follow its refs in order."""
-    out = {}
-    for lang, levels in r["renderings"].items():
-        for level, text in levels.items():
-            parts = markup.split_verses(text)
-            if len(parts) != len(r["refs"]):
-                continue
-            for vid, (_, part) in zip(r["refs"], parts):
-                out.setdefault(vid, {}).setdefault(lang, {})[level] = part.strip()
-    return out
 
 
 @functools.cache
