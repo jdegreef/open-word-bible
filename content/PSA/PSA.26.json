@@ -35,6 +35,11 @@
           "L": "Of David. Judge me, {{divine_name:LORD|Yahweh}}, for I have walked in my integrity, and in {{divine_name:the LORD|Yahweh}} I have trusted; I will not slip.",
           "B": "Of David. {{divine_name:LORD|Yahweh}}, decide my case, for I have walked with integrity; my trust has been in {{divine_name:the LORD|Yahweh}}, and I will not stumble.",
           "R": "By David. {{divine_name:LORD|Yahweh}}, show that I am in the right. I have lived an honest life. I have trusted {{divine_name:the LORD|Yahweh}}, and I will not fall."
+        },
+        "fr": {
+          "L": "De David. Juge-moi, {{divine_name:SEIGNEUR|Yahvé}}, car moi, j’ai marché dans mon intégrité, et en {{divine_name:le SEIGNEUR|Yahvé}} j’ai eu confiance ; je ne chancellerai pas.",
+          "B": "De David. {{divine_name:SEIGNEUR|Yahvé}}, tranche ma cause, car j’ai marché avec intégrité ; c’est en {{divine_name:le SEIGNEUR|Yahvé}} que j’ai mis ma confiance, et je ne trébucherai pas.",
+          "R": "Par David. {{divine_name:SEIGNEUR|Yahvé}}, montre que je suis dans mon droit. J’ai mené une vie honnête. J’ai fait confiance {{divine_name:au SEIGNEUR|à Yahvé}}, et je ne tomberai pas."
         }
       },
       "decisions": [
@@ -119,6 +124,49 @@
           "reason": "Readable says what the request to be judged means (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190260010031"
+          ],
+          "choice": "\"SEIGNEUR\" in capitals for the name YHWH, with \"Yahvé\" as the divine_name alternative; \"Ô\" is not added when the name is called on (\"Juge-moi, SEIGNEUR\")",
+          "alternatives": [
+            "\"l’Éternel\" (the Segond tradition)",
+            "\"Ô SEIGNEUR\""
+          ],
+          "reason": "As the French terms for the Pentateuch set, for the whole block of Psalms 26-44: capitals mark the name, like the English \"LORD\". \"L’Éternel\" is the traditional French alternative a reviewer may prefer.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-2",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o190260010021"
+          ],
+          "choice": "the psalmist speaks to God with \"tu\" (\"Juge-moi\", \"ton amour\"), and the pronouns for God take the deity_pronoun setting (\"ton\" or \"Ton\")",
+          "alternatives": [
+            "\"vous\" to God"
+          ],
+          "reason": "Modern French prayer and the French style guide address God with \"tu\", as the Hebrew does; \"vous\" would be an older, more distant register. A pronoun that opens a sentence is written with its capital and no setting.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -154,6 +202,11 @@
           "L": "Examine me, {{divine_name:LORD|Yahweh}}, and put me to the test; refine my kidneys and my heart.",
           "B": "{{divine_name:LORD|Yahweh}}, examine me and put me through trials; refine my innermost feelings and my mind.",
           "R": "{{divine_name:LORD|Yahweh}}, test me and see what I am really like. Look deep inside me at what I want and what I think."
+        },
+        "fr": {
+          "L": "Examine-moi, {{divine_name:SEIGNEUR|Yahvé}}, et mets-moi à l’épreuve ; passe au creuset mes reins et mon cœur.",
+          "B": "{{divine_name:SEIGNEUR|Yahvé}}, examine-moi et éprouve-moi ; passe au creuset mes sentiments les plus intimes et ma pensée.",
+          "R": "{{divine_name:SEIGNEUR|Yahvé}}, mets-moi à l’épreuve et vois ce que je suis vraiment. Regarde au fond de moi ce que je désire et ce que je pense."
         }
       },
       "decisions": [
@@ -240,6 +293,11 @@
           "L": "For {{deity_pronoun:your|Your}} loyal love [is] before my eyes, and I have walked in {{deity_pronoun:your|Your}} faithfulness.",
           "B": "I have kept {{deity_pronoun:your|Your}} loyal love in view, and I have lived my life by {{deity_pronoun:your|Your}} faithfulness.",
           "R": "I keep thinking about {{deity_pronoun:your|Your}} faithful love. I live each day trusting that {{deity_pronoun:you|You}} keep {{deity_pronoun:your|Your}} word."
+        },
+        "fr": {
+          "L": "Car {{deity_pronoun:ton|Ton}} amour loyal [est] devant mes yeux, et j’ai marché dans {{deity_pronoun:ta|Ta}} fidélité.",
+          "B": "J’ai gardé {{deity_pronoun:ton|Ton}} amour fidèle sous mes yeux, et j’ai conduit ma vie selon {{deity_pronoun:ta|Ta}} fidélité.",
+          "R": "Je pense sans cesse à {{deity_pronoun:ton|Ton}} amour fidèle. Je vis chaque jour en comptant sur {{deity_pronoun:toi|Toi}}, car {{deity_pronoun:tu|Tu}} tiens parole."
         }
       },
       "decisions": [
@@ -310,6 +368,29 @@
           "reason": "Readable says what the idiom means (m2, m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190260030021"
+          ],
+          "choice": "\"amour loyal\" (Literal), \"amour fidèle\" (Balanced, Readable) for ḥesed, for the whole block",
+          "alternatives": [
+            "\"bonté\"",
+            "\"miséricorde\"",
+            "\"grâce\""
+          ],
+          "reason": "Ḥesed is love that keeps faith with a promise. The Psalms terms note sets these two forms so that every chunk of Psalms reads alike; \"bonté\" is kept for the places where the English says \"kindness\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -342,6 +423,11 @@
           "L": "I have not sat with {{gender:people|men}} of falsehood, and with those who hide [what they are] I will not go.",
           "B": "I have not sat among the false, and I will not keep company with those who hide what they are.",
           "R": "I do not spend time with liars. I do not go around with people who pretend to be good."
+        },
+        "fr": {
+          "L": "Je ne me suis pas assis avec {{gender:des gens|des hommes}} de fausseté, et avec ceux qui cachent [ce qu’ils sont] je n’irai pas.",
+          "B": "Je ne me suis pas assis parmi les menteurs, et je ne fréquenterai pas ceux qui cachent ce qu’ils sont.",
+          "R": "Je ne passe pas mon temps avec les menteurs. Je ne fréquente pas les gens qui font semblant d’être bons."
         }
       },
       "decisions": [
@@ -436,6 +522,11 @@
           "L": "I have hated the assembly of evildoers, and with [the] wicked I will not sit.",
           "B": "I hate the crowd that gathers to do evil; I will not take a seat among the wicked.",
           "R": "I hate it when people get together to do evil. I will not sit down with wicked people."
+        },
+        "fr": {
+          "L": "J’ai haï l’assemblée des malfaiteurs, et avec [les] méchants je ne m’assiérai pas.",
+          "B": "Je hais la bande qui se réunit pour faire le mal ; je ne prendrai pas place parmi les méchants.",
+          "R": "Je déteste voir des gens se réunir pour faire le mal. Je ne m’assiérai pas avec les méchants."
         }
       },
       "decisions": [
@@ -499,6 +590,11 @@
           "L": "I wash my hands in innocence, and I go around {{deity_pronoun:your|Your}} altar, {{divine_name:LORD|Yahweh}},",
           "B": "I wash my hands to show that I am innocent, and I walk around {{deity_pronoun:your|Your}} altar, {{divine_name:LORD|Yahweh}},",
           "R": "I wash my hands to show that I have done nothing wrong. Then I walk around {{deity_pronoun:your|Your}} altar, {{divine_name:LORD|Yahweh}}."
+        },
+        "fr": {
+          "L": "Je lave mes mains dans l’innocence, et je fais le tour de {{deity_pronoun:ton|Ton}} autel, {{divine_name:SEIGNEUR|Yahvé}},",
+          "B": "Je lave mes mains pour montrer que je suis innocent, et je fais le tour de {{deity_pronoun:ton|Ton}} autel, {{divine_name:SEIGNEUR|Yahvé}},",
+          "R": "Je lave mes mains pour montrer que je n’ai rien fait de mal. Puis je fais le tour de {{deity_pronoun:ton|Ton}} autel, {{divine_name:SEIGNEUR|Yahvé}}."
         }
       },
       "decisions": [
@@ -598,6 +694,11 @@
           "L": "to make heard [the] voice of thanksgiving and to recount all {{deity_pronoun:your|Your}} wonders.",
           "B": "making a song of thanks be heard and telling of every wonder {{deity_pronoun:you|You}} have done.",
           "R": "I sing out my thanks to {{deity_pronoun:you|You}}. I tell about all the amazing things {{deity_pronoun:you|You}} have done."
+        },
+        "fr": {
+          "L": "pour faire entendre [la] voix de l’action de grâce et pour raconter toutes {{deity_pronoun:tes|Tes}} merveilles.",
+          "B": "en faisant retentir un chant de reconnaissance et en racontant chacune des merveilles que {{deity_pronoun:tu|Tu}} as faites.",
+          "R": "Je chante pour {{deity_pronoun:te|Te}} dire merci. Je raconte toutes les choses extraordinaires que {{deity_pronoun:tu|Tu}} as faites."
         }
       },
       "decisions": [
@@ -677,6 +778,11 @@
           "L": "{{divine_name:LORD|Yahweh}}, I love the habitation of {{deity_pronoun:your|Your}} house and the place of the dwelling of {{deity_pronoun:your|Your}} glory.",
           "B": "{{divine_name:LORD|Yahweh}}, I love the house that is {{deity_pronoun:your|Your}} home, the place in which {{deity_pronoun:your|Your}} glory has its dwelling.",
           "R": "{{divine_name:LORD|Yahweh}}, I love {{deity_pronoun:your|Your}} house, where {{deity_pronoun:you|You}} live. Your shining glory is there."
+        },
+        "fr": {
+          "L": "{{divine_name:SEIGNEUR|Yahvé}}, j’aime la demeure de {{deity_pronoun:ta|Ta}} maison et le lieu de la résidence de {{deity_pronoun:ta|Ta}} gloire.",
+          "B": "{{divine_name:SEIGNEUR|Yahvé}}, j’aime la maison où {{deity_pronoun:tu|Tu}} habites, le lieu où {{deity_pronoun:ta|Ta}} gloire a sa demeure.",
+          "R": "{{divine_name:SEIGNEUR|Yahvé}}, j’aime {{deity_pronoun:ta|Ta}} maison, où {{deity_pronoun:tu|Tu}} vis. Ta gloire brillante est là."
         }
       },
       "decisions": [
@@ -760,6 +866,11 @@
           "L": "Do not gather my soul with sinners, nor my life with {{gender:people|men}} of bloodshed,",
           "B": "Do not carry me off with the sinners, or my life with those who shed blood,",
           "R": "When {{deity_pronoun:you|You}} take sinners away, do not take me with them. Do not let me die with murderers."
+        },
+        "fr": {
+          "L": "N’enlève pas mon âme avec les pécheurs, ni ma vie avec {{gender:les gens|les hommes}} de sang,",
+          "B": "Ne m’emporte pas avec les pécheurs, ni ma vie avec ceux qui versent le sang,",
+          "R": "Quand {{deity_pronoun:tu|Tu}} emportes les pécheurs, ne m’emporte pas avec eux. Ne me laisse pas mourir avec les assassins."
         }
       },
       "decisions": [
@@ -873,6 +984,11 @@
           "L": "in whose hands [is] a wicked scheme, and their right hand is full of bribery.",
           "B": "people whose hands carry out shameful plots and whose right hand is loaded with bribes.",
           "R": "They are always planning evil, and they take money to do wrong."
+        },
+        "fr": {
+          "L": "dans les mains desquels [il y a] un projet infâme, et leur droite est pleine de pots-de-vin.",
+          "B": "des gens dont les mains exécutent des complots honteux et dont la main droite est chargée de pots-de-vin.",
+          "R": "Ils préparent toujours le mal, et ils acceptent de l’argent pour faire ce qui est injuste."
         }
       },
       "decisions": [
@@ -955,6 +1071,11 @@
           "L": "But I, in my integrity I will walk; redeem me and be gracious to me.",
           "B": "But as for me, I will live with integrity; set me free and show me grace.",
           "R": "But I will keep living an honest life. Rescue me and be kind to me."
+        },
+        "fr": {
+          "L": "Mais moi, dans mon intégrité je marcherai ; rachète-moi et fais-moi grâce.",
+          "B": "Quant à moi, je vivrai avec intégrité ; libère-moi et montre-moi {{deity_pronoun:ta|Ta}} grâce.",
+          "R": "Mais moi, je vais continuer à mener une vie honnête. Délivre-moi et sois bon pour moi."
         }
       },
       "decisions": [
@@ -1016,6 +1137,11 @@
           "L": "My foot has stood on level ground; in [the] assemblies I will bless {{divine_name:the LORD|Yahweh}}.",
           "B": "I stand firm on level ground; in the assemblies I will bless {{divine_name:the LORD|Yahweh}}.",
           "R": "I am standing on safe, level ground. When God's people meet together, I will praise {{divine_name:the LORD|Yahweh}}."
+        },
+        "fr": {
+          "L": "Mon pied s’est tenu sur un terrain plat ; dans [les] assemblées je bénirai {{divine_name:le SEIGNEUR|Yahvé}}.",
+          "B": "Je me tiens ferme sur un terrain plat ; dans les assemblées je bénirai {{divine_name:le SEIGNEUR|Yahvé}}.",
+          "R": "Je me tiens sur un terrain sûr et plat. Quand le peuple de Dieu se réunira, je louerai {{divine_name:le SEIGNEUR|Yahvé}}."
         }
       },
       "decisions": [
