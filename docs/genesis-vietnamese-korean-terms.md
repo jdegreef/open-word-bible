@@ -74,7 +74,7 @@ Decision text stays in English, quoting the Vietnamese or Korean words.
 | covenant | giao ước | 언약 |
 | bless, blessing; curse | ban phước, phước lành; nguyền rủa | 복을 주다, 복; 저주하다 |
 | seed, offspring (*zeraʿ*) | dòng dõi (L: hạt giống where the picture matters) | 자손 (L: 씨) |
-| "These are the generations of" (*toledot*) | Đây là [dòng] dõi của (L); Đây là câu chuyện về dòng họ của (B, R) | ~의 계보는 이러하다 (L); ~의 집안 이야기는 이러하다 (B, R) |
+| "These are the generations of" (*toledot*) | Đây [là] dòng dõi của (L); Đây là câu chuyện về dòng họ của (B, R) | ~의 계보는 이러하다 (L); ~의 집안 이야기는 이러하다 (B, R) |
 | firstborn; birthright | con đầu lòng; quyền trưởng nam | 맏아들; 장자권 |
 | the land (promised) | xứ | 땅 |
 | altar; burnt offering | bàn thờ; của lễ thiêu | 제단; 번제 |
@@ -112,7 +112,7 @@ Decision text stays in English, quoting the Vietnamese or Korean words.
 | Joseph, Benjamin, Ephraim, Manasseh | Giô-sép, Bên-gia-min, Ép-ra-im, Ma-na-se | 요셉, 베냐민, 에브라임, 므낫세 |
 | Tamar, Perez, Zerah, Potiphar | Ta-ma, Pha-rê, Xê-rách, Phô-ti-pha | 다말, 베레스, 세라, 보디발 |
 | Pharaoh | Pha-ra-ôn | 바로 (as Acts 7:13; Romans 9:17) |
-| Egypt; Canaan; Babel/Babylon | Ai Cập; Ca-na-an; Ba-bên | 이집트; 가나안; 바벨 |
+| Egypt; Canaan; Babel (11:9); Babylon where the English level says so (10:10 B, R) | Ai Cập; Ca-na-an; Ba-bên; Ba-by-lôn | 이집트; 가나안; 바벨; 바빌론 |
 | Eden, Ur of the Chaldeans, Haran | Ê-đen, U-rơ của người Canh-đê, Cha-ran | 에덴, 갈대아 우르, 하란 |
 | Sodom, Gomorrah, Bethel, Beersheba, Hebron | Sô-đôm, Gô-mô-rơ, Bê-tên, Bê-e-Sê-ba, Hếp-rôn | 소돔, 고모라, 벧엘, 브엘세바, 헤브론 |
 | Goshen, Shechem, Moriah, Peniel | Gô-sen, Si-chem, Mô-ri-a, Phê-ni-ên | 고센, 세겜, 모리아, 브니엘 |
