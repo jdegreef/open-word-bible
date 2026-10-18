@@ -48,6 +48,16 @@
           "L": "Hiki [ni] kitabu cha vizazi vya Adamu. Siku ile Mungu alipowaumba wanadamu, aliwafanya kwa mfano wa Mungu.",
           "B": "Hii ni kumbukumbu iliyoandikwa ya ukoo wa Adamu. Mungu alipowaumba wanadamu, aliwafanya kwa mfano wa Mungu.",
           "R": "Hii ni orodha ya jamaa ya Adamu. Mungu alipowaumba watu, aliwafanya wafanane {{deity_pronoun:naye|Naye}}."
+        },
+        "vi": {
+          "L": "Đây [là] sách dòng dõi của A-đam. Vào ngày Đức Chúa Trời sáng tạo loài người, {{deity_pronoun:ngài|Ngài}} làm nên loài người giống như Đức Chúa Trời.",
+          "B": "Đây là sách ghi chép dòng họ của A-đam. Khi Đức Chúa Trời sáng tạo loài người, {{deity_pronoun:ngài|Ngài}} làm nên họ giống như Đức Chúa Trời.",
+          "R": "Đây là danh sách gia đình của A-đam. Khi Đức Chúa Trời sáng tạo con người, {{deity_pronoun:ngài|Ngài}} làm cho họ giống như Đức Chúa Trời."
+        },
+        "ko": {
+          "L": "이것은 아담의 계보를 적은 책이다. 하나님께서 사람을 창조하신 날에, 하나님의 모양대로 사람을 만드셨다.",
+          "B": "아담의 집안 이야기를 적은 기록은 이러하다. 하나님께서 사람을 창조하실 때에, 하나님의 모양대로 그들을 만드셨다.",
+          "R": "아담의 집안 이야기를 적은 목록은 이러하다. 하나님께서 사람을 창조하실 때에, 하나님을 닮도록 그들을 만드셨다."
         }
       },
       "decisions": [
@@ -207,6 +217,76 @@
           "reason": "Swahili \"wanadamu\" and \"watu\" already mean human beings of both sexes, and the only \"traditional\" alternative, \"wanaume\", would mean males and change the meaning, so the Swahili has no gender span here or in verse 2 (style guide). The plural follows the English default \"them\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o010050010081",
+            "o010050010121",
+            "o010050010122"
+          ],
+          "choice": "\"loài người\" (L, B), \"con người\" (R), with no gender span",
+          "alternatives": [
+            "a gender span as in the English"
+          ],
+          "reason": "As in 1:26–27: the Vietnamese words already take in man and woman, so there is nothing for the setting to switch. The Hebrew uses one word, adam, for the name and for humankind (m2); Vietnamese has to use two.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010050010011",
+            "o010050010021",
+            "o010050010031",
+            "o010050010041"
+          ],
+          "choice": "\"아담의 계보를 적은 책이다\" (L); \"아담의 집안 이야기를 적은 기록은 이러하다\" (B, R)",
+          "alternatives": [
+            "아담의 족보",
+            "아담 자손의 계보"
+          ],
+          "reason": "The heading of a new section, worded as the terms note settles for these headings: \"계보\" at Literal, \"집안 이야기\" at Balanced and Readable. Here the Hebrew adds \"book\", a written record (meaning decision m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010050010041",
+            "o010050010081"
+          ],
+          "choice": "\"아담\" for the name, \"사람\" for humankind",
+          "alternatives": [
+            "아담 for both"
+          ],
+          "reason": "The Hebrew uses the same word for the man's name and for humankind (meaning decision m2). Korean has to choose at each use: the name where the list names him, \"사람\" where God creates humankind, male and female (verse 2 also).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -263,6 +343,16 @@
           "L": "Mwanamume na mwanamke aliwaumba, akawabariki, akawaita jina lao Mwanadamu siku ile walipoumbwa.",
           "B": "Aliwaumba mwanamume na mwanamke. Akawabariki, akawaita Mwanadamu walipoumbwa.",
           "R": "Aliwafanya mwanamume na mwanamke. Akawabariki, akawapa jina Mwanadamu siku ile alipowafanya."
+        },
+        "vi": {
+          "L": "Có nam có nữ {{deity_pronoun:ngài|Ngài}} sáng tạo họ, và {{deity_pronoun:ngài|Ngài}} ban phước cho họ và gọi tên họ là Loài Người, vào ngày họ được sáng tạo.",
+          "B": "Ngài sáng tạo họ có nam có nữ. Ngài ban phước cho họ và đặt tên họ là Loài Người khi họ được sáng tạo.",
+          "R": "Ngài làm nên họ có nam và có nữ. Ngài ban phước cho họ và đặt tên cho họ là Con Người vào ngày {{deity_pronoun:ngài|Ngài}} làm nên họ."
+        },
+        "ko": {
+          "L": "남자와 여자로 그들을 창조하시고, 그들에게 복을 주시며, 그들이 창조된 날에 그들의 이름을 사람이라고 부르셨다.",
+          "B": "하나님께서는 그들을 남자와 여자로 창조하셨다. 그리고 그들이 창조될 때에 그들에게 복을 주시고 그들을 사람이라고 부르셨다.",
+          "R": "하나님께서는 그들을 남자와 여자로 만드셨다. 그리고 그들을 만드신 날에 그들에게 복을 주시고, 사람이라는 이름을 지어 주셨다."
         }
       },
       "decisions": [
@@ -387,6 +477,16 @@
           "L": "Naye Adamu akaishi miaka 130, akazaa [mwana] kwa mfano wake, kwa sura yake, akamwita jina lake Sethi.",
           "B": "Adamu alipokuwa ameishi miaka 130, alipata mwana aliyefanana naye, kwa sura yake mwenyewe, akamwita Sethi.",
           "R": "Adamu alipokuwa na umri wa miaka 130, alipata mtoto wa kiume aliyefanana naye, akamwita Sethi."
+        },
+        "vi": {
+          "L": "Và A-đam sống 130 năm và sinh [một con trai] giống như mình, theo hình ảnh của mình, và đặt tên con là Sết.",
+          "B": "Khi A-đam sống được 130 năm, ông sinh một con trai giống như mình, theo hình ảnh của mình, và đặt tên con là Sết.",
+          "R": "Khi A-đam được 130 tuổi, ông có một con trai giống như mình, và ông đặt tên con là Sết."
+        },
+        "ko": {
+          "L": "그리고 아담은 130년을 살고, 자기 모양대로, 자기 형상을 따라 [아들을] 낳아 그의 이름을 셋이라고 불렀다.",
+          "B": "아담은 130년을 살았을 때, 자기 모양대로, 자기 형상을 따라 아들을 낳고 그의 이름을 셋이라고 지었다.",
+          "R": "아담이 130살이었을 때, 자기를 닮은 아들을 낳았다. 아담은 그 아들의 이름을 셋이라고 지었다."
         }
       },
       "decisions": [
@@ -597,6 +697,53 @@
           "reason": "As the English, Swahili writes the ages over ninety-nine in figures through the chapter; the long Swahili number words (\"mia tisa na kumi na mbili\") would make the list hard to follow.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010050030031",
+            "o010050030041",
+            "o010050030042",
+            "o010050030051"
+          ],
+          "choice": "numbers above ninety-nine in figures, smaller ones in words",
+          "alternatives": [],
+          "reason": "As the English does through the chapter, so that the long list of ages can be read at a glance; \"năm\" (years) for how long a man lived, \"tuổi\" (years old) for his age at Readable.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010050030031",
+            "o010050030041",
+            "o010050030042",
+            "o010050030051"
+          ],
+          "choice": "Years in figures where the English has figures (\"130년\"), and in words where it has words (\"구십 년\" at L and B, \"아흔 살\" at R)",
+          "alternatives": [
+            "all in figures",
+            "all in Korean words"
+          ],
+          "reason": "The style guide writes large numbers in figures and short ones in words. Readable gives ages as \"...살\", the everyday way of saying how old someone is. The same holds through the lists of chapters 5 and 11.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -651,6 +798,16 @@
           "L": "Na siku za Adamu baada ya kumzaa Sethi zilikuwa miaka 800, akazaa wana wa kiume na wa kike.",
           "B": "Baada ya Sethi kuzaliwa, Adamu aliishi miaka 800, akapata wana wengine wa kiume na wa kike.",
           "R": "Baada ya Sethi kuzaliwa, Adamu aliishi miaka 800 zaidi. Alipata pia watoto wengine wa kiume na wa kike."
+        },
+        "vi": {
+          "L": "Và các ngày của A-đam sau khi ông sinh Sết là 800 năm, và ông sinh con trai con gái.",
+          "B": "Sau khi sinh Sết, A-đam sống thêm 800 năm và có những con trai con gái khác.",
+          "R": "Sau khi Sết ra đời, A-đam sống thêm 800 năm nữa. Ông cũng có những con trai con gái khác."
+        },
+        "ko": {
+          "L": "그리고 아담이 셋을 낳은 뒤의 날은 800년이었고, 그는 아들들과 딸들을 낳았다.",
+          "B": "셋을 낳은 뒤에 아담은 800년을 살면서 다른 아들딸을 낳았다.",
+          "R": "셋이 태어난 뒤에 아담은 800년을 더 살았다. 아담에게는 다른 아들딸도 있었다."
         }
       },
       "decisions": [
@@ -746,6 +903,16 @@
           "L": "Na siku zote alizoishi Adamu zilikuwa miaka 930, akafa.",
           "B": "Kwa jumla, Adamu aliishi miaka 930, kisha akafa.",
           "R": "Adamu aliishi mpaka umri wa miaka 930, kisha akafa."
+        },
+        "vi": {
+          "L": "Và trọn các ngày A-đam đã sống là 930 năm, và ông chết.",
+          "B": "Tổng cộng A-đam sống được 930 năm, rồi ông qua đời.",
+          "R": "A-đam sống được 930 tuổi, rồi ông qua đời."
+        },
+        "ko": {
+          "L": "그리고 아담이 산 모든 날은 930년이었고, 그는 죽었다.",
+          "B": "아담은 모두 930년을 살고 죽었다.",
+          "R": "아담은 930살까지 살다가 죽었다."
         }
       },
       "decisions": [
@@ -781,6 +948,25 @@
           "choice": "Y fueron todos los días ... (L); En total, ... vivió (B); vivió hasta los ... años (R)",
           "alternatives": [],
           "reason": "The closing line of each entry: Literal keeps the Hebrew subject \"all the days\"; Balanced and Readable say how long the man lived, as the English does. Used for every entry in the chapter.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o010050050122"
+          ],
+          "choice": "\"ông chết\" (L), \"ông qua đời\" (B, R)",
+          "alternatives": [],
+          "reason": "The refrain of the list (m1). Literal keeps the plain verb; Balanced and Readable say \"qua đời\", the way Vietnamese speaks of the death of a forefather.",
           "uncertain": false,
           "footnote": false
         }
@@ -832,6 +1018,16 @@
           "L": "Naye Sethi akaishi miaka 105, akamzaa Enoshi.",
           "B": "Sethi alipokuwa ameishi miaka 105, akawa baba wa Enoshi.",
           "R": "Sethi alipokuwa na umri wa miaka 105, alipata mtoto wa kiume aliyeitwa Enoshi."
+        },
+        "vi": {
+          "L": "Và Sết sống 105 năm và sinh Ê-nót.",
+          "B": "Khi Sết sống được 105 năm, ông sinh Ê-nót.",
+          "R": "Khi Sết được 105 tuổi, ông có một con trai tên là Ê-nót."
+        },
+        "ko": {
+          "L": "그리고 셋은 105년을 살고 에노스를 낳았다.",
+          "B": "셋은 105년을 살았을 때 에노스를 낳았다.",
+          "R": "셋이 105살이었을 때, 에노스라는 아들을 낳았다."
         }
       },
       "decisions": [],
@@ -889,6 +1085,16 @@
           "L": "Naye Sethi akaishi baada ya kumzaa Enoshi miaka 807, akazaa wana wa kiume na wa kike.",
           "B": "Baada ya Enoshi kuzaliwa, Sethi aliishi miaka 807, akapata wana wengine wa kiume na wa kike.",
           "R": "Baada ya Enoshi kuzaliwa, Sethi aliishi miaka 807 zaidi. Alipata pia watoto wengine wa kiume na wa kike."
+        },
+        "vi": {
+          "L": "Và Sết sống sau khi sinh Ê-nót 807 năm, và ông sinh con trai con gái.",
+          "B": "Sau khi sinh Ê-nót, Sết sống thêm 807 năm và có những con trai con gái khác.",
+          "R": "Sau khi Ê-nót ra đời, Sết sống thêm 807 năm nữa. Ông cũng có những con trai con gái khác."
+        },
+        "ko": {
+          "L": "그리고 셋은 에노스를 낳은 뒤에 807년을 살며 아들들과 딸들을 낳았다.",
+          "B": "에노스를 낳은 뒤에 셋은 807년을 살면서 다른 아들딸을 낳았다.",
+          "R": "에노스가 태어난 뒤에 셋은 807년을 더 살았다. 셋에게는 다른 아들딸도 있었다."
         }
       },
       "decisions": [],
@@ -941,6 +1147,16 @@
           "L": "Na siku zote za Sethi zilikuwa miaka 912, akafa.",
           "B": "Kwa jumla, Sethi aliishi miaka 912, kisha akafa.",
           "R": "Sethi aliishi mpaka umri wa miaka 912, kisha akafa."
+        },
+        "vi": {
+          "L": "Và trọn các ngày của Sết là 912 năm, và ông chết.",
+          "B": "Tổng cộng Sết sống được 912 năm, rồi ông qua đời.",
+          "R": "Sết sống được 912 tuổi, rồi ông qua đời."
+        },
+        "ko": {
+          "L": "그리고 셋의 모든 날은 912년이었고, 그는 죽었다.",
+          "B": "셋은 모두 912년을 살고 죽었다.",
+          "R": "셋은 912살까지 살다가 죽었다."
         }
       },
       "decisions": [],
@@ -988,6 +1204,16 @@
           "L": "Naye Enoshi akaishi miaka tisini, akamzaa Kenani.",
           "B": "Enoshi alipokuwa ameishi miaka tisini, akawa baba wa Kenani.",
           "R": "Enoshi alipokuwa na umri wa miaka tisini, alipata mtoto wa kiume aliyeitwa Kenani."
+        },
+        "vi": {
+          "L": "Và Ê-nót sống chín mươi năm và sinh Cai-nan.",
+          "B": "Khi Ê-nót sống được chín mươi năm, ông sinh Cai-nan.",
+          "R": "Khi Ê-nót được chín mươi tuổi, ông có một con trai tên là Cai-nan."
+        },
+        "ko": {
+          "L": "그리고 에노스는 구십 년을 살고 게난을 낳았다.",
+          "B": "에노스는 구십 년을 살았을 때 게난을 낳았다.",
+          "R": "에노스가 아흔 살이었을 때, 게난이라는 아들을 낳았다."
         }
       },
       "decisions": [
@@ -1047,6 +1273,27 @@
           "reason": "The Hebrew name (Qenan) is transcribed as the English does; \"Kainani\", the form in Luke 3:37, follows the Greek and belongs to Luke.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010050090071"
+          ],
+          "choice": "\"Cai-nan\" for Kenan; \"Ma-ha-la-le-ên\", \"Gia-rết\"",
+          "alternatives": [
+            "\"Kê-nan\""
+          ],
+          "reason": "The forms Luke 3:37 already uses in this project for the same men, so that the two lists agree.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1104,6 +1351,16 @@
           "L": "Naye Enoshi akaishi baada ya kumzaa Kenani miaka 815, akazaa wana wa kiume na wa kike.",
           "B": "Baada ya Kenani kuzaliwa, Enoshi aliishi miaka 815, akapata wana wengine wa kiume na wa kike.",
           "R": "Baada ya Kenani kuzaliwa, Enoshi aliishi miaka 815 zaidi. Alipata pia watoto wengine wa kiume na wa kike."
+        },
+        "vi": {
+          "L": "Và Ê-nót sống sau khi sinh Cai-nan 815 năm, và ông sinh con trai con gái.",
+          "B": "Sau khi sinh Cai-nan, Ê-nót sống thêm 815 năm và có những con trai con gái khác.",
+          "R": "Sau khi Cai-nan ra đời, Ê-nót sống thêm 815 năm nữa. Ông cũng có những con trai con gái khác."
+        },
+        "ko": {
+          "L": "그리고 에노스는 게난을 낳은 뒤에 815년을 살며 아들들과 딸들을 낳았다.",
+          "B": "게난을 낳은 뒤에 에노스는 815년을 살면서 다른 아들딸을 낳았다.",
+          "R": "게난이 태어난 뒤에 에노스는 815년을 더 살았다. 에노스에게는 다른 아들딸도 있었다."
         }
       },
       "decisions": [],
@@ -1155,6 +1412,16 @@
           "L": "Na siku zote za Enoshi zilikuwa miaka 905, akafa.",
           "B": "Kwa jumla, Enoshi aliishi miaka 905, kisha akafa.",
           "R": "Enoshi aliishi mpaka umri wa miaka 905, kisha akafa."
+        },
+        "vi": {
+          "L": "Và trọn các ngày của Ê-nót là 905 năm, và ông chết.",
+          "B": "Tổng cộng Ê-nót sống được 905 năm, rồi ông qua đời.",
+          "R": "Ê-nót sống được 905 tuổi, rồi ông qua đời."
+        },
+        "ko": {
+          "L": "그리고 에노스의 모든 날은 905년이었고, 그는 죽었다.",
+          "B": "에노스는 모두 905년을 살고 죽었다.",
+          "R": "에노스는 905살까지 살다가 죽었다."
         }
       },
       "decisions": [],
@@ -1202,6 +1469,16 @@
           "L": "Naye Kenani akaishi miaka sabini, akamzaa Mahalaleli.",
           "B": "Kenani alipokuwa ameishi miaka sabini, akawa baba wa Mahalaleli.",
           "R": "Kenani alipokuwa na umri wa miaka sabini, alipata mtoto wa kiume aliyeitwa Mahalaleli."
+        },
+        "vi": {
+          "L": "Và Cai-nan sống bảy mươi năm và sinh Ma-ha-la-le-ên.",
+          "B": "Khi Cai-nan sống được bảy mươi năm, ông sinh Ma-ha-la-le-ên.",
+          "R": "Khi Cai-nan được bảy mươi tuổi, ông có một con trai tên là Ma-ha-la-le-ên."
+        },
+        "ko": {
+          "L": "그리고 게난은 칠십 년을 살고 마할랄렐을 낳았다.",
+          "B": "게난은 칠십 년을 살았을 때 마할랄렐을 낳았다.",
+          "R": "게난이 일흔 살이었을 때, 마할랄렐이라는 아들을 낳았다."
         }
       },
       "decisions": [],
@@ -1259,6 +1536,16 @@
           "L": "Naye Kenani akaishi baada ya kumzaa Mahalaleli miaka 840, akazaa wana wa kiume na wa kike.",
           "B": "Baada ya Mahalaleli kuzaliwa, Kenani aliishi miaka 840, akapata wana wengine wa kiume na wa kike.",
           "R": "Baada ya Mahalaleli kuzaliwa, Kenani aliishi miaka 840 zaidi. Alipata pia watoto wengine wa kiume na wa kike."
+        },
+        "vi": {
+          "L": "Và Cai-nan sống sau khi sinh Ma-ha-la-le-ên 840 năm, và ông sinh con trai con gái.",
+          "B": "Sau khi sinh Ma-ha-la-le-ên, Cai-nan sống thêm 840 năm và có những con trai con gái khác.",
+          "R": "Sau khi Ma-ha-la-le-ên ra đời, Cai-nan sống thêm 840 năm nữa. Ông cũng có những con trai con gái khác."
+        },
+        "ko": {
+          "L": "그리고 게난은 마할랄렐을 낳은 뒤에 840년을 살며 아들들과 딸들을 낳았다.",
+          "B": "마할랄렐을 낳은 뒤에 게난은 840년을 살면서 다른 아들딸을 낳았다.",
+          "R": "마할랄렐이 태어난 뒤에 게난은 840년을 더 살았다. 게난에게는 다른 아들딸도 있었다."
         }
       },
       "decisions": [],
@@ -1310,6 +1597,16 @@
           "L": "Na siku zote za Kenani zilikuwa miaka 910, akafa.",
           "B": "Kwa jumla, Kenani aliishi miaka 910, kisha akafa.",
           "R": "Kenani aliishi mpaka umri wa miaka 910, kisha akafa."
+        },
+        "vi": {
+          "L": "Và trọn các ngày của Cai-nan là 910 năm, và ông chết.",
+          "B": "Tổng cộng Cai-nan sống được 910 năm, rồi ông qua đời.",
+          "R": "Cai-nan sống được 910 tuổi, rồi ông qua đời."
+        },
+        "ko": {
+          "L": "그리고 게난의 모든 날은 910년이었고, 그는 죽었다.",
+          "B": "게난은 모두 910년을 살고 죽었다.",
+          "R": "게난은 910살까지 살다가 죽었다."
         }
       },
       "decisions": [],
@@ -1360,6 +1657,16 @@
           "L": "Naye Mahalaleli akaishi miaka sitini na tano, akamzaa Yaredi.",
           "B": "Mahalaleli alipokuwa ameishi miaka sitini na tano, akawa baba wa Yaredi.",
           "R": "Mahalaleli alipokuwa na umri wa miaka sitini na tano, alipata mtoto wa kiume aliyeitwa Yaredi."
+        },
+        "vi": {
+          "L": "Và Ma-ha-la-le-ên sống sáu mươi lăm năm và sinh Gia-rết.",
+          "B": "Khi Ma-ha-la-le-ên sống được sáu mươi lăm năm, ông sinh Gia-rết.",
+          "R": "Khi Ma-ha-la-le-ên được sáu mươi lăm tuổi, ông có một con trai tên là Gia-rết."
+        },
+        "ko": {
+          "L": "그리고 마할랄렐은 육십오 년을 살고 야렛을 낳았다.",
+          "B": "마할랄렐은 육십오 년을 살았을 때 야렛을 낳았다.",
+          "R": "마할랄렐이 예순다섯 살이었을 때, 야렛이라는 아들을 낳았다."
         }
       },
       "decisions": [],
@@ -1417,6 +1724,16 @@
           "L": "Naye Mahalaleli akaishi baada ya kumzaa Yaredi miaka 830, akazaa wana wa kiume na wa kike.",
           "B": "Baada ya Yaredi kuzaliwa, Mahalaleli aliishi miaka 830, akapata wana wengine wa kiume na wa kike.",
           "R": "Baada ya Yaredi kuzaliwa, Mahalaleli aliishi miaka 830 zaidi. Alipata pia watoto wengine wa kiume na wa kike."
+        },
+        "vi": {
+          "L": "Và Ma-ha-la-le-ên sống sau khi sinh Gia-rết 830 năm, và ông sinh con trai con gái.",
+          "B": "Sau khi sinh Gia-rết, Ma-ha-la-le-ên sống thêm 830 năm và có những con trai con gái khác.",
+          "R": "Sau khi Gia-rết ra đời, Ma-ha-la-le-ên sống thêm 830 năm nữa. Ông cũng có những con trai con gái khác."
+        },
+        "ko": {
+          "L": "그리고 마할랄렐은 야렛을 낳은 뒤에 830년을 살며 아들들과 딸들을 낳았다.",
+          "B": "야렛을 낳은 뒤에 마할랄렐은 830년을 살면서 다른 아들딸을 낳았다.",
+          "R": "야렛이 태어난 뒤에 마할랄렐은 830년을 더 살았다. 마할랄렐에게는 다른 아들딸도 있었다."
         }
       },
       "decisions": [],
@@ -1470,6 +1787,16 @@
           "L": "Na siku zote za Mahalaleli zilikuwa miaka 895, akafa.",
           "B": "Kwa jumla, Mahalaleli aliishi miaka 895, kisha akafa.",
           "R": "Mahalaleli aliishi mpaka umri wa miaka 895, kisha akafa."
+        },
+        "vi": {
+          "L": "Và trọn các ngày của Ma-ha-la-le-ên là 895 năm, và ông chết.",
+          "B": "Tổng cộng Ma-ha-la-le-ên sống được 895 năm, rồi ông qua đời.",
+          "R": "Ma-ha-la-le-ên sống được 895 tuổi, rồi ông qua đời."
+        },
+        "ko": {
+          "L": "그리고 마할랄렐의 모든 날은 895년이었고, 그는 죽었다.",
+          "B": "마할랄렐은 모두 895년을 살고 죽었다.",
+          "R": "마할랄렐은 895살까지 살다가 죽었다."
         }
       },
       "decisions": [],
@@ -1522,6 +1849,16 @@
           "L": "Naye Yaredi akaishi miaka 162, akamzaa Henoko.",
           "B": "Yaredi alipokuwa ameishi miaka 162, akawa baba wa Henoko.",
           "R": "Yaredi alipokuwa na umri wa miaka 162, alipata mtoto wa kiume aliyeitwa Henoko."
+        },
+        "vi": {
+          "L": "Và Gia-rết sống 162 năm và sinh Hê-nóc.",
+          "B": "Khi Gia-rết sống được 162 năm, ông sinh Hê-nóc.",
+          "R": "Khi Gia-rết được 162 tuổi, ông có một con trai tên là Hê-nóc."
+        },
+        "ko": {
+          "L": "그리고 야렛은 162년을 살고 에녹을 낳았다.",
+          "B": "야렛은 162년을 살았을 때 에녹을 낳았다.",
+          "R": "야렛이 162살이었을 때, 에녹이라는 아들을 낳았다."
         }
       },
       "decisions": [],
@@ -1576,6 +1913,16 @@
           "L": "Naye Yaredi akaishi baada ya kumzaa Henoko miaka 800, akazaa wana wa kiume na wa kike.",
           "B": "Baada ya Henoko kuzaliwa, Yaredi aliishi miaka 800, akapata wana wengine wa kiume na wa kike.",
           "R": "Baada ya Henoko kuzaliwa, Yaredi aliishi miaka 800 zaidi. Alipata pia watoto wengine wa kiume na wa kike."
+        },
+        "vi": {
+          "L": "Và Gia-rết sống sau khi sinh Hê-nóc 800 năm, và ông sinh con trai con gái.",
+          "B": "Sau khi sinh Hê-nóc, Gia-rết sống thêm 800 năm và có những con trai con gái khác.",
+          "R": "Sau khi Hê-nóc ra đời, Gia-rết sống thêm 800 năm nữa. Ông cũng có những con trai con gái khác."
+        },
+        "ko": {
+          "L": "그리고 야렛은 에녹을 낳은 뒤에 800년을 살며 아들들과 딸들을 낳았다.",
+          "B": "에녹을 낳은 뒤에 야렛은 800년을 살면서 다른 아들딸을 낳았다.",
+          "R": "에녹이 태어난 뒤에 야렛은 800년을 더 살았다. 야렛에게는 다른 아들딸도 있었다."
         }
       },
       "decisions": [],
@@ -1629,6 +1976,16 @@
           "L": "Na siku zote za Yaredi zilikuwa miaka 962, akafa.",
           "B": "Kwa jumla, Yaredi aliishi miaka 962, kisha akafa.",
           "R": "Yaredi aliishi mpaka umri wa miaka 962, kisha akafa."
+        },
+        "vi": {
+          "L": "Và trọn các ngày của Gia-rết là 962 năm, và ông chết.",
+          "B": "Tổng cộng Gia-rết sống được 962 năm, rồi ông qua đời.",
+          "R": "Gia-rết sống được 962 tuổi, rồi ông qua đời."
+        },
+        "ko": {
+          "L": "그리고 야렛의 모든 날은 962년이었고, 그는 죽었다.",
+          "B": "야렛은 모두 962년을 살고 죽었다.",
+          "R": "야렛은 962살까지 살다가 죽었다."
         }
       },
       "decisions": [],
@@ -1678,6 +2035,16 @@
           "L": "Naye Henoko akaishi miaka sitini na tano, akamzaa Methusela.",
           "B": "Henoko alipokuwa ameishi miaka sitini na tano, akawa baba wa Methusela.",
           "R": "Henoko alipokuwa na umri wa miaka sitini na tano, alipata mtoto wa kiume aliyeitwa Methusela."
+        },
+        "vi": {
+          "L": "Và Hê-nóc sống sáu mươi lăm năm và sinh Mê-tu-sê-la.",
+          "B": "Khi Hê-nóc sống được sáu mươi lăm năm, ông sinh Mê-tu-sê-la.",
+          "R": "Khi Hê-nóc được sáu mươi lăm tuổi, ông có một con trai tên là Mê-tu-sê-la."
+        },
+        "ko": {
+          "L": "그리고 에녹은 육십오 년을 살고 므두셀라를 낳았다.",
+          "B": "에녹은 육십오 년을 살았을 때 므두셀라를 낳았다.",
+          "R": "에녹이 예순다섯 살이었을 때, 므두셀라라는 아들을 낳았다."
         }
       },
       "decisions": [],
@@ -1735,6 +2102,16 @@
           "L": "Naye Henoko akatembea pamoja na Mungu baada ya kumzaa Methusela miaka 300, akazaa wana wa kiume na wa kike.",
           "B": "Baada ya Methusela kuzaliwa, Henoko alitembea pamoja na Mungu miaka 300, akapata wana wengine wa kiume na wa kike.",
           "R": "Baada ya Methusela kuzaliwa, Henoko aliishi karibu na Mungu kwa miaka 300. Alipata pia watoto wengine wa kiume na wa kike."
+        },
+        "vi": {
+          "L": "Và Hê-nóc đồng đi với Đức Chúa Trời sau khi sinh Mê-tu-sê-la 300 năm, và ông sinh con trai con gái.",
+          "B": "Sau khi sinh Mê-tu-sê-la, Hê-nóc đồng đi với Đức Chúa Trời 300 năm và có những con trai con gái khác.",
+          "R": "Sau khi Mê-tu-sê-la ra đời, Hê-nóc sống gần gũi với Đức Chúa Trời trong 300 năm. Ông cũng có những con trai con gái khác."
+        },
+        "ko": {
+          "L": "그리고 에녹은 므두셀라를 낳은 뒤에 300년 동안 하나님과 함께 걸으며 아들들과 딸들을 낳았다.",
+          "B": "므두셀라를 낳은 뒤에 에녹은 300년 동안 하나님과 함께 걸으면서 다른 아들딸을 낳았다.",
+          "R": "므두셀라가 태어난 뒤에 에녹은 300년 동안 하나님과 가까이 지냈다. 에녹에게는 다른 아들딸도 있었다."
         }
       },
       "decisions": [
@@ -1800,6 +2177,53 @@
           "reason": "As in English, Readable says what the idiom means (m1); \"muy unido a\" is the natural Spanish way to say \"close to\" a person, where \"cerca de\" suggests physical nearness.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010050220012",
+            "o010050220031",
+            "o010050220041",
+            "o010050220042"
+          ],
+          "choice": "\"đồng đi với Đức Chúa Trời\" (L, B), \"sống gần gũi với Đức Chúa Trời\" (R)",
+          "alternatives": [
+            "\"đi với Đức Chúa Trời\""
+          ],
+          "reason": "\"đồng đi\" (walk together with) keeps the Hebrew picture and says it is fellowship (m1); Readable says the meaning, as the English Readable does. The same wording returns in 5:24 and 6:9.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010050220012",
+            "o010050220021",
+            "o010050220031",
+            "o010050220041",
+            "o010050220042"
+          ],
+          "choice": "\"하나님과 함께 걸으며\" (L, B); \"하나님과 가까이 지냈다\" (R)",
+          "alternatives": [
+            "하나님과 동행하며"
+          ],
+          "reason": "The Hebrew picture is of walking with God, a life lived close to him (meaning decision m1). Literal and Balanced keep the picture in plain words; \"동행하다\" is the Sino-Korean word of older Bibles. Readable says what it means, as the English Readable does. The same holds in verse 24 and 6:9.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1850,6 +2274,16 @@
           "L": "Na siku zote za Henoko zilikuwa miaka 365.",
           "B": "Kwa jumla, Henoko aliishi miaka 365.",
           "R": "Henoko aliishi duniani miaka 365."
+        },
+        "vi": {
+          "L": "Và trọn các ngày của Hê-nóc là 365 năm.",
+          "B": "Tổng cộng Hê-nóc sống được 365 năm.",
+          "R": "Hê-nóc sống trên đất 365 năm."
+        },
+        "ko": {
+          "L": "그리고 에녹의 모든 날은 365년이었다.",
+          "B": "에녹은 모두 365년을 살았다.",
+          "R": "에녹은 이 땅에서 365년을 살았다."
         }
       },
       "decisions": [
@@ -1937,6 +2371,16 @@
           "L": "Naye Henoko akatembea pamoja na Mungu, naye hakuwepo, kwa maana Mungu alimchukua.",
           "B": "Henoko alitembea pamoja na Mungu, kisha hakuonekana tena, kwa sababu Mungu alimchukua.",
           "R": "Henoko aliishi karibu na Mungu. Kisha siku moja hakuwepo tena, kwa sababu Mungu alikuwa amemchukua."
+        },
+        "vi": {
+          "L": "Và Hê-nóc đồng đi với Đức Chúa Trời, và ông không còn nữa, vì Đức Chúa Trời đã đem ông đi.",
+          "B": "Hê-nóc đồng đi với Đức Chúa Trời, rồi ông không còn nữa, vì Đức Chúa Trời đã đem ông đi.",
+          "R": "Hê-nóc sống gần gũi với Đức Chúa Trời. Rồi một ngày kia ông không còn ở đó nữa, vì Đức Chúa Trời đã đem ông đi."
+        },
+        "ko": {
+          "L": "그리고 에녹은 하나님과 함께 걸었다. 그리고 그는 없어졌으니, 하나님께서 그를 데려가셨기 때문이다.",
+          "B": "에녹은 하나님과 함께 걸었다. 그러다가 그가 보이지 않게 되었으니, 하나님께서 그를 데려가셨기 때문이다.",
+          "R": "에녹은 하나님과 가까이 지냈다. 그러던 어느 날 에녹은 사라졌다. 하나님께서 그를 데려가셨기 때문이다."
         }
       },
       "decisions": [
@@ -2036,6 +2480,16 @@
           "L": "Naye Methusela akaishi miaka 187, akamzaa Lameki.",
           "B": "Methusela alipokuwa ameishi miaka 187, akawa baba wa Lameki.",
           "R": "Methusela alipokuwa na umri wa miaka 187, alipata mtoto wa kiume aliyeitwa Lameki."
+        },
+        "vi": {
+          "L": "Và Mê-tu-sê-la sống 187 năm và sinh La-méc.",
+          "B": "Khi Mê-tu-sê-la sống được 187 năm, ông sinh La-méc.",
+          "R": "Khi Mê-tu-sê-la được 187 tuổi, ông có một con trai tên là La-méc."
+        },
+        "ko": {
+          "L": "그리고 므두셀라는 187년을 살고 라멕을 낳았다.",
+          "B": "므두셀라는 187년을 살았을 때 라멕을 낳았다.",
+          "R": "므두셀라가 187살이었을 때, 라멕이라는 아들을 낳았다."
         }
       },
       "decisions": [],
@@ -2095,6 +2549,16 @@
           "L": "Naye Methusela akaishi baada ya kumzaa Lameki miaka 782, akazaa wana wa kiume na wa kike.",
           "B": "Baada ya Lameki kuzaliwa, Methusela aliishi miaka 782, akapata wana wengine wa kiume na wa kike.",
           "R": "Baada ya Lameki kuzaliwa, Methusela aliishi miaka 782 zaidi. Alipata pia watoto wengine wa kiume na wa kike."
+        },
+        "vi": {
+          "L": "Và Mê-tu-sê-la sống sau khi sinh La-méc 782 năm, và ông sinh con trai con gái.",
+          "B": "Sau khi sinh La-méc, Mê-tu-sê-la sống thêm 782 năm và có những con trai con gái khác.",
+          "R": "Sau khi La-méc ra đời, Mê-tu-sê-la sống thêm 782 năm nữa. Ông cũng có những con trai con gái khác."
+        },
+        "ko": {
+          "L": "그리고 므두셀라는 라멕을 낳은 뒤에 782년을 살며 아들들과 딸들을 낳았다.",
+          "B": "라멕을 낳은 뒤에 므두셀라는 782년을 살면서 다른 아들딸을 낳았다.",
+          "R": "라멕이 태어난 뒤에 므두셀라는 782년을 더 살았다. 므두셀라에게는 다른 아들딸도 있었다."
         }
       },
       "decisions": [],
@@ -2148,6 +2612,16 @@
           "L": "Na siku zote za Methusela zilikuwa miaka 969, akafa.",
           "B": "Kwa jumla, Methusela aliishi miaka 969, kisha akafa.",
           "R": "Methusela aliishi mpaka umri wa miaka 969, kisha akafa."
+        },
+        "vi": {
+          "L": "Và trọn các ngày của Mê-tu-sê-la là 969 năm, và ông chết.",
+          "B": "Tổng cộng Mê-tu-sê-la sống được 969 năm, rồi ông qua đời.",
+          "R": "Mê-tu-sê-la sống được 969 tuổi, rồi ông qua đời."
+        },
+        "ko": {
+          "L": "그리고 므두셀라의 모든 날은 969년이었고, 그는 죽었다.",
+          "B": "므두셀라는 모두 969년을 살고 죽었다.",
+          "R": "므두셀라는 969살까지 살다가 죽었다."
         }
       },
       "decisions": [
@@ -2216,6 +2690,16 @@
           "L": "Naye Lameki akaishi miaka 182, akazaa mwana.",
           "B": "Lameki alipokuwa ameishi miaka 182, alipata mwana.",
           "R": "Lameki alipokuwa na umri wa miaka 182, alipata mtoto wa kiume."
+        },
+        "vi": {
+          "L": "Và La-méc sống 182 năm và sinh một con trai.",
+          "B": "Khi La-méc sống được 182 năm, ông sinh một con trai.",
+          "R": "Khi La-méc được 182 tuổi, ông có một con trai."
+        },
+        "ko": {
+          "L": "그리고 라멕은 182년을 살고 아들을 낳았다.",
+          "B": "라멕은 182년을 살았을 때 아들을 낳았다.",
+          "R": "라멕이 182살이었을 때, 아들을 낳았다."
         }
       },
       "decisions": [
@@ -2295,6 +2779,16 @@
           "L": "Naye akamwita jina lake Nuhu, akisema, \"Huyu atatufariji katika kazi yetu na katika taabu ya mikono yetu, [itokayo] katika ardhi ambayo {{divine_name:BWANA|Yahwe}} ameilaani.\"",
           "B": "Akamwita Nuhu, akisema, \"Yeye atatupumzisha kutoka katika kazi yetu na taabu ya mikono yetu, inayosababishwa na ardhi ambayo {{divine_name:BWANA|Yahwe}} ameilaani.\"",
           "R": "Akamwita Nuhu. Akasema, \"Mtoto huyu atatupa pumziko kutoka katika kazi yetu ngumu, na kazi yote nzito tunayofanya katika ardhi ambayo {{divine_name:BWANA|Yahwe}} ameilaani.\""
+        },
+        "vi": {
+          "L": "Và ông đặt tên con là Nô-ê, mà nói: \"Đứa này sẽ an ủi chúng ta trong công việc của chúng ta và trong sự lao khổ của tay chúng ta, từ đất mà {{divine_name:CHÚA|Gia-vê}} đã nguyền rủa.\"",
+          "B": "Ông đặt tên con là Nô-ê, và nói: \"Đứa trẻ này sẽ cho chúng ta được nghỉ ngơi khỏi công việc và sự lao khổ của tay chúng ta, do đất mà {{divine_name:CHÚA|Gia-vê}} đã nguyền rủa.\"",
+          "R": "Ông đặt tên con là Nô-ê. Tên này nghe giống như chữ \"nghỉ ngơi\" trong tiếng Hê-bơ-rơ. Ông nói: \"Đứa trẻ này sẽ cho chúng ta được nghỉ ngơi khỏi công việc nặng nhọc, khỏi mọi sự lao khổ chúng ta phải làm trên đất mà {{divine_name:CHÚA|Gia-vê}} đã nguyền rủa.\""
+        },
+        "ko": {
+          "L": "그리고 그가 그의 이름을 노아라고 부르며 말했다. \"{{divine_name:주|야훼}}께서 저주하신 땅으로 말미암아 [생긴] 우리의 일과 우리 손의 고된 수고에서 이 아이가 우리를 위로할 것이다.\"",
+          "B": "라멕은 그의 이름을 노아라고 지으며 말했다. \"{{divine_name:주|야훼}}께서 저주하신 땅 때문에 우리가 일하며 손으로 고되게 수고하는데, 이 아이가 우리에게 위로를 줄 것이다.\"",
+          "R": "라멕은 그 아이의 이름을 노아라고 지었다. 이 이름은 히브리 말로 \"쉼\"이라는 말과 소리가 비슷하다. 라멕이 말했다. \"{{divine_name:주|야훼}}께서 저주하신 땅에서 우리는 아주 힘들게 일해야 한다. 이 아이가 그 힘든 일에서 우리를 쉬게 해 줄 것이다.\""
         }
       },
       "decisions": [
@@ -2371,6 +2865,73 @@
           "reason": "The Hebrew says only \"from the ground\": the toil comes from the cursed ground. Spanish \"del suelo\" alone would read as \"of the ground\", so Literal brackets \"a causa\". Literal and Balanced say \"el suelo\", as in 3:17, whose curse this verse recalls (see 2:5); Readable says \"la tierra\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o010050290041"
+          ],
+          "choice": "\"Tên này nghe giống như chữ \"nghỉ ngơi\" trong tiếng Hê-bơ-rơ\" (R)",
+          "alternatives": [
+            "no explanation, as the English Readable"
+          ],
+          "reason": "The Genesis terms note asks Readable to say what an explained name sounds like. The English Readable leaves it to the meaning decision (m1) here; Vietnamese Readable says it in a short sentence so that \"nghỉ ngơi\" in Lamech's words can be heard against the name.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o010050290041"
+          ],
+          "choice": "Readable says what the name sounds like: \"히브리 말로 \"쉼\"이라는 말과 소리가 비슷하다\"",
+          "alternatives": [
+            "the name with no explanation (R)"
+          ],
+          "reason": "The name Noah sounds like the Hebrew words for rest and comfort (meaning decision m1). As the terms note says for explained names, Readable tells the reader the wordplay, and Literal and Balanced keep the verb \"위로하다\", comfort, which the Hebrew name echoes.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010050290093",
+            "o010050290101",
+            "o010050290102",
+            "o010050290111",
+            "o010050290121",
+            "o010050290122",
+            "o010050290131",
+            "o010050290141",
+            "o010050290142"
+          ],
+          "choice": "\"고된 수고 ... 저주하신 땅\"",
+          "alternatives": [
+            "고생",
+            "고통"
+          ],
+          "reason": "The words of 3:17 (meaning decision m2); Korean uses \"수고\" and \"저주\" as it did there, so the echo is kept.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2429,6 +2990,16 @@
           "L": "Naye Lameki akaishi baada ya kumzaa Nuhu miaka 595, akazaa wana wa kiume na wa kike.",
           "B": "Baada ya Nuhu kuzaliwa, Lameki aliishi miaka 595, akapata wana wengine wa kiume na wa kike.",
           "R": "Baada ya Nuhu kuzaliwa, Lameki aliishi miaka 595 zaidi. Alipata pia watoto wengine wa kiume na wa kike."
+        },
+        "vi": {
+          "L": "Và La-méc sống sau khi sinh Nô-ê 595 năm, và ông sinh con trai con gái.",
+          "B": "Sau khi sinh Nô-ê, La-méc sống thêm 595 năm và có những con trai con gái khác.",
+          "R": "Sau khi Nô-ê ra đời, La-méc sống thêm 595 năm nữa. Ông cũng có những con trai con gái khác."
+        },
+        "ko": {
+          "L": "그리고 라멕은 노아를 낳은 뒤에 595년을 살며 아들들과 딸들을 낳았다.",
+          "B": "노아를 낳은 뒤에 라멕은 595년을 살면서 다른 아들딸을 낳았다.",
+          "R": "노아가 태어난 뒤에 라멕은 595년을 더 살았다. 라멕에게는 다른 아들딸도 있었다."
         }
       },
       "decisions": [],
@@ -2482,6 +3053,16 @@
           "L": "Na siku zote za Lameki zilikuwa miaka 777, akafa.",
           "B": "Kwa jumla, Lameki aliishi miaka 777, kisha akafa.",
           "R": "Lameki aliishi mpaka umri wa miaka 777, kisha akafa."
+        },
+        "vi": {
+          "L": "Và trọn các ngày của La-méc là 777 năm, và ông chết.",
+          "B": "Tổng cộng La-méc sống được 777 năm, rồi ông qua đời.",
+          "R": "La-méc sống được 777 tuổi, rồi ông qua đời."
+        },
+        "ko": {
+          "L": "그리고 라멕의 모든 날은 777년이었고, 그는 죽었다.",
+          "B": "라멕은 모두 777년을 살고 죽었다.",
+          "R": "라멕은 777살까지 살다가 죽었다."
         }
       },
       "decisions": [],
@@ -2537,6 +3118,16 @@
           "L": "Naye Nuhu alikuwa na umri wa miaka 500, naye Nuhu akawazaa Shemu, Hamu na Yafethi.",
           "B": "Nuhu alipokuwa na umri wa miaka 500, akawa baba wa Shemu, Hamu na Yafethi.",
           "R": "Nuhu alipokuwa na umri wa miaka 500, alipata wana watatu: Shemu, Hamu na Yafethi."
+        },
+        "vi": {
+          "L": "Và Nô-ê được 500 tuổi, và Nô-ê sinh Sem, Cham và Gia-phết.",
+          "B": "Sau khi Nô-ê được 500 tuổi, ông sinh Sem, Cham và Gia-phết.",
+          "R": "Khi Nô-ê được 500 tuổi, ông có ba con trai: Sem, Cham và Gia-phết."
+        },
+        "ko": {
+          "L": "그리고 노아는 500세가 되었고, 노아는 셈과 함과 야벳을 낳았다.",
+          "B": "노아는 500살이 된 뒤에 셈과 함과 야벳을 낳았다.",
+          "R": "노아가 500살이었을 때, 세 아들 셈과 함과 야벳을 낳았다."
         }
       },
       "decisions": [
