@@ -3648,6 +3648,10 @@ def article_html(text, toc=None, lang="en", text_language="en"):
         return f"\x00{len(fills) - 1}\x00"
 
     def href(target):
+        # An article not written in lang yet is linked in English.
+        m = re.fullmatch(r"/articles/([\w-]+)/", target)
+        if m and lang != "en" and not (ARTICLES / lang / f"{m[1]}.md").is_file():
+            return target
         return url(lang, target) if target.startswith("/") else target
 
     def inline(s):
