@@ -48,6 +48,11 @@
           "L": "Na Yoshua alikuwa mzee, amesonga mbele katika siku. Na {{divine_name:BWANA|Yahwe}} akamwambia, \"Wewe ni mzee, umesonga mbele katika siku, na nchi imebaki nyingi sana kuimiliki.",
           "B": "Yoshua alikuwa sasa amezeeka, akiwa na umri mkubwa. {{divine_name:BWANA|Yahwe}} akamwambia, \"Umezeeka, na umri wako ni mkubwa, na bado imebaki sehemu kubwa sana ya nchi ili itwaliwe.",
           "R": "Yoshua alikuwa amezeeka. {{divine_name:BWANA|Yahwe}} akamwambia, \"Sasa wewe ni mzee, na bado kuna nchi kubwa sana ambayo Israeli wanapaswa kuitwaa."
+        },
+        "es": {
+          "L": "Y Josué era viejo, avanzado en días. Y {{divine_name:el SEÑOR|Yahvé}} le dijo: «Tú eres viejo, has avanzado en días, y queda muchísima tierra por poseer.",
+          "B": "Josué ya había envejecido y era de edad muy avanzada. {{divine_name:El SEÑOR|Yahvé}} le dijo: «Has envejecido y tienes muchos años, y todavía queda muchísima tierra por conquistar.",
+          "R": "Josué ya era viejo. {{divine_name:El SEÑOR|Yahvé}} le dijo: «Ya eres un anciano, y todavía queda mucha tierra que Israel tiene que tomar."
         }
       },
       "decisions": [
@@ -122,6 +127,46 @@
           "reason": "Readable names Israel as the people who are to take the land; the Hebrew leaves the subject unstated, but the rest of the speech makes it plain (verse 6).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o060130010061"
+          ],
+          "choice": "\"el SEÑOR\" by default, \"Yahvé\" with the divine name setting (\"El SEÑOR\" at a sentence start, \"del SEÑOR\" / \"de Yahvé\", \"al SEÑOR\" / \"a Yahvé\")",
+          "alternatives": [
+            "\"Jehová\" as the alternative (the Reina-Valera tradition)",
+            "\"Yahvé\" in the text"
+          ],
+          "reason": "For Joshua 13-24, as in the Pentateuch: the divine name is written \"el SEÑOR\" in capitals by default, like the English \"the LORD\", and the divine name setting gives \"Yahvé\". The span takes in the article and its contraction so both options read naturally. \"Jehová\" is a late form that joins the consonants of the name to the vowels of \"Adonai\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o060130010161",
+            "o060130010162"
+          ],
+          "choice": "\"que Israel tiene que tomar\"",
+          "alternatives": [],
+          "reason": "Readable names Israel as the people who are to take the land, as the English Readable does; the Hebrew leaves the subject unstated, but verse 6 makes it plain.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -162,6 +207,11 @@
           "L": "Hii ndiyo nchi iliyobaki: maeneo yote ya Wafilisti na Wageshuri wote,",
           "B": "Hii ndiyo nchi iliyobaki: maeneo yote ya Wafilisti na nchi yote ya Wageshuri,",
           "R": "Nchi ambayo bado imebaki ni hii: nchi yote ya Wafilisti na ya Wageshuri."
+        },
+        "es": {
+          "L": "Esta es la tierra que queda: todas las regiones de los filisteos y todo el guesureo,",
+          "B": "Esta es la tierra que queda: todas las regiones de los filisteos y toda la tierra de los guesureos,",
+          "R": "Esta es la tierra que todavía falta: toda la tierra de los filisteos y de los guesureos."
         }
       },
       "decisions": [
@@ -235,6 +285,27 @@
           "reason": "For the name lists of Joshua 13-21: a people takes the class prefix \"Wa-\", as Wafilisti and Waamori already do in the Pentateuch, and a place name ends in a vowel where Swahili writes one, with \"s\" for the Hebrew letter tsade (Suri, Safoni, Sereth-shahari) and the forms already used in Deuteronomy 2-4 (Aroeri, Arnoni, Heshboni, Bashani, Saleka, Edrei, Kinerethi). Every name in the lists is kept.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o060130020082"
+          ],
+          "choice": "\"los guesureos\" for these southern Geshurites",
+          "alternatives": [
+            "\"los guesuritas\", as in verse 11"
+          ],
+          "reason": "The meaning decision reads these Geshurites as a people of the far south, near the Philistines, not the kingdom of Geshur east of the Jordan in verses 11 and 13. Spanish keeps two forms apart: \"guesureos\" here, \"guesuritas\" for the northern people, as in Deuteronomy 3:14.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -296,6 +367,11 @@
           "L": "kutoka Shihori, ulio mashariki ya Misri, hadi mpaka wa Ekroni kuelekea kaskazini, inahesabiwa kuwa ya Wakanaani: watawala watano wa Wafilisti, Mgaza na Mwashdodi, Mwashkeloni, Mgathi na Mwekroni; na Waavi,",
           "B": "kutoka Shihori, mashariki ya Misri, hadi mpaka wa Ekroni upande wa kaskazini, nchi inayohesabiwa kuwa ya Wakanaani. Kuna watawala watano wa Wafilisti, wa Gaza, Ashdodi, Ashkeloni, Gathi na Ekroni, na kuna Waavi,",
           "R": "Inaanzia kijito cha Shihori, mashariki ya Misri, kuelekea kaskazini hadi mpaka wa Ekroni. Eneo hili lote linahesabiwa kuwa sehemu ya nchi ya Kanaani. Kuna watawala watano wa Wafilisti, wa Gaza, Ashdodi, Ashkeloni, Gathi na Ekroni. Pia kuna Waavi."
+        },
+        "es": {
+          "L": "desde el Sihor, que está frente a Egipto, hasta la frontera de Ecrón al norte, se cuenta como cananea: los cinco jefes de los filisteos, el de Gaza y el de Asdod, el de Ascalón, el de Gat y el de Ecrón; y los aveos,",
+          "B": "desde el Sihor, al este de Egipto, hasta la frontera de Ecrón por el norte, tierra que se cuenta como cananea. Allí están los cinco jefes de los filisteos, los de Gaza, Asdod, Ascalón, Gat y Ecrón, y están los aveos,",
+          "R": "Va desde el arroyo Sihor, al este de Egipto, hacia el norte hasta la frontera de Ecrón. Todo esto se cuenta como parte de la tierra de Canaán. Allí están los cinco jefes filisteos, los de Gaza, Asdod, Ascalón, Gat y Ecrón. También están los aveos."
         }
       },
       "decisions": [
@@ -409,6 +485,28 @@
           "reason": "Readable adds \"stream\" so the reader knows the Shihor is water, and makes plain that \"Canaanite\" means the land of Canaan that God promised. It splits the long list into short sentences.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o060130030141"
+          ],
+          "choice": "\"los cinco jefes de los filisteos\"",
+          "alternatives": [
+            "\"los cinco príncipes\"",
+            "\"los cinco señores\""
+          ],
+          "reason": "The Philistine title names the lord of each of the five cities. \"Jefe\" says that plainly; \"príncipe\" would suggest royalty. The cities in their usual Spanish forms: Gaza, Asdod, Ascalón, Gat, Ecrón.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -454,6 +552,11 @@
           "L": "kutoka kusini, nchi yote ya Wakanaani, na Meara iliyo ya Wasidoni, hadi Afeki, hadi mpaka wa Waamori;",
           "B": "upande wa kusini, nchi yote ya Wakanaani, na Meara ya Wasidoni, hadi Afeki na mpaka wa Waamori;",
           "R": "Upande wa kusini kuna nchi yote ya Wakanaani, na Meara, iliyo ya watu wa Sidoni, hadi Afeki na mpaka wa Waamori."
+        },
+        "es": {
+          "L": "desde el sur, toda la tierra de los cananeos, y Meará, que [pertenece] a los sidonios, hasta Afec, hasta la frontera de los amorreos;",
+          "B": "desde el sur, toda la tierra de los cananeos, y Meará, que pertenece a los sidonios, hasta Afec y la frontera de los amorreos;",
+          "R": "Desde el sur está toda la tierra de los cananeos, y Meará, que pertenece a la gente de Sidón, hasta Afec y la frontera de los amorreos."
         }
       },
       "decisions": [
@@ -574,6 +677,11 @@
           "L": "na nchi ya Wagebali, na Lebanoni yote kuelekea mawio ya jua, kutoka Baal-gadi chini ya mlima Hermoni hadi Lebo-hamathi;",
           "B": "na nchi ya Wagebali, na Lebanoni yote upande wa mawio ya jua, kutoka Baal-gadi chini ya Mlima Hermoni hadi Lebo-hamathi;",
           "R": "Kuna nchi ya watu wa Gebali, na milima yote ya Lebanoni upande wa mashariki, kutoka Baal-gadi chini ya Mlima Hermoni hadi Lebo-hamathi."
+        },
+        "es": {
+          "L": "y la tierra de los giblitas, y todo el Líbano hacia la salida del sol, desde Baal-gad, al pie del monte Hermón, hasta Lebo-hamat;",
+          "B": "y la tierra de los giblitas, y todo el Líbano hacia el oriente, desde Baal-gad, al pie del monte Hermón, hasta Lebo-hamat;",
+          "R": "Está la tierra de la gente de Gebal, y todos los montes del Líbano hacia el este, desde Baal-gad, al pie del monte Hermón, hasta Lebo-hamat."
         }
       },
       "decisions": [
@@ -702,6 +810,11 @@
           "L": "wakaaji wote wa nchi ya milima kutoka Lebanoni hadi Misrefoth-maimu, Wasidoni wote. Mimi mwenyewe nitawafukuza mbele ya wana wa Israeli. Ila uigawe kwa Israeli kuwa urithi, kama nilivyokuamuru.",
           "B": "wote wanaoishi katika nchi ya milima kutoka Lebanoni hadi Misrefoth-maimu, Wasidoni wote. Mimi ndiye nitakayewafukuza mbele ya Waisraeli. Wewe ugawe tu nchi hii kwa Israeli iwe urithi, kama nilivyokuamuru.",
           "R": "Watu wote wa nchi ya milima, kutoka milima ya Lebanoni hadi Misrefoth-maimu, watu wote wa Sidoni: mimi mwenyewe nitawafukuza mbele ya Waisraeli. Nawe uigawe nchi kati ya Waisraeli kwa kura. Itakuwa nchi yao wenyewe, kama nilivyokuamuru."
+        },
+        "es": {
+          "L": "todos los habitantes de la región montañosa desde el Líbano hasta Misrefot-maim, todos los sidonios. Yo mismo los desposeeré delante de los hijos de Israel. Solamente repártela por suerte a Israel en heredad, como te he mandado.",
+          "B": "todos los que viven en la región montañosa desde el Líbano hasta Misrefot-maim, todos los sidonios. Yo soy quien los expulsará delante de los israelitas. Tú solamente reparte la tierra por suerte a Israel como heredad, como te he mandado.",
+          "R": "Toda la gente de la región montañosa, desde los montes del Líbano hasta Misrefot-maim, toda la gente de Sidón: yo mismo los echaré de delante de los israelitas. Tú debes repartir la tierra entre los israelitas por sorteo. Será su propia tierra, como te mandé."
         }
       },
       "decisions": [
@@ -831,6 +944,49 @@
           "reason": "For Joshua 13-24: \"urithi\" is the inherited share of land, as in the Pentateuch, and \"kura\" is the lot cast to assign it. Readable sometimes says \"nchi yao wenyewe\" (their own land) where the English Readable spells the idea out.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o060130060192",
+            "o060130060171",
+            "o060130060172"
+          ],
+          "choice": "\"heredad\" for the inheritance; \"repartir por suerte\" (L, B), \"por sorteo\" (R) for allotting by lot",
+          "alternatives": [
+            "\"herencia\"",
+            "\"posesión\""
+          ],
+          "reason": "For Joshua 13-24, as the terms note sets: the land each tribe receives is \"la heredad\", the word for a lasting family holding, rather than \"herencia\", which suggests what is left by someone who has died. The lot is \"la suerte\"; Readable says \"por sorteo\", the everyday word for drawing lots.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o060130060122"
+          ],
+          "choice": "\"desposeeré\" (L); \"expulsará\" (B); \"echaré\" (R)",
+          "alternatives": [],
+          "reason": "Literal keeps the Hebrew \"dispossess\", taking the land from those who held it; Balanced and Readable say \"drive out\", as the English does. The same verb returns through these chapters (13:12-13; 15:63; 16:10; 17:12-13).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -878,6 +1034,11 @@
           "L": "Na sasa igawe nchi hii kuwa urithi kwa makabila tisa na nusu ya kabila la Manase.\"",
           "B": "Basi sasa igawe nchi hii iwe urithi wa makabila tisa na nusu ya kabila la Manase.\"",
           "R": "Basi sasa igawe nchi hii kati ya makabila tisa na nusu ya kabila la Manase, iwe yao wenyewe.\""
+        },
+        "es": {
+          "L": "Y ahora reparte esta tierra en heredad a las nueve tribus y a la media tribu de Manasés».",
+          "B": "Así que ahora reparte esta tierra como heredad entre las nueve tribus y la media tribu de Manasés».",
+          "R": "Así que ahora reparte esta tierra entre las nueve tribus y la media tribu de Manasés, para que sea suya»."
         }
       },
       "decisions": [
@@ -992,6 +1153,11 @@
           "L": "Pamoja nayo Wareubeni na Wagadi walipokea urithi wao, ambao Musa aliwapa ng'ambo ya Yordani upande wa mashariki, kama Musa mtumishi wa {{divine_name:BWANA|Yahwe}} alivyowapa,",
           "B": "Pamoja na nusu nyingine ya Manase, Wareubeni na Wagadi walikuwa wamepokea urithi wao, ambao Musa aliwapa upande wa mashariki wa Yordani, kama Musa mtumishi wa {{divine_name:BWANA|Yahwe}} alivyokuwa amewagawia,",
           "R": "Nusu nyingine ya kabila la Manase, pamoja na makabila ya Reubeni na Gadi, walikuwa wamekwisha kupokea nchi yao upande wa mashariki wa Yordani. Musa, mtumishi wa {{divine_name:BWANA|Yahwe}}, ndiye aliyekuwa amewapa."
+        },
+        "es": {
+          "L": "Con ella los rubenitas y los gaditas recibieron su heredad, que Moisés les dio al otro lado del Jordán, al oriente, tal como se la dio Moisés, el siervo {{divine_name:del SEÑOR|de Yahvé}},",
+          "B": "Con la otra mitad de Manasés, los rubenitas y los gaditas habían recibido su heredad, la que Moisés les dio al este del Jordán, tal como Moisés, el siervo {{divine_name:del SEÑOR|de Yahvé}}, se la había asignado:",
+          "R": "La otra mitad de la tribu de Manasés, junto con las tribus de Rubén y Gad, ya había recibido su tierra al lado este del Jordán. Moisés, el siervo {{divine_name:del SEÑOR|de Yahvé}}, se la había dado."
         }
       },
       "decisions": [
@@ -1115,6 +1281,27 @@
           "reason": "As in the Pentateuch and Psalms, the title \"the servant of the LORD\" is \"mtumishi\" at every level; \"mtumwa\" would make Moses sound like a slave bought and sold, which is not what the title says. The English Literal keeps \"slave\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o060130080171"
+          ],
+          "choice": "\"el siervo del SEÑOR\" at every level, Literal included",
+          "alternatives": [
+            "\"el esclavo del SEÑOR\" (L), as the English Literal \"slave\""
+          ],
+          "reason": "The terms note for Joshua, Judges and Ruth sets \"siervo\" for Moses's title at every level, as in Psalms: the Hebrew word names a servant who belongs to his master, and for Moses it is a title of honor (as in 1:1). Spanish \"esclavo\" would bring in the sense of forced labor; \"siervo\" keeps the bond without it.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1164,6 +1351,11 @@
           "L": "kutoka Aroeri, ulio ukingoni mwa korongo la Arnoni, na mji ulio katikati ya korongo, na uwanda wote wa juu wa Medeba hadi Diboni,",
           "B": "kutoka Aroeri ukingoni mwa Bonde la Arnoni, na mji ulio katikati ya bonde, na uwanda wote wa juu wa Medeba hadi Diboni,",
           "R": "Nchi yao ilianzia Aroeri, ukingoni mwa bonde la Mto Arnoni, pamoja na mji ulio katikati ya bonde hilo. Ilijumuisha nchi yote tambarare ya juu ya Medeba hadi Diboni."
+        },
+        "es": {
+          "L": "desde Aroer, que [está] a la orilla del torrente Arnón, y la ciudad que [está] en medio del torrente, y toda la meseta de Medeba hasta Dibón;",
+          "B": "desde Aroer, a la orilla del valle del Arnón, y la población que está en medio del valle, y toda la meseta de Medeba hasta Dibón;",
+          "R": "Su tierra iba desde Aroer, a la orilla del valle del río Arnón, y el pueblo que está en medio del valle. Incluía toda la llanura alta de Medeba hasta Dibón."
         }
       },
       "decisions": [
@@ -1277,6 +1469,28 @@
           "reason": "The same words as Deuteronomy 3 for the Arnon gorge and the high plain east of the Dead Sea, so the two books describe the land alike.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o060130090051",
+            "o060130090073"
+          ],
+          "choice": "\"torrente\", \"ciudad\" (L); \"valle\", \"población\" (B); \"valle del río\", \"pueblo\" (R)",
+          "alternatives": [
+            "\"ciudad\" at every level"
+          ],
+          "reason": "For Joshua 13-24, as in Deuteronomy: Literal keeps \"torrente\" for the wadi, a stream bed that runs only in the rainy season, and \"ciudad\" for the Hebrew word; Balanced says \"población\" and Readable \"pueblo\", since most of these places were small walled towns, as the English says \"town\". The plateau is \"la meseta\" (L, B), \"la llanura alta\" (R).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1319,6 +1533,11 @@
           "L": "na miji yote ya Sihoni mfalme wa Waamori, aliyetawala Heshboni, hadi mpaka wa wana wa Amoni,",
           "B": "na miji yote ya Sihoni mfalme wa Waamori, aliyetawala Heshboni, hadi mpaka wa Waamoni,",
           "R": "Ilijumuisha miji yote ya Sihoni, mfalme wa Waamori aliyetawala kutoka Heshboni, hadi mpaka wa Waamoni."
+        },
+        "es": {
+          "L": "y todas las ciudades de Sijón, rey de los amorreos, que reinó en Hesbón, hasta la frontera de los hijos de Amón;",
+          "B": "y todas las poblaciones de Sijón, rey de los amorreos, que reinó en Hesbón, hasta la frontera de los amonitas;",
+          "R": "Incluía todos los pueblos de Sijón, el rey amorreo que gobernaba desde Hesbón, hasta la frontera de los amonitas."
         }
       },
       "decisions": [
@@ -1421,6 +1640,11 @@
           "L": "na Gileadi, na eneo la Wageshuri na Wamaakathi, na mlima Hermoni wote, na Bashani yote hadi Saleka,",
           "B": "na Gileadi, na eneo la Wageshuri na Wamaakathi, Mlima Hermoni wote, na Bashani yote hadi Saleka,",
           "R": "Ilijumuisha Gileadi, nchi ya Wageshuri na Wamaakathi, Mlima Hermoni wote, na Bashani yote hadi Saleka."
+        },
+        "es": {
+          "L": "y Galaad, y el territorio de los guesuritas y de los maacateos, y todo el monte Hermón, y todo Basán hasta Salca;",
+          "B": "y Galaad, y el territorio de los guesuritas y de los maacateos, todo el monte Hermón y todo Basán hasta Salca;",
+          "R": "Incluía Galaad, la tierra de los guesuritas y de los maacateos, todo el monte Hermón y todo Basán hasta Salca."
         }
       },
       "decisions": [
@@ -1506,6 +1730,11 @@
           "L": "ufalme wote wa Ogu katika Bashani, aliyetawala Ashtarothi na Edrei. Yeye alibaki katika mabaki ya Warefai. Na Musa akawapiga, akawafukuza.",
           "B": "ufalme wote wa Ogu katika Bashani, aliyetawala Ashtarothi na Edrei. Yeye alikuwa mmoja wa watu wa mwisho waliosalia wa Warefai. Musa aliwashinda, akawafukuza.",
           "R": "Ilijumuisha ufalme wote wa Ogu huko Bashani, aliyetawala kutoka Ashtarothi na Edrei. Ogu alikuwa mmoja wa Warefai wa mwisho, watu wanaokumbukwa kuwa majitu. Musa aliwashinda wafalme hao, akawafukuza watu wao."
+        },
+        "es": {
+          "L": "todo el reino de Og en Basán, que reinó en Astarot y en Edrei. Él había quedado del resto de los refaítas. Y Moisés los hirió y los desposeyó.",
+          "B": "todo el reino de Og en Basán, que reinó en Astarot y Edrei. Era uno de los últimos sobrevivientes de los refaítas. Moisés los derrotó y los expulsó.",
+          "R": "Incluía todo el reino de Og en Basán, que gobernaba desde Astarot y Edrei. Og fue uno de los últimos refaítas, un pueblo que se recordaba como de gigantes. Moisés venció a estos reyes y expulsó a su gente."
         }
       },
       "decisions": [
@@ -1577,6 +1806,24 @@
           "reason": "Readable explains who the Rephaim were, as m2 does, and says who \"them\" are.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o060130120122",
+            "o060130120133"
+          ],
+          "choice": "\"un pueblo que se recordaba como de gigantes\"; \"a estos reyes ... a su gente\"",
+          "alternatives": [],
+          "reason": "Readable explains who the Rephaim were and says whom Moses defeated and drove out, as the English Readable does (meaning decisions m2, m3).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1629,6 +1876,11 @@
           "L": "Lakini wana wa Israeli hawakuwafukuza Wageshuri na Wamaakathi; na Geshuri na Maakathi wanakaa katikati ya Israeli hadi siku hii ya leo.",
           "B": "Lakini Waisraeli hawakuwafukuza Wageshuri na Wamaakathi, kwa hiyo Geshuri na Maakathi wanaishi kati ya Israeli mpaka leo.",
           "R": "Lakini Waisraeli hawakuwafukuza watu wa Geshuri na Maakathi. Bado wanaishi kati ya Waisraeli hata leo."
+        },
+        "es": {
+          "L": "Pero los hijos de Israel no desposeyeron a los guesuritas ni a los maacateos, y Guesur y Maacá habitan en medio de Israel hasta el día de hoy.",
+          "B": "Pero los israelitas no expulsaron a los guesuritas ni a los maacateos, así que Guesur y Maacá viven en medio de Israel hasta el día de hoy.",
+          "R": "Pero los israelitas no echaron a la gente de Guesur y Maacá. Todavía hoy viven entre los israelitas."
         }
       },
       "decisions": [
@@ -1696,6 +1948,28 @@
           "reason": "As in verse 6.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o060130130031",
+            "o060130130041"
+          ],
+          "choice": "\"los hijos de Israel\" (L); \"los israelitas\" (B, R), with no gender span",
+          "alternatives": [
+            "a gender span as in English"
+          ],
+          "reason": "For Joshua 13-24, as in the Pentateuch: Spanish \"hijos\" already takes in daughters, so the Literal \"los hijos de Israel\" is inclusive as it stands, and Balanced and Readable say \"los israelitas\". Spanish has no second wording for the gender setting to change. The same holds for \"los hijos de Judá\", \"los descendientes de José\" and the other tribes.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1743,6 +2017,11 @@
           "L": "Ila kabila la Lawi hakulipa urithi; sadaka za kuteketezwa kwa moto za {{divine_name:BWANA|Yahwe}}, Mungu wa Israeli, ndizo urithi wake, kama alivyoliambia.",
           "B": "Ila kabila la Lawi hakulipa urithi. Sadaka za kuteketezwa kwa moto za {{divine_name:BWANA|Yahwe}}, Mungu wa Israeli, ndizo urithi wake, kama alivyoliahidi.",
           "R": "Lakini Musa hakulipa kabila la Lawi nchi. Badala yake, sadaka zinazoteketezwa kwa moto kwa ajili ya {{divine_name:BWANA|Yahwe}}, Mungu wa Israeli, ndizo fungu lao, kama alivyowaahidi."
+        },
+        "es": {
+          "L": "Solo a la tribu de Leví no le dio heredad; las ofrendas quemadas {{divine_name:del SEÑOR|de Yahvé}}, el Dios de Israel, son su heredad, tal como {{deity_pronoun:él|Él}} le había dicho.",
+          "B": "Solo a la tribu de Leví no le dio heredad. Las ofrendas quemadas {{divine_name:del SEÑOR|de Yahvé}}, el Dios de Israel, son su heredad, como {{deity_pronoun:él|Él}} se lo prometió.",
+          "R": "Pero Moisés no le dio tierra a la tribu de Leví. En cambio, las ofrendas que se queman para {{divine_name:el SEÑOR|Yahvé}}, el Dios de Israel, son su parte, como {{deity_pronoun:él|Él}} se lo prometió."
         }
       },
       "decisions": [
@@ -1886,6 +2165,27 @@
           "reason": "Swahili puts the pronoun for God inside the verb (\"alivyoliahidi\"), and a verb prefix cannot take a capital, so the setting has nothing to change here. In these chapters a span appears only on a free pronoun for God (\"yeye\", \"wake\", \"naye\").",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o060130140071"
+          ],
+          "choice": "\"las ofrendas quemadas\" (L, B); \"las ofrendas que se queman para el SEÑOR\" (R)",
+          "alternatives": [
+            "\"las ofrendas de alimento\""
+          ],
+          "reason": "As the Pentateuch terms list sets for this Hebrew word: the gifts burned on the altar for the LORD, part of which fed the priests and Levites. Readable unfolds the phrase as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1923,6 +2223,11 @@
           "L": "Na Musa akalipa kabila la wana wa Reubeni kufuatana na koo zao.",
           "B": "Musa alilipa kabila la wazao wa Reubeni nchi, ukoo kwa ukoo.",
           "R": "Musa aliwapa kabila la Reubeni nchi, jamaa kwa jamaa."
+        },
+        "es": {
+          "L": "Y Moisés dio a la tribu de los hijos de Rubén conforme a sus clanes.",
+          "B": "Moisés dio tierra a la tribu de los descendientes de Rubén, clan por clan.",
+          "R": "Moisés le dio tierra a la tribu de Rubén, familia por familia."
         }
       },
       "decisions": [
@@ -2027,6 +2332,11 @@
           "L": "Na eneo lao lilikuwa kutoka Aroeri, ulio ukingoni mwa korongo la Arnoni, na mji ulio katikati ya korongo, na uwanda wote wa juu karibu na Medeba,",
           "B": "Eneo lao lilianzia Aroeri ukingoni mwa Bonde la Arnoni, pamoja na mji ulio katikati ya bonde na uwanda wote wa juu karibu na Medeba,",
           "R": "Nchi yao ilianzia Aroeri, ukingoni mwa bonde la Mto Arnoni, ikajumuisha mji ulio katikati ya bonde hilo na nchi yote tambarare ya juu kuzunguka Medeba."
+        },
+        "es": {
+          "L": "Y fue su territorio desde Aroer, que [está] a la orilla del torrente Arnón, y la ciudad que [está] en medio del torrente, y toda la meseta junto a Medeba;",
+          "B": "Su territorio iba desde Aroer, a la orilla del valle del Arnón, con la población que está en medio del valle y toda la meseta junto a Medeba;",
+          "R": "Su tierra iba desde Aroer, a la orilla del valle del río Arnón, e incluía el pueblo que está en medio del valle y toda la llanura alta alrededor de Medeba."
         }
       },
       "decisions": [
@@ -2090,6 +2400,11 @@
           "L": "Heshboni na miji yake yote iliyo katika uwanda wa juu: Diboni na Bamoth-baali na Beth-baal-meoni,",
           "B": "Heshboni na miji yake yote katika uwanda wa juu: Diboni, Bamoth-baali, Beth-baal-meoni,",
           "R": "Ilijumuisha Heshboni na miji yote inayoizunguka katika nchi tambarare ya juu: Diboni, Bamoth-baali, Beth-baal-meoni,"
+        },
+        "es": {
+          "L": "Hesbón y todas sus ciudades que [están] en la meseta: Dibón y Bamot-baal y Bet-baal-meón,",
+          "B": "Hesbón y todas sus poblaciones de la meseta: Dibón, Bamot-baal, Bet-baal-meón,",
+          "R": "Incluía Hesbón y todos los pueblos que la rodeaban en la llanura alta: Dibón, Bamot-baal, Bet-baal-meón,"
         }
       },
       "decisions": [
@@ -2158,6 +2473,11 @@
           "L": "na Yahasi na Kedemothi na Mefaathi,",
           "B": "Yahasi, Kedemothi, Mefaathi,",
           "R": "Yahasi, Kedemothi, Mefaathi,"
+        },
+        "es": {
+          "L": "y Jahaza y Cademot y Mefaat,",
+          "B": "Jahaza, Cademot, Mefaat,",
+          "R": "Jahaza, Cademot, Mefaat,"
         }
       },
       "decisions": [
@@ -2214,6 +2534,11 @@
           "L": "na Kiriathaimu na Sibma na Sereth-shahari katika mlima wa bonde,",
           "B": "Kiriathaimu, Sibma, Sereth-shahari juu ya kilima kilicho bondeni,",
           "R": "Kiriathaimu, Sibma, Sereth-shahari juu ya kilima kilicho bondeni,"
+        },
+        "es": {
+          "L": "y Quiriataim y Sibma y Zaret-sahar en el monte del valle,",
+          "B": "Quiriataim, Sibma, Zaret-sahar en el monte del valle,",
+          "R": "Quiriataim, Sibma, Zaret-sahar en la colina del valle,"
         }
       },
       "decisions": [
@@ -2283,6 +2608,11 @@
           "L": "na Beth-peori na miteremko ya Pisga na Beth-yeshimothi,",
           "B": "Beth-peori, miteremko ya Pisga, na Beth-yeshimothi,",
           "R": "Beth-peori, miteremko ya Mlima Pisga, na Beth-yeshimothi."
+        },
+        "es": {
+          "L": "y Bet-peor y las laderas del Pisga y Bet-jesimot,",
+          "B": "Bet-peor, las laderas del Pisga y Bet-jesimot,",
+          "R": "Bet-peor, las laderas del monte Pisga y Bet-jesimot."
         }
       },
       "decisions": [
@@ -2392,6 +2722,11 @@
           "L": "na miji yote ya uwanda wa juu, na ufalme wote wa Sihoni mfalme wa Waamori, aliyetawala Heshboni, ambaye Musa alimpiga, yeye na viongozi wa Midiani, Evi na Rekemu na Suri na Huri na Reba, wakuu wa Sihoni, waliokaa katika nchi.",
           "B": "miji yote ya uwanda wa juu, na ufalme wote wa Sihoni mfalme wa Waamori, aliyetawala Heshboni. Musa alikuwa amemshinda yeye pamoja na viongozi wa Midiani, Evi, Rekemu, Suri, Huri na Reba, wakuu walioshirikiana na Sihoni walioishi katika nchi hiyo.",
           "R": "Ilijumuisha miji yote ya nchi tambarare ya juu, na ufalme wote wa Sihoni, mfalme wa Waamori aliyekuwa ametawala kutoka Heshboni. Musa alikuwa amemshinda. Aliwashinda pia viongozi wa Midiani, Evi, Rekemu, Suri, Huri na Reba. Hao walikuwa watawala chini ya Sihoni walioishi katika nchi ile."
+        },
+        "es": {
+          "L": "y todas las ciudades de la meseta, y todo el reino de Sijón, rey de los amorreos, que reinó en Hesbón, al cual hirió Moisés, a él y a los jefes de Madián, Evi y Requem y Zur y Hur y Reba, príncipes de Sijón, que habitaban la tierra.",
+          "B": "todas las poblaciones de la meseta y todo el reino de Sijón, rey de los amorreos, que reinó en Hesbón. Moisés lo había derrotado a él y a los jefes de Madián, Evi, Requem, Zur, Hur y Reba, los príncipes aliados de Sijón que vivían en aquella tierra.",
+          "R": "Incluía todos los pueblos de la llanura alta y todo el reino de Sijón, el rey amorreo que había gobernado desde Hesbón. Moisés lo había vencido. También había vencido a los jefes de Madián, Evi, Requem, Zur, Hur y Reba. Ellos gobernaban bajo Sijón y vivían en aquella tierra."
         }
       },
       "decisions": [
@@ -2525,6 +2860,11 @@
           "L": "Na Balaamu mwana wa Beori, mwaguzi, wana wa Israeli walimwua kwa upanga miongoni mwa waliouawa nao.",
           "B": "Waisraeli walimwua pia kwa upanga Balaamu mwana wa Beori, aliyekuwa mwaguzi, pamoja na wengine waliowaua.",
           "R": "Waisraeli walimwua pia Balaamu mwana wa Beori kwa upanga, pamoja na wengine waliowaua. Yeye alikuwa mtu aliyedai kujua mambo yajayo kwa kusoma ishara."
+        },
+        "es": {
+          "L": "Y a Balaam hijo de Beor, el adivino, los hijos de Israel [lo] mataron a espada entre sus muertos.",
+          "B": "Los israelitas también mataron a espada a Balaam hijo de Beor, que practicaba la adivinación, junto con los demás que mataron.",
+          "R": "Los israelitas también mataron a espada a Balaam hijo de Beor, junto con los demás que mataron. Era un hombre que decía conocer el futuro leyendo señales."
         }
       },
       "decisions": [
@@ -2656,6 +2996,11 @@
           "L": "Na mpaka wa wana wa Reubeni ulikuwa Yordani na ukingo [wake]. Huu ndio urithi wa wana wa Reubeni kufuatana na koo zao, miji na vijiji vyake.",
           "B": "Mpaka wa Wareubeni ulikuwa Mto Yordani na kingo zake. Huu ndio urithi wa wazao wa Reubeni, ukoo kwa ukoo, miji na vijiji vyake.",
           "R": "Mto Yordani ulikuwa mpaka wa magharibi wa nchi ya Reubeni. Hii ndiyo nchi ambayo jamaa za kabila la Reubeni walipokea, miji na vijiji vyake."
+        },
+        "es": {
+          "L": "Y la frontera de los hijos de Rubén fue el Jordán y [su] ribera. Esta [es] la heredad de los hijos de Rubén conforme a sus clanes, las ciudades y sus aldeas.",
+          "B": "El Jordán y su ribera formaban la frontera de los rubenitas. Esta fue la heredad de los descendientes de Rubén, clan por clan, las poblaciones y sus aldeas.",
+          "R": "El río Jordán era la frontera oeste de la tierra de Rubén. Esta fue la tierra que recibieron las familias de la tribu de Rubén, los pueblos y sus aldeas."
         }
       },
       "decisions": [
@@ -2723,6 +3068,27 @@
           "reason": "Readable adds \"western\", since the Jordan ran along the west of Reuben's land.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o060130230132"
+          ],
+          "choice": "\"las aldeas\" for the villages",
+          "alternatives": [
+            "\"los caseríos\""
+          ],
+          "reason": "For Joshua 13-24: the open settlements around each walled town are \"aldeas\" at every level, the usual Spanish word for small villages; it recurs in every closing formula of these lists.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2762,6 +3128,11 @@
           "L": "Na Musa akalipa kabila la Gadi, wana wa Gadi, kufuatana na koo zao.",
           "B": "Musa alilipa kabila la Gadi nchi, yaani wazao wa Gadi, ukoo kwa ukoo.",
           "R": "Musa aliwapa kabila la Gadi nchi, jamaa kwa jamaa."
+        },
+        "es": {
+          "L": "Y Moisés dio a la tribu de Gad, a los hijos de Gad, conforme a sus clanes.",
+          "B": "Moisés dio tierra a la tribu de Gad, a los descendientes de Gad, clan por clan.",
+          "R": "Moisés le dio tierra a la tribu de Gad, familia por familia."
         }
       },
       "decisions": [
@@ -2850,6 +3221,11 @@
           "L": "Na eneo lao lilikuwa Yazeri na miji yote ya Gileadi, na nusu ya nchi ya wana wa Amoni, hadi Aroeri, ulio mashariki ya Raba,",
           "B": "Eneo lao lilikuwa Yazeri na miji yote ya Gileadi, na nusu ya nchi ya Waamoni, hadi Aroeri mashariki ya Raba,",
           "R": "Nchi yao ilijumuisha Yazeri, miji yote ya Gileadi, na nusu ya nchi iliyokuwa ya Waamoni, hadi Aroeri, mashariki ya Raba."
+        },
+        "es": {
+          "L": "Y fue su territorio Jazer y todas las ciudades de Galaad, y la mitad de la tierra de los hijos de Amón, hasta Aroer, que [está] frente a Rabá;",
+          "B": "Su territorio era Jazer y todas las poblaciones de Galaad, y la mitad de la tierra de los amonitas, hasta Aroer, al este de Rabá;",
+          "R": "Su tierra incluía Jazer, todos los pueblos de Galaad y la mitad de la tierra que había sido de los amonitas, hasta Aroer, al este de Rabá."
         }
       },
       "decisions": [
@@ -2944,6 +3320,11 @@
           "L": "na kutoka Heshboni hadi Ramath-mispe na Betonimu, na kutoka Mahanaimu hadi mpaka wa Debiri,",
           "B": "na kutoka Heshboni hadi Ramath-mispe na Betonimu, na kutoka Mahanaimu hadi mpaka wa Debiri,",
           "R": "Ilienea kutoka Heshboni hadi Ramath-mispe na Betonimu, na kutoka Mahanaimu hadi mpaka wa Debiri."
+        },
+        "es": {
+          "L": "y desde Hesbón hasta Ramat-mizpa y Betonim, y desde Mahanaim hasta la frontera de Debir;",
+          "B": "y desde Hesbón hasta Ramat-mizpa y Betonim, y desde Mahanaim hasta la frontera de Debir;",
+          "R": "Iba desde Hesbón hasta Ramat-mizpa y Betonim, y desde Mahanaim hasta la frontera de Debir."
         }
       },
       "decisions": [
@@ -3038,6 +3419,11 @@
           "L": "na bondeni, Beth-haramu na Beth-nimra na Sukothi na Safoni, mabaki ya ufalme wa Sihoni mfalme wa Heshboni, Yordani na ukingo [wake], hadi mwisho wa Bahari ya Kinerethi, ng'ambo ya Yordani upande wa mashariki.",
           "B": "na bondeni, Beth-haramu, Beth-nimra, Sukothi na Safoni, sehemu iliyobaki ya ufalme wa Sihoni mfalme wa Heshboni, Yordani ukiwa mpaka wake hadi mwisho wa Bahari ya Kinerethi, upande wa mashariki wa Yordani.",
           "R": "Katika bonde la Yordani ilijumuisha Beth-haramu, Beth-nimra, Sukothi na Safoni, sehemu iliyobaki ya ufalme wa Sihoni, mfalme aliyetawala kutoka Heshboni. Mto Yordani ulikuwa mpaka wake wa magharibi, hadi ncha ya kusini ya Bahari ya Kinerethi (Bahari ya Galilaya), upande wa mashariki wa mto."
+        },
+        "es": {
+          "L": "y en el valle, Bet-aram y Bet-nimra y Sucot y Zafón, el resto del reino de Sijón, rey de Hesbón, el Jordán y [su] ribera, hasta el extremo del mar de Quinéret, al otro lado del Jordán, al oriente.",
+          "B": "y en el valle, Bet-aram, Bet-nimra, Sucot y Zafón, lo que quedaba del reino de Sijón, rey de Hesbón, con el Jordán como frontera hasta el extremo del mar de Quinéret, al este del Jordán.",
+          "R": "En el valle del Jordán incluía Bet-aram, Bet-nimra, Sucot y Zafón, que eran lo que quedaba del reino de Sijón, el rey que gobernaba desde Hesbón. El Jordán era su frontera oeste, hasta el extremo sur del mar de Quinéret (el lago de Galilea), al lado este del río."
         }
       },
       "decisions": [
@@ -3144,6 +3530,11 @@
           "L": "Huu ndio urithi wa wana wa Gadi kufuatana na koo zao, miji na vijiji vyake.",
           "B": "Huu ndio urithi wa wazao wa Gadi, ukoo kwa ukoo, miji na vijiji vyake.",
           "R": "Hii ndiyo nchi ambayo jamaa za kabila la Gadi walipokea, miji na vijiji vyake."
+        },
+        "es": {
+          "L": "Esta [es] la heredad de los hijos de Gad conforme a sus clanes, las ciudades y sus aldeas.",
+          "B": "Esta fue la heredad de los descendientes de Gad, clan por clan, las poblaciones y sus aldeas.",
+          "R": "Esta fue la tierra que recibieron las familias de la tribu de Gad, los pueblos y sus aldeas."
         }
       },
       "decisions": [
@@ -3207,6 +3598,11 @@
           "L": "Na Musa akaipa nusu ya kabila la Manase; nayo ilikuwa kwa nusu ya kabila la wana wa Manase kufuatana na koo zao.",
           "B": "Musa aliipa nusu ya kabila la Manase nchi. Ilikuwa mali ya nusu ya kabila la wazao wa Manase, ukoo kwa ukoo.",
           "R": "Musa aliipa nusu ya kabila la Manase nchi, jamaa kwa jamaa."
+        },
+        "es": {
+          "L": "Y Moisés dio a la media tribu de Manasés; y fue para la media tribu de los hijos de Manasés conforme a sus clanes.",
+          "B": "Moisés dio tierra a la media tribu de Manasés. Fue para la mitad de la tribu de los descendientes de Manasés, clan por clan.",
+          "R": "Moisés le dio tierra a la mitad de la tribu de Manasés, familia por familia."
         }
       },
       "decisions": [
@@ -3310,6 +3706,11 @@
           "L": "Na eneo lao lilikuwa kutoka Mahanaimu, Bashani yote, ufalme wote wa Ogu mfalme wa Bashani, na vijiji vyote vya Yairi vilivyo katika Bashani, miji sitini,",
           "B": "Eneo lao lilienea kutoka Mahanaimu katika Bashani yote, ufalme wote wa Ogu mfalme wa Bashani, pamoja na vijiji vyote vya Yairi katika Bashani, miji sitini,",
           "R": "Nchi yao ilianzia Mahanaimu, ikajumuisha Bashani yote, ufalme wote wa Ogu, mfalme wa Bashani. Ilijumuisha vijiji vyote vya Yairi huko Bashani, miji sitini."
+        },
+        "es": {
+          "L": "Y fue su territorio desde Mahanaim, todo Basán, todo el reino de Og, rey de Basán, y todas las aldeas de Jaír que [están] en Basán, sesenta ciudades;",
+          "B": "Su territorio iba desde Mahanaim por todo Basán, todo el reino de Og, rey de Basán, con todas las aldeas de Jaír en Basán, sesenta poblaciones;",
+          "R": "Su tierra iba desde Mahanaim e incluía todo Basán, todo el reino de Og, rey de Basán. Incluía todas las aldeas de Jaír en Basán, sesenta pueblos."
         }
       },
       "decisions": [
@@ -3394,6 +3795,11 @@
           "L": "na nusu ya Gileadi, na Ashtarothi na Edrei, miji ya ufalme wa Ogu katika Bashani, [ilikuwa] kwa wana wa Makiri mwana wa Manase, kwa nusu ya wana wa Makiri, kufuatana na koo zao.",
           "B": "na nusu ya Gileadi, pamoja na Ashtarothi na Edrei, miji ya kifalme ya Ogu katika Bashani. Hii ilipewa wazao wa Makiri mwana wa Manase, yaani nusu ya wazao wa Makiri, ukoo kwa ukoo.",
           "R": "Ilijumuisha pia nusu ya Gileadi, na Ashtarothi na Edrei, miji ambayo Ogu alitawala kutoka huko Bashani. Nchi hii iliwaendea jamaa za wazao wa Makiri walioishi upande wa mashariki wa Yordani. Makiri alikuwa mwana wa Manase."
+        },
+        "es": {
+          "L": "y la mitad de Galaad, y Astarot y Edrei, ciudades del reino de Og en Basán, [fueron] para los hijos de Maquir hijo de Manasés, para la mitad de los hijos de Maquir, conforme a sus clanes.",
+          "B": "y la mitad de Galaad, con Astarot y Edrei, las ciudades reales de Og en Basán. Se dieron a los descendientes de Maquir hijo de Manasés, a la mitad de los descendientes de Maquir, clan por clan.",
+          "R": "También incluía la mitad de Galaad, y Astarot y Edrei, los pueblos desde donde Og había gobernado en Basán. Esta tierra fue para las familias de los descendientes de Maquir que vivían al este del Jordán. Maquir era hijo de Manasés."
         }
       },
       "decisions": [
@@ -3505,6 +3911,11 @@
           "L": "Hizi ndizo [nchi] ambazo Musa alizigawa kuwa urithi katika nyanda za Moabu, ng'ambo ya Yordani ya Yeriko, upande wa mashariki.",
           "B": "Huu ndio urithi ambao Musa aligawa katika nyanda za Moabu, ng'ambo ya Yordani kutoka Yeriko, upande wa mashariki.",
           "R": "Hivi ndivyo Musa alivyoigawa nchi kati ya makabila haya, Israeli walipokuwa wamepiga kambi katika nyanda za Moabu, upande wa mashariki wa Yordani, mkabala na Yeriko."
+        },
+        "es": {
+          "L": "Estas [son las heredades] que Moisés repartió en las llanuras de Moab, al otro lado del Jordán de Jericó, al oriente.",
+          "B": "Estas son las heredades que Moisés repartió en las llanuras de Moab, al otro lado del Jordán, frente a Jericó, al oriente.",
+          "R": "Así repartió Moisés la tierra entre estas tribus cuando Israel estaba acampado en las llanuras de Moab, al lado este del Jordán, frente a Jericó."
         }
       },
       "decisions": [
@@ -3617,6 +4028,11 @@
           "L": "Lakini kabila la Lawi Musa hakulipa urithi; {{divine_name:BWANA|Yahwe}}, Mungu wa Israeli, {{deity_pronoun:yeye|Yeye}} ndiye urithi wao, kama alivyowaambia.",
           "B": "Lakini kabila la Lawi Musa hakulipa urithi. {{divine_name:BWANA|Yahwe}}, Mungu wa Israeli, ndiye urithi wao, kama alivyowaahidi.",
           "R": "Lakini Musa hakulipa kabila la Lawi nchi. {{divine_name:BWANA|Yahwe}}, Mungu wa Israeli, ndiye fungu lao, kama alivyowaahidi."
+        },
+        "es": {
+          "L": "Pero a la tribu de Leví Moisés no le dio heredad; {{divine_name:el SEÑOR|Yahvé}}, el Dios de Israel, {{deity_pronoun:él|Él}} es su heredad, tal como {{deity_pronoun:él|Él}} les había dicho.",
+          "B": "Pero a la tribu de Leví Moisés no le dio heredad. {{divine_name:El SEÑOR|Yahvé}}, el Dios de Israel, es su heredad, como {{deity_pronoun:él|Él}} se lo prometió.",
+          "R": "Pero Moisés no le dio tierra a la tribu de Leví. {{divine_name:El SEÑOR|Yahvé}}, el Dios de Israel, es su parte, como {{deity_pronoun:él|Él}} se lo prometió."
         }
       },
       "decisions": [
