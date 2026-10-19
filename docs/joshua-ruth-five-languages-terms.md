@@ -74,7 +74,7 @@ Testament (Vietnamese, Korean). Keep a list for the block as you draft.
 | Rahab | Rahab | Rahab | Rahabu | Ra-háp | 라합 |
 | Jericho, Ai, Gibeon, Shechem, Shiloh | Jéricho, Aï, Gabaon, Sichem, Silo | Jericó, Hai, Gabaón, Siquem, Silo | Yeriko, Ai, Gibeoni, Shekemu, Shilo | Giê-ri-cô, A-hi, Ga-ba-ôn, Si-chem, Si-lô | 여리고, 아이, 기브온, 세겜, 실로 |
 | Achan, Caleb, Othniel, Ehud, Shamgar | Akân, Caleb, Otniel, Éhoud, Shamgar | Acán, Caleb, Otoniel, Aod, Samgar | Akani, Kalebu, Othnieli, Ehudi, Shamgari | A-can, Ca-lép, Ốt-ni-ên, Ê-hút, Sam-ga | 아간, 갈렙, 옷니엘, 에훗, 삼갈 |
-| Deborah, Barak, Sisera, Jael | Débora, Baraq, Sisera, Yaël | Débora, Barac, Sísara, Jael | Debora, Baraka, Sisera, Yaeli | Đê-bô-ra, Ba-rác, Si-sê-ra, Gia-ên | 드보라, 바락, 시스라, 야엘 |
+| Deborah, Barak, Sisera, Jael | Débora, Barak, Sisera, Yaël | Débora, Barac, Sísara, Jael | Debora, Baraka, Sisera, Yaeli | Đê-bô-ra, Ba-rác, Si-sê-ra, Gia-ên | 드보라, 바락, 시스라, 야엘 |
 | Gideon (Jerubbaal), Abimelech, Jotham | Gédéon (Yeroubbaal), Abimélek, Yotam | Gedeón (Jerobaal), Abimelec, Jotam | Gideoni (Yerubaali), Abimeleki, Yothamu | Ghê-đê-ôn (Giê-ru-ba-anh), A-bi-mê-léc, Giô-tham | 기드온 (여룹바알), 아비멜렉, 요담 |
 | Jephthah, Samson, Manoah, Delilah, Micah | Jephté, Samson, Manoah, Dalila, Mika | Jefté, Sansón, Manoa, Dalila, Micaía | Yeftha, Samsoni, Manoa, Delila, Mika | Giép-thê, Sam-sôn, Ma-nô-a, Đa-li-la, Mi-ca | 입다, 삼손, 마노아, 들릴라, 미가 |
 | Naomi, Ruth, Orpah, Boaz, Elimelech, Obed | Noémi, Ruth, Orpa, Booz, Élimélek, Obed | Noemí, Rut, Orfa, Booz, Elimelec, Obed | Naomi, Ruthu, Orpa, Boazi, Elimeleki, Obedi | Na-ô-mi, Ru-tơ, Ọt-ba, Bô-ô, Ê-li-mê-léc, Ô-bết | 나오미, 룻, 오르바, 보아스, 엘리멜렉, 오벳 |
