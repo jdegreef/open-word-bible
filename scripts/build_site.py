@@ -1669,7 +1669,8 @@ def book_refs(lang="en"):
         if local:
             names[local] = code
         # The name before a chapter number too: "Psalm 2:7".
-        for form in {chapter_book(code), chapter_book(code, lang)}:
+        # In a fixed order: the reader's data is a file named by its hash.
+        for form in dict.fromkeys((chapter_book(code), chapter_book(code, lang))):
             names[form] = code
     chapters = {b: sorted(p.chapter for p in ps) for b, ps in books()}
     # For the quotation tags in the text: each book's short name and the

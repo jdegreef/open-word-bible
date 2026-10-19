@@ -1069,7 +1069,7 @@ class SiteTest(unittest.TestCase):
             files = json.loads(html.unescape(re.search(r'data-offline-files="([^"]*)"', read)[1]))
             for path in files:
                 self.assertTrue(self.built(path).is_file(), path)
-            self.assertIn(build_site.reader_shared(code)[1], files)
+            self.assertIn(build_site.reader_shared(code)[1].split("?")[0], [f.split("?")[0] for f in files])
             buttons = re.findall(r'class="save-book" hidden data-book="([A-Z0-9]+)"[^>]*data-pages="([^"]*)" '
                                  r'data-files="([^"]*)"', read)
             self.assertEqual([b for b, _, _ in buttons], [b for b, _ in build_site.books(code)])

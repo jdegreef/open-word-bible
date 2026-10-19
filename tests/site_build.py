@@ -37,10 +37,15 @@ def page_data(page):
     (owb-data) with the shared data of its chapter and language added
     (build_site.chapter_shared, reader_shared), which the page loads."""
     data = json.loads(re.search(r'<script type="application/json" id="owb-data">(.*?)</script>', page, re.S)[1])
-    loaded = SHARED.findall(page)
+    loaded = {src.split("?")[0]: src for src in SHARED.findall(page)}
     for text, src in (build_site.chapter_shared(data["book"], data["chapter"]),
                       build_site.reader_shared(data["lang"])):
-        assert src in loaded, (src, loaded)
+        path = src.split("?")[0]
+        assert path in loaded, (src, loaded)
+        # A page of the built site loads that build's copy, which may differ
+        # from one made now (a test may have changed what is translated).
+        if loaded[path] != src:
+            text = (built_site() / path.lstrip("/")).read_text(encoding="utf-8")
         shared = json.loads(text[text.index("=") + 1:].rstrip().rstrip(";"))
         data.update({k: v for k, v in shared.items() if k != "sources"})
         for r in data["records"]:
