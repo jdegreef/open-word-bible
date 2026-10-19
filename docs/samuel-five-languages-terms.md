@@ -159,11 +159,60 @@ does not change Achish in Samuel.
 ## Settled while drafting
 
 AI-draft choices recorded so later work follows them; reviewers may change
-any of them.
+any of them. Each is also a rendering decision at its first use in each
+block of chapters (1 Samuel 1–15, 16–31; 2 Samuel 1–12, 13–24).
+
+- **All five**: "the people" meaning the army is the ordinary word for
+  people at L and "troops", "soldiers" or "army" at B and R. The women's
+  song (1 Samuel 18:7; 21:12; 29:5) has one wording per level each time.
+  Where the English Readable says "Your Majesty", French and Spanish say
+  "ô roi" / "mi rey" (no *Majesté*, *Majestad*, which would need *vous*,
+  *usted*). God's "my servant David" is "servant" at every level, Literal
+  included. No gender span where the language's word already covers men and
+  women (Swahili, Vietnamese and Korean have almost none).
+- **"Thus says the LORD"**: French *Ainsi parle le SEIGNEUR* (L), *Le
+  SEIGNEUR dit ceci* (B), *Voici ce que dit le SEIGNEUR* (R); Spanish *Así
+  dice el SEÑOR* / *El SEÑOR dice esto* / *Esto es lo que dice el SEÑOR*;
+  Vietnamese *CHÚA phán thế này* (L), *CHÚA phán như vầy* (B), *Đây là lời
+  CHÚA phán* (R); Korean 이와 같이 말씀하신다 (L), 이렇게 말씀하신다 (B).
+- **French**: passé simple at L and B, passé composé at R, imparfait for
+  repeated action; spoken tenses inside speeches and the laments. The
+  LORD addressed directly is `{{divine_name:SEIGNEUR|Yahvé}}` without the
+  article. Book of Jashar: *le livre du Yashar* (L), *le livre du Juste*
+  (B, R).
+- **Spanish**: *tú* to everyone; quotation marks « “ ‘ ’ ” »; "Vive el
+  SEÑOR" (L), "tan cierto como que el SEÑOR vive" (B, R); God's regret
+  (1 Samuel 15) is never *arrepentirse*; *el pan de la Presencia* (B, R).
+- **Swahili**: deity spans only on free possessives, never on verb
+  prefixes; "the people" as army *watu* (L), *askari* / *jeshi* (B, R);
+  *suria* for concubine, explained at R.
+- **Vietnamese**: *Gát* is Gath and the land of Gad; the prophet Gad is
+  always *nhà tiên tri Gát*, a Gadite *người Ga-đít*. Vietnamese has to
+  say which brother is older: Joab is older than Abishai and Asahel, Amnon
+  than Absalom, and Tamar is *em gái* to both (marked uncertain). Saul says
+  *con* and David *cha* from 1 Samuel 24:12; Saul says *tao* / *mày* to
+  Jonathan in his rage (20:30–31).
+- **Korean**: Samuel speaks 해라체 to Saul and the people, who call him 어른
+  in 합쇼체. David speaks 하오체 with 그대 to Nathan, Gad and Barzillai
+  (uncertain). Amnon is 형 to Absalom; Tamar calls Amnon 오라버니. Amasa's
+  mother is 아비갈, kept apart from Nabal's wife 아비가일. Concubines are
+  후궁.
 
 ## Before review
 
 Only rendering decisions were added; the meaning decisions are the English
 records' own. Reviewers should look first at the decisions marked uncertain,
 the address forms between David and Saul, David and Jonathan and David and
-his officers, and the names.
+his officers, and the names. Known unevenness between blocks, left for a
+reviewer rather than settled by the drafter:
+
+- Numbers above one hundred: French and Swahili 1 Samuel 1–15 and
+  Vietnamese 1 Samuel 1–15 write them in words; the other blocks use
+  figures.
+- Korean measures say "약 X" in some blocks and "X쯤" in others.
+- Swahili "young men" at B is *vijana* in 1 Samuel 16–31 and *mtumishi* in
+  1–15.
+- 2 Samuel 22:51 keeps the published Psalm 18:51 wording for *ḥesed* in
+  Swahili and Korean, which differs from the B and R choice above.
+- Vietnamese uses *thẩm phán* for the judges in 1 Samuel, where the
+  Joshua–Ruth drafts propose *quan xét*.
