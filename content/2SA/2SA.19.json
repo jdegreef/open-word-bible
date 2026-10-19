@@ -57,10 +57,20 @@
           "B": "The king was shaken. He went up to the room over the gate and wept, and as he went, these were his words: \"My son Absalom! My son, my son Absalom! If only I could have died in your place, Absalom, my son, my son!\"",
           "R": "The king was deeply shaken. He went up to the room above the city gate and cried. As he went up, this is what he said: \"My son Absalom! My son, my son Absalom! If only I could have died in your place! Absalom, my son, my son!\""
         },
+        "es": {
+          "L": "Y el rey se estremeció, y subió a la sala de arriba de la puerta y lloró. Y mientras iba, decía así: «¡Mi hijo Absalón, mi hijo, mi hijo Absalón! ¡Quién concediera que yo hubiera muerto, yo mismo, en tu lugar, Absalón, mi hijo, mi hijo!».",
+          "B": "El rey quedó deshecho. Subió al cuarto que había encima de la puerta y lloró, y mientras subía, estas eran sus palabras: «¡Absalón, hijo mío! ¡Hijo mío, Absalón, hijo mío! ¡Si yo hubiera podido morir en tu lugar, Absalón, hijo mío, hijo mío!».",
+          "R": "El rey quedó profundamente conmovido. Subió al cuarto que estaba encima de la puerta de la ciudad, y lloró. Mientras subía, decía: «¡Absalón, hijo mío! ¡Hijo mío, Absalón, hijo mío! ¡Cómo quisiera haber muerto yo en vez de ti! ¡Absalón, hijo mío, hijo mío!»."
+        },
         "fr": {
           "L": "Et le roi fut bouleversé, et il monta à la chambre haute de la porte et pleura. Et il disait ainsi en marchant : « Mon fils Absalom, mon fils, mon fils Absalom ! Qui me donnerait d’être mort, moi, à ta place, Absalom, mon fils, mon fils ! »",
           "B": "Le roi fut bouleversé. Il monta dans la chambre au-dessus de la porte et pleura, et tout en montant il disait : « Mon fils Absalom ! Mon fils, mon fils Absalom ! Si seulement j’avais pu mourir à ta place, Absalom, mon fils, mon fils ! »",
           "R": "Le roi a été profondément bouleversé. Il est monté dans la pièce au-dessus de la porte de la ville et il a pleuré. En montant, il disait : « Mon fils Absalom ! Mon fils, mon fils Absalom ! Si seulement j’étais mort à ta place ! Absalom, mon fils, mon fils ! »"
+        },
+        "vi": {
+          "L": "Vua rúng động, đi lên phòng trên cổng thành mà khóc. Vừa đi vua vừa nói thế này: \"Áp-sa-lôm con ơi, con của cha, con của cha, Áp-sa-lôm! Ai cho cha được chết, chính cha, thay cho con, Áp-sa-lôm, con ơi, con ơi!\"",
+          "B": "Vua chấn động. Vua đi lên căn phòng phía trên cổng thành mà khóc, vừa đi vừa than: \"Áp-sa-lôm con ơi! Con ơi, Áp-sa-lôm con ơi! Phải chi cha được chết thay cho con, Áp-sa-lôm, con ơi, con ơi!\"",
+          "R": "Vua vô cùng đau đớn. Vua đi lên căn phòng phía trên cổng thành và khóc. Vừa đi lên, vua vừa than: \"Áp-sa-lôm con ơi! Con ơi, Áp-sa-lôm con ơi! Phải chi cha được chết thay cho con! Áp-sa-lôm, con ơi, con ơi!\""
         }
       },
       "decisions": [
@@ -196,6 +206,71 @@
           "reason": "Literal keeps the Hebrew form of the wish, a question with \"who will give\" (m4), which French can still say in a high register; Balanced and Readable use the ordinary \"si seulement\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o100190010161",
+            "o100190010171",
+            "o100190010181"
+          ],
+          "choice": "¡Quién concediera que yo hubiera muerto ...! (L); ¡Si yo hubiera podido morir en tu lugar ...! (B); ¡Cómo quisiera haber muerto yo en vez de ti! (R)",
+          "alternatives": [
+            "¡Ojalá hubiera muerto yo en tu lugar!"
+          ],
+          "reason": "Literal keeps the Hebrew wish 'who will give', with 'quién concediera'; Balanced and Readable give the wish in words of their own, as the terms note asks for this well-known lament, so as not to follow a familiar Spanish version.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o100190010111",
+            "o100190010112"
+          ],
+          "choice": "David calls himself \"cha\" in his lament",
+          "alternatives": [
+            "\"ta\""
+          ],
+          "reason": "He cries out to his dead son as a father, so the father-and-son forms are used, not the king's \"ta\"; the repeated \"con ơi\" carries the broken cry (meaning decision).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L"
+          ],
+          "category": "idiom",
+          "tokens": [
+            "o100190010161",
+            "o100190010171"
+          ],
+          "choice": "\"Ai cho cha được chết\" (L); \"Phải chi\" (B, R)",
+          "alternatives": [
+            "\"Ước gì\""
+          ],
+          "reason": "Literal keeps the Hebrew \"Who would grant ...?\" form of a wish; Balanced and Readable use the plain Vietnamese \"if only\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -231,10 +306,20 @@
           "B": "Joab was told, \"The king is weeping and mourning for Absalom.\"",
           "R": "Someone told Joab, \"The king is crying and mourning for Absalom.\""
         },
+        "es": {
+          "L": "Y se le informó a Joab: «He aquí, el rey llora, y hace duelo por Absalón».",
+          "B": "Le avisaron a Joab: «El rey está llorando y haciendo duelo por Absalón».",
+          "R": "Alguien le dijo a Joab: «El rey está llorando y está de luto por Absalón»."
+        },
         "fr": {
           "L": "Et on rapporta à Joab : « Voici, le roi pleure, et il mène le deuil sur Absalom. »",
           "B": "On vint dire à Joab : « Le roi pleure et mène le deuil sur Absalom. »",
           "R": "Quelqu’un a dit à Joab : « Le roi pleure et il est en deuil à cause d’Absalom. »"
+        },
+        "vi": {
+          "L": "Có người báo cho Giô-áp: \"Kìa, vua đang khóc và than khóc vì Áp-sa-lôm.\"",
+          "B": "Có người báo cho Giô-áp: \"Vua đang khóc lóc và để tang cho Áp-sa-lôm.\"",
+          "R": "Có người báo cho Giô-áp: \"Vua đang khóc và than thở vì Áp-sa-lôm.\""
         }
       },
       "decisions": [
@@ -351,10 +436,20 @@
           "B": "So the victory that day was turned into mourning for all the troops, because the troops heard it said that day, \"The king is grieving over his son.\"",
           "R": "So for the whole army, the victory of that day turned into a day of sadness. The soldiers heard people say, \"The king is full of grief over his son.\""
         },
+        "es": {
+          "L": "Y la victoria se convirtió aquel día en duelo para todo el pueblo, porque el pueblo oyó decir aquel día: «El rey está afligido por su hijo».",
+          "B": "Así que la victoria de aquel día se convirtió en duelo para toda la tropa, porque aquel día la tropa oyó decir: «El rey está de duelo por su hijo».",
+          "R": "Así que, para todo el ejército, la victoria de aquel día se convirtió en un día de tristeza. Los soldados oyeron que la gente decía: «El rey está muy triste por su hijo»."
+        },
         "fr": {
           "L": "Et la victoire, en ce jour-là, devint un deuil pour tout le peuple, car le peuple entendit dire ce jour-là : « Le roi est affligé à cause de son fils. »",
           "B": "La victoire de ce jour se changea en deuil pour toute la troupe, car la troupe entendit dire ce jour-là : « Le roi est dans la douleur à cause de son fils. »",
           "R": "Pour toute l’armée, la victoire de ce jour est devenue un jour de tristesse. Les soldats ont entendu les gens dire : « Le roi a beaucoup de chagrin à cause de son fils. »"
+        },
+        "vi": {
+          "L": "Chiến thắng trong ngày ấy trở thành tang chế cho toàn dân, vì trong ngày ấy dân chúng nghe nói rằng: \"Vua đau buồn vì con trai mình.\"",
+          "B": "Vậy chiến thắng ngày hôm ấy biến thành ngày tang chế cho toàn quân, vì hôm ấy quân lính nghe người ta nói: \"Vua đang đau buồn vì con trai mình.\"",
+          "R": "Vậy đối với cả đạo quân, chiến thắng ngày hôm ấy trở thành một ngày buồn thảm. Binh sĩ nghe người ta nói: \"Vua đang rất đau buồn vì con trai mình.\""
         }
       },
       "decisions": [
@@ -455,10 +550,20 @@
           "B": "That day the troops slipped quietly into the city, the way troops creep in when they are ashamed because they have fled from battle.",
           "R": "That day the soldiers sneaked back into the city. They acted like soldiers who are ashamed because they ran away from a battle."
         },
+        "es": {
+          "L": "Y el pueblo entró a escondidas aquel día en la ciudad, como entra a escondidas el pueblo avergonzado cuando huye en la batalla.",
+          "B": "Aquel día la tropa entró en la ciudad sin hacer ruido, como entra una tropa que se avergüenza por haber huido de la batalla.",
+          "R": "Aquel día los soldados volvieron a escondidas a la ciudad. Actuaban como soldados que tienen vergüenza porque huyeron de una batalla."
+        },
         "fr": {
           "L": "Et le peuple se glissa ce jour-là pour entrer dans la ville, comme se glisse le peuple qui a honte quand il a fui dans la bataille.",
           "B": "Ce jour-là, la troupe rentra en cachette dans la ville, comme se faufilent des soldats honteux d’avoir fui le combat.",
           "R": "Ce jour-là, les soldats sont rentrés dans la ville en se cachant. Ils agissaient comme des soldats qui ont honte parce qu’ils se sont enfuis pendant une bataille."
+        },
+        "vi": {
+          "L": "Ngày ấy dân chúng lén lút vào thành, như dân chúng xấu hổ lén lút khi chạy trốn khỏi trận chiến.",
+          "B": "Hôm ấy quân lính lặng lẽ lẻn vào thành, như những người lính xấu hổ lén trở về vì đã bỏ chạy khỏi trận chiến.",
+          "R": "Hôm ấy binh sĩ lén lút trở vào thành. Họ giống như những người lính xấu hổ vì đã bỏ chạy khỏi trận đánh."
         }
       },
       "decisions": [
@@ -571,10 +676,20 @@
           "B": "The king covered his face and cried out in a loud voice, \"My son Absalom! Absalom, my son, my son!\"",
           "R": "The king covered his face and cried out loudly, \"My son Absalom! Absalom, my son, my son!\""
         },
+        "es": {
+          "L": "Y el rey se cubrió el rostro, y el rey clamaba a gran voz: «¡Mi hijo Absalón! ¡Absalón, mi hijo, mi hijo!».",
+          "B": "El rey se cubrió la cara y gritaba a gran voz: «¡Absalón, hijo mío! ¡Absalón, hijo mío, hijo mío!».",
+          "R": "El rey se cubrió la cara y gritaba con fuerza: «¡Absalón, hijo mío! ¡Absalón, hijo mío, hijo mío!»."
+        },
         "fr": {
           "L": "Et le roi se couvrit le visage, et le roi criait d’une voix forte : « Mon fils Absalom ! Absalom, mon fils, mon fils ! »",
           "B": "Le roi se couvrit le visage et il criait d’une voix forte : « Mon fils Absalom ! Absalom, mon fils, mon fils ! »",
           "R": "Le roi s’est couvert le visage et il criait très fort : « Mon fils Absalom ! Absalom, mon fils, mon fils ! »"
+        },
+        "vi": {
+          "L": "Vua trùm mặt lại, và vua kêu lớn tiếng: \"Áp-sa-lôm con ơi! Áp-sa-lôm, con ơi, con ơi!\"",
+          "B": "Vua trùm mặt lại và kêu lớn tiếng: \"Áp-sa-lôm con ơi! Áp-sa-lôm, con ơi, con ơi!\"",
+          "R": "Vua trùm mặt lại và kêu lớn: \"Áp-sa-lôm con ơi! Áp-sa-lôm, con ơi, con ơi!\""
         }
       },
       "decisions": [
@@ -675,10 +790,20 @@
           "B": "Then Joab went in to the king in the house and said, \"You have today disgraced all your servants, who this day saved your life and the lives of your sons and daughters, your wives and your concubines,",
           "R": "Then Joab went into the house where the king was. He said, \"Today your men saved your life. They saved the lives of your sons and daughters, and of your wives and your concubines (secondary wives). Yet you have made all of them feel ashamed."
         },
+        "es": {
+          "L": "Y Joab entró al rey [en] la casa y dijo: «Hoy has cubierto de vergüenza el rostro de todos tus siervos, que hoy han salvado tu vida, y la vida de tus hijos y de tus hijas, y la vida de tus mujeres, y la vida de tus concubinas,",
+          "B": "Entonces Joab entró a ver al rey en la casa y le dijo: «Hoy has avergonzado a todos tus siervos, que este día salvaron tu vida y la vida de tus hijos y tus hijas, de tus mujeres y de tus concubinas,",
+          "R": "Entonces Joab entró en la casa donde estaba el rey. Le dijo: «Hoy tus hombres te salvaron la vida. Salvaron la vida de tus hijos y tus hijas, y de tus esposas y tus concubinas (esposas de segunda categoría). Y sin embargo, has hecho que todos ellos se sientan avergonzados."
+        },
         "fr": {
           "L": "Et Joab vint vers le roi [dans] la maison et dit : « Tu as couvert de honte aujourd’hui le visage de tous tes serviteurs, qui ont sauvé aujourd’hui ta vie, et la vie de tes fils et de tes filles, et la vie de tes femmes, et la vie de tes concubines,",
           "B": "Alors Joab entra chez le roi, dans la maison, et lui dit : « Aujourd’hui tu as couvert de honte tous tes serviteurs, eux qui ont sauvé ce jour même ta vie, celle de tes fils et de tes filles, de tes femmes et de tes concubines,",
           "R": "Alors Joab est entré dans la maison où était le roi. Il lui a dit : « Aujourd’hui, tes hommes t’ont sauvé la vie. Ils ont sauvé la vie de tes fils et de tes filles, de tes femmes et de tes concubines (tes épouses de second rang). Et toi, tu leur as fait honte à tous."
+        },
+        "vi": {
+          "L": "Giô-áp vào nhà gặp vua và nói: \"Hôm nay vua đã làm hổ mặt tất cả các đầy tớ của vua, là những người hôm nay đã cứu mạng vua, mạng các con trai con gái vua, mạng các vợ vua và mạng các cung phi của vua,",
+          "B": "Bấy giờ Giô-áp vào nhà gặp vua và nói: \"Hôm nay bệ hạ đã làm nhục tất cả các đầy tớ của bệ hạ, là những người hôm nay đã cứu mạng bệ hạ, mạng các hoàng tử và công chúa, các hoàng hậu và các cung phi của bệ hạ,",
+          "R": "Bấy giờ Giô-áp đi vào nhà nơi vua đang ở. Ông nói: \"Hôm nay người của đức vua đã cứu mạng đức vua. Họ đã cứu mạng các con trai con gái của đức vua, các vợ và các cung phi (là những người vợ thứ) của đức vua. Thế mà đức vua lại làm cho tất cả họ phải xấu hổ."
         }
       },
       "decisions": [
@@ -824,10 +949,20 @@
           "B": "because you show love to those who hate you and hatred to those who love you. Today you have shown that your commanders and servants count for nothing with you. I know now that if all of us had died today and Absalom were alive, you would think it right.",
           "R": "You love the people who hate you, and you hate the people who love you. Today you have shown that your officers and soldiers mean nothing to you. I know now that if all of us had died today and Absalom had lived, you would have been glad."
         },
+        "es": {
+          "L": "amando a los que te odian y odiando a los que te aman. Porque hoy has dado a conocer que no tienes jefes ni siervos. Porque hoy sé que si Absalón [estuviera] vivo y todos nosotros [estuviéramos] hoy muertos, entonces [eso sería] recto a tus ojos.",
+          "B": "porque amas a los que te odian y odias a los que te aman. Hoy has dejado ver que tus jefes y tus siervos no valen nada para ti. Ahora sé que si hoy hubiéramos muerto todos nosotros y Absalón estuviera vivo, a ti te parecería bien.",
+          "R": "Tú amas a los que te odian, y odias a los que te aman. Hoy has mostrado que tus oficiales y tus soldados no significan nada para ti. Ahora sé que si todos nosotros hubiéramos muerto hoy y Absalón hubiera vivido, tú estarías contento."
+        },
         "fr": {
           "L": "en aimant ceux qui te haïssent et en haïssant ceux qui t’aiment. Car tu as fait savoir aujourd’hui que tu n’as ni chefs ni serviteurs. Car je sais aujourd’hui que si Absalom [était] vivant et nous tous morts aujourd’hui, alors [ce serait] bien à tes yeux.",
           "B": "car tu aimes ceux qui te haïssent et tu hais ceux qui t’aiment. Tu as montré aujourd’hui que tes chefs et tes serviteurs ne comptent pas pour toi. Je sais maintenant que si nous étions tous morts aujourd’hui et qu’Absalom était vivant, tu trouverais cela très bien.",
           "R": "Tu aimes ceux qui te détestent, et tu détestes ceux qui t’aiment. Aujourd’hui, tu as montré que tes officiers et tes soldats ne comptent pas pour toi. Je le sais maintenant : si nous étions tous morts aujourd’hui et qu’Absalom était resté en vie, tu aurais été content."
+        },
+        "vi": {
+          "L": "vì vua yêu những kẻ ghét vua và ghét những người yêu vua. Vì hôm nay vua đã cho thấy rằng vua không có các tướng chỉ huy hay đầy tớ. Vì hôm nay tôi biết rằng nếu Áp-sa-lôm [còn] sống và hôm nay tất cả chúng tôi [đều] chết, thì [điều đó là] đúng trong mắt vua.",
+          "B": "vì bệ hạ yêu những kẻ ghét mình và ghét những người yêu mình. Hôm nay bệ hạ đã cho thấy rằng các tướng chỉ huy và đầy tớ của bệ hạ chẳng là gì đối với bệ hạ. Bây giờ tôi biết rằng nếu hôm nay tất cả chúng tôi chết hết mà Áp-sa-lôm còn sống, thì bệ hạ cho là phải lẽ.",
+          "R": "Đức vua yêu những người ghét mình, và ghét những người yêu mình. Hôm nay đức vua đã cho thấy các tướng lĩnh và binh sĩ chẳng có nghĩa lý gì với đức vua. Bây giờ tôi biết rằng nếu hôm nay tất cả chúng tôi đều chết mà Áp-sa-lôm còn sống, thì đức vua sẽ vui lòng."
         }
       },
       "decisions": [
@@ -988,10 +1123,20 @@
           "B": "So now get up, go out and speak to the hearts of your servants. By {{divine_name:the LORD|Yahweh}} I swear: unless you go out, not a single man will spend this night with you. That would be a worse disaster for you than any that has come on you since you were young.\"",
           "R": "Now get up and go out. Speak to your men and encourage them. I make a solemn promise by {{divine_name:the LORD|Yahweh}}: if you do not go out, by tonight not one man will still be on your side. That would be the worst trouble you have had in your whole life.\""
         },
+        "es": {
+          "L": "Y ahora levántate, sal, y habla al corazón de tus siervos. Porque por {{divine_name:el SEÑOR|Yahvé}} juro que si no sales, no se quedará contigo ni un hombre esta noche, y esto será peor para ti que todo el mal que te ha venido desde tu juventud hasta ahora».",
+          "B": "Así que ahora levántate, sal y habla al corazón de tus siervos. Juro por {{divine_name:el SEÑOR|Yahvé}} que, si no sales, ni un solo hombre pasará esta noche contigo. Eso sería para ti una desgracia peor que cualquiera que te haya venido desde que eras joven».",
+          "R": "Ahora levántate y sal. Habla con tus hombres y anímalos. Te lo juro solemnemente por {{divine_name:el SEÑOR|Yahvé}}: si no sales, esta noche no quedará ni un hombre de tu lado. Eso sería el peor problema que has tenido en toda tu vida»."
+        },
         "fr": {
           "L": "Et maintenant, lève-toi, sors et parle au cœur de tes serviteurs. Car je jure par {{divine_name:le SEIGNEUR|Yahvé}} que si tu ne sors pas, pas un homme ne passera la nuit avec toi cette nuit ; et ce sera pour toi pire que tout le mal qui t’est arrivé depuis ta jeunesse jusqu’à maintenant. »",
           "B": "Lève-toi donc maintenant, sors et parle au cœur de tes serviteurs. Je le jure par {{divine_name:le SEIGNEUR|Yahvé}} : si tu ne sors pas, pas un seul homme ne restera avec toi cette nuit. Ce serait pour toi un malheur pire que tous ceux qui te sont arrivés depuis ta jeunesse. »",
           "R": "Maintenant, lève-toi et sors. Parle à tes hommes et donne-leur du courage. Je te le jure solennellement par {{divine_name:le SEIGNEUR|Yahvé}} : si tu ne sors pas, ce soir, il ne restera plus un seul homme de ton côté. Ce serait le pire malheur de toute ta vie. »"
+        },
+        "vi": {
+          "L": "Vậy bây giờ, vua hãy đứng dậy, đi ra và nói với lòng các đầy tớ vua. Vì tôi nhân danh {{divine_name:CHÚA|Gia-vê}} mà thề rằng, nếu vua không đi ra, thì đêm nay sẽ không một người nào ở lại với vua; và điều ấy sẽ tệ hại cho vua hơn mọi tai họa đã đến trên vua từ thuở nhỏ cho đến bây giờ.\"",
+          "B": "Vậy bây giờ bệ hạ hãy đứng dậy, đi ra và nói lời an ủi các đầy tớ của bệ hạ. Tôi xin nhân danh {{divine_name:CHÚA|Gia-vê}} mà thề: nếu bệ hạ không ra, thì đêm nay sẽ không còn một ai ở lại với bệ hạ. Điều đó sẽ là tai họa tồi tệ hơn mọi tai họa bệ hạ đã gặp từ thuở thiếu thời đến nay.\"",
+          "R": "Bây giờ đức vua hãy đứng dậy đi ra. Hãy nói chuyện với người của đức vua và khích lệ họ. Tôi xin nhân danh {{divine_name:CHÚA|Gia-vê}} mà thề: nếu đức vua không ra, thì đến tối nay sẽ không còn một ai đứng về phía đức vua nữa. Đó sẽ là tai họa tồi tệ nhất trong cả cuộc đời đức vua.\""
         }
       },
       "decisions": [
@@ -1142,10 +1287,20 @@
           "B": "So the king got up and took his seat in the gate. All the troops were told, \"The king is sitting in the gate,\" and they all came into his presence. As for Israel, they had fled, each man to his home.",
           "R": "So the king got up and sat down at the city gate. All the soldiers were told, \"The king is sitting at the gate.\" Then they all came to see him. Meanwhile, the Israelites who had followed Absalom had all run away to their homes."
         },
+        "es": {
+          "L": "Y el rey se levantó y se sentó en la puerta. Y se lo anunciaron a todo el pueblo, diciendo: «He aquí, el rey [está] sentado en la puerta». Y todo el pueblo vino delante del rey. Pero Israel había huido, cada uno a sus tiendas.",
+          "B": "Entonces el rey se levantó y se sentó en la puerta. A toda la tropa le avisaron: «El rey está sentado en la puerta», y todos vinieron a presentarse ante él. En cuanto a Israel, habían huido, cada uno a su casa.",
+          "R": "Entonces el rey se levantó y se sentó en la puerta de la ciudad. A todos los soldados les avisaron: «El rey está sentado en la puerta». Entonces todos vinieron a verlo. Mientras tanto, los israelitas que habían seguido a Absalón se habían ido corriendo a sus casas."
+        },
         "fr": {
           "L": "Et le roi se leva et s’assit à la porte. Et on l’annonça à tout le peuple, disant : « Voici, le roi est assis à la porte. » Et tout le peuple vint devant le roi. Or Israël s’était enfui, chacun à ses tentes.",
           "B": "Le roi se leva donc et prit place à la porte. On l’annonça à toute la troupe : « Le roi siège à la porte », et tous vinrent se présenter devant lui. Quant à Israël, il s’était enfui, chacun chez soi.",
           "R": "Le roi s’est donc levé et il s’est assis à la porte de la ville. On a dit à tous les soldats : « Le roi est assis à la porte. » Alors ils sont tous venus le voir. Pendant ce temps, les Israélites qui avaient suivi Absalom s’étaient tous enfuis chez eux."
+        },
+        "vi": {
+          "L": "Vua đứng dậy và ngồi tại cổng thành. Người ta báo cho toàn dân rằng: \"Kìa, vua đang ngồi tại cổng thành.\" Toàn dân đến trước mặt vua. Còn Y-sơ-ra-ên đã chạy trốn, ai về trại nấy.",
+          "B": "Vậy vua đứng dậy ra ngồi tại cổng thành. Người ta báo cho toàn quân: \"Vua đang ngồi tại cổng thành,\" và tất cả đều đến trước mặt vua. Còn người Y-sơ-ra-ên thì đã chạy trốn, ai về nhà nấy.",
+          "R": "Vậy vua đứng dậy và ra ngồi ở cổng thành. Người ta báo cho tất cả binh sĩ: \"Vua đang ngồi ở cổng thành.\" Rồi tất cả họ đến gặp vua. Trong khi đó, những người Y-sơ-ra-ên đã theo Áp-sa-lôm đều đã chạy trốn về nhà mình."
         }
       },
       "decisions": [
@@ -1291,10 +1446,20 @@
           "B": "Throughout all the tribes of Israel the people were arguing with one another. \"The king rescued us from the power of our enemies,\" they said. \"He saved us from the power of the Philistines. Yet now he has fled out of the land because of Absalom.",
           "R": "All through the tribes of Israel, people were arguing with one another. They said, \"The king rescued us from our enemies. He saved us from the Philistines. But now he has run away from the country because of Absalom."
         },
+        "es": {
+          "L": "Y todo el pueblo discutía en todas las tribus de Israel, diciendo: «El rey nos libró de la mano de nuestros enemigos, y nos rescató de la mano de los filisteos, y ahora ha huido del país por causa de Absalón.",
+          "B": "Por todas las tribus de Israel la gente discutía entre sí. Decían: «El rey nos libró del poder de nuestros enemigos. Nos salvó del poder de los filisteos. Pero ahora ha huido del país por causa de Absalón.",
+          "R": "Por todas las tribus de Israel, la gente discutía entre sí. Decían: «El rey nos libró de nuestros enemigos. Nos salvó de los filisteos. Pero ahora ha huido del país por causa de Absalón."
+        },
         "fr": {
           "L": "Et tout le peuple se disputait dans toutes les tribus d’Israël, disant : « Le roi nous a délivrés de la main de nos ennemis, et c’est lui qui nous a sauvés de la main des Philistins ; et maintenant il a fui hors du pays à cause d’Absalom.",
           "B": "Dans toutes les tribus d’Israël, le peuple se disputait. « Le roi nous a délivrés du pouvoir de nos ennemis, disait-on. Il nous a sauvés du pouvoir des Philistins. Et maintenant, il a fui hors du pays à cause d’Absalom.",
           "R": "Dans toutes les tribus d’Israël, les gens se disputaient. Ils disaient : « Le roi nous a délivrés de nos ennemis. Il nous a sauvés des Philistins. Mais maintenant, il s’est enfui du pays à cause d’Absalom."
+        },
+        "vi": {
+          "L": "Toàn dân trong khắp các chi tộc Y-sơ-ra-ên đều tranh cãi với nhau rằng: \"Vua đã giải cứu chúng ta khỏi lòng bàn tay của kẻ thù, và đã cứu chúng ta khỏi lòng bàn tay người Phi-li-tin; nhưng bây giờ vua đã chạy trốn khỏi xứ vì Áp-sa-lôm.",
+          "B": "Trong khắp các chi tộc Y-sơ-ra-ên, dân chúng tranh cãi với nhau. Họ nói: \"Vua đã giải cứu chúng ta khỏi quyền lực của kẻ thù. Vua đã cứu chúng ta khỏi quyền lực của người Phi-li-tin. Thế mà bây giờ vua phải chạy trốn khỏi xứ vì Áp-sa-lôm.",
+          "R": "Khắp các chi tộc Y-sơ-ra-ên, người ta tranh cãi với nhau. Họ nói: \"Vua đã giải cứu chúng ta khỏi kẻ thù. Vua đã cứu chúng ta khỏi người Phi-li-tin. Nhưng bây giờ vua phải chạy trốn khỏi xứ vì Áp-sa-lôm."
         }
       },
       "decisions": [
@@ -1404,10 +1569,20 @@
           "B": "And Absalom, whom we anointed to rule over us, has died in battle. So now, why do you say nothing about bringing the king back?\"",
           "R": "We anointed Absalom to be king over us, but he has died in the battle. So why is no one saying anything about bringing King David back?\""
         },
+        "es": {
+          "L": "Y Absalón, a quien ungimos sobre nosotros, ha muerto en la batalla. Y ahora, ¿por qué {{plural_you:callan|calláis}} en cuanto a hacer volver al rey?».",
+          "B": "Y Absalón, a quien ungimos para que nos gobernara, ha muerto en la batalla. Entonces, ¿por qué no {{plural_you:dicen|decís}} nada de hacer volver al rey?».",
+          "R": "Ungimos a Absalón como rey sobre nosotros, pero ha muerto en la batalla. Entonces, ¿por qué nadie dice nada de traer de vuelta al rey David?»."
+        },
         "fr": {
           "L": "Et Absalom, que nous avions oint sur nous, est mort dans la bataille. Et maintenant, pourquoi gardez-vous le silence pour ramener le roi ? »",
           "B": "Et Absalom, que nous avions oint pour régner sur nous, est mort au combat. Alors pourquoi ne dites-vous rien pour faire revenir le roi ? »",
           "R": "Nous avions oint Absalom pour qu’il soit notre roi, mais il est mort dans la bataille. Alors pourquoi personne ne parle-t-il de ramener le roi David ? »"
+        },
+        "vi": {
+          "L": "Còn Áp-sa-lôm, người mà chúng ta đã xức dầu [làm vua] trên chúng ta, đã chết trong trận chiến. Vậy bây giờ, sao các ông cứ im lặng không đem vua trở về?\"",
+          "B": "Còn Áp-sa-lôm, người chúng ta đã xức dầu để cai trị chúng ta, thì đã chết trận. Vậy bây giờ sao các ông chẳng nói gì đến việc đưa vua trở về?\"",
+          "R": "Chúng ta đã xức dầu cho Áp-sa-lôm làm vua, nhưng chàng đã chết trận. Vậy sao không ai nói gì đến việc đưa vua Đa-vít trở về?\""
         }
       },
       "decisions": [
@@ -1524,10 +1699,20 @@
           "B": "King David sent this message to the priests Zadok and Abiathar: \"Ask the elders of Judah, 'Why should you be last of all in bringing the king back to his palace? What all Israel is saying has reached the king in his house.",
           "R": "King David sent a message to the priests Zadok and Abiathar. It said, \"Speak to the leaders of Judah. Ask them, 'Why should you be the last ones to bring the king back to his palace? The king has heard what the people all over Israel are saying."
         },
+        "es": {
+          "L": "Y el rey David envió a decir a Sadoc y a Abiatar los sacerdotes: «{{plural_you:Hablen|Hablad}} a los ancianos de Judá, diciendo: “¿Por qué {{plural_you:serán|seréis}} {{plural_you:ustedes|vosotros}} los últimos en hacer volver al rey a su casa, cuando la palabra de todo Israel ha llegado al rey, a su casa?",
+          "B": "El rey David les envió este mensaje a los sacerdotes Sadoc y Abiatar: «{{plural_you:Pregúntenles|Preguntadles}} a los ancianos de Judá: “¿Por qué {{plural_you:han|habéis}} de ser {{plural_you:ustedes|vosotros}} los últimos en hacer volver al rey a su palacio? Lo que dice todo Israel ha llegado ya al rey en su casa.",
+          "R": "El rey David les envió un mensaje a los sacerdotes Sadoc y Abiatar. Decía: «{{plural_you:Hablen|Hablad}} con los líderes de Judá. {{plural_you:Pregúntenles|Preguntadles}}: “¿Por qué {{plural_you:han|habéis}} de ser {{plural_you:ustedes|vosotros}} los últimos en traer al rey de vuelta a su palacio? El rey ya ha oído lo que dice la gente en todo Israel."
+        },
         "fr": {
           "L": "Et le roi David envoya [dire] aux prêtres Sadok et Abiathar : « Parlez aux anciens de Juda, disant : “Pourquoi seriez-vous les derniers à ramener le roi dans sa maison, alors que la parole de tout Israël est parvenue au roi, jusqu’à sa maison ?",
           "B": "Le roi David fit dire aux prêtres Sadok et Abiathar : « Demandez aux anciens de Juda : “Pourquoi seriez-vous les derniers à ramener le roi dans son palais ? Ce que dit tout Israël est déjà parvenu jusqu’au roi, dans sa maison.",
           "R": "Le roi David a envoyé un message aux prêtres Sadok et Abiathar. Il disait : « Parlez aux responsables de Juda. Demandez-leur : “Pourquoi seriez-vous les derniers à ramener le roi dans son palais ? Le roi sait déjà ce que disent les gens dans tout Israël."
+        },
+        "vi": {
+          "L": "Vua Đa-vít sai người đến nói với các thầy tế lễ Xa-đốc và A-bi-a-tha rằng: \"Hãy nói với các trưởng lão Giu-đa rằng: 'Sao các ông lại là những người sau cùng đem vua về cung, khi lời của cả Y-sơ-ra-ên đã đến tai vua, tại cung vua?",
+          "B": "Vua Đa-vít gửi lời nhắn đến các thầy tế lễ Xa-đốc và A-bi-a-tha: \"Hãy hỏi các trưởng lão Giu-đa: 'Sao các ông lại là những người sau cùng đưa vua về cung? Những điều cả Y-sơ-ra-ên đang nói đã đến tai vua trong cung rồi.",
+          "R": "Vua Đa-vít gửi một lời nhắn cho các thầy tế lễ Xa-đốc và A-bi-a-tha. Lời nhắn như sau: \"Hãy nói với những người lãnh đạo Giu-đa. Hãy hỏi họ: 'Sao các ông lại là những người sau cùng đưa vua về cung? Vua đã nghe điều mà dân chúng khắp Y-sơ-ra-ên đang nói."
         }
       },
       "decisions": [
@@ -1666,10 +1851,20 @@
           "B": "You are my brothers; you are my own bone and flesh. Why then should you be last of all in bringing the king back?'",
           "R": "You are my relatives, my own flesh and blood. So why should you be last of all in bringing the king back?'"
         },
+        "es": {
+          "L": "{{plural_you:Ustedes|Vosotros}} [son] mis hermanos; mi hueso y mi carne [son] {{plural_you:ustedes|vosotros}}. ¿Por qué, pues, {{plural_you:serán|seréis}} los últimos en hacer volver al rey?”.",
+          "B": "{{plural_you:Ustedes|Vosotros}} {{plural_you:son|sois}} mis hermanos; {{plural_you:son|sois}} mi propio hueso y mi propia carne. ¿Por qué, entonces, {{plural_you:han|habéis}} de ser los últimos en hacer volver al rey?”.",
+          "R": "{{plural_you:Ustedes|Vosotros}} {{plural_you:son|sois}} mis parientes, de mi propia sangre. Entonces, ¿por qué {{plural_you:han|habéis}} de ser los últimos en traer de vuelta al rey?”."
+        },
         "fr": {
           "L": "Vous [êtes] mes frères ; vous [êtes] mes os et ma chair. Et pourquoi seriez-vous les derniers à ramener le roi ?”",
           "B": "Vous êtes mes frères, vous êtes de mes os et de ma chair. Pourquoi donc seriez-vous les derniers à ramener le roi ?”",
           "R": "Vous êtes ma famille, de mon sang. Alors pourquoi seriez-vous les derniers à ramener le roi ?”"
+        },
+        "vi": {
+          "L": "Các ông [là] anh em của ta; các ông [là] xương ta và thịt ta. Sao các ông lại là những người sau cùng đem vua trở về?'",
+          "B": "Các ông là anh em của ta, là cốt nhục của ta. Vậy sao các ông lại là những người sau cùng đưa vua trở về?'",
+          "R": "Các ông là bà con của ta, là ruột thịt của ta. Vậy sao các ông lại là những người sau cùng đưa vua trở về?'"
         }
       },
       "decisions": [
@@ -1780,10 +1975,20 @@
           "B": "And say to Amasa, 'Are you not my own bone and flesh? May God deal with me ever so severely if you do not become commander of my army from now on in place of Joab.'\"",
           "R": "And tell Amasa, 'You are my own flesh and blood. From now on you will be the commander of my army instead of Joab. If I do not do this, may God punish me terribly.'\""
         },
+        "es": {
+          "L": "Y a Amasa le {{plural_you:dirán|diréis}}: “¿No [eres] tú mi hueso y mi carne? Así me haga Dios, y aun me añada, si no eres jefe del ejército delante de mí todos los días en lugar de Joab”».",
+          "B": "Y {{plural_you:díganle|decidle}} a Amasa: “¿No eres tú mi propio hueso y mi propia carne? Que Dios me castigue, y aun más, si de ahora en adelante no eres el jefe de mi ejército en lugar de Joab”».",
+          "R": "Y {{plural_you:díganle|decidle}} a Amasa: “Tú eres de mi propia sangre. De ahora en adelante serás el jefe de mi ejército en lugar de Joab. Si no lo hago, que Dios me castigue duramente”»."
+        },
         "fr": {
           "L": "Et à Amasa vous direz : “N’es-tu pas mes os et ma chair ? Que Dieu me fasse ainsi, et qu’{{deity_pronoun:il|Il}} y ajoute encore, si tu n’es pas devant moi chef de l’armée pour toujours, à la place de Joab !” »",
           "B": "Et dites à Amasa : “N’es-tu pas de mes os et de ma chair ? Que Dieu me traite avec sévérité et plus encore, si tu ne deviens pas dès maintenant le chef de mon armée à la place de Joab !” »",
           "R": "Et dites à Amasa : “Tu es de ma famille, de mon sang. À partir de maintenant, tu seras le chef de mon armée à la place de Joab. Si je ne le fais pas, que Dieu me punisse sévèrement !” »"
+        },
+        "vi": {
+          "L": "Còn với A-ma-sa, các ông hãy nói: 'Chẳng phải ngươi là xương ta và thịt ta sao? Nguyện Đức Chúa Trời làm như vậy cho ta, và {{deity_pronoun:ngài|Ngài}} còn thêm nữa, nếu ngươi không làm tướng chỉ huy quân đội trước mặt ta suốt đời, thay cho Giô-áp.'\"",
+          "B": "Và hãy nói với A-ma-sa: 'Chẳng phải ngươi là cốt nhục của ta sao? Nguyện Đức Chúa Trời phạt ta thật nặng nề nếu từ nay ngươi không làm tướng chỉ huy quân đội của ta thay cho Giô-áp.'\"",
+          "R": "Và hãy nói với A-ma-sa: 'Ngươi là ruột thịt của ta. Từ nay ngươi sẽ làm tướng chỉ huy quân đội của ta thay cho Giô-áp. Nếu ta không làm như vậy, nguyện Đức Chúa Trời phạt ta thật nặng.'\""
         }
       },
       "decisions": [
@@ -1903,6 +2108,48 @@
           "reason": "Literal keeps the words of the oath (m2); Balanced uses the oath formula of the Samuel terms note; Readable says plainly what is called down. At Literal the free pronoun for God takes the deity_pronoun span, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o100190140071",
+            "o100190140081",
+            "o100190140091"
+          ],
+          "choice": "Así me haga Dios, y aun me añada (L); Que Dios me castigue, y aun más (B); que Dios me castigue duramente (R)",
+          "alternatives": [],
+          "reason": "The oath formula: Literal keeps the Hebrew 'thus may God do to me and thus may he add'; Balanced uses the terms note's 'Que Dios me castigue, y aun más'; Readable puts the condition first and the oath after, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "idiom",
+          "tokens": [
+            "o100190140071",
+            "o100190140081",
+            "o100190140091"
+          ],
+          "choice": "\"Nguyện Đức Chúa Trời làm như vậy cho ta, và Ngài còn thêm nữa\" (L); \"Nguyện Đức Chúa Trời phạt ta thật nặng nề\" (B, R)",
+          "alternatives": [],
+          "reason": "Literal keeps the oath formula; Balanced and Readable follow the Samuel terms note's \"Nguyện Đức Chúa Trời phạt ... nặng nề\", with \"ta\" in the king's mouth.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1947,10 +2194,20 @@
           "B": "So he won over the hearts of all the men of Judah as if they were one man, and they sent word to the king: \"Come back, you and all your officials.\"",
           "R": "In this way all the men of Judah were won over, and they all agreed together. They sent this message to the king: \"Come back, you and all your officials.\""
         },
+        "es": {
+          "L": "Y él inclinó el corazón de todos los hombres de Judá como un solo hombre, y enviaron a decir al rey: «Vuelve, tú y todos tus siervos».",
+          "B": "Así se ganó el corazón de todos los hombres de Judá, como si fueran un solo hombre, y le mandaron decir al rey: «Vuelve, tú y todos tus oficiales».",
+          "R": "De esta manera se ganó a todos los hombres de Judá, y todos se pusieron de acuerdo. Le enviaron al rey este mensaje: «Vuelve, tú y todos tus oficiales»."
+        },
         "fr": {
           "L": "Et il inclina le cœur de tous les hommes de Juda comme un seul homme, et ils envoyèrent [dire] au roi : « Reviens, toi et tous tes serviteurs. »",
           "B": "Il gagna ainsi le cœur de tous les hommes de Juda, comme s’ils n’étaient qu’un seul homme, et ils envoyèrent dire au roi : « Reviens, toi et tous tes officiers. »",
           "R": "C’est ainsi que tous les hommes de Juda ont été gagnés, et ils étaient tous d’accord. Ils ont envoyé ce message au roi : « Reviens, toi et tous tes officiers. »"
+        },
+        "vi": {
+          "L": "Ông làm cho lòng mọi người Giu-đa xoay về như một người, và họ sai người đến nói với vua: \"Xin vua trở về, vua và tất cả các đầy tớ của vua.\"",
+          "B": "Như vậy ông đã chinh phục được lòng mọi người Giu-đa, khiến họ đồng lòng như một người. Họ gửi lời đến vua: \"Xin bệ hạ trở về cùng tất cả quần thần.\"",
+          "R": "Bằng cách ấy, mọi người Giu-đa đều được thuyết phục, và họ đồng lòng với nhau. Họ gửi lời nhắn cho vua: \"Xin đức vua trở về cùng tất cả quần thần.\""
         }
       },
       "decisions": [
@@ -2086,10 +2343,20 @@
           "B": "So the king started back and came as far as the Jordan. Judah had come to Gilgal to meet the king and to bring him across the Jordan.",
           "R": "So the king started back home and reached the Jordan River. The people of Judah had come to Gilgal to meet the king and help him cross the river."
         },
+        "es": {
+          "L": "Y el rey volvió y llegó al Jordán. Y Judá vino a Gilgal para ir al encuentro del rey, para hacer pasar al rey el Jordán.",
+          "B": "Así que el rey emprendió el regreso y llegó hasta el Jordán. Judá había venido a Gilgal para recibir al rey y ayudarlo a cruzar el Jordán.",
+          "R": "Así que el rey emprendió el regreso a casa y llegó al río Jordán. La gente de Judá había venido a Gilgal para recibir al rey y ayudarlo a cruzar el río."
+        },
         "fr": {
           "L": "Et le roi revint et arriva au Jourdain ; et Juda vint à Guilgal pour aller à la rencontre du roi, pour faire passer le Jourdain au roi.",
           "B": "Le roi prit le chemin du retour et arriva au Jourdain. Juda était venu à Guilgal pour aller à la rencontre du roi et lui faire passer le Jourdain.",
           "R": "Le roi est donc reparti vers chez lui et il est arrivé au Jourdain. Les gens de Juda étaient venus à Guilgal pour accueillir le roi et l’aider à traverser le fleuve."
+        },
+        "vi": {
+          "L": "Vua trở về và đến sông Giô-đanh. Giu-đa đến Ghinh-ganh để đi đón vua, để đưa vua qua sông Giô-đanh.",
+          "B": "Vậy vua lên đường trở về và đến sông Giô-đanh. Người Giu-đa đã đến Ghinh-ganh để đón vua và đưa vua qua sông Giô-đanh.",
+          "R": "Vậy vua lên đường trở về và đến sông Giô-đanh. Người Giu-đa đã đến Ghinh-ganh để đón vua và giúp vua qua sông."
         }
       },
       "decisions": [
@@ -2181,10 +2448,20 @@
           "B": "Shimei son of Gera, the Benjaminite from Bahurim, came down in haste with the men of Judah to meet King David.",
           "R": "Shimei son of Gera hurried down with the men of Judah to meet King David. Shimei belonged to the tribe of Benjamin and lived in Bahurim."
         },
+        "es": {
+          "L": "Y Simei hijo de Gera, el benjamita que [era] de Bahurim, se dio prisa y bajó con los hombres de Judá al encuentro del rey David.",
+          "B": "Simei hijo de Gera, el benjamita de Bahurim, bajó apresuradamente con los hombres de Judá a recibir al rey David.",
+          "R": "Simei hijo de Gera bajó de prisa con los hombres de Judá a recibir al rey David. Simei era de la tribu de Benjamín y vivía en Bahurim."
+        },
         "fr": {
           "L": "Et Shiméï, fils de Guéra, le Benjaminite, qui [était] de Bahourim, se hâta et descendit avec les hommes de Juda à la rencontre du roi David.",
           "B": "Shiméï, fils de Guéra, le Benjaminite de Bahourim, se hâta de descendre avec les hommes de Juda à la rencontre du roi David.",
           "R": "Shiméï, fils de Guéra, s’est dépêché de descendre avec les hommes de Juda pour accueillir le roi David. Shiméï était de la tribu de Benjamin et il habitait à Bahourim."
+        },
+        "vi": {
+          "L": "Si-mê-i con trai Ghê-ra, người Bên-gia-min ở Ba-hu-rim, vội vã đi xuống cùng với người Giu-đa để đón vua Đa-vít.",
+          "B": "Si-mê-i con trai Ghê-ra, người Bên-gia-min ở Ba-hu-rim, vội vàng đi xuống cùng với người Giu-đa để đón vua Đa-vít.",
+          "R": "Si-mê-i con trai Ghê-ra vội vàng đi xuống cùng với người Giu-đa để đón vua Đa-vít. Si-mê-i thuộc chi tộc Bên-gia-min và sống ở Ba-hu-rim."
         }
       },
       "decisions": [
@@ -2289,10 +2566,20 @@
           "B": "With him were a thousand men from Benjamin, and Ziba the attendant of Saul's household, with his fifteen sons and his twenty servants. They rushed down to the Jordan ahead of the king.",
           "R": "A thousand men from the tribe of Benjamin came with Shimei. Ziba, who had served Saul's family, came too, with his fifteen sons and twenty servants. They all hurried down to the Jordan to get there before the king."
         },
+        "es": {
+          "L": "Y con él [venían] mil hombres de Benjamín, y Siba el servidor de la casa de Saúl, y sus quince hijos y sus veinte esclavos con él. Y se lanzaron [al] Jordán delante del rey.",
+          "B": "Con él venían mil hombres de Benjamín, y Siba, el servidor de la casa de Saúl, con sus quince hijos y sus veinte siervos. Bajaron de prisa al Jordán antes que el rey.",
+          "R": "Mil hombres de la tribu de Benjamín vinieron con Simei. También vino Siba, que había servido a la familia de Saúl, con sus quince hijos y veinte siervos. Todos bajaron de prisa al Jordán para llegar antes que el rey."
+        },
         "fr": {
           "L": "Et mille hommes de Benjamin [étaient] avec lui, et Tsiba, le serviteur de la maison de Saül, et ses quinze fils et ses vingt esclaves [étaient] avec lui. Et ils se précipitèrent [vers] le Jourdain devant le roi.",
           "B": "Il avait avec lui mille hommes de Benjamin, ainsi que Tsiba, l’intendant de la maison de Saül, avec ses quinze fils et ses vingt serviteurs. Ils se précipitèrent vers le Jourdain avant le roi.",
           "R": "Mille hommes de la tribu de Benjamin étaient venus avec Shiméï. Tsiba, qui avait servi la famille de Saül, était venu aussi, avec ses quinze fils et ses vingt serviteurs. Ils se sont tous dépêchés de descendre au Jourdain pour y arriver avant le roi."
+        },
+        "vi": {
+          "L": "Có một nghìn người Bên-gia-min [đi] với ông, và Xíp-ba, quản gia nhà Sau-lơ, cùng mười lăm con trai và hai mươi nô lệ của ông [đi] với ông. Họ lao xuống sông Giô-đanh trước mặt vua.",
+          "B": "Cùng đi với ông có một nghìn người Bên-gia-min, và Xíp-ba, quản gia nhà Sau-lơ, với mười lăm con trai và hai mươi đầy tớ của ông. Họ vội vã xuống sông Giô-đanh trước khi vua đến.",
+          "R": "Có một nghìn người thuộc chi tộc Bên-gia-min đi với Si-mê-i. Xíp-ba, người từng phục vụ gia đình Sau-lơ, cũng đến cùng với mười lăm con trai và hai mươi đầy tớ của ông. Tất cả đều vội vã xuống sông Giô-đanh để đến đó trước vua."
         }
       },
       "decisions": [
@@ -2440,10 +2727,20 @@
           "B": "They kept crossing back and forth at the ford to bring the king's household over and to do whatever he wished. As the king was about to cross the Jordan, Shimei son of Gera fell down before him.",
           "R": "They went back and forth through the river at the crossing place, to bring the king's family over and to do whatever he wanted. As the king was crossing the Jordan, Shimei son of Gera bowed down to the ground in front of him."
         },
+        "es": {
+          "L": "Y cruzaban el vado para pasar a la casa del rey, y para hacer lo que [fuera] bueno a sus ojos. Y Simei hijo de Gera se postró delante del rey cuando él pasaba el Jordán.",
+          "B": "Cruzaban el vado de un lado a otro para pasar a la familia del rey y para hacer todo lo que él quisiera. Cuando el rey iba a cruzar el Jordán, Simei hijo de Gera se postró delante de él.",
+          "R": "Cruzaban el río de un lado a otro por el vado, para pasar a la familia del rey y para hacer todo lo que él quisiera. Mientras el rey cruzaba el Jordán, Simei hijo de Gera se inclinó hasta el suelo delante de él."
+        },
         "fr": {
           "L": "Et ils passaient et repassaient le gué pour faire passer la maison du roi et pour faire ce qui [était] bon à ses yeux. Et Shiméï, fils de Guéra, tomba devant le roi au moment où il passait le Jourdain.",
           "B": "Ils firent plusieurs fois l’aller et retour au gué pour faire passer la maison du roi et pour faire tout ce qu’il voudrait. Au moment où le roi allait passer le Jourdain, Shiméï, fils de Guéra, se jeta à ses pieds.",
           "R": "Ils ont traversé plusieurs fois le fleuve à l’endroit du passage, pour faire passer la famille du roi et pour faire tout ce qu’il voulait. Pendant que le roi traversait le Jourdain, Shiméï, fils de Guéra, s’est jeté à terre devant lui."
+        },
+        "vi": {
+          "L": "Họ cứ qua lại chỗ cạn để đưa gia đình vua sang, và để làm điều tốt trong mắt vua. Si-mê-i con trai Ghê-ra sấp mình xuống trước mặt vua khi vua qua sông Giô-đanh.",
+          "B": "Họ qua lại nhiều lần ở chỗ cạn để đưa hoàng gia sang sông và làm mọi điều vua muốn. Khi vua sắp qua sông Giô-đanh, Si-mê-i con trai Ghê-ra sấp mình xuống trước mặt vua.",
+          "R": "Họ đi tới đi lui qua chỗ cạn của sông để đưa gia đình vua sang, và làm mọi điều vua muốn. Khi vua đang qua sông Giô-đanh, Si-mê-i con trai Ghê-ra cúi sấp xuống đất trước mặt vua."
         }
       },
       "decisions": [
@@ -2597,10 +2894,20 @@
           "B": "He said to the king, \"May my lord not hold me guilty. Do not remember the wrong your servant did on the day my lord the king went out from Jerusalem. Let the king put it out of his mind.",
           "R": "He said to the king, \"Your Majesty, please do not hold my sin against me. Forget the wrong things I did on the day you left Jerusalem. Please do not keep thinking about them."
         },
+        "es": {
+          "L": "Y dijo al rey: «No me tome en cuenta mi señor la culpa, ni te acuerdes de lo que hizo mal tu siervo el día en que mi señor el rey salió de Jerusalén, [ni] lo ponga el rey en su corazón.",
+          "B": "Le dijo al rey: «Que mi señor no me tenga por culpable. No te acuerdes del mal que hizo tu siervo el día en que mi señor el rey salió de Jerusalén. Que el rey lo borre de su mente.",
+          "R": "Le dijo al rey: «Mi rey, por favor no me tomes en cuenta mi pecado. Olvida lo malo que hice el día en que saliste de Jerusalén. Por favor, no sigas pensando en eso."
+        },
         "fr": {
           "L": "Et il dit au roi : « Que mon seigneur ne m’impute pas de faute, et ne te souviens pas de ce que ton serviteur a fait de mal le jour où mon seigneur le roi est sorti de Jérusalem, [et] que le roi ne [le] prenne pas à cœur.",
           "B": "Il dit au roi : « Que mon seigneur ne me tienne pas pour coupable. Ne te souviens pas du mal que ton serviteur a fait le jour où mon seigneur le roi est sorti de Jérusalem. Que le roi l’oublie.",
           "R": "Il a dit au roi : « Mon roi, s’il te plaît, ne me tiens pas rigueur de mon péché. Oublie le mal que j’ai fait le jour où tu as quitté Jérusalem. S’il te plaît, n’y pense plus."
+        },
+        "vi": {
+          "L": "Ông nói với vua: \"Xin chúa tôi đừng kể tội cho tôi, và đừng nhớ điều đầy tớ của vua đã làm sai trong ngày chúa tôi là vua ra khỏi Giê-ru-sa-lem; xin vua đừng để điều ấy vào lòng.",
+          "B": "Ông thưa với vua: \"Xin bệ hạ đừng bắt tội tôi. Xin đừng nhớ đến điều sai trái đầy tớ của vua đã làm trong ngày bệ hạ rời Giê-ru-sa-lem. Xin bệ hạ bỏ qua cho.",
+          "R": "Ông thưa với vua: \"Thưa đức vua, xin đừng bắt tội tôi. Xin quên đi những điều sai trái tôi đã làm trong ngày đức vua rời Giê-ru-sa-lem. Xin đức vua đừng nghĩ mãi đến chuyện ấy nữa."
         }
       },
       "decisions": [
@@ -2738,10 +3045,20 @@
           "B": "Your servant knows that I have sinned. But see, today I have come, the first of all the house of Joseph, to come down and meet my lord the king.\"",
           "R": "I know that I have sinned. But look, today I am the first one from all the northern tribes to come down and meet you, my king.\""
         },
+        "es": {
+          "L": "Porque tu siervo sabe que he pecado. Y he aquí, he venido hoy, el primero de toda la casa de José, para bajar al encuentro de mi señor el rey».",
+          "B": "Tu siervo sabe que ha pecado. Pero mira, hoy he venido, el primero de toda la casa de José, a bajar al encuentro de mi señor el rey».",
+          "R": "Yo sé que he pecado. Pero mira, hoy soy el primero de todas las tribus del norte que ha bajado a recibirte, mi rey»."
+        },
         "fr": {
           "L": "Car ton serviteur sait que j’ai péché. Et voici, je suis venu aujourd’hui, le premier de toute la maison de Joseph, pour descendre à la rencontre de mon seigneur le roi. »",
           "B": "Ton serviteur le sait, j’ai péché. Mais vois, je suis venu aujourd’hui, le premier de toute la maison de Joseph, pour descendre à la rencontre de mon seigneur le roi. »",
           "R": "Je sais que j’ai péché. Mais regarde, aujourd’hui, je suis le premier de toutes les tribus du nord à descendre pour t’accueillir, mon roi. »"
+        },
+        "vi": {
+          "L": "Vì đầy tớ của vua biết rằng tôi đã phạm tội. Kìa, hôm nay tôi đã đến, là người đầu tiên của cả nhà Giô-sép, đi xuống đón chúa tôi là vua.\"",
+          "B": "Đầy tớ của vua biết rằng mình đã phạm tội. Nhưng hôm nay, tôi là người đầu tiên của cả nhà Giô-sép đã đến đây đón bệ hạ.\"",
+          "R": "Tôi biết mình đã phạm tội. Nhưng hôm nay tôi là người đầu tiên trong tất cả các chi tộc miền bắc xuống đây đón đức vua.\""
         }
       },
       "decisions": [
@@ -2854,10 +3171,20 @@
           "B": "Abishai son of Zeruiah spoke up and said, \"Should not Shimei be put to death for this? He cursed {{divine_name:the LORD|Yahweh}}'s anointed!\"",
           "R": "Then Abishai son of Zeruiah said, \"Shimei should be put to death for this! He cursed the king {{divine_name:the LORD|Yahweh}} has anointed.\""
         },
+        "es": {
+          "L": "Y Abisai hijo de Sarvia respondió y dijo: «¿No ha de morir Simei por esto, porque maldijo al ungido {{divine_name:del SEÑOR|de Yahvé}}?».",
+          "B": "Abisai hijo de Sarvia intervino y dijo: «¿No debería morir Simei por esto? ¡Maldijo al ungido {{divine_name:del SEÑOR|de Yahvé}}!».",
+          "R": "Entonces Abisai hijo de Sarvia dijo: «¡Simei debe morir por esto! Maldijo al rey que {{divine_name:el SEÑOR|Yahvé}} ha ungido»."
+        },
         "fr": {
           "L": "Et Abishaï, fils de Tserouya, répondit et dit : « Shiméï ne sera-t-il pas mis à mort pour cela, parce qu’il a maudit l’oint {{divine_name:du SEIGNEUR|de Yahvé}} ? »",
           "B": "Abishaï, fils de Tserouya, prit la parole : « Ne faut-il pas mettre à mort Shiméï pour cela ? Il a maudit l’oint {{divine_name:du SEIGNEUR|de Yahvé}} ! »",
           "R": "Alors Abishaï, fils de Tserouya, a dit : « Shiméï doit être mis à mort pour cela ! Il a maudit le roi que {{divine_name:le SEIGNEUR|Yahvé}} a oint. »"
+        },
+        "vi": {
+          "L": "A-bi-sai con trai Xê-ru-gia đáp lời và nói: \"Vì việc này, chẳng lẽ Si-mê-i không bị xử tử sao, vì nó đã nguyền rủa người được xức dầu của {{divine_name:CHÚA|Gia-vê}}?\"",
+          "B": "A-bi-sai con trai Xê-ru-gia lên tiếng: \"Chẳng lẽ Si-mê-i không phải chết vì việc này sao? Nó đã nguyền rủa người được xức dầu của {{divine_name:CHÚA|Gia-vê}}!\"",
+          "R": "Bấy giờ A-bi-sai con trai Xê-ru-gia nói: \"Si-mê-i phải bị xử tử vì việc này! Nó đã nguyền rủa vị vua {{divine_name:CHÚA|Gia-vê}} đã xức dầu.\""
         }
       },
       "decisions": [
@@ -2947,6 +3274,50 @@
           "reason": "As the Samuel terms note: Literal and Balanced keep \"l’oint\", Readable says who is meant. For the whole block.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o100190220141",
+            "o100190220151"
+          ],
+          "choice": "el ungido del SEÑOR (L, B); el rey que el SEÑOR ha ungido (R)",
+          "alternatives": [
+            "el mesías del SEÑOR"
+          ],
+          "reason": "As the terms note, with the divine_name span on 'del SEÑOR' and 'el SEÑOR'.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o100190220141",
+            "o100190220151"
+          ],
+          "choice": "\"người được xức dầu của CHÚA\" (L, B); \"vị vua CHÚA đã xức dầu\" (R)",
+          "alternatives": [
+            "\"vị vua được CHÚA xức dầu\" (B)"
+          ],
+          "reason": "The Samuel terms note sets \"vị vua được CHÚA xức dầu\" for Balanced; here Balanced follows the English Balanced, which keeps \"the LORD's anointed\", and Readable takes the note's Readable form.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3006,10 +3377,20 @@
           "B": "David said, \"Sons of Zeruiah, what business is this of yours? Why should you set yourselves against me today? Is anyone in Israel to be put to death on this day? Do I not know that today I am king over Israel?\"",
           "R": "But David said, \"You sons of Zeruiah, this is not your business! Today you are working against me. No one in Israel will be put to death today. I know that today I am king over Israel again.\""
         },
+        "es": {
+          "L": "Y David dijo: «¿Qué [hay] entre {{plural_you:ustedes|vosotros}} y yo, hijos de Sarvia, para que hoy me {{plural_you:sean|seáis}} adversarios? ¿Ha de morir hoy alguien en Israel? ¿Acaso no sé que hoy [soy] rey sobre Israel?».",
+          "B": "David dijo: «Hijos de Sarvia, ¿qué tienen que ver {{plural_you:ustedes|vosotros}} con esto? ¿Por qué se {{plural_you:ponen|ponéis}} hoy en mi contra? ¿Ha de morir alguien en Israel en este día? ¿Acaso no sé que hoy soy rey sobre Israel?».",
+          "R": "Pero David dijo: «Hijos de Sarvia, ¡esto no es asunto {{plural_you:suyo|vuestro}}! Hoy {{plural_you:están|estáis}} actuando en mi contra. Hoy nadie en Israel va a morir. Sé que hoy soy otra vez rey sobre Israel»."
+        },
         "fr": {
           "L": "Et David dit : « Qu’[y a-t-il] entre moi et vous, fils de Tserouya, pour que vous deveniez aujourd’hui pour moi un adversaire ? Aujourd’hui, quelqu’un serait-il mis à mort en Israël ? Ne sais-je donc pas qu’aujourd’hui je [suis] roi sur Israël ? »",
           "B": "David répondit : « Fils de Tserouya, en quoi cela vous regarde-t-il ? Pourquoi vous dresser aujourd’hui contre moi ? Quelqu’un doit-il être mis à mort en Israël en un jour pareil ? Ne sais-je pas qu’aujourd’hui je suis roi sur Israël ? »",
           "R": "Mais David a dit : « Fils de Tserouya, ce n’est pas votre affaire ! Aujourd’hui, vous agissez contre moi. Personne ne sera mis à mort en Israël aujourd’hui. Je sais qu’aujourd’hui, je suis de nouveau roi sur Israël. »"
+        },
+        "vi": {
+          "L": "Đa-vít nói: \"Ta với các ngươi có [liên quan] gì, hỡi các con trai Xê-ru-gia, mà hôm nay các ngươi trở thành kẻ chống đối ta? Hôm nay có ai trong Y-sơ-ra-ên lại bị xử tử sao? Vì chẳng lẽ ta không biết rằng hôm nay ta [là] vua trên Y-sơ-ra-ên sao?\"",
+          "B": "Đa-vít nói: \"Hỡi các con trai Xê-ru-gia, việc này có liên quan gì đến các ngươi? Sao hôm nay các ngươi lại chống đối ta? Ngày hôm nay mà lại có người trong Y-sơ-ra-ên bị xử tử sao? Chẳng lẽ ta không biết hôm nay ta là vua trên Y-sơ-ra-ên sao?\"",
+          "R": "Nhưng Đa-vít nói: \"Hỡi các con trai Xê-ru-gia, việc này không liên quan đến các ngươi! Hôm nay các ngươi đang chống lại ta. Hôm nay sẽ không có ai trong Y-sơ-ra-ên bị xử tử. Ta biết rằng hôm nay ta lại làm vua trên Y-sơ-ra-ên.\""
         }
       },
       "decisions": [
@@ -3138,10 +3519,20 @@
           "B": "So the king said to Shimei, \"You will not die.\" And the king gave him his oath.",
           "R": "Then the king told Shimei, \"You will not be put to death.\" And the king made a promise to him with an oath."
         },
+        "es": {
+          "L": "Y el rey dijo a Simei: «No morirás». Y el rey se lo juró.",
+          "B": "Así que el rey le dijo a Simei: «No morirás». Y el rey se lo juró.",
+          "R": "Entonces el rey le dijo a Simei: «No te van a matar». Y el rey se lo prometió con un juramento."
+        },
         "fr": {
           "L": "Et le roi dit à Shiméï : « Tu ne mourras pas. » Et le roi le lui jura.",
           "B": "Le roi dit donc à Shiméï : « Tu ne mourras pas. » Et le roi le lui promit par serment.",
           "R": "Ensuite, le roi a dit à Shiméï : « Tu ne seras pas mis à mort. » Et le roi le lui a promis par un serment."
+        },
+        "vi": {
+          "L": "Vua nói với Si-mê-i: \"Ngươi sẽ không chết.\" Và vua thề với ông.",
+          "B": "Vậy vua nói với Si-mê-i: \"Ngươi sẽ không phải chết.\" Rồi vua thề với ông.",
+          "R": "Rồi vua bảo Si-mê-i: \"Ngươi sẽ không bị xử tử.\" Và vua thề hứa với ông như vậy."
         }
       },
       "decisions": [
@@ -3239,10 +3630,20 @@
           "B": "Mephibosheth, Saul's grandson, also came down to meet the king. From the day the king left until the day he returned safely, he had not tended his feet, trimmed his mustache or washed his clothes.",
           "R": "Saul's grandson Mephibosheth also came down to meet the king. From the day the king left until the day he came back safely, Mephibosheth had not taken care of his feet, trimmed his mustache or washed his clothes."
         },
+        "es": {
+          "L": "Y Mefiboset hijo de Saúl descendió al encuentro del rey. Y no había cuidado sus pies, ni se había arreglado el bigote, ni había lavado sus vestidos, desde el día en que el rey se fue hasta el día en que volvió en paz.",
+          "B": "Mefiboset, el nieto de Saúl, también bajó a recibir al rey. Desde el día en que el rey se fue hasta el día en que volvió sano y salvo, no se había cuidado los pies, ni se había arreglado el bigote, ni había lavado su ropa.",
+          "R": "Mefiboset, el nieto de Saúl, también bajó a recibir al rey. Desde el día en que el rey se fue hasta el día en que volvió sano y salvo, Mefiboset no se había cuidado los pies, ni se había recortado el bigote, ni había lavado su ropa."
+        },
         "fr": {
           "L": "Et Mephibosheth, fils de Saül, descendit à la rencontre du roi. Et il n’avait pas soigné ses pieds, ni taillé sa moustache, et ses vêtements, il ne les avait pas lavés, depuis le jour où le roi était parti jusqu’au jour où il revint en paix.",
           "B": "Mephibosheth, le petit-fils de Saül, descendit lui aussi à la rencontre du roi. Depuis le jour où le roi était parti jusqu’au jour de son retour en paix, il ne s’était pas soigné les pieds, ne s’était pas taillé la moustache et n’avait pas lavé ses vêtements.",
           "R": "Mephibosheth, le petit-fils de Saül, est aussi descendu pour accueillir le roi. Depuis le jour où le roi était parti jusqu’au jour où il est revenu sain et sauf, Mephibosheth ne s’était pas soigné les pieds, ne s’était pas taillé la moustache et n’avait pas lavé ses vêtements."
+        },
+        "vi": {
+          "L": "Mê-phi-bô-sết con trai Sau-lơ đi xuống đón vua. Ông đã không chăm sóc chân, không tỉa ria mép, không giặt áo quần, từ ngày vua ra đi cho đến ngày vua bình an [trở] về.",
+          "B": "Mê-phi-bô-sết, cháu nội Sau-lơ, cũng đi xuống đón vua. Từ ngày vua ra đi cho đến ngày vua bình an trở về, ông đã không chăm sóc chân, không tỉa ria mép, cũng không giặt áo quần.",
+          "R": "Mê-phi-bô-sết, cháu nội của Sau-lơ, cũng đi xuống đón vua. Từ ngày vua ra đi cho đến ngày vua bình an trở về, Mê-phi-bô-sết không chăm sóc chân, không tỉa ria mép và không giặt quần áo."
         }
       },
       "decisions": [
@@ -3363,10 +3764,20 @@
           "B": "When he came from Jerusalem to meet the king, the king asked him, \"Why did you not go with me, Mephibosheth?\"",
           "R": "When he came from Jerusalem to meet the king, the king asked him, \"Mephibosheth, why did you not come with me when I left?\""
         },
+        "es": {
+          "L": "Y sucedió que, cuando vino [de] Jerusalén al encuentro del rey, el rey le dijo: «¿Por qué no fuiste conmigo, Mefiboset?».",
+          "B": "Cuando llegó de Jerusalén a recibir al rey, el rey le preguntó: «¿Por qué no te fuiste conmigo, Mefiboset?».",
+          "R": "Cuando llegó de Jerusalén a recibir al rey, el rey le preguntó: «Mefiboset, ¿por qué no te fuiste conmigo cuando me marché?»."
+        },
         "fr": {
           "L": "Et lorsqu’il vint [de] Jérusalem à la rencontre du roi, le roi lui dit : « Pourquoi n’es-tu pas venu avec moi, Mephibosheth ? »",
           "B": "Quand il arriva de Jérusalem pour rencontrer le roi, le roi lui demanda : « Pourquoi n’es-tu pas parti avec moi, Mephibosheth ? »",
           "R": "Quand il est arrivé de Jérusalem pour rencontrer le roi, le roi lui a demandé : « Mephibosheth, pourquoi n’es-tu pas venu avec moi quand je suis parti ? »"
+        },
+        "vi": {
+          "L": "Khi ông [từ] Giê-ru-sa-lem đến đón vua, vua nói với ông: \"Sao ngươi không đi với ta, Mê-phi-bô-sết?\"",
+          "B": "Khi ông từ Giê-ru-sa-lem đến đón vua, vua hỏi: \"Mê-phi-bô-sết, sao ngươi không đi với ta?\"",
+          "R": "Khi ông từ Giê-ru-sa-lem đến đón vua, vua hỏi: \"Mê-phi-bô-sết, sao lúc ta ra đi ngươi không đi với ta?\""
         }
       },
       "decisions": [
@@ -3478,10 +3889,20 @@
           "B": "He answered, \"My lord the king, my servant deceived me. Your servant said, 'I will have the donkey saddled for myself so that I can ride it and go with the king,' since your servant is lame.",
           "R": "He answered, \"Your Majesty, my servant Ziba tricked me. I am lame, so I said, 'I will have my donkey saddled. Then I can ride on it and go with the king.'"
         },
+        "es": {
+          "L": "Y él dijo: «Mi señor el rey, mi siervo me engañó. Porque tu siervo dijo: “Me aparejaré el asno, y montaré en él e iré con el rey”, porque tu siervo [es] cojo.",
+          "B": "Él respondió: «Mi señor el rey, mi siervo me engañó. Tu siervo dijo: “Haré que me aparejen el asno para montarlo e ir con el rey”, porque tu siervo es cojo.",
+          "R": "Él respondió: «Mi rey, mi siervo Siba me engañó. Como soy cojo, le dije: “Hazme aparejar el asno. Así podré montarlo e ir con el rey”."
+        },
         "fr": {
           "L": "Et il dit : « Mon seigneur le roi, mon serviteur m’a trompé. Car ton serviteur avait dit : “Je me ferai seller l’âne, je le monterai et j’irai avec le roi”, car ton serviteur [est] boiteux.",
           "B": "Il répondit : « Mon seigneur le roi, mon serviteur m’a trompé. Ton serviteur avait dit : “Je vais me faire seller l’âne, pour le monter et partir avec le roi”, car ton serviteur est boiteux.",
           "R": "Il a répondu : « Mon seigneur le roi, mon serviteur Tsiba m’a trompé. Je suis boiteux, alors j’avais dit : “Je vais faire seller mon âne. Ensuite, je pourrai le monter et partir avec le roi.”"
+        },
+        "vi": {
+          "L": "Ông nói: \"Thưa chúa tôi là vua, đầy tớ của tôi đã lừa tôi. Vì đầy tớ của vua đã nói: 'Tôi sẽ thắng yên lừa cho mình, cưỡi nó và đi với vua,' vì đầy tớ của vua [bị] què.",
+          "B": "Ông thưa: \"Tâu bệ hạ, đầy tớ của tôi đã lừa tôi. Đầy tớ của vua đã bảo: 'Hãy thắng yên lừa cho tôi để tôi cưỡi đi theo vua,' vì đầy tớ của vua bị què.",
+          "R": "Ông thưa: \"Thưa đức vua, Xíp-ba đầy tớ của tôi đã lừa tôi. Tôi bị què, nên tôi đã bảo: 'Hãy thắng yên lừa cho tôi. Rồi tôi sẽ cưỡi nó đi theo vua.'"
         }
       },
       "decisions": [
@@ -3620,10 +4041,20 @@
           "B": "He has told my lord the king lies about your servant. Yet my lord the king is like an angel of God, so do whatever seems good to you.",
           "R": "He has told you lies about me. But Your Majesty is like an angel from God, who knows what is right. So do whatever you think is best."
         },
+        "es": {
+          "L": "Y él ha calumniado a tu siervo ante mi señor el rey. Pero mi señor el rey [es] como un ángel de Dios; haz, pues, lo que [sea] bueno a tus ojos.",
+          "B": "Él le ha contado mentiras a mi señor el rey acerca de tu siervo. Pero mi señor el rey es como un ángel de Dios; así que haz lo que te parezca bien.",
+          "R": "Te ha contado mentiras sobre mí. Pero tú, mi rey, eres como un ángel enviado por Dios, que sabe lo que es justo. Así que haz lo que creas mejor."
+        },
         "fr": {
           "L": "Et il a calomnié ton serviteur auprès de mon seigneur le roi. Mais mon seigneur le roi [est] comme un ange de Dieu ; fais donc ce qui [est] bon à tes yeux.",
           "B": "Il a dit des mensonges sur ton serviteur à mon seigneur le roi. Mais mon seigneur le roi est comme un ange de Dieu : fais donc ce qui te semble bon.",
           "R": "Il t’a raconté des mensonges sur moi. Mais toi, mon roi, tu es comme un ange venu de Dieu, qui sait ce qui est juste. Alors fais ce que tu penses être le mieux."
+        },
+        "vi": {
+          "L": "Nó đã vu khống đầy tớ của vua với chúa tôi là vua. Nhưng chúa tôi là vua như thiên sứ của Đức Chúa Trời; vậy xin vua làm điều tốt trong mắt vua.",
+          "B": "Nó đã nói dối bệ hạ về đầy tớ của vua. Nhưng bệ hạ như một thiên sứ của Đức Chúa Trời, vậy xin bệ hạ làm điều gì bệ hạ thấy là tốt.",
+          "R": "Nó đã nói dối đức vua về tôi. Nhưng đức vua như một thiên sứ từ Đức Chúa Trời, biết điều gì là đúng. Vậy xin đức vua làm điều gì đức vua thấy là tốt nhất."
         }
       },
       "decisions": [
@@ -3773,10 +4204,20 @@
           "B": "My father's whole house deserved nothing but death from my lord the king, yet you gave your servant a place among those who eat at your table. So what right do I have to make any more appeals to the king?\"",
           "R": "All of my grandfather Saul's family deserved to be put to death by you, Your Majesty. But you let me eat at your own table. So I have no right to ask the king for anything more.\""
         },
+        "es": {
+          "L": "Porque toda la casa de mi padre no [era] sino hombres de muerte ante mi señor el rey, y tú pusiste a tu siervo entre los que comen a tu mesa. ¿Y qué derecho tengo aún, para clamar más al rey?».",
+          "B": "Toda la casa de mi padre no merecía de mi señor el rey otra cosa que la muerte, y sin embargo diste a tu siervo un lugar entre los que comen a tu mesa. ¿Qué derecho tengo, pues, de seguir haciéndole peticiones al rey?».",
+          "R": "Toda la familia de mi abuelo Saúl merecía que tú, mi rey, la condenaras a muerte. Pero tú me dejaste comer a tu propia mesa. Así que no tengo derecho a pedirle nada más al rey»."
+        },
         "fr": {
           "L": "Car toute la maison de mon père n’était que des hommes de mort pour mon seigneur le roi, et tu as placé ton serviteur parmi ceux qui mangent à ta table. Et quel droit ai-je encore, pour crier encore vers le roi ? »",
           "B": "Toute la famille de mon père ne méritait que la mort de la part de mon seigneur le roi, et pourtant tu as donné à ton serviteur une place parmi ceux qui mangent à ta table. Quel droit aurais-je donc encore d’adresser des plaintes au roi ? »",
           "R": "Toute la famille de mon grand-père Saül méritait que tu la fasses mourir, mon roi. Mais tu m’as permis de manger à ta propre table. Je n’ai donc aucun droit de demander encore quelque chose au roi. »"
+        },
+        "vi": {
+          "L": "Vì cả nhà cha tôi đều chỉ là những người đáng chết trước chúa tôi là vua, thế mà vua lại đặt đầy tớ của vua vào hàng những người ăn tại bàn vua. Vậy tôi còn quyền gì để kêu xin vua nữa?\"",
+          "B": "Cả nhà ông nội tôi đáng bị bệ hạ xử tử, thế mà bệ hạ lại cho đầy tớ của vua được ngồi ăn chung bàn với bệ hạ. Vậy tôi còn quyền gì mà kêu xin bệ hạ nữa?\"",
+          "R": "Cả gia đình của ông nội tôi là Sau-lơ đều đáng bị đức vua xử tử. Nhưng đức vua lại cho tôi được ăn tại bàn của đức vua. Vì vậy tôi không có quyền xin đức vua điều gì thêm nữa.\""
         }
       },
       "decisions": [
@@ -3909,10 +4350,20 @@
           "B": "The king said to him, \"Why say any more about your affairs? I have decided: you and Ziba are to divide the land.\"",
           "R": "The king said to him, \"You do not need to say any more. I have decided that you and Ziba will divide the land between you.\""
         },
+        "es": {
+          "L": "Y el rey le dijo: «¿Por qué sigues hablando de tus asuntos? Yo he dicho: Tú y Siba {{plural_you:se repartirán|os repartiréis}} las tierras».",
+          "B": "El rey le dijo: «¿Para qué decir más sobre tus asuntos? Ya lo he decidido: tú y Siba {{plural_you:se repartirán|os repartiréis}} las tierras».",
+          "R": "El rey le dijo: «No necesitas decir nada más. He decidido que tú y Siba {{plural_you:se repartan|os repartáis}} las tierras entre los dos»."
+        },
         "fr": {
           "L": "Et le roi lui dit : « Pourquoi dis-tu encore tes paroles ? Je l’ai dit : toi et Tsiba, vous partagerez le champ. »",
           "B": "Le roi lui dit : « À quoi bon parler encore de tes affaires ? J’ai décidé : toi et Tsiba, vous partagerez les terres. »",
           "R": "Le roi lui a dit : « Tu n’as pas besoin d’en dire plus. J’ai décidé que toi et Tsiba, vous partagerez les terres entre vous. »"
+        },
+        "vi": {
+          "L": "Vua nói với ông: \"Sao ngươi còn nói những lời của ngươi? Ta đã nói: ngươi và Xíp-ba sẽ chia đất với nhau.\"",
+          "B": "Vua bảo ông: \"Ngươi không cần nói thêm về chuyện của ngươi nữa. Ta đã quyết định: ngươi và Xíp-ba sẽ chia đất với nhau.\"",
+          "R": "Vua bảo ông: \"Ngươi không cần nói thêm gì nữa. Ta đã quyết định ngươi và Xíp-ba sẽ chia nhau phần đất ấy.\""
         }
       },
       "decisions": [
@@ -4022,10 +4473,20 @@
           "B": "Mephibosheth said to the king, \"Let him take it all, now that my lord the king has come home safely.\"",
           "R": "Mephibosheth said to the king, \"He can have all of it. It is enough for me that Your Majesty has come home safely.\""
         },
+        "es": {
+          "L": "Y Mefiboset dijo al rey: «Que tome aun todo, ya que mi señor el rey ha vuelto en paz a su casa».",
+          "B": "Mefiboset le dijo al rey: «Que se quede con todo, ahora que mi señor el rey ha vuelto sano y salvo a su casa».",
+          "R": "Mefiboset le dijo al rey: «Que se quede con todo. Me basta con que tú, mi rey, hayas vuelto a casa sano y salvo»."
+        },
         "fr": {
           "L": "Et Mephibosheth dit au roi : « Qu’il prenne même tout, puisque mon seigneur le roi est revenu en paix dans sa maison. »",
           "B": "Mephibosheth dit au roi : « Qu’il prenne tout, maintenant que mon seigneur le roi est rentré chez lui sain et sauf. »",
           "R": "Mephibosheth a dit au roi : « Il peut tout prendre. Pour moi, ce qui compte, c’est que toi, mon roi, tu sois rentré chez toi sain et sauf. »"
+        },
+        "vi": {
+          "L": "Mê-phi-bô-sết nói với vua: \"Cứ để nó lấy cả, vì chúa tôi là vua đã bình an trở về cung mình.\"",
+          "B": "Mê-phi-bô-sết thưa với vua: \"Cứ để nó lấy hết, miễn là bệ hạ đã bình an trở về cung.\"",
+          "R": "Mê-phi-bô-sết thưa với vua: \"Nó lấy hết cũng được. Đối với tôi, đức vua bình an trở về là đủ rồi.\""
         }
       },
       "decisions": [
@@ -4136,10 +4597,20 @@
           "B": "Barzillai the Gileadite had also come down from Rogelim, and he crossed the Jordan with the king to see him on his way across the river.",
           "R": "Barzillai from Gilead had also come down from his town of Rogelim. He crossed the Jordan River with the king, to go with him for the first part of his journey."
         },
+        "es": {
+          "L": "Y Barzilai el galaadita había descendido de Rogelim, y pasó el Jordán con el rey, para despedirlo [al otro lado] del Jordán.",
+          "B": "Barzilai el galaadita también había bajado de Rogelim, y cruzó el Jordán con el rey para despedirlo al otro lado del río.",
+          "R": "Barzilai, de Galaad, también había bajado de su pueblo de Rogelim. Cruzó el río Jordán con el rey, para acompañarlo en el primer tramo del viaje."
+        },
         "fr": {
           "L": "Et Barzillaï le Galaadite était descendu de Roguelim, et il passa le Jourdain avec le roi, pour l’accompagner [au-delà] du Jourdain.",
           "B": "Barzillaï le Galaadite était aussi descendu de Roguelim, et il passa le Jourdain avec le roi pour l’accompagner de l’autre côté du fleuve.",
           "R": "Barzillaï, de Galaad, était aussi descendu de sa ville de Roguelim. Il a traversé le Jourdain avec le roi, pour faire avec lui le début de son voyage."
+        },
+        "vi": {
+          "L": "Bát-xi-lai người Ga-la-át đã từ Rô-ghê-lim đi xuống, và ông qua sông Giô-đanh với vua để tiễn vua [qua] sông Giô-đanh.",
+          "B": "Bát-xi-lai người Ga-la-át cũng từ Rô-ghê-lim xuống, và ông qua sông Giô-đanh với vua để tiễn vua sang bên kia sông.",
+          "R": "Bát-xi-lai người Ga-la-át cũng từ quê ông là Rô-ghê-lim đi xuống. Ông qua sông Giô-đanh với vua, để đi cùng vua một đoạn đường đầu."
         }
       },
       "decisions": [
@@ -4250,10 +4721,20 @@
           "B": "Barzillai was very old, eighty years of age. He had supplied the king's needs while he stayed at Mahanaim, for he was a very wealthy man.",
           "R": "Barzillai was a very old man. He was eighty years old. He had given the king food and supplies while he was staying at Mahanaim, because he was very rich."
         },
+        "es": {
+          "L": "Y Barzilai [era] muy anciano, de ochenta años. Y él había provisto al rey mientras estuvo en Mahanaim, porque [era] un hombre muy grande.",
+          "B": "Barzilai era muy anciano; tenía ochenta años. Le había dado al rey lo que necesitaba mientras estuvo en Mahanaim, porque era un hombre muy rico.",
+          "R": "Barzilai era un hombre muy anciano. Tenía ochenta años. Le había dado al rey comida y provisiones mientras estuvo en Mahanaim, porque era muy rico."
+        },
         "fr": {
           "L": "Et Barzillaï [était] très vieux, âgé de quatre-vingts ans. Et il avait entretenu le roi pendant son séjour à Mahanaïm, car c’[était] un homme très considérable.",
           "B": "Barzillaï était très âgé : il avait quatre-vingts ans. Il avait pourvu aux besoins du roi pendant son séjour à Mahanaïm, car c’était un homme très riche.",
           "R": "Barzillaï était un homme très âgé. Il avait quatre-vingts ans. Il avait donné au roi de la nourriture et tout ce qu’il lui fallait pendant que le roi était à Mahanaïm, car il était très riche."
+        },
+        "vi": {
+          "L": "Bát-xi-lai [đã] rất già, tám mươi tuổi. Ông đã cung cấp cho vua trong thời gian vua ở Ma-ha-na-im, vì ông [là] một người rất giàu có.",
+          "B": "Bát-xi-lai đã rất già, tám mươi tuổi. Ông đã cung cấp mọi nhu cầu cho vua trong thời gian vua ở Ma-ha-na-im, vì ông là người rất giàu có.",
+          "R": "Bát-xi-lai là một ông lão đã tám mươi tuổi. Ông đã cung cấp thức ăn và mọi thứ cần dùng cho vua trong thời gian vua ở Ma-ha-na-im, vì ông rất giàu."
         }
       },
       "decisions": [
@@ -4361,10 +4842,20 @@
           "B": "The king said to Barzillai, \"Come across with me, and I will provide for you in Jerusalem, at my side.\"",
           "R": "The king said to Barzillai, \"Come across the river with me. Live with me in Jerusalem, and I will take care of you.\""
         },
+        "es": {
+          "L": "Y el rey dijo a Barzilai: «Tú, pasa conmigo, y yo te sustentaré conmigo en Jerusalén».",
+          "B": "El rey le dijo a Barzilai: «Cruza conmigo, y yo te sustentaré en Jerusalén, a mi lado».",
+          "R": "El rey le dijo a Barzilai: «Cruza el río conmigo. Ven a vivir conmigo en Jerusalén, y yo te cuidaré»."
+        },
         "fr": {
           "L": "Et le roi dit à Barzillaï : « Toi, passe avec moi, et je t’entretiendrai auprès de moi à Jérusalem. »",
           "B": "Le roi dit à Barzillaï : « Passe le fleuve avec moi, et je pourvoirai à tes besoins à Jérusalem, auprès de moi. »",
           "R": "Le roi a dit à Barzillaï : « Traverse le fleuve avec moi. Viens vivre avec moi à Jérusalem, et je m’occuperai de toi. »"
+        },
+        "vi": {
+          "L": "Vua nói với Bát-xi-lai: \"Ông hãy qua sông với ta, ta sẽ cung cấp cho ông ở với ta tại Giê-ru-sa-lem.\"",
+          "B": "Vua nói với Bát-xi-lai: \"Ông hãy qua sông với ta, ta sẽ chu cấp cho ông ở bên ta tại Giê-ru-sa-lem.\"",
+          "R": "Vua nói với Bát-xi-lai: \"Ông hãy qua sông với ta. Hãy đến sống với ta ở Giê-ru-sa-lem, ta sẽ chăm lo cho ông.\""
         }
       },
       "decisions": [
@@ -4415,6 +4906,27 @@
           "reason": "Readable says what is crossed and spells out that the offer is to live at court.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o100190340082"
+          ],
+          "choice": "the king says \"ông\" to Barzillai; Barzillai says \"vua\" / \"bệ hạ\" / \"đức vua\" and \"đầy tớ của vua\" / \"tôi\"",
+          "alternatives": [
+            "\"ngươi\""
+          ],
+          "reason": "Barzillai is an old and honoured man who fed the king; David speaks to him with respect, as to Zadok and Hushai.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4456,10 +4968,20 @@
           "B": "But Barzillai answered the king, \"How many years do I have left to live, that I should go up to Jerusalem with the king?",
           "R": "But Barzillai answered the king, \"I do not have many years left to live. Why should I go up to Jerusalem with you, Your Majesty?"
         },
+        "es": {
+          "L": "Y Barzilai dijo al rey: «¿Cuántos [son] los días de los años de mi vida, para que yo suba con el rey [a] Jerusalén?",
+          "B": "Pero Barzilai le respondió al rey: «¿Cuántos años me quedan de vida, para que suba a Jerusalén con el rey?",
+          "R": "Pero Barzilai le respondió al rey: «No me quedan muchos años de vida. ¿Para qué voy a subir contigo a Jerusalén, mi rey?"
+        },
         "fr": {
           "L": "Et Barzillaï dit au roi : « Combien [sont] les jours des années de ma vie, pour que je monte avec le roi [à] Jérusalem ?",
           "B": "Mais Barzillaï répondit au roi : « Combien d’années me reste-t-il à vivre, pour que je monte à Jérusalem avec le roi ?",
           "R": "Mais Barzillaï a répondu au roi : « Il ne me reste plus beaucoup d’années à vivre. Pourquoi monterais-je à Jérusalem avec toi, mon roi ?"
+        },
+        "vi": {
+          "L": "Bát-xi-lai nói với vua: \"Những ngày trong những năm đời tôi [còn] bao nhiêu, mà tôi lại đi lên Giê-ru-sa-lem với vua?",
+          "B": "Nhưng Bát-xi-lai thưa với vua: \"Tôi còn sống được bao nhiêu năm nữa mà phải đi lên Giê-ru-sa-lem với bệ hạ?",
+          "R": "Nhưng Bát-xi-lai thưa với vua: \"Tôi không còn sống được bao nhiêu năm nữa. Thưa đức vua, sao tôi lại phải lên Giê-ru-sa-lem với đức vua?"
         }
       },
       "decisions": [
@@ -4581,10 +5103,20 @@
           "B": "I am eighty years old today. Can I still tell what is pleasant from what is not? Can your servant taste what I eat and drink? Do I still hear the voices of men and women singing? Why should your servant be one more burden to my lord the king?",
           "R": "I am already eighty years old. I can no longer enjoy the good things of life. I cannot taste what I eat or drink. I cannot hear the voices of men and women when they sing. I would only be a burden to you, my king."
         },
+        "es": {
+          "L": "Ochenta años tengo hoy. ¿Puedo yo distinguir entre lo bueno y lo malo? ¿Puede tu siervo gustar lo que come o lo que bebe? ¿Puedo oír aún la voz de los cantores y de las cantoras? ¿Y por qué ha de ser tu siervo una carga más para mi señor el rey?",
+          "B": "Hoy tengo ochenta años. ¿Puedo todavía distinguir lo agradable de lo que no lo es? ¿Puede tu siervo saborear lo que come y lo que bebe? ¿Oigo todavía la voz de los hombres y de las mujeres que cantan? ¿Por qué ha de ser tu siervo una carga más para mi señor el rey?",
+          "R": "Ya tengo ochenta años. Ya no puedo disfrutar de las cosas buenas de la vida. No le siento el sabor a lo que como ni a lo que bebo. No puedo oír las voces de los hombres y las mujeres cuando cantan. Solo sería una carga para ti, mi rey."
+        },
         "fr": {
           "L": "J’[ai] aujourd’hui quatre-vingts ans. Puis-je connaître [la différence] entre le bon et le mauvais ? Ton serviteur peut-il goûter ce que je mange et ce que je bois ? Puis-je entendre encore la voix des chanteurs et des chanteuses ? Et pourquoi ton serviteur serait-il encore à charge à mon seigneur le roi ?",
           "B": "J’ai aujourd’hui quatre-vingts ans. Suis-je encore capable de distinguer ce qui est agréable de ce qui ne l’est pas ? Ton serviteur peut-il goûter ce qu’il mange et ce qu’il boit ? Puis-je encore entendre la voix des chanteurs et des chanteuses ? Pourquoi ton serviteur serait-il une charge de plus pour mon seigneur le roi ?",
           "R": "J’ai déjà quatre-vingts ans. Je ne peux plus profiter des bonnes choses de la vie. Je ne sens plus le goût de ce que je mange ou de ce que je bois. Je n’entends plus la voix des hommes et des femmes quand ils chantent. Je serais seulement une charge pour toi, mon roi."
+        },
+        "vi": {
+          "L": "Hôm nay tôi [đã] tám mươi tuổi. Tôi có thể biết [phân biệt] giữa điều tốt và điều xấu không? Đầy tớ của vua có thể nếm được món tôi ăn hay món tôi uống không? Tôi còn có thể nghe tiếng của các ca sĩ nam và ca sĩ nữ không? Sao đầy tớ của vua lại còn làm gánh nặng cho chúa tôi là vua?",
+          "B": "Năm nay tôi đã tám mươi tuổi. Tôi còn phân biệt được điều gì thú vị điều gì không sao? Đầy tớ của vua còn nếm được mùi vị của món ăn thức uống sao? Tôi còn nghe được tiếng hát của nam nữ ca sĩ sao? Sao đầy tớ của vua lại còn làm gánh nặng cho bệ hạ nữa?",
+          "R": "Tôi đã tám mươi tuổi rồi. Tôi không còn hưởng được những điều thú vị trong đời nữa. Tôi không còn nếm được mùi vị của món ăn thức uống. Tôi cũng không còn nghe rõ tiếng nam nữ ca hát. Tôi chỉ làm gánh nặng cho đức vua mà thôi."
         }
       },
       "decisions": [
@@ -4725,10 +5257,20 @@
           "B": "Your servant will go only a short way across the Jordan with the king. Why should the king give me a reward like this?",
           "R": "I will just go a little way across the Jordan with you. You do not need to reward me like this."
         },
+        "es": {
+          "L": "Tu siervo pasará el Jordán con el rey solo un poco. ¿Y por qué ha de pagarme el rey con esta recompensa?",
+          "B": "Tu siervo cruzará el Jordán con el rey solo un trecho corto. ¿Por qué ha de darme el rey una recompensa así?",
+          "R": "Solo cruzaré contigo un poco más allá del Jordán. No hace falta que me recompenses así."
+        },
         "fr": {
           "L": "Ton serviteur passera le Jourdain avec le roi juste un peu. Et pourquoi le roi me rendrait-il cette récompense ?",
           "B": "Ton serviteur fera seulement un bout de chemin avec le roi au-delà du Jourdain. Pourquoi le roi me donnerait-il une telle récompense ?",
           "R": "Je vais juste faire un petit bout de chemin avec toi de l’autre côté du Jourdain. Tu n’as pas besoin de me récompenser ainsi."
+        },
+        "vi": {
+          "L": "Đầy tớ của vua sẽ chỉ qua sông Giô-đanh với vua một quãng ngắn thôi. Sao vua lại phải đền đáp tôi phần thưởng này?",
+          "B": "Đầy tớ của vua chỉ xin đi qua sông Giô-đanh với bệ hạ một quãng ngắn thôi. Sao bệ hạ lại ban cho tôi phần thưởng như thế?",
+          "R": "Tôi chỉ xin đi với đức vua qua sông Giô-đanh một đoạn ngắn thôi. Đức vua không cần phải thưởng cho tôi như vậy đâu."
         }
       },
       "decisions": [
@@ -4840,10 +5382,20 @@
           "B": "Please let your servant go back, so that I may die in my own town near the grave of my father and my mother. But here is your servant Chimham. Let him cross the river with my lord the king, and treat him in whatever way seems good to you.\"",
           "R": "Please let me go back home. I want to die in my own town and be buried near my father and mother. But here is Chimham, who will serve you. Let him go across with you, Your Majesty. Do for him whatever you think is best.\""
         },
+        "es": {
+          "L": "Te ruego que dejes volver a tu siervo, para que muera en mi ciudad, junto al sepulcro de mi padre y de mi madre. Pero he aquí tu siervo Quimam: que pase él con mi señor el rey, y haz por él lo que [sea] bueno a tus ojos».",
+          "B": "Te ruego que dejes volver a tu siervo, para que muera en mi propio pueblo, junto al sepulcro de mi padre y de mi madre. Pero aquí está tu siervo Quimam. Que cruce el río con mi señor el rey, y trátalo como te parezca bien».",
+          "R": "Por favor, déjame volver a casa. Quiero morir en mi propio pueblo y que me entierren junto a mi padre y mi madre. Pero aquí está Quimam, que te servirá. Deja que él cruce contigo, mi rey. Haz por él lo que creas mejor»."
+        },
         "fr": {
           "L": "Que ton serviteur s’en retourne, je te prie, et je mourrai dans ma ville, près du tombeau de mon père et de ma mère. Mais voici ton serviteur Kimham : qu’il passe avec mon seigneur le roi, et fais pour lui ce qui [est] bon à tes yeux. »",
           "B": "Je t’en prie, laisse ton serviteur s’en retourner, pour que je meure dans ma ville, près du tombeau de mon père et de ma mère. Mais voici ton serviteur Kimham. Qu’il passe le fleuve avec mon seigneur le roi ; traite-le comme bon te semblera. »",
           "R": "S’il te plaît, laisse-moi rentrer chez moi. Je veux mourir dans ma ville et être enterré près de mon père et de ma mère. Mais voici Kimham, qui te servira. Laisse-le partir avec toi, mon roi. Fais pour lui ce que tu penses être le mieux. »"
+        },
+        "vi": {
+          "L": "Xin cho đầy tớ của vua trở về, để tôi chết trong thành mình, gần mộ cha mẹ tôi. Nhưng kìa, đầy tớ của vua là Kim-ham, xin cho nó qua sông với chúa tôi là vua, và xin vua làm cho nó điều gì tốt trong mắt vua.\"",
+          "B": "Xin cho đầy tớ của vua trở về, để tôi được chết tại quê mình, gần mộ cha mẹ tôi. Nhưng đây là Kim-ham, đầy tớ của vua. Xin cho nó qua sông với bệ hạ, và xin bệ hạ đối đãi với nó tùy ý bệ hạ.\"",
+          "R": "Xin đức vua cho tôi về nhà. Tôi muốn chết tại quê mình và được chôn gần mộ cha mẹ tôi. Nhưng đây là Kim-ham, nó sẽ phục vụ đức vua. Xin cho nó đi qua sông với đức vua. Xin đức vua làm cho nó điều gì đức vua thấy là tốt nhất.\""
         }
       },
       "decisions": [
@@ -4932,6 +5484,47 @@
           "reason": "The French transcription with \"k\" for the Hebrew kaf, as in Akish and Makir; kept for both books.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o100190380121"
+          ],
+          "choice": "Quimam",
+          "alternatives": [
+            "Kimham",
+            "Jimham"
+          ],
+          "reason": "The usual Spanish spelling of the name, used again in verses 39 and 41.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o100190380121"
+          ],
+          "choice": "\"Kim-ham\"",
+          "alternatives": [],
+          "reason": "The usual Vietnamese form; kept in verse 41, where the Hebrew spells the name differently (meaning decision there).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4983,10 +5576,20 @@
           "B": "The king answered, \"Chimham will cross with me, and I myself will do for him whatever you think good. And anything you ask of me, I will do for you.\"",
           "R": "The king answered, \"Chimham will come with me, and I will do for him whatever you think is best. And I will do anything you ask me to do for you.\""
         },
+        "es": {
+          "L": "Y el rey dijo: «Conmigo pasará Quimam, y yo haré por él lo que [sea] bueno a tus ojos; y todo lo que escojas [pedirme] lo haré por ti».",
+          "B": "El rey respondió: «Quimam cruzará conmigo, y yo mismo haré por él lo que a ti te parezca bien. Y todo lo que me pidas, lo haré por ti».",
+          "R": "El rey respondió: «Quimam vendrá conmigo, y haré por él lo que tú creas mejor. Y haré por ti todo lo que me pidas»."
+        },
         "fr": {
           "L": "Et le roi dit : « Avec moi passera Kimham, et moi, je ferai pour lui ce qui [est] bon à tes yeux ; et tout ce que tu choisiras [de me demander], je le ferai pour toi. »",
           "B": "Le roi répondit : « Kimham passera avec moi, et je ferai moi-même pour lui ce que tu jugeras bon. Et tout ce que tu me demanderas, je le ferai pour toi. »",
           "R": "Le roi a répondu : « Kimham viendra avec moi, et je ferai pour lui ce que tu penses être le mieux. Et je ferai pour toi tout ce que tu me demanderas. »"
+        },
+        "vi": {
+          "L": "Vua nói: \"Kim-ham sẽ qua sông với ta, và chính ta sẽ làm cho nó điều gì tốt trong mắt ông; và mọi điều ông chọn [xin] nơi ta, ta sẽ làm cho ông.\"",
+          "B": "Vua đáp: \"Kim-ham sẽ qua sông với ta, và chính ta sẽ làm cho nó mọi điều ông thấy là tốt. Còn ông xin ta điều gì, ta cũng sẽ làm cho ông.\"",
+          "R": "Vua đáp: \"Kim-ham sẽ đi với ta, và ta sẽ làm cho nó mọi điều ông thấy là tốt nhất. Ông xin ta làm gì cho ông, ta cũng sẽ làm.\""
         }
       },
       "decisions": [
@@ -5088,10 +5691,20 @@
           "B": "So all the people crossed the Jordan, and the king crossed too. The king kissed Barzillai and blessed him, and Barzillai went back to his home.",
           "R": "Then all the people crossed the Jordan, and the king crossed too. The king kissed Barzillai goodbye and asked God to bless him. Then Barzillai went back home."
         },
+        "es": {
+          "L": "Y todo el pueblo pasó el Jordán, y el rey pasó. Y el rey besó a Barzilai y lo bendijo, y él volvió a su lugar.",
+          "B": "Así que todo el pueblo cruzó el Jordán, y el rey también cruzó. El rey besó a Barzilai y lo bendijo, y Barzilai regresó a su casa.",
+          "R": "Entonces todo el pueblo cruzó el Jordán, y el rey también cruzó. El rey se despidió de Barzilai con un beso y le pidió a Dios que lo bendijera. Luego Barzilai regresó a su casa."
+        },
         "fr": {
           "L": "Et tout le peuple passa le Jourdain, et le roi passa. Et le roi embrassa Barzillaï et le bénit, et il retourna chez lui.",
           "B": "Tout le peuple passa donc le Jourdain, et le roi passa aussi. Le roi embrassa Barzillaï et le bénit, et Barzillaï retourna chez lui.",
           "R": "Ensuite, tout le peuple a traversé le Jourdain, et le roi a traversé aussi. Le roi a embrassé Barzillaï pour lui dire au revoir, et il a demandé à Dieu de le bénir. Puis Barzillaï est rentré chez lui."
+        },
+        "vi": {
+          "L": "Toàn dân qua sông Giô-đanh, và vua cũng qua. Vua hôn Bát-xi-lai và chúc phước cho ông, rồi ông trở về chỗ mình.",
+          "B": "Vậy toàn dân qua sông Giô-đanh, và vua cũng qua. Vua hôn Bát-xi-lai và chúc phước cho ông, rồi Bát-xi-lai trở về nhà.",
+          "R": "Rồi toàn dân qua sông Giô-đanh, và vua cũng qua sông. Vua hôn từ biệt Bát-xi-lai và cầu xin Đức Chúa Trời ban phước cho ông. Rồi Bát-xi-lai trở về nhà."
         }
       },
       "decisions": [
@@ -5223,10 +5836,20 @@
           "B": "The king went on to Gilgal, and Chimham went with him. All the people of Judah had brought the king across, and half the people of Israel as well.",
           "R": "The king went on to Gilgal, and Chimham went with him. All the people of Judah had come to bring the king across the river, and half the people of Israel came too."
         },
+        "es": {
+          "L": "Y el rey siguió hasta Gilgal, y Quimam siguió con él. Y todo el pueblo de Judá hizo pasar al rey, y también la mitad del pueblo de Israel.",
+          "B": "El rey siguió hasta Gilgal, y Quimam fue con él. Todo el pueblo de Judá había acompañado al rey en el cruce, y también la mitad del pueblo de Israel.",
+          "R": "El rey siguió hasta Gilgal, y Quimam fue con él. Toda la gente de Judá había venido para ayudar al rey a cruzar el río, y también vino la mitad de la gente de Israel."
+        },
         "fr": {
           "L": "Et le roi passa à Guilgal, et Kimham passa avec lui. Et tout le peuple de Juda avait fait passer le roi, et aussi la moitié du peuple d’Israël.",
           "B": "Le roi continua jusqu’à Guilgal, et Kimham l’accompagnait. Tout le peuple de Juda avait fait passer le fleuve au roi, et la moitié du peuple d’Israël aussi.",
           "R": "Le roi a continué jusqu’à Guilgal, et Kimham est allé avec lui. Tout le peuple de Juda était venu aider le roi à traverser le fleuve, et la moitié du peuple d’Israël était venue aussi."
+        },
+        "vi": {
+          "L": "Vua đi tiếp đến Ghinh-ganh, và Kim-ham đi tiếp với vua. Toàn dân Giu-đa đưa vua sang, cùng với một nửa dân Y-sơ-ra-ên.",
+          "B": "Vua đi tiếp đến Ghinh-ganh, và Kim-ham đi theo vua. Toàn dân Giu-đa đã đưa vua qua sông, cùng với một nửa dân Y-sơ-ra-ên.",
+          "R": "Vua đi tiếp đến Ghinh-ganh, và Kim-ham đi với vua. Toàn dân Giu-đa đã đến đưa vua qua sông, và một nửa dân Y-sơ-ra-ên cũng đến."
         }
       },
       "decisions": [
@@ -5355,10 +5978,20 @@
           "B": "Just then the men of Israel all came to the king and said to him, \"Why have our brothers the men of Judah stolen you away? Why did they take the king and his household over the Jordan, along with all David's men?\"",
           "R": "Then all the men of Israel came to the king. They said to him, \"Why did our relatives, the men of Judah, take you away from us? Why did they bring you and your family across the Jordan, with all your men, and leave us out?\""
         },
+        "es": {
+          "L": "Y he aquí, todos los hombres de Israel venían al rey, y dijeron al rey: «¿Por qué te han robado nuestros hermanos, los hombres de Judá, y han hecho pasar el Jordán al rey y a su casa, y a todos los hombres de David con él?».",
+          "B": "En eso llegaron todos los hombres de Israel adonde estaba el rey y le dijeron: «¿Por qué nuestros hermanos, los hombres de Judá, te han llevado a escondidas? ¿Por qué hicieron cruzar el Jordán al rey y a su familia, junto con todos los hombres de David?».",
+          "R": "Entonces todos los hombres de Israel vinieron a ver al rey. Le dijeron: «¿Por qué nuestros parientes, los hombres de Judá, te apartaron de nosotros? ¿Por qué te hicieron cruzar el Jordán a ti y a tu familia, con todos tus hombres, y nos dejaron fuera a nosotros?»."
+        },
         "fr": {
           "L": "Et voici, tous les hommes d’Israël vinrent vers le roi, et ils dirent au roi : « Pourquoi nos frères, les hommes de Juda, t’ont-ils enlevé et ont-ils fait passer le Jourdain au roi et à sa maison, et à tous les hommes de David avec lui ? »",
           "B": "À ce moment, tous les hommes d’Israël vinrent trouver le roi et lui dirent : « Pourquoi nos frères, les hommes de Juda, t’ont-ils enlevé ? Pourquoi ont-ils fait passer le Jourdain au roi et à sa maison, ainsi qu’à tous les hommes de David ? »",
           "R": "Alors tous les hommes d’Israël sont venus voir le roi. Ils lui ont dit : « Pourquoi nos frères, les hommes de Juda, t’ont-ils pris pour eux seuls ? Pourquoi ont-ils fait traverser le Jourdain à toi et à ta famille, avec tous tes hommes, sans nous ? »"
+        },
+        "vi": {
+          "L": "Kìa, mọi người Y-sơ-ra-ên đến gặp vua và nói với vua: \"Sao anh em chúng tôi, là người Giu-đa, đã đánh cắp vua đi, và đưa vua cùng gia đình vua qua sông Giô-đanh, cùng tất cả người của Đa-vít với vua?\"",
+          "B": "Ngay lúc ấy mọi người Y-sơ-ra-ên đến gặp vua và thưa: \"Sao anh em chúng tôi là người Giu-đa lại cướp lấy bệ hạ? Sao họ lại đưa bệ hạ cùng hoàng gia qua sông Giô-đanh, cùng với tất cả người của Đa-vít?\"",
+          "R": "Rồi mọi người Y-sơ-ra-ên đến gặp vua. Họ thưa: \"Sao bà con chúng tôi là người Giu-đa lại giành đức vua khỏi chúng tôi? Sao họ lại đưa đức vua và gia đình đức vua qua sông Giô-đanh cùng với tất cả người của đức vua, mà bỏ chúng tôi ra ngoài?\""
         }
       },
       "decisions": [
@@ -5483,10 +6116,20 @@
           "B": "All the men of Judah answered the men of Israel, \"We did it because the king is our close relative. Why are you so angry about this? Have we eaten anything at the king's expense? Have we been given any gift?\"",
           "R": "All the men of Judah answered the men of Israel, \"We did it because the king is from our own tribe. Why are you angry about this? The king has not paid for our food. He has not given us any gifts.\""
         },
+        "es": {
+          "L": "Y todos los hombres de Judá respondieron a los hombres de Israel: «Porque el rey [es] pariente cercano mío. ¿Y por qué {{plural_you:les|os}} arde esto? ¿Acaso hemos comido algo del rey, o se nos ha llevado [algún] regalo?».",
+          "B": "Todos los hombres de Judá les respondieron a los hombres de Israel: «Lo hicimos porque el rey es pariente cercano nuestro. ¿Por qué se {{plural_you:enojan|enojáis}} tanto por esto? ¿Hemos comido algo a costa del rey? ¿Se nos ha dado algún regalo?».",
+          "R": "Todos los hombres de Judá les respondieron a los hombres de Israel: «Lo hicimos porque el rey es de nuestra propia tribu. ¿Por qué se {{plural_you:enojan|enojáis}} por esto? El rey no nos ha pagado la comida. No nos ha dado ningún regalo»."
+        },
         "fr": {
           "L": "Et tous les hommes de Juda répondirent aux hommes d’Israël : « C’est que le roi m’[est] proche. Et pourquoi cela te brûle-t-il au sujet de cette affaire ? Avons-nous mangé quoi que ce soit aux dépens du roi, ou nous a-t-on emporté quoi que ce soit ? »",
           "B": "Tous les hommes de Juda répondirent aux hommes d’Israël : « Nous l’avons fait parce que le roi est notre proche parent. Pourquoi cette affaire vous met-elle en colère ? Avons-nous vécu aux frais du roi ? Avons-nous reçu de lui quelque cadeau ? »",
           "R": "Tous les hommes de Juda ont répondu aux hommes d’Israël : « Nous l’avons fait parce que le roi est de notre tribu. Pourquoi êtes-vous en colère ? Le roi ne nous a pas payé notre nourriture. Il ne nous a fait aucun cadeau. »"
+        },
+        "vi": {
+          "L": "Mọi người Giu-đa đáp lại người Y-sơ-ra-ên: \"Vì vua gần gũi với tôi. Sao các anh lại nổi nóng về việc này? Chúng tôi có ăn gì của vua chăng, hay có ai mang [gì] đến cho chúng tôi chăng?\"",
+          "B": "Mọi người Giu-đa đáp lại người Y-sơ-ra-ên: \"Chúng tôi làm vậy vì vua là bà con gần của chúng tôi. Sao các anh lại tức giận về chuyện này? Chúng tôi có được vua đãi ăn gì đâu? Chúng tôi có được ban quà gì đâu?\"",
+          "R": "Mọi người Giu-đa đáp lại người Y-sơ-ra-ên: \"Chúng tôi làm vậy vì vua thuộc chi tộc của chúng tôi. Sao các anh lại giận về chuyện này? Vua đâu có trả tiền ăn cho chúng tôi. Vua cũng đâu có cho chúng tôi quà gì.\""
         }
       },
       "decisions": [
@@ -5601,6 +6244,50 @@
           "reason": "Literal keeps the Hebrew’s singular, each tribe speaking as one man; Balanced and Readable use the plural, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o100190430111",
+            "o100190430112"
+          ],
+          "choice": "{{plural_you:les|os}}; se {{plural_you:enojan|enojáis}}",
+          "alternatives": [
+            "te arde (singular)"
+          ],
+          "reason": "The Hebrew speaks of the men of Israel as one man ('to you', singular). Spanish addresses them as the group they are, with the plural_you setting; Literal keeps the singular 'mío' for Judah's own voice, as the English Literal keeps 'me'.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o100190430091"
+          ],
+          "choice": "the tribes say \"chúng tôi\" and \"các anh\" to each other",
+          "alternatives": [
+            "\"tôi\"",
+            "\"các ngươi\""
+          ],
+          "reason": "Like the English Balanced and Readable, Vietnamese uses plural forms for the collective \"I\"; \"các anh\" fits a quarrel between kinsmen of equal standing.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5672,10 +6359,20 @@
           "B": "The men of Israel replied to the men of Judah, \"Ten shares in the king are ours, and in David too our share is larger than yours. So why do you treat us as if we did not matter? Was it not we who first said that our king should be brought back?\" But the men of Judah answered more fiercely than the men of Israel.",
           "R": "The men of Israel answered the men of Judah, \"There are ten tribes of us, so we have ten times as much right to the king as you do. David belongs to us more than to you. Why do you treat us as if we were not important? We were the first ones to talk about bringing our king back!\" But the men of Judah argued even more harshly than the men of Israel."
         },
+        "es": {
+          "L": "Y los hombres de Israel respondieron a los hombres de Judá y dijeron: «Diez partes en el rey [son] mías, y también en David [tengo más] que {{plural_you:ustedes|vosotros}}. ¿Por qué, pues, me {{plural_you:han|habéis}} tenido en poco? ¿Y no fue mi palabra la primera, para hacer volver a mi rey?». Pero la palabra de los hombres de Judá fue más dura que la palabra de los hombres de Israel.",
+          "B": "Los hombres de Israel les respondieron a los hombres de Judá: «Diez partes del rey son nuestras, y también en David tenemos más parte que {{plural_you:ustedes|vosotros}}. ¿Por qué, entonces, nos {{plural_you:tratan|tratáis}} como si no contáramos? ¿No fuimos nosotros los primeros en decir que había que hacer volver a nuestro rey?». Pero los hombres de Judá respondieron con más dureza que los hombres de Israel.",
+          "R": "Los hombres de Israel les respondieron a los hombres de Judá: «Nosotros somos diez tribus, así que tenemos diez veces más derecho al rey que {{plural_you:ustedes|vosotros}}. David es más nuestro que {{plural_you:suyo|vuestro}}. ¿Por qué nos {{plural_you:tratan|tratáis}} como si no fuéramos importantes? ¡Nosotros fuimos los primeros en hablar de traer de vuelta a nuestro rey!». Pero los hombres de Judá discutieron con más dureza todavía que los hombres de Israel."
+        },
         "fr": {
           "L": "Et les hommes d’Israël répondirent aux hommes de Juda et dirent : « J’ai dix mains dans le roi, et même en David [j’ai plus] que toi. Et pourquoi m’as-tu méprisé ? Ma parole n’a-t-elle pas été la première, pour moi, à ramener mon roi ? » Mais la parole des hommes de Juda fut plus dure que la parole des hommes d’Israël.",
           "B": "Les hommes d’Israël répliquèrent aux hommes de Juda : « Nous avons dix parts sur le roi, et même sur David nous avons plus de droits que vous. Pourquoi nous traitez-vous comme si nous ne comptions pas ? N’est-ce pas nous qui avons parlé les premiers de ramener notre roi ? » Mais les hommes de Juda répondirent plus durement encore que les hommes d’Israël.",
           "R": "Les hommes d’Israël ont répondu aux hommes de Juda : « Nous sommes dix tribus, donc nous avons dix fois plus de droits sur le roi que vous. David est à nous plus qu’à vous. Pourquoi nous traitez-vous comme si nous n’étions pas importants ? C’est nous qui avons parlé les premiers de ramener notre roi ! » Mais les hommes de Juda ont parlé encore plus durement que les hommes d’Israël."
+        },
+        "vi": {
+          "L": "Người Y-sơ-ra-ên đáp lại người Giu-đa và nói: \"Tôi có mười phần nơi vua, và nơi Đa-vít tôi cũng [có phần nhiều] hơn các anh. Sao các anh lại coi thường tôi? Chẳng phải lời tôi là lời đầu tiên, để đem vua tôi trở về sao?\" Nhưng lời của người Giu-đa còn gay gắt hơn lời của người Y-sơ-ra-ên.",
+          "B": "Người Y-sơ-ra-ên đáp lại người Giu-đa: \"Chúng tôi có mười phần nơi vua, và nơi Đa-vít phần của chúng tôi cũng nhiều hơn các anh. Vậy sao các anh lại coi thường chúng tôi? Chẳng phải chính chúng tôi đã đề nghị trước tiên việc đưa vua mình trở về sao?\" Nhưng người Giu-đa đáp lại còn gay gắt hơn người Y-sơ-ra-ên.",
+          "R": "Người Y-sơ-ra-ên đáp lại người Giu-đa: \"Chúng tôi có mười chi tộc, nên chúng tôi có quyền đối với vua gấp mười lần các anh. Đa-vít thuộc về chúng tôi nhiều hơn là thuộc về các anh. Sao các anh lại coi chúng tôi như không đáng kể? Chính chúng tôi là những người đầu tiên nói đến việc đưa vua mình trở về!\" Nhưng người Giu-đa còn cãi lại gay gắt hơn người Y-sơ-ra-ên."
         }
       },
       "decisions": [
