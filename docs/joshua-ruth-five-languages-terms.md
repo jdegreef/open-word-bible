@@ -107,6 +107,24 @@ language and use it.
 AI-draft choices recorded so later work follows them; reviewers may change
 any of them.
 
+- **"Servant of the LORD"** (Moses, Joshua): "servant" at every level in all
+  five languages (*serviteur*, *siervo*, *mtumishi*, *đầy tớ*, 종), where
+  the English Literal says "slave"; literal slavery (9:23) stays "slave".
+- **Seas**: Salt Sea at Literal, Dead Sea at Readable (French *mer Salée* /
+  *mer Morte*; Spanish *mar Salado* / *mar Muerto*; Swahili *Bahari ya
+  Chumvi* (L, B) / *Bahari Mfu* (R), as Deuteronomy 3:17; Vietnamese *Biển
+  Muối* / *Biển Chết*; Korean 염해 / 사해); the Great Sea is Literal and
+  Balanced, the Mediterranean at Readable (Swahili *Bahari Kuu*).
+- **French** town names: *Kiryath-* (as the Pentateuch), *Kiryath-Yearim*,
+  *Ayyalon*, *Barak* (Hebrews 11:32).
+- **Vietnamese**: "serve" God or the gods is *phụng sự* (Joshua 24 and
+  Judges); *shofet* is *quan xét* (L, B, as Acts 13:20), *thủ lĩnh* (R).
+- **Korean**: inheritance is 유산 (L, B); speech levels between characters
+  follow the Genesis note, with 하게체 for an older man to a younger and
+  하오체 between equals in tension.
+- **Numbers**: figures where the English has figures; Korean spells numbers
+  out in Hangul.
+
 ## Before review
 
 Only rendering decisions were added; the meaning decisions are the English
