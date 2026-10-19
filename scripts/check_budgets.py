@@ -28,8 +28,11 @@ BUDGETS = {
     # Korean too, though a page now carries only its own language's
     # rendering decisions; 231 KB (psa/119, the longest chapter, 176
     # verses) on 2026-10-17 once Psalms had all six languages].
+    # Since 2026-10-19 a page is measured with its chapter's shared reader
+    # data (chapter-data/), which every language's page loads.
     "chapter_page_gz": 290 * KB,
-    # The largest script or style sheet [21 KB, reader.js; 26 KB on
+    # The largest script or style sheet (not counting the reader data
+    # scripts, chapter-data/ and reader-<lang>.js) [21 KB, reader.js; 26 KB on
     # 2026-10-13 after the verse panel tools, poetry lines and account sync;
     # 33.1 KB on 2026-10-17 with personal verse notes].
     "js_css_asset_gz": 36 * KB,
@@ -37,7 +40,11 @@ BUDGETS = {
     # Ruth; 1,150 MB later that day with 1 Samuel to 2 Chronicles; 1,810 MB
     # with Vietnamese and Korean as site languages, each about 250 MB, since
     # every page is built in every language; less on 2026-10-15 once the
-    # static search index (about 41 MB a language) was no longer built].
+    # static search index (about 41 MB a language) was no longer built;
+    # 2,264 MB on 2026-10-19 with 1 and 2 Samuel in six languages, until the
+    # source words, interface text and book names were no longer copied into
+    # every language's page (scripts/build_site.py chapter_shared,
+    # reader_shared)].
     # Grows with each book translated and each language added.
     "site_total": 2300 * MB,
 }
@@ -53,6 +60,20 @@ def is_chapter_page(rel):
     parts = rel.parts
     return (len(parts) >= 3 and parts[-1] == "index.html" and parts[-2].isdigit()
             and len(parts) <= 4)
+
+
+def is_reader_data(rel):
+    """A script of reader data, not code: chapter-data/<book>/<chapter>.js
+    or reader-<lang>.js (scripts/build_site.py chapter_shared, reader_shared)."""
+    return rel.parts[0] == "chapter-data" or (len(rel.parts) == 1 and rel.name.startswith("reader-"))
+
+
+def chapter_page_gz(site, path):
+    """A chapter page's gzipped size with its chapter's shared reader data,
+    which it loads (the language's is shared by every chapter)."""
+    book, chapter = path.relative_to(site).parts[-3:-1]
+    data = site / "chapter-data" / book / f"{chapter}.js"
+    return gzipped(path) + (gzipped(data) if data.is_file() else 0)
 
 
 def largest(paths, measure):
@@ -71,9 +92,10 @@ def measure(site):
     found = {}
     if "chapter_page_gz" in BUDGETS:
         found["chapter_page_gz"] = largest(
-            (p for p in files if is_chapter_page(p.relative_to(site))), gzipped)
+            (p for p in files if is_chapter_page(p.relative_to(site))), lambda p: chapter_page_gz(site, p))
     if "js_css_asset_gz" in BUDGETS:
-        found["js_css_asset_gz"] = largest((p for p in files if p.suffix in (".js", ".css")), gzipped)
+        found["js_css_asset_gz"] = largest(
+            (p for p in files if p.suffix in (".js", ".css") and not is_reader_data(p.relative_to(site))), gzipped)
     if "site_total" in BUDGETS:
         found["site_total"] = (sum(p.stat().st_size for p in files), None)
     return found

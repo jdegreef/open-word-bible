@@ -314,6 +314,8 @@
   document.querySelectorAll(".save-book").forEach(function (b) {
     var key = lang + ":" + b.getAttribute("data-book");
     var pages = JSON.parse(b.getAttribute("data-pages"));
+    // Each chapter's shared reader data, which its page loads.
+    var data = JSON.parse(b.getAttribute("data-files") || "[]");
     var label = b.querySelector("span");
     function show(state, n) {
       b.setAttribute("aria-pressed", state === "saved" ? "true" : "false");
@@ -327,7 +329,7 @@
       caches.open("owb-books").then(function (cache) {
         var done = 0;
         // One at a time, so a slow connection is not swamped.
-        return pages.concat(files).reduce(function (chain, u) {
+        return pages.concat(data, files).reduce(function (chain, u) {
           return chain.then(function () {
             return cache.match(u).then(function (hit) {
               // no-cache: past the worker's own cache (web/sw.js), fresh.
@@ -354,7 +356,7 @@
       remember(list);
       // The shared files go with the language's last saved book.
       var more = Object.keys(list).some(function (k) { return k.indexOf(lang + ":") === 0; });
-      var gone = more ? pages : pages.concat(files);
+      var gone = (more ? pages : pages.concat(files)).concat(data);
       caches.open("owb-books").then(function (cache) {
         return Promise.all(gone.map(function (u) { return cache.delete(u); }));
       }).then(function () { show("save"); });

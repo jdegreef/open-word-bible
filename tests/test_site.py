@@ -13,7 +13,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 import build_site  # noqa: E402
 from owb import crossrefs  # noqa: E402
-from tests.site_build import built_site  # noqa: E402
+from tests.site_build import built_site, page_data  # noqa: E402
 
 
 class SiteTest(unittest.TestCase):
@@ -22,9 +22,7 @@ class SiteTest(unittest.TestCase):
         cls.out = built_site()
 
     def chapter_data(self, path="jhn/1"):
-        page = (self.out / path / "index.html").read_text(encoding="utf-8")
-        m = re.search(r'<script type="application/json" id="owb-data">(.*?)</script>', page, re.S)
-        return json.loads(m[1])
+        return page_data((self.out / path / "index.html").read_text(encoding="utf-8"))
 
     def test_pages_exist(self):
         for rel in ("index.html", "read/index.html", "jhn/1/index.html", "php/4/index.html",
@@ -1071,12 +1069,34 @@ class SiteTest(unittest.TestCase):
             files = json.loads(html.unescape(re.search(r'data-offline-files="([^"]*)"', read)[1]))
             for path in files:
                 self.assertTrue(self.built(path).is_file(), path)
-            buttons = re.findall(r'class="save-book" hidden data-book="([A-Z0-9]+)"[^>]*data-pages="([^"]*)"', read)
-            self.assertEqual([b for b, _ in buttons], [b for b, _ in build_site.books(code)])
-            for _, pages in buttons:
-                for path in json.loads(html.unescape(pages)):
+            self.assertIn(build_site.reader_shared(code)[1], files)
+            buttons = re.findall(r'class="save-book" hidden data-book="([A-Z0-9]+)"[^>]*data-pages="([^"]*)" '
+                                 r'data-files="([^"]*)"', read)
+            self.assertEqual([b for b, _, _ in buttons], [b for b, _ in build_site.books(code)])
+            for _, pages, data in buttons:
+                pages, data = json.loads(html.unescape(pages)), json.loads(html.unescape(data))
+                for path in pages:
                     self.assertTrue(path.startswith(build_site.url(code, "/")), path)
                     self.assertTrue(self.built(path).is_file(), path)
+                # Each page's shared chapter data, which the page loads.
+                self.assertEqual(len(data), len(pages))
+                for page, path in zip(pages, data):
+                    self.assertIn(f'<script src="{path}"></script>', self.built(page).read_text(encoding="utf-8"))
+                    self.assertTrue(self.built(path).is_file(), path)
+
+    def test_chapter_pages_share_what_is_the_same(self):
+        # The source words and each sentence's source are the same on every
+        # language's page of a chapter, and the interface text on every
+        # chapter page of a language: each is built once, not into every page.
+        en, es = self.chapter_data("jhn/1"), self.chapter_data("es/jhn/1")
+        self.assertEqual(en["words"], es["words"])
+        self.assertEqual([r["source"] for r in en["records"]], [r["source"] for r in es["records"]])
+        page = (self.out / "es/jhn/1/index.html").read_text(encoding="utf-8")
+        own = json.loads(re.search(r'id="owb-data">(.*?)</script>', page, re.S)[1])
+        for key in ("words", "ui", "bookRefs", "books", "crossrefs"):
+            self.assertNotIn(key, own)
+        self.assertTrue(all("source" not in r for r in own["records"]))
+        self.assertEqual(es["ui"], build_site.catalog("es")["reader.ui"])
 
 
 def note(reason, alternatives=()):
@@ -1132,7 +1152,7 @@ class ComparisonTest(unittest.TestCase):
 
     def test_chapter_pages_embed_the_comparison(self):
         page = build_site.chapter_page("PRO", 21)
-        data = json.loads(re.search(r'<script type="application/json" id="owb-data">(.*?)</script>', page, re.S)[1])
+        data = page_data(page)
         self.assertIn("ECC.1.2", data["compare"]["verses"])
         # A page's comparison verses are a few kilobytes at most.
         self.assertLess(len(json.dumps(data["compare"], ensure_ascii=False)), 25000)

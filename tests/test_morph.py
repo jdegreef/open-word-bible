@@ -1,6 +1,5 @@
 """Plain-language grammar for the Greek morphology codes (owb/morph.py)."""
 import json
-import re
 import sys
 import unittest
 from pathlib import Path
@@ -11,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import build_site  # noqa: E402
+from tests.site_build import page_data  # noqa: E402
 
 
 class MorphTest(unittest.TestCase):
@@ -97,8 +97,7 @@ class MorphTest(unittest.TestCase):
                 morph.describe_hebrew(code)
 
     def test_hebrew_reader_data_carries_the_grammar(self):
-        page = build_site.chapter_page("GEN", 1)
-        data = json.loads(re.search(r'id="owb-data">(.*?)</script>', page, re.S)[1])
+        data = page_data(build_site.chapter_page("GEN", 1))
         self.assertEqual(data["source"], "hbo")
         for words in data["words"].values():
             for w in words:
@@ -113,8 +112,7 @@ class MorphTest(unittest.TestCase):
     def test_reader_data_carries_the_grammar(self):
         # Each page carries the grammar in its own language only.
         for lang in build_site.LANGUAGES:
-            page = build_site.chapter_page("JHN", 1, lang)
-            data = json.loads(re.search(r'id="owb-data">(.*?)</script>', page, re.S)[1])
+            data = page_data(build_site.chapter_page("JHN", 1, lang))
             for words in data["words"].values():
                 for w in words:
                     self.assertEqual(data["grammar"][w["morph"]], {lang: morph.describe(w["morph"], lang)})

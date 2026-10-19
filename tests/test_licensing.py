@@ -83,18 +83,18 @@ class LicensingTest(unittest.TestCase):
         # Field names are checked on every file. Values are checked per word:
         # the restricted codes are short numbers ("3.5"), which also occur in
         # markup (an SVG radius), so a page-wide search would only find
-        # coincidences. Each word in a page's embedded data is compared with
-        # that same word's restricted values instead.
+        # coincidences. Each word in the reader's data (a chapter's shared
+        # data, chapter-data/) is compared with that same word's restricted
+        # values instead.
         values = restricted_values()
         field = re.compile(r'"(%s)"\s*:' % "|".join(RESTRICTED))
-        blob = re.compile(r'<script type="application/json" id="owb-data">(.*?)</script>', re.S)
         checked = 0
         for path, text in self.pages.items():
             self.assertIsNone(field.search(text), path)
-            m = blob.search(text)
-            if not m:
+            if "/chapter-data/" not in str(path):
                 continue
-            for words in json.loads(m[1]).get("words", {}).values():
+            data = json.loads(text[text.index("=") + 1:].rstrip().rstrip(";"))
+            for words in data["words"].values():
                 for word in words:
                     leaked = values.get(word["id"], set()) & {str(v) for v in word.values()}
                     self.assertFalse(leaked, (path, word["id"], leaked))
