@@ -77,6 +77,11 @@
           "L": "{{divine_name:CHÚA|Gia-vê}} phán với Sa-mu-ên: \"Ngươi còn khóc thương Sau-lơ cho đến bao giờ, khi {{deity_pronoun:ta|Ta}} đã loại bỏ nó, không cho làm vua trên Y-sơ-ra-ên nữa? Hãy đổ đầy dầu vào sừng của ngươi và đi. {{deity_pronoun:ta|Ta}} sai ngươi đến Gie-sê, người Bết-lê-hem, vì {{deity_pronoun:ta|Ta}} đã thấy cho chính {{deity_pronoun:ta|Ta}} một vị vua trong số các con trai của người ấy.\"",
           "B": "{{divine_name:CHÚA|Gia-vê}} phán với Sa-mu-ên: \"Con còn than khóc Sau-lơ đến bao giờ nữa, trong khi {{deity_pronoun:ta|Ta}} đã loại bỏ nó, không cho nó làm vua trên Y-sơ-ra-ên? Hãy đổ đầy dầu vào sừng của con và lên đường. {{deity_pronoun:ta|Ta}} sai con đến nhà Gie-sê ở Bết-lê-hem, vì {{deity_pronoun:ta|Ta}} đã chọn một trong các con trai của ông ấy làm vua cho {{deity_pronoun:ta|Ta}}.\"",
           "R": "{{divine_name:CHÚA|Gia-vê}} phán với Sa-mu-ên: \"Con còn buồn rầu về Sau-lơ đến bao giờ? {{deity_pronoun:ta|Ta}} đã loại bỏ nó. Nó sẽ không làm vua trên Y-sơ-ra-ên nữa. Hãy đổ đầy dầu ô-liu vào sừng của con rồi đi. {{deity_pronoun:ta|Ta}} sai con đến gặp Gie-sê, người sống ở Bết-lê-hem. {{deity_pronoun:ta|Ta}} đã chọn một người con trai của ông ấy làm vua của {{deity_pronoun:ta|Ta}}.\""
+        },
+        "ko": {
+          "L": "그리고 {{divine_name:주|야훼}}께서 사무엘에게 말씀하셨다. \"내가 그를 이스라엘을 다스리는 왕의 자리에서 버렸는데, 너는 언제까지 사울을 위해 슬퍼하고 있겠느냐? 네 뿔에 기름을 채우고 가거라. 내가 너를 베들레헴 사람 이새에게 보내겠다. 내가 그의 아들들 가운데에서 나를 위하여 한 왕을 보아 두었다.\"",
+          "B": "{{divine_name:주|야훼}}께서 사무엘에게 말씀하셨다. \"내가 이미 사울을 버려 이스라엘의 왕이 되지 못하게 하였는데, 너는 언제까지 그를 두고 슬퍼하겠느냐? 뿔에 기름을 채워 길을 떠나라. 내가 너를 베들레헴에 사는 이새에게 보낸다. 내가 그의 아들 가운데 하나를 골라 나의 왕으로 삼았다.\"",
+          "R": "{{divine_name:주|야훼}}께서 사무엘에게 말씀하셨다. \"언제까지 사울 때문에 슬퍼하고 있겠느냐? 나는 사울을 버렸다. 그는 더 이상 이스라엘의 왕이 아니다. 뿔에 올리브기름을 가득 채우고 떠나라. 내가 너를 베들레헴에 사는 이새에게 보낸다. 내가 이새의 아들 가운데 하나를 나의 왕으로 골랐다.\""
         }
       },
       "decisions": [
@@ -348,6 +353,47 @@
           "reason": "Literal keeps the Hebrew verb \"see\"; the meaning decision (m3) reads it as choosing and providing, which Balanced and Readable say.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o090160010011",
+            "o090160010261"
+          ],
+          "choice": "God speaks to Samuel in the plain style (해라체) with \"나\" and \"너\"; the narrative gives God the honorific (말씀하셨다)",
+          "alternatives": [
+            "합쇼체 for God's speech"
+          ],
+          "reason": "As the terms of this translation set for the whole Old Testament. Korean has no capital letters, so the English deity_pronoun spans (\"myself/Myself\") have nothing to change in Korean; respect for God is carried by the honorific -시- and 께서 at every level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o090160010261"
+          ],
+          "choice": "\"보아 두었다\" (have seen [for myself]) at Literal; \"골라 ... 삼았다\" / \"골랐다\" (chose) at Balanced and Readable",
+          "alternatives": [
+            "\"골랐다\" at every level"
+          ],
+          "reason": "Literal keeps the Hebrew verb \"see\" in the sense of looking out and providing (meaning decision m3); Balanced and Readable say what it means, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -417,6 +463,11 @@
           "L": "Sa-mu-ên nói: \"Làm sao tôi đi được? Nếu Sau-lơ nghe, ông ấy sẽ giết tôi.\" {{divine_name:CHÚA|Gia-vê}} phán: \"Hãy cầm trong tay một con bò cái tơ trong đàn, và nói: 'Tôi đến để dâng tế lễ cho {{divine_name:CHÚA|Gia-vê}}.'",
           "B": "Sa-mu-ên thưa: \"Làm sao con đi được? Sau-lơ sẽ nghe biết và giết con.\" {{divine_name:CHÚA|Gia-vê}} phán: \"Hãy đem theo một con bò cái tơ và nói: 'Tôi đến để dâng sinh tế cho {{divine_name:CHÚA|Gia-vê}}.'",
           "R": "Sa-mu-ên thưa: \"Làm sao con đi được? Nếu Sau-lơ nghe biết, ông ấy sẽ giết con.\" {{divine_name:CHÚA|Gia-vê}} phán: \"Hãy đem theo một con bò cái tơ. Con hãy nói: 'Tôi đến để dâng sinh tế cho {{divine_name:CHÚA|Gia-vê}}.'"
+        },
+        "ko": {
+          "L": "그러자 사무엘이 말했다. \"제가 어떻게 가겠습니까? 사울이 들으면 저를 죽일 것입니다.\" 그러자 {{divine_name:주|야훼}}께서 말씀하셨다. \"너는 소 떼 가운데에서 암송아지 한 마리를 네 손에 끌고 가서 '내가 {{divine_name:주|야훼}}께 제사를 드리러 왔다' 하고 말하여라.",
+          "B": "사무엘이 말했다. \"제가 어떻게 가겠습니까? 사울이 그 소식을 들으면 저를 죽일 것입니다.\" {{divine_name:주|야훼}}께서 말씀하셨다. \"어린 암소 한 마리를 끌고 가서 '{{divine_name:주|야훼}}께 제사를 드리러 왔다' 하고 말하여라.",
+          "R": "사무엘이 말했다. \"제가 어떻게 갈 수 있겠습니까? 사울이 알게 되면 저를 죽일 것입니다.\" {{divine_name:주|야훼}}께서 말씀하셨다. \"어린 암소 한 마리를 데리고 가거라. 그리고 '{{divine_name:주|야훼}}께 제사를 드리러 왔다' 하고 말하여라."
         }
       },
       "decisions": [
@@ -596,6 +647,28 @@
           "reason": "People speak to God in prayer forms (Genesis terms note); Literal stays with the Hebrew's plain \"said\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o090160020011",
+            "o090160020031"
+          ],
+          "choice": "Samuel speaks to God in the formal polite style (합쇼체) with \"저\"",
+          "alternatives": [
+            "해요체"
+          ],
+          "reason": "People speak to God in 합쇼체 with 저/제, as the terms of this translation set for prayer and for speech to God.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -660,6 +733,11 @@
           "L": "Ngươi hãy mời Gie-sê đến dự tế lễ, rồi {{deity_pronoun:ta|Ta}} sẽ cho ngươi biết điều ngươi phải làm, và ngươi sẽ xức dầu cho {{deity_pronoun:ta|Ta}} [người] mà {{deity_pronoun:ta|Ta}} chỉ cho ngươi.\"",
           "B": "Hãy mời Gie-sê đến dự lễ, rồi {{deity_pronoun:ta|Ta}} sẽ chỉ cho con điều phải làm. Con sẽ xức dầu cho {{deity_pronoun:ta|Ta}} người mà {{deity_pronoun:ta|Ta}} chỉ định cho con.\"",
           "R": "Hãy mời Gie-sê đến dự lễ. Rồi {{deity_pronoun:ta|Ta}} sẽ chỉ cho con điều phải làm. Con sẽ đổ dầu trên người mà {{deity_pronoun:ta|Ta}} chỉ cho con. Việc đó sẽ cho thấy {{deity_pronoun:ta|Ta}} đã chọn người ấy.\""
+        },
+        "ko": {
+          "L": "그리고 너는 이새를 그 제사에 초대하여라. 네가 무엇을 해야 할지 내가 너에게 알려 주겠다. 너는 내가 너에게 말하는 [그 사람]에게 나를 위하여 기름을 부어라.\"",
+          "B": "이새를 제사에 초대하여라. 그러면 네가 할 일을 내가 알려 주겠다. 너는 내가 일러 주는 사람에게 기름을 부어 나의 왕으로 세워라.\"",
+          "R": "이새를 제사에 초대하여라. 그다음에 네가 할 일을 내가 보여 주겠다. 너는 내가 가리키는 사람의 머리에 기름을 부어라. 그것은 내가 그를 왕으로 골랐다는 표시가 될 것이다.\""
         }
       },
       "decisions": [
@@ -820,6 +898,11 @@
           "L": "Sa-mu-ên làm điều {{divine_name:CHÚA|Gia-vê}} đã phán và đến Bết-lê-hem. Các trưởng lão của thành run sợ ra đón ông và nói: \"Ông đến có bình an không?\"",
           "B": "Sa-mu-ên làm theo lời {{divine_name:CHÚA|Gia-vê}} và đi đến Bết-lê-hem. Các trưởng lão trong thành run rẩy ra đón ông và hỏi: \"Ông đến có bình an không?\"",
           "R": "Sa-mu-ên làm theo lời {{divine_name:CHÚA|Gia-vê}} dặn và đi đến Bết-lê-hem. Những người lãnh đạo trong thành sợ hãi khi ra đón ông. Họ hỏi: \"Ông đến đây với thiện ý phải không?\""
+        },
+        "ko": {
+          "L": "그리고 사무엘이 {{divine_name:주|야훼}}께서 말씀하신 대로 행하여 베들레헴으로 갔다. 그러자 그 성의 장로들이 떨면서 그를 맞으러 나와 말했다. \"당신이 오신 것이 평안입니까?\"",
+          "B": "사무엘은 {{divine_name:주|야훼}}께서 말씀하신 대로 베들레헴으로 갔다. 그 성읍의 장로들이 떨면서 그를 맞으러 나와 물었다. \"평안한 일로 오십니까?\"",
+          "R": "사무엘은 {{divine_name:주|야훼}}께서 말씀하신 대로 베들레헴으로 갔다. 그 마을의 지도자들은 그를 맞으러 나오면서 두려워 떨었다. 그들이 물었다. \"좋은 일로 오셨습니까?\""
         }
       },
       "decisions": [
@@ -1002,6 +1085,28 @@
           "reason": "The terms note's form of the question; Readable says plainly what \"peace\" asks (m2), as the English \"as a friend\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o090160040141",
+            "o090160040151"
+          ],
+          "choice": "the elders speak to Samuel in the formal polite style (합쇼체); Samuel answers them, and speaks to Jesse's family, in the plain style (해라체)",
+          "alternatives": [
+            "합쇼체 on both sides"
+          ],
+          "reason": "Samuel is the aged prophet and judge of all Israel, and the elders come trembling; the plain style for him and the honorific for them shows the standing the Hebrew scene gives each. \"평안한 일로 오십니까?\" is the form this translation sets for the question about *shalom* to a superior.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1073,6 +1178,11 @@
           "L": "Ông nói: \"Bình an. Tôi đến để dâng tế lễ cho {{divine_name:CHÚA|Gia-vê}}. Các ông hãy thánh hóa mình rồi đến dự tế lễ với tôi.\" Ông thánh hóa Gie-sê và các con trai ông ấy, rồi mời họ đến dự tế lễ.",
           "B": "Ông đáp: \"Bình an. Tôi đến để dâng sinh tế cho {{divine_name:CHÚA|Gia-vê}}. Các ông hãy làm cho mình nên thánh rồi đến dự lễ với tôi.\" Ông làm cho Gie-sê và các con trai ông ấy nên thánh, rồi mời họ đến dự lễ.",
           "R": "Sa-mu-ên đáp: \"Vâng, tôi đến trong bình an. Tôi đến để dâng sinh tế cho {{divine_name:CHÚA|Gia-vê}}. Các ông hãy chuẩn bị và tẩy sạch mình, rồi đến dự lễ với tôi.\" Sa-mu-ên cũng giúp Gie-sê và các con trai ông ấy chuẩn bị, rồi mời họ đến dự lễ."
+        },
+        "ko": {
+          "L": "그러자 그가 말했다. \"평안이다. 내가 {{divine_name:주|야훼}}께 제사를 드리러 왔다. 너희는 몸을 거룩하게 하고 나와 함께 제사에 가자.\" 그리고 그가 이새와 그의 아들들을 거룩하게 하고 그들을 제사에 초대했다.",
+          "B": "사무엘이 대답했다. \"평안한 일이다. 나는 {{divine_name:주|야훼}}께 제사를 드리러 왔다. 너희는 몸을 거룩하게 하고 나와 함께 제사에 가자.\" 사무엘은 이새와 그의 아들들을 거룩하게 하고, 그들을 제사에 초대했다.",
+          "R": "사무엘이 대답했다. \"그렇다. 좋은 일로 왔다. 나는 {{divine_name:주|야훼}}께 제사를 드리러 왔다. 너희는 몸을 씻고 깨끗하게 준비한 다음 나와 함께 제사에 가자.\" 사무엘은 이새와 그의 아들들도 준비하도록 도와주고, 그들을 제사에 초대했다."
         }
       },
       "decisions": [
@@ -1227,6 +1337,26 @@
           "reason": "Consecration made people ready to come near to God (m1); Readable says what was done, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o090160050061",
+            "o090160050102"
+          ],
+          "choice": "\"몸을 씻고 깨끗하게 준비한\" (wash and get clean and ready) at Readable for \"consecrate yourselves\"",
+          "alternatives": [
+            "\"몸을 거룩하게 하고\""
+          ],
+          "reason": "Readable says what consecrating oneself involved, as the English Readable does (meaning decision m1); Literal and Balanced keep \"거룩하게 하다\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1285,6 +1415,11 @@
           "L": "Khi họ đến, ông thấy Ê-li-áp và nói: \"Chắc chắn người được xức dầu của {{deity_pronoun:ngài|Ngài}} [đang ở] trước mặt {{divine_name:CHÚA|Gia-vê}}.\"",
           "B": "Khi họ đến, Sa-mu-ên thấy Ê-li-áp và nghĩ: \"Chắc chắn người được {{divine_name:CHÚA|Gia-vê}} xức dầu đang đứng đây trước mặt {{deity_pronoun:ngài|Ngài}}!\"",
           "R": "Khi họ đến, Sa-mu-ên thấy Ê-li-áp, con trai cả của Gie-sê. Ông nghĩ: \"Hẳn đây là người {{divine_name:CHÚA|Gia-vê}} đã chọn làm vua. Người ấy đang đứng trước mặt {{deity_pronoun:ngài|Ngài}}.\""
+        },
+        "ko": {
+          "L": "그리고 그들이 왔을 때, 그가 엘리압을 보고 말했다. \"정녕 {{divine_name:주|야훼}} 앞에 그분의 기름 부음 받은 이가 [있다].\"",
+          "B": "그들이 도착했을 때, 사무엘은 엘리압을 보고 생각했다. \"{{divine_name:주|야훼}}께서 기름 부으실 사람이 틀림없이 지금 주님 앞에 서 있구나!\"",
+          "R": "그들이 왔을 때, 사무엘은 이새의 맏아들 엘리압을 보았다. 사무엘은 속으로 생각했다. \"{{divine_name:주|야훼}}께서 왕으로 고르신 사람이 바로 이 사람이구나. 여기 주님 앞에 서 있구나.\""
         }
       },
       "decisions": [
@@ -1426,6 +1561,26 @@
           "reason": "The terms note's form for the anointed; Balanced moves the divine name into the phrase and puts the pronoun after \"trước mặt\", which reads more naturally.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o090160060062"
+          ],
+          "choice": "\"생각했다\" (thought) for \"said\" at Balanced and Readable; Literal keeps \"말했다\"",
+          "alternatives": [
+            "\"말했다\""
+          ],
+          "reason": "Samuel speaks in his own mind (meaning decision m1); Korean \"생각했다\" keeps readers from taking it that he spoke aloud, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1503,6 +1658,11 @@
           "L": "{{divine_name:CHÚA|Gia-vê}} phán với Sa-mu-ên: \"Đừng nhìn vẻ ngoài của nó hay chiều cao của vóc dáng nó, vì {{deity_pronoun:ta|Ta}} đã loại bỏ nó. Vì [không phải] như điều loài người thấy, vì loài người nhìn thấy bằng mắt, còn {{divine_name:CHÚA|Gia-vê}} nhìn thấy tận lòng.\"",
           "B": "Nhưng {{divine_name:CHÚA|Gia-vê}} phán với Sa-mu-ên: \"Đừng để ý đến diện mạo hay chiều cao của nó, vì {{deity_pronoun:ta|Ta}} đã loại bỏ nó. {{divine_name:CHÚA|Gia-vê}} không nhìn như loài người nhìn. Loài người nhìn những gì mắt thấy được, còn {{divine_name:CHÚA|Gia-vê}} nhìn vào tấm lòng.\"",
           "R": "Nhưng {{divine_name:CHÚA|Gia-vê}} phán với Sa-mu-ên: \"Đừng nghĩ đến vẻ đẹp hay chiều cao của nó. {{deity_pronoun:ta|Ta}} không chọn nó. {{divine_name:CHÚA|Gia-vê}} không nhìn sự việc như người ta nhìn. Người ta nhìn bề ngoài, còn {{divine_name:CHÚA|Gia-vê}} nhìn thấy bên trong con người.\""
+        },
+        "ko": {
+          "L": "그러자 {{divine_name:주|야훼}}께서 사무엘에게 말씀하셨다. \"그의 생김새와 그의 키가 큰 것을 보지 마라. 내가 이미 그를 버렸다. [나는] 사람이 보는 것과 같이 [보지] 않는다. 사람은 눈에 [보이는 것을] 보지만, {{divine_name:주|야훼}}는 마음을 본다.\"",
+          "B": "그러나 {{divine_name:주|야훼}}께서 사무엘에게 말씀하셨다. \"그의 겉모습이나 큰 키에 마음을 두지 마라. 나는 그를 버렸다. {{divine_name:주|야훼}}는 사람이 보는 방식으로 보지 않는다. 사람은 눈에 보이는 것을 보지만, {{divine_name:주|야훼}}는 마음을 본다.\"",
+          "R": "그러나 {{divine_name:주|야훼}}께서 사무엘에게 말씀하셨다. \"그가 얼마나 잘생겼는지, 얼마나 키가 큰지 생각하지 마라. 나는 그를 고르지 않았다. {{divine_name:주|야훼}}는 사람처럼 보지 않는다. 사람은 겉모습을 보지만, {{divine_name:주|야훼}}는 사람의 속마음을 본다.\""
         }
       },
       "decisions": [
@@ -1735,6 +1895,28 @@
           "reason": "Vietnamese \"loài người\" and \"người ta\" already mean human beings of either sex, so there are not two wordings to choose between (style guide section 7); this holds through the block.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o090160070182",
+            "o090160070202"
+          ],
+          "choice": "\"사람\" for the general word for a human being, with no gender span",
+          "alternatives": [
+            "a gender setting span"
+          ],
+          "reason": "Korean \"사람\" already means any human being, woman or man (meaning decision m5), so Korean has no second wording for the gender setting to offer, unlike the English \"a human being / man\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1796,6 +1978,11 @@
           "L": "Gie-sê gọi A-bi-na-đáp và cho nó đi qua trước mặt Sa-mu-ên. Ông nói: \"{{divine_name:CHÚA|Gia-vê}} cũng không chọn người này.\"",
           "B": "Rồi Gie-sê gọi A-bi-na-đáp và cho đi ngang qua trước mặt Sa-mu-ên. Nhưng Sa-mu-ên nói: \"{{divine_name:CHÚA|Gia-vê}} cũng không chọn người này.\"",
           "R": "Rồi Gie-sê gọi con trai mình là A-bi-na-đáp và cho đi qua trước mặt Sa-mu-ên. Nhưng Sa-mu-ên nói: \"{{divine_name:CHÚA|Gia-vê}} cũng không chọn người này.\""
+        },
+        "ko": {
+          "L": "그리고 이새가 아비나답을 불러 사무엘 앞으로 지나가게 했다. 그러자 그가 말했다. \"이 사람도 {{divine_name:주|야훼}}께서 택하지 않으셨다.\"",
+          "B": "이새가 아비나답을 불러 사무엘 앞으로 지나가게 했다. 그러나 사무엘은 \"이 아들도 {{divine_name:주|야훼}}께서 고르지 않으셨다\" 하고 말했다.",
+          "R": "그러자 이새는 아들 아비나답을 불러 사무엘 앞으로 걸어가게 했다. 그러나 사무엘은 \"이 아들도 {{divine_name:주|야훼}}께서 고르지 않으셨다\" 하고 말했다."
         }
       },
       "decisions": [
@@ -1900,6 +2087,11 @@
           "L": "Gie-sê cho Sam-ma đi qua. Ông nói: \"{{divine_name:CHÚA|Gia-vê}} cũng không chọn người này.\"",
           "B": "Kế đến Gie-sê cho Sam-ma đi ngang qua. Nhưng Sa-mu-ên nói: \"{{divine_name:CHÚA|Gia-vê}} cũng không chọn người này.\"",
           "R": "Kế đến Gie-sê cho Sam-ma đi qua. Nhưng Sa-mu-ên lại nói: \"{{divine_name:CHÚA|Gia-vê}} cũng không chọn người này.\""
+        },
+        "ko": {
+          "L": "그리고 이새가 삼마를 지나가게 했다. 그러자 그가 말했다. \"이 사람도 {{divine_name:주|야훼}}께서 택하지 않으셨다.\"",
+          "B": "이새가 다음으로 삼마를 지나가게 했다. 그러나 사무엘은 \"이 아들도 {{divine_name:주|야훼}}께서 고르지 않으셨다\" 하고 말했다.",
+          "R": "이새는 다음으로 삼마를 지나가게 했다. 그러나 사무엘은 또 \"이 아들도 {{divine_name:주|야훼}}께서 고르지 않으셨다\" 하고 말했다."
         }
       },
       "decisions": [
@@ -2037,6 +2229,11 @@
           "L": "Gie-sê cho bảy người con trai mình đi qua trước mặt Sa-mu-ên. Sa-mu-ên nói với Gie-sê: \"{{divine_name:CHÚA|Gia-vê}} không chọn những người này.\"",
           "B": "Gie-sê cho bảy người con trai mình đi ngang qua trước mặt Sa-mu-ên, nhưng Sa-mu-ên nói với Gie-sê: \"{{divine_name:CHÚA|Gia-vê}} không chọn ai trong những người này cả.\"",
           "R": "Cứ như thế, Gie-sê cho bảy người con trai mình đi qua trước mặt Sa-mu-ên. Nhưng Sa-mu-ên bảo Gie-sê: \"{{divine_name:CHÚA|Gia-vê}} không chọn ai trong những người này cả.\""
+        },
+        "ko": {
+          "L": "그리고 이새가 그의 아들 일곱을 사무엘 앞으로 지나가게 했다. 그러자 사무엘이 이새에게 말했다. \"{{divine_name:주|야훼}}께서 이들을 택하지 않으셨다.\"",
+          "B": "이새는 아들 일곱을 사무엘 앞으로 지나가게 했다. 그러나 사무엘은 이새에게 \"{{divine_name:주|야훼}}께서 이들 가운데 아무도 고르지 않으셨다\" 하고 말했다.",
+          "R": "이렇게 이새는 아들 일곱을 사무엘 앞으로 지나가게 했다. 그러나 사무엘은 이새에게 \"{{divine_name:주|야훼}}께서 이들 가운데 아무도 고르지 않으셨다\" 하고 말했다."
         }
       },
       "decisions": [
@@ -2167,6 +2364,11 @@
           "L": "Sa-mu-ên nói với Gie-sê: \"Các chàng trai đã hết chưa?\" Ông ấy nói: \"Còn lại đứa nhỏ nhất, và kìa, nó đang chăn bầy chiên.\" Sa-mu-ên nói với Gie-sê: \"Hãy sai [người] đem nó đến, vì chúng ta sẽ không ngồi quanh [bàn] cho đến khi nó đến đây.\"",
           "B": "Sa-mu-ên hỏi Gie-sê: \"Ông chỉ có ngần này con trai thôi sao?\" Gie-sê đáp: \"Còn đứa út nữa. Nó đang ở ngoài chăn chiên.\" Sa-mu-ên nói với Gie-sê: \"Hãy cho người gọi nó về đây. Chúng ta sẽ không ngồi vào bữa ăn cho đến khi nó đến.\"",
           "R": "Sa-mu-ên hỏi Gie-sê: \"Ông chỉ có bấy nhiêu con trai thôi sao?\" Gie-sê đáp: \"Còn đứa út nữa, nhưng nó đang ở ngoài đồng chăn chiên.\" Sa-mu-ên nói: \"Hãy sai người đi gọi nó về. Chúng ta sẽ không ngồi vào bữa tiệc cho đến khi nó đến đây.\""
+        },
+        "ko": {
+          "L": "그리고 사무엘이 이새에게 말했다. \"젊은이들이 다 [왔느냐]?\" 그러자 그가 말했다. \"아직 막내가 남아 있는데, 보십시오, 그는 양 떼를 치고 있습니다.\" 그러자 사무엘이 이새에게 말했다. \"사람을 보내어 그를 데려오너라. 그가 여기에 올 때까지 우리는 둘러앉지 않겠다.\"",
+          "B": "사무엘이 이새에게 물었다. \"아들이 이들뿐이냐?\" 이새가 대답했다. \"아직 막내가 있습니다. 그 아이는 지금 양 떼를 돌보고 있습니다.\" 사무엘이 이새에게 말했다. \"사람을 보내어 그를 데려오너라. 그가 올 때까지 우리는 식사 자리에 앉지 않겠다.\"",
+          "R": "사무엘이 이새에게 물었다. \"아들이 이들뿐이냐?\" 이새가 대답했다. \"막내가 하나 더 있습니다. 그런데 그 아이는 들에 나가 양을 치고 있습니다.\" 사무엘이 말했다. \"사람을 보내서 그를 데려오너라. 그가 여기 올 때까지 우리는 잔치 자리에 앉지 않겠다.\""
         }
       },
       "decisions": [
@@ -2369,6 +2571,26 @@
           "reason": "The verb \"go around\" means sitting round the meal (m3); Literal keeps the picture with a bracketed word, the other levels say what it means.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o090160110221"
+          ],
+          "choice": "\"식사 자리에 앉지 않겠다\" / \"잔치 자리에 앉지 않겠다\" (sit down to the meal) at Balanced and Readable; Literal keeps \"둘러앉지 않겠다\"",
+          "alternatives": [
+            "\"둘러서지 않겠다\""
+          ],
+          "reason": "The Hebrew \"go around\" means sitting around the sacrificial meal (meaning decision m3); Literal's \"둘러앉다\" (sit around) keeps the picture, the other levels say it plainly.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2434,6 +2656,11 @@
           "L": "Ông sai [người] đem cậu đến. Cậu có nước da hồng hào, đôi mắt đẹp và dáng vẻ đẹp đẽ. {{divine_name:CHÚA|Gia-vê}} phán: \"Hãy đứng dậy, xức dầu cho nó, vì chính là nó.\"",
           "B": "Vậy Gie-sê sai người đưa cậu về. Cậu có vẻ khỏe mạnh, nước da hồng hào, đôi mắt sáng đẹp, dáng người tuấn tú. {{divine_name:CHÚA|Gia-vê}} phán: \"Hãy đứng dậy xức dầu cho nó. Chính nó đó.\"",
           "R": "Vậy Gie-sê sai người đưa cậu về. Da cậu hồng hào khỏe mạnh, mắt cậu đẹp, và cậu rất đẹp trai. {{divine_name:CHÚA|Gia-vê}} phán với Sa-mu-ên: \"Hãy đứng dậy đổ dầu trên nó. Chính nó đó.\""
+        },
+        "ko": {
+          "L": "그리고 그가 사람을 보내어 그를 데려왔다. 그는 붉은빛이 돌고 눈이 아름답고 보기에 좋았다. 그러자 {{divine_name:주|야훼}}께서 말씀하셨다. \"일어나 그에게 기름을 부어라. 바로 이 사람이다.\"",
+          "B": "이새가 사람을 보내어 그를 데려왔다. 그는 혈색이 좋고 눈이 빛났으며 용모가 잘생겼다. 그때 {{divine_name:주|야훼}}께서 말씀하셨다. \"일어나 그에게 기름을 부어라. 바로 이 사람이다.\"",
+          "R": "이새는 사람을 보내 막내를 데려왔다. 그의 얼굴은 건강하게 빛났고 눈이 아름다웠으며 잘생긴 모습이었다. {{divine_name:주|야훼}}께서 사무엘에게 말씀하셨다. \"일어나 그의 머리에 기름을 부어라. 바로 이 사람이다.\""
         }
       },
       "decisions": [
@@ -2601,6 +2828,26 @@
           "reason": "\"cậu\" fits a youth sent for from the flock; switching to \"ông\" once he serves the king keeps the narration in line with the Psalm titles (Psalms 34; 57; 59) and with 2 Samuel.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o090160120041"
+          ],
+          "choice": "\"혈색이 좋고\" (healthy complexion) at Balanced, \"얼굴은 건강하게 빛났고\" at Readable for \"ruddy\"; Literal \"붉은빛이 돌고\"",
+          "alternatives": [
+            "\"붉은\" at every level"
+          ],
+          "reason": "Korean \"붉다\" alone would suggest red hair or a flushed face; the meaning decision (m1) reads the word as a healthy reddish colour, which Balanced and Readable state.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2680,6 +2927,11 @@
           "L": "Sa-mu-ên lấy sừng dầu và xức dầu cho cậu giữa các anh của cậu. Thần Linh của {{divine_name:CHÚA|Gia-vê}} giáng mạnh trên Đa-vít từ ngày đó trở đi. Sa-mu-ên đứng dậy đi về Ra-ma.",
           "B": "Vậy Sa-mu-ên lấy sừng dầu và xức dầu cho cậu ngay giữa các anh của cậu, và Thần Linh của {{divine_name:CHÚA|Gia-vê}} giáng mạnh trên Đa-vít từ ngày đó trở đi. Rồi Sa-mu-ên lên đường trở về Ra-ma.",
           "R": "Vậy Sa-mu-ên lấy sừng dầu đổ trên đầu Đa-vít trong khi các anh cậu đứng nhìn. Từ ngày đó trở đi, Thần Linh của {{divine_name:CHÚA|Gia-vê}} đến trên Đa-vít với quyền năng. Rồi Sa-mu-ên rời đi và trở về nhà mình ở Ra-ma."
+        },
+        "ko": {
+          "L": "그리고 사무엘이 기름 뿔을 가져다가 그의 형들 가운데에서 그에게 기름을 부었다. 그리고 {{divine_name:주|야훼}}의 영이 그날부터 계속 다윗에게 크게 임했다. 그리고 사무엘은 일어나 라마로 갔다.",
+          "B": "사무엘은 기름이 담긴 뿔을 가져다가 그의 형들이 있는 자리에서 그에게 기름을 부었다. 그러자 {{divine_name:주|야훼}}의 영이 그날부터 다윗에게 크게 임했다. 그 뒤에 사무엘은 일어나 라마로 돌아갔다.",
+          "R": "사무엘은 기름이 담긴 뿔을 가져다가, 형들이 보는 앞에서 다윗의 머리에 기름을 부었다. 그날부터 {{divine_name:주|야훼}}의 영이 다윗에게 힘 있게 임했다. 그 뒤에 사무엘은 자기 집이 있는 라마로 돌아갔다."
         }
       },
       "decisions": [
@@ -2865,6 +3117,27 @@
           "reason": "The Samuel terms note's form for the Spirit rushing on someone; Readable uses plainer words, as the English Readable \"came on David with power\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o090160130102",
+            "o090160130111"
+          ],
+          "choice": "\"주의 영이 ... 크게 임했다\" for \"the Spirit of the LORD rushed on\"; Readable \"힘 있게 임했다\"",
+          "alternatives": [
+            "\"덮쳤다\""
+          ],
+          "reason": "The form this translation settles for 1 and 2 Samuel: the Spirit comes on a person with sudden power (meaning decision m2), without a verb of attack. Readable says \"with power\" in plainer words.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2922,6 +3195,11 @@
           "L": "Thần Linh của {{divine_name:CHÚA|Gia-vê}} lìa khỏi Sau-lơ, và một ác thần từ {{divine_name:CHÚA|Gia-vê}} làm cho ông kinh hãi.",
           "B": "Lúc ấy Thần Linh của {{divine_name:CHÚA|Gia-vê}} đã lìa khỏi Sau-lơ, và một ác thần từ {{divine_name:CHÚA|Gia-vê}} hành hạ ông.",
           "R": "Nhưng Thần Linh của {{divine_name:CHÚA|Gia-vê}} đã lìa bỏ Sau-lơ. Thay vào đó, một ác thần do {{divine_name:CHÚA|Gia-vê}} sai đến làm cho ông đầy sợ hãi."
+        },
+        "ko": {
+          "L": "그리고 {{divine_name:주|야훼}}의 영이 사울에게서 떠나고, {{divine_name:주|야훼}}께로부터 [온] 악한 영이 그를 두렵게 했다.",
+          "B": "그런데 {{divine_name:주|야훼}}의 영은 이미 사울에게서 떠나 있었고, {{divine_name:주|야훼}}께서 보내신 악한 영이 그를 괴롭혔다.",
+          "R": "그러나 {{divine_name:주|야훼}}의 영은 사울에게서 떠났다. 그 대신 {{divine_name:주|야훼}}께서 보내신 악한 영이 사울을 몹시 두렵게 했다."
         }
       },
       "decisions": [
@@ -3121,6 +3399,27 @@
           "reason": "The Samuel terms note's word: a spirit that brings harm (m2); \"tà linh\" would suggest a demon in the New Testament sense.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o090160140071",
+            "o090160140091"
+          ],
+          "choice": "\"주께서 보내신 악한 영\" (an evil spirit the LORD sent) at Balanced and Readable; Literal \"주께로부터 [온] 악한 영\"",
+          "alternatives": [
+            "\"악령\""
+          ],
+          "reason": "The form this translation settles for 1 and 2 Samuel. \"악령\" would suggest a demon in the later sense; the meaning decisions (m2, m3) read it as a harmful spirit God sends in judgment.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3176,6 +3475,11 @@
           "L": "Các đầy tớ của Sau-lơ nói với ông: \"Kìa, xin [vua xem], một ác thần của Đức Chúa Trời đang làm cho vua kinh hãi.",
           "B": "Các quần thần của Sau-lơ thưa với ông: \"Bệ hạ thấy đó, một ác thần từ Đức Chúa Trời đang hành hạ bệ hạ.",
           "R": "Các quần thần của Sau-lơ thưa với ông: \"Một ác thần từ Đức Chúa Trời đang làm cho đức vua đầy sợ hãi."
+        },
+        "ko": {
+          "L": "그리고 사울의 신하들이 그에게 말했다. \"보십시오, 하나님께로부터 [온] 악한 영이 임금님을 두렵게 하고 있습니다.",
+          "B": "사울의 신하들이 그에게 말했다. \"보시다시피 하나님께서 보내신 악한 영이 임금님을 괴롭히고 있습니다.",
+          "R": "사울의 신하들이 그에게 말했다. \"하나님께서 보내신 악한 영이 임금님을 몹시 두렵게 하고 있습니다."
         }
       },
       "decisions": [
@@ -3336,6 +3640,28 @@
           "reason": "As the Samuel terms note sets for the king's servants and for address to the king; this holds through the block.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o090160150021",
+            "o090160150031"
+          ],
+          "choice": "\"사울의 신하들\" for Saul's servants at every level; they speak to him in the formal polite style (합쇼체), calling him \"임금님\" and themselves \"임금님의 종들\"",
+          "alternatives": [
+            "\"종들\" at Literal"
+          ],
+          "reason": "\"신하들\" covers both \"servants\" and \"officials\" of a king, as the terms of this translation set for \"the king's servants\"; subjects address the king in 합쇼체 throughout the book.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3411,6 +3737,11 @@
           "L": "Xin chúa chúng tôi hãy truyền lệnh; các đầy tớ của vua [đang ở] trước mặt vua. Họ sẽ tìm một người biết gảy đàn lia. Khi ác thần của Đức Chúa Trời đến trên vua, người ấy sẽ lấy tay gảy đàn, và vua sẽ được dễ chịu.\"",
           "B": "Xin bệ hạ truyền lệnh cho các đầy tớ đang hầu trước mặt bệ hạ, họ sẽ đi tìm một người biết gảy đàn lia. Rồi mỗi khi ác thần từ Đức Chúa Trời đến trên bệ hạ, người ấy sẽ gảy đàn, và bệ hạ sẽ thấy dễ chịu hơn.\"",
           "R": "Thưa đức vua, xin vua chỉ cần ra lệnh cho chúng tôi là đầy tớ của vua. Chúng tôi sẽ tìm một người gảy đàn lia giỏi. Khi ác thần từ Đức Chúa Trời đến trên vua, người ấy sẽ chơi nhạc cho vua nghe, và vua sẽ thấy dễ chịu hơn.\""
+        },
+        "ko": {
+          "L": "우리 주께서는 앞에 있는 임금님의 종들에게 부디 말씀하십시오. 그들이 수금을 탈 줄 아는 사람을 찾겠습니다. 하나님께로부터 [온] 악한 영이 임금님께 내릴 때, 그가 손으로 [수금을] 타면 임금님께서 좋아지실 것입니다.\"",
+          "B": "우리 주인이신 임금님께서 여기 앞에 있는 종들에게 명령만 내리십시오. 그러면 저희가 수금을 잘 타는 사람을 찾아오겠습니다. 하나님께서 보내신 악한 영이 임금님께 내릴 때마다 그가 수금을 타면, 임금님의 마음이 나아지실 것입니다.\"",
+          "R": "임금님, 저희에게 명령만 내려 주십시오. 저희가 수금을 잘 타는 사람을 찾아보겠습니다. 하나님께서 보내신 악한 영이 임금님께 내릴 때, 그 사람이 수금을 타면 임금님의 기분이 나아지실 것입니다.\""
         }
       },
       "decisions": [
@@ -3645,6 +3976,49 @@
           "reason": "A small stringed instrument held in the hands (m1); \"đàn hạc\" is a much larger harp, and \"đàn lia\" is the plain name for the lyre.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o090160160102"
+          ],
+          "choice": "\"수금\" for the lyre (*kinnor*) at every level",
+          "alternatives": [
+            "\"하프\"",
+            "\"거문고\""
+          ],
+          "reason": "\"수금\" is the established Korean name for this hand-held stringed instrument; \"하프\" suggests the large modern harp and \"거문고\" a Korean instrument (meaning decision m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o090160160041",
+            "o090160160042"
+          ],
+          "choice": "\"저희\" (we) for \"your servants\" at Balanced (after naming them once) and Readable",
+          "alternatives": [
+            "\"임금님의 종들\" throughout"
+          ],
+          "reason": "The officials' \"your servants\" is a polite \"we\" (meaning decision m3); Korean says this with the humble \"저희\", as the English Readable says \"us, your servants\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3705,6 +4079,11 @@
           "L": "Sau-lơ nói với các đầy tớ mình: \"Hãy tìm cho ta một người gảy đàn giỏi và đem [nó] đến cho ta.\"",
           "B": "Vậy Sau-lơ bảo các quần thần: \"Hãy tìm cho ta một người gảy đàn giỏi và đưa người ấy đến với ta.\"",
           "R": "Vậy Sau-lơ bảo các quần thần: \"Hãy tìm cho ta một người chơi đàn giỏi và đưa người ấy đến với ta.\""
+        },
+        "ko": {
+          "L": "그러자 사울이 그의 신하들에게 말했다. \"나를 위하여 잘 타는 사람을 찾아서 내게로 데려오너라.\"",
+          "B": "그러자 사울이 신하들에게 말했다. \"수금을 잘 타는 사람을 찾아 내게 데려오너라.\"",
+          "R": "그래서 사울이 신하들에게 말했다. \"수금을 잘 타는 사람을 찾아서 데려오너라.\""
         }
       },
       "decisions": [
@@ -3775,6 +4154,28 @@
             "\"tôi\""
           ],
           "reason": "As the Samuel terms note: the king says \"ta\" and \"ngươi\"; this holds for Saul and for Achish through the block.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o090160170011",
+            "o090160170051"
+          ],
+          "choice": "Saul speaks to his officials in the plain style (해라체)",
+          "alternatives": [
+            "하게체"
+          ],
+          "reason": "The king speaks 해라체 to his subjects throughout the book, as the terms of this translation set.",
           "uncertain": false,
           "footnote": false
         }
@@ -3852,6 +4253,11 @@
           "L": "Một trong các thanh niên trả lời: \"Kìa, tôi đã thấy một người con trai của Gie-sê, người Bết-lê-hem, biết gảy đàn, [anh ta là] một dũng sĩ mạnh mẽ, một chiến binh, nói năng khôn ngoan, có dáng vẻ đẹp đẽ, và {{divine_name:CHÚA|Gia-vê}} ở với anh ta.\"",
           "B": "Một trong các thanh niên thưa: \"Tôi đã gặp một người con trai của Gie-sê ở Bết-lê-hem, gảy đàn rất giỏi. Anh ấy lại là một chiến sĩ dũng mãnh, biết chiến đấu. Anh ấy ăn nói khéo léo, có dáng vẻ đẹp, và {{divine_name:CHÚA|Gia-vê}} ở với anh ấy.\"",
           "R": "Một trong các thanh niên thưa: \"Tôi biết một người con trai của Gie-sê, sống ở Bết-lê-hem. Anh ấy gảy đàn lia rất giỏi. Anh ấy cũng gan dạ, mạnh mẽ và biết đánh trận. Anh ấy ăn nói khôn ngoan và đẹp trai. Lại có {{divine_name:CHÚA|Gia-vê}} ở với anh ấy nữa.\""
+        },
+        "ko": {
+          "L": "그러자 젊은이들 가운데 하나가 대답하여 말했다. \"보십시오, 제가 베들레헴 사람 이새의 아들을 보았는데, 그는 [수금을] 탈 줄 알고, 힘센 용사이며 전쟁에 능한 사람이고, 말을 분별 있게 하고, 풍채가 좋은 사람이며, {{divine_name:주|야훼}}께서 그와 함께 계십니다.\"",
+          "B": "젊은이들 가운데 하나가 대답했다. \"제가 베들레헴에 사는 이새의 아들 하나를 보았는데, 수금을 잘 탑니다. 또 그는 용감한 용사이고 싸움도 잘합니다. 말을 지혜롭게 하고 잘생겼으며, {{divine_name:주|야훼}}께서 그와 함께 계십니다.\"",
+          "R": "젊은이 하나가 말했다. \"제가 베들레헴에 사는 이새의 아들을 압니다. 그는 수금을 잘 탑니다. 또 용감하고 힘이 세며 싸울 줄도 압니다. 말도 지혜롭게 하고 잘생겼습니다. 게다가 {{divine_name:주|야훼}}께서 그와 함께 계십니다.\""
         }
       },
       "decisions": [
@@ -4049,6 +4455,11 @@
           "L": "Sau-lơ sai sứ giả đến Gie-sê và nói: \"Hãy gửi cho ta Đa-vít con trai ngươi, là người [ở] với bầy chiên.\"",
           "B": "Vậy Sau-lơ sai sứ giả đến nói với Gie-sê: \"Hãy gửi cho ta Đa-vít con trai ngươi, là người đang chăn chiên.\"",
           "R": "Vậy Sau-lơ sai sứ giả đến với Gie-sê và nhắn: \"Hãy gửi cho ta Đa-vít con trai ngươi, là người chăn chiên.\""
+        },
+        "ko": {
+          "L": "그리고 사울이 이새에게 사자들을 보내어 말했다. \"양 떼와 함께 있는 네 아들 다윗을 내게로 보내라.\"",
+          "B": "그래서 사울은 이새에게 사자들을 보내어 이렇게 전했다. \"양 떼를 돌보는 네 아들 다윗을 내게 보내라.\"",
+          "R": "그래서 사울은 이새에게 사람들을 보내어 말을 전했다. \"양을 치는 네 아들 다윗을 내게 보내라.\""
         }
       },
       "decisions": [
@@ -4147,6 +4558,11 @@
           "L": "Gie-sê lấy một con lừa [chở] bánh, một bầu rượu và một con dê con, rồi gửi [những thứ ấy] qua tay Đa-vít con trai mình đến Sau-lơ.",
           "B": "Vậy Gie-sê lấy một con lừa chở bánh, cùng một bầu rượu và một con dê con, rồi sai Đa-vít con trai mình mang đến cho Sau-lơ.",
           "R": "Gie-sê chất bánh lên một con lừa. Ông thêm một bầu da đầy rượu và một con dê con. Ông sai Đa-vít con trai mình mang những món quà ấy đến cho Sau-lơ."
+        },
+        "ko": {
+          "L": "그리고 이새가 빵을 [실은] 나귀 한 마리와 포도주 한 가죽 부대와 염소 새끼 한 마리를 가져다가, 그의 아들 다윗의 손으로 사울에게 보냈다.",
+          "B": "이새는 빵을 실은 나귀 한 마리와 포도주 한 부대와 염소 새끼 한 마리를 마련하여, 아들 다윗을 시켜 사울에게 보냈다.",
+          "R": "이새는 나귀에 빵을 실었다. 거기에 포도주를 가득 담은 가죽 부대와 어린 염소 한 마리를 더했다. 그리고 이 선물을 아들 다윗을 시켜 사울에게 보냈다."
         }
       },
       "decisions": [
@@ -4217,6 +4633,28 @@
           "reason": "Readable explains that the wine was carried in an animal skin and calls the goods \"gifts\" (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o090160200031",
+            "o090160200041"
+          ],
+          "choice": "\"빵\" for bread (*leḥem*) at every level",
+          "alternatives": [
+            "\"떡\""
+          ],
+          "reason": "As the terms of this translation set for the whole Bible: \"빵\", never \"떡\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4279,6 +4717,11 @@
           "L": "Đa-vít đến với Sau-lơ và đứng trước mặt ông. Ông rất yêu mến Đa-vít, và Đa-vít trở thành người mang vũ khí cho ông.",
           "B": "Đa-vít đến với Sau-lơ và phục vụ ông. Sau-lơ rất yêu mến Đa-vít, và Đa-vít trở thành người mang khí giới cho vua.",
           "R": "Đa-vít đến với Sau-lơ và bắt đầu phục vụ vua. Sau-lơ rất yêu mến Đa-vít, và vua cho ông làm một trong những người mang áo giáp và vũ khí cho mình."
+        },
+        "ko": {
+          "L": "그리고 다윗이 사울에게 와서 그 앞에 섰다. 그러자 그가 그를 매우 사랑하였고, 그는 그의 무기를 드는 자가 되었다.",
+          "B": "다윗은 사울에게 와서 그를 섬기게 되었다. 사울은 다윗을 매우 사랑하였고, 다윗은 사울의 무기를 드는 사람이 되었다.",
+          "R": "다윗은 사울에게 와서 그를 섬기기 시작했다. 사울은 다윗을 무척 아꼈고, 다윗을 자기 갑옷과 무기를 들고 다니는 사람으로 삼았다."
         }
       },
       "decisions": [
@@ -4447,6 +4890,26 @@
           "reason": "With both men now \"ông\" in the narration, Vietnamese names them as the English Balanced does; from here the narrator calls David \"ông\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o090160210111",
+            "o090160210121"
+          ],
+          "choice": "\"무기를 드는 사람\" (weapon-bearer) at Literal and Balanced; Readable \"갑옷과 무기를 들고 다니는 사람\"",
+          "alternatives": [
+            "\"병기 든 자\""
+          ],
+          "reason": "A plain modern description of the armor-bearer's task (meaning decision m3); the older term \"병기 든 자\" is avoided.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4508,6 +4971,11 @@
           "L": "Sau-lơ sai [người] đến nói với Gie-sê: \"Xin để Đa-vít đứng trước mặt ta, vì nó đã được ơn trước mắt ta.\"",
           "B": "Rồi Sau-lơ sai người đến nói với Gie-sê: \"Xin để Đa-vít ở lại phục vụ ta, vì ta rất hài lòng về nó.\"",
           "R": "Rồi Sau-lơ nhắn với Gie-sê: \"Xin để Đa-vít ở lại phục vụ ta. Ta rất quý nó.\""
+        },
+        "ko": {
+          "L": "그리고 사울이 이새에게 사람을 보내어 말했다. \"부디 다윗이 내 앞에 서게 하여라. 그가 내 눈에 은총을 얻었다.\"",
+          "B": "사울은 이새에게 사람을 보내어 말했다. \"다윗이 내 곁에서 나를 섬기게 해 다오. 나는 그가 무척 마음에 든다.\"",
+          "R": "사울은 이새에게 이런 말을 전했다. \"다윗이 여기 머물면서 나를 섬기게 해 다오. 나는 그가 아주 마음에 든다.\""
         }
       },
       "decisions": [
@@ -4641,6 +5109,11 @@
           "L": "Mỗi khi thần của Đức Chúa Trời đến trên Sau-lơ, Đa-vít lấy đàn lia và lấy tay gảy. Sau-lơ được khoan khoái và dễ chịu, và ác thần lìa khỏi ông.",
           "B": "Vậy mỗi khi thần từ Đức Chúa Trời đến trên Sau-lơ, Đa-vít lấy đàn lia ra gảy. Sau-lơ được khuây khỏa và thấy dễ chịu hơn, và ác thần lìa khỏi ông.",
           "R": "Từ đó, mỗi khi ác thần từ Đức Chúa Trời đến trên Sau-lơ, Đa-vít lấy đàn lia ra chơi nhạc. Sau-lơ bình tĩnh lại và thấy dễ chịu hơn, và ác thần bỏ đi khỏi ông."
+        },
+        "ko": {
+          "L": "그리고 하나님께로부터 [온] 영이 사울에게 내릴 때마다, 다윗이 수금을 들고 그의 손으로 탔다. 그러면 사울이 기운을 되찾고 좋아졌으며, 악한 영이 그에게서 떠났다.",
+          "B": "하나님께서 보내신 그 영이 사울에게 내릴 때마다, 다윗은 수금을 들고 탔다. 그러면 사울은 숨을 돌리고 나아졌으며, 악한 영은 그에게서 떠나갔다.",
+          "R": "그 뒤로 하나님께서 보내신 악한 영이 사울에게 내릴 때마다, 다윗은 수금을 들고 음악을 연주했다. 그러면 사울은 마음이 가라앉고 기분이 나아졌다. 그리고 악한 영은 사울에게서 떠나갔다."
         }
       },
       "decisions": [
@@ -4834,6 +5307,26 @@
             "\"Thần Linh của Đức Chúa Trời\""
           ],
           "reason": "This is the evil spirit of verses 14-16 (m2), not God's Spirit, so it takes no capital; Readable names it as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o090160230132"
+          ],
+          "choice": "\"기운을 되찾고\" (Literal) and \"숨을 돌리고\" (Balanced) for the relief Saul found",
+          "alternatives": [
+            "\"평안해지고\""
+          ],
+          "reason": "The Hebrew word for relief is from the same root as \"spirit\" (meaning decision m3); Korean cannot keep the wordplay, and \"숨을 돌리다\" (to catch one's breath) at least keeps the picture of breath.",
           "uncertain": false,
           "footnote": false
         }
