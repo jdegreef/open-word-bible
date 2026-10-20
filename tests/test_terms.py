@@ -10,7 +10,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 import build_site  # noqa: E402
 from owb import refs, validate  # noqa: E402
-from tests.site_build import built_site  # noqa: E402
+from tests.site_build import built_site, page_data  # noqa: E402
 
 GRACE = ("grc", "5485")
 YHWH = ("hbo", "3068")
@@ -191,8 +191,7 @@ class TermPagesTest(unittest.TestCase):
 
     def test_reader_cards_link_key_terms(self):
         page = (self.out / "jhn" / "1" / "index.html").read_text(encoding="utf-8")
-        data = json.loads(re.search(
-            r'<script type="application/json" id="owb-data">(.*?)</script>', page, re.S)[1])
+        data = page_data(page)
         cards = {c["title"]: c for c in data["cards"]["list"]}
         self.assertEqual(cards["grace"]["href"], "/terms/grace/")
         self.assertNotIn("href", next(c for c in cards.values() if c["type"] == "name"))

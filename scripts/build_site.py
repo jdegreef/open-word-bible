@@ -1204,9 +1204,68 @@ def page_records(records, lang):
     """The records as a page in lang carries them: every language's
     renderings (the reader sets two side by side), but only the meaning
     decisions and lang's own rendering decisions, the only ones the reader
-    shows. Each language's decisions would otherwise weigh on every page."""
-    return [{**r, "decisions": [d for d in r["decisions"] if d["language"] in (None, lang)]}
+    shows. Each language's decisions would otherwise weigh on every page.
+    The source is left out: it is the same on every language's page, so it
+    comes with the chapter's shared data (chapter_shared)."""
+    return [{**{k: v for k, v in r.items() if k != "source"},
+             "decisions": [d for d in r["decisions"] if d["language"] in (None, lang)]}
             for r in records]
+
+
+# The reader data that is the same on every language's page of a chapter,
+# one script a chapter (chapter_shared), and the reader data that is the
+# same on every chapter page of a language, one script a language
+# (reader_shared). A page loads both before reader.js, which adds them to
+# the page's own data. Built into every page, they were most of the site:
+# the words alone were six copies of about 100 MB.
+CHAPTER_DATA_DIR = "chapter-data"
+
+
+def shared_script(name, data):
+    """A script that sets window.<name> to data, and a content hash for its
+    URL, so a page is never paired with another deploy's copy."""
+    text = (f"window.{name}="
+            + json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/") + ";\n")
+    return text, hashlib.sha256(text.encode()).hexdigest()[:10]
+
+
+def chapter_data_path(book, chapter):
+    return f"/{CHAPTER_DATA_DIR}{chapter_url(book, chapter).rstrip('/')}.js"
+
+
+@functools.cache
+def chapter_shared(book, chapter):
+    """A chapter's reader data in no language: the source words of each
+    verse, each sentence's source and the cross-references. As a script,
+    and its URL."""
+    records, words = load_chapter(book, chapter)
+    source = source_language(book)
+    text, digest = shared_script("OWB_CHAPTER", {
+        "words": {vid: transliterated(words[vid], source) for r in records for vid in r["refs"]},
+        "sources": {r["id"]: r["source"] for r in records},
+        "crossrefs": chapter_crossrefs(records)})
+    return text, f"{chapter_data_path(book, chapter)}?v={digest}"
+
+
+@functools.cache
+def reader_shared(lang):
+    """A language's reader data for every chapter: the reader's interface
+    text, the book names notes link by (book_refs) and the names before a
+    chapter number. As a script, and its URL."""
+    text, digest = shared_script("OWB_LANG", {
+        "ui": catalog(lang)["reader.ui"],
+        "bookRefs": book_refs(lang),
+        # Names before a chapter number ("Psalm 23:1"), for "Book 1:2" links.
+        "books": {b: chapter_book(b, lang) for b, _ in books()}})
+    return text, f"/reader-{lang}.js?v={digest}"
+
+
+def chapter_data_files():
+    """{path: text} of every chapter's and every language's shared reader
+    data (chapter_shared, reader_shared)."""
+    files = {chapter_data_path(b, c).lstrip("/"): chapter_shared(b, c)[0] for b, c in chapters()}
+    files.update({f"reader-{lang}.js": reader_shared(lang)[0] for lang in LANGUAGES})
+    return files
 
 
 def chapter_page(book, chapter, lang="en"):
@@ -1217,16 +1276,14 @@ def chapter_page(book, chapter, lang="en"):
     languages = [code for code in LANGUAGES
                  if any(code in r["renderings"] for r in records)]
     source = source_language(book)
+    # What is the same on other pages comes in chapter_shared and reader_shared.
     data = {"book": book, "chapter": chapter, "title": title, "lang": lang, "languages": languages,
-            "source": source, "ui": catalog(lang)["reader.ui"], "records": page_records(records, lang),
-            "words": {vid: transliterated(words[vid], source) for r in records for vid in r["refs"]},
+            "source": source, "records": page_records(records, lang),
             "paragraphs": paragraph_starts(records, words),
             "disputed": disputed_block(records, lang),
-            "bookRefs": book_refs(lang),
             "compare": comparison_verses(records, lang),
             "cards": word_cards(records, words, lang),
             "headings": {r["id"]: headings()[r["id"]] for r in records if r["id"] in headings()},
-            "crossrefs": chapter_crossrefs(records),
             # Where previews of other verses come from (verse_files), and the
             # comparison edition for verses not translated yet: the page
             # language's, then the World English Bible.
@@ -1238,12 +1295,10 @@ def chapter_page(book, chapter, lang="en"):
                        "compare": [list(COMPARISON.get(lang, COMPARISON_DEFAULT)), list(COMPARISON_DEFAULT)]}}
     # Each morphology code's description in every language, once per page.
     data["uses"] = word_uses()[1]
-    # Names before a chapter number ("Psalm 23:1"), for "Book 1:2" links.
-    data["books"] = {b: chapter_book(b, lang) for b, _ in books()}
     data["saved"] = url(lang, "/saved/")
     # The reader shows a word's grammar in the page's language only.
     data["grammar"] = {grammar_key(w): {lang: describe(w, lang)}
-                       for ws in data["words"].values() for w in ws}
+                       for r in records for vid in r["refs"] for w in words[vid]}
     # "</" cannot appear inside a script element.
     blob = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     # Without JavaScript (and for crawlers) the page still has its text.
@@ -1324,6 +1379,8 @@ def chapter_page(book, chapter, lang="en"):
 <script type="application/json" id="owb-data">{blob}</script>
 {chapter_ld(records, book, chapter, title, lang)}
 {breadcrumb_ld(lang, book_crumbs(book, lang) + [(title, chapter_url(book, chapter))])}
+<script src="{reader_shared(lang)[1]}"></script>
+<script src="{chapter_shared(book, chapter)[1]}"></script>
 <script src="{asset("markup.js")}"></script>
 <script src="{asset("reader.js")}"></script>
 {plans_script()}
@@ -1612,7 +1669,8 @@ def book_refs(lang="en"):
         if local:
             names[local] = code
         # The name before a chapter number too: "Psalm 2:7".
-        for form in {chapter_book(code), chapter_book(code, lang)}:
+        # In a fixed order: the reader's data is a file named by its hash.
+        for form in dict.fromkeys((chapter_book(code), chapter_book(code, lang))):
             names[form] = code
     chapters = {b: sorted(p.chapter for p in ps) for b, ps in books()}
     # For the quotation tags in the text: each book's short name and the
@@ -2039,20 +2097,25 @@ def resume_link(lang, cls="button", names=False):
 def save_button(book, chaps, lang):
     """A book's "Save for offline" button on the Read page: web/site.js
     stores the pages it names in the owb-books cache, which web/sw.js reads
-    when there is no connection. Hidden where the browser cannot."""
+    when there is no connection, and the chapters' shared reader data
+    (chapter_shared). Hidden where the browser cannot."""
     pages = json.dumps([url(lang, chapter_url(p.book, p.chapter)) for p in chaps])
+    data = json.dumps([chapter_shared(p.book, p.chapter)[1] for p in chaps])
     labels = "".join(f' data-{k}="{html.escape(t(lang, "offline." + k))}"'
                      for k in ("save", "saving", "saved", "failed"))
     return (f'<button type="button" class="save-book" hidden data-book="{book}" '
-            f'data-name="{html.escape(BOOK_NAMES[book][lang])}" data-pages="{html.escape(pages)}"{labels}>'
+            f'data-name="{html.escape(BOOK_NAMES[book][lang])}" data-pages="{html.escape(pages)}" '
+            f'data-files="{html.escape(data)}"{labels}>'
             f'{icon(ICONS["download"], 16)}<span>{t(lang, "offline.save")}</span></button>')
 
 
 def offline_files(lang):
     """What a saved book needs besides its pages and what web/sw.js keeps
-    anyway: the reader, the word index and the fonts."""
+    anyway: the reader, its data for the language, the word index and the
+    fonts."""
     fonts = sorted(f"/fonts/{f.name}" for f in (ROOT / "web" / "fonts").glob("*.woff2"))
-    return [url(lang, "/read/"), asset("markup.js"), asset("reader.js"), word_uses()[1]] + fonts
+    return [url(lang, "/read/"), asset("markup.js"), asset("reader.js"), reader_shared(lang)[1],
+            word_uses()[1]] + fonts
 
 
 def read_page(lang="en"):
@@ -4402,6 +4465,7 @@ def service_worker():
                                   "compare.js", "word.js")]
     current += [word_uses()[1]] + [search_ui_url(lang) for lang in LANGUAGES]
     current += [plans_json_url(lang) for lang in LANGUAGES]
+    current += [reader_shared(lang)[1] for lang in LANGUAGES]
     # The static search indexes the site no longer builds: copies kept
     # before are dropped.
     dropped = [f"/search-{lang}.json" for lang in LANGUAGES]
@@ -4628,7 +4692,7 @@ def sitemap(paths):
 def build(out):
     for cached in (load_intro, book_languages, status_counts, _book_records, _chapter_words, chapter_verses, _all_records, nav_menus, footer_links, passages, asset, translated_verses, catalog, book_refs, name_cards, term_uses,
                    search_documents, word_uses, series_numbers, chapter_articles, load_plans, plans_json, plans_json_url,
-                   downloads):
+                   downloads, chapter_shared, reader_shared):
         cached.cache_clear()
     if out.exists():
         shutil.rmtree(out)
@@ -4698,6 +4762,7 @@ def build(out):
     files.update(verse_files())
     files.update(editions_files())
     files.update(word_files())
+    files.update(chapter_data_files())
     for lang in LANGUAGES:
         files[f"search-ui-{lang}.json"] = search_ui(lang)
         files[f"plans-{lang}.json"] = plans_json(lang)
