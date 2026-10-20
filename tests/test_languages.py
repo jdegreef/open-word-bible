@@ -13,7 +13,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 import build_site  # noqa: E402
 from owb import languages, markup, morph  # noqa: E402
-from tests.site_build import built_site  # noqa: E402
+from tests.site_build import built_site, page_data  # noqa: E402
 
 OTHERS = [lang for lang in build_site.LANGUAGES if lang != "en"]
 
@@ -159,8 +159,7 @@ class LanguagesTest(unittest.TestCase):
 
     def test_reader_reads_in_the_page_language(self):
         def data(rel):
-            m = re.search(r'id="owb-data">(.*?)</script>', self.read(rel), re.S)
-            return json.loads(m[1])
+            return page_data(self.read(rel))
 
         for lang in build_site.LANGUAGES:
             d = data(build_site.url(lang, "/jhn/1/").lstrip("/") + "index.html")
@@ -190,7 +189,7 @@ class LanguagesTest(unittest.TestCase):
         # only the meaning decisions and the page language's own wording ones.
         for lang in build_site.LANGUAGES:
             page = self.read(build_site.url(lang, "/jhn/1/").strip("/") + "/index.html")
-            data = json.loads(re.search(r'id="owb-data">(.*?)</script>', page, re.S)[1])
+            data = page_data(page)
             decisions = [d for r in data["records"] for d in r["decisions"]]
             self.assertTrue(all(d["language"] in (None, lang) for d in decisions), lang)
             self.assertTrue(any(d["language"] == lang for d in decisions), lang)
