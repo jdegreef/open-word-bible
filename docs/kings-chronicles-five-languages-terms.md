@@ -231,11 +231,55 @@ As the Samuel note. Added for these books:
 ## Settled while drafting
 
 AI-draft choices recorded so later work follows them; reviewers may change
-any of them.
+any of them. Each is also a rendering decision at its first use in each
+block of chapters.
+
+- **All five**: a name keeps the spelling of the verse it is in, so
+  Chronicles' own forms stand beside Kings' (Huram and Hiram, Abijah and
+  Abijam, Ornan and Araunah, Hadoram and Adoram, Tilgath-pilneser at L).
+  The genealogies (1 Chronicles 1–9) keep one list formula per level ("the
+  sons of X: A, B and C"; "fathered" at L, "was the father of" at B, R;
+  "father of" a town becomes "founder of" at R) and take the published
+  Genesis forms of every name Genesis has. The temple refrain "for he is
+  good; his steadfast love endures forever" keeps each language's published
+  Psalm 136 wording. Josiah's laments (2 Chronicles 35:25) are named so
+  they are not taken for the book of Lamentations. 2 Chronicles 36:22–23 is
+  the same Hebrew as Ezra 1:1–3, which can reuse it.
+- **"Thus says the LORD"**: French *Ainsi parle le SEIGNEUR* (L), *Le
+  SEIGNEUR dit ceci* (B), *Voici ce que dit le SEIGNEUR* (R); Spanish *Así
+  dice el SEÑOR* / *El SEÑOR dice esto* / *Esto es lo que dice el SEÑOR*;
+  Swahili *BWANA asema hivi* (L), *Hivi ndivyo BWANA asemavyo* (B), *Hili
+  ndilo BWANA analosema* (R), as in 2 Samuel.
+- **French**: *serviteur* for God's named servants at every level; the
+  priestly divisions are *classes*, as Luke 1:5 (*classe d'Abia*).
+- **Spanish**: the priestly divisions are *turnos*, as Luke 1:5; the high
+  places are *lugares altos* (L, B), *santuarios sobre las colinas* (R).
+- **Swahili**: *ugonjwa (mbaya) wa ngozi* for the skin disease, never
+  *ukoma*; deity spans only on free pronouns and possessives.
+- **Vietnamese**: God's servants (Moses, David, the prophets, "your
+  servant" in prayer) are *đầy tớ* at every level, Literal included; *nô lệ*
+  only for slavery itself. The sources are never *Sử Ký*, the title of
+  Chronicles.
+- **Korean**: years, ages and large numbers in figures; the source books are
+  …왕 실록 at B (never 역대기, the title of Chronicles); prophets speak to kings
+  in 합쇼체.
 
 ## Before review
 
 Only rendering decisions were added; the meaning decisions are the English
 records' own. Reviewers should look first at the decisions marked uncertain,
-the regnal formulas, the kings with two names, and the genealogies of
-1 Chronicles 1–9.
+the regnal formulas, the kings with two names, the genealogies of
+1 Chronicles 1–9, and the address forms (which brother is older, in
+Vietnamese and Korean, is often a guess). Known unevenness between blocks,
+left for a reviewer:
+
+- Numbers above one hundred are in words in some blocks and figures in
+  others (French, Swahili and Vietnamese 1 Kings 1–11 against the rest).
+- French "Your Majesty" at R is *ô roi* in most blocks, *mon seigneur le
+  roi* in 2 Kings 1–12; French *archiviste* (Kings, Chronicles) against
+  *chancelier* (2 Samuel 8:16) for the recorder.
+- Swahili *Bonde la Refaimu* (1 Chronicles 14:9) against *Bonde la
+  Warefai* (2 Samuel 5); Swahili *agano* and *mkataba* for a treaty.
+- Vietnamese *thẩm phán* for judges, where the Joshua–Ruth drafts propose
+  *quan xét*.
+- Korean measures say 약 X in some blocks and X쯤 in others.
