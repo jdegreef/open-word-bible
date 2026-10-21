@@ -11,6 +11,10 @@ translation file:
               around them is not ("Jesus answered him, \"Truly ...\"")
     [0, 2]    only these quotations, counted from 0, where someone else
               also speaks in the sentence
+    {"inner": "quoted"} or {"inner": "all"}
+              the quotations inside someone else's words, where a speaker
+              quotes Jesus (Paul retelling the Damascus road, Acts 22:7);
+              "all" when the sentence begins inside such a quotation
 
 Who is speaking is a fact about the original, the same in every language,
 so it is marked once; the words themselves are found in each rendering from
@@ -40,9 +44,15 @@ def marked():
     return out
 
 
+def _quotations(text, value):
+    if isinstance(value, dict):
+        return markup.quotations(text, inside=value["inner"] == "all", inner=True)
+    return markup.quotations(text, inside=value == "all")
+
+
 def ranges(text, value):
     """Where Jesus speaks in one rendering, as [(start, end), ...]."""
-    found = markup.quotations(text, inside=value == "all")
+    found = _quotations(text, value)
     if isinstance(value, list):
         return [found[i] for i in value if i < len(found)]
     return found
@@ -57,18 +67,20 @@ def record_ranges(record, value):
 def errors(record, value):
     """What is wrong with a record's marking, as a list of reasons."""
     if not (value in ("all", "quoted") or (isinstance(value, list) and value
-                                         and all(isinstance(i, int) and i >= 0 for i in value))):
-        return [f"{record['id']}: {value!r} is not \"all\", \"quoted\" or a list of quotation numbers"]
+                                         and all(isinstance(i, int) and i >= 0 for i in value))
+            or (isinstance(value, dict) and list(value) == ["inner"] and value["inner"] in ("all", "quoted"))):
+        return [f"{record['id']}: {value!r} is not \"all\", \"quoted\", a list of quotation numbers "
+                "or {\"inner\": \"all\" or \"quoted\"}"]
     found = []
     for lang, levels in record["renderings"].items():
         for level, text in levels.items():
             where = f"{record['id']} {lang}.{level}"
             try:
-                quotes = markup.quotations(text, inside=value == "all")
+                quotes = _quotations(text, value)
             except ValueError as e:
                 found.append(f"{where}: {e}")
                 continue
-            if value == "quoted" and not quotes:
+            if (value == "quoted" or value == {"inner": "quoted"}) and not quotes:
                 found.append(f"{where}: marked \"quoted\" but has no quotation")
             if isinstance(value, list) and max(value) >= len(quotes):
                 found.append(f"{where}: has {len(quotes)} quotations, not quotation {max(value)}")

@@ -121,9 +121,11 @@ def _opens_here(text, pos):
     return pos == 0 or text[pos - 1].isspace() or text[pos - 1] in "([\u2014-"
 
 
-def _quotations(text, depth):
+def _quotations(text, depth, level=1):
     """quotations() from one starting state, depth quotations deep (0, 1,
-    or 2: inside a quotation inside the outer one); raises ValueError."""
+    or 2: inside a quotation inside the outer one), as ranges of the
+    quotations level deep (1, the outermost; 2, those inside them);
+    raises ValueError."""
     outer = "\u00ab" if re.search("[\u00ab\u00bb]", text) else '"'
     inner = "\u201c" if outer == "\u00ab" else "'"
     stack, ranges = [outer, inner][:depth], []
@@ -141,7 +143,7 @@ def _quotations(text, depth):
             if stack and stack[-1] == ch:
                 raise ValueError(f"quotation mark at {pos} opens inside a quotation of its own kind")
             stack.append(ch)
-            if len(stack) == 1:
+            if len(stack) == level:
                 start = pos + 1
             continue
         want = _PAIRS.get(ch, ch)
@@ -158,21 +160,25 @@ def _quotations(text, depth):
             # A quotation inside the outer one, open since before this
             # sentence began (the Lord's Prayer, Matthew 6:9-13).
             stack.insert(1, want)
+            if level == 2:
+                ranges, start = [], 0
         elif want not in stack:
             # Open since before this sentence began: everything so far,
             # quotations included, is inside it.
             stack.insert(0, want)
-            ranges, start = [], 0
+            if len(stack) >= level:
+                ranges, start = [], 0
+        before = len(stack)
         while stack.pop() != want:
             pass
-        if not stack:
+        if before >= level > len(stack):
             ranges.append((start, pos))
-    if stack:
+    if len(stack) >= level:
         ranges.append((start, len(text)))
     return ranges
 
 
-def quotations(text, inside=False):
+def quotations(text, inside=False, inner=False):
     """The quoted words in text, as [(start, end), ...]: each outermost
     quotation, from after its opening mark to before its closing one,
     without the spaces French sets inside guillemets.
@@ -186,6 +192,10 @@ def quotations(text, inside=False):
     inside text may be two deep (a speaker quoted inside a parable, who
     quotes in turn: Luke 15:18), and either may turn out not to be.
 
+    inner gives the quotations inside the outermost ones instead (the
+    words of Jesus as Paul retells them, Acts 22:7), and inside then says
+    whether the text begins inside one of those.
+
     Raises ValueError where they pair from neither (a mark opens a
     quotation of the kind already innermost), or a quotation mark sits
     inside a {{setting:...}} span."""
@@ -193,9 +203,13 @@ def quotations(text, inside=False):
         if re.search("[\"\u00ab\u00bb\u201c\u201d]", text[s.start:s.end]):
             raise ValueError(f"quotation mark inside the setting span at {s.start}")
     first = None
-    for depth in ((1, 2, 0) if inside else (0, 1)):
+    if inner:
+        order, level = ((2, 1, 0) if inside else (1, 0, 2)), 2
+    else:
+        order, level = ((1, 2, 0) if inside else (0, 1)), 1
+    for depth in order:
         try:
-            ranges = _quotations(text, depth)
+            ranges = _quotations(text, depth, level)
             break
         except ValueError as e:
             first = first or e

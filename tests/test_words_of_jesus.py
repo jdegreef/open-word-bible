@@ -47,6 +47,17 @@ class QuotationsTest(unittest.TestCase):
         self.assertEqual(quoted(text), ["Father, I have sinned."])
         self.assertEqual(quoted("Il dit : « Ils ont dit “Va”. »"), ["Ils ont dit “Va”."])
 
+    def test_quotations_inside_someone_elses(self):
+        # Paul retelling the Damascus road: Jesus's words are inside his.
+        text = "I heard a voice say to me, 'Saul, Saul, why do you persecute me?'"
+        self.assertEqual([text[s:e] for s, e in markup.quotations(text, inner=True)],
+                         ["Saul, Saul, why do you persecute me?"])
+        text = "But rise, stand up on your feet.'"
+        self.assertEqual([text[s:e] for s, e in markup.quotations(text, inside=True, inner=True)],
+                         ["But rise, stand up on your feet."])
+        text = "Pablo dijo: «Él dijo: “Ve”»."
+        self.assertEqual([text[s:e] for s, e in markup.quotations(text, inner=True)], ["Ve"])
+
     def test_apostrophes_are_not_quotation_marks(self):
         self.assertEqual(quoted('Jesus said, "Don\'t fear the disciples\' doubts."'),
                          ["Don't fear the disciples' doubts."])
@@ -98,7 +109,8 @@ class DataTest(unittest.TestCase):
         record = {"id": "JHN.3.3.s1", "renderings": {"en": {
             "B": 'Jesus answered him, "Truly, I tell you." They said, "How?"'}}}
         self.assertEqual(words_of_jesus.errors(record, "red"), [
-            "JHN.3.3.s1: 'red' is not \"all\", \"quoted\" or a list of quotation numbers"])
+            "JHN.3.3.s1: 'red' is not \"all\", \"quoted\", a list of quotation numbers "
+            "or {\"inner\": \"all\" or \"quoted\"}"])
         self.assertEqual(words_of_jesus.errors(record, [0]), [])
         self.assertEqual(words_of_jesus.errors(record, [2]),
                          ["JHN.3.3.s1 en.B: has 2 quotations, not quotation 2"])
