@@ -1739,8 +1739,8 @@
           "R": "Majira ya baridi yamepita. \\q Mvua zimekwisha, zimekwenda."
         },
         "vi": {
-          "L": "Vì kìa, mùa đông đã qua; \\q mưa đã dứt [và] đi rồi.",
-          "B": "Vì này, mùa đông đã qua; \\q mưa đã dứt và đi mất.",
+          "L": "Vì kìa, mùa đông đã trôi qua; \\q cơn mưa đã tạnh [và] đi rồi.",
+          "B": "Vì này, mùa đông đã hết; \\q mưa đã tạnh và đi mất.",
           "R": "Mùa đông đã qua rồi. \\q Mùa mưa đã hết, đã đi rồi."
         },
         "ko": {
@@ -1846,8 +1846,8 @@
           "R": "Hoa nở khắp nơi. \\q Đã đến lúc ca hát. \\q Chim cu đang gù trong xứ chúng ta."
         },
         "ko": {
-          "L": "꽃들이 땅에 나타났고, \\q 노래의 때가 이르렀으며, \\q 산비둘기의 소리가 우리 땅에 들린다.",
-          "B": "땅에는 꽃들이 피어나고, \\q 노래할 때가 왔으며, \\q 산비둘기 우는 소리가 우리 땅에 들린다.",
+          "L": "꽃들이 땅에 나타났고, \\q 노래의 때가 이르렀으며, \\q 산비둘기의 소리가 우리 땅에서 들려온다.",
+          "B": "땅에는 꽃들이 피어나고, \\q 노래할 때가 왔으며, \\q 우리 땅에 산비둘기 우는 소리가 들려온다.",
           "R": "꽃들이 곳곳에 피어나요. \\q 노래할 때예요. \\q 산비둘기가 우리 땅에서 구구 울어요."
         }
       },
@@ -1927,9 +1927,9 @@
           "R": "The first figs are growing on the fig trees. \\q The grapevines are blooming and smell sweet. \\q Get up, my darling! My beautiful one, come with me.\""
         },
         "es": {
-          "L": "La higuera ha madurado sus brevas, \\q y las vides en flor han dado fragancia. \\q Levántate, compañera mía, hermosa mía, y ven.»",
-          "B": "La higuera va madurando sus brevas, \\q y las vides en flor esparcen su fragancia. \\q Levántate, amada mía, hermosa mía, y vámonos.»",
-          "R": "Ya salen los primeros higos en las higueras. \\q Las vides están en flor y huelen dulce. \\q ¡Levántate, amada mía! Hermosa mía, ven conmigo.»"
+          "L": "La higuera ha madurado sus brevas, \\q y las vides en flor han dado fragancia. \\q Levántate, compañera mía, hermosa mía, y ven».",
+          "B": "La higuera va madurando sus brevas, \\q y las vides en flor esparcen su fragancia. \\q Levántate, amada mía, hermosa mía, y vámonos».",
+          "R": "Ya salen los primeros higos en las higueras. \\q Las vides están en flor y huelen dulce. \\q ¡Levántate, amada mía! Hermosa mía, ven conmigo»."
         },
         "fr": {
           "L": "Le figuier a mûri ses premières figues, \\q et les vignes en fleur ont donné leur parfum. \\q Lève-toi, ma compagne, ma belle, et viens-t’en. »",
@@ -2437,12 +2437,12 @@
         "vi": {
           "L": "Người yêu dấu của tôi [thuộc về] tôi, và tôi [thuộc về] chàng, \\q người chăn [bầy] giữa các hoa huệ.",
           "B": "Người yêu dấu của tôi thuộc về tôi, và tôi thuộc về chàng; \\q chàng chăn bầy giữa những hoa huệ.",
-          "R": "Người yêu tôi là của tôi, và tôi là của chàng. \\q Chàng tìm ăn giữa những đóa hoa huệ."
+          "R": "Người yêu tôi là của tôi, và tôi là của chàng. \\q Chàng chăn bầy giữa những hoa huệ."
         },
         "ko": {
           "L": "나의 사랑하는 이는 나의 것, 나는 그의 것, \\q 백합 사이에서 [양을] 치는 이.",
           "B": "내 사랑하는 이는 내 것이고 나는 그의 것이다. \\q 그는 백합꽃 사이에서 양 떼를 먹인다.",
-          "R": "내 사랑은 내 것이고, 나는 그의 것이다. \\q 그는 백합꽃 사이에서 풀을 뜯는다."
+          "R": "내 사랑은 내 것이고, 나는 그의 것이다. \\q 그는 백합꽃 사이에서 양을 먹인다."
         }
       },
       "decisions": [
@@ -2497,10 +2497,11 @@
           "footnote": false
         },
         {
-          "id": "r-ko-1",
+          "id": "r-vi-1",
           "layer": "rendering",
-          "language": "ko",
+          "language": "vi",
           "levels": [
+            "L",
             "B",
             "R"
           ],
@@ -2508,11 +2509,33 @@
           "tokens": [
             "o220020160052"
           ],
-          "choice": "\"양 떼를 먹인다\" (B); \"풀을 뜯는다\" (R)",
+          "choice": "\"chăn [bầy]\" (L), \"chăn bầy\" (B, R) for \"who pastures\"",
           "alternatives": [
-            "\"양을 친다\" at every level"
+            "\"tìm ăn\"",
+            "\"ăn cỏ\""
           ],
-          "reason": "Korean must choose between feeding a flock and grazing (m3). Balanced follows the shepherd of 1:7, Readable the gazelle of 2:17, as the English Balanced and Readable lean; Literal keeps \"[양을] 치는 이\" with the flock in brackets, as 6:3.",
+          "reason": "For the whole Song (2:16; 6:2-3): the verb can mean feeding a flock or grazing (m3). Vietnamese has no verb for both, and \"ăn cỏ\" said of a man would sound comic, so every level takes the shepherd reading, as 1:7 does; Literal puts the flock in brackets.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220020160052"
+          ],
+          "choice": "\"[양을] 치는 이\" (L); \"양 떼를 먹인다\" (B); \"양을 먹인다\" (R)",
+          "alternatives": [
+            "\"풀을 뜯는다\""
+          ],
+          "reason": "For the whole Song (2:16; 6:2-3): the verb can mean feeding a flock or grazing (m3). Korean has no verb for both, and \"풀을 뜯다\" said of the man would make him an animal, so every level takes the shepherd reading, as 1:7 does; Literal puts the flock in brackets.",
           "uncertain": false,
           "footnote": false
         }
