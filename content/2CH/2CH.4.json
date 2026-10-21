@@ -36,6 +36,31 @@
           "L": "And he made an altar of bronze; its length [was] twenty cubits and its width twenty cubits, and its height ten cubits.",
           "B": "He made a bronze altar {{units:about 30 feet|twenty cubits}} long, {{units:about 30 feet|twenty cubits}} wide and {{units:about 15 feet|ten cubits}} high.",
           "R": "Solomon made a bronze altar. It was {{units:about 30 feet|twenty cubits}} long, {{units:about 30 feet|twenty cubits}} wide and {{units:about 15 feet|ten cubits}} high."
+        },
+        "es": {
+          "L": "E hizo un altar de bronce; su longitud [era] de veinte codos y su anchura de veinte codos, y su altura de diez codos.",
+          "B": "Hizo un altar de bronce de {{units:unos 9 metros|veinte codos}} de largo, {{units:unos 9 metros|veinte codos}} de ancho y {{units:unos 4,5 metros|diez codos}} de alto.",
+          "R": "Salomón hizo un altar de bronce. Medía {{units:unos 9 metros|veinte codos}} de largo, {{units:unos 9 metros|veinte codos}} de ancho y {{units:unos 4,5 metros|diez codos}} de alto."
+        },
+        "fr": {
+          "L": "Et il fit un autel de bronze ; sa longueur [était] de vingt coudées, et sa largeur de vingt coudées, et sa hauteur de dix coudées.",
+          "B": "Il fit un autel de bronze long de {{units:environ 9 mètres|vingt coudées}}, large de {{units:environ 9 mètres|vingt coudées}} et haut de {{units:environ 4,50 mètres|dix coudées}}.",
+          "R": "Salomon a fait un autel de bronze. Il avait {{units:environ 9 mètres|vingt coudées}} de long, {{units:environ 9 mètres|vingt coudées}} de large et {{units:environ 4,50 mètres|dix coudées}} de haut."
+        },
+        "sw": {
+          "L": "Akafanya madhabahu ya shaba; urefu wake [ulikuwa] dhiraa ishirini, na upana wake dhiraa ishirini, na kimo chake dhiraa kumi.",
+          "B": "Alifanya madhabahu ya shaba yenye urefu wa {{units:karibu mita 9|dhiraa ishirini}}, upana wa {{units:karibu mita 9|dhiraa ishirini}} na kimo cha {{units:karibu mita 4.5|dhiraa kumi}}.",
+          "R": "Sulemani alifanya madhabahu ya shaba. Urefu wake ulikuwa {{units:karibu mita 9|dhiraa ishirini}}, upana wake {{units:karibu mita 9|dhiraa ishirini}} na kimo chake {{units:karibu mita 4.5|dhiraa kumi}}."
+        },
+        "vi": {
+          "L": "Vua làm một bàn thờ bằng đồng; chiều dài [là] hai mươi cu-đê, chiều rộng hai mươi cu-đê, và chiều cao mười cu-đê.",
+          "B": "Vua làm một bàn thờ bằng đồng dài {{units:9 m|hai mươi cu-đê}}, rộng {{units:9 m|hai mươi cu-đê}} và cao {{units:4,5 m|mười cu-đê}}.",
+          "R": "Sa-lô-môn làm một bàn thờ bằng đồng. Bàn thờ dài {{units:9 m|hai mươi cu-đê}}, rộng {{units:9 m|hai mươi cu-đê}} và cao {{units:4,5 m|mười cu-đê}}."
+        },
+        "ko": {
+          "L": "그리고 그가 놋 제단을 만들었는데, 그 길이가 이십 규빗, 그 너비가 이십 규빗, 그 높이가 십 규빗이었다.",
+          "B": "그는 놋 제단을 만들었는데, 길이가 {{units:9미터쯤|이십 규빗}}, 너비가 {{units:9미터쯤|이십 규빗}}, 높이가 {{units:4.5미터쯤|십 규빗}}이었다.",
+          "R": "솔로몬은 놋 제단을 만들었다. 그 제단은 길이가 {{units:9미터쯤|이십 규빗}}, 너비가 {{units:9미터쯤|이십 규빗}}, 높이가 {{units:4.5미터쯤|십 규빗}}이었다."
         }
       },
       "decisions": [
@@ -122,6 +147,70 @@
           "reason": "Balanced and Readable give the size in feet, with the cubits as the alternative. A cubit is about 18 inches.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140040010021",
+            "o140040010031"
+          ],
+          "choice": "\"el bronce\"",
+          "alternatives": [
+            "el cobre"
+          ],
+          "reason": "Bronze follows the Kings terms note for Spanish, \"bronce\", through the temple furnishings, as the Spanish of 1 Kings 7.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o140040010051",
+            "o140040010081",
+            "o140040010111"
+          ],
+          "choice": "metres by default, \"cu-đê\" as the alternative; numbers in words as the English",
+          "alternatives": [],
+          "reason": "Cubit 45 cm, as in chapter 3 and 1 Kings 7. Where the English writes the numbers in words, so does the Vietnamese, as the parallel verses in 1 Kings 7 do.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o140040010051",
+            "o140040010081",
+            "o140040010111"
+          ],
+          "choice": "Metres by default (\"9미터쯤\", \"4.5미터쯤\"), the cubits as the alternative",
+          "alternatives": [
+            "피트"
+          ],
+          "reason": "The cubit at 45 cm, as in 1 Kings 7 and the terms note.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -176,6 +265,31 @@
           "L": "And he made the sea of cast [metal], ten cubits from its brim to its brim, round all around, and its height [was] five cubits, and a line of thirty cubits went around it all around.",
           "B": "He made the Sea of cast metal. It was round, {{units:about 15 feet|ten cubits}} from brim to brim and {{units:about 7 1/2 feet|five cubits}} high, and it took a line of {{units:about 45 feet|thirty cubits}} to measure around it.",
           "R": "He also made a huge round tank of cast bronze called the Sea. It was {{units:about 15 feet|ten cubits}} across from rim to rim and {{units:about 7 1/2 feet|five cubits}} high, and it measured {{units:about 45 feet|thirty cubits}} around."
+        },
+        "es": {
+          "L": "E hizo el mar de [metal] fundido, de diez codos de borde a borde, redondo alrededor, y su altura [era] de cinco codos, y un cordón de treinta codos lo rodeaba alrededor.",
+          "B": "Hizo el Mar de metal fundido. Era redondo, de {{units:unos 4,5 metros|diez codos}} de borde a borde y {{units:unos 2,25 metros|cinco codos}} de alto, y hacía falta un cordón de {{units:unos 13,5 metros|treinta codos}} para medir su contorno.",
+          "R": "También hizo un enorme tanque redondo de bronce fundido llamado el Mar. Medía {{units:unos 4,5 metros|diez codos}} de borde a borde y {{units:unos 2,25 metros|cinco codos}} de alto, y tenía {{units:unos 13,5 metros|treinta codos}} de contorno."
+        },
+        "fr": {
+          "L": "Et il fit la mer en [métal] fondu, dix coudées d’un bord à l’autre bord, ronde tout autour, et sa hauteur [était] de cinq coudées, et un cordeau de trente coudées en faisait le tour.",
+          "B": "Il fit la Mer en métal fondu. Elle était ronde, avec {{units:environ 4,50 mètres|dix coudées}} d’un bord à l’autre et {{units:environ 2,25 mètres|cinq coudées}} de haut, et il fallait un cordeau de {{units:environ 13,50 mètres|trente coudées}} pour en mesurer le tour.",
+          "R": "Il a aussi fait une immense cuve ronde en bronze fondu, qu’on appelait la Mer. Elle mesurait {{units:environ 4,50 mètres|dix coudées}} d’un bord à l’autre et {{units:environ 2,25 mètres|cinq coudées}} de haut, et elle faisait {{units:environ 13,50 mètres|trente coudées}} de tour."
+        },
+        "sw": {
+          "L": "Akaifanya bahari ya [chuma cha] kusubu, dhiraa kumi tangu ukingo wake mpaka ukingo wake, mviringo pande zote, na kimo chake [kilikuwa] dhiraa tano, na uzi wa dhiraa thelathini uliizunguka pande zote.",
+          "B": "Alifanya Bahari ya shaba ya kusubu. Ilikuwa ya mviringo, {{units:karibu mita 4.5|dhiraa kumi}} tangu ukingo mmoja mpaka mwingine, na kimo chake {{units:karibu mita 2.25|dhiraa tano}}, na uzi wa {{units:karibu mita 13.5|dhiraa thelathini}} ulihitajika kuizunguka.",
+          "R": "Alitengeneza pia tangi kubwa la mviringo la shaba ya kusubu lililoitwa Bahari. Upana wake tangu ukingo hadi ukingo ulikuwa {{units:karibu mita 4.5|dhiraa kumi}}, na kimo chake {{units:karibu mita 2.25|dhiraa tano}}, na mzingo wake {{units:karibu mita 13.5|dhiraa thelathini}}."
+        },
+        "vi": {
+          "L": "Vua làm cái biển [bằng kim loại] đúc, từ vành này đến vành kia mười cu-đê, tròn chung quanh, cao năm cu-đê, và một sợi dây ba mươi cu-đê vòng quanh nó.",
+          "B": "Vua làm cái Biển bằng kim loại đúc. Biển hình tròn, đường kính từ vành này đến vành kia {{units:4,5 m|mười cu-đê}}, cao {{units:2,25 m|năm cu-đê}}, và phải một sợi dây {{units:13,5 m|ba mươi cu-đê}} mới đo được chu vi.",
+          "R": "Vua cũng làm một cái bể tròn rất lớn bằng đồng đúc, gọi là cái Biển. Bể rộng {{units:4,5 m|mười cu-đê}} từ vành này sang vành kia, cao {{units:2,25 m|năm cu-đê}}, và có chu vi {{units:13,5 m|ba mươi cu-đê}}."
+        },
+        "ko": {
+          "L": "그리고 그가 바다를 부어 만들었는데, 이쪽 가장자리에서 저쪽 가장자리까지 십 규빗이고 사방이 둥글었으며, 그 높이가 오 규빗이었고, 삼십 규빗 되는 줄이 사방을 둘렀다.",
+          "B": "그는 놋을 부어 바다를 만들었다. 그것은 둥글었으며, 이쪽 가장자리에서 저쪽 가장자리까지 {{units:4.5미터쯤|십 규빗}}, 높이가 {{units:2.25미터쯤|오 규빗}}, 둘레가 {{units:13.5미터쯤|삼십 규빗}}이었다.",
+          "R": "그는 또 놋을 부어 '바다'라고 부르는 커다란 둥근 물통을 만들었다. 지름이 {{units:4.5미터쯤|십 규빗}}, 높이가 {{units:2.25미터쯤|오 규빗}}, 둘레가 {{units:13.5미터쯤|삼십 규빗}}이었다."
         }
       },
       "decisions": [
@@ -239,6 +353,107 @@
           "reason": "Readable says what the Sea was, so that readers do not picture a body of water (m2), as in 1 Kings 7:23.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140040020032"
+          ],
+          "choice": "wording of 1 Kings 7:23 kept; \"el mar\" (L), \"el Mar\" (B, R)",
+          "alternatives": [],
+          "reason": "The verse repeats 1 Kings 7:23 almost word for word (meaning decision), so the Spanish Kings wording is kept at each level; Readable says what the Sea was, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140040020032"
+          ],
+          "choice": "la mer (L); la Mer (B); une immense cuve ronde ... qu'on appelait la Mer (R)",
+          "alternatives": [
+            "\"le bassin\""
+          ],
+          "reason": "As in French Kings (1 Kings 7:23), following the terms note's \"la Mer de bronze\": Literal keeps the plain word, Balanced writes it as a name, Readable says what it was.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140040020032"
+          ],
+          "choice": "bahari (Literal); Bahari (Balanced); tangi kubwa ... lililoitwa Bahari (Readable)",
+          "alternatives": [
+            "birika"
+          ],
+          "reason": "The wording of the Swahili 1 Kings 7:23, which this verse repeats; Readable says what the Sea was, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140040020032"
+          ],
+          "choice": "\"cái biển\" (L); \"cái Biển\" (B); \"một cái bể ... gọi là cái Biển\" (R)",
+          "alternatives": [],
+          "reason": "The wording of 1 Kings 7:23, whose Hebrew is the same; Readable says what the Sea was (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140040020032"
+          ],
+          "choice": "The wording of 1 Kings 7:23; \"바다\", at Readable \"'바다'라고 부르는 커다란 둥근 물통\"",
+          "alternatives": [
+            "new wording"
+          ],
+          "reason": "The Hebrew is the same as 1 Kings 7:23, so the Korean repeats it; the same holds through verse 22 where the Hebrew matches 1 Kings 7:24-50.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -288,6 +503,31 @@
           "L": "And [the] likeness of oxen [was] under it, all around, encircling it, ten to a cubit, going around the sea all around; the oxen [were in] two rows, cast when it was cast.",
           "B": "Under its brim were figures of oxen all around it, ten {{units:to every 18 inches|to a cubit}}, encircling the Sea. The oxen were in two rows, cast in one piece with it.",
           "R": "Below the rim, two rows of figures shaped like oxen ran all the way around the Sea, ten {{units:to every 18 inches|to a cubit}}. They were cast in one piece with the Sea."
+        },
+        "es": {
+          "L": "Y figuras de bueyes [estaban] debajo de él, alrededor, rodeándolo, diez por codo, rodeando el mar alrededor; los bueyes [estaban en] dos hileras, fundidos cuando se fundió.",
+          "B": "Debajo de su borde había figuras de bueyes alrededor, diez {{units:cada 45 centímetros|por codo}}, rodeando todo el Mar. Los bueyes estaban en dos hileras, fundidos en una sola pieza con él.",
+          "R": "Debajo del borde, dos hileras de figuras en forma de bueyes rodeaban todo el Mar, diez {{units:cada 45 centímetros|por codo}}. Estaban fundidas en una sola pieza con el Mar."
+        },
+        "fr": {
+          "L": "Et des figures de bœufs [étaient] sous elle, tout autour, l’entourant, dix par coudée, faisant le tour de la mer tout autour ; les bœufs [étaient sur] deux rangées, coulés quand elle fut coulée.",
+          "B": "Sous son bord, des figures de bœufs en faisaient tout le tour, dix {{units:tous les 45 centimètres|par coudée}}, entourant la Mer. Les bœufs étaient sur deux rangées, coulés d’une seule pièce avec elle.",
+          "R": "Sous le bord, deux rangées de figures en forme de bœufs faisaient tout le tour de la Mer, dix {{units:tous les 45 centimètres|par coudée}}. Elles avaient été coulées d’une seule pièce avec la Mer."
+        },
+        "sw": {
+          "L": "Na mfano wa ng'ombe [ulikuwa] chini yake pande zote, ukiizunguka, kumi kwa dhiraa, ukiizunguka bahari pande zote; ng'ombe [walikuwa katika] safu mbili, waliosubiwa ilipokuwa ikisubiwa.",
+          "B": "Chini ya ukingo wake kulikuwa na sanamu za ng'ombe pande zote, kumi {{units:kila sentimita 45|kwa kila dhiraa}}, zikiizunguka Bahari. Ng'ombe hao walikuwa katika safu mbili, waliosubiwa pamoja nayo kipande kimoja.",
+          "R": "Chini ya ukingo, safu mbili za sanamu zenye umbo la ng'ombe ziliizunguka Bahari pande zote, kumi {{units:kila sentimita 45|kwa kila dhiraa}}. Zilisubiwa kipande kimoja pamoja na Bahari."
+        },
+        "vi": {
+          "L": "Dưới nó chung quanh có hình những con bò bao quanh, mười con mỗi cu-đê, vây quanh biển; các con bò [thành] hai hàng, được đúc liền khi đúc biển.",
+          "B": "Dưới vành Biển có hình những con bò bao quanh, mười con trong {{units:mỗi 45 cm|mỗi cu-đê}}, vây quanh cái Biển. Các con bò xếp thành hai hàng, được đúc liền một khối với Biển.",
+          "R": "Bên dưới vành có hai hàng hình giống con bò chạy vòng quanh cái Biển, cứ {{units:mỗi 45 cm|mỗi cu-đê}} có mười con. Các hình ấy được đúc liền một khối với cái Biển."
+        },
+        "ko": {
+          "L": "그리고 그 아래에는 소 모양들이 사방으로 둘렀는데, 한 규빗에 열 개씩 바다를 사방으로 둘렀다. 소들은 두 줄이었고, 그것을 부어 만들 때 함께 부어 만들었다.",
+          "B": "가장자리 아래에는 소 모양 장식이 {{units:45센티미터에|한 규빗에}} 열 개씩 바다를 빙 둘러 있었다. 소 모양 장식은 두 줄이었고, 바다를 부어 만들 때 한 덩어리로 함께 부어 만들었다.",
+          "R": "가장자리 아래에는 소 모양 장식이 두 줄로 바다를 빙 둘러 있었는데, {{units:45센티미터에|한 규빗에}} 열 개씩이었다. 이 장식은 바다와 한 덩어리로 부어 만들었다."
         }
       },
       "decisions": [
@@ -356,6 +596,69 @@
           "reason": "Balanced and Readable say where the figures were (m2). Readable puts the two rows first and says \"figures shaped like oxen\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140040030012",
+            "o140040030021"
+          ],
+          "choice": "\"figuras de bueyes\"",
+          "alternatives": [
+            "calabazas"
+          ],
+          "reason": "The Hebrew has \"the likeness of oxen\" where 1 Kings 7:24 has gourds (meaning decision); Spanish follows the Chronicles text and keeps the rest of the Kings wording.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140040030012",
+            "o140040030021"
+          ],
+          "choice": "\"hình những con bò\" where 1 Kings 7:24 has \"trái bầu\"",
+          "alternatives": [],
+          "reason": "Chronicles reads oxen where Kings reads gourds (m1); the rest keeps the Vietnamese of 1 Kings 7:24.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140040030031"
+          ],
+          "choice": "\"소 모양\" where 1 Kings 7:24 has \"박\" (gourds)",
+          "alternatives": [
+            "박 모양"
+          ],
+          "reason": "Chronicles' Hebrew reads oxen here; Korean follows it and changes only that word from 1 Kings 7:24.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -417,6 +720,31 @@
           "L": "[It was] standing on twelve oxen, three facing north and three facing west and three facing south and three facing east; and the sea [was] on them, above, and all their hindquarters [were] toward the inside.",
           "B": "It stood on twelve oxen: three faced north, three west, three south and three east. The Sea was set on top of them, and their hindquarters were all toward the center.",
           "R": "The Sea stood on twelve bronze oxen. Three faced north, three faced west, three faced south and three faced east. The Sea rested on their backs, and their back ends all pointed toward the center."
+        },
+        "es": {
+          "L": "[Estaba] sobre doce bueyes, tres mirando al norte, y tres mirando al occidente, y tres mirando al sur, y tres mirando al oriente; y el mar [estaba] sobre ellos, encima, y todas sus partes traseras [estaban] hacia dentro.",
+          "B": "Descansaba sobre doce bueyes: tres miraban al norte, tres al occidente, tres al sur y tres al oriente. El Mar estaba puesto encima de ellos, y todas sus partes traseras daban hacia el centro.",
+          "R": "El Mar descansaba sobre doce bueyes de bronce. Tres miraban al norte, tres al oeste, tres al sur y tres al este. El Mar se apoyaba sobre sus lomos, y todos tenían la parte de atrás hacia el centro."
+        },
+        "fr": {
+          "L": "[Elle] reposait sur douze bœufs, trois tournés vers le nord, et trois tournés vers l’ouest, et trois tournés vers le sud, et trois tournés vers l’est ; et la mer [était] sur eux, en haut, et toutes leurs croupes [étaient] tournées vers l’intérieur.",
+          "B": "Elle reposait sur douze bœufs : trois tournés vers le nord, trois vers l’ouest, trois vers le sud et trois vers l’est. La Mer était posée sur eux, et leurs croupes étaient toutes tournées vers le centre.",
+          "R": "La Mer reposait sur douze bœufs en bronze. Trois étaient tournés vers le nord, trois vers l’ouest, trois vers le sud et trois vers l’est. La Mer était posée sur leur dos, et leurs arrière-trains étaient tous tournés vers le centre."
+        },
+        "sw": {
+          "L": "[Ilikuwa] imesimama juu ya ng'ombe kumi na wawili, watatu wakielekea kaskazini, na watatu wakielekea magharibi, na watatu wakielekea kusini, na watatu wakielekea mashariki; na bahari [ilikuwa] juu yao, na mapaja yao yote ya nyuma [yalikuwa] upande wa ndani.",
+          "B": "Ilisimama juu ya ng'ombe kumi na wawili: watatu walielekea kaskazini, watatu magharibi, watatu kusini na watatu mashariki. Bahari iliwekwa juu yao, na sehemu zao zote za nyuma zilielekea katikati.",
+          "R": "Bahari ilisimama juu ya ng'ombe kumi na wawili wa shaba. Watatu walielekea kaskazini, watatu magharibi, watatu kusini na watatu mashariki. Bahari ilikaa juu ya migongo yao, na sehemu zao za nyuma zote zilielekea katikati."
+        },
+        "vi": {
+          "L": "[Nó] đứng trên mười hai con bò, ba con quay về hướng bắc, ba con quay về hướng tây, ba con quay về hướng nam, và ba con quay về hướng đông; biển [đặt] trên chúng, ở phía trên, và tất cả phần sau của chúng [đều] quay vào trong.",
+          "B": "Biển đặt trên mười hai con bò: ba con quay về hướng bắc, ba con hướng tây, ba con hướng nam và ba con hướng đông. Biển đặt trên lưng chúng, và phần sau của chúng đều quay vào trong.",
+          "R": "Cái Biển đặt trên mười hai con bò bằng đồng. Ba con quay về hướng bắc, ba con hướng tây, ba con hướng nam và ba con hướng đông. Cái Biển đặt trên lưng chúng, và đuôi chúng đều quay vào giữa."
+        },
+        "ko": {
+          "L": "[그것은] 소 열두 마리 위에 서 있었는데, 셋은 북쪽을 향하고, 셋은 서쪽을 향하고, 셋은 남쪽을 향하고, 셋은 동쪽을 향했다. 그리고 바다는 그 위에 [얹혀] 있었고, 그들의 엉덩이는 모두 안쪽으로 [향했다].",
+          "B": "바다는 소 열두 마리 위에 놓였는데, 셋은 북쪽을, 셋은 서쪽을, 셋은 남쪽을, 셋은 동쪽을 향했다. 바다는 그 위에 얹혀 있었고, 소들의 뒷부분은 모두 안쪽을 향했다.",
+          "R": "바다는 놋으로 만든 소 열두 마리 위에 놓여 있었다. 소 세 마리는 북쪽을, 세 마리는 서쪽을, 세 마리는 남쪽을, 세 마리는 동쪽을 향했다. 바다는 소들의 등 위에 얹혀 있었고, 소들의 꼬리 쪽은 모두 가운데를 향했다."
         }
       },
       "decisions": [
@@ -507,6 +835,31 @@
           "L": "And its thickness [was] a handbreadth, and its brim [was] made like the brim of a cup, [like] a lily blossom; [it was] holding baths: it held three thousand.",
           "B": "It was {{units:about 3 inches|a handbreadth}} thick, and its brim was made like the brim of a cup, like a lily blossom. It could take in and hold {{units:about 18,000 gallons|three thousand baths}}.",
           "R": "Its walls were {{units:about 3 inches|a handbreadth}} thick, and its rim curved outward like the rim of a cup or the petals of a lily. It could hold {{units:about 18,000 gallons|three thousand baths}} of water."
+        },
+        "es": {
+          "L": "Y su grosor [era] de un palmo menor, y su borde [estaba] hecho como el borde de una copa, [como] flor de lirio; recibía batos: contenía tres mil.",
+          "B": "Tenía {{units:unos 7,5 centímetros|un palmo menor}} de grosor, y su borde estaba hecho como el borde de una copa, como una flor de lirio. Podía recibir y contener {{units:unos 66 000 litros|tres mil batos}}.",
+          "R": "Sus paredes tenían {{units:unos 7,5 centímetros|un palmo menor}} de grosor, y su borde se abría hacia fuera como el borde de una copa o los pétalos de un lirio. Le cabían {{units:unos 66 000 litros|tres mil batos}} de agua."
+        },
+        "fr": {
+          "L": "Et son épaisseur [était] d’une largeur de main, et son bord [était] fait comme le bord d’une coupe, [comme] une fleur de lis ; [elle] recevait des baths : elle en contenait trois mille.",
+          "B": "Elle avait {{units:environ 7,5 centimètres|une largeur de main}} d’épaisseur, et son bord était fait comme celui d’une coupe, comme une fleur de lis. Elle pouvait recevoir et contenir {{units:environ 66 000 litres|trois mille baths}}.",
+          "R": "Ses parois avaient {{units:environ 7,5 centimètres|une largeur de main}} d’épaisseur, et son bord s’évasait comme celui d’une coupe ou comme les pétales d’un lis. Elle pouvait contenir {{units:environ 66 000 litres|trois mille baths}} d’eau."
+        },
+        "sw": {
+          "L": "Na unene wake [ulikuwa] kiganja kimoja, na ukingo wake ulifanywa kama ukingo wa kikombe, [kama] ua la yungiyungi; [ilikuwa] ikipokea bathi, ilichukua 3,000.",
+          "B": "Unene wake ulikuwa {{units:karibu sentimita 7.5|kiganja kimoja}}, na ukingo wake ulifanywa kama ukingo wa kikombe, kama ua la yungiyungi. Iliweza kupokea na kuchukua {{units:karibu lita 66,000|bathi 3,000}}.",
+          "R": "Kuta zake zilikuwa na unene wa {{units:karibu sentimita 7.5|kiganja kimoja}}, na ukingo wake ulipinda kuelekea nje kama ukingo wa kikombe au petali za yungiyungi. Ilichukua {{units:karibu lita 66,000|bathi 3,000}} za maji."
+        },
+        "vi": {
+          "L": "Bề dày của nó [là] một bề tay, và vành nó làm giống như vành chén, [như] hoa huệ nở; [nó] chứa được các bát: nó chứa ba ngàn.",
+          "B": "Thành Biển dày {{units:khoảng 7,5 cm|một bề tay}}, vành làm giống như vành chén, như đóa hoa huệ nở. Biển chứa được {{units:khoảng 66.000 lít|ba ngàn bát}}.",
+          "R": "Thành bể dày {{units:khoảng 7,5 cm|một bề tay}}, và vành bể loe ra như vành chén hay như cánh hoa huệ. Bể chứa được {{units:khoảng 66.000 lít|ba ngàn bát}} nước."
+        },
+        "ko": {
+          "L": "그리고 그 두께는 한 손바닥 너비였고, 그 가장자리는 잔의 가장자리처럼, 백합꽃처럼 만들었다. [그것은] 밧을 담는 것으로 삼천 [밧이] 들어갔다.",
+          "B": "바다의 두께는 {{units:7.5센티미터쯤|한 손바닥 너비}}였고, 가장자리는 잔의 가장자리처럼, 백합꽃처럼 만들었다. 그 안에는 {{units:66,000리터쯤|삼천 밧}}이 들어갔다.",
+          "R": "바다의 두께는 {{units:7.5센티미터쯤|한 손바닥 너비}}였다. 가장자리는 잔의 가장자리나 백합 꽃잎처럼 바깥으로 벌어져 있었다. 그 안에는 물이 {{units:66,000리터쯤|삼천 밧}}이나 들어갔다."
         }
       },
       "decisions": [
@@ -577,6 +930,67 @@
           "reason": "Balanced and Readable give the volume in gallons, with the baths as the alternative; the figure is approximate (m2). Balanced keeps both verbs as \"take in and hold\"; Readable adds \"of water\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o140040050021",
+            "o140040050101"
+          ],
+          "choice": "\"un palmo menor\" (7,5 cm); \"batos\" (22 litros)",
+          "alternatives": [],
+          "reason": "As the Spanish of 1 Kings 7:26: the handbreadth is \"palmo menor\" and the bath 22 litres; Chronicles has three thousand baths where Kings has two thousand (meaning decision).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o140040050101",
+            "o140040050121"
+          ],
+          "choice": "\"khoảng 66.000 lít\", with \"ba ngàn bát\" as the alternative",
+          "alternatives": [],
+          "reason": "A bath is reckoned at 22 litres. Chronicles has three thousand baths where 1 Kings 7:26 has two thousand (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o140040050101",
+            "o140040050111",
+            "o140040050121"
+          ],
+          "choice": "\"66,000리터쯤\" for three thousand baths",
+          "alternatives": [
+            "44,000리터쯤 (1 Kings 7:26)"
+          ],
+          "reason": "Chronicles gives three thousand baths where 1 Kings 7:26 has two thousand; the bath at 22 litres.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -632,6 +1046,31 @@
           "L": "And he made ten basins, and he put five on the right and five on the left, to wash in them; they would rinse in them the work of the burnt offering; but the sea [was] for the priests to wash in.",
           "B": "He also made ten basins for washing and put five on the south side and five on the north. In them they rinsed what was used for the burnt offering, but the Sea was for the priests to wash in.",
           "R": "He made ten basins for washing. He put five on the south side and five on the north side. The parts of the animals for the burnt offerings were rinsed in these basins, but the Sea was for the priests to wash in."
+        },
+        "es": {
+          "L": "E hizo diez pilas, y puso cinco a la derecha y cinco a la izquierda, para lavar en ellas; en ellas lavaban lo [que se preparaba para] el holocausto; pero el mar [era] para que los sacerdotes se lavaran en él.",
+          "B": "Hizo también diez pilas para lavar, y puso cinco en el lado sur y cinco en el lado norte. En ellas lavaban lo que se usaba para el holocausto, pero el Mar era para que se lavaran los sacerdotes.",
+          "R": "Hizo diez pilas para lavar. Puso cinco en el lado sur y cinco en el lado norte. En estas pilas se lavaban las partes de los animales para los holocaustos, pero el Mar era para que se lavaran los sacerdotes."
+        },
+        "fr": {
+          "L": "Et il fit dix bassins, et il en mit cinq à droite et cinq à gauche, pour s’y laver ; on y rinçait ce qui servait à l’holocauste ; mais la mer [était] pour que les prêtres s’y lavent.",
+          "B": "Il fit aussi dix bassins pour les ablutions et en plaça cinq du côté sud et cinq du côté nord. On y rinçait ce qui servait à l’holocauste, mais la Mer servait aux ablutions des prêtres.",
+          "R": "Il a fait dix bassins pour laver. Il en a placé cinq du côté sud et cinq du côté nord. On rinçait dans ces bassins les morceaux des animaux offerts en holocauste, mais la Mer servait aux prêtres pour se laver."
+        },
+        "sw": {
+          "L": "Akafanya mabirika kumi, akaweka matano upande wa kuume na matano upande wa kushoto, ili kuoshea ndani yake; walisuuza ndani yake kazi ya sadaka ya kuteketezwa; lakini bahari [ilikuwa] kwa ajili ya makuhani kunawia ndani yake.",
+          "B": "Alifanya pia mabirika kumi ya kuoshea, akaweka matano upande wa kusini na matano upande wa kaskazini. Ndani yake walisuuza vitu vilivyotumika kwa sadaka ya kuteketezwa, lakini Bahari ilikuwa kwa ajili ya makuhani kunawia.",
+          "R": "Alifanya mabirika kumi ya kuoshea. Akaweka matano upande wa kusini na matano upande wa kaskazini. Sehemu za wanyama wa sadaka za kuteketezwa zilisuuzwa katika mabirika hayo, lakini Bahari ilikuwa kwa ajili ya makuhani kunawia."
+        },
+        "vi": {
+          "L": "Vua làm mười cái chậu, đặt năm cái bên phải và năm cái bên trái, để rửa trong đó; người ta rửa trong đó những gì dùng cho của lễ thiêu; còn biển [là] để các thầy tế lễ tắm rửa trong đó.",
+          "B": "Vua cũng làm mười cái chậu để rửa, đặt năm cái ở phía nam và năm cái ở phía bắc. Người ta rửa trong các chậu ấy những gì dùng cho của lễ thiêu, còn cái Biển là để các thầy tế lễ tắm rửa.",
+          "R": "Vua làm mười cái chậu để rửa. Vua đặt năm cái ở phía nam và năm cái ở phía bắc. Các phần của con vật dâng làm của lễ thiêu được rửa trong những chậu ấy, còn cái Biển là để các thầy tế lễ tắm rửa."
+        },
+        "ko": {
+          "L": "그리고 그가 물두멍 열 개를 만들어 다섯은 오른쪽에, 다섯은 왼쪽에 두어 그 안에서 씻게 했다. 번제의 일을 그 안에서 헹구었다. 그러나 바다는 제사장들이 그 안에서 씻기 위한 것이었다.",
+          "B": "그는 또 씻는 데 쓸 물두멍 열 개를 만들어 다섯은 남쪽에, 다섯은 북쪽에 두었다. 거기서 번제에 쓰는 것들을 헹구었다. 그러나 바다는 제사장들이 씻는 데 썼다.",
+          "R": "그는 씻는 데 쓸 물두멍 열 개를 만들었다. 그는 다섯은 남쪽에, 다섯은 북쪽에 두었다. 번제로 바칠 짐승의 고기를 이 물두멍에서 씻었다. 그러나 바다는 제사장들이 몸을 씻는 데 썼다."
         }
       },
       "decisions": [
@@ -731,6 +1170,69 @@
           "reason": "Readable says what was rinsed (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140040060062",
+            "o140040060082"
+          ],
+          "choice": "\"el lado sur\", \"el lado norte\" (B, R)",
+          "alternatives": [
+            "la derecha",
+            "la izquierda"
+          ],
+          "reason": "As the English (r-en-1) and the Spanish of 1 Kings 7:39: the temple faced east, so the right is the south; Literal keeps \"derecha\" and \"izquierda\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140040060062",
+            "o140040060082"
+          ],
+          "choice": "\"phía nam\", \"phía bắc\" (B, R) for right and left",
+          "alternatives": [],
+          "reason": "As 1 Kings 7:39: facing east, the right is the south (m3). Literal keeps \"bên phải\" and \"bên trái\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140040060062",
+            "o140040060082"
+          ],
+          "choice": "\"남쪽\", \"북쪽\" (B, R) for \"right\" and \"left\"; \"물두멍\" for the basins",
+          "alternatives": [
+            "오른쪽, 왼쪽",
+            "대야"
+          ],
+          "reason": "Facing east, right is south and left is north, as the English Balanced says; \"물두멍\" is the word for the washing basins of the sanctuary.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -774,6 +1276,31 @@
           "L": "And he made the ten lampstands of gold according to their ordinance, and he put [them] in the temple, five on the right and five on the left.",
           "B": "He made the ten gold lampstands as they were prescribed and put them in the main hall, five along the south side and five along the north.",
           "R": "He made ten gold lampstands in the way the law said they should be made. He put them in the main room of the temple, five along the south wall and five along the north wall."
+        },
+        "es": {
+          "L": "E hizo los diez candelabros de oro según su ordenanza, y [los] puso en el templo, cinco a la derecha y cinco a la izquierda.",
+          "B": "Hizo los diez candelabros de oro como estaba prescrito y los puso en la sala principal, cinco en el lado sur y cinco en el norte.",
+          "R": "Hizo diez candelabros de oro tal como la ley decía que debían hacerse. Los puso en la sala principal del templo, cinco a lo largo de la pared sur y cinco a lo largo de la pared norte."
+        },
+        "fr": {
+          "L": "Et il fit les dix chandeliers d’or selon leur règle, et il [les] mit dans le temple, cinq à droite et cinq à gauche.",
+          "B": "Il fit les dix chandeliers d’or tels qu’ils étaient prescrits et les mit dans la grande salle, cinq du côté sud et cinq du côté nord.",
+          "R": "Il a fait dix chandeliers en or comme la loi disait de les faire. Il les a placés dans la salle principale du temple, cinq le long du mur sud et cinq le long du mur nord."
+        },
+        "sw": {
+          "L": "Akafanya vinara vya taa vya dhahabu kumi kwa kufuata agizo lake, akaviweka katika ukumbi, vitano upande wa kuume na vitano upande wa kushoto.",
+          "B": "Alifanya vinara kumi vya taa vya dhahabu kama ilivyoagizwa, akaviweka katika ukumbi mkuu, vitano upande wa kusini na vitano upande wa kaskazini.",
+          "R": "Alifanya vinara kumi vya taa vya dhahabu kwa jinsi sheria ilivyoagiza vifanywe. Akaviweka katika chumba kikuu cha hekalu, vitano kando ya ukuta wa kusini na vitano kando ya ukuta wa kaskazini."
+        },
+        "vi": {
+          "L": "Vua làm mười chân đèn bằng vàng theo quy định của chúng, và đặt [chúng] trong đền thờ, năm cái bên phải và năm cái bên trái.",
+          "B": "Vua làm mười chân đèn bằng vàng đúng như đã quy định và đặt trong chính điện, năm cái dọc phía nam và năm cái dọc phía bắc.",
+          "R": "Vua làm mười chân đèn bằng vàng đúng như luật pháp đã dạy. Vua đặt chúng trong gian chính của đền thờ, năm cái dọc theo tường phía nam và năm cái dọc theo tường phía bắc."
+        },
+        "ko": {
+          "L": "그리고 그가 금 등잔대 열 개를 그 규례대로 만들어 성소에 두었는데, 다섯은 오른쪽에, 다섯은 왼쪽에 [두었다].",
+          "B": "그는 규정대로 금 등잔대 열 개를 만들어 본당에 두었는데, 다섯은 남쪽에, 다섯은 북쪽에 두었다.",
+          "R": "그는 율법에 정한 대로 금 등잔대 열 개를 만들었다. 그리고 성전 큰 방의 남쪽 벽을 따라 다섯, 북쪽 벽을 따라 다섯을 두었다."
         }
       },
       "decisions": [
@@ -841,6 +1368,69 @@
           "reason": "Balanced and Readable say \"main hall\" (Readable \"main room of the temple\") for the large room (m2), as 1 Kings 7:50, and \"south\" and \"north\" for right and left (verse 6).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140040070082"
+          ],
+          "choice": "\"el templo\" (L); \"la sala principal\" (B, R)",
+          "alternatives": [
+            "la nave"
+          ],
+          "reason": "The word names the main hall (meaning decision); Literal says \"el templo\", as the English does, and Balanced and Readable \"la sala principal\", as the Spanish of 1 Kings 6.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140040070082"
+          ],
+          "choice": "ukumbi (Literal); ukumbi mkuu (Balanced); chumba kikuu cha hekalu (Readable)",
+          "alternatives": [
+            "hekalu"
+          ],
+          "reason": "The word *heikal* names the main hall here, and the Swahili 1 Kings 6-7 gives it these words at each level; \"hekalu\" is kept for the whole building.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140040070082"
+          ],
+          "choice": "\"성소\" (L), \"본당\" (B), \"성전 큰 방\" (R) for *heikhal*",
+          "alternatives": [
+            "성전"
+          ],
+          "reason": "The word here is the main hall, not the whole temple; Balanced and Readable use the words of 1 Kings 6:3.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -883,6 +1473,31 @@
           "L": "And he made ten tables, and he placed [them] in the temple, five on the right and five on the left. And he made a hundred bowls of gold.",
           "B": "He made ten tables and placed them in the main hall, five along the south side and five along the north. He also made one hundred sprinkling bowls of gold.",
           "R": "He made ten tables and put them in the main room of the temple, five along the south wall and five along the north wall. He also made a hundred gold bowls for sprinkling."
+        },
+        "es": {
+          "L": "E hizo diez mesas, y [las] colocó en el templo, cinco a la derecha y cinco a la izquierda. E hizo cien tazones de oro.",
+          "B": "Hizo diez mesas y las colocó en la sala principal, cinco en el lado sur y cinco en el norte. Hizo también cien tazones de oro para rociar.",
+          "R": "Hizo diez mesas y las puso en la sala principal del templo, cinco a lo largo de la pared sur y cinco a lo largo de la pared norte. También hizo cien tazones de oro para rociar."
+        },
+        "fr": {
+          "L": "Et il fit dix tables, et il [les] plaça dans le temple, cinq à droite et cinq à gauche. Et il fit cent coupes d’or.",
+          "B": "Il fit dix tables et les plaça dans la grande salle, cinq du côté sud et cinq du côté nord. Il fit aussi cent coupes à aspersion en or.",
+          "R": "Il a fait dix tables et il les a placées dans la salle principale du temple, cinq le long du mur sud et cinq le long du mur nord. Il a aussi fait cent coupes en or pour l’aspersion."
+        },
+        "sw": {
+          "L": "Akafanya meza kumi, akaziweka katika ukumbi, tano upande wa kuume na tano upande wa kushoto. Akafanya mabakuli 100 ya dhahabu.",
+          "B": "Alifanya meza kumi akaziweka katika ukumbi mkuu, tano upande wa kusini na tano upande wa kaskazini. Akafanya pia mabakuli 100 ya dhahabu ya kunyunyizia.",
+          "R": "Alifanya meza kumi akaziweka katika chumba kikuu cha hekalu, tano kando ya ukuta wa kusini na tano kando ya ukuta wa kaskazini. Akafanya pia mabakuli 100 ya dhahabu ya kunyunyizia."
+        },
+        "vi": {
+          "L": "Vua làm mười cái bàn và đặt [chúng] trong đền thờ, năm cái bên phải và năm cái bên trái. Vua cũng làm một trăm cái bát bằng vàng.",
+          "B": "Vua làm mười cái bàn và đặt trong chính điện, năm cái dọc phía nam và năm cái dọc phía bắc. Vua cũng làm một trăm cái bát rảy nước bằng vàng.",
+          "R": "Vua làm mười cái bàn và đặt trong gian chính của đền thờ, năm cái dọc theo tường phía nam và năm cái dọc theo tường phía bắc. Vua cũng làm một trăm cái bát bằng vàng dùng để rảy."
+        },
+        "ko": {
+          "L": "그리고 그가 상 열 개를 만들어 성소에 두었는데, 다섯은 오른쪽에, 다섯은 왼쪽에 [두었다]. 그리고 그가 금 대접 백 개를 만들었다.",
+          "B": "그는 상 열 개를 만들어 본당에 두었는데, 다섯은 남쪽에, 다섯은 북쪽에 두었다. 그는 또 피 뿌리는 금 대접 백 개를 만들었다.",
+          "R": "그는 상 열 개를 만들어 성전 큰 방의 남쪽 벽을 따라 다섯, 북쪽 벽을 따라 다섯을 두었다. 그리고 피를 뿌릴 때 쓰는 금 대접 백 개도 만들었다."
         }
       },
       "decisions": [
@@ -932,6 +1547,24 @@
           "reason": "Balanced and Readable say what the bowls were for (m2), as 1 Kings 7:40 does; \"south\" and \"north\" for right and left as in verse 6.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140040080111"
+          ],
+          "choice": "\"tazones ... para rociar\"",
+          "alternatives": [],
+          "reason": "As the English (r-en-1) and the Spanish of 1 Kings 7:40: the bowls held the blood that was sprinkled.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -973,6 +1606,31 @@
           "L": "And he made the court of the priests and the great court, and doors for the court; and he overlaid their doors [with] bronze.",
           "B": "He made the court of the priests and the great court, with doors for the court, and he overlaid their doors with bronze.",
           "R": "He made the courtyard for the priests and the large outer courtyard. He made doors for the outer courtyard and covered them with bronze."
+        },
+        "es": {
+          "L": "E hizo el atrio de los sacerdotes y el atrio grande, y puertas para el atrio; y sus puertas las revistió [de] bronce.",
+          "B": "Hizo el atrio de los sacerdotes y el atrio grande, con puertas para el atrio, y revistió de bronce sus puertas.",
+          "R": "Hizo el patio de los sacerdotes y el gran patio exterior. Hizo puertas para el patio exterior y las cubrió con bronce."
+        },
+        "fr": {
+          "L": "Et il fit le parvis des prêtres et la grande cour, et des portes pour la cour ; et il recouvrit leurs portes de bronze.",
+          "B": "Il fit le parvis des prêtres et la grande cour, avec des portes pour la cour, et il recouvrit leurs portes de bronze.",
+          "R": "Il a fait la cour réservée aux prêtres et la grande cour extérieure. Il a fait des portes pour la cour extérieure et il les a couvertes de bronze."
+        },
+        "sw": {
+          "L": "Akafanya ua wa makuhani, na ua mkubwa, na milango ya ua; na milango yake akaifunika [kwa] shaba.",
+          "B": "Alifanya ua wa makuhani na ua mkubwa, pamoja na milango ya ua huo, akaifunika milango yake kwa shaba.",
+          "R": "Alifanya ua wa makuhani na ua mkubwa wa nje. Akafanya milango ya ua wa nje na kuifunika kwa shaba."
+        },
+        "vi": {
+          "L": "Vua làm sân của các thầy tế lễ, và sân lớn, và các cửa cho sân; và vua bọc các cửa ấy [bằng] đồng.",
+          "B": "Vua làm sân của các thầy tế lễ và sân lớn, cùng các cửa cho sân, và vua bọc các cửa ấy bằng đồng.",
+          "R": "Vua làm sân dành cho các thầy tế lễ và một sân lớn bên ngoài. Vua làm các cửa cho sân ngoài và bọc chúng bằng đồng."
+        },
+        "ko": {
+          "L": "그리고 그가 제사장들의 뜰과 큰 뜰과 그 뜰의 문들을 만들고, 그 문들을 놋으로 입혔다.",
+          "B": "그는 제사장들의 뜰과 큰 뜰을 만들고, 뜰에 문들을 달아 그 문들을 놋으로 입혔다.",
+          "R": "그는 제사장들이 쓰는 뜰과 그 바깥의 큰 뜰을 만들었다. 그리고 바깥뜰에 문들을 만들어 달고 놋으로 덮었다."
         }
       },
       "decisions": [
@@ -1040,6 +1698,48 @@
           "reason": "Readable says the great court was the outer one (m1) and that the doors were for it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140040090043",
+            "o140040090072"
+          ],
+          "choice": "\"atrio\" (L, B); \"patio\" (R)",
+          "alternatives": [],
+          "reason": "As the English Readable says \"courtyard\", Spanish Readable says \"patio\", the plain word for an enclosed court.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140040090032",
+            "o140040090043",
+            "o140040090072"
+          ],
+          "choice": "\"le parvis\" (court of the priests), \"la grande cour\"",
+          "alternatives": [
+            "\"la cour des prêtres\"",
+            "\"le grand parvis\""
+          ],
+          "reason": "The two Hebrew words for court (m2) are kept apart: \"parvis\" for the first, \"cour\" for the second; Readable says \"cour\" for both and adds \"extérieure\", as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1077,6 +1777,31 @@
           "L": "And he put the sea on the right side, eastward, toward the south.",
           "B": "He put the Sea on the south side, at the southeast corner.",
           "R": "He put the Sea near the southeast corner of the temple."
+        },
+        "es": {
+          "L": "Y el mar lo puso al lado derecho, al oriente, hacia el sur.",
+          "B": "Puso el Mar en el lado sur, en la esquina sureste.",
+          "R": "Puso el Mar cerca de la esquina sureste del templo."
+        },
+        "fr": {
+          "L": "Et il plaça la mer du côté droit, vers l’est, en direction du sud.",
+          "B": "Il mit la Mer du côté sud, à l’angle sud-est.",
+          "R": "Il a mis la Mer près de l’angle sud-est du temple."
+        },
+        "sw": {
+          "L": "Na bahari akaiweka upande wa kuume, upande wa mashariki, kuelekea kusini.",
+          "B": "Bahari akaiweka upande wa kusini, kwenye pembe ya kusini-mashariki.",
+          "R": "Bahari akaiweka karibu na pembe ya kusini-mashariki ya hekalu."
+        },
+        "vi": {
+          "L": "Vua đặt biển ở phía bên phải, về phía đông, hướng về phía nam.",
+          "B": "Vua đặt cái Biển ở phía nam, nơi góc đông nam.",
+          "R": "Vua đặt cái Biển gần góc đông nam của đền thờ."
+        },
+        "ko": {
+          "L": "그리고 바다는 오른쪽 옆, 동쪽, 남쪽을 향해 두었다.",
+          "B": "바다는 성전 남쪽, 동남쪽 모퉁이에 두었다.",
+          "R": "바다는 성전의 동남쪽 모퉁이 가까이에 놓았다."
         }
       },
       "decisions": [
@@ -1180,6 +1905,31 @@
           "L": "And Huram made the pots and the shovels and the bowls. And Huram finished doing the work that he did for King Solomon in the house of God:",
           "B": "Huram also made the pots, the shovels and the sprinkling bowls. So Huram finished the work that he did for King Solomon on the house of God:",
           "R": "Huram also made pots, shovels and bowls for sprinkling. So he finished the work he did for King Solomon on God's temple. This is what he made:"
+        },
+        "es": {
+          "L": "E hizo Huram las ollas y las palas y los tazones. Y terminó Huram de hacer la obra que hizo para el rey Salomón en la casa de Dios:",
+          "B": "Huram hizo también las ollas, las palas y los tazones para rociar. Así terminó Huram la obra que hizo para el rey Salomón en la casa de Dios:",
+          "R": "Huram hizo también ollas, palas y tazones para rociar. Así terminó el trabajo que hizo para el rey Salomón en el templo de Dios. Esto es lo que hizo:"
+        },
+        "fr": {
+          "L": "Et Houram fit les marmites, et les pelles, et les coupes. Et Houram acheva de faire l’ouvrage qu’il fit pour le roi Salomon dans la maison de Dieu :",
+          "B": "Houram fit aussi les marmites, les pelles et les coupes à aspersion. Ainsi Houram acheva l’ouvrage qu’il fit pour le roi Salomon dans la maison de Dieu :",
+          "R": "Houram a aussi fait des marmites, des pelles et des coupes pour l’aspersion. Il a ainsi terminé le travail qu’il a fait pour le roi Salomon dans le temple de Dieu. Voici ce qu’il a fait :"
+        },
+        "sw": {
+          "L": "Huramu akafanya vyungu na sepetu na mabakuli. Huramu akamaliza kufanya kazi aliyomfanyia mfalme Sulemani katika nyumba ya Mungu:",
+          "B": "Huramu alifanya pia vyungu, sepetu na mabakuli ya kunyunyizia. Hivyo Huramu akamaliza kazi aliyomfanyia mfalme Sulemani katika nyumba ya Mungu:",
+          "R": "Huramu alifanya pia vyungu, sepetu na mabakuli ya kunyunyizia. Hivyo akamaliza kazi aliyomfanyia mfalme Sulemani kwa ajili ya hekalu la Mungu. Hivi ndivyo alivyovifanya:"
+        },
+        "vi": {
+          "L": "Hu-ram làm các nồi, các xẻng và các bát. Hu-ram hoàn tất công việc ông làm cho vua Sa-lô-môn trong nhà của Đức Chúa Trời:",
+          "B": "Hu-ram cũng làm các nồi, các xẻng và các bát rảy nước. Vậy Hu-ram hoàn tất công việc ông làm cho vua Sa-lô-môn trong nhà của Đức Chúa Trời:",
+          "R": "Hu-ram cũng làm các nồi, các xẻng và các bát dùng để rảy. Vậy ông hoàn tất công việc ông làm cho vua Sa-lô-môn trong đền thờ của Đức Chúa Trời. Đây là những thứ ông đã làm:"
+        },
+        "ko": {
+          "L": "그리고 후람이 솥들과 부삽들과 대접들을 만들었다. 그리고 후람이 하나님의 집에서 솔로몬 왕을 위하여 한 일을 끝마쳤다.",
+          "B": "후람은 또 솥과 부삽과 피 뿌리는 대접을 만들었다. 이렇게 후람은 솔로몬 왕을 위하여 하나님의 집에서 하던 일을 끝마쳤다. 그가 만든 것은 다음과 같다.",
+          "R": "후람은 또 솥과 부삽과 피를 뿌릴 때 쓰는 대접을 만들었다. 이렇게 그는 솔로몬 왕을 위하여 하나님의 성전에서 하던 일을 모두 마쳤다. 그가 만든 것은 다음과 같다."
         }
       },
       "decisions": [
@@ -1248,6 +1998,91 @@
           "reason": "The list of verses 12-16 spells out \"the work\", so Literal and Balanced end the verse with a colon. Readable adds \"This is what he made\", as in 1 Kings 7:40.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140040110021",
+            "o140040110111"
+          ],
+          "choice": "\"Huram\" for the craftsman",
+          "alternatives": [
+            "Hiram"
+          ],
+          "reason": "Chronicles calls the craftsman Huram where 1 Kings 7:40 has Hiram (meaning decision); the rest keeps the Spanish Kings wording.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140040110021",
+            "o140040110111"
+          ],
+          "choice": "\"Houram\" for the craftsman",
+          "alternatives": [
+            "\"Hiram\""
+          ],
+          "reason": "The craftsman is Hiram in French Kings and Houram here, as each book spells him (m2), like the king of Tyre in 2:2.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140040110021",
+            "o140040110201"
+          ],
+          "choice": "\"Hu-ram\", \"các nồi\", \"nhà của Đức Chúa Trời\" where 1 Kings 7:40 has Hiram, basins and the house of the LORD",
+          "alternatives": [],
+          "reason": "Chronicles' differences from the parallel (m1); otherwise the Vietnamese of 1 Kings 7:40 is kept.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140040110041"
+          ],
+          "choice": "\"후람\" for the craftsman",
+          "alternatives": [
+            "히람 (1 Kings 7:40)"
+          ],
+          "reason": "Chronicles spells the craftsman's name Huram as it spells the king's; Korean keeps 후람 for both, as 1 Kings keeps 히람 for both.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1299,6 +2134,31 @@
           "L": "two pillars, and the bowls and the capitals on top of the pillars, two; and the two networks to cover the two bowls of the capitals that [were] on top of the pillars;",
           "B": "the two pillars; the two bowl-shaped capitals on top of the pillars; the two networks covering the two bowls of the capitals on top of the pillars;",
           "R": "two pillars; the two bowl-shaped capitals on top of the pillars; two nets of lattice work to cover those capitals;"
+        },
+        "es": {
+          "L": "dos columnas, y los tazones y los capiteles sobre la cabeza de las columnas, dos; y las dos redes para cubrir los dos tazones de los capiteles que [estaban] sobre la cabeza de las columnas;",
+          "B": "las dos columnas; los dos capiteles en forma de tazón sobre las columnas; las dos redes que cubrían los dos tazones de los capiteles sobre las columnas;",
+          "R": "dos columnas; los dos capiteles en forma de tazón sobre las columnas; dos redes de enrejado para cubrir esos capiteles;"
+        },
+        "fr": {
+          "L": "deux colonnes, et les renflements et les chapiteaux sur le haut des colonnes, deux ; et les deux treillis pour couvrir les deux renflements des chapiteaux qui [étaient] sur le haut des colonnes ;",
+          "B": "les deux colonnes ; les deux chapiteaux en forme de bol sur le haut des colonnes ; les deux treillis qui couvraient les deux renflements des chapiteaux sur le haut des colonnes ;",
+          "R": "deux colonnes ; les deux chapiteaux en forme de bol sur le haut des colonnes ; deux treillis en forme de filet pour couvrir ces chapiteaux ;"
+        },
+        "sw": {
+          "L": "nguzo mbili, na mabakuli na vichwa juu ya nguzo, mawili; na nyavu mbili za kufunika mabakuli mawili ya vichwa [vilivyokuwa] juu ya nguzo;",
+          "B": "nguzo mbili; vichwa viwili vyenye umbo la bakuli juu ya nguzo; nyavu mbili zilizofunika mabakuli mawili ya vichwa juu ya nguzo;",
+          "R": "nguzo mbili; vichwa viwili vyenye umbo la bakuli juu ya nguzo; nyavu mbili za kazi ya kusuka za kufunika vichwa hivyo;"
+        },
+        "vi": {
+          "L": "hai trụ, và các bầu và các đầu trụ trên đỉnh các trụ, hai [cái]; và hai tấm lưới để che hai bầu của các đầu trụ trên đỉnh các trụ;",
+          "B": "hai trụ; hai đầu trụ hình bầu trên đỉnh các trụ; hai tấm lưới che hai bầu của các đầu trụ trên đỉnh các trụ;",
+          "R": "hai trụ; hai đầu trụ hình cái bát trên đỉnh các trụ; hai tấm đan như lưới để che các đầu trụ ấy;"
+        },
+        "ko": {
+          "L": "기둥 둘과, 기둥들 꼭대기에 있는 공 모양과 기둥머리 둘과, 기둥들 꼭대기에 있는 기둥머리의 공 모양 둘을 덮는 그물 둘과,",
+          "B": "기둥 둘, 기둥 꼭대기에 있는 사발 모양의 기둥머리 둘, 기둥 꼭대기에 있는 두 기둥머리의 사발 모양 부분을 덮는 그물 장식 둘,",
+          "R": "기둥 둘, 기둥 꼭대기에 얹은 사발 모양의 기둥머리 둘, 그 기둥머리를 덮는 그물 장식 둘,"
         }
       },
       "decisions": [
@@ -1400,6 +2260,31 @@
           "L": "and the four hundred pomegranates for the two networks, two rows of pomegranates for each network, to cover the two bowls of the capitals that [were] on the top of the pillars;",
           "B": "the four hundred pomegranates for the two networks, in two rows on each network, covering the two bowls of the capitals on top of the pillars;",
           "R": "four hundred pomegranates, set in two rows on each net, around the bowl-shaped capitals on top of the pillars;"
+        },
+        "es": {
+          "L": "y las cuatrocientas granadas para las dos redes, dos hileras de granadas para cada red, para cubrir los dos tazones de los capiteles que [estaban] sobre la parte alta de las columnas;",
+          "B": "las cuatrocientas granadas para las dos redes, en dos hileras en cada red, que cubrían los dos tazones de los capiteles sobre las columnas;",
+          "R": "cuatrocientas granadas, puestas en dos hileras en cada red, alrededor de los capiteles en forma de tazón sobre las columnas;"
+        },
+        "fr": {
+          "L": "et les quatre cents grenades pour les deux treillis, deux rangées de grenades pour chaque treillis, pour couvrir les deux renflements des chapiteaux qui [étaient] sur le haut des colonnes ;",
+          "B": "les quatre cents grenades pour les deux treillis, sur deux rangées pour chaque treillis, qui couvraient les deux renflements des chapiteaux sur le haut des colonnes ;",
+          "R": "quatre cents grenades, placées sur deux rangées sur chaque filet, autour des chapiteaux en forme de bol sur le haut des colonnes ;"
+        },
+        "sw": {
+          "L": "na makomamanga 400 kwa ajili ya nyavu mbili, safu mbili za makomamanga kwa kila wavu, ya kufunika mabakuli mawili ya vichwa [vilivyokuwa] juu ya nguzo;",
+          "B": "makomamanga 400 kwa ajili ya nyavu mbili, safu mbili kwa kila wavu, yakifunika mabakuli mawili ya vichwa juu ya nguzo;",
+          "R": "makomamanga 400, yaliyowekwa safu mbili kwa kila wavu, kuzunguka vichwa vyenye umbo la bakuli juu ya nguzo;"
+        },
+        "vi": {
+          "L": "và bốn trăm trái lựu cho hai tấm lưới, hai hàng trái lựu cho mỗi tấm lưới, để che hai bầu của các đầu trụ trên đỉnh các trụ;",
+          "B": "bốn trăm trái lựu cho hai tấm lưới, mỗi tấm lưới hai hàng, che hai bầu của các đầu trụ trên đỉnh các trụ;",
+          "R": "bốn trăm trái lựu, xếp thành hai hàng trên mỗi tấm lưới, vòng quanh các đầu trụ hình cái bát trên đỉnh các trụ;"
+        },
+        "ko": {
+          "L": "두 그물을 위한 석류 사백 개, 곧 기둥들 위에 있는 기둥머리의 공 모양 둘을 덮도록 그물 하나에 석류 두 줄씩과,",
+          "B": "두 그물 장식에 단 석류 사백 개, 곧 기둥 꼭대기에 있는 두 기둥머리의 사발 모양 부분을 덮도록 그물 장식마다 두 줄씩 단 석류,",
+          "R": "기둥 꼭대기의 사발 모양 기둥머리 둘레에 그물 장식마다 두 줄씩 단 석류 사백 개,"
         }
       },
       "decisions": [
@@ -1486,6 +2371,31 @@
           "L": "and he made the stands, and he made the basins on the stands;",
           "B": "the stands, with the basins he made for the stands;",
           "R": "the stands, with basins on them;"
+        },
+        "es": {
+          "L": "e hizo las basas, e hizo las pilas sobre las basas;",
+          "B": "las basas, con las pilas que hizo para las basas;",
+          "R": "los carritos, con pilas sobre ellos;"
+        },
+        "fr": {
+          "L": "et il fit les supports, et il fit les bassins sur les supports ;",
+          "B": "les supports, avec les bassins qu’il fit pour les supports ;",
+          "R": "les supports, avec des bassins dessus ;"
+        },
+        "sw": {
+          "L": "na vitako akavifanya, na mabirika akayafanya juu ya vitako;",
+          "B": "vitako, pamoja na mabirika aliyoyafanya kwa ajili ya vitako;",
+          "R": "vitako, pamoja na mabirika juu yake;"
+        },
+        "vi": {
+          "L": "và vua làm các bệ, và làm các chậu trên các bệ;",
+          "B": "các bệ, với các chậu vua làm cho các bệ;",
+          "R": "các bệ, với các chậu đặt trên đó;"
+        },
+        "ko": {
+          "L": "그리고 그가 받침대들을 만들고, 받침대들 위의 물두멍들을 만들었고,",
+          "B": "받침대들과 그 위에 놓으려고 만든 물두멍들,",
+          "R": "받침대들과 그 위에 놓은 물두멍들,"
         }
       },
       "decisions": [
@@ -1522,6 +2432,26 @@
           "reason": "Balanced and Readable keep the list form of verses 12-16 rather than starting new clauses with \"he made\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140040140022",
+            "o140040140052"
+          ],
+          "choice": "\"las basas\" (L, B); \"los carritos\" (R)",
+          "alternatives": [],
+          "reason": "As the Spanish of 1 Kings 7:27, 43: the wheeled stands are \"basas\" at Literal and Balanced and \"carritos\" at Readable.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1556,6 +2486,31 @@
           "L": "the one sea, and the twelve oxen under it;",
           "B": "the one Sea, with the twelve oxen under it;",
           "R": "the one huge tank called the Sea, with the twelve oxen under it;"
+        },
+        "es": {
+          "L": "el mar único, y los doce bueyes debajo de él;",
+          "B": "el Mar, uno solo, con los doce bueyes debajo de él;",
+          "R": "el gran tanque llamado el Mar, uno solo, con los doce bueyes debajo de él;"
+        },
+        "fr": {
+          "L": "l’unique mer, et les douze bœufs sous elle ;",
+          "B": "l’unique Mer, avec les douze bœufs sous elle ;",
+          "R": "l’unique et immense cuve appelée la Mer, avec les douze bœufs dessous ;"
+        },
+        "sw": {
+          "L": "bahari moja, na ng'ombe kumi na wawili chini yake;",
+          "B": "Bahari moja, pamoja na ng'ombe kumi na wawili chini yake;",
+          "R": "tangi moja kubwa lililoitwa Bahari, pamoja na ng'ombe kumi na wawili chini yake;"
+        },
+        "vi": {
+          "L": "một cái biển, và mười hai con bò dưới biển;",
+          "B": "một cái Biển, với mười hai con bò dưới cái Biển;",
+          "R": "một cái bể rất lớn gọi là cái Biển, với mười hai con bò bên dưới;"
+        },
+        "ko": {
+          "L": "바다 하나와, 그 아래의 소 열두 마리와,",
+          "B": "바다 하나와 그 아래의 소 열두 마리,",
+          "R": "'바다'라고 부르는 커다란 물통 하나와 그 아래의 소 열두 마리,"
         }
       },
       "decisions": [
@@ -1640,6 +2595,31 @@
           "L": "and the pots and the shovels and the forks; and all their vessels Huram-abi made for King Solomon [for] the house of {{divine_name:the LORD|Yahweh}}, [of] polished bronze.",
           "B": "and the pots, the shovels and the meat forks. All these things that Huram-abi made for King Solomon for the house of {{divine_name:the LORD|Yahweh}} were of polished bronze.",
           "R": "and pots, shovels and meat forks. All these things that Huram-abi made for King Solomon for {{divine_name:the LORD|Yahweh}}'s temple were made of polished bronze."
+        },
+        "es": {
+          "L": "y las ollas y las palas y los tenedores; y todos sus utensilios los hizo Huram-abí para el rey Salomón [para] la casa {{divine_name:del SEÑOR|de Yahvé}}, [de] bronce bruñido.",
+          "B": "y las ollas, las palas y los tenedores para la carne. Todos estos objetos que Huram-abí hizo para el rey Salomón para la casa {{divine_name:del SEÑOR|de Yahvé}} eran de bronce bruñido.",
+          "R": "y ollas, palas y tenedores para la carne. Todos estos objetos que Huram-abí hizo para el rey Salomón para el templo {{divine_name:del SEÑOR|de Yahvé}} estaban hechos de bronce bruñido."
+        },
+        "fr": {
+          "L": "et les marmites, et les pelles, et les fourchettes ; et tous leurs objets, Houram-Abi [les] fit pour le roi Salomon [pour] la maison {{divine_name:du SEIGNEUR|de Yahvé}}, [en] bronze poli.",
+          "B": "et les marmites, les pelles et les fourchettes à viande. Tous ces objets que Houram-Abi fit pour le roi Salomon pour la maison {{divine_name:du SEIGNEUR|de Yahvé}} étaient en bronze poli.",
+          "R": "et des marmites, des pelles et des fourchettes à viande. Toutes ces choses que Houram-Abi a faites pour le roi Salomon pour le temple {{divine_name:du SEIGNEUR|de Yahvé}} étaient en bronze poli."
+        },
+        "sw": {
+          "L": "na vyungu na sepetu na nyuma; na vyombo vyao vyote Huramu-abi alimfanyia mfalme Sulemani [kwa ajili ya] nyumba ya {{divine_name:BWANA|Yahwe}}, [vya] shaba iliyosuguliwa.",
+          "B": "na vyungu, sepetu na nyuma za nyama. Vitu hivi vyote ambavyo Huramu-abi alimfanyia mfalme Sulemani kwa ajili ya nyumba ya {{divine_name:BWANA|Yahwe}} vilikuwa vya shaba iliyosuguliwa.",
+          "R": "na vyungu, sepetu na nyuma za kushikia nyama. Vitu hivi vyote ambavyo Huramu-abi alimfanyia mfalme Sulemani kwa ajili ya hekalu la {{divine_name:BWANA|Yahwe}} vilitengenezwa kwa shaba iliyosuguliwa ikang'aa."
+        },
+        "vi": {
+          "L": "và các nồi, các xẻng và các nĩa; và tất cả các vật dụng của chúng, Hu-ram A-bi làm cho vua Sa-lô-môn [cho] nhà của {{divine_name:CHÚA|Gia-vê}}, [bằng] đồng đánh bóng.",
+          "B": "cùng các nồi, các xẻng và các nĩa xiên thịt. Tất cả những vật dụng Hu-ram A-bi làm cho vua Sa-lô-môn cho nhà của {{divine_name:CHÚA|Gia-vê}} đều bằng đồng đánh bóng.",
+          "R": "cùng các nồi, các xẻng và các nĩa xiên thịt. Tất cả những vật Hu-ram A-bi làm cho vua Sa-lô-môn dùng trong đền thờ của {{divine_name:CHÚA|Gia-vê}} đều làm bằng đồng đánh bóng."
+        },
+        "ko": {
+          "L": "솥들과 부삽들과 고기 갈고리들이다. 그리고 그것들의 모든 기구를 후람아비가 솔로몬 왕을 위하여 {{divine_name:주|야훼}}의 집[에] 빛나는 놋으로 만들었다.",
+          "B": "솥과 부삽과 고기 갈고리이다. 후람아비가 솔로몬 왕을 위하여 {{divine_name:주|야훼}}의 집에 만든 이 모든 기구는 광을 낸 놋으로 만든 것이었다.",
+          "R": "솥과 부삽과 고기 갈고리이다. 후람아비가 솔로몬 왕을 위하여 {{divine_name:주|야훼}}의 성전에 만든 이 모든 기구는 반짝이게 닦은 놋으로 만들었다."
         }
       },
       "decisions": [
@@ -1710,6 +2690,71 @@
           "reason": "Every level gives the name as one, Huram-abi, as at 2:12 (m2). Balanced and Readable say \"meat forks\" to show what the forks were for.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140040160111",
+            "o140040160121"
+          ],
+          "choice": "\"Huram-abí\"",
+          "alternatives": [
+            "Huram su padre"
+          ],
+          "reason": "The Hebrew \"Huram his father\" is taken as the name of 2:12 (meaning decision), written the same way.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140040160062"
+          ],
+          "choice": "nyuma (Literal); nyuma za nyama (Balanced); nyuma za kushikia nyama (Readable)",
+          "alternatives": [
+            "uma"
+          ],
+          "reason": "The three-pronged forks of the altar are \"nyuma\", the word of the Swahili Exodus 27:3, where Readable also says what they held.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140040160111",
+            "o140040160121"
+          ],
+          "choice": "\"후람아비\" as one name, as in 2:12",
+          "alternatives": [
+            "후람 그의 아버지"
+          ],
+          "reason": "The Hebrew reads \"Huram his father\"; the English and the word data take it as the name of 2:12.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1750,6 +2795,31 @@
           "L": "In the plain of the Jordan the king cast them, in the clay ground between Succoth and Zeredah.",
           "B": "The king cast them in the clay ground of the Jordan plain, between Succoth and Zeredah.",
           "R": "The king had them cast in molds made in the clay soil of the Jordan Valley, between the towns of Succoth and Zeredah."
+        },
+        "es": {
+          "L": "En la llanura del Jordán los fundió el rey, en la tierra arcillosa entre Sucot y Sereda.",
+          "B": "El rey los fundió en la tierra arcillosa de la llanura del Jordán, entre Sucot y Sereda.",
+          "R": "El rey los hizo fundir en moldes hechos en la tierra arcillosa del valle del Jordán, entre los pueblos de Sucot y Sereda."
+        },
+        "fr": {
+          "L": "Dans la plaine du Jourdain, le roi les fondit, dans la terre argileuse, entre Soukkoth et Tseréda.",
+          "B": "Le roi les fit fondre dans la terre argileuse de la plaine du Jourdain, entre Soukkoth et Tseréda.",
+          "R": "Le roi les a fait couler dans des moules faits dans la terre argileuse de la vallée du Jourdain, entre les villes de Soukkoth et de Tseréda."
+        },
+        "sw": {
+          "L": "Katika uwanda wa Yordani mfalme akavisubu, katika ardhi ya udongo wa mfinyanzi kati ya Sukothi na Sereda.",
+          "B": "Mfalme alivisubu katika ardhi ya udongo wa mfinyanzi katika uwanda wa Yordani, kati ya Sukothi na Sereda.",
+          "R": "Mfalme aliagiza visubiwe katika kalibu zilizofanywa kwa udongo wa mfinyanzi katika Bonde la Yordani, kati ya miji ya Sukothi na Sereda."
+        },
+        "vi": {
+          "L": "Tại đồng bằng Giô-đanh vua đúc các vật ấy, trong đất sét, giữa Su-cốt và Xê-rê-đa.",
+          "B": "Vua cho đúc các vật ấy trong đất sét của đồng bằng Giô-đanh, giữa Su-cốt và Xê-rê-đa.",
+          "R": "Vua cho đúc các vật ấy trong những khuôn làm bằng đất sét ở thung lũng sông Giô-đanh, giữa hai thành Su-cốt và Xê-rê-đa."
+        },
+        "ko": {
+          "L": "요단 평지에서 왕이 숙곳과 스레다 사이의 진흙 땅에서 그것들을 부어 만들었다.",
+          "B": "왕은 요단 평지, 숙곳과 스레다 사이의 진흙 땅에서 이것들을 부어 만들었다.",
+          "R": "왕은 요단 골짜기에 있는 숙곳 성읍과 스레다 성읍 사이의 진흙 땅에 틀을 만들고, 거기에 놋을 부어 이것들을 만들게 했다."
         }
       },
       "decisions": [
@@ -1815,6 +2885,69 @@
           "reason": "Readable says the king had the work done, that the clay was used for molds (m2), and that Succoth and Zeredah were towns, as in 1 Kings 7:46.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140040170101"
+          ],
+          "choice": "\"Sereda\"",
+          "alternatives": [
+            "Saretán"
+          ],
+          "reason": "Chronicles names Zeredah where 1 Kings 7:46 has Zarethan (meaning decision); Spanish writes \"Sereda\", the form the Spanish of 1 Kings 11:26 uses for Zeredah.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140040170101"
+          ],
+          "choice": "Sereda",
+          "alternatives": [
+            "Seredatha"
+          ],
+          "reason": "Zeredah is \"Sereda\", the form the Swahili 1 Kings 11:26 uses for the same name, while 1 Kings 7:46 has Sarethani (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140040170101"
+          ],
+          "choice": "\"Xê-rê-đa\"",
+          "alternatives": [
+            "Xát-than"
+          ],
+          "reason": "Chronicles names Zeredah where 1 Kings 7:46 has Zarethan (m1); the form follows the name in 1 Kings 11:26.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1854,6 +2987,31 @@
           "L": "And Solomon made all these vessels in very great abundance, for the weight of the bronze was not found out.",
           "B": "Solomon made all these things in such great numbers that the weight of the bronze was never found out.",
           "R": "Solomon made so many of these things that no one ever knew how much all the bronze weighed."
+        },
+        "es": {
+          "L": "E hizo Salomón todos estos utensilios en gran abundancia, porque no se averiguó el peso del bronce.",
+          "B": "Salomón hizo todos estos objetos en tan gran cantidad que nunca se supo el peso del bronce.",
+          "R": "Salomón hizo tantos de estos objetos que nadie supo nunca cuánto pesaba todo el bronce."
+        },
+        "fr": {
+          "L": "Et Salomon fit tous ces objets en très grande abondance, car on ne chercha pas à connaître le poids du bronze.",
+          "B": "Salomon fit tous ces objets en si grand nombre qu’on ne connut jamais le poids du bronze.",
+          "R": "Salomon a fait tant de ces objets que personne n’a jamais su combien pesait tout le bronze."
+        },
+        "sw": {
+          "L": "Sulemani akafanya vyombo hivi vyote kwa wingi mno mno, kwa maana uzito wa shaba haukujulikana.",
+          "B": "Sulemani alifanya vitu hivi vyote kwa wingi kiasi kwamba uzito wa shaba haukujulikana kamwe.",
+          "R": "Sulemani alifanya vitu hivi vingi mno hata hakuna mtu aliyejua kamwe shaba yote ilikuwa na uzito kiasi gani."
+        },
+        "vi": {
+          "L": "Sa-lô-môn làm tất cả các vật dụng ấy rất, rất nhiều, vì trọng lượng của đồng không được tính ra.",
+          "B": "Sa-lô-môn làm tất cả những vật ấy nhiều đến nỗi trọng lượng đồng không bao giờ được biết.",
+          "R": "Sa-lô-môn làm nhiều vật bằng đồng đến nỗi không ai biết số đồng ấy nặng bao nhiêu."
+        },
+        "ko": {
+          "L": "그리고 솔로몬이 이 모든 기구를 매우 많이 만들었다. 놋의 무게를 알아내지 못했기 때문이다.",
+          "B": "솔로몬은 이 기구들을 너무나 많이 만들어서 놋의 무게가 얼마인지 끝내 알 수 없었다.",
+          "R": "솔로몬이 놋으로 만든 기구가 너무 많아서, 놋이 얼마나 쓰였는지 아무도 몰랐다."
         }
       },
       "decisions": [
@@ -1966,6 +3124,31 @@
           "L": "And Solomon made all the furnishings that [were for] the house of God: the altar of gold, and the tables, and on them [was] the bread of the Presence;",
           "B": "Solomon also made all the furnishings of the house of God: the altar of gold; the tables for the bread of the Presence;",
           "R": "Solomon also made all the furnishings for God's temple: the gold altar for burning incense; the tables for the bread set out before God;"
+        },
+        "es": {
+          "L": "E hizo Salomón todos los utensilios que [eran para] la casa de Dios: el altar de oro, y las mesas, y sobre ellas [estaba] el pan de la Presencia;",
+          "B": "Salomón hizo también todos los utensilios de la casa de Dios: el altar de oro; las mesas para el pan de la Presencia;",
+          "R": "Salomón hizo también todos los utensilios para el templo de Dios: el altar de oro para quemar incienso; las mesas para el pan que se ponía delante de Dios;"
+        },
+        "fr": {
+          "L": "Et Salomon fit tous les objets qui [étaient pour] la maison de Dieu : l’autel d’or, et les tables, et sur elles [était] le pain de la Présence ;",
+          "B": "Salomon fit aussi tous les objets de la maison de Dieu : l’autel d’or ; les tables pour le pain de la Présence ;",
+          "R": "Salomon a aussi fait tous les objets pour le temple de Dieu : l’autel d’or pour brûler l’encens ; les tables pour le pain qu’on plaçait devant Dieu ;"
+        },
+        "sw": {
+          "L": "Sulemani akafanya vyombo vyote [vilivyokuwa vya] nyumba ya Mungu: madhabahu ya dhahabu, na meza, na juu yake [ulikuwa] mkate wa Uwepo;",
+          "B": "Sulemani alifanya pia vyombo vyote vya nyumba ya Mungu: madhabahu ya dhahabu; meza za mkate wa Uwepo;",
+          "R": "Sulemani alifanya pia vyombo vyote vya hekalu la Mungu: madhabahu ya dhahabu ya kufukizia uvumba; meza za mkate uliowekwa mbele za Mungu;"
+        },
+        "vi": {
+          "L": "Sa-lô-môn làm tất cả các vật dụng [cho] nhà của Đức Chúa Trời: bàn thờ bằng vàng, và các cái bàn, trên đó [có] bánh Thánh Diện;",
+          "B": "Sa-lô-môn cũng làm mọi vật dụng trong nhà của Đức Chúa Trời: bàn thờ bằng vàng; các cái bàn để bánh Thánh Diện;",
+          "R": "Sa-lô-môn cũng làm mọi vật dụng cho đền thờ của Đức Chúa Trời: bàn thờ bằng vàng để đốt hương; các cái bàn để bày bánh dâng trước mặt Đức Chúa Trời;"
+        },
+        "ko": {
+          "L": "그리고 솔로몬이 하나님의 집에 [둘] 모든 기구를 만들었다. 금 제단과, 그 위에 얼굴의 빵을 두는 상들과,",
+          "B": "솔로몬은 또 하나님의 집에 둘 모든 기구를 만들었다. 금 제단, 임재의 빵을 차려 놓는 상들,",
+          "R": "솔로몬은 또 하나님의 성전에 둘 모든 기구를 만들었다. 향을 피우는 금 제단, 하나님 앞에 차려 놓는 빵을 올려놓는 상들,"
         }
       },
       "decisions": [
@@ -2032,6 +3215,47 @@
           "reason": "Readable says what the altar was for (m2) and explains \"the bread of the Presence\" (m3), as in 1 Kings 7:48.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140040190151",
+            "o140040190162"
+          ],
+          "choice": "\"bánh Thánh Diện\" (L, B); \"bánh dâng trước mặt Đức Chúa Trời\" (R)",
+          "alternatives": [],
+          "reason": "As 1 Kings 7:48; Readable explains the bread of the Presence (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140040190151"
+          ],
+          "choice": "\"얼굴의 빵\" (L); \"임재의 빵\" (B); \"하나님 앞에 차려 놓는 빵\" (R)",
+          "alternatives": [
+            "진설병"
+          ],
+          "reason": "As 1 Kings 7:48.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2072,6 +3296,31 @@
           "L": "and the lampstands and their lamps, to burn according to the ordinance before the inner room, [of] pure gold;",
           "B": "the lampstands and their lamps of pure gold, to burn in front of the inner sanctuary as prescribed;",
           "R": "the lampstands and their lamps, all of pure gold, to burn in front of the inner room as the law said;"
+        },
+        "es": {
+          "L": "y los candelabros y sus lámparas, para que ardieran según la ordenanza delante del cuarto interior, [de] oro puro;",
+          "B": "los candelabros y sus lámparas de oro puro, para que ardieran delante del santuario interior como estaba prescrito;",
+          "R": "los candelabros y sus lámparas, todos de oro puro, para que ardieran delante del lugar santísimo como decía la ley;"
+        },
+        "fr": {
+          "L": "et les chandeliers et leurs lampes, pour brûler selon la règle devant le lieu très saint, [en] or pur ;",
+          "B": "les chandeliers et leurs lampes en or pur, pour brûler devant le lieu très saint comme il était prescrit ;",
+          "R": "les chandeliers et leurs lampes, tout en or pur, pour brûler devant le lieu très saint, comme la loi le disait ;"
+        },
+        "sw": {
+          "L": "na vinara vya taa na taa zake, ili ziwake kwa kufuata agizo mbele ya chumba cha ndani, [vya] dhahabu safi;",
+          "B": "vinara vya taa na taa zake vya dhahabu safi, viwake mbele ya Patakatifu pa Patakatifu kama ilivyoagizwa;",
+          "R": "vinara vya taa na taa zake, vyote vya dhahabu safi, viwake mbele ya chumba cha ndani kama sheria ilivyoagiza;"
+        },
+        "vi": {
+          "L": "và các chân đèn cùng các đèn của chúng, để thắp theo quy định trước phòng trong, [bằng] vàng ròng;",
+          "B": "các chân đèn và các đèn bằng vàng ròng, để thắp trước phòng trong như đã quy định;",
+          "R": "các chân đèn và các đèn, tất cả bằng vàng ròng, để thắp trước phòng trong như luật pháp đã dạy;"
+        },
+        "ko": {
+          "L": "등잔대들과 그 등잔들, 곧 규례대로 내실 앞에서 켜도록 순금으로 된 것과,",
+          "B": "규정대로 지성소 앞에서 켤 순금 등잔대와 등잔,",
+          "R": "율법에 정한 대로 지성소 앞에서 켤 등잔대와 등잔, 이것들은 모두 순금으로 만들었다."
         }
       },
       "decisions": [
@@ -2135,6 +3384,46 @@
           "reason": "Balanced says \"inner sanctuary\" and Readable \"inner room\", as in 1 Kings 7:49.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140040200072"
+          ],
+          "choice": "\"el cuarto interior\" (L); \"el santuario interior\" (B); \"el lugar santísimo\" (R)",
+          "alternatives": [],
+          "reason": "The devir follows the Kings terms note for Spanish, one wording per level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140040200072"
+          ],
+          "choice": "\"내실\" (L); \"지성소\" (B, R)",
+          "alternatives": [
+            "안쪽 방"
+          ],
+          "reason": "As the terms note and 1 Kings 7:49.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2170,6 +3459,31 @@
           "L": "and the flowers and the lamps and the tongs [of] gold, it [was] perfection of gold;",
           "B": "the flowers, the lamps and the tongs of gold, the finest gold;",
           "R": "the gold flower decorations, lamps and tongs, made of the finest gold;"
+        },
+        "es": {
+          "L": "y las flores y las lámparas y las tenazas [de] oro, [que era] oro perfecto;",
+          "B": "las flores, las lámparas y las tenazas de oro, del oro más fino;",
+          "R": "los adornos de flores, las lámparas y las tenazas de oro, hechos del oro más fino;"
+        },
+        "fr": {
+          "L": "et les fleurs, et les lampes, et les pincettes [en] or, c’[était] la perfection de l’or ;",
+          "B": "les fleurs, les lampes et les pincettes en or, de l’or le plus fin ;",
+          "R": "les décorations en forme de fleurs, les lampes et les pincettes, faites de l’or le plus fin ;"
+        },
+        "sw": {
+          "L": "na maua na taa na makoleo [ya] dhahabu, [ilikuwa] dhahabu kamilifu;",
+          "B": "maua, taa na makoleo ya dhahabu, dhahabu iliyo bora kabisa;",
+          "R": "mapambo ya maua, taa na makoleo, vyote vya dhahabu iliyo bora kabisa;"
+        },
+        "vi": {
+          "L": "và các hoa, các đèn và các kẹp [bằng] vàng, [là] vàng tinh khiết nhất;",
+          "B": "các hoa, các đèn và các kẹp bằng vàng, loại vàng tốt nhất;",
+          "R": "các vật trang trí hình hoa, các đèn và kẹp, làm bằng loại vàng tốt nhất;"
+        },
+        "ko": {
+          "L": "그리고 꽃들과 등잔들과 불집게들은 금, 곧 완전한 금이었고,",
+          "B": "가장 좋은 금으로 만든 꽃 장식과 등잔과 불집게,",
+          "R": "가장 좋은 금으로 만든 꽃 장식과 등잔과 불집게,"
         }
       },
       "decisions": [
@@ -2273,6 +3587,31 @@
           "L": "and the snuffers and the bowls and the dishes and the firepans, [of] pure gold; and the entrance of the house: its inner doors to the holy of holies and the doors of the house to the hall, [of] gold.",
           "B": "the wick trimmers, the sprinkling bowls, the dishes and the firepans of pure gold; and the entrance of the house, its inner doors to the most holy place and the doors of the house to the main hall, of gold.",
           "R": "the wick trimmers, sprinkling bowls, dishes and fire pans, all of pure gold; and the gold doors at the entrances of the temple: the inner doors to the most holy place and the doors to the main room of the temple."
+        },
+        "es": {
+          "L": "y las despabiladeras y los tazones y los platillos y los incensarios, [de] oro puro; y la entrada de la casa: sus puertas interiores al santo de los santos y las puertas de la casa a la nave, [de] oro.",
+          "B": "las despabiladeras, los tazones para rociar, los platillos y los incensarios de oro puro; y la entrada de la casa, sus puertas interiores al lugar santísimo y las puertas de la casa a la sala principal, de oro.",
+          "R": "las despabiladeras, los tazones para rociar, los platillos y los braseros, todos de oro puro; y las puertas de oro de las entradas del templo: las puertas interiores al lugar santísimo y las puertas a la sala principal del templo."
+        },
+        "fr": {
+          "L": "et les mouchettes, et les coupes, et les plats, et les brasiers, [en] or pur ; et l’entrée de la maison : ses portes intérieures vers le saint des saints et les portes de la maison vers la grande salle, [en] or.",
+          "B": "les mouchettes, les coupes à aspersion, les plats et les brasiers en or pur ; et l’entrée de la maison, ses portes intérieures vers le lieu très saint et les portes de la maison vers la grande salle, en or.",
+          "R": "les mouchettes, les coupes pour l’aspersion, les plats et les brasiers, tout en or pur ; et les portes en or aux entrées du temple : les portes intérieures du lieu très saint et les portes de la salle principale du temple."
+        },
+        "sw": {
+          "L": "na makasi ya utambi na mabakuli na sahani na vyetezo, [vya] dhahabu safi; na mlango wa nyumba: milango yake ya ndani ya Patakatifu pa Patakatifu, na milango ya nyumba ya ukumbi, [ya] dhahabu.",
+          "B": "makasi ya kukatia tambi, mabakuli ya kunyunyizia, sahani na vyetezo vya dhahabu safi; na mlango wa nyumba, yaani milango yake ya ndani ya Patakatifu pa Patakatifu na milango ya nyumba ya ukumbi mkuu, ya dhahabu.",
+          "R": "makasi ya kukatia tambi, mabakuli ya kunyunyizia, sahani na vyetezo, vyote vya dhahabu safi; na milango ya dhahabu kwenye viingilio vya hekalu: milango ya ndani ya Patakatifu pa Patakatifu na milango ya chumba kikuu cha hekalu."
+        },
+        "vi": {
+          "L": "và các kéo cắt tim đèn, các bát, các đĩa và các lư hương, [bằng] vàng ròng; và lối vào của nhà: các cửa bên trong dẫn vào Nơi Chí Thánh và các cửa của nhà dẫn vào gian chính, [bằng] vàng.",
+          "B": "các kéo cắt tim đèn, các bát rảy nước, các đĩa và các lư hương bằng vàng ròng; cùng lối vào của đền thờ, các cửa bên trong dẫn vào Nơi Chí Thánh và các cửa của đền thờ dẫn vào chính điện, đều bằng vàng.",
+          "R": "các kéo cắt tim đèn, bát rảy, đĩa và lư hương, tất cả đều bằng vàng ròng; và các cửa bằng vàng ở các lối vào đền thờ: các cửa bên trong dẫn vào Nơi Chí Thánh và các cửa dẫn vào gian chính của đền thờ."
+        },
+        "ko": {
+          "L": "그리고 순금으로 된 심지 자르개들과 대접들과 접시들과 불 옮기는 그릇들과, 집의 입구, 곧 지극히 거룩한 곳으로 [들어가는] 안쪽 문들과 성소로 [들어가는] 집의 문들은 금이었다.",
+          "B": "순금으로 만든 심지 자르개와 피 뿌리는 대접과 접시와 불 옮기는 그릇, 그리고 금으로 만든 성전 입구, 곧 지성소로 들어가는 안쪽 문들과 본당으로 들어가는 성전 문들이다.",
+          "R": "순금으로 만든 심지 자르개와 피 뿌리는 대접과 접시와 불 옮기는 그릇, 그리고 성전 입구의 금 문들, 곧 지성소로 들어가는 안쪽 문들과 성전 큰 방으로 들어가는 문들이다."
         }
       },
       "decisions": [
@@ -2339,6 +3678,25 @@
           "choice": "wick trimmers; the main hall",
           "alternatives": [],
           "reason": "Balanced and Readable say \"wick trimmers\" and \"main hall\" (Readable \"main room\"), as in 1 Kings 7:50.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140040220152"
+          ],
+          "choice": "\"la nave\" (L); \"la sala principal\" (B, R)",
+          "alternatives": [
+            "el templo"
+          ],
+          "reason": "As the Spanish of 1 Kings 6-7: the hekhal is \"la nave\" at Literal and \"la sala principal\" at Balanced and Readable.",
           "uncertain": false,
           "footnote": false
         }
