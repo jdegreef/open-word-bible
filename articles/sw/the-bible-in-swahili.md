@@ -4,7 +4,7 @@ summary: Jinsi lugha ya biashara ya pwani, yenye mapokeo marefu ya maandishi, il
 date: 2026-10-12
 order: 56
 section: translation
-source: 661304774af6
+source: 8c9c49fc0009
 ---
 Kiswahili ndiyo lugha ya Kiafrika ya jamii ya Kibantu inayozungumzwa na watu wengi zaidi. Ni lugha ya taifa ya Tanzania na Kenya, inatumika kote Uganda, Rwanda, Burundi na mashariki mwa Kongo, na Umoja wa Afrika umekichagua kuwa mojawapo ya lugha zake za kazi. Makadirio ya idadi ya wanaokizungumza yanatofautiana sana, kutoka karibu milioni 100 hadi zaidi ya milioni 200, kwa sababu wazungumzaji wengi hujifunza kama lugha ya pili na hesabu zinatofautiana katika kile zinachojumuisha.
 
@@ -66,7 +66,7 @@ Kila tafsiri ya Kiswahili inakabiliwa na swali la msamiati. Maneno mengi ya kidi
 
 ## Open Word Bible kwa Kiswahili
 
-Kiswahili ni mojawapo ya lugha nne za Open Word Bible, pamoja na Kiingereza, Kihispania na Kifaransa. Kama katika kila lugha, Kiswahili kinatafsiriwa kutoka Kigiriki na Kiebrania, si kutoka Kiingereza, na kila sentensi inashiriki maamuzi yaleyale ya maana na lugha nyingine, huku maamuzi ya maneno yakifanywa kwa ajili ya Kiswahili chenyewe (ona [Halisi, Linganifu, Rahisi: viwango vitatu, maana moja](/articles/three-levels-one-meaning/)).
+Kiswahili ni mojawapo ya lugha sita za Open Word Bible, pamoja na Kiingereza, Kihispania, Kifaransa, Kivietinamu na Kikorea. Kama katika kila lugha, Kiswahili kinatafsiriwa kutoka Kigiriki na Kiebrania, si kutoka Kiingereza, na kila sentensi inashiriki maamuzi yaleyale ya maana na lugha nyingine, huku maamuzi ya maneno yakifanywa kwa ajili ya Kiswahili chenyewe (ona [Halisi, Linganifu, Rahisi: viwango vitatu, maana moja](/articles/three-levels-one-meaning/)).
 
 Rasimu za Kiswahili tayari zipo kwa baadhi ya vitabu. Zimetengenezwa kwa msaada wa AI, na hakuna hata moja iliyokaguliwa bado. Kama Biblia za kwanza za Kiswahili, zinahitaji kile ambacho watafsiri wamekihitaji zaidi siku zote: wazungumzaji wa lugha kama lugha ya kwanza wanaoweza kusema kama sentensi inasikika kama Kiswahili halisi. Open Word Bible haitaweka alama ya "imekaguliwa" kwenye Kiswahili chake chochote hadi mkaguzi aliyetajwa kwa jina, anayejua Kiswahili vizuri, atakapokuwa amekisoma. Ikiwa wewe ni msomaji wa namna hiyo, [mradi kwenye GitHub](https://github.com/jdegreef/open-word-bible) ndipo pa kuanzia.
 

@@ -4,7 +4,7 @@ summary: Mọi thứ trên trang này hiện nay đều được dịch với s�
 date: 2026-10-10
 order: 10
 section: method
-source: f7d52d635434
+source: c1cfadc5bb1a
 ---
 Open Word Bible được dịch với sự trợ giúp của AI. Chúng tôi nói rõ điều đó, vì một dự án hứa sẽ trình bày công việc của mình thì không thể mập mờ về chuyện ai đã làm công việc ấy. Bài này giải thích một câu văn được soạn nháp như thế nào, bạn có thể thấy được gì về nó, việc soạn nháp bằng AI còn thiếu sót ở đâu, và điều gì phải xảy ra trước khi bất kỳ câu văn nào được gọi là đã duyệt.
 
@@ -50,7 +50,7 @@ Người đọc có lý khi hỏi AI sai ở những chỗ nào. Chúng tôi đ�
 
 **Trôi chảy không phải là phán đoán đúng.** Một bản nháp có thể đọc rất trơn tru mà vẫn sai, hoặc đúng vì những lý do không hẳn là những lý do đã nêu. Giọng văn tự tin của một câu không phải là bằng chứng cho nó.
 
-**Lời văn tự nhiên cần đến người bản ngữ.** AI có thể viết tiếng Tây Ban Nha, tiếng Pháp hay tiếng Swahili đúng ngữ pháp. Câu văn ấy nghe có tự nhiên với một người lớn lên cùng ngôn ngữ đó hay không lại là chuyện khác. Chẳng hạn, bản ghi tiếng Tây Ban Nha cho Giăng 1:1 chọn *el Verbo* thay vì *la Palabra* cho "Ngôi Lời", và đánh dấu lựa chọn ấy để một người bản ngữ duyệt lại.
+**Lời văn tự nhiên cần đến người bản ngữ.** AI có thể viết tiếng Tây Ban Nha, tiếng Pháp, tiếng Swahili, tiếng Việt hay tiếng Hàn đúng ngữ pháp. Câu văn ấy nghe có tự nhiên với một người lớn lên cùng ngôn ngữ đó hay không lại là chuyện khác. Chẳng hạn, bản ghi tiếng Tây Ban Nha cho Giăng 1:1 chọn *el Verbo* thay vì *la Palabra* cho "Ngôi Lời", và đánh dấu lựa chọn ấy để một người bản ngữ duyệt lại.
 
 **Giữ sự nhất quán giữa các sách là điều khó.** Hàng nghìn câu văn được soạn nháp vào những thời điểm khác nhau có thể dần lệch nhau. Các thuật ngữ chính được phần mềm kiểm tra, danh sách thuật ngữ cho các sách dài, và những quyết định dẫn lại các quyết định trước đều chống lại điều đó, nhưng vẫn sẽ còn một số chỗ lệch để người duyệt tìm ra.
 
@@ -91,4 +91,4 @@ Bạn không cần đợi người duyệt mới có thể thử thách điều 
 
 ## Giúp duyệt
 
-Nếu bạn đọc được tiếng Hy Lạp hay tiếng Hê-bơ-rơ, hoặc là người bản ngữ tiếng Tây Ban Nha, tiếng Pháp hay tiếng Swahili có thể nhận ra một câu văn đọc có tự nhiên hay không, chúng tôi rất trân trọng sự giúp đỡ của bạn. Mọi thứ đều công khai trên [GitHub](https://github.com/jdegreef/open-word-bible), kể cả từng quyết định và lập luận của nó, và liên kết "Báo lỗi" ở cuối mỗi trang sẽ mở một vấn đề ở đó. Không đồng ý với một quyết định, và nói rõ vì sao, chính là kiểu giúp đỡ mà dự án cần.
+Nếu bạn đọc được tiếng Hy Lạp hay tiếng Hê-bơ-rơ, hoặc là người bản ngữ tiếng Tây Ban Nha, tiếng Pháp, tiếng Swahili, tiếng Việt hay tiếng Hàn có thể nhận ra một câu văn đọc có tự nhiên hay không, chúng tôi rất trân trọng sự giúp đỡ của bạn. Mọi thứ đều công khai trên [GitHub](https://github.com/jdegreef/open-word-bible), kể cả từng quyết định và lập luận của nó, và liên kết "Báo lỗi" ở cuối mỗi trang sẽ mở một vấn đề ở đó. Không đồng ý với một quyết định, và nói rõ vì sao, chính là kiểu giúp đỡ mà dự án cần.

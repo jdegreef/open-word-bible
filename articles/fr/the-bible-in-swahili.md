@@ -4,7 +4,7 @@ summary: Comment une langue de commerce côtière, dotée d'une longue tradition
 date: 2026-10-12
 order: 56
 section: translation
-source: 661304774af6
+source: 8c9c49fc0009
 ---
 Le swahili est la langue africaine de la famille bantoue la plus parlée. C'est une langue nationale de la Tanzanie et du Kenya, elle est utilisée en Ouganda, au Rwanda, au Burundi et dans l'est du Congo, et l'Union africaine l'a adoptée comme l'une de ses langues de travail. Les estimations du nombre de ses locuteurs varient beaucoup, d'environ 100 millions à plus de 200 millions, parce que la plupart l'apprennent comme langue seconde et que les décomptes ne prennent pas tous en compte les mêmes personnes.
 
@@ -66,7 +66,7 @@ Toute traduction swahilie se heurte à une question de vocabulaire. Beaucoup de 
 
 ## Open Word Bible en swahili
 
-Le swahili est l'une des quatre langues d'Open Word Bible, avec l'anglais, l'espagnol et le français. Comme dans chaque langue, le swahili est traduit à partir du grec et de l'hébreu, et non de l'anglais, et chaque phrase partage les mêmes décisions de sens que les autres langues, tandis que les décisions de formulation sont prises pour le swahili lui-même (voir [Littérale, Équilibrée, Simple : trois niveaux, un seul sens](/articles/three-levels-one-meaning/)).
+Le swahili est l'une des six langues d'Open Word Bible, avec l'anglais, l'espagnol, le français, le vietnamien et le coréen. Comme dans chaque langue, le swahili est traduit à partir du grec et de l'hébreu, et non de l'anglais, et chaque phrase partage les mêmes décisions de sens que les autres langues, tandis que les décisions de formulation sont prises pour le swahili lui-même (voir [Littérale, Équilibrée, Simple : trois niveaux, un seul sens](/articles/three-levels-one-meaning/)).
 
 Des brouillons en swahili existent déjà pour certains livres. Ils sont faits avec l'aide de l'IA, et aucun n'a encore été relu. Comme les premières Bibles swahilies, ils ont besoin de ce dont les traducteurs ont toujours eu le plus besoin : des locuteurs natifs capables de dire si une phrase sonne comme du vrai swahili. Open Word Bible ne marquera aucune partie de son swahili comme relue tant qu'un relecteur nommé, parlant couramment le swahili, ne l'aura pas lue. Si vous êtes un tel lecteur, le [projet sur GitHub](https://github.com/jdegreef/open-word-bible) est le point de départ.
 

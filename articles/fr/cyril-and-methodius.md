@@ -4,7 +4,7 @@ summary: Dans les années 860, deux frères de Thessalonique inventèrent un alp
 date: 2026-10-12
 order: 46
 section: translation
-source: 56dc2fab6d01
+source: b76b9dc36e0a
 ---
 Des centaines de millions de personnes écrivent le russe, l'ukrainien, le bulgare, le serbe et d'autres langues avec l'alphabet **cyrillique**. Il porte le nom d'un savant byzantin du neuvième siècle, **Constantin**, mieux connu sous le nom monastique qu'il prit peu avant sa mort : **Cyrille**. Pourtant, Cyrille n'a presque certainement pas inventé le cyrillique. Il a inventé un autre alphabet, le **glagolitique**, pour que les Slaves puissent entendre la Bible dans leur propre langue.
 
@@ -34,7 +34,7 @@ Pendant des siècles, les Slaves eurent l'Écriture surtout dans les livres litu
 
 Cyrille et Méthode sont honorés comme saints par les chrétiens orthodoxes comme par les catholiques. Sur un point, leur position est claire : ils rejetaient l'idée que seules quelques langues sacrées conviennent à l'Écriture.
 
-Open Word Bible s'inscrit modestement dans cette tradition. Elle traduit en espagnol, en français et en swahili autant qu'en anglais, chaque fois à partir de l'hébreu et du grec, pour qu'aucune langue ne reçoive la copie d'une autre traduction, comme l'équipe de Gennade avait dû s'y résoudre. Son texte est publié sous licence CC0 : personne n'a besoin d'autorisation pour l'utiliser. Elle est réalisée avec l'aide de l'IA, et rien n'y a encore été approuvé par des relecteurs humains nommés.
+Open Word Bible s'inscrit modestement dans cette tradition. Elle traduit en espagnol, en français, en swahili, en vietnamien et en coréen autant qu'en anglais, chaque fois à partir de l'hébreu et du grec, pour qu'aucune langue ne reçoive la copie d'une autre traduction, comme l'équipe de Gennade avait dû s'y résoudre. Son texte est publié sous licence CC0 : personne n'a besoin d'autorisation pour l'utiliser. Elle est réalisée avec l'aide de l'IA, et rien n'y a encore été approuvé par des relecteurs humains nommés.
 
 ## Sources
 

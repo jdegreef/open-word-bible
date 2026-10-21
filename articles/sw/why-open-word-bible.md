@@ -4,7 +4,7 @@ summary: Tafsiri nyingi za kisasa zina hakimiliki, na karibu zote huficha sababu
 date: 2026-10-10
 order: 1
 section: method
-source: 56c88cbd5b15
+source: 53dfcb154237
 ---
 Tayari kuna Biblia nyingi nzuri. Basi kwa nini kuanzisha nyingine?
 
@@ -48,4 +48,4 @@ Rekodi iliyo kando ya mstari inasema kwa nini. Yohana anatumia kitenzi hichohich
 
 ## Tumefika wapi
 
-Mradi bado ni mchanga. Vitabu vya Agano la Kale na Agano Jipya vinaandikwa rasimu kwa Kiingereza, na Kihispania, Kifaransa na Kiswahili vinafuata, kila kimoja kutoka Kigiriki na Kiebrania. Kila sentensi inakuja pamoja na sababu zake zote, na ukurasa wa [Soma](/read/) unaonyesha kilichotafsiriwa hadi sasa. Kiko pale ili kuonyesha mbinu na ili kikosolewe. Ikiwa unasoma Kigiriki au Kiebrania, au unaona tu kitu kisichosomeka vizuri, [mradi kwenye GitHub](https://github.com/jdegreef/open-word-bible) ndipo mahali pa kusema.
+Mradi bado ni mchanga. Vitabu vya Agano la Kale na Agano Jipya vinaandikwa rasimu kwa Kiingereza, na Kihispania, Kifaransa, Kiswahili, Kivietinamu na Kikorea vinafuata, kila kimoja kutoka Kigiriki na Kiebrania. Kila sentensi inakuja pamoja na sababu zake zote, na ukurasa wa [Soma](/read/) unaonyesha kilichotafsiriwa hadi sasa. Kiko pale ili kuonyesha mbinu na ili kikosolewe. Ikiwa unasoma Kigiriki au Kiebrania, au unaona tu kitu kisichosomeka vizuri, [mradi kwenye GitHub](https://github.com/jdegreef/open-word-bible) ndipo mahali pa kusema.

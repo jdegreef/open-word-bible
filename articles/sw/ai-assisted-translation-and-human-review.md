@@ -4,7 +4,7 @@ summary: Kila kitu kwenye tovuti hii leo kimetafsiriwa kwa msaada wa AI. Hapa ni
 date: 2026-10-10
 order: 10
 section: method
-source: f7d52d635434
+source: c1cfadc5bb1a
 ---
 Open Word Bible inatafsiriwa kwa msaada wa AI. Tunasema hivyo waziwazi, kwa sababu mradi unaoahidi kuonyesha kazi yake hauwezi kuficha nani aliyefanya kazi hiyo. Makala hii inaeleza jinsi sentensi inavyoandikwa, unachoweza kuona kuihusu, mahali ambapo uandishi wa AI unapungukiwa, na kile kinachopaswa kutokea kabla sentensi yoyote haijaitwa imekaguliwa.
 
@@ -50,7 +50,7 @@ Msomaji ana haki ya kuuliza AI inakosea wapi. Tumeona aina kadhaa za makosa, na 
 
 **Ufasaha si busara.** Rasimu inaweza kusomeka vizuri na bado ikawa na kosa, au ikawa sahihi kwa sababu ambazo si hasa zile zilizotajwa. Sauti ya kujiamini ya sentensi si ushahidi wa usahihi wake.
 
-**Maneno ya kawaida yanahitaji wazawa wa lugha.** AI inaweza kuandika Kihispania, Kifaransa au Kiswahili chenye sarufi sahihi. Kama sentensi inasikika ya kawaida kwa msomaji aliyekulia na lugha hiyo ni swali jingine. Rekodi ya Kihispania ya Yohana 1:1, kwa mfano, inachagua *el Verbo* kwa "Neno" badala ya *la Palabra* na kuuwekea uchaguzi huo alama ili ukaguliwe na mzawa wa lugha.
+**Maneno ya kawaida yanahitaji wazawa wa lugha.** AI inaweza kuandika Kihispania, Kifaransa, Kiswahili, Kivietinamu au Kikorea chenye sarufi sahihi. Kama sentensi inasikika ya kawaida kwa msomaji aliyekulia na lugha hiyo ni swali jingine. Rekodi ya Kihispania ya Yohana 1:1, kwa mfano, inachagua *el Verbo* kwa "Neno" badala ya *la Palabra* na kuuwekea uchaguzi huo alama ili ukaguliwe na mzawa wa lugha.
 
 **Kulingana katika vitabu vyote ni vigumu.** Maelfu ya sentensi zilizoandikwa nyakati tofauti zinaweza kuachana polepole. Istilahi kuu zinazokaguliwa na programu, orodha za istilahi kwa vitabu virefu, na maamuzi yanayotaja yale ya awali, vyote vinapambana na hilo, lakini kuachana kwa kiasi fulani kutabaki ili wakaguzi wakugundue.
 
@@ -91,4 +91,4 @@ Huhitaji kuwangoja wakaguzi ili kupima unachosoma.
 
 ## Saidia kukagua
 
-Ikiwa unasoma Kigiriki au Kiebrania, au Kihispania, Kifaransa au Kiswahili ni lugha yako ya kwanza na unaweza kupima kama sentensi inasomeka kwa kawaida, tungethamini msaada wako. Kila kitu kiko wazi kwenye [GitHub](https://github.com/jdegreef/open-word-bible), pamoja na kila uamuzi na sababu zake, na kiungo cha "Ripoti tatizo" chini ya kila ukurasa kinafungua suala (issue) pale. Kutokubaliana na uamuzi, na kueleza kwa nini, ndio hasa msaada ambao mradi unauhitaji.
+Ikiwa unasoma Kigiriki au Kiebrania, au Kihispania, Kifaransa, Kiswahili, Kivietinamu au Kikorea ni lugha yako ya kwanza na unaweza kupima kama sentensi inasomeka kwa kawaida, tungethamini msaada wako. Kila kitu kiko wazi kwenye [GitHub](https://github.com/jdegreef/open-word-bible), pamoja na kila uamuzi na sababu zake, na kiungo cha "Ripoti tatizo" chini ya kila ukurasa kinafungua suala (issue) pale. Kutokubaliana na uamuzi, na kueleza kwa nini, ndio hasa msaada ambao mradi unauhitaji.

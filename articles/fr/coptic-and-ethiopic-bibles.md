@@ -5,7 +5,7 @@ date: 2026-10-12
 order: 44
 nav_title: Bibles copte et guèze
 section: translation
-source: 2d93d8cce756
+source: 4eac4f19c6d7
 ---
 Il est facile de raconter l'histoire de la Bible comme un récit qui va de Jérusalem à Rome, puis vers le nord, en Europe. Mais certaines des premières traductions de la Bible ont été faites en Afrique. En Égypte, des chrétiens ont traduit les Écritures en **copte** à partir du IIIe siècle. Dans le royaume d'Aksoum, dans l'actuelle Éthiopie et l'actuelle Érythrée, elles ont été traduites en **guèze**, probablement à partir du IVe ou du Ve siècle. Les deux traductions sont encore lues dans le culte aujourd'hui.
 
@@ -62,7 +62,7 @@ Sans l'Église éthiopienne, ces livres ne seraient connus aujourd'hui que par m
 
 Le guèze reste la langue liturgique des Églises orthodoxes éthiopienne et érythréenne, et l'Église copte utilise toujours le bohaïrique à côté de l'arabe. Le christianisme est une religion africaine depuis ses premiers siècles, et des traducteurs africains ont porté l'Écriture dans leurs propres langues aussi tôt que quiconque.
 
-Cette histoire continue. Open Word Bible rédige une traduction en swahili à côté de l'anglais, de l'espagnol et du français, chacune à partir de l'hébreu et du grec plutôt qu'à partir de l'anglais (voir [La Bible en swahili](/articles/the-bible-in-swahili/)). Le travail en swahili est fait avec l'aide de l'IA, et rien n'en sera marqué comme relu avant que des relecteurs nommés, de langue maternelle swahilie, ne l'aient vérifié.
+Cette histoire continue. Open Word Bible rédige une traduction en swahili à côté de l'anglais, de l'espagnol, du français, du vietnamien et du coréen, chacune à partir de l'hébreu et du grec plutôt qu'à partir de l'anglais (voir [La Bible en swahili](/articles/the-bible-in-swahili/)). Le travail en swahili est fait avec l'aide de l'IA, et rien n'en sera marqué comme relu avant que des relecteurs nommés, de langue maternelle swahilie, ne l'aient vérifié.
 
 ## Sources
 

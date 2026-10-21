@@ -5,7 +5,7 @@ date: 2026-10-12
 order: 44
 nav_title: Biblia za Kikopti na Kige'ez
 section: translation
-source: 2d93d8cce756
+source: 4eac4f19c6d7
 ---
 Ni rahisi kusimulia historia ya Biblia kama habari inayosonga kutoka Yerusalemu hadi Roma kisha kaskazini kuingia Ulaya. Lakini baadhi ya tafsiri za kwanza kabisa za Biblia zilifanywa Afrika. Huko Misri, Wakristo walitafsiri maandiko kwa **Kikopti** kuanzia karne ya tatu na kuendelea. Katika ufalme wa Aksum, katika eneo ambalo sasa ni Ethiopia na Eritrea, yalitafsiriwa kwa **Kige'ez**, pengine kuanzia karne ya nne au ya tano. Tafsiri zote mbili bado zinasomwa katika ibada leo.
 
@@ -62,7 +62,7 @@ Bila kanisa la Ethiopia, vitabu hivi vingejulikana leo kwa vipande tu.
 
 Kige'ez kinabaki kuwa lugha ya liturujia ya makanisa ya Kiorthodoksi ya Ethiopia na Eritrea, na kanisa la Kikopti bado linatumia Kibohairi pamoja na Kiarabu. Ukristo umekuwa dini ya Kiafrika tangu karne zake za kwanza, na watafsiri wa Kiafrika wamepeleka maandiko katika lugha zao wenyewe kwa muda mrefu kama mtu mwingine yeyote.
 
-Habari hiyo inaendelea. Open Word Bible inaandaa rasimu ya Kiswahili pamoja na Kiingereza, Kihispania na Kifaransa, kila moja kutoka Kiebrania na Kigiriki badala ya kutoka Kiingereza (ona [Biblia kwa Kiswahili](/articles/the-bible-in-swahili/)). Kazi ya Kiswahili imeandaliwa kwa msaada wa AI, na hakuna sehemu yake itakayowekewa alama ya kukaguliwa hadi wakaguzi wanaotajwa kwa majina, wenye Kiswahili kama lugha yao ya kwanza, waikague.
+Habari hiyo inaendelea. Open Word Bible inaandaa rasimu ya Kiswahili pamoja na Kiingereza, Kihispania, Kifaransa, Kivietinamu na Kikorea, kila moja kutoka Kiebrania na Kigiriki badala ya kutoka Kiingereza (ona [Biblia kwa Kiswahili](/articles/the-bible-in-swahili/)). Kazi ya Kiswahili imeandaliwa kwa msaada wa AI, na hakuna sehemu yake itakayowekewa alama ya kukaguliwa hadi wakaguzi wanaotajwa kwa majina, wenye Kiswahili kama lugha yao ya kwanza, waikague.
 
 ## Vyanzo
 

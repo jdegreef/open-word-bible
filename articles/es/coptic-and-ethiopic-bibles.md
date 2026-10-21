@@ -5,7 +5,7 @@ date: 2026-10-12
 order: 44
 nav_title: Biblias copta y ge'ez
 section: translation
-source: 2d93d8cce756
+source: 4eac4f19c6d7
 ---
 Es fácil contar la historia de la Biblia como un relato que va de Jerusalén a Roma y luego hacia el norte, a Europa. Pero algunas de las primeras traducciones de la Biblia se hicieron en África. En Egipto, los cristianos tradujeron las Escrituras al **copto** desde el siglo III. En el reino de Aksum, en lo que hoy son Etiopía y Eritrea, se tradujeron al **ge'ez**, probablemente a partir del siglo IV o V. Las dos traducciones se siguen leyendo hoy en el culto.
 
@@ -62,7 +62,7 @@ Sin la iglesia etíope, hoy estos libros solo se conocerían a trozos.
 
 El ge'ez sigue siendo la lengua litúrgica de las iglesias ortodoxas de Etiopía y Eritrea, y la iglesia copta sigue usando el bohaírico junto al árabe. El cristianismo ha sido una religión africana desde sus primeros siglos, y los traductores africanos han llevado las Escrituras a sus propias lenguas desde tan antiguo como cualquiera.
 
-Esa historia continúa. Open Word Bible está preparando un borrador en suajili junto al inglés, el español y el francés, cada uno a partir del hebreo y el griego, y no del inglés (véase [La Biblia en suajili](/articles/the-bible-in-swahili/)). El trabajo en suajili se hace con ayuda de IA, y nada de él se marcará como revisado hasta que lo hayan comprobado revisores con nombre que sean hablantes nativos.
+Esa historia continúa. Open Word Bible está preparando un borrador en suajili junto al inglés, el español, el francés, el vietnamita y el coreano, cada uno a partir del hebreo y el griego, y no del inglés (véase [La Biblia en suajili](/articles/the-bible-in-swahili/)). El trabajo en suajili se hace con ayuda de IA, y nada de él se marcará como revisado hasta que lo hayan comprobado revisores con nombre que sean hablantes nativos.
 
 ## Fuentes
 

@@ -4,7 +4,7 @@ summary: Todo lo que hay hoy en este sitio se traduce con ayuda de IA. Esto es c
 date: 2026-10-10
 order: 10
 section: method
-source: f7d52d635434
+source: c1cfadc5bb1a
 ---
 Open Word Bible se traduce con ayuda de IA. Lo decimos claramente, porque un proyecto que promete mostrar su trabajo no puede ser vago sobre quién hizo ese trabajo. Este artículo explica cómo se redacta una frase, qué puedes ver de ella, dónde se queda corta la redacción con IA y qué tiene que pasar antes de que una frase se considere revisada.
 
@@ -50,7 +50,7 @@ Un lector hace bien en preguntar en qué se equivoca una IA. Hemos visto varios 
 
 **La fluidez no es criterio.** Un borrador puede leerse con soltura y aun así estar equivocado, o acertar por razones que no son exactamente las que da. El tono seguro de una frase no prueba nada a su favor.
 
-**La redacción natural necesita hablantes nativos.** Una IA puede escribir un español, un francés o un suajili gramaticales. Que una frase suene natural a un lector que se crio con esa lengua es otra cuestión. El registro español de Juan 1:1, por ejemplo, elige *el Verbo* en lugar de *la Palabra* y señala la elección para que la revise un hablante nativo.
+**La redacción natural necesita hablantes nativos.** Una IA puede escribir un español, un francés, un suajili, un vietnamita o un coreano gramaticales. Que una frase suene natural a un lector que se crio con esa lengua es otra cuestión. El registro español de Juan 1:1, por ejemplo, elige *el Verbo* en lugar de *la Palabra* y señala la elección para que la revise un hablante nativo.
 
 **La coherencia entre libros es difícil.** Miles de frases redactadas en momentos distintos pueden ir desviándose. Los términos clave comprobados por el software, las listas de términos para los libros largos y las decisiones que remiten a otras anteriores trabajan en contra de esa deriva, pero quedará alguna para que la encuentren los revisores.
 
@@ -91,4 +91,4 @@ No tienes que esperar a los revisores para poner a prueba lo que lees.
 
 ## Ayuda a revisar
 
-Si lees griego o hebreo, o si eres hablante nativo de español, francés o suajili y puedes juzgar si una frase suena natural, tu ayuda sería muy valiosa. Todo está abierto en [GitHub](https://github.com/jdegreef/open-word-bible), incluida cada decisión y su razonamiento, y el enlace «Informar de un problema» al pie de cada página abre allí una incidencia. Discrepar de una decisión, y decir por qué, es exactamente la clase de ayuda que el proyecto necesita.
+Si lees griego o hebreo, o si eres hablante nativo de español, francés, suajili, vietnamita o coreano y puedes juzgar si una frase suena natural, tu ayuda sería muy valiosa. Todo está abierto en [GitHub](https://github.com/jdegreef/open-word-bible), incluida cada decisión y su razonamiento, y el enlace «Informar de un problema» al pie de cada página abre allí una incidencia. Discrepar de una decisión, y decir por qué, es exactamente la clase de ayuda que el proyecto necesita.
