@@ -87,15 +87,15 @@ Decision text stays in English, quoting the Vietnamese or Korean words.
 | tribe; clan; father's house | chi tộc; gia tộc; nhà cha (L) / gia đình (B, R) | 지파; 가문; 조상의 집 (L) / 집안 (B, R) |
 | the camp | trại quân (L, B); khu trại (R) | 진 |
 | the Sabbath | ngày Sa-bát | 안식일 |
-| the Passover; Unleavened Bread | lễ Vượt Qua; lễ Bánh Không Men | 유월절; 무교절 |
-| the Feast of Weeks; of Booths | lễ Các Tuần; lễ Lều Tạm | 칠칠절; 초막절 |
+| the Passover; Unleavened Bread | Lễ Vượt Qua; Lễ Bánh Không Men | 유월절; 무교절 |
+| the Feast of Weeks; of Booths; of Harvest; of Ingathering | Lễ Các Tuần; Lễ Lều Tạm; Lễ Mùa Gặt; Lễ Thu Hoạch | 칠칠절; 초막절; 맥추절; 수장절 |
 | the Day of Atonement | Ngày Chuộc Tội | 속죄일 |
 | Jubilee | năm Hân Hỉ | 희년 |
 | serious skin disease (*tsaraʿat*) | bệnh ngoài da nghiêm trọng ("phong" in a decision) | 악성 피부병 ("나병" in a decision) |
 | a vow; a Nazirite | lời khấn nguyện; người Na-xi-rê | 서원; 나실인 |
 | the land flowing with milk and honey | xứ tràn đầy sữa và mật | 젖과 꿀이 흐르는 땅 |
 | the wilderness | hoang mạc | 광야 |
-| foreigner, sojourner (*ger*) | ngoại kiều | 나그네 |
+| foreigner, sojourner (*ger*); settler (*toshav*) | ngoại kiều; người tạm trú | 나그네; 거류민 |
 | slave, servant (*ʿeved*) | as Genesis: đầy tớ; nô lệ for slavery in Egypt and slaves bought and sold | as Genesis: 종; 노예 for slavery in Egypt and slaves bought and sold |
 | firstborn; the firstborn of animals | con đầu lòng; con đầu lòng (of animals: con đầu lòng của súc vật) | 맏아들; 처음 난 것, 첫 새끼 |
 | *ḥesed* | as Genesis and Psalms | as Genesis and Psalms |
@@ -118,15 +118,38 @@ books:
 | Bezalel, Oholiab | Bết-sa-lê-ên, Ô-hô-li-áp | 브살렐, 오홀리압 |
 | Korah, Dathan, Abiram, Phinehas | Cô-rê, Đa-than, A-bi-ram, Phi-nê-a | 고라, 다단, 아비람, 비느하스 |
 | Balaam, Balak, Sihon, Og | Ba-la-am, Ba-lác, Si-hôn, Óc | 발람, 발락, 시혼, 옥 |
-| Sinai, Horeb, Kadesh, Paran, Zin | Si-nai, Hô-rếp, Ca-đe, Pha-ran, Xin | 시내, 호렙, 가데스, 바란, 신 |
-| the Red Sea (*yam suph*) | Biển Đỏ (L: biển Lau Sậy in a decision where the English Literal says so) | 홍해 (L: 갈대 바다 in a decision where the English Literal says so) |
-| the Jordan, Moab, Edom, Ammon, Midian | sông Giô-đanh, Mô-áp, Ê-đôm, Am-môn, Ma-đi-an | 요단 강, 모압, 에돔, 암몬, 미디안 |
+| Sinai, Horeb, Kadesh, Kadesh-barnea, Paran, Zin | Si-na-i (as Acts 7), Hô-rếp, Ca-đe, Ca-đe-Ba-nê-a, Pha-ran, Xin | 시내, 호렙, 가데스, 가데스바네아, 바란, 신 |
+| the Red Sea (*yam suph*) | Biển Đỏ (L: Biển Sậy, as Joshua, where the English Literal says "Sea of Reeds") | 홍해 (L: 갈대 바다 where the English Literal says "Sea of Reeds") |
+| the Jordan, Moab, Edom, Ammon, Midian | sông Giô-đanh, Mô-áp, Ê-đôm, Am-môn, Ma-đi-an | 요단강, 모압, 에돔, 암몬, 미디안 |
 | Amalek, Amorites, Canaanites, Hittites | A-ma-léc, người A-mô-rít, người Ca-na-an, người Hê-tít | 아말렉, 아모리 사람, 가나안 사람, 헷 사람 |
 | Perizzites, Hivites, Jebusites, Girgashites | người Phê-rê-sít, người Hê-vít, người Giê-bu-sít, người Ghi-rê-ga-sít | 브리스 사람, 히위 사람, 여부스 사람, 기르가스 사람 |
 | Nebo, Pisgah, the Arabah, Gilead, Bashan | Nê-bô, Phích-ga, A-ra-ba, Ga-la-át, Ba-san | 느보, 비스가, 아라바, 길르앗, 바산 |
 
 Other names follow the usual Protestant form in the language and stay the
 same through the four books; the agents' reports list the ones they chose.
+
+## Settled while drafting
+
+AI-draft choices made while the four books were drafted in parallel, then
+applied across them; reviewers may change any of them.
+
+| Concept | Vietnamese | Korean |
+|---|---|---|
+| God speaking to Moses, Aaron, Joshua or one person | *ngươi* (L), *con* (B, R); God's laws to Israel *các ngươi* at every level | 해라체 with 너 / 너희 |
+| Moses and Aaron | Moses says *anh* to Aaron | Moses to Aaron: 해라체 (L), 형님 with 해요체 (B, R); Aaron to Moses 해라체, 합쇼체 when he pleads |
+| Moses speaking to Israel at R | *anh em*, *tôi* | 합쇼체 with 여러분, 저 |
+| the leader of a tribe (*nasi*) | thủ lĩnh (as Joshua) | 지도자 |
+| blood | máu (never *huyết*) | 피 |
+| God's jealousy (*qanna*) | kỵ tà | 질투하는 |
+| the priests' tunic | áo lót dài | 긴 웃옷 |
+| scarlet yarn | chỉ đỏ thẫm | 진홍색 실 |
+| acacia; bronze | gỗ keo; đồng | 아카시아 나무; 놋 |
+| the laver | cái bồn | 물두멍 |
+| herem (devote to destruction) | tận diệt | 진멸하다 |
+| inheritance (*naḥalah*) | sản nghiệp | 유산 |
+| Kohath | Kê-hát | 그핫 |
+| Jeshurun | Giê-su-run | 여수룬 |
+| the fourteenth day | ngày mười bốn | 열나흗날 |
 
 ## Before review
 
