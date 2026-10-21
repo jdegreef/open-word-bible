@@ -5,7 +5,7 @@ date: 2026-10-11
 order: 31
 section: history
 part: nt
-source: 3f79bcd16944
+source: cfe6b3ab8b44
 ---
 El Nuevo Testamento se escribió mucho más rápido que el Antiguo. Sus veintisiete libros se compusieron todos en unos setenta años desde la muerte de Jesús, y la mayoría probablemente en cuarenta o cincuenta. Se escribieron en griego, la lengua común del Oriente romano, por un pequeño número de autores, en su mayoría seguidores judíos de Jesús. Este artículo examina cómo se escribieron y cómo circularon al principio.
 
@@ -21,6 +21,8 @@ Richard Bauckham, en *Jesus and the Eyewitnesses*, sostiene que las tradiciones 
 
 Los libros más antiguos del Nuevo Testamento son casi con seguridad las **cartas de Pablo**. Su primera carta a los tesalonicenses suele fecharse hacia el año 50 d. C.; Gálatas puede ser anterior o un poco posterior; 1 y 2 Corintios y Romanos datan de mediados de la década de los 50. Se escribieron a iglesias concretas, sobre problemas concretos, y muchas de ellas lo dicen.
 
+Eran además inusualmente largas. E. Randolph Richards contó las cartas privadas conservadas en papiro y encontró que tienen de media unas 87 palabras. Las cartas de Cicerón tienen de media unas 295 palabras, y las de Séneca unas 995. Las de Pablo tienen de media unas 2.500, y Romanos pasa de 7.000. Una carta de ese tamaño exigía días de trabajo, varias hojas de papiro y un escribiente formado, y Richards calcula que Romanos, con sus borradores y copias, costó el equivalente a más de dos mil dólares estadounidenses de hoy. Sus cifras son aproximadas, y algunos reseñistas las ponen en duda, pero el punto se mantiene: eran documentos costosos y deliberados, no notas rápidas.
+
 En la Antigüedad, las cartas no solían escribirse de puño y letra del remitente. Se dictaban a un secretario, o *amanuense*. Las cartas de Pablo lo muestran con claridad.
 
 - Al final de Romanos, el secretario añade su propio saludo: «Yo Tercio, que escribí la epístola, os saludo en el Señor» (Romanos 16:22).
@@ -28,7 +30,15 @@ En la Antigüedad, las cartas no solían escribirse de puño y letra del remiten
 - En Gálatas, Pablo escribe: «Mirad en cuán grandes letras os he escrito de mi mano» (Gálatas 6:11).
 - 1 Pedro dice que fue escrita «por Silvano» (1 Pedro 5:12), que pudo ser el secretario, el portador o ambas cosas.
 
-E. Randolph Richards, en su estudio sobre la escritura de cartas en el siglo I, muestra que los secretarios podían trabajar de distintas maneras: tomar el dictado palabra por palabra, a veces en taquigrafía; corregir un borrador; o redactar a partir de las instrucciones del autor. Esto ayuda a explicar pequeñas diferencias de estilo entre cartas que llevan el nombre del mismo autor, y nos recuerda que escribir una carta era a menudo un trabajo de equipo.
+Las notas de Open Word Bible sobre estos versículos señalan lo mismo. En Romanos 16:22, el secretario toma la palabra con su propia voz:
+
+> {{OWB:ROM.16.22.s1:B}}
+
+La nota de esta frase explica que las cartas solía escribirlas un escriba formado mientras el autor dictaba. También recoge una pequeña cuestión gramatical: «en el Señor» va probablemente con «saludo» (Tercio los saluda como hermano en la fe), aunque podría ir con «escribí». En [Gálatas 6](/gal/6/), la traducción entiende «he escrito» como la manera en que quien escribe una carta dice «escribo», puesto que las palabras ya son pasado cuando las ve el lector, y marca como incierta la opinión de que Pablo toma aquí la pluma para las líneas finales. ¿Por qué eran grandes las letras? La nota al pie da la respuesta más probable, el énfasis, y nombra las otras que se han propuesto, la mala vista o una mano poco experta, porque el texto no lo dice.
+
+E. Randolph Richards muestra que los secretarios podían trabajar de distintas maneras: tomar el dictado palabra por palabra, a veces en taquigrafía; corregir un borrador; o redactar a partir de las instrucciones del autor. Esto ayuda a explicar pequeñas diferencias de estilo entre cartas que llevan el nombre del mismo autor, y nos recuerda que escribir una carta era a menudo un trabajo de equipo.
+
+Tiene que ver también con un debate real. Muchos estudiosos críticos piensan que algunas cartas que llevan el nombre de Pablo, sobre todo 1 y 2 Timoteo y Tito, y para algunos también Efesios, Colosenses y 2 Tesalonicenses, las escribieron después de su muerte seguidores que escribían en su nombre, una práctica conocida en el mundo antiguo. Otros estudiosos sostienen que Pablo las escribió todas, y señalan la libertad que podía tener un secretario como una de las razones por las que varía el estilo. Las diferencias son reales; cómo explicarlas es donde los estudiosos se separan. Open Word Bible traduce cada carta tal como se presenta, y sus notas dicen dónde se ha puesto en duda la autoría (como en [Tito 1](/tit/1/)).
 
 Las cartas de Pablo nombran también a coautores: Sóstenes, Timoteo, Silvano. Y las llevaban mensajeros de confianza que podían explicarlas. Febe, diaconisa de la iglesia de Cencrea, fue probablemente la portadora de Romanos (Romanos 16:1–2); Tíquico llevó Colosenses y Efesios (Colosenses 4:7–8; Efesios 6:21–22).
 
@@ -36,11 +46,11 @@ Las cartas de Pablo nombran también a coautores: Sóstenes, Timoteo, Silvano. Y
 
 Las cartas se escribían para leerse en voz alta ante la iglesia reunida. «Conjúroos por el Señor, que esta carta sea leída a todos los santos hermanos», escribe Pablo en 1 Tesalonicenses 5:27. Y estaban destinadas a compartirse: «Y cuando esta carta fuere leída entre vosotros, haced que también sea leída en la iglesia de los Laodicenses; y la de Laodicea que la leáis también vosotros» (Colosenses 4:16).
 
-Compartirlas exigía copiarlas. Una iglesia que quería conservar una carta que había enviado a otra, o leer una dirigida a otra iglesia, necesitaba una copia. Antes de que terminara el siglo I, las cartas de Pablo ya se coleccionaban y se leían como algo más que correspondencia ocasional: 2 Pedro 3:15–16 habla de «todas sus epístolas» y las pone junto a «las otras Escrituras». Harry Gamble, en *Books and Readers in the Early Church*, sostiene que a finales del siglo I circulaba una colección de las cartas de Pablo, y que fue una de las principales razones por las que los cristianos adoptaron la forma de libro llamada códice (véase [Papiro, pergamino y el códice](/articles/papyrus-parchment-and-the-codex/)).
+Compartirlas exigía copiarlas. Una iglesia que quería conservar una carta que había enviado a otra, o leer una dirigida a otra iglesia, necesitaba una copia. Desde muy pronto, las cartas de Pablo se coleccionaban y se leían como algo más que correspondencia ocasional: 2 Pedro 3:15–16, una carta cuya fecha se discute, habla de «todas sus epístolas» y las pone junto a «las otras Escrituras». Podemos ver una carta usada fuera de su primera iglesia. Hacia finales del siglo I, la iglesia de Roma escribió a la iglesia de Corinto, en la carta conocida como *1 Clemente*, sobre una nueva disputa que había allí. Les dice, en una traducción literal: «Tomad la carta del bienaventurado Pablo apóstol», y les recuerda que Pablo ya los había reprendido por tomar partido detrás de Pablo, de Cefas y de Apolos (*1 Clemente* 47.1–3, que recuerda 1 Corintios 1:12). El autor romano conoce 1 Corintios y espera que los corintios todavía la tengan, cuarenta años después de que Pablo la escribiera. Harry Gamble, en *Books and Readers in the Early Church*, sostiene que a finales del siglo I circulaba una colección de las cartas de Pablo, y que fue una de las principales razones por las que los cristianos adoptaron la forma de libro llamada códice (véase [Papiro, pergamino y el códice](/articles/papyrus-parchment-and-the-codex/)).
 
 ## Los Evangelios
 
-Los cuatro Evangelios son otro tipo de escrito: relatos de la vida, la enseñanza, la muerte y la resurrección de Jesús. La mayoría de los estudiosos los fechan entre aproximadamente el 65 y el 95 d. C., con Marcos como el más antiguo y Juan como el más tardío, aunque algunos defienden fechas más tempranas.
+Los cuatro Evangelios son otro tipo de escrito: relatos de la vida, la enseñanza, la muerte y la resurrección de Jesús. La mayoría de los estudiosos los fechan entre aproximadamente el 65 y el 95 d. C., con Marcos como el más antiguo y Juan como el más tardío, aunque algunos defienden fechas más tempranas. Uno de los puntos principales del debate es la destrucción del templo de Jerusalén por los romanos en el año 70 d. C. Jesús la predice en los tres primeros Evangelios (Marcos 13:2; Mateo 24:2; Lucas 21:6), y Lucas habla de Jerusalén «cercada de ejércitos» (Lucas 21:20). Los estudiosos que piensan que los Evangelios muestran conocimiento del hecho los fechan después del 70; otros responden que un profeta podía prever un asedio. Para la mayoría de los estudiosos, la cuestión mueve las fechas una o dos décadas.
 
 **Fuentes.** Mateo, Marcos y Lucas comparten mucho material, a menudo palabra por palabra en griego. La explicación más extendida es que Mateo y Lucas usaron ambos a Marcos, junto con otra fuente común de dichos, hoy perdida, que los estudiosos llaman «Q». Existen otras explicaciones, y la cuestión sigue debatiéndose. Lucas dice abiertamente que usó fuentes anteriores: «Habiendo muchos tentado a poner en orden la historia de las cosas que entre nosotros han sido ciertísimas, como nos lo enseñaron los que desde el principio lo vieron por sus ojos, y fueron ministros de la palabra» (Lucas 1:1–2). Escribe «después de haber entendido todas las cosas desde el principio con diligencia», para que su lector conociera «la verdad de las cosas» en las que había sido enseñado (Lucas 1:3–4).
 
@@ -68,6 +78,7 @@ Pero el intervalo entre la escritura y las primeras copias conservadas es breve 
 - Deissmann, Adolf. *Light from the Ancient East*. Traducido por Lionel R. M. Strachan. London: Hodder & Stoughton, 1910.
 - Eusebio. *Historia eclesiástica* 3.39.
 - Gamble, Harry Y. *Books and Readers in the Early Church: A History of Early Christian Texts*. New Haven: Yale University Press, 1995.
+- Clemente de Roma. *1 Clemente* 47.1–3.
 - Hengel, Martin. *The Four Gospels and the One Gospel of Jesus Christ*. Harrisburg, PA: Trinity Press International, 2000.
 - Richards, E. Randolph. *Paul and First-Century Letter Writing: Secretaries, Composition and Collection*. Downers Grove, IL: InterVarsity, 2004.
 - Dunn, James D. G. *Jesus Remembered*. Christianity in the Making 1. Grand Rapids: Eerdmans, 2003.

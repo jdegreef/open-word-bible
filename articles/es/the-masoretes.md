@@ -6,7 +6,7 @@ order: 24
 nav_title: Los masoretas
 section: history
 part: ot
-source: dc96f57b14fb
+source: 8c6de5e0f0ae
 ---
 Abre una Biblia hebrea y verás las consonantes, las letras principales, rodeadas de pequeños puntos y trazos por encima y por debajo. Esas marcas son las vocales y los acentos. En los bordes de la página de una edición académica verás notas diminutas en arameo abreviado. Todo esto lo añadió un grupo de eruditos conocidos como los **masoretas**. Casi todas las traducciones del Antiguo Testamento del mundo, incluida la de Open Word Bible, se hacen a partir del texto que ellos custodiaron.
 
@@ -16,6 +16,8 @@ El nombre viene de la palabra hebrea *masorah*, que significa «tradición»: la
 
 La escuela de Tiberíades fue la más influyente. Sus familias más conocidas fueron las de **Ben Asher** y **Ben Neftalí**, que a lo largo de varias generaciones perfeccionaron el sistema de vocales y acentos. El último y más famoso miembro de la familia Ben Asher, **Aarón ben Moisés ben Asher**, trabajó en la primera mitad del siglo X. Él puso la vocalización del Códice de Alepo, uno de los manuscritos más importantes de la Biblia hebrea (véase [Los códices de Alepo y de Leningrado](/articles/aleppo-and-leningrad-codices/)).
 
+Las dos escuelas discrepaban en cosas sorprendentemente pequeñas. Hacia el siglo XI, un erudito llamado Misael ben Uziel enumeró las diferencias entre Ben Asher y Ben Neftalí en toda la Biblia. Son unas 860, y aproximadamente nueve de cada diez se refieren a una sola marca menor que indica un acento secundario. Casi ninguna afecta a las consonantes.
+
 Los masoretas no se consideraban editores. No cambiaron el texto consonántico que habían recibido. Su tarea era protegerlo y fijar por escrito cómo debía pronunciarse y leerse.
 
 ## El problema que resolvieron: un texto sin vocales
@@ -24,7 +26,11 @@ El hebreo, como el arameo y el árabe, se escribía originalmente solo con conso
 
 Algunas palabras pueden leerse de más de una manera cuando faltan las vocales. Un ejemplo famoso está en Génesis 47:31, donde las mismas consonantes pueden significar «cama» o «bastón». Las vocales masoréticas leen «cama»; la Septuaginta griega, traducida siglos antes, leyó «bastón», y esa es la lectura que se cita en Hebreos 11:21. Ambas lecturas usan exactamente las mismas letras; solo cambian las vocales.
 
+La nota del registro de Open Word Bible para [Hebreos 11:21](/heb/11/) explica la diferencia entre cama y bastón: las letras son las mismas, las vocales llegaron después, y los traductores griegos leyeron «bastón».
+
 La solución de los masoretas fue añadir signos vocálicos sin tocar las consonantes. Inventaron un sistema de puntos y trazos cortos colocados encima, debajo y dentro de las letras. Como estas marcas son pequeñas y se sitúan alrededor de las letras, el texto consonántico sagrado quedó intacto; cualquiera podía seguir viendo exactamente lo que contenía el rollo antiguo.
+
+Hubo más de un sistema de este tipo. Los masoretas de Babilonia escribían sus signos vocálicos encima de las letras, y un sistema antiguo de la tierra de Israel hacía lo mismo. El sistema de Tiberíades, con la mayoría de sus signos debajo de las letras, era el más detallado, y desplazó a los demás. Es el sistema de las Biblias hebreas impresas de hoy. El sistema babilónico sobrevivió más tiempo entre los judíos de Yemen.
 
 ## Los acentos: puntuación y música
 
@@ -34,7 +40,11 @@ Los masoretas añadieron también un sistema completo de **acentos** (en hebreo,
 - Funcionan como puntuación y dividen cada versículo en mitades, cuartos y unidades menores. El acento más fuerte, al final de cada versículo, marca dónde termina; otro acento fuerte marca su mitad.
 - Son notación musical para cantar el texto en la sinagoga.
 
-Como los acentos muestran cómo se agrupan las palabras, son un testigo antiguo de cómo se entendía el texto. Un ejemplo conocido es Isaías 40:3. Los acentos unen «en el desierto» con «preparen el camino» («Una voz clama: en el desierto preparen el camino del SEÑOR»), mientras que la traducción griega, citada en los Evangelios, lo une con la voz («Voz del que clama en el desierto»). Los traductores consultan habitualmente los acentos en decisiones como esta.
+Como los acentos muestran cómo se agrupan las palabras, son un testigo antiguo de cómo se entendía el texto. Un ejemplo conocido es Isaías 40:3. Los acentos unen «en el desierto» con «preparen el camino» («Una voz clama: en el desierto preparen el camino del SEÑOR»), mientras que la traducción griega, citada en los Evangelios, lo une con la voz («Voz del que clama en el desierto»). Los traductores consultan habitualmente los acentos en decisiones como esta. El registro de Open Word Bible para este versículo los sigue, dice por qué y conserva la otra agrupación como alternativa. En el nivel Literal dice:
+
+> {{OWB:ISA.40.3.s1:L}}
+
+El razonamiento señala que «en el desierto» se corresponde con «en la llanura desierta» del verso siguiente: el camino mismo ha de construirse en el desierto. Los acentos y la poesía coinciden.
 
 ## La masora: notas en los márgenes
 
@@ -71,6 +81,7 @@ El Antiguo Testamento de Open Word Bible se traduce a partir del Códice de Leni
 - Kelley, Page H., Daniel S. Mynatt y Timothy G. Crawford. *The Masorah of Biblia Hebraica Stuttgartensia: Introduction and Annotated Glossary*. Grand Rapids: Eerdmans, 1998.
 - Khan, Geoffrey. *The Tiberian Pronunciation Tradition of Biblical Hebrew*. 2 vols. Cambridge: Open Book Publishers, 2020. Acceso abierto.
 - Khan, Geoffrey. *A Short Introduction to the Tiberian Masoretic Bible and Its Reading Tradition*. 2.ª ed. Piscataway, NJ: Gorgias, 2013.
+- Lipschütz, Lazar. *Kitāb al-Khilaf: The Book of the Ḥillufim. Mishael ben Uzziel's Treatise on the Differences between Ben Asher and Ben Naphtali*. Jerusalem: Magnes, 1965.
 - Tov, Emanuel. *Textual Criticism of the Hebrew Bible*. 3.ª ed. Minneapolis: Fortress, 2012.
 - Würthwein, Ernst, y Alexander Achilles Fischer. *The Text of the Old Testament: An Introduction to the Biblia Hebraica*. 3.ª ed. Grand Rapids: Eerdmans, 2014.
 - Yeivin, Israel. *Introduction to the Tiberian Masorah*. Traducción y edición de E. J. Revell. Missoula, MT: Scholars Press, 1980.

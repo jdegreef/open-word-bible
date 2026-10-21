@@ -6,7 +6,7 @@ order: 21
 nav_title: Cómo se escribió el Antiguo Testamento
 section: history
 part: ot
-source: cb2915562c6f
+source: c83491b7d1f2
 ---
 El Antiguo Testamento no es un solo libro, sino una biblioteca. Los cristianos cuentan en él treinta y nueve libros; la tradición judía cuenta esos mismos escritos como veinticuatro. Incluyen ley, historia, poesía, proverbios, profecía y cierto tipo de cartas, escritos a lo largo de muchos siglos en hebreo, con algunos capítulos en arameo. Nadie se sentó a escribirlo de principio a fin. Entonces, ¿cómo llegó a escribirse?
 
@@ -18,9 +18,19 @@ La escritura se inventó mucho antes de que existiera Israel. Hacia el 3200 a. C
 
 El alfabeto fue una idea más sencilla: un signo por cada sonido consonántico. Surgió entre hablantes de lenguas semíticas en el segundo milenio a. C., y hacia el año 1000 a. C. se usaba a lo largo del Mediterráneo oriental una familia de alfabetos estrechamente emparentados, entre ellos el fenicio, el arameo y el hebreo. Un alfabeto de veintidós letras se puede aprender en semanas, no en años. Eso no hizo que todo el mundo supiera leer y escribir, pero puso la escritura al alcance de muchas más personas que antes.
 
-Los arqueólogos han encontrado las pruebas. El **Calendario de Gezer**, una pequeña tablilla de piedra caliza de alrededor del siglo X a. C., enumera los meses agrícolas en una forma temprana del hebreo. En 2005 se halló en Tel Zayit, empotrado en un muro, un **abecedario** (una lista del alfabeto en orden, el tipo de cosa que copia un alumno), de aproximadamente la misma época. Una inscripción en tinta sobre un fragmento de cerámica de **Khirbet Qeiyafa**, hallada en 2008, es uno de los textos más antiguos conocidos que podrían estar en hebreo; los especialistas todavía discuten cómo leerla. Para los siglos VIII y VII a. C., las pruebas se multiplican: notas administrativas sobre cerámica (óstracos) de Samaria, Arad y Laquis, sellos con el nombre de sus dueños y la **inscripción de Siloé**, grabada en un túnel de agua de Jerusalén hacia el 700 a. C. para celebrar el momento en que se encontraron los dos equipos de excavadores.
+Los arqueólogos han encontrado las pruebas. El **Calendario de Gezer**, una pequeña tablilla de piedra caliza hallada por R. A. S. Macalister en 1908 y fechada por lo general hacia el siglo X a. C., enumera las estaciones agrícolas del año en una forma temprana del hebreo. Quizá sea un ejercicio de un alumno. En 2005 se halló en Tel Zayit, empotrado en un muro, un **abecedario** (una lista del alfabeto en orden, el tipo de cosa que copia un alumno), de aproximadamente la misma época. Una inscripción en tinta sobre un fragmento de cerámica de **Khirbet Qeiyafa**, hallada en 2008, es uno de los textos más antiguos conocidos que podrían estar en hebreo; los especialistas todavía discuten cómo leerla. Para los siglos VIII y VII a. C., las pruebas se multiplican: notas administrativas sobre cerámica (óstracos) de Samaria, Arad y Laquis, sellos con el nombre de sus dueños y la **inscripción de Siloé**, grabada en un túnel de agua de Jerusalén hacia el 700 a. C. para celebrar el momento en que se encontraron los dos equipos de excavadores. La encontró en 1880 un muchacho que vadeaba el túnel. La Biblia recuerda la misma obra: Ezequías «hizo el estanque, y el conducto, y metió las aguas en la ciudad» (2 Reyes 20:20; compárese 2 Crónicas 32:30). La inscripción no nombra al rey. Cuenta la historia desde el lado de los excavadores: la voz de un hombre que llama a otro a través de la roca, y el momento en que se encontraron los picos de los dos equipos.
 
 Christopher Rollston, que ha estudiado estas inscripciones en detalle, sostiene que muestran una clase de escribas formados que usaban en todo el reino formas de letras, ortografía y numerales estandarizados. La escritura era una profesión, que se enseñaba en algún tipo de escuela y que utilizaban el Estado, el templo y los ricos. Ese es el mundo en el que se escribieron los libros de la Biblia hebrea.
+
+¿Hasta dónde llegaba la lectura más allá de los profesionales? Una carta permite vislumbrarlo. En 1935, el arqueólogo británico James Leslie Starkey encontró un grupo de cartas escritas con tinta sobre cerámica en las ruinas de **Laquis**, una ciudad fortificada al suroeste de Jerusalén. Son de los últimos años antes de que los babilonios tomaran Judá, hacia el 588 a. C., cuando Jeremías 34:7 nombra a Laquis y Azeca como las últimas ciudades fortificadas que aún resistían. En la Carta 3, un oficial subalterno llamado Hosayahu responde a su comandante, que al parecer había insinuado que no sabía leer una carta. Jura por la vida de Yahvé que nadie ha tenido nunca que leerle una carta. Al parecer, se esperaba que un oficial del ejército leyera su propio correo, y le ofendía que se sugiriera que no podía hacerlo.
+
+## Vecinos que escribían
+
+Israel no estaba solo. Sus vecinos escribían en lenguas y escrituras estrechamente emparentadas, y sus inscripciones muestran los tipos de escritura junto a los que crecieron los propios libros de la Biblia.
+
+La **estela de Mesá**, hallada en Dibón (Jordania) en 1868 y hoy en el Louvre, es un monumento de basalto negro erigido hacia el 840 a. C. por Mesá, rey de Moab. En una lengua muy cercana al hebreo, Mesá presume de cómo se sacudió el dominio de Israel. Nombra a Omrí, rey de Israel, y a Yahvé, el Dios de Israel. La Biblia cuenta los mismos hechos desde el otro lado: muerto Acab, «el rey de Moab se rebeló contra el rey de Israel» (2 Reyes 3:5). Es una historia real, escrita en primera persona, del mismo siglo que los reyes de Israel y en la misma escritura.
+
+En 1967, una expedición holandesa en **Tell Deir Alla**, en el valle del Jordán, encontró fragmentos de yeso cubiertos de tinta roja y negra. Una vez reunidos, cuentan una visión que vio «Balaam hijo de Beor», el vidente al que Balac contrató para maldecir a Israel en Números 22–24. El texto es de hacia el 800 a. C. y se escribió sobre una pared enlucida. No es una copia de Números, y cuenta una historia distinta. Pero muestra que las palabras de un profeta podían ponerse por escrito y exponerse, y que a Balaam se le recordaba como vidente a los dos lados del Jordán.
 
 ## Las palabras bíblicas más antiguas que podemos tener en la mano
 
@@ -37,12 +47,17 @@ El Antiguo Testamento nos dice a menudo que algo se puso por escrito, y quién l
 - Los libros de los Reyes remiten una y otra vez al lector a otros registros, hoy perdidos: «el libro de las historias de los reyes de Israel» y «las crónicas de los reyes de Judá».
 - En Jeremías 36, el profeta dicta sus palabras al escriba **Baruc hijo de Nerías**, que las escribe en un rollo. El rey Joacim corta el rollo trozo a trozo y lo quema; Jeremías lo dicta de nuevo, «y aun fueron añadidas sobre ellas muchas otras palabras semejantes» (Jeremías 36:32).
 - Proverbios 25:1 dice que «los varones de Ezequías, rey de Judá» copiaron una colección de proverbios de Salomón.
+- A Isaías se le dice que escriba un mensaje en una tabla grande, muy probablemente en la escritura corriente que cualquier transeúnte podía leer (Isaías 8:1), y más tarde que escriba una advertencia en un libro para que quede como testimonio para el tiempo venidero (Isaías 30:8).
 
 Estas notas nos muestran un proceso, no un único momento. Las palabras se pronunciaban, se recordaban, se escribían, se reunían, se copiaban, se ampliaban y se ordenaban. Jeremías 36 es una pequeña imagen del conjunto: las palabras habladas de un profeta, un escriba profesional, un rollo, una segunda edición.
 
 ## Lo oral y lo escrito, juntos
 
-En el mundo antiguo, la escritura no sustituyó a la memoria; ambas trabajaban juntas. David Carr, en *Writing on the Tablet of the Heart*, muestra cómo la educación en todo el antiguo Oriente Próximo consistía en aprender de memoria textos clave, mientras que las copias escritas servían de referencia y de apoyo para la enseñanza. El propio Deuteronomio manda a los padres repetir las palabras de Dios a sus hijos y escribirlas en los postes de la casa (Deuteronomio 6:6-9). Los salmos se cantaban; los proverbios se enseñaban; las historias de los antepasados se contaban en las fiestas y alrededor de la mesa. Cuando se pusieron por escrito, la forma escrita seguía estando pensada para leerse en voz alta y escucharse.
+En el mundo antiguo, la escritura no sustituyó a la memoria; ambas trabajaban juntas. La primera vez que la Biblia manda a Moisés escribir, une las dos en una sola frase:
+
+> {{OWB:EXO.17.14.s1:B}}
+
+Las palabras van a un rollo, y van a los oídos de Josué. David Carr, en *Writing on the Tablet of the Heart*, muestra cómo la educación en todo el antiguo Oriente Próximo consistía en aprender de memoria textos clave, mientras que las copias escritas servían de referencia y de apoyo para la enseñanza. El propio Deuteronomio manda a los padres repetir las palabras de Dios a sus hijos y escribirlas en los postes de la casa (Deuteronomio 6:6-9). Los salmos se cantaban; los proverbios se enseñaban; las historias de los antepasados se contaban en las fiestas y alrededor de la mesa. Cuando se pusieron por escrito, la forma escrita seguía estando pensada para leerse en voz alta y escucharse.
 
 Esto importa para cómo pensamos en la exactitud. Un texto que una comunidad memoriza y recita no lo cambia fácilmente una sola persona, porque los demás saben cómo dice. Pero una comunidad también puede, con el tiempo, adaptar la manera de contar algo. Ambas fuerzas se ven en la historia de la Biblia, y ambas forman parte de cómo llegó a ser lo que es.
 
@@ -65,10 +80,12 @@ Open Word Bible traduce el Antiguo Testamento a partir del hebreo del Códice de
 ## Fuentes
 
 - Barkay, Gabriel, Andrew G. Vaughn, Marilyn J. Lundberg y Bruce Zuckerman. "The Amulets from Ketef Hinnom: A New Edition and Evaluation." *Bulletin of the American Schools of Oriental Research* 334 (2004): 41–71.
+- Ahituv, Shmuel. *Echoes from the Past: Hebrew and Cognate Inscriptions from the Biblical Period*. Traducido por Anson F. Rainey. Jerusalem: Carta, 2008.
 - Carr, David M. *Writing on the Tablet of the Heart: Origins of Scripture and Literature*. Oxford: Oxford University Press, 2005.
+- Hoftijzer, Jacob, y Gerrit van der Kooij. *Aramaic Texts from Deir 'Alla*. Documenta et Monumenta Orientis Antiqui 19. Leiden: Brill, 1976.
 - Rollston, Christopher A. *Writing and Literacy in the World of Ancient Israel: Epigraphic Evidence from the Iron Age*. Atlanta: Society of Biblical Literature, 2010.
 - Schniedewind, William M. *How the Bible Became a Book: The Textualization of Ancient Israel*. Cambridge: Cambridge University Press, 2004.
 - Tappy, Ron E., P. Kyle McCarter, et al. "An Abecedary of the Mid-Tenth Century B.C.E. from the Judaean Shephelah." *Bulletin of the American Schools of Oriental Research* 344 (2006): 5–46.
 - van der Toorn, Karel. *Scribal Culture and the Making of the Hebrew Bible*. Cambridge, MA: Harvard University Press, 2007.
 - Talmud de Babilonia, Sanedrín 21b–22a.
-- Las citas bíblicas son de la Reina-Valera 1909 (dominio público), salvo donde el artículo ofrece su propia traducción literal.
+- Las citas bíblicas son de la Reina-Valera 1909 (dominio público), salvo donde el artículo ofrece su propia traducción literal o cita Open Word Bible.

@@ -5,11 +5,17 @@ date: 2026-10-11
 order: 26
 section: history
 part: ot
-source: d99d28e96146
+source: 26ef95d35e6d
 ---
 En el invierno de 1946-47, un joven pastor beduino llamado **Muhammed edh-Dhib**, de la tribu Ta'amireh, buscaba una cabra extraviada entre los acantilados cercanos a la orilla noroccidental del mar Muerto. Lanzó una piedra por una abertura de la roca y oyó que algo se rompía. Cuando más tarde él y sus compañeros entraron trepando, encontraron altas vasijas de barro y, dentro de algunas, envoltorios de cuero viejo envueltos en lino.
 
 Esos envoltorios fueron los primeros **Rollos del Mar Muerto**. Durante la década siguiente, once cuevas cercanas a las ruinas de Khirbet Qumrán darían los restos de unos novecientos manuscritos, escritos aproximadamente entre el siglo III a. C. y el siglo I d. C. Entre ellos están las copias más antiguas de los libros de la Biblia hebrea que se han encontrado jamás.
+
+## No fue el primer hallazgo
+
+Las cuevas ya habían entregado libros antes. El historiador de la Iglesia Eusebio cuenta que Orígenes, el gran erudito cristiano del siglo III, usó una traducción griega del Antiguo Testamento que se había encontrado en una vasija cerca de Jericó (*Historia eclesiástica* 6.16). Hacia el año 800, Timoteo I, patriarca de la Iglesia del Oriente en Bagdad, escribió a un obispo llamado Sergio sobre una historia que había oído contar a judíos convertidos. Unos diez años antes, decían, el perro de un cazador se había metido por una grieta de las rocas cerca de Jericó. Su dueño lo siguió y encontró una cámara llena de libros, entre ellos libros del Antiguo Testamento y otros escritos en hebreo. Uno de ellos, según le dijeron, era un libro de salmos de David con más de doscientos salmos. La Biblia tiene 150. Cuando se encontró el gran rollo de los Salmos en la Cueva 11 en 1956, también contenía salmos que no están en la Biblia, algunos de ellos conocidos hasta entonces solo en siríaco.
+
+El aire seco del desierto explica las dos historias. El cuero y el papiro, que en cualquier otro lugar se pudrirían, podían sobrevivir dos mil años en una vasija sellada dentro de una cueva sobre el mar Muerto.
 
 ## Los siete primeros rollos
 
@@ -20,6 +26,8 @@ Los beduinos llevaron los rollos a Belén, donde acabaron en manos de un zapater
 
 Investigadores de las American Schools of Oriental Research en Jerusalén, entre ellos John Trever y Millar Burrows, fotografiaron los rollos de Mar Samuel a comienzos de 1948. Trever comparó la escritura del rollo de Isaías con el Papiro Nash, un pequeño texto hebreo que entonces se consideraba el más antiguo conocido, y envió fotografías al arqueólogo **William F. Albright**, quien respondió que era «el mayor descubrimiento de manuscritos de los tiempos modernos». El anuncio se hizo en abril de 1948.
 
+Las fotografías de Trever resultaron más importantes de lo que nadie esperaba. Cuando volvió a ver los rollos en 1966, el cuero se había oscurecido y el texto era más difícil de leer de lo que recordaba. Sus fotografías de 1948 se siguen usando como registro de cómo eran los rollos cuando salieron de las cuevas.
+
 Mar Samuel llevó sus cuatro rollos a Estados Unidos. Como durante años no logró venderlos, el 1 de junio de 1954 puso un pequeño anuncio en el *Wall Street Journal* en el que ofrecía «Los cuatro Rollos del Mar Muerto». Le respondieron, por medio de intermediarios, en nombre de **Yigael Yadin**, hijo de Sukenik, que los compró para el Estado de Israel por 250.000 dólares. Los siete primeros rollos se exhiben hoy en el **Santuario del Libro** del Museo de Israel, en Jerusalén, un edificio diseñado para parecerse a la tapa de una de las vasijas en las que se encontraron.
 
 ## Once cuevas
@@ -27,13 +35,17 @@ Mar Samuel llevó sus cuatro rollos a Estados Unidos. Como durante años no logr
 Una vez que se supo que los rollos eran valiosos, los beduinos recorrieron la zona a fondo, y a menudo encontraban las cuevas antes que los arqueólogos. Las excavaciones oficiales las dirigieron **Roland de Vaux**, de la École Biblique de Jerusalén, y **Gerald Lankester Harding**, del Departamento de Antigüedades de Jordania, que exploraron la Cueva 1 en 1949 y luego excavaron el asentamiento cercano de Khirbet Qumrán de 1951 a 1956.
 
 - La **Cueva 1** dio los siete primeros rollos y fragmentos de decenas más.
-- La **Cueva 3** (1952) guardaba el **Rollo de Cobre**, una lista de tesoros escondidos grabada en metal, que todavía no tiene explicación.
+- La **Cueva 3** (1952) guardaba el **Rollo de Cobre**, una lista de tesoros escondidos grabada en metal, que todavía no tiene explicación. Estaba demasiado corroído para desenrollarlo, así que en 1955 y 1956 se llevó a Mánchester, donde el profesor H. Wright Baker lo cortó en veintitrés tiras con una sierra fina para poder leerlo.
 - La **Cueva 4** (1952), hallada por los beduinos a la vista del asentamiento, fue la más rica de todas. Contenía unos 15.000 fragmentos de más de 500 manuscritos distintos, muchos no mayores que un sello de correos.
 - La **Cueva 11** (1956) dio varios rollos bien conservados, entre ellos un gran rollo de los Salmos y el **Rollo del Templo**, que Yadin adquirió en 1967.
 
+La Cueva 4 mostró también el precio de la ventaja que llevaban los beduinos. Desde septiembre de 1952 sus fragmentos empezaron a aparecer en el mercado de antigüedades, y el Museo Arqueológico de Palestina, en Jerusalén Este, entonces bajo dominio jordano, los compró para mantener unida la colección. Cuando se le acabó el dinero, varias instituciones extranjeras aportaron fondos entre 1954 y 1959, entre ellas la Universidad McGill de Montreal, las universidades de Mánchester, Heidelberg y Oxford, y el McCormick Theological Seminary de Chicago. Esperaban recibir fragmentos a cambio. En 1961, el gobierno jordano nacionalizó los rollos, y los fragmentos se quedaron en Jerusalén. Las piezas se dispusieron bajo cristal en una sala alargada del museo, que el equipo llamaba la «scrollery» (la «sala de los rollos»).
+
+En junio de 1967, durante la Guerra de los Seis Días, el museo (llamado ya Museo Rockefeller) pasó a control israelí, y con él los fragmentos de la Cueva 4. En esas mismas semanas, Yadin obtuvo el Rollo del Templo de Kando, que lo había tenido escondido durante años; más tarde se le pagó al comerciante por él.
+
 En 2017, arqueólogos de la Universidad Hebrea anunciaron una duodécima cueva cerca de Qumrán, con vasijas rotas y un rollo en blanco pero sin textos: probablemente saqueada hace mucho tiempo.
 
-Otros lugares del desierto de Judea dieron hallazgos relacionados: rollos bíblicos en **Masada**, la fortaleza donde los rebeldes judíos resistieron a Roma hasta el 73 o 74 d. C.; documentos y textos bíblicos en **Wadi Murabba'at** y **Nahal Hever** de la época de la revuelta de Bar Kojba (132-135 d. C.); y un rollo griego de los Profetas Menores procedente de Nahal Hever. Todavía en 2021, la Autoridad de Antigüedades de Israel anunció nuevos fragmentos de ese rollo griego, de Zacarías y Nahúm, hallados en la «Cueva del Horror».
+Otros lugares del desierto de Judea dieron hallazgos relacionados: rollos bíblicos en **Masada**, la fortaleza donde los rebeldes judíos resistieron a Roma hasta el 73 o 74 d. C.; documentos y textos bíblicos en **Wadi Murabba'at** y **Nahal Hever** de la época de la revuelta de Bar Kojba (132-135 d. C.); y un rollo griego de los Profetas Menores procedente de Nahal Hever. Todavía en 2021, la Autoridad de Antigüedades de Israel anunció nuevos fragmentos de ese rollo griego, de Zacarías y Nahúm, hallados en la «Cueva del Horror» durante una prospección para adelantarse a los saqueadores. Fueron los primeros fragmentos de un rollo bíblico hallados en una excavación en unos sesenta años. Como el resto del rollo, escriben el texto en griego pero dan el nombre de Dios en letras hebreas. Los arqueólogos creen que los fragmentos los llevaron a la cueva refugiados al final de la revuelta de Bar Kojba, hacia el 135 d. C.
 
 ## ¿Qué contiene la colección?
 
@@ -59,26 +71,35 @@ Para la historia de la Biblia, la cuestión importa menos de lo que podría pare
 - **Paleografía.** El estudio de la escritura a mano permite a los especialistas colocar las escrituras en una secuencia. El estudio clásico de Frank Moore Cross sobre las escrituras judías fechó la mayoría de los rollos aproximadamente entre el 250 a. C. y el 68 d. C.
 - **Datación por radiocarbono.** Las pruebas realizadas en Zúrich en 1990-91 y en Tucson en 1994, con muestras de diversos rollos, dieron fechas en líneas generales concordantes con las estimaciones paleográficas.
 
+## Falsificaciones en el mercado
+
+Los precios altos atrajeron a los falsificadores. Después de 2002 aparecieron en el mercado de antigüedades unos setenta fragmentos nuevos de «Rollos del Mar Muerto», muchos de ellos comprados por coleccionistas e instituciones cristianas de Estados Unidos. Los especialistas empezaron a sospechar de ellos. En 2020, una investigación encargada por el Museo de la Biblia de Washington concluyó que sus dieciséis fragmentos eran todos falsificaciones modernas, probablemente escritas sobre cuero antiguo y tratadas después para que parecieran antiguas. Estas conclusiones no afectan a los rollos auténticos, cuya historia desde las cuevas hasta los museos está bien documentada. Sí muestran por qué importa esa historia.
+
 ## El largo camino hasta la publicación
 
 Los rollos de la Cueva 1 se publicaron rápidamente. La Cueva 4 fue otra historia. Sus decenas de miles de fragmentos se confiaron a un pequeño equipo internacional, que pasó años clasificándolos, uniéndolos e identificándolos. La publicación en la serie oficial, *Discoveries in the Judaean Desert* (DJD), fue lenta, y en la década de 1980 muchos textos seguían inéditos, más de treinta años después de su descubrimiento.
 
-La frustración estalló en 1991. Ben Zion Wacholder y Martin Abegg usaron una concordancia preparada por el equipo para reconstruir por ordenador textos inéditos; la Biblical Archaeology Society publicó una edición facsímil de fotografías; y la Huntington Library de California anunció que permitiría el acceso a su juego de fotografías. El monopolio se rompió. Mientras tanto, bajo un nuevo editor jefe, **Emanuel Tov**, nombrado en 1990, el equipo oficial se amplió mucho, y la serie DJD quedó prácticamente completada en la década de 2000, con unos cuarenta volúmenes.
+Los críticos señalaron además que el equipo formado en 1953 no había incluido a ningún especialista judío o israelí, aunque los rollos son textos judíos. Israelíes como Emanuel Tov y Elisha Qimron solo se incorporaron al trabajo en la década de 1980. El cambio empezó en 1990, cuando el editor jefe, John Strugnell, fue apartado después de una entrevista en la que hizo comentarios ofensivos sobre el judaísmo. La frustración estalló en 1991. Ben Zion Wacholder y Martin Abegg usaron una concordancia preparada por el equipo para reconstruir por ordenador textos inéditos; la Biblical Archaeology Society publicó una edición facsímil de fotografías; y la Huntington Library de California anunció que permitiría el acceso a su juego de fotografías. El monopolio se rompió. Mientras tanto, bajo un nuevo editor jefe, **Emanuel Tov**, nombrado en 1990, el equipo oficial se amplió mucho, y la serie DJD quedó prácticamente completada en la década de 2000, con unos cuarenta volúmenes.
 
-Hoy cualquiera puede ver imágenes de alta resolución de los rollos en internet, a través de la **Leon Levy Dead Sea Scrolls Digital Library** de la Autoridad de Antigüedades de Israel y del proyecto **Digital Dead Sea Scrolls** del Museo de Israel.
+Hoy cualquiera puede ver imágenes de alta resolución de los rollos en internet. El proyecto **Digital Dead Sea Scrolls** del Museo de Israel, creado con Google, se puso en marcha en septiembre de 2011 con cinco de los grandes rollos de la Cueva 1, entre ellos el Gran Rollo de Isaías. La **Leon Levy Dead Sea Scrolls Digital Library** de la Autoridad de Antigüedades de Israel le siguió en diciembre de 2012. Fotografía cada fragmento con varias longitudes de onda de luz, entre ellas el infrarrojo, que puede hacer visibles letras tan desvaídas que el ojo ya no puede leerlas.
 
 ## Por qué importa
 
-Antes de 1947, los manuscritos hebreos sustanciales más antiguos del Antiguo Testamento eran de alrededor del 900-1000 d. C. De la noche a la mañana, los especialistas tuvieron copias unos mil años más antiguas. Los dos artículos siguientes examinan lo que muestran esas copias: primero [el Gran Rollo de Isaías](/articles/the-great-isaiah-scroll/), y después [lo que muestran los rollos sobre el texto de la Biblia](/articles/what-the-dead-sea-scrolls-show/) en su conjunto.
+Antes de 1947, los manuscritos hebreos sustanciales más antiguos del Antiguo Testamento eran de alrededor del 900-1000 d. C., entre ellos los grandes códices que se describen en [Los códices de Alepo y de Leningrado](/articles/aleppo-and-leningrad-codices/). Los especialistas podían comparar esos libros entre sí y con las traducciones antiguas, pero no podían ver el propio texto hebreo tal como era antes de la época de Jesús. De la noche a la mañana, los especialistas tuvieron copias unos mil años más antiguas. Los dos artículos siguientes examinan lo que muestran esas copias: primero [el Gran Rollo de Isaías](/articles/the-great-isaiah-scroll/), y después [lo que muestran los rollos sobre el texto de la Biblia](/articles/what-the-dead-sea-scrolls-show/) en su conjunto.
 
 ## Fuentes
 
 - Cross, Frank Moore. "The Development of the Jewish Scripts." En *The Bible and the Ancient Near East*, edición de G. Ernest Wright, 133–202. Garden City, NY: Doubleday, 1961.
 - de Vaux, Roland. *Archaeology and the Dead Sea Scrolls*. Schweich Lectures 1959. London: Oxford University Press, 1973.
+- Eusebio. *Historia eclesiástica* 6.16.
 - Fields, Weston W. *The Dead Sea Scrolls: A Full History*. Vol. 1. Leiden: Brill, 2009.
 - Golb, Norman. *Who Wrote the Dead Sea Scrolls? The Search for the Secret of Qumran*. New York: Scribner, 1995.
 - Jull, A. J. Timothy, et al. "Radiocarbon Dating of Scrolls and Linen Fragments from the Judean Desert." *Radiocarbon* 37 (1995): 11–19.
 - Magness, Jodi. *The Archaeology of Qumran and the Dead Sea Scrolls*. 2.ª ed. Grand Rapids: Eerdmans, 2021.
+- "'Dead Sea Scrolls' at the Museum of the Bible Are All Forgeries." *National Geographic*, marzo de 2020.
+- Schiffman, Lawrence H. *Reclaiming the Dead Sea Scrolls*. Philadelphia: Jewish Publication Society, 1994.
+- Timoteo I. *Carta* 47, a Sergio. Traducción inglesa en Sebastian P. Brock, *A Brief Outline of Syriac Literature*. Moran Etho 9. Kottayam: SEERI, 1997.
+- Trever, John C. *The Dead Sea Scrolls: A Personal Account*. Ed. rev. Grand Rapids: Eerdmans, 1977.
 - VanderKam, James C., y Peter Flint. *The Meaning of the Dead Sea Scrolls*. San Francisco: HarperSanFrancisco, 2002.
 - Leon Levy Dead Sea Scrolls Digital Library: [deadseascrolls.org.il](https://www.deadseascrolls.org.il/).
 - Las citas bíblicas son de la Reina-Valera 1909 (dominio público), salvo donde el artículo ofrece su propia traducción literal.

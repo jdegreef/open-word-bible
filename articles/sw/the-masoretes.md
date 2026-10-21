@@ -6,7 +6,7 @@ order: 24
 nav_title: Wamasoreti
 section: history
 part: ot
-source: dc96f57b14fb
+source: 8c6de5e0f0ae
 ---
 Fungua Biblia ya Kiebrania nawe utaona konsonanti, yaani herufi kuu, zikiwa zimezungukwa na nukta na vistari vidogo juu na chini yake. Alama hizo ni irabu na alama za kiimbo. Pembezoni mwa ukurasa katika toleo la kitaalamu utaona maelezo madogo sana kwa Kiaramu kilichofupishwa. Yote haya yaliongezwa na kundi la wanachuoni wanaojulikana kama **Wamasoreti**. Karibu kila tafsiri ya Agano la Kale ulimwenguni, ikiwemo ile ya Open Word Bible, imetengenezwa kutoka maandiko waliyoyalinda.
 
@@ -16,6 +16,8 @@ Jina hili linatoka katika neno la Kiebrania *masorah*, lenye maana ya "mapokeo,"
 
 Shule ya Tiberia ndiyo iliyokuwa na ushawishi mkubwa zaidi. Familia zake zinazojulikana zaidi zilikuwa familia ya **Ben Asher** na ya **Ben Naphtali**, ambazo kwa vizazi kadhaa ziliuboresha mfumo wa irabu na alama za kiimbo. Mshiriki wa mwisho na maarufu zaidi wa familia ya Ben Asher, **Aaron ben Moses ben Asher**, alifanya kazi katika nusu ya kwanza ya karne ya kumi. Kodeksi ya Aleppo, mojawapo ya hati muhimu zaidi za Biblia ya Kiebrania, ilitiwa irabu na yeye (tazama [Kodeksi za Aleppo na Leningrad](/articles/aleppo-and-leningrad-codices/)).
 
+Shule hizo mbili zilitofautiana katika mambo madogo ajabu. Karibu karne ya kumi na moja, mwanachuoni aitwaye Mishael ben Uzziel aliorodhesha tofauti kati ya Ben Asher na Ben Naphtali kwa Biblia nzima. Zipo karibu 860, na takriban tisa kati ya kumi zinahusu alama moja ndogo inayoonyesha mkazo wa pili. Karibu hakuna hata moja inayogusa konsonanti.
+
 Wamasoreti hawakujiona kuwa wahariri. Hawakubadilisha maandiko ya konsonanti waliyoyapokea. Kazi yao ilikuwa kuyalinda, na kuweka katika maandishi jinsi yalivyopaswa kutamkwa na kusomwa.
 
 ## Tatizo walilolitatua: maandiko yasiyo na irabu
@@ -24,7 +26,11 @@ Kiebrania, kama Kiaramu na Kiarabu, hapo mwanzo kiliandikwa kwa konsonanti peke 
 
 Baadhi ya maneno yanaweza kusomwa kwa njia zaidi ya moja irabu zikikosekana. Mfano maarufu uko katika Mwanzo 47:31, ambapo konsonanti zile zile zinaweza kumaanisha "kitanda" au "fimbo." Irabu za Kimasoreti zinasoma "kitanda"; Septuaginta ya Kigiriki, iliyotafsiriwa karne nyingi kabla, ilisoma "fimbo," na huo ndio usomaji unaonukuliwa katika Waebrania 11:21. Usomaji wote miwili unatumia herufi zile zile hasa; irabu tu ndizo zinazotofautiana.
 
+Maelezo katika rekodi ya Open Word Bible ya [Waebrania 11:21](/heb/11/) yanaeleza tofauti hii ya kitanda na fimbo: herufi ni zile zile, irabu zilikuja baadaye, na watafsiri wa Kigiriki walisoma "fimbo".
+
 Suluhisho la Wamasoreti lilikuwa kuongeza alama za irabu bila kugusa konsonanti. Walibuni mfumo wa nukta na vistari vifupi vilivyowekwa juu, chini na ndani ya herufi. Kwa kuwa alama hizi ni ndogo na zinakaa kuzunguka herufi, maandiko matakatifu ya konsonanti yalibaki bila kuguswa; mtu yeyote bado angeweza kuona hasa kile ambacho hati-kunjo ya kale ilikuwa nacho.
+
+Kulikuwa na zaidi ya mfumo mmoja wa namna hiyo. Wamasoreti wa Babeli waliandika alama zao za irabu juu ya herufi, na mfumo wa mwanzo kutoka nchi ya Israeli ulifanya vivyo hivyo. Mfumo wa Tiberia, wenye alama zake nyingi chini ya herufi, ndio uliokuwa wa kina zaidi, na ukaichukua nafasi ya mingine. Ndio mfumo wa Biblia za Kiebrania zinazochapishwa leo. Mfumo wa Babeli ulidumu muda mrefu zaidi miongoni mwa Wayahudi wa Yemeni.
 
 ## Alama za kiimbo: uakifishaji na muziki
 
@@ -34,7 +40,11 @@ Wamasoreti waliongeza pia mfumo kamili wa **alama za kiimbo** (kwa Kiebrania, *t
 - Zinafanya kazi kama alama za uakifishaji, zikigawa kila mstari katika nusu, robo na vipande vidogo zaidi. Alama yenye nguvu zaidi mwishoni mwa kila mstari inaonyesha mwisho wa mstari; alama nyingine yenye nguvu inaonyesha katikati yake.
 - Ni maandishi ya muziki kwa ajili ya kuyaimba maandiko katika sinagogi.
 
-Kwa kuwa alama hizi zinaonyesha jinsi maneno yanavyokaa pamoja katika makundi, ni shahidi wa kale wa jinsi maandiko yalivyoeleweka. Mfano unaojulikana sana ni Isaya 40:3. Alama za kiimbo zinaunganisha "nyikani" na "tengenezeni njia" ("Sauti inaita: nyikani tengenezeni njia ya BWANA"), wakati tafsiri ya Kigiriki, inayonukuliwa katika Injili, inaliunganisha na sauti ("Sauti ya mtu anayeita nyikani"). Watafsiri mara kwa mara huzitazama alama za kiimbo katika maamuzi kama haya.
+Kwa kuwa alama hizi zinaonyesha jinsi maneno yanavyokaa pamoja katika makundi, ni shahidi wa kale wa jinsi maandiko yalivyoeleweka. Mfano unaojulikana sana ni Isaya 40:3. Alama za kiimbo zinaunganisha "nyikani" na "tengenezeni njia" ("Sauti inaita: nyikani tengenezeni njia ya BWANA"), wakati tafsiri ya Kigiriki, inayonukuliwa katika Injili, inaliunganisha na sauti ("Sauti ya mtu anayeita nyikani"). Watafsiri mara kwa mara huzitazama alama za kiimbo katika maamuzi kama haya. Rekodi ya Open Word Bible ya mstari huu inazifuata, inaeleza kwa nini, na inaubakiza mpangilio ule mwingine kama mbadala. Katika kiwango cha Halisi inasomeka:
+
+> {{OWB:ISA.40.3.s1:L}}
+
+Maelezo ya sababu yanaonyesha kwamba "nyikani" inalingana na "katika uwanda wa jangwa" katika mstari unaofuata: barabara yenyewe inapaswa kujengwa jangwani. Alama za kiimbo na ushairi vinakubaliana.
 
 ## Masorah: maelezo ya pembezoni
 
@@ -71,6 +81,7 @@ Agano la Kale la Open Word Bible linatafsiriwa kutoka Kodeksi ya Leningrad ya We
 - Kelley, Page H., Daniel S. Mynatt, and Timothy G. Crawford. *The Masorah of Biblia Hebraica Stuttgartensia: Introduction and Annotated Glossary*. Grand Rapids: Eerdmans, 1998.
 - Khan, Geoffrey. *The Tiberian Pronunciation Tradition of Biblical Hebrew*. Juzuu 2. Cambridge: Open Book Publishers, 2020. Inapatikana bure (open access).
 - Khan, Geoffrey. *A Short Introduction to the Tiberian Masoretic Bible and Its Reading Tradition*. Toleo la 2. Piscataway, NJ: Gorgias, 2013.
+- Lipschütz, Lazar. *Kitāb al-Khilaf: The Book of the Ḥillufim. Mishael ben Uzziel's Treatise on the Differences between Ben Asher and Ben Naphtali*. Jerusalem: Magnes, 1965.
 - Tov, Emanuel. *Textual Criticism of the Hebrew Bible*. Toleo la 3. Minneapolis: Fortress, 2012.
 - Würthwein, Ernst, and Alexander Achilles Fischer. *The Text of the Old Testament: An Introduction to the Biblia Hebraica*. Toleo la 3. Grand Rapids: Eerdmans, 2014.
 - Yeivin, Israel. *Introduction to the Tiberian Masorah*. Imetafsiriwa na kuhaririwa na E. J. Revell. Missoula, MT: Scholars Press, 1980.

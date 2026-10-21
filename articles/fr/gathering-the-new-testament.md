@@ -5,7 +5,7 @@ date: 2026-10-11
 order: 38
 section: history
 part: nt
-source: d942276f5685
+source: 7cc4b236daa1
 ---
 Pourquoi le Nouveau Testament contient-il ces vingt-sept livres, et pas d'autres ? Une histoire répandue raconte que l'empereur Constantin, ou le concile de Nicée en 325, a choisi les livres et supprimé les autres. Cette histoire, rendue célèbre par des romans, n'est pas vraie : le concile de Nicée n'a pas du tout discuté du canon. L'histoire réelle est plus longue, plus progressive et, à bien des égards, plus intéressante.
 
@@ -23,7 +23,7 @@ Au milieu du deuxième siècle, le cœur du Nouveau Testament était largement u
 
 **Les Évangiles.** Vers 150 apr. J.-C., **Justin Martyr** décrit le culte chrétien à Rome : le dimanche, "on lit les mémoires des apôtres ou les écrits des prophètes, aussi longtemps que le temps le permet" (*Première Apologie* 67). Il appelle ces mémoires des "Évangiles". Le disciple de Justin, **Tatien**, composa vers 170 apr. J.-C. le *Diatessaron* ("à travers quatre"), un récit unique et continu tissé à partir de Matthieu, Marc, Luc et Jean, ce qui montre que ces quatre formaient déjà un ensemble reconnu. Vers 180 apr. J.-C., **Irénée** de Lyon soutint qu'il ne peut y avoir ni plus ni moins de quatre Évangiles, en les comparant aux quatre vents et aux quatre coins du monde (*Contre les hérésies* 3.11.8). Son argument est inhabituel, mais ce qu'il présuppose est clair : les quatre Évangiles étaient les Évangiles de l'Église. Charles Hill, dans *Who Chose the Gospels?*, montre que cet Évangile quadruple s'est établi plus tôt et plus largement qu'on ne le suppose souvent.
 
-**Paul.** Les lettres de Paul ont été rassemblées tôt (voir [Comment le Nouveau Testament a été écrit](/articles/how-the-new-testament-was-written/)). Des auteurs du début du deuxième siècle comme Clément de Rome, Ignace d'Antioche et Polycarpe de Smyrne en connaissent plusieurs et s'en font l'écho. Le codex sur papyrus **P46**, d'environ 200 apr. J.-C., est un recueil des lettres de Paul qui inclut Hébreux.
+**Paul.** Les lettres de Paul ont été rassemblées tôt (voir [Comment le Nouveau Testament a été écrit](/articles/how-the-new-testament-was-written/)). Des auteurs des environs de 100 apr. J.-C., comme Clément de Rome, Ignace d'Antioche et Polycarpe de Smyrne en connaissent plusieurs et s'en font l'écho. Le codex sur papyrus **P46**, d'environ 200 apr. J.-C., est un recueil des lettres de Paul qui inclut Hébreux.
 
 ## Marcion et le défi d'un canon réduit
 
@@ -63,6 +63,19 @@ En Occident, des conciles régionaux à **Hippone** (393) et à **Carthage** (39
 
 Il vaut la peine de remarquer ce que firent les conciles. Ils n'ont pas créé le canon ; ils ont reconnu et confirmé des livres que les Églises lisaient, dans la plupart des cas, depuis deux siècles ou plus.
 
+## Les marges après Athanase
+
+L'accord sur les vingt-sept livres n'a pas mis fin à toutes les questions. Certaines Églises ont gardé leurs propres listes pendant des siècles.
+
+- **Les Églises syriaques.** La Peshitta, la Bible syriaque de référence depuis le début du cinquième siècle, ne compte que vingt-deux livres. Il lui manque 2 Pierre, 2 et 3 Jean, Jude et l'Apocalypse, et certaines Églises syriaques ne lisent encore que ces vingt-deux livres au culte (voir [La Peshitta et la Bible syriaque](/articles/the-peshitta/)).
+- **L'Église éthiopienne.** L'Église orthodoxe éthiopienne Tewahedo accepte les vingt-sept livres et aussi, dans ce que les spécialistes appellent son canon élargi, plusieurs livres d'ordre ecclésiastique et d'instruction, comme le *Sinodos*, le *Livre de l'Alliance*, un *Clément* éthiopien et la *Didascalie* (voir [Les anciennes Bibles d'Afrique : le copte et le guèze](/articles/coptic-and-ethiopic-bibles/)).
+
+En Occident, les vieilles questions sont revenues à la Réforme. Les savants de la Renaissance relisaient Eusèbe et Jérôme, et voyaient que certains livres avaient autrefois été contestés. Érasme et le cardinal catholique Cajetan doutaient tous deux que Paul ait écrit Hébreux. **Martin Luther** est allé plus loin. Dans son Nouveau Testament allemand de septembre 1522, il a placé Hébreux, Jacques, Jude et l'Apocalypse ensemble à la fin, sans numéro, à l'écart des vingt-trois autres. Dans sa préface, il qualifiait Jacques d'"épître de paille" en comparaison des livres qui, à ses yeux, montraient le plus clairement le Christ, bien que cette phrase ait disparu des éditions postérieures à 1537. Luther n'a pas retiré ces quatre livres ; il les a traduits et imprimés. Mais il les plaçait plus bas, et les Bibles luthériennes ont longtemps gardé son ordre.
+
+Le **concile de Trente**, le 8 avril 1546, a répondu en dressant la liste de tous les livres des deux Testaments, dont les vingt-sept du Nouveau, comme sacrés et canoniques. Les confessions réformées, comme la Confession de foi de La Rochelle de 1559 et la Confession de foi des Pays-Bas de 1561, ont elles aussi énuméré les vingt-sept. Ainsi la Réforme, malgré tous ses débats, s'est achevée avec des catholiques et des protestants qui avaient le même Nouveau Testament.
+
+Open Word Bible traduit ces vingt-sept livres, dans l'ordre qu'emploient aujourd'hui la plupart des Bibles. L'ordre lui-même est une tradition, non une partie du texte : les manuscrits grecs placent souvent les Actes et les lettres générales avant Paul, et Hébreux se trouve parfois parmi les lettres de Paul, avant les lettres à Timothée.
+
 ## Comment l'Église a-t-elle décidé ?
 
 Les premiers auteurs chrétiens mentionnent plusieurs critères, que les spécialistes résument souvent en trois questions :
@@ -82,12 +95,14 @@ Des livres comme l'*Évangile de Thomas*, l'*Évangile de Pierre* ou l'*Évangil
 - Athanase. *Lettre festale* 39 (367 apr. J.-C.).
 - Bruce, F. F. *The Canon of Scripture*. Downers Grove, IL: InterVarsity, 1988.
 - Eusèbe. *Histoire ecclésiastique* 3.25 ; 6.25.
+- Concile de Trente. *Décret sur les Écritures canoniques*. Quatrième session, 8 avril 1546.
 - Gallagher, Edmon L., et John D. Meade. *The Biblical Canon Lists from Early Christianity: Texts and Analysis*. Oxford: Oxford University Press, 2017.
 - Hahneman, Geoffrey Mark. *The Muratorian Fragment and the Development of the Canon*. Oxford: Clarendon, 1992.
 - Hill, Charles E. *Who Chose the Gospels? Probing the Great Gospel Conspiracy*. Oxford: Oxford University Press, 2010.
 - Irénée. *Contre les hérésies* 3.11.8.
 - Justin Martyr. *Première Apologie* 67.
 - Kruger, Michael J. *Canon Revisited: Establishing the Origins and Authority of the New Testament Books*. Wheaton, IL: Crossway, 2012.
+- Luther, Martin. *Das Newe Testament Deutzsch*. Wittenberg, 1522. Préfaces dans *Luther's Works*, vol. 35, *Word and Sacrament I*. Philadelphia: Muhlenberg, 1960.
 - McDonald, Lee Martin. *The Biblical Canon: Its Origin, Transmission, and Authority*. Peabody, MA: Hendrickson, 2007.
 - Metzger, Bruce M. *The Canon of the New Testament: Its Origin, Development, and Significance*. Oxford: Clarendon, 1987.
 - Les citations bibliques sont des traductions littérales propres à cet article.

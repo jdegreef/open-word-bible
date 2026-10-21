@@ -64,8 +64,9 @@ class ArticlesTest(unittest.TestCase):
                 build_site.article_html(wrong)
 
     def test_links_to_untranslated_articles_stay_english(self):
-        missing = next(a["slug"] for a in self.articles
-                       if not (ROOT / "articles" / "vi" / f"{a['slug']}.md").is_file())
+        # Every article may be translated, so use a slug with no file.
+        missing = "an-article-not-yet-in-vietnamese"
+        self.assertFalse((ROOT / "articles" / "vi" / f"{missing}.md").exists())
         page = build_site.article_html(f"[a](/articles/{missing}/) [b](/jhn/1/)", lang="vi")
         self.assertIn(f'href="/articles/{missing}/"', page)
         self.assertIn('href="/vi/jhn/1/"', page)

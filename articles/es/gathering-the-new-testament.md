@@ -5,7 +5,7 @@ date: 2026-10-11
 order: 38
 section: history
 part: nt
-source: d942276f5685
+source: 7cc4b236daa1
 ---
 ¿Por qué contiene el Nuevo Testamento estos veintisiete libros, y no otros? Una historia popular dice que el emperador Constantino, o el Concilio de Nicea en el 325, eligió los libros y suprimió los demás. Esa historia, que las novelas hicieron famosa, no es cierta: el Concilio de Nicea no trató el canon en absoluto. La historia real es más larga, más gradual y, en muchos sentidos, más interesante.
 
@@ -23,7 +23,7 @@ A mediados del siglo II, el núcleo del Nuevo Testamento era de uso amplio.
 
 **Los Evangelios.** Hacia el año 150 d. C., **Justino Mártir** describe el culto cristiano en Roma: el domingo, «se leen las memorias de los apóstoles o los escritos de los profetas, mientras el tiempo lo permite» (*Primera apología* 67). A esas memorias las llama «Evangelios». El discípulo de Justino, **Taciano**, hacia el año 170 d. C., compuso el *Diatessaron* («a través de cuatro»), un único relato continuo entretejido a partir de Mateo, Marcos, Lucas y Juan, lo que muestra que estos cuatro ya formaban un conjunto reconocido. Hacia el año 180 d. C., **Ireneo** de Lyon sostuvo que no puede haber ni más ni menos de cuatro Evangelios, comparándolos con los cuatro vientos y los cuatro extremos del mundo (*Contra las herejías* 3.11.8). Su argumento es peculiar, pero su presupuesto es claro: los cuatro Evangelios eran los Evangelios de la iglesia. Charles Hill, en *Who Chose the Gospels?*, muestra que este Evangelio cuádruple se estableció antes y de forma más amplia de lo que a menudo se supone.
 
-**Pablo.** Las cartas de Pablo se coleccionaron pronto (véase [Cómo se escribió el Nuevo Testamento](/articles/how-the-new-testament-was-written/)). Escritores de comienzos del siglo II como Clemente de Roma, Ignacio de Antioquía y Policarpo de Esmirna conocen varias de ellas y las evocan. El códice de papiro **P46**, de hacia el año 200 d. C., es una colección de las cartas de Pablo que incluye Hebreos.
+**Pablo.** Las cartas de Pablo se coleccionaron pronto (véase [Cómo se escribió el Nuevo Testamento](/articles/how-the-new-testament-was-written/)). Escritores de hacia el año 100 d. C., como Clemente de Roma, Ignacio de Antioquía y Policarpo de Esmirna conocen varias de ellas y las evocan. El códice de papiro **P46**, de hacia el año 200 d. C., es una colección de las cartas de Pablo que incluye Hebreos.
 
 ## Marción y el desafío de un canon breve
 
@@ -63,6 +63,19 @@ En Occidente, los concilios regionales de **Hipona** (393) y **Cartago** (397 y 
 
 Vale la pena fijarse en lo que hicieron los concilios. No crearon el canon; reconocieron y confirmaron libros que las iglesias venían leyendo, en la mayoría de los casos, desde hacía dos siglos o más.
 
+## Los bordes después de Atanasio
+
+El acuerdo sobre los veintisiete libros no zanjó todas las cuestiones. Algunas iglesias mantuvieron sus propias listas durante siglos.
+
+- **Las iglesias siríacas.** La Peshitta, la Biblia siríaca de referencia desde comienzos del siglo V, tiene solo veintidós libros. Le faltan 2 Pedro, 2 y 3 Juan, Judas y el Apocalipsis, y algunas iglesias siríacas todavía leen solo esos veintidós en el culto (véase [La Peshitta y la Biblia siríaca](/articles/the-peshitta/)).
+- **La iglesia etíope.** La Iglesia ortodoxa etíope Tewahedo acepta los veintisiete libros y además, en lo que los especialistas llaman su canon amplio, varios libros de orden eclesiástico e instrucción, como el *Sinodos*, el *Libro de la Alianza*, un *Clemente* etíope y la *Didascalia* (véase [Las antiguas Biblias de África](/articles/coptic-and-ethiopic-bibles/)).
+
+En Occidente, las viejas preguntas volvieron con la Reforma. Los eruditos del Renacimiento leyeron de nuevo a Eusebio y a Jerónimo y vieron que algunos libros habían sido discutidos en otro tiempo. Erasmo y el cardenal católico Cayetano dudaban de que Pablo hubiera escrito Hebreos. **Martín Lutero** fue más lejos. En su Nuevo Testamento alemán de septiembre de 1522 colocó juntos al final Hebreos, Santiago, Judas y el Apocalipsis, sin numerar, aparte de los otros veintitrés. En su prefacio llamó a Santiago «una epístola de paja» en comparación con los libros que, a su juicio, mostraban a Cristo con más claridad, aunque esa frase desapareció de las ediciones posteriores a 1537. Lutero no eliminó los cuatro libros; los tradujo e imprimió. Pero los situó en un rango inferior, y las Biblias luteranas conservaron su orden durante mucho tiempo.
+
+El **Concilio de Trento**, el 8 de abril de 1546, respondió declarando sagrados y canónicos todos los libros de ambos Testamentos, entre ellos los veintisiete del Nuevo. Las confesiones reformadas, como la Confesión de Francia de 1559 y la Confesión Belga de 1561, enumeraron también los veintisiete. Así, la Reforma, con todas sus disputas, terminó con católicos y protestantes compartiendo el mismo Nuevo Testamento.
+
+Open Word Bible traduce estos veintisiete libros, en el orden que usan hoy la mayoría de las Biblias. El orden mismo es una tradición, no parte del texto: los manuscritos griegos suelen colocar Hechos y las cartas generales antes de Pablo, y Hebreos aparece a veces entre las cartas de Pablo, antes de las cartas a Timoteo.
+
 ## ¿Cómo decidió la iglesia?
 
 Los primeros escritores cristianos mencionan varios criterios, que los estudiosos suelen resumir en tres preguntas:
@@ -82,12 +95,14 @@ Libros como el *Evangelio de Tomás*, el *Evangelio de Pedro* o el *Evangelio de
 - Atanasio. *Carta Festal* 39 (367 d. C.).
 - Bruce, F. F. *The Canon of Scripture*. Downers Grove, IL: InterVarsity, 1988.
 - Eusebio. *Historia eclesiástica* 3.25; 6.25.
+- Concilio de Trento. *Decreto sobre las Escrituras canónicas*. Sesión cuarta, 8 de abril de 1546.
 - Gallagher, Edmon L., y John D. Meade. *The Biblical Canon Lists from Early Christianity: Texts and Analysis*. Oxford: Oxford University Press, 2017.
 - Hahneman, Geoffrey Mark. *The Muratorian Fragment and the Development of the Canon*. Oxford: Clarendon, 1992.
 - Hill, Charles E. *Who Chose the Gospels? Probing the Great Gospel Conspiracy*. Oxford: Oxford University Press, 2010.
 - Ireneo. *Contra las herejías* 3.11.8.
 - Justino Mártir. *Primera apología* 67.
 - Kruger, Michael J. *Canon Revisited: Establishing the Origins and Authority of the New Testament Books*. Wheaton, IL: Crossway, 2012.
+- Lutero, Martín. *Das Newe Testament Deutzsch*. Wittenberg, 1522. Prefacios en *Luther's Works*, vol. 35, *Word and Sacrament I*. Philadelphia: Muhlenberg, 1960.
 - McDonald, Lee Martin. *The Biblical Canon: Its Origin, Transmission, and Authority*. Peabody, MA: Hendrickson, 2007.
 - Metzger, Bruce M. *The Canon of the New Testament: Its Origin, Development, and Significance*. Oxford: Clarendon, 1987.
 - Las citas bíblicas son de la Reina-Valera 1909 (dominio público), salvo donde el artículo ofrece su propia traducción literal.

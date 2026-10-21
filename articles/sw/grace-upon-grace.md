@@ -5,21 +5,23 @@ date: 2026-10-10
 order: 7
 nav_title: Uamuzi usio na uhakika
 section: passage
-source: 67d13acd619a
+source: 9dac49624271
 ---
 Kila tafsiri huficha maamuzi yake yaliyokuwa magumu. Kamati inapiga kura, usomaji wa wengi unaingia katika maandishi, na msomaji hajui kamwe kwamba kura zilikaribiana. Open Word Bible inayawekea maamuzi kama hayo alama ya *kutokuwa na uhakika*, inaeleza pande zote mbili, na inaonyesha alama hiyo katika msomaji. Hii hapa ni miwili.
 
 ## Yohana 1:16: neema juu ya neema
 
-Mwisho wa Yohana 1:16 ni {{GREEK:JHN.1.16:10-12}}: kwa kufuata maneno, "neema kwa neema". Neno la katikati kwa kawaida linamaanisha "badala ya". Hilo linaunga mkono usomaji mmoja: neema iliyokuja katika Kristo *ilichukua nafasi* ya neema ya awali, neema iliyotolewa kupitia sheria ya Musa, ambayo mstari wa 17 unaitaja baadaye.
+Mstari wa 14 umetoka kusema kwamba Neno "amejaa neema na kweli". Mstari wa 16 unaendeleza ukamilifu huo: kila mmoja amepokea kutoka kwake. Kisha unamalizika na {{GREEK:JHN.1.16:10-12}}: kwa kufuata maneno, "neema kwa neema". King James Version ilibaki na maneno hayo yaliyo wazi kwa tafsiri zote mbili.
 
-Usomaji mwingine ni wa kuongezeka: zawadi moja ya neema ikifuata nyingine, neema juu ya neema. Open Word Bible ilichagua huu, na rekodi inasema kwa nini: mstari wa 17 hauiiti sheria neema. Yohana anaweka sheria na neema kando kwa kando, lakini haielezi sheria kama neema iliyopitwa na wakati.
+Neno la katikati kwa kawaida linamaanisha "badala ya". Hilo linaunga mkono usomaji mmoja: neema iliyokuja katika Kristo *ilichukua nafasi* ya neema ya awali, neema iliyotolewa kupitia sheria ya Musa, ambayo mstari wa 17 unaitaja baadaye. Yohane Krisostomo aliusoma hivyo katika karne ya nne, "mpya mahali pa ile ya zamani", na wafafanuzi wengi wa kisasa wanakubali, miongoni mwao D. A. Carson katika ufafanuzi wake wa Yohana wa mwaka 1991. Filo wa Aleksandria, mwandishi Myahudi wa mwanzoni mwa karne ya kwanza, analitumia neno hilohilo anaposema kwamba Mungu huzizuia zawadi zake za kwanza za neema na kutoa nyingine mahali pake. Kwa usomaji huu, Yohana analinganisha hatua mbili za utoaji wa Mungu: Musa, na kisha Yesu Kristo.
+
+Usomaji mwingine ni wa kuongezeka: zawadi moja ya neema ikifuata nyingine, neema juu ya neema. Open Word Bible ilichagua huu, na rekodi inasema kwa nini: mstari wa 17 hauiiti sheria neema. Yohana anaweka sheria na neema kando kwa kando, bila "lakini" kati yake, na uamuzi mwingine kuhusu mstari wa 17 unaiacha hivyo. Haielezi sheria kama neema iliyopitwa na wakati.
 
 > **Linganifu:** {{OWB:JHN.1.16.s1:B}}
 
 > **Rahisi:** {{OWB:JHN.1.16.s1:R}}
 
-Kwa sababu usomaji wote miwili unaweza kutetewa, uamuzi umewekewa alama ya kutokuwa na uhakika. Na angalia kiwango cha Halisi:
+Kwa sababu usomaji wote miwili unaweza kutetewa, uamuzi umewekewa alama ya kutokuwa na uhakika, na maelezo ya chini yanatoa "neema badala ya neema". Angalia kiwango cha Halisi:
 
 > **Halisi:** {{OWB:JHN.1.16.s1:L}}
 
@@ -27,10 +29,20 @@ Kanuni ya viwango ni kwamba kiwango kinaweza kubaki na utata ulio katika asili, 
 
 ## Yohana 1:5: kushinda, au kuelewa?
 
-Katika Yohana 1:5, kitenzi kinachosema giza halikuifanya nini nuru ni {{GREEK:JHN.1.5:13}}, umbo la {{LEMMA:JHN.1.5:13}}. Kitenzi hicho kinaweza kumaanisha kukamata au kushinda nguvu, au kushika kwa akili, yaani kuelewa. Biblia za zamani za Kiingereza zilisema "comprehended it not" (halikuielewa); nyingi za kisasa zinasema "has not overcome it" (halikuishinda).
+Katika Yohana 1:5, kitenzi kinachosema giza halikuifanya nini nuru ni {{GREEK:JHN.1.5:13}}, umbo la {{LEMMA:JHN.1.5:13}}. Kitenzi hicho kinaweza kumaanisha kukamata au kushinda nguvu, au kushika kwa akili, yaani kuelewa. King James Version ilisema "the darkness comprehended it not" (giza halikuielewa); tafsiri nyingi za kisasa zinasema "has not overcome it" (halikuishinda).
 
-Open Word Bible inasema "kushinda": giza "halikuishinda" katika Halisi, "halijaishinda" katika Linganifu, na katika Rahisi "halijawahi kuizima". Yohana 12:35 linatumia kitenzi hichohicho kwa giza linalompata mtu, jambo linalounga mkono maana hiyo. Lakini huenda Yohana anakusudia maana zote mbili, giza ambalo halikuishinda nuru wala halikuielewa, na rekodi inauwekea uamuzi alama ya kutokuwa na uhakika na kusema hivyo katika maelezo ya chini.
+Open Word Bible inasema "kushinda". Yohana 12:35 linatumia kitenzi hichohicho kwa giza linalompata mtu:
+
+> {{OWB:JHN.12.35.s2:B}}
+
+Lakini huenda Yohana anakusudia maana zote mbili, giza ambalo halikuishinda nuru wala halikuielewa. Rekodi inauwekea uamuzi alama ya kutokuwa na uhakika na kusema hivyo katika maelezo ya chini.
+
+Maamuzi mawili madogo yako kando yake, na hakuna hata moja lisilo na uhakika. Kitenzi cha kwanza, "inang'aa", ni cha wakati uliopo, ingawa mistari inayokizunguka inasimulia habari ya wakati uliopita. Yohana anasema kwamba nuru bado inang'aa, kwa hiyo kila kiwango kinabaki na wakati uliopo. Kitenzi cha pili kinatazama nyuma historia nzima ya giza likipinga nuru. Halisi inasema "halikuishinda", lakini Linganifu inatumia "halijaishinda", kwa sababu matokeo bado yanasimama. Rahisi inabaki na picha ya taa:
+
+> {{OWB:JHN.1.5.s1:R}}
 
 ## Kwa nini kusema hivyo?
 
-Kuweka alama ya kutokuwa na uhakika kunaweza kuonekana kama udhaifu. Tunafikiri ni kinyume chake. Msomaji anayejua kwamba uamuzi ulikuwa mgumu anausoma mstari kwa makini zaidi, analinganisha machaguo, na anayaamini zaidi maamuzi yenye uhakika kwa sababu yale yasiyo na uhakika yamewekewa alama. Ndicho ambacho msomi yeyote makini angekuambia ana kwa ana.
+Kuweka alama ya kutokuwa na uhakika kunaweza kuonekana kama udhaifu. Tunafikiri ni kinyume chake. Msomaji anayejua kwamba uamuzi ulikuwa mgumu anausoma mstari kwa makini zaidi, analinganisha machaguo, na anayaamini zaidi maamuzi yenye uhakika kwa sababu yale yasiyo na uhakika yamewekewa alama. Ndicho ambacho msomi yeyote makini angekuambia ana kwa ana. Katika msomaji, uamuzi usio na uhakika una alama, na maelezo yake ya chini yanaonyesha usomaji ambao hatukuuchagua, ili uweze kuupima wewe mwenyewe.
+
+[Fungua Yohana 1](/jhn/1/) na uguse mstari wa 16 au wa 5 kuona rekodi kamili.
