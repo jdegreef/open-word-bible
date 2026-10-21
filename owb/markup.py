@@ -121,10 +121,12 @@ def _opens_here(text, pos):
     return pos == 0 or text[pos - 1].isspace() or text[pos - 1] in "([\u2014-"
 
 
-def _quotations(text, inside):
-    """quotations() from one starting state; raises ValueError."""
+def _quotations(text, depth):
+    """quotations() from one starting state, depth quotations deep (0, 1,
+    or 2: inside a quotation inside the outer one); raises ValueError."""
     outer = "\u00ab" if re.search("[\u00ab\u00bb]", text) else '"'
-    stack, ranges = ([outer], []) if inside else ([], [])
+    inner = "\u201c" if outer == "\u00ab" else "'"
+    stack, ranges = [outer, inner][:depth], []
     start = 0
     # A setting span holds no quotation marks (quotations() checks), only
     # apostrophes: {{deity_pronoun:m’|M’}}.
@@ -180,7 +182,9 @@ def quotations(text, inside=False):
     closing mark with nothing open to close says so too, at any depth:
     what came before it, quotations included, is inside that quotation.
     The text can end inside a quotation a later sentence closes. Where the
-    marks do not pair from the state inside gives, the other is tried.
+    marks do not pair from the state inside gives, the others are tried:
+    inside text may be two deep (a speaker quoted inside a parable, who
+    quotes in turn: Luke 15:18), and either may turn out not to be.
 
     Raises ValueError where they pair from neither (a mark opens a
     quotation of the kind already innermost), or a quotation mark sits
@@ -188,13 +192,15 @@ def quotations(text, inside=False):
     for s in spans(text):
         if re.search("[\"\u00ab\u00bb\u201c\u201d]", text[s.start:s.end]):
             raise ValueError(f"quotation mark inside the setting span at {s.start}")
-    try:
-        ranges = _quotations(text, inside)
-    except ValueError as first:
+    first = None
+    for depth in ((1, 2, 0) if inside else (0, 1)):
         try:
-            ranges = _quotations(text, not inside)
-        except ValueError:
-            raise first from None
+            ranges = _quotations(text, depth)
+            break
+        except ValueError as e:
+            first = first or e
+    else:
+        raise first
     out = []
     for s, e in ranges:
         while s < e and text[s].isspace():

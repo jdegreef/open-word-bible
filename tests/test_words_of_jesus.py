@@ -40,6 +40,11 @@ class QuotationsTest(unittest.TestCase):
         self.assertEqual(quoted(text, inside=True), [text])
         text = "rescue us from the evil one.' For if you forgive others,\" he said."
         self.assertEqual(quoted(text, inside=True), [text[:text.index('"')]])
+        # Two deep: the son's words inside the father's, inside the parable,
+        # where the son quotes in turn (Luke 15:18).
+        text = 'I will tell him, "Father, I have sinned."'
+        self.assertEqual(quoted(text, inside=True), [text])
+        self.assertEqual(quoted(text), ["Father, I have sinned."])
         self.assertEqual(quoted("Il dit : « Ils ont dit “Va”. »"), ["Ils ont dit “Va”."])
 
     def test_apostrophes_are_not_quotation_marks(self):
