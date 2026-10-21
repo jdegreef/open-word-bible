@@ -23,6 +23,31 @@
           "L": "And Job answered and said:",
           "B": "Then Job answered:",
           "R": "Then Job said:"
+        },
+        "es": {
+          "L": "Y respondió Job y dijo:",
+          "B": "Entonces Job respondió:",
+          "R": "Entonces Job dijo:"
+        },
+        "fr": {
+          "L": "Et Job répondit et dit :",
+          "B": "Alors Job répondit :",
+          "R": "Alors Job a dit :"
+        },
+        "sw": {
+          "L": "Ndipo Ayubu akajibu, akasema:",
+          "B": "Kisha Ayubu akajibu:",
+          "R": "Kisha Ayubu akasema:"
+        },
+        "vi": {
+          "L": "Gióp đáp lời và nói:",
+          "B": "Bấy giờ Gióp đáp:",
+          "R": "Gióp nói:"
+        },
+        "ko": {
+          "L": "그러자 욥이 대답하여 말했다.",
+          "B": "그러자 욥이 대답했다.",
+          "R": "그러자 욥이 말했다."
         }
       },
       "decisions": [
@@ -61,6 +86,28 @@
           "reason": "Hebrew introduces speech with two verbs, \"answered and said\". Literal keeps both; Balanced and Readable say it once, with the same wording at every speech introduction in Job.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o180120010012",
+            "o180120010032"
+          ],
+          "choice": "« répondit et dit » (L), « répondit » (B): passé simple; « a dit » (R): passé composé",
+          "alternatives": [
+            "passé composé at every level"
+          ],
+          "reason": "The speech introductions are narrative: passé simple at Literal and Balanced, passé composé at Readable. Job's speech itself is in the present and passé composé.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -92,6 +139,31 @@
           "L": "Truly you [are] the people, \\q and with you wisdom will die!",
           "B": "No doubt you are the people who matter, \\q and wisdom will die with you!",
           "R": "You think you are the only people who know anything, \\q and that wisdom will die when you die!"
+        },
+        "es": {
+          "L": "¡Ciertamente {{plural_you:ustedes [son]|vosotros [sois]}} el pueblo, \\q y con {{plural_you:ustedes|vosotros}} morirá la sabiduría!",
+          "B": "¡Sin duda {{plural_you:ustedes son|vosotros sois}} la gente que importa, \\q y la sabiduría morirá con {{plural_you:ustedes|vosotros}}!",
+          "R": "{{plural_you:Ustedes creen que son|Vosotros creéis que sois}} los únicos que saben algo, \\q ¡y que la sabiduría morirá cuando {{plural_you:mueran|muráis}}!"
+        },
+        "fr": {
+          "L": "Vraiment, vous [êtes] le peuple, \\q et avec vous mourra la sagesse !",
+          "B": "Sans doute, vous êtes les gens qui comptent, \\q et la sagesse mourra avec vous !",
+          "R": "Vous croyez être les seuls à savoir quelque chose, \\q et que la sagesse mourra quand vous mourrez !"
+        },
+        "sw": {
+          "L": "Hakika ninyi [ndio] watu, \\q na hekima itakufa pamoja nanyi!",
+          "B": "Bila shaka ninyi ndio watu wa maana, \\q na hekima itakufa pamoja nanyi!",
+          "R": "Mnadhani ninyi peke yenu ndio mnaojua kitu, \\q na kwamba hekima itakufa mtakapokufa ninyi!"
+        },
+        "vi": {
+          "L": "Thật, các anh [là] dân [ấy], \\q và sự khôn ngoan sẽ chết cùng các anh!",
+          "B": "Hẳn các anh là những người quan trọng lắm, \\q và sự khôn ngoan sẽ chết theo các anh!",
+          "R": "Các anh tưởng chỉ có các anh là biết mọi điều, \\q và khi các anh chết thì sự khôn ngoan cũng chết theo!"
+        },
+        "ko": {
+          "L": "참으로 그대들이 [바로 그] 백성이니, \\q 지혜도 그대들과 함께 죽겠구려!",
+          "B": "과연 그대들만이 대단한 사람들이니, \\q 지혜도 그대들과 함께 죽겠구려!",
+          "R": "그대들은 그대들만 무엇을 안다고 생각하는구려. \\q 그대들이 죽으면 지혜도 죽는다고 여기는구려!"
         }
       },
       "decisions": [
@@ -169,6 +241,67 @@
           "reason": "Readable says plainly what the sarcasm means, so a reader does not take it as praise (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o180120020031"
+          ],
+          "choice": "{{plural_you:ustedes|vosotros}} for Job's address to the three friends",
+          "alternatives": [],
+          "reason": "The Hebrew \"you\" is plural: Job answers all three. Latin American \"ustedes\" is the default, with Spain's \"vosotros\" (and its verb forms) as the alternative.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o180120020031"
+          ],
+          "choice": "\"các anh\" for the three friends together",
+          "alternatives": [
+            "\"các ông\""
+          ],
+          "reason": "Job speaks to his three friends as equals, so the plural of \"anh\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o180120020031"
+          ],
+          "choice": "\"그대들\" in 하오체, with the ironic \"-구려\"",
+          "alternatives": [
+            "\"너희\""
+          ],
+          "reason": "Job addresses the three friends together in the same 하오체 as each friend uses with him; \"-구려\" carries the sarcasm (m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -208,6 +341,31 @@
           "L": "I also have a heart as well as you; \\q I am not falling below you. \\q And who does not [know things] like these?",
           "B": "But I have a mind as well as you; \\q I am not inferior to you. \\q Who does not know such things?",
           "R": "But I can think as well as you can. \\q I am not less wise than you are. \\q Everyone knows the things you have said!"
+        },
+        "es": {
+          "L": "También yo tengo corazón como {{plural_you:ustedes|vosotros}}; \\q no caigo yo por debajo de {{plural_you:ustedes|vosotros}}. \\q ¿Y quién no [sabe] cosas como estas?",
+          "B": "Pero yo tengo entendimiento igual que {{plural_you:ustedes|vosotros}}; \\q no soy inferior a {{plural_you:ustedes|vosotros}}. \\q ¿Quién no sabe estas cosas?",
+          "R": "Pero yo puedo pensar tan bien como {{plural_you:ustedes|vosotros}}. \\q No soy menos sabio que {{plural_you:ustedes|vosotros}}. \\q ¡Todo el mundo sabe lo que {{plural_you:ustedes han|vosotros habéis}} dicho!"
+        },
+        "fr": {
+          "L": "Moi aussi, j’ai un cœur comme vous ; \\q je ne tombe pas au-dessous de vous. \\q Et qui ne [sait] des choses pareilles ?",
+          "B": "Mais j’ai de l’intelligence aussi bien que vous ; \\q je ne vous suis pas inférieur. \\q Qui ne sait pas de telles choses ?",
+          "R": "Mais je sais réfléchir aussi bien que vous. \\q Je ne suis pas moins sage que vous. \\q Tout le monde sait ce que vous avez dit !"
+        },
+        "sw": {
+          "L": "Mimi pia nina moyo kama ninyi; \\q mimi sianguki chini yenu. \\q Na ni nani [asiyejua] mambo kama haya?",
+          "B": "Lakini mimi nami nina akili kama ninyi; \\q mimi si duni kuliko ninyi. \\q Ni nani asiyejua mambo kama haya?",
+          "R": "Lakini mimi pia naweza kufikiri kama ninyi. \\q Sina hekima pungufu kuliko ninyi. \\q Kila mtu anajua mambo mliyosema!"
+        },
+        "vi": {
+          "L": "Tôi cũng có tấm lòng như các anh; \\q tôi không thua kém các anh. \\q Và ai lại không [biết] những điều như thế?",
+          "B": "Nhưng tôi cũng có trí hiểu như các anh; \\q tôi chẳng thua kém gì các anh. \\q Ai mà không biết những điều ấy?",
+          "R": "Nhưng tôi cũng biết suy nghĩ như các anh. \\q Tôi không kém khôn ngoan hơn các anh. \\q Ai cũng biết những điều các anh đã nói!"
+        },
+        "ko": {
+          "L": "나에게도 그대들처럼 마음이 있으니, \\q 나는 그대들보다 못하지 않소. \\q 이 같은 것을 누가 [모르겠소]?",
+          "B": "나도 그대들만큼 생각할 줄 아오. \\q 나는 그대들보다 못하지 않소. \\q 그런 것을 누가 모르겠소?",
+          "R": "나도 그대들만큼 생각할 수 있소. \\q 나는 그대들보다 덜 지혜롭지 않소. \\q 그대들이 한 말은 누구나 다 아는 것이오!"
         }
       },
       "decisions": [
@@ -317,6 +475,31 @@
           "L": "A laughingstock to his friend I am, \\q one who called to God and {{deity_pronoun:he|He}} answered him; \\q a laughingstock, the righteous [and] blameless [man]!",
           "B": "I have become a laughingstock to my friends, \\q I who called on God and {{deity_pronoun:he|He}} answered me; \\q a righteous and blameless man is laughed at!",
           "R": "My friends laugh at me, \\q even though I prayed to God and {{deity_pronoun:he|He}} answered me. \\q They laugh at a man who is good and blameless."
+        },
+        "es": {
+          "L": "Objeto de burla para su amigo soy yo, \\q uno que clamaba a Dios y {{deity_pronoun:él|Él}} le respondía; \\q ¡objeto de burla, el justo [e] íntegro!",
+          "B": "Me he vuelto el hazmerreír de mis amigos, \\q yo, que clamaba a Dios y {{deity_pronoun:él|Él}} me respondía; \\q ¡se burlan de un hombre justo e íntegro!",
+          "R": "Mis amigos se ríen de mí, \\q aunque yo oraba a Dios y {{deity_pronoun:él|Él}} me respondía. \\q Se ríen de un hombre bueno e íntegro."
+        },
+        "fr": {
+          "L": "Un objet de risée pour son ami, voilà ce que je suis, \\q celui qui appelait Dieu et à qui {{deity_pronoun:il|Il}} répondait ; \\q un objet de risée, le juste [et] intègre !",
+          "B": "Je suis devenu la risée de mes amis, \\q moi qui invoquais Dieu et à qui {{deity_pronoun:il|Il}} répondait ; \\q on se moque d’un homme juste et intègre !",
+          "R": "Mes amis se moquent de moi, \\q alors que je priais Dieu et qu’{{deity_pronoun:il|Il}} me répondait. \\q Ils se moquent d’un homme bon et intègre."
+        },
+        "sw": {
+          "L": "Mimi ni kichekesho kwa rafiki yake, \\q mtu aliyemwita Mungu, {{deity_pronoun:naye|Naye}} akamjibu; \\q kichekesho, mwenye haki [na] mkamilifu!",
+          "B": "Nimekuwa kichekesho kwa rafiki zangu, \\q mimi niliyemwita Mungu, {{deity_pronoun:naye|Naye}} akanijibu; \\q mtu mwenye haki na mkamilifu anachekwa!",
+          "R": "Rafiki zangu wananicheka, \\q ingawa nilimwomba Mungu, {{deity_pronoun:naye|Naye}} akanijibu. \\q Wanamcheka mtu mwema na mkamilifu."
+        },
+        "vi": {
+          "L": "Tôi là trò cười cho bạn mình, \\q kẻ đã kêu cầu Đức Chúa Trời và {{deity_pronoun:ngài|Ngài}} đã đáp lời; \\q một trò cười, người công chính [và] trọn vẹn!",
+          "B": "Tôi đã thành trò cười cho bạn bè, \\q tôi là người đã kêu cầu Đức Chúa Trời và được {{deity_pronoun:ngài|Ngài}} đáp lời; \\q người công chính và trọn vẹn lại bị chê cười!",
+          "R": "Bạn bè cười nhạo tôi, \\q dù tôi đã cầu nguyện với Đức Chúa Trời và {{deity_pronoun:ngài|Ngài}} đã trả lời tôi. \\q Họ cười nhạo một người tốt lành và trọn vẹn."
+        },
+        "ko": {
+          "L": "나는 자기 친구의 웃음거리요, \\q 하나님을 불렀고 그분께서 그에게 응답하셨던 자요. \\q 의롭고 흠 없는 [자가] 웃음거리라니!",
+          "B": "나는 친구들의 웃음거리가 되었소. \\q 하나님을 부르면 그분께서 응답해 주시던 내가 말이오. \\q 의롭고 흠 없는 사람이 웃음거리가 되었소!",
+          "R": "친구들이 나를 비웃소. \\q 내가 하나님께 기도하면 그분께서 응답해 주셨는데도 말이오. \\q 그들은 착하고 흠 없는 사람을 비웃고 있소."
         }
       },
       "decisions": [
@@ -390,6 +573,25 @@
           "reason": "Balanced and Readable use the first person throughout, as English would (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o180120040022",
+            "o180120040023",
+            "o180120040063"
+          ],
+          "choice": "\"자기 친구\" and \"그에게\" kept in the third person at Literal",
+          "alternatives": [],
+          "reason": "Literal keeps Job's switch from \"I\" to the third person (m1); Balanced and Readable use the first person, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -422,6 +624,31 @@
           "L": "For disaster, contempt, in the thinking of [one] at ease; \\q [it is] ready for [those whose] foot slips.",
           "B": "Those at ease look with contempt on disaster; \\q they think it is ready for those whose feet are slipping.",
           "R": "People who have an easy life look down on those in trouble. \\q They think trouble is waiting for anyone who slips."
+        },
+        "es": {
+          "L": "Para la desgracia, desprecio, en el pensar del [que está] tranquilo; \\q [está] preparada para [aquellos cuyo] pie resbala.",
+          "B": "Los que viven tranquilos miran con desprecio la desgracia; \\q piensan que está lista para aquellos cuyos pies resbalan.",
+          "R": "La gente que vive cómodamente desprecia a los que tienen problemas. \\q Piensan que la desgracia espera a cualquiera que resbala."
+        },
+        "fr": {
+          "L": "Pour le malheur, le mépris, dans la pensée de [l’homme] tranquille ; \\q [il est] prêt pour [ceux dont] le pied chancelle.",
+          "B": "Ceux qui sont à l’aise méprisent le malheur ; \\q ils pensent qu’il attend ceux dont le pied glisse.",
+          "R": "Les gens qui ont la vie facile regardent de haut ceux qui sont dans le malheur. \\q Ils pensent que le malheur attend quiconque fait un faux pas."
+        },
+        "sw": {
+          "L": "Kwa msiba, dharau, katika mawazo ya [aliye] na raha; \\q [msiba] uko tayari kwa [wale ambao] mguu wao unateleza.",
+          "B": "Wale walio na raha huudharau msiba; \\q wanadhani uko tayari kwa wale ambao miguu yao inateleza.",
+          "R": "Watu wenye maisha rahisi huwadharau walio katika taabu. \\q Wanadhani taabu inamngoja yeyote anayeteleza."
+        },
+        "vi": {
+          "L": "Đối với tai họa, [là] sự khinh bỉ, trong ý nghĩ của [người] an nhàn; \\q [nó] sẵn sàng cho [những kẻ có] chân trượt ngã.",
+          "B": "Người sống an nhàn khinh thường tai họa; \\q họ nghĩ tai họa đã chờ sẵn những kẻ chân đang trượt.",
+          "R": "Người sống sung sướng coi thường những ai gặp hoạn nạn. \\q Họ nghĩ tai họa đang chờ bất cứ ai trượt chân."
+        },
+        "ko": {
+          "L": "재앙에는 멸시가, 편안한 [자의] 생각에 있으니, \\q 발이 미끄러지는 [자들에게] [재앙이] 준비되어 있다는 것이오.",
+          "B": "편안한 사람들은 재앙을 업신여기고, \\q 발이 미끄러지는 자들에게 재앙이 준비되어 있다고 생각하오.",
+          "R": "편하게 사는 사람들은 고생하는 사람들을 깔보오. \\q 그들은 누구든 미끄러지면 재앙을 당하게 되어 있다고 생각하오."
         }
       },
       "decisions": [
@@ -516,6 +743,31 @@
           "L": "The tents of destroyers are at peace, \\q and [there is] security for those who provoke God, \\q for [the one] who brings [his] god in his hand.",
           "B": "The tents of robbers are at peace, \\q and those who provoke God are secure, \\q those who carry their god in their hands.",
           "R": "Robbers live in peace in their homes. \\q People who make God angry are safe. \\q Their own strength is their god."
+        },
+        "es": {
+          "L": "Las tiendas de los saqueadores están en paz, \\q y [hay] seguridad para los que provocan a Dios, \\q para [el] que lleva [su] dios en su mano.",
+          "B": "Las tiendas de los ladrones están en paz, \\q y los que provocan a Dios están seguros, \\q los que llevan a su dios en la mano.",
+          "R": "Los ladrones viven en paz en sus casas. \\q Los que hacen enojar a Dios están a salvo. \\q Su propia fuerza es su dios."
+        },
+        "fr": {
+          "L": "Les tentes des dévastateurs sont en paix, \\q et [il y a] la sécurité pour ceux qui provoquent Dieu, \\q pour [celui] qui porte [son] dieu dans sa main.",
+          "B": "Les tentes des brigands sont en paix, \\q et ceux qui provoquent Dieu sont en sécurité, \\q ceux qui portent leur dieu dans leurs mains.",
+          "R": "Les brigands vivent en paix chez eux. \\q Ceux qui mettent Dieu en colère sont en sécurité. \\q Leur propre force est leur dieu."
+        },
+        "sw": {
+          "L": "Hema za waharibifu zina amani, \\q na [kuna] usalama kwa wale wanaomkasirisha Mungu, \\q kwa [yule] aletaye mungu [wake] mkononi mwake.",
+          "B": "Hema za wanyang'anyi zina amani, \\q na wale wanaomkasirisha Mungu wako salama, \\q wale wanaombeba mungu wao mikononi mwao.",
+          "R": "Wanyang'anyi wanaishi kwa amani nyumbani mwao. \\q Watu wanaomkasirisha Mungu wako salama. \\q Nguvu zao wenyewe ndizo mungu wao."
+        },
+        "vi": {
+          "L": "Lều của những kẻ cướp phá được bình yên, \\q và [có] sự an ổn cho những kẻ chọc giận Đức Chúa Trời, \\q cho [kẻ] mang thần [của mình] trong tay.",
+          "B": "Lều trại của bọn cướp được bình an, \\q những kẻ chọc giận Đức Chúa Trời được yên ổn, \\q những kẻ mang thần của mình trong tay.",
+          "R": "Bọn cướp sống bình yên trong nhà mình. \\q Những kẻ làm Đức Chúa Trời nổi giận vẫn được an toàn. \\q Sức mạnh của chính chúng là thần của chúng."
+        },
+        "ko": {
+          "L": "약탈하는 자들의 장막은 평안하고, \\q 하나님을 노엽게 하는 자들에게는 안전이 [있으니], \\q 자기 신을 손에 들고 다니는 [자에게 그러하오].",
+          "B": "강도들의 장막은 평안하고, \\q 하나님을 노엽게 하는 자들은 안전하오. \\q 그들은 자기 신을 손에 들고 다니는 자들이오.",
+          "R": "강도들은 자기 집에서 편안히 사오. \\q 하나님을 화나게 하는 사람들이 안전하게 지내오. \\q 그들에게는 자기 힘이 곧 신이오."
         }
       },
       "decisions": [
@@ -628,6 +880,31 @@
           "L": "But ask now the beasts, and they will teach you, \\q and the birds of the heavens, and they will tell you;",
           "B": "But ask the animals, and they will teach you; \\q ask the birds of the sky, and they will tell you.",
           "R": "Go and ask the animals; they will teach you. \\q Ask the birds, and they will tell you."
+        },
+        "es": {
+          "L": "Pero pregunta ahora a las bestias, y te enseñarán, \\q y a las aves de los cielos, y te contarán;",
+          "B": "Pero pregunta a los animales, y te enseñarán; \\q pregunta a las aves del cielo, y te lo dirán.",
+          "R": "Ve y pregunta a los animales; ellos te enseñarán. \\q Pregunta a las aves, y te lo dirán."
+        },
+        "fr": {
+          "L": "Mais interroge donc les bêtes, et elles t’instruiront, \\q et les oiseaux des cieux, et ils te le diront ;",
+          "B": "Mais interroge les animaux, et ils t’instruiront ; \\q interroge les oiseaux du ciel, et ils te le diront.",
+          "R": "Va interroger les animaux : ils t’apprendront. \\q Interroge les oiseaux, et ils te le diront."
+        },
+        "sw": {
+          "L": "Lakini sasa uwaulize wanyama, nao watakufundisha, \\q na ndege wa angani, nao watakuambia;",
+          "B": "Lakini waulize wanyama, nao watakufundisha; \\q waulize ndege wa angani, nao watakuambia.",
+          "R": "Nenda ukawaulize wanyama; watakufundisha. \\q Waulize ndege, nao watakuambia."
+        },
+        "vi": {
+          "L": "Nhưng hãy hỏi loài thú, chúng sẽ dạy anh, \\q và chim trời, chúng sẽ nói cho anh;",
+          "B": "Nhưng anh hãy hỏi loài thú, chúng sẽ dạy anh; \\q hãy hỏi chim trời, chúng sẽ cho anh biết.",
+          "R": "Anh hãy đi hỏi các loài thú; chúng sẽ dạy anh. \\q Hãy hỏi các loài chim, chúng sẽ nói cho anh biết."
+        },
+        "ko": {
+          "L": "그러나 이제 짐승들에게 물으시오, 그러면 그대를 가르칠 것이오. \\q 하늘의 새들에게도, 그러면 그대에게 알려 줄 것이오.",
+          "B": "그러나 짐승들에게 물어보시오. 그것들이 그대를 가르칠 것이오. \\q 하늘의 새들에게 물어보시오. 그것들이 그대에게 일러 줄 것이오.",
+          "R": "가서 짐승들에게 물어보시오. 그대를 가르쳐 줄 것이오. \\q 새들에게 물어보시오. 그대에게 말해 줄 것이오."
         }
       },
       "decisions": [
@@ -698,6 +975,31 @@
           "L": "Or speak to the earth, and it will teach you, \\q and the fish of the sea will recount [it] to you.",
           "B": "Or speak to the earth, and it will teach you, \\q and the fish of the sea will declare it to you.",
           "R": "Or talk to the earth, and it will teach you. \\q Even the fish in the sea will tell you."
+        },
+        "es": {
+          "L": "O habla a la tierra, y te enseñará, \\q y los peces del mar te [lo] contarán.",
+          "B": "O habla con la tierra, y te enseñará, \\q y los peces del mar te lo declararán.",
+          "R": "O habla con la tierra, y te enseñará. \\q Hasta los peces del mar te lo dirán."
+        },
+        "fr": {
+          "L": "Ou parle à la terre, et elle t’instruira, \\q et les poissons de la mer te [le] raconteront.",
+          "B": "Ou parle à la terre, et elle t’instruira, \\q et les poissons de la mer te l’annonceront.",
+          "R": "Ou parle à la terre, et elle t’apprendra. \\q Même les poissons de la mer te le diront."
+        },
+        "sw": {
+          "L": "Au useme na nchi, nayo itakufundisha, \\q na samaki wa baharini watakusimulia.",
+          "B": "Au zungumza na dunia, nayo itakufundisha, \\q na samaki wa baharini watakutangazia.",
+          "R": "Au zungumza na ardhi, nayo itakufundisha. \\q Hata samaki wa baharini watakuambia."
+        },
+        "vi": {
+          "L": "Hay hãy nói với đất, nó sẽ dạy anh, \\q và cá dưới biển sẽ thuật lại [cho] anh.",
+          "B": "Hoặc hãy nói với đất, đất sẽ dạy anh, \\q và cá dưới biển sẽ kể cho anh biết.",
+          "R": "Hoặc hãy nói chuyện với đất, đất sẽ dạy anh. \\q Ngay cả cá dưới biển cũng sẽ nói cho anh biết."
+        },
+        "ko": {
+          "L": "땅에게 말하시오, 그러면 그대를 가르칠 것이오. \\q 바다의 물고기들이 그대에게 [그것을] 이야기할 것이오.",
+          "B": "땅에게 말해 보시오. 땅이 그대를 가르칠 것이오. \\q 바다의 물고기들도 그대에게 알려 줄 것이오.",
+          "R": "땅에게 이야기해 보시오. 땅이 그대를 가르칠 것이오. \\q 바다의 물고기들까지도 그대에게 말해 줄 것이오."
         }
       },
       "decisions": [
@@ -763,6 +1065,31 @@
           "L": "Who among all these does not know \\q that the hand of {{divine_name:the LORD|Yahweh}} has done this?",
           "B": "Which of all these does not know \\q that the hand of {{divine_name:the LORD|Yahweh}} has done this?",
           "R": "Every one of these creatures knows \\q that {{divine_name:the LORD|Yahweh}} {{deity_pronoun:himself|Himself}} has done this."
+        },
+        "es": {
+          "L": "¿Quién entre todos estos no sabe \\q que la mano {{divine_name:del SEÑOR|de Yahvé}} ha hecho esto?",
+          "B": "¿Cuál de todos estos no sabe \\q que la mano {{divine_name:del SEÑOR|de Yahvé}} ha hecho esto?",
+          "R": "Cada una de estas criaturas sabe \\q que {{divine_name:el SEÑOR|Yahvé}} mismo ha hecho esto."
+        },
+        "fr": {
+          "L": "Qui, parmi tous ceux-là, ne sait pas \\q que la main {{divine_name:du SEIGNEUR|de Yahvé}} a fait cela ?",
+          "B": "Lequel de tous ceux-là ne sait pas \\q que la main {{divine_name:du SEIGNEUR|de Yahvé}} a fait cela ?",
+          "R": "Chacune de ces créatures sait \\q que {{divine_name:le SEIGNEUR|Yahvé}} {{deity_pronoun:lui|Lui}}-même a fait cela."
+        },
+        "sw": {
+          "L": "Ni nani kati ya hawa wote asiyejua \\q kwamba mkono wa {{divine_name:BWANA|Yahwe}} umefanya hili?",
+          "B": "Ni yupi kati ya hawa wote asiyejua \\q kwamba mkono wa {{divine_name:BWANA|Yahwe}} umefanya jambo hili?",
+          "R": "Kila mmoja wa viumbe hawa anajua \\q kwamba {{divine_name:BWANA|Yahwe}} mwenyewe amefanya hili."
+        },
+        "vi": {
+          "L": "Trong tất cả những loài ấy, ai không biết \\q rằng tay {{divine_name:CHÚA|Gia-vê}} đã làm điều này?",
+          "B": "Trong mọi loài ấy, loài nào không biết \\q rằng tay {{divine_name:CHÚA|Gia-vê}} đã làm nên điều này?",
+          "R": "Mọi loài vật ấy đều biết \\q rằng chính {{divine_name:CHÚA|Gia-vê}} đã làm điều này."
+        },
+        "ko": {
+          "L": "이 모든 것 가운데 누가 모르겠소, \\q {{divine_name:주|야훼}}의 손이 이 일을 하셨음을?",
+          "B": "이 모든 것 가운데 \\q {{divine_name:주|야훼}}의 손이 이 일을 하셨음을 모르는 것이 무엇이겠소?",
+          "R": "이 피조물들은 모두 \\q {{divine_name:주|야훼}}께서 친히 이 일을 하셨음을 알고 있소."
         }
       },
       "decisions": [
@@ -865,6 +1192,31 @@
           "L": "In whose hand [is the] life of every living thing, \\q and the breath of all human flesh.",
           "B": "In {{deity_pronoun:his|His}} hand is the life of every living creature \\q and the breath of every human being.",
           "R": "God holds the life of every creature in {{deity_pronoun:his|His}} hand, \\q and the breath of every person."
+        },
+        "es": {
+          "L": "En cuya mano [está la] vida de todo ser viviente, \\q y el aliento de toda carne humana.",
+          "B": "En {{deity_pronoun:su|Su}} mano está la vida de todo ser viviente \\q y el aliento de todo ser humano.",
+          "R": "Dios tiene en {{deity_pronoun:su|Su}} mano la vida de toda criatura \\q y el aliento de cada persona."
+        },
+        "fr": {
+          "L": "Dans la main de qui [est] la vie de tout être vivant, \\q et le souffle de toute chair humaine.",
+          "B": "Dans {{deity_pronoun:sa|Sa}} main est la vie de toute créature vivante \\q et le souffle de tout être humain.",
+          "R": "Dieu tient dans {{deity_pronoun:sa|Sa}} main la vie de toute créature \\q et le souffle de chaque personne."
+        },
+        "sw": {
+          "L": "Ambaye mkononi mwake [mna] uhai wa kila kilicho hai, \\q na pumzi ya kila mwili wa mwanadamu.",
+          "B": "Mkononi {{deity_pronoun:mwake|Mwake}} mna uhai wa kila kiumbe hai \\q na pumzi ya kila mwanadamu.",
+          "R": "Mungu anashika mkononi {{deity_pronoun:mwake|Mwake}} uhai wa kila kiumbe \\q na pumzi ya kila mtu."
+        },
+        "vi": {
+          "L": "Trong tay [Đấng ấy có] sự sống của mọi loài sống, \\q và hơi thở của mọi xác thịt loài người.",
+          "B": "Trong tay {{deity_pronoun:ngài|Ngài}} có sự sống của mọi sinh vật \\q và hơi thở của mọi con người.",
+          "R": "Đức Chúa Trời nắm trong tay {{deity_pronoun:ngài|Ngài}} sự sống của mọi tạo vật \\q và hơi thở của mỗi con người."
+        },
+        "ko": {
+          "L": "그분의 손에 모든 생물의 생명과 \\q 모든 인간 육체의 숨이 [있소].",
+          "B": "그분의 손에 모든 살아 있는 것의 생명과 \\q 모든 사람의 숨이 있소.",
+          "R": "하나님께서 모든 생물의 생명을 손에 쥐고 계시오. \\q 모든 사람의 숨도 그러하오."
         }
       },
       "decisions": [
@@ -971,6 +1323,31 @@
           "L": "Does not the ear test words, \\q as the palate tastes food for itself?",
           "B": "Does not the ear test words \\q as the tongue tastes food?",
           "R": "The ear tests what it hears, \\q just as the tongue tastes food."
+        },
+        "es": {
+          "L": "¿No prueba el oído las palabras, \\q como el paladar saborea para sí la comida?",
+          "B": "¿No examina el oído las palabras \\q como la lengua prueba la comida?",
+          "R": "El oído pone a prueba lo que oye, \\q así como la lengua prueba la comida."
+        },
+        "fr": {
+          "L": "L’oreille n’éprouve-t-elle pas les paroles, \\q comme le palais goûte pour lui-même la nourriture ?",
+          "B": "L’oreille n’éprouve-t-elle pas les paroles \\q comme la langue goûte les aliments ?",
+          "R": "L’oreille juge ce qu’elle entend, \\q comme la langue goûte la nourriture."
+        },
+        "sw": {
+          "L": "Je, sikio halipimi maneno, \\q kama kaakaa linavyoonja chakula lenyewe?",
+          "B": "Je, sikio halipimi maneno \\q kama ulimi uonjavyo chakula?",
+          "R": "Sikio hupima linalosikia, \\q kama vile ulimi unavyoonja chakula."
+        },
+        "vi": {
+          "L": "Chẳng phải tai thử lời nói, \\q như vòm miệng nếm thức ăn cho mình sao?",
+          "B": "Chẳng phải tai thử lời nói \\q như lưỡi nếm thức ăn sao?",
+          "R": "Tai thử những gì nó nghe, \\q cũng như lưỡi nếm thức ăn."
+        },
+        "ko": {
+          "L": "귀가 말을 시험하지 않소? \\q 입천장이 스스로 음식을 맛보는 것처럼.",
+          "B": "귀는 말을 가려내지 않소? \\q 혀가 음식을 맛보듯이 말이오.",
+          "R": "귀는 듣는 말을 시험해 보오. \\q 혀가 음식을 맛보는 것과 같소."
         }
       },
       "decisions": [
@@ -1052,6 +1429,31 @@
           "L": "With the aged [is] wisdom, \\q and length of days [is] understanding.",
           "B": "Wisdom is with the aged, \\q and long life brings understanding.",
           "R": "Old people are wise, \\q and those who have lived long understand much."
+        },
+        "es": {
+          "L": "Con los ancianos [está] la sabiduría, \\q y la largura de días [es] entendimiento.",
+          "B": "La sabiduría está con los ancianos, \\q y la larga vida trae entendimiento.",
+          "R": "Los ancianos son sabios, \\q y los que han vivido mucho entienden mucho."
+        },
+        "fr": {
+          "L": "Chez les vieillards [est] la sagesse, \\q et la longueur des jours [est] l’intelligence.",
+          "B": "La sagesse est chez les vieillards, \\q et une longue vie donne l’intelligence.",
+          "R": "Les personnes âgées sont sages, \\q et ceux qui ont longtemps vécu comprennent beaucoup."
+        },
+        "sw": {
+          "L": "Kwa wazee [ipo] hekima, \\q na urefu wa siku [ni] ufahamu.",
+          "B": "Hekima iko kwa wazee, \\q na maisha marefu huleta ufahamu.",
+          "R": "Wazee wana hekima, \\q na walioishi muda mrefu wanaelewa mengi."
+        },
+        "vi": {
+          "L": "Nơi người già cả [có] sự khôn ngoan, \\q và tuổi thọ dài [là] sự hiểu biết.",
+          "B": "Sự khôn ngoan ở nơi người cao tuổi, \\q và sống lâu thì được hiểu biết.",
+          "R": "Người già thì khôn ngoan, \\q và ai sống lâu thì hiểu biết nhiều."
+        },
+        "ko": {
+          "L": "노인들에게 지혜가 [있고], \\q 긴 날이 곧 명철이오.",
+          "B": "지혜는 노인들에게 있고, \\q 오래 살면 명철이 생기오.",
+          "R": "나이 많은 사람들은 지혜롭고, \\q 오래 산 사람들은 많이 깨닫소."
         }
       },
       "decisions": [
@@ -1118,6 +1520,31 @@
           "L": "With {{deity_pronoun:him|Him}} [are] wisdom and might; \\q to {{deity_pronoun:him|Him}} [belong] counsel and understanding.",
           "B": "With God are wisdom and might; \\q counsel and understanding are {{deity_pronoun:his|His}}.",
           "R": "God is the one who has real wisdom and power. \\q He knows what to do and understands everything."
+        },
+        "es": {
+          "L": "Con {{deity_pronoun:él|Él}} [están] la sabiduría y el poder; \\q a {{deity_pronoun:él|Él}} [pertenecen] el consejo y el entendimiento.",
+          "B": "Con Dios están la sabiduría y el poder; \\q a {{deity_pronoun:él|Él}} pertenecen el consejo y el entendimiento.",
+          "R": "Dios es quien tiene la verdadera sabiduría y el poder. \\q Él sabe qué hacer y lo entiende todo."
+        },
+        "fr": {
+          "L": "Avec {{deity_pronoun:lui|Lui}} [sont] la sagesse et la puissance ; \\q à {{deity_pronoun:lui|Lui}} [appartiennent] le conseil et l’intelligence.",
+          "B": "Avec Dieu sont la sagesse et la puissance ; \\q le conseil et l’intelligence sont à {{deity_pronoun:lui|Lui}}.",
+          "R": "C’est Dieu qui a la vraie sagesse et la puissance. \\q Il sait quoi faire et comprend tout."
+        },
+        "sw": {
+          "L": "Kwake [kuna] hekima na uweza; \\q shauri na ufahamu ni {{deity_pronoun:vyake|Vyake}}.",
+          "B": "Kwa Mungu kuna hekima na uweza; \\q shauri na ufahamu ni {{deity_pronoun:vyake|Vyake}}.",
+          "R": "Mungu ndiye mwenye hekima ya kweli na nguvu. \\q Anajua la kufanya na anaelewa kila kitu."
+        },
+        "vi": {
+          "L": "Nơi {{deity_pronoun:ngài|Ngài}} [có] sự khôn ngoan và quyền năng; \\q mưu lược và sự hiểu biết [thuộc về] {{deity_pronoun:ngài|Ngài}}.",
+          "B": "Nơi Đức Chúa Trời có sự khôn ngoan và quyền năng; \\q mưu lược và sự hiểu biết đều thuộc về {{deity_pronoun:ngài|Ngài}}.",
+          "R": "Chính Đức Chúa Trời mới có sự khôn ngoan thật và quyền năng. \\q Ngài biết phải làm gì và hiểu thấu mọi điều."
+        },
+        "ko": {
+          "L": "그분께 지혜와 능력이 [있고], \\q 모략과 명철이 그분께 [속하였소].",
+          "B": "하나님께 지혜와 능력이 있고, \\q 모략과 명철도 그분의 것이오.",
+          "R": "참된 지혜와 힘을 가지신 분은 하나님이시오. \\q 그분은 무엇을 해야 할지 아시고 모든 것을 깨달으시오."
         }
       },
       "decisions": [
@@ -1219,6 +1646,31 @@
           "L": "Look, {{deity_pronoun:he|He}} tears down, and it will not be rebuilt; \\q {{deity_pronoun:he|He}} shuts [a door] on {{gender:a person|a man}}, and it will not be opened.",
           "B": "When {{deity_pronoun:he|He}} tears down, it cannot be rebuilt; \\q when {{deity_pronoun:he|He}} shuts someone in, no one can open it.",
           "R": "When God tears something down, no one can build it again. \\q When {{deity_pronoun:he|He}} locks someone up, no one can set them free."
+        },
+        "es": {
+          "L": "Mira, {{deity_pronoun:él|Él}} derriba, y no será reedificado; \\q {{deity_pronoun:él|Él}} cierra [la puerta] sobre {{gender:una persona|un hombre}}, y no será abierta.",
+          "B": "Cuando {{deity_pronoun:él|Él}} derriba, no se puede reconstruir; \\q cuando {{deity_pronoun:él|Él}} encierra a alguien, nadie puede abrir.",
+          "R": "Cuando Dios derriba algo, nadie lo puede volver a construir. \\q Cuando {{deity_pronoun:él|Él}} encierra a alguien, nadie lo puede liberar."
+        },
+        "fr": {
+          "L": "Voici, {{deity_pronoun:il|Il}} démolit, et ce ne sera pas rebâti ; \\q {{deity_pronoun:il|Il}} ferme [la porte] sur {{gender:une personne|un homme}}, et on n’ouvrira pas.",
+          "B": "Quand {{deity_pronoun:il|Il}} démolit, on ne peut rebâtir ; \\q quand {{deity_pronoun:il|Il}} enferme quelqu’un, nul ne peut ouvrir.",
+          "R": "Quand Dieu démolit quelque chose, personne ne peut le reconstruire. \\q Quand {{deity_pronoun:il|Il}} enferme quelqu’un, personne ne peut le libérer."
+        },
+        "sw": {
+          "L": "Tazama, {{deity_pronoun:yeye|Yeye}} hubomoa, nacho hakitajengwa tena; \\q humfungia mtu [mlango], nao hautafunguliwa.",
+          "B": "Anapobomoa, haiwezekani kujenga tena; \\q anapomfungia mtu ndani, hakuna awezaye kufungua.",
+          "R": "Mungu anapobomoa kitu, hakuna awezaye kukijenga tena. \\q Anapomfunga mtu, hakuna awezaye kumwachilia."
+        },
+        "vi": {
+          "L": "Kìa, {{deity_pronoun:ngài|Ngài}} phá đổ, và nó sẽ không được xây lại; \\q {{deity_pronoun:ngài|Ngài}} đóng [cửa] nhốt một người, và sẽ không được mở ra.",
+          "B": "Khi {{deity_pronoun:ngài|Ngài}} phá đổ, không ai xây lại được; \\q khi {{deity_pronoun:ngài|Ngài}} nhốt ai, không ai mở ra được.",
+          "R": "Khi Đức Chúa Trời phá đổ điều gì, không ai có thể xây lại. \\q Khi {{deity_pronoun:ngài|Ngài}} giam ai, không ai có thể thả người ấy ra."
+        },
+        "ko": {
+          "L": "보시오, 그분께서 허무시면 다시 세워지지 못하고, \\q 사람을 가두시면 [문이] 열리지 못하오.",
+          "B": "그분께서 허무시면 다시 세울 수 없고, \\q 그분께서 사람을 가두시면 아무도 열어 줄 수 없소.",
+          "R": "하나님께서 무엇을 허무시면 아무도 다시 지을 수 없소. \\q 그분께서 누구를 가두시면 아무도 풀어 줄 수 없소."
         }
       },
       "decisions": [
@@ -1306,6 +1758,31 @@
           "L": "Look, {{deity_pronoun:he|He}} holds back the waters, and they dry up; \\q {{deity_pronoun:he|He}} sends them out, and they overturn the earth.",
           "B": "When {{deity_pronoun:he|He}} holds back the waters, they dry up; \\q when {{deity_pronoun:he|He}} lets them loose, they overwhelm the land.",
           "R": "When God holds back the rain, everything dries up. \\q When {{deity_pronoun:he|He}} sends a flood, it destroys the land."
+        },
+        "es": {
+          "L": "Mira, {{deity_pronoun:él|Él}} retiene las aguas, y se secan; \\q {{deity_pronoun:él|Él}} las suelta, y trastornan la tierra.",
+          "B": "Cuando {{deity_pronoun:él|Él}} retiene las aguas, se secan; \\q cuando {{deity_pronoun:él|Él}} las suelta, inundan la tierra.",
+          "R": "Cuando Dios detiene la lluvia, todo se seca. \\q Cuando {{deity_pronoun:él|Él}} manda una inundación, destruye la tierra."
+        },
+        "fr": {
+          "L": "Voici, {{deity_pronoun:il|Il}} retient les eaux, et elles tarissent ; \\q {{deity_pronoun:il|Il}} les lâche, et elles bouleversent la terre.",
+          "B": "Quand {{deity_pronoun:il|Il}} retient les eaux, elles tarissent ; \\q quand {{deity_pronoun:il|Il}} les laisse aller, elles submergent le pays.",
+          "R": "Quand Dieu retient la pluie, tout se dessèche. \\q Quand {{deity_pronoun:il|Il}} envoie une inondation, elle détruit le pays."
+        },
+        "sw": {
+          "L": "Tazama, {{deity_pronoun:yeye|Yeye}} huyazuia maji, nayo hukauka; \\q huyaachilia, nayo huipindua nchi.",
+          "B": "Anapoyazuia maji, hukauka; \\q anapoyaachilia, huifunika nchi.",
+          "R": "Mungu anapozuia mvua, kila kitu hukauka. \\q Anapoleta mafuriko, huiharibu nchi."
+        },
+        "vi": {
+          "L": "Kìa, {{deity_pronoun:ngài|Ngài}} giữ nước lại, và nước khô cạn; \\q {{deity_pronoun:ngài|Ngài}} thả nước ra, và nước đảo lộn đất.",
+          "B": "Khi {{deity_pronoun:ngài|Ngài}} ngăn nước lại, nước khô cạn; \\q khi {{deity_pronoun:ngài|Ngài}} thả nước ra, nước tràn ngập đất đai.",
+          "R": "Khi Đức Chúa Trời giữ mưa lại, mọi thứ khô héo. \\q Khi {{deity_pronoun:ngài|Ngài}} cho lũ lụt đến, lũ tàn phá đất đai."
+        },
+        "ko": {
+          "L": "보시오, 그분께서 물을 막으시면 물이 마르고, \\q 물을 내보내시면 물이 땅을 뒤엎소.",
+          "B": "그분께서 물을 막으시면 물이 마르고, \\q 물을 풀어 놓으시면 물이 땅을 휩쓸어 버리오.",
+          "R": "하나님께서 비를 막으시면 모든 것이 말라 버리오. \\q 그분께서 홍수를 보내시면 홍수가 땅을 망쳐 놓소."
         }
       },
       "decisions": [
@@ -1391,6 +1868,31 @@
           "L": "With {{deity_pronoun:him|Him}} [are] strength and sound wisdom; \\q to {{deity_pronoun:him|Him}} [belong the one] who strays and [the one] who leads astray.",
           "B": "With {{deity_pronoun:him|Him}} are strength and true wisdom; \\q the misled and the misleader are both {{deity_pronoun:his|His}}.",
           "R": "God is strong and wise in all {{deity_pronoun:he|He}} does. \\q He rules over people who are fooled and people who fool them."
+        },
+        "es": {
+          "L": "Con {{deity_pronoun:él|Él}} [están] la fuerza y la sabiduría eficaz; \\q a {{deity_pronoun:él|Él}} [pertenecen el] que se extravía y [el] que hace extraviar.",
+          "B": "Con {{deity_pronoun:él|Él}} están la fuerza y la verdadera sabiduría; \\q el engañado y el que engaña le pertenecen a {{deity_pronoun:él|Él}}.",
+          "R": "Dios es fuerte y sabio en todo lo que hace. \\q Él gobierna sobre los que son engañados y los que los engañan."
+        },
+        "fr": {
+          "L": "Avec {{deity_pronoun:lui|Lui}} [sont] la force et la sagesse efficace ; \\q à {{deity_pronoun:lui|Lui}} [appartiennent celui] qui s’égare et [celui] qui égare.",
+          "B": "Avec {{deity_pronoun:lui|Lui}} sont la force et la vraie sagesse ; \\q l’égaré et celui qui égare sont tous deux à {{deity_pronoun:lui|Lui}}.",
+          "R": "Dieu est fort et sage en tout ce qu’{{deity_pronoun:il|Il}} fait. \\q Il règne sur ceux qui se laissent tromper et sur ceux qui les trompent."
+        },
+        "sw": {
+          "L": "Kwake [kuna] nguvu na hekima thabiti; \\q mpotevu na mpotoshaji [ni] {{deity_pronoun:wake|Wake}}.",
+          "B": "Kwake kuna nguvu na hekima ya kweli; \\q aliyedanganywa na mdanganyaji wote ni {{deity_pronoun:wake|Wake}}.",
+          "R": "Mungu ana nguvu na hekima katika yote anayofanya. \\q Anawatawala wanaodanganywa na wanaowadanganya."
+        },
+        "vi": {
+          "L": "Nơi {{deity_pronoun:ngài|Ngài}} [có] sức mạnh và sự khôn ngoan hiệu nghiệm; \\q kẻ lầm lạc và kẻ làm cho lầm lạc [đều thuộc về] {{deity_pronoun:ngài|Ngài}}.",
+          "B": "Nơi {{deity_pronoun:ngài|Ngài}} có sức mạnh và sự khôn ngoan thật; \\q kẻ bị lừa lẫn kẻ lừa gạt đều thuộc về {{deity_pronoun:ngài|Ngài}}.",
+          "R": "Đức Chúa Trời mạnh mẽ và khôn ngoan trong mọi việc {{deity_pronoun:ngài|Ngài}} làm. \\q Ngài cai trị cả những người bị lừa lẫn những kẻ lừa họ."
+        },
+        "ko": {
+          "L": "그분께 힘과 참 지혜가 [있고], \\q 빗나가는 자와 빗나가게 하는 자가 그분께 [속하였소].",
+          "B": "그분께 힘과 참된 지혜가 있으니, \\q 속는 자도 속이는 자도 다 그분께 속해 있소.",
+          "R": "하나님께서는 하시는 모든 일에 강하시고 지혜로우시오. \\q 속는 사람도 속이는 사람도 그분께서 다스리시오."
         }
       },
       "decisions": [
@@ -1472,6 +1974,31 @@
           "L": "[{{deity_pronoun:he|He}}] leads counselors away stripped, \\q and makes fools of judges.",
           "B": "He leads counselors away stripped \\q and makes fools of judges.",
           "R": "He leads wise advisers away as prisoners \\q and makes judges look foolish."
+        },
+        "es": {
+          "L": "[{{deity_pronoun:él|Él}}] se lleva despojados a los consejeros, \\q y entontece a los jueces.",
+          "B": "Él se lleva despojados a los consejeros \\q y hace necios a los jueces.",
+          "R": "Él se lleva a los sabios consejeros como prisioneros \\q y hace quedar como tontos a los jueces."
+        },
+        "fr": {
+          "L": "[{{deity_pronoun:il|Il}}] emmène les conseillers dépouillés, \\q et rend fous les juges.",
+          "B": "Il emmène les conseillers dépouillés \\q et rend les juges insensés.",
+          "R": "Il emmène les sages conseillers comme des prisonniers \\q et fait passer les juges pour des fous."
+        },
+        "sw": {
+          "L": "[{{deity_pronoun:yeye|Yeye}}] huwapeleka washauri wakiwa wamevuliwa, \\q na huwapumbaza waamuzi.",
+          "B": "Huwapeleka washauri wakiwa wamevuliwa \\q na huwafanya waamuzi kuwa wapumbavu.",
+          "R": "Huwachukua washauri wenye hekima kama mateka \\q na huwafanya waamuzi waonekane wapumbavu."
+        },
+        "vi": {
+          "L": "[Ngài] dẫn các mưu sĩ đi, bị lột trần, \\q và làm cho các thẩm phán thành ngu dại.",
+          "B": "Ngài dẫn các mưu sĩ đi, áo bị lột, \\q và làm cho các thẩm phán hóa ra ngu dại.",
+          "R": "Ngài bắt các cố vấn khôn ngoan dẫn đi như tù binh \\q và làm cho các thẩm phán trông như kẻ ngu."
+        },
+        "ko": {
+          "L": "[그분께서] 모사들을 벌거벗겨 끌고 가시고, \\q 재판관들을 어리석게 하시오.",
+          "B": "그분께서는 모사들을 벌거벗겨 끌고 가시고 \\q 재판관들을 바보로 만드시오.",
+          "R": "그분께서는 지혜로운 조언자들을 포로처럼 끌고 가시고 \\q 재판관들을 어리석어 보이게 하시오."
         }
       },
       "decisions": [
@@ -1537,6 +2064,25 @@
           "reason": "Readable says what being led away stripped means (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o180120170011"
+          ],
+          "choice": "God in Job's speech to his friends: \"그분\" with \"-시-\" in 하오체 (\"끌고 가시고 ... 하시오\")",
+          "alternatives": [],
+          "reason": "Speaking about God, Job uses the honorific for God while keeping the 하오체 he uses with his friends.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1568,6 +2114,31 @@
           "L": "[The] bond of kings {{deity_pronoun:he|He}} loosens, \\q and binds a loincloth on their waists.",
           "B": "He loosens the bonds that kings put on others \\q and binds a captive's cloth around their own waists.",
           "R": "He frees those whom kings have put in chains, \\q and makes the kings themselves prisoners."
+        },
+        "es": {
+          "L": "[El] lazo de los reyes {{deity_pronoun:él|Él}} lo desata, \\q y ata un taparrabo a sus cinturas.",
+          "B": "Él desata las ataduras que los reyes ponen a otros \\q y les ciñe a ellos mismos la cintura con la tela de los cautivos.",
+          "R": "Él libera a los que los reyes han encadenado, \\q y convierte en prisioneros a los mismos reyes."
+        },
+        "fr": {
+          "L": "Le lien des rois, {{deity_pronoun:il|Il}} le dénoue, \\q et noue un pagne autour de leurs reins.",
+          "B": "Il défait les liens que les rois imposent \\q et leur noue autour des reins le pagne des captifs.",
+          "R": "Il libère ceux que les rois ont enchaînés, \\q et fait des rois eux-mêmes des prisonniers."
+        },
+        "sw": {
+          "L": "Kifungo cha wafalme {{deity_pronoun:yeye|Yeye}} hukifungua, \\q na kuwafunga kitambaa viunoni mwao.",
+          "B": "Hufungua vifungo ambavyo wafalme huwafunga wengine \\q na kuwafunga wao wenyewe kiunoni kitambaa cha mateka.",
+          "R": "Huwaweka huru wale ambao wafalme wamewafunga minyororo, \\q na huwafanya wafalme wenyewe kuwa wafungwa."
+        },
+        "vi": {
+          "L": "Dây trói của các vua, {{deity_pronoun:ngài|Ngài}} tháo ra, \\q và buộc khố vào ngang lưng họ.",
+          "B": "Ngài tháo xiềng mà các vua đã trói người khác \\q và buộc khố tù binh quanh lưng chính họ.",
+          "R": "Ngài giải thoát những người bị các vua xiềng xích, \\q và biến chính các vua thành tù nhân."
+        },
+        "ko": {
+          "L": "왕들의 결박을 그분께서 푸시고, \\q 그들의 허리에 허리띠 천을 동이시오.",
+          "B": "그분께서는 왕들이 남에게 채운 결박을 푸시고 \\q 그들 자신의 허리에 포로의 천을 동이시오.",
+          "R": "그분께서는 왕들이 사슬로 묶은 사람들을 풀어 주시고, \\q 왕들을 도리어 포로로 만드시오."
         }
       },
       "decisions": [
@@ -1653,6 +2224,31 @@
           "L": "[{{deity_pronoun:he|He}}] leads priests away stripped, \\q and overthrows the long-established.",
           "B": "He leads priests away stripped \\q and overthrows those firmly in power.",
           "R": "He leads priests away as prisoners \\q and brings down people who seemed safe in power."
+        },
+        "es": {
+          "L": "[{{deity_pronoun:él|Él}}] se lleva despojados a los sacerdotes, \\q y derriba a los bien establecidos.",
+          "B": "Él se lleva despojados a los sacerdotes \\q y derriba a los que están firmes en el poder.",
+          "R": "Él se lleva a los sacerdotes como prisioneros \\q y hace caer a los que parecían seguros en el poder."
+        },
+        "fr": {
+          "L": "[{{deity_pronoun:il|Il}}] emmène les prêtres dépouillés, \\q et renverse ceux qui sont établis depuis longtemps.",
+          "B": "Il emmène les prêtres dépouillés \\q et renverse ceux qui sont solidement au pouvoir.",
+          "R": "Il emmène les prêtres comme des prisonniers \\q et fait tomber des gens qui semblaient bien installés au pouvoir."
+        },
+        "sw": {
+          "L": "[{{deity_pronoun:yeye|Yeye}}] huwapeleka makuhani wakiwa wamevuliwa, \\q na kuwapindua walioimarika tangu zamani.",
+          "B": "Huwapeleka makuhani wakiwa wamevuliwa \\q na kuwaangusha walio imara madarakani.",
+          "R": "Huwachukua makuhani kama mateka \\q na kuwaangusha watu waliodhaniwa kuwa salama madarakani."
+        },
+        "vi": {
+          "L": "[Ngài] dẫn các thầy tế lễ đi, bị lột trần, \\q và lật đổ những kẻ vững vàng lâu đời.",
+          "B": "Ngài dẫn các thầy tế lễ đi, áo bị lột, \\q và lật đổ những kẻ đang vững quyền.",
+          "R": "Ngài bắt các thầy tế lễ dẫn đi như tù binh \\q và hạ bệ những người tưởng như vững vàng trong quyền lực."
+        },
+        "ko": {
+          "L": "[그분께서] 제사장들을 벌거벗겨 끌고 가시고, \\q 오래 견고하던 자들을 뒤엎으시오.",
+          "B": "그분께서는 제사장들을 벌거벗겨 끌고 가시고 \\q 권세가 굳건한 자들을 무너뜨리시오.",
+          "R": "그분께서는 제사장들을 포로처럼 끌고 가시고 \\q 권력을 굳게 쥔 것 같던 사람들을 넘어뜨리시오."
         }
       },
       "decisions": [
@@ -1727,6 +2323,31 @@
           "L": "[{{deity_pronoun:he|He}}] removes the speech of the trusted, \\q and takes away the discernment of elders.",
           "B": "He silences trusted advisers \\q and takes away the judgment of elders.",
           "R": "He leaves trusted advisers with nothing to say, \\q and he takes away the good sense of the elders."
+        },
+        "es": {
+          "L": "[{{deity_pronoun:él|Él}}] quita el habla a los de confianza, \\q y quita el discernimiento a los ancianos.",
+          "B": "Él hace callar a los consejeros de confianza \\q y quita el juicio a los ancianos.",
+          "R": "Él deja sin palabras a los consejeros de confianza, \\q y les quita el buen juicio a los ancianos."
+        },
+        "fr": {
+          "L": "[{{deity_pronoun:il|Il}}] ôte la parole à ceux en qui l’on a confiance, \\q et enlève le discernement des anciens.",
+          "B": "Il réduit au silence les conseillers de confiance \\q et ôte le jugement aux anciens.",
+          "R": "Il laisse sans voix les conseillers de confiance, \\q et il enlève le bon sens aux anciens."
+        },
+        "sw": {
+          "L": "[{{deity_pronoun:yeye|Yeye}}] huondoa usemi wa wanaoaminiwa, \\q na kuondoa busara ya wazee.",
+          "B": "Huwanyamazisha washauri wanaoaminiwa \\q na kuondoa busara ya wazee.",
+          "R": "Huwaacha washauri wanaoaminiwa bila la kusema, \\q na huondoa akili njema ya wazee."
+        },
+        "vi": {
+          "L": "[Ngài] cất lời nói của những người đáng tin cậy, \\q và lấy đi sự sáng suốt của các trưởng lão.",
+          "B": "Ngài làm cho những cố vấn đáng tin phải câm lặng \\q và cất mất sự phán đoán của các trưởng lão.",
+          "R": "Ngài khiến những cố vấn đáng tin không còn gì để nói, \\q và lấy đi sự khôn ngoan của các trưởng lão."
+        },
+        "ko": {
+          "L": "[그분께서] 신뢰받는 자들의 입술을 제거하시고, \\q 장로들의 분별력을 빼앗으시오.",
+          "B": "그분께서는 믿음직한 조언자들의 말문을 막으시고 \\q 장로들의 판단력을 빼앗으시오.",
+          "R": "그분께서는 믿을 만한 조언자들이 할 말을 잃게 하시고, \\q 장로들의 바른 생각을 빼앗으시오."
         }
       },
       "decisions": [
@@ -1822,6 +2443,31 @@
           "L": "[{{deity_pronoun:he|He}}] pours contempt on nobles, \\q and loosens the belt of the strong.",
           "B": "He pours contempt on nobles \\q and loosens the belt of the mighty.",
           "R": "He brings shame on important people \\q and takes away the strength of the powerful."
+        },
+        "es": {
+          "L": "[{{deity_pronoun:él|Él}}] derrama desprecio sobre los nobles, \\q y afloja el cinturón de los fuertes.",
+          "B": "Él derrama desprecio sobre los nobles \\q y afloja el cinturón de los poderosos.",
+          "R": "Él avergüenza a la gente importante \\q y les quita la fuerza a los poderosos."
+        },
+        "fr": {
+          "L": "[{{deity_pronoun:il|Il}}] répand le mépris sur les nobles, \\q et desserre la ceinture des forts.",
+          "B": "Il répand le mépris sur les nobles \\q et desserre la ceinture des puissants.",
+          "R": "Il couvre de honte les gens importants \\q et ôte leur force aux puissants."
+        },
+        "sw": {
+          "L": "[{{deity_pronoun:yeye|Yeye}}] huwamwagia dharau wakuu, \\q na kulegeza mshipi wa wenye nguvu.",
+          "B": "Huwamwagia dharau wakuu \\q na kulegeza mshipi wa mashujaa.",
+          "R": "Huwaaibisha watu mashuhuri \\q na kuwaondolea nguvu wenye uwezo."
+        },
+        "vi": {
+          "L": "[Ngài] đổ sự khinh miệt trên những người quyền quý, \\q và nới lỏng đai lưng của kẻ mạnh.",
+          "B": "Ngài đổ sự khinh bỉ trên những người quyền quý \\q và tháo lỏng đai lưng của kẻ hùng mạnh.",
+          "R": "Ngài làm cho những người quan trọng bị sỉ nhục \\q và cất đi sức mạnh của kẻ có quyền."
+        },
+        "ko": {
+          "L": "[그분께서] 귀족들에게 멸시를 쏟아부으시고, \\q 강한 자들의 띠를 푸시오.",
+          "B": "그분께서는 귀족들에게 멸시를 쏟아부으시고 \\q 힘센 자들의 허리띠를 풀어 버리시오.",
+          "R": "그분께서는 높은 사람들을 부끄럽게 하시고 \\q 힘 있는 사람들의 힘을 빼앗으시오."
         }
       },
       "decisions": [
@@ -1890,6 +2536,106 @@
           "reason": "Readable says what the loosened belt means (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o180120210011",
+            "o180120210021",
+            "o180120210041"
+          ],
+          "choice": "\"derrama desprecio sobre los nobles\"",
+          "alternatives": [],
+          "reason": "The line is the first half of Psalm 107:40, so it keeps the published Psalm 107:40 wording in this language, as the meaning decision m1 points out.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o180120210011",
+            "o180120210021",
+            "o180120210041"
+          ],
+          "choice": "« répand le mépris sur les nobles »",
+          "alternatives": [],
+          "reason": "The line is the first half of Psalm 107:40, so it keeps the published Psalm 107:40 wording in this language, as the meaning decision m1 points out.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o180120210011",
+            "o180120210021",
+            "o180120210041"
+          ],
+          "choice": "\"huwamwagia dharau wakuu\"",
+          "alternatives": [],
+          "reason": "The line is the first half of Psalm 107:40, so it keeps the published Psalm 107:40 wording in this language, as the meaning decision m1 points out.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o180120210011",
+            "o180120210021",
+            "o180120210041"
+          ],
+          "choice": "\"đổ sự khinh miệt / khinh bỉ trên những người quyền quý\"",
+          "alternatives": [],
+          "reason": "The line is the first half of Psalm 107:40, so it keeps the published Psalm 107:40 wording in this language, as the meaning decision m1 points out.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o180120210011",
+            "o180120210021",
+            "o180120210041"
+          ],
+          "choice": "\"귀족들에게 멸시를 쏟아부으시고\"",
+          "alternatives": [],
+          "reason": "The line is the first half of Psalm 107:40, so it keeps the published Psalm 107:40 wording in this language, as the meaning decision m1 points out.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1921,6 +2667,31 @@
           "L": "[{{deity_pronoun:he|He}}] uncovers deep things out of darkness, \\q and brings deep darkness out to light.",
           "B": "He reveals deep things from the darkness \\q and brings the deepest darkness into the light.",
           "R": "He uncovers secrets hidden in the dark \\q and brings the darkest places into the light."
+        },
+        "es": {
+          "L": "[{{deity_pronoun:él|Él}}] descubre las cosas profundas de entre las tinieblas, \\q y saca a la luz la densa oscuridad.",
+          "B": "Él revela las cosas profundas de las tinieblas \\q y saca a la luz la oscuridad más densa.",
+          "R": "Él descubre los secretos escondidos en la oscuridad \\q y saca a la luz los lugares más oscuros."
+        },
+        "fr": {
+          "L": "[{{deity_pronoun:il|Il}}] découvre les choses profondes hors des ténèbres, \\q et fait sortir à la lumière l’ombre épaisse.",
+          "B": "Il révèle les choses profondes cachées dans les ténèbres \\q et amène à la lumière les ténèbres les plus épaisses.",
+          "R": "Il dévoile les secrets cachés dans le noir \\q et met en pleine lumière les endroits les plus sombres."
+        },
+        "sw": {
+          "L": "[{{deity_pronoun:yeye|Yeye}}] hufunua mambo ya kina kutoka gizani, \\q na kuleta nuruni giza kuu.",
+          "B": "Hufunua mambo yaliyofichika gizani \\q na kuleta nuruni giza nene kabisa.",
+          "R": "Hufichua siri zilizofichwa gizani \\q na kuleta nuruni mahali penye giza kuliko pote."
+        },
+        "vi": {
+          "L": "[Ngài] phơi bày những điều sâu kín từ bóng tối, \\q và đem bóng tối dày đặc ra ánh sáng.",
+          "B": "Ngài bày tỏ những điều sâu kín trong bóng tối \\q và đem bóng tối dày đặc nhất ra ánh sáng.",
+          "R": "Ngài phơi bày những bí mật giấu trong bóng tối \\q và đem những nơi tối tăm nhất ra ánh sáng."
+        },
+        "ko": {
+          "L": "[그분께서] 깊은 것들을 어둠 속에서 드러내시고, \\q 짙은 어둠을 빛으로 끌어내시오.",
+          "B": "그분께서는 어둠 속의 깊은 일들을 드러내시고 \\q 가장 짙은 어둠을 빛 가운데로 끌어내시오.",
+          "R": "그분께서는 어둠 속에 숨은 비밀을 드러내시고 \\q 가장 어두운 곳을 환히 비추시오."
         }
       },
       "decisions": [
@@ -1987,6 +2758,31 @@
           "L": "[{{deity_pronoun:he|He}}] makes nations great and destroys them; \\q [{{deity_pronoun:he|He}}] spreads nations out and leads them [away].",
           "B": "He makes nations great, then destroys them; \\q {{deity_pronoun:he|He}} enlarges nations, then leads them away.",
           "R": "He makes nations grow strong, and then {{deity_pronoun:he|He}} destroys them. \\q He makes them spread out, and then {{deity_pronoun:he|He}} leads them away as captives."
+        },
+        "es": {
+          "L": "[{{deity_pronoun:él|Él}}] engrandece a las naciones y las destruye; \\q [{{deity_pronoun:él|Él}}] extiende a las naciones y las conduce [lejos].",
+          "B": "Él engrandece a las naciones, y luego las destruye; \\q {{deity_pronoun:él|Él}} ensancha a las naciones, y luego las lleva lejos.",
+          "R": "Él hace que las naciones se vuelvan fuertes, y luego {{deity_pronoun:él|Él}} las destruye. \\q Las hace extenderse, y luego {{deity_pronoun:él|Él}} se las lleva cautivas."
+        },
+        "fr": {
+          "L": "[{{deity_pronoun:il|Il}}] rend les nations grandes et les fait périr ; \\q [{{deity_pronoun:il|Il}}] étend les nations et les emmène [au loin].",
+          "B": "Il fait grandir les nations, puis les détruit ; \\q {{deity_pronoun:il|Il}} agrandit les nations, puis les déporte.",
+          "R": "Il rend les nations fortes, puis {{deity_pronoun:il|Il}} les détruit. \\q Il les fait s’étendre, puis {{deity_pronoun:il|Il}} les emmène captives."
+        },
+        "sw": {
+          "L": "[{{deity_pronoun:yeye|Yeye}}] huyafanya mataifa kuwa makuu, kisha huyaangamiza; \\q [{{deity_pronoun:yeye|Yeye}}] huyapanua mataifa, kisha huyaongoza [mbali].",
+          "B": "Huyakuza mataifa, kisha huyaangamiza; \\q huyapanua mataifa, kisha huyapeleka uhamishoni.",
+          "R": "Huyafanya mataifa yawe na nguvu, kisha huyaangamiza. \\q Huyafanya yaenee, kisha huyachukua mateka."
+        },
+        "vi": {
+          "L": "[Ngài] làm cho các dân tộc lớn mạnh rồi hủy diệt họ; \\q [{{deity_pronoun:ngài|Ngài}}] mở rộng các dân tộc rồi dẫn họ [đi xa].",
+          "B": "Ngài làm cho các dân tộc lớn mạnh, rồi hủy diệt họ; \\q {{deity_pronoun:ngài|Ngài}} mở rộng các dân tộc, rồi đem họ đi lưu đày.",
+          "R": "Ngài làm cho các dân tộc trở nên hùng mạnh, rồi {{deity_pronoun:ngài|Ngài}} hủy diệt họ. \\q Ngài làm cho họ lan rộng, rồi {{deity_pronoun:ngài|Ngài}} bắt họ đi làm tù binh."
+        },
+        "ko": {
+          "L": "[그분께서] 민족들을 크게 하시고 멸하시며, \\q [그분께서] 민족들을 퍼지게 하시고 [멀리] 끌고 가시오.",
+          "B": "그분께서는 민족들을 크게 하셨다가 멸하시고, \\q 민족들을 넓히셨다가 끌고 가시오.",
+          "R": "그분께서는 민족들을 강하게 하셨다가 멸망시키시오. \\q 그들을 널리 퍼지게 하셨다가 포로로 끌고 가시오."
         }
       },
       "decisions": [
@@ -2076,6 +2872,31 @@
           "L": "[{{deity_pronoun:he|He}}] takes away the heart of the chiefs of the people of the earth, \\q and makes them wander in a waste [with] no road.",
           "B": "He takes away the understanding of the leaders of the earth \\q and makes them wander in a trackless waste.",
           "R": "He takes away the good sense of the world's leaders \\q and leaves them lost in an empty desert with no road."
+        },
+        "es": {
+          "L": "[{{deity_pronoun:él|Él}}] quita el corazón a los jefes del pueblo de la tierra, \\q y los hace vagar en una soledad sin camino.",
+          "B": "Él quita el entendimiento a los líderes de la tierra \\q y los deja perdidos en un lugar desolado sin camino.",
+          "R": "Él les quita el buen juicio a los líderes del mundo \\q y los deja perdidos en un desierto vacío, sin camino."
+        },
+        "fr": {
+          "L": "[{{deity_pronoun:il|Il}}] ôte le cœur des chefs du peuple de la terre, \\q et les fait errer dans un chaos sans chemin.",
+          "B": "Il ôte l’intelligence aux chefs de la terre \\q et les laisse perdus dans un désert sans route.",
+          "R": "Il enlève le bon sens aux chefs du monde \\q et les laisse perdus dans un désert vide, sans route."
+        },
+        "sw": {
+          "L": "[{{deity_pronoun:yeye|Yeye}}] huondoa moyo wa wakuu wa watu wa dunia, \\q na huwatangatangisha katika ukiwa usio na njia.",
+          "B": "Huwaondolea akili viongozi wa dunia \\q na kuwaacha wamepotea nyikani pasipo njia.",
+          "R": "Huwaondolea viongozi wa ulimwengu akili njema \\q na kuwaacha wamepotea jangwani patupu pasipo na njia."
+        },
+        "vi": {
+          "L": "[Ngài] cất lòng của các thủ lãnh dân trên đất, \\q và làm cho họ lang thang trong chốn hoang vu không [có] đường.",
+          "B": "Ngài cất sự hiểu biết của các nhà lãnh đạo trên đất \\q và để họ lạc lối trong chốn hoang vu không có lối đi.",
+          "R": "Ngài lấy đi sự khôn ngoan của các nhà lãnh đạo thế giới \\q và để họ đi lạc trong sa mạc trống trải không có đường đi."
+        },
+        "ko": {
+          "L": "[그분께서] 땅 백성의 우두머리들의 마음을 빼앗으시고, \\q 그들을 길 없는 황무지에서 헤매게 하시오.",
+          "B": "그분께서는 세상 지도자들의 총명을 빼앗으시고 \\q 그들을 길 없는 황무지에서 헤매게 하시오.",
+          "R": "그분께서는 세상 지도자들의 바른 생각을 빼앗으시고 \\q 길도 없는 텅 빈 사막에서 그들을 헤매게 하시오."
         }
       },
       "decisions": [
@@ -2127,6 +2948,111 @@
           "reason": "\"Makes them wander in a waste with no road\" is the second half of Psalm 107:40 (see verse 21). The word for waste (tohu) is the \"formless\" of Genesis 1:2.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o180120240062",
+            "o180120240063",
+            "o180120240072",
+            "o180120240091"
+          ],
+          "choice": "\"los hace vagar en una soledad sin camino\" (L); \"los deja perdidos en un lugar desolado sin camino\" (B)",
+          "alternatives": [],
+          "reason": "The line is the second half of Psalm 107:40, so it keeps the published Psalm 107:40 wording in this language (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o180120240062",
+            "o180120240063",
+            "o180120240072",
+            "o180120240091"
+          ],
+          "choice": "« les fait errer dans un chaos sans chemin » (L); « les laisse perdus dans un désert sans route » (B)",
+          "alternatives": [],
+          "reason": "The line is the second half of Psalm 107:40, so it keeps the published Psalm 107:40 wording in this language (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o180120240062",
+            "o180120240063",
+            "o180120240072",
+            "o180120240091"
+          ],
+          "choice": "\"huwatangatangisha katika ukiwa usio na njia\" (L); \"kuwaacha wamepotea nyikani pasipo njia\" (B)",
+          "alternatives": [],
+          "reason": "The line is the second half of Psalm 107:40, so it keeps the published Psalm 107:40 wording in this language (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o180120240062",
+            "o180120240063",
+            "o180120240072",
+            "o180120240091"
+          ],
+          "choice": "\"làm cho họ lang thang trong chốn hoang vu không [có] đường\" (L); \"để họ lạc lối trong chốn hoang vu không có lối đi\" (B)",
+          "alternatives": [],
+          "reason": "The line is the second half of Psalm 107:40, so it keeps the published Psalm 107:40 wording in this language (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o180120240062",
+            "o180120240063",
+            "o180120240072",
+            "o180120240091"
+          ],
+          "choice": "\"그들을 길 없는 황무지에서 헤매게\"",
+          "alternatives": [],
+          "reason": "The line is the second half of Psalm 107:40, so it keeps the published Psalm 107:40 wording in this language (m3).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2159,6 +3085,31 @@
           "L": "They grope [in] darkness, and [there is] no light; \\q and {{deity_pronoun:he|He}} makes them stagger like a drunkard.",
           "B": "They grope in the dark without light, \\q and {{deity_pronoun:he|He}} makes them stagger like drunkards.",
           "R": "They feel their way in the dark with no light. \\q He makes them stumble around like drunk people."
+        },
+        "es": {
+          "L": "Andan a tientas [en] tinieblas, y no [hay] luz; \\q y {{deity_pronoun:él|Él}} los hace tambalearse como un borracho.",
+          "B": "Andan a tientas en la oscuridad, sin luz, \\q y {{deity_pronoun:él|Él}} los hace tambalearse como borrachos.",
+          "R": "Van tanteando en la oscuridad, sin luz. \\q Él los hace tropezar como gente borracha."
+        },
+        "fr": {
+          "L": "Ils tâtonnent [dans] les ténèbres, et [il n’y a] pas de lumière ; \\q et {{deity_pronoun:il|Il}} les fait tituber comme un homme ivre.",
+          "B": "Ils tâtonnent dans l’obscurité, sans lumière, \\q et {{deity_pronoun:il|Il}} les fait tituber comme des ivrognes.",
+          "R": "Ils avancent à tâtons dans le noir, sans lumière. \\q Il les fait trébucher comme des gens ivres."
+        },
+        "sw": {
+          "L": "Wanapapasa [katika] giza, wala hakuna nuru; \\q {{deity_pronoun:naye|Naye}} huwayumbisha kama mlevi.",
+          "B": "Wanapapasa gizani bila nuru, \\q {{deity_pronoun:naye|Naye}} huwayumbisha kama walevi.",
+          "R": "Wanapapasa gizani bila mwanga wowote. \\q Huwafanya wapepesuke kama watu waliolewa."
+        },
+        "vi": {
+          "L": "Họ mò mẫm [trong] bóng tối, và không [có] ánh sáng; \\q và {{deity_pronoun:ngài|Ngài}} làm cho họ lảo đảo như kẻ say.",
+          "B": "Họ mò mẫm trong tối tăm không ánh sáng, \\q và {{deity_pronoun:ngài|Ngài}} khiến họ lảo đảo như những kẻ say rượu.",
+          "R": "Họ dò dẫm trong bóng tối, không chút ánh sáng. \\q Ngài làm cho họ loạng choạng như người say."
+        },
+        "ko": {
+          "L": "그들은 빛 없이 어둠 [속을] 더듬고, \\q 그분께서 그들을 술 취한 자처럼 비틀거리게 하시오.",
+          "B": "그들은 빛도 없는 어둠 속을 더듬고, \\q 그분께서 그들을 술 취한 사람들처럼 비틀거리게 하시오.",
+          "R": "그들은 빛 하나 없는 어둠 속을 더듬어 다니오. \\q 그분께서 그들을 술 취한 사람들처럼 휘청거리게 하시오."
         }
       },
       "decisions": [

@@ -23,6 +23,31 @@
           "L": "And Job answered and said:",
           "B": "Then Job answered:",
           "R": "Then Job said:"
+        },
+        "es": {
+          "L": "Y respondió Job y dijo:",
+          "B": "Entonces Job respondió:",
+          "R": "Entonces Job dijo:"
+        },
+        "fr": {
+          "L": "Et Job répondit et dit :",
+          "B": "Alors Job répondit :",
+          "R": "Alors Job a dit :"
+        },
+        "sw": {
+          "L": "Ndipo Ayubu akajibu, akasema:",
+          "B": "Kisha Ayubu akajibu:",
+          "R": "Kisha Ayubu akasema:"
+        },
+        "vi": {
+          "L": "Gióp đáp lời và nói:",
+          "B": "Bấy giờ Gióp đáp:",
+          "R": "Gióp nói:"
+        },
+        "ko": {
+          "L": "그러자 욥이 대답하여 말했다.",
+          "B": "그러자 욥이 대답했다.",
+          "R": "그러자 욥이 말했다."
         }
       },
       "decisions": [
@@ -61,6 +86,27 @@
           "reason": "Balanced and Readable use one English verb for the Hebrew pair, the book's pattern for speech introductions. The introduction stays prose.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o180210010012"
+          ],
+          "choice": "\"répondit\" (Literal, Balanced), \"a dit\" (Readable) in the speech introduction",
+          "alternatives": [
+            "\"répond\" (present) at every level"
+          ],
+          "reason": "The introduction is narrative: passé simple at Literal and Balanced, passé composé at Readable. Job's speech itself is speech and uses the present, future and passé composé at every level.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -92,6 +138,31 @@
           "L": "Listen, listen to my words, \\q and let this be your consolation.",
           "B": "Listen carefully to what I say, \\q and let that be the comfort you give me.",
           "R": "Just listen closely to what I am saying. \\q That is the only comfort I want from you."
+        },
+        "es": {
+          "L": "{{plural_you:Escuchen|Escuchad}}, {{plural_you:escuchen|escuchad}} mis palabras, \\q y sea esto {{plural_you:su consuelo|vuestro consuelo}}.",
+          "B": "{{plural_you:Escuchen|Escuchad}} con atención lo que digo, \\q y sea ese el consuelo que me {{plural_you:den|deis}}.",
+          "R": "Solo {{plural_you:escúchenme|escuchadme}} bien. \\q Ese es el único consuelo que quiero de {{plural_you:ustedes|vosotros}}."
+        },
+        "fr": {
+          "L": "Écoutez, écoutez mes paroles, \\q et que ce soit là vos consolations.",
+          "B": "Écoutez bien ce que je dis, \\q et que ce soit là le réconfort que vous m’apportez.",
+          "R": "Écoutez-moi seulement avec attention. \\q C’est le seul réconfort que j’attends de vous."
+        },
+        "sw": {
+          "L": "Sikilizeni, sikilizeni maneno yangu, \\q na hili liwe faraja yenu.",
+          "B": "Sikilizeni kwa makini ninachosema, \\q na hiyo iwe faraja mnayonipa.",
+          "R": "Nisikilizeni tu kwa makini ninachosema. \\q Hiyo ndiyo faraja pekee ninayoitaka kwenu."
+        },
+        "vi": {
+          "L": "Hãy nghe, hãy nghe lời tôi, \\q và điều này hãy là sự an ủi của các anh.",
+          "B": "Hãy lắng nghe kỹ những gì tôi nói, \\q và đó sẽ là sự an ủi các anh dành cho tôi.",
+          "R": "Các anh chỉ cần chú ý nghe những gì tôi nói. \\q Đó là sự an ủi duy nhất tôi muốn nơi các anh."
+        },
+        "ko": {
+          "L": "내 말을 듣고 또 들으시오. \\q 이것이 그대들의 위로가 되게 하시오.",
+          "B": "내가 하는 말을 귀 기울여 들으시오. \\q 그것이 그대들이 내게 주는 위로가 되게 하시오.",
+          "R": "내 말을 잘 들어 주기만 하시오. \\q 그것이 내가 그대들에게 바라는 유일한 위로요."
         }
       },
       "decisions": [
@@ -162,6 +233,73 @@
           "reason": "Readable says plainly what Job asks (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o180210020011",
+            "o180210020062"
+          ],
+          "choice": "plural_you on every plural \"you\" in Job's reply: \"{{plural_you:Escuchen|Escuchad}}\", \"{{plural_you:su consuelo|vuestro consuelo}}\"",
+          "alternatives": [
+            "ustedes forms only",
+            "vosotros forms only"
+          ],
+          "reason": "Job speaks to all three friends, so the Hebrew verbs and pronouns are plural. Latin American \"ustedes\" is the default and Spain's \"vosotros\" the alternative; where the Hebrew turns to one friend (verse 3, \"you may mock\") Spanish says \"tú\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o180210020062"
+          ],
+          "choice": "Job calls his friends \"các anh\" and himself \"tôi\"",
+          "alternatives": [
+            "\"các ông\"",
+            "\"các bạn\""
+          ],
+          "reason": "Job and his three friends address each other as equals, \"anh\" / \"các anh\" with \"tôi\", at every level, as through the whole dialogue.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o180210020062"
+          ],
+          "choice": "Job speaks to the three in 하오체 with \"그대들\" (들으시오, 하시오)",
+          "alternatives": [
+            "합쇼체 (들으십시오)",
+            "해라체 (들어라)"
+          ],
+          "reason": "Job and his friends speak to each other formally but as equals; 하오체 with \"그대\" / \"그대들\" is used for every speech between them, at every level.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -194,6 +332,31 @@
           "L": "Bear with me, and I will speak, \\q and after I have spoken, you may mock.",
           "B": "Bear with me while I speak; \\q then, when I have finished, go on mocking.",
           "R": "Be patient with me while I speak. \\q After I have finished, you can go on making fun of me."
+        },
+        "es": {
+          "L": "{{plural_you:Sopórtenme|Soportadme}}, y yo hablaré, \\q y después que haya hablado, podrás burlarte.",
+          "B": "{{plural_you:Ténganme|Tenedme}} paciencia mientras hablo; \\q luego, cuando haya terminado, sigue burlándote.",
+          "R": "{{plural_you:Tengan|Tened}} paciencia conmigo mientras hablo. \\q Cuando haya terminado, puedes seguir burlándote de mí."
+        },
+        "fr": {
+          "L": "Supportez-moi, et moi, je parlerai, \\q et après que j’aurai parlé, tu pourras te moquer.",
+          "B": "Supportez-moi pendant que je parle ; \\q ensuite, quand j’aurai fini, continue de te moquer.",
+          "R": "Soyez patients avec moi pendant que je parle. \\q Quand j’aurai fini, tu pourras recommencer à te moquer de moi."
+        },
+        "sw": {
+          "L": "Nivumilieni, nami nitasema, \\q na baada ya kusema kwangu, utadhihaki.",
+          "B": "Nivumilieni ninaposema; \\q kisha nikimaliza, endelea kudhihaki.",
+          "R": "Kuweni na subira nami ninaposema. \\q Nikishamaliza, unaweza kuendelea kunidhihaki."
+        },
+        "vi": {
+          "L": "Hãy chịu khó với tôi, và chính tôi sẽ nói, \\q và sau khi tôi đã nói, anh cứ chế nhạo.",
+          "B": "Hãy kiên nhẫn với tôi trong lúc tôi nói; \\q rồi khi tôi nói xong, anh cứ tiếp tục chế giễu.",
+          "R": "Hãy kiên nhẫn với tôi trong lúc tôi nói. \\q Khi tôi nói xong, anh có thể tiếp tục chế nhạo tôi."
+        },
+        "ko": {
+          "L": "나를 참아 주시오. 나도 말하겠소. \\q 내가 말한 뒤에는 그대가 조롱해도 좋소.",
+          "B": "내가 말하는 동안 참아 주시오. \\q 내가 말을 마치거든 계속 조롱하시오.",
+          "R": "내가 말하는 동안 참고 들어 주시오. \\q 내가 말을 다 마친 뒤에는 그대가 계속 나를 비웃어도 좋소."
         }
       },
       "decisions": [
@@ -258,6 +421,27 @@
           "reason": "Balanced and Readable say \"go on\", since the mocking has already begun.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o180210030061"
+          ],
+          "choice": "\"anh\" (one friend) in the second line after a plural first line",
+          "alternatives": [
+            "\"các anh\" in both lines"
+          ],
+          "reason": "The Hebrew \"you may mock\" is singular (meaning decision m1): Job turns to Zophar, who has just spoken. Vietnamese shows the turn with \"anh\"; Spanish (\"podrás\") and French (\"tu pourras\") show it the same way, and Korean with \"그대\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -293,6 +477,31 @@
           "L": "As for me, [is] my complaint to a human? \\q And if [so], why should my spirit not be short?",
           "B": "As for me, is my complaint against a human being? \\q Why then should I not be impatient?",
           "R": "Is it a human being I am complaining about? No! \\q So why should I not be impatient?"
+        },
+        "es": {
+          "L": "En cuanto a mí, ¿[es] mi queja contra un ser humano? \\q Y si [así fuera], ¿por qué no habría de acortarse mi espíritu?",
+          "B": "En cuanto a mí, ¿me quejo acaso de un ser humano? \\q ¿Por qué, entonces, no he de impacientarme?",
+          "R": "¿Acaso me estoy quejando de un ser humano? ¡No! \\q Entonces, ¿por qué no voy a estar impaciente?"
+        },
+        "fr": {
+          "L": "Quant à moi, ma plainte [est-elle] contre un humain ? \\q Et s’[il en est ainsi], pourquoi mon esprit ne serait-il pas court ?",
+          "B": "Moi, est-ce d’un être humain que je me plains ? \\q Pourquoi donc ne serais-je pas impatient ?",
+          "R": "Est-ce d’un être humain que je me plains ? Non ! \\q Alors pourquoi ne serais-je pas impatient ?"
+        },
+        "sw": {
+          "L": "Mimi, je, malalamiko yangu [ni] kwa mwanadamu? \\q Na kama [ndivyo], kwa nini roho yangu isiwe fupi?",
+          "B": "Mimi, je, malalamiko yangu ni dhidi ya mwanadamu? \\q Basi kwa nini nisikose subira?",
+          "R": "Je, ni mwanadamu ninayemlalamikia? Hapana! \\q Basi kwa nini nisikose subira?"
+        },
+        "vi": {
+          "L": "Còn tôi, lời than của tôi [là] với loài người sao? \\q Và nếu [vậy], sao tâm linh tôi lại không ngắn lại?",
+          "B": "Còn tôi, có phải tôi than phiền về một con người đâu? \\q Vậy tại sao tôi lại không nóng lòng?",
+          "R": "Tôi đâu có than phiền về con người? Không! \\q Vậy sao tôi lại không mất kiên nhẫn?"
+        },
+        "ko": {
+          "L": "나로 말하면, 나의 불평이 사람에게 [하는 것이오]? \\q 만일 [그렇다면], 어찌 내 영이 조급하지 않겠소?",
+          "B": "나로 말하면, 내가 사람을 두고 불평하는 것이오? \\q 그러니 내가 어찌 조급하지 않겠소?",
+          "R": "내가 사람에게 불평하는 것이오? 아니오! \\q 그러니 내가 어찌 참을 수 있겠소?"
         }
       },
       "decisions": [
@@ -410,6 +619,31 @@
           "L": "Turn to me and be appalled, \\q and put [your] hand over [your] mouth.",
           "B": "Look at me and be appalled; \\q put your hand over your mouth.",
           "R": "Look at me and be shocked. \\q Cover your mouth with your hand and say nothing."
+        },
+        "es": {
+          "L": "{{plural_you:Vuélvanse|Volveos}} hacia mí y {{plural_you:asómbrense|asombraos}}, \\q y {{plural_you:pongan|poned}} [la] mano sobre [la] boca.",
+          "B": "{{plural_you:Mírenme|Miradme}} y {{plural_you:horrorícense|horrorizaos}}; \\q {{plural_you:tápense|tapaos}} la boca con la mano.",
+          "R": "{{plural_you:Mírenme|Miradme}} y {{plural_you:quédense|quedaos}} pasmados. \\q {{plural_you:Tápense|Tapaos}} la boca con la mano y no {{plural_you:digan|digáis}} nada."
+        },
+        "fr": {
+          "L": "Tournez-vous vers moi et soyez consternés, \\q et mettez [la] main sur [la] bouche.",
+          "B": "Regardez-moi et soyez saisis d’horreur ; \\q mettez la main sur votre bouche.",
+          "R": "Regardez-moi et soyez choqués. \\q Mettez la main sur votre bouche et taisez-vous."
+        },
+        "sw": {
+          "L": "Nigeukieni mkastaajabu, \\q na wekeni mkono juu ya kinywa.",
+          "B": "Nitazameni mkashangae; \\q wekeni mikono yenu vinywani mwenu.",
+          "R": "Nitazameni mkashtuke. \\q Funikeni vinywa vyenu kwa mikono, msiseme kitu."
+        },
+        "vi": {
+          "L": "Hãy quay lại nhìn tôi và kinh hãi, \\q và đặt tay [lên] miệng.",
+          "B": "Hãy nhìn tôi mà kinh hoàng; \\q hãy lấy tay che miệng mình.",
+          "R": "Hãy nhìn tôi mà sửng sốt. \\q Hãy lấy tay bịt miệng lại và đừng nói gì nữa."
+        },
+        "ko": {
+          "L": "나를 돌아보고 놀라시오. \\q 손을 입에 얹으시오.",
+          "B": "나를 보고 놀라시오. \\q 손으로 입을 막으시오.",
+          "R": "나를 보고 기가 막혀 보시오. \\q 손으로 입을 가리고 아무 말도 하지 마시오."
         }
       },
       "decisions": [
@@ -506,6 +740,31 @@
           "L": "And when I remember, I am dismayed, \\q and shuddering takes hold of my flesh.",
           "B": "When I think about it, I am terrified, \\q and my whole body shudders.",
           "R": "When I think about it, I am filled with fear, \\q and my body shakes."
+        },
+        "es": {
+          "L": "Y cuando me acuerdo, me turbo, \\q y un estremecimiento se apodera de mi carne.",
+          "B": "Cuando pienso en ello, me aterro, \\q y todo mi cuerpo se estremece.",
+          "R": "Cuando lo pienso, me lleno de miedo, \\q y mi cuerpo tiembla."
+        },
+        "fr": {
+          "L": "Et quand je me souviens, je suis épouvanté, \\q et un frisson saisit ma chair.",
+          "B": "Quand j’y pense, je suis terrifié, \\q et tout mon corps frissonne.",
+          "R": "Quand j’y pense, je suis rempli de peur, \\q et mon corps tremble."
+        },
+        "sw": {
+          "L": "Na ninapokumbuka, nafadhaika, \\q na kutetemeka kunaushika mwili wangu.",
+          "B": "Ninapolifikiria, naogopa sana, \\q na mwili wangu wote unatetemeka.",
+          "R": "Ninapolifikiria, najawa na hofu, \\q na mwili wangu unatetemeka."
+        },
+        "vi": {
+          "L": "Và khi tôi nhớ lại, tôi kinh hoàng, \\q và sự run rẩy chiếm lấy thân xác tôi.",
+          "B": "Khi nghĩ đến điều ấy, tôi khiếp sợ, \\q và toàn thân tôi run rẩy.",
+          "R": "Khi nghĩ đến điều đó, tôi đầy sợ hãi, \\q và người tôi run lên."
+        },
+        "ko": {
+          "L": "내가 기억하면 놀라고, \\q 떨림이 내 살을 사로잡소.",
+          "B": "그것을 생각하면 나는 두렵고, \\q 온몸이 떨리오.",
+          "R": "그것을 생각하면 나는 겁이 나고, \\q 몸이 떨리오."
         }
       },
       "decisions": [
@@ -600,6 +859,31 @@
           "L": "Why do [the] wicked live, \\q grow old, and even grow mighty in power?",
           "B": "Why do the wicked go on living, \\q growing old and growing ever more powerful?",
           "R": "Why do wicked people go on living? \\q Why do they live to old age and become more and more powerful?"
+        },
+        "es": {
+          "L": "¿Por qué viven [los] malvados, \\q envejecen, y hasta se hacen poderosos en fuerza?",
+          "B": "¿Por qué siguen viviendo los malvados, \\q llegan a viejos y se hacen cada vez más poderosos?",
+          "R": "¿Por qué siguen viviendo los malvados? \\q ¿Por qué llegan a la vejez y se vuelven cada vez más poderosos?"
+        },
+        "fr": {
+          "L": "Pourquoi les méchants vivent-ils, \\q vieillissent-ils, et même grandissent-ils en puissance ?",
+          "B": "Pourquoi les méchants continuent-ils de vivre, \\q de vieillir et de devenir toujours plus puissants ?",
+          "R": "Pourquoi les méchants restent-ils en vie ? \\q Pourquoi vivent-ils jusqu’à un âge avancé, en devenant de plus en plus puissants ?"
+        },
+        "sw": {
+          "L": "Kwa nini waovu wanaishi, \\q wanazeeka, hata wanakuwa hodari kwa nguvu?",
+          "B": "Kwa nini waovu wanaendelea kuishi, \\q wakizeeka na kuzidi kuwa na nguvu?",
+          "R": "Kwa nini watu waovu wanaendelea kuishi? \\q Kwa nini wanafikia uzee na kuzidi kuwa na nguvu?"
+        },
+        "vi": {
+          "L": "Sao kẻ ác lại sống, \\q già đi, và còn trở nên mạnh mẽ về quyền lực?",
+          "B": "Sao kẻ ác cứ sống mãi, \\q sống đến già và ngày càng thêm quyền thế?",
+          "R": "Tại sao kẻ ác cứ tiếp tục sống? \\q Tại sao chúng sống đến già và ngày càng có nhiều quyền lực?"
+        },
+        "ko": {
+          "L": "어찌하여 악인들이 살고, \\q 늙어 가며, 게다가 힘이 강해지오?",
+          "B": "어찌하여 악인들은 계속 살아서, \\q 늙도록 살며 점점 더 강해지오?",
+          "R": "어째서 악한 사람들이 계속 살아 있소? \\q 어째서 그들은 늙도록 살고 점점 더 힘이 세지오?"
         }
       },
       "decisions": [
@@ -701,6 +985,31 @@
           "L": "Their offspring [are] established before them, with them, \\q and their descendants before their eyes.",
           "B": "Their children are settled securely around them; \\q their descendants grow up before their eyes.",
           "R": "They see their children grow up and settle down near them. \\q They live to see their children's children too."
+        },
+        "es": {
+          "L": "Su descendencia [está] establecida delante de ellos, con ellos, \\q y sus vástagos ante sus ojos.",
+          "B": "Sus hijos están bien establecidos a su alrededor; \\q sus descendientes crecen ante sus ojos.",
+          "R": "Ven a sus hijos crecer y establecerse cerca de ellos. \\q Viven para ver también a los hijos de sus hijos."
+        },
+        "fr": {
+          "L": "Leur descendance [est] établie devant eux, avec eux, \\q et leurs rejetons sous leurs yeux.",
+          "B": "Leurs enfants sont solidement établis autour d’eux ; \\q leurs descendants grandissent sous leurs yeux.",
+          "R": "Ils voient leurs enfants grandir et s’installer près d’eux. \\q Ils vivent assez longtemps pour voir aussi leurs petits-enfants."
+        },
+        "sw": {
+          "L": "Uzao wao [ni] imara mbele yao, pamoja nao, \\q na wazao wao mbele ya macho yao.",
+          "B": "Watoto wao wamestawi salama kandokando yao; \\q wazao wao wanakua mbele ya macho yao.",
+          "R": "Wanawaona watoto wao wakikua na kukaa karibu nao. \\q Wanaishi hata kuwaona wajukuu wao."
+        },
+        "vi": {
+          "L": "Dòng dõi chúng [được] vững lập trước mặt chúng, cùng với chúng, \\q và con cháu chúng trước mắt chúng.",
+          "B": "Con cái chúng được vững vàng ổn định quanh chúng; \\q dòng dõi chúng lớn lên ngay trước mắt chúng.",
+          "R": "Chúng thấy con cái mình lớn lên và sống yên ổn gần bên. \\q Chúng còn sống đến lúc thấy cả cháu chắt mình."
+        },
+        "ko": {
+          "L": "그들의 자손이 그들 앞에, 그들과 함께 굳게 서고, \\q 그들의 후손이 그들의 눈앞에 [있소].",
+          "B": "그들의 자녀들은 그들 곁에 든든히 자리를 잡고, \\q 그들의 후손은 그들의 눈앞에서 자라나오.",
+          "R": "그들은 자녀들이 자라서 곁에 자리 잡는 것을 보고, \\q 손자 손녀들까지 보며 사오."
         }
       },
       "decisions": [
@@ -801,6 +1110,31 @@
           "L": "Their houses [are] safe from fear, \\q and the rod of God [is] not upon them.",
           "B": "Their homes are safe and free from fear; \\q the rod of God does not strike them.",
           "R": "Their homes are safe, and they have nothing to fear. \\q God does not punish them."
+        },
+        "es": {
+          "L": "Sus casas [están] a salvo del temor, \\q y la vara de Dios no [está] sobre ellos.",
+          "B": "Sus hogares están seguros y libres de temor; \\q la vara de Dios no los golpea.",
+          "R": "Sus hogares están seguros, y no tienen nada que temer. \\q Dios no los castiga."
+        },
+        "fr": {
+          "L": "Leurs maisons [sont] en paix, sans crainte, \\q et la verge de Dieu n’[est] pas sur eux.",
+          "B": "Leurs demeures sont en sécurité, à l’abri de la peur ; \\q le bâton de Dieu ne les frappe pas.",
+          "R": "Leurs maisons sont en sécurité, ils n’ont rien à craindre. \\q Dieu ne les punit pas."
+        },
+        "sw": {
+          "L": "Nyumba zao [ziko] salama mbali na hofu, \\q wala fimbo ya Mungu [haiko] juu yao.",
+          "B": "Nyumba zao ziko salama, bila hofu; \\q fimbo ya Mungu haiwapigi.",
+          "R": "Nyumba zao ziko salama, wala hawana cha kuogopa. \\q Mungu hawaadhibu."
+        },
+        "vi": {
+          "L": "Nhà cửa chúng [được] bình an khỏi sợ hãi, \\q và cây roi của Đức Chúa Trời không [ở] trên chúng.",
+          "B": "Nhà cửa chúng yên ổn, chẳng có gì phải sợ; \\q roi của Đức Chúa Trời không giáng trên chúng.",
+          "R": "Nhà cửa chúng an toàn, chúng chẳng có gì phải lo sợ. \\q Đức Chúa Trời không trừng phạt chúng."
+        },
+        "ko": {
+          "L": "그들의 집은 두려움 없이 평안하고, \\q 하나님의 매가 그들 위에 [있지] 않소.",
+          "B": "그들의 집은 두려움 없이 안전하고, \\q 하나님의 매가 그들을 치지 않소.",
+          "R": "그들의 집은 안전하고, 그들은 아무것도 두려워할 것이 없소. \\q 하나님께서는 그들을 벌하지 않으시오."
         }
       },
       "decisions": [
@@ -900,6 +1234,31 @@
           "L": "His bull breeds and does not fail; \\q his cow calves and does not miscarry.",
           "B": "Their bulls breed without fail; \\q their cows calve and never miscarry.",
           "R": "Their bulls always breed, \\q and their cows have calves and never lose them."
+        },
+        "es": {
+          "L": "Su toro fecunda y no falla; \\q su vaca pare y no aborta.",
+          "B": "Sus toros fecundan sin fallar; \\q sus vacas paren y nunca abortan.",
+          "R": "Sus toros siempre fecundan, \\q y sus vacas tienen terneros y nunca los pierden."
+        },
+        "fr": {
+          "L": "Son taureau saillit et ne manque pas ; \\q sa vache vêle et n’avorte pas.",
+          "B": "Leurs taureaux saillissent sans faillir ; \\q leurs vaches vêlent et n’avortent jamais.",
+          "R": "Leurs taureaux saillissent toujours, \\q et leurs vaches mettent bas sans jamais perdre leurs veaux."
+        },
+        "sw": {
+          "L": "Fahali wake anapandisha wala hakosi; \\q ng'ombe wake anazaa wala hatupi mimba.",
+          "B": "Mafahali wao wanapandisha bila kukosa; \\q ng'ombe wao wanazaa wala hawatupi mimba kamwe.",
+          "R": "Mafahali wao wanapandisha siku zote, \\q na ng'ombe wao wanazaa ndama wala hawawapotezi kamwe."
+        },
+        "vi": {
+          "L": "Bò đực của hắn phối giống chẳng hề trượt; \\q bò cái của hắn đẻ con chẳng hề sẩy thai.",
+          "B": "Bò đực của chúng phối giống không hề trượt; \\q bò cái của chúng sinh con, chẳng bao giờ sẩy thai.",
+          "R": "Bò đực của chúng lúc nào cũng phối giống được, \\q và bò cái của chúng đẻ con, chẳng bao giờ mất con."
+        },
+        "ko": {
+          "L": "그의 수소는 새끼를 배게 하되 실패하지 않고, \\q 그의 암소는 새끼를 낳되 유산하지 않소.",
+          "B": "그들의 수소는 틀림없이 새끼를 배게 하고, \\q 그들의 암소는 새끼를 낳으며 결코 유산하지 않소.",
+          "R": "그들의 수소는 언제나 새끼를 배게 하고, \\q 그들의 암소는 송아지를 낳고 한 번도 잃지 않소."
         }
       },
       "decisions": [
@@ -998,6 +1357,31 @@
           "L": "They send out their little ones like a flock, \\q and their children dance.",
           "B": "They let their little ones run out like a flock of lambs, \\q and their children skip about.",
           "R": "Their little children run out to play like lambs, \\q and they dance around."
+        },
+        "es": {
+          "L": "Echan fuera a sus pequeños como un rebaño, \\q y sus niños danzan.",
+          "B": "Dejan correr a sus pequeños como un rebaño de corderos, \\q y sus niños brincan.",
+          "R": "Sus niños pequeños salen a jugar como corderitos, \\q y bailan por todas partes."
+        },
+        "fr": {
+          "L": "Ils lâchent leurs petits comme un troupeau, \\q et leurs enfants dansent.",
+          "B": "Ils laissent courir leurs petits comme un troupeau d’agneaux, \\q et leurs enfants gambadent.",
+          "R": "Leurs petits enfants sortent jouer comme des agneaux, \\q et ils dansent partout."
+        },
+        "sw": {
+          "L": "Wanawapeleka nje wadogo wao kama kundi, \\q na watoto wao wanacheza.",
+          "B": "Wanawaacha wadogo wao watoke mbio kama kundi la wana-kondoo, \\q na watoto wao wanarukaruka.",
+          "R": "Watoto wao wadogo wanatoka kucheza kama wana-kondoo, \\q nao wanacheza huku na huko."
+        },
+        "vi": {
+          "L": "Chúng thả những đứa nhỏ ra như một bầy chiên, \\q và con cái chúng nhảy múa.",
+          "B": "Chúng để lũ con nhỏ chạy ra như một bầy chiên con, \\q và con cái chúng nhảy nhót vui đùa.",
+          "R": "Con nhỏ của chúng chạy ra chơi như những chú chiên con, \\q và nhảy múa khắp nơi."
+        },
+        "ko": {
+          "L": "그들은 어린것들을 양 떼처럼 내보내고, \\q 그들의 아이들은 춤을 추오.",
+          "B": "그들은 어린 자녀들을 어린양 떼처럼 뛰놀게 내보내고, \\q 그들의 아이들은 깡충깡충 뛰노오.",
+          "R": "그들의 어린아이들은 어린양처럼 밖으로 뛰어나가 놀고, \\q 여기저기서 춤을 추오."
         }
       },
       "decisions": [
@@ -1095,6 +1479,31 @@
           "L": "They lift [their voices] to tambourine and lyre, \\q and rejoice at [the] sound of [the] flute.",
           "B": "They sing to the tambourine and the lyre \\q and make merry at the sound of the flute.",
           "R": "They sing along with the tambourine and the harp, \\q and they have fun listening to the flute."
+        },
+        "es": {
+          "L": "Alzan [la voz] al son del pandero y la lira, \\q y se alegran al son de la flauta.",
+          "B": "Cantan al son del pandero y de la lira, \\q y se divierten al sonido de la flauta.",
+          "R": "Cantan acompañados del pandero y del arpa, \\q y se divierten oyendo la flauta."
+        },
+        "fr": {
+          "L": "Ils élèvent [la voix] au son du tambourin et de la lyre, \\q et se réjouissent au son de la flûte.",
+          "B": "Ils chantent au son du tambourin et de la lyre \\q et font la fête au son de la flûte.",
+          "R": "Ils chantent avec le tambourin et la harpe, \\q et ils s’amusent en écoutant la flûte."
+        },
+        "sw": {
+          "L": "Wanapaza [sauti] kwa matari na kinubi, \\q na kufurahi kwa sauti ya filimbi.",
+          "B": "Wanaimba kwa matari na kinubi, \\q na kufurahi kwa sauti ya filimbi.",
+          "R": "Wanaimba pamoja na matari na kinubi, \\q na kufurahia kusikiliza filimbi."
+        },
+        "vi": {
+          "L": "Chúng cất [tiếng] theo trống lục lạc và đàn lia, \\q và vui mừng theo tiếng sáo.",
+          "B": "Chúng ca hát theo trống lục lạc và đàn lia, \\q và vui chơi theo tiếng sáo.",
+          "R": "Chúng hát theo tiếng trống lục lạc và đàn hạc, \\q và vui vẻ nghe tiếng sáo."
+        },
+        "ko": {
+          "L": "그들은 소고와 수금에 맞추어 [소리를] 높이고, \\q 피리 소리에 즐거워하오.",
+          "B": "그들은 소고와 수금에 맞추어 노래하고, \\q 피리 소리에 흥겨워하오.",
+          "R": "그들은 소고와 하프에 맞추어 노래하고, \\q 피리 소리를 들으며 즐겁게 노오."
         }
       },
       "decisions": [
@@ -1178,6 +1587,31 @@
           "L": "They spend their days in prosperity, \\q and in a moment they go down [to] Sheol.",
           "B": "They live out their days in prosperity \\q and go down to Sheol in an instant.",
           "R": "They enjoy good lives all their days. \\q Then they die quickly, without suffering, and go down to the grave."
+        },
+        "es": {
+          "L": "Pasan sus días en prosperidad, \\q y en un instante descienden [al] Seol.",
+          "B": "Viven sus días en prosperidad \\q y bajan al lugar de los muertos en un instante.",
+          "R": "Disfrutan de una buena vida todos sus días. \\q Luego mueren rápido, sin sufrir, y bajan al lugar de los muertos."
+        },
+        "fr": {
+          "L": "Ils achèvent leurs jours dans le bonheur, \\q et en un instant ils descendent [au] Shéol.",
+          "B": "Ils passent leur vie dans le bonheur \\q et descendent en un instant au séjour des morts.",
+          "R": "Ils profitent d’une bonne vie tous les jours de leur existence. \\q Puis ils meurent vite, sans souffrir, et descendent au séjour des morts."
+        },
+        "sw": {
+          "L": "Wanamaliza siku zao katika fanaka, \\q na kwa kitambo wanashuka [hadi] Kuzimu.",
+          "B": "Wanaishi siku zao katika fanaka, \\q na kushuka Kuzimu kwa kitambo tu.",
+          "R": "Wanafurahia maisha mazuri siku zao zote. \\q Kisha wanakufa upesi, bila kuteseka, na kushuka Kuzimu."
+        },
+        "vi": {
+          "L": "Chúng trải qua ngày tháng mình trong phước hạnh, \\q và trong khoảnh khắc chúng đi xuống Âm Phủ.",
+          "B": "Chúng sống trọn những ngày mình trong thịnh vượng \\q và trong chốc lát đi xuống Âm Phủ.",
+          "R": "Chúng hưởng cuộc sống tốt đẹp suốt đời mình. \\q Rồi chúng chết nhanh chóng, không đau đớn, và đi xuống nơi của người chết."
+        },
+        "ko": {
+          "L": "그들은 그들의 날들을 형통 가운데 마치고, \\q 한순간에 스올로 내려가오.",
+          "B": "그들은 형통하게 일생을 다 누리고 \\q 한순간에 스올로 내려가오.",
+          "R": "그들은 평생 좋은 삶을 누리오. \\q 그러다가 고통 없이 금세 죽어, 죽은 사람들이 있는 곳으로 내려가오."
         }
       },
       "decisions": [
@@ -1262,6 +1696,46 @@
           "reason": "Readable says what a death \"in a moment\" means (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o180210130061"
+          ],
+          "choice": "\"el Seol\" (Literal), \"el lugar de los muertos\" (Balanced, Readable)",
+          "alternatives": [
+            "\"la tumba\" at Readable, as the English Readable \"the grave\""
+          ],
+          "reason": "Sheol is the place of all the dead, not a single tomb; \"el lugar de los muertos\" is the settled Spanish wording for the poetic books at Balanced and Readable.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o180210130061"
+          ],
+          "choice": "\"le Shéol\" (Literal), \"le séjour des morts\" (Balanced, Readable)",
+          "alternatives": [
+            "\"la tombe\" at Readable, as the English Readable \"the grave\""
+          ],
+          "reason": "Sheol is the place where all the dead go, not one grave; the settled French wording for the poetic books is \"le séjour des morts\" at Balanced and Readable, which a new reader understands.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1297,6 +1771,31 @@
           "L": "And they say to God, \"Turn away from us; \\q we do not desire [the] knowledge of {{deity_pronoun:your|Your}} ways.",
           "B": "Yet they say to God, \"Leave us alone! \\q We have no wish to know {{deity_pronoun:your|Your}} ways.",
           "R": "Yet they tell God, \"Go away and leave us alone! \\q We do not want to know how {{deity_pronoun:you|You}} want us to live."
+        },
+        "es": {
+          "L": "Y dicen a Dios: «Apártate de nosotros; \\q no deseamos [el] conocimiento de {{deity_pronoun:tus|Tus}} caminos.",
+          "B": "Y aun así dicen a Dios: «¡Déjanos en paz! \\q No queremos conocer {{deity_pronoun:tus|Tus}} caminos.",
+          "R": "Y aun así le dicen a Dios: «¡Vete y déjanos en paz! \\q No queremos saber cómo quieres que vivamos."
+        },
+        "fr": {
+          "L": "Et ils disent à Dieu : « Détourne-toi de nous ; \\q nous ne désirons pas [la] connaissance de {{deity_pronoun:tes|Tes}} voies.",
+          "B": "Pourtant ils disent à Dieu : « Laisse-nous tranquilles ! \\q Nous ne tenons pas à connaître {{deity_pronoun:tes|Tes}} voies.",
+          "R": "Pourtant ils disent à Dieu : « Va-t’en, laisse-nous tranquilles ! \\q Nous ne voulons pas savoir comment {{deity_pronoun:tu|Tu}} veux que nous vivions."
+        },
+        "sw": {
+          "L": "Nao wanamwambia Mungu, \"Ondoka kwetu; \\q hatutaki maarifa ya njia {{deity_pronoun:zako|Zako}}.",
+          "B": "Lakini wanamwambia Mungu, \"Tuache! \\q Hatutaki kuzijua njia {{deity_pronoun:zako|Zako}}.",
+          "R": "Lakini wanamwambia Mungu, \"Ondoka, utuache! \\q Hatutaki kujua jinsi {{deity_pronoun:wewe|Wewe}} unavyotaka tuishi."
+        },
+        "vi": {
+          "L": "Và chúng nói với Đức Chúa Trời: \"Hãy lìa khỏi chúng tôi; \\q chúng tôi không muốn [sự] hiểu biết đường lối của {{deity_pronoun:ngài|Ngài}}.",
+          "B": "Thế mà chúng nói với Đức Chúa Trời: \"Hãy để chúng tôi yên! \\q Chúng tôi chẳng muốn biết đường lối của {{deity_pronoun:ngài|Ngài}}.",
+          "R": "Thế mà chúng bảo Đức Chúa Trời: \"Hãy đi đi, để chúng tôi yên! \\q Chúng tôi không muốn biết {{deity_pronoun:ngài|Ngài}} muốn chúng tôi sống thế nào."
+        },
+        "ko": {
+          "L": "그들은 하나님께 말하오. \"우리에게서 떠나시오. \\q 우리는 당신의 길을 아는 것을 원하지 않소.",
+          "B": "그런데도 그들은 하나님께 말하오. \"우리를 내버려 두시오! \\q 우리는 당신의 길을 알고 싶지 않소.",
+          "R": "그런데도 그들은 하나님께 이렇게 말하오. \"가시오, 우리를 내버려 두시오! \\q 우리가 어떻게 살기를 당신이 원하는지 우리는 알고 싶지 않소."
         }
       },
       "decisions": [
@@ -1383,6 +1882,68 @@
           "reason": "Readable says what God's ways are (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o180210140062"
+          ],
+          "choice": "No deity_pronoun span at Readable (\"cómo quieres que vivamos\")",
+          "alternatives": [
+            "\"cómo quieres {{deity_pronoun:tú|Tú}} que vivamos\""
+          ],
+          "reason": "The English Readable spans \"you\"; Spanish carries the person in the verb \"quieres\" and needs no free pronoun, so there is nothing for the setting to capitalise.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o180210140062"
+          ],
+          "choice": "The wicked say \"chúng tôi\" and call God \"Ngài\"",
+          "alternatives": [
+            "\"chúng con\"",
+            "\"ông\""
+          ],
+          "reason": "They are not praying: they would not call themselves \"con\" before God as the psalmist does. \"Chúng tôi\" keeps them at a distance, and \"Ngài\" is the ordinary word for God, which the English deity_pronoun span on \"your\" matches.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o180210140062"
+          ],
+          "choice": "The wicked speak to God in curt 하오체 with \"당신\", and of him in verse 15 as \"그\" without the honorific",
+          "alternatives": [
+            "합쇼체 with \"주님\", as in prayer"
+          ],
+          "reason": "Their words are a refusal of God, not a prayer: they tell him to go away and ask what the Almighty is to them (meaning decision m1 at verse 15). Korean shows that scorn by refusing God the speech level and honorific he is given everywhere else; Job's own words about God keep \"-시-\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1417,6 +1978,31 @@
           "L": "What [is] the Almighty, that we should serve {{deity_pronoun:him|Him}}? \\q And what will we gain if we pray to {{deity_pronoun:him|Him}}?\"",
           "B": "Who is the Almighty, that we should serve {{deity_pronoun:him|Him}}? \\q What good will it do us to pray to {{deity_pronoun:him|Him}}?\"",
           "R": "Who is God All-Powerful, that we should serve {{deity_pronoun:him|Him}}? \\q What would we get out of praying to {{deity_pronoun:him|Him}}?\""
+        },
+        "es": {
+          "L": "¿Qué [es] el Todopoderoso, para que {{deity_pronoun:lo|Lo}} sirvamos? \\q ¿Y qué ganaremos si oramos a {{deity_pronoun:él|Él}}?»",
+          "B": "¿Quién es el Todopoderoso para que {{deity_pronoun:lo|Lo}} sirvamos? \\q ¿De qué nos servirá orar a {{deity_pronoun:él|Él}}?»",
+          "R": "¿Quién es el Dios Todopoderoso para que {{deity_pronoun:lo|Lo}} sirvamos? \\q ¿Qué sacaríamos con orar a {{deity_pronoun:él|Él}}?»"
+        },
+        "fr": {
+          "L": "Qu’[est-ce que] le Tout-Puissant, pour que nous {{deity_pronoun:le|Le}} servions ? \\q Et que gagnerons-nous à {{deity_pronoun:le|Le}} prier ? »",
+          "B": "Qui est le Tout-Puissant, pour que nous {{deity_pronoun:le|Le}} servions ? \\q À quoi nous servira-t-il de {{deity_pronoun:le|Le}} prier ? »",
+          "R": "Qui est Dieu le Tout-Puissant, pour que nous {{deity_pronoun:le|Le}} servions ? \\q Qu’est-ce que nous gagnerions à {{deity_pronoun:le|Le}} prier ? »"
+        },
+        "sw": {
+          "L": "Mwenyezi [ni] nini, hata tumtumikie? \\q Nasi tutapata faida gani tukimwomba?\"",
+          "B": "Mwenyezi ni nani, hata tumtumikie? \\q Tutafaidika nini tukimwomba?\"",
+          "R": "Mungu Mwenyezi ni nani, hata tumtumikie? \\q Tungepata nini kwa kumwomba?\""
+        },
+        "vi": {
+          "L": "Đấng Toàn Năng [là] gì mà chúng tôi phải phục vụ {{deity_pronoun:ngài|Ngài}}? \\q Và chúng tôi được lợi gì nếu cầu khẩn {{deity_pronoun:ngài|Ngài}}?\"",
+          "B": "Đấng Toàn Năng là ai mà chúng tôi phải phục vụ {{deity_pronoun:ngài|Ngài}}? \\q Cầu nguyện với {{deity_pronoun:ngài|Ngài}} thì chúng tôi được ích gì?\"",
+          "R": "Đức Chúa Trời Toàn Năng là ai mà chúng tôi phải phục vụ {{deity_pronoun:ngài|Ngài}}? \\q Cầu nguyện với {{deity_pronoun:ngài|Ngài}} thì chúng tôi được gì chứ?\""
+        },
+        "ko": {
+          "L": "전능자가 무엇이기에 우리가 그를 섬기겠소? \\q 우리가 그에게 간구한들 무슨 이득을 얻겠소?\"",
+          "B": "전능자가 누구이기에 우리가 그를 섬기겠소? \\q 그에게 기도한들 우리에게 무슨 유익이 있겠소?\"",
+          "R": "전능하신 하나님이 누구이기에 우리가 그를 섬기겠소? \\q 그에게 기도해 봐야 우리가 무엇을 얻겠소?\""
         }
       },
       "decisions": [
@@ -1502,6 +2088,27 @@
           "reason": "Readable says \"God All-Powerful\" for Shaddai, the book's choice (5:17).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o180210150042"
+          ],
+          "choice": "No deity_pronoun span: \"tumtumikie\", \"tukimwomba\"",
+          "alternatives": [
+            "adding \"yeye\" to carry a span"
+          ],
+          "reason": "The English spans \"him\" twice; Swahili marks him with the object prefix \"-m-\" inside the verb, which cannot take a capital, so the setting has nothing to change here.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1536,6 +2143,31 @@
           "L": "Look, their prosperity [is] not in their own hand; \\q the counsel of [the] wicked is far from me.",
           "B": "Yet their prosperity is not in their own hands. \\q The advice of the wicked is far from me.",
           "R": "But they did not get their good fortune by their own power. \\q I want nothing to do with the plans of wicked people."
+        },
+        "es": {
+          "L": "He aquí, su prosperidad no [está] en su mano; \\q el consejo de [los] malvados está lejos de mí.",
+          "B": "Pero su prosperidad no está en sus propias manos. \\q El consejo de los malvados está lejos de mí.",
+          "R": "Pero no consiguieron su buena fortuna por su propio poder. \\q No quiero tener nada que ver con los planes de los malvados."
+        },
+        "fr": {
+          "L": "Voici, leur bonheur n’[est] pas dans leur main ; \\q le conseil des méchants est loin de moi.",
+          "B": "Pourtant leur prospérité n’est pas entre leurs mains. \\q Les conseils des méchants sont loin de moi.",
+          "R": "Mais ce n’est pas par leur propre force qu’ils ont obtenu leur bonheur. \\q Je ne veux rien avoir à faire avec les projets des méchants."
+        },
+        "sw": {
+          "L": "Tazama, fanaka yao haiko mkononi mwao wenyewe; \\q shauri la waovu liko mbali nami.",
+          "B": "Lakini fanaka yao haiko mikononi mwao wenyewe. \\q Shauri la waovu liko mbali nami.",
+          "R": "Lakini hawakupata bahati yao njema kwa nguvu zao wenyewe. \\q Sitaki kuhusika kamwe na mipango ya watu waovu."
+        },
+        "vi": {
+          "L": "Kìa, sự thịnh vượng của chúng không [ở] trong tay chúng; \\q mưu kế của kẻ ác cách xa tôi.",
+          "B": "Thế nhưng sự thịnh vượng của chúng không nằm trong tay chúng. \\q Mưu kế của kẻ ác cách xa tôi.",
+          "R": "Nhưng chúng đâu có tự sức mình mà được may mắn. \\q Tôi chẳng muốn dính dáng gì đến mưu tính của kẻ ác."
+        },
+        "ko": {
+          "L": "보시오, 그들의 형통은 그들 손에 [있지] 않소. \\q 악인들의 계획은 나와 거리가 머오.",
+          "B": "그러나 그들의 형통은 그들 자신의 손에 달린 것이 아니오. \\q 악인들의 꾀는 나와 거리가 머오.",
+          "R": "그러나 그들이 자기 힘으로 복을 얻은 것은 아니오. \\q 나는 악한 사람들의 계획에 끼고 싶지 않소."
         }
       },
       "decisions": [
@@ -1643,6 +2275,31 @@
           "L": "How often is the lamp of [the] wicked put out, \\q and [how often] does their disaster come upon them? \\q [How often does] {{deity_pronoun:he|He}} deal out pains in {{deity_pronoun:his|His}} anger?",
           "B": "How often is the lamp of the wicked snuffed out? \\q How often does disaster fall on them, \\q or God deal out sorrows in {{deity_pronoun:his|His}} anger?",
           "R": "How often does the lamp of the wicked really go out? \\q How often does disaster strike them, \\q or God punish them in {{deity_pronoun:his|His}} anger?"
+        },
+        "es": {
+          "L": "¿Cuántas veces se apaga la lámpara de [los] malvados, \\q y [cuántas veces] viene sobre ellos su desastre? \\q [¿Cuántas veces] reparte {{deity_pronoun:él|Él}} dolores en {{deity_pronoun:su|Su}} ira?",
+          "B": "¿Cuántas veces se extingue la lámpara de los malvados? \\q ¿Cuántas veces les cae encima el desastre, \\q o reparte Dios dolores en {{deity_pronoun:su|Su}} ira?",
+          "R": "¿Cuántas veces se apaga de verdad la lámpara de los malvados? \\q ¿Cuántas veces les llega el desastre, \\q o los castiga Dios en {{deity_pronoun:su|Su}} ira?"
+        },
+        "fr": {
+          "L": "Combien de fois la lampe des méchants s’éteint-elle, \\q et [combien de fois] leur malheur vient-il sur eux ? \\q [Combien de fois est-ce qu’]{{deity_pronoun:il|Il}} distribue des douleurs dans {{deity_pronoun:sa|Sa}} colère ?",
+          "B": "Combien de fois la lampe des méchants est-elle soufflée ? \\q Combien de fois le malheur fond-il sur eux, \\q ou Dieu distribue-t-il des souffrances dans {{deity_pronoun:sa|Sa}} colère ?",
+          "R": "Combien de fois la lampe des méchants s’éteint-elle vraiment ? \\q Combien de fois le malheur les frappe-t-il, \\q ou Dieu les punit-il dans {{deity_pronoun:sa|Sa}} colère ?"
+        },
+        "sw": {
+          "L": "Ni mara ngapi taa ya waovu inazimwa, \\q na [mara ngapi] msiba wao unawajia? \\q [Mara ngapi] anagawa maumivu katika hasira {{deity_pronoun:yake|Yake}}?",
+          "B": "Ni mara ngapi taa ya waovu inazimwa? \\q Ni mara ngapi msiba unawaangukia, \\q au Mungu anagawa huzuni katika hasira {{deity_pronoun:yake|Yake}}?",
+          "R": "Ni mara ngapi kweli taa ya waovu inazimika? \\q Ni mara ngapi msiba unawapata, \\q au Mungu anawaadhibu katika hasira {{deity_pronoun:yake|Yake}}?"
+        },
+        "vi": {
+          "L": "Đã bao lần đèn của kẻ ác bị tắt, \\q và [bao lần] tai họa của chúng đổ trên chúng? \\q [Bao lần] {{deity_pronoun:ngài|Ngài}} phân phát đau đớn trong cơn giận của {{deity_pronoun:ngài|Ngài}}?",
+          "B": "Đã bao lần đèn của kẻ ác bị dập tắt? \\q Bao lần tai họa giáng trên chúng, \\q hay Đức Chúa Trời phân phát khổ đau cho chúng trong cơn giận của {{deity_pronoun:ngài|Ngài}}?",
+          "R": "Đèn của kẻ ác thật sự bị tắt được bao nhiêu lần? \\q Có bao lần tai họa ập xuống chúng, \\q hay Đức Chúa Trời trừng phạt chúng trong cơn giận của {{deity_pronoun:ngài|Ngài}}?"
+        },
+        "ko": {
+          "L": "악인들의 등불이 꺼지는 일이 몇 번이나 있으며, \\q 그들의 재앙이 그들에게 닥치는 일이 [몇 번이나 있소]? \\q 그분께서 진노하셔서 고통을 나누어 주시는 일이 [몇 번이나 있소]?",
+          "B": "악인들의 등불이 꺼지는 일이 몇 번이나 있소? \\q 재앙이 그들에게 닥치거나, \\q 하나님께서 진노하셔서 그들에게 고통을 나누어 주시는 일이 몇 번이나 있소?",
+          "R": "악한 사람들의 등불이 정말로 꺼지는 일이 몇 번이나 있소? \\q 재앙이 그들을 덮치거나, \\q 하나님께서 진노하셔서 그들을 벌하시는 일이 몇 번이나 있소?"
         }
       },
       "decisions": [
