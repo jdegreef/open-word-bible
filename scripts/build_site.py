@@ -30,6 +30,7 @@ sys.path.insert(0, str(ROOT))
 from typing import NamedTuple  # noqa: E402
 
 from owb import crossrefs, export, languages as owb_languages, markup, morph, refs, translit, validate, versification  # noqa: E402
+from owb import words_of_jesus  # noqa: E402
 from owb.export import record_verses  # noqa: E402
 
 # The interface languages, English first (data/languages.json; see catalog below).
@@ -696,6 +697,10 @@ def curl_record(r):
     stores straight ones; curling here, the one loader, covers the reader,
     the home page and articles alike."""
     r["links"] = alignment_links(r)
+    # Where Jesus speaks, for the reader's red letters: ranges into each
+    # rendering, like the links (data/words_of_jesus/).
+    if r["id"] in words_of_jesus.marked():
+        r["wj"] = words_of_jesus.record_ranges(r, words_of_jesus.marked()[r["id"]])
     for levels in r["renderings"].values():
         for level, text in levels.items():
             levels[level] = smart_quotes(text)
@@ -1333,6 +1338,10 @@ def chapter_page(book, chapter, lang="en"):
     units = ("\n  " + control("measures", "units", [("0", t(lang, "reader.modern")),
                                                      ("1", t(lang, "reader.original"))])
              if has_units else "")
+    # Red letters only where a passage has words of Jesus marked.
+    red_letter = ("\n  " + control("words_of_jesus", "red_letter", [("0", t(lang, "reader.black")),
+                                                                     ("1", t(lang, "reader.red"))])
+                  if any("wj" in r for r in records) else "")
     body = f"""
 <button type="button" class="settings-toggle" id="settings-toggle" aria-expanded="false" aria-controls="settings">
   <span>{t(lang, "reader.settings")}</span> <span class="settings-summary" id="settings-summary"></span>
@@ -1349,13 +1358,13 @@ def chapter_page(book, chapter, lang="en"):
   {title_control}
   {control("pronouns", "deity_pronoun", [("0", t(lang, "reader.he")), ("1", t(lang, "reader.He"))])}{units}{plural}
   {control("headings", "headings", [("0", t(lang, "reader.show")), ("1", t(lang, "reader.hide"))])}
-  {control("crossrefs", "crossrefs", [("0", t(lang, "reader.show")), ("1", t(lang, "reader.hide"))])}
+  {control("crossrefs", "crossrefs", [("0", t(lang, "reader.show")), ("1", t(lang, "reader.hide"))])}{red_letter}
   </div>
   </div>
   {control("view", "view", [("0", t(lang, "reader.study")), ("1", t(lang, "reader.reading")),
                             ("2", t(lang, "reader.parallel")), ("3", t(lang, "reader.interlinear"))], " view-control")}
 </div>
-<p class="hint"><span id="hint-level"></span> <span id="hint-gender"></span> <span id="hint-{title_setting}"></span> <span id="hint-deity_pronoun"></span> <span id="hint-units"></span> <span id="hint-plural_you"></span> <span id="hint-headings"></span> <span id="hint-crossrefs"></span> <span id="hint-view"></span></p>
+<p class="hint"><span id="hint-level"></span> <span id="hint-gender"></span> <span id="hint-{title_setting}"></span> <span id="hint-deity_pronoun"></span> <span id="hint-units"></span> <span id="hint-plural_you"></span> <span id="hint-headings"></span> <span id="hint-crossrefs"></span> <span id="hint-red_letter"></span> <span id="hint-view"></span></p>
 </div>
 <div class="reader">
   <article class="passage">
