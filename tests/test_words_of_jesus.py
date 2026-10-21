@@ -34,6 +34,12 @@ class QuotationsTest(unittest.TestCase):
         # Three deep, beginning two deep: all of it before the last mark.
         text = 'your body will not be buried in the tomb of your ancestors, "he said," as I was told.\'"'
         self.assertEqual(quoted(text), [text[:-1]])
+        # A quotation inside the speech, closing in a later sentence than
+        # the one that opened it, leaves the speech open (Matthew 6:13).
+        text = "And do not lead us into testing, but rescue us from the evil one.'"
+        self.assertEqual(quoted(text, inside=True), [text])
+        text = "rescue us from the evil one.' For if you forgive others,\" he said."
+        self.assertEqual(quoted(text, inside=True), [text[:text.index('"')]])
         self.assertEqual(quoted("Il dit : « Ils ont dit “Va”. »"), ["Ils ont dit “Va”."])
 
     def test_apostrophes_are_not_quotation_marks(self):

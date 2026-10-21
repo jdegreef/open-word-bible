@@ -152,7 +152,11 @@ def _quotations(text, inside):
         if want in "'\u2018" and ((after.isalnum() and after < "\u0250") or after == "{"
                                    or (want not in stack and (after.isspace() or ch == "\u2019"))):
             continue
-        if want not in stack:
+        if want not in stack and stack and want != stack[0]:
+            # A quotation inside the outer one, open since before this
+            # sentence began (the Lord's Prayer, Matthew 6:9-13).
+            stack.insert(1, want)
+        elif want not in stack:
             # Open since before this sentence began: everything so far,
             # quotations included, is inside it.
             stack.insert(0, want)
