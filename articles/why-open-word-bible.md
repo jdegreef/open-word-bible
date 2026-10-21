@@ -47,4 +47,4 @@ The record beside the verse says why. John uses the same verb in 12:35 of darkne
 
 ## Where we are
 
-The project is young. Books from both Testaments are being drafted in English, and Spanish, French and Swahili follow, each from the Greek and Hebrew. Every sentence comes with its full reasoning, and the [Read](/read/) page shows what is translated so far. It is there to show the method and to be criticised. If you read Greek or Hebrew, or simply notice something that reads badly, the [project on GitHub](https://github.com/jdegreef/open-word-bible) is the place to say so.
+The project is young. Books from both Testaments are being drafted in English, and Spanish, French, Swahili, Vietnamese and Korean follow, each from the Greek and Hebrew. Every sentence comes with its full reasoning, and the [Read](/read/) page shows what is translated so far. It is there to show the method and to be criticised. If you read Greek or Hebrew, or simply notice something that reads badly, the [project on GitHub](https://github.com/jdegreef/open-word-bible) is the place to say so.

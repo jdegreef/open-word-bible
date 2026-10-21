@@ -5,7 +5,7 @@ date: 2026-10-12
 order: 44
 nav_title: Kinh Thánh tiếng Copt và tiếng Ge'ez
 section: translation
-source: 2d93d8cce756
+source: 4eac4f19c6d7
 ---
 Người ta dễ kể lịch sử Kinh Thánh như một câu chuyện đi từ Giê-ru-sa-lem đến Rô-ma rồi lên phía bắc vào châu Âu. Nhưng một số bản dịch Kinh Thánh sớm nhất đã được thực hiện ở châu Phi. Tại Ai Cập, các Cơ Đốc nhân đã dịch Kinh Thánh sang **tiếng Copt** từ thế kỷ thứ ba trở đi. Tại vương quốc Aksum, thuộc vùng nay là Ê-thi-ô-pi và Eritrea, Kinh Thánh được dịch sang **tiếng Ge'ez**, có lẽ bắt đầu từ thế kỷ thứ tư hoặc thứ năm. Cả hai bản dịch đến nay vẫn được đọc trong sự thờ phượng.
 
@@ -64,7 +64,7 @@ Nếu không có giáo hội Ê-thi-ô-pi, ngày nay người ta chỉ biết đ
 
 Tiếng Ge'ez vẫn là ngôn ngữ phụng vụ của các giáo hội Chính Thống Ê-thi-ô-pi và Eritrea, và giáo hội Copt vẫn dùng tiếng Bohairic bên cạnh tiếng Ả Rập. Cơ Đốc giáo đã là một tôn giáo của châu Phi từ những thế kỷ đầu tiên, và các dịch giả châu Phi đã đem Kinh Thánh vào ngôn ngữ của chính họ từ lâu như bất cứ ai.
 
-Câu chuyện ấy vẫn tiếp diễn. Open Word Bible đang soạn bản tiếng Swahili cùng với tiếng Anh, tiếng Tây Ban Nha và tiếng Pháp, mỗi bản đều dịch từ tiếng Hê-bơ-rơ và tiếng Hy Lạp chứ không phải từ tiếng Anh (xem [Kinh Thánh tiếng Swahili](/articles/the-bible-in-swahili/)). Công việc tiếng Swahili có sự hỗ trợ của AI, và không phần nào sẽ được đánh dấu là đã duyệt cho đến khi những người duyệt bản ngữ có tên tuổi đã kiểm tra.
+Câu chuyện ấy vẫn tiếp diễn. Open Word Bible đang soạn bản tiếng Swahili cùng với tiếng Anh, tiếng Tây Ban Nha, tiếng Pháp, tiếng Việt và tiếng Hàn, mỗi bản đều dịch từ tiếng Hê-bơ-rơ và tiếng Hy Lạp chứ không phải từ tiếng Anh (xem [Kinh Thánh tiếng Swahili](/articles/the-bible-in-swahili/)). Công việc tiếng Swahili có sự hỗ trợ của AI, và không phần nào sẽ được đánh dấu là đã duyệt cho đến khi những người duyệt bản ngữ có tên tuổi đã kiểm tra.
 
 ## Nguồn tham khảo
 

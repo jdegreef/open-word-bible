@@ -4,7 +4,7 @@ summary: Thế kỷ hai mươi đã biến việc dịch Kinh Thánh thành mộ
 date: 2026-10-12
 order: 58
 section: translation
-source: f6ad6f3b1e4b
+source: 74135636865a
 ---
 Trên thế giới có hơn bảy nghìn ngôn ngữ đang được sử dụng. Có những ngôn ngữ được hàng trăm triệu người nói, có những ngôn ngữ chỉ vài trăm người. Trong phần lớn lịch sử, việc dịch Kinh Thánh chỉ đến được với một phần nhỏ trong số đó. Vào thế kỷ hai mươi, điều này đã thay đổi. Việc dịch thuật trở thành một nỗ lực có chủ đích, có tổ chức và ngày càng chuyên nghiệp nhằm đến với mọi ngôn ngữ, và trong những thập niên gần đây, trên hết nó đã trở thành công việc của chính những người nói các ngôn ngữ ấy.
 
@@ -73,7 +73,7 @@ Trường hợp này xoay quanh một sự phân biệt xuyên suốt mọi vi�
 
 ## Chỗ đứng của Open Word Bible
 
-Open Word Bible không phải là một dự án cho các ngôn ngữ thiểu số. Cho đến nay, các ngôn ngữ của dự án là tiếng Anh, tiếng Tây Ban Nha, tiếng Pháp và tiếng Swahili, tất cả đều đã có nhiều bản Kinh Thánh. Nhưng dự án chia sẻ hai mối quan tâm với phong trào hiện đại. Giấy phép CC0 của dự án có nghĩa là bất cứ ai, kể cả những người dịch sang các ngôn ngữ khác, đều có thể tự do sử dụng và phóng tác nó. Và vì mỗi câu văn đều mang theo lập luận của mình (xin xem [Trình bày công việc: bản ghi lập luận là gì](/articles/showing-the-work/)), một người dịch sang ngôn ngữ khác có thể thấy những gì đã được quyết định về tiếng Hy Lạp và tiếng Hê-bơ-rơ, chứ không chỉ một kết quả bằng tiếng Anh. Các bản nháp của dự án được soạn với sự hỗ trợ của AI, và chưa có bản nào được đánh dấu là đã duyệt; như mọi dự án được mô tả ở đây, dự án phụ thuộc vào những người kiểm tra là con người, có tên được ghi lại.
+Open Word Bible không phải là một dự án cho các ngôn ngữ thiểu số. Cho đến nay, các ngôn ngữ của dự án là tiếng Anh, tiếng Tây Ban Nha, tiếng Pháp, tiếng Swahili, tiếng Việt và tiếng Hàn, tất cả đều đã có nhiều bản Kinh Thánh. Nhưng dự án chia sẻ hai mối quan tâm với phong trào hiện đại. Giấy phép CC0 của dự án có nghĩa là bất cứ ai, kể cả những người dịch sang các ngôn ngữ khác, đều có thể tự do sử dụng và phóng tác nó. Và vì mỗi câu văn đều mang theo lập luận của mình (xin xem [Trình bày công việc: bản ghi lập luận là gì](/articles/showing-the-work/)), một người dịch sang ngôn ngữ khác có thể thấy những gì đã được quyết định về tiếng Hy Lạp và tiếng Hê-bơ-rơ, chứ không chỉ một kết quả bằng tiếng Anh. Các bản nháp của dự án được soạn với sự hỗ trợ của AI, và chưa có bản nào được đánh dấu là đã duyệt; như mọi dự án được mô tả ở đây, dự án phụ thuộc vào những người kiểm tra là con người, có tên được ghi lại.
 
 ## Nguồn tham khảo
 

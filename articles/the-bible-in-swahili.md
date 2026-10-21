@@ -65,7 +65,7 @@ Every Swahili translation faces a question about vocabulary. Many religious word
 
 ## Open Word Bible in Swahili
 
-Swahili is one of the four languages of Open Word Bible, alongside English, Spanish and French. As in every language, the Swahili is translated from the Greek and Hebrew, not from English, and every sentence shares the same meaning decisions as the other languages, while wording decisions are made for Swahili itself (see [Literal, Balanced, Readable: three levels, one meaning](/articles/three-levels-one-meaning/)).
+Swahili is one of the six languages of Open Word Bible, alongside English, Spanish, French, Vietnamese and Korean. As in every language, the Swahili is translated from the Greek and Hebrew, not from English, and every sentence shares the same meaning decisions as the other languages, while wording decisions are made for Swahili itself (see [Literal, Balanced, Readable: three levels, one meaning](/articles/three-levels-one-meaning/)).
 
 Swahili drafts already exist for some books. They are AI-assisted, and none has yet been reviewed. Like the earliest Swahili Bibles, they need what translators have always needed most: native speakers who can say whether a sentence sounds like real Swahili. Open Word Bible will not mark any of its Swahili as reviewed until a named reviewer fluent in Swahili has read it. If you are such a reader, the [project on GitHub](https://github.com/jdegreef/open-word-bible) is the place to start.
 

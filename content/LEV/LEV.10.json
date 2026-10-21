@@ -65,6 +65,16 @@
           "L": "Na wana wa Haruni, Nadabu na Abihu, wakachukua kila mmoja chetezo chake, wakatia moto ndani yake, wakaweka uvumba juu yake, wakasogeza mbele za {{divine_name:BWANA|Yahwe}} moto wa kigeni, ambao hakuwa amewaamuru.",
           "B": "Nadabu na Abihu, wana wa Haruni, walichukua kila mmoja chetezo chake. Wakatia moto ndani yake, wakaweka uvumba juu ya moto huo, wakatoa mbele za {{divine_name:BWANA|Yahwe}} moto usioruhusiwa, ambao hakuwa amewaamuru kuuleta.",
           "R": "Nadabu na Abihu, wawili kati ya wana wa Haruni, walichukua kila mmoja chombo cha kufukizia uvumba. Wakatia moto ndani ya vyombo hivyo na kuweka uvumba juu yake. Kisha wakautoa mbele za {{divine_name:BWANA|Yahwe}}. Lakini haukuwa moto unaofaa. {{divine_name:BWANA|Yahwe}} hakuwa amewaamuru kuuleta."
+        },
+        "vi": {
+          "L": "Các con trai của A-rôn là Na-đáp và A-bi-hu, mỗi người lấy lư hương của mình, bỏ lửa vào, đặt hương lên trên, rồi dâng trước mặt {{divine_name:CHÚA|Gia-vê}} một thứ lửa lạ mà {{deity_pronoun:ngài|Ngài}} không truyền cho họ.",
+          "B": "Na-đáp và A-bi-hu, các con trai của A-rôn, mỗi người lấy lư hương của mình, bỏ lửa vào, đặt hương lên lửa, rồi dâng trước mặt {{divine_name:CHÚA|Gia-vê}} một thứ lửa không hợp lệ, là lửa {{deity_pronoun:ngài|Ngài}} không truyền cho họ dâng.",
+          "R": "Na-đáp và A-bi-hu là hai con trai của A-rôn. Mỗi người lấy một cái lư để đốt hương. Họ bỏ lửa vào lư rồi đặt hương lên trên. Sau đó họ dâng hương trước mặt {{divine_name:CHÚA|Gia-vê}}. Nhưng đó là thứ lửa không đúng. {{divine_name:CHÚA|Gia-vê}} đã không truyền cho họ mang lửa ấy đến."
+        },
+        "ko": {
+          "L": "그리고 아론의 아들들 나답과 아비후가 각각 자기 향로를 가져다가 그 안에 불을 담고 그 위에 향을 얹어, {{divine_name:주|야훼}} 앞에 낯선 불을 가까이 드렸다. 그것은 그분이 그들에게 명령하지 않으신 것이었다.",
+          "B": "아론의 아들 나답과 아비후가 저마다 자기 향로를 가져다가 거기에 불을 담고 그 불 위에 향을 얹은 다음, {{divine_name:주|야훼}} 앞에 합당하지 않은 불을 드렸다. 그것은 {{divine_name:주|야훼}}께서 그들에게 가져오라고 명령하지 않으신 불이었다.",
+          "R": "아론의 두 아들 나답과 아비후가 각각 향을 피우는 불판을 가져다가 거기에 불을 담고 그 위에 향을 얹었다. 그리고 그것을 {{divine_name:주|야훼}} 앞에 드렸다. 그러나 그것은 잘못된 불이었다. {{divine_name:주|야훼}}께서 그런 불을 가져오라고 명령하신 적이 없었다."
         }
       },
       "decisions": [
@@ -242,6 +252,88 @@
           "reason": "The word means foreign, outside what is allowed (m1). Literal keeps \"wa kigeni\" (foreign); Balanced says the fire was not permitted, and Readable that it was not the right fire, as the English levels do. \"Chetezo\" (censer) at Literal and Balanced; Readable explains it as \"chombo cha kufukizia uvumba\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030100010071"
+          ],
+          "choice": "\"lư hương\" (censer)",
+          "alternatives": [
+            "\"bình hương\""
+          ],
+          "reason": "The common Vietnamese word for a vessel that holds burning incense; Readable says what it is for, \"một cái lư để đốt hương\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030100010161"
+          ],
+          "choice": "\"{{divine_name:CHÚA|Gia-vê}}\" with \"phán\" for God speaking, \"Ngài\" for him in the narrative",
+          "alternatives": [],
+          "reason": "As in Genesis: the divine name in capitals with \"Gia-vê\" as the setting alternative; \"phán\" is kept for God speaking, \"nói\" for everyone else. Recorded once for Leviticus 10-15.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o030100010161"
+          ],
+          "choice": "Narrative in the plain written style (-었다) with the honorific -시- for God at every level; no deity_pronoun spans in Korean",
+          "alternatives": [
+            "capitalised or special pronouns for God"
+          ],
+          "reason": "As the Korean style guide sets for the Old Testament. Korean has no capital letters, so the English setting for capitalising pronouns for God has nothing to change; respect for God is carried by the honorific endings (명령하지 않으신) and by 그분. Recorded once for Leviticus 10-15.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030100010171",
+            "o030100010181"
+          ],
+          "choice": "\"낯선 불\" (L), \"합당하지 않은 불\" (B), \"잘못된 불\" (R)",
+          "alternatives": [
+            "\"다른 불\""
+          ],
+          "reason": "The Hebrew word means foreign or unauthorised. \"다른 불\" would suggest only a different source of fire; the levels move from the literal \"strange\" to the sense the meaning decision gives, fire God had not permitted.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -295,6 +387,16 @@
           "L": "Na moto ukatoka mbele za {{divine_name:BWANA|Yahwe}} ukawala, nao wakafa mbele za {{divine_name:BWANA|Yahwe}}.",
           "B": "Ndipo moto ulitoka mbele za {{divine_name:BWANA|Yahwe}} ukawala kabisa, nao wakafa mbele za {{divine_name:BWANA|Yahwe}}.",
           "R": "Ndipo moto ulitoka kwa {{divine_name:BWANA|Yahwe}} ukawachoma. Wakafa pale pale mbele za {{divine_name:BWANA|Yahwe}}."
+        },
+        "vi": {
+          "L": "Lửa từ trước mặt {{divine_name:CHÚA|Gia-vê}} phát ra và thiêu nuốt họ, và họ chết trước mặt {{divine_name:CHÚA|Gia-vê}}.",
+          "B": "Bấy giờ lửa từ trước mặt {{divine_name:CHÚA|Gia-vê}} phát ra thiêu nuốt họ, và họ chết trước mặt {{divine_name:CHÚA|Gia-vê}}.",
+          "R": "Rồi lửa từ {{divine_name:CHÚA|Gia-vê}} phát ra thiêu cháy họ. Họ chết ngay tại đó, trước mặt {{divine_name:CHÚA|Gia-vê}}."
+        },
+        "ko": {
+          "L": "그러자 {{divine_name:주|야훼}} 앞에서 불이 나와 그들을 삼켰고, 그들은 {{divine_name:주|야훼}} 앞에서 죽었다.",
+          "B": "그러자 {{divine_name:주|야훼}} 앞에서 불이 나와 그들을 삼켜 버렸고, 그들은 {{divine_name:주|야훼}} 앞에서 죽었다.",
+          "R": "그러자 {{divine_name:주|야훼}}께로부터 불이 나와 그들을 태워 버렸다. 그들은 거기 {{divine_name:주|야훼}} 앞에서 죽었다."
         }
       },
       "decisions": [
@@ -342,6 +444,26 @@
           "choice": "devoured",
           "alternatives": [],
           "reason": "The verb is the one used for eating. \"Devoured\" keeps the picture; Literal has \"consumed\" and Readable \"burned them up\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030100020052"
+          ],
+          "choice": "\"삼키다\" for the fire consuming them, the same verb as for the offering in 9:24",
+          "alternatives": [
+            "\"태우다\" (burn)"
+          ],
+          "reason": "The meaning decision links this verse to 9:24, where fire from the LORD consumed the offering. \"삼키다\" keeps the picture of fire devouring; Readable says plainly \"태워 버렸다\".",
           "uncertain": false,
           "footnote": false
         }
@@ -406,6 +528,16 @@
           "L": "Musa akamwambia Haruni, \"Hili [ndilo] alilolinena {{divine_name:BWANA|Yahwe}}, akisema, 'Kwa wale walio karibu {{deity_pronoun:nami|Nami}} nitajionyesha kuwa mtakatifu, na mbele ya watu wote nitatukuzwa.'\" Naye Haruni akanyamaza.",
           "B": "Musa alimwambia Haruni, \"Hiki ndicho {{divine_name:BWANA|Yahwe}} alichomaanisha aliposema, 'Kupitia wale wanaonikaribia nitaonyesha kwamba {{deity_pronoun:mimi|Mimi}} ni mtakatifu, na machoni pa watu wote nitaonyesha utukufu {{deity_pronoun:wangu|Wangu}}.'\" Haruni hakusema chochote.",
           "R": "Musa alimwambia Haruni, \"Hili ndilo {{divine_name:BWANA|Yahwe}} alilokuwa akizungumzia aliposema, 'Nitaonyesha kwamba {{deity_pronoun:mimi|Mimi}} ni mtakatifu kwa wale wanaonikaribia. Nitaonyesha utukufu {{deity_pronoun:wangu|Wangu}} kwa watu wote.'\" Haruni hakusema neno lolote."
+        },
+        "vi": {
+          "L": "Môi-se nói với A-rôn: \"Đây [là] điều {{divine_name:CHÚA|Gia-vê}} đã phán rằng: 'Giữa những người đến gần {{deity_pronoun:ta|Ta}}, {{deity_pronoun:ta|Ta}} sẽ tỏ mình là thánh, và trước mặt toàn dân {{deity_pronoun:ta|Ta}} sẽ được tôn vinh.'\" A-rôn im lặng.",
+          "B": "Môi-se nói với A-rôn: \"Đây là điều {{divine_name:CHÚA|Gia-vê}} muốn nói khi {{deity_pronoun:ngài|Ngài}} phán: 'Qua những người đến gần {{deity_pronoun:ta|Ta}}, {{deity_pronoun:ta|Ta}} sẽ tỏ ra {{deity_pronoun:ta|Ta}} là thánh, và trước mặt toàn dân {{deity_pronoun:ta|Ta}} sẽ bày tỏ vinh quang của {{deity_pronoun:ta|Ta}}.'\" A-rôn không nói gì.",
+          "R": "Môi-se nói với A-rôn: \"Đây là điều {{divine_name:CHÚA|Gia-vê}} đã phán: 'Ta sẽ cho những người đến gần {{deity_pronoun:ta|Ta}} thấy {{deity_pronoun:ta|Ta}} là thánh. Ta sẽ bày tỏ vinh quang của {{deity_pronoun:ta|Ta}} cho toàn dân thấy.'\" A-rôn không nói một lời nào."
+        },
+        "ko": {
+          "L": "그리고 모세가 아론에게 말했다. \"이것이 {{divine_name:주|야훼}}께서 말씀하신 것이다. '나에게 가까이 있는 자들 가운데서 내가 나의 거룩함을 나타내고, 온 백성 앞에서 내가 영광을 받을 것이다.'\" 그러자 아론은 잠잠했다.",
+          "B": "모세가 아론에게 말했다. \"{{divine_name:주|야훼}}께서 '나에게 가까이 나오는 자들을 통하여 내가 거룩하다는 것을 드러내고, 모든 백성이 보는 앞에서 내 영광을 나타낼 것이다' 하고 말씀하신 것은 바로 이것을 두고 하신 말씀이에요.\" 아론은 아무 말도 하지 않았다.",
+          "R": "모세가 아론에게 말했다. \"{{divine_name:주|야훼}}께서 '나는 나에게 가까이 오는 사람들에게 내가 거룩하다는 것을 보여 줄 것이다. 모든 백성에게 내 영광을 보여 줄 것이다' 하고 말씀하셨어요. 바로 이런 일을 두고 하신 말씀이에요.\" 아론은 한마디도 하지 않았다."
         }
       },
       "decisions": [
@@ -472,6 +604,27 @@
           "choice": "show my glory",
           "alternatives": [],
           "reason": "The passive \"I will be glorified\" is put actively, God showing his glory, which is how he gains it (Exodus 14:4). Literal keeps the passive.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o030100030011"
+          ],
+          "choice": "God's words that Moses quotes are in 해라체 with \"나\"; Moses' own words to Aaron follow 8:31 (해라체 at Literal, 해요체 at Balanced and Readable)",
+          "alternatives": [
+            "God's words in the polite style"
+          ],
+          "reason": "God's own voice keeps the style of his commands in the following verses, whatever style Moses uses to his older brother.",
           "uncertain": false,
           "footnote": false
         }
@@ -542,6 +695,16 @@
           "L": "Musa akawaita Mishaeli na Elsafani, wana wa Uzieli, baba mdogo wa Haruni, akawaambia, \"Sogeeni, wabebeni ndugu zenu kutoka mbele ya mahali patakatifu mpaka nje ya kambi.\"",
           "B": "Musa aliwaita Mishaeli na Elsafani, wana wa Uzieli, baba mdogo wa Haruni. Akawaambia, \"Njooni mbele, mwaondoe jamaa zenu mbele ya mahali patakatifu, mkawapeleke nje ya kambi.\"",
           "R": "Musa aliwaita Mishaeli na Elsafani. Walikuwa wana wa Uzieli, baba mdogo wa Haruni. Musa akawaambia, \"Njooni hapa. Ondoeni maiti za jamaa zenu mbele ya hema takatifu. Wapelekeni nje ya kambi.\""
+        },
+        "vi": {
+          "L": "Môi-se gọi Mi-sa-ên và Ên-xa-phan, các con trai của U-xi-ên, chú của A-rôn, và nói với họ: \"Hãy đến gần, khiêng anh em của các anh từ trước Nơi Thánh ra ngoài trại quân.\"",
+          "B": "Môi-se cho gọi Mi-sa-ên và Ên-xa-phan, là các con trai của U-xi-ên, chú của A-rôn. Ông bảo họ: \"Hãy đến đây, khiêng những người bà con của các anh khỏi phía trước Nơi Thánh và đem ra ngoài trại quân.\"",
+          "R": "Môi-se gọi Mi-sa-ên và Ên-xa-phan đến. Họ là con trai của U-xi-ên, chú của A-rôn. Môi-se nói với họ: \"Hãy lại đây. Hãy khiêng xác hai người bà con của các anh ra khỏi chỗ phía trước lều thánh. Hãy đem họ ra ngoài khu trại.\""
+        },
+        "ko": {
+          "L": "그리고 모세가 아론의 삼촌 웃시엘의 아들들인 미사엘과 엘사반을 불러 그들에게 말했다. \"가까이 와서 너희 형제들을 성소 앞에서 진 바깥으로 메어 가라.\"",
+          "B": "모세가 아론의 삼촌 웃시엘의 아들인 미사엘과 엘사반을 불러 그들에게 말했다. \"앞으로 나와서 너희 친척들을 성소 앞에서 들어다가 진 밖으로 옮겨라.\"",
+          "R": "모세가 미사엘과 엘사반을 불렀다. 그들은 아론의 삼촌인 웃시엘의 아들들이었다. 모세가 그들에게 말했다. \"이리 오너라. 너희 친척들의 시신을 거룩한 장막 앞에서 옮겨라. 진 밖으로 메고 나가거라.\""
         }
       },
       "decisions": [
@@ -619,6 +782,67 @@
           "reason": "Uzziel was the brother of Amram, Aaron's father (m1), and the youngest of Kohath's sons (Exodus 6:18). Swahili names a father's younger brother \"baba mdogo\"; \"mjomba\" is properly a mother's brother.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o030100040162"
+          ],
+          "choice": "Moses addresses his kinsmen and Aaron's family as \"các anh\" (Aaron alone \"anh\"), and speaks of himself as \"tôi\"",
+          "alternatives": [
+            "\"các ngươi\""
+          ],
+          "reason": "They are Moses' cousins and his brother's household, not the people at large; \"các ngươi\" is kept for God's commands. Used through Leviticus 10.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030100040191",
+            "o030100040192"
+          ],
+          "choice": "\"Nơi Thánh\" (the holy place); Readable \"lều thánh\"",
+          "alternatives": [],
+          "reason": "The sanctuary term of the Pentateuch term sheet; Readable says plainly that it is the holy tent, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030100040161",
+            "o030100040162"
+          ],
+          "choice": "\"너희 형제들\" (L); \"너희 친척들\" (B, R)",
+          "alternatives": [
+            "\"너희 형제들\" at every level"
+          ],
+          "reason": "Nadab and Abihu were their cousins; as the meaning decision says, \"brothers\" here means relatives, and Korean 형제 would be read as brothers in the strict sense.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -673,6 +897,16 @@
           "L": "Wakasogea, wakawabeba katika kanzu zao mpaka nje ya kambi, kama Musa alivyosema.",
           "B": "Walisogea mbele, wakawabeba nje ya kambi wakiwa wamevaa kanzu zao wenyewe, kama Musa alivyosema.",
           "R": "Basi walikuja, wakazibeba maiti nje ya kambi. Wafu hao walikuwa bado wamevaa kanzu zao za ukuhani. Wale watu wawili walifanya sawasawa na Musa alivyosema."
+        },
+        "vi": {
+          "L": "Họ đến gần và khiêng họ, trong áo lót dài của họ, ra ngoài trại quân, như Môi-se đã nói.",
+          "B": "Họ đến khiêng hai người ấy, vẫn mặc áo lót dài của mình, ra ngoài trại quân, đúng như lời Môi-se đã nói.",
+          "R": "Vậy họ đến và khiêng xác ra ngoài khu trại. Hai người chết vẫn còn mặc áo lót dài của thầy tế lễ. Hai người kia làm đúng như Môi-se đã nói."
+        },
+        "ko": {
+          "L": "그러자 그들이 가까이 와서, 모세가 말한 대로 그들을 그들의 긴 웃옷을 입은 채로 진 바깥으로 메어 갔다.",
+          "B": "그들은 앞으로 나와서, 모세가 말한 대로 죽은 사람들을 그들이 입고 있던 긴 웃옷째로 들어 진 밖으로 옮겼다.",
+          "R": "그래서 그들이 와서 시신을 진 밖으로 옮겼다. 죽은 사람들은 제사장의 긴 웃옷을 그대로 입고 있었다. 두 사람은 모세가 말한 대로 했다."
         }
       },
       "decisions": [
@@ -709,6 +943,29 @@
           "alternatives": [],
           "reason": "Readable makes clear whose tunics are meant, as in the meaning decision.",
           "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030100050031",
+            "o030100050032"
+          ],
+          "choice": "\"긴 웃옷\" for the priests' tunic (kuttonet)",
+          "alternatives": [
+            "\"속옷\"",
+            "\"겉옷\""
+          ],
+          "reason": "\"속옷\", the older church word, now means underwear in everyday Korean; \"긴 웃옷\" describes the long priestly tunic without that misreading.",
+          "uncertain": true,
           "footnote": false
         }
       ],
@@ -791,6 +1048,16 @@
           "L": "Musa akamwambia Haruni, na Eleazari na Ithamari, wanawe, \"Msiziache [nywele za] vichwa vyenu timtimu, wala msirarue mavazi yenu, msije mkafa, naye asije akaikasirikia jumuiya yote. Lakini ndugu zenu, nyumba yote ya Israeli, wataulilia moto ambao {{divine_name:BWANA|Yahwe}} ameuwasha.",
           "B": "Kisha Musa alimwambia Haruni na wanawe Eleazari na Ithamari, \"Msiziache nywele zenu timtimu wala msirarue mavazi yenu kwa kuomboleza, la sivyo mtakufa, naye ataikasirikia jumuiya yote. Jamaa zenu, nyumba yote ya Israeli, wanaweza kuomboleza kwa ajili ya moto ambao {{divine_name:BWANA|Yahwe}} ameuleta.",
           "R": "Kisha Musa alimwambia Haruni na wanawe Eleazari na Ithamari, \"Msionyeshe huzuni yenu kwa kuziacha nywele zenu timtimu au kwa kurarua mavazi yenu. Mkifanya hivyo, mtakufa, na {{divine_name:BWANA|Yahwe}} atawakasirikia watu wote. Lakini jamaa zenu, watu wote wa Israeli, wanaweza kuwalilia wale ambao {{divine_name:BWANA|Yahwe}} aliwachoma kwa moto."
+        },
+        "vi": {
+          "L": "Môi-se nói với A-rôn, và với Ê-lê-a-sa và Y-tha-ma, các con trai của ông: \"Đừng xõa [tóc trên] đầu các anh, và đừng xé áo các anh, để các anh khỏi chết và {{deity_pronoun:ngài|Ngài}} không nổi giận với cả hội chúng. Nhưng anh em của các anh, là cả nhà Y-sơ-ra-ên, hãy khóc về sự thiêu đốt mà {{divine_name:CHÚA|Gia-vê}} đã thiêu đốt.",
+          "B": "Môi-se nói với A-rôn và hai con trai ông là Ê-lê-a-sa và Y-tha-ma: \"Đừng xõa tóc hay xé áo để tang, kẻo các anh phải chết và {{deity_pronoun:ngài|Ngài}} nổi giận với cả hội chúng. Còn bà con của các anh, là cả nhà Y-sơ-ra-ên, được khóc thương về đám lửa mà {{divine_name:CHÚA|Gia-vê}} đã giáng xuống.",
+          "R": "Rồi Môi-se nói với A-rôn và hai con trai ông là Ê-lê-a-sa và Y-tha-ma: \"Đừng tỏ ra buồn rầu bằng cách xõa tóc hay xé áo. Nếu làm vậy, các anh sẽ chết, và {{divine_name:CHÚA|Gia-vê}} sẽ nổi giận với cả dân chúng. Nhưng bà con của các anh, là toàn dân Y-sơ-ra-ên, có thể khóc thương những người đã bị {{divine_name:CHÚA|Gia-vê}} thiêu chết."
+        },
+        "ko": {
+          "L": "그리고 모세가 아론과 그의 아들들인 엘르아살과 이다말에게 말했다. \"너희는 [너희] 머리를 풀지 말고 너희 옷을 찢지 말라. 그래야 너희가 죽지 않고, 그분께서 온 회중에게 진노하지 않으실 것이다. 그러나 너희 형제들, 곧 이스라엘 온 집안은 {{divine_name:주|야훼}}께서 태우신 그 불태움을 두고 울어도 된다.",
+          "B": "그리고 모세가 아론과 그의 아들 엘르아살과 이다말에게 말했다. \"애도한다고 머리를 풀거나 옷을 찢지 마세요. 그렇게 하면 죽게 되고, 그분께서 온 회중에게 진노하실 거예요. 친척인 이스라엘 온 집안은 {{divine_name:주|야훼}}께서 일으키신 불로 말미암아 슬피 울어도 좋아요.",
+          "R": "그리고 모세가 아론과 그의 아들 엘르아살과 이다말에게 말했다. \"슬픔을 나타내려고 머리를 풀어 헤치거나 옷을 찢으면 안 돼요. 그렇게 하면 죽게 되고, {{divine_name:주|야훼}}께서 온 백성에게 노하실 거예요. 그러나 친척인 이스라엘의 모든 백성은 {{divine_name:주|야훼}}께서 불로 태우신 사람들을 위하여 울어도 돼요."
         }
       },
       "decisions": [
@@ -905,6 +1172,28 @@
           "reason": "\"Timtimu\" is the Swahili word for hair left loose and dishevelled, the sign of grief described in m1.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o030100060101",
+            "o030100060131"
+          ],
+          "choice": "Commands in 해라체: \"-하라\" / \"-하지 말라\" (L, B); \"-해야 한다\" / \"-하면 안 된다\" (R)",
+          "alternatives": [
+            "\"-하지 마라\" at every level"
+          ],
+          "reason": "As the terms for Exodus to Deuteronomy set for laws and instructions in Korean. Recorded once for Leviticus 10-15. In this verse and 10:7, 10:12-15 Moses speaks to his older brother, so Balanced and Readable use 해요체 as set at 8:31; Literal keeps \"-하지 말라\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -962,6 +1251,16 @@
           "L": "Wala msitoke mlangoni pa Hema la Kukutania, msije mkafa, kwa maana mafuta ya kupaka ya {{divine_name:BWANA|Yahwe}} [yako] juu yenu.\" Wakafanya sawasawa na neno la Musa.",
           "B": "Msiondoke mahali penu kwenye mlango wa Hema la Kukutania, la sivyo mtakufa, kwa sababu mnayo mafuta ya kupaka ya {{divine_name:BWANA|Yahwe}} juu yenu.\" Wakafanya kama Musa alivyosema.",
           "R": "Msiondoke kwenye mlango wa Hema la Kukutania, la sivyo mtakufa. Mmepakwa mafuta ya {{divine_name:BWANA|Yahwe}}.\" Basi wakafanya kama Musa alivyosema."
+        },
+        "vi": {
+          "L": "Và từ lối vào Lều Hội Kiến các anh không được đi ra, kẻo các anh chết, vì dầu xức của {{divine_name:CHÚA|Gia-vê}} [ở] trên các anh.\" Họ làm theo lời Môi-se.",
+          "B": "Các anh không được rời chỗ mình ở lối vào Lều Hội Kiến, kẻo phải chết, vì các anh đang mang dầu xức của {{divine_name:CHÚA|Gia-vê}}.\" Họ làm đúng như lời Môi-se.",
+          "R": "Đừng rời khỏi lối vào Lều Hội Kiến, nếu không các anh sẽ chết. Các anh đã được xức dầu của {{divine_name:CHÚA|Gia-vê}}.\" Vậy họ làm theo lời Môi-se."
+        },
+        "ko": {
+          "L": "너희는 회막 입구에서 나가지 말라. 너희가 죽지 않도록 하라. {{divine_name:주|야훼}}의 기름 붓는 기름이 너희 위에 [있기] 때문이다.\" 그러자 그들은 모세의 말대로 했다.",
+          "B": "회막 입구를 떠나지 마세요. 그렇지 않으면 죽을 거예요. {{divine_name:주|야훼}}의 기름 부음을 받은 몸이기 때문이에요.\" 그들은 모세가 말한 대로 했다.",
+          "R": "회막 입구를 떠나면 안 돼요. 떠나면 죽어요. {{divine_name:주|야훼}}의 기름으로 기름 부음을 받았기 때문이에요.\" 그래서 그들은 모세가 말한 대로 했다."
         }
       },
       "decisions": [
@@ -1014,6 +1313,50 @@
           "reason": "Balanced words the command as staying at one's post and the oil as something the priests carry on them.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030100070021",
+            "o030100070031"
+          ],
+          "choice": "\"Lều Hội Kiến\" at every level",
+          "alternatives": [
+            "\"lều họp\""
+          ],
+          "reason": "The term sheet's name for the tent of meeting, kept also at Readable (where the English says \"meeting tent\") so the same tent has one name.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030100070031",
+            "o030100070041"
+          ],
+          "choice": "\"회막\" for the tent of meeting at every level",
+          "alternatives": [
+            "\"만남의 장막\" (R)"
+          ],
+          "reason": "The term sheet for Exodus to Deuteronomy keeps one word for the tent of meeting at every level; Readable keeps it too so that readers meet the same name throughout. Recorded once for Leviticus 10-15.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1058,6 +1401,16 @@
           "L": "Na {{divine_name:BWANA|Yahwe}} akasema na Haruni, akisema,",
           "B": "{{divine_name:BWANA|Yahwe}} alisema na Haruni. Akasema,",
           "R": "{{divine_name:BWANA|Yahwe}} alimwambia Haruni,"
+        },
+        "vi": {
+          "L": "{{divine_name:CHÚA|Gia-vê}} phán với A-rôn rằng:",
+          "B": "{{divine_name:CHÚA|Gia-vê}} phán với A-rôn:",
+          "R": "{{divine_name:CHÚA|Gia-vê}} phán bảo A-rôn:"
+        },
+        "ko": {
+          "L": "그리고 {{divine_name:주|야훼}}께서 아론에게 말씀하여 이르셨다.",
+          "B": "{{divine_name:주|야훼}}께서 아론에게 말씀하셨다.",
+          "R": "{{divine_name:주|야훼}}께서 아론에게 말씀하셨다."
         }
       },
       "decisions": [
@@ -1137,6 +1490,16 @@
           "L": "\"Usinywe divai wala kileo, wewe na wanao pamoja nawe, mnapoingia katika Hema la Kukutania, msije mkafa; [ni] kanuni ya kudumu milele katika vizazi vyenu,",
           "B": "\"Usinywe divai wala pombe, wewe wala wanao pamoja nawe, kila mnapoingia katika Hema la Kukutania, la sivyo mtakufa. Hii ni kanuni ya kudumu milele kwa vizazi vyenu vyote,",
           "R": "\"Wewe na wanao msinywe divai wala pombe mnapoingia katika Hema la Kukutania. Mkinywa, mtakufa. Hii ni kanuni ya milele."
+        },
+        "vi": {
+          "L": "\"Rượu nho và rượu mạnh chớ uống, ngươi và các con trai ngươi với ngươi, khi các ngươi vào Lều Hội Kiến, để các ngươi khỏi chết; [đó là] luật lệ đời đời qua các thế hệ của các ngươi,",
+          "B": "\"Mỗi khi con và các con trai con vào Lều Hội Kiến, các con không được uống rượu nho hay rượu mạnh, kẻo phải chết. Đây là luật lệ đời đời cho mọi thế hệ của các con,",
+          "R": "\"Khi vào Lều Hội Kiến, con và các con trai con đừng uống rượu nho hay bia, nếu không các con sẽ chết. Đây là luật lệ đời đời cho các con."
+        },
+        "ko": {
+          "L": "\"너와 너와 함께 있는 네 아들들은 회막에 들어갈 때에 포도주와 독주를 마시지 말라. 그래야 너희가 죽지 않을 것이다. [이것은] 너희 대대로 영원한 규례이다.",
+          "B": "\"너와 네 아들들은 회막에 들어갈 때마다 포도주나 독한 술을 마시지 말라. 그렇지 않으면 죽을 것이다. 이것은 너희가 대대로 지켜야 할 영원한 규례이다.",
+          "R": "\"너와 네 아들들은 회막에 들어갈 때에 포도주나 다른 술을 마시면 안 된다. 마시면 너희가 죽는다. 이것은 앞으로 언제까지나 지켜야 할 규례이다."
         }
       },
       "decisions": [
@@ -1256,6 +1619,86 @@
           "reason": "The word is an intoxicating drink other than wine, most likely beer made from grain (m1). Literal says \"kileo\" (an intoxicant); Balanced and Readable say \"pombe\", the ordinary word for beer brewed from grain.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o030100090041"
+          ],
+          "choice": "God speaks to Aaron in the plain style (해라체) with \"너\" and \"너희\"",
+          "alternatives": [
+            "a polite style"
+          ],
+          "reason": "As the terms of this translation set for God speaking to people.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030100090022"
+          ],
+          "choice": "\"독주\" (L), \"독한 술\" (B), \"다른 술\" (R) for strong drink",
+          "alternatives": [
+            "\"맥주\" (beer)"
+          ],
+          "reason": "The word covers fermented drinks other than wine, as the meaning decision says; \"맥주\" would name one modern drink too narrowly.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o030100090011"
+          ],
+          "choice": "God speaks to Aaron as \"ngươi\" (L) and \"con\" (B, R), and to Aaron and his sons as \"các ngươi\" (L) / \"các con\" (B, R), as he speaks to Moses; his commands use \"phải\" and \"không được\" (\"chớ\" only where the Literal is terse; \"đừng\" at Readable). Laws given to Israel keep \"các ngươi\" at every level.",
+          "alternatives": [
+            "\"ngươi\" / \"các ngươi\" at every level, as in the laws for the people"
+          ],
+          "reason": "Here God speaks to Aaron directly (verse 8), so he takes the address used for God speaking to Moses or one person in the Pentateuch: \"ngươi\" at Literal, the warmer \"con\" at Balanced and Readable. The laws addressed to Israel keep \"các ngươi\" (term sheet). Recorded once for Leviticus 10-15.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030100090022"
+          ],
+          "choice": "\"bia\" (beer) at Readable; \"rượu mạnh\" at Literal and Balanced",
+          "alternatives": [],
+          "reason": "The Hebrew word is fermented drink other than wine, most often beer; Literal and Balanced keep the traditional \"rượu mạnh\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1311,6 +1754,16 @@
           "L": "na kutenganisha kati ya kitakatifu na cha kawaida, na kati ya kilicho najisi na kilicho safi,",
           "B": "ili mpate kutofautisha kati ya kilicho kitakatifu na kilicho cha kawaida, kati ya kilicho najisi na kilicho safi,",
           "R": "Lazima mjue kutofautisha kati ya kilicho kitakatifu na kisicho kitakatifu. Lazima pia mjue kilicho najisi na kilicho safi."
+        },
+        "vi": {
+          "L": "và để phân biệt giữa điều thánh với điều thường, và giữa điều ô uế với điều tinh sạch,",
+          "B": "để các con biết phân biệt điều thánh với điều thường, điều ô uế với điều tinh sạch,",
+          "R": "Các con phải biết phân biệt điều gì là thánh và điều gì không thánh. Các con cũng phải biết điều gì ô uế và điều gì tinh sạch."
+        },
+        "ko": {
+          "L": "그리고 거룩한 것과 속된 것 사이를, 부정한 것과 정결한 것 사이를 구별하고,",
+          "B": "그래야 너희가 거룩한 것과 일상적인 것을, 부정한 것과 정결한 것을 구별할 수 있고,",
+          "R": "너희는 거룩한 것과 거룩하지 않은 것의 차이를 가려낼 수 있어야 한다. 또 무엇이 부정하고 무엇이 정결한지 알아야 한다."
         }
       },
       "decisions": [
@@ -1408,6 +1861,48 @@
           "reason": "\"Cha kawaida\" (ordinary) keeps the point of m1: what is not set apart for God, not something wicked or dirty. \"Najisi\" and \"safi\" are kept for the second pair.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030100100052"
+          ],
+          "choice": "\"속된 것\" (L), \"일상적인 것\" (B), \"거룩하지 않은 것\" (R) for the common",
+          "alternatives": [
+            "\"속된 것\" at every level"
+          ],
+          "reason": "The Hebrew word means what is for ordinary use, not something sinful; \"속되다\" in modern Korean can sound vulgar or base, so Balanced and Readable say what is meant.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030100100071",
+            "o030100100091"
+          ],
+          "choice": "\"ô uế\" (unclean) and \"tinh sạch\" (clean)",
+          "alternatives": [
+            "\"không sạch\" / \"sạch\""
+          ],
+          "reason": "The ritual terms of the Pentateuch term sheet, used at every level through chapters 11-15 so the reader sees the same pair; \"tẩy sạch\" for the verb \"purify\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1463,6 +1958,16 @@
           "L": "na kuwafundisha wana wa Israeli kanuni zote ambazo {{divine_name:BWANA|Yahwe}} amewaambia kwa mkono wa Musa.\"",
           "B": "na ili mpate kuwafundisha Waisraeli kanuni zote ambazo {{divine_name:BWANA|Yahwe}} amewapa kupitia Musa.\"",
           "R": "Lazima mwafundishe Waisraeli kanuni zote ambazo {{divine_name:BWANA|Yahwe}} aliwapa kupitia Musa.\""
+        },
+        "vi": {
+          "L": "và để dạy con cháu Y-sơ-ra-ên mọi luật lệ mà {{divine_name:CHÚA|Gia-vê}} đã phán với họ qua tay Môi-se.\"",
+          "B": "và để các con dạy dân Y-sơ-ra-ên mọi luật lệ {{divine_name:CHÚA|Gia-vê}} đã ban cho họ qua Môi-se.\"",
+          "R": "Các con phải dạy dân Y-sơ-ra-ên mọi luật lệ mà {{divine_name:CHÚA|Gia-vê}} đã ban cho họ qua Môi-se.\""
+        },
+        "ko": {
+          "L": "그리고 {{divine_name:주|야훼}}께서 모세의 손을 통하여 그들에게 말씀하신 모든 규례를 이스라엘 자손에게 가르치게 하려는 것이다.\"",
+          "B": "또 {{divine_name:주|야훼}}께서 모세를 통하여 이스라엘 백성에게 주신 모든 규례를 너희가 그들에게 가르칠 수 있게 하려는 것이다.\"",
+          "R": "너희는 {{divine_name:주|야훼}}께서 모세를 통하여 주신 모든 규례를 이스라엘 사람들에게 가르쳐야 한다.\""
         }
       },
       "decisions": [
@@ -1493,6 +1998,48 @@
           "choice": "by the hand of Moses: through Moses",
           "alternatives": [],
           "reason": "The phrase means through Moses as God's messenger.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030100110031",
+            "o030100110041"
+          ],
+          "choice": "\"이스라엘 자손\" (L), \"이스라엘 백성\" (B), \"이스라엘 사람들\" (R), with no gender setting",
+          "alternatives": [
+            "\"이스라엘의 아들들\", with \"자손\" as a setting alternative"
+          ],
+          "reason": "As the term sheet for Exodus to Deuteronomy. The Korean words already include women and men, so Korean has no second form for the gender setting to switch to. Recorded once for Leviticus 10-15.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030100110031",
+            "o030100110041"
+          ],
+          "choice": "\"con cháu Y-sơ-ra-ên\" (Literal), \"dân Y-sơ-ra-ên\" (Balanced, Readable), with no gender span",
+          "alternatives": [],
+          "reason": "Vietnamese \"con cháu\" and \"dân\" already include men and women, so the English gender setting has no Vietnamese counterpart.",
           "uncertain": false,
           "footnote": false
         }
@@ -1567,6 +2114,16 @@
           "L": "Musa akasema na Haruni, na Eleazari na Ithamari, wanawe waliobaki, \"Chukueni sadaka ya nafaka iliyobaki katika sadaka za {{divine_name:BWANA|Yahwe}} za kuteketezwa kwa moto, mkaile isiyotiwa chachu kando ya madhabahu, kwa maana [ni] takatifu kabisa.",
           "B": "Musa alimwambia Haruni na wanawe waliobaki, Eleazari na Ithamari, \"Chukueni sadaka ya nafaka iliyobaki katika sadaka za kuteketezwa kwa moto za {{divine_name:BWANA|Yahwe}}, mkaile kando ya madhabahu ikiwa haijatiwa chachu, kwa sababu ni takatifu kabisa.",
           "R": "Musa aliongea na Haruni na wanawe wawili waliokuwa bado hai, Eleazari na Ithamari. Akawaambia, \"Chukueni sadaka ya nafaka iliyobaki katika sadaka zilizochomwa kwa moto kwa ajili ya {{divine_name:BWANA|Yahwe}}. Ileni kando ya madhabahu, bila kutiwa chachu. Ni takatifu sana."
+        },
+        "vi": {
+          "L": "Môi-se nói với A-rôn, và với Ê-lê-a-sa và Y-tha-ma, các con trai còn lại của ông: \"Hãy lấy tế lễ ngũ cốc còn dư lại từ các của lễ dâng bằng lửa cho {{divine_name:CHÚA|Gia-vê}}, và ăn nó không men bên cạnh bàn thờ, vì nó [là vật] chí thánh.",
+          "B": "Môi-se nói với A-rôn và hai con trai còn lại của ông là Ê-lê-a-sa và Y-tha-ma: \"Hãy lấy phần tế lễ ngũ cốc còn lại từ các của lễ dâng bằng lửa cho {{divine_name:CHÚA|Gia-vê}}, làm bánh không men mà ăn bên cạnh bàn thờ, vì đó là vật chí thánh.",
+          "R": "Môi-se nói với A-rôn và hai con trai còn sống của ông là Ê-lê-a-sa và Y-tha-ma: \"Hãy lấy phần tế lễ ngũ cốc còn lại từ các của lễ dâng bằng lửa cho {{divine_name:CHÚA|Gia-vê}}. Hãy ăn phần ấy bên cạnh bàn thờ, làm không có men. Đó là vật rất thánh."
+        },
+        "ko": {
+          "L": "그리고 모세가 아론과 그의 남은 아들들 엘르아살과 이다말에게 말했다. \"{{divine_name:주|야훼}}께 불로 바친 제물 가운데서 남은 곡식 제물을 가져다가, 누룩 없이 제단 곁에서 먹으라. 그것은 지극히 거룩한 [것]이기 때문이다.",
+          "B": "모세가 아론과 그의 남은 아들 엘르아살과 이다말에게 말했다. \"{{divine_name:주|야훼}}께 불로 바치는 제물 가운데서 남은 곡식 제물을 가져다가, 누룩을 넣지 않은 채로 제단 곁에서 드세요. 그것은 지극히 거룩한 것이에요.",
+          "R": "모세가 아론과, 살아남은 그의 두 아들 엘르아살과 이다말에게 말했다. \"{{divine_name:주|야훼}}께 불에 태워 바친 제물 가운데서 남은 곡식 제물을 가져다가 제단 곁에서 드세요. 누룩을 넣지 말고 만들어 드세요. 그것은 아주 거룩한 것이에요."
         }
       },
       "decisions": [
@@ -1662,6 +2219,68 @@
           "reason": "The sons \"who were left\" and the offering \"that remains\" share one Hebrew verb (m2). Swahili keeps the echo with \"-baki\" in both places at Literal and Balanced; Readable says \"waliokuwa bado hai\", as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030100120131",
+            "o030100120152"
+          ],
+          "choice": "\"tế lễ ngũ cốc\" (grain offering), \"của lễ dâng bằng lửa\" (food offering)",
+          "alternatives": [],
+          "reason": "The offering names of the Pentateuch term sheet, kept the same at every level; Readable does not add \"đốt trên lửa\" again because \"dâng bằng lửa\" already says it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030100120161"
+          ],
+          "choice": "\"불로 바치는 제물\" (L, B), \"불에 태워 바친 제물\" (R) for the food offering (ishsheh)",
+          "alternatives": [
+            "\"화제\", the older church term"
+          ],
+          "reason": "As the term sheet for Exodus to Deuteronomy: a descriptive phrase that a reader understands without a glossary; \"화제\" is the short Sino-Korean term of the older Bibles. Recorded once for Leviticus 10-15.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030100120102",
+            "o030100120142"
+          ],
+          "choice": "\"남은\" for both the remaining sons and the remaining grain offering",
+          "alternatives": [
+            "\"살아남은\" for the sons"
+          ],
+          "reason": "The meaning decision notes that the same Hebrew word is used for both; Literal and Balanced keep one Korean word, while Readable says \"살아남은\" for the sons.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1720,6 +2339,16 @@
           "L": "Nanyi mtaila mahali patakatifu, kwa maana [ni] haki yako na haki ya wanao kutoka katika sadaka za {{divine_name:BWANA|Yahwe}} za kuteketezwa kwa moto; kwa maana ndivyo nilivyoamriwa.",
           "B": "Ileni mahali patakatifu, kwa sababu ni fungu lililowekwa kwa ajili yako na wanao kutoka katika sadaka za kuteketezwa kwa moto za {{divine_name:BWANA|Yahwe}}. Ndivyo nilivyoamriwa.",
           "R": "Ileni mahali patakatifu. Ni fungu lako na la wanao kutoka katika sadaka zilizochomwa kwa moto kwa ajili ya {{divine_name:BWANA|Yahwe}}. Hii ndiyo amri niliyopewa."
+        },
+        "vi": {
+          "L": "Các anh sẽ ăn nó ở một nơi thánh, vì nó [là] phần của anh và phần của các con anh từ các của lễ dâng bằng lửa cho {{divine_name:CHÚA|Gia-vê}}, vì tôi đã được truyền như vậy.",
+          "B": "Hãy ăn ở một nơi thánh, vì đó là phần đã định cho anh và các con anh từ các của lễ dâng bằng lửa cho {{divine_name:CHÚA|Gia-vê}}. Đó là điều tôi đã được truyền dặn.",
+          "R": "Hãy ăn ở một nơi thánh. Đó là phần thuộc về anh và các con anh từ các của lễ dâng bằng lửa cho {{divine_name:CHÚA|Gia-vê}}. Đây là mạng lệnh tôi đã nhận."
+        },
+        "ko": {
+          "L": "너희는 그것을 거룩한 곳에서 먹어야 한다. 그것은 {{divine_name:주|야훼}}께 불로 바친 제물 가운데서 너의 몫이요 네 아들들의 몫이기 때문이다. 내가 그렇게 명령을 받았다.",
+          "B": "그것을 거룩한 곳에서 드세요. 그것은 {{divine_name:주|야훼}}께 불로 바치는 제물 가운데서 형님과 조카들에게 정해진 몫이에요. 나는 그렇게 하라는 명령을 받았어요.",
+          "R": "거룩한 곳에서 드세요. 그것은 {{divine_name:주|야훼}}께 불에 태워 바친 제물 가운데서 형님과 조카들이 받을 몫이에요. 나는 그렇게 하라는 명령을 받았어요."
         }
       },
       "decisions": [
@@ -1891,6 +2520,16 @@
           "L": "Na kidari cha sadaka ya kutikiswa na paja la sadaka ya kuinuliwa mtavila mahali safi, wewe na wanao na binti zako pamoja nawe, kwa maana vimetolewa [kuwa] haki yako na haki ya wanao kutoka katika dhabihu za sadaka za amani za wana wa Israeli.",
           "B": "Lakini kidari cha sadaka ya kutikiswa na paja lililotolewa kuwa mchango mnaweza kuvila mahali popote palipo safi kwa taratibu za ibada, wewe na wanao na binti zako pamoja nawe. Umepewa vipande hivyo, wewe na watoto wako, kuwa fungu lenu kutoka katika sadaka za amani za Waisraeli.",
           "R": "Lakini wewe na wanao na binti zako mnaweza kula kidari kilichotikiswa mbele za {{divine_name:BWANA|Yahwe}} na paja lililotengwa kwa ajili ya kuhani. Mvile mahali palipo safi. Vipande hivyo ni fungu lako na la watoto wako kutoka katika sadaka za amani za Waisraeli."
+        },
+        "vi": {
+          "L": "Còn cái ức của của lễ đưa qua đưa lại và cái đùi của của lễ dâng riêng, các anh sẽ ăn ở một nơi tinh sạch, anh cùng các con trai con gái anh với anh, vì chúng đã được ban [làm] phần của anh và phần của các con anh từ các sinh tế bình an của con cháu Y-sơ-ra-ên.",
+          "B": "Còn cái ức của của lễ đưa qua đưa lại và cái đùi dâng riêng, anh cùng các con trai con gái anh có thể ăn ở bất cứ nơi nào tinh sạch theo nghi lễ. Những phần đó đã được ban cho anh và con cái anh làm phần của mình từ các tế lễ bình an của dân Y-sơ-ra-ên.",
+          "R": "Còn cái ức đã được đưa qua đưa lại trước mặt {{divine_name:CHÚA|Gia-vê}} và cái đùi đã được dành riêng cho thầy tế lễ, thì anh cùng các con trai con gái anh có thể ăn. Hãy ăn ở một nơi tinh sạch. Những phần ấy là phần của anh và của con cái anh từ các tế lễ bình an của dân Y-sơ-ra-ên."
+        },
+        "ko": {
+          "L": "그리고 흔들어 바친 제물의 가슴과 들어 바친 제물의 넓적다리는 너와 너와 함께 있는 네 아들들과 네 딸들이 정결한 곳에서 먹을 것이다. 그것들은 이스라엘 자손의 화목제 희생 제물 가운데서 너의 몫과 네 아들들의 몫으로 주어졌기 때문이다.",
+          "B": "그러나 흔들어 바친 제물의 가슴과 들어 바친 제물의 넓적다리는 형님과 형님의 아들딸들이 정결한 곳이면 어디서든 먹어도 돼요. 그것들은 이스라엘 백성의 화목제물 가운데서 형님과 형님의 자녀들에게 몫으로 주어진 거예요.",
+          "R": "그러나 {{divine_name:주|야훼}} 앞에서 흔들어 바친 가슴과 제사장 몫으로 떼어 놓은 넓적다리는 형님과 형님의 아들딸들이 먹어도 돼요. 그것을 정결한 곳에서 드세요. 이것은 이스라엘 사람들이 드린 화목제물 가운데서 형님과 형님의 자녀들이 받을 몫이에요."
         }
       },
       "decisions": [
@@ -1959,6 +2598,48 @@
             "dans un lieu propre"
           ],
           "reason": "\"Pur\" here is ritual cleanness, not hygiene (m2). Balanced says \"rituellement\", as the English says \"ceremonially\", so that the reader does not take \"pur\" to mean simply clean.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030100140032",
+            "o030100140062",
+            "o030100140201"
+          ],
+          "choice": "\"của lễ đưa qua đưa lại\" (wave offering), \"của lễ dâng riêng\" (contribution), \"tế lễ bình an\" (peace offering)",
+          "alternatives": [],
+          "reason": "Term sheet names; the repeated \"của\" in \"cái ức của của lễ\" is Vietnamese grammar (possessive \"của\" before the noun \"của lễ\").",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030100140032",
+            "o030100140062"
+          ],
+          "choice": "\"흔들어 바친 제물\" for the wave offering and \"들어 바친 제물\" for the contribution (terumah)",
+          "alternatives": [
+            "\"요제\" and \"거제\", the older church terms"
+          ],
+          "reason": "As the term sheet for Exodus to Deuteronomy: descriptive phrases instead of the older Sino-Korean terms, so that a reader sees what was done with each portion.",
           "uncertain": false,
           "footnote": false
         }
@@ -2033,6 +2714,16 @@
           "L": "Paja la sadaka ya kuinuliwa na kidari cha sadaka ya kutikiswa watavileta pamoja na sadaka za shahamu za kuteketezwa kwa moto, ili kuvitikisa [kuwa] sadaka ya kutikiswa mbele za {{divine_name:BWANA|Yahwe}}; navyo vitakuwa vyako na vya wanao pamoja nawe kuwa haki ya kudumu milele, kama {{divine_name:BWANA|Yahwe}} alivyoamuru.\"",
           "B": "Paja la mchango na kidari cha sadaka ya kutikiswa vitaletwa pamoja na shahamu ya sadaka za kuteketezwa kwa moto, na kutikiswa mbele za {{divine_name:BWANA|Yahwe}} kuwa sadaka ya kutikiswa. Vitakuwa vyako na vya wanao pamoja nawe kuwa fungu lenu la kudumu, kama {{divine_name:BWANA|Yahwe}} alivyoamuru.\"",
           "R": "Lazima watu walete paja na kidari pamoja na shahamu inayochomwa kwa moto kuwa sadaka. Vipande hivyo vitatikiswa mbele za {{divine_name:BWANA|Yahwe}}. Kisha vitakuwa vyako na vya wanao. Ni fungu lenu milele. Hivi ndivyo {{divine_name:BWANA|Yahwe}} alivyoamuru.\""
+        },
+        "vi": {
+          "L": "Cái đùi của của lễ dâng riêng và cái ức của của lễ đưa qua đưa lại, họ sẽ đem đến cùng với các của lễ dâng bằng lửa gồm các phần mỡ, để đưa qua đưa lại [làm] của lễ đưa qua đưa lại trước mặt {{divine_name:CHÚA|Gia-vê}}; và nó sẽ là của anh và của các con anh với anh, làm phần đời đời, như {{divine_name:CHÚA|Gia-vê}} đã truyền.\"",
+          "B": "Cái đùi dâng riêng và cái ức đưa qua đưa lại phải được đem đến cùng với các phần mỡ của của lễ dâng bằng lửa, và được đưa qua đưa lại trước mặt {{divine_name:CHÚA|Gia-vê}} làm của lễ đưa qua đưa lại. Những phần ấy sẽ thuộc về anh và các con anh làm phần đời đời, như {{divine_name:CHÚA|Gia-vê}} đã truyền.\"",
+          "R": "Dân chúng phải đem cái đùi và cái ức đến cùng với phần mỡ được đốt làm của lễ dâng bằng lửa. Những phần ấy sẽ được đưa qua đưa lại trước mặt {{divine_name:CHÚA|Gia-vê}}. Sau đó chúng sẽ thuộc về anh và các con anh. Đó là phần của các anh mãi mãi. Đây là điều {{divine_name:CHÚA|Gia-vê}} đã truyền.\""
+        },
+        "ko": {
+          "L": "들어 바친 제물의 넓적다리와 흔들어 바친 제물의 가슴은, 그들이 불로 바치는 기름 부위들과 함께 가져와서 {{divine_name:주|야훼}} 앞에서 흔들어 바치는 제물로 흔들 것이다. 그리고 그것은 {{divine_name:주|야훼}}께서 명령하신 대로 너와 너와 함께 있는 네 아들들에게 영원한 몫이 될 것이다.\"",
+          "B": "들어 바친 넓적다리와 흔들어 바친 가슴은 불로 바치는 제물의 기름 부위와 함께 가져와서, {{divine_name:주|야훼}} 앞에서 흔들어 바치는 제물로 흔들어야 해요. 그것들은 형님과 조카들에게 영원한 몫으로 돌아갈 거예요. 이것은 {{divine_name:주|야훼}}께서 명령하신 거예요.\"",
+          "R": "백성은 불에 태워 바치는 기름과 함께 넓적다리와 가슴을 가져와야 해요. 그 부위들은 {{divine_name:주|야훼}} 앞에서 흔들어 바쳐야 해요. 그런 다음에 그것들은 형님과 조카들의 것이 돼요. 그것은 언제까지나 형님 집안의 몫이에요. 이것은 {{divine_name:주|야훼}}께서 명령하신 거예요.\""
         }
       },
       "decisions": [
@@ -2145,6 +2836,16 @@
           "L": "Na yule beberu wa sadaka ya dhambi Musa akamtafuta kwa bidii, na tazama, alikuwa ameteketezwa! Naye akawakasirikia Eleazari na Ithamari, wana wa Haruni waliobaki, akisema,",
           "B": "Musa alichunguza kwa makini habari za beberu wa sadaka ya dhambi, na ikawa kwamba alikuwa ameteketezwa. Akawakasirikia Eleazari na Ithamari, wana wawili wa Haruni waliobaki, akasema,",
           "R": "Musa alimtafuta kwa makini mbuzi aliyetolewa kuwa sadaka ya dhambi. Lakini alikuwa ameshateketezwa! Basi akawakasirikia Eleazari na Ithamari, wana wawili wa Haruni waliokuwa bado hai. Akasema,"
+        },
+        "vi": {
+          "L": "Môi-se tìm kiếm kỹ con dê đực của tế lễ chuộc tội, và kìa, nó đã bị đốt rồi! Ông nổi giận với Ê-lê-a-sa và Y-tha-ma, các con trai còn lại của A-rôn, và nói:",
+          "B": "Môi-se tìm kỹ con dê đực dùng làm tế lễ chuộc tội, thì thấy nó đã bị đốt rồi. Ông nổi giận với Ê-lê-a-sa và Y-tha-ma, hai con trai còn lại của A-rôn, và nói:",
+          "R": "Môi-se tìm kỹ con dê đực đã được dâng làm tế lễ chuộc tội. Nhưng nó đã bị đốt cháy hết rồi! Vì vậy ông nổi giận với Ê-lê-a-sa và Y-tha-ma, hai con trai còn sống của A-rôn. Ông nói:"
+        },
+        "ko": {
+          "L": "그리고 속죄제의 숫염소를 모세가 애써 찾았는데, 보라, 그것이 이미 불태워졌다! 그래서 그는 아론의 남은 아들들 엘르아살과 이다말에게 화를 내며 말했다.",
+          "B": "모세가 속죄제로 바친 숫염소를 꼼꼼히 찾아보았더니, 그것은 이미 불살라지고 없었다. 그는 아론의 남은 두 아들 엘르아살과 이다말에게 화를 내며 말했다.",
+          "R": "모세는 속죄제물로 바친 염소를 열심히 찾아보았다. 그런데 그 염소는 이미 다 타 버린 뒤였다! 모세는 아직 살아 있는 아론의 두 아들 엘르아살과 이다말에게 화가 나서 말했다."
         }
       },
       "decisions": [
@@ -2175,6 +2876,25 @@
           "choice": "diligently sought: searched with care",
           "alternatives": [],
           "reason": "The verb is doubled for emphasis. Moses looked into the matter thoroughly before he spoke.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030100160032"
+          ],
+          "choice": "\"tế lễ chuộc tội\" (sin offering)",
+          "alternatives": [],
+          "reason": "The term sheet's name for the sin offering, distinct from \"tế lễ chuộc lỗi\" for the guilt offering (chapter 14).",
           "uncertain": false,
           "footnote": false
         }
@@ -2247,6 +2967,16 @@
           "L": "\"Mbona hamkuila sadaka ya dhambi mahali pa patakatifu? Kwa maana [ni] takatifu kabisa, {{deity_pronoun:naye|Naye}} amewapa ninyi ili kuubeba uovu wa jumuiya, ili kufanya upatanisho kwa ajili yao mbele za {{divine_name:BWANA|Yahwe}}.",
           "B": "\"Mbona hamkuila sadaka ya dhambi katika eneo takatifu? Ni takatifu kabisa, {{deity_pronoun:naye|Naye}} amewapa ili mbebe hatia ya jumuiya na kuwafanyia upatanisho mbele za {{divine_name:BWANA|Yahwe}}.",
           "R": "\"Mbona hamkuila sadaka ya dhambi katika eneo takatifu? Ni takatifu sana. {{divine_name:BWANA|Yahwe}} aliwapa ili mwondoe hatia ya watu. Mlipaswa kuwafanyia upatanisho mbele za {{divine_name:BWANA|Yahwe}}."
+        },
+        "vi": {
+          "L": "\"Sao các anh không ăn tế lễ chuộc tội ở nơi của Nơi Thánh? Vì nó [là vật] chí thánh, và {{deity_pronoun:ngài|Ngài}} đã ban nó cho các anh để gánh tội gian ác của hội chúng, để chuộc tội cho họ trước mặt {{divine_name:CHÚA|Gia-vê}}.",
+          "B": "\"Sao các anh không ăn tế lễ chuộc tội trong khu vực thánh? Đó là vật chí thánh, và {{deity_pronoun:ngài|Ngài}} đã ban nó cho các anh để các anh gánh lấy tội lỗi của hội chúng và chuộc tội cho họ trước mặt {{divine_name:CHÚA|Gia-vê}}.",
+          "R": "\"Tại sao các anh không ăn tế lễ chuộc tội trong khu vực thánh? Đó là vật rất thánh. {{divine_name:CHÚA|Gia-vê}} đã ban nó cho các anh để các anh cất đi tội lỗi của dân chúng. Các anh phải làm lễ chuộc tội cho họ trước mặt {{divine_name:CHÚA|Gia-vê}}."
+        },
+        "ko": {
+          "L": "\"너희는 어찌하여 속죄제물을 성소의 자리에서 먹지 않았느냐? 그것은 지극히 거룩한 [것]이며, 그분께서 너희에게 그것을 주신 것은 회중의 죄악을 짊어지고 {{divine_name:주|야훼}} 앞에서 그들을 위하여 속죄하게 하시려는 것이었다.",
+          "B": "\"너희는 왜 그 속죄제물을 거룩한 곳에서 먹지 않았느냐? 그것은 지극히 거룩한 것이다. 그분께서 그것을 너희에게 주신 것은, 너희가 회중의 죄악을 짊어지고 {{divine_name:주|야훼}} 앞에서 그들을 위하여 속죄하게 하시려는 것이었다.",
+          "R": "\"왜 그 속죄제물을 거룩한 곳에서 먹지 않았느냐? 그것은 아주 거룩한 것이다. {{divine_name:주|야훼}}께서 그것을 너희에게 주신 것은 백성의 죄를 없애게 하시려는 것이었다. 너희는 {{divine_name:주|야훼}} 앞에서 그들을 위하여 속죄해야 했다."
         }
       },
       "decisions": [
@@ -2324,6 +3054,46 @@
           "reason": "The most holy portions were eaten in the court of the sanctuary (m2). \"Le lieu saint\" is kept for the sanctuary as a term (verse 18), so Balanced and Readable say \"l'enceinte sacrée\" for the sacred court around it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030100170171",
+            "o030100170192"
+          ],
+          "choice": "\"gánh tội gian ác\" (Literal), \"gánh lấy tội lỗi\" (Balanced); \"chuộc tội cho\"",
+          "alternatives": [],
+          "reason": "Term sheet: \"gian ác\" for iniquity at Literal, \"tội lỗi\" otherwise; \"chuộc tội cho\" for make atonement at Literal and Balanced, and at Readable \"làm lễ chuộc tội\" as the English Readable keeps \"make atonement\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030100170192"
+          ],
+          "choice": "\"속죄하다\" for make atonement at every level",
+          "alternatives": [
+            "\"죄를 덮다\""
+          ],
+          "reason": "As the term sheet for Exodus to Deuteronomy, which keeps \"속죄하다\" at Literal and Balanced and follows the English at Readable, where the English also says \"make atonement\". Recorded once for Leviticus 10-15.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2380,6 +3150,16 @@
           "L": "Tazama, damu yake haikuletwa ndani ya mahali patakatifu. Hakika mlipaswa kuila mahali patakatifu, kama nilivyoamuru.\"",
           "B": "Damu yake haikuletwa ndani ya mahali patakatifu, kwa hiyo hakika mlipaswa kumla beberu huyo katika eneo takatifu, kama nilivyoamuru.\"",
           "R": "Damu ya mbuzi huyo haikupelekwa ndani ya hema takatifu. Kwa hiyo mlipaswa kula nyama yake katika eneo takatifu, kama nilivyoamuru.\""
+        },
+        "vi": {
+          "L": "Kìa, máu nó đã không được đem vào trong Nơi Thánh. Chắc chắn các anh phải ăn nó trong Nơi Thánh, như tôi đã truyền.\"",
+          "B": "Máu nó đã không được đem vào bên trong Nơi Thánh, nên chắc chắn các anh phải ăn con dê ấy trong khu vực thánh, như tôi đã truyền.\"",
+          "R": "Máu con dê đã không được đem vào trong lều thánh. Vì vậy các anh phải ăn thịt nó trong khu vực thánh, như tôi đã truyền.\""
+        },
+        "ko": {
+          "L": "보라, 그것의 피를 성소 안으로 들여오지 않았다. 너희는 내가 명령한 대로 그것을 반드시 성소에서 먹었어야 했다.\"",
+          "B": "그 피를 성소 안으로 가져가지 않았으니, 너희는 내가 명령한 대로 그 염소를 마땅히 거룩한 곳에서 먹었어야 했다.\"",
+          "R": "그 염소의 피는 거룩한 장막 안으로 가져가지 않았다. 그러니 내가 명령한 대로 너희는 그 고기를 거룩한 곳에서 먹었어야 했다.\""
         }
       },
       "decisions": [
@@ -2486,6 +3266,16 @@
           "L": "Haruni akasema na Musa, \"Tazama, leo wamesogeza sadaka yao ya dhambi na sadaka yao ya kuteketezwa mbele za {{divine_name:BWANA|Yahwe}}, na [mambo] kama haya yamenipata. Na [kama] ningalikula sadaka ya dhambi leo, je, ingalikuwa jambo jema machoni pa {{divine_name:BWANA|Yahwe}}?\"",
           "B": "Haruni alimjibu Musa, \"Tazama, leo hii wametoa sadaka yao ya dhambi na sadaka yao ya kuteketezwa mbele za {{divine_name:BWANA|Yahwe}}, na bado mambo kama haya yamenipata. Kama ningalikula sadaka ya dhambi leo, je, hilo lingalikuwa sawa machoni pa {{divine_name:BWANA|Yahwe}}?\"",
           "R": "Haruni alimjibu Musa, \"Leo wameleta sadaka yao ya dhambi na sadaka yao ya kuteketezwa kwa {{divine_name:BWANA|Yahwe}}. Hata hivyo, mambo haya mabaya sana yamenipata. Kama ningalikula sadaka ya dhambi leo, je, {{divine_name:BWANA|Yahwe}} angalifurahi?\""
+        },
+        "vi": {
+          "L": "A-rôn nói với Môi-se: \"Kìa, hôm nay họ đã dâng tế lễ chuộc tội và của lễ thiêu của họ trước mặt {{divine_name:CHÚA|Gia-vê}}, và những [việc] như thế này đã xảy đến cho tôi. Nếu hôm nay tôi ăn tế lễ chuộc tội, thì điều đó có tốt trong mắt {{divine_name:CHÚA|Gia-vê}} không?\"",
+          "B": "A-rôn trả lời Môi-se: \"Này, chính hôm nay họ đã dâng tế lễ chuộc tội và của lễ thiêu của họ trước mặt {{divine_name:CHÚA|Gia-vê}}, vậy mà những chuyện như thế vẫn xảy đến cho tôi. Nếu hôm nay tôi ăn tế lễ chuộc tội, thì điều đó có đúng trong mắt {{divine_name:CHÚA|Gia-vê}} không?\"",
+          "R": "A-rôn trả lời Môi-se: \"Hôm nay họ đã dâng tế lễ chuộc tội và của lễ thiêu cho {{divine_name:CHÚA|Gia-vê}}. Dù vậy, những chuyện khủng khiếp này vẫn xảy đến cho tôi. Nếu hôm nay tôi ăn tế lễ chuộc tội, thì {{divine_name:CHÚA|Gia-vê}} có hài lòng không?\""
+        },
+        "ko": {
+          "L": "그리고 아론이 모세에게 말했다. \"보라, 오늘 그들이 {{divine_name:주|야훼}} 앞에 그들의 속죄제물과 번제물을 가까이 드렸는데, 이런 일들이 나에게 일어났다. 내가 오늘 속죄제물을 먹었다면, 그것이 {{divine_name:주|야훼}}의 눈에 좋았겠느냐?\"",
+          "B": "아론이 모세에게 대답했다. \"보아라, 바로 오늘 그들이 {{divine_name:주|야훼}} 앞에 속죄제물과 번제물을 바쳤는데도 나에게 이런 일이 닥쳤다. 그런 내가 오늘 속죄제물을 먹었다면, 그것이 {{divine_name:주|야훼}}께서 보시기에 옳은 일이었겠느냐?\"",
+          "R": "아론이 모세에게 대답했다. \"오늘 그들이 속죄제물과 번제물을 {{divine_name:주|야훼}}께 바쳤다. 그런데도 이렇게 끔찍한 일들이 나에게 일어났다. 그런데 내가 오늘 그 속죄제물을 먹었다면, {{divine_name:주|야훼}}께서 기뻐하셨겠느냐?\""
         }
       },
       "decisions": [
@@ -2539,6 +3329,49 @@
           "reason": "\"Things like these\" are the deaths of verses 1-2; Readable says \"terrible\". \"Good in the eyes of\" means \"pleasing to\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o030100190021"
+          ],
+          "choice": "Aaron speaks to Moses with \"tôi\" and no word of address",
+          "alternatives": [
+            "\"em\""
+          ],
+          "reason": "Aaron is the older brother but speaks here to Moses as leader; Vietnamese can leave the address out, so no relation word is forced on the sentence.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o030100190011"
+          ],
+          "choice": "Aaron answers Moses in the plain style (해라체)",
+          "alternatives": [
+            "the formal polite style (합쇼체) with \"당신\"",
+            "the polite style (해요체)"
+          ],
+          "reason": "Aaron is Moses' older brother and speaks to him as such, as the Genesis term sheet sets for brothers; the term sheet's 합쇼체 for the people speaking to Moses does not cover his own brother. A reviewer may prefer a more formal style between the two leaders.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2584,6 +3417,16 @@
           "L": "Musa akasikia, likawa jema machoni pake.",
           "B": "Musa aliposikia hayo, aliona ni sawa.",
           "R": "Musa alisikia jibu la Haruni, akalikubali."
+        },
+        "vi": {
+          "L": "Môi-se nghe, và điều đó tốt trong mắt ông.",
+          "B": "Khi Môi-se nghe vậy, ông thấy điều đó là phải.",
+          "R": "Môi-se nghe A-rôn trả lời và chấp nhận lời ấy."
+        },
+        "ko": {
+          "L": "그리고 모세가 듣고, 그것이 그의 눈에 좋았다.",
+          "B": "모세는 그 말을 듣고 옳다고 여겼다.",
+          "R": "모세는 아론의 대답을 듣고 그 말을 받아들였다."
         }
       },
       "decisions": [

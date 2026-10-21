@@ -40,6 +40,16 @@
           "L": "Naye {{divine_name:BWANA|Yahwe}} akanena na Musa, akisema,",
           "B": "{{divine_name:BWANA|Yahwe}} akamwambia Musa,",
           "R": "{{divine_name:BWANA|Yahwe}} alimwambia Musa,"
+        },
+        "ko": {
+          "L": "그리고 {{divine_name:주|야훼}}께서 모세에게 말씀하여 이르셨다.",
+          "B": "{{divine_name:주|야훼}}께서 모세에게 말씀하셨다.",
+          "R": "{{divine_name:주|야훼}}께서 모세에게 말씀하셨다."
+        },
+        "vi": {
+          "L": "Và {{divine_name:CHÚA|Gia-vê}} phán với Môi-se rằng:",
+          "B": "{{divine_name:CHÚA|Gia-vê}} phán với Môi-se:",
+          "R": "{{divine_name:CHÚA|Gia-vê}} phán với Môi-se:"
         }
       },
       "decisions": [
@@ -137,6 +147,16 @@
           "L": "\"Nena na wana wa Israeli, ili wanichukulie sadaka ya kuinuliwa; kutoka kwa kila mtu ambaye moyo wake unamsukuma mtaichukua sadaka {{deity_pronoun:yangu|Yangu}} ya kuinuliwa.",
           "B": "\"Waambie Waisraeli wanitengee mchango. Mpokee mchango {{deity_pronoun:wangu|Wangu}} kutoka kwa kila mtu ambaye moyo wake unamvuta kutoa.",
           "R": "\"Waambie Waisraeli waniletee zawadi maalum. Pokeeni zawadi {{deity_pronoun:yangu|Yangu}} kutoka kwa kila mtu anayetaka kuitoa."
+        },
+        "ko": {
+          "L": "\"이스라엘 자손에게 말하여, 그들이 나를 위하여 들어 바치는 제물을 가져오게 하라. 마음이 움직여 스스로 바치려는 모든 사람에게서 너희는 나에게 들어 바치는 제물을 받으라.",
+          "B": "\"이스라엘 백성에게 말하여, 나에게 바칠 예물을 따로 떼어 놓게 하라. 마음에 감동이 되어 바치려는 사람이면 누구에게서나 너희는 나에게 바치는 예물을 받으라.",
+          "R": "\"이스라엘 사람들에게 나를 위해 특별한 예물을 가져오라고 말해야 한다. 바치고 싶어 하는 사람이면 누구에게서나 그 예물을 받아야 한다."
+        },
+        "vi": {
+          "L": "\"Hãy nói với con cháu Y-sơ-ra-ên, để họ lấy cho {{deity_pronoun:ta|Ta}} một của lễ dâng riêng; từ mỗi người mà lòng họ thúc giục, các ngươi phải nhận của lễ dâng riêng của {{deity_pronoun:ta|Ta}}.",
+          "B": "\"Con hãy bảo dân Y-sơ-ra-ên đem đến cho {{deity_pronoun:ta|Ta}} một của lễ dâng riêng. Các con phải nhận của lễ dâng riêng của {{deity_pronoun:ta|Ta}} từ mỗi người có lòng tự nguyện dâng.",
+          "R": "\"Con hãy bảo dân Y-sơ-ra-ên đem đến cho {{deity_pronoun:ta|Ta}} một lễ vật đặc biệt. Hãy nhận lễ vật dâng cho {{deity_pronoun:ta|Ta}} từ bất cứ ai muốn dâng."
         }
       },
       "decisions": [
@@ -267,6 +287,95 @@
           "reason": "At Literal French must choose a noun, so it takes the gender setting as the English does. \"Chacun de ceux que\" and \"tous ceux qui\" already mean anyone, so Balanced and Readable need no span.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o020250020011"
+          ],
+          "choice": "God's instructions to Moses in 해라체: -하라 / -하지 말라 at Literal and Balanced, -해야 한다 / -하면 안 된다 at Readable",
+          "alternatives": [
+            "-하여라 / -어라 at every level",
+            "합쇼체"
+          ],
+          "reason": "The Pentateuch terms note sets these forms for God's commands and instructions through the laws and the tabernacle chapters (Exodus 25-31), so that chapters drafted in parallel sound alike. Korean has no deity_pronoun spans: respect for God is carried by -시- and 께서, so the English spans for \"me\" and \"my\" have nothing to match.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020250020071",
+            "o020250020161"
+          ],
+          "choice": "\"들어 바치는 제물\" (Literal), \"예물\" (Balanced), \"특별한 예물\" (Readable)",
+          "alternatives": [
+            "\"헌물\"",
+            "\"예물\" at every level"
+          ],
+          "reason": "Literal keeps the terms note's word for terumah, something lifted off and set apart; here it is a freewill gift of materials for the tabernacle, not an altar offering, so Balanced and Readable say \"예물\", as the English says \"contribution\" and \"special gift\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o020250020011"
+          ],
+          "choice": "God speaks to Moses with \"ngươi\" (L) and \"con\" (B, R), \"các ngươi\" (L) and \"các con\" (B, R) for Moses and those with him; the instructions use \"phải\" and \"hãy\" (L, B) and plain \"hãy\" / \"đừng\" sentences at R",
+          "alternatives": [
+            "\"ngươi\" at Literal and Balanced",
+            "\"con\" at every level, as in Joshua 1"
+          ],
+          "reason": "The address the Genesis terms note sets for God speaking to one person, as in Exodus 3-24: \"ngươi\" keeps the distance of the Hebrew at Literal, \"con\" the closeness of God's word to his servant at Balanced and Readable. God's laws for the whole people keep \"các ngươi\" at every level. Recorded once for Exodus 25-30.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020250020071",
+            "o020250020161"
+          ],
+          "choice": "\"của lễ dâng riêng\" (L, B), \"lễ vật đặc biệt\" (R)",
+          "alternatives": [
+            "\"của lễ giơ lên\""
+          ],
+          "reason": "The term the Pentateuch terms note sets for terumah, a gift set apart from what one has (m1); Readable says \"special gift\", as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -318,6 +427,16 @@
           "L": "Na hii [ndiyo] sadaka ya kuinuliwa mtakayoichukua kutoka kwao: dhahabu na fedha na shaba,",
           "B": "Huu ndio mchango mtakaoupokea kutoka kwao: dhahabu, fedha na shaba,",
           "R": "Hizi ndizo zawadi mnazoweza kupokea kutoka kwao: dhahabu, fedha na shaba."
+        },
+        "ko": {
+          "L": "그리고 너희가 그들에게서 받을 들어 바치는 제물은 이러하다. 곧 금과 은과 놋과,",
+          "B": "너희가 그들에게서 받을 예물은 이러하다. 금과 은과 놋,",
+          "R": "너희가 그들에게서 받을 수 있는 예물은 이러하다. 금과 은과 놋이다."
+        },
+        "vi": {
+          "L": "Và đây [là] của lễ dâng riêng mà các ngươi phải nhận từ họ: vàng, bạc và đồng,",
+          "B": "Đây là của lễ dâng riêng các con phải nhận từ họ: vàng, bạc, đồng,",
+          "R": "Đây là những lễ vật con có thể nhận từ họ: vàng, bạc và đồng."
         }
       },
       "decisions": [
@@ -348,6 +467,27 @@
           "choice": "gold, silver and bronze: metals in order of worth",
           "alternatives": [],
           "reason": "The list moves from the most precious metal to the least. In the tabernacle the most precious materials are used closest to the most holy place: gold for the ark, the table and the lampstand inside, bronze for the altar in the courtyard outside. Much of this metal came from what the Egyptians gave Israel (3:22; 12:35-36).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020250030082"
+          ],
+          "choice": "\"놋\" for bronze",
+          "alternatives": [
+            "\"청동\""
+          ],
+          "reason": "The established Bible word for copper and its alloys, used for every bronze object in Exodus 25-40; \"청동\" is the modern technical word.",
           "uncertain": false,
           "footnote": false
         }
@@ -398,6 +538,16 @@
           "L": "na [uzi wa] samawati na zambarau na rangi nyekundu, na kitani safi, na [manyoya ya] mbuzi,",
           "B": "uzi wa samawati, wa zambarau na wa rangi nyekundu, kitani safi, manyoya ya mbuzi,",
           "R": "Wanaweza pia kutoa uzi wa samawati, wa zambarau na wa rangi nyekundu, kitani safi na manyoya ya mbuzi."
+        },
+        "ko": {
+          "L": "그리고 청색과 자주색과 진홍색 [실]과 고운 베와 염소 [털]과,",
+          "B": "청색 실, 자주색 실, 진홍색 실, 고운 베, 염소 털,",
+          "R": "또 청색, 자주색, 진홍색 실과 고운 베와 염소 털도 받을 수 있다."
+        },
+        "vi": {
+          "L": "và [chỉ] xanh dương, tía và đỏ thẫm, và vải gai mịn, và [lông] dê,",
+          "B": "chỉ xanh dương, tía và đỏ thẫm, vải gai mịn, lông dê,",
+          "R": "Họ cũng có thể dâng chỉ màu xanh dương, màu tía và màu đỏ thẫm, vải gai mịn và lông dê."
         }
       },
       "decisions": [
@@ -488,6 +638,31 @@
           "reason": "\"Samawati\" is the standard word for the blue of the first dye; \"bluu\" is colloquial and \"urujuani\" (violet) is less known. \"Zambarau\" is purple. These three color words are used for the yarn through the tabernacle chapters.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020250040012",
+            "o020250040022",
+            "o020250040032",
+            "o020250040052"
+          ],
+          "choice": "\"xanh dương, tía, đỏ thẫm\" and \"vải gai mịn\"",
+          "alternatives": [
+            "\"xanh, tím, đỏ\"",
+            "\"vải lanh mịn\""
+          ],
+          "reason": "The colours and the fine linen as 2 Chronicles 3:14 already says them in this translation, so the tabernacle and the temple use the same words.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -535,6 +710,16 @@
           "L": "na ngozi za kondoo dume zilizotiwa rangi nyekundu, na ngozi bora, na mbao za mshita,",
           "B": "ngozi za kondoo dume zilizotiwa rangi nyekundu, ngozi bora, mbao za mshita,",
           "R": "Wanaweza kutoa ngozi za kondoo dume zilizotiwa rangi nyekundu, ngozi bora na mbao za mshita."
+        },
+        "ko": {
+          "L": "그리고 붉게 물들인 숫양의 가죽들과 고운 가죽들과 아카시아 나무와,",
+          "B": "붉게 물들인 숫양 가죽, 고운 가죽, 아카시아 나무,",
+          "R": "붉게 물들인 숫양 가죽과 고운 가죽과 아카시아 나무도 받을 수 있다."
+        },
+        "vi": {
+          "L": "và da chiên đực nhuộm đỏ, và da thuộc loại tốt, và gỗ keo,",
+          "B": "da chiên đực nhuộm đỏ, da thuộc loại tốt, gỗ keo,",
+          "R": "Họ có thể dâng da chiên đực nhuộm đỏ, da thuộc loại tốt và gỗ keo."
         }
       },
       "decisions": [
@@ -631,6 +816,51 @@
           "reason": "\"Mshita\" is the name long used in Swahili for the acacia of the tabernacle; \"mgunga\" is the everyday name of acacia trees and a reviewer may prefer it. The same words are used for the ark, the table, the altars and the frames.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020250050062",
+            "o020250050071"
+          ],
+          "choice": "\"gỗ keo\"",
+          "alternatives": [
+            "\"gỗ si-tim\""
+          ],
+          "reason": "\"keo\" is the Vietnamese name of the acacia tree (m3); the older transliteration \"si-tim\" names nothing a reader knows. Used for the whole tabernacle account.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020250050062",
+            "o020250050071"
+          ],
+          "choice": "\"아카시아 나무\"",
+          "alternatives": [
+            "\"조각목\"",
+            "\"싯딤 나무\""
+          ],
+          "reason": "The plain name of the tree; \"조각목\" is the older Bible word and is not understood today. Used for every acacia-wood object in these chapters.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -681,6 +911,16 @@
           "L": "mafuta kwa ajili ya nuru, viungo kwa ajili ya mafuta ya kupaka na kwa ajili ya uvumba wa manukato,",
           "B": "mafuta ya taa, viungo vya mafuta ya kupaka na vya uvumba wenye harufu nzuri,",
           "R": "Wanaweza kutoa mafuta ya zeituni kwa ajili ya taa, na viungo vya kutengenezea mafuta ya kupaka na uvumba wenye harufu nzuri."
+        },
+        "ko": {
+          "L": "빛을 위한 기름과, 기름 부음의 기름과 향기로운 향을 위한 향료들과,",
+          "B": "등잔에 쓸 기름, 기름 부을 때 쓸 기름과 향기로운 향에 쓸 향료,",
+          "R": "등잔에 쓸 올리브기름도 받을 수 있다. 또 기름을 부을 때 쓸 기름과 향기로운 향을 만드는 데 쓸 향료도 받을 수 있다."
+        },
+        "vi": {
+          "L": "dầu cho ánh sáng, các hương liệu cho dầu xức và cho hương thơm,",
+          "B": "dầu thắp đèn, hương liệu để làm dầu xức và hương thơm,",
+          "R": "Họ có thể dâng dầu ô-liu để thắp đèn, và hương liệu để làm dầu xức và hương thơm để đốt."
         }
       },
       "decisions": [
@@ -778,6 +1018,16 @@
           "L": "mawe ya onikisi na mawe ya kupachikwa, kwa ajili ya efodi na kwa ajili ya kifuko cha kifuani.",
           "B": "na vito vya onikisi na vito vingine vya kupachikwa kwenye efodi na kifuko cha kifuani.",
           "R": "Pia wanaweza kutoa vito vya onikisi na vito vingine vya thamani vya kuwekwa kwenye efodi na kifuko cha kifuani."
+        },
+        "ko": {
+          "L": "줄마노 보석들과 박아 넣을 보석들이니, 에봇과 가슴받이를 위한 것이다.",
+          "B": "그리고 에봇과 가슴받이에 박을 줄마노 보석과 그 밖의 보석들이다.",
+          "R": "또 에봇과 가슴받이에 박을 줄마노와 그 밖의 귀한 보석들도 받을 수 있다."
+        },
+        "vi": {
+          "L": "đá mã não sọc và các đá để gắn vào, cho áo ê-phót và cho bảng đeo ngực.",
+          "B": "cùng đá mã não sọc và các thứ đá khác để gắn vào áo ê-phót và bảng đeo ngực.",
+          "R": "Họ cũng có thể dâng đá mã não sọc và các loại đá quý khác để gắn lên áo ê-phót và bảng đeo ngực."
         }
       },
       "decisions": [
@@ -845,6 +1095,29 @@
           "reason": "Balanced and Readable say \"other stones\" to show these are gems besides the onyx.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020250070011",
+            "o020250070021"
+          ],
+          "choice": "\"đá mã não sọc\"",
+          "alternatives": [
+            "\"đá hồng mã não\" (as 1 Chronicles 29:2)",
+            "\"bích ngọc\""
+          ],
+          "reason": "The stone is not certainly identified (m1). \"mã não sọc\" (banded onyx, as sardonyx in Revelation 21:20) follows the English \"onyx\" and keeps \"hồng mã não\" free for the carnelian of 28:17, as Revelation 4:3 uses it.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -892,6 +1165,16 @@
           "L": "Nao watanifanyia mahali patakatifu, {{deity_pronoun:nami|Nami}} nitakaa katikati yao.",
           "B": "Wanifanyie mahali patakatifu, ili nikae kati yao.",
           "R": "Waambie watu wanijengee mahali patakatifu, ili {{deity_pronoun:mimi|Mimi}} niweze kuishi pamoja nao."
+        },
+        "ko": {
+          "L": "그리고 그들이 나를 위하여 성소를 만들게 하라. 그러면 내가 그들 가운데 머물 것이다.",
+          "B": "그들에게 나를 위하여 성소를 만들게 하라. 내가 그들 가운데 머물려는 것이다.",
+          "R": "사람들에게 나를 위해 거룩한 곳을 만들게 해야 한다. 그러면 내가 그들 가운데서 살 것이다."
+        },
+        "vi": {
+          "L": "Và họ phải làm cho {{deity_pronoun:ta|Ta}} một nơi thánh, và {{deity_pronoun:ta|Ta}} sẽ ngự ở giữa họ.",
+          "B": "Họ phải làm cho {{deity_pronoun:ta|Ta}} một nơi thánh, để {{deity_pronoun:ta|Ta}} ngự giữa họ.",
+          "R": "Hãy bảo dân chúng làm cho {{deity_pronoun:ta|Ta}} một nơi thánh, để {{deity_pronoun:ta|Ta}} có thể sống giữa họ."
         }
       },
       "decisions": [
@@ -959,6 +1242,48 @@
           "reason": "Readable says \"holy place\" for \"sanctuary\" and \"live\" for \"dwell\". \"The people\" names who is to make it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020250080031"
+          ],
+          "choice": "\"nơi thánh\", lowercase",
+          "alternatives": [
+            "\"Nơi Thánh\""
+          ],
+          "reason": "The whole sanctuary is meant (m1); the capitalised \"Nơi Thánh\" of the term sheet is kept for the outer room of the tabernacle (26:33).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020250080042"
+          ],
+          "choice": "\"머물다\" (Literal, Balanced), \"살다\" (Readable) for dwell",
+          "alternatives": [
+            "\"거하다\""
+          ],
+          "reason": "\"거하다\" is the older Bible word; \"머물다\" keeps the sense of God taking up residence among them, and Readable says it plainly.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1016,6 +1341,16 @@
           "L": "Kulingana na yote {{deity_pronoun:mimi|Mimi}} ninayokuonyesha, mfano wa maskani na mfano wa vyombo vyake vyote, ndivyo mtakavyofanya.",
           "B": "Mtaifanya kulingana na kila kitu nitakachokuonyesha, mkifuata mfano wa maskani na mfano wa samani zake zote.",
           "R": "Nitakuonyesha ramani ya maskani, yaani hema takatifu, na ya kila kitu kilicho ndani yake. Fanyeni kila kitu sawasawa na ninavyokuonyesha."
+        },
+        "ko": {
+          "L": "내가 너에게 보여 주는 모든 것, 곧 성막의 본과 그 모든 기구의 본대로, 그렇게 너희는 만들라.",
+          "B": "너희는 내가 너에게 보여 주는 모든 것, 곧 성막의 본과 그 모든 기구의 본을 따라 그대로 만들라.",
+          "R": "내가 너에게 성막, 곧 거룩한 장막과 그 안에 둘 모든 것의 설계도를 보여 주겠다. 너희는 모든 것을 내가 보여 주는 그대로 만들어야 한다."
+        },
+        "vi": {
+          "L": "Theo mọi điều {{deity_pronoun:ta|Ta}} đang chỉ cho ngươi, kiểu mẫu của Đền Tạm và kiểu mẫu của mọi vật dụng trong đó, thì các ngươi phải làm như vậy.",
+          "B": "Các con phải làm đúng theo mọi điều {{deity_pronoun:ta|Ta}} chỉ cho con, theo kiểu mẫu của Đền Tạm và kiểu mẫu của mọi đồ dùng trong đó.",
+          "R": "Ta sẽ chỉ cho con kiểu mẫu của Đền Tạm, tức là cái lều thánh, và của mọi vật dụng trong đó. Hãy làm tất cả đúng như {{deity_pronoun:ta|Ta}} chỉ cho con."
         }
       },
       "decisions": [
@@ -1138,6 +1473,51 @@
           "reason": "\"You will make\" is plural here, as in verse 19: the command is for Moses and those who will do the work, while \"I show you\" is said to Moses alone. French keeps the change from \"tu\" to \"vous\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020250090082",
+            "o020250090071"
+          ],
+          "choice": "\"성막\" for the tabernacle; \"본\" (Literal, Balanced) and \"설계도\" (Readable) for pattern",
+          "alternatives": [
+            "\"장막\"",
+            "\"모형\""
+          ],
+          "reason": "The terms note settles \"성막\" (mishkan) for the whole of Exodus to Numbers; Readable explains it once as \"거룩한 장막\", as the English Readable adds \"the sacred tent\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020250090082"
+          ],
+          "choice": "\"Đền Tạm\" for mishkan",
+          "alternatives": [
+            "\"Nhà Tạm\"",
+            "\"lều\""
+          ],
+          "reason": "The term the Pentateuch terms note sets, already used in Joshua and Chronicles; Readable adds \"cái lều thánh\" as the English Readable adds \"the sacred tent\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1197,6 +1577,16 @@
           "L": "Nao watafanya sanduku la mbao za mshita; dhiraa mbili na nusu [ndio] urefu wake, na dhiraa moja na nusu upana wake, na dhiraa moja na nusu kimo chake.",
           "B": "Watengeneze sanduku la mbao za mshita, lenye urefu wa {{units:karibu mita 1.1|dhiraa mbili na nusu}}, upana wa {{units:karibu sentimita 70|dhiraa moja na nusu}} na kimo cha {{units:karibu sentimita 70|dhiraa moja na nusu}}.",
           "R": "Waambie watengeneze sanduku kwa mbao za mshita. Ni sanduku litakalohifadhi vibao vya agano. Urefu wake uwe {{units:karibu mita 1.1|dhiraa mbili na nusu}}, upana {{units:karibu sentimita 70|dhiraa moja na nusu}}, na kimo {{units:karibu sentimita 70|dhiraa moja na nusu}}."
+        },
+        "ko": {
+          "L": "그리고 그들이 아카시아 나무로 궤를 만들게 하라. 그 길이는 두 규빗 반, 그 너비는 한 규빗 반, 그 높이는 한 규빗 반이다.",
+          "B": "그들에게 아카시아 나무로 궤를 만들게 하라. 길이는 {{units:1.1미터쯤|두 규빗 반}}, 너비는 {{units:68센티미터쯤|한 규빗 반}}, 높이는 {{units:68센티미터쯤|한 규빗 반}}으로 하라.",
+          "R": "사람들에게 아카시아 나무로 궤를 만들게 해야 한다. 그 궤에는 언약의 돌판을 넣어 둘 것이다. 궤의 길이는 {{units:1.1미터쯤|두 규빗 반}}, 너비는 {{units:68센티미터쯤|한 규빗 반}}, 높이는 {{units:68센티미터쯤|한 규빗 반}}이어야 한다."
+        },
+        "vi": {
+          "L": "Và họ phải làm một cái hòm bằng gỗ keo; chiều dài [của nó] hai cu-đê rưỡi, chiều rộng một cu-đê rưỡi, và chiều cao một cu-đê rưỡi.",
+          "B": "Họ phải làm một cái hòm bằng gỗ keo, dài {{units:khoảng 1,1 m|hai cu-đê rưỡi}}, rộng {{units:khoảng 70 cm|một cu-đê rưỡi}} và cao {{units:khoảng 70 cm|một cu-đê rưỡi}}.",
+          "R": "Hãy bảo họ làm một cái hòm bằng gỗ keo. Đó là cái hòm sẽ đựng hai bảng đá giao ước. Hòm phải dài {{units:khoảng 1,1 m|hai cu-đê rưỡi}}, rộng {{units:khoảng 70 cm|một cu-đê rưỡi}} và cao {{units:khoảng 70 cm|một cu-đê rưỡi}}."
         }
       },
       "decisions": [
@@ -1329,6 +1719,93 @@
           "reason": "Metric by default, at 45 cm to the cubit, rounded with \"karibu\"; the units setting gives the original \"dhiraa\", which Literal keeps. The same values are used throughout the tabernacle chapters.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020250100051",
+            "o020250100082",
+            "o020250100112"
+          ],
+          "choice": "metres by default, cubits (\"cu-đê\") with the Measures setting",
+          "alternatives": [
+            "feet, as the English"
+          ],
+          "reason": "Vietnamese measures in metres, so the default converts the cubit at 45 cm, rounded as the English rounds, with a decimal comma (Genesis terms note); Literal keeps the cubit. The same values serve the whole tabernacle account.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020250100021"
+          ],
+          "choice": "\"hòm\"",
+          "alternatives": [
+            "\"rương\"",
+            "\"tủ\""
+          ],
+          "reason": "The word the Pentateuch terms note sets for the ark, as in Joshua and Chronicles; Readable adds what it holds, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020250100051",
+            "o020250100082",
+            "o020250100112"
+          ],
+          "choice": "Metric measures by default (a cubit about 45 cm), the cubit as the alternative: {{units:1.1미터쯤|두 규빗 반}}",
+          "alternatives": [
+            "feet, as the English"
+          ],
+          "reason": "As the style guide and the Genesis and Kings Korean: metric with 쯤 by default, the original unit (규빗) in the span; Literal keeps the cubits, as the English Literal does. Where a particle would differ between the two forms it is put inside the span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020250100021"
+          ],
+          "choice": "\"궤\" for the ark",
+          "alternatives": [
+            "\"상자\""
+          ],
+          "reason": "The terms note settles \"궤\" (\"증거궤\", \"언약궤\"); it is a chest, not Noah's \"방주\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1386,6 +1863,16 @@
           "L": "Nawe utalifunika [kwa] dhahabu safi; ndani na nje utalifunika, nawe utalifanyia ukingo wa dhahabu kulizunguka pande zote.",
           "B": "Ulifunike kwa dhahabu safi ndani na nje, na ulitie ukingo wa dhahabu pande zote.",
           "R": "Lifunike kwa dhahabu safi, ndani na nje, na uweke ukingo wa dhahabu kulizunguka."
+        },
+        "ko": {
+          "L": "그리고 너는 그것을 순금으로 입히되, 안으로도 밖으로도 그것을 입히라. 그리고 그 위 사방에 금 테를 만들라.",
+          "B": "궤의 안팎을 순금으로 입히고, 그 둘레에 금 테를 두르라.",
+          "R": "궤의 안과 밖을 순금으로 씌우고, 둘레에 금 테두리를 둘러야 한다."
+        },
+        "vi": {
+          "L": "Và ngươi phải bọc nó [bằng] vàng ròng; bên trong và bên ngoài ngươi phải bọc nó, và ngươi phải làm trên nó một đường viền bằng vàng chung quanh.",
+          "B": "Con phải bọc hòm bằng vàng ròng cả bên trong lẫn bên ngoài, và làm một đường viền bằng vàng chạy chung quanh.",
+          "R": "Hãy bọc hòm bằng vàng ròng, cả bên trong lẫn bên ngoài, và làm một đường viền bằng vàng chung quanh hòm."
         }
       },
       "decisions": [
@@ -1519,6 +2006,16 @@
           "L": "Nawe utalisubia pete nne za dhahabu, nawe utaziweka kwenye miguu yake minne, na pete mbili upande wake mmoja, na pete mbili upande wake wa pili.",
           "B": "Ulisubie pete nne za dhahabu na uzifunge kwenye miguu yake minne, ili kila upande uwe na pete mbili.",
           "R": "Subu pete nne za dhahabu, uzifunge karibu na miguu yake minne, pete mbili kila upande."
+        },
+        "ko": {
+          "L": "그리고 너는 그것을 위하여 금 고리 넷을 부어 만들어 그 네 발에 달라. 곧 그 한쪽 옆에 고리 둘, 그 다른 쪽 옆에 고리 둘이다.",
+          "B": "금 고리 네 개를 부어 만들어 궤의 네 발에 달되, 양쪽 옆에 두 개씩 달라.",
+          "R": "금 고리 네 개를 부어 만들어서 궤의 네 발 가까이에 달아야 한다. 양쪽에 고리가 두 개씩 있어야 한다."
+        },
+        "vi": {
+          "L": "Và ngươi phải đúc cho nó bốn khoen vàng và gắn [chúng] vào bốn chân nó, hai khoen ở một bên nó và hai khoen ở bên thứ hai.",
+          "B": "Hãy đúc bốn khoen vàng cho hòm và gắn vào bốn chân hòm, mỗi bên hai khoen.",
+          "R": "Hãy đúc bốn khoen vàng và gắn gần bốn chân hòm, mỗi bên hai khoen."
         }
       },
       "decisions": [
@@ -1599,6 +2096,16 @@
           "L": "Nawe utafanya mipiko ya mbao za mshita, na kuifunika [kwa] dhahabu.",
           "B": "Ufanye pia mipiko ya mbao za mshita, uifunike kwa dhahabu.",
           "R": "Tengeneza mipiko kwa mbao za mshita, uifunike kwa dhahabu."
+        },
+        "ko": {
+          "L": "그리고 너는 아카시아 나무로 채들을 만들고, 그것들을 금으로 입히라.",
+          "B": "또 아카시아 나무로 채를 만들어 금으로 입히라.",
+          "R": "아카시아 나무로 궤를 멜 채를 만들고, 금으로 씌워야 한다."
+        },
+        "vi": {
+          "L": "Và ngươi phải làm các đòn bằng gỗ keo và bọc chúng [bằng] vàng.",
+          "B": "Con cũng phải làm các đòn khiêng bằng gỗ keo và bọc vàng.",
+          "R": "Hãy làm các đòn khiêng bằng gỗ keo và bọc vàng."
         }
       },
       "decisions": [
@@ -1657,6 +2164,28 @@
           "reason": "\"Mpiko\" is the pole on which loads are carried on the shoulder, which is what these are (m1); \"miti\" would also mean trees or plain sticks.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020250130021"
+          ],
+          "choice": "\"채\" for the carrying poles",
+          "alternatives": [
+            "\"막대\"",
+            "\"장대\""
+          ],
+          "reason": "\"채\" is the word for the poles of a carried chest or litter; Readable says what they are for. Shared craft vocabulary for Exodus 25-40, so that the instructions and the building account read as one text.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1712,6 +2241,16 @@
           "L": "Nawe utaingiza mipiko katika pete zilizo pembeni mwa sanduku, ili kulibeba sanduku kwayo.",
           "B": "Uipitishe mipiko katika pete zilizo pande za sanduku, ili sanduku libebwe kwayo.",
           "R": "Pitisha mipiko katika pete zilizo pande za sanduku. Itumie kulibeba sanduku."
+        },
+        "ko": {
+          "L": "그리고 너는 그 채들을 궤 옆의 고리들에 꿰어, 그것들로 궤를 메게 하라.",
+          "B": "그 채들을 궤 양옆의 고리에 꿰어 궤를 멜 수 있게 하라.",
+          "R": "그 채들을 궤 양옆의 고리에 끼워야 한다. 그 채로 궤를 메고 옮겨야 한다."
+        },
+        "vi": {
+          "L": "Và ngươi phải xỏ các đòn vào các khoen ở hai bên hòm, để khiêng hòm bằng chúng.",
+          "B": "Hãy xỏ các đòn vào các khoen ở hai bên hòm để dùng mà khiêng hòm.",
+          "R": "Hãy xỏ các đòn qua các khoen ở hai bên hòm. Hãy dùng các đòn ấy để khiêng hòm."
         }
       },
       "decisions": [
@@ -1777,6 +2316,16 @@
           "L": "Katika pete za sanduku mipiko itakuwa; haitaondolewa kutoka kwake.",
           "B": "Mipiko ibaki katika pete za sanduku, isiondolewe kamwe.",
           "R": "Lazima mipiko ibaki katika pete za sanduku. Usiitoe."
+        },
+        "ko": {
+          "L": "궤의 고리들에 채들이 있을 것이니, 그것들을 거기서 빼내지 말라.",
+          "B": "채는 궤의 고리에 늘 꿰어 두고, 빼내지 말라.",
+          "R": "채는 늘 궤의 고리에 끼워 두어야 한다. 채를 빼면 안 된다."
+        },
+        "vi": {
+          "L": "Trong các khoen của hòm các đòn sẽ ở; chúng sẽ không bị rút ra khỏi nó.",
+          "B": "Các đòn phải luôn ở trong các khoen của hòm, không bao giờ được rút ra.",
+          "R": "Các đòn phải luôn ở trong các khoen của hòm. Đừng rút chúng ra."
         }
       },
       "decisions": [
@@ -1844,6 +2393,16 @@
           "L": "Nawe utaweka ndani ya sanduku Ushuhuda nitakaokupa.",
           "B": "Ndani ya sanduku uweke Ushuhuda nitakaokupa.",
           "R": "Weka ndani ya sanduku vibao vya agano nitakavyokupa."
+        },
+        "ko": {
+          "L": "그리고 너는 내가 너에게 줄 증거를 궤 속에 넣으라.",
+          "B": "궤 안에는 내가 너에게 줄 증거를 넣어 두라.",
+          "R": "내가 너에게 줄 언약의 돌판을 궤 안에 넣어 두어야 한다."
+        },
+        "vi": {
+          "L": "Và ngươi phải đặt vào hòm chứng ước mà {{deity_pronoun:ta|Ta}} sẽ ban cho ngươi.",
+          "B": "Con phải đặt vào trong hòm chứng ước mà {{deity_pronoun:ta|Ta}} sẽ ban cho con.",
+          "R": "Hãy đặt vào trong hòm hai bảng đá giao ước mà {{deity_pronoun:ta|Ta}} sẽ ban cho con."
         }
       },
       "decisions": [
@@ -1878,6 +2437,48 @@
           "choice": "the covenant tablets",
           "alternatives": [],
           "reason": "Readable says what the testimony is: the tablets of the covenant. Literal and Balanced keep \"the testimony\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020250160052"
+          ],
+          "choice": "\"증거\" (Literal, Balanced), \"언약의 돌판\" (Readable)",
+          "alternatives": [
+            "\"증거판\" at Balanced"
+          ],
+          "reason": "The terms note gives \"증거\" for the testimony and \"증거궤\" for its chest; Readable names the stone tablets, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020250160052"
+          ],
+          "choice": "\"chứng ước\" (L, B), \"hai bảng đá giao ước\" (R)",
+          "alternatives": [
+            "\"lời chứng\""
+          ],
+          "reason": "The term the Pentateuch terms note sets for the testimony, the stone tablets (m1); Readable names the tablets, as the English Readable does.",
           "uncertain": false,
           "footnote": false
         }
@@ -1933,6 +2534,16 @@
           "L": "Nawe utafanya kiti cha rehema cha dhahabu safi; dhiraa mbili na nusu [ndio] urefu wake, na dhiraa moja na nusu upana wake.",
           "B": "Ufanye kiti cha rehema cha dhahabu safi, chenye urefu wa {{units:karibu mita 1.1|dhiraa mbili na nusu}} na upana wa {{units:karibu sentimita 70|dhiraa moja na nusu}}.",
           "R": "Tengeneza kifuniko cha sanduku kwa dhahabu safi. Ni mahali ambapo dhambi zinafunikwa. Urefu wake uwe {{units:karibu mita 1.1|dhiraa mbili na nusu}} na upana wake {{units:karibu sentimita 70|dhiraa moja na nusu}}."
+        },
+        "ko": {
+          "L": "그리고 너는 순금으로 속죄소를 만들라. 그 길이는 두 규빗 반, 그 너비는 한 규빗 반이다.",
+          "B": "순금으로 속죄소를 만들되, 길이는 {{units:1.1미터쯤|두 규빗 반}}, 너비는 {{units:68센티미터쯤|한 규빗 반}}으로 하라.",
+          "R": "순금으로 궤의 뚜껑을 만들어야 한다. 이 뚜껑은 속죄소, 곧 죄를 덮어 주는 곳이다. 길이는 {{units:1.1미터쯤|두 규빗 반}}, 너비는 {{units:68센티미터쯤|한 규빗 반}}이어야 한다."
+        },
+        "vi": {
+          "L": "Và ngươi phải làm một nắp thi ân bằng vàng ròng; chiều dài [của nó] hai cu-đê rưỡi, và chiều rộng một cu-đê rưỡi.",
+          "B": "Hãy làm một nắp thi ân bằng vàng ròng, dài {{units:khoảng 1,1 m|hai cu-đê rưỡi}} và rộng {{units:khoảng 70 cm|một cu-đê rưỡi}}.",
+          "R": "Hãy làm nắp hòm bằng vàng ròng. Đó là nơi tội lỗi được che phủ. Nắp phải dài {{units:khoảng 1,1 m|hai cu-đê rưỡi}} và rộng {{units:khoảng 70 cm|một cu-đê rưỡi}}."
         }
       },
       "decisions": [
@@ -2057,6 +2668,50 @@
           "reason": "\"Kiti cha rehema\" (mercy seat) is the familiar Swahili name and matches the English. Readable says \"kifuniko\" (lid), as the English Readable does, and explains its purpose.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020250170021"
+          ],
+          "choice": "\"nắp thi ân\" (L, B), \"nắp hòm ... nơi tội lỗi được che phủ\" (R)",
+          "alternatives": [
+            "\"nắp chuộc tội\"",
+            "\"ngai thương xót\""
+          ],
+          "reason": "The term the Pentateuch terms note sets for kapporet; Readable says what it is, as the English Readable does (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020250170021"
+          ],
+          "choice": "\"속죄소\" (Literal, Balanced); Readable \"궤의 뚜껑\", explained once as \"속죄소, 곧 죄를 덮어 주는 곳\"",
+          "alternatives": [
+            "\"시은좌\"",
+            "\"덮개\""
+          ],
+          "reason": "The terms note settles \"속죄소\" for kapporet. The English Readable calls it the lid of the ark, the place where sins are covered; Korean Readable says \"뚜껑\" from here on and gives the familiar name once.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2108,6 +2763,16 @@
           "L": "Nawe utafanya makerubi wawili [wa] dhahabu; [kwa] kazi ya kufua utawafanya, kwenye ncha mbili za kiti cha rehema.",
           "B": "Ufanye makerubi wawili wa dhahabu. Uwafanye kwa dhahabu iliyofuliwa, kwenye ncha mbili za kiti cha rehema.",
           "R": "Tengeneza makerubi wawili kwa dhahabu iliyofuliwa, kwa ajili ya ncha mbili za kifuniko. Makerubi ni viumbe wa mbinguni wenye mabawa."
+        },
+        "ko": {
+          "L": "그리고 너는 금으로 그룹 둘을 만들라. 두드려서 만든 것으로 그것들을 만들되, 속죄소의 두 끝에 [만들라].",
+          "B": "금으로 그룹 둘을 만들되, 금을 두드려서 속죄소의 양쪽 끝에 만들라.",
+          "R": "금을 두드려서 그룹 둘을 만들어 뚜껑의 양쪽 끝에 두어야 한다. 그룹은 날개가 달린 하늘의 존재이다."
+        },
+        "vi": {
+          "L": "Và ngươi phải làm hai chê-ru-bim [bằng] vàng; ngươi phải làm chúng [bằng] đồ gò, ở hai đầu nắp thi ân.",
+          "B": "Hãy làm hai chê-ru-bim bằng vàng. Hãy gò chúng ở hai đầu nắp thi ân.",
+          "R": "Hãy dùng vàng gò làm hai chê-ru-bim cho hai đầu nắp hòm. Chê-ru-bim là những sinh vật trên trời có cánh."
         }
       },
       "decisions": [
@@ -2176,6 +2841,51 @@
           "reason": "\"Kufua\" is the smith's verb for beating metal into shape, which is what \"hammered work\" means (m2). The same words are used for the lampstand (verses 31, 36).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020250180031",
+            "o020250180051"
+          ],
+          "choice": "\"chê-ru-bim\"; \"đồ gò\" / \"gò\" for hammered work",
+          "alternatives": [
+            "\"thiên thần\"",
+            "\"dát mỏng\""
+          ],
+          "reason": "The transliteration the Pentateuch terms note sets, as in Chronicles; \"gò\" is the smith's word for beating metal into shape from one piece (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020250180031"
+          ],
+          "choice": "\"그룹\", \"그룹들\" for cherub, cherubim",
+          "alternatives": [
+            "\"케루빔\"",
+            "\"그룹천사\""
+          ],
+          "reason": "The terms note keeps the Korean Bible form \"그룹\". Because it sounds like the everyday word for a group, Readable says what a cherub is, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2239,6 +2949,16 @@
           "L": "Nawe fanya kerubi mmoja kwenye ncha hii, na kerubi mmoja kwenye ncha ile; kutoka kiti cha rehema mtawafanya makerubi, kwenye ncha zake mbili.",
           "B": "Ufanye kerubi mmoja kwenye ncha moja na mwingine kwenye ncha nyingine. Makerubi hao wafanywe kutoka kiti cha rehema chenyewe, kwenye ncha zake mbili.",
           "R": "Weka kerubi mmoja kila ncha ya kifuniko. Tengeneza makerubi na kifuniko kutoka kipande kimoja cha dhahabu."
+        },
+        "ko": {
+          "L": "그리고 한 그룹은 이쪽 끝에서, 한 그룹은 저쪽 끝에서 만들라. 속죄소로부터 그룹들을 그 두 끝에 만들라.",
+          "B": "한 그룹은 이쪽 끝에, 다른 한 그룹은 저쪽 끝에 만들라. 그룹들을 속죄소와 한 덩이가 되게 그 양쪽 끝에 만들라.",
+          "R": "뚜껑의 양쪽 끝에 그룹을 하나씩 두어야 한다. 그룹들과 뚜껑은 모두 금 한 덩이로 만들어야 한다."
+        },
+        "vi": {
+          "L": "Và hãy làm một chê-ru-bim ở đầu bên này và một chê-ru-bim ở đầu bên kia; các ngươi phải làm các chê-ru-bim liền với nắp thi ân, ở hai đầu nó.",
+          "B": "Hãy làm một chê-ru-bim ở đầu này và một chê-ru-bim ở đầu kia. Các chê-ru-bim phải được làm liền một khối với nắp thi ân, ở hai đầu nắp.",
+          "R": "Hãy đặt ở mỗi đầu nắp hòm một chê-ru-bim. Hãy làm các chê-ru-bim và nắp hòm từ cùng một khối vàng."
         }
       },
       "decisions": [
@@ -2323,6 +3043,16 @@
           "L": "Na makerubi watakuwa wakiyakunjua mabawa [yao] juu, wakikifunika kiti cha rehema kwa mabawa yao, na nyuso zao kila mmoja kwa ndugu yake; kuelekea kiti cha rehema zitakuwa nyuso za makerubi.",
           "B": "Makerubi wayakunjue mabawa yao juu, wakikitia kivuli kiti cha rehema kwa mabawa yao. Waelekeane, nyuso zao zikielekea kiti cha rehema.",
           "R": "Makerubi lazima wakunjue mabawa yao juu ya kifuniko, wakikikinga. Lazima watazamane, nyuso zao zikielekea kifuniko."
+        },
+        "ko": {
+          "L": "그리고 그룹들은 날개를 위로 펴고, 그 날개로 속죄소를 덮고, 그들의 얼굴은 각각 자기 형제를 향하게 하라. 속죄소를 향하여 그룹들의 얼굴이 있게 하라.",
+          "B": "그룹들은 날개를 위로 펴서 그 날개로 속죄소를 덮게 하고, 서로 마주 보되 얼굴은 속죄소 쪽을 향하게 하라.",
+          "R": "그룹들은 날개를 위로 펴서 뚜껑을 덮어 가려야 한다. 그룹들은 서로 마주 보고, 얼굴은 뚜껑 쪽을 내려다보아야 한다."
+        },
+        "vi": {
+          "L": "Và các chê-ru-bim sẽ dang cánh lên trên, lấy cánh mình che nắp thi ân, và mặt chúng hướng về nhau; mặt các chê-ru-bim sẽ hướng về nắp thi ân.",
+          "B": "Các chê-ru-bim phải dang cánh lên trên, lấy cánh che phủ nắp thi ân. Chúng phải đối mặt nhau, mặt hướng xuống nắp thi ân.",
+          "R": "Các chê-ru-bim phải dang cánh lên trên nắp hòm để che phủ nắp. Chúng phải đối mặt nhau và nhìn xuống nắp hòm."
         }
       },
       "decisions": [
@@ -2367,6 +3097,26 @@
           "choice": "faces toward the mercy seat: looking down at the lid",
           "alternatives": [],
           "reason": "The two cherubim face each other and look down toward the mercy seat between them.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020250200111",
+            "o020250200131"
+          ],
+          "choice": "\"hướng về nhau\"",
+          "alternatives": [
+            "\"mỗi [chê-ru-bim] hướng về anh em mình\""
+          ],
+          "reason": "The idiom \"each toward his brother\" means facing one another (m2); said literally it would make the cherubim kin, so Literal keeps the sense.",
           "uncertain": false,
           "footnote": false
         }
@@ -2430,6 +3180,16 @@
           "L": "Nawe utaweka kiti cha rehema juu ya sanduku, kwa juu, na ndani ya sanduku utaweka Ushuhuda nitakaokupa.",
           "B": "Kiti cha rehema kiwekwe juu ya sanduku, na ndani ya sanduku uweke Ushuhuda nitakaokupa.",
           "R": "Weka kifuniko juu ya sanduku, na uweke ndani ya sanduku vibao vya agano nitakavyokupa."
+        },
+        "ko": {
+          "L": "그리고 너는 속죄소를 궤 위에 얹고, 궤 안에는 내가 너에게 줄 증거를 넣으라.",
+          "B": "속죄소는 궤 위에 얹고, 궤 안에는 내가 너에게 줄 증거를 넣으라.",
+          "R": "뚜껑을 궤 위에 덮어야 한다. 그리고 내가 너에게 줄 언약의 돌판을 궤 안에 넣어 두어야 한다."
+        },
+        "vi": {
+          "L": "Và ngươi phải đặt nắp thi ân lên trên hòm, và vào trong hòm ngươi phải đặt chứng ước mà {{deity_pronoun:ta|Ta}} sẽ ban cho ngươi.",
+          "B": "Nắp thi ân phải đặt ở trên hòm, và trong hòm con phải để chứng ước mà {{deity_pronoun:ta|Ta}} sẽ ban cho con.",
+          "R": "Hãy đặt nắp lên trên hòm, và đặt vào trong hòm hai bảng đá giao ước mà {{deity_pronoun:ta|Ta}} sẽ ban cho con."
         }
       },
       "decisions": [
@@ -2531,6 +3291,16 @@
           "L": "Nami nitakutana nawe huko, {{deity_pronoun:nami|Nami}} nitasema nawe kutoka juu ya kiti cha rehema, kutoka kati ya makerubi wawili walio juu ya sanduku la Ushuhuda, yote nitakayokuamuru kwa ajili ya wana wa Israeli.",
           "B": "Huko nitakutana nawe. Nitasema nawe kutoka juu ya kiti cha rehema, kutoka mahali kati ya makerubi wawili walio juu ya sanduku la Ushuhuda, na kukupa kila amri kwa ajili ya Waisraeli.",
           "R": "Nitakutana nawe huko, juu ya kifuniko, kati ya makerubi wawili walio juu ya sanduku lenye vibao vya agano. Kutoka huko nitakuambia amri zote utakazowapa Waisraeli."
+        },
+        "ko": {
+          "L": "그리고 내가 거기서 너를 만나고, 속죄소 위에서, 증거궤 위에 있는 두 그룹 사이에서 너와 말하겠다. 곧 내가 이스라엘 자손에게 [주라고] 너에게 명령할 모든 것을 [말하겠다].",
+          "B": "거기서 내가 너를 만나겠다. 증거궤 위에 있는 두 그룹 사이, 곧 속죄소 위에서 너와 말하며, 이스라엘 백성을 위한 모든 명령을 너에게 주겠다.",
+          "R": "나는 거기, 언약의 돌판을 넣은 궤의 뚜껑 위, 두 그룹 사이에서 너를 만나겠다. 거기서 나는 네가 이스라엘 사람들에게 전해야 할 모든 명령을 너에게 말해 주겠다."
+        },
+        "vi": {
+          "L": "Và {{deity_pronoun:ta|Ta}} sẽ gặp ngươi tại đó, và {{deity_pronoun:ta|Ta}} sẽ nói với ngươi từ phía trên nắp thi ân, từ giữa hai chê-ru-bim ở trên hòm chứng ước, mọi điều {{deity_pronoun:ta|Ta}} sẽ truyền cho ngươi về con cháu Y-sơ-ra-ên.",
+          "B": "Ta sẽ gặp con tại đó. Từ phía trên nắp thi ân, ở giữa hai chê-ru-bim trên hòm chứng ước, {{deity_pronoun:ta|Ta}} sẽ nói với con và ban cho con mọi mệnh lệnh dành cho dân Y-sơ-ra-ên.",
+          "R": "Ta sẽ gặp con tại đó, phía trên nắp hòm, giữa hai chê-ru-bim trên cái hòm đựng hai bảng đá giao ước. Từ nơi đó {{deity_pronoun:ta|Ta}} sẽ cho con biết mọi điều răn con phải truyền lại cho dân Y-sơ-ra-ên."
         }
       },
       "decisions": [
@@ -2596,6 +3366,27 @@
           "reason": "Readable says \"the ark that holds the covenant tablets\" for \"the ark of the testimony\" (verse 16). It also says \"the commands you are to give\", which is what \"command you to the Israelites\" means.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020250220131",
+            "o020250220142"
+          ],
+          "choice": "\"hòm chứng ước\"",
+          "alternatives": [
+            "\"hòm giao ước\""
+          ],
+          "reason": "The ark is named by what it holds (m3), with the term of the Pentateuch terms note; Readable says it outright.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2651,6 +3442,16 @@
           "L": "Nawe utafanya meza [ya] mbao za mshita; dhiraa mbili [ndio] urefu wake, na dhiraa moja upana wake, na dhiraa moja na nusu kimo chake.",
           "B": "Ufanye meza ya mbao za mshita, yenye urefu wa {{units:karibu sentimita 90|dhiraa mbili}}, upana wa {{units:karibu sentimita 45|dhiraa moja}} na kimo cha {{units:karibu sentimita 70|dhiraa moja na nusu}}.",
           "R": "Tengeneza meza kwa mbao za mshita. Urefu wake uwe {{units:karibu sentimita 90|dhiraa mbili}}, upana {{units:karibu sentimita 45|dhiraa moja}}, na kimo {{units:karibu sentimita 70|dhiraa moja na nusu}}."
+        },
+        "ko": {
+          "L": "그리고 너는 아카시아 나무로 상을 만들라. 그 길이는 두 규빗, 그 너비는 한 규빗, 그 높이는 한 규빗 반이다.",
+          "B": "아카시아 나무로 상을 만들되, 길이는 {{units:90센티미터쯤|두 규빗}}, 너비는 {{units:45센티미터쯤|한 규빗}}, 높이는 {{units:68센티미터쯤|한 규빗 반}}으로 하라.",
+          "R": "아카시아 나무로 상을 만들어야 한다. 길이는 {{units:90센티미터쯤|두 규빗}}, 너비는 {{units:45센티미터쯤|한 규빗}}, 높이는 {{units:68센티미터쯤|한 규빗 반}}이어야 한다."
+        },
+        "vi": {
+          "L": "Và ngươi phải làm một cái bàn [bằng] gỗ keo; chiều dài [của nó] hai cu-đê, chiều rộng một cu-đê, và chiều cao một cu-đê rưỡi.",
+          "B": "Hãy làm một cái bàn bằng gỗ keo, dài {{units:khoảng 90 cm|hai cu-đê}}, rộng {{units:khoảng 45 cm|một cu-đê}} và cao {{units:khoảng 70 cm|một cu-đê rưỡi}}.",
+          "R": "Hãy làm một cái bàn bằng gỗ keo. Bàn phải dài {{units:khoảng 90 cm|hai cu-đê}}, rộng {{units:khoảng 45 cm|một cu-đê}} và cao {{units:khoảng 70 cm|một cu-đê rưỡi}}."
         }
       },
       "decisions": [
@@ -2737,6 +3538,16 @@
           "L": "Nawe utaifunika [kwa] dhahabu safi, na kuifanyia ukingo wa dhahabu pande zote.",
           "B": "Uifunike kwa dhahabu safi, na uitie ukingo wa dhahabu kuizunguka pande zote.",
           "R": "Ifunike kwa dhahabu safi, na uweke ukingo wa dhahabu kuizunguka."
+        },
+        "ko": {
+          "L": "그리고 너는 그것을 순금으로 입히고, 그것을 위하여 사방에 금 테를 만들라.",
+          "B": "상을 순금으로 입히고, 그 둘레에 금 테를 두르라.",
+          "R": "상을 순금으로 씌우고, 둘레에 금 테두리를 둘러야 한다."
+        },
+        "vi": {
+          "L": "Và ngươi phải bọc nó [bằng] vàng ròng, và làm cho nó một đường viền bằng vàng chung quanh.",
+          "B": "Hãy bọc bàn bằng vàng ròng và làm một đường viền bằng vàng chạy chung quanh.",
+          "R": "Hãy bọc bàn bằng vàng ròng và làm một đường viền bằng vàng chung quanh bàn."
         }
       },
       "decisions": [
@@ -2806,6 +3617,16 @@
           "L": "Nawe utaifanyia kiunzi cha upana wa kiganja pande zote, nawe utafanya ukingo wa dhahabu kwa ajili ya kiunzi chake pande zote.",
           "B": "Uifanyie kiunzi chenye upana wa {{units:karibu sentimita 7.5|kiganja kimoja}} pande zote, na ukingo wa dhahabu kukizunguka kiunzi hicho.",
           "R": "Ifanyie kiunzi cha upana wa {{units:karibu sentimita 7.5|kiganja kimoja}} kuizunguka, na uweke ukingo wa dhahabu kuzunguka kiunzi hicho."
+        },
+        "ko": {
+          "L": "그리고 너는 그것을 위하여 사방에 손바닥 너비의 턱을 만들고, 그 턱을 위하여 사방에 금 테를 만들라.",
+          "B": "상 둘레에 너비가 {{units:7.5센티미터쯤|손바닥 너비}}인 턱을 만들고, 그 턱 둘레에 금 테를 두르라.",
+          "R": "상 둘레에 너비가 {{units:7.5센티미터쯤|손바닥 너비}}인 턱을 만들고, 그 턱에 금 테두리를 둘러야 한다."
+        },
+        "vi": {
+          "L": "Và ngươi phải làm cho nó một cái khung [rộng] một bề ngang bàn tay chung quanh, và ngươi phải làm một đường viền bằng vàng cho khung nó chung quanh.",
+          "B": "Hãy làm cho bàn một cái khung rộng {{units:khoảng 7,5 cm|một bề ngang bàn tay}} chung quanh, và làm một đường viền bằng vàng quanh khung.",
+          "R": "Hãy làm một cái khung rộng {{units:khoảng 7,5 cm|một bề ngang bàn tay}} chung quanh bàn, và làm một đường viền bằng vàng quanh khung."
         }
       },
       "decisions": [
@@ -2900,6 +3721,27 @@
           "reason": "The old French unit \"palme\" is little known today and is easily confused with \"empan\" (the span); \"une largeur de main\" says what the measure is. B and R give 7,5 cm by default.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020250250041"
+          ],
+          "choice": "\"một bề ngang bàn tay\"",
+          "alternatives": [
+            "\"một gang tay\""
+          ],
+          "reason": "The handbreadth is the width of the hand across four fingers (m2); \"gang tay\" is the longer span of 28:16.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2958,6 +3800,16 @@
           "L": "Nawe utaifanyia pete nne za dhahabu, na kuziweka pete hizo kwenye pembe nne zilizo [kwenye] miguu yake minne.",
           "B": "Uifanyie pete nne za dhahabu, uziweke kwenye pembe nne, moja karibu na kila mguu wake.",
           "R": "Tengeneza pete nne za dhahabu, uweke moja kila pembe, karibu na kila mmoja wa miguu yake minne."
+        },
+        "ko": {
+          "L": "그리고 너는 그것을 위하여 금 고리 넷을 만들어, 그 고리들을 그 네 발에 딸린 네 모퉁이에 달라.",
+          "B": "금 고리 네 개를 만들어, 상의 네 다리가 붙은 네 모퉁이에 달라.",
+          "R": "금 고리 네 개를 만들어, 네 다리 옆 모퉁이마다 하나씩 달아야 한다."
+        },
+        "vi": {
+          "L": "Và ngươi phải làm cho nó bốn khoen vàng, và gắn các khoen vào bốn góc, [là chỗ] thuộc về bốn chân nó.",
+          "B": "Hãy làm bốn khoen vàng cho bàn và gắn vào bốn góc, mỗi khoen gần một chân bàn.",
+          "R": "Hãy làm bốn khoen vàng và gắn mỗi khoen vào một góc bàn, bên cạnh mỗi chân bàn."
         }
       },
       "decisions": [
@@ -3046,6 +3898,16 @@
           "L": "Karibu na kiunzi pete zitakuwa, kama vishikio vya mipiko, ili kuibeba meza.",
           "B": "Pete ziwekwe karibu na kiunzi; zitashika mipiko ambayo meza itabebwa kwayo.",
           "R": "Weka pete karibu na kiunzi. Mipiko ya kubebea meza itapita ndani yake."
+        },
+        "ko": {
+          "L": "턱 가까이에 고리들이 있어, 상을 메는 채들을 꿰는 곳이 되게 하라.",
+          "B": "고리들은 턱 가까이에 달아, 상을 메는 채를 꿰는 데 쓰게 하라.",
+          "R": "고리들은 턱 가까이에 달아야 한다. 상을 메는 채가 그 고리에 들어갈 것이다."
+        },
+        "vi": {
+          "L": "Sát khung các khoen sẽ ở, làm chỗ giữ các đòn để khiêng bàn.",
+          "B": "Các khoen phải ở gần khung; chúng sẽ giữ các đòn dùng để khiêng bàn.",
+          "R": "Hãy gắn các khoen gần khung. Các đòn để khiêng bàn sẽ xỏ qua các khoen ấy."
         }
       },
       "decisions": [
@@ -3118,6 +3980,16 @@
           "L": "Nawe utaifanya mipiko [kwa] mbao za mshita, na kuifunika [kwa] dhahabu, nayo meza itabebwa kwayo.",
           "B": "Uifanye mipiko kwa mbao za mshita na uifunike kwa dhahabu. Meza itabebwa kwayo.",
           "R": "Tengeneza mipiko kwa mbao za mshita, uifunike kwa dhahabu. Itumie kuibeba meza."
+        },
+        "ko": {
+          "L": "그리고 너는 아카시아 나무로 채들을 만들고 그것들을 금으로 입히라. 그것들로 상을 멜 것이다.",
+          "B": "아카시아 나무로 채를 만들어 금으로 입히라. 그 채로 상을 멜 것이다.",
+          "R": "아카시아 나무로 채를 만들고 금으로 씌워야 한다. 그 채로 상을 메고 옮긴다."
+        },
+        "vi": {
+          "L": "Và ngươi phải làm các đòn [bằng] gỗ keo và bọc chúng [bằng] vàng, và bàn sẽ được khiêng bằng chúng.",
+          "B": "Hãy làm các đòn bằng gỗ keo và bọc vàng. Bàn sẽ được khiêng bằng các đòn ấy.",
+          "R": "Hãy làm các đòn bằng gỗ keo và bọc vàng. Hãy dùng các đòn ấy để khiêng bàn."
         }
       },
       "decisions": [
@@ -3194,6 +4066,16 @@
           "L": "Nawe utafanya sahani zake, na vijiko vyake, na mitungi yake, na bakuli zake ambazo [sadaka za kinywaji] humiminwa kwazo; [kwa] dhahabu safi utavifanya.",
           "B": "Ufanye sahani zake, vijiko vyake, mitungi yake na bakuli zake, vinavyotumiwa kumimina sadaka za kinywaji; uvifanye kwa dhahabu safi.",
           "R": "Tengeneza kwa dhahabu safi sahani zake, vijiko vyake, mitungi na bakuli zake. Baadhi yake vitatumika kumimina sadaka za kinywaji."
+        },
+        "ko": {
+          "L": "그리고 너는 그 접시들과 그 작은 그릇들과 그 병들과, 그것으로 [부어 드리는 제물을] 부을 그 대접들을 만들라. 순금으로 그것들을 만들라.",
+          "B": "상에 놓을 접시와 작은 그릇과 병과, 부어 드리는 제물을 붓는 데 쓸 대접들을 만들되, 순금으로 만들라.",
+          "R": "상에 놓을 접시와 작은 그릇과 병과 대접을 순금으로 만들어야 한다. 그 가운데 어떤 것은 부어 드리는 제물을 부을 때 쓸 것이다."
+        },
+        "vi": {
+          "L": "Và ngươi phải làm các đĩa, các chén, các bình và các bát của nó, là những thứ dùng để rưới [lễ quán]; ngươi phải làm chúng [bằng] vàng ròng.",
+          "B": "Hãy làm các đĩa, các chén, các bình và các bát của bàn, là những thứ dùng để rưới lễ quán; hãy làm chúng bằng vàng ròng.",
+          "R": "Hãy làm các đĩa, chén nhỏ, bình và bát bằng vàng ròng. Một số thứ ấy sẽ được dùng để rưới rượu dâng lên {{deity_pronoun:ta|Ta}}."
         }
       },
       "decisions": [
@@ -3293,6 +4175,49 @@
           "reason": "The second vessel is named from the palm of the hand and was a small pan or ladle (m1); \"kijiko\" in the sense of a ladle comes closest. The exact shapes are not known.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020250290071"
+          ],
+          "choice": "\"lễ quán\" (L, B), \"rưới rượu dâng\" (R)",
+          "alternatives": [
+            "\"của lễ rưới\""
+          ],
+          "reason": "The drink offering is \"lễ quán\" in Chronicles in this translation; Readable says what is done, pouring out wine as an offering.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020250290071"
+          ],
+          "choice": "\"부어 드리는 제물\" for the drink offering",
+          "alternatives": [
+            "\"전제\"",
+            "\"전제물\""
+          ],
+          "reason": "A plain description of what is done, rather than the Sino-Korean term \"전제\", which few readers know.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3341,6 +4266,16 @@
           "L": "Nawe utaweka juu ya meza mkate wa uso mbele {{deity_pronoun:yangu|Yangu}} daima.",
           "B": "Juu ya meza uweke mkate wa Uwepo, ukae mbele {{deity_pronoun:yangu|Yangu}} daima.",
           "R": "Kila wakati weka mkate wa Uwepo juu ya meza mbele {{deity_pronoun:yangu|Yangu}}."
+        },
+        "ko": {
+          "L": "그리고 너는 그 상 위에 얼굴의 빵을 내 앞에 늘 두라.",
+          "B": "그 상 위에는 진설병을 차려 늘 내 앞에 있게 하라.",
+          "R": "상 위에는 늘 진설병, 곧 내 앞에 차려 놓는 빵이 있어야 한다."
+        },
+        "vi": {
+          "L": "Và ngươi phải đặt trên bàn bánh cung hiến trước mặt {{deity_pronoun:ta|Ta}} luôn luôn.",
+          "B": "Con phải bày bánh cung hiến trên bàn, để bánh ấy luôn luôn ở trước mặt {{deity_pronoun:ta|Ta}}.",
+          "R": "Hãy luôn luôn để bánh cung hiến trên bàn, trước mặt {{deity_pronoun:ta|Ta}}."
         }
       },
       "decisions": [
@@ -3411,6 +4346,52 @@
           "reason": "\"Uwepo\" (presence) says what \"face\" means here: the bread lies before God (m1), as the English \"bread of the Presence\" does. \"Wonyesho\" (display) is the older rendering and does not carry that sense.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020250300041",
+            "o020250300051"
+          ],
+          "choice": "\"얼굴의 빵\" (Literal); \"진설병\" (Balanced, Readable), explained at Readable",
+          "alternatives": [
+            "\"임재의 빵\"",
+            "\"떡\""
+          ],
+          "reason": "The terms note settles \"진설병\", the established name. Literal shows the Hebrew phrase, \"bread of the face\", as the English Literal does; \"빵\" rather than \"떡\", as the Korean John.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020250300041",
+            "o020250300051"
+          ],
+          "choice": "\"bánh cung hiến\" at every level",
+          "alternatives": [
+            "\"bánh của mặt\" (L)",
+            "\"bánh trần thiết\""
+          ],
+          "reason": "The term the Pentateuch terms note sets. Literally \"bread of the face\", bread set before God's presence (m1), which Vietnamese could not say plainly even at Literal.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3472,6 +4453,16 @@
           "L": "Nawe utafanya kinara cha taa cha dhahabu safi; [kwa] kazi ya kufua kinara kitafanywa, kitako chake na shina lake; vikombe vyake, vifundo vyake na maua yake vitakuwa vya kipande kimoja nacho.",
           "B": "Ufanye kinara cha taa cha dhahabu safi iliyofuliwa. Kitako chake na shina lake, vikombe vyake, matumba yake na maua yake viwe kipande kimoja nacho.",
           "R": "Tengeneza kinara cha taa kwa dhahabu safi. Kifue chote kutoka kipande kimoja cha dhahabu: kitako chake, shina lake la katikati, na vikombe, matumba na maua yake."
+        },
+        "ko": {
+          "L": "그리고 너는 순금으로 등잔대를 만들라. 두드려서 만든 것으로 등잔대를 만들되, 그 밑받침과 그 줄기와 그 잔들과 그 꽃받침들과 그 꽃들이 그것에서 나오게 하라.",
+          "B": "순금을 두드려서 등잔대를 만들되, 밑받침과 줄기와 잔과 꽃봉오리와 꽃이 모두 등잔대와 한 덩이가 되게 하라.",
+          "R": "순금으로 등잔대를 만들어야 한다. 밑받침과 가운데 줄기와 잔과 꽃봉오리와 꽃을 모두 금 한 덩이로 두드려서 만들어야 한다."
+        },
+        "vi": {
+          "L": "Và ngươi phải làm một chân đèn [bằng] vàng ròng; chân đèn sẽ được làm [bằng] đồ gò, đế và thân nó; các đài hoa, các bầu và các hoa của nó sẽ liền với nó.",
+          "B": "Hãy làm một chân đèn bằng vàng ròng, gò bằng búa. Đế và thân chân đèn, các đài hoa, nụ và hoa đều phải liền một khối với chân đèn.",
+          "R": "Hãy làm một chân đèn bằng vàng ròng. Hãy gò toàn bộ chân đèn từ một khối vàng: đế, thân giữa, cùng các đài hoa, nụ và hoa."
         }
       },
       "decisions": [
@@ -3586,6 +4577,52 @@
           "reason": "\"Chandelier\" is the traditional French name for the lampstand, though it held oil lamps, not candles (verse 37). For the round knobs Literal says \"boules\", and Balanced and Readable say \"boutons\" (buds), as the English moves from \"bulbs\" to \"buds\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020250310101",
+            "o020250310111",
+            "o020250310122"
+          ],
+          "choice": "\"đài hoa\", \"bầu\" (L) / \"nụ\" (B, R), \"hoa\"",
+          "alternatives": [
+            "\"chén\" for cups"
+          ],
+          "reason": "The ornaments are parts of a flower (m3), so the words are a flower's: the cup is the calyx (\"đài hoa\"), the bulb a rounded knob (\"bầu\") or bud (\"nụ\", as the English Balanced says).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020250310021",
+            "o020250310111"
+          ],
+          "choice": "\"등잔대\" for the lampstand; \"꽃받침\" (Literal), \"꽃봉오리\" (Balanced, Readable) for the knobs",
+          "alternatives": [
+            "\"촛대\"",
+            "\"구슬\""
+          ],
+          "reason": "The terms note settles \"등잔대\": it held oil lamps, not candles. The knob is the round part under a cup; Balanced and Readable call it a bud, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3647,6 +4684,16 @@
           "L": "Na matawi sita [yatakuwa] yakitoka pande zake: matawi matatu ya kinara upande wake mmoja, na matawi matatu ya kinara upande wake wa pili.",
           "B": "Matawi sita yatoke pande za kinara: matawi yake matatu upande mmoja, na matatu upande mwingine.",
           "R": "Matawi sita yatatoka pande za kinara, matatu kila upande."
+        },
+        "ko": {
+          "L": "그리고 여섯 가지가 그 옆에서 나오게 하라. 등잔대의 가지 셋은 그 한쪽 옆에서, 등잔대의 가지 셋은 그 다른 쪽 옆에서 [나오게 하라].",
+          "B": "등잔대 양옆으로 가지 여섯이 나오게 하되, 한쪽에서 가지 셋, 다른 쪽에서 가지 셋이 나오게 하라.",
+          "R": "등잔대 양옆으로 가지 여섯 개가 나오는데, 한쪽에 세 개씩이다."
+        },
+        "vi": {
+          "L": "Và sáu nhánh [sẽ] mọc ra từ hai bên nó: ba nhánh của chân đèn từ một bên nó, và ba nhánh của chân đèn từ bên thứ hai.",
+          "B": "Sáu nhánh phải mọc ra từ hai bên chân đèn: ba nhánh ở bên này và ba nhánh ở bên kia.",
+          "R": "Sáu nhánh sẽ mọc ra từ hai bên chân đèn, mỗi bên ba nhánh."
         }
       },
       "decisions": [
@@ -3753,6 +4800,16 @@
           "L": "Vikombe vitatu vilivyofanywa kama [maua ya] mlozi kwenye tawi moja, kifundo na ua; na vikombe vitatu vilivyofanywa kama [maua ya] mlozi kwenye tawi lingine, kifundo na ua; ndivyo kwa matawi sita yanayotoka kwenye kinara.",
           "B": "Tawi moja liwe na vikombe vitatu vyenye umbo la maua ya mlozi, pamoja na tumba na ua, na tawi linalofuata vikombe vitatu vyenye umbo la maua ya mlozi, pamoja na tumba na ua. Iwe hivyo kwa matawi yote sita yanayotoka kwenye kinara.",
           "R": "Kila tawi kati ya matawi sita yanayotoka kwenye kinara litakuwa na vikombe vitatu vyenye umbo la maua ya mlozi, pamoja na matumba na maua."
+        },
+        "ko": {
+          "L": "한 가지에 아몬드 꽃 모양의 잔 셋과 꽃받침과 꽃, 그리고 [다른] 한 가지에 아몬드 꽃 모양의 잔 셋과 꽃받침과 꽃이 있게 하라. 등잔대에서 나온 여섯 가지가 다 그러하다.",
+          "B": "한 가지에 아몬드 꽃 모양의 잔 셋을 꽃봉오리와 꽃과 함께 달고, 다음 가지에도 아몬드 꽃 모양의 잔 셋을 꽃봉오리와 꽃과 함께 달라. 등잔대에서 나온 여섯 가지를 모두 그렇게 하라.",
+          "R": "등잔대에서 나온 여섯 가지에는 각각 아몬드 꽃 모양의 잔이 세 개씩 있어야 하고, 꽃봉오리와 꽃이 있어야 한다."
+        },
+        "vi": {
+          "L": "Ba đài hoa làm giống [hoa] hạnh nhân trên một nhánh, bầu và hoa; và ba đài hoa làm giống [hoa] hạnh nhân trên nhánh kia, bầu và hoa; cũng vậy cho sáu nhánh mọc ra từ chân đèn.",
+          "B": "Mỗi nhánh phải có ba đài hoa hình hoa hạnh nhân, với nụ và hoa; nhánh kế tiếp cũng có ba đài hoa hình hoa hạnh nhân, với nụ và hoa. Cả sáu nhánh mọc ra từ chân đèn đều phải như vậy.",
+          "R": "Mỗi nhánh trong sáu nhánh mọc ra từ chân đèn sẽ có ba đài hoa hình hoa hạnh nhân, có nụ và hoa."
         }
       },
       "decisions": [
@@ -3804,6 +4861,27 @@
           "reason": "Readable states once what the Hebrew says branch by branch, since all six are alike.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020250330031"
+          ],
+          "choice": "\"아몬드 꽃\"",
+          "alternatives": [
+            "\"살구꽃\""
+          ],
+          "reason": "The tree is the almond; \"살구꽃\" (apricot), the older Korean Bible word, names a different tree.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3852,6 +4930,16 @@
           "L": "Na juu ya kinara [kutakuwa na] vikombe vinne vilivyofanywa kama [maua ya] mlozi, vifundo vyake na maua yake.",
           "B": "Kwenye kinara chenyewe kuwe na vikombe vinne vyenye umbo la maua ya mlozi, pamoja na matumba yake na maua yake.",
           "R": "Shina la katikati la kinara litakuwa na vikombe vinne vyenye umbo la maua ya mlozi, pamoja na matumba na maua."
+        },
+        "ko": {
+          "L": "그리고 등잔대에는 아몬드 꽃 모양의 잔 넷과 그 꽃받침들과 그 꽃들이 있게 하라.",
+          "B": "등잔대 몸체에는 아몬드 꽃 모양의 잔 넷이 꽃봉오리와 꽃과 함께 있게 하라.",
+          "R": "등잔대의 가운데 줄기에는 아몬드 꽃 모양의 잔 네 개가 꽃봉오리와 꽃과 함께 있어야 한다."
+        },
+        "vi": {
+          "L": "Và trên chân đèn [sẽ có] bốn đài hoa làm giống [hoa] hạnh nhân, các bầu và các hoa của nó.",
+          "B": "Trên chính thân chân đèn phải có bốn đài hoa hình hoa hạnh nhân, với nụ và hoa.",
+          "R": "Thân giữa của chân đèn sẽ có bốn đài hoa hình hoa hạnh nhân, có nụ và hoa."
         }
       },
       "decisions": [
@@ -3955,6 +5043,16 @@
           "L": "Na kifundo chini ya matawi mawili yanayotoka kwake, na kifundo chini ya matawi mawili yanayotoka kwake, na kifundo chini ya matawi mawili yanayotoka kwake, kwa matawi sita yanayotoka kwenye kinara.",
           "B": "Kuwe na tumba chini ya kila jozi ya matawi yanayotoka kwake: tumba moja chini ya kila jozi kati ya zile jozi tatu, kwa matawi sita yanayotoka kwenye kinara.",
           "R": "Weka tumba chini ya kila jozi ya matawi, mahali yanapotoka kwenye shina la katikati. Fanya hivyo kwa jozi zote tatu."
+        },
+        "ko": {
+          "L": "그리고 그것에서 [나온] 두 가지 아래에 꽃받침 하나, 그것에서 [나온] 두 가지 아래에 꽃받침 하나, 그것에서 [나온] 두 가지 아래에 꽃받침 하나가 [있게 하라]. 등잔대에서 나온 여섯 가지를 위하여 [그렇게 하라].",
+          "B": "줄기에서 나온 가지 두 개마다 그 아래에 꽃봉오리 하나를 두라. 등잔대에서 나온 여섯 가지, 곧 세 쌍마다 하나씩이다.",
+          "R": "가운데 줄기에서 가지가 두 개씩 나오는 곳마다 그 아래에 꽃봉오리를 하나씩 두어야 한다. 세 쌍 모두 그렇게 해야 한다."
+        },
+        "vi": {
+          "L": "Và một bầu dưới hai nhánh liền với nó, và một bầu dưới hai nhánh liền với nó, và một bầu dưới hai nhánh liền với nó, cho sáu nhánh mọc ra từ chân đèn.",
+          "B": "Phải có một nụ ở dưới mỗi cặp nhánh mọc ra từ chân đèn: mỗi cặp trong ba cặp có một nụ bên dưới, cho cả sáu nhánh mọc ra từ chân đèn.",
+          "R": "Hãy làm một nụ dưới mỗi cặp nhánh, ở chỗ các nhánh mọc ra từ thân giữa. Hãy làm như vậy cho cả ba cặp."
         }
       },
       "decisions": [
@@ -4043,6 +5141,16 @@
           "L": "Vifundo vyake na matawi yake vitakuwa vya kipande kimoja nacho; chote [kitakuwa] kazi moja ya kufua ya dhahabu safi.",
           "B": "Matumba yake na matawi yake yawe sehemu yake, na kinara chote kiwe kipande kimoja cha dhahabu safi iliyofuliwa.",
           "R": "Matumba na matawi lazima yawe sehemu ya kinara. Kinara chote lazima kifuliwe kutoka kipande kimoja cha dhahabu safi."
+        },
+        "ko": {
+          "L": "그것들의 꽃받침들과 그것들의 가지들이 그것에서 나오게 하라. 그 전체가 순금을 두드려 만든 한 덩이다.",
+          "B": "꽃봉오리와 가지는 등잔대와 한 덩이가 되게 하여, 전체를 순금 한 덩이를 두드려서 만들라.",
+          "R": "꽃봉오리와 가지는 모두 등잔대와 하나로 붙어 있어야 한다. 등잔대 전체를 순금 한 덩이로 두드려서 만들어야 한다."
+        },
+        "vi": {
+          "L": "Các bầu và các nhánh của chúng sẽ liền với nó; tất cả nó là một khối gò [bằng] vàng ròng.",
+          "B": "Các nụ và các nhánh phải liền với chân đèn; toàn bộ là một khối vàng ròng gò bằng búa.",
+          "R": "Các nụ và các nhánh đều phải liền với chân đèn. Toàn bộ chân đèn phải được gò từ một khối vàng ròng."
         }
       },
       "decisions": [
@@ -4114,6 +5222,16 @@
           "L": "Nawe utafanya taa zake, saba; na [mtu] atazipandisha taa zake, nacho kitaangaza upande ulio mbele yake.",
           "B": "Ukitengenezee kinara taa saba. Taa hizo ziwekwe hivi kwamba nuru yake iangaze mahali palipo mbele ya kinara.",
           "R": "Tengeneza taa saba kwa ajili ya kinara. Ziweke ili ziangaze mahali palipo mbele yake."
+        },
+        "ko": {
+          "L": "그리고 너는 그 등잔 일곱을 만들라. 그리고 그 등잔들을 올려놓아, 그 앞쪽을 비추게 하라.",
+          "B": "등잔 일곱 개를 만들어 등잔대 위에 얹어, 그 빛이 등잔대 앞을 비추게 하라.",
+          "R": "등잔대에 놓을 등잔 일곱 개를 만들어야 한다. 그 등잔들이 등잔대 앞쪽을 밝게 비추도록 놓아야 한다."
+        },
+        "vi": {
+          "L": "Và ngươi phải làm các đèn của nó, bảy [cái]; và [người ta] sẽ đặt các đèn của nó lên, và nó sẽ chiếu sáng phía trước nó.",
+          "B": "Hãy làm bảy cái đèn cho chân đèn. Các đèn phải được đặt sao cho ánh sáng chiếu ra khoảng trống phía trước chân đèn.",
+          "R": "Hãy làm bảy cái đèn cho chân đèn. Hãy đặt các đèn sao cho chúng soi sáng phía trước chân đèn."
         }
       },
       "decisions": [
@@ -4207,6 +5325,16 @@
           "L": "Na makoleo yake na vyetezo vyake [vitakuwa vya] dhahabu safi.",
           "B": "Makoleo yake na vyetezo vyake viwe vya dhahabu safi.",
           "R": "Makoleo ya kukatia tambi za taa na vyombo vidogo vinavyoenda nayo lazima navyo viwe vya dhahabu safi."
+        },
+        "ko": {
+          "L": "그리고 그 불 집게들과 그 불똥 그릇들은 순금으로 [만들라].",
+          "B": "불 집게와 불똥 그릇도 순금으로 만들라.",
+          "R": "심지를 다듬는 집게와 거기에 딸린 작은 그릇도 순금으로 만들어야 한다."
+        },
+        "vi": {
+          "L": "Và các kẹp và các khay đựng tàn của nó [phải bằng] vàng ròng.",
+          "B": "Các kẹp và khay đựng tàn của chân đèn phải bằng vàng ròng.",
+          "R": "Các kẹp để cắt tim đèn và những khay nhỏ đi kèm cũng phải làm bằng vàng ròng."
         }
       },
       "decisions": [
@@ -4314,6 +5442,16 @@
           "L": "[Kwa] talanta moja ya dhahabu safi kitafanywa, [pamoja na] vyombo hivi vyote.",
           "B": "Kinara na vyombo hivi vyote vifanywe kwa {{units:karibu kilo 34|talanta moja}} ya dhahabu safi.",
           "R": "Tumia {{units:karibu kilo 34|talanta moja}} ya dhahabu safi kutengeneza kinara na vifaa hivi vyote."
+        },
+        "ko": {
+          "L": "순금 한 달란트로 그것을, 이 모든 기구와 함께 만들라.",
+          "B": "등잔대와 이 모든 기구는 {{units:순금 34킬로그램쯤으로|순금 한 달란트로}} 만들라.",
+          "R": "{{units:순금 34킬로그램쯤으로|순금 한 달란트로}} 등잔대와 이 모든 기구를 만들어야 한다."
+        },
+        "vi": {
+          "L": "[Bằng] một ta-lâng vàng ròng [người ta] sẽ làm nó, [cùng] tất cả các vật dụng này.",
+          "B": "Chân đèn và tất cả các dụng cụ này phải được làm từ {{units:khoảng 34 kg|một ta-lâng}} vàng ròng.",
+          "R": "Hãy dùng {{units:khoảng 34 kg|một ta-lâng}} vàng ròng để làm chân đèn và tất cả các dụng cụ ấy."
         }
       },
       "decisions": [
@@ -4413,6 +5551,16 @@
           "L": "Nawe tazama, ukavifanye kwa mfano wake unaoonyeshwa mlimani.",
           "B": "Hakikisha unavifanya kwa kufuata mfano unaoonyeshwa mlimani.",
           "R": "Uwe mwangalifu kufanya kila kitu sawasawa kabisa na ramani ninayokuonyesha mlimani."
+        },
+        "ko": {
+          "L": "그리고 보고 만들라. 산에서 네가 보고 있는 그것들의 본대로 [만들라].",
+          "B": "너는 산에서 너에게 보여 주는 본을 따라 그것들을 만들도록 주의하라.",
+          "R": "내가 산에서 너에게 보여 주는 설계도와 똑같이 모든 것을 만들도록 조심해야 한다."
+        },
+        "vi": {
+          "L": "Và hãy xem, và làm [chúng] theo kiểu mẫu của chúng đã được chỉ cho ngươi trên núi.",
+          "B": "Hãy cẩn thận làm mọi thứ theo đúng kiểu mẫu đã được chỉ cho con trên núi.",
+          "R": "Hãy cẩn thận làm mọi thứ đúng y như kiểu mẫu {{deity_pronoun:ta|Ta}} đang chỉ cho con trên núi."
         }
       },
       "decisions": [

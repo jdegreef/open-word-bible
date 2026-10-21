@@ -40,6 +40,16 @@
           "L": "Naye {{divine_name:BWANA|Yahwe}} akanena na Musa, akisema,",
           "B": "{{divine_name:BWANA|Yahwe}} akamwambia Musa,",
           "R": "{{divine_name:BWANA|Yahwe}} alimwambia Musa,"
+        },
+        "vi": {
+          "L": "{{divine_name:CHÚA|Gia-vê}} phán với Môi-se rằng:",
+          "B": "{{divine_name:CHÚA|Gia-vê}} phán với Môi-se:",
+          "R": "{{divine_name:CHÚA|Gia-vê}} phán với Môi-se:"
+        },
+        "ko": {
+          "L": "그리고 {{divine_name:주|야훼}}께서 모세에게 말씀하여 이르셨다.",
+          "B": "{{divine_name:주|야훼}}께서 모세에게 말씀하셨다.",
+          "R": "{{divine_name:주|야훼}}께서 모세에게 말씀하셨다."
         }
       },
       "decisions": [
@@ -76,6 +86,47 @@
             "passé composé at every level"
           ],
           "reason": "The narrative frame follows the French style guide: passé simple at Literal and Balanced, passé composé at Readable. The instructions use the future of command at Literal and Balanced and the imperative or \"tu dois\", \"il doit\" at Readable.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o020310010012",
+            "o020310010021"
+          ],
+          "choice": "Narrative in the plain written style with the honorific for God: \"{{divine_name:주|야훼}}께서 ... 말씀하셨다\"; God speaks to Moses in 해라체 with 나 and 너",
+          "alternatives": [
+            "해요체 or 합쇼체 for God's speech"
+          ],
+          "reason": "As the Korean style guide (section 7a) and the Genesis and Pentateuch term sheets: the story is told in the plain style, God takes -시- and 께서, and God speaks in the plain style. The divine name is the span {{divine_name:주|야훼}} with the particle outside it; Korean has no deity_pronoun spans, since the honorific carries the respect the capital letter carries in English. Recorded once for Exodus 31-37.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020310010012"
+          ],
+          "choice": "\"phán\" for the LORD speaking",
+          "alternatives": [],
+          "reason": "The Vietnamese style guide keeps \"phán\" for God speaking and \"nói\" for every human speaker; it is used through these chapters.",
           "uncertain": false,
           "footnote": false
         }
@@ -127,6 +178,16 @@
           "L": "\"Tazama, nimemwita kwa jina Bezaleli mwana wa Uri, mwana wa Huri, wa kabila la Yuda,",
           "B": "\"Angalia: nimemchagua Bezaleli kwa jina, mwana wa Uri, mwana wa Huri, wa kabila la Yuda,",
           "R": "\"Sikiliza, nimemchagua Bezaleli kwa kazi hii. Yeye ni mwana wa Uri na mjukuu wa Huri, wa kabila la Yuda."
+        },
+        "vi": {
+          "L": "\"Kìa, {{deity_pronoun:ta|Ta}} đã gọi đích danh Bết-sa-lê-ên con trai U-ri, con trai Hu-rơ, thuộc chi tộc Giu-đa,",
+          "B": "\"Này, {{deity_pronoun:ta|Ta}} đã chọn đích danh Bết-sa-lê-ên, con trai U-ri, cháu Hu-rơ, thuộc chi tộc Giu-đa,",
+          "R": "\"Này con, {{deity_pronoun:ta|Ta}} đã chọn Bết-sa-lê-ên cho công việc này. Người là con trai U-ri và là cháu nội Hu-rơ, thuộc chi tộc Giu-đa."
+        },
+        "ko": {
+          "L": "\"보아라, 내가 유다 지파 훌의 손자요 우리의 아들인 브살렐을 이름으로 불렀다.",
+          "B": "\"잘 들어라. 내가 유다 지파 사람, 훌의 손자이며 우리의 아들인 브살렐을 이름을 불러 뽑았다.",
+          "R": "\"보아라, 내가 이 일을 맡기려고 브살렐을 골라 세웠다. 그는 우리의 아들이고 훌의 손자이며, 유다 지파 사람이다."
         }
       },
       "decisions": [
@@ -219,6 +280,70 @@
           "reason": "French uses the established French forms of the names, with \"ts\" for the Hebrew tsade as elsewhere in this translation; \"Hour\" is the Hur of 17:10 and 24:14. The same forms are used in chapters 35-38.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o020310020061",
+            "o020310020081",
+            "o020310020101"
+          ],
+          "choice": "\"유다 지파 훌의 손자요 우리의 아들인 브살렐\": the line of descent placed before the name",
+          "alternatives": [
+            "\"브살렐, 우리의 아들, 훌의 아들\" in Hebrew order"
+          ],
+          "reason": "Korean puts a describing phrase before the noun, so the Hebrew \"Bezalel son of Uri, son of Hur, of the tribe of Judah\" comes before the name at Literal and Balanced. \"Son of Hur\" here names the grandfather (meaning decision m2), so Korean says \"손자\". Readable gives the family in a sentence of its own, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020310020041",
+            "o020310020061",
+            "o020310020081"
+          ],
+          "choice": "\"Bết-sa-lê-ên\", \"U-ri\", \"Hu-rơ\"",
+          "alternatives": [],
+          "reason": "The Protestant forms, as the Pentateuch terms note and the Vietnamese 2 Chronicles 1:5 have them.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o020310020011",
+            "o020310020021"
+          ],
+          "choice": "God says \"Ta\" and calls Moses \"ngươi\" (Literal) and \"con\" (Balanced, Readable)",
+          "alternatives": [],
+          "reason": "As the Genesis terms note sets for God speaking to a person; \"con\" suits the closeness the book describes between God and Moses (33:11). Kept through chapters 31-37.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -274,6 +399,16 @@
           "L": "{{deity_pronoun:nami|Nami}} nimemjaza Roho wa Mungu, katika hekima na katika ufahamu na katika maarifa na katika kila [aina ya] kazi,",
           "B": "{{deity_pronoun:nami|Nami}} nimemjaza Roho wa Mungu, ili awe na hekima, ufahamu na maarifa katika kila aina ya kazi,",
           "R": "Nimemjaza Roho wa Mungu. Nimempa hekima, ufahamu na maarifa ya kufanya kila aina ya kazi ya ufundi."
+        },
+        "vi": {
+          "L": "và {{deity_pronoun:ta|Ta}} đã làm cho người đầy dẫy Thần Linh của Đức Chúa Trời, [đầy] sự khôn ngoan, sự thông sáng, sự hiểu biết và mọi [tài] khéo,",
+          "B": "và {{deity_pronoun:ta|Ta}} đã làm cho người đầy dẫy Thần Linh của Đức Chúa Trời, để người có sự khôn ngoan, thông sáng và hiểu biết trong mọi loại công việc,",
+          "R": "Ta đã làm cho người đầy dẫy Thần Linh của Đức Chúa Trời. Ta đã ban cho người sự khôn ngoan, sự hiểu biết và tài khéo để làm mọi thứ việc thủ công."
+        },
+        "ko": {
+          "L": "그리고 내가 그를 하나님의 영과 지혜와 총명과 지식과 모든 솜씨로 채웠다.",
+          "B": "그리고 내가 그를 하나님의 영으로 채워서, 그가 온갖 일에 지혜와 총명과 지식을 갖추게 하였다.",
+          "R": "나는 그에게 하나님의 영을 가득 채워 주었다. 그래서 그는 온갖 물건을 만드는 데 필요한 지혜와 이해력과 지식을 갖추었다."
         }
       },
       "decisions": [
@@ -369,6 +504,49 @@
           "reason": "With personal agreement (\"wa\"), \"Roho wa Mungu\" is God's own Spirit, as the English capital S shows (m1); \"roho ya Mungu\" would read as a breath or a spirit belonging to God. The same form is used at Genesis 1:2 and in the New Testament.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020310030052",
+            "o020310030063",
+            "o020310030073"
+          ],
+          "choice": "\"지혜와 총명과 지식\" (L, B); \"지혜와 이해력과 지식\" (R)",
+          "alternatives": [
+            "\"기술\" for wisdom"
+          ],
+          "reason": "The three words name practical skill (meaning decision m2), but they are the words used of wisdom elsewhere; Korean keeps the familiar trio so the link can be seen, and the sentence around them (\"온갖 일에\", \"만드는 데 필요한\") shows that craft is meant. Readable uses the plainer \"이해력\" for understanding.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020310030031",
+            "o020310030041"
+          ],
+          "choice": "\"Thần Linh của Đức Chúa Trời\"",
+          "alternatives": [],
+          "reason": "The form the Genesis terms note sets for \"the Spirit of God\" (Genesis 1:2), with capitals, as the English has a capital S.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -419,6 +597,16 @@
           "L": "ili kubuni michoro ya ustadi, kufanya kazi katika dhahabu na katika fedha na katika shaba,",
           "B": "ili kubuni kazi za usanii na kuzitengeneza kwa dhahabu, fedha na shaba,",
           "R": "Anaweza kubuni michoro mizuri na kuitengeneza kwa dhahabu, fedha na shaba."
+        },
+        "vi": {
+          "L": "để nghĩ ra các mẫu [mỹ thuật], để làm [đồ] bằng vàng, bằng bạc và bằng đồng,",
+          "B": "để nghĩ ra các mẫu mỹ thuật và thực hiện chúng bằng vàng, bạc và đồng,",
+          "R": "Người có thể vẽ ra những mẫu đẹp và làm ra chúng bằng vàng, bạc và đồng."
+        },
+        "ko": {
+          "L": "도안들을 고안하고, 금과 은과 놋으로 일하며,",
+          "B": "예술적인 도안을 생각해 내고 그것을 금과 은과 놋으로 만들어 내며,",
+          "R": "그는 아름다운 무늬를 구상하고, 그것을 금과 은과 놋으로 만들 수 있다."
         }
       },
       "decisions": [
@@ -451,6 +639,27 @@
           "choice": "He can ... beautiful",
           "alternatives": [],
           "reason": "Readable starts a new sentence with Bezalel as its subject, and \"beautiful\" brings out that the designs are artistic.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020310040063"
+          ],
+          "choice": "\"놋\" for bronze",
+          "alternatives": [
+            "\"청동\""
+          ],
+          "reason": "The metal is copper or bronze; \"놋\" is the word used for the bronze altar and basin through Exodus and Kings, so the tabernacle's metals keep one name. Recorded once for these chapters.",
           "uncertain": false,
           "footnote": false
         }
@@ -505,6 +714,16 @@
           "L": "na katika kuchonga vito vya kupachikwa, na katika kuchonga mbao, ili kufanya kila [aina ya] kazi.",
           "B": "kuchonga vito vya kupachikwa, kuchonga mbao, na kufanya kila aina ya kazi ya ustadi.",
           "R": "Anaweza kuchonga vito vya thamani ili vipachikwe, kuchonga mbao, na kufanya kila aina nyingine ya kazi ya ufundi."
+        },
+        "vi": {
+          "L": "và trong việc cắt đá để gắn [vào khung], và trong việc chạm gỗ, để làm mọi [loại] công việc.",
+          "B": "để cắt đá quý để gắn vào khung, để chạm gỗ, và để làm mọi loại công việc khéo léo.",
+          "R": "Người có thể mài giũa đá quý để gắn vào khung, chạm trổ gỗ, và làm mọi thứ việc thủ công khác."
+        },
+        "ko": {
+          "L": "또 박을 돌을 깎고 나무를 새겨서 모든 [종류의] 솜씨를 부리게 하였다.",
+          "B": "보석을 깎아 물리고 나무를 조각하는 일까지, 모든 정교한 일을 할 수 있게 하였다.",
+          "R": "그는 보석을 다듬어 박을 수 있고, 나무를 조각할 수 있으며, 그 밖의 온갖 공예 일을 할 수 있다."
         }
       },
       "decisions": [
@@ -605,6 +824,16 @@
           "L": "Nami, tazama, nimemweka pamoja naye Oholiabu mwana wa Ahisamaki, wa kabila la Dani; na katika moyo wa kila mwenye moyo wa hekima nimetia hekima, nao watafanya yote niliyokuamuru:",
           "B": "Mimi mwenyewe nimemteua pia Oholiabu mwana wa Ahisamaki, wa kabila la Dani, awe msaidizi wake. Mioyoni mwa wote wenye moyo wa hekima nimetia hekima, ili watengeneze yote niliyokuamuru:",
           "R": "Pia nimemchagua Oholiabu mwana wa Ahisamaki, wa kabila la Dani, afanye kazi pamoja naye. Na kila fundi mwenye kipawa cha kazi hii amepokea hekima zaidi kutoka {{deity_pronoun:kwangu|Kwangu}}. Kwa pamoja watatengeneza kila kitu nilichokuamuru."
+        },
+        "vi": {
+          "L": "Còn {{deity_pronoun:ta|Ta}}, kìa, {{deity_pronoun:ta|Ta}} đã chỉ định cùng với người Ô-hô-li-áp con trai A-hi-sa-mạc, thuộc chi tộc Đan; và trong lòng mọi người có lòng khôn ngoan, {{deity_pronoun:ta|Ta}} đã đặt sự khôn ngoan, để họ làm mọi điều {{deity_pronoun:ta|Ta}} đã truyền cho ngươi:",
+          "B": "Chính {{deity_pronoun:ta|Ta}} cũng đã chỉ định Ô-hô-li-áp con trai A-hi-sa-mạc, thuộc chi tộc Đan, làm người cộng tác với người. Ta đã đặt sự khôn ngoan vào lòng mọi người thợ khéo, để họ làm mọi điều {{deity_pronoun:ta|Ta}} đã truyền cho con:",
+          "R": "Ta cũng đã chọn Ô-hô-li-áp con trai A-hi-sa-mạc, thuộc chi tộc Đan, để làm việc cùng với người. Mọi người thợ có tài trong công việc này cũng đã nhận thêm sự khôn ngoan từ {{deity_pronoun:ta|Ta}}. Họ sẽ cùng nhau làm mọi thứ {{deity_pronoun:ta|Ta}} đã truyền cho con."
+        },
+        "ko": {
+          "L": "그리고 나, 보아라, 내가 단 지파 아히사막의 아들 오홀리압을 그와 함께 세웠고, 마음이 지혜로운 모든 [사람의] 마음에 내가 지혜를 넣었으니, 그들이 내가 너에게 명령한 모든 것을 만들 것이다.",
+          "B": "또 내가 친히 단 지파 아히사막의 아들 오홀리압을 그의 동역자로 정해 주었다. 그리고 마음이 지혜로운 모든 사람의 마음에 지혜를 넣어 주었으니, 그들이 내가 너에게 명령한 모든 것을 만들 것이다.",
+          "R": "나는 또 단 지파 사람 아히사막의 아들 오홀리압을 골라서 그와 함께 일하게 하였다. 이 일에 재능이 있는 일꾼들에게도 내가 지혜를 더 주었다. 그들이 함께 내가 너에게 명령한 것을 모두 만들 것이다."
         }
       },
       "decisions": [
@@ -674,6 +903,47 @@
           "reason": "Readable explains \"wise of heart\" as having a gift for the work and makes clear that God adds to the skill they have (m2).",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020310060131",
+            "o020310060141"
+          ],
+          "choice": "\"마음이 지혜로운\" for \"wise of heart\"",
+          "alternatives": [
+            "\"솜씨 좋은\""
+          ],
+          "reason": "Literal and Balanced keep the Hebrew picture of the heart as the seat of skill, which Korean can bear; the meaning decision says it means a skilled person, and Readable says \"재능이 있는 일꾼들\". Used the same way in chapters 35-36.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020310060061",
+            "o020310060081"
+          ],
+          "choice": "\"Ô-hô-li-áp\", \"A-hi-sa-mạc\"",
+          "alternatives": [],
+          "reason": "Ô-hô-li-áp is the form of the Pentateuch terms note; A-hi-sa-mạc follows the usual Protestant form.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -733,6 +1003,16 @@
           "L": "Hema la Kukutania, na sanduku la Ushuhuda, na kiti cha rehema kilicho juu yake, na samani zote za hema,",
           "B": "Hema la Kukutania, sanduku la Ushuhuda pamoja na kiti cha rehema kilicho juu yake, na samani nyingine zote za hema;",
           "R": "Watatengeneza Hema la Kukutania, sanduku lenye vibao vya agano, na kifuniko cha sanduku, mahali dhambi zinapofunikwa. Watatengeneza pia vitu vingine vyote vya hema,"
+        },
+        "vi": {
+          "L": "Lều Hội Kiến, hòm chứng ước, nắp thi ân ở trên hòm, và mọi đồ dùng của lều,",
+          "B": "Lều Hội Kiến, hòm chứng ước cùng với nắp thi ân ở trên hòm, và mọi vật dụng khác của lều;",
+          "R": "Họ sẽ làm Lều Hội Kiến, cái hòm đựng hai bảng đá giao ước, và nắp thi ân, tức là nắp hòm, nơi tội lỗi được che đậy. Họ sẽ làm mọi vật dụng khác cho lều,"
+        },
+        "ko": {
+          "L": "곧 회막과 증거궤와 그 위에 있는 속죄소와 장막의 모든 기구와,",
+          "B": "곧 회막과 증거궤와 그 위에 덮는 속죄소와 회막의 다른 모든 기구,",
+          "R": "그들은 회막을 만들고, 언약을 새긴 돌판을 넣어 두는 궤를 만들고, 궤의 뚜껑을 만들 것이다. 이 뚜껑은 죄를 덮어 주는 자리이다. 회막에 쓸 다른 모든 물건도 만들 것이다."
         }
       },
       "decisions": [
@@ -782,6 +1062,51 @@
           "choice": "the ark that holds the covenant tablets ... the lid of the ark, the place where sins are covered",
           "alternatives": [],
           "reason": "Readable says what the ark and its lid are (m1, m2). Literal and Balanced keep \"ark of the testimony\" and \"mercy seat\". Readable also repeats \"They will make\" to start the list as new sentences.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020310070021",
+            "o020310070052",
+            "o020310070082"
+          ],
+          "choice": "\"회막\", \"증거궤\", \"속죄소\" (L, B); explained at R",
+          "alternatives": [
+            "\"만남의 장막\"",
+            "\"시은좌\""
+          ],
+          "reason": "As the Pentateuch term sheet: the tent of meeting is \"회막\", the ark of the testimony \"증거궤\", the atonement cover \"속죄소\". Readable explains the ark and the cover as the English Readable does (\"the place where sins are covered\"). Recorded once for these chapters.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020310070021",
+            "o020310070062",
+            "o020310070082"
+          ],
+          "choice": "\"Lều Hội Kiến\", \"hòm chứng ước\", \"nắp thi ân\"",
+          "alternatives": [],
+          "reason": "The words the Pentateuch terms note sets for the tent of meeting, the ark of the testimony and the atonement cover. Readable explains the ark and the cover, as the English does.",
           "uncertain": false,
           "footnote": false
         }
@@ -845,6 +1170,16 @@
           "L": "na meza na vyombo vyake, na kinara cha taa kilicho safi na vyombo vyake vyote, na madhabahu ya uvumba,",
           "B": "meza na vyombo vyake, kinara cha taa cha dhahabu safi pamoja na vyombo vyake vyote, madhabahu ya uvumba,",
           "R": "meza na vitu vinavyotumika nayo, kinara cha taa cha dhahabu safi na vifaa vyake vyote, madhabahu ya kufukizia uvumba,"
+        },
+        "vi": {
+          "L": "cái bàn và các đồ dùng của nó, chân đèn tinh khiết và mọi đồ dùng của nó, và bàn thờ dâng hương,",
+          "B": "cái bàn và các đồ dùng của bàn, chân đèn bằng vàng ròng với mọi đồ dùng của nó, bàn thờ dâng hương,",
+          "R": "cái bàn và các đồ dùng trên bàn, chân đèn bằng vàng ròng và mọi đồ phụ tùng của nó, bàn thờ để đốt hương,"
+        },
+        "ko": {
+          "L": "상과 그 기구들과 순결한 등잔대와 그 모든 기구와 분향 제단과,",
+          "B": "상과 그 기구들, 순금 등잔대와 그 모든 기구, 분향 제단,",
+          "R": "상과 거기에 쓰는 물건들, 순금으로 만든 등잔대와 그 모든 기구, 향을 피우는 제단,"
         }
       },
       "decisions": [
@@ -878,6 +1213,25 @@
           "choice": "of pure gold",
           "alternatives": [],
           "reason": "Balanced and Readable say what \"pure\" refers to (m1). Literal keeps \"the pure lampstand\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020310080072"
+          ],
+          "choice": "\"순결한 등잔대\" (L); \"순금 등잔대\" (B, R)",
+          "alternatives": [
+            "\"깨끗한 등잔대\""
+          ],
+          "reason": "The Hebrew calls the lampstand \"pure\", meaning pure gold (meaning decision m1). Literal keeps the bare adjective, as the English Literal keeps \"pure\"; Balanced and Readable say the gold.",
           "uncertain": false,
           "footnote": false
         }
@@ -935,6 +1289,16 @@
           "L": "na madhabahu ya sadaka ya kuteketezwa na vyombo vyake vyote, na birika na kiweko chake,",
           "B": "madhabahu ya sadaka ya kuteketezwa pamoja na vyombo vyake vyote, birika pamoja na kiweko chake,",
           "R": "madhabahu ya sadaka za kuteketezwa na vifaa vyake vyote, na birika kubwa la kunawia pamoja na kiweko chake."
+        },
+        "vi": {
+          "L": "và bàn thờ của lễ thiêu và mọi đồ dùng của nó, cái bồn và chân của nó,",
+          "B": "bàn thờ dâng của lễ thiêu với mọi đồ dùng của nó, cái bồn với chân bồn,",
+          "R": "bàn thờ dâng của lễ thiêu và mọi dụng cụ của nó, cái bồn lớn đựng nước để rửa cùng với chân bồn."
+        },
+        "ko": {
+          "L": "번제 제단과 그 모든 기구와 물두멍과 그 받침과,",
+          "B": "번제 제단과 그 모든 기구, 물두멍과 그 받침,",
+          "R": "번제를 드리는 제단과 거기에 쓰는 모든 도구, 그리고 씻을 물을 담는 놋 물두멍과 그 받침을 만들 것이다."
         }
       },
       "decisions": [
@@ -968,6 +1332,27 @@
           "alternatives": [],
           "reason": "Readable says what the basin is for (m1).",
           "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020310090082"
+          ],
+          "choice": "\"물두멍\" for the basin",
+          "alternatives": [
+            "\"대야\""
+          ],
+          "reason": "\"물두멍\" is the established name of the priests' washbasin and is used through Exodus 25-40 in Korean; Readable adds what it was for, as the English Readable does. A reviewer may prefer the everyday \"대야\".",
+          "uncertain": true,
           "footnote": false
         }
       ],
@@ -1027,6 +1412,16 @@
           "L": "na mavazi yaliyofumwa, na mavazi matakatifu kwa ajili ya Haruni kuhani, na mavazi ya wanawe kwa ajili ya kuhudumu kama makuhani,",
           "B": "mavazi yaliyofumwa kwa ustadi, yaani mavazi matakatifu ya Haruni kuhani na mavazi ya wanawe wanapohudumu kama makuhani,",
           "R": "Watashona mavazi yaliyofumwa kwa ustadi: mavazi matakatifu ya kuhani Haruni na mavazi ya wanawe wanapohudumu kama makuhani."
+        },
+        "vi": {
+          "L": "và các bộ áo dệt, tức các bộ áo thánh cho thầy tế lễ A-rôn và các bộ áo của các con trai người để làm thầy tế lễ,",
+          "B": "các bộ áo dệt khéo, tức là các bộ áo thánh cho thầy tế lễ A-rôn và các bộ áo cho các con trai người khi họ phục vụ làm thầy tế lễ,",
+          "R": "Họ sẽ may những bộ áo dệt khéo: các bộ áo thánh cho thầy tế lễ A-rôn và các bộ áo cho các con trai người khi họ phục vụ làm thầy tế lễ."
+        },
+        "ko": {
+          "L": "짜서 만든 옷들, 곧 제사장 아론의 거룩한 옷들과 제사장으로 섬길 그의 아들들의 옷들과,",
+          "B": "정교하게 짠 옷들, 곧 제사장 아론이 입을 거룩한 옷과 그의 아들들이 제사장으로 섬길 때 입을 옷,",
+          "R": "그들은 정교하게 짠 옷들도 만들 것이다. 곧 제사장 아론이 입을 거룩한 옷과, 그의 아들들이 제사장으로 일할 때 입을 옷이다."
         }
       },
       "decisions": [
@@ -1120,6 +1515,16 @@
           "L": "na mafuta ya kupaka, na uvumba wa manukato kwa ajili ya [mahali] patakatifu. Kulingana na yote niliyokuamuru watafanya.\"",
           "B": "mafuta ya kupaka na uvumba wenye harufu nzuri kwa ajili ya mahali patakatifu. Wafuate kwa kila jambo yale niliyokuamuru.\"",
           "R": "Pia watatengeneza mafuta maalum ya kupaka na uvumba wenye harufu nzuri kwa ajili ya mahali patakatifu. Lazima watengeneze kila kitu sawasawa na nilivyokuamuru.\""
+        },
+        "vi": {
+          "L": "và dầu xức, và hương [bằng] các hương liệu cho nơi thánh. Họ sẽ làm theo mọi điều {{deity_pronoun:ta|Ta}} đã truyền cho ngươi.\"",
+          "B": "dầu dùng để xức và hương pha hương liệu cho nơi thánh. Họ phải làm đúng theo từng điều {{deity_pronoun:ta|Ta}} đã truyền cho con.\"",
+          "R": "Họ cũng sẽ làm dầu đặc biệt để xức và hương thơm cho nơi thánh. Họ phải làm mọi thứ đúng như {{deity_pronoun:ta|Ta}} đã truyền cho con.\""
+        },
+        "ko": {
+          "L": "기름 부음에 쓰는 기름과 성소를 위한 향품의 향이다. 내가 너에게 명령한 모든 것대로 그들이 만들 것이다.\"",
+          "B": "기름 부을 때 쓰는 기름과 성소에서 피울 향기로운 향이다. 그들은 모든 것을 내가 너에게 명령한 그대로 만들어야 한다.\"",
+          "R": "또 기름 부을 때 쓰는 특별한 기름과 성소에서 피울 향기로운 향도 만들 것이다. 그들은 모든 것을 내가 너에게 명령한 그대로 만들어야 한다.\""
         }
       },
       "decisions": [
@@ -1186,6 +1591,28 @@
           "reason": "The anointing oil was set apart for holy use (30:32); Readable says \"special\" to show it is not ordinary oil.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020310110021",
+            "o020310110032"
+          ],
+          "choice": "\"기름 부음에 쓰는 기름\" (L); \"기름 부을 때 쓰는 기름\" (B, R)",
+          "alternatives": [
+            "\"관유\""
+          ],
+          "reason": "The Sino-Korean \"관유\" is a church term few readers know; Korean describes the oil by its use.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1230,6 +1657,16 @@
           "L": "Naye {{divine_name:BWANA|Yahwe}} akamwambia Musa, akisema,",
           "B": "{{divine_name:BWANA|Yahwe}} akamwambia Musa pia,",
           "R": "{{divine_name:BWANA|Yahwe}} alimwambia Musa pia,"
+        },
+        "vi": {
+          "L": "{{divine_name:CHÚA|Gia-vê}} phán với Môi-se rằng:",
+          "B": "{{divine_name:CHÚA|Gia-vê}} cũng phán với Môi-se:",
+          "R": "{{divine_name:CHÚA|Gia-vê}} cũng phán với Môi-se:"
+        },
+        "ko": {
+          "L": "그리고 {{divine_name:주|야훼}}께서 모세에게 말씀하여 이르셨다.",
+          "B": "{{divine_name:주|야훼}}께서 모세에게 또 말씀하셨다.",
+          "R": "{{divine_name:주|야훼}}께서 모세에게 또 말씀하셨다."
         }
       },
       "decisions": [
@@ -1315,6 +1752,16 @@
           "L": "\"Nawe, sema na wana wa Israeli, ukisema, 'Hakika Sabato {{deity_pronoun:zangu|Zangu}} mtazishika, kwa maana ni ishara kati {{deity_pronoun:yangu|Yangu}} na ninyi katika vizazi vyenu vyote, ili [mpate] kujua ya kuwa {{deity_pronoun:mimi|Mimi}} [ni] {{divine_name:BWANA|Yahwe}} niwatakasaye.",
           "B": "\"Waambie Waisraeli, 'Zaidi ya yote, mzishike Sabato {{deity_pronoun:zangu|Zangu}}. Sabato ni ishara kati {{deity_pronoun:yangu|Yangu}} na ninyi katika vizazi vyenu vyote, ili mjue kwamba {{deity_pronoun:mimi|Mimi}} ndimi {{divine_name:BWANA|Yahwe}}, ninayewatenga kuwa watakatifu.",
           "R": "\"Waambie Waisraeli: 'Kwa vyovyote vile, shikeni siku {{deity_pronoun:zangu|Zangu}} za Sabato. Ni ishara kati {{deity_pronoun:yangu|Yangu}} na ninyi milele. Zinaonyesha kwamba {{deity_pronoun:mimi|Mimi}} ni {{divine_name:BWANA|Yahwe}}, niliyewafanya kuwa watu {{deity_pronoun:wangu|Wangu}} watakatifu."
+        },
+        "vi": {
+          "L": "\"Còn ngươi, hãy nói với con cháu Y-sơ-ra-ên rằng: 'Chắc chắn các ngươi phải giữ các ngày Sa-bát của {{deity_pronoun:ta|Ta}}, vì đó [là] dấu hiệu giữa {{deity_pronoun:ta|Ta}} và các ngươi qua các thế hệ của các ngươi, để [các ngươi] biết rằng {{deity_pronoun:ta|Ta}} [là] {{divine_name:CHÚA|Gia-vê}}, Đấng thánh hóa các ngươi.",
+          "B": "\"Hãy bảo dân Y-sơ-ra-ên: 'Trên hết mọi điều, các ngươi phải giữ các ngày Sa-bát của {{deity_pronoun:ta|Ta}}. Ngày Sa-bát là dấu hiệu giữa {{deity_pronoun:ta|Ta}} và các ngươi qua mọi thế hệ, để các ngươi biết rằng {{deity_pronoun:ta|Ta}} là {{divine_name:CHÚA|Gia-vê}}, Đấng biệt các ngươi ra thánh.",
+          "R": "\"Hãy nói với dân Y-sơ-ra-ên: 'Dù thế nào đi nữa, các ngươi phải giữ các ngày Sa-bát của {{deity_pronoun:ta|Ta}}. Các ngày ấy là dấu hiệu giữa {{deity_pronoun:ta|Ta}} và các ngươi đời đời. Các ngày ấy cho thấy {{deity_pronoun:ta|Ta}} là {{divine_name:CHÚA|Gia-vê}}, Đấng đã làm cho các ngươi thành dân thánh của riêng {{deity_pronoun:ta|Ta}}."
+        },
+        "ko": {
+          "L": "\"그리고 너는 이스라엘 자손에게 말하여 일러라. '반드시 너희는 내 안식일들을 지켜라. 그것은 너희 대대로 나와 너희 사이의 표징이니, 나 {{divine_name:주|야훼}}가 너희를 거룩하게 하는 이임을 [너희가] 알게 하려는 것이다.",
+          "B": "\"너는 이스라엘 백성에게 이렇게 말하여라. '무엇보다도 너희는 내 안식일을 지켜라. 안식일은 너희 대대로 나와 너희 사이의 표징이다. 그것으로 너희는 나 {{divine_name:주|야훼}}가 너희를 거룩하게 구별하는 하나님임을 알게 될 것이다.",
+          "R": "\"너는 이스라엘 사람들에게 이렇게 말하여라. '무슨 일이 있어도 너희는 내 안식일을 지켜야 한다. 안식일은 너희가 대대로 나와 맺은 관계를 보여 주는 표징이다. 그것은 나 {{divine_name:주|야훼}}가 너희를 거룩한 내 백성으로 삼았다는 것을 보여 준다."
         }
       },
       "decisions": [
@@ -1422,6 +1869,88 @@
           "reason": "The Sabbath as \"un signe\" between God and Israel, the same word as for the signs in Egypt and the sign of circumcision (Genesis 17:11), so that the link between them (m2) stays visible. Spanish \"una señal\" and Swahili \"ishara\" do the same. Used again in verse 17.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020310130041",
+            "o020310130051"
+          ],
+          "choice": "\"이스라엘 자손\" (L); \"이스라엘 백성\" (B); \"이스라엘 사람들\" (R), with no gender span",
+          "alternatives": [
+            "a gender setting span, as in the English"
+          ],
+          "reason": "As the Pentateuch term sheet. The Korean words already include women and men, so the Korean has nothing for the gender setting to switch. Recorded once for these chapters.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o020310130101"
+          ],
+          "choice": "God's commands in 해라체: \"지켜라\" (L, B); \"지켜야 한다\" (R)",
+          "alternatives": [
+            "\"지킬지니라\", the older ending"
+          ],
+          "reason": "As the Pentateuch term sheet: God's commands use -하라 / -하지 말라 at Literal and Balanced, and -해야 한다 / -하면 안 된다 at Readable. Recorded once for these chapters.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020310130041",
+            "o020310130051"
+          ],
+          "choice": "\"con cháu Y-sơ-ra-ên\" (Literal); \"dân Y-sơ-ra-ên\" (Balanced, Readable), with no gender span",
+          "alternatives": [],
+          "reason": "As the Pentateuch terms note sets. Both Vietnamese phrases already take in men and women, so the English gender setting has no counterpart.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o020310130101"
+          ],
+          "choice": "God speaks to Israel as \"các ngươi\", with \"phải\" for the command",
+          "alternatives": [],
+          "reason": "The Pentateuch terms note sets \"ngươi\" / \"các ngươi\" with \"phải\" and \"không được\" for God's commands; used through these chapters.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1490,6 +2019,16 @@
           "L": "Nanyi mtaishika Sabato, kwa maana [ni] takatifu kwenu. Kila anayeitia unajisi kwa hakika atauawa; kwa maana kila aifanyaye kazi siku hiyo, mtu huyo atakatiliwa mbali kutoka katikati ya watu wake.",
           "B": "Basi mtaishika Sabato, kwa sababu ni siku takatifu kwenu. Mtu yeyote akiitia unajisi, atauawa. Mtu yeyote akifanya kazi siku hiyo, atakatiliwa mbali kutoka kati ya watu wake.",
           "R": "Shikeni Sabato, kwa sababu ni siku takatifu kwenu. Mtu yeyote anayeichukulia kama siku ya kawaida lazima auawe. Mtu yeyote anayefanya kazi siku hiyo lazima aondolewe kati ya watu."
+        },
+        "vi": {
+          "L": "Vậy các ngươi phải giữ ngày Sa-bát, vì đó [là ngày] thánh cho các ngươi. Kẻ nào làm ô uế ngày ấy chắc chắn phải bị xử tử; vì ai làm việc trong ngày ấy, người đó sẽ bị khai trừ khỏi giữa dân mình.",
+          "B": "Vậy các ngươi phải giữ ngày Sa-bát, vì đó là ngày thánh cho các ngươi. Ai xúc phạm ngày ấy phải bị xử tử. Ai làm việc trong ngày ấy, người đó sẽ bị khai trừ khỏi dân mình.",
+          "R": "Hãy giữ ngày Sa-bát, vì đó là ngày thánh cho các ngươi. Ai coi ngày ấy như một ngày thường thì phải bị xử tử. Ai làm việc trong ngày ấy thì phải bị loại ra khỏi dân chúng."
+        },
+        "ko": {
+          "L": "그러므로 너희는 안식일을 지켜라. 그것은 너희에게 거룩하기 때문이다. 그것을 더럽히는 자는 반드시 죽임을 당할 것이다. 누구든지 그날에 일을 하면, 그 사람은 자기 백성 가운데서 끊어질 것이다.",
+          "B": "그러므로 너희는 안식일을 지켜라. 안식일은 너희에게 거룩한 날이다. 누구든지 그날을 더럽히면 그 사람은 반드시 죽여야 한다. 누구든지 그날에 일을 하면 그 사람은 자기 백성 가운데서 끊어질 것이다.",
+          "R": "안식일을 지켜야 한다. 그날은 너희에게 거룩한 날이다. 그날을 다른 날처럼 함부로 대하는 사람은 죽여야 한다. 그날에 일하는 사람은 백성 가운데서 끊어져야 한다."
         }
       },
       "decisions": [
@@ -1619,6 +2158,46 @@
           "reason": "\"Kuitia unajisi\" is to treat a holy thing as common, the sense of the verb (m1); Readable says what that means, \"kuichukulia kama siku ya kawaida\", as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020310140162"
+          ],
+          "choice": "\"자기 백성 가운데서 끊어지다\" (L, B); \"백성 가운데서 끊어져야 한다\" (R)",
+          "alternatives": [
+            "\"쫓겨나다\""
+          ],
+          "reason": "The Hebrew \"cut off\" is kept as \"끊어지다\" at every level, since the meaning decision leaves open how the person was removed (death or exclusion); \"쫓겨나다\" would settle it as exile. The Korean has no pronoun to put under the gender setting.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020310140162"
+          ],
+          "choice": "\"bị khai trừ khỏi dân mình\" (Literal, Balanced); \"bị loại ra khỏi dân chúng\" (Readable)",
+          "alternatives": [],
+          "reason": "Keeps the picture of being cut off from the people (meaning decision) without saying how; \"khai trừ\" is the formal word, and Readable uses a plainer one.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1680,6 +2259,16 @@
           "L": "Siku sita kazi itafanywa, lakini siku ya saba [ni] Sabato ya pumziko kamili, takatifu kwa {{divine_name:BWANA|Yahwe}}. Kila afanyaye kazi siku ya Sabato kwa hakika atauawa.",
           "B": "Kuna siku sita za kufanya kazi. Lakini siku ya saba ni Sabato ya pumziko kamili, iliyotengwa kuwa takatifu kwa {{divine_name:BWANA|Yahwe}}. Mtu yeyote atakayefanya kazi siku ya Sabato atauawa.",
           "R": "Mnaweza kufanya kazi kwa siku sita. Lakini siku ya saba ni siku ya kupumzika kabisa. Ni ya {{divine_name:BWANA|Yahwe}}. Mtu yeyote anayefanya kazi siku hiyo lazima auawe."
+        },
+        "vi": {
+          "L": "Sáu ngày [thì] làm công việc, nhưng ngày thứ bảy [là] ngày Sa-bát nghỉ ngơi hoàn toàn, thánh cho {{divine_name:CHÚA|Gia-vê}}. Ai làm việc trong ngày Sa-bát chắc chắn phải bị xử tử.",
+          "B": "Có sáu ngày để làm việc, còn ngày thứ bảy là ngày Sa-bát, ngày nghỉ ngơi trọn vẹn, được biệt riêng làm ngày thánh cho {{divine_name:CHÚA|Gia-vê}}. Ai làm việc trong ngày Sa-bát phải bị xử tử.",
+          "R": "Các ngươi được làm việc trong sáu ngày. Nhưng ngày thứ bảy là ngày nghỉ ngơi hoàn toàn. Ngày ấy thuộc về {{divine_name:CHÚA|Gia-vê}}. Ai làm việc trong ngày ấy phải bị xử tử."
+        },
+        "ko": {
+          "L": "엿새 동안은 일을 할 것이나, 일곱째 날은 완전한 쉼의 안식일이요, {{divine_name:주|야훼}}께 거룩하다. 안식일에 일을 하는 자는 누구든지 반드시 죽임을 당할 것이다.",
+          "B": "엿새 동안은 일을 할 수 있다. 그러나 일곱째 날은 완전히 쉬는 안식일이며, {{divine_name:주|야훼}}께 바친 거룩한 날이다. 누구든지 안식일에 일을 하면 반드시 죽여야 한다.",
+          "R": "엿새 동안은 일을 해도 된다. 그러나 일곱째 날은 완전히 쉬는 날이다. 그날은 {{divine_name:주|야훼}}께 속한 날이다. 그날에 일하는 사람은 죽여야 한다."
         }
       },
       "decisions": [
@@ -1783,6 +2372,16 @@
           "L": "Nao wana wa Israeli wataishika Sabato, wakiiadhimisha Sabato katika vizazi vyao vyote [kuwa] agano la milele.",
           "B": "Waisraeli waishike Sabato, wakiiadhimisha kizazi hadi kizazi kama agano la kudumu milele.",
           "R": "Waisraeli lazima waishike siku ya Sabato katika kila kizazi. Ni agano litakalodumu milele."
+        },
+        "vi": {
+          "L": "Con cháu Y-sơ-ra-ên phải giữ ngày Sa-bát, giữ ngày Sa-bát qua các thế hệ của họ [như] một giao ước đời đời.",
+          "B": "Dân Y-sơ-ra-ên phải giữ ngày Sa-bát, gìn giữ ngày ấy từ thế hệ này sang thế hệ khác như một giao ước đời đời.",
+          "R": "Dân Y-sơ-ra-ên phải giữ ngày Sa-bát trong mọi thế hệ. Đó là một giao ước sẽ còn mãi mãi."
+        },
+        "ko": {
+          "L": "그리고 이스라엘 자손은 안식일을 지켜, 대대로 안식일을 영원한 언약으로 지킬 것이다.",
+          "B": "이스라엘 백성은 안식일을 지켜야 한다. 대대로 안식일을 영원한 언약으로 지켜야 한다.",
+          "R": "이스라엘 사람들은 대대로 안식일을 지켜야 한다. 이것은 영원히 이어질 언약이다."
         }
       },
       "decisions": [
@@ -1899,6 +2498,16 @@
           "L": "Kati {{deity_pronoun:yangu|Yangu}} na wana wa Israeli ni ishara milele; kwa maana [kwa] siku sita {{divine_name:BWANA|Yahwe}} alifanya mbingu na nchi, na siku ya saba alipumzika na kuvuta pumzi.'\"",
           "B": "Ni ishara kati {{deity_pronoun:yangu|Yangu}} na Waisraeli milele, kwa sababu kwa siku sita {{divine_name:BWANA|Yahwe}} alifanya mbingu na nchi, na siku ya saba akaacha kufanya kazi, akaburudika.'\"",
           "R": "Sabato ni ishara kati {{deity_pronoun:yangu|Yangu}} na Waisraeli milele. Kwa siku sita {{divine_name:BWANA|Yahwe}} alifanya anga na dunia. Kisha siku ya saba alipumzika kutoka kazi {{deity_pronoun:yake|Yake}} na akaburudika.'\""
+        },
+        "vi": {
+          "L": "Giữa {{deity_pronoun:ta|Ta}} và con cháu Y-sơ-ra-ên, đó [là] một dấu hiệu đời đời; vì [trong] sáu ngày {{divine_name:CHÚA|Gia-vê}} đã dựng nên trời và đất, và vào ngày thứ bảy {{deity_pronoun:ngài|Ngài}} đã nghỉ và lấy hơi lại.'\"",
+          "B": "Đó là dấu hiệu đời đời giữa {{deity_pronoun:ta|Ta}} và dân Y-sơ-ra-ên, vì trong sáu ngày {{divine_name:CHÚA|Gia-vê}} đã dựng nên trời và đất, và vào ngày thứ bảy {{deity_pronoun:ngài|Ngài}} ngừng làm việc và được tươi tỉnh lại.'\"",
+          "R": "Ngày Sa-bát là dấu hiệu đời đời giữa {{deity_pronoun:ta|Ta}} và dân Y-sơ-ra-ên. Trong sáu ngày, {{divine_name:CHÚA|Gia-vê}} đã dựng nên bầu trời và mặt đất. Rồi vào ngày thứ bảy, {{deity_pronoun:ngài|Ngài}} nghỉ mọi công việc của {{deity_pronoun:ngài|Ngài}} và được tươi tỉnh lại.'\""
+        },
+        "ko": {
+          "L": "그것은 나와 이스라엘 자손 사이에 영원한 표징이다. 엿새 동안 {{divine_name:주|야훼}}께서 하늘과 땅을 만드셨고, 일곱째 날에는 쉬시며 숨을 돌리셨기 때문이다.'\"",
+          "B": "안식일은 나와 이스라엘 백성 사이에 영원한 표징이다. 엿새 동안 {{divine_name:주|야훼}}께서 하늘과 땅을 만드시고, 일곱째 날에는 일을 멈추고 새 힘을 얻으셨기 때문이다.'\"",
+          "R": "안식일은 나와 이스라엘 사람들 사이에 영원한 표징이다. {{divine_name:주|야훼}}께서 엿새 동안 하늘과 땅을 만드셨다. 그리고 일곱째 날에는 하시던 일을 멈추고 쉬면서 새 힘을 얻으셨다.'\""
         }
       },
       "decisions": [
@@ -2039,6 +2648,46 @@
           "reason": "\"Kuburudika\" is to be refreshed and at ease, without suggesting that God had grown weak (m2). Literal keeps the picture of drawing breath.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020310170202"
+          ],
+          "choice": "\"숨을 돌리셨다\" (L); \"새 힘을 얻으셨다\" (B, R)",
+          "alternatives": [
+            "\"쉬셨다\" alone"
+          ],
+          "reason": "The Hebrew \"took breath\" is a bold human picture (meaning decision m2). Literal keeps the picture with the idiom \"숨을 돌리다\", Balanced and Readable say what it means, as the English \"was refreshed\" does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020310170202"
+          ],
+          "choice": "\"lấy hơi lại\" (Literal); \"được tươi tỉnh lại\" (Balanced, Readable)",
+          "alternatives": [],
+          "reason": "Literal keeps the picture of drawing breath; the other levels say what it means, as the English does (meaning decision).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2100,6 +2749,16 @@
           "L": "Naye akampa Musa, alipomaliza kusema naye juu ya mlima Sinai, vibao viwili vya Ushuhuda, vibao vya mawe, vilivyoandikwa kwa kidole cha Mungu.",
           "B": "Alipomaliza kusema na Musa juu ya mlima Sinai, akampa vibao viwili vya Ushuhuda, vibao vya mawe vilivyoandikwa kwa kidole cha Mungu.",
           "R": "Mungu alipomaliza kuzungumza na Musa juu ya mlima Sinai, alimpa Musa vibao viwili vya mawe vya agano. Mungu alikuwa ameandika juu yake kwa kidole {{deity_pronoun:chake|Chake}} mwenyewe."
+        },
+        "vi": {
+          "L": "Ngài ban cho Môi-se, khi {{deity_pronoun:ngài|Ngài}} đã phán xong với người trên núi Si-na-i, hai bảng chứng ước, [là] các bảng bằng đá, được viết bởi ngón tay của Đức Chúa Trời.",
+          "B": "Khi đã phán xong với Môi-se trên núi Si-na-i, {{deity_pronoun:ngài|Ngài}} ban cho người hai bảng chứng ước, là các bảng bằng đá do chính ngón tay Đức Chúa Trời viết.",
+          "R": "Khi Đức Chúa Trời phán xong với Môi-se trên núi Si-na-i, {{deity_pronoun:ngài|Ngài}} trao cho Môi-se hai bảng đá giao ước. Chính Đức Chúa Trời đã dùng ngón tay của {{deity_pronoun:ngài|Ngài}} viết trên đó."
+        },
+        "ko": {
+          "L": "그리고 그분께서 시내 산에서 모세와 말씀하시기를 마치셨을 때, 증거판 둘, 곧 하나님의 손가락으로 쓰신 돌판들을 모세에게 주셨다.",
+          "B": "하나님께서는 시내 산에서 모세에게 하실 말씀을 다 마치신 뒤, 증거판 두 개를 그에게 주셨다. 그것은 하나님께서 손가락으로 친히 쓰신 돌판이었다.",
+          "R": "하나님께서는 시내 산에서 모세와 이야기를 다 마치시고, 언약을 새긴 돌판 두 개를 모세에게 주셨다. 그 돌판에는 하나님께서 손가락으로 직접 글을 쓰셨다."
         }
       },
       "decisions": [
@@ -2169,6 +2828,48 @@
             "\"Él dio\""
           ],
           "reason": "The English has {{deity_pronoun:he|He}} for God. Spanish leaves the subject in the verb (\"dio\", \"acabó\"), so there is no word for the span to sit on.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020310180101",
+            "o020310180112"
+          ],
+          "choice": "\"증거판\" (L, B); \"언약을 새긴 돌판\" (R)",
+          "alternatives": [
+            "\"증거의 두 판\""
+          ],
+          "reason": "As the Pentateuch term sheet: the tablets of the testimony are \"증거판\"; Readable says what they were, as the English Readable says \"the stone tablets of the covenant\". Korean names God (\"하나님께서\") in Balanced where English uses a pronoun, since Korean avoids a bare pronoun for God.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020310180101",
+            "o020310180112"
+          ],
+          "choice": "\"hai bảng chứng ước\" (Literal, Balanced); \"hai bảng đá giao ước\" (Readable)",
+          "alternatives": [],
+          "reason": "The term sheet's word for the tablets of the testimony; Readable says what they hold, as the English Readable does.",
           "uncertain": false,
           "footnote": false
         }

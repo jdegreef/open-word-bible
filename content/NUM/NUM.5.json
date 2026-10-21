@@ -40,6 +40,16 @@
           "L": "Naye {{divine_name:BWANA|Yahwe}} akanena na Musa, akisema,",
           "B": "{{divine_name:BWANA|Yahwe}} alisema na Musa. Akasema,",
           "R": "{{divine_name:BWANA|Yahwe}} alimwambia Musa,"
+        },
+        "vi": {
+          "L": "Và {{divine_name:CHÚA|Gia-vê}} phán với Môi-se rằng:",
+          "B": "{{divine_name:CHÚA|Gia-vê}} phán với Môi-se. Ngài phán:",
+          "R": "{{divine_name:CHÚA|Gia-vê}} phán với Môi-se:"
+        },
+        "ko": {
+          "L": "그리고 {{divine_name:주|야훼}}께서 모세에게 말씀하여 이르셨다.",
+          "B": "{{divine_name:주|야훼}}께서 모세에게 이렇게 말씀하셨다.",
+          "R": "{{divine_name:주|야훼}}께서 모세에게 말씀하셨다."
         }
       },
       "decisions": [
@@ -138,6 +148,16 @@
           "L": "\"Waamuru wana wa Israeli kwamba wamtoe nje ya kambi kila mwenye ugonjwa wa ngozi, na kila anayetokwa na majimaji, na kila aliye najisi kwa sababu ya maiti.",
           "B": "\"Waamuru Waisraeli wamtoe nje ya kambi yeyote aliye na ugonjwa mbaya wa ngozi au anayetokwa na majimaji, na yeyote aliyetiwa unajisi na maiti.",
           "R": "\"Waamuru Waisraeli wawatoe watu fulani nje ya kambi. Hao ni mtu yeyote mwenye ugonjwa mbaya wa ngozi, yeyote anayetokwa na majimaji mwilini, na yeyote aliye najisi kwa sababu ya maiti."
+        },
+        "vi": {
+          "L": "\"Hãy truyền cho con cháu Y-sơ-ra-ên đuổi ra khỏi trại quân mọi người mắc bệnh ngoài da nghiêm trọng, mọi người bị chảy dịch, và mọi người bị ô uế vì một người chết.",
+          "B": "\"Hãy truyền cho dân Y-sơ-ra-ên phải đưa ra khỏi trại quân bất cứ ai mắc bệnh ngoài da nghiêm trọng hoặc bị chảy dịch, và bất cứ ai bị ô uế vì đụng đến xác chết.",
+          "R": "\"Hãy truyền cho dân Y-sơ-ra-ên đưa một số người ra khỏi khu trại. Đó là những người mắc bệnh ngoài da nghiêm trọng, những người bị chảy dịch từ thân thể, và những người bị ô uế vì đụng đến xác chết."
+        },
+        "ko": {
+          "L": "\"이스라엘 자손에게 명령하여, 악성 피부병이 든 자와 유출이 있는 자와 죽은 사람 때문에 부정해진 자를 모두 진 밖으로 내보내게 하여라.",
+          "B": "\"이스라엘 백성에게 명령하여, 악성 피부병이 있거나 유출이 있는 사람과 시신 때문에 부정해진 사람을 모두 진 밖으로 내보내게 하여라.",
+          "R": "\"이스라엘 사람들에게 명령하여, 어떤 사람들을 진 밖으로 내보내게 해야 한다. 곧 악성 피부병이 있는 사람과, 몸에서 무엇이 흘러나오는 사람과, 시신 때문에 부정해진 사람이다."
         }
       },
       "decisions": [
@@ -243,6 +263,72 @@
           "reason": "The Hebrew says \"a person\" but means a dead one (m3). \"Maiti\" is the ordinary Swahili word for a human corpse; \"mzoga\" is used of a dead animal.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040050020091"
+          ],
+          "choice": "\"bệnh ngoài da nghiêm trọng\" (scale disease)",
+          "alternatives": [
+            "\"bệnh phong\"",
+            "\"bệnh phong hủi\""
+          ],
+          "reason": "The term sheet's choice, as Leviticus 13-14 uses it: the Hebrew word covers several skin conditions and is not modern leprosy, so the traditional \"phong\" is not used.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040050020111"
+          ],
+          "choice": "\"bị chảy dịch\" for \"having a discharge\"",
+          "alternatives": [
+            "\"bị chảy mủ\"",
+            "\"bệnh lậu\""
+          ],
+          "reason": "The wording of Leviticus 15:2 in Vietnamese, which names the flow without naming a particular disease.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040050020091"
+          ],
+          "choice": "\"악성 피부병\" for the scale disease at every level; \"유출\" (Literal, Balanced) and \"몸에서 무엇이 흘러나오는\" (Readable) for the discharge",
+          "alternatives": [
+            "나병",
+            "문둥병"
+          ],
+          "reason": "The term sheet and Korean Leviticus 13-15 use \"악성 피부병\"; \"나병\", the word of older Korean Bibles, names one disease (leprosy), while the Hebrew covers a range of skin conditions, as the footnoted meaning decision says.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -304,6 +390,16 @@
           "L": "Mwanamume hadi mwanamke mtawatoa; nje ya kambi mtawatoa, nao hawatazitia unajisi kambi zao, ambazo {{deity_pronoun:mimi|Mimi}} ninakaa katikati yao.\"",
           "B": "Mwanamume au mwanamke, mtawatoa na kuwaweka nje ya kambi, ili wasizitie unajisi kambi za watu ambao {{deity_pronoun:mimi|Mimi}} ninakaa katikati yao.\"",
           "R": "Watoeni wanaume na wanawake pia. Wakae nje ya kambi. Hivyo hawataifanya kambi kuwa najisi, kwa sababu ninaishi humo pamoja nao.\""
+        },
+        "vi": {
+          "L": "Từ nam đến nữ, các ngươi phải đuổi [họ] đi; các ngươi phải đuổi họ ra ngoài trại quân, để họ không làm ô uế các trại quân của mình, là nơi {{deity_pronoun:ta|Ta}} ngự ở giữa họ.\"",
+          "B": "Dù là nam hay nữ, các ngươi phải đuổi họ ra ngoài trại quân, để họ không làm ô uế trại quân của dân mà {{deity_pronoun:ta|Ta}} ngự ở giữa.\"",
+          "R": "Hãy đưa cả nam lẫn nữ ra ngoài. Hãy để họ ở bên ngoài khu trại. Như vậy họ sẽ không làm cho khu trại bị ô uế, vì {{deity_pronoun:ta|Ta}} sống ở đó giữa dân {{deity_pronoun:ta|Ta}}.\""
+        },
+        "ko": {
+          "L": "남자부터 여자까지 너희는 내보내라. 진 밖으로 그들을 내보내어, 내가 그 가운데 머무는 그들의 진들을 그들이 더럽히지 않게 하라.\"",
+          "B": "남자든 여자든 내보내어 진 밖에 있게 하라. 그래야 그들이 내가 머물고 있는 백성의 진을 더럽히지 않을 것이다.\"",
+          "R": "남자든 여자든 내보내라. 그들을 진 밖에서 지내게 해야 한다. 그러면 그들이 진을 부정하게 하지 않을 것이다. 내가 그 진 안에서 백성과 함께 살기 때문이다.\""
         }
       },
       "decisions": [
@@ -391,6 +487,26 @@
           "reason": "The Hebrew words are the ones used for male and female animals too, but here they name people (m1). French \"mâle\" and \"femelle\" said of people sound like animals, so even Literal says \"l'homme\" and \"la femme\" and keeps the \"from ... to\" shape.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040050030012",
+            "o040050030031"
+          ],
+          "choice": "\"남자부터 여자까지\" at Literal; \"남자든 여자든\" at Balanced and Readable",
+          "alternatives": [
+            "남녀를 막론하고"
+          ],
+          "reason": "The Literal keeps the Hebrew \"from male to female\"; the other levels say \"men and women alike\" in ordinary Korean.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -452,6 +568,16 @@
           "L": "Na wana wa Israeli wakafanya hivyo, wakawatoa nje ya kambi; kama {{divine_name:BWANA|Yahwe}} alivyomwambia Musa, ndivyo walivyofanya wana wa Israeli.",
           "B": "Waisraeli walifanya hivyo; wakawatoa nje ya kambi. Kama {{divine_name:BWANA|Yahwe}} alivyomwambia Musa, ndivyo Waisraeli walivyofanya.",
           "R": "Waisraeli walifanya hivyo. Waliwatoa watu hao nje ya kambi. Walifanya kama {{divine_name:BWANA|Yahwe}} alivyomwambia Musa."
+        },
+        "vi": {
+          "L": "Và con cháu Y-sơ-ra-ên làm như vậy, và đuổi họ ra ngoài trại quân; như {{divine_name:CHÚA|Gia-vê}} đã phán với Môi-se, con cháu Y-sơ-ra-ên đã làm như vậy.",
+          "B": "Dân Y-sơ-ra-ên làm như vậy; họ đưa những người ấy ra ngoài trại quân. {{divine_name:CHÚA|Gia-vê}} đã phán với Môi-se thế nào, dân Y-sơ-ra-ên làm đúng như thế.",
+          "R": "Dân Y-sơ-ra-ên làm theo điều ấy. Họ đưa những người ấy ra ngoài khu trại. Họ làm đúng như {{divine_name:CHÚA|Gia-vê}} đã phán với Môi-se."
+        },
+        "ko": {
+          "L": "그리고 이스라엘 자손이 그렇게 하여, 그들을 진 밖으로 내보냈다. {{divine_name:주|야훼}}께서 모세에게 말씀하신 대로 이스라엘 자손이 그렇게 하였다.",
+          "B": "이스라엘 백성은 그렇게 하였다. 그들은 그 사람들을 진 밖으로 내보냈다. {{divine_name:주|야훼}}께서 모세에게 말씀하신 그대로 이스라엘 백성이 행하였다.",
+          "R": "이스라엘 사람들은 그대로 했다. 그들은 그 사람들을 진 밖으로 내보냈다. {{divine_name:주|야훼}}께서 모세에게 말씀하신 그대로 했다."
         }
       },
       "decisions": [
@@ -530,6 +656,16 @@
           "L": "Naye {{divine_name:BWANA|Yahwe}} akanena na Musa, akisema,",
           "B": "{{divine_name:BWANA|Yahwe}} alisema na Musa. Akasema,",
           "R": "{{divine_name:BWANA|Yahwe}} alimwambia Musa,"
+        },
+        "vi": {
+          "L": "Và {{divine_name:CHÚA|Gia-vê}} phán với Môi-se rằng:",
+          "B": "{{divine_name:CHÚA|Gia-vê}} phán với Môi-se. Ngài phán:",
+          "R": "{{divine_name:CHÚA|Gia-vê}} phán với Môi-se:"
+        },
+        "ko": {
+          "L": "그리고 {{divine_name:주|야훼}}께서 모세에게 말씀하여 이르셨다.",
+          "B": "{{divine_name:주|야훼}}께서 모세에게 이렇게 말씀하셨다.",
+          "R": "{{divine_name:주|야훼}}께서 모세에게 말씀하셨다."
         }
       },
       "decisions": [
@@ -613,6 +749,16 @@
           "L": "\"Sema na wana wa Israeli, 'Mwanamume au mwanamke, watakapofanya dhambi yoyote kati ya dhambi za wanadamu, kwa kuvunja uaminifu kwa {{divine_name:BWANA|Yahwe}}, na mtu huyo akawa na hatia,",
           "B": "\"Waambie Waisraeli, 'Mwanamume au mwanamke akimkosea mtu mwingine, na hivyo kuvunja uaminifu kwa {{divine_name:BWANA|Yahwe}}, na mtu huyo akawa na hatia,",
           "R": "\"Waambie Waisraeli, 'Huenda mwanamume au mwanamke akamkosea mtu mwingine. Kufanya hivyo ni kuvunja uaminifu kwa {{divine_name:BWANA|Yahwe}}, na mtu huyo ana hatia."
+        },
+        "vi": {
+          "L": "\"Hãy nói với con cháu Y-sơ-ra-ên: 'Một người nam hay một người nữ, khi họ phạm bất cứ tội nào của loài người, mà bất trung với {{divine_name:CHÚA|Gia-vê}}, và người ấy mắc tội,",
+          "B": "\"Hãy bảo dân Y-sơ-ra-ên: 'Khi một người đàn ông hay đàn bà làm điều sai trái với người khác, tức là bất trung với {{divine_name:CHÚA|Gia-vê}}, và người ấy mắc tội,",
+          "R": "\"Hãy bảo dân Y-sơ-ra-ên: 'Một người đàn ông hay đàn bà có thể làm điều sai trái với người khác. Làm như vậy là bất trung với {{divine_name:CHÚA|Gia-vê}}, và người ấy mắc tội."
+        },
+        "ko": {
+          "L": "\"이스라엘 자손에게 말하여라. '남자나 여자가 사람들이 짓는 죄 가운데 어떤 것을 지어 {{divine_name:주|야훼}}께 신의를 저버리는 일을 저지르고, 그 사람이 죄책이 있게 되면,",
+          "B": "\"이스라엘 백성에게 일러라. '남자든 여자든 다른 사람에게 잘못을 저질러 {{divine_name:주|야훼}}께 신의를 저버리고, 그 사람에게 죄책이 있게 되면,",
+          "R": "\"이스라엘 사람들에게 일러라. '남자나 여자가 다른 사람에게 잘못을 저지를 수 있다. 그것은 {{divine_name:주|야훼}}께 신의를 저버리는 일이고, 그 사람은 죄를 지은 것이다."
         }
       },
       "decisions": [
@@ -704,6 +850,49 @@
           "reason": "The word for a breach of trust is \"commettre une infidélité\", as in Leviticus 5, so that the link with the wife's \"infidélité\" in verse 12 stays visible (m2). Readable turns it into the plain adjective \"infidèle\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040050060132",
+            "o040050060141"
+          ],
+          "choice": "\"bất trung với\" for \"acting unfaithfully against\" (maal)",
+          "alternatives": [
+            "\"phạm đến\"",
+            "\"phản bội\""
+          ],
+          "reason": "The word is a breach of trust; \"bất trung\" says that plainly and is used again for the wife's unfaithfulness in 5:12 and 27, where the Hebrew repeats the same word.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040050060111",
+            "o040050060122"
+          ],
+          "choice": "\"사람들이 짓는 죄\" for \"the sins of humankind\" at Literal; \"다른 사람에게 잘못을 저질러\" at Balanced and Readable",
+          "alternatives": [
+            "인간의 죄"
+          ],
+          "reason": "The footnoted meaning decision reads the phrase as wrongs people do to one another; the Literal keeps the Hebrew phrase and the other levels say the sense. \"신의를 저버리다\" is the phrase Korean Leviticus 5:15 uses for acting unfaithfully.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -769,6 +958,16 @@
           "L": "basi wataungama dhambi yao waliyoifanya, naye atalipa [malipo ya] hatia yake kwa ukamilifu, na kuongeza juu yake sehemu yake ya tano, na kumpa yule aliyemkosea.",
           "B": "ataungama dhambi yake waziwazi. Mwenye hatia atalipa kiasi chote anachodaiwa kwa kosa hilo, aongeze sehemu ya tano juu yake, na kumpa yule aliyedhuriwa.",
           "R": "Lazima akiri dhambi aliyoifanya. Lazima alipe kikamilifu kile anachodaiwa kwa kosa hilo, na kuongeza sehemu moja ya tano zaidi. Kisha lazima ampe mtu aliyemkosea."
+        },
+        "vi": {
+          "L": "thì họ phải xưng tội mình đã phạm, và người ấy phải bồi hoàn trọn vẹn [khoản] mình mắc nợ vì tội, và thêm vào một phần năm, và trao [nó] cho người mà mình đã phạm đến.",
+          "B": "thì phải xưng ra tội mình đã phạm. Người có tội phải bồi hoàn đủ số mình nợ vì điều sai trái, thêm một phần năm, rồi trao cho người bị thiệt hại.",
+          "R": "Người ấy phải nhận tội mình đã làm. Người ấy phải trả lại đầy đủ những gì mình nợ vì điều sai trái, và trả thêm một phần năm nữa. Rồi người ấy phải trao số ấy cho người mình đã làm hại."
+        },
+        "ko": {
+          "L": "그들은 자기들이 지은 죄를 자백해야 하고, 그는 자기의 죄책[의 값]을 원금대로 갚고, 거기에 오분의 일을 더하여, 자기가 죄를 지은 상대에게 주어야 한다.",
+          "B": "그는 자기가 지은 죄를 털어놓고 자백해야 한다. 죄를 지은 사람은 잘못한 만큼 다 갚고, 거기에 오분의 일을 더하여 피해를 입은 사람에게 주어야 한다.",
+          "R": "그는 자기가 지은 죄를 털어놓아야 한다. 그리고 잘못한 만큼 다 갚고, 오분의 일을 더 얹어야 한다. 그런 다음 그것을 자기가 잘못한 사람에게 주어야 한다."
         }
       },
       "decisions": [
@@ -908,6 +1107,29 @@
           "reason": "The Hebrew plural refers to the one man or woman of verse 6 (m1); Swahili has no gender in the verb, so Balanced and Readable use the singular throughout. Readable says \"kukiri\" (admit), the everyday word, for \"kuungama\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040050070012",
+            "o040050070062",
+            "o040050070081"
+          ],
+          "choice": "\"xưng tội\" for confess, \"bồi hoàn\" for repaying the guilt payment; Readable keeps the singular \"người ấy\" where the English Readable says \"they\"",
+          "alternatives": [
+            "\"nhận tội\" at every level"
+          ],
+          "reason": "The words Leviticus 5:5 and 16 use in Vietnamese for the same law. Vietnamese does not use a plural pronoun for one person of either sex, and \"người ấy\" already covers a man or a woman.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -977,6 +1199,16 @@
           "L": "Na ikiwa mtu huyo hana mkombozi wa kulipwa [malipo ya] hatia, [malipo ya] hatia yanayolipwa [ni] ya {{divine_name:BWANA|Yahwe}}, kwa ajili ya kuhani, mbali na kondoo dume wa upatanisho, ambaye kwa njia yake atamfanyia upatanisho.",
           "B": "Ikiwa mtu aliyedhuriwa amekufa bila kuacha ndugu wa karibu wa kupokea malipo, basi kinacholipwa kwa kosa hilo ni cha {{divine_name:BWANA|Yahwe}}, yaani, ni cha kuhani. Hiyo ni zaidi ya kondoo dume wa upatanisho, ambaye kwa njia yake kuhani atamfanyia upatanisho mwenye hatia.",
           "R": "Lakini huenda mtu aliyekosewa amekufa, wala hana ndugu wa karibu wa kupokea malipo. Hapo malipo hayo ni ya {{divine_name:BWANA|Yahwe}}, nayo hupewa kuhani. Mwenye hatia lazima pia alete kondoo dume ili kuhani amfanyie upatanisho."
+        },
+        "vi": {
+          "L": "Và nếu người ấy không có người chuộc để nhận [khoản] bồi hoàn, thì [khoản] bồi hoàn sẽ [thuộc] về {{divine_name:CHÚA|Gia-vê}}, cho thầy tế lễ, ngoài con chiên đực chuộc tội mà thầy tế lễ dùng để chuộc tội cho người ấy.",
+          "B": "Nếu người bị thiệt hại đã chết mà không có bà con gần để nhận khoản bồi hoàn, thì khoản bồi hoàn ấy thuộc về {{divine_name:CHÚA|Gia-vê}}, tức là thuộc về thầy tế lễ. Điều này ngoài con chiên đực chuộc tội mà thầy tế lễ dùng để chuộc tội cho người có tội.",
+          "R": "Nhưng người bị hại có thể đã chết và không có bà con gần để nhận khoản trả ấy. Khi đó khoản trả thuộc về {{divine_name:CHÚA|Gia-vê}} và được trao cho thầy tế lễ. Người có tội cũng phải đem đến một con chiên đực để thầy tế lễ chuộc tội cho mình."
+        },
+        "ko": {
+          "L": "그리고 만일 그 사람에게 죄책[의 값]을 돌려받을 무를 자가 없으면, 돌려주는 죄책[의 값]은 {{divine_name:주|야훼}}께 [속하여] 제사장의 것이 될 것이니, 그를 위하여 속죄하는 데 쓰는 속죄의 숫양 외에 [그러하다].",
+          "B": "피해를 입은 사람이 죽었는데 갚는 것을 받을 가까운 친척도 없으면, 잘못에 대하여 갚는 것은 {{divine_name:주|야훼}}께 돌아가니, 곧 제사장의 것이 된다. 이것은 제사장이 죄를 지은 사람을 위하여 속죄할 때 쓰는 속죄의 숫양과는 따로이다.",
+          "R": "그런데 피해를 입은 사람이 죽고, 갚는 것을 받을 가까운 친척도 없을 수 있다. 그러면 그 갚는 것은 {{divine_name:주|야훼}}의 것이 되고, 제사장에게 주어야 한다. 죄를 지은 사람은 숫양도 한 마리 가져와야 한다. 그러면 제사장이 그 숫양으로 그를 위하여 속죄할 것이다."
         }
       },
       "decisions": [
@@ -1112,6 +1344,50 @@
           "reason": "Literal keeps the title \"mkombozi\" (one who buys back) for the relative of m1; Balanced and Readable say \"ndugu wa karibu\", as the English says \"close relative\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o040050080032",
+            "o040050080041"
+          ],
+          "choice": "\"người ấy\" for \"the man\", with no gender span; \"người chuộc\" (L) / \"bà con gần\" (B, R) for the redeemer",
+          "alternatives": [
+            "a span such as \"người đàn ông ấy\""
+          ],
+          "reason": "\"người ấy\" names the wronged person without marking sex, so Vietnamese has one wording for both of the English setting's choices. The redeemer is the nearest relative who acts for the family; Literal keeps the title, Balanced and Readable say who he is.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040050080041"
+          ],
+          "choice": "\"무를 자\" (Literal) and \"가까운 친척\" (Balanced, Readable) for the redeemer",
+          "alternatives": [
+            "기업 무를 자",
+            "구속자"
+          ],
+          "reason": "The word Korean Leviticus 25:25 uses for the go'el at Literal; the other levels name the nearest relative, as the English does. \"그 사람\" covers the English gender span on \"the person / the man\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1164,6 +1440,16 @@
           "L": "Na kila sadaka ya kuinuliwa katika vitu vyote vitakatifu vya wana wa Israeli, wanavyomletea kuhani, itakuwa yake.",
           "B": "Kila mchango katika matoleo yote matakatifu ambayo Waisraeli wanamletea kuhani utakuwa wake.",
           "R": "Kati ya matoleo yote matakatifu ambayo Waisraeli wanamletea kuhani, kila zawadi maalum itakuwa ya kuhani huyo."
+        },
+        "vi": {
+          "L": "Và mọi của lễ dâng riêng trong mọi vật thánh của con cháu Y-sơ-ra-ên mà họ đem đến cho thầy tế lễ, sẽ thuộc về người.",
+          "B": "Mọi của lễ dâng riêng trong các lễ vật thánh mà dân Y-sơ-ra-ên đem đến cho thầy tế lễ đều thuộc về thầy tế lễ ấy.",
+          "R": "Mọi lễ vật đặc biệt trong các lễ vật thánh mà dân Y-sơ-ra-ên đem đến cho một thầy tế lễ đều thuộc về thầy tế lễ ấy."
+        },
+        "ko": {
+          "L": "그리고 이스라엘 자손이 제사장에게 가져오는 모든 거룩한 것 가운데 들어 바치는 제물은 모두 그의 것이 될 것이다.",
+          "B": "이스라엘 백성이 제사장에게 가져오는 모든 거룩한 예물 가운데 들어 바치는 제물은 모두 그 제사장의 것이다.",
+          "R": "이스라엘 사람들이 제사장에게 가져오는 거룩한 예물 가운데 따로 떼어 바치는 특별한 예물은 모두 그 제사장의 것이다."
         }
       },
       "decisions": [
@@ -1209,6 +1495,26 @@
           "choice": "special gift",
           "alternatives": [],
           "reason": "Readable uses \"special gift\" for the technical word \"contribution\", since the point is that the gift was set apart.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040050090021"
+          ],
+          "choice": "\"của lễ dâng riêng\" for the contribution (terumah); Readable \"lễ vật đặc biệt\"",
+          "alternatives": [
+            "\"của lễ giơ lên\""
+          ],
+          "reason": "The term sheet's name, a portion set apart from the whole for holy use; Readable follows Exodus 25:2 in Vietnamese.",
           "uncertain": false,
           "footnote": false
         }
@@ -1264,6 +1570,16 @@
           "L": "Na kila mtu, vitu vyake vitakatifu vitakuwa vyake; kila mtu ampacho kuhani, kitakuwa chake.'\"",
           "B": "Matoleo matakatifu ya kila mtu ni yake, ayatoe apendavyo, lakini chochote mtu anachompa kuhani ni mali ya kuhani huyo.'\"",
           "R": "Matoleo matakatifu ambayo watu wanayatenga ni yao, wayatoe kama wanavyotaka. Lakini chochote wanachompa kuhani ni chake.'\""
+        },
+        "vi": {
+          "L": "Và mỗi người, các vật thánh của người ấy sẽ thuộc về người ấy; điều gì mỗi người trao cho thầy tế lễ, thì sẽ thuộc về thầy tế lễ.'\"",
+          "B": "Các lễ vật thánh của mỗi người là của người ấy, tùy ý dâng; nhưng điều gì ai trao cho thầy tế lễ thì thuộc về thầy tế lễ ấy.'\"",
+          "R": "Những lễ vật thánh mà người ta để riêng ra vẫn là của họ, họ muốn dâng thế nào tùy ý. Nhưng điều gì họ đã trao cho thầy tế lễ thì thuộc về thầy tế lễ.'\""
+        },
+        "ko": {
+          "L": "그리고 각 사람의 거룩한 것들은 그의 것이 될 것이다. 각 사람이 제사장에게 주는 것은 그[제사장]의 것이 될 것이다.'\"",
+          "B": "각 사람의 거룩한 예물은 그 사람이 드릴 것이지만, 누구든지 제사장에게 준 것은 그 제사장의 것이다.'\"",
+          "R": "사람들이 따로 떼어 둔 거룩한 예물은 그들이 원하는 대로 드릴 수 있다. 그러나 제사장에게 준 것은 그 제사장의 것이다.'\""
         }
       },
       "decisions": [
@@ -1345,6 +1661,16 @@
           "L": "Naye {{divine_name:BWANA|Yahwe}} akanena na Musa, akisema,",
           "B": "{{divine_name:BWANA|Yahwe}} alisema na Musa. Akasema,",
           "R": "{{divine_name:BWANA|Yahwe}} alimwambia Musa,"
+        },
+        "vi": {
+          "L": "Và {{divine_name:CHÚA|Gia-vê}} phán với Môi-se rằng:",
+          "B": "{{divine_name:CHÚA|Gia-vê}} phán với Môi-se. Ngài phán:",
+          "R": "{{divine_name:CHÚA|Gia-vê}} phán với Môi-se:"
+        },
+        "ko": {
+          "L": "그리고 {{divine_name:주|야훼}}께서 모세에게 말씀하여 이르셨다.",
+          "B": "{{divine_name:주|야훼}}께서 모세에게 이렇게 말씀하셨다.",
+          "R": "{{divine_name:주|야훼}}께서 모세에게 말씀하셨다."
         }
       },
       "decisions": [
@@ -1422,6 +1748,16 @@
           "L": "\"Sema na wana wa Israeli, uwaambie, 'Ikiwa mke wa mtu yeyote atakengeuka na kuvunja uaminifu kwake,",
           "B": "\"Sema na Waisraeli, uwaambie, 'Tuseme mke wa mtu amepotoka na kuvunja uaminifu kwa mumewe,",
           "R": "\"Waambie Waisraeli, 'Huenda mke wa mtu akageuka mbali na mumewe na kukosa uaminifu kwake."
+        },
+        "vi": {
+          "L": "\"Hãy nói với con cháu Y-sơ-ra-ên và bảo họ: 'Nếu vợ của bất cứ người nào lầm đường và bất trung với chồng,",
+          "B": "\"Hãy nói với dân Y-sơ-ra-ên và bảo họ: 'Giả sử vợ của một người đàn ông đi sai đường và bất trung với chồng,",
+          "R": "\"Hãy bảo dân Y-sơ-ra-ên: 'Có khi vợ của một người đàn ông lìa bỏ chồng và không chung thủy với chồng."
+        },
+        "ko": {
+          "L": "\"이스라엘 자손에게 말하고 그들에게 일러라. '어떤 남자든지 그의 아내가 곁길로 나가 그에게 신의를 저버리는 일을 저질러,",
+          "B": "\"이스라엘 백성에게 이렇게 일러라. '어떤 남자의 아내가 바른길에서 벗어나 남편에게 신의를 저버리고,",
+          "R": "\"이스라엘 사람들에게 일러라. '어떤 아내가 남편에게서 마음이 떠나 남편을 배신할 수 있다."
         }
       },
       "decisions": [
@@ -1604,6 +1940,16 @@
           "L": "na mwanamume akalala naye kwa kumwaga shahawa, na jambo hilo likafichika machoni pa mumewe, naye akabaki amejificha, naye amejitia unajisi, na hakuna shahidi dhidi yake, wala hakukamatwa,",
           "B": "na mwanamume mwingine akalala naye, lakini jambo hilo likafichika kwa mumewe; amejitia unajisi kwa siri, hakuna shahidi dhidi yake, wala hakukamatwa,",
           "R": "Mwanamume mwingine analala naye, lakini mumewe hajui. Amejitia unajisi kwa siri. Hakuna aliyeona, wala hakukamatwa."
+        },
+        "vi": {
+          "L": "và một người đàn ông nằm với nàng [mà] giao hợp, và việc ấy bị giấu khỏi mắt chồng nàng, và nàng giữ kín, và nàng đã làm ô uế mình, và không có nhân chứng nào chống lại nàng, và nàng không bị bắt gặp,",
+          "B": "và có một người đàn ông khác ăn nằm với nàng, nhưng việc ấy bị giấu kín không cho chồng nàng biết; nàng đã lén lút làm ô uế mình, không có nhân chứng nào chống lại nàng, và nàng không bị bắt quả tang,",
+          "R": "Một người đàn ông khác ăn nằm với cô ấy, nhưng chồng cô không biết. Cô ấy đã lén lút làm cho mình bị ô uế. Không ai thấy, và cô ấy không bị bắt quả tang."
+        },
+        "ko": {
+          "L": "어떤 남자가 씨를 [쏟는] 동침으로 그 여자와 동침하였는데, 그것이 그 여자의 남편의 눈에 숨겨지고, 그 여자가 [그 일을] 감추었으며, 그 여자가 자기를 더럽혔으나, 그 여자에게 불리한 증인이 없고, 그 여자가 붙잡히지도 않았는데,",
+          "B": "다른 남자가 그 여자와 동침하였는데도 남편이 그 일을 모르고, 그 여자가 몰래 자기를 더럽혔으나, 그 여자에게 불리한 증인이 없고 그 여자가 붙잡히지도 않았는데,",
+          "R": "다른 남자가 그 여자와 잠자리를 같이했지만, 남편은 그 일을 모른다. 그 여자는 몰래 자기를 부정하게 했다. 본 사람도 없고, 그 여자가 붙잡히지도 않았다."
         }
       },
       "decisions": [
@@ -1667,6 +2013,28 @@
           "alternatives": [],
           "reason": "Balanced and Readable say \"another man\" and \"sleeps with\" to make clear that the man is not her husband and what the phrase means. Literal keeps the Hebrew wording.",
           "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o040050130051"
+          ],
+          "choice": "the wife is \"nàng\" (L, B) and \"cô ấy\" / \"cô\" (R); the priest speaking to her says \"ngươi\" (L) and \"bà\" (B, R)",
+          "alternatives": [
+            "\"bà\" in the narration",
+            "\"chị\" in the priest's words"
+          ],
+          "reason": "Vietnamese must choose a pronoun for the woman. \"nàng\" is the usual third person for a woman in written narrative; Readable uses the plainer \"cô ấy\". The priest's oath is formal and solemn, so he addresses her with the respectful \"bà\" at Balanced and Readable, and with \"ngươi\" at Literal like the other legal speech. Used through 5:12-31.",
+          "uncertain": true,
           "footnote": false
         }
       ],
@@ -1734,6 +2102,16 @@
           "L": "na roho ya wivu ikampitia, naye akamwonea wivu mkewe, naye amejitia unajisi; au roho ya wivu ikampitia, naye akamwonea wivu mkewe, ingawa hajajitia unajisi,",
           "B": "na wivu mkali ukamjia, akamwonea mkewe wivu, naye kweli amejitia unajisi; au ikiwa wivu mkali umemjia, akamwonea mkewe wivu, ingawa yeye hajajitia unajisi,",
           "R": "Kisha mume anajawa na wivu mkubwa, na anamshuku mkewe. Huenda mkewe amejitia unajisi, au huenda hajajitia, lakini mume bado ana wivu na anamshuku."
+        },
+        "vi": {
+          "L": "và một cơn ghen tuông đến trên người chồng, và người chồng ghen với vợ mình, và nàng đã làm ô uế mình; hoặc một cơn ghen tuông đến trên người chồng, và người chồng ghen với vợ mình, dù nàng không làm ô uế mình,",
+          "B": "và người chồng nổi cơn ghen với vợ mình, mà nàng quả thật đã làm ô uế mình; hoặc người chồng nổi cơn ghen với vợ mình, dù nàng không hề làm ô uế mình,",
+          "R": "Rồi người chồng nổi cơn ghen dữ dội và nghi ngờ vợ mình. Có thể cô ấy đã làm cho mình bị ô uế, cũng có thể không, nhưng người chồng vẫn ghen và nghi ngờ cô."
+        },
+        "ko": {
+          "L": "질투의 영이 그에게 임하여 그가 자기 아내를 질투하는데 그 여자가 자기를 더럽혔거나, 또는 질투의 영이 그에게 임하여 그가 자기 아내를 질투하나 그 여자가 자기를 더럽히지 않았으면,",
+          "B": "남편이 질투심에 사로잡혀 아내를 의심하는데, 실제로 그 여자가 자기를 더럽혔거나, 또는 남편이 질투심에 사로잡혀 아내를 의심하지만 그 여자가 자기를 더럽히지 않았으면,",
+          "R": "그러면 남편은 질투심에 사로잡혀 아내를 의심하게 된다. 아내가 정말로 자기를 부정하게 했을 수도 있고, 그러지 않았을 수도 있다. 그래도 남편은 질투하며 아내를 의심한다."
         }
       },
       "decisions": [
@@ -1814,6 +2192,50 @@
           "reason": "Readable repeats the husband's suspicion after the second case, as the Hebrew does by repeating the whole clause.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040050140031",
+            "o040050140041"
+          ],
+          "choice": "\"một cơn ghen tuông\" for \"a spirit of jealousy\" at Literal",
+          "alternatives": [
+            "\"một thần ghen tuông\"",
+            "\"một tinh thần ghen tuông\""
+          ],
+          "reason": "\"thần\" would be read as a spirit being and \"tinh thần\" as a state of morale; the meaning decision says it is a strong feeling that takes hold of him, which \"cơn ghen\" says. The same phrase in 5:30.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040050140031",
+            "o040050140041"
+          ],
+          "choice": "\"질투의 영\" (Literal), \"질투심에 사로잡혀\" (Balanced, Readable); \"질투\" for the law's key word through 5:15-30",
+          "alternatives": [
+            "의심의 영",
+            "의처증"
+          ],
+          "reason": "The Hebrew word is jealousy, and the meaning decision reads \"spirit of jealousy\" as a strong feeling that takes hold of him; Balanced and Readable add \"의심하다\" for \"he is jealous of his wife\", which in Korean means suspecting her faithfulness.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1892,6 +2314,16 @@
           "L": "basi mume atamleta mkewe kwa kuhani, naye ataleta sadaka yake kwa ajili yake, sehemu ya kumi ya efa ya unga wa shayiri; hatamimina mafuta juu yake, wala hataweka ubani juu yake, kwa maana ni sadaka ya nafaka ya wivu, sadaka ya nafaka ya ukumbusho, inayokumbusha uovu.",
           "B": "mume atamleta mkewe kwa kuhani. Pia ataleta sadaka inayotakiwa kwa ajili yake, unga wa shayiri {{units:kama lita 2|sehemu ya kumi ya efa}}. Hatamimina mafuta juu yake wala kuweka ubani, kwa sababu ni sadaka ya nafaka ya wivu, sadaka ya nafaka ya ukumbusho inayoleta hatia akilini.",
           "R": "Lazima mume amlete mkewe kwa kuhani. Lazima pia alete sadaka kwa ajili yake: unga wa shayiri {{units:kama lita 2|sehemu ya kumi ya efa}}. Asiweke mafuta ya zeituni wala ubani juu yake, kwa sababu ni sadaka ya nafaka inayohusu wivu. Ni sadaka inayokumbusha kosa lililofichwa."
+        },
+        "vi": {
+          "L": "thì người chồng phải đem vợ mình đến thầy tế lễ, và đem lễ vật của nàng vì nàng, một phần mười ê-pha bột lúa mạch; người ấy không được rưới dầu lên đó, cũng không được đặt nhũ hương lên đó, vì đó [là] tế lễ ngũ cốc về sự ghen tuông, tế lễ ngũ cốc để ghi nhớ, nhắc lại sự gian ác.",
+          "B": "thì người chồng phải đem vợ mình đến thầy tế lễ. Người ấy cũng phải đem lễ vật cần dâng thay cho nàng, là {{units:khoảng 2,2 lít|một phần mười ê-pha}} bột lúa mạch. Người ấy không được rưới dầu hay thêm nhũ hương lên bột, vì đây là tế lễ ngũ cốc về sự ghen tuông, tế lễ ngũ cốc để ghi nhớ, nhắc lại tội lỗi.",
+          "R": "Người chồng phải đem vợ mình đến thầy tế lễ. Người ấy cũng phải đem một lễ vật cho vợ: {{units:khoảng 2,2 lít|một phần mười ê-pha}} bột lúa mạch. Người ấy không được đổ dầu ô-liu hay đặt nhũ hương lên đó. Vì đây là tế lễ ngũ cốc về sự ghen tuông. Đó là lễ vật làm cho một điều sai trái bị giấu kín được nhắc đến."
+        },
+        "ko": {
+          "L": "그 남자는 자기 아내를 제사장에게 데려가고, 그 여자를 위하여 그 여자의 제물로 보릿가루 에바 십분의 일을 가져가야 한다. 그는 그 위에 기름을 붓지 말고 그 위에 유향을 놓지 말아야 한다. 그것은 질투의 곡식 제물, 곧 기억나게 하는 곡식 제물로, 죄악을 기억나게 하는 것이기 때문이다.",
+          "B": "그 남자는 자기 아내를 제사장에게 데려가야 한다. 그는 또 그 여자를 위한 제물로 보릿가루 {{units:2.2리터쯤|에바 십분의 일}}를 가져가야 한다. 그 위에 기름을 붓거나 유향을 얹어서는 안 된다. 그것은 질투 때문에 바치는 곡식 제물이며, 죄를 드러내어 기억나게 하는 곡식 제물이기 때문이다.",
+          "R": "그 남자는 아내를 제사장에게 데려가야 한다. 그는 아내를 위한 제물도 가져가야 하는데, 그것은 보릿가루 {{units:2.2리터쯤|에바 십분의 일}}이다. 그 위에 올리브기름이나 유향을 얹으면 안 된다. 그것은 질투 때문에 바치는 곡식 제물이기 때문이다. 그것은 숨겨진 잘못을 기억나게 하는 제물이다."
         }
       },
       "decisions": [
@@ -2014,6 +2446,70 @@
           "reason": "The offering \"reminds\" in the sense of putting the case before the LORD (m3). Literal keeps the noun \"souvenir\"; Balanced says \"rappel\" and \"remettre en mémoire\", which say more plainly that the offering brings the matter forward.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o040050150111",
+            "o040050150122"
+          ],
+          "choice": "\"khoảng 2,2 lít\" with \"một phần mười ê-pha\" as the units alternative",
+          "alternatives": [
+            "US units as in the English"
+          ],
+          "reason": "Metric by default (ephah 22 litres), as in Leviticus; the setting gives the original measure, which Literal keeps.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o040050150111",
+            "o040050150122"
+          ],
+          "choice": "{{units:2.2리터쯤|에바 십분의 일}}, metric by default",
+          "alternatives": [
+            "about 2 quarts as in the English"
+          ],
+          "reason": "As Korean Leviticus 5:11: the Pentateuch sheets set a tenth of an ephah at 2.2 litres; the Literal keeps the ephah, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040050150241",
+            "o040050150251"
+          ],
+          "choice": "\"곡식 제물\" for the grain offering",
+          "alternatives": [
+            "소제"
+          ],
+          "reason": "The term sheet's word; \"소제\" is the older Sino-Korean name.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2063,6 +2559,16 @@
           "L": "Na kuhani atamleta karibu, na kumsimamisha mbele ya {{divine_name:BWANA|Yahwe}}.",
           "B": "Kuhani atamleta karibu na kumsimamisha mbele ya {{divine_name:BWANA|Yahwe}}.",
           "R": "Lazima kuhani amlete mbele na kumsimamisha mbele ya {{divine_name:BWANA|Yahwe}} katika maskani."
+        },
+        "vi": {
+          "L": "Và thầy tế lễ sẽ đem nàng đến gần và cho nàng đứng trước mặt {{divine_name:CHÚA|Gia-vê}}.",
+          "B": "Thầy tế lễ phải đem nàng đến gần và để nàng đứng trước mặt {{divine_name:CHÚA|Gia-vê}}.",
+          "R": "Thầy tế lễ phải đưa người vợ đến và cho cô đứng trước mặt {{divine_name:CHÚA|Gia-vê}} tại Đền Tạm."
+        },
+        "ko": {
+          "L": "그리고 제사장은 그 여자를 가까이 데려와 {{divine_name:주|야훼}} 앞에 세워야 한다.",
+          "B": "제사장은 그 여자를 가까이 데려와 {{divine_name:주|야훼}} 앞에 세워야 한다.",
+          "R": "제사장은 그 여자를 앞으로 데려와 성막에서 {{divine_name:주|야훼}} 앞에 서게 해야 한다."
         }
       },
       "decisions": [
@@ -2162,6 +2668,16 @@
           "L": "Na kuhani atachukua maji matakatifu katika chombo cha udongo, na sehemu ya mavumbi yaliyo juu ya sakafu ya maskani kuhani atachukua na kuyatia ndani ya maji.",
           "B": "Kisha kuhani atatia maji matakatifu katika chungu cha udongo, achukue sehemu ya mavumbi yaliyo sakafuni mwa maskani, na kuyatia ndani ya maji.",
           "R": "Kisha lazima kuhani amimine maji matakatifu katika mtungi wa udongo. Lazima achukue mavumbi kidogo kutoka sakafu ya maskani na kuyatia ndani ya maji."
+        },
+        "vi": {
+          "L": "Và thầy tế lễ sẽ lấy nước thánh trong một cái bình bằng đất, và thầy tế lễ sẽ lấy một ít bụi trên nền Đền Tạm và bỏ vào nước.",
+          "B": "Rồi thầy tế lễ phải đổ nước thánh vào một cái bình bằng đất, lấy một ít bụi trên nền Đền Tạm và bỏ vào nước.",
+          "R": "Rồi thầy tế lễ phải đổ một ít nước thánh vào một cái bình bằng đất sét. Ông phải lấy một ít bụi trên nền Đền Tạm và bỏ vào nước."
+        },
+        "ko": {
+          "L": "그리고 제사장은 토기에 거룩한 물을 담고, 성막 바닥에 있는 흙을 제사장이 조금 집어 그 물에 넣어야 한다.",
+          "B": "그다음에 제사장은 토기 그릇에 거룩한 물을 담고, 성막 바닥의 흙을 조금 집어 그 물에 넣어야 한다.",
+          "R": "그다음에 제사장은 흙으로 빚은 그릇에 거룩한 물을 조금 부어야 한다. 그리고 성막 바닥에서 흙을 조금 집어 그 물에 넣어야 한다."
         }
       },
       "decisions": [
@@ -2286,6 +2802,16 @@
           "L": "Na kuhani atamsimamisha mwanamke mbele ya {{divine_name:BWANA|Yahwe}}, na kuzifungua [nywele za] kichwa cha mwanamke, na kuweka viganjani mwake sadaka ya nafaka ya ukumbusho — ndiyo sadaka ya nafaka ya wivu — na mkononi mwa kuhani yatakuwa maji ya uchungu yaletayo laana.",
           "B": "Kuhani atamsimamisha mwanamke mbele ya {{divine_name:BWANA|Yahwe}}, azifungue nywele zake, na kumwekea mikononi sadaka ya nafaka ya ukumbusho, yaani, sadaka ya nafaka ya wivu. Kuhani mwenyewe atashika mkononi maji machungu yaletayo laana.",
           "R": "Lazima kuhani amsimamishe mwanamke mbele ya {{divine_name:BWANA|Yahwe}}. Lazima aziachilie nywele zake na kumwekea mikononi sadaka ya nafaka. Ni sadaka inayohusu wivu, inayokumbusha jambo hilo. Kuhani mwenyewe lazima ashike maji machungu yaletayo laana."
+        },
+        "vi": {
+          "L": "Và thầy tế lễ sẽ cho người đàn bà đứng trước mặt {{divine_name:CHÚA|Gia-vê}}, và xõa [tóc trên] đầu người đàn bà, và đặt trên lòng bàn tay nàng tế lễ ngũ cốc để ghi nhớ — đó [là] tế lễ ngũ cốc về sự ghen tuông — và trong tay thầy tế lễ sẽ có nước đắng mang lời nguyền rủa.",
+          "B": "Thầy tế lễ phải cho người đàn bà đứng trước mặt {{divine_name:CHÚA|Gia-vê}}, xõa tóc nàng ra, và đặt vào tay nàng tế lễ ngũ cốc để ghi nhớ, tức là tế lễ ngũ cốc về sự ghen tuông. Chính tay thầy tế lễ phải cầm nước đắng mang lời nguyền rủa.",
+          "R": "Thầy tế lễ phải cho người vợ đứng trước mặt {{divine_name:CHÚA|Gia-vê}}. Ông phải xõa tóc cô ra và đặt tế lễ ngũ cốc vào tay cô. Đó là lễ vật về sự ghen tuông, làm cho sự việc được nhắc đến. Chính thầy tế lễ phải cầm nước đắng mang lời nguyền rủa."
+        },
+        "ko": {
+          "L": "그리고 제사장은 그 여자를 {{divine_name:주|야훼}} 앞에 세우고, 그 여자의 머리를 풀고, 기억나게 하는 곡식 제물, 곧 질투의 곡식 제물을 그 여자의 두 손바닥에 놓아야 한다. 그리고 제사장의 손에는 저주를 가져오는 쓰라림의 물이 있어야 한다.",
+          "B": "제사장은 그 여자를 {{divine_name:주|야훼}} 앞에 세우고, 그 여자의 머리를 풀게 한 다음, 기억나게 하는 곡식 제물, 곧 질투 때문에 바치는 곡식 제물을 그 여자의 두 손에 들려야 한다. 제사장은 자기 손에 저주를 가져오는 쓴 물을 들고 있어야 한다.",
+          "R": "제사장은 그 여자를 {{divine_name:주|야훼}} 앞에 서게 해야 한다. 그리고 그 여자의 머리를 풀고, 곡식 제물을 그 여자의 손에 들려 주어야 한다. 그것은 질투 때문에 바치는 제물로, 그 일을 기억나게 하는 제물이다. 제사장은 저주를 가져오는 쓴 물을 직접 들고 있어야 한다."
         }
       },
       "decisions": [
@@ -2403,6 +2929,53 @@
           "reason": "Literal keeps the noun \"uchungu\" (bitterness), which in Swahili also means pain, as the Hebrew word does here (m2). Balanced and Readable use the adjective \"machungu\". The same wording is kept through the chapter.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040050180231",
+            "o040050180242",
+            "o040050180252"
+          ],
+          "choice": "\"nước đắng mang lời nguyền rủa\" at every level",
+          "alternatives": [
+            "\"nước cay đắng\"",
+            "\"nước đắng gây rủa sả\""
+          ],
+          "reason": "\"đắng\" keeps the Hebrew word for bitterness, and \"mang lời nguyền rủa\" says that the water carries the curse spoken over it. Kept the same through the chapter so the reader follows one object.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040050180231",
+            "o040050180242",
+            "o040050180252"
+          ],
+          "choice": "\"쓰라림의 물\" (Literal) and \"쓴 물\" (Balanced, Readable)",
+          "alternatives": [
+            "쓴 것들의 물"
+          ],
+          "reason": "The Hebrew is \"the waters of the bitter things\"; the Literal keeps the abstract noun, the other levels use the ordinary phrase, as the English does. The water causes bitter suffering if she is guilty, as the meaning decision says.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2474,6 +3047,16 @@
           "L": "Na kuhani atamwapisha, na kumwambia mwanamke, \"Ikiwa hakuna mwanamume aliyelala nawe, na ikiwa hukukengeuka [kuingia] katika unajisi ukiwa chini ya mumeo, uwe huru na maji haya ya uchungu yaletayo laana.",
           "B": "Kisha kuhani atamwapisha mwanamke na kumwambia, \"Ikiwa hakuna mwanamume mwingine ila mumeo aliyelala nawe, na hukukengeuka kuingia katika unajisi ukiwa umefungwa kwake, hutadhuriwa na maji haya machungu yaletayo laana.",
           "R": "Kisha lazima kuhani amwapishe mwanamke. Lazima amwambie, \"Ikiwa hakuna mwanamume mwingine aliyelala nawe, na hukukosa uaminifu kwa mumeo na kujitia unajisi, basi maji haya machungu yaletayo laana hayatakudhuru."
+        },
+        "vi": {
+          "L": "Và thầy tế lễ sẽ bắt nàng thề và nói với người đàn bà: \"Nếu không có người đàn ông nào nằm với ngươi, và nếu ngươi không lầm đường [mà sa vào] sự ô uế trong khi thuộc quyền chồng ngươi, thì ngươi sẽ khỏi bị hại bởi nước đắng mang lời nguyền rủa này.",
+          "B": "Rồi thầy tế lễ phải bắt nàng thề và nói với nàng: \"Nếu ngoài chồng bà ra không có người đàn ông nào ăn nằm với bà, và bà không lầm đường sa vào sự ô uế trong khi đang thuộc về chồng mình, thì bà sẽ không bị nước đắng mang lời nguyền rủa này làm hại.",
+          "R": "Rồi thầy tế lễ phải bắt cô thề. Ông phải nói với cô: \"Nếu không có người đàn ông nào khác ăn nằm với bà, và bà không bất trung với chồng để làm mình bị ô uế, thì nước đắng mang lời nguyền rủa này sẽ không làm hại bà."
+        },
+        "ko": {
+          "L": "그리고 제사장은 그 여자에게 맹세하게 하고, 그 여자에게 말해야 한다. \"어떤 남자도 너와 동침하지 않았고, 네가 네 남편 아래 있으면서 곁길로 나가 부정한 일을 하지 않았으면, 저주를 가져오는 이 쓰라림의 물에서 너는 해를 면할 것이다.",
+          "B": "그다음에 제사장은 그 여자에게 맹세하게 하고 이렇게 말해야 한다. \"네 남편 말고 다른 남자가 너와 동침한 적이 없고, 네가 남편에게 매인 몸으로 곁길로 나가 부정한 일을 하지 않았다면, 저주를 가져오는 이 쓴 물이 너를 해치지 못할 것이다.",
+          "R": "그다음에 제사장은 그 여자에게 맹세하게 해야 한다. 그리고 이렇게 말해야 한다. \"다른 남자가 너와 잠자리를 같이한 적이 없고, 네가 남편을 배신하여 네 몸을 부정하게 하지 않았다면, 저주를 가져오는 이 쓴 물이 너를 해치지 않을 것이다."
         }
       },
       "decisions": [
@@ -2579,6 +3162,71 @@
           "reason": "The phrase means while bound to her husband in marriage (m1). Bare \"sous ton mari\" would be read sexually in French, so Literal brackets \"l'autorité de\"; Balanced says \"liée à lui\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040050190161",
+            "o040050190171",
+            "o040050190172"
+          ],
+          "choice": "\"trong khi thuộc quyền chồng ngươi\" for \"under your husband\" at Literal",
+          "alternatives": [
+            "\"dưới chồng ngươi\""
+          ],
+          "reason": "A word-for-word \"dưới chồng\" would be read physically; \"thuộc quyền chồng\" keeps the picture of being under the husband's authority in marriage, which the meaning decision describes.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o040050190071",
+            "o040050190081"
+          ],
+          "choice": "The priest speaks to the woman in 해라체 with \"너\"",
+          "alternatives": [
+            "합쇼체",
+            "해요체"
+          ],
+          "reason": "The priest pronounces a set oath in God's name, in the same plain style as the law around it; a polite style would make the words his own conversation rather than the formula of the rite. A reviewer may prefer a softer level here.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040050190161",
+            "o040050190171",
+            "o040050190172"
+          ],
+          "choice": "\"네 남편 아래 있으면서\" at Literal; \"남편에게 매인 몸으로\" at Balanced",
+          "alternatives": [
+            "결혼한 몸으로"
+          ],
+          "reason": "The Literal keeps the Hebrew \"under your husband\"; Balanced says the sense, bound to him in marriage.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2638,6 +3286,16 @@
           "L": "Lakini wewe, ikiwa umekengeuka ukiwa chini ya mumeo, na ikiwa umejitia unajisi, na mwanamume mwingine asiye mumeo amelala nawe —\"",
           "B": "Lakini ikiwa umekengeuka ukiwa umefungwa kwa mumeo, ikiwa umejitia unajisi na mwanamume mwingine asiye mumeo amelala nawe —\"",
           "R": "Lakini huenda umekosa uaminifu ulipokuwa umeolewa. Huenda umejitia unajisi kwa kulala na mwanamume asiye mumeo.\""
+        },
+        "vi": {
+          "L": "Nhưng ngươi, nếu ngươi đã lầm đường trong khi thuộc quyền chồng ngươi, và nếu ngươi đã làm ô uế mình, và một người đàn ông ngoài chồng ngươi đã nằm với ngươi —\"",
+          "B": "Nhưng nếu bà đã lầm đường trong khi đang thuộc về chồng mình, nếu bà đã làm ô uế mình và có người đàn ông nào khác ngoài chồng bà đã ăn nằm với bà —\"",
+          "R": "Nhưng có thể bà đã bất trung trong khi đang có chồng. Có thể bà đã làm mình bị ô uế khi ăn nằm với một người đàn ông không phải là chồng mình.\""
+        },
+        "ko": {
+          "L": "그러나 너, 만일 네가 네 남편 아래 있으면서 곁길로 나갔고, 만일 네가 네 몸을 더럽혀서, 네 남편 외에 어떤 남자가 너와 동침하였으면—\"",
+          "B": "그러나 네가 남편에게 매인 몸으로 곁길로 나가 네 몸을 더럽혔고, 네 남편 말고 다른 남자가 너와 동침하였다면—\"",
+          "R": "그러나 네가 남편과 결혼한 몸으로 남편을 배신했을 수도 있다. 네가 남편이 아닌 다른 남자와 잠자리를 같이하여 네 몸을 부정하게 했을 수도 있다.\""
         }
       },
       "decisions": [
@@ -2767,6 +3425,16 @@
           "L": "basi kuhani atamwapisha mwanamke kwa kiapo cha laana, na kuhani atamwambia mwanamke, \"{{divine_name:BWANA|Yahwe}} akufanye kuwa laana na kiapo katikati ya watu wako, {{divine_name:BWANA|Yahwe}} atakapolifanya paja lako lianguke na tumbo lako livimbe;",
           "B": "basi kuhani atamwapisha mwanamke kiapo cha laana, na kumwambia, \"{{divine_name:BWANA|Yahwe}} akufanye mfano unaotajwa katika laana na viapo kati ya watu wako, {{divine_name:BWANA|Yahwe}} atakapolifanya paja lako linyauke na tumbo lako livimbe.",
           "R": "Kisha lazima kuhani amwapishe mwanamke kiapo cha laana. Lazima amwambie, \"Ikiwa una hatia, {{divine_name:BWANA|Yahwe}} na alifanye jina lako kuwa laana ambayo watu wako wataitumia wanapoapa. {{divine_name:BWANA|Yahwe}} na aufanye mji wako wa uzazi unyauke na tumbo lako livimbe."
+        },
+        "vi": {
+          "L": "thì thầy tế lễ sẽ bắt người đàn bà thề lời thề nguyền rủa, và thầy tế lễ sẽ nói với người đàn bà: \"Nguyện {{divine_name:CHÚA|Gia-vê}} làm cho ngươi thành lời nguyền rủa và lời thề giữa dân ngươi, khi {{divine_name:CHÚA|Gia-vê}} làm cho đùi ngươi teo đi và bụng ngươi phình lên;",
+          "B": "thì thầy tế lễ phải bắt người đàn bà thề lời thề nguyền rủa và nói với nàng: \"Nguyện {{divine_name:CHÚA|Gia-vê}} làm cho tên bà thành câu người ta dùng khi nguyền rủa và thề thốt giữa dân bà, khi {{divine_name:CHÚA|Gia-vê}} làm cho đùi bà teo đi và bụng bà phình lên.",
+          "R": "Rồi thầy tế lễ phải bắt người vợ thề lời thề nguyền rủa. Ông phải nói với cô: \"Nếu bà có tội, nguyện {{divine_name:CHÚA|Gia-vê}} làm cho tên bà thành lời nguyền rủa mà dân bà dùng khi thề thốt. Nguyện {{divine_name:CHÚA|Gia-vê}} làm cho dạ con bà teo lại và bụng bà phình lên."
+        },
+        "ko": {
+          "L": "그때에 제사장은 그 여자에게 저주의 맹세로 맹세하게 하고, 제사장은 그 여자에게 말해야 한다. \"{{divine_name:주|야훼}}께서 네 넓적다리를 떨어지게 하시고 네 배를 부어오르게 하실 때에, {{divine_name:주|야훼}}께서 너를 네 백성 가운데서 저주와 맹세[의 본보기]가 되게 하시기를 바란다.",
+          "B": "제사장은 그 여자에게 저주의 맹세를 하게 하고 이렇게 말해야 한다. \"{{divine_name:주|야훼}}께서 네 넓적다리를 마르게 하시고 네 배를 부어오르게 하실 때에, {{divine_name:주|야훼}}께서 너를 네 백성이 저주하고 맹세할 때 들먹이는 본보기가 되게 하시기를 바란다.",
+          "R": "그다음에 제사장은 그 여자에게 저주의 맹세를 하게 해야 한다. 그리고 이렇게 말해야 한다. \"네게 죄가 있다면, {{divine_name:주|야훼}}께서 네 이름을 저주로 삼으셔서 네 백성이 맹세할 때 네 이름을 들먹이게 하시기를 바란다. {{divine_name:주|야훼}}께서 네 태를 오그라들게 하시고 네 배를 부어오르게 하시기를 바란다."
         }
       },
       "decisions": [
@@ -2925,6 +3593,51 @@
           "reason": "Readable names the womb, as the English does (m2). \"Mji wa uzazi\" is the common Swahili term and keeps it apart from \"tumbo\" (belly), which is in the same sentence.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040050210201",
+            "o040050210231"
+          ],
+          "choice": "\"đùi ... teo đi\" (L, B), \"dạ con ... teo lại\" (R); \"bụng ... phình lên\"",
+          "alternatives": [
+            "\"đùi bị sa xuống\""
+          ],
+          "reason": "Literal and Balanced keep the Hebrew \"thigh\"; Readable says \"dạ con\" (womb), as the English Readable does, because the meaning decision says the harm ends her ability to bear children.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040050210201",
+            "o040050210211",
+            "o040050210231",
+            "o040050210241"
+          ],
+          "choice": "\"넓적다리\" for the thigh at Literal and Balanced; \"태\" (womb) at Readable",
+          "alternatives": [
+            "허벅지"
+          ],
+          "reason": "Literal and Balanced keep the Hebrew body word, which the footnoted meaning decision explains as harm that ends her ability to bear children; Readable follows the English Readable in naming the womb.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2986,6 +3699,16 @@
           "L": "na maji haya yaletayo laana yaingie matumboni mwako, kulifanya tumbo [lako] livimbe na paja [lako] lianguke.\" Na mwanamke atasema, \"Amina, amina.\"",
           "B": "Maji haya yaletayo laana na yaingie ndani yako, yalifanye tumbo lako livimbe na paja lako linyauke.\" Na mwanamke atasema, \"Amina, amina.\"",
           "R": "Maji haya yaletayo laana na yaingie mwilini mwako. Na yalifanye tumbo lako livimbe na mji wako wa uzazi unyauke.\" Kisha lazima mwanamke aseme, \"Amina, amina.\""
+        },
+        "vi": {
+          "L": "và nguyện nước mang lời nguyền rủa này vào trong ruột gan ngươi, làm cho bụng [ngươi] phình lên và đùi [ngươi] teo đi.\" Và người đàn bà sẽ nói: \"A-men, a-men.\"",
+          "B": "Nguyện nước mang lời nguyền rủa này vào trong mình bà, làm cho bụng bà phình lên và đùi bà teo đi.\" Người đàn bà phải đáp: \"A-men, a-men.\"",
+          "R": "Nguyện nước mang lời nguyền rủa này vào trong thân thể bà, làm cho bụng bà phình lên và dạ con bà teo lại.\" Rồi người vợ phải nói: \"A-men, a-men.\""
+        },
+        "ko": {
+          "L": "그리고 저주를 가져오는 이 물이 네 창자 속으로 들어가서, [네] 배를 부어오르게 하고 [네] 넓적다리를 떨어지게 하기를 바란다.\" 그러면 그 여자는 \"아멘, 아멘\" 하고 말해야 한다.",
+          "B": "저주를 가져오는 이 물이 네 몸속에 들어가서, 네 배를 부어오르게 하고 네 넓적다리를 마르게 하기를 바란다.\" 그러면 그 여자는 \"아멘, 아멘\" 하고 말해야 한다.",
+          "R": "저주를 가져오는 이 물이 네 몸속으로 들어가기를 바란다. 이 물이 네 배를 부어오르게 하고 네 태를 오그라들게 하기를 바란다.\" 그러면 그 여자는 \"아멘, 아멘\" 하고 말해야 한다."
         }
       },
       "decisions": [
@@ -3104,6 +3827,16 @@
           "L": "Na kuhani ataandika laana hizi katika gombo, na kuzifuta [ziingie] ndani ya maji ya uchungu.",
           "B": "Kuhani ataziandika laana hizi katika gombo, kisha aoshe maandishi hayo ndani ya maji machungu.",
           "R": "Kisha lazima kuhani aandike laana hizi katika gombo. Lazima aoshe wino wake ndani ya maji machungu."
+        },
+        "vi": {
+          "L": "Và thầy tế lễ sẽ viết những lời nguyền rủa này vào cuộn sách, và xóa [chúng] vào trong nước đắng.",
+          "B": "Thầy tế lễ phải viết những lời nguyền rủa này vào một cuộn sách rồi rửa chữ cho tan vào nước đắng.",
+          "R": "Rồi thầy tế lễ phải viết những lời nguyền rủa này lên một cuộn sách. Ông phải rửa cho mực tan vào nước đắng."
+        },
+        "ko": {
+          "L": "그리고 제사장은 이 저주들을 두루마리에 써서, 쓰라림의 물에 씻어 넣어야 한다.",
+          "B": "제사장은 이 저주의 말을 두루마리에 쓴 다음, 그 글씨를 쓴 물에 씻어 넣어야 한다.",
+          "R": "그다음에 제사장은 이 저주의 말을 두루마리에 써야 한다. 그리고 그 먹물을 쓴 물에 씻어 넣어야 한다."
         }
       },
       "decisions": [
@@ -3210,6 +3943,16 @@
           "L": "Naye atamnywesha mwanamke maji ya uchungu yaletayo laana, na maji yaletayo laana yataingia ndani yake [kuwa] uchungu.",
           "B": "Atamnywesha mwanamke maji machungu yaletayo laana, nayo maji hayo yataingia ndani yake na kumletea maumivu ya uchungu.",
           "R": "Lazima amnyweshe mwanamke maji machungu yaletayo laana. Maji hayo yataingia mwilini mwake ili kumletea maumivu ya uchungu."
+        },
+        "vi": {
+          "L": "Và ông sẽ cho người đàn bà uống nước đắng mang lời nguyền rủa, và nước mang lời nguyền rủa sẽ vào trong nàng [để trở nên] cay đắng.",
+          "B": "Ông phải cho người đàn bà uống nước đắng mang lời nguyền rủa, và nước ấy sẽ vào trong nàng, gây đau đớn cay đắng.",
+          "R": "Ông phải cho người vợ uống nước đắng mang lời nguyền rủa. Nước ấy sẽ vào trong thân thể cô và gây đau đớn cay đắng."
+        },
+        "ko": {
+          "L": "그리고 그는 그 여자에게 저주를 가져오는 쓰라림의 물을 마시게 할 것이며, 저주를 가져오는 물이 그 여자 속에 들어가 쓰라림이 될 것이다.",
+          "B": "제사장은 그 여자에게 저주를 가져오는 쓴 물을 마시게 해야 한다. 그러면 이 물이 그 여자 속에 들어가 쓰라린 고통을 줄 것이다.",
+          "R": "제사장은 그 여자에게 저주를 가져오는 쓴 물을 마시게 해야 한다. 그 물은 그 여자의 몸속에 들어가 쓰라린 고통을 일으킬 것이다."
         }
       },
       "decisions": [
@@ -3307,6 +4050,16 @@
           "L": "Na kuhani atachukua mkononi mwa mwanamke sadaka ya nafaka ya wivu, na kuitikisa sadaka ya nafaka mbele ya {{divine_name:BWANA|Yahwe}}, na kuileta karibu na madhabahu.",
           "B": "Kuhani atachukua kutoka mkononi mwa mwanamke sadaka ya nafaka ya wivu. Ataitikisa sadaka hiyo mbele ya {{divine_name:BWANA|Yahwe}} na kuileta madhabahuni.",
           "R": "Lazima kuhani achukue kutoka mkononi mwa mwanamke sadaka ya nafaka inayohusu wivu. Lazima aiinue mbele ya {{divine_name:BWANA|Yahwe}} kuwa zawadi {{deity_pronoun:kwake|Kwake}}, kisha ailete madhabahuni."
+        },
+        "vi": {
+          "L": "Và thầy tế lễ sẽ lấy từ tay người đàn bà tế lễ ngũ cốc về sự ghen tuông, và đưa tế lễ ngũ cốc qua lại trước mặt {{divine_name:CHÚA|Gia-vê}}, và đem nó đến gần bàn thờ.",
+          "B": "Thầy tế lễ phải lấy tế lễ ngũ cốc về sự ghen tuông từ tay người đàn bà, đưa qua đưa lại trước mặt {{divine_name:CHÚA|Gia-vê}}, rồi dâng lên tại bàn thờ.",
+          "R": "Thầy tế lễ phải lấy tế lễ ngũ cốc về sự ghen tuông từ tay người vợ. Ông phải đưa nó lên trước mặt {{divine_name:CHÚA|Gia-vê}} như một lễ vật dâng cho {{deity_pronoun:ngài|Ngài}}, rồi đem đến bàn thờ."
+        },
+        "ko": {
+          "L": "그리고 제사장은 그 여자의 손에서 질투의 곡식 제물을 받아, 그 곡식 제물을 {{divine_name:주|야훼}} 앞에서 흔들고, 그것을 제단으로 가까이 가져가야 한다.",
+          "B": "제사장은 그 여자의 손에서 질투 때문에 바치는 곡식 제물을 받아 {{divine_name:주|야훼}} 앞에서 흔들어 바치고, 그것을 제단으로 가져가야 한다.",
+          "R": "제사장은 그 여자의 손에서 질투 때문에 바치는 곡식 제물을 받아야 한다. 그리고 그것을 {{divine_name:주|야훼}} 앞에서 들어 올려 그분께 드리는 예물로 바친 다음, 제단으로 가져가야 한다."
         }
       },
       "decisions": [
@@ -3416,6 +4169,16 @@
           "L": "Na kuhani atachukua konzi kutoka katika sadaka ya nafaka, sehemu yake ya ukumbusho, na kuifukiza juu ya madhabahu, na baada [ya hayo] atamnywesha mwanamke maji.",
           "B": "Kisha kuhani atachukua konzi ya sadaka ya nafaka, sehemu yake ya ukumbusho, na kuifukiza juu ya madhabahu; ndipo baadaye amnyweshe mwanamke maji.",
           "R": "Kisha lazima kuhani achukue konzi moja ya sadaka ya nafaka. Hiyo ndiyo sehemu inayochomwa ili kukumbusha. Lazima aichome juu ya madhabahu. Baada ya hapo, lazima amnyweshe mwanamke maji."
+        },
+        "vi": {
+          "L": "Và thầy tế lễ sẽ bốc một nắm từ tế lễ ngũ cốc, [là] phần tưởng niệm của nó, và làm [nó] bốc khói trên bàn thờ, và sau [đó] ông sẽ cho người đàn bà uống nước.",
+          "B": "Rồi thầy tế lễ phải bốc một nắm tế lễ ngũ cốc làm phần tưởng niệm và thiêu trên bàn thờ, sau đó mới cho người đàn bà uống nước.",
+          "R": "Rồi thầy tế lễ phải bốc một nắm tế lễ ngũ cốc. Đây là phần được thiêu để nhắc nhớ. Ông phải thiêu phần ấy trên bàn thờ. Sau đó ông phải cho người vợ uống nước."
+        },
+        "ko": {
+          "L": "그리고 제사장은 그 곡식 제물에서 그 기념 몫으로 한 움큼을 집어 제단 위에서 살라 연기로 올리고, 그 뒤에 그 여자에게 그 물을 마시게 해야 한다.",
+          "B": "그다음에 제사장은 곡식 제물에서 기념 몫으로 한 움큼을 집어 제단 위에서 살라 연기로 올리고, 그 뒤에야 그 여자에게 물을 마시게 해야 한다.",
+          "R": "그다음에 제사장은 곡식 제물을 한 움큼 집어야 한다. 이것은 하나님께서 기억하시도록 태워 바치는 부분이다. 그는 그것을 제단 위에서 태워야 한다. 그런 다음에 그 여자에게 그 물을 마시게 해야 한다."
         }
       },
       "decisions": [
@@ -3459,6 +4222,27 @@
           "choice": "afterward: the woman drinks once the offering has been made",
           "alternatives": [],
           "reason": "This sets the order of the ritual: the offering first, then the water (compare verse 24).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040050260061",
+            "o040050260062"
+          ],
+          "choice": "\"phần tưởng niệm\" for the memorial portion",
+          "alternatives": [
+            "\"phần kỷ niệm\""
+          ],
+          "reason": "The word Leviticus 2 and 5 already use in Vietnamese for the handful burned on the altar.",
           "uncertain": false,
           "footnote": false
         }
@@ -3542,6 +4326,16 @@
           "L": "Naye atamnywesha maji, na itakuwa, ikiwa amejitia unajisi na kuvunja uaminifu kwa mumewe, maji yaletayo laana yataingia ndani yake [kuwa] uchungu, na tumbo lake litavimba na paja lake litaanguka, na mwanamke huyo atakuwa laana katikati ya watu wake.",
           "B": "Akisha kunywa maji hayo, ikiwa kweli amejitia unajisi na kuvunja uaminifu kwa mumewe, maji yaletayo laana yataingia ndani yake na kumletea maumivu ya uchungu. Tumbo lake litavimba, paja lake litanyauka, na jina lake litakuwa laana kati ya watu wake.",
           "R": "Akisha kunywa maji, hiki ndicho kitakachotokea ikiwa amejitia unajisi na kukosa uaminifu kwa mumewe: maji yaletayo laana yataingia ndani yake na kumletea maumivu ya uchungu. Tumbo lake litavimba na mji wake wa uzazi utanyauka. Watu wake watalitumia jina lake wanapomlaani mtu."
+        },
+        "vi": {
+          "L": "Và ông sẽ cho nàng uống nước, và sẽ xảy ra, nếu nàng đã làm ô uế mình và bất trung với chồng mình, thì nước mang lời nguyền rủa sẽ vào trong nàng [để trở nên] cay đắng, bụng nàng sẽ phình lên và đùi nàng sẽ teo đi, và người đàn bà ấy sẽ trở thành lời nguyền rủa giữa dân mình.",
+          "B": "Khi nàng đã uống nước ấy, nếu nàng quả thật đã làm ô uế mình và bất trung với chồng, thì nước mang lời nguyền rủa sẽ vào trong nàng và gây đau đớn cay đắng. Bụng nàng sẽ phình lên, đùi nàng sẽ teo đi, và tên nàng sẽ thành lời nguyền rủa giữa dân mình.",
+          "R": "Sau khi cô uống nước ấy, nếu cô đã làm mình bị ô uế và bất trung với chồng, thì đây là điều sẽ xảy ra. Nước mang lời nguyền rủa sẽ vào trong cô và gây đau đớn cay đắng. Bụng cô sẽ phình lên và dạ con cô sẽ teo lại. Dân của cô sẽ dùng tên cô khi nguyền rủa ai."
+        },
+        "ko": {
+          "L": "그리고 그가 그 여자에게 그 물을 마시게 하였을 때, 만일 그 여자가 자기를 더럽혀 자기 남편에게 신의를 저버리는 일을 저질렀으면, 저주를 가져오는 물이 그 여자 속에 들어가 쓰라림이 되어, 그 여자의 배가 부어오르고 그 여자의 넓적다리가 떨어질 것이며, 그 여자는 자기 백성 가운데서 저주가 될 것이다.",
+          "B": "그 여자가 그 물을 마셨을 때, 만일 그 여자가 정말로 자기를 더럽혀 남편에게 신의를 저버렸다면, 저주를 가져오는 물이 그 여자 속에 들어가 쓰라린 고통을 줄 것이다. 그 여자의 배는 부어오르고 넓적다리는 마를 것이며, 그 여자의 이름은 자기 백성 가운데서 저주가 될 것이다.",
+          "R": "그 여자가 그 물을 마신 뒤, 만일 그 여자가 자기를 부정하게 하여 남편을 배신했다면 이런 일이 일어날 것이다. 저주를 가져오는 물이 그 여자 속에 들어가 쓰라린 고통을 일으킬 것이다. 그 여자의 배는 부어오르고 태는 오그라들 것이다. 그 여자의 백성은 누구를 저주할 때 그 여자의 이름을 들먹일 것이다."
         }
       },
       "decisions": [
@@ -3656,6 +4450,16 @@
           "L": "Na ikiwa mwanamke hajajitia unajisi, bali yeye ni safi, basi atakuwa huru, naye atapandwa mbegu.",
           "B": "Lakini ikiwa mwanamke hajajitia unajisi, naye ni safi, ataonekana hana hatia, naye atapata mimba na kuzaa watoto.",
           "R": "Lakini ikiwa mwanamke hajajitia unajisi, naye ni safi, hatadhurika. Ataweza kuzaa watoto."
+        },
+        "vi": {
+          "L": "Và nếu người đàn bà không làm ô uế mình, nhưng nàng tinh sạch, thì nàng sẽ được vô can và sẽ được gieo giống.",
+          "B": "Nhưng nếu người đàn bà không làm ô uế mình và vẫn tinh sạch, thì nàng sẽ được minh oan và sẽ thụ thai sinh con.",
+          "R": "Nhưng nếu người vợ không làm mình bị ô uế và vẫn tinh sạch, thì cô sẽ không bị hại gì. Cô sẽ có thể sinh con."
+        },
+        "ko": {
+          "L": "그러나 만일 그 여자가 자기를 더럽히지 않고 정결하면, 그 여자는 [해를] 면하고 씨를 받아 [임신할] 것이다.",
+          "B": "그러나 그 여자가 자기를 더럽히지 않고 정결하다면, 그 여자는 혐의를 벗고 자식을 낳을 수 있을 것이다.",
+          "R": "그러나 그 여자가 자기를 부정하게 하지 않았고 정결하다면, 그 여자는 아무 해도 입지 않을 것이다. 그 여자는 아이를 가질 수 있을 것이다."
         }
       },
       "decisions": [
@@ -3769,6 +4573,16 @@
           "L": "Hii [ndiyo] sheria ya wivu, mke atakapokengeuka akiwa chini ya mumewe na kujitia unajisi,",
           "B": "Hii ndiyo sheria kwa mambo ya wivu, mke aliyefungwa kwa mumewe anapokengeuka na kujitia unajisi,",
           "R": "Hii ndiyo sheria kuhusu wivu. Ni kwa ajili ya mke anayekosa uaminifu kwa mumewe na kujitia unajisi."
+        },
+        "vi": {
+          "L": "Đây [là] luật về sự ghen tuông, khi người vợ lầm đường trong khi thuộc quyền chồng và làm ô uế mình,",
+          "B": "Đây là luật cho những trường hợp ghen tuông, khi một người vợ đang thuộc về chồng mình lầm đường và làm ô uế mình,",
+          "R": "Đây là luật về sự ghen tuông. Luật này dành cho người vợ bất trung với chồng và làm mình bị ô uế."
+        },
+        "ko": {
+          "L": "이것이 질투의 법이니, 아내가 자기 남편 아래 있으면서 곁길로 나가 자기를 더럽혔을 때나,",
+          "B": "이것이 질투에 관한 법이다. 남편에게 매인 아내가 곁길로 나가 자기를 더럽혔을 때나,",
+          "R": "이것이 질투에 관한 법이다. 이 법은 남편을 배신하여 자기를 부정하게 한 아내에 관한 것이다."
         }
       },
       "decisions": [
@@ -3870,6 +4684,16 @@
           "L": "au mwanamume ambaye roho ya wivu inampitia, naye anamwonea wivu mkewe; naye atamsimamisha mwanamke mbele ya {{divine_name:BWANA|Yahwe}}, na kuhani atamfanyia sheria hii yote.",
           "B": "au mwanamume anapojiwa na wivu mkali na kumwonea mkewe wivu. Atamsimamisha mwanamke mbele ya {{divine_name:BWANA|Yahwe}}, na kuhani atamfanyia kila kitu ambacho sheria hii inaagiza.",
           "R": "Pia ni kwa ajili ya mume anayeingiwa na wivu na kumshuku mkewe. Lazima amsimamishe mkewe mbele ya {{divine_name:BWANA|Yahwe}}, na kuhani lazima afanye kila kitu ambacho sheria hii inasema."
+        },
+        "vi": {
+          "L": "hoặc một người đàn ông có cơn ghen tuông đến trên mình và ghen với vợ mình; thì người ấy sẽ cho người đàn bà đứng trước mặt {{divine_name:CHÚA|Gia-vê}}, và thầy tế lễ sẽ làm cho nàng mọi điều của luật này.",
+          "B": "hoặc khi một người đàn ông nổi cơn ghen với vợ mình. Người ấy phải cho người đàn bà đứng trước mặt {{divine_name:CHÚA|Gia-vê}}, và thầy tế lễ phải làm cho nàng mọi điều luật này đòi hỏi.",
+          "R": "Luật này cũng dành cho người chồng nổi ghen và nghi ngờ vợ mình. Người ấy phải cho vợ đứng trước mặt {{divine_name:CHÚA|Gia-vê}}, và thầy tế lễ phải làm mọi điều luật này dạy."
+        },
+        "ko": {
+          "L": "또는 질투의 영이 어떤 남자에게 임하여 그가 자기 아내를 질투할 때[의 법이다]. 그는 그 여자를 {{divine_name:주|야훼}} 앞에 세우고, 제사장은 이 법을 모두 그 여자에게 행해야 한다.",
+          "B": "또는 남편이 질투심에 사로잡혀 아내를 의심할 때의 법이다. 그는 아내를 {{divine_name:주|야훼}} 앞에 세워야 하고, 제사장은 이 법이 정한 모든 것을 그 여자에게 행해야 한다.",
+          "R": "또 질투심에 사로잡혀 아내를 의심하는 남편에 관한 것이기도 하다. 그는 아내를 {{divine_name:주|야훼}} 앞에 세워야 하고, 제사장은 이 법에 적힌 대로 다 해야 한다."
         }
       },
       "decisions": [
@@ -3971,6 +4795,16 @@
           "L": "Na mume atakuwa huru na uovu, na mwanamke huyo atabeba uovu wake.'\"",
           "B": "Mume hatakuwa na hatia, lakini mwanamke mwenyewe atabeba hatia yake.'\"",
           "R": "Mume hatakuwa na hatia yoyote. Lakini ikiwa mwanamke ana hatia, lazima apate matokeo ya dhambi yake.'\""
+        },
+        "vi": {
+          "L": "Và người chồng sẽ vô can về sự gian ác, còn người đàn bà ấy sẽ mang lấy sự gian ác của mình.'\"",
+          "B": "Người chồng sẽ không mắc tội, nhưng chính người đàn bà phải mang lấy tội lỗi của mình.'\"",
+          "R": "Người chồng sẽ không có lỗi gì. Nhưng nếu người vợ có tội, cô ấy phải chịu hậu quả của tội mình.'\""
+        },
+        "ko": {
+          "L": "그리고 그 남자는 죄악에서 벗어날 것이고, 그 여자는 자기 죄악을 짊어질 것이다.'\"",
+          "B": "남편은 죄책을 벗을 것이고, 그 여자는 자기 죄책을 스스로 져야 한다.'\"",
+          "R": "남편은 아무 잘못이 없다. 그러나 그 여자에게 죄가 있다면, 그 여자가 자기 죄의 대가를 치러야 한다.'\""
         }
       },
       "decisions": [

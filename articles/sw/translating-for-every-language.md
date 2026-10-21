@@ -4,7 +4,7 @@ summary: Jinsi karne ya ishirini ilivyoifanya tafsiri ya Biblia kuwa kazi ya uli
 date: 2026-10-12
 order: 58
 section: translation
-source: f6ad6f3b1e4b
+source: 74135636865a
 ---
 Kuna zaidi ya lugha hai elfu saba ulimwenguni. Baadhi zinazungumzwa na mamia ya mamilioni ya watu, nyingine na watu mia chache. Kwa sehemu kubwa ya historia, tafsiri ya Biblia ilifikia sehemu ndogo tu ya lugha hizo. Katika karne ya ishirini hilo lilibadilika. Tafsiri ikawa juhudi ya makusudi, iliyopangwa na inayozidi kuwa ya kitaalamu ya kufikia kila lugha, na katika miongo ya karibuni imekuwa, zaidi ya yote, kazi ya wazungumzaji wa lugha hizo wenyewe.
 
@@ -73,7 +73,7 @@ Suala hili linategemea tofauti inayopita katika tafsiri yote: kati ya kile ambac
 
 ## Nafasi ya Open Word Bible
 
-Open Word Bible si mradi wa lugha za watu wachache. Lugha zake hadi sasa ni Kiingereza, Kihispania, Kifaransa na Kiswahili, ambazo zote tayari zina Biblia nyingi. Lakini inashiriki mambo mawili ambayo vuguvugu la kisasa linayajali. Leseni yake ya CC0 inamaanisha kwamba mtu yeyote, wakiwemo watafsiri wa lugha nyingine, anaweza kuitumia na kuirekebisha kwa uhuru. Na kwa kuwa kila sentensi inabeba sababu zake (ona [Kuonyesha kazi yetu: rekodi ya sababu ni nini](/articles/showing-the-work/)), mtafsiri wa lugha nyingine anaweza kuona kile kilichoamuliwa kuhusu Kigiriki na Kiebrania, si matokeo ya Kiingereza tu. Rasimu zake zimetengenezwa kwa msaada wa AI, na hakuna hata moja iliyowekewa alama ya "imekaguliwa" bado; kama kila mradi ulioelezwa hapa, inategemea wakaguzi wa kibinadamu ambao majina yao yanaandikwa.
+Open Word Bible si mradi wa lugha za watu wachache. Lugha zake hadi sasa ni Kiingereza, Kihispania, Kifaransa, Kiswahili, Kivietinamu na Kikorea, ambazo zote tayari zina Biblia nyingi. Lakini inashiriki mambo mawili ambayo vuguvugu la kisasa linayajali. Leseni yake ya CC0 inamaanisha kwamba mtu yeyote, wakiwemo watafsiri wa lugha nyingine, anaweza kuitumia na kuirekebisha kwa uhuru. Na kwa kuwa kila sentensi inabeba sababu zake (ona [Kuonyesha kazi yetu: rekodi ya sababu ni nini](/articles/showing-the-work/)), mtafsiri wa lugha nyingine anaweza kuona kile kilichoamuliwa kuhusu Kigiriki na Kiebrania, si matokeo ya Kiingereza tu. Rasimu zake zimetengenezwa kwa msaada wa AI, na hakuna hata moja iliyowekewa alama ya "imekaguliwa" bado; kama kila mradi ulioelezwa hapa, inategemea wakaguzi wa kibinadamu ambao majina yao yanaandikwa.
 
 ## Vyanzo
 

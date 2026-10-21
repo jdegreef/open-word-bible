@@ -59,6 +59,16 @@
           "L": "Naye Yethro, kuhani wa Midiani, baba mkwe wa Musa, alisikia yote ambayo Mungu alikuwa amemtendea Musa na Israeli watu {{deity_pronoun:wake|Wake}}, kwamba {{divine_name:BWANA|Yahwe}} alikuwa amewatoa Israeli Misri.",
           "B": "Yethro, kuhani wa Midiani na baba mkwe wa Musa, alipata habari za yote ambayo Mungu alikuwa amemtendea Musa na Israeli, watu {{deity_pronoun:wake|Wake}}: {{divine_name:BWANA|Yahwe}} alikuwa amewatoa Israeli Misri.",
           "R": "Yethro alikuwa kuhani wa Midiani, tena baba mkwe wa Musa. Alisikia habari za mambo yote ambayo Mungu alikuwa amemfanyia Musa na Israeli, watu {{deity_pronoun:wake|Wake}}. Alisikia jinsi {{divine_name:BWANA|Yahwe}} alivyowatoa Israeli Misri."
+        },
+        "vi": {
+          "L": "Và Giê-trô, thầy tế lễ của Ma-đi-an, cha vợ của Môi-se, nghe mọi điều Đức Chúa Trời đã làm cho Môi-se và cho Y-sơ-ra-ên, dân {{deity_pronoun:ngài|Ngài}}, rằng {{divine_name:CHÚA|Gia-vê}} đã đem Y-sơ-ra-ên ra khỏi Ai Cập.",
+          "B": "Giê-trô, thầy tế lễ xứ Ma-đi-an và là cha vợ của Môi-se, nghe tin về mọi điều Đức Chúa Trời đã làm cho Môi-se và cho Y-sơ-ra-ên, dân của {{deity_pronoun:ngài|Ngài}}: {{divine_name:CHÚA|Gia-vê}} đã đem Y-sơ-ra-ên ra khỏi Ai Cập.",
+          "R": "Giê-trô là thầy tế lễ xứ Ma-đi-an và là cha vợ của Môi-se. Ông nghe về mọi điều Đức Chúa Trời đã làm cho Môi-se và cho Y-sơ-ra-ên, dân của {{deity_pronoun:ngài|Ngài}}. Ông nghe kể {{divine_name:CHÚA|Gia-vê}} đã đem Y-sơ-ra-ên ra khỏi Ai Cập như thế nào."
+        },
+        "ko": {
+          "L": "그리고 미디안의 제사장이며 모세의 장인인 이드로가, 하나님께서 모세와 그분의 백성 이스라엘을 위하여 하신 모든 일, 곧 {{divine_name:주|야훼}}께서 이스라엘을 이집트에서 이끌어 내신 일을 들었다.",
+          "B": "미디안의 제사장이자 모세의 장인인 이드로는, 하나님께서 모세와 그분의 백성 이스라엘을 위하여 하신 모든 일을 전해 들었다. {{divine_name:주|야훼}}께서 이스라엘을 이집트에서 이끌어 내신 것이다.",
+          "R": "이드로는 미디안의 제사장이었고 모세의 장인이었다. 그는 하나님께서 모세와 그분의 백성 이스라엘을 위해 하신 모든 일을 들었다. {{divine_name:주|야훼}}께서 이스라엘을 이집트에서 이끌어 내셨다는 소식을 들은 것이다."
         }
       },
       "decisions": [
@@ -132,6 +142,70 @@
           "reason": "French written narrative uses the passé simple; Readable uses the passé composé of everyday French, as docs/french-style.md sets for every narrative passage.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020180010141",
+            "o020180010142"
+          ],
+          "choice": "\"그분의 백성\", with no deity_pronoun span",
+          "alternatives": [
+            "a span as in the English"
+          ],
+          "reason": "Korean has no capital letters, so the deity_pronoun setting has nothing to change; respect for God is carried by \"그분\" and the honorific \"-시-\" at every level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020180010021",
+            "o020180010051"
+          ],
+          "choice": "\"이드로\", \"장인\"",
+          "alternatives": [
+            "\"르우엘\""
+          ],
+          "reason": "Moses' father-in-law is called Jethro here, so Korean uses the term sheet's \"이드로\"; \"장인\" is the ordinary word for a wife's father.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020180010021",
+            "o020180010041"
+          ],
+          "choice": "\"Giê-trô\", \"Ma-đi-an\", \"cha vợ\"",
+          "alternatives": [],
+          "reason": "The names are the term sheet's forms; \"cha vợ\" is the plain word for a wife's father, used at every level.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -181,6 +255,16 @@
           "L": "Naye Yethro, baba mkwe wa Musa, akamchukua Sipora, mke wa Musa, baada ya kurudishwa kwake,",
           "B": "Yethro, baba mkwe wa Musa, alikuwa amempokea Sipora, mke wa Musa, baada ya Musa kumrudisha nyumbani kwa baba yake,",
           "R": "Musa alikuwa amemrudisha mkewe Sipora kwa jamaa yake, na baba yake Yethro alikuwa amempokea."
+        },
+        "vi": {
+          "L": "Và Giê-trô, cha vợ của Môi-se, đã đón Sê-phô-ra, vợ của Môi-se, sau khi nàng bị gửi về,",
+          "B": "Trước đó, Môi-se đã gửi Sê-phô-ra, vợ ông, về nhà cha nàng, và Giê-trô, cha vợ Môi-se, đã đón nàng về,",
+          "R": "Trước đó Môi-se đã gửi vợ ông là Sê-phô-ra về với gia đình nàng, và Giê-trô, cha nàng, đã nhận nàng về nhà."
+        },
+        "ko": {
+          "L": "그리고 모세의 장인 이드로가, 모세의 아내 십보라를 그가 돌려보낸 뒤에 데리고 있었고,",
+          "B": "모세의 장인 이드로는, 모세가 돌려보냈던 그의 아내 십보라를 맡아 데리고 있었고,",
+          "R": "모세는 전에 아내 십보라를 친정으로 돌려보냈는데, 그녀의 아버지 이드로가 그녀를 데리고 있었다."
         }
       },
       "decisions": [
@@ -218,6 +302,44 @@
           "choice": "Moses had sent her back",
           "alternatives": [],
           "reason": "The Hebrew has only a noun, \"her sending away\". Balanced and Readable name Moses as the one who sent her and say where she went.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o020180020101",
+            "o020180020102"
+          ],
+          "choice": "\"그가 돌려보낸 뒤에\"",
+          "alternatives": [
+            "\"그녀를 보낸 뒤에\""
+          ],
+          "reason": "Korean needs a subject for \"her sending away\"; the meaning decision reads it as Moses sending her back, so the Literal names him by \"그가\" rather than leaving the verb without one.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o020180020101"
+          ],
+          "choice": "\"Trước đó, Môi-se đã gửi\" placed first (B, R)",
+          "alternatives": [],
+          "reason": "Vietnamese tells the earlier event first, so Balanced and Readable begin with Moses sending her back, the step the English supplies (meaning decision).",
           "uncertain": false,
           "footnote": false
         }
@@ -274,6 +396,16 @@
           "L": "na wana wake wawili, ambao jina la mmoja [lilikuwa] Gershomu, kwa kuwa alisema, \"Nimekuwa mgeni katika nchi ya kigeni,\"",
           "B": "pamoja na wanawe wawili. Mmoja wao aliitwa Gershomu, kwa sababu Musa alikuwa amesema, \"Nimekuwa mgeni katika nchi ya kigeni.\"",
           "R": "Pia alikuwa amewapokea wana wawili wa Sipora. Mwana mmoja aliitwa Gershomu, jina linalofanana na maneno ya Kiebrania yenye maana \"mgeni huko.\" Musa alimpa jina hilo kwa sababu alisema, \"Nimekuwa mgeni katika nchi isiyo yangu.\""
+        },
+        "vi": {
+          "L": "và hai con trai của nàng, mà tên của một người [là] Ghẹt-sôm, vì ông đã nói: \"Tôi là ngoại kiều trong một xứ lạ\",",
+          "B": "cùng với hai con trai của nàng. Một người tên là Ghẹt-sôm, vì Môi-se đã nói: \"Tôi là ngoại kiều nơi đất khách.\"",
+          "R": "Giê-trô cũng nhận hai con trai của nàng. Một con tên là Ghẹt-sôm, tên này nghe giống như tiếng Hê-bơ-rơ có nghĩa là \"người lạ ở đó\". Môi-se đặt tên ấy vì ông nói: \"Tôi là người lạ ở nơi đất khách.\""
+        },
+        "ko": {
+          "L": "그리고 그녀의 두 아들도 [데리고 있었다]. 그 가운데 하나의 이름은 게르솜이었다. 그가 \"내가 외국 땅에서 나그네가 되었다\" 하고 말했기 때문이다.",
+          "B": "그녀의 두 아들도 함께 있었다. 한 아들의 이름은 게르솜이었다. 모세가 \"내가 낯선 땅에서 나그네가 되었다\" 하고 말했기 때문이다.",
+          "R": "이드로는 십보라의 두 아들도 데리고 있었다. 한 아들의 이름은 게르솜이었는데, 히브리 말로 '그곳의 나그네'라는 말처럼 들린다. 모세가 \"내가 낯선 나라에서 나그네로 살았다\" 하고 말해서 그렇게 이름을 지었다."
         }
       },
       "decisions": [
@@ -344,6 +476,48 @@
           "reason": "\"Gersón\" is already the Spanish form for Gershon son of Levi (Genesis 46:11); \"Gersom\" keeps Moses' son distinct and stays closer to the Hebrew name.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020180030071",
+            "o020180030101"
+          ],
+          "choice": "\"게르솜\" with \"나그네\"",
+          "alternatives": [
+            "\"이방인\", \"외국인\""
+          ],
+          "reason": "The name plays on the Hebrew word for a sojourner; Korean keeps the name and uses \"나그네\", the term sheet's word for a sojourner (ger), so the explanation points to the same word the laws use.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020180030071",
+            "o020180030101"
+          ],
+          "choice": "\"Ghẹt-sôm\"; \"ngoại kiều\" (L, B), \"người lạ\" (R)",
+          "alternatives": [],
+          "reason": "\"ngoại kiều\" is the term sheet's word for the sojourner; Readable uses the plain \"người lạ\" so that the explanation of the name stays simple, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -399,6 +573,16 @@
           "L": "na jina la yule mwingine [lilikuwa] Eliezeri, kwa kuwa, \"Mungu wa baba yangu [alikuwa] msaada wangu, {{deity_pronoun:naye|Naye}} akaniokoa na upanga wa Farao.\"",
           "B": "Yule mwingine aliitwa Eliezeri, kwa sababu \"Mungu wa baba yangu alikuwa msaidizi wangu, {{deity_pronoun:naye|Naye}} akaniokoa na upanga wa Farao.\"",
           "R": "Mwana yule mwingine aliitwa Eliezeri, maana yake \"Mungu wangu ni msaada.\" Musa alikuwa amesema, \"Mungu wa baba yangu alinisaidia. Aliniokoa wakati Farao alipotaka kuniua kwa upanga.\""
+        },
+        "vi": {
+          "L": "và tên của người kia [là] Ê-li-ê-se, vì: \"Đức Chúa Trời của cha tôi [là] sự giúp đỡ của tôi, và {{deity_pronoun:ngài|Ngài}} đã giải cứu tôi khỏi gươm của Pha-ra-ôn.\"",
+          "B": "Người kia tên là Ê-li-ê-se, vì: \"Đức Chúa Trời của cha tôi là Đấng giúp đỡ tôi, và {{deity_pronoun:ngài|Ngài}} đã giải cứu tôi khỏi lưỡi gươm của Pha-ra-ôn.\"",
+          "R": "Người con kia tên là Ê-li-ê-se, nghĩa là \"Đức Chúa Trời tôi là sự giúp đỡ\". Môi-se đã nói: \"Đức Chúa Trời của cha tôi đã giúp đỡ tôi. Ngài đã cứu tôi khi Pha-ra-ôn muốn dùng gươm giết tôi.\""
+        },
+        "ko": {
+          "L": "그리고 [다른] 하나의 이름은 엘리에셀이었다. \"내 아버지의 하나님께서 나의 도움이 되셔서 나를 바로의 칼에서 건져 주셨다\" [하고 말했기] 때문이다.",
+          "B": "다른 아들의 이름은 엘리에셀이었다. \"내 아버지의 하나님께서 나를 도우셨고, 바로의 칼에서 나를 건져 주셨다\" 하고 말했기 때문이다.",
+          "R": "다른 아들의 이름은 엘리에셀이었는데, '나의 하나님은 도움이시다'라는 뜻이다. 모세는 이렇게 말했다. \"내 아버지의 하나님께서 나를 도와주셨다. 바로가 나를 칼로 죽이려고 할 때 그분께서 나를 구해 주셨다.\""
         }
       },
       "decisions": [
@@ -481,6 +665,25 @@
           "reason": "Readable spells out \"Pharaoh's sword\" as Pharaoh's plan to kill Moses (2:15).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020180040031"
+          ],
+          "choice": "\"Ê-li-ê-se\"",
+          "alternatives": [],
+          "reason": "The usual Protestant form of the name, the same as Abram's servant in Genesis 15:2.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -541,6 +744,16 @@
           "L": "Naye Yethro, baba mkwe wa Musa, akaja pamoja na wanawe na mkewe kwa Musa jangwani alikokuwa amepiga kambi huko, [kwenye] mlima wa Mungu.",
           "B": "Yethro, baba mkwe wa Musa, alikuja jangwani pamoja na mke na wana wa Musa, akamkuta amepiga kambi kwenye mlima wa Mungu.",
           "R": "Yethro alikuja pamoja na mke na wana wa Musa ili kumlaki Musa jangwani. Musa alikuwa amepiga kambi karibu na mlima wa Mungu."
+        },
+        "vi": {
+          "L": "Và Giê-trô, cha vợ của Môi-se, đến, cùng các con trai và vợ ông, đến với Môi-se trong hoang mạc, nơi ông đang đóng trại tại đó, [tại] núi của Đức Chúa Trời.",
+          "B": "Giê-trô, cha vợ Môi-se, cùng với vợ và các con trai của Môi-se, đến gặp ông trong hoang mạc, nơi ông đang đóng trại tại núi của Đức Chúa Trời.",
+          "R": "Giê-trô cùng vợ và các con trai của Môi-se đến gặp Môi-se trong hoang mạc. Lúc ấy Môi-se đang dựng trại gần núi của Đức Chúa Trời."
+        },
+        "ko": {
+          "L": "그리고 모세의 장인 이드로가 모세의 아들들과 아내와 함께, 모세가 진을 치고 있던 광야, 곧 하나님의 산으로 모세에게 왔다.",
+          "B": "모세의 장인 이드로는 모세의 아내와 아들들을 데리고 광야로 와서, 하나님의 산에 진을 치고 있던 모세를 찾아갔다.",
+          "R": "이드로는 모세의 아내와 아들들을 데리고 광야로 모세를 만나러 왔다. 그때 모세는 하나님의 산 근처에 진을 치고 있었다."
         }
       },
       "decisions": [
@@ -651,6 +864,16 @@
           "L": "Naye akamwambia Musa, \"Mimi, baba mkwe wako Yethro, ninakuja kwako, na mkeo na wanawe wawili pamoja naye.\"",
           "B": "Alimtumia Musa ujumbe, \"Mimi, baba mkwe wako Yethro, niko njiani kuja kwako, pamoja na mkeo na wanawe wawili.\"",
           "R": "Kabla ya kufika, alimtumia Musa ujumbe: \"Mimi, Yethro baba mkwe wako, ninakuja kukuona. Mkeo na wanawe wawili wako pamoja nami.\""
+        },
+        "vi": {
+          "L": "Và ông nói với Môi-se: \"Cha, cha vợ của con là Giê-trô, đang đến với con, cùng vợ con và hai con trai của nàng với nàng.\"",
+          "B": "Ông nhắn với Môi-se: \"Cha, Giê-trô, cha vợ của con, đang trên đường đến với con, cùng với vợ con và hai con trai của nó.\"",
+          "R": "Ông sai người báo trước cho Môi-se: \"Cha là Giê-trô, cha vợ của con, đang đến thăm con. Vợ con và hai con trai của nó cũng đi với cha.\""
+        },
+        "ko": {
+          "L": "그리고 그가 모세에게 말했다. \"나, 네 장인 이드로가 너에게 간다. 네 아내와 그녀의 두 아들도 그녀와 함께 [간다].\"",
+          "B": "그는 모세에게 이런 전갈을 보냈다. \"네 장인 이드로가 네 아내와 그녀의 두 아들을 데리고 너에게 가고 있다.\"",
+          "R": "그는 먼저 모세에게 이런 소식을 보냈다. \"네 장인 이드로가 너를 만나러 간다. 네 아내와 그녀의 두 아들도 나와 함께 있다.\""
         }
       },
       "decisions": [
@@ -699,6 +922,48 @@
           "choice": "sent word / sent a message ahead",
           "alternatives": [],
           "reason": "Balanced and Readable say how the words reached Moses, since he goes out to meet Jethro afterward (verse 7).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o020180060041",
+            "o020180060052"
+          ],
+          "choice": "Jethro speaks to Moses in 해라체 with \"너\"; Moses answers him in 합쇼체",
+          "alternatives": [
+            "하게체 with \"자네\", the traditional way a father-in-law speaks to a son-in-law"
+          ],
+          "reason": "The Genesis sheet has a parent speak to a child in 해라체 and the child answer in 합쇼체; a father-in-law is treated the same way. 하게체 with \"자네\" would also fit the relationship and is a reviewer's choice.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o020180060041",
+            "o020180060082"
+          ],
+          "choice": "Jethro calls himself \"cha\" and Moses \"con\"; Moses answers him in the same terms",
+          "alternatives": [],
+          "reason": "A father-in-law in Vietnamese speaks to his son-in-law as a father to a son, and the son-in-law calls him \"cha\". Recorded once for the chapter. Balanced and Readable speak of Zipporah to her husband as \"nó\", as a father speaks of his daughter; Literal keeps \"nàng\".",
           "uncertain": false,
           "footnote": false
         }
@@ -764,6 +1029,16 @@
           "L": "Naye Musa akatoka kwenda kumlaki baba mkwe wake, akasujudu, akambusu, nao wakaulizana kila mmoja hali ya mwenzake, wakaingia hemani.",
           "B": "Musa alitoka kwenda kumlaki baba mkwe wake. Akainama sana na kumbusu, nao wakaulizana hali. Kisha wakaingia hemani.",
           "R": "Musa alitoka kwenda kumlaki baba mkwe wake. Aliinama mbele yake kuonyesha heshima, akambusu. Waliulizana jinsi mambo yalivyokuwa. Kisha wakaingia katika hema la Musa."
+        },
+        "vi": {
+          "L": "Và Môi-se đi ra đón cha vợ mình, và ông cúi lạy và hôn ông ấy, và họ hỏi nhau về sự bình an, rồi họ đi vào lều.",
+          "B": "Môi-se ra đón cha vợ mình. Ông cúi mình lạy và hôn cha vợ, rồi họ hỏi thăm sức khỏe của nhau. Sau đó họ vào trong lều.",
+          "R": "Môi-se ra đón cha vợ mình. Ông cúi mình xuống để tỏ lòng kính trọng và hôn cha vợ. Họ hỏi thăm nhau mọi việc ra sao. Rồi họ vào lều của Môi-se."
+        },
+        "ko": {
+          "L": "그리고 모세가 그의 장인을 맞으러 나가서 엎드려 절하고 그에게 입을 맞추었다. 그리고 그들은 서로 [그의] 안부를 묻고 장막으로 들어갔다.",
+          "B": "모세는 장인을 맞으러 나가서 엎드려 절하고 그에게 입을 맞추었다. 두 사람은 서로 안부를 물은 뒤에 장막으로 들어갔다.",
+          "R": "모세는 장인을 맞으러 나갔다. 그는 존경하는 마음으로 엎드려 절하고 장인에게 입을 맞추었다. 두 사람은 서로 그동안 어떻게 지냈는지 물었다. 그리고 모세의 장막으로 들어갔다."
         }
       },
       "decisions": [
@@ -882,6 +1157,16 @@
           "L": "Naye Musa akamsimulia baba mkwe wake yote ambayo {{divine_name:BWANA|Yahwe}} alikuwa amemtendea Farao na Misri kwa ajili ya Israeli, taabu yote iliyowapata njiani, na [jinsi] {{divine_name:BWANA|Yahwe}} alivyowaokoa.",
           "B": "Musa alimpa baba mkwe wake habari kamili za yale ambayo {{divine_name:BWANA|Yahwe}} alikuwa amemtendea Farao na Misri kwa ajili ya Israeli. Akamweleza kila taabu iliyowapata safarini, na jinsi {{divine_name:BWANA|Yahwe}} alivyowaokoa.",
           "R": "Musa alimweleza baba mkwe wake mambo yote ambayo {{divine_name:BWANA|Yahwe}} alikuwa amemfanyia Farao na Wamisri ili kuwasaidia Israeli. Akamweleza shida zote walizokutana nazo njiani, na jinsi {{divine_name:BWANA|Yahwe}} alivyowaokoa."
+        },
+        "vi": {
+          "L": "Và Môi-se thuật lại cho cha vợ mình mọi điều {{divine_name:CHÚA|Gia-vê}} đã làm cho Pha-ra-ôn và cho Ai Cập vì cớ Y-sơ-ra-ên, mọi sự gian khổ đã gặp họ dọc đường, và [cách] {{divine_name:CHÚA|Gia-vê}} đã giải cứu họ.",
+          "B": "Môi-se kể lại cho cha vợ nghe mọi điều {{divine_name:CHÚA|Gia-vê}} đã làm cho Pha-ra-ôn và cho Ai Cập vì cớ Y-sơ-ra-ên. Ông kể về mọi gian khổ đã xảy đến cho họ dọc đường, và cách {{divine_name:CHÚA|Gia-vê}} đã giải cứu họ.",
+          "R": "Môi-se kể cho cha vợ nghe mọi điều {{divine_name:CHÚA|Gia-vê}} đã làm cho Pha-ra-ôn và người Ai Cập để giúp Y-sơ-ra-ên. Ông kể về mọi khó khăn họ đã gặp trên đường đi, và {{divine_name:CHÚA|Gia-vê}} đã cứu họ như thế nào."
+        },
+        "ko": {
+          "L": "그리고 모세가 그의 장인에게, {{divine_name:주|야훼}}께서 이스라엘 때문에 바로와 이집트에 하신 모든 일과, 길에서 그들에게 닥친 모든 고난과, {{divine_name:주|야훼}}께서 그들을 건져 내신 일을 이야기했다.",
+          "B": "모세는 {{divine_name:주|야훼}}께서 이스라엘을 위하여 바로와 이집트에 하신 일을 장인에게 낱낱이 이야기했다. 그리고 오는 길에 그들이 겪은 온갖 고난과, {{divine_name:주|야훼}}께서 그들을 건져 내신 일도 들려주었다.",
+          "R": "모세는 {{divine_name:주|야훼}}께서 이스라엘을 돕기 위해 바로와 이집트 사람들에게 하신 모든 일을 장인에게 이야기했다. 또 오는 길에 겪은 모든 어려움과 {{divine_name:주|야훼}}께서 그들을 구해 주신 일도 이야기했다."
         }
       },
       "decisions": [
@@ -967,6 +1252,16 @@
           "L": "Naye Yethro akafurahi kwa ajili ya mema yote ambayo {{divine_name:BWANA|Yahwe}} alikuwa amewatendea Israeli, ambao alikuwa amewaokoa kutoka mkononi mwa Misri.",
           "B": "Yethro alifurahi kwa sababu ya mema yote ambayo {{divine_name:BWANA|Yahwe}} aliwatendea Israeli alipowaokoa kutoka katika nguvu za Wamisri.",
           "R": "Yethro alifurahi sana kusikia mambo yote mazuri ambayo {{divine_name:BWANA|Yahwe}} alikuwa amewafanyia Israeli. {{divine_name:BWANA|Yahwe}} alikuwa amewaokoa kutoka kwa Wamisri."
+        },
+        "vi": {
+          "L": "Và Giê-trô vui mừng về mọi điều tốt lành {{divine_name:CHÚA|Gia-vê}} đã làm cho Y-sơ-ra-ên, là dân mà {{deity_pronoun:ngài|Ngài}} đã giải cứu khỏi tay Ai Cập.",
+          "B": "Giê-trô vui mừng vì mọi điều tốt lành {{divine_name:CHÚA|Gia-vê}} đã làm cho Y-sơ-ra-ên khi {{deity_pronoun:ngài|Ngài}} giải cứu họ khỏi quyền lực của Ai Cập.",
+          "R": "Giê-trô rất vui khi nghe về mọi điều tốt lành {{divine_name:CHÚA|Gia-vê}} đã làm cho Y-sơ-ra-ên. {{divine_name:CHÚA|Gia-vê}} đã cứu họ khỏi tay người Ai Cập."
+        },
+        "ko": {
+          "L": "그리고 이드로는 {{divine_name:주|야훼}}께서 이스라엘에게 베푸신 모든 선한 일, 곧 그들을 이집트의 손에서 건져 내신 일 때문에 기뻐했다.",
+          "B": "이드로는 {{divine_name:주|야훼}}께서 이스라엘을 이집트의 손아귀에서 구해 내시면서 그들에게 베푸신 모든 좋은 일을 듣고 기뻐했다.",
+          "R": "이드로는 {{divine_name:주|야훼}}께서 이스라엘을 위해 하신 좋은 일들을 모두 듣고 매우 기뻐했다. {{divine_name:주|야훼}}께서 그들을 이집트 사람들에게서 구해 주셨던 것이다."
         }
       },
       "decisions": [
@@ -1078,6 +1373,16 @@
           "L": "Naye Yethro akasema, \"Ahimidiwe {{divine_name:BWANA|Yahwe}}, aliyewaokoa ninyi kutoka mkononi mwa Misri na kutoka mkononi mwa Farao, aliyewaokoa watu kutoka chini ya mkono wa Misri.",
           "B": "Yethro alisema, \"Ahimidiwe {{divine_name:BWANA|Yahwe}}, aliyewaokoa ninyi kutoka katika nguvu za Misri na za Farao, na aliyewaweka watu hawa huru kutoka chini ya utawala wa Misri.",
           "R": "Yethro alisema, \"{{divine_name:BWANA|Yahwe}} asifiwe! Amewaokoa ninyi kutoka kwa Wamisri na kwa Farao. Amewaweka watu huru kutoka katika utawala wa Misri."
+        },
+        "vi": {
+          "L": "Và Giê-trô nói: \"Chúc tụng {{divine_name:CHÚA|Gia-vê}}, Đấng đã giải cứu các ngươi khỏi tay Ai Cập và khỏi tay Pha-ra-ôn, Đấng đã giải cứu dân khỏi dưới tay Ai Cập.",
+          "B": "Giê-trô nói: \"Chúc tụng {{divine_name:CHÚA|Gia-vê}}, Đấng đã giải cứu các con khỏi nanh vuốt của Ai Cập và của Pha-ra-ôn, và đã giải phóng dân này khỏi ách của Ai Cập.",
+          "R": "Giê-trô nói: \"Ngợi khen {{divine_name:CHÚA|Gia-vê}}! Ngài đã cứu các con khỏi người Ai Cập và khỏi Pha-ra-ôn. Ngài đã giải phóng dân này khỏi quyền lực của Ai Cập."
+        },
+        "ko": {
+          "L": "그리고 이드로가 말했다. \"{{divine_name:주|야훼}}께서 찬송을 받으시기를 바란다. 그분께서 너희를 이집트의 손과 바로의 손에서 건지셨고, 이 백성을 이집트의 손 아래에서 건지셨다.",
+          "B": "이드로가 말했다. \"{{divine_name:주|야훼}}를 찬양하여라! 그분께서 너희를 이집트와 바로의 손아귀에서 건져 내시고, 이 백성을 이집트의 손 아래에서 풀어 주셨다.",
+          "R": "이드로가 말했다. \"{{divine_name:주|야훼}}를 찬양하여라! 그분께서 너희를 이집트 사람들과 바로에게서 구해 주셨다. 그분께서 이 백성을 이집트의 지배에서 풀어 주셨다."
         }
       },
       "decisions": [
@@ -1147,6 +1452,45 @@
           "reason": "When a person blesses God, Swahili says \"kumhimidi\" (praise, extol); \"kubariki\" with God as object reads as if Jethro were conferring a blessing on God.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020180100031"
+          ],
+          "choice": "\"찬송을 받으시기를 바란다\" (L); \"찬양하여라\" (B, R)",
+          "alternatives": [
+            "\"송축하다\""
+          ],
+          "reason": "\"Blessed be the LORD\" is a wish of praise; Literal keeps the wish form, while Balanced and Readable use a plain call to praise in 해라체, Jethro's level with Moses.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020180100031",
+            "o020180100072"
+          ],
+          "choice": "\"Chúc tụng\" (L, B), \"Ngợi khen\" (R); \"các ngươi\" (L), \"các con\" (B, R) for the plural \"you\"",
+          "alternatives": [],
+          "reason": "\"Blessed be the LORD\" is praise (meaning decision): \"chúc tụng\" is the word of blessing God, \"ngợi khen\" the plainer word of praise. The Hebrew \"you\" is plural, Moses and those with him (meaning decision); Jethro speaks to them as an elder, \"các con\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1200,6 +1544,16 @@
           "L": "Sasa najua kwamba {{divine_name:BWANA|Yahwe}} [ni] mkuu kuliko miungu yote, kwa kuwa katika jambo lile ambalo walitenda kwa kiburi dhidi yao, [{{deity_pronoun:yeye|Yeye}} aliwashinda].\"",
           "B": "Sasa najua kwamba {{divine_name:BWANA|Yahwe}} ni mkuu kuliko miungu yote, kwa maana alionyesha hilo katika jambo lile lile ambalo waliwatendea Israeli kwa kiburi.\"",
           "R": "Sasa najua kwamba {{divine_name:BWANA|Yahwe}} ni mkuu kuliko miungu yote. Wamisri waliwatendea Israeli kwa kiburi na dharau, lakini {{divine_name:BWANA|Yahwe}} alionyesha kwamba {{deity_pronoun:yeye|Yeye}} ni mkuu zaidi.\""
+        },
+        "vi": {
+          "L": "Bây giờ cha biết rằng {{divine_name:CHÚA|Gia-vê}} [là] lớn hơn hết thảy các thần, vì trong chính việc mà chúng đã cư xử kiêu ngạo nghịch cùng họ, [{{deity_pronoun:ngài|Ngài}} đã vượt trên chúng].\"",
+          "B": "Bây giờ cha biết rằng {{divine_name:CHÚA|Gia-vê}} lớn hơn mọi thần, vì {{deity_pronoun:ngài|Ngài}} đã tỏ ra như thế trong chính việc người Ai Cập đã kiêu ngạo đối xử với Y-sơ-ra-ên.\"",
+          "R": "Bây giờ cha biết {{divine_name:CHÚA|Gia-vê}} lớn hơn mọi thần. Người Ai Cập đã đối xử kiêu căng và khinh miệt Y-sơ-ra-ên, nhưng {{divine_name:CHÚA|Gia-vê}} đã cho thấy {{deity_pronoun:ngài|Ngài}} lớn hơn họ.\""
+        },
+        "ko": {
+          "L": "이제 나는 {{divine_name:주|야훼}}께서 모든 신보다 크시다는 것을 안다. 그들이 그들에게 교만하게 행한 그 일에서 [그분께서 그들 위에 계셨기] 때문이다.\"",
+          "B": "이제 나는 {{divine_name:주|야훼}}께서 모든 신보다 위대하시다는 것을 알겠다. 그들이 이스라엘에게 교만하게 굴었던 바로 그 일에서 그분께서 그것을 보여 주셨기 때문이다.\"",
+          "R": "이제 나는 {{divine_name:주|야훼}}께서 모든 신보다 위대하시다는 것을 알겠다. 이집트 사람들은 이스라엘을 깔보고 함부로 대했다. 그러나 {{divine_name:주|야훼}}께서 그들보다 훨씬 크시다는 것을 보여 주셨다.\""
         }
       },
       "decisions": [
@@ -1339,6 +1693,16 @@
           "L": "Naye Yethro, baba mkwe wa Musa, akatwaa sadaka ya kuteketezwa na dhabihu kwa ajili ya Mungu; naye Haruni akaja, na wazee wote wa Israeli, kula mkate pamoja na baba mkwe wa Musa mbele za Mungu.",
           "B": "Kisha Yethro, baba mkwe wa Musa, alileta sadaka ya kuteketezwa na dhabihu nyingine, akamtolea Mungu. Haruni na wazee wote wa Israeli wakaja kuungana na baba mkwe wa Musa, wakala chakula pamoja mbele za Mungu.",
           "R": "Kisha Yethro alimletea Mungu sadaka ya kuteketezwa na dhabihu nyingine. Haruni na viongozi wote wa Israeli walikuja wakala chakula pamoja na baba mkwe wa Musa pale mbele za Mungu."
+        },
+        "vi": {
+          "L": "Và Giê-trô, cha vợ của Môi-se, đem một của lễ thiêu và các sinh tế cho Đức Chúa Trời; và A-rôn cùng hết thảy các trưởng lão Y-sơ-ra-ên đến ăn bánh với cha vợ của Môi-se trước mặt Đức Chúa Trời.",
+          "B": "Rồi Giê-trô, cha vợ Môi-se, đem một của lễ thiêu và các sinh tế dâng lên Đức Chúa Trời. A-rôn và mọi trưởng lão Y-sơ-ra-ên đến dự bữa ăn với cha vợ Môi-se trước mặt Đức Chúa Trời.",
+          "R": "Sau đó Giê-trô đem một của lễ thiêu và những sinh tế khác dâng lên Đức Chúa Trời. A-rôn và mọi người lãnh đạo của Y-sơ-ra-ên đến ăn chung với cha vợ Môi-se tại đó, trước mặt Đức Chúa Trời."
+        },
+        "ko": {
+          "L": "그리고 모세의 장인 이드로가 하나님께 번제물과 희생 제물들을 가져왔다. 그리고 아론과 이스라엘의 모든 장로가 와서 하나님 앞에서 모세의 장인과 함께 빵을 먹었다.",
+          "B": "그리고 모세의 장인 이드로는 번제물과 희생 제물들을 가져다가 하나님께 바쳤다. 아론과 이스라엘의 장로들이 모두 와서, 모세의 장인과 함께 하나님 앞에서 음식을 먹었다.",
+          "R": "그 뒤에 이드로는 번제물과 다른 제물들을 하나님께 바쳤다. 아론과 이스라엘의 모든 지도자도 와서 하나님 앞에서 모세의 장인과 함께 식사를 했다."
         }
       },
       "decisions": [
@@ -1404,6 +1768,48 @@
           "reason": "Readable says \"leaders\" for \"elders\", as elsewhere in Exodus.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020180120051",
+            "o020180120062"
+          ],
+          "choice": "\"번제물\" for the burnt offering brought, \"희생 제물\" for the sacrifices (zevachim)",
+          "alternatives": [
+            "\"번제\" alone"
+          ],
+          "reason": "The term sheet's \"번제\" names the offering; \"번제물\" is used where an animal is brought, and \"희생 제물\" names the slaughtered offerings that were eaten.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020180120051",
+            "o020180120111"
+          ],
+          "choice": "\"của lễ thiêu\" for the burnt offering; \"trưởng lão\" (L, B), \"người lãnh đạo\" (R) for the elders",
+          "alternatives": [],
+          "reason": "\"của lễ thiêu\" is the term sheet's word for the whole Pentateuch. Readable says \"người lãnh đạo\", as the English Readable says \"leaders\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1465,6 +1871,16 @@
           "L": "Ikawa siku iliyofuata, Musa akaketi kuwahukumu watu, nao watu wakasimama karibu na Musa tangu asubuhi hadi jioni.",
           "B": "Siku iliyofuata Musa aliketi ili kuamua mashauri ya watu, nao watu wakasimama mbele yake wakingoja tangu asubuhi hadi jioni.",
           "R": "Kesho yake Musa aliketi ili kusuluhisha ugomvi wa watu. Watu walisimama kumzunguka wakingoja tangu asubuhi mpaka jioni."
+        },
+        "vi": {
+          "L": "Và xảy ra vào ngày hôm sau, Môi-se ngồi để xét xử dân, và dân đứng quanh Môi-se từ sáng cho đến chiều.",
+          "B": "Ngày hôm sau, Môi-se ngồi xét xử các vụ việc của dân chúng, và dân chúng đứng chờ trước mặt ông từ sáng đến chiều.",
+          "R": "Ngày hôm sau, Môi-se ngồi giải quyết các vụ tranh chấp của dân chúng. Người ta đứng quanh ông chờ đợi từ sáng đến tối."
+        },
+        "ko": {
+          "L": "그리고 이튿날이 되어 모세가 백성을 재판하려고 앉았고, 백성은 아침부터 저녁까지 모세 곁에 서 있었다.",
+          "B": "이튿날 모세는 백성의 송사를 재판하려고 자리에 앉았고, 백성은 아침부터 저녁까지 그 앞에 서서 기다렸다.",
+          "R": "다음 날 모세는 백성의 다툼을 해결해 주려고 자리에 앉았다. 사람들은 아침부터 저녁까지 모세 주위에 서서 기다렸다."
         }
       },
       "decisions": [
@@ -1590,6 +2006,16 @@
           "L": "Naye baba mkwe wa Musa akaona yote aliyokuwa akiwafanyia watu, akasema, \"Ni jambo gani hili unalowafanyia watu? Mbona umeketi peke yako, na watu wote wamesimama karibu nawe tangu asubuhi hadi jioni?\"",
           "B": "Baba mkwe wa Musa alipoona yote aliyokuwa akiwafanyia watu, alisema, \"Ni jambo gani hili unalofanya na watu? Kwa nini unaketi hapa peke yako, wakati umati wote unasimama ukikungoja tangu asubuhi hadi jioni?\"",
           "R": "Baba mkwe wa Musa aliona kazi yote ambayo Musa alikuwa akiwafanyia watu. Akamwuliza, \"Kwa nini unafanya haya yote peke yako? Watu hawa wote wanasimama kukuzunguka tangu asubuhi mpaka jioni!\""
+        },
+        "vi": {
+          "L": "Và cha vợ của Môi-se thấy mọi điều ông đang làm cho dân, và ông nói: \"Việc con đang làm cho dân [là] việc gì vậy? Sao con ngồi một mình, còn cả dân đứng quanh con từ sáng đến chiều?\"",
+          "B": "Khi cha vợ Môi-se thấy mọi điều ông làm cho dân chúng, ông nói: \"Con làm gì với dân chúng thế này? Sao con ngồi đây một mình, trong khi cả đám dân đứng chờ con từ sáng đến chiều?\"",
+          "R": "Cha vợ Môi-se thấy tất cả công việc Môi-se đang làm cho dân chúng. Ông hỏi: \"Sao con làm hết mọi việc này một mình? Tất cả những người này đứng quanh con từ sáng đến tối!\""
+        },
+        "ko": {
+          "L": "그리고 모세의 장인이 그가 백성을 위하여 하는 모든 일을 보고 말했다. \"네가 백성에게 하고 있는 이 일이 무엇이냐? 어찌하여 너 혼자 앉아 있고, 온 백성은 아침부터 저녁까지 네 곁에 서 있느냐?\"",
+          "B": "모세의 장인은 그가 백성을 위해 하는 모든 일을 보고 말했다. \"네가 백성에게 하는 이 일이 도대체 무엇이냐? 어찌하여 너 혼자 앉아 있고, 이 많은 백성은 아침부터 저녁까지 네 곁에 서서 기다려야 하느냐?\"",
+          "R": "모세의 장인은 모세가 백성을 위해 하는 그 모든 일을 보았다. 그가 물었다. \"왜 이 모든 일을 너 혼자 하고 있느냐? 이 사람들이 모두 아침부터 저녁까지 네 주위에 서 있지 않느냐!\""
         }
       },
       "decisions": [
@@ -1673,6 +2099,16 @@
           "L": "Naye Musa akamwambia baba mkwe wake, \"Kwa sababu watu huja kwangu kumwuliza Mungu.",
           "B": "Musa alimjibu baba mkwe wake, \"Ni kwa sababu watu huja kwangu ili kutafuta shauri la Mungu.",
           "R": "Musa alijibu, \"Watu huja kwangu ili kujua Mungu anataka wafanye nini."
+        },
+        "vi": {
+          "L": "Và Môi-se nói với cha vợ mình: \"Vì dân đến với con để cầu hỏi Đức Chúa Trời.",
+          "B": "Môi-se trả lời cha vợ: \"Ấy là vì dân chúng đến với con để cầu hỏi Đức Chúa Trời.",
+          "R": "Môi-se trả lời: \"Dân chúng đến với con để biết Đức Chúa Trời muốn họ làm gì."
+        },
+        "ko": {
+          "L": "그리고 모세가 그의 장인에게 말했다. \"백성이 하나님께 여쭈려고 저에게 오기 때문입니다.",
+          "B": "모세가 장인에게 대답했다. \"백성이 하나님의 뜻을 여쭈려고 저에게 오기 때문입니다.",
+          "R": "모세가 대답했다. \"사람들은 하나님께서 무엇을 원하시는지 알려고 저에게 옵니다."
         }
       },
       "decisions": [
@@ -1770,6 +2206,16 @@
           "L": "Wanapokuwa na jambo, huja kwangu, nami huamua kati ya mtu na jirani yake, na kuwajulisha kanuni za Mungu na sheria {{deity_pronoun:zake|Zake}}.\"",
           "B": "Kila wanapokuwa na shauri, huletwa kwangu, nami huamua kati ya pande hizo mbili. Pia huwajulisha kanuni za Mungu na sheria {{deity_pronoun:zake|Zake}}.\"",
           "R": "Watu wanapokuwa na tatizo, hunijia nalo. Mimi huamua ni nani aliye sahihi. Pia huwafundisha maagizo ya Mungu na sheria {{deity_pronoun:zake|Zake}}.\""
+        },
+        "vi": {
+          "L": "Khi họ có một việc, nó đến với con, và con xét xử giữa người này với người lân cận mình, và con cho [họ] biết các luật lệ của Đức Chúa Trời và các luật pháp của {{deity_pronoun:ngài|Ngài}}.\"",
+          "B": "Hễ họ có việc tranh chấp, họ đến với con, và con phân xử giữa hai bên. Con cũng cho họ biết các luật lệ của Đức Chúa Trời và luật pháp của {{deity_pronoun:ngài|Ngài}}.\"",
+          "R": "Khi người ta có chuyện tranh chấp, họ đem đến cho con. Con quyết định ai đúng ai sai. Con cũng dạy họ các luật lệ và luật pháp của Đức Chúa Trời.\""
+        },
+        "ko": {
+          "L": "그들에게 일이 생기면 그것이 저에게 오고, 저는 사람과 그 이웃 사이를 재판하고, 하나님의 규례들과 그분의 율법들을 알려 줍니다.\"",
+          "B": "그들 사이에 다툼이 생기면 그 일이 저에게 오고, 저는 양쪽 사이에서 판결을 내립니다. 그리고 하나님의 규례와 그분의 가르침을 그들에게 알려 줍니다.\"",
+          "R": "사람들 사이에 문제가 생기면 그들이 그 문제를 저에게 가져옵니다. 저는 누가 옳은지 판단해 줍니다. 또 하나님의 규례와 그분의 법을 가르쳐 줍니다.\""
         }
       },
       "decisions": [
@@ -1818,6 +2264,87 @@
           "choice": "rules",
           "alternatives": [],
           "reason": "Readable says \"rules\" for \"statutes\", as elsewhere in Exodus.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020180160091",
+            "o020180160111",
+            "o020180160112"
+          ],
+          "choice": "No gender span: \"사람과 그 이웃\"",
+          "alternatives": [
+            "a span as in the English Literal"
+          ],
+          "reason": "Korean \"사람\" already means a man or a woman, and the possessive \"그\" has no gender, so the setting would change nothing; the text is written once.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020180160141",
+            "o020180160171"
+          ],
+          "choice": "\"규례\" for statutes (chuqqim), \"율법\" (L), \"가르침\" (B), \"법\" (R) for torot",
+          "alternatives": [
+            "\"법도\""
+          ],
+          "reason": "The term sheet's \"규례\" for statutes; torot here are God's instructions given case by case, so Balanced says \"가르침\" rather than \"율법\", which Korean readers take as the Law of Sinai.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020180160141",
+            "o020180160171"
+          ],
+          "choice": "\"luật lệ\" for the statutes; \"luật pháp\" for God's laws (*torot*)",
+          "alternatives": [],
+          "reason": "\"luật lệ\" is the term sheet's word for a statute. The second word here is the plural of *torah*, God's instruction, which the term sheet renders \"luật pháp\". The English \"his laws\" takes a deity pronoun; Readable folds the two into one phrase and needs no pronoun.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020180160091",
+            "o020180160111"
+          ],
+          "choice": "\"người này với người lân cận mình\", with no gender span",
+          "alternatives": [],
+          "reason": "Vietnamese \"người\" already means a person, man or woman, so there is no second form for the gender setting to offer.",
           "uncertain": false,
           "footnote": false
         }
@@ -1870,6 +2397,16 @@
           "L": "Naye baba mkwe wa Musa akamwambia, \"Jambo hili unalolifanya si jema.",
           "B": "Baba mkwe wa Musa alimwambia, \"Njia hii ya kufanya mambo si nzuri.",
           "R": "Kisha baba mkwe wake akamwambia, \"Hii si njia nzuri ya kufanya kazi hii."
+        },
+        "vi": {
+          "L": "Và cha vợ của Môi-se nói với ông: \"Việc con đang làm [là] không tốt.",
+          "B": "Cha vợ Môi-se nói với ông: \"Con làm như thế không tốt.",
+          "R": "Cha vợ Môi-se nói với ông: \"Làm như vậy không ổn đâu."
+        },
+        "ko": {
+          "L": "그리고 모세의 장인이 그에게 말했다. \"네가 하고 있는 일은 좋지 않다.",
+          "B": "모세의 장인이 그에게 말했다. \"네가 일하는 방식은 좋지 않다.",
+          "R": "그러자 장인이 그에게 말했다. \"그렇게 하는 것은 좋은 방법이 아니다."
         }
       },
       "decisions": [
@@ -1949,6 +2486,16 @@
           "L": "Hakika utachoka kabisa, wewe na watu hawa walio pamoja nawe, kwa kuwa jambo hili [ni] zito mno kwako; huwezi kulifanya peke yako.",
           "B": "Hakika utachoka, wewe pamoja na watu walio nawe. Mzigo huu ni mzito mno kwako; huwezi kuubeba peke yako.",
           "R": "Utachoka sana, na watu nao watachoka. Kazi hii ni kubwa mno kwako. Huwezi kuifanya yote peke yako."
+        },
+        "vi": {
+          "L": "Chắc chắn con sẽ kiệt sức, cả con lẫn dân này là [những người] ở với con, vì việc [quá] nặng cho con; con không thể làm nó một mình.",
+          "B": "Chắc chắn con sẽ kiệt sức, cả con lẫn dân chúng ở với con. Gánh này quá nặng cho con; con không thể gánh một mình.",
+          "R": "Con sẽ kiệt sức, và dân chúng cũng vậy. Việc này quá nặng đối với con. Con không thể làm hết một mình được."
+        },
+        "ko": {
+          "L": "너와 너와 함께 있는 이 백성이 반드시 지치고 말 것이다. 그 일이 너에게 [너무] 무거워서, 너 혼자서는 그것을 할 수 없다.",
+          "B": "너도 지치고, 너와 함께 있는 이 백성도 틀림없이 지치고 말 것이다. 이 짐은 너에게 너무 무거워서 너 혼자서는 감당할 수 없다.",
+          "R": "너도 지쳐 버리고 백성도 지쳐 버릴 것이다. 이 일은 너에게 너무 벅차다. 너 혼자서는 다 할 수 없다."
         }
       },
       "decisions": [
@@ -2045,6 +2592,16 @@
           "L": "Sasa isikilize sauti yangu; nitakupa shauri, na Mungu awe pamoja nawe. Uwe wewe kwa ajili ya watu mbele za Mungu, nawe uyalete mambo kwa Mungu.",
           "B": "Sasa sikiliza ninachotaka kukuambia. Niache nikushauri, na Mungu awe pamoja nawe. Kazi yako ni kusimama mbele za Mungu kwa niaba ya watu, na kuyapeleka mashauri yao kwa Mungu.",
           "R": "Sasa nisikilize. Nitakupa ushauri, na Mungu awe pamoja nawe. Wewe unapaswa kuzungumza na Mungu kwa ajili ya watu. Peleka matatizo yao kwa Mungu."
+        },
+        "vi": {
+          "L": "Bây giờ hãy nghe tiếng cha; cha sẽ khuyên con, và nguyện Đức Chúa Trời ở với con. Con hãy là [người đại diện] cho dân trước mặt Đức Chúa Trời, và con hãy đem các việc đến với Đức Chúa Trời.",
+          "B": "Bây giờ hãy nghe cha nói. Cha sẽ khuyên con một điều, và nguyện Đức Chúa Trời ở với con. Phần của con là đứng trước mặt Đức Chúa Trời thay cho dân chúng và đem các vụ việc của họ đến trình với Đức Chúa Trời.",
+          "R": "Bây giờ hãy nghe cha. Cha khuyên con điều này, và nguyện Đức Chúa Trời ở với con. Con nên thay mặt dân chúng mà thưa với Đức Chúa Trời. Hãy đem những vấn đề của họ đến với Đức Chúa Trời."
+        },
+        "ko": {
+          "L": "이제 내 목소리를 들어라. 내가 너에게 조언하겠다. 하나님께서 너와 함께 계시기를 바란다. 너는 하나님 앞에서 백성을 위하여 있고, 너는 그 일들을 하나님께 가져가거라.",
+          "B": "이제 내 말을 들어 보아라. 내가 너에게 조언하겠다. 하나님께서 너와 함께 계시기를 빈다. 너는 하나님 앞에서 백성을 대신하여 서고, 그들의 문제를 하나님께 가져가거라.",
+          "R": "이제 내 말을 들어라. 내가 너에게 충고하겠다. 하나님께서 너와 함께 계시기를 빈다. 너는 백성을 위해 하나님께 말씀드려라. 그들의 문제를 하나님께 가져가거라."
         }
       },
       "decisions": [
@@ -2096,6 +2653,24 @@
           "choice": "their cases",
           "alternatives": [],
           "reason": "\"The matters\" are the disputes the people bring; Balanced says \"cases\" and Readable \"problems\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o020180190081",
+            "o020180190101"
+          ],
+          "choice": "\"là [người đại diện] cho dân\" (L)",
+          "alternatives": [],
+          "reason": "\"Be for the people before God\" means to represent them (meaning decision); Vietnamese cannot leave the role unnamed, so Literal supplies it in brackets.",
           "uncertain": false,
           "footnote": false
         }
@@ -2163,6 +2738,16 @@
           "L": "Nawe utawaonya [kuhusu] kanuni na sheria, na kuwajulisha njia ambayo wanapaswa kuienenda na kazi ambayo wanapaswa kuifanya.",
           "B": "Wafundishe kanuni na sheria, na uwaonyeshe njia wanayopaswa kuifuata na mambo wanayopaswa kufanya.",
           "R": "Wafundishe maagizo na sheria za Mungu. Waonyeshe jinsi wanavyopaswa kuishi na yale wanayopaswa kufanya."
+        },
+        "vi": {
+          "L": "Và con hãy răn bảo họ [về] các luật lệ và các luật pháp, và cho họ biết con đường họ phải đi và công việc họ phải làm.",
+          "B": "Hãy dạy dỗ họ về các luật lệ và luật pháp, chỉ cho họ con đường phải đi và những việc phải làm.",
+          "R": "Hãy dạy họ các luật lệ và luật pháp của Đức Chúa Trời. Hãy chỉ cho họ phải sống thế nào và phải làm gì."
+        },
+        "ko": {
+          "L": "그리고 너는 그들에게 규례와 율법을 경계하여 [가르치고], 그들이 걸어가야 할 길과 그들이 해야 할 일을 그들에게 알려 주어라.",
+          "B": "그들에게 규례와 가르침을 일러 주고, 그들이 걸어가야 할 길과 그들이 해야 할 일을 보여 주어라.",
+          "R": "그들에게 하나님의 규례와 법을 가르쳐라. 그들이 어떻게 살아야 하고 무엇을 해야 하는지 보여 주어라."
         }
       },
       "decisions": [
@@ -2276,6 +2861,16 @@
           "L": "Nawe, wewe utatafuta katika watu wote wanaume hodari, wamchao Mungu, watu wa kweli, wanaochukia faida isiyo ya haki, nawe [uwaweke] juu yao [wawe] wakuu wa maelfu, wakuu wa mamia, wakuu wa hamsini, na wakuu wa kumi.",
           "B": "Kisha uwachunguze watu wote, uchague wanaume wenye uwezo, wanaomcha Mungu, waaminifu, wanaochukia faida ya udanganyifu. Uwaweke juu ya watu kuwa maafisa wa maelfu, wa mamia, wa hamsini na wa kumi.",
           "R": "Chagua kutoka katika watu wote wanaume wanaoweza kuongoza. Ni lazima wamche Mungu, wawe waaminifu, na wachukie kupata pesa kwa udanganyifu. Uwafanye viongozi wa vikundi vya watu elfu, mia, hamsini na kumi."
+        },
+        "vi": {
+          "L": "Còn con, con hãy tìm trong cả dân những người có tài năng, kính sợ Đức Chúa Trời, những người chân thật, ghét lợi bất chính, và đặt [họ] trên họ [làm] trưởng ngàn người, trưởng trăm người, trưởng năm mươi người và trưởng mười người.",
+          "B": "Rồi con hãy xem xét trong cả dân chúng mà chọn những người có tài, kính sợ Đức Chúa Trời, đáng tin cậy và ghét của gian lận. Hãy lập họ làm người chỉ huy dân chúng: chỉ huy hàng ngàn, hàng trăm, hàng năm mươi và hàng mười người.",
+          "R": "Hãy chọn trong cả dân chúng một số người có khả năng lãnh đạo. Họ phải kính sợ Đức Chúa Trời, ngay thẳng, và ghét việc gian lận để kiếm tiền. Hãy lập họ làm người lãnh đạo những nhóm một ngàn, một trăm, năm mươi và mười người."
+        },
+        "ko": {
+          "L": "그리고 너는 온 백성 가운데서 능력 있는 사람들, 하나님을 경외하는 사람들, 진실한 사람들, 부정한 이익을 미워하는 사람들을 살펴서, 그들을 천부장과 백부장과 오십부장과 십부장으로 그들 위에 세워라.",
+          "B": "그리고 온 백성 가운데서 유능한 사람들을 살펴서 골라라. 하나님을 경외하고, 믿을 수 있으며, 부정한 이익을 미워하는 사람들이어야 한다. 그들을 백성 위에 천부장과 백부장과 오십부장과 십부장으로 세워라.",
+          "R": "모든 백성 가운데서 지도할 능력이 있는 사람들을 뽑아라. 그들은 하나님을 두려워하고, 정직하고, 속임수로 돈 버는 것을 싫어하는 사람이어야 한다. 그들을 천 명, 백 명, 오십 명, 열 명씩 맡는 지도자로 세워라."
         }
       },
       "decisions": [
@@ -2344,6 +2939,30 @@
           "choice": "officers",
           "alternatives": [],
           "reason": "Balanced says \"officers\" for the leaders of each group; Literal keeps \"chiefs\" and Readable says \"leaders\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020180210151",
+            "o020180210161",
+            "o020180210181",
+            "o020180210201",
+            "o020180210221"
+          ],
+          "choice": "\"천부장, 백부장, 오십부장, 십부장\"",
+          "alternatives": [
+            "\"천 명의 지휘관\""
+          ],
+          "reason": "The ordinary Korean words for officers over a thousand, a hundred, fifty and ten, as Chronicles in Korean already uses them; Readable says the numbers plainly.",
           "uncertain": false,
           "footnote": false
         }
@@ -2418,6 +3037,16 @@
           "L": "Nao watawahukumu watu kila wakati; na itakuwa kwamba kila jambo kubwa watakuletea wewe, na kila jambo dogo watalihukumu wao wenyewe; nawe upunguze [mzigo] ulio juu yako, nao watauchukua pamoja nawe.",
           "B": "Wao watawaamua watu wakati wote. Kila shauri kubwa watakuletea wewe, lakini kila shauri dogo wataliamua wenyewe. Hivyo upunguze mzigo wako, nao watauchukua pamoja nawe.",
           "R": "Viongozi hawa wataweza kusuluhisha ugomvi wa watu wakati wowote. Watakuletea mashauri makubwa, lakini mashauri madogo wataamua wenyewe. Kazi yako itakuwa rahisi zaidi, kwa sababu wataishiriki pamoja nawe."
+        },
+        "vi": {
+          "L": "Và họ sẽ xét xử dân mọi lúc; và sẽ là, mọi việc lớn thì họ sẽ đem đến cho con, còn mọi việc nhỏ thì chính họ sẽ xét xử; vậy [con hãy] làm nhẹ bớt [gánh] cho con, và họ sẽ gánh [nó] với con.",
+          "B": "Họ sẽ xét xử dân chúng mọi lúc. Việc gì lớn thì họ đem đến cho con, còn mọi việc nhỏ thì tự họ phân xử. Như vậy con sẽ nhẹ gánh, vì họ cùng gánh với con.",
+          "R": "Những người lãnh đạo này có thể giải quyết các vụ tranh chấp của dân chúng bất cứ lúc nào. Vụ việc lớn thì họ đem đến cho con, còn những vụ nhỏ thì tự họ giải quyết. Như thế công việc của con sẽ nhẹ hơn, vì họ chia sẻ với con."
+        },
+        "ko": {
+          "L": "그리고 그들이 언제나 백성을 재판하게 하여라. 그리고 큰 일은 모두 너에게 가져오고, 작은 일은 모두 그들이 재판할 것이다. 그렇게 [짐을] 네 위에서 가볍게 하여라. 그들이 너와 함께 [그것을] 질 것이다.",
+          "B": "그들이 언제든지 백성을 재판하게 하여라. 큰 사건은 모두 너에게 가져오게 하고, 작은 사건은 모두 그들이 직접 판결하게 하여라. 그렇게 하여 네 짐을 가볍게 하여라. 그들이 너와 함께 그 짐을 질 것이다.",
+          "R": "이 지도자들은 언제든지 백성의 다툼을 해결해 줄 수 있다. 큰 사건은 너에게 가져오고, 작은 사건은 그들이 직접 판결할 것이다. 그들이 일을 함께 나누어 맡으면 네 일이 훨씬 가벼워질 것이다."
         }
       },
       "decisions": [
@@ -2514,6 +3143,16 @@
           "L": "Ukifanya jambo hili, na Mungu akakuamuru, utaweza kusimama, na watu hawa wote nao watakwenda mahali pao kwa amani.\"",
           "B": "Ukifanya hivi, na Mungu akakuagiza hivyo, utaweza kustahimili, na watu hawa wote nao watarudi nyumbani kwao kwa amani.\"",
           "R": "Ukifanya hivi, na ikiwa Mungu atakuambia ufanye hivyo, hutachoka. Na watu hawa wote watarudi nyumbani mashauri yao yakiwa yameamuliwa.\""
+        },
+        "vi": {
+          "L": "Nếu con làm việc này, và Đức Chúa Trời truyền cho con, thì con sẽ đứng vững được, và cả dân này cũng sẽ về chỗ mình trong bình an.\"",
+          "B": "Nếu con làm như vậy và Đức Chúa Trời truyền lệnh cho con, thì con sẽ đứng vững được, và mọi người này cũng sẽ trở về nhà trong bình an.\"",
+          "R": "Nếu con làm như vậy, và nếu Đức Chúa Trời bảo con làm, con sẽ không bị kiệt sức. Và mọi người này sẽ trở về nhà, việc của họ đã được giải quyết.\""
+        },
+        "ko": {
+          "L": "만일 네가 이 일을 하고 하나님께서 너에게 명령하시면, 너는 견딜 수 있을 것이고, 이 모든 백성도 평안히 그들의 곳으로 갈 것이다.\"",
+          "B": "네가 이렇게 하고 하나님께서도 너에게 그렇게 명령하시면, 너도 견뎌 낼 수 있고, 이 모든 백성도 평안히 자기 집으로 돌아갈 것이다.\"",
+          "R": "네가 이렇게 하고, 하나님께서도 그렇게 하라고 하시면, 너는 지치지 않을 것이다. 그리고 이 모든 사람도 문제를 해결하고 집으로 돌아갈 것이다.\""
         }
       },
       "decisions": [
@@ -2580,6 +3219,25 @@
           "reason": "Readable explains what \"in peace\" means here.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020180230171",
+            "o020180230172"
+          ],
+          "choice": "\"trong bình an\" (L, B)",
+          "alternatives": [],
+          "reason": "\"bình an\" is the word for peace that the project's Vietnamese uses through the New Testament; Readable says what going home in peace means here, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2629,6 +3287,16 @@
           "L": "Naye Musa akaisikiliza sauti ya baba mkwe wake, akafanya yote aliyoyasema.",
           "B": "Musa alifuata shauri la baba mkwe wake, akafanya yote aliyopendekeza.",
           "R": "Musa alifanya kama baba mkwe wake alivyomwambia. Alifuata ushauri wake wote."
+        },
+        "vi": {
+          "L": "Và Môi-se nghe theo tiếng cha vợ mình và làm mọi điều ông ấy đã nói.",
+          "B": "Môi-se nghe theo lời khuyên của cha vợ và làm mọi điều ông đề nghị.",
+          "R": "Môi-se làm theo lời cha vợ. Ông làm đúng mọi điều cha vợ khuyên."
+        },
+        "ko": {
+          "L": "그리고 모세는 그의 장인의 목소리를 듣고 그가 말한 모든 것을 했다.",
+          "B": "모세는 장인의 조언을 받아들여 그가 말한 대로 다 했다.",
+          "R": "모세는 장인이 말한 대로 했다. 그는 장인의 충고를 모두 따랐다."
         }
       },
       "decisions": [
@@ -2708,6 +3376,16 @@
           "L": "Naye Musa akachagua wanaume hodari kutoka Israeli wote, akawaweka [kuwa] vichwa juu ya watu, wakuu wa maelfu, wakuu wa mamia, wakuu wa hamsini, na wakuu wa kumi.",
           "B": "Musa alichagua wanaume wenye uwezo kutoka Israeli wote, akawaweka kuwa viongozi wa watu: maafisa wa maelfu, wa mamia, wa hamsini na wa kumi.",
           "R": "Alichagua wanaume wenye uwezo kutoka kila sehemu ya Israeli, akawafanya viongozi wa watu. Wengine walisimamia watu elfu, wengine mia, wengine hamsini na wengine kumi."
+        },
+        "vi": {
+          "L": "Và Môi-se chọn những người có tài năng trong cả Y-sơ-ra-ên và lập họ [làm] đầu trên dân, trưởng ngàn người, trưởng trăm người, trưởng năm mươi người và trưởng mười người.",
+          "B": "Môi-se chọn trong toàn dân Y-sơ-ra-ên những người có tài và lập họ làm đầu dân chúng: chỉ huy hàng ngàn, hàng trăm, hàng năm mươi và hàng mười người.",
+          "R": "Ông chọn những người có khả năng trong khắp Y-sơ-ra-ên và lập họ làm người lãnh đạo dân chúng. Có người cai quản một ngàn người, có người một trăm, có người năm mươi và có người mười."
+        },
+        "ko": {
+          "L": "그리고 모세가 온 이스라엘 가운데서 능력 있는 사람들을 뽑아 그들을 백성 위에 우두머리, 곧 천부장과 백부장과 오십부장과 십부장으로 세웠다.",
+          "B": "모세는 온 이스라엘 가운데서 유능한 사람들을 뽑아 백성의 우두머리로 세웠다. 그들은 천부장과 백부장과 오십부장과 십부장이 되었다.",
+          "R": "모세는 온 이스라엘에서 능력 있는 사람들을 뽑아 백성의 지도자로 세웠다. 어떤 사람은 천 명을, 어떤 사람은 백 명을, 어떤 사람은 오십 명을, 어떤 사람은 열 명을 맡았다."
         }
       },
       "decisions": [
@@ -2788,6 +3466,16 @@
           "L": "Nao wakawahukumu watu kila wakati; jambo gumu walimletea Musa, na kila jambo dogo walilihukumu wao wenyewe.",
           "B": "Tangu hapo waliwaamua watu wakati wote. Kila shauri gumu walimpelekea Musa, lakini kila jambo dogo waliliamua wenyewe.",
           "R": "Viongozi hao walisuluhisha ugomvi wa watu wakati wowote. Walimpelekea Musa mashauri magumu. Lakini mashauri yote madogo waliyaamua wenyewe."
+        },
+        "vi": {
+          "L": "Và họ xét xử dân mọi lúc; việc khó thì họ đem đến cho Môi-se, còn mọi việc nhỏ thì chính họ xét xử.",
+          "B": "Từ đó, họ xét xử dân chúng mọi lúc. Vụ nào khó thì họ đem đến cho Môi-se, còn mọi việc nhỏ thì tự họ phân xử.",
+          "R": "Những người lãnh đạo này giải quyết các vụ tranh chấp của dân chúng bất cứ lúc nào. Họ đem những vụ khó đến cho Môi-se, còn những vụ nhỏ thì tự họ giải quyết."
+        },
+        "ko": {
+          "L": "그리고 그들이 언제나 백성을 재판했다. 어려운 일은 모세에게 가져왔고, 작은 일은 모두 그들이 재판했다.",
+          "B": "그때부터 그들이 언제든지 백성을 재판했다. 어려운 사건은 모세에게 가져갔지만, 작은 사건은 모두 그들이 직접 판결했다.",
+          "R": "이 지도자들이 언제든지 백성의 다툼을 해결해 주었다. 어려운 사건은 모세에게 가져갔다. 그러나 작은 사건은 모두 그들이 직접 판결했다."
         }
       },
       "decisions": [
@@ -2870,6 +3558,16 @@
           "L": "Naye Musa akamuaga baba mkwe wake, naye akaenda zake hadi nchi yake.",
           "B": "Kisha Musa alimsindikiza baba mkwe wake, naye Yethro akarudi katika nchi yake mwenyewe.",
           "R": "Kisha Musa alimuaga baba mkwe wake, naye Yethro akarudi nyumbani katika nchi yake."
+        },
+        "vi": {
+          "L": "Và Môi-se tiễn cha vợ mình đi, và ông ấy đi về xứ mình.",
+          "B": "Rồi Môi-se tiễn cha vợ lên đường, và Giê-trô trở về xứ mình.",
+          "R": "Sau đó Môi-se chào từ biệt cha vợ, và Giê-trô về lại quê hương mình."
+        },
+        "ko": {
+          "L": "그리고 모세가 그의 장인을 보냈고, 그는 자기 땅으로 갔다.",
+          "B": "그 뒤에 모세는 장인을 배웅했고, 이드로는 자기 고향으로 돌아갔다.",
+          "R": "그 뒤에 모세는 장인과 작별 인사를 했고, 이드로는 자기 나라로 돌아갔다."
         }
       },
       "decisions": [

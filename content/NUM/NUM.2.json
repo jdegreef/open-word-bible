@@ -43,6 +43,16 @@
           "L": "Naye {{divine_name:BWANA|Yahwe}} akanena na Musa na Haruni, akisema,",
           "B": "{{divine_name:BWANA|Yahwe}} alizungumza na Musa na Haruni. Akawaambia,",
           "R": "{{divine_name:BWANA|Yahwe}} aliwaambia Musa na Haruni,"
+        },
+        "vi": {
+          "L": "Và {{divine_name:CHÚA|Gia-vê}} phán với Môi-se và A-rôn rằng:",
+          "B": "{{divine_name:CHÚA|Gia-vê}} phán với Môi-se và A-rôn. Ngài phán:",
+          "R": "{{divine_name:CHÚA|Gia-vê}} phán với Môi-se và A-rôn:"
+        },
+        "ko": {
+          "L": "그리고 {{divine_name:주|야훼}}께서 모세와 아론에게 말씀하여 이르셨다.",
+          "B": "{{divine_name:주|야훼}}께서 모세와 아론에게 이렇게 말씀하셨다.",
+          "R": "{{divine_name:주|야훼}}께서 모세와 아론에게 말씀하셨다."
         }
       },
       "decisions": [
@@ -154,6 +164,16 @@
           "L": "\"Kila mtu karibu na bendera yake, pamoja na alama za nyumba ya baba zao, wana wa Israeli watapiga kambi; kwa mbali, kulizunguka Hema la Kukutania, watapiga kambi.",
           "B": "\"Waisraeli watapiga kambi kwa makundi, kila kundi chini ya bendera yake, karibu na alama za jamaa zake. Watapiga kambi kulizunguka Hema la Kukutania pande zote, kwa umbali fulani.",
           "R": "\"Lazima Waisraeli wapige kambi kulizunguka Hema la Kukutania pande zote, mbali kidogo nalo. Kila kundi litapiga kambi chini ya bendera yake, pamoja na alama za jamaa zake."
+        },
+        "vi": {
+          "L": "\"Mỗi người theo cờ hiệu mình, với các dấu hiệu của nhà cha họ, con cháu Y-sơ-ra-ên sẽ đóng trại; họ sẽ đóng trại đối diện, chung quanh Lều Hội Kiến, cách một khoảng.",
+          "B": "\"Dân Y-sơ-ra-ên phải đóng trại, mỗi nhóm dưới cờ hiệu riêng, bên cạnh các huy hiệu của gia đình tổ tiên mình. Họ phải đóng trại chung quanh Lều Hội Kiến, cách Lều một khoảng.",
+          "R": "\"Dân Y-sơ-ra-ên phải dựng trại chung quanh Lều Hội Kiến, cách Lều một khoảng. Mỗi nhóm sẽ đóng trại dưới lá cờ riêng, có dấu hiệu của các gia đình mình."
+        },
+        "ko": {
+          "L": "\"이스라엘 자손은 각자 자기 깃발 곁에, 자기 조상의 집의 표지들과 함께 진을 칠 것이다. 회막 둘레로 마주 보며 떨어져서 진을 칠 것이다.",
+          "B": "\"이스라엘 백성은 각 무리가 자기 깃발 아래, 자기 집안의 표지 곁에 진을 쳐야 한다. 회막에서 조금 떨어져서 그 둘레에 진을 쳐야 한다.",
+          "R": "\"이스라엘 사람들은 회막에서 조금 떨어진 곳에 회막을 빙 둘러 진을 쳐야 한다. 각 무리는 자기 깃발 아래, 자기 집안을 나타내는 표시와 함께 진을 쳐야 한다."
         }
       },
       "decisions": [
@@ -280,6 +300,71 @@
           "reason": "Swahili has one everyday word, \"bendera\", for both a standard and a flag, so it stands at every level where the English has \"standard\" (L, B) and \"flag\" (R). The family signs are \"alama\", marks, which keeps them distinct from the large standard of each camp (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040020020042"
+          ],
+          "choice": "\"dấu hiệu\" (L, R) / \"huy hiệu\" (B) for the signs of the families",
+          "alternatives": [
+            "\"biểu hiệu\""
+          ],
+          "reason": "These are smaller marks for each family beside the tribe's banner; \"huy hiệu\" names an emblem in standard Vietnamese, and Literal and Readable keep the plain \"dấu hiệu\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040020020031",
+            "o040020020042"
+          ],
+          "choice": "\"깃발\" for the standard of each camp and \"표지\" (Literal, Balanced) / \"표시\" (Readable) for the signs of each family",
+          "alternatives": [
+            "군기",
+            "기호"
+          ],
+          "reason": "The meaning decision distinguishes a large flag for each camp from smaller marks for each family; Korean keeps two different words so the reader sees the two levels. \"깃발\" is the word already used in 1:52.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040020020101",
+            "o040020020102",
+            "o040020020111"
+          ],
+          "choice": "\"마주 보며 떨어져서\" for \"from opposite\"",
+          "alternatives": [
+            "맞은편에서"
+          ],
+          "reason": "The Hebrew says the tribes face the tent from a distance; the Literal keeps both ideas, the other levels keep only the distance, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -338,6 +423,16 @@
           "L": "Na wale wanaopiga kambi upande wa mashariki, kuelekea mawio ya jua, [itakuwa] bendera ya kambi ya Yuda kwa majeshi yao; na kiongozi wa wana wa Yuda [atakuwa] Nashoni mwana wa Aminadabu.",
           "B": "Upande wa mashariki, kuelekea mawio ya jua, itakuwa kambi ya Yuda chini ya bendera yake, kwa vikosi vyao. Kiongozi wa watu wa Yuda ni Nashoni mwana wa Aminadabu.",
           "R": "Kambi ya Yuda, pamoja na vikosi vyake, itakuwa upande wa mashariki, jua linapochomoza. Watapiga kambi chini ya bendera ya Yuda. Kiongozi wa watu wa Yuda ni Nashoni mwana wa Aminadabu."
+        },
+        "vi": {
+          "L": "Và những người đóng trại ở phía đông, về phía mặt trời mọc, [sẽ là] cờ hiệu của trại quân Giu-đa theo các đạo quân của họ; và thủ lĩnh của con cháu Giu-đa [sẽ là] Na-ách-son con trai A-mi-na-đáp.",
+          "B": "Những người đóng trại ở phía đông, về phía mặt trời mọc, sẽ là trại quân Giu-đa dưới cờ hiệu mình, theo từng đội quân. Thủ lĩnh con cháu Giu-đa là Na-ách-son con trai A-mi-na-đáp.",
+          "R": "Khu trại của Giu-đa cùng các đội quân sẽ ở phía đông, nơi mặt trời mọc. Họ sẽ đóng trại dưới lá cờ của Giu-đa. Người lãnh đạo của họ là Na-ách-son con trai A-mi-na-đáp."
+        },
+        "ko": {
+          "L": "그리고 동쪽, 곧 해 돋는 쪽으로 진을 칠 자들은 그들의 군대별로 유다 진의 깃발[에 속한 자들]이요, 유다 자손의 지도자는 아미나답의 아들 나손[이다].",
+          "B": "동쪽, 곧 해 돋는 쪽에는 유다 진이 부대별로 자기 깃발 아래 진을 쳐야 한다. 유다 자손의 지도자는 아미나답의 아들 나손이다.",
+          "R": "유다 진은 부대별로 해가 뜨는 동쪽에 진을 칠 것이다. 그들은 유다의 깃발 아래 진을 친다. 유다 사람들의 지도자는 아미나답의 아들 나손이다."
         }
       },
       "decisions": [
@@ -498,6 +593,68 @@
           "reason": "The two Hebrew words for east (m1) become \"mashariki\" and \"mawio ya jua\", the place of the sunrise. Readable says it with the everyday verb, \"where the sun rises\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040020030072"
+          ],
+          "choice": "\"군대\" (Literal) and \"부대\" (Balanced, Readable) for \"armies\"; \"유다 자손\" (Literal, Balanced) / \"유다 사람들\" (Readable) for \"the sons of Judah\"",
+          "alternatives": [
+            "군사"
+          ],
+          "reason": "As in 1:3: the companies of fighting men of each tribe. The tribe's people follow the pattern of \"이스라엘 자손 / 백성 / 사람들\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040020030072"
+          ],
+          "choice": "\"đạo quân\" (L) / \"đội quân\" (B, R) for the tribes' armies",
+          "alternatives": [
+            "\"binh đoàn\"",
+            "\"quân đội\""
+          ],
+          "reason": "The word names the companies of fighting men in each tribe; \"đạo quân\" keeps the older military word at Literal, and \"đội quân\" is the everyday word for a body of troops. Used through chapter 2.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o040020030111"
+          ],
+          "choice": "\"Người lãnh đạo của họ\" for \"the leader of the people of Judah\" at Readable",
+          "alternatives": [
+            "repeat \"người Giu-đa\""
+          ],
+          "reason": "The tribe has just been named, so Readable avoids saying it a second time in the same short paragraph; the person meant is the same.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -548,6 +705,16 @@
           "L": "Na jeshi lake, na walioandikishwa wao, [ni] 74,600.",
           "B": "Kikosi chake kina wanaume 74,600.",
           "R": "Vikosi vyake vina wanaume 74,600."
+        },
+        "vi": {
+          "L": "Và đạo quân của ông, và những người được kiểm kê của họ, [là] 74.600.",
+          "B": "Đội quân của ông gồm 74.600 người.",
+          "R": "Đội quân của ông có 74.600 người."
+        },
+        "ko": {
+          "L": "그리고 그의 군대, 곧 그들의 계수된 자는 74,600[명이다].",
+          "B": "그의 부대는 74,600명이다.",
+          "R": "그의 군대는 74,600명이다."
         }
       },
       "decisions": [
@@ -651,6 +818,28 @@
           "reason": "Readable keeps \"vikosi\", the word used for this Hebrew word at Balanced and Readable since chapter 1; \"jeshi lake\" would make each tribe a separate army.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o040020040013"
+          ],
+          "choice": "\"ông\" for the tribal leader (\"his army\")",
+          "alternatives": [
+            "\"người\"",
+            "\"nó\" for the tribe"
+          ],
+          "reason": "The Hebrew \"his\" points back to the leader just named, and \"ông\" is the respectful pronoun for him in plain modern Vietnamese.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -703,6 +892,16 @@
           "L": "Na wale wanaopiga kambi karibu naye, [watakuwa] kabila la Isakari; na kiongozi wa wana wa Isakari [atakuwa] Nethaneli mwana wa Suari.",
           "B": "Karibu na Yuda, kabila la Isakari litapiga kambi. Kiongozi wa watu wa Isakari ni Nethaneli mwana wa Suari.",
           "R": "Kabila la Isakari litapiga kambi karibu na Yuda. Kiongozi wa watu wa Isakari ni Nethaneli mwana wa Suari."
+        },
+        "vi": {
+          "L": "Và những người đóng trại cạnh ông [sẽ là] chi tộc Y-sa-ca; và thủ lĩnh của con cháu Y-sa-ca [sẽ là] Nê-tha-nên con trai Xu-a.",
+          "B": "Chi tộc Y-sa-ca phải đóng trại cạnh Giu-đa. Thủ lĩnh con cháu Y-sa-ca là Nê-tha-nên con trai Xu-a.",
+          "R": "Chi tộc Y-sa-ca sẽ đóng trại cạnh Giu-đa. Người lãnh đạo của họ là Nê-tha-nên con trai Xu-a."
+        },
+        "ko": {
+          "L": "그리고 그 곁에 진을 칠 자들은 잇사갈 지파[요], 잇사갈 자손의 지도자는 수알의 아들 느다넬[이다].",
+          "B": "유다 곁에는 잇사갈 지파가 진을 쳐야 한다. 잇사갈 자손의 지도자는 수알의 아들 느다넬이다.",
+          "R": "잇사갈 지파는 유다 곁에 진을 칠 것이다. 잇사갈 사람들의 지도자는 수알의 아들 느다넬이다."
         }
       },
       "decisions": [
@@ -788,6 +987,16 @@
           "L": "Na jeshi lake, na walioandikishwa wake, [ni] 54,400.",
           "B": "Kikosi chake kina wanaume 54,400.",
           "R": "Vikosi vyake vina wanaume 54,400."
+        },
+        "vi": {
+          "L": "Và đạo quân của ông, và những người được kiểm kê của ông, [là] 54.400.",
+          "B": "Đội quân của ông gồm 54.400 người.",
+          "R": "Đội quân của ông có 54.400 người."
+        },
+        "ko": {
+          "L": "그리고 그의 군대, 곧 그의 계수된 자는 54,400[명이다].",
+          "B": "그의 부대는 54,400명이다.",
+          "R": "그의 군대는 54,400명이다."
         }
       },
       "decisions": [
@@ -852,6 +1061,16 @@
           "L": "[Kisha] kabila la Zabuloni; na kiongozi wa wana wa Zabuloni [atakuwa] Eliabu mwana wa Heloni.",
           "B": "Kisha linafuata kabila la Zabuloni. Kiongozi wa watu wa Zabuloni ni Eliabu mwana wa Heloni.",
           "R": "Kabila la Zabuloni litapiga kambi hapo pia. Kiongozi wa watu wa Zabuloni ni Eliabu mwana wa Heloni."
+        },
+        "vi": {
+          "L": "[Kế đến] chi tộc Sa-bu-lôn; và thủ lĩnh của con cháu Sa-bu-lôn [sẽ là] Ê-li-áp con trai Hê-lôn.",
+          "B": "Kế đến là chi tộc Sa-bu-lôn. Thủ lĩnh con cháu Sa-bu-lôn là Ê-li-áp con trai Hê-lôn.",
+          "R": "Chi tộc Sa-bu-lôn cũng sẽ đóng trại ở đó. Người lãnh đạo của họ là Ê-li-áp con trai Hê-lôn."
+        },
+        "ko": {
+          "L": "[그다음은] 스불론 지파[요], 스불론 자손의 지도자는 헬론의 아들 엘리압[이다].",
+          "B": "그다음은 스불론 지파이다. 스불론 자손의 지도자는 헬론의 아들 엘리압이다.",
+          "R": "스불론 지파도 거기에 진을 칠 것이다. 스불론 사람들의 지도자는 헬론의 아들 엘리압이다."
         }
       },
       "decisions": [
@@ -938,6 +1157,16 @@
           "L": "Na jeshi lake, na walioandikishwa wake, [ni] 57,400.",
           "B": "Kikosi chake kina wanaume 57,400.",
           "R": "Vikosi vyake vina wanaume 57,400."
+        },
+        "vi": {
+          "L": "Và đạo quân của ông, và những người được kiểm kê của ông, [là] 57.400.",
+          "B": "Đội quân của ông gồm 57.400 người.",
+          "R": "Đội quân của ông có 57.400 người."
+        },
+        "ko": {
+          "L": "그리고 그의 군대, 곧 그의 계수된 자는 57,400[명이다].",
+          "B": "그의 부대는 57,400명이다.",
+          "R": "그의 군대는 57,400명이다."
         }
       },
       "decisions": [
@@ -1014,6 +1243,16 @@
           "L": "Walioandikishwa wote wa kambi ya Yuda [ni] 186,400, kwa majeshi yao. Wao watasafiri kwanza.",
           "B": "Jumla ya walioandikishwa katika kambi ya Yuda ni wanaume 186,400, kwa vikosi vyao. Wao ndio watakaotangulia kusafiri.",
           "R": "Kwa jumla, kambi ya Yuda ina wanaume 186,400. Wao watakuwa wa kwanza kuondoka."
+        },
+        "vi": {
+          "L": "Tất cả những người được kiểm kê của trại quân Giu-đa [là] 186.400, theo các đạo quân của họ. Họ sẽ ra đi trước tiên.",
+          "B": "Tổng số người được kiểm kê trong trại quân Giu-đa là 186.400 người, theo từng đội quân. Họ phải nhổ trại ra đi trước tiên.",
+          "R": "Tổng cộng, khu trại Giu-đa có 186.400 người. Họ sẽ là những người lên đường đầu tiên."
+        },
+        "ko": {
+          "L": "유다 진에 계수된 모든 자는 그들의 군대별로 186,400[명이다]. 그들이 맨 먼저 출발할 것이다.",
+          "B": "유다 진에 계수된 사람은 부대별로 모두 186,400명이다. 그들이 맨 먼저 출발해야 한다.",
+          "R": "유다 진은 모두 186,400명이다. 그들이 맨 앞에서 행진해 나갈 것이다."
         }
       },
       "decisions": [
@@ -1076,6 +1315,47 @@
           "reason": "Readable says \"march out\", since the people move as an army in ranks; Literal and Balanced say \"set out\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040020090151"
+          ],
+          "choice": "\"nhổ trại ra đi\" (B), \"lên đường\" (R) for \"set out\"",
+          "alternatives": [
+            "\"khởi hành\""
+          ],
+          "reason": "The verb pictures pulling up tent pegs to move on; \"nhổ trại\" says just that in Vietnamese. Literal keeps the plain \"ra đi\". Used for the march order in chapters 2 and 4.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040020090151"
+          ],
+          "choice": "\"출발하다\" for \"set out\" (Literal, Balanced); \"행진해 나가다\" at Readable",
+          "alternatives": [
+            "떠나다",
+            "이동하다"
+          ],
+          "reason": "The verb pictures pulling up the tent pegs to move on; \"출발하다\" is the plain word for a company setting off, and the Readable follows the English \"march out\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1129,6 +1409,16 @@
           "L": "Bendera ya kambi ya Reubeni [itakuwa] upande wa kusini, kwa majeshi yao; na kiongozi wa wana wa Reubeni [atakuwa] Elisuri mwana wa Shedeuri.",
           "B": "Upande wa kusini itakuwa kambi ya Reubeni chini ya bendera yake, kwa vikosi vyao. Kiongozi wa watu wa Reubeni ni Elisuri mwana wa Shedeuri.",
           "R": "Kambi ya Reubeni, pamoja na vikosi vyake, itakuwa upande wa kusini, chini ya bendera ya Reubeni. Kiongozi wa watu wa Reubeni ni Elisuri mwana wa Shedeuri."
+        },
+        "vi": {
+          "L": "Cờ hiệu của trại quân Ru-bên [sẽ ở] phía nam, theo các đạo quân của họ; và thủ lĩnh của con cháu Ru-bên [sẽ là] Ê-lít-su con trai Sê-đê-u.",
+          "B": "Phía nam sẽ là trại quân Ru-bên dưới cờ hiệu mình, theo từng đội quân. Thủ lĩnh con cháu Ru-bên là Ê-lít-su con trai Sê-đê-u.",
+          "R": "Khu trại của Ru-bên cùng các đội quân sẽ ở phía nam, dưới lá cờ của Ru-bên. Người lãnh đạo của họ là Ê-lít-su con trai Sê-đê-u."
+        },
+        "ko": {
+          "L": "그리고 르우벤 진의 깃발은 그들의 군대별로 남쪽[에 있을 것이요], 르우벤 자손의 지도자는 스데울의 아들 엘리술[이다].",
+          "B": "남쪽에는 르우벤 진이 부대별로 자기 깃발 아래 진을 쳐야 한다. 르우벤 자손의 지도자는 스데울의 아들 엘리술이다.",
+          "R": "르우벤 진은 부대별로 남쪽에 진을 칠 것이다. 그들은 르우벤의 깃발 아래 진을 친다. 르우벤 사람들의 지도자는 스데울의 아들 엘리술이다."
         }
       },
       "decisions": [
@@ -1224,6 +1514,16 @@
           "L": "Na jeshi lake, na walioandikishwa wake, [ni] 46,500.",
           "B": "Kikosi chake kina wanaume 46,500.",
           "R": "Vikosi vyake vina wanaume 46,500."
+        },
+        "vi": {
+          "L": "Và đạo quân của ông, và những người được kiểm kê của ông, [là] 46.500.",
+          "B": "Đội quân của ông gồm 46.500 người.",
+          "R": "Đội quân của ông có 46.500 người."
+        },
+        "ko": {
+          "L": "그리고 그의 군대, 곧 그의 계수된 자는 46,500[명이다].",
+          "B": "그의 부대는 46,500명이다.",
+          "R": "그의 군대는 46,500명이다."
         }
       },
       "decisions": [
@@ -1294,6 +1594,16 @@
           "L": "Na wale wanaopiga kambi karibu naye, [watakuwa] kabila la Simeoni; na kiongozi wa wana wa Simeoni [atakuwa] Shelumieli mwana wa Surishadai.",
           "B": "Karibu na Reubeni, kabila la Simeoni litapiga kambi. Kiongozi wa watu wa Simeoni ni Shelumieli mwana wa Surishadai.",
           "R": "Kabila la Simeoni litapiga kambi karibu na Reubeni. Kiongozi wa watu wa Simeoni ni Shelumieli mwana wa Surishadai."
+        },
+        "vi": {
+          "L": "Và những người đóng trại cạnh ông [sẽ là] chi tộc Si-mê-ôn; và thủ lĩnh của con cháu Si-mê-ôn [sẽ là] Sê-lu-mi-ên con trai Xu-ri-ha-đai.",
+          "B": "Chi tộc Si-mê-ôn phải đóng trại cạnh Ru-bên. Thủ lĩnh con cháu Si-mê-ôn là Sê-lu-mi-ên con trai Xu-ri-ha-đai.",
+          "R": "Chi tộc Si-mê-ôn sẽ đóng trại cạnh Ru-bên. Người lãnh đạo của họ là Sê-lu-mi-ên con trai Xu-ri-ha-đai."
+        },
+        "ko": {
+          "L": "그리고 그 곁에 진을 칠 자들은 시므온 지파[요], 시므온 자손의 지도자는 수리삿대의 아들 슬루미엘[이다].",
+          "B": "르우벤 곁에는 시므온 지파가 진을 쳐야 한다. 시므온 자손의 지도자는 수리삿대의 아들 슬루미엘이다.",
+          "R": "시므온 지파는 르우벤 곁에 진을 칠 것이다. 시므온 사람들의 지도자는 수리삿대의 아들 슬루미엘이다."
         }
       },
       "decisions": [
@@ -1394,6 +1704,16 @@
           "L": "Na jeshi lake, na walioandikishwa wao, [ni] 59,300.",
           "B": "Kikosi chake kina wanaume 59,300.",
           "R": "Vikosi vyake vina wanaume 59,300."
+        },
+        "vi": {
+          "L": "Và đạo quân của ông, và những người được kiểm kê của họ, [là] 59.300.",
+          "B": "Đội quân của ông gồm 59.300 người.",
+          "R": "Đội quân của ông có 59.300 người."
+        },
+        "ko": {
+          "L": "그리고 그의 군대, 곧 그들의 계수된 자는 59,300[명이다].",
+          "B": "그의 부대는 59,300명이다.",
+          "R": "그의 군대는 59,300명이다."
         }
       },
       "decisions": [
@@ -1459,6 +1779,16 @@
           "L": "Na kabila la Gadi [litafuata]; na kiongozi wa wana wa Gadi [atakuwa] Eliasafu mwana wa Reueli.",
           "B": "Kisha linafuata kabila la Gadi. Kiongozi wa watu wa Gadi ni Eliasafu mwana wa Reueli.",
           "R": "Kabila la Gadi litapiga kambi hapo pia. Kiongozi wa watu wa Gadi ni Eliasafu mwana wa Reueli."
+        },
+        "vi": {
+          "L": "Và chi tộc Gát [kế tiếp]; và thủ lĩnh của con cháu Gát [sẽ là] Ê-li-a-sáp con trai Rê-u-ên.",
+          "B": "Kế đến là chi tộc Gát. Thủ lĩnh con cháu Gát là Ê-li-a-sáp con trai Rê-u-ên.",
+          "R": "Chi tộc Gát cũng sẽ đóng trại ở đó. Người lãnh đạo của họ là Ê-li-a-sáp con trai Rê-u-ên."
+        },
+        "ko": {
+          "L": "그리고 갓 지파[가 그다음이요], 갓 자손의 지도자는 르우엘의 아들 엘리아삽[이다].",
+          "B": "그다음은 갓 지파이다. 갓 자손의 지도자는 르우엘의 아들 엘리아삽이다.",
+          "R": "갓 지파도 거기에 진을 칠 것이다. 갓 사람들의 지도자는 르우엘의 아들 엘리아삽이다."
         }
       },
       "decisions": [
@@ -1495,6 +1825,27 @@
           "choice": "[shall be next] / Then comes / there too",
           "alternatives": [],
           "reason": "As in verse 7, the Hebrew names the tribe with no verb. Literal brackets the words it supplies.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040020140081"
+          ],
+          "choice": "\"르우엘\" here, \"드우엘\" in 1:14",
+          "alternatives": [
+            "드우엘"
+          ],
+          "reason": "The Hebrew text spells the name differently in the two places and the English keeps both, with a footnote; Korean follows it so the footnote still fits.",
           "uncertain": false,
           "footnote": false
         }
@@ -1549,6 +1900,16 @@
           "L": "Na jeshi lake, na walioandikishwa wao, [ni] 45,650.",
           "B": "Kikosi chake kina wanaume 45,650.",
           "R": "Vikosi vyake vina wanaume 45,650."
+        },
+        "vi": {
+          "L": "Và đạo quân của ông, và những người được kiểm kê của họ, [là] 45.650.",
+          "B": "Đội quân của ông gồm 45.650 người.",
+          "R": "Đội quân của ông có 45.650 người."
+        },
+        "ko": {
+          "L": "그리고 그의 군대, 곧 그들의 계수된 자는 45,650[명이다].",
+          "B": "그의 부대는 45,650명이다.",
+          "R": "그의 군대는 45,650명이다."
         }
       },
       "decisions": [
@@ -1627,6 +1988,16 @@
           "L": "Walioandikishwa wote wa kambi ya Reubeni [ni] 151,450, kwa majeshi yao. Nao watasafiri wa pili.",
           "B": "Jumla ya walioandikishwa katika kambi ya Reubeni ni wanaume 151,450, kwa vikosi vyao. Wao watasafiri katika nafasi ya pili.",
           "R": "Kwa jumla, kambi ya Reubeni ina wanaume 151,450. Wao watakuwa wa pili kuondoka."
+        },
+        "vi": {
+          "L": "Tất cả những người được kiểm kê của trại quân Ru-bên [là] 151.450, theo các đạo quân của họ. Và họ sẽ ra đi thứ nhì.",
+          "B": "Tổng số người được kiểm kê trong trại quân Ru-bên là 151.450 người, theo từng đội quân. Họ phải nhổ trại ra đi thứ nhì.",
+          "R": "Tổng cộng, khu trại Ru-bên có 151.450 người. Họ sẽ lên đường thứ nhì."
+        },
+        "ko": {
+          "L": "르우벤 진에 계수된 모든 자는 그들의 군대별로 151,450[명이다]. 그리고 그들이 둘째로 출발할 것이다.",
+          "B": "르우벤 진에 계수된 사람은 부대별로 모두 151,450명이다. 그들은 둘째로 출발해야 한다.",
+          "R": "르우벤 진은 모두 151,450명이다. 그들은 두 번째로 행진해 나갈 것이다."
         }
       },
       "decisions": [
@@ -1719,6 +2090,16 @@
           "L": "Na Hema la Kukutania litasafiri, kambi ya Walawi, katikati ya kambi; kama wanavyopiga kambi, ndivyo watakavyosafiri, kila mtu mahali pake, kwa bendera zao.",
           "B": "Kisha Hema la Kukutania litasafiri pamoja na kambi ya Walawi katikati ya kambi zote. Watasafiri kwa mpangilio uleule wa kambi zao, kila kundi mahali pake, chini ya bendera zao.",
           "R": "Baadaye Hema la Kukutania litaondoka pamoja na kambi ya Walawi, katikati ya kambi zote. Makabila yatatembea kwa mpangilio uleule wa kupiga kambi. Kila kabila litabaki mahali pake chini ya bendera yake."
+        },
+        "vi": {
+          "L": "Và Lều Hội Kiến sẽ ra đi, [tức] trại quân của người Lê-vi, ở giữa các trại quân; họ đóng trại thế nào thì họ sẽ ra đi thế ấy, mỗi người tại chỗ mình, theo cờ hiệu của họ.",
+          "B": "Kế đó, Lều Hội Kiến sẽ ra đi cùng với trại quân người Lê-vi ở giữa các trại quân. Họ phải ra đi theo đúng thứ tự như khi đóng trại, mỗi nhóm ở đúng chỗ mình, dưới cờ hiệu mình.",
+          "R": "Kế tiếp, Lều Hội Kiến sẽ lên đường cùng với khu trại của người Lê-vi, ở giữa tất cả các khu trại. Các chi tộc sẽ đi theo đúng thứ tự như khi đóng trại. Mỗi nhóm giữ đúng chỗ của mình, dưới lá cờ của mình."
+        },
+        "ko": {
+          "L": "그리고 회막, 곧 레위인의 진이 진들의 한가운데에서 출발할 것이다. 그들이 진을 치는 대로 그렇게 출발하되, 각자 자기 자리에서 그들의 깃발별로 [출발할 것이다].",
+          "B": "그다음에 회막이 레위인의 진과 함께 모든 진의 한가운데에서 출발해야 한다. 그들은 진을 친 순서대로, 저마다 자기 자리를 지키며 자기 깃발 아래 출발해야 한다.",
+          "R": "그다음에는 회막이 레위인의 진과 함께 모든 진의 한가운데에서 행진해 나갈 것이다. 지파들은 진을 친 순서 그대로 행진할 것이다. 저마다 자기 깃발 아래 자기 자리를 지켜야 한다."
         }
       },
       "decisions": [
@@ -1805,6 +2186,27 @@
           "reason": "The Hebrew \"each on his hand\" means each in his own place (m2). A word-for-word \"sur sa main\" would mean nothing in French, so Literal says \"à sa place\", as the English Literal does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040020170131",
+            "o040020170141",
+            "o040020170142"
+          ],
+          "choice": "\"자기 자리에서\" for \"on his hand\"",
+          "alternatives": [
+            "자기 손 위에"
+          ],
+          "reason": "\"On his hand\" is a Hebrew idiom for one's own place, as the meaning decision says; a word-for-word \"손\" would mean nothing in Korean, so the Literal gives the sense.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1858,6 +2260,16 @@
           "L": "Bendera ya kambi ya Efraimu, kwa majeshi yao, [itakuwa] kuelekea baharini; na kiongozi wa wana wa Efraimu [atakuwa] Elishama mwana wa Amihudi.",
           "B": "Upande wa magharibi itakuwa kambi ya Efraimu chini ya bendera yake, kwa vikosi vyao. Kiongozi wa watu wa Efraimu ni Elishama mwana wa Amihudi.",
           "R": "Kambi ya Efraimu, pamoja na vikosi vyake, itakuwa upande wa magharibi, chini ya bendera ya Efraimu. Kiongozi wa watu wa Efraimu ni Elishama mwana wa Amihudi."
+        },
+        "vi": {
+          "L": "Cờ hiệu của trại quân Ép-ra-im theo các đạo quân của họ [sẽ ở] về phía biển; và thủ lĩnh của con cháu Ép-ra-im [sẽ là] Ê-li-sa-ma con trai A-mi-hút.",
+          "B": "Phía tây sẽ là trại quân Ép-ra-im dưới cờ hiệu mình, theo từng đội quân. Thủ lĩnh con cháu Ép-ra-im là Ê-li-sa-ma con trai A-mi-hút.",
+          "R": "Khu trại của Ép-ra-im cùng các đội quân sẽ ở phía tây, dưới lá cờ của Ép-ra-im. Người lãnh đạo của họ là Ê-li-sa-ma con trai A-mi-hút."
+        },
+        "ko": {
+          "L": "에브라임 진의 깃발은 그들의 군대별로 바다 쪽[에 있을 것이요], 에브라임 자손의 지도자는 암미훗의 아들 엘리사마[이다].",
+          "B": "서쪽에는 에브라임 진이 부대별로 자기 깃발 아래 진을 쳐야 한다. 에브라임 자손의 지도자는 암미훗의 아들 엘리사마이다.",
+          "R": "에브라임 진은 부대별로 서쪽에 진을 칠 것이다. 그들은 에브라임의 깃발 아래 진을 친다. 에브라임 사람들의 지도자는 암미훗의 아들 엘리사마이다."
         }
       },
       "decisions": [
@@ -1954,6 +2366,16 @@
           "L": "Na jeshi lake, na walioandikishwa wao, [ni] 40,500.",
           "B": "Kikosi chake kina wanaume 40,500.",
           "R": "Vikosi vyake vina wanaume 40,500."
+        },
+        "vi": {
+          "L": "Và đạo quân của ông, và những người được kiểm kê của họ, [là] 40.500.",
+          "B": "Đội quân của ông gồm 40.500 người.",
+          "R": "Đội quân của ông có 40.500 người."
+        },
+        "ko": {
+          "L": "그리고 그의 군대, 곧 그들의 계수된 자는 40,500[명이다].",
+          "B": "그의 부대는 40,500명이다.",
+          "R": "그의 군대는 40,500명이다."
         }
       },
       "decisions": [
@@ -2021,6 +2443,16 @@
           "L": "Na karibu naye [litakuwa] kabila la Manase; na kiongozi wa wana wa Manase [atakuwa] Gamalieli mwana wa Pedasuri.",
           "B": "Karibu na Efraimu litakuwa kabila la Manase. Kiongozi wa watu wa Manase ni Gamalieli mwana wa Pedasuri.",
           "R": "Kabila la Manase litapiga kambi karibu na Efraimu. Kiongozi wa watu wa Manase ni Gamalieli mwana wa Pedasuri."
+        },
+        "vi": {
+          "L": "Và cạnh ông [sẽ là] chi tộc Ma-na-se; và thủ lĩnh của con cháu Ma-na-se [sẽ là] Ga-ma-li-ên con trai Phê-đát-su.",
+          "B": "Cạnh Ép-ra-im sẽ là chi tộc Ma-na-se. Thủ lĩnh con cháu Ma-na-se là Ga-ma-li-ên con trai Phê-đát-su.",
+          "R": "Chi tộc Ma-na-se sẽ đóng trại cạnh Ép-ra-im. Người lãnh đạo của họ là Ga-ma-li-ên con trai Phê-đát-su."
+        },
+        "ko": {
+          "L": "그리고 그 곁에는 므낫세 지파[요], 므낫세 자손의 지도자는 브다술의 아들 가말리엘[이다].",
+          "B": "에브라임 곁에는 므낫세 지파가 진을 쳐야 한다. 므낫세 자손의 지도자는 브다술의 아들 가말리엘이다.",
+          "R": "므낫세 지파는 에브라임 곁에 진을 칠 것이다. 므낫세 사람들의 지도자는 브다술의 아들 가말리엘이다."
         }
       },
       "decisions": [
@@ -2105,6 +2537,16 @@
           "L": "Na jeshi lake, na walioandikishwa wao, [ni] 32,200.",
           "B": "Kikosi chake kina wanaume 32,200.",
           "R": "Vikosi vyake vina wanaume 32,200."
+        },
+        "vi": {
+          "L": "Và đạo quân của ông, và những người được kiểm kê của họ, [là] 32.200.",
+          "B": "Đội quân của ông gồm 32.200 người.",
+          "R": "Đội quân của ông có 32.200 người."
+        },
+        "ko": {
+          "L": "그리고 그의 군대, 곧 그들의 계수된 자는 32,200[명이다].",
+          "B": "그의 부대는 32,200명이다.",
+          "R": "그의 군대는 32,200명이다."
         }
       },
       "decisions": [
@@ -2170,6 +2612,16 @@
           "L": "Na kabila la Benyamini [litafuata]; na kiongozi wa wana wa Benyamini [atakuwa] Abidani mwana wa Gideoni.",
           "B": "Kisha linafuata kabila la Benyamini. Kiongozi wa watu wa Benyamini ni Abidani mwana wa Gideoni.",
           "R": "Kabila la Benyamini litapiga kambi hapo pia. Kiongozi wa watu wa Benyamini ni Abidani mwana wa Gideoni."
+        },
+        "vi": {
+          "L": "Và chi tộc Bên-gia-min [kế tiếp]; và thủ lĩnh của con cháu Bên-gia-min [sẽ là] A-bi-đan con trai Ghi-đê-ô-ni.",
+          "B": "Kế đến là chi tộc Bên-gia-min. Thủ lĩnh con cháu Bên-gia-min là A-bi-đan con trai Ghi-đê-ô-ni.",
+          "R": "Chi tộc Bên-gia-min cũng sẽ đóng trại ở đó. Người lãnh đạo của họ là A-bi-đan con trai Ghi-đê-ô-ni."
+        },
+        "ko": {
+          "L": "그리고 베냐민 지파[가 그다음이요], 베냐민 자손의 지도자는 기드오니의 아들 아비단[이다].",
+          "B": "그다음은 베냐민 지파이다. 베냐민 자손의 지도자는 기드오니의 아들 아비단이다.",
+          "R": "베냐민 지파도 거기에 진을 칠 것이다. 베냐민 사람들의 지도자는 기드오니의 아들 아비단이다."
         }
       },
       "decisions": [
@@ -2257,6 +2709,16 @@
           "L": "Na jeshi lake, na walioandikishwa wao, [ni] 35,400.",
           "B": "Kikosi chake kina wanaume 35,400.",
           "R": "Vikosi vyake vina wanaume 35,400."
+        },
+        "vi": {
+          "L": "Và đạo quân của ông, và những người được kiểm kê của họ, [là] 35.400.",
+          "B": "Đội quân của ông gồm 35.400 người.",
+          "R": "Đội quân của ông có 35.400 người."
+        },
+        "ko": {
+          "L": "그리고 그의 군대, 곧 그들의 계수된 자는 35,400[명이다].",
+          "B": "그의 부대는 35,400명이다.",
+          "R": "그의 군대는 35,400명이다."
         }
       },
       "decisions": [
@@ -2330,6 +2792,16 @@
           "L": "Walioandikishwa wote wa kambi ya Efraimu [ni] 108,100, kwa majeshi yao. Nao watasafiri wa tatu.",
           "B": "Jumla ya walioandikishwa katika kambi ya Efraimu ni wanaume 108,100, kwa vikosi vyao. Wao watasafiri katika nafasi ya tatu.",
           "R": "Kwa jumla, kambi ya Efraimu ina wanaume 108,100. Wao watakuwa wa tatu kuondoka."
+        },
+        "vi": {
+          "L": "Tất cả những người được kiểm kê của trại quân Ép-ra-im [là] 108.100, theo các đạo quân của họ. Và họ sẽ ra đi thứ ba.",
+          "B": "Tổng số người được kiểm kê trong trại quân Ép-ra-im là 108.100 người, theo từng đội quân. Họ phải nhổ trại ra đi thứ ba.",
+          "R": "Tổng cộng, khu trại Ép-ra-im có 108.100 người. Họ sẽ lên đường thứ ba."
+        },
+        "ko": {
+          "L": "에브라임 진에 계수된 모든 자는 그들의 군대별로 108,100[명이다]. 그리고 그들이 셋째로 출발할 것이다.",
+          "B": "에브라임 진에 계수된 사람은 부대별로 모두 108,100명이다. 그들은 셋째로 출발해야 한다.",
+          "R": "에브라임 진은 모두 108,100명이다. 그들은 세 번째로 행진해 나갈 것이다."
         }
       },
       "decisions": [
@@ -2415,6 +2887,16 @@
           "L": "Bendera ya kambi ya Dani [itakuwa] upande wa kaskazini, kwa majeshi yao; na kiongozi wa wana wa Dani [atakuwa] Ahiezeri mwana wa Amishadai.",
           "B": "Upande wa kaskazini itakuwa kambi ya Dani chini ya bendera yake, kwa vikosi vyao. Kiongozi wa watu wa Dani ni Ahiezeri mwana wa Amishadai.",
           "R": "Kambi ya Dani, pamoja na vikosi vyake, itakuwa upande wa kaskazini, chini ya bendera ya Dani. Kiongozi wa watu wa Dani ni Ahiezeri mwana wa Amishadai."
+        },
+        "vi": {
+          "L": "Cờ hiệu của trại quân Đan [sẽ ở] phía bắc, theo các đạo quân của họ; và thủ lĩnh của con cháu Đan [sẽ là] A-hi-ê-xe con trai A-mi-sa-đai.",
+          "B": "Phía bắc sẽ là trại quân Đan dưới cờ hiệu mình, theo từng đội quân. Thủ lĩnh con cháu Đan là A-hi-ê-xe con trai A-mi-sa-đai.",
+          "R": "Khu trại của Đan cùng các đội quân sẽ ở phía bắc, dưới lá cờ của Đan. Người lãnh đạo của họ là A-hi-ê-xe con trai A-mi-sa-đai."
+        },
+        "ko": {
+          "L": "단 진의 깃발은 그들의 군대별로 북쪽[에 있을 것이요], 단 자손의 지도자는 암미삿대의 아들 아히에셀[이다].",
+          "B": "북쪽에는 단 진이 부대별로 자기 깃발 아래 진을 쳐야 한다. 단 자손의 지도자는 암미삿대의 아들 아히에셀이다.",
+          "R": "단 진은 부대별로 북쪽에 진을 칠 것이다. 그들은 단의 깃발 아래 진을 친다. 단 사람들의 지도자는 암미삿대의 아들 아히에셀이다."
         }
       },
       "decisions": [
@@ -2496,6 +2978,16 @@
           "L": "Na jeshi lake, na walioandikishwa wao, [ni] 62,700.",
           "B": "Kikosi chake kina wanaume 62,700.",
           "R": "Vikosi vyake vina wanaume 62,700."
+        },
+        "vi": {
+          "L": "Và đạo quân của ông, và những người được kiểm kê của họ, [là] 62.700.",
+          "B": "Đội quân của ông gồm 62.700 người.",
+          "R": "Đội quân của ông có 62.700 người."
+        },
+        "ko": {
+          "L": "그리고 그의 군대, 곧 그들의 계수된 자는 62,700[명이다].",
+          "B": "그의 부대는 62,700명이다.",
+          "R": "그의 군대는 62,700명이다."
         }
       },
       "decisions": [
@@ -2565,6 +3057,16 @@
           "L": "Na wale wanaopiga kambi karibu naye, [watakuwa] kabila la Asheri; na kiongozi wa wana wa Asheri [atakuwa] Pagieli mwana wa Okrani.",
           "B": "Karibu na Dani, kabila la Asheri litapiga kambi. Kiongozi wa watu wa Asheri ni Pagieli mwana wa Okrani.",
           "R": "Kabila la Asheri litapiga kambi karibu na Dani. Kiongozi wa watu wa Asheri ni Pagieli mwana wa Okrani."
+        },
+        "vi": {
+          "L": "Và những người đóng trại cạnh ông [sẽ là] chi tộc A-se; và thủ lĩnh của con cháu A-se [sẽ là] Pha-ghi-ên con trai Óc-ran.",
+          "B": "Chi tộc A-se phải đóng trại cạnh Đan. Thủ lĩnh con cháu A-se là Pha-ghi-ên con trai Óc-ran.",
+          "R": "Chi tộc A-se sẽ đóng trại cạnh Đan. Người lãnh đạo của họ là Pha-ghi-ên con trai Óc-ran."
+        },
+        "ko": {
+          "L": "그리고 그 곁에 진을 칠 자들은 아셀 지파[요], 아셀 자손의 지도자는 오그란의 아들 바기엘[이다].",
+          "B": "단 곁에는 아셀 지파가 진을 쳐야 한다. 아셀 자손의 지도자는 오그란의 아들 바기엘이다.",
+          "R": "아셀 지파는 단 곁에 진을 칠 것이다. 아셀 사람들의 지도자는 오그란의 아들 바기엘이다."
         }
       },
       "decisions": [
@@ -2650,6 +3152,16 @@
           "L": "Na jeshi lake, na walioandikishwa wao, [ni] 41,500.",
           "B": "Kikosi chake kina wanaume 41,500.",
           "R": "Vikosi vyake vina wanaume 41,500."
+        },
+        "vi": {
+          "L": "Và đạo quân của ông, và những người được kiểm kê của họ, [là] 41.500.",
+          "B": "Đội quân của ông gồm 41.500 người.",
+          "R": "Đội quân của ông có 41.500 người."
+        },
+        "ko": {
+          "L": "그리고 그의 군대, 곧 그들의 계수된 자는 41,500[명이다].",
+          "B": "그의 부대는 41,500명이다.",
+          "R": "그의 군대는 41,500명이다."
         }
       },
       "decisions": [
@@ -2715,6 +3227,16 @@
           "L": "Na kabila la Naftali [litafuata]; na kiongozi wa wana wa Naftali [atakuwa] Ahira mwana wa Enani.",
           "B": "Kisha linafuata kabila la Naftali. Kiongozi wa watu wa Naftali ni Ahira mwana wa Enani.",
           "R": "Kabila la Naftali litapiga kambi hapo pia. Kiongozi wa watu wa Naftali ni Ahira mwana wa Enani."
+        },
+        "vi": {
+          "L": "Và chi tộc Nép-ta-li [kế tiếp]; và thủ lĩnh của con cháu Nép-ta-li [sẽ là] A-hi-ra con trai Ê-nan.",
+          "B": "Kế đến là chi tộc Nép-ta-li. Thủ lĩnh con cháu Nép-ta-li là A-hi-ra con trai Ê-nan.",
+          "R": "Chi tộc Nép-ta-li cũng sẽ đóng trại ở đó. Người lãnh đạo của họ là A-hi-ra con trai Ê-nan."
+        },
+        "ko": {
+          "L": "그리고 납달리 지파[가 그다음이요], 납달리 자손의 지도자는 에난의 아들 아히라[이다].",
+          "B": "그다음은 납달리 지파이다. 납달리 자손의 지도자는 에난의 아들 아히라이다.",
+          "R": "납달리 지파도 거기에 진을 칠 것이다. 납달리 사람들의 지도자는 에난의 아들 아히라이다."
         }
       },
       "decisions": [
@@ -2802,6 +3324,16 @@
           "L": "Na jeshi lake, na walioandikishwa wao, [ni] 53,400.",
           "B": "Kikosi chake kina wanaume 53,400.",
           "R": "Vikosi vyake vina wanaume 53,400."
+        },
+        "vi": {
+          "L": "Và đạo quân của ông, và những người được kiểm kê của họ, [là] 53.400.",
+          "B": "Đội quân của ông gồm 53.400 người.",
+          "R": "Đội quân của ông có 53.400 người."
+        },
+        "ko": {
+          "L": "그리고 그의 군대, 곧 그들의 계수된 자는 53,400[명이다].",
+          "B": "그의 부대는 53,400명이다.",
+          "R": "그의 군대는 53,400명이다."
         }
       },
       "decisions": [
@@ -2878,6 +3410,16 @@
           "L": "Walioandikishwa wote wa kambi ya Dani [ni] 157,600. Watasafiri mwisho, kwa bendera zao.\"",
           "B": "Jumla ya walioandikishwa katika kambi ya Dani ni wanaume 157,600. Wao watasafiri wa mwisho, chini ya bendera zao.\"",
           "R": "Kwa jumla, kambi ya Dani ina wanaume 157,600. Wao watakuwa wa mwisho kuondoka, chini ya bendera zao.\""
+        },
+        "vi": {
+          "L": "Tất cả những người được kiểm kê của trại quân Đan [là] 157.600. Họ sẽ ra đi sau cùng, theo cờ hiệu của họ.\"",
+          "B": "Tổng số người được kiểm kê trong trại quân Đan là 157.600 người. Họ phải nhổ trại ra đi sau cùng, dưới cờ hiệu của mình.\"",
+          "R": "Tổng cộng, khu trại Đan có 157.600 người. Họ sẽ là những người lên đường sau cùng, dưới lá cờ của mình.\""
+        },
+        "ko": {
+          "L": "단 진에 계수된 모든 자는 157,600[명이다]. 그들이 그들의 깃발별로 맨 나중에 출발할 것이다.\"",
+          "B": "단 진에 계수된 사람은 모두 157,600명이다. 그들은 자기 깃발 아래 맨 나중에 출발해야 한다.\"",
+          "R": "단 진은 모두 157,600명이다. 그들은 자기 깃발 아래 맨 마지막으로 행진해 나갈 것이다.\""
         }
       },
       "decisions": [
@@ -2988,6 +3530,16 @@
           "L": "Hawa [ndio] walioandikishwa wa wana wa Israeli kwa nyumba ya baba zao; walioandikishwa wote wa kambi kwa majeshi yao [walikuwa] 603,550.",
           "B": "Hawa ndio Waisraeli walioandikishwa kwa jamaa zao. Jumla ya walioandikishwa katika kambi zote, kwa vikosi vyao, ilikuwa wanaume 603,550.",
           "R": "Hawa ndio Waisraeli waliohesabiwa, jamaa kwa jamaa. Kambi zote kwa pamoja zilikuwa na wanaume 603,550."
+        },
+        "vi": {
+          "L": "Đây [là] những người được kiểm kê của con cháu Y-sơ-ra-ên theo nhà cha họ; tất cả những người được kiểm kê của các trại quân theo các đạo quân của họ [là] 603.550.",
+          "B": "Đó là những người Y-sơ-ra-ên được kiểm kê theo gia đình tổ tiên. Tổng số người được kiểm kê trong tất cả các trại quân, theo từng đội quân, là 603.550 người.",
+          "R": "Đó là những người Y-sơ-ra-ên đã được đếm theo từng gia đình. Tất cả các khu trại có 603.550 người."
+        },
+        "ko": {
+          "L": "이들은 이스라엘 자손 가운데 조상의 집대로 계수된 자들이다. 진들에서 그들의 군대별로 계수된 모든 자는 603,550[명이었다].",
+          "B": "이들은 이스라엘 백성 가운데 집안별로 계수된 사람들이다. 모든 진에서 부대별로 계수된 사람은 모두 603,550명이었다.",
+          "R": "이들은 집안별로 계수된 이스라엘 사람들이다. 모든 진을 합하면 603,550명이었다."
         }
       },
       "decisions": [
@@ -3091,6 +3643,16 @@
           "L": "Lakini Walawi hawakuandikishwa katikati ya wana wa Israeli, kama {{divine_name:BWANA|Yahwe}} alivyomwamuru Musa.",
           "B": "Hata hivyo, Walawi hawakuandikishwa pamoja na Waisraeli wengine, kama {{divine_name:BWANA|Yahwe}} alivyokuwa amemwamuru Musa.",
           "R": "Lakini Walawi hawakuhesabiwa pamoja na Waisraeli wengine. Ndivyo {{divine_name:BWANA|Yahwe}} alivyokuwa amemwamuru Musa."
+        },
+        "vi": {
+          "L": "Nhưng người Lê-vi không được kiểm kê giữa con cháu Y-sơ-ra-ên, như {{divine_name:CHÚA|Gia-vê}} đã truyền cho Môi-se.",
+          "B": "Tuy nhiên, người Lê-vi không được kiểm kê chung với những người Y-sơ-ra-ên khác, như {{divine_name:CHÚA|Gia-vê}} đã truyền cho Môi-se.",
+          "R": "Nhưng người Lê-vi không được đếm chung với những người Y-sơ-ra-ên khác. Đó là điều {{divine_name:CHÚA|Gia-vê}} đã truyền cho Môi-se."
+        },
+        "ko": {
+          "L": "그러나 레위인은 {{divine_name:주|야훼}}께서 모세에게 명령하신 대로 이스라엘 자손 가운데서 계수되지 않았다.",
+          "B": "그러나 레위인은 {{divine_name:주|야훼}}께서 모세에게 명령하신 대로 다른 이스라엘 백성과 함께 계수되지 않았다.",
+          "R": "그러나 레위인은 다른 이스라엘 사람들과 함께 세지 않았다. {{divine_name:주|야훼}}께서 모세에게 그렇게 명령하셨기 때문이다."
         }
       },
       "decisions": [
@@ -3193,6 +3755,16 @@
           "L": "Nao wana wa Israeli wakafanya sawasawa na yote ambayo {{divine_name:BWANA|Yahwe}} alimwamuru Musa; ndivyo walivyopiga kambi kwa bendera zao, na ndivyo walivyosafiri, kila mtu kwa koo zake, kwa nyumba ya baba zake.",
           "B": "Basi Waisraeli walifanya kila kitu ambacho {{divine_name:BWANA|Yahwe}} alikuwa amemwamuru Musa. Ndivyo walivyopiga kambi chini ya bendera zao, na ndivyo walivyosafiri, kila mmoja pamoja na ukoo wake na jamaa yake.",
           "R": "Waisraeli walifanya kila kitu ambacho {{divine_name:BWANA|Yahwe}} alikuwa amemwamuru Musa. Walipiga kambi chini ya bendera zao na kusafiri kwa namna ileile, kila mmoja pamoja na ukoo na jamaa yake."
+        },
+        "vi": {
+          "L": "Và con cháu Y-sơ-ra-ên làm theo mọi điều {{divine_name:CHÚA|Gia-vê}} đã truyền cho Môi-se; họ đóng trại theo cờ hiệu mình như vậy, và họ ra đi như vậy, mỗi người theo gia tộc mình, theo nhà cha mình.",
+          "B": "Vậy dân Y-sơ-ra-ên làm mọi điều {{divine_name:CHÚA|Gia-vê}} đã truyền cho Môi-se. Họ đóng trại dưới cờ hiệu mình đúng như vậy, và ra đi cũng đúng như vậy, mỗi người theo gia tộc và gia đình tổ tiên mình.",
+          "R": "Dân Y-sơ-ra-ên làm mọi điều {{divine_name:CHÚA|Gia-vê}} đã truyền cho Môi-se. Họ đóng trại dưới lá cờ của mình và lên đường cũng theo cách ấy, mỗi người đi cùng gia tộc và gia đình mình."
+        },
+        "ko": {
+          "L": "그리고 이스라엘 자손은 {{divine_name:주|야훼}}께서 모세에게 명령하신 모든 것대로 행하였다. 그렇게 그들은 그들의 깃발별로 진을 쳤고, 그렇게 각자 자기 가문대로, 자기 조상의 집대로 출발하였다.",
+          "B": "이스라엘 백성은 {{divine_name:주|야훼}}께서 모세에게 명령하신 것을 모두 행하였다. 그들은 그렇게 자기 깃발 아래 진을 쳤고, 그렇게 저마다 가문과 집안별로 출발하였다.",
+          "R": "이스라엘 사람들은 {{divine_name:주|야훼}}께서 모세에게 명령하신 것을 모두 그대로 했다. 그들은 자기 깃발 아래 진을 쳤고, 행진할 때도 저마다 자기 가문과 집안과 함께 그렇게 나아갔다."
         }
       },
       "decisions": [

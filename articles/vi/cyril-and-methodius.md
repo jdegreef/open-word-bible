@@ -4,7 +4,7 @@ summary: Vào thập niên 860, hai anh em người Tê-sa-lô-ni-ca đã sáng 
 date: 2026-10-12
 order: 46
 section: translation
-source: 56dc2fab6d01
+source: b76b9dc36e0a
 ---
 Hàng trăm triệu người viết tiếng Nga, tiếng Ukraina, tiếng Bulgaria, tiếng Serbia và những ngôn ngữ khác bằng bảng chữ cái **Kirin** (Cyrillic). Bảng chữ cái này được đặt theo tên một học giả Byzantine thế kỷ thứ chín, **Constantine**, người được biết đến nhiều hơn qua tên tu sĩ mà ông nhận ngay trước khi qua đời: **Cyril**. Thế nhưng gần như chắc chắn Cyril không sáng tạo ra chữ Kirin. Ông sáng tạo một bảng chữ cái khác, chữ **Glagolitic**, để người Slav có thể nghe Kinh Thánh bằng chính ngôn ngữ của mình.
 
@@ -34,7 +34,7 @@ Trong nhiều thế kỷ, người Slav có Kinh Thánh chủ yếu qua các sá
 
 Cyril và Methodius được tôn kính như những vị thánh bởi cả Cơ Đốc nhân Chính Thống giáo lẫn Công giáo. Về một điểm, lập trường của họ rất rõ ràng: họ bác bỏ ý tưởng cho rằng chỉ một vài ngôn ngữ thánh mới xứng đáng cho Kinh Thánh.
 
-Open Word Bible đứng trong truyền thống ấy một cách khiêm tốn. Bản này dịch sang tiếng Tây Ban Nha, tiếng Pháp và tiếng Swahili cũng như tiếng Anh, mỗi bản đều dịch từ tiếng Hê-bơ-rơ và tiếng Hy Lạp, để không ngôn ngữ nào nhận một bản sao của một bản dịch khác, như nhóm của Gennadius đã phải chấp nhận. Bản văn của nó được phát hành theo giấy phép CC0, nên không ai cần xin phép mới được dùng. Bản dịch được thực hiện với sự trợ giúp của AI, và chưa phần nào được những người duyệt có danh tính chấp thuận.
+Open Word Bible đứng trong truyền thống ấy một cách khiêm tốn. Bản này dịch sang tiếng Tây Ban Nha, tiếng Pháp, tiếng Swahili, tiếng Việt và tiếng Hàn cũng như tiếng Anh, mỗi bản đều dịch từ tiếng Hê-bơ-rơ và tiếng Hy Lạp, để không ngôn ngữ nào nhận một bản sao của một bản dịch khác, như nhóm của Gennadius đã phải chấp nhận. Bản văn của nó được phát hành theo giấy phép CC0, nên không ai cần xin phép mới được dùng. Bản dịch được thực hiện với sự trợ giúp của AI, và chưa phần nào được những người duyệt có danh tính chấp thuận.
 
 ## Nguồn tham khảo
 

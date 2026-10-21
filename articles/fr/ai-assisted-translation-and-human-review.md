@@ -4,7 +4,7 @@ summary: Tout ce qui se trouve aujourd'hui sur ce site est traduit avec l'aide d
 date: 2026-10-10
 order: 10
 section: method
-source: f7d52d635434
+source: c1cfadc5bb1a
 ---
 Open Word Bible est traduite avec l'aide de l'IA. Nous le disons clairement, car un projet qui promet de montrer son travail ne peut pas rester vague sur qui a fait ce travail. Cet article explique comment une phrase est rédigée, ce que vous pouvez en voir, où la rédaction par l'IA atteint ses limites, et ce qui doit se passer avant qu'une phrase soit dite relue.
 
@@ -50,7 +50,7 @@ Un lecteur a raison de demander ce qu'une IA fait mal. Nous avons vu plusieurs s
 
 **L'aisance n'est pas le jugement.** Un brouillon peut se lire sans heurt et être faux quand même, ou juste pour des raisons qui ne sont pas tout à fait celles qu'il donne. Le ton assuré d'une phrase ne prouve rien en sa faveur.
 
-**Une formulation naturelle demande des locuteurs natifs.** Une IA peut écrire un espagnol, un français ou un swahili grammaticaux. Savoir si une phrase sonne naturellement pour un lecteur qui a grandi avec la langue est une autre question. Le dossier espagnol de Jean 1:1, par exemple, choisit *el Verbo* pour "la Parole" plutôt que *la Palabra*, et signale ce choix pour la relecture d'un locuteur natif.
+**Une formulation naturelle demande des locuteurs natifs.** Une IA peut écrire un espagnol, un français, un swahili, un vietnamien ou un coréen grammaticaux. Savoir si une phrase sonne naturellement pour un lecteur qui a grandi avec la langue est une autre question. Le dossier espagnol de Jean 1:1, par exemple, choisit *el Verbo* pour "la Parole" plutôt que *la Palabra*, et signale ce choix pour la relecture d'un locuteur natif.
 
 **La cohérence d'un livre à l'autre est difficile.** Des milliers de phrases rédigées à des moments différents peuvent dériver. Les termes clés vérifiés par le logiciel, les listes de termes pour les longs livres et les décisions qui renvoient aux précédentes vont tous contre cette dérive, mais il en restera que les relecteurs devront trouver.
 
@@ -91,4 +91,4 @@ Vous n'avez pas besoin d'attendre les relecteurs pour mettre à l'épreuve ce qu
 
 ## Aidez à relire
 
-Si vous lisez le grec ou l'hébreu, ou si l'espagnol, le français ou le swahili est votre langue maternelle et que vous savez juger si une phrase se lit naturellement, votre aide nous serait précieuse. Tout est ouvert sur [GitHub](https://github.com/jdegreef/open-word-bible), y compris chaque décision et son raisonnement, et le lien "Signaler un problème" en bas de chaque page y ouvre un ticket. Être en désaccord avec une décision, et dire pourquoi, est exactement le genre d'aide dont le projet a besoin.
+Si vous lisez le grec ou l'hébreu, ou si l'espagnol, le français, le swahili, le vietnamien ou le coréen est votre langue maternelle et que vous savez juger si une phrase se lit naturellement, votre aide nous serait précieuse. Tout est ouvert sur [GitHub](https://github.com/jdegreef/open-word-bible), y compris chaque décision et son raisonnement, et le lien "Signaler un problème" en bas de chaque page y ouvre un ticket. Être en désaccord avec une décision, et dire pourquoi, est exactement le genre d'aide dont le projet a besoin.

@@ -4,7 +4,7 @@ summary: Một ngôn ngữ thương mại vùng duyên hải với truyền th�
 date: 2026-10-12
 order: 56
 section: translation
-source: 661304774af6
+source: 8c9c49fc0009
 ---
 Tiếng Swahili là ngôn ngữ châu Phi thuộc ngữ hệ Bantu được nói rộng rãi nhất. Đó là một ngôn ngữ quốc gia của Tanzania và Kenya, được dùng khắp Uganda, Rwanda, Burundi và miền đông Congo, và đã được Liên minh châu Phi chọn làm một trong những ngôn ngữ làm việc của mình. Các ước tính về số người nói tiếng Swahili chênh lệch rất nhiều, từ khoảng 100 triệu đến hơn 200 triệu, vì phần lớn người nói học nó như một ngôn ngữ thứ hai và các cách đếm khác nhau về những gì được tính vào.
 
@@ -66,7 +66,7 @@ Mọi bản dịch tiếng Swahili đều phải đối diện với một câu 
 
 ## Open Word Bible bằng tiếng Swahili
 
-Tiếng Swahili là một trong bốn ngôn ngữ của Open Word Bible, cùng với tiếng Anh, tiếng Tây Ban Nha và tiếng Pháp. Như trong mọi ngôn ngữ, bản tiếng Swahili được dịch từ tiếng Hy Lạp và tiếng Hê-bơ-rơ, chứ không phải từ tiếng Anh, và mỗi câu đều có chung những quyết định về ý nghĩa với các ngôn ngữ khác, còn những quyết định về cách diễn đạt thì được đưa ra riêng cho tiếng Swahili (xem [Sát nghĩa, Cân bằng, Dễ đọc: ba cấp độ, một ý nghĩa](/articles/three-levels-one-meaning/)).
+Tiếng Swahili là một trong sáu ngôn ngữ của Open Word Bible, cùng với tiếng Anh, tiếng Tây Ban Nha, tiếng Pháp, tiếng Việt và tiếng Hàn. Như trong mọi ngôn ngữ, bản tiếng Swahili được dịch từ tiếng Hy Lạp và tiếng Hê-bơ-rơ, chứ không phải từ tiếng Anh, và mỗi câu đều có chung những quyết định về ý nghĩa với các ngôn ngữ khác, còn những quyết định về cách diễn đạt thì được đưa ra riêng cho tiếng Swahili (xem [Sát nghĩa, Cân bằng, Dễ đọc: ba cấp độ, một ý nghĩa](/articles/three-levels-one-meaning/)).
 
 Đã có bản nháp tiếng Swahili cho một số sách. Chúng có sự hỗ trợ của AI, và chưa bản nào được duyệt. Giống như những bản Kinh Thánh tiếng Swahili đầu tiên, chúng cần điều mà các dịch giả luôn cần nhất: những người bản ngữ có thể nói một câu nghe có giống tiếng Swahili thật hay không. Open Word Bible sẽ không đánh dấu bất cứ phần tiếng Swahili nào là đã duyệt cho đến khi một người duyệt có tên tuổi thông thạo tiếng Swahili đã đọc nó. Nếu bạn là một người đọc như thế, [dự án trên GitHub](https://github.com/jdegreef/open-word-bible) là nơi để bắt đầu.
 

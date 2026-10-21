@@ -58,6 +58,16 @@
           "L": "Naye {{divine_name:BWANA|Yahwe}} akamwambia Musa, \"Ingia kwa Farao, ukaseme naye, 'Hivi ndivyo asemavyo {{divine_name:BWANA|Yahwe}}, Mungu wa Waebrania: Waache watu {{deity_pronoun:wangu|Wangu}} waende, ili wanitumikie.",
           "B": "{{divine_name:BWANA|Yahwe}} alimwambia Musa, \"Nenda kwa Farao umwambie, '{{divine_name:BWANA|Yahwe}}, Mungu wa Waebrania, anasema hivi: Waachilie watu {{deity_pronoun:wangu|Wangu}}, ili waweze kunitumikia.",
           "R": "{{divine_name:BWANA|Yahwe}} alimwambia Musa, \"Nenda kwa Farao umwambie, 'Hili ndilo neno la {{divine_name:BWANA|Yahwe}}, Mungu wa Waebrania: Waache watu {{deity_pronoun:wangu|Wangu}} waondoke ili waje kuniabudu."
+        },
+        "ko": {
+          "L": "그리고 {{divine_name:주|야훼}}께서 모세에게 말씀하셨다. \"바로에게 들어가서 그에게 말하여라. '히브리 사람들의 하나님 {{divine_name:주|야훼}}께서 이렇게 말씀하신다. 내 백성을 보내어 그들이 나를 섬기게 하여라.",
+          "B": "{{divine_name:주|야훼}}께서 모세에게 말씀하셨다. \"바로에게 들어가서 이렇게 전하여라. '히브리 사람들의 하나님 {{divine_name:주|야훼}}께서 이렇게 말씀하신다. 내 백성을 놓아 보내어 그들이 나를 섬길 수 있게 하여라.",
+          "R": "{{divine_name:주|야훼}}께서 모세에게 말씀하셨다. \"바로에게 가서 이렇게 말하여라. '히브리 사람들의 하나님 {{divine_name:주|야훼}}께서 하시는 말씀이다. 내 백성을 보내 주어 그들이 나를 예배하게 하여라."
+        },
+        "vi": {
+          "L": "{{divine_name:CHÚA|Gia-vê}} phán với Môi-se: \"Hãy vào gặp Pha-ra-ôn và nói với vua: '{{divine_name:CHÚA|Gia-vê}}, Đức Chúa Trời của người Hê-bơ-rơ, phán thế này: Hãy để dân {{deity_pronoun:ta|Ta}} đi, để họ phụng sự {{deity_pronoun:ta|Ta}}.",
+          "B": "{{divine_name:CHÚA|Gia-vê}} phán với Môi-se: \"Con hãy vào gặp Pha-ra-ôn và nói với vua: '{{divine_name:CHÚA|Gia-vê}}, Đức Chúa Trời của người Hê-bơ-rơ, phán như sau: Hãy cho dân {{deity_pronoun:ta|Ta}} ra đi để họ phụng sự {{deity_pronoun:ta|Ta}}.",
+          "R": "{{divine_name:CHÚA|Gia-vê}} phán với Môi-se: \"Con hãy đến gặp Pha-ra-ôn và nói với vua: 'Đây là lời {{divine_name:CHÚA|Gia-vê}}, Đức Chúa Trời của người Hê-bơ-rơ: Hãy để dân {{deity_pronoun:ta|Ta}} đi để họ thờ phượng {{deity_pronoun:ta|Ta}}."
         }
       },
       "decisions": [
@@ -128,6 +138,91 @@
           "reason": "As the French style guide sets out: the passé simple is the normal tense of written narrative, the passé composé is how French is spoken and read in school today. The speeches keep the tenses of speech at every level.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o020090010011",
+            "o020090010131"
+          ],
+          "choice": "God speaks to Moses, and through him to Pharaoh, in the plain style (해라체) with \"너\"; the messenger formula is \"{{divine_name:주|야훼}}께서 이렇게 말씀하신다\"",
+          "alternatives": [
+            "합쇼체 for the message to the king",
+            "여호와께서 이같이 말씀하시기를"
+          ],
+          "reason": "As in Genesis and Kings, God speaks in 해라체. The formula keeps the plain style used for prophets in the Korean of Kings, without the archaic endings of older Bibles. This holds for these chapters.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020090010183"
+          ],
+          "choice": "No deity_pronoun spans in Korean: \"my people\", \"serve me\" are \"내 백성\", \"나를\"",
+          "alternatives": [
+            "a span with no visible difference"
+          ],
+          "reason": "Korean has no capital letters, so the setting would change nothing; respect for God is carried by the honorific -시- and 께서 at every level, as docs/korean-style.md section 7 says.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o020090010012",
+            "o020090010082"
+          ],
+          "choice": "God speaks to Moses as \"ngươi\" (L) and \"con\" (B, R), calling himself \"Ta\"; in the message for Pharaoh he calls the king \"ngươi\"",
+          "alternatives": [],
+          "reason": "The address the Genesis terms note sets for God speaking to a person, as Joshua 1 uses it: \"ngươi\" keeps the distance of the Hebrew at Literal, \"con\" gives the closeness of God's word to his servant at Balanced and Readable. Pharaoh is addressed by God as \"ngươi\" at every level: a ruler set against God is not given the courtesy of \"bệ hạ\" in God's own words.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020090010183"
+          ],
+          "choice": "\"phụng sự\" (L, B) for \"serve\"",
+          "alternatives": [
+            "phục vụ",
+            "thờ phượng"
+          ],
+          "reason": "The verb covers both working for and worshipping (meaning decision); \"phụng sự\" is the Vietnamese word for serving a lord or a god and keeps both senses. Readable says \"thờ phượng\", as the English Readable says \"worship\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -177,6 +272,16 @@
           "L": "Kwa maana ukikataa kuwaacha [waende], na bado unawashikilia,",
           "B": "Ukikataa kuwaachilia na kuendelea kuwashikilia kwa nguvu,",
           "R": "Ukikataa kuwaacha waende, ukaendelea kuwazuia,"
+        },
+        "ko": {
+          "L": "만일 네가 [그들을] 보내기를 거절하고 여전히 그들을 붙잡고 있으면,",
+          "B": "네가 그들을 보내기를 거절하고 계속 그들을 꽉 붙잡아 두면,",
+          "R": "네가 그들을 보내지 않고 계속 붙잡아 두면,"
+        },
+        "vi": {
+          "L": "Vì nếu ngươi từ chối không để [họ] đi, và còn giữ chặt họ,",
+          "B": "Nếu ngươi không chịu để họ đi mà cứ giữ chặt họ,",
+          "R": "Nếu ngươi không chịu để họ đi và cứ giữ họ lại,"
         }
       },
       "decisions": [
@@ -269,6 +374,16 @@
           "L": "tazama, mkono wa {{divine_name:BWANA|Yahwe}} utakuwa juu ya mifugo yako iliyoko kondeni, juu ya farasi, juu ya punda, juu ya ngamia, juu ya ng'ombe, na juu ya kondoo: tauni nzito sana.",
           "B": "basi mkono wa {{divine_name:BWANA|Yahwe}} utaipiga mifugo yako iliyoko malishoni, farasi wako, punda na ngamia, ng'ombe na kondoo wako, kwa ugonjwa mbaya sana.",
           "R": "basi {{divine_name:BWANA|Yahwe}} atatumia nguvu {{deity_pronoun:zake|Zake}} dhidi ya wanyama wako walioko malishoni. Farasi, punda, ngamia, ng'ombe na kondoo wako watapata ugonjwa mbaya wa kutisha."
+        },
+        "ko": {
+          "L": "보아라, {{divine_name:주|야훼}}의 손이 들에 있는 네 가축 위에, 곧 말들과 나귀들과 낙타들과 소들과 양들 위에 있게 될 것이다. 매우 무거운 돌림병이다.",
+          "B": "{{divine_name:주|야훼}}의 손이 들에 있는 네 짐승들, 곧 네 말과 나귀와 낙타와 소와 양에게 내려, 아주 무서운 병이 돌 것이다.",
+          "R": "{{divine_name:주|야훼}}가 능력을 펼쳐서 들에 있는 네 짐승들을 칠 것이다. 네 말과 나귀와 낙타와 소와 양이 무서운 병에 걸릴 것이다."
+        },
+        "vi": {
+          "L": "thì kìa, tay của {{divine_name:CHÚA|Gia-vê}} sắp giáng trên súc vật của ngươi ở ngoài đồng, trên ngựa, trên lừa, trên lạc đà, trên bò và trên chiên: một dịch bệnh rất nặng nề.",
+          "B": "thì tay {{divine_name:CHÚA|Gia-vê}} sẽ giáng trên gia súc của ngươi ở ngoài đồng, trên ngựa, lừa, lạc đà, bò và chiên dê của ngươi, bằng một dịch bệnh rất khủng khiếp.",
+          "R": "thì {{divine_name:CHÚA|Gia-vê}} sẽ dùng quyền năng của {{deity_pronoun:ngài|Ngài}} để đánh phạt súc vật của ngươi ở ngoài đồng. Ngựa, lừa, lạc đà, bò và chiên dê của ngươi sẽ mắc một bệnh dịch khủng khiếp."
         }
       },
       "decisions": [
@@ -405,6 +520,48 @@
           "reason": "\"Tauni\" is the Swahili word for a deadly epidemic and keeps the noun at Literal, with \"nzito\" for the root \"heavy\" (m3). Balanced and Readable say \"ugonjwa\", disease, as the English does. \"Mapigo\" is kept for the plagues of verse 14. The same choice in verse 15.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020090030131"
+          ],
+          "choice": "\"돌림병\" (L) and \"무서운 병\" (B, R) for the pestilence",
+          "alternatives": [
+            "악질",
+            "전염병"
+          ],
+          "reason": "\"악질\" is the older church word and no longer means a disease to most readers; \"돌림병\" is a plain native word for an epidemic among animals and people.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020090030123"
+          ],
+          "choice": "\"chiên dê\" (B, R) for the flock",
+          "alternatives": [
+            "chiên"
+          ],
+          "reason": "The Hebrew word is the small livestock, sheep and goats together; Literal keeps the gloss \"chiên\", Balanced and Readable name both, as the Vietnamese Genesis does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -461,6 +618,16 @@
           "L": "Naye {{divine_name:BWANA|Yahwe}} ataweka tofauti kati ya mifugo ya Israeli na mifugo ya Misri, wala hakitakufa kitu chochote katika vyote vilivyo vya wana wa Israeli.'\"",
           "B": "Lakini {{divine_name:BWANA|Yahwe}} ataitenga mifugo ya Israeli na mifugo ya Misri, wala hatakufa hata mnyama mmoja wa Waisraeli.'\"",
           "R": "Lakini {{divine_name:BWANA|Yahwe}} atawatendea wanyama wa Israeli tofauti na wanyama wa Misri. Hakuna hata mnyama mmoja wa Waisraeli atakayekufa.'\""
+        },
+        "ko": {
+          "L": "그리고 {{divine_name:주|야훼}}가 이스라엘의 가축과 이집트의 가축을 구별할 것이니, 이스라엘 자손에게 속한 모든 것 가운데 하나도 죽지 않을 것이다.'\"",
+          "B": "그러나 {{divine_name:주|야훼}}가 이스라엘의 가축과 이집트의 가축을 구별하여, 이스라엘 백성의 짐승은 한 마리도 죽지 않을 것이다.'\"",
+          "R": "그러나 {{divine_name:주|야훼}}가 이스라엘의 짐승과 이집트의 짐승을 다르게 대할 것이다. 이스라엘 사람들의 짐승은 한 마리도 죽지 않을 것이다.'\""
+        },
+        "vi": {
+          "L": "Và {{divine_name:CHÚA|Gia-vê}} sẽ phân biệt giữa súc vật của Y-sơ-ra-ên và súc vật của Ai Cập, và trong mọi thứ thuộc về con cháu Y-sơ-ra-ên sẽ không có gì chết cả.'\"",
+          "B": "Nhưng {{divine_name:CHÚA|Gia-vê}} sẽ phân biệt gia súc của Y-sơ-ra-ên với gia súc của Ai Cập, và không một con vật nào của dân Y-sơ-ra-ên phải chết.'\"",
+          "R": "Nhưng {{divine_name:CHÚA|Gia-vê}} sẽ đối xử với súc vật của Y-sơ-ra-ên khác với súc vật của Ai Cập. Không một con vật nào của dân Y-sơ-ra-ên sẽ chết.'\""
         }
       },
       "decisions": [
@@ -491,6 +658,49 @@
           "choice": "not ... anything: not a single animal",
           "alternatives": [],
           "reason": "The negative with \"anything\" at the end of the sentence is emphatic: none at all. Verse 6 reports it happening.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020090040121",
+            "o020090040131"
+          ],
+          "choice": "\"이스라엘 자손\" (L), \"이스라엘 백성\" (B), \"이스라엘 사람들\" (R) for \"the sons of Israel\", with no gender span",
+          "alternatives": [
+            "이스라엘의 아들들",
+            "a gender setting span"
+          ],
+          "reason": "The Pentateuch term sheet sets these three forms. \"자손\" already includes men and women, so the English gender setting has nothing to switch in Korean. This holds for these chapters.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020090040122",
+            "o020090040131"
+          ],
+          "choice": "\"con cháu Y-sơ-ra-ên\" (L), \"dân Y-sơ-ra-ên\" (B, R), with no gender span",
+          "alternatives": [],
+          "reason": "The term sheet for these books: the English needs a setting to choose between \"children\" and \"sons\", but \"con cháu\" and \"dân\" already include men and women, so Vietnamese has nothing to switch.",
           "uncertain": false,
           "footnote": false
         }
@@ -545,6 +755,16 @@
           "L": "Naye {{divine_name:BWANA|Yahwe}} akaweka wakati maalum, akisema, \"Kesho {{divine_name:BWANA|Yahwe}} atalifanya jambo hili katika nchi.\"",
           "B": "{{divine_name:BWANA|Yahwe}} aliweka wakati maalum, akasema, \"Kesho {{divine_name:BWANA|Yahwe}} atafanya jambo hili katika nchi.\"",
           "R": "{{divine_name:BWANA|Yahwe}} alichagua siku. Akasema, \"{{divine_name:BWANA|Yahwe}} atafanya hivi katika nchi kesho.\""
+        },
+        "ko": {
+          "L": "그리고 {{divine_name:주|야훼}}께서 정한 때를 두시고 말씀하셨다. \"내일 {{divine_name:주|야훼}}가 이 땅에서 이 일을 행할 것이다.\"",
+          "B": "{{divine_name:주|야훼}}께서 때를 정하시고 말씀하셨다. \"내일 {{divine_name:주|야훼}}가 이 땅에서 이 일을 하겠다.\"",
+          "R": "{{divine_name:주|야훼}}께서 때를 정하셨다. 그리고 말씀하셨다. \"{{divine_name:주|야훼}}가 내일 이 땅에서 이 일을 하겠다.\""
+        },
+        "vi": {
+          "L": "{{divine_name:CHÚA|Gia-vê}} định một thời điểm, phán rằng: \"Ngày mai {{divine_name:CHÚA|Gia-vê}} sẽ làm điều này trong xứ.\"",
+          "B": "{{divine_name:CHÚA|Gia-vê}} ấn định thời điểm và phán: \"Ngày mai {{divine_name:CHÚA|Gia-vê}} sẽ làm việc này trong xứ.\"",
+          "R": "{{divine_name:CHÚA|Gia-vê}} định sẵn thời điểm. Ngài phán: \"Ngày mai {{divine_name:CHÚA|Gia-vê}} sẽ làm việc này trong xứ.\""
         }
       },
       "decisions": [
@@ -573,6 +793,27 @@
           "choice": "Yahweh will do: God speaks of himself by name",
           "alternatives": [],
           "reason": "The announcement names Yahweh in the third person, as in verses 3-4, as a message to be passed on to Pharaoh.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o020090050071"
+          ],
+          "choice": "When God speaks of himself by name, \"{{divine_name:주|야훼}}가\", without the honorific",
+          "alternatives": [
+            "{{divine_name:주|야훼}}께서 ... 하실 것이다"
+          ],
+          "reason": "Korean does not honor oneself; the narrator honors God (께서, -시-), but in God's own speech his name takes the plain particle (meaning decision: God speaks of himself by name). This holds for these chapters.",
           "uncertain": false,
           "footnote": false
         }
@@ -635,6 +876,16 @@
           "L": "Naye {{divine_name:BWANA|Yahwe}} akalifanya jambo hilo siku iliyofuata, na mifugo yote ya Misri ikafa, lakini katika mifugo ya wana wa Israeli hakufa hata mmoja.",
           "B": "{{divine_name:BWANA|Yahwe}} alilitekeleza jambo hilo siku iliyofuata. Mifugo yote ya Misri ilikufa, lakini katika mifugo ya Waisraeli hakupotea hata mnyama mmoja.",
           "R": "Siku iliyofuata, {{divine_name:BWANA|Yahwe}} alifanya sawasawa na alivyosema. Wanyama wote wa Wamisri walikufa. Lakini hakufa hata mnyama mmoja wa Waisraeli."
+        },
+        "ko": {
+          "L": "그리고 이튿날 {{divine_name:주|야훼}}께서 이 일을 행하셨다. 이집트의 모든 가축은 죽었으나, 이스라엘 자손의 가축은 하나도 죽지 않았다.",
+          "B": "이튿날 {{divine_name:주|야훼}}께서 이 일을 그대로 행하셨다. 이집트의 가축은 모두 죽었지만, 이스라엘 백성의 가축은 한 마리도 죽지 않았다.",
+          "R": "이튿날 {{divine_name:주|야훼}}께서 말씀하신 그대로 하셨다. 이집트 사람들의 짐승은 모두 죽었다. 그러나 이스라엘 사람들의 짐승은 한 마리도 죽지 않았다."
+        },
+        "vi": {
+          "L": "Ngày hôm sau {{divine_name:CHÚA|Gia-vê}} làm điều ấy, và toàn bộ súc vật của Ai Cập đều chết, nhưng trong súc vật của con cháu Y-sơ-ra-ên không một con nào chết.",
+          "B": "Hôm sau {{divine_name:CHÚA|Gia-vê}} thực hiện điều ấy. Gia súc của Ai Cập đều chết hết, nhưng trong gia súc của dân Y-sơ-ra-ên không mất một con nào.",
+          "R": "Ngày hôm sau, {{divine_name:CHÚA|Gia-vê}} làm đúng như {{deity_pronoun:ngài|Ngài}} đã phán. Súc vật của người Ai Cập đều chết hết. Nhưng không một con vật nào của dân Y-sơ-ra-ên chết cả."
         }
       },
       "decisions": [
@@ -686,6 +937,25 @@
           "choice": "did just what he had said",
           "alternatives": [],
           "reason": "Readable says what \"this thing\" was: the plague announced in verses 3-5.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020090060091"
+          ],
+          "choice": "\"súc vật\" (L, R), \"gia súc\" (B) for the livestock",
+          "alternatives": [],
+          "reason": "\"Gia súc\" is the standard word for farm animals in careful prose; Readable and Literal keep the everyday \"súc vật\". \"Thú vật\" stays for the general word \"beast\" set beside \"man\" (verses 9, 10, 19, 22, 25).",
           "uncertain": false,
           "footnote": false
         }
@@ -747,6 +1017,16 @@
           "L": "Naye Farao akatuma [watu], na tazama, hakufa hata mmoja katika mifugo ya Israeli. Lakini moyo wa Farao ukawa mzito, wala hakuwaacha watu waende.",
           "B": "Farao alituma watu kuchunguza, na kweli hakuna hata mnyama mmoja wa mifugo ya Israeli aliyekufa. Hata hivyo Farao akaendelea kuwa mkaidi, wala hakuwaachilia watu.",
           "R": "Farao alituma watu waende kuangalia kilichotokea. Wakakuta kwamba hakuna hata mnyama mmoja wa Israeli aliyekufa. Lakini Farao akabaki mkaidi. Hakukubali kuwaacha watu waende."
+        },
+        "ko": {
+          "L": "그리고 바로가 [사람을] 보냈는데, 보니 이스라엘의 가축은 하나도 죽지 않았다. 그러나 바로의 마음이 무디어져서, 그가 백성을 보내지 않았다.",
+          "B": "바로가 사람을 보내 알아보니, 정말로 이스라엘의 가축은 한 마리도 죽지 않았다. 그런데도 바로는 마음이 완고하여 백성을 보내지 않았다.",
+          "R": "바로는 사람들을 보내 무슨 일이 있었는지 알아보게 했다. 그들이 보니, 이스라엘 사람들의 짐승은 한 마리도 죽지 않았다. 그러나 바로는 여전히 고집을 부렸다. 그는 백성을 보내 주지 않았다."
+        },
+        "vi": {
+          "L": "Pha-ra-ôn sai [người đi xem], và kìa, trong súc vật của Y-sơ-ra-ên không chết dù chỉ một con. Nhưng lòng Pha-ra-ôn nặng nề, và vua không để dân đi.",
+          "B": "Pha-ra-ôn sai người đi tra xét, và quả thật, không một con nào trong gia súc của Y-sơ-ra-ên bị chết. Thế nhưng Pha-ra-ôn vẫn cứng lòng và không cho dân ra đi.",
+          "R": "Pha-ra-ôn sai người đi xem chuyện gì đã xảy ra. Họ thấy không một con vật nào của dân Y-sơ-ra-ên bị chết. Nhưng Pha-ra-ôn vẫn cứng đầu. Vua không chịu để dân đi."
         }
       },
       "decisions": [
@@ -880,6 +1160,52 @@
           "reason": "Literal keeps the root of each heart verb (see 7:3), as in chapters 7-8: \"mzito\", \"kuufanya moyo kuwa mzito\" for kabed (here and verse 34), \"kuwa na nguvu\", \"kuutia moyo nguvu\" for chazaq (verses 35 and 12). Balanced and Readable say what is meant: \"mkaidi\" (stubborn), \"kushupaza moyo\", and \"kuufanya moyo kuwa mgumu\" for God's hardening in verse 12.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020090070102",
+            "o020090070111"
+          ],
+          "choice": "The heart \"made heavy\" (kabed): \"마음이 무디어지다\" (L), \"마음이 완고하다\" (B), \"고집을 부리다\" (R)",
+          "alternatives": [
+            "마음이 무거워지다",
+            "마음이 강퍅하다"
+          ],
+          "reason": "\"마음이 무겁다\" means to be sad in Korean, so Literal uses \"무디다\" (dull, unmoved), the sense the meaning decision gives. \"강퍅하다\" is the older church word; \"완고하다\" is current. The strong-heart verb (chazaq) is \"굳어지다 / 굳게 하다\" at Literal, so the Hebrew verbs stay apart there. This holds for these chapters.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020090070102",
+            "o020090070111"
+          ],
+          "choice": "\"lòng ... nặng nề\" (L) for the \"heavy\" heart, \"lòng ... cứng cỏi\" (L) for the \"strong\" heart (verses 12, 35); \"cứng lòng\" (B), \"cứng đầu\" (R) for both",
+          "alternatives": [
+            "chai lì",
+            "trơ lì"
+          ],
+          "reason": "Literal keeps the picture of each Hebrew verb (see 7:3) so a reader can tell them apart. Vietnamese \"cứng lòng\" is the idiom for a will that will not give way, as 1 Samuel 6:6 already uses it of Pharaoh, and Readable gives the everyday \"cứng đầu\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -943,6 +1269,16 @@
           "L": "Naye {{divine_name:BWANA|Yahwe}} akawaambia Musa na Haruni, \"Jitwalieni konzi za mikono yenu zilizojaa masizi ya tanuru, naye Musa ayarushe kuelekea mbinguni mbele ya macho ya Farao.",
           "B": "{{divine_name:BWANA|Yahwe}} aliwaambia Musa na Haruni, \"Jazeni mikono yenu yote miwili masizi ya tanuru, na Musa ayarushe juu kuelekea angani Farao akiona.",
           "R": "{{divine_name:BWANA|Yahwe}} aliwaambia Musa na Haruni, \"Choteni konzi za masizi meusi kutoka katika tanuru yenye moto mkali. Musa atayarusha hewani Farao akiwa anatazama."
+        },
+        "ko": {
+          "L": "그리고 {{divine_name:주|야훼}}께서 모세와 아론에게 말씀하셨다. \"너희는 가마의 그을음을 두 손에 가득 가져다가, 모세가 그것을 바로의 눈앞에서 하늘을 향해 뿌리게 하여라.",
+          "B": "{{divine_name:주|야훼}}께서 모세와 아론에게 말씀하셨다. \"너희는 가마에서 그을음을 두 손 가득 움켜 오너라. 그리고 모세가 바로가 보는 앞에서 그것을 하늘로 뿌려라.",
+          "R": "{{divine_name:주|야훼}}께서 모세와 아론에게 말씀하셨다. \"뜨거운 가마에서 검은 그을음을 두 손 가득 퍼 오너라. 바로가 보고 있을 때 모세가 그것을 공중으로 뿌려라."
+        },
+        "vi": {
+          "L": "{{divine_name:CHÚA|Gia-vê}} phán với Môi-se và A-rôn: \"Các ngươi hãy lấy cho mình đầy hai vốc tay tro trong lò nung, và Môi-se sẽ tung nó lên trời trước mắt Pha-ra-ôn.",
+          "B": "{{divine_name:CHÚA|Gia-vê}} phán với Môi-se và A-rôn: \"Các con hãy bốc đầy hai tay tro trong lò nung, rồi Môi-se hãy tung tro ấy lên trời trước mặt Pha-ra-ôn.",
+          "R": "{{divine_name:CHÚA|Gia-vê}} phán với Môi-se và A-rôn: \"Các con hãy hốt đầy hai tay tro đen trong một lò nung nóng. Môi-se phải tung tro ấy lên không trung trong lúc Pha-ra-ôn đang nhìn."
         }
       },
       "decisions": [
@@ -1053,6 +1389,16 @@
           "L": "Nayo yatakuwa vumbi laini juu ya nchi yote ya Misri, nayo yatakuwa juu ya wanadamu na juu ya wanyama majipu yanayopasuka [kuwa] malengelenge katika nchi yote ya Misri.\"",
           "B": "Yatageuka kuwa vumbi laini juu ya nchi yote ya Misri, na katika nchi nzima yatasababisha majipu yanayopasuka na kutoa malengelenge kwa watu na kwa wanyama.\"",
           "R": "Masizi hayo yatakuwa vumbi laini litakalotanda juu ya Misri yote. Yatawaletea watu na wanyama majipu kila mahali katika Misri. Majipu hayo yatapasuka na kuwa malengelenge.\""
+        },
+        "ko": {
+          "L": "그러면 그것이 이집트 온 땅 위에 고운 먼지가 되어, 이집트 온 땅에서 사람과 짐승에게 물집이 터지는 종기가 될 것이다.\"",
+          "B": "그것이 이집트 온 땅에 고운 먼지가 되어 퍼지고, 온 땅의 사람과 짐승에게 종기가 생겨 물집으로 터질 것이다.\"",
+          "R": "그 그을음은 고운 먼지가 되어 이집트 온 땅에 퍼질 것이다. 그러면 이집트 곳곳에서 사람과 짐승에게 종기가 생길 것이다. 그 종기는 물집이 되어 터질 것이다.\""
+        },
+        "vi": {
+          "L": "Nó sẽ thành bụi mịn trên khắp xứ Ai Cập, và sẽ thành ung nhọt nổi lên mụn mủ trên người và trên thú vật trong khắp xứ Ai Cập.\"",
+          "B": "Tro ấy sẽ hóa thành bụi mịn bay khắp xứ Ai Cập, và trong khắp xứ, nó sẽ thành ung nhọt, vỡ ra thành mụn mủ trên người và thú vật.\"",
+          "R": "Tro ấy sẽ thành bụi mịn bay khắp xứ Ai Cập. Bụi ấy sẽ làm nổi ung nhọt trên người và thú vật ở khắp nơi trong Ai Cập. Các ung nhọt ấy sẽ vỡ ra thành mụn mủ.\""
         }
       },
       "decisions": [
@@ -1232,6 +1578,16 @@
           "L": "Basi wakatwaa masizi ya tanuru, wakasimama mbele ya Farao, naye Musa akayarusha kuelekea mbinguni, nayo yakawa majipu [yenye] malengelenge yanayopasuka juu ya wanadamu na juu ya wanyama.",
           "B": "Walichukua masizi ya tanuru, wakaenda kusimama mbele ya Farao. Musa alipoyarusha juu kuelekea angani, yakawa majipu yaliyopasuka na kutoa malengelenge kwa watu na kwa wanyama pia.",
           "R": "Musa na Haruni walichukua masizi, wakasimama mbele ya Farao. Musa akayarusha hewani. Ndipo watu na wanyama wakatokwa na majipu yaliyogeuka kuwa malengelenge."
+        },
+        "ko": {
+          "L": "그리고 그들이 가마의 그을음을 가지고 바로 앞에 섰다. 모세가 그것을 하늘을 향해 뿌리니, 그것이 사람과 짐승에게 물집이 터지는 종기가 되었다.",
+          "B": "그들은 가마의 그을음을 가지고 가서 바로 앞에 섰다. 모세가 그것을 하늘로 뿌리자, 사람과 짐승에게 종기가 생겨 물집으로 터졌다.",
+          "R": "모세와 아론은 그을음을 가지고 바로 앞에 섰다. 모세가 그것을 공중으로 뿌렸다. 그러자 사람과 짐승에게 종기가 생기더니 물집이 되었다."
+        },
+        "vi": {
+          "L": "Họ lấy tro của lò nung và đứng trước mặt Pha-ra-ôn, và Môi-se tung nó lên trời, và nó trở thành ung nhọt [có] mụn mủ nổi lên trên người và trên thú vật.",
+          "B": "Vậy họ lấy tro lò nung và đến đứng trước mặt Pha-ra-ôn. Khi Môi-se tung tro lên trời, nó trở thành ung nhọt, vỡ ra thành mụn mủ trên cả người lẫn thú vật.",
+          "R": "Môi-se và A-rôn lấy tro và đứng trước mặt Pha-ra-ôn. Môi-se tung tro lên không trung. Liền đó ung nhọt nổi lên trên người và thú vật, rồi vỡ ra thành mụn mủ."
         }
       },
       "decisions": [
@@ -1327,6 +1683,16 @@
           "L": "Nao waaguzi hawakuweza kusimama mbele ya Musa kwa sababu ya majipu, kwa maana majipu yalikuwa juu ya waaguzi na juu ya Misri yote.",
           "B": "Majipu yaliwazuia waaguzi hata kujitokeza mbele ya Musa, kwa sababu nao walikuwa na majipu, kama Wamisri wote.",
           "R": "Waaguzi hawakuweza hata kuja mbele ya Musa. Nao pia walikuwa na majipu, sawa na Wamisri wengine wote."
+        },
+        "ko": {
+          "L": "그리고 마술사들이 종기 때문에 모세 앞에 설 수 없었다. 종기가 마술사들에게도, 온 이집트에도 있었기 때문이다.",
+          "B": "마술사들은 종기 때문에 모세 앞에 나설 수조차 없었다. 다른 모든 이집트 사람처럼 그들에게도 종기가 났기 때문이다.",
+          "R": "마술사들은 모세 앞에 나오지도 못했다. 다른 이집트 사람들처럼 그들도 종기가 났기 때문이다."
+        },
+        "vi": {
+          "L": "Các thuật sĩ không thể đứng trước mặt Môi-se vì ung nhọt, vì ung nhọt ở trên các thuật sĩ và trên toàn Ai Cập.",
+          "B": "Vì ung nhọt, các thuật sĩ không thể ra đứng trước mặt Môi-se được, vì chính họ cũng như mọi người Ai Cập đều bị ung nhọt.",
+          "R": "Các thuật sĩ cũng không thể đến đối mặt với Môi-se. Họ cũng bị ung nhọt giống như mọi người Ai Cập khác."
         }
       },
       "decisions": [
@@ -1434,6 +1800,16 @@
           "L": "Naye {{divine_name:BWANA|Yahwe}} akautia nguvu moyo wa Farao, wala hakuwasikiliza, kama vile {{divine_name:BWANA|Yahwe}} alivyokuwa amemwambia Musa.",
           "B": "Hata hivyo {{divine_name:BWANA|Yahwe}} aliufanya moyo wa Farao kuwa mgumu, naye akakataa kuwasikiliza, kama {{divine_name:BWANA|Yahwe}} alivyomwambia Musa.",
           "R": "Lakini {{divine_name:BWANA|Yahwe}} alimfanya Farao kuwa mkaidi. Farao hakutaka kuwasikiliza Musa na Haruni. {{divine_name:BWANA|Yahwe}} alikuwa amekwisha kumwambia Musa kwamba jambo hili lingetokea."
+        },
+        "ko": {
+          "L": "그리고 {{divine_name:주|야훼}}께서 바로의 마음을 굳게 하셨고, 그는 그들의 말을 듣지 않았다. {{divine_name:주|야훼}}께서 모세에게 말씀하신 그대로였다.",
+          "B": "그러나 {{divine_name:주|야훼}}께서 바로의 마음을 완고하게 하셨으므로, 바로는 그들의 말을 듣지 않았다. {{divine_name:주|야훼}}께서 모세에게 말씀하신 대로였다.",
+          "R": "그러나 {{divine_name:주|야훼}}께서 바로가 고집을 부리게 하셨다. 바로는 모세와 아론의 말을 듣지 않았다. {{divine_name:주|야훼}}께서 모세에게 미리 말씀하신 그대로였다."
+        },
+        "vi": {
+          "L": "{{divine_name:CHÚA|Gia-vê}} làm cho lòng Pha-ra-ôn cứng cỏi, và vua không nghe họ, đúng như {{divine_name:CHÚA|Gia-vê}} đã phán với Môi-se.",
+          "B": "Nhưng {{divine_name:CHÚA|Gia-vê}} làm cho Pha-ra-ôn cứng lòng, và vua không chịu nghe hai ông, đúng như {{divine_name:CHÚA|Gia-vê}} đã báo trước cho Môi-se.",
+          "R": "Nhưng {{divine_name:CHÚA|Gia-vê}} làm cho Pha-ra-ôn cứng đầu. Vua không chịu nghe Môi-se và A-rôn. {{divine_name:CHÚA|Gia-vê}} đã báo trước cho Môi-se là việc này sẽ xảy ra."
         }
       },
       "decisions": [
@@ -1574,6 +1950,16 @@
           "L": "Naye {{divine_name:BWANA|Yahwe}} akamwambia Musa, \"Amka mapema asubuhi, ujisimamishe mbele ya Farao, umwambie, 'Hivi ndivyo asemavyo {{divine_name:BWANA|Yahwe}}, Mungu wa Waebrania: Waache watu {{deity_pronoun:wangu|Wangu}} waende, ili wanitumikie.",
           "B": "{{divine_name:BWANA|Yahwe}} alimwambia Musa, \"Amka asubuhi na mapema ukasimame mbele ya Farao. Mwambie, '{{divine_name:BWANA|Yahwe}}, Mungu wa Waebrania, anasema hivi: Waachilie watu {{deity_pronoun:wangu|Wangu}}, ili waweze kunitumikia.",
           "R": "{{divine_name:BWANA|Yahwe}} alimwambia Musa, \"Amka mapema asubuhi. Nenda ukasimame mbele ya Farao umwambie, 'Hili ndilo neno la {{divine_name:BWANA|Yahwe}}, Mungu wa Waebrania: Waache watu {{deity_pronoun:wangu|Wangu}} waondoke ili waje kuniabudu."
+        },
+        "ko": {
+          "L": "그리고 {{divine_name:주|야훼}}께서 모세에게 말씀하셨다. \"아침 일찍 일어나 바로 앞에 서서 그에게 말하여라. '히브리 사람들의 하나님 {{divine_name:주|야훼}}께서 이렇게 말씀하신다. 내 백성을 보내어 그들이 나를 섬기게 하여라.",
+          "B": "{{divine_name:주|야훼}}께서 모세에게 말씀하셨다. \"아침 일찍 일어나 바로 앞에 나가 서서 이렇게 전하여라. '히브리 사람들의 하나님 {{divine_name:주|야훼}}께서 이렇게 말씀하신다. 내 백성을 놓아 보내어 그들이 나를 섬길 수 있게 하여라.",
+          "R": "{{divine_name:주|야훼}}께서 모세에게 말씀하셨다. \"아침 일찍 일어나거라. 바로에게 가서 그 앞에 서서 이렇게 말하여라. '히브리 사람들의 하나님 {{divine_name:주|야훼}}께서 하시는 말씀이다. 내 백성을 보내 주어 그들이 나를 예배하게 하여라."
+        },
+        "vi": {
+          "L": "{{divine_name:CHÚA|Gia-vê}} phán với Môi-se: \"Hãy dậy sớm vào buổi sáng, ra đứng trước mặt Pha-ra-ôn và nói với vua: '{{divine_name:CHÚA|Gia-vê}}, Đức Chúa Trời của người Hê-bơ-rơ, phán thế này: Hãy để dân {{deity_pronoun:ta|Ta}} đi, để họ phụng sự {{deity_pronoun:ta|Ta}}.",
+          "B": "{{divine_name:CHÚA|Gia-vê}} phán với Môi-se: \"Con hãy dậy sớm vào buổi sáng, đến đứng trước mặt Pha-ra-ôn và nói với vua: '{{divine_name:CHÚA|Gia-vê}}, Đức Chúa Trời của người Hê-bơ-rơ, phán như sau: Hãy cho dân {{deity_pronoun:ta|Ta}} ra đi để họ phụng sự {{deity_pronoun:ta|Ta}}.",
+          "R": "{{divine_name:CHÚA|Gia-vê}} phán với Môi-se: \"Con hãy dậy sớm vào buổi sáng. Hãy đến đứng trước mặt Pha-ra-ôn và nói với vua: 'Đây là lời {{divine_name:CHÚA|Gia-vê}}, Đức Chúa Trời của người Hê-bơ-rơ: Hãy để dân {{deity_pronoun:ta|Ta}} đi để họ thờ phượng {{deity_pronoun:ta|Ta}}."
         }
       },
       "decisions": [
@@ -1692,6 +2078,16 @@
           "L": "Kwa maana safari hii {{deity_pronoun:mimi|Mimi}} ninatuma mapigo {{deity_pronoun:yangu|Yangu}} yote kwenye moyo wako, na juu ya watumishi wako na juu ya watu wako, ili ujue kwamba hakuna aliye kama {{deity_pronoun:mimi|Mimi}} katika dunia yote.",
           "B": "Kwa maana sasa nitaelekeza mapigo {{deity_pronoun:yangu|Yangu}} yote kwenye moyo wako hasa, na kwa maafisa wako na watu wako. Ndipo utakapojua kwamba katika dunia nzima hakuna aliye kama {{deity_pronoun:mimi|Mimi}}.",
           "R": "Safari hii nitatuma mapigo {{deity_pronoun:yangu|Yangu}} yote yakupige wewe, maafisa wako na watu wako. Ndipo utakapojua kwamba hakuna yeyote duniani aliye kama {{deity_pronoun:mimi|Mimi}}."
+        },
+        "ko": {
+          "L": "이번에는 내가 내 모든 재앙을 네 마음에, 네 신하들과 네 백성에게 보내겠다. 그리하여 온 땅에 나와 같은 이가 없음을 네가 알게 하겠다.",
+          "B": "이번에는 내가 내 모든 재앙을 바로 네 마음을 겨누어 보내고, 네 신하들과 네 백성에게도 보내겠다. 그러면 너는 온 세상에 나와 같은 이가 없다는 것을 알게 될 것이다.",
+          "R": "이번에는 내가 모든 재앙을 보내서 너와 네 신하들과 네 백성을 치겠다. 그러면 너는 온 세상에 나와 같은 이가 아무도 없다는 것을 알게 될 것이다."
+        },
+        "vi": {
+          "L": "Vì lần này {{deity_pronoun:ta|Ta}} sắp giáng mọi tai vạ của {{deity_pronoun:ta|Ta}} vào lòng ngươi, trên các đầy tớ ngươi và trên dân ngươi, để ngươi biết rằng trên khắp đất không có ai giống như {{deity_pronoun:ta|Ta}}.",
+          "B": "Vì lần này {{deity_pronoun:ta|Ta}} sẽ nhắm mọi tai vạ của {{deity_pronoun:ta|Ta}} vào chính lòng ngươi, vào quần thần và dân chúng của ngươi. Bấy giờ ngươi sẽ biết rằng trên khắp mặt đất không có ai giống như {{deity_pronoun:ta|Ta}}.",
+          "R": "Lần này {{deity_pronoun:ta|Ta}} sẽ giáng mọi tai vạ của {{deity_pronoun:ta|Ta}} để đánh phạt ngươi, các quan và dân chúng của ngươi. Khi đó ngươi sẽ biết rằng khắp thế giới không ai giống như {{deity_pronoun:ta|Ta}}."
         }
       },
       "decisions": [
@@ -1788,6 +2184,48 @@
           "reason": "Spanish compares with the subject form \"como yo\", where English has \"like me\"; the deity pronoun span goes on that \"yo\", the word that stands for God here.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020090140113"
+          ],
+          "choice": "\"신하들\" for Pharaoh's servants ('avadim) at every level",
+          "alternatives": [
+            "종들"
+          ],
+          "reason": "Pharaoh's 'avadim are his court; \"신하\" is the Korean word for a king's servant and keeps that sense at Literal too, while \"종\" stays for household servants and slaves (9:20). This holds for these chapters.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020090140113"
+          ],
+          "choice": "Pharaoh's \"servants\": \"các đầy tớ\" (L), \"quần thần\" (B), \"các quan\" (R)",
+          "alternatives": [
+            "triều thần"
+          ],
+          "reason": "The men around the king are his court officials, as the English Balanced and Readable say; Literal keeps the Hebrew \"servants\". \"Quần thần\" is the usual word for a king's officials in careful Vietnamese, and Readable uses the plainer \"các quan\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1846,6 +2284,16 @@
           "L": "Kwa maana sasa ningalikuwa nimenyoosha mkono {{deity_pronoun:wangu|Wangu}} na kukupiga wewe na watu wako kwa tauni, nawe ungalikuwa umefutiliwa mbali kutoka duniani.",
           "B": "Ningeweza tayari kuinua mkono {{deity_pronoun:wangu|Wangu}} na kukupiga wewe na watu wako kwa ugonjwa wa kuua, nawe ungetoweka kabisa duniani.",
           "R": "Kabla ya sasa, ningeweza kutumia nguvu {{deity_pronoun:zangu|Zangu}} dhidi yako na watu wako. Ningeweza kuleta ugonjwa wa kuua, nawe usingekuwepo tena duniani."
+        },
+        "ko": {
+          "L": "내가 이미 내 손을 뻗어 돌림병으로 너와 네 백성을 쳤더라면, 너는 땅에서 끊어졌을 것이다.",
+          "B": "내가 벌써 손을 들어 무서운 병으로 너와 네 백성을 쳤다면, 너는 이미 땅에서 사라졌을 것이다.",
+          "R": "나는 전에 이미 내 능력으로 너와 네 백성을 칠 수 있었다. 무서운 병을 보낼 수도 있었다. 그랬다면 너는 벌써 이 땅에서 사라졌을 것이다."
+        },
+        "vi": {
+          "L": "Vì bây giờ {{deity_pronoun:ta|Ta}} đã có thể giơ tay {{deity_pronoun:ta|Ta}} ra và đánh ngươi cùng dân ngươi bằng dịch bệnh, và ngươi đã bị xóa khỏi mặt đất rồi.",
+          "B": "Lẽ ra {{deity_pronoun:ta|Ta}} đã có thể giơ tay ra đánh ngươi và dân ngươi bằng dịch bệnh chết người, và ngươi đã biến mất khỏi mặt đất rồi.",
+          "R": "Trước đây {{deity_pronoun:ta|Ta}} đã có thể dùng quyền năng của {{deity_pronoun:ta|Ta}} để đánh phạt ngươi và dân ngươi. Ta đã có thể giáng một bệnh dịch chết người, và ngươi đã không còn trên mặt đất nữa."
         }
       },
       "decisions": [
@@ -1972,6 +2420,16 @@
           "L": "Lakini kwa kweli, nimekuacha usimame kwa kusudi hili: kukuonyesha nguvu {{deity_pronoun:zangu|Zangu}}, na jina {{deity_pronoun:langu|Langu}} lisimuliwe duniani kote.",
           "B": "Lakini nimekuacha uendelee kuishi kwa kusudi hili: nikuonyeshe nguvu {{deity_pronoun:zangu|Zangu}}, na jina {{deity_pronoun:langu|Langu}} litangazwe katika dunia yote.",
           "R": "Lakini nimekuacha hai kwa sababu fulani. Nilitaka kukuonyesha nguvu {{deity_pronoun:zangu|Zangu}}. Tena nilitaka jina {{deity_pronoun:langu|Langu}} lijulikane duniani kote."
+        },
+        "ko": {
+          "L": "그러나 참으로 내가 이 일을 위하여 너를 세워 두었다. 너에게 내 능력을 보이고, 내 이름이 온 땅에 전파되게 하려는 것이다.",
+          "B": "그러나 내가 너를 살려 둔 것은 바로 이 때문이다. 너에게 내 능력을 보여 주고, 내 이름이 온 땅에 알려지게 하려는 것이다.",
+          "R": "그러나 내가 너를 살려 둔 데는 이유가 있다. 나는 너에게 내 능력을 보여 주려고 했다. 그리고 내 이름이 온 세상에 알려지게 하려고 했다."
+        },
+        "vi": {
+          "L": "Nhưng thật ra, vì lẽ này mà {{deity_pronoun:ta|Ta}} đã để ngươi đứng vững: để cho ngươi thấy quyền năng của {{deity_pronoun:ta|Ta}}, và để danh {{deity_pronoun:ta|Ta}} được rao truyền trên khắp đất.",
+          "B": "Nhưng {{deity_pronoun:ta|Ta}} để cho ngươi còn sống là vì mục đích này: để cho ngươi thấy quyền năng của {{deity_pronoun:ta|Ta}}, và để danh {{deity_pronoun:ta|Ta}} được loan báo khắp đất.",
+          "R": "Nhưng {{deity_pronoun:ta|Ta}} đã để ngươi sống là có lý do. Ta muốn cho ngươi thấy quyền năng của {{deity_pronoun:ta|Ta}}. Và {{deity_pronoun:ta|Ta}} muốn danh {{deity_pronoun:ta|Ta}} được truyền ra khắp thế giới."
         }
       },
       "decisions": [
@@ -2025,6 +2483,26 @@
           "reason": "The Hebrew has \"to show you\". The Septuagint and Romans 9:17 have \"to show in you\", Pharaoh as the place where the power is seen.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020090160042"
+          ],
+          "choice": "Worded close to the Korean of Romans 9:17, which quotes this verse (\"내가 너를 세웠다 ... 내 이름이 온 땅에 전파되게 하려는 것이다\")",
+          "alternatives": [
+            "너를 살려 두었다 (L)"
+          ],
+          "reason": "Paul quotes this sentence, and the Korean Romans already words it; Exodus keeps those words where the Hebrew agrees. Balanced follows the meaning decision (\"let you live\") with \"살려 두다\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2072,6 +2550,16 @@
           "L": "Bado unajikweza juu ya watu {{deity_pronoun:wangu|Wangu}}, usiwaache waende.",
           "B": "Hata sasa unajiinua dhidi ya watu {{deity_pronoun:wangu|Wangu}}, ukikataa kuwaachilia.",
           "R": "Bado una kiburi, na unawazuia watu {{deity_pronoun:wangu|Wangu}} njiani. Hutaki kuwaacha waende."
+        },
+        "ko": {
+          "L": "너는 아직도 내 백성을 거슬러 스스로를 높이며, 그들을 보내지 않고 있다.",
+          "B": "너는 지금도 내 백성 앞에서 스스로를 높이며, 그들을 놓아 보내지 않고 있다.",
+          "R": "너는 아직도 교만하여 내 백성을 가로막고 있다. 너는 그들을 보내 주지 않는다."
+        },
+        "vi": {
+          "L": "Ngươi vẫn còn tự tôn mình lên chống lại dân {{deity_pronoun:ta|Ta}}, không chịu để họ đi.",
+          "B": "Đến nay ngươi vẫn còn ngạo mạn chống lại dân {{deity_pronoun:ta|Ta}}, không chịu cho họ ra đi.",
+          "R": "Ngươi vẫn kiêu ngạo và cản trở dân {{deity_pronoun:ta|Ta}}. Ngươi không chịu để họ đi."
         }
       },
       "decisions": [
@@ -2184,6 +2672,16 @@
           "L": "Tazama, kesho wakati kama huu nitanyesha mvua ya mawe nzito sana, ambayo haijawahi kuwa kama hiyo katika Misri tangu siku ilipoanzishwa hadi sasa.",
           "B": "Kesho karibu na wakati huu nitanyesha mvua ya mawe kubwa mno, ambayo Misri haijawahi kuona mfano wake tangu siku taifa hili lilipoanza hadi leo.",
           "R": "Basi sikiliza! Kesho karibu saa hii, nitaleta dhoruba kali ya mvua ya mawe. Misri haijawahi kupata dhoruba kama hiyo tangu nchi hii ilipoanza."
+        },
+        "ko": {
+          "L": "보아라, 내일 이맘때에 내가 매우 무거운 우박을 비처럼 내리겠다. 이집트가 세워진 날부터 지금까지 그와 같은 것이 없었다.",
+          "B": "내일 이맘때에 내가 아주 큰 우박을 쏟아붓겠다. 이집트가 나라를 세운 날부터 지금까지 한 번도 없었던 우박이다.",
+          "R": "그러니 잘 들어라! 내일 이맘때에 내가 무서운 우박을 내리겠다. 이집트에 나라가 생긴 뒤로 그런 우박은 한 번도 없었다."
+        },
+        "vi": {
+          "L": "Này, khoảng giờ này ngày mai, {{deity_pronoun:ta|Ta}} sẽ cho mưa xuống một trận mưa đá rất nặng, thứ chưa từng có ở Ai Cập từ ngày [xứ ấy] được lập nên cho đến nay.",
+          "B": "Khoảng giờ này ngày mai, {{deity_pronoun:ta|Ta}} sẽ đổ xuống một trận mưa đá dữ dội đến nỗi từ khi Ai Cập lập quốc cho đến nay chưa từng thấy.",
+          "R": "Vậy hãy nghe đây! Khoảng giờ này ngày mai, {{deity_pronoun:ta|Ta}} sẽ giáng một trận mưa đá khủng khiếp. Từ khi có nước Ai Cập đến nay, chưa bao giờ có trận mưa đá như vậy."
         }
       },
       "decisions": [
@@ -2334,6 +2832,16 @@
           "L": "Basi sasa tuma, uweke salama mifugo yako na vyote ulivyo navyo kondeni; kila mwanadamu na mnyama atakayeonekana kondeni wala hakukusanywa nyumbani, mvua ya mawe itawashukia, nao watakufa.'\"",
           "B": "Kwa hiyo tuma ujumbe sasa hivi, uagize mifugo yako na kila kitu ulicho nacho nje viletwe mahali salama. Mtu yeyote au mnyama yeyote atakayebaki mashambani bila kuletwa ndani atakufa mvua ya mawe itakapomwangukia.'\"",
           "R": "Basi tuma amri mara moja wanyama wako waletwe kutoka mashambani. Leta ndani kila kitu ulicho nacho huko nje. Mvua ya mawe itamwangukia kila mtu na kila mnyama aliye bado mashambani. Wote ambao hawataletwa ndani watakufa.'\""
+        },
+        "ko": {
+          "L": "그러니 이제 [사람을] 보내어, 네 가축과 들에 있는 네 모든 것을 안전한 곳으로 모아들여라. 들에 있어서 집으로 모아들이지 않은 모든 사람과 짐승은, 우박이 그들 위에 떨어져 죽을 것이다.'\"",
+          "B": "그러니 이제 사람을 보내어, 네 가축과 들에 있는 모든 것을 지붕 아래로 들여놓게 하여라. 집 안으로 들이지 않고 들에 남아 있는 사람이나 짐승은 우박을 맞아 모두 죽을 것이다.'\"",
+          "R": "그러니 지금 바로 명령을 내려서 네 짐승들을 들에서 데려오게 하여라. 들에 있는 네 것을 모두 안으로 들여놓아라. 들에 남아 있는 사람과 짐승에게는 모두 우박이 떨어질 것이다. 안으로 들어오지 않은 것은 다 죽을 것이다.'\""
+        },
+        "vi": {
+          "L": "Vậy bây giờ hãy sai [người], đem súc vật của ngươi và mọi thứ ngươi có ngoài đồng vào chỗ trú. Mọi người và thú vật nào ở ngoài đồng mà không được đem vào nhà, mưa đá sẽ rơi xuống trên chúng, và chúng sẽ chết.'\"",
+          "B": "Vậy bây giờ hãy truyền lệnh đem gia súc và mọi thứ của ngươi đang ở ngoài đồng vào chỗ trú. Người hay thú vật nào còn ở ngoài đồng mà không được đem vào nhà sẽ chết khi mưa đá rơi xuống.'\"",
+          "R": "Vậy ngay bây giờ, hãy ra lệnh đem súc vật của ngươi từ ngoài đồng vào. Hãy đem vào mọi thứ ngươi có ở ngoài đó. Mưa đá sẽ rơi xuống trên mọi người và thú vật còn ở ngoài đồng. Người nào, con vật nào chưa được đem vào sẽ chết.'\""
         }
       },
       "decisions": [
@@ -2438,6 +2946,16 @@
           "L": "Yule aliyeliogopa neno la {{divine_name:BWANA|Yahwe}} miongoni mwa watumishi wa Farao aliwakimbiza watumishi wake na mifugo yake ndani ya nyumba.",
           "B": "Miongoni mwa maafisa wa Farao, wale walioliogopa neno la {{divine_name:BWANA|Yahwe}} waliwakimbiza watumishi wao na mifugo yao ndani ya nyumba.",
           "R": "Baadhi ya maafisa wa Farao waliogopa maneno ya {{divine_name:BWANA|Yahwe}}. Wakawaleta haraka ndani watumishi wao na wanyama wao."
+        },
+        "ko": {
+          "L": "바로의 신하들 가운데 {{divine_name:주|야훼}}의 말씀을 두려워하는 자는 자기 종들과 자기 가축을 집 안으로 피하게 하였다.",
+          "B": "바로의 신하들 가운데 {{divine_name:주|야훼}}의 말씀을 두려워한 사람들은 자기 종들과 가축을 서둘러 집 안으로 피하게 했다.",
+          "R": "바로의 신하들 가운데 몇몇은 {{divine_name:주|야훼}}께서 하신 말씀을 두려워했다. 그들은 서둘러 종들과 짐승들을 안으로 들여보냈다."
+        },
+        "vi": {
+          "L": "Ai trong các đầy tớ của Pha-ra-ôn kính sợ lời {{divine_name:CHÚA|Gia-vê}} thì cho các đầy tớ và súc vật mình chạy vào nhà.",
+          "B": "Trong quần thần của Pha-ra-ôn, những người kính sợ lời {{divine_name:CHÚA|Gia-vê}} vội cho đầy tớ và gia súc của mình chạy vào nhà.",
+          "R": "Một số quan của Pha-ra-ôn sợ lời {{divine_name:CHÚA|Gia-vê}} đã phán. Họ vội đem đầy tớ và súc vật của mình vào trong nhà."
         }
       },
       "decisions": [
@@ -2564,6 +3082,16 @@
           "L": "Lakini yule ambaye hakuelekeza moyo wake kwa neno la {{divine_name:BWANA|Yahwe}} aliwaacha watumishi wake na mifugo yake kondeni.",
           "B": "Wengine hawakulitilia maanani neno la {{divine_name:BWANA|Yahwe}}, wakawaacha watumishi wao na mifugo yao nje.",
           "R": "Lakini wengine hawakujali onyo la {{divine_name:BWANA|Yahwe}}. Waliwaacha watumishi wao na wanyama wao mashambani."
+        },
+        "ko": {
+          "L": "그러나 {{divine_name:주|야훼}}의 말씀에 마음을 두지 않은 자는 자기 종들과 자기 가축을 들에 내버려 두었다.",
+          "B": "그러나 {{divine_name:주|야훼}}의 말씀을 마음에 두지 않은 사람들은 자기 종들과 가축을 들에 그대로 두었다.",
+          "R": "그러나 다른 사람들은 {{divine_name:주|야훼}}의 경고를 귀담아듣지 않았다. 그들은 종들과 짐승들을 들에 그냥 내버려 두었다."
+        },
+        "vi": {
+          "L": "Còn ai không để lòng vào lời {{divine_name:CHÚA|Gia-vê}} thì để các đầy tớ và súc vật mình ở ngoài đồng.",
+          "B": "Những người khác không để tâm đến lời {{divine_name:CHÚA|Gia-vê}} thì bỏ mặc đầy tớ và gia súc của mình ở ngoài đồng.",
+          "R": "Nhưng những người khác không để ý đến lời cảnh báo của {{divine_name:CHÚA|Gia-vê}}. Họ để đầy tớ và súc vật của mình ở ngoài đồng."
         }
       },
       "decisions": [
@@ -2672,6 +3200,16 @@
           "L": "Naye {{divine_name:BWANA|Yahwe}} akamwambia Musa, \"Nyoosha mkono wako kuelekea mbinguni, ili iwe mvua ya mawe katika nchi yote ya Misri, juu ya wanadamu na juu ya wanyama na juu ya kila mmea wa kondeni katika nchi ya Misri.\"",
           "B": "{{divine_name:BWANA|Yahwe}} alimwambia Musa, \"Inua mkono wako kuelekea angani ili mvua ya mawe inyeshe katika nchi yote ya Misri, iwapige watu, wanyama na kila mmea wa mashambani mwa Misri.\"",
           "R": "{{divine_name:BWANA|Yahwe}} alimwambia Musa, \"Inua mkono wako juu kuelekea angani. Ndipo mvua ya mawe itanyesha kila mahali katika Misri. Itawanyeshea watu, wanyama na mimea yote ya mashambani.\""
+        },
+        "ko": {
+          "L": "그리고 {{divine_name:주|야훼}}께서 모세에게 말씀하셨다. \"네 손을 하늘을 향해 뻗어, 이집트 온 땅에, 이집트 땅의 사람과 짐승과 들의 모든 풀 위에 우박이 있게 하여라.\"",
+          "B": "{{divine_name:주|야훼}}께서 모세에게 말씀하셨다. \"하늘을 향해 손을 들어라. 그러면 이집트 온 땅에 우박이 쏟아져, 이집트 들판의 사람과 짐승과 모든 푸른 식물을 칠 것이다.\"",
+          "R": "{{divine_name:주|야훼}}께서 모세에게 말씀하셨다. \"하늘을 향해 손을 들어 올려라. 그러면 이집트 온 땅에 우박이 떨어질 것이다. 사람과 짐승과 들의 모든 식물 위에 떨어질 것이다.\""
+        },
+        "vi": {
+          "L": "{{divine_name:CHÚA|Gia-vê}} phán với Môi-se: \"Hãy giơ tay ngươi lên trời, để có mưa đá trên khắp xứ Ai Cập, trên người, trên thú vật và trên mọi cây cỏ ngoài đồng trong xứ Ai Cập.\"",
+          "B": "{{divine_name:CHÚA|Gia-vê}} bảo Môi-se: \"Con hãy giơ tay lên trời để mưa đá rơi xuống khắp xứ Ai Cập, trên người, thú vật và mọi cây cỏ ngoài đồng trong xứ Ai Cập.\"",
+          "R": "{{divine_name:CHÚA|Gia-vê}} phán với Môi-se: \"Con hãy giơ tay lên trời. Mưa đá sẽ rơi xuống khắp Ai Cập. Nó sẽ rơi trên người, thú vật và mọi cây cỏ ngoài đồng.\""
         }
       },
       "decisions": [
@@ -2768,6 +3306,16 @@
           "L": "Naye Musa akanyoosha fimbo yake kuelekea mbinguni, naye {{divine_name:BWANA|Yahwe}} akatoa ngurumo na mvua ya mawe, na moto ukashuka ardhini; naye {{divine_name:BWANA|Yahwe}} akanyesha mvua ya mawe juu ya nchi ya Misri.",
           "B": "Musa aliinua fimbo yake kuelekea angani, na {{divine_name:BWANA|Yahwe}} akatuma ngurumo na mvua ya mawe. Umeme wa radi ukashuka ardhini, huku {{divine_name:BWANA|Yahwe}} akinyesha mvua ya mawe juu ya nchi ya Misri.",
           "R": "Basi Musa aliinua fimbo yake juu kuelekea angani. {{divine_name:BWANA|Yahwe}} akaleta ngurumo na mvua ya mawe. Radi zikapiga ardhi. {{divine_name:BWANA|Yahwe}} akamwaga mvua ya mawe juu ya nchi ya Misri."
+        },
+        "ko": {
+          "L": "그리고 모세가 자기 지팡이를 하늘을 향해 뻗자, {{divine_name:주|야훼}}께서 우렛소리와 우박을 보내시고, 불이 땅으로 내려왔다. {{divine_name:주|야훼}}께서 이집트 땅 위에 우박을 비처럼 내리셨다.",
+          "B": "모세가 지팡이를 하늘을 향해 들자, {{divine_name:주|야훼}}께서 천둥을 울리시고 우박을 내리셨다. 번개가 땅으로 내리꽂히는 가운데 {{divine_name:주|야훼}}께서 이집트 땅에 우박을 퍼부으셨다.",
+          "R": "모세가 지팡이를 하늘을 향해 들었다. 그러자 {{divine_name:주|야훼}}께서 천둥이 치고 우박이 내리게 하셨다. 번개가 땅에 내리쳤다. {{divine_name:주|야훼}}께서 이집트 땅에 우박을 쏟아부으셨다."
+        },
+        "vi": {
+          "L": "Môi-se giơ gậy mình lên trời, và {{divine_name:CHÚA|Gia-vê}} cho sấm và mưa đá, và lửa sa xuống đất; {{divine_name:CHÚA|Gia-vê}} cho mưa đá rơi xuống xứ Ai Cập.",
+          "B": "Môi-se giơ gậy lên trời, và {{divine_name:CHÚA|Gia-vê}} khiến sấm rền vang và mưa đá rơi xuống. Chớp lửa giáng xuống đất trong khi {{divine_name:CHÚA|Gia-vê}} đổ mưa đá trên xứ Ai Cập.",
+          "R": "Vậy Môi-se giơ gậy lên trời. {{divine_name:CHÚA|Gia-vê}} liền làm cho có sấm và mưa đá. Sét đánh xuống đất. {{divine_name:CHÚA|Gia-vê}} làm cho mưa đá trút xuống xứ Ai Cập."
         }
       },
       "decisions": [
@@ -2834,6 +3382,25 @@
           "reason": "Literal keeps \"fire\"; Balanced and Readable say what the fire was.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020090230091"
+          ],
+          "choice": "\"우렛소리\" at Literal, \"천둥\" at Balanced and Readable",
+          "alternatives": [
+            "소리들"
+          ],
+          "reason": "The Hebrew word is \"voices, sounds\" (meaning decision); \"우렛소리\" keeps \"sound\" inside the Korean word for thunder, while the other levels use the everyday word.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2897,6 +3464,16 @@
           "L": "Basi ikawa mvua ya mawe, na moto ukimulikamulika katikati ya mvua ya mawe, nzito sana, ambayo haikuwahi kuwa kama hiyo katika nchi yote ya Misri tangu ilipokuwa taifa.",
           "B": "Mvua ya mawe ilinyesha, na umeme wa radi ukimetameta katikati yake. Mvua hiyo ilikuwa nzito mno, kuliko yoyote ambayo nchi yote ya Misri ilikuwa imewahi kuona tangu ilipokuwa taifa.",
           "R": "Mvua ya mawe ilinyesha, na radi zikimulika katikati ya mvua hiyo. Ilikuwa dhoruba ya kutisha. Hakuna kitu kama hicho kilichowahi kutokea katika Misri yote tangu ilipokuwa nchi."
+        },
+        "ko": {
+          "L": "그리고 우박이 있었고, 우박 가운데 불이 번쩍거렸다. [우박은] 매우 무거웠는데, 이집트 온 땅에 나라가 생긴 뒤로 그와 같은 것이 없었다.",
+          "B": "우박이 쏟아지고, 그 우박 사이로 번개가 번쩍였다. 우박이 매우 심하여, 이집트 온 땅에 나라가 생긴 뒤로 그런 우박은 없었다.",
+          "R": "우박이 떨어지고, 우박 사이로 번개가 번쩍거렸다. 무서운 폭풍이었다. 이집트에 나라가 생긴 뒤로 그런 일은 한 번도 없었다."
+        },
+        "vi": {
+          "L": "Có mưa đá, và lửa lóe sáng giữa mưa đá, rất nặng nề, thứ chưa từng có trong cả xứ Ai Cập kể từ khi xứ ấy thành một dân tộc.",
+          "B": "Mưa đá rơi xuống, có chớp lóe sáng giữa mưa đá. Trận mưa đá rất dữ dội, chưa từng có trong cả xứ Ai Cập từ khi xứ ấy thành một nước.",
+          "R": "Mưa đá rơi xuống, và chớp lóe lên giữa mưa đá. Đó là một trận bão khủng khiếp. Từ khi Ai Cập thành một nước đến nay, chưa bao giờ có trận bão như vậy."
         }
       },
       "decisions": [
@@ -3032,6 +3609,16 @@
           "L": "Na mvua ya mawe ikapiga, katika nchi yote ya Misri, vyote vilivyokuwa kondeni, tangu mwanadamu hadi mnyama; na mvua ya mawe ikapiga kila mmea wa kondeni, nayo ikavunjavunja kila mti wa kondeni.",
           "B": "Katika nchi yote ya Misri, mvua ya mawe ilipiga kila kitu kilichokuwa mashambani, watu na wanyama. Ikaangusha mimea yote ya mashambani na kuipasua miti yote.",
           "R": "Mvua ya mawe ilipiga kila kitu kilichokuwa mashambani katika Misri yote. Iliwapiga watu na wanyama. Ikaangusha mimea yote na kuvunja miti yote."
+        },
+        "ko": {
+          "L": "그리고 우박이 이집트 온 땅에서 들에 있는 모든 것을 사람부터 짐승까지 쳤다. 또 우박이 들의 모든 풀을 치고, 들의 모든 나무를 꺾어 부수었다.",
+          "B": "이집트 온 땅에서 들에 있던 것은 사람이든 짐승이든 모두 우박에 맞았다. 우박은 들의 모든 식물을 쓰러뜨리고 나무를 모조리 부러뜨렸다.",
+          "R": "우박은 이집트 온 땅에서 들에 있는 모든 것을 쳤다. 사람과 짐승이 우박에 맞았다. 우박은 모든 식물을 쓰러뜨리고 나무를 다 부러뜨렸다."
+        },
+        "vi": {
+          "L": "Mưa đá đánh trong khắp xứ Ai Cập mọi thứ ở ngoài đồng, từ người cho đến thú vật; mưa đá đánh mọi cây cỏ ngoài đồng, và làm gãy nát mọi cây cối ngoài đồng.",
+          "B": "Khắp xứ Ai Cập, mưa đá đánh trúng mọi thứ ở ngoài đồng, cả người lẫn thú vật. Mưa đá làm dập nát mọi cây cỏ ngoài đồng và bẻ gãy mọi cây cối.",
+          "R": "Mưa đá đánh trúng mọi thứ ở ngoài đồng trong khắp Ai Cập. Nó đánh trúng người và thú vật. Nó làm dập hết cây cỏ và gãy hết cây cối."
         }
       },
       "decisions": [
@@ -3114,6 +3701,16 @@
           "L": "Ila katika nchi ya Gosheni, walikokuwa wana wa Israeli, haikuwa mvua ya mawe.",
           "B": "Ni katika nchi ya Gosheni tu, walimoishi Waisraeli, ambamo mvua ya mawe haikunyesha.",
           "R": "Lakini mvua ya mawe haikunyesha Gosheni, walikoishi Waisraeli."
+        },
+        "ko": {
+          "L": "다만 이스라엘 자손이 [있던] 고센 땅에는 우박이 없었다.",
+          "B": "다만 이스라엘 백성이 살던 고센 땅에만 우박이 내리지 않았다.",
+          "R": "그러나 이스라엘 사람들이 살던 고센에는 우박이 떨어지지 않았다."
+        },
+        "vi": {
+          "L": "Chỉ trong xứ Gô-sen, nơi có con cháu Y-sơ-ra-ên, là không có mưa đá.",
+          "B": "Chỉ có xứ Gô-sen, nơi dân Y-sơ-ra-ên sinh sống, là không có mưa đá.",
+          "R": "Nhưng mưa đá không rơi xuống Gô-sen, nơi dân Y-sơ-ra-ên sinh sống."
         }
       },
       "decisions": [
@@ -3195,6 +3792,16 @@
           "L": "Naye Farao akatuma, akawaita Musa na Haruni, akawaambia, \"Nimetenda dhambi safari hii; {{divine_name:BWANA|Yahwe}} [ndiye] mwenye haki, nami na watu wangu [ndio] waovu.",
           "B": "Farao aliwaita Musa na Haruni, akawaambia, \"Safari hii nimetenda dhambi. {{divine_name:BWANA|Yahwe}} yuko sahihi, na hatia ni yangu na ya watu wangu.",
           "R": "Farao aliwaita Musa na Haruni. Akawaambia, \"Safari hii nimetenda dhambi. {{divine_name:BWANA|Yahwe}} ametenda haki. Mimi na watu wangu ndio tuliokosea."
+        },
+        "ko": {
+          "L": "그리고 바로가 [사람을] 보내어 모세와 아론을 불러 그들에게 말하였다. \"이번에는 내가 죄를 지었다. {{divine_name:주|야훼}}께서는 의로우시고, 나와 내 백성은 악하다.",
+          "B": "바로가 사람을 보내 모세와 아론을 불러서 말하였다. \"이번에는 내가 죄를 지었다. {{divine_name:주|야훼}}께서 옳으시고, 잘못은 나와 내 백성에게 있다.",
+          "R": "바로가 사람을 보내 모세와 아론을 불렀다. 그리고 그들에게 말했다. \"이번에는 내가 죄를 지었다. {{divine_name:주|야훼}}께서는 옳은 일을 하셨다. 잘못한 것은 나와 내 백성이다."
+        },
+        "vi": {
+          "L": "Pha-ra-ôn sai [người] triệu Môi-se và A-rôn đến và nói với họ: \"Lần này ta đã phạm tội; {{divine_name:CHÚA|Gia-vê}} [là] Đấng công chính, còn ta và dân ta [là] kẻ gian ác.",
+          "B": "Pha-ra-ôn cho triệu Môi-se và A-rôn đến và nói: \"Lần này ta đã phạm tội. {{divine_name:CHÚA|Gia-vê}} là công chính, còn ta và dân ta đã làm điều sai trái.",
+          "R": "Pha-ra-ôn cho gọi Môi-se và A-rôn đến. Vua nói với họ: \"Lần này ta đã phạm tội. {{divine_name:CHÚA|Gia-vê}} đã làm điều đúng. Chính ta và dân ta mới là những người làm sai."
         }
       },
       "decisions": [
@@ -3244,6 +3851,47 @@
           "choice": "in the right ... the guilt lies with / has done what is right ... have done wrong",
           "alternatives": [],
           "reason": "Literal keeps \"righteous\" and \"wicked\". Balanced and Readable use the language of a court case to show the sense; \"righteous\" here is not the Greek key term.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o020090270081"
+          ],
+          "choice": "Pharaoh speaks to Moses and Aaron in the plain style (해라체) with \"너희\"",
+          "alternatives": [
+            "하오체",
+            "합쇼체"
+          ],
+          "reason": "He is the king speaking to subjects, as Pharaoh speaks to Joseph's brothers in the Korean Genesis. Moses answers him in 합쇼체 (9:29). This holds for these chapters.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o020090270062"
+          ],
+          "choice": "Pharaoh speaks to Moses and Aaron as \"ta\" and \"các ngươi\"",
+          "alternatives": [],
+          "reason": "A king to men of a subject people, as Pharaoh speaks to Joseph's brothers in the Vietnamese Genesis (47:3); the court words \"trẫm\" and \"khanh\" are not used.",
           "uncertain": false,
           "footnote": false
         }
@@ -3304,6 +3952,16 @@
           "L": "Msihini {{divine_name:BWANA|Yahwe}}, kwa maana zimetosha ngurumo za Mungu na mvua ya mawe. Nami nitawaacha mwende, wala hamtaendelea kukaa.\"",
           "B": "Mwombeni {{divine_name:BWANA|Yahwe}}. Ngurumo za Mungu na mvua ya mawe zimetosha. Nitawaachilia; hamtakaa hapa tena.\"",
           "R": "Mwombeni {{divine_name:BWANA|Yahwe}}! Hatuwezi kuvumilia tena ngurumo za Mungu na mvua ya mawe. Nitawaacha mwende. Mnaweza kuondoka mara moja.\""
+        },
+        "ko": {
+          "L": "{{divine_name:주|야훼}}께 간구하여라. 하나님의 우렛소리와 우박은 이것으로 충분하다. 내가 너희를 보내겠다. 너희가 더 머무르지 않을 것이다.\"",
+          "B": "{{divine_name:주|야훼}}께 간청하여라. 하나님의 천둥과 우박은 이제 그만하면 되었다. 내가 너희를 보내 주겠다. 너희는 더 이상 여기 머물지 않아도 된다.\"",
+          "R": "{{divine_name:주|야훼}}께 기도하여라! 하나님께서 보내신 천둥과 우박을 우리는 더 견딜 수 없다. 내가 너희를 보내 주겠다. 너희는 곧바로 떠나도 좋다.\""
+        },
+        "vi": {
+          "L": "Hãy cầu xin {{divine_name:CHÚA|Gia-vê}}, vì sấm của Đức Chúa Trời và mưa đá [đã] đủ rồi. Ta sẽ để các ngươi đi, và các ngươi sẽ không phải ở lại nữa.\"",
+          "B": "Hãy nài xin {{divine_name:CHÚA|Gia-vê}}. Sấm sét của Đức Chúa Trời và mưa đá như vậy là đủ rồi. Ta sẽ cho các ngươi đi; các ngươi không phải ở lại đây nữa.\"",
+          "R": "Hãy cầu xin {{divine_name:CHÚA|Gia-vê}} đi! Chúng ta không chịu nổi sấm sét và mưa đá của Đức Chúa Trời nữa. Ta sẽ để các ngươi đi. Các ngươi có thể ra đi ngay.\""
         }
       },
       "decisions": [
@@ -3427,6 +4085,16 @@
           "L": "Naye Musa akamwambia, \"Nitakapotoka mjini, nitavikunjua viganja vyangu kwa {{divine_name:BWANA|Yahwe}}. Ngurumo zitakoma, wala hakutakuwa tena na mvua ya mawe, ili ujue kwamba dunia [ni] ya {{divine_name:BWANA|Yahwe}}.",
           "B": "Musa alijibu, \"Mara nitakapokuwa nje ya mji, nitanyoosha mikono yangu kwa {{divine_name:BWANA|Yahwe}}. Ndipo ngurumo zitakoma na mvua ya mawe itakwisha, nawe utajua kwamba dunia ni mali ya {{divine_name:BWANA|Yahwe}}.",
           "R": "Musa alimwambia Farao, \"Nikitoka nje ya mji, nitainua mikono yangu na kumwomba {{divine_name:BWANA|Yahwe}}. Ngurumo na mvua ya mawe vitakoma. Ndipo utajua kwamba dunia ni ya {{divine_name:BWANA|Yahwe}}."
+        },
+        "ko": {
+          "L": "그리고 모세가 그에게 말하였다. \"제가 성읍에서 나가면 {{divine_name:주|야훼}}께 제 손바닥을 펴겠습니다. 그러면 우렛소리가 그치고 우박이 더 이상 없을 것이니, 땅이 {{divine_name:주|야훼}}의 것임을 임금님께서 아시게 될 것입니다.",
+          "B": "모세가 대답하였다. \"제가 성 밖으로 나가는 대로 {{divine_name:주|야훼}}께 두 손을 펴 들겠습니다. 그러면 천둥이 그치고 우박도 더 내리지 않을 것입니다. 그리하여 임금님께서는 땅이 {{divine_name:주|야훼}}의 것임을 아시게 될 것입니다.",
+          "R": "모세가 바로에게 말했다. \"제가 성 밖으로 나가서 두 손을 들고 {{divine_name:주|야훼}}께 기도하겠습니다. 그러면 천둥과 우박이 그칠 것입니다. 그때 임금님께서는 이 세상이 {{divine_name:주|야훼}}의 것임을 아시게 될 것입니다."
+        },
+        "vi": {
+          "L": "Môi-se nói với vua: \"Khi tôi vừa ra khỏi thành, tôi sẽ giang hai bàn tay ra hướng về {{divine_name:CHÚA|Gia-vê}}. Sấm sẽ dứt và mưa đá sẽ không còn nữa, để bệ hạ biết rằng đất [thuộc về] {{divine_name:CHÚA|Gia-vê}}.",
+          "B": "Môi-se đáp: \"Ngay khi ra khỏi thành, tôi sẽ giang tay hướng về {{divine_name:CHÚA|Gia-vê}}. Bấy giờ sấm sẽ dứt và mưa đá sẽ hết, để bệ hạ biết rằng đất thuộc về {{divine_name:CHÚA|Gia-vê}}.",
+          "R": "Môi-se nói với Pha-ra-ôn: \"Khi ra khỏi thành, tôi sẽ giơ tay lên cầu nguyện với {{divine_name:CHÚA|Gia-vê}}. Sấm và mưa đá sẽ dứt. Khi đó bệ hạ sẽ biết rằng đất thuộc về {{divine_name:CHÚA|Gia-vê}}."
         }
       },
       "decisions": [
@@ -3481,6 +4149,52 @@
           "reason": "Readable says that the gesture is prayer.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o020090290041",
+            "o020090290051"
+          ],
+          "choice": "Moses speaks to Pharaoh in 합쇼체, calling him \"임금님\" and himself \"저\"",
+          "alternatives": [
+            "당신",
+            "해라체"
+          ],
+          "reason": "\"당신\" would sound too familiar to a ruler, as the Korean Genesis notes for Joseph's brothers before Pharaoh. The courtesy does not soften what Moses says. This holds for these chapters.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o020090290012",
+            "o020090290031"
+          ],
+          "choice": "Moses speaks to Pharaoh as \"bệ hạ\" and calls himself \"tôi\"",
+          "alternatives": [
+            "ông",
+            "ngài"
+          ],
+          "reason": "A king is \"bệ hạ\" in Vietnamese, as Joseph addresses Pharaoh in Genesis 41; Moses keeps the courtesy while he delivers God's demands. He says \"tôi\", not \"đầy tớ của bệ hạ\", since he does not speak as the king's servant.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3532,6 +4246,16 @@
           "L": "Lakini wewe na watumishi wako, najua kwamba bado hamjamcha {{divine_name:BWANA|Yahwe}} Mungu.\"",
           "B": "Lakini wewe na maafisa wako, najua, bado hamjamcha {{divine_name:BWANA|Yahwe}} Mungu.\"",
           "R": "Lakini ninajua hili kuhusu wewe na maafisa wako: bado hammchi {{divine_name:BWANA|Yahwe}} Mungu.\""
+        },
+        "ko": {
+          "L": "그러나 임금님과 임금님의 신하들은 아직도 {{divine_name:주|야훼}} 하나님을 두려워하지 않는 줄을 제가 압니다.\"",
+          "B": "그러나 임금님과 신하들이 아직도 {{divine_name:주|야훼}} 하나님을 두려워하지 않는다는 것을 저는 압니다.\"",
+          "R": "그러나 저는 압니다. 임금님과 신하들은 여전히 {{divine_name:주|야훼}} 하나님을 두려워하지 않습니다.\""
+        },
+        "vi": {
+          "L": "Nhưng bệ hạ và các đầy tớ của bệ hạ, tôi biết rằng [các vị] vẫn chưa kính sợ {{divine_name:CHÚA|Gia-vê}} Đức Chúa Trời.\"",
+          "B": "Nhưng tôi biết rằng bệ hạ và quần thần của bệ hạ vẫn chưa kính sợ {{divine_name:CHÚA|Gia-vê}} Đức Chúa Trời.\"",
+          "R": "Nhưng tôi biết bệ hạ và các quan của bệ hạ vẫn chưa kính sợ {{divine_name:CHÚA|Gia-vê}} Đức Chúa Trời.\""
         }
       },
       "decisions": [
@@ -3635,6 +4359,16 @@
           "L": "Na kitani na shayiri vikapigwa, kwa maana shayiri [ilikuwa] imetoa masuke na kitani [kilikuwa] kimechanua.",
           "B": "Mazao ya kitani na shayiri yaliharibika, kwa sababu shayiri ilikuwa imekwisha kutoa masuke na kitani kilikuwa kimechanua maua.",
           "R": "Mvua ya mawe iliharibu kitani, mmea unaotumiwa kutengeneza nguo za kitani, pamoja na shayiri. Mimea ya shayiri ilikuwa tayari na nafaka, na mimea ya kitani ilikuwa na maua."
+        },
+        "ko": {
+          "L": "그리고 아마와 보리가 맞아 상하였다. 보리는 이삭이 [패어] 있었고 아마는 꽃봉오리가 [맺혀] 있었기 때문이다.",
+          "B": "아마와 보리는 못 쓰게 되었다. 보리는 이미 이삭이 패었고, 아마는 꽃이 피어 있었기 때문이다.",
+          "R": "우박은 아마와 보리를 망쳐 놓았다. 아마는 베옷을 짜는 실을 얻는 식물이다. 보리에는 벌써 이삭이 달려 있었고, 아마에는 꽃이 피어 있었다."
+        },
+        "vi": {
+          "L": "Cây lanh và lúa mạch bị đánh, vì lúa mạch [đã] trổ bông và cây lanh [đã] ra nụ.",
+          "B": "Lanh và lúa mạch bị hư hại, vì lúa mạch đã trổ bông và lanh đã ra hoa.",
+          "R": "Mưa đá phá hủy cây lanh, là loại cây người ta dùng để dệt vải lanh, và lúa mạch. Lúa mạch đã có hạt, còn cây lanh thì đã ra hoa."
         }
       },
       "decisions": [
@@ -3753,6 +4487,16 @@
           "L": "Lakini ngano na spelti havikupigwa, kwa maana [ni] vya kuchelewa.",
           "B": "Ngano na spelti viliponea, kwa kuwa ni mazao yanayokomaa baadaye.",
           "R": "Lakini ngano haikuharibika. Wala aina nyingine ya ngano iitwayo spelti haikuharibika. Hiyo huota baadaye katika mwaka."
+        },
+        "ko": {
+          "L": "그러나 밀과 스펠트밀은 맞지 않았다. 그것들은 늦게 [익기] 때문이다.",
+          "B": "그러나 밀과 스펠트밀은 늦게 자라는 곡식이어서 해를 입지 않았다.",
+          "R": "그러나 밀은 상하지 않았다. 스펠트밀이라는 다른 종류의 밀도 괜찮았다. 그것들은 한 해 가운데 더 늦게 자라기 때문이다."
+        },
+        "vi": {
+          "L": "Nhưng lúa mì và lúa mì spelta không bị đánh, vì chúng [là lúa] muộn.",
+          "B": "Còn lúa mì và lúa mì spelta thì không bị hại, vì đó là những loại lúa chín muộn.",
+          "R": "Nhưng lúa mì không bị hư hại. Lúa spelta, một loại lúa mì khác, cũng vậy. Hai thứ lúa này mọc muộn hơn trong năm."
         }
       },
       "decisions": [
@@ -3824,6 +4568,50 @@
           "reason": "Swahili has no everyday name for this hardy wheat (m1), so the name is borrowed, as English \"spelt\"; Readable explains it as \"aina nyingine ya ngano\", following the English Readable. \"Mtama\" is sorghum, a different grain.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020090320023"
+          ],
+          "choice": "\"스펠트밀\" for spelt",
+          "alternatives": [
+            "쌀보리",
+            "귀리"
+          ],
+          "reason": "Spelt is a kind of wheat (meaning decision); \"쌀보리\", the older Korean rendering, names a barley, and \"스펠트밀\" is the current name of the grain.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020090320023"
+          ],
+          "choice": "\"lúa mì spelta\" (L, B), \"lúa spelta, một loại lúa mì khác\" (R) for spelt",
+          "alternatives": [
+            "lúa mì đen",
+            "kê"
+          ],
+          "reason": "Vietnamese has no common word for this hardy wheat; the scientific name gives \"spelta\". \"Lúa mì đen\" is rye, a different grain. A reviewer may know a better farming word.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3889,6 +4677,16 @@
           "L": "Naye Musa akatoka kwa Farao, nje ya mji, akavikunjua viganja vyake kwa {{divine_name:BWANA|Yahwe}}; na ngurumo na mvua ya mawe zikakoma, wala mvua haikumwagika juu ya nchi.",
           "B": "Basi Musa aliondoka kwa Farao, akatoka nje ya mji, akanyoosha mikono yake kwa {{divine_name:BWANA|Yahwe}}. Ngurumo na mvua ya mawe zikakoma, na mvua ikaacha kumwagika ardhini.",
           "R": "Musa aliondoka kwa Farao, akatoka nje ya mji. Akainua mikono yake kumwomba {{divine_name:BWANA|Yahwe}}. Ndipo ngurumo na mvua ya mawe zikakoma, wala mvua haikunyesha tena."
+        },
+        "ko": {
+          "L": "그리고 모세가 바로에게서 나와 성읍 밖으로 [나가서] {{divine_name:주|야훼}}께 자기 손바닥을 폈다. 그러자 우렛소리와 우박이 그치고, 비가 땅에 쏟아지지 않았다.",
+          "B": "모세는 바로 앞에서 물러나 성 밖으로 나가서 {{divine_name:주|야훼}}께 두 손을 펴 들었다. 그러자 천둥과 우박이 그치고, 땅에 퍼붓던 비도 멎었다.",
+          "R": "모세는 바로를 떠나 성 밖으로 나갔다. 그리고 두 손을 들고 {{divine_name:주|야훼}}께 기도했다. 그러자 천둥과 우박이 그쳤다. 비도 더 이상 내리지 않았다."
+        },
+        "vi": {
+          "L": "Môi-se rời Pha-ra-ôn ra khỏi thành, giang hai bàn tay ra hướng về {{divine_name:CHÚA|Gia-vê}}; sấm và mưa đá dứt, và mưa không còn đổ xuống đất.",
+          "B": "Vậy Môi-se rời Pha-ra-ôn và đi ra ngoài thành, giang tay hướng về {{divine_name:CHÚA|Gia-vê}}. Sấm và mưa đá chấm dứt, và mưa cũng thôi đổ xuống đất.",
+          "R": "Môi-se rời Pha-ra-ôn và đi ra ngoài thành. Ông giơ tay lên cầu nguyện với {{divine_name:CHÚA|Gia-vê}}. Sấm và mưa đá liền dứt, và mưa cũng tạnh."
         }
       },
       "decisions": [
@@ -4001,6 +4799,16 @@
           "L": "Naye Farao alipoona kwamba mvua na mvua ya mawe na ngurumo zimekoma, akaendelea kutenda dhambi, akaufanya moyo wake kuwa mzito, yeye na watumishi wake.",
           "B": "Farao alipoona kwamba mvua, mvua ya mawe na ngurumo zimekoma, alirudia kutenda dhambi: akaushupaza moyo wake, yeye pamoja na maafisa wake.",
           "R": "Farao aliona kwamba mvua, mvua ya mawe na ngurumo zimekoma. Ndipo akatenda dhambi tena. Akajifanya mkaidi, na maafisa wake vilevile."
+        },
+        "ko": {
+          "L": "그리고 바로가 비와 우박과 우렛소리가 그친 것을 보고, 다시 죄를 지어 자기 마음을 무디게 하였다. 그와 그의 신하들이 [그러하였다].",
+          "B": "비와 우박과 천둥이 그친 것을 보자, 바로는 다시 죄를 지었다. 그는 마음을 완고하게 하였고, 그의 신하들도 그렇게 하였다.",
+          "R": "바로는 비와 우박과 천둥이 그친 것을 보았다. 그러자 그는 또다시 죄를 지었다. 그는 고집을 부렸고, 그의 신하들도 그렇게 했다."
+        },
+        "vi": {
+          "L": "Khi Pha-ra-ôn thấy mưa, mưa đá và sấm đã dứt, vua lại phạm tội nữa và làm cho lòng mình nặng nề, cả vua lẫn các đầy tớ vua.",
+          "B": "Khi thấy mưa, mưa đá và sấm đều đã dứt, Pha-ra-ôn lại phạm tội: vua cứng lòng, và quần thần của vua cũng vậy.",
+          "R": "Khi Pha-ra-ôn thấy mưa, mưa đá và sấm đã dứt, vua lại phạm tội. Vua lại cứng đầu, và các quan của vua cũng vậy."
         }
       },
       "decisions": [
@@ -4125,6 +4933,16 @@
           "L": "Na moyo wa Farao ukawa na nguvu, wala hakuwaacha wana wa Israeli waende, kama vile {{divine_name:BWANA|Yahwe}} alivyokuwa amesema kwa mkono wa Musa.",
           "B": "Farao alishupaa, akakataa kuwaachilia Waisraeli. Ikawa kama {{divine_name:BWANA|Yahwe}} alivyokuwa ametabiri kupitia Musa.",
           "R": "Farao aliendelea kuwa mkaidi. Hakutaka kuwaacha Waisraeli waende. Hili ndilo jambo ambalo {{divine_name:BWANA|Yahwe}} alikuwa amesema lingetokea alipozungumza kupitia Musa."
+        },
+        "ko": {
+          "L": "그리고 바로의 마음이 굳어져서, 그가 이스라엘 자손을 보내지 않았다. {{divine_name:주|야훼}}께서 모세의 손을 통하여 말씀하신 그대로였다.",
+          "B": "바로는 여전히 마음이 완고하여 이스라엘 백성을 보내지 않았다. {{divine_name:주|야훼}}께서 모세를 통해 미리 말씀하신 대로였다.",
+          "R": "바로는 계속 고집을 부렸다. 그는 이스라엘 사람들을 보내 주지 않았다. 이것은 {{divine_name:주|야훼}}께서 모세를 통해 말씀하신 그대로였다."
+        },
+        "vi": {
+          "L": "Lòng Pha-ra-ôn cứng cỏi, và vua không để con cháu Y-sơ-ra-ên đi, đúng như {{divine_name:CHÚA|Gia-vê}} đã phán qua tay Môi-se.",
+          "B": "Pha-ra-ôn vẫn cứng lòng và không chịu cho dân Y-sơ-ra-ên ra đi, đúng như {{divine_name:CHÚA|Gia-vê}} đã phán trước qua Môi-se.",
+          "R": "Pha-ra-ôn vẫn cứng đầu. Vua không chịu để dân Y-sơ-ra-ên đi. Việc ấy xảy ra đúng như {{divine_name:CHÚA|Gia-vê}} đã dùng Môi-se để báo trước."
         }
       },
       "decisions": [

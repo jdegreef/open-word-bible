@@ -40,6 +40,16 @@
           "L": "Naye {{divine_name:BWANA|Yahwe}} akanena na Musa, akisema,",
           "B": "{{divine_name:BWANA|Yahwe}} alimwambia Musa,",
           "R": "{{divine_name:BWANA|Yahwe}} alimwambia Musa,"
+        },
+        "ko": {
+          "L": "그리고 {{divine_name:주|야훼}}께서 모세에게 말씀하셨다.",
+          "B": "{{divine_name:주|야훼}}께서 모세에게 말씀하셨다.",
+          "R": "{{divine_name:주|야훼}}께서 모세에게 말씀하셨다."
+        },
+        "vi": {
+          "L": "{{divine_name:CHÚA|Gia-vê}} phán với Môi-se rằng:",
+          "B": "{{divine_name:CHÚA|Gia-vê}} phán với Môi-se:",
+          "R": "{{divine_name:CHÚA|Gia-vê}} phán với Môi-se:"
         }
       },
       "decisions": [
@@ -134,6 +144,16 @@
           "L": "\"Uniwekee wakfu kila mzaliwa wa kwanza, kila afunguaye tumbo kati ya wana wa Israeli, kwa wanadamu na kwa wanyama; ni {{deity_pronoun:wangu|Wangu}}.\"",
           "B": "\"Nitengee kila mzaliwa wa kwanza kati ya Waisraeli, awe mtakatifu {{deity_pronoun:kwangu|Kwangu}}: kila anayetoka kwanza tumboni mwa mama yake, awe mtu au mnyama. Ni {{deity_pronoun:wangu|Wangu}}.\"",
           "R": "\"Nitengee kila mzaliwa wa kwanza wa kiume. Kwa Waisraeli, mtoto wa kwanza wa kiume wa kila mama ni {{deity_pronoun:wangu|Wangu}}, awe mtoto wa mtu au wa mnyama.\""
+        },
+        "ko": {
+          "L": "\"이스라엘 자손 가운데 맏아들, 곧 사람이든 짐승이든 태를 처음 연 것은 모두 나에게 거룩하게 구별하여 바쳐라. 그것은 내 것이다.\"",
+          "B": "\"이스라엘 백성 가운데서 처음 태어난 것은 모두 거룩하게 구별하여 나에게 바쳐라. 사람이든 짐승이든 어미 태에서 처음 나온 것은 내 것이다.\"",
+          "R": "\"처음 태어난 수컷은 모두 따로 구별하여 나에게 바쳐라. 이스라엘 사람들 가운데 어머니가 처음 낳은 사내아이와 짐승이 처음 낳은 수컷은 내 것이다.\""
+        },
+        "vi": {
+          "L": "\"Hãy biệt riêng cho {{deity_pronoun:ta|Ta}} mọi con đầu lòng, con mở lòng mẹ đầu tiên trong vòng con cháu Y-sơ-ra-ên, cả người lẫn thú vật; nó [thuộc về] {{deity_pronoun:ta|Ta}}.\"",
+          "B": "\"Hãy biệt riêng ra thánh cho {{deity_pronoun:ta|Ta}} mọi con đầu lòng trong dân Y-sơ-ra-ên, mọi con sinh ra đầu tiên từ lòng mẹ, cả người lẫn thú vật. Nó thuộc về {{deity_pronoun:ta|Ta}}.\"",
+          "R": "\"Hãy dành riêng cho {{deity_pronoun:ta|Ta}} mọi con trai đầu lòng. Trong dân Y-sơ-ra-ên, con đực đầu tiên mỗi mẹ sinh ra đều thuộc về {{deity_pronoun:ta|Ta}}, dù là người hay súc vật.\""
         }
       },
       "decisions": [
@@ -199,6 +219,49 @@
           "choice": "firstborn male ... first male born to each mother",
           "alternatives": [],
           "reason": "Readable says \"male\" because verses 12 and 15 say so, and explains \"the opening of the womb\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020130020011"
+          ],
+          "choice": "\"거룩하게 구별하여 바치다\" for qaddesh, to consecrate",
+          "alternatives": [
+            "성별하다",
+            "봉헌하다"
+          ],
+          "reason": "\"성별하다\" is a church term few readers know; the Korean says plainly what consecrating is, setting apart as holy for God (meaning decision).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020130020011"
+          ],
+          "choice": "\"biệt riêng\" (L), \"biệt riêng ra thánh\" (B), \"dành riêng\" (R) for \"consecrate\"",
+          "alternatives": [
+            "thánh hóa"
+          ],
+          "reason": "The verb makes a thing holy by setting it apart for God; \"biệt riêng ra thánh\" says both at Balanced, as the English \"set apart as holy\" does.",
           "uncertain": false,
           "footnote": false
         }
@@ -271,6 +334,16 @@
           "L": "Naye Musa akawaambia watu, \"Kumbukeni siku hii mliyotoka Misri, katika nyumba ya watumwa, kwa maana kwa nguvu za mkono {{divine_name:BWANA|Yahwe}} amewatoa hapa; wala hakitaliwa kitu kilichotiwa chachu.",
           "B": "Musa akawaambia watu, \"Ikumbukeni siku hii, siku mliyotoka Misri, katika nyumba ya utumwa. {{divine_name:BWANA|Yahwe}} amewatoa mahali hapa kwa nguvu za mkono {{deity_pronoun:wake|Wake}}. Msile mkate uliotiwa chachu.",
           "R": "Musa aliwaambia watu, \"Kumbukeni siku hii daima. Ni siku mliyotoka Misri, ambako mlikuwa watumwa. {{divine_name:BWANA|Yahwe}} alitumia nguvu {{deity_pronoun:zake|Zake}} kuu kuwatoa huko. Msile mkate wowote uliotiwa chachu."
+        },
+        "ko": {
+          "L": "그리고 모세가 백성에게 말하였다. \"너희가 이집트에서, 노예들의 집에서 나온 이날을 기억하여라. {{divine_name:주|야훼}}께서 강한 손으로 너희를 이곳에서 이끌어 내셨기 때문이다. 누룩 든 것은 먹지 말라.",
+          "B": "모세가 백성에게 말하였다. \"너희가 이집트에서, 노예살이하던 집에서 나온 이날을 기억하여라. {{divine_name:주|야훼}}께서 강한 손으로 너희를 이곳에서 이끌어 내셨다. 누룩 넣은 빵은 먹지 말라.",
+          "R": "모세가 백성에게 말했다. \"여러분은 이날을 언제나 기억하십시오. 이날은 여러분이 노예로 살던 이집트에서 나온 날입니다. {{divine_name:주|야훼}}께서 큰 능력으로 여러분을 이끌어 내셨습니다. 누룩을 넣은 빵은 먹지 마십시오."
+        },
+        "vi": {
+          "L": "Môi-se nói với dân chúng: \"Hãy nhớ ngày này, là ngày các ngươi ra khỏi Ai Cập, khỏi nhà nô lệ, vì {{divine_name:CHÚA|Gia-vê}} đã dùng tay mạnh mẽ đem các ngươi ra khỏi nơi này; không được ăn bánh có men.",
+          "B": "Môi-se nói với dân chúng: \"Anh em hãy nhớ ngày này, ngày anh em ra khỏi Ai Cập, khỏi nhà nô lệ. {{divine_name:CHÚA|Gia-vê}} đã dùng cánh tay quyền năng của {{deity_pronoun:ngài|Ngài}} đem anh em ra khỏi nơi này. Không được ăn bánh có men.",
+          "R": "Môi-se bảo dân chúng: \"Anh em hãy luôn nhớ ngày này. Đó là ngày anh em rời khỏi Ai Cập, nơi anh em làm nô lệ. {{divine_name:CHÚA|Gia-vê}} đã dùng quyền năng lớn lao của {{deity_pronoun:ngài|Ngài}} để đem anh em ra. Đừng ăn bánh làm có men."
         }
       },
       "decisions": [
@@ -373,6 +446,49 @@
           "reason": "\"Slaves\" and \"slavery\" at every level, as the style guide keeps them for Israel's slavery in Egypt, \"the house of slavery\" (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020130030122",
+            "o020130030131"
+          ],
+          "choice": "\"노예들의 집\" (L), \"노예살이하던 집\" (B), \"노예로 살던 이집트\" (R) for the house of slaves",
+          "alternatives": [
+            "종들의 집",
+            "종살이하던 집"
+          ],
+          "reason": "The term sheet keeps \"노예\" for Israel's slavery in Egypt, as the English keeps \"slaves\" here. This holds for these chapters.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o020130030012",
+            "o020130030101"
+          ],
+          "choice": "Moses speaks to the people as \"các ngươi\" or \"ngươi\" (L) and \"anh em\" (B, R); Literal keeps the plural \"các ngươi\" (verses 3-4) and the singular \"ngươi\" (verses 5-16) as the Hebrew has them",
+          "alternatives": [],
+          "reason": "The term sheet's address for Moses speaking to Israel. The Hebrew turns from plural to singular \"you\" at verse 5, speaking to each Israelite; Literal shows the turn, while Balanced and Readable keep \"anh em\" throughout.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -418,6 +534,16 @@
           "L": "Leo ninyi mnatoka, katika mwezi wa Abibu.",
           "B": "Mnatoka leo, katika mwezi wa Abibu.",
           "R": "Mnaondoka leo, katika mwezi wa Abibu, mwanzoni mwa majira ya kuchipua."
+        },
+        "ko": {
+          "L": "오늘 너희가 아빕월에 나간다.",
+          "B": "너희는 오늘, 아빕월에 나간다.",
+          "R": "여러분은 오늘, 이른 봄인 아빕월에 떠납니다."
+        },
+        "vi": {
+          "L": "Hôm nay các ngươi ra đi, vào tháng A-bíp.",
+          "B": "Hôm nay anh em ra đi, vào tháng A-bíp.",
+          "R": "Hôm nay anh em ra đi, vào tháng A-bíp, lúc đầu mùa xuân."
         }
       },
       "decisions": [
@@ -536,6 +662,16 @@
           "L": "Tena itakuwa, {{divine_name:BWANA|Yahwe}} atakapokuingiza katika nchi ya Wakanaani na Wahiti na Waamori na Wahivi na Wayebusi, aliyowaapia baba zako kwamba atakupa, nchi itiririkayo maziwa na asali, ndipo utakapoifanya huduma hii katika mwezi huu.",
           "B": "{{divine_name:BWANA|Yahwe}} atakapokuingiza katika nchi ya Wakanaani, Wahiti, Waamori, Wahivi na Wayebusi, nchi aliyowaapia mababu zako kwamba atakupa, nchi itiririkayo maziwa na asali, utaiadhimisha ibada hii katika mwezi huu huu.",
           "R": "{{divine_name:BWANA|Yahwe}} atakuleta katika nchi wanamoishi Wakanaani, Wahiti, Waamori, Wahivi na Wayebusi. Aliwaahidi mababu zako kwa kiapo kwamba atakupa nchi hiyo. Ni nchi yenye utajiri, iliyojaa maziwa na asali. Utakapokuwa ukiishi huko, lazima uadhimishe sherehe hii katika mwezi huu."
+        },
+        "ko": {
+          "L": "그리고 {{divine_name:주|야훼}}께서 너를 가나안 사람과 헷 사람과 아모리 사람과 히위 사람과 여부스 사람의 땅, 곧 그분께서 너에게 주시겠다고 네 조상들에게 맹세하신 땅, 젖과 꿀이 흐르는 땅으로 너를 데리고 들어가시면, 너는 이달에 이 예식을 지켜야 한다.",
+          "B": "{{divine_name:주|야훼}}께서 너를 가나안 사람과 헷 사람과 아모리 사람과 히위 사람과 여부스 사람의 땅, 곧 너에게 주시겠다고 네 조상들에게 맹세하신 땅, 젖과 꿀이 흐르는 땅으로 데리고 들어가시면, 너는 이달에 이 예식을 지켜라.",
+          "R": "{{divine_name:주|야훼}}께서 여러분을 가나안 사람과 헷 사람과 아모리 사람과 히위 사람과 여부스 사람이 사는 땅으로 데리고 들어가실 것입니다. 그분께서는 그 땅을 여러분에게 주시겠다고 여러분의 조상들에게 맹세하셨습니다. 그 땅은 젖과 꿀이 흐르는 기름진 땅입니다. 그곳에서 살게 되면 여러분은 이달에 이 예식을 지켜야 합니다."
+        },
+        "vi": {
+          "L": "Khi {{divine_name:CHÚA|Gia-vê}} đem ngươi vào xứ của người Ca-na-an, người Hê-tít, người A-mô-rít, người Hê-vít và người Giê-bu-sít, là xứ {{deity_pronoun:ngài|Ngài}} đã thề với tổ phụ ngươi để ban cho ngươi, một xứ tràn đầy sữa và mật, thì ngươi phải giữ nghi lễ này trong tháng này.",
+          "B": "Khi {{divine_name:CHÚA|Gia-vê}} đem anh em vào xứ của người Ca-na-an, người Hê-tít, người A-mô-rít, người Hê-vít và người Giê-bu-sít, là xứ {{deity_pronoun:ngài|Ngài}} đã thề với tổ tiên anh em rằng {{deity_pronoun:ngài|Ngài}} sẽ ban cho anh em, một xứ tràn đầy sữa và mật, thì anh em phải cử hành nghi lễ này vào chính tháng này.",
+          "R": "{{divine_name:CHÚA|Gia-vê}} sẽ đem anh em vào xứ của người Ca-na-an, người Hê-tít, người A-mô-rít, người Hê-vít và người Giê-bu-sít. Ngài đã thề hứa với tổ tiên anh em rằng {{deity_pronoun:ngài|Ngài}} sẽ ban xứ ấy cho anh em. Đó là một xứ màu mỡ, tràn đầy sữa và mật. Khi sống ở đó, anh em phải giữ nghi lễ này vào tháng này."
         }
       },
       "decisions": [
@@ -677,6 +813,26 @@
           "reason": "The Hebrew turns from the plural to the singular here, addressing Israel as one person and each Israelite in it. Swahili marks the number in the verb and keeps the change.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020130050072"
+          ],
+          "choice": "\"너\" at Literal and Balanced where Moses addresses Israel in the singular (13:5-16)",
+          "alternatives": [
+            "너희"
+          ],
+          "reason": "The Hebrew turns to the singular \"you\", speaking to each Israelite; the term sheet keeps 너 and 너희 apart at Literal and Balanced. Readable uses \"여러분\" throughout.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -726,6 +882,16 @@
           "L": "Siku saba utakula mikate isiyotiwa chachu, na siku ya saba [kutakuwa na] sikukuu kwa {{divine_name:BWANA|Yahwe}}.",
           "B": "Kwa siku saba utakula mikate isiyotiwa chachu, na siku ya saba ni sikukuu kwa heshima ya {{divine_name:BWANA|Yahwe}}.",
           "R": "Kula mikate isiyotiwa chachu kwa siku saba. Siku ya saba ni sikukuu ya kumheshimu {{divine_name:BWANA|Yahwe}}."
+        },
+        "ko": {
+          "L": "이레 동안 너는 누룩 없는 빵을 먹고, 일곱째 날에는 {{divine_name:주|야훼}}께 [드리는] 절기가 있다.",
+          "B": "너는 이레 동안 누룩 없는 빵을 먹고, 일곱째 날에는 {{divine_name:주|야훼}}를 위하여 절기를 지켜라.",
+          "R": "이레 동안 누룩 없는 빵을 먹어야 합니다. 일곱째 날은 {{divine_name:주|야훼}}를 높이는 절기입니다."
+        },
+        "vi": {
+          "L": "Trong bảy ngày ngươi phải ăn bánh không men, và vào ngày thứ bảy [có] một kỳ lễ cho {{divine_name:CHÚA|Gia-vê}}.",
+          "B": "Anh em phải ăn bánh không men trong bảy ngày, và ngày thứ bảy là một kỳ lễ để tôn vinh {{divine_name:CHÚA|Gia-vê}}.",
+          "R": "Hãy ăn bánh không men trong bảy ngày. Ngày thứ bảy là một kỳ lễ để tôn vinh {{divine_name:CHÚA|Gia-vê}}."
         }
       },
       "decisions": [
@@ -816,6 +982,16 @@
           "L": "Mikate isiyotiwa chachu italiwa [kwa] siku hizo saba; wala hakitaonekana kwako kitu kilichotiwa chachu, wala haitaonekana kwako chachu katika eneo lako lote.",
           "B": "Mikate isiyotiwa chachu italiwa katika siku zote saba. Kwako kusipatikane mkate uliotiwa chachu, wala chachu yoyote katika mipaka yako yote.",
           "R": "Kula mikate isiyotiwa chachu katika siku zote saba. Kusiwe na mkate uliotiwa chachu nyumbani mwako, wala chachu yoyote mahali popote katika nchi yako."
+        },
+        "ko": {
+          "L": "그 이레 동안 누룩 없는 빵을 먹어야 한다. 누룩 든 것이 너에게 보여서는 안 되고, 네 온 영토에서 누룩이 너에게 보여서는 안 된다.",
+          "B": "그 이레 동안은 누룩 없는 빵을 먹어야 한다. 너희 가운데서 누룩 넣은 빵이 보여서는 안 되고, 너희 온 땅 어디에서도 누룩이 보여서는 안 된다.",
+          "R": "그 이레 동안 누룩 없는 빵을 먹어야 합니다. 여러분의 집에 누룩을 넣은 빵이 있으면 안 됩니다. 여러분의 땅 어디에도 누룩이 있으면 안 됩니다."
+        },
+        "vi": {
+          "L": "Phải ăn bánh không men [trong] bảy ngày ấy; không được thấy bánh có men nơi ngươi, và không được thấy men nơi ngươi trong khắp bờ cõi ngươi.",
+          "B": "Phải ăn bánh không men suốt bảy ngày ấy. Không được có bánh có men nơi anh em, và cũng không được có men ở bất cứ đâu trong lãnh thổ của anh em.",
+          "R": "Hãy ăn bánh không men trong suốt bảy ngày. Trong nhà anh em không được có bánh làm có men, và trong khắp xứ của anh em không được có chút men nào."
         }
       },
       "decisions": [
@@ -926,6 +1102,16 @@
           "L": "Nawe utamweleza mwanao siku hiyo, ukisema, '[Ni] kwa sababu ya yale {{divine_name:BWANA|Yahwe}} aliyonitendea nilipotoka Misri.'",
           "B": "Siku hiyo mweleze mwanao maana yake: 'Tunafanya hivi kwa sababu {{divine_name:BWANA|Yahwe}} alitenda kwa ajili yangu nilipotoka Misri.'",
           "R": "Siku hiyo, mweleze mwanao jambo hili. Mwambie, 'Tunaadhimisha sikukuu hii kwa sababu ya yale ambayo {{divine_name:BWANA|Yahwe}} alinitendea nilipotoka Misri.'"
+        },
+        "ko": {
+          "L": "그리고 그날에 너는 네 아들에게 말하여라. '[이것은] 내가 이집트에서 나올 때에 {{divine_name:주|야훼}}께서 나에게 행하신 일 때문이다.'",
+          "B": "그날에 너는 네 아들에게 그 뜻을 일러 주어라. '내가 이집트에서 나올 때 {{divine_name:주|야훼}}께서 나를 위해 일하셨다. 그래서 우리가 이 일을 한다.'",
+          "R": "그날에 여러분은 아들에게 그 뜻을 설명해 주십시오. 이렇게 말해 주십시오. '우리가 이 절기를 지키는 것은, 내가 이집트에서 나올 때 {{divine_name:주|야훼}}께서 나를 위해 해 주신 일 때문이다.'"
+        },
+        "vi": {
+          "L": "Ngày ấy ngươi phải nói với con trai ngươi rằng: '[Ấy là] vì điều {{divine_name:CHÚA|Gia-vê}} đã làm cho ta khi ta ra khỏi Ai Cập.'",
+          "B": "Ngày ấy, anh em hãy giải thích cho con trai mình: 'Chúng ta làm điều này là vì những gì {{divine_name:CHÚA|Gia-vê}} đã làm cho cha khi cha ra khỏi Ai Cập.'",
+          "R": "Vào ngày đó, anh em hãy giải thích cho con trai mình. Hãy nói: 'Chúng ta giữ lễ này vì điều {{divine_name:CHÚA|Gia-vê}} đã làm cho cha khi cha ra khỏi Ai Cập.'"
         }
       },
       "decisions": [
@@ -979,6 +1165,28 @@
           "choice": "what it means / we do this; We keep this festival",
           "alternatives": [],
           "reason": "The Hebrew leaves \"this\" unexplained; it is the feast. Balanced and Readable say so.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o020130080102",
+            "o020130080113"
+          ],
+          "choice": "The father calls himself \"ta\" (L) and \"cha\" (B, R) when he explains the feast to his son",
+          "alternatives": [
+            "tôi"
+          ],
+          "reason": "A Vietnamese father speaks to his child as \"cha\"; Literal keeps the bare \"I\" with \"ta\". The meaning decision notes that each generation speaks as one who came out of Egypt, which \"cha\" keeps.",
           "uncertain": false,
           "footnote": false
         }
@@ -1049,6 +1257,16 @@
           "L": "Nayo itakuwa kwako ishara juu ya mkono wako na ukumbusho kati ya macho yako, ili sheria ya {{divine_name:BWANA|Yahwe}} iwe kinywani mwako; kwa maana kwa mkono wenye nguvu {{divine_name:BWANA|Yahwe}} alikutoa Misri.",
           "B": "Sikukuu hii itakuwa ishara kwako, kama alama juu ya mkono wako, na ukumbusho, kama alama kati ya macho yako, ili mafundisho ya {{divine_name:BWANA|Yahwe}} yadumu midomoni mwako. Kwa maana {{divine_name:BWANA|Yahwe}} alikutoa Misri kwa mkono wenye nguvu.",
           "R": "Sikukuu hii itakukumbusha yaliyotokea, kama alama kwenye mkono wako au kwenye paji la uso wako unayoiona kila siku. Itakusaidia kuendelea kuzungumza juu ya mafundisho ya {{divine_name:BWANA|Yahwe}}. Kwa maana {{divine_name:BWANA|Yahwe}} alikutoa Misri kwa nguvu {{deity_pronoun:zake|Zake}} kuu."
+        },
+        "ko": {
+          "L": "그리고 그것이 너에게 네 손의 표와 네 눈 사이의 기념물이 되어, {{divine_name:주|야훼}}의 율법이 네 입에 있게 될 것이다. {{divine_name:주|야훼}}께서 강한 손으로 너를 이집트에서 이끌어 내셨기 때문이다.",
+          "B": "이 절기는 너에게 손에 맨 표처럼, 이마에 붙인 기념물처럼 되어, {{divine_name:주|야훼}}의 가르침이 늘 네 입에 있게 할 것이다. {{divine_name:주|야훼}}께서 강한 손으로 너를 이집트에서 이끌어 내셨기 때문이다.",
+          "R": "이 절기는 날마다 보는 손이나 이마에 있는 표처럼, 여러분에게 그 일을 생각나게 할 것입니다. 그래서 여러분은 {{divine_name:주|야훼}}의 가르침을 늘 입으로 말하게 될 것입니다. {{divine_name:주|야훼}}께서 큰 능력으로 여러분을 이집트에서 이끌어 내셨기 때문입니다."
+        },
+        "vi": {
+          "L": "Điều ấy sẽ là dấu hiệu cho ngươi trên tay ngươi và là kỷ niệm giữa hai mắt ngươi, để luật pháp của {{divine_name:CHÚA|Gia-vê}} ở trong miệng ngươi; vì {{divine_name:CHÚA|Gia-vê}} đã dùng tay mạnh mẽ đem ngươi ra khỏi Ai Cập.",
+          "B": "Kỳ lễ này sẽ là một dấu hiệu cho anh em, như một dấu trên tay, và là điều nhắc nhở, như một dấu giữa hai mắt, để luật pháp của {{divine_name:CHÚA|Gia-vê}} luôn ở trên môi anh em. Vì {{divine_name:CHÚA|Gia-vê}} đã dùng cánh tay mạnh mẽ đem anh em ra khỏi Ai Cập.",
+          "R": "Kỳ lễ này sẽ nhắc anh em nhớ điều đã xảy ra, như một dấu trên tay hay trên trán mà anh em thấy mỗi ngày. Nó sẽ giúp anh em luôn nói về lời dạy của {{divine_name:CHÚA|Gia-vê}}. Vì {{divine_name:CHÚA|Gia-vê}} đã dùng quyền năng lớn lao của {{deity_pronoun:ngài|Ngài}} đem anh em ra khỏi Ai Cập."
         }
       },
       "decisions": [
@@ -1137,6 +1355,45 @@
           "reason": "Balanced and Readable say \"instruction\" or \"teaching\" for the Hebrew word, since \"law\" here does not yet mean a code of laws. Literal keeps \"law\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020130090111"
+          ],
+          "choice": "\"{{divine_name:주|야훼}}의 율법\" (L) for torah; \"가르침\" at Balanced and Readable",
+          "alternatives": [
+            "율법 at every level"
+          ],
+          "reason": "The term sheet sets \"율법\" for the Law; here the meaning decision reads torah as Yahweh's instruction, his teaching, as the English Balanced does, so Balanced and Readable say \"가르침\".",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020130090111"
+          ],
+          "choice": "\"luật pháp\" (L, B), \"lời dạy\" (R) for the torah of Yahweh",
+          "alternatives": [],
+          "reason": "The term sheet's word for torah; Readable says \"lời dạy\" for God's instruction, as the English Readable says \"teaching\" (meaning decision).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1188,6 +1445,16 @@
           "L": "Nawe utaishika kanuni hii kwa wakati wake ulioamriwa, tangu siku hata siku.",
           "B": "Basi utaishika kanuni hii kwa wakati wake, mwaka baada ya mwaka.",
           "R": "Shika agizo hili kwa wakati unaofaa kila mwaka."
+        },
+        "ko": {
+          "L": "그리고 너는 해마다 정한 때에 이 규례를 지켜라.",
+          "B": "그러므로 너는 해마다 정해진 때에 이 규례를 지켜라.",
+          "R": "여러분은 해마다 정해진 때에 이 규례를 지켜야 합니다."
+        },
+        "vi": {
+          "L": "Ngươi phải giữ luật lệ này đúng kỳ của nó, từ năm này qua năm khác.",
+          "B": "Vậy anh em phải giữ luật lệ này đúng kỳ mỗi năm.",
+          "R": "Hằng năm hãy giữ luật lệ này đúng thời điểm."
         }
       },
       "decisions": [
@@ -1234,6 +1501,46 @@
           "choice": "rule",
           "alternatives": [],
           "reason": "Readable says \"rule\" for \"statute\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020130100062",
+            "o020130100071"
+          ],
+          "choice": "\"해마다\" at Literal for \"from days to days\"",
+          "alternatives": [
+            "날들에서 날들까지"
+          ],
+          "reason": "Word for word the Hebrew idiom would not be understood in Korean; the meaning decision gives \"year after year\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020130100062",
+            "o020130100071"
+          ],
+          "choice": "\"từ năm này qua năm khác\" (L) for \"from days to days\"",
+          "alternatives": [
+            "từ ngày này qua ngày khác"
+          ],
+          "reason": "The Hebrew idiom means year after year (meaning decision); a word-for-word \"from day to day\" would mean daily in Vietnamese and mislead.",
           "uncertain": false,
           "footnote": false
         }
@@ -1297,6 +1604,16 @@
           "L": "Tena itakuwa, {{divine_name:BWANA|Yahwe}} atakapokuingiza katika nchi ya Wakanaani, kama alivyokuapia wewe na baba zako, na kukupa nchi hiyo,",
           "B": "Mara {{divine_name:BWANA|Yahwe}} atakapokuwa amekuingiza katika nchi ya Wakanaani na kukukabidhi, kama alivyokuapia wewe na mababu zako,",
           "R": "{{divine_name:BWANA|Yahwe}} atakuleta katika nchi ya Wakanaani na kukupa nchi hiyo. Aliahidi jambo hili kwa kiapo kwako na kwa mababu zako."
+        },
+        "ko": {
+          "L": "그리고 {{divine_name:주|야훼}}께서 너와 네 조상들에게 맹세하신 대로, 너를 가나안 사람의 땅으로 데리고 들어가셔서 그 땅을 너에게 주시면,",
+          "B": "{{divine_name:주|야훼}}께서 너와 네 조상들에게 맹세하신 대로 너를 가나안 사람의 땅으로 데리고 들어가셔서 그 땅을 너에게 주시면,",
+          "R": "{{divine_name:주|야훼}}께서 여러분을 가나안 사람의 땅으로 데리고 들어가셔서 그 땅을 주실 것입니다. 그분께서 여러분과 여러분의 조상들에게 맹세하신 일입니다."
+        },
+        "vi": {
+          "L": "Khi {{divine_name:CHÚA|Gia-vê}} đem ngươi vào xứ của người Ca-na-an, như {{deity_pronoun:ngài|Ngài}} đã thề với ngươi và với tổ phụ ngươi, và ban xứ ấy cho ngươi,",
+          "B": "Khi {{divine_name:CHÚA|Gia-vê}} đã đem anh em vào xứ của người Ca-na-an và ban xứ ấy cho anh em, như {{deity_pronoun:ngài|Ngài}} đã thề với anh em và với tổ tiên anh em,",
+          "R": "{{divine_name:CHÚA|Gia-vê}} sẽ đem anh em vào xứ của người Ca-na-an và ban xứ ấy cho anh em. Ngài đã thề hứa điều này với anh em và với tổ tiên anh em."
         }
       },
       "decisions": [
@@ -1403,6 +1720,16 @@
           "L": "ndipo utamkabidhi {{divine_name:BWANA|Yahwe}} kila afunguaye tumbo; na kila mzaliwa wa kwanza, mtoto wa mifugo uliyo nayo, madume [watakuwa] wa {{divine_name:BWANA|Yahwe}}.",
           "B": "ndipo utamkabidhi {{divine_name:BWANA|Yahwe}} kila mzaliwa wa kwanza afunguaye tumbo. Kila mzaliwa wa kwanza wa wanyama wako aliye dume ni wa {{divine_name:BWANA|Yahwe}}.",
           "R": "Hapo lazima umpe {{divine_name:BWANA|Yahwe}} kila mzaliwa wa kwanza wa kiume. Dume la kwanza kuzaliwa na kila mnyama wako ni la {{divine_name:BWANA|Yahwe}}."
+        },
+        "ko": {
+          "L": "너는 태를 처음 연 것을 모두 {{divine_name:주|야훼}}께 바쳐야 한다. 네 가축이 처음 낳은 새끼도 모두, 그 수컷은 {{divine_name:주|야훼}}의 것이다.",
+          "B": "너는 태에서 처음 나온 것을 모두 {{divine_name:주|야훼}}께 바쳐야 한다. 네 짐승이 처음 낳은 새끼 가운데 수컷은 모두 {{divine_name:주|야훼}}의 것이다.",
+          "R": "그러면 여러분은 처음 태어난 수컷을 모두 {{divine_name:주|야훼}}께 바쳐야 합니다. 여러분의 짐승이 처음 낳은 수컷은 모두 {{divine_name:주|야훼}}의 것입니다."
+        },
+        "vi": {
+          "L": "thì ngươi phải dâng cho {{divine_name:CHÚA|Gia-vê}} mọi con mở lòng mẹ đầu tiên; và mọi con đầu lòng của súc vật ngươi có, con đực [thuộc về] {{divine_name:CHÚA|Gia-vê}}.",
+          "B": "thì anh em phải dâng cho {{divine_name:CHÚA|Gia-vê}} mọi con đầu lòng mở lòng mẹ. Mọi con đầu lòng của súc vật anh em, nếu là con đực, đều thuộc về {{divine_name:CHÚA|Gia-vê}}.",
+          "R": "Khi đó anh em phải dâng cho {{divine_name:CHÚA|Gia-vê}} mọi con trai đầu lòng. Con đực đầu tiên mà mỗi con vật của anh em sinh ra cũng thuộc về {{divine_name:CHÚA|Gia-vê}}."
         }
       },
       "decisions": [
@@ -1508,6 +1835,16 @@
           "L": "Na kila mzaliwa wa kwanza wa punda utamkomboa kwa mwanakondoo; na usipomkomboa, utamvunja shingo. Na kila mzaliwa wa kwanza wa binadamu kati ya wana wako utamkomboa.",
           "B": "Kila punda mzaliwa wa kwanza utamkomboa kwa kutoa mwanakondoo badala yake; usipotaka kumkomboa, utamvunja shingo. Nawe utamkomboa kila mwana wako mzaliwa wa kwanza.",
           "R": "Lazima ulipe mwanakondoo ili umkomboe kila punda mzaliwa wa kwanza. Usipomkomboa, lazima umvunje shingo. Pia lazima ulipe ili uwakomboe wana wako wote wazaliwa wa kwanza."
+        },
+        "ko": {
+          "L": "그리고 나귀의 첫 새끼는 모두 어린양으로 대속하여라. 만일 네가 [그것을] 대속하지 않으려면 그 목을 꺾어라. 그리고 네 아들들 가운데 사람의 맏아들은 모두 대속하여라.",
+          "B": "나귀의 첫 새끼는 모두 어린양을 대신 바쳐 대속하여라. 대속하지 않으려면 그 목을 꺾어야 한다. 그리고 네 아들들 가운데 맏아들은 모두 대속하여라.",
+          "R": "나귀의 첫 새끼는 어린양을 대신 바쳐서 값을 치르고 되찾아야 합니다. 되찾지 않으려면 그 나귀의 목을 꺾어야 합니다. 여러분의 맏아들도 모두 값을 치르고 되찾아야 합니다."
+        },
+        "vi": {
+          "L": "Mọi con lừa đầu lòng, ngươi phải chuộc bằng một con chiên con, và nếu ngươi không chuộc [nó], thì phải bẻ cổ nó. Còn mọi con đầu lòng loài người trong vòng con trai ngươi, ngươi phải chuộc lại.",
+          "B": "Mọi con lừa đầu lòng, anh em phải chuộc lại bằng một con chiên con thế cho nó; nếu không chuộc thì phải bẻ cổ nó. Còn mọi con trai đầu lòng của anh em, anh em phải chuộc lại.",
+          "R": "Anh em phải chuộc lại mỗi con lừa đầu lòng bằng cách dâng một con chiên con thay cho nó. Nếu không chuộc lại, anh em phải bẻ cổ nó. Anh em cũng phải chuộc lại mỗi con trai đầu lòng của mình."
         }
       },
       "decisions": [
@@ -1621,6 +1958,51 @@
           "reason": "\"Kukomboa\" is to free by paying a price, the sense of the Hebrew (m2). Readable adds the payment (\"lazima ulipe ... ili umkomboe\") rather than \"kununua tena\", which would sound like buying the animal a second time.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020130130041",
+            "o020130130141"
+          ],
+          "choice": "\"대속하다\" (L, B) and \"값을 치르고 되찾다\" (R) for padah, to redeem",
+          "alternatives": [
+            "속량하다",
+            "무르다"
+          ],
+          "reason": "The meaning decision gives \"buy back by paying a price in its place\"; \"대속하다\" is the familiar Korean word for that exchange, and Readable spells it out as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020130130041",
+            "o020130130141"
+          ],
+          "choice": "\"chuộc\" / \"chuộc lại\" for \"redeem\"",
+          "alternatives": [
+            "mua lại"
+          ],
+          "reason": "\"Chuộc lại\" is both the plain word for buying something back and the word the Vietnamese New Testament uses for redemption, so it serves all three levels.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1685,6 +2067,16 @@
           "L": "Tena itakuwa, mwanao atakapokuuliza siku zijazo, akisema, 'Hii [ni] nini?' utamwambia, 'Kwa nguvu za mkono {{divine_name:BWANA|Yahwe}} alitutoa Misri, katika nyumba ya watumwa.",
           "B": "Baadaye, mwanao atakapokuuliza, 'Hii ni nini?' utamjibu, '{{divine_name:BWANA|Yahwe}} alitutoa Misri, katika nyumba ya utumwa, kwa nguvu za mkono {{deity_pronoun:wake|Wake}}.",
           "R": "Siku zijazo mwanao atakuuliza, 'Kwa nini tunafanya hivi?' Hapo mwambie, '{{divine_name:BWANA|Yahwe}} alitumia nguvu {{deity_pronoun:zake|Zake}} kuu kututoa Misri, ambako tulikuwa watumwa."
+        },
+        "ko": {
+          "L": "그리고 훗날 네 아들이 너에게 '이것이 무엇입니까?' 하고 물으면, 너는 그에게 말하여라. '{{divine_name:주|야훼}}께서 강한 손으로 우리를 이집트에서, 노예들의 집에서 이끌어 내셨다.",
+          "B": "훗날 네 아들이 '이것이 무엇입니까?' 하고 묻거든, 너는 이렇게 대답하여라. '{{divine_name:주|야훼}}께서 강한 손으로 우리를 이집트에서, 노예살이하던 집에서 이끌어 내셨다.",
+          "R": "앞으로 여러분의 아들이 '우리는 왜 이렇게 해요?' 하고 물을 것입니다. 그러면 이렇게 말해 주십시오. '{{divine_name:주|야훼}}께서 큰 능력으로 우리를 노예로 살던 이집트에서 이끌어 내셨단다."
+        },
+        "vi": {
+          "L": "Sau này, khi con trai ngươi hỏi ngươi: 'Điều này [là] gì?' thì ngươi phải nói với nó: '{{divine_name:CHÚA|Gia-vê}} đã dùng tay mạnh mẽ đem chúng ta ra khỏi Ai Cập, khỏi nhà nô lệ.",
+          "B": "Sau này, khi con trai anh em hỏi: 'Việc này có ý nghĩa gì?' thì anh em hãy trả lời: '{{divine_name:CHÚA|Gia-vê}} đã dùng cánh tay quyền năng của {{deity_pronoun:ngài|Ngài}} đem chúng ta ra khỏi Ai Cập, khỏi nhà nô lệ.",
+          "R": "Sau này con trai anh em sẽ hỏi: 'Tại sao chúng ta làm điều này?' Khi đó hãy nói với nó: '{{divine_name:CHÚA|Gia-vê}} đã dùng quyền năng lớn lao của {{deity_pronoun:ngài|Ngài}} để đem chúng ta ra khỏi Ai Cập, nơi chúng ta làm nô lệ."
         }
       },
       "decisions": [
@@ -1851,6 +2243,16 @@
           "L": "Tena ikawa, Farao alipofanya [moyo wake] kuwa mgumu kutuacha twende, {{divine_name:BWANA|Yahwe}} akamwua kila mzaliwa wa kwanza katika nchi ya Misri, tangu mzaliwa wa kwanza wa binadamu hata mzaliwa wa kwanza wa mnyama. Kwa hiyo mimi namtolea {{divine_name:BWANA|Yahwe}} dhabihu kila afunguaye tumbo, madume, na kila mzaliwa wa kwanza wa wanangu namkomboa.'",
           "B": "Farao alipojifanya mkaidi asituruhusu kwenda, {{divine_name:BWANA|Yahwe}} aliwaua wazaliwa wote wa kwanza katika nchi ya Misri, wa wanadamu na wa wanyama pia. Kwa hiyo ninamtolea {{divine_name:BWANA|Yahwe}} dhabihu kila dume afunguaye tumbo, na ninamkomboa kila mzaliwa wa kwanza kati ya wanangu.'",
           "R": "Farao alikuwa mkaidi na hakutaka kutuacha tuondoke. Kwa hiyo {{divine_name:BWANA|Yahwe}} aliwaua wazaliwa wote wa kwanza Misri, watu na wanyama. Ndiyo sababu ninamtolea {{divine_name:BWANA|Yahwe}} dhabihu kila mnyama dume aliye mzaliwa wa kwanza. Lakini ninalipa ili niwakomboe wanangu wote wazaliwa wa kwanza.'"
+        },
+        "ko": {
+          "L": "바로가 우리를 보내기를 완강하게 거부하였을 때, {{divine_name:주|야훼}}께서 이집트 땅의 모든 맏아들을, 사람의 맏아들부터 짐승의 처음 난 것까지 죽이셨다. 그러므로 나는 태를 처음 연 수컷은 모두 {{divine_name:주|야훼}}께 제물로 바치고, 내 아들들 가운데 맏아들은 모두 대속한다.'",
+          "B": "바로가 고집을 부리며 우리를 보내지 않으려 하자, {{divine_name:주|야훼}}께서 이집트 땅의 맏아들을 사람이든 짐승이든 모두 죽이셨다. 그래서 나는 태에서 처음 나온 수컷을 모두 {{divine_name:주|야훼}}께 제물로 바치고, 내 아들들 가운데 맏아들은 대속하는 것이다.'",
+          "R": "바로는 고집을 부리며 우리를 보내 주지 않았어. 그래서 {{divine_name:주|야훼}}께서 이집트의 맏아들을 사람이든 짐승이든 모두 죽이셨지. 그래서 나는 짐승이 처음 낳은 수컷을 모두 {{divine_name:주|야훼}}께 제물로 바친단다. 그러나 내 맏아들은 값을 치르고 되찾는 거야.'"
+        },
+        "vi": {
+          "L": "Khi Pha-ra-ôn làm khó không để chúng ta đi, thì {{divine_name:CHÚA|Gia-vê}} đã giết mọi con đầu lòng trong xứ Ai Cập, từ con đầu lòng của người cho đến con đầu lòng của thú vật. Vì vậy ta dâng sinh tế cho {{divine_name:CHÚA|Gia-vê}} mọi con mở lòng mẹ, là con đực, còn mọi con đầu lòng trong các con trai ta thì ta chuộc lại.'",
+          "B": "Khi Pha-ra-ôn cứng lòng không chịu để chúng ta đi, thì {{divine_name:CHÚA|Gia-vê}} đã giết mọi con đầu lòng trong xứ Ai Cập, cả con đầu lòng của người lẫn của thú vật. Vì thế cha dâng cho {{divine_name:CHÚA|Gia-vê}} làm sinh tế mọi con đực mở lòng mẹ, còn mỗi con trai đầu lòng của cha thì cha chuộc lại.'",
+          "R": "Pha-ra-ôn cứng đầu, không chịu để chúng ta đi. Vì vậy {{divine_name:CHÚA|Gia-vê}} đã giết mọi con đầu lòng ở Ai Cập, cả người lẫn súc vật. Đó là lý do cha dâng cho {{divine_name:CHÚA|Gia-vê}} mọi con đực đầu lòng của súc vật làm sinh tế. Nhưng cha chuộc lại mỗi con trai đầu lòng của cha.'"
         }
       },
       "decisions": [
@@ -1936,6 +2338,26 @@
           "reason": "Readable makes clear that the sacrifice is of animals, since the sons are bought back.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020130150031",
+            "o020130150041"
+          ],
+          "choice": "\"완강하게 거부하다\" at Literal for Pharaoh \"making it hard\"",
+          "alternatives": [
+            "어렵게 하다"
+          ],
+          "reason": "This is the verb qashah, Pharaoh hardening himself (meaning decision); Literal gives it its own word, apart from the heavy and strong heart of chapters 9-11.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1995,6 +2417,16 @@
           "L": "Nayo itakuwa ishara juu ya mkono wako na utepe kati ya macho yako, kwa maana kwa nguvu za mkono {{divine_name:BWANA|Yahwe}} alitutoa Misri.\"",
           "B": "Itakuwa ishara kwako, kama alama juu ya mkono wako na utepe kati ya macho yako, kwa maana {{divine_name:BWANA|Yahwe}} alitutoa Misri kwa nguvu za mkono {{deity_pronoun:wake|Wake}}.\"",
           "R": "Desturi hii itakuwa kama alama kwenye mkono wako au utepe kwenye paji la uso wako. Itakukumbusha kwamba {{divine_name:BWANA|Yahwe}} alitumia nguvu {{deity_pronoun:zake|Zake}} kuu kututoa Misri.\""
+        },
+        "ko": {
+          "L": "그리고 그것이 네 손의 표와 네 눈 사이의 띠가 될 것이다. {{divine_name:주|야훼}}께서 강한 손으로 우리를 이집트에서 이끌어 내셨기 때문이다.\"",
+          "B": "이것이 너에게 손에 맨 표처럼, 이마에 두른 띠처럼 될 것이다. {{divine_name:주|야훼}}께서 강한 손으로 우리를 이집트에서 이끌어 내셨기 때문이다.\"",
+          "R": "이 일은 손에 맨 표나 이마에 두른 띠와 같을 것입니다. 이 일을 할 때마다 여러분은 {{divine_name:주|야훼}}께서 큰 능력으로 우리를 이집트에서 이끌어 내셨다는 것을 기억할 것입니다.\""
+        },
+        "vi": {
+          "L": "Điều ấy sẽ là dấu hiệu trên tay ngươi và là dải đeo giữa hai mắt ngươi, vì {{divine_name:CHÚA|Gia-vê}} đã dùng tay mạnh mẽ đem chúng ta ra khỏi Ai Cập.\"",
+          "B": "Điều ấy sẽ là một dấu hiệu cho anh em, như một dấu trên tay và một dải đeo giữa hai mắt, vì {{divine_name:CHÚA|Gia-vê}} đã dùng cánh tay quyền năng của {{deity_pronoun:ngài|Ngài}} đem chúng ta ra khỏi Ai Cập.\"",
+          "R": "Việc làm này sẽ như một dấu trên tay hay một dải đeo trên trán anh em. Nó sẽ nhắc anh em nhớ rằng {{divine_name:CHÚA|Gia-vê}} đã dùng quyền năng lớn lao của {{deity_pronoun:ngài|Ngài}} để đem chúng ta ra khỏi Ai Cập.\""
         }
       },
       "decisions": [
@@ -2163,6 +2595,16 @@
           "L": "Ikawa, Farao alipowapa watu ruhusa waende, Mungu hakuwaongoza [kwa] njia ya nchi ya Wafilisti, kwa kuwa [ilikuwa] karibu; kwa maana Mungu alisema, \"Watu wasije wakabadili nia watakapoona vita, wakarudi Misri.\"",
           "B": "Farao alipokwisha kuwaacha watu waende, Mungu hakuwaongoza kwa njia inayoelekea nchi ya Wafilisti, ingawa ilikuwa njia fupi zaidi. Kwa maana Mungu aliwaza, \"Watu wanaweza kujutia kuondoka kwao watakapojikuta wakikabiliwa na vita, wakarudi Misri.\"",
           "R": "Hatimaye Farao aliwaacha watu waende. Njia fupi zaidi ya kwenda Kanaani ilipitia nchi ya Wafilisti, lakini Mungu hakuwapitisha huko. Mungu aliwaza, \"Kama watu watalazimika kupigana vita, huenda wakajuta kwa kuondoka na kurudi Misri.\""
+        },
+        "ko": {
+          "L": "그리고 바로가 백성을 보냈을 때에, 하나님께서는 블레셋 사람의 땅의 길로 그들을 이끄시지 않으셨다. 그 길이 가까웠지만, 하나님께서 \"백성이 전쟁을 보면 마음을 바꾸어 이집트로 돌아갈까 염려된다\" 하고 말씀하셨기 때문이다.",
+          "B": "바로가 백성을 내보냈을 때, 하나님께서는 그들을 블레셋 사람의 땅으로 가는 길로 이끄시지 않으셨다. 그 길이 더 가까웠지만, 하나님께서는 \"백성이 전쟁을 만나면 마음을 바꾸어 이집트로 되돌아갈지도 모른다\" 하고 생각하셨다.",
+          "R": "마침내 바로가 백성을 보내 주었다. 가나안으로 가는 가장 가까운 길은 블레셋 사람의 땅을 지나는 길이었다. 그러나 하나님께서는 그 길로 그들을 이끄시지 않으셨다. 하나님께서는 \"백성이 전쟁을 하게 되면 떠나온 것을 후회하고 이집트로 돌아갈지도 모른다\" 하고 생각하셨다."
+        },
+        "vi": {
+          "L": "Khi Pha-ra-ôn để dân đi, Đức Chúa Trời không dẫn họ [theo] đường xứ Phi-li-tin, dù đường ấy gần; vì Đức Chúa Trời phán: \"Kẻo dân hối hận khi thấy chiến tranh, rồi quay về Ai Cập.\"",
+          "B": "Khi Pha-ra-ôn đã để dân ra đi, Đức Chúa Trời không dẫn họ theo con đường đến xứ Phi-li-tin, dù đó là đường gần hơn. Vì Đức Chúa Trời nghĩ: \"E rằng khi gặp chiến tranh, dân sẽ hối hận mà quay về Ai Cập.\"",
+          "R": "Cuối cùng Pha-ra-ôn đã để dân Y-sơ-ra-ên đi. Con đường ngắn nhất đến Ca-na-an đi qua xứ của người Phi-li-tin, nhưng Đức Chúa Trời không dẫn họ đi đường ấy. Đức Chúa Trời nghĩ: \"Nếu phải đánh trận, có thể dân sẽ hối tiếc vì đã ra đi và quay về Ai Cập.\""
         }
       },
       "decisions": [
@@ -2285,6 +2727,16 @@
           "L": "Basi Mungu akawazungusha watu [kwa] njia ya nyika [kuelekea] Bahari ya Matete; nao wana wa Israeli wakapanda kutoka nchi ya Misri wamejipanga kwa vita.",
           "B": "Badala yake, Mungu aliwapitisha watu njia ndefu ya kuzunguka kupitia nyikani kuelekea Bahari ya Shamu, nao Waisraeli wakatoka nchi ya Misri wakiwa wamejiandaa kwa vita.",
           "R": "Kwa hiyo Mungu aliwaongoza kwa njia ndefu, kupitia jangwani kuelekea Bahari ya Shamu. Waisraeli walitoka Misri wakiwa tayari kupigana."
+        },
+        "ko": {
+          "L": "그리고 하나님께서 백성을 광야 길로 돌려 갈대 바다 [쪽으로] 이끄셨다. 이스라엘 자손은 전투 대열을 갖추고 이집트 땅에서 올라갔다.",
+          "B": "하나님께서는 백성을 광야 길로 돌아서 홍해 쪽으로 이끄셨다. 이스라엘 백성은 무장을 하고 이집트 땅에서 나왔다.",
+          "R": "그래서 하나님께서는 그들을 광야를 지나는 먼 길로 이끄셔서 홍해 쪽으로 가게 하셨다. 이스라엘 사람들은 싸울 준비를 하고 이집트를 떠났다."
+        },
+        "vi": {
+          "L": "Đức Chúa Trời dẫn dân đi vòng [theo] đường hoang mạc [về phía] Biển Sậy; và con cháu Y-sơ-ra-ên được trang bị để chiến đấu khi đi lên từ xứ Ai Cập.",
+          "B": "Thay vào đó, Đức Chúa Trời dẫn dân đi đường vòng, qua hoang mạc về phía Biển Đỏ. Dân Y-sơ-ra-ên ra khỏi xứ Ai Cập trong tư thế sẵn sàng chiến đấu.",
+          "R": "Vì vậy Đức Chúa Trời dẫn họ đi đường vòng xa hơn, qua hoang mạc về phía Biển Đỏ. Dân Y-sơ-ra-ên rời Ai Cập, sẵn sàng chiến đấu."
         }
       },
       "decisions": [
@@ -2360,6 +2812,27 @@
           "reason": "As the English, Literal translates the Hebrew name, \"Sea of Reeds\" (\"matete\", reeds), and Balanced and Readable use the familiar name. The established Swahili name of the Red Sea is \"Bahari ya Shamu\"; \"Bahari Nyekundu\" is a modern calque of the English.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020130180062"
+          ],
+          "choice": "\"hoang mạc\" for the wilderness",
+          "alternatives": [
+            "sa mạc"
+          ],
+          "reason": "The term sheet's word: the wilderness is dry, empty land, not only sand; Readable keeps it too, since \"sa mạc\" would picture dunes.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2427,6 +2900,16 @@
           "L": "Naye Musa akaichukua mifupa ya Yusufu pamoja naye, kwa maana alikuwa amewaapisha kwa hakika wana wa Israeli, akisema, \"Hakika Mungu atawajia, nanyi mtaipandisha mifupa yangu kutoka hapa pamoja nanyi.\"",
           "B": "Musa alichukua mifupa ya Yusufu, kwa kuwa Yusufu alikuwa amewafunga Waisraeli kwa kiapo kizito. Alikuwa amesema, \"Hakika Mungu atakuja kuwasaidia, na atakapofanya hivyo, mtaichukua mifupa yangu kutoka hapa pamoja nanyi.\"",
           "R": "Musa aliichukua mifupa ya Yusufu. Zamani sana, Yusufu alikuwa amewaahidisha Waisraeli kufanya hivyo. Aliwaambia, \"Hakika Mungu atakuja kuwasaidia. Atakapofanya hivyo, ichukueni mifupa yangu pamoja nanyi kutoka nchi hii.\""
+        },
+        "ko": {
+          "L": "그리고 모세가 요셉의 뼈를 가지고 갔다. 요셉이 이스라엘 자손에게 단단히 맹세하게 하며 \"하나님께서 반드시 너희를 찾아오실 것이니, 너희는 내 뼈를 여기서 가지고 올라가거라\" 하고 말하였기 때문이다.",
+          "B": "모세는 요셉의 유골을 가지고 갔다. 요셉이 이스라엘 자손에게 굳게 맹세하게 하며 \"하나님께서 반드시 너희를 돌보러 오실 것이다. 그때 너희는 내 유골을 여기서 가지고 올라가거라\" 하고 말하였기 때문이다.",
+          "R": "모세는 요셉의 뼈를 가지고 갔다. 오래전에 요셉은 이스라엘 자손에게 그렇게 하겠다고 약속하게 했다. 요셉은 \"하나님께서 꼭 너희를 도우러 오실 것이다. 그때 내 뼈를 가지고 이 땅에서 나가거라\" 하고 말했었다."
+        },
+        "vi": {
+          "L": "Môi-se mang hài cốt của Giô-sép theo mình, vì Giô-sép đã bắt con cháu Y-sơ-ra-ên thề rằng: \"Đức Chúa Trời chắc chắn sẽ thăm viếng các anh, và các anh hãy đem hài cốt em từ đây lên theo các anh.\"",
+          "B": "Môi-se mang hài cốt của Giô-sép theo, vì Giô-sép đã bắt dân Y-sơ-ra-ên long trọng thề rằng: \"Đức Chúa Trời nhất định sẽ đến giúp đỡ các anh; khi {{deity_pronoun:ngài|Ngài}} đến, các anh hãy đem hài cốt em theo lên khỏi nơi này.\"",
+          "R": "Môi-se mang hài cốt của Giô-sép theo. Từ lâu trước đó, Giô-sép đã bắt dân Y-sơ-ra-ên hứa sẽ làm việc này. Ông đã nói với họ: \"Đức Chúa Trời chắc chắn sẽ đến giúp các anh. Khi {{deity_pronoun:ngài|Ngài}} đến, các anh hãy đem hài cốt em theo khi rời khỏi xứ này.\""
         }
       },
       "decisions": [
@@ -2492,6 +2975,45 @@
           "reason": "Readable says that the oath was made long ago, in Joseph's lifetime.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020130190091"
+          ],
+          "choice": "\"이스라엘 자손\" kept at Balanced here",
+          "alternatives": [
+            "이스라엘 백성"
+          ],
+          "reason": "Joseph made his brothers' families swear (Genesis 50:25); the sons of Israel are here his own kin, so Balanced keeps \"자손\" rather than the usual \"백성\".",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020130190141",
+            "o020130190151"
+          ],
+          "choice": "Joseph's words as the Vietnamese Genesis gives them (50:25), with \"các anh\" and \"em\"",
+          "alternatives": [],
+          "reason": "The oath is quoted; Vietnamese repeats Joseph's own form of address to his brothers so the echo is heard.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2541,6 +3063,16 @@
           "L": "Wakasafiri kutoka Sukothi, wakapiga kambi Ethamu, kwenye ukingo wa nyika.",
           "B": "Waliondoka Sukothi, wakapiga kambi huko Ethamu, pembeni mwa nyika.",
           "R": "Watu waliondoka Sukothi, wakapiga kambi Ethamu, mahali jangwa linapoanzia."
+        },
+        "ko": {
+          "L": "그리고 그들이 숙곳을 떠나 광야 끝에 있는 에담에 진을 쳤다.",
+          "B": "그들은 숙곳을 떠나 광야 끝자락에 있는 에담에 진을 쳤다.",
+          "R": "백성은 숙곳을 떠나 광야가 시작되는 에담에 진을 쳤다."
+        },
+        "vi": {
+          "L": "Họ rời Su-cốt và đóng trại tại Ê-tam, ở ven hoang mạc.",
+          "B": "Họ rời Su-cốt và dựng trại tại Ê-tam, ở ven hoang mạc.",
+          "R": "Dân chúng rời Su-cốt và dựng trại tại Ê-tam, nơi hoang mạc bắt đầu."
         }
       },
       "decisions": [
@@ -2624,6 +3156,16 @@
           "L": "Naye {{divine_name:BWANA|Yahwe}} alikuwa akitangulia mbele yao mchana katika nguzo ya wingu ili kuwaongoza njia, na usiku katika nguzo ya moto ili kuwaangazia, wapate kwenda mchana na usiku.",
           "B": "{{divine_name:BWANA|Yahwe}} aliwatangulia, mchana katika nguzo ya wingu ili awaongoze njiani, na usiku katika nguzo ya moto ili kuwaangazia njia. Hivyo waliweza kuendelea na safari mchana na usiku.",
           "R": "{{divine_name:BWANA|Yahwe}} aliwatangulia watu. Wakati wa mchana alikuwa ndani ya nguzo ya wingu ili kuwaonyesha njia. Usiku alikuwa ndani ya nguzo ya moto ili kuwapa mwanga. Kwa hiyo waliweza kusafiri mchana au usiku."
+        },
+        "ko": {
+          "L": "그리고 {{divine_name:주|야훼}}께서 낮에는 구름 기둥 가운데 그들 앞에서 가시며 그들에게 길을 인도하시고, 밤에는 불기둥 가운데 [가시며] 그들에게 빛을 비추셔서, 낮에도 밤에도 [그들이] 갈 수 있게 하셨다.",
+          "B": "{{divine_name:주|야훼}}께서 그들 앞에서 가셨다. 낮에는 구름 기둥 가운데 계시면서 길을 인도하시고, 밤에는 불기둥 가운데 계시면서 길을 비추셨다. 그래서 그들은 낮에도 밤에도 행진할 수 있었다.",
+          "R": "{{divine_name:주|야훼}}께서 백성 앞에서 가셨다. 낮에는 구름 기둥 가운데 계시면서 길을 알려 주셨다. 밤에는 불기둥 가운데 계시면서 빛을 비추어 주셨다. 그래서 그들은 낮에도 밤에도 길을 갈 수 있었다."
+        },
+        "vi": {
+          "L": "{{divine_name:CHÚA|Gia-vê}} đi trước họ, ban ngày trong một trụ mây để dẫn họ [đi] đường, và ban đêm trong một trụ lửa để soi sáng cho họ, để [họ có thể] đi cả ngày lẫn đêm.",
+          "B": "{{divine_name:CHÚA|Gia-vê}} đi trước họ, ban ngày trong một trụ mây để dẫn đường cho họ, ban đêm trong một trụ lửa để soi đường cho họ. Nhờ vậy họ có thể đi cả ngày lẫn đêm.",
+          "R": "{{divine_name:CHÚA|Gia-vê}} đi trước dân chúng. Ban ngày {{deity_pronoun:ngài|Ngài}} ở trong một trụ mây để chỉ đường cho họ. Ban đêm {{deity_pronoun:ngài|Ngài}} ở trong một trụ lửa để soi sáng cho họ. Nhờ vậy họ có thể đi cả ban ngày lẫn ban đêm."
         }
       },
       "decisions": [
@@ -2700,6 +3242,29 @@
           "reason": "\"Nuée\" is the fuller literary word for a great cloud and the usual one for this pillar in French; Readable uses the everyday \"nuage\". Here and in chapter 14.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020130210052",
+            "o020130210102"
+          ],
+          "choice": "\"trụ mây\", \"trụ lửa\"",
+          "alternatives": [
+            "cột mây",
+            "cột lửa"
+          ],
+          "reason": "The term sheet's words for the pillar of cloud and of fire.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2752,6 +3317,16 @@
           "L": "Nguzo ya wingu haikuondoka mchana, wala nguzo ya moto usiku, mbele ya watu.",
           "B": "Mchana nguzo ya wingu, na usiku nguzo ya moto, hazikuondoka kamwe mbele ya watu.",
           "R": "Nguzo ya wingu ilikuwa daima mbele ya watu wakati wa mchana, na nguzo ya moto ilikuwa pale daima wakati wa usiku."
+        },
+        "ko": {
+          "L": "낮의 구름 기둥과 밤의 불기둥이 백성 앞에서 떠나지 않았다.",
+          "B": "낮에는 구름 기둥이, 밤에는 불기둥이 백성 앞을 떠나지 않았다.",
+          "R": "낮에는 늘 구름 기둥이 백성 앞에 있었고, 밤에는 늘 불기둥이 있었다."
+        },
+        "vi": {
+          "L": "Trụ mây ban ngày và trụ lửa ban đêm không rời khỏi trước mặt dân chúng.",
+          "B": "Ban ngày trụ mây, ban đêm trụ lửa, không bao giờ rời khỏi phía trước dân chúng.",
+          "R": "Ban ngày trụ mây luôn ở phía trước dân chúng, và ban đêm trụ lửa cũng luôn ở đó."
         }
       },
       "decisions": [

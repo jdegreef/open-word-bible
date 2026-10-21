@@ -43,6 +43,16 @@
           "L": "Na {{divine_name:BWANA|Yahwe}} akasema na Musa na Haruni, akisema,",
           "B": "{{divine_name:BWANA|Yahwe}} alisema na Musa na Haruni. Akasema,",
           "R": "{{divine_name:BWANA|Yahwe}} aliwaambia Musa na Haruni,"
+        },
+        "vi": {
+          "L": "{{divine_name:CHÚA|Gia-vê}} phán với Môi-se và A-rôn rằng:",
+          "B": "{{divine_name:CHÚA|Gia-vê}} phán với Môi-se và A-rôn. Ngài bảo:",
+          "R": "{{divine_name:CHÚA|Gia-vê}} phán với Môi-se và A-rôn:"
+        },
+        "ko": {
+          "L": "그리고 {{divine_name:주|야훼}}께서 모세와 아론에게 말씀하여 이르셨다.",
+          "B": "{{divine_name:주|야훼}}께서 모세와 아론에게 말씀하셨다. 그분께서 이르셨다.",
+          "R": "{{divine_name:주|야훼}}께서 모세와 아론에게 말씀하셨다."
         }
       },
       "decisions": [
@@ -136,6 +146,16 @@
           "L": "\"Semeni na wana wa Israeli, mwaambie, 'Mwanamume yeyote, atakapotokwa na majimaji kutoka mwilini mwake, majimaji yake ni najisi.",
           "B": "\"Semeni na Waisraeli, mwaambie, 'Mwanamume yeyote akitokwa na majimaji kutoka mwilini mwake, majimaji hayo yanamfanya kuwa najisi.",
           "R": "\"Waambieni Waisraeli, 'Huenda mwanamume akatokwa na majimaji kutoka mwilini mwake. Majimaji hayo yanamfanya kuwa najisi."
+        },
+        "vi": {
+          "L": "\"Hãy nói với con cháu Y-sơ-ra-ên và bảo họ: 'Bất cứ người đàn ông nào, khi bị chảy dịch từ thân thể mình, thì chất dịch ấy là ô uế.",
+          "B": "\"Hãy nói với dân Y-sơ-ra-ên: 'Khi một người đàn ông bị chảy dịch từ thân thể mình, thì chất dịch ấy làm cho người ấy bị ô uế.",
+          "R": "\"Hãy nói với dân Y-sơ-ra-ên: 'Có khi một người đàn ông bị chảy dịch từ thân thể mình. Chất dịch ấy làm cho người ấy bị ô uế."
+        },
+        "ko": {
+          "L": "\"이스라엘 자손에게 말하고 그들에게 이르라. '어떤 남자든지 그의 몸에서 유출이 있으면, 그 유출은 부정하다.",
+          "B": "\"이스라엘 백성에게 이렇게 말하여라. '어떤 남자든지 몸에서 유출이 있으면, 그 유출 때문에 그는 부정하다.",
+          "R": "\"이스라엘 사람들에게 이렇게 말하여라. '남자의 몸에서 고름 같은 것이 흘러나올 수 있다. 그렇게 흘러나오는 것 때문에 그 남자는 부정하다."
         }
       },
       "decisions": [
@@ -303,6 +323,75 @@
           "reason": "\"Majimaji\" names a fluid flow plainly and decently without naming a disease; \"usaha\" (pus) would decide what the text leaves open.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030150020111",
+            "o030150020131"
+          ],
+          "choice": "\"bị chảy dịch\" (has a discharge), \"chất dịch\" (the discharge)",
+          "alternatives": [
+            "\"chảy mủ\"",
+            "\"bệnh lậu\""
+          ],
+          "reason": "A plain, modest description of an abnormal flow; \"chảy mủ\" or a disease name would claim more than the Hebrew says. \"từ thân thể mình\" keeps the Hebrew's discreet \"from his flesh\".",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030150020111",
+            "o030150020131",
+            "o030150020132"
+          ],
+          "choice": "\"유출\" (L, B) for the discharge (zov); Readable \"고름 같은 것이 흘러나오다\" and then \"흘러나오는 것\"",
+          "alternatives": [
+            "\"분비물\"",
+            "\"고름\" at every level"
+          ],
+          "reason": "The meaning decision describes an abnormal flow that is a sign of illness. \"유출\" names the flow without saying what it is, as the Hebrew does; Readable describes it once in plain words.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030150020121",
+            "o030150020122",
+            "o030150020123"
+          ],
+          "choice": "\"몸에서\" for \"from his flesh\"",
+          "alternatives": [
+            "\"생식기에서\""
+          ],
+          "reason": "The Hebrew uses a modest word; Korean keeps the same reserve, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -364,6 +453,16 @@
           "L": "Na hii itakuwa unajisi wake katika majimaji yake: [ikiwa] mwili wake unatiririsha majimaji yake au mwili wake umezibwa na majimaji yake, huo [ni] unajisi wake.",
           "B": "Huu ndio unajisi unaoletwa na majimaji yake: iwe mwili wake unayatiririsha majimaji hayo au yamezibika, kwa vyovyote vile yeye ni najisi.",
           "R": "Majimaji hayo yanaweza kuendelea kutoka, au yanaweza kuziba. Kwa vyovyote vile, yeye ni najisi."
+        },
+        "vi": {
+          "L": "Đây sẽ là sự ô uế của người ấy do chất dịch: [dù] thân thể người ấy để cho chất dịch chảy ra hay thân thể người ấy bị tắc lại không cho chất dịch ra, đó [là] sự ô uế của người ấy.",
+          "B": "Đây là sự ô uế do chất dịch gây ra: dù chất dịch cứ chảy ra hay bị tắc lại, người ấy vẫn bị ô uế.",
+          "R": "Chất dịch có thể cứ chảy ra, hoặc có thể bị tắc lại. Dù thế nào, người ấy vẫn bị ô uế."
+        },
+        "ko": {
+          "L": "그리고 그의 유출로 인한 그의 부정함은 이러할 것이다. 그의 몸에서 유출이 흘러나오든지 그의 몸이 유출로 막혀 있든지, 그것은 그의 부정함이다.",
+          "B": "유출로 말미암은 부정함은 이러하다. 몸에서 유출이 계속 흘러나오든지 막혀 있든지, 그는 부정하다.",
+          "R": "그것이 계속 흘러나올 수도 있고, 막혀 있을 수도 있다. 어느 쪽이든 그 남자는 부정하다."
         }
       },
       "decisions": [
@@ -474,6 +573,16 @@
           "L": "Kila kitanda atakacholalia yule anayetokwa na majimaji kitakuwa najisi, na kila kitu atakachokalia kitakuwa najisi.",
           "B": "Kitanda chochote anachokilalia mwanamume anayetokwa na majimaji kinakuwa najisi, na vivyo hivyo kitu chochote anachokikalia.",
           "R": "Mwanamume anayetokwa na majimaji akilala kitandani, kitanda hicho kinakuwa najisi. Kitu chochote anachokalia nacho kinakuwa najisi."
+        },
+        "vi": {
+          "L": "Mọi giường mà người bị chảy dịch nằm lên sẽ bị ô uế, và mọi vật mà người ấy ngồi lên sẽ bị ô uế.",
+          "B": "Giường nào người bị chảy dịch nằm lên đều bị ô uế, và vật gì người ấy ngồi lên cũng bị ô uế.",
+          "R": "Nếu người bị chảy dịch nằm trên giường nào, giường ấy bị ô uế. Vật gì người ấy ngồi lên cũng bị ô uế."
+        },
+        "ko": {
+          "L": "유출이 있는 사람이 눕는 모든 침상은 부정해질 것이며, 그가 앉는 모든 물건도 부정해질 것이다.",
+          "B": "유출이 있는 남자가 누운 침상은 모두 부정해지고, 그가 앉은 물건도 모두 부정해진다.",
+          "R": "이런 남자가 침대에 누우면, 그 침대는 부정해진다. 그가 앉은 것도 모두 부정해진다."
         }
       },
       "decisions": [
@@ -580,6 +689,16 @@
           "L": "Na mtu yeyote atakayegusa kitanda chake atafua nguo zake na kuoga kwa maji, naye atakuwa najisi mpaka jioni.",
           "B": "Mtu yeyote anayegusa kitanda chake atafua nguo zake na kuoga kwa maji, naye atabaki najisi mpaka jioni.",
           "R": "Mtu yeyote anayegusa kitanda cha mwanamume huyo anakuwa najisi. Lazima afue nguo zake na kuoga. Atakuwa najisi mpaka jioni."
+        },
+        "vi": {
+          "L": "Ai đụng đến giường người ấy sẽ giặt áo xống mình, tắm trong nước, và bị ô uế cho đến chiều tối.",
+          "B": "Ai đụng đến giường người ấy phải giặt quần áo mình và tắm trong nước, và người ấy bị ô uế cho đến chiều tối.",
+          "R": "Ai đụng đến giường của người đàn ông ấy thì bị ô uế. Người ấy phải giặt quần áo và tắm. Người ấy sẽ bị ô uế cho đến chiều tối."
+        },
+        "ko": {
+          "L": "그리고 그의 침상을 만지는 사람은 누구든지 자기 옷을 빨고 물로 목욕해야 하고, 저녁까지 부정할 것이다.",
+          "B": "그의 침상을 만지는 사람은 누구든지 옷을 빨고 물로 목욕해야 하며, 저녁까지 부정하다.",
+          "R": "그 남자의 침대를 만지는 사람은 누구든지 부정해진다. 그 사람은 옷을 빨고 목욕해야 한다. 그 사람은 저녁까지 부정하다."
         }
       },
       "decisions": [
@@ -668,6 +787,63 @@
           "reason": "Swahili has the same pair of verbs as the Hebrew: \"kufua\" for washing clothes, \"kuoga\" for washing the body.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030150050012"
+          ],
+          "choice": "\"Ai\" (anyone) at Literal, with no gender span",
+          "alternatives": [],
+          "reason": "Vietnamese \"ai\" already covers men and women, so the English Literal's gender setting (\"anyone\" / \"a man\") has no Vietnamese counterpart.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030150050012"
+          ],
+          "choice": "\"사람은 누구든지\" for \"a man\" in the sense of anyone, with no gender setting",
+          "alternatives": [
+            "\"남자는\", with \"누구든지\" as a setting alternative"
+          ],
+          "reason": "Korean \"사람\" and \"누구든지\" already include women and men, so the English gender setting has no second form to switch to in Korean.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030150050072"
+          ],
+          "choice": "\"목욕하다\" for bathing in water",
+          "alternatives": [
+            "\"몸을 씻다\""
+          ],
+          "reason": "The washing of the whole body is meant; \"목욕하다\" is the ordinary word, while \"옷을 빨다\" is kept for the clothes.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -729,6 +905,16 @@
           "L": "Na yeye atakayeketi juu ya kitu alichokalia yule anayetokwa na majimaji atafua nguo zake na kuoga kwa maji, naye atakuwa najisi mpaka jioni.",
           "B": "Mtu yeyote anayeketi juu ya kitu alichokalia mwanamume anayetokwa na majimaji atafua nguo zake na kuoga kwa maji, naye atabaki najisi mpaka jioni.",
           "R": "Mtu yeyote anayeketi mahali alipoketi mwanamume anayetokwa na majimaji anakuwa najisi. Lazima afue nguo zake na kuoga. Atakuwa najisi mpaka jioni."
+        },
+        "vi": {
+          "L": "Ai ngồi trên vật mà người bị chảy dịch đã ngồi sẽ giặt áo xống mình, tắm trong nước, và bị ô uế cho đến chiều tối.",
+          "B": "Ai ngồi lên bất cứ vật gì người bị chảy dịch đã ngồi phải giặt quần áo mình và tắm trong nước, và người ấy bị ô uế cho đến chiều tối.",
+          "R": "Ai ngồi chỗ người bị chảy dịch đã ngồi thì bị ô uế. Người ấy phải giặt quần áo và tắm. Người ấy sẽ bị ô uế cho đến chiều tối."
+        },
+        "ko": {
+          "L": "그리고 유출이 있는 사람이 앉았던 물건 위에 앉는 사람은 자기 옷을 빨고 물로 목욕해야 하고, 저녁까지 부정할 것이다.",
+          "B": "유출이 있는 남자가 앉았던 것 위에 앉는 사람은 누구든지 옷을 빨고 물로 목욕해야 하며, 저녁까지 부정하다.",
+          "R": "그 남자가 앉았던 자리에 앉는 사람은 누구든지 부정해진다. 그 사람은 옷을 빨고 목욕해야 한다. 그 사람은 저녁까지 부정하다."
         }
       },
       "decisions": [
@@ -803,6 +989,16 @@
           "L": "Na yeye atakayegusa mwili wa yule anayetokwa na majimaji atafua nguo zake na kuoga kwa maji, naye atakuwa najisi mpaka jioni.",
           "B": "Mtu yeyote anayegusa mwili wa mwanamume anayetokwa na majimaji atafua nguo zake na kuoga kwa maji, naye atabaki najisi mpaka jioni.",
           "R": "Mtu yeyote anayegusa mwili wa mwanamume anayetokwa na majimaji anakuwa najisi. Lazima afue nguo zake na kuoga. Atakuwa najisi mpaka jioni."
+        },
+        "vi": {
+          "L": "Ai đụng đến thân thể người bị chảy dịch sẽ giặt áo xống mình, tắm trong nước, và bị ô uế cho đến chiều tối.",
+          "B": "Ai đụng đến thân thể người bị chảy dịch phải giặt quần áo mình và tắm trong nước, và người ấy bị ô uế cho đến chiều tối.",
+          "R": "Ai đụng đến thân thể người bị chảy dịch thì bị ô uế. Người ấy phải giặt quần áo và tắm. Người ấy sẽ bị ô uế cho đến chiều tối."
+        },
+        "ko": {
+          "L": "그리고 유출이 있는 사람의 몸을 만지는 사람은 자기 옷을 빨고 물로 목욕해야 하고, 저녁까지 부정할 것이다.",
+          "B": "유출이 있는 남자의 몸을 만지는 사람은 누구든지 옷을 빨고 물로 목욕해야 하며, 저녁까지 부정하다.",
+          "R": "그 남자의 몸을 만지는 사람은 누구든지 부정해진다. 그 사람은 옷을 빨고 목욕해야 한다. 그 사람은 저녁까지 부정하다."
         }
       },
       "decisions": [
@@ -879,6 +1075,16 @@
           "L": "Na yule anayetokwa na majimaji akimtemea mate [mtu aliye] safi, huyo atafua nguo zake na kuoga kwa maji, naye atakuwa najisi mpaka jioni.",
           "B": "Mwanamume anayetokwa na majimaji akimtemea mate mtu aliye safi, mtu huyo atafua nguo zake na kuoga kwa maji, naye atabaki najisi mpaka jioni.",
           "R": "Huenda mwanamume anayetokwa na majimaji akamtemea mate mtu aliye safi. Hapo mtu huyo anakuwa najisi. Lazima afue nguo zake na kuoga. Atakuwa najisi mpaka jioni."
+        },
+        "vi": {
+          "L": "Nếu người bị chảy dịch khạc nhổ trên [người] tinh sạch, thì người ấy sẽ giặt áo xống mình, tắm trong nước, và bị ô uế cho đến chiều tối.",
+          "B": "Nếu người bị chảy dịch khạc nhổ trên một người tinh sạch, thì người bị nhổ phải giặt quần áo mình và tắm trong nước, và người ấy bị ô uế cho đến chiều tối.",
+          "R": "Người bị chảy dịch có thể khạc nhổ trên một người tinh sạch. Khi đó người bị nhổ cũng bị ô uế. Người ấy phải giặt quần áo và tắm. Người ấy sẽ bị ô uế cho đến chiều tối."
+        },
+        "ko": {
+          "L": "그리고 유출이 있는 사람이 정결한 [사람]에게 침을 뱉으면, 그는 자기 옷을 빨고 물로 목욕해야 하고, 저녁까지 부정할 것이다.",
+          "B": "유출이 있는 남자가 정결한 사람에게 침을 뱉으면, 그 사람은 옷을 빨고 물로 목욕해야 하며, 저녁까지 부정하다.",
+          "R": "그 남자가 정결한 사람에게 침을 뱉을 수도 있다. 그러면 그 사람은 부정해진다. 그 사람은 옷을 빨고 목욕해야 한다. 그 사람은 저녁까지 부정하다."
         }
       },
       "decisions": [
@@ -962,6 +1168,16 @@
           "L": "Na kila tandiko atakalolipanda yule anayetokwa na majimaji litakuwa najisi.",
           "B": "Tandiko lolote analolipanda mwanamume anayetokwa na majimaji linakuwa najisi.",
           "R": "Mwanamume anayetokwa na majimaji akipanda juu ya tandiko, tandiko hilo linakuwa najisi."
+        },
+        "vi": {
+          "L": "Mọi yên mà người bị chảy dịch cưỡi lên sẽ bị ô uế.",
+          "B": "Yên nào người bị chảy dịch cưỡi lên đều bị ô uế.",
+          "R": "Nếu người bị chảy dịch ngồi trên yên để cưỡi, yên ấy bị ô uế."
+        },
+        "ko": {
+          "L": "그리고 유출이 있는 사람이 타는 모든 안장은 부정해질 것이다.",
+          "B": "유출이 있는 남자가 타는 안장은 모두 부정해진다.",
+          "R": "그 남자가 안장에 올라타면, 그 안장은 부정해진다."
         }
       },
       "decisions": [
@@ -1046,6 +1262,16 @@
           "L": "Na kila mtu atakayegusa kitu chochote kilichokuwa chini yake atakuwa najisi mpaka jioni; na yule atakayevibeba atafua nguo zake na kuoga kwa maji, naye atakuwa najisi mpaka jioni.",
           "B": "Mtu yeyote anayegusa kitu chochote kilichokuwa chini yake atakuwa najisi mpaka jioni, na mtu yeyote anayebeba vitu hivyo atafua nguo zake na kuoga kwa maji, naye atabaki najisi mpaka jioni.",
           "R": "Mtu yeyote anayegusa kitu ambacho mwanamume huyo amekilalia au kukikalia atakuwa najisi mpaka jioni. Mtu yeyote anayebeba vitu hivyo naye anakuwa najisi. Lazima afue nguo zake na kuoga. Atakuwa najisi mpaka jioni."
+        },
+        "vi": {
+          "L": "Ai đụng đến bất cứ vật gì đã ở dưới người ấy sẽ bị ô uế cho đến chiều tối, và ai mang những vật ấy sẽ giặt áo xống mình, tắm trong nước, và bị ô uế cho đến chiều tối.",
+          "B": "Ai đụng đến bất cứ vật gì đã ở dưới người ấy sẽ bị ô uế cho đến chiều tối, và ai mang những vật ấy phải giặt quần áo mình và tắm trong nước, và người ấy bị ô uế cho đến chiều tối.",
+          "R": "Ai đụng đến bất cứ vật gì người đàn ông ấy đã nằm hay ngồi lên sẽ bị ô uế cho đến chiều tối. Ai mang những vật ấy cũng bị ô uế. Người ấy phải giặt quần áo và tắm. Người ấy sẽ bị ô uế cho đến chiều tối."
+        },
+        "ko": {
+          "L": "그리고 그의 밑에 있던 것을 만지는 사람은 누구나 저녁까지 부정할 것이며, 그것들을 나르는 사람은 자기 옷을 빨고 물로 목욕해야 하고, 저녁까지 부정할 것이다.",
+          "B": "그의 밑에 있던 것을 만지는 사람은 누구나 저녁까지 부정하다. 그런 것을 나르는 사람은 누구든지 옷을 빨고 물로 목욕해야 하며, 저녁까지 부정하다.",
+          "R": "그 남자가 눕거나 앉았던 것을 만지는 사람은 누구나 저녁까지 부정하다. 그런 것을 들어 옮기는 사람도 부정해진다. 그 사람은 옷을 빨고 목욕해야 한다. 그 사람은 저녁까지 부정하다."
         }
       },
       "decisions": [
@@ -1160,6 +1386,16 @@
           "L": "Na kila mtu atakayeguswa na yule anayetokwa na majimaji bila yeye kusuuza mikono yake kwa maji, atafua nguo zake na kuoga kwa maji, naye atakuwa najisi mpaka jioni.",
           "B": "Mwanamume anayetokwa na majimaji akimgusa mtu bila kusuuza kwanza mikono yake kwa maji, mtu huyo atafua nguo zake na kuoga kwa maji, naye atabaki najisi mpaka jioni.",
           "R": "Mwanamume anayetokwa na majimaji lazima asuuze mikono yake kwa maji kabla ya kumgusa mtu. Asipofanya hivyo, mtu anayemgusa anakuwa najisi. Lazima mtu huyo afue nguo zake na kuoga. Atakuwa najisi mpaka jioni."
+        },
+        "vi": {
+          "L": "Người nào mà người bị chảy dịch đụng đến khi chưa rửa tay trong nước, thì người ấy sẽ giặt áo xống mình, tắm trong nước, và bị ô uế cho đến chiều tối.",
+          "B": "Nếu người bị chảy dịch chưa rửa tay trong nước mà đụng đến ai, thì người bị đụng phải giặt quần áo mình và tắm trong nước, và người ấy bị ô uế cho đến chiều tối.",
+          "R": "Người bị chảy dịch phải rửa tay bằng nước trước khi đụng đến ai. Nếu không, người bị đụng sẽ bị ô uế. Người ấy phải giặt quần áo và tắm. Người ấy sẽ bị ô uế cho đến chiều tối."
+        },
+        "ko": {
+          "L": "그리고 유출이 있는 사람이 자기 손을 물로 헹구지 않고 누구를 만지면, 그 [사람]은 자기 옷을 빨고 물로 목욕해야 하고, 저녁까지 부정할 것이다.",
+          "B": "유출이 있는 남자가 손을 먼저 물로 헹구지 않고 누구를 만지면, 그 사람은 옷을 빨고 물로 목욕해야 하며, 저녁까지 부정하다.",
+          "R": "그 남자는 누구를 만지기 전에 손을 물로 헹구어야 한다. 그렇게 하지 않으면 그가 만진 사람은 부정해진다. 그 사람은 옷을 빨고 목욕해야 한다. 그 사람은 저녁까지 부정하다."
         }
       },
       "decisions": [
@@ -1249,6 +1485,16 @@
           "L": "Na chombo cha udongo atakachokigusa yule anayetokwa na majimaji kitavunjwa, na kila chombo cha mti kitasuuzwa kwa maji.",
           "B": "Mwanamume anayetokwa na majimaji akigusa chungu cha udongo, kitavunjwa; akigusa chombo cha mbao, kitasuuzwa kwa maji.",
           "R": "Mwanamume anayetokwa na majimaji akigusa chungu cha udongo, lazima kivunjwe. Akigusa bakuli au sanduku la mbao, lazima kitu hicho kisuuzwe kwa maji."
+        },
+        "vi": {
+          "L": "Bình bằng đất nung mà người bị chảy dịch đụng đến phải bị đập bể, và mọi đồ bằng gỗ phải được rửa trong nước.",
+          "B": "Nếu người bị chảy dịch đụng đến một cái bình bằng đất nung, phải đập bể nó; nếu người ấy đụng đến đồ đựng bằng gỗ, phải rửa nó trong nước.",
+          "R": "Nếu người bị chảy dịch đụng đến một cái nồi đất, phải đập bể nó. Nếu người ấy đụng đến một cái chén hay cái hộp bằng gỗ, phải rửa nó bằng nước."
+        },
+        "ko": {
+          "L": "그리고 유출이 있는 사람이 만진 질그릇은 깨뜨려야 하고, 나무 그릇은 모두 물로 헹구어야 한다.",
+          "B": "유출이 있는 남자가 질그릇을 만지면 그것은 깨뜨려야 하고, 나무 그릇을 만지면 그것은 물로 헹구어야 한다.",
+          "R": "그 남자가 진흙 그릇을 만지면, 그 그릇은 깨뜨려야 한다. 나무로 만든 그릇이나 상자를 만지면, 그것은 물로 헹구어야 한다."
         }
       },
       "decisions": [
@@ -1353,6 +1599,16 @@
           "L": "Na yule anayetokwa na majimaji atakapokuwa safi kutoka majimaji yake, atajihesabia siku saba kwa ajili ya kusafishwa kwake; atafua nguo zake na kuoga mwili wake katika maji yaliyo hai, naye atakuwa safi.",
           "B": "Mwanamume anayetokwa na majimaji akipona, atahesabu siku saba za kusafishwa kwake. Kisha atafua nguo zake na kuoga mwili wake kwa maji yanayotiririka, naye atakuwa safi.",
           "R": "Majimaji ya mwanamume huyo yakikoma, lazima asubiri siku saba ili asafishwe. Kisha lazima afue nguo zake na kuoga kwa maji yanayotiririka. Baada ya hapo atakuwa safi."
+        },
+        "vi": {
+          "L": "Khi người bị chảy dịch được tinh sạch khỏi chất dịch của mình, người ấy sẽ đếm cho mình bảy ngày để được tẩy sạch; người ấy sẽ giặt áo xống mình và tắm thân thể trong nước sống, và người ấy sẽ được tinh sạch.",
+          "B": "Khi người bị chảy dịch đã khỏi, người ấy phải đếm bảy ngày để được tẩy sạch. Rồi người ấy phải giặt quần áo mình và tắm trong nước tươi, và người ấy sẽ được tinh sạch.",
+          "R": "Khi chất dịch của người đàn ông ấy ngừng chảy, người ấy phải đợi bảy ngày để được tẩy sạch. Rồi người ấy phải giặt quần áo và tắm trong nước tươi. Sau đó người ấy sẽ được tinh sạch."
+        },
+        "ko": {
+          "L": "그리고 유출이 있는 사람이 그의 유출에서 정결하게 되면, 그는 자기가 정결하게 되기 위하여 칠 일을 세고, 자기 옷을 빨고 자기 몸을 살아 있는 물로 씻어야 한다. 그러면 그는 정결해질 것이다.",
+          "B": "유출이 있던 남자가 그 유출에서 낫게 되면, 그는 정결하게 되기 위하여 칠 일을 세어야 한다. 그런 다음 옷을 빨고 흐르는 맑은 물로 몸을 씻어야 한다. 그러면 정결해진다.",
+          "R": "그 남자의 몸에서 흘러나오던 것이 멈추면, 그는 정결하게 되기 위하여 칠 일을 기다려야 한다. 그런 다음 옷을 빨고 깨끗한 물로 목욕해야 한다. 그러면 정결해진다."
         }
       },
       "decisions": [
@@ -1549,6 +1805,16 @@
           "L": "Na siku ya nane atajitwalia hua wawili au makinda mawili ya njiwa, naye atakuja mbele za {{divine_name:BWANA|Yahwe}} mlangoni pa Hema la Kukutania na kumpa kuhani.",
           "B": "Siku ya nane atapata hua wawili au makinda mawili ya njiwa, na kuwaleta mbele za {{divine_name:BWANA|Yahwe}} mlangoni pa Hema la Kukutania, na hapo atampa kuhani.",
           "R": "Siku ya nane lazima apate hua wawili au makinda mawili ya njiwa. Lazima aje mbele za {{divine_name:BWANA|Yahwe}} mlangoni pa Hema la Kukutania na kumpa kuhani ndege hao."
+        },
+        "vi": {
+          "L": "Đến ngày thứ tám người ấy sẽ lấy cho mình hai con chim cu hoặc hai con bồ câu non, đến trước mặt {{divine_name:CHÚA|Gia-vê}} tại lối vào Lều Hội Kiến, và giao chúng cho thầy tế lễ.",
+          "B": "Đến ngày thứ tám người ấy phải bắt hai con chim cu hoặc hai con bồ câu non, đem đến trước mặt {{divine_name:CHÚA|Gia-vê}} tại lối vào Lều Hội Kiến, và giao cho thầy tế lễ.",
+          "R": "Đến ngày thứ tám người ấy phải bắt hai con chim cu hoặc hai con bồ câu non. Người ấy phải đến trước mặt {{divine_name:CHÚA|Gia-vê}} tại lối vào Lều Hội Kiến và giao chúng cho thầy tế lễ."
+        },
+        "ko": {
+          "L": "그리고 여덟째 날에 그는 산비둘기 두 마리나 집비둘기 새끼 두 마리를 가져다가, {{divine_name:주|야훼}} 앞, 회막 입구로 와서 그것들을 제사장에게 주어야 한다.",
+          "B": "여덟째 날에 그는 산비둘기 두 마리나 집비둘기 새끼 두 마리를 가지고 {{divine_name:주|야훼}} 앞, 회막 입구로 와서 제사장에게 주어야 한다.",
+          "R": "여덟째 날에 그는 산비둘기 두 마리나 집비둘기 새끼 두 마리를 가져와야 한다. 그리고 회막 입구로 {{divine_name:주|야훼}} 앞에 나아와 그 새들을 제사장에게 주어야 한다."
         }
       },
       "decisions": [
@@ -1643,6 +1909,16 @@
           "L": "Na kuhani atawatoa, mmoja [kuwa] sadaka ya dhambi na mwingine [kuwa] sadaka ya kuteketezwa, na kuhani atafanya upatanisho kwa ajili yake mbele za {{divine_name:BWANA|Yahwe}} kwa sababu ya majimaji yake.",
           "B": "Kuhani atamtoa ndege mmoja kuwa sadaka ya dhambi na mwingine kuwa sadaka ya kuteketezwa, na hivyo atamfanyia upatanisho mbele za {{divine_name:BWANA|Yahwe}} kwa sababu ya majimaji yake.",
           "R": "Lazima kuhani amtoe ndege mmoja kuwa sadaka ya dhambi na mwingine kuwa sadaka ya kuteketezwa. Kwa njia hii kuhani atamfanyia mwanamume huyo upatanisho mbele za {{divine_name:BWANA|Yahwe}} kwa sababu ya majimaji yake."
+        },
+        "vi": {
+          "L": "Thầy tế lễ sẽ dâng chúng, một con [làm] tế lễ chuộc tội và con kia [làm] của lễ thiêu, và thầy tế lễ sẽ chuộc tội cho người ấy trước mặt {{divine_name:CHÚA|Gia-vê}} vì chất dịch của người ấy.",
+          "B": "Thầy tế lễ phải dâng một con làm tế lễ chuộc tội và con kia làm của lễ thiêu. Như vậy thầy tế lễ sẽ chuộc tội cho người ấy trước mặt {{divine_name:CHÚA|Gia-vê}} vì chất dịch của người ấy.",
+          "R": "Thầy tế lễ phải dâng một con làm tế lễ chuộc tội và con kia làm của lễ thiêu. Như vậy thầy tế lễ sẽ chuộc tội cho người đàn ông ấy trước mặt {{divine_name:CHÚA|Gia-vê}} vì chất dịch của người ấy."
+        },
+        "ko": {
+          "L": "그리고 제사장은 그것들을, 하나는 속죄제물로, 하나는 번제물로 드려야 한다. 그리고 제사장은 그의 유출 때문에 {{divine_name:주|야훼}} 앞에서 그를 위하여 속죄해야 한다.",
+          "B": "제사장은 하나는 속죄제물로, 다른 하나는 번제물로 바쳐, 그의 유출 때문에 {{divine_name:주|야훼}} 앞에서 그를 위하여 속죄해야 한다.",
+          "R": "제사장은 한 마리는 속죄제물로, 다른 한 마리는 번제물로 바쳐야 한다. 이렇게 하여 제사장은 그 남자의 몸에서 흘러나온 것 때문에 {{divine_name:주|야훼}} 앞에서 그를 위하여 속죄해야 한다."
         }
       },
       "decisions": [
@@ -1719,6 +1995,16 @@
           "L": "Na mwanamume, shahawa zitakapomtoka, ataoga mwili wake wote kwa maji, naye atakuwa najisi mpaka jioni.",
           "B": "Mwanamume akitokwa na shahawa, ataoga mwili wake wote kwa maji, naye atabaki najisi mpaka jioni.",
           "R": "Huenda mwanamume akatokwa na shahawa. Hilo likitokea, lazima aoge mwili wake wote kwa maji. Atakuwa najisi mpaka jioni."
+        },
+        "vi": {
+          "L": "Một người đàn ông, khi tinh dịch xuất ra từ mình, sẽ tắm toàn thân trong nước và bị ô uế cho đến chiều tối.",
+          "B": "Nếu một người đàn ông xuất tinh, người ấy phải tắm toàn thân trong nước, và bị ô uế cho đến chiều tối.",
+          "R": "Có khi tinh dịch xuất ra từ thân thể một người đàn ông. Khi điều đó xảy ra, người ấy phải tắm rửa toàn thân bằng nước. Người ấy sẽ bị ô uế cho đến chiều tối."
+        },
+        "ko": {
+          "L": "그리고 남자에게서 정액이 흘러나오면, 그는 온몸을 물로 씻어야 하고 저녁까지 부정할 것이다.",
+          "B": "남자가 정액을 흘리면, 그는 온몸을 물로 씻어야 하며 저녁까지 부정하다.",
+          "R": "남자의 몸에서 정액이 나올 수 있다. 그러면 그는 온몸을 물로 씻어야 한다. 그는 저녁까지 부정하다."
         }
       },
       "decisions": [
@@ -1821,6 +2107,50 @@
           "reason": "\"Shahawa\" is the standard, decent Swahili word; \"mbegu\" would be read as seed for planting.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030150160051",
+            "o030150160061"
+          ],
+          "choice": "\"tinh dịch xuất ra\" / \"xuất tinh\" (emission of semen)",
+          "alternatives": [
+            "\"giống chảy ra\""
+          ],
+          "reason": "The plain, decent Vietnamese words; the Hebrew \"laying of seed\" is itself a plain expression, not a euphemism to be kept.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030150160051",
+            "o030150160061"
+          ],
+          "choice": "\"정액\" for the emission of semen (literally \"a laying of seed\")",
+          "alternatives": [
+            "\"씨\""
+          ],
+          "reason": "The Hebrew idiom means an emission of semen, as the meaning decision says; Korean uses the plain word at every level, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1879,6 +2209,16 @@
           "L": "Na kila vazi na kila ngozi vitakavyokuwa na shahawa vitafuliwa kwa maji, navyo vitakuwa najisi mpaka jioni.",
           "B": "Shahawa zikiingia kwenye nguo yoyote au kitu cha ngozi, kitu hicho kitafuliwa kwa maji, nacho kitabaki najisi mpaka jioni.",
           "R": "Shahawa zikiingia kwenye nguo au kwenye kitu kilichotengenezwa kwa ngozi, lazima kifuliwe kwa maji. Kitakuwa najisi mpaka jioni."
+        },
+        "vi": {
+          "L": "Mọi áo xống và mọi đồ da có dính tinh dịch sẽ được giặt trong nước và bị ô uế cho đến chiều tối.",
+          "B": "Nếu tinh dịch dính vào quần áo hay đồ da nào, vật ấy phải được giặt trong nước và bị ô uế cho đến chiều tối.",
+          "R": "Nếu tinh dịch dính vào quần áo hay vật gì làm bằng da, thì phải giặt nó bằng nước. Nó sẽ bị ô uế cho đến chiều tối."
+        },
+        "ko": {
+          "L": "그리고 정액이 묻은 모든 옷과 모든 가죽은 물로 빨아야 하고, 그것은 저녁까지 부정할 것이다.",
+          "B": "정액이 묻은 옷이나 가죽은 무엇이든 물로 빨아야 하며, 그것은 저녁까지 부정하다.",
+          "R": "옷이나 가죽으로 만든 것에 정액이 묻으면, 그것은 물로 빨아야 한다. 그것은 저녁까지 부정하다."
         }
       },
       "decisions": [
@@ -1950,6 +2290,16 @@
           "L": "Na mwanamke ambaye mwanamume atalala naye [pamoja na] kutokwa na shahawa, wataoga kwa maji, nao watakuwa najisi mpaka jioni.",
           "B": "Mwanamume akilala na mwanamke na shahawa zikatoka, wote wawili wataoga kwa maji, nao watabaki najisi mpaka jioni.",
           "R": "Mwanamume na mwanamke wakilala pamoja na shahawa zake zikatoka, lazima wote wawili waoge. Watakuwa najisi mpaka jioni."
+        },
+        "vi": {
+          "L": "Người đàn bà mà một người đàn ông nằm cùng [và] xuất tinh, thì cả hai sẽ tắm trong nước và bị ô uế cho đến chiều tối.",
+          "B": "Khi một người đàn ông nằm với một người đàn bà và xuất tinh, thì cả hai phải tắm trong nước, và họ bị ô uế cho đến chiều tối.",
+          "R": "Khi một người đàn ông và một người đàn bà ăn nằm với nhau và người đàn ông xuất tinh, thì cả hai phải tắm. Họ sẽ bị ô uế cho đến chiều tối."
+        },
+        "ko": {
+          "L": "그리고 남자가 여자와 함께 누워 정액을 흘렸으면, 그들은 물로 목욕해야 하고 저녁까지 부정할 것이다.",
+          "B": "남자가 여자와 동침하여 정액이 나오면, 두 사람 모두 물로 목욕해야 하며 저녁까지 부정하다.",
+          "R": "남자와 여자가 잠자리를 같이하여 남자의 정액이 나오면, 두 사람 모두 목욕해야 한다. 그들은 저녁까지 부정하다."
         }
       },
       "decisions": [
@@ -2022,6 +2372,26 @@
           "reason": "Readable needs the plain modern idiom for intercourse; in Spanish \"tener relaciones\" is the usual decent expression, while \"dormir juntos\" can be taken literally.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030150180031"
+          ],
+          "choice": "\"함께 눕다\" (L), \"동침하다\" (B), \"잠자리를 같이하다\" (R) for lying with",
+          "alternatives": [
+            "\"성관계를 하다\""
+          ],
+          "reason": "The Hebrew uses a reserved idiom for intercourse; Korean has reserved expressions of the same kind at each level.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2087,6 +2457,16 @@
           "L": "Na mwanamke, atakapotokwa na majimaji, [na] majimaji yake mwilini mwake ni damu, atakuwa siku saba katika unajisi wa hedhi yake, na kila mtu atakayemgusa atakuwa najisi mpaka jioni.",
           "B": "Mwanamke akitokwa na majimaji, na kinachotoka mwilini mwake ni damu, hedhi yake itamfanya kuwa najisi kwa siku saba. Mtu yeyote atakayemgusa atakuwa najisi mpaka jioni.",
           "R": "Mwanamke akiwa katika hedhi yake, atakuwa najisi kwa siku saba. Mtu yeyote atakayemgusa atakuwa najisi mpaka jioni."
+        },
+        "vi": {
+          "L": "Một người đàn bà, khi bị chảy, [và] chất chảy ra từ thân thể mình là máu, người ấy sẽ ở trong sự ô uế của kinh nguyệt bảy ngày, và ai đụng đến người ấy sẽ bị ô uế cho đến chiều tối.",
+          "B": "Khi một người phụ nữ ra máu từ thân thể mình, tức là kỳ kinh nguyệt, người ấy bị ô uế trong bảy ngày. Ai đụng đến người ấy sẽ bị ô uế cho đến chiều tối.",
+          "R": "Khi một người phụ nữ có kinh hằng tháng, người ấy bị ô uế trong bảy ngày. Ai đụng đến người ấy sẽ bị ô uế cho đến chiều tối."
+        },
+        "ko": {
+          "L": "그리고 여자에게 유출이 있는데 그의 몸에서 나오는 유출이 피이면, 그 여자는 칠 일 동안 월경으로 불결한 상태에 있을 것이며, 그 여자를 만지는 사람은 누구나 저녁까지 부정할 것이다.",
+          "B": "여자에게 유출이 있는데 몸에서 흘러나오는 것이 피이면, 그 여자는 월경 때문에 칠 일 동안 부정하다. 그 여자를 만지는 사람은 누구나 저녁까지 부정하다.",
+          "R": "여자가 월경을 하면 칠 일 동안 부정하다. 그 여자를 만지는 사람은 누구나 저녁까지 부정하다."
         }
       },
       "decisions": [
@@ -2223,6 +2603,26 @@
           "reason": "\"Hedhi\" is the standard, respectful Swahili word for the monthly period; Literal adds \"unajisi\" for the state of impurity the Hebrew word names.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030150190122",
+            "o030150190123"
+          ],
+          "choice": "\"월경으로 불결한 상태\" at Literal for niddah",
+          "alternatives": [
+            "\"월경\" alone"
+          ],
+          "reason": "The Hebrew word names the state of separation during the period; Literal keeps that sense, while Balanced and Readable say \"월경\" plainly.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2277,6 +2677,16 @@
           "L": "Na kila kitu atakacholalia katika unajisi wa hedhi yake kitakuwa najisi, na kila kitu atakachokalia kitakuwa najisi.",
           "B": "Wakati wa hedhi yake, kitu chochote anachokilalia na kitu chochote anachokikalia kinakuwa najisi.",
           "R": "Wakati wa hedhi yake, kitu chochote anachokilalia au kukikalia kinakuwa najisi."
+        },
+        "vi": {
+          "L": "Mọi vật người ấy nằm lên trong sự ô uế của kinh nguyệt sẽ bị ô uế, và mọi vật người ấy ngồi lên sẽ bị ô uế.",
+          "B": "Trong kỳ kinh nguyệt, vật gì người ấy nằm lên hay ngồi lên đều bị ô uế.",
+          "R": "Trong kỳ kinh nguyệt, vật gì người ấy nằm hay ngồi lên đều bị ô uế."
+        },
+        "ko": {
+          "L": "그리고 월경으로 불결한 동안에 그 여자가 눕는 것은 모두 부정해질 것이며, 그 여자가 앉는 것도 모두 부정해질 것이다.",
+          "B": "월경 기간에 그 여자가 눕거나 앉는 것은 모두 부정해진다.",
+          "R": "월경을 하는 동안 그 여자가 눕거나 앉는 것은 무엇이든 부정해진다."
         }
       },
       "decisions": [
@@ -2350,6 +2760,16 @@
           "L": "Na kila mtu atakayegusa kitanda chake atafua nguo zake na kuoga kwa maji, naye atakuwa najisi mpaka jioni.",
           "B": "Mtu yeyote anayegusa kitanda chake atafua nguo zake na kuoga kwa maji, naye atabaki najisi mpaka jioni.",
           "R": "Mtu yeyote anayegusa kitanda chake anakuwa najisi. Lazima afue nguo zake na kuoga. Atakuwa najisi mpaka jioni."
+        },
+        "vi": {
+          "L": "Ai đụng đến giường người ấy sẽ giặt áo xống mình, tắm trong nước, và bị ô uế cho đến chiều tối.",
+          "B": "Ai đụng đến giường người ấy phải giặt quần áo mình và tắm trong nước, và người ấy bị ô uế cho đến chiều tối.",
+          "R": "Ai đụng đến giường người ấy thì bị ô uế. Người ấy phải giặt quần áo và tắm. Người ấy sẽ bị ô uế cho đến chiều tối."
+        },
+        "ko": {
+          "L": "그리고 그 여자의 침상을 만지는 사람은 누구나 자기 옷을 빨고 물로 목욕해야 하고, 저녁까지 부정할 것이다.",
+          "B": "그 여자의 침상을 만지는 사람은 누구든지 옷을 빨고 물로 목욕해야 하며, 저녁까지 부정하다.",
+          "R": "그 여자의 침대를 만지는 사람은 누구든지 부정해진다. 그 사람은 옷을 빨고 목욕해야 한다. 그 사람은 저녁까지 부정하다."
         }
       },
       "decisions": [
@@ -2427,6 +2847,16 @@
           "L": "Na kila mtu atakayegusa kitu chochote anachokikalia atafua nguo zake na kuoga kwa maji, naye atakuwa najisi mpaka jioni.",
           "B": "Mtu yeyote anayegusa kitu chochote alichokikalia atafua nguo zake na kuoga kwa maji, naye atabaki najisi mpaka jioni.",
           "R": "Mtu yeyote anayegusa kitu alichokikalia anakuwa najisi. Lazima afue nguo zake na kuoga. Atakuwa najisi mpaka jioni."
+        },
+        "vi": {
+          "L": "Ai đụng đến bất cứ vật gì người ấy ngồi lên sẽ giặt áo xống mình, tắm trong nước, và bị ô uế cho đến chiều tối.",
+          "B": "Ai đụng đến bất cứ vật gì người ấy đã ngồi lên phải giặt quần áo mình và tắm trong nước, và người ấy bị ô uế cho đến chiều tối.",
+          "R": "Ai đụng đến vật gì người ấy đã ngồi lên thì bị ô uế. Người ấy phải giặt quần áo và tắm. Người ấy sẽ bị ô uế cho đến chiều tối."
+        },
+        "ko": {
+          "L": "그리고 그 여자가 앉는 어떤 물건이든 만지는 사람은 누구나 자기 옷을 빨고 물로 목욕해야 하고, 저녁까지 부정할 것이다.",
+          "B": "그 여자가 앉았던 물건을 만지는 사람은 누구든지 옷을 빨고 물로 목욕해야 하며, 저녁까지 부정하다.",
+          "R": "그 여자가 앉았던 것을 만지는 사람은 누구든지 부정해진다. 그 사람은 옷을 빨고 목욕해야 한다. 그 사람은 저녁까지 부정하다."
         }
       },
       "decisions": [
@@ -2505,6 +2935,16 @@
           "L": "Na ikiwa [kitu] kiko juu ya kitanda au juu ya kitu anachokikalia, atakapokigusa, atakuwa najisi mpaka jioni.",
           "B": "Hata kama ni kitu kilichowekwa juu ya kitanda chake au juu ya kiti anachokitumia, mtu yeyote anayekigusa atakuwa najisi mpaka jioni.",
           "R": "Huenda kuna kitu kilichowekwa juu ya kitanda chake au juu ya kiti anachokitumia. Mtu yeyote anayekigusa kitu hicho atakuwa najisi mpaka jioni."
+        },
+        "vi": {
+          "L": "Nếu [có vật gì] ở trên giường hay trên vật người ấy ngồi, khi ai đụng đến nó, người đó sẽ bị ô uế cho đến chiều tối.",
+          "B": "Dù là vật gì đặt trên giường hay trên chỗ ngồi của người phụ nữ ấy, ai đụng đến nó cũng sẽ bị ô uế cho đến chiều tối.",
+          "R": "Có thể có vật gì nằm trên giường hay trên chỗ ngồi của người phụ nữ ấy. Ai đụng đến vật đó sẽ bị ô uế cho đến chiều tối."
+        },
+        "ko": {
+          "L": "그리고 그것이 침상 위에나 그 여자가 앉는 물건 위에 있으면, 그것을 만질 때에 그는 저녁까지 부정할 것이다.",
+          "B": "그 여자의 침상 위나 그 여자가 앉는 자리 위에 있는 물건이라도, 그것을 만지는 사람은 누구든지 저녁까지 부정하다.",
+          "R": "그 여자의 침대나 그 여자가 앉는 자리 위에 어떤 물건이 놓여 있을 수 있다. 그 물건을 만지는 사람은 누구든지 저녁까지 부정하다."
         }
       },
       "decisions": [
@@ -2608,6 +3048,16 @@
           "L": "Na ikiwa mwanamume atalala naye kweli na unajisi wa hedhi yake ukawa juu yake, atakuwa najisi siku saba, na kila kitanda atakacholalia kitakuwa najisi.",
           "B": "Mwanamume akilala naye kweli na unajisi wa hedhi yake ukampata, atakuwa najisi siku saba. Kila kitanda atakacholalia kitakuwa najisi pia.",
           "R": "Huenda mwanamume akalala na mwanamke wakati wa hedhi yake, na damu yake ikamgusa. Hapo atakuwa najisi kwa siku saba. Kitanda chochote atakacholalia kitakuwa najisi pia."
+        },
+        "vi": {
+          "L": "Nếu một người đàn ông thật sự nằm với người ấy và sự ô uế của kinh nguyệt dính trên mình, thì người đàn ông sẽ bị ô uế bảy ngày, và mọi giường người đàn ông nằm lên sẽ bị ô uế.",
+          "B": "Nếu một người đàn ông ăn nằm với người ấy và sự ô uế của kỳ kinh dính vào mình, thì người đàn ông ấy sẽ bị ô uế bảy ngày, và giường nào ông ta nằm lên cũng bị ô uế.",
+          "R": "Có khi một người đàn ông ăn nằm với một người phụ nữ trong kỳ kinh, và máu kinh dính vào ông ta. Khi đó ông ta sẽ bị ô uế bảy ngày. Giường nào ông ta nằm lên cũng sẽ bị ô uế."
+        },
+        "ko": {
+          "L": "그리고 어떤 남자가 정말로 그 여자와 함께 누워서 그 여자의 월경의 불결함이 그에게 묻으면, 그는 칠 일 동안 부정할 것이며, 그가 눕는 모든 침상도 부정해질 것이다.",
+          "B": "어떤 남자가 그 여자와 동침하여 그 여자의 월경의 부정함이 그에게 묻으면, 그는 칠 일 동안 부정하다. 그가 눕는 침상도 모두 부정해진다.",
+          "R": "어떤 남자가 월경 중인 여자와 잠자리를 같이하여 그 여자의 피가 그에게 묻을 수 있다. 그러면 그는 칠 일 동안 부정하다. 그가 눕는 침대도 모두 부정해진다."
         }
       },
       "decisions": [
@@ -2659,6 +3109,27 @@
           "choice": "her blood",
           "alternatives": [],
           "reason": "Readable says \"her blood\" for \"her menstrual impurity\", the thing that would get on him.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030150240031"
+          ],
+          "choice": "\"nằm với\" (Literal), \"ăn nằm với\" (Balanced, Readable) for sexual intercourse",
+          "alternatives": [
+            "\"ngủ với\""
+          ],
+          "reason": "\"ăn nằm với\" is the usual decent Vietnamese expression; Literal keeps \"nằm với\" as the Hebrew says \"lie with\".",
           "uncertain": false,
           "footnote": false
         }
@@ -2730,6 +3201,16 @@
           "L": "Na mwanamke, majimaji ya damu yake yatakapotoka siku nyingi wakati usio wa unajisi wa hedhi yake, au atakapotokwa na majimaji kupita unajisi wa hedhi yake, siku zote za majimaji ya unajisi wake atakuwa kama [katika] siku za unajisi wa hedhi yake; yeye [ni] najisi.",
           "B": "Mwanamke anaweza kutokwa na damu siku nyingi wakati ambao si wa hedhi yake, au kutokwa na damu kunakoendelea baada ya hedhi yake. Siku zote za kutokwa huko kwa unajisi atakuwa kama alivyo katika siku za hedhi yake: yeye ni najisi.",
           "R": "Wakati mwingine mwanamke hutokwa na damu kwa siku nyingi wakati ambao si wa hedhi yake. Au damu inaendelea kutoka baada ya hedhi yake kupaswa kuisha. Muda wote anapotokwa na damu, yeye ni najisi, kama alivyo wakati wa hedhi yake."
+        },
+        "vi": {
+          "L": "Một người đàn bà, khi máu chảy ra nhiều ngày không phải vào kỳ kinh nguyệt, hoặc khi người ấy bị chảy kéo dài quá kỳ kinh nguyệt, thì suốt những ngày chảy máu ô uế, người ấy sẽ như trong những ngày kinh nguyệt; người ấy ô uế.",
+          "B": "Nếu một người phụ nữ bị ra máu nhiều ngày ngoài kỳ kinh nguyệt, hoặc ra máu kéo dài quá kỳ kinh, thì suốt thời gian ra máu ô uế ấy, người ấy phải được xem như trong kỳ kinh: người ấy ô uế.",
+          "R": "Có khi một người phụ nữ bị ra máu nhiều ngày mà không phải kỳ kinh. Hoặc máu có thể cứ ra sau khi đáng lẽ kỳ kinh đã hết. Bao lâu còn ra máu, người ấy vẫn ô uế, giống như trong kỳ kinh."
+        },
+        "ko": {
+          "L": "그리고 여자가 월경 때가 아닌데 여러 날 동안 피의 유출이 있거나, 월경 기간을 넘어서 유출이 있으면, 그 부정한 유출이 있는 모든 날 동안 그 여자는 월경으로 불결한 날들처럼 될 것이다. 그 여자는 부정하다.",
+          "B": "여자가 월경 때가 아닌데도 여러 날 동안 피를 흘리거나, 월경 기간이 지났는데도 피가 계속 흐르면, 그 부정한 유출이 있는 동안에는 월경 기간과 마찬가지로 부정하다.",
+          "R": "어떤 여자는 월경 때가 아닌데도 여러 날 동안 피를 흘린다. 또는 월경이 끝나야 할 때가 지났는데도 피가 계속 흐를 수 있다. 피가 흐르는 동안에는 그 여자는 월경 때와 마찬가지로 부정하다."
         }
       },
       "decisions": [
@@ -2895,6 +3376,16 @@
           "L": "Kila kitanda atakacholalia siku zote za majimaji yake kitakuwa kwake kama kitanda cha unajisi wa hedhi yake, na kila kitu atakachokalia kitakuwa najisi, kama [katika] unajisi wa hedhi yake.",
           "B": "Muda wote damu inapotoka, kitanda chochote anachokilalia kitahesabiwa kama kitanda chake wakati wa hedhi yake, na kitu chochote anachokikalia kitakuwa najisi, kama ilivyo wakati wa hedhi yake.",
           "R": "Muda wote anapotokwa na damu, kitanda chochote anachokilalia ni najisi, kama ilivyo wakati wa hedhi yake. Kitu chochote anachokikalia ni najisi pia."
+        },
+        "vi": {
+          "L": "Mọi giường người ấy nằm lên suốt những ngày bị chảy sẽ đối với người ấy như giường trong kỳ kinh nguyệt, và mọi vật người ấy ngồi lên sẽ bị ô uế, như sự ô uế của kỳ kinh nguyệt.",
+          "B": "Suốt thời gian ra máu, giường nào người ấy nằm lên phải xem như giường trong kỳ kinh, và vật gì người ấy ngồi lên đều bị ô uế như trong kỳ kinh.",
+          "R": "Bao lâu còn ra máu, giường nào người ấy nằm lên đều ô uế, như trong kỳ kinh. Vật gì người ấy ngồi lên cũng ô uế."
+        },
+        "ko": {
+          "L": "그 여자가 유출이 있는 모든 날 동안 눕는 모든 침상은 월경 때의 침상과 같을 것이며, 그 여자가 앉는 모든 물건도 월경의 부정함처럼 부정해질 것이다.",
+          "B": "유출이 계속되는 동안 그 여자가 눕는 침상은 모두 월경 기간의 침상처럼 여겨야 하고, 그 여자가 앉는 물건도 모두 월경 기간과 마찬가지로 부정해진다.",
+          "R": "피가 흐르는 동안 그 여자가 눕는 침대는 월경 때와 마찬가지로 부정하다. 그 여자가 앉는 것도 모두 부정하다."
         }
       },
       "decisions": [
@@ -2970,6 +3461,16 @@
           "L": "Na kila mtu atakayevigusa atakuwa najisi, naye atafua nguo zake na kuoga kwa maji, naye atakuwa najisi mpaka jioni.",
           "B": "Mtu yeyote anayevigusa vitu hivyo anakuwa najisi. Atafua nguo zake na kuoga kwa maji, naye atabaki najisi mpaka jioni.",
           "R": "Mtu yeyote anayegusa vitu hivyo anakuwa najisi. Lazima afue nguo zake na kuoga. Atakuwa najisi mpaka jioni."
+        },
+        "vi": {
+          "L": "Ai đụng đến những vật ấy sẽ bị ô uế, và sẽ giặt áo xống mình, tắm trong nước, và bị ô uế cho đến chiều tối.",
+          "B": "Ai đụng đến những vật ấy thì bị ô uế; người ấy phải giặt quần áo mình và tắm trong nước, và người ấy bị ô uế cho đến chiều tối.",
+          "R": "Ai đụng đến những vật ấy thì bị ô uế. Người ấy phải giặt quần áo và tắm. Người ấy sẽ bị ô uế cho đến chiều tối."
+        },
+        "ko": {
+          "L": "그리고 그것들을 만지는 사람은 누구나 부정해질 것이니, 그는 자기 옷을 빨고 물로 목욕해야 하고, 저녁까지 부정할 것이다.",
+          "B": "그런 것을 만지는 사람은 누구든지 부정해진다. 그 사람은 옷을 빨고 물로 목욕해야 하며, 저녁까지 부정하다.",
+          "R": "그런 것을 만지는 사람은 누구든지 부정해진다. 그 사람은 옷을 빨고 목욕해야 한다. 그 사람은 저녁까지 부정하다."
         }
       },
       "decisions": [
@@ -3039,6 +3540,16 @@
           "L": "Na ikiwa atakuwa safi kutoka majimaji yake, atajihesabia siku saba, na baada ya [hapo] atakuwa safi.",
           "B": "Damu yake ikishakoma, atahesabu siku saba; kisha atakuwa safi.",
           "R": "Damu yake ikikoma, lazima asubiri siku saba. Baada ya hapo atakuwa safi."
+        },
+        "vi": {
+          "L": "Nếu người ấy được tinh sạch khỏi sự chảy máu, người ấy sẽ đếm cho mình bảy ngày, và sau [đó] người ấy sẽ được tinh sạch.",
+          "B": "Khi người ấy đã hết ra máu, người ấy phải đếm bảy ngày, rồi người ấy sẽ được tinh sạch.",
+          "R": "Khi người ấy hết ra máu, người ấy phải đợi bảy ngày. Sau đó người ấy sẽ được tinh sạch."
+        },
+        "ko": {
+          "L": "그리고 그 여자가 그 유출에서 정결하게 되면, 그 여자는 칠 일을 세어야 하고, 그 뒤에 정결해질 것이다.",
+          "B": "유출이 멈추면 그 여자는 칠 일을 세어야 하고, 그 뒤에 정결해진다.",
+          "R": "피가 멈추면 그 여자는 칠 일을 기다려야 한다. 그 뒤에 정결해진다."
         }
       },
       "decisions": [
@@ -3137,6 +3648,16 @@
           "L": "Na siku ya nane atajitwalia hua wawili au makinda mawili ya njiwa, naye atawaleta kwa kuhani, mlangoni pa Hema la Kukutania.",
           "B": "Siku ya nane atapata hua wawili au makinda mawili ya njiwa na kumletea kuhani mlangoni pa Hema la Kukutania.",
           "R": "Siku ya nane lazima apate hua wawili au makinda mawili ya njiwa. Lazima amletee kuhani ndege hao mlangoni pa Hema la Kukutania."
+        },
+        "vi": {
+          "L": "Đến ngày thứ tám người ấy sẽ lấy cho mình hai con chim cu hoặc hai con bồ câu non và đem chúng đến cho thầy tế lễ, tại lối vào Lều Hội Kiến.",
+          "B": "Đến ngày thứ tám người ấy phải bắt hai con chim cu hoặc hai con bồ câu non đem đến cho thầy tế lễ tại lối vào Lều Hội Kiến.",
+          "R": "Đến ngày thứ tám người ấy phải bắt hai con chim cu hoặc hai con bồ câu non. Người ấy phải đem chúng đến cho thầy tế lễ tại lối vào Lều Hội Kiến."
+        },
+        "ko": {
+          "L": "그리고 여덟째 날에 그 여자는 산비둘기 두 마리나 집비둘기 새끼 두 마리를 가져다가 회막 입구로 제사장에게 가져와야 한다.",
+          "B": "여덟째 날에 그 여자는 산비둘기 두 마리나 집비둘기 새끼 두 마리를 가져다가 회막 입구에 있는 제사장에게 가져와야 한다.",
+          "R": "여덟째 날에 그 여자는 산비둘기 두 마리나 집비둘기 새끼 두 마리를 가져와야 한다. 그것을 회막 입구에 있는 제사장에게 가져와야 한다."
         }
       },
       "decisions": [
@@ -3217,6 +3738,16 @@
           "L": "Na kuhani atamtoa mmoja [kuwa] sadaka ya dhambi na mwingine [kuwa] sadaka ya kuteketezwa, na kuhani atafanya upatanisho kwa ajili yake mbele za {{divine_name:BWANA|Yahwe}} kwa sababu ya majimaji ya unajisi wake.'",
           "B": "Kuhani atamtoa ndege mmoja kuwa sadaka ya dhambi na mwingine kuwa sadaka ya kuteketezwa, na hivyo atamfanyia upatanisho mbele za {{divine_name:BWANA|Yahwe}} kwa sababu ya kutokwa kwake na damu kulikomtia unajisi.'",
           "R": "Lazima kuhani amtoe ndege mmoja kuwa sadaka ya dhambi na mwingine kuwa sadaka ya kuteketezwa. Kwa njia hii kuhani atamfanyia mwanamke huyo upatanisho mbele za {{divine_name:BWANA|Yahwe}} kwa sababu ya kutokwa kwake na damu.'"
+        },
+        "vi": {
+          "L": "Thầy tế lễ sẽ dâng một con [làm] tế lễ chuộc tội và con kia [làm] của lễ thiêu, và thầy tế lễ sẽ chuộc tội cho người ấy trước mặt {{divine_name:CHÚA|Gia-vê}} vì sự chảy máu ô uế của người ấy.'",
+          "B": "Thầy tế lễ phải dâng một con làm tế lễ chuộc tội và con kia làm của lễ thiêu. Như vậy thầy tế lễ sẽ chuộc tội cho người ấy trước mặt {{divine_name:CHÚA|Gia-vê}} vì sự ra máu ô uế của người ấy.'",
+          "R": "Thầy tế lễ phải dâng một con làm tế lễ chuộc tội và con kia làm của lễ thiêu. Như vậy thầy tế lễ sẽ chuộc tội cho người phụ nữ ấy trước mặt {{divine_name:CHÚA|Gia-vê}} vì sự ra máu của người ấy.'"
+        },
+        "ko": {
+          "L": "그리고 제사장은 하나는 속죄제물로, 하나는 번제물로 드려야 한다. 그리고 제사장은 그 여자의 부정한 유출 때문에 {{divine_name:주|야훼}} 앞에서 그 여자를 위하여 속죄해야 한다.'",
+          "B": "제사장은 하나는 속죄제물로, 다른 하나는 번제물로 바쳐, 그 여자의 부정한 유출 때문에 {{divine_name:주|야훼}} 앞에서 그 여자를 위하여 속죄해야 한다.'",
+          "R": "제사장은 한 마리는 속죄제물로, 다른 한 마리는 번제물로 바쳐야 한다. 이렇게 하여 제사장은 그 여자가 피를 흘린 것 때문에 {{divine_name:주|야훼}} 앞에서 그 여자를 위하여 속죄해야 한다.'"
         }
       },
       "decisions": [
@@ -3296,6 +3827,16 @@
           "L": "Na mtawatenga wana wa Israeli na unajisi wao, ili wasife katika unajisi wao kwa kuitia unajisi maskani {{deity_pronoun:yangu|Yangu}} iliyo katikati yao.",
           "B": "Ni lazima mwatenge Waisraeli mbali na unajisi wao, ili unajisi huo usiwaletee kifo wanapoitia unajisi maskani {{deity_pronoun:yangu|Yangu}}, iliyo kati yao.",
           "R": "Ni lazima mwaweke Waisraeli mbali na kile kinachowatia unajisi. Hapo hawatakufa kwa kulitia unajisi hema {{deity_pronoun:langu|Langu}}, hema lililoko hapa katikati yao."
+        },
+        "vi": {
+          "L": "Các ngươi phải giữ con cháu Y-sơ-ra-ên cách xa sự ô uế của họ, để họ không chết trong sự ô uế của mình khi làm ô uế Đền Tạm của {{deity_pronoun:ta|Ta}} [ở] giữa họ.",
+          "B": "Các ngươi phải giữ cho dân Y-sơ-ra-ên tránh xa sự ô uế của họ, để sự ô uế ấy không đem sự chết đến cho họ khi họ làm ô uế Đền Tạm của {{deity_pronoun:ta|Ta}} ở giữa họ.",
+          "R": "Các ngươi phải giữ cho dân Y-sơ-ra-ên tránh xa những gì làm cho họ ô uế. Như vậy họ sẽ không phải chết vì làm ô uế Đền Tạm của {{deity_pronoun:ta|Ta}}, là Đền Tạm đang ở ngay giữa họ."
+        },
+        "ko": {
+          "L": "그리고 너희는 이스라엘 자손을 그들의 부정함에서 떼어 놓아야 한다. 그래야 그들이 그들 가운데 있는 나의 성막을 더럽혀서 그들의 부정함 가운데서 죽지 않을 것이다.",
+          "B": "너희는 이스라엘 백성을 그들의 부정함에서 떼어 놓아야 한다. 그래야 그들이 자기들 가운데 있는 내 성막을 더럽혀서 그 부정함 때문에 죽는 일이 없을 것이다.",
+          "R": "너희는 이스라엘 사람들을 부정하게 하는 것에서 그들을 떼어 놓아야 한다. 그래야 그들이 자기들 가운데 있는 내 장막을 더럽혀서 죽는 일이 없을 것이다."
         }
       },
       "decisions": [
@@ -3386,6 +3927,68 @@
           "reason": "Readable calls the tabernacle God's tent (as 17:4 does) and repeats \"the tent\" to keep the sentence clear.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030150310111",
+            "o030150310112"
+          ],
+          "choice": "\"Đền Tạm\" (tabernacle) at every level, with \"của Ta\" ({{deity_pronoun:ta|Ta}})",
+          "alternatives": [
+            "\"lều\""
+          ],
+          "reason": "The term sheet's name for the mishkan, kept at Readable too (where the English says \"tent\") so the dwelling has one name.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o030150310012"
+          ],
+          "choice": "\"Các ngươi\" here is God addressing Moses and Aaron",
+          "alternatives": [],
+          "reason": "The inner quotation (the law for Israel) closed at verse 30; verses 31-33 speak again to Moses and Aaron, as the meaning decision says.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030150310111",
+            "o030150310112"
+          ],
+          "choice": "\"성막\" (L, B), \"내 장막\" (R) for the tabernacle (mishkan)",
+          "alternatives": [
+            "\"성막\" at Readable"
+          ],
+          "reason": "As the term sheet for Exodus to Deuteronomy; Readable says \"tent\", as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3438,6 +4041,16 @@
           "L": "Hii [ndiyo] sheria ya yule anayetokwa na majimaji, na ya [yule] ambaye shahawa zinamtoka, hata akawa najisi kwa hizo,",
           "B": "Haya ndiyo maelekezo kuhusu mwanamume anayetokwa na majimaji, na mwanamume anayetokwa na shahawa zikamfanya kuwa najisi,",
           "R": "Hizi ndizo taratibu za mwanamume anayetokwa na majimaji. Ni pia kwa ajili ya mwanamume anayekuwa najisi shahawa zake zinapotoka."
+        },
+        "vi": {
+          "L": "Đây [là] luật về người bị chảy dịch, và về [người] có tinh dịch xuất ra khiến mình bị ô uế,",
+          "B": "Đó là những điều dạy về người đàn ông bị chảy dịch, về người đàn ông xuất tinh và vì thế bị ô uế,",
+          "R": "Đó là những luật lệ về người đàn ông bị chảy dịch. Những luật lệ ấy cũng dành cho người đàn ông bị ô uế vì xuất tinh."
+        },
+        "ko": {
+          "L": "이것이 유출이 있는 사람과, 정액이 흘러나와 그것으로 부정하게 된 사람에 관한 율법이며,",
+          "B": "이것은 유출이 있는 남자와, 정액이 흘러나와 부정하게 된 남자에 관한 규례이며,",
+          "R": "이것은 몸에서 무엇이 흘러나오는 남자에 관한 규례이다. 정액이 나와서 부정하게 된 남자에 관한 규례이기도 하다."
         }
       },
       "decisions": [
@@ -3516,6 +4129,16 @@
           "L": "na ya [mwanamke] aliye dhaifu katika unajisi wa hedhi yake, na ya yule anayetokwa na majimaji, majimaji yake, kwa mwanamume na kwa mwanamke, na kwa mwanamume anayelala na [mwanamke] aliye najisi.\"",
           "B": "kwa mwanamke aliye katika hali ya hedhi yake, kwa mtu yeyote, mwanamume au mwanamke, anayetokwa na majimaji, na kwa mwanamume anayelala na mwanamke akiwa najisi.\"",
           "R": "Ni kwa ajili ya mwanamke wakati wa hedhi yake, na kwa mwanamume au mwanamke yeyote anayetokwa na majimaji. Tena ni kwa ajili ya mwanamume anayelala na mwanamke wakati yeye ni najisi.\""
+        },
+        "vi": {
+          "L": "và về [người đàn bà] đau yếu trong kỳ kinh nguyệt, và về người bị chảy dịch, dù nam hay nữ, và về người đàn ông nằm với [người đàn bà] ô uế.\"",
+          "B": "về người phụ nữ khó ở trong kỳ kinh nguyệt, về bất cứ ai, nam hay nữ, bị chảy dịch, và về người đàn ông ăn nằm với một người phụ nữ đang bị ô uế.\"",
+          "R": "Chúng dành cho người phụ nữ trong kỳ kinh hằng tháng, và cho bất cứ người đàn ông hay đàn bà nào bị chảy dịch. Chúng cũng dành cho người đàn ông ăn nằm với một người phụ nữ đang bị ô uế.\""
+        },
+        "ko": {
+          "L": "월경으로 앓는 [여자]와, 유출이 있는 사람, 곧 남자든 여자든 유출이 있는 사람과, 부정한 [여자]와 함께 눕는 남자에 관한 [율법]이다.\"",
+          "B": "월경 중인 여자와, 남자든 여자든 유출이 있는 사람과, 부정한 여자와 동침하는 남자에 관한 규례이다.\"",
+          "R": "이것은 월경을 하는 여자에 관한 규례이고, 몸에서 무엇이 흘러나오는 남자나 여자에 관한 규례이다. 그리고 부정한 여자와 잠자리를 같이하는 남자에 관한 규례이다.\""
         }
       },
       "decisions": [

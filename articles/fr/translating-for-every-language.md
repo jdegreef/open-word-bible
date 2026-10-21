@@ -4,7 +4,7 @@ summary: Comment le vingtième siècle a fait de la traduction de la Bible une e
 date: 2026-10-12
 order: 58
 section: translation
-source: f6ad6f3b1e4b
+source: 74135636865a
 ---
 Il existe plus de sept mille langues vivantes dans le monde. Certaines sont parlées par des centaines de millions de personnes, d'autres par quelques centaines. Pendant la plus grande partie de l'histoire, la traduction de la Bible n'en a atteint qu'une petite fraction. Au vingtième siècle, cela a changé. La traduction est devenue un effort délibéré, organisé et de plus en plus professionnel pour atteindre toutes les langues et, au cours des dernières décennies, elle est devenue avant tout le travail des locuteurs de ces langues eux-mêmes.
 
@@ -73,7 +73,7 @@ Le cas repose sur une distinction qui traverse toute traduction : entre ce qu'un
 
 ## La place d'Open Word Bible
 
-Open Word Bible n'est pas un projet pour des langues minoritaires. Ses langues sont pour l'instant l'anglais, l'espagnol, le français et le swahili, qui ont toutes déjà de nombreuses Bibles. Mais elle partage deux préoccupations avec le mouvement moderne. Sa licence CC0 permet à quiconque, y compris aux traducteurs vers d'autres langues, de l'utiliser et de l'adapter librement. Et parce que chaque phrase porte son raisonnement (voir [Montrer notre travail : ce qu'est un dossier de raisonnement](/articles/showing-the-work/)), un traducteur vers une autre langue peut voir ce qui a été décidé à propos du grec et de l'hébreu, et pas seulement un résultat en anglais. Ses brouillons sont faits avec l'aide de l'IA, et aucun n'est encore marqué comme relu ; comme chaque projet décrit ici, elle dépend de vérificateurs humains dont les noms sont consignés.
+Open Word Bible n'est pas un projet pour des langues minoritaires. Ses langues sont pour l'instant l'anglais, l'espagnol, le français, le swahili, le vietnamien et le coréen, qui ont toutes déjà de nombreuses Bibles. Mais elle partage deux préoccupations avec le mouvement moderne. Sa licence CC0 permet à quiconque, y compris aux traducteurs vers d'autres langues, de l'utiliser et de l'adapter librement. Et parce que chaque phrase porte son raisonnement (voir [Montrer notre travail : ce qu'est un dossier de raisonnement](/articles/showing-the-work/)), un traducteur vers une autre langue peut voir ce qui a été décidé à propos du grec et de l'hébreu, et pas seulement un résultat en anglais. Ses brouillons sont faits avec l'aide de l'IA, et aucun n'est encore marqué comme relu ; comme chaque projet décrit ici, elle dépend de vérificateurs humains dont les noms sont consignés.
 
 ## Sources
 

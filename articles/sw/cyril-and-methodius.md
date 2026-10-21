@@ -4,7 +4,7 @@ summary: Katika miaka ya 860 ndugu wawili kutoka Thesalonike walibuni alfabeti k
 date: 2026-10-12
 order: 46
 section: translation
-source: 56dc2fab6d01
+source: b76b9dc36e0a
 ---
 Mamia ya mamilioni ya watu huandika Kirusi, Kiukreni, Kibulgaria, Kiserbia na lugha nyingine kwa alfabeti ya **Kisiriliki**. Imepewa jina la mtaalamu wa Bizanti wa karne ya tisa, **Konstantino**, anayejulikana zaidi kwa jina la kitawa alilolichukua muda mfupi kabla ya kifo chake: **Kirili**. Hata hivyo karibu ni hakika kwamba Kirili hakubuni Kisiriliki. Alibuni alfabeti tofauti, **Kiglagoliti**, ili Waslavi waweze kuisikia Biblia kwa lugha yao wenyewe.
 
@@ -34,7 +34,7 @@ Kwa karne nyingi, Waslavi walikuwa na maandiko hasa katika vitabu vya ibada. Bib
 
 Kirili na Methodio wanaheshimiwa kama watakatifu na Wakristo wa Kiorthodoksi na Wakatoliki vilevile. Katika jambo moja msimamo wao uko wazi: walikataa wazo kwamba ni lugha chache tu takatifu zinazofaa kwa maandiko.
 
-Open Word Bible inasimama katika mapokeo hayo kwa namna ya kiasi. Inatafsiri kwa Kihispania, Kifaransa na Kiswahili pamoja na Kiingereza, kila moja kutoka Kiebrania na Kigiriki, ili hakuna lugha inayopokea nakala ya tafsiri nyingine, kama timu ya Genadio ilivyolazimika kukubali. Maandishi yake yanatolewa chini ya leseni ya CC0, kwa hiyo hakuna anayehitaji ruhusa ili kuyatumia. Inatafsiriwa kwa msaada wa AI, na hakuna sehemu yake ambayo bado imeidhinishwa na wakaguzi wa kibinadamu wanaotajwa kwa majina.
+Open Word Bible inasimama katika mapokeo hayo kwa namna ya kiasi. Inatafsiri kwa Kihispania, Kifaransa, Kiswahili, Kivietinamu na Kikorea pamoja na Kiingereza, kila moja kutoka Kiebrania na Kigiriki, ili hakuna lugha inayopokea nakala ya tafsiri nyingine, kama timu ya Genadio ilivyolazimika kukubali. Maandishi yake yanatolewa chini ya leseni ya CC0, kwa hiyo hakuna anayehitaji ruhusa ili kuyatumia. Inatafsiriwa kwa msaada wa AI, na hakuna sehemu yake ambayo bado imeidhinishwa na wakaguzi wa kibinadamu wanaotajwa kwa majina.
 
 ## Vyanzo
 

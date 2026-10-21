@@ -4,7 +4,7 @@ summary: La plupart des traductions modernes sont protégées par le droit d'aut
 date: 2026-10-10
 order: 1
 section: method
-source: 56c88cbd5b15
+source: 53dfcb154237
 ---
 Il existe déjà beaucoup de bonnes traductions de la Bible. Alors pourquoi en commencer une autre ?
 
@@ -48,4 +48,4 @@ Le dossier à côté du verset dit pourquoi. Jean emploie le même verbe en 12:3
 
 ## Où nous en sommes
 
-Le projet est jeune. Des livres des deux Testaments sont en cours de rédaction en anglais, et l'espagnol, le français et le swahili suivent, chacun à partir du grec et de l'hébreu. Chaque phrase est donnée avec son raisonnement complet, et la page [Lire](/read/) montre ce qui est traduit jusqu'ici. Le projet est là pour montrer la méthode et pour être critiqué. Si vous lisez le grec ou l'hébreu, ou si vous remarquez simplement une phrase qui sonne mal, le [projet sur GitHub](https://github.com/jdegreef/open-word-bible) est l'endroit où le dire.
+Le projet est jeune. Des livres des deux Testaments sont en cours de rédaction en anglais, et l'espagnol, le français, le swahili, le vietnamien et le coréen suivent, chacun à partir du grec et de l'hébreu. Chaque phrase est donnée avec son raisonnement complet, et la page [Lire](/read/) montre ce qui est traduit jusqu'ici. Le projet est là pour montrer la méthode et pour être critiqué. Si vous lisez le grec ou l'hébreu, ou si vous remarquez simplement une phrase qui sonne mal, le [projet sur GitHub](https://github.com/jdegreef/open-word-bible) est l'endroit où le dire.
