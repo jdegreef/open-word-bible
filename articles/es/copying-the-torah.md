@@ -6,63 +6,39 @@ order: 23
 nav_title: Las reglas de un rollo de la Torá
 section: history
 part: ot
-source: c9c4ea88d489
+source: 36a727788ddf
 ---
 Si hoy visitas una sinagoga, quizá veas cómo se saca el rollo de la Torá del arca, se desenrolla y se lee en voz alta. Ese rollo lo escribió a mano un escriba formado, siguiendo reglas que tienen más de mil años. Una sola letra que faltara lo haría no apto para la lectura pública.
 
-Estas reglas son uno de los ejemplos más notables de la historia de una comunidad que intenta transmitir un texto sin cambios. Este artículo expone cuáles son las reglas, de dónde vienen y qué pueden y qué no pueden decirnos sobre la exactitud del Antiguo Testamento.
+## De dónde vienen las reglas
 
-## Dónde están escritas las reglas
-
-Las reglas se fueron formando a lo largo de siglos. Las fuentes principales son:
-
-- **La Misná y el Talmud.** La Misná, editada hacia el año 200 d. C., y el Talmud de Babilonia, completado hacia el 500-600 d. C., tratan de cómo deben escribirse los rollos sagrados, sobre todo en tratados como *Meguilá*, *Menajot*, *Shabat* y *Guitín*.
-- **Soferim** («Escribas»), un breve tratado compilado después del Talmud, probablemente en el siglo VIII d. C., que reúne en un solo lugar las reglas de los escribas.
-- **Maimónides** (1138-1204), el gran jurista judío, que codificó las reglas en su *Mishné Torá*, en la sección sobre las leyes de los tefilín, la mezuzá y el rollo de la Torá.
-
-Es importante tener claras las fechas. Son reglas rabínicas puestas por escrito en los primeros siglos de la era común y después. Algunas reflejan costumbres mucho más antiguas, pero no describen cómo trabajaba cada escriba en tiempos de los profetas, y los Rollos del Mar Muerto muestran que la práctica en el periodo del Segundo Templo era más variada (Tov 2004). Las reglas nos dicen cómo se protegió el texto desde la Antigüedad tardía en adelante: el periodo en que se copió el texto masorético, la base de nuestro Antiguo Testamento.
+Las reglas se exponen en el Talmud de Babilonia (completado hacia el 500-600 d. C.), en un tratado posterior llamado *Soferim* («Escribas») y en el código legal de **Maimónides** (1138-1204). Son reglas rabínicas de la Antigüedad tardía y de después. No describen cómo trabajaba cada escriba en tiempos de los profetas, y los Rollos del Mar Muerto muestran que la práctica anterior era más variada (Tov 2004). Lo que muestran es cómo se protegió el texto en los siglos en que se copió el texto masorético, la base de nuestro Antiguo Testamento.
 
 ## Las reglas en sí
 
-Estos son algunos de los requisitos principales para un rollo de la Torá, tal como los describen el Talmud y Maimónides.
+**Copiar de un texto escrito, nunca de memoria.** El Talmud prohíbe escribir ni una sola letra de la Escritura si no es a partir de una copia escrita (*Meguilá* 18b). Por bien que el escriba conozca el texto, mira el ejemplar para cada palabra. Esto protege contra el error más natural de todos: escribir lo que *esperas* que diga el texto. Por costumbre, el escriba además dice cada palabra en voz alta antes de escribirla.
 
-**Los materiales.** El rollo debe escribirse sobre la piel preparada de un animal ritualmente puro, cosida con tendones de un animal puro. La tinta debe ser negra y duradera. La superficie de escritura debe pautarse con líneas guía (*sirtut*) antes de empezar a escribir.
+**Cada letra entera y separada.** Cada letra debe estar bien formada, no debe tocar a la de al lado y debe estar rodeada de pergamino en blanco. Una letra rota, o una que pudiera tomarse por otra, hace que el rollo no sea apto hasta que se corrija. El hebreo tiene varios pares de letras que se parecen, y esta regla las mantiene separadas.
 
-**Copiar de un texto escrito, nunca de memoria.** El Talmud dice que está prohibido escribir una sola letra de la Escritura si no es a partir de una copia escrita (Talmud de Babilonia, *Meguilá* 18b). Por bien que el escriba conozca el texto, debe mirar el ejemplar para cada palabra. Esta sola regla protege contra el error más natural de todos: escribir lo que *esperas* que diga el texto en lugar de lo que dice.
+**La disposición forma parte del texto.** La Torá se divide mediante espacios «abiertos», que empiezan una línea nueva, y espacios «cerrados» dentro de la línea. Un rollo que los coloque mal no es apto. El Cántico del Mar (Éxodo 15) se dispone como ladrillos en un muro.
 
-**Decir cada palabra antes de escribirla.** Por costumbre, el escriba lee en voz alta cada palabra del ejemplar antes de escribirla, de modo que el ojo, la boca y la mano atiendan a la misma palabra.
+**El nombre divino.** Antes de escribir el nombre de Dios, el escriba se detiene para proponerse escribir el nombre santo. Una vez escrito, no puede borrarse (Maimónides, *Mishné Torá*, Fundamentos de la Torá 6:1-2).
 
-**Cada letra entera y separada.** Cada letra debe estar bien formada y no debe tocar a la de al lado; cada una debe estar rodeada de pergamino en blanco. Una letra rota o que pudiera confundirse con otra hace que el rollo no sea apto hasta que se corrija. El hebreo tiene varios pares de letras que se parecen, y estas reglas existen para mantenerlas distintas.
-
-**La disposición forma parte del texto.** La Torá se divide en secciones mediante dos tipos de espacio: secciones «abiertas», que empiezan una línea nueva, y secciones «cerradas», que dejan un espacio dentro de la línea. Maimónides las enumera todas, libro por libro, y un rollo que las coloque mal no es apto. Algunos pasajes tienen una disposición especial: el Cántico del Mar (Éxodo 15) se escribe con un patrón que parece ladrillos colocados en un muro, y el Cántico de Moisés (Deuteronomio 32), en dos columnas.
-
-**El nombre divino.** Antes de escribir el nombre de Dios, el escriba debe detenerse y proponerse conscientemente escribir el nombre santo. Una vez escrito, el nombre no puede borrarse (Maimónides, *Mishné Torá*, Fundamentos de la Torá 6:1-2). Si un escriba se equivoca en un nombre divino, esa parte del rollo no puede simplemente rasparse y corregirse; hay que sustituir la hoja.
-
-**Una letra importa.** Maimónides dictamina que un rollo de la Torá al que le falte una sola letra, o que tenga una letra de más, no es apto para la lectura pública hasta que se corrija (*Mishné Torá*, Leyes de los tefilín, la mezuzá y el rollo de la Torá 7:11).
-
-**La corrección tiene un límite.** Los errores corrientes pueden corregirse. Pero el Talmud discute cuántos errores puede contener una columna sin dejar de ser reparable, y dice que, pasado ese punto, el rollo debe retirarse en lugar de corregirse (Talmud de Babilonia, *Menajot* 29b). Un rollo que no puede usarse no se destruye; se guarda en una *guenizá*, un depósito para textos sagrados gastados, o se entierra. La famosa Guenizá de El Cairo, descubierta en la década de 1890, contenía cientos de miles de fragmentos de este tipo, entre ellos manuscritos hebreos de la Biblia desde el siglo X en adelante.
+**Una letra importa, y la corrección tiene un límite.** Un rollo al que le falte una letra, o que tenga una de más, no es apto hasta que se corrija (*Mishné Torá*, Leyes de los tefilín, la mezuzá y el rollo de la Torá 7:11). Una columna con demasiados errores no puede siquiera remendarse (*Menajot* 29b). El rollo se retira a una *guenizá*, un depósito para textos sagrados gastados, o se entierra. La guenizá de una sinagoga de El Cairo, que llamó la atención de los especialistas en la década de 1890, contenía cientos de miles de fragmentos de este tipo.
 
 ## Contar las letras
 
-El Talmud da una explicación llamativa de la palabra *soferim*, «escribas»: a los primeros escribas se les llamó así porque *contaban* (la misma raíz) todas las letras de la Torá. Señala que la letra *vav* de la palabra «vientre» en Levítico 11:42 es la letra central de la Torá, y que la palabra repetida que significa «indagó con diligencia» en Levítico 10:16 es su palabra central (Talmud de Babilonia, *Kidushín* 30a).
-
-Los masoretas, los escribas y eruditos que trabajaron aproximadamente entre los siglos VI y X d. C., llevaron esto más lejos. En los márgenes de sus manuscritos anotaban cuántas veces aparecen palabras poco comunes, y en las notas al final de cada libro registraban el número de versículos y el versículo central. Algunas Biblias hebreas impresas todavía incluyen estos recuentos. Contar no detecta todos los errores posibles, pero es un control muy eficaz: un rollo cuyos totales no cuadran se ha torcido en algún punto. Hay más sobre los masoretas en [Los masoretas: guardianes del texto hebreo](/articles/the-masoretes/).
+El Talmud dice que a los primeros escribas se les llamó *soferim* porque *contaban* (la misma raíz) las letras de la Torá. Señala la letra central de la Torá, en la palabra «vientre» de Levítico 11:42 (*Kidushín* 30a). Los [masoretas](/articles/the-masoretes/) llevaron el recuento mucho más lejos, con notas sobre el total de versículos y sobre grafías poco comunes. Una copia cuyos totales no cuadran se ha torcido en algún punto.
 
 ## ¿Funcionó?
 
-La mejor prueba de un sistema de copia es comparar copias hechas muy lejos unas de otras en el tiempo y en el espacio. Dos comparaciones son especialmente reveladoras.
-
-**Manuscritos medievales entre sí.** Los manuscritos medievales de la Biblia hebrea, copiados en países distintos, coinciden entre sí en un grado notable. En el siglo XVIII, Benjamin Kennicott y Giovanni de Rossi cotejaron cientos de manuscritos hebreos. La mayoría de las diferencias que encontraron eran cuestiones de ortografía, sobre todo si se escribía o no una letra vocálica, y muy pocas afectaban al sentido. Como resume Ernst Würthwein, los manuscritos medievales transmiten en esencia una sola tradición textual.
-
-**Manuscritos medievales frente a los Rollos del Mar Muerto.** Hasta 1947, los manuscritos completos más antiguos de la Biblia hebrea eran de alrededor del año 1000 d. C. Entonces los Rollos del Mar Muerto aportaron copias mil años más antiguas. Muchas de ellas, sobre todo las posteriores al siglo I d. C., como los rollos de Masada y de Wadi Murabba'at, son casi idénticas en sus consonantes al texto masorético medieval. Los rollos hallados en Qumrán son más variados, un punto que se examina en [Lo que muestran los Rollos del Mar Muerto sobre el texto de la Biblia](/articles/what-the-dead-sea-scrolls-show/). Pero un grupo numeroso de ellos, que los especialistas llaman «protomasoréticos», tiene ya el texto que los rabinos y los masoretas guardarían con tanto cuidado.
-
-Dicho de otro modo, las reglas no crearon el texto masorético; preservaron un texto que ya existía. Desde aproximadamente el siglo I d. C. en adelante, la transmisión de ese texto fue extraordinariamente estable.
+Los manuscritos hebreos de la Edad Media, copiados en países distintos, coinciden en un grado notable. Cuando Benjamin Kennicott cotejó cientos de ellos en el siglo XVIII, la mayoría de las diferencias eran grafías que no cambiaban el sentido. Los Rollos del Mar Muerto nos permiten mirar mil años más atrás. Los rollos bíblicos de Masada y de Wadi Murabba'at, de los siglos I y II d. C., son casi idénticos en sus consonantes al texto medieval (véase [Lo que muestran los Rollos del Mar Muerto](/articles/what-the-dead-sea-scrolls-show/)). Las reglas no crearon el texto masorético. Preservaron un texto que ya existía.
 
 ## Lo que las reglas no pueden hacer
 
-Sería un error afirmar más de lo que permiten las pruebas. Copiar con cuidado impide que un texto cambie; no puede corregir errores que ya estaban en el texto antes de que las reglas se impusieran. Los críticos textuales han identificado lugares del texto masorético en los que parece haber entrado un error temprano que luego se copió fielmente para siempre. Por ejemplo, 1 Samuel 13:1 da la edad de Saúl y la duración de su reinado de una forma en la que parece haberse perdido un número, y por eso las traducciones modernas lo resuelven de maneras distintas. En esos lugares, las traducciones antiguas y los Rollos del Mar Muerto a veces pueden ayudar.
+Copiar con cuidado impide que un texto cambie. No puede corregir un error cometido antes de que las reglas se impusieran. En 1 Samuel 13:1, el hebreo da la edad de Saúl y la duración de su reinado de una forma en la que parece haberse perdido un número, y así se ha copiado desde entonces.
 
-Así pues, las reglas para un rollo de la Torá no garantizan que cada letra esté tal como la escribió el autor. Son algo más modesto y más real: la prueba de que, durante más de mil años, generación tras generación de escribas trató cada letra como importante, y de que el texto que recibieron es el texto que transmitieron.
+Así pues, las reglas no garantizan que cada letra esté tal como la escribió el autor. Son algo más modesto y más real: la prueba de que, durante más de mil años, un escriba tras otro trató cada letra como importante y transmitió el texto que había recibido.
 
 ## Fuentes
 

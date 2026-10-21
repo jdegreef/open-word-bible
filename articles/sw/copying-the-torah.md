@@ -6,63 +6,39 @@ order: 23
 nav_title: Kanuni za hati-kunjo ya Torati
 section: history
 part: ot
-source: c9c4ea88d489
+source: 36a727788ddf
 ---
-Ukitembelea sinagogi leo unaweza kuona hati-kunjo ya Torati ikitolewa katika sanduku lake, ikifunguliwa, na kusomwa kwa sauti. Hati-kunjo hiyo iliandikwa kwa mkono na mwandishi aliyefunzwa, akifuata kanuni zenye umri wa zaidi ya miaka elfu moja. Herufi moja tu ikikosekana, isingefaa kusomwa hadharani.
+Ukitembelea sinagogi leo unaweza kuona hati-kunjo ya Torati ikitolewa katika sanduku lake, ikifunguliwa na kusomwa kwa sauti. Hati-kunjo hiyo iliandikwa kwa mkono na mwandishi aliyefunzwa, akifuata kanuni zenye umri wa zaidi ya miaka elfu moja. Herufi moja tu ikikosekana, isingefaa kusomwa hadharani.
 
-Kanuni hizi ni mojawapo ya mifano ya ajabu zaidi katika historia ya jumuiya ikijaribu kurithisha maandiko bila kuyabadilisha. Makala hii inaeleza kanuni hizo ni zipi, zinatoka wapi, na kile zinachoweza na zisichoweza kutueleza kuhusu usahihi wa Agano la Kale.
+## Kanuni zinatoka wapi
 
-## Kanuni zimeandikwa wapi
-
-Kanuni hizi zilikua katika kipindi cha karne nyingi. Vyanzo vikuu ni:
-
-- **Mishna na Talmud.** Mishna, iliyohaririwa karibu mwaka 200 B.K., na Talmud ya Babeli, iliyokamilishwa karibu mwaka 500–600 B.K., zinajadili jinsi hati-kunjo takatifu zinavyopaswa kuandikwa, hasa katika vitabu kama *Megillah*, *Menahot*, *Shabbat* na *Gittin*.
-- **Soferim** ("Waandishi"), kitabu kifupi kilichokusanywa baada ya Talmud, pengine katika karne ya nane B.K., ambacho kinakusanya kanuni za waandishi mahali pamoja.
-- **Maimonides** (1138–1204), mwanachuoni mkuu wa sheria ya Kiyahudi, aliyezipanga kanuni hizo katika *Mishneh Torah* yake, katika sehemu ya sheria za tefillin, mezuzah na hati-kunjo ya Torati.
-
-Ni muhimu kuwa wazi kuhusu tarehe. Hizi ni kanuni za marabi zilizoandikwa katika karne za mwanzo za Enzi ya Kawaida na baadaye. Baadhi zinaakisi desturi za zamani zaidi sana, lakini hazielezi jinsi kila mwandishi alivyofanya kazi katika wakati wa manabii, na Hati-kunjo za Bahari ya Chumvi zinaonyesha kwamba desturi katika kipindi cha Hekalu la Pili zilikuwa za aina nyingi zaidi (Tov 2004). Kanuni hizi zinatueleza jinsi maandiko yalivyolindwa kuanzia mwishoni mwa zama za kale na kuendelea: kipindi ambacho maandiko ya Kimasoreti, msingi wa Agano letu la Kale, yalinakiliwa.
+Kanuni hizi zimeelezwa katika Talmud ya Babeli (iliyokamilishwa karibu mwaka 500–600 B.K.), katika kitabu cha baadaye kiitwacho *Soferim* ("Waandishi"), na katika kitabu cha sheria cha **Maimonides** (1138–1204). Hizi ni kanuni za marabi kuanzia mwishoni mwa zama za kale na baadaye. Hazielezi jinsi kila mwandishi alivyofanya kazi katika wakati wa manabii, na Hati-kunjo za Bahari ya Chumvi zinaonyesha kwamba desturi za awali zilikuwa za aina nyingi zaidi (Tov 2004). Kile zinachoonyesha ni jinsi maandiko yalivyolindwa katika karne ambazo maandiko ya Kimasoreti, msingi wa Agano letu la Kale, yalinakiliwa.
 
 ## Kanuni zenyewe
 
-Haya ni baadhi ya matakwa makuu kwa hati-kunjo ya Torati, kama Talmud na Maimonides wanavyoyaeleza.
+**Nakili kutoka maandishi, kamwe si kwa kukumbuka.** Talmud inakataza kuandika hata herufi moja ya maandiko isipokuwa kutoka nakala iliyoandikwa (*Megillah* 18b). Hata kama mwandishi anayajua maandiko vizuri kiasi gani, anaitazama nakala ya mfano kwa kila neno. Hili linalinda dhidi ya kosa la kawaida kuliko yote: kuandika kile *unachotarajia* maandiko yaseme. Kwa desturi mwandishi pia hulitamka kila neno kwa sauti kabla ya kuliandika.
 
-**Vifaa.** Hati-kunjo lazima iandikwe kwenye ngozi iliyotayarishwa ya mnyama aliye safi kidini, na kushonwa pamoja kwa mishipa ya mnyama aliye safi. Wino lazima uwe mweusi na wa kudumu. Kitu cha kuandikia lazima kipigwe mistari ya mwongozo (*sirtut*) kabla ya kuanza kuandika.
+**Kila herufi iwe kamili na iliyotengana.** Kila herufi lazima iundwe kwa usahihi, isiguse jirani yake, na izungukwe na ngozi tupu. Herufi iliyovunjika, au inayoweza kudhaniwa kuwa nyingine, inaifanya hati-kunjo isifae hadi irekebishwe. Kiebrania kina jozi kadhaa za herufi zinazofanana, na kanuni hii inazitenganisha.
 
-**Nakili kutoka maandishi, kamwe si kwa kukumbuka.** Talmud inasema kwamba ni marufuku kuandika hata herufi moja ya maandiko isipokuwa kutoka nakala iliyoandikwa (Talmud ya Babeli, *Megillah* 18b). Hata kama mwandishi anayajua maandiko vizuri kiasi gani, lazima aitazame nakala ya mfano kwa kila neno. Kanuni hii moja inalinda dhidi ya kosa la kawaida kuliko yote: kuandika kile *unachotarajia* maandiko yaseme badala ya kile yanachosema.
+**Mpangilio ni sehemu ya maandiko.** Torati imegawanywa kwa nafasi tupu "zilizo wazi", zinazoanza mstari mpya, na nafasi "zilizofungwa" ndani ya mstari. Hati-kunjo inayoziweka mahali pasipo sahihi haifai. Wimbo wa Bahari (Kutoka 15) umepangwa kama matofali ukutani.
 
-**Litamke kila neno kabla ya kuliandika.** Kwa desturi, mwandishi husoma kila neno kwa sauti kutoka nakala ya mfano kabla ya kuliandika, ili jicho, kinywa na mkono vyote vishughulikie neno lile lile.
+**Jina la Mungu.** Kabla ya kuandika jina la Mungu, mwandishi husita ili kukusudia jina takatifu. Likishaandikwa, haliwezi kufutwa (Maimonides, *Mishneh Torah*, Misingi ya Torati 6:1–2).
 
-**Kila herufi iwe kamili na iliyotengana.** Kila herufi lazima iundwe kwa usahihi na isiguse jirani yake; kila moja lazima izungukwe na ngozi tupu. Herufi iliyovunjika au inayoweza kudhaniwa kuwa herufi nyingine inaifanya hati-kunjo isifae hadi irekebishwe. Kiebrania kina jozi kadhaa za herufi zinazofanana, na kanuni hizi zipo ili kuzitofautisha.
-
-**Mpangilio ni sehemu ya maandiko.** Torati imegawanywa katika sehemu kwa aina mbili za nafasi tupu: sehemu "zilizo wazi", zinazoanza mstari mpya, na sehemu "zilizofungwa", zinazoacha nafasi ndani ya mstari. Maimonides anaziorodhesha zote, kitabu kwa kitabu, na hati-kunjo inayoziweka mahali pasipo sahihi haifai. Baadhi ya vifungu vina mpangilio maalum: Wimbo wa Bahari (Kutoka 15) unaandikwa kwa muundo unaofanana na matofali yaliyopangwa ukutani, na Wimbo wa Musa (Kumbukumbu la Torati 32) kwa safu mbili.
-
-**Jina la Mungu.** Kabla ya kuandika jina la Mungu, mwandishi anapaswa kusita na kukusudia kwa makini kuandika jina takatifu. Likishaandikwa, jina hilo haliwezi kufutwa (Maimonides, *Mishneh Torah*, Misingi ya Torati 6:1–2). Mwandishi akikosea katika jina la Mungu, sehemu hiyo ya hati-kunjo haiwezi kukwanguliwa tu na kusahihishwa; karatasi hiyo nzima lazima ibadilishwe.
-
-**Herufi moja ina maana.** Maimonides anaamua kwamba hati-kunjo ya Torati inayokosa hata herufi moja, au yenye herufi moja ya ziada, haifai kusomwa hadharani hadi isahihishwe (*Mishneh Torah*, Sheria za Tefillin, Mezuzah na Hati-kunjo ya Torati 7:11).
-
-**Kusahihisha kuna kikomo.** Makosa ya kawaida yanaweza kusahihishwa. Lakini Talmud inajadili ni makosa mangapi safu moja inaweza kuwa nayo na bado ikarekebishwa, na inasema kwamba zaidi ya kiwango hicho hati-kunjo lazima iwekwe kando badala ya kusahihishwa (Talmud ya Babeli, *Menahot* 29b). Hati-kunjo isiyoweza kutumika haiharibiwi; inahifadhiwa katika *genizah*, ghala la maandiko matakatifu yaliyochakaa, au inazikwa. Genizah maarufu ya Kairo, iliyogunduliwa katika miaka ya 1890, ilikuwa na mamia ya maelfu ya vipande vya aina hiyo, vikiwemo hati za Biblia ya Kiebrania kuanzia karne ya kumi na kuendelea.
+**Herufi moja ina maana, na kusahihisha kuna kikomo.** Hati-kunjo inayokosa herufi moja, au yenye herufi moja ya ziada, haifai hadi isahihishwe (*Mishneh Torah*, Sheria za Tefillin, Mezuzah na Hati-kunjo ya Torati 7:11). Safu yenye makosa mengi mno haiwezi kurekebishwa kabisa (*Menahot* 29b). Hati-kunjo hiyo inawekwa kando katika *genizah*, ghala la maandiko matakatifu yaliyochakaa, au inazikwa. Genizah ya sinagogi moja la Kairo, iliyoletwa kwa wasomi katika miaka ya 1890, ilikuwa na mamia ya maelfu ya vipande vya aina hiyo.
 
 ## Kuhesabu herufi
 
-Talmud inatoa maelezo ya kuvutia kuhusu neno *soferim*, "waandishi": waandishi wa mwanzo waliitwa hivyo kwa sababu *walihesabu* (shina lile lile) herufi zote za Torati. Inaeleza kwamba herufi *vav* katika neno la "tumbo" katika Mambo ya Walawi 11:42 ndiyo herufi ya katikati ya Torati, na kwamba neno linalorudiwa "alitafuta kwa bidii" katika Mambo ya Walawi 10:16 ndilo neno lake la katikati (Talmud ya Babeli, *Qiddushin* 30a).
-
-Wamasoreti, waandishi na wanachuoni waliofanya kazi kuanzia karibu karne ya sita hadi ya kumi B.K., walilipeleka jambo hili mbele zaidi. Pembezoni mwa hati zao waliandika mara ngapi maneno yasiyo ya kawaida yanatokea, na katika maelezo mwishoni mwa kila kitabu waliandika idadi ya mistari na mstari wa katikati. Baadhi ya Biblia za Kiebrania zilizochapishwa bado zina hesabu hizi. Kuhesabu hakunasi kila kosa linalowezekana, lakini ni kipimo chenye nguvu: hati-kunjo ambayo jumla zake hazilingani imekosea mahali fulani. Zaidi kuhusu Wamasoreti kuko katika [Wamasoreti: walinzi wa maandiko ya Kiebrania](/articles/the-masoretes/).
+Talmud inasema waandishi wa mwanzo waliitwa *soferim* kwa sababu *walihesabu* (shina lile lile) herufi za Torati. Inataja herufi ya katikati ya Torati, katika neno la "tumbo" katika Mambo ya Walawi 11:42 (*Qiddushin* 30a). [Wamasoreti](/articles/the-masoretes/) walipeleka kuhesabu mbele zaidi sana, kwa maelezo kuhusu jumla ya mistari na tahajia zisizo za kawaida. Nakala ambayo jumla zake hazilingani imekosea mahali fulani.
 
 ## Je, zilifanya kazi?
 
-Kipimo bora cha mfumo wa kunakili ni kulinganisha nakala zilizotengenezwa mbali kwa wakati na mahali. Ulinganisho miwili unaeleza mengi hasa.
-
-**Hati za zama za kati zikilinganishwa zenyewe kwa zenyewe.** Hati za Biblia ya Kiebrania kutoka Zama za Kati, zilizonakiliwa katika nchi tofauti, zinakubaliana kwa kiwango cha kushangaza. Katika karne ya kumi na nane, Benjamin Kennicott na Giovanni de Rossi walilinganisha mamia ya hati za Kiebrania. Tofauti nyingi walizozipata zilikuwa za tahajia, hasa kama herufi ya irabu iliandikwa au la, na chache sana ziliathiri maana. Kama Ernst Würthwein anavyofupisha, hati za zama za kati kimsingi zinarithisha mapokeo moja ya maandiko.
-
-**Hati za zama za kati zikilinganishwa na Hati-kunjo za Bahari ya Chumvi.** Hadi mwaka 1947, hati kamili za zamani zaidi za Biblia ya Kiebrania zilitoka karibu mwaka 1000 B.K. Kisha Hati-kunjo za Bahari ya Chumvi zikatoa nakala zenye umri wa miaka elfu moja zaidi. Nyingi kati yake, hasa zile za baada ya karne ya kwanza B.K., kama hati-kunjo kutoka Masada na Wadi Murabba'at, zinakaribia kufanana kabisa katika konsonanti zake na maandiko ya Kimasoreti ya zama za kati. Hati-kunjo zilizopatikana Qumran zina tofauti nyingi zaidi, jambo linalochunguzwa katika [Hati-kunjo za Bahari ya Chumvi zinaonyesha nini kuhusu maandiko ya Biblia](/articles/what-the-dead-sea-scrolls-show/). Lakini kundi kubwa kati yake, ambalo wasomi huliita "proto-Masoretic" (la kabla ya Kimasoreti), tayari lina maandiko ambayo marabi na Wamasoreti wangeyalinda kwa uangalifu mkubwa.
-
-Kwa maneno mengine, kanuni hizi hazikuunda maandiko ya Kimasoreti; zilihifadhi maandiko yaliyokuwepo tayari. Kuanzia karibu karne ya kwanza B.K. na kuendelea, urithishaji wa maandiko hayo ulikuwa thabiti kwa kiwango cha ajabu.
+Hati za Kiebrania za Zama za Kati, zilizonakiliwa katika nchi tofauti, zinakubaliana kwa kiwango cha kushangaza. Benjamin Kennicott alipolinganisha mamia yake katika karne ya kumi na nane, tofauti nyingi zilikuwa za tahajia ambazo hazikubadilisha maana. Hati-kunjo za Bahari ya Chumvi zinaturuhusu kutazama miaka elfu moja nyuma zaidi. Hati-kunjo za Biblia kutoka Masada na Wadi Murabba'at, za karne ya kwanza na ya pili B.K., zinakaribia kufanana kabisa katika konsonanti zake na maandiko ya zama za kati (ona [Hati-kunjo za Bahari ya Chumvi zinaonyesha nini](/articles/what-the-dead-sea-scrolls-show/)). Kanuni hizi hazikuunda maandiko ya Kimasoreti. Zilihifadhi maandiko yaliyokuwepo tayari.
 
 ## Kile ambacho kanuni haziwezi kufanya
 
-Ingekuwa kosa kudai zaidi ya kile ushahidi unachounga mkono. Kunakili kwa uangalifu kunazuia maandiko yasibadilike; hakuwezi kusahihisha makosa yaliyokuwa tayari katika maandiko kabla kanuni hizo hazijashika mizizi. Wataalamu wa uhakiki wa maandiko wamebaini mahali katika maandiko ya Kimasoreti ambapo kosa la mapema linaonekana kuingia na kisha kunakiliwa kwa uaminifu tangu hapo. Kwa mfano, 1 Samweli 13:1 inatoa umri wa Sauli na urefu wa utawala wake kwa namna inayoonekana kupoteza namba, ndiyo sababu tafsiri za kisasa zinaishughulikia kwa njia tofauti. Mahali kama hapo tafsiri za kale na Hati-kunjo za Bahari ya Chumvi wakati mwingine zinaweza kusaidia.
+Kunakili kwa uangalifu kunazuia maandiko yasibadilike. Hakuwezi kusahihisha kosa lililofanywa kabla kanuni hizo hazijashika mizizi. Katika 1 Samweli 13:1, Kiebrania kinatoa umri wa Sauli na urefu wa utawala wake kwa namna inayoonekana kupoteza namba, na kimenakiliwa hivyo tangu wakati huo.
 
-Kwa hiyo kanuni za hati-kunjo ya Torati si hakikisho kwamba kila herufi ni kama mwandishi wa awali alivyoiandika. Ni kitu cha kiasi zaidi na halisi zaidi: uthibitisho kwamba kwa zaidi ya miaka elfu moja, kizazi baada ya kizazi cha waandishi walichukulia kila herufi kuwa muhimu, na kwamba maandiko waliyoyapokea ndiyo maandiko waliyoyarithisha.
+Kwa hiyo kanuni hizi si hakikisho kwamba kila herufi ni kama mwandishi wa awali alivyoiandika. Ni kitu cha kiasi zaidi na halisi zaidi: ushahidi kwamba kwa zaidi ya miaka elfu moja, mwandishi baada ya mwandishi alichukulia kila herufi kuwa muhimu, na akarithisha maandiko aliyoyapokea.
 
 ## Vyanzo
 

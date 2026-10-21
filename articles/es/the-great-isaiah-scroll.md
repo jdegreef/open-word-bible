@@ -5,7 +5,7 @@ date: 2026-10-11
 order: 27
 section: history
 part: ot
-source: 3dec12dd8876
+source: 747d6430d6dc
 ---
 De todos los Rollos del Mar Muerto, uno se ha convertido en símbolo de todo el descubrimiento: el **Gran Rollo de Isaías**, que los especialistas llaman **1QIsa-a** (Cueva 1, Qumrán, Isaías, primera copia). Estaba entre los siete primeros rollos hallados en 1947, y es el único libro bíblico de los rollos que se conserva completo, los sesenta y seis capítulos, del primer versículo al último.
 
@@ -25,7 +25,7 @@ Cuando los especialistas estudiaron el rollo por primera vez, el resultado sorpr
 
 Esa conclusión se ha mantenido. Las diferencias entre 1QIsa-a y el texto masorético se agrupan en unos pocos tipos.
 
-**Ortografía.** Es con mucho la diferencia más común. El escriba de 1QIsa-a usaba una ortografía «plena», añadiendo consonantes como *waw* y *yod* para indicar vocales mucho más a menudo que el texto masorético. Es como la diferencia entre «psicología» y «sicología»: la palabra es la misma, la grafía no. Miles de las diferencias son de este tipo.
+**Ortografía.** Es con mucho la diferencia más común. El escriba de 1QIsa-a usaba una ortografía «plena», añadiendo consonantes como *waw* y *yod* para indicar vocales mucho más a menudo que el texto masorético. Es como la diferencia entre «psicología» y «sicología»: la palabra es la misma, la grafía no.
 
 **Gramática y pronunciación.** Algunas formas reflejan el hebreo de la época del propio escriba: terminaciones pronominales o formas verbales ligeramente distintas, y alguna influencia aramea ocasional.
 
@@ -55,7 +55,7 @@ Aun así, es un resultado de peso. Los manuscritos masoréticos en los que se ba
 
 ## Isaías y Open Word Bible
 
-Cuando Open Word Bible traduce Isaías, su punto de partida es el Códice de Leningrado de Westminster, un texto masorético. En los lugares donde el Gran Rollo de Isaías u otros testigos antiguos ofrecen una lectura que muchos especialistas prefieren, como en Isaías 53:11, la elección no se oculta. El registro de razonamiento de la frase nombra los testigos, muestra lo que lee cada uno y explica la decisión, para que el lector pueda discrepar si lo desea. Así es como una traducción debe tratar lo que nos han enseñado los Rollos del Mar Muerto: con gratitud, con cuidado y a la vista de todos.
+Cuando Open Word Bible traduce Isaías, su punto de partida es el Códice de Leningrado de Westminster, un texto masorético. En los tres versículos anteriores, el borrador actual conserva la lectura masorética: «verá» en [Isaías 53:11](/isa/53/), el león en 21:8 y «alguien respondió» en 40:6. Pero la elección no se oculta. El registro de razonamiento de cada frase nombra el Gran Rollo de Isaías, dice lo que lee y explica la decisión, y una nota al pie da al lector la lectura del rollo. En 53:11 la decisión se marca como incierta, y el registro señala que el sentido es parecido en cualquier caso. Así es como una traducción debe tratar lo que nos han enseñado los Rollos del Mar Muerto: con gratitud, con cuidado y a la vista de todos.
 
 ## Fuentes
 

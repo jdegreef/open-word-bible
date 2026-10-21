@@ -5,7 +5,7 @@ date: 2026-10-11
 order: 38
 section: history
 part: nt
-source: d942276f5685
+source: 7cc4b236daa1
 ---
 Kwa nini Agano Jipya lina vitabu hivi ishirini na saba, na si vingine? Hadithi inayopendwa na wengi inasema kwamba mfalme Konstantino, au Baraza la Nikea mwaka 325, ndiye aliyechagua vitabu na kuvikandamiza vingine. Hadithi hiyo, iliyofanywa maarufu na riwaya, si kweli: Baraza la Nikea halikujadili kanoni hata kidogo. **Kanoni** ni orodha ya vitabu vinavyokubaliwa kuwa Maandiko. Historia halisi ni ndefu zaidi, ilikwenda hatua kwa hatua zaidi, na kwa njia nyingi inavutia zaidi.
 
@@ -23,7 +23,7 @@ Kufikia katikati ya karne ya pili, kiini cha Agano Jipya kilikuwa kikitumika kwa
 
 **Injili.** Karibu mwaka 150 B.K., **Justino Shahidi** anaeleza ibada ya Kikristo huko Roma: siku ya Jumapili, "kumbukumbu za mitume au maandishi ya manabii yanasomwa, kadiri muda unavyoruhusu" (*Utetezi wa Kwanza* 67). Anaziita kumbukumbu hizi "Injili." Mwanafunzi wa Justino, **Tatiano**, karibu mwaka 170 B.K., alitunga *Diatessaron* ("kupitia nne"), simulizi moja linaloendelea lililofumwa kutoka Mathayo, Marko, Luka na Yohana, jambo linaloonyesha kwamba hizi nne tayari zilikuwa kundi linalotambuliwa. Karibu mwaka 180 B.K., **Irenayo** wa Lyon alihoji kwamba hakuwezi kuwa na Injili zaidi wala pungufu ya nne, akizilinganisha na pepo nne na pembe nne za dunia (*Dhidi ya Uzushi* 3.11.8). Hoja yake si ya kawaida, lakini dhana yake iko wazi: Injili nne ndizo zilikuwa Injili za kanisa. Charles Hill, katika *Who Chose the Gospels?*, anaonyesha kwamba Injili hii ya sehemu nne ilikuwa imethibitika mapema zaidi na kwa upana zaidi kuliko inavyodhaniwa mara nyingi.
 
-**Paulo.** Barua za Paulo zilikusanywa mapema (ona [Jinsi Agano Jipya lilivyoandikwa](/articles/how-the-new-testament-was-written/)). Waandishi wa mwanzoni mwa karne ya pili kama Klementi wa Roma, Ignatio wa Antiokia na Polikarpo wa Smirna wanazijua kadhaa kati yake na kuzirudia. Kodeksi ya mafunjo **P46**, ya karibu mwaka 200 B.K., ni mkusanyiko wa barua za Paulo unaojumuisha Waebrania.
+**Paulo.** Barua za Paulo zilikusanywa mapema (ona [Jinsi Agano Jipya lilivyoandikwa](/articles/how-the-new-testament-was-written/)). Waandishi wa karibu mwaka 100 B.K., kama Klementi wa Roma, Ignatio wa Antiokia na Polikarpo wa Smirna wanazijua kadhaa kati yake na kuzirudia. Kodeksi ya mafunjo **P46**, ya karibu mwaka 200 B.K., ni mkusanyiko wa barua za Paulo unaojumuisha Waebrania.
 
 ## Marcion na changamoto ya kanoni fupi
 
@@ -63,6 +63,19 @@ Magharibi, mabaraza ya kanda huko **Hippo** (393) na **Karthago** (397 na 419), 
 
 Inafaa kuona mabaraza yalifanya nini. Hayakuunda kanoni; yalitambua na kuthibitisha vitabu ambavyo makanisa yalikuwa yakivisoma, katika hali nyingi, kwa karne mbili au zaidi.
 
+## Pembezoni baada ya Athanasio
+
+Makubaliano juu ya vitabu ishirini na saba hayakumaliza kila swali. Baadhi ya makanisa yalishika orodha zao wenyewe kwa karne nyingi.
+
+- **Makanisa ya Kisiria.** Peshitta, Biblia ya kawaida ya Kisiria tangu mwanzoni mwa karne ya tano, ina vitabu ishirini na viwili tu. Haina 2 Petro, 2 na 3 Yohana, Yuda na Ufunuo, na baadhi ya makanisa ya Kisiria bado yanasoma vile ishirini na viwili tu katika ibada (ona [Peshitta na Biblia ya Kisiria](/articles/the-peshitta/)).
+- **Kanisa la Ethiopia.** Kanisa la Kiorthodoksi la Tewahedo la Ethiopia linakubali vitabu ishirini na saba na pia, katika kile wasomi wanachokiita kanoni yake pana, vitabu kadhaa vya utaratibu wa kanisa na mafundisho, kama *Sinodos*, *Kitabu cha Agano*, *Klementi* ya Kige'ez na *Didascalia* (ona [Biblia za kale za Afrika: Kikopti na Kige'ez](/articles/coptic-and-ethiopic-bibles/)).
+
+Magharibi maswali ya zamani yalirudi wakati wa Matengenezo. Wasomi wa Renaissance walisoma tena Eusebio na Yeronimo na kuona kwamba baadhi ya vitabu viliwahi kubishaniwa. Erasmo na kardinali Mkatoliki Cajetan wote wawili walitilia shaka kwamba Paulo aliandika Waebrania. **Martin Luther** alienda mbali zaidi. Katika Agano Jipya lake la Kijerumani la Septemba 1522, aliviorodhesha Waebrania, Yakobo, Yuda na Ufunuo pamoja mwishoni, bila namba, mbali na vile vingine ishirini na vitatu. Katika utangulizi wake aliiita Yakobo "barua ya majani makavu" ikilinganishwa na vitabu ambavyo, kwa maoni yake, vilimwonyesha Kristo kwa uwazi zaidi, ingawa maneno hayo yaliondolewa katika matoleo ya baada ya 1537. Luther hakuviondoa vitabu hivyo vinne; alivitafsiri na kuvichapisha. Lakini aliviweka katika daraja la chini, na Biblia za Kilutheri zilishika mpangilio wake kwa muda mrefu.
+
+**Mtaguso wa Trento**, tarehe 8 Aprili 1546, lilijibu kwa kuorodhesha kila kitabu cha Maagano yote mawili, vikiwemo vyote ishirini na saba vya Agano Jipya, kuwa vitakatifu na vya kanoni. Maungamo ya Kireformed, kama Ungamo la Kifaransa la 1559 na Ungamo la Ubelgiji la 1561, yaliorodhesha pia vile ishirini na saba. Kwa hiyo Matengenezo, pamoja na mabishano yake yote, yalimalizika Wakatoliki na Waprotestanti wakiwa na Agano Jipya lilelile.
+
+Open Word Bible inatafsiri vitabu hivi ishirini na saba, kwa mpangilio ambao Biblia nyingi zinautumia leo. Mpangilio wenyewe ni mapokeo, si sehemu ya maandiko: miswada ya Kigiriki mara nyingi inaweka Matendo na barua za jumla kabla ya Paulo, na Waebrania wakati mwingine kinasimama kati ya barua za Paulo, kabla ya barua kwa Timotheo.
+
 ## Kanisa liliamuaje?
 
 Waandishi Wakristo wa mwanzo wanataja mambo kadhaa ya kuzingatia, ambayo wataalamu mara nyingi huyafupisha kama maswali matatu:
@@ -82,12 +95,14 @@ Vitabu kama *Injili ya Tomaso*, *Injili ya Petro* au *Injili ya Yuda* wakati mwi
 - Athanasio. *Barua ya Sikukuu* 39 (367 B.K.).
 - Bruce, F. F. *The Canon of Scripture*. Downers Grove, IL: InterVarsity, 1988.
 - Eusebio. *Historia ya Kanisa* 3.25; 6.25.
+- Mtaguso wa Trento. *Decree Concerning the Canonical Scriptures*. Kikao cha Nne, 8 Aprili 1546.
 - Gallagher, Edmon L., na John D. Meade. *The Biblical Canon Lists from Early Christianity: Texts and Analysis*. Oxford: Oxford University Press, 2017.
 - Hahneman, Geoffrey Mark. *The Muratorian Fragment and the Development of the Canon*. Oxford: Clarendon, 1992.
 - Hill, Charles E. *Who Chose the Gospels? Probing the Great Gospel Conspiracy*. Oxford: Oxford University Press, 2010.
 - Irenayo. *Dhidi ya Uzushi* 3.11.8.
 - Justino Shahidi. *Utetezi wa Kwanza* 67.
 - Kruger, Michael J. *Canon Revisited: Establishing the Origins and Authority of the New Testament Books*. Wheaton, IL: Crossway, 2012.
+- Luther, Martin. *Das Newe Testament Deutzsch*. Wittenberg, 1522. Utangulizi katika *Luther's Works*, juzuu 35, *Word and Sacrament I*. Philadelphia: Muhlenberg, 1960.
 - McDonald, Lee Martin. *The Biblical Canon: Its Origin, Transmission, and Authority*. Peabody, MA: Hendrickson, 2007.
 - Metzger, Bruce M. *The Canon of the New Testament: Its Origin, Development, and Significance*. Oxford: Clarendon, 1987.
 - Manukuu ya Biblia ni tafsiri halisi za makala hii yenyewe.

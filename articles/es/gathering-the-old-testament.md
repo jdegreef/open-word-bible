@@ -5,7 +5,7 @@ date: 2026-10-11
 order: 30
 section: history
 part: ot
-source: df9d825658b7
+source: 1fe910251df8
 ---
 Escribir un libro es una cosa. Reconocer una colección de libros como Escritura, una lista fija con un principio y un final, es otra. La palabra para esa lista es **canon**, de un término griego que designaba una vara de medir o una regla. Este artículo examina cómo los libros de la Biblia hebrea, el Antiguo Testamento cristiano, llegaron a reunirse en un canon, y por qué las Biblias judías, protestantes, católicas y ortodoxas todavía no tienen exactamente la misma lista.
 
@@ -44,11 +44,13 @@ El historiador **Josefo**, que escribía hacia el 95 d. C., dice que los judíos
 
 El apocalipsis conocido como **4 Esdras** (2 Esdras 14:44-47), escrito hacia el año 100 d. C., cuenta cómo Esdras, por inspiración divina, dictó noventa y cuatro libros: **veinticuatro** para publicarse abiertamente para todos, y setenta para guardarse para los sabios. Los veinticuatro son casi con seguridad los libros de la Biblia hebrea.
 
-El Talmud de Babilonia da más tarde el orden de los Profetas y los Escritos y nombra a sus autores tradicionales (*Bava Batra* 14b-15a).
+El Talmud de Babilonia da más tarde el orden de los Profetas y los Escritos y nombra a sus autores tradicionales (*Bava Batra* 14b-15a). En su lista, los Escritos terminan con **Crónicas**, y las Biblias hebreas impresas todavía terminan ahí hoy.
+
+Ese orden puede estar detrás de un dicho de Jesús. Hablando de los profetas a los que habían dado muerte, dice que a esta generación se le pedirá cuentas de «la sangre de todos los profetas, que ha sido derramada desde la fundación del mundo... desde la sangre de Abel, hasta la sangre de Zacarías, que murió entre el altar y el templo» (Lucas 11:50-51; compárese Mateo 23:35). Abel es la primera persona asesinada en el Génesis. Zacarías, apedreado en el atrio del templo, es el último mártir de Crónicas (2 Crónicas 24:20-22), aunque no el último en el tiempo. Muchos comentaristas piensan que Jesús abarca las Escrituras del primer libro al último, «de la A a la Z». Si es así, su Biblia ya terminaba con Crónicas. Otros piensan que la pareja significa simplemente el primer mártir y otro posterior destacado, así que el dicho es sugerente más que decisivo.
 
 ## El mito del concilio de Jamnia
 
-Quizá hayas leído que el canon judío se «cerró» en un concilio celebrado en **Jamnia** (Yavné) hacia el año 90 d. C. Esta idea, popular en el siglo XX, hoy se rechaza ampliamente. Jack P. Lewis mostró en 1964 que las fuentes rabínicas no dicen nada de un concilio que decidiera un canon. Recogen discusiones entre rabinos en Yavné sobre si ciertos libros, como el Eclesiastés y el Cantar de los Cantares, «manchan las manos» (una forma técnica de decir que son Escritura santa). Eran debates sobre libros ya ampliamente aceptados, no la creación de una lista. La Misná recoge la conclusión de que ambos libros son santos (*Yadayim* 3:5).
+Quizá hayas leído que el canon judío se «cerró» en un concilio celebrado en **Jamnia** (Yavné) hacia el año 90 d. C. Esta idea, popular en el siglo XX, hoy se rechaza ampliamente. Jack P. Lewis mostró en 1964 que las fuentes rabínicas no dicen nada de un concilio que decidiera un canon. Recogen discusiones entre rabinos en Yavné sobre si ciertos libros, como el Eclesiastés y el Cantar de los Cantares, «manchan las manos» (una forma técnica de decir que son Escritura santa). Eran debates sobre libros ya ampliamente aceptados, no la creación de una lista. La Misná recoge la conclusión de que ambos libros son santos (*Yadayim* 3:5). También se puso en duda Ester. El Talmud recoge la opinión de Samuel, maestro del siglo III, de que Ester no «mancha las manos», y luego explica que aun así sostenía que fue dicho por el espíritu santo, para leerse en voz alta en Purim (*Meguilá* 7a). Un libro puede leerse en el culto y que los eruditos sigan discutiendo su condición.
 
 La mayoría de los especialistas piensa hoy que el canon judío se fue asentando gradualmente, por consenso y no por decreto, y que a finales del siglo I d. C. la mayoría de los judíos reconocía los veinticuatro libros. Algunos, como Roger Beckwith, sostienen que la lista quedó fijada mucho antes, en el siglo II a. C.; otros, como Lee Martin McDonald, ven más fluidez hasta el siglo II d. C. Timothy Lim propone que existían varios cánones a la vez entre distintos grupos judíos, y que el canon mayoritario de los fariseos acabó imponiéndose.
 
@@ -78,7 +80,8 @@ Estas diferencias son reales, pero afectan a los bordes. Los treinta y nueve lib
 - Lewis, Jack P. "What Do We Mean by Jabneh?" *Journal of Bible and Religion* 32 (1964): 125–132.
 - Lim, Timothy H. *The Formation of the Jewish Canon*. New Haven: Yale University Press, 2013.
 - McDonald, Lee Martin. *The Biblical Canon: Its Origin, Transmission, and Authority*. Peabody, MA: Hendrickson, 2007.
-- Misná, *Yadayim* 3:5; Talmud de Babilonia, *Bava Batra* 14b–15a.
+- Misná, *Yadayim* 3:5; Talmud de Babilonia, *Bava Batra* 14b–15a; *Meguilá* 7a.
+- Peels, H. G. L. "The Blood 'from Abel to Zechariah' (Matthew 23,35; Luke 11,50f.) and the Canon of the Old Testament." *Zeitschrift für die alttestamentliche Wissenschaft* 113 (2001): 583–601.
 - Eusebio. *Historia eclesiástica* 4.26.13–14.
 - 2 Esdras (4 Esdras) 14:44–47; Eclesiástico (Sirácida), Prólogo.
 - Las citas bíblicas son de la Reina-Valera 1909 (dominio público), salvo donde el artículo ofrece su propia traducción literal.
