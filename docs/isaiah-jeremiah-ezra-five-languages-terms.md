@@ -732,6 +732,42 @@ Every CHÚA below is `{{divine_name:CHÚA|Gia-vê}}`, with particles outside the
 AI-draft choices recorded so later work follows them; reviewers may change
 any of them.
 
+- **All languages.** Repeated passages read word for word where the Hebrew is
+  the same, and the later passage's decision names each difference: Jeremiah
+  51:15–19 = 10:12–16, 50:41–43 = 6:22–24, 46:27–28 = 30:10–11, 30:23–24 =
+  23:19–20, 6:13–15 = 8:10–12; Jeremiah 48:29–38 against Isaiah 15–16; Isaiah
+  51:11 = 35:10 and 65:25 against 11:6–9. Isaiah 36–39, Jeremiah 39:1–10 and
+  52, and Ezra 1:1–3a reuse the published Kings and Chronicles wording.
+  Nebuchadrezzar keeps the Hebrew's r or n form verse by verse. Shephatiah's
+  and Jonadab's long and short forms follow each verse's Hebrew.
+- **French.** *torah* is « loi » (L) / « instruction » (B) / « enseignement »
+  (R), as above, in Isaiah too. Shofar « cor » (L, B) / « trompette » (R).
+  Restore the fortunes « rétablir le sort » (L, B) / « rendre … de nouveau
+  heureux » (R). God relenting « renoncer à ». Life as plunder « pour seul
+  butin ». Jerusalem in Jeremiah 22:20–23 is addressed in the singular at
+  every level. In Ezra, Ouzziya (10:21) and Athalia (8:7) are men's names,
+  kept apart from King Ozias and Queen Athalie.
+- **Spanish.** Sackcloth *cilicio* (L, B) / *ropa áspera de luto* (R). God
+  relenting *retractarse* at L (*me pesa* in Jeremiah 42:10). Black cumin is
+  *comino negro* in Isaiah 28:25, 27. *Sarim* *príncipes / jefes /
+  dirigentes*. *Hesed* at B *amor fiel*. Numbers of four digits and more take
+  a space (185 000).
+- **Swahili.** A father's brother is *baba mdogo* (Jeremiah 32:7–12). The 1:10
+  verbs keep *kuangusha*. Restore the fortunes *kurudishia mafanikio* (L, B) /
+  *kuyafanya mambo kuwa mema tena* (R). Shofar *baragumu*. Hissing
+  *[kitu cha] kuzomewa*; curse *kiapo cha laana*. *Torah* in Jeremiah is
+  *mafundisho* at B.
+- **Vietnamese.** God says *ngươi* (L) / *con* (B, R) to Zion, Israel, Jacob
+  and the prophet in promises, and *ngươi* at every level in rebukes. Ahava is
+  *sông A-ha-va*. Sackcloth *vải thô*; shofar *kèn / tù và / kèn*; Memphis
+  *Mem-phít*; restore the fortunes *phục hồi cơ đồ*. No deity_pronoun span
+  touches a name's syllable (Ta-rê-si, Ta-bê-ên, Ta Vui Thích Nàng).
+- **Korean.** Inside God's own speech his name takes no -시- and no 께; the
+  formula "Thus says the LORD" stays honorific (께서 이와 같이 말씀하신다), as
+  published Kings and Chronicles do, except Isaiah 38:5 = 2 Kings 20:5. Yah is
+  `{{divine_name:주|야}}`. Restore the fortunes 운명을 돌이키다 / 형편을
+  회복시키다 / 다시 잘되게 해 주다. Numbers and years in figures.
+
 ## Before review
 
 Only rendering decisions were added; the meaning decisions are the English
@@ -740,4 +776,10 @@ Isaiah 7:14 and 9:5, the servant songs, Jeremiah 31:31–34 against Hebrews 8,
 and the Aramaic letters of Ezra. Two questions for the founder: the French
 book title is *Ésaïe* in `data/books.json` but every published French verse
 says *Isaïe*; and Vietnamese has both *vong linh* (Psalm 88:11) and *âm hồn*
-(Proverbs 9:18) for the dead (*rephaim*).
+(Proverbs 9:18) for the dead (*rephaim*). These chapters use *vong linh*.
+
+Also for native reviewers: Spanish *funcionarios* or *jefes* for *sarim* at B,
+and *derecho / justicia* in Isaiah 9:6; French « loi » at L in Isaiah, where
+the drafters had « instruction »; Swahili *kuzomewa* for scornful hissing;
+Vietnamese *ngươi* in Jeremiah 2:2; Korean 주에게 in God's mouth (Jeremiah
+29:7, Isaiah 66:20) and Shephatiah and Zebadiah both being 스바댜.

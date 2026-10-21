@@ -46,6 +46,11 @@
           "L": "Lời của {{divine_name:CHÚA|Gia-vê}} đến với tôi rằng:",
           "B": "Lời {{divine_name:CHÚA|Gia-vê}} đến với tôi:",
           "R": "{{divine_name:CHÚA|Gia-vê}} ban cho tôi sứ điệp này:"
+        },
+        "ko": {
+          "L": "{{divine_name:주|야훼}}의 말씀이 나에게 임하여 말씀하셨다.",
+          "B": "{{divine_name:주|야훼}}의 말씀이 나에게 임했다.",
+          "R": "{{divine_name:주|야훼}}께서 나에게 이 말씀을 주셨다."
         }
       },
       "decisions": [
@@ -172,6 +177,11 @@
           "L": "Hãy đi và kêu lên vào tai Giê-ru-sa-lem rằng: {{divine_name:CHÚA|Gia-vê}} phán thế này: \\q Ta nhớ cho ngươi tình yêu thương thành tín thuở ngươi còn trẻ, \\q tình yêu thời ngươi đính hôn, \\q khi ngươi đi theo {{deity_pronoun:ta|Ta}} trong hoang mạc, \\q trong một xứ không ai gieo trồng.",
           "B": "Hãy đi và kêu lên cho Giê-ru-sa-lem nghe: {{divine_name:CHÚA|Gia-vê}} phán như vầy: \\q Ta nhớ tình yêu thương thành tín của ngươi thuở thanh xuân, \\q ngươi đã yêu {{deity_pronoun:ta|Ta}} như một cô dâu, \\q ngươi đã theo {{deity_pronoun:ta|Ta}} băng qua hoang mạc, \\q qua một xứ không có gì được gieo trồng.",
           "R": "Hãy đi và loan báo điều này cho dân Giê-ru-sa-lem. Đây là lời {{divine_name:CHÚA|Gia-vê}} phán: \\q Ta nhớ tình thương không hề thay đổi ngươi đã dành cho {{deity_pronoun:ta|Ta}} khi ngươi còn trẻ. \\q Ngươi đã yêu {{deity_pronoun:ta|Ta}} như một cô dâu. \\q Ngươi đã theo {{deity_pronoun:ta|Ta}} băng qua sa mạc, \\q qua một vùng đất không trồng trọt được gì."
+        },
+        "ko": {
+          "L": "가서 예루살렘의 귀에 외쳐 말하여라. {{divine_name:주|야훼}}께서 이와 같이 말씀하신다. \\q 나는 너를 위하여 네 젊은 시절의 한결같은 사랑과 \\q 네 신부 시절의 사랑을 기억한다. \\q 네가 광야에서, \\q 씨 뿌리지 않은 땅에서 나를 따라오던 것을 [기억한다].",
+          "B": "가서 예루살렘이 듣도록 외쳐라. {{divine_name:주|야훼}}께서 이렇게 말씀하신다. \\q 나는 네 젊은 시절의 한결같은 사랑을 기억한다. \\q 네가 신부처럼 나를 사랑하던 것, \\q 광야를 지나며, \\q 아무것도 심지 않은 땅을 지나며 나를 따라오던 것을 기억한다.",
+          "R": "가서 예루살렘 사람들에게 이것을 알려라. {{divine_name:주|야훼}}께서 하시는 말씀이다. \\q 나는 네가 젊었을 때 나에게 보여 준 변함없는 사랑을 기억한다. \\q 너는 신부처럼 나를 사랑했다. \\q 너는 광야를 지나며 나를 따라왔다. \\q 곡식을 심지 않은 땅을 지나며 나를 따라왔다."
         }
       },
       "decisions": [
@@ -446,6 +456,50 @@
           "reason": "The Psalms wording for hesed (the refrain of Psalm 136), kept through Jeremiah.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240020020031",
+            "o240020020032",
+            "o240020020061"
+          ],
+          "choice": "주께서 이와 같이 말씀하신다 (Literal); 주께서 이렇게 말씀하신다 (Balanced); 주께서 하시는 말씀이다 (Readable), ending in a period",
+          "alternatives": [
+            "주께서 이렇게 말씀하셨다; a colon after the formula"
+          ],
+          "reason": "The book-wide wording of \"Thus says the LORD\", as 2 Kings 19:6 (= Isaiah 37:6). The prophet speaks it, so it takes -시-; it ends in a period and God's words follow without quotation marks.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240020020111"
+          ],
+          "choice": "한결같은 사랑 (Literal, Balanced); 변함없는 사랑 (Readable)",
+          "alternatives": [
+            "인애; 자비"
+          ],
+          "reason": "*ḥesed* keeps the wording of the Psalms at each level through Jeremiah.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -505,6 +559,11 @@
           "L": "Y-sơ-ra-ên [là] thánh cho {{divine_name:CHÚA|Gia-vê}}, \\q là trái đầu mùa của mùa gặt {{deity_pronoun:ngài|Ngài}}; \\q mọi kẻ ăn nuốt nó đều mắc tội; \\q tai họa đã đến trên chúng, {{divine_name:CHÚA|Gia-vê}} phán vậy.",
           "B": "Y-sơ-ra-ên đã được biệt riêng ra thánh cho {{divine_name:CHÚA|Gia-vê}}, \\q là phần đầu mùa của mùa gặt {{deity_pronoun:ngài|Ngài}}. \\q Ai ăn phần ấy đều bị kể là có tội, \\q và tai họa đã giáng trên chúng, {{divine_name:CHÚA|Gia-vê}} phán vậy.",
           "R": "Dân Y-sơ-ra-ên chỉ thuộc về một mình {{divine_name:CHÚA|Gia-vê}}. \\q Họ như phần đầu tiên của mùa gặt {{deity_pronoun:ngài|Ngài}}. \\q Ai tìm cách làm hại họ đều mắc tội, \\q và tai họa đã giáng trên kẻ ấy, {{divine_name:CHÚA|Gia-vê}} phán."
+        },
+        "ko": {
+          "L": "이스라엘은 {{divine_name:주|야훼}}에게 거룩한 것, \\q 그의 수확의 첫 열매였다. \\q 그것을 삼키는 자는 모두 죄를 짓게 되었고, \\q 재앙이 그들에게 닥쳤다. {{divine_name:주|야훼}}의 선언이다.",
+          "B": "이스라엘은 {{divine_name:주|야훼}}에게 거룩하게 구별된 백성, \\q 그가 거두는 수확의 첫 몫이었다. \\q 누구든지 그것을 먹는 자는 죄가 있다고 여겨졌고, \\q 재앙이 그들에게 닥쳤다. {{divine_name:주|야훼}}가 말한다.",
+          "R": "이스라엘 백성은 오직 {{divine_name:주|야훼}}의 것이었다. \\q 그들은 그가 거두는 수확의 첫 부분과 같았다. \\q 누구든지 그들을 해치려는 사람은 죄가 있었고, \\q 재앙이 그런 사람들에게 닥쳤다. {{divine_name:주|야훼}}가 말한다."
         }
       },
       "decisions": [
@@ -661,6 +720,11 @@
           "L": "Hãy nghe lời của {{divine_name:CHÚA|Gia-vê}}, hỡi nhà Gia-cốp, \\q và mọi gia tộc của nhà Y-sơ-ra-ên.",
           "B": "Hãy nghe lời {{divine_name:CHÚA|Gia-vê}}, hỡi nhà Gia-cốp, \\q hỡi mọi gia tộc của nhà Y-sơ-ra-ên.",
           "R": "Hãy nghe điều {{divine_name:CHÚA|Gia-vê}} phán, hỡi con cháu Gia-cốp, \\q hỡi mọi gia đình của dân Y-sơ-ra-ên."
+        },
+        "ko": {
+          "L": "{{divine_name:주|야훼}}의 말씀을 들어라, 야곱의 집아, \\q 이스라엘 집의 모든 족속아.",
+          "B": "야곱의 집아, {{divine_name:주|야훼}}의 말씀을 들어라. \\q 이스라엘 집의 모든 족속아, 들어라.",
+          "R": "야곱의 자손들아, {{divine_name:주|야훼}}께서 하시는 말씀을 들어라. \\q 이스라엘 백성의 모든 가문들아, 들어라."
         }
       },
       "decisions": [
@@ -857,6 +921,11 @@
           "L": "{{divine_name:CHÚA|Gia-vê}} phán thế này: Tổ phụ các ngươi đã thấy nơi {{deity_pronoun:ta|Ta}} có điều bất công gì, \\q mà chúng đã đi xa khỏi {{deity_pronoun:ta|Ta}}, \\q đi theo các thần tượng hư không và trở nên hư không?",
           "B": "{{divine_name:CHÚA|Gia-vê}} phán như vầy: Tổ tiên các ngươi đã thấy {{deity_pronoun:ta|Ta}} có điều gì sai trái, \\q mà chúng lìa xa {{deity_pronoun:ta|Ta}} đến thế, \\q đi theo các thần tượng hư không và chính mình cũng trở nên hư không?",
           "R": "Đây là lời {{divine_name:CHÚA|Gia-vê}} phán: Hẳn tổ tiên các ngươi đã nghĩ rằng {{deity_pronoun:ta|Ta}} đã đối xử bất công với chúng. \\q Nếu không, sao chúng lại bỏ đi xa {{deity_pronoun:ta|Ta}} như thế? \\q Chúng đã đi theo các thần tượng vô dụng và chính mình cũng trở nên vô dụng."
+        },
+        "ko": {
+          "L": "{{divine_name:주|야훼}}께서 이와 같이 말씀하신다. 너희 조상들이 내게서 무슨 불의를 찾았기에 \\q 나에게서 멀리 떠나 \\q 헛된 우상들을 따라가서 헛되게 되었느냐?",
+          "B": "{{divine_name:주|야훼}}께서 이렇게 말씀하신다. 너희 조상들이 나에게서 무슨 잘못을 찾았기에 \\q 나에게서 그토록 멀리 떠나, \\q 헛된 우상들을 따라가다가 자기들도 헛것이 되었느냐?",
+          "R": "{{divine_name:주|야훼}}께서 하시는 말씀이다. 너희 조상들은 내가 자기들에게 잘못했다고 생각했나 보다. \\q 그렇지 않다면 어찌 나에게서 그렇게 멀리 떠났겠느냐? \\q 그들은 쓸모없는 우상들을 따라가다가 자기들도 쓸모없게 되었다."
         }
       },
       "decisions": [
@@ -1048,6 +1117,28 @@
           "reason": "The terms note's address for God speaking to the whole people, as 2 Kings 17:13; \"các con\" is kept for where the Hebrew calls them children (3:14, 22).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240020050142",
+            "o240020050152"
+          ],
+          "choice": "헛된 우상들 ... 헛되게 되었다 (Literal, Balanced); 쓸모없는 우상들 ... 쓸모없게 되었다 (Readable)",
+          "alternatives": [
+            "허무한 것"
+          ],
+          "reason": "The Hebrew plays on one word, *hevel*, for the idols and for what their worshipers become; Korean repeats one word at each level to keep the play.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1130,6 +1221,11 @@
           "L": "Chúng đã không nói: \"{{divine_name:CHÚA|Gia-vê}} ở đâu, \\q Đấng đã đem chúng ta lên khỏi xứ Ai Cập, \\q Đấng đã dẫn chúng ta trong hoang mạc, \\q trong một xứ đồng hoang và hầm hố, \\q trong một xứ khô hạn và bóng tối dày đặc, \\q trong một xứ không ai đi qua, và không con người nào ở?\"",
           "B": "Chúng đã không hỏi: \"{{divine_name:CHÚA|Gia-vê}} ở đâu, \\q Đấng đã đem chúng ta lên khỏi đất Ai Cập, \\q Đấng đã dẫn dắt chúng ta trong hoang mạc, \\q qua một xứ đồng hoang và hầm hố, \\q một xứ khô hạn và tối tăm mịt mù, \\q một xứ không ai băng qua và không ai cư ngụ?\"",
           "R": "Chúng chẳng bao giờ hỏi: \"{{divine_name:CHÚA|Gia-vê}} ở đâu? \\q Ngài đã đem chúng ta ra khỏi Ai Cập. \\q Ngài đã dẫn chúng ta qua sa mạc, \\q qua vùng đất khô cằn đầy hầm hố, \\q một vùng khô hạn và tối tăm, \\q nơi không ai qua lại và không ai sinh sống.\""
+        },
+        "ko": {
+          "L": "그들은 말하지 않았다. \"{{divine_name:주|야훼}}께서 어디 계시냐? \\q 우리를 이집트 땅에서 이끌어 올리신 분, \\q 우리를 광야에서, \\q 사막과 구덩이의 땅에서, \\q 가뭄과 깊은 어둠의 땅에서, \\q 아무도 지나가지 않고 사람이 살지 않는 땅에서 인도하신 분이 [어디 계시냐]?\"",
+          "B": "그들은 묻지 않았다. \"{{divine_name:주|야훼}}께서 어디 계시냐? \\q 우리를 이집트 땅에서 이끌어 내신 분, \\q 광야에서 우리를 인도하신 분, \\q 사막의 벌판과 구덩이가 많은 땅, \\q 가뭄과 짙은 어둠의 땅, \\q 아무도 건너지 않고 아무도 살지 않는 땅을 지나게 하신 분이 어디 계시냐?\"",
+          "R": "그들은 한 번도 묻지 않았다. \"{{divine_name:주|야훼}}께서는 어디 계시냐? \\q 그분은 우리를 이집트에서 이끌어 내셨다. \\q 그분은 우리를 이끌고 광야를 지나셨다. \\q 구덩이가 가득한 메마른 땅, \\q 메마르고 어두운 땅, \\q 아무도 다니지 않고 아무도 살지 않는 땅을 지나게 하셨다.\""
         }
       },
       "decisions": [
@@ -1305,6 +1401,11 @@
           "L": "Ta đã đem các ngươi vào một xứ vườn cây ăn trái, \\q để ăn hoa quả và các sản vật tốt của nó; \\q nhưng các ngươi đã vào và làm ô uế xứ của {{deity_pronoun:ta|Ta}}, \\q và làm cho sản nghiệp của {{deity_pronoun:ta|Ta}} thành một điều ghê tởm.",
           "B": "Ta đã đưa các ngươi vào một xứ đầy vườn cây, \\q để ăn hoa quả và sản vật tốt của nó. \\q Nhưng các ngươi đã vào và làm ô uế xứ của {{deity_pronoun:ta|Ta}}; \\q các ngươi đã biến sản nghiệp của {{deity_pronoun:ta|Ta}} thành một điều đáng ghê tởm.",
           "R": "Ta đã đưa các ngươi vào một xứ đầy cây trái \\q để các ngươi được ăn hoa quả và mọi thức ăn ngon của nó. \\q Nhưng khi vào đó, các ngươi đã làm cho xứ của {{deity_pronoun:ta|Ta}} ra ô uế. \\q Các ngươi đã biến đất thuộc về {{deity_pronoun:ta|Ta}} thành một điều {{deity_pronoun:ta|Ta}} ghê tởm."
+        },
+        "ko": {
+          "L": "나는 너희를 과수원의 땅으로 데려와 \\q 그 열매와 그 좋은 것들을 먹게 했다. \\q 그런데 너희는 들어와서 내 땅을 더럽혔고, \\q 내 유업을 가증한 것으로 만들었다.",
+          "B": "내가 너희를 과수원이 우거진 땅으로 데려와 \\q 그 열매와 좋은 것들을 먹게 했다. \\q 그러나 너희는 들어와서 내 땅을 더럽혔다. \\q 너희는 내 소유인 땅을 역겨운 것으로 만들었다.",
+          "R": "나는 너희를 과수원이 가득한 땅으로 데려왔다. \\q 너희가 그 열매와 온갖 좋은 음식을 먹게 하려는 것이었다. \\q 그러나 너희는 들어와서 내 땅을 더럽혔다. \\q 너희는 내 것인 그 땅을 내가 싫어하는 곳으로 만들었다."
         }
       },
       "decisions": [
@@ -1476,6 +1577,11 @@
           "L": "Các thầy tế lễ đã không nói: \"{{divine_name:CHÚA|Gia-vê}} ở đâu?\" \\q Những kẻ nắm giữ luật pháp đã không biết {{deity_pronoun:ta|Ta}}; \\q các người chăn đã phản nghịch {{deity_pronoun:ta|Ta}}; \\q các nhà tiên tri đã nói tiên tri nhân danh Ba-anh, \\q và đi theo những thứ vô ích.",
           "B": "Các thầy tế lễ đã không hỏi: \"{{divine_name:CHÚA|Gia-vê}} ở đâu?\" \\q Những người lo việc luật pháp đã không biết {{deity_pronoun:ta|Ta}}; \\q các người chăn đã phản nghịch {{deity_pronoun:ta|Ta}}; \\q các nhà tiên tri đã nói tiên tri nhân danh Ba-anh, \\q và đi theo những thứ chẳng ích lợi gì.",
           "R": "Các thầy tế lễ chẳng bao giờ hỏi: \"{{divine_name:CHÚA|Gia-vê}} ở đâu?\" \\q Những người lo việc dạy luật pháp của {{deity_pronoun:ta|Ta}} đã không biết {{deity_pronoun:ta|Ta}}. \\q Các nhà lãnh đạo đã chống lại {{deity_pronoun:ta|Ta}}. \\q Các nhà tiên tri đã nói tiên tri nhân danh thần Ba-anh, \\q và đi theo các thần chẳng giúp được ai."
+        },
+        "ko": {
+          "L": "제사장들은 \"{{divine_name:주|야훼}}께서 어디 계시냐?\" 하고 말하지 않았다. \\q 가르침을 다루는 자들은 나를 알지 못했고, \\q 목자들은 나를 거역했으며, \\q 예언자들은 바알을 힘입어 예언하고 \\q 유익하지 않은 것들을 따라갔다.",
+          "B": "제사장들은 \"{{divine_name:주|야훼}}께서 어디 계시냐?\" 하고 묻지 않았다. \\q 가르침을 맡은 자들은 나를 알지 못했다. \\q 목자들은 나를 거역했다. \\q 예언자들은 바알의 이름으로 예언하고 \\q 아무 유익도 없는 것들을 따라갔다.",
+          "R": "제사장들은 한 번도 \"{{divine_name:주|야훼}}께서는 어디 계시냐?\" 하고 묻지 않았다. \\q 내 가르침을 맡은 사람들도 나를 알지 못했다. \\q 지도자들은 나에게 등을 돌렸다. \\q 예언자들은 바알의 이름으로 예언했고 \\q 아무도 도울 수 없는 신들을 따라갔다."
         }
       },
       "decisions": [
@@ -1638,6 +1744,27 @@
           "reason": "The priests' torah here is the law they handled and taught, so \"luật pháp\" serves at every level; Readable adds \"dạy\". The shepherds are the rulers, which Readable says plainly, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240020080072"
+          ],
+          "choice": "가르침",
+          "alternatives": [
+            "율법"
+          ],
+          "reason": "*torah* in Jeremiah is 가르침 at every level, as the English \"instruction\" and the published Psalm 1:2; 31:33 keeps the same word.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1694,6 +1821,11 @@
           "L": "Vì vậy, {{deity_pronoun:ta|Ta}} sẽ còn tranh tụng với các ngươi, {{divine_name:CHÚA|Gia-vê}} phán vậy, \\q và với con cháu của các ngươi, {{deity_pronoun:ta|Ta}} sẽ tranh tụng.",
           "B": "Vì thế, {{deity_pronoun:ta|Ta}} sẽ tiếp tục buộc tội các ngươi, {{divine_name:CHÚA|Gia-vê}} phán vậy, \\q và {{deity_pronoun:ta|Ta}} sẽ buộc tội cả con cháu các ngươi.",
           "R": "Vì thế, {{deity_pronoun:ta|Ta}} sẽ tiếp tục đưa các ngươi ra tòa, {{divine_name:CHÚA|Gia-vê}} phán. \\q Ta cũng sẽ đưa cả cháu chắt các ngươi ra tòa."
+        },
+        "ko": {
+          "L": "그러므로 내가 아직도 너희와 다투겠다. {{divine_name:주|야훼}}의 선언이다. \\q 너희 자손의 자손들과도 내가 다투겠다.",
+          "B": "그러므로 나는 계속해서 너희를 고발하겠다. {{divine_name:주|야훼}}가 말한다. \\q 너희 자손의 자손들까지 고발하겠다.",
+          "R": "그래서 나는 계속 너희를 재판에 넘기겠다. {{divine_name:주|야훼}}가 말한다. \\q 너희 손자들까지도 재판에 넘기겠다."
         }
       },
       "decisions": [
@@ -1892,6 +2024,11 @@
           "L": "Vì hãy băng qua các hải đảo Kít-tim mà xem, \\q hãy sai người đến Kê-đa và xét kỹ, \\q và xem có [điều gì] như thế này chăng.",
           "B": "Hãy sang các hải đảo Kít-tim mà nhìn xem; \\q hãy sai người đến Kê-đa và suy xét cẩn thận; \\q hãy xem đã từng có điều gì như thế này chưa.",
           "R": "Hãy đi thuyền về phía tây đến bờ biển đảo Chíp-rơ mà xem. \\q Hãy sai người về phía đông đến Kê-đa và tìm hiểu kỹ càng. \\q Hãy xem đã bao giờ có chuyện như thế này chưa."
+        },
+        "ko": {
+          "L": "깃딤의 섬들로 건너가 보아라. \\q 게달로 [사람을] 보내어 자세히 살펴보아라. \\q 이와 같은 일이 있었는지 보아라.",
+          "B": "깃딤의 바닷가 나라들로 건너가 보아라. \\q 게달에 사람을 보내 곰곰이 살펴보아라. \\q 이런 일이 일찍이 있었는지 보아라.",
+          "R": "서쪽으로 배를 타고 구브로 섬까지 가서 보아라. \\q 동쪽으로 게달까지 사람을 보내 자세히 알아보아라. \\q 이런 일이 일어난 적이 있는지 보아라."
         }
       },
       "decisions": [
@@ -2086,6 +2223,11 @@
           "L": "Có dân tộc nào đã đổi thần, \\q dù chúng chẳng phải [là] thần? \\q Nhưng dân {{deity_pronoun:ta|Ta}} đã đổi vinh quang mình lấy thứ vô ích.",
           "B": "Đã có dân tộc nào từng đổi thần của mình chưa, \\q dù những thần ấy chẳng phải là thần? \\q Thế mà dân {{deity_pronoun:ta|Ta}} đã đổi vinh quang của mình lấy thứ chẳng giúp ích gì.",
           "R": "Chưa dân tộc nào từng đổi thần của mình lấy thần mới, \\q dù thần của chúng chẳng phải là thần thật. \\q Nhưng dân {{deity_pronoun:ta|Ta}} đã đổi {{deity_pronoun:ta|Ta}}, là vinh quang của chúng, lấy những thần chẳng giúp được gì."
+        },
+        "ko": {
+          "L": "어느 민족이 신들을 바꾼 적이 있느냐? \\q 그것들은 신도 아닌데도 말이다. \\q 그러나 내 백성은 자기의 영광을 유익하지 않은 것과 바꾸었다.",
+          "B": "어느 민족이 자기 신들을 바꾼 일이 있느냐? \\q 그것들은 신도 아닌데 말이다. \\q 그런데 내 백성은 자기들의 영광을 아무 도움도 되지 않는 것과 바꾸었다.",
+          "R": "어떤 민족도 자기 신들을 새 신들로 바꾼 적이 없다. \\q 그들의 신들은 진짜 신도 아닌데 말이다. \\q 그런데 내 백성은 그들의 영광인 나를 자기들을 도울 수 없는 신들과 바꾸었다."
         }
       },
       "decisions": [
@@ -2204,6 +2346,11 @@
           "L": "Hỡi các tầng trời, hãy kinh ngạc về điều này; \\q hãy rùng mình, hãy khô héo hoàn toàn, {{divine_name:CHÚA|Gia-vê}} phán vậy.",
           "B": "Hỡi các tầng trời, hãy kinh hoàng về điều này; \\q hãy run rẩy và sững sờ tột độ, {{divine_name:CHÚA|Gia-vê}} phán vậy.",
           "R": "Hỡi bầu trời, hãy bàng hoàng về điều này! \\q Hãy run lên vì kinh hãi và sững sờ hoàn toàn, {{divine_name:CHÚA|Gia-vê}} phán."
+        },
+        "ko": {
+          "L": "하늘아, 이것을 보고 놀라라. \\q 떨어라, 몹시 메말라 버려라. {{divine_name:주|야훼}}의 선언이다.",
+          "B": "하늘아, 이 일을 보고 소스라쳐라. \\q 떨며 몹시 놀라라. {{divine_name:주|야훼}}가 말한다.",
+          "R": "위에 있는 하늘아, 이것을 보고 놀라라! \\q 두려워 떨며 완전히 넋을 잃어라. {{divine_name:주|야훼}}가 말한다."
         }
       },
       "decisions": [
@@ -2339,6 +2486,11 @@
           "L": "Vì dân {{deity_pronoun:ta|Ta}} đã làm hai điều ác: \\q chúng đã lìa bỏ {{deity_pronoun:ta|Ta}}, là nguồn nước sống, \\q để tự đào cho mình những hồ chứa, \\q những hồ chứa nứt nẻ, không thể giữ nước.",
           "B": "Vì dân {{deity_pronoun:ta|Ta}} đã phạm hai điều ác: \\q chúng đã chối bỏ {{deity_pronoun:ta|Ta}}, là nguồn nước sống, \\q và tự đục cho mình những hồ chứa, \\q những hồ chứa rạn nứt chẳng giữ được nước.",
           "R": "Dân {{deity_pronoun:ta|Ta}} đã làm hai điều ác. \\q Chúng đã quay lưng với {{deity_pronoun:ta|Ta}}, là nguồn nước tươi mát luôn tuôn chảy. \\q Rồi chúng tự đào lấy những hố để chứa nước, \\q nhưng các hố ấy bị nứt và không giữ được chút nước nào."
+        },
+        "ko": {
+          "L": "내 백성이 두 가지 악을 저질렀다. \\q 생수의 샘인 나를 버렸고, \\q 자기들을 위해 물웅덩이들을 깎아 팠다. \\q 물을 담지 못하는 깨진 물웅덩이들을.",
+          "B": "내 백성이 두 가지 악을 저질렀다. \\q 살아 흐르는 물의 샘인 나를 버렸고, \\q 스스로 바위를 깎아 물 저장소를 만들었다. \\q 그러나 그것은 금이 가서 물을 담지 못한다.",
+          "R": "내 백성은 두 가지 악한 일을 했다. \\q 그들은 맑은 물이 흘러나오는 샘인 나를 떠났다. \\q 그러고는 물을 모아 두려고 스스로 구덩이를 팠다. \\q 그러나 그 구덩이는 금이 가서 물을 조금도 담지 못한다."
         }
       },
       "decisions": [
@@ -2500,6 +2652,11 @@
           "L": "Y-sơ-ra-ên là nô lệ sao? \\q Hay nó [là nô lệ] sinh ra trong nhà? \\q Sao nó lại trở thành của cướp?",
           "B": "Y-sơ-ra-ên là nô lệ sao? \\q Nó sinh ra làm nô lệ trong nhà chủ sao? \\q Vậy sao nó lại trở thành của cướp?",
           "R": "Y-sơ-ra-ên là nô lệ sao? \\q Nó sinh ra đã làm nô lệ sao? \\q Vậy sao kẻ thù lại cướp lấy nó như cướp chiến lợi phẩm?"
+        },
+        "ko": {
+          "L": "이스라엘이 노예냐? \\q 아니면 집에서 태어난 [노예]냐? \\q 어찌하여 그가 약탈물이 되었느냐?",
+          "B": "이스라엘이 노예냐? \\q 주인집에서 노예로 태어났느냐? \\q 그런데 어찌하여 그가 약탈물이 되었느냐?",
+          "R": "이스라엘이 노예냐? \\q 노예로 태어났느냐? \\q 그런데 왜 원수들이 그를 전리품처럼 끌고 갔느냐?"
         }
       },
       "decisions": [
@@ -2634,6 +2791,27 @@
           "reason": "The question is about slavery itself, so \"nô lệ\" is used at every level, as the English keeps \"slave\"; \"đầy tớ\" stays for God's servants (terms note).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240020140012"
+          ],
+          "choice": "노예",
+          "alternatives": [
+            "종"
+          ],
+          "reason": "Here slavery itself is the point, so *ʿeved* is 노예 rather than 종, which Korean keeps for God's servants and for court officials.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2695,6 +2873,11 @@
           "L": "Các sư tử tơ đã gầm thét nghịch cùng nó, \\q chúng đã cất tiếng; \\q chúng đã làm cho xứ nó thành hoang phế; \\q các thành nó bị thiêu đốt, không có dân cư.",
           "B": "Các sư tử tơ đã gầm thét nghịch cùng nó; \\q chúng đã cất tiếng gầm. \\q Chúng đã biến xứ nó thành nơi hoang tàn; \\q các thành nó bị thiêu hủy, không còn ai ở.",
           "R": "Quân thù đã gầm thét nghịch cùng nó như những sư tử tơ. \\q Chúng đã biến xứ nó thành đất hoang. \\q Các thành của nó bị đốt cháy, và không còn ai sống ở đó."
+        },
+        "ko": {
+          "L": "어린 사자들이 그를 향해 으르렁거리며 \\q 자기 소리를 높였다. \\q 그들이 그의 땅을 황무지로 만들었고, \\q 그의 성읍들은 불타서 주민이 없다.",
+          "B": "젊은 사자들이 그를 보고 으르렁거리며 \\q 큰 소리로 울부짖었다. \\q 그들이 그의 땅을 폐허로 만들었다. \\q 그의 성읍들은 불타 버려 사는 사람이 없다.",
+          "R": "원수들이 어린 사자들처럼 그를 향해 으르렁거렸다. \\q 그들은 그의 땅을 황무지로 만들었다. \\q 그의 성읍들은 불타 버렸고, 아무도 그곳에 살지 않는다."
         }
       },
       "decisions": [
@@ -2794,6 +2977,11 @@
           "L": "Ngay cả con cái của Mem-phít và Tác-pha-nết \\q cũng gặm trụi đỉnh đầu ngươi.",
           "B": "Ngay cả dân Mem-phít và Tác-pha-nết \\q cũng đang cạo trọc đỉnh đầu ngươi.",
           "R": "Ngay cả người Ai Cập ở Mem-phít và Tác-pha-nết \\q cũng đang làm cho đầu ngươi trơ trụi."
+        },
+        "ko": {
+          "L": "놉과 다바네스의 자손들도 \\q 네 정수리를 뜯어 먹는다.",
+          "B": "멤피스와 다바네스 사람들까지도 \\q 네 정수리를 밀어 버리고 있다.",
+          "R": "멤피스와 다바네스에서 온 이집트 사람들까지도 \\q 네 머리를 밀어 맨머리로 만들고 있다."
         }
       },
       "decisions": [
@@ -2961,6 +3149,28 @@
           "reason": "The Hebrew \"Noph\" is Memphis, and the English names it so; \"Mem-phít\" is the form used for it throughout Isaiah and Jeremiah (Isaiah 19:13; Jeremiah 44:1; 46:14, 19). \"Tác-pha-nết\" is the terms note's form. Readable says \"người Ai Cập\", as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240020160031",
+            "o240020160052"
+          ],
+          "choice": "놉 (Literal); 멤피스 (Balanced, Readable); 다바네스",
+          "alternatives": [
+            "놉 at every level"
+          ],
+          "reason": "Literal keeps the Hebrew name of the Egyptian city in its Protestant form; Balanced and Readable give the name a modern reader knows, as the English does. Tahpanhes is 다바네스 at every level, as the terms note.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3021,6 +3231,11 @@
           "L": "Chẳng phải ngươi tự gây điều này cho mình \\q khi ngươi lìa bỏ {{divine_name:CHÚA|Gia-vê}} Đức Chúa Trời của ngươi \\q vào lúc {{deity_pronoun:ngài|Ngài}} đang dẫn ngươi đi trên đường sao?",
           "B": "Chẳng phải chính ngươi đã tự chuốc lấy điều này \\q khi lìa bỏ {{divine_name:CHÚA|Gia-vê}} Đức Chúa Trời của ngươi \\q trong lúc {{deity_pronoun:ngài|Ngài}} đang dẫn ngươi đi trên đường sao?",
           "R": "Chính ngươi đã tự chuốc lấy tai họa này! \\q Ngươi đã quay lưng với {{divine_name:CHÚA|Gia-vê}} Đức Chúa Trời của ngươi \\q trong khi {{deity_pronoun:ngài|Ngài}} đang dẫn ngươi đi đúng đường."
+        },
+        "ko": {
+          "L": "이것은 네가 너 자신에게 한 일이 아니냐? \\q 네 하나님 {{divine_name:주|야훼}}를 버림으로써, \\q 그가 너를 길로 인도하던 그때에.",
+          "B": "이것은 네가 스스로 불러들인 일이 아니냐? \\q 너는 네 하나님 {{divine_name:주|야훼}}를 버렸다. \\q 그가 너를 길로 인도하고 있을 때에 말이다.",
+          "R": "너는 이 어려움을 스스로 불러들였다! \\q 너는 네 하나님 {{divine_name:주|야훼}}를 떠났다. \\q 그가 너를 바른 길로 이끌고 있었는데도 그렇게 했다."
         }
       },
       "decisions": [
@@ -3094,6 +3309,27 @@
           "reason": "God's address to Jerusalem, Israel or Judah as one person follows one rule in Isaiah and Jeremiah: \"ngươi\" at every level in rebukes and sentences of judgment (Jeremiah 2:2-3:5; 4:7-31; 5:7; 6:8, 23; 7:29; 11:15-16; 13:20-27; 15:5-14; 17:3-4), and \"ngươi\" (Literal) / \"con\" (Balanced, Readable) in appeals and promises (3:12-19; 4:1-2; 30-31). Chapter 2 is a lawsuit against Jerusalem, so even the opening memory of her early love (2:2) keeps \"ngươi\".",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o240020170101"
+          ],
+          "choice": "그가 너를 인도하던 (no honorific -시-)",
+          "alternatives": [
+            "그분이 너를 인도하시던"
+          ],
+          "reason": "The oracle is God's own speech (verse 19 ends \"declares the Lord GOD\"), so where God speaks of himself in the third person Korean keeps his own speech level and does not give himself the honorific, as with 주가 말한다.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3159,6 +3395,11 @@
           "L": "Và bây giờ, ngươi [đi] trên đường đến Ai Cập để làm gì, \\q để uống nước Si-ho sao? \\q Ngươi [đi] trên đường đến A-si-ri để làm gì, \\q để uống nước của Sông sao?",
           "B": "Vậy bây giờ, ngươi được gì khi đi đường xuống Ai Cập \\q để uống nước sông Si-ho? \\q Ngươi được gì khi đi đường sang A-si-ri \\q để uống nước sông Ơ-phơ-rát?",
           "R": "Vậy tại sao ngươi lại đi xuống đường Ai Cập \\q để uống nước sông Nin? \\q Tại sao ngươi lại đi lên đường A-si-ri \\q để uống nước sông Ơ-phơ-rát?"
+        },
+        "ko": {
+          "L": "그런데 이제 네가 이집트로 가는 길에 [나선 것이] 무슨 일이냐? \\q 시홀의 물을 마시려는 것이냐? \\q 또 네가 앗시리아로 가는 길에 [나선 것이] 무슨 일이냐? \\q 그 강의 물을 마시려는 것이냐?",
+          "B": "그런데 이제 네가 이집트로 가는 길에 나서서 \\q 시홀 강물을 마신들 무슨 소용이 있느냐? \\q 앗시리아로 가는 길에 나서서 \\q 유프라테스 강물을 마신들 무슨 소용이 있느냐?",
+          "R": "그런데 왜 이집트로 가는 길로 내려가서 \\q 나일 강물을 마시려 하느냐? \\q 왜 앗시리아로 가는 길로 떠나서 \\q 유프라테스 강물을 마시려 하느냐?"
         }
       },
       "decisions": [
@@ -3312,6 +3553,28 @@
           "reason": "As the English levels: Literal keeps the Hebrew names, Balanced names the Euphrates, Readable names both rivers. \"Si-ho\" is the published form (Joshua 13:3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240020180081",
+            "o240020180151"
+          ],
+          "choice": "시홀 ... 그 강 (Literal); 시홀 강 ... 유프라테스 강 (Balanced); 나일 강 ... 유프라테스 강 (Readable)",
+          "alternatives": [
+            "| As the English: Literal keeps the Hebrew names, Balanced names the River, and Readable names both rivers as a reader knows them."
+          ],
+          "reason": "|",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3388,6 +3651,11 @@
           "L": "Điều ác của ngươi sẽ sửa phạt ngươi, và sự bội nghịch của ngươi sẽ quở trách ngươi. \\q Hãy biết và thấy rằng thật là xấu xa và cay đắng \\q khi ngươi lìa bỏ {{divine_name:CHÚA|Gia-vê}} Đức Chúa Trời của ngươi, \\q và sự kính sợ {{deity_pronoun:ta|Ta}} không ở trong ngươi, \\q Chúa là {{divine_name:CHÚA|Gia-vê}} Vạn Quân phán vậy.",
           "B": "Chính sự gian ác của ngươi sẽ trừng phạt ngươi, sự bội nghịch của ngươi sẽ buộc tội ngươi. \\q Vậy hãy biết và thấy rằng thật là xấu xa và cay đắng \\q khi ngươi lìa bỏ {{divine_name:CHÚA|Gia-vê}} Đức Chúa Trời của ngươi, \\q chẳng còn chút kính sợ {{deity_pronoun:ta|Ta}}, \\q Chúa là {{divine_name:CHÚA|Gia-vê}} Vạn Quân phán vậy.",
           "R": "Chính điều ác của ngươi sẽ trừng phạt ngươi. Sự quay lưng của ngươi sẽ cho thấy ngươi sai. \\q Hãy hiểu điều này và thấy cho rõ: \\q lìa bỏ {{divine_name:CHÚA|Gia-vê}} Đức Chúa Trời của ngươi \\q và không kính sợ {{deity_pronoun:ta|Ta}} là điều xấu xa và cay đắng, \\q Chúa là {{divine_name:CHÚA|Gia-vê}} Vạn Quân phán."
+        },
+        "ko": {
+          "L": "네 악이 너를 징계하고, 네 돌아섬들이 너를 책망할 것이다. \\q 그러니 알고 보아라. 악하고 쓴 일이다. \\q 네가 네 하나님 {{divine_name:주|야훼}}를 버린 것과 \\q 나에 대한 두려움이 네게 없는 것은. \\q 만군의 주 {{divine_name:하나님|야훼}}의 선언이다.",
+          "B": "네 악이 너를 벌하고, 네가 나에게서 돌아선 일이 너를 꾸짖을 것이다. \\q 그러니 깨달아 알아라. \\q 네 하나님 {{divine_name:주|야훼}}를 버리고 \\q 나를 두려워하지 않는 것이 얼마나 악하고 쓰라린 일인지를. \\q 만군의 주 {{divine_name:하나님|야훼}}가 말한다.",
+          "R": "네 악이 너를 벌할 것이다. 나에게서 돌아선 일이 네 잘못을 드러낼 것이다. \\q 이것을 깨닫고 똑똑히 보아라. \\q 네 하나님 {{divine_name:주|야훼}}를 떠나 \\q 나를 두려워하지 않는 것은 악하고 쓰라린 일이다. \\q 하늘의 군대를 거느린 주 {{divine_name:하나님|야훼}}가 말한다."
         }
       },
       "decisions": [
@@ -3544,6 +3812,29 @@
           "reason": "Adonai YHWH is \"Chúa là CHÚA\" (Samuel, Psalms), and \"of hosts\" is \"Vạn Quân\" at every level (terms note), so the English Literal/Balanced difference does not arise.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240020190181",
+            "o240020190191",
+            "o240020190201"
+          ],
+          "choice": "만군의 주 하나님 (Literal, Balanced); 하늘의 군대를 거느린 주 하나님 (Readable)",
+          "alternatives": [
+            "만군의 여호와"
+          ],
+          "reason": "The Lord GOD of hosts follows the terms note (Psalm 69:7 B), with the setting on 하나님; in God's own mouth the Readable form is 거느린, without -시-.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3612,6 +3903,11 @@
           "L": "Vì từ xưa {{deity_pronoun:ta|Ta}} đã bẻ ách ngươi, đã bứt dây trói ngươi, \\q và ngươi đã nói: \"Tôi sẽ không vi phạm.\" \\q Thế mà trên mọi đồi cao và dưới mọi cây xanh, \\q ngươi đã nằm xuống, làm gái điếm.",
           "B": "Từ lâu {{deity_pronoun:ta|Ta}} đã bẻ gãy ách của ngươi, bứt đứt xiềng xích của ngươi, \\q và ngươi đã nói: \"Tôi sẽ không vi phạm.\" \\q Thế mà trên mọi đồi cao và dưới mọi cây rậm lá, \\q ngươi đã nằm dài như một gái điếm.",
           "R": "Từ lâu {{deity_pronoun:ta|Ta}} đã bẻ gãy cái ách đè trên ngươi và bứt đứt xiềng xích ngươi. \\q Ngươi đã nói: \"Tôi sẽ không bao giờ bất tuân.\" \\q Nhưng trên mọi đồi cao và dưới mọi cây xanh, \\q ngươi đã nằm xuống như gái điếm để thờ các thần khác."
+        },
+        "ko": {
+          "L": "내가 오래전에 네 멍에를 꺾고 네 결박을 끊었다. \\q 그러자 너는 \"나는 범하지 않겠다\" 하고 말했다. \\q 그러나 너는 높은 언덕마다, 푸른 나무 아래마다 \\q 창녀가 되어 누웠다.",
+          "B": "오래전에 내가 네 멍에를 꺾고 네 사슬을 끊어 주었다. \\q 그때 너는 \"나는 죄를 짓지 않겠다\" 하고 말했다. \\q 그런데도 너는 높은 언덕마다, 잎이 무성한 나무 아래마다 \\q 창녀처럼 몸을 눕혔다.",
+          "R": "오래전에 나는 너를 묶고 있던 멍에를 꺾고 네 사슬을 끊어 주었다. \\q 너는 \"나는 결코 거역하지 않겠다\" 하고 말했다. \\q 그러나 너는 높은 언덕마다, 푸른 나무 아래마다 \\q 창녀처럼 누워 다른 신들을 섬겼다."
         }
       },
       "decisions": [
@@ -3719,6 +4015,27 @@
           "reason": "\"Cái ách\" is the terms note's word for the yoke (1 Kings 12:4), kept for Jeremiah 27-28 as well.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240020200041"
+          ],
+          "choice": "멍에",
+          "alternatives": [
+            "굴레"
+          ],
+          "reason": "The yoke is 멍에 at every level, as the terms note and 1 Kings 12, so that this verse links with the yoke of chapters 27-28.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3779,6 +4096,11 @@
           "L": "Ta đã trồng ngươi như một gốc nho quý, \\q hoàn toàn là giống thật. \\q Sao ngươi lại biến đổi trước mặt {{deity_pronoun:ta|Ta}} \\q thành những nhánh thoái hóa của cây nho lạ?",
           "B": "Ta đã trồng ngươi như một cây nho quý, \\q từ giống hoàn toàn thuần chủng. \\q Vậy sao trước mặt {{deity_pronoun:ta|Ta}} ngươi lại biến thành \\q những nhánh dại của một cây nho lạ?",
           "R": "Ta đã trồng ngươi như giống nho tốt nhất, \\q mọc lên từ hạt giống tốt và thuần. \\q Vậy sao ngươi lại biến thành \\q một cây nho dại chẳng dùng được gì cho {{deity_pronoun:ta|Ta}}?"
+        },
+        "ko": {
+          "L": "나는 너를 귀한 포도나무로, \\q 모두 참된 씨로 심었다. \\q 그런데 어떻게 네가 내 앞에서 \\q 낯선 포도나무의 썩은 가지로 변했느냐?",
+          "B": "나는 너를 좋은 품종의 포도나무로, \\q 온전히 참된 씨에서 난 것으로 심었다. \\q 그런데 어찌하여 너는 내 앞에서 \\q 낯선 포도나무의 들가지로 변해 버렸느냐?",
+          "R": "나는 너를 가장 좋은 포도나무처럼, \\q 좋고 깨끗한 씨에서 자라게 심었다. \\q 그런데 어떻게 네가 \\q 나에게 아무 쓸모없는 들포도나무가 되어 버렸느냐?"
         }
       },
       "decisions": [
@@ -3920,6 +4242,11 @@
           "L": "Dù ngươi rửa bằng nước tro \\q và dùng nhiều xà phòng cho mình, \\q tội ác ngươi vẫn còn vết dơ trước mặt {{deity_pronoun:ta|Ta}}, \\q Chúa là {{divine_name:CHÚA|Gia-vê}} phán vậy.",
           "B": "Dù ngươi có kỳ cọ bằng xút \\q và dùng thật nhiều xà phòng, \\q tội lỗi ngươi vẫn còn là vết bẩn trước mặt {{deity_pronoun:ta|Ta}}, \\q Chúa là {{divine_name:CHÚA|Gia-vê}} phán vậy.",
           "R": "Dù ngươi có chà rửa bằng xà phòng thật mạnh \\q và dùng bao nhiêu tùy thích, \\q Ta vẫn thấy vết nhơ tội lỗi của ngươi, \\q Chúa là {{divine_name:CHÚA|Gia-vê}} phán."
+        },
+        "ko": {
+          "L": "네가 잿물로 씻고 \\q 비누를 많이 쓸지라도, \\q 네 죄악은 내 앞에 얼룩져 있다. \\q 주 {{divine_name:하나님|야훼}}의 선언이다.",
+          "B": "네가 세탁 소다로 문질러 씻고 \\q 비누를 아무리 많이 쓴다 해도, \\q 네 죄는 내 앞에 얼룩으로 남아 있다. \\q 주 {{divine_name:하나님|야훼}}가 말한다.",
+          "R": "네가 독한 비누로 몸을 문지르고 \\q 그것을 마음껏 쓴다 해도, \\q 나는 여전히 네 죄의 얼룩을 본다. \\q 주 {{divine_name:하나님|야훼}}가 말한다."
         }
       },
       "decisions": [
@@ -4058,6 +4385,11 @@
           "L": "Sao ngươi có thể nói: \"Tôi không bị ô uế, tôi đã không đi theo các Ba-anh\"? \\q Hãy nhìn đường lối ngươi trong thung lũng; \\q hãy biết điều ngươi đã làm, \\q hỡi lạc đà cái tơ chạy nhanh, chạy ngang chạy dọc trên đường mình!",
           "B": "Sao ngươi có thể nói: \"Tôi đâu có làm mình ô uế, tôi đâu có đi theo các Ba-anh\"? \\q Hãy nhìn con đường của ngươi trong thung lũng; \\q hãy nhận điều ngươi đã làm, \\q hỡi lạc đà cái tơ hiếu động, chạy tới chạy lui!",
           "R": "Sao ngươi có thể nói: \"Tôi không ô uế. Tôi không đi theo các Ba-anh, là những thần giả mang tên Ba-anh\"? \\q Hãy nhìn xem ngươi đã làm gì trong thung lũng và hãy nhận tội đi. \\q Ngươi giống như một con lạc đà cái non \\q chạy cuồng loạn khắp mọi hướng."
+        },
+        "ko": {
+          "L": "네가 어떻게 \"나는 더럽혀지지 않았다. 나는 바알들을 따라가지 않았다\" 하고 말할 수 있느냐? \\q 골짜기에 있는 네 길을 보아라. \\q 네가 무엇을 했는지 알아라. \\q 너는 제 길을 이리저리 엇갈려 달리는 날랜 어린 암낙타다!",
+          "B": "네가 어떻게 \"나는 나를 더럽히지 않았다. 바알들을 따라가지 않았다\" 하고 말할 수 있느냐? \\q 골짜기에 난 네 발자취를 보아라. \\q 네가 한 일을 인정하여라. \\q 너는 이리저리 날뛰는 들뜬 어린 암낙타다!",
+          "R": "네가 어떻게 \"나는 더럽지 않다. 나는 바알들, 곧 바알이라는 거짓 신들을 따라가지 않았다\" 하고 말할 수 있느냐? \\q 골짜기에서 네가 한 짓을 보고 그것을 인정하여라. \\q 너는 어린 암낙타와 같다. \\q 사방으로 정신없이 뛰어다니는 낙타다."
         }
       },
       "decisions": [
@@ -4288,6 +4620,11 @@
           "L": "Một con lừa rừng quen nơi hoang mạc, theo dục vọng của nó, nó hít gió; \\q trong lúc động đực, ai có thể ngăn nó lại? \\q Mọi con tìm nó sẽ không phải mệt nhọc; \\q vào tháng của nó, chúng sẽ tìm được nó.",
           "B": "Con lừa rừng quen sống nơi hoang mạc hít hơi gió trong cơn thèm khát. \\q Khi nó động đực, ai cản nó lại được? \\q Những con đực tìm nó chẳng cần nhọc công; \\q đến mùa giao phối, chúng sẽ gặp nó.",
           "R": "Ngươi giống như một con lừa cái hoang sống trong sa mạc. Khi muốn có bạn tình, nó hít hơi gió. \\q Khi nó động đực, không ai giữ nó lại được. \\q Những con đực đi tìm nó chẳng cần mệt sức. \\q Khi đến mùa, chúng sẽ dễ dàng tìm thấy nó."
+        },
+        "ko": {
+          "L": "광야에 익숙한 들나귀가 제 욕정에 바람을 들이마신다. \\q 그 암컷의 발정을 누가 돌이킬 수 있겠느냐? \\q 그것을 찾는 자들은 모두 수고할 필요가 없다. \\q 그 달에 그들이 그것을 찾아낼 것이다.",
+          "B": "광야에서 사는 들나귀가 욕정에 차서 바람 냄새를 맡는다. \\q 발정기에 누가 그것을 막을 수 있겠느냐? \\q 그것을 찾는 수컷들은 애쓸 필요가 없다. \\q 짝짓기 때가 되면 그것을 찾아낼 것이다.",
+          "R": "너는 광야에 사는 암컷 들나귀와 같다. 짝을 찾을 때에는 바람 냄새를 맡는다. \\q 발정이 나면 아무도 그것을 붙잡아 둘 수 없다. \\q 그것을 찾는 수컷들은 힘들여 애쓸 필요가 없다. \\q 때가 되면 쉽게 그것을 찾아낸다."
         }
       },
       "decisions": [
@@ -4418,6 +4755,11 @@
           "L": "Hãy giữ chân ngươi khỏi trần trụi \\q và cổ họng ngươi khỏi khát. \\q Nhưng ngươi đã nói: \"Vô ích thôi! \\q Không, vì tôi đã yêu những kẻ lạ, \\q và tôi sẽ đi theo chúng.\"",
           "B": "Đừng chạy cho đến khi chân ngươi trần trụi \\q và cổ họng ngươi khô vì khát. \\q Nhưng ngươi đã nói: \"Vô ích thôi! \\q Không, tôi yêu những kẻ lạ, \\q và tôi sẽ đi theo chúng.\"",
           "R": "Hãy thôi chạy theo chúng cho đến khi mòn cả dép \\q và cổ họng khô khát! \\q Nhưng ngươi đã nói: \"Vô ích thôi! \\q Không! Tôi yêu những thần ngoại bang ấy, \\q và tôi sẽ cứ đi theo chúng.\""
+        },
+        "ko": {
+          "L": "네 발을 맨발이 되지 않게 하고, \\q 네 목을 목마르지 않게 하여라. \\q 그러나 너는 말했다. \"소용없다! \\q 아니다, 나는 낯선 자들을 사랑했으니 \\q 그들을 따라가겠다.\"",
+          "B": "발이 맨발이 되도록 \\q 목이 타도록 달려가지 마라. \\q 그러나 너는 말했다. \"소용없다! \\q 아니다, 나는 낯선 신들을 사랑한다. \\q 나는 그들을 따라가겠다.\"",
+          "R": "신발이 다 닳도록, \\q 목이 바싹 마르도록 그들을 쫓아다니지 마라! \\q 그러나 너는 말했다. \"소용없다! \\q 아니다! 나는 그 다른 나라 신들을 사랑한다. \\q 나는 계속 그들을 따라가겠다.\""
         }
       },
       "decisions": [
@@ -4545,6 +4887,11 @@
           "L": "Như kẻ trộm xấu hổ khi bị bắt, \\q nhà Y-sơ-ra-ên cũng bị hổ thẹn như vậy: \\q chúng, các vua chúng, các quan trưởng chúng, \\q các thầy tế lễ và các nhà tiên tri của chúng,",
           "B": "Như kẻ trộm bị nhục khi bị bắt quả tang, \\q nhà Y-sơ-ra-ên cũng bị hổ thẹn như vậy: \\q chúng, các vua và các quan chức, \\q các thầy tế lễ và các nhà tiên tri của chúng,",
           "R": "Kẻ trộm thấy xấu hổ khi bị bắt. \\q Cũng vậy, dân Y-sơ-ra-ên phải hổ thẹn, \\q cùng với các vua và các nhà lãnh đạo, \\q các thầy tế lễ và các nhà tiên tri của họ."
+        },
+        "ko": {
+          "L": "도둑이 붙잡힐 때 수치를 당하듯이, \\q 이스라엘 집이 수치를 당했다. \\q 그들과 그들의 왕들과 그들의 고관들과 \\q 그들의 제사장들과 그들의 예언자들이,",
+          "B": "도둑이 들킬 때 망신을 당하듯이 \\q 이스라엘 집이 수치를 당했다. \\q 그들과 그들의 왕들과 관리들, \\q 그들의 제사장들과 예언자들이 그러하다.",
+          "R": "도둑은 붙잡히면 부끄러워한다. \\q 그와 마찬가지로 이스라엘 백성도 부끄러움을 당한다. \\q 그들의 왕들과 지도자들, \\q 그들의 제사장들과 예언자들도 함께 부끄러움을 당한다."
         }
       },
       "decisions": [
@@ -4686,6 +5033,11 @@
           "L": "là những kẻ nói với khúc gỗ: \"Ngươi [là] cha ta,\" và với hòn đá: \"Ngươi đã sinh ra chúng ta.\" \\q Vì chúng đã xoay lưng lại với {{deity_pronoun:ta|Ta}}, chứ không phải mặt; \\q nhưng trong lúc hoạn nạn, chúng lại nói: \\q \"Xin đứng dậy và cứu chúng tôi!\"",
           "B": "là những kẻ gọi khúc gỗ: \"Cha tôi,\" và bảo hòn đá: \"Ngươi đã sinh ra chúng tôi.\" \\q Chúng đã quay lưng lại với {{deity_pronoun:ta|Ta}} chứ không quay mặt về {{deity_pronoun:ta|Ta}}; \\q thế mà khi hoạn nạn đến, chúng lại nói: \\q \"Xin trỗi dậy và cứu chúng con!\"",
           "R": "Chúng nói với tượng gỗ: \"Ngài là cha tôi.\" Chúng nói với tượng đá: \"Ngài là mẹ đã sinh ra chúng tôi.\" \\q Chúng đã quay lưng với {{deity_pronoun:ta|Ta}} và không chịu nhìn mặt {{deity_pronoun:ta|Ta}}. \\q Nhưng khi gặp hoạn nạn, chúng kêu cầu {{deity_pronoun:ta|Ta}}: \\q \"Xin hãy đến cứu chúng con!\""
+        },
+        "ko": {
+          "L": "그들은 나무에게 \"너는 내 아버지다\" 하고, 돌에게 \"네가 우리를 낳았다\" 하고 말한다. \\q 그들이 나에게 등을 돌리고 얼굴을 돌리지 않았기 때문이다. \\q 그러나 그들은 재난의 때에 말한다. \\q \"일어나서 우리를 구원해 주십시오!\"",
+          "B": "그들은 나무를 보고 \"내 아버지\"라고 부르고, 돌에게 \"네가 우리를 낳았다\" 하고 말한다. \\q 그들은 나에게 얼굴이 아니라 등을 돌렸다. \\q 그러면서도 재난이 닥치면 말한다. \\q \"일어나 우리를 구원해 주십시오!\"",
+          "R": "그들은 나무로 만든 우상에게 \"당신은 내 아버지입니다\" 하고 말한다. 돌로 만든 우상에게 \"당신은 우리를 낳은 어머니입니다\" 하고 말한다. \\q 그들은 나에게 등을 돌리고 나를 쳐다보려고도 하지 않는다. \\q 그러나 어려움을 당하면 나에게 부르짖는다. \\q \"오셔서 우리를 구해 주십시오!\""
         }
       },
       "decisions": [
@@ -4833,6 +5185,11 @@
           "L": "Vậy các thần ngươi đã làm cho mình ở đâu? \\q Hãy để chúng đứng dậy, nếu chúng có thể cứu ngươi \\q trong lúc ngươi hoạn nạn; \\q vì số thần của ngươi \\q nhiều như số thành của ngươi, hỡi Giu-đa.",
           "B": "Vậy các thần ngươi đã làm cho mình ở đâu? \\q Hãy để chúng đứng dậy, nếu chúng cứu được ngươi \\q khi hoạn nạn đến với ngươi. \\q Vì ngươi có bao nhiêu thành \\q thì có bấy nhiêu thần, hỡi Giu-đa.",
           "R": "Các thần ngươi tự làm ra cho mình ở đâu rồi? \\q Hãy để chúng đến cứu ngươi \\q khi ngươi gặp hoạn nạn! \\q Hỡi Giu-đa, ngươi có bao nhiêu thành \\q thì có bấy nhiêu thần."
+        },
+        "ko": {
+          "L": "그러면 네가 너를 위해 만든 네 신들은 어디 있느냐? \\q 그들이 일어나라. 그들이 너를 구원할 수 있다면, \\q 네 재난의 때에. \\q 네 성읍의 수만큼 \\q 네 신들이 있기 때문이다, 유다야.",
+          "B": "네가 스스로 만든 신들은 그렇다면 어디 있느냐? \\q 그들이 너를 구원할 수 있다면 일어나 보라고 하여라. \\q 네게 재난이 닥쳤을 때 말이다. \\q 유다야, 너는 성읍의 수만큼이나 \\q 많은 신을 두었다.",
+          "R": "네가 만든 신들은 어디 있느냐? \\q 네가 어려움을 당할 때 \\q 그들이 와서 너를 구해 보라고 하여라! \\q 유다야, 너는 성읍의 수만큼이나 \\q 많은 신을 가지고 있다."
         }
       },
       "decisions": [
@@ -4961,6 +5318,11 @@
           "L": "Sao các ngươi tranh tụng với {{deity_pronoun:ta|Ta}}? \\q Tất cả các ngươi đều đã phản nghịch {{deity_pronoun:ta|Ta}}, {{divine_name:CHÚA|Gia-vê}} phán vậy.",
           "B": "Sao các ngươi buộc tội {{deity_pronoun:ta|Ta}}? \\q Tất cả các ngươi đều đã phản nghịch {{deity_pronoun:ta|Ta}}, {{divine_name:CHÚA|Gia-vê}} phán vậy.",
           "R": "Sao các ngươi đưa {{deity_pronoun:ta|Ta}} ra tòa? \\q Tất cả các ngươi đều đã chống lại {{deity_pronoun:ta|Ta}}, {{divine_name:CHÚA|Gia-vê}} phán."
+        },
+        "ko": {
+          "L": "너희가 어찌하여 나와 다투느냐? \\q 너희가 모두 나를 거역했다. {{divine_name:주|야훼}}의 선언이다.",
+          "B": "너희가 어찌하여 나를 고발하느냐? \\q 너희가 모두 나를 거역했다. {{divine_name:주|야훼}}가 말한다.",
+          "R": "너희가 왜 나를 재판에 넘기려 하느냐? \\q 너희는 모두 나에게 등을 돌렸다. {{divine_name:주|야훼}}가 말한다."
         }
       },
       "decisions": [
@@ -5069,6 +5431,11 @@
           "L": "Ta đã đánh con cái các ngươi cách vô ích; \\q chúng không nhận sự sửa dạy. \\q Gươm của các ngươi đã nuốt các nhà tiên tri của các ngươi như sư tử hủy diệt.",
           "B": "Ta đã đánh phạt con cái các ngươi mà chẳng ích gì; \\q chúng không chịu nhận sự sửa phạt. \\q Chính gươm các ngươi đã nuốt các nhà tiên tri của các ngươi như sư tử tàn phá.",
           "R": "Ta đã trừng phạt dân các ngươi, nhưng chẳng được gì. \\q Chúng không chịu học bài học của mình. \\q Các ngươi đã dùng gươm giết các nhà tiên tri của mình như sư tử xé mồi."
+        },
+        "ko": {
+          "L": "내가 너희 자녀들을 친 것이 헛되었다. \\q 그들은 징계를 받아들이지 않았다. \\q 너희 칼이 사납게 찢는 사자처럼 너희 예언자들을 삼켰다.",
+          "B": "내가 너희 자녀들을 쳤지만 소용이 없었다. \\q 그들은 훈계를 받아들이지 않았다. \\q 너희의 칼이 사나운 사자처럼 너희 예언자들을 삼켰다.",
+          "R": "내가 너희 백성을 벌했지만 아무 소용이 없었다. \\q 그들은 깨닫지 못했다. \\q 너희는 먹이를 찢는 사자처럼 칼로 너희 예언자들을 죽였다."
         }
       },
       "decisions": [
@@ -5200,6 +5567,11 @@
           "L": "Hỡi thế hệ này, hãy xem lời của {{divine_name:CHÚA|Gia-vê}}: \\q Ta có phải là hoang mạc cho Y-sơ-ra-ên, \\q hay là một xứ tối tăm mịt mù? \\q Sao dân {{deity_pronoun:ta|Ta}} lại nói: \"Chúng tôi được tự do đi lang thang; \\q chúng tôi sẽ không đến với {{deity_pronoun:ngài|Ngài}} nữa\"?",
           "B": "Hỡi thế hệ này, hãy lưu tâm đến lời {{divine_name:CHÚA|Gia-vê}}: \\q Ta có phải là sa mạc đối với Y-sơ-ra-ên, \\q hay là một xứ tối tăm mịt mù không? \\q Vậy sao dân {{deity_pronoun:ta|Ta}} lại nói: \"Chúng tôi muốn đi đâu thì đi; \\q chúng tôi sẽ không trở lại với {{deity_pronoun:ngài|Ngài}} nữa\"?",
           "R": "Hỡi người thời nay, hãy chú ý nghe sứ điệp của {{divine_name:CHÚA|Gia-vê}}: \\q Ta có giống như sa mạc đối với Y-sơ-ra-ên không? \\q Ta có phải là một vùng đất tối tăm và nguy hiểm không? \\q Vậy sao dân {{deity_pronoun:ta|Ta}} lại nói: \"Chúng tôi được tự do muốn đi đâu thì đi. \\q Chúng tôi sẽ không bao giờ trở lại với {{deity_pronoun:ngài|Ngài}} nữa\"?"
+        },
+        "ko": {
+          "L": "너희, 이 세대여, {{divine_name:주|야훼}}의 말을 보아라. \\q 내가 이스라엘에게 광야였느냐? \\q 깊은 어둠의 땅이었느냐? \\q 어찌하여 내 백성이 \"우리는 마음대로 돌아다닌다. \\q 다시는 당신께 가지 않겠다\" 하고 말하느냐?",
+          "B": "이 세대 사람들아, {{divine_name:주|야훼}}의 말을 귀담아들어라. \\q 내가 이스라엘에게 사막이었느냐? \\q 짙은 어둠의 땅이었느냐? \\q 그런데 어찌하여 내 백성이 \"우리는 가고 싶은 대로 다닌다. \\q 다시는 당신께 돌아가지 않겠다\" 하고 말하느냐?",
+          "R": "오늘을 사는 사람들아, {{divine_name:주|야훼}}가 하는 말에 귀를 기울여라. \\q 내가 이스라엘에게 사막과 같았느냐? \\q 어둡고 위험한 땅과 같았느냐? \\q 그런데 왜 내 백성이 \"우리는 가고 싶은 곳에 마음대로 간다. \\q 다시는 당신께 돌아가지 않겠다\" 하고 말하느냐?"
         }
       },
       "decisions": [
@@ -5267,6 +5639,27 @@
           "reason": "Balanced and Readable give the sense of \"see\" (m3), and Readable explains the darkness.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o240020310151"
+          ],
+          "choice": "당신께 ... 가지 않겠다 (no polite ending)",
+          "alternatives": [
+            "주님께 ... 가지 않겠습니다"
+          ],
+          "reason": "The people's words are a defiant refusal of God, quoted by God himself; Korean marks the defiance by leaving off the polite ending, as opponents may speak without honorifics.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5325,6 +5718,11 @@
           "L": "Một trinh nữ có thể quên đồ trang sức mình, \\q một cô dâu [quên] dải thắt lưng mình sao? \\q Thế mà dân {{deity_pronoun:ta|Ta}} đã quên {{deity_pronoun:ta|Ta}} \\q những ngày không đếm xuể.",
           "B": "Có thiếu nữ nào quên nữ trang của mình, \\q có cô dâu nào quên dải lưng cưới của mình không? \\q Thế mà dân {{deity_pronoun:ta|Ta}} đã quên {{deity_pronoun:ta|Ta}} \\q từ bao nhiêu ngày không kể xiết.",
           "R": "Một thiếu nữ không quên đồ trang sức của mình. \\q Một cô dâu không quên áo cưới của mình. \\q Nhưng dân {{deity_pronoun:ta|Ta}} đã quên {{deity_pronoun:ta|Ta}} \\q lâu đến nỗi không ai đếm được."
+        },
+        "ko": {
+          "L": "처녀가 자기 패물을, \\q 신부가 자기 띠를 잊을 수 있겠느냐? \\q 그런데 내 백성은 나를 잊었다, \\q 셀 수 없는 날 동안.",
+          "B": "젊은 여자가 자기 보석을 잊겠느냐? \\q 신부가 자기가 두르는 띠를 잊겠느냐? \\q 그런데 내 백성은 나를 잊었다. \\q 헤아릴 수 없이 오랫동안 잊었다.",
+          "R": "젊은 여자는 자기 장신구를 잊지 않는다. \\q 신부는 자기 혼례복을 잊지 않는다. \\q 그런데 내 백성은 나를 잊었다. \\q 아무도 셀 수 없을 만큼 오랫동안 잊었다."
         }
       },
       "decisions": [
@@ -5449,6 +5847,11 @@
           "L": "Ngươi khéo đưa đường lối ngươi đi tìm tình yêu biết bao! \\q Vì thế, ngay cả những người đàn bà gian ác \\q ngươi cũng đã dạy cho đường lối ngươi.",
           "B": "Ngươi khéo tìm đường để kiếm tình nhân biết bao! \\q Vì thế ngươi đã dạy cả những người đàn bà gian ác \\q theo đường lối của ngươi.",
           "R": "Ngươi thật thành thạo trong việc chạy theo tình nhân! \\q Ngươi còn dạy cả những người đàn bà gian ác \\q sống theo cách ngươi sống."
+        },
+        "ko": {
+          "L": "네가 사랑을 찾으려고 네 길을 얼마나 잘 꾸미는지! \\q 그러므로 악한 여자들에게까지 \\q 네가 네 길을 가르쳤다.",
+          "B": "네가 사랑을 찾아 길을 찾아내는 솜씨가 어찌 그리 능숙하냐! \\q 그래서 너는 악한 여자들에게까지 \\q 네 길을 가르쳤다.",
+          "R": "너는 애인들을 쫓아가는 방법을 참 잘도 안다! \\q 너는 악한 여자들에게까지 \\q 네가 사는 방식을 가르쳤다."
         }
       },
       "decisions": [
@@ -5575,6 +5978,11 @@
           "L": "Ngay trên vạt áo ngươi cũng thấy có \\q máu của mạng sống những người nghèo vô tội; \\q ngươi đã không bắt gặp chúng đang đào tường vào nhà. Thế mà bất chấp mọi điều ấy,",
           "B": "Ngay trên vạt áo ngươi cũng thấy có \\q máu của những người nghèo vô tội. \\q Ngươi đâu có bắt gặp họ đang đột nhập vào nhà. Thế mà bất chấp mọi điều ấy,",
           "R": "Trên áo ngươi có máu, \\q máu của những người nghèo chẳng làm điều gì sai. \\q Ngươi đâu có bắt gặp họ đang đột nhập để trộm cắp. Thế mà bất chấp mọi điều ấy,"
+        },
+        "ko": {
+          "L": "네 옷자락에서도 \\q 죄 없는 가난한 사람들의 목숨의 피가 발견된다. \\q 네가 그들이 담을 뚫고 들어오는 것을 발견한 것도 아니었다. 그런데도 이 모든 일에도 불구하고,",
+          "B": "네 옷자락에서까지 \\q 죄 없는 가난한 사람들의 피가 묻어 있다. \\q 그들이 담을 뚫고 들어오다가 붙잡힌 것도 아니었다. 그런데도 이 모든 일에도 불구하고,",
+          "R": "네 옷에는 피가 묻어 있다. \\q 아무 잘못도 하지 않은 가난한 사람들의 피다. \\q 그들은 도둑질하려고 집에 들어오다가 붙잡힌 것도 아니었다. 그런데도 이 모든 일에도 불구하고,"
         }
       },
       "decisions": [
@@ -5708,6 +6116,11 @@
           "L": "ngươi lại nói: \"Tôi vô tội; \\q chắc chắn cơn giận của {{deity_pronoun:ngài|Ngài}} đã quay khỏi tôi rồi.\" \\q Kìa, {{deity_pronoun:ta|Ta}} sẽ xét xử ngươi \\q vì ngươi nói: \"Tôi đã không phạm tội.\"",
           "B": "ngươi lại nói: \"Tôi vô tội; \\q chắc chắn cơn giận của {{deity_pronoun:ngài|Ngài}} đã lìa khỏi tôi.\" \\q Nay {{deity_pronoun:ta|Ta}} sẽ đưa ngươi ra xét xử \\q vì ngươi nói: \"Tôi đã không phạm tội.\"",
           "R": "ngươi lại nói: \"Tôi chẳng làm gì sai. \\q Chắc chắn Đức Chúa Trời không còn giận tôi nữa.\" \\q Nhưng bây giờ {{deity_pronoun:ta|Ta}} sẽ đưa ngươi ra xét xử \\q vì ngươi nói: \"Tôi đã không phạm tội.\""
+        },
+        "ko": {
+          "L": "너는 말했다. \"나는 죄가 없다. \\q 분명히 그분의 진노가 나에게서 떠났다.\" \\q 보아라, 나는 너와 재판을 하겠다. \\q 네가 \"나는 죄를 짓지 않았다\" 하고 말하기 때문이다.",
+          "B": "너는 말했다. \"나는 죄가 없다. \\q 그분의 진노가 틀림없이 나에게서 떠났다.\" \\q 이제 내가 너를 재판에 부치겠다. \\q 네가 \"나는 죄를 짓지 않았다\" 하고 말하기 때문이다.",
+          "R": "너는 말했다. \"나는 아무 잘못도 하지 않았다. \\q 하나님께서는 이제 분명히 나에게 화가 나 있지 않으시다.\" \\q 그러나 이제 내가 너를 재판에 넘기겠다. \\q 네가 \"나는 죄를 짓지 않았다\" 하고 말하기 때문이다."
         }
       },
       "decisions": [
@@ -5772,6 +6185,26 @@
           "reason": "Readable names God for \"his\" (m3) and keeps the courtroom picture with \"put you on trial\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o240020350011"
+          ],
+          "choice": "the sentence begun in verse 34 closes here",
+          "alternatives": [
+            "| Verse 34 ends \"yet in spite of all these things\", which Korean leaves open with 불구하고, and verse 35 supplies the main clause, so each verse keeps its own words after its marker."
+          ],
+          "reason": "|",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5831,6 +6264,11 @@
           "L": "Ngươi thật coi nhẹ việc đổi đường lối mình biết bao! \\q Ngươi cũng sẽ bị Ai Cập làm cho hổ thẹn, \\q như đã bị A-si-ri làm cho hổ thẹn.",
           "B": "Sao ngươi thật dễ dàng thay đổi đường lối mình! \\q Ngươi cũng sẽ bị Ai Cập làm cho hổ thẹn, \\q như ngươi đã bị A-si-ri làm cho hổ thẹn.",
           "R": "Ngươi cứ thay đổi ý định không biết nên tin cậy ai! \\q Ai Cập sẽ làm ngươi thất vọng và hổ thẹn, \\q như A-si-ri đã làm."
+        },
+        "ko": {
+          "L": "너는 네 길을 바꾸려고 얼마나 가볍게 돌아다니느냐! \\q 앗시리아로 말미암아 수치를 당했던 것처럼 \\q 이집트로 말미암아서도 수치를 당할 것이다.",
+          "B": "너는 어찌 그리 경솔하게 네 길을 바꾸느냐! \\q 앗시리아에게 수치를 당했듯이 \\q 이집트에게도 수치를 당할 것이다.",
+          "R": "너는 누구를 믿을지 계속 마음을 바꾼다! \\q 앗시리아가 그랬던 것처럼 \\q 이집트도 너를 실망시키고 부끄럽게 할 것이다."
         }
       },
       "decisions": [
@@ -5946,6 +6384,11 @@
           "L": "Từ nơi ấy, ngươi cũng sẽ đi ra \\q với hai tay ôm đầu; \\q vì {{divine_name:CHÚA|Gia-vê}} đã khước từ những kẻ ngươi tin cậy, \\q và ngươi sẽ không được thành công nhờ chúng.",
           "B": "Ngươi cũng sẽ rời khỏi Ai Cập \\q với hai tay ôm đầu, \\q vì {{divine_name:CHÚA|Gia-vê}} đã khước từ những kẻ ngươi nương cậy, \\q và ngươi sẽ chẳng thành công nhờ chúng.",
           "R": "Ngươi cũng sẽ rời Ai Cập trong nhục nhã, \\q hai tay ôm đầu. \\q {{divine_name:CHÚA|Gia-vê}} đã khước từ những nước ngươi tin cậy. \\q Chúng sẽ chẳng giúp ngươi thành công được."
+        },
+        "ko": {
+          "L": "너는 이것에게서도 나올 것이다. \\q 네 두 손을 네 머리 위에 얹은 채로. \\q {{divine_name:주|야훼}}가 네가 의지하는 자들을 버렸으니, \\q 너는 그들로 말미암아 형통하지 못할 것이다.",
+          "B": "너는 이집트에게서도 \\q 두 손을 머리에 얹고 나올 것이다. \\q {{divine_name:주|야훼}}가 네가 의지하는 자들을 버렸으니, \\q 너는 그들의 도움으로 잘되지 못할 것이다.",
+          "R": "너는 이집트에서도 부끄러움을 당하고 떠날 것이다. \\q 두 손을 머리에 얹고 떠날 것이다. \\q {{divine_name:주|야훼}}가 네가 믿는 나라들을 버렸다. \\q 그들은 네가 잘되도록 도와주지 못할 것이다."
         }
       },
       "decisions": [
