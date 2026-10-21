@@ -30,6 +30,31 @@
           "L": "Look, my eye has seen all [this]; \\q my ear has heard and understood it.",
           "B": "Look, my eyes have seen all this; \\q my ears have heard it and understood it.",
           "R": "I have seen all this with my own eyes. \\q I have heard it with my own ears, and I understand it."
+        },
+        "es": {
+          "L": "He aquí, todo [esto] lo ha visto mi ojo; \\q lo ha oído mi oído y lo ha entendido.",
+          "B": "Todo esto lo han visto mis ojos; \\q mis oídos lo han oído y lo han entendido.",
+          "R": "Yo he visto todo esto con mis propios ojos. \\q Lo he oído con mis propios oídos, y lo entiendo."
+        },
+        "fr": {
+          "L": "Voici, mon œil a vu tout [cela] ; \\q mon oreille l’a entendu et compris.",
+          "B": "Voici, mes yeux ont vu tout cela ; \\q mes oreilles l’ont entendu et l’ont compris.",
+          "R": "J’ai vu tout cela de mes propres yeux. \\q Je l’ai entendu de mes propres oreilles, et je le comprends."
+        },
+        "sw": {
+          "L": "Tazama, jicho langu limeona yote [haya]; \\q sikio langu limesikia na kuyaelewa.",
+          "B": "Tazama, macho yangu yameyaona haya yote; \\q masikio yangu yameyasikia na kuyaelewa.",
+          "R": "Nimeyaona haya yote kwa macho yangu mwenyewe. \\q Nimeyasikia kwa masikio yangu mwenyewe, nami nayaelewa."
+        },
+        "vi": {
+          "L": "Kìa, mắt tôi đã thấy mọi [điều này]; \\q tai tôi đã nghe và hiểu rõ.",
+          "B": "Này, mắt tôi đã thấy hết mọi điều ấy; \\q tai tôi đã nghe và đã hiểu.",
+          "R": "Chính mắt tôi đã thấy tất cả những điều ấy. \\q Chính tai tôi đã nghe, và tôi hiểu rõ."
+        },
+        "ko": {
+          "L": "보시오, 내 눈이 [이] 모든 것을 보았고, \\q 내 귀가 듣고 깨달았소.",
+          "B": "보시오, 내 눈이 이 모든 것을 보았고, \\q 내 귀가 그것을 듣고 깨달았소.",
+          "R": "나는 이 모든 것을 내 눈으로 직접 보았소. \\q 내 귀로 직접 들었고, 그것을 깨닫고 있소."
         }
       },
       "decisions": [
@@ -119,6 +144,31 @@
           "L": "As you know, I also know; \\q I do not fall below you.",
           "B": "What you know, I know too; \\q I am not inferior to you.",
           "R": "I know as much as you do. \\q I am not less wise than you are."
+        },
+        "es": {
+          "L": "Como {{plural_you:ustedes saben|vosotros sabéis}}, sé también yo; \\q no caigo yo por debajo de {{plural_you:ustedes|vosotros}}.",
+          "B": "Lo que {{plural_you:ustedes saben|vosotros sabéis}}, lo sé yo también; \\q no soy inferior a {{plural_you:ustedes|vosotros}}.",
+          "R": "Yo sé tanto como {{plural_you:ustedes|vosotros}}. \\q No soy menos sabio que {{plural_you:ustedes|vosotros}}."
+        },
+        "fr": {
+          "L": "Ce que vous savez, moi aussi je le sais ; \\q je ne tombe pas au-dessous de vous.",
+          "B": "Ce que vous savez, je le sais aussi ; \\q je ne vous suis pas inférieur.",
+          "R": "J’en sais autant que vous. \\q Je ne suis pas moins sage que vous."
+        },
+        "sw": {
+          "L": "Kama mjuavyo ninyi, mimi pia najua; \\q mimi sianguki chini yenu.",
+          "B": "Mnachokijua ninyi, nami nakijua; \\q mimi si duni kuliko ninyi.",
+          "R": "Ninajua mengi kama ninyi. \\q Sina hekima pungufu kuliko ninyi."
+        },
+        "vi": {
+          "L": "Như các anh biết, tôi cũng biết; \\q tôi không thua kém các anh.",
+          "B": "Điều các anh biết, tôi cũng biết; \\q tôi chẳng thua kém gì các anh.",
+          "R": "Tôi biết nhiều như các anh vậy. \\q Tôi không kém khôn ngoan hơn các anh."
+        },
+        "ko": {
+          "L": "그대들이 아는 것처럼 나도 아오. \\q 나는 그대들보다 못하지 않소.",
+          "B": "그대들이 아는 것은 나도 아오. \\q 나는 그대들보다 못하지 않소.",
+          "R": "나도 그대들만큼 알고 있소. \\q 나는 그대들보다 덜 지혜롭지 않소."
         }
       },
       "decisions": [
@@ -159,6 +209,45 @@
           "reason": "Readable says plainly in what way Job is not beneath them: in knowledge and wisdom, which is the subject of the verse (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o180130020012",
+            "o180130020013"
+          ],
+          "choice": "{{plural_you:ustedes|vosotros}} for the three friends",
+          "alternatives": [],
+          "reason": "\"Your\" is plural (the three friends) in verses 2-13, so every pronoun, verb and possessive addressed to them carries the plural_you setting.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o180130020013"
+          ],
+          "choice": "\"그대들\" in 하오체 for the three friends",
+          "alternatives": [],
+          "reason": "Job keeps the 하오체 he uses with his friends; verses 2-13 speak to all three.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -191,6 +280,31 @@
           "L": "But I would speak to the Almighty, \\q and I desire to argue [my case] with God.",
           "B": "But I want to speak to the Almighty; \\q I long to argue my case with God.",
           "R": "But I want to speak to God All-Powerful. \\q I want to bring my case before God."
+        },
+        "es": {
+          "L": "Pero yo hablaría al Todopoderoso, \\q y deseo argumentar [mi causa] con Dios.",
+          "B": "Pero quiero hablar con el Todopoderoso; \\q anhelo defender mi causa ante Dios.",
+          "R": "Pero quiero hablar con el Dios Todopoderoso. \\q Quiero presentar mi caso ante Dios."
+        },
+        "fr": {
+          "L": "Mais moi, je voudrais parler au Tout-Puissant, \\q et je désire plaider [ma cause] avec Dieu.",
+          "B": "Mais je veux parler au Tout-Puissant ; \\q je désire ardemment plaider ma cause devant Dieu.",
+          "R": "Mais je veux parler à Dieu le Tout-Puissant. \\q Je veux présenter ma cause devant Dieu."
+        },
+        "sw": {
+          "L": "Lakini mimi ningesema na Mwenyezi, \\q na natamani kujadili [shauri langu] na Mungu.",
+          "B": "Lakini nataka kusema na Mwenyezi; \\q natamani sana kutetea shauri langu mbele za Mungu.",
+          "R": "Lakini nataka kusema na Mungu Mwenyezi. \\q Nataka kupeleka kesi yangu mbele za Mungu."
+        },
+        "vi": {
+          "L": "Nhưng tôi muốn thưa với Đấng Toàn Năng, \\q và tôi ước ao biện luận [duyên cớ mình] với Đức Chúa Trời.",
+          "B": "Nhưng tôi muốn thưa chuyện với Đấng Toàn Năng; \\q tôi khao khát trình bày duyên cớ mình với Đức Chúa Trời.",
+          "R": "Nhưng tôi muốn nói chuyện với Đức Chúa Trời Toàn Năng. \\q Tôi muốn đem vụ kiện của mình ra trước Đức Chúa Trời."
+        },
+        "ko": {
+          "L": "그러나 나는 전능자께 말씀드리고 싶고, \\q 하나님과 [내 사정을] 변론하기를 원하오.",
+          "B": "그러나 나는 전능자께 말씀드리고 싶소. \\q 하나님 앞에서 내 사정을 변론하기를 간절히 바라오.",
+          "R": "그러나 나는 전능하신 하나님께 말씀드리고 싶소. \\q 하나님 앞에 내 사정을 내놓고 싶소."
         }
       },
       "decisions": [
@@ -279,6 +393,40 @@
           "reason": "\"My case\" is supplied so that the legal sense of the verb is heard (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o180130030041"
+          ],
+          "choice": "« Dieu le Tout-Puissant » (R); « le Tout-Puissant » (L, B) for Shaddai",
+          "alternatives": [],
+          "reason": "Readable names God with the title, as the English \"God All-Powerful\" and the French of Ruth 1:20.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o180130030041"
+          ],
+          "choice": "\"Đức Chúa Trời Toàn Năng\" (R); \"Đấng Toàn Năng\" (L, B) for Shaddai",
+          "alternatives": [],
+          "reason": "Readable names God with the title, as the English \"God All-Powerful\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -310,6 +458,31 @@
           "L": "But you are smearers of lies; \\q worthless healers [are] all of you.",
           "B": "But you smear things over with lies; \\q all of you are worthless physicians.",
           "R": "As for you, you cover things over with lies. \\q You are all like doctors who cannot heal anyone."
+        },
+        "es": {
+          "L": "Pero {{plural_you:ustedes son|vosotros sois}} revocadores de mentira; \\q médicos inútiles {{plural_you:[son] todos ustedes|[sois] todos vosotros}}.",
+          "B": "Pero {{plural_you:ustedes lo encubren|vosotros lo encubrís}} todo con mentiras; \\q todos {{plural_you:ustedes son|vosotros sois}} médicos que no sirven para nada.",
+          "R": "En cuanto a {{plural_you:ustedes, cubren|vosotros, cubrís}} las cosas con mentiras. \\q Todos {{plural_you:ustedes son|vosotros sois}} como médicos que no curan a nadie."
+        },
+        "fr": {
+          "L": "Mais vous, vous êtes des badigeonneurs de mensonge ; \\q des médecins de néant, [voilà ce que] vous êtes tous.",
+          "B": "Mais vous, vous recouvrez tout de mensonges ; \\q vous êtes tous des médecins qui ne valent rien.",
+          "R": "Quant à vous, vous cachez la vérité sous des mensonges. \\q Vous êtes tous comme des médecins qui ne guérissent personne."
+        },
+        "sw": {
+          "L": "Lakini ninyi ni wapakaji wa uongo; \\q nyote [ni] waganga wasiofaa kitu.",
+          "B": "Lakini ninyi mnafunika mambo kwa uongo; \\q nyote ni waganga wasio na faida.",
+          "R": "Ama ninyi, mnafunika ukweli kwa uongo. \\q Nyote mko kama waganga wasioweza kumponya mtu yeyote."
+        },
+        "vi": {
+          "L": "Nhưng các anh là những kẻ trét lời dối trá; \\q tất cả các anh [là] những thầy thuốc vô dụng.",
+          "B": "Nhưng các anh lấy lời dối trá mà che phủ mọi điều; \\q tất cả các anh đều là thầy thuốc vô dụng.",
+          "R": "Còn các anh, các anh dùng lời dối trá để che đậy sự thật. \\q Các anh đều như những thầy thuốc chẳng chữa lành được ai."
+        },
+        "ko": {
+          "L": "그러나 그대들은 거짓을 바르는 자들이요, \\q 그대들은 다 쓸모없는 의원들이오.",
+          "B": "그러나 그대들은 거짓말로 덧칠하는 자들이오. \\q 그대들은 모두 쓸모없는 의사들이오.",
+          "R": "그대들은 거짓말로 진실을 덮어 버리오. \\q 그대들은 모두 아무도 고치지 못하는 의사 같소."
         }
       },
       "decisions": [
@@ -398,6 +571,31 @@
           "L": "Oh that you would be completely silent, \\q and it would be wisdom for you!",
           "B": "If only you would keep completely silent! \\q That would be wisdom on your part.",
           "R": "If only you would all just be quiet! \\q That would be the wise thing for you to do."
+        },
+        "es": {
+          "L": "¡Oh, si {{plural_you:callaran|callarais}} del todo, \\q y eso {{plural_you:les|os}} sería [contado] por sabiduría!",
+          "B": "¡Ojalá {{plural_you:guardaran|guardarais}} completo silencio! \\q Eso sería sabiduría de {{plural_you:parte de ustedes|vuestra parte}}.",
+          "R": "¡Si tan solo {{plural_you:se callaran|os callarais}} todos! \\q Eso sería lo más sabio que {{plural_you:podrían|podríais}} hacer."
+        },
+        "fr": {
+          "L": "Oh ! si vous gardiez un complet silence, \\q et ce serait pour vous de la sagesse !",
+          "B": "Si seulement vous vous taisiez complètement ! \\q Ce serait de la sagesse de votre part.",
+          "R": "Si seulement vous vous taisiez tous ! \\q Ce serait la chose la plus sage à faire."
+        },
+        "sw": {
+          "L": "Laiti mngenyamaza kabisa, \\q na hilo lingekuwa hekima kwenu!",
+          "B": "Laiti mngenyamaza kimya kabisa! \\q Hiyo ingekuwa hekima kwenu.",
+          "R": "Laiti nyote mngenyamaza tu! \\q Hilo lingekuwa jambo la busara kwenu."
+        },
+        "vi": {
+          "L": "Ôi, ước gì các anh hoàn toàn im lặng, \\q thì điều đó sẽ là khôn ngoan cho các anh!",
+          "B": "Ước gì các anh cứ im lặng hẳn! \\q Như thế mới là khôn ngoan.",
+          "R": "Giá mà các anh chịu im lặng! \\q Đó mới là điều khôn ngoan các anh nên làm."
+        },
+        "ko": {
+          "L": "그대들이 잠잠하고 또 잠잠하기를 바라오. \\q 그것이 그대들에게 지혜가 될 것이오!",
+          "B": "그대들이 아예 입을 다물었으면 좋겠소! \\q 그것이 그대들의 지혜일 것이오.",
+          "R": "그대들 모두 그냥 조용히 있으면 좋겠소! \\q 그것이 그대들이 할 수 있는 가장 지혜로운 일이오."
         }
       },
       "decisions": [
@@ -477,6 +675,31 @@
           "L": "Hear now my argument, \\q and pay attention to the pleas of my lips.",
           "B": "Please listen to my argument; \\q pay attention to the case I plead.",
           "R": "Now listen to my side of the case. \\q Pay attention to what I am arguing."
+        },
+        "es": {
+          "L": "{{plural_you:Oigan|Oíd}} ahora mi argumento, \\q y {{plural_you:atiendan|atended}} a los alegatos de mis labios.",
+          "B": "Por favor, {{plural_you:escuchen|escuchad}} mi argumento; \\q {{plural_you:presten|prestad}} atención a la causa que defiendo.",
+          "R": "Ahora {{plural_you:escuchen|escuchad}} mi versión del caso. \\q {{plural_you:Pongan|Poned}} atención a lo que argumento."
+        },
+        "fr": {
+          "L": "Écoutez donc mon argument, \\q et soyez attentifs aux plaidoiries de mes lèvres.",
+          "B": "Écoutez, je vous prie, mon argumentation ; \\q soyez attentifs à la cause que je plaide.",
+          "R": "Maintenant, écoutez ma version de l’affaire. \\q Faites attention à ce que je défends."
+        },
+        "sw": {
+          "L": "Sikieni sasa hoja yangu, \\q na msikilize maombi ya midomo yangu.",
+          "B": "Tafadhali sikilizeni hoja yangu; \\q zingatieni shauri ninalolitetea.",
+          "R": "Sasa sikilizeni upande wangu wa kesi. \\q Zingatieni ninachokitetea."
+        },
+        "vi": {
+          "L": "Xin hãy nghe lời biện luận của tôi, \\q và lắng tai nghe lời biện hộ của môi tôi.",
+          "B": "Xin các anh nghe lý lẽ của tôi; \\q hãy chú ý đến duyên cớ tôi bênh vực.",
+          "R": "Bây giờ hãy nghe tôi trình bày phần của tôi. \\q Hãy chú ý đến những gì tôi biện luận."
+        },
+        "ko": {
+          "L": "이제 나의 논증을 들으시오. \\q 내 입술의 변론에 귀를 기울이시오.",
+          "B": "부디 내 논증을 들어 보시오. \\q 내가 변론하는 것에 귀를 기울이시오.",
+          "R": "이제 내 쪽 이야기를 들어 보시오. \\q 내가 주장하는 것을 잘 들으시오."
         }
       },
       "decisions": [
@@ -548,6 +771,31 @@
           "L": "Will you speak injustice for God, \\q and for {{deity_pronoun:him|Him}} speak deceit?",
           "B": "Will you speak what is unjust on God's behalf, \\q and say what is false for {{deity_pronoun:him|Him}}?",
           "R": "Will you tell lies to defend God? \\q Will you twist the truth to take {{deity_pronoun:his|His}} side?"
+        },
+        "es": {
+          "L": "¿{{plural_you:Hablarán|Hablaréis}} injusticia por Dios, \\q y por {{deity_pronoun:él|Él}} {{plural_you:hablarán|hablaréis}} engaño?",
+          "B": "¿{{plural_you:Dirán|Diréis}} lo injusto en favor de Dios, \\q y lo falso en {{deity_pronoun:su|Su}} favor?",
+          "R": "¿{{plural_you:Van|Vais}} a mentir para defender a Dios? \\q ¿{{plural_you:Van|Vais}} a torcer la verdad para {{plural_you:ponerse|poneros}} de {{deity_pronoun:su|Su}} lado?"
+        },
+        "fr": {
+          "L": "Direz-vous l’injustice pour Dieu, \\q et pour {{deity_pronoun:lui|Lui}} direz-vous la tromperie ?",
+          "B": "Direz-vous ce qui est injuste en faveur de Dieu, \\q et ce qui est faux pour {{deity_pronoun:lui|Lui}} ?",
+          "R": "Allez-vous mentir pour défendre Dieu ? \\q Allez-vous tordre la vérité pour prendre {{deity_pronoun:son|Son}} parti ?"
+        },
+        "sw": {
+          "L": "Je, mtasema udhalimu kwa ajili ya Mungu, \\q na kwa ajili {{deity_pronoun:yake|Yake}} mtasema hila?",
+          "B": "Je, mtasema yasiyo ya haki kwa niaba ya Mungu, \\q na kusema uongo kwa ajili {{deity_pronoun:yake|Yake}}?",
+          "R": "Je, mtasema uongo ili kumtetea Mungu? \\q Je, mtapotosha ukweli ili kuwa upande {{deity_pronoun:wake|Wake}}?"
+        },
+        "vi": {
+          "L": "Các anh sẽ nói điều bất công vì Đức Chúa Trời sao, \\q và vì {{deity_pronoun:ngài|Ngài}} mà nói điều dối trá sao?",
+          "B": "Các anh sẽ nói điều bất công để bênh vực Đức Chúa Trời, \\q và nói điều giả dối thay cho {{deity_pronoun:ngài|Ngài}} sao?",
+          "R": "Các anh sẽ nói dối để bênh vực Đức Chúa Trời sao? \\q Các anh sẽ bóp méo sự thật để đứng về phía {{deity_pronoun:ngài|Ngài}} sao?"
+        },
+        "ko": {
+          "L": "그대들이 하나님을 위하여 불의를 말하겠소? \\q 그분을 위하여 속임수를 말하겠소?",
+          "B": "그대들이 하나님 편에서 불의한 말을 하고, \\q 그분을 위해 거짓을 말하겠소?",
+          "R": "그대들은 하나님을 변호하려고 거짓말을 하겠소? \\q 그분 편을 들려고 진실을 비틀겠소?"
         }
       },
       "decisions": [
@@ -636,6 +884,31 @@
           "L": "Will you lift up {{deity_pronoun:his|His}} face? \\q Or will you contend for God?",
           "B": "Will you show {{deity_pronoun:him|Him}} partiality? \\q Will you plead the case for God?",
           "R": "Will you take {{deity_pronoun:his|His}} side unfairly? \\q Will you argue God's case for {{deity_pronoun:him|Him}}?"
+        },
+        "es": {
+          "L": "¿{{plural_you:Alzarán|Alzaréis}} {{deity_pronoun:su|Su}} rostro? \\q ¿O {{plural_you:contenderán|contenderéis}} por Dios?",
+          "B": "¿{{plural_you:Mostrarán|Mostraréis}} parcialidad hacia {{deity_pronoun:él|Él}}? \\q ¿{{plural_you:Defenderán|Defenderéis}} la causa de Dios?",
+          "R": "¿{{plural_you:Van a ponerse|Vais a poneros}} de {{deity_pronoun:su|Su}} lado injustamente? \\q ¿{{plural_you:Van|Vais}} a defender la causa de Dios por {{deity_pronoun:él|Él}}?"
+        },
+        "fr": {
+          "L": "Lèverez-vous {{deity_pronoun:sa|Sa}} face ? \\q Ou plaiderez-vous pour Dieu ?",
+          "B": "Ferez-vous preuve de partialité envers {{deity_pronoun:lui|Lui}} ? \\q Plaiderez-vous la cause de Dieu ?",
+          "R": "Allez-vous prendre {{deity_pronoun:son|Son}} parti injustement ? \\q Allez-vous défendre la cause de Dieu à {{deity_pronoun:sa|Sa}} place ?"
+        },
+        "sw": {
+          "L": "Je, mtauinua uso {{deity_pronoun:wake|Wake}}? \\q Au mtamtetea Mungu?",
+          "B": "Je, mtampendelea {{deity_pronoun:yeye|Yeye}}? \\q Je, mtalitetea shauri la Mungu?",
+          "R": "Je, mtakuwa upande {{deity_pronoun:wake|Wake}} bila haki? \\q Je, mtamtetea Mungu kwa niaba {{deity_pronoun:yake|Yake}}?"
+        },
+        "vi": {
+          "L": "Các anh sẽ nâng mặt {{deity_pronoun:ngài|Ngài}} lên sao? \\q Hay các anh sẽ tranh luận cho Đức Chúa Trời?",
+          "B": "Các anh sẽ thiên vị {{deity_pronoun:ngài|Ngài}} sao? \\q Các anh sẽ biện hộ cho Đức Chúa Trời sao?",
+          "R": "Các anh sẽ đứng về phía {{deity_pronoun:ngài|Ngài}} một cách bất công sao? \\q Các anh sẽ thay {{deity_pronoun:ngài|Ngài}} mà cãi lý cho Đức Chúa Trời sao?"
+        },
+        "ko": {
+          "L": "그대들이 그분의 얼굴을 들어 주겠소? \\q 하나님을 위하여 다투겠소?",
+          "B": "그대들이 그분을 편들겠소? \\q 하나님을 위해 변론하겠소?",
+          "R": "그대들이 불공평하게 그분 편을 들겠소? \\q 그대들이 하나님을 대신해 하나님의 사정을 변호하겠소?"
         }
       },
       "decisions": [
@@ -706,6 +979,31 @@
           "L": "Will it be good when {{deity_pronoun:he|He}} searches you out? \\q Or as one deceives a man, will you deceive {{deity_pronoun:him|Him}}?",
           "B": "Would it go well for you if {{deity_pronoun:he|He}} examined you? \\q Can you fool {{deity_pronoun:him|Him}} as you would fool a mortal?",
           "R": "What will happen when God looks closely at you? \\q Do you think you can fool {{deity_pronoun:him|Him}} the way you fool people?"
+        },
+        "es": {
+          "L": "¿Será bueno cuando {{deity_pronoun:él|Él}} {{plural_you:los|os}} escudriñe? \\q ¿O como se engaña a un hombre, {{deity_pronoun:lo|Lo}} {{plural_you:engañarán|engañaréis}}?",
+          "B": "¿{{plural_you:Les|Os}} iría bien si {{deity_pronoun:él|Él}} {{plural_you:los|os}} examinara? \\q ¿Acaso {{deity_pronoun:lo|Lo}} {{plural_you:pueden|podéis}} engañar como se engaña a un mortal?",
+          "R": "¿Qué pasará cuando Dios {{plural_you:los|os}} examine de cerca? \\q ¿{{plural_you:Creen|Creéis}} que {{deity_pronoun:lo|Lo}} {{plural_you:pueden|podéis}} engañar como {{plural_you:engañan|engañáis}} a la gente?"
+        },
+        "fr": {
+          "L": "Sera-ce bon quand {{deity_pronoun:il|Il}} vous sondera ? \\q Ou, comme on trompe un homme, {{deity_pronoun:le|Le}} tromperez-vous ?",
+          "B": "Cela irait-il bien pour vous s’{{deity_pronoun:il|Il}} vous examinait ? \\q Pouvez-vous {{deity_pronoun:le|Le}} duper comme on dupe un mortel ?",
+          "R": "Que se passera-t-il quand Dieu vous examinera de près ? \\q Pensez-vous pouvoir {{deity_pronoun:le|Le}} tromper comme vous trompez les gens ?"
+        },
+        "sw": {
+          "L": "Je, itakuwa vyema {{deity_pronoun:yeye|Yeye}} atakapowachunguza? \\q Au kama mtu amdanganyavyo mwanadamu, mtamdanganya {{deity_pronoun:yeye|Yeye}}?",
+          "B": "Je, mngefanikiwa kama angewachunguza? \\q Je, mnaweza kumdanganya {{deity_pronoun:yeye|Yeye}} kama mnavyomdanganya mwanadamu?",
+          "R": "Itakuwaje Mungu atakapowachunguza kwa makini? \\q Mnadhani mnaweza kumdanganya {{deity_pronoun:yeye|Yeye}} kama mnavyowadanganya watu?"
+        },
+        "vi": {
+          "L": "Sẽ tốt chăng khi {{deity_pronoun:ngài|Ngài}} dò xét các anh? \\q Hay như người ta lừa một người phàm, các anh sẽ lừa {{deity_pronoun:ngài|Ngài}} sao?",
+          "B": "Các anh có được yên ổn không nếu {{deity_pronoun:ngài|Ngài}} tra xét các anh? \\q Các anh có thể đánh lừa {{deity_pronoun:ngài|Ngài}} như đánh lừa người phàm sao?",
+          "R": "Điều gì sẽ xảy ra khi Đức Chúa Trời xem xét kỹ các anh? \\q Các anh nghĩ có thể lừa {{deity_pronoun:ngài|Ngài}} như lừa người ta sao?"
+        },
+        "ko": {
+          "L": "그분께서 그대들을 살피실 때 좋겠소? \\q 사람을 속이듯 그대들이 그분을 속이겠소?",
+          "B": "그분께서 그대들을 샅샅이 살피시면 그대들에게 좋겠소? \\q 사람을 속이듯 그분을 속일 수 있겠소?",
+          "R": "하나님께서 그대들을 자세히 살피시면 어떻게 되겠소? \\q 사람들을 속이듯이 그분을 속일 수 있다고 생각하오?"
         }
       },
       "decisions": [
@@ -790,6 +1088,31 @@
           "L": "He will surely rebuke you \\q if in secret you lift up faces.",
           "B": "He will certainly rebuke you \\q if you secretly show partiality.",
           "R": "God will surely correct you \\q if you secretly take sides."
+        },
+        "es": {
+          "L": "Ciertamente {{plural_you:los|os}} reprenderá \\q si en secreto {{plural_you:alzan|alzáis}} rostros.",
+          "B": "Sin duda {{plural_you:los|os}} reprenderá \\q si en secreto {{plural_you:muestran|mostráis}} parcialidad.",
+          "R": "Dios de seguro {{plural_you:los|os}} corregirá \\q si en secreto {{plural_you:toman|tomáis}} partido."
+        },
+        "fr": {
+          "L": "Il vous réprimandera sûrement, \\q si en secret vous levez des visages.",
+          "B": "Il vous reprendra sévèrement \\q si vous êtes partiaux en secret.",
+          "R": "Dieu vous corrigera sûrement \\q si vous prenez parti en secret."
+        },
+        "sw": {
+          "L": "Hakika atawakemea \\q kama kwa siri mtainua nyuso.",
+          "B": "Hakika atawakemea \\q kama mtapendelea kwa siri.",
+          "R": "Hakika Mungu atawarekebisha \\q kama mtakuwa upande mmoja kwa siri."
+        },
+        "vi": {
+          "L": "Ngài ắt sẽ quở trách các anh \\q nếu các anh lén lút nâng mặt [ai].",
+          "B": "Ngài chắc chắn sẽ khiển trách các anh \\q nếu các anh lén lút thiên vị.",
+          "R": "Đức Chúa Trời chắc chắn sẽ sửa phạt các anh \\q nếu các anh lén lút đứng về một phía."
+        },
+        "ko": {
+          "L": "그분께서 반드시 그대들을 책망하실 것이오, \\q 그대들이 은밀히 얼굴을 들어 준다면.",
+          "B": "그분께서 반드시 그대들을 꾸짖으실 것이오. \\q 그대들이 몰래 한쪽 편을 든다면 말이오.",
+          "R": "하나님께서 틀림없이 그대들을 바로잡으실 것이오. \\q 그대들이 몰래 편을 든다면 말이오."
         }
       },
       "decisions": [
@@ -842,6 +1165,25 @@
           "reason": "Readable names God for clarity.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "B"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o180130100011",
+            "o180130100021",
+            "o180130100041"
+          ],
+          "choice": "The condition follows the main clause, \"... 꾸짖으실 것이오. 그대들이 ... 든다면 말이오.\"",
+          "alternatives": [],
+          "reason": "Korean puts a condition first; keeping the English line order needs the trailing \"... 말이오\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -877,6 +1219,31 @@
           "L": "Will not {{deity_pronoun:his|His}} majesty terrify you, \\q and {{deity_pronoun:his|His}} dread fall on you?",
           "B": "Will {{deity_pronoun:his|His}} majesty not fill you with terror? \\q Will the dread of {{deity_pronoun:him|Him}} not fall on you?",
           "R": "Should God's greatness not make you afraid? \\q Should fear of {{deity_pronoun:him|Him}} not come over you?"
+        },
+        "es": {
+          "L": "¿No {{plural_you:los|os}} aterrará {{deity_pronoun:su|Su}} majestad, \\q y {{deity_pronoun:su|Su}} pavor caerá sobre {{plural_you:ustedes|vosotros}}?",
+          "B": "¿No {{plural_you:los|os}} llenará de terror {{deity_pronoun:su|Su}} majestad? \\q ¿No caerá sobre {{plural_you:ustedes|vosotros}} el temor de {{deity_pronoun:él|Él}}?",
+          "R": "¿No {{plural_you:les|os}} debería dar miedo la grandeza de Dios? \\q ¿No debería venir sobre {{plural_you:ustedes|vosotros}} el temor de {{deity_pronoun:él|Él}}?"
+        },
+        "fr": {
+          "L": "Est-ce que {{deity_pronoun:sa|Sa}} majesté ne vous terrifiera pas, \\q et que {{deity_pronoun:sa|Sa}} frayeur ne tombera pas sur vous ?",
+          "B": "Ne serez-vous pas terrifiés par {{deity_pronoun:sa|Sa}} majesté ? \\q La terreur qu’{{deity_pronoun:il|Il}} inspire ne tombera-t-elle pas sur vous ?",
+          "R": "La grandeur de Dieu ne devrait-elle pas vous faire peur ? \\q La crainte de {{deity_pronoun:lui|Lui}} ne devrait-elle pas vous saisir ?"
+        },
+        "sw": {
+          "L": "Je, utukufu {{deity_pronoun:wake|Wake}} hautawatisha, \\q na hofu {{deity_pronoun:yake|Yake}} haitawaangukia?",
+          "B": "Je, ukuu {{deity_pronoun:wake|Wake}} hautawajaza hofu? \\q Je, kitisho {{deity_pronoun:chake|Chake}} hakitawaangukia?",
+          "R": "Je, ukuu wa Mungu usiwatie hofu? \\q Je, hofu {{deity_pronoun:yake|Yake}} isiwajie?"
+        },
+        "vi": {
+          "L": "Chẳng lẽ sự uy nghiêm của {{deity_pronoun:ngài|Ngài}} không làm các anh kinh hãi, \\q và sự kinh khiếp của {{deity_pronoun:ngài|Ngài}} không giáng trên các anh sao?",
+          "B": "Sự uy nghiêm của {{deity_pronoun:ngài|Ngài}} không làm các anh khiếp sợ sao? \\q Nỗi kinh hãi về {{deity_pronoun:ngài|Ngài}} không giáng trên các anh sao?",
+          "R": "Sự vĩ đại của Đức Chúa Trời không làm các anh sợ sao? \\q Các anh không kính sợ {{deity_pronoun:ngài|Ngài}} sao?"
+        },
+        "ko": {
+          "L": "그분의 위엄이 그대들을 두렵게 하지 않겠소? \\q 그분의 두려움이 그대들에게 임하지 않겠소?",
+          "B": "그분의 위엄이 그대들을 떨게 하지 않겠소? \\q 그분에 대한 두려움이 그대들에게 닥치지 않겠소?",
+          "R": "하나님의 크심을 보고 그대들은 두렵지 않소? \\q 그분을 두려워하는 마음이 그대들에게 생기지 않소?"
         }
       },
       "decisions": [
@@ -959,6 +1326,31 @@
           "L": "Your memorable sayings [are] proverbs of ashes; \\q your defenses [are] defenses of clay.",
           "B": "Your wise sayings are proverbs made of ashes; \\q your defenses are defenses of clay.",
           "R": "The sayings you remember are as useless as ashes. \\q Your arguments crumble like clay."
+        },
+        "es": {
+          "L": "{{plural_you:Sus|Vuestros}} dichos memorables [son] proverbios de ceniza; \\q {{plural_you:sus|vuestras}} defensas [son] defensas de barro.",
+          "B": "{{plural_you:Sus|Vuestros}} sabios dichos son proverbios de ceniza; \\q {{plural_you:sus|vuestras}} defensas son defensas de barro.",
+          "R": "Los dichos que {{plural_you:ustedes recuerdan|vosotros recordáis}} valen lo mismo que la ceniza. \\q {{plural_you:Sus|Vuestros}} argumentos se deshacen como el barro."
+        },
+        "fr": {
+          "L": "Vos sentences mémorables [sont] des proverbes de cendre ; \\q vos défenses [sont] des défenses d’argile.",
+          "B": "Vos maximes sont des proverbes de cendre ; \\q vos défenses sont des défenses d’argile.",
+          "R": "Les maximes que vous répétez ne valent pas plus que de la cendre. \\q Vos arguments s’effritent comme de l’argile."
+        },
+        "sw": {
+          "L": "Kumbukumbu zenu [ni] mithali za majivu; \\q ngome zenu [ni] ngome za udongo.",
+          "B": "Misemo yenu ya hekima ni mithali za majivu; \\q ngome zenu ni ngome za udongo.",
+          "R": "Misemo mnayoikumbuka haifai kitu, kama majivu. \\q Hoja zenu zinabomoka kama udongo."
+        },
+        "vi": {
+          "L": "Những châm ngôn đáng nhớ của các anh [là] châm ngôn bằng tro; \\q những lũy che chắn của các anh [là] lũy bằng đất sét.",
+          "B": "Những câu cách ngôn khôn ngoan của các anh là châm ngôn bằng tro; \\q những lời bào chữa của các anh là thành lũy bằng đất sét.",
+          "R": "Những câu nói các anh nhớ thuộc lòng chẳng có giá trị gì, như tro bụi. \\q Lý lẽ của các anh vỡ vụn như đất sét."
+        },
+        "ko": {
+          "L": "그대들의 격언은 재의 속담이요, \\q 그대들의 방어는 진흙의 방어요.",
+          "B": "그대들의 지혜로운 말은 재로 만든 속담이요, \\q 그대들의 방어벽은 진흙으로 쌓은 방어벽이오.",
+          "R": "그대들이 외우는 격언은 재처럼 쓸모없소. \\q 그대들의 주장은 진흙처럼 부서져 버리오."
         }
       },
       "decisions": [
@@ -1064,6 +1456,31 @@
           "L": "Be silent from me, and let me speak, [even] I; \\q and let pass over me whatever [may].",
           "B": "Be quiet and leave me alone, so that I may speak; \\q then let come on me what may.",
           "R": "Stop talking and let me speak. \\q After that, whatever happens to me will happen."
+        },
+        "es": {
+          "L": "{{plural_you:Callen|Callad}} ante mí, y hablaré yo; \\q y que venga sobre mí lo que [sea].",
+          "B": "{{plural_you:Cállense y déjenme|Callaos y dejadme}} en paz, para que yo hable; \\q luego, que venga sobre mí lo que venga.",
+          "R": "{{plural_you:Dejen|Dejad}} de hablar y {{plural_you:déjenme|dejadme}} hablar. \\q Después, que me pase lo que me tenga que pasar."
+        },
+        "fr": {
+          "L": "Taisez-vous [loin] de moi, et que je parle, moi ; \\q et que m’arrive ce qui [voudra].",
+          "B": "Taisez-vous, laissez-moi, que je puisse parler ; \\q puis advienne de moi que pourra.",
+          "R": "Arrêtez de parler et laissez-moi parler. \\q Après cela, il m’arrivera ce qui doit arriver."
+        },
+        "sw": {
+          "L": "Nyamazeni mbali nami, ili mimi niseme; \\q na linipate lolote [litakalokuja].",
+          "B": "Nyamazeni, mniache, ili niseme; \\q kisha na linijie lolote litakalokuja.",
+          "R": "Acheni kusema, mniache niseme. \\q Baada ya hapo, lolote litakalonipata na linipate."
+        },
+        "vi": {
+          "L": "Hãy im lặng [mà để] tôi yên, để chính tôi được nói; \\q rồi điều gì [đến] trên tôi cũng mặc.",
+          "B": "Hãy im lặng và để tôi yên, để tôi nói; \\q rồi chuyện gì đến với tôi thì cứ đến.",
+          "R": "Hãy thôi nói và để tôi nói. \\q Sau đó, điều gì xảy đến với tôi cũng được."
+        },
+        "ko": {
+          "L": "내게서 잠잠하고 [나로] 말하게 하시오. \\q 무엇이 내게 닥치든지 [닥치게 두시오].",
+          "B": "잠잠하고 나를 내버려 두시오. 내가 말하겠소. \\q 그다음에는 무슨 일이 닥쳐도 좋소.",
+          "R": "말을 그치고 내가 말하게 해 주시오. \\q 그 뒤에 무슨 일이 일어나든 상관없소."
         }
       },
       "decisions": [
@@ -1155,6 +1572,31 @@
           "L": "Why should I take my flesh in my teeth, \\q and put my life in my palm?",
           "B": "Why should I take my flesh in my teeth \\q and put my life in my hands?",
           "R": "Why should I put myself in danger like this, \\q taking my life into my own hands?"
+        },
+        "es": {
+          "L": "¿Por qué tomaré mi carne entre mis dientes, \\q y pondré mi vida en mi palma?",
+          "B": "¿Por qué he de tomar mi carne entre los dientes \\q y poner mi vida en mis manos?",
+          "R": "¿Por qué tendría que ponerme en peligro así, \\q jugándome la vida?"
+        },
+        "fr": {
+          "L": "Pourquoi prendrais-je ma chair entre mes dents, \\q et mettrais-je ma vie dans ma paume ?",
+          "B": "Pourquoi prendrais-je ma chair entre mes dents \\q et mettrais-je ma vie entre mes mains ?",
+          "R": "Pourquoi me mettrais-je ainsi en danger, \\q en risquant ma propre vie ?"
+        },
+        "sw": {
+          "L": "Kwa nini niichukue nyama yangu kwa meno yangu, \\q na kuuweka uhai wangu katika kiganja changu?",
+          "B": "Kwa nini niichukue nyama yangu kwa meno yangu \\q na kuuweka uhai wangu mikononi mwangu?",
+          "R": "Kwa nini nijitie hatarini namna hii, \\q nikihatarisha maisha yangu mwenyewe?"
+        },
+        "vi": {
+          "L": "Tại sao tôi phải cắn thịt mình trong răng, \\q và đặt mạng sống mình trong lòng bàn tay?",
+          "B": "Tại sao tôi phải lấy răng cắn lấy thịt mình \\q và đặt mạng sống mình trong tay mình?",
+          "R": "Tại sao tôi phải tự đặt mình vào nguy hiểm như vậy, \\q liều cả mạng sống mình?"
+        },
+        "ko": {
+          "L": "어찌하여 내가 내 살을 내 이로 물고, \\q 내 목숨을 내 손바닥에 두겠소?",
+          "B": "어찌하여 내가 내 살을 이로 물고 \\q 내 목숨을 내 손에 두겠소?",
+          "R": "어찌하여 내가 이렇게 위험을 무릅쓰고 \\q 내 목숨을 걸어야 하오?"
         }
       },
       "decisions": [
@@ -1231,6 +1673,46 @@
             "take my flesh in my teeth"
           ],
           "reason": "Readable explains the first picture (m1) and keeps the second, which English also uses.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o180130140081",
+            "o180130140082"
+          ],
+          "choice": "\"jugándome la vida\"",
+          "alternatives": [
+            "\"poniendo mi vida en mis manos\""
+          ],
+          "reason": "\"Jugarse la vida\" is the Spanish idiom for risking one's life.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o180130140081",
+            "o180130140082"
+          ],
+          "choice": "« en risquant ma propre vie »",
+          "alternatives": [
+            "« en prenant ma vie dans mes mains »"
+          ],
+          "reason": "French has no idiom of holding one's life in one's hands for risking it, so Readable says it plainly.",
           "uncertain": false,
           "footnote": false
         }
