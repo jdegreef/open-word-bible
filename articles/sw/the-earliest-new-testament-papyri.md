@@ -5,7 +5,7 @@ date: 2026-10-11
 order: 34
 section: history
 part: nt
-source: d81ede2d97be
+source: 6e301e6d3e2a
 ---
 Hati za asili za Agano Jipya, barua ambazo Paulo aliwasomea waandishi na Injili kama waandishi wake walivyozimaliza, zimepotea zamani. Nakala za zamani zaidi tulizo nazo zimeandikwa juu ya mafunjo, karibu zote zilipatikana Misri, na nyingi zao ni vipande. Zinaitwa **mafunjo ya Agano Jipya**, na zinapewa namba kwa herufi P (mara nyingi huandikwa kwa herufi ya Kigothi) ikifuatiwa na namba, kwa mpangilio zilivyoorodheshwa: P1, P2, na kadhalika. Zaidi ya 140 zimesajiliwa na Taasisi ya Utafiti wa Maandishi ya Agano Jipya huko Münster, inayotunza orodha rasmi.
 
@@ -26,6 +26,8 @@ Hili linatuleta kwenye jambo muhimu. Miswada michache sana ya mwanzo ina tarehe 
 Paleografia ni ujuzi halisi na inatoa matokeo halisi, lakini ina mipaka. Wanakili waliofundishwa katika kipindi kimoja wangeweza kuendelea kuandika vilevile kwa miongo kadhaa; mitindo inaingiliana; na miandiko ya fasihi hubadilika polepole kuliko ile ya hati za kikazi. Wataalamu wengi leo wanaona kwamba tarehe za kipaleografia kwa kawaida zinapaswa kutolewa kama kipindi cha miaka hamsini au zaidi, na Nongbri, katika *God's Library* (2018), anahimiza vipindi vipana zaidi. Ushahidi mwingine unaweza kusaidia: mahali mswada ulipopatikana na vitu ulivyopatikana pamoja navyo, umbo la kitabu, na mara chache upimaji wa kaboni-14, ingawa huo unahitaji kuharibu kipande kidogo na pia unatoa kipindi.
 
 Kwa hiyo unaposoma kwamba mswada ni wa "karibu mwaka 200 B.K.," usome kama "huenda ni wa wakati fulani mwishoni mwa karne ya pili au katika karne ya tatu." Hilo bado ni mapema sana kwa vipimo vya fasihi ya zamani.
+
+Tahadhari hii inakata pande zote mbili. Mwaka 1988 mtaalamu Young Kyu Kim alihoji katika jarida la *Biblica* kwamba P46, nakala ya Chester Beatty ya barua za Paulo inayoelezwa hapa chini, iliandikwa mwishoni mwa karne ya kwanza, kabla ya utawala wa Domitiano. Kama ni kweli, ingekuwa nakala iliyotengenezwa ndani ya kizazi kimoja baada ya Paulo mwenyewe. Wataalamu wengine wa paleografia hawakukubali ulinganisho wake, na tarehe ya kawaida ya P46 inabaki kuwa karibu mwaka 200 B.K. Dai la tarehe ya mapema sana linastahili uchunguzi uleule kama dai la tarehe ya kuchelewa.
 
 ## Mafunjo ya Chester Beatty
 
@@ -49,7 +51,7 @@ Kama P52, P66 na P75 zimechunguzwa upya. Nongbri amehoji kwamba zote mbili zinge
 
 ## Mafunjo ya Oxyrhynchus
 
-Mafunjo mengi madogo zaidi yanatoka **Oxyrhynchus**, mji wa Misri ambao malundo yake ya takataka ya zamani yalichimbwa kuanzia 1896 na Bernard Grenfell na Arthur Hunt. Mkusanyiko wa Oxyrhynchus, mwingi wake ukiwa Oxford, bado unachapishwa, juzuu kwa juzuu, zaidi ya karne moja baadaye. Vipande vyake vya Agano Jipya vinajumuisha baadhi ya nakala za kwanza kabisa za Mathayo, Yohana, Warumi, Waebrania na Ufunuo.
+Mafunjo mengi madogo zaidi yanatoka **Oxyrhynchus**, mji wa Misri ambao malundo yake ya takataka ya zamani yalichimbwa kuanzia 1896 na Bernard Grenfell na Arthur Hunt. Mkusanyiko wa Oxyrhynchus, mwingi wake ukiwa Oxford, bado unachapishwa, juzuu kwa juzuu, zaidi ya karne moja baadaye. Vipande vyake vya Agano Jipya vinajumuisha baadhi ya nakala za kwanza kabisa za Mathayo, Yohana, Warumi, Waebrania na Ufunuo. Mojawapo, **P104** (P.Oxy. 64.4404), iliyochapishwa na J. David Thomas mwaka 1997, inahifadhi mistari michache ya mfano wa wakulima waovu katika Mathayo 21. Kwa kawaida inakadiriwa kuwa ya karne ya pili, jambo linaloifanya kuwa mojawapo ya vipande vya zamani zaidi vilivyodumu vya Mathayo. Vipande hivi vingi vinatoka katika kodeksi, si magombo, jambo linalolingana na upendeleo mpana wa Wakristo kwa kodeksi.
 
 ## Tahadhari: "Marko wa karne ya kwanza"
 
@@ -71,10 +73,12 @@ Mafunjo hayatufikishi kabisa hadi kwa waandishi. Bado kuna pengo, ingawa ni fupi
 ## Vyanzo
 
 - Hill, Charles E., na Michael J. Kruger, wahariri. *The Early Text of the New Testament*. Oxford: Oxford University Press, 2012.
+- Kim, Young Kyu. "Palaeographical Dating of P46 to the Later First Century." *Biblica* 69 (1988): 248–257.
 - Kenyon, Frederic G. *The Chester Beatty Biblical Papyri*. Fasikulo 8. London: Emery Walker, 1933–1958.
 - Nongbri, Brent. "The Use and Abuse of P52: Papyrological Pitfalls in the Dating of the Fourth Gospel." *Harvard Theological Review* 98 (2005): 23–48.
 - Nongbri, Brent. *God's Library: The Archaeology of the Earliest Christian Manuscripts*. New Haven: Yale University Press, 2018.
 - Orsini, Pasquale, na Willy Clarysse. "Early New Testament Manuscripts and Their Dates: A Critique of Theological Palaeography." *Ephemerides Theologicae Lovanienses* 88 (2012): 443–474.
+- Thomas, J. David. P.Oxy. 4404 (Mathayo 21). Katika *The Oxyrhynchus Papyri* 64, 7–9. London: Egypt Exploration Society, 1997.
 - Roberts, C. H. *An Unpublished Fragment of the Fourth Gospel in the John Rylands Library*. Manchester: Manchester University Press, 1935.
 - Royse, James R. *Scribal Habits in Early Greek New Testament Papyri*. Leiden: Brill, 2008.
 - Institute for New Testament Textual Research (INTF), *Kurzgefasste Liste* mtandaoni: [ntvmr.uni-muenster.de/liste](https://ntvmr.uni-muenster.de/liste).

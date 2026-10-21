@@ -5,7 +5,7 @@ date: 2026-10-11
 order: 27
 section: history
 part: ot
-source: 3dec12dd8876
+source: 747d6430d6dc
 ---
 Kati ya Hati-kunjo zote za Bahari ya Chumvi, moja imekuwa ishara ya ugunduzi mzima: **Hati-kunjo Kuu ya Isaya**, inayojulikana na wasomi kama **1QIsa-a** (Pango la 1, Qumran, Isaya, nakala ya kwanza). Ilikuwa miongoni mwa hati-kunjo saba za kwanza zilizopatikana mwaka 1947, na ndicho kitabu pekee cha Biblia miongoni mwa hati-kunjo hizo kilichobaki kikiwa kamili, sura zote sitini na sita, kuanzia mstari wa kwanza hadi wa mwisho.
 
@@ -25,7 +25,7 @@ Wasomi walipoichunguza hati-kunjo hiyo kwa mara ya kwanza, matokeo yaliwashangaz
 
 Hilo limeendelea kusimama. Tofauti kati ya 1QIsa-a na maandiko ya Kimasoreti zinaangukia katika makundi machache.
 
-**Tahajia.** Hii ndiyo tofauti ya kawaida zaidi kwa mbali. Mwandishi wa 1QIsa-a alitumia tahajia "kamili", akiongeza konsonanti kama *waw* na *yod* kuonyesha irabu, mara nyingi zaidi sana kuliko maandiko ya Kimasoreti yanavyofanya. Hii ni kama tofauti kati ya tahajia ya Kiingereza cha Uingereza "colour" na ya Kiingereza cha Marekani "color": neno ni lile lile, tahajia si ile ile. Maelfu ya tofauti ni za aina hii.
+**Tahajia.** Hii ndiyo tofauti ya kawaida zaidi kwa mbali. Mwandishi wa 1QIsa-a alitumia tahajia "kamili", akiongeza konsonanti kama *waw* na *yod* kuonyesha irabu, mara nyingi zaidi sana kuliko maandiko ya Kimasoreti yanavyofanya. Hii ni kama tofauti kati ya tahajia ya Kiingereza cha Uingereza "colour" na ya Kiingereza cha Marekani "color": neno ni lile lile, tahajia si ile ile.
 
 **Sarufi na matamshi.** Baadhi ya maumbo yanaakisi Kiebrania cha wakati wa mwandishi mwenyewe: miishilio ya viwakilishi au maumbo ya vitenzi yanayotofautiana kidogo, na athari ya Kiaramu ya hapa na pale.
 
@@ -55,7 +55,7 @@ Hayo bado ni matokeo yenye nguvu. Hati za Kimasoreti ambazo Agano letu la Kale l
 
 ## Isaya na Open Word Bible
 
-Open Word Bible inapotafsiri Isaya, mahali pake pa kuanzia ni Kodeksi ya Leningrad ya Westminster, maandiko ya Kimasoreti. Mahali ambapo Hati-kunjo Kuu ya Isaya au mashahidi wengine wa kale wanatoa usomaji ambao wasomi wengi wanaupendelea, kama katika Isaya 53:11, uchaguzi haufichwi. Rekodi ya sababu ya sentensi hiyo inawataja mashahidi, inaonyesha kila mmoja anasoma nini, na inaeleza uamuzi, ili msomaji aweze kutokubaliana nao akipenda. Hivyo ndivyo tafsiri inavyopaswa kushughulikia kile ambacho Hati-kunjo za Bahari ya Chumvi zimetufundisha: kwa shukrani, kwa uangalifu, na hadharani.
+Open Word Bible inapotafsiri Isaya, mahali pake pa kuanzia ni Kodeksi ya Leningrad ya Westminster, maandiko ya Kimasoreti. Katika mistari yote mitatu iliyotajwa hapo juu, rasimu ya sasa inabaki na usomaji wa Kimasoreti: "ataona" katika [Isaya 53:11](/isa/53/), simba katika 21:8, na "akasema" katika 40:6. Lakini uchaguzi haufichwi. Rekodi ya sababu ya kila sentensi inaitaja Hati-kunjo Kuu ya Isaya, inasema inasoma nini, na inaeleza uamuzi, na maelezo ya chini yanampa msomaji usomaji wa hati-kunjo hiyo. Katika 53:11 uamuzi umewekewa alama ya kutokuwa na uhakika, na rekodi inaeleza kwamba maana inakaribiana kwa njia yoyote ile. Hivyo ndivyo tafsiri inavyopaswa kushughulikia kile ambacho Hati-kunjo za Bahari ya Chumvi zimetufundisha: kwa shukrani, kwa uangalifu, na hadharani.
 
 ## Vyanzo
 

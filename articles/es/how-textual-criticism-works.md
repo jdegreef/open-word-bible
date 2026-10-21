@@ -5,7 +5,7 @@ date: 2026-10-11
 order: 37
 section: history
 part: nt
-source: df07ae868ffd
+source: 8a299a91a1d4
 ---
 Toda traducción de la Biblia empieza con una decisión que la mayoría de los lectores nunca ven: qué texto traducir. Como la Biblia se copió a mano durante siglos, no hay dos manuscritos de cierta extensión que sean exactamente iguales. Antes de que un traductor pueda preguntar qué significa una frase, alguien tiene que preguntar qué *dice* la frase. La disciplina que responde a esa pregunta se llama **crítica textual**.
 
@@ -51,6 +51,26 @@ La **probabilidad intrínseca** se pregunta qué solía escribir el autor, dados
 
 Estas consideraciones no siempre apuntan en la misma dirección. Una lectura puede ser «más difícil» simplemente porque es un error. Por eso la crítica textual es cuestión de juicio, no de reglas mecánicas, y por eso los mejores críticos sopesan todos los datos juntos. El principio que lo resume, una vez más, es: **elegir la lectura que mejor explica el origen de las demás.**
 
+## Un ejemplo práctico: Marcos 1:1
+
+La primera línea de Marcos muestra el método en acción. La mayoría de los manuscritos dicen: «Principio del evangelio de Jesucristo, Hijo de Dios». Unos pocos testimonios antiguos terminan la línea en «Jesucristo». Entre ellos están la mano original del Códice Sinaítico (un corrector posterior añadió el título) y Orígenes, que cita el versículo sin él. El Códice Vaticano y la mayoría de los demás manuscritos lo tienen.
+
+Los **datos externos** están divididos. La lectura más larga tiene el número y el Vaticano. La más breve tiene menos testimonios, pero antiguos.
+
+La **probabilidad transcripcional** tira en los dos sentidos. Es muy posible que un escriba añadiera «Hijo de Dios» para honrar a Jesús al comienzo del Evangelio. Pero los primeros escribas cristianos escribían los nombres sagrados en forma abreviada, y en una copia así la línea termina con una serie de abreviaturas cortas que acaban todas en la misma letra. La vista podía saltar de una a la siguiente y omitir el título por accidente.
+
+La **probabilidad intrínseca** se pregunta qué escribiría Marcos. «Hijo de Dios» es un título clave en su Evangelio: la voz del cielo llama a Jesús «mi Hijo amado» en su bautismo (1:11), y el centurión junto a la cruz dice: «Verdaderamente este hombre era el Hijo de Dios» (15:39). El título encaja con Marcos. Pero eso también podría ser la razón por la que un escriba lo añadió.
+
+Buenos especialistas sopesan los mismos datos y llegan a conclusiones distintas. Bart Ehrman sostiene que el título se añadió. La edición Nestle-Aland lo imprime entre corchetes, su señal de que los editores no estaban seguros. El Nuevo Testamento griego de la SBL lo omite, y Open Word Bible lo sigue, con una nota al pie que da la lectura más larga y marca la decisión como incierta:
+
+> {{OWB:MRK.1.1.s1:B}}
+
+En cualquier caso, nada del mensaje de Marcos depende de esta línea. El título aparece en 1:11 y en 15:39, donde ningún manuscrito lo pone en duda. Es lo típico: una incertidumbre real, señalada con honestidad, en un lugar donde el texto en su conjunto es seguro.
+
+## Cómo leer un aparato crítico
+
+Las ediciones críticas imprimen sus datos al pie de la página en un código compacto llamado **aparato crítico**. Cada entrada da la unidad de variación, las lecturas y los testimonios de cada una, con símbolos breves: P66 y P75 para los papiros, B para el Vaticano, D para el Códice de Beza, números para los minúsculos y la primera letra del alfabeto hebreo para el Sinaítico. Un asterisco marca la mano original de un manuscrito, antes de cualquier corrección. Aprender a leer el aparato es el primer paso para quien quiera comprobar la decisión de un editor en lugar de aceptarla sin más.
+
 ## Una breve historia
 
 **Erasmo** publicó el primer Nuevo Testamento griego impreso en 1516, usando un puñado de manuscritos tardíos que tenía a su alcance en Basilea. Ediciones impresas posteriores, como las de Stephanus y Beza, se basaron en su trabajo, y el texto resultante llegó a llamarse *Textus Receptus*, el «texto recibido», que está detrás de la versión King James (véase [De los manuscritos a las Biblias impresas](/articles/from-manuscripts-to-print/)).
@@ -64,6 +84,10 @@ En el siglo XX, la edición **Nestle-Aland** (*Novum Testamentum Graece*), hoy e
 ## Las computadoras y el CBGM
 
 El avance más reciente es la **Editio Critica Maior**, una edición monumental que preparan el Instituto para la Investigación Textual del Nuevo Testamento de Münster y sus socios, y que registra íntegramente las lecturas de un conjunto amplio y representativo de manuscritos. Junto a ella, Gerd Mink desarrolló el **Método Genealógico Basado en la Coherencia** (CBGM, por sus siglas en inglés), que usa computadoras para analizar las relaciones entre los *textos* en miles de unidades de variación, incluso cuando se desconocen los árboles genealógicos físicos de los manuscritos. Tommy Wasserman y Peter Gurry han descrito el método para no especialistas. Los resultados de la Editio Critica Maior para las Cartas Católicas dieron lugar a unas pocas decenas de cambios en la 28.ª edición de Nestle-Aland, y el trabajo continúa con Hechos, Marcos, Juan y Apocalipsis.
+
+## No todos están de acuerdo
+
+La mayoría de los especialistas usa el método razonado que se describe aquí, pero no todos. Una minoría sostiene que el texto **bizantino**, la forma que se encuentra en la gran mayoría de los manuscritos, es el más cercano al original. Argumentan que un texto copiado tan ampliamente y durante tanto tiempo tiene más probabilidades de reflejar el original que unos pocos manuscritos antiguos que por casualidad sobrevivieron en las arenas secas de Egipto. Zane Hodges y Arthur Farstad publicaron una edición del Texto Mayoritario en 1982, y Maurice Robinson y William Pierpont una edición del texto bizantino en 2005. Otros siguen prefiriendo el propio Textus Receptus. La mayoría de los críticos responden que los manuscritos deben sopesarse, no contarse, y que el texto bizantino muestra señales de un suavizado posterior. Pero el debate es real, y las diferencias, aunque muchas, son en su mayoría pequeñas.
 
 ## La crítica textual del Antiguo Testamento
 
@@ -79,9 +103,11 @@ Open Word Bible traduce el Nuevo Testamento a partir del Nuevo Testamento griego
 
 - Aland, Kurt, y Barbara Aland. *The Text of the New Testament: An Introduction to the Critical Editions and to the Theory and Practice of Modern Textual Criticism*. 2.ª ed. Traducido por Erroll F. Rhodes. Grand Rapids: Eerdmans, 1989.
 - Epp, Eldon Jay, y Gordon D. Fee. *Studies in the Theory and Method of New Testament Textual Criticism*. Grand Rapids: Eerdmans, 1993.
+- Hodges, Zane C., y Arthur L. Farstad, eds. *The Greek New Testament According to the Majority Text*. Nashville: Thomas Nelson, 1982.
 - Holmes, Michael W., ed. *The Greek New Testament: SBL Edition*. Atlanta: Society of Biblical Literature; Bellingham, WA: Logos Bible Software, 2010.
 - Metzger, Bruce M., y Bart D. Ehrman. *The Text of the New Testament: Its Transmission, Corruption, and Restoration*. 4.ª ed. New York: Oxford University Press, 2005.
 - Parker, D. C. *An Introduction to the New Testament Manuscripts and Their Texts*. Cambridge: Cambridge University Press, 2008.
+- Robinson, Maurice A., y William G. Pierpont. *The New Testament in the Original Greek: Byzantine Textform 2005*. Southborough, MA: Chilton, 2005.
 - Tov, Emanuel. *Textual Criticism of the Hebrew Bible*. 3.ª ed. Minneapolis: Fortress, 2012.
 - Wasserman, Tommy, y Peter J. Gurry. *A New Approach to Textual Criticism: An Introduction to the Coherence-Based Genealogical Method*. Atlanta: SBL Press; Stuttgart: Deutsche Bibelgesellschaft, 2017.
 - Westcott, B. F., y F. J. A. Hort. *The New Testament in the Original Greek: Introduction and Appendix*. Cambridge and London: Macmillan, 1881.

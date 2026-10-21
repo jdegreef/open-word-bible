@@ -5,7 +5,7 @@ date: 2026-10-11
 order: 27
 section: history
 part: ot
-source: 3dec12dd8876
+source: 747d6430d6dc
 ---
 De tous les manuscrits de la mer Morte, l'un est devenu le symbole de toute la découverte : le **grand rouleau d'Isaïe**, que les spécialistes appellent **1QIsa-a** (grotte 1, Qumrân, Isaïe, première copie). Il faisait partie des sept premiers rouleaux trouvés en 1947, et c'est le seul livre biblique parmi les rouleaux qui nous soit parvenu complet : les soixante-six chapitres, du premier verset au dernier.
 
@@ -25,7 +25,7 @@ Quand les spécialistes ont étudié le rouleau pour la première fois, le résu
 
 Ce constat s'est confirmé. Les différences entre 1QIsa-a et le texte massorétique se rangent en quelques groupes.
 
-**L'orthographe.** De loin la différence la plus fréquente. Le scribe de 1QIsa-a employait une orthographe "pleine", ajoutant des consonnes comme le *waw* et le *yod* pour indiquer des voyelles, beaucoup plus souvent que le texte massorétique. C'est comme la différence entre l'anglais britannique "colour" et l'américain "color", ou entre "clef" et "clé" en français : le mot est le même, l'orthographe ne l'est pas. Des milliers de différences sont de ce type.
+**L'orthographe.** De loin la différence la plus fréquente. Le scribe de 1QIsa-a employait une orthographe "pleine", ajoutant des consonnes comme le *waw* et le *yod* pour indiquer des voyelles, beaucoup plus souvent que le texte massorétique. C'est comme la différence entre l'anglais britannique "colour" et l'américain "color", ou entre "clef" et "clé" en français : le mot est le même, l'orthographe ne l'est pas.
 
 **La grammaire et la prononciation.** Certaines formes reflètent l'hébreu de l'époque du scribe : des terminaisons de pronoms ou des formes verbales légèrement différentes, et une influence araméenne occasionnelle.
 
@@ -55,7 +55,7 @@ C'est tout de même un résultat puissant. Les manuscrits massorétiques sur les
 
 ## Isaïe et Open Word Bible
 
-Quand Open Word Bible traduit Isaïe, son point de départ est le Codex de Leningrad de Westminster, un texte massorétique. Là où le grand rouleau d'Isaïe ou d'autres témoins anciens offrent une lecture que beaucoup de spécialistes préfèrent, comme en Isaïe 53:11, le choix n'est pas caché. Le dossier de raisonnement de la phrase nomme les témoins, montre ce que lit chacun et explique la décision, afin que le lecteur puisse être en désaccord s'il le souhaite. C'est ainsi qu'une traduction doit traiter ce que les manuscrits de la mer Morte nous ont appris : avec gratitude, avec soin, et à découvert.
+Quand Open Word Bible traduit Isaïe, son point de départ est le Codex de Leningrad de Westminster, un texte massorétique. Dans les trois versets ci-dessus, le brouillon actuel garde la lecture massorétique : "il verra" en [Isaïe 53:11](/isa/53/), le lion en 21:8, et "il dit" en 40:6. Mais le choix n'est pas caché. Le dossier de raisonnement de chaque phrase nomme le grand rouleau d'Isaïe, dit ce qu'il lit et explique la décision, et une note de bas de page donne au lecteur la lecture du rouleau. En 53:11, la décision est marquée incertaine, et le dossier note que le sens est proche dans les deux cas. C'est ainsi qu'une traduction doit traiter ce que les manuscrits de la mer Morte nous ont appris : avec gratitude, avec soin, et à découvert.
 
 ## Sources
 

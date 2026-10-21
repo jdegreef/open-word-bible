@@ -5,7 +5,7 @@ date: 2026-10-11
 order: 21
 section: history
 part: ot
-source: cb2915562c6f
+source: c83491b7d1f2
 ---
 Agano la Kale si kitabu kimoja bali ni maktaba. Wakristo huhesabu vitabu thelathini na tisa ndani yake; mapokeo ya Kiyahudi huyahesabu maandiko hayo hayo kuwa vitabu ishirini na vinne. Ndani yake kuna sheria, historia, mashairi, methali, unabii na hata aina fulani ya barua, vilivyoandikwa kwa Kiebrania katika kipindi cha karne nyingi, pamoja na sura chache kwa Kiaramu. Hakuna mtu aliyeketi chini na kukiandika kuanzia mwanzo hadi mwisho. Basi, kiliandikwaje?
 
@@ -17,9 +17,19 @@ Uandishi ulibuniwa muda mrefu kabla ya Israeli kuwepo. Kufikia karibu mwaka 3200
 
 Alfabeti lilikuwa wazo jepesi zaidi: alama moja kwa kila sauti ya konsonanti. Ilikua miongoni mwa wazungumzaji wa lugha za Kisemiti katika milenia ya pili K.K., na kufikia karibu mwaka 1000 K.K. familia ya alfabeti zilizokaribiana sana ilikuwa ikitumika kando ya pwani ya mashariki ya Bahari ya Mediterania: miongoni mwake zile za Kifoinike, Kiaramu na Kiebrania. Alfabeti yenye herufi ishirini na mbili inaweza kujifunzwa kwa wiki badala ya miaka. Hilo halikuwafanya watu wote wajue kusoma na kuandika, lakini liliuweka uandishi karibu na watu wengi zaidi kuliko hapo awali.
 
-Wanaakiolojia wamepata ushahidi. **Kalenda ya Gezeri**, kibao kidogo cha chokaa cha karibu karne ya kumi K.K., inaorodhesha miezi ya kilimo katika umbo la awali la Kiebrania. **Abesedari** (orodha ya herufi za alfabeti kwa mpangilio wake, aina ya kitu ambacho mwanafunzi hunakili) ilipatikana ikiwa imejengwa ndani ya ukuta huko Tel Zayit mwaka 2005, kutoka karibu kipindi hicho hicho. Maandishi ya wino kwenye kigae cha chungu kutoka **Khirbet Qeiyafa**, kilichopatikana mwaka 2008, ni mojawapo ya maandishi ya zamani zaidi yanayojulikana ambayo huenda ni ya Kiebrania; wasomi bado wanajadiliana jinsi ya kuyasoma. Kufikia karne ya nane na ya saba K.K., ushahidi unaongezeka sana: maandishi ya kiutawala kwenye vigae vya vyungu (ostraka) kutoka Samaria, Aradi na Lakishi, mihuri yenye majina ya wenyewe, na **maandishi ya Siloamu**, yaliyochongwa katika handaki la maji huko Yerusalemu karibu mwaka 700 K.K. ili kusherehekea wakati vikundi viwili vya wachimbaji vilipokutana.
+Wanaakiolojia wamepata ushahidi. **Kalenda ya Gezeri**, kibao kidogo cha chokaa kilichopatikana na R. A. S. Macalister mwaka 1908 na kwa kawaida kinachokadiriwa kuwa cha karibu karne ya kumi K.K., inaorodhesha majira ya kilimo ya mwaka katika umbo la awali la Kiebrania. Huenda ni zoezi la mwanafunzi. **Abesedari** (orodha ya herufi za alfabeti kwa mpangilio wake, aina ya kitu ambacho mwanafunzi hunakili) ilipatikana ikiwa imejengwa ndani ya ukuta huko Tel Zayit mwaka 2005, kutoka karibu kipindi hicho hicho. Maandishi ya wino kwenye kigae cha chungu kutoka **Khirbet Qeiyafa**, kilichopatikana mwaka 2008, ni mojawapo ya maandishi ya zamani zaidi yanayojulikana ambayo huenda ni ya Kiebrania; wasomi bado wanajadiliana jinsi ya kuyasoma. Kufikia karne ya nane na ya saba K.K., ushahidi unaongezeka sana: maandishi ya kiutawala kwenye vigae vya vyungu (ostraka) kutoka Samaria, Aradi na Lakishi, mihuri yenye majina ya wenyewe, na **maandishi ya Siloamu**, yaliyochongwa katika handaki la maji huko Yerusalemu karibu mwaka 700 K.K. ili kusherehekea wakati vikundi viwili vya wachimbaji vilipokutana. Mvulana aliyekuwa akitembea majini ndani ya handaki aliyapata mwaka 1880. Biblia inaikumbuka kazi hiyohiyo: Hezekia alifanya "bwawa na mfereji ... kuleta maji ndani ya mji" (2 Wafalme 20:20; linganisha 2 Mambo ya Nyakati 32:30). Maandishi hayo hayamtaji mfalme. Yanasimulia habari kutoka upande wa wachimbaji: sauti ya mtu mmoja ikimwita mwenzake kupitia mwamba, na wakati shoka za vikundi viwili zilipokutana.
 
 Christopher Rollston, ambaye amechunguza maandishi haya kwa kina, anahoji kwamba yanaonyesha tabaka la waandishi waliofunzwa likitumia maumbo ya herufi, tahajia na tarakimu zilizosanifishwa katika ufalme wote. Uandishi ulikuwa kazi ya kitaaluma, iliyofundishwa katika aina fulani ya shule, na iliyotumiwa na serikali, hekalu na matajiri. Huo ndio ulimwengu ambamo vitabu vya Biblia ya Kiebrania viliandikwa.
+
+Usomaji ulifika mbali kiasi gani nje ya wataalamu? Barua moja inatupa mwanga kidogo. Mwaka 1935 mwanaakiolojia Mwingereza James Leslie Starkey alipata kundi la barua zilizoandikwa kwa wino kwenye vigae vya vyungu katika magofu ya **Lakishi**, mji wenye ngome kusini-magharibi mwa Yerusalemu. Ni za miaka ya mwisho kabla Wababeli hawajaitwaa Yuda, karibu mwaka 588 K.K., wakati Yeremia 34:7 inapotaja Lakishi na Azeka kuwa miji ya mwisho yenye ngome iliyokuwa bado inastahimili. Katika Barua ya 3 afisa mdogo aitwaye Hoshayahu anamjibu kamanda wake, ambaye inaonekana alidokeza kwamba hakuweza kusoma barua. Anaapa kwa uhai wa Yahweh kwamba hakuna mtu aliyewahi kulazimika kumsomea barua. Afisa wa jeshi, inaonekana, alitarajiwa kusoma barua zake mwenyewe, na aliudhika kwa kudokezwa kwamba hakuweza.
+
+## Majirani walioandika
+
+Israeli haikuwa peke yake. Majirani zake waliandika kwa lugha na miandiko iliyokaribiana sana, na maandishi yao yanaonyesha aina za uandishi ambazo vitabu vya Biblia vilikua kando yake.
+
+**Nguzo ya Mesha**, iliyopatikana Dhiban huko Yordani mwaka 1868 na sasa iko katika Louvre, ni mnara wa jiwe jeusi la bazalti uliowekwa karibu mwaka 840 K.K. na Mesha, mfalme wa Moabu. Kwa lugha inayokaribiana sana na Kiebrania, Mesha anajivuna jinsi alivyoutupilia mbali utawala wa Israeli. Anamtaja Omri, mfalme wa Israeli, na Yahweh, Mungu wa Israeli. Biblia inasimulia matukio hayohayo kutoka upande mwingine: Ahabu alipokufa, "mfalme wa Moabu aliasi dhidi ya mfalme wa Israeli" (2 Wafalme 3:5). Hapa kuna historia ya kifalme, iliyoandikwa katika nafsi ya kwanza, ya karne ileile ya wafalme wa Israeli na kwa mwandiko uleule.
+
+Mwaka 1967 msafara wa Kiholanzi huko **Tell Deir Alla**, katika bonde la Yordani, ulipata vipande vya lipu vilivyofunikwa kwa wino mwekundu na mweusi. Vikiunganishwa pamoja, vinasimulia maono yaliyoonwa na "Balaamu mwana wa Beori", mwonaji ambaye Balaki alimwajiri kuilaani Israeli katika Hesabu 22–24. Maandishi hayo ni ya karibu mwaka 800 K.K. na yaliandikwa kwenye ukuta uliopigwa lipu. Si nakala ya Hesabu, na yanasimulia habari tofauti. Lakini yanaonyesha kwamba maneno ya nabii yangeweza kuandikwa na kuonyeshwa hadharani, na kwamba Balaamu alikumbukwa kama mwonaji pande zote mbili za Yordani.
 
 ## Maneno ya zamani zaidi ya Biblia tunayoweza kuyashika mkononi
 
@@ -36,12 +46,17 @@ Agano la Kale mara nyingi hutueleza kwamba mambo yaliandikwa, na nani aliyeyaand
 - Vitabu vya Wafalme mara kwa mara humpeleka msomaji kwenye kumbukumbu nyingine: "Kitabu cha Habari za Siku za Wafalme wa Israeli" na "wa Yuda," ambavyo sasa vimepotea.
 - Katika Yeremia 36, nabii anamtamkia mwandishi **Baruku mwana wa Neria** maneno yake, naye anayaandika kwenye hati-kunjo. Mfalme Yehoyakimu anaikata hati-kunjo hiyo kipande kwa kipande na kuichoma moto; Yeremia anayatamka tena ili yaandikwe, "na maneno mengi ya namna hiyo yakaongezwa juu yake" (Yeremia 36:32).
 - Mithali 25:1 inasema kwamba "watu wa Hezekia mfalme wa Yuda" walinakili mkusanyiko wa methali za Sulemani.
+- Isaya anaambiwa aandike ujumbe kwenye kibao kikubwa, kwa uwezekano mkubwa kwa mwandiko wa kila siku ambao mpita njia yeyote angeweza kuusoma (Isaya 8:1), na baadaye aandike onyo kwenye hati-kunjo ili libaki kama kumbukumbu kwa wakati ujao (Isaya 30:8).
 
 Maelezo haya yanatuonyesha mchakato, si tukio la mara moja. Maneno yalinenwa, yakakumbukwa, yakaandikwa, yakakusanywa, yakanakiliwa, yakaongezewa na kupangwa. Yeremia 36 ni picha ndogo ya jambo zima: maneno yaliyonenwa na nabii, mwandishi wa kitaaluma, hati-kunjo, toleo la pili.
 
 ## Mdomo na maandishi pamoja
 
-Katika ulimwengu wa kale, uandishi haukuchukua nafasi ya kumbukumbu ya akili; viwili hivyo vilifanya kazi pamoja. David Carr, katika *Writing on the Tablet of the Heart*, anaonyesha jinsi elimu katika Mashariki ya Karibu ya kale ilivyomaanisha kujifunza maandiko muhimu kwa moyo, huku nakala zilizoandikwa zikitumika kama marejeo na kifaa cha kufundishia. Kumbukumbu la Torati lenyewe linawaagiza wazazi kuwarudia watoto wao maneno ya Mungu na kuyaandika kwenye miimo ya milango (Kumbukumbu la Torati 6:6–9). Zaburi ziliimbwa; methali zilifundishwa; hadithi za mababu zilisimuliwa wakati wa sikukuu na kando ya meza. Haya yalipoandikwa, maandishi hayo bado yalikusudiwa kusomwa kwa sauti na kusikilizwa.
+Katika ulimwengu wa kale, uandishi haukuchukua nafasi ya kumbukumbu ya akili; viwili hivyo vilifanya kazi pamoja. Mara ya kwanza Biblia inapomwambia Musa aandike, inaviunganisha viwili hivyo katika sentensi moja:
+
+> {{OWB:EXO.17.14.s1:B}}
+
+Maneno yanaingia katika gombo, na yanaingia katika masikio ya Yoshua. David Carr, katika *Writing on the Tablet of the Heart*, anaonyesha jinsi elimu katika Mashariki ya Karibu ya kale ilivyomaanisha kujifunza maandiko muhimu kwa moyo, huku nakala zilizoandikwa zikitumika kama marejeo na kifaa cha kufundishia. Kumbukumbu la Torati lenyewe linawaagiza wazazi kuwarudia watoto wao maneno ya Mungu na kuyaandika kwenye miimo ya milango (Kumbukumbu la Torati 6:6–9). Zaburi ziliimbwa; methali zilifundishwa; hadithi za mababu zilisimuliwa wakati wa sikukuu na kando ya meza. Haya yalipoandikwa, maandishi hayo bado yalikusudiwa kusomwa kwa sauti na kusikilizwa.
 
 Jambo hili lina maana kwa jinsi tunavyofikiri kuhusu usahihi. Maandiko yanayohifadhiwa kwa moyo na kukaririwa na jumuiya hayabadilishwi kwa urahisi na mtu mmoja, kwa sababu wengine wanajua yanavyokwenda. Lakini jumuiya pia inaweza, kadiri muda unavyopita, kurekebisha jinsi inavyosimulia jambo fulani. Nguvu zote mbili zinaonekana katika historia ya Biblia, na zote mbili ni sehemu ya jinsi ilivyopata kuwepo.
 
@@ -64,10 +79,12 @@ Open Word Bible inatafsiri Agano la Kale kutoka Kiebrania cha Kodeksi ya Leningr
 ## Vyanzo
 
 - Barkay, Gabriel, Andrew G. Vaughn, Marilyn J. Lundberg, and Bruce Zuckerman. "The Amulets from Ketef Hinnom: A New Edition and Evaluation." *Bulletin of the American Schools of Oriental Research* 334 (2004): 41–71.
+- Ahituv, Shmuel. *Echoes from the Past: Hebrew and Cognate Inscriptions from the Biblical Period*. Imetafsiriwa na Anson F. Rainey. Jerusalem: Carta, 2008.
 - Carr, David M. *Writing on the Tablet of the Heart: Origins of Scripture and Literature*. Oxford: Oxford University Press, 2005.
+- Hoftijzer, Jacob, and Gerrit van der Kooij. *Aramaic Texts from Deir 'Alla*. Documenta et Monumenta Orientis Antiqui 19. Leiden: Brill, 1976.
 - Rollston, Christopher A. *Writing and Literacy in the World of Ancient Israel: Epigraphic Evidence from the Iron Age*. Atlanta: Society of Biblical Literature, 2010.
 - Schniedewind, William M. *How the Bible Became a Book: The Textualization of Ancient Israel*. Cambridge: Cambridge University Press, 2004.
 - Tappy, Ron E., P. Kyle McCarter, et al. "An Abecedary of the Mid-Tenth Century B.C.E. from the Judaean Shephelah." *Bulletin of the American Schools of Oriental Research* 344 (2006): 5–46.
 - van der Toorn, Karel. *Scribal Culture and the Making of the Hebrew Bible*. Cambridge, MA: Harvard University Press, 2007.
 - Talmud ya Babeli, Sanhedrin 21b–22a.
-- Manukuu ya Biblia ni tafsiri halisi za makala hii yenyewe.
+- Manukuu ya Biblia ni tafsiri halisi za makala hii yenyewe, au yanatoka Open Word Bible.
