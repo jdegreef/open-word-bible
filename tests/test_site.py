@@ -787,6 +787,24 @@ class SiteTest(unittest.TestCase):
         self.assertIn('data-setting="crossrefs"', page)
         self.assertIn('id="xr-margin"', page)
 
+    def test_chapter_pages_mark_the_words_of_jesus(self):
+        # John 3: Jesus's words, and only his, from his own quotation marks.
+        data = self.chapter_data("jhn/3")
+        by_id = {r["id"]: r for r in data["records"]}
+        self.assertNotIn("wj", by_id["JHN.3.2.s1"])   # Nicodemus speaks
+        text = by_id["JHN.3.3.s1"]["renderings"]["en"]["B"]
+        (s, e), = by_id["JHN.3.3.s1"]["wj"]["en"]["B"]
+        self.assertTrue(text[s:e].startswith("Truly, truly"), text[s:e])
+        self.assertTrue(text[:s].startswith("Jesus answered him"))
+        # A sentence inside the speech is his from its start (3:16-21).
+        text = by_id["JHN.3.16.s1"]["renderings"]["en"]["B"]
+        self.assertEqual(by_id["JHN.3.16.s1"]["wj"]["en"]["B"], [[0, len(text)]])
+        page = (self.out / "jhn" / "3" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('data-setting="red_letter"', page)
+        # No control where no one marked has spoken.
+        page = (self.out / "rom" / "1" / "index.html").read_text(encoding="utf-8")
+        self.assertNotIn('data-setting="red_letter"', page)
+
     def test_verse_of_the_day_feed(self):
         # One Atom feed per language: the home page's verse for each of the
         # last days, linking to that verse in the reader, which is built.

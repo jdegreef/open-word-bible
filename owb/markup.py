@@ -105,6 +105,103 @@ def line_errors(text):
     return found
 
 
+# Quotations: where someone's words begin and end in a rendering. The
+# outermost marks are straight double quotes (English, Swahili, Vietnamese,
+# Korean) or guillemets (Spanish, French); quotations inside them use single
+# quotes, curly quotes, or straight double quotes again at the third level.
+# A straight quote opens at the start or after a space, bracket or dash,
+# when a word follows it, and closes anywhere else (as
+# build_site.smart_quotes curls it). A straight single quote can also be an
+# apostrophe; see quotations().
+_QUOTE_CHARS = re.compile("[\"'\u00ab\u00bb\u201c\u201d\u2018\u2019]")
+_PAIRS = {"\u00bb": "\u00ab", "\u201d": "\u201c", "\u2019": "\u2018"}
+
+
+def _opens_here(text, pos):
+    return pos == 0 or text[pos - 1].isspace() or text[pos - 1] in "([\u2014-"
+
+
+def _quotations(text, inside):
+    """quotations() from one starting state; raises ValueError."""
+    outer = "\u00ab" if re.search("[\u00ab\u00bb]", text) else '"'
+    stack, ranges = ([outer], []) if inside else ([], [])
+    start = 0
+    # A setting span holds no quotation marks (quotations() checks), only
+    # apostrophes: {{deity_pronoun:m’|M’}}.
+    in_span = {i for s in spans(text) for i in range(s.start, s.end)}
+    for m in _QUOTE_CHARS.finditer(text):
+        pos, ch = m.start(), m[0]
+        after = text[pos + 1:pos + 2]
+        if pos in in_span:
+            continue
+        if ch in "\u00ab\u201c\u2018" or (ch in "\"'" and _opens_here(text, pos)
+                                         and after and not after.isspace()):
+            if stack and stack[-1] == ch:
+                raise ValueError(f"quotation mark at {pos} opens inside a quotation of its own kind")
+            stack.append(ch)
+            if len(stack) == 1:
+                start = pos + 1
+            continue
+        want = _PAIRS.get(ch, ch)
+        # A single quote followed by a Latin letter (or a setting span) is an
+        # apostrophe ("don't", "qu\u2019{{deity_pronoun:il|Il}}"; Korean sets a
+        # particle right after a closing quote), and so is one after a word
+        # that closes nothing ("the disciples' feet"), unless it ends a
+        # quotation open since before the sentence ('...'"). A curly one
+        # (French and Spanish apostrophes) only ever closes a \u2018 it follows.
+        if want in "'\u2018" and ((after.isalnum() and after < "\u0250") or after == "{"
+                                   or (want not in stack and (after.isspace() or ch == "\u2019"))):
+            continue
+        if want not in stack:
+            # Open since before this sentence began: everything so far,
+            # quotations included, is inside it.
+            stack.insert(0, want)
+            ranges, start = [], 0
+        while stack.pop() != want:
+            pass
+        if not stack:
+            ranges.append((start, pos))
+    if stack:
+        ranges.append((start, len(text)))
+    return ranges
+
+
+def quotations(text, inside=False):
+    """The quoted words in text, as [(start, end), ...]: each outermost
+    quotation, from after its opening mark to before its closing one,
+    without the spaces French sets inside guillemets.
+
+    inside says whether the text begins inside a quotation an earlier
+    sentence opened; text with no marks is then one whole quotation. A
+    closing mark with nothing open to close says so too, at any depth:
+    what came before it, quotations included, is inside that quotation.
+    The text can end inside a quotation a later sentence closes. Where the
+    marks do not pair from the state inside gives, the other is tried.
+
+    Raises ValueError where they pair from neither (a mark opens a
+    quotation of the kind already innermost), or a quotation mark sits
+    inside a {{setting:...}} span."""
+    for s in spans(text):
+        if re.search("[\"\u00ab\u00bb\u201c\u201d]", text[s.start:s.end]):
+            raise ValueError(f"quotation mark inside the setting span at {s.start}")
+    try:
+        ranges = _quotations(text, inside)
+    except ValueError as first:
+        try:
+            ranges = _quotations(text, not inside)
+        except ValueError:
+            raise first from None
+    out = []
+    for s, e in ranges:
+        while s < e and text[s].isspace():
+            s += 1
+        while e > s and text[e - 1].isspace():
+            e -= 1
+        if e > s:
+            out.append((s, e))
+    return out
+
+
 def render(text, settings=None):
     settings = settings or {}
 
