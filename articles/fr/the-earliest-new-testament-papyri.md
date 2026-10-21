@@ -5,7 +5,7 @@ date: 2026-10-11
 order: 34
 section: history
 part: nt
-source: d81ede2d97be
+source: 6e301e6d3e2a
 ---
 Les documents originaux du Nouveau Testament, les lettres que Paul a dictées et les Évangiles tels que leurs auteurs les ont achevés, ont disparu depuis longtemps. Les plus anciennes copies que nous avons sont écrites sur papyrus, presque toutes trouvées en Égypte, et la plupart sont des fragments. On les appelle les **papyrus du Nouveau Testament**, et on les numérote avec un P (souvent écrit en lettre gothique) suivi d'un nombre, dans l'ordre où ils ont été catalogués : P1, P2, et ainsi de suite. Plus de 140 ont été enregistrés par l'Institut de recherche textuelle sur le Nouveau Testament de Münster, qui tient la liste officielle.
 
@@ -26,6 +26,8 @@ Cela conduit à un point important. Très peu de manuscrits anciens portent une 
 La paléographie est un vrai savoir-faire et donne de vrais résultats, mais elle a ses limites. Des scribes formés à une époque pouvaient continuer à écrire de la même façon pendant des décennies ; les styles se chevauchent ; et les écritures littéraires changent plus lentement que les écritures documentaires. La plupart des spécialistes pensent aujourd'hui que les dates paléographiques devraient normalement être données sous forme d'une fourchette de cinquante ans ou plus, et Nongbri, dans *God's Library* (2018), plaide pour des fourchettes encore plus larges. D'autres indices peuvent aider : où et avec quoi le manuscrit a été trouvé, le format du livre, et parfois la datation au radiocarbone, bien qu'elle exige de détruire un petit morceau et donne elle aussi une fourchette.
 
 Ainsi, quand vous lisez qu'un manuscrit date "d'environ 200 apr. J.-C.", comprenez "probablement de la fin du deuxième ou du troisième siècle". C'est encore très ancien selon les critères de la littérature antique.
+
+La prudence vaut dans les deux sens. En 1988, le spécialiste Young Kyu Kim a soutenu dans la revue *Biblica* que P46, la copie Chester Beatty des lettres de Paul décrite plus bas, avait été écrite à la fin du premier siècle, avant le règne de Domitien. Si c'était vrai, ce serait une copie faite moins d'une génération après Paul lui-même. Les autres paléographes n'ont pas accepté ses comparaisons, et la date habituelle de P46 reste d'environ 200 apr. J.-C. L'affirmation d'une date très ancienne mérite le même examen que celle d'une date tardive.
 
 ## Les papyrus Chester Beatty
 
@@ -49,7 +51,7 @@ Comme P52, P66 et P75 ont été réexaminés. Nongbri a soutenu que tous deux po
 
 ## Les papyrus d'Oxyrhynque
 
-Beaucoup de papyrus plus petits viennent d'**Oxyrhynque**, la ville égyptienne dont les anciens dépotoirs ont été fouillés à partir de 1896 par Bernard Grenfell et Arthur Hunt. La collection d'Oxyrhynque, conservée pour l'essentiel à Oxford, est toujours en cours de publication, volume après volume, plus d'un siècle plus tard. Ses fragments du Nouveau Testament comprennent quelques-unes des plus anciennes copies de Matthieu, de Jean, de Romains, d'Hébreux et de l'Apocalypse.
+Beaucoup de papyrus plus petits viennent d'**Oxyrhynque**, la ville égyptienne dont les anciens dépotoirs ont été fouillés à partir de 1896 par Bernard Grenfell et Arthur Hunt. La collection d'Oxyrhynque, conservée pour l'essentiel à Oxford, est toujours en cours de publication, volume après volume, plus d'un siècle plus tard. Ses fragments du Nouveau Testament comprennent quelques-unes des plus anciennes copies de Matthieu, de Jean, de Romains, d'Hébreux et de l'Apocalypse. L'un d'eux, **P104** (P.Oxy. 64.4404), publié par J. David Thomas en 1997, conserve quelques lignes de la parabole des vignerons en Matthieu 21. On le date généralement du deuxième siècle, ce qui en fait l'un des plus anciens fragments conservés de Matthieu. La plupart de ces fragments viennent de codex, et non de rouleaux, ce qui s'accorde avec la préférence plus générale des chrétiens pour le codex.
 
 ## Une mise en garde : le "Marc du premier siècle"
 
@@ -71,10 +73,12 @@ Les papyrus ne nous ramènent pas jusqu'aux auteurs eux-mêmes. Il reste un éca
 ## Sources
 
 - Hill, Charles E., et Michael J. Kruger, éd. *The Early Text of the New Testament*. Oxford: Oxford University Press, 2012.
+- Kim, Young Kyu. "Palaeographical Dating of P46 to the Later First Century." *Biblica* 69 (1988): 248–257.
 - Kenyon, Frederic G. *The Chester Beatty Biblical Papyri*. 8 fascicules. London: Emery Walker, 1933–1958.
 - Nongbri, Brent. "The Use and Abuse of P52: Papyrological Pitfalls in the Dating of the Fourth Gospel." *Harvard Theological Review* 98 (2005): 23–48.
 - Nongbri, Brent. *God's Library: The Archaeology of the Earliest Christian Manuscripts*. New Haven: Yale University Press, 2018.
 - Orsini, Pasquale, et Willy Clarysse. "Early New Testament Manuscripts and Their Dates: A Critique of Theological Palaeography." *Ephemerides Theologicae Lovanienses* 88 (2012): 443–474.
+- Thomas, J. David. P.Oxy. 4404 (Matthieu 21). Dans *The Oxyrhynchus Papyri* 64, 7–9. London: Egypt Exploration Society, 1997.
 - Roberts, C. H. *An Unpublished Fragment of the Fourth Gospel in the John Rylands Library*. Manchester: Manchester University Press, 1935.
 - Royse, James R. *Scribal Habits in Early Greek New Testament Papyri*. Leiden: Brill, 2008.
 - Institut de recherche textuelle sur le Nouveau Testament (INTF), *Kurzgefasste Liste* en ligne : [ntvmr.uni-muenster.de/liste](https://ntvmr.uni-muenster.de/liste).

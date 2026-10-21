@@ -6,7 +6,7 @@ order: 24
 nav_title: Les massorètes
 section: history
 part: ot
-source: dc96f57b14fb
+source: 8c6de5e0f0ae
 ---
 Ouvrez une Bible hébraïque et vous verrez les consonnes, les lettres principales, entourées de petits points et de petits traits au-dessus et au-dessous. Ces signes sont les voyelles et les accents. Sur les bords de la page d'une édition savante, vous verrez de minuscules notes en araméen abrégé. Tout cela a été ajouté par un groupe de savants connus sous le nom de **massorètes**. Presque toutes les traductions de l'Ancien Testament dans le monde, y compris celle d'Open Word Bible, sont faites à partir du texte qu'ils ont gardé.
 
@@ -16,6 +16,8 @@ Leur nom vient du mot hébreu *masorah*, qui signifie "tradition" : la traditio
 
 L'école de Tibériade est devenue la plus influente. Ses familles les plus connues étaient celles de **Ben Asher** et de **Ben Nephtali**, qui, sur plusieurs générations, ont affiné le système des voyelles et des accents. Le dernier et le plus célèbre membre de la famille Ben Asher, **Aaron ben Moïse ben Asher**, a travaillé dans la première moitié du Xe siècle. C'est lui qui a vocalisé le Codex d'Alep, l'un des plus importants manuscrits de la Bible hébraïque (voir [Les codex d'Alep et de Leningrad](/articles/aleppo-and-leningrad-codices/)).
 
+Les deux écoles divergeaient sur des points remarquablement minimes. Vers le XIe siècle, un savant du nom de Mishaël ben Ouzziel a dressé la liste des différences entre Ben Asher et Ben Nephtali pour toute la Bible. Il y en a environ 860, et à peu près neuf sur dix concernent un seul petit signe qui marque un accent secondaire. Presque aucune ne touche aux consonnes.
+
 Les massorètes ne se considéraient pas comme des éditeurs. Ils n'ont pas modifié le texte consonantique qu'ils avaient reçu. Leur tâche était de le protéger, et de fixer par écrit la manière dont il devait être prononcé et lu.
 
 ## Le problème qu'ils ont résolu : un texte sans voyelles
@@ -24,7 +26,11 @@ L'hébreu, comme l'araméen et l'arabe, s'écrivait à l'origine uniquement avec
 
 Certains mots peuvent se lire de plus d'une manière quand les voyelles manquent. Un exemple célèbre se trouve en Genèse 47:31, où les mêmes consonnes peuvent signifier "lit" ou "bâton". Les voyelles massorétiques lisent "lit" ; la Septante grecque, traduite des siècles plus tôt, lisait "bâton", et c'est cette lecture que cite Hébreux 11:21. Les deux lectures utilisent exactement les mêmes lettres ; seules les voyelles diffèrent.
 
+La note du dossier d'Open Word Bible pour [Hébreux 11:21](/heb/11/) explique la différence entre le lit et le bâton : les lettres sont les mêmes, les voyelles sont venues plus tard, et les traducteurs grecs ont lu "bâton".
+
 La solution des massorètes a été d'ajouter des signes-voyelles sans toucher aux consonnes. Ils ont inventé un système de points et de petits traits placés au-dessus, au-dessous et à l'intérieur des lettres. Comme ces signes sont petits et se placent autour des lettres, le texte consonantique sacré est resté intact ; chacun pouvait encore voir exactement ce que contenait l'ancien rouleau.
+
+Il a existé plus d'un système de ce genre. Les massorètes de Babylonie écrivaient leurs signes-voyelles au-dessus des lettres, et un ancien système de la terre d'Israël faisait de même. Le système de Tibériade, avec la plupart de ses signes sous les lettres, était le plus précis, et il a supplanté les autres. C'est le système des Bibles hébraïques imprimées aujourd'hui. Le système babylonien s'est maintenu le plus longtemps chez les Juifs du Yémen.
 
 ## Les accents : ponctuation et musique
 
@@ -34,7 +40,11 @@ Les massorètes ont aussi ajouté un système complet d'**accents** (en hébreu,
 - Ils servent de ponctuation, en divisant chaque verset en moitiés, en quarts et en unités plus petites. L'accent le plus fort, à la fin de chaque verset, en marque la fin ; un autre accent fort en marque le milieu.
 - Ils sont une notation musicale pour la cantillation du texte à la synagogue.
 
-Comme les accents montrent comment les mots se regroupent, ils sont un témoin ancien de la manière dont le texte était compris. Un exemple bien connu est Isaïe 40:3. Les accents rattachent "dans le désert" à "préparez le chemin" ("Une voix crie : dans le désert, préparez le chemin du SEIGNEUR"), tandis que la traduction grecque, citée dans les Évangiles, le rattache à la voix ("Une voix de quelqu'un qui crie dans le désert"). Les traducteurs consultent régulièrement les accents pour des décisions de ce genre.
+Comme les accents montrent comment les mots se regroupent, ils sont un témoin ancien de la manière dont le texte était compris. Un exemple bien connu est Isaïe 40:3. Les accents rattachent "dans le désert" à "préparez le chemin" ("Une voix crie : dans le désert, préparez le chemin du SEIGNEUR"), tandis que la traduction grecque, citée dans les Évangiles, le rattache à la voix ("Une voix de quelqu'un qui crie dans le désert"). Les traducteurs consultent régulièrement les accents pour des décisions de ce genre. Le dossier d'Open Word Bible pour ce verset les suit, dit pourquoi, et garde l'autre regroupement comme possibilité. Au niveau Littérale, il dit :
+
+> {{OWB:ISA.40.3.s1:L}}
+
+Le raisonnement fait remarquer que "dans le désert" répond à "dans la steppe" à la ligne suivante : c'est la route elle-même qui doit être construite dans le désert. Les accents et la poésie s'accordent.
 
 ## La Massore : des notes dans les marges
 
@@ -71,6 +81,7 @@ L'Ancien Testament d'Open Word Bible est traduit à partir du Codex de Leningrad
 - Kelley, Page H., Daniel S. Mynatt, and Timothy G. Crawford. *The Masorah of Biblia Hebraica Stuttgartensia: Introduction and Annotated Glossary*. Grand Rapids: Eerdmans, 1998.
 - Khan, Geoffrey. *The Tiberian Pronunciation Tradition of Biblical Hebrew*. 2 vol. Cambridge: Open Book Publishers, 2020. En libre accès.
 - Khan, Geoffrey. *A Short Introduction to the Tiberian Masoretic Bible and Its Reading Tradition*. 2e éd. Piscataway, NJ: Gorgias, 2013.
+- Lipschütz, Lazar. *Kitāb al-Khilaf: The Book of the Ḥillufim. Mishael ben Uzziel's Treatise on the Differences between Ben Asher and Ben Naphtali*. Jerusalem: Magnes, 1965.
 - Tov, Emanuel. *Textual Criticism of the Hebrew Bible*. 3e éd. Minneapolis: Fortress, 2012.
 - Würthwein, Ernst, and Alexander Achilles Fischer. *The Text of the Old Testament: An Introduction to the Biblia Hebraica*. 3e éd. Grand Rapids: Eerdmans, 2014.
 - Yeivin, Israel. *Introduction to the Tiberian Masorah*. Traduit et édité par E. J. Revell. Missoula, MT: Scholars Press, 1980.

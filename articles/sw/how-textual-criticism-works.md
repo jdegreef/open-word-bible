@@ -5,7 +5,7 @@ date: 2026-10-11
 order: 37
 section: history
 part: nt
-source: df07ae868ffd
+source: 8a299a91a1d4
 ---
 Kila tafsiri ya Biblia inaanza na uamuzi ambao wasomaji wengi hawauoni kamwe: ni maandishi gani ya kutafsiri. Kwa sababu Biblia ilinakiliwa kwa mkono kwa karne nyingi, hakuna miswada miwili yenye urefu wowote wa maana inayofanana kabisa. Kabla mtafsiri hajauliza sentensi inamaanisha nini, lazima mtu aulize sentensi *inasema* nini. Fani inayojibu swali hilo inaitwa **uhakiki wa maandishi** (kwa Kiingereza *textual criticism*).
 
@@ -51,6 +51,26 @@ Kanuni ya zamani ilisema kwamba **usomaji mfupi zaidi** kwa jumla unapaswa kupen
 
 Mambo haya hayaelekezi upande mmoja kila mara. Usomaji unaweza kuwa "mgumu zaidi" kwa sababu tu ni kosa. Ndiyo sababu uhakiki wa maandishi ni suala la busara, si la kanuni za kimashine, na ndiyo sababu wahakiki bora hupima ushahidi wote pamoja. Kanuni ya muhtasari, tena, ni hii: **chagua usomaji unaoeleza vizuri zaidi chanzo cha usomaji mwingine.**
 
+## Mfano kamili: Marko 1:1
+
+Mstari wa kwanza wa Marko unaonyesha mbinu hii ikifanya kazi. Miswada mingi inasoma "Mwanzo wa Injili ya Yesu Kristo, Mwana wa Mungu." Mashahidi wachache wa mapema wanamaliza mstari kwenye "Yesu Kristo." Miongoni mwao ni mkono wa kwanza wa Kodeksi Sinaitiko (msahihishaji wa baadaye aliongeza cheo hicho) na Origene, anayeunukuu mstari huo bila cheo hicho. Kodeksi Vatikano na miswada mingine mingi inacho.
+
+**Ushahidi wa nje** umegawanyika. Usomaji mrefu una wingi wa miswada na Vatikano. Ule mfupi una mashahidi wachache, lakini wa mapema.
+
+**Uwezekano wa kunakili** unavuta pande zote mbili. Mnakili angeweza kabisa kuongeza "Mwana wa Mungu" ili kumheshimu Yesu mwanzoni mwa Injili. Lakini wanakili Wakristo wa mwanzo waliandika majina matakatifu kwa ufupisho, na katika nakala ya namna hiyo mstari unamalizika kwa mfululizo wa vifupisho vifupi vyote vinavyoishia kwa herufi ileile. Jicho lingeweza kuruka kutoka kimoja hadi kingine na kuacha cheo hicho kwa bahati mbaya.
+
+**Uwezekano wa ndani** unauliza Marko angeandika nini. "Mwana wa Mungu" ni cheo muhimu katika Injili yake: sauti kutoka mbinguni inamwita Yesu "Mwana wangu mpendwa" wakati wa ubatizo wake (1:11), na kamanda wa askari mia msalabani anasema "Kwa kweli mtu huyu alikuwa Mwana wa Mungu!" (15:39). Cheo hicho kinamfaa Marko. Lakini hiyo inaweza pia kuwa sababu ya mnakili kukiongeza.
+
+Wataalamu wazuri wanapima ushahidi uleule na kufikia mahali tofauti. Bart Ehrman anahoji kwamba cheo hicho kiliongezwa. Toleo la Nestle-Aland linakichapisha ndani ya mabano ya mraba, ishara yake kwamba wahariri hawakuwa na uhakika. Agano Jipya la Kigiriki la SBL linakiacha, na Open Word Bible inalifuata, pamoja na maelezo ya chini yanayotoa usomaji mrefu na kuuwekea uamuzi alama ya kutokuwa na uhakika:
+
+> {{OWB:MRK.1.1.s1:B}}
+
+Kwa vyovyote vile, hakuna kitu katika ujumbe wa Marko kinachotegemea mstari huu. Cheo hicho kinasimama katika 1:11 na 15:39, ambapo hakuna mswada unaokitilia shaka. Hilo ni la kawaida: kutokuwa na uhakika halisi, kunakowekewa alama kwa uaminifu, mahali ambapo maandishi yanayozunguka ni salama.
+
+## Kusoma apparatus
+
+Matoleo ya kitaalamu yanachapisha ushahidi wao chini ya ukurasa kwa msimbo mfupi unaoitwa **apparatus**. Kila kipengele kinataja mahali penye tofauti, usomaji, na mashahidi wa kila usomaji, kwa alama fupi: P66 na P75 kwa mafunjo, B kwa Vatikano, D kwa Bezae, namba kwa miswada ya herufi ndogo, na herufi ya kwanza ya alfabeti ya Kiebrania kwa Sinaitiko. Nyota inaonyesha mkono wa kwanza wa mswada, kabla ya sahihisho lolote. Kujifunza kusoma apparatus ni hatua ya kwanza kwa yeyote anayetaka kukagua uamuzi wa mhariri badala ya kuupokea kwa kuamini tu.
+
 ## Historia fupi
 
 **Erasmo** alichapisha Agano Jipya la Kigiriki la kwanza lililochapishwa kwa mashine mwaka 1516, akitumia miswada michache ya baadaye iliyopatikana kwake huko Basel. Matoleo yaliyochapishwa baadaye, yakiwemo yale ya Stephanus na Beza, yalijenga juu ya kazi yake, na maandishi yaliyotokea yakaja kuitwa *Textus Receptus*, "maandishi yaliyopokelewa," yaliyokuwa nyuma ya King James Version (ona [Kutoka miswada hadi Biblia zilizochapishwa](/articles/from-manuscripts-to-print/)).
@@ -64,6 +84,10 @@ Katika karne ya ishirini, toleo la **Nestle-Aland** (*Novum Testamentum Graece*)
 ## Kompyuta na CBGM
 
 Maendeleo ya karibuni zaidi ni **Editio Critica Maior**, toleo kubwa sana linaloandaliwa na Taasisi ya Utafiti wa Maandishi ya Agano Jipya huko Münster na washirika wake, linaloandika kikamilifu usomaji wa kundi kubwa la miswada linalowakilisha mingine. Pamoja nalo, Gerd Mink aliendeleza **Mbinu ya Ukoo Inayotegemea Upatanifu** (kwa Kiingereza *Coherence-Based Genealogical Method*, CBGM), inayotumia kompyuta kuchambua uhusiano kati ya *maandishi* katika maelfu ya mahali penye tofauti, hata pale ambapo miti ya familia ya miswada yenyewe haijulikani. Mbinu hii imeelezwa kwa wasio wataalamu na Tommy Wasserman na Peter Gurry. Matokeo ya Editio Critica Maior kwa Barua za Kikatoliki (barua za jumla) yalileta mabadiliko kadhaa ya makumi machache katika toleo la 28 la Nestle-Aland, na kazi inaendelea kwa Matendo, Marko, Yohana na Ufunuo.
+
+## Si wote wanaokubali
+
+Wataalamu wengi wanatumia mbinu ya kupima sababu inayoelezwa hapa, lakini si wote. Wachache wanashikilia kwamba maandishi ya **Bizanti**, umbo linalopatikana katika sehemu kubwa kabisa ya miswada, ndiyo yaliyo karibu zaidi na ya asili. Wanahoji kwamba maandishi yaliyonakiliwa kwa upana hivyo na kwa muda mrefu hivyo yana uwezekano mkubwa zaidi wa kuakisi ya asili kuliko miswada michache ya mapema iliyobahatika kudumu katika mchanga mkavu wa Misri. Zane Hodges na Arthur Farstad walichapisha toleo la Maandishi ya Wengi (*Majority Text*) mwaka 1982, na Maurice Robinson na William Pierpont toleo la maandishi ya Bizanti mwaka 2005. Wengine bado wanapendelea Textus Receptus lenyewe. Wahakiki wengi wanajibu kwamba miswada lazima ipimwe, si kuhesabiwa, na kwamba maandishi ya Bizanti yanaonyesha dalili za kulainishwa baadaye. Lakini mjadala huu ni halisi, na tofauti, ingawa ni nyingi, kwa sehemu kubwa ni ndogo.
 
 ## Uhakiki wa maandishi wa Agano la Kale
 
@@ -79,9 +103,11 @@ Open Word Bible inatafsiri Agano Jipya kutoka Agano Jipya la Kigiriki la SBL na 
 
 - Aland, Kurt, na Barbara Aland. *The Text of the New Testament: An Introduction to the Critical Editions and to the Theory and Practice of Modern Textual Criticism*. Toleo la 2. Imetafsiriwa na Erroll F. Rhodes. Grand Rapids: Eerdmans, 1989.
 - Epp, Eldon Jay, na Gordon D. Fee. *Studies in the Theory and Method of New Testament Textual Criticism*. Grand Rapids: Eerdmans, 1993.
+- Hodges, Zane C., na Arthur L. Farstad, wahariri. *The Greek New Testament According to the Majority Text*. Nashville: Thomas Nelson, 1982.
 - Holmes, Michael W., mhariri. *The Greek New Testament: SBL Edition*. Atlanta: Society of Biblical Literature; Bellingham, WA: Logos Bible Software, 2010.
 - Metzger, Bruce M., na Bart D. Ehrman. *The Text of the New Testament: Its Transmission, Corruption, and Restoration*. Toleo la 4. New York: Oxford University Press, 2005.
 - Parker, D. C. *An Introduction to the New Testament Manuscripts and Their Texts*. Cambridge: Cambridge University Press, 2008.
+- Robinson, Maurice A., na William G. Pierpont. *The New Testament in the Original Greek: Byzantine Textform 2005*. Southborough, MA: Chilton, 2005.
 - Tov, Emanuel. *Textual Criticism of the Hebrew Bible*. Toleo la 3. Minneapolis: Fortress, 2012.
 - Wasserman, Tommy, na Peter J. Gurry. *A New Approach to Textual Criticism: An Introduction to the Coherence-Based Genealogical Method*. Atlanta: SBL Press; Stuttgart: Deutsche Bibelgesellschaft, 2017.
 - Westcott, B. F., na F. J. A. Hort. *The New Testament in the Original Greek: Introduction and Appendix*. Cambridge na London: Macmillan, 1881.

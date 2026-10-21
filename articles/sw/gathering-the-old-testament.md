@@ -5,7 +5,7 @@ date: 2026-10-11
 order: 30
 section: history
 part: ot
-source: df9d825658b7
+source: 1fe910251df8
 ---
 Kuandika kitabu ni jambo moja. Kuutambua mkusanyiko wa vitabu kuwa maandiko matakatifu, orodha thabiti yenye mwanzo na mwisho, ni jambo lingine. Neno la orodha ya aina hiyo ni **kanoni**, kutoka neno la Kigiriki la fimbo ya kupimia au kanuni. Makala hii inaangalia jinsi vitabu vya Biblia ya Kiebrania, yaani Agano la Kale la Kikristo, vilivyokuja kukusanywa kuwa kanoni, na kwa nini Biblia za Kiyahudi, za Kiprotestanti, za Kikatoliki na za Kiorthodoksi bado hazina orodha ile ile kabisa.
 
@@ -44,11 +44,13 @@ Mwanahistoria **Yosefu** (Josephus), akiandika karibu mwaka 95 B.K., anasema kwa
 
 Ufunuo unaojulikana kama **4 Ezra** (2 Esdras 14:44–47), ulioandikwa karibu mwaka 100 B.K., unasimulia jinsi Ezra, kwa uvuvio wa Mungu, alivyotamka vitabu tisini na vinne ili viandikwe: **ishirini na vinne** vichapishwe wazi kwa ajili ya wote, na sabini vitunzwe kwa ajili ya wenye hekima. Vile ishirini na vinne karibu hakika ni vitabu vya Biblia ya Kiebrania.
 
-Baadaye Talmud ya Babeli inatoa mpangilio wa Manabii na Maandiko na kutaja waandishi wa jadi (*Bava Batra* 14b–15a).
+Baadaye Talmud ya Babeli inatoa mpangilio wa Manabii na Maandiko na kutaja waandishi wa jadi (*Bava Batra* 14b–15a). Katika orodha yake, Maandiko yanaishia na **Mambo ya Nyakati**, na Biblia za Kiebrania zilizochapishwa bado zinaishia hapo leo.
+
+Mpangilio huo huenda uko nyuma ya msemo mmoja wa Yesu. Akiwazungumzia manabii waliouawa, anasema kwamba kizazi hiki kitadaiwa "damu ya manabii wote iliyomwagwa tangu ulimwengu ulipoumbwa... kuanzia damu ya Habili hadi damu ya Zakaria, aliyeuawa kati ya madhabahu na nyumba ya Mungu" (Luka 11:50–51; linganisha Mathayo 23:35). Habili ndiye mtu wa kwanza kuuawa katika Mwanzo. Zakaria (Zekaria), aliyepigwa mawe katika ua wa hekalu, ndiye shahidi wa mwisho katika Mambo ya Nyakati (2 Mambo ya Nyakati 24:20–22), ingawa si wa mwisho kwa wakati. Wafafanuzi wengi wanafikiri kwamba Yesu anayavuka maandiko yote kutoka kitabu cha kwanza hadi cha mwisho, "kutoka A hadi Z". Ikiwa ndivyo, Biblia yake tayari iliishia na Mambo ya Nyakati. Wengine wanafikiri kwamba jozi hiyo inamaanisha tu shahidi wa kwanza na shahidi mwingine mashuhuri wa baadaye, kwa hiyo msemo huo unadokeza tu bila kuthibitisha.
 
 ## Hadithi isiyo ya kweli ya Baraza la Jamnia
 
-Huenda ukasoma kwamba kanoni ya Kiyahudi "ilifungwa" katika baraza lililofanyika **Jamnia** (Yavneh) karibu mwaka 90 B.K. Wazo hili, lililopendwa katika karne ya ishirini, sasa linakataliwa na wengi. Jack P. Lewis alionyesha mwaka 1964 kwamba vyanzo vya marabi havisemi chochote kuhusu baraza lililoamua kanoni. Vinarekodi majadiliano kati ya marabi huko Yavneh kuhusu kama vitabu fulani, kama Mhubiri na Wimbo Ulio Bora, "vinatia mikono unajisi" (njia ya kitaalamu ya kusema kwamba ni maandiko matakatifu). Haya yalikuwa mabishano kuhusu vitabu vilivyokuwa tayari vimekubaliwa na wengi, si kuundwa kwa orodha. Mishna inarekodi hitimisho kwamba vitabu vyote viwili ni vitakatifu (*Yadayim* 3:5).
+Huenda ukasoma kwamba kanoni ya Kiyahudi "ilifungwa" katika baraza lililofanyika **Jamnia** (Yavneh) karibu mwaka 90 B.K. Wazo hili, lililopendwa katika karne ya ishirini, sasa linakataliwa na wengi. Jack P. Lewis alionyesha mwaka 1964 kwamba vyanzo vya marabi havisemi chochote kuhusu baraza lililoamua kanoni. Vinarekodi majadiliano kati ya marabi huko Yavneh kuhusu kama vitabu fulani, kama Mhubiri na Wimbo Ulio Bora, "vinatia mikono unajisi" (njia ya kitaalamu ya kusema kwamba ni maandiko matakatifu). Haya yalikuwa mabishano kuhusu vitabu vilivyokuwa tayari vimekubaliwa na wengi, si kuundwa kwa orodha. Mishna inarekodi hitimisho kwamba vitabu vyote viwili ni vitakatifu (*Yadayim* 3:5). Esta pia kilihojiwa. Talmud inaripoti maoni ya mwalimu wa karne ya tatu Samweli kwamba Esta "hakitii mikono unajisi", kisha inaeleza kwamba bado aliamini kilinenwa kwa roho mtakatifu, ili kisomwe kwa sauti wakati wa Purim (*Megillah* 7a). Kitabu kinaweza kusomwa katika ibada na bado hadhi yake ikajadiliwa na wasomi.
 
 Wasomi wengi sasa wanafikiri kwamba kanoni ya Kiyahudi ilitulia hatua kwa hatua, kwa maafikiano badala ya amri, na kwamba kufikia mwisho wa karne ya kwanza B.K. Wayahudi wengi walivitambua vitabu ishirini na vinne. Baadhi, kama Roger Beckwith, wanahoji kwamba orodha hiyo ilitulia mapema zaidi sana, katika karne ya pili K.K.; wengine, kama Lee Martin McDonald, wanaona unyumbufu zaidi hadi karne ya pili B.K. Timothy Lim anapendekeza kwamba kanoni kadhaa zilikuwepo kando kwa kando miongoni mwa makundi tofauti ya Kiyahudi, na kwamba kanoni ya wengi ya Mafarisayo hatimaye ilishinda.
 
@@ -78,7 +80,8 @@ Tofauti hizi ni halisi, lakini zinahusu mipaka. Vitabu thelathini na tisa vya Ag
 - Lewis, Jack P. "What Do We Mean by Jabneh?" *Journal of Bible and Religion* 32 (1964): 125–132.
 - Lim, Timothy H. *The Formation of the Jewish Canon*. New Haven: Yale University Press, 2013.
 - McDonald, Lee Martin. *The Biblical Canon: Its Origin, Transmission, and Authority*. Peabody, MA: Hendrickson, 2007.
-- Mishna, *Yadayim* 3:5; Talmud ya Babeli, *Bava Batra* 14b–15a.
+- Mishna, *Yadayim* 3:5; Talmud ya Babeli, *Bava Batra* 14b–15a; *Megillah* 7a.
+- Peels, H. G. L. "The Blood 'from Abel to Zechariah' (Matthew 23,35; Luke 11,50f.) and the Canon of the Old Testament." *Zeitschrift für die alttestamentliche Wissenschaft* 113 (2001): 583–601.
 - Eusebio. *Historia ya Kanisa* 4.26.13–14.
 - 2 Esdras (4 Ezra) 14:44–47; Yoshua bin Sira, Utangulizi.
 - Manukuu ya Biblia ni tafsiri halisi za makala hii yenyewe.

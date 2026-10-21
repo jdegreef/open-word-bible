@@ -5,7 +5,7 @@ date: 2026-10-11
 order: 35
 section: history
 part: nt
-source: fcf07aaa2945
+source: bc61caaed5ce
 ---
 Si les papyrus sont les plus anciens témoins du Nouveau Testament, les deux grands codex sur parchemin du quatrième siècle en sont les plus complets. Le **Codex Sinaiticus** et le **Codex Vaticanus** sont les plus anciens manuscrits conservés qui aient contenu toute la Bible chrétienne, Ancien et Nouveau Testament, en grec. Ils ont façonné toutes les éditions critiques du Nouveau Testament grec depuis le dix-neuvième siècle, et avec elles presque toutes les traductions modernes.
 
@@ -14,6 +14,10 @@ Si les papyrus sont les plus anciens témoins du Nouveau Testament, les deux gra
 Les critiques textuels désignent le Codex Vaticanus par la lettre "B". Il se trouve à la **Bibliothèque vaticane**, à Rome, au moins depuis le catalogue de la bibliothèque de 1475, où il figure, et sa cote est Vat. gr. 1209. On ignore comment il y est arrivé. On le date généralement du début ou du milieu du quatrième siècle, vers 300–350 apr. J.-C., ce qui en fait probablement le plus ancien des grands codex.
 
 Il est écrit sur un parchemin fin, sur trois colonnes par page, dans une belle écriture capitale simple. Environ 759 feuillets subsistent. Il contenait à l'origine toute la Bible grecque, mais certaines parties ont été perdues : la plus grande partie de la Genèse au début, quelques psaumes et, à la fin, le Nouveau Testament à partir d'Hébreux 9:14, ce qui veut dire qu'il lui manque la fin d'Hébreux, les lettres à Timothée, à Tite et à Philémon, et l'Apocalypse. Une main plus tardive, probablement au quinzième siècle, a suppléé certaines des parties manquantes.
+
+Le manuscrit a été retravaillé par des mains plus tardives. Probablement au dixième ou au onzième siècle, l'écriture pâlie a été repassée lettre par lettre, et des mains plus tardives ont ajouté les accents et les esprits. Ceux qui ont repassé le texte ont sauté les lettres et les mots qu'ils jugeaient fautifs ; ces endroits pâlis sont donc les seuls où l'écriture d'origine apparaît intacte. Des lecteurs se sont aussi disputés dans ses marges. En Hébreux 1:3, là où presque tous les manuscrits disent que le Fils "soutient" toutes choses, le Vaticanus lit qu'il les "manifeste" ; les deux mots grecs diffèrent de deux lettres. À côté de la ligne, un lecteur plus tardif a écrit une note sans détour qui, traduite littéralement, dit : "Très ignorant et méchant homme, laisse l'ancien, ne le change pas !" Bart Ehrman s'en sert, dans *Misquoting Jesus*, pour montrer des lecteurs qui se disputent au sujet d'un texte qui leur tenait à cœur.
+
+Certaines marques dans les marges sont peut-être bien plus anciennes. Philip Payne et Paul Canart ont soutenu que des paires de points placées à côté des colonnes, appelées *distigmai*, ont été ajoutées avec l'encre d'origine et signalent des endroits où le scribe connaissait une autre leçon. D'autres pensent que beaucoup d'entre elles sont plus tardives. La question reste débattue.
 
 Les savants connaissaient le Vaticanus depuis des siècles, mais son accès était restreint. Érasme en a reçu quelques leçons par correspondance dans les années 1520 et 1530. Au dix-neuvième siècle, Constantin von Tischendorf ne fut autorisé à l'étudier que quelques heures par jour, et on l'arrêta quand on le surprit à copier des pages entières. Des éditions fiables parurent plus tard dans le siècle, et des fac-similés photographiques en 1889–1890. Aujourd'hui, le manuscrit entier peut être consulté en ligne dans la collection numérique de la Bibliothèque vaticane.
 
@@ -29,6 +33,8 @@ Le savant allemand **Constantin von Tischendorf** (1815–1874) a passé sa vie 
 
 Il revint en 1853, sans succès. En 1859, cette fois avec le soutien du tsar de Russie, il revint encore. Le dernier soir de sa visite, l'intendant du monastère lui montra un manuscrit enveloppé dans un tissu rouge : le reste du codex, dont le **Nouveau Testament complet**. Tischendorf passa la nuit à copier, et finit par obtenir que le manuscrit soit emporté en Russie, d'abord en prêt pour être copié, puis offert au tsar Alexandre II. Le monastère reçut un paiement et des présents en 1869, mais les circonstances du transfert sont restées depuis un sujet de litige entre Sainte-Catherine et les autres détenteurs.
 
+Tout le monde n'a pas cru à cette histoire. En 1862, **Constantin Simonidès**, un Grec dont Tischendorf avait contribué à démasquer les faux, annonça dans le *Manchester Guardian* qu'il avait lui-même écrit le codex dans sa jeunesse, au mont Athos. Des savants comme le bibliothécaire de Cambridge Henry Bradshaw rejetèrent aussitôt cette prétention. Les critiques firent remarquer qu'un manuscrit écrit par plusieurs mains, et corrigé par bien d'autres au fil des siècles, ne pouvait pas être l'œuvre d'un seul jeune homme. La théorie du faux circule encore en ligne, mais les spécialistes ne la prennent pas au sérieux.
+
 En 1933, le gouvernement soviétique, qui avait besoin de devises étrangères, vendit le codex au **British Museum** pour 100 000 livres sterling, une somme énorme réunie en partie grâce à une souscription publique. Il se trouve aujourd'hui à la British Library, à Londres. De plus petites parties sont à Leipzig et à Saint-Pétersbourg, et en 1975, un nouvel ensemble de feuillets et de fragments a été découvert à Sainte-Catherine même, dans une pièce murée après un incendie.
 
 ### La réunion numérique
@@ -37,13 +43,13 @@ En 2009, les quatre institutions qui détiennent des parties du codex (la Britis
 
 ### Ce qu'il contient
 
-Environ 400 feuillets subsistent, écrits sur quatre colonnes par page (deux dans les livres poétiques), dans une grande et élégante écriture capitale. Le Sinaiticus est la **plus ancienne copie complète du Nouveau Testament**. Il comprend aussi une grande partie de l'Ancien Testament grec et deux autres écrits chrétiens anciens, l'*Épître de Barnabé* et une partie du *Pasteur d'Hermas*. Leur présence montre que, dans certaines Églises du quatrième siècle, les limites du Nouveau Testament étaient encore discutées (voir [Comment le canon du Nouveau Testament a pris forme](/articles/gathering-the-new-testament/)).
+Un peu plus de 400 feuillets subsistent, sur 730 ou plus à l'origine. Chacun mesure environ 38 sur 34,5 centimètres, si bien qu'une double page ouverte montre huit colonnes étroites, comme un rouleau déroulé. Le texte est écrit sur quatre colonnes par page (deux dans les livres poétiques), dans une grande et élégante écriture capitale. Le Sinaiticus est la **plus ancienne copie complète du Nouveau Testament**. Il comprend aussi une grande partie de l'Ancien Testament grec et deux autres écrits chrétiens anciens, l'*Épître de Barnabé* et une partie du *Pasteur d'Hermas*. Leur présence montre que, dans certaines Églises du quatrième siècle, les limites du Nouveau Testament étaient encore discutées (voir [Comment le canon du Nouveau Testament a pris forme](/articles/gathering-the-new-testament/)).
 
 Les spécialistes ont identifié trois, peut-être quatre, scribes principaux. Le manuscrit a ensuite été abondamment corrigé, par ses propres scribes et par des lecteurs plus tardifs au cours de plusieurs siècles. David Parker estime qu'il contient environ 27 000 corrections, ce qui en fait l'un des manuscrits les plus corrigés de l'Antiquité. Une note ajoutée à la fin des livres d'Esdras et d'Esther par l'un des correcteurs plus tardifs dit que le texte avait été comparé avec une copie très ancienne corrigée par le martyr Pamphile de Césarée.
 
 ## Ont-ils été faits pour Constantin ?
 
-Vers 331 apr. J.-C., l'empereur Constantin demanda à Eusèbe de Césarée de faire faire cinquante exemplaires des Écritures pour les Églises de Constantinople (Eusèbe, *Vie de Constantin* 4.36). Il est tentant de rattacher le Sinaiticus et le Vaticanus à cette commande. T. C. Skeat a soutenu qu'ils avaient bien été produits à Césarée, peut-être en lien avec elle. Beaucoup de spécialistes trouvent cette théorie séduisante mais non prouvée ; d'autres proposent l'Égypte comme lieu d'origine, au moins pour le Vaticanus. Ce qui est clair, c'est qu'il s'agit de productions professionnelles coûteuses et soigneusement planifiées, de la période qui a suivi la légalisation du christianisme.
+Vers 331 apr. J.-C., l'empereur Constantin demanda à Eusèbe de Césarée de faire faire cinquante exemplaires des Écritures pour les Églises de Constantinople (Eusèbe, *Vie de Constantin* 4.36). Il est tentant de rattacher le Sinaiticus et le Vaticanus à cette commande. T. C. Skeat a soutenu qu'ils avaient bien été produits à Césarée, peut-être en lien avec elle. Tischendorf lui-même pensait que l'un des scribes du Sinaiticus avait aussi écrit une partie du Vaticanus, et certains paléographes plus récents ont jugé l'idée plausible, sans qu'elle soit prouvée. Beaucoup de spécialistes trouvent cette théorie séduisante mais non prouvée ; d'autres proposent l'Égypte comme lieu d'origine, au moins pour le Vaticanus. Ce qui est clair, c'est qu'il s'agit de productions professionnelles coûteuses et soigneusement planifiées, de la période qui a suivi la légalisation du christianisme.
 
 ## Ce qu'ils montrent
 
@@ -57,6 +63,12 @@ Les deux manuscrits n'ont pas certains passages qui figurent dans des manuscrits
 
 Ces passages sont étudiés dans [Le texte de la Bible est-il fiable ?](/articles/how-reliable-is-the-text/). Les traductions modernes fondées sur des éditions critiques les signalent généralement comme ne faisant pas partie du texte le plus ancien, et le Sinaiticus et le Vaticanus en sont deux des principales raisons.
 
+Vous pouvez le voir dans Open Word Bible. En [Marc 16](/mrk/16/), la phrase qui termine l'Évangile en 16:8 porte une note de bas de page expliquant que le Sinaiticus et le Vaticanus s'arrêtent tous deux à cet endroit :
+
+> {{OWB:MRK.16.8.s1:B}}
+
+La finale courte et la finale longue (16:9–20) suivent, imprimées comme les imprime le Nouveau Testament grec de la SBL, entre doubles crochets, avec des notes expliquant pourquoi on les considère comme des ajouts plus tardifs. Rien n'est caché : le lecteur voit les données et la décision.
+
 ## Pourquoi ils comptent
 
 Westcott et Hort, dont le Nouveau Testament grec de 1881 a marqué un tournant dans ce domaine, se sont fortement appuyés sur le Vaticanus et le Sinaiticus. Des spécialistes plus tardifs leur ont reproché de trop s'appuyer en particulier sur le Vaticanus, et la découverte des papyrus a élargi les données. Mais les papyrus ont eu tendance à confirmer, plutôt qu'à renverser, la grande valeur accordée à ces deux codex. Les éditions critiques qui sous-tendent les traductions modernes, y compris le Nouveau Testament grec de la SBL que traduit Open Word Bible, les traitent toujours comme des témoins de premier plan.
@@ -69,6 +81,9 @@ Westcott et Hort, dont le Nouveau Testament grec de 1881 a marqué un tournant d
 - Hoskier, H. C. *Codex B and Its Allies: A Study and an Indictment*. 2 vol. London: Quaritch, 1914.
 - Metzger, Bruce M., et Bart D. Ehrman. *The Text of the New Testament*. 4e éd. New York: Oxford University Press, 2005.
 - Skeat, T. C. "The Codex Sinaiticus, the Codex Vaticanus and Constantine." *Journal of Theological Studies* 50 (1999): 583–625.
+- Ehrman, Bart D. *Misquoting Jesus: The Story Behind Who Changed the Bible and Why*. San Francisco: HarperSanFrancisco, 2005.
+- Janz, Timothy. *Greek Paleography from Antiquity to the Renaissance*. Exposition en ligne de la Bibliothèque vaticane : [spotlight.vatlib.it/greek-paleography](https://spotlight.vatlib.it/greek-paleography).
+- Payne, Philip B., et Paul Canart. "The Originality of Text-Critical Symbols in Codex Vaticanus." *Novum Testamentum* 42 (2000): 105–113.
 - Tischendorf, Constantin von. *When Were Our Gospels Written?* London: Religious Tract Society, 1866.
 - Codex Sinaiticus en ligne : [codexsinaiticus.org](https://codexsinaiticus.org/).
 - Codex Vaticanus en ligne : [digi.vatlib.it/view/MSS_Vat.gr.1209](https://digi.vatlib.it/view/MSS_Vat.gr.1209).

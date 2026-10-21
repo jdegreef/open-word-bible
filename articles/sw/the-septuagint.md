@@ -5,7 +5,7 @@ date: 2026-10-11
 order: 29
 section: history
 part: ot
-source: 6da2122cc3bc
+source: 397bccee3ec5
 ---
 Tafsiri ya kwanza ya Biblia haikufanywa na Wakristo, wala haikufanywa kwa Kilatini au Kiingereza. Ilifanywa na Wayahudi, huko Misri, kwa Kigiriki, kuanzia karne ya tatu K.K. Inaitwa **Septuaginta**, kutoka neno la Kilatini la "sabini," nayo ni mojawapo ya vitabu muhimu zaidi katika historia ya Biblia.
 
@@ -17,7 +17,9 @@ Baada ya ushindi wa Iskanda Mkuu (Alexander the Great) katika miaka ya 330 na 32
 
 Habari ya jadi ya tafsiri hii inasimuliwa katika hati inayoitwa **Barua ya Aristea**, iliyoandikwa pengine katika karne ya pili K.K. Inadai kwamba Mfalme **Ptolemi II Filadelfo** (aliyetawala 285–246 K.K.) alitaka nakala ya sheria ya Kiyahudi kwa ajili ya maktaba yake maarufu huko Aleksandria. Kwa ombi lake, kuhani mkuu wa Yerusalemu aliwatuma wazee sabini na wawili wenye elimu, sita kutoka kila kabila, walioitafsiri Sheria katika siku sabini na mbili katika kisiwa cha Faro, na tafsiri yao ikapokelewa kwa shangwe na jumuiya ya Kiyahudi.
 
-Waandishi wa baadaye waliipamba hadithi hiyo. Mwanafalsafa wa Kiyahudi **Filo** wa Aleksandria, katika karne ya kwanza B.K., anasema kwamba watafsiri, wakifanya kazi kila mmoja peke yake, walitoa tafsiri zinazofanana kabisa kana kwamba walivuviwa (*Maisha ya Musa* 2.37). Baadhi ya waandishi Wakristo waliipanua hadithi hiyo ihusu Agano la Kale zima.
+Waandishi wa baadaye waliipamba hadithi hiyo. Mwanafalsafa wa Kiyahudi **Filo** wa Aleksandria, katika karne ya kwanza B.K., anasema kwamba watafsiri, wakifanya kazi kila mmoja peke yake, walitoa tafsiri zinazofanana kabisa kana kwamba walivuviwa (*Maisha ya Musa* 2.37). Anaongeza kwamba katika siku zake Wayahudi na watu wengine wengi bado walivuka kila mwaka kwenda kisiwa cha Faro kwa sikukuu, ili kushukuru kwa ajili ya tafsiri hiyo (*Maisha ya Musa* 2.41). Baadhi ya waandishi Wakristo waliipanua hadithi hiyo ihusu Agano la Kale zima.
+
+Marabi walilikumbuka tukio hilo kwa njia mbili tofauti kabisa. Talmudi ya Babeli inasimulia jinsi Mfalme Ptolemi aliwaweka wazee sabini na wawili katika vyumba sabini na viwili tofauti, na jinsi kila mmoja, akiongozwa na Mungu, alifanya mabadiliko madogo yaleyale hasa katika maandiko (*Megillah* 9a). Kitabu cha baadaye *Soferim* (1:7) kinasema kwamba siku ambayo Torati iliandikwa kwa Kigiriki ilikuwa ngumu kwa Israeli kama siku ambayo ndama wa dhahabu alitengenezwa, kwa sababu Torati haikuweza kutafsiriwa ipasavyo. Mitazamo yote miwili ina hoja. Tafsiri inaeneza neno; pia inaweka kitu kati ya msomaji na asili.
 
 Wasomi wanakubaliana kwamba Barua ya Aristea si habari ya kihistoria inayoaminika; ni maandishi ya kuitetea tafsiri hiyo. Lakini pengine inahifadhi ukweli fulani: **Torati** (Mwanzo hadi Kumbukumbu la Torati) ilitafsiriwa kwa Kigiriki huko Aleksandria katika karne ya tatu K.K., na tafsiri hiyo ikakubaliwa upesi kuwa yenye mamlaka na Wayahudi waliozungumza Kigiriki. Jina "Septuaginta," lenye maana ya sabini (namba kamili badala ya sabini na wawili), lilitumika kwanza kwa Torati na baadaye kwa Agano la Kale zima la Kigiriki.
 
@@ -25,7 +27,7 @@ Wasomi wanakubaliana kwamba Barua ya Aristea si habari ya kihistoria inayoaminik
 
 Sehemu iliyobaki ya Biblia ya Kiebrania ilitafsiriwa katika karne mbili hivi zilizofuata, na watu tofauti, mahali tofauti na kwa mbinu tofauti. Kufikia wakati wa utangulizi wa Hekima ya Ben Sira, ulioandikwa huko Misri karibu mwaka 132 K.K., mtafsiri angeweza kusema kwamba "Sheria yenyewe, Unabii, na vitabu vingine vyote" vilitofautiana sana vikisomwa kwa Kigiriki.
 
-Kwa hiyo "Septuaginta" si tafsiri moja bali ni mkusanyiko. Baadhi ya vitabu, kama sehemu kubwa ya Torati, vimetafsiriwa kwa kufuata maneno kwa karibu kabisa. Vingine viko huru zaidi: Kigiriki cha Ayubu ni kifupi kwa karibu sehemu moja ya sita kuliko Kiebrania, na Mithali ina nyongeza na mpangilio tofauti. Kigiriki cha Danieli na Esta kina vifungu vya ziada. Baadhi ya vitabu vilivyoandikwa awali kwa Kigiriki, au vilivyobaki kwa Kigiriki tu, kama Hekima ya Sulemani na 1–2 Wamakabayo, vilikuja kujumuishwa katika mikusanyiko ya Kigiriki ya maandiko matakatifu. Huu ndio mwanzo wa vitabu ambavyo Wakristo Wakatoliki na Waorthodoksi huviita deuterokanoni na Waprotestanti huviita Apokrifa (tazama [Jinsi vitabu vya Agano la Kale vilivyokusanywa](/articles/gathering-the-old-testament/)).
+Kwa hiyo "Septuaginta" si tafsiri moja bali ni mkusanyiko. Baadhi ya vitabu, kama sehemu kubwa ya Torati, vimetafsiriwa kwa kufuata maneno kwa karibu kabisa. Vingine viko huru zaidi: Kigiriki cha Ayubu ni kifupi kwa karibu sehemu moja ya sita kuliko Kiebrania, na Mithali ina nyongeza na mpangilio tofauti. Kigiriki cha Danieli na Esta kina vifungu vya ziada. Kila mtafsiri pia alilazimika kufasiri. Katika Kutoka 3:14, ambapo jibu la Mungu kwa Musa kwa Kiebrania ni "Mimi ndimi niliye," Kigiriki kinasoma *egō eimi ho ōn*, "Mimi ndiye aliyeko." Maneno hayo yaliwakaribisha wasomaji walioijua falsafa ya Kigiriki, kuanzia Filo, kulielewa jina la Mungu kama tamko kuhusu kuwako kwenyewe. Tafsiri kamwe si nakala tu; pia ni fafanuzi ya kwanza. Baadhi ya vitabu vilivyoandikwa awali kwa Kigiriki, au vilivyobaki kwa Kigiriki tu, kama Hekima ya Sulemani na 1–2 Wamakabayo, vilikuja kujumuishwa katika mikusanyiko ya Kigiriki ya maandiko matakatifu. Huu ndio mwanzo wa vitabu ambavyo Wakristo Wakatoliki na Waorthodoksi huviita deuterokanoni na Waprotestanti huviita Apokrifa (tazama [Jinsi vitabu vya Agano la Kale vilivyokusanywa](/articles/gathering-the-old-testament/)).
 
 ## Biblia ya Wakristo wa kwanza
 
@@ -35,7 +37,17 @@ Kanisa la mwanzo kwa sehemu kubwa lilizungumza Kigiriki, na Biblia yake ilikuwa 
 - **Waebrania 10:5** inanukuu Zaburi 40:6 kama "uliniandalia mwili," ikifuata Septuaginta, ambapo Kiebrania kinasomeka "masikio umenichimbia."
 - **Matendo 15:16–17** inamwonyesha Yakobo akinukuu Amosi 9:11–12 kwa umbo linalokaribiana na Septuaginta, linalosema juu ya "wanadamu wengine" wakimtafuta Bwana, ambapo maandiko ya Kimasoreti yanasema juu ya kumiliki "mabaki ya Edomu." Maneno ya Kiebrania ya "Edomu" na "wanadamu" yanatofautiana kwa herufi moja ya irabu.
 
-Manukuu haya yanaonyesha kwamba mitume walitumia Biblia ambayo wasikilizaji wao waliijua, kama wamisionari Wakristo walivyofanya tangu hapo. Yanaonyesha pia kwa nini Septuaginta ni ya lazima kwa kuelewa Agano Jipya: msamiati wake, kama maneno ya Kigiriki ya "agano," "utukufu," "haki" na "Bwana," uliunda lugha ya mitume. Katika Septuaginta, jina la Mungu YHWH kwa kawaida linatafsiriwa *kyrios*, "Bwana," ambalo ndilo msingi wa ukiri wa Agano Jipya kwamba "Yesu ni Bwana."
+Rekodi za Open Word Bible zinaonyesha tofauti ya aina hii pande zote mbili. Katika Zaburi 40 (mstari wa 7 kwa hesabu ya Kiebrania, mstari wa 6 katika Biblia nyingi za Kiswahili na Kiingereza), Agano la Kale linatafsiriwa kutoka Kiebrania:
+
+> {{OWB:PSA.40.7.s1:L}}
+
+Rekodi inaeleza kwamba kuchimba masikio ni kuyafungua, ili mtu asikilize kweli na kutii, na inaeleza kwamba Waebrania inaunukuu mstari huu kutoka Kigiriki. Katika Waebrania, Agano Jipya linatafsiriwa kama lilivyo, pamoja na maneno yake ya Kigiriki:
+
+> {{OWB:HEB.10.5.s1:L}}
+
+Rekodi ya Waebrania 10:5 inaeleza kwamba Zaburi ya Kigiriki inasoma "mwili", kwamba nakala chache za Kigiriki zina "masikio" kama Kiebrania, na kwamba hoja ya mwandishi inategemea neno "mwili". Hakuna mstari unaorekebishwa ili ulingane na mwingine. Kila mmoja unatafsiriwa kwa uaminifu, na maelezo ya sababu yanamwonyesha msomaji kwa nini yanatofautiana.
+
+Manukuu haya yanaonyesha kwamba mitume walitumia Biblia ambayo wasikilizaji wao waliijua, kama wamisionari Wakristo walivyofanya tangu hapo. Yanaonyesha pia kwa nini Septuaginta ni ya lazima kwa kuelewa Agano Jipya: msamiati wake, kama maneno ya Kigiriki ya "agano," "utukufu," "haki" na "Bwana," uliunda lugha ya mitume. Katika nakala za Kikristo za Septuaginta, jina la Mungu YHWH kwa kawaida linatafsiriwa *kyrios*, "Bwana," ambalo ndilo msingi wa ukiri wa Agano Jipya kwamba "Yesu ni Bwana." Baadhi ya nakala za mwanzo za Kiyahudi zilifanya vinginevyo: mafunjo ya Kumbukumbu la Torati ya karne ya kwanza K.K., Papyrus Fouad 266, yanaandika jina la Mungu kwa herufi za Kiebrania katikati ya Kigiriki. Wasomi bado wanajadili ni desturi ipi watafsiri wa kwanza waliifuata.
 
 ## Marekebisho na washindani
 
@@ -43,7 +55,9 @@ Kwa sababu Wakristo waliitumia Septuaginta, na kujenga hoja kutoka kwayo, baadhi
 
 Katika karne ya tatu, mwanachuoni Mkristo **Origen** alitunga **Heksapla**, kazi kubwa mno iliyopanga katika safu sita zinazolingana maandiko ya Kiebrania, maandiko hayo yakiandikwa kwa herufi za Kigiriki, Akwila, Simako, Septuaginta na Theodotio. Origen alionyesha mahali ambapo Septuaginta ilikuwa na maneno yasiyopatikana katika Kiebrania, au ilikosa maneno yaliyokuwemo. Heksapla yenyewe imepotea, lakini ushawishi wake uliunda urithishaji wa baadaye wa Septuaginta.
 
-Hati za zamani zaidi za Septuaginta zilizo karibu kamili ni kodeksi kubwa za Kikristo za karne ya nne na ya tano: **Kodeksi Vatikanus**, **Kodeksi Sinaitikus** na **Kodeksi Aleksandrinus**. Vipande vingi ni vya zamani zaidi, vikiwemo mafunjo kutoka Misri na vipande vya Kigiriki miongoni mwa Hati-kunjo za Bahari ya Chumvi.
+Hati za zamani zaidi za Septuaginta zilizo karibu kamili ni kodeksi kubwa za Kikristo za karne ya nne na ya tano: **Kodeksi Vatikanus**, **Kodeksi Sinaitikus** na **Kodeksi Aleksandrinus** (tazama [Kodeksi Sinaitiko na Kodeksi Vatikano](/articles/sinaiticus-and-vaticanus/)). Vipande vingi ni vya zamani zaidi sana na vilinakiliwa na Wayahudi. Cha zamani zaidi ni **Papyrus Rylands 458**, vipande vidogo vinane vya Kumbukumbu la Torati vilivyoko sasa Manchester, vinavyokadiriwa kuwa vya katikati ya karne ya pili K.K. Vipande vya Kigiriki vya Mambo ya Walawi, Hesabu na Kumbukumbu la Torati vilipatikana pia miongoni mwa Hati-kunjo za Bahari ya Chumvi, vya mwanzo kabisa vikiwa vya karibu mwaka 100 K.K.
+
+Matumizi ya Kikristo ya Septuaginta yaliunda pia mijadala ya baadaye. Yeronimo alipotafsiri Agano la Kale kwa Kilatini kutoka Kiebrania, Augustino alihofia kwamba kuiacha Septuaginta kungeyagawa makanisa (tazama [Yeronimo na Vulgata ya Kilatini](/articles/jerome-and-the-vulgate/)).
 
 ## Shahidi wa maandiko ya Kiebrania
 
@@ -62,12 +76,13 @@ Kwa Open Word Bible, Septuaginta ina nafasi mbili. Mwandishi wa Agano Jipya anap
 ## Vyanzo
 
 - Barthélemy, Dominique. *Les Devanciers d'Aquila*. Supplements to Vetus Testamentum 10. Leiden: Brill, 1963.
+- Talmudi ya Babeli, kitabu cha *Megillah* 9a; *Soferim* 1:7.
 - Dines, Jennifer M. *The Septuagint*. London: T&T Clark, 2004.
 - Fernández Marcos, Natalio. *The Septuagint in Context: Introduction to the Greek Versions of the Bible*. Imetafsiriwa na Wilfred G. E. Watson. Leiden: Brill, 2000.
 - Jobes, Karen H., and Moisés Silva. *Invitation to the Septuagint*. Toleo la 2. Grand Rapids: Baker Academic, 2015.
 - Law, Timothy Michael. *When God Spoke Greek: The Septuagint and the Making of the Christian Bible*. Oxford: Oxford University Press, 2013.
+- Filo. *On the Life of Moses* 2.25–44.
 - Pietersma, Albert, and Benjamin G. Wright, wahariri. *A New English Translation of the Septuagint*. Oxford: Oxford University Press, 2007. Inapatikana bure mtandaoni.
 - Tov, Emanuel. *The Text-Critical Use of the Septuagint in Biblical Research*. Toleo la 3. Winona Lake, IN: Eisenbrauns, 2015.
 - Wright, Benjamin G., III. *The Letter of Aristeas*. Commentaries on Early Jewish Literature. Berlin: de Gruyter, 2015.
-- Filo. *On the Life of Moses* 2.25–44.
 - Manukuu ya Biblia ni tafsiri halisi za makala hii yenyewe.

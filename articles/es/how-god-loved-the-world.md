@@ -4,7 +4,7 @@ summary: El versículo más conocido de la Biblia depende de una pequeña palabr
 date: 2026-10-11
 order: 11
 section: passage
-source: 88b21be3700d
+source: e258b0e80ed9
 ---
 Muchos lectores saben Juan 3:16 de memoria, a menudo con las palabras «tanto amó Dios al mundo». La versión Equilibrada de Open Word Bible dice algo un poco distinto:
 
@@ -12,15 +12,41 @@ Muchos lectores saben Juan 3:16 de memoria, a menudo con las palabras «tanto am
 
 La diferencia es intencionada, y el registro del versículo la explica. Todas las decisiones sobre el significado del versículo las comparten todos los idiomas; la redacción española se deriva de ellas.
 
+## Dónde está el versículo
+
+Juan 3 empieza de noche. Nicodemo, fariseo y miembro del consejo de gobierno, acude a Jesús con preguntas, y Jesús le dice que nadie puede ver el reino de Dios sin nacer de lo alto. Nicodemo no consigue seguirle. Entonces Jesús recurre a una antigua historia de los años de Israel en el desierto:
+
+> {{OWB:JHN.3.14.s1:B}}
+
+En Números 21, unas serpientes venenosas mordían al pueblo. Dios mandó a Moisés poner una serpiente de bronce sobre un asta, y quien había sido mordido y la miraba vivía. El registro de 3:14 explica la comparación: igual que mirar la serpiente levantada daba vida, creer en el Hijo levantado da vida eterna. Juan dice claramente que «levantado» apunta a la manera en que Jesús iba a morir (12:32–33).
+
+El versículo 16 sigue directamente. Empieza con «Porque», y esa palabrita lo une a la serpiente.
+
 ## ¿«Tanto» o «así»?
 
 El versículo empieza con {{GREEK:JHN.3.16:1}}. «Tanto amó Dios al mundo» se entiende como «Dios amó muchísimo al mundo». Pero la palabra griega significa normalmente «así» o «de esta manera», y así la usa Juan en otros lugares: el viento sopla donde quiere, y «así» es todo el que ha nacido del Espíritu (3:8); Jesús, cansado del camino, se sentó «así» junto al pozo (4:6).
 
-Además, acaba de aparecer dos versículos antes: como Moisés levantó la serpiente en el desierto, «así» tiene que ser levantado el Hijo del Hombre (3:14). El versículo 16 empieza con «Porque», que lo une a esa frase. Leídos juntos, dicen: así es como Dios amó al mundo, dando al Hijo para que fuera levantado. 1 Juan 4:9 dice lo mismo con otras palabras: el amor de Dios se mostró en que envió a su Hijo único.
+Además, acaba de aparecer dos versículos antes, en la frase sobre la serpiente: como Moisés la levantó, {{GREEK:JHN.3.14:10}}, «así», tiene que ser levantado el Hijo del Hombre. Leídos juntos, los dos versículos dicen: así es como Dios amó al mundo, dando al Hijo para que fuera levantado. 1 Juan 4:9 dice lo mismo con otras palabras:
 
-Por eso la Literal lo dice claramente:
+> {{OWB:1JN.4.9.s1:B}}
+
+## La gramática, paso a paso
+
+La frase griega tiene tres partes.
+
+- **«Así amó Dios al mundo.»** El adverbio va primero para darle énfasis, y el verbo está en pasado simple: Dios amó.
+- **«Que dio al Hijo, el único.»** La palabra de enlace es {{GREEK:JHN.3.16:8}}. Con un verbo en pasado, como aquí ({{GREEK:JHN.3.16:13}}, «dio»), expresa lo que de hecho ocurrió. Dios no solo sintió amor; su amor tomó la forma de un regalo.
+- **«Para que todo el que cree en él no perezca, sino que tenga vida eterna.»** Este es el propósito del regalo.
+
+La Literal sigue esa estructura:
 
 > {{OWB:JHN.3.16.s1:L}}
+
+## Cómo se ha leído
+
+La pregunta es antigua. La Biblia latina de Jerónimo dice *Sic enim dilexit Deus mundum*, y *sic* significa «así», la misma palabra que usa el latín para «de esta manera». La Biblia de Wycliffe siguió de cerca el latín: "God louede so the world" («Dios amó así al mundo»). William Tyndale, y después la versión King James, escribieron "God so loved the world". En inglés, "so" también puede significar «de este modo», como en "do it so" («hazlo así»), pero la mayoría de los lectores de hoy lo oyen como una palabra de grado, como en "I am so tired" («estoy tan cansado»).
+
+Los especialistas modernos han vuelto a examinarlo. En 1999, Robert Gundry y Russell Howell publicaron en *Novum Testamentum* un estudio de la sintaxis de este versículo, en el que examinaban cómo se relaciona el «así» de 3:16 con la comparación de 3:14. Los comentaristas siguen sin ponerse de acuerdo sobre cuánto peso dar al modo y cuánto al grado.
 
 ## Por qué la decisión se marca como incierta
 
@@ -38,10 +64,20 @@ Vale la pena conocer algunas decisiones más del registro:
 
 - **El mundo** es la humanidad entera, el mundo que no conoció a su creador (1:10) y ama la oscuridad (3:19). Lo sorprendente es que Dios ame a *este* mundo.
 - **Hijo único** traduce {{GREEK:JHN.3.16:12}}, la palabra que la Reina-Valera traduce «unigénito». Significa único; ver [¿«Hijo único» o «unigénito»?](/articles/one-and-only-son/). La Literal sí dice «el Hijo unigénito», porque en el español de hoy esa palabra significa simplemente hijo único. La Equilibrada y la Sencilla dicen «su Hijo único».
+- **Su Hijo.** Muchos manuscritos dicen «su Hijo»; el texto griego que sigue Open Word Bible dice «el Hijo». El significado es el mismo, así que no hay nota al pie. La Literal conserva «el Hijo», y la Equilibrada y la Sencilla dicen «su», porque el español lo necesita.
 - **Dio** incluye enviar al Hijo al mundo (versículo 17) y entregarlo a la muerte, el ser levantado del versículo 14.
+- **Todo el que cree** ya es una expresión inclusiva, así que esta frase no necesita ningún ajuste de género.
 - **Perecer** es lo contrario de la vida eterna: la ruina final, no la muerte física, porque los creyentes también mueren (11:25). La Sencilla dice «no se pierda», el sentido que tiene el mismo verbo en 6:39 y 10:28.
 
 El registro también señala un posible eco de Génesis 22, donde Dios le dice a Abraham que tome a su hijo, su único hijo, al que ama. Aquí es Dios quien da a su propio Hijo. Juan no hace él mismo la conexión, así que también esta decisión se marca como incierta.
+
+## Lo que sigue
+
+El versículo 17 dice por qué fue enviado el Hijo, y usa «el mundo» tres veces:
+
+> {{OWB:JHN.3.17.s1:B}}
+
+El versículo 18 dice después que el veredicto ya está dado: quien cree no es condenado, y quien no cree ya está condenado. Los dos versículos van juntos: el Hijo fue enviado para salvar, y quien lo rechaza se queda bajo el juicio que ya pesa sobre él.
 
 ## ¿Dónde deja de hablar Jesús?
 
