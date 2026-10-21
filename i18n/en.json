@@ -180,6 +180,13 @@
     "hl_blue": "Blue highlight",
     "hl_pink": "Pink highlight",
     "saved_all": "All saved verses",
+    "my_note": "Your note",
+    "my_note_add": "Add a note",
+    "my_note_edit": "Edit note",
+    "my_note_save": "Save note",
+    "my_note_cancel": "Cancel",
+    "my_note_delete": "Delete note",
+    "my_note_private": "Only you can see your notes. Signed in, they follow you to your other devices.",
     "step_prev": "Previous verse",
     "step_next": "Next verse",
     "step_notes": "Next with notes",
@@ -309,6 +316,54 @@
   "about.licences": "Licences",
   "about.licences_text": "The translation, its reasoning records and the alignments are dedicated to the public domain under <a href=\"https://creativecommons.org/publicdomain/zero/1.0/\">CC0 1.0</a>. The code is MIT-licensed. The source texts keep their own licences, credited below.",
   "about.source": "Source code and data:",
+  "book_page": {
+    "title": "{book}: introduction and chapters",
+    "draft": "This introduction is a draft written with AI help. Like the translation, it stays a draft until a named reviewer has checked it.",
+    "start": "Start reading",
+    "chapters": "Chapters",
+    "chapter": "Chapter {n}",
+    "articles": "Articles on {book}"
+  },
+  "status": {
+    "nav": "Translation status",
+    "title": "Translation status",
+    "description": "How much of Open Word Bible is drafted, and how much a human reviewer has approved, counted from the translation itself.",
+    "heading": "Where the translation stands",
+    "dek": "Every sentence is drafted with AI help and stays a draft until a named reviewer who reads the original language approves it. These numbers are counted from the translation itself each time the site is updated.",
+    "sentences": "Sentences drafted",
+    "drafts": "Still drafts",
+    "reviewed": "Reviewed by a person",
+    "by_status": "By review status",
+    "by_language": "By language",
+    "by_book": "By book",
+    "status": "Status",
+    "language": "Language",
+    "book": "Book",
+    "count": "Sentences",
+    "how": "How a sentence becomes reviewed",
+    "report": "Found a mistake in a draft? Please <a href=\"{issues}\">report it</a>.",
+    "thousands": ","
+  },
+  "download": {
+    "nav": "Download the text",
+    "title": "Download",
+    "description": "Open Word Bible as ready-made files: USFM and JSON in every language and level, free to use (CC0).",
+    "heading": "Download the text",
+    "dek": "The whole translation as files, in every language and level, for Bible software, apps and your own projects. They are rebuilt from the translation each time the site is updated.",
+    "draft": "Every sentence is drafted with AI help and stays a draft until a named reviewer approves it. Each file's manifest counts its sentences by <a href=\"{status}\">review status</a>.",
+    "usfm_note": "<b>USFM</b>: one file per book, the standard format for Bible software and publishing tools.",
+    "json_note": "<b>JSON</b>: books, chapters and verses in one file, for apps and scripts.",
+    "settings_note": "Each zip also holds manifest.json (the edition, its verse numbering, its settings and the verses not yet translated), a README and the licence. The text uses the default reader settings.",
+    "licence": "The text is dedicated to the public domain (CC0): use it, change it and share it, with no permission needed. A credit to Open Word Bible is welcome.",
+    "counts": "{verses} verses; {missing} not yet translated.",
+    "level": "Level",
+    "usfm": "USFM",
+    "json": "JSON",
+    "kb": "{n} KB",
+    "mb": "{n} MB",
+    "decimal": ".",
+    "built": "Built {date}."
+  },
   "about.credits_language": "The credits are given in English, with names and licences as their authors publish them.",
   "beliefs": {
     "title": "What we believe",
@@ -354,14 +409,14 @@
     "title": "Privacy",
     "description": "What Open Word Bible keeps about you, and why: no ads, no tracking, and an account only if you want one.",
     "heading": "Privacy",
-    "updated": "Last updated 15 October 2026",
+    "updated": "Last updated 17 October 2026",
     "dek": "You can read Open Word Bible without an account, without ads and without being tracked. This page says what we keep when you do sign in, and why.",
     "sections": [
       [
         "Reading without an account",
         [
           "We use no analytics, no advertising and no tracking cookies. Every page, font and script comes from our own site, so no other company learns what you read here.",
-          "Your reader settings, reading place, bookmarks, highlights, recent searches, reading-plan progress and the chapters you save for offline reading are kept in your own browser, not sent to us. Clearing your browser’s data for this site, or <em>Clear this device</em> on the <a href=\"{account}\">account page</a>, removes them."
+          "Your reader settings, reading place, bookmarks, highlights, notes, recent searches, reading-plan progress and the chapters you save for offline reading are kept in your own browser, not sent to us. Clearing your browser’s data for this site, or <em>Clear this device</em> on the <a href=\"{account}\">account page</a>, removes them."
         ]
       ],
       [
@@ -374,7 +429,7 @@
         "If you create an account",
         [
           "An account keeps only what it needs to work:",
-          "<ul><li>your email address, which is how you sign in, and a password if you choose one, stored only as a secure hash;</li><li>a display name, if you set one, shown to reviewers on your suggestions and questions;</li><li>your bookmarks and highlights (with the verse’s words as you saw them) and your reading place, so they follow you to your other devices;</li><li>each signed-in device: the browser’s own description of itself, when it signed in and when it was last used (signing out removes it);</li><li>any role you hold, such as reviewer or editor, and the review record of who approved what, and when.</li></ul>",
+          "<ul><li>your email address, which is how you sign in, and a password if you choose one, stored only as a secure hash;</li><li>a display name, if you set one, shown to reviewers on your suggestions and questions;</li><li>the suggestions and questions you send about a verse, with any reply, so an editor can answer you by email;</li><li>your bookmarks, highlights and private notes (with the verse’s words as you saw them), your reading place, your reading-plan progress and your reader settings (such as the reading level and wording choices), so they follow you to your other devices;</li><li>each signed-in device: the browser’s own description of itself, when it signed in and when it was last used (signing out removes it);</li><li>any role you hold, such as reviewer or editor, and the review record of who approved what, and when.</li></ul>",
           "Sign-in links and device keys are stored only as fingerprints that can’t be turned back into working links or keys."
         ]
       ],
@@ -388,13 +443,13 @@
       [
         "Who else handles your data",
         [
-          "We don’t sell your data, share it with advertisers or use it to profile you. A few services help us run the site: Render hosts the site, the server and its database, and, like any host, keeps short-lived request logs; an email service delivers sign-in emails; and when something breaks, an error report goes to Sentry with your address, cookies, searches and the other details of the request removed."
+          "We don’t sell your data, share it with advertisers or use it to profile you. A few services help us run the site: Render hosts the site, the server and its database, and, like any host, keeps short-lived request logs; an email service delivers sign-in emails and replies to your suggestions and questions; and when something breaks, an error report goes to Sentry with your address, cookies, searches and the other details of the request removed."
         ]
       ],
       [
         "Your choices",
         [
-          "On your <a href=\"{account}\">account page</a> you can download your account details, clear this device, and delete your account. Deleting it removes your email address, display name, password, devices, bookmarks, highlights and reading place.",
+          "On your <a href=\"{account}\">account page</a> you can download your account details, clear this device, and delete your account. Deleting it removes your email address, display name, password, devices, bookmarks, highlights, notes, reading place, reading-plan progress, reader settings, and the suggestions and questions you sent.",
           "One exception: a reviewer’s account is kept with the review record, because the record says who approved each sentence. Ask an editor to close it."
         ]
       ],
@@ -515,14 +570,17 @@
   "reader.listen": "Listen",
   "saved.title": "Saved verses",
   "saved.heading": "Your saved verses",
-  "saved.dek": "Verses you bookmark or highlight while reading are kept in this browser, on this device.",
-  "saved.empty": "Nothing saved yet. Choose a verse while reading, then bookmark or highlight it.",
+  "saved.dek": "Verses you bookmark, highlight or write a note on while reading are kept in this browser, on this device.",
+  "saved.empty": "Nothing saved yet. Choose a verse while reading, then bookmark it, highlight it or add a note.",
   "saved.show": "Show",
   "saved.all": "All",
   "saved.bookmarks": "Bookmarks",
   "saved.highlights": "Highlights",
   "saved.remove": "Remove",
   "saved.bookmark": "Bookmarked",
+  "saved.notes": "Notes",
+  "saved.note": "Your note",
+  "saved.confirm": "Click again: this removes your note too",
   "reader.strip": "{book}: chapters",
   "reader.turns": "Previous and next passage",
   "reader.prev": "&larr; Previous",
@@ -541,9 +599,11 @@
   "account.display_name_note": "(shown to reviewers on suggestions and questions)",
   "account.save": "Save",
   "account.soon": "Coming next",
-  "account.soon_text": "Private notes on any verse; then suggesting an edit or asking a question about a translation decision.",
-  "account.synced": "Your bookmarks, highlights and reading place are kept with your account, so they follow you to your other devices.",
+  "account.soon_text": "Private notes on any verse.",
+  "account.synced": "Your bookmarks, highlights, notes, reading place, reading-plan progress and reader settings are kept with your account, so they follow you to your other devices.",
   "account.synced_link": "See your saved verses",
+  "account.messages": "Your suggestions and questions",
+  "account.messages_text": "What you have sent the editors from a verse (“Suggest or ask” in the reader), and their replies, which also come to you by email.",
 
   "login.title_sign_in": "Welcome back",
   "login.title_sign_up": "Create your account",
@@ -599,7 +659,7 @@
   "account.delete_text": "Permanently delete your account, your display name and your signed-in devices. This can’t be undone.",
   "account.delete": "Delete account",
   "account.sign_out": "Sign out",
-  "account.ui": {"reader": "Reader", "error": "Something went wrong.", "offline": "Could not reach Open Word Bible. Check your connection and try again.", "saved": "Saved.", "password_set": "Set", "password_none": "None yet: you sign in by email link or Google.", "confirm": "Click again to confirm", "cleared": "Cleared.", "has_reviews": "Accounts with review history are kept with the record. Ask an editor to close yours."},
+  "account.ui": {"reader": "Reader", "error": "Something went wrong.", "offline": "Could not reach Open Word Bible. Check your connection and try again.", "saved": "Saved.", "password_set": "Set", "password_none": "None yet: you sign in by email link or Google.", "confirm": "Click again to confirm", "cleared": "Cleared.", "has_reviews": "Accounts with review history are kept with the record. Ask an editor to close yours.", "messages_empty": "Nothing sent yet.", "suggestion": "Suggestion", "question": "Question", "status_new": "Waiting for an editor", "status_answered": "Answered", "status_done": "Done", "status_declined": "Closed", "reply": "The editors replied:"},
   "404.title": "Not found",
   "404.heading": "This page is not here.",
   "404.sub": "It may have moved, or the address may be mistyped. Only a few passages are translated so far.",

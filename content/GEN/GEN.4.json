@@ -43,6 +43,26 @@
           "L": "Y el hombre conoció a Eva su mujer, y ella concibió y dio a luz a Caín, y dijo: «He adquirido un varón con {{divine_name:el SEÑOR|Yahvé}}».",
           "B": "El hombre se unió a su esposa Eva, y ella quedó embarazada y dio a luz a Caín. Entonces dijo: «Con la ayuda {{divine_name:del SEÑOR|de Yahvé}} he dado vida a un hombre».",
           "R": "El hombre y su esposa Eva tuvieron relaciones, y ella quedó embarazada. Dio a luz a un hijo llamado Caín, y dijo: «Con la ayuda {{divine_name:del SEÑOR|de Yahvé}} he tenido un hijo varón»."
+        },
+        "fr": {
+          "L": "Et l’homme connut Ève, sa femme ; elle conçut et enfanta Caïn, et elle dit : « J’ai acquis un homme avec {{divine_name:le SEIGNEUR|Yahvé}}. »",
+          "B": "L’homme s’unit à Ève, sa femme ; elle devint enceinte et donna naissance à Caïn. Elle dit : « Avec l’aide {{divine_name:du SEIGNEUR|de Yahvé}}, j’ai donné la vie à un homme. »",
+          "R": "L’homme et sa femme Ève ont eu un enfant. Elle est tombée enceinte et elle a mis au monde un fils, appelé Caïn. Elle a dit : « Avec l’aide {{divine_name:du SEIGNEUR|de Yahvé}}, j’ai eu un petit garçon. »"
+        },
+        "sw": {
+          "L": "Na yule mtu akamjua Hawa mkewe, naye akapata mimba, akamzaa Kaini, akasema, \"Nimempata mwanamume pamoja na {{divine_name:BWANA|Yahwe}}.\"",
+          "B": "Yule mtu alikutana kimwili na mkewe Hawa, naye akapata mimba, akamzaa Kaini. Akasema, \"Kwa msaada wa {{divine_name:BWANA|Yahwe}} nimempata mwanamume.\"",
+          "R": "Yule mtu na mkewe Hawa walipata mtoto. Hawa alipata mimba, akamzaa mtoto wa kiume, akamwita Kaini. Akasema, \"Kwa msaada wa {{divine_name:BWANA|Yahwe}} nimepata mtoto wa kiume.\""
+        },
+        "vi": {
+          "L": "Và con người ăn ở với Ê-va vợ mình, và nàng thụ thai và sinh Ca-in, và nàng nói: \"Tôi đã có được một người nam với {{divine_name:CHÚA|Gia-vê}}.\"",
+          "B": "Con người ăn ở với Ê-va vợ mình, và nàng mang thai rồi sinh Ca-in. Nàng nói: \"Nhờ {{divine_name:CHÚA|Gia-vê}} giúp đỡ, tôi đã sinh được một người nam.\"",
+          "R": "Người đàn ông và vợ mình là Ê-va có con với nhau. Nàng mang thai và sinh một con trai tên là Ca-in. Nàng nói: \"Nhờ {{divine_name:CHÚA|Gia-vê}} giúp đỡ, tôi đã có được một bé trai.\""
+        },
+        "ko": {
+          "L": "그리고 그 사람이 자기 아내 하와를 알았다. 그러자 그 여자가 임신하여 가인을 낳고 말했다. \"내가 {{divine_name:주|야훼}}와 함께 한 남자를 얻었다.\"",
+          "B": "그 사람이 자기 아내 하와와 동침하니, 하와가 임신하여 가인을 낳았다. 하와가 말했다. \"{{divine_name:주|야훼}}의 도우심으로 내가 한 남자를 얻었다.\"",
+          "R": "그 사람과 그의 아내 하와 사이에 아이가 생겼다. 하와는 임신하여 가인이라는 아들을 낳았다. 하와가 말했다. \"{{divine_name:주|야훼}}께서 도와주셔서 내가 아들을 얻었다.\""
         }
       },
       "decisions": [
@@ -157,6 +177,70 @@
           "reason": "Eve calls her newborn son \"a man\" (meaning decision m3). Literal says \"varón\", the word for a male person, which keeps the wording unusual as it is in Hebrew; Balanced says \"un hombre\"; Readable \"un hijo varón\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o010040010021"
+          ],
+          "choice": "passé simple (L, B); passé composé (R)",
+          "alternatives": [
+            "passé composé at every level",
+            "passé simple at every level"
+          ],
+          "reason": "French narrative tense by level, as the French style guide sets it: the passé simple, the tense of written narrative, at Literal and Balanced (\"connut\", \"donna naissance\"), the passé composé of spoken French at Readable (\"a mis au monde\"). Speech keeps the tenses of speech at every level (\"j'ai acquis\").",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010040010021"
+          ],
+          "choice": "\"ăn ở với\" (L, B), \"có con với nhau\" (R)",
+          "alternatives": [
+            "\"biết\""
+          ],
+          "reason": "The Hebrew \"knew\" means had sexual relations with (m1); Vietnamese \"biết\" does not carry that sense, so every level says it in a Vietnamese way, Literal with the discreet \"ăn ở với\". The same wording is kept in 4:17 and 4:25.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010040010021"
+          ],
+          "choice": "\"알았다\" (L); \"동침하니\" (B); \"사이에 아이가 생겼다\" (R)",
+          "alternatives": [
+            "동침하다 (L)",
+            "관계하다"
+          ],
+          "reason": "\"Knew\" is the Hebrew way of speaking of the bond of husband and wife (meaning decision m1). Literal keeps the Hebrew verb, which Korean readers of the Bible know in this sense; Balanced uses the usual decent word; Readable speaks of the child, as the English Readable does. The same words return in 4:17 and 4:25.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -203,6 +287,26 @@
           "L": "Y volvió a dar a luz a su hermano Abel. Y Abel era pastor de ovejas, y Caín era trabajador de la tierra.",
           "B": "Después dio a luz a Abel, su hermano. Abel cuidaba rebaños de ovejas y cabras, y Caín cultivaba la tierra.",
           "R": "Más tarde tuvo otro hijo, Abel. Abel cuidaba ovejas y cabras, y Caín era agricultor."
+        },
+        "fr": {
+          "L": "Et elle enfanta encore son frère, Abel. Et Abel était berger de moutons, et Caïn était travailleur du sol.",
+          "B": "Elle donna ensuite naissance à Abel, son frère. Abel gardait des troupeaux de moutons et de chèvres, et Caïn cultivait le sol.",
+          "R": "Plus tard, elle a eu un autre fils, Abel. Abel s’occupait des moutons et des chèvres, et Caïn était agriculteur."
+        },
+        "sw": {
+          "L": "Akamzaa tena nduguye Habili. Naye Habili alikuwa mchungaji wa kondoo, na Kaini alikuwa mkulima wa ardhi.",
+          "B": "Baadaye akamzaa Habili, ndugu yake. Habili alichunga makundi ya kondoo na mbuzi, na Kaini alilima ardhi.",
+          "R": "Baadaye Hawa alimzaa mtoto mwingine, Habili. Habili alichunga kondoo na mbuzi, na Kaini alikuwa mkulima."
+        },
+        "vi": {
+          "L": "Và nàng lại sinh em của nó là A-bên. Và A-bên là người chăn chiên, và Ca-in là người cày cấy đất.",
+          "B": "Sau đó nàng sinh em của Ca-in là A-bên. A-bên chăn bầy chiên dê, còn Ca-in cày cấy đất.",
+          "R": "Sau đó nàng sinh thêm một con trai nữa là A-bên. A-bên chăn chiên và dê, còn Ca-in làm ruộng."
+        },
+        "ko": {
+          "L": "그리고 그 여자가 다시 그의 동생 아벨을 낳았다. 그리고 아벨은 양을 치는 사람이 되었고, 가인은 땅을 일구는 사람이 되었다.",
+          "B": "그 뒤에 하와는 가인의 동생 아벨을 낳았다. 아벨은 양과 염소 떼를 쳤고, 가인은 땅을 일구었다.",
+          "R": "그 뒤에 하와는 또 아들 아벨을 낳았다. 아벨은 양과 염소를 돌보았고, 가인은 농사를 지었다."
         }
       },
       "decisions": [
@@ -274,6 +378,28 @@
           "reason": "Hebrew says \"she added to bear\", a common way of saying \"she did it again\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010040020041",
+            "o010040020042"
+          ],
+          "choice": "\"동생\" for \"his brother\"",
+          "alternatives": [
+            "형제",
+            "아우"
+          ],
+          "reason": "Korean names a brother as older or younger. Abel is born after Cain, so he is \"동생\" here and in verses 8-11. Where the Hebrew does not show who is older (Jubal, verse 21), Korean says \"형제\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -316,6 +442,26 @@
           "L": "Y sucedió al cabo de los días que Caín trajo del fruto de la tierra una ofrenda {{divine_name:al SEÑOR|a Yahvé}}.",
           "B": "Con el paso del tiempo, Caín llevó {{divine_name:al SEÑOR|a Yahvé}} una ofrenda de los productos de la tierra.",
           "R": "Pasado un tiempo, Caín le llevó {{divine_name:al SEÑOR|a Yahvé}} parte de su cosecha como regalo."
+        },
+        "fr": {
+          "L": "Et il arriva, au bout des jours, que Caïn apporta du fruit du sol en offrande {{divine_name:au SEIGNEUR|à Yahvé}}.",
+          "B": "Avec le temps, Caïn apporta des produits du sol en offrande {{divine_name:au SEIGNEUR|à Yahvé}}.",
+          "R": "Quelque temps après, Caïn a apporté une partie de ses récoltes {{divine_name:au SEIGNEUR|à Yahvé}}, comme cadeau."
+        },
+        "sw": {
+          "L": "Ikawa mwisho wa siku, Kaini akaleta baadhi ya matunda ya ardhi kuwa sadaka kwa {{divine_name:BWANA|Yahwe}}.",
+          "B": "Baada ya muda, Kaini alileta baadhi ya mazao ya ardhi kuwa sadaka kwa {{divine_name:BWANA|Yahwe}}.",
+          "R": "Baada ya muda fulani, Kaini alimletea {{divine_name:BWANA|Yahwe}} baadhi ya mazao yake kama zawadi."
+        },
+        "vi": {
+          "L": "Và vào cuối những ngày ấy, Ca-in đem một ít hoa quả của đất làm lễ vật dâng cho {{divine_name:CHÚA|Gia-vê}}.",
+          "B": "Một thời gian sau, Ca-in đem một ít hoa lợi của đất làm lễ vật dâng cho {{divine_name:CHÚA|Gia-vê}}.",
+          "R": "Sau một thời gian, Ca-in đem một ít hoa màu của mình làm quà dâng cho {{divine_name:CHÚA|Gia-vê}}."
+        },
+        "ko": {
+          "L": "그리고 날들의 끝에 가인이 땅의 열매 가운데서 {{divine_name:주|야훼}}께 예물을 가져왔다.",
+          "B": "얼마 뒤에 가인은 땅에서 거둔 것 가운데 얼마를 {{divine_name:주|야훼}}께 예물로 가져왔다.",
+          "R": "얼마가 지난 뒤에, 가인은 자기가 거둔 곡식 가운데 얼마를 {{divine_name:주|야훼}}께 예물로 가져왔다."
         }
       },
       "decisions": [
@@ -403,6 +549,26 @@
           "L": "Y Abel trajo también él de los primogénitos de su rebaño, y de la grasa de ellos. Y {{divine_name:el SEÑOR|Yahvé}} miró con agrado a Abel y a su ofrenda,",
           "B": "También Abel llevó una ofrenda: algunas de las primeras crías de su rebaño, con su grasa. {{divine_name:El SEÑOR|Yahvé}} miró con agrado a Abel y su ofrenda,",
           "R": "Abel también llevó un regalo. Escogió algunos de los primeros corderos que nacieron en su rebaño y ofreció las mejores partes. {{divine_name:Al SEÑOR|A Yahvé}} le agradaron Abel y su regalo,"
+        },
+        "fr": {
+          "L": "Et Abel, lui aussi, apporta des premiers-nés de son troupeau et de leur graisse. Et {{divine_name:le SEIGNEUR|Yahvé}} porta un regard favorable sur Abel et sur son offrande,",
+          "B": "Abel, lui aussi, apporta une offrande : quelques-uns des premiers-nés de son troupeau, avec leurs parties grasses. {{divine_name:Le SEIGNEUR|Yahvé}} accueillit avec faveur Abel et son offrande,",
+          "R": "Abel aussi a apporté un cadeau. Il a choisi quelques-uns des premiers agneaux nés dans son troupeau, et il en a offert les meilleurs morceaux. {{divine_name:Le SEIGNEUR|Yahvé}} a été content d’Abel et de son cadeau,"
+        },
+        "sw": {
+          "L": "Naye Habili pia akaleta baadhi ya wazaliwa wa kwanza wa kundi lake na baadhi ya mafuta yao. Na {{divine_name:BWANA|Yahwe}} akamtazama kwa kibali Habili na sadaka yake,",
+          "B": "Habili naye alileta sadaka: baadhi ya wazaliwa wa kwanza wa kundi lake, pamoja na sehemu zao za mafuta. {{divine_name:BWANA|Yahwe}} akamkubali Habili na sadaka yake,",
+          "R": "Habili pia alileta zawadi. Alichagua baadhi ya wana-kondoo wa kwanza waliozaliwa katika kundi lake, akatoa sehemu zao zilizo bora. {{divine_name:BWANA|Yahwe}} alipendezwa na Habili na zawadi yake,"
+        },
+        "vi": {
+          "L": "Và A-bên, chính ông cũng đem một ít con đầu lòng của bầy mình và mỡ của chúng. Và {{divine_name:CHÚA|Gia-vê}} đoái nhìn A-bên và lễ vật của ông,",
+          "B": "A-bên cũng đem dâng lễ vật: một ít con đầu lòng trong bầy mình, cùng với mỡ của chúng. {{divine_name:CHÚA|Gia-vê}} đoái nhìn A-bên và lễ vật của ông,",
+          "R": "A-bên cũng đem dâng một món quà. Ông chọn một ít chiên con đầu lòng trong bầy mình và dâng những phần tốt nhất của chúng. {{divine_name:CHÚA|Gia-vê}} hài lòng về A-bên và món quà của ông,"
+        },
+        "ko": {
+          "L": "그리고 아벨도 자기 양 떼의 맏배와 그것들의 기름에서 가져왔다. 그리고 {{divine_name:주|야훼}}께서 아벨과 그의 예물을 좋게 보셨으나,",
+          "B": "아벨도 예물을 가져왔다. 자기 양 떼에서 처음 난 것들과 그 기름진 부분이었다. {{divine_name:주|야훼}}께서는 아벨과 그의 예물을 반기셨으나,",
+          "R": "아벨도 예물을 가져왔다. 아벨은 자기 양 떼에서 처음 태어난 새끼들 가운데 몇 마리를 골라, 그 가장 좋은 부분을 바쳤다. {{divine_name:주|야훼}}께서는 아벨과 그의 예물을 기쁘게 받으셨지만,"
         }
       },
       "decisions": [
@@ -474,6 +640,29 @@
           "reason": "In modern Spanish \"primogénito\" is used mainly of people. Literal keeps it, the word of the laws on the firstborn (meaning decision m1); Balanced says what it means for a flock.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o010040040012",
+            "o010040040041"
+          ],
+          "choice": "\"ông\" for Abel and Cain as grown men in the narrative",
+          "alternatives": [
+            "\"anh\"",
+            "\"người\""
+          ],
+          "reason": "The narrative refers to grown men as \"ông\" (he), as the Vietnamese of Hebrews 11:4 does for Abel; \"nó\" in 4:2 L is the child just born.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -519,6 +708,26 @@
           "L": "pero a Caín y a su ofrenda no los miró con agrado. Y Caín se enojó mucho, y se abatió su rostro.",
           "B": "pero a Caín y su ofrenda no los miró con agrado. Por eso Caín se enfureció, y su rostro quedó abatido.",
           "R": "pero Caín y su regalo no {{deity_pronoun:le|Le}} agradaron. Caín se enojó mucho, y se le veía molesto."
+        },
+        "fr": {
+          "L": "mais sur Caïn et sur son offrande {{deity_pronoun:il|Il}} ne porta pas un regard favorable. Et Caïn fut très irrité, et son visage s’abattit.",
+          "B": "mais {{deity_pronoun:il|Il}} n’accueillit pas avec faveur Caïn et son offrande. Caïn en fut très irrité, et son visage s’assombrit.",
+          "R": "mais {{deity_pronoun:il|Il}} n’a pas été content de Caïn et de son cadeau. Caïn s’est mis très en colère, et il avait l’air contrarié."
+        },
+        "sw": {
+          "L": "lakini kwa Kaini na kwa sadaka yake hakutazama kwa kibali. Naye Kaini akakasirika sana, uso wake ukainama.",
+          "B": "lakini hakumkubali Kaini wala sadaka yake. Basi Kaini akakasirika sana, uso wake ukakunjamana.",
+          "R": "lakini hakupendezwa na Kaini wala zawadi yake. Kaini alikasirika sana, akakunja uso."
+        },
+        "vi": {
+          "L": "nhưng Ca-in và lễ vật của ông thì {{deity_pronoun:ngài|Ngài}} không đoái nhìn. Và Ca-in rất giận, và mặt ông sa sầm.",
+          "B": "nhưng {{deity_pronoun:ngài|Ngài}} không đoái nhìn Ca-in và lễ vật của ông. Vì thế Ca-in rất giận dữ, và mặt ông sầm lại.",
+          "R": "nhưng {{deity_pronoun:ngài|Ngài}} không hài lòng về Ca-in và món quà của ông. Ca-in rất giận, và mặt ông lộ vẻ bực bội."
+        },
+        "ko": {
+          "L": "가인과 그의 예물은 좋게 보지 않으셨다. 그래서 가인은 몹시 화가 났고, 그의 얼굴이 떨어졌다.",
+          "B": "가인과 그의 예물은 반기지 않으셨다. 그래서 가인은 몹시 화가 나서 얼굴을 떨구었다.",
+          "R": "가인과 그의 예물은 기뻐하지 않으셨다. 가인은 몹시 화가 났고, 얼굴이 일그러졌다."
         }
       },
       "decisions": [
@@ -605,6 +814,26 @@
           "L": "Y dijo {{divine_name:el SEÑOR|Yahvé}} a Caín: «¿Por qué te has enojado, y por qué se ha abatido tu rostro?",
           "B": "Entonces {{divine_name:el SEÑOR|Yahvé}} le dijo a Caín: «¿Por qué estás enojado? ¿Por qué tienes el rostro abatido?",
           "R": "Entonces {{divine_name:el SEÑOR|Yahvé}} le dijo a Caín: «¿Por qué estás enojado? ¿Por qué estás tan molesto?"
+        },
+        "fr": {
+          "L": "Et {{divine_name:le SEIGNEUR|Yahvé}} dit à Caïn : « Pourquoi es-tu irrité, et pourquoi ton visage s’est-il abattu ?",
+          "B": "Alors {{divine_name:le SEIGNEUR|Yahvé}} dit à Caïn : « Pourquoi es-tu irrité ? Pourquoi ce visage sombre ?",
+          "R": "Alors {{divine_name:le SEIGNEUR|Yahvé}} a dit à Caïn : « Pourquoi es-tu en colère ? Pourquoi as-tu l’air si contrarié ?"
+        },
+        "sw": {
+          "L": "Na {{divine_name:BWANA|Yahwe}} akamwambia Kaini, \"Kwa nini umekasirika, na kwa nini uso wako umeinama?",
+          "B": "Ndipo {{divine_name:BWANA|Yahwe}} akamwambia Kaini, \"Kwa nini umekasirika? Kwa nini uso wako umekunjamana?",
+          "R": "Ndipo {{divine_name:BWANA|Yahwe}} akamwuliza Kaini, \"Kwa nini umekasirika? Kwa nini umekunja uso hivyo?"
+        },
+        "vi": {
+          "L": "Và {{divine_name:CHÚA|Gia-vê}} phán với Ca-in: \"Tại sao ngươi giận, và tại sao mặt ngươi sa sầm?",
+          "B": "Rồi {{divine_name:CHÚA|Gia-vê}} phán với Ca-in: \"Tại sao con giận? Tại sao mặt con sầm lại?",
+          "R": "Rồi {{divine_name:CHÚA|Gia-vê}} phán với Ca-in: \"Tại sao con giận? Tại sao trông con bực bội như vậy?"
+        },
+        "ko": {
+          "L": "그리고 {{divine_name:주|야훼}}께서 가인에게 말씀하셨다. \"너는 왜 화가 났느냐? 그리고 왜 네 얼굴이 떨어졌느냐?",
+          "B": "그러자 {{divine_name:주|야훼}}께서 가인에게 말씀하셨다. \"너는 왜 화를 내느냐? 왜 얼굴을 떨구고 있느냐?",
+          "R": "그러자 {{divine_name:주|야훼}}께서 가인에게 말씀하셨다. \"왜 화를 내느냐? 왜 그렇게 얼굴을 찌푸리고 있느냐?"
         }
       },
       "decisions": [
@@ -674,6 +903,26 @@
           "L": "Si haces bien, ¿no [serás] levantado? Y si no haces bien, el pecado [está] agazapado a la puerta, y hacia ti [va] su deseo, pero tú debes dominarlo».",
           "B": "Si obras bien, ¿no serás aceptado? Pero si no obras bien, el pecado está agazapado a tu puerta. Quiere apoderarse de ti, pero tú debes dominarlo».",
           "R": "Si haces lo correcto, te aceptaré. Pero si no haces lo correcto, el pecado te está esperando para atacarte, como un animal escondido junto a la puerta, listo para saltar. El pecado quiere dominarte, pero tú debes dominarlo a él»."
+        },
+        "fr": {
+          "L": "Si tu agis bien, [n’y aura-t-il] pas [un] relèvement ? Et si tu n’agis pas bien, le péché [est] tapi à la porte, et vers toi [va] son désir, mais toi, tu dois le dominer. »",
+          "B": "Si tu fais ce qui est bien, ne seras-tu pas accepté ? Mais si tu ne fais pas ce qui est bien, le péché est tapi à ta porte. Il cherche à s’emparer de toi, mais toi, tu dois le maîtriser. »",
+          "R": "Si tu fais ce qui est bien, je t’accepterai. Mais si tu ne fais pas ce qui est bien, le péché t’attend pour t’attaquer, comme une bête couchée près de la porte. Le péché veut te dominer, mais c’est toi qui dois le dominer. »"
+        },
+        "sw": {
+          "L": "Ukitenda mema, je, [hakutakuwa na] kuinuliwa? Na usipotenda mema, dhambi inaotea mlangoni, na tamaa yake [ni] kwako, lakini wewe unapaswa kuitawala.\"",
+          "B": "Ukitenda yaliyo mema, je, hutakubaliwa? Lakini usipotenda yaliyo mema, dhambi inakuotea mlangoni pako. Inataka kukutawala, lakini wewe lazima uishinde.\"",
+          "R": "Ukitenda yaliyo mema, nitakukubali. Lakini usipotenda yaliyo mema, dhambi inakuvizia ili ikushambulie, kama mnyama aliyejificha karibu na mlango. Dhambi inataka kukutawala, lakini wewe lazima uitawale.\""
+        },
+        "vi": {
+          "L": "Nếu ngươi làm điều tốt, há chẳng [được] ngẩng lên sao? Và nếu ngươi không làm điều tốt, tội lỗi [đang] rình rập ở cửa, và nó thèm muốn ngươi, nhưng ngươi phải cai trị nó.\"",
+          "B": "Nếu con làm điều đúng, con há chẳng được chấp nhận sao? Nhưng nếu con không làm điều đúng, thì tội lỗi đang rình rập ở cửa nhà con. Nó muốn chiếm lấy con, nhưng con phải chế ngự nó.\"",
+          "R": "Nếu con làm điều đúng, {{deity_pronoun:ta|Ta}} sẽ chấp nhận con. Nhưng nếu con không làm điều đúng, thì tội lỗi đang chờ tấn công con, như một con thú nằm rình bên cửa. Tội lỗi muốn khống chế con, nhưng con phải chế ngự nó.\""
+        },
+        "ko": {
+          "L": "네가 잘하면 [얼굴을] 들게 되지 않겠느냐? 그러나 네가 잘하지 못하면, 죄가 문에 웅크리고 있다. 그것의 갈망은 너를 향하지만, 너는 그것을 다스려야 한다.\"",
+          "B": "네가 옳은 일을 하면, 네가 받아들여지지 않겠느냐? 그러나 네가 옳은 일을 하지 않으면, 죄가 네 문 앞에 웅크리고 있다. 죄가 너를 차지하려고 하지만, 너는 죄를 다스려야 한다.\"",
+          "R": "네가 옳은 일을 하면 내가 너를 받아 줄 것이다. 그러나 네가 옳은 일을 하지 않으면, 죄가 문 옆에 웅크린 짐승처럼 너를 덮치려고 기다리고 있다. 죄가 너를 지배하려고 하지만, 너는 죄를 이겨야 한다.\""
         }
       },
       "decisions": [
@@ -807,6 +1056,69 @@
           "reason": "\"Agazapado\" is used of an animal crouched low and ready to spring, the picture of meaning decision m2. Readable spells out the picture in common words, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010040070101"
+          ],
+          "choice": "tapi",
+          "alternatives": [
+            "couché",
+            "accroupi"
+          ],
+          "reason": "The verb (rovets) is used of animals lying down (m2). \"Tapi\" says lying low and hidden, ready to spring, which keeps the picture of the beast at the door; \"couché\" would say only that sin is lying there.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010040070101"
+          ],
+          "choice": "inaotea (L), inakuotea (B)",
+          "alternatives": [
+            "imelala",
+            "inavizia"
+          ],
+          "reason": "The verb (rovets) is used of animals lying down (m2). \"Kuotea\" is to lie in wait for prey, which keeps the picture of the beast at the door; Readable says \"inakuvizia ... kama mnyama\", as the English Readable explains it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010040070121",
+            "o010040070141"
+          ],
+          "choice": "\"갈망 ... 다스려야\" (L), the words of 3:16 at Literal",
+          "alternatives": [
+            "욕망",
+            "소원"
+          ],
+          "reason": "The last words repeat the Hebrew of 3:16 (meaning decision m3); Literal uses the same two Korean words there and here so that the echo can be heard.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -858,6 +1170,26 @@
           "L": "Y dijo Caín a Abel su hermano ... Y cuando estaban en el campo, se levantó Caín contra Abel su hermano y lo mató.",
           "B": "Caín habló con su hermano Abel. Y mientras estaban en el campo, Caín atacó a su hermano Abel y lo mató.",
           "R": "Caín habló con su hermano Abel. Cuando estaban afuera, en el campo, Caín atacó a su hermano Abel y lo mató."
+        },
+        "fr": {
+          "L": "Et Caïn dit à Abel son frère ... Et comme ils étaient dans le champ, Caïn se leva contre Abel son frère et le tua.",
+          "B": "Caïn parla à son frère Abel. Et pendant qu’ils étaient dans les champs, Caïn se jeta sur son frère Abel et le tua.",
+          "R": "Caïn a parlé à son frère Abel. Pendant qu’ils étaient dehors, dans les champs, Caïn a attaqué son frère Abel et l’a tué."
+        },
+        "sw": {
+          "L": "Naye Kaini akamwambia Habili ndugu yake ... Ikawa walipokuwa shambani, Kaini akainuka dhidi ya Habili ndugu yake, akamuua.",
+          "B": "Kaini akazungumza na ndugu yake Habili. Walipokuwa shambani, Kaini akamvamia ndugu yake Habili, akamuua.",
+          "R": "Kaini alizungumza na ndugu yake Habili. Walipokuwa nje shambani, Kaini alimshambulia ndugu yake Habili, akamuua."
+        },
+        "vi": {
+          "L": "Và Ca-in nói với A-bên em mình ... Và khi họ ở ngoài đồng, Ca-in nổi lên chống lại A-bên em mình và giết em.",
+          "B": "Ca-in nói chuyện với A-bên em mình. Và khi hai người đang ở ngoài đồng, Ca-in xông vào A-bên em mình và giết chết em.",
+          "R": "Ca-in nói chuyện với A-bên em mình. Khi hai người đang ở ngoài đồng, Ca-in tấn công A-bên em mình và giết chết em."
+        },
+        "ko": {
+          "L": "그리고 가인이 그의 동생 아벨에게 말했다 ... 그리고 그들이 들에 있을 때에, 가인이 일어나 그의 동생 아벨을 쳐서 죽였다.",
+          "B": "가인이 동생 아벨에게 말을 걸었다. 그리고 그들이 들에 있을 때에, 가인이 동생 아벨에게 달려들어 그를 죽였다.",
+          "R": "가인이 동생 아벨에게 말을 걸었다. 둘이 들에 나가 있을 때, 가인이 동생 아벨에게 달려들어 그를 죽였다."
         }
       },
       "decisions": [
@@ -946,6 +1278,30 @@
           "reason": "Since the Hebrew gives no words (m1), Balanced and Readable say \"spoke to\", which needs none.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010040080051",
+            "o010040080052",
+            "o010040080131",
+            "o010040080132"
+          ],
+          "choice": "\"em mình\" for Abel, Cain's younger brother",
+          "alternatives": [
+            "\"anh em mình\""
+          ],
+          "reason": "Vietnamese must say whether a brother is older or younger; Abel was born after Cain (4:2), so he is \"em\". The same holds in 4:9–11.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -991,6 +1347,26 @@
           "L": "Y dijo {{divine_name:el SEÑOR|Yahvé}} a Caín: «¿Dónde [está] Abel tu hermano?». Y él dijo: «No sé. ¿Soy yo el guardián de mi hermano?».",
           "B": "Entonces {{divine_name:el SEÑOR|Yahvé}} le preguntó a Caín: «¿Dónde está tu hermano Abel?». «No lo sé», respondió. «¿Acaso soy yo el guardián de mi hermano?».",
           "R": "Entonces {{divine_name:el SEÑOR|Yahvé}} le preguntó a Caín: «¿Dónde está tu hermano Abel?». Caín respondió: «No lo sé. ¿Acaso me toca a mí cuidar a mi hermano?»."
+        },
+        "fr": {
+          "L": "Et {{divine_name:le SEIGNEUR|Yahvé}} dit à Caïn : « Où [est] Abel ton frère ? » Et il dit : « Je ne sais pas. Suis-je le gardien de mon frère, moi ? »",
+          "B": "Alors {{divine_name:le SEIGNEUR|Yahvé}} dit à Caïn : « Où est ton frère Abel ? » « Je n’en sais rien, répondit-il. Est-ce que je suis le gardien de mon frère ? »",
+          "R": "Alors {{divine_name:le SEIGNEUR|Yahvé}} a demandé à Caïn : « Où est ton frère Abel ? » Caïn a répondu : « Je ne sais pas. Est-ce que c’est mon travail de m’occuper de mon frère ? »"
+        },
+        "sw": {
+          "L": "Na {{divine_name:BWANA|Yahwe}} akamwambia Kaini, \"Habili ndugu yako [yuko] wapi?\" Naye akasema, \"Sijui. Je, mimi ni mlinzi wa ndugu yangu?\"",
+          "B": "Ndipo {{divine_name:BWANA|Yahwe}} akamwuliza Kaini, \"Ndugu yako Habili yuko wapi?\" Akajibu, \"Sijui. Kwani mimi ni mlinzi wa ndugu yangu?\"",
+          "R": "Ndipo {{divine_name:BWANA|Yahwe}} akamwuliza Kaini, \"Ndugu yako Habili yuko wapi?\" Kaini akajibu, \"Sijui. Je, ni kazi yangu kumtunza ndugu yangu?\""
+        },
+        "vi": {
+          "L": "Và {{divine_name:CHÚA|Gia-vê}} phán với Ca-in: \"A-bên em ngươi [ở] đâu?\" Và ông nói: \"Con không biết. Con là người canh giữ em con sao?\"",
+          "B": "Rồi {{divine_name:CHÚA|Gia-vê}} phán với Ca-in: \"A-bên em con ở đâu?\" Ông thưa: \"Con không biết. Con là người canh giữ em con sao?\"",
+          "R": "Rồi {{divine_name:CHÚA|Gia-vê}} hỏi Ca-in: \"A-bên em con đâu rồi?\" Ca-in thưa: \"Con không biết. Bộ việc của con là phải trông chừng em con sao?\""
+        },
+        "ko": {
+          "L": "그리고 {{divine_name:주|야훼}}께서 가인에게 말씀하셨다. \"네 동생 아벨이 어디에 [있느냐]?\" 그리고 그가 말했다. \"저는 모릅니다. 제가 제 동생을 지키는 사람입니까?\"",
+          "B": "그러자 {{divine_name:주|야훼}}께서 가인에게 말씀하셨다. \"네 동생 아벨은 어디 있느냐?\" 가인이 대답했다. \"모르겠습니다. 제가 제 동생을 지키는 사람입니까?\"",
+          "R": "그러자 {{divine_name:주|야훼}}께서 가인에게 물으셨다. \"네 동생 아벨은 어디 있느냐?\" 가인이 대답했다. \"모릅니다. 제가 동생을 돌보아야 하는 사람입니까?\""
         }
       },
       "decisions": [
@@ -1069,6 +1445,26 @@
           "L": "Y dijo: «¿Qué has hecho? La voz de la sangre de tu hermano clama a {{deity_pronoun:mí|Mí}} desde la tierra.",
           "B": "{{divine_name:El SEÑOR|Yahvé}} dijo: «¿Qué has hecho? ¡Escucha! La sangre de tu hermano clama a {{deity_pronoun:mí|Mí}} desde la tierra.",
           "R": "{{divine_name:El SEÑOR|Yahvé}} dijo: «¿Qué has hecho? Desde la tierra, la sangre de tu hermano grita a {{deity_pronoun:mí|Mí}} y pide justicia."
+        },
+        "fr": {
+          "L": "Et {{deity_pronoun:il|Il}} dit : « Qu’as-tu fait ? La voix du sang de ton frère crie vers {{deity_pronoun:moi|Moi}} depuis le sol.",
+          "B": "{{divine_name:Le SEIGNEUR|Yahvé}} dit : « Qu’as-tu fait ? Écoute ! Le sang de ton frère crie vers {{deity_pronoun:moi|Moi}} depuis la terre.",
+          "R": "{{divine_name:Le SEIGNEUR|Yahvé}} a dit : « Qu’as-tu fait ? Depuis la terre, le sang de ton frère {{deity_pronoun:m’|M’}}appelle et réclame justice."
+        },
+        "sw": {
+          "L": "Naye akasema, \"Umefanya nini? Sauti ya damu ya ndugu yako inanililia {{deity_pronoun:mimi|Mimi}} kutoka ardhini.",
+          "B": "{{divine_name:BWANA|Yahwe}} akasema, \"Umefanya nini? Sikiliza! Damu ya ndugu yako inanililia kutoka ardhini.",
+          "R": "{{divine_name:BWANA|Yahwe}} akasema, \"Umefanya nini? Damu ya ndugu yako inaniita kutoka ardhini, ikidai haki."
+        },
+        "vi": {
+          "L": "Và {{deity_pronoun:ngài|Ngài}} phán: \"Ngươi đã làm gì vậy? Tiếng máu của em ngươi đang kêu thấu đến {{deity_pronoun:ta|Ta}} từ dưới đất.",
+          "B": "{{divine_name:CHÚA|Gia-vê}} phán: \"Con đã làm gì vậy? Hãy nghe! Máu của em con đang từ dưới đất kêu thấu đến {{deity_pronoun:ta|Ta}}.",
+          "R": "{{divine_name:CHÚA|Gia-vê}} phán: \"Con đã làm gì vậy? Máu của em con đang từ dưới đất kêu lên {{deity_pronoun:ta|Ta}}, đòi được xét xử công minh."
+        },
+        "ko": {
+          "L": "그리고 그분께서 말씀하셨다. \"네가 무슨 일을 하였느냐? 네 동생의 피의 소리가 땅에서 나에게 부르짖고 있다.",
+          "B": "{{divine_name:주|야훼}}께서 말씀하셨다. \"네가 무슨 일을 하였느냐? 들어 보아라! 네 동생의 피가 땅에서 나에게 부르짖고 있다.",
+          "R": "{{divine_name:주|야훼}}께서 말씀하셨다. \"네가 무슨 일을 하였느냐? 네 동생의 피가 땅에서 나에게 정의를 바라며 부르짖고 있다."
         }
       },
       "decisions": [
@@ -1190,6 +1586,26 @@
           "L": "Y ahora tú [eres] maldito desde la tierra, que ha abierto su boca para recibir de tu mano la sangre de tu hermano.",
           "B": "Ahora quedas bajo maldición, desterrado de la tierra que abrió su boca para recibir de tu mano la sangre de tu hermano.",
           "R": "Ahora estás bajo una maldición, y la tierra ya no será tu hogar. Se abrió para beber la sangre de tu hermano, la sangre que tú derramaste."
+        },
+        "fr": {
+          "L": "Et maintenant, tu [es] maudit, loin du sol qui a ouvert sa bouche pour recevoir de ta main le sang de ton frère.",
+          "B": "Maintenant, tu es maudit et chassé du sol qui a ouvert la bouche pour recevoir de ta main le sang de ton frère.",
+          "R": "Maintenant, tu es sous une malédiction, et la terre ne sera plus ta maison. Elle s’est ouverte pour boire le sang de ton frère, que tu as versé."
+        },
+        "sw": {
+          "L": "Na sasa umelaaniwa, mbali na ardhi iliyofungua kinywa chake kupokea damu ya ndugu yako kutoka mkononi mwako.",
+          "B": "Sasa umelaaniwa, umefukuzwa kutoka katika ardhi iliyofungua kinywa chake kupokea damu ya ndugu yako kutoka mkononi mwako.",
+          "R": "Sasa uko chini ya laana, na ardhi haitakuwa tena makao yako. Ilifunguka ikanywa damu ya ndugu yako, uliyoimwaga wewe."
+        },
+        "vi": {
+          "L": "Và bây giờ ngươi [bị] nguyền rủa khỏi đất, là đất đã hả miệng ra để nhận máu em ngươi từ tay ngươi.",
+          "B": "Bây giờ con bị nguyền rủa, bị đuổi khỏi đất, là đất đã hả miệng ra nhận máu em con do tay con đổ ra.",
+          "R": "Bây giờ con bị nguyền rủa, và đất này sẽ không còn là nhà của con nữa. Đất đã mở ra để hút lấy máu em con, là máu con đã đổ ra."
+        },
+        "ko": {
+          "L": "그리고 이제 너는 땅으로부터 저주를 받는다. 그 땅은 입을 벌려 네 손에서 네 동생의 피를 받았다.",
+          "B": "이제 너는 저주를 받아, 입을 벌려 네 손에서 네 동생의 피를 받은 그 땅에서 쫓겨난다.",
+          "R": "이제 너는 저주를 받는다. 땅이 더는 네 집이 되지 못할 것이다. 땅이 입을 벌려 네가 흘린 네 동생의 피를 빨아들였다."
         }
       },
       "decisions": [
@@ -1228,6 +1644,25 @@
           "choice": "the ground opened its mouth: the earth drank the blood",
           "alternatives": [],
           "reason": "The ground is pictured as a mouth that took in Abel's blood, and so is a witness to the crime.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o010040110041"
+          ],
+          "choice": "tu [es] maudit, loin du sol",
+          "alternatives": [
+            "tu es maudit du sol"
+          ],
+          "reason": "\"Maudit du sol\" would read in French as \"cursed by the ground\". Literal keeps \"from\" in its sense \"away from\" (m1) with \"loin du sol\"; Balanced says \"maudit et chassé du sol\".",
           "uncertain": false,
           "footnote": false
         }
@@ -1275,6 +1710,26 @@
           "L": "Cuando trabajes la tierra, no volverá a darte su fuerza; errante y fugitivo serás en la tierra».",
           "B": "Cuando cultives la tierra, ya no te dará sus frutos. Andarás errante y sin descanso por la tierra».",
           "R": "Cuando siembres la tierra, ya no te dará buenas cosechas. Andarás de un lugar a otro, sin tener hogar en ningún lugar»."
+        },
+        "fr": {
+          "L": "Quand tu travailleras le sol, il ne te donnera plus sa force ; tu seras errant et fugitif sur la terre. »",
+          "B": "Quand tu cultiveras le sol, il ne te donnera plus ses récoltes. Tu seras un homme sans repos, toujours errant sur la terre. »",
+          "R": "Quand tu cultiveras la terre, elle ne te donnera plus de bonnes récoltes. Tu iras d’un endroit à l’autre, sans maison sur la terre. »"
+        },
+        "sw": {
+          "L": "Utakapolima ardhi, haitakupa tena nguvu zake; utakuwa mzururaji na mkimbizi duniani.\"",
+          "B": "Utakapolima ardhi, haitakuzalia tena mazao yake. Utakuwa mtu asiyetulia, anayezunguka-zunguka duniani.\"",
+          "R": "Utakapolima shamba, halitakuzalia tena mavuno mazuri. Utatangatanga kutoka mahali hadi mahali, bila makao duniani.\""
+        },
+        "vi": {
+          "L": "Khi ngươi cày cấy đất, nó sẽ không còn cho ngươi sức của nó nữa; ngươi sẽ là kẻ lang thang và trốn tránh trên đất.\"",
+          "B": "Khi con cày cấy đất, đất sẽ không còn sinh hoa lợi cho con nữa. Con sẽ là kẻ lang thang không nơi ở trên mặt đất.\"",
+          "R": "Khi con làm ruộng, đất sẽ không còn cho con hoa màu tốt nữa. Con sẽ đi lang thang hết nơi này đến nơi khác, không có nhà trên mặt đất.\""
+        },
+        "ko": {
+          "L": "네가 땅을 일구어도, 그것이 다시는 너에게 그 힘을 내주지 않을 것이다. 너는 땅에서 떠돌이와 방랑자가 될 것이다.\"",
+          "B": "네가 땅을 일구어도, 땅은 다시는 너에게 소출을 내주지 않을 것이다. 너는 땅 위에서 쉴 곳 없이 떠돌아다닐 것이다.\"",
+          "R": "네가 농사를 지어도, 땅은 더 이상 너에게 좋은 곡식을 내주지 않을 것이다. 너는 집도 없이 이곳저곳을 떠돌아다닐 것이다.\""
         }
       },
       "decisions": [
@@ -1345,6 +1800,26 @@
           "L": "Y dijo Caín {{divine_name:al SEÑOR|a Yahvé}}: «Mi castigo [es] demasiado grande para soportarlo.",
           "B": "Caín dijo {{divine_name:al SEÑOR|a Yahvé}}: «Mi castigo es más de lo que puedo soportar.",
           "R": "Caín le dijo {{divine_name:al SEÑOR|a Yahvé}}: «Este castigo es demasiado para mí; no lo puedo soportar."
+        },
+        "fr": {
+          "L": "Et Caïn dit {{divine_name:au SEIGNEUR|à Yahvé}} : « Mon châtiment [est] trop grand pour [être] porté.",
+          "B": "Caïn dit {{divine_name:au SEIGNEUR|à Yahvé}} : « Ma punition est plus lourde que je ne peux le supporter.",
+          "R": "Caïn a dit {{divine_name:au SEIGNEUR|à Yahvé}} : « Cette punition est trop dure pour moi, je ne peux pas la supporter."
+        },
+        "sw": {
+          "L": "Naye Kaini akamwambia {{divine_name:BWANA|Yahwe}}, \"Adhabu yangu [ni] kubwa mno kuibeba.",
+          "B": "Kaini akamwambia {{divine_name:BWANA|Yahwe}}, \"Adhabu yangu ni zaidi ya ninavyoweza kuvumilia.",
+          "R": "Kaini akamwambia {{divine_name:BWANA|Yahwe}}, \"Adhabu hii ni nzito mno kwangu; siwezi kuivumilia."
+        },
+        "vi": {
+          "L": "Và Ca-in thưa với {{divine_name:CHÚA|Gia-vê}}: \"Hình phạt của con [thì] quá lớn để mang nổi.",
+          "B": "Ca-in thưa với {{divine_name:CHÚA|Gia-vê}}: \"Hình phạt của con nặng quá sức con chịu nổi.",
+          "R": "Ca-in thưa với {{divine_name:CHÚA|Gia-vê}}: \"Hình phạt này nặng quá, con không chịu nổi."
+        },
+        "ko": {
+          "L": "그리고 가인이 {{divine_name:주|야훼}}께 말했다. \"제 벌이 너무 커서 감당할 수 없습니다.",
+          "B": "가인이 {{divine_name:주|야훼}}께 말했다. \"제가 받는 벌이 너무 무거워 견딜 수 없습니다.",
+          "R": "가인이 {{divine_name:주|야훼}}께 말했다. \"이 벌은 너무 무거워서 제가 견딜 수가 없습니다."
         }
       },
       "decisions": [
@@ -1422,6 +1897,26 @@
           "L": "Mira, {{deity_pronoun:tú|Tú}} me has echado hoy de la faz de la tierra, y de {{deity_pronoun:tu|Tu}} rostro quedaré oculto; y seré errante y fugitivo en la tierra, y cualquiera que me encuentre me matará».",
           "B": "Hoy {{deity_pronoun:tú|Tú}} me estás echando de esta tierra, y quedaré oculto de {{deity_pronoun:tu|Tu}} presencia. Andaré errante y sin descanso por la tierra, y cualquiera que me encuentre me matará».",
           "R": "Hoy me estás echando de mi tierra, y ya no estaré cerca de {{deity_pronoun:ti|Ti}}. Andaré de un lugar a otro, y cualquiera que me encuentre me matará»."
+        },
+        "fr": {
+          "L": "Voici, {{deity_pronoun:tu|Tu}} m’as chassé aujourd’hui de la face du sol, et je serai caché loin de {{deity_pronoun:ta|Ta}} face ; je serai errant et fugitif sur la terre, et quiconque me trouvera me tuera. »",
+          "B": "Aujourd’hui {{deity_pronoun:tu|Tu}} me chasses de ce pays, et je serai caché loin de {{deity_pronoun:ta|Ta}} présence. Je serai un homme sans repos, errant sur la terre, et le premier qui me trouvera me tuera. »",
+          "R": "Aujourd’hui {{deity_pronoun:tu|Tu}} me renvoies loin de ma terre, et je ne serai plus près de {{deity_pronoun:toi|Toi}}. J’irai d’un endroit à l’autre, et n’importe qui pourra me trouver et me tuer. »"
+        },
+        "sw": {
+          "L": "Tazama, umenifukuza leo kutoka katika uso wa ardhi, nami nitafichwa mbali na uso {{deity_pronoun:wako|Wako}}; nami nitakuwa mzururaji na mkimbizi duniani, na kila atakayenipata ataniua.\"",
+          "B": "Leo unanifukuza kutoka katika nchi hii, nami nitafichwa mbali na uwepo {{deity_pronoun:wako|Wako}}. Nitakuwa mtu asiyetulia, nikizunguka-zunguka duniani, na yeyote atakayenikuta ataniua.\"",
+          "R": "Leo unanifukuza kutoka katika nchi yangu, wala sitakuwa karibu {{deity_pronoun:nawe|Nawe}} tena. Nitatangatanga kutoka mahali hadi mahali, na yeyote atakayenikuta ataniua.\""
+        },
+        "vi": {
+          "L": "Này, hôm nay {{deity_pronoun:ngài|Ngài}} đã đuổi con khỏi mặt đất, và con sẽ bị khuất khỏi mặt {{deity_pronoun:ngài|Ngài}}; và con sẽ là kẻ lang thang và trốn tránh trên đất, và hễ ai gặp con sẽ giết con.\"",
+          "B": "Hôm nay {{deity_pronoun:ngài|Ngài}} đuổi con khỏi đất này, và con sẽ phải lánh xa mặt {{deity_pronoun:ngài|Ngài}}. Con sẽ là kẻ lang thang không nơi ở trên mặt đất, và hễ ai gặp con sẽ giết con.\"",
+          "R": "Hôm nay {{deity_pronoun:ngài|Ngài}} đuổi con ra khỏi đất của con, và con sẽ không còn được ở gần {{deity_pronoun:ngài|Ngài}} nữa. Con sẽ đi lang thang hết nơi này đến nơi khác, và ai gặp con cũng sẽ giết con.\""
+        },
+        "ko": {
+          "L": "보십시오, 주님께서 오늘 저를 땅의 표면에서 쫓아내시니, 저는 주님의 얼굴에서 숨겨질 것입니다. 그리고 저는 땅에서 떠돌이와 방랑자가 될 것이고, 저를 만나는 사람은 누구든지 저를 죽일 것입니다.\"",
+          "B": "주님께서 오늘 저를 이 땅에서 쫓아내시니, 저는 주님 앞에서 숨어 지내야 합니다. 저는 땅 위에서 쉴 곳 없이 떠돌아다닐 것이고, 저를 만나는 사람마다 저를 죽일 것입니다.\"",
+          "R": "주님께서 오늘 저를 제 땅에서 쫓아내십니다. 이제 저는 더 이상 주님 가까이에 있을 수 없습니다. 저는 이곳저곳을 떠돌아다닐 것이고, 저를 만나는 사람은 누구든지 저를 죽일 것입니다.\""
         }
       },
       "decisions": [
@@ -1480,6 +1975,28 @@
           "reason": "Cain speaks to God, so \"you\" and \"your\" take the deity pronoun setting.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o010040140083",
+            "o010040140084"
+          ],
+          "choice": "uso {{deity_pronoun:wako|Wako}} (L), uwepo {{deity_pronoun:wako|Wako}} (B), karibu {{deity_pronoun:nawe|Nawe}} (R)",
+          "alternatives": [
+            "no span, since \"you\" is a verb prefix in \"umenifukuza\""
+          ],
+          "reason": "Cain speaks to God. The \"you\" of \"you have driven me\" is the prefix of the verb, which takes no span; the free possessive \"wako\" and the joined pronoun \"nawe\" do.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1533,6 +2050,26 @@
           "L": "Y le dijo {{divine_name:el SEÑOR|Yahvé}}: «Por tanto, cualquiera que mate a Caín, de él se tomará venganza siete veces». Y puso {{divine_name:el SEÑOR|Yahvé}} una señal a Caín, para que nadie que lo encontrara lo hiriera.",
           "B": "Pero {{divine_name:el SEÑOR|Yahvé}} le respondió: «Por eso, quien mate a Caín sufrirá una venganza siete veces mayor». Entonces {{divine_name:el SEÑOR|Yahvé}} puso una marca en Caín, para que nadie que lo encontrara lo matara.",
           "R": "Pero {{divine_name:el SEÑOR|Yahvé}} le dijo: «Por eso, si alguien mata a Caín, castigaré a esa persona siete veces más». Así que {{divine_name:el SEÑOR|Yahvé}} le puso una marca a Caín, para advertir a cualquiera que lo encontrara que no lo matara."
+        },
+        "fr": {
+          "L": "Et {{divine_name:le SEIGNEUR|Yahvé}} lui dit : « C’est pourquoi, quiconque tuera Caïn, sur lui on se vengera sept fois. » Et {{divine_name:le SEIGNEUR|Yahvé}} mit un signe pour Caïn, afin que quiconque le trouverait ne le frappe pas.",
+          "B": "Mais {{divine_name:le SEIGNEUR|Yahvé}} lui répondit : « Pour cette raison, celui qui tuera Caïn subira une vengeance sept fois plus grande. » Puis {{divine_name:le SEIGNEUR|Yahvé}} mit une marque sur Caïn, pour que personne, en le trouvant, ne le tue.",
+          "R": "Mais {{divine_name:le SEIGNEUR|Yahvé}} lui a dit : « À cause de cela, si quelqu’un tue Caïn, je punirai cette personne sept fois plus. » Alors {{divine_name:le SEIGNEUR|Yahvé}} a mis une marque sur Caïn, pour avertir tous ceux qui le trouveraient de ne pas le tuer."
+        },
+        "sw": {
+          "L": "Na {{divine_name:BWANA|Yahwe}} akamwambia, \"Kwa hiyo, yeyote atakayemuua Kaini, atalipizwa kisasi mara saba.\" Na {{divine_name:BWANA|Yahwe}} akamwekea Kaini ishara, ili yeyote atakayemkuta asimpige.",
+          "B": "Lakini {{divine_name:BWANA|Yahwe}} akamwambia, \"Kwa sababu hiyo, yeyote atakayemuua Kaini atalipizwa kisasi mara saba zaidi.\" Kisha {{divine_name:BWANA|Yahwe}} akamtia Kaini alama, ili mtu yeyote atakayemkuta asimuue.",
+          "R": "Lakini {{divine_name:BWANA|Yahwe}} akamwambia, \"Kwa sababu hiyo, mtu yeyote akimuua Kaini, nitamwadhibu mtu huyo mara saba zaidi.\" Basi {{divine_name:BWANA|Yahwe}} akamwekea Kaini alama, ili kumwonya kila atakayemkuta asimuue."
+        },
+        "vi": {
+          "L": "Và {{divine_name:CHÚA|Gia-vê}} phán với ông: \"Vì vậy, hễ ai giết Ca-in, sẽ bị báo thù gấp bảy lần.\" Và {{divine_name:CHÚA|Gia-vê}} đặt một dấu cho Ca-in, để không ai gặp ông mà đánh ông.",
+          "B": "Nhưng {{divine_name:CHÚA|Gia-vê}} phán với ông: \"Vì thế, hễ ai giết Ca-in sẽ bị báo thù gấp bảy lần.\" Rồi {{divine_name:CHÚA|Gia-vê}} đặt một dấu trên Ca-in, để không ai gặp ông mà giết ông.",
+          "R": "Nhưng {{divine_name:CHÚA|Gia-vê}} phán với ông: \"Vì thế, nếu có ai giết Ca-in, {{deity_pronoun:ta|Ta}} sẽ phạt người ấy gấp bảy lần.\" Vậy {{divine_name:CHÚA|Gia-vê}} đặt một dấu trên Ca-in để cảnh báo hễ ai gặp ông thì đừng giết ông."
+        },
+        "ko": {
+          "L": "그리고 {{divine_name:주|야훼}}께서 그에게 말씀하셨다. \"그러므로 가인을 죽이는 자는 누구든지 일곱 배로 복수를 당할 것이다.\" 그리고 {{divine_name:주|야훼}}께서 가인에게 표를 주셔서, 그를 만나는 자가 아무도 그를 치지 못하게 하셨다.",
+          "B": "그러나 {{divine_name:주|야훼}}께서 그에게 말씀하셨다. \"그러므로 가인을 죽이는 자는 누구든지 일곱 배로 복수를 당할 것이다.\" 그리고 {{divine_name:주|야훼}}께서 가인에게 표를 해 주셔서, 그를 만나는 사람이 그를 죽이지 못하게 하셨다.",
+          "R": "그러나 {{divine_name:주|야훼}}께서 그에게 말씀하셨다. \"그러니 누구든지 가인을 죽이면, 내가 그 사람에게 일곱 배로 벌을 내리겠다.\" 그리고 {{divine_name:주|야훼}}께서 가인에게 표를 해 주셔서, 그를 만나는 사람에게 그를 죽이지 말라고 경고하셨다."
         }
       },
       "decisions": [
@@ -1646,6 +2183,26 @@
           "L": "Y salió Caín de la presencia {{divine_name:del SEÑOR|de Yahvé}} y vivió en la tierra de Nod, al este de Edén.",
           "B": "Así Caín se alejó de la presencia {{divine_name:del SEÑOR|de Yahvé}} y se estableció en la tierra de Nod, al este de Edén.",
           "R": "Entonces Caín dejó el lugar donde {{divine_name:el SEÑOR|Yahvé}} estaba cerca y se fue a vivir a la tierra de Nod, al este de Edén."
+        },
+        "fr": {
+          "L": "Et Caïn sortit de la présence {{divine_name:du SEIGNEUR|de Yahvé}} et habita au pays de Nod, à l’orient d’Éden.",
+          "B": "Caïn s’éloigna donc de la présence {{divine_name:du SEIGNEUR|de Yahvé}} et s’établit au pays de Nod, à l’est d’Éden.",
+          "R": "Alors Caïn a quitté l’endroit où {{divine_name:le SEIGNEUR|Yahvé}} était proche, et il est allé vivre dans le pays de Nod, à l’est d’Éden."
+        },
+        "sw": {
+          "L": "Naye Kaini akatoka mbele za {{divine_name:BWANA|Yahwe}}, akakaa katika nchi ya Nodi, mashariki ya Edeni.",
+          "B": "Basi Kaini akaondoka mbele ya uso wa {{divine_name:BWANA|Yahwe}}, akaishi katika nchi ya Nodi, upande wa mashariki wa Edeni.",
+          "R": "Basi Kaini akaondoka mahali ambapo {{divine_name:BWANA|Yahwe}} alikuwa karibu, akaenda kuishi katika nchi ya Nodi, mashariki ya Edeni."
+        },
+        "vi": {
+          "L": "Và Ca-in đi ra khỏi trước mặt {{divine_name:CHÚA|Gia-vê}} và ở trong xứ Nốt, phía đông Ê-đen.",
+          "B": "Vậy Ca-in rời khỏi trước mặt {{divine_name:CHÚA|Gia-vê}} và đến sống trong xứ Nốt, phía đông Ê-đen.",
+          "R": "Vậy Ca-in rời khỏi nơi {{divine_name:CHÚA|Gia-vê}} ở gần, và đến sống trong xứ Nốt, phía đông Ê-đen."
+        },
+        "ko": {
+          "L": "그리고 가인이 {{divine_name:주|야훼}} 앞에서 나가서, 에덴 동쪽 놋 땅에 살았다.",
+          "B": "그래서 가인은 {{divine_name:주|야훼}} 앞을 떠나 에덴 동쪽 놋 땅에 자리 잡았다.",
+          "R": "그래서 가인은 {{divine_name:주|야훼}}께서 가까이 계시는 곳을 떠나, 에덴 동쪽에 있는 놋 땅으로 가서 살았다."
         }
       },
       "decisions": [
@@ -1730,6 +2287,26 @@
           "L": "Y conoció Caín a su mujer, y ella concibió y dio a luz a Enoc. Y él estaba edificando una ciudad, y llamó el nombre de la ciudad según el nombre de su hijo, Enoc.",
           "B": "Caín se unió a su esposa, y ella quedó embarazada y dio a luz a Enoc. Caín estaba construyendo una ciudad, y le puso el nombre de su hijo, Enoc.",
           "R": "Caín y su esposa tuvieron un hijo llamado Enoc. En ese tiempo Caín estaba construyendo una ciudad, y le puso Enoc, como su hijo."
+        },
+        "fr": {
+          "L": "Et Caïn connut sa femme ; elle conçut et enfanta Hénoch. Et il était en train de bâtir une ville, et il appela le nom de la ville d’après le nom de son fils, Hénoch.",
+          "B": "Caïn s’unit à sa femme ; elle devint enceinte et donna naissance à Hénoch. Caïn bâtissait une ville, et il lui donna le nom de son fils, Hénoch.",
+          "R": "Caïn et sa femme ont eu un fils, appelé Hénoch. À cette époque, Caïn construisait une ville, et il l’a appelée Hénoch, comme son fils."
+        },
+        "sw": {
+          "L": "Naye Kaini akamjua mkewe, naye akapata mimba, akamzaa Henoko. Naye alikuwa akijenga mji, akauita jina la mji kwa jina la mwanawe, Henoko.",
+          "B": "Kaini alikutana kimwili na mkewe, naye akapata mimba, akamzaa Henoko. Kaini alikuwa akijenga mji, akauita Henoko, kwa jina la mwanawe.",
+          "R": "Kaini na mkewe walipata mtoto wa kiume, wakamwita Henoko. Wakati huo Kaini alikuwa akijenga mji, akauita Henoko, kwa jina la mwanawe."
+        },
+        "vi": {
+          "L": "Và Ca-in ăn ở với vợ mình, và nàng thụ thai và sinh Hê-nóc. Và ông xây một thành, và ông đặt tên thành theo tên con trai mình là Hê-nóc.",
+          "B": "Ca-in ăn ở với vợ mình, và nàng mang thai rồi sinh Hê-nóc. Bấy giờ Ca-in đang xây một thành, và ông đặt tên thành ấy là Hê-nóc, theo tên con trai mình.",
+          "R": "Ca-in và vợ mình có một con trai tên là Hê-nóc. Lúc ấy Ca-in đang xây một thành, và ông đặt tên thành ấy là Hê-nóc, theo tên con trai mình."
+        },
+        "ko": {
+          "L": "그리고 가인이 자기 아내를 알았다. 그러자 그 여자가 임신하여 에녹을 낳았다. 그리고 그가 성을 쌓고 있었는데, 그 성의 이름을 자기 아들의 이름을 따라 에녹이라고 불렀다.",
+          "B": "가인이 아내와 동침하니, 아내가 임신하여 에녹을 낳았다. 가인은 그때 성을 쌓고 있었는데, 그 성의 이름을 자기 아들의 이름을 따서 에녹이라고 지었다.",
+          "R": "가인과 그의 아내 사이에 에녹이라는 아들이 태어났다. 그때 가인은 성을 쌓고 있었는데, 그 성에 자기 아들의 이름을 따서 에녹이라는 이름을 붙였다."
         }
       },
       "decisions": [
@@ -1827,6 +2404,26 @@
           "L": "Y a Enoc le nació Irad, e Irad engendró a Mehujael, y Mehujael engendró a Metusael, y Metusael engendró a Lamec.",
           "B": "Enoc tuvo un hijo llamado Irad; Irad fue el padre de Mehujael, Mehujael fue el padre de Metusael, y Metusael fue el padre de Lamec.",
           "R": "Enoc tuvo un hijo llamado Irad. Irad fue el padre de Mehujael. Mehujael fue el padre de Metusael. Metusael fue el padre de Lamec."
+        },
+        "fr": {
+          "L": "Et à Hénoch naquit Irad, et Irad engendra Mehujaël, et Mehujaël engendra Metushaël, et Metushaël engendra Lamech.",
+          "B": "Hénoch eut un fils, Irad ; Irad fut le père de Mehujaël, Mehujaël celui de Metushaël, et Metushaël celui de Lamech.",
+          "R": "Hénoch a eu un fils appelé Irad. Irad a été le père de Mehujaël. Mehujaël a été le père de Metushaël. Metushaël a été le père de Lamech."
+        },
+        "sw": {
+          "L": "Naye Henoko akapata mwana, Iradi, naye Iradi akamzaa Mehuyaeli, naye Mehuyaeli akamzaa Methushaeli, naye Methushaeli akamzaa Lameki.",
+          "B": "Henoko alimzaa Iradi; Iradi akawa baba wa Mehuyaeli, Mehuyaeli akawa baba wa Methushaeli, na Methushaeli akawa baba wa Lameki.",
+          "R": "Henoko alipata mtoto wa kiume, Iradi. Iradi alikuwa baba wa Mehuyaeli. Mehuyaeli alikuwa baba wa Methushaeli. Methushaeli alikuwa baba wa Lameki."
+        },
+        "vi": {
+          "L": "Và Hê-nóc sinh Y-rát, và Y-rát sinh Mê-hu-da-ên, và Mê-hu-da-ên sinh Mê-tu-sa-ên, và Mê-tu-sa-ên sinh La-méc.",
+          "B": "Hê-nóc có con trai là Y-rát; Y-rát là cha của Mê-hu-da-ên; Mê-hu-da-ên là cha của Mê-tu-sa-ên; và Mê-tu-sa-ên là cha của La-méc.",
+          "R": "Hê-nóc có một con trai tên là Y-rát. Y-rát là cha của Mê-hu-da-ên. Mê-hu-da-ên là cha của Mê-tu-sa-ên. Mê-tu-sa-ên là cha của La-méc."
+        },
+        "ko": {
+          "L": "그리고 에녹에게서 이랏이 태어났고, 이랏은 므후야엘을 낳았고, 므후야엘은 므드사엘을 낳았고, 므드사엘은 라멕을 낳았다.",
+          "B": "에녹에게서 이랏이 태어났다. 이랏은 므후야엘을 낳고, 므후야엘은 므드사엘을 낳고, 므드사엘은 라멕을 낳았다.",
+          "R": "에녹은 이랏이라는 아들을 두었다. 이랏은 므후야엘의 아버지가 되었다. 므후야엘은 므드사엘의 아버지가 되었다. 므드사엘은 라멕의 아버지가 되었다."
         }
       },
       "decisions": [
@@ -1882,6 +2479,78 @@
           "reason": "Traditional Spanish forms of the names, with one spelling for Mehujael (meaning decision m1). \"Metusael\" is kept distinct from \"Matusalén\" of Seth's line (5:21), as the Hebrew names differ (meaning decision m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010040180041",
+            "o010040180081",
+            "o010040180121",
+            "o010040180161"
+          ],
+          "choice": "Irad, Mehujaël, Metushaël, Lamech",
+          "alternatives": [
+            "Mehouyaël, Methoushaël",
+            "Lémek"
+          ],
+          "reason": "Names with no settled French form are transcribed as the English does, with the French diaeresis on \"-ël\". \"Lamech\" is the form already used in Luke 3:36 and, like \"Hénoch\" (Hebrews 11:5, Jude 14), is kept for both men of the name (4:18; 5:25).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010040180041",
+            "o010040180081",
+            "o010040180121",
+            "o010040180161"
+          ],
+          "choice": "Iradi, Mehuyaeli, Methushaeli, Lameki",
+          "alternatives": [
+            "Mehujaeli",
+            "Lameck"
+          ],
+          "reason": "Swahili forms ending in a vowel, with \"y\" for the Hebrew \"j\" sound as in \"Yakobo\". \"Lameki\" and \"Henoko\" are the forms already used in Luke 3:36-37 and Hebrews 11:5, and are kept for both men of the name (4:18; 5:25).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010040180041",
+            "o010040180081",
+            "o010040180121",
+            "o010040180161"
+          ],
+          "choice": "the names Y-rát, Mê-hu-da-ên, Mê-tu-sa-ên, La-méc",
+          "alternatives": [],
+          "reason": "Names not in the Genesis terms note follow the usual Protestant Vietnamese forms and stay the same through the book; Mehujael is written one way though the Hebrew spells it two ways (m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1925,6 +2594,26 @@
           "L": "Y tomó Lamec para sí dos mujeres; el nombre de la una [era] Ada, y el nombre de la segunda [era] Zila.",
           "B": "Lamec se casó con dos mujeres: una se llamaba Ada, y la otra, Zila.",
           "R": "Lamec se casó con dos mujeres. Una se llamaba Ada, y la otra se llamaba Zila."
+        },
+        "fr": {
+          "L": "Et Lamech prit pour lui deux femmes ; le nom de l’une [était] Ada, et le nom de la seconde [était] Tsilla.",
+          "B": "Lamech épousa deux femmes, l’une appelée Ada et l’autre Tsilla.",
+          "R": "Lamech s’est marié avec deux femmes. L’une s’appelait Ada, et l’autre s’appelait Tsilla."
+        },
+        "sw": {
+          "L": "Naye Lameki akajitwalia wake wawili; jina la mmoja [lilikuwa] Ada, na jina la wa pili [lilikuwa] Sila.",
+          "B": "Lameki alioa wanawake wawili, mmoja aliitwa Ada na mwingine Sila.",
+          "R": "Lameki alioa wanawake wawili. Mmoja aliitwa Ada, na mwingine aliitwa Sila."
+        },
+        "vi": {
+          "L": "Và La-méc lấy cho mình hai vợ; tên của người thứ nhất [là] A-đa, và tên của người thứ hai [là] Si-la.",
+          "B": "La-méc cưới hai vợ, một người tên là A-đa và người kia tên là Si-la.",
+          "R": "La-méc cưới hai người vợ. Một người tên là A-đa, còn người kia tên là Si-la."
+        },
+        "ko": {
+          "L": "그리고 라멕이 자기를 위해 두 아내를 맞았다. 하나의 이름은 아다이고, 둘째의 이름은 씰라였다.",
+          "B": "라멕은 두 여자와 결혼하였다. 한 사람은 아다이고, 다른 한 사람은 씰라였다.",
+          "R": "라멕은 두 여자와 결혼하였다. 한 사람의 이름은 아다였고, 다른 사람의 이름은 씰라였다."
         }
       },
       "decisions": [
@@ -1981,6 +2670,26 @@
           "L": "Y Ada dio a luz a Jabal; él fue el padre de los que habitan en tiendas y [tienen] ganado.",
           "B": "Ada dio a luz a Jabal, que fue el padre de los que viven en tiendas y crían ganado.",
           "R": "Ada tuvo un hijo llamado Jabal. Él fue el primero de los que viven en tiendas de campaña y crían animales."
+        },
+        "fr": {
+          "L": "Et Ada enfanta Jabal ; il fut le père de ceux qui habitent sous la tente et [ont] du bétail.",
+          "B": "Ada donna naissance à Jabal. Il fut le père de ceux qui vivent sous la tente et élèvent du bétail.",
+          "R": "Ada a eu un fils appelé Jabal. Il a été le premier des gens qui vivent sous des tentes et qui élèvent des animaux."
+        },
+        "sw": {
+          "L": "Naye Ada akamzaa Yabali; yeye alikuwa baba wa wakaao katika hema na [wenye] mifugo.",
+          "B": "Ada alimzaa Yabali. Yeye alikuwa baba wa wale wanaoishi katika hema na kufuga wanyama.",
+          "R": "Ada alipata mtoto wa kiume aliyeitwa Yabali. Yeye alikuwa wa kwanza kati ya watu wanaoishi katika hema na kufuga wanyama."
+        },
+        "vi": {
+          "L": "Và A-đa sinh Gia-banh; ông là tổ phụ của những người ở trong lều và [nuôi] gia súc.",
+          "B": "A-đa sinh Gia-banh. Ông là tổ phụ của những người sống trong lều và chăn nuôi gia súc.",
+          "R": "A-đa sinh một con trai tên là Gia-banh. Ông là người đầu tiên trong những người sống trong lều và chăn nuôi gia súc."
+        },
+        "ko": {
+          "L": "그리고 아다가 야발을 낳았다. 그는 장막에 살며 가축을 [치는] 자들의 아버지였다.",
+          "B": "아다는 야발을 낳았다. 야발은 장막에 살면서 가축을 기르는 사람들의 조상이 되었다.",
+          "R": "아다는 야발이라는 아들을 낳았다. 야발은 장막에서 살며 가축을 기르는 사람들 가운데 맨 처음 사람이었다."
         }
       },
       "decisions": [
@@ -2014,6 +2723,73 @@
             "tiendas"
           ],
           "reason": "Readable says \"tiendas de campaña\" because \"tiendas\" alone usually means shops in everyday Spanish.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010040200021",
+            "o010040200041"
+          ],
+          "choice": "Ada, Tsilla, Jabal, Joubal, Toubal-Caïn, Naama (verses 19-22)",
+          "alternatives": [
+            "Cilla, Jubal, Tubal-Caïn",
+            "Yabal, Youbal"
+          ],
+          "reason": "French transcribes the Hebrew sounds of these names: \"ts\" for the sound English writes \"z\" in Zillah, and \"ou\" where French spelling would otherwise misread \"u\"; the Hebrew \"y\" is written \"J\", as in the other names of Genesis (Jared, Jacob, Jobab).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010040200021",
+            "o010040200041"
+          ],
+          "choice": "Ada, Sila, Yabali, Yubali, Tubal-kaini, Naama (verses 19-22)",
+          "alternatives": [
+            "Zila",
+            "Jabali, Jubali"
+          ],
+          "reason": "Swahili forms ending in a vowel, with \"y\" for the Hebrew \"j\" sound. \"Tubal-kaini\" keeps \"Kaini\", the Swahili form of Cain, inside the name.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010040200071"
+          ],
+          "choice": "\"아버지\" (L); \"조상\" (B); \"맨 처음 사람\" (R)",
+          "alternatives": [
+            "아버지 (B, R)"
+          ],
+          "reason": "\"Father of\" names the founder of a way of life (meaning decision m1). Literal keeps the word; Balanced says \"ancestor\", the usual Korean for the founder of a line; Readable says \"the first of\", as the English Readable does. The same holds in verse 21.",
           "uncertain": false,
           "footnote": false
         }
@@ -2056,6 +2832,26 @@
           "L": "Y el nombre de su hermano [era] Jubal; él fue el padre de todos los que tocan la lira y la flauta.",
           "B": "Su hermano se llamaba Jubal. Él fue el padre de todos los que tocan la lira y la flauta.",
           "R": "Su hermano se llamaba Jubal. Él fue el primero de todos los que hacen música con arpas y flautas."
+        },
+        "fr": {
+          "L": "Et le nom de son frère [était] Joubal ; il fut le père de tous ceux qui jouent de la lyre et de la flûte.",
+          "B": "Son frère s’appelait Joubal. Il fut le père de tous ceux qui jouent de la lyre et de la flûte.",
+          "R": "Son frère s’appelait Joubal. Il a été le premier de tous ceux qui font de la musique avec la harpe et la flûte."
+        },
+        "sw": {
+          "L": "Na jina la nduguye [lilikuwa] Yubali; yeye alikuwa baba wa wote wapigao kinubi na filimbi.",
+          "B": "Ndugu yake aliitwa Yubali. Yeye alikuwa baba wa wote wanaopiga kinubi na filimbi.",
+          "R": "Ndugu yake aliitwa Yubali. Yeye alikuwa wa kwanza kati ya watu wote wanaopiga muziki kwa vinubi na filimbi."
+        },
+        "vi": {
+          "L": "Và tên của em ông [là] Giu-banh; ông là tổ phụ của mọi người chơi đàn lia và ống sáo.",
+          "B": "Em ông tên là Giu-banh. Ông là tổ phụ của mọi người chơi đàn lia và thổi sáo.",
+          "R": "Em ông tên là Giu-banh. Ông là người đầu tiên trong tất cả những người chơi đàn và thổi sáo."
+        },
+        "ko": {
+          "L": "그리고 그의 형제의 이름은 유발이었다. 그는 수금과 피리를 연주하는 모든 자의 아버지였다.",
+          "B": "야발의 형제는 유발이었다. 유발은 수금을 타고 피리를 부는 모든 사람의 조상이 되었다.",
+          "R": "야발의 형제는 유발이었다. 유발은 수금과 피리로 음악을 연주하는 모든 사람 가운데 맨 처음 사람이었다."
         }
       },
       "decisions": [
@@ -2121,6 +2917,26 @@
           "L": "Y Zila, también ella dio a luz a Tubal-caín, forjador de toda herramienta de bronce y de hierro; y la hermana de Tubal-caín [era] Naamá.",
           "B": "Zila también tuvo un hijo, Tubal-caín, que forjaba toda clase de herramientas de bronce y de hierro. La hermana de Tubal-caín fue Naamá.",
           "R": "Zila también tuvo un hijo, Tubal-caín. Él hacía toda clase de herramientas de bronce y de hierro. Tubal-caín tenía una hermana llamada Naamá."
+        },
+        "fr": {
+          "L": "Et Tsilla, elle aussi, enfanta Toubal-Caïn, forgeron de tout outil de bronze et de fer ; et la sœur de Toubal-Caïn [était] Naama.",
+          "B": "Tsilla, elle aussi, eut un fils, Toubal-Caïn, qui forgeait toutes sortes d’outils en bronze et en fer. La sœur de Toubal-Caïn était Naama.",
+          "R": "Tsilla aussi a eu un fils, Toubal-Caïn. Il fabriquait toutes sortes d’outils en bronze et en fer. Toubal-Caïn avait une sœur, qui s’appelait Naama."
+        },
+        "sw": {
+          "L": "Naye Sila, yeye pia akamzaa Tubal-kaini, mfuaji wa kila chombo cha shaba na chuma; na dada yake Tubal-kaini [alikuwa] Naama.",
+          "B": "Sila naye alimzaa mtoto wa kiume, Tubal-kaini, aliyefua kila aina ya vyombo vya shaba na chuma. Dada yake Tubal-kaini alikuwa Naama.",
+          "R": "Sila pia alipata mtoto wa kiume, Tubal-kaini. Alitengeneza kila aina ya vifaa vya shaba na chuma. Tubal-kaini alikuwa na dada aliyeitwa Naama."
+        },
+        "vi": {
+          "L": "Và Si-la, bà cũng sinh Tu-banh Ca-in, người rèn mọi dụng cụ bằng đồng và sắt; và em gái của Tu-banh Ca-in [là] Na-a-ma.",
+          "B": "Si-la cũng sinh một con trai là Tu-banh Ca-in, người rèn đủ loại dụng cụ bằng đồng và sắt. Em gái của Tu-banh Ca-in là Na-a-ma.",
+          "R": "Si-la cũng sinh một con trai là Tu-banh Ca-in. Ông làm ra đủ loại dụng cụ bằng đồng và sắt. Tu-banh Ca-in có một em gái tên là Na-a-ma."
+        },
+        "ko": {
+          "L": "그리고 씰라도 두발가인을 낳았다. 그는 청동과 쇠로 온갖 연장을 벼리는 자였다. 그리고 두발가인의 누이는 나아마였다.",
+          "B": "씰라도 두발가인을 낳았다. 두발가인은 청동과 쇠로 온갖 연장을 만드는 대장장이였다. 두발가인의 누이는 나아마였다.",
+          "R": "씰라도 두발가인이라는 아들을 낳았다. 두발가인은 청동과 쇠로 온갖 연장을 만들었다. 두발가인에게는 나아마라는 누이가 있었다."
         }
       },
       "decisions": [
@@ -2156,6 +2972,29 @@
           "alternatives": [],
           "reason": "Naamah (\"pleasant\") is one of the few women named in these genealogies. Nothing more is told of her.",
           "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o010040220132",
+            "o010040220141",
+            "o010040220151"
+          ],
+          "choice": "\"em gái\" for \"sister\"",
+          "alternatives": [
+            "\"chị\""
+          ],
+          "reason": "Vietnamese must say whether a sister is older or younger, which the Hebrew does not. She is named after her brother, so \"em gái\" (younger sister) is the likelier reading; a reviewer may weigh it.",
+          "uncertain": true,
           "footnote": false
         }
       ],
@@ -2212,6 +3051,26 @@
           "L": "Y dijo Lamec a sus mujeres: «Ada y Zila, {{plural_you:oigan|oíd}} mi voz; mujeres de Lamec, {{plural_you:escuchen|escuchad}} mi palabra: porque a un hombre he matado por herirme, y a un joven por golpearme.",
           "B": "Lamec dijo a sus esposas: «Ada y Zila, {{plural_you:escúchenme|escuchadme}}; esposas de Lamec, {{plural_you:oigan|oíd}} mis palabras: he matado a un hombre por herirme, a un joven por golpearme.",
           "R": "Lamec les dijo a sus esposas: «¡Ada y Zila, {{plural_you:escúchenme|escuchadme}}! ¡Esposas de Lamec, {{plural_you:oigan|oíd}} lo que digo! Un hombre me hirió, y yo lo maté. Un joven me golpeó, y yo lo maté."
+        },
+        "fr": {
+          "L": "Et Lamech dit à ses femmes : « Ada et Tsilla, entendez ma voix ; femmes de Lamech, prêtez l’oreille à ma parole : car j’ai tué un homme pour m’avoir blessé, et un jeune homme pour m’avoir frappé.",
+          "B": "Lamech dit à ses femmes : « Ada et Tsilla, écoutez-moi ; femmes de Lamech, entendez mes paroles : j’ai tué un homme parce qu’il m’avait blessé, un jeune homme parce qu’il m’avait frappé.",
+          "R": "Lamech a dit à ses femmes : « Ada et Tsilla, écoutez-moi ! Femmes de Lamech, écoutez ce que je dis ! Un homme m’a blessé, alors je l’ai tué. Un jeune homme m’a frappé, alors je l’ai tué."
+        },
+        "sw": {
+          "L": "Naye Lameki akawaambia wake zake, \"Ada na Sila, sikieni sauti yangu; wake wa Lameki, tegeni sikio kwa neno langu: kwa maana nimemuua mtu kwa kunijeruhi, na kijana kwa kunipiga.",
+          "B": "Lameki akawaambia wake zake, \"Ada na Sila, nisikilizeni; wake wa Lameki, sikieni maneno yangu: nimemuua mtu kwa sababu alinijeruhi, kijana kwa sababu alinipiga.",
+          "R": "Lameki akawaambia wake zake, \"Ada na Sila, nisikilizeni! Wake wa Lameki, sikieni ninachosema! Mtu mmoja aliniumiza, nami nikamuua. Kijana mmoja alinipiga, nami nikamuua."
+        },
+        "vi": {
+          "L": "Và La-méc nói với các vợ mình: \"A-đa và Si-la, hãy nghe tiếng tôi; hỡi các vợ của La-méc, hãy lắng nghe lời tôi: vì tôi đã giết một người vì đã làm tôi bị thương, và một người trai trẻ vì đã đánh tôi.",
+          "B": "La-méc nói với các vợ mình: \"A-đa và Si-la, hãy nghe anh nói; hỡi các vợ của La-méc, hãy lắng nghe lời anh: anh đã giết một người vì nó làm anh bị thương, một người trai trẻ vì nó đánh anh.",
+          "R": "La-méc nói với các vợ mình: \"A-đa và Si-la, hãy nghe anh nói! Hỡi các vợ của La-méc, hãy nghe lời anh! Có một người làm anh bị thương, nên anh đã giết nó. Có một người trai trẻ đánh anh, nên anh đã giết nó."
+        },
+        "ko": {
+          "L": "그리고 라멕이 자기 아내들에게 말했다. \"아다와 씰라여, 내 목소리를 들어라. 라멕의 아내들이여, 내 말에 귀를 기울여라. 나를 다치게 한 사람을 내가 죽였고, 나를 때린 젊은이를 [내가 죽였다].",
+          "B": "라멕이 아내들에게 말했다. \"아다와 씰라여, 내 말을 들어라. 라멕의 아내들이여, 내 말에 귀를 기울여라. 나를 다치게 한 사람을 내가 죽였다. 나를 때린 젊은이를 내가 죽였다.",
+          "R": "라멕이 아내들에게 말했다. \"아다와 씰라, 내 말 좀 들어라! 라멕의 아내들아, 내가 하는 말을 들어라! 어떤 남자가 나를 다치게 해서, 내가 그를 죽였다. 어떤 젊은이가 나를 때려서, 내가 그를 죽였다."
         }
       },
       "decisions": [
@@ -2288,6 +3147,53 @@
           "reason": "Lamech speaks to both wives, so the commands are plural and take the plural \"you\" setting: ustedes forms by default, vosotros forms with the setting. English imperatives show no number, so the English has no span here. The song keeps its paired lines (meaning decision m1) at every level.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o010040230061",
+            "o010040230071",
+            "o010040230072",
+            "o010040230111",
+            "o010040230112"
+          ],
+          "choice": "Lamech says \"tôi\" (L), \"anh\" (B, R) to his wives",
+          "alternatives": [
+            "\"ta\""
+          ],
+          "reason": "As the Genesis terms note settles for husband and wife: at Balanced and Readable a husband says \"anh\" for himself to his wife; Literal keeps the plainer \"tôi\". The boast is set as prose, as in the English.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o010040230061",
+            "o010040230101"
+          ],
+          "choice": "Lamech speaks to his wives in the plain style (해라체) at every level",
+          "alternatives": [
+            "해요체 with 당신 (B, R), as the terms note has for husband and wife"
+          ],
+          "reason": "The terms note gives husband and wife 해요체 at Balanced and Readable. Lamech's words, though, are a boasting song in which he commands his wives to listen (meaning decision m1); the plain style of a song or proclamation fits it better than everyday conversation. Husband and wife in conversation (Abram and Sarai, 12:11-13) keep 해요체.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2324,6 +3230,26 @@
           "L": "Si Caín es vengado siete veces, entonces Lamec setenta y siete veces».",
           "B": "Si Caín es vengado siete veces, ¡Lamec lo será setenta y siete!».",
           "R": "Si a quien mate a Caín se le castigará siete veces más, ¡a quien me haga daño a mí se le castigará setenta y siete veces más!»."
+        },
+        "fr": {
+          "L": "Si Caïn est vengé sept fois, Lamech [le sera] soixante-dix-sept fois. »",
+          "B": "Si Caïn est vengé sept fois, Lamech le sera soixante-dix-sept fois ! »",
+          "R": "Si celui qui tue Caïn doit être puni sept fois plus, celui qui me fait du mal sera puni soixante-dix-sept fois plus ! »"
+        },
+        "sw": {
+          "L": "Ikiwa Kaini atalipiziwa kisasi mara saba, basi Lameki mara sabini na saba.\"",
+          "B": "Ikiwa Kaini atalipiziwa kisasi mara saba, Lameki atalipiziwa mara sabini na saba!\"",
+          "R": "Ikiwa mtu atakayemuua Kaini ataadhibiwa mara saba zaidi, basi mtu atakayeniumiza mimi ataadhibiwa mara sabini na saba zaidi!\""
+        },
+        "vi": {
+          "L": "Nếu Ca-in được báo thù gấp bảy lần, thì La-méc gấp bảy mươi bảy lần.\"",
+          "B": "Nếu Ca-in được báo thù gấp bảy lần, thì La-méc sẽ được báo thù gấp bảy mươi bảy lần!\"",
+          "R": "Nếu ai giết Ca-in sẽ bị phạt gấp bảy lần, thì ai làm hại anh sẽ bị phạt gấp bảy mươi bảy lần!\""
+        },
+        "ko": {
+          "L": "가인을 위해 일곱 배로 갚아 준다면, 라멕을 위해서는 일흔일곱 배로 [갚아 줄 것이다].\"",
+          "B": "가인을 위한 복수가 일곱 배라면, 라멕을 위한 복수는 일흔일곱 배다!\"",
+          "R": "가인을 죽이는 사람이 일곱 배로 벌을 받는다면, 나를 해치는 사람은 일흔일곱 배로 벌을 받을 것이다!\""
         }
       },
       "decisions": [
@@ -2362,6 +3288,26 @@
             "For ..."
           ],
           "reason": "The Hebrew word can mean \"for\" or \"if\"; English reads the comparison more clearly with \"if ... then\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010040240031"
+          ],
+          "choice": "atalipiziwa kisasi",
+          "alternatives": [
+            "atalipizwa kisasi"
+          ],
+          "reason": "Swahili distinguishes the one on whose behalf vengeance is taken (\"kulipiziwa kisasi\", here Cain and Lamech) from the one on whom it falls (\"kulipizwa kisasi\", the killer in 4:15).",
           "uncertain": false,
           "footnote": false
         }
@@ -2420,6 +3366,26 @@
           "L": "Y conoció Adán otra vez a su mujer, y ella dio a luz un hijo y llamó su nombre Set: «Porque Dios me ha puesto otra descendencia en lugar de Abel, pues Caín lo mató».",
           "B": "Adán se unió de nuevo a su esposa, y ella dio a luz un hijo al que llamó Set, diciendo: «Dios me ha dado otro hijo en lugar de Abel, ya que Caín lo mató».",
           "R": "Adán y su esposa tuvieron otro hijo. Ella lo llamó Set, y dijo: «Dios me ha dado otro hijo que ocupe el lugar de Abel, porque Caín lo mató»."
+        },
+        "fr": {
+          "L": "Et Adam connut encore sa femme ; elle enfanta un fils et appela son nom Seth : « Car Dieu m’a établi une autre descendance à la place d’Abel, parce que Caïn l’a tué. »",
+          "B": "Adam s’unit de nouveau à sa femme ; elle donna naissance à un fils et l’appela Seth, en disant : « Dieu m’a accordé un autre enfant à la place d’Abel, puisque Caïn l’a tué. »",
+          "R": "Adam et sa femme ont eu un autre fils. Elle l’a appelé Seth. Elle a dit : « Dieu m’a donné un autre enfant pour remplacer Abel, parce que Caïn l’a tué. »"
+        },
+        "sw": {
+          "L": "Naye Adamu akamjua mkewe tena, naye akamzaa mwana, akamwita jina lake Sethi, \"Kwa maana Mungu ameniwekea uzao mwingine mahali pa Habili, kwa sababu Kaini alimuua.\"",
+          "B": "Adamu alikutana kimwili na mkewe tena, naye akamzaa mtoto wa kiume, akamwita Sethi, akisema, \"Mungu amenipa mtoto mwingine mahali pa Habili, kwa kuwa Kaini alimuua.\"",
+          "R": "Adamu na mkewe walipata mtoto mwingine wa kiume. Mkewe alimwita Sethi. Akasema, \"Mungu amenipa mtoto mwingine achukue nafasi ya Habili, kwa sababu Kaini alimuua.\""
+        },
+        "vi": {
+          "L": "Và A-đam lại ăn ở với vợ mình, và nàng sinh một con trai và đặt tên là Sết: \"Vì Đức Chúa Trời đã định cho tôi một dòng dõi khác thay cho A-bên, vì Ca-in đã giết nó.\"",
+          "B": "A-đam lại ăn ở với vợ mình, và nàng sinh một con trai, đặt tên là Sết, và nói: \"Đức Chúa Trời đã ban cho tôi một đứa con khác thay cho A-bên, vì Ca-in đã giết A-bên.\"",
+          "R": "A-đam và vợ mình có thêm một con trai. Nàng đặt tên con là Sết. Nàng nói: \"Đức Chúa Trời đã ban cho tôi một đứa con khác để thay cho A-bên, vì Ca-in đã giết A-bên.\""
+        },
+        "ko": {
+          "L": "그리고 아담이 다시 자기 아내를 알았다. 그러자 그 여자가 아들을 낳고 그의 이름을 셋이라고 불렀다. \"가인이 아벨을 죽였으므로, 하나님께서 아벨 대신에 나에게 다른 씨를 정해 주셨다.\"",
+          "B": "아담이 다시 아내와 동침하니, 아내가 아들을 낳고 그의 이름을 셋이라고 지으며 말했다. \"가인이 아벨을 죽였으므로, 하나님께서 아벨 대신에 나에게 다른 자식을 주셨다.\"",
+          "R": "아담과 그의 아내 사이에 또 아들이 태어났다. 아내는 그 아들의 이름을 셋이라고 지었다. 그리고 말했다. \"가인이 아벨을 죽였기 때문에, 하나님께서 아벨 대신 나에게 다른 아이를 주셨다.\""
         }
       },
       "decisions": [
@@ -2483,6 +3449,48 @@
           "reason": "The Hebrew does not say \"she said\"; Literal puts Eve's words in quotation marks after \"For\", as her reason for the name.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010040250021"
+          ],
+          "choice": "\"A-đam\" from here on",
+          "alternatives": [
+            "\"con người\""
+          ],
+          "reason": "Here the Hebrew uses Adam as a personal name (m1), so Vietnamese gives the name, in the form of 1 Corinthians 15:45 and Luke 3:38.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010040250021"
+          ],
+          "choice": "\"아담\" from here on, as a personal name",
+          "alternatives": [
+            "그 사람"
+          ],
+          "reason": "Until now the Hebrew has said \"the man\"; here the word stands without the article as a name (meaning decision m1), and Korean begins to call him 아담, as the English begins to say Adam.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2530,6 +3538,26 @@
           "L": "Y a Set, también a él le nació un hijo, y llamó su nombre Enós. Entonces se comenzó a invocar el nombre {{divine_name:del SEÑOR|de Yahvé}}.",
           "B": "Set también tuvo un hijo, y lo llamó Enós. En aquel tiempo la gente comenzó a invocar el nombre {{divine_name:del SEÑOR|de Yahvé}}.",
           "R": "Set también tuvo un hijo, y le puso por nombre Enós. Fue entonces cuando la gente comenzó a orar {{divine_name:al SEÑOR|a Yahvé}} y a adorar {{deity_pronoun:su|Su}} nombre."
+        },
+        "fr": {
+          "L": "Et à Seth, à lui aussi, naquit un fils, et il appela son nom Énosh. Alors on commença à invoquer le nom {{divine_name:du SEIGNEUR|de Yahvé}}.",
+          "B": "Seth eut lui aussi un fils, qu’il appela Énosh. C’est à cette époque que l’on commença à invoquer le nom {{divine_name:du SEIGNEUR|de Yahvé}}.",
+          "R": "Seth aussi a eu un fils, et il l’a appelé Énosh. C’est à ce moment-là que les gens ont commencé à prier {{divine_name:le SEIGNEUR|Yahvé}} et à {{deity_pronoun:l’|L’}}adorer en {{deity_pronoun:l’|L’}}appelant par {{deity_pronoun:son|Son}} nom."
+        },
+        "sw": {
+          "L": "Naye Sethi, yeye pia, akapata mwana, akamwita jina lake Enoshi. Ndipo [watu] wakaanza kuliitia jina la {{divine_name:BWANA|Yahwe}}.",
+          "B": "Sethi naye alipata mtoto wa kiume, akamwita Enoshi. Wakati huo watu walianza kuliitia jina la {{divine_name:BWANA|Yahwe}}.",
+          "R": "Sethi naye alipata mtoto wa kiume, akamwita Enoshi. Wakati huo ndipo watu walipoanza kumwomba {{divine_name:BWANA|Yahwe}} na kumwabudu kwa jina {{deity_pronoun:lake|Lake}}."
+        },
+        "vi": {
+          "L": "Và Sết cũng sinh một con trai, và ông đặt tên con là Ê-nót. Bấy giờ [người ta] bắt đầu kêu cầu danh {{divine_name:CHÚA|Gia-vê}}.",
+          "B": "Sết cũng có một con trai, và ông đặt tên con là Ê-nót. Vào thời ấy người ta bắt đầu kêu cầu danh {{divine_name:CHÚA|Gia-vê}}.",
+          "R": "Sết cũng có một con trai, và ông đặt tên con là Ê-nót. Từ lúc đó người ta bắt đầu cầu nguyện với {{divine_name:CHÚA|Gia-vê}} và thờ phượng {{deity_pronoun:ngài|Ngài}}, gọi đúng danh {{deity_pronoun:ngài|Ngài}}."
+        },
+        "ko": {
+          "L": "그리고 셋에게도 아들이 태어나, 그가 그의 이름을 에노스라고 불렀다. 그때에 [사람들이] {{divine_name:주|야훼}}의 이름을 부르기 시작하였다.",
+          "B": "셋도 아들을 낳아 그의 이름을 에노스라고 지었다. 그때에 사람들이 {{divine_name:주|야훼}}의 이름을 부르기 시작하였다.",
+          "R": "셋도 아들을 낳아 그의 이름을 에노스라고 지었다. 그때부터 사람들이 {{divine_name:주|야훼}}의 이름을 부르며 기도하고 예배하기 시작하였다."
         }
       },
       "decisions": [
@@ -2648,6 +3676,46 @@
             "a adorarlo por su nombre"
           ],
           "reason": "As in English, Readable says what calling on the name means (meaning decision m2). \"Adorar su nombre\" lets the deity pronoun setting fall on \"su\"; Spanish attaches \"lo\" to the verb in \"adorarlo\", where a setting span cannot sit.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o010040260111"
+          ],
+          "choice": "Alors on commença",
+          "alternatives": [
+            "Alors [les gens] commencèrent"
+          ],
+          "reason": "French impersonal \"on\" says \"it was begun\" without naming anyone, as the Hebrew does, so Literal needs no bracketed subject where the English brackets \"[people]\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010040260091"
+          ],
+          "choice": "\"Ê-nót\"",
+          "alternatives": [
+            "\"Ê-nốt\""
+          ],
+          "reason": "The form of Luke 3:38 in this project.",
           "uncertain": false,
           "footnote": false
         }

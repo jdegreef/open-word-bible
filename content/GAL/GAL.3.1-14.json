@@ -46,6 +46,16 @@
           "L": "Ô Galates irréfléchis, qui vous a ensorcelés, vous aux yeux de qui Jésus {{christos:Christ|Messie}} a été dépeint publiquement comme crucifié ?",
           "B": "Galates irréfléchis ! Qui vous a jeté un sort ? Jésus {{christos:Christ|le Messie}} a pourtant été exposé en pleine lumière sous vos yeux, comme le crucifié.",
           "R": "Habitants de la Galatie, comme vous manquez de bon sens ! Qui vous a jeté un sort ? On vous a montré si clairement que Jésus {{christos:Christ|le Messie}} a été crucifié ! C’était comme si vous l’aviez vu de vos propres yeux."
+        },
+        "ko": {
+          "L": "어리석은 갈라디아 사람들이여, 누가 여러분을 홀렸습니까? 여러분의 눈앞에 예수 {{christos:그리스도|메시아}}께서 십자가에 못 박히신 분으로 공공연히 그려졌는데도 [말입니다].",
+          "B": "어리석은 갈라디아 사람들이여! 누가 여러분을 홀렸습니까? 예수 {{christos:그리스도|메시아}}께서 십자가에 못 박히신 분으로 여러분의 눈앞에 똑똑히 드러났는데도 말입니다.",
+          "R": "어리석은 갈라디아 사람들이여! 누가 여러분에게 마술을 걸었습니까? 예수 {{christos:그리스도|메시아}}께서 십자가에 못 박히셨다는 사실이 여러분에게 아주 분명하게 전해졌습니다. 마치 여러분이 그것을 직접 눈으로 본 것 같았습니다."
+        },
+        "vi": {
+          "L": "Ôi những người Ga-la-ti dại dột, ai đã mê hoặc anh chị em, là những người đã được thấy Đức Giê-xu {{christos:Christ|Mê-si-a}} bị đóng đinh trên thập tự giá được bày ra công khai trước mắt mình?",
+          "B": "Anh chị em Ga-la-ti thật thiếu suy nghĩ! Ai đã bỏ bùa mê anh chị em? Đức Giê-xu {{christos:Christ|Mê-si-a}} đã được bày ra rõ ràng trước mắt anh chị em như Đấng chịu đóng đinh trên thập tự giá.",
+          "R": "Anh chị em ở Ga-la-ti thật thiếu suy nghĩ! Ai đã bỏ bùa anh chị em vậy? Anh chị em đã được cho thấy thật rõ ràng rằng Đức Giê-xu {{christos:Christ|Mê-si-a}} đã bị đóng đinh trên thập tự giá. Điều đó rõ như thể chính mắt anh chị em đã thấy."
         }
       },
       "decisions": [
@@ -265,6 +275,93 @@
           "reason": "Literal keeps the verb of witchcraft; Balanced and Readable use the everyday expression for the same picture (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n48003001001",
+            "n48003001002"
+          ],
+          "choice": "\"어리석은 갈라디아 사람들이여\" at every level",
+          "alternatives": [
+            "\"어리석은 갈라디아 사람 여러분\""
+          ],
+          "reason": "Paul breaks off into an exclamation. The vocative \"-이여\" is no longer used for ordinary address (the letter says \"여러분\"), but it is still the natural Korean form for a cry of reproach like this, and it keeps the force of the Greek \"O\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48003001006"
+          ],
+          "choice": "\"홀리다\" (L, B); \"마술을 걸다\" (R)",
+          "alternatives": [
+            "\"꾀다\"",
+            "\"속이다\""
+          ],
+          "reason": "The verb is a figure of speech for being led astray as if under a spell (the meaning decision). \"홀리다\" (to bewitch, to captivate) keeps the picture in plain Korean; Readable uses the everyday \"마술을 걸다\", as the English Readable says \"put a spell on you\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n48003001001",
+            "n48003001002",
+            "n48003001003"
+          ],
+          "choice": "\"Ôi những người Ga-la-ti dại dột\" (L); \"Anh chị em Ga-la-ti thật thiếu suy nghĩ!\" (B, R)",
+          "alternatives": [
+            "\"Hỡi người Ga-la-ti ngu muội\""
+          ],
+          "reason": "The Greek is a sharp cry of address. \"Hỡi\" belongs to older speech, so Literal says \"Ôi\" and Balanced and Readable make it a statement to the readers, keeping \"anh chị em\". The word is failing to think, not lack of intelligence (m1), so Balanced and Readable say \"thiếu suy nghĩ\"; \"ngu muội\" would insult their minds.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48003001006"
+          ],
+          "choice": "\"mê hoặc\" (L); \"bỏ bùa mê\" (B), \"bỏ bùa\" (R)",
+          "alternatives": [
+            "\"quyến rũ\"",
+            "\"lừa gạt\""
+          ],
+          "reason": "The verb is a figure of speech for a spell (m2). Vietnamese has the same picture in \"bỏ bùa\", which keeps it plain.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -318,6 +415,16 @@
           "L": "Je veux seulement apprendre ceci de vous : est-ce par les œuvres de la Loi que vous avez reçu l’Esprit, ou par l’écoute de la foi ?",
           "B": "Dites-moi seulement une chose : avez-vous reçu l’Esprit par les œuvres de la Loi, ou par la foi en ce que vous avez entendu ?",
           "R": "Répondez seulement à une question. Avez-vous reçu l’Esprit parce que vous avez fait ce que la Loi ordonne ? Ou bien parce que vous avez entendu le message et que vous y avez cru ?"
+        },
+        "ko": {
+          "L": "나는 여러분에게서 이것 하나만 알고 싶습니다. 여러분이 성령을 받은 것은 율법의 행위들로입니까, 아니면 믿음의 들음으로입니까?",
+          "B": "한 가지만 말해 보십시오. 여러분이 성령을 받은 것은 율법의 행위 때문입니까, 아니면 들은 말씀을 믿었기 때문입니까?",
+          "R": "한 가지만 물어보겠습니다. 여러분이 성령을 받은 것은 율법이 명령하는 것을 행했기 때문입니까? 아니면 기쁜 소식을 듣고 그것을 믿었기 때문입니까?"
+        },
+        "vi": {
+          "L": "Tôi chỉ muốn biết điều này từ anh chị em: anh chị em đã nhận lãnh Thánh Linh bởi những việc làm của luật pháp, hay bởi sự nghe với đức tin?",
+          "B": "Hãy cho tôi biết một điều thôi: anh chị em đã nhận lãnh Thánh Linh nhờ làm những việc luật pháp đòi hỏi, hay nhờ tin vào điều anh chị em đã nghe?",
+          "R": "Tôi chỉ muốn anh chị em trả lời một câu hỏi. Có phải anh chị em đã nhận lãnh Thánh Linh vì đã làm theo những gì luật pháp truyền dạy không? Hay là vì anh chị em đã nghe sứ điệp và đặt đức tin nơi sứ điệp ấy?"
         }
       },
       "decisions": [
@@ -503,6 +610,74 @@
           "reason": "Literal keeps Paul's short phrase, which can mean hearing joined with faith or the message that brings faith (m3); \"écoute\" leaves both open. Balanced and Readable give the sense the English chose.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48003002014",
+            "n48003002015",
+            "n48003002016"
+          ],
+          "choice": "\"믿음의 들음\" (L); \"들은 말씀을 믿었기 때문\" (B); \"기쁜 소식을 듣고 그것을 믿었기 때문\" (R), here and in verse 5",
+          "alternatives": [
+            "\"듣고 믿음\" at every level"
+          ],
+          "reason": "Literal keeps the Greek's two nouns, \"hearing\" and \"faith\"; the meaning decision reads them as hearing the message and believing it, which Balanced and Readable say.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48003002010",
+            "n48003002011"
+          ],
+          "choice": "\"Thánh Linh\" for the Spirit, capitalised, through the letter",
+          "alternatives": [
+            "\"linh\"",
+            "\"Thần Linh\""
+          ],
+          "reason": "The Spirit is God's Holy Spirit (m1), written as in the Vietnamese Colossians (1:8) and Romans.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48003002014",
+            "n48003002015",
+            "n48003002016"
+          ],
+          "choice": "\"sự nghe với đức tin\" (L)",
+          "alternatives": [
+            "\"sự nghe của đức tin\"",
+            "\"sự nghe và tin\""
+          ],
+          "reason": "The meaning decision reads the phrase as hearing with faith (m3). \"Sự nghe của đức tin\" is not Vietnamese; \"với\" keeps the two nouns and their link.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -543,6 +718,16 @@
           "L": "Êtes-vous si irréfléchis ?",
           "B": "Êtes-vous vraiment aussi irréfléchis ?",
           "R": "Comment pouvez-vous manquer à ce point de bon sens ?"
+        },
+        "ko": {
+          "L": "여러분은 그렇게 어리석습니까?",
+          "B": "여러분은 정말 그렇게 어리석습니까?",
+          "R": "어떻게 여러분이 그렇게 어리석을 수 있습니까?"
+        },
+        "vi": {
+          "L": "Anh chị em dại dột đến thế sao?",
+          "B": "Anh chị em thật sự thiếu suy nghĩ đến thế sao?",
+          "R": "Sao anh chị em có thể thiếu suy nghĩ đến thế?"
         }
       },
       "decisions": [
@@ -605,6 +790,16 @@
           "L": "Ayant commencé par l’Esprit, êtes-vous maintenant menés à l’achèvement par la chair ?",
           "B": "Vous avez commencé par l’Esprit ; allez-vous maintenant atteindre le but par la chair ?",
           "R": "Vous avez commencé votre vie nouvelle par l’Esprit. Pensez-vous maintenant pouvoir la terminer par vos propres efforts humains ?"
+        },
+        "ko": {
+          "L": "성령으로 시작하였다가 이제는 육신으로 완성되려고 합니까?",
+          "B": "성령으로 시작했는데, 이제는 육신으로 끝을 맺으려고 합니까?",
+          "R": "여러분은 성령으로 새 삶을 시작했습니다. 그런데 이제는 여러분 자신의 힘으로 그 삶을 끝까지 이룰 수 있다고 생각합니까?"
+        },
+        "vi": {
+          "L": "Đã bắt đầu bởi Thánh Linh, nay anh chị em lại được làm cho trọn bởi xác thịt sao?",
+          "B": "Anh chị em đã khởi đầu bởi Thánh Linh, nay lại muốn đạt đến đích bằng xác thịt sao?",
+          "R": "Anh chị em đã bắt đầu đời sống mới nhờ Thánh Linh. Bây giờ anh chị em lại nghĩ rằng mình có thể hoàn tất đời sống ấy bằng sức riêng của con người sao?"
         }
       },
       "decisions": [
@@ -743,6 +938,49 @@
           "reason": "As in Colossians and Hebrews, Literal and Balanced keep \"chair\" so that the reader can follow the word through the letter, where its sense moves from bodily life (2:20) to human effort (here) and the sinful self (5:16-24).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48003003007"
+          ],
+          "choice": "\"육신\" (L, B); \"여러분 자신의 힘\" (R)",
+          "alternatives": [
+            "\"육체\""
+          ],
+          "reason": "\"육신\" is the letter's word for the flesh at Literal and, where Paul sets it against the Spirit, at Balanced, as in Romans 8. Here it means human effort (the meaning decision), which Readable says, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48003003007"
+          ],
+          "choice": "\"xác thịt\" (L, B); \"sức riêng của con người\" (R) for sarx",
+          "alternatives": [
+            "\"sức riêng\" (B)",
+            "\"bản tính tội lỗi\" (R)"
+          ],
+          "reason": "Here flesh is human effort, what people can do in their own strength (m1). Literal and Balanced keep \"xác thịt\", the word kept for sarx through the letter, set against the Spirit as Paul sets them; Readable says what it means, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -783,6 +1021,16 @@
           "L": "Avez-vous vécu tant de choses en vain ?",
           "B": "Avez-vous vécu tout cela pour rien ?",
           "R": "Est-ce que tout ce qui vous est arrivé n’a servi à rien ?"
+        },
+        "ko": {
+          "L": "여러분이 그렇게 많은 것을 헛되이 겪었습니까?",
+          "B": "여러분이 그 많은 일을 겪은 것이 헛일이었습니까?",
+          "R": "여러분에게 일어난 그 모든 일이 다 헛된 것이었습니까?"
+        },
+        "vi": {
+          "L": "Anh chị em đã trải qua bao nhiêu điều như thế cách vô ích sao?",
+          "B": "Anh chị em đã trải qua biết bao điều mà chẳng được gì sao?",
+          "R": "Tất cả những điều đã xảy ra cho anh chị em đều là vô ích sao?"
         }
       },
       "decisions": [
@@ -929,6 +1177,16 @@
           "L": "Si du moins [c’est] en vain.",
           "B": "Si vraiment c’était pour rien.",
           "R": "J’espère que ce n’était pas pour rien !"
+        },
+        "ko": {
+          "L": "참으로 헛된 것이었다면 [말입니다].",
+          "B": "정말 헛일이었다면 말입니다.",
+          "R": "나는 그것이 모두 헛된 일이 아니었기를 바랍니다!"
+        },
+        "vi": {
+          "L": "Nếu thật là vô ích.",
+          "B": "Nếu điều đó thật là vô ích.",
+          "R": "Tôi mong rằng không phải tất cả đều vô ích!"
         }
       },
       "decisions": [
@@ -1027,6 +1285,16 @@
           "L": "Celui donc qui vous accorde l’Esprit et qui opère des miracles parmi vous, [le fait-{{deity_pronoun:il|Il}}] par les œuvres de la Loi, ou par l’écoute de la foi ?",
           "B": "Alors, quand Dieu vous donne l’Esprit et fait des miracles parmi vous, est-ce à cause des œuvres de la Loi, ou à cause de la foi en ce que vous avez entendu ?",
           "R": "Dieu vous donne l’Esprit et fait des miracles parmi vous. Le fait-{{deity_pronoun:il|Il}} parce que vous faites ce que la Loi ordonne ? Ou bien parce que vous avez entendu le message et que vous y avez cru ?"
+        },
+        "ko": {
+          "L": "그러면 여러분에게 성령을 주시고 여러분 가운데서 기적들을 행하시는 분께서 [그렇게 하시는 것은] 율법의 행위들로입니까, 아니면 믿음의 들음으로입니까?",
+          "B": "그러면 하나님께서 여러분에게 성령을 주시고 여러분 가운데서 기적을 행하시는 것은, 여러분이 율법의 행위를 했기 때문입니까, 아니면 들은 말씀을 믿었기 때문입니까?",
+          "R": "하나님께서는 여러분에게 성령을 주시고 여러분 가운데서 기적을 일으키십니다. 그분이 그렇게 하시는 것은 여러분이 율법이 명령하는 것을 행하기 때문입니까? 아니면 여러분이 기쁜 소식을 듣고 그것을 믿었기 때문입니까?"
+        },
+        "vi": {
+          "L": "Vậy Đấng ban Thánh Linh cho anh chị em và làm các phép lạ giữa anh chị em, [{{deity_pronoun:ngài|Ngài}} làm điều đó] bởi những việc làm của luật pháp, hay bởi sự nghe với đức tin?",
+          "B": "Vậy, có phải Đức Chúa Trời ban Thánh Linh cho anh chị em và làm các phép lạ giữa anh chị em là nhờ những việc luật pháp đòi hỏi, hay nhờ anh chị em tin vào điều mình đã nghe?",
+          "R": "Đức Chúa Trời ban Thánh Linh cho anh chị em và làm các phép lạ giữa anh chị em. Có phải {{deity_pronoun:ngài|Ngài}} làm điều đó vì anh chị em làm theo những gì luật pháp truyền dạy không? Hay là vì anh chị em đã nghe sứ điệp và đặt đức tin nơi sứ điệp ấy?"
         }
       },
       "decisions": [
@@ -1184,6 +1452,30 @@
           "reason": "As in Romans, Swahili marks a pronoun for God inside the verb (\"anafanya\"), and a prefix cannot take a capital, so the setting applies only to free pronouns and possessives. This sentence has none, so it has no span where the English has \"he\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48003005009",
+            "n48003005010",
+            "n48003005011"
+          ],
+          "choice": "\"phép lạ\"",
+          "alternatives": [
+            "\"dấu lạ\"",
+            "\"việc quyền năng\""
+          ],
+          "reason": "The Greek word is \"powers\", mighty works (m3). The Vietnamese John keeps \"dấu lạ\" for signs; for works of power the plain \"phép lạ\" is used, as the English says \"miracles\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1231,6 +1523,16 @@
           "L": "De même Abraham crut Dieu, et cela lui fut porté en compte comme justice.",
           "B": "Il en va de même pour Abraham : il crut Dieu, et cela lui fut compté comme justice.",
           "R": "C’était pareil pour Abraham. Il a cru Dieu, et parce qu’il a cru, Dieu l’a accepté comme juste."
+        },
+        "ko": {
+          "L": "이는 아브라함이 하나님을 믿었더니, 그것이 그에게 의로 여겨진 것과 같습니다.",
+          "B": "아브라함도 그러했습니다. 그가 하나님을 믿었더니, 그것이 그에게 의로 여겨졌습니다.",
+          "R": "아브라함의 경우도 똑같았습니다. 아브라함은 하나님을 믿었습니다. 그가 믿었기 때문에, 하나님께서는 그를 의롭다고 여겨 주셨습니다."
+        },
+        "vi": {
+          "L": "Cũng như Áp-ra-ham đã tin Đức Chúa Trời, và điều đó được kể cho ông là sự công chính.",
+          "B": "Áp-ra-ham cũng vậy: ông đã tin Đức Chúa Trời, và điều đó được kể cho ông là sự công chính.",
+          "R": "Áp-ra-ham cũng như vậy. Ông đã tin Đức Chúa Trời, và vì ông tin nên Đức Chúa Trời đã chấp nhận ông là người công chính."
         }
       },
       "decisions": [
@@ -1429,6 +1731,50 @@
           "reason": "The verb is a bookkeeping word, an entry made to someone's account (m3). \"Porter en compte\" keeps the picture at Literal; \"imputer\" is church language.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48003006007",
+            "n48003006010"
+          ],
+          "choice": "\"의로 여겨졌습니다\" (L, B); \"의롭다고 여겨 주셨습니다\" (R)",
+          "alternatives": [
+            "\"의로 인정되었다\""
+          ],
+          "reason": "As in Romans 4:3: the verb is a bookkeeping word, to put to someone's account (the meaning decision), and \"여기다\" (count as) is plain enough for every level; \"인정하다\" is kept for the verdict word \"의롭다고 인정하다\", so the two verbs stay apart. \"의\" stays the key term.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48003006007"
+          ],
+          "choice": "\"được kể ... là sự công chính\" (L, B)",
+          "alternatives": [
+            "\"được xem là\"",
+            "\"được tính là\""
+          ],
+          "reason": "The bookkeeping verb of Genesis 15:6 (m3), which the Vietnamese Romans keeps as \"kể\" (4:3) wherever it appears; Readable says what it means, as the English Readable does. \"Ông\" is the respectful pronoun for Abraham, as in the Vietnamese Romans.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1476,6 +1822,16 @@
           "L": "Sachez donc que ceux qui [relèvent] de la foi, ceux-là sont {{gender:enfants|fils}} d’Abraham.",
           "B": "Vous le voyez donc : ce sont les gens de foi qui sont les {{gender:enfants|fils}} d’Abraham.",
           "R": "Alors comprenez bien ceci : les gens qui vivent par la foi sont les vrais {{gender:enfants|fils}} d’Abraham."
+        },
+        "ko": {
+          "L": "그러므로 믿음으로 말미암은 사람들, 바로 이들이 아브라함의 {{gender:자녀|아들}}들임을 아십시오.",
+          "B": "그러니 믿음의 사람들이야말로 아브라함의 {{gender:자녀|아들}}들이라는 것을 알 수 있습니다.",
+          "R": "그러므로 이것을 깨달으십시오. 믿음으로 사는 사람들이 아브라함의 진짜 {{gender:자녀|아들}}들입니다."
+        },
+        "vi": {
+          "L": "Vậy, hãy biết rằng những người [sống] bởi đức tin, chính họ là con cái của Áp-ra-ham.",
+          "B": "Vậy anh chị em có thể thấy rằng những người có đức tin mới là con cái của Áp-ra-ham.",
+          "R": "Vậy hãy hiểu điều này: những người sống bởi đức tin mới là con cái thật của Áp-ra-ham."
         }
       },
       "decisions": [
@@ -1675,6 +2031,50 @@
           "reason": "French cannot say \"ceux qui sont de la foi\" for people whose standing comes from faith (m2). Literal supplies a verb in brackets that keeps the parallel with 3:10.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n48003007008",
+            "n48003007010"
+          ],
+          "choice": "{{gender:자녀|아들}}들 at every level",
+          "alternatives": [
+            "\"자손\" with no setting",
+            "\"아들들\" with no setting"
+          ],
+          "reason": "The Greek says \"sons\", meaning Abraham's true descendants and heirs, women and men (the meaning decision). Korean has two ways to say it, \"자녀\" (children) and the traditional \"아들\", so the gender setting applies, as it does in the English; the plural \"들\" stays outside the span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n48003007008"
+          ],
+          "choice": "\"con cái của Áp-ra-ham\", with no gender span",
+          "alternatives": [
+            "{{gender:con cái|con trai}}"
+          ],
+          "reason": "\"Con cái\" already includes sons and daughters, as the Vietnamese Colossians notes (3:6), so there is no second wording for the setting to offer; \"con trai\" would narrow the sense of true descendants and heirs (m3). The same holds in 3:26 and 4:6-7.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1734,6 +2134,16 @@
           "L": "Et l’Écriture, prévoyant que Dieu justifie les nations par la foi, a annoncé d’avance l’Évangile à Abraham : « En toi seront bénies toutes les nations. »",
           "B": "L’Écriture a vu d’avance que Dieu justifierait les nations par la foi, et c’est pourquoi elle a annoncé d’avance l’Évangile à Abraham : « En toi toutes les nations seront bénies. »",
           "R": "Longtemps à l’avance, l’Écriture a regardé vers l’avenir et a vu que Dieu déclarerait justes devant {{deity_pronoun:lui|Lui}}, par la foi, les gens qui ne sont pas juifs. Elle a donc annoncé d’avance la bonne nouvelle à Abraham : « Grâce à toi, toutes les nations seront bénies. »"
+        },
+        "ko": {
+          "L": "또 성경은 하나님께서 이방 사람들을 믿음으로 의롭다고 인정하실 것을 미리 보고, 아브라함에게 \"모든 민족이 너 안에서 복을 받을 것이다\" 하고 복음을 미리 전하였습니다.",
+          "B": "성경은 하나님께서 이방 사람들을 믿음으로 의롭다고 인정하실 것을 미리 내다보고, 아브라함에게 \"모든 민족이 너로 말미암아 복을 받을 것이다\" 하는 복음을 미리 알려 주었습니다.",
+          "R": "아주 오래전에 성경은 앞일을 내다보았습니다. 하나님께서 유대인이 아닌 사람들도 믿음으로 의롭다고 인정해 주실 것을 본 것입니다. 그래서 성경은 아브라함에게 이 기쁜 소식을 미리 전해 주었습니다. \"너 때문에 모든 민족이 복을 받을 것이다.\""
+        },
+        "vi": {
+          "L": "Và Kinh Thánh, thấy trước rằng Đức Chúa Trời xưng công chính các dân ngoại bởi đức tin, đã rao Tin Lành trước cho Áp-ra-ham: \"Mọi dân tộc sẽ được phước trong con.\"",
+          "B": "Kinh Thánh đã thấy trước rằng Đức Chúa Trời sẽ xưng công chính các dân ngoại bởi đức tin, nên đã báo trước Tin Lành cho Áp-ra-ham: \"Trong con, mọi dân tộc sẽ được phước.\"",
+          "R": "Từ rất lâu trước, Kinh Thánh đã nhìn trước và thấy rằng Đức Chúa Trời sẽ công nhận các dân ngoại là công chính nhờ đức tin. Vì vậy Kinh Thánh đã báo trước Tin Lành cho Áp-ra-ham: \"Nhờ con, mọi dân tộc sẽ được phước.\""
         }
       },
       "decisions": [
@@ -2012,6 +2422,98 @@
           "reason": "French can use one word where English needs \"Gentiles\" and \"nations\", so Literal and Balanced show what Paul's argument rests on (m4): the nations blessed in Genesis are the nations God justifies by faith. Readable explains the first.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48003008010",
+            "n48003008022"
+          ],
+          "choice": "\"이방 사람들\" (L, B) / \"유대인이 아닌 사람들\" (R) and \"모든 민족\" for the same Greek word",
+          "alternatives": [
+            "the same Korean word for both"
+          ],
+          "reason": "The Greek uses one word for \"the Gentiles\" and \"the nations\" (the meaning decision). Korean has no single word for both senses; \"모든 민족\" is the natural word in the promise to Abraham, and Paul's point, that the promise reaches the non-Jewish peoples, is plain from the two words side by side.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n48003008017",
+            "n48003008018",
+            "n48003008019",
+            "n48003008020",
+            "n48003008021",
+            "n48003008022"
+          ],
+          "choice": "God's words to Abraham in 해라체 with \"너\"",
+          "alternatives": [
+            "합쇼체"
+          ],
+          "reason": "The quotation gives God's promise, spoken to Abraham, and God speaks in 해라체 in the Korean of the Old Testament (docs/korean-style.md section 7a).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48003008010",
+            "n48003008022"
+          ],
+          "choice": "\"các dân ngoại\" for the Gentiles, \"mọi dân tộc\" in the quotation",
+          "alternatives": [
+            "\"mọi dân ngoại\" in the quotation"
+          ],
+          "reason": "One Greek word stands behind both (m4). Paul's point is that the promise to all the nations reaches the Gentiles, so Vietnamese keeps the general word in God's promise, as the Vietnamese Romans does (1:5), and \"dân ngoại\" in Paul's own words.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n48003008018",
+            "n48003008019"
+          ],
+          "choice": "\"con\" for Abraham in God's words",
+          "alternatives": [
+            "\"ngươi\""
+          ],
+          "reason": "God speaks to Abraham as a father to one he cares for, as in the Vietnamese Romans (4:17); \"ngươi\" is archaic.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2058,6 +2560,16 @@
           "L": "De sorte que ceux qui [relèvent] de la foi sont bénis avec Abraham le croyant.",
           "B": "Ainsi, les gens de foi ont part à la bénédiction avec Abraham, qui a cru.",
           "R": "Ainsi, tous ceux qui vivent par la foi sont bénis avec Abraham, qui a cru Dieu."
+        },
+        "ko": {
+          "L": "그러므로 믿음으로 말미암은 사람들은 믿은 [사람] 아브라함과 함께 복을 받습니다.",
+          "B": "그러므로 믿음의 사람들은 믿은 사람 아브라함과 함께 복을 받습니다.",
+          "R": "그러므로 믿음으로 사는 사람은 누구나 하나님을 믿은 아브라함과 함께 복을 받습니다."
+        },
+        "vi": {
+          "L": "Vậy, những người [sống] bởi đức tin được phước cùng với Áp-ra-ham, người có lòng tin.",
+          "B": "Vậy những người có đức tin cùng được hưởng phước với Áp-ra-ham, người đã tin.",
+          "R": "Vì vậy, tất cả những ai sống bởi đức tin đều được phước cùng với Áp-ra-ham, là người đã tin Đức Chúa Trời."
         }
       },
       "decisions": [
@@ -2179,6 +2691,16 @@
           "L": "Car tous ceux qui [relèvent] des œuvres de la Loi sont sous une malédiction, car il est écrit : « Maudit [est] quiconque ne demeure pas dans toutes les choses écrites dans le livre de la Loi, pour les faire. »",
           "B": "Car tous ceux qui comptent sur les œuvres de la Loi sont sous une malédiction. L’Écriture dit en effet : « La malédiction est sur quiconque ne s’en tient pas à tout ce qui est écrit dans le livre de la Loi pour le mettre en pratique. »",
           "R": "Les gens qui comptent sur ce qu’ils font pour obéir à la Loi sont sous une malédiction. L’Écriture dit : « Quiconque ne continue pas à faire tout ce qui est écrit dans le livre de la Loi est sous la malédiction. »"
+        },
+        "ko": {
+          "L": "율법의 행위들에 속한 사람들은 다 저주 아래 있습니다. \"율법책에 기록된 모든 것을 계속 지켜 행하지 않는 사람은 누구나 저주를 받는다\"라고 기록되어 있기 때문입니다.",
+          "B": "율법의 행위에 기대는 사람은 누구나 저주 아래 있습니다. 성경에 \"율법책에 기록된 모든 것을 굳게 지켜 행하지 않는 사람은 누구나 저주를 받는다\" 하였습니다.",
+          "R": "율법이 명령하는 것을 행하는 데 기대는 사람들은 저주 아래 있습니다. 성경은 이렇게 말합니다. \"율법책에 기록된 모든 것을 끝까지 행하지 않는 사람은 누구나 저주를 받는다.\""
+        },
+        "vi": {
+          "L": "Vì tất cả những ai [cậy] vào những việc làm của luật pháp đều ở dưới sự nguyền rủa, vì có chép: \"Đáng nguyền rủa thay mọi người không cứ ở trong mọi điều đã chép trong sách luật pháp để làm theo.\"",
+          "B": "Vì tất cả những ai đặt địa vị mình trên những việc luật pháp đòi hỏi đều ở dưới sự nguyền rủa. Kinh Thánh có chép: \"Sự nguyền rủa ở trên mọi người không giữ vững và không làm theo mọi điều đã chép trong sách luật pháp.\"",
+          "R": "Những người trông cậy vào việc làm theo những gì luật pháp truyền dạy đều ở dưới sự nguyền rủa. Kinh Thánh chép: \"Ai không luôn luôn làm theo mọi điều đã chép trong sách luật pháp thì đều ở dưới sự nguyền rủa.\""
         }
       },
       "decisions": [
@@ -2351,6 +2873,88 @@
           "reason": "The Greek states a fact, not a wish, so Literal supplies \"est\" rather than the wish form \"soit\". Balanced says \"La malédiction est sur\" in both quotations, so that the two curses still meet (m3 on 3:13).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n48003010013",
+            "n48003010014",
+            "n48003010015",
+            "n48003010016",
+            "n48003010017",
+            "n48003010018",
+            "n48003010019",
+            "n48003010020",
+            "n48003010021",
+            "n48003010022",
+            "n48003010023",
+            "n48003010024",
+            "n48003010025",
+            "n48003010026",
+            "n48003010027",
+            "n48003010028"
+          ],
+          "choice": "Scripture quoted in the plain written style (해라체: \"저주를 받는다\")",
+          "alternatives": [
+            "합쇼체",
+            "the archaic \"-을 것이니라\""
+          ],
+          "reason": "Quotations of the law and the prophets keep the plain written style of Scripture in Korean, set apart from the 합쇼체 of the letter, as in Colossians 2:21 and Romans. The archaic endings of the older Bibles are not used.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48003010008",
+            "n48003010013"
+          ],
+          "choice": "\"sự nguyền rủa\", \"đáng nguyền rủa\" for the curse through 3:10-13",
+          "alternatives": [
+            "\"sự rủa sả\"",
+            "\"lời nguyền\""
+          ],
+          "reason": "The curse is God's judgment on those who break his covenant (m2). \"Nguyền rủa\" is the word for \"accursed\" in 1:8-9, so the family stays one; \"rủa sả\" is older church language.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48003010011",
+            "n48003010012"
+          ],
+          "choice": "\"như có chép\" (L); \"Kinh Thánh có chép\" (B); \"Kinh Thánh chép\" (R) for \"it is written\" (for the whole letter)",
+          "alternatives": [
+            "\"như đã viết\""
+          ],
+          "reason": "\"Chép\" is the verb Vietnamese uses for what stands written in Scripture, as in the Vietnamese Romans (1:17); Balanced and Readable name Scripture, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2419,6 +3023,16 @@
           "L": "Et que par la Loi personne ne soit justifié devant Dieu, [c’est] évident, car : « Le juste vivra par la foi. » \\v 12 Or la Loi n’est pas de la foi, mais : « Celui qui les aura pratiquées vivra par elles. »",
           "B": "Il est clair que personne n’est justifié devant Dieu par la Loi, puisque « celui qui est juste vivra par la foi ». \\v 12 Or la Loi ne repose pas sur la foi. Au contraire : « Celui qui met ces choses en pratique vivra par elles. »",
           "R": "Il est clair que personne n’est déclaré juste par Dieu parce qu’il obéit à la Loi. L’Écriture dit : « Ceux qui sont justes vivront par la foi. » \\v 12 Mais la Loi n’est pas fondée sur la foi. La Loi dit : « Celui qui fait ces choses vivra en les faisant. »"
+        },
+        "ko": {
+          "L": "율법으로는 아무도 하나님 앞에서 의롭다고 인정받지 못한다는 것이 분명합니다. \"의인은 믿음으로 살 것이다\" [하였기] 때문입니다. \\v 12 그러나 율법은 믿음에서 [난 것이] 아닙니다. 오히려 \"그것들을 행하는 사람은 그것들로 살 것이다\" [하였습니다].",
+          "B": "율법으로는 아무도 하나님 앞에서 의롭다고 인정받지 못한다는 것이 분명합니다. \"의로운 사람은 믿음으로 살 것이다\" 하였기 때문입니다. \\v 12 그러나 율법은 믿음에 바탕을 두고 있지 않습니다. 오히려 \"이것들을 행하는 사람은 그것으로 살 것이다\" 하였습니다.",
+          "R": "율법을 지켜서 하나님께 의롭다고 인정받을 사람이 아무도 없다는 것은 분명합니다. 성경은 \"의로운 사람은 믿음으로 살 것이다\" 하고 말합니다. \\v 12 그러나 율법은 믿음에 바탕을 두지 않습니다. 율법은 \"이것들을 행하는 사람은 그것을 행함으로써 살 것이다\" 하고 말합니다."
+        },
+        "vi": {
+          "L": "Và rõ ràng là không ai được xưng công chính trước mặt Đức Chúa Trời bởi luật pháp, vì: \"Người công chính sẽ sống bởi đức tin.\" \\v 12 Nhưng luật pháp không [đến] từ đức tin; trái lại: \"Người nào làm những điều ấy sẽ sống bởi những điều ấy.\"",
+          "B": "Rõ ràng là không ai được xưng công chính trước mặt Đức Chúa Trời nhờ luật pháp, vì \"Người công chính sẽ sống bởi đức tin.\" \\v 12 Nhưng luật pháp không dựa trên đức tin. Trái lại, \"Ai làm những điều này sẽ sống nhờ những điều ấy.\"",
+          "R": "Rõ ràng là không ai được Đức Chúa Trời công nhận là công chính nhờ giữ luật pháp. Kinh Thánh chép: \"Người công chính sẽ sống bởi đức tin.\" \\v 12 Nhưng luật pháp không dựa trên đức tin. Luật pháp nói: \"Người nào làm những điều này sẽ sống nhờ làm những điều ấy.\""
         }
       },
       "decisions": [
@@ -2629,6 +3243,50 @@
           "reason": "Paul quotes Habakkuk 2:4 in the same words as in Romans 1:17, so the Swahili quotation is the same at each level as there. Leviticus 18:5 likewise follows Romans 10:5 (\"ataishi kwa kuyafanya\" in Readable).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48003011013",
+            "n48003011014",
+            "n48003011015",
+            "n48003011016"
+          ],
+          "choice": "\"의인\" (L); \"의로운 사람\" (B, R)",
+          "alternatives": [
+            "\"의로운 자\""
+          ],
+          "reason": "Literal uses the short word \"의인\" (a righteous person), close to the Greek's one word; Balanced and Readable say \"의로운 사람\", the plainer form used in Romans. Both keep the root \"의\". |",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n48003011012",
+            "n48003012009"
+          ],
+          "choice": "\"người công chính\", \"người nào\", \"ai\", with no gender span",
+          "alternatives": [
+            "a gender span as in the English"
+          ],
+          "reason": "Vietnamese \"người\" and \"ai\" include men and women, so the setting has nothing to change.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2708,6 +3366,16 @@
           "L": "{{christos:Christ|Le Messie}} nous a rachetés de la malédiction de la Loi, étant devenu malédiction pour nous, car il est écrit : « Maudit [est] quiconque est pendu au bois », \\v 14 afin que la bénédiction d’Abraham parvienne aux nations {{christos:en Christ|dans le Messie}} Jésus, afin que nous recevions par la foi la promesse de l’Esprit.",
           "B": "Le {{christos:Christ|Messie}} nous a rachetés de la malédiction de la Loi en devenant malédiction à notre place, car il est écrit : « La malédiction est sur quiconque est pendu au bois. » \\v 14 Il l’a fait pour que, {{christos:en Christ|dans le Messie}} Jésus, la bénédiction d’Abraham parvienne aux nations, et pour que nous recevions par la foi l’Esprit promis.",
           "R": "Le {{christos:Christ|Messie}} a payé le prix pour nous libérer de la malédiction que la Loi apporte. Il l’a fait en prenant sur {{deity_pronoun:lui|Lui}} la malédiction à notre place. L’Écriture dit : « Quiconque est pendu au bois est sous la malédiction. » \\v 14 Il l’a fait pour que la bénédiction que Dieu a promise à Abraham parvienne aux non-Juifs par le {{christos:Christ|Messie}} Jésus. Et {{deity_pronoun:il|Il}} l’a fait pour que nous recevions, par la foi, l’Esprit que Dieu a promis."
+        },
+        "ko": {
+          "L": "{{christos:그리스도|메시아}}께서 우리를 위하여 저주가 되셔서, 율법의 저주에서 우리를 속량하셨습니다. \"나무에 달린 사람은 누구나 저주를 받은 사람이다\"라고 기록되어 있기 때문입니다. \\v 14 이는 아브라함의 복이 {{christos:그리스도|메시아}} 예수 안에서 이방 사람들에게 이르게 하고, 우리가 믿음을 통하여 성령의 약속을 받게 하려는 것입니다.",
+          "B": "{{christos:그리스도|메시아}}께서 우리를 대신해 저주가 되셔서, 율법의 저주에서 우리를 속량하셨습니다. 성경에 \"나무에 달린 사람은 누구나 저주를 받은 사람이다\" 하고 기록되어 있습니다. \\v 14 그분이 이렇게 하신 것은 {{christos:그리스도|메시아}} 예수 안에서 아브라함의 복이 이방 사람들에게 이르고, 우리가 믿음으로 약속된 성령을 받게 하시려는 것이었습니다.",
+          "R": "{{christos:그리스도|메시아}}께서 값을 치르시고 율법이 가져오는 저주에서 우리를 자유롭게 해 주셨습니다. 그분은 우리를 위해 그 저주를 자신이 대신 받으셨습니다. 성경은 \"나무에 달린 사람은 누구나 저주를 받은 사람이다\" 하고 말합니다. \\v 14 그분이 이렇게 하신 것은 하나님께서 아브라함에게 약속하신 복이 {{christos:그리스도|메시아}} 예수를 통해 유대인이 아닌 사람들에게도 이르게 하시려는 것이었습니다. 또 우리가 믿음으로 하나님께서 약속하신 성령을 받게 하시려는 것이었습니다."
+        },
+        "vi": {
+          "L": "{{christos:Đấng Christ|Đấng Mê-si-a}} đã cứu chuộc chúng ta khỏi sự nguyền rủa của luật pháp, bằng cách trở nên sự nguyền rủa vì chúng ta, vì có chép: \"Đáng nguyền rủa thay mọi người bị treo trên cây gỗ,\" \\v 14 để phước lành của Áp-ra-ham đến với các dân ngoại trong {{christos:Đấng Christ|Đấng Mê-si-a}} Giê-xu, để chúng ta nhận lãnh lời hứa về Thánh Linh qua đức tin.",
+          "B": "{{christos:Đấng Christ|Đấng Mê-si-a}} đã cứu chuộc chúng ta khỏi sự nguyền rủa của luật pháp bằng cách trở nên sự nguyền rủa thay cho chúng ta, vì Kinh Thánh có chép: \"Sự nguyền rủa ở trên mọi người bị treo trên cây gỗ.\" \\v 14 Ngài làm vậy để trong Đức Giê-xu {{christos:Christ|Mê-si-a}} phước lành của Áp-ra-ham đến được với các dân ngoại, và để qua đức tin chúng ta nhận lãnh Thánh Linh đã được hứa ban.",
+          "R": "{{christos:Đấng Christ|Đấng Mê-si-a}} đã trả giá để giải thoát chúng ta khỏi sự nguyền rủa mà luật pháp mang đến. Ngài làm điều đó bằng cách gánh lấy sự nguyền rủa ấy cho chúng ta. Kinh Thánh chép: \"Ai bị treo trên cây gỗ đều ở dưới sự nguyền rủa.\" \\v 14 Ngài làm vậy để phước lành Đức Chúa Trời đã hứa với Áp-ra-ham đến được với các dân ngoại qua Đức Giê-xu {{christos:Christ|Mê-si-a}}. Và {{deity_pronoun:ngài|Ngài}} làm vậy để qua đức tin, chúng ta nhận được Thánh Linh mà Đức Chúa Trời đã hứa."
         }
       },
       "decisions": [
@@ -3019,6 +3687,71 @@
           "alternatives": [],
           "reason": "The Greek has no article; as in Colossians 2:8 and 2:20, Literal puts the article inside the span, where \"Christ\" needs none and \"Messie\" does.",
           "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48003013003"
+          ],
+          "choice": "\"속량하다\" (L, B); \"값을 치르시고 ... 자유롭게 해 주셨습니다\" (R)",
+          "alternatives": [
+            "\"구속하다\"",
+            "\"구원하다\""
+          ],
+          "reason": "The verb means to set free by paying the price (the meaning decision). \"속량하다\" says exactly that, buying someone out of bondage, and keeps the picture of payment that \"구원하다\" loses; \"구속하다\" is the noun's usual verb in Korean, but also means \"to arrest\". Readable says what happened, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48003013003"
+          ],
+          "choice": "\"cứu chuộc\" (L, B); \"trả giá để giải thoát\" (R)",
+          "alternatives": [
+            "\"giải cứu\"",
+            "\"chuộc lại\""
+          ],
+          "reason": "\"Cứu chuộc\" is to set free by paying a price (m1), the word the Vietnamese Colossians (1:14) and Romans (3:24) use; Readable says what it means.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n48003013002",
+            "n48003014021"
+          ],
+          "choice": "\"chúng ta\" for \"us\" and \"we\"",
+          "alternatives": [
+            "\"chúng tôi\""
+          ],
+          "reason": "The meaning decision leaves open whether \"us\" is the Jewish believers first (m4); Vietnamese must choose between inclusive and exclusive \"we\", and the inclusive \"chúng ta\" takes in the readers, who in verse 14 receive the Spirit with Paul.",
+          "uncertain": true,
           "footnote": false
         }
       ],

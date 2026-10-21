@@ -42,6 +42,16 @@ class BudgetsTest(unittest.TestCase):
         total = sum(p.stat().st_size for p in self.site.rglob("*") if p.is_file())
         self.assertEqual(found["site_total"], (total, None))
 
+    def test_a_chapter_page_counts_its_shared_data_and_reader_data_is_no_asset(self):
+        # Every language's page of a chapter loads the chapter's shared data;
+        # the reader data scripts are data, not code.
+        self.write("chapter-data/jhn/1.js", os.urandom(5000))
+        self.write("reader-en.js", os.urandom(8000))
+        found = check_budgets.measure(self.site)
+        page, data = self.site / "es/jhn/1/index.html", self.site / "chapter-data/jhn/1.js"
+        self.assertEqual(found["chapter_page_gz"], (check_budgets.gzipped(page) + check_budgets.gzipped(data), page))
+        self.assertEqual(found["js_css_asset_gz"][1], self.site / "style.css")
+
     def test_within_budget_passes(self):
         failed, report = self.run_check()
         self.assertEqual(failed, [])

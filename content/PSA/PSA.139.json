@@ -38,6 +38,21 @@
           "L": "지휘자를 위하여. 다윗의 시. \\q {{divine_name:주|야훼}}여, 주님께서 저를 살피셨고, [저를] 아십니다.",
           "B": "음악 지휘자를 위하여. 다윗의 시. \\q {{divine_name:주|야훼}}여, 주님께서는 제 속을 깊이 들여다보셨고, 저를 알고 계십니다.",
           "R": "찬양 인도자를 위해 다윗이 지은 노래. \\q {{divine_name:주|야훼}}여, 주님께서는 제 마음속 깊은 곳까지 살펴보셔서 저에 대해 모든 것을 알고 계십니다."
+        },
+        "fr": {
+          "L": "Au chef de chœur. De David. Psaume. \\q {{divine_name:SEIGNEUR|Yahvé}}, {{deity_pronoun:tu|Tu}} m’as sondé, et {{deity_pronoun:tu|Tu}} [me] connais.",
+          "B": "Au chef de chœur. De David. Un psaume. \\q {{divine_name:SEIGNEUR|Yahvé}}, {{deity_pronoun:tu|Tu}} as regardé au plus profond de moi, et {{deity_pronoun:tu|Tu}} me connais.",
+          "R": "Pour le chef des musiciens. Un chant de David. \\q {{divine_name:SEIGNEUR|Yahvé}}, {{deity_pronoun:tu|Tu}} as regardé tout au fond de moi, et {{deity_pronoun:tu|Tu}} sais tout de moi."
+        },
+        "sw": {
+          "L": "Kwa kiongozi wa kwaya. Ya Daudi. Zaburi. \\q Ee {{divine_name:BWANA|Yahwe}}, umenichunguza, {{deity_pronoun:nawe|Nawe}} unanijua.",
+          "B": "Kwa kiongozi wa kwaya. Ya Daudi. Zaburi. \\q Ee {{divine_name:BWANA|Yahwe}}, umenitazama ndani kabisa, {{deity_pronoun:nawe|Nawe}} unanijua.",
+          "R": "Kwa kiongozi wa waimbaji. Wimbo wa Daudi. \\q {{divine_name:BWANA|Yahwe}}, umenitazama ndani kabisa, {{deity_pronoun:nawe|Nawe}} unajua kila kitu kunihusu."
+        },
+        "es": {
+          "L": "Al director del coro. De David. Salmo. \\q {{divine_name:SEÑOR|Yahvé}}, {{deity_pronoun:tú|Tú}} me has examinado y [me] conoces.",
+          "B": "Al director del coro. De David. Salmo. \\q {{divine_name:SEÑOR|Yahvé}}, {{deity_pronoun:tú|Tú}} has mirado en lo profundo de mí, y me conoces.",
+          "R": "Para el director de la música. Canto de David. \\q {{divine_name:SEÑOR|Yahvé}}, {{deity_pronoun:tú|Tú}} has mirado muy dentro de mí, y sabes todo de mí."
         }
       },
       "decisions": [
@@ -211,6 +226,73 @@
           "reason": "As the style guide (section 7a). The second-person \"you\" is \"주님\", a title of address, not the divine name, so it has no span.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191390010011",
+            "o191390010031"
+          ],
+          "choice": "\"Au chef de chœur\" (Literal, Balanced), \"Pour le chef des musiciens\" (Readable) for lamnatseaḥ; \"psaume\" (Literal, Balanced), \"chant\" (Readable) for mizmor",
+          "alternatives": [
+            "\"Au maître de chant\""
+          ],
+          "reason": "As the terms note sets for the psalm titles, so that every title reads the same in French. Readable follows the English Readable, which calls the psalm a song.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191390010012",
+            "o191390010031"
+          ],
+          "choice": "\"Kwa kiongozi wa kwaya\" (L, B) and \"Kwa kiongozi wa waimbaji\" (R) for the director; \"Zaburi\" (L, B) and \"Wimbo\" (R) for a psalm, through Psalms 135-150",
+          "alternatives": [
+            "\"Kwa mkuu wa waimbaji\" at every level"
+          ],
+          "reason": "The title names the leader of the temple music. \"Kwaya\" is the everyday word for a choir; Readable says plainly that he led the singers. \"Zaburi\" is the Swahili name for a psalm; Readable calls it a song, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191390010011",
+            "o191390010012",
+            "o191390010031"
+          ],
+          "choice": "\"Al director del coro. De David. Salmo.\" (L, B); \"Para el director de la música. Canto de David.\" (R)",
+          "alternatives": [
+            "Al músico principal"
+          ],
+          "reason": "The title words lamnatseach and mizmor follow the forms used throughout the Spanish Psalms: \"Al director del coro\" and \"Salmo\" at Literal and Balanced; Readable says \"Para el director de la música\" and \"Canto\", as the English Readable says \"leader of the music\" and \"song\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -256,6 +338,21 @@
           "L": "바로 주님께서 제가 앉음과 제가 일어섬을 아시고, \\q 멀리서 제 생각을 깨달으십니다.",
           "B": "제가 앉든지 일어서든지 주님께서는 아십니다. \\q 멀리 계셔도 제 생각을 꿰뚫어 보십니다.",
           "R": "제가 앉을 때나 일어설 때나 주님께서는 다 아십니다. \\q 멀리서도 제 생각을 다 알아차리십니다."
+        },
+        "fr": {
+          "L": "Toi, {{deity_pronoun:tu|Tu}} connais mon assise et mon lever ; \\q {{deity_pronoun:tu|Tu}} discernes ma pensée de loin.",
+          "B": "Que je m’assoie ou que je me lève, {{deity_pronoun:tu|Tu}} le sais ; \\q de loin même, {{deity_pronoun:tu|Tu}} saisis ce que je pense.",
+          "R": "Quand je m’assois ou quand je me lève, {{deity_pronoun:tu|Tu}} le sais. \\q Même de loin, {{deity_pronoun:tu|Tu}} comprends mes pensées."
+        },
+        "sw": {
+          "L": "Wewe unajua kuketi kwangu na kuinuka kwangu; \\q unaielewa fikira yangu kutoka mbali.",
+          "B": "Iwe ninaketi au ninainuka, unajua; \\q hata ukiwa mbali unatambua ninachofikiri.",
+          "R": "Nikiketi au nikisimama, unajua. \\q Hata ukiwa mbali, unaelewa mawazo yangu."
+        },
+        "es": {
+          "L": "Tú conoces mi sentarme y mi levantarme; \\q {{deity_pronoun:tú|Tú}} entiendes mi pensamiento desde lejos.",
+          "B": "Si me siento o me levanto, {{deity_pronoun:tú|Tú}} lo sabes; \\q aun desde lejos {{deity_pronoun:tú|Tú}} comprendes lo que pienso.",
+          "R": "Si me siento o me pongo de pie, {{deity_pronoun:tú|Tú}} lo sabes. \\q Aun desde lejos, {{deity_pronoun:tú|Tú}} entiendes mis pensamientos."
         }
       },
       "decisions": [
@@ -320,6 +417,25 @@
           "reason": "The Hebrew writes out \"you\" for emphasis: you yourself know.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o191390020011"
+          ],
+          "choice": "\"Wewe\" written out at the start of the verse at Literal",
+          "alternatives": [
+            "leaving \"you\" in the verb alone"
+          ],
+          "reason": "The Hebrew adds the pronoun \"you\" for emphasis; Literal shows it with the free pronoun, which, standing first in the sentence, has its capital either way.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -363,6 +479,21 @@
           "L": "제가 길을 가는 것과 제가 눕는 것을 주님께서 키질하시고, \\q 제 모든 길을 잘 알고 계십니다.",
           "B": "제가 길을 나설 때나 누울 때나 주님께서는 그 모두를 샅샅이 살피십니다. \\q 제가 가는 모든 길을 주님께서는 훤히 아십니다.",
           "R": "제가 밖에 나갈 때도, 누워서 쉴 때도 주님께서는 저를 자세히 지켜보십니다. \\q 제가 가는 길을 주님께서는 하나하나 다 아십니다."
+        },
+        "fr": {
+          "L": "Mon chemin et mon coucher, {{deity_pronoun:tu|Tu}} les passes au crible, \\q et tous mes chemins, {{deity_pronoun:tu|Tu}} les connais bien.",
+          "B": "Quand je marche et quand je me couche, {{deity_pronoun:tu|Tu}} examines tout ; \\q chaque chemin que je prends {{deity_pronoun:t’|T’}}est familier.",
+          "R": "Tu m’observes de près quand je sors et quand je me couche pour dormir. \\q Tu connais chaque chemin que je prends."
+        },
+        "sw": {
+          "L": "Safari yangu na kulala kwangu unavichuja, \\q {{deity_pronoun:nawe|Nawe}} umezizoea njia zangu zote.",
+          "B": "Ninaposafiri na ninapolala, unayapepeta yote; \\q kila njia ninayoipita unaijua vizuri.",
+          "R": "Unaniangalia kwa makini ninapotoka na ninapolala kupumzika. \\q Unaijua kila njia ninayopita."
+        },
+        "es": {
+          "L": "Mi andar y mi acostarme {{deity_pronoun:tú|Tú}} los cribas, \\q y {{deity_pronoun:tú|Tú}} estás familiarizado con todos mis caminos.",
+          "B": "Cuando viajo y cuando me acuesto, {{deity_pronoun:tú|Tú}} lo examinas todo; \\q cada senda que tomo {{deity_pronoun:te|Te}} es bien conocida.",
+          "R": "Tú observas con atención cuando salgo y cuando me acuesto a descansar. \\q Conoces cada camino que tomo."
         }
       },
       "decisions": [
@@ -479,6 +610,21 @@
           "L": "참으로 제 혀에 말이 [아직] 없는데도, \\q 보십시오, {{divine_name:주|야훼}}여, 주님께서는 그것을 다 아십니다.",
           "B": "제 혀에 아직 말 한마디 오르지 않았는데도, \\q {{divine_name:주|야훼}}여, 주님께서는 벌써 그 모두를 아십니다.",
           "R": "{{divine_name:주|야훼}}여, 제가 무슨 말을 하기도 전에 \\q 주님께서는 제가 할 말을 다 아십니다."
+        },
+        "fr": {
+          "L": "Car [il n’y a] pas encore une parole sur ma langue, \\q [que] voici, {{divine_name:SEIGNEUR|Yahvé}}, {{deity_pronoun:tu|Tu}} la connais tout entière.",
+          "B": "Aucun mot n’est encore sur ma langue, \\q et déjà, {{divine_name:SEIGNEUR|Yahvé}}, {{deity_pronoun:tu|Tu}} le connais tout entier.",
+          "R": "{{divine_name:SEIGNEUR|Yahvé}}, avant même que je dise quelque chose, \\q {{deity_pronoun:tu|Tu}} sais tout ce que je vais dire."
+        },
+        "sw": {
+          "L": "Kwa maana hakuna neno ulimini mwangu, \\q [ila] tazama, Ee {{divine_name:BWANA|Yahwe}}, unalijua lote.",
+          "B": "Neno bado halijafika ulimini mwangu, \\q na tayari, Ee {{divine_name:BWANA|Yahwe}}, unalijua lote.",
+          "R": "{{divine_name:BWANA|Yahwe}}, hata kabla sijasema kitu, \\q unajua yote nitakayosema."
+        },
+        "es": {
+          "L": "Porque no [hay] palabra en mi lengua, \\q [que,] mira, {{divine_name:SEÑOR|Yahvé}}, {{deity_pronoun:tú|Tú}} no la conozcas toda.",
+          "B": "Aún no está la palabra en mi lengua, \\q y ya, {{divine_name:SEÑOR|Yahvé}}, {{deity_pronoun:tú|Tú}} la conoces por completo.",
+          "R": "{{divine_name:SEÑOR|Yahvé}}, aun antes de que yo diga algo, \\q {{deity_pronoun:tú|Tú}} sabes todo lo que voy a decir."
         }
       },
       "decisions": [
@@ -556,6 +702,21 @@
           "L": "뒤에서와 앞에서 주님께서 저를 에워싸시고, \\q 제 위에 주님의 손바닥을 얹으십니다.",
           "B": "주님께서 뒤에서도 앞에서도 저를 둘러싸시고, \\q 제게 주님의 손을 얹어 주셨습니다.",
           "R": "주님께서는 제 뒤에도 앞에도 계셔서 저를 감싸 주십니다. \\q 주님의 손을 늘 제 위에 얹고 계십니다."
+        },
+        "fr": {
+          "L": "Derrière et devant, {{deity_pronoun:tu|Tu}} m’enserres, \\q et {{deity_pronoun:tu|Tu}} poses sur moi {{deity_pronoun:ta|Ta}} paume.",
+          "B": "Tu m’entoures par-derrière et par-devant ; \\q {{deity_pronoun:tu|Tu}} as posé {{deity_pronoun:ta|Ta}} main sur moi.",
+          "R": "Tu es tout autour de moi, derrière moi et devant moi. \\q Tu gardes {{deity_pronoun:ta|Ta}} main sur moi."
+        },
+        "sw": {
+          "L": "Nyuma na mbele umenizingira, \\q {{deity_pronoun:nawe|Nawe}} umeweka kiganja {{deity_pronoun:chako|Chako}} juu yangu.",
+          "B": "Umenizunguka nyuma na mbele; \\q umeweka mkono {{deity_pronoun:wako|Wako}} juu yangu.",
+          "R": "Uko pande zote kunizunguka, nyuma yangu na mbele yangu. \\q Unaweka mkono {{deity_pronoun:wako|Wako}} juu yangu."
+        },
+        "es": {
+          "L": "Por detrás y por delante {{deity_pronoun:tú|Tú}} me rodeas, \\q y pones sobre mí {{deity_pronoun:tu|Tu}} palma.",
+          "B": "Me encierras por detrás y por delante; \\q has puesto {{deity_pronoun:tu|Tu}} mano sobre mí.",
+          "R": "Estás a mi alrededor, detrás de mí y delante de mí. \\q Mantienes {{deity_pronoun:tu|Tu}} mano sobre mí."
         }
       },
       "decisions": [
@@ -630,6 +791,21 @@
           "L": "[이런] 앎은 저에게 너무 놀랍습니다. \\q [그것은] 높아서 제가 [거기에] 이를 수 없습니다.",
           "B": "이런 앎은 저에게 너무나 놀라워 감당할 수 없습니다. \\q 너무 높아서 제가 미칠 수 없습니다.",
           "R": "주님께서 저를 이렇게 잘 아시는 것이 너무나 놀랍습니다. \\q 너무 높아서 저는 다 깨달을 수 없습니다."
+        },
+        "fr": {
+          "L": "[Une telle] connaissance [est] trop merveilleuse pour moi ; \\q elle est élevée, je ne peux [l’atteindre].",
+          "B": "Une telle connaissance me dépasse, elle est trop merveilleuse ; \\q elle s’élève si haut que je ne peux l’atteindre.",
+          "R": "La façon dont {{deity_pronoun:tu|Tu}} me connais est trop merveilleuse pour moi. \\q C’est tellement au-dessus de moi que je ne peux pas le comprendre."
+        },
+        "sw": {
+          "L": "Maarifa [kama hayo ni] ya ajabu mno kwangu; \\q [ni] ya juu; siwezi [kuyafikia].",
+          "B": "Maarifa ya namna hii yamenizidi, ni ya ajabu mno; \\q yako juu sana kiasi kwamba siwezi kuyafikia.",
+          "R": "Jinsi unavyonijua ni jambo la ajabu mno kwangu. \\q Liko juu mno kwangu hata siwezi kulielewa."
+        },
+        "es": {
+          "L": "[Tal] conocimiento [es] demasiado maravilloso para mí; \\q es alto; no puedo [alcanzar]lo.",
+          "B": "Un conocimiento así me sobrepasa, es demasiado maravilloso; \\q se eleva tan alto que no lo puedo alcanzar.",
+          "R": "Lo bien que {{deity_pronoun:tú|Tú}} me conoces es demasiado maravilloso para mí. \\q Está tan por encima de mí que no lo puedo entender."
         }
       },
       "decisions": [
@@ -722,6 +898,21 @@
           "L": "제가 주님의 영을 떠나 어디로 가겠습니까? \\q 주님의 얼굴을 피해 어디로 도망하겠습니까?",
           "B": "제가 어디로 가야 주님의 영을 벗어날 수 있겠습니까? \\q 어디로 달아나야 주님 앞을 피할 수 있겠습니까?",
           "R": "제가 어디에 가야 주님의 영을 피할 수 있겠습니까? \\q 어디로 달아나야 주님을 피해 숨을 수 있겠습니까?"
+        },
+        "fr": {
+          "L": "Où irai-je loin de {{deity_pronoun:ton|Ton}} Esprit, \\q et où fuirai-je loin de {{deity_pronoun:ta|Ta}} face ?",
+          "B": "Où pourrais-je aller pour échapper à {{deity_pronoun:ton|Ton}} Esprit ? \\q Où pourrais-je courir pour fuir {{deity_pronoun:ta|Ta}} présence ?",
+          "R": "Y a-t-il un endroit où je pourrais aller pour échapper à {{deity_pronoun:ton|Ton}} Esprit ? \\q Où pourrais-je courir pour me cacher de {{deity_pronoun:toi|Toi}} ?"
+        },
+        "sw": {
+          "L": "Niende wapi mbali na Roho {{deity_pronoun:wako|Wako}}, \\q na nikimbilie wapi mbali na uso {{deity_pronoun:wako|Wako}}?",
+          "B": "Ningeweza kwenda wapi ili niepukane na Roho {{deity_pronoun:wako|Wako}}? \\q Ningekimbilia wapi ili nijiepushe na uwepo {{deity_pronoun:wako|Wako}}?",
+          "R": "Je, kuna mahali popote ninapoweza kwenda ili niwe mbali na Roho {{deity_pronoun:wako|Wako}}? \\q Ningekimbilia wapi nikujifiche?"
+        },
+        "es": {
+          "L": "¿Adónde iré lejos de {{deity_pronoun:tu|Tu}} Espíritu, \\q y adónde huiré de {{deity_pronoun:tu|Tu}} rostro?",
+          "B": "¿Adónde podría ir para alejarme de {{deity_pronoun:tu|Tu}} Espíritu? \\q ¿Adónde podría correr para escapar de {{deity_pronoun:tu|Tu}} presencia?",
+          "R": "¿Hay algún lugar adonde pudiera ir para alejarme de {{deity_pronoun:tu|Tu}} Espíritu? \\q ¿Adónde podría correr para esconderme de {{deity_pronoun:ti|Ti}}?"
         }
       },
       "decisions": [
@@ -851,6 +1042,21 @@
           "L": "제가 하늘로 올라가도 주님께서 거기 [계시고], \\q 제가 스올에 침상을 펴도, 보십시오, 주님께서 [계십니다]!",
           "B": "제가 하늘로 올라간다 해도 주님께서는 거기에 계시고, \\q 스올에 눕는다 해도 주님께서는 거기에도 계십니다.",
           "R": "제가 하늘 위로 올라가도 주님께서 거기 계실 것입니다. \\q 제가 죽은 사람들이 있는 곳에 눕는다 해도 주님께서 거기에도 계실 것입니다."
+        },
+        "fr": {
+          "L": "Si je monte [aux] cieux, là [{{deity_pronoun:tu|Tu}} es], {{deity_pronoun:toi|Toi}} ; \\q et [si] j’étends ma couche [dans] le Shéol, {{deity_pronoun:te|Te}} voici !",
+          "B": "Si je montais jusqu’aux cieux, {{deity_pronoun:tu|Tu}} y es ; \\q si je me couchais dans le séjour des morts, là aussi {{deity_pronoun:tu|Tu}} es.",
+          "R": "Si je pouvais monter dans le ciel, je {{deity_pronoun:t’|T’}}y trouverais. \\q Si je me couchais au pays des morts, {{deity_pronoun:tu|Tu}} y serais aussi."
+        },
+        "sw": {
+          "L": "Nikipanda [hadi] mbinguni, {{deity_pronoun:wewe|Wewe}} [uko] huko; \\q na [nikitandika] kitanda changu [katika] Kuzimu, tazama, {{deity_pronoun:wewe|Wewe}} [uko] hapa!",
+          "B": "Nikipanda juu mbinguni, {{deity_pronoun:wewe|Wewe}} uko huko; \\q nikilala Kuzimu, {{deity_pronoun:wewe|Wewe}} uko huko pia.",
+          "R": "Kama ningeweza kupanda angani, ningekukuta huko. \\q Kama ningelala Kuzimu, mahali pa wafu, {{deity_pronoun:wewe|Wewe}} ungekuwa huko pia."
+        },
+        "es": {
+          "L": "Si subo [a los] cielos, allí [estás] {{deity_pronoun:tú|Tú}}; \\q y [si] tiendo mi cama [en] el Seol, ¡aquí [estás] {{deity_pronoun:tú|Tú}}!",
+          "B": "Si subiera a los cielos, {{deity_pronoun:tú|Tú}} estás allí; \\q si me acostara en el lugar de los muertos, también allí estás {{deity_pronoun:tú|Tú}}.",
+          "R": "Si pudiera subir al cielo, {{deity_pronoun:te|Te}} encontraría allí. \\q Si me acostara en el lugar de los muertos, {{deity_pronoun:tú|Tú}} también estarías allí."
         }
       },
       "decisions": [
@@ -960,6 +1166,71 @@
           "reason": "The name is kept, as the English keeps \"Sheol\"; \"음부\" is an older church word few readers know, \"무덤\" is one grave, and \"지옥\" (hell) says a place of punishment, which the word does not mean here. Readable says \"죽은 사람들이 있는 곳\" (the place of the dead).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191390080061"
+          ],
+          "choice": "\"le Shéol\" (Literal), \"le séjour des morts\" (Balanced), \"le pays des morts\" (Readable)",
+          "alternatives": [
+            "\"l'enfer\""
+          ],
+          "reason": "The terms note sets \"le Shéol\" at Literal and \"le séjour des morts\" at Balanced and Readable; Readable uses the plainer \"pays des morts\" for young readers, as the English Readable says \"the place of the dead\". Sheol is the place of all the dead, not a place of punishment, so \"enfer\" would mislead.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191390080071"
+          ],
+          "choice": "\"Kuzimu\" for Sheol at every level, with \"mahali pa wafu\" (the place of the dead) added at Readable",
+          "alternatives": [
+            "\"Sheoli\"",
+            "\"kaburi\""
+          ],
+          "reason": "Swahili \"Kuzimu\" is the ordinary word for the world of the dead, so it already says what Sheol is; Readable adds the explanation, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191390080071"
+          ],
+          "choice": "el Seol (L); el lugar de los muertos (B, R)",
+          "alternatives": [
+            "el sepulcro",
+            "el abismo"
+          ],
+          "reason": "Sheol is the world of the dead (meaning decision). Literal keeps the name \"el Seol\"; Balanced and Readable say \"el lugar de los muertos\", the wording used for Sheol across the Spanish Old Testament, even where the English Balanced keeps \"Sheol\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -999,6 +1270,21 @@
           "L": "제가 새벽의 날개를 들어 올려, \\q 바다 맨 끝에 자리 잡는다 해도,",
           "B": "제가 새벽의 날개를 타고 날아올라 \\q 가장 먼 바다 건너편에 가서 산다 해도,",
           "R": "제가 해가 뜨는 동쪽 끝으로 날아갈 수도 있고, \\q 서쪽 바다 건너 먼 곳에 가서 살 수도 있을 것입니다."
+        },
+        "fr": {
+          "L": "[Si] je prends [les] ailes de [l’]aurore, \\q [si] je m’établis à l’extrémité de la mer,",
+          "B": "Si je m’envolais sur les ailes de l’aurore \\q pour aller vivre au-delà de la mer la plus lointaine,",
+          "R": "Je pourrais m’envoler vers l’est, là où le soleil se lève, \\q ou aller vivre très loin de l’autre côté de la mer, à l’ouest."
+        },
+        "sw": {
+          "L": "Nikiziinua mbawa za alfajiri, \\q nikikaa mwisho kabisa wa bahari,",
+          "B": "Nikiruka juu ya mbawa za alfajiri \\q na kwenda kuishi ng'ambo ya bahari iliyo mbali kabisa,",
+          "R": "Ningeweza kuruka hadi mashariki, jua linakochomoza, \\q au kwenda kuishi mbali ng'ambo ya bahari, magharibi."
+        },
+        "es": {
+          "L": "[Si] tomo [las] alas [de la] aurora, \\q [si] me establezco en el extremo del mar,",
+          "B": "Si alzo el vuelo en las alas de la aurora \\q y me voy a vivir más allá del mar más lejano,",
+          "R": "Podría volar hacia el oriente, por donde sale el sol, \\q o irme a vivir muy lejos, al otro lado del mar, en el occidente."
         }
       },
       "decisions": [
@@ -1097,6 +1383,21 @@
           "L": "또한 거기에서 주님의 손이 저를 이끄시고, \\q 주님의 오른손이 저를 움켜잡으실 것입니다.",
           "B": "거기서도 주님께서 손수 저를 이끌고 계시고, \\q 오른손으로 저를 꼭 붙잡고 계실 것입니다.",
           "R": "그래도 거기서 주님께서는 제 손을 잡고 이끄실 것입니다. \\q 주님의 힘센 오른손이 저를 꼭 붙들어 주실 것입니다."
+        },
+        "fr": {
+          "L": "là aussi {{deity_pronoun:ta|Ta}} main me conduira, \\q et {{deity_pronoun:ta|Ta}} droite me saisira.",
+          "B": "là aussi {{deity_pronoun:ta|Ta}} main me conduirait, \\q et {{deity_pronoun:ta|Ta}} main droite me tiendrait.",
+          "R": "Même là, {{deity_pronoun:tu|Tu}} me conduirais par la main. \\q Ta main droite puissante me tiendrait bien."
+        },
+        "sw": {
+          "L": "hata huko mkono {{deity_pronoun:wako|Wako}} utaniongoza, \\q na mkono {{deity_pronoun:wako|Wako}} wa kuume utanikamata.",
+          "B": "huko pia mkono {{deity_pronoun:wako|Wako}} ungekuwa ukiniongoza, \\q na mkono {{deity_pronoun:wako|Wako}} wa kulia ungenishika.",
+          "R": "Hata huko ungeniongoza kwa mkono. \\q Mkono {{deity_pronoun:wako|Wako}} wa kulia wenye nguvu ungenishika."
+        },
+        "es": {
+          "L": "también allí {{deity_pronoun:tu|Tu}} mano me guiará, \\q y {{deity_pronoun:tu|Tu}} diestra me asirá.",
+          "B": "también allí {{deity_pronoun:tu|Tu}} mano me estaría guiando, \\q y {{deity_pronoun:tu|Tu}} mano derecha me sostendría.",
+          "R": "Aun allí {{deity_pronoun:tú|Tú}} me llevarías de la mano. \\q Tu fuerte mano derecha me sujetaría."
         }
       },
       "decisions": [
@@ -1172,6 +1473,21 @@
           "L": "또 제가 정녕 어둠이 저를 짓누를 것이요 \\q 제 주위의 빛이 밤이 될 것이라고 말한다 해도,",
           "B": "제가 어둠이 틀림없이 저를 덮쳐 버리고 \\q 제 주위의 빛이 밤으로 바뀔 것이라고 혼잣말을 한다 해도,",
           "R": "어둠이 저를 삼켜 버리고 \\q 제 주위의 빛이 밤이 될 거라고 생각할 때도 있을 것입니다."
+        },
+        "fr": {
+          "L": "Et [si] je dis : Sûrement les ténèbres m’écraseront, \\q et la lumière autour de moi [sera] nuit,",
+          "B": "Si je me disais que les ténèbres vont m’engloutir \\q et que la lumière autour de moi va se changer en nuit,",
+          "R": "Je pourrais penser que l’obscurité va m’avaler \\q et que la lumière autour de moi va devenir la nuit."
+        },
+        "sw": {
+          "L": "Na [nikisema], hakika giza litaniponda, \\q na nuru inayonizunguka [itakuwa] usiku,",
+          "B": "Nikijiambia kwamba giza hakika litanimeza \\q na nuru inayonizunguka itageuka kuwa usiku,",
+          "R": "Ningeweza kufikiri kwamba giza litanimeza \\q na nuru inayonizunguka itakuwa usiku."
+        },
+        "es": {
+          "L": "Y [si] digo: «Ciertamente las tinieblas me aplastarán, \\q y la luz a mi alrededor [será] noche»,",
+          "B": "Si me digo que la oscuridad sin duda me cubrirá \\q y la luz a mi alrededor se volverá noche,",
+          "R": "Podría pensar que la oscuridad me va a tragar \\q y que la luz a mi alrededor se va a convertir en noche."
         }
       },
       "decisions": [
@@ -1293,6 +1609,21 @@
           "L": "어둠조차 주님 앞에서는 [아무것도] 어둡게 하지 못하고, \\q 밤이 낮처럼 빛나니, \\q 어둠이 빛과 같습니다.",
           "B": "어둠도 주님께는 아무것도 감추지 못하고, \\q 밤도 낮처럼 환하게 빛나니, \\q 주님께는 어둠과 빛이 다르지 않습니다.",
           "R": "그러나 어둠도 주님께는 아무것도 숨기지 못합니다. \\q 주님께는 밤도 낮처럼 환합니다. \\q 어둠과 빛이 주님께는 똑같습니다."
+        },
+        "fr": {
+          "L": "même les ténèbres n’obscurcissent [rien] pour {{deity_pronoun:toi|Toi}}, \\q et la nuit brille comme le jour ; \\q les ténèbres [sont] comme la lumière.",
+          "B": "même les ténèbres ne cachent rien à {{deity_pronoun:tes|Tes}} yeux ; \\q la nuit brille autant que le jour, \\q ténèbres et lumière sont pareilles pour {{deity_pronoun:toi|Toi}}.",
+          "R": "Mais même l’obscurité ne peut rien {{deity_pronoun:te|Te}} cacher. \\q Pour {{deity_pronoun:toi|Toi}}, la nuit est aussi claire que le jour. \\q L’obscurité et la lumière, c’est pareil pour {{deity_pronoun:toi|Toi}}."
+        },
+        "sw": {
+          "L": "hata giza halitii giza [kitu] mbele {{deity_pronoun:yako|Yako}}, \\q na usiku unang'aa kama mchana; \\q giza [ni] kama nuru.",
+          "B": "hata giza halikufichi kitu; \\q usiku unang'aa kama mchana, \\q na giza na nuru ni sawa {{deity_pronoun:kwako|Kwako}}.",
+          "R": "Lakini hata giza haliwezi kukuficha kitu. \\q Kwako, usiku una mwanga kama mchana. \\q Giza na nuru ni sawa {{deity_pronoun:kwako|Kwako}}."
+        },
+        "es": {
+          "L": "ni aun las tinieblas oscurecen [nada] para {{deity_pronoun:ti|Ti}}, \\q y la noche brilla como el día; \\q las tinieblas [son] como la luz.",
+          "B": "ni siquiera la oscuridad {{deity_pronoun:te|Te}} oculta nada; \\q la noche brilla tanto como el día, \\q y la oscuridad y la luz {{deity_pronoun:te|Te}} son lo mismo.",
+          "R": "Pero ni siquiera la oscuridad puede esconderte nada. \\q Para {{deity_pronoun:ti|Ti}}, la noche es tan clara como el día. \\q La oscuridad y la luz son lo mismo para {{deity_pronoun:ti|Ti}}."
         }
       },
       "decisions": [
@@ -1387,6 +1718,21 @@
           "L": "참으로 주님께서 제 콩팥을 지으셨고, \\q 제 어머니의 태 속에서 저를 엮으셨습니다.",
           "B": "제 몸 가장 깊은 곳을 지으신 분은 바로 주님이십니다. \\q 제가 아직 어머니 태 속에 있을 때 주님께서 제 몸을 짜 맞추셨습니다.",
           "R": "주님께서 제 속사람을 만드셨습니다. \\q 어머니 배 속에서 저를 하나하나 빚어 만드셨습니다."
+        },
+        "fr": {
+          "L": "Car {{deity_pronoun:toi|Toi}}, {{deity_pronoun:tu|Tu}} as créé mes reins ; \\q {{deity_pronoun:tu|Tu}} m’as tissé dans le ventre de ma mère.",
+          "B": "C’est {{deity_pronoun:toi|Toi}} qui as formé le plus profond de mon être ; \\q {{deity_pronoun:tu|Tu}} as tissé mon corps quand j’étais encore dans le ventre de ma mère.",
+          "R": "C’est {{deity_pronoun:toi|Toi}} qui as fait tout mon être intérieur. \\q Tu m’as formé morceau par morceau dans le corps de ma mère."
+        },
+        "sw": {
+          "L": "Kwa maana {{deity_pronoun:wewe|Wewe}} uliumba figo zangu; \\q ulinifuma pamoja tumboni mwa mama yangu.",
+          "B": "Ni {{deity_pronoun:wewe|Wewe}} uliyeumba sehemu za ndani kabisa za nafsi yangu; \\q uliufuma mwili wangu pamoja nilipokuwa bado tumboni mwa mama yangu.",
+          "R": "Uliuumba utu wangu wa ndani. \\q Ulinifanya kipande kwa kipande ndani ya mwili wa mama yangu."
+        },
+        "es": {
+          "L": "Porque {{deity_pronoun:tú|Tú}} creaste mis riñones; \\q {{deity_pronoun:tú|Tú}} me tejiste en el vientre de mi madre.",
+          "B": "Fuiste {{deity_pronoun:tú|Tú}} quien formó lo más profundo de mi ser; \\q {{deity_pronoun:tú|Tú}} tejiste mi cuerpo cuando aún estaba en el vientre de mi madre.",
+          "R": "Tú formaste mi ser interior. \\q Me fuiste formando parte por parte dentro del cuerpo de mi madre."
         }
       },
       "decisions": [
@@ -1492,6 +1838,25 @@
           "reason": "Literal keeps the body word so the reader sees the Hebrew picture; Vietnamese also speaks of the inner self through organs (\"ruột gan\", \"tâm can\"), so the image is not foreign. Balanced and Readable give the sense, the inmost self.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191390130021"
+          ],
+          "choice": "\"mes reins\" at Literal; \"le plus profond de mon être\" (Balanced), \"tout mon être intérieur\" (Readable)",
+          "alternatives": [
+            "\"mes entrailles\""
+          ],
+          "reason": "The kidneys stand for the inmost self, as the meaning decision says. Literal keeps the Hebrew picture; the other levels say what it means.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1538,6 +1903,21 @@
           "L": "제가 주님께 감사드리겠습니다. 제가 두렵고 놀랍게 지음 받았기 때문입니다. \\q 주님께서 하신 일들이 놀라우니, \\q 제 영혼이 [그것을] 매우 잘 압니다.",
           "B": "제가 주님께 감사드립니다. 제가 지음 받은 모습이 경이롭고 놀랍기 때문입니다. \\q 주님께서 만드신 것은 놀랍습니다. \\q 저는 마음 깊이 그것을 잘 압니다.",
           "R": "주님께서 저를 이토록 놀랍고 신기하게 만드셨으니 감사드립니다. \\q 주님께서 만드신 것은 모두 놀랍습니다. \\q 저는 그것을 확실히 압니다."
+        },
+        "fr": {
+          "L": "Je {{deity_pronoun:te|Te}} rendrai grâce, car j’ai été fait d’une manière redoutable [et] merveilleuse ; \\q merveilleuses [sont] {{deity_pronoun:tes|Tes}} œuvres, \\q et mon âme [le] sait très bien.",
+          "B": "Je {{deity_pronoun:te|Te}} rends grâce, car la manière dont j’ai été fait inspire le respect et l’émerveillement. \\q Ce que {{deity_pronoun:tu|Tu}} fais est merveilleux, \\q et au fond de moi je le sais bien.",
+          "R": "Je {{deity_pronoun:te|Te}} remercie, parce que {{deity_pronoun:tu|Tu}} m’as fait d’une façon si étonnante et si merveilleuse. \\q Tout ce que {{deity_pronoun:tu|Tu}} fais est merveilleux. \\q J’en suis tout à fait sûr."
+        },
+        "sw": {
+          "L": "Nitakushukuru, kwa sababu nimefanywa kwa namna ya kuogofya [na] ya kustaajabisha; \\q kazi {{deity_pronoun:zako|Zako}} [ni] za ajabu, \\q na nafsi yangu inalijua [hilo] vema kabisa.",
+          "B": "Ninakushukuru, kwa maana jinsi nilivyoumbwa ni ya kutia hofu na ya kustaajabisha. \\q Unachokifanya ni cha ajabu, \\q na ndani yangu ninalijua hilo vizuri.",
+          "R": "Ninakushukuru kwa sababu uliniumba kwa namna ya kushangaza na ya ajabu sana. \\q Kila kitu unachokifanya ni cha ajabu. \\q Nina uhakika kabisa na hilo."
+        },
+        "es": {
+          "L": "Te daré gracias, porque he sido hecho de modo admirable [y] maravilloso; \\q maravillosas [son] {{deity_pronoun:tus|Tus}} obras, \\q y mi alma lo sabe muy bien.",
+          "B": "Te doy gracias, porque la manera en que fui hecho es asombrosa y maravillosa. \\q Lo que {{deity_pronoun:tú|Tú}} haces es maravilloso, \\q y en lo profundo lo sé muy bien.",
+          "R": "Te doy gracias porque {{deity_pronoun:tú|Tú}} me hiciste de una manera tan asombrosa y maravillosa. \\q Todo lo que {{deity_pronoun:tú|Tú}} haces es maravilloso. \\q Estoy completamente seguro de eso."
         }
       },
       "decisions": [
@@ -1692,6 +2072,21 @@
           "L": "제 뼈가 주님께 숨겨지지 않았습니다, \\q 제가 은밀한 곳에서 지음 받을 때, \\q 땅 가장 낮은 곳에서 수놓아지듯 짜일 때에.",
           "B": "제 뼈 하나도 주님께 감추어진 것이 없었습니다. \\q 제가 보이지 않는 곳에서 지어지고 \\q 땅 깊은 곳에서 고운 수를 놓듯 짜일 때에도 그러했습니다.",
           "R": "제가 남모르는 곳에서 만들어지고 있을 때에도 \\q 주님께서는 제 뼈를 보실 수 있었습니다. \\q 마치 땅속 깊은 곳에서 제가 짜이는 것 같았습니다."
+        },
+        "fr": {
+          "L": "Mes os n’étaient pas cachés pour {{deity_pronoun:toi|Toi}} \\q quand j’ai été fait dans le secret, \\q tissé dans les profondeurs de la terre.",
+          "B": "Pas un de mes os ne {{deity_pronoun:t’|T’}}était caché \\q quand j’étais formé loin des regards, \\q brodé comme une fine étoffe au fond de la terre.",
+          "R": "Tu pouvais voir mes os \\q pendant que j’étais fait en secret. \\q C’était comme si on me tissait tout au fond de la terre."
+        },
+        "sw": {
+          "L": "Mifupa yangu haikufichika {{deity_pronoun:kwako|Kwako}} \\q nilipofanywa mahali pa siri, \\q nikafumwa katika [sehemu] za chini kabisa za dunia.",
+          "B": "Hakuna hata mfupa wangu mmoja uliofichika {{deity_pronoun:kwako|Kwako}} \\q nilipokuwa nikiumbwa mahali pasipoonekana, \\q nikitariziwa kama kazi nzuri ya mapambo ndani kabisa ya dunia.",
+          "R": "Uliweza kuiona mifupa yangu \\q nilipokuwa nikiumbwa kwa siri. \\q Ilikuwa kana kwamba nilikuwa nikifumwa pamoja chini kabisa ndani ya dunia."
+        },
+        "es": {
+          "L": "No estaban ocultos de {{deity_pronoun:ti|Ti}} mis huesos \\q cuando fui hecho en lo oculto, \\q tejido en lo más profundo de la tierra.",
+          "B": "Ni uno de mis huesos {{deity_pronoun:te|Te}} estaba escondido \\q mientras me formaban fuera de la vista, \\q bordado como tela fina en lo profundo de la tierra.",
+          "R": "Tú podías ver mis huesos \\q mientras me hacían en secreto. \\q Era como si me estuvieran tejiendo en lo profundo de la tierra."
         }
       },
       "decisions": [
@@ -1831,6 +2226,21 @@
           "L": "아직 형체를 갖추지 못한 저를 주님의 눈이 보셨고, 주님의 책에 그것들이 모두 기록되었습니다. \\q [그] 날들이 지어졌고, \\q 그것을 위해 그 가운데 하나하나가 [있었습니다].",
           "B": "제가 아직 형체를 갖추기도 전에 주님의 눈은 저를 보셨습니다. 주님의 책에는 그 모든 날이 적혀 있었습니다. \\q 저를 위해 지어진 날들, \\q 그 하나하나가 다 정해져 있었습니다.",
           "R": "제 몸이 아직 모양을 갖추기도 전에 주님께서는 저를 보셨습니다. \\q 저를 위해 계획하신 날들이 하나하나 다 \\q 주님의 책에 적혀 있었습니다."
+        },
+        "fr": {
+          "L": "Mon corps informe, {{deity_pronoun:tes|Tes}} yeux l’ont vu, et sur {{deity_pronoun:ton|Ton}} livre ils étaient tous écrits, \\q les jours [qui] ont été formés, \\q et pour lui, un seul parmi eux.",
+          "B": "Tes yeux m’ont vu quand je n’étais pas encore formé ; dans {{deity_pronoun:ton|Ton}} livre ils étaient tous inscrits, \\q les jours qui ont été façonnés pour moi, \\q chacun d’eux mis à sa place.",
+          "R": "Tu m’as vu avant que mon corps ait pris forme. \\q Chaque jour prévu pour moi était écrit dans {{deity_pronoun:ton|Ton}} livre, chacun d’eux."
+        },
+        "sw": {
+          "L": "Mwili wangu usiokamilika macho {{deity_pronoun:yako|Yako}} yaliuona, na katika kitabu {{deity_pronoun:chako|Chako}} zote ziliandikwa, \\q siku [ambazo] zilifanyizwa, \\q na kwa ajili yake moja kati yake.",
+          "B": "Macho {{deity_pronoun:yako|Yako}} yaliniona nilipokuwa bado sijaumbika; katika kitabu {{deity_pronoun:chako|Chako}} ziliandikwa zote, \\q siku zilizoumbwa kwa ajili yangu, \\q kila moja imewekwa mahali pake.",
+          "R": "Uliniona kabla mwili wangu haujapata umbo. \\q Kila siku iliyopangwa kwa ajili yangu iliandikwa katika kitabu {{deity_pronoun:chako|Chako}}, kila moja."
+        },
+        "es": {
+          "L": "Mi cuerpo sin forma vieron {{deity_pronoun:tus|Tus}} ojos, y en {{deity_pronoun:tu|Tu}} libro estaban escritos todos ellos, \\q [los] días [que] fueron formados, \\q y para él uno de ellos.",
+          "B": "Tus ojos me vieron cuando aún no tenía forma; en {{deity_pronoun:tu|Tu}} libro quedaron todos escritos, \\q los días que fueron formados para mí, \\q cada uno de ellos puesto en su lugar.",
+          "R": "Tú me viste antes de que mi cuerpo tomara forma. \\q Cada día planeado para mí estaba escrito en {{deity_pronoun:tu|Tu}} libro, cada uno de ellos."
         }
       },
       "decisions": [
@@ -1984,6 +2394,21 @@
           "L": "그리고 제게는, 하나님, 주님의 생각들이 얼마나 귀합니까! \\q 그것들의 합이 얼마나 큽니까!",
           "B": "하나님, 주님의 생각들을 저는 참으로 귀하게 여깁니다. \\q 그 수가 어찌 그리 많습니까!",
           "R": "하나님, 저는 주님의 생각들을 소중히 여깁니다. \\q 그 생각들은 정말 많고도 많습니다!"
+        },
+        "fr": {
+          "L": "Et pour moi, comme {{deity_pronoun:tes|Tes}} pensées [sont] précieuses, ô Dieu ! \\q Comme leurs sommes sont grandes !",
+          "B": "Ô Dieu, que {{deity_pronoun:tes|Tes}} pensées me sont précieuses ! \\q Que leur nombre est immense !",
+          "R": "Ô Dieu, {{deity_pronoun:tes|Tes}} pensées sont pour moi un trésor. \\q Elles sont vraiment très nombreuses !"
+        },
+        "sw": {
+          "L": "Na kwangu, jinsi zilivyo za thamani fikira {{deity_pronoun:zako|Zako}}, Ee Mungu! \\q Jinsi ilivyo kubwa jumla yake!",
+          "B": "Ee Mungu, jinsi ninavyozithamini fikira {{deity_pronoun:zako|Zako}}! \\q Idadi yake ni kubwa mno!",
+          "R": "Mungu, ninazithamini fikira {{deity_pronoun:zako|Zako}}. \\q Ni nyingi mno!"
+        },
+        "es": {
+          "L": "Y para mí, ¡qué preciosos [son] {{deity_pronoun:tus|Tus}} pensamientos, oh Dios! \\q ¡Qué grande es su suma!",
+          "B": "¡Oh Dios, cuánto aprecio {{deity_pronoun:tus|Tus}} pensamientos! \\q ¡Qué inmenso es su número!",
+          "R": "Dios, aprecio mucho {{deity_pronoun:tus|Tus}} pensamientos. \\q ¡Son muchísimos!"
         }
       },
       "decisions": [
@@ -2074,6 +2499,21 @@
           "L": "제가 그것들을 세어 보면, 모래보다 많습니다. \\q 제가 깨어나도 저는 여전히 주님과 함께 있습니다.",
           "B": "그것들을 세어 보려 해도 모래알보다 많을 것입니다. \\q 제가 잠에서 깨어 보면 저는 여전히 주님과 함께 있습니다.",
           "R": "그것을 세어 보려고 하면 모래알보다도 더 많을 것입니다. \\q 제가 잠에서 깨어나도 저는 여전히 주님 곁에 있습니다."
+        },
+        "fr": {
+          "L": "[Si] je les compte, elles sont plus nombreuses que le sable ; \\q je me réveille, et je [suis] encore avec {{deity_pronoun:toi|Toi}}.",
+          "B": "Si j’essayais de les compter, elles seraient plus nombreuses que le sable. \\q Je me réveille, et je suis toujours avec {{deity_pronoun:toi|Toi}}.",
+          "R": "Si j’essayais de les compter, il y en aurait plus que de grains de sable. \\q Quand je me réveille, je suis toujours avec {{deity_pronoun:toi|Toi}}."
+        },
+        "sw": {
+          "L": "Nikizihesabu, ni nyingi kuliko mchanga; \\q ninaamka, nami bado [niko] pamoja {{deity_pronoun:nawe|Nawe}}.",
+          "B": "Nikijaribu kuzihesabu, zingezidi mchanga kwa wingi. \\q Ninaamka, nami bado niko pamoja {{deity_pronoun:nawe|Nawe}}.",
+          "R": "Kama ningejaribu kuzihesabu, zingekuwa nyingi kuliko chembe za mchanga. \\q Ninapoamka, bado niko pamoja {{deity_pronoun:nawe|Nawe}}."
+        },
+        "es": {
+          "L": "[Si] los cuento, son más numerosos que la arena; \\q despierto, y todavía [estoy] con {{deity_pronoun:ti|Ti}}.",
+          "B": "Si tratara de contarlos, serían más que la arena. \\q Despierto, y todavía estoy con {{deity_pronoun:ti|Ti}}.",
+          "R": "Si tratara de contarlos, serían más que los granos de arena. \\q Cuando me despierto, todavía estoy con {{deity_pronoun:ti|Ti}}."
         }
       },
       "decisions": [
@@ -2148,6 +2588,21 @@
           "L": "하나님, 주님께서 악인을 죽이시기만 한다면! \\q 피의 사람들아, 내게서 물러가라!",
           "B": "하나님, 주님께서 악인들을 죽여 주신다면 얼마나 좋겠습니까! \\q 살인자들아, 내게서 썩 물러가라!",
           "R": "하나님, 주님께서 악한 사람들을 죽여 주시면 좋겠습니다! \\q 살인자들아, 내게서 떠나가라!"
+        },
+        "fr": {
+          "L": "Si seulement {{deity_pronoun:tu|Tu}} faisais mourir le méchant, ô Dieu ! \\q Et vous, {{gender:gens|hommes}} de sang, éloignez-vous de moi,",
+          "B": "Ô Dieu, si seulement {{deity_pronoun:tu|Tu}} mettais à mort les méchants ! \\q Meurtriers, éloignez-vous de moi,",
+          "R": "Ô Dieu, je voudrais que {{deity_pronoun:tu|Tu}} fasses mourir les méchants ! \\q Meurtriers, éloignez-vous de moi !"
+        },
+        "sw": {
+          "L": "Laiti ungewaua waovu, Ee Mungu! \\q Nanyi watu wa umwagaji damu, ondokeni kwangu,",
+          "B": "Ee Mungu, laiti ungewaua waovu! \\q Enyi wauaji, ondokeni kwangu,",
+          "R": "Mungu, natamani uwaue watu waovu! \\q Wauaji, ondokeni kwangu!"
+        },
+        "es": {
+          "L": "¡Ojalá {{deity_pronoun:tú|Tú}} mataras a los malvados, oh Dios! \\q Y {{gender:gente sanguinaria|hombres sanguinarios}}, {{plural_you:apártense|apartaos}} de mí,",
+          "B": "¡Oh Dios, ojalá {{deity_pronoun:tú|Tú}} dieras muerte a los malvados! \\q Asesinos, {{plural_you:aléjense|alejaos}} de mí,",
+          "R": "¡Dios, ojalá {{deity_pronoun:tú|Tú}} mataras a la gente malvada! \\q ¡Asesinos, {{plural_you:aléjense|alejaos}} de mí!"
         }
       },
       "decisions": [
@@ -2297,6 +2752,47 @@
           "reason": "Korean \"사람들\" is inclusive and is the natural word for the Hebrew phrase; Korean has no second wording to offer for the English \"people|men\" span.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191390190071"
+          ],
+          "choice": "\"gens\" by default, \"hommes\" as the gender alternative, for \"men of blood\" at Literal",
+          "alternatives": [
+            "\"hommes de sang\" with no setting"
+          ],
+          "reason": "The phrase means violent people in general, as the meaning decision says; the English Literal has a setting here, and French puts it on the noun.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191390190052",
+            "o191390190071"
+          ],
+          "choice": "plural_you on the command to the murderers; a gender setting on \"gente sanguinaria\" at Literal",
+          "alternatives": [
+            "varones sanguinarios"
+          ],
+          "reason": "The singer turns to order the \"men of blood\" away, a plural command, so Spanish marks the verb with the plural_you setting. At Literal the English setting for \"people\" or \"men\" has a Spanish match in \"gente sanguinaria\" or \"hombres sanguinarios\"; Balanced and Readable say \"Asesinos\", as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2339,6 +2835,21 @@
           "L": "그들은 악한 꾀로 주님을 말하고, \\q 주님의 원수들은 [주님의 이름을] 거짓되이 들어 올립니다.",
           "B": "그들은 악한 일을 꾸미면서 주님의 이름을 들먹이고, \\q 주님의 원수들은 거짓으로 주님의 이름을 부릅니다.",
           "R": "그들은 악한 계획을 세우면서 주님의 이름을 입에 올립니다. \\q 주님의 원수들은 주님의 이름을 이용해 거짓말을 합니다."
+        },
+        "fr": {
+          "L": "qui parlent de {{deity_pronoun:toi|Toi}} pour des projets mauvais ; \\q {{deity_pronoun:tes|Tes}} ennemis élèvent [{{deity_pronoun:ton|Ton}} nom] pour le mensonge.",
+          "B": "eux qui prononcent {{deity_pronoun:ton|Ton}} nom en tramant leur méchanceté ; \\q {{deity_pronoun:tes|Tes}} ennemis prononcent {{deity_pronoun:ton|Ton}} nom pour mentir.",
+          "R": "Ils disent {{deity_pronoun:ton|Ton}} nom quand ils font des projets mauvais. \\q Tes ennemis se servent de {{deity_pronoun:ton|Ton}} nom pour dire des mensonges."
+        },
+        "sw": {
+          "L": "wanaokutaja kwa hila mbaya; \\q adui {{deity_pronoun:zako|Zako}} wanaliinua [jina {{deity_pronoun:lako|Lako}}] kwa uongo.",
+          "B": "wale wanaokutaja wanapopanga uovu wao; \\q adui {{deity_pronoun:zako|Zako}} wanalitaja jina {{deity_pronoun:lako|Lako}} kwa uongo.",
+          "R": "Wanalitaja jina {{deity_pronoun:lako|Lako}} wanapopanga mipango mibaya. \\q Adui {{deity_pronoun:zako|Zako}} wanalitumia jina {{deity_pronoun:lako|Lako}} kusema uongo."
+        },
+        "es": {
+          "L": "que hablan de {{deity_pronoun:ti|Ti}} para maquinar maldad; \\q {{deity_pronoun:tus|Tus}} enemigos [{{deity_pronoun:tu|Tu}} nombre] alzan para la mentira.",
+          "B": "los que {{deity_pronoun:te|Te}} nombran mientras traman su maldad; \\q {{deity_pronoun:tus|Tus}} enemigos pronuncian {{deity_pronoun:tu|Tu}} nombre con falsedad.",
+          "R": "Dicen {{deity_pronoun:tu|Tu}} nombre cuando hacen planes malvados. \\q Tus enemigos usan {{deity_pronoun:tu|Tu}} nombre para decir mentiras."
         }
       },
       "decisions": [
@@ -2491,6 +3002,21 @@
           "L": "{{divine_name:주|야훼}}여, 주님을 미워하는 자들을 제가 미워하지 않습니까? \\q 주님께 맞서 일어나는 자들을 제가 역겨워하지 않습니까?",
           "B": "{{divine_name:주|야훼}}여, 주님을 미워하는 자들을 제가 어찌 미워하지 않겠습니까? \\q 주님께 맞서 일어서는 자들을 어찌 혐오하지 않겠습니까?",
           "R": "{{divine_name:주|야훼}}여, 저는 주님을 미워하는 사람들을 미워합니다! \\q 주님께 등을 돌리는 사람들을 저는 참을 수 없습니다."
+        },
+        "fr": {
+          "L": "N’est-ce pas ceux qui {{deity_pronoun:te|Te}} haïssent, {{divine_name:SEIGNEUR|Yahvé}}, [que] je hais, \\q et ceux qui se dressent contre {{deity_pronoun:toi|Toi}}, [que] j’ai en horreur ?",
+          "B": "{{divine_name:SEIGNEUR|Yahvé}}, comment ne haïrais-je pas ceux qui {{deity_pronoun:te|Te}} haïssent, \\q et ne serais-je pas dégoûté de ceux qui se dressent contre {{deity_pronoun:toi|Toi}} ?",
+          "R": "{{divine_name:SEIGNEUR|Yahvé}}, je déteste les gens qui {{deity_pronoun:te|Te}} détestent ! \\q Je ne supporte pas les gens qui se tournent contre {{deity_pronoun:toi|Toi}}."
+        },
+        "sw": {
+          "L": "Je, si wale wanaokuchukia, Ee {{divine_name:BWANA|Yahwe}}, [ndio] ninaowachukia, \\q na wale wanaoinuka dhidi {{deity_pronoun:yako|Yako}} [ndio] ninaowaona kuwa chukizo?",
+          "B": "Ee {{divine_name:BWANA|Yahwe}}, ningewezaje kutowachukia wale wanaokuchukia, \\q au kutowaona kuwa chukizo wale wanaokuinukia?",
+          "R": "{{divine_name:BWANA|Yahwe}}, ninawachukia watu wanaokuchukia! \\q Siwezi kuwavumilia watu wanaokugeuka."
+        },
+        "es": {
+          "L": "¿No odio a los que {{deity_pronoun:te|Te}} odian, {{divine_name:SEÑOR|Yahvé}}, \\q y no aborrezco a los que se levantan contra {{deity_pronoun:ti|Ti}}?",
+          "B": "{{divine_name:SEÑOR|Yahvé}}, ¿cómo no voy a odiar a los que {{deity_pronoun:te|Te}} odian, \\q o a sentir asco de los que se levantan contra {{deity_pronoun:ti|Ti}}?",
+          "R": "{{divine_name:SEÑOR|Yahvé}}, ¡odio a la gente que {{deity_pronoun:te|Te}} odia! \\q No soporto a la gente que se pone en contra de {{deity_pronoun:ti|Ti}}."
         }
       },
       "decisions": [
@@ -2581,6 +3107,21 @@
           "L": "완전한 미움으로 제가 그들을 미워하니, \\q 그들이 제게 원수가 되었습니다.",
           "B": "제가 그들을 미워하는 마음에는 남김이 없으니, \\q 그들은 바로 저의 원수가 되었습니다.",
           "R": "저는 그들을 철저히 미워합니다. \\q 주님의 원수는 곧 저의 원수입니다."
+        },
+        "fr": {
+          "L": "[D’une] haine complète je les hais ; \\q ils sont devenus pour moi des ennemis.",
+          "B": "Ma haine pour eux est totale ; \\q ils sont devenus mes propres ennemis.",
+          "R": "Je les déteste complètement. \\q Tes ennemis sont mes ennemis."
+        },
+        "sw": {
+          "L": "[Kwa] chuki kamili ninawachukia; \\q wamekuwa adui kwangu.",
+          "B": "Chuki yangu kwao ni kamili; \\q wamekuwa adui zangu mwenyewe.",
+          "R": "Ninawachukia kabisa. \\q Adui {{deity_pronoun:zako|Zako}} ni adui zangu."
+        },
+        "es": {
+          "L": "[Con] odio completo los odio; \\q se han vuelto enemigos para mí.",
+          "B": "Mi odio por ellos es total; \\q se han vuelto mis propios enemigos.",
+          "R": "Los odio por completo. \\q Tus enemigos son mis enemigos."
         }
       },
       "decisions": [
@@ -2663,6 +3204,21 @@
           "L": "하나님, 저를 살피셔서 제 마음을 알아 주시고, \\q 저를 시험하셔서 제 불안한 생각들을 알아 주십시오.",
           "B": "하나님, 저를 깊이 들여다보시고 제 마음을 알아 주십시오. \\q 저를 시험해 보시고 제 안의 걱정스러운 생각들을 알아 주십시오.",
           "R": "하나님, 제 속을 깊이 들여다보시고 제 마음에 무엇이 있는지 보아 주십시오. \\q 저를 시험해 보시고 제가 무슨 걱정을 하고 있는지 알아 주십시오."
+        },
+        "fr": {
+          "L": "Sonde-moi, ô Dieu, et connais mon cœur ; \\q éprouve-moi et connais mes pensées inquiètes.",
+          "B": "Ô Dieu, regarde au plus profond de moi et connais mon cœur ; \\q mets-moi à l’épreuve et connais mes pensées agitées.",
+          "R": "Ô Dieu, regarde tout au fond de moi et vois ce qu’il y a dans mon cœur. \\q Mets-moi à l’épreuve et découvre ce qui m’inquiète."
+        },
+        "sw": {
+          "L": "Unichunguze, Ee Mungu, ukaujue moyo wangu; \\q unipime, ukayajue mawazo yangu ya wasiwasi.",
+          "B": "Ee Mungu, unitazame ndani kabisa na uujue moyo wangu; \\q unipime na uyajue mawazo yangu yasiyotulia.",
+          "R": "Mungu, unitazame ndani kabisa na uone kilicho moyoni mwangu. \\q Unijaribu na ujue mawazo yangu yanayonisumbua ni yapi."
+        },
+        "es": {
+          "L": "Examíname, oh Dios, y conoce mi corazón; \\q pruébame y conoce mis pensamientos inquietos.",
+          "B": "Oh Dios, mira en lo profundo de mí y conoce mi corazón; \\q ponme a prueba y conoce mis pensamientos inquietos.",
+          "R": "Dios, mira muy dentro de mí y ve lo que hay en mi corazón. \\q Ponme a prueba y descubre cuáles son mis pensamientos angustiados."
         }
       },
       "decisions": [
@@ -2797,6 +3353,21 @@
           "L": "그리고 제 안에 고통의 길이 있는지 보시고, \\q 영원한 길로 저를 인도하여 주십시오.",
           "B": "제가 해로운 길에 서 있지는 않은지 살펴보시고, \\q 끝없이 이어지는 길로 저를 이끌어 주십시오.",
           "R": "제가 아픔으로 이끄는 길을 걷고 있지는 않은지 보아 주십시오. \\q 그리고 영원히 이어지는 길로 저를 이끌어 주십시오."
+        },
+        "fr": {
+          "L": "Et vois s’[il y a] en moi un chemin de douleur, \\q et conduis-moi sur le chemin d’éternité.",
+          "B": "Regarde si je suis sur une route qui fait du mal, \\q et guide-moi sur le chemin qui ne finit jamais.",
+          "R": "Regarde si je suis un chemin qui mène à la souffrance. \\q Puis conduis-moi sur la route qui dure toujours."
+        },
+        "sw": {
+          "L": "Na utazame kama ndani yangu [mna] njia ya maumivu, \\q ukaniongoze katika njia ya kudumu milele.",
+          "B": "Uangalie uone kama niko katika njia inayoleta madhara, \\q na uniongoze katika barabara isiyo na mwisho.",
+          "R": "Uone kama ninafuata njia yoyote inayoelekea kwenye maumivu. \\q Kisha uniongoze katika njia inayodumu milele."
+        },
+        "es": {
+          "L": "Y mira si [hay] en mí camino de dolor, \\q y guíame en el camino eterno.",
+          "B": "Mira y ve si voy por una senda que hace daño, \\q y guíame por el camino que nunca termina.",
+          "R": "Mira si sigo algún camino que lleva al dolor. \\q Luego guíame por el camino que dura para siempre."
         }
       },
       "decisions": [

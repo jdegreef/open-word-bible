@@ -26,7 +26,14 @@ AREAS = {
     # The dashboard, coverage, languages, books, health, engagement, help:
     # progress any member of the team may see. No reader's details.
     "overview": EVERY_ROLE,
-    # Reader suggestions and questions: they carry the reader's name.
+    # Downloading the translation as a file (staff/export.py). The text is
+    # CC0 and on the site already.
+    "export": EVERY_ROLE,
+    # Reviewing sentences (staff/review.py): the meaning for scholar
+    # reviewers, a language's wording for its reviewers.
+    "review": frozenset({K.SUPER_ADMIN, K.SCHOLAR_REVIEWER, K.LANGUAGE_REVIEWER}),
+    # Reader suggestions and questions: they carry the reader's name. Also
+    # the reviewers' open flags, for editors to act on.
     "inbox": frozenset({K.SUPER_ADMIN, K.EDITOR}),
     # Readers' accounts.
     "users": frozenset({K.SUPER_ADMIN, K.USERS}),

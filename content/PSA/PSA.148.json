@@ -30,6 +30,31 @@
           "L": "Praise {{divine_name:the LORD|Yah}}! Praise {{divine_name:the LORD|Yahweh}} from the heavens; praise {{deity_pronoun:him|Him}} in the heights!",
           "B": "Praise {{divine_name:the LORD|Yah}}! Let the heavens praise {{divine_name:the LORD|Yahweh}}; let the heights above give {{deity_pronoun:him|Him}} praise!",
           "R": "Praise {{divine_name:the LORD|Yah}}! Everything in the sky, praise {{divine_name:the LORD|Yahweh}}! Everyone high up in heaven, praise {{deity_pronoun:him|Him}}!"
+        },
+        "fr": {
+          "L": "Louez {{divine_name:le SEIGNEUR|Yah}} ! Louez {{divine_name:le SEIGNEUR|Yahvé}} depuis les cieux ; louez-{{deity_pronoun:le|Le}} dans les hauteurs !",
+          "B": "Louez {{divine_name:le SEIGNEUR|Yah}} ! Que les cieux louent {{divine_name:le SEIGNEUR|Yahvé}} ; que les hauteurs {{deity_pronoun:le|Le}} louent !",
+          "R": "Louez {{divine_name:le SEIGNEUR|Yah}} ! Vous tous qui êtes dans le ciel, louez {{divine_name:le SEIGNEUR|Yahvé}} ! Vous tous qui êtes là-haut, louez-{{deity_pronoun:le|Le}} !"
+        },
+        "sw": {
+          "L": "Msifuni {{divine_name:BWANA|Yah}}! Msifuni {{divine_name:BWANA|Yahwe}} kutoka mbinguni; msifuni katika mahali palipo juu!",
+          "B": "Msifuni {{divine_name:BWANA|Yah}}! Mbingu na zimsifu {{divine_name:BWANA|Yahwe}}; vilele vya juu na vimpe sifa!",
+          "R": "Msifuni {{divine_name:BWANA|Yah}}! Vyote vilivyo angani, msifuni {{divine_name:BWANA|Yahwe}}! Ninyi nyote mlio juu mbinguni, msifuni!"
+        },
+        "es": {
+          "L": "¡{{plural_you:Alaben|Alabad}} {{divine_name:al SEÑOR|a Yah}}! {{plural_you:Alaben|Alabad}} {{divine_name:al SEÑOR|a Yahvé}} desde los cielos; ¡{{plural_you:alábenlo|alabadlo}} en las alturas!",
+          "B": "¡{{plural_you:Alaben|Alabad}} {{divine_name:al SEÑOR|a Yah}}! ¡Que los cielos alaben {{divine_name:al SEÑOR|a Yahvé}}; que las alturas {{deity_pronoun:le|Le}} den alabanza!",
+          "R": "¡{{plural_you:Alaben|Alabad}} {{divine_name:al SEÑOR|a Yah}}! Todo lo que hay en el cielo, ¡{{plural_you:alaben|alabad}} {{divine_name:al SEÑOR|a Yahvé}}! Todos los que están en lo alto del cielo, ¡{{plural_you:alábenlo|alabadlo}}!"
+        },
+        "vi": {
+          "L": "Hãy ca ngợi {{divine_name:CHÚA|Gia}}! Hãy ca ngợi {{divine_name:CHÚA|Gia-vê}} từ các tầng trời; hãy ca ngợi {{deity_pronoun:ngài|Ngài}} trên các nơi cao!",
+          "B": "Hãy ca ngợi {{divine_name:CHÚA|Gia}}! Hỡi các tầng trời, hãy ca ngợi {{divine_name:CHÚA|Gia-vê}}; hỡi các nơi cao trên kia, hãy dâng lời ca ngợi {{deity_pronoun:ngài|Ngài}}!",
+          "R": "Hãy ca ngợi {{divine_name:CHÚA|Gia}}! Hỡi mọi vật trên bầu trời, hãy ca ngợi {{divine_name:CHÚA|Gia-vê}}! Hỡi tất cả những ai ở trên trời cao, hãy ca ngợi {{deity_pronoun:ngài|Ngài}}!"
+        },
+        "ko": {
+          "L": "{{divine_name:주|야}}를 찬양하여라! 하늘에서 {{divine_name:주|야훼}}를 찬양하여라. 높은 곳에서 그분을 찬양하여라!",
+          "B": "{{divine_name:주|야}}를 찬양하여라! 하늘은 {{divine_name:주|야훼}}를 찬양하여라. 높은 곳들아, 그분을 찬양하여라!",
+          "R": "{{divine_name:주|야}}를 찬양하여라! 하늘에 있는 모든 것아, {{divine_name:주|야훼}}를 찬양하여라! 하늘 높은 곳에 있는 모든 이들아, 그분을 찬양하여라!"
         }
       },
       "decisions": [
@@ -98,6 +123,71 @@
           "reason": "Readable names those who are called on to praise, as verses 2-4 do.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191480010011"
+          ],
+          "choice": "\"Louez-le\" with a pronoun setting on \"le\" for \"praise him\" throughout Psalms 148 and 150",
+          "alternatives": [
+            "\"Louez-Le\" always capitalised"
+          ],
+          "reason": "French joins the object pronoun to the command with a hyphen. The setting still applies to it, so readers who choose capitals for pronouns of God see \"Louez-Le\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191480010011"
+          ],
+          "choice": "plural_you on every \"Alaben\" and \"Alábenlo\" in this psalm",
+          "alternatives": [
+            "singular commands"
+          ],
+          "reason": "The psalm calls on heaven and earth and all their creatures with plural commands; Spanish marks each with the plural_you setting. The pronoun joined to the verb (\"Alábenlo\") takes no deity_pronoun setting.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o191480010061",
+            "o191480010072"
+          ],
+          "choice": "Creation is called to praise in the plain imperative, each part named with the vocative \"-아/-야\"",
+          "alternatives": [
+            "합쇼체",
+            "-여 with every name"
+          ],
+          "reason": "A call to all creation, as in a hymn; Korean addresses things and people alike with the plain vocative and imperative, as in Psalm 146.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -130,6 +220,31 @@
           "L": "Praise {{deity_pronoun:him|Him}}, all {{deity_pronoun:his|His}} angels; praise {{deity_pronoun:him|Him}}, all {{deity_pronoun:his|His}} hosts!",
           "B": "Praise {{deity_pronoun:him|Him}}, all {{deity_pronoun:his|His}} angels! All the armies of heaven, praise {{deity_pronoun:him|Him}}!",
           "R": "All {{deity_pronoun:his|His}} angels, praise {{deity_pronoun:him|Him}}! All the armies of heaven that serve {{deity_pronoun:him|Him}}, praise {{deity_pronoun:him|Him}}!"
+        },
+        "fr": {
+          "L": "Louez-{{deity_pronoun:le|Le}}, vous tous, {{deity_pronoun:ses|Ses}} anges ; louez-{{deity_pronoun:le|Le}}, vous toutes, {{deity_pronoun:ses|Ses}} armées !",
+          "B": "Louez-{{deity_pronoun:le|Le}}, vous tous, {{deity_pronoun:ses|Ses}} anges ! Vous toutes, armées du ciel, louez-{{deity_pronoun:le|Le}} !",
+          "R": "Vous tous, {{deity_pronoun:ses|Ses}} anges, louez-{{deity_pronoun:le|Le}} ! Vous toutes, armées du ciel qui {{deity_pronoun:le|Le}} servez, louez-{{deity_pronoun:le|Le}} !"
+        },
+        "sw": {
+          "L": "Msifuni, ninyi malaika {{deity_pronoun:wake|Wake}} wote; msifuni, majeshi {{deity_pronoun:yake|Yake}} yote!",
+          "B": "Msifuni, enyi malaika {{deity_pronoun:wake|Wake}} wote! Enyi majeshi yote ya mbinguni, msifuni!",
+          "R": "Malaika {{deity_pronoun:wake|Wake}} wote, msifuni! Majeshi yote ya mbinguni yanayomtumikia, msifuni!"
+        },
+        "es": {
+          "L": "{{plural_you:Alábenlo|Alabadlo}}, todos {{deity_pronoun:sus|Sus}} ángeles; ¡{{plural_you:alábenlo|alabadlo}}, todos {{deity_pronoun:sus|Sus}} ejércitos!",
+          "B": "¡{{plural_you:Alábenlo|Alabadlo}}, todos {{deity_pronoun:sus|Sus}} ángeles! Todos los ejércitos del cielo, ¡{{plural_you:alábenlo|alabadlo}}!",
+          "R": "Todos {{deity_pronoun:sus|Sus}} ángeles, ¡{{plural_you:alábenlo|alabadlo}}! Todos los ejércitos del cielo que {{deity_pronoun:le|Le}} sirven, ¡{{plural_you:alábenlo|alabadlo}}!"
+        },
+        "vi": {
+          "L": "Hãy ca ngợi {{deity_pronoun:ngài|Ngài}}, hỡi tất cả các thiên sứ của {{deity_pronoun:ngài|Ngài}}; hãy ca ngợi {{deity_pronoun:ngài|Ngài}}, hỡi tất cả các đạo binh của {{deity_pronoun:ngài|Ngài}}!",
+          "B": "Hỡi tất cả các thiên sứ của {{deity_pronoun:ngài|Ngài}}, hãy ca ngợi {{deity_pronoun:ngài|Ngài}}! Hỡi tất cả các đạo quân trên trời, hãy ca ngợi {{deity_pronoun:ngài|Ngài}}!",
+          "R": "Hỡi tất cả các thiên sứ của {{deity_pronoun:ngài|Ngài}}, hãy ca ngợi {{deity_pronoun:ngài|Ngài}}! Hỡi tất cả các đạo quân trên trời đang phục vụ {{deity_pronoun:ngài|Ngài}}, hãy ca ngợi {{deity_pronoun:ngài|Ngài}}!"
+        },
+        "ko": {
+          "L": "그분의 모든 천사들아, 그분을 찬양하여라. 그분의 모든 군대야, 그분을 찬양하여라!",
+          "B": "그분의 모든 천사들아, 그분을 찬양하여라! 하늘의 모든 군대야, 그분을 찬양하여라!",
+          "R": "그분의 모든 천사들아, 그분을 찬양하여라! 그분을 섬기는 하늘의 모든 군대야, 그분을 찬양하여라!"
         }
       },
       "decisions": [
@@ -183,6 +298,27 @@
           "reason": "As in \"the LORD of Armies\", Balanced and Readable say \"armies\" for this word.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191480020051"
+          ],
+          "choice": "\"các đạo binh\" (L); \"các đạo quân trên trời\" (B, R)",
+          "alternatives": [
+            "\"cơ binh\""
+          ],
+          "reason": "The hosts are the armies of heaven (see the meaning decision). \"cơ binh\" is the old church word few readers use; Literal says \"đạo binh\" (army), and the other levels say whose armies, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -215,6 +351,31 @@
           "L": "Praise {{deity_pronoun:him|Him}}, sun and moon; praise {{deity_pronoun:him|Him}}, all stars of light!",
           "B": "Sun and moon, praise {{deity_pronoun:him|Him}}! All shining stars, praise {{deity_pronoun:him|Him}}!",
           "R": "Sun and moon, praise {{deity_pronoun:him|Him}}! Every bright star, praise {{deity_pronoun:him|Him}}!"
+        },
+        "fr": {
+          "L": "Louez-{{deity_pronoun:le|Le}}, soleil et lune ; louez-{{deity_pronoun:le|Le}}, vous toutes, étoiles de lumière !",
+          "B": "Soleil et lune, louez-{{deity_pronoun:le|Le}} ! Vous toutes, étoiles brillantes, louez-{{deity_pronoun:le|Le}} !",
+          "R": "Soleil et lune, louez-{{deity_pronoun:le|Le}} ! Chaque étoile qui brille, loue-{{deity_pronoun:le|Le}} !"
+        },
+        "sw": {
+          "L": "Msifuni, jua na mwezi; msifuni, nyota zote za nuru!",
+          "B": "Jua na mwezi, msifuni! Nyota zote zinazong'aa, msifuni!",
+          "R": "Jua na mwezi, msifuni! Kila nyota inayong'aa, msifuni!"
+        },
+        "es": {
+          "L": "{{plural_you:Alábenlo|Alabadlo}}, sol y luna; ¡{{plural_you:alábenlo|alabadlo}}, todas las estrellas luminosas!",
+          "B": "Sol y luna, ¡{{plural_you:alábenlo|alabadlo}}! Todas las estrellas brillantes, ¡{{plural_you:alábenlo|alabadlo}}!",
+          "R": "Sol y luna, ¡{{plural_you:alábenlo|alabadlo}}! Cada estrella brillante, ¡{{plural_you:alábenlo|alabadlo}}!"
+        },
+        "vi": {
+          "L": "Hãy ca ngợi {{deity_pronoun:ngài|Ngài}}, hỡi mặt trời và mặt trăng; hãy ca ngợi {{deity_pronoun:ngài|Ngài}}, hỡi tất cả các ngôi sao sáng!",
+          "B": "Hỡi mặt trời và mặt trăng, hãy ca ngợi {{deity_pronoun:ngài|Ngài}}! Hỡi tất cả các ngôi sao chiếu sáng, hãy ca ngợi {{deity_pronoun:ngài|Ngài}}!",
+          "R": "Hỡi mặt trời và mặt trăng, hãy ca ngợi {{deity_pronoun:ngài|Ngài}}! Hỡi mọi ngôi sao sáng, hãy ca ngợi {{deity_pronoun:ngài|Ngài}}!"
+        },
+        "ko": {
+          "L": "해와 달아, 그분을 찬양하여라. 빛의 모든 별들아, 그분을 찬양하여라!",
+          "B": "해와 달아, 그분을 찬양하여라! 반짝이는 모든 별들아, 그분을 찬양하여라!",
+          "R": "해와 달아, 그분을 찬양하여라! 밝게 빛나는 별들아, 모두 그분을 찬양하여라!"
         }
       },
       "decisions": [
@@ -283,6 +444,31 @@
           "L": "Praise {{deity_pronoun:him|Him}}, heavens of the heavens, and the waters that [are] above the heavens!",
           "B": "Praise {{deity_pronoun:him|Him}}, heaven of heavens, along with the waters up above the sky!",
           "R": "Praise {{deity_pronoun:him|Him}}, highest heavens, and the waters high above the sky!"
+        },
+        "fr": {
+          "L": "Louez-{{deity_pronoun:le|Le}}, cieux des cieux, et les eaux qui [sont] au-dessus des cieux !",
+          "B": "Louez-{{deity_pronoun:le|Le}}, cieux des cieux, et vous, les eaux qui sont au-dessus du ciel !",
+          "R": "Louez-{{deity_pronoun:le|Le}}, cieux les plus hauts, et vous, les eaux tout là-haut au-dessus du ciel !"
+        },
+        "sw": {
+          "L": "Msifuni, mbingu za mbingu, na maji yaliyo juu ya mbingu!",
+          "B": "Msifuni, mbingu za juu kabisa, pamoja na maji yaliyo juu ya anga!",
+          "R": "Msifuni, mbingu zilizo juu kuliko zote, na maji yaliyo juu sana ya anga!"
+        },
+        "es": {
+          "L": "¡{{plural_you:Alábenlo|Alabadlo}}, cielos de los cielos, y las aguas que [están] sobre los cielos!",
+          "B": "¡{{plural_you:Alábenlo|Alabadlo}}, cielo de los cielos, junto con las aguas que están por encima del firmamento!",
+          "R": "¡{{plural_you:Alábenlo|Alabadlo}}, cielos más altos, y las aguas que están muy por encima del cielo!"
+        },
+        "vi": {
+          "L": "Hãy ca ngợi {{deity_pronoun:ngài|Ngài}}, hỡi trời của các tầng trời, và các dòng nước [ở] trên các tầng trời!",
+          "B": "Hãy ca ngợi {{deity_pronoun:ngài|Ngài}}, hỡi trời cao nhất, cùng các dòng nước ở trên bầu trời!",
+          "R": "Hãy ca ngợi {{deity_pronoun:ngài|Ngài}}, hỡi các tầng trời cao nhất, và các dòng nước ở tít trên bầu trời!"
+        },
+        "ko": {
+          "L": "하늘들의 하늘과 하늘 위에 있는 물들아, 그분을 찬양하여라!",
+          "B": "하늘 위의 하늘아, 하늘 위에 있는 물과 함께 그분을 찬양하여라!",
+          "R": "가장 높은 하늘아, 하늘 위 높은 곳의 물아, 그분을 찬양하여라!"
         }
       },
       "decisions": [
@@ -347,6 +533,31 @@
           "L": "Let them praise the name of {{divine_name:the LORD|Yahweh}}, for {{deity_pronoun:he|He}} commanded and they were created.",
           "B": "May they praise the name of {{divine_name:the LORD|Yahweh}}; at {{deity_pronoun:his|His}} command they came into being.",
           "R": "All these things should praise the name of {{divine_name:the LORD|Yahweh}}. He spoke the command, and they came to be."
+        },
+        "fr": {
+          "L": "Qu’ils louent le nom {{divine_name:du SEIGNEUR|de Yahvé}}, car {{deity_pronoun:il|Il}} a ordonné, et ils ont été créés.",
+          "B": "Qu’ils louent le nom {{divine_name:du SEIGNEUR|de Yahvé}} : à {{deity_pronoun:son|Son}} ordre ils sont venus à l’existence.",
+          "R": "Toutes ces choses doivent louer le nom {{divine_name:du SEIGNEUR|de Yahvé}}. Il a donné un ordre, et elles ont existé."
+        },
+        "sw": {
+          "L": "Na walisifu jina la {{divine_name:BWANA|Yahwe}}, kwa maana aliamuru nao wakaumbwa.",
+          "B": "Na walisifu jina la {{divine_name:BWANA|Yahwe}}; kwa agizo {{deity_pronoun:lake|Lake}} walipata kuwako.",
+          "R": "Vitu hivi vyote vinapaswa kulisifu jina la {{divine_name:BWANA|Yahwe}}. Alitoa amri, navyo vikawepo."
+        },
+        "es": {
+          "L": "Que alaben el nombre {{divine_name:del SEÑOR|de Yahvé}}, porque {{deity_pronoun:él|Él}} mandó y fueron creados.",
+          "B": "Que alaben el nombre {{divine_name:del SEÑOR|de Yahvé}}; por {{deity_pronoun:su|Su}} mandato llegaron a existir.",
+          "R": "Todas estas cosas deben alabar el nombre {{divine_name:del SEÑOR|de Yahvé}}. Él dio la orden, y llegaron a existir."
+        },
+        "vi": {
+          "L": "Nguyện chúng ca ngợi danh {{divine_name:CHÚA|Gia-vê}}, vì {{deity_pronoun:ngài|Ngài}} đã truyền lệnh và chúng được tạo nên.",
+          "B": "Nguyện chúng ca ngợi danh {{divine_name:CHÚA|Gia-vê}}, vì theo lệnh {{deity_pronoun:ngài|Ngài}}, chúng đã hiện hữu.",
+          "R": "Mọi vật ấy phải ca ngợi danh {{divine_name:CHÚA|Gia-vê}}. Ngài ra lệnh, và chúng đã có."
+        },
+        "ko": {
+          "L": "그것들이 {{divine_name:주|야훼}}의 이름을 찬양하게 하여라. 그분께서 명령하시니 그것들이 창조되었다.",
+          "B": "그것들이 {{divine_name:주|야훼}}의 이름을 찬양하기를 바란다. 그분의 명령으로 그것들이 생겨났다.",
+          "R": "이 모든 것이 {{divine_name:주|야훼}}의 이름을 찬양해야 한다. 그분께서 명령하시자 그것들이 생겨났다."
         }
       },
       "decisions": [
@@ -426,6 +637,31 @@
           "L": "And {{deity_pronoun:he|He}} established them forever and ever; a decree {{deity_pronoun:he|He}} gave, and it will not pass away.",
           "B": "He fixed them in their places for ever and always; {{deity_pronoun:he|He}} made a law for them that will not pass away.",
           "R": "He put them in their places to stay forever. He made rules for them that will never change."
+        },
+        "fr": {
+          "L": "Et {{deity_pronoun:il|Il}} les a établis pour toujours, à jamais ; {{deity_pronoun:il|Il}} a donné une loi, et elle ne passera pas.",
+          "B": "Il les a fixés à leur place pour toujours et à jamais ; {{deity_pronoun:il|Il}} leur a donné une loi qui ne passera pas.",
+          "R": "Il les a mis à leur place pour qu’ils y restent toujours. Il leur a donné des règles qui ne changeront jamais."
+        },
+        "sw": {
+          "L": "Naye aliwaweka imara milele na milele; alitoa amri, nayo haitapita.",
+          "B": "Aliwaweka mahali pao milele na milele; aliwawekea sheria isiyopita.",
+          "R": "Aliviweka mahali pake vikae milele. Aliviwekea kanuni ambazo hazitabadilika kamwe."
+        },
+        "es": {
+          "L": "Y {{deity_pronoun:él|Él}} los estableció por siempre jamás; un decreto {{deity_pronoun:él|Él}} dio, y no pasará.",
+          "B": "Él los fijó en su lugar por siempre jamás; {{deity_pronoun:él|Él}} les dio una ley que no pasará.",
+          "R": "Él los puso en su lugar para que se quedaran allí para siempre. Les dio reglas que nunca cambiarán."
+        },
+        "vi": {
+          "L": "Và {{deity_pronoun:ngài|Ngài}} đã lập chúng vững bền đời đời mãi mãi; {{deity_pronoun:ngài|Ngài}} đã ban một sắc lệnh và nó sẽ không qua đi.",
+          "B": "Ngài đã đặt chúng vào chỗ của chúng đời đời mãi mãi; {{deity_pronoun:ngài|Ngài}} đã ban cho chúng một luật sẽ không bao giờ qua đi.",
+          "R": "Ngài đặt chúng vào chỗ của chúng để ở đó mãi mãi. Ngài làm ra những luật lệ cho chúng, sẽ không bao giờ thay đổi."
+        },
+        "ko": {
+          "L": "그분께서 그것들을 영원히 세우시고, 법을 주셨으니, 그것이 사라지지 않을 것이다.",
+          "B": "그분께서 그것들을 영원토록 제자리에 두시고, 결코 없어지지 않을 법을 정해 주셨다.",
+          "R": "그분께서는 그것들을 제자리에 두셔서 영원히 있게 하셨다. 결코 바뀌지 않을 규칙을 정해 주셨다."
         }
       },
       "decisions": [
@@ -491,6 +727,31 @@
           "L": "Praise {{divine_name:the LORD|Yahweh}} from the earth, sea monsters and all [the] deeps,",
           "B": "From the earth below, praise {{divine_name:the LORD|Yahweh}}, sea monsters and all the watery deeps,",
           "R": "Everything on earth, praise {{divine_name:the LORD|Yahweh}}! Huge creatures in the sea and all the deep oceans, praise {{deity_pronoun:him|Him}}!"
+        },
+        "fr": {
+          "L": "Louez {{divine_name:le SEIGNEUR|Yahvé}} depuis la terre, monstres marins et tous [les] abîmes,",
+          "B": "Depuis la terre en bas, louez {{divine_name:le SEIGNEUR|Yahvé}}, monstres marins et toutes les profondeurs des eaux,",
+          "R": "Vous tous qui êtes sur la terre, louez {{divine_name:le SEIGNEUR|Yahvé}} ! Énormes animaux de la mer et océans profonds, louez-{{deity_pronoun:le|Le}} !"
+        },
+        "sw": {
+          "L": "Msifuni {{divine_name:BWANA|Yahwe}} kutoka duniani, enyi majoka ya baharini na vilindi vyote,",
+          "B": "Kutoka duniani chini, msifuni {{divine_name:BWANA|Yahwe}}, enyi majoka ya baharini na vilindi vyote vya maji,",
+          "R": "Vyote vilivyo duniani, msifuni {{divine_name:BWANA|Yahwe}}! Viumbe wakubwa wa baharini na bahari zote zenye kina, msifuni!"
+        },
+        "es": {
+          "L": "{{plural_you:Alaben|Alabad}} {{divine_name:al SEÑOR|a Yahvé}} desde la tierra, monstruos marinos y todos [los] abismos,",
+          "B": "Desde la tierra abajo, {{plural_you:alaben|alabad}} {{divine_name:al SEÑOR|a Yahvé}}, monstruos marinos y todos los abismos de las aguas,",
+          "R": "Todo lo que hay en la tierra, ¡{{plural_you:alaben|alabad}} {{divine_name:al SEÑOR|a Yahvé}}! Criaturas enormes del mar y todos los océanos profundos, ¡{{plural_you:alábenlo|alabadlo}}!"
+        },
+        "vi": {
+          "L": "Hãy ca ngợi {{divine_name:CHÚA|Gia-vê}} từ đất, hỡi các thủy quái và mọi vực sâu,",
+          "B": "Từ dưới đất, hãy ca ngợi {{divine_name:CHÚA|Gia-vê}}, hỡi các thủy quái và mọi vực nước sâu,",
+          "R": "Hỡi mọi vật trên đất, hãy ca ngợi {{divine_name:CHÚA|Gia-vê}}! Hỡi những sinh vật khổng lồ dưới biển và mọi đại dương sâu thẳm, hãy ca ngợi {{deity_pronoun:ngài|Ngài}}!"
+        },
+        "ko": {
+          "L": "땅에서 {{divine_name:주|야훼}}를 찬양하여라, 바다 괴물들과 모든 깊은 곳들아,",
+          "B": "아래 땅에서 {{divine_name:주|야훼}}를 찬양하여라, 바다의 큰 짐승들과 깊은 모든 바다야,",
+          "R": "땅에 있는 모든 것아, {{divine_name:주|야훼}}를 찬양하여라! 바다의 거대한 짐승들과 깊은 바다들아, 그분을 찬양하여라!"
         }
       },
       "decisions": [
@@ -555,6 +816,27 @@
           "reason": "Readable repeats the call to praise with each group, in short sentences.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191480070031"
+          ],
+          "choice": "\"các thủy quái\" (L, B) for the sea monsters; \"những sinh vật khổng lồ dưới biển\" (R)",
+          "alternatives": [
+            "\"các con rồng\"",
+            "\"cá voi\""
+          ],
+          "reason": "The word means the great creatures of the sea (see the meaning decision); \"thủy quái\" keeps their strangeness without naming one animal, and Readable describes them, as the English Readable does.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -588,6 +870,31 @@
           "L": "fire and hail, snow and smoke, stormy wind doing {{deity_pronoun:his|His}} word,",
           "B": "fire and hail, snow and fog, gales of wind that do what {{deity_pronoun:he|He}} says,",
           "R": "Praise {{deity_pronoun:him|Him}}, lightning and hail, snow and fog, and the strong winds that obey {{deity_pronoun:him|Him}}!"
+        },
+        "fr": {
+          "L": "feu et grêle, neige et fumée, vent de tempête qui fait {{deity_pronoun:sa|Sa}} parole,",
+          "B": "feu et grêle, neige et brouillard, vents de tempête qui font ce qu’{{deity_pronoun:il|Il}} dit,",
+          "R": "Louez-{{deity_pronoun:le|Le}}, éclairs et grêle, neige et brouillard, et vous, les vents forts qui {{deity_pronoun:lui|Lui}} obéissent !"
+        },
+        "sw": {
+          "L": "moto na mvua ya mawe, theluji na moshi, upepo wa dhoruba unaofanya neno {{deity_pronoun:lake|Lake}},",
+          "B": "moto na mvua ya mawe, theluji na ukungu, pepo kali zinazofanya anachosema,",
+          "R": "Msifuni, umeme na mvua ya mawe, theluji na ukungu, na pepo kali zinazomtii!"
+        },
+        "es": {
+          "L": "fuego y granizo, nieve y humo, viento tempestuoso que cumple {{deity_pronoun:su|Su}} palabra,",
+          "B": "fuego y granizo, nieve y niebla, vendavales que hacen lo que {{deity_pronoun:él|Él}} dice,",
+          "R": "¡{{plural_you:Alábenlo|Alabadlo}}, relámpagos y granizo, nieve y niebla, y los vientos fuertes que {{deity_pronoun:le|Le}} obedecen!"
+        },
+        "vi": {
+          "L": "lửa và mưa đá, tuyết và khói, gió bão làm theo lời {{deity_pronoun:ngài|Ngài}},",
+          "B": "lửa và mưa đá, tuyết và sương mù, những cơn gió bão làm theo lời {{deity_pronoun:ngài|Ngài}} phán,",
+          "R": "Hãy ca ngợi {{deity_pronoun:ngài|Ngài}}, hỡi chớp lửa và mưa đá, tuyết và sương mù, và những cơn gió mạnh vâng lời {{deity_pronoun:ngài|Ngài}}!"
+        },
+        "ko": {
+          "L": "불과 우박, 눈과 연기, 그분의 말씀을 행하는 폭풍아,",
+          "B": "번개와 우박, 눈과 안개, 그분의 말씀대로 하는 세찬 바람아,",
+          "R": "번개와 우박아, 눈과 안개야, 그분께 순종하는 거센 바람아, 그분을 찬양하여라!"
         }
       },
       "decisions": [
@@ -689,6 +996,31 @@
           "L": "mountains and all hills, fruit trees and all cedars,",
           "B": "the mountains and all the hills, trees that bear fruit and all the cedars,",
           "R": "Praise {{deity_pronoun:him|Him}}, mountains and hills, every fruit tree and every cedar!"
+        },
+        "fr": {
+          "L": "montagnes et toutes collines, arbres fruitiers et tous cèdres,",
+          "B": "les montagnes et toutes les collines, les arbres qui portent du fruit et tous les cèdres,",
+          "R": "Louez-{{deity_pronoun:le|Le}}, montagnes et collines, chaque arbre fruitier et chaque cèdre !"
+        },
+        "sw": {
+          "L": "milima na vilima vyote, miti ya matunda na mierezi yote,",
+          "B": "milima na vilima vyote, miti izaayo matunda na mierezi yote,",
+          "R": "Msifuni, milima na vilima, kila mti wa matunda na kila mwerezi!"
+        },
+        "es": {
+          "L": "montes y todas las colinas, árboles frutales y todos los cedros,",
+          "B": "los montes y todas las colinas, los árboles que dan fruto y todos los cedros,",
+          "R": "¡{{plural_you:Alábenlo|Alabadlo}}, montes y colinas, cada árbol frutal y cada cedro!"
+        },
+        "vi": {
+          "L": "núi non và mọi đồi, cây ăn trái và mọi cây bá hương,",
+          "B": "núi non và mọi đồi cao, cây sinh trái và mọi cây bá hương,",
+          "R": "Hãy ca ngợi {{deity_pronoun:ngài|Ngài}}, hỡi núi non và đồi cao, mọi cây ăn trái và mọi cây bá hương!"
+        },
+        "ko": {
+          "L": "산들과 모든 언덕들, 열매 맺는 나무들과 모든 백향목들아,",
+          "B": "산들과 모든 언덕, 열매 맺는 나무들과 모든 백향목아,",
+          "R": "산과 언덕들아, 모든 과일나무와 모든 백향목아, 그분을 찬양하여라!"
         }
       },
       "decisions": [
@@ -736,6 +1068,31 @@
           "L": "wild animals and all livestock, creeping things and winged birds,",
           "B": "wild beasts and all cattle, creatures that crawl and birds that fly,",
           "R": "Praise {{deity_pronoun:him|Him}}, wild animals and farm animals, creatures that crawl and birds that fly!"
+        },
+        "fr": {
+          "L": "bêtes sauvages et tout bétail, reptiles et oiseaux ailés,",
+          "B": "bêtes sauvages et tout le bétail, créatures qui rampent et oiseaux qui volent,",
+          "R": "Louez-{{deity_pronoun:le|Le}}, animaux sauvages et animaux de la ferme, bêtes qui rampent et oiseaux qui volent !"
+        },
+        "sw": {
+          "L": "wanyama wa porini na mifugo yote, viumbe vitambaavyo na ndege wenye mabawa,",
+          "B": "wanyama wa mwituni na ng'ombe wote, viumbe vitambaavyo na ndege warukao,",
+          "R": "Msifuni, wanyama wa porini na wanyama wa kufugwa, viumbe vitambaavyo na ndege warukao!"
+        },
+        "es": {
+          "L": "animales salvajes y todo el ganado, reptiles y aves aladas,",
+          "B": "bestias salvajes y todo el ganado, criaturas que se arrastran y aves que vuelan,",
+          "R": "¡{{plural_you:Alábenlo|Alabadlo}}, animales salvajes y animales de granja, criaturas que se arrastran y aves que vuelan!"
+        },
+        "vi": {
+          "L": "thú hoang và mọi súc vật, loài bò sát và chim có cánh,",
+          "B": "thú rừng và mọi gia súc, loài bò sát và loài chim bay,",
+          "R": "Hãy ca ngợi {{deity_pronoun:ngài|Ngài}}, hỡi thú rừng và gia súc, loài bò sát và loài chim bay!"
+        },
+        "ko": {
+          "L": "들짐승과 모든 가축, 기는 것들과 날개 달린 새들아,",
+          "B": "들짐승과 모든 가축, 기어 다니는 것들과 날아다니는 새들아,",
+          "R": "들짐승과 집짐승들아, 기어 다니는 것들과 날아다니는 새들아, 그분을 찬양하여라!"
         }
       },
       "decisions": [
@@ -786,6 +1143,31 @@
           "L": "kings of [the] earth and all peoples, princes and all judges of [the] earth,",
           "B": "earthly kings and all peoples, nobles and all the earth's rulers,",
           "R": "Praise {{deity_pronoun:him|Him}}, kings and all the nations of the world, leaders and everyone who governs on earth!"
+        },
+        "fr": {
+          "L": "rois de [la] terre et tous les peuples, princes et tous les juges de [la] terre,",
+          "B": "rois de la terre et tous les peuples, grands et tous les dirigeants de la terre,",
+          "R": "Louez-{{deity_pronoun:le|Le}}, rois et toutes les nations du monde, chefs et tous ceux qui gouvernent sur la terre !"
+        },
+        "sw": {
+          "L": "wafalme wa dunia na watu wote, wakuu na waamuzi wote wa dunia,",
+          "B": "wafalme wa dunia na mataifa yote, wakuu na watawala wote wa dunia,",
+          "R": "Msifuni, wafalme na mataifa yote ya ulimwengu, viongozi na wote wanaotawala duniani!"
+        },
+        "es": {
+          "L": "reyes de [la] tierra y todos los pueblos, príncipes y todos los jueces de [la] tierra,",
+          "B": "reyes de la tierra y todos los pueblos, nobles y todos los gobernantes de la tierra,",
+          "R": "¡{{plural_you:Alábenlo|Alabadlo}}, reyes y todas las naciones del mundo, líderes y todos los que gobiernan en la tierra!"
+        },
+        "vi": {
+          "L": "các vua [trên] đất và mọi dân tộc, các quan trưởng và mọi quan xét [trên] đất,",
+          "B": "các vua trên đất và mọi dân tộc, các quan chức và mọi nhà cầm quyền trên đất,",
+          "R": "Hãy ca ngợi {{deity_pronoun:ngài|Ngài}}, hỡi các vua và mọi dân tộc trên thế giới, các nhà lãnh đạo và tất cả những ai cai trị trên đất!"
+        },
+        "ko": {
+          "L": "땅의 왕들과 모든 백성들, 고관들과 땅의 모든 재판관들아,",
+          "B": "세상의 왕들과 모든 백성, 귀족들과 땅의 모든 통치자들아,",
+          "R": "왕들과 세상의 모든 민족들아, 지도자들과 땅을 다스리는 모든 이들아, 그분을 찬양하여라!"
         }
       },
       "decisions": [
@@ -833,6 +1215,31 @@
           "L": "young men and also young women, old [ones] with youths!",
           "B": "young men and young women alike, the old together with the young!",
           "R": "Praise {{deity_pronoun:him|Him}}, young men and young women, old people and children!"
+        },
+        "fr": {
+          "L": "jeunes hommes et aussi jeunes filles, vieillards avec les enfants !",
+          "B": "jeunes gens et jeunes filles ensemble, vieillards et enfants réunis !",
+          "R": "Louez-{{deity_pronoun:le|Le}}, jeunes hommes et jeunes filles, personnes âgées et enfants !"
+        },
+        "sw": {
+          "L": "vijana wa kiume na pia wasichana, wazee pamoja na vijana!",
+          "B": "vijana wa kiume na wa kike pia, wazee pamoja na vijana!",
+          "R": "Msifuni, vijana wa kiume na wa kike, wazee na watoto!"
+        },
+        "es": {
+          "L": "jóvenes y también doncellas, ¡ancianos junto con muchachos!",
+          "B": "¡jóvenes y muchachas por igual, los ancianos junto con los jóvenes!",
+          "R": "¡{{plural_you:Alábenlo|Alabadlo}}, jóvenes y muchachas, ancianos y niños!"
+        },
+        "vi": {
+          "L": "các thanh niên và cả các thiếu nữ, người già cùng với người trẻ!",
+          "B": "cả thanh niên lẫn thiếu nữ, người già cùng với người trẻ!",
+          "R": "Hãy ca ngợi {{deity_pronoun:ngài|Ngài}}, hỡi các chàng trai và cô gái, người già và trẻ em!"
+        },
+        "ko": {
+          "L": "총각들과 처녀들도, 노인들과 젊은이들이 함께!",
+          "B": "젊은 남자들과 젊은 여자들이 다 함께, 늙은이와 젊은이가 함께!",
+          "R": "젊은 남자들과 젊은 여자들아, 노인들과 아이들아, 그분을 찬양하여라!"
         }
       },
       "decisions": [
@@ -864,6 +1271,28 @@
           "choice": "old with youths: old and young people together",
           "alternatives": [],
           "reason": "The words (zeqenim, ne'arim) are masculine plurals, which in Hebrew cover men and women alike; the line takes in every age.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191480120011",
+            "o191480120041"
+          ],
+          "choice": "\"thanh niên\" and \"thiếu nữ\" with no gender span",
+          "alternatives": [
+            "a gender span"
+          ],
+          "reason": "The verse names young men and young women side by side, so each word means what it says, as in the English, which has no span here either.",
           "uncertain": false,
           "footnote": false
         }
@@ -905,6 +1334,31 @@
           "L": "Let them praise the name of {{divine_name:the LORD|Yahweh}}, for {{deity_pronoun:his|His}} name alone is exalted; {{deity_pronoun:his|His}} majesty [is] above earth and heavens.",
           "B": "Let them all bring praise to the name of {{divine_name:the LORD|Yahweh}}, since {{deity_pronoun:his|His}} name alone is lifted high; {{deity_pronoun:his|His}} splendor towers over earth and sky.",
           "R": "Let them all praise the name of {{divine_name:the LORD|Yahweh}}. His name is the only one that is truly great. His majesty is far above the earth and the sky."
+        },
+        "fr": {
+          "L": "Qu’ils louent le nom {{divine_name:du SEIGNEUR|de Yahvé}}, car {{deity_pronoun:son|Son}} nom seul est élevé ; {{deity_pronoun:sa|Sa}} majesté [est] au-dessus de la terre et des cieux.",
+          "B": "Qu’ils louent tous le nom {{divine_name:du SEIGNEUR|de Yahvé}}, puisque {{deity_pronoun:son|Son}} nom seul est élevé bien haut ; {{deity_pronoun:sa|Sa}} splendeur domine la terre et le ciel.",
+          "R": "Qu’ils louent tous le nom {{divine_name:du SEIGNEUR|de Yahvé}}. Son nom est le seul qui soit vraiment grand. Sa majesté est bien au-dessus de la terre et du ciel."
+        },
+        "sw": {
+          "L": "Na walisifu jina la {{divine_name:BWANA|Yahwe}}, kwa maana jina {{deity_pronoun:lake|Lake}} peke yake limetukuka; fahari {{deity_pronoun:yake|Yake}} [iko] juu ya nchi na mbingu.",
+          "B": "Na wote walisifu jina la {{divine_name:BWANA|Yahwe}}, kwa kuwa jina {{deity_pronoun:lake|Lake}} peke yake limeinuliwa juu; utukufu {{deity_pronoun:wake|Wake}} unapita nchi na anga.",
+          "R": "Wote na walisifu jina la {{divine_name:BWANA|Yahwe}}. Jina {{deity_pronoun:lake|Lake}} ndilo pekee lililo kuu kweli. Enzi {{deity_pronoun:yake|Yake}} iko juu sana ya dunia na anga."
+        },
+        "es": {
+          "L": "Que alaben el nombre {{divine_name:del SEÑOR|de Yahvé}}, porque solo {{deity_pronoun:su|Su}} nombre es excelso; {{deity_pronoun:su|Su}} majestad [está] sobre la tierra y los cielos.",
+          "B": "Que todos alaben el nombre {{divine_name:del SEÑOR|de Yahvé}}, ya que solo {{deity_pronoun:su|Su}} nombre es exaltado; {{deity_pronoun:su|Su}} esplendor se eleva sobre la tierra y el cielo.",
+          "R": "Que todos alaben el nombre {{divine_name:del SEÑOR|de Yahvé}}. Su nombre es el único que es verdaderamente grande. Su majestad está muy por encima de la tierra y del cielo."
+        },
+        "vi": {
+          "L": "Nguyện chúng ca ngợi danh {{divine_name:CHÚA|Gia-vê}}, vì chỉ một mình danh {{deity_pronoun:ngài|Ngài}} được tôn cao; sự uy nghi của {{deity_pronoun:ngài|Ngài}} [ở] trên đất và trời.",
+          "B": "Nguyện tất cả cùng ca ngợi danh {{divine_name:CHÚA|Gia-vê}}, vì chỉ một mình danh {{deity_pronoun:ngài|Ngài}} được tôn cao; vẻ huy hoàng của {{deity_pronoun:ngài|Ngài}} vượt trên đất và trời.",
+          "R": "Nguyện tất cả cùng ca ngợi danh {{divine_name:CHÚA|Gia-vê}}. Chỉ có danh {{deity_pronoun:ngài|Ngài}} là thật sự vĩ đại. Sự uy nghi của {{deity_pronoun:ngài|Ngài}} cao vượt hơn cả đất và trời."
+        },
+        "ko": {
+          "L": "그들이 {{divine_name:주|야훼}}의 이름을 찬양하게 하여라. 그분의 이름만이 높으시고, 그분의 위엄이 땅과 하늘 위에 [있기] 때문이다.",
+          "B": "그들이 모두 {{divine_name:주|야훼}}의 이름을 찬양하게 하여라. 그분의 이름만이 높임을 받으시고, 그분의 영광이 땅과 하늘 위에 우뚝 솟아 있다.",
+          "R": "그들이 모두 {{divine_name:주|야훼}}의 이름을 찬양하게 하여라. 참으로 위대한 이름은 그분의 이름뿐이다. 그분의 위엄은 땅과 하늘보다 훨씬 높다."
         }
       },
       "decisions": [
@@ -996,6 +1450,31 @@
           "L": "And {{deity_pronoun:he|He}} has raised up a horn for {{deity_pronoun:his|His}} people, praise for all {{deity_pronoun:his|His}} faithful [ones], for the sons of Israel, a people near to {{deity_pronoun:him|Him}}. Praise {{divine_name:the LORD|Yah}}!",
           "B": "For {{deity_pronoun:his|His}} own people {{deity_pronoun:he|He}} has raised up a horn, a source of praise for all {{deity_pronoun:his|His}} faithful, the Israelites, a people near to {{deity_pronoun:him|Him}}. Praise {{divine_name:the LORD|Yah}}!",
           "R": "He has made {{deity_pronoun:his|His}} people strong. This gives all {{deity_pronoun:his|His}} faithful people a reason to praise. They are the people of Israel, the people who are close to {{deity_pronoun:him|Him}}. Praise {{divine_name:the LORD|Yah}}!"
+        },
+        "fr": {
+          "L": "Et {{deity_pronoun:il|Il}} a élevé une corne pour {{deity_pronoun:son|Son}} peuple, louange pour tous {{deity_pronoun:ses|Ses}} fidèles, pour les {{gender:enfants|fils}} d’Israël, un peuple proche de {{deity_pronoun:lui|Lui}}. Louez {{divine_name:le SEIGNEUR|Yah}} !",
+          "B": "Pour {{deity_pronoun:son|Son}} peuple {{deity_pronoun:il|Il}} a élevé une corne, sujet de louange pour tous {{deity_pronoun:ses|Ses}} fidèles, les {{gender:Israélites|fils d’Israël}}, un peuple proche de {{deity_pronoun:lui|Lui}}. Louez {{divine_name:le SEIGNEUR|Yah}} !",
+          "R": "Il a rendu {{deity_pronoun:son|Son}} peuple fort. Cela donne à tous {{deity_pronoun:ses|Ses}} fidèles une raison de {{deity_pronoun:le|Le}} louer. Ce sont les Israélites, le peuple qui est proche de {{deity_pronoun:lui|Lui}}. Louez {{divine_name:le SEIGNEUR|Yah}} !"
+        },
+        "sw": {
+          "L": "Naye amewainulia watu {{deity_pronoun:wake|Wake}} pembe, sifa kwa waaminifu {{deity_pronoun:wake|Wake}} wote, kwa wana wa Israeli, watu walio karibu {{deity_pronoun:naye|Naye}}. Msifuni {{divine_name:BWANA|Yah}}!",
+          "B": "Kwa ajili ya watu {{deity_pronoun:wake|Wake}} {{deity_pronoun:mwenyewe|Mwenyewe}} amewainulia pembe, sababu ya sifa kwa waaminifu {{deity_pronoun:wake|Wake}} wote, Waisraeli, watu walio karibu {{deity_pronoun:naye|Naye}}. Msifuni {{divine_name:BWANA|Yah}}!",
+          "R": "Amewafanya watu {{deity_pronoun:wake|Wake}} kuwa na nguvu. Jambo hili linawapa watu {{deity_pronoun:wake|Wake}} wote waaminifu sababu ya kusifu. Wao ni watu wa Israeli, watu walio karibu {{deity_pronoun:naye|Naye}}. Msifuni {{divine_name:BWANA|Yah}}!"
+        },
+        "es": {
+          "L": "Y {{deity_pronoun:él|Él}} ha levantado un cuerno para {{deity_pronoun:su|Su}} pueblo, alabanza para todos {{deity_pronoun:sus|Sus}} fieles, para los hijos de Israel, pueblo cercano a {{deity_pronoun:él|Él}}. ¡{{plural_you:Alaben|Alabad}} {{divine_name:al SEÑOR|a Yah}}!",
+          "B": "Para {{deity_pronoun:su|Su}} propio pueblo {{deity_pronoun:él|Él}} ha levantado un cuerno, motivo de alabanza para todos {{deity_pronoun:sus|Sus}} fieles, los israelitas, un pueblo cercano a {{deity_pronoun:él|Él}}. ¡{{plural_you:Alaben|Alabad}} {{divine_name:al SEÑOR|a Yah}}!",
+          "R": "Él ha hecho fuerte a {{deity_pronoun:su|Su}} pueblo. Esto les da a todos {{deity_pronoun:sus|Sus}} fieles un motivo para alabar. Son el pueblo de Israel, el pueblo que está cerca de {{deity_pronoun:él|Él}}. ¡{{plural_you:Alaben|Alabad}} {{divine_name:al SEÑOR|a Yah}}!"
+        },
+        "vi": {
+          "L": "Và {{deity_pronoun:ngài|Ngài}} đã nâng một cái sừng lên cho dân {{deity_pronoun:ngài|Ngài}}, [là] lời ca ngợi cho tất cả những người trung tín của {{deity_pronoun:ngài|Ngài}}, cho con cái Y-sơ-ra-ên, một dân gần gũi {{deity_pronoun:ngài|Ngài}}. Hãy ca ngợi {{divine_name:CHÚA|Gia}}!",
+          "B": "Ngài đã nâng sừng lên cho chính dân {{deity_pronoun:ngài|Ngài}}, làm lý do ca ngợi cho mọi người trung tín của {{deity_pronoun:ngài|Ngài}}, là dân Y-sơ-ra-ên, một dân ở gần {{deity_pronoun:ngài|Ngài}}. Hãy ca ngợi {{divine_name:CHÚA|Gia}}!",
+          "R": "Ngài đã làm cho dân {{deity_pronoun:ngài|Ngài}} được mạnh mẽ. Điều đó cho mọi người trung tín của {{deity_pronoun:ngài|Ngài}} có lý do để ca ngợi. Họ là dân Y-sơ-ra-ên, là dân ở gần bên {{deity_pronoun:ngài|Ngài}}. Hãy ca ngợi {{divine_name:CHÚA|Gia}}!"
+        },
+        "ko": {
+          "L": "그분께서 그분의 백성을 위하여 뿔을 높이셨으니, 그분의 모든 신실한 이들, 곧 그분께 가까운 백성인 이스라엘 자손에게 찬양이다. {{divine_name:주|야}}를 찬양하여라!",
+          "B": "그분께서 그분의 백성을 위하여 뿔을 높이 드셨으니, 그것은 그분의 모든 신실한 백성, 곧 그분께 가까이 있는 백성인 이스라엘 자손의 찬양거리이다. {{divine_name:주|야}}를 찬양하여라!",
+          "R": "그분께서 그분의 백성을 강하게 하셨다. 그래서 그분의 신실한 백성이 모두 찬양할 이유가 생겼다. 그들은 이스라엘 백성, 곧 그분께 가까이 있는 백성이다. {{divine_name:주|야}}를 찬양하여라!"
         }
       },
       "decisions": [
@@ -1082,6 +1561,27 @@
             "he has raised up a horn"
           ],
           "reason": "Readable says what the picture of the horn means (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191480140072",
+            "o191480140081"
+          ],
+          "choice": "\"enfants d'Israël\" (Literal) and \"Israélites\" (Balanced) by default, with \"fils d'Israël\" as the gender alternative",
+          "alternatives": [
+            "\"fils d'Israël\" with no setting"
+          ],
+          "reason": "As the Pentateuch terms set for \"the sons of Israel\", which means the whole people; the English has no setting here, but the French choice follows the book-wide form. Readable says \"les Israélites\", which is already inclusive.",
           "uncertain": false,
           "footnote": false
         }

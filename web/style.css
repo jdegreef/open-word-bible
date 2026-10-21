@@ -1808,6 +1808,18 @@ html.signed-in .sign-in-btn { visibility: hidden; }
 .account { max-width: 680px; }
 .account .page-head { padding-bottom: 20px; }
 .set-block { margin: 0 0 28px; padding: 22px 24px; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); }
+/* The account page's suggestions and questions (web/account.js). */
+.my-messages { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 14px; }
+.my-message { padding: 12px 14px; border: 1px solid var(--line); border-radius: var(--radius-sm); }
+.my-message-head { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: baseline; margin: 0; font-size: 14px; }
+.my-message-kind { font-weight: 700; }
+.my-message-date, .my-message-status { color: var(--muted); }
+.my-message-status { margin-left: auto; }
+.my-message blockquote { margin: 8px 0 0; padding: 0 0 0 12px; border-left: 3px solid var(--line-strong); font-family: var(--serif); white-space: pre-wrap; }
+.my-message-reply { margin: 10px 0 0; padding: 10px 12px; border-radius: var(--radius-sm); background: var(--surface-2); white-space: pre-wrap; }
+.my-message-reply p { margin: 0; }
+.my-message-label { font-size: 13px; font-weight: 700; color: var(--muted); }
+.my-message-empty { color: var(--muted); }
 .set-block h2 { font-size: 18px; margin: 0 0 12px; }
 .set-block > p { margin: 0 0 12px; }
 .set-block > p:last-child { margin-bottom: 0; }
@@ -2258,6 +2270,21 @@ body.listening { padding-bottom: calc(var(--listen-h, 64px) + 12px); }
 .mark-hue { width: 26px; height: 26px; border-radius: 50%; border: 1px solid var(--line-strong); background: var(--hl); cursor: pointer; padding: 0; }
 .mark-hue[aria-pressed="true"] { box-shadow: 0 0 0 2px var(--surface), 0 0 0 4px var(--accent); }
 .mark-all { margin-left: auto; font-size: 13px; }
+/* The reader's own note: a pencil after the verse number, and the note
+   under the mark row (web/reader.js myNoteBox; the saved verses page). */
+.verse.noted > sup:not(.fn):first-child::after,
+.verse.noted > .line:first-child > sup:not(.fn):first-child::after { content: "\00a0\270E"; color: var(--accent); font-size: .85em; }
+.mark-note {
+  padding: 4px 12px; border: 1px solid var(--line-strong); border-radius: 999px; background: var(--surface);
+  color: var(--text); font: inherit; font-size: 13px; font-weight: 600; cursor: pointer;
+}
+.my-note { margin: -4px 0 16px; padding: 10px 12px 12px; border-radius: var(--radius-sm); background: var(--surface-2); font-family: var(--sans); }
+.my-note-label { display: block; margin: 0 0 6px; font-size: 13px; font-weight: 700; }
+.my-note-text, .saved-note { margin: 0 0 6px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.my-note-field { max-height: 18em; }
+.my-note-private { margin: 6px 0 8px; }
+.my-note-buttons { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 0; }
+.saved-note { margin: 8px 0 0; padding: 8px 12px; border-radius: var(--radius-sm); background: var(--surface-2); font-family: var(--sans); font-size: 15px; }
 .saved-filter { margin: 0 0 24px; }
 .saved-book { font-family: var(--display); font-weight: 600; font-size: 24px; margin: 28px 0 12px; }
 .saved-items { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
@@ -2363,3 +2390,23 @@ button.button { font-family: inherit; cursor: pointer; }
   .plan-today { padding: 18px 18px 20px; }
   .plan-bar { padding: 12px 14px; }
 }
+/* The notes as the page is served (build_site.chapter_notes): plain text
+   until reader.js redraws them as buttons. */
+.notes span.note { cursor: auto; }
+.notes span.note:hover { background: none; }
+/* The translation status page (build_site.status_page). */
+.status-table { width: 100%; border-collapse: collapse; margin: 0 0 8px; font-size: 15px; }
+.status-table th, .status-table td { padding: 7px 10px; border-bottom: 1px solid var(--line); text-align: left; }
+.status-table thead th { font-size: 13px; color: var(--muted); font-weight: 600; }
+.status-table td { text-align: right; font-variant-numeric: tabular-nums; }
+.status-table th[scope="row"] { font-weight: 400; }
+.status-table thead th + th { text-align: right; }
+/* A book's page (build_site.book_page): its introduction, then an outline
+   of its chapters from their section headings. */
+.book-layout { max-width: 700px; }
+.book-intro .notice { margin: 0 0 16px; }
+.book-intro > section h2 { font-family: var(--display); font-weight: 600; font-size: 27px; margin: 1.8em 0 .5em; }
+.book-outline { list-style: none; padding: 0; margin: 0; }
+.book-outline li { padding: 10px 0; border-bottom: 1px solid var(--line); }
+.book-outline a { font-weight: 600; }
+.outline-heads { display: block; color: var(--muted); font-size: 15px; margin-top: 2px; }

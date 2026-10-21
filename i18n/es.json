@@ -182,6 +182,13 @@
     "hl_blue": "Resaltado azul",
     "hl_pink": "Resaltado rosa",
     "saved_all": "Todos los versículos guardados",
+    "my_note": "Tu nota",
+    "my_note_add": "Añadir una nota",
+    "my_note_edit": "Editar nota",
+    "my_note_save": "Guardar nota",
+    "my_note_cancel": "Cancelar",
+    "my_note_delete": "Borrar nota",
+    "my_note_private": "Solo tú puedes ver tus notas. Con la sesión iniciada, te acompañan en tus otros dispositivos.",
     "step_prev": "Versículo anterior",
     "step_next": "Versículo siguiente",
     "step_notes": "Siguiente con notas",
@@ -311,6 +318,54 @@
   "about.licences": "Licencias",
   "about.licences_text": "La traducción, sus registros de razonamiento y los alineamientos se dedican al dominio público bajo <a href=\"https://creativecommons.org/publicdomain/zero/1.0/deed.es\">CC0 1.0</a>. El código tiene licencia MIT. Los textos fuente conservan sus propias licencias, que se acreditan abajo.",
   "about.source": "Código fuente y datos:",
+  "book_page": {
+    "title": "{book}: introducción y capítulos",
+    "draft": "Esta introducción es un borrador escrito con ayuda de IA. Como la traducción, sigue siendo un borrador hasta que la revise un revisor con nombre.",
+    "start": "Empezar a leer",
+    "chapters": "Capítulos",
+    "chapter": "Capítulo {n}",
+    "articles": "Artículos sobre {book}"
+  },
+  "status": {
+    "nav": "Estado de la traducción",
+    "title": "Estado de la traducción",
+    "description": "Cuánto de Open Word Bible está en borrador y cuánto ha aprobado un revisor humano, contado a partir de la propia traducción.",
+    "heading": "En qué punto está la traducción",
+    "dek": "Cada oración se redacta con ayuda de IA y sigue siendo un borrador hasta que la aprueba un revisor con nombre que lee la lengua original. Estas cifras se cuentan a partir de la propia traducción cada vez que se actualiza el sitio.",
+    "sentences": "Oraciones redactadas",
+    "drafts": "Aún en borrador",
+    "reviewed": "Revisadas por una persona",
+    "by_status": "Por estado de revisión",
+    "by_language": "Por idioma",
+    "by_book": "Por libro",
+    "status": "Estado",
+    "language": "Idioma",
+    "book": "Libro",
+    "count": "Oraciones",
+    "how": "Cómo se revisa una oración",
+    "report": "¿Ha encontrado un error en un borrador? Por favor, <a href=\"{issues}\">infórmenos</a>.",
+    "thousands": "."
+  },
+  "download": {
+    "nav": "Descargar el texto",
+    "title": "Descargas",
+    "description": "Open Word Bible en archivos listos para usar: USFM y JSON en cada idioma y nivel, de uso libre (CC0).",
+    "heading": "Descargar el texto",
+    "dek": "Toda la traducción en archivos, en cada idioma y nivel, para programas bíblicos, aplicaciones y sus propios proyectos. Se generan de nuevo a partir de la traducción cada vez que se actualiza el sitio.",
+    "draft": "Cada oración se redacta con ayuda de IA y sigue siendo un borrador hasta que un revisor con nombre la aprueba. El manifiesto de cada archivo cuenta sus oraciones por <a href=\"{status}\">estado de revisión</a>.",
+    "usfm_note": "<b>USFM</b>: un archivo por libro, el formato estándar de los programas bíblicos y las herramientas de edición.",
+    "json_note": "<b>JSON</b>: libros, capítulos y versículos en un solo archivo, para aplicaciones y scripts.",
+    "settings_note": "Cada zip incluye también manifest.json (la edición, su numeración de versículos, sus ajustes y los versículos aún sin traducir), un README y la licencia. El texto usa los ajustes de lectura predeterminados.",
+    "licence": "El texto está dedicado al dominio público (CC0): úselo, modifíquelo y compártalo sin pedir permiso. Se agradece mencionar a Open Word Bible.",
+    "counts": "{verses} versículos; {missing} aún sin traducir.",
+    "level": "Nivel",
+    "usfm": "USFM",
+    "json": "JSON",
+    "kb": "{n} KB",
+    "mb": "{n} MB",
+    "decimal": ",",
+    "built": "Generado el {date}."
+  },
   "about.credits_language": "Los créditos se dan en inglés, con los nombres y licencias tal como los publican sus autores.",
   "beliefs": {
     "title": "Lo que creemos",
@@ -356,14 +411,14 @@
     "title": "Privacidad",
     "description": "Qué guarda Open Word Bible sobre ti y por qué: sin anuncios, sin rastreo y una cuenta solo si la quieres.",
     "heading": "Privacidad",
-    "updated": "Última actualización: 15 de octubre de 2026",
+    "updated": "Última actualización: 17 de octubre de 2026",
     "dek": "Puedes leer Open Word Bible sin cuenta, sin anuncios y sin que nadie te rastree. Esta página explica qué guardamos cuando inicias sesión y por qué.",
     "sections": [
       [
         "Leer sin cuenta",
         [
           "No usamos analíticas, publicidad ni cookies de rastreo. Cada página, fuente y script viene de nuestro propio sitio, así que ninguna otra empresa sabe lo que lees aquí.",
-          "Tus ajustes de lectura, tu lugar de lectura, marcadores, resaltados, búsquedas recientes, el avance de tus planes de lectura y los capítulos que guardas para leer sin conexión se quedan en tu navegador y no se nos envían. Borrar los datos de este sitio en tu navegador, o <em>Borrar este dispositivo</em> en la <a href=\"{account}\">página de tu cuenta</a>, los elimina."
+          "Tus ajustes de lectura, tu lugar de lectura, marcadores, resaltados, notas, búsquedas recientes, el avance de tus planes de lectura y los capítulos que guardas para leer sin conexión se quedan en tu navegador y no se nos envían. Borrar los datos de este sitio en tu navegador, o <em>Borrar este dispositivo</em> en la <a href=\"{account}\">página de tu cuenta</a>, los elimina."
         ]
       ],
       [
@@ -376,7 +431,7 @@
         "Si creas una cuenta",
         [
           "Una cuenta guarda solo lo que necesita para funcionar:",
-          "<ul><li>tu correo electrónico, con el que inicias sesión, y una contraseña si eliges una, guardada solo como un hash seguro;</li><li>un nombre visible, si lo pones, que ven los revisores en tus sugerencias y preguntas;</li><li>tus marcadores y resaltados (con las palabras del versículo tal como las viste) y tu lugar de lectura, para que te acompañen en tus otros dispositivos;</li><li>cada dispositivo con sesión iniciada: la descripción que el navegador da de sí mismo, cuándo inició sesión y cuándo se usó por última vez (cerrar sesión lo elimina);</li><li>los roles que tengas, como revisor o editor, y el registro de revisión de quién aprobó qué y cuándo.</li></ul>",
+          "<ul><li>tu correo electrónico, con el que inicias sesión, y una contraseña si eliges una, guardada solo como un hash seguro;</li><li>un nombre visible, si lo pones, que ven los revisores en tus sugerencias y preguntas;</li><li>las sugerencias y preguntas que envías sobre un versículo, con su respuesta, para que un editor pueda contestarte por correo;</li><li>tus marcadores, resaltados y notas privadas (con las palabras del versículo tal como las viste), tu lugar de lectura, el avance de tus planes de lectura y tus ajustes de lectura (como el nivel de lectura y las opciones de redacción), para que te acompañen en tus otros dispositivos;</li><li>cada dispositivo con sesión iniciada: la descripción que el navegador da de sí mismo, cuándo inició sesión y cuándo se usó por última vez (cerrar sesión lo elimina);</li><li>los roles que tengas, como revisor o editor, y el registro de revisión de quién aprobó qué y cuándo.</li></ul>",
           "Los enlaces de inicio de sesión y las claves de los dispositivos se guardan solo como huellas que no pueden convertirse de nuevo en enlaces o claves válidos."
         ]
       ],
@@ -390,13 +445,13 @@
       [
         "Quién más maneja tus datos",
         [
-          "No vendemos tus datos, no los compartimos con anunciantes ni los usamos para perfilarte. Algunos servicios nos ayudan a mantener el sitio: Render aloja el sitio, el servidor y su base de datos y, como cualquier alojamiento, guarda registros de solicitudes por poco tiempo; un servicio de correo envía los correos de inicio de sesión; y cuando algo falla, un informe de error va a Sentry sin tu dirección, tus cookies, tus búsquedas ni los demás detalles de la solicitud."
+          "No vendemos tus datos, no los compartimos con anunciantes ni los usamos para perfilarte. Algunos servicios nos ayudan a mantener el sitio: Render aloja el sitio, el servidor y su base de datos y, como cualquier alojamiento, guarda registros de solicitudes por poco tiempo; un servicio de correo envía los correos de inicio de sesión y las respuestas a tus sugerencias y preguntas; y cuando algo falla, un informe de error va a Sentry sin tu dirección, tus cookies, tus búsquedas ni los demás detalles de la solicitud."
         ]
       ],
       [
         "Tus opciones",
         [
-          "En la <a href=\"{account}\">página de tu cuenta</a> puedes descargar los datos de tu cuenta, borrar este dispositivo y eliminar tu cuenta. Al eliminarla se borran tu correo, tu nombre visible, tu contraseña, tus dispositivos, marcadores, resaltados y tu lugar de lectura.",
+          "En la <a href=\"{account}\">página de tu cuenta</a> puedes descargar los datos de tu cuenta, borrar este dispositivo y eliminar tu cuenta. Al eliminarla se borran tu correo, tu nombre visible, tu contraseña, tus dispositivos, marcadores, resaltados, notas, tu lugar de lectura, el avance de tus planes de lectura, tus ajustes de lectura y las sugerencias y preguntas que enviaste.",
           "Una excepción: la cuenta de un revisor se conserva con el registro de revisión, porque ese registro dice quién aprobó cada oración. Pide a un editor que la cierre."
         ]
       ],
@@ -517,14 +572,17 @@
   "reader.listen": "Escuchar",
   "saved.title": "Versículos guardados",
   "saved.heading": "Tus versículos guardados",
-  "saved.dek": "Los versículos que marcas o resaltas al leer se guardan en este navegador, en este dispositivo.",
-  "saved.empty": "Aún no has guardado nada. Elige un versículo mientras lees y márcalo o resáltalo.",
+  "saved.dek": "Los versículos que marcas, resaltas o en los que escribes una nota al leer se guardan en este navegador, en este dispositivo.",
+  "saved.empty": "Aún no has guardado nada. Elige un versículo mientras lees y márcalo, resáltalo o añade una nota.",
   "saved.show": "Mostrar",
   "saved.all": "Todos",
   "saved.bookmarks": "Marcados",
   "saved.highlights": "Resaltados",
   "saved.remove": "Quitar",
   "saved.bookmark": "Marcado",
+  "saved.notes": "Notas",
+  "saved.note": "Tu nota",
+  "saved.confirm": "Haz clic otra vez: también se borrará tu nota",
   "reader.strip": "{book}: capítulos",
   "reader.turns": "Pasaje anterior y siguiente",
   "reader.prev": "&larr; Anterior",
@@ -543,9 +601,11 @@
   "account.display_name_note": "(lo ven los revisores en tus sugerencias y preguntas)",
   "account.save": "Guardar",
   "account.soon": "Próximamente",
-  "account.soon_text": "Notas privadas en cualquier versículo; después, sugerir un cambio o hacer una pregunta sobre una decisión de traducción.",
-  "account.synced": "Tus marcadores, resaltados y el punto donde te quedaste leyendo se guardan con tu cuenta, así que te siguen a tus otros dispositivos.",
+  "account.soon_text": "Notas privadas en cualquier versículo.",
+  "account.synced": "Tus marcadores, resaltados, notas, el punto donde te quedaste leyendo, el avance de tus planes de lectura y tus ajustes de lectura se guardan con tu cuenta, así que te siguen a tus otros dispositivos.",
   "account.synced_link": "Ver tus versículos guardados",
+  "account.messages": "Tus sugerencias y preguntas",
+  "account.messages_text": "Lo que has enviado a los editores desde un versículo («Sugerir o preguntar» en el lector) y sus respuestas, que también te llegan por correo.",
 
   "login.title_sign_in": "Bienvenido de nuevo",
   "login.title_sign_up": "Crea tu cuenta",
@@ -601,7 +661,7 @@
   "account.delete_text": "Elimina para siempre tu cuenta, tu nombre visible y tus dispositivos con sesión iniciada. No se puede deshacer.",
   "account.delete": "Eliminar cuenta",
   "account.sign_out": "Cerrar sesión",
-  "account.ui": {"reader": "Lector", "error": "Algo salió mal.", "offline": "No se pudo conectar con Open Word Bible. Revisa tu conexión e inténtalo de nuevo.", "saved": "Guardado.", "password_set": "Elegida", "password_none": "Todavía no: inicias sesión con un enlace por correo o con Google.", "confirm": "Haz clic otra vez para confirmar", "cleared": "Borrado.", "has_reviews": "Las cuentas con historial de revisión se conservan con el registro. Pide a un editor que cierre la tuya."},
+  "account.ui": {"reader": "Lector", "error": "Algo salió mal.", "offline": "No se pudo conectar con Open Word Bible. Revisa tu conexión e inténtalo de nuevo.", "saved": "Guardado.", "password_set": "Elegida", "password_none": "Todavía no: inicias sesión con un enlace por correo o con Google.", "confirm": "Haz clic otra vez para confirmar", "cleared": "Borrado.", "has_reviews": "Las cuentas con historial de revisión se conservan con el registro. Pide a un editor que cierre la tuya.", "messages_empty": "Aún no has enviado nada.", "suggestion": "Sugerencia", "question": "Pregunta", "status_new": "Esperando a un editor", "status_answered": "Respondida", "status_done": "Resuelta", "status_declined": "Cerrada", "reply": "Respuesta de los editores:"},
   "404.title": "No encontrada",
   "404.heading": "Esta página no está aquí.",
   "404.sub": "Puede que se haya movido o que la dirección esté mal escrita. Por ahora solo hay unos pocos pasajes traducidos.",

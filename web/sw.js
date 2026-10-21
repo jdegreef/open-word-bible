@@ -68,12 +68,35 @@ function trim(cache) {
   });
 }
 
+// The shared reader data a chapter page loads (scripts/build_site.py
+// chapter_shared, reader_shared), which a saved book keeps with its pages:
+// a fresh copy of a page may name a newer version.
+var SHARED = /<script src="(\/(?:chapter-data\/[^"?]+|reader-[a-z]+)\.js\?v=[0-9a-f]+)"><\/script>/g;
+
+function keepShared(books, html) {
+  var urls = [], m;
+  while ((m = SHARED.exec(html))) urls.push(m[1]);
+  return Promise.all(urls.map(function (u) {
+    return books.match(u).then(function (hit) {
+      if (hit) return;
+      return fetch(u).then(function (res) {
+        if (!res.ok) return;
+        return books.delete(u, { ignoreSearch: true }).then(function () { return books.put(u, res); });
+      });
+    });
+  }));
+}
+
 // Keep a fresh copy of a page: in owb-books if the reader saved it there,
-// otherwise among the pages read lately.
+// with the shared data it loads, otherwise among the pages read lately.
 function keepPage(req, res) {
   return caches.open("owb-books").then(function (books) {
     return books.match(req).then(function (saved) {
-      if (saved) return books.put(req, res);
+      if (saved) {
+        return res.clone().text().then(function (html) {
+          return books.put(req, res).then(function () { return keepShared(books, html); });
+        });
+      }
       return caches.open("owb-pages").then(function (pages) {
         return pages.delete(req).then(function () { return pages.put(req, res); })
           .then(function () { return trim(pages); });
@@ -125,7 +148,13 @@ function file(e) {
     return fetch(e.request).then(function (res) {
       if (res.ok) {
         var copy = res.clone();
-        e.waitUntil(caches.open("owb-assets").then(function (c) { return c.put(e.request, copy); }));
+        // A new version of a hashed file replaces the older ones: a
+        // chapter's shared data (/chapter-data/) changes with its wording,
+        // and too many chapters to list in CURRENT.
+        e.waitUntil(caches.open("owb-assets").then(function (c) {
+          var old = new URL(e.request.url).search ? c.delete(e.request, { ignoreSearch: true }) : Promise.resolve();
+          return old.then(function () { return c.put(e.request, copy); });
+        }));
       }
       return res;
     }).catch(function () {
@@ -143,6 +172,8 @@ self.addEventListener("fetch", function (e) {
   // The API (sign-in, accounts, search) and other sites are left alone:
   // search answers are never kept.
   if (url.origin !== self.location.origin || url.pathname.indexOf("/api/") === 0) return;
+  // The ready-made downloads (/download/) are megabytes each: never kept.
+  if (url.pathname.indexOf("/downloads/") === 0) return;
   if (req.mode === "navigate") { e.respondWith(page(e)); return; }
   // Share-card images are for link previews, not for reading; and what
   // site.js fetches to save a book (a page, or any file with cache:

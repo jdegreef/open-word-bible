@@ -6,6 +6,17 @@
 .admin-rail a { display: block; padding: 6px 10px; border-radius: 8px; color: var(--text); text-decoration: none; }
 .admin-rail a:hover { color: var(--accent); }
 .admin-rail a[aria-current="page"] { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+.admin-search { position: relative; margin: 0 0 12px; }
+.admin .admin-search input { width: 100%; font-size: 14.5px; }
+.admin-search-list { position: absolute; z-index: 20; top: calc(100% + 4px); left: 0; width: min(380px, calc(100vw - 32px));
+  max-height: min(70vh, 480px); overflow-y: auto; padding: 6px; background: var(--surface); border: 1px solid var(--line-strong);
+  border-radius: 10px; box-shadow: 0 10px 30px rgba(0, 0, 0, .14); }
+.admin-search-list .admin-empty { padding: 8px 10px; }
+.admin-search-group { margin: 8px 0 2px; padding: 0 10px; font-size: 11.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.admin-search-group:first-child { margin-top: 2px; }
+.admin-rail .admin-search-list a { display: block; padding: 6px 10px; border: 0; background: none; }
+.admin-search-list a > span { display: block; }
+.admin-rail .admin-search-list a[aria-selected="true"] { background: var(--accent-soft); color: var(--accent); }
 .admin-rail-group { margin: 16px 0 4px; padding: 0 10px; font-size: 11.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
 .admin-main { min-width: 0; font-size: 15px; }
 .admin-main[aria-busy="true"] { opacity: .6; }
@@ -45,8 +56,12 @@ td .admin-sub, th .admin-sub { display: block; }
 .admin-bars { display: grid; gap: 8px; }
 .admin-bar-row { display: grid; grid-template-columns: minmax(90px, 160px) minmax(0, 1fr) auto; gap: 12px; align-items: center; color: var(--text); text-decoration: none; font-size: 14px; }
 a.admin-bar-row:hover span:first-child { color: var(--accent); }
+summary.admin-bar-row { cursor: pointer; list-style: none; }
+summary.admin-bar-row::-webkit-details-marker { display: none; }
+.admin-examples { margin: 4px 0 10px; font-size: 14px; }
 .admin-bar { display: block; height: 10px; min-width: 60px; border-radius: 999px; background: var(--surface-2); box-shadow: inset 0 0 0 1px var(--line); overflow: hidden; }
 .admin-bar i { display: block; height: 100%; background: var(--accent); border-radius: 999px; }
+.admin-bar i.warn { background: var(--gold); }
 td .admin-bar { margin: 4px 0; }
 
 .admin-columns { display: flex; gap: 6px; align-items: flex-end; height: 160px; padding-top: 18px; }
@@ -70,6 +85,9 @@ td .admin-bar { margin: 4px 0; }
 .admin-state.none { background: var(--surface-2); box-shadow: inset 0 0 0 1px var(--line); }
 .admin-state.partial { background: var(--warn-bg); color: var(--warn); }
 .admin-state.drafted { background: var(--accent); color: var(--accent-contrast); }
+.admin-state.filed { background: var(--surface-2); color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent-soft-border); }
+.admin-state.pr { background: var(--accent-soft); color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+a > .admin-state { text-decoration: none; }
 .admin-legend { display: flex; flex-wrap: wrap; gap: 14px; margin: 0; font-size: 13px; color: var(--muted); }
 .admin-legend > span { display: inline-flex; align-items: center; gap: 6px; }
 .admin-legend .admin-state { min-width: 18px; }
@@ -139,7 +157,42 @@ form.admin-toolbar { justify-content: flex-start; }
   .admin-rail { position: static; display: flex; flex-wrap: wrap; gap: 4px; }
   .admin-rail ul { display: contents; }
   .admin-rail-group { display: none; }
+  .admin-search { flex: 1 0 100%; margin-bottom: 6px; }
   .admin-rail a { border: 1px solid var(--line); background: var(--surface); }
   .admin-bar-row { grid-template-columns: minmax(70px, 110px) minmax(0, 1fr) auto; }
 }
 @media (prefers-reduced-motion: reduce) { .admin-main[aria-busy="true"] { opacity: 1; } }
+
+/* The verse inspector (#verse/...): a sentence record whole. */
+.admin-record .admin-toolbar { margin: 0 0 10px; }
+.admin-record .admin-toolbar h2 { margin: 0; font-family: ui-monospace, Menlo, monospace; text-transform: none; letter-spacing: 0; color: var(--text); }
+.admin-source { margin: 0 0 6px; font-family: var(--serif); font-size: 22px; line-height: 1.6; }
+.admin-source[lang="hbo"] { font-family: var(--hebrew); }
+.admin-source span[title] { cursor: help; border-radius: 3px; }
+.admin-source span[title]:hover { background: var(--mark); }
+.admin-gloss { margin: 0 0 14px; font-family: var(--serif); font-style: italic; color: var(--muted); }
+.admin-renderings td { font-family: var(--serif); font-size: 15.5px; line-height: 1.5; min-width: 180px; }
+.admin-setting { text-decoration: underline dotted var(--line-strong); text-underline-offset: 3px; cursor: help; }
+.admin-h3 { margin: 18px 0 8px; font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.admin-decisions { display: grid; gap: 8px; }
+.admin-decision { padding: 8px 12px; border: 1px solid var(--line); border-radius: 9px; }
+.admin-decision.uncertain { border-color: var(--gold); background: var(--warn-bg); }
+.admin-decision p { margin: 0 0 3px; }
+.admin-decision p:last-child { margin: 0; }
+.admin-decision code { font-size: 12.5px; }
+.admin-fix-wrap { margin: 16px 0 0; padding: 14px 0 0; border-top: 1px dashed var(--line); }
+.admin-fix { margin: 12px 0 0; }
+.admin-form.stacked > button { justify-self: start; }
+.admin-term { font-family: var(--serif); font-size: 19px; font-weight: 400; }
+.admin-term[lang="hbo"] { font-family: var(--hebrew); }
+.admin-cell.on { background: var(--accent-soft); }
+.admin-actions input { flex: 1 1 220px; }
+.admin-tile.bad b { color: #b3412f; }
+.admin-high { color: #b3412f; font-weight: 700; }
+
+/* Changes: a rendering before and after, word by word. */
+.admin-diff ins { text-decoration: none; background: color-mix(in srgb, #2f7a45 16%, transparent); border-radius: 3px; }
+.admin-diff del, .admin-wrap > del { color: #b3412f; background: color-mix(in srgb, #b3412f 12%, transparent); border-radius: 3px; }
+:root[data-theme="dark"] .admin-diff del, :root[data-theme="night"] .admin-diff del,
+:root[data-theme="dark"] .admin-wrap > del, :root[data-theme="night"] .admin-wrap > del { color: #f0a093; }
+.admin-table tr[aria-current="true"] th { font-weight: 700; }

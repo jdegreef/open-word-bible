@@ -63,6 +63,13 @@ class ArticlesTest(unittest.TestCase):
             with self.assertRaises(SystemExit, msg=wrong):
                 build_site.article_html(wrong)
 
+    def test_links_to_untranslated_articles_stay_english(self):
+        missing = next(a["slug"] for a in self.articles
+                       if not (ROOT / "articles" / "vi" / f"{a['slug']}.md").is_file())
+        page = build_site.article_html(f"[a](/articles/{missing}/) [b](/jhn/1/)", lang="vi")
+        self.assertIn(f'href="/articles/{missing}/"', page)
+        self.assertIn('href="/vi/jhn/1/"', page)
+
     def test_internal_links_resolve(self):
         for path in (self.out / "articles").rglob("index.html"):
             for href in re.findall(r'href="(/[^"#?]*)', path.read_text(encoding="utf-8")):
@@ -167,8 +174,12 @@ class ArticlesTest(unittest.TestCase):
         for a in self.articles:
             if any(b == "JHN" and c == 3 for b, c, _ in a["passages"]):
                 self.assertIn(build_site.article_url(a), aside)
-        philemon = (self.out / "phm" / "1" / "index.html").read_text(encoding="utf-8")
-        self.assertNotIn('class="chapter-articles"', philemon)
+        # A chapter no article reads has no aside.
+        read = {(b, c) for a in self.articles for b, c, _ in a["passages"]}
+        book, chapter = next((b, c) for b, c in (("OBA", 1), ("HAG", 1), ("JUD", 1), ("PHM", 1), ("3JN", 1))
+                             if (b, c) not in read)
+        unread = (self.out / book.lower() / str(chapter) / "index.html").read_text(encoding="utf-8")
+        self.assertNotIn('class="chapter-articles"', unread)
 
     def test_scripture_quotes_are_captioned_and_link_to_the_reader(self):
         page = (self.out / "articles" / "the-word-was-god" / "index.html").read_text(encoding="utf-8")

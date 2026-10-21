@@ -35,6 +35,31 @@
           "L": "Now Sarai, Abram's wife, had borne him no children. She had an Egyptian slave woman whose name was Hagar.",
           "B": "Sarai, Abram's wife, had still given him no children. But she owned an Egyptian servant named Hagar.",
           "R": "Abram's wife Sarai still had no children. She had a servant from Egypt named Hagar."
+        },
+        "es": {
+          "L": "Y Saray, la mujer de Abram, no le había dado hijos. Ella tenía una esclava egipcia cuyo nombre era Agar.",
+          "B": "Saray, la esposa de Abram, todavía no le había dado hijos. Pero tenía una sierva egipcia llamada Agar.",
+          "R": "Saray, la esposa de Abram, seguía sin tener hijos. Tenía una sierva que había venido de Egipto. Se llamaba Agar."
+        },
+        "fr": {
+          "L": "Or Saraï, la femme d’Abram, ne lui avait pas donné d’enfant. Elle avait une esclave égyptienne, dont le nom était Agar.",
+          "B": "Saraï, la femme d’Abram, ne lui avait toujours pas donné d’enfant. Mais elle avait une servante égyptienne nommée Agar.",
+          "R": "Saraï, la femme d’Abram, n’avait toujours pas d’enfant. Elle avait une servante qui venait d’Égypte. Elle s’appelait Agar."
+        },
+        "sw": {
+          "L": "Na Sarai, mke wa Abramu, alikuwa hajamzalia [mtoto]. Naye alikuwa na mjakazi Mmisri, jina lake Hajiri.",
+          "B": "Sarai, mke wa Abramu, alikuwa bado hajamzalia mtoto. Lakini alikuwa na mtumishi wa kike Mmisri aitwaye Hajiri.",
+          "R": "Sarai mke wa Abramu alikuwa bado hana watoto. Alikuwa na mtumishi wa kike kutoka Misri, jina lake Hajiri."
+        },
+        "vi": {
+          "L": "Bấy giờ Sa-rai, vợ Áp-ram, không sinh con cho ông. Bà có một nữ nô lệ người Ai Cập tên là A-ga.",
+          "B": "Sa-rai, vợ Áp-ram, vẫn chưa sinh cho ông đứa con nào. Nhưng bà có một đầy tớ gái người Ai Cập tên là A-ga.",
+          "R": "Sa-rai, vợ Áp-ram, vẫn không có con. Bà có một người đầy tớ gái từ Ai Cập tên là A-ga."
+        },
+        "ko": {
+          "L": "아브람의 아내 사래는 그에게 [자식을] 낳아 주지 못했다. 그녀에게는 이집트 사람 여종이 있었는데, 그 이름은 하갈이었다.",
+          "B": "아브람의 아내 사래는 아직 그에게 아이를 낳아 주지 못했다. 그런데 사래에게는 하갈이라는 이집트 사람 여종이 있었다.",
+          "R": "아브람의 아내 사래에게는 여전히 아이가 없었다. 사래에게는 이집트에서 온 하갈이라는 여종이 있었다."
         }
       },
       "decisions": [
@@ -71,6 +96,91 @@
             "slave"
           ],
           "reason": "\"Servant\" in Balanced and Readable, as the style guide has it; the meaning decision (m1) keeps that she was owned, and Literal keeps \"slave\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o010160010051"
+          ],
+          "choice": "passé simple at Literal and Balanced in narration (\"dit\", \"prit\"); passé composé at Readable (\"a dit\", \"a donné\")",
+          "alternatives": [
+            "passé composé at every level"
+          ],
+          "reason": "As the French style guide sets for narrative: the passé simple is the tense of written narrative; Readable uses the passé composé, the tense of spoken French today. Speech keeps the tenses of speech at every level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010160010081"
+          ],
+          "choice": "mjakazi (L); mtumishi wa kike (B, R); mjakazi at every level in verse 6",
+          "alternatives": [
+            "mtumwa wa kike",
+            "kijakazi"
+          ],
+          "reason": "\"Mjakazi\" is the Swahili word for a female slave, the feminine counterpart of the Pentateuch term \"mtumwa\" at Literal; Balanced and Readable say \"mtumishi wa kike\" (or \"mtumishi wangu\", \"wako\" where the context shows she is a woman), as the English says \"servant\". Verse 6 keeps \"mjakazi\" at every level, as the English keeps \"slave\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010160010081"
+          ],
+          "choice": "\"nữ nô lệ\" (L); \"đầy tớ gái\" (B, R) for Hagar",
+          "alternatives": [
+            "\"con đòi\""
+          ],
+          "reason": "A female slave (meaning decision). Literal says so plainly; Balanced uses the usual word for a woman who serves a mistress, and Readable the everyday one, as the English uses \"servant\" there.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010160010081"
+          ],
+          "choice": "\"여종\" for Hagar at every level",
+          "alternatives": [
+            "\"몸종\"; \"노예\""
+          ],
+          "reason": "The Hebrew word (*shiphah*) is a woman owned as a slave. \"여종\" is the Korean word for a female servant or slave in a household, and it keeps the link with \"종\" used for male servants; the meaning decision says that she was owned.",
           "uncertain": false,
           "footnote": false
         }
@@ -122,6 +232,31 @@
           "L": "And Sarai said to Abram, \"Look, {{divine_name:the LORD|Yahweh}} has kept me from bearing children. Please go in to my slave woman; perhaps I shall be built up through her.\" And Abram listened to the voice of Sarai.",
           "B": "Sarai said to Abram, \"You see that {{divine_name:the LORD|Yahweh}} has not let me bear children. Take my servant; it may be that through her I will have a family.\" And Abram listened to Sarai.",
           "R": "So Sarai said to Abram, \"{{divine_name:The LORD|Yahweh}} has not let me have children. Sleep with my servant. Maybe she can have a child for me.\" Abram agreed to what Sarai said."
+        },
+        "es": {
+          "L": "Y dijo Saray a Abram: «Mira, {{divine_name:el SEÑOR|Yahvé}} me ha impedido dar a luz. Ve, te ruego, y únete a mi esclava; quizá seré edificada por medio de ella». Y escuchó Abram la voz de Saray.",
+          "B": "Saray le dijo a Abram: «Ya ves que {{divine_name:el SEÑOR|Yahvé}} no me ha dejado tener hijos. Toma a mi sierva; tal vez por medio de ella yo tenga familia». Y Abram hizo caso a Saray.",
+          "R": "Entonces Saray le dijo a Abram: «{{divine_name:El SEÑOR|Yahvé}} no me ha dejado tener hijos. Acuéstate con mi sierva. Tal vez ella pueda tener un hijo para mí». Abram estuvo de acuerdo con lo que dijo Saray."
+        },
+        "fr": {
+          "L": "Et Saraï dit à Abram : « Voici donc, {{divine_name:le SEIGNEUR|Yahvé}} m’a empêchée d’enfanter. Va, je te prie, vers mon esclave ; peut-être serai-je bâtie grâce à elle. » Et Abram écouta la voix de Saraï.",
+          "B": "Saraï dit à Abram : « Tu vois, {{divine_name:le SEIGNEUR|Yahvé}} ne m’a pas permis d’avoir des enfants. Prends ma servante ; peut-être que, grâce à elle, j’aurai une famille. » Et Abram écouta Saraï.",
+          "R": "Alors Saraï a dit à Abram : « {{divine_name:Le SEIGNEUR|Yahvé}} ne m’a pas permis d’avoir des enfants. Couche avec ma servante. Elle pourra peut-être avoir un enfant pour moi. » Abram a accepté ce que Saraï proposait."
+        },
+        "sw": {
+          "L": "Sarai akamwambia Abramu, \"Tazama basi, {{divine_name:BWANA|Yahwe}} amenizuia nisizae. Tafadhali uingie kwa mjakazi wangu; huenda nitajengwa kupitia yeye.\" Abramu akaisikiliza sauti ya Sarai.",
+          "B": "Sarai akamwambia Abramu, \"Unaona kwamba {{divine_name:BWANA|Yahwe}} hajaniruhusu kuzaa watoto. Mchukue mtumishi wangu; huenda kupitia yeye nitapata jamaa.\" Naye Abramu akamsikiliza Sarai.",
+          "R": "Basi Sarai akamwambia Abramu, \"{{divine_name:BWANA|Yahwe}} hajaniruhusu kupata watoto. Lala na mtumishi wangu. Huenda yeye ataweza kunizalia mtoto.\" Abramu akakubali alichosema Sarai."
+        },
+        "vi": {
+          "L": "Sa-rai nói với Áp-ram: \"Kìa, {{divine_name:CHÚA|Gia-vê}} đã không cho em sinh con; xin anh hãy đến với nữ nô lệ của em; có lẽ nhờ nó mà em sẽ được gây dựng.\" Áp-ram nghe theo lời Sa-rai.",
+          "B": "Sa-rai nói với Áp-ram: \"Anh thấy đó, {{divine_name:CHÚA|Gia-vê}} không cho em có con. Anh hãy lấy đầy tớ gái của em; may ra nhờ nó mà em có được con cái.\" Áp-ram nghe theo lời Sa-rai.",
+          "R": "Vì vậy Sa-rai nói với Áp-ram: \"{{divine_name:CHÚA|Gia-vê}} không cho em có con. Anh hãy ăn ở với đầy tớ gái của em. Có lẽ nó sẽ sinh cho em một đứa con.\" Áp-ram đồng ý với lời Sa-rai."
+        },
+        "ko": {
+          "L": "그리고 사래가 아브람에게 말했다. \"보세요, {{divine_name:주|야훼}}께서 나를 막으셔서 아이를 낳지 못하게 하셨어요. 부디 내 여종에게 들어가세요. 혹시 내가 그녀를 통해 세워질지도 몰라요.\" 그리고 아브람이 사래의 목소리를 들었다.",
+          "B": "사래가 아브람에게 말했다. \"보세요, {{divine_name:주|야훼}}께서 나에게 아이를 낳지 못하게 하셨어요. 내 여종을 받아들이세요. 어쩌면 그녀를 통해 내가 자식을 얻을 수 있을지도 몰라요.\" 아브람은 사래의 말을 들었다.",
+          "R": "그래서 사래가 아브람에게 말했다. \"{{divine_name:주|야훼}}께서 나에게 아이를 주지 않으셨어요. 내 여종과 같이 자세요. 그러면 그녀가 나 대신 아이를 낳아 줄지도 몰라요.\" 아브람은 사래가 말한 대로 하기로 했다."
         }
       },
       "decisions": [
@@ -195,6 +330,87 @@
           "reason": "\"Servant\" in Balanced and Readable (style guide); Literal keeps \"slave\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010160020151"
+          ],
+          "choice": "peut-être serai-je bâtie grâce à elle",
+          "alternatives": [
+            "peut-être aurai-je des enfants par elle"
+          ],
+          "reason": "Literal keeps the picture of being \"built\" (ibbaneh), as the English Literal does, because the word plays on \"son\" (ben, m1); Balanced and Readable say what it means, a family or a child.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o010160020012",
+            "o010160020061"
+          ],
+          "choice": "Sarai and Abram speak as husband and wife: she says \"em\" and calls him \"anh\"; he says \"anh\" and calls her \"em\"",
+          "alternatives": [
+            "\"tôi\" and \"ông\"",
+            "\"bà\""
+          ],
+          "reason": "As the Genesis terms note sets for husband and wife. Literal keeps the same forms here, since the Hebrew shows no formality between them in this scene.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010160020151"
+          ],
+          "choice": "\"được gây dựng\" at Literal for \"be built up\"; \"có được con cái\" (B) and \"sinh cho em một đứa con\" (R)",
+          "alternatives": [],
+          "reason": "The Hebrew picture of a house built up by children (meaning decision); Literal keeps the picture.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o010160020012",
+            "o010160020101"
+          ],
+          "choice": "husband and wife speak to each other in the polite style (해요체), Sarai calling herself \"나\"",
+          "alternatives": [
+            "the plain style at Literal; the formal polite style (합쇼체)"
+          ],
+          "reason": "The polite style is how a Korean husband and wife speak with courtesy and closeness at once, and it holds through Genesis for every married pair. It is kept at Literal too, since the Hebrew gives no sign of a different level between them.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -250,6 +466,31 @@
           "L": "So after Abram had lived ten years in the land of Canaan, Sarai, Abram's wife, took Hagar the Egyptian, her slave woman, and gave her to Abram her husband as a wife.",
           "B": "Ten years after Abram had settled in Canaan, his wife Sarai gave him Hagar, her Egyptian servant, as a wife.",
           "R": "Abram had lived in Canaan for ten years. Then Sarai gave her Egyptian servant Hagar to Abram to be his second wife."
+        },
+        "es": {
+          "L": "Y tomó Saray, la mujer de Abram, a Agar la egipcia, su esclava, al cabo de diez años de habitar Abram en la tierra de Canaán, y se la dio a Abram su marido por mujer.",
+          "B": "Diez años después de que Abram se estableciera en Canaán, su esposa Saray le dio como mujer a Agar, su sierva egipcia.",
+          "R": "Abram llevaba diez años viviendo en Canaán. Entonces Saray le dio a Abram su sierva egipcia, Agar, para que fuera su segunda esposa."
+        },
+        "fr": {
+          "L": "Alors Saraï, la femme d’Abram, prit Agar l’Égyptienne, son esclave, au bout de dix ans de séjour d’Abram dans le pays de Canaan, et la donna pour femme à Abram, son mari.",
+          "B": "Dix ans après qu’Abram s’était établi en Canaan, sa femme Saraï lui donna pour femme Agar, sa servante égyptienne.",
+          "R": "Abram vivait en Canaan depuis dix ans. Alors Saraï lui a donné sa servante égyptienne, Agar, pour qu’elle soit sa deuxième femme."
+        },
+        "sw": {
+          "L": "Basi Sarai, mke wa Abramu, akamchukua Hajiri Mmisri, mjakazi wake, mwisho wa miaka kumi ya Abramu kukaa katika nchi ya Kanaani, akampa Abramu mumewe awe mke wake.",
+          "B": "Miaka kumi baada ya Abramu kukaa Kanaani, mkewe Sarai alimpa Hajiri, mtumishi wake Mmisri, awe mke wake.",
+          "R": "Abramu alikuwa ameishi Kanaani kwa miaka kumi. Ndipo Sarai alipompa Abramu mtumishi wake Mmisri Hajiri, awe mke wake wa pili."
+        },
+        "vi": {
+          "L": "Vậy sau khi Áp-ram đã ở trong xứ Ca-na-an mười năm, Sa-rai, vợ Áp-ram, lấy A-ga, người Ai Cập, là nữ nô lệ của bà, mà trao cho Áp-ram, chồng bà, làm vợ.",
+          "B": "Mười năm sau khi Áp-ram đến sống tại Ca-na-an, Sa-rai vợ ông đã trao A-ga, đầy tớ gái người Ai Cập của mình, cho ông làm vợ.",
+          "R": "Áp-ram đã sống ở Ca-na-an được mười năm. Bấy giờ Sa-rai trao A-ga, người đầy tớ gái Ai Cập của mình, cho Áp-ram làm vợ thứ."
+        },
+        "ko": {
+          "L": "그래서 아브람이 가나안 땅에서 산 지 십 년이 지난 뒤에, 아브람의 아내 사래가 그녀의 여종 이집트 사람 하갈을 데려다가 그녀의 남편 아브람에게 아내로 주었다.",
+          "B": "아브람이 가나안에 자리 잡은 지 십 년이 지났을 때, 그의 아내 사래는 자기의 이집트 사람 여종 하갈을 남편에게 아내로 주었다.",
+          "R": "아브람이 가나안에서 산 지 십 년이 되었다. 그때 사래는 자기의 이집트 사람 여종 하갈을 아브람에게 주어 그의 둘째 아내가 되게 했다."
         }
       },
       "decisions": [
@@ -345,6 +586,31 @@
           "L": "And he went in to Hagar, and she conceived. And when she saw that she had conceived, her mistress became small in her eyes.",
           "B": "He slept with Hagar, and she became pregnant. Once she knew she was carrying a child, she began to look down on her mistress.",
           "R": "Abram slept with Hagar, and she became pregnant. When Hagar knew she was going to have a baby, she started to look down on Sarai."
+        },
+        "es": {
+          "L": "Y él se unió a Agar, y ella concibió. Y cuando vio que había concebido, su señora se volvió poca cosa a sus ojos.",
+          "B": "Abram tuvo relaciones con Agar, y ella concibió. Cuando supo que estaba esperando un hijo, empezó a despreciar a su señora.",
+          "R": "Abram se acostó con Agar, y ella quedó embarazada. Cuando Agar supo que iba a tener un bebé, empezó a mirar a Saray por encima del hombro."
+        },
+        "fr": {
+          "L": "Et il alla vers Agar, et elle conçut. Et quand elle vit qu’elle avait conçu, sa maîtresse devint petite à ses yeux.",
+          "B": "Il s’unit à Agar, et elle devint enceinte. Dès qu’elle se sut enceinte, elle se mit à mépriser sa maîtresse.",
+          "R": "Abram a couché avec Agar, et elle est tombée enceinte. Quand Agar a su qu’elle allait avoir un bébé, elle a commencé à regarder Saraï de haut."
+        },
+        "sw": {
+          "L": "Akaingia kwa Hajiri, naye akapata mimba. Naye alipoona kwamba amepata mimba, bibi yake akawa mdogo machoni pake.",
+          "B": "Akalala na Hajiri, naye akapata mimba. Alipojua kwamba ana mimba, akaanza kumdharau bibi yake.",
+          "R": "Abramu alilala na Hajiri, naye akapata mimba. Hajiri alipojua kwamba atapata mtoto, alianza kumdharau Sarai."
+        },
+        "vi": {
+          "L": "Ông đến với A-ga, và nàng thụ thai. Khi nàng thấy mình đã thụ thai, thì bà chủ trở nên nhỏ trong mắt nàng.",
+          "B": "Ông ăn ở với A-ga, và nàng có thai. Khi biết mình có thai, nàng bắt đầu khinh bà chủ.",
+          "R": "Áp-ram ăn ở với A-ga, và nàng có thai. Khi biết mình sắp có con, A-ga bắt đầu coi thường Sa-rai."
+        },
+        "ko": {
+          "L": "그리고 그가 하갈에게 들어가니, 그녀가 임신했다. 그리고 그녀가 자기가 임신한 것을 알았을 때, 그녀의 여주인이 그녀의 눈에 작아 보였다.",
+          "B": "아브람이 하갈과 잠자리를 같이하자 하갈이 임신했다. 하갈은 자기가 아이를 가진 것을 알고 나서 자기 여주인을 업신여기기 시작했다.",
+          "R": "아브람이 하갈과 함께 자니 하갈이 임신했다. 하갈은 자기가 아기를 갖게 된 것을 알자 사래를 깔보기 시작했다."
         }
       },
       "decisions": [
@@ -419,6 +685,31 @@
           "L": "And Sarai said to Abram, \"May the wrong done to me be on you! I gave my slave woman into your arms, and when she saw that she had conceived, I became small in her eyes. May {{divine_name:the LORD|Yahweh}} judge between me and you!\"",
           "B": "Sarai said to Abram, \"You are to blame for the wrong done to me! I gave my servant to you, and now that she is pregnant she holds me in contempt. {{divine_name:The LORD|Yahweh}} be judge between you and me!\"",
           "R": "Then Sarai said to Abram, \"This is your fault! I gave my servant to you, and now that she is pregnant, she looks down on me. Let {{divine_name:the LORD|Yahweh}} decide who is right, you or me.\""
+        },
+        "es": {
+          "L": "Y dijo Saray a Abram: «¡Caiga sobre ti el agravio que se me hace! Yo puse a mi esclava en tus brazos, y al ver que había concebido, me volví poca cosa a sus ojos. ¡Juzgue {{divine_name:el SEÑOR|Yahvé}} entre tú y yo!».",
+          "B": "Saray le dijo a Abram: «¡Tú tienes la culpa de la ofensa que me hacen! Te di a mi sierva, y ahora que está embarazada me desprecia. ¡Que {{divine_name:el SEÑOR|Yahvé}} juzgue entre tú y yo!».",
+          "R": "Entonces Saray le dijo a Abram: «¡Esto es culpa tuya! Te di a mi sierva, y ahora que está embarazada me mira por encima del hombro. Que {{divine_name:el SEÑOR|Yahvé}} decida quién tiene razón, tú o yo»."
+        },
+        "fr": {
+          "L": "Et Saraï dit à Abram : « Que le tort qui m’est fait retombe sur toi ! J’ai mis mon esclave dans tes bras, et quand elle a vu qu’elle avait conçu, je suis devenue petite à ses yeux. Que {{divine_name:le SEIGNEUR|Yahvé}} juge entre moi et toi ! »",
+          "B": "Saraï dit à Abram : « C’est toi qui es responsable du tort qu’on me fait ! Je t’ai donné ma servante, et maintenant qu’elle est enceinte, elle me méprise. Que {{divine_name:le SEIGNEUR|Yahvé}} soit juge entre toi et moi ! »",
+          "R": "Alors Saraï a dit à Abram : « C’est ta faute ! Je t’ai donné ma servante, et maintenant qu’elle est enceinte, elle me regarde de haut. Que {{divine_name:le SEIGNEUR|Yahvé}} décide qui a raison, toi ou moi. »"
+        },
+        "sw": {
+          "L": "Sarai akamwambia Abramu, \"Dhuluma niliyotendewa na iwe juu yako! Mimi nilimtia mjakazi wangu kifuani mwako, naye alipoona kwamba amepata mimba, nikawa mdogo machoni pake. {{divine_name:BWANA|Yahwe}} na ahukumu kati yangu na wewe!\"",
+          "B": "Sarai akamwambia Abramu, \"Wewe ndiye wa kulaumiwa kwa dhuluma ninayotendewa! Nilikupa mtumishi wangu, na sasa kwa kuwa ana mimba ananidharau. {{divine_name:BWANA|Yahwe}} na awe mwamuzi kati yako na mimi!\"",
+          "R": "Kisha Sarai akamwambia Abramu, \"Hili ni kosa lako! Nilikupa mtumishi wangu, na sasa kwa kuwa ana mimba, ananidharau. {{divine_name:BWANA|Yahwe}} na aamue nani yuko sawa, wewe au mimi.\""
+        },
+        "vi": {
+          "L": "Sa-rai nói với Áp-ram: \"Nguyện điều sai trái người ta làm cho em đổ trên anh! Em đã trao nữ nô lệ của em vào lòng anh, và khi nó thấy mình đã thụ thai, thì em trở nên nhỏ trong mắt nó. Nguyện {{divine_name:CHÚA|Gia-vê}} xét xử giữa em và anh!\"",
+          "B": "Sa-rai nói với Áp-ram: \"Chính anh phải chịu trách nhiệm về điều sai trái em đang chịu! Em đã trao đầy tớ gái của em cho anh, vậy mà bây giờ có thai rồi nó lại khinh em. Xin {{divine_name:CHÚA|Gia-vê}} xét xử giữa anh và em!\"",
+          "R": "Rồi Sa-rai nói với Áp-ram: \"Đây là lỗi của anh! Em đã trao đầy tớ gái của em cho anh, mà bây giờ có thai rồi nó lại coi thường em. Xin {{divine_name:CHÚA|Gia-vê}} phân xử xem ai đúng, anh hay em.\""
+        },
+        "ko": {
+          "L": "그리고 사래가 아브람에게 말했다. \"내가 당한 억울함은 당신 책임이에요! 내가 내 여종을 당신 품에 주었는데, 그녀가 자기가 임신한 것을 보고는 내가 그녀의 눈에 작아졌어요. {{divine_name:주|야훼}}께서 나와 당신 사이를 판단하시기를 바라요!\"",
+          "B": "사래가 아브람에게 말했다. \"내가 이런 수모를 당하는 건 당신 탓이에요! 내 여종을 당신에게 주었더니, 그녀가 임신하고 나서 나를 업신여겨요. {{divine_name:주|야훼}}께서 당신과 나 사이를 판단해 주시기를 바라요!\"",
+          "R": "그러자 사래가 아브람에게 말했다. \"이건 당신 잘못이에요! 내가 내 여종을 당신에게 주었는데, 그녀가 임신하더니 나를 깔봐요. 당신과 나 가운데 누가 옳은지 {{divine_name:주|야훼}}께서 가려 주시면 좋겠어요.\""
         }
       },
       "decisions": [
@@ -526,6 +817,31 @@
           "L": "And Abram said to Sarai, \"Look, your slave woman is in your power; do to her whatever is good in your eyes.\" Then Sarai afflicted her, and she fled from her.",
           "B": "Abram answered Sarai, \"She is your slave, and she is in your hands. Deal with her as you see fit.\" Then Sarai treated her so harshly that she ran away.",
           "R": "Abram answered Sarai, \"She is your slave. Do whatever you think is best.\" Then Sarai was so cruel to Hagar that Hagar ran away."
+        },
+        "es": {
+          "L": "Y dijo Abram a Saray: «Mira, tu esclava está en tu mano; haz con ella lo que es bueno a tus ojos». Y Saray la oprimió, y ella huyó de delante de ella.",
+          "B": "Abram le respondió a Saray: «Es tu esclava, y está en tus manos. Trátala como te parezca». Entonces Saray la trató con tanta dureza que ella se escapó.",
+          "R": "Abram le respondió a Saray: «Es tu esclava. Haz lo que creas mejor». Entonces Saray fue tan cruel con Agar que Agar se escapó."
+        },
+        "fr": {
+          "L": "Et Abram dit à Saraï : « Voici, ton esclave est entre tes mains ; fais-lui ce qui est bon à tes yeux. » Alors Saraï l’opprima, et elle s’enfuit loin d’elle.",
+          "B": "Abram répondit à Saraï : « C’est ton esclave, elle est en ton pouvoir. Traite-la comme bon te semble. » Alors Saraï la traita si durement qu’elle s’enfuit.",
+          "R": "Abram a répondu à Saraï : « C’est ton esclave. Fais ce que tu penses être le mieux. » Alors Saraï a été si méchante avec Agar qu’Agar s’est enfuie."
+        },
+        "sw": {
+          "L": "Abramu akamwambia Sarai, \"Tazama, mjakazi wako yu mkononi mwako; mtendee lililo jema machoni pako.\" Sarai akamtesa, naye akamkimbia.",
+          "B": "Abramu akamjibu Sarai, \"Yeye ni mjakazi wako, na yuko chini ya mamlaka yako. Mtendee unavyoona inafaa.\" Ndipo Sarai akamtendea kwa ukali mpaka akakimbia.",
+          "R": "Abramu akamjibu Sarai, \"Yeye ni mjakazi wako. Fanya lolote unaloona ni bora.\" Ndipo Sarai akamtesa Hajiri vibaya sana, hata Hajiri akakimbia."
+        },
+        "vi": {
+          "L": "Áp-ram nói với Sa-rai: \"Kìa, nữ nô lệ của em ở trong tay em; hãy làm cho nó điều gì em thấy là tốt.\" Rồi Sa-rai hành hạ nàng, và nàng bỏ trốn khỏi bà.",
+          "B": "Áp-ram trả lời Sa-rai: \"Nó là nô lệ của em, nó ở trong tay em. Em muốn đối xử với nó thế nào thì tùy em.\" Rồi Sa-rai đối xử khắc nghiệt với nàng đến nỗi nàng bỏ trốn.",
+          "R": "Áp-ram trả lời Sa-rai: \"Nó là nô lệ của em. Em muốn làm gì thì làm.\" Rồi Sa-rai đối xử tàn nhẫn với A-ga đến nỗi A-ga phải bỏ trốn."
+        },
+        "ko": {
+          "L": "그리고 아브람이 사래에게 말했다. \"보세요, 당신의 여종은 당신 손에 있어요. 당신 눈에 좋은 대로 그녀에게 하세요.\" 그러자 사래가 그녀를 괴롭혔고, 그녀는 사래 앞에서 도망했다.",
+          "B": "아브람이 사래에게 대답했다. \"그녀는 당신의 여종이니 당신 손에 달려 있어요. 당신 생각에 좋은 대로 그녀를 대하세요.\" 그러자 사래가 하갈을 몹시 학대했고, 하갈은 견디다 못해 달아났다.",
+          "R": "아브람이 사래에게 대답했다. \"그녀는 당신의 여종이에요. 당신이 좋다고 생각하는 대로 하세요.\" 그러자 사래가 하갈을 아주 모질게 대해서, 하갈은 도망쳐 버렸다."
         }
       },
       "decisions": [
@@ -581,6 +897,27 @@
           "reason": "\"Slave\" at every level, as the style guide keeps it where ownership is the point: Abram hands Hagar back to Sarai as her property, to deal with as she likes (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010160060122",
+            "o010160060123"
+          ],
+          "choice": "l'opprima (L); la traita si durement (B); a été si méchante (R)",
+          "alternatives": [
+            "l'humilia",
+            "la maltraita"
+          ],
+          "reason": "Literal uses \"opprimer\", the verb French uses for Egypt oppressing Israel, so the echo of 15:13 the meaning decision points to (m1) can be heard; Balanced and Readable say how she treated her.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -620,6 +957,31 @@
           "L": "And the angel of {{divine_name:the LORD|Yahweh}} found her by a spring of water in the wilderness, the spring on the road to Shur.",
           "B": "The angel of {{divine_name:the LORD|Yahweh}} came upon her beside a spring in the desert, the spring on the road to Shur.",
           "R": "Near a spring in the desert, on the road to Shur, the angel of {{divine_name:the LORD|Yahweh}} found Hagar."
+        },
+        "es": {
+          "L": "Y la halló el ángel {{divine_name:del SEÑOR|de Yahvé}} junto a una fuente de agua en el desierto, junto a la fuente que está en el camino de Shur.",
+          "B": "El ángel {{divine_name:del SEÑOR|de Yahvé}} se encontró con ella junto a un manantial en el desierto, el manantial que está en el camino a Shur.",
+          "R": "Cerca de un manantial en el desierto, en el camino a Shur, el ángel {{divine_name:del SEÑOR|de Yahvé}} encontró a Agar."
+        },
+        "fr": {
+          "L": "Et l’ange {{divine_name:du SEIGNEUR|de Yahvé}} la trouva près d’une source d’eau dans le désert, près de la source sur le chemin de Shour.",
+          "B": "L’ange {{divine_name:du SEIGNEUR|de Yahvé}} la rencontra près d’une source dans le désert, la source qui est sur la route de Shour.",
+          "R": "Près d’une source dans le désert, sur la route de Shour, l’ange {{divine_name:du SEIGNEUR|de Yahvé}} a trouvé Agar."
+        },
+        "sw": {
+          "L": "Malaika wa {{divine_name:BWANA|Yahwe}} akamkuta karibu na chemchemi ya maji jangwani, chemchemi iliyo njiani kwenda Shuri.",
+          "B": "Malaika wa {{divine_name:BWANA|Yahwe}} akamkuta kando ya chemchemi jangwani, ile chemchemi iliyo kwenye barabara ya kwenda Shuri.",
+          "R": "Karibu na chemchemi moja jangwani, njiani kwenda Shuri, malaika wa {{divine_name:BWANA|Yahwe}} alimkuta Hajiri."
+        },
+        "vi": {
+          "L": "Thiên sứ của {{divine_name:CHÚA|Gia-vê}} gặp nàng bên một suối nước trong hoang mạc, là suối trên đường đi Su-rơ.",
+          "B": "Thiên sứ của {{divine_name:CHÚA|Gia-vê}} gặp nàng bên một con suối trong hoang mạc, là con suối trên đường đi Su-rơ.",
+          "R": "Bên một con suối trong hoang mạc, trên đường đi Su-rơ, thiên sứ của {{divine_name:CHÚA|Gia-vê}} gặp A-ga."
+        },
+        "ko": {
+          "L": "그리고 {{divine_name:주|야훼}}의 천사가 광야에 있는 샘물 곁, 곧 술로 가는 길에 있는 샘 곁에서 그녀를 만났다.",
+          "B": "{{divine_name:주|야훼}}의 천사가 광야에 있는 한 샘 곁에서 하갈을 만났다. 그 샘은 술로 가는 길가에 있었다.",
+          "R": "술로 가는 길에 있는 광야의 한 샘 근처에서 {{divine_name:주|야훼}}의 천사가 하갈을 찾아냈다."
         }
       },
       "decisions": [
@@ -652,6 +1014,49 @@
           "choice": "the road to Shur: the way back to Egypt",
           "alternatives": [],
           "reason": "Shur lay on Egypt's eastern border (25:18). Hagar is heading home.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010160070021"
+          ],
+          "choice": "\"thiên sứ của CHÚA\" for the angel of the LORD",
+          "alternatives": [
+            "\"sứ giả\""
+          ],
+          "reason": "As the Genesis terms note sets: the word of the Vietnamese New Testament for God's messengers.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o010160070021",
+            "o010160070031"
+          ],
+          "choice": "the angel of the LORD speaks to Hagar in the plain style (해라체), as God speaks; Hagar answers in the formal polite style (합쇼체)",
+          "alternatives": [
+            "the formal polite style for the angel"
+          ],
+          "reason": "The angel speaks for God and in the first person as God (verse 10: \"I will multiply\"), so he speaks as God does in Genesis. Hagar, a runaway slave before a messenger of God, answers with the respect due to him.",
           "uncertain": false,
           "footnote": false
         }
@@ -697,6 +1102,31 @@
           "L": "And he said, \"Hagar, slave woman of Sarai, where have you come from, and where are you going?\" And she said, \"I am fleeing from my mistress Sarai.\"",
           "B": "He asked her, \"Hagar, servant of Sarai, where have you come from and where are you headed?\" She answered, \"I am running away from Sarai, my mistress.\"",
           "R": "He said, \"Hagar, Sarai's servant, where have you come from, and where are you going?\" She answered, \"I am running away from Sarai, the woman I belong to.\""
+        },
+        "es": {
+          "L": "Y dijo: «Agar, esclava de Saray, ¿de dónde vienes y adónde vas?». Y ella dijo: «Huyo de delante de Saray, mi señora».",
+          "B": "Él le preguntó: «Agar, sierva de Saray, ¿de dónde vienes y hacia dónde te diriges?». Ella respondió: «Estoy huyendo de Saray, mi señora».",
+          "R": "Él le dijo: «Agar, sierva de Saray, ¿de dónde vienes y adónde vas?». Ella le contestó: «Me estoy escapando de Saray, la mujer a la que pertenezco»."
+        },
+        "fr": {
+          "L": "Et il dit : « Agar, esclave de Saraï, d’où viens-tu, et où vas-tu ? » Et elle dit : « Je fuis loin de Saraï, ma maîtresse. »",
+          "B": "Il lui demanda : « Agar, servante de Saraï, d’où viens-tu et où vas-tu ? » Elle répondit : « Je m’enfuis loin de Saraï, ma maîtresse. »",
+          "R": "Il lui a dit : « Agar, servante de Saraï, d’où viens-tu, et où vas-tu ? » Elle a répondu : « Je me sauve loin de Saraï, la femme à qui j’appartiens. »"
+        },
+        "sw": {
+          "L": "Akasema, \"Hajiri, mjakazi wa Sarai, umetoka wapi, nawe unakwenda wapi?\" Akasema, \"Ninakimbia mbele ya bibi yangu Sarai.\"",
+          "B": "Akamwuliza, \"Hajiri, mtumishi wa Sarai, unatoka wapi, na unaelekea wapi?\" Akajibu, \"Ninamkimbia Sarai, bibi yangu.\"",
+          "R": "Akamwambia, \"Hajiri, mtumishi wa Sarai, umetoka wapi, na unakwenda wapi?\" Akajibu, \"Ninamkimbia Sarai, bibi ambaye mimi ni mali yake.\""
+        },
+        "vi": {
+          "L": "Thiên sứ nói: \"A-ga, nữ nô lệ của Sa-rai, con từ đâu đến và con đi đâu?\" Nàng đáp: \"Tôi đang trốn khỏi bà chủ tôi là Sa-rai.\"",
+          "B": "Thiên sứ hỏi nàng: \"A-ga, đầy tớ gái của Sa-rai, con từ đâu đến và định đi đâu?\" Nàng đáp: \"Tôi đang trốn khỏi bà chủ tôi là Sa-rai.\"",
+          "R": "Thiên sứ nói: \"A-ga, đầy tớ gái của Sa-rai, con từ đâu đến, và con đi đâu?\" Nàng trả lời: \"Tôi đang trốn khỏi Sa-rai, bà chủ của tôi.\""
+        },
+        "ko": {
+          "L": "그리고 그가 말했다. \"사래의 여종 하갈아, 너는 어디에서 왔으며 어디로 가느냐?\" 그러자 그녀가 말했다. \"저는 제 여주인 사래 앞에서 도망하고 있습니다.\"",
+          "B": "천사가 물었다. \"사래의 여종 하갈아, 너는 어디에서 왔고 어디로 가는 길이냐?\" 하갈이 대답했다. \"저는 제 여주인 사래에게서 도망치고 있습니다.\"",
+          "R": "천사가 말했다. \"사래의 여종 하갈아, 너는 어디에서 왔느냐? 그리고 어디로 가느냐?\" 하갈이 대답했다. \"저는 저를 부리는 사래에게서 도망치는 중입니다.\""
         }
       },
       "decisions": [
@@ -731,6 +1161,28 @@
             "slave"
           ],
           "reason": "\"Servant\" in Balanced and Readable (style guide); Literal keeps \"slave\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o010160080012"
+          ],
+          "choice": "The angel calls Hagar \"con\"; she answers as \"tôi\"",
+          "alternatives": [
+            "\"ngươi\"",
+            "\"con\" for Hagar herself"
+          ],
+          "reason": "The angel speaks as God himself (meaning decision on 16:7), and God speaks to a person as \"con\", as with Abram. Hagar does not yet know who is speaking, so she says \"tôi\".",
           "uncertain": false,
           "footnote": false
         }
@@ -770,6 +1222,31 @@
           "L": "And the angel of {{divine_name:the LORD|Yahweh}} said to her, \"Return to your mistress and submit to her authority.\"",
           "B": "The angel of {{divine_name:the LORD|Yahweh}} said to her, \"Go back to your mistress and put yourself under her authority.\"",
           "R": "The angel of {{divine_name:the LORD|Yahweh}} said to her, \"Go back to Sarai and obey her.\""
+        },
+        "es": {
+          "L": "Y le dijo el ángel {{divine_name:del SEÑOR|de Yahvé}}: «Vuelve a tu señora y humíllate bajo sus manos».",
+          "B": "El ángel {{divine_name:del SEÑOR|de Yahvé}} le dijo: «Regresa con tu señora y ponte bajo su autoridad».",
+          "R": "El ángel {{divine_name:del SEÑOR|de Yahvé}} le dijo: «Vuelve con Saray y obedécela»."
+        },
+        "fr": {
+          "L": "Et l’ange {{divine_name:du SEIGNEUR|de Yahvé}} lui dit : « Retourne vers ta maîtresse, et humilie-toi sous ses mains. »",
+          "B": "L’ange {{divine_name:du SEIGNEUR|de Yahvé}} lui dit : « Retourne chez ta maîtresse et soumets-toi à son autorité. »",
+          "R": "L’ange {{divine_name:du SEIGNEUR|de Yahvé}} lui a dit : « Retourne chez Saraï et obéis-lui. »"
+        },
+        "sw": {
+          "L": "Malaika wa {{divine_name:BWANA|Yahwe}} akamwambia, \"Rudi kwa bibi yako, ujinyenyekeze chini ya mikono yake.\"",
+          "B": "Malaika wa {{divine_name:BWANA|Yahwe}} akamwambia, \"Rudi kwa bibi yako, ujiweke chini ya mamlaka yake.\"",
+          "R": "Malaika wa {{divine_name:BWANA|Yahwe}} akamwambia, \"Rudi kwa Sarai, umtii.\""
+        },
+        "vi": {
+          "L": "Thiên sứ của {{divine_name:CHÚA|Gia-vê}} nói với nàng: \"Hãy trở về với bà chủ con và phục dưới tay bà.\"",
+          "B": "Thiên sứ của {{divine_name:CHÚA|Gia-vê}} nói với nàng: \"Hãy trở về với bà chủ con và chịu phục dưới quyền bà.\"",
+          "R": "Thiên sứ của {{divine_name:CHÚA|Gia-vê}} nói với nàng: \"Hãy trở về với Sa-rai và vâng lời bà.\""
+        },
+        "ko": {
+          "L": "그리고 {{divine_name:주|야훼}}의 천사가 그녀에게 말했다. \"네 여주인에게 돌아가서 그녀의 손 아래 복종하여라.\"",
+          "B": "{{divine_name:주|야훼}}의 천사가 그녀에게 말했다. \"네 여주인에게 돌아가서 그녀의 다스림 아래에 몸을 굽혀라.\"",
+          "R": "{{divine_name:주|야훼}}의 천사가 하갈에게 말했다. \"사래에게 돌아가서 그녀의 말을 따라라.\""
         }
       },
       "decisions": [
@@ -825,6 +1302,31 @@
           "L": "And the angel of {{divine_name:the LORD|Yahweh}} said to her, \"I will greatly multiply your offspring, so that they cannot be counted for multitude.\"",
           "B": "The angel of {{divine_name:the LORD|Yahweh}} also said, \"I will make your descendants so many that no one will be able to count them.\"",
           "R": "The angel of {{divine_name:the LORD|Yahweh}} also said, \"I will give you so many descendants that no one will be able to count them.\""
+        },
+        "es": {
+          "L": "Y le dijo el ángel {{divine_name:del SEÑOR|de Yahvé}}: «Haré muy numerosa tu descendencia, tanto que por su gran número no se podrá contar».",
+          "B": "El ángel {{divine_name:del SEÑOR|de Yahvé}} añadió: «Tendrás tantos descendientes que nadie podrá contarlos».",
+          "R": "El ángel {{divine_name:del SEÑOR|de Yahvé}} también le dijo: «Te daré tantos descendientes que nadie los podrá contar»."
+        },
+        "fr": {
+          "L": "Et l’ange {{divine_name:du SEIGNEUR|de Yahvé}} lui dit : « Je multiplierai grandement ta descendance, et on ne pourra pas la compter, tant elle sera nombreuse. »",
+          "B": "L’ange {{divine_name:du SEIGNEUR|de Yahvé}} ajouta : « Je rendrai tes descendants si nombreux que personne ne pourra les compter. »",
+          "R": "L’ange {{divine_name:du SEIGNEUR|de Yahvé}} a dit encore : « Je te donnerai tellement de descendants que personne ne pourra les compter. »"
+        },
+        "sw": {
+          "L": "Malaika wa {{divine_name:BWANA|Yahwe}} akamwambia, \"Hakika nitauongeza sana uzao wako, hata hautahesabika kwa wingi wake.\"",
+          "B": "Malaika wa {{divine_name:BWANA|Yahwe}} akaongeza kusema, \"Nitawafanya wazao wako kuwa wengi mno hata hakuna atakayeweza kuwahesabu.\"",
+          "R": "Malaika wa {{divine_name:BWANA|Yahwe}} akasema pia, \"Nitakupa wazao wengi sana, hata hakuna mtu atakayeweza kuwahesabu.\""
+        },
+        "vi": {
+          "L": "Thiên sứ của {{divine_name:CHÚA|Gia-vê}} lại nói với nàng: \"Ta sẽ gia tăng dòng dõi con thật nhiều, đến nỗi không thể đếm được vì quá đông.\"",
+          "B": "Thiên sứ của {{divine_name:CHÚA|Gia-vê}} cũng nói: \"Ta sẽ làm cho dòng dõi con đông đến nỗi không ai đếm được.\"",
+          "R": "Thiên sứ của {{divine_name:CHÚA|Gia-vê}} cũng nói: \"Ta sẽ cho con nhiều con cháu đến nỗi không ai đếm được.\""
+        },
+        "ko": {
+          "L": "그리고 {{divine_name:주|야훼}}의 천사가 그녀에게 말했다. \"내가 네 씨를 크게 불어나게 하여, 그 수가 많아서 셀 수 없게 하겠다.\"",
+          "B": "{{divine_name:주|야훼}}의 천사가 또 말했다. \"내가 네 자손을 아주 많게 하여 아무도 셀 수 없게 하겠다.\"",
+          "R": "{{divine_name:주|야훼}}의 천사가 또 말했다. \"내가 너에게 자손을 아주 많이 주어서, 아무도 그 수를 셀 수 없을 것이다.\""
         }
       },
       "decisions": [
@@ -841,6 +1343,27 @@
           "alternatives": [],
           "reason": "The angel speaks as God (\"I\"), and gives Hagar a promise like those given to Abram (13:16; 15:5). She is the only woman in Genesis to receive such a promise directly.",
           "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o010160100061"
+          ],
+          "choice": "the angel's \"Ta\" under the deity_pronoun setting",
+          "alternatives": [
+            "plain \"ta\""
+          ],
+          "reason": "The angel makes a promise that only God can keep and speaks as God himself (meaning decision on 16:7), so his \"I\" is God's own.",
+          "uncertain": true,
           "footnote": false
         }
       ],
@@ -887,6 +1410,31 @@
           "L": "And the angel of {{divine_name:the LORD|Yahweh}} said to her, \"Look, you are pregnant and will bear a son, and you shall call his name Ishmael, for {{divine_name:the LORD|Yahweh}} has heard your affliction.",
           "B": "Then the angel of {{divine_name:the LORD|Yahweh}} said, \"You are with child, and you will have a son. Call him Ishmael, for {{divine_name:the LORD|Yahweh}} has listened to your suffering.",
           "R": "The angel of {{divine_name:the LORD|Yahweh}} said, \"You are going to have a son. Name him Ishmael, which means 'God hears,' because {{divine_name:the LORD|Yahweh}} has heard how much you have suffered."
+        },
+        "es": {
+          "L": "Y le dijo el ángel {{divine_name:del SEÑOR|de Yahvé}}: «Mira, estás encinta y darás a luz un hijo, y le pondrás el nombre de Ismael, porque {{divine_name:el SEÑOR|Yahvé}} ha escuchado tu aflicción.",
+          "B": "Luego el ángel {{divine_name:del SEÑOR|de Yahvé}} le dijo: «Estás embarazada y tendrás un hijo. Ponle por nombre Ismael, porque {{divine_name:el SEÑOR|Yahvé}} ha prestado oído a tu sufrimiento.",
+          "R": "El ángel {{divine_name:del SEÑOR|de Yahvé}} le dijo: «Vas a tener un hijo. Llámalo Ismael, que quiere decir “Dios oye”, porque {{divine_name:el SEÑOR|Yahvé}} ha oído cuánto has sufrido."
+        },
+        "fr": {
+          "L": "Et l’ange {{divine_name:du SEIGNEUR|de Yahvé}} lui dit : « Voici, tu es enceinte, et tu enfanteras un fils, et tu l’appelleras du nom d’Ismaël, car {{divine_name:le SEIGNEUR|Yahvé}} a entendu ton affliction.",
+          "B": "Puis l’ange {{divine_name:du SEIGNEUR|de Yahvé}} dit : « Tu es enceinte, et tu auras un fils. Tu l’appelleras Ismaël, car {{divine_name:le SEIGNEUR|Yahvé}} a entendu ta souffrance.",
+          "R": "L’ange {{divine_name:du SEIGNEUR|de Yahvé}} a dit : « Tu vas avoir un fils. Appelle-le Ismaël, ce qui veut dire “Dieu entend”, parce que {{divine_name:le SEIGNEUR|Yahvé}} a entendu combien tu as souffert."
+        },
+        "sw": {
+          "L": "Malaika wa {{divine_name:BWANA|Yahwe}} akamwambia, \"Tazama, una mimba, nawe utazaa mwana, nawe utamwita jina lake Ishmaeli, kwa kuwa {{divine_name:BWANA|Yahwe}} amesikia mateso yako.",
+          "B": "Kisha malaika wa {{divine_name:BWANA|Yahwe}} akasema, \"Wewe una mimba, nawe utapata mwana. Umwite Ishmaeli, kwa sababu {{divine_name:BWANA|Yahwe}} amesikiliza mateso yako.",
+          "R": "Malaika wa {{divine_name:BWANA|Yahwe}} akasema, \"Utapata mtoto wa kiume. Mwite Ishmaeli, maana yake 'Mungu husikia,' kwa sababu {{divine_name:BWANA|Yahwe}} amesikia jinsi ulivyoteseka sana."
+        },
+        "vi": {
+          "L": "Thiên sứ của {{divine_name:CHÚA|Gia-vê}} lại nói với nàng: \"Kìa, con đang có thai và sẽ sinh một con trai, con hãy đặt tên nó là Ích-ma-ên, vì {{divine_name:CHÚA|Gia-vê}} đã nghe thấu nỗi khổ của con.",
+          "B": "Rồi thiên sứ của {{divine_name:CHÚA|Gia-vê}} nói: \"Con đang có thai và sẽ sinh một con trai. Hãy đặt tên nó là Ích-ma-ên, vì {{divine_name:CHÚA|Gia-vê}} đã lắng nghe nỗi khổ của con.",
+          "R": "Thiên sứ của {{divine_name:CHÚA|Gia-vê}} nói: \"Con sắp sinh một con trai. Hãy đặt tên nó là Ích-ma-ên, nghĩa là 'Đức Chúa Trời nghe', vì {{divine_name:CHÚA|Gia-vê}} đã nghe biết con khổ sở biết bao."
+        },
+        "ko": {
+          "L": "그리고 {{divine_name:주|야훼}}의 천사가 그녀에게 말했다. \"보아라, 너는 임신했으니 아들을 낳을 것이다. 너는 그의 이름을 이스마엘이라고 불러라. {{divine_name:주|야훼}}께서 네 고통을 들으셨기 때문이다.",
+          "B": "{{divine_name:주|야훼}}의 천사가 또 말했다. \"너는 아이를 가졌으니 아들을 낳을 것이다. 그 이름을 이스마엘이라고 하여라. {{divine_name:주|야훼}}께서 네 고통을 귀 기울여 들으셨기 때문이다.",
+          "R": "{{divine_name:주|야훼}}의 천사가 말했다. \"너는 아들을 낳을 것이다. 그 이름을 이스마엘이라고 지어라. 이스마엘은 '하나님께서 들으신다'라는 뜻이다. {{divine_name:주|야훼}}께서 네가 얼마나 괴로운지 들으셨기 때문이다."
         }
       },
       "decisions": [
@@ -920,6 +1468,23 @@
           "choice": "which means 'God hears'",
           "alternatives": [],
           "reason": "Readable explains the name so the reason given makes sense (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o010160110111"
+          ],
+          "choice": "\"nghĩa là 'Đức Chúa Trời nghe'\" supplied at Readable",
+          "alternatives": [],
+          "reason": "As the English Readable explains the name (meaning decision), so the reader hears why the angel goes on \"vì CHÚA đã nghe\".",
           "uncertain": false,
           "footnote": false
         }
@@ -965,6 +1530,31 @@
           "L": "And he will be a wild donkey of a man, his hand against everyone and everyone's hand against him, and he will dwell over against all his brothers.\"",
           "B": "He will be like a wild donkey: he will raise his hand against everyone, and everyone will raise a hand against him, and he will live at odds with all his kin.\"",
           "R": "Your son will be like a wild donkey, free and hard to control. He will fight with everyone, and everyone will fight with him. He will live apart from all his relatives.\""
+        },
+        "es": {
+          "L": "Y él será un hombre [como] asno salvaje; su mano [estará] contra todos, y la mano de todos contra él, y habitará frente a todos sus hermanos».",
+          "B": "Será como un asno salvaje: levantará la mano contra todos, y todos levantarán la mano contra él, y vivirá enfrentado a todos sus parientes».",
+          "R": "Tu hijo será como un burro salvaje, libre y difícil de controlar. Peleará con todos, y todos pelearán con él. Vivirá apartado de todos sus parientes»."
+        },
+        "fr": {
+          "L": "Et lui sera un homme [semblable à un] âne sauvage : sa main contre tous, et la main de tous contre lui ; et il habitera face à tous ses frères. »",
+          "B": "Il sera comme un âne sauvage : il lèvera la main contre tous, et tous lèveront la main contre lui, et il vivra en conflit avec tous ses frères. »",
+          "R": "Ton fils sera comme un âne sauvage, libre et difficile à dompter. Il se battra contre tout le monde, et tout le monde se battra contre lui. Il vivra loin de tous les gens de sa famille. »"
+        },
+        "sw": {
+          "L": "Naye atakuwa mtu [kama] punda-mwitu; mkono wake [utakuwa] juu ya kila mtu, na mkono wa kila mtu juu yake; naye atakaa kuwakabili ndugu zake wote.\"",
+          "B": "Atakuwa kama punda-mwitu: atainua mkono dhidi ya kila mtu, na kila mtu atainua mkono dhidi yake, naye ataishi akishindana na jamaa zake wote.\"",
+          "R": "Mwanao atakuwa kama punda-mwitu, huru na mgumu kutawaliwa. Atapigana na kila mtu, na kila mtu atapigana naye. Ataishi mbali na ndugu zake wote.\""
+        },
+        "vi": {
+          "L": "Nó sẽ là một con lừa hoang giữa loài người, tay nó chống lại mọi người, và tay mọi người chống lại nó, và nó sẽ sống đối nghịch với mọi anh em nó.\"",
+          "B": "Nó sẽ như con lừa hoang: nó sẽ giơ tay chống lại mọi người, và mọi người sẽ giơ tay chống lại nó; nó sẽ sống đối địch với mọi người bà con.\"",
+          "R": "Con trai con sẽ giống như con lừa hoang, tự do và khó ai kiềm chế được. Nó sẽ đánh nhau với mọi người, và mọi người cũng sẽ đánh nhau với nó. Nó sẽ sống xa cách mọi người bà con của mình.\""
+        },
+        "ko": {
+          "L": "그리고 그는 들나귀 같은 사람이 될 것이다. 그의 손은 모든 사람을 치고 모든 사람의 손은 그를 칠 것이며, 그는 그의 모든 형제들과 맞서서 살 것이다.\"",
+          "B": "그는 들나귀 같은 사람이 될 것이다. 그가 모든 사람에게 손을 들고, 모든 사람이 그에게 손을 들 것이며, 그는 자기의 모든 친족과 맞서며 살 것이다.\"",
+          "R": "네 아들은 들나귀처럼 자유로워서 아무도 길들이지 못할 것이다. 그는 모든 사람과 싸우고, 모든 사람이 그와 싸울 것이다. 그는 자기 친척들과 떨어져서 살 것이다.\""
         }
       },
       "decisions": [
@@ -1003,6 +1593,68 @@
           "reason": "The phrase \"over against the face of\" can mean in defiance of, or opposite, that is, east of. The Ishmaelites lived in the desert east and south of Israel (25:18).",
           "uncertain": true,
           "footnote": true
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o010160120031",
+            "o010160120041"
+          ],
+          "choice": "un hombre [como] asno salvaje",
+          "alternatives": [
+            "un asno salvaje de hombre",
+            "un hombre fiero"
+          ],
+          "reason": "Spanish cannot copy the Hebrew \"a wild donkey of a man\"; Literal supplies the comparison in brackets. \"Asno salvaje\" names the animal of the desert (m1); Readable says \"burro salvaje\", the everyday word.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o010160120031",
+            "o010160120041"
+          ],
+          "choice": "un homme [semblable à un] âne sauvage",
+          "alternatives": [
+            "un âne sauvage d'homme",
+            "un onagre d'homme"
+          ],
+          "reason": "French cannot copy the Hebrew \"a wild donkey of a man\" as English can; Literal supplies the comparison in brackets. \"Âne sauvage\" is used rather than the rarer \"onagre\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o010160120031",
+            "o010160120041"
+          ],
+          "choice": "mtu [kama] punda-mwitu",
+          "alternatives": [
+            "punda-mwitu wa mtu"
+          ],
+          "reason": "Swahili cannot copy the Hebrew \"a wild donkey of a man\"; Literal supplies the comparison in brackets.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1045,6 +1697,31 @@
           "L": "And she called the name of {{divine_name:the LORD|Yahweh}} who spoke to her, \"You are a God who sees,\" for she said, \"Have I really seen here the one who sees me?\"",
           "B": "So she gave this name to {{divine_name:the LORD|Yahweh}} who had spoken to her: \"You are the God who sees me.\" For she said, \"Have I truly seen the One who watches over me?\"",
           "R": "Hagar gave a name to {{divine_name:the LORD|Yahweh}} who had spoken to her. She called {{deity_pronoun:him|Him}} \"the God who sees me.\" She said, \"I have seen the One who sees me!\""
+        },
+        "es": {
+          "L": "Y llamó el nombre {{divine_name:del SEÑOR|de Yahvé}} que le hablaba: «Tú eres un Dios que ve», porque dijo: «¿De veras he visto aquí al que me ve?».",
+          "B": "Entonces dio este nombre {{divine_name:al SEÑOR|a Yahvé}}, que le había hablado: «Tú eres el Dios que me ve». Porque dijo: «¿De verdad he visto al que vela por mí?».",
+          "R": "Agar dio un nombre {{divine_name:al SEÑOR|a Yahvé}}, que le había hablado. Ella {{deity_pronoun:lo|Lo}} llamó «el Dios que me ve». Y dijo: «¡He visto al que me ve!»."
+        },
+        "fr": {
+          "L": "Et elle appela le nom {{divine_name:du SEIGNEUR|de Yahvé}} qui lui parlait : « Tu es un Dieu qui voit », car elle dit : « Ai-je vraiment vu ici celui qui me voit ? »",
+          "B": "Elle donna alors ce nom {{divine_name:au SEIGNEUR|à Yahvé}} qui lui avait parlé : « Tu es le Dieu qui me voit. » Car elle disait : « Ai-je vraiment vu Celui qui veille sur moi ? »",
+          "R": "Agar a donné un nom {{divine_name:au SEIGNEUR|à Yahvé}} qui lui avait parlé. Elle {{deity_pronoun:l’|L’}}a appelé « le Dieu qui me voit ». Elle a dit : « J’ai vu Celui qui me voit ! »"
+        },
+        "sw": {
+          "L": "Naye akaliita jina la {{divine_name:BWANA|Yahwe}} aliyesema naye, \"Wewe ni Mungu aonaye,\" kwa maana alisema, \"Je, kweli nimemwona hapa {{deity_pronoun:yeye|Yeye}} anayeniona?\"",
+          "B": "Basi akampa {{divine_name:BWANA|Yahwe}} aliyesema naye jina hili: \"Wewe ndiwe Mungu anayeniona.\" Kwa maana alisema, \"Je, kweli nimemwona {{deity_pronoun:yeye|Yeye}} anayenilinda?\"",
+          "R": "Hajiri alimpa {{divine_name:BWANA|Yahwe}} aliyesema naye jina. Alimwita \"Mungu anayeniona.\" Akasema, \"Nimemwona {{deity_pronoun:yeye|Yeye}} anayeniona!\""
+        },
+        "vi": {
+          "L": "Nàng gọi danh {{divine_name:CHÚA|Gia-vê}}, Đấng đã phán với nàng, là: \"Ngài là Đức Chúa Trời thấy tôi\", vì nàng nói: \"Có thật tại đây tôi đã thấy Đấng thấy tôi sao?\"",
+          "B": "Vậy nàng đặt cho {{divine_name:CHÚA|Gia-vê}}, Đấng đã phán với nàng, danh này: \"Ngài là Đức Chúa Trời thấy tôi.\" Vì nàng nói: \"Tôi đã thật sự thấy Đấng đoái xem tôi sao?\"",
+          "R": "A-ga đặt cho {{divine_name:CHÚA|Gia-vê}}, Đấng đã phán với nàng, một danh. Nàng gọi {{deity_pronoun:ngài|Ngài}} là \"Đức Chúa Trời thấy tôi\". Nàng nói: \"Tôi đã thấy Đấng thấy tôi!\""
+        },
+        "ko": {
+          "L": "그리고 그녀는 자기에게 말씀하신 {{divine_name:주|야훼}}의 이름을 \"주님은 엘 로이[, 곧 보시는 하나님]이십니다\" 하고 불렀다. 그녀가 \"내가 여기에서도 나를 보시는 분의 뒤를 보았단 말인가?\" 하고 말했기 때문이다.",
+          "B": "그래서 하갈은 자기에게 말씀하신 {{divine_name:주|야훼}}께 \"주님은 나를 보시는 하나님이십니다\" 하는 이름을 드렸다. \"내가 정말 여기에서 나를 지켜보시는 분을 뵈었단 말인가?\" 하고 말했기 때문이다.",
+          "R": "하갈은 자기에게 말씀하신 {{divine_name:주|야훼}}께 이름을 지어 드렸다. 하갈은 그분을 \"나를 보시는 하나님\"이라고 불렀다. 하갈이 말했다. \"나를 보시는 분을 내가 뵈었구나!\""
         }
       },
       "decisions": [
@@ -1106,6 +1783,69 @@
           "reason": "\"You\" addressed to God begins the sentence here and so is capitalised either way; Readable uses \"him\" under the deity pronoun setting.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o010160130151",
+            "o010160130152"
+          ],
+          "choice": "{{deity_pronoun:yeye|Yeye}} anayeniona (L, R), anayenilinda (B); no span at Readable \"Alimwita\"",
+          "alternatives": [
+            "no span, as the English \"the one who sees me\""
+          ],
+          "reason": "Swahili needs a free pronoun \"yeye\" for \"the one who sees me\", and a free pronoun for God takes the deity pronoun span; the English Readable \"him\" is only a prefix in \"alimwita\", which cannot take a capital, so it has none.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010160130081"
+          ],
+          "choice": "\"Đức Chúa Trời thấy tôi\" for El Roi at every level",
+          "alternatives": [
+            "\"Ên Rô-i\" (the Hebrew name, kept in this note)"
+          ],
+          "reason": "As the Genesis terms note sets: the name is given in its meaning so the reader hears what Hagar says; in Hebrew it is \"El Roi\", \"a God of seeing\" (meaning decision), and Literal could keep \"Ên Rô-i\". \"thấy tôi\" follows Hagar's own words that end the verse.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010160130071",
+            "o010160130081"
+          ],
+          "choice": "\"엘 로이\" at Literal, followed by its meaning in brackets; \"나를 보시는 하나님\" at Balanced and Readable",
+          "alternatives": [
+            "\"나를 보시는 하나님\" at every level"
+          ],
+          "reason": "Hagar gives God a name, and Literal lets the reader hear it, as the English meaning decision explains (El Roi). The other levels say what the name means, so that the wordplay on seeing in the rest of the verse and in verse 14 can be followed.",
+          "uncertain": false,
+          "footnote": true
         }
       ],
       "status": "ai_draft"
@@ -1142,6 +1882,31 @@
           "L": "Therefore the well was called Beer-lahai-roi; it is between Kadesh and Bered.",
           "B": "That is why the well was called Beer-lahai-roi. It is still there, between Kadesh and Bered.",
           "R": "That is why the well is called Beer-lahai-roi, which means \"the well of the Living One who sees me.\" It is between Kadesh and Bered."
+        },
+        "es": {
+          "L": "Por eso se llamó el pozo Beer-lajai-roí; he aquí, [está] entre Cades y Bered.",
+          "B": "Por esta razón el pozo se llamó Beer-lajai-roí. Todavía está allí, entre Cades y Bered.",
+          "R": "Por eso el pozo se llama Beer-lajai-roí, que quiere decir «el pozo del Viviente que me ve». Está entre Cades y Bered."
+        },
+        "fr": {
+          "L": "C’est pourquoi on appela le puits Beer-Lahaï-Roï ; voici, il est entre Kadesh et Béred.",
+          "B": "Voilà pourquoi ce puits fut appelé Beer-Lahaï-Roï. Il se trouve encore là, entre Kadesh et Béred.",
+          "R": "C’est pour cela qu’on appelle ce puits Beer-Lahaï-Roï, ce qui veut dire « le puits du Vivant qui me voit ». Il se trouve entre Kadesh et Béred."
+        },
+        "sw": {
+          "L": "Kwa hiyo kisima kile kikaitwa Beer-lahai-roi; tazama, [kiko] kati ya Kadeshi na Beredi.",
+          "B": "Ndiyo sababu kisima hicho kiliitwa Beer-lahai-roi. Bado kipo, kati ya Kadeshi na Beredi.",
+          "R": "Ndiyo sababu kisima hicho kinaitwa Beer-lahai-roi, maana yake \"kisima cha Aliye Hai anayeniona.\" Kiko kati ya Kadeshi na Beredi."
+        },
+        "vi": {
+          "L": "Vì vậy giếng ấy được gọi là Bê-e La-chai-roi; nó ở giữa Ca-đe và Bê-rết.",
+          "B": "Vì thế giếng ấy được gọi là Bê-e La-chai-roi. Giếng vẫn còn đó, giữa Ca-đe và Bê-rết.",
+          "R": "Vì vậy giếng ấy được gọi là Bê-e La-chai-roi, nghĩa là \"giếng của Đấng Hằng Sống thấy tôi\". Giếng ở giữa Ca-đe và Bê-rết."
+        },
+        "ko": {
+          "L": "그러므로 그 우물을 브엘라해로이라고 불렀다. 보라, [그것은] 가데스와 베렛 사이에 [있다].",
+          "B": "그래서 그 우물을 브엘라해로이라고 불렀다. 그 우물은 지금도 가데스와 베렛 사이에 있다.",
+          "R": "그래서 그 우물을 브엘라해로이라고 부른다. 그 이름은 '나를 보시는 살아 계신 분의 우물'이라는 뜻이다. 그 우물은 가데스와 베렛 사이에 있다."
         }
       },
       "decisions": [
@@ -1217,6 +1982,31 @@
           "L": "And Hagar bore Abram a son, and Abram called the name of his son, whom Hagar bore, Ishmael.",
           "B": "So Hagar bore Abram a son, and Abram named the son she had borne him Ishmael.",
           "R": "Hagar gave birth to Abram's son, and Abram named him Ishmael."
+        },
+        "es": {
+          "L": "Y Agar dio a luz un hijo a Abram, y Abram puso a su hijo, el que Agar había dado a luz, el nombre de Ismael.",
+          "B": "Así Agar le dio un hijo a Abram, y Abram llamó Ismael al hijo que ella le había dado.",
+          "R": "Agar tuvo un hijo de Abram, y Abram le puso por nombre Ismael."
+        },
+        "fr": {
+          "L": "Et Agar enfanta un fils à Abram, et Abram appela du nom d’Ismaël son fils qu’Agar avait enfanté.",
+          "B": "Agar donna donc un fils à Abram, et Abram appela Ismaël le fils qu’elle lui avait donné.",
+          "R": "Agar a mis au monde le fils d’Abram, et Abram l’a appelé Ismaël."
+        },
+        "sw": {
+          "L": "Hajiri akamzalia Abramu mwana, naye Abramu akamwita mwanawe, ambaye Hajiri alimzaa, jina lake Ishmaeli.",
+          "B": "Basi Hajiri akamzalia Abramu mwana, naye Abramu akampa mwana huyo aliyezaliwa na Hajiri jina Ishmaeli.",
+          "R": "Hajiri alimzalia Abramu mtoto wa kiume, naye Abramu akamwita Ishmaeli."
+        },
+        "vi": {
+          "L": "A-ga sinh cho Áp-ram một con trai, và Áp-ram đặt tên cho con trai mình, mà A-ga đã sinh, là Ích-ma-ên.",
+          "B": "Vậy A-ga sinh cho Áp-ram một con trai, và Áp-ram đặt tên cho đứa con nàng sinh cho ông là Ích-ma-ên.",
+          "R": "A-ga sinh cho Áp-ram một con trai, và Áp-ram đặt tên con là Ích-ma-ên."
+        },
+        "ko": {
+          "L": "그리고 하갈이 아브람에게 아들을 낳아 주었다. 그리고 아브람은 하갈이 낳은 그의 아들의 이름을 이스마엘이라고 불렀다.",
+          "B": "하갈이 아브람의 아들을 낳자, 아브람은 하갈이 낳은 그 아들의 이름을 이스마엘이라고 지었다.",
+          "R": "하갈이 아브람의 아들을 낳았다. 아브람은 그 아들의 이름을 이스마엘이라고 지었다."
         }
       },
       "decisions": [
@@ -1272,6 +2062,31 @@
           "L": "And Abram was eighty-six years old when Hagar bore Ishmael to Abram.",
           "B": "Abram was eighty-six years old when Hagar bore him Ishmael.",
           "R": "Abram was eighty-six years old when Ishmael was born."
+        },
+        "es": {
+          "L": "Y Abram tenía ochenta y seis años cuando Agar le dio a luz a Ismael.",
+          "B": "Abram tenía ochenta y seis años cuando Agar le dio a Ismael.",
+          "R": "Abram tenía ochenta y seis años cuando nació Ismael."
+        },
+        "fr": {
+          "L": "Et Abram était âgé de quatre-vingt-six ans quand Agar enfanta Ismaël à Abram.",
+          "B": "Abram avait quatre-vingt-six ans quand Agar lui donna Ismaël.",
+          "R": "Abram avait quatre-vingt-six ans quand Ismaël est né."
+        },
+        "sw": {
+          "L": "Naye Abramu alikuwa na umri wa miaka themanini na sita Hajiri alipomzalia Abramu Ishmaeli.",
+          "B": "Abramu alikuwa na miaka themanini na sita Hajiri alipomzalia Ishmaeli.",
+          "R": "Abramu alikuwa na umri wa miaka themanini na sita Ishmaeli alipozaliwa."
+        },
+        "vi": {
+          "L": "Áp-ram được tám mươi sáu tuổi khi A-ga sinh Ích-ma-ên cho Áp-ram.",
+          "B": "Áp-ram được tám mươi sáu tuổi khi A-ga sinh Ích-ma-ên cho ông.",
+          "R": "Áp-ram được tám mươi sáu tuổi khi Ích-ma-ên ra đời."
+        },
+        "ko": {
+          "L": "그리고 하갈이 아브람에게 이스마엘을 낳아 주었을 때, 아브람은 여든여섯 살이었다.",
+          "B": "하갈이 아브람에게 이스마엘을 낳아 주었을 때, 아브람의 나이는 여든여섯 살이었다.",
+          "R": "이스마엘이 태어났을 때 아브람은 여든여섯 살이었다."
         }
       },
       "decisions": [],

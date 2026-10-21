@@ -24,6 +24,31 @@
           "L": "God of vengeance, {{divine_name:LORD|Yahweh}}, \\q God of vengeance, shine forth!",
           "B": "God of retribution, {{divine_name:LORD|Yahweh}}, \\q God of retribution, shine out!",
           "R": "{{divine_name:LORD|Yahweh}}, {{deity_pronoun:you|You}} are the God who pays back evildoers. \\q Show {{deity_pronoun:yourself|Yourself}} in all {{deity_pronoun:your|Your}} brightness!"
+        },
+        "fr": {
+          "L": "Dieu des vengeances, {{divine_name:SEIGNEUR|Yahvé}}, \\q Dieu des vengeances, resplendis !",
+          "B": "Dieu qui fais justice, {{divine_name:SEIGNEUR|Yahvé}}, \\q Dieu qui fais justice, parais dans {{deity_pronoun:ta|Ta}} lumière !",
+          "R": "{{divine_name:SEIGNEUR|Yahvé}}, {{deity_pronoun:tu|Tu}} es le Dieu qui fait payer ceux qui font le mal. \\q Montre-{{deity_pronoun:toi|Toi}} dans tout {{deity_pronoun:ton|Ton}} éclat !"
+        },
+        "sw": {
+          "L": "Ee Mungu wa kisasi, Ee {{divine_name:BWANA|Yahwe}}, \\q Ee Mungu wa kisasi, angaza!",
+          "B": "Ee Mungu wa malipizi, Ee {{divine_name:BWANA|Yahwe}}, \\q Ee Mungu wa malipizi, uangaze!",
+          "R": "Ee {{divine_name:BWANA|Yahwe}}, {{deity_pronoun:wewe|Wewe}} ndiwe Mungu anayewalipa watenda maovu. \\q Ujionyeshe katika mng'ao {{deity_pronoun:wako|Wako}} wote!"
+        },
+        "es": {
+          "L": "Dios de las venganzas, {{divine_name:SEÑOR|Yahvé}}, \\q Dios de las venganzas, ¡resplandece!",
+          "B": "Dios de la justa retribución, {{divine_name:SEÑOR|Yahvé}}, \\q Dios de la justa retribución, ¡muestra tu resplandor!",
+          "R": "{{divine_name:SEÑOR|Yahvé}}, {{deity_pronoun:tú|Tú}} eres el Dios que da su merecido a los malhechores. \\q ¡Muéstrate con todo {{deity_pronoun:tu|Tu}} resplandor!"
+        },
+        "vi": {
+          "L": "Đức Chúa Trời của sự báo trả, lạy {{divine_name:CHÚA|Gia-vê}}, \\q Đức Chúa Trời của sự báo trả, xin chiếu sáng ra!",
+          "B": "Lạy {{divine_name:CHÚA|Gia-vê}}, Đức Chúa Trời của sự báo ứng, \\q Đức Chúa Trời của sự báo ứng, xin hiện ra rực rỡ!",
+          "R": "Lạy {{divine_name:CHÚA|Gia-vê}}, {{deity_pronoun:ngài|Ngài}} là Đức Chúa Trời, Đấng báo trả kẻ làm ác. \\q Xin tỏ mình ra trong tất cả vinh quang rực rỡ của {{deity_pronoun:ngài|Ngài}}!"
+        },
+        "ko": {
+          "L": "보복의 하나님, {{divine_name:주|야훼}}여, \\q 보복의 하나님이시여, 빛을 비추어 주십시오!",
+          "B": "갚아 주시는 하나님, {{divine_name:주|야훼}}여, \\q 갚아 주시는 하나님이시여, 빛을 비추며 나타나 주십시오!",
+          "R": "{{divine_name:주|야훼}}여, 주님은 악한 일을 한 사람들에게 갚아 주시는 하나님이십니다. \\q 주님의 밝은 빛 가운데 나타나 주십시오!"
         }
       },
       "decisions": [
@@ -88,6 +113,66 @@
           "reason": "Balanced and Readable avoid a word that can suggest personal spite (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190940010021",
+            "o190940010041"
+          ],
+          "choice": "\"Dieu qui fais justice\" at Balanced for \"God of vengeance\"",
+          "alternatives": [
+            "\"Dieu des vengeances\" at Balanced"
+          ],
+          "reason": "French \"vengeance\" today sounds like personal spite. The Hebrew word is the judge's act of setting wrong right, which the English Balanced \"retribution\" says; Literal keeps \"vengeances\", plural as in the Hebrew.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190940010021"
+          ],
+          "choice": "\"kisasi\" (vengeance) at Literal, \"malipizi\" (retribution) at Balanced",
+          "alternatives": [
+            "\"kisasi\" at every level"
+          ],
+          "reason": "\"Kisasi\" is often heard as personal revenge; Balanced uses \"malipizi\", repayment for wrong done, as the English moves from \"vengeance\" to \"retribution\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190940010021",
+            "o190940010051"
+          ],
+          "choice": "\"보복\" (L), \"갚아 주시는\" (B); Readable \"악한 일을 한 사람들에게 갚아 주시는\"",
+          "alternatives": [
+            "\"복수\""
+          ],
+          "reason": "The word is the just punishment given by the judge (meaning decision m1), not personal revenge, which Korean \"복수\" suggests; Balanced and Readable say it as repaying.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -118,6 +203,31 @@
           "L": "Lift {{deity_pronoun:yourself|Yourself}} up, Judge of the earth; \\q return recompense upon [the] proud.",
           "B": "Stand up, Judge of all the earth, \\q and give the arrogant what their deeds have earned.",
           "R": "Judge of the whole world, get up! \\q Give proud people the punishment they deserve."
+        },
+        "fr": {
+          "L": "Lève-{{deity_pronoun:toi|Toi}}, Juge de la terre ; \\q rends [leur] salaire aux orgueilleux.",
+          "B": "Dresse-{{deity_pronoun:toi|Toi}}, Juge de toute la terre, \\q et donne aux arrogants ce que leurs actes ont mérité.",
+          "R": "Juge du monde entier, lève-{{deity_pronoun:toi|Toi}} ! \\q Donne aux orgueilleux la punition qu’ils méritent."
+        },
+        "sw": {
+          "L": "Jiinue, Ee Mhukumu wa dunia; \\q uwalipe wenye kiburi malipo [yao].",
+          "B": "Simama, Ee Mhukumu wa dunia yote, \\q uwape wenye majivuno yale ambayo matendo yao yamestahili.",
+          "R": "Ee Mhukumu wa ulimwengu wote, inuka! \\q Uwape watu wenye kiburi adhabu wanayostahili."
+        },
+        "es": {
+          "L": "Levántate, Juez de la tierra; \\q da su paga a los soberbios.",
+          "B": "Ponte en pie, Juez de toda la tierra, \\q y da a los arrogantes lo que sus obras merecen.",
+          "R": "Juez del mundo entero, ¡levántate! \\q Dale a la gente orgullosa el castigo que merece."
+        },
+        "vi": {
+          "L": "Xin trỗi dậy, hỡi Đấng Phán Xét thế gian; \\q xin báo trả xứng đáng trên [những kẻ] kiêu ngạo.",
+          "B": "Lạy Đấng Phán Xét cả thế gian, xin đứng lên, \\q và báo trả cho kẻ kiêu căng điều việc làm chúng đáng nhận.",
+          "R": "Lạy Đấng Phán Xét cả thế giới, xin hãy đứng dậy! \\q Xin trừng phạt những kẻ kiêu ngạo như chúng đáng phải chịu."
+        },
+        "ko": {
+          "L": "일어나 주십시오, 세상의 재판관이시여. \\q 교만한 자들에게 보응을 돌려주십시오.",
+          "B": "온 세상의 재판관이시여, 일어나셔서 \\q 거만한 자들에게 그들의 행위대로 갚아 주십시오.",
+          "R": "온 세상을 심판하시는 분이시여, 일어나 주십시오! \\q 교만한 사람들이 받아야 할 벌을 내려 주십시오."
         }
       },
       "decisions": [
@@ -179,6 +289,31 @@
           "L": "How long [will the] wicked, {{divine_name:LORD|Yahweh}}, \\q how long will [the] wicked exult?",
           "B": "{{divine_name:LORD|Yahweh}}, how much longer will the wicked, \\q how much longer will the wicked celebrate?",
           "R": "{{divine_name:LORD|Yahweh}}, how long will wicked people keep on celebrating? \\q How long?"
+        },
+        "fr": {
+          "L": "Jusqu’à quand [les] méchants, {{divine_name:SEIGNEUR|Yahvé}}, \\q jusqu’à quand [les] méchants exulteront-ils ?",
+          "B": "{{divine_name:SEIGNEUR|Yahvé}}, combien de temps encore les méchants, \\q combien de temps encore les méchants feront-ils la fête ?",
+          "R": "{{divine_name:SEIGNEUR|Yahvé}}, combien de temps les méchants vont-ils continuer à faire la fête ? \\q Combien de temps ?"
+        },
+        "sw": {
+          "L": "Mpaka lini waovu, Ee {{divine_name:BWANA|Yahwe}}, \\q mpaka lini waovu watashangilia?",
+          "B": "Ee {{divine_name:BWANA|Yahwe}}, mpaka lini waovu, \\q mpaka lini waovu wataendelea kusherehekea?",
+          "R": "Ee {{divine_name:BWANA|Yahwe}}, waovu wataendelea kusherehekea mpaka lini? \\q Mpaka lini?"
+        },
+        "es": {
+          "L": "¿Hasta cuándo [los] malvados, {{divine_name:SEÑOR|Yahvé}}, \\q hasta cuándo se regocijarán [los] malvados?",
+          "B": "{{divine_name:SEÑOR|Yahvé}}, ¿hasta cuándo los malvados, \\q hasta cuándo seguirán festejando los malvados?",
+          "R": "{{divine_name:SEÑOR|Yahvé}}, ¿hasta cuándo seguirán celebrando los malvados? \\q ¿Hasta cuándo?"
+        },
+        "vi": {
+          "L": "Cho đến bao giờ [những] kẻ ác, lạy {{divine_name:CHÚA|Gia-vê}}, \\q cho đến bao giờ [những] kẻ ác còn hớn hở?",
+          "B": "Lạy {{divine_name:CHÚA|Gia-vê}}, kẻ ác còn đến bao lâu nữa, \\q kẻ ác còn ăn mừng đến bao lâu nữa?",
+          "R": "Lạy {{divine_name:CHÚA|Gia-vê}}, kẻ ác còn tiếp tục ăn mừng đến bao giờ? \\q Đến bao giờ?"
+        },
+        "ko": {
+          "L": "언제까지 악인들이, {{divine_name:주|야훼}}여, \\q 언제까지 악인들이 기뻐 날뛰겠습니까?",
+          "B": "{{divine_name:주|야훼}}여, 언제까지 악인들이, \\q 언제까지 악인들이 우쭐대며 즐거워하겠습니까?",
+          "R": "{{divine_name:주|야훼}}여, 악한 사람들이 언제까지 신나게 떠들겠습니까? \\q 언제까지입니까?"
         }
       },
       "decisions": [
@@ -239,6 +374,31 @@
           "L": "They pour forth, they speak arrogant [words]; \\q all who do wickedness boast.",
           "B": "Insolent words gush from them; \\q everyone who does evil talks big.",
           "R": "They keep bragging and saying proud things. \\q All these evil people boast about themselves."
+        },
+        "fr": {
+          "L": "Ils déversent, ils disent des [paroles] arrogantes ; \\q tous ceux qui font le mal se vantent.",
+          "B": "De leur bouche jaillissent des paroles insolentes ; \\q tous ceux qui font le mal fanfaronnent.",
+          "R": "Ils n’arrêtent pas de se vanter et de dire des paroles orgueilleuses. \\q Tous ces gens mauvais se vantent."
+        },
+        "sw": {
+          "L": "Wanabubujika, wanasema [maneno ya] kiburi; \\q watenda maovu wote wanajigamba.",
+          "B": "Maneno ya jeuri yanawatoka kwa wingi; \\q kila mtenda maovu anajisifu.",
+          "R": "Wanaendelea kujisifu na kusema maneno ya kiburi. \\q Watu hawa wote waovu wanajigamba."
+        },
+        "es": {
+          "L": "Derraman, hablan [palabras] insolentes; \\q se jactan todos los que hacen maldad.",
+          "B": "De su boca brotan palabras insolentes; \\q todos los que hacen el mal hablan con arrogancia.",
+          "R": "No dejan de presumir y de decir cosas orgullosas. \\q Toda esta gente malvada se jacta de sí misma."
+        },
+        "vi": {
+          "L": "Chúng tuôn ra, chúng nói [những lời] ngạo mạn; \\q mọi kẻ làm điều gian ác đều khoe khoang.",
+          "B": "Những lời xấc xược tuôn ra từ miệng chúng; \\q mọi kẻ làm ác đều huênh hoang.",
+          "R": "Chúng cứ khoác lác và nói những lời kiêu căng. \\q Tất cả những kẻ ác ấy đều tự khoe mình."
+        },
+        "ko": {
+          "L": "그들이 쏟아 내며 거만한 [말을] 하고, \\q 악을 행하는 자들이 모두 자랑합니다.",
+          "B": "그들의 입에서 오만한 말이 쏟아지고, \\q 악을 행하는 자들이 모두 큰소리를 칩니다.",
+          "R": "그들은 계속 잘난 체하며 교만한 말을 합니다. \\q 이 악한 사람들은 모두 자기를 자랑합니다."
         }
       },
       "decisions": [
@@ -299,6 +459,31 @@
           "L": "Your people, {{divine_name:LORD|Yahweh}}, they crush, \\q and {{deity_pronoun:your|Your}} inheritance they afflict.",
           "B": "They grind down {{deity_pronoun:your|Your}} people, {{divine_name:LORD|Yahweh}}; \\q they oppress the nation that belongs to {{deity_pronoun:you|You}}.",
           "R": "{{divine_name:LORD|Yahweh}}, they crush {{deity_pronoun:your|Your}} people. \\q They hurt the people who belong to {{deity_pronoun:you|You}}."
+        },
+        "fr": {
+          "L": "Ton peuple, {{divine_name:SEIGNEUR|Yahvé}}, ils l’écrasent, \\q et {{deity_pronoun:ton|Ton}} héritage, ils l’oppriment.",
+          "B": "Ils broient {{deity_pronoun:ton|Ton}} peuple, {{divine_name:SEIGNEUR|Yahvé}} ; \\q ils oppriment la nation qui {{deity_pronoun:t’|T’}}appartient.",
+          "R": "{{divine_name:SEIGNEUR|Yahvé}}, ils écrasent {{deity_pronoun:ton|Ton}} peuple. \\q Ils font du mal aux gens qui {{deity_pronoun:t’|T’}}appartiennent."
+        },
+        "sw": {
+          "L": "Watu {{deity_pronoun:wako|Wako}}, Ee {{divine_name:BWANA|Yahwe}}, wanawaponda, \\q na urithi {{deity_pronoun:wako|Wako}} wanautesa.",
+          "B": "Wanawasaga watu {{deity_pronoun:wako|Wako}}, Ee {{divine_name:BWANA|Yahwe}}; \\q wanalionea taifa lililo mali {{deity_pronoun:yako|Yako}}.",
+          "R": "Ee {{divine_name:BWANA|Yahwe}}, wanawaponda watu {{deity_pronoun:wako|Wako}}. \\q Wanawaumiza watu walio mali {{deity_pronoun:yako|Yako}}."
+        },
+        "es": {
+          "L": "A {{deity_pronoun:tu|Tu}} pueblo, {{divine_name:SEÑOR|Yahvé}}, aplastan, \\q y a {{deity_pronoun:tu|Tu}} heredad afligen.",
+          "B": "Destrozan a {{deity_pronoun:tu|Tu}} pueblo, {{divine_name:SEÑOR|Yahvé}}; \\q oprimen a la nación que {{deity_pronoun:te|Te}} pertenece.",
+          "R": "{{divine_name:SEÑOR|Yahvé}}, aplastan a {{deity_pronoun:tu|Tu}} pueblo. \\q Lastiman a la gente que {{deity_pronoun:te|Te}} pertenece."
+        },
+        "vi": {
+          "L": "Dân của {{deity_pronoun:ngài|Ngài}}, lạy {{divine_name:CHÚA|Gia-vê}}, chúng chà đạp, \\q và cơ nghiệp của {{deity_pronoun:ngài|Ngài}}, chúng làm khổ.",
+          "B": "Lạy {{divine_name:CHÚA|Gia-vê}}, chúng đè bẹp dân {{deity_pronoun:ngài|Ngài}}; \\q chúng áp bức dân tộc thuộc về {{deity_pronoun:ngài|Ngài}}.",
+          "R": "Lạy {{divine_name:CHÚA|Gia-vê}}, chúng chà đạp dân của {{deity_pronoun:ngài|Ngài}}. \\q Chúng làm hại những người thuộc về {{deity_pronoun:ngài|Ngài}}."
+        },
+        "ko": {
+          "L": "주님의 백성을, {{divine_name:주|야훼}}여, 그들이 짓밟고, \\q 주님의 기업을 괴롭힙니다.",
+          "B": "{{divine_name:주|야훼}}여, 그들이 주님의 백성을 짓밟고, \\q 주님께 속한 민족을 괴롭힙니다.",
+          "R": "{{divine_name:주|야훼}}여, 그들이 주님의 백성을 짓밟습니다. \\q 주님께 속한 사람들을 괴롭힙니다."
         }
       },
       "decisions": [
@@ -364,6 +549,31 @@
           "L": "[The] widow and [the] sojourner they kill, \\q and [the] fatherless they murder.",
           "B": "Widows and foreigners they put to death; \\q orphans they murder.",
           "R": "They kill widows and foreigners who live among us. \\q They murder children who have no father to protect them."
+        },
+        "fr": {
+          "L": "La veuve et l’immigré, ils [les] tuent, \\q et les orphelins, ils [les] assassinent.",
+          "B": "Ils mettent à mort les veuves et les étrangers ; \\q ils assassinent les orphelins.",
+          "R": "Ils tuent les veuves et les étrangers qui vivent parmi nous. \\q Ils assassinent les enfants qui n’ont pas de père pour les protéger."
+        },
+        "sw": {
+          "L": "Mjane na mgeni wanawaua, \\q na yatima wanawachinja.",
+          "B": "Wajane na wageni wanawaua; \\q yatima wanawachinja.",
+          "R": "Wanawaua wajane na wageni wanaoishi kati yetu. \\q Wanawaua watoto wasio na baba wa kuwalinda."
+        },
+        "es": {
+          "L": "[A la] viuda y [al] extranjero matan, \\q y [a los] huérfanos asesinan.",
+          "B": "A las viudas y a los extranjeros les dan muerte; \\q a los huérfanos los asesinan.",
+          "R": "Matan a las viudas y a los extranjeros que viven entre nosotros. \\q Asesinan a los niños que no tienen padre que los proteja."
+        },
+        "vi": {
+          "L": "Người góa bụa và khách lạ chúng giết, \\q và [những trẻ] mồ côi chúng sát hại.",
+          "B": "Chúng giết người góa bụa và khách ngoại kiều; \\q chúng sát hại trẻ mồ côi.",
+          "R": "Chúng giết những người góa bụa và những người nước ngoài sống giữa chúng tôi. \\q Chúng giết những đứa trẻ không có cha để che chở."
+        },
+        "ko": {
+          "L": "과부와 나그네를 그들이 죽이고, \\q 고아들을 살해합니다.",
+          "B": "그들은 과부와 나그네를 죽이고, \\q 고아들을 살해합니다.",
+          "R": "그들은 과부들과 우리 가운데 사는 외국 사람들을 죽입니다. \\q 지켜 줄 아버지가 없는 아이들을 죽입니다."
         }
       },
       "decisions": [
@@ -446,6 +656,31 @@
           "L": "And they say, \"{{divine_name:The LORD|Yah}} will not see, \\q and the God of Jacob will not perceive.\"",
           "B": "They say, \"{{divine_name:The LORD|Yah}} is not looking; \\q Jacob's God pays no attention.\"",
           "R": "They say, \"{{divine_name:The LORD|Yah}} cannot see what we are doing. \\q Israel's God does not even notice.\""
+        },
+        "fr": {
+          "L": "Et ils disent : « {{divine_name:Le SEIGNEUR|Yah}} ne voit pas, \\q et le Dieu de Jacob ne s’en aperçoit pas. »",
+          "B": "Ils disent : « {{divine_name:Le SEIGNEUR|Yah}} ne regarde pas ; \\q le Dieu de Jacob n’y fait pas attention. »",
+          "R": "Ils disent : « {{divine_name:Le SEIGNEUR|Yah}} ne peut pas voir ce que nous faisons. \\q Le Dieu d’Israël ne le remarque même pas. »"
+        },
+        "sw": {
+          "L": "Nao husema, \"{{divine_name:BWANA|Yah}} haoni, \\q wala Mungu wa Yakobo hatambui.\"",
+          "B": "Wanasema, \"{{divine_name:BWANA|Yah}} hatazami; \\q Mungu wa Yakobo hajali.\"",
+          "R": "Wanasema, \"{{divine_name:BWANA|Yah}} hawezi kuona tunachofanya. \\q Mungu wa Israeli hata hatambui.\""
+        },
+        "es": {
+          "L": "Y dicen: «No ve {{divine_name:el SEÑOR|Yah}}, \\q y no se da cuenta el Dios de Jacob».",
+          "B": "Dicen: «{{divine_name:El SEÑOR|Yah}} no está mirando; \\q el Dios de Jacob no presta atención».",
+          "R": "Dicen: «{{divine_name:El SEÑOR|Yah}} no puede ver lo que hacemos. \\q El Dios de Israel ni siquiera se da cuenta»."
+        },
+        "vi": {
+          "L": "Và chúng nói: \"{{divine_name:CHÚA|Gia}} sẽ không thấy, \\q và Đức Chúa Trời của Gia-cốp sẽ không nhận biết.\"",
+          "B": "Chúng nói: \"{{divine_name:CHÚA|Gia}} chẳng nhìn đâu; \\q Đức Chúa Trời của Gia-cốp chẳng để ý gì.\"",
+          "R": "Chúng nói: \"{{divine_name:CHÚA|Gia}} không thể thấy điều chúng ta đang làm. \\q Đức Chúa Trời của Y-sơ-ra-ên còn chẳng để ý nữa.\""
+        },
+        "ko": {
+          "L": "그리고 그들이 말합니다. \"{{divine_name:주|야}}께서 보지 못하시고, \\q 야곱의 하나님께서 알아채지 못하신다.\"",
+          "B": "그들이 말합니다. \"{{divine_name:주|야}}께서는 보고 계시지 않는다. \\q 야곱의 하나님은 관심도 없으시다.\"",
+          "R": "그들이 말합니다. \"{{divine_name:주|야}}께서는 우리가 하는 일을 보지 못하신다. \\q 이스라엘의 하나님은 알아차리지도 못하신다.\""
         }
       },
       "decisions": [
@@ -512,6 +747,28 @@
           "reason": "Readable uses the better-known name of the people (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o190940070012",
+            "o190940070041"
+          ],
+          "choice": "The wicked speak of God with the honorific (-시-) in the plain style",
+          "alternatives": [
+            "no honorific in their words"
+          ],
+          "reason": "In Korean the honorific is part of naming God, and the wicked here deny that God sees, not that he is God; Korean keeps the usual way of speaking of God and lets their words show their contempt. Yah is {{divine_name:주|야}}, as in 89:9.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -542,6 +799,31 @@
           "L": "Understand, [you] senseless among the people! \\q And fools, when will you be wise?",
           "B": "Get some understanding, you brutish people! \\q Fools, when will you start to think wisely?",
           "R": "You foolish people, think about this! \\q When will you ever learn?"
+        },
+        "fr": {
+          "L": "Comprenez, stupides du peuple ! \\q Et insensés, quand serez-vous sages ?",
+          "B": "Ouvrez votre intelligence, gens bornés ! \\q Insensés, quand commencerez-vous à réfléchir avec sagesse ?",
+          "R": "Vous, les gens stupides, réfléchissez à ceci ! \\q Quand allez-vous enfin apprendre ?"
+        },
+        "sw": {
+          "L": "Fahamuni, [ninyi] wajinga kati ya watu! \\q Nanyi wapumbavu, mtakuwa na hekima lini?",
+          "B": "Pateni ufahamu, enyi watu kama wanyama! \\q Enyi wapumbavu, mtaanza lini kufikiri kwa hekima?",
+          "R": "Enyi watu wapumbavu, fikirini jambo hili! \\q Mtajifunza lini?"
+        },
+        "es": {
+          "L": "¡{{plural_you:Entiendan|Entended}}, insensatos del pueblo! \\q Y necios, ¿cuándo {{plural_you:serán|seréis}} sabios?",
+          "B": "¡{{plural_you:Adquieran|Adquirid}} entendimiento, gente torpe! \\q Necios, ¿cuándo {{plural_you:empezarán|empezaréis}} a pensar con sabiduría?",
+          "R": "¡Gente tonta, {{plural_you:piensen|pensad}} en esto! \\q ¿Cuándo {{plural_you:van a aprender|vais a aprender}}?"
+        },
+        "vi": {
+          "L": "Hãy hiểu biết, [hỡi các người] ngu muội trong dân! \\q Và hỡi những kẻ dại dột, khi nào các người mới khôn ngoan?",
+          "B": "Hỡi những kẻ ngu muội như thú vật, hãy hiểu biết! \\q Hỡi những kẻ dại dột, bao giờ các người mới chịu suy nghĩ khôn ngoan?",
+          "R": "Hỡi những kẻ dại dột, hãy suy nghĩ điều này! \\q Đến bao giờ các người mới học được?"
+        },
+        "ko": {
+          "L": "깨달아라, 백성 가운데 우둔한 자들아! \\q 미련한 자들아, 너희가 언제 지혜로워지겠느냐?",
+          "B": "백성 가운데 짐승처럼 우둔한 자들아, 깨달아라! \\q 미련한 자들아, 너희가 언제나 지혜롭게 생각하겠느냐?",
+          "R": "어리석은 사람들아, 이것을 생각해 보아라! \\q 너희는 언제쯤 깨닫겠느냐?"
         }
       },
       "decisions": [
@@ -570,6 +852,71 @@
           "choice": "among the people: within Israel",
           "alternatives": [],
           "reason": "The psalm now speaks to people within God's own people, the wicked of verses 4-7 or any who think as they do.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190940080032"
+          ],
+          "choice": "plural you setting for the people addressed",
+          "alternatives": [
+            "singular tú"
+          ],
+          "reason": "The psalm now speaks to a group within the people, so the verbs are plural and take the plural you setting: the Latin American forms by default, with the forms of Spain as the alternative.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o190940080032"
+          ],
+          "choice": "\"các người\" for \"you\" when the singer rebukes the fools",
+          "alternatives": [
+            "\"các ngươi\"",
+            "\"anh em\""
+          ],
+          "reason": "The singer turns on senseless people within Israel (see the meaning decision). \"các người\" is the plain word for a group one speaks to sharply, as the style guide gives it for opponents; \"các ngươi\" is archaic and \"anh em\" too warm for a rebuke.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o190940080011",
+            "o190940080061"
+          ],
+          "choice": "The psalmist turns to the senseless in 해라체 (verses 8-11)",
+          "alternatives": [
+            "합쇼체"
+          ],
+          "reason": "The fools of Israel are rebuked (meaning decision m2), and Korean speaks to them as one speaks to those one rebukes, with \"너희\", as the Korean 139:19 does; the prayer to God resumes in verse 12.",
           "uncertain": false,
           "footnote": false
         }
@@ -606,6 +953,31 @@
           "L": "The one who planted the ear, does {{deity_pronoun:he|He}} not hear? \\q Or the one who formed the eye, does {{deity_pronoun:he|He}} not see?",
           "B": "Will the one who set the ear in place not hear? \\q Will the one who shaped the eye not see?",
           "R": "God made our ears. Of course {{deity_pronoun:he|He}} can hear! \\q He made our eyes. Of course {{deity_pronoun:he|He}} can see!"
+        },
+        "fr": {
+          "L": "Celui qui a planté l’oreille n’entendrait-{{deity_pronoun:il|Il}} pas ? \\q Ou celui qui a formé l’œil ne verrait-{{deity_pronoun:il|Il}} pas ?",
+          "B": "Celui qui a mis l’oreille en place n’entendrait pas ? \\q Celui qui a façonné l’œil ne verrait pas ?",
+          "R": "Dieu a fait nos oreilles. Bien sûr qu’{{deity_pronoun:il|Il}} entend ! \\q Il a fait nos yeux. Bien sûr qu’{{deity_pronoun:il|Il}} voit !"
+        },
+        "sw": {
+          "L": "Aliyepanda sikio, je, {{deity_pronoun:yeye|Yeye}} hasikii? \\q Au aliyeumba jicho, je, {{deity_pronoun:yeye|Yeye}} haoni?",
+          "B": "Je, {{deity_pronoun:yeye|Yeye}} aliyeliweka sikio mahali pake hasikii? \\q Je, {{deity_pronoun:yeye|Yeye}} aliyelifinyanga jicho haoni?",
+          "R": "Mungu aliumba masikio yetu. Bila shaka anaweza kusikia! \\q Aliumba macho yetu. Bila shaka anaweza kuona!"
+        },
+        "es": {
+          "L": "El que plantó el oído, ¿no oirá? \\q ¿O el que formó el ojo, no verá?",
+          "B": "¿El que puso el oído en su lugar no va a oír? \\q ¿El que dio forma al ojo no va a ver?",
+          "R": "Dios hizo nuestros oídos. ¡Claro que {{deity_pronoun:él|Él}} puede oír! \\q Él hizo nuestros ojos. ¡Claro que {{deity_pronoun:él|Él}} puede ver!"
+        },
+        "vi": {
+          "L": "Đấng đã tạo nên tai, {{deity_pronoun:ngài|Ngài}} không nghe sao? \\q Hay Đấng đã nắn nên mắt, {{deity_pronoun:ngài|Ngài}} không thấy sao?",
+          "B": "Đấng đã đặt tai vào chỗ, lẽ nào không nghe? \\q Đấng đã nắn nên con mắt, lẽ nào không thấy?",
+          "R": "Đức Chúa Trời đã tạo nên tai chúng ta. Dĩ nhiên {{deity_pronoun:ngài|Ngài}} nghe được! \\q Ngài đã tạo nên mắt chúng ta. Dĩ nhiên {{deity_pronoun:ngài|Ngài}} thấy được!"
+        },
+        "ko": {
+          "L": "귀를 심으신 분이 듣지 못하시겠느냐? \\q 눈을 지으신 분이 보지 못하시겠느냐?",
+          "B": "귀를 만들어 붙이신 분이 듣지 못하시겠느냐? \\q 눈을 빚으신 분이 보지 못하시겠느냐?",
+          "R": "하나님께서 우리의 귀를 만드셨다. 그분께서 당연히 들으신다! \\q 그분께서 우리의 눈을 만드셨다. 그분께서 당연히 보신다!"
         }
       },
       "decisions": [
@@ -687,6 +1059,31 @@
           "L": "The one who disciplines nations, does {{deity_pronoun:he|He}} not rebuke — \\q the one who teaches {{gender:humankind|man}} knowledge?",
           "B": "Will the one who disciplines nations not correct them, \\q the one who teaches humans all they know?",
           "R": "God corrects the nations. Of course {{deity_pronoun:he|He}} will punish wicked people! \\q He teaches people everything they know."
+        },
+        "fr": {
+          "L": "Celui qui corrige les nations ne reprendrait-{{deity_pronoun:il|Il}} pas, \\q {{deity_pronoun:lui|Lui}} qui enseigne la connaissance à {{gender:l’humain|l’homme}} ?",
+          "B": "Celui qui corrige les nations ne les reprendrait pas, \\q {{deity_pronoun:lui|Lui}} qui enseigne aux humains tout ce qu’ils savent ?",
+          "R": "Dieu corrige les nations. Bien sûr qu’{{deity_pronoun:il|Il}} punira les méchants ! \\q Il apprend aux gens tout ce qu’ils savent."
+        },
+        "sw": {
+          "L": "Yeye anayeadibisha mataifa, je, hakemei, \\q {{deity_pronoun:yeye|Yeye}} anayemfundisha mwanadamu maarifa?",
+          "B": "Je, yule anayeadibisha mataifa hatawarudi, \\q yule anayewafundisha wanadamu kila wanachojua?",
+          "R": "Mungu huyarudi mataifa. Bila shaka atawaadhibu waovu! \\q Yeye huwafundisha watu kila kitu wanachojua."
+        },
+        "es": {
+          "L": "El que disciplina a las naciones, ¿no reprenderá, \\q el que enseña conocimiento {{gender:al ser humano|al hombre}}?",
+          "B": "¿El que disciplina a las naciones no las va a corregir, \\q el que enseña a los seres humanos todo lo que saben?",
+          "R": "Dios corrige a las naciones. ¡Claro que {{deity_pronoun:él|Él}} castigará a los malvados! \\q Él enseña a la gente todo lo que sabe."
+        },
+        "vi": {
+          "L": "Đấng sửa phạt các dân tộc, {{deity_pronoun:ngài|Ngài}} không quở trách sao, \\q Đấng dạy loài người tri thức?",
+          "B": "Đấng sửa phạt các dân tộc, lẽ nào không sửa trị họ, \\q là Đấng dạy cho loài người mọi điều họ biết?",
+          "R": "Đức Chúa Trời sửa phạt các dân tộc. Dĩ nhiên {{deity_pronoun:ngài|Ngài}} sẽ trừng phạt kẻ ác! \\q Ngài dạy cho con người mọi điều họ biết."
+        },
+        "ko": {
+          "L": "민족들을 징계하시는 분이 꾸짖지 않으시겠느냐? \\q 사람에게 지식을 가르치시는 분이 [모르시겠느냐]?",
+          "B": "민족들을 훈계하시는 분이 바로잡지 않으시겠느냐? \\q 사람에게 모든 지식을 가르치시는 분이 아니시냐?",
+          "R": "하나님께서 민족들을 바로잡으신다. 그분께서 당연히 악한 사람들을 벌하신다! \\q 그분께서 사람들에게 그들이 아는 모든 것을 가르쳐 주신다."
         }
       },
       "decisions": [
@@ -759,6 +1156,25 @@
           "reason": "Readable says whom God will correct.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190940100071"
+          ],
+          "choice": "the gender setting on the noun at Literal: \"l'humain\" / \"l'homme\"; Balanced and Readable say \"les humains\", \"les gens\" with no setting",
+          "alternatives": [
+            "\"l'être humain\""
+          ],
+          "reason": "As the English: ʾadam is humanity, men and women.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -788,6 +1204,31 @@
           "L": "{{divine_name:The LORD|Yahweh}} knows the thoughts of {{gender:humankind|man}}, \\q that they [are] a breath.",
           "B": "{{divine_name:The LORD|Yahweh}} knows what humans are thinking, \\q and that their thoughts are only a puff of air.",
           "R": "{{divine_name:The LORD|Yahweh}} knows what people are thinking. \\q He knows their thoughts are worthless, like a breath of air."
+        },
+        "fr": {
+          "L": "{{divine_name:Le SEIGNEUR|Yahvé}} connaît les pensées de {{gender:l’humain|l’homme}} : \\q elles [ne sont qu’]un souffle.",
+          "B": "{{divine_name:Le SEIGNEUR|Yahvé}} sait ce que pensent les humains, \\q et que leurs pensées ne sont qu’un peu d’air.",
+          "R": "{{divine_name:Le SEIGNEUR|Yahvé}} sait ce que pensent les gens. \\q Il sait que leurs pensées ne valent rien, comme un souffle d’air."
+        },
+        "sw": {
+          "L": "{{divine_name:BWANA|Yahwe}} anayajua mawazo ya mwanadamu, \\q kwamba [ni] pumzi.",
+          "B": "{{divine_name:BWANA|Yahwe}} anajua wanadamu wanachofikiri, \\q na kwamba mawazo yao ni mvuke tu.",
+          "R": "{{divine_name:BWANA|Yahwe}} anajua watu wanachofikiri. \\q Anajua mawazo yao hayana thamani, ni kama pumzi tu."
+        },
+        "es": {
+          "L": "{{divine_name:El SEÑOR|Yahvé}} conoce los pensamientos {{gender:del ser humano|del hombre}}, \\q que [son] un soplo.",
+          "B": "{{divine_name:El SEÑOR|Yahvé}} sabe lo que piensan los seres humanos, \\q y que sus pensamientos son solo un soplo.",
+          "R": "{{divine_name:El SEÑOR|Yahvé}} sabe lo que piensa la gente. \\q Sabe que sus pensamientos no valen nada, como un soplo de aire."
+        },
+        "vi": {
+          "L": "{{divine_name:CHÚA|Gia-vê}} biết những ý tưởng của loài người, \\q rằng chúng [chỉ là] một hơi thở.",
+          "B": "{{divine_name:CHÚA|Gia-vê}} biết loài người đang nghĩ gì, \\q và biết rằng ý tưởng của họ chỉ là một hơi gió thoảng.",
+          "R": "{{divine_name:CHÚA|Gia-vê}} biết người ta đang nghĩ gì. \\q Ngài biết ý nghĩ của họ chẳng có giá trị gì, như một hơi thở."
+        },
+        "ko": {
+          "L": "{{divine_name:주|야훼}}께서 사람의 생각을 아신다, \\q 그것이 입김일 뿐임을.",
+          "B": "{{divine_name:주|야훼}}께서는 사람의 생각을 아신다. \\q 그 생각이 한낱 입김일 뿐임을 아신다.",
+          "R": "{{divine_name:주|야훼}}께서는 사람들이 무엇을 생각하는지 아신다. \\q 그 생각이 입김처럼 헛되다는 것을 아신다."
         }
       },
       "decisions": [
@@ -852,6 +1293,27 @@
           "reason": "As in verse 10, the word ('adam) means human beings.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190940110041"
+          ],
+          "choice": "\"loài người\" with no gender span",
+          "alternatives": [
+            "\"người nam\" for the alternative"
+          ],
+          "reason": "\"loài người\" already means all people, men and women, so Vietnamese has no second form for the English gender setting to switch to.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -887,6 +1349,31 @@
           "L": "How blessed [is] {{gender:the one|the man}} whom {{deity_pronoun:you|You}} discipline, {{divine_name:LORD|Yah}}, \\q and whom {{deity_pronoun:you|You}} teach from {{deity_pronoun:your|Your}} instruction,",
           "B": "How blessed is {{gender:the one|the man}} whom {{deity_pronoun:you|You}} correct, {{divine_name:LORD|Yah}}, \\q and train through {{deity_pronoun:your|Your}} instruction,",
           "R": "{{divine_name:LORD|Yah}}, life is truly good for the people {{deity_pronoun:you|You}} correct \\q and guide by {{deity_pronoun:your|Your}} teaching."
+        },
+        "fr": {
+          "L": "{{gender:Heureuse la personne|Heureux l’homme}} que {{deity_pronoun:tu|Tu}} corriges, {{divine_name:SEIGNEUR|Yah}}, \\q et que {{deity_pronoun:tu|Tu}} instruis par {{deity_pronoun:ta|Ta}} loi,",
+          "B": "Heureux celui que {{deity_pronoun:tu|Tu}} reprends, {{divine_name:SEIGNEUR|Yah}}, \\q et que {{deity_pronoun:tu|Tu}} formes par {{deity_pronoun:ton|Ton}} instruction,",
+          "R": "{{divine_name:SEIGNEUR|Yah}}, ceux que {{deity_pronoun:tu|Tu}} corriges \\q et que {{deity_pronoun:tu|Tu}} guides par {{deity_pronoun:ton|Ton}} enseignement sont vraiment heureux."
+        },
+        "sw": {
+          "L": "Heri mtu yule unayemwadibisha, Ee {{divine_name:BWANA|Yah}}, \\q na unayemfundisha kutoka katika sheria {{deity_pronoun:yako|Yako}},",
+          "B": "Heri mtu yule unayemrudi, Ee {{divine_name:BWANA|Yah}}, \\q ukamfunza kwa maelekezo {{deity_pronoun:yako|Yako}},",
+          "R": "Ee {{divine_name:BWANA|Yah}}, maisha ni mazuri kweli kwa watu unaowarudi \\q na kuwaongoza kwa mafundisho {{deity_pronoun:yako|Yako}}."
+        },
+        "es": {
+          "L": "¡{{gender:Dichosa la persona|Dichoso el hombre}} a quien {{deity_pronoun:tú|Tú}} disciplinas, {{divine_name:SEÑOR|Yah}}, \\q y a quien enseñas con {{deity_pronoun:tu|Tu}} instrucción,",
+          "B": "¡Qué {{gender:dichosa es la persona|dichoso es el hombre}} a quien {{deity_pronoun:tú|Tú}} corriges, {{divine_name:SEÑOR|Yah}}, \\q y formas por medio de {{deity_pronoun:tu|Tu}} instrucción,",
+          "R": "{{divine_name:SEÑOR|Yah}}, qué buena es la vida de los que {{deity_pronoun:tú|Tú}} corriges \\q y guías con {{deity_pronoun:tu|Tu}} enseñanza."
+        },
+        "vi": {
+          "L": "Phước thay người được {{deity_pronoun:ngài|Ngài}} sửa phạt, lạy {{divine_name:CHÚA|Gia}}, \\q và được {{deity_pronoun:ngài|Ngài}} dạy dỗ từ sự dạy dỗ của {{deity_pronoun:ngài|Ngài}},",
+          "B": "Phước hạnh thay người được {{deity_pronoun:ngài|Ngài}} sửa dạy, lạy {{divine_name:CHÚA|Gia}}, \\q và được {{deity_pronoun:ngài|Ngài}} rèn luyện qua lời dạy dỗ của {{deity_pronoun:ngài|Ngài}},",
+          "R": "Lạy {{divine_name:CHÚA|Gia}}, thật hạnh phúc cho những người được {{deity_pronoun:ngài|Ngài}} sửa dạy \\q và hướng dẫn bằng lời dạy của {{deity_pronoun:ngài|Ngài}}."
+        },
+        "ko": {
+          "L": "얼마나 복된지요, {{divine_name:주|야}}여, 주님께서 징계하시고 \\q 주님의 가르침으로 가르치시는 사람은!",
+          "B": "{{divine_name:주|야}}여, 주님께서 바로잡아 주시고 \\q 주님의 가르침으로 훈련하시는 사람은 얼마나 복됩니까!",
+          "R": "{{divine_name:주|야}}여, 주님께서 바로잡아 주시고 \\q 주님의 가르침으로 이끌어 주시는 사람들은 참으로 행복합니다."
         }
       },
       "decisions": [
@@ -987,6 +1474,46 @@
           "reason": "As in 1:1.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190940120021"
+          ],
+          "choice": "no gender setting at Balanced: \"Heureux celui que\"",
+          "alternatives": [
+            "a span, as the English Balanced has"
+          ],
+          "reason": "French \"celui que\" already means anyone, so the Balanced needs no setting, as the French style guide sets for generic pronouns. Literal keeps the noun and the setting on it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190940120063"
+          ],
+          "choice": "\"가르침\" for God's torah",
+          "alternatives": [
+            "\"율법\""
+          ],
+          "reason": "As the published Psalm 1:2 (meaning decision m4). \"사람\" needs no gender span, as in 84:6.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1021,6 +1548,31 @@
           "L": "to give {{gender:them|him}} rest from days of trouble, \\q until a pit is dug for the wicked.",
           "B": "giving {{gender:them|him}} calm in the days of trouble, \\q while the pit is being dug for the wicked.",
           "R": "You give them peace when times are hard, \\q until a grave is dug for wicked people."
+        },
+        "fr": {
+          "L": "pour lui donner du repos loin des jours de malheur, \\q jusqu’à ce que la fosse soit creusée pour le méchant.",
+          "B": "lui donnant le calme aux jours de malheur, \\q pendant que la fosse se creuse pour le méchant.",
+          "R": "Tu leur donnes la paix quand les temps sont durs, \\q jusqu’à ce qu’on creuse une tombe pour les méchants."
+        },
+        "sw": {
+          "L": "ili umpe raha mbali na siku za taabu, \\q mpaka shimo litakapochimbwa kwa ajili ya mwovu.",
+          "B": "ukimpa utulivu katika siku za taabu, \\q huku shimo likichimbwa kwa ajili ya waovu.",
+          "R": "Unawapa amani nyakati zinapokuwa ngumu, \\q mpaka kaburi litakapochimbwa kwa ajili ya waovu."
+        },
+        "es": {
+          "L": "para darle descanso de los días de angustia, \\q hasta que se cave una fosa para el malvado.",
+          "B": "dándole calma en los días de angustia, \\q mientras se cava la fosa para el malvado.",
+          "R": "Les das paz cuando los tiempos son difíciles, \\q hasta que se cave una tumba para los malvados."
+        },
+        "vi": {
+          "L": "để ban cho người ấy sự nghỉ ngơi khỏi những ngày gian nan, \\q cho đến khi một hố sâu được đào cho kẻ ác.",
+          "B": "ban cho người ấy sự bình yên trong những ngày khốn khó, \\q trong khi hố sâu đang được đào cho kẻ ác.",
+          "R": "Ngài ban cho họ sự bình an khi gặp lúc khó khăn, \\q cho đến khi một nấm mồ được đào cho kẻ ác."
+        },
+        "ko": {
+          "L": "고난의 날들에서 그에게 평안을 주시려는 것이니, \\q 악인을 위해 구덩이가 파일 때까지입니다.",
+          "B": "주님께서는 고난의 날에도 그에게 평온을 주십니다. \\q 그동안 악인을 위해서는 구덩이가 파이고 있습니다.",
+          "R": "힘든 때에도 주님께서는 그들에게 평안을 주십니다. \\q 마침내 악한 사람들을 위한 무덤이 파일 것입니다."
         }
       },
       "decisions": [
@@ -1072,6 +1624,26 @@
           "reason": "Readable gives one likely sense of the picture (m2).",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190940130081"
+          ],
+          "choice": "darle, dándole, with no gender setting",
+          "alternatives": [
+            "darles"
+          ],
+          "reason": "The English Literal and Balanced say \"them\" with \"him\" as the alternative. Spanish \"le\" already takes in a woman or a man, so it needs no setting.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1105,6 +1677,31 @@
           "L": "For {{divine_name:the LORD|Yahweh}} will not abandon {{deity_pronoun:his|His}} people, \\q and {{deity_pronoun:his|His}} inheritance {{deity_pronoun:he|He}} will not forsake.",
           "B": "{{divine_name:The LORD|Yahweh}} will not reject {{deity_pronoun:his|His}} people; \\q {{deity_pronoun:he|He}} will never desert those who belong to {{deity_pronoun:him|Him}}.",
           "R": "{{divine_name:The LORD|Yahweh}} will never leave {{deity_pronoun:his|His}} people alone. \\q He will not give up on the people who belong to {{deity_pronoun:him|Him}}."
+        },
+        "fr": {
+          "L": "Car {{divine_name:le SEIGNEUR|Yahvé}} ne délaissera pas {{deity_pronoun:son|Son}} peuple, \\q et {{deity_pronoun:son|Son}} héritage, {{deity_pronoun:il|Il}} ne l’abandonnera pas.",
+          "B": "{{divine_name:Le SEIGNEUR|Yahvé}} ne rejettera pas {{deity_pronoun:son|Son}} peuple ; \\q jamais {{deity_pronoun:il|Il}} n’abandonnera ceux qui {{deity_pronoun:lui|Lui}} appartiennent.",
+          "R": "{{divine_name:Le SEIGNEUR|Yahvé}} ne laissera jamais {{deity_pronoun:son|Son}} peuple tout seul. \\q Il ne laissera pas tomber ceux qui {{deity_pronoun:lui|Lui}} appartiennent."
+        },
+        "sw": {
+          "L": "Kwa maana {{divine_name:BWANA|Yahwe}} hatawaacha watu {{deity_pronoun:wake|Wake}}, \\q wala urithi {{deity_pronoun:wake|Wake}} hatauacha.",
+          "B": "{{divine_name:BWANA|Yahwe}} hatawakataa watu {{deity_pronoun:wake|Wake}}; \\q hatawatupa kamwe wale walio mali {{deity_pronoun:yake|Yake}}.",
+          "R": "{{divine_name:BWANA|Yahwe}} hatawaacha kamwe watu {{deity_pronoun:wake|Wake}} peke yao. \\q Hatawakatia tamaa watu walio mali {{deity_pronoun:yake|Yake}}."
+        },
+        "es": {
+          "L": "Porque {{divine_name:el SEÑOR|Yahvé}} no abandonará a {{deity_pronoun:su|Su}} pueblo, \\q y a {{deity_pronoun:su|Su}} heredad no desamparará.",
+          "B": "{{divine_name:El SEÑOR|Yahvé}} no rechazará a {{deity_pronoun:su|Su}} pueblo; \\q nunca dejará a los que {{deity_pronoun:le|Le}} pertenecen.",
+          "R": "{{divine_name:El SEÑOR|Yahvé}} nunca dejará solo a {{deity_pronoun:su|Su}} pueblo. \\q No abandonará a la gente que {{deity_pronoun:le|Le}} pertenece."
+        },
+        "vi": {
+          "L": "Vì {{divine_name:CHÚA|Gia-vê}} sẽ không bỏ dân {{deity_pronoun:ngài|Ngài}}, \\q và cơ nghiệp {{deity_pronoun:ngài|Ngài}}, {{deity_pronoun:ngài|Ngài}} sẽ không lìa bỏ.",
+          "B": "{{divine_name:CHÚA|Gia-vê}} sẽ không ruồng bỏ dân {{deity_pronoun:ngài|Ngài}}; \\q {{deity_pronoun:ngài|Ngài}} sẽ chẳng bao giờ lìa bỏ những người thuộc về {{deity_pronoun:ngài|Ngài}}.",
+          "R": "{{divine_name:CHÚA|Gia-vê}} sẽ không bao giờ bỏ mặc dân {{deity_pronoun:ngài|Ngài}}. \\q Ngài sẽ không từ bỏ những người thuộc về {{deity_pronoun:ngài|Ngài}}."
+        },
+        "ko": {
+          "L": "참으로 {{divine_name:주|야훼}}께서는 그분의 백성을 버리지 않으시고, \\q 그분의 기업을 저버리지 않으신다.",
+          "B": "{{divine_name:주|야훼}}께서는 그분의 백성을 내치지 않으시고, \\q 그분께 속한 이들을 결코 저버리지 않으신다.",
+          "R": "{{divine_name:주|야훼}}께서는 결코 그분의 백성을 내버려 두지 않으신다. \\q 그분께 속한 사람들을 포기하지 않으신다."
         }
       },
       "decisions": [
@@ -1169,6 +1766,31 @@
           "L": "For judgment will return to righteousness, \\q and after it [will go] all the upright of heart.",
           "B": "For justice will once again be joined to what is right, \\q and all who are honest at heart will follow it.",
           "R": "Once more, judging will be fair and right, \\q and all honest people will follow that way."
+        },
+        "fr": {
+          "L": "Car le jugement reviendra à la justice, \\q et après lui [iront] tous ceux qui ont le cœur droit.",
+          "B": "Car la justice des jugements rejoindra de nouveau ce qui est droit, \\q et tous ceux qui ont le cœur honnête la suivront.",
+          "R": "De nouveau, on jugera de façon juste et droite, \\q et tous les gens honnêtes suivront ce chemin."
+        },
+        "sw": {
+          "L": "Kwa maana hukumu itairudia haki, \\q na nyuma yake [watafuata] wote walio wanyofu wa moyo.",
+          "B": "Kwa maana hukumu itaungana tena na yaliyo ya haki, \\q na wote walio wanyofu wa moyo wataifuata.",
+          "R": "Kwa mara nyingine, hukumu itakuwa ya haki na ya kweli, \\q na watu wote wanyofu wataifuata njia hiyo."
+        },
+        "es": {
+          "L": "Porque el juicio volverá a la justicia, \\q y tras él [irán] todos los rectos de corazón.",
+          "B": "Porque la justicia volverá a unirse con lo que es recto, \\q y todos los de corazón sincero la seguirán.",
+          "R": "Otra vez se juzgará con justicia y rectitud, \\q y toda la gente honesta seguirá ese camino."
+        },
+        "vi": {
+          "L": "Vì sự xét xử sẽ trở về với sự công chính, \\q và theo sau nó [sẽ là] mọi người có lòng ngay thẳng.",
+          "B": "Vì công lý sẽ lại gắn liền với lẽ phải, \\q và mọi người có lòng ngay thẳng sẽ đi theo.",
+          "R": "Việc xét xử sẽ lại công bằng và đúng đắn, \\q và mọi người ngay thẳng sẽ đi theo con đường đó."
+        },
+        "ko": {
+          "L": "참으로 재판이 다시 의로 돌아가리니, \\q 마음이 정직한 모든 사람이 그 뒤를 따를 것이다.",
+          "B": "재판이 다시 의와 하나가 될 것이니, \\q 마음이 정직한 사람들이 모두 그 길을 따를 것이다.",
+          "R": "다시 한번 재판이 공정하고 바르게 될 것이다. \\q 정직한 사람들은 모두 그 길을 따를 것이다."
         }
       },
       "decisions": [
@@ -1252,6 +1874,31 @@
           "L": "Who will rise up for me against evildoers? \\q Who will take a stand for me against those who do wickedness?",
           "B": "Who will take my side against the wicked? \\q Who will stand with me against those who do wrong?",
           "R": "Who will help me fight against evil people? \\q Who will defend me against those who do wrong?"
+        },
+        "fr": {
+          "L": "Qui se lèvera pour moi contre les malfaiteurs ? \\q Qui se tiendra pour moi contre ceux qui font le mal ?",
+          "B": "Qui prendra mon parti contre les méchants ? \\q Qui se tiendra avec moi contre ceux qui font le mal ?",
+          "R": "Qui va m’aider à combattre les gens mauvais ? \\q Qui va me défendre contre ceux qui font le mal ?"
+        },
+        "sw": {
+          "L": "Ni nani atakayeniinukia dhidi ya watenda mabaya? \\q Ni nani atakayesimama kwa ajili yangu dhidi ya watenda maovu?",
+          "B": "Ni nani atakayekuwa upande wangu dhidi ya waovu? \\q Ni nani atakayesimama pamoja nami dhidi ya watenda mabaya?",
+          "R": "Ni nani atakayenisaidia kupigana na watu waovu? \\q Ni nani atakayenitetea dhidi ya watenda mabaya?"
+        },
+        "es": {
+          "L": "¿Quién se levantará por mí contra los malhechores? \\q ¿Quién se pondrá en pie por mí contra los que hacen maldad?",
+          "B": "¿Quién se pondrá de mi parte contra los malvados? \\q ¿Quién estará conmigo contra los que hacen el mal?",
+          "R": "¿Quién me ayudará a luchar contra la gente malvada? \\q ¿Quién me defenderá de los que hacen el mal?"
+        },
+        "vi": {
+          "L": "Ai sẽ đứng lên vì tôi chống lại những kẻ làm ác? \\q Ai sẽ đứng ra vì tôi chống lại những kẻ làm điều gian ác?",
+          "B": "Ai sẽ đứng về phía tôi chống lại kẻ ác? \\q Ai sẽ đứng cùng tôi chống lại những kẻ làm điều sai trái?",
+          "R": "Ai sẽ giúp tôi chiến đấu chống lại kẻ ác? \\q Ai sẽ bênh vực tôi trước những kẻ làm điều sai trái?"
+        },
+        "ko": {
+          "L": "누가 나를 위하여 악한 자들을 치러 일어나며, \\q 누가 나를 위하여 악을 행하는 자들에 맞서겠는가?",
+          "B": "누가 내 편이 되어 악인들과 맞서 주겠는가? \\q 누가 나와 함께 악을 행하는 자들을 막아 서 주겠는가?",
+          "R": "누가 나를 도와 악한 사람들과 싸워 주겠는가? \\q 누가 나쁜 짓을 하는 사람들에게서 나를 지켜 주겠는가?"
         }
       },
       "decisions": [
@@ -1318,6 +1965,31 @@
           "L": "If {{divine_name:the LORD|Yahweh}} [had] not [been] a help to me, \\q my soul would soon have dwelt [in] silence.",
           "B": "If {{divine_name:the LORD|Yahweh}} had not helped me, \\q I would soon have been living where all is silent.",
           "R": "If {{divine_name:the LORD|Yahweh}} had not helped me, \\q I would soon have died and gone to the silent place of the dead."
+        },
+        "fr": {
+          "L": "Si {{divine_name:le SEIGNEUR|Yahvé}} n’[avait] pas [été] un secours pour moi, \\q bientôt mon âme aurait habité [dans le] silence.",
+          "B": "Si {{divine_name:le SEIGNEUR|Yahvé}} ne m’avait pas secouru, \\q je serais bientôt allé vivre là où tout se tait.",
+          "R": "Si {{divine_name:le SEIGNEUR|Yahvé}} ne m’avait pas aidé, \\q je serais bientôt mort et parti au monde silencieux des morts."
+        },
+        "sw": {
+          "L": "Kama {{divine_name:BWANA|Yahwe}} [asingekuwa] msaada wangu, \\q nafsi yangu ingekuwa imekaa upesi [katika] ukimya.",
+          "B": "Kama {{divine_name:BWANA|Yahwe}} asingenisaidia, \\q ningekuwa nimekwisha kwenda kuishi mahali pa ukimya.",
+          "R": "Kama {{divine_name:BWANA|Yahwe}} asingenisaidia, \\q ningekuwa nimekwisha kufa na kwenda mahali pa wafu palipo kimya."
+        },
+        "es": {
+          "L": "Si {{divine_name:el SEÑOR|Yahvé}} no [hubiera sido] mi ayuda, \\q pronto habría habitado mi alma [en el] silencio.",
+          "B": "Si {{divine_name:el SEÑOR|Yahvé}} no me hubiera ayudado, \\q pronto estaría yo viviendo donde todo es silencio.",
+          "R": "Si {{divine_name:el SEÑOR|Yahvé}} no me hubiera ayudado, \\q pronto me habría muerto y habría ido al silencioso lugar de los muertos."
+        },
+        "vi": {
+          "L": "Nếu {{divine_name:CHÚA|Gia-vê}} [đã] không [là] sự giúp đỡ cho tôi, \\q thì linh hồn tôi chắc đã sớm ở [nơi] im lặng.",
+          "B": "Nếu {{divine_name:CHÚA|Gia-vê}} đã không giúp đỡ tôi, \\q thì tôi đã sớm phải ở nơi mọi sự đều im lặng.",
+          "R": "Nếu {{divine_name:CHÚA|Gia-vê}} đã không giúp đỡ tôi, \\q thì tôi đã sớm chết và đi xuống nơi im lặng của người chết."
+        },
+        "ko": {
+          "L": "{{divine_name:주|야훼}}께서 나에게 도움이 되지 않으셨다면, \\q 내 영혼은 벌써 침묵 속에 살았을 것이다.",
+          "B": "{{divine_name:주|야훼}}께서 나를 돕지 않으셨다면, \\q 나는 벌써 침묵의 땅에 살고 있었을 것이다.",
+          "R": "{{divine_name:주|야훼}}께서 나를 돕지 않으셨다면, \\q 나는 벌써 죽어서 고요한 곳, 죽은 사람들이 있는 곳에 갔을 것이다."
         }
       },
       "decisions": [
@@ -1419,6 +2091,31 @@
           "L": "When I said, \"My foot has slipped,\" \\q {{deity_pronoun:your|Your}} loyal love, {{divine_name:LORD|Yahweh}}, held me up.",
           "B": "The moment I said, \"My foot is giving way,\" \\q {{deity_pronoun:your|Your}} loyal love, {{divine_name:LORD|Yahweh}}, held me up.",
           "R": "When I cried, \"I am falling!\" \\q {{deity_pronoun:your|Your}} faithful love held me up, {{divine_name:LORD|Yahweh}}."
+        },
+        "fr": {
+          "L": "Quand j’ai dit : « Mon pied a glissé », \\q {{deity_pronoun:ton|Ton}} amour loyal, {{divine_name:SEIGNEUR|Yahvé}}, m’a soutenu.",
+          "B": "Au moment où j’ai dit : « Mon pied lâche », \\q {{deity_pronoun:ton|Ton}} amour fidèle, {{divine_name:SEIGNEUR|Yahvé}}, m’a soutenu.",
+          "R": "Quand j’ai crié : « Je tombe ! », \\q {{deity_pronoun:ton|Ton}} amour fidèle m’a tenu debout, {{divine_name:SEIGNEUR|Yahvé}}."
+        },
+        "sw": {
+          "L": "Niliposema, \"Mguu wangu umeteleza,\" \\q upendo {{deity_pronoun:wako|Wako}} usiokoma, Ee {{divine_name:BWANA|Yahwe}}, ulinitegemeza.",
+          "B": "Mara niliposema, \"Mguu wangu unateleza,\" \\q upendo {{deity_pronoun:wako|Wako}} usiokoma, Ee {{divine_name:BWANA|Yahwe}}, ulinishikilia.",
+          "R": "Nilipolia, \"Ninaanguka!\" \\q upendo {{deity_pronoun:wako|Wako}} usiokoma ulinishikilia, Ee {{divine_name:BWANA|Yahwe}}."
+        },
+        "es": {
+          "L": "Cuando dije: «Mi pie ha resbalado», \\q {{deity_pronoun:tu|Tu}} amor leal, {{divine_name:SEÑOR|Yahvé}}, me sostuvo.",
+          "B": "En cuanto dije: «Mi pie está cediendo», \\q {{deity_pronoun:tu|Tu}} amor fiel, {{divine_name:SEÑOR|Yahvé}}, me sostuvo.",
+          "R": "Cuando grité: «¡Me estoy cayendo!», \\q {{deity_pronoun:tu|Tu}} amor fiel me sostuvo, {{divine_name:SEÑOR|Yahvé}}."
+        },
+        "vi": {
+          "L": "Khi tôi nói: \"Chân tôi đã trượt\", \\q thì tình yêu thương thành tín của {{deity_pronoun:ngài|Ngài}}, lạy {{divine_name:CHÚA|Gia-vê}}, đã nâng đỡ tôi.",
+          "B": "Ngay khi tôi nói: \"Chân tôi đang trượt ngã\", \\q thì lạy {{divine_name:CHÚA|Gia-vê}}, tình yêu thương thành tín của {{deity_pronoun:ngài|Ngài}} đã nâng đỡ tôi.",
+          "R": "Khi tôi kêu lên: \"Tôi đang ngã!\" \\q Thì lạy {{divine_name:CHÚA|Gia-vê}}, tình thương không hề thay đổi của {{deity_pronoun:ngài|Ngài}} đã đỡ tôi lên."
+        },
+        "ko": {
+          "L": "제가 \"제 발이 미끄러졌습니다\" 하고 말할 때에, \\q {{divine_name:주|야훼}}여, 주님의 한결같은 사랑이 저를 붙들었습니다.",
+          "B": "\"제 발이 미끄러집니다\" 하고 말하는 순간, \\q {{divine_name:주|야훼}}여, 주님의 한결같은 사랑이 저를 붙들어 주었습니다.",
+          "R": "제가 \"넘어집니다!\" 하고 부르짖을 때에, \\q {{divine_name:주|야훼}}여, 주님의 변함없는 사랑이 저를 붙들어 주었습니다."
         }
       },
       "decisions": [
@@ -1473,6 +2170,28 @@
           "reason": "As in the earlier psalms, Readable says \"faithful love\" for chesed.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o190940180021",
+            "o190940180061"
+          ],
+          "choice": "Verses 18-20 speak to God in 합쇼체, and the singer is \"저\"; verses 16-17 and 21-23 speak about God with \"나\"",
+          "alternatives": [
+            "one speech level for verses 16-23"
+          ],
+          "reason": "The psalm moves between speaking about the LORD and speaking to him, as Psalm 23 does, and Korean follows each turn with its speech level (style guide section 7a).",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1507,6 +2226,31 @@
           "L": "In the multitude of my anxious thoughts within me, \\q {{deity_pronoun:your|Your}} consolations delight my soul.",
           "B": "When my worries crowd in on me, \\q {{deity_pronoun:your|Your}} comfort fills me with joy.",
           "R": "When I am very worried, \\q {{deity_pronoun:you|You}} comfort me and make me happy again."
+        },
+        "fr": {
+          "L": "Dans la multitude de mes pensées inquiètes au-dedans de moi, \\q {{deity_pronoun:tes|Tes}} consolations réjouissent mon âme.",
+          "B": "Quand les soucis m’assaillent, \\q {{deity_pronoun:ton|Ton}} réconfort me remplit de joie.",
+          "R": "Quand je suis très inquiet, \\q {{deity_pronoun:tu|Tu}} me réconfortes et {{deity_pronoun:tu|Tu}} me rends la joie."
+        },
+        "sw": {
+          "L": "Katika wingi wa mahangaiko yangu ndani yangu, \\q faraja {{deity_pronoun:zako|Zako}} huifurahisha nafsi yangu.",
+          "B": "Wasiwasi unaponisonga, \\q faraja {{deity_pronoun:yako|Yako}} hunijaza furaha.",
+          "R": "Ninapokuwa na wasiwasi mwingi, \\q unanifariji na kunifanya nifurahi tena."
+        },
+        "es": {
+          "L": "En la multitud de mis inquietudes dentro de mí, \\q {{deity_pronoun:tus|Tus}} consuelos deleitan mi alma.",
+          "B": "Cuando me asaltan las preocupaciones, \\q {{deity_pronoun:tu|Tu}} consuelo me llena de alegría.",
+          "R": "Cuando estoy muy preocupado, \\q {{deity_pronoun:tú|Tú}} me consuelas y me vuelves a hacer feliz."
+        },
+        "vi": {
+          "L": "Trong muôn vàn nỗi lo âu bên trong tôi, \\q sự an ủi của {{deity_pronoun:ngài|Ngài}} làm vui thích linh hồn tôi.",
+          "B": "Khi bao nỗi lo âu dồn dập trong tôi, \\q sự an ủi của {{deity_pronoun:ngài|Ngài}} làm tôi tràn đầy vui mừng.",
+          "R": "Khi tôi rất lo lắng, \\q {{deity_pronoun:ngài|Ngài}} an ủi tôi và làm cho tôi vui trở lại."
+        },
+        "ko": {
+          "L": "제 속에 근심이 많을 때에, \\q 주님의 위로가 제 영혼을 기쁘게 합니다.",
+          "B": "걱정이 제 마음에 몰려올 때에 \\q 주님의 위로가 저를 기쁨으로 채웁니다.",
+          "R": "제가 몹시 걱정할 때에 \\q 주님께서 저를 위로하시고 다시 기쁘게 해 주십니다."
         }
       },
       "decisions": [
@@ -1588,6 +2332,31 @@
           "L": "Can a throne of destruction be allied with {{deity_pronoun:you|You}}, \\q one that frames mischief by statute?",
           "B": "Will a ruling power bent on ruin ever be {{deity_pronoun:your|Your}} partner, \\q one that uses the law to create misery?",
           "R": "Can evil rulers be friends with {{deity_pronoun:you|You}}? \\q They make laws that hurt people!"
+        },
+        "fr": {
+          "L": "Le trône de la ruine serait-il {{deity_pronoun:ton|Ton}} allié, \\q lui qui façonne le malheur par décret ?",
+          "B": "Un pouvoir acharné à détruire sera-t-il jamais {{deity_pronoun:ton|Ton}} associé, \\q lui qui se sert de la loi pour créer la misère ?",
+          "R": "Des chefs mauvais peuvent-ils être {{deity_pronoun:tes|Tes}} amis ? \\q Ils font des lois qui font du mal aux gens !"
+        },
+        "sw": {
+          "L": "Je, kiti cha enzi cha maangamizi kitashirikiana {{deity_pronoun:nawe|Nawe}}, \\q kile kibuniacho madhara kwa amri?",
+          "B": "Je, utawala unaolenga uharibifu utakuwa mshirika {{deity_pronoun:wako|Wako}} kamwe, \\q ule unaotumia sheria kuleta mateso?",
+          "R": "Je, watawala waovu wanaweza kuwa rafiki {{deity_pronoun:zako|Zako}}? \\q Wanatunga sheria zinazowaumiza watu!"
+        },
+        "es": {
+          "L": "¿Se aliará contigo un trono de destrucción, \\q uno que fragua el mal por medio de la ley?",
+          "B": "¿Podrá un poder que solo busca la ruina ser alguna vez {{deity_pronoun:tu|Tu}} aliado, \\q uno que usa la ley para causar miseria?",
+          "R": "¿Pueden ser {{deity_pronoun:tus|Tus}} amigos los gobernantes malvados? \\q ¡Hacen leyes que lastiman a la gente!"
+        },
+        "vi": {
+          "L": "Ngôi của sự hủy diệt có thể liên kết với {{deity_pronoun:ngài|Ngài}} sao, \\q [ngôi] dùng luật lệ mà bày ra điều tai hại?",
+          "B": "Lẽ nào một quyền lực chỉ lo phá hoại lại được làm bạn với {{deity_pronoun:ngài|Ngài}}, \\q là quyền lực dùng luật pháp để gây khốn khổ?",
+          "R": "Những kẻ cai trị gian ác có thể làm bạn với {{deity_pronoun:ngài|Ngài}} sao? \\q Chúng làm ra những luật lệ để hại người!"
+        },
+        "ko": {
+          "L": "멸망의 왕좌가 주님과 짝할 수 있겠습니까? \\q 법을 핑계로 재앙을 꾸미는 [왕좌가]?",
+          "B": "파멸을 일삼는 권력이 주님과 한편이 될 수 있겠습니까? \\q 법을 내세워 괴로움을 만들어 내는 그런 권력이 말입니다.",
+          "R": "악한 통치자들이 주님과 친구가 될 수 있겠습니까? \\q 그들은 사람들을 괴롭히는 법을 만듭니다!"
         }
       },
       "decisions": [
@@ -1666,6 +2435,31 @@
           "L": "They band together against the life of the righteous, \\q and innocent blood they condemn.",
           "B": "They gather against the righteous to take their lives, \\q and they condemn innocent people to death.",
           "R": "They plot together to kill people who do what is right. \\q They sentence innocent people to death."
+        },
+        "fr": {
+          "L": "Ils se liguent contre la vie du juste, \\q et le sang innocent, ils le condamnent.",
+          "B": "Ils se rassemblent contre le juste pour lui ôter la vie, \\q et ils condamnent à mort des innocents.",
+          "R": "Ils complotent ensemble pour tuer ceux qui font ce qui est juste. \\q Ils condamnent à mort des innocents."
+        },
+        "sw": {
+          "L": "Wanakusanyika pamoja dhidi ya uhai wa mwenye haki, \\q na damu isiyo na hatia wanaihukumu.",
+          "B": "Wanakusanyika dhidi ya wenye haki ili kuwaua, \\q na wanawahukumu kifo watu wasio na hatia.",
+          "R": "Wanapanga pamoja kuwaua watu wanaotenda haki. \\q Wanawahukumu kifo watu wasio na hatia."
+        },
+        "es": {
+          "L": "Se juntan contra la vida del justo, \\q y la sangre inocente condenan.",
+          "B": "Se reúnen contra los justos para quitarles la vida, \\q y condenan a muerte a los inocentes.",
+          "R": "Se ponen de acuerdo para matar a la gente que hace lo que es justo. \\q Condenan a muerte a gente inocente."
+        },
+        "vi": {
+          "L": "Chúng họp lại chống nghịch mạng sống của người công chính, \\q và kết án máu vô tội.",
+          "B": "Chúng tụ tập lại để lấy mạng người công chính, \\q và chúng kết án tử hình người vô tội.",
+          "R": "Chúng cùng nhau bày mưu giết những người làm điều ngay thẳng. \\q Chúng kết án tử hình những người vô tội."
+        },
+        "ko": {
+          "L": "그들이 의인의 목숨을 치려고 떼 지어 모이고, \\q 죄 없는 피를 정죄한다.",
+          "B": "그들은 의인의 목숨을 노리고 함께 모이며, \\q 죄 없는 사람에게 사형을 선고한다.",
+          "R": "그들은 바르게 사는 사람들을 죽이려고 함께 꾀를 꾸민다. \\q 죄 없는 사람들에게 사형을 내린다."
         }
       },
       "decisions": [
@@ -1735,6 +2529,31 @@
           "L": "But {{divine_name:the LORD|Yahweh}} has become for me a high fortress, \\q and my God the rock of my refuge.",
           "B": "But {{divine_name:the LORD|Yahweh}} has proved to be my high fortress; \\q my God has been a rock that shelters me.",
           "R": "But {{divine_name:the LORD|Yahweh}} keeps me safe like a strong fortress. \\q My God is like a rock where I can run for safety."
+        },
+        "fr": {
+          "L": "Mais {{divine_name:le SEIGNEUR|Yahvé}} est devenu pour moi une haute forteresse, \\q et mon Dieu le rocher de mon refuge.",
+          "B": "Mais {{divine_name:le SEIGNEUR|Yahvé}} s’est montré ma haute forteresse ; \\q mon Dieu a été un rocher qui m’abrite.",
+          "R": "Mais {{divine_name:le SEIGNEUR|Yahvé}} me garde en sécurité comme une forteresse solide. \\q Mon Dieu est comme un rocher où je peux courir me mettre à l’abri."
+        },
+        "sw": {
+          "L": "Lakini {{divine_name:BWANA|Yahwe}} amekuwa kwangu ngome iliyo juu, \\q na Mungu wangu mwamba wa kimbilio langu.",
+          "B": "Lakini {{divine_name:BWANA|Yahwe}} amethibitika kuwa ngome yangu iliyo juu; \\q Mungu wangu amekuwa mwamba unaonihifadhi.",
+          "R": "Lakini {{divine_name:BWANA|Yahwe}} hunilinda salama kama ngome imara. \\q Mungu wangu ni kama mwamba ninaoweza kuukimbilia nipate usalama."
+        },
+        "es": {
+          "L": "Pero {{divine_name:el SEÑOR|Yahvé}} ha sido para mí una alta fortaleza, \\q y mi Dios la roca de mi refugio.",
+          "B": "Pero {{divine_name:el SEÑOR|Yahvé}} ha resultado ser mi alta fortaleza; \\q mi Dios ha sido una roca que me da refugio.",
+          "R": "Pero {{divine_name:el SEÑOR|Yahvé}} me protege como una fortaleza fuerte. \\q Mi Dios es como una roca donde puedo correr para estar a salvo."
+        },
+        "vi": {
+          "L": "Nhưng {{divine_name:CHÚA|Gia-vê}} đã trở nên đồn lũy cao cho tôi, \\q và Đức Chúa Trời tôi [là] vầng đá của nơi ẩn náu tôi.",
+          "B": "Nhưng {{divine_name:CHÚA|Gia-vê}} đã là đồn lũy trên cao của tôi; \\q Đức Chúa Trời tôi là vầng đá che chở tôi.",
+          "R": "Nhưng {{divine_name:CHÚA|Gia-vê}} giữ tôi an toàn như một đồn lũy vững chắc. \\q Đức Chúa Trời tôi như vầng đá, nơi tôi có thể chạy đến để được an toàn."
+        },
+        "ko": {
+          "L": "그러나 {{divine_name:주|야훼}}께서 나의 높은 요새가 되시고, \\q 나의 하나님께서 내가 피할 반석이 되셨다.",
+          "B": "그러나 {{divine_name:주|야훼}}께서는 나의 높은 요새가 되어 주셨고, \\q 나의 하나님은 나를 숨겨 주는 반석이 되셨다.",
+          "R": "그러나 {{divine_name:주|야훼}}께서는 튼튼한 요새처럼 나를 안전하게 지켜 주신다. \\q 나의 하나님은 내가 달려가 숨을 수 있는 반석과 같으시다."
         }
       },
       "decisions": [
@@ -1805,6 +2624,31 @@
           "L": "And {{deity_pronoun:he|He}} has brought back on them their iniquity, \\q and in their evil {{deity_pronoun:he|He}} will destroy them; \\q {{divine_name:the LORD|Yahweh}} our God will destroy them.",
           "B": "He will make their evil recoil on them \\q and put an end to them through their own wickedness; \\q {{divine_name:the LORD|Yahweh}} our God will put an end to them.",
           "R": "God will punish them for the evil they have done. \\q He will destroy them because they are wicked. \\q Yes, {{divine_name:the LORD|Yahweh}} our God will wipe them out."
+        },
+        "fr": {
+          "L": "Et {{deity_pronoun:il|Il}} a fait retomber sur eux leur faute, \\q et dans leur méchanceté {{deity_pronoun:il|Il}} les anéantira ; \\q {{divine_name:le SEIGNEUR|Yahvé}} notre Dieu les anéantira.",
+          "B": "Il fera retomber sur eux leur mal \\q et les fera périr par leur propre méchanceté ; \\q {{divine_name:le SEIGNEUR|Yahvé}} notre Dieu les fera périr.",
+          "R": "Dieu les punira pour le mal qu’ils ont fait. \\q Il les détruira parce qu’ils sont méchants. \\q Oui, {{divine_name:le SEIGNEUR|Yahvé}} notre Dieu les fera disparaître."
+        },
+        "sw": {
+          "L": "Naye amewarudishia uovu wao, \\q na katika ubaya wao atawaangamiza; \\q {{divine_name:BWANA|Yahwe}} Mungu wetu atawaangamiza.",
+          "B": "Atawarudishia uovu wao wenyewe \\q na kuwakomesha kwa ubaya wao wenyewe; \\q {{divine_name:BWANA|Yahwe}} Mungu wetu atawakomesha.",
+          "R": "Mungu atawaadhibu kwa ajili ya uovu walioutenda. \\q Atawaangamiza kwa sababu ni waovu. \\q Naam, {{divine_name:BWANA|Yahwe}} Mungu wetu atawafutilia mbali."
+        },
+        "es": {
+          "L": "Y ha hecho volver sobre ellos su iniquidad, \\q y en su maldad los destruirá; \\q los destruirá {{divine_name:el SEÑOR|Yahvé}} nuestro Dios.",
+          "B": "Hará que su maldad caiga sobre ellos \\q y acabará con ellos por su propia perversidad; \\q {{divine_name:el SEÑOR|Yahvé}} nuestro Dios acabará con ellos.",
+          "R": "Dios los castigará por el mal que han hecho. \\q Los destruirá porque son malvados. \\q Sí, {{divine_name:el SEÑOR|Yahvé}} nuestro Dios acabará con ellos."
+        },
+        "vi": {
+          "L": "Và {{deity_pronoun:ngài|Ngài}} đã đem tội ác của chúng trở lại trên chúng, \\q và trong sự gian ác của chúng {{deity_pronoun:ngài|Ngài}} sẽ hủy diệt chúng; \\q {{divine_name:CHÚA|Gia-vê}}, Đức Chúa Trời chúng ta, sẽ hủy diệt chúng.",
+          "B": "Ngài sẽ làm cho điều ác của chúng quay lại trên chính chúng \\q và tiêu diệt chúng bởi chính sự gian ác của chúng; \\q {{divine_name:CHÚA|Gia-vê}}, Đức Chúa Trời chúng ta, sẽ tiêu diệt chúng.",
+          "R": "Đức Chúa Trời sẽ trừng phạt chúng vì điều ác chúng đã làm. \\q Ngài sẽ hủy diệt chúng vì chúng gian ác. \\q Phải, {{divine_name:CHÚA|Gia-vê}}, Đức Chúa Trời chúng ta, sẽ xóa sạch chúng."
+        },
+        "ko": {
+          "L": "그분께서 그들의 죄악을 그들에게 되돌리셨고, \\q 그들의 악으로 그들을 멸하실 것이니, \\q {{divine_name:주|야훼}} 우리 하나님께서 그들을 멸하실 것이다.",
+          "B": "그분께서 그들의 악을 그들에게 되돌려 주시고, \\q 그들 자신의 악함으로 그들을 끝장내실 것이다. \\q {{divine_name:주|야훼}} 우리 하나님께서 그들을 끝장내실 것이다.",
+          "R": "하나님께서 그들이 저지른 악을 벌하실 것이다. \\q 그들이 악하기 때문에 그들을 멸하실 것이다. \\q 그렇다, {{divine_name:주|야훼}} 우리 하나님께서 그들을 쓸어버리실 것이다."
         }
       },
       "decisions": [

@@ -4,6 +4,7 @@ import json
 import re
 import sys
 import unittest
+import zipfile
 from pathlib import Path
 from unittest import mock
 
@@ -12,7 +13,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 import build_site  # noqa: E402
 from owb import crossrefs  # noqa: E402
-from tests.site_build import built_site  # noqa: E402
+from tests.site_build import built_site, page_data  # noqa: E402
 
 
 class SiteTest(unittest.TestCase):
@@ -21,9 +22,7 @@ class SiteTest(unittest.TestCase):
         cls.out = built_site()
 
     def chapter_data(self, path="jhn/1"):
-        page = (self.out / path / "index.html").read_text(encoding="utf-8")
-        m = re.search(r'<script type="application/json" id="owb-data">(.*?)</script>', page, re.S)
-        return json.loads(m[1])
+        return page_data((self.out / path / "index.html").read_text(encoding="utf-8"))
 
     def test_pages_exist(self):
         for rel in ("index.html", "read/index.html", "jhn/1/index.html", "php/4/index.html",
@@ -65,6 +64,13 @@ class SiteTest(unittest.TestCase):
             lang = re.search(r'<html lang="([a-z]+)">', text)[1]
             self.assertIn(f'<a class="sign-in-btn" href="{build_site.url(lang, "/login/")}" data-login>', text, path)
             self.assertIn(f'<a class="pop-item" href="{build_site.url(lang, "/account/")}">', text, path)
+
+    def test_account_page_lists_the_readers_messages(self):
+        page = (self.out / "es" / "account" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('<section class="set-block" id="my-messages" hidden', page)
+        self.assertIn(build_site.t("es", "account.messages"), page)
+        # Book names in the page's language, for the verse links.
+        self.assertIn("&quot;JHN&quot;: &quot;Juan&quot;", page)
 
     def test_admin_page_is_built_in_english_only_and_not_indexed(self):
         page = (self.out / "admin" / "index.html").read_text(encoding="utf-8")
@@ -188,6 +194,182 @@ class SiteTest(unittest.TestCase):
                              code in have or len(missing) == 1, code)
         if len(missing) > 1:
             self.assertIn(f'href="/read/">{build_site.t("en", "footer.not_started", n=len(missing))}</a>', index)
+
+    def notes_section(self, path):
+        page = (self.out / path / "index.html").read_text(encoding="utf-8")
+        return re.search(r'<section class="notes" id="notes"[^>]*>(.*?)</section>', page, re.S)[1]
+
+    def test_footnotes_are_in_the_page(self):
+        # Without JavaScript (and for crawlers) the footnotes the text's
+        # letters point to are listed under it, as the reader first lists them.
+        for path, book, chapter, lang in (("jhn/3", "JHN", 3, "en"), ("jhn/8", "JHN", 8, "en"),
+                                          ("fr/jhn/3", "JHN", 3, "fr")):
+            text = self.chapter_text(path)[1]
+            notes = self.notes_section(path)
+            marks = re.findall(r'<span class="fn-mark">([a-z]+)</span>', text)
+            self.assertTrue(marks, path)
+            self.assertEqual(re.findall(r'<span class="note-mark">([a-z]+)</span>', notes), marks, path)
+            records = build_site.load_chapter(book, chapter)[0]
+            r, d = next((r, d) for r in records for d in build_site.footnote_decisions(r, lang))
+            self.assertIn(f'<span class="note-text">{build_site.note_html(d, lang)}</span>', notes)
+            self.assertIn(html.escape(build_site.markup.render(d["choice"]), quote=False), notes)
+            self.assertNotIn("{{", notes)
+        # A note spans chapters as the reader's verse ranges do.
+        self.assertIn('<span class="note-ref">7:53–8:1</span>', self.notes_section("jhn/8"))
+        # Meaning notes are written in English; another language's page says so.
+        self.assertIn('<span class="note-text"><span lang="en">', self.notes_section("fr/jhn/3"))
+        self.assertNotIn('lang="en"', self.notes_section("jhn/3"))
+
+    def test_footnote_text_follows_the_reader(self):
+        # build_site.note_html() writes what reader.js's noteText() writes.
+        d = {"layer": "meaning", "category": "lexical", "choice": "from above",
+             "alternatives": ["again", "anew"], "uncertain": True}
+        self.assertEqual(build_site.note_html(d, "en"), "from above. Or: again; anew (Uncertain).")
+        self.assertEqual(build_site.note_html({**d, "uncertain": False}, "en"),
+                         "from above. Also considered: again; anew.")
+        self.assertEqual(build_site.note_html({**d, "category": "text_variant", "uncertain": False}, "en"),
+                         "from above. Other manuscripts: again; anew.")
+        self.assertEqual(build_site.note_html({**d, "alternatives": []}, "fr"),
+                         '<span lang="en">from above</span> (Incertain).')
+        reader = (self.out / "reader.js").read_text(encoding="utf-8")
+        self.assertIn('text += ". " + t(label) + alts.join("; ");', reader)
+        self.assertIn('if (d.uncertain) text += " (" + t("uncertain") + ")";', reader)
+
+    def test_status_page_counts_the_records(self):
+        counts = build_site.status_counts()
+        records = build_site._all_records()
+        self.assertEqual(counts["all"], len(records))
+        self.assertEqual(sum(counts["statuses"].values()), len(records))
+        self.assertEqual(sum(b["all"] for b in counts["books"].values()), len(records))
+        approved = sum(r["status"] in build_site.APPROVED for r in records)
+        self.assertEqual(counts["approved"], approved)
+        sitemap = (self.out / "sitemap.xml").read_text(encoding="utf-8")
+        for lang in build_site.LANGUAGES:
+            path = build_site.url(lang, "/about/status/")
+            page = (self.out / path.strip("/") / "index.html").read_text(encoding="utf-8")
+            self.assertIn(f"<b>{build_site.number(len(records), lang)}</b>", page)
+            self.assertIn(f"<b>{build_site.number(approved, lang)}</b>", page)
+            self.assertIn(f"<loc>{build_site.SITE_URL}{path}</loc>", sitemap)
+            self.assertIn(f'href="{path}"', (self.out / build_site.url(lang, "/").strip("/") / "index.html")
+                          .read_text(encoding="utf-8"))
+            # The article on review, in the page's language where it has one.
+            has = any(a["slug"] == build_site.REVIEW_ARTICLE for a in build_site.load_articles(lang))
+            review = build_site.url(lang if has else "en", "/articles/" + build_site.REVIEW_ARTICLE + "/")
+            self.assertIn(f'href="{review}"', page)
+
+    def test_downloads_are_built_for_every_language_and_level(self):
+        records = build_site._all_records()
+        languages = build_site.status_counts()["languages"]
+        built = build_site.downloads()
+        self.assertEqual(set(built), {(lang, level, fmt) for lang in languages for level in "LBR"
+                                      for fmt in build_site.DOWNLOAD_FORMATS})
+        # Each zip holds its text, the manifest, a README and the licence.
+        name, data, manifest = built["en", "B", "usfm"]
+        self.assertEqual(name, "owb-en-b-usfm.zip")
+        self.assertEqual((self.out / "downloads" / name).read_bytes(), data)
+        z = zipfile.ZipFile(self.out / "downloads" / name)
+        self.assertIn("43-JHN.usfm", z.namelist())
+        self.assertIn("CC0", z.read("LICENSE").decode())
+        self.assertIn("AI-assisted", z.read("README.txt").decode())
+        self.assertEqual(json.loads(z.read("manifest.json")), manifest)
+        name, _, manifest = built["fr", "R", "json"]
+        self.assertEqual(name, "owb-fr-r-json.zip")
+        z = zipfile.ZipFile(self.out / "downloads" / name)
+        self.assertEqual(sorted(z.namelist()), ["LICENSE", "README.txt", "manifest.json", "owb-fr-r.json"])
+        self.assertEqual(json.loads(z.read("owb-fr-r.json"))["manifest"], manifest)
+        # The manifest counts statuses and lists what isn't translated yet.
+        self.assertEqual(manifest["licence"], "CC0 1.0 Universal (public domain dedication)")
+        self.assertEqual(sum(manifest["status"].values()),
+                         sum(1 for r in records if "R" in r["renderings"].get("fr", {})))
+        self.assertEqual(manifest["missing"]["count"], len(manifest["missing"]["verses"]))
+        self.assertGreater(manifest["missing"]["count"], 0)
+        self.assertEqual(built["en", "L", "json"][2]["missing"]["count"], 0)
+        # The page lists every file, in every site language, and the footer links it.
+        for lang in build_site.LANGUAGES:
+            path = build_site.url(lang, "/download/")
+            page = (self.out / path.strip("/") / "index.html").read_text(encoding="utf-8")
+            for name, _, _ in built.values():
+                self.assertIn(f'href="/downloads/{name}" download', page)
+            self.assertIn(f'href="{path}"', (self.out / build_site.url(lang, "/").strip("/") / "index.html")
+                          .read_text(encoding="utf-8"))
+        # The service worker never keeps them.
+        self.assertIn('"/downloads/"', (self.out / "sw.js").read_text(encoding="utf-8"))
+
+    def ld(self, path, kind):
+        page = (self.out / path / "index.html").read_text(encoding="utf-8")
+        found = [json.loads(m) for m in re.findall(r'<script type="application/ld\+json">(.*?)</script>', page)]
+        return next((d for d in found if d["@type"] == kind), None)
+
+    def test_articles_and_the_dataset_have_linked_data(self):
+        article = self.ld("articles/showing-the-work", "Article")
+        self.assertEqual(article["url"], build_site.SITE_URL + "/articles/showing-the-work/")
+        self.assertEqual(article["author"]["@type"], "Organization")
+        self.assertRegex(article["datePublished"], r"^\d{4}-\d\d-\d\d$")
+        self.assertEqual(self.ld("fr/articles/showing-the-work", "Article")["inLanguage"], "fr")
+        dataset = self.ld("about", "Dataset")
+        self.assertEqual(dataset["license"], build_site.CC0_URL)
+        self.assertIn("own licences", dataset["description"])
+        self.assertTrue(dataset["distribution"][0]["contentUrl"].startswith(build_site.GITHUB_URL))
+        self.assertIsNone(self.ld("fr/about", "Dataset"))
+        self.assertEqual(self.ld("jhn/3", "Chapter")["license"], build_site.CC0_URL)
+
+    def test_book_pages_introduce_the_books_that_have_one(self):
+        sitemap = (self.out / "sitemap.xml").read_text(encoding="utf-8")
+        intros = sorted(p.stem for p in build_site.INTROS.glob("*.md"))
+        self.assertTrue(intros)
+        for book in intros:
+            path = self.out / book.lower() / "index.html"
+            page = path.read_text(encoding="utf-8")
+            self.assertIn(f"<h1>{build_site.BOOK_NAMES[book]['en']}</h1>", page)
+            self.assertIn(build_site.catalog("en")["book_page"]["draft"], page)
+            self.assertNotIn("{{", page)
+            self.assertIn(f"<loc>{build_site.SITE_URL}/{book.lower()}/</loc>", sitemap)
+            # Every chapter in the outline, each with its section headings.
+            chaps = dict(build_site.books("en"))[book]
+            self.assertEqual(re.findall(r'<li><a href="/[a-z0-9]+/(\d+)/">', page), [str(p.chapter) for p in chaps])
+            for href in re.findall(r'href="(/[^"#?]*)', page):
+                target = self.out / href.lstrip("/")
+                self.assertTrue(target.is_file() or (target / "index.html").is_file(), (book, href))
+            # Only in the languages the introduction is written in.
+            for lang in build_site.LANGUAGES:
+                if lang != "en" and not build_site.load_intro(book, lang):
+                    self.assertFalse((self.out / lang / book.lower() / "index.html").exists(), (lang, book))
+            # Its chapters and the Read page lead to it.
+            first = (self.out / book.lower() / str(chaps[0].chapter) / "index.html").read_text(encoding="utf-8")
+            self.assertIn(f'class="chap-book" href="/{book.lower()}/"', first)
+            read = (self.out / "read" / "index.html").read_text(encoding="utf-8")
+            self.assertIn(f'<h2 id="book-{book.lower()}"><a href="/{book.lower()}/">', read)
+            llms = (self.out / "llms.txt").read_text(encoding="utf-8")
+            self.assertIn(f"({build_site.SITE_URL}/{book.lower()}/)", llms)
+
+    def test_intros_type_no_greek_or_hebrew(self):
+        for path in sorted(build_site.INTROS.rglob("*.md")):
+            text = path.read_text(encoding="utf-8")
+            for script, (pattern, _) in build_site.validate._SCRIPTS.items():
+                self.assertEqual(pattern.findall(text), [], f"{path.name}: {script} typed by hand")
+
+    def test_chapters_have_a_breadcrumb_trail(self):
+        def trail(path):
+            return [(i["name"], i["item"]) for i in self.ld(path, "BreadcrumbList")["itemListElement"]]
+
+        site = build_site.SITE_URL
+        self.assertEqual(trail("php/2"), [("Open Word Bible", site + "/"), ("Read", site + "/read/"),
+                                          ("Philippians", site + "/php/"), ("Philippians 2", site + "/php/2/")])
+        # A book without a page goes straight from Read to the chapter.
+        self.assertEqual(trail("mrk/2"), [("Open Word Bible", site + "/"), ("Read", site + "/read/"),
+                                          ("Mark 2", site + "/mrk/2/")])
+        mark = (self.out / "mrk" / "2" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('class="chap-book" href="/read/#mrk"', mark)
+        self.assertEqual(trail("fr/php/2")[-1][1], site + "/fr/php/2/")
+        self.assertEqual(len(trail("fr/php/2")), 3)
+
+    def test_llms_txt_describes_the_site(self):
+        text = (self.out / "llms.txt").read_text(encoding="utf-8")
+        counts = build_site.status_counts()
+        self.assertTrue(text.startswith("# Open Word Bible\n\n> "))
+        self.assertIn(f"{counts['all']:,} sentences are drafted and {counts['approved']:,} are reviewed", text)
+        self.assertIn(f"({build_site.SITE_URL}/about/status/)", text)
+        self.assertIn(f"({build_site.SITE_URL}/articles/showing-the-work/)", text)
 
     def test_chapter_has_a_notes_section(self):
         page = (self.out / "jhn" / "1" / "index.html").read_text(encoding="utf-8")
@@ -887,12 +1069,34 @@ class SiteTest(unittest.TestCase):
             files = json.loads(html.unescape(re.search(r'data-offline-files="([^"]*)"', read)[1]))
             for path in files:
                 self.assertTrue(self.built(path).is_file(), path)
-            buttons = re.findall(r'class="save-book" hidden data-book="([A-Z0-9]+)"[^>]*data-pages="([^"]*)"', read)
-            self.assertEqual([b for b, _ in buttons], [b for b, _ in build_site.books(code)])
-            for _, pages in buttons:
-                for path in json.loads(html.unescape(pages)):
+            self.assertIn(build_site.reader_shared(code)[1].split("?")[0], [f.split("?")[0] for f in files])
+            buttons = re.findall(r'class="save-book" hidden data-book="([A-Z0-9]+)"[^>]*data-pages="([^"]*)" '
+                                 r'data-files="([^"]*)"', read)
+            self.assertEqual([b for b, _, _ in buttons], [b for b, _ in build_site.books(code)])
+            for _, pages, data in buttons:
+                pages, data = json.loads(html.unescape(pages)), json.loads(html.unescape(data))
+                for path in pages:
                     self.assertTrue(path.startswith(build_site.url(code, "/")), path)
                     self.assertTrue(self.built(path).is_file(), path)
+                # Each page's shared chapter data, which the page loads.
+                self.assertEqual(len(data), len(pages))
+                for page, path in zip(pages, data):
+                    self.assertIn(f'<script src="{path}"></script>', self.built(page).read_text(encoding="utf-8"))
+                    self.assertTrue(self.built(path).is_file(), path)
+
+    def test_chapter_pages_share_what_is_the_same(self):
+        # The source words and each sentence's source are the same on every
+        # language's page of a chapter, and the interface text on every
+        # chapter page of a language: each is built once, not into every page.
+        en, es = self.chapter_data("jhn/1"), self.chapter_data("es/jhn/1")
+        self.assertEqual(en["words"], es["words"])
+        self.assertEqual([r["source"] for r in en["records"]], [r["source"] for r in es["records"]])
+        page = (self.out / "es/jhn/1/index.html").read_text(encoding="utf-8")
+        own = json.loads(re.search(r'id="owb-data">(.*?)</script>', page, re.S)[1])
+        for key in ("words", "ui", "bookRefs", "books", "crossrefs"):
+            self.assertNotIn(key, own)
+        self.assertTrue(all("source" not in r for r in own["records"]))
+        self.assertEqual(es["ui"], build_site.catalog("es")["reader.ui"])
 
 
 def note(reason, alternatives=()):
@@ -948,7 +1152,7 @@ class ComparisonTest(unittest.TestCase):
 
     def test_chapter_pages_embed_the_comparison(self):
         page = build_site.chapter_page("PRO", 21)
-        data = json.loads(re.search(r'<script type="application/json" id="owb-data">(.*?)</script>', page, re.S)[1])
+        data = page_data(page)
         self.assertIn("ECC.1.2", data["compare"]["verses"])
         # A page's comparison verses are a few kilobytes at most.
         self.assertLess(len(json.dumps(data["compare"], ensure_ascii=False)), 25000)

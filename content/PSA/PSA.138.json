@@ -30,6 +30,31 @@
           "L": "Of David. I will give {{deity_pronoun:you|You}} thanks with all my heart; before [the] gods I will sing praises to {{deity_pronoun:you|You}}.",
           "B": "Of David. With all my heart I will give {{deity_pronoun:you|You}} thanks; in the presence of the gods I will make music for {{deity_pronoun:you|You}}.",
           "R": "By David. I will thank {{deity_pronoun:you|You}} with all my heart. I will sing praise to {{deity_pronoun:you|You}} in front of the gods."
+        },
+        "fr": {
+          "L": "De David. Je {{deity_pronoun:te|Te}} rendrai grâce de tout mon cœur ; devant les dieux je {{deity_pronoun:te|Te}} chanterai des louanges.",
+          "B": "De David. De tout mon cœur je {{deity_pronoun:te|Te}} rendrai grâce ; en présence des dieux je jouerai de la musique pour {{deity_pronoun:toi|Toi}}.",
+          "R": "De David. Je {{deity_pronoun:te|Te}} remercierai de tout mon cœur. Je chanterai {{deity_pronoun:tes|Tes}} louanges devant les dieux."
+        },
+        "sw": {
+          "L": "Ya Daudi. Nitakushukuru kwa moyo wangu wote; mbele ya miungu nitakuimbia sifa.",
+          "B": "Ya Daudi. Kwa moyo wangu wote nitakushukuru; mbele ya miungu nitakupigia muziki.",
+          "R": "Ya Daudi. Nitakushukuru kwa moyo wangu wote. Nitakuimbia sifa mbele ya miungu."
+        },
+        "es": {
+          "L": "De David. Te daré gracias con todo mi corazón; delante de los dioses {{deity_pronoun:te|Te}} cantaré alabanzas.",
+          "B": "De David. Con todo mi corazón {{deity_pronoun:te|Te}} daré gracias; en presencia de los dioses {{deity_pronoun:te|Te}} cantaré salmos.",
+          "R": "De David. Te daré gracias con todo mi corazón. Te cantaré alabanzas delante de los dioses."
+        },
+        "vi": {
+          "L": "Của Đa-vít. Tôi sẽ hết lòng cảm tạ {{deity_pronoun:ngài|Ngài}}; trước mặt các thần, tôi sẽ hát ca ngợi {{deity_pronoun:ngài|Ngài}}.",
+          "B": "Của Đa-vít. Tôi sẽ hết lòng cảm tạ {{deity_pronoun:ngài|Ngài}}; trước mặt các thần, tôi sẽ đàn hát cho {{deity_pronoun:ngài|Ngài}}.",
+          "R": "Của Đa-vít. Tôi sẽ hết lòng cảm tạ {{deity_pronoun:ngài|Ngài}}. Tôi sẽ hát ca ngợi {{deity_pronoun:ngài|Ngài}} trước mặt các thần."
+        },
+        "ko": {
+          "L": "다윗의 [노래]. 제가 온 마음으로 주님께 감사드리겠습니다. 신들 앞에서 제가 주님을 노래로 찬양하겠습니다.",
+          "B": "다윗의 노래. 제가 온 마음을 다해 주님께 감사드리겠습니다. 신들 앞에서 주님께 노래하며 연주하겠습니다.",
+          "R": "다윗의 노래. 제가 온 마음으로 주님께 감사드리겠습니다. 신들 앞에서 주님을 찬양하는 노래를 부르겠습니다."
         }
       },
       "decisions": [
@@ -115,6 +140,70 @@
           "reason": "Balanced puts the phrase first for emphasis; the meaning is the same.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o191380010021"
+          ],
+          "choice": "The psalmist speaks to God in the second person singular, with \"wewe\" and its forms (\"nitakushukuru\", \"kwako\") as free pronouns under the deity_pronoun setting",
+          "alternatives": [
+            "the plural of respect"
+          ],
+          "reason": "Swahili prayer speaks to God as \"wewe\", as these psalms do throughout; the verb forms carry \"you\" inside them, so the setting appears only on the free pronouns and possessives (\"yako\", \"lako\", \"wewe\").",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191380010061"
+          ],
+          "choice": "\"các thần\" in lowercase for the gods",
+          "alternatives": [
+            "\"các thần linh\"",
+            "\"các quyền lực\""
+          ],
+          "reason": "The gods are those the nations worship (see the meaning decision); \"các thần\" in lowercase keeps them apart from God, as in Psalm 135:5.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o191380010021"
+          ],
+          "choice": "The Hebrew \"you\" is \"주님\", in 합쇼체 with \"저\", through the psalm",
+          "alternatives": [
+            "당신"
+          ],
+          "reason": "The Hebrew names no one in this verse (meaning decision); Korean cannot say \"you\" to God without a title, and \"주님\" is that title of address, not the divine name, so it carries no span.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -162,6 +251,31 @@
           "L": "I will bow down toward {{deity_pronoun:your|Your}} holy temple and give thanks to {{deity_pronoun:your|Your}} name for {{deity_pronoun:your|Your}} loyal love and for {{deity_pronoun:your|Your}} faithfulness, for {{deity_pronoun:you|You}} have made {{deity_pronoun:your|Your}} word great above all {{deity_pronoun:your|Your}} name.",
           "B": "I will bow down facing {{deity_pronoun:your|Your}} holy temple and praise {{deity_pronoun:your|Your}} name for {{deity_pronoun:your|Your}} loyal love and {{deity_pronoun:your|Your}} faithfulness; for {{deity_pronoun:you|You}} have made {{deity_pronoun:your|Your}} promise great, beyond all that {{deity_pronoun:your|Your}} name had made known.",
           "R": "I will bow down toward {{deity_pronoun:your|Your}} holy temple. I will praise {{deity_pronoun:your|Your}} name because of {{deity_pronoun:your|Your}} faithful love and because {{deity_pronoun:you|You}} always do what {{deity_pronoun:you|You}} say. What {{deity_pronoun:you|You}} promised and did is even greater than everything people knew about {{deity_pronoun:you|You}}."
+        },
+        "fr": {
+          "L": "Je me prosternerai vers le temple de {{deity_pronoun:ta|Ta}} sainteté et je rendrai grâce à {{deity_pronoun:ton|Ton}} nom pour {{deity_pronoun:ton|Ton}} amour loyal et pour {{deity_pronoun:ta|Ta}} fidélité, car {{deity_pronoun:tu|Tu}} as rendu {{deity_pronoun:ta|Ta}} parole grande au-dessus de tout {{deity_pronoun:ton|Ton}} nom.",
+          "B": "Je me prosternerai, tourné vers {{deity_pronoun:ton|Ton}} saint temple, et je louerai {{deity_pronoun:ton|Ton}} nom pour {{deity_pronoun:ton|Ton}} amour fidèle et {{deity_pronoun:ta|Ta}} fidélité ; car {{deity_pronoun:tu|Tu}} as rendu {{deity_pronoun:ta|Ta}} promesse plus grande que tout ce que {{deity_pronoun:ton|Ton}} nom avait fait connaître.",
+          "R": "Je me prosternerai vers {{deity_pronoun:ton|Ton}} saint temple. Je louerai {{deity_pronoun:ton|Ton}} nom pour {{deity_pronoun:ton|Ton}} amour fidèle et parce que {{deity_pronoun:tu|Tu}} fais toujours ce que {{deity_pronoun:tu|Tu}} dis. Ce que {{deity_pronoun:tu|Tu}} as promis et accompli est encore plus grand que tout ce que l’on savait de {{deity_pronoun:toi|Toi}}."
+        },
+        "sw": {
+          "L": "Nitasujudu kuelekea hekalu {{deity_pronoun:lako|Lako}} takatifu na kulishukuru jina {{deity_pronoun:lako|Lako}} kwa ajili ya upendo {{deity_pronoun:wako|Wako}} usiokoma na kwa ajili ya uaminifu {{deity_pronoun:wako|Wako}}, kwa maana umelikuza neno {{deity_pronoun:lako|Lako}} juu ya jina {{deity_pronoun:lako|Lako}} lote.",
+          "B": "Nitasujudu nikilielekea hekalu {{deity_pronoun:lako|Lako}} takatifu na kulisifu jina {{deity_pronoun:lako|Lako}} kwa upendo {{deity_pronoun:wako|Wako}} usiokoma na uaminifu {{deity_pronoun:wako|Wako}}; kwa maana umeikuza ahadi {{deity_pronoun:yako|Yako}}, kupita yote ambayo jina {{deity_pronoun:lako|Lako}} lilikuwa limejulisha.",
+          "R": "Nitasujudu nikilielekea hekalu {{deity_pronoun:lako|Lako}} takatifu. Nitalisifu jina {{deity_pronoun:lako|Lako}} kwa sababu ya upendo {{deity_pronoun:wako|Wako}} usiokoma, na kwa sababu {{deity_pronoun:wewe|Wewe}} hutenda kila unachosema daima. Ulichoahidi na kukifanya ni kikubwa kuliko yote ambayo watu walijua kuhusu {{deity_pronoun:wewe|Wewe}}."
+        },
+        "es": {
+          "L": "Me postraré hacia {{deity_pronoun:tu|Tu}} santo templo y daré gracias a {{deity_pronoun:tu|Tu}} nombre por {{deity_pronoun:tu|Tu}} amor leal y por {{deity_pronoun:tu|Tu}} fidelidad, porque {{deity_pronoun:tú|Tú}} has engrandecido {{deity_pronoun:tu|Tu}} palabra por encima de todo {{deity_pronoun:tu|Tu}} nombre.",
+          "B": "Me postraré mirando hacia {{deity_pronoun:tu|Tu}} santo templo y alabaré {{deity_pronoun:tu|Tu}} nombre por {{deity_pronoun:tu|Tu}} amor fiel y {{deity_pronoun:tu|Tu}} fidelidad; porque {{deity_pronoun:tú|Tú}} has engrandecido {{deity_pronoun:tu|Tu}} promesa, más allá de todo lo que {{deity_pronoun:tu|Tu}} nombre había dado a conocer.",
+          "R": "Me postraré hacia {{deity_pronoun:tu|Tu}} santo templo. Alabaré {{deity_pronoun:tu|Tu}} nombre por {{deity_pronoun:tu|Tu}} amor fiel y porque {{deity_pronoun:tú|Tú}} siempre haces lo que dices. Lo que {{deity_pronoun:tú|Tú}} prometiste e hiciste es aún más grande que todo lo que la gente sabía de {{deity_pronoun:ti|Ti}}."
+        },
+        "vi": {
+          "L": "Tôi sẽ cúi lạy hướng về đền thánh của {{deity_pronoun:ngài|Ngài}}, và cảm tạ danh {{deity_pronoun:ngài|Ngài}} vì tình yêu thương thành tín của {{deity_pronoun:ngài|Ngài}} và vì sự thành tín của {{deity_pronoun:ngài|Ngài}}, vì {{deity_pronoun:ngài|Ngài}} đã làm cho lời {{deity_pronoun:ngài|Ngài}} được tôn cao hơn cả danh {{deity_pronoun:ngài|Ngài}}.",
+          "B": "Tôi sẽ cúi lạy hướng về đền thánh của {{deity_pronoun:ngài|Ngài}} và ca ngợi danh {{deity_pronoun:ngài|Ngài}} vì tình yêu thương thành tín và sự thành tín của {{deity_pronoun:ngài|Ngài}}; vì {{deity_pronoun:ngài|Ngài}} đã làm cho lời hứa của {{deity_pronoun:ngài|Ngài}} lớn lao, vượt trên mọi điều danh {{deity_pronoun:ngài|Ngài}} đã tỏ ra.",
+          "R": "Tôi sẽ cúi lạy hướng về đền thánh của {{deity_pronoun:ngài|Ngài}}. Tôi sẽ ca ngợi danh {{deity_pronoun:ngài|Ngài}} vì tình thương không hề thay đổi của {{deity_pronoun:ngài|Ngài}}, và vì {{deity_pronoun:ngài|Ngài}} luôn làm điều {{deity_pronoun:ngài|Ngài}} đã nói. Những gì {{deity_pronoun:ngài|Ngài}} đã hứa và đã làm còn lớn hơn mọi điều người ta biết về {{deity_pronoun:ngài|Ngài}}."
+        },
+        "ko": {
+          "L": "제가 주님의 거룩한 성전을 향하여 엎드리고, 주님의 한결같은 사랑과 주님의 신실하심으로 인하여 주님의 이름에 감사드리겠습니다. 주님께서 주님의 말씀을 주님의 모든 이름 위에 크게 하셨기 때문입니다.",
+          "B": "제가 주님의 거룩한 성전을 향하여 엎드려, 주님의 한결같은 사랑과 신실하심으로 인하여 주님의 이름을 찬양하겠습니다. 주님께서는 주님의 약속을, 주님의 이름이 알려 준 모든 것보다 더 크게 이루셨습니다.",
+          "R": "제가 주님의 거룩한 성전을 향하여 엎드리겠습니다. 주님의 변함없는 사랑 때문에, 그리고 주님께서 말씀하신 것을 언제나 지키시기 때문에 주님의 이름을 찬양하겠습니다. 주님께서 약속하시고 이루신 일은 사람들이 주님에 대해 알던 모든 것보다 더 큽니다."
         }
       },
       "decisions": [
@@ -287,6 +401,49 @@
           "reason": "Balanced and Readable say \"promise\", what God's word is here (m5).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191380020091",
+            "o191380020111"
+          ],
+          "choice": "\"tình yêu thương thành tín\" for loyal love and \"sự thành tín\" for faithfulness, side by side",
+          "alternatives": [
+            "\"sự chân thật\" for faithfulness"
+          ],
+          "reason": "The two key terms stand together; the terms note gives \"sự thành tín\" for faithfulness, and the shared word \"thành tín\" shows that the two belong together, as loyal love and faithfulness do in Hebrew.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191380020111"
+          ],
+          "choice": "\"신실하심\" for faithfulness (L, B); Readable says it as \"말씀하신 것을 언제나 지키시다\"",
+          "alternatives": [
+            "진실하심",
+            "성실하심"
+          ],
+          "reason": "As the terms note (ʾemet: 신실하심); Readable explains the word, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -321,6 +478,31 @@
           "L": "On the day I called, {{deity_pronoun:you|You}} answered me; {{deity_pronoun:you|You}} made me bold [with] strength in my soul.",
           "B": "The day I called, {{deity_pronoun:you|You}} answered me; {{deity_pronoun:you|You}} filled me with courage and strength within.",
           "R": "When I called out to {{deity_pronoun:you|You}}, {{deity_pronoun:you|You}} answered me. You made me brave and strong inside."
+        },
+        "fr": {
+          "L": "Le jour où j’ai crié, {{deity_pronoun:tu|Tu}} m’as répondu ; {{deity_pronoun:tu|Tu}} m’as rendu hardi, [avec] de la force dans mon âme.",
+          "B": "Le jour où j’ai crié, {{deity_pronoun:tu|Tu}} m’as répondu ; {{deity_pronoun:tu|Tu}} m’as rempli de courage et de force au-dedans.",
+          "R": "Quand je {{deity_pronoun:t’|T’}}ai appelé, {{deity_pronoun:tu|Tu}} m’as répondu. Tu m’as rendu courageux et fort à l’intérieur."
+        },
+        "sw": {
+          "L": "Siku niliyoita, ulinijibu; ulinitia ujasiri [kwa] nguvu katika nafsi yangu.",
+          "B": "Siku ile nilipoita, ulinijibu; ulinijaza ujasiri na nguvu ndani yangu.",
+          "R": "Nilipokulilia, ulinijibu. Ulinifanya jasiri na mwenye nguvu moyoni."
+        },
+        "es": {
+          "L": "El día en que clamé, {{deity_pronoun:tú|Tú}} me respondiste; {{deity_pronoun:tú|Tú}} me infundiste valor [con] fuerza en mi alma.",
+          "B": "El día en que clamé, {{deity_pronoun:tú|Tú}} me respondiste; {{deity_pronoun:tú|Tú}} me llenaste de valor y de fuerza por dentro.",
+          "R": "Cuando clamé a {{deity_pronoun:ti|Ti}}, {{deity_pronoun:tú|Tú}} me respondiste. Me hiciste valiente y fuerte por dentro."
+        },
+        "vi": {
+          "L": "Trong ngày tôi kêu cầu, {{deity_pronoun:ngài|Ngài}} đã đáp lời tôi; {{deity_pronoun:ngài|Ngài}} đã làm cho tôi mạnh dạn [bằng] sức lực trong linh hồn tôi.",
+          "B": "Ngày tôi kêu cầu, {{deity_pronoun:ngài|Ngài}} đã đáp lời tôi; {{deity_pronoun:ngài|Ngài}} đã ban cho tôi lòng can đảm và sức mạnh bên trong.",
+          "R": "Khi tôi kêu cầu {{deity_pronoun:ngài|Ngài}}, {{deity_pronoun:ngài|Ngài}} đã trả lời tôi. Ngài làm cho tôi can đảm và mạnh mẽ trong lòng."
+        },
+        "ko": {
+          "L": "제가 부르짖은 날에 주님께서 제게 응답하셨고, 제 영혼에 힘을 주어 저를 담대하게 하셨습니다.",
+          "B": "제가 부르짖던 날, 주님께서 응답하셨고, 제 속에 용기와 힘을 가득 채워 주셨습니다.",
+          "R": "제가 주님께 부르짖었을 때 주님께서 대답해 주셨습니다. 주님께서는 제 마음을 용감하고 강하게 해 주셨습니다."
         }
       },
       "decisions": [
@@ -407,6 +589,31 @@
           "L": "All the kings of the earth will give {{deity_pronoun:you|You}} thanks, {{divine_name:LORD|Yahweh}}, for they have heard the words of {{deity_pronoun:your|Your}} mouth.",
           "B": "{{divine_name:LORD|Yahweh}}, every king on earth will give {{deity_pronoun:you|You}} thanks, because they have heard the words {{deity_pronoun:you|You}} spoke.",
           "R": "{{divine_name:LORD|Yahweh}}, every king in the world will thank {{deity_pronoun:you|You}} after hearing the words {{deity_pronoun:you|You}} have spoken."
+        },
+        "fr": {
+          "L": "Tous les rois de la terre {{deity_pronoun:te|Te}} rendront grâce, {{divine_name:SEIGNEUR|Yahvé}}, car ils ont entendu les paroles de {{deity_pronoun:ta|Ta}} bouche.",
+          "B": "{{divine_name:SEIGNEUR|Yahvé}}, tous les rois de la terre {{deity_pronoun:te|Te}} rendront grâce, parce qu’ils ont entendu les paroles que {{deity_pronoun:tu|Tu}} as prononcées.",
+          "R": "{{divine_name:SEIGNEUR|Yahvé}}, tous les rois du monde {{deity_pronoun:te|Te}} remercieront quand ils auront entendu les paroles que {{deity_pronoun:tu|Tu}} as dites."
+        },
+        "sw": {
+          "L": "Wafalme wote wa dunia watakushukuru, Ee {{divine_name:BWANA|Yahwe}}, kwa maana wameyasikia maneno ya kinywa {{deity_pronoun:chako|Chako}}.",
+          "B": "Ee {{divine_name:BWANA|Yahwe}}, kila mfalme duniani atakushukuru, kwa sababu wameyasikia maneno uliyoyasema.",
+          "R": "{{divine_name:BWANA|Yahwe}}, kila mfalme ulimwenguni atakushukuru baada ya kuyasikia maneno uliyoyasema."
+        },
+        "es": {
+          "L": "Todos los reyes de la tierra {{deity_pronoun:te|Te}} darán gracias, {{divine_name:SEÑOR|Yahvé}}, porque han oído las palabras de {{deity_pronoun:tu|Tu}} boca.",
+          "B": "{{divine_name:SEÑOR|Yahvé}}, todos los reyes de la tierra {{deity_pronoun:te|Te}} darán gracias, porque han oído las palabras que {{deity_pronoun:tú|Tú}} dijiste.",
+          "R": "{{divine_name:SEÑOR|Yahvé}}, todos los reyes del mundo {{deity_pronoun:te|Te}} darán gracias después de oír las palabras que {{deity_pronoun:tú|Tú}} has dicho."
+        },
+        "vi": {
+          "L": "Hết thảy các vua trên đất sẽ cảm tạ {{deity_pronoun:ngài|Ngài}}, lạy {{divine_name:CHÚA|Gia-vê}}, vì họ đã nghe những lời từ miệng {{deity_pronoun:ngài|Ngài}}.",
+          "B": "Lạy {{divine_name:CHÚA|Gia-vê}}, mọi vua trên đất sẽ cảm tạ {{deity_pronoun:ngài|Ngài}}, vì họ đã nghe những lời {{deity_pronoun:ngài|Ngài}} phán.",
+          "R": "Lạy {{divine_name:CHÚA|Gia-vê}}, mọi vua trên thế giới sẽ cảm tạ {{deity_pronoun:ngài|Ngài}} sau khi nghe những lời {{deity_pronoun:ngài|Ngài}} phán."
+        },
+        "ko": {
+          "L": "{{divine_name:주|야훼}}여, 땅의 모든 왕들이 주님께 감사드릴 것입니다. 그들이 주님의 입의 말씀들을 들었기 때문입니다.",
+          "B": "{{divine_name:주|야훼}}여, 땅의 모든 왕이 주님께 감사드릴 것입니다. 주님께서 하신 말씀을 들었기 때문입니다.",
+          "R": "{{divine_name:주|야훼}}여, 세상의 모든 왕이 주님께서 하신 말씀을 듣고 주님께 감사드릴 것입니다."
         }
       },
       "decisions": [
@@ -472,6 +679,31 @@
           "L": "And they will sing of the ways of {{divine_name:the LORD|Yahweh}}, for great [is] the glory of {{divine_name:the LORD|Yahweh}}.",
           "B": "They will sing of {{divine_name:the LORD|Yahweh}}'s ways, because the glory of {{divine_name:the LORD|Yahweh}} is so great.",
           "R": "They will sing about the way {{divine_name:the LORD|Yahweh}} acts, because the glory of {{divine_name:the LORD|Yahweh}} is so great."
+        },
+        "fr": {
+          "L": "Et ils chanteront les chemins {{divine_name:du SEIGNEUR|de Yahvé}}, car grande [est] la gloire {{divine_name:du SEIGNEUR|de Yahvé}}.",
+          "B": "Ils chanteront les chemins {{divine_name:du SEIGNEUR|de Yahvé}}, car la gloire {{divine_name:du SEIGNEUR|de Yahvé}} est si grande.",
+          "R": "Ils chanteront la façon dont {{divine_name:le SEIGNEUR|Yahvé}} agit, parce que la gloire {{divine_name:du SEIGNEUR|de Yahvé}} est si grande."
+        },
+        "sw": {
+          "L": "Nao wataziimba njia za {{divine_name:BWANA|Yahwe}}, kwa maana utukufu wa {{divine_name:BWANA|Yahwe}} [ni] mkuu.",
+          "B": "Wataziimba njia za {{divine_name:BWANA|Yahwe}}, kwa sababu utukufu wa {{divine_name:BWANA|Yahwe}} ni mkuu mno.",
+          "R": "Wataimba juu ya jinsi {{divine_name:BWANA|Yahwe}} anavyotenda, kwa sababu utukufu wa {{divine_name:BWANA|Yahwe}} ni mkuu mno."
+        },
+        "es": {
+          "L": "Y cantarán de los caminos {{divine_name:del SEÑOR|de Yahvé}}, porque grande [es] la gloria {{divine_name:del SEÑOR|de Yahvé}}.",
+          "B": "Cantarán de los caminos {{divine_name:del SEÑOR|de Yahvé}}, porque la gloria {{divine_name:del SEÑOR|de Yahvé}} es muy grande.",
+          "R": "Cantarán sobre la manera en que actúa {{divine_name:el SEÑOR|Yahvé}}, porque la gloria {{divine_name:del SEÑOR|de Yahvé}} es muy grande."
+        },
+        "vi": {
+          "L": "Và họ sẽ ca hát về các đường lối của {{divine_name:CHÚA|Gia-vê}}, vì vinh quang của {{divine_name:CHÚA|Gia-vê}} [thật] lớn lao.",
+          "B": "Họ sẽ ca hát về đường lối của {{divine_name:CHÚA|Gia-vê}}, vì vinh quang của {{divine_name:CHÚA|Gia-vê}} thật lớn lao.",
+          "R": "Họ sẽ ca hát về những việc {{divine_name:CHÚA|Gia-vê}} làm, vì vinh quang của {{divine_name:CHÚA|Gia-vê}} thật lớn lao."
+        },
+        "ko": {
+          "L": "그리고 그들이 {{divine_name:주|야훼}}의 길들을 노래할 것이니, {{divine_name:주|야훼}}의 영광이 크기 때문입니다.",
+          "B": "그들은 {{divine_name:주|야훼}}께서 행하신 길을 노래할 것입니다. {{divine_name:주|야훼}}의 영광이 참으로 크기 때문입니다.",
+          "R": "그들은 {{divine_name:주|야훼}}께서 일하시는 방식을 노래할 것입니다. {{divine_name:주|야훼}}의 영광이 참으로 크기 때문입니다."
         }
       },
       "decisions": [
@@ -503,6 +735,28 @@
           "alternatives": [],
           "reason": "Glory (kavod) is the weight and splendor of the LORD as he shows himself (19:2; 24:7-10).",
           "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o191380050031",
+            "o191380050071"
+          ],
+          "choice": "합쇼체 is kept in verses 5-6 and 8 although the LORD is named in the third person",
+          "alternatives": [
+            "the plain style for verses 5-6"
+          ],
+          "reason": "The verses stand inside a prayer that speaks to God before and after them (verses 4 and 7); changing style for a line would break the prayer, so Korean keeps the polite style and simply names the LORD.",
+          "uncertain": true,
           "footnote": false
         }
       ],
@@ -537,6 +791,31 @@
           "L": "For {{divine_name:the LORD|Yahweh}} [is] high, yet {{deity_pronoun:he|He}} sees the lowly; and the proud {{deity_pronoun:he|He}} knows from afar.",
           "B": "{{divine_name:The LORD|Yahweh}} is high, yet {{deity_pronoun:he|He}} looks upon those who are low; the proud {{deity_pronoun:he|He}} knows from a distance.",
           "R": "{{divine_name:The LORD|Yahweh}} is high above everything, yet {{deity_pronoun:he|He}} cares for humble people. But {{deity_pronoun:he|He}} keeps proud people at a distance and knows all about them from far away."
+        },
+        "fr": {
+          "L": "Car {{divine_name:le SEIGNEUR|Yahvé}} [est] élevé, et pourtant {{deity_pronoun:il|Il}} voit l’humble ; et l’orgueilleux, {{deity_pronoun:il|Il}} le connaît de loin.",
+          "B": "{{divine_name:Le SEIGNEUR|Yahvé}} est élevé, et pourtant {{deity_pronoun:il|Il}} regarde les humbles ; les orgueilleux, {{deity_pronoun:il|Il}} les connaît de loin.",
+          "R": "{{divine_name:Le SEIGNEUR|Yahvé}} est au-dessus de tout, et pourtant {{deity_pronoun:il|Il}} prend soin des gens humbles. Mais {{deity_pronoun:il|Il}} tient les orgueilleux à distance, et de loin {{deity_pronoun:il|Il}} sait tout d’eux."
+        },
+        "sw": {
+          "L": "Kwa maana {{divine_name:BWANA|Yahwe}} [yuko] juu, lakini huwaona wanyonge; na wenye kiburi huwajua kwa mbali.",
+          "B": "{{divine_name:BWANA|Yahwe}} yuko juu, lakini huwaangalia walio chini; wenye kiburi huwajua akiwa mbali.",
+          "R": "{{divine_name:BWANA|Yahwe}} yuko juu ya vitu vyote, lakini anawajali watu wanyenyekevu. Lakini watu wenye kiburi anawaweka mbali, na anawajua kabisa akiwa mbali."
+        },
+        "es": {
+          "L": "Porque {{divine_name:el SEÑOR|Yahvé}} [es] excelso, y sin embargo {{deity_pronoun:él|Él}} ve al humilde; y al soberbio {{deity_pronoun:él|Él}} lo conoce desde lejos.",
+          "B": "{{divine_name:El SEÑOR|Yahvé}} está en lo alto, y sin embargo {{deity_pronoun:él|Él}} mira a los humildes; a los orgullosos {{deity_pronoun:él|Él}} los conoce desde lejos.",
+          "R": "{{divine_name:El SEÑOR|Yahvé}} está por encima de todo, y sin embargo {{deity_pronoun:él|Él}} cuida a la gente humilde. Pero a la gente orgullosa {{deity_pronoun:él|Él}} la mantiene a distancia y sabe todo de ella desde lejos."
+        },
+        "vi": {
+          "L": "Vì {{divine_name:CHÚA|Gia-vê}} [thì] cao, nhưng {{deity_pronoun:ngài|Ngài}} đoái xem người thấp hèn; còn kẻ kiêu ngạo, {{deity_pronoun:ngài|Ngài}} biết từ xa.",
+          "B": "{{divine_name:CHÚA|Gia-vê}} thật cao cả, nhưng {{deity_pronoun:ngài|Ngài}} vẫn đoái nhìn những người thấp hèn; còn kẻ kiêu ngạo, {{deity_pronoun:ngài|Ngài}} biết chúng từ đằng xa.",
+          "R": "{{divine_name:CHÚA|Gia-vê}} cao hơn mọi sự, nhưng {{deity_pronoun:ngài|Ngài}} vẫn chăm sóc những người khiêm nhường. Còn những kẻ kiêu ngạo, {{deity_pronoun:ngài|Ngài}} giữ chúng ở xa và biết rõ mọi điều về chúng từ đằng xa."
+        },
+        "ko": {
+          "L": "참으로 {{divine_name:주|야훼}}께서는 높으시나 낮은 자를 보시고, 교만한 자는 멀리서 아십니다.",
+          "B": "{{divine_name:주|야훼}}께서는 높이 계시지만 낮은 사람들을 굽어보시고, 교만한 사람은 멀리서도 알아보십니다.",
+          "R": "{{divine_name:주|야훼}}께서는 모든 것 위에 높이 계시지만, 겸손한 사람들을 돌보아 주십니다. 그러나 교만한 사람들은 멀리 두시고, 멀리서도 그들을 다 아십니다."
         }
       },
       "decisions": [
@@ -650,6 +929,31 @@
           "L": "If I walk in the midst of trouble, {{deity_pronoun:you|You}} keep me alive; against the anger of my enemies {{deity_pronoun:you|You}} stretch out {{deity_pronoun:your|Your}} hand, and {{deity_pronoun:your|Your}} right hand saves me.",
           "B": "Even when I walk through the middle of trouble, {{deity_pronoun:you|You}} keep me alive. You reach out {{deity_pronoun:your|Your}} hand against my enemies' fury, and {{deity_pronoun:your|Your}} right hand rescues me.",
           "R": "Even when trouble is all around me, {{deity_pronoun:you|You}} keep me alive. You reach out {{deity_pronoun:your|Your}} hand to stop my angry enemies. Your powerful right hand saves me."
+        },
+        "fr": {
+          "L": "Si je marche au milieu de la détresse, {{deity_pronoun:tu|Tu}} me fais vivre ; contre la colère de mes ennemis {{deity_pronoun:tu|Tu}} étends {{deity_pronoun:ta|Ta}} main, et {{deity_pronoun:ta|Ta}} droite me sauve.",
+          "B": "Même quand je marche au milieu de la détresse, {{deity_pronoun:tu|Tu}} me gardes en vie. Tu étends {{deity_pronoun:ta|Ta}} main contre la fureur de mes ennemis, et {{deity_pronoun:ta|Ta}} main droite me délivre.",
+          "R": "Même quand le malheur est tout autour de moi, {{deity_pronoun:tu|Tu}} me gardes en vie. Tu tends {{deity_pronoun:ta|Ta}} main pour arrêter mes ennemis en colère. Ta main droite puissante me sauve."
+        },
+        "sw": {
+          "L": "Nikitembea katikati ya taabu, unanihifadhi hai; dhidi ya hasira ya adui zangu unanyosha mkono {{deity_pronoun:wako|Wako}}, na mkono {{deity_pronoun:wako|Wako}} wa kuume unaniokoa.",
+          "B": "Hata ninapopita katikati ya taabu, unanilinda niwe hai. Unanyoosha mkono {{deity_pronoun:wako|Wako}} dhidi ya ghadhabu ya adui zangu, na mkono {{deity_pronoun:wako|Wako}} wa kulia unaniokoa.",
+          "R": "Hata taabu zikinizunguka pande zote, unanilinda niwe hai. Unanyoosha mkono {{deity_pronoun:wako|Wako}} kuwazuia adui zangu wenye hasira. Mkono {{deity_pronoun:wako|Wako}} wa kulia wenye nguvu unaniokoa."
+        },
+        "es": {
+          "L": "Si ando en medio de la angustia, {{deity_pronoun:tú|Tú}} me das vida; contra la ira de mis enemigos {{deity_pronoun:tú|Tú}} extiendes {{deity_pronoun:tu|Tu}} mano, y {{deity_pronoun:tu|Tu}} diestra me salva.",
+          "B": "Aunque camine en medio de la angustia, {{deity_pronoun:tú|Tú}} me mantienes con vida. Extiendes {{deity_pronoun:tu|Tu}} mano contra la furia de mis enemigos, y {{deity_pronoun:tu|Tu}} mano derecha me rescata.",
+          "R": "Aunque esté rodeado de problemas, {{deity_pronoun:tú|Tú}} me mantienes con vida. Extiendes {{deity_pronoun:tu|Tu}} mano para detener a mis enemigos furiosos. Tu mano derecha poderosa me salva."
+        },
+        "vi": {
+          "L": "Nếu tôi bước đi giữa cảnh khốn khó, {{deity_pronoun:ngài|Ngài}} giữ tôi sống; {{deity_pronoun:ngài|Ngài}} giơ tay {{deity_pronoun:ngài|Ngài}} ra chống lại cơn giận của kẻ thù tôi, và tay phải {{deity_pronoun:ngài|Ngài}} cứu tôi.",
+          "B": "Dù khi tôi bước đi giữa hoạn nạn, {{deity_pronoun:ngài|Ngài}} vẫn gìn giữ mạng sống tôi. Ngài đưa tay ra chống lại cơn thịnh nộ của kẻ thù tôi, và tay phải {{deity_pronoun:ngài|Ngài}} giải cứu tôi.",
+          "R": "Ngay cả khi khó khăn vây quanh tôi, {{deity_pronoun:ngài|Ngài}} vẫn giữ cho tôi sống. Ngài đưa tay ra ngăn những kẻ thù đang giận dữ của tôi. Tay phải đầy quyền năng của {{deity_pronoun:ngài|Ngài}} cứu tôi."
+        },
+        "ko": {
+          "L": "제가 고난 한가운데를 걸어도 주님께서 저를 살리시고, 제 원수들의 분노를 향해 주님의 손을 뻗치시니, 주님의 오른손이 저를 구원합니다.",
+          "B": "제가 고난 한복판을 지날 때에도 주님께서는 저를 살려 주십니다. 주님께서 손을 뻗어 제 원수들의 분노를 막으시고, 주님의 오른손이 저를 건져 주십니다.",
+          "R": "어려움이 저를 에워쌀 때에도 주님께서는 저를 살려 주십니다. 손을 뻗어 화가 난 제 원수들을 막아 주십니다. 주님의 힘센 오른손이 저를 구해 주십니다."
         }
       },
       "decisions": [
@@ -735,6 +1039,31 @@
           "L": "{{divine_name:The LORD|Yahweh}} will complete [it] for me; {{divine_name:LORD|Yahweh}}, {{deity_pronoun:your|Your}} loyal love [is] forever; do not let go of the works of {{deity_pronoun:your|Your}} hands.",
           "B": "{{divine_name:The LORD|Yahweh}} will carry out {{deity_pronoun:his|His}} plan for me. {{divine_name:LORD|Yahweh}}, {{deity_pronoun:your|Your}} loyal love lasts forever; do not let go of what {{deity_pronoun:your|Your}} hands have made.",
           "R": "{{divine_name:The LORD|Yahweh}} will do everything {{deity_pronoun:he|He}} has planned for me. {{divine_name:LORD|Yahweh}}, {{deity_pronoun:your|Your}} faithful love lasts forever. Do not walk away from what {{deity_pronoun:you|You}} have made."
+        },
+        "fr": {
+          "L": "{{divine_name:Le SEIGNEUR|Yahvé}} achèvera [tout] pour moi ; {{divine_name:SEIGNEUR|Yahvé}}, {{deity_pronoun:ton|Ton}} amour loyal [est] pour toujours ; n’abandonne pas les œuvres de {{deity_pronoun:tes|Tes}} mains.",
+          "B": "{{divine_name:Le SEIGNEUR|Yahvé}} mènera à bien {{deity_pronoun:son|Son}} projet pour moi. {{divine_name:SEIGNEUR|Yahvé}}, {{deity_pronoun:ton|Ton}} amour fidèle dure toujours ; n’abandonne pas ce que {{deity_pronoun:tes|Tes}} mains ont fait.",
+          "R": "{{divine_name:Le SEIGNEUR|Yahvé}} fera tout ce qu’{{deity_pronoun:il|Il}} a prévu pour moi. {{divine_name:SEIGNEUR|Yahvé}}, {{deity_pronoun:ton|Ton}} amour fidèle dure toujours. Ne laisse pas tomber ce que {{deity_pronoun:tu|Tu}} as fait."
+        },
+        "sw": {
+          "L": "{{divine_name:BWANA|Yahwe}} atakamilisha [hilo] kwa ajili yangu; Ee {{divine_name:BWANA|Yahwe}}, upendo {{deity_pronoun:wako|Wako}} usiokoma [ni] wa milele; usiziache kazi za mikono {{deity_pronoun:yako|Yako}}.",
+          "B": "{{divine_name:BWANA|Yahwe}} atalitimiza kusudi {{deity_pronoun:lake|Lake}} kwangu. Ee {{divine_name:BWANA|Yahwe}}, upendo {{deity_pronoun:wako|Wako}} usiokoma unadumu milele; usiyaache uliyoyaumba kwa mikono {{deity_pronoun:yako|Yako}}.",
+          "R": "{{divine_name:BWANA|Yahwe}} atafanya kila kitu ambacho amenipangia. {{divine_name:BWANA|Yahwe}}, upendo {{deity_pronoun:wako|Wako}} usiokoma unadumu milele. Usiyaache uliyoyafanya."
+        },
+        "es": {
+          "L": "{{divine_name:El SEÑOR|Yahvé}} completará [su obra] por mí; {{divine_name:SEÑOR|Yahvé}}, {{deity_pronoun:tu|Tu}} amor leal [es] para siempre; no sueltes las obras de {{deity_pronoun:tus|Tus}} manos.",
+          "B": "{{divine_name:El SEÑOR|Yahvé}} llevará a cabo {{deity_pronoun:su|Su}} plan para mí. {{divine_name:SEÑOR|Yahvé}}, {{deity_pronoun:tu|Tu}} amor fiel dura para siempre; no sueltes lo que {{deity_pronoun:tus|Tus}} manos han hecho.",
+          "R": "{{divine_name:El SEÑOR|Yahvé}} hará todo lo que {{deity_pronoun:él|Él}} ha planeado para mí. {{divine_name:SEÑOR|Yahvé}}, {{deity_pronoun:tu|Tu}} amor fiel dura para siempre. No abandones lo que {{deity_pronoun:tú|Tú}} has hecho."
+        },
+        "vi": {
+          "L": "{{divine_name:CHÚA|Gia-vê}} sẽ hoàn thành [điều đó] cho tôi; lạy {{divine_name:CHÚA|Gia-vê}}, tình yêu thương thành tín của {{deity_pronoun:ngài|Ngài}} [còn] đến đời đời; xin đừng buông bỏ công việc của tay {{deity_pronoun:ngài|Ngài}}.",
+          "B": "{{divine_name:CHÚA|Gia-vê}} sẽ thực hiện kế hoạch {{deity_pronoun:ngài|Ngài}} định cho tôi. Lạy {{divine_name:CHÚA|Gia-vê}}, tình yêu thương thành tín của {{deity_pronoun:ngài|Ngài}} còn đến đời đời; xin đừng buông bỏ những gì tay {{deity_pronoun:ngài|Ngài}} đã làm nên.",
+          "R": "{{divine_name:CHÚA|Gia-vê}} sẽ làm trọn mọi điều {{deity_pronoun:ngài|Ngài}} đã định cho tôi. Lạy {{divine_name:CHÚA|Gia-vê}}, tình thương không hề thay đổi của {{deity_pronoun:ngài|Ngài}} còn đến đời đời. Xin đừng bỏ đi khỏi những gì {{deity_pronoun:ngài|Ngài}} đã tạo nên."
+        },
+        "ko": {
+          "L": "{{divine_name:주|야훼}}께서 저를 위하여 [그 일을] 이루실 것입니다. {{divine_name:주|야훼}}여, 주님의 한결같은 사랑은 영원합니다. 주님의 손으로 지으신 것들을 놓지 마십시오.",
+          "B": "{{divine_name:주|야훼}}께서 저를 향한 그분의 계획을 이루실 것입니다. {{divine_name:주|야훼}}여, 주님의 한결같은 사랑은 영원합니다. 주님의 손으로 만드신 것을 놓지 마십시오.",
+          "R": "{{divine_name:주|야훼}}께서는 저를 위해 계획하신 일을 모두 이루실 것입니다. {{divine_name:주|야훼}}여, 주님의 변함없는 사랑은 영원합니다. 주님께서 만드신 것을 버리고 떠나지 마십시오."
         }
       },
       "decisions": [

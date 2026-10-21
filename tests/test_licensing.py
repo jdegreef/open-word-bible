@@ -8,6 +8,7 @@ import json
 import re
 import sys
 import unittest
+import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -52,9 +53,15 @@ class LicensingTest(unittest.TestCase):
         cls.site = built_site()
         cls.extracts = {p: json.loads(p.read_text(encoding="utf-8"))
                         for p in sorted((ROOT / "data").rglob("*.json"))}
-        # Every text file the site serves; fonts, share images and icons are binary.
-        cls.pages = {p: p.read_text(encoding="utf-8") for p in sorted(cls.site.rglob("*"))
-                     if p.is_file() and p.suffix not in (".woff2", ".jpg", ".png")}
+        # Every text file the site serves, and each file in the downloads'
+        # zips; fonts, share images and icons are binary.
+        cls.pages = {}
+        for p in sorted(cls.site.rglob("*")):
+            if p.suffix == ".zip":
+                with zipfile.ZipFile(p) as z:
+                    cls.pages.update({f"{p}/{name}": z.read(name).decode("utf-8") for name in z.namelist()})
+            elif p.is_file() and p.suffix not in (".woff2", ".jpg", ".png"):
+                cls.pages[p] = p.read_text(encoding="utf-8")
 
     def test_extracts_have_no_restricted_fields(self):
         self.assertTrue(self.extracts)
@@ -76,18 +83,18 @@ class LicensingTest(unittest.TestCase):
         # Field names are checked on every file. Values are checked per word:
         # the restricted codes are short numbers ("3.5"), which also occur in
         # markup (an SVG radius), so a page-wide search would only find
-        # coincidences. Each word in a page's embedded data is compared with
-        # that same word's restricted values instead.
+        # coincidences. Each word in the reader's data (a chapter's shared
+        # data, chapter-data/) is compared with that same word's restricted
+        # values instead.
         values = restricted_values()
         field = re.compile(r'"(%s)"\s*:' % "|".join(RESTRICTED))
-        blob = re.compile(r'<script type="application/json" id="owb-data">(.*?)</script>', re.S)
         checked = 0
         for path, text in self.pages.items():
             self.assertIsNone(field.search(text), path)
-            m = blob.search(text)
-            if not m:
+            if "/chapter-data/" not in str(path):
                 continue
-            for words in json.loads(m[1]).get("words", {}).values():
+            data = json.loads(text[text.index("=") + 1:].rstrip().rstrip(";"))
+            for words in data["words"].values():
                 for word in words:
                     leaked = values.get(word["id"], set()) & {str(v) for v in word.values()}
                     self.assertFalse(leaked, (path, word["id"], leaked))

@@ -2,8 +2,16 @@
 languages, and the admin files a GitHub issue labelled drafting-job for a
 Claude session to pick up (.claude/skills/drafting-worker).
 
-GET  /api/admin/jobs/                         open drafting jobs on GitHub
+GET  /api/admin/jobs/                         open drafting jobs on GitHub, and
+                                              the queue board: each book in each
+                                              language, drafted, asked for in an
+                                              open job, or with a pull request open
 POST /api/admin/jobs/  {book, languages, note} file one
+POST /api/admin/jobs/bulk/  {languages, testament or books, note, dry_run}
+                                              file one job per book still missing
+                                              any of the languages, in Bible order,
+                                              at most BULK_LIMIT at a time; dry_run
+                                              answers with the plan only
 
 Filing needs OWB_GITHUB_TOKEN (a token that may create issues in
 OWB_GITHUB_REPO); without it the page says so. Before filing, the request
@@ -30,6 +38,9 @@ from .progress import CHAPTERS, _coverage, book_name
 
 log = logging.getLogger(__name__)
 LABEL = "drafting-job"
+BULK_LIMIT = 40     # jobs one bulk request files; the rest wait for the next
+TESTAMENTS = {"ot": refs.OT_CODES, "nt": [c for c in refs.BOOK_CODES if c not in refs.OT_CODES],
+              "all": refs.BOOK_CODES}
 
 
 class GitHubError(Exception):
@@ -79,15 +90,42 @@ def jobs(request):
         return _file(request)
     books = [{"code": c, "name": book_name(c), "chapters": CHAPTERS[c]} for c in refs.BOOK_CODES]
     langs = [{"code": c, "name": lang["name"]} for c, lang in languages.READING.items()]
+    coverage = {b["code"]: {lang: s["state"] for lang, s in b["languages"].items()} for b in _coverage()}
     answer = {"configured": bool(settings.OWB_GITHUB_TOKEN), "repo": settings.OWB_GITHUB_REPO,
-              "books": books, "languages": langs,
-              "coverage": {b["code"]: {lang: s["state"] for lang, s in b["languages"].items()}
-                           for b in _coverage()}}
+              "books": [{**b, "testament": "ot" if b["code"] in refs.OT_CODES else "nt"} for b in books],
+              "languages": langs, "coverage": coverage, "bulk_limit": BULK_LIMIT}
     try:
         answer["jobs"] = open_jobs()
     except GitHubError:
         answer["jobs"], answer["error"] = [], "GitHub could not be reached, so open jobs aren't listed."
+    answer["board"] = _board(coverage, answer["jobs"])
     return Response(answer)
+
+
+def _board(coverage, open_):
+    """{book: {lang: {"state", "url", "number"}}}: "drafted" or "partial"
+    from the database, unless an open job asks for the pair: then "pr" when
+    the job has a pull request open, else "filed". Pairs with nothing are
+    left out."""
+    from .work import cached_work   # work imports this module
+    try:
+        prs = {w["number"]: [p for p in w["prs"] if p["state"] in ("open", "draft")] for w in cached_work()}
+    except GitHubError:
+        prs = {}
+    board = {}
+    for code, langs in coverage.items():
+        for lang, state in langs.items():
+            if state != "none":
+                board.setdefault(code, {})[lang] = {"state": state, "url": "", "number": None}
+    for job in open_:
+        for lang in job.get("languages", []):
+            if job.get("book") not in coverage or coverage[job["book"]].get(lang) in (None, "drafted"):
+                continue
+            pr = (prs.get(job["number"]) or [None])[0]
+            board.setdefault(job["book"], {})[lang] = (
+                {"state": "pr", "url": pr["url"], "number": pr["number"]} if pr
+                else {"state": "filed", "url": job["url"], "number": job["number"]})
+    return board
 
 
 def _file(request):
@@ -119,6 +157,17 @@ def _file(request):
     if clash:
         raise ValidationError({"languages": f"Job #{clash[0]['number']} already asks for that.",
                                "code": "duplicate"})
+    try:
+        issue = _file_issue(request.user, book, wanted, coverage, note)
+    except GitHubError:
+        return Response({"detail": "GitHub refused the job. Check OWB_GITHUB_TOKEN can create issues.",
+                         "code": "github"}, status=status.HTTP_503_SERVICE_UNAVAILABLE)
+    return Response({"number": issue["number"], "url": issue["html_url"]}, status=status.HTTP_201_CREATED)
+
+
+def _file_issue(user, book, wanted, coverage, note, bulk=False):
+    """File the drafting-job issue asking for book in the languages wanted,
+    and log it. coverage is the book's {lang: {"state", ...}}."""
     names = ", ".join(languages.READING[c]["name"] for c in wanted)
     lines = [f"Draft **{book_name(book)}** ({CHAPTERS[book]} chapters) in {names}.", ""]
     for c in wanted:
@@ -129,13 +178,89 @@ def _file(request):
               "first, draft as `ai_draft` only, and open one pull request per book and language."]
     if note:
         lines += ["", "**Note from the admin:**", "", note]
-    lines += ["", f"Filed from the admin by {request.user.username}.", "",
+    lines += ["", f"Filed from the admin by {user.username}.", "",
               "<!-- drafting-job " + json.dumps({"book": book, "languages": wanted}) + " -->"]
+    issue = _github("issues", "POST", {"title": f"Draft {book_name(book)} in {names}",
+                                       "body": "\n".join(lines), "labels": [LABEL]})
+    record(user, "job.file", f"#{issue['number']} {book}", languages=wanted, **({"bulk": True} if bulk else {}))
+    return issue
+
+
+def _plan(books, wanted, coverage, open_):
+    """What a bulk request would file, [{"book", "languages"}] in Bible
+    order, and the books it leaves out, [{"book", "reason"}]. A book gets the
+    languages it still lacks that no open job already asks for; as for one
+    job, English comes first."""
+    plan, skipped = [], []
+    for book in books:
+        cov = coverage[book]
+        missing = [c for c in wanted if cov[c]["state"] != "drafted"]
+        if not missing:
+            skipped.append({"book": book, "reason": "already drafted"})
+            continue
+        asked = {}
+        for job in open_:
+            if job.get("book") == book:
+                for c in job.get("languages", []):
+                    asked.setdefault(c, job["number"])
+        free = [c for c in missing if c not in asked]
+        if not free:
+            skipped.append({"book": book, "reason": "already asked for in "
+                            + ", ".join(sorted({f"#{asked[c]}" for c in missing}))})
+            continue
+        if "en" not in free and cov["en"]["state"] != "drafted":
+            skipped.append({"book": book, "reason": "not drafted in English yet"})
+            continue
+        plan.append({"book": book, "languages": free})
+    return plan, skipped
+
+
+@admin_view("jobs", methods=("POST",))
+def bulk(request):
+    data = request.data if isinstance(request.data, dict) else {}
+    dry_run = bool(data.get("dry_run"))
+    if not dry_run and not settings.OWB_GITHUB_TOKEN:
+        return Response({"detail": "Set OWB_GITHUB_TOKEN on the API service to file jobs from here.",
+                         "code": "not_configured"}, status=status.HTTP_503_SERVICE_UNAVAILABLE)
+    wanted = [c for c in languages.CODES if c in (data.get("languages") or [])]
+    if not wanted:
+        raise ValidationError({"languages": "Choose at least one language.", "code": "invalid_language"})
+    if data.get("books"):
+        asked = {str(b).upper() for b in data["books"]}
+        if asked - set(CHAPTERS):
+            raise ValidationError({"books": f"Unknown book {sorted(asked - set(CHAPTERS))[0]!r}.",
+                                   "code": "invalid_book"})
+        books = [c for c in refs.BOOK_CODES if c in asked]
+    elif data.get("testament") in TESTAMENTS:
+        books = list(TESTAMENTS[data["testament"]])
+    else:
+        raise ValidationError({"testament": "Choose the Old Testament, the New Testament or both.",
+                               "code": "invalid_testament"})
+    note = str(data.get("note", "") or "").strip()[:2000]
+    coverage = {b["code"]: b["languages"] for b in _coverage()}
     try:
-        issue = _github("issues", "POST", {"title": f"Draft {book_name(book)} in {names}",
-                                           "body": "\n".join(lines), "labels": [LABEL]})
+        open_ = open_jobs()
     except GitHubError:
-        return Response({"detail": "GitHub refused the job. Check OWB_GITHUB_TOKEN can create issues.",
-                         "code": "github"}, status=status.HTTP_503_SERVICE_UNAVAILABLE)
-    record(request.user, "job.file", f"#{issue['number']} {book}", languages=wanted)
-    return Response({"number": issue["number"], "url": issue["html_url"]}, status=status.HTTP_201_CREATED)
+        return Response({"detail": "GitHub could not be reached. Try again in a minute.", "code": "github"},
+                        status=status.HTTP_503_SERVICE_UNAVAILABLE)
+    plan, skipped = _plan(books, wanted, coverage, open_)
+    now, later = plan[:BULK_LIMIT], plan[BULK_LIMIT:]
+    answer = {"dry_run": dry_run, "plan": now, "skipped": skipped, "remaining": len(later),
+              "limit": BULK_LIMIT, "filed": []}
+    if dry_run:
+        return Response(answer)
+    for i, job in enumerate(now):
+        try:
+            issue = _file_issue(request.user, job["book"], job["languages"], coverage[job["book"]], note,
+                                bulk=True)
+        except GitHubError:
+            # Stop at the first refusal; the rest are reported as not filed.
+            answer["not_filed"] = now[i:]
+            answer["error"] = (f"GitHub refused the job for {book_name(job['book'])}: "
+                               f"{len(answer['filed'])} filed, {len(now) - i} not.")
+            break
+        answer["filed"].append({**job, "number": issue["number"], "url": issue["html_url"]})
+    if answer.get("error") and not answer["filed"]:
+        return Response({**answer, "detail": answer["error"], "code": "github"},
+                        status=status.HTTP_503_SERVICE_UNAVAILABLE)
+    return Response(answer, status=status.HTTP_201_CREATED if answer["filed"] else status.HTTP_200_OK)

@@ -180,6 +180,13 @@
     "hl_blue": "Tô xanh dương",
     "hl_pink": "Tô hồng",
     "saved_all": "Mọi câu đã lưu",
+    "my_note": "Ghi chú của bạn",
+    "my_note_add": "Thêm ghi chú",
+    "my_note_edit": "Sửa ghi chú",
+    "my_note_save": "Lưu ghi chú",
+    "my_note_cancel": "Hủy",
+    "my_note_delete": "Xóa ghi chú",
+    "my_note_private": "Chỉ bạn thấy được ghi chú của mình. Khi đăng nhập, chúng theo bạn sang các thiết bị khác.",
     "step_prev": "Câu trước",
     "step_next": "Câu sau",
     "step_notes": "Câu có ghi chú tiếp theo",
@@ -309,6 +316,54 @@
   "about.licences": "Giấy phép",
   "about.licences_text": "Bản dịch, các bản ghi lý do và phần liên kết từ ngữ được hiến tặng vào phạm vi công cộng theo <a href=\"https://creativecommons.org/publicdomain/zero/1.0/\">CC0 1.0</a>. Mã nguồn dùng giấy phép MIT. Các bản văn nguồn giữ giấy phép riêng, được ghi công bên dưới.",
   "about.source": "Mã nguồn và dữ liệu:",
+  "book_page": {
+    "title": "{book}: giới thiệu và các chương",
+    "draft": "Phần giới thiệu này là bản nháp được soạn với sự trợ giúp của AI. Cũng như bản dịch, nó vẫn là bản nháp cho đến khi một người duyệt có tên kiểm tra.",
+    "start": "Bắt đầu đọc",
+    "chapters": "Các chương",
+    "chapter": "Chương {n}",
+    "articles": "Bài viết về {book}"
+  },
+  "status": {
+    "nav": "Tình trạng bản dịch",
+    "title": "Tình trạng bản dịch",
+    "description": "Bao nhiêu phần của Open Word Bible là bản nháp, và bao nhiêu đã được một người duyệt phê duyệt, đếm từ chính bản dịch.",
+    "heading": "Bản dịch đang ở đâu",
+    "dek": "Mỗi câu được soạn với sự trợ giúp của AI và vẫn là bản nháp cho đến khi một người duyệt có tên, đọc được ngôn ngữ gốc, phê duyệt. Các con số này được đếm từ chính bản dịch mỗi khi trang web được cập nhật.",
+    "sentences": "Câu đã soạn",
+    "drafts": "Vẫn là bản nháp",
+    "reviewed": "Đã được người duyệt",
+    "by_status": "Theo tình trạng duyệt",
+    "by_language": "Theo ngôn ngữ",
+    "by_book": "Theo sách",
+    "status": "Tình trạng",
+    "language": "Ngôn ngữ",
+    "book": "Sách",
+    "count": "Câu",
+    "how": "Một câu được duyệt như thế nào",
+    "report": "Bạn thấy lỗi trong bản nháp? Xin <a href=\"{issues}\">báo cho chúng tôi</a>.",
+    "thousands": "."
+  },
+  "download": {
+    "nav": "Tải văn bản",
+    "title": "Tải xuống",
+    "description": "Open Word Bible dưới dạng tệp sẵn dùng: USFM và JSON cho mỗi ngôn ngữ và mỗi mức, tự do sử dụng (CC0).",
+    "heading": "Tải văn bản",
+    "dek": "Toàn bộ bản dịch dưới dạng tệp, cho mỗi ngôn ngữ và mỗi mức, dành cho phần mềm Kinh Thánh, ứng dụng và các dự án của bạn. Các tệp được tạo lại từ bản dịch mỗi khi trang web được cập nhật.",
+    "draft": "Mỗi câu được soạn với sự hỗ trợ của AI và vẫn là bản nháp cho đến khi một người duyệt có tên phê duyệt. Tệp manifest của mỗi bản đếm các câu theo <a href=\"{status}\">tình trạng duyệt</a>.",
+    "usfm_note": "<b>USFM</b>: mỗi sách một tệp, định dạng chuẩn của phần mềm Kinh Thánh và công cụ xuất bản.",
+    "json_note": "<b>JSON</b>: sách, chương và câu trong một tệp, dành cho ứng dụng và script.",
+    "settings_note": "Mỗi tệp zip cũng có manifest.json (ấn bản, cách đánh số câu, các thiết lập và những câu chưa dịch), một README và giấy phép. Văn bản dùng các thiết lập đọc mặc định.",
+    "licence": "Văn bản được hiến tặng cho phạm vi công cộng (CC0): bạn có thể dùng, sửa và chia sẻ mà không cần xin phép. Ghi nguồn Open Word Bible được hoan nghênh.",
+    "counts": "{verses} câu; {missing} câu chưa dịch.",
+    "level": "Mức",
+    "usfm": "USFM",
+    "json": "JSON",
+    "kb": "{n} KB",
+    "mb": "{n} MB",
+    "decimal": ",",
+    "built": "Tạo ngày {date}."
+  },
   "about.credits_language": "Phần ghi công được viết bằng tiếng Anh, với tên và giấy phép như tác giả công bố.",
   "beliefs": {
     "title": "Điều chúng tôi tin",
@@ -355,14 +410,14 @@
     "title": "Quyền riêng tư",
     "description": "Open Word Bible lưu giữ gì về bạn và vì sao: không quảng cáo, không theo dõi, và chỉ có tài khoản nếu bạn muốn.",
     "heading": "Quyền riêng tư",
-    "updated": "Cập nhật lần cuối ngày 15 tháng 10, 2026",
+    "updated": "Cập nhật lần cuối ngày 17 tháng 10, 2026",
     "dek": "Bạn có thể đọc Open Word Bible mà không cần tài khoản, không có quảng cáo và không bị theo dõi. Trang này cho biết chúng tôi lưu giữ gì khi bạn đăng nhập, và vì sao.",
     "sections": [
       [
         "Đọc mà không cần tài khoản",
         [
           "Chúng tôi không dùng công cụ phân tích, quảng cáo hay cookie theo dõi. Mọi trang, phông chữ và mã đều đến từ chính trang của chúng tôi, nên không công ty nào khác biết bạn đọc gì ở đây.",
-          "Cài đặt đọc, chỗ đang đọc, dấu trang, phần đánh dấu, các tìm kiếm gần đây, tiến độ kế hoạch đọc và các chương bạn lưu để đọc ngoại tuyến được giữ trong trình duyệt của bạn, không gửi đến chúng tôi. Xóa dữ liệu trình duyệt của trang này, hoặc chọn <em>Xóa thiết bị này</em> trên <a href=\"{account}\">trang tài khoản</a>, sẽ xóa chúng."
+          "Cài đặt đọc, chỗ đang đọc, dấu trang, phần đánh dấu, ghi chú, các tìm kiếm gần đây, tiến độ kế hoạch đọc và các chương bạn lưu để đọc ngoại tuyến được giữ trong trình duyệt của bạn, không gửi đến chúng tôi. Xóa dữ liệu trình duyệt của trang này, hoặc chọn <em>Xóa thiết bị này</em> trên <a href=\"{account}\">trang tài khoản</a>, sẽ xóa chúng."
         ]
       ],
       [
@@ -375,7 +430,7 @@
         "Nếu bạn tạo tài khoản",
         [
           "Tài khoản chỉ giữ những gì cần để hoạt động:",
-          "<ul><li>địa chỉ email của bạn, dùng để đăng nhập, và mật khẩu nếu bạn chọn đặt, chỉ được lưu dưới dạng mã băm an toàn;</li><li>tên hiển thị, nếu bạn đặt, được hiện cho người duyệt trên các góp ý và câu hỏi của bạn;</li><li>dấu trang và phần đánh dấu của bạn (kèm lời của câu Kinh Thánh như bạn đã thấy) và chỗ bạn đang đọc, để chúng theo bạn sang các thiết bị khác;</li><li>mỗi thiết bị đã đăng nhập: phần tự mô tả của trình duyệt, lúc đăng nhập và lần dùng gần nhất (đăng xuất sẽ xóa thiết bị đó);</li><li>vai trò bạn giữ, như người duyệt hay biên tập viên, và hồ sơ duyệt ghi ai đã chấp thuận điều gì, và khi nào.</li></ul>",
+          "<ul><li>địa chỉ email của bạn, dùng để đăng nhập, và mật khẩu nếu bạn chọn đặt, chỉ được lưu dưới dạng mã băm an toàn;</li><li>tên hiển thị, nếu bạn đặt, được hiện cho người duyệt trên các góp ý và câu hỏi của bạn;</li><li>các góp ý và câu hỏi bạn gửi về một câu Kinh Thánh, kèm câu trả lời, để biên tập viên có thể trả lời bạn qua email;</li><li>dấu trang, phần đánh dấu và ghi chú riêng của bạn (kèm lời của câu Kinh Thánh như bạn đã thấy), chỗ bạn đang đọc, tiến độ kế hoạch đọc và cài đặt đọc (như mức độ đọc và các lựa chọn cách diễn đạt), để chúng theo bạn sang các thiết bị khác;</li><li>mỗi thiết bị đã đăng nhập: phần tự mô tả của trình duyệt, lúc đăng nhập và lần dùng gần nhất (đăng xuất sẽ xóa thiết bị đó);</li><li>vai trò bạn giữ, như người duyệt hay biên tập viên, và hồ sơ duyệt ghi ai đã chấp thuận điều gì, và khi nào.</li></ul>",
           "Liên kết đăng nhập và khóa thiết bị chỉ được lưu dưới dạng dấu vân tay, không thể biến ngược lại thành liên kết hay khóa dùng được."
         ]
       ],
@@ -389,13 +444,13 @@
       [
         "Ai khác xử lý dữ liệu của bạn",
         [
-          "Chúng tôi không bán dữ liệu của bạn, không chia sẻ với các bên quảng cáo và không dùng nó để lập hồ sơ về bạn. Một vài dịch vụ giúp chúng tôi vận hành trang: Render lưu trữ trang, máy chủ và cơ sở dữ liệu, và như mọi nhà cung cấp lưu trữ, giữ nhật ký yêu cầu trong thời gian ngắn; một dịch vụ email gửi thư đăng nhập; và khi có lỗi, một báo cáo lỗi được gửi đến Sentry, trong đó địa chỉ, cookie, tìm kiếm và các chi tiết khác của yêu cầu đã được loại bỏ."
+          "Chúng tôi không bán dữ liệu của bạn, không chia sẻ với các bên quảng cáo và không dùng nó để lập hồ sơ về bạn. Một vài dịch vụ giúp chúng tôi vận hành trang: Render lưu trữ trang, máy chủ và cơ sở dữ liệu, và như mọi nhà cung cấp lưu trữ, giữ nhật ký yêu cầu trong thời gian ngắn; một dịch vụ email gửi thư đăng nhập và thư trả lời các góp ý, câu hỏi của bạn; và khi có lỗi, một báo cáo lỗi được gửi đến Sentry, trong đó địa chỉ, cookie, tìm kiếm và các chi tiết khác của yêu cầu đã được loại bỏ."
         ]
       ],
       [
         "Lựa chọn của bạn",
         [
-          "Trên <a href=\"{account}\">trang tài khoản</a>, bạn có thể tải về thông tin tài khoản, xóa thiết bị này và xóa tài khoản. Xóa tài khoản sẽ xóa địa chỉ email, tên hiển thị, mật khẩu, thiết bị, dấu trang, phần đánh dấu và chỗ đang đọc của bạn.",
+          "Trên <a href=\"{account}\">trang tài khoản</a>, bạn có thể tải về thông tin tài khoản, xóa thiết bị này và xóa tài khoản. Xóa tài khoản sẽ xóa địa chỉ email, tên hiển thị, mật khẩu, thiết bị, dấu trang, phần đánh dấu, ghi chú, chỗ đang đọc, tiến độ kế hoạch đọc, cài đặt đọc của bạn, cùng các góp ý và câu hỏi bạn đã gửi.",
           "Một ngoại lệ: tài khoản của người duyệt được giữ lại cùng hồ sơ duyệt, vì hồ sơ ghi ai đã chấp thuận từng câu. Hãy nhờ một biên tập viên đóng tài khoản ấy."
         ]
       ],
@@ -515,14 +570,17 @@
   "reader.listen": "Nghe",
   "saved.title": "Câu đã lưu",
   "saved.heading": "Các câu bạn đã lưu",
-  "saved.dek": "Những câu bạn đánh dấu hoặc tô sáng khi đọc được lưu trong trình duyệt này, trên thiết bị này.",
-  "saved.empty": "Chưa lưu gì cả. Hãy chọn một câu khi đọc, rồi đánh dấu hoặc tô sáng câu ấy.",
+  "saved.dek": "Những câu bạn đánh dấu, tô sáng hoặc ghi chú khi đọc được lưu trong trình duyệt này, trên thiết bị này.",
+  "saved.empty": "Chưa lưu gì cả. Hãy chọn một câu khi đọc, rồi đánh dấu, tô sáng hoặc thêm ghi chú cho câu ấy.",
   "saved.show": "Hiện",
   "saved.all": "Tất cả",
   "saved.bookmarks": "Đánh dấu",
   "saved.highlights": "Tô sáng",
   "saved.remove": "Xóa",
   "saved.bookmark": "Đã đánh dấu",
+  "saved.notes": "Ghi chú",
+  "saved.note": "Ghi chú của bạn",
+  "saved.confirm": "Bấm lần nữa: ghi chú của bạn cũng sẽ bị xóa",
   "reader.strip": "{book}: các chương",
   "reader.turns": "Đoạn trước và đoạn sau",
   "reader.prev": "&larr; Trước",
@@ -541,9 +599,11 @@
   "account.display_name_note": "(hiển thị cho người duyệt trên các góp ý và câu hỏi)",
   "account.save": "Lưu",
   "account.soon": "Sắp ra mắt",
-  "account.soon_text": "Ghi chú riêng cho bất kỳ câu nào; sau đó là đề xuất chỉnh sửa hoặc đặt câu hỏi về một quyết định dịch thuật.",
-  "account.synced": "Các đánh dấu, phần tô sáng và vị trí đang đọc được lưu cùng tài khoản của bạn, nên chúng theo bạn sang các thiết bị khác.",
+  "account.soon_text": "Ghi chú riêng cho bất kỳ câu nào.",
+  "account.synced": "Các đánh dấu, phần tô sáng, ghi chú, vị trí đang đọc, tiến độ kế hoạch đọc và cài đặt đọc được lưu cùng tài khoản của bạn, nên chúng theo bạn sang các thiết bị khác.",
   "account.synced_link": "Xem các câu bạn đã lưu",
+  "account.messages": "Góp ý và câu hỏi của bạn",
+  "account.messages_text": "Những gì bạn đã gửi ban biên tập từ một câu (“Góp ý hoặc hỏi” trong trình đọc), cùng thư trả lời, cũng được gửi đến email của bạn.",
 
   "login.title_sign_in": "Chào mừng bạn trở lại",
   "login.title_sign_up": "Tạo tài khoản",
@@ -599,7 +659,7 @@
   "account.delete_text": "Xóa vĩnh viễn tài khoản, tên hiển thị và các thiết bị đã đăng nhập của bạn. Không thể hoàn tác.",
   "account.delete": "Xóa tài khoản",
   "account.sign_out": "Đăng xuất",
-  "account.ui": {"reader": "Người đọc", "error": "Đã có lỗi xảy ra.", "offline": "Không kết nối được với Open Word Bible. Hãy kiểm tra kết nối mạng rồi thử lại.", "saved": "Đã lưu.", "password_set": "Đã đặt", "password_none": "Chưa có: bạn đăng nhập bằng liên kết qua email hoặc Google.", "confirm": "Nhấp lần nữa để xác nhận", "cleared": "Đã xóa.", "has_reviews": "Tài khoản có lịch sử duyệt được giữ lại cùng hồ sơ. Hãy nhờ một biên tập viên đóng tài khoản của bạn."},
+  "account.ui": {"reader": "Người đọc", "error": "Đã có lỗi xảy ra.", "offline": "Không kết nối được với Open Word Bible. Hãy kiểm tra kết nối mạng rồi thử lại.", "saved": "Đã lưu.", "password_set": "Đã đặt", "password_none": "Chưa có: bạn đăng nhập bằng liên kết qua email hoặc Google.", "confirm": "Nhấp lần nữa để xác nhận", "cleared": "Đã xóa.", "has_reviews": "Tài khoản có lịch sử duyệt được giữ lại cùng hồ sơ. Hãy nhờ một biên tập viên đóng tài khoản của bạn.", "messages_empty": "Bạn chưa gửi gì.", "suggestion": "Góp ý", "question": "Câu hỏi", "status_new": "Đang chờ biên tập viên", "status_answered": "Đã trả lời", "status_done": "Đã xử lý", "status_declined": "Đã đóng", "reply": "Ban biên tập trả lời:"},
   "404.title": "Không tìm thấy",
   "404.heading": "Trang này không có ở đây.",
   "404.sub": "Có thể trang đã được chuyển đi, hoặc địa chỉ bị gõ sai. Đến nay mới chỉ có một số đoạn được dịch.",

@@ -1,11 +1,12 @@
-"""Syncing a reader's bookmarks, highlights and reading place (accounts/reading.py)."""
+"""Syncing a reader's bookmarks, highlights, reading place, reading-plan
+progress and settings (accounts/reading.py)."""
 import time
 
 from django.contrib.auth import get_user_model
 from django.test import TestCase
 from rest_framework.test import APIClient
 
-from accounts.models import ApiToken, Mark, ReadingPlace, new_secret
+from accounts.models import ApiToken, Mark, ReaderState, ReadingPlace, new_secret
 
 
 def device(user):
@@ -39,7 +40,8 @@ class ReadingSyncTest(TestCase):
         out = self.sync(marks={"JHN.3.16": {"b": True, "h": "yellow", "text": "For God", "lang": "en", "at": 100}},
                         place={"book": "JHN", "chapter": 3, "verse": "16", "at": 100})
         expected = {"marks": {"JHN.3.16": {"b": True, "h": "yellow", "text": "For God", "lang": "en", "at": 100}},
-                    "place": {"book": "JHN", "chapter": 3, "verse": "16", "at": 100}}
+                    "place": {"book": "JHN", "chapter": 3, "verse": "16", "at": 100},
+                    "plans": None, "settings": None}
         self.assertEqual(out, expected)
         self.assertEqual(self.client.get("/api/reading").json(), expected)
 
@@ -60,6 +62,24 @@ class ReadingSyncTest(TestCase):
         out = self.sync(marks={"JHN.3.16": {"at": 200}})
         self.assertEqual(out["marks"]["JHN.3.16"], {"at": 200})
         self.assertEqual(Mark.objects.get().highlight, "")
+
+    def test_a_note_is_kept_synced_and_cleared_like_a_mark(self):
+        out = self.sync(marks={"JHN.3.16": {"n": "Read this at the funeral.", "text": "For God", "lang": "en",
+                                            "at": 100}})
+        self.assertEqual(out["marks"]["JHN.3.16"],
+                         {"n": "Read this at the funeral.", "text": "For God", "lang": "en", "at": 100})
+        # A newer edit on another device wins; clearing it reaches every device.
+        phone = device(self.user)
+        self.assertEqual(self.sync(phone, marks={"JHN.3.16": {"n": "Edited", "at": 200}})["marks"]["JHN.3.16"]["n"],
+                         "Edited")
+        self.assertEqual(self.sync(marks={"JHN.3.16": {"at": 300}})["marks"]["JHN.3.16"], {"at": 300})
+        self.assertEqual(Mark.objects.get().note, "")
+
+    def test_a_note_is_text_and_overlong_ones_are_cut(self):
+        r = self.client.post("/api/reading", {"marks": {"JHN.3.16": {"n": ["x"], "at": 1}}}, format="json")
+        self.assertEqual(r.status_code, 400)
+        out = self.sync(marks={"JHN.3.16": {"n": "x" * 9000, "at": 1}})
+        self.assertEqual(len(out["marks"]["JHN.3.16"]["n"]), 5000)
 
     def test_the_latest_place_wins(self):
         self.sync(place={"book": "JHN", "chapter": 3, "verse": "16", "at": 200})
@@ -94,4 +114,84 @@ class ReadingSyncTest(TestCase):
     def test_readers_see_only_their_own(self):
         self.sync(marks={"JHN.3.16": {"b": True, "at": 1}}, place={"book": "JHN", "chapter": 3, "verse": "16", "at": 1})
         _, other = signed_in("other@example.org")
-        self.assertEqual(other.get("/api/reading").json(), {"marks": {}, "place": None})
+        self.assertEqual(other.get("/api/reading").json(),
+                         {"marks": {}, "place": None, "plans": None, "settings": None})
+
+
+def plans(active=None, at=0, **each):
+    return {"active": active, "at": at, "plans": each}
+
+
+class PlanAndSettingsSyncTest(TestCase):
+    def setUp(self):
+        self.user, self.client = signed_in()
+
+    def sync(self, client=None, **body):
+        r = (client or self.client).post("/api/reading", body, format="json")
+        self.assertEqual(r.status_code, 200, r.content)
+        return r.json()
+
+    def test_plan_progress_is_kept_and_read_back(self):
+        sent = plans("mark", 100, mark={"start": "2026-10-12", "done": [3, 1, 2, 2], "at": 100})
+        out = self.sync(plans=sent)
+        self.assertEqual(out["plans"], plans("mark", 100, mark={"start": "2026-10-12", "done": [1, 2, 3], "at": 100}))
+        self.assertEqual(self.client.get("/api/reading").json()["plans"], out["plans"])
+
+    def test_the_latest_change_to_each_plan_wins(self):
+        self.sync(plans=plans("mark", 100, mark={"start": "2026-10-12", "done": [1, 2], "at": 200},
+                              john={"start": "2026-09-01", "done": [1], "at": 100}))
+        phone = device(self.user)
+        out = self.sync(phone, plans=plans("john", 300, mark={"start": "2026-10-12", "done": [1], "at": 150},
+                                           john={"start": "2026-09-01", "done": [1, 2], "at": 250},
+                                           acts={"start": "2026-10-01", "done": [], "at": 50}))
+        self.assertEqual(out["plans"]["plans"]["mark"]["done"], [1, 2])
+        self.assertEqual(out["plans"]["plans"]["john"]["done"], [1, 2])
+        self.assertIn("acts", out["plans"]["plans"])
+        self.assertEqual(out["plans"]["active"], "john")
+        # An older choice of plan loses; a newer one, even to stop reading, wins.
+        self.assertEqual(self.sync(plans=plans("mark", 200))["plans"]["active"], "john")
+        self.assertIsNone(self.sync(plans=plans(None, 400))["plans"]["active"])
+
+    def test_a_device_that_never_stamped_its_plans_loses(self):
+        self.sync(plans=plans("mark", 100, mark={"start": "2026-10-12", "done": [1, 2], "at": 100}))
+        unstamped = {"active": "mark", "plans": {"mark": {"start": "2026-10-01", "done": []}}}
+        out = self.sync(device(self.user), plans=unstamped)
+        self.assertEqual(out["plans"]["plans"]["mark"]["done"], [1, 2])
+
+    def test_the_latest_settings_win_whole(self):
+        self.sync(settings={"v": {"level": "L", "gender": 1, "partner": "BSB", "lang": "es"}, "at": 200})
+        out = self.sync(device(self.user), settings={"v": {"level": "R"}, "at": 100})
+        # The page's language is not a setting.
+        self.assertEqual(out["settings"], {"v": {"level": "L", "gender": 1, "partner": "BSB"}, "at": 200})
+        out = self.sync(settings={"v": {"level": "R"}, "at": 300})
+        self.assertEqual(out["settings"], {"v": {"level": "R"}, "at": 300})
+
+    def test_bad_copies_are_refused_and_nothing_is_saved(self):
+        for body in ({"plans": ["mark"]},
+                     {"plans": {"plans": ["mark"]}},
+                     {"plans": plans(mark={"start": "2026-10-12", "done": [], "at": -1})},
+                     {"settings": {"v": {"level": "L"}}},
+                     {"settings": {"v": ["level"], "at": 1}},
+                     {"marks": {"JHN.3.16": {"b": True, "at": 1}}, "settings": {"v": [], "at": 1}}):
+            r = self.client.post("/api/reading", body, format="json")
+            self.assertEqual(r.status_code, 400, body)
+        self.assertFalse(ReaderState.objects.exists())
+        self.assertFalse(Mark.objects.exists())
+
+    def test_a_stray_plan_or_setting_is_left_out_and_the_rest_kept(self):
+        good = {"start": "2026-10-12", "done": [1], "at": 1}
+        out = self.sync(plans=plans("bad", 1, mark=good,
+                                    bad={"start": "soon", "done": [], "at": 1},
+                                    zero={"start": "2026-10-12", "done": [0], "at": 1},
+                                    text={"start": "2026-10-12", "done": ["1"], "at": 1},
+                                    **{"../x": good}),
+                        settings={"v": {"level": "L", "partner": "<b>", "view": {"x": 1}, "Units": 1, "gender": True},
+                                  "at": 1})
+        self.assertEqual(out["plans"], plans(None, 1, mark=good))
+        self.assertEqual(out["settings"], {"v": {"level": "L"}, "at": 1})
+
+    def test_deleting_the_account_removes_them(self):
+        self.sync(plans=plans("mark", 1, mark={"start": "2026-10-12", "done": [1], "at": 1}),
+                  settings={"v": {"level": "L"}, "at": 1})
+        self.assertEqual(self.client.delete("/api/me").status_code, 204)
+        self.assertFalse(ReaderState.objects.exists())

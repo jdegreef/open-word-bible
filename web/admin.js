@@ -59,9 +59,27 @@
   function plural(n, one, many) { return num(n) + " " + (n === 1 ? one : (many || one + "s")); }
   function ghFile(path) { return GITHUB + "/blob/main/" + path; }
 
+  // Admin reads are kept for a minute, so going back to a section (or to
+  // one fetched ahead) draws at once. Anything that changes something
+  // forgets them all, so the next drawing asks again. Each caller gets its
+  // own copy, as views may change what they are given.
+  var READ_MS = 60000;
+  var reads = {};
+
   // The API, with the saved token. A 401 means the token is gone.
   function api(path, options) {
     options = options || {};
+    var method = options.method || "GET";
+    if (method !== "GET") reads = {};
+    if (method !== "GET" || path.indexOf("/api/admin/") !== 0) return request(path, options);
+    var hit = reads[path];
+    if (!hit || Date.now() - hit.at > READ_MS) {
+      hit = reads[path] = { at: Date.now(), data: request(path, options) };
+      hit.data.catch(function () { if (reads[path] === hit) delete reads[path]; });
+    }
+    return hit.data.then(function (data) { return JSON.parse(JSON.stringify(data)); });
+  }
+  function request(path, options) {
     var account = saved();
     var headers = { "Content-Type": "application/json" };
     if (account && account.token) headers.Authorization = "Bearer " + account.token;
@@ -151,7 +169,19 @@
     { id: "coverage", label: "Coverage", area: "overview", group: "Progress" },
     { id: "languages", label: "Languages", area: "overview", group: "Progress" },
     { id: "health", label: "Content health", area: "overview", group: "Progress" },
+    { id: "changes", label: "Changes", area: "overview", group: "Progress" },
     { id: "jobs", label: "Drafting jobs", area: "jobs", group: "Progress" },
+    { id: "work", label: "Work in progress", area: "overview", group: "Progress" },
+    { id: "review", label: "Review", area: "review", group: "Text" },
+    { id: "verse", label: "Verse inspector", area: "overview", group: "Text" },
+    { id: "decisions", label: "Uncertain decisions", area: "overview", group: "Text" },
+    { id: "terms", label: "Key terms", area: "overview", group: "Text" },
+    { id: "consistency", label: "Consistency", area: "overview", group: "Text" },
+    { id: "fixes", label: "Fix requests", area: "inbox", group: "Text" },
+    { id: "flags", label: "Reviewer flags", area: "inbox", group: "Text" },
+    { id: "articles", label: "Articles", area: "overview", group: "Text" },
+    { id: "export", label: "Export", area: "export", group: "Text" },
+    { id: "overlap", label: "Similarity", area: "overview", group: "Text" },
     { id: "inbox", label: "Reader inbox", area: "inbox", group: "Readers" },
     { id: "users", label: "Users", area: "users", group: "Readers" },
     { id: "engagement", label: "Engagement", area: "overview", group: "Readers" },
@@ -167,6 +197,7 @@
 
   function drawRail(current) {
     rail.textContent = "";
+    rail.appendChild(searchBox());
     var group = null, list = null;
     SECTIONS.filter(opens).forEach(function (s) {
       if (s.group !== group || !list) {
@@ -181,7 +212,12 @@
     rail.hidden = false;
   }
 
+  // Each drawing gets a number, so a slow answer for a section that has
+  // since been left (or a stop()) doesn't overwrite the page.
+  var drawing = 0;
+
   function route() {
+    var mine = ++drawing;
     var hash = location.hash.replace(/^#/, "") || "dashboard";
     var parts = hash.split("/");
     var name = parts[0], arg = decodeURIComponent(parts.slice(1).join("/"));
@@ -193,16 +229,19 @@
     main.setAttribute("aria-busy", "true");
     var draw = VIEWS[name];
     Promise.resolve().then(function () { return draw(arg); }).then(function (nodes) {
+      if (mine !== drawing) return;
       main.textContent = "";
       add(main, nodes);
       var status = main.querySelector(".admin-note");
       if (FLASH && status) note(status, FLASH);
       FLASH = "";
     }).catch(function (e) {
+      if (mine !== drawing) return;
       main.textContent = "";
       main.appendChild(head("Admin", section.label));
       main.appendChild(h("p", { class: "notice" }, e.message));
     }).then(function () {
+      if (mine !== drawing) return;
       main.removeAttribute("aria-busy");
       document.title = section.label + " · Admin · Open Word Bible";
     });
@@ -249,6 +288,12 @@
           h("p", null, h("a", { href: "#activity" }, "All activity")));
       }
       if (side.length) out.push(h("section", { class: "admin-block" }, side));
+      // The pages most often opened next, fetched once the dashboard is up.
+      setTimeout(function () {
+        ["/api/admin/coverage/", "/api/admin/languages/"].forEach(function (path) {
+          api(path).catch(function () { /* drawn with its own error if opened */ });
+        });
+      }, 300);
       return out;
     });
   };
@@ -289,7 +334,8 @@
       return [head("Progress", "Coverage", "Every book in every language. A tick is a book drafted whole; a percentage is the share of its drafted sentences in that language. Open a book for its chapters."),
         h("div", { class: "admin-toolbar" }, seg([["ot", "Old Testament"], ["nt", "New Testament"]], tab, function (v) {
           rememberTab("coverage", v); draw(v);
-        }), legend()), body];
+        }), legend()),
+        ME.admin.indexOf("jobs") >= 0 ? h("p", null, h("a", { href: "#jobs" }, "Queue missing books"), " on the drafting jobs board.") : null, body];
     });
   };
   function legend() {
@@ -340,7 +386,8 @@
         head(b.testament === "ot" ? "Old Testament" : "New Testament", b.name,
           drafted + " of " + b.chapters.length + " chapters drafted" + (b.updated ? "; last changed " + when(b.updated) : "") + "."),
         h("div", { class: "admin-toolbar" }, legend(),
-          b.open_messages && ME.admin.indexOf("inbox") >= 0 ? h("a", { href: "#inbox" }, plural(b.open_messages, "open reader message")) : null),
+          h("span", { class: "admin-actions" }, h("a", { href: "#overlap/" + b.code }, "Similarity to reference Bibles"),
+            b.open_messages && ME.admin.indexOf("inbox") >= 0 ? h("a", { href: "#inbox" }, plural(b.open_messages, "open reader message")) : null)),
         table(["Chapter", ["Sentences", { class: "admin-num" }]].concat(langs.map(function (l) {
           return [l.code, { title: l.name, class: "admin-cell" }];
         })), rows, "admin-coverage"),
@@ -394,6 +441,12 @@
       } else {
         out.push(h("p", { class: "notice" }, "GitHub couldn't be reached, so CI on main isn't shown."));
       }
+      out.push(h("section", { class: "admin-block" }, h("h2", null, "Alerts"),
+        h("p", { class: "admin-sub" }, "Super admins are emailed once about each of these, and again only when it changes."),
+        d.alerts.length ? h("ul", null, d.alerts.map(function (a) {
+          return h("li", null, h("a", { href: a.href }, a.title), " · ",
+            a.emailed_at ? "emailed " + when(a.emailed_at) : pill("not emailed yet", "warn"));
+        })) : h("p", { class: "admin-ok" }, "Nothing has broken.")));
       out.push(h("div", { class: "admin-tiles" },
         tile(num(d.sentences), "sentences in the database"),
         tile(num(d.content_files), "content files imported"),
@@ -454,10 +507,15 @@
   };
 
   // Reader inbox.
-  var INBOX = { status: "new", kind: "", lang: "" };
-  VIEWS.inbox = function () {
-    var q = "?status=" + INBOX.status + (INBOX.kind ? "&kind=" + INBOX.kind : "") + (INBOX.lang ? "&lang=" + INBOX.lang : "");
+  // #inbox/mine opens the messages assigned to you (the dashboard links it).
+  var INBOX = { status: "new", kind: "", lang: "", assigned: "" };
+  var INBOX_TEAM = [];
+  VIEWS.inbox = function (arg) {
+    if (arg === "mine") INBOX.assigned = "me";
+    var q = "?status=" + INBOX.status + (INBOX.kind ? "&kind=" + INBOX.kind : "") + (INBOX.lang ? "&lang=" + INBOX.lang : "") +
+      (INBOX.assigned ? "&assigned=" + INBOX.assigned : "");
     return api("/api/admin/inbox/" + q).then(function (d) {
+      INBOX_TEAM = d.team;
       var tabs = seg([["new", "New (" + d.counts.new + ")"], ["answered", "Answered (" + d.counts.answered + ")"],
         ["done", "Done (" + d.counts.done + ")"], ["declined", "Declined (" + d.counts.declined + ")"]], INBOX.status, function (v) {
         INBOX.status = v; route();
@@ -465,27 +523,51 @@
       var kind = select("inbox-kind", [["", "Suggestions and questions"], ["suggestion", "Suggestions"], ["question", "Questions"]], INBOX.kind);
       kind.addEventListener("change", function () { INBOX.kind = kind.value; route(); });
       kind.setAttribute("aria-label", "Kind");
-      return [head("Readers", "Reader inbox", "Suggestions and questions readers send from a verse. A reply is emailed to the reader once; mark a message done when it's dealt with."),
-        h("div", { class: "admin-toolbar" }, tabs, kind),
+      var whose = seg([["me", "Mine"], ["none", "Unassigned"], ["", "All"]], INBOX.assigned, function (v) {
+        INBOX.assigned = v; location.hash === "#inbox" ? route() : (location.hash = "#inbox");
+      });
+      return [head("Readers", "Reader inbox", "Suggestions and questions readers send from a verse. New messages come oldest first; assign one to say you're dealing with it. A reply is emailed to the reader once; mark a message done when it's dealt with."),
+        h("div", { class: "admin-toolbar" }, tabs, whose, kind),
         d.messages.length ? h("div", { class: "admin-messages" }, d.messages.map(messageCard)) : empty("No messages here."),
-        d.total > d.messages.length ? h("p", { class: "admin-sub" }, "Showing the newest " + d.messages.length + " of " + num(d.total) + ".") : null];
+        d.total > d.messages.length ? h("p", { class: "admin-sub" }, "Showing " + (INBOX.status === "new" ? "the longest waiting " : "the newest ") + d.messages.length + " of " + num(d.total) + ".") : null];
     });
   };
   function messageCard(m) {
     var card = h("article", { class: "admin-message" });
+    var draft = "";   // the reply being written, kept when the card is drawn again
     function draw() {
       card.textContent = "";
       add(card, [
         h("header", null, pill(m.kind === "question" ? "Question" : "Suggestion", m.kind === "question" ? "info" : ""),
           " ", h("a", { href: m.url, rel: "noopener" }, m.verse_label), " · ", m.language + (m.level ? " " + m.level : ""),
-          h("span", { class: "admin-sub" }, " from " + (m.from.name ? m.from.name + " <" + m.from.email + ">" : m.from.email) + ", " + when(m.created_at))),
-        h("blockquote", null, m.text)]);
+          h("span", { class: "admin-sub" }, " from " + (m.from.name ? m.from.name + " <" + m.from.email + ">" : m.from.email) + ", " + when(m.created_at)),
+          m.status === "new" ? [" ", pill(m.age_days ? plural(m.age_days, "day") + " waiting" : "today", m.waiting ? "warn" : "")] : null),
+        h("blockquote", null, m.text),
+        h("p", { class: "admin-actions" }, h("a", { href: "#verse/" + m.verse }, "Inspect " + m.verse_label),
+          (function () {
+            var b = h("button", { type: "button", class: "admin-link" }, "Request a fix");
+            b.addEventListener("click", function () { FIX_FROM = m; location.hash = "#verse/" + m.verse; });
+            return b;
+          })())]);
+      if (m.fixed_at) {
+        card.appendChild(h("p", null, pill("Led to a change", "good"), " ", h("a", { href: m.fix_url, rel: "noopener" }, "the pull request"),
+          h("span", { class: "admin-sub" }, " \u00b7 the reader was told " + when(m.fixed_at))));
+      }
       if (m.reply) {
         card.appendChild(h("div", { class: "admin-reply" }, h("p", { class: "admin-sub" }, "Answered by " + m.replied_by + ", " + when(m.replied_at)), h("p", null, m.reply)));
       }
       var status = h("p", { class: "admin-note", role: "status" });
+      card.appendChild(assignee(status));
       if (!m.reply) {
-        var text = h("textarea", { rows: 3, id: "reply-" + m.id, maxlength: 4000, placeholder: "Reply to the reader (emailed to them)" });
+        var text = h("textarea", { rows: 3, id: "reply-" + m.id, maxlength: 4000, placeholder: "Reply to the reader (emailed to them)",
+          value: draft, oninput: function () { draft = text.value; } });
+        var saved = select("saved-" + m.id, [["", "Start from a saved reply…"]].concat(m.replies.map(function (r) { return [r.key, r.label]; })), "");
+        saved.setAttribute("aria-label", "Saved replies");
+        saved.addEventListener("change", function () {
+          var r = m.replies.filter(function (x) { return x.key === saved.value; })[0];
+          if (r) { text.value = draft = r.text; text.focus(); }
+          saved.value = "";
+        });
         var send = h("button", { type: "button", class: "admin-btn primary" }, "Send reply");
         send.addEventListener("click", function () {
           if (!text.value.trim()) { note(status, "Write a reply first.", true); return; }
@@ -493,6 +575,7 @@
           update({ reply: text.value }).catch(function (e) { busy(send, false); note(status, e, true); });
         });
         card.appendChild(h("label", { class: "admin-label", for: "reply-" + m.id }, "Reply"));
+        card.appendChild(saved);
         card.appendChild(text);
         card.appendChild(h("div", { class: "admin-actions" }, send, statusButtons()));
       } else {
@@ -505,6 +588,16 @@
       card.appendChild(h("label", { class: "admin-label", for: "note-" + m.id }, "Editors' note"));
       card.appendChild(noteField);
       card.appendChild(status);
+      function assignee(status) {
+        var pick = select("assign-" + m.id, [["", "Nobody"]].concat(INBOX_TEAM.map(function (u) {
+          return [String(u.id), (u.name ? u.name + " (" + u.email + ")" : u.email) + (u.email === ME.email ? " — you" : "")];
+        })), m.assigned_to ? String(m.assigned_to.id) : "");
+        pick.addEventListener("change", function () {
+          update({ assigned_to: pick.value ? Number(pick.value) : null }).catch(function (e) { note(status, e, true); });
+        });
+        return h("p", { class: "admin-actions" }, h("label", { for: "assign-" + m.id }, "Assigned to "), pick,
+          m.assigned_to && m.assigned_at ? h("span", { class: "admin-sub" }, " since " + when(m.assigned_at)) : null);
+      }
       function statusButtons() {
         return [["done", "Mark done"], ["declined", "Decline"], ["new", "Back to new"]]
           .filter(function (s) { return s[0] !== m.status; }).map(function (s) {
@@ -520,6 +613,499 @@
     draw();
     return card;
   }
+
+  // ---- The verse inspector and fix requests ----------------------------
+
+  // The reader message a fix request comes from, set by its "Request a fix"
+  // button and used by the next verse drawn.
+  var FIX_FROM = null;
+  var LEVEL_NAMES = { L: "Literal", B: "Balanced", R: "Readable" };
+
+  // A rendering as text, with each reader setting's default shown and its
+  // alternative in the tooltip, verse numbers raised and poetry breaks as " / ".
+  function rendering(text) {
+    var span = h("span");
+    var re = /\{\{([a-z_]+):([^{}|]*)\|([^{}]*)\}\}|\\v (\d+) ?|\\q ?/g, last = 0, m;
+    while ((m = re.exec(text))) {
+      add(span, text.slice(last, m.index));
+      if (m[1]) add(span, h("span", { class: "admin-setting", title: m[1].replace(/_/g, " ") + ": " + m[3] }, m[2]));
+      else if (m[4]) add(span, h("sup", null, m[4]));
+      else add(span, " / ");
+      last = re.lastIndex;
+    }
+    add(span, text.slice(last));
+    return span;
+  }
+
+  function verseSearch(value) {
+    var input = h("input", { type: "search", id: "verse-q", value: value || "", placeholder: "John 1:1, jn 3 16, Juan 3:16 or JHN.1.1",
+      "aria-label": "Verse" });
+    var status = h("span", { class: "admin-note", role: "status" });
+    var form = h("form", { class: "admin-toolbar", role: "search" }, input, h("button", { type: "submit", class: "admin-btn" }, "Inspect"), status);
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      api("/api/admin/verses/?q=" + encodeURIComponent(input.value)).then(function (r) {
+        location.hash = "#verse/" + r.verse;
+      }, function (err) { note(status, err, true); });
+    });
+    return form;
+  }
+
+  VIEWS.verse = function (vid) {
+    if (!vid) {
+      return [head("Text", "Verse inspector", "Any verse's sentence records whole: the source words, every language at every level, every decision with its reason, and the file it lives in."),
+        verseSearch("")];
+    }
+    return api("/api/admin/verses/" + encodeURIComponent(vid) + "/").then(function (d) {
+      var names = {};
+      d.languages.forEach(function (l) { names[l.code] = l.name; });
+      var from = FIX_FROM && FIX_FROM.verse === d.verse ? FIX_FROM : null;
+      FIX_FROM = null;
+      var nav = h("div", { class: "admin-actions" },
+        d.neighbours[0] ? h("a", { href: "#verse/" + d.neighbours[0] }, "\u2039 " + d.neighbours[0]) : null,
+        d.neighbours[1] ? h("a", { href: "#verse/" + d.neighbours[1] }, d.neighbours[1] + " \u203a") : null,
+        h("a", { href: d.url, rel: "noopener" }, "Read it on the site"));
+      var out = [head("Verse inspector", d.label, d.records.length ? plural(d.records.length, "sentence") + " hold this verse" +
+        (d.updated ? "; last changed " + when(d.updated) : "") + "." : "No sentence holds this verse yet."), verseSearch(d.label), nav];
+      if (from) {
+        out.push(h("div", { class: "admin-reply" }, h("p", { class: "admin-sub" }, "Requesting a fix for " + (from.from.name || from.from.email) +
+          "'s " + from.kind + " (" + from.language + "):"), h("p", null, from.text)));
+      }
+      d.records.forEach(function (r) { out.push(recordCard(r, d, names, from)); });
+      if (d.messages && d.messages.length) {
+        out.push(h("section", { class: "admin-block" }, h("h2", null, "Reader messages"),
+          h("div", { class: "admin-messages" }, d.messages.map(messageCard))));
+      }
+      if (d.fixes.length) {
+        out.push(h("section", { class: "admin-block" }, h("h2", null, "Fix requests"), h("ul", { class: "admin-feed" }, d.fixes.map(function (f) {
+          return h("li", null, h("time", { datetime: f.at }, when(f.at)), h("span", null, h("a", { href: f.url, rel: "noopener" }, "#" + f.number),
+            " " + (names[f.language] || f.language) + ", by " + f.by));
+        }))));
+      }
+      return out;
+    });
+  };
+
+  function recordCard(r, d, names, from) {
+    var source = r.source.tokens.map(function (t) { return d.words[t]; });
+    var words = source.every(Boolean) && source.length ? h("p", { class: "admin-source", lang: r.source.language, dir: r.source.language === "hbo" ? "rtl" : null },
+      source.map(function (w) { return [h("span", { title: [w.lemma, w.gloss, w.morph].filter(Boolean).join(" \u00b7 ") }, w.text), " "]; }))
+      : h("p", { class: "admin-source", lang: r.source.language, dir: r.source.language === "hbo" ? "rtl" : null }, r.source.text);
+    var langs = Object.keys(r.renderings);
+    var rows = langs.map(function (code) {
+      return h("tr", null, h("th", { scope: "row" }, names[code] || code), ["L", "B", "R"].map(function (lv) {
+        var t = r.renderings[code][lv];
+        return h("td", { class: "admin-wrap", lang: code }, t ? rendering(t) : "\u2014");
+      }));
+    });
+    var meaning = r.decisions.filter(function (x) { return x.layer === "meaning"; });
+    var byLang = {};
+    r.decisions.filter(function (x) { return x.layer !== "meaning"; }).forEach(function (x) { (byLang[x.language] = byLang[x.language] || []).push(x); });
+    var file = d.files[r.id];
+    var card = h("section", { class: "admin-block admin-record" },
+      h("header", { class: "admin-toolbar" }, h("h2", null, r.id), h("span", null, pill(r.status === "ai_draft" ? "AI draft" : r.status.replace(/_/g, " "), r.status === "ai_draft" ? "" : "good"),
+        " ", file ? h("a", { href: ghFile(file), rel: "noopener" }, file.split("/").pop()) : null)),
+      words, h("p", { class: "admin-gloss" }, "Literal gloss: " + r.literal_gloss),
+      table(["Language", "Literal", "Balanced", "Readable"], rows, "admin-renderings"),
+      meaning.length ? [h("h3", { class: "admin-h3" }, "Meaning decisions"), h("div", { class: "admin-decisions" }, meaning.map(decision))] : null,
+      langs.filter(function (c) { return byLang[c]; }).map(function (c) {
+        return [h("h3", { class: "admin-h3" }, (names[c] || c) + " decisions"), h("div", { class: "admin-decisions" }, byLang[c].map(decision))];
+      }));
+    if (ME.admin.indexOf("inbox") >= 0) card.appendChild(fixForm(r, langs, names, from));
+    return card;
+  }
+
+  function decision(x) {
+    return h("div", { class: "admin-decision" + (x.uncertain ? " uncertain" : "") },
+      h("p", null, h("code", null, x.id), " ", h("span", { class: "admin-sub" }, x.category.replace(/_/g, " ") + (x.levels && x.levels.length ? " \u00b7 " + x.levels.join("") : "")),
+        x.uncertain ? [" ", pill("uncertain", "warn")] : null, x.footnote ? [" ", pill("footnote", "info")] : null),
+      h("p", null, h("strong", null, x.choice), x.alternatives.length ? h("span", { class: "admin-sub" }, " not: " + x.alternatives.join("; ")) : null),
+      h("p", { class: "admin-sub" }, x.reason));
+  }
+
+  function fixForm(r, langs, names, from) {
+    var open = !!from;
+    var box = h("div", { class: "admin-fix", hidden: !open });
+    var toggle = h("button", { type: "button", class: "admin-btn" }, "Request a fix");
+    toggle.addEventListener("click", function () { box.hidden = !box.hidden; if (!box.hidden) change.focus(); });
+    var lang = select("fix-lang-" + r.id, langs.map(function (c) { return [c, names[c] || c]; }),
+      from && langs.indexOf(from.language) >= 0 ? from.language : langs[0]);
+    var levels = h("fieldset", { class: "admin-checks-row" }, h("legend", null, "Levels"), ["L", "B", "R"].map(function (lv) {
+      return h("label", null, h("input", { type: "checkbox", value: lv, checked: !from || !from.level || from.level === lv }), " " + LEVEL_NAMES[lv]);
+    }));
+    var change = h("textarea", { id: "fix-change-" + r.id, rows: 3, maxlength: 2000, placeholder: "What should change, e.g. use “la Parole” for “le Verbe”" });
+    var reason = h("textarea", { id: "fix-reason-" + r.id, rows: 3, maxlength: 4000, placeholder: "Why (optional): the source, the style brief, a reader's point" });
+    var send = h("button", { type: "submit", class: "admin-btn primary" }, "File fix request");
+    var status = h("p", { class: "admin-note", role: "status" });
+    var form = h("form", { class: "admin-form stacked" },
+      h("label", { class: "admin-field", for: "fix-lang-" + r.id }, "Language", lang), levels,
+      h("label", { class: "admin-field", for: "fix-change-" + r.id }, "Change", change),
+      h("label", { class: "admin-field", for: "fix-reason-" + r.id }, "Reason", reason),
+      h("p", { class: "admin-sub" }, "A Claude session weighs it against the source and the style brief, then opens a pull request or explains why not. The sentence stays an AI draft."),
+      send, status);
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var picked = Array.prototype.map.call(levels.querySelectorAll("input:checked"), function (x) { return x.value; });
+      busy(send, true);
+      api("/api/admin/fixes/", { method: "POST", body: { record: r.id, verse: location.hash.split("/")[1], language: lang.value,
+        levels: picked, change: change.value, reason: reason.value, message: from ? from.id : null } }).then(function (res) {
+        status.textContent = "";
+        add(status, ["Filed as ", h("a", { href: res.url, rel: "noopener" }, "#" + res.number), "."]);
+        status.className = "admin-note";
+        change.value = reason.value = "";
+        busy(send, false);
+      }, function (err) { busy(send, false); note(status, err, true); });
+    });
+    box.appendChild(form);
+    return h("div", { class: "admin-fix-wrap" }, toggle, box);
+  }
+
+  VIEWS.fixes = function () {
+    return api("/api/admin/fixes/").then(function (d) {
+      var out = [head("Text", "Fix requests", "Wording changes asked for from the verse inspector or the reader inbox. Each is a GitHub issue labelled fix-request that a Claude session works into a pull request; nothing here marks a sentence reviewed."),
+        verseSearch("")];
+      if (!d.configured) out.push(h("p", { class: "notice" }, "Filing is off: set OWB_GITHUB_TOKEN on the API service in Render (a token that can create issues in " + d.repo + ")."));
+      if (d.error) out.push(h("p", { class: "notice" }, d.error));
+      out.push(h("section", { class: "admin-block" }, h("h2", null, "Open"),
+        d.fixes.length ? table(["Issue", "Sentence", "Language", "Filed", "Taken by"], d.fixes.map(function (f) {
+          return h("tr", null, h("td", null, h("a", { href: f.url, rel: "noopener" }, "#" + f.number)),
+            h("td", null, f.verse ? h("a", { href: "#verse/" + f.verse }, f.record || f.verse) : f.title),
+            h("td", null, f.language || "\u2014"), h("td", null, when(f.created_at)), h("td", null, f.assignees.join(", ") || "\u2014"));
+        })) : empty("No open fix requests.")));
+      return out;
+    });
+  };
+
+  // Uncertain decisions, filtered; each opens in the inspector, where a fix
+  // can be requested.
+  var DECISIONS = { layer: "", category: "", book: "", q: "", offset: 0 };
+  VIEWS.decisions = function () {
+    var f = DECISIONS;
+    var q = "?offset=" + f.offset + ["layer", "category", "book", "q"].map(function (k) {
+      return f[k] ? "&" + k + "=" + encodeURIComponent(f[k]) : "";
+    }).join("");
+    return api("/api/admin/decisions/" + q).then(function (d) {
+      function pick(id, label, options, key) {
+        var s = select(id, [["", label]].concat(options), f[key]);
+        s.setAttribute("aria-label", label);
+        s.addEventListener("change", function () {
+          f[key] = s.value; f.offset = 0;
+          if (key === "layer") { f.category = ""; f.book = ""; }
+          route();
+        });
+        return s;
+      }
+      var search = h("input", { type: "search", id: "decision-q", value: f.q, placeholder: "Words in the choice or reason", "aria-label": "Search decisions" });
+      var form = h("form", { class: "admin-toolbar", role: "search" },
+        pick("decision-layer", "Every layer", d.layers.map(function (l) { return [l.code, l.name + " (" + num(l.count) + ")"]; }), "layer"),
+        pick("decision-category", "Every category", d.categories.map(function (c) { return [c.code, c.code.replace(/_/g, " ") + " (" + num(c.count) + ")"]; }), "category"),
+        pick("decision-book", "Every book", d.books.map(function (b) { return [b.code, b.name + " (" + num(b.count) + ")"]; }), "book"),
+        search, h("button", { type: "submit", class: "admin-btn" }, "Search"));
+      form.addEventListener("submit", function (e) { e.preventDefault(); f.q = search.value.trim(); f.offset = 0; route(); });
+      var pager = h("div", { class: "admin-actions" });
+      if (d.offset > 0) pager.appendChild(h("button", { type: "button", class: "admin-btn", onclick: function () { f.offset = Math.max(0, d.offset - d.page); route(); } }, "\u2039 Earlier"));
+      if (d.offset + d.page < d.total) pager.appendChild(h("button", { type: "button", class: "admin-btn", onclick: function () { f.offset = d.offset + d.page; route(); } }, "Later \u203a"));
+      var names = {};
+      d.layers.forEach(function (l) { names[l.code] = l.name; });
+      return [head("Text", "Uncertain decisions", num(d.total) + " decisions the drafts mark uncertain" + (f.layer || f.category || f.book || f.q ? " match" : "") +
+        ", in Bible order. Open one in the inspector to read the sentence whole or request a fix."), form,
+        d.decisions.length ? h("div", { class: "admin-decisions" }, d.decisions.map(function (x) {
+          return h("div", { class: "admin-decision uncertain" },
+            h("p", null, h("a", { href: "#verse/" + x.verse }, x.label), " ", h("code", null, x.record + " " + x.key), " ",
+              h("span", { class: "admin-sub" }, (x.layer === "meaning" ? "meaning" : names[x.language] || x.language) + " \u00b7 " + x.category.replace(/_/g, " ") +
+                (x.levels.length ? " \u00b7 " + x.levels.join("") : "")), x.footnote ? [" ", pill("footnote", "info")] : null),
+            h("p", null, h("strong", null, x.choice), x.alternatives.length ? h("span", { class: "admin-sub" }, " not: " + x.alternatives.join("; ")) : null),
+            h("p", { class: "admin-sub" }, x.reason));
+        })) : empty("No decisions match."),
+        h("p", { class: "admin-sub" }, d.total ? "Showing " + num(d.offset + 1) + "\u2013" + num(d.offset + d.decisions.length) + " of " + num(d.total) + "." : ""),
+        pager];
+    });
+  };
+
+  // Key terms: the settled words, and where the drafts use them.
+  VIEWS.terms = function () {
+    return api("/api/admin/terms/").then(function (d) {
+      var rows = d.terms.map(function (t) {
+        var english = Array.isArray(t.english) ? t.english.join(", ") : Object.keys(t.english).map(function (lv) {
+          return lv + ": " + t.english[lv].join(", ");
+        }).join("; ");
+        return h("tr", null,
+          h("th", { scope: "row" }, h("span", { class: "admin-term", lang: t.language }, t.lemma), h("span", { class: "admin-sub" }, t.sense + " \u00b7 " + (t.language === "hbo" ? "H" : "G") + t.strong)),
+          h("td", null, english, h("span", { class: "admin-sub" }, t.note)),
+          h("td", { class: "admin-num" }, num(t.uses)),
+          h("td", { class: "admin-sub" }, d.languages.filter(function (l) { return l.code !== "en"; }).map(function (l) {
+            return l.code + " " + num(t.by_language[l.code]);
+          }).join(" \u00b7 ")),
+          h("td", { class: "admin-wrap" }, t.first.map(function (v) { return [h("a", { href: "#verse/" + v.verse }, v.label), " "]; }),
+            h("a", { href: SITE + "/terms/" + t.slug + "/", rel: "noopener" }, "All on the site")));
+      });
+      return [head("Text", "Key terms", "Greek and Hebrew words whose English is settled at every level (data/key_terms.json); owb.validate holds the English to them. Changing one is a change for every use, so it goes to the founder, not a single fix request."),
+        table(["Term", "English", ["Sentences", { class: "admin-num" }], "In other languages", "First uses"], rows)];
+    });
+  };
+
+  // Articles: each English article's state in every language, and jobs for
+  // the ones missing or behind their English.
+  var ARTICLE_STATE = { current: ["Current", "good"], out_of_date: ["Out of date", "warn"],
+    not_stamped: ["Not stamped", "warn"], missing: ["Missing", ""] };
+  var ARTICLES = { lang: "", todo: false };
+  VIEWS.articles = function () {
+    return api("/api/admin/articles/").then(function (d) {
+      var f = ARTICLES;
+      if (!f.lang) f.lang = d.languages[0].code;
+      var status = h("p", { class: "admin-note", role: "status" });
+      var tiles = h("div", { class: "admin-tiles" }, d.languages.map(function (l) {
+        var t = d.totals[l.code], done = d.articles.length - t.missing;
+        return tile(done + " / " + d.articles.length, l.name + " translated" + (t.out_of_date ? ", " + t.out_of_date + " out of date" : "") +
+          (t.not_stamped ? ", " + t.not_stamped + " not stamped" : ""));
+      }));
+      var langSel = select("article-lang", d.languages.map(function (l) { return [l.code, l.name]; }), f.lang);
+      langSel.setAttribute("aria-label", "Language to act on");
+      langSel.addEventListener("change", function () { f.lang = langSel.value; route(); });
+      var todo = h("label", null, h("input", { type: "checkbox", id: "article-todo", checked: f.todo }), " Only what needs work in that language");
+      todo.querySelector("input").addEventListener("change", function (e) { f.todo = e.target.checked; route(); });
+      var shown = d.articles.filter(function (a) { return !f.todo || a.languages[f.lang] !== "current"; });
+      var rows = shown.map(function (a) {
+        var state = a.languages[f.lang];
+        return h("tr", null,
+          d.can_file ? h("td", null, state !== "current" ? h("input", { type: "checkbox", value: a.slug, "aria-label": "Choose " + a.title }) : null) : null,
+          h("td", null, h("a", { href: SITE + "/articles/" + a.slug + "/", rel: "noopener" }, a.title), h("span", { class: "admin-sub" }, a.slug + " \u00b7 " + num(a.words) + " words \u00b7 " + a.date)),
+          d.languages.map(function (l) {
+            var st = ARTICLE_STATE[a.languages[l.code]];
+            return h("td", { class: "admin-cell" + (l.code === f.lang ? " on" : "") }, pill(st[0], st[1]));
+          }));
+      });
+      var out = [head("Text", "Articles", "Each English article and its translations, from scripts/check_translations.py: a translation is out of date when its English has changed since it was stamped."), tiles,
+        h("div", { class: "admin-toolbar" }, h("span", null, "Act on ", langSel), todo)];
+      if (d.can_file) {
+        if (!d.configured) out.push(h("p", { class: "notice" }, "Filing is off: set OWB_GITHUB_TOKEN on the API service in Render."));
+        if (d.error) out.push(h("p", { class: "notice" }, d.error));
+        var noteField = h("input", { id: "article-note", maxlength: 2000, placeholder: "A note for the session (optional)", "aria-label": "Note" });
+        var file = h("button", { type: "button", class: "admin-btn primary", disabled: !d.configured }, "File a job for the chosen articles");
+        var all = h("button", { type: "button", class: "admin-btn" }, "Choose all that need work");
+        all.addEventListener("click", function () { main.querySelectorAll("tbody input[type=checkbox]").forEach(function (c) { c.checked = true; }); });
+        file.addEventListener("click", function () {
+          var slugs = Array.prototype.map.call(main.querySelectorAll("tbody input:checked"), function (c) { return c.value; });
+          if (!slugs.length) { note(status, "Choose at least one article.", true); return; }
+          busy(file, true);
+          api("/api/admin/articles/", { method: "POST", body: { language: f.lang, slugs: slugs, note: noteField.value } }).then(function (r) {
+            FLASH = "Filed as #" + r.number + "."; route();
+          }, function (err) { busy(file, false); note(status, err, true); });
+        });
+        out.push(h("div", { class: "admin-actions" }, all, noteField, file), status);
+      }
+      out.push(table((d.can_file ? [""] : []).concat(["Article"], d.languages.map(function (l) { return [l.code, { class: "admin-cell", title: l.name }]; })), rows));
+      if (d.can_file) {
+        out.push(h("section", { class: "admin-block" }, h("h2", null, "Open article jobs"),
+          d.jobs && d.jobs.length ? table(["Issue", "Language", "Articles", "Filed"], d.jobs.map(function (j) {
+            return h("tr", null, h("td", null, h("a", { href: j.url, rel: "noopener" }, "#" + j.number)), h("td", null, j.language || "\u2014"),
+              h("td", { class: "admin-wrap" }, (j.slugs || []).join(", ")), h("td", null, when(j.created_at)));
+          })) : empty("No open article jobs.")));
+      }
+      return out;
+    });
+  };
+
+  // Work in progress: every job handed to Claude sessions, with its pull
+  // requests.
+  var WORK = { kind: "", state: "open" };
+  var PR_TONE = { merged: "good", open: "info", draft: "", closed: "bad" };
+  VIEWS.work = function () {
+    return api("/api/admin/work/").then(function (d) {
+      var items = d.items.filter(function (w) {
+        return (!WORK.kind || w.kind === WORK.kind) && (WORK.state === "all" || (WORK.state === "stale" ? w.stale : w.state === WORK.state));
+      });
+      var kind = select("work-kind", [["", "Every kind"], ["drafting-job", "Drafting jobs"], ["fix-request", "Fix requests"], ["article-job", "Article jobs"]], WORK.kind);
+      kind.setAttribute("aria-label", "Kind");
+      kind.addEventListener("change", function () { WORK.kind = kind.value; route(); });
+      var rows = items.map(function (w) {
+        var state = w.state === "closed" ? pill(w.state_reason === "not_planned" ? "Closed, not done" : "Done", w.state_reason === "not_planned" ? "" : "good")
+          : w.stale ? pill("Stalled", "bad") : w.prs.length ? pill("In review", "info") : pill("Waiting", "warn");
+        return h("tr", null,
+          h("td", null, h("a", { href: w.url, rel: "noopener" }, "#" + w.number), h("span", { class: "admin-sub" }, w.kind_label)),
+          h("td", { class: "admin-wrap" }, w.title, w.assignees.length ? h("span", { class: "admin-sub" }, "taken by " + w.assignees.join(", ")) : null),
+          h("td", null, state),
+          h("td", null, w.prs.length ? h("ul", { class: "admin-roles" }, w.prs.map(function (p) {
+            return h("li", null, pill(p.state, PR_TONE[p.state]), " ", h("a", { href: p.url, rel: "noopener" }, "#" + p.number));
+          })) : "\u2014"),
+          h("td", null, when(w.created_at), w.closed_at ? h("span", { class: "admin-sub" }, "closed " + when(w.closed_at)) : null));
+      });
+      return [head("Progress", "Work in progress", "Drafting jobs, fix requests and article jobs from the last " + d.days + " days, with the pull requests that name them. A job open for more than " + d.stale_hours + " hours with no pull request has stalled."),
+        d.error ? h("p", { class: "notice" }, d.error) : null,
+        d.counts ? h("div", { class: "admin-tiles" }, tile(num(d.counts.open), "open"), tile(num(d.counts.in_review), "with a pull request open"),
+          tile(num(d.counts.stale), "stalled", d.counts.stale ? "bad" : ""), tile(num(d.counts.done), "closed in " + d.days + " days")) : null,
+        h("div", { class: "admin-toolbar" }, seg([["open", "Open"], ["stale", "Stalled"], ["closed", "Closed"], ["all", "All"]], WORK.state, function (v) { WORK.state = v; route(); }), kind),
+        items.length ? table(["Issue", "What", "State", "Pull requests", "Filed"], rows) : empty("Nothing here.")];
+    });
+  };
+
+  // Similarity to the reference Bibles, per book (scripts/ngram_overlap.py).
+  var OVERLAP = { book: "JHN", lang: "en", min: 6 };
+  VIEWS.overlap = function (arg) {
+    if (arg) OVERLAP.book = arg.toUpperCase();
+    var f = OVERLAP;
+    return api("/api/admin/overlap/" + f.book + "/?lang=" + f.lang + "&min=" + f.min).then(function (d) {
+      var book = h("input", { id: "overlap-book", value: f.book, size: 6, "aria-label": "Book code", placeholder: "JHN" });
+      var lang = select("overlap-lang", [["en", "English"], ["es", "Spanish"]], f.lang);
+      lang.setAttribute("aria-label", "Language");
+      var min = select("overlap-min", [["5", "5+ words"], ["6", "6+ words"], ["8", "8+ words"], ["10", "10+ words"]], String(f.min));
+      min.setAttribute("aria-label", "Shortest run");
+      var form = h("form", { class: "admin-toolbar" }, book, lang, min, h("button", { type: "submit", class: "admin-btn" }, "Compare"));
+      form.addEventListener("submit", function (e) {
+        e.preventDefault(); f.book = book.value.trim().toUpperCase() || "JHN"; f.lang = lang.value; f.min = +min.value;
+        location.hash = "#overlap/" + f.book; route();
+      });
+      var rows = d.editions.map(function (e) {
+        return h("tr", null, h("th", { scope: "row" }, e.name, h("span", { class: "admin-sub" }, e.code)),
+          ["L", "B", "R"].map(function (lv) {
+            var v = e.share[lv];
+            return h("td", { class: "admin-num" + (v >= 50 ? " admin-high" : "") }, v === null ? "\u2014" : v + "%");
+          }), h("td", { class: "admin-num" }, num(e.longest) + " words"));
+      });
+      return [head("Text", "Similarity to reference Bibles", "The share of " + d.name + "'s drafted words that sit in runs of " + d.min + " or more words also found in the same verses of a public-domain Bible. Shared phrasing is often the common heritage of Bible English; a high share or long runs is where to check a draft wasn't built on a reference Bible."),
+        form,
+        d.editions.length ? table(["Bible", ["Literal", { class: "admin-num" }], ["Balanced", { class: "admin-num" }], ["Readable", { class: "admin-num" }], ["Longest run", { class: "admin-num" }]], rows)
+          : empty("No reference Bibles in this language are loaded, so there's nothing to compare against."),
+        h("p", { class: "admin-sub" }, num(d.sentences) + " sentences; words compared: L " + num(d.words.L) + ", B " + num(d.words.B) + ", R " + num(d.words.R) + ". Copyrighted Bibles are compared locally with scripts/ngram_overlap.py --extra."),
+        d.longest_runs.length ? h("section", { class: "admin-block" }, h("h2", null, "Longest shared runs"),
+          table(["Verse", "Level", "Bible", ["Words", { class: "admin-num" }], "Run"], d.longest_runs.map(function (r) {
+            return h("tr", null, h("td", null, h("a", { href: "#verse/" + r.verse }, r.record)), h("td", null, r.level), h("td", null, r.edition),
+              h("td", { class: "admin-num" }, num(r.length)), h("td", { class: "admin-wrap" }, r.text));
+          }))) : null];
+    });
+  };
+
+  // Export: the translation as a file (staff/export.py, owb/export.py), for
+  // Bible software and the apps that carry our text. The file is fetched
+  // with the account's token and saved from the browser.
+  var EXPORT = { lang: "en", level: "B", type: "usfm", numbering: "english", books: "", settings: {} };
+  var BOOK_SETS = { OT: [0, 39], NT: [39, 66] };
+  var SETTING_NAME = { gender: "Gender", christos: "Title", divine_name: "Name of God", deity_pronoun: "Pronouns for God",
+    units: "Measures", plural_you: "Plural you" };
+  function exportQuery(d) {
+    var f = EXPORT, books = f.books;
+    if (BOOK_SETS[books]) books = d.books.slice(BOOK_SETS[books][0], BOOK_SETS[books][1]).map(function (b) { return b.code; }).join(",");
+    var settings = Object.keys(f.settings).filter(function (k) { return f.settings[k] > 0; })
+      .map(function (k) { return k + ":" + f.settings[k]; }).join(",");
+    return "?lang=" + f.lang + "&level=" + f.level + "&type=" + f.type + "&numbering=" + f.numbering +
+      (books ? "&books=" + books : "") + (settings ? "&settings=" + settings : "");
+  }
+  function saveFile(path) {
+    var account = saved();
+    return fetch(API + path, { headers: account && account.token ? { Authorization: "Bearer " + account.token } : {} })
+      .catch(function () { throw new Error("Can't reach the server. Check your connection and try again."); })
+      .then(function (r) {
+        if (!r.ok) return r.json().catch(function () { return {}; }).then(function (data) {
+          throw new Error(message(data) || "Something went wrong (" + r.status + ").");
+        });
+        var m = /filename="([^"]+)"/.exec(r.headers.get("Content-Disposition") || "");
+        return r.blob().then(function (blob) {
+          var url = URL.createObjectURL(blob);
+          var a = h("a", { href: url, download: m ? m[1] : "open-word-bible" });
+          document.body.appendChild(a);
+          a.click();
+          a.remove();
+          setTimeout(function () { URL.revokeObjectURL(url); }, 10000);
+          return m ? m[1] : "the file";
+        });
+      });
+  }
+  VIEWS.export = function () {
+    return api("/api/admin/export/").then(function (d) {
+      var f = EXPORT;
+      var status = h("p", { class: "admin-note", role: "status" });
+      var result = h("div");
+      function language() { return d.languages.filter(function (l) { return l.code === f.lang; })[0]; }
+      var langSel = select("export-lang", d.languages.map(function (l) {
+        return [l.code, l.name + " (" + num(l.sentences.B || 0) + " sentences)"];
+      }), f.lang);
+      var levelSel = select("export-level", d.levels.map(function (l) { return [l.code, l.name]; }), f.level);
+      var typeSel = select("export-type", [["usfm", "USFM: a zip of one file per book"], ["json", "JSON: one file"]], f.type);
+      var numberingSel = select("export-numbering", [["english", "English Bible verse numbers"],
+        ["source", "Ours (Hebrew numbering in the Old Testament)"]], f.numbering);
+      var bookSel = select("export-books", [["", "The whole Bible"], ["OT", "Old Testament"], ["NT", "New Testament"]]
+        .concat(d.books.map(function (b) { return [b.code, b.name]; })), f.books);
+      var settingsBox = h("fieldset", { class: "admin-checks-row" }, h("legend", null, "Wording settings"));
+      function drawSettings() {
+        settingsBox.querySelectorAll("label").forEach(function (l) { l.remove(); });
+        language().settings.forEach(function (s) {
+          var sel = select("export-setting-" + s.name, s.options.map(function (o, i) {
+            return [String(i), o + (i === 0 ? " (default)" : "")];
+          }), String(f.settings[s.name] || 0));
+          sel.addEventListener("change", function () { f.settings[s.name] = +sel.value; changed(); });
+          settingsBox.appendChild(h("label", { class: "admin-field" }, SETTING_NAME[s.name] || s.name, sel));
+        });
+      }
+      function changed() {
+        f.lang = langSel.value; f.level = levelSel.value; f.type = typeSel.value;
+        f.numbering = numberingSel.value; f.books = bookSel.value;
+        var keep = {};
+        language().settings.forEach(function (s) { if (f.settings[s.name]) keep[s.name] = f.settings[s.name]; });
+        f.settings = keep;
+        result.textContent = "";
+        note(status, "");
+      }
+      [levelSel, typeSel, numberingSel, bookSel].forEach(function (s) { s.addEventListener("change", changed); });
+      langSel.addEventListener("change", function () { f.lang = langSel.value; f.settings = {}; drawSettings(); changed(); });
+      drawSettings();
+
+      var previewBtn = h("button", { type: "button", class: "admin-btn" }, "Preview");
+      var downloadBtn = h("button", { type: "submit", class: "admin-btn primary" }, "Download");
+      previewBtn.addEventListener("click", function () {
+        busy(previewBtn, true);
+        note(status, "Reading the text…");
+        api("/api/admin/export/preview/" + exportQuery(d)).then(function (p) {
+          note(status, "");
+          result.textContent = "";
+          var statuses = Object.keys(p.status).map(function (k) { return num(p.status[k]) + " " + k.replace(/_/g, " "); }).join(", ");
+          result.appendChild(h("div", { class: "admin-tiles" }, tile(num(p.verses), "verses"),
+            tile(num(p.books.length), "books"), tile(num(p.missing), "verses not translated yet", p.missing ? "warn" : "")));
+          result.appendChild(h("p", { class: "admin-sub" }, "Sentences by review state: " + (statuses || "none") + "."));
+          if (p.combined.length) {
+            result.appendChild(h("p", { class: "admin-sub" }, "Held under one verse, as no verse bridge crosses chapters: " +
+              p.combined.map(function (c) { return c.holds.join(" + ") + " (as " + c.verse + ")"; }).join("; ") + "."));
+          }
+          var missingBooks = Object.keys(p.missing_by_book);
+          if (missingBooks.length) {
+            result.appendChild(h("p", { class: "admin-sub" }, "Not translated yet, by book: " + missingBooks.slice(0, 20).map(function (b) {
+              return b + " " + num(p.missing_by_book[b]);
+            }).join(", ") + (missingBooks.length > 20 ? ", and " + (missingBooks.length - 20) + " more books" : "") +
+              ". The manifest lists each verse."));
+          }
+          result.appendChild(p.samples.length ? table(["Verse", "Text (our numbering)"], p.samples.map(function (s) {
+            return h("tr", null, h("th", { scope: "row" }, s.label), h("td", { class: "admin-wrap" }, s.text));
+          })) : empty("Nothing in this language at this level yet."));
+        }, function (err) { note(status, err, true); }).then(function () { busy(previewBtn, false); });
+      });
+      var form = h("form", { class: "admin-form stacked" },
+        h("label", { class: "admin-field", for: "export-lang" }, "Language", langSel),
+        h("label", { class: "admin-field", for: "export-level" }, "Level", levelSel),
+        h("label", { class: "admin-field", for: "export-books" }, "Books", bookSel),
+        h("label", { class: "admin-field", for: "export-type" }, "File", typeSel),
+        h("label", { class: "admin-field", for: "export-numbering" }, "Verse numbers", numberingSel),
+        settingsBox,
+        h("div", { class: "admin-actions" }, previewBtn, downloadBtn), status);
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        busy(downloadBtn, true);
+        note(status, "Making the file…");
+        saveFile("/api/admin/export/file/" + exportQuery(d)).then(function (name) {
+          note(status, "Saved " + name + ".");
+        }, function (err) { note(status, err, true); }).then(function () { busy(downloadBtn, false); });
+      });
+      return [head("Text", "Export", "Download the translation in one language at one level, for Bible software and for the apps that carry our text. Settings are applied, poetry runs on one line, and untranslated verses are left out, never filled from another Bible. A manifest.json in each file says what it holds."),
+        h("p", { class: "notice" }, "Every sentence is an AI-assisted draft until a named reviewer approves it, and the manifest says so. " +
+          "The text is " + d.licence + ". It is the text as of the last deploy" + (d.imported_at ? " (" + when(d.imported_at) + ")" : "") + "."),
+        h("p", null, "Every language at every level, at the default settings, is also on the public ",
+          h("a", { href: SITE + "/download/", rel: "noopener" }, "download page"), ", rebuilt with the site; send people there."),
+        h("section", { class: "admin-block" }, form, result),
+        h("section", { class: "admin-block" }, h("h2", null, "Recent downloads"),
+          d.recent.length ? table(["When", "File", "Verses", "By"], d.recent.map(function (a) {
+            return h("tr", null, h("td", null, when(a.at)), h("td", null, a.target, h("span", { class: "admin-sub" }, (a.detail.books || []).join(", ") || "whole Bible")),
+              h("td", { class: "admin-num" }, num(a.detail.verses)), h("td", null, a.by));
+          })) : empty("Nothing downloaded yet."))];
+    });
+  };
 
   // Users.
   var USERS = { q: "", role: "", offset: 0 };
@@ -654,13 +1240,14 @@
     "role.grant": "granted a role to", "role.revoke": "removed a role from", "role.invite": "invited",
     "user.delete": "deleted the account", "user.sign_out": "signed out the devices of",
     "message.reply": "answered", "message.done": "marked done", "message.declined": "declined", "message.new": "reopened",
-    "job.file": "filed drafting job", "email.send": "emailed the team:"
+    "job.file": "filed drafting job", "article.job": "filed article job", "digest.send": "sent the weekly digest to", "message.fixed": "told the reader their message led to a change:", "email.send": "emailed the team:", "fix.request": "requested fix",
+    "export.download": "downloaded"
   };
   function activityList(actions) {
     return h("ul", { class: "admin-feed" }, actions.map(function (a) {
       var extra = a.detail.role ? " (" + a.detail.role + ")" : a.detail.recipients !== undefined ? " (" + plural(a.detail.recipients, "person", "people") + ")" : "";
       return h("li", null, h("time", { datetime: a.at, title: new Date(a.at).toLocaleString("en-GB") }, when(a.at)),
-        h("span", null, h("strong", null, a.actor || "someone"), " " + (ACTION_LABEL[a.action] || a.action) + " " + a.target + extra));
+        h("span", null, h("strong", null, a.actor || "The admin"), " " + (ACTION_LABEL[a.action] || a.action) + " " + a.target + extra));
     }));
   }
   VIEWS.activity = function () {
@@ -721,6 +1308,7 @@
         }, function (err) { busy(file, false); note(status, err, true); });
       });
       out.push(h("section", { class: "admin-block" }, h("h2", null, "New job"), form));
+      out.push(jobBoard(d), bulkForm(d));
       out.push(h("section", { class: "admin-block" }, h("h2", null, "Open jobs"),
         d.jobs.length ? table(["Issue", "Book", "Languages", "Filed", "Taken by"], d.jobs.map(function (j) {
           return h("tr", null, h("td", null, h("a", { href: j.url, rel: "noopener" }, "#" + j.number)),
@@ -733,6 +1321,85 @@
   function firstUndrafted(d) {
     var b = d.books.filter(function (x) { return d.coverage[x.code].en === "none"; })[0];
     return b ? b.code : d.books[0].code;
+  }
+
+  // The queue board: every book in every language, drafted, with a job
+  // filed, or with the job's pull request open.
+  var BOARD_LABEL = { none: "Not started", partial: "Partly drafted", filed: "Job filed", pr: "Pull request open", drafted: "Drafted" };
+  function jobBoard(d) {
+    var tab = sessionTab("jobs-board", "ot");
+    var body = h("div");
+    function draw(which) {
+      body.textContent = "";
+      var rows = d.books.filter(function (b) { return b.testament === which; }).map(function (b) {
+        return h("tr", null, h("th", { scope: "row" }, h("a", { href: "#book/" + b.code }, b.name)),
+          d.languages.map(function (l) {
+            var c = (d.board[b.code] || {})[l.code] || { state: "none" };
+            var mark = h("span", { class: "admin-state " + c.state, title: l.name + ": " + BOARD_LABEL[c.state] + (c.number ? " (#" + c.number + ")" : "") },
+              c.state === "drafted" ? "✓" : c.number ? "#" + c.number : "");
+            return h("td", { class: "admin-cell" }, c.url ? h("a", { href: c.url, rel: "noopener" }, mark) : mark);
+          }));
+      });
+      body.appendChild(table(["Book"].concat(d.languages.map(function (l) { return [l.code, { title: l.name, class: "admin-cell" }]; })), rows, "admin-coverage"));
+    }
+    draw(tab);
+    return h("section", { class: "admin-block", id: "queue" }, h("h2", null, "Queue board"),
+      h("div", { class: "admin-toolbar" }, seg([["ot", "Old Testament"], ["nt", "New Testament"]], tab, function (v) {
+        rememberTab("jobs-board", v); draw(v);
+      }), h("p", { class: "admin-legend" }, ["none", "partial", "filed", "pr", "drafted"].map(function (s) {
+        return h("span", null, h("span", { class: "admin-state " + s }), BOARD_LABEL[s]);
+      }))), body);
+  }
+
+  // Queue missing books: one job per book that still lacks any of the
+  // languages, previewed first.
+  function bulkForm(d) {
+    var status = h("p", { class: "admin-note", role: "status" });
+    var boxes = h("fieldset", { class: "admin-checks-row" }, h("legend", null, "Languages"),
+      d.languages.map(function (l) {
+        return h("label", null, h("input", { type: "checkbox", value: l.code, disabled: !d.configured }), " " + l.name);
+      }));
+    var testament = select("bulk-testament", [["ot", "Old Testament"], ["nt", "New Testament"], ["all", "Whole Bible"]], "ot");
+    var text = h("textarea", { id: "bulk-note", rows: 2, maxlength: 2000, placeholder: "Added to every job (optional)" });
+    var preview = h("button", { type: "submit", class: "admin-btn", disabled: !d.configured }, "Preview");
+    var result = h("div");
+    function payload(dry) {
+      return { languages: Array.prototype.map.call(boxes.querySelectorAll("input:checked"), function (x) { return x.value; }),
+        testament: testament.value, note: text.value, dry_run: dry };
+    }
+    function line(j) { return h("li", null, bookName(d, j.book) + ": " + j.languages.join(", ")); }
+    var form = h("form", { class: "admin-form stacked" }, boxes,
+      h("label", { class: "admin-field", for: "bulk-testament" }, "Books", testament),
+      h("label", { class: "admin-field", for: "bulk-note" }, "Note", text), preview, status, result);
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      busy(preview, true);
+      result.textContent = "";
+      note(status, "");
+      var asked = payload(false);
+      api("/api/admin/jobs/bulk/", { method: "POST", body: payload(true) }).then(function (r) {
+        if (!r.plan.length) {
+          note(status, "Nothing to file: " + (r.skipped.length ? plural(r.skipped.length, "book") + " already drafted or asked for." : "no books."));
+          return;
+        }
+        add(result, [h("p", null, plural(r.plan.length, "job") + " to file" + (r.remaining ? " now; " + r.remaining + " more after these (at most " + r.limit + " at a time)" : "") + ":"),
+          h("ul", { class: "admin-roles" }, r.plan.map(line)),
+          r.skipped.length ? h("details", null, h("summary", null, plural(r.skipped.length, "book") + " left out"),
+            h("ul", null, r.skipped.map(function (s) { return h("li", null, bookName(d, s.book) + ": " + s.reason); }))) : null,
+          confirmButton("File " + plural(r.plan.length, "job"), "File them?", function (b) {
+            api("/api/admin/jobs/bulk/", { method: "POST", body: asked }).then(function (f) {
+              FLASH = "Filed " + plural(f.filed.length, "job") + (f.error ? ". " + f.error : f.remaining ? "; " + f.remaining + " more to queue." : ".");
+              route();
+            }, function (err) { busy(b, false); note(status, err, true); });
+          }, "admin-btn primary")]);
+      }, function (err) { note(status, err, true); }).then(function () { busy(preview, false); });
+    });
+    return h("section", { class: "admin-block" }, h("h2", null, "Queue missing books"),
+      h("p", null, "Files one job per book that still lacks any of the languages, in Bible order, skipping languages an open job already asks for."), form);
+  }
+  function bookName(d, code) {
+    var b = d.books.filter(function (x) { return x.code === code; })[0];
+    return b ? b.name : code;
   }
 
   // Team email.
@@ -780,26 +1447,27 @@
   // Help & roles.
   var ROLES = [
     ["Super admin", "Everything, including the team, jobs and deleting accounts. Set by OWB_SUPER_ADMIN_EMAILS on the server."],
-    ["Editor", "The progress pages and the reader inbox."],
+    ["Editor", "The progress pages, the reader inbox, fix requests and reviewers' flags."],
     ["Reporting", "The progress pages only: dashboard, coverage, languages, content health, engagement."],
     ["User records", "The progress pages and readers' accounts (sign devices out; only a super admin deletes)."],
     ["Email", "The progress pages and team email."],
-    ["Scholar reviewer, language reviewer", "The progress pages for now. Review in the admin comes later; until then every sentence stays an AI-assisted draft."]
+    ["Scholar reviewer", "The progress pages and Review: approving or flagging the meaning of the sentences translated from their language (Greek: the New Testament; Hebrew: the Old)."],
+    ["Language reviewer", "The progress pages and Review: approving or flagging the wording in their language. Approving the meaning moves a sentence on from AI-assisted; wording approvals are kept per language."]
   ];
   VIEWS.help = function () {
     var sections = SECTIONS.filter(function (s) { return s.id !== "help"; });
-    var AREA = { overview: "Anyone on the team", inbox: "Editors", users: "User records", email: "Email",
+    var AREA = { overview: "Anyone on the team", export: "Anyone on the team", review: "Reviewers", inbox: "Editors", users: "User records", email: "Email",
       jobs: "Super admins", team: "Super admins" };
     var out = [head("Team", "Help & roles", "What each role opens, and where things live. The admin shows you only the sections your roles open; the server checks every request again."),
       h("section", { class: "admin-block" }, h("h2", null, "Roles"),
         table(["Role", "Opens"], ROLES.map(function (r) { return h("tr", null, h("th", { scope: "row" }, r[0]), h("td", null, r[1])); }))),
       h("section", { class: "admin-block" }, h("h2", null, "Sections"),
         table(["Section", "Who"], sections.map(function (s) {
-          return h("tr", null, h("th", { scope: "row" }, opens(s) ? h("a", { href: "#" + s.id }, s.label) : s.label), h("td", null, AREA[s.area] + (s.area === "overview" ? "" : " (and super admins)")));
+          return h("tr", null, h("th", { scope: "row" }, opens(s) ? h("a", { href: "#" + s.id }, s.label) : s.label), h("td", null, AREA[s.area] + (AREA[s.area] === "Anyone on the team" ? "" : " (and super admins)")));
         }))),
       h("section", { class: "admin-block" }, h("h2", null, "Good to know"), h("ul", null,
         h("li", null, "Numbers come from the database, which each deploy brings up to date from content/ on main. A merged pull request shows here after its deploy."),
-        h("li", null, "Nothing in the admin marks a sentence reviewed. Every sentence stays AI-assisted until review opens and a named person approves it."),
+        h("li", null, "Only a person marks a sentence reviewed, in Review, and every approval names who made it. A sentence an import changes after its approval goes back in the reviewer's queue."),
         h("li", null, "Your roles: " + (ME.roles.length ? ME.roles.map(function (r) { return r.label; }).join(", ") : "none") + ".")))];
     if (ME.is_super_admin) {
       out.push(h("p", null, "Records the admin doesn't cover yet are in the ", h("a", { href: API + "/admin/", rel: "noopener" }, "database admin"),
@@ -808,9 +1476,374 @@
     return out;
   };
 
+  // Consistency: how one language words each key term across the sentences
+  // that use it, the terms split between wordings first.
+  var CONSISTENCY = { lang: "en", level: "B" };
+  VIEWS.consistency = function () {
+    var f = CONSISTENCY;
+    return api("/api/admin/consistency/?lang=" + f.lang + "&level=" + f.level).then(function (d) {
+      var langSel = select("consistency-lang", d.languages.map(function (l) { return [l.code, l.name]; }), f.lang);
+      langSel.setAttribute("aria-label", "Language");
+      langSel.addEventListener("change", function () { f.lang = langSel.value; route(); });
+      var fixes = ME.admin.indexOf("inbox") >= 0;
+      function examples(list) {
+        return h("ul", { class: "admin-examples" }, list.map(function (e) {
+          return h("li", null, h("a", { href: "#verse/" + e.verse }, e.label), " ", h("span", { class: "admin-sub" }, e.record),
+            fixes ? [" \u00b7 ", h("a", { href: "#verse/" + e.verse }, "File a fix request")] : null);
+        }));
+      }
+      var split = d.terms.filter(function (t) { return t.split; }).length;
+      var blocks = d.terms.filter(function (t) { return t.rendered; }).map(function (t) {
+        return h("section", { class: "admin-block" },
+          h("h2", null, h("span", { class: "admin-term", lang: t.language }, t.lemma), " ", t.sense, " ",
+            t.split ? pill("split", "warn") : pill("consistent", "good")),
+          h("p", { class: "admin-sub" }, plural(t.rendered, "sentence") + " in this language and level, of " + num(t.uses) + " that use the term."),
+          h("div", { class: "admin-bars" }, t.forms.map(function (form) {
+            return h("details", null, h("summary", { class: "admin-bar-row" }, h("span", null, form.form), bar(form.sentences, t.rendered),
+              h("span", { class: "admin-num" }, num(form.sentences) + " \u00b7 " + form.books.join(", "))), examples(form.examples));
+          }), t.other.sentences ? h("details", null, h("summary", { class: "admin-bar-row" }, h("span", null, "None of these"),
+            bar(t.other.sentences, t.rendered, "warn"), h("span", { class: "admin-num" }, num(t.other.sentences))), examples(t.other.examples)) : null));
+      });
+      return [head("Text", "Consistency", "How each key term is worded across the sentences that use it, from the wordings the records give it (alignments, decisions and, for English, the key term list). A term worded two ways in two or more sentences each is split; open a wording for its sentences."),
+        h("div", { class: "admin-toolbar" }, langSel,
+          seg([["L", "Literal"], ["B", "Balanced"], ["R", "Readable"]], f.level, function (v) { f.level = v; route(); })),
+        h("p", null, plural(split, "key term") + " split in " + langSel.selectedOptions[0].textContent + " at this level."),
+        blocks.length ? blocks : empty("No sentence that uses a key term is drafted in this language yet.")];
+    });
+  };
+
+  // ---- Search --------------------------------------------------------
+
+  // The box at the top of the rail (GET /api/admin/search/): verses,
+  // sentences, terms, articles, decisions, and accounts and reader messages
+  // for the roles that open them. "/" focuses it; arrows, Enter and Escape
+  // work the list. Made once and kept across drawings of the rail.
+  var SEARCH = null;
+  function searchBox() {
+    if (SEARCH) return SEARCH.wrap;
+    var input = h("input", { type: "search", id: "admin-search", placeholder: "Search the admin", autocomplete: "off",
+      spellcheck: "false", role: "combobox", "aria-expanded": "false", "aria-controls": "admin-search-list",
+      "aria-autocomplete": "list", "aria-label": "Search the admin (press /)" });
+    var list = h("div", { class: "admin-search-list", id: "admin-search-list", role: "listbox", hidden: true });
+    var wrap = h("div", { class: "admin-search", role: "search" }, input, list);
+    var timer = null, asked = 0, active = -1, options = [];
+
+    function close() {
+      list.hidden = true;
+      input.setAttribute("aria-expanded", "false");
+      input.removeAttribute("aria-activedescendant");
+      active = -1;
+    }
+    function mark(i) {
+      if (!options.length) return;
+      active = (i + options.length) % options.length;
+      options.forEach(function (o, j) { o.setAttribute("aria-selected", j === active ? "true" : "false"); });
+      input.setAttribute("aria-activedescendant", options[active].id);
+      options[active].scrollIntoView({ block: "nearest" });
+    }
+    function go(href) {
+      close();
+      input.value = "";
+      input.blur();
+      if (location.hash === href) route(); else location.hash = href;
+    }
+    function show(d) {
+      list.textContent = "";
+      options = [];
+      if (!d.groups.length) {
+        list.appendChild(h("p", { class: "admin-empty" }, "Nothing found for “" + d.q + "”."));
+      }
+      d.groups.forEach(function (g) {
+        list.appendChild(h("p", { class: "admin-search-group", role: "presentation" }, g.label));
+        g.results.forEach(function (r) {
+          var o = h("a", { href: r.href, role: "option", id: "admin-search-" + options.length, "aria-selected": "false",
+            tabindex: "-1" }, h("span", null, r.title), r.detail ? h("span", { class: "admin-sub" }, r.detail) : null);
+          o.addEventListener("mousedown", function (e) { e.preventDefault(); });
+          o.addEventListener("click", function (e) { e.preventDefault(); go(r.href); });
+          options.push(o);
+          list.appendChild(o);
+        });
+      });
+      list.hidden = false;
+      input.setAttribute("aria-expanded", "true");
+      if (options.length) mark(0);
+    }
+    function ask() {
+      var q = input.value.trim();
+      var mine = ++asked;
+      if (q.length < 2) { close(); return; }
+      api("/api/admin/search/?q=" + encodeURIComponent(q)).then(function (d) {
+        if (mine === asked) show(d);
+      }, function (e) {
+        if (mine !== asked) return;
+        list.textContent = "";
+        options = [];
+        list.appendChild(h("p", { class: "admin-empty" }, e.message));
+        list.hidden = false;
+        input.setAttribute("aria-expanded", "true");
+      });
+    }
+    input.addEventListener("input", function () {
+      clearTimeout(timer);
+      timer = setTimeout(ask, 200);
+    });
+    input.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+        if (list.hidden) { ask(); return; }
+        e.preventDefault();
+        mark(active + (e.key === "ArrowDown" ? 1 : -1));
+      } else if (e.key === "Enter") {
+        e.preventDefault();
+        clearTimeout(timer);
+        if (!list.hidden && active >= 0) go(options[active].getAttribute("href"));
+        else ask();
+      } else if (e.key === "Escape") {
+        if (!list.hidden) close(); else { input.value = ""; input.blur(); }
+      }
+    });
+    input.addEventListener("blur", close);
+    input.addEventListener("focus", function () { if (input.value.trim().length >= 2) ask(); });
+    // On the window, before the site's search palette (search.js) takes "/"
+    // on the document; Ctrl K or Cmd K still opens the palette.
+    window.addEventListener("keydown", function (e) {
+      if (e.key !== "/" || e.ctrlKey || e.metaKey || e.altKey || rail.hidden || !wrap.isConnected) return;
+      var t = e.target;
+      if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
+      e.preventDefault();
+      e.stopPropagation();
+      input.focus();
+    }, true);
+    SEARCH = { wrap: wrap, input: input };
+    return wrap;
+  }
+  // Review: a reviewer's queue for one layer (the meaning of the Greek or
+  // Hebrew, or one language's wording), then one sentence at a time.
+  var REVIEW_STATE = { not_reviewed: ["Not reviewed", ""], approved: ["Approved", "good"], changed: ["Changed since approval", "warn"],
+    flagged: ["Flagged", "bad"] };
+  function reviewPill(state) { return pill(REVIEW_STATE[state][0], REVIEW_STATE[state][1]); }
+  VIEWS.review = function (arg) {
+    var parts = arg ? arg.split("/") : [];
+    return parts[1] ? reviewSentence(parts[0], parts[1]) : reviewQueue(parts[0] || sessionTab("review.layer", ""));
+  };
+  function reviewQueue(layer) {
+    var filters = { book: sessionTab("review.book", ""), state: sessionTab("review.state", "todo") };
+    var body = h("div");
+    var more = h("button", { type: "button", class: "admin-btn", hidden: true }, "More");
+    var offset = 0, d = null, rows = null;
+    function query() {
+      return "/api/admin/review/?layer=" + encodeURIComponent(layer) + "&book=" + filters.book + "&state=" + filters.state + "&offset=" + offset;
+    }
+    function draw(page) {
+      if (!offset) {
+        body.textContent = "";
+        rows = h("tbody");
+        var c = page.counts;
+        body.appendChild(h("div", { class: "admin-tiles" },
+          tile(num(c.not_reviewed), "not reviewed"), tile(num(c.approved), "approved", "good"),
+          tile(num(c.changed), "changed since approval", c.changed ? "warn" : ""), tile(num(c.flagged), "flagged", c.flagged ? "bad" : "")));
+        body.appendChild(page.sentences.length ? h("div", { class: "admin-scroll" }, h("table", { class: "admin-table" },
+          h("thead", null, h("tr", null, h("th", null, "Sentence"), h("th", null, page.layer.kind === "meaning" ? "Literal gloss" : "Balanced"),
+            h("th", null, "State"), h("th", null, "Last"))), rows)) : empty("Nothing here with these filters."));
+      }
+      page.sentences.forEach(function (s) {
+        rows.appendChild(h("tr", null,
+          h("th", { scope: "row" }, h("a", { href: "#review/" + layer + "/" + s.record }, s.label), h("div", { class: "admin-sub" }, s.record)),
+          h("td", { class: "admin-wrap", lang: page.layer.kind === "meaning" ? "en" : layer }, rendering(s.preview)),
+          h("td", null, reviewPill(s.state)),
+          h("td", { class: "admin-sub" }, s.last ? s.last.label + ", " + s.last.by + ", " + when(s.last.at) : "—")));
+      });
+      more.hidden = !page.more;
+    }
+    function load() {
+      busy(more, true);
+      return api(query()).then(function (page) { d = d || page; layer = page.layer.code; draw(page); busy(more, false); return page; });
+    }
+    more.addEventListener("click", function () { offset += 50; load(); });
+    var status = h("p", { class: "admin-note", role: "status" });
+    function refilter() { offset = 0; rememberTab("review.book", filters.book); rememberTab("review.state", filters.state); load(); }
+    // A layer remembered from before may no longer be the account's.
+    return load().catch(function (e) {
+      if (e.status !== 403 || !layer) throw e;
+      layer = "";
+      return load();
+    }).then(function () {
+      rememberTab("review.layer", layer);
+      var layerSel = d.layers.length > 1 ? select("review-layer", d.layers.map(function (l) { return [l.code, l.name]; }), layer) : null;
+      if (layerSel) layerSel.addEventListener("change", function () { location.hash = "#review/" + layerSel.value; });
+      var bookSel = select("review-book", [["", "Every book"]].concat(d.books.map(function (b) { return [b.code, b.name]; })), filters.book);
+      bookSel.addEventListener("change", function () { filters.book = bookSel.value; refilter(); });
+      var stateSel = select("review-state", [["todo", "To review"], ["", "Every sentence"], ["not_reviewed", "Not reviewed"],
+        ["changed", "Changed since approval"], ["flagged", "Flagged"], ["approved", "Approved"]], filters.state);
+      stateSel.addEventListener("change", function () { filters.state = stateSel.value; refilter(); });
+      return [head("Text", "Review: " + d.layer.name, d.layer.kind === "meaning"
+        ? "Check what the " + d.layer.books + " says: the literal gloss and the meaning decisions behind every language. Approving moves a sentence on from AI-assisted."
+        : "Check how " + d.layer.name.replace(/ wording$/, "") + " says it, at every level, against the meaning. Each approval names you and holds until the wording changes."),
+        h("div", { class: "admin-toolbar" }, layerSel ? h("label", null, "Layer ", layerSel) : null,
+          h("label", null, "Book ", bookSel), h("label", null, "Show ", stateSel)),
+        status, body, more];
+    });
+  }
+  function reviewSentence(layer, record) {
+    return api("/api/admin/review/" + encodeURIComponent(record) + "/?layer=" + encodeURIComponent(layer)).then(function (d) {
+      var r = d.record, kind = d.layer.kind;
+      var names = {};
+      d.languages.forEach(function (l) { names[l.code] = l.name; });
+      var source = r.source.tokens.map(function (t) { return d.words[t]; });
+      var dir = r.source.language === "hbo" ? "rtl" : null;
+      var words = h("p", { class: "admin-source", lang: r.source.language, dir: dir }, source.length && source.every(Boolean)
+        ? source.map(function (w) { return [h("span", { title: [w.lemma, w.gloss, w.morph].filter(Boolean).join(" · ") }, w.text), " "]; })
+        : r.source.text);
+      var langs = kind === "meaning" ? Object.keys(r.renderings) : [layer];
+      var renderings = table(["Language", "Literal", "Balanced", "Readable"], langs.map(function (code) {
+        return h("tr", null, h("th", { scope: "row" }, names[code] || code), ["L", "B", "R"].map(function (lv) {
+          var t = r.renderings[code] && r.renderings[code][lv];
+          return h("td", { class: "admin-wrap", lang: code }, t ? rendering(t) : "—");
+        }));
+      }), "admin-renderings");
+      var meaning = r.decisions.filter(function (x) { return x.layer === "meaning"; });
+      var mine = r.decisions.filter(function (x) { return x.layer !== "meaning" && x.language === layer; });
+      var noteBox = h("textarea", { id: "review-note", rows: 3, maxlength: 4000,
+        placeholder: "A note: what is wrong (needed to flag), or anything the next reviewer should know" });
+      var status = h("p", { class: "admin-note", role: "status" });
+      function act(action, button) {
+        busy(button, true);
+        api("/api/admin/review/" + encodeURIComponent(record) + "/", { method: "POST", body: { layer: layer, action: action, note: noteBox.value } })
+          .then(function (res) {
+            FLASH = { approve: "Approved ", flag: "Flagged ", comment: "Comment added to " }[action] + d.label + ".";
+            if (action === "comment") route();
+            else location.hash = res.next ? "#review/" + layer + "/" + res.next : "#review/" + layer;
+          }, function (e) { busy(button, false); note(status, e, true); });
+      }
+      var buttons = h("div", { class: "admin-actions" },
+        h("button", { type: "button", class: "admin-btn primary", onclick: function () { act("approve", this); } },
+          kind === "meaning" ? "Approve the meaning" : "Approve the " + d.layer.name.replace(/ wording$/, "") + " wording"),
+        h("button", { type: "button", class: "admin-btn", onclick: function () { act("flag", this); } }, "Flag a problem"),
+        h("button", { type: "button", class: "admin-btn", onclick: function () { act("comment", this); } }, "Comment"),
+        d.next ? h("a", { href: "#review/" + layer + "/" + d.next }, "Skip to the next ›") : null);
+      var trail = d.trail.length ? h("ul", { class: "admin-feed" }, d.trail.map(function (e) {
+        return h("li", null, h("time", { datetime: e.at, title: new Date(e.at).toLocaleString("en-GB") }, when(e.at)),
+          h("span", null, h("strong", null, e.by), " " + e.label.toLowerCase() + " (" + (e.language ? names[e.language] || e.language : "meaning") + ")",
+            e.changed ? [" ", pill("changed since", "warn")] : null, e.note ? h("span", { class: "admin-sub" }, ": " + e.note) : null));
+      })) : empty("No one has reviewed this sentence yet.");
+      return [head("Review: " + d.layer.name, d.label, r.id + " · " + (r.status === "ai_draft" ? "AI-assisted" : r.status.replace(/_/g, " "))),
+        h("div", { class: "admin-actions" }, h("a", { href: "#review/" + layer }, "‹ The queue"),
+          d.layers.length > 1 ? d.layers.filter(function (l) { return l.code !== layer; }).map(function (l) {
+            return h("a", { href: "#review/" + l.code + "/" + record }, l.name);
+          }) : null,
+          h("a", { href: "#verse/" + d.verse }, ME.admin.indexOf("inbox") >= 0 ? "Request a fix in the verse inspector" : "Verse inspector")),
+        h("section", { class: "admin-block admin-record" }, h("header", { class: "admin-toolbar" }, h("h2", null, "State"), reviewPill(d.state)),
+          words, h("p", { class: "admin-gloss" }, "Literal gloss: " + r.literal_gloss), renderings,
+          meaning.length ? [h("h3", { class: "admin-h3" }, "Meaning decisions"), h("div", { class: "admin-decisions" }, meaning.map(decision))] : null,
+          mine.length ? [h("h3", { class: "admin-h3" }, (names[layer] || layer) + " decisions"), h("div", { class: "admin-decisions" }, mine.map(decision))] : null),
+        h("section", { class: "admin-block" }, h("h2", null, "Your review"), h("label", { class: "admin-field" }, "Note", noteBox), buttons, status),
+        h("section", { class: "admin-block" }, h("h2", null, "Review trail"), trail)];
+    });
+  }
+
+  // Reviewer flags: problems reviewers have raised, open until the layer is
+  // approved again. Editors act on them with a fix request.
+  VIEWS.flags = function () {
+    return api("/api/admin/review/flags/").then(function (d) {
+      var reviews = ME.admin.indexOf("review") >= 0;
+      return [head("Text", "Reviewer flags", "Problems reviewers have flagged, newest first. A flag stays open until the layer is approved again; request a fix from the verse inspector."),
+        d.flags.length ? h("ul", { class: "admin-feed" }, d.flags.map(function (f) {
+          return h("li", null, h("time", { datetime: f.at }, when(f.at)), h("span", null,
+            h("a", { href: "#verse/" + f.verse }, f.label), " ", h("span", { class: "admin-sub" }, f.record + " · " + f.layer.name),
+            reviews ? [" ", h("a", { href: "#review/" + f.layer.code + "/" + f.record }, "Review")] : null,
+            h("br"), h("strong", null, f.by), ": " + f.note));
+        })) : h("p", { class: "admin-ok" }, "No open flags.")];
+    });
+  };
+
+  // Changes: what each import (each deploy) changed in sentences already
+  // drafted, word by word.
+  function wordDiff(before, after) {
+    var a = before.split(/(\s+)/), b = after.split(/(\s+)/);
+    var n = a.length, m = b.length, i, j;
+    var lcs = [];
+    for (i = 0; i <= n; i++) { lcs.push(new Array(m + 1).fill(0)); }
+    for (i = n - 1; i >= 0; i--) for (j = m - 1; j >= 0; j--) {
+      lcs[i][j] = a[i] === b[j] ? lcs[i + 1][j + 1] + 1 : Math.max(lcs[i + 1][j], lcs[i][j + 1]);
+    }
+    var out = h("span", { class: "admin-diff" });
+    i = 0; j = 0;
+    while (i < n || j < m) {
+      if (i < n && j < m && a[i] === b[j]) { add(out, a[i]); i++; j++; }
+      else if (i < n && (j === m || lcs[i + 1][j] >= lcs[i][j + 1])) { out.appendChild(h("del", null, a[i])); i++; }
+      else { out.appendChild(h("ins", null, b[j])); j++; }
+    }
+    return out;
+  }
+  var CHANGE_KIND = { added: ["added", "good"], changed: ["changed", "info"], removed: ["removed", "bad"] };
+  VIEWS.changes = function (runId) {
+    var filters = { lang: "", book: "" };
+    return api("/api/admin/changes/" + (runId ? "?run=" + encodeURIComponent(runId) : "")).then(function (d) {
+      var names = {};
+      d.languages.forEach(function (l) { names[l.code] = l.name; });
+      function drafted(counts) {
+        return Object.keys(counts).map(function (c) { return (names[c] || c) + " " + num(counts[c]); }).join(", ");
+      }
+      var runs = table(["Import", ["Files", { class: "admin-num" }], ["Changed renderings", { class: "admin-num" }], "Drafted for the first time"],
+        d.runs.map(function (r) {
+          return h("tr", { "aria-current": d.run && d.run.id === r.id ? "true" : null },
+            h("th", { scope: "row" }, h("a", { href: "#changes/" + r.id }, when(r.started_at)), r.error ? [" ", pill("failed", "bad")] : null),
+            h("td", { class: "admin-num" }, num(r.files)), h("td", { class: "admin-num" }, num(r.changed)),
+            h("td", { class: "admin-sub" }, drafted(r.drafted) || "—"));
+        }));
+      var out = [head("Progress", "Changes", "What each deploy's import changed in sentences already drafted, before and after. A sentence drafted in a language for the first time is only counted."),
+        h("section", { class: "admin-block" }, h("h2", null, "Imports"), d.runs.length ? runs : empty("No imports yet."))];
+      if (!d.run) {
+        out.push(empty("No import has changed a drafted sentence yet."));
+        return out;
+      }
+      var run = d.run, list = h("div"), offset = 0;
+      var more = h("button", { type: "button", class: "admin-btn", hidden: !d.more }, "More");
+      function draw(changes) {
+        var byRecord = {}, order = [];
+        changes.forEach(function (c) {
+          if (!byRecord[c.record]) { byRecord[c.record] = []; order.push(c.record); }
+          byRecord[c.record].push(c);
+        });
+        order.forEach(function (rec) {
+          var first = byRecord[rec][0];
+          list.appendChild(h("section", { class: "admin-block" },
+            h("header", { class: "admin-toolbar" }, h("h3", { class: "admin-h3" }, h("a", { href: "#verse/" + first.verse }, first.label)), h("span", { class: "admin-sub" }, rec)),
+            table(["Language", "Level", "Change"], byRecord[rec].map(function (c) {
+              return h("tr", null, h("th", { scope: "row" }, names[c.language] || c.language), h("td", null, LEVEL_NAMES[c.level] || c.level),
+                h("td", { class: "admin-wrap", lang: c.language }, pill(CHANGE_KIND[c.kind][0], CHANGE_KIND[c.kind][1]), " ",
+                  c.kind === "changed" ? wordDiff(c.before, c.after) : c.kind === "added" ? c.after : h("del", null, c.before)));
+            }))));
+        });
+        if (!changes.length && !offset) list.appendChild(empty("No changes with these filters."));
+      }
+      function load() {
+        busy(more, true);
+        var q = "?run=" + run.id + "&lang=" + filters.lang + "&book=" + filters.book + "&offset=" + offset;
+        return api("/api/admin/changes/" + q).then(function (page) { draw(page.changes); more.hidden = !page.more; busy(more, false); });
+      }
+      more.addEventListener("click", function () { offset += 100; load(); });
+      var langSel = select("changes-lang", [["", "Every language"]].concat(d.languages.map(function (l) { return [l.code, l.name]; })), "");
+      var bookSel = select("changes-book", [["", "Every book"]].concat(run.books.map(function (b) { return [b.code, b.name + " (" + b.changes + ")"]; })), "");
+      [langSel, bookSel].forEach(function (sel) {
+        sel.addEventListener("change", function () { filters.lang = langSel.value; filters.book = bookSel.value; offset = 0; list.textContent = ""; load(); });
+      });
+      draw(d.changes);
+      out.push(h("section", { class: "admin-block" }, h("h2", null, "Import of " + date(run.started_at) + ": " + plural(run.changed, "changed rendering")),
+        run.drafted_books.length ? h("p", { class: "admin-sub" }, "Drafted for the first time: " + run.drafted_books.map(function (b) {
+          return b.name + " (" + drafted(b.languages) + ")";
+        }).join("; ") + ".") : null,
+        h("div", { class: "admin-toolbar" }, h("label", null, "Language ", langSel), h("label", null, "Book ", bookSel))), list, more);
+      return out;
+    });
+  };
+
   // ---- Start ---------------------------------------------------------
 
   function stop(title, text, link) {
+    drawing++;
+    window.removeEventListener("hashchange", route);
+    rail.hidden = true;
+    main.removeAttribute("aria-busy");
     main.textContent = "";
     main.appendChild(head("Admin", title, text));
     if (link) main.appendChild(h("p", null, h("a", { class: "button", href: link[0] }, link[1])));
@@ -821,20 +1854,35 @@
     stop("Sign in to use the admin", "The admin is for the Open Word Bible team.", ["/login/?redirect=/admin/", "Sign in"]);
     return;
   }
+  // The account saved at the last visit draws the admin at once, while
+  // /api/me checks it; the API checks every request anyway. If the roles
+  // have changed since, the admin is drawn again.
+  var started = false;
+  function start() {
+    if (!started) window.addEventListener("hashchange", route);
+    started = true;
+    route();
+  }
+  function areasOf(me) { return JSON.stringify([me.admin, me.is_super_admin]); }
+  var known = account.user;
+  if (known && known.email && known.admin && known.admin.length) {
+    ME = known;
+    start();
+  }
   api("/api/me").then(function (me) {
+    var changed = !ME || areasOf(ME) !== areasOf(me);
     ME = me;
     try { account.user = me; localStorage.setItem(KEY, JSON.stringify(account)); } catch (e) { /* none */ }
     if (!me.admin || !me.admin.length) {
       stop("No admin access", "Your account (" + me.email + ") has no role that opens the admin. A super admin can grant one in Team & access.");
       return;
     }
-    window.addEventListener("hashchange", route);
-    route();
+    if (!started || changed) start();
   }, function (e) {
     if (e.status === 401) {
       try { localStorage.removeItem(KEY); } catch (x) { /* none */ }
       stop("Sign in again", "Your sign-in on this device has ended.", ["/login/?redirect=/admin/", "Sign in"]);
-    } else {
+    } else if (!started) {
       stop("The admin couldn't load", e.message);
     }
   });

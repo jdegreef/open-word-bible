@@ -381,8 +381,9 @@
         .then(function () { store(null); location.replace(PREFIX + "/"); });
     });
 
-    // Your data: the account, the bookmarks, highlights and place kept with
-    // it (/api/reading), and this device's reading, as JSON.
+    // Your data: the account, the bookmarks, highlights, place, plan progress
+    // and settings kept with it (/api/reading), and this device's reading,
+    // as JSON.
     document.getElementById("download").addEventListener("click", function () {
       function read(key) {
         try { var v = localStorage.getItem(key); return v && v.charAt(0) === "{" ? JSON.parse(v) : v; }
@@ -396,7 +397,8 @@
           exported: new Date().toISOString(),
           account: saved() && saved().user,
           reading: reading,
-          device: { settings: read("owb.settings"), place: read("owb.place"), marks: read("owb.marks"),
+          messages: messages,
+          device: { settings: read("owb.settings"), place: read("owb.place"), marks: read("owb.marks"), plans: read("owb.plans"),
                     theme: read("owb-theme"), language: read("owb-lang") }
         });
       });
@@ -438,6 +440,47 @@
         location.replace(PREFIX + "/");
       }).catch(function (err) { failed(err, dangerNote); });
     });
+
+    // Your suggestions and questions (sent from a verse in the reader,
+    // backend/feedback/), with the editors' replies.
+    var box = document.getElementById("my-messages");
+    var names = JSON.parse(box.getAttribute("data-books"));
+    function el(tag, cls, text) {
+      var n = document.createElement(tag);
+      if (cls) n.className = cls;
+      if (text) n.textContent = text;
+      return n;
+    }
+    function showMessages(list) {
+      var ul = document.getElementById("messages-list");
+      ul.textContent = "";
+      if (!list.length) ul.appendChild(el("li", "my-message-empty", T.messages_empty));
+      list.forEach(function (m) {
+        var p = m.verse.split(".");
+        var li = el("li", "my-message");
+        var head = el("p", "my-message-head");
+        head.appendChild(el("span", "my-message-kind", T[m.kind] || m.kind));
+        var a = el("a", null, (names[p[0]] || p[0]) + " " + p[1] + ":" + p[2]);
+        a.href = PREFIX + "/" + p[0].toLowerCase() + "/" + p[1] + "/#v" + p[2];
+        head.appendChild(a);
+        head.appendChild(el("span", "my-message-date", new Date(m.created_at)
+          .toLocaleDateString(LANG, { year: "numeric", month: "short", day: "numeric" })));
+        head.appendChild(el("span", "my-message-status", T["status_" + m.status] || m.status));
+        li.appendChild(head);
+        li.appendChild(el("blockquote", null, m.text));
+        if (m.reply) {
+          var reply = el("div", "my-message-reply");
+          reply.appendChild(el("p", "my-message-label", T.reply));
+          reply.appendChild(el("p", null, m.reply));
+          li.appendChild(reply);
+        }
+        ul.appendChild(li);
+      });
+      box.hidden = false;
+    }
+    var messages = [];
+    api("/api/messages", {}, T).then(function (list) { messages = list; showMessages(list); })
+      .catch(function () { /* offline or signed out: the section stays hidden */ });
 
     render(saved().user);
     api("/api/me", {}, T).then(keep).catch(function (err) {

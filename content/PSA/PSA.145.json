@@ -35,6 +35,31 @@
           "L": "A praise of David. I will exalt {{deity_pronoun:you|You}}, my God, the King, and I will bless {{deity_pronoun:your|Your}} name forever and ever.",
           "B": "A song of praise. Of David. My God, the King, I will lift {{deity_pronoun:you|You}} high in praise and bless {{deity_pronoun:your|Your}} name for ever and ever.",
           "R": "A song of praise. By David. My God, {{deity_pronoun:you|You}} are the King! I will tell how great {{deity_pronoun:you|You}} are. I will always praise {{deity_pronoun:your|Your}} name, forever and ever."
+        },
+        "fr": {
+          "L": "Louange de David. Je {{deity_pronoun:t’|T’}}exalterai, mon Dieu, le Roi, et je bénirai {{deity_pronoun:ton|Ton}} nom à tout jamais.",
+          "B": "Un chant de louange. De David. Mon Dieu, le Roi, je {{deity_pronoun:t’|T’}}élèverai bien haut par ma louange et je bénirai {{deity_pronoun:ton|Ton}} nom pour toujours et à jamais.",
+          "R": "Un chant de louange. De David. Mon Dieu, c’est {{deity_pronoun:toi|Toi}} le Roi ! Je dirai combien {{deity_pronoun:tu|Tu}} es grand. Je louerai toujours {{deity_pronoun:ton|Ton}} nom, pour toujours et à jamais."
+        },
+        "sw": {
+          "L": "Sifa ya Daudi. Nitakutukuza, Mungu wangu, Mfalme, nami nitalibariki jina {{deity_pronoun:lako|Lako}} milele na milele.",
+          "B": "Wimbo wa sifa. Wa Daudi. Mungu wangu, Mfalme, nitakuinua juu kwa sifa na kulibariki jina {{deity_pronoun:lako|Lako}} milele na milele.",
+          "R": "Wimbo wa sifa. Wa Daudi. Mungu wangu, {{deity_pronoun:wewe|Wewe}} ndiwe Mfalme! Nitawaambia watu jinsi ulivyo mkuu. Nitalisifu jina {{deity_pronoun:lako|Lako}} daima, milele na milele."
+        },
+        "es": {
+          "L": "Alabanza de David. Te ensalzaré, Dios mío, el Rey, y bendeciré {{deity_pronoun:tu|Tu}} nombre por siempre jamás.",
+          "B": "Canto de alabanza. De David. Dios mío, el Rey, {{deity_pronoun:te|Te}} exaltaré con alabanzas y bendeciré {{deity_pronoun:tu|Tu}} nombre por los siglos de los siglos.",
+          "R": "Canto de alabanza. De David. Dios mío, ¡{{deity_pronoun:tú|Tú}} eres el Rey! Contaré lo grande que {{deity_pronoun:tú|Tú}} eres. Siempre alabaré {{deity_pronoun:tu|Tu}} nombre, por siempre jamás."
+        },
+        "vi": {
+          "L": "[Một] lời ca ngợi của Đa-vít. Tôi sẽ tôn cao {{deity_pronoun:ngài|Ngài}}, Đức Chúa Trời của tôi, là Vua, và tôi sẽ chúc tụng danh {{deity_pronoun:ngài|Ngài}} đời đời mãi mãi.",
+          "B": "Bài ca ngợi. Của Đa-vít. Lạy Đức Chúa Trời của tôi, là Vua, tôi sẽ ca ngợi tôn cao {{deity_pronoun:ngài|Ngài}} và chúc tụng danh {{deity_pronoun:ngài|Ngài}} đời đời mãi mãi.",
+          "R": "Bài ca ngợi. Của Đa-vít. Lạy Đức Chúa Trời của tôi, {{deity_pronoun:ngài|Ngài}} là Vua! Tôi sẽ nói lên {{deity_pronoun:ngài|Ngài}} vĩ đại biết bao. Tôi sẽ luôn ca ngợi danh {{deity_pronoun:ngài|Ngài}}, đời đời mãi mãi."
+        },
+        "ko": {
+          "L": "다윗의 찬양. 제가 주님을 높이겠습니다, 저의 하나님, 왕이시여. 제가 주님의 이름을 영원히 그리고 영원토록 송축하겠습니다.",
+          "B": "다윗의 찬양 노래. 왕이신 저의 하나님, 제가 주님을 높이 찬양하며 주님의 이름을 영원무궁토록 송축하겠습니다.",
+          "R": "다윗의 찬양 노래. 저의 하나님, 주님은 왕이십니다! 제가 주님께서 얼마나 위대하신지 말하겠습니다. 영원히 언제까지나 주님의 이름을 찬양하겠습니다."
         }
       },
       "decisions": [
@@ -136,6 +161,89 @@
           "reason": "Readable turns the title \"the King\" into a short statement and says what it is to exalt God: to say how great he is.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191450010011"
+          ],
+          "choice": "\"Louange\" at Literal for tehillah; \"Un chant de louange\" at Balanced and Readable",
+          "alternatives": [
+            "\"Hymne\""
+          ],
+          "reason": "This is the only psalm titled tehillah, \"a praise\". Literal keeps the bare noun; the other levels say it is a song of praise, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191450010011"
+          ],
+          "choice": "\"[Một] lời ca ngợi\" (L); \"Bài ca ngợi\" (B, R) for the title tehillah",
+          "alternatives": [
+            "\"thi thiên\""
+          ],
+          "reason": "The title is not the usual word for a psalm but \"a praise\" (see the meaning decision); Literal keeps that, and Balanced and Readable say \"a song of praise\", as the English does, to keep it apart from \"thi thiên\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191450010011"
+          ],
+          "choice": "\"다윗의 찬양\" (L), \"다윗의 찬양 노래\" (B, R) for the title tehillah of David",
+          "alternatives": [
+            "다윗의 찬송시"
+          ],
+          "reason": "The Hebrew title names the song a praise (meaning decision); Literal keeps the bare noun and Balanced and Readable say \"song of praise\", as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o191450010032",
+            "o191450010062"
+          ],
+          "choice": "The whole psalm is in 합쇼체 with \"저\", also in the verses that speak of the LORD in the third person (3, 8-9, 14, 17-21)",
+          "alternatives": [
+            "the plain style for the third-person verses"
+          ],
+          "reason": "The psalm is one hymn of praise spoken before God, moving between \"you\" and \"he\" from verse to verse; changing the speech level each time would break it, so Korean keeps the polite style and simply names the LORD, as in Psalm 138.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -171,6 +279,31 @@
           "L": "Every day I will bless {{deity_pronoun:you|You}}, and I will praise {{deity_pronoun:your|Your}} name forever and ever.",
           "B": "Day after day I will bless {{deity_pronoun:you|You}} and give praise to {{deity_pronoun:your|Your}} name for ever and ever.",
           "R": "I will praise {{deity_pronoun:you|You}} every single day. I will keep on praising {{deity_pronoun:your|Your}} name forever and ever."
+        },
+        "fr": {
+          "L": "Chaque jour je {{deity_pronoun:te|Te}} bénirai, et je louerai {{deity_pronoun:ton|Ton}} nom à tout jamais.",
+          "B": "Jour après jour je {{deity_pronoun:te|Te}} bénirai et je louerai {{deity_pronoun:ton|Ton}} nom pour toujours et à jamais.",
+          "R": "Je {{deity_pronoun:te|Te}} louerai chaque jour. Je continuerai de louer {{deity_pronoun:ton|Ton}} nom, pour toujours et à jamais."
+        },
+        "sw": {
+          "L": "Kila siku nitakubariki, nami nitalisifu jina {{deity_pronoun:lako|Lako}} milele na milele.",
+          "B": "Siku baada ya siku nitakubariki na kulisifu jina {{deity_pronoun:lako|Lako}} milele na milele.",
+          "R": "Nitakusifu kila siku. Nitaendelea kulisifu jina {{deity_pronoun:lako|Lako}} milele na milele."
+        },
+        "es": {
+          "L": "Cada día {{deity_pronoun:te|Te}} bendeciré, y alabaré {{deity_pronoun:tu|Tu}} nombre por siempre jamás.",
+          "B": "Día tras día {{deity_pronoun:te|Te}} bendeciré y alabaré {{deity_pronoun:tu|Tu}} nombre por los siglos de los siglos.",
+          "R": "Te alabaré cada día. Seguiré alabando {{deity_pronoun:tu|Tu}} nombre por siempre jamás."
+        },
+        "vi": {
+          "L": "Mỗi ngày tôi sẽ chúc tụng {{deity_pronoun:ngài|Ngài}}, và tôi sẽ ca ngợi danh {{deity_pronoun:ngài|Ngài}} đời đời mãi mãi.",
+          "B": "Ngày qua ngày tôi sẽ chúc tụng {{deity_pronoun:ngài|Ngài}} và ca ngợi danh {{deity_pronoun:ngài|Ngài}} đời đời mãi mãi.",
+          "R": "Ngày nào tôi cũng sẽ ca ngợi {{deity_pronoun:ngài|Ngài}}. Tôi sẽ cứ ca ngợi danh {{deity_pronoun:ngài|Ngài}} đời đời mãi mãi."
+        },
+        "ko": {
+          "L": "날마다 제가 주님을 송축하고, 주님의 이름을 영원히 그리고 영원토록 찬양하겠습니다.",
+          "B": "날마다 제가 주님을 송축하고, 영원무궁토록 주님의 이름을 찬양하겠습니다.",
+          "R": "저는 하루도 빠짐없이 주님을 찬양하겠습니다. 영원히 언제까지나 주님의 이름을 계속 찬양하겠습니다."
         }
       },
       "decisions": [
@@ -239,6 +372,31 @@
           "L": "Great [is] {{divine_name:the LORD|Yahweh}} and to be praised exceedingly, and to {{deity_pronoun:his|His}} greatness [there is] no searching.",
           "B": "{{divine_name:The LORD|Yahweh}} is great, worthy of the highest praise, and there is no searching out the depth of {{deity_pronoun:his|His}} greatness.",
           "R": "{{divine_name:The LORD|Yahweh}} is great! He deserves all our praise. No one can ever find the end of how great {{deity_pronoun:he|He}} is."
+        },
+        "fr": {
+          "L": "Grand [est] {{divine_name:le SEIGNEUR|Yahvé}} et digne d’être loué hautement, et à {{deity_pronoun:sa|Sa}} grandeur [il n’y a] pas d’exploration.",
+          "B": "{{divine_name:Le SEIGNEUR|Yahvé}} est grand, digne de la plus haute louange, et nul ne peut sonder la profondeur de {{deity_pronoun:sa|Sa}} grandeur.",
+          "R": "{{divine_name:Le SEIGNEUR|Yahvé}} est grand ! Il mérite toutes nos louanges. Personne ne pourra jamais trouver la fin de {{deity_pronoun:sa|Sa}} grandeur."
+        },
+        "sw": {
+          "L": "{{divine_name:BWANA|Yahwe}} [ni] mkuu na mwenye kusifiwa sana, na ukuu {{deity_pronoun:wake|Wake}} [hauna] kuchunguzika.",
+          "B": "{{divine_name:BWANA|Yahwe}} ni mkuu, anastahili sifa za juu kabisa, na hakuna awezaye kuchunguza kina cha ukuu {{deity_pronoun:wake|Wake}}.",
+          "R": "{{divine_name:BWANA|Yahwe}} ni mkuu! Anastahili sifa zetu zote. Hakuna mtu awezaye kufikia mwisho wa ukuu {{deity_pronoun:wake|Wake}}."
+        },
+        "es": {
+          "L": "Grande [es] {{divine_name:el SEÑOR|Yahvé}} y digno de suprema alabanza, y {{deity_pronoun:su|Su}} grandeza [es] inescrutable.",
+          "B": "{{divine_name:El SEÑOR|Yahvé}} es grande, digno de la más alta alabanza, y no hay manera de sondear lo profundo de {{deity_pronoun:su|Su}} grandeza.",
+          "R": "¡{{divine_name:El SEÑOR|Yahvé}} es grande! Merece toda nuestra alabanza. Nadie podrá llegar nunca al final de lo grande que {{deity_pronoun:él|Él}} es."
+        },
+        "vi": {
+          "L": "{{divine_name:CHÚA|Gia-vê}} [là] vĩ đại và rất đáng được ca ngợi, và sự vĩ đại của {{deity_pronoun:ngài|Ngài}} [thì] không thể dò xét được.",
+          "B": "{{divine_name:CHÚA|Gia-vê}} thật vĩ đại, đáng được ca ngợi tột bậc; sự vĩ đại của {{deity_pronoun:ngài|Ngài}} sâu thẳm không ai dò thấu.",
+          "R": "{{divine_name:CHÚA|Gia-vê}} thật vĩ đại! Ngài đáng được chúng ta hết lòng ca ngợi. Không ai có thể tìm ra giới hạn sự vĩ đại của {{deity_pronoun:ngài|Ngài}}."
+        },
+        "ko": {
+          "L": "{{divine_name:주|야훼}}는 위대하시고 크게 찬양받으실 분이시니, 그분의 위대하심은 헤아릴 수 없습니다.",
+          "B": "{{divine_name:주|야훼}}께서는 위대하시고 지극히 높은 찬양을 받으시기에 합당하시니, 그분의 위대하심은 아무도 다 헤아릴 수 없습니다.",
+          "R": "{{divine_name:주|야훼}}께서는 위대하십니다! 그분은 저희의 모든 찬양을 받으셔야 마땅합니다. 그분께서 얼마나 위대하신지 아무도 끝까지 알아낼 수 없습니다."
         }
       },
       "decisions": [
@@ -325,6 +483,31 @@
           "L": "Generation to generation will laud {{deity_pronoun:your|Your}} works, and {{deity_pronoun:your|Your}} mighty deeds they will declare.",
           "B": "Each generation will praise {{deity_pronoun:your|Your}} works to the one after it and announce {{deity_pronoun:your|Your}} mighty acts.",
           "R": "Parents will tell their children about the things {{deity_pronoun:you|You}} have done. They will tell about {{deity_pronoun:your|Your}} powerful acts."
+        },
+        "fr": {
+          "L": "Génération à génération vantera {{deity_pronoun:tes|Tes}} œuvres, et {{deity_pronoun:tes|Tes}} hauts faits, ils les annonceront.",
+          "B": "Chaque génération célébrera {{deity_pronoun:tes|Tes}} œuvres devant la suivante et annoncera {{deity_pronoun:tes|Tes}} actes puissants.",
+          "R": "Les parents raconteront à leurs enfants ce que {{deity_pronoun:tu|Tu}} as fait. Ils parleront de {{deity_pronoun:tes|Tes}} actions puissantes."
+        },
+        "sw": {
+          "L": "Kizazi kwa kizazi kitazisifu kazi {{deity_pronoun:zako|Zako}}, na matendo {{deity_pronoun:yako|Yako}} makuu watayatangaza.",
+          "B": "Kila kizazi kitazisifu kazi {{deity_pronoun:zako|Zako}} kwa kizazi kinachofuata na kuyatangaza matendo {{deity_pronoun:yako|Yako}} makuu.",
+          "R": "Wazazi watawaambia watoto wao mambo uliyoyatenda. Watasimulia matendo {{deity_pronoun:yako|Yako}} yenye nguvu."
+        },
+        "es": {
+          "L": "Generación a generación celebrará {{deity_pronoun:tus|Tus}} obras, y {{deity_pronoun:tus|Tus}} hechos poderosos anunciarán.",
+          "B": "Cada generación alabará {{deity_pronoun:tus|Tus}} obras ante la siguiente y anunciará {{deity_pronoun:tus|Tus}} hechos poderosos.",
+          "R": "Los padres les contarán a sus hijos las cosas que {{deity_pronoun:tú|Tú}} has hecho. Hablarán de {{deity_pronoun:tus|Tus}} hechos poderosos."
+        },
+        "vi": {
+          "L": "Đời này sang đời kia sẽ ca tụng các công việc của {{deity_pronoun:ngài|Ngài}}, và chúng sẽ rao truyền những việc quyền năng của {{deity_pronoun:ngài|Ngài}}.",
+          "B": "Thế hệ này sẽ ca tụng công việc của {{deity_pronoun:ngài|Ngài}} cho thế hệ sau, và công bố những việc quyền năng của {{deity_pronoun:ngài|Ngài}}.",
+          "R": "Cha mẹ sẽ kể cho con cái nghe những việc {{deity_pronoun:ngài|Ngài}} đã làm. Họ sẽ kể về những việc quyền năng của {{deity_pronoun:ngài|Ngài}}."
+        },
+        "ko": {
+          "L": "대대로 주님께서 하신 일들을 기리고, 주님의 능하신 일들을 전할 것입니다.",
+          "B": "한 세대가 다음 세대에게 주님께서 하신 일들을 찬양하고, 주님의 능하신 일들을 알릴 것입니다.",
+          "R": "부모들은 주님께서 하신 일들을 자녀들에게 들려줄 것입니다. 주님께서 하신 놀라운 능력의 일들을 이야기할 것입니다."
         }
       },
       "decisions": [
@@ -409,6 +592,31 @@
           "L": "The splendor of the glory of {{deity_pronoun:your|Your}} majesty, and the matters of {{deity_pronoun:your|Your}} wonders, I will meditate on.",
           "B": "I will reflect on {{deity_pronoun:your|Your}} majesty, its glory and splendor, and on the story of {{deity_pronoun:your|Your}} wonders.",
           "R": "I will think about how glorious and majestic {{deity_pronoun:you|You}} are. I will think about the amazing things {{deity_pronoun:you|You}} have done."
+        },
+        "fr": {
+          "L": "La splendeur de la gloire de {{deity_pronoun:ta|Ta}} majesté, et les récits de {{deity_pronoun:tes|Tes}} merveilles, je les méditerai.",
+          "B": "Je méditerai sur {{deity_pronoun:ta|Ta}} majesté, sa gloire et sa splendeur, et sur le récit de {{deity_pronoun:tes|Tes}} merveilles.",
+          "R": "Je penserai à {{deity_pronoun:ta|Ta}} gloire et à {{deity_pronoun:ta|Ta}} majesté. Je penserai aux choses étonnantes que {{deity_pronoun:tu|Tu}} as faites."
+        },
+        "sw": {
+          "L": "Fahari ya utukufu wa enzi {{deity_pronoun:yako|Yako}}, na habari za maajabu {{deity_pronoun:yako|Yako}}, nitazitafakari.",
+          "B": "Nitaitafakari enzi {{deity_pronoun:yako|Yako}}, utukufu wake na fahari yake, na habari za maajabu {{deity_pronoun:yako|Yako}}.",
+          "R": "Nitafikiri jinsi ulivyo mtukufu na mwenye enzi. Nitafikiri juu ya mambo ya ajabu uliyoyatenda."
+        },
+        "es": {
+          "L": "El esplendor de la gloria de {{deity_pronoun:tu|Tu}} majestad, y los relatos de {{deity_pronoun:tus|Tus}} maravillas, meditaré.",
+          "B": "Reflexionaré en {{deity_pronoun:tu|Tu}} majestad, en su gloria y su esplendor, y en la historia de {{deity_pronoun:tus|Tus}} maravillas.",
+          "R": "Pensaré en lo glorioso y majestuoso que {{deity_pronoun:tú|Tú}} eres. Pensaré en las cosas asombrosas que {{deity_pronoun:tú|Tú}} has hecho."
+        },
+        "vi": {
+          "L": "Sự huy hoàng của vinh quang uy nghi của {{deity_pronoun:ngài|Ngài}} và các sự kỳ diệu của {{deity_pronoun:ngài|Ngài}}, tôi sẽ suy gẫm.",
+          "B": "Tôi sẽ suy gẫm về sự uy nghi của {{deity_pronoun:ngài|Ngài}}, về vinh quang và vẻ huy hoàng của sự uy nghi ấy, và về câu chuyện những việc kỳ diệu của {{deity_pronoun:ngài|Ngài}}.",
+          "R": "Tôi sẽ suy nghĩ về việc {{deity_pronoun:ngài|Ngài}} vinh hiển và uy nghi biết bao. Tôi sẽ suy nghĩ về những việc kỳ diệu {{deity_pronoun:ngài|Ngài}} đã làm."
+        },
+        "ko": {
+          "L": "주님의 위엄의 영광스러운 광채와 주님의 기이한 일들의 말씀을 제가 깊이 묵상하겠습니다.",
+          "B": "제가 주님의 위엄과 그 영광과 광채를, 그리고 주님의 기이한 일들의 이야기를 곰곰이 생각하겠습니다.",
+          "R": "저는 주님께서 얼마나 영광스럽고 위엄이 있으신지 생각하겠습니다. 주님께서 하신 놀라운 일들을 생각하겠습니다."
         }
       },
       "decisions": [
@@ -509,6 +717,31 @@
           "L": "And the might of {{deity_pronoun:your|Your}} awesome [deeds] they will tell, and {{deity_pronoun:your|Your}} greatness, I will recount it.",
           "B": "People will speak of the power of {{deity_pronoun:your|Your}} fearsome deeds, and I will tell of {{deity_pronoun:your|Your}} greatness.",
           "R": "People will talk about the powerful and frightening things {{deity_pronoun:you|You}} have done, and I will tell how great {{deity_pronoun:you|You}} are."
+        },
+        "fr": {
+          "L": "Et la puissance de {{deity_pronoun:tes|Tes}} [actes] redoutables, ils la diront, et {{deity_pronoun:ta|Ta}} grandeur, moi, je la raconterai.",
+          "B": "On parlera de la puissance de {{deity_pronoun:tes|Tes}} actes redoutables, et moi, je raconterai {{deity_pronoun:ta|Ta}} grandeur.",
+          "R": "Les gens parleront des choses puissantes et terribles que {{deity_pronoun:tu|Tu}} as faites, et moi, je dirai combien {{deity_pronoun:tu|Tu}} es grand."
+        },
+        "sw": {
+          "L": "Na nguvu za [matendo] {{deity_pronoun:yako|Yako}} ya kutisha wataisimulia, na ukuu {{deity_pronoun:wako|Wako}}, nitautangaza.",
+          "B": "Watu watazungumza juu ya nguvu za matendo {{deity_pronoun:yako|Yako}} ya kutisha, nami nitatangaza ukuu {{deity_pronoun:wako|Wako}}.",
+          "R": "Watu watazungumza juu ya mambo yenye nguvu na ya kutisha uliyoyatenda, nami nitawaambia jinsi ulivyo mkuu."
+        },
+        "es": {
+          "L": "Y el poder de {{deity_pronoun:tus|Tus}} [obras] temibles dirán, y {{deity_pronoun:tu|Tu}} grandeza, yo la contaré.",
+          "B": "La gente hablará del poder de {{deity_pronoun:tus|Tus}} obras temibles, y yo contaré {{deity_pronoun:tu|Tu}} grandeza.",
+          "R": "La gente hablará de las cosas poderosas y temibles que {{deity_pronoun:tú|Tú}} has hecho, y yo contaré lo grande que {{deity_pronoun:tú|Tú}} eres."
+        },
+        "vi": {
+          "L": "Và người ta sẽ nói về quyền năng của những [việc] đáng sợ của {{deity_pronoun:ngài|Ngài}}, và sự vĩ đại của {{deity_pronoun:ngài|Ngài}}, tôi sẽ thuật lại.",
+          "B": "Người ta sẽ nói về quyền năng của những việc đáng kinh sợ của {{deity_pronoun:ngài|Ngài}}, và tôi sẽ thuật lại sự vĩ đại của {{deity_pronoun:ngài|Ngài}}.",
+          "R": "Người ta sẽ nói về những việc mạnh mẽ và đáng sợ {{deity_pronoun:ngài|Ngài}} đã làm, và tôi sẽ kể ra {{deity_pronoun:ngài|Ngài}} vĩ đại biết bao."
+        },
+        "ko": {
+          "L": "그리고 사람들이 주님의 두려운 [일들]의 능력을 말하고, 주님의 위대하심을 제가 전하겠습니다.",
+          "B": "사람들은 주님께서 행하신 두려운 일들의 능력을 말하고, 저는 주님의 위대하심을 전하겠습니다.",
+          "R": "사람들은 주님께서 하신 힘 있고 두려운 일들을 이야기하고, 저는 주님께서 얼마나 위대하신지 전하겠습니다."
         }
       },
       "decisions": [
@@ -609,6 +842,31 @@
           "L": "The memory of {{deity_pronoun:your|Your}} abundant goodness they will pour forth, and [of] {{deity_pronoun:your|Your}} righteousness they will shout for joy.",
           "B": "They will spill over with the memory of {{deity_pronoun:your|Your}} great goodness and sing out for joy at {{deity_pronoun:your|Your}} righteousness.",
           "R": "People will remember how very good {{deity_pronoun:you|You}} are, and they will not be able to stop talking about it. They will sing happily about how {{deity_pronoun:you|You}} always do what is right."
+        },
+        "fr": {
+          "L": "Le souvenir de {{deity_pronoun:ta|Ta}} grande bonté, ils le feront jaillir, et [de] {{deity_pronoun:ta|Ta}} justice ils crieront de joie.",
+          "B": "Ils déborderont du souvenir de {{deity_pronoun:ta|Ta}} grande bonté et chanteront avec joie {{deity_pronoun:ta|Ta}} justice.",
+          "R": "Les gens se souviendront combien {{deity_pronoun:tu|Tu}} es bon, et ils ne pourront pas s’arrêter d’en parler. Ils chanteront avec joie que {{deity_pronoun:tu|Tu}} fais toujours ce qui est juste."
+        },
+        "sw": {
+          "L": "Kumbukumbu ya wingi wa wema {{deity_pronoun:wako|Wako}} wataibubujisha, na [juu ya] haki {{deity_pronoun:yako|Yako}} watapiga kelele za furaha.",
+          "B": "Watafurika kwa kumbukumbu ya wema {{deity_pronoun:wako|Wako}} mwingi na kuimba kwa furaha juu ya haki {{deity_pronoun:yako|Yako}}.",
+          "R": "Watu watakumbuka jinsi ulivyo mwema sana, nao hawataweza kuacha kuzungumza juu ya hilo. Wataimba kwa furaha juu ya jinsi unavyotenda yaliyo haki daima."
+        },
+        "es": {
+          "L": "El recuerdo de {{deity_pronoun:tu|Tu}} abundante bondad proclamarán a raudales, y [de] {{deity_pronoun:tu|Tu}} justicia gritarán de alegría.",
+          "B": "Desbordarán con el recuerdo de {{deity_pronoun:tu|Tu}} gran bondad y cantarán con alegría por {{deity_pronoun:tu|Tu}} justicia.",
+          "R": "La gente recordará lo bueno que {{deity_pronoun:tú|Tú}} eres, y no podrá dejar de hablar de ello. Cantarán felices de cómo {{deity_pronoun:tú|Tú}} siempre haces lo correcto."
+        },
+        "vi": {
+          "L": "Kỷ niệm về sự tốt lành dư dật của {{deity_pronoun:ngài|Ngài}}, chúng sẽ tuôn tràn ra, và [về] sự công chính của {{deity_pronoun:ngài|Ngài}}, chúng sẽ reo hò vui mừng.",
+          "B": "Người ta sẽ tuôn tràn lời nhắc lại sự tốt lành lớn lao của {{deity_pronoun:ngài|Ngài}}, và reo hò vui mừng vì sự công chính của {{deity_pronoun:ngài|Ngài}}.",
+          "R": "Người ta sẽ nhớ lại {{deity_pronoun:ngài|Ngài}} tốt lành biết bao, và họ sẽ nói về điều đó mãi không thôi. Họ sẽ vui vẻ ca hát về việc {{deity_pronoun:ngài|Ngài}} luôn làm điều công chính."
+        },
+        "ko": {
+          "L": "그들이 주님의 크신 선하심을 기억하여 쏟아 내고, 주님의 의를 기뻐 외칠 것입니다.",
+          "B": "그들은 주님의 크신 선하심을 기억하며 넘치도록 말하고, 주님의 의를 기뻐 노래할 것입니다.",
+          "R": "사람들은 주님께서 얼마나 좋으신 분인지 기억하고, 그 이야기를 멈추지 못할 것입니다. 주님께서 언제나 옳은 일을 하시는 것을 기뻐하며 노래할 것입니다."
         }
       },
       "decisions": [
@@ -729,6 +987,31 @@
           "L": "Gracious and compassionate [is] {{divine_name:the LORD|Yahweh}}, slow to anger and great in loyal love.",
           "B": "{{divine_name:The LORD|Yahweh}} is full of grace and compassion, slow to anger and great in loyal love.",
           "R": "{{divine_name:The LORD|Yahweh}} is kind and tender. He does not get angry quickly, and {{deity_pronoun:his|His}} faithful love is great."
+        },
+        "fr": {
+          "L": "Bienveillant et plein de compassion [est] {{divine_name:le SEIGNEUR|Yahvé}}, lent à la colère et grand en amour loyal.",
+          "B": "{{divine_name:Le SEIGNEUR|Yahvé}} est plein de grâce et de compassion, lent à la colère et riche en amour fidèle.",
+          "R": "{{divine_name:Le SEIGNEUR|Yahvé}} est bon et tendre. Il ne se met pas vite en colère, et {{deity_pronoun:son|Son}} amour fidèle est grand."
+        },
+        "sw": {
+          "L": "{{divine_name:BWANA|Yahwe}} [ni] mwenye neema na mwenye huruma, mwenye kuchelewa kukasirika na mkuu katika upendo usiokoma.",
+          "B": "{{divine_name:BWANA|Yahwe}} amejaa neema na huruma; huchelewa kukasirika na ni mkuu katika upendo usiokoma.",
+          "R": "{{divine_name:BWANA|Yahwe}} ni mwema na mpole. Hakasiriki upesi, na upendo {{deity_pronoun:wake|Wake}} usiokoma ni mkuu."
+        },
+        "es": {
+          "L": "Clemente y compasivo [es] {{divine_name:el SEÑOR|Yahvé}}, lento para la ira y grande en amor leal.",
+          "B": "{{divine_name:El SEÑOR|Yahvé}} está lleno de gracia y compasión, es lento para la ira y grande en amor fiel.",
+          "R": "{{divine_name:El SEÑOR|Yahvé}} es bondadoso y tierno. No se enoja fácilmente, y {{deity_pronoun:su|Su}} amor fiel es grande."
+        },
+        "vi": {
+          "L": "{{divine_name:CHÚA|Gia-vê}} [là] Đấng đầy ân điển và thương xót, chậm giận và giàu tình yêu thương thành tín.",
+          "B": "{{divine_name:CHÚA|Gia-vê}} đầy ân điển và lòng thương xót, chậm giận và giàu tình yêu thương thành tín.",
+          "R": "{{divine_name:CHÚA|Gia-vê}} nhân từ và dịu dàng. Ngài không dễ nổi giận, và tình thương không hề thay đổi của {{deity_pronoun:ngài|Ngài}} thật lớn lao."
+        },
+        "ko": {
+          "L": "은혜로우시고 긍휼이 많으신 분이 {{divine_name:주|야훼}}이시니, 노하기를 오래 참으시고 한결같은 사랑이 크십니다.",
+          "B": "{{divine_name:주|야훼}}께서는 은혜와 긍휼이 가득하시고, 쉽게 노하지 않으시며, 한결같은 사랑이 크십니다.",
+          "R": "{{divine_name:주|야훼}}께서는 친절하시고 다정하십니다. 쉽게 화내지 않으시고, 그분의 변함없는 사랑은 큽니다."
         }
       },
       "decisions": [
@@ -820,6 +1103,50 @@
           "reason": "Readable uses plain words for the two qualities: grace that gives freely and the tender love of a parent (raham is related to the word for the womb).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191450080011",
+            "o191450080021"
+          ],
+          "choice": "\"ân điển và thương xót\" (L, B); \"nhân từ và dịu dàng\" (R)",
+          "alternatives": [
+            "\"nhân từ và thương xót\" at every level"
+          ],
+          "reason": "The words recall God's name in Exodus 34:6 (see the meaning decision). \"ân điển\" is the key term for grace; Readable says it in plain words, as the English Readable says \"kind and tender\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191450080011",
+            "o191450080022",
+            "o191450080041",
+            "o191450080051"
+          ],
+          "choice": "\"은혜로우시고 긍휼이 많으신\" for gracious and compassionate",
+          "alternatives": [
+            "자비로우시며"
+          ],
+          "reason": "The words of Exodus 34:6 (meaning decision); \"긍휼\" is kept for this word (also verse 9) and \"자비\" for asking mercy.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -853,6 +1180,31 @@
           "L": "Good [is] {{divine_name:the LORD|Yahweh}} to all, and {{deity_pronoun:his|His}} compassions [are] over all {{deity_pronoun:his|His}} works.",
           "B": "{{divine_name:The LORD|Yahweh}} is good to everyone; {{deity_pronoun:his|His}} compassion covers all that {{deity_pronoun:he|He}} has made.",
           "R": "{{divine_name:The LORD|Yahweh}} is good to everyone. He shows tender love to everything {{deity_pronoun:he|He}} has made."
+        },
+        "fr": {
+          "L": "Bon [est] {{divine_name:le SEIGNEUR|Yahvé}} envers tous, et {{deity_pronoun:ses|Ses}} compassions [sont] sur toutes {{deity_pronoun:ses|Ses}} œuvres.",
+          "B": "{{divine_name:Le SEIGNEUR|Yahvé}} est bon envers tous ; {{deity_pronoun:sa|Sa}} compassion s’étend sur tout ce qu’{{deity_pronoun:il|Il}} a fait.",
+          "R": "{{divine_name:Le SEIGNEUR|Yahvé}} est bon pour tout le monde. Il montre un amour tendre à tout ce qu’{{deity_pronoun:il|Il}} a fait."
+        },
+        "sw": {
+          "L": "{{divine_name:BWANA|Yahwe}} [ni] mwema kwa wote, na huruma {{deity_pronoun:zake|Zake}} [ziko] juu ya kazi {{deity_pronoun:zake|Zake}} zote.",
+          "B": "{{divine_name:BWANA|Yahwe}} ni mwema kwa kila mtu; huruma {{deity_pronoun:yake|Yake}} inavifunika vyote alivyoviumba.",
+          "R": "{{divine_name:BWANA|Yahwe}} ni mwema kwa kila mtu. Huonyesha upendo mwororo kwa kila kitu alichokiumba."
+        },
+        "es": {
+          "L": "Bueno [es] {{divine_name:el SEÑOR|Yahvé}} con todos, y {{deity_pronoun:su|Su}} compasión [está] sobre todas {{deity_pronoun:sus|Sus}} obras.",
+          "B": "{{divine_name:El SEÑOR|Yahvé}} es bueno con todos; {{deity_pronoun:su|Su}} compasión alcanza a todo lo que {{deity_pronoun:él|Él}} ha hecho.",
+          "R": "{{divine_name:El SEÑOR|Yahvé}} es bueno con todos. Muestra amor tierno a todo lo que {{deity_pronoun:él|Él}} ha hecho."
+        },
+        "vi": {
+          "L": "{{divine_name:CHÚA|Gia-vê}} [là] tốt lành với mọi người, và lòng thương xót của {{deity_pronoun:ngài|Ngài}} [ở] trên mọi công việc {{deity_pronoun:ngài|Ngài}}.",
+          "B": "{{divine_name:CHÚA|Gia-vê}} tốt lành với mọi người; lòng thương xót của {{deity_pronoun:ngài|Ngài}} bao trùm mọi loài {{deity_pronoun:ngài|Ngài}} đã dựng nên.",
+          "R": "{{divine_name:CHÚA|Gia-vê}} tốt lành với mọi người. Ngài bày tỏ tình thương dịu dàng với mọi vật {{deity_pronoun:ngài|Ngài}} đã dựng nên."
+        },
+        "ko": {
+          "L": "{{divine_name:주|야훼}}께서는 모두에게 선하시고, 그분의 긍휼이 그분께서 지으신 모든 것 위에 있습니다.",
+          "B": "{{divine_name:주|야훼}}께서는 모든 이에게 선하시니, 그분의 긍휼이 그분께서 지으신 모든 것을 덮습니다.",
+          "R": "{{divine_name:주|야훼}}께서는 모든 이에게 좋으신 분이십니다. 그분께서 만드신 모든 것에게 다정한 사랑을 베푸십니다."
         }
       },
       "decisions": [
@@ -918,6 +1270,31 @@
           "L": "All {{deity_pronoun:your|Your}} works will give thanks to {{deity_pronoun:you|You}}, {{divine_name:LORD|Yahweh}}, and {{deity_pronoun:your|Your}} faithful [ones] will bless {{deity_pronoun:you|You}}.",
           "B": "{{divine_name:LORD|Yahweh}}, all {{deity_pronoun:your|Your}} works will thank {{deity_pronoun:you|You}}, and {{deity_pronoun:your|Your}} faithful people will bless {{deity_pronoun:you|You}}.",
           "R": "{{divine_name:LORD|Yahweh}}, everything {{deity_pronoun:you|You}} have made will thank {{deity_pronoun:you|You}}. Your faithful people will praise {{deity_pronoun:you|You}}."
+        },
+        "fr": {
+          "L": "Toutes {{deity_pronoun:tes|Tes}} œuvres {{deity_pronoun:te|Te}} rendront grâce, {{divine_name:SEIGNEUR|Yahvé}}, et {{deity_pronoun:tes|Tes}} fidèles {{deity_pronoun:te|Te}} béniront.",
+          "B": "{{divine_name:SEIGNEUR|Yahvé}}, toutes {{deity_pronoun:tes|Tes}} œuvres {{deity_pronoun:te|Te}} remercieront, et {{deity_pronoun:tes|Tes}} fidèles {{deity_pronoun:te|Te}} béniront.",
+          "R": "{{divine_name:SEIGNEUR|Yahvé}}, tout ce que {{deity_pronoun:tu|Tu}} as fait {{deity_pronoun:te|Te}} remerciera. Tes fidèles {{deity_pronoun:te|Te}} loueront."
+        },
+        "sw": {
+          "L": "Kazi {{deity_pronoun:zako|Zako}} zote zitakushukuru, Ee {{divine_name:BWANA|Yahwe}}, na waaminifu {{deity_pronoun:wako|Wako}} watakubariki.",
+          "B": "Ee {{divine_name:BWANA|Yahwe}}, kazi {{deity_pronoun:zako|Zako}} zote zitakushukuru, na watu {{deity_pronoun:wako|Wako}} waaminifu watakubariki.",
+          "R": "{{divine_name:BWANA|Yahwe}}, kila kitu ulichokiumba kitakushukuru. Watu {{deity_pronoun:wako|Wako}} waaminifu watakusifu."
+        },
+        "es": {
+          "L": "Todas {{deity_pronoun:tus|Tus}} obras {{deity_pronoun:te|Te}} darán gracias, {{divine_name:SEÑOR|Yahvé}}, y {{deity_pronoun:tus|Tus}} fieles {{deity_pronoun:te|Te}} bendecirán.",
+          "B": "{{divine_name:SEÑOR|Yahvé}}, todas {{deity_pronoun:tus|Tus}} obras {{deity_pronoun:te|Te}} darán gracias, y {{deity_pronoun:tus|Tus}} fieles {{deity_pronoun:te|Te}} bendecirán.",
+          "R": "{{divine_name:SEÑOR|Yahvé}}, todo lo que {{deity_pronoun:tú|Tú}} has hecho {{deity_pronoun:te|Te}} dará gracias. Tu pueblo fiel {{deity_pronoun:te|Te}} alabará."
+        },
+        "vi": {
+          "L": "Lạy {{divine_name:CHÚA|Gia-vê}}, mọi công việc của {{deity_pronoun:ngài|Ngài}} sẽ cảm tạ {{deity_pronoun:ngài|Ngài}}, và những người trung tín của {{deity_pronoun:ngài|Ngài}} sẽ chúc tụng {{deity_pronoun:ngài|Ngài}}.",
+          "B": "Lạy {{divine_name:CHÚA|Gia-vê}}, mọi loài {{deity_pronoun:ngài|Ngài}} đã dựng nên sẽ cảm tạ {{deity_pronoun:ngài|Ngài}}, và những người trung tín của {{deity_pronoun:ngài|Ngài}} sẽ chúc tụng {{deity_pronoun:ngài|Ngài}}.",
+          "R": "Lạy {{divine_name:CHÚA|Gia-vê}}, mọi vật {{deity_pronoun:ngài|Ngài}} đã dựng nên sẽ cảm tạ {{deity_pronoun:ngài|Ngài}}. Những người trung tín của {{deity_pronoun:ngài|Ngài}} sẽ ca ngợi {{deity_pronoun:ngài|Ngài}}."
+        },
+        "ko": {
+          "L": "{{divine_name:주|야훼}}여, 주님께서 지으신 모든 것이 주님께 감사드리고, 주님의 신실한 이들이 주님을 송축할 것입니다.",
+          "B": "{{divine_name:주|야훼}}여, 주님께서 지으신 모든 것이 주님께 감사드리고, 주님의 신실한 백성이 주님을 송축할 것입니다.",
+          "R": "{{divine_name:주|야훼}}여, 주님께서 만드신 모든 것이 주님께 감사드릴 것입니다. 주님의 신실한 백성이 주님을 찬양할 것입니다."
         }
       },
       "decisions": [
@@ -981,6 +1358,31 @@
           "L": "The glory of {{deity_pronoun:your|Your}} kingdom they will tell, and [of] {{deity_pronoun:your|Your}} might they will speak,",
           "B": "They will speak of {{deity_pronoun:your|Your}} glorious reign and tell of {{deity_pronoun:your|Your}} power,",
           "R": "They will talk about how glorious {{deity_pronoun:your|Your}} kingdom is. They will tell about {{deity_pronoun:your|Your}} power."
+        },
+        "fr": {
+          "L": "La gloire de {{deity_pronoun:ton|Ton}} règne, ils la diront, et [de] {{deity_pronoun:ta|Ta}} puissance ils parleront,",
+          "B": "Ils parleront de la gloire de {{deity_pronoun:ton|Ton}} règne et raconteront {{deity_pronoun:ta|Ta}} puissance,",
+          "R": "Ils diront combien {{deity_pronoun:ton|Ton}} royaume est glorieux. Ils parleront de {{deity_pronoun:ta|Ta}} puissance."
+        },
+        "sw": {
+          "L": "Utukufu wa ufalme {{deity_pronoun:wako|Wako}} watausimulia, na [juu ya] uweza {{deity_pronoun:wako|Wako}} watanena,",
+          "B": "Watazungumza juu ya utawala {{deity_pronoun:wako|Wako}} wenye utukufu na kusimulia uweza {{deity_pronoun:wako|Wako}},",
+          "R": "Watazungumza jinsi ufalme {{deity_pronoun:wako|Wako}} ulivyo mtukufu. Watasimulia habari za uweza {{deity_pronoun:wako|Wako}}."
+        },
+        "es": {
+          "L": "La gloria de {{deity_pronoun:tu|Tu}} reino dirán, y [de] {{deity_pronoun:tu|Tu}} poder hablarán,",
+          "B": "Hablarán de {{deity_pronoun:tu|Tu}} glorioso reinado y contarán {{deity_pronoun:tu|Tu}} poder,",
+          "R": "Hablarán de lo glorioso que es {{deity_pronoun:tu|Tu}} reino. Contarán {{deity_pronoun:tu|Tu}} poder."
+        },
+        "vi": {
+          "L": "Họ sẽ nói về vinh quang của vương quốc {{deity_pronoun:ngài|Ngài}}, và họ sẽ thuật lại quyền năng của {{deity_pronoun:ngài|Ngài}},",
+          "B": "Họ sẽ nói về vương quyền vinh hiển của {{deity_pronoun:ngài|Ngài}} và thuật lại quyền năng của {{deity_pronoun:ngài|Ngài}},",
+          "R": "Họ sẽ nói về vương quốc của {{deity_pronoun:ngài|Ngài}} vinh hiển biết bao. Họ sẽ kể về quyền năng của {{deity_pronoun:ngài|Ngài}}."
+        },
+        "ko": {
+          "L": "그들이 주님 나라의 영광을 말하고, 주님의 능력을 이야기할 것입니다,",
+          "B": "그들은 주님의 영광스러운 통치를 말하고, 주님의 능력을 이야기할 것입니다.",
+          "R": "그들은 주님의 나라가 얼마나 영광스러운지 이야기할 것입니다. 주님의 능력에 대해 말할 것입니다."
         }
       },
       "decisions": [
@@ -1027,6 +1429,27 @@
           "reason": "\"They\" are the faithful of verse 10.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191450110022"
+          ],
+          "choice": "\"vương quốc\" (L, R), \"vương quyền\" (B) for God's kingdom",
+          "alternatives": [
+            "\"nước\""
+          ],
+          "reason": "The kingdom is God's rule as King (see the meaning decision). \"vương quốc\" says kingdom plainly; Balanced says \"vương quyền\" (royal rule), as the English Balanced says \"reign\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1062,6 +1485,31 @@
           "L": "to make known to the sons of humankind {{deity_pronoun:his|His}} mighty deeds and the glory of the splendor of {{deity_pronoun:his|His}} kingdom.",
           "B": "to make {{deity_pronoun:his|His}} mighty acts known to all people, and the glorious splendor of {{deity_pronoun:his|His}} reign.",
           "R": "They want all people to know about the powerful things God has done and how glorious and wonderful {{deity_pronoun:his|His}} kingdom is."
+        },
+        "fr": {
+          "L": "pour faire connaître aux fils des humains {{deity_pronoun:ses|Ses}} hauts faits et la gloire de la splendeur de {{deity_pronoun:son|Son}} règne.",
+          "B": "pour faire connaître à tous les humains {{deity_pronoun:ses|Ses}} actes puissants et la splendeur glorieuse de {{deity_pronoun:son|Son}} règne.",
+          "R": "Ils veulent que tout le monde sache les choses puissantes que Dieu a faites, et combien {{deity_pronoun:son|Son}} royaume est glorieux et merveilleux."
+        },
+        "sw": {
+          "L": "ili kuwajulisha wanadamu matendo {{deity_pronoun:yake|Yake}} makuu na utukufu wa fahari ya ufalme {{deity_pronoun:wake|Wake}}.",
+          "B": "ili kuyajulisha matendo {{deity_pronoun:yake|Yake}} makuu kwa watu wote, na fahari tukufu ya utawala {{deity_pronoun:wake|Wake}}.",
+          "R": "Wanataka watu wote wajue mambo makuu ambayo Mungu ametenda na jinsi ufalme {{deity_pronoun:wake|Wake}} ulivyo mtukufu na wa ajabu."
+        },
+        "es": {
+          "L": "para dar a conocer a los hijos de la humanidad {{deity_pronoun:sus|Sus}} hechos poderosos y la gloria del esplendor de {{deity_pronoun:su|Su}} reino.",
+          "B": "para dar a conocer a toda la gente {{deity_pronoun:sus|Sus}} hechos poderosos y el glorioso esplendor de {{deity_pronoun:su|Su}} reinado.",
+          "R": "Quieren que toda la gente sepa de las cosas poderosas que Dios ha hecho y de lo glorioso y maravilloso que es {{deity_pronoun:su|Su}} reino."
+        },
+        "vi": {
+          "L": "để cho con cái loài người biết những việc quyền năng của {{deity_pronoun:ngài|Ngài}} và vinh quang của sự huy hoàng của vương quốc {{deity_pronoun:ngài|Ngài}}.",
+          "B": "để mọi người được biết những việc quyền năng của {{deity_pronoun:ngài|Ngài}}, và vẻ huy hoàng vinh hiển của vương quyền {{deity_pronoun:ngài|Ngài}}.",
+          "R": "Họ muốn mọi người biết những việc quyền năng Đức Chúa Trời đã làm, và vương quốc của {{deity_pronoun:ngài|Ngài}} vinh hiển, tuyệt diệu biết bao."
+        },
+        "ko": {
+          "L": "사람의 자녀들에게 그분의 능하신 일들과 그분 나라의 위엄의 영광을 알리려는 것입니다.",
+          "B": "그것은 모든 사람에게 그분의 능하신 일들과 그분의 통치의 영광스러운 위엄을 알리려는 것입니다.",
+          "R": "그들은 모든 사람이 하나님께서 하신 능력 있는 일들과 그분의 나라가 얼마나 영광스럽고 놀라운지 알기를 바랍니다."
         }
       },
       "decisions": [
@@ -1113,6 +1561,27 @@
           "reason": "Readable starts a new sentence, so it names who wants this, the faithful of verse 10, and names God, whom the Hebrew calls \"his\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191450120071"
+          ],
+          "choice": "\"règne\" (Literal, Balanced) and \"royaume\" (Readable) for malkhut",
+          "alternatives": [
+            "\"royaume\" at every level"
+          ],
+          "reason": "Malkhut is God's rule as King, as the meaning decision says; \"règne\" says the rule, \"royaume\" is the plainer word for young readers, as the English Readable says \"kingdom\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1148,6 +1617,31 @@
           "L": "Your kingdom [is] a kingdom of all ages, and {{deity_pronoun:your|Your}} dominion [is] in every generation and generation.",
           "B": "Your kingdom is a kingdom for all the ages, and {{deity_pronoun:your|Your}} rule lasts through every generation.",
           "R": "Your kingdom will never end. You will rule over people in every age that will ever come."
+        },
+        "fr": {
+          "L": "Ton règne [est] un règne de tous les siècles, et {{deity_pronoun:ta|Ta}} domination [est] dans toute génération et génération.",
+          "B": "Ton règne est un règne pour tous les siècles, et {{deity_pronoun:ta|Ta}} domination dure de génération en génération.",
+          "R": "Ton royaume ne finira jamais. Tu régneras sur les gens de toutes les époques qui viendront."
+        },
+        "sw": {
+          "L": "Ufalme {{deity_pronoun:wako|Wako}} [ni] ufalme wa zama zote, na utawala {{deity_pronoun:wako|Wako}} [uko] katika kila kizazi na kizazi.",
+          "B": "Ufalme {{deity_pronoun:wako|Wako}} ni ufalme wa zama zote, na utawala {{deity_pronoun:wako|Wako}} unadumu katika kila kizazi.",
+          "R": "Ufalme {{deity_pronoun:wako|Wako}} hautakwisha kamwe. Utawatawala watu katika kila kizazi kitakachokuja."
+        },
+        "es": {
+          "L": "Tu reino [es] reino de todos los siglos, y {{deity_pronoun:tu|Tu}} dominio [es] por todas las generaciones.",
+          "B": "Tu reino es un reino para todos los siglos, y {{deity_pronoun:tu|Tu}} dominio dura por todas las generaciones.",
+          "R": "Tu reino nunca se acabará. Reinarás sobre la gente de todas las épocas que vendrán."
+        },
+        "vi": {
+          "L": "Vương quốc của {{deity_pronoun:ngài|Ngài}} [là] vương quốc của mọi thời đại, và quyền cai trị của {{deity_pronoun:ngài|Ngài}} [còn] từ đời nọ sang đời kia.",
+          "B": "Vương quốc của {{deity_pronoun:ngài|Ngài}} là vương quốc muôn đời, và quyền cai trị của {{deity_pronoun:ngài|Ngài}} còn mãi qua mọi thế hệ.",
+          "R": "Vương quốc của {{deity_pronoun:ngài|Ngài}} sẽ không bao giờ chấm dứt. Ngài sẽ cai trị loài người trong mọi thời đại sẽ đến."
+        },
+        "ko": {
+          "L": "주님의 나라는 모든 영원의 나라이고, 주님의 통치는 모든 세대와 세대에 [이릅니다].",
+          "B": "주님의 나라는 영원한 나라이고, 주님의 통치는 모든 세대에 걸쳐 이어집니다.",
+          "R": "주님의 나라는 결코 끝나지 않을 것입니다. 주님께서는 앞으로 올 모든 시대의 사람들을 다스리실 것입니다."
         }
       },
       "decisions": [
@@ -1229,6 +1723,31 @@
           "L": "{{divine_name:The LORD|Yahweh}} [is] supporting all those who fall, and raising up all those [who are] bowed down.",
           "B": "{{divine_name:The LORD|Yahweh}} holds up everyone who stumbles and raises all who are bent low.",
           "R": "{{divine_name:The LORD|Yahweh}} helps everyone who falls. He lifts up everyone who is weighed down with trouble."
+        },
+        "fr": {
+          "L": "{{divine_name:Le SEIGNEUR|Yahvé}} [est] soutenant tous ceux qui tombent, et redressant tous ceux [qui sont] courbés.",
+          "B": "{{divine_name:Le SEIGNEUR|Yahvé}} soutient tous ceux qui trébuchent et redresse tous ceux qui sont courbés.",
+          "R": "{{divine_name:Le SEIGNEUR|Yahvé}} aide tous ceux qui tombent. Il relève tous ceux qui sont écrasés par leurs malheurs."
+        },
+        "sw": {
+          "L": "{{divine_name:BWANA|Yahwe}} [ni] mwenye kuwategemeza wote wanaoanguka, na kuwainua wote [walioinamishwa].",
+          "B": "{{divine_name:BWANA|Yahwe}} huwashika wote wanaojikwaa na kuwainua wote walioinama chini.",
+          "R": "{{divine_name:BWANA|Yahwe}} humsaidia kila anayeanguka. Humwinua kila mtu aliyelemewa na taabu."
+        },
+        "es": {
+          "L": "{{divine_name:El SEÑOR|Yahvé}} sostiene a todos los que caen, y levanta a todos los [que están] encorvados.",
+          "B": "{{divine_name:El SEÑOR|Yahvé}} sostiene a todo el que tropieza y levanta a todos los que están doblegados.",
+          "R": "{{divine_name:El SEÑOR|Yahvé}} ayuda a todo el que cae. Levanta a todo el que está agobiado por los problemas."
+        },
+        "vi": {
+          "L": "{{divine_name:CHÚA|Gia-vê}} [là Đấng] nâng đỡ mọi người sắp ngã, và đỡ dậy mọi người bị cúi khom.",
+          "B": "{{divine_name:CHÚA|Gia-vê}} nâng đỡ mọi người vấp ngã và đỡ dậy mọi người bị đè khom xuống.",
+          "R": "{{divine_name:CHÚA|Gia-vê}} giúp đỡ mọi người bị vấp ngã. Ngài nâng dậy mọi người đang bị khó khăn đè nặng."
+        },
+        "ko": {
+          "L": "{{divine_name:주|야훼}}께서는 넘어지는 모든 이를 붙드시고, 구부러진 모든 이를 일으키십니다.",
+          "B": "{{divine_name:주|야훼}}께서는 비틀거리는 모든 사람을 붙들어 주시고, 짓눌려 구부러진 모든 사람을 일으켜 세우십니다.",
+          "R": "{{divine_name:주|야훼}}께서는 넘어지는 사람을 누구나 도와주십니다. 어려움에 짓눌린 사람을 누구나 일으켜 주십니다."
         }
       },
       "decisions": [
@@ -1319,6 +1838,31 @@
           "L": "The eyes of all look to {{deity_pronoun:you|You}} in hope, and {{deity_pronoun:you|You}} give them their food in its time.",
           "B": "All eyes are turned to {{deity_pronoun:you|You}} in hope, and {{deity_pronoun:you|You}} provide their food when it is needed.",
           "R": "Every living thing looks to {{deity_pronoun:you|You}} and waits. You give them their food at just the right time."
+        },
+        "fr": {
+          "L": "Les yeux de tous se tournent vers {{deity_pronoun:toi|Toi}} avec espoir, et {{deity_pronoun:toi|Toi}}, {{deity_pronoun:tu|Tu}} leur donnes leur nourriture en son temps.",
+          "B": "Tous les regards sont tournés vers {{deity_pronoun:toi|Toi}} avec espoir, et {{deity_pronoun:tu|Tu}} leur donnes leur nourriture quand il le faut.",
+          "R": "Tous les êtres vivants se tournent vers {{deity_pronoun:toi|Toi}} et attendent. Tu leur donnes leur nourriture au bon moment."
+        },
+        "sw": {
+          "L": "Macho ya wote yanakuelekea {{deity_pronoun:wewe|Wewe}} kwa tumaini, {{deity_pronoun:nawe|Nawe}} unawapa chakula chao katika majira yake.",
+          "B": "Macho yote yanakuelekea {{deity_pronoun:wewe|Wewe}} kwa tumaini, {{deity_pronoun:nawe|Nawe}} unawapa chakula chao wakati kinapohitajika.",
+          "R": "Kila kiumbe hai kinakutazama na kungoja. Unawapa chakula chao kwa wakati unaofaa kabisa."
+        },
+        "es": {
+          "L": "Los ojos de todos esperan en {{deity_pronoun:ti|Ti}}, y {{deity_pronoun:tú|Tú}} les das su comida a su tiempo.",
+          "B": "Todos los ojos se vuelven a {{deity_pronoun:ti|Ti}} con esperanza, y {{deity_pronoun:tú|Tú}} les das su alimento cuando lo necesitan.",
+          "R": "Todo ser vivo {{deity_pronoun:te|Te}} mira y espera. Tú les das su comida en el momento justo."
+        },
+        "vi": {
+          "L": "Mắt của muôn loài trông đợi {{deity_pronoun:ngài|Ngài}}, và {{deity_pronoun:ngài|Ngài}} ban cho chúng thức ăn đúng thời.",
+          "B": "Mắt muôn loài đều hướng về {{deity_pronoun:ngài|Ngài}} trông đợi, và {{deity_pronoun:ngài|Ngài}} ban thức ăn cho chúng đúng lúc cần.",
+          "R": "Mọi loài có sự sống đều trông lên {{deity_pronoun:ngài|Ngài}} và chờ đợi. Ngài ban thức ăn cho chúng đúng lúc."
+        },
+        "ko": {
+          "L": "모든 이의 눈이 주님을 바라고, 주님께서는 제때에 그들에게 그들의 먹을 것을 주십니다.",
+          "B": "모든 눈이 소망을 품고 주님을 바라보니, 주님께서는 필요한 때에 그들에게 먹을 것을 주십니다.",
+          "R": "살아 있는 모든 것이 주님을 바라보며 기다립니다. 주님께서는 꼭 맞는 때에 그들에게 먹을 것을 주십니다."
         }
       },
       "decisions": [
@@ -1418,6 +1962,31 @@
           "L": "[You are] opening {{deity_pronoun:your|Your}} hand and satisfying every living [thing with its] desire.",
           "B": "You open {{deity_pronoun:your|Your}} hand and give every living creature what it longs for.",
           "R": "You open {{deity_pronoun:your|Your}} hand wide and give every living creature all it wants."
+        },
+        "fr": {
+          "L": "[Tu] ouvres {{deity_pronoun:ta|Ta}} main et rassasies tout vivant [selon son] désir.",
+          "B": "Tu ouvres {{deity_pronoun:ta|Ta}} main et donnes à tout être vivant ce qu’il désire.",
+          "R": "Tu ouvres grand {{deity_pronoun:ta|Ta}} main et donnes à tout être vivant tout ce qu’il veut."
+        },
+        "sw": {
+          "L": "[Wewe] unaufungua mkono {{deity_pronoun:wako|Wako}} na kukishibisha kila [kiumbe] kilicho hai [kwa] matakwa [yake].",
+          "B": "Unaufungua mkono {{deity_pronoun:wako|Wako}} na kumpa kila kiumbe hai kile anachokitamani.",
+          "R": "Unaufungua mkono {{deity_pronoun:wako|Wako}} kabisa na kumpa kila kiumbe hai yote anayoyataka."
+        },
+        "es": {
+          "L": "[Tú] abres {{deity_pronoun:tu|Tu}} mano y sacias el deseo de todo ser viviente.",
+          "B": "Abres {{deity_pronoun:tu|Tu}} mano y das a toda criatura viviente lo que anhela.",
+          "R": "Abres bien {{deity_pronoun:tu|Tu}} mano y das a toda criatura viviente todo lo que quiere."
+        },
+        "vi": {
+          "L": "[Ngài] mở tay {{deity_pronoun:ngài|Ngài}} ra và làm thỏa nguyện mọi loài sống.",
+          "B": "Ngài mở tay {{deity_pronoun:ngài|Ngài}} ra và ban cho mọi loài sinh vật điều chúng mong ước.",
+          "R": "Ngài mở rộng bàn tay {{deity_pronoun:ngài|Ngài}} và ban cho mọi sinh vật mọi điều chúng cần."
+        },
+        "ko": {
+          "L": "주님께서 주님의 손을 펴셔서 모든 살아 있는 것의 소원을 채우십니다.",
+          "B": "주님께서 손을 펴셔서 모든 살아 있는 것이 바라는 것을 주십니다.",
+          "R": "주님께서는 손을 활짝 펴셔서 살아 있는 모든 것에게 원하는 것을 다 주십니다."
         }
       },
       "decisions": [
@@ -1485,6 +2054,31 @@
           "L": "Righteous [is] {{divine_name:the LORD|Yahweh}} in all {{deity_pronoun:his|His}} ways, and faithful in all {{deity_pronoun:his|His}} works.",
           "B": "In all {{deity_pronoun:his|His}} ways {{divine_name:the LORD|Yahweh}} is righteous; in all {{deity_pronoun:his|His}} deeds {{deity_pronoun:he|He}} is faithful.",
           "R": "{{divine_name:The LORD|Yahweh}} does what is right in everything {{deity_pronoun:he|He}} does. He is loving and loyal in all {{deity_pronoun:his|His}} acts."
+        },
+        "fr": {
+          "L": "Juste [est] {{divine_name:le SEIGNEUR|Yahvé}} dans toutes {{deity_pronoun:ses|Ses}} voies, et fidèle dans toutes {{deity_pronoun:ses|Ses}} œuvres.",
+          "B": "Dans toutes {{deity_pronoun:ses|Ses}} voies {{divine_name:le SEIGNEUR|Yahvé}} est juste ; dans toutes {{deity_pronoun:ses|Ses}} actions {{deity_pronoun:il|Il}} est fidèle.",
+          "R": "{{divine_name:Le SEIGNEUR|Yahvé}} fait ce qui est juste dans tout ce qu’{{deity_pronoun:il|Il}} fait. Il est plein d’amour et loyal dans toutes {{deity_pronoun:ses|Ses}} actions."
+        },
+        "sw": {
+          "L": "{{divine_name:BWANA|Yahwe}} [ni] mwenye haki katika njia {{deity_pronoun:zake|Zake}} zote, na mwaminifu katika kazi {{deity_pronoun:zake|Zake}} zote.",
+          "B": "Katika njia {{deity_pronoun:zake|Zake}} zote {{divine_name:BWANA|Yahwe}} ni mwenye haki; katika matendo {{deity_pronoun:yake|Yake}} yote ni mwaminifu.",
+          "R": "{{divine_name:BWANA|Yahwe}} hutenda yaliyo sawa katika kila kitu anachofanya. Ni mwenye upendo na mwaminifu katika matendo {{deity_pronoun:yake|Yake}} yote."
+        },
+        "es": {
+          "L": "Justo [es] {{divine_name:el SEÑOR|Yahvé}} en todos {{deity_pronoun:sus|Sus}} caminos, y fiel en todas {{deity_pronoun:sus|Sus}} obras.",
+          "B": "En todos {{deity_pronoun:sus|Sus}} caminos {{divine_name:el SEÑOR|Yahvé}} es justo; en todas {{deity_pronoun:sus|Sus}} obras {{deity_pronoun:él|Él}} es fiel.",
+          "R": "{{divine_name:El SEÑOR|Yahvé}} hace lo correcto en todo lo que {{deity_pronoun:él|Él}} hace. Es amoroso y leal en todos {{deity_pronoun:sus|Sus}} actos."
+        },
+        "vi": {
+          "L": "{{divine_name:CHÚA|Gia-vê}} [là] công chính trong mọi đường lối {{deity_pronoun:ngài|Ngài}}, và nhân từ trong mọi công việc {{deity_pronoun:ngài|Ngài}}.",
+          "B": "Trong mọi đường lối {{deity_pronoun:ngài|Ngài}}, {{divine_name:CHÚA|Gia-vê}} đều công chính; trong mọi việc {{deity_pronoun:ngài|Ngài}} làm, {{deity_pronoun:ngài|Ngài}} đều nhân từ.",
+          "R": "{{divine_name:CHÚA|Gia-vê}} làm điều công chính trong mọi việc {{deity_pronoun:ngài|Ngài}} làm. Ngài yêu thương và trung tín trong mọi hành động của {{deity_pronoun:ngài|Ngài}}."
+        },
+        "ko": {
+          "L": "{{divine_name:주|야훼}}께서는 그분의 모든 길에서 의로우시고, 그분의 모든 일에 신실하십니다.",
+          "B": "{{divine_name:주|야훼}}께서는 그분의 모든 길에서 의로우시고, 그분의 모든 행하심에서 신실하십니다.",
+          "R": "{{divine_name:주|야훼}}께서는 하시는 모든 일에서 옳은 일을 하십니다. 그분께서 하시는 모든 일에는 사랑과 신실함이 있습니다."
         }
       },
       "decisions": [
@@ -1538,6 +2132,26 @@
           "reason": "Readable says what \"righteous\" means.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191450170061"
+          ],
+          "choice": "\"nhân từ\" (L, B) for the word the English gives as \"faithful\"; \"yêu thương và trung tín\" (R)",
+          "alternatives": [
+            "\"thành tín\""
+          ],
+          "reason": "The Hebrew word here is the one for a person of loyal love, loyal and kind (see the meaning decision). \"thành tín\" alone would lose the kindness; \"nhân từ\" keeps it, and Readable says both, as the English Readable says \"loving and loyal\".",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1573,6 +2187,31 @@
           "L": "Near [is] {{divine_name:the LORD|Yahweh}} to all who call [on] {{deity_pronoun:him|Him}}, to all who call [on] {{deity_pronoun:him|Him}} in truth.",
           "B": "{{divine_name:The LORD|Yahweh}} is close to everyone who calls to {{deity_pronoun:him|Him}}, to all who call to {{deity_pronoun:him|Him}} sincerely.",
           "R": "{{divine_name:The LORD|Yahweh}} is close to everyone who prays to {{deity_pronoun:him|Him}}. He is near to all who pray to {{deity_pronoun:him|Him}} and mean it."
+        },
+        "fr": {
+          "L": "Proche [est] {{divine_name:le SEIGNEUR|Yahvé}} de tous ceux qui {{deity_pronoun:l’|L’}}appellent, de tous ceux qui {{deity_pronoun:l’|L’}}appellent en vérité.",
+          "B": "{{divine_name:Le SEIGNEUR|Yahvé}} est près de tous ceux qui crient vers {{deity_pronoun:lui|Lui}}, de tous ceux qui crient vers {{deity_pronoun:lui|Lui}} sincèrement.",
+          "R": "{{divine_name:Le SEIGNEUR|Yahvé}} est près de tous ceux qui {{deity_pronoun:le|Le}} prient. Il est proche de tous ceux qui {{deity_pronoun:le|Le}} prient vraiment, du fond du cœur."
+        },
+        "sw": {
+          "L": "{{divine_name:BWANA|Yahwe}} [yuko] karibu na wote wanaomwita, na wote wanaomwita kwa kweli.",
+          "B": "{{divine_name:BWANA|Yahwe}} yuko karibu na kila anayemlilia, na wote wanaomlilia kwa moyo mnyofu.",
+          "R": "{{divine_name:BWANA|Yahwe}} yuko karibu na kila mtu anayemwomba. Yuko karibu na wote wanaomwomba kwa moyo wote."
+        },
+        "es": {
+          "L": "Cercano [está] {{divine_name:el SEÑOR|Yahvé}} a todos los que {{deity_pronoun:lo|Lo}} invocan, a todos los que {{deity_pronoun:lo|Lo}} invocan en verdad.",
+          "B": "{{divine_name:El SEÑOR|Yahvé}} está cerca de todo el que {{deity_pronoun:lo|Lo}} llama, de todos los que {{deity_pronoun:lo|Lo}} llaman con sinceridad.",
+          "R": "{{divine_name:El SEÑOR|Yahvé}} está cerca de todo el que {{deity_pronoun:le|Le}} ora. Está cerca de todos los que {{deity_pronoun:le|Le}} oran de corazón."
+        },
+        "vi": {
+          "L": "{{divine_name:CHÚA|Gia-vê}} [ở] gần mọi người kêu cầu {{deity_pronoun:ngài|Ngài}}, mọi người kêu cầu {{deity_pronoun:ngài|Ngài}} cách chân thật.",
+          "B": "{{divine_name:CHÚA|Gia-vê}} ở gần mọi người kêu cầu {{deity_pronoun:ngài|Ngài}}, tất cả những ai kêu cầu {{deity_pronoun:ngài|Ngài}} với lòng thành thật.",
+          "R": "{{divine_name:CHÚA|Gia-vê}} ở gần mọi người cầu nguyện với {{deity_pronoun:ngài|Ngài}}. Ngài ở gần tất cả những ai thật lòng cầu nguyện với {{deity_pronoun:ngài|Ngài}}."
+        },
+        "ko": {
+          "L": "{{divine_name:주|야훼}}께서는 그분을 부르는 모든 이에게, 진실하게 그분을 부르는 모든 이에게 가까이 계십니다.",
+          "B": "{{divine_name:주|야훼}}께서는 그분을 부르는 모든 사람, 진심으로 그분을 부르는 모든 사람 곁에 가까이 계십니다.",
+          "R": "{{divine_name:주|야훼}}께서는 그분께 기도하는 모든 사람 가까이 계십니다. 진심으로 그분께 기도하는 모든 사람 곁에 계십니다."
         }
       },
       "decisions": [
@@ -1660,6 +2299,31 @@
           "L": "The desire of those who fear {{deity_pronoun:him|Him}} {{deity_pronoun:he|He}} does, and their cry {{deity_pronoun:he|He}} hears, and {{deity_pronoun:he|He}} saves them.",
           "B": "He grants what those who fear {{deity_pronoun:him|Him}} desire; {{deity_pronoun:he|He}} hears their cry for help and rescues them.",
           "R": "He gives people who honor {{deity_pronoun:him|Him}} what they want. When they cry for help, {{deity_pronoun:he|He}} hears and saves them."
+        },
+        "fr": {
+          "L": "Le désir de ceux qui {{deity_pronoun:le|Le}} craignent, {{deity_pronoun:il|Il}} l’accomplit, et leur cri, {{deity_pronoun:il|Il}} l’entend, et {{deity_pronoun:il|Il}} les sauve.",
+          "B": "Il accomplit le désir de ceux qui {{deity_pronoun:le|Le}} craignent ; {{deity_pronoun:il|Il}} entend leur appel au secours et les délivre.",
+          "R": "Il donne aux gens qui {{deity_pronoun:l’|L’}}honorent ce qu’ils désirent. Quand ils appellent au secours, {{deity_pronoun:il|Il}} les entend et les sauve."
+        },
+        "sw": {
+          "L": "Matakwa ya wale wanaomcha hutimiza, na kilio chao husikia, na huwaokoa.",
+          "B": "Huwapa wanaomcha kile wanachotamani; husikia kilio chao cha msaada na kuwaokoa.",
+          "R": "Huwapa watu wanaomheshimu kile wanachotaka. Wanapolilia msaada, husikia na kuwaokoa."
+        },
+        "es": {
+          "L": "El deseo de los que {{deity_pronoun:lo|Lo}} temen {{deity_pronoun:él|Él}} cumple, y su clamor {{deity_pronoun:él|Él}} oye, y {{deity_pronoun:él|Él}} los salva.",
+          "B": "Él concede lo que desean los que {{deity_pronoun:lo|Lo}} temen; {{deity_pronoun:él|Él}} oye su clamor y los rescata.",
+          "R": "Él da a la gente que {{deity_pronoun:lo|Lo}} honra lo que quiere. Cuando claman pidiendo ayuda, {{deity_pronoun:él|Él}} los oye y los salva."
+        },
+        "vi": {
+          "L": "Ước muốn của những người kính sợ {{deity_pronoun:ngài|Ngài}}, {{deity_pronoun:ngài|Ngài}} làm thành; và tiếng kêu cầu của họ, {{deity_pronoun:ngài|Ngài}} nghe, và {{deity_pronoun:ngài|Ngài}} cứu họ.",
+          "B": "Ngài làm thành ước muốn của những người kính sợ {{deity_pronoun:ngài|Ngài}}; {{deity_pronoun:ngài|Ngài}} nghe tiếng họ kêu cứu và giải cứu họ.",
+          "R": "Ngài ban cho những người tôn kính {{deity_pronoun:ngài|Ngài}} điều họ mong muốn. Khi họ kêu cứu, {{deity_pronoun:ngài|Ngài}} nghe và cứu họ."
+        },
+        "ko": {
+          "L": "그분께서는 그분을 경외하는 이들의 소원을 이루시고, 그들의 부르짖음을 들으시고, 그들을 구원하십니다.",
+          "B": "그분께서는 그분을 경외하는 사람들이 바라는 것을 이루어 주시고, 도와 달라는 그들의 부르짖음을 들으시고 그들을 구원하십니다.",
+          "R": "그분께서는 그분을 두려운 마음으로 섬기는 사람들에게 그들이 원하는 것을 주십니다. 그들이 도와 달라고 부르짖으면 들으시고 구원해 주십니다."
         }
       },
       "decisions": [
@@ -1743,6 +2407,31 @@
           "L": "{{divine_name:The LORD|Yahweh}} [is] keeping all who love {{deity_pronoun:him|Him}}, but all the wicked {{deity_pronoun:he|He}} will destroy.",
           "B": "{{divine_name:The LORD|Yahweh}} guards everyone who loves {{deity_pronoun:him|Him}}, but {{deity_pronoun:he|He}} will wipe out all the wicked.",
           "R": "{{divine_name:The LORD|Yahweh}} protects everyone who loves {{deity_pronoun:him|Him}}. But {{deity_pronoun:he|He}} will destroy all wicked people."
+        },
+        "fr": {
+          "L": "{{divine_name:Le SEIGNEUR|Yahvé}} [est] gardant tous ceux qui {{deity_pronoun:l’|L’}}aiment, mais tous les méchants, {{deity_pronoun:il|Il}} les détruira.",
+          "B": "{{divine_name:Le SEIGNEUR|Yahvé}} veille sur tous ceux qui {{deity_pronoun:l’|L’}}aiment, mais {{deity_pronoun:il|Il}} anéantira tous les méchants.",
+          "R": "{{divine_name:Le SEIGNEUR|Yahvé}} protège tous ceux qui {{deity_pronoun:l’|L’}}aiment. Mais {{deity_pronoun:il|Il}} détruira tous les méchants."
+        },
+        "sw": {
+          "L": "{{divine_name:BWANA|Yahwe}} [ni] mwenye kuwalinda wote wanaompenda, lakini waovu wote atawaangamiza.",
+          "B": "{{divine_name:BWANA|Yahwe}} humlinda kila anayempenda, lakini atawafutilia mbali waovu wote.",
+          "R": "{{divine_name:BWANA|Yahwe}} humlinda kila mtu anayempenda. Lakini atawaangamiza watu wote waovu."
+        },
+        "es": {
+          "L": "{{divine_name:El SEÑOR|Yahvé}} guarda a todos los que {{deity_pronoun:lo|Lo}} aman, pero a todos los malvados {{deity_pronoun:él|Él}} destruirá.",
+          "B": "{{divine_name:El SEÑOR|Yahvé}} cuida a todo el que {{deity_pronoun:lo|Lo}} ama, pero {{deity_pronoun:él|Él}} acabará con todos los malvados.",
+          "R": "{{divine_name:El SEÑOR|Yahvé}} protege a todo el que {{deity_pronoun:lo|Lo}} ama. Pero {{deity_pronoun:él|Él}} destruirá a toda la gente malvada."
+        },
+        "vi": {
+          "L": "{{divine_name:CHÚA|Gia-vê}} [là Đấng] gìn giữ mọi người yêu mến {{deity_pronoun:ngài|Ngài}}, nhưng mọi kẻ ác {{deity_pronoun:ngài|Ngài}} sẽ tiêu diệt.",
+          "B": "{{divine_name:CHÚA|Gia-vê}} canh giữ mọi người yêu mến {{deity_pronoun:ngài|Ngài}}, nhưng {{deity_pronoun:ngài|Ngài}} sẽ tiêu diệt mọi kẻ ác.",
+          "R": "{{divine_name:CHÚA|Gia-vê}} bảo vệ mọi người yêu mến {{deity_pronoun:ngài|Ngài}}. Nhưng {{deity_pronoun:ngài|Ngài}} sẽ tiêu diệt mọi kẻ gian ác."
+        },
+        "ko": {
+          "L": "{{divine_name:주|야훼}}께서는 그분을 사랑하는 모든 이를 지키시지만, 모든 악인은 멸하실 것입니다.",
+          "B": "{{divine_name:주|야훼}}께서는 그분을 사랑하는 모든 사람을 지켜 주시지만, 악인은 모두 없애 버리실 것입니다.",
+          "R": "{{divine_name:주|야훼}}께서는 그분을 사랑하는 사람을 누구나 보호하십니다. 그러나 악한 사람들은 모두 멸하실 것입니다."
         }
       },
       "decisions": [
@@ -1811,6 +2500,31 @@
           "L": "The praise of {{divine_name:the LORD|Yahweh}} my mouth will speak, and let all flesh bless {{deity_pronoun:his|His}} holy name forever and ever.",
           "B": "With my own mouth I will speak praise to {{divine_name:the LORD|Yahweh}}; may all creatures bless {{deity_pronoun:his|His}} holy name for all time to come.",
           "R": "I will speak words of praise to {{divine_name:the LORD|Yahweh}}. Let every living thing praise {{deity_pronoun:his|His}} holy name forever and ever!"
+        },
+        "fr": {
+          "L": "La louange {{divine_name:du SEIGNEUR|de Yahvé}}, ma bouche la dira, et que toute chair bénisse {{deity_pronoun:son|Son}} saint nom à tout jamais !",
+          "B": "De ma bouche je dirai la louange {{divine_name:du SEIGNEUR|de Yahvé}} ; que toutes les créatures bénissent {{deity_pronoun:son|Son}} saint nom pour tous les temps à venir !",
+          "R": "Je dirai des paroles de louange pour {{divine_name:le SEIGNEUR|Yahvé}}. Que tout ce qui vit loue {{deity_pronoun:son|Son}} saint nom, pour toujours et à jamais !"
+        },
+        "sw": {
+          "L": "Sifa za {{divine_name:BWANA|Yahwe}} kinywa changu kitazisema, na wote wenye mwili walibariki jina {{deity_pronoun:lake|Lake}} takatifu milele na milele.",
+          "B": "Kwa kinywa changu mwenyewe nitamsifu {{divine_name:BWANA|Yahwe}}; viumbe vyote na vilibariki jina {{deity_pronoun:lake|Lake}} takatifu nyakati zote zijazo.",
+          "R": "Nitasema maneno ya kumsifu {{divine_name:BWANA|Yahwe}}. Kila kiumbe hai na kilisifu jina {{deity_pronoun:lake|Lake}} takatifu milele na milele!"
+        },
+        "es": {
+          "L": "La alabanza {{divine_name:del SEÑOR|de Yahvé}} hablará mi boca, y que toda carne bendiga {{deity_pronoun:su|Su}} santo nombre por siempre jamás.",
+          "B": "Con mi propia boca alabaré {{divine_name:al SEÑOR|a Yahvé}}; que todas las criaturas bendigan {{deity_pronoun:su|Su}} santo nombre por todos los tiempos.",
+          "R": "Diré palabras de alabanza {{divine_name:al SEÑOR|a Yahvé}}. ¡Que todo ser vivo alabe {{deity_pronoun:su|Su}} santo nombre por siempre jamás!"
+        },
+        "vi": {
+          "L": "Miệng tôi sẽ nói lời ca ngợi {{divine_name:CHÚA|Gia-vê}}, và nguyện mọi xác thịt chúc tụng danh thánh của {{deity_pronoun:ngài|Ngài}} đời đời mãi mãi.",
+          "B": "Chính miệng tôi sẽ nói lời ca ngợi {{divine_name:CHÚA|Gia-vê}}; nguyện mọi loài sinh vật chúc tụng danh thánh của {{deity_pronoun:ngài|Ngài}} đời đời mãi mãi.",
+          "R": "Tôi sẽ nói những lời ca ngợi {{divine_name:CHÚA|Gia-vê}}. Nguyện mọi loài có sự sống ca ngợi danh thánh của {{deity_pronoun:ngài|Ngài}} đời đời mãi mãi!"
+        },
+        "ko": {
+          "L": "제 입이 {{divine_name:주|야훼}}를 찬양하는 말을 할 것이니, 모든 육체가 그분의 거룩한 이름을 영원히 그리고 영원토록 송축하기를 바랍니다.",
+          "B": "제 입으로 {{divine_name:주|야훼}}께 찬양을 드리겠습니다. 모든 피조물이 그분의 거룩한 이름을 영원토록 송축하기를 바랍니다.",
+          "R": "저는 {{divine_name:주|야훼}}를 찬양하는 말을 하겠습니다. 살아 있는 모든 것이 그분의 거룩한 이름을 영원히 찬양하기를 바랍니다!"
         }
       },
       "decisions": [

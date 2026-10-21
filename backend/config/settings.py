@@ -26,6 +26,8 @@ Configuration comes from the environment:
   OWB_GITHUB_REPO       where those issues go (default jdegreef/open-word-bible)
   SENTRY_DSN            report errors to Sentry (config/sentry.py); without
                         it errors are only logged
+  SENTRY_TRACES_SAMPLE_RATE  share of requests (0 to 1) whose timings go to
+                        Sentry too (default 0: none)
 """
 import os
 import sys
@@ -74,6 +76,10 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "accounts.cors.ApiCorsMiddleware",
+    # Inside CORS, which adds its Vary after gzip's Accept-Encoding; around
+    # everything else, so Server-Timing counts the whole request.
+    "config.middleware.ApiGzipMiddleware",
+    "config.middleware.ServerTimingMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -124,6 +130,18 @@ DATABASES = {
         conn_health_checks=True),
 }
 DATABASES["default"].setdefault("OPTIONS", {}).update(database_options(statement_timeout_ms()))
+
+# One cache in the database, shared by every gunicorn worker and kept across
+# deploys (each process's memory is neither). The admin keeps its progress
+# counts and GitHub lookups here. render.yaml's pre-deploy runs
+# createcachetable; the test runner makes the table itself.
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.db.DatabaseCache",
+        "LOCATION": "owb_cache",
+        "OPTIONS": {"MAX_ENTRIES": 2000},
+    },
+}
 
 AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
@@ -216,7 +234,8 @@ LOGGING = {
 
 if os.environ.get("SENTRY_DSN"):
     from config import sentry
-    sentry.init(os.environ["SENTRY_DSN"], os.environ.get("RENDER_SERVICE_NAME", "local"))
+    sentry.init(os.environ["SENTRY_DSN"], os.environ.get("RENDER_SERVICE_NAME", "local"),
+                traces_sample_rate=float(os.environ.get("SENTRY_TRACES_SAMPLE_RATE") or 0))
 
 if not DEBUG:
     SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")

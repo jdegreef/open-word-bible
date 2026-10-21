@@ -1,8 +1,17 @@
 // Open Word Bible chapter reader. Data comes from the JSON block the build
-// embeds in the page; all text is inserted with textContent.
+// embeds in the page, with what every language's page of the chapter
+// shares (window.OWB_CHAPTER: the source words, each sentence's source, the
+// cross-references) and what every chapter page of the language shares
+// (window.OWB_LANG: the interface text, the book names), from the two
+// scripts the page loads first (scripts/build_site.py chapter_shared,
+// reader_shared). All text is inserted with textContent.
 (function () {
   "use strict";
   var DATA = JSON.parse(document.getElementById("owb-data").textContent);
+  [window.OWB_LANG, window.OWB_CHAPTER].forEach(function (shared) {
+    for (var k in shared) if (k !== "sources") DATA[k] = shared[k];
+  });
+  DATA.records.forEach(function (r) { r.source = window.OWB_CHAPTER.sources[r.id]; });
   var STORE = "owb.settings";
 
   // Interface text in the page's language (i18n/<lang>.json, reader.ui).
@@ -16,13 +25,21 @@
   function t(key) { return HEBREW && (key + "_hbo") in UI ? UI[key + "_hbo"] : UI[key]; }
 
   // The reading language is the page's (/es/... is Spanish); the footer
-  // switches it. The other settings are kept across pages and languages.
+  // switches it. The other settings are kept across pages and languages,
+  // with "at", when the reader last changed one, so that a signed-in
+  // reader's settings follow them to their other devices (site.js syncs
+  // owb.settings with the account; the latest device's copy wins whole).
   var settings = { level: "B", gender: 0, christos: 0, divine_name: 0, deity_pronoun: 0, units: 0, plural_you: 0, view: 0,
                    headings: 0, crossrefs: 0, uncertain: 0, partner: "", script: 0 };
-  try {
-    var saved = JSON.parse(localStorage.getItem(STORE) || "{}");
-    for (var k in settings) if (k in saved) settings[k] = saved[k];
-  } catch (e) { /* storage unavailable: use defaults */ }
+  var settingsAt = 0;
+  function loadSettings() {
+    try {
+      var saved = JSON.parse(localStorage.getItem(STORE) || "{}") || {};
+      for (var k in settings) if (k in saved && k !== "lang") settings[k] = saved[k];
+      settingsAt = saved.at || 0;
+    } catch (e) { /* storage unavailable: use defaults */ }
+  }
+  loadSettings();
   settings.lang = DATA.lang;
 
   // A shared link may carry the sender's settings (?level=L&title=1): they
@@ -169,7 +186,11 @@
   }
 
   function save() {
-    try { localStorage.setItem(STORE, JSON.stringify(settings)); } catch (e) { /* ignore */ }
+    var kept = {};
+    for (var k in settings) if (k !== "lang") kept[k] = settings[k];
+    kept.at = settingsAt = Date.now();
+    try { localStorage.setItem(STORE, JSON.stringify(kept)); } catch (e) { /* ignore */ }
+    document.dispatchEvent(new Event("owb:settings"));
   }
 
   function decisionsFor(record) {
@@ -447,6 +468,7 @@
         var m = marked[verseId(part[0])];
         if (m && m.h) span.classList.add("hl-" + m.h);
         if (m && m.b) span.classList.add("bookmarked");
+        if (m && m.n) span.classList.add("noted");
         if (current && current.id === r.id) span.setAttribute("aria-current", "true");
         // Poetry: the verse is a block of lines, each a block with a
         // hanging indent; a space between lines keeps copied text apart.
@@ -1341,6 +1363,8 @@
     panel.appendChild(noteBox(currentVerse || verseOf(current.refs[0])));
     panel.appendChild(toolRow());
     panel.appendChild(markRow(currentVerse));
+    var mine = myNoteBox(currentVerse);
+    if (mine) panel.appendChild(mine);
     // On phones the sheet opens at 60% height: its footnotes and uncertain
     // decisions come first, ahead of the word list (hidden on wide screens,
     // where the full notes are a scroll away).
@@ -1458,12 +1482,13 @@
     if (xr) panel.appendChild(xr);
   }
 
-  // Bookmarks and highlights, kept in this browser as owb.marks by verse
-  // ("JHN.3.16"), so they hold whatever the settings or language. Each
-  // keeps the verse's words as shown when it was marked, for the saved
-  // verses page (site.js). {b: true, h: "yellow", text, lang, at}; a mark
-  // cleared is kept as {at} so a signed-in reader's other devices clear it
-  // too (site.js syncs owb.marks with the account).
+  // Bookmarks, highlights and the reader's own notes, kept in this browser
+  // as owb.marks by verse ("JHN.3.16"), so they hold whatever the settings
+  // or language. Each keeps the verse's words as shown when it was marked,
+  // for the saved verses page (site.js). {b: true, h: "yellow", n: "note",
+  // text, lang, at}; a mark cleared is kept as {at} so a signed-in reader's
+  // other devices clear it too (site.js syncs owb.marks with the account).
+  // A note is private: only its reader sees it.
   var MARKS = "owb.marks";
   var HUES = ["yellow", "green", "blue", "pink"];
   function marks() {
@@ -1487,7 +1512,7 @@
   function setMark(v, change) {
     var all = marks(), id = verseId(v), m = all[id] || {};
     for (var k in change) { if (change[k]) m[k] = change[k]; else delete m[k]; }
-    if (m.b || m.h) {
+    if (m.b || m.h || m.n) {
       var span = verseEl(v);
       m.text = verseWords(v);
       m.lang = (span && span.lang) || settings.lang;
@@ -1526,10 +1551,78 @@
       hues.appendChild(h);
     });
     row.appendChild(hues);
+    if (!m.n && myNoteEditing !== verseId(v)) {
+      var add = el("button", "mark-note", t("my_note_add"));
+      add.type = "button";
+      add.addEventListener("click", function () { editMyNote(v, ""); });
+      row.appendChild(add);
+    }
     var all = el("a", "mark-all", t("saved_all"));
     all.href = DATA.saved;
     row.appendChild(all);
     return row;
+  }
+
+  // The reader's own note on the verse, under the mark row: the note with
+  // an edit button, or the box to write it in. The draft outlives a redraw
+  // (a sync from another device), so nothing typed is lost.
+  var myNoteEditing = null, myNoteDraft = "";
+  function editMyNote(v, text) {
+    myNoteEditing = verseId(v);
+    myNoteDraft = text;
+    var top = panelEl.scrollTop;
+    drawPanel();
+    panelEl.scrollTop = top;
+    var field = document.getElementById("my-note-text");
+    if (field) field.focus();
+  }
+  function myNoteBox(v) {
+    var m = marks()[verseId(v)] || {};
+    var box = el("div", "my-note");
+    if (myNoteEditing !== verseId(v)) {
+      if (!m.n) return null;
+      box.appendChild(el("p", "my-note-label", t("my_note")));
+      box.appendChild(el("p", "my-note-text", m.n));
+      var edit = el("button", "plan-undo", t("my_note_edit"));
+      edit.type = "button";
+      edit.addEventListener("click", function () { editMyNote(v, m.n); });
+      box.appendChild(edit);
+      return box;
+    }
+    var label = el("label", "my-note-label", t("my_note"));
+    label.htmlFor = "my-note-text";
+    box.appendChild(label);
+    var field = el("textarea", "cite-text my-note-field");
+    field.id = "my-note-text";
+    field.rows = 4;
+    field.maxLength = 5000;
+    field.value = myNoteDraft;
+    field.addEventListener("input", function () { myNoteDraft = field.value; });
+    box.appendChild(field);
+    box.appendChild(el("p", "fine my-note-private", t("my_note_private")));
+    var buttons = el("p", "my-note-buttons");
+    function done(change) {
+      myNoteEditing = null;
+      myNoteDraft = "";
+      if (change) setMark(v, change);
+      else { var top = panelEl.scrollTop; drawPanel(); panelEl.scrollTop = top; }
+    }
+    var save = el("button", "button", t("my_note_save"));
+    save.type = "button";
+    save.addEventListener("click", function () { done({ n: field.value.trim() || null }); });
+    buttons.appendChild(save);
+    var cancel = el("button", "plan-undo", t("my_note_cancel"));
+    cancel.type = "button";
+    cancel.addEventListener("click", function () { done(null); });
+    buttons.appendChild(cancel);
+    if (m.n) {
+      var del = el("button", "plan-undo", t("my_note_delete"));
+      del.type = "button";
+      del.addEventListener("click", function () { done({ n: null }); });
+      buttons.appendChild(del);
+    }
+    box.appendChild(buttons);
+    return box;
   }
 
   // By the panel's title: the previous and next verse (as k and j do).
@@ -2721,9 +2814,12 @@
     window.addEventListener("pageshow", function (e) { if (e.persisted && listen.on) stopListening(); });
   }
 
-  // Marks from the reader's other devices (site.js, after a sync).
+  // Marks and settings from the reader's other devices (site.js, after a
+  // sync). Settings a shared link carried give way only to newer ones.
   document.addEventListener("owb:synced", function () {
-    var top = panelEl.scrollTop;
+    var top = panelEl.scrollTop, stored = {};
+    try { stored = JSON.parse(localStorage.getItem(STORE) || "{}") || {}; } catch (e) { /* none */ }
+    if ((stored.at || 0) > settingsAt) { loadSettings(); drawControls(); }
     drawText();
     if (current) { drawPanel(); panelEl.scrollTop = top; }
   });

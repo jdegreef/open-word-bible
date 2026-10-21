@@ -49,6 +49,26 @@
           "L": "Y dijo {{divine_name:el SEÑOR|Yahvé}} a Noé: «Ve, tú y toda tu casa, al arca, porque he visto que tú [eres] justo delante de {{deity_pronoun:mí|Mí}} en esta generación.",
           "B": "Entonces {{divine_name:el SEÑOR|Yahvé}} dijo a Noé: «Entra en el arca con toda tu familia, porque he visto que tú eres justo ante {{deity_pronoun:mí|Mí}} entre la gente de esta generación.",
           "R": "Entonces {{divine_name:el SEÑOR|Yahvé}} le dijo a Noé: «Entra en el arca con toda tu familia. De toda la gente que vive hoy, veo que tú eres el único que hace lo que está bien."
+        },
+        "fr": {
+          "L": "Et {{divine_name:le SEIGNEUR|Yahvé}} dit à Noé : « Entre, toi et toute ta maison, dans l’arche, car je t’ai vu juste devant {{deity_pronoun:moi|Moi}} dans cette génération.",
+          "B": "Alors {{divine_name:le SEIGNEUR|Yahvé}} dit à Noé : « Entre dans l’arche, toi et toute ta famille, car j’ai vu que tu es juste devant {{deity_pronoun:moi|Moi}} parmi les gens de cette génération.",
+          "R": "Alors {{divine_name:le SEIGNEUR|Yahvé}} a dit à Noé : « Entre dans l’arche avec toute ta famille. De tous les gens qui vivent aujourd’hui, c’est toi que je vois faire ce qui est bien."
+        },
+        "sw": {
+          "L": "Na {{divine_name:BWANA|Yahwe}} akamwambia Nuhu, \"Ingia, wewe na nyumba yako yote, ndani ya safina, kwa maana nimekuona wewe kuwa mwenye haki mbele {{deity_pronoun:yangu|Yangu}} katika kizazi hiki.",
+          "B": "Kisha {{divine_name:BWANA|Yahwe}} akamwambia Nuhu, \"Ingia ndani ya safina, wewe na jamaa yako yote, kwa sababu nimeona kwamba wewe ni mwenye haki mbele {{deity_pronoun:yangu|Yangu}} kati ya watu wa kizazi hiki.",
+          "R": "Kisha {{divine_name:BWANA|Yahwe}} akamwambia Nuhu, \"Ingia ndani ya safina pamoja na familia yako yote. Kati ya watu wote wa wakati huu, ninaona kwamba wewe ndiye unayefanya yaliyo sawa."
+        },
+        "vi": {
+          "L": "Và {{divine_name:CHÚA|Gia-vê}} phán với Nô-ê: \"Hãy vào con tàu, ngươi và cả nhà ngươi, vì {{deity_pronoun:ta|Ta}} đã thấy ngươi [là người] công chính trước mặt {{deity_pronoun:ta|Ta}} trong thế hệ này.",
+          "B": "Rồi {{divine_name:CHÚA|Gia-vê}} phán với Nô-ê: \"Con và cả nhà con hãy vào tàu, vì {{deity_pronoun:ta|Ta}} đã thấy con là người công chính trước mặt {{deity_pronoun:ta|Ta}} giữa những người của thế hệ này.",
+          "R": "Rồi {{divine_name:CHÚA|Gia-vê}} phán với Nô-ê: \"Con hãy vào tàu cùng với cả gia đình con. Trong tất cả những người đang sống bây giờ, {{deity_pronoun:ta|Ta}} thấy chỉ có con là người làm điều đúng."
+        },
+        "ko": {
+          "L": "그리고 {{divine_name:주|야훼}}께서 노아에게 말씀하셨다. \"너와 네 온 집안은 방주로 들어가거라. 이 세대에서 네가 내 앞에 의로운 것을 내가 보았기 때문이다.",
+          "B": "그때 {{divine_name:주|야훼}}께서 노아에게 말씀하셨다. \"너와 네 온 집안은 방주로 들어가거라. 이 세대 사람들 가운데서 네가 내 앞에 의로운 것을 내가 보았다.",
+          "R": "그때 {{divine_name:주|야훼}}께서 노아에게 말씀하셨다. \"너는 온 가족을 데리고 방주로 들어가거라. 지금 살고 있는 모든 사람 가운데서 바르게 사는 사람은 너뿐이다."
         }
       },
       "decisions": [
@@ -150,6 +170,66 @@
           "reason": "English Readable says \"boat\" because \"ark\" is an unfamiliar word in English. In Spanish \"el arca de Noé\" is the everyday name, known to children, so Readable keeps \"el arca\" throughout the account.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o010070010012"
+          ],
+          "choice": "passé simple at Literal and Balanced (\"dit\", \"entra\"); passé composé at Readable (\"a dit\", \"est entré\")",
+          "alternatives": [
+            "passé composé at every level"
+          ],
+          "reason": "As the French style guide sets out: the passé simple is the normal tense of written narrative, while Readable uses the passé composé, the tense of spoken French and of school reading. Speech keeps the tenses of speech at every level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-2",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010070010092"
+          ],
+          "choice": "\"l'arche\" at Readable too",
+          "alternatives": [
+            "\"le bateau\", as the English Readable \"boat\""
+          ],
+          "reason": "\"L'arche\" is the settled word for Noah's ark and is well known to French readers, children included, so Readable keeps it where the English Readable says \"boat\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010070010092"
+          ],
+          "choice": "\"safina\" at Readable too",
+          "alternatives": [
+            "\"mashua\" (boat)",
+            "\"meli\" (ship)"
+          ],
+          "reason": "\"Safina\" is the settled word for Noah's ark and an everyday Swahili word for a large vessel, so Readable keeps it where the English Readable says \"boat\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -205,6 +285,26 @@
           "L": "De todo animal puro tomarás para ti siete [y] siete, un macho y su hembra; y de los animales que no [son] puros, dos, un macho y su hembra;",
           "B": "Toma contigo siete parejas de cada especie de animal puro, un macho y su hembra, y una pareja de cada especie de animal que no es puro, un macho y su hembra,",
           "R": "Lleva contigo siete parejas de cada especie de animal puro, un macho y una hembra de cada una. Lleva también una pareja, un macho y una hembra, de cada especie de animal impuro."
+        },
+        "fr": {
+          "L": "De tout animal pur tu prendras pour toi sept [et] sept, un mâle et sa femelle ; et des animaux qui ne [sont] pas purs, deux, un mâle et sa femelle ;",
+          "B": "Prends avec toi sept couples de chaque espèce d’animal pur, un mâle et sa femelle, et un couple de chaque espèce d’animal qui n’est pas pur, un mâle et sa femelle,",
+          "R": "Prends avec toi sept couples de chaque sorte d’animal pur, un mâle et une femelle. Et prends un couple, un mâle et une femelle, de chaque sorte d’animal impur."
+        },
+        "sw": {
+          "L": "Katika kila mnyama aliye safi utajitwalia saba saba, dume na jike lake; na katika wanyama wasio safi, wawili, dume na jike lake;",
+          "B": "Chukua pamoja nawe jozi saba za kila aina ya mnyama aliye safi, dume na jike lake, na jozi moja ya kila aina ya mnyama asiye safi, dume na jike lake,",
+          "R": "Chukua pamoja nawe jozi saba za kila aina ya mnyama aliye safi, dume na jike wa kila aina. Chukua pia jozi moja, dume na jike, ya kila aina ya mnyama aliye najisi."
+        },
+        "vi": {
+          "L": "Trong mọi thú vật thanh sạch ngươi sẽ đem theo mỗi loại bảy [và] bảy, con đực và con cái của nó; và trong các thú vật không thanh sạch, hai, con đực và con cái của nó;",
+          "B": "Hãy đem theo mỗi loại thú vật thanh sạch bảy cặp, con đực và con cái, và mỗi loại thú vật không thanh sạch một cặp, con đực và con cái,",
+          "R": "Hãy đem theo bảy cặp của mỗi loại thú vật thanh sạch, mỗi loại một con đực và một con cái. Hãy đem theo một cặp, một con đực và một con cái, của mỗi loại thú vật không thanh sạch."
+        },
+        "ko": {
+          "L": "모든 정결한 짐승 가운데서 너는 너를 위해 일곱씩 일곱씩, 수컷과 그 짝을 데려가고, 정결하지 않은 짐승 가운데서는 둘, 수컷과 그 짝을 [데려가라].",
+          "B": "너는 정결한 짐승은 종류마다 수컷과 그 짝으로 일곱 쌍씩, 정결하지 않은 짐승은 종류마다 수컷과 그 짝으로 한 쌍씩 데려가거라.",
+          "R": "정결한 짐승은 종류마다 수컷과 암컷으로 일곱 쌍씩 데려가거라. 정결하지 않은 짐승은 종류마다 수컷과 암컷으로 한 쌍씩 데려가거라."
         }
       },
       "decisions": [
@@ -297,6 +397,71 @@
           "reason": "Readable uses the one plain word \"impuro\", here and in verse 8; the sense is the same as \"not clean\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o010070020061",
+            "o010070020071"
+          ],
+          "choice": "\"saba saba\" without \"na\"",
+          "alternatives": [
+            "\"saba [na] saba\", as the English Literal \"seven [and] seven\""
+          ],
+          "reason": "Swahili itself repeats a number to give a distributive sense (\"wawili wawili\", \"two by two\"), just as the Hebrew does, so Literal can copy the Hebrew without a supplied word.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010070020032",
+            "o010070020141"
+          ],
+          "choice": "\"thanh sạch\" ... \"không thanh sạch\"",
+          "alternatives": [
+            "\"tinh sạch\"",
+            "\"sạch\""
+          ],
+          "reason": "Animals fit or unfit for sacrifice and food (m2); \"thanh sạch\" is the word for clean in this sense. Literal's \"con đực và con cái của nó\" says plainly what the Hebrew \"a man and his wife\" means here (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010070020061",
+            "o010070020071"
+          ],
+          "choice": "\"일곱씩 일곱씩\" (L); \"일곱 쌍씩\" (B, R)",
+          "alternatives": [
+            "일곱 마리씩"
+          ],
+          "reason": "The Hebrew says \"seven seven\", which most likely means seven pairs (meaning decision m1, whose footnote gives the reading seven animals). Literal keeps the doubled number and leaves the question open; Balanced and Readable say \"seven pairs\", as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -342,6 +507,26 @@
           "L": "también de las aves de los cielos siete [y] siete, macho y hembra, para conservar con vida [la] descendencia sobre la faz de toda la tierra.",
           "B": "y siete parejas de cada especie de ave del cielo, macho y hembra, para que sus especies se conserven con vida sobre la faz de toda la tierra.",
           "R": "Lleva también siete parejas de cada especie de ave, machos y hembras, para que cada especie siga viviendo en toda la tierra."
+        },
+        "fr": {
+          "L": "aussi des oiseaux des cieux sept [et] sept, mâle et femelle, pour garder en vie une descendance sur la face de toute la terre.",
+          "B": "et sept couples de chaque espèce d’oiseau du ciel, mâle et femelle, pour que leurs espèces restent en vie sur toute la surface de la terre.",
+          "R": "Prends aussi sept couples de chaque sorte d’oiseau, des mâles et des femelles, pour que chaque espèce continue à vivre sur toute la terre."
+        },
+        "sw": {
+          "L": "pia katika ndege wa angani saba saba, dume na jike, ili kuhifadhi hai uzao juu ya uso wa dunia yote.",
+          "B": "na jozi saba za kila aina ya ndege wa angani, dume na jike, ili kuzihifadhi hai aina zao juu ya uso wa dunia yote.",
+          "R": "Chukua pia jozi saba za kila aina ya ndege, madume na majike, ili kila aina iendelee kuishi duniani kote."
+        },
+        "vi": {
+          "L": "cũng trong các loài chim trên trời bảy [và] bảy, đực và cái, để giữ dòng giống sống trên mặt khắp đất.",
+          "B": "và mỗi loại chim trời bảy cặp, đực và cái, để giữ cho các giống loài được sống trên khắp mặt đất.",
+          "R": "Cũng hãy đem theo bảy cặp của mỗi loại chim, con đực và con cái, để mỗi loại được tiếp tục sống trên khắp đất."
+        },
+        "ko": {
+          "L": "하늘의 새 가운데서도 일곱씩 일곱씩, 수컷과 암컷을 [데려가서], 온 땅의 표면 위에 씨를 살아남게 하여라.",
+          "B": "하늘의 새도 종류마다 수컷과 암컷으로 일곱 쌍씩 데려가서, 그 종류들이 온 땅 위에 살아남게 하여라.",
+          "R": "새도 종류마다 수컷과 암컷으로 일곱 쌍씩 데려가거라. 그래야 모든 종류가 온 땅에서 계속 살아갈 수 있다."
         }
       },
       "decisions": [
@@ -414,6 +599,26 @@
           "L": "Porque dentro de siete días más yo haré llover sobre la tierra cuarenta días y cuarenta noches, y borraré de sobre la faz del suelo todo ser viviente que he hecho».",
           "B": "Dentro de siete días haré llover sobre la tierra durante cuarenta días y cuarenta noches, y borraré de la faz de la tierra a todos los seres vivientes que he hecho».",
           "R": "Dentro de siete días haré que llueva sobre la tierra durante cuarenta días y cuarenta noches. Borraré a todos los seres vivos que hice»."
+        },
+        "fr": {
+          "L": "Car dans sept jours encore, je vais faire pleuvoir sur la terre quarante jours et quarante nuits, et j’effacerai de la face du sol tout être vivant que j’ai fait. »",
+          "B": "Dans sept jours, je ferai pleuvoir sur la terre pendant quarante jours et quarante nuits, et j’effacerai de la surface de la terre tous les êtres vivants que j’ai faits. »",
+          "R": "Dans sept jours, je vais faire tomber la pluie sur la terre pendant quarante jours et quarante nuits. Je ferai disparaître tous les êtres vivants que j’ai créés. »"
+        },
+        "sw": {
+          "L": "Kwa maana zimesalia siku saba, kisha {{deity_pronoun:mimi|Mimi}} nitanyeshea dunia mvua siku arobaini na usiku arobaini, na kila kiumbe hai nilichokifanya nitakifuta kutoka juu ya uso wa ardhi.\"",
+          "B": "Baada ya siku saba nitaleta mvua juu ya dunia kwa siku arobaini na usiku arobaini, na nitaondoa juu ya uso wa dunia kila kiumbe hai nilichokifanya.\"",
+          "R": "Baada ya siku saba nitanyesha mvua duniani kwa siku arobaini na usiku arobaini. Nitaangamiza kila kiumbe hai nilichokiumba.\""
+        },
+        "vi": {
+          "L": "Vì còn bảy ngày nữa {{deity_pronoun:ta|Ta}} sẽ cho mưa xuống trên đất bốn mươi ngày và bốn mươi đêm, và {{deity_pronoun:ta|Ta}} sẽ xóa bỏ khỏi mặt đất mọi vật sống mà {{deity_pronoun:ta|Ta}} đã làm nên.\"",
+          "B": "Trong bảy ngày nữa, {{deity_pronoun:ta|Ta}} sẽ cho mưa xuống trên đất suốt bốn mươi ngày và bốn mươi đêm, và {{deity_pronoun:ta|Ta}} sẽ xóa bỏ khỏi mặt đất mọi vật sống mà {{deity_pronoun:ta|Ta}} đã làm nên.\"",
+          "R": "Bảy ngày nữa {{deity_pronoun:ta|Ta}} sẽ cho mưa xuống trên đất suốt bốn mươi ngày và bốn mươi đêm. Ta sẽ xóa bỏ mọi vật sống mà {{deity_pronoun:ta|Ta}} đã làm nên.\""
+        },
+        "ko": {
+          "L": "이제 칠 일이 지나면 내가 땅 위에 사십 일 동안 밤낮으로 비를 내려, 내가 만든 모든 생명체를 땅의 표면에서 쓸어버리겠다.\"",
+          "B": "이레 뒤에 내가 땅 위에 사십 일 동안 밤낮으로 비를 내려, 내가 만든 모든 생명체를 땅 위에서 쓸어버리겠다.\"",
+          "R": "이레가 지나면 내가 사십 일 동안 밤낮으로 땅에 비가 내리게 하겠다. 그래서 내가 만든 모든 생명체를 쓸어버리겠다.\""
         }
       },
       "decisions": [
@@ -483,6 +688,26 @@
           "L": "E hizo Noé conforme a todo lo que le había mandado {{divine_name:el SEÑOR|Yahvé}}.",
           "B": "Noé hizo todo lo que {{divine_name:el SEÑOR|Yahvé}} le había mandado.",
           "R": "Noé hizo todo lo que {{divine_name:el SEÑOR|Yahvé}} le dijo que hiciera."
+        },
+        "fr": {
+          "L": "Et Noé fit selon tout ce que {{divine_name:le SEIGNEUR|Yahvé}} lui avait commandé.",
+          "B": "Noé fit tout ce que {{divine_name:le SEIGNEUR|Yahvé}} lui avait ordonné.",
+          "R": "Noé a fait tout ce que {{divine_name:le SEIGNEUR|Yahvé}} lui avait dit de faire."
+        },
+        "sw": {
+          "L": "Naye Nuhu akafanya sawasawa na yote aliyomwamuru {{divine_name:BWANA|Yahwe}}.",
+          "B": "Nuhu akafanya kila kitu {{divine_name:BWANA|Yahwe}} alichomwamuru.",
+          "R": "Nuhu akafanya yote ambayo {{divine_name:BWANA|Yahwe}} alimwambia afanye."
+        },
+        "vi": {
+          "L": "Và Nô-ê làm theo mọi điều {{divine_name:CHÚA|Gia-vê}} đã truyền cho ông.",
+          "B": "Nô-ê làm mọi điều {{divine_name:CHÚA|Gia-vê}} đã truyền cho ông.",
+          "R": "Nô-ê làm mọi điều {{divine_name:CHÚA|Gia-vê}} bảo ông làm."
+        },
+        "ko": {
+          "L": "그리고 노아는 {{divine_name:주|야훼}}께서 그에게 명령하신 모든 것을 따라 했다.",
+          "B": "노아는 {{divine_name:주|야훼}}께서 명령하신 대로 모든 것을 했다.",
+          "R": "노아는 {{divine_name:주|야훼}}께서 하라고 하신 것을 모두 했다."
         }
       },
       "decisions": [
@@ -543,6 +768,26 @@
           "L": "Y Noé [tenía] 600 años cuando vino el diluvio, agua sobre la tierra.",
           "B": "Noé tenía 600 años cuando las aguas del diluvio vinieron sobre la tierra.",
           "R": "Noé tenía 600 años cuando llegó el diluvio y el agua cubrió la tierra."
+        },
+        "fr": {
+          "L": "Et Noé [avait] 600 ans quand le déluge arriva, des eaux sur la terre.",
+          "B": "Noé avait 600 ans quand les eaux du déluge vinrent sur la terre.",
+          "R": "Noé avait 600 ans quand le déluge est arrivé et que l’eau a recouvert la terre."
+        },
+        "sw": {
+          "L": "Naye Nuhu [alikuwa na] miaka 600 gharika ilipokuja, maji juu ya dunia.",
+          "B": "Nuhu alikuwa na umri wa miaka 600 maji ya gharika yalipokuja juu ya dunia.",
+          "R": "Nuhu alikuwa na miaka 600 gharika ilipokuja na maji yakafunika dunia."
+        },
+        "vi": {
+          "L": "Và Nô-ê [được] 600 tuổi khi cơn nước lụt đến, nước trên đất.",
+          "B": "Nô-ê được 600 tuổi khi nước lụt tràn đến trên đất.",
+          "R": "Nô-ê được 600 tuổi khi trận lụt đến và nước bao phủ mặt đất."
+        },
+        "ko": {
+          "L": "그리고 홍수, 곧 땅 위에 물이 났을 때에 노아는 600세였다.",
+          "B": "홍수가 나서 땅 위에 물이 덮였을 때에 노아는 600살이었다.",
+          "R": "홍수가 나서 땅이 물로 덮였을 때, 노아는 600살이었다."
         }
       },
       "decisions": [
@@ -612,6 +857,26 @@
           "L": "Y entró Noé, y sus hijos y su mujer y las mujeres de sus hijos con él, en el arca a causa de las aguas del diluvio.",
           "B": "Y Noé, sus hijos, su esposa y las esposas de sus hijos entraron en el arca para escapar de las aguas del diluvio.",
           "R": "Noé entró en el arca con su esposa, sus hijos y sus nueras, para escapar del agua del diluvio."
+        },
+        "fr": {
+          "L": "Et Noé entra, et ses fils et sa femme et les femmes de ses fils avec lui, dans l’arche, à cause des eaux du déluge.",
+          "B": "Noé entra dans l’arche avec ses fils, sa femme et les femmes de ses fils, pour échapper aux eaux du déluge.",
+          "R": "Noé est entré dans l’arche avec sa femme, ses fils et leurs femmes, pour échapper à l’eau du déluge."
+        },
+        "sw": {
+          "L": "Naye Nuhu akaingia, na wanawe na mkewe na wake wa wanawe pamoja naye, ndani ya safina kwa sababu ya maji ya gharika.",
+          "B": "Nuhu na wanawe, mkewe na wake wa wanawe wakaingia ndani ya safina ili kuyaepuka maji ya gharika.",
+          "R": "Nuhu akaingia ndani ya safina pamoja na mke wake, wanawe na wake zao, ili kujiokoa na maji ya gharika."
+        },
+        "vi": {
+          "L": "Và Nô-ê vào, cùng các con trai ông, vợ ông và các vợ của các con trai ông với ông, vào con tàu vì nước của cơn nước lụt.",
+          "B": "Nô-ê cùng các con trai ông, vợ ông và các con dâu ông vào tàu để tránh nước của cơn nước lụt.",
+          "R": "Nô-ê vào tàu cùng với vợ ông, các con trai ông và vợ của họ, để thoát khỏi nước lụt."
+        },
+        "ko": {
+          "L": "그리고 노아가, 그리고 그와 함께 그의 아들들과 그의 아내와 그의 며느리들이, 홍수의 물 때문에 방주로 들어갔다.",
+          "B": "노아는 아들들과 아내와 며느리들과 함께, 홍수의 물을 피하여 방주로 들어갔다.",
+          "R": "노아는 홍수를 피하려고 아내와 아들들과 며느리들을 데리고 방주로 들어갔다."
         }
       },
       "decisions": [
@@ -683,6 +948,26 @@
           "L": "De los animales puros, y de los animales que no [eran] puros, y de las aves, y de todo lo que se arrastra sobre el suelo,",
           "B": "Los animales puros y los que no son puros, las aves y todos los animales que se mueven por el suelo",
           "R": "Animales puros e impuros, aves y animales pequeños que se arrastran por el suelo"
+        },
+        "fr": {
+          "L": "Des animaux purs, et des animaux qui [n’étaient] pas purs, et des oiseaux, et de tout ce qui rampe sur le sol,",
+          "B": "Les animaux purs et ceux qui ne l’étaient pas, les oiseaux et toutes les bêtes qui se déplacent sur le sol",
+          "R": "Des animaux purs et des animaux impurs, des oiseaux et des petites bêtes qui rampent sur le sol"
+        },
+        "sw": {
+          "L": "Katika wanyama walio safi, na katika wanyama ambao [hawakuwa] safi, na katika ndege, na katika kila kitambaacho juu ya ardhi,",
+          "B": "Wanyama walio safi na wanyama wasio safi, ndege na kila kiumbe kinachotambaa juu ya ardhi",
+          "R": "Wanyama safi na wanyama najisi, ndege, na viumbe vidogo vinavyotambaa ardhini"
+        },
+        "vi": {
+          "L": "Trong các thú vật thanh sạch, và trong các thú vật không thanh sạch, và trong các loài chim, và trong mọi vật bò trên đất,",
+          "B": "Thú vật thanh sạch và thú vật không thanh sạch, chim chóc và mọi loài bò sát trên mặt đất",
+          "R": "Thú vật thanh sạch và thú vật không thanh sạch, chim chóc, và những con vật nhỏ bò trên đất"
+        },
+        "ko": {
+          "L": "정결한 짐승 가운데서, 정결하지 않은 짐승 가운데서, 새 가운데서, 그리고 땅 위를 기어 다니는 모든 것 가운데서,",
+          "B": "정결한 짐승과 정결하지 않은 짐승, 새와 땅 위를 기어 다니는 모든 것이,",
+          "R": "정결한 짐승과 정결하지 않은 짐승, 새와 땅 위를 기어 다니는 작은 생물들이"
         }
       },
       "decisions": [],
@@ -728,6 +1013,26 @@
           "L": "dos [y] dos vinieron a Noé al arca, macho y hembra, como había mandado Dios a Noé.",
           "B": "vinieron a Noé por parejas y entraron en el arca, macho y hembra, como Dios le había ordenado a Noé.",
           "R": "vinieron a Noé en parejas, un macho y una hembra, y entraron en el arca, tal como Dios le había mandado a Noé."
+        },
+        "fr": {
+          "L": "deux [et] deux ils vinrent vers Noé dans l’arche, mâle et femelle, comme Dieu l’avait ordonné à Noé.",
+          "B": "vinrent vers Noé deux par deux et entrèrent dans l’arche, mâle et femelle, comme Dieu l’avait ordonné à Noé.",
+          "R": "sont venus vers Noé deux par deux, un mâle et une femelle, et sont entrés dans l’arche, exactement comme Dieu l’avait ordonné à Noé."
+        },
+        "sw": {
+          "L": "wawili wawili walimjia Nuhu ndani ya safina, dume na jike, kama Mungu alivyomwamuru Nuhu.",
+          "B": "walimjia Nuhu wawili wawili, wakaingia ndani ya safina, dume na jike, kama Mungu alivyomwamuru Nuhu.",
+          "R": "walimjia Nuhu jozi kwa jozi, dume na jike, wakaingia ndani ya safina, sawasawa na Mungu alivyokuwa amemwamuru Nuhu."
+        },
+        "vi": {
+          "L": "từng hai [và] hai đến với Nô-ê vào con tàu, đực và cái, như Đức Chúa Trời đã truyền cho Nô-ê.",
+          "B": "đều từng cặp đến với Nô-ê và vào tàu, đực và cái, như Đức Chúa Trời đã truyền cho Nô-ê.",
+          "R": "đều từng cặp, một con đực và một con cái, đến với Nô-ê và vào tàu, đúng như Đức Chúa Trời đã truyền cho Nô-ê."
+        },
+        "ko": {
+          "L": "둘씩 둘씩 수컷과 암컷이, 하나님께서 노아에게 명령하신 대로, 노아에게로 와서 방주로 들어갔다.",
+          "B": "하나님께서 노아에게 명령하신 대로, 수컷과 암컷이 짝을 지어 노아에게 와서 방주로 들어갔다.",
+          "R": "하나님께서 노아에게 명령하신 그대로, 수컷과 암컷 한 쌍씩 노아에게 와서 방주로 들어갔다."
         }
       },
       "decisions": [
@@ -802,6 +1107,26 @@
           "L": "Y sucedió que después de los siete días las aguas del diluvio vinieron sobre la tierra.",
           "B": "Al cabo de los siete días, las aguas del diluvio vinieron sobre la tierra.",
           "R": "Siete días después, las aguas del diluvio cubrieron la tierra."
+        },
+        "fr": {
+          "L": "Et il arriva, après les sept jours, que les eaux du déluge vinrent sur la terre.",
+          "B": "Au bout des sept jours, les eaux du déluge vinrent sur la terre.",
+          "R": "Sept jours plus tard, les eaux du déluge ont recouvert la terre."
+        },
+        "sw": {
+          "L": "Ikawa baada ya zile siku saba, maji ya gharika yakaja juu ya dunia.",
+          "B": "Baada ya siku hizo saba, maji ya gharika yalikuja juu ya dunia.",
+          "R": "Siku saba baadaye, maji ya gharika yalifunika dunia."
+        },
+        "vi": {
+          "L": "Và xảy ra sau bảy ngày, nước của cơn nước lụt đến trên đất.",
+          "B": "Sau bảy ngày, nước lụt tràn đến trên đất.",
+          "R": "Bảy ngày sau, nước lụt tràn đến khắp đất."
+        },
+        "ko": {
+          "L": "그리고 그 칠 일이 지나자, 홍수의 물이 땅 위에 [덮쳤다].",
+          "B": "이레가 지나자 홍수의 물이 땅 위에 덮쳤다.",
+          "R": "이레 뒤에 홍수의 물이 땅을 덮쳤다."
         }
       },
       "decisions": [
@@ -880,6 +1205,26 @@
           "L": "En el año seiscientos de la vida de Noé, en el mes segundo, el día diecisiete del mes, en ese día se rompieron todas las fuentes del gran abismo, y las ventanas de los cielos se abrieron.",
           "B": "En el año seiscientos de la vida de Noé, el día diecisiete del segundo mes, ese mismo día reventaron todas las fuentes del gran abismo y se abrieron las compuertas de los cielos.",
           "R": "Cuando Noé tenía 600 años, el día diecisiete del segundo mes, todas las fuentes de agua que había muy abajo, bajo la tierra, se abrieron de golpe. Las ventanas del cielo se abrieron, y la lluvia cayó con fuerza."
+        },
+        "fr": {
+          "L": "En l’an six cent de la vie de Noé, au deuxième mois, le dix-septième jour du mois, en ce jour-là, toutes les sources du grand abîme furent fendues, et les fenêtres des cieux furent ouvertes.",
+          "B": "En l’an six cent de la vie de Noé, le dix-septième jour du deuxième mois, ce jour-là même, toutes les sources du grand abîme éclatèrent, et les vannes des cieux s’ouvrirent.",
+          "R": "Quand Noé avait 600 ans, le dix-septième jour du deuxième mois, toutes les sources cachées tout au fond de la terre se sont ouvertes d’un coup. Les fenêtres du ciel se sont ouvertes, et il s’est mis à pleuvoir très fort."
+        },
+        "sw": {
+          "L": "Katika mwaka wa mia sita wa maisha ya Nuhu, katika mwezi wa pili, siku ya kumi na saba ya mwezi, siku hiyo hiyo chemchemi zote za kilindi kikuu zilipasuliwa, na madirisha ya mbingu yakafunguliwa.",
+          "B": "Katika mwaka wa mia sita wa maisha ya Nuhu, siku ya kumi na saba ya mwezi wa pili, siku hiyo hiyo chemchemi zote za kilindi kikuu zilipasuka, na milango ya maji ya mbinguni ikafunguka.",
+          "R": "Nuhu alipokuwa na miaka 600, siku ya kumi na saba ya mwezi wa pili, chemchemi zote zilizo chini kabisa ya ardhi zilipasuka ghafla. Madirisha ya anga yakafunguka, na mvua kubwa ikanyesha."
+        },
+        "vi": {
+          "L": "Vào năm thứ sáu trăm của đời Nô-ê, vào tháng thứ hai, ngày mười bảy của tháng, trong ngày ấy mọi nguồn của vực sâu lớn vỡ ra, và các cửa sổ của trời mở ra.",
+          "B": "Vào năm thứ sáu trăm của đời Nô-ê, ngày mười bảy tháng thứ hai, chính ngày ấy mọi nguồn nước của vực sâu lớn đều vỡ tung, và các cửa đập trên trời đều mở ra.",
+          "R": "Khi Nô-ê được 600 tuổi, vào ngày mười bảy tháng thứ hai, mọi mạch nước sâu dưới đất đều vỡ tung. Các cửa sổ trên trời mở ra, và mưa đổ xuống như trút."
+        },
+        "ko": {
+          "L": "노아의 생애 육백 년째 되는 해 둘째 달, 그달 열이렛날, 바로 그날에 큰 깊은 물의 모든 샘이 터지고, 하늘의 창문들이 열렸다.",
+          "B": "노아가 600살 되던 해 둘째 달 열이렛날, 바로 그날에 큰 깊은 물의 샘들이 모두 터지고, 하늘의 수문들이 열렸다.",
+          "R": "노아가 600살이 되던 해, 둘째 달 열이렛날에 땅속 깊은 곳의 샘들이 모두 터졌다. 하늘의 창문들이 열려 비가 쏟아져 내렸다."
         }
       },
       "decisions": [
@@ -1042,6 +1387,87 @@
           "reason": "Spanish normally names a high ordinal year with the cardinal number; \"sexcentésimo\" is correct but unknown to most readers. The date (second month, seventeenth day) has no modern equivalent, so it takes no units setting.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010070110202"
+          ],
+          "choice": "\"les vannes des cieux\"",
+          "alternatives": [
+            "\"les écluses des cieux\"",
+            "\"les fenêtres des cieux\""
+          ],
+          "reason": "Balanced names what the windows do, as the English \"floodgates\" does; \"vannes\" are the gates that hold back or release water. Literal and Readable keep \"fenêtres\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010070110202"
+          ],
+          "choice": "\"milango ya maji ya mbinguni\" (the water gates of heaven)",
+          "alternatives": [
+            "\"madirisha ya mbinguni\""
+          ],
+          "reason": "Swahili has no single word for floodgates, so Balanced says \"gates of the waters\", following the English \"floodgates\"; Literal and Readable keep \"madirisha\" (windows).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010070110202"
+          ],
+          "choice": "\"các cửa sổ của trời\" (L), \"các cửa đập trên trời\" (B), \"các cửa sổ trên trời\" (R)",
+          "alternatives": [],
+          "reason": "Openings for the waters held above the vault (m2); Balanced says \"floodgates\", as the English Balanced does, and Readable keeps the plain picture of windows.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010070110171",
+            "o010070110181",
+            "o010070110191"
+          ],
+          "choice": "\"큰 깊은 물\"",
+          "alternatives": [
+            "큰 바다",
+            "깊음"
+          ],
+          "reason": "The terms note settles \"깊은 물\" for the deep of 1:2; the same word returns here, as creation's waters break back in (meaning decision m1). Readable says \"땅속 깊은 곳\", as the English Readable says \"deep under the earth\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1081,6 +1507,26 @@
           "L": "Y la lluvia cayó sobre la tierra cuarenta días y cuarenta noches.",
           "B": "Y llovió sobre la tierra durante cuarenta días y cuarenta noches.",
           "R": "Llovió sobre la tierra cuarenta días y cuarenta noches."
+        },
+        "fr": {
+          "L": "Et la pluie fut sur la terre quarante jours et quarante nuits.",
+          "B": "Et la pluie tomba sur la terre pendant quarante jours et quarante nuits.",
+          "R": "Il a plu sur la terre pendant quarante jours et quarante nuits."
+        },
+        "sw": {
+          "L": "Na mvua ikawa juu ya dunia siku arobaini na usiku arobaini.",
+          "B": "Mvua ikanyesha juu ya dunia kwa siku arobaini na usiku arobaini.",
+          "R": "Ilinyesha mvua duniani siku arobaini na usiku arobaini."
+        },
+        "vi": {
+          "L": "Và mưa ở trên đất bốn mươi ngày và bốn mươi đêm.",
+          "B": "Mưa đổ xuống trên đất suốt bốn mươi ngày và bốn mươi đêm.",
+          "R": "Trời mưa trên đất suốt bốn mươi ngày và bốn mươi đêm."
+        },
+        "ko": {
+          "L": "그리고 비가 사십 일 낮과 사십 일 밤 동안 땅 위에 [내렸다].",
+          "B": "비가 사십 일 동안 밤낮으로 땅 위에 쏟아졌다.",
+          "R": "사십 일 동안 밤낮으로 땅에 비가 내렸다."
         }
       },
       "decisions": [],
@@ -1138,6 +1584,26 @@
           "L": "En ese mismo día entró Noé, y Sem y Cam y Jafet, los hijos de Noé, y la mujer de Noé, y las tres mujeres de sus hijos con ellos, en el arca,",
           "B": "Ese mismo día Noé y sus hijos, Sem, Cam y Jafet, junto con su esposa y las esposas de sus tres hijos, entraron en el arca,",
           "R": "Ese mismo día Noé entró en el arca con su esposa, sus hijos Sem, Cam y Jafet, y las tres esposas de sus hijos."
+        },
+        "fr": {
+          "L": "En ce jour même entra Noé, et Sem et Cham et Japhet, les fils de Noé, et la femme de Noé, et les trois femmes de ses fils avec eux, dans l’arche,",
+          "B": "Ce jour-là même, Noé et ses fils, Sem, Cham et Japhet, ainsi que sa femme et les trois femmes de ses fils, entrèrent dans l’arche,",
+          "R": "Ce jour-là, Noé est entré dans l’arche avec sa femme, ses fils Sem, Cham et Japhet, et les trois femmes de ses fils."
+        },
+        "sw": {
+          "L": "Siku hiyo hiyo aliingia Nuhu, na Shemu na Hamu na Yafethi, wana wa Nuhu, na mke wa Nuhu, na wake watatu wa wanawe pamoja nao, ndani ya safina,",
+          "B": "Siku ile ile Nuhu na wanawe, Shemu, Hamu na Yafethi, pamoja na mkewe na wake wa wanawe watatu, waliingia ndani ya safina,",
+          "R": "Siku hiyo hiyo Nuhu aliingia ndani ya safina pamoja na mke wake, wanawe Shemu, Hamu na Yafethi, na wake zao watatu."
+        },
+        "vi": {
+          "L": "Chính trong ngày ấy Nô-ê vào, cùng Sem, Cham và Gia-phết, là các con trai của Nô-ê, và vợ của Nô-ê, và ba người vợ của các con trai ông với họ, vào con tàu,",
+          "B": "Chính trong ngày ấy, Nô-ê cùng các con trai ông là Sem, Cham và Gia-phết, với vợ ông và ba người vợ của các con trai ông, đều vào tàu,",
+          "R": "Cũng trong ngày ấy Nô-ê vào tàu cùng với vợ ông, các con trai ông là Sem, Cham và Gia-phết, và ba người vợ của họ."
+        },
+        "ko": {
+          "L": "바로 그날에 노아가, 그리고 노아의 아들들인 셈과 함과 야벳과, 노아의 아내와, 그와 함께 그의 세 며느리가 방주로 들어갔다.",
+          "B": "바로 그날에 노아와 그의 아들들 셈과 함과 야벳, 그리고 노아의 아내와 세 며느리가 함께 방주로 들어갔다.",
+          "R": "바로 그날에 노아는 아내와 아들 셈과 함과 야벳과 세 며느리를 데리고 방주로 들어갔다."
         }
       },
       "decisions": [
@@ -1224,6 +1690,26 @@
           "L": "ellos y todo animal según su especie, y todo el ganado según su especie, y todo animal rastrero que se arrastra sobre la tierra según su especie, y toda ave según su especie, todo pájaro, todo [ser] alado.",
           "B": "ellos y todos los animales salvajes según su especie, todo el ganado según su especie, todos los animales que se mueven por el suelo según su especie, y todas las aves según su especie, todo lo que tiene alas.",
           "R": "Con ellos entraron todas las especies de animales salvajes, de animales de granja y de animales pequeños que se arrastran por el suelo, y todas las especies de aves, todo lo que tiene alas."
+        },
+        "fr": {
+          "L": "eux et tout animal selon son espèce, et tout le bétail selon son espèce, et toute bestiole qui rampe sur la terre selon son espèce, et tout oiseau selon son espèce, tout oiseau, tout [être] ailé.",
+          "B": "eux et toutes les bêtes sauvages selon leur espèce, tout le bétail selon son espèce, toutes les bêtes qui se déplacent sur le sol selon leur espèce, et tous les oiseaux selon leur espèce, tout ce qui a des ailes.",
+          "R": "Avec eux sont entrées toutes les sortes d’animaux sauvages, d’animaux de la ferme et de petites bêtes qui rampent sur le sol, et toutes les sortes d’oiseaux, tout ce qui a des ailes."
+        },
+        "sw": {
+          "L": "wao na kila mnyama kwa aina yake, na mifugo yote kwa aina zake, na kila kiumbe kitambaacho juu ya dunia kwa aina yake, na kila ndege kwa aina yake, kila ndege, kila [kiumbe] chenye mabawa.",
+          "B": "wao na kila mnyama wa porini kwa aina yake, mifugo yote kwa aina zake, kila kiumbe kinachotambaa juu ya ardhi kwa aina yake, na kila ndege kwa aina yake, kila kitu chenye mabawa.",
+          "R": "Pamoja nao waliingia kila aina ya mnyama wa porini, kila aina ya mfugo, kila aina ya kiumbe kidogo kinachotambaa ardhini, na kila aina ya ndege, kila kiumbe chenye mabawa."
+        },
+        "vi": {
+          "L": "họ và mọi thú vật tùy theo loại của nó, và mọi gia súc tùy theo loại của chúng, và mọi loài bò sát bò trên đất tùy theo loại của nó, và mọi loài chim tùy theo loại của nó, mọi chim, mọi [vật] có cánh.",
+          "B": "họ cùng với mọi thú rừng tùy theo loại của nó, mọi gia súc tùy theo loại của chúng, mọi loài bò sát trên mặt đất tùy theo loại của nó, và mọi loài chim tùy theo loại của nó, mọi vật có cánh.",
+          "R": "Cùng đi với họ có mọi loại thú rừng, mọi loại gia súc, mọi loại con vật nhỏ bò trên đất, và mọi loại chim, tức là mọi vật có cánh."
+        },
+        "ko": {
+          "L": "그들과 함께 모든 짐승이 그 종류대로, 모든 가축이 그 종류대로, 땅 위를 기는 모든 기어 다니는 것이 그 종류대로, 모든 새가 그 종류대로, 모든 날짐승, 날개 있는 모든 [것이 들어갔다].",
+          "B": "그들과 함께 온갖 들짐승이 그 종류대로, 온갖 가축이 그 종류대로, 땅 위를 기어 다니는 온갖 것이 그 종류대로, 온갖 새가 그 종류대로, 날개 달린 모든 것이 들어갔다.",
+          "R": "그들과 함께 온갖 종류의 들짐승과 집짐승과, 땅 위를 기어 다니는 온갖 종류의 작은 생물과, 날개 달린 온갖 종류의 새가 들어갔다."
         }
       },
       "decisions": [
@@ -1290,6 +1776,26 @@
           "L": "Y vinieron a Noé al arca, dos [y] dos de toda carne en que [había] aliento de vida.",
           "B": "Vinieron a Noé y entraron en el arca por parejas, de todas las criaturas que tienen aliento de vida.",
           "R": "Parejas de todos los seres vivos que respiran vinieron a Noé y entraron en el arca."
+        },
+        "fr": {
+          "L": "Et ils vinrent vers Noé dans l’arche, deux [et] deux de toute chair en qui [était] le souffle de vie.",
+          "B": "Ils vinrent vers Noé et entrèrent dans l’arche deux par deux, de toutes les créatures qui ont en elles le souffle de vie.",
+          "R": "Des couples de tous les êtres vivants qui respirent sont venus vers Noé et sont entrés dans l’arche."
+        },
+        "sw": {
+          "L": "Wakamjia Nuhu ndani ya safina, wawili wawili katika kila chenye mwili ambacho ndani yake [mna] pumzi ya uhai.",
+          "B": "Walimjia Nuhu wawili wawili, wakaingia ndani ya safina, wa kila kiumbe chenye pumzi ya uhai.",
+          "R": "Jozi za kila kiumbe hai kinachopumua zilimjia Nuhu, zikaingia ndani ya safina."
+        },
+        "vi": {
+          "L": "Và chúng đến với Nô-ê vào con tàu, từng hai [và] hai trong mọi xác thịt có hơi thở của sự sống.",
+          "B": "Chúng từng cặp đến với Nô-ê và vào tàu, đủ mọi loài có hơi thở của sự sống.",
+          "R": "Từng cặp của mọi sinh vật có hơi thở đều đến với Nô-ê và vào tàu."
+        },
+        "ko": {
+          "L": "그리고 생명의 숨이 있는 모든 육체 가운데서 둘씩 둘씩 노아에게로 와서 방주로 들어갔다.",
+          "B": "생명의 숨이 있는 모든 생물이 짝을 지어 노아에게 와서 방주로 들어갔다.",
+          "R": "숨 쉬는 모든 생물이 한 쌍씩 노아에게 와서 방주로 들어갔다."
         }
       },
       "decisions": [],
@@ -1339,6 +1845,26 @@
           "L": "Y los que vinieron, macho y hembra de toda carne, vinieron como Dios le había mandado. Y {{divine_name:el SEÑOR|Yahvé}} cerró [la puerta] detrás de él.",
           "B": "Los que entraron eran macho y hembra de toda criatura, como Dios había ordenado a Noé. Luego {{divine_name:el SEÑOR|Yahvé}} cerró la puerta tras él.",
           "R": "Los animales entraron, macho y hembra de cada especie, como Dios le había dicho a Noé. Después {{divine_name:el SEÑOR|Yahvé}} cerró la puerta detrás de él."
+        },
+        "fr": {
+          "L": "Et ceux qui vinrent, mâle et femelle de toute chair, vinrent comme Dieu le lui avait ordonné. Et {{divine_name:le SEIGNEUR|Yahvé}} ferma [la porte] derrière lui.",
+          "B": "Ceux qui entrèrent étaient mâle et femelle de toute créature, comme Dieu l’avait ordonné à Noé. Puis {{divine_name:le SEIGNEUR|Yahvé}} ferma la porte sur lui.",
+          "R": "Les animaux sont entrés, un mâle et une femelle de chaque sorte, comme Dieu l’avait dit à Noé. Ensuite, {{divine_name:le SEIGNEUR|Yahvé}} a fermé la porte derrière lui."
+        },
+        "sw": {
+          "L": "Na wale walioingia, dume na jike wa kila chenye mwili, waliingia kama Mungu alivyomwamuru. Na {{divine_name:BWANA|Yahwe}} akafunga [mlango] nyuma yake.",
+          "B": "Walioingia walikuwa dume na jike wa kila kiumbe, kama Mungu alivyomwamuru Nuhu. Kisha {{divine_name:BWANA|Yahwe}} akamfungia ndani.",
+          "R": "Wanyama waliingia, dume na jike wa kila aina, kama Mungu alivyomwambia Nuhu. Kisha {{divine_name:BWANA|Yahwe}} akaufunga mlango nyuma yake."
+        },
+        "vi": {
+          "L": "Và những con đã vào, đực và cái trong mọi xác thịt, đã vào như Đức Chúa Trời đã truyền cho ông. Và {{divine_name:CHÚA|Gia-vê}} đóng [cửa] lại sau ông.",
+          "B": "Những con vào tàu đều có đực có cái trong mọi loài, như Đức Chúa Trời đã truyền cho Nô-ê. Rồi {{divine_name:CHÚA|Gia-vê}} đóng cửa tàu lại.",
+          "R": "Các con vật vào tàu, con đực và con cái của mọi loài, như Đức Chúa Trời đã bảo Nô-ê. Rồi {{divine_name:CHÚA|Gia-vê}} đóng cửa lại sau lưng ông."
+        },
+        "ko": {
+          "L": "그리고 들어간 것들은 모든 육체 가운데서 수컷과 암컷이었으니, 하나님께서 그에게 명령하신 대로 들어갔다. 그리고 {{divine_name:주|야훼}}께서 그의 뒤에서 [문을] 닫으셨다.",
+          "B": "들어간 것들은 모든 생물의 수컷과 암컷이었으니, 하나님께서 노아에게 명령하신 대로였다. 그리고 {{divine_name:주|야훼}}께서 노아를 안에 두고 문을 닫으셨다.",
+          "R": "하나님께서 노아에게 말씀하신 대로, 온갖 종류의 짐승이 수컷과 암컷으로 들어왔다. 그러자 {{divine_name:주|야훼}}께서 노아가 들어간 뒤에 문을 닫으셨다."
         }
       },
       "decisions": [
@@ -1450,6 +1976,26 @@
           "L": "Y estuvo el diluvio cuarenta días sobre la tierra, y crecieron las aguas y alzaron el arca, y se elevó muy por encima de la tierra.",
           "B": "Durante cuarenta días el diluvio siguió cayendo sobre la tierra. Las aguas crecieron y levantaron el arca, y esta flotó muy por encima de la tierra.",
           "R": "Durante cuarenta días el agua del diluvio se hizo cada vez más profunda. El agua levantó el arca del suelo, muy por encima de la tierra."
+        },
+        "fr": {
+          "L": "Et le déluge fut quarante jours sur la terre, et les eaux augmentèrent et soulevèrent l’arche, et elle s’éleva au-dessus de la terre.",
+          "B": "Pendant quarante jours, le déluge ne cessa de venir sur la terre. Les eaux montèrent et soulevèrent l’arche, qui flotta bien au-dessus de la terre.",
+          "R": "Pendant quarante jours, l’eau du déluge est devenue de plus en plus profonde. Elle a soulevé l’arche du sol, bien au-dessus de la terre."
+        },
+        "sw": {
+          "L": "Na gharika ikawa juu ya dunia siku arobaini, na maji yakaongezeka, yakaiinua safina, nayo ikapanda juu ya dunia.",
+          "B": "Kwa siku arobaini gharika iliendelea kuja juu ya dunia. Maji yakaongezeka, yakaiinua safina, nayo ikaelea juu sana ya dunia.",
+          "R": "Kwa siku arobaini maji ya gharika yaliendelea kuongezeka. Maji yakaiinua safina kutoka ardhini, ikawa juu sana ya dunia."
+        },
+        "vi": {
+          "L": "Và cơn nước lụt ở trên đất bốn mươi ngày, và nước dâng lên và nâng con tàu lên, và nó được nhấc cao khỏi đất.",
+          "B": "Suốt bốn mươi ngày, nước lụt cứ tràn xuống trên đất. Nước dâng lên và nâng con tàu lên, và tàu nổi cao khỏi mặt đất.",
+          "R": "Suốt bốn mươi ngày nước lụt cứ dâng cao mãi. Nước nâng chiếc tàu lên khỏi mặt đất, lên cao trên đất."
+        },
+        "ko": {
+          "L": "그리고 홍수가 사십 일 동안 땅 위에 있었다. 그리고 물이 불어나 방주를 들어 올리니, 그것이 땅 위로 높이 떠올랐다.",
+          "B": "사십 일 동안 홍수가 땅 위에 계속되었다. 물이 불어나 방주를 들어 올리니, 방주가 땅 위로 높이 떠올랐다.",
+          "R": "사십 일 동안 홍수의 물은 점점 깊어졌다. 물이 방주를 땅에서 들어 올려, 방주는 땅 위로 높이 떠올랐다."
         }
       },
       "decisions": [
@@ -1513,6 +2059,26 @@
           "L": "Y prevalecieron las aguas y crecieron mucho sobre la tierra, y el arca iba sobre la faz de las aguas.",
           "B": "Las aguas crecieron con fuerza y subieron cada vez más sobre la tierra, y el arca flotaba sobre la superficie de las aguas.",
           "R": "El agua siguió subiendo más y más, y el arca flotaba encima."
+        },
+        "fr": {
+          "L": "Et les eaux prévalurent et augmentèrent beaucoup sur la terre, et l’arche alla sur la face des eaux.",
+          "B": "Les eaux grossirent et montèrent de plus en plus sur la terre, et l’arche flottait à la surface des eaux.",
+          "R": "L’eau a continué à monter, toujours plus haut, et l’arche flottait dessus."
+        },
+        "sw": {
+          "L": "Na maji yakashinda, yakaongezeka sana juu ya dunia, na safina ikaenda juu ya uso wa maji.",
+          "B": "Maji yakazidi nguvu na kupanda juu zaidi na zaidi juu ya dunia, na safina ikaelea juu ya maji.",
+          "R": "Maji yaliendelea kupanda juu zaidi na zaidi, na safina ikaelea juu yake."
+        },
+        "vi": {
+          "L": "Và nước thắng thế và dâng lên rất nhiều trên đất, và con tàu trôi trên mặt nước.",
+          "B": "Nước tràn ngập và dâng lên mỗi lúc một cao trên đất, và con tàu nổi trên mặt nước.",
+          "R": "Nước cứ dâng lên cao hơn mãi, và chiếc tàu nổi trên mặt nước."
+        },
+        "ko": {
+          "L": "그리고 물이 세력을 떨치며 땅 위에서 크게 불어났고, 방주는 물의 표면 위로 떠다녔다.",
+          "B": "물이 불어나 땅 위에서 점점 더 높아졌고, 방주는 물 위에 떠다녔다.",
+          "R": "물은 점점 더 높이 차올랐고, 방주는 그 물 위에 떠 있었다."
         }
       },
       "decisions": [
@@ -1577,6 +2143,26 @@
           "L": "Y las aguas prevalecieron muchísimo sobre la tierra, y fueron cubiertos todos los montes altos que [había] debajo de todos los cielos.",
           "B": "Las aguas subieron tanto sobre la tierra que quedaron cubiertas todas las montañas altas que hay bajo el cielo entero.",
           "R": "El agua subió tanto que cubrió todas las montañas altas que había bajo el cielo."
+        },
+        "fr": {
+          "L": "Et les eaux prévalurent extrêmement sur la terre, et toutes les hautes montagnes qui [étaient] sous tous les cieux furent couvertes.",
+          "B": "Les eaux montèrent si haut sur la terre que toutes les hautes montagnes sous le ciel entier furent recouvertes.",
+          "R": "L’eau est montée si haut qu’elle a recouvert toutes les hautes montagnes sous le ciel."
+        },
+        "sw": {
+          "L": "Na maji yakashinda sana sana juu ya dunia, na milima yote mirefu iliyo chini ya mbingu zote ikafunikwa.",
+          "B": "Maji yakapanda juu sana juu ya dunia hata milima yote mirefu chini ya anga lote ikafunikwa.",
+          "R": "Maji yalipanda juu sana, yakafunika milima yote mirefu chini ya anga."
+        },
+        "vi": {
+          "L": "Và nước thắng thế rất, rất nhiều trên đất, và mọi núi cao [ở] dưới khắp trời đều bị bao phủ.",
+          "B": "Nước dâng cao trên đất đến nỗi mọi ngọn núi cao dưới khắp bầu trời đều bị bao phủ.",
+          "R": "Nước dâng cao đến nỗi bao phủ mọi ngọn núi cao dưới bầu trời."
+        },
+        "ko": {
+          "L": "그리고 물이 땅 위에서 매우 매우 세력을 떨쳐, 온 하늘 아래에 있는 모든 높은 산들이 덮였다.",
+          "B": "물이 땅 위에 아주 높이 불어나, 온 하늘 아래에 있는 높은 산들이 모두 덮였다.",
+          "R": "물이 아주 높이 차올라서, 하늘 아래에 있는 높은 산들을 모두 덮었다."
         }
       },
       "decisions": [
@@ -1659,6 +2245,26 @@
           "L": "Quince codos hacia arriba prevalecieron las aguas, y fueron cubiertos los montes.",
           "B": "Las aguas subieron {{units:casi 7 metros|quince codos}} por encima de ellas, y las montañas quedaron cubiertas.",
           "R": "El agua llegó a {{units:casi 7 metros|quince codos}} por encima de las cimas de las montañas."
+        },
+        "fr": {
+          "L": "Quinze coudées au-dessus les eaux prévalurent, et les montagnes furent couvertes.",
+          "B": "Les eaux montèrent de {{units:près de 7 mètres|quinze coudées}} au-dessus d’elles, et les montagnes furent recouvertes.",
+          "R": "L’eau atteignait {{units:près de 7 mètres|quinze coudées}} au-dessus du sommet des montagnes."
+        },
+        "sw": {
+          "L": "Dhiraa kumi na tano kwenda juu maji yakashinda, na milima ikafunikwa.",
+          "B": "Maji yalipanda {{units:karibu mita 7|dhiraa kumi na tano}} juu yake, na milima ikafunikwa.",
+          "R": "Kina cha maji kilikuwa {{units:karibu mita 7|dhiraa kumi na tano}} juu ya vilele vya milima."
+        },
+        "vi": {
+          "L": "Mười lăm cu-đê lên cao nước thắng thế, và các núi bị bao phủ.",
+          "B": "Nước dâng cao hơn các núi {{units:gần 7 m|mười lăm cu-đê}}, và các núi đều bị bao phủ.",
+          "R": "Nước sâu {{units:gần 7 m|mười lăm cu-đê}} trên các đỉnh núi."
+        },
+        "ko": {
+          "L": "물이 위로 십오 규빗이나 세력을 떨치니, 산들이 덮였다.",
+          "B": "물은 산들 위로 {{units:약 7미터|십오 규빗}} 높이까지 불어나 산들을 덮었다.",
+          "R": "산꼭대기 위로도 물의 깊이가 {{units:약 7미터|십오 규빗}} 높이나 되었다."
         }
       },
       "decisions": [
@@ -1722,6 +2328,24 @@
           "reason": "Spanish gives the metric measure by default (fifteen cubits of about 45 cm is 6,75 m, rounded as the English rounds its feet). Literal keeps \"quince codos\", as the English Literal keeps cubits.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o010070200031"
+          ],
+          "choice": "\"gần 7 m\" by default, \"mười lăm cu-đê\" with the Measures setting",
+          "alternatives": [],
+          "reason": "Fifteen cubits at 45 cm is about 6,75 m, so the metric default says \"nearly 7 m\", as the English says \"more than 20 feet\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1780,6 +2404,26 @@
           "L": "Y murió toda carne que se mueve sobre la tierra: aves y ganado y animales salvajes y todo lo que pulula sobre la tierra, y {{gender:toda la humanidad|todos los hombres}}.",
           "B": "Murió todo ser vivo que se movía sobre la tierra: aves, ganado, animales salvajes, todos los animales que pululan por la tierra y {{gender:todos los seres humanos|todos los hombres}}.",
           "R": "Murió todo ser vivo de la tierra: aves, animales de granja, animales salvajes, todos los animales pequeños y {{gender:todas las personas|todos los hombres}}."
+        },
+        "fr": {
+          "L": "Et toute chair qui se meut sur la terre expira, oiseaux et bétail et bêtes sauvages et toute bestiole qui grouille sur la terre, et {{gender:tous les humains|tous les hommes}}.",
+          "B": "Toute créature vivante qui se mouvait sur la terre périt : les oiseaux, le bétail, les bêtes sauvages, toutes les bestioles qui grouillent sur la terre, et {{gender:tous les êtres humains|tous les hommes}}.",
+          "R": "Tous les êtres vivants de la terre sont morts : les oiseaux, les animaux de la ferme, les animaux sauvages, toutes les petites bêtes, et {{gender:tous les gens|tous les hommes}}."
+        },
+        "sw": {
+          "L": "Na wote wenye mwili waendao juu ya dunia wakafa, ndege na mifugo na wanyama wa porini na viumbe vyote vinavyojaa tele juu ya dunia, na wanadamu wote.",
+          "B": "Kila kiumbe hai kilichokwenda juu ya dunia kilikufa: ndege, mifugo, wanyama wa porini, viumbe vyote vinavyojaa tele duniani, na wanadamu wote.",
+          "R": "Kila kiumbe hai duniani kilikufa: ndege, mifugo, wanyama wa porini, viumbe vidogo vyote, na watu wote."
+        },
+        "vi": {
+          "L": "Và mọi xác thịt di động trên đất đều chết, chim chóc, gia súc, thú vật, mọi loài sinh sôi đầy dẫy trên đất, và cả loài người.",
+          "B": "Mọi sinh vật di động trên đất đều chết: chim chóc, gia súc, thú rừng, mọi loài sinh sôi đầy dẫy trên đất, và cả loài người.",
+          "R": "Mọi vật sống trên đất đều chết: chim chóc, gia súc, thú rừng, mọi con vật nhỏ, và cả loài người."
+        },
+        "ko": {
+          "L": "그리고 땅 위에서 움직이는 모든 육체, 곧 새와 가축과 짐승과 땅 위에 우글거리는 모든 우글거리는 것과 모든 사람이 죽었다.",
+          "B": "땅 위에서 움직이던 모든 생물이 죽었다. 새와 가축과 들짐승과 땅 위에 우글거리던 모든 것과 모든 사람이 죽었다.",
+          "R": "땅 위에 살던 모든 생물이 죽었다. 새와 집짐승과 들짐승과 작은 생물들과 모든 사람이 죽었다."
         }
       },
       "decisions": [
@@ -1894,6 +2538,26 @@
           "L": "Todo lo que [tenía] aliento del espíritu de vida en sus narices, de todo lo que [había] en la tierra seca, murió.",
           "B": "Todo lo que había en tierra firme y tenía en sus narices aliento de vida murió.",
           "R": "Todo lo que vivía en la tierra y respiraba aire murió."
+        },
+        "fr": {
+          "L": "Tout ce qui [avait] dans ses narines le souffle de l’esprit de vie, de tout ce qui [était] sur la terre sèche, mourut.",
+          "B": "Tout ce qui vivait sur la terre ferme et avait dans ses narines le souffle de vie mourut.",
+          "R": "Tout ce qui vivait sur la terre et respirait l’air est mort."
+        },
+        "sw": {
+          "L": "Kila kitu ambacho [kilikuwa na] pumzi ya roho ya uhai puani mwake, katika vyote vilivyokuwa katika nchi kavu, kilikufa.",
+          "B": "Kila kitu katika nchi kavu kilichokuwa na pumzi ya uhai puani mwake kilikufa.",
+          "R": "Kila kitu kilichoishi nchi kavu na kuvuta hewa kilikufa."
+        },
+        "vi": {
+          "L": "Mọi vật [có] hơi thở của thần sự sống trong lỗ mũi, trong mọi vật [ở] trên đất khô, đều chết.",
+          "B": "Mọi vật trên đất khô có hơi thở của sự sống trong lỗ mũi đều chết.",
+          "R": "Mọi vật trên đất liền có hơi thở đều chết."
+        },
+        "ko": {
+          "L": "마른 땅에 있던 모든 것 가운데서, 콧구멍에 생명의 영의 숨이 있던 모든 것이 죽었다.",
+          "B": "마른 땅에 살면서 콧구멍에 생명의 숨이 있던 것은 모두 죽었다.",
+          "R": "땅 위에서 숨을 쉬던 것은 모두 죽었다."
         }
       },
       "decisions": [
@@ -1993,6 +2657,26 @@
           "L": "Y {{deity_pronoun:él|Él}} borró todo ser viviente que [había] sobre la faz del suelo, desde {{gender:el ser humano|el hombre}} hasta los animales, hasta lo que se arrastra y hasta las aves de los cielos; y fueron borrados de la tierra. Solo quedó Noé, y los que [estaban] con él en el arca.",
           "B": "Así fue borrado todo ser vivo de la faz de la tierra, desde {{gender:los seres humanos|el hombre}} hasta los animales, los que se arrastran por el suelo y las aves del cielo. Fueron borrados de la tierra. Solo quedó Noé, y los que estaban con él en el arca.",
           "R": "Dios borró a todos los seres vivos de la tierra: {{gender:las personas|los hombres}}, los animales, los animales pequeños y las aves. Todos desaparecieron. Solo quedaron con vida Noé y los que estaban con él en el arca."
+        },
+        "fr": {
+          "L": "Et {{deity_pronoun:il|Il}} effaça tout être vivant qui [était] sur la face du sol, depuis {{gender:l’être humain|l’homme}} jusqu’aux animaux, jusqu’aux bestioles et jusqu’aux oiseaux des cieux ; et ils furent effacés de la terre. Seul Noé resta, et ceux qui [étaient] avec lui dans l’arche.",
+          "B": "Ainsi tout être vivant fut effacé de la surface de la terre, {{gender:les humains|l’homme}} comme les animaux, les bêtes qui se déplacent sur le sol et les oiseaux du ciel. Ils furent effacés de la terre. Il ne resta que Noé, et ceux qui étaient avec lui dans l’arche.",
+          "R": "Dieu a fait disparaître tous les êtres vivants de la terre : {{gender:les humains|les hommes}}, les animaux, les petites bêtes et les oiseaux. Ils avaient tous disparu. Seuls Noé et ceux qui étaient avec lui dans l’arche sont restés en vie."
+        },
+        "sw": {
+          "L": "Akafuta kila kiumbe hai kilichokuwa juu ya uso wa ardhi, tangu mwanadamu hadi wanyama, hadi vitambaavyo, na hadi ndege wa angani; vikafutwa kutoka duniani. Akabaki Nuhu peke yake, na wale [waliokuwa] pamoja naye ndani ya safina.",
+          "B": "Hivyo kila kiumbe hai juu ya uso wa dunia kilifutiliwa mbali, tangu wanadamu hadi wanyama, viumbe vitambaavyo ardhini na ndege wa angani. Vilifutwa kutoka duniani. Alibaki Nuhu peke yake, na wale waliokuwa pamoja naye ndani ya safina.",
+          "R": "Mungu aliangamiza kila kiumbe hai duniani: watu, wanyama, viumbe vidogo na ndege. Wote walitoweka. Ni Nuhu tu na wale waliokuwa pamoja naye ndani ya safina waliobaki hai."
+        },
+        "vi": {
+          "L": "Và {{deity_pronoun:ngài|Ngài}} xóa bỏ mọi vật sống [ở] trên mặt đất, từ loài người đến thú vật, đến loài bò sát, và đến chim trên trời; và chúng bị xóa bỏ khỏi đất. Chỉ còn lại Nô-ê và những gì [ở] với ông trong con tàu.",
+          "B": "Vậy mọi vật sống trên mặt đất đều bị xóa bỏ, từ loài người đến thú vật, loài bò sát và chim trời. Chúng đều bị xóa bỏ khỏi đất. Chỉ còn lại Nô-ê và những gì ở với ông trong tàu.",
+          "R": "Đức Chúa Trời xóa bỏ mọi vật sống trên đất: loài người, thú vật, những con vật nhỏ và chim chóc. Tất cả đều không còn nữa. Chỉ có Nô-ê và những gì ở với ông trong tàu là còn sống."
+        },
+        "ko": {
+          "L": "그리고 그분께서 땅의 표면 위에 있던 모든 생명체를, 사람에서부터 짐승과 기어 다니는 것과 하늘의 새까지 쓸어버리시니, 그것들이 땅에서 쓸려 나갔다. 오직 노아와 방주 안에 그와 함께 있던 것들만 남았다.",
+          "B": "이렇게 땅 위의 모든 생명체가 쓸려 나갔다. 사람에서부터 짐승과 땅 위를 기어 다니는 것과 하늘의 새까지 땅에서 쓸려 나갔다. 오직 노아와, 방주 안에 그와 함께 있던 것들만 남았다.",
+          "R": "하나님께서 땅 위의 모든 생명체를 쓸어버리셨다. 사람과 짐승과 작은 생물과 새가 모두 사라졌다. 오직 노아와, 방주 안에 그와 함께 있던 것들만 살아남았다."
         }
       },
       "decisions": [
@@ -2046,6 +2730,25 @@
           "reason": "Balanced puts the sentence in the passive, since the next words say \"they were wiped out\"; God is the one who acts, as Literal and Readable say.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o010070230012"
+          ],
+          "choice": "\"Akafuta\", with no deity pronoun span",
+          "alternatives": [
+            "\"Naye akafuta\" with a span on \"naye\""
+          ],
+          "reason": "The Hebrew has only the verb, and Swahili marks \"he\" inside the verb, where no capital is possible, so the English span on \"He\" has no Swahili counterpart.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2084,6 +2787,26 @@
           "L": "Y prevalecieron las aguas sobre la tierra 150 días.",
           "B": "Las aguas inundaron la tierra durante 150 días.",
           "R": "El agua se mantuvo alta sobre la tierra durante 150 días."
+        },
+        "fr": {
+          "L": "Et les eaux prévalurent sur la terre 150 jours.",
+          "B": "Les eaux inondèrent la terre pendant 150 jours.",
+          "R": "L’eau est restée haute sur la terre pendant 150 jours."
+        },
+        "sw": {
+          "L": "Na maji yakashinda juu ya dunia siku 150.",
+          "B": "Maji yaliifunika dunia kwa siku 150.",
+          "R": "Maji yalibaki juu sana duniani kwa siku 150."
+        },
+        "vi": {
+          "L": "Và nước thắng thế trên đất 150 ngày.",
+          "B": "Nước tràn ngập mặt đất suốt 150 ngày.",
+          "R": "Nước vẫn dâng cao trên mặt đất suốt 150 ngày."
+        },
+        "ko": {
+          "L": "그리고 물이 150일 동안 땅 위에서 세력을 떨쳤다.",
+          "B": "물은 150일 동안 땅을 뒤덮고 있었다.",
+          "R": "물은 150일 동안 땅 위에 높이 차 있었다."
         }
       },
       "decisions": [
