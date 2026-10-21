@@ -61,7 +61,7 @@ Without the Ethiopian church, these books would be known today only in pieces.
 
 Ge'ez remains the liturgical language of the Ethiopian and Eritrean Orthodox churches, and the Coptic church still uses Bohairic alongside Arabic. Christianity has been an African religion from its first centuries, and African translators have carried scripture into their own languages for as long as anyone.
 
-That story continues. Open Word Bible is drafting Swahili alongside English, Spanish and French, each from the Hebrew and Greek rather than from English (see [The Bible in Swahili](/articles/the-bible-in-swahili/)). The Swahili work is AI-assisted, and none of it will be marked reviewed until named native-speaking reviewers have checked it.
+That story continues. Open Word Bible is drafting Swahili alongside English, Spanish, French, Vietnamese and Korean, each from the Hebrew and Greek rather than from English (see [The Bible in Swahili](/articles/the-bible-in-swahili/)). The Swahili work is AI-assisted, and none of it will be marked reviewed until named native-speaking reviewers have checked it.
 
 ## Sources
 

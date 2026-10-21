@@ -33,7 +33,7 @@ For centuries, Slavs had scripture mainly in service books. The first complete S
 
 Cyril and Methodius are honoured as saints by Orthodox and Catholic Christians alike. On one point their position is clear: they rejected the idea that only a few sacred languages are fit for scripture.
 
-Open Word Bible stands in that tradition in a modest way. It translates into Spanish, French and Swahili as well as English, each from the Hebrew and Greek, so that no language receives a copy of another translation, as Gennadius's team had to accept. Its text is released under a CC0 licence, so nobody needs permission to use it. It is AI-assisted, and none of it has yet been approved by named human reviewers.
+Open Word Bible stands in that tradition in a modest way. It translates into Spanish, French, Swahili, Vietnamese and Korean as well as English, each from the Hebrew and Greek, so that no language receives a copy of another translation, as Gennadius's team had to accept. Its text is released under a CC0 licence, so nobody needs permission to use it. It is AI-assisted, and none of it has yet been approved by named human reviewers.
 
 ## Sources
 

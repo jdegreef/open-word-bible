@@ -49,7 +49,7 @@ A reader is right to ask what an AI gets wrong. We have seen several kinds of mi
 
 **Fluency is not judgment.** A draft can read smoothly and still be wrong, or right for reasons that are not quite the stated ones. The confident tone of a sentence is no evidence for it.
 
-**Natural wording needs native speakers.** An AI can write grammatical Spanish, French or Swahili. Whether a sentence sounds natural to a reader who grew up with the language is another question. The Spanish record for John 1:1, for example, chooses *el Verbo* for "the Word" over *la Palabra* and flags the choice for a native speaker's review.
+**Natural wording needs native speakers.** An AI can write grammatical Spanish, French, Swahili, Vietnamese or Korean. Whether a sentence sounds natural to a reader who grew up with the language is another question. The Spanish record for John 1:1, for example, chooses *el Verbo* for "the Word" over *la Palabra* and flags the choice for a native speaker's review.
 
 **Consistency across books is hard.** Thousands of sentences drafted at different times can drift. Key terms checked by software, term lists for long books, and decisions that cite earlier ones all work against it, but some drift will remain for reviewers to find.
 
@@ -90,4 +90,4 @@ You do not have to wait for reviewers to test what you read.
 
 ## Help review
 
-If you read Greek or Hebrew, or are a native speaker of Spanish, French or Swahili who can judge whether a sentence reads naturally, we would value your help. Everything is open on [GitHub](https://github.com/jdegreef/open-word-bible), including every decision and its reasoning, and the "Report a problem" link at the foot of every page opens an issue there. Disagreeing with a decision, and saying why, is exactly the kind of help the project needs.
+If you read Greek or Hebrew, or are a native speaker of Spanish, French, Swahili, Vietnamese or Korean who can judge whether a sentence reads naturally, we would value your help. Everything is open on [GitHub](https://github.com/jdegreef/open-word-bible), including every decision and its reasoning, and the "Report a problem" link at the foot of every page opens an issue there. Disagreeing with a decision, and saying why, is exactly the kind of help the project needs.

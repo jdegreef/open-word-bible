@@ -72,7 +72,7 @@ The case turns on a distinction that runs through all translation: between what 
 
 ## Where Open Word Bible fits
 
-Open Word Bible is not a minority-language project. Its languages so far are English, Spanish, French and Swahili, all of which already have many Bibles. But it shares two concerns with the modern movement. Its CC0 licence means anyone, including translators into other languages, may use and adapt it freely. And because every sentence carries its reasoning (see [Showing our work: what a reasoning record is](/articles/showing-the-work/)), a translator into another language can see what was decided about the Greek and Hebrew, not only an English result. Its drafts are AI-assisted, and none is yet marked reviewed; like every project described here, it depends on human checkers whose names are recorded.
+Open Word Bible is not a minority-language project. Its languages so far are English, Spanish, French, Swahili, Vietnamese and Korean, all of which already have many Bibles. But it shares two concerns with the modern movement. Its CC0 licence means anyone, including translators into other languages, may use and adapt it freely. And because every sentence carries its reasoning (see [Showing our work: what a reasoning record is](/articles/showing-the-work/)), a translator into another language can see what was decided about the Greek and Hebrew, not only an English result. Its drafts are AI-assisted, and none is yet marked reviewed; like every project described here, it depends on human checkers whose names are recorded.
 
 ## Sources
 
