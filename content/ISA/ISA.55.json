@@ -47,6 +47,16 @@
           "L": "Ho, every thirsty [one], come to the waters; \\q and [you] who have no silver, \\q come, buy grain and eat! \\q Come, buy grain without silver and without price, wine and milk!",
           "B": "Listen, all who thirst: come down to the water! \\q You who have no silver, \\q come, buy grain and eat. \\q Come, buy grain, wine and milk, and pay nothing for them.",
           "R": "Listen! Is anyone thirsty? Come and drink the water. \\q Do you have no money? \\q Come anyway. Get food and eat it. \\q Come and get wine and milk. You do not have to pay anything for them."
+        },
+        "es": {
+          "L": "¡Oh, todos los sedientos, {{plural_you:vengan|venid}} a las aguas; \\q y los que no tienen plata, \\q {{plural_you:vengan, compren|venid, comprad}} grano y {{plural_you:coman|comed}}! \\q ¡{{plural_you:Vengan, compren|Venid, comprad}} grano sin plata y sin precio, vino y leche!",
+          "B": "¡{{plural_you:Escuchen|Escuchad}}, todos los que tienen sed: {{plural_you:vengan|venid}} a las aguas! \\q Los que no tienen plata, \\q {{plural_you:vengan, compren|venid, comprad}} grano y {{plural_you:coman|comed}}. \\q {{plural_you:Vengan, compren|Venid, comprad}} grano, vino y leche, y no {{plural_you:paguen|paguéis}} nada por ello.",
+          "R": "¡{{plural_you:Escuchen|Escuchad}}! ¿Alguien tiene sed? {{plural_you:Vengan y beban|Venid y bebed}} agua. \\q ¿No {{plural_you:tienen|tenéis}} dinero? \\q {{plural_you:Vengan|Venid}} de todas formas. {{plural_you:Consigan|Conseguid}} comida y {{plural_you:coman|comed}}. \\q {{plural_you:Vengan y consigan|Venid y conseguid}} vino y leche. No {{plural_you:tienen|tenéis}} que pagar nada por ellos."
+        },
+        "sw": {
+          "L": "Lo, kila mwenye kiu, njooni kwenye maji; \\q nanyi [ambao] hamna fedha, \\q njooni, nunueni nafaka mle! \\q Njooni, nunueni nafaka bila fedha na bila bei, divai na maziwa!",
+          "B": "Sikilizeni, nyote wenye kiu: shukeni mje kwenye maji! \\q Ninyi msio na fedha, \\q njooni, nunueni nafaka mle. \\q Njooni, nunueni nafaka, divai na maziwa, bila kulipa chochote.",
+          "R": "Sikilizeni! Je, kuna mtu mwenye kiu? Njooni mnywe maji. \\q Je, hamna fedha? \\q Njooni hivyo hivyo. Chukueni chakula mle. \\q Njooni mchukue divai na maziwa. Hamhitaji kulipa chochote."
         }
       },
       "decisions": [
@@ -137,6 +147,51 @@
           "reason": "Readable turns the descriptions of the hearers into short questions, as a caller in the street would.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "grammar",
+          "tokens": [
+            "o230550010041",
+            "o230550010101",
+            "o230550010132"
+          ],
+          "choice": "vengan / venid (plural_you)",
+          "alternatives": [
+            "ven"
+          ],
+          "reason": "The invitation is plural in the Hebrew (\"come\", \"buy\", \"eat\"), so each verb is a plural_you span; the opening cry is \"Oh\" at Literal and \"Escuchen\" at Balanced and Readable, as the English has it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230550010011"
+          ],
+          "choice": "Lo (Literal); Sikilizeni (Balanced, Readable)",
+          "alternatives": [
+            "Ole",
+            "Haya"
+          ],
+          "reason": "The cry that usually opens a woe here opens an invitation (meaning decision m1), so it is not \"Ole\"; Literal keeps a bare exclamation and the other levels a call to listen.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -186,6 +241,16 @@
           "L": "Why do you weigh out silver for [what is] not bread, \\q and your labor for [what does] not satisfy? \\q Listen carefully to me, and eat [what is] good, \\q and let your soul delight itself in fatness.",
           "B": "Why pay out silver for what is not bread, \\q and the fruit of your work for what never fills you? \\q Pay close attention to me: eat what is good, \\q and let your appetite delight in the finest food.",
           "R": "Why spend your money on things that are not real food? \\q Why work hard for things that do not fill you up? \\q Listen to me carefully. Then you will eat what is good, \\q and you will enjoy the best food there is."
+        },
+        "es": {
+          "L": "¿Por qué {{plural_you:pesan|pesáis}} plata por [lo que] no es pan, \\q y {{plural_you:su trabajo|vuestro trabajo}} por [lo que] no sacia? \\q {{plural_you:Escúchenme|Escuchadme}} atentamente, y {{plural_you:coman|comed}} [lo] bueno, \\q y que {{plural_you:su alma|vuestra alma}} se deleite con manjares sustanciosos.",
+          "B": "¿Por qué {{plural_you:pagan|pagáis}} con plata lo que no es pan, \\q y el fruto de {{plural_you:su trabajo|vuestro trabajo}} por lo que nunca llena? \\q {{plural_you:Pónganme|Ponedme}} mucha atención: {{plural_you:coman|comed}} lo que es bueno, \\q y {{plural_you:disfrutarán|disfrutaréis}} de la mejor comida.",
+          "R": "¿Por qué {{plural_you:gastan su|gastáis vuestro}} dinero en cosas que no son verdadera comida? \\q ¿Por qué {{plural_you:trabajan|trabajáis}} duro por cosas que no {{plural_you:los|os}} llenan? \\q {{plural_you:Escúchenme|Escuchadme}} con atención. Entonces {{plural_you:comerán|comeréis}} lo que es bueno, \\q y {{plural_you:disfrutarán|disfrutaréis}} de la mejor comida que hay."
+        },
+        "sw": {
+          "L": "Kwa nini mnapima fedha kwa [kitu ambacho] si mkate, \\q na kazi yenu kwa [kitu kisichoshibisha]? \\q Nisikilizeni kwa makini, mle [kilicho] chema, \\q na nafsi yenu ijifurahishe kwa unono.",
+          "B": "Kwa nini mnalipa fedha kwa kitu kisicho mkate, \\q na mapato ya kazi yenu kwa kitu kisichowashibisha kamwe? \\q Nisikilizeni kwa makini: kuleni kilicho chema, \\q na hamu yenu ifurahie chakula kilicho bora kuliko vyote.",
+          "R": "Kwa nini mnatumia fedha zenu kwa vitu visivyo chakula cha kweli? \\q Kwa nini mnafanya kazi ngumu kwa vitu visivyowashibisha? \\q Nisikilizeni kwa makini. Ndipo mtakula kilicho chema, \\q nanyi mtafurahia chakula kilicho bora kuliko vyote."
         }
       },
       "decisions": [
@@ -295,6 +360,16 @@
           "L": "Incline your ear and come to {{deity_pronoun:me|Me}}; \\q listen, and your soul will live; \\q and I will make with you an everlasting covenant, \\q the sure acts of loyal love [to] David.",
           "B": "Turn your ears this way and come to {{deity_pronoun:me|Me}}; \\q hear me, and you will truly live. \\q I will grant you a covenant that stands forever: \\q the loyal love I pledged to David, which does not fail.",
           "R": "Pay attention and come to {{deity_pronoun:me|Me}}. \\q Listen to me, and you will live. \\q I will make a covenant with you, a promise that will last forever. \\q I will show you the same faithful love that I promised to David, a love that never fails."
+        },
+        "es": {
+          "L": "{{plural_you:Inclinen su oído y vengan|Inclinad vuestro oído y venid}} a {{deity_pronoun:mí|Mí}}; \\q {{plural_you:escuchen, y vivirá su alma|escuchad, y vivirá vuestra alma}}; \\q y haré con {{plural_you:ustedes|vosotros}} un pacto eterno, \\q las seguras muestras de amor leal [prometidas] a David.",
+          "B": "{{plural_you:Presten oído y vengan|Prestad oído y venid}} a {{deity_pronoun:mí|Mí}}; \\q {{plural_you:escúchenme, y vivirán|escuchadme, y viviréis}} de verdad. \\q {{plural_you:Les|Os}} concederé un pacto que permanece para siempre: \\q el amor fiel que le prometí a David, que no falla.",
+          "R": "{{plural_you:Presten atención y vengan|Prestad atención y venid}} a {{deity_pronoun:mí|Mí}}. \\q {{plural_you:Escúchenme, y vivirán|Escuchadme, y viviréis}}. \\q Haré un pacto con {{plural_you:ustedes|vosotros}}, una promesa que durará para siempre. \\q {{plural_you:Les|Os}} mostraré el mismo amor fiel que le prometí a David, un amor que nunca falla."
+        },
+        "sw": {
+          "L": "Tegeni sikio lenu mje {{deity_pronoun:kwangu|Kwangu}}; \\q sikieni, na nafsi yenu itaishi; \\q nami nitafanya nanyi agano la milele, \\q fadhili za uaminifu [kwa] Daudi.",
+          "B": "Geuzeni masikio yenu huku mje {{deity_pronoun:kwangu|Kwangu}}; \\q nisikieni, nanyi mtaishi kweli. \\q Nitawapa agano linalosimama milele: \\q upendo usiokoma niliomwahidi Daudi, usioshindwa kamwe.",
+          "R": "Sikilizeni kwa makini na kuja {{deity_pronoun:kwangu|Kwangu}}. \\q Nisikilizeni, nanyi mtaishi. \\q Nitafanya agano nanyi, ahadi itakayodumu milele. \\q Nitawaonyesha upendo uleule usiokoma niliomwahidi Daudi, upendo usioshindwa kamwe."
         }
       },
       "decisions": [
@@ -396,6 +471,16 @@
           "L": "Look, a witness [to] peoples I made him, \\q a leader and commander [of] peoples.",
           "B": "Look: I set him up as a witness to the peoples, \\q a prince who gave orders to nations.",
           "R": "Think of David. I made him {{deity_pronoun:my|My}} witness to the nations. \\q I made him a leader who commanded many peoples."
+        },
+        "es": {
+          "L": "{{plural_you:Miren|Mirad}}, lo he puesto por testigo a los pueblos, \\q por príncipe y comandante de los pueblos.",
+          "B": "{{plural_you:Miren|Mirad}}: lo puse como testigo ante los pueblos, \\q como príncipe que daba órdenes a las naciones.",
+          "R": "{{plural_you:Piensen|Pensad}} en David. Lo hice {{deity_pronoun:mi|Mi}} testigo ante las naciones. \\q Lo hice un líder que gobernaba a muchos pueblos."
+        },
+        "sw": {
+          "L": "Tazama, nimemfanya shahidi [kwa] watu wa mataifa, \\q kiongozi na mwenye kuamuru [watu wa] mataifa.",
+          "B": "Tazama: nilimweka kuwa shahidi kwa mataifa, \\q mkuu aliyetoa amri kwa mataifa.",
+          "R": "Mfikirieni Daudi. Nilimfanya shahidi {{deity_pronoun:wangu|Wangu}} kwa mataifa. \\q Nilimfanya kiongozi aliyeamuru watu wa mataifa mengi."
         }
       },
       "decisions": [
@@ -492,6 +577,16 @@
           "L": "Look, a nation [that] you do not know you will call, \\q and a nation [that] has not known you will run to you, \\q because of {{divine_name:the LORD|Yahweh}} your God, \\q and for the Holy One of Israel, for {{deity_pronoun:he|He}} has made you beautiful.",
           "B": "You in turn will summon a nation you have never known, \\q and a nation that never knew you will hurry to you, \\q drawn by {{divine_name:the LORD|Yahweh}} your God, \\q the Holy One of Israel, who has made you shine with honor.",
           "R": "In the same way, you will call nations that you do not know. \\q Nations that do not know you will come running to you. \\q They will come because of {{divine_name:the LORD|Yahweh}} your God, \\q the Holy One of Israel. He has given you honor."
+        },
+        "es": {
+          "L": "Mira, llamarás a una nación [que] no conoces, \\q y una nación [que] no te ha conocido correrá a ti, \\q a causa {{divine_name:del SEÑOR|de Yahvé}} tu Dios, \\q y del Santo de Israel, porque {{deity_pronoun:él|Él}} te ha embellecido.",
+          "B": "Tú, a tu vez, llamarás a una nación que nunca has conocido, \\q y una nación que nunca te conoció vendrá corriendo a ti, \\q atraída por {{divine_name:el SEÑOR|Yahvé}} tu Dios, \\q el Santo de Israel, que te ha hecho brillar con honor.",
+          "R": "De la misma manera, llamarás a naciones que no conoces. \\q Naciones que no te conocen vendrán corriendo a ti. \\q Vendrán por causa {{divine_name:del SEÑOR|de Yahvé}} tu Dios, \\q el Santo de Israel. Él te ha dado honor."
+        },
+        "sw": {
+          "L": "Tazama, taifa [ambalo] hulijui utaliita, \\q na taifa [ambalo] halikukujua litakukimbilia, \\q kwa sababu ya {{divine_name:BWANA|Yahwe}} Mungu wako, \\q na kwa ajili ya Mtakatifu wa Israeli, kwa maana amekupamba.",
+          "B": "Nawe kwa upande wako utaliita taifa ambalo hukuwahi kulijua, \\q na taifa ambalo halikuwahi kukujua litaharakisha kuja kwako, \\q likivutwa na {{divine_name:BWANA|Yahwe}} Mungu wako, \\q Mtakatifu wa Israeli, aliyekufanya ung'ae kwa heshima.",
+          "R": "Vivyo hivyo, wewe utayaita mataifa usiyoyajua. \\q Mataifa yasiyokujua yatakuja mbio kwako. \\q Yatakuja kwa sababu ya {{divine_name:BWANA|Yahwe}} Mungu wako, \\q Mtakatifu wa Israeli. Yeye amekupa heshima."
         }
       },
       "decisions": [
@@ -590,6 +685,16 @@
           "L": "Seek {{divine_name:the LORD|Yahweh}} while {{deity_pronoun:he|He}} lets {{deity_pronoun:himself|Himself}} be found; \\q call on {{deity_pronoun:him|Him}} while {{deity_pronoun:he|He}} is near.",
           "B": "Look for {{divine_name:the LORD|Yahweh}} while {{deity_pronoun:he|He}} can still be found; \\q call to {{deity_pronoun:him|Him}} while {{deity_pronoun:he|He}} is close by.",
           "R": "Turn to {{divine_name:the LORD|Yahweh}} now, while you can still find {{deity_pronoun:him|Him}}. \\q Pray to {{deity_pronoun:him|Him}} now, while {{deity_pronoun:he|He}} is near."
+        },
+        "es": {
+          "L": "{{plural_you:Busquen|Buscad}} {{divine_name:al SEÑOR|a Yahvé}} mientras {{deity_pronoun:él|Él}} se deja hallar; \\q {{plural_you:invóquenlo|invocadlo}} mientras {{deity_pronoun:él|Él}} está cerca.",
+          "B": "{{plural_you:Busquen|Buscad}} {{divine_name:al SEÑOR|a Yahvé}} mientras {{deity_pronoun:él|Él}} todavía puede ser hallado; \\q {{plural_you:clamen|clamad}} a {{deity_pronoun:él|Él}} mientras está cerca.",
+          "R": "{{plural_you:Vuélvanse|Volveos}} {{divine_name:al SEÑOR|a Yahvé}} ahora, mientras todavía {{plural_you:pueden encontrarlo|podéis encontrarlo}}. \\q {{plural_you:Oren|Orad}} a {{deity_pronoun:él|Él}} ahora, mientras está cerca."
+        },
+        "sw": {
+          "L": "Mtafuteni {{divine_name:BWANA|Yahwe}} maadamu anajiacha aonekane; \\q mwiteni maadamu yu karibu.",
+          "B": "Mtafuteni {{divine_name:BWANA|Yahwe}} wakati bado anaweza kupatikana; \\q mwiteni wakati angali karibu.",
+          "R": "Mgeukieni {{divine_name:BWANA|Yahwe}} sasa, wakati bado mnaweza kumpata. \\q Mwombeni sasa, wakati yuko karibu."
         }
       },
       "decisions": [
@@ -685,6 +790,16 @@
           "L": "Let [the] wicked [one] abandon his way, \\q and [the] {{gender:person|man}} of evil his thoughts; \\q and let him turn back to {{divine_name:the LORD|Yahweh}}, and {{deity_pronoun:he|He}} will have compassion on him, \\q and to our God, for {{deity_pronoun:he|He}} will multiply to forgive.",
           "B": "Let those who do wrong leave their path behind, \\q and the evil their schemes. \\q Let them come back to {{divine_name:the LORD|Yahweh}}, and {{deity_pronoun:he|He}} will show them mercy; \\q let them come back to our God, for {{deity_pronoun:he|He}} is generous to forgive.",
           "R": "Wicked people must stop doing evil. \\q They must stop planning to do wrong. \\q They must come back to {{divine_name:the LORD|Yahweh}}, and {{deity_pronoun:he|He}} will be kind to them. \\q They must turn to our God, because {{deity_pronoun:he|He}} will forgive them completely."
+        },
+        "es": {
+          "L": "Deje el malvado su camino, \\q y {{gender:la persona inicua|el hombre inicuo}} sus pensamientos; \\q y vuélvase {{divine_name:al SEÑOR|a Yahvé}}, y {{deity_pronoun:él|Él}} tendrá compasión de él, \\q y a nuestro Dios, porque {{deity_pronoun:él|Él}} será amplio en perdonar.",
+          "B": "Que los que hacen el mal dejen atrás su camino, \\q y los malvados sus planes. \\q Que vuelvan {{divine_name:al SEÑOR|a Yahvé}}, y {{deity_pronoun:él|Él}} les mostrará misericordia; \\q que vuelvan a nuestro Dios, porque {{deity_pronoun:él|Él}} es generoso para perdonar.",
+          "R": "La gente malvada tiene que dejar de hacer el mal. \\q Tiene que dejar de planear cosas malas. \\q Tiene que volver {{divine_name:al SEÑOR|a Yahvé}}, y {{deity_pronoun:él|Él}} será bondadoso con ellos. \\q Tiene que volverse a nuestro Dios, porque {{deity_pronoun:él|Él}} los perdonará por completo."
+        },
+        "sw": {
+          "L": "Mwovu na aiache njia yake, \\q na mtu wa uovu mawazo yake; \\q na amrudie {{divine_name:BWANA|Yahwe}}, naye atamhurumia, \\q na kwa Mungu wetu, kwa maana atasamehe kwa wingi.",
+          "B": "Wanaotenda mabaya na waziache njia zao, \\q na waovu mipango yao. \\q Na wamrudie {{divine_name:BWANA|Yahwe}}, naye atawaonea huruma; \\q na wamrudie Mungu wetu, kwa maana {{deity_pronoun:yeye|Yeye}} ni mkarimu wa kusamehe.",
+          "R": "Watu waovu lazima waache kutenda maovu. \\q Lazima waache kupanga kutenda mabaya. \\q Lazima wamrudie {{divine_name:BWANA|Yahwe}}, naye atawatendea wema. \\q Lazima wamgeukie Mungu wetu, kwa sababu atawasamehe kabisa."
         }
       },
       "decisions": [
@@ -750,6 +865,27 @@
           "reason": "The singular \"the wicked\" and \"the man\" stand for anyone of that kind, so Balanced and Readable use plurals that include everyone.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230550070072"
+          ],
+          "choice": "vuélvase / vuelvan / tiene que volver",
+          "alternatives": [
+            "arrepiéntase"
+          ],
+          "reason": "*Shuv* here is the return of repentance; Spanish uses \"volver(se)\", not \"arrepentirse\", as the terms note sets for this verb (Matthew 13:15 \"se volverían\").",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -786,6 +922,16 @@
           "L": "For not {{deity_pronoun:my|My}} thoughts [are] your thoughts, \\q and not your ways [are] {{deity_pronoun:my|My}} ways, \\q declares {{divine_name:the LORD|Yahweh}}.",
           "B": "What I plan is not what you plan, \\q and the paths you take are not {{deity_pronoun:my|My}} paths, \\q declares {{divine_name:the LORD|Yahweh}}.",
           "R": "I do not think the way you think. \\q You do not act the way I act. \\q This is what {{divine_name:the LORD|Yahweh}} says."
+        },
+        "es": {
+          "L": "Porque no [son] {{deity_pronoun:mis|Mis}} pensamientos {{plural_you:sus pensamientos|vuestros pensamientos}}, \\q ni {{plural_you:sus caminos|vuestros caminos}} [son] {{deity_pronoun:mis|Mis}} caminos, \\q declara {{divine_name:el SEÑOR|Yahvé}}.",
+          "B": "Lo que yo planeo no es lo que {{plural_you:ustedes planean|vosotros planeáis}}, \\q y los caminos que {{plural_you:ustedes toman|vosotros tomáis}} no son {{deity_pronoun:mis|Mis}} caminos, \\q afirma {{divine_name:el SEÑOR|Yahvé}}.",
+          "R": "Yo no pienso como {{plural_you:ustedes piensan|vosotros pensáis}}. \\q {{plural_you:Ustedes no actúan|Vosotros no actuáis}} como yo actúo. \\q Esto es lo que dice {{divine_name:el SEÑOR|Yahvé}}."
+        },
+        "sw": {
+          "L": "Kwa maana mawazo {{deity_pronoun:yangu|Yangu}} si mawazo yenu, \\q wala njia zenu si njia {{deity_pronoun:zangu|Zangu}}, \\q asema {{divine_name:BWANA|Yahwe}}.",
+          "B": "Ninachopanga si kile mnachopanga, \\q na njia mnazopita si njia {{deity_pronoun:zangu|Zangu}}, \\q asema {{divine_name:BWANA|Yahwe}}.",
+          "R": "Mimi sifikiri jinsi mnavyofikiri. \\q Ninyi hamtendi jinsi {{deity_pronoun:mimi|Mimi}} ninavyotenda. \\q Hili ndilo {{divine_name:BWANA|Yahwe}} analosema."
         }
       },
       "decisions": [
@@ -857,6 +1003,16 @@
           "L": "For [as] high [as the] heavens are above [the] earth, \\q so high are {{deity_pronoun:my|My}} ways above your ways, \\q and {{deity_pronoun:my|My}} thoughts above your thoughts.",
           "B": "As far as the heavens tower over the earth, \\q so far do {{deity_pronoun:my|My}} ways tower over yours, \\q and {{deity_pronoun:my|My}} thoughts over yours.",
           "R": "The sky is far above the earth. \\q In the same way, the way I do things is far above the way you do things. \\q My thoughts are far above your thoughts."
+        },
+        "es": {
+          "L": "Porque [como] son más altos los cielos que la tierra, \\q así son más altos {{deity_pronoun:mis|Mis}} caminos que {{plural_you:sus caminos|vuestros caminos}}, \\q y {{deity_pronoun:mis|Mis}} pensamientos que {{plural_you:sus pensamientos|vuestros pensamientos}}.",
+          "B": "Tan alto como el cielo se eleva sobre la tierra, \\q así se elevan {{deity_pronoun:mis|Mis}} caminos sobre los {{plural_you:de ustedes|vuestros}}, \\q y {{deity_pronoun:mis|Mis}} pensamientos sobre los {{plural_you:de ustedes|vuestros}}.",
+          "R": "El cielo está muy por encima de la tierra. \\q De la misma manera, mi forma de hacer las cosas está muy por encima de la {{plural_you:de ustedes|vuestra}}. \\q Mis pensamientos están muy por encima de {{plural_you:sus pensamientos|vuestros pensamientos}}."
+        },
+        "sw": {
+          "L": "Kwa maana [kama] mbingu zilivyo juu kuliko nchi, \\q ndivyo njia {{deity_pronoun:zangu|Zangu}} zilivyo juu kuliko njia zenu, \\q na mawazo {{deity_pronoun:yangu|Yangu}} kuliko mawazo yenu.",
+          "B": "Kama vile mbingu zinavyoinuka juu ya dunia, \\q ndivyo njia {{deity_pronoun:zangu|Zangu}} zinavyoinuka juu ya njia zenu, \\q na mawazo {{deity_pronoun:yangu|Yangu}} juu ya mawazo yenu.",
+          "R": "Anga liko juu sana kuliko dunia. \\q Vivyo hivyo, jinsi ninavyotenda mambo iko juu sana kuliko jinsi mnavyotenda. \\q Mawazo {{deity_pronoun:yangu|Yangu}} yako juu sana kuliko mawazo yenu."
         }
       },
       "decisions": [
@@ -952,6 +1108,16 @@
           "L": "For just as the rain and the snow come down from the heavens and do not return there \\q unless they have watered the earth \\q and made it bear and sprout, \\q and given seed to the sower \\q and bread to the eater,",
           "B": "Just as rain and snow fall from the heavens and do not go back up \\q until they have soaked the ground \\q and made it bud and grow, \\q giving seed to the one who sows \\q and bread to the one who eats,",
           "R": "Rain and snow fall from the sky. They do not go back up into the sky until they have watered the ground. \\q They make the plants grow and produce grain. \\q Then farmers have seed to plant, \\q and people have bread to eat."
+        },
+        "es": {
+          "L": "Porque así como desciende la lluvia y la nieve de los cielos, y no vuelven allá \\q sin haber regado la tierra \\q y haberla hecho producir y brotar, \\q y dar semilla al que siembra \\q y pan al que come,",
+          "B": "Así como la lluvia y la nieve caen del cielo y no vuelven a subir \\q hasta haber empapado la tierra \\q y haberla hecho germinar y crecer, \\q dando semilla al que siembra \\q y pan al que come,",
+          "R": "La lluvia y la nieve caen del cielo. No vuelven a subir al cielo hasta que han regado la tierra. \\q Hacen que las plantas crezcan y den grano. \\q Así los agricultores tienen semilla para sembrar, \\q y la gente tiene pan para comer."
+        },
+        "sw": {
+          "L": "Kwa maana kama vile mvua na theluji hushuka kutoka mbinguni wala hazirudi huko \\q mpaka zimeinywesha nchi \\q na kuifanya izae na kuchipua, \\q na kumpa mpanzi mbegu \\q na mlaji mkate,",
+          "B": "Kama vile mvua na theluji zinavyonyesha kutoka mbinguni wala hazirudi juu \\q mpaka zimeloweka ardhi \\q na kuifanya ichipue na kukua, \\q zikimpa mbegu yule anayepanda \\q na mkate yule anayekula,",
+          "R": "Mvua na theluji hunyesha kutoka angani. Hazirudi juu angani mpaka zimeinywesha ardhi. \\q Zinafanya mimea ikue na kuzaa nafaka. \\q Kisha wakulima wanapata mbegu za kupanda, \\q na watu wanapata mkate wa kula."
         }
       },
       "decisions": [
@@ -1064,6 +1230,16 @@
           "L": "so will {{deity_pronoun:my|My}} word be that goes out from {{deity_pronoun:my|My}} mouth: \\q it will not return to {{deity_pronoun:me|Me}} empty, \\q unless it has done what I desired \\q and succeeded [in that for] which I sent it.",
           "B": "so it is with the word that leaves {{deity_pronoun:my|My}} mouth: \\q it will not come back to {{deity_pronoun:me|Me}} with nothing done, \\q but it will do what I want \\q and succeed in the errand I sent it on.",
           "R": "My word is like that. \\q When I speak, {{deity_pronoun:my|My}} word does not come back to {{deity_pronoun:me|Me}} without results. \\q It does what I want it to do. \\q It succeeds in the work I send it to do."
+        },
+        "es": {
+          "L": "así será {{deity_pronoun:mi|Mi}} palabra que sale de {{deity_pronoun:mi|Mi}} boca: \\q no volverá a {{deity_pronoun:mí|Mí}} vacía, \\q sin haber hecho lo que yo quise \\q y prosperado en aquello para lo cual la envié.",
+          "B": "así sucede con la palabra que sale de {{deity_pronoun:mi|Mi}} boca: \\q no volverá a {{deity_pronoun:mí|Mí}} sin haber hecho nada, \\q sino que hará lo que yo quiero \\q y cumplirá con éxito la misión a la que la envié.",
+          "R": "Mi palabra es así. \\q Cuando hablo, {{deity_pronoun:mi|Mi}} palabra no vuelve a {{deity_pronoun:mí|Mí}} sin resultados. \\q Hace lo que yo quiero que haga. \\q Cumple con éxito el trabajo para el que la envío."
+        },
+        "sw": {
+          "L": "ndivyo litakavyokuwa neno {{deity_pronoun:langu|Langu}} litokalo kinywani {{deity_pronoun:mwangu|Mwangu}}: \\q halitanirudia bure, \\q bali litafanya lile nililolipenda \\q na kufanikiwa katika [kazi] niliyolituma.",
+          "B": "ndivyo ilivyo kwa neno linalotoka kinywani {{deity_pronoun:mwangu|Mwangu}}: \\q halitanirudia bila kufanya kitu, \\q bali litatimiza ninalotaka \\q na kufanikiwa katika kazi niliyolituma.",
+          "R": "Neno {{deity_pronoun:langu|Langu}} ni kama hivyo. \\q Ninaposema, neno {{deity_pronoun:langu|Langu}} halinirudii bila matokeo. \\q Linafanya kile ninachotaka lifanye. \\q Linafanikiwa katika kazi ninayolituma kufanya."
         }
       },
       "decisions": [
@@ -1157,6 +1333,16 @@
           "L": "For in joy you will go out, \\q and in peace you will be led; \\q the mountains and the hills will burst out before you [with] a ringing cry, \\q and all the trees of the field will clap [the] palm.",
           "B": "You will set out with gladness \\q and be guided along in peace. \\q Mountains and hills will ring with shouts of joy ahead of you, \\q and every tree in the fields will clap its hands.",
           "R": "You will leave Babylon with joy. \\q God will lead you out in peace. \\q It will be as if the mountains and hills burst into happy songs as you go by. \\q It will be as if all the trees in the fields clap their hands."
+        },
+        "es": {
+          "L": "Porque con alegría {{plural_you:saldrán|saldréis}}, \\q y en paz {{plural_you:serán guiados|seréis guiados}}; \\q los montes y los collados prorrumpirán en gritos de júbilo delante de {{plural_you:ustedes|vosotros}}, \\q y todos los árboles del campo batirán palmas.",
+          "B": "{{plural_you:Saldrán|Saldréis}} con alegría \\q y {{plural_you:serán conducidos|seréis conducidos}} en paz. \\q Montes y colinas resonarán con gritos de júbilo delante de {{plural_you:ustedes|vosotros}}, \\q y todos los árboles del campo aplaudirán.",
+          "R": "{{plural_you:Saldrán|Saldréis}} de Babilonia con alegría. \\q Dios {{plural_you:los|os}} sacará en paz. \\q Será como si los montes y las colinas estallaran en cantos alegres al {{plural_you:pasar ustedes|pasar vosotros}}. \\q Será como si todos los árboles del campo aplaudieran."
+        },
+        "sw": {
+          "L": "Kwa maana mtatoka kwa furaha, \\q na mtaongozwa kwa amani; \\q milima na vilima vitapaza mbele yenu [sauti ya] shangwe, \\q na miti yote ya shambani itapiga makofi.",
+          "B": "Mtaondoka kwa furaha \\q na kuongozwa njiani kwa amani. \\q Milima na vilima vitavuma kwa vigelegele mbele yenu, \\q na kila mti wa mashambani utapiga makofi.",
+          "R": "Mtatoka Babeli kwa furaha. \\q Mungu atawaongoza nje kwa amani. \\q Itakuwa kana kwamba milima na vilima vinaimba nyimbo za furaha mnapopita. \\q Itakuwa kana kwamba miti yote ya mashambani inapiga makofi."
         }
       },
       "decisions": [
@@ -1270,6 +1456,16 @@
           "L": "Instead of the thornbush the cypress will come up, \\q and instead of the nettle the myrtle will come up; \\q and it will be to {{divine_name:the LORD|Yahweh}} for a name, \\q for a sign of perpetuity [that] will not be cut off.",
           "B": "Where thornbushes grew, cypress trees will rise; \\q where nettles grew, myrtle will spring up. \\q This will win {{divine_name:the LORD|Yahweh}} a name, \\q a sign that will last forever and never be cut down.",
           "R": "Tall cypress trees will grow where thornbushes grew. \\q Myrtle trees will grow where weeds grew. \\q This will make people honor {{divine_name:the LORD|Yahweh}}. \\q It will be a sign that lasts forever and is never destroyed."
+        },
+        "es": {
+          "L": "En lugar de la zarza crecerá el ciprés, \\q y en lugar de la ortiga crecerá el mirto; \\q y será {{divine_name:para el SEÑOR|para Yahvé}} por nombre, \\q por señal eterna [que] no será cortada.",
+          "B": "Donde crecían zarzas se alzarán cipreses; \\q donde crecían ortigas brotará el mirto. \\q Esto le dará renombre {{divine_name:al SEÑOR|a Yahvé}}, \\q una señal que durará para siempre y nunca será talada.",
+          "R": "Crecerán cipreses altos donde crecían zarzas. \\q Crecerán mirtos donde crecían malas hierbas. \\q Esto hará que la gente honre {{divine_name:al SEÑOR|a Yahvé}}. \\q Será una señal que durará para siempre y nunca será destruida."
+        },
+        "sw": {
+          "L": "Badala ya kichaka cha miiba utamea mberoshi, \\q na badala ya upupu utamea mhadasi; \\q na itakuwa kwa {{divine_name:BWANA|Yahwe}} kuwa jina, \\q kuwa ishara ya milele [isiyokatiliwa] mbali.",
+          "B": "Mahali vichaka vya miiba vilipoota, miberoshi itainuka; \\q mahali upupu ulipoota, mihadasi itachipuka. \\q Jambo hili litampatia {{divine_name:BWANA|Yahwe}} jina, \\q ishara itakayodumu milele na kamwe haitakatwa.",
+          "R": "Miberoshi mirefu itaota mahali vichaka vya miiba vilipoota. \\q Mihadasi itaota mahali magugu yalipoota. \\q Jambo hili litawafanya watu wamheshimu {{divine_name:BWANA|Yahwe}}. \\q Litakuwa ishara itakayodumu milele, isiyoangamizwa kamwe."
         }
       },
       "decisions": [
