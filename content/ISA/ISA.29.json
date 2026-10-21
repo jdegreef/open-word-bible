@@ -30,6 +30,31 @@
           "L": "Woe, Ariel, Ariel, [the] town [where] David camped! \\q Add year to year; let [the] festivals go around.",
           "B": "Woe to Ariel, Ariel, the town where David made camp! \\q Add one year to another; let the festivals come around again.",
           "R": "How terrible it will be for Ariel, for Ariel, the city of Jerusalem where David camped! \\q Go on adding one year to the next. Keep holding your festivals as they come around."
+        },
+        "es": {
+          "L": "¡Ay, Ariel, Ariel, [la] villa [donde] acampó David! \\q {{plural_you:Añadan|Añadid}} año a año; que [las] fiestas sigan su curso.",
+          "B": "¡Ay de Ariel, Ariel, la villa donde David acampó! \\q {{plural_you:Añadan|Añadid}} un año a otro; que las fiestas vuelvan a llegar.",
+          "R": "¡Qué terrible será para Ariel, para Ariel, la ciudad de Jerusalén donde acampó David! \\q {{plural_you:Sigan|Seguid}} sumando un año al siguiente. {{plural_you:Sigan celebrando sus|Seguid celebrando vuestras}} fiestas cuando llegan."
+        },
+        "fr": {
+          "L": "Malheur, Ariel, Ariel, cité [où] campa David ! \\q Ajoutez année à année ; que les fêtes fassent leur tour.",
+          "B": "Malheur à Ariel, Ariel, la cité où David a dressé son camp ! \\q Ajoutez une année à l’autre ; que les fêtes reviennent encore.",
+          "R": "Quel malheur pour Ariel, pour Ariel, la ville de Jérusalem où David a campé ! \\q Continuez d’ajouter une année à l’autre. Continuez à célébrer vos fêtes quand elles reviennent."
+        },
+        "sw": {
+          "L": "Ole, Arieli, Arieli, mji [ambamo] Daudi alipiga kambi! \\q Ongezeni mwaka juu ya mwaka; sikukuu na zizunguke.",
+          "B": "Ole wake Arieli, Arieli, mji ambamo Daudi alipiga kambi! \\q Ongezeni mwaka mmoja juu ya mwingine; sikukuu na zirudi tena.",
+          "R": "Itakuwa vibaya sana kwa Arieli, kwa Arieli, mji wa Yerusalemu ambamo Daudi alipiga kambi! \\q Endeleeni kuongeza mwaka mmoja baada ya mwingine. Endeleeni kufanya sikukuu zenu kama zinavyokuja."
+        },
+        "vi": {
+          "L": "Khốn cho A-ri-ên, A-ri-ên, thành [nơi] Đa-vít đã đóng trại! \\q Hãy thêm năm này vào năm khác; hãy để [các] kỳ lễ cứ xoay vòng.",
+          "B": "Khốn cho A-ri-ên, A-ri-ên, thành nơi Đa-vít đã đóng trại! \\q Cứ thêm năm này sang năm khác; cứ để các kỳ lễ lần lượt trở lại.",
+          "R": "Thật khốn khổ cho A-ri-ên, cho A-ri-ên, tức là thành Giê-ru-sa-lem, nơi Đa-vít đã đóng trại! \\q Cứ để năm này qua năm khác. Cứ giữ các kỳ lễ khi chúng đến."
+        },
+        "ko": {
+          "L": "아리엘, 아리엘, 다윗이 진을 쳤던 성읍에게 화가 있다! \\q 해에 해를 더하여라. 절기들이 돌아오게 하여라.",
+          "B": "아리엘, 아리엘, 다윗이 진을 쳤던 성읍에게 화가 있다! \\q 한 해 또 한 해를 보내어라. 절기들이 다시 돌아오게 하여라.",
+          "R": "아리엘, 다윗이 진을 쳤던 성 예루살렘, 아리엘에게 끔찍한 일이 닥칠 것이다! \\q 한 해 두 해 계속 보내어라. 절기가 돌아올 때마다 계속 축제를 지켜라."
         }
       },
       "decisions": [
@@ -97,6 +122,70 @@
           "reason": "Readable names the city that verse 8 calls Mount Zion, so the reader knows who Ariel is.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L"
+          ],
+          "category": "grammar",
+          "tokens": [
+            "o230290010051",
+            "o230290010061"
+          ],
+          "choice": "\"où campa David\", a passé simple inside the oracle at Literal only",
+          "alternatives": [
+            "\"où David a campé\""
+          ],
+          "reason": "The clause names a fixed event of the distant past, like a title of the city; Balanced and Readable keep the passé composé of speech.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230290010021",
+            "o230290010031"
+          ],
+          "choice": "\"A-ri-ên\"",
+          "alternatives": [
+            "\"Bàn Thờ Lửa\""
+          ],
+          "reason": "The name is kept, as in the English, so that verse 2 can play on its sense \"altar hearth\"; it is transliterated in the usual pattern for -el names (Gáp-ri-ên, Ích-ma-ên).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230290010021",
+            "o230290010031"
+          ],
+          "choice": "\"아리엘\" kept as a name",
+          "alternatives": [
+            "\"하나님의 제단\""
+          ],
+          "reason": "Ariel is a name for Jerusalem, most likely meaning \"altar hearth\" (meaning decision m1); the name is kept so the wordplay of verse 2 can be seen, and Readable names Jerusalem as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -134,6 +223,31 @@
           "L": "And I will bring distress on Ariel, \\q and there will be mourning and moaning, \\q and she will be to {{deity_pronoun:me|Me}} like [an] altar hearth.",
           "B": "Then I will press Ariel hard; \\q there will be mourning and moaning, \\q and she will be to {{deity_pronoun:me|Me}} like an altar hearth.",
           "R": "But I will bring trouble on Ariel. \\q Her people will weep and cry. \\q To {{deity_pronoun:me|Me}}, the city will be like an altar where the fire burns."
+        },
+        "es": {
+          "L": "Y traeré angustia sobre Ariel, \\q y habrá llanto y lamento, \\q y será para {{deity_pronoun:mí|Mí}} como [un] ariel [, un fogón de altar].",
+          "B": "Entonces pondré en aprieto a Ariel; \\q habrá llanto y lamento, \\q y será para {{deity_pronoun:mí|Mí}} como el fogón de un altar.",
+          "R": "Pero traeré problemas sobre Ariel. \\q Su gente llorará y se lamentará. \\q Para {{deity_pronoun:mí|Mí}}, la ciudad será como un altar donde arde el fuego."
+        },
+        "fr": {
+          "L": "Et j’amènerai la détresse sur Ariel, \\q et il y aura deuil et lamentation, \\q et elle sera pour {{deity_pronoun:moi|Moi}} comme un foyer d’autel.",
+          "B": "Alors je serrerai Ariel de près ; \\q il y aura deuil et lamentation, \\q et elle sera pour {{deity_pronoun:moi|Moi}} comme un foyer d’autel.",
+          "R": "Mais je ferai venir le malheur sur Ariel. \\q Ses habitants pleureront et gémiront. \\q Pour {{deity_pronoun:moi|Moi}}, la ville sera comme un autel où brûle le feu."
+        },
+        "sw": {
+          "L": "Nami nitaleta dhiki juu ya Arieli, \\q na kutakuwa na maombolezo na vilio, \\q naye atakuwa {{deity_pronoun:kwangu|Kwangu}} kama meko ya madhabahu.",
+          "B": "Kisha nitamsonga Arieli, \\q kutakuwa na maombolezo na vilio, \\q naye atakuwa {{deity_pronoun:kwangu|Kwangu}} kama meko ya madhabahu.",
+          "R": "Lakini nitaleta taabu juu ya Arieli. \\q Watu wake watalia na kuomboleza. \\q Kwangu, mji huo utakuwa kama madhabahu ambayo moto unawaka juu yake."
+        },
+        "vi": {
+          "L": "Và Ta sẽ đem sự khốn đốn đến trên A-ri-ên, \\q và sẽ có tang chế và than van, \\q và nó sẽ là cho {{deity_pronoun:ta|Ta}} như lò bàn thờ.",
+          "B": "Rồi Ta sẽ dồn ép A-ri-ên, \\q sẽ có tiếng khóc than và rên rỉ, \\q và đối với {{deity_pronoun:ta|Ta}}, nó sẽ như lò lửa trên bàn thờ.",
+          "R": "Nhưng Ta sẽ đem tai họa đến trên A-ri-ên. \\q Dân trong thành sẽ khóc lóc và than van. \\q Đối với {{deity_pronoun:ta|Ta}}, thành ấy sẽ như một bàn thờ có lửa cháy."
+        },
+        "ko": {
+          "L": "그리고 내가 아리엘을 괴롭게 할 것이니, \\q 애곡과 탄식이 있을 것이며, \\q 그 성은 나에게 제단 화로 같을 것이다.",
+          "B": "그때에 내가 아리엘을 몰아붙일 것이니, \\q 슬퍼하며 탄식하는 소리가 들릴 것이다. \\q 그 성은 나에게 제단 화로처럼 될 것이다.",
+          "R": "그러나 내가 아리엘에 고난을 내릴 것이다. \\q 그 백성이 울며 부르짖을 것이다. \\q 나에게 그 성은 불이 타오르는 제단과 같을 것이다."
         }
       },
       "decisions": [
@@ -184,6 +298,26 @@
           "reason": "Readable explains \"altar hearth\" as the place on the altar where the fire burns.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o230290020081",
+            "o230290020082"
+          ],
+          "choice": "como [un] ariel [, un fogón de altar]",
+          "alternatives": [
+            "como el fogón de un altar"
+          ],
+          "reason": "Literal keeps the name Ariel in the comparison so the wordplay with the city's name is visible, adding what the word means; Balanced and Readable give the sense only.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -222,6 +356,31 @@
           "L": "And I will camp like a ring against you, \\q and I will lay siege against you [with] posts, \\q and I will raise siege works against you.",
           "B": "I will camp in a ring all around you; \\q I will hem you in with siege posts \\q and set up siege works against you.",
           "R": "I will set up my camp all around you. \\q I will close you in with guard posts. \\q I will build ramps and towers to attack your walls."
+        },
+        "es": {
+          "L": "Y acamparé como un cerco contra ti, \\q y te sitiaré [con] estacas, \\q y levantaré contra ti obras de asedio.",
+          "B": "Acamparé en cerco a tu alrededor; \\q te encerraré con empalizadas \\q y levantaré obras de asedio contra ti.",
+          "R": "Pondré mi campamento alrededor de ti. \\q Te encerraré con puestos de guardia. \\q Construiré rampas y torres para atacar tus murallas."
+        },
+        "fr": {
+          "L": "Et je camperai comme un cercle contre toi, \\q et je t’assiégerai [avec] des postes, \\q et j’élèverai contre toi des ouvrages de siège.",
+          "B": "Je camperai tout autour de toi, en cercle ; \\q je t’enserrerai de postes de siège \\q et je dresserai contre toi des ouvrages de siège.",
+          "R": "J’installerai mon camp tout autour de toi. \\q Je t’enfermerai avec des postes de garde. \\q Je construirai des rampes et des tours pour attaquer tes murailles."
+        },
+        "sw": {
+          "L": "Nami nitapiga kambi kama duara dhidi yako, \\q nami nitakuzingira [kwa] minara, \\q nami nitainua ngome za kuzingira dhidi yako.",
+          "B": "Nitapiga kambi pande zote kukuzunguka; \\q nitakuzingira kwa nguzo za kuzingira \\q na kusimamisha ngome za kuzingira dhidi yako.",
+          "R": "Nitapiga kambi yangu kukuzunguka pande zote. \\q Nitakufungia ndani kwa vituo vya walinzi. \\q Nitajenga vilima vya udongo na minara ili kushambulia kuta zako."
+        },
+        "vi": {
+          "L": "Và Ta sẽ đóng trại như một vòng tròn nghịch cùng ngươi, \\q và Ta sẽ vây hãm ngươi [bằng] các trụ canh, \\q và Ta sẽ dựng các công trình vây thành nghịch cùng ngươi.",
+          "B": "Ta sẽ đóng trại vây quanh ngươi; \\q Ta sẽ dùng các trụ vây thành để vây chặt ngươi \\q và dựng công sự vây hãm nghịch lại ngươi.",
+          "R": "Ta sẽ đóng trại bao quanh ngươi. \\q Ta sẽ vây chặt ngươi bằng các trạm canh. \\q Ta sẽ đắp ụ và dựng tháp để tấn công tường thành ngươi."
+        },
+        "ko": {
+          "L": "그리고 내가 너를 둥글게 둘러 진을 치고, \\q 초소들로 너를 에워싸고, \\q 너를 치려고 공격 시설을 세울 것이다.",
+          "B": "내가 너를 빙 둘러 진을 치고, \\q 초소들을 세워 너를 에워싸고, \\q 너를 공격할 시설을 쌓을 것이다.",
+          "R": "내가 너를 빙 둘러 진을 칠 것이다. \\q 감시 초소를 세워 너를 가둘 것이다. \\q 너의 성벽을 공격하려고 흙 언덕과 탑을 쌓을 것이다."
         }
       },
       "decisions": [
@@ -287,6 +446,27 @@
           "reason": "Readable names the kinds of siege works an army raised against a city.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230290030012"
+          ],
+          "choice": "\"ngươi\" to the city",
+          "alternatives": [
+            "\"các ngươi\""
+          ],
+          "reason": "God addresses Ariel, the city, as one person; the terms note gives \"ngươi\" for a city addressed in judgment.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -334,6 +514,31 @@
           "L": "And you will be brought low; from [the] ground you will speak, \\q and from [the] dust your words will come low, \\q and your voice will be like [that of a] spirit of the dead from [the] ground, \\q and from [the] dust your words will chirp.",
           "B": "Brought low, you will speak from the ground; \\q your words will come muffled from the dust. \\q Your voice will rise from the earth like a ghost's, \\q and from the dust your words will chirp.",
           "R": "You will be knocked to the ground. You will speak from down in the dust, and your words will be hard to hear. \\q Your voice will sound like a ghost speaking from under the ground. \\q Your words will be a faint whisper from the dust."
+        },
+        "es": {
+          "L": "Y serás abatida; desde [la] tierra hablarás, \\q y desde [el] polvo saldrán bajas tus palabras, \\q y tu voz será como [la de un] espíritu de los muertos desde [la] tierra, \\q y desde [el] polvo tus palabras susurrarán.",
+          "B": "Abatida, hablarás desde el suelo; \\q tus palabras saldrán apagadas del polvo. \\q Tu voz subirá de la tierra como la de un fantasma, \\q y desde el polvo tus palabras piarán.",
+          "R": "Te derribarán al suelo. Hablarás desde el polvo, y apenas se oirán tus palabras. \\q Tu voz sonará como la de un fantasma que habla desde debajo de la tierra. \\q Tus palabras serán un débil susurro desde el polvo."
+        },
+        "fr": {
+          "L": "Et tu seras abaissée ; de la terre tu parleras, \\q et de la poussière tes paroles sortiront basses, \\q et ta voix sera comme [celle d’un] esprit des morts sortant de la terre, \\q et de la poussière tes paroles gazouilleront.",
+          "B": "Abaissée, tu parleras depuis le sol ; \\q tes paroles monteront, étouffées, de la poussière. \\q Ta voix sortira de terre comme celle d’un revenant, \\q et de la poussière tes paroles gazouilleront.",
+          "R": "Tu seras jetée à terre. Tu parleras du fond de la poussière, et on aura du mal à entendre tes paroles. \\q Ta voix ressemblera à celle d’un fantôme qui parle sous la terre. \\q Tes paroles seront un faible murmure qui sort de la poussière."
+        },
+        "sw": {
+          "L": "Nawe utashushwa; kutoka ardhini utasema, \\q na kutoka mavumbini maneno yako yatatoka chini chini, \\q na sauti yako itakuwa kama [ya] mzimu kutoka ardhini, \\q na kutoka mavumbini maneno yako yatalia kwa sauti nyembamba.",
+          "B": "Ukiwa umeshushwa, utasema kutoka ardhini; \\q maneno yako yatatoka mavumbini kwa sauti ya chini. \\q Sauti yako itapanda kutoka ardhini kama ya mzimu, \\q na kutoka mavumbini maneno yako yatalia kwa sauti nyembamba.",
+          "R": "Utaangushwa chini. Utasema kutoka chini mavumbini, na maneno yako yatasikika kwa shida. \\q Sauti yako itasikika kama mzimu unaosema kutoka chini ya ardhi. \\q Maneno yako yatakuwa mnong'ono hafifu kutoka mavumbini."
+        },
+        "vi": {
+          "L": "Và ngươi sẽ bị hạ thấp; từ dưới đất ngươi sẽ nói, \\q và từ bụi đất lời ngươi sẽ thấp xuống, \\q và tiếng ngươi sẽ như [tiếng] vong linh từ dưới đất, \\q và từ bụi đất lời ngươi sẽ thì thào.",
+          "B": "Bị hạ xuống thấp, ngươi sẽ nói từ dưới đất; \\q lời ngươi sẽ nghèn nghẹt từ trong bụi đất. \\q Tiếng ngươi sẽ từ lòng đất vọng lên như tiếng hồn ma, \\q và lời ngươi sẽ thều thào từ bụi đất.",
+          "R": "Ngươi sẽ bị đánh ngã xuống đất. Ngươi sẽ nói từ dưới bụi đất, và lời ngươi sẽ khó nghe. \\q Tiếng ngươi sẽ như tiếng hồn ma nói từ dưới lòng đất. \\q Lời ngươi sẽ chỉ là tiếng thì thầm yếu ớt từ bụi đất."
+        },
+        "ko": {
+          "L": "그러면 네가 낮아져서 땅에서 말하고, \\q 먼지에서 네 말이 나지막이 나올 것이다. \\q 네 목소리가 땅에서 [나오는] 혼백의 [소리] 같고, \\q 먼지에서 네 말이 지저귈 것이다.",
+          "B": "너는 낮아져서 땅바닥에서 말하고, \\q 네 말은 먼지 속에서 웅얼거리듯 들릴 것이다. \\q 네 목소리는 땅에서 올라오는 유령의 소리 같고, \\q 네 말은 먼지 속에서 가늘게 지저귈 것이다.",
+          "R": "너는 땅에 쓰러질 것이다. 너는 먼지 속에서 말할 것이고, 네 말은 잘 들리지도 않을 것이다. \\q 네 목소리는 땅속에서 말하는 유령의 소리처럼 들릴 것이다. \\q 네 말은 먼지 속에서 나는 희미한 속삭임이 될 것이다."
         }
       },
       "decisions": [
@@ -382,6 +587,90 @@
           "reason": "Balanced joins the first two clauses so the poem's pairs of lines stand out.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230290040082"
+          ],
+          "choice": "\"mzimu\" at every level",
+          "alternatives": [
+            "\"roho ya mfu\""
+          ],
+          "reason": "The spirit of the dead ('ob) is \"mzimu\", the word of 1 Samuel 28:7-8 for the spirit a medium calls up; it serves at every level, where the English moves from \"spirit of the dead\" to \"ghost\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230290040082"
+          ],
+          "choice": "\"un esprit des morts\" (L), \"un revenant\" (B), \"un fantôme\" (R) for ʾov, for Isaiah 21-40",
+          "alternatives": [
+            "\"un spectre\""
+          ],
+          "reason": "As the English (spirit of the dead / ghost / ghost); \"revenant\" is the dead who comes back to speak.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230290040082"
+          ],
+          "choice": "\"vong linh\" (L); \"hồn ma\" (B, R)",
+          "alternatives": [
+            "\"đồng bóng\""
+          ],
+          "reason": "The Isaiah note: 'ob is \"spirit of the dead\" at Literal and \"ghost\" at Balanced and Readable; \"vong linh\" is the word 1 Samuel 28 uses for the spirit a medium calls up.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230290040082"
+          ],
+          "choice": "\"혼백\" (L); \"유령\" (B, R) for *ʾob*",
+          "alternatives": [
+            "\"신접한 자\""
+          ],
+          "reason": "The spirit of the dead called up by mediums; \"혼백\" as published in 2 Kings 21:6, and the plainer \"유령\" at Balanced and Readable, as the English \"ghost\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -423,6 +712,31 @@
           "L": "But the multitude of your foreigners will be like fine dust, \\q and like passing chaff the multitude of [the] ruthless; \\q and it will happen in an instant, suddenly.",
           "B": "Yet the horde of your foes will be like fine dust, \\q the horde of the ruthless like chaff that blows away. \\q It will happen in a moment, all at once.",
           "R": "But all the enemies who attack you will be blown away like fine dust. \\q The crowds of cruel soldiers will be like chaff that the wind carries off. \\q It will happen in a moment, very suddenly."
+        },
+        "es": {
+          "L": "Pero la multitud de tus extranjeros será como polvo fino, \\q y como paja que pasa la multitud de [los] crueles; \\q y sucederá en un instante, de repente.",
+          "B": "Pero la horda de tus enemigos será como polvo fino, \\q la horda de los crueles como paja que se lleva el viento. \\q Sucederá en un momento, de golpe.",
+          "R": "Pero todos los enemigos que te atacan serán llevados como polvo fino. \\q Las multitudes de soldados crueles serán como la paja que el viento arrastra. \\q Sucederá en un momento, de repente."
+        },
+        "fr": {
+          "L": "Mais la multitude de tes étrangers sera comme une fine poussière, \\q et comme la balle qui passe la multitude des impitoyables ; \\q et cela arrivera en un instant, soudain.",
+          "B": "Pourtant la horde de tes ennemis sera comme une fine poussière, \\q la horde des impitoyables comme la balle que le vent emporte. \\q Cela arrivera en un instant, tout d’un coup.",
+          "R": "Mais tous les ennemis qui t’attaquent seront emportés comme une fine poussière. \\q Les foules de soldats cruels seront comme la paille que le vent chasse. \\q Cela arrivera en un instant, très soudainement."
+        },
+        "sw": {
+          "L": "Lakini wingi wa wageni wako utakuwa kama vumbi laini, \\q na kama makapi yanayopeperushwa wingi wa wakatili; \\q na itatokea ghafla, kwa kitambo kimoja.",
+          "B": "Hata hivyo kundi la adui zako litakuwa kama vumbi laini, \\q kundi la wakatili kama makapi yanayopeperushwa. \\q Itatokea kwa kitambo kimoja, mara moja.",
+          "R": "Lakini adui wote wanaokushambulia watapeperushwa kama vumbi laini. \\q Makundi ya askari wakatili yatakuwa kama makapi yanayochukuliwa na upepo. \\q Itatokea kwa kitambo kimoja, ghafla sana."
+        },
+        "vi": {
+          "L": "Nhưng đám đông kẻ ngoại bang của ngươi sẽ như bụi mịn, \\q và như trấu bay đi, đám đông những kẻ hung bạo; \\q và điều ấy sẽ xảy ra trong chốc lát, thình lình.",
+          "B": "Nhưng cả đoàn quân thù của ngươi sẽ như bụi mịn, \\q đám đông kẻ tàn bạo như trấu bị gió cuốn đi. \\q Việc ấy sẽ xảy ra trong khoảnh khắc, bất thình lình.",
+          "R": "Nhưng tất cả quân thù tấn công ngươi sẽ bị thổi bay như bụi mịn. \\q Đám lính độc ác sẽ như trấu bị gió cuốn đi. \\q Việc ấy sẽ xảy ra trong nháy mắt, thật bất ngờ."
+        },
+        "ko": {
+          "L": "그러나 너의 이방인들의 무리는 고운 먼지 같고, \\q 포악한 자들의 무리는 날려 가는 겨 같을 것이다. \\q 그 일이 한순간에, 갑자기 일어날 것이다.",
+          "B": "그러나 너의 원수들의 무리는 고운 티끌처럼 되고, \\q 포악한 자들의 무리는 바람에 날리는 겨처럼 될 것이다. \\q 그 일이 순식간에, 갑자기 일어날 것이다.",
+          "R": "그러나 너를 공격하는 원수들은 모두 고운 먼지처럼 날려 갈 것이다. \\q 잔인한 군인들의 무리는 바람에 날려 가는 겨와 같을 것이다. \\q 그 일이 한순간에, 아주 갑자기 일어날 것이다."
         }
       },
       "decisions": [
@@ -517,6 +831,31 @@
           "L": "From {{divine_name:the LORD|Yahweh}} of hosts she will be visited \\q with thunder and with earthquake and [a] great noise, \\q [with] whirlwind and tempest and [the] flame of devouring fire.",
           "B": "{{divine_name:The LORD|Yahweh}} of Armies will come to her \\q with thunder, earthquake, and a mighty roar, \\q with gale and tempest and the blaze of a fire that consumes.",
           "R": "{{divine_name:The LORD|Yahweh}} of Armies will come to the city. \\q He will come with thunder, earthquakes, and a loud roar. \\q He will come with strong winds and storms and a fire that burns everything up."
+        },
+        "es": {
+          "L": "De parte {{divine_name:del SEÑOR|de Yahvé}} de los ejércitos será visitada \\q con trueno y con terremoto y [con] gran estruendo, \\q [con] torbellino y tempestad y [con la] llama de fuego consumidor.",
+          "B": "{{divine_name:El SEÑOR|Yahvé}} de los Ejércitos vendrá a ella \\q con trueno, terremoto y gran estruendo, \\q con vendaval y tempestad y la llamarada de un fuego que devora.",
+          "R": "{{divine_name:El SEÑOR|Yahvé}} de los Ejércitos vendrá a la ciudad. \\q Vendrá con truenos, terremotos y un gran estruendo. \\q Vendrá con vientos fuertes y tormentas y un fuego que lo quema todo."
+        },
+        "fr": {
+          "L": "Par {{divine_name:le SEIGNEUR|Yahvé}} des armées elle sera visitée \\q avec tonnerre, tremblement de terre et grand bruit, \\q tourbillon, tempête et flamme de feu dévorant.",
+          "B": "{{divine_name:Le SEIGNEUR|Yahvé}} des armées viendra vers elle \\q avec le tonnerre, le tremblement de terre et un immense fracas, \\q avec l’ouragan, la tempête et la flamme d’un feu qui dévore.",
+          "R": "{{divine_name:Le SEIGNEUR|Yahvé}} des armées viendra vers la ville. \\q Il viendra avec le tonnerre, des tremblements de terre et un grand grondement. \\q Il viendra avec des vents violents, des tempêtes et un feu qui brûle tout."
+        },
+        "sw": {
+          "L": "Kutoka kwa {{divine_name:BWANA|Yahwe}} wa majeshi atajiliwa \\q kwa radi na kwa tetemeko la ardhi na [kwa] kishindo kikuu, \\q [kwa] kimbunga na tufani na mwali wa moto ulao.",
+          "B": "{{divine_name:BWANA|Yahwe}} wa majeshi atamjia \\q kwa radi, tetemeko la ardhi na kishindo kikuu, \\q kwa upepo mkali na tufani na mwali wa moto unaoteketeza.",
+          "R": "{{divine_name:BWANA|Yahwe}} wa majeshi atakuja kwa mji huo. \\q Atakuja na radi, matetemeko ya ardhi na mngurumo mkubwa. \\q Atakuja na upepo mkali na dhoruba na moto unaoteketeza kila kitu."
+        },
+        "vi": {
+          "L": "Từ {{divine_name:CHÚA|Gia-vê}} Vạn Quân, nó sẽ được thăm viếng \\q bằng sấm sét, bằng động đất và tiếng ầm ầm lớn, \\q [bằng] gió lốc, bão tố và ngọn lửa thiêu nuốt.",
+          "B": "{{divine_name:CHÚA|Gia-vê}} Vạn Quân sẽ đến với nó \\q với sấm sét, động đất và tiếng gầm vang dội, \\q với gió lốc, bão tố và ngọn lửa thiêu đốt.",
+          "R": "{{divine_name:CHÚA|Gia-vê}} Vạn Quân sẽ đến với thành. \\q Ngài sẽ đến với sấm sét, động đất và tiếng gầm thật lớn. \\q Ngài sẽ đến với gió mạnh, bão tố và ngọn lửa thiêu đốt mọi thứ."
+        },
+        "ko": {
+          "L": "만군의 {{divine_name:주|야훼}}께로부터 그 성이 벌하심을 받을 것이다. \\q 천둥과 지진과 큰 소리로, \\q 회오리바람과 폭풍과 삼키는 불꽃으로 [받을 것이다].",
+          "B": "만군의 {{divine_name:주|야훼}}께서 그 성에 찾아오실 것이다. \\q 천둥과 지진과 크게 울리는 소리와 함께, \\q 돌풍과 폭풍과 모든 것을 삼키는 불꽃과 함께 오실 것이다.",
+          "R": "하늘의 군대를 거느리신 {{divine_name:주|야훼}}께서 그 성에 오실 것이다. \\q 천둥과 지진과 큰 소리와 함께 오실 것이다. \\q 강한 바람과 폭풍과 모든 것을 태워 버리는 불과 함께 오실 것이다."
         }
       },
       "decisions": [
@@ -632,6 +971,31 @@
           "L": "And it will be like a dream, a vision of [the] night, \\q the multitude of all the nations that wage war against Ariel, \\q and all who wage war against her and her stronghold, and who distress her.",
           "B": "Then the horde of all the nations that make war on Ariel, \\q all who attack her and her stronghold and press her hard, \\q will be like a dream, like something seen in the night.",
           "R": "Armies from all the nations will fight against Ariel. \\q They will attack the city and its fortress and bring it trouble. \\q But they will disappear like a dream, like something you see at night while you sleep."
+        },
+        "es": {
+          "L": "Y será como un sueño, una visión de [la] noche, \\q la multitud de todas las naciones que hacen guerra contra Ariel, \\q y todos los que hacen guerra contra ella y su fortaleza, y la angustian.",
+          "B": "Entonces la horda de todas las naciones que hacen guerra contra Ariel, \\q todos los que la atacan a ella y a su fortaleza y la acosan, \\q serán como un sueño, como algo que se ve de noche.",
+          "R": "Ejércitos de todas las naciones pelearán contra Ariel. \\q Atacarán la ciudad y su fortaleza y le causarán problemas. \\q Pero desaparecerán como un sueño, como algo que uno ve de noche mientras duerme."
+        },
+        "fr": {
+          "L": "Et ce sera comme un rêve, une vision de la nuit, \\q la multitude de toutes les nations qui font la guerre à Ariel, \\q et tous ceux qui lui font la guerre, à elle et à sa forteresse, et qui la serrent de près.",
+          "B": "Alors la horde de toutes les nations qui font la guerre à Ariel, \\q tous ceux qui l’attaquent, elle et sa forteresse, et qui la pressent, \\q seront comme un rêve, comme une vision dans la nuit.",
+          "R": "Les armées de toutes les nations combattront contre Ariel. \\q Elles attaqueront la ville et sa forteresse et lui feront du mal. \\q Mais elles disparaîtront comme un rêve, comme ce qu’on voit la nuit en dormant."
+        },
+        "sw": {
+          "L": "Na itakuwa kama ndoto, maono ya usiku, \\q wingi wa mataifa yote yanayopigana vita na Arieli, \\q na wote wanaopigana naye na ngome yake, na wanaomsonga.",
+          "B": "Kisha kundi la mataifa yote yanayopigana na Arieli, \\q wote wanaomshambulia yeye na ngome yake na kumsonga, \\q watakuwa kama ndoto, kama kitu kinachoonekana usiku.",
+          "R": "Majeshi kutoka mataifa yote yatapigana na Arieli. \\q Yatashambulia mji na ngome yake na kuuletea taabu. \\q Lakini yatatoweka kama ndoto, kama kitu unachokiona usiku ukiwa usingizini."
+        },
+        "vi": {
+          "L": "Và nó sẽ như một giấc mơ, một khải tượng ban đêm, \\q đám đông của mọi dân tộc giao chiến với A-ri-ên, \\q và mọi kẻ giao chiến với nó và đồn lũy nó, và những kẻ dồn ép nó.",
+          "B": "Rồi đám đông của mọi dân tộc giao chiến với A-ri-ên, \\q mọi kẻ tấn công nó cùng đồn lũy nó và dồn ép nó, \\q sẽ như một giấc mơ, như điều thấy trong đêm.",
+          "R": "Quân đội từ mọi dân tộc sẽ đánh A-ri-ên. \\q Chúng sẽ tấn công thành và đồn lũy của nó, gây khốn đốn cho nó. \\q Nhưng chúng sẽ biến mất như một giấc mơ, như điều người ta thấy khi ngủ ban đêm."
+        },
+        "ko": {
+          "L": "그리고 아리엘을 치러 싸우는 모든 민족들의 무리, \\q 그 성과 그 요새를 치고 그 성을 괴롭히는 모든 자들이 \\q 꿈같이, 밤의 환상같이 될 것이다.",
+          "B": "아리엘을 치러 나온 모든 민족들의 무리, \\q 그 성과 그 요새를 공격하고 그 성을 몰아붙이는 모든 자들이 \\q 꿈처럼, 밤에 본 환상처럼 될 것이다.",
+          "R": "모든 민족의 군대가 아리엘을 치러 올 것이다. \\q 그들이 그 성과 요새를 공격하여 괴롭힐 것이다. \\q 그러나 그들은 꿈처럼, 밤에 잠자며 보는 것처럼 사라질 것이다."
         }
       },
       "decisions": [
@@ -751,6 +1115,31 @@
           "L": "And it will be just as [when] the hungry dreams, and look, [he is] eating, and he wakes, and his appetite [is] empty; \\q and just as [when] the thirsty dreams, and look, [he is] drinking, \\q and he wakes, and look, [he is] faint, and his throat [is] craving; \\q so will be the multitude of all the nations that wage war against Mount Zion.",
           "B": "It will be like someone hungry who dreams of eating, then wakes and the stomach is still empty; \\q like someone thirsty who dreams of drinking, then wakes weak, the throat dry and craving. \\q That is how it will be for the horde of all the nations that make war on Mount Zion.",
           "R": "A hungry person may dream about eating, but then wake up still hungry. \\q A thirsty person may dream about drinking, but then wake up weak and still thirsty. \\q It will be like that for the armies of all the nations that fight against Mount Zion. They will not get what they hoped for."
+        },
+        "es": {
+          "L": "Y será como cuando el hambriento sueña, y he aquí [que está] comiendo, y despierta, y su alma [está] vacía; \\q y como cuando el sediento sueña, y he aquí [que está] bebiendo, \\q y despierta, y he aquí [que está] desfallecido, y su garganta [está] ansiosa; \\q así será la multitud de todas las naciones que hacen guerra contra el monte Sion.",
+          "B": "Será como el hambriento que sueña que come, y luego despierta con el estómago vacío; \\q como el sediento que sueña que bebe, y luego despierta débil, con la garganta seca y ansiosa. \\q Así será para la horda de todas las naciones que hacen guerra contra el monte Sion.",
+          "R": "Una persona hambrienta puede soñar que come, pero luego despierta con hambre todavía. \\q Una persona sedienta puede soñar que bebe, pero luego despierta débil y con sed todavía. \\q Así les pasará a los ejércitos de todas las naciones que pelean contra el monte Sion. No obtendrán lo que esperaban."
+        },
+        "fr": {
+          "L": "Et il en sera comme [quand] l’affamé rêve, et voici, [il] mange, et il se réveille, et son appétit [est] vide ; \\q et comme [quand] l’assoiffé rêve, et voici, [il] boit, \\q et il se réveille, et voici, [il est] épuisé et sa gorge [est] avide ; \\q ainsi sera la multitude de toutes les nations qui font la guerre au mont Sion.",
+          "B": "Ce sera comme quelqu’un qui a faim et qui rêve qu’il mange, puis se réveille l’estomac toujours vide ; \\q comme quelqu’un qui a soif et qui rêve qu’il boit, puis se réveille épuisé, la gorge sèche et avide. \\q Ainsi en sera-t-il de la horde de toutes les nations qui font la guerre au mont Sion.",
+          "R": "Quelqu’un qui a faim peut rêver qu’il mange, puis se réveiller toujours affamé. \\q Quelqu’un qui a soif peut rêver qu’il boit, puis se réveiller faible et toujours assoiffé. \\q Il en sera ainsi pour les armées de toutes les nations qui combattent contre le mont Sion. Elles n’obtiendront pas ce qu’elles espéraient."
+        },
+        "sw": {
+          "L": "Na itakuwa kama mwenye njaa anapoota ndoto, na tazama, anakula, kisha anaamka, na nafsi yake [ni] tupu; \\q na kama mwenye kiu anapoota ndoto, na tazama, anakunywa, \\q kisha anaamka, na tazama, amezimia, na nafsi yake [ina] hamu; \\q ndivyo utakavyokuwa wingi wa mataifa yote yanayopigana na mlima Sayuni.",
+          "B": "Itakuwa kama mtu mwenye njaa anayeota anakula, kisha anaamka na tumbo lake bado ni tupu; \\q kama mtu mwenye kiu anayeota anakunywa, kisha anaamka akiwa dhaifu, koo lake kavu na lenye hamu. \\q Ndivyo itakavyokuwa kwa kundi la mataifa yote yanayopigana na mlima Sayuni.",
+          "R": "Mtu mwenye njaa anaweza kuota anakula, lakini anaamka akiwa bado na njaa. \\q Mtu mwenye kiu anaweza kuota anakunywa, lakini anaamka akiwa dhaifu na bado ana kiu. \\q Ndivyo itakavyokuwa kwa majeshi ya mataifa yote yanayopigana na mlima Sayuni. Hawatapata walichokitumaini."
+        },
+        "vi": {
+          "L": "Và sẽ như [khi] người đói nằm mơ, và kìa, [nó đang] ăn, rồi nó thức dậy, và bụng nó [vẫn] trống rỗng; \\q và như [khi] người khát nằm mơ, và kìa, [nó đang] uống, \\q rồi nó thức dậy, và kìa, [nó] mệt lả, và cổ họng nó [vẫn] thèm khát; \\q đám đông của mọi dân tộc giao chiến với núi Si-ôn cũng sẽ như vậy.",
+          "B": "Sẽ như người đói mơ thấy mình đang ăn, rồi thức dậy mà bụng vẫn đói meo; \\q như người khát mơ thấy mình đang uống, rồi thức dậy, mệt lả, cổ họng khô khát. \\q Đám đông của mọi dân tộc giao chiến với núi Si-ôn cũng sẽ như vậy.",
+          "R": "Người đói có thể mơ thấy mình đang ăn, nhưng khi tỉnh dậy vẫn còn đói. \\q Người khát có thể mơ thấy mình đang uống, nhưng khi tỉnh dậy vẫn mệt lả và khát khô cổ. \\q Quân đội của mọi dân tộc đánh núi Si-ôn cũng sẽ như vậy. Chúng sẽ không được điều chúng mong muốn."
+        },
+        "ko": {
+          "L": "굶주린 자가 꿈을 꾸는데, 보라, 먹고 있다가, 깨어나면 그의 속이 비어 있는 것 같고, \\q 목마른 자가 꿈을 꾸는데, 보라, 마시고 있다가, \\q 깨어나면, 보라, 지쳐 있고 그의 목이 타는 것 같을 것이다. \\q 시온 산을 치러 싸우는 모든 민족들의 무리가 그와 같을 것이다.",
+          "B": "배고픈 사람이 꿈에 음식을 먹다가 깨어 보니 여전히 배가 고픈 것 같고, \\q 목마른 사람이 꿈에 물을 마시다가 깨어 보니 기운이 없고 목이 타는 것 같을 것이다. \\q 시온 산을 치러 나온 모든 민족들의 무리가 그렇게 될 것이다.",
+          "R": "배고픈 사람이 꿈에서 음식을 먹다가 깨어 보면 여전히 배가 고프다. \\q 목마른 사람이 꿈에서 물을 마시다가 깨어 보면 여전히 기운이 없고 목이 마르다. \\q 시온 산을 치러 오는 모든 민족의 군대가 그와 같을 것이다. 그들은 바라던 것을 얻지 못할 것이다."
         }
       },
       "decisions": [
@@ -837,6 +1226,31 @@
           "L": "Stall, and be stunned; blind yourselves, and be blind! \\q [They] are drunk, but not [with] wine; \\q [they] stagger, but not [with] strong drink.",
           "B": "Go slow and stand stunned; make yourselves blind and stay blind! \\q They are drunk, though not with wine; \\q they reel, though not from strong drink.",
           "R": "Go ahead, be slow and confused! Close your eyes and stay blind! \\q The people are drunk, but not from wine. They stumble around, but not from any strong drink."
+        },
+        "es": {
+          "L": "¡{{plural_you:Deténganse y asómbrense; ciéguense y queden|Deteneos y asombraos; cegaos y quedad}} ciegos! \\q Están ebrios, pero no [de] vino; \\q se tambalean, pero no [por] bebida fuerte.",
+          "B": "¡{{plural_you:Vayan despacio y queden pasmados; háganse ciegos y sigan|Id despacio y quedad pasmados; haceos ciegos y seguid}} ciegos! \\q Están borrachos, pero no de vino; \\q se tambalean, pero no por la bebida fuerte.",
+          "R": "¡{{plural_you:Adelante, sean lentos y confundidos! ¡Cierren los ojos y sigan|Adelante, sed lentos y confundidos! ¡Cerrad los ojos y seguid}} ciegos! \\q El pueblo está borracho, pero no de vino. Se tambalea, pero no por ninguna bebida fuerte."
+        },
+        "fr": {
+          "L": "Attardez-vous, et soyez stupéfaits ; aveuglez-vous, et soyez aveugles ! \\q [Ils] sont ivres, mais non [de] vin ; \\q [ils] titubent, mais non [de] boisson forte.",
+          "B": "Traînez donc et restez stupéfaits ; rendez-vous aveugles et restez aveugles ! \\q Ils sont ivres, mais pas de vin ; \\q ils titubent, mais pas à cause de la bière.",
+          "R": "Allez-y, soyez lents et troublés ! Fermez les yeux et restez aveugles ! \\q Le peuple est ivre, mais pas de vin. Il titube, mais pas à cause d’une boisson forte."
+        },
+        "sw": {
+          "L": "Kaeni, mkashangae; jipofusheni, mkawe vipofu! \\q Wamelewa, lakini si [kwa] divai; \\q wanapepesuka, lakini si [kwa] kileo.",
+          "B": "Kawieni mkapigwe na bumbuazi; jifanyeni vipofu na mbaki vipofu! \\q Wamelewa, ingawa si kwa divai; \\q wanapepesuka, ingawa si kwa kileo.",
+          "R": "Haya, kuweni wazito na kuchanganyikiwa! Fumbeni macho yenu mbaki vipofu! \\q Watu wamelewa, lakini si kwa divai. Wanapepesuka, lakini si kwa kileo chochote."
+        },
+        "vi": {
+          "L": "Hãy trì hoãn và kinh ngạc đi; hãy tự làm mù mắt và mù đi! \\q [Họ] say, nhưng không [phải vì] rượu; \\q [họ] lảo đảo, nhưng không [phải vì] rượu mạnh.",
+          "B": "Cứ chần chừ và sững sờ đi; cứ tự làm mù mắt và mù luôn đi! \\q Họ say, nhưng không phải vì rượu; \\q họ lảo đảo, nhưng không phải vì rượu mạnh.",
+          "R": "Cứ chậm chạp và lú lẫn đi! Cứ nhắm mắt lại và mù luôn đi! \\q Dân này say, nhưng không phải vì rượu. Họ lảo đảo, nhưng không phải vì rượu mạnh nào cả."
+        },
+        "ko": {
+          "L": "머뭇거려라, 그리고 놀라라. 눈을 가려라, 그리고 눈멀어라! \\q [그들이] 취했으나 포도주 [때문이] 아니고, \\q 비틀거리나 독주 [때문이] 아니다.",
+          "B": "꾸물거리다가 넋을 잃어라. 스스로 눈을 가리고 눈먼 채로 있어라! \\q 그들이 취했으나 포도주에 취한 것이 아니고, \\q 비틀거리나 독한 술 때문이 아니다.",
+          "R": "그래, 굼뜨고 어리둥절해 있어라! 눈을 감고 눈먼 채로 있어라! \\q 이 백성은 취했지만 포도주에 취한 것이 아니다. 비틀거리지만 독한 술 때문이 아니다."
         }
       },
       "decisions": [
@@ -946,6 +1360,31 @@
           "L": "For {{divine_name:the LORD|Yahweh}} has poured out on you a spirit of deep sleep, \\q and {{deity_pronoun:he|He}} has shut your eyes, the prophets; \\q and your heads, the seers, {{deity_pronoun:he|He}} has covered.",
           "B": "{{divine_name:The LORD|Yahweh}} has poured over you a spirit of heavy sleep. \\q He has shut your eyes, that is, your prophets; \\q {{deity_pronoun:he|He}} has wrapped your heads, that is, your seers.",
           "R": "{{divine_name:The LORD|Yahweh}} has made you fall into a deep sleep. \\q The prophets are like your eyes, and {{deity_pronoun:he|He}} has shut them. \\q The seers are like your heads, and {{deity_pronoun:he|He}} has covered them."
+        },
+        "es": {
+          "L": "Porque {{divine_name:el SEÑOR|Yahvé}} ha derramado sobre {{plural_you:ustedes|vosotros}} un espíritu de sueño profundo, \\q y {{deity_pronoun:él|Él}} ha cerrado {{plural_you:sus|vuestros}} ojos, los profetas; \\q y {{plural_you:sus|vuestras}} cabezas, los videntes, {{deity_pronoun:él|Él}} las ha cubierto.",
+          "B": "{{divine_name:El SEÑOR|Yahvé}} ha derramado sobre {{plural_you:ustedes|vosotros}} un espíritu de sueño pesado. \\q Ha cerrado {{plural_you:sus|vuestros}} ojos, es decir, {{plural_you:sus|vuestros}} profetas; \\q {{deity_pronoun:él|Él}} ha envuelto {{plural_you:sus|vuestras}} cabezas, es decir, {{plural_you:sus|vuestros}} videntes.",
+          "R": "{{divine_name:El SEÑOR|Yahvé}} {{plural_you:los|os}} ha hecho caer en un sueño profundo. \\q Los profetas son como {{plural_you:sus|vuestros}} ojos, y {{deity_pronoun:él|Él}} los ha cerrado. \\q Los videntes son como {{plural_you:sus|vuestras}} cabezas, y {{deity_pronoun:él|Él}} las ha cubierto."
+        },
+        "fr": {
+          "L": "Car {{divine_name:le SEIGNEUR|Yahvé}} a répandu sur vous un esprit de profond sommeil, \\q et {{deity_pronoun:il|Il}} a fermé vos yeux, les prophètes ; \\q et vos têtes, les voyants, {{deity_pronoun:il|Il}} les a couvertes.",
+          "B": "{{divine_name:Le SEIGNEUR|Yahvé}} a versé sur vous un esprit de lourd sommeil. \\q Il a fermé vos yeux, c’est-à-dire vos prophètes ; \\q {{deity_pronoun:il|Il}} a voilé vos têtes, c’est-à-dire vos voyants.",
+          "R": "{{divine_name:Le SEIGNEUR|Yahvé}} vous a plongés dans un profond sommeil. \\q Les prophètes sont comme vos yeux, et {{deity_pronoun:il|Il}} les a fermés. \\q Les voyants sont comme vos têtes, et {{deity_pronoun:il|Il}} les a couvertes."
+        },
+        "sw": {
+          "L": "Kwa maana {{divine_name:BWANA|Yahwe}} amemimina juu yenu roho ya usingizi mzito, \\q {{deity_pronoun:naye|Naye}} ameyafumba macho yenu, manabii; \\q na vichwa vyenu, waonaji, amevifunika.",
+          "B": "{{divine_name:BWANA|Yahwe}} amewamwagia roho ya usingizi mzito. \\q Ameyafumba macho yenu, yaani, manabii wenu; \\q amevifunika vichwa vyenu, yaani, waonaji wenu.",
+          "R": "{{divine_name:BWANA|Yahwe}} amewafanya mlale usingizi mzito. \\q Manabii ni kama macho yenu, {{deity_pronoun:naye|Naye}} ameyafumba. \\q Waonaji ni kama vichwa vyenu, {{deity_pronoun:naye|Naye}} amevifunika."
+        },
+        "vi": {
+          "L": "Vì {{divine_name:CHÚA|Gia-vê}} đã đổ trên các người một thần ngủ mê, \\q và {{deity_pronoun:ngài|Ngài}} đã nhắm mắt các người, là các tiên tri; \\q và đầu các người, là các nhà tiên kiến, {{deity_pronoun:ngài|Ngài}} đã che lại.",
+          "B": "{{divine_name:CHÚA|Gia-vê}} đã đổ trên các người một thần ngủ mê. \\q Ngài đã nhắm mắt các người, tức là các tiên tri; \\q {{deity_pronoun:ngài|Ngài}} đã trùm đầu các người, tức là các nhà tiên kiến.",
+          "R": "{{divine_name:CHÚA|Gia-vê}} đã khiến các người ngủ say. \\q Các nhà tiên tri như là mắt của các người, và {{deity_pronoun:ngài|Ngài}} đã nhắm chúng lại. \\q Các nhà tiên kiến như là đầu của các người, và {{deity_pronoun:ngài|Ngài}} đã che chúng lại."
+        },
+        "ko": {
+          "L": "{{divine_name:주|야훼}}께서 너희 위에 깊은 잠의 영을 부으셨기 때문이다. \\q 그분께서 너희의 눈인 예언자들을 감기셨고, \\q 너희의 머리인 선견자들을 덮으셨다.",
+          "B": "{{divine_name:주|야훼}}께서 너희에게 깊이 잠드는 영을 쏟아부으셨다. \\q 그분께서 너희의 눈, 곧 예언자들을 감기시고, \\q 너희의 머리, 곧 선견자들을 덮어씌우셨다.",
+          "R": "{{divine_name:주|야훼}}께서 너희를 깊은 잠에 빠지게 하셨다. \\q 예언자들은 너희의 눈과 같은데, 그분께서 그 눈을 감기셨다. \\q 선견자들은 너희의 머리와 같은데, 그분께서 그 머리를 덮으셨다."
         }
       },
       "decisions": [
@@ -994,6 +1433,27 @@
           "choice": "The prophets are like your eyes ... The seers are like your heads",
           "alternatives": [],
           "reason": "Readable states the comparison so the picture is clear.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230290100032"
+          ],
+          "choice": "\"các người\" in verses 9-12",
+          "alternatives": [
+            "\"các ngươi\""
+          ],
+          "reason": "The prophet speaks to the people here, naming the LORD in the third person, so he says \"các người\", as the terms note sets for the prophet's rebuke.",
           "uncertain": false,
           "footnote": false
         }
@@ -1050,6 +1510,31 @@
           "L": "And the vision of all [this] has become for you like the words of the sealed scroll, which [people] give to [one who] knows writing, saying, \"Read this, please,\" and he says, \"I cannot, for it [is] sealed.\"",
           "B": "This whole vision has become for you like the words of a sealed scroll. People hand it to someone who can read and say, \"Please read this,\" and the answer comes, \"I cannot; it is sealed.\"",
           "R": "This whole message from God has become like a scroll that is sealed shut. Suppose you give it to someone who knows how to read and say, \"Please read this.\" That person will say, \"I cannot. It is sealed.\""
+        },
+        "es": {
+          "L": "Y la visión de todo [esto] ha llegado a ser para {{plural_you:ustedes|vosotros}} como las palabras del rollo sellado, que [se] da al que sabe leer, diciendo: «Lee esto, por favor», y él dice: «No puedo, porque [está] sellado».",
+          "B": "Toda esta visión ha llegado a ser para {{plural_you:ustedes|vosotros}} como las palabras de un rollo sellado. Se lo dan a alguien que sabe leer y le dicen: «Por favor, lee esto», y la respuesta es: «No puedo; está sellado».",
+          "R": "Todo este mensaje de Dios ha llegado a ser como un rollo cerrado con un sello. Supongamos que se lo dan a alguien que sabe leer y le dicen: «Por favor, lee esto». Esa persona dirá: «No puedo. Está sellado»."
+        },
+        "fr": {
+          "L": "Et la vision de tout [cela] est devenue pour vous comme les paroles du livre scellé, qu’on donne à [quelqu’un qui] connaît l’écriture, en disant : « Lis donc ceci », et il dit : « Je ne peux pas, car il [est] scellé. »",
+          "B": "Toute cette vision est devenue pour vous comme les paroles d’un rouleau scellé. On le tend à quelqu’un qui sait lire en disant : « Lis donc ceci, s’il te plaît », et il répond : « Je ne peux pas ; il est scellé. »",
+          "R": "Tout ce message de Dieu est devenu comme un rouleau fermé par un sceau. Imaginez qu’on le donne à quelqu’un qui sait lire en disant : « Lis ceci, s’il te plaît. » Cette personne répondra : « Je ne peux pas. Il est scellé. »"
+        },
+        "sw": {
+          "L": "Na maono ya [haya] yote yamekuwa kwenu kama maneno ya gombo lililotiwa muhuri, ambalo [watu] humpa [mtu] anayejua kusoma maandishi, wakisema, \"Tafadhali soma hili,\" naye husema, \"Siwezi, kwa maana limetiwa muhuri.\"",
+          "B": "Maono haya yote yamekuwa kwenu kama maneno ya gombo lililotiwa muhuri. Watu humpa mtu anayejua kusoma na kusema, \"Tafadhali soma hili,\" naye hujibu, \"Siwezi; limetiwa muhuri.\"",
+          "R": "Ujumbe huu wote kutoka kwa Mungu umekuwa kama gombo lililofungwa kwa muhuri. Tuseme unampa mtu anayejua kusoma na kumwambia, \"Tafadhali soma hili.\" Mtu huyo atasema, \"Siwezi. Limefungwa kwa muhuri.\""
+        },
+        "vi": {
+          "L": "Và khải tượng về mọi [điều này] đối với các người đã trở nên như những lời của cuộn sách bị niêm phong, mà [người ta] đưa cho [người] biết chữ và nói: \"Xin hãy đọc cái này,\" thì người ấy nói: \"Tôi không thể, vì nó [đã bị] niêm phong.\"",
+          "B": "Cả khải tượng này đối với các người đã trở nên như lời của một cuộn sách bị niêm phong. Người ta đưa nó cho một người biết đọc và nói: \"Xin đọc cái này,\" thì được trả lời: \"Tôi không đọc được; nó đã bị niêm phong.\"",
+          "R": "Toàn bộ sứ điệp này từ Đức Chúa Trời đã trở nên như một cuộn sách bị niêm phong kín. Giả sử các người đưa nó cho một người biết đọc và nói: \"Xin đọc cái này.\" Người ấy sẽ nói: \"Tôi không đọc được. Nó đã bị niêm phong.\""
+        },
+        "ko": {
+          "L": "그리고 이 모든 것의 환상이 너희에게 봉인된 두루마리 책의 말씀같이 되었다. 사람들이 그것을 글을 아는 자에게 주며 \"이것을 읽어 주십시오\" 하면, 그는 \"봉인되어 있어서 나는 읽을 수 없소\" 하고 말한다.",
+          "B": "이 모든 환상이 너희에게는 봉인된 두루마리의 말씀처럼 되었다. 사람들이 그것을 글을 아는 사람에게 주며 \"이것 좀 읽어 주십시오\" 하고 부탁하면, 그는 \"봉인되어 있어서 읽을 수 없소\" 하고 대답한다.",
+          "R": "하나님께서 주신 이 모든 말씀이 너희에게는 단단히 봉해진 두루마리처럼 되었다. 너희가 그것을 글을 읽을 줄 아는 사람에게 주며 \"이것 좀 읽어 주십시오\" 하고 말한다고 하자. 그 사람은 \"읽을 수 없소. 봉해져 있소\" 하고 말할 것이다."
         }
       },
       "decisions": [
@@ -1119,6 +1604,70 @@
           "reason": "Balanced and Readable avoid \"he\", since the reader may be anyone.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230290110062"
+          ],
+          "choice": "\"gombo\"",
+          "alternatives": [
+            "\"kitabu\""
+          ],
+          "reason": "The scroll is \"gombo\", as Luke 4:17 and the terms note; \"kitabu\" would suggest a bound book.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230290110062",
+            "o230290110072"
+          ],
+          "choice": "\"cuộn sách\"",
+          "alternatives": [
+            "\"quyển sách\""
+          ],
+          "reason": "The terms note's word for the scroll, as Luke 4:17.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230290110062"
+          ],
+          "choice": "\"두루마리 책\" (L); \"두루마리\" (B, R)",
+          "alternatives": [
+            "\"책\""
+          ],
+          "reason": "The terms note's forms for the scroll, as Hebrews 10:7 (L) and 1 Samuel 10:25.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1160,6 +1709,31 @@
           "L": "And the scroll is given to [one] who does not know writing, saying, \"Read this, please,\" and he says, \"I do not know writing.\"",
           "B": "Or the scroll is handed to someone who cannot read, with the words, \"Please read this,\" and the answer comes, \"I do not know how to read.\"",
           "R": "Or suppose you give the scroll to someone who does not know how to read and say, \"Please read this.\" That person will say, \"I cannot read.\""
+        },
+        "es": {
+          "L": "Y se da el rollo al que no sabe leer, diciendo: «Lee esto, por favor», y él dice: «No sé leer».",
+          "B": "O se entrega el rollo a alguien que no sabe leer, con estas palabras: «Por favor, lee esto», y la respuesta es: «No sé leer».",
+          "R": "O supongamos que se lo dan a alguien que no sabe leer y le dicen: «Por favor, lee esto». Esa persona dirá: «No sé leer»."
+        },
+        "fr": {
+          "L": "Et on donne le livre à [quelqu’un] qui ne connaît pas l’écriture, en disant : « Lis donc ceci », et il dit : « Je ne connais pas l’écriture. »",
+          "B": "Ou bien on tend le rouleau à quelqu’un qui ne sait pas lire, en disant : « Lis donc ceci, s’il te plaît », et il répond : « Je ne sais pas lire. »",
+          "R": "Ou bien imaginez qu’on donne le rouleau à quelqu’un qui ne sait pas lire en disant : « Lis ceci, s’il te plaît. » Cette personne répondra : « Je ne sais pas lire. »"
+        },
+        "sw": {
+          "L": "Na gombo hupewa [mtu] asiyejua kusoma maandishi, wakisema, \"Tafadhali soma hili,\" naye husema, \"Sijui kusoma maandishi.\"",
+          "B": "Au gombo hupewa mtu asiyejua kusoma, pamoja na maneno, \"Tafadhali soma hili,\" naye hujibu, \"Sijui kusoma.\"",
+          "R": "Au tuseme unampa gombo hilo mtu asiyejua kusoma na kumwambia, \"Tafadhali soma hili.\" Mtu huyo atasema, \"Sijui kusoma.\""
+        },
+        "vi": {
+          "L": "Và cuộn sách được đưa cho [người] không biết chữ và nói: \"Xin hãy đọc cái này,\" thì người ấy nói: \"Tôi không biết chữ.\"",
+          "B": "Hoặc cuộn sách được trao cho một người không biết đọc, kèm lời: \"Xin đọc cái này,\" thì được trả lời: \"Tôi không biết đọc.\"",
+          "R": "Hoặc giả sử các người đưa cuộn sách cho một người không biết đọc và nói: \"Xin đọc cái này.\" Người ấy sẽ nói: \"Tôi không biết đọc.\""
+        },
+        "ko": {
+          "L": "그리고 그 두루마리 책을 글을 모르는 자에게 주며 \"이것을 읽어 주십시오\" 하면, 그는 \"나는 글을 모르오\" 하고 말한다.",
+          "B": "또 그 두루마리를 글을 모르는 사람에게 주며 \"이것 좀 읽어 주십시오\" 하고 부탁하면, 그는 \"나는 글을 읽을 줄 모르오\" 하고 대답한다.",
+          "R": "또 너희가 그 두루마리를 글을 읽을 줄 모르는 사람에게 주며 \"이것 좀 읽어 주십시오\" 하고 말한다고 하자. 그 사람은 \"나는 글을 읽을 줄 모르오\" 하고 말할 것이다."
         }
       },
       "decisions": [
@@ -1252,6 +1826,31 @@
           "L": "And [the] Lord said: Because this people draws near with its mouth, \\q and with its lips they honor {{deity_pronoun:me|Me}}, \\q but its heart it keeps far from {{deity_pronoun:me|Me}}, \\q and their fear of {{deity_pronoun:me|Me}} is a command of humans [that has been] taught,",
           "B": "The Lord said: Since this people approaches {{deity_pronoun:me|Me}} with words of the mouth \\q and gives {{deity_pronoun:me|Me}} honor with their lips \\q while keeping their heart far from {{deity_pronoun:me|Me}}, \\q and the fear they show {{deity_pronoun:me|Me}} is only a human rule learned by rote,",
           "R": "The Lord said: These people come close to {{deity_pronoun:me|Me}} with their words. \\q They praise {{deity_pronoun:me|Me}} with their lips, but their hearts are far away from {{deity_pronoun:me|Me}}. \\q When they worship {{deity_pronoun:me|Me}}, they are only following rules that people have taught them."
+        },
+        "es": {
+          "L": "Y dijo [el] Señor: Porque este pueblo se acerca con su boca, \\q y con sus labios {{deity_pronoun:me|Me}} honran, \\q pero su corazón lo alejan de {{deity_pronoun:mí|Mí}}, \\q y su temor de {{deity_pronoun:mí|Mí}} es un mandamiento de hombres [que les ha sido] enseñado,",
+          "B": "El Señor dijo: Puesto que este pueblo se acerca a {{deity_pronoun:mí|Mí}} con palabras de su boca \\q y {{deity_pronoun:me|Me}} honra con los labios, \\q mientras mantiene su corazón lejos de {{deity_pronoun:mí|Mí}}, \\q y el temor que {{deity_pronoun:me|Me}} muestran es solo una regla humana aprendida de memoria,",
+          "R": "El Señor dijo: Esta gente se acerca a {{deity_pronoun:mí|Mí}} con sus palabras. \\q Ellos {{deity_pronoun:me|Me}} alaban con los labios, pero su corazón está lejos de {{deity_pronoun:mí|Mí}}. \\q Cuando {{deity_pronoun:me|Me}} adoran, solo siguen reglas que otras personas les han enseñado."
+        },
+        "fr": {
+          "L": "Et le Seigneur a dit : Parce que ce peuple s’approche de sa bouche, \\q et de ses lèvres ils {{deity_pronoun:m’|M’}}honorent, \\q mais son cœur, il l’éloigne de {{deity_pronoun:moi|Moi}}, \\q et leur crainte de {{deity_pronoun:moi|Moi}} est un commandement d’humains [qu’on leur a] enseigné,",
+          "B": "Le Seigneur a dit : Puisque ce peuple s’approche de {{deity_pronoun:moi|Moi}} par les paroles de sa bouche \\q et {{deity_pronoun:m’|M’}}honore des lèvres, \\q tandis que son cœur reste loin de {{deity_pronoun:moi|Moi}}, \\q et que la crainte qu’il {{deity_pronoun:me|Me}} montre n’est qu’une règle humaine apprise par cœur,",
+          "R": "Le Seigneur a dit : Ces gens s’approchent de {{deity_pronoun:moi|Moi}} avec leurs paroles. \\q Ils {{deity_pronoun:m’|M’}}honorent des lèvres, mais leur cœur est loin de {{deity_pronoun:moi|Moi}}. \\q Quand ils {{deity_pronoun:m’|M’}}adorent, ils ne font que suivre des règles que des gens leur ont apprises."
+        },
+        "sw": {
+          "L": "Naye Bwana akasema: Kwa sababu watu hawa wanakaribia kwa kinywa chao, \\q na kwa midomo yao wananiheshimu, \\q lakini moyo wao wameuweka mbali {{deity_pronoun:nami|Nami}}, \\q na kunicha kwao ni amri ya wanadamu [waliyo]fundishwa,",
+          "B": "Bwana alisema: Kwa kuwa watu hawa wananikaribia kwa maneno ya kinywa \\q na kunipa heshima kwa midomo yao \\q huku wakiweka moyo wao mbali {{deity_pronoun:nami|Nami}}, \\q na hofu wanayonionyesha ni kanuni tu ya wanadamu waliyoikariri,",
+          "R": "Bwana alisema: Watu hawa wananikaribia kwa maneno yao. \\q Wananisifu kwa midomo yao, lakini mioyo yao iko mbali {{deity_pronoun:nami|Nami}}. \\q Wanaponiabudu, wanafuata tu kanuni ambazo watu wamewafundisha."
+        },
+        "vi": {
+          "L": "Và Chúa đã phán: Vì dân này đến gần bằng miệng nó, \\q và bằng môi họ tôn kính {{deity_pronoun:ta|Ta}}, \\q nhưng lòng nó thì để xa cách {{deity_pronoun:ta|Ta}}, \\q và sự kính sợ của họ đối với {{deity_pronoun:ta|Ta}} là điều răn của loài người [đã được] dạy,",
+          "B": "Chúa phán: Vì dân này đến gần {{deity_pronoun:ta|Ta}} bằng lời nơi miệng \\q và tôn kính {{deity_pronoun:ta|Ta}} bằng môi \\q trong khi lòng họ xa cách {{deity_pronoun:ta|Ta}}, \\q và sự kính sợ họ dành cho {{deity_pronoun:ta|Ta}} chỉ là luật lệ của loài người học thuộc lòng,",
+          "R": "Chúa phán: Dân này đến gần {{deity_pronoun:ta|Ta}} bằng lời nói. \\q Họ ca ngợi {{deity_pronoun:ta|Ta}} bằng môi miệng, nhưng lòng họ ở xa {{deity_pronoun:ta|Ta}}. \\q Khi họ thờ phượng {{deity_pronoun:ta|Ta}}, họ chỉ làm theo những luật lệ loài người đã dạy họ."
+        },
+        "ko": {
+          "L": "그리고 주님께서 말씀하셨다. 이 백성이 입으로 가까이하고 \\q 입술로 나를 공경하지만, \\q 그 마음은 나에게서 멀리 두고, \\q 나를 경외한다는 것이 사람들이 가르친 계명일 뿐이므로,",
+          "B": "주님께서 말씀하셨다. 이 백성이 입으로는 나에게 다가오고 \\q 입술로는 나를 공경하지만, \\q 마음은 나에게서 멀리 떨어져 있다. \\q 그들이 나를 경외한다는 것도 사람들에게서 외워 배운 규칙일 뿐이다.",
+          "R": "주님께서 말씀하셨다. 이 백성은 말로만 나에게 가까이 온다. \\q 입술로는 나를 찬양하지만 마음은 나에게서 멀리 떠나 있다. \\q 그들이 나를 예배한다지만, 사람들이 가르쳐 준 규칙을 따를 뿐이다."
         }
       },
       "decisions": [
@@ -1317,6 +1916,98 @@
           "reason": "Readable says \"worship\" for \"fear\", the sense the second meaning decision gives.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230290130093",
+            "o230290130112",
+            "o230290130121",
+            "o230290130171",
+            "o230290130181"
+          ],
+          "choice": "\"kwa midomo\", \"moyo wao ... mbali nami\", \"amri ya wanadamu\"",
+          "alternatives": [
+            "\"kwa vinywa vyao\"",
+            "\"maagizo ya watu\""
+          ],
+          "reason": "Jesus applies this verse in Mark 7:6-7, and the published Swahili there has \"kwa midomo\", \"moyo wao umekaa mbali nami\" and \"amri za wanadamu\"; the key words are kept so a reader can see the quotation.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "allusion",
+          "tokens": [
+            "o230290130081",
+            "o230290130191"
+          ],
+          "choice": "\"m'honore(nt) des lèvres\", \"son cœur ... loin de moi\" at every level",
+          "alternatives": [
+            "\"me rendent honneur de leurs lèvres\""
+          ],
+          "reason": "Jesus quotes the verse in Matthew 15:8; French keeps the key words of the published Matthew so the quotation can be seen.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230290130081",
+            "o230290130191"
+          ],
+          "choice": "\"tôn kính Ta bằng môi\"; \"lòng ... xa cách Ta\"",
+          "alternatives": [
+            "\"kính trọng\""
+          ],
+          "reason": "Keeps the key words of Matthew 15:8 in Vietnamese so that Jesus' quotation can be recognised; the rest is drafted from the Hebrew.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230290130081",
+            "o230290130191"
+          ],
+          "choice": "\"입술로 나를 공경하지만 ... 마음은 나에게서 멀리\"",
+          "alternatives": [
+            "\"입술로 존경하나\""
+          ],
+          "reason": "Jesus applies this verse to the leaders of his day (meaning decision m1); Korean keeps the key words of the published Matthew 15:8 so the quotation can be seen.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1364,6 +2055,31 @@
           "L": "therefore, look, I will again do wonders with this people, wondrously and [with] wonder; \\q and the wisdom of its wise [ones] will perish, \\q and the understanding of its discerning [ones] will hide itself.",
           "B": "therefore I will once again deal with this people in astonishing ways, marvel after marvel. \\q The wisdom of their wise will come to nothing, \\q and the insight of their discerning will disappear from sight.",
           "R": "So I will again do amazing things to these people, one surprising thing after another. \\q The wisdom of their wise people will be lost. \\q The understanding of their clever people will disappear."
+        },
+        "es": {
+          "L": "por eso, he aquí, yo volveré a hacer maravillas con este pueblo, maravilla tras maravilla; \\q y perecerá la sabiduría de sus sabios, \\q y el entendimiento de sus entendidos se esconderá.",
+          "B": "por eso volveré a tratar a este pueblo de maneras asombrosas, maravilla tras maravilla. \\q La sabiduría de sus sabios quedará en nada, \\q y la inteligencia de sus entendidos desaparecerá de la vista.",
+          "R": "Por eso volveré a hacer cosas asombrosas con esta gente, una sorpresa tras otra. \\q La sabiduría de sus sabios se perderá. \\q La inteligencia de sus personas listas desaparecerá."
+        },
+        "fr": {
+          "L": "c’est pourquoi voici, je continuerai à faire des merveilles avec ce peuple, merveille sur merveille ; \\q et la sagesse de ses sages périra, \\q et l’intelligence de ses intelligents se cachera.",
+          "B": "c’est pourquoi j’agirai encore envers ce peuple de façon étonnante, prodige après prodige. \\q La sagesse de ses sages se perdra, \\q et le discernement de ses hommes avisés disparaîtra.",
+          "R": "Alors je ferai encore des choses étonnantes à ce peuple, une surprise après l’autre. \\q La sagesse de ses sages sera perdue. \\q L’intelligence de ses gens habiles disparaîtra."
+        },
+        "sw": {
+          "L": "kwa hiyo, tazama, nitafanya tena maajabu na watu hawa, kwa ajabu na [kwa] maajabu; \\q na hekima ya wenye hekima wao itapotea, \\q na ufahamu wa wenye ufahamu wao utajificha.",
+          "B": "kwa hiyo nitawashughulikia watu hawa tena kwa njia za kushangaza, ajabu juu ya ajabu. \\q Hekima ya wenye hekima wao itatoweka, \\q na ufahamu wa wenye busara wao utafichika.",
+          "R": "Kwa hiyo nitawatendea watu hawa tena mambo ya ajabu, jambo moja la kushangaza baada ya jingine. \\q Hekima ya watu wao wenye hekima itapotea. \\q Ufahamu wa watu wao werevu utatoweka."
+        },
+        "vi": {
+          "L": "vì vậy, kìa, Ta sẽ lại làm những việc lạ lùng với dân này, lạ lùng và kỳ diệu; \\q và sự khôn ngoan của những người khôn ngoan của nó sẽ tiêu mất, \\q và sự hiểu biết của những người thông sáng của nó sẽ bị che giấu.",
+          "B": "thì Ta sẽ lại đối xử với dân này cách lạ lùng, hết việc kỳ diệu này đến việc kỳ diệu khác. \\q Sự khôn ngoan của người khôn ngoan của họ sẽ tiêu tan, \\q và sự thông sáng của người thông sáng của họ sẽ biến mất.",
+          "R": "Vì vậy Ta sẽ lại làm những việc lạ lùng cho dân này, hết việc này đến việc khác. \\q Sự khôn ngoan của những người khôn ngoan của họ sẽ mất đi. \\q Sự hiểu biết của những người thông minh của họ sẽ biến mất."
+        },
+        "ko": {
+          "L": "그러므로 보라, 내가 다시 이 백성에게 놀라운 일을, 놀랍고 기이한 일을 행할 것이다. \\q 그 지혜로운 자들의 지혜가 사라지고, \\q 그 총명한 자들의 총명이 숨어 버릴 것이다.",
+          "B": "그러므로 내가 이 백성에게 다시 놀라운 일을, 놀라운 일에 놀라운 일을 더하여 행하겠다. \\q 그들의 지혜로운 자들의 지혜가 없어지고, \\q 그들의 총명한 자들의 총명이 자취를 감출 것이다.",
+          "R": "그래서 내가 다시 이 백성에게 놀라운 일을 할 것이다. 놀라운 일이 잇달아 일어날 것이다. \\q 지혜롭다는 사람들의 지혜가 사라질 것이다. \\q 똑똑하다는 사람들의 깨달음이 없어질 것이다."
         }
       },
       "decisions": [
@@ -1456,6 +2172,31 @@
           "L": "Woe, those who go deep to hide [their] counsel from {{divine_name:the LORD|Yahweh}}, \\q and their deeds are in a dark place, \\q and they say, \"Who sees us? And who knows us?\"",
           "B": "Woe to those who burrow deep to keep their schemes hidden from {{divine_name:the LORD|Yahweh}}! \\q Their deeds are done in a dark place, \\q and they say, \"Who sees us? Who knows about us?\"",
           "R": "How terrible it will be for people who try hard to hide their plans from {{divine_name:the LORD|Yahweh}}! \\q They do their work in the dark. \\q They say, \"No one sees us. No one knows what we are doing.\""
+        },
+        "es": {
+          "L": "¡Ay de los que se esconden en lo profundo para ocultar [su] consejo {{divine_name:del SEÑOR|de Yahvé}}, \\q y sus obras están en tinieblas, \\q y dicen: «¿Quién nos ve? ¿Y quién nos conoce?»!",
+          "B": "¡Ay de los que cavan hondo para ocultar sus planes {{divine_name:del SEÑOR|de Yahvé}}! \\q Hacen sus obras en un lugar oscuro, \\q y dicen: «¿Quién nos ve? ¿Quién sabe de nosotros?».",
+          "R": "¡Qué terrible será para los que se esfuerzan por esconder sus planes {{divine_name:del SEÑOR|de Yahvé}}! \\q Hacen sus cosas en la oscuridad. \\q Dicen: «Nadie nos ve. Nadie sabe lo que hacemos»."
+        },
+        "fr": {
+          "L": "Malheur, ceux qui s’enfoncent pour cacher [leur] dessein {{divine_name:au SEIGNEUR|à Yahvé}}, \\q et leurs œuvres sont dans un lieu obscur, \\q et ils disent : « Qui nous voit ? Et qui nous connaît ? »",
+          "B": "Malheur à ceux qui creusent profond pour cacher leurs projets {{divine_name:au SEIGNEUR|à Yahvé}} ! \\q Ils agissent dans l’obscurité \\q et ils disent : « Qui nous voit ? Qui sait ce que nous faisons ? »",
+          "R": "Quel malheur pour ceux qui font tout pour cacher leurs projets {{divine_name:au SEIGNEUR|à Yahvé}} ! \\q Ils travaillent dans le noir. \\q Ils disent : « Personne ne nous voit. Personne ne sait ce que nous faisons. »"
+        },
+        "sw": {
+          "L": "Ole, wale wanaojificha sana ili kumficha {{divine_name:BWANA|Yahwe}} shauri [lao], \\q na matendo yao yako mahali penye giza, \\q nao husema, \"Ni nani anayetuona? Na ni nani anayetujua?\"",
+          "B": "Ole wao wanaochimba chini sana ili kumficha {{divine_name:BWANA|Yahwe}} mipango yao! \\q Matendo yao hufanyika mahali penye giza, \\q nao husema, \"Ni nani anayetuona? Ni nani anayetujua?\"",
+          "R": "Itakuwa vibaya sana kwa watu wanaojitahidi kumficha {{divine_name:BWANA|Yahwe}} mipango yao! \\q Wanafanya kazi zao gizani. \\q Wanasema, \"Hakuna anayetuona. Hakuna anayejua tunachofanya.\""
+        },
+        "vi": {
+          "L": "Khốn cho những kẻ đào sâu để giấu [mưu kế] khỏi {{divine_name:CHÚA|Gia-vê}}, \\q và việc làm của họ ở trong chỗ tối tăm, \\q và họ nói: \"Ai thấy chúng ta? Và ai biết chúng ta?\"",
+          "B": "Khốn cho những kẻ đào sâu để giấu mưu kế mình khỏi {{divine_name:CHÚA|Gia-vê}}! \\q Việc làm của họ đều ở trong bóng tối, \\q và họ nói: \"Ai thấy chúng ta? Ai biết chúng ta?\"",
+          "R": "Thật khốn khổ cho những kẻ cố hết sức giấu kế hoạch của mình khỏi {{divine_name:CHÚA|Gia-vê}}! \\q Họ làm việc trong bóng tối. \\q Họ nói: \"Chẳng ai thấy chúng ta. Chẳng ai biết chúng ta đang làm gì.\""
+        },
+        "ko": {
+          "L": "{{divine_name:주|야훼}}께 [그들의] 계획을 숨기려고 깊이 파고드는 자들에게 화가 있다! \\q 그들의 행위가 어두운 곳에 있고, \\q 그들은 말한다. \"누가 우리를 보느냐? 누가 우리를 아느냐?\"",
+          "B": "{{divine_name:주|야훼}}께 자기들의 계획을 숨기려고 깊이 파고드는 자들에게 화가 있다! \\q 그들은 어두운 곳에서 일을 꾸미고 \\q 말한다. \"누가 우리를 보겠느냐? 누가 우리를 알겠느냐?\"",
+          "R": "{{divine_name:주|야훼}}께 자기들의 계획을 감추려고 애쓰는 사람들에게 끔찍한 일이 닥칠 것이다! \\q 그들은 어둠 속에서 일을 한다. \\q 그들은 말한다. \"아무도 우리를 보지 못한다. 아무도 우리가 무엇을 하는지 모른다.\""
         }
       },
       "decisions": [
@@ -1552,6 +2293,31 @@
           "L": "Your perversity! Is the potter to be regarded as the clay, \\q that [the] thing made should say of its maker, \"He did not make me,\" \\q and [the] thing formed say of its potter, \"He has no understanding\"?",
           "B": "How you turn everything on its head! \\q Is the potter to be counted the same as the clay? \\q Should the thing that was made say of its maker, \"He did not make me\"? \\q Should the vessel say of the one who shaped it, \"He has no sense\"?",
           "R": "You have everything backward! \\q God made you as a potter makes a pot. But you treat {{deity_pronoun:him|Him}} as if {{deity_pronoun:he|He}} were no better than the clay. \\q A pot cannot say about the one who made it, \"He did not make me.\" \\q It cannot say about the potter, \"He does not know what he is doing.\""
+        },
+        "es": {
+          "L": "¡{{plural_you:Su|Vuestra}} perversidad! ¿Será tenido el alfarero como el barro, \\q para que la obra diga de su hacedor: «Él no me hizo», \\q y la vasija diga del que la formó: «No tiene entendimiento»?",
+          "B": "¡Cómo lo {{plural_you:ponen|ponéis}} todo al revés! \\q ¿Se ha de considerar al alfarero igual que al barro? \\q ¿Dirá la obra de su hacedor: «Él no me hizo»? \\q ¿Dirá la vasija del que la formó: «No tiene juicio»?",
+          "R": "¡{{plural_you:Ustedes lo tienen|Vosotros lo tenéis}} todo al revés! \\q Dios {{plural_you:los|os}} hizo como un alfarero hace una olla. Pero {{plural_you:ustedes lo tratan|vosotros lo tratáis}} como si {{deity_pronoun:él|Él}} no valiera más que el barro. \\q Una olla no puede decir del que la hizo: «Él no me hizo». \\q No puede decir del alfarero: «No sabe lo que hace»."
+        },
+        "fr": {
+          "L": "Votre perversité ! Le potier sera-t-il considéré comme l’argile, \\q pour que l’ouvrage dise de celui qui l’a fait : « Il ne m’a pas fait », \\q et que le vase dise de son potier : « Il n’a pas d’intelligence » ?",
+          "B": "Comme vous renversez tout ! \\q Le potier compte-t-il autant que l’argile ? \\q L’objet fabriqué dira-t-il de celui qui l’a fait : « Il ne m’a pas fait » ? \\q Le vase dira-t-il de celui qui l’a façonné : « Il n’y comprend rien » ?",
+          "R": "Vous mettez tout à l’envers ! \\q Dieu vous a faits comme un potier fait un pot. Mais vous {{deity_pronoun:le|Le}} traitez comme s’{{deity_pronoun:il|Il}} ne valait pas plus que l’argile. \\q Un pot ne peut pas dire de celui qui l’a fait : « Il ne m’a pas fait. » \\q Il ne peut pas dire du potier : « Il ne sait pas ce qu’il fait. »"
+        },
+        "sw": {
+          "L": "Upotovu wenu! Je, mfinyanzi atahesabiwa kama udongo, \\q hata kitu kilichofanywa kiseme juu ya aliyekifanya, \"Hakunifanya,\" \\q na kitu kilichofinyangwa kiseme juu ya aliyekifinyanga, \"Hana ufahamu\"?",
+          "B": "Jinsi mnavyopindua kila kitu! \\q Je, mfinyanzi ahesabiwe sawa na udongo? \\q Je, kitu kilichofanywa kiseme juu ya aliyekifanya, \"Hakunifanya\"? \\q Je, chombo kiseme juu ya yule aliyekifinyanga, \"Hana akili\"?",
+          "R": "Mnapindua mambo yote! \\q Mungu aliwafanya kama mfinyanzi anavyofinyanga chungu. Lakini mnamtendea kana kwamba {{deity_pronoun:yeye|Yeye}} si bora kuliko udongo. \\q Chungu hakiwezi kusema juu ya aliyekifanya, \"Hakunifanya.\" \\q Hakiwezi kusema juu ya mfinyanzi, \"Hajui anachofanya.\""
+        },
+        "vi": {
+          "L": "Sự đảo ngược của các người! Thợ gốm há được kể như đất sét sao, \\q để vật được làm ra lại nói về người làm ra nó: \"Người ấy không làm ra tôi,\" \\q và vật được nắn nên nói về thợ gốm nắn nó: \"Người ấy chẳng hiểu biết gì\"?",
+          "B": "Các người đảo lộn mọi sự! \\q Thợ gốm há được coi như đất sét sao? \\q Vật được làm ra há nói về người làm ra nó: \"Người ấy không làm ra tôi\" sao? \\q Cái bình há nói về người nắn ra nó: \"Người ấy chẳng biết gì\" sao?",
+          "R": "Các người làm đảo lộn mọi điều! \\q Đức Chúa Trời tạo nên các người như thợ gốm làm ra cái bình. Nhưng các người đối xử với {{deity_pronoun:ngài|Ngài}} như thể {{deity_pronoun:ngài|Ngài}} chẳng hơn gì đất sét. \\q Cái bình không thể nói về người làm ra nó: \"Người ấy không làm ra tôi.\" \\q Nó không thể nói về thợ gốm: \"Người ấy chẳng biết mình đang làm gì.\""
+        },
+        "ko": {
+          "L": "너희의 뒤집힌 생각이여! 토기장이를 진흙처럼 여기겠느냐? \\q 만들어진 것이 그것을 만든 이를 두고 \"그가 나를 만들지 않았다\" 하고 말하겠느냐? \\q 빚어진 것이 그것을 빚은 이를 두고 \"그는 깨달음이 없다\" 하고 말하겠느냐?",
+          "B": "너희는 모든 것을 거꾸로 뒤집는구나! \\q 토기장이를 진흙과 똑같이 여길 수 있느냐? \\q 만들어진 것이 자기를 만든 이를 두고 \"그가 나를 만들지 않았다\"고 말할 수 있느냐? \\q 빚어진 그릇이 자기를 빚은 이를 두고 \"그는 생각이 없다\"고 말할 수 있느냐?",
+          "R": "너희는 모든 것을 거꾸로 생각한다! \\q 하나님께서는 그릇 만드는 사람이 그릇을 만들듯이 너희를 만드셨다. 그런데 너희는 그분을 진흙보다 나을 것이 없는 것처럼 여긴다. \\q 그릇이 자기를 만든 사람을 두고 \"그가 나를 만들지 않았다\"고 말할 수는 없다. \\q 그릇이 그릇 만드는 사람을 두고 \"그는 자기가 무엇을 하는지도 모른다\"고 말할 수는 없다."
         }
       },
       "decisions": [
@@ -1617,6 +2383,49 @@
           "reason": "Readable states who the potter and the clay stand for, as the second meaning decision explains.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230290160031"
+          ],
+          "choice": "\"thợ gốm\"",
+          "alternatives": [
+            "\"người thợ nặn\""
+          ],
+          "reason": "The terms note's word for the potter, as Romans 9:21, which takes up this picture.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230290160042",
+            "o230290160142"
+          ],
+          "choice": "\"토기장이\" (L, B); \"그릇 만드는 사람\" (R)",
+          "alternatives": [
+            "\"도공\""
+          ],
+          "reason": "The terms note's forms for the potter, as Matthew 27:7 and Romans 9:21; held through Isaiah and Jeremiah.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1655,6 +2464,31 @@
           "L": "[Is it] not yet a very little while, \\q and Lebanon will turn into [an] orchard, \\q and the orchard will be regarded as [a] forest?",
           "B": "Is it not only a little while longer before Lebanon becomes orchard land, \\q and the orchard land is counted a forest?",
           "R": "In a very short time, the wild forest of Lebanon will become rich orchard land. \\q And the orchard land will grow as thick as a forest."
+        },
+        "es": {
+          "L": "¿No [falta] solo un poquito \\q para que el Líbano se convierta en vergel, \\q y el vergel sea tenido por bosque?",
+          "B": "¿No falta solo un poco para que el Líbano se convierta en tierra de huertos, \\q y la tierra de huertos sea tenida por bosque?",
+          "R": "En muy poco tiempo, el bosque salvaje del Líbano se convertirá en tierra fértil de huertos. \\q Y la tierra de huertos crecerá tan espesa como un bosque."
+        },
+        "fr": {
+          "L": "N’[est-ce] pas encore très peu de temps, \\q et le Liban se changera en verger, \\q et le verger sera considéré comme une forêt ?",
+          "B": "Encore un peu de temps, n’est-ce pas, et le Liban deviendra une terre de vergers, \\q et la terre de vergers passera pour une forêt.",
+          "R": "Dans très peu de temps, la forêt sauvage du Liban deviendra une riche terre de vergers. \\q Et les vergers deviendront aussi épais qu’une forêt."
+        },
+        "sw": {
+          "L": "Je, [haiko] bado kitambo kidogo sana, \\q na Lebanoni itageuka kuwa shamba la matunda, \\q na shamba la matunda litahesabiwa kuwa msitu?",
+          "B": "Je, si bado muda mfupi tu kabla Lebanoni haijawa ardhi ya mashamba ya matunda, \\q na ardhi ya mashamba ya matunda ihesabiwe kuwa msitu?",
+          "R": "Baada ya muda mfupi sana, msitu wa porini wa Lebanoni utakuwa ardhi yenye rutuba ya mashamba ya matunda. \\q Na ardhi hiyo ya mashamba itaota miti minene kama msitu."
+        },
+        "vi": {
+          "L": "Chẳng phải chỉ còn một chút xíu nữa thôi, \\q Li-ban sẽ biến thành vườn cây ăn trái, \\q và vườn cây ăn trái sẽ được kể như rừng sao?",
+          "B": "Chẳng phải chỉ ít lâu nữa thôi, Li-ban sẽ trở thành đất vườn tươi tốt, \\q và đất vườn tươi tốt sẽ được kể như rừng rậm sao?",
+          "R": "Chỉ ít lâu nữa thôi, rừng hoang Li-ban sẽ trở thành vườn cây trái màu mỡ. \\q Và vườn cây trái ấy sẽ mọc um tùm như rừng."
+        },
+        "ko": {
+          "L": "아주 조금만 더 있으면 \\q 레바논이 과수원으로 바뀌고, \\q 과수원이 숲으로 여겨지지 않겠느냐?",
+          "B": "조금만 더 지나면 레바논이 기름진 과수원으로 바뀌고, \\q 과수원이 숲처럼 여겨지지 않겠느냐?",
+          "R": "머지않아 레바논의 거친 숲이 기름진 과수원이 될 것이다. \\q 과수원은 숲처럼 우거질 것이다."
         }
       },
       "decisions": [
@@ -1704,6 +2538,27 @@
           "reason": "Readable turns the question into the statement it expects.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230290170072"
+          ],
+          "choice": "\"verger\" (L, R), \"terre de vergers\" (B) for karmel, for Isaiah 21-40",
+          "alternatives": [
+            "\"le Carmel\""
+          ],
+          "reason": "As the English (orchard / orchard land / orchard): the common noun for fruitful planted land, not the mountain.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1745,6 +2600,31 @@
           "L": "And in that day the deaf will hear [the] words of [a] scroll, \\q and out of gloom and out of darkness [the] eyes of [the] blind will see.",
           "B": "On that day the deaf will hear the words written in a scroll, \\q and blind eyes will see, out of the gloom and the dark.",
           "R": "At that time, people who are deaf will hear the words written in a scroll. \\q People who are blind will come out of the darkness and see."
+        },
+        "es": {
+          "L": "Y en aquel día los sordos oirán [las] palabras de un rollo, \\q y desde la penumbra y desde la oscuridad verán [los] ojos de [los] ciegos.",
+          "B": "Aquel día los sordos oirán las palabras escritas en un rollo, \\q y los ojos de los ciegos verán, fuera de la penumbra y la oscuridad.",
+          "R": "En ese tiempo, los que son sordos oirán las palabras escritas en un rollo. \\q Los que son ciegos saldrán de la oscuridad y verán."
+        },
+        "fr": {
+          "L": "Et en ce jour-là les sourds entendront les paroles d’un livre, \\q et, hors de l’obscurité et hors des ténèbres, les yeux des aveugles verront.",
+          "B": "Ce jour-là, les sourds entendront les paroles d’un livre, \\q et les yeux des aveugles verront, sortis de l’obscurité et des ténèbres.",
+          "R": "En ce temps-là, les sourds entendront les paroles écrites dans un livre. \\q Les aveugles sortiront de l’obscurité et verront."
+        },
+        "sw": {
+          "L": "Na katika siku ile viziwi watasikia maneno ya gombo, \\q na kutoka katika utusitusi na kutoka gizani macho ya vipofu yataona.",
+          "B": "Siku hiyo viziwi watasikia maneno yaliyoandikwa katika gombo, \\q na macho ya vipofu yataona, kutoka katika utusitusi na giza.",
+          "R": "Wakati huo, watu viziwi watasikia maneno yaliyoandikwa katika gombo. \\q Watu vipofu watatoka gizani na kuona."
+        },
+        "vi": {
+          "L": "Và trong ngày ấy người điếc sẽ nghe những lời của cuộn sách, \\q và từ chốn u ám và từ bóng tối, mắt người mù sẽ thấy.",
+          "B": "Vào ngày ấy, người điếc sẽ nghe những lời chép trong cuộn sách, \\q và mắt người mù sẽ thấy được, ra khỏi u ám và tối tăm.",
+          "R": "Vào lúc ấy, người điếc sẽ nghe được những lời chép trong cuộn sách. \\q Người mù sẽ ra khỏi bóng tối và nhìn thấy."
+        },
+        "ko": {
+          "L": "그날에 귀먹은 자들이 두루마리 책의 말씀을 듣고, \\q 눈먼 자들의 눈이 어둠과 캄캄함 속에서 볼 것이다.",
+          "B": "그날에 귀먹은 사람들이 두루마리에 적힌 말씀을 듣고, \\q 눈먼 사람들의 눈이 어둠과 캄캄함에서 벗어나 볼 것이다.",
+          "R": "그때에 듣지 못하는 사람들이 두루마리에 적힌 말씀을 들을 것이다. \\q 보지 못하는 사람들이 어둠에서 나와 보게 될 것이다."
         }
       },
       "decisions": [
@@ -1812,6 +2692,31 @@
           "L": "And [the] humble will add joy in {{divine_name:the LORD|Yahweh}}, \\q and [the] needy of humankind will rejoice in the Holy One of Israel.",
           "B": "The humble will have more and more joy in {{divine_name:the LORD|Yahweh}}, \\q and the neediest of humankind will be glad in the Holy One of Israel.",
           "R": "Humble people will be filled with more joy because of {{divine_name:the LORD|Yahweh}}. \\q The poorest people will be happy because of the Holy One of Israel."
+        },
+        "es": {
+          "L": "Y [los] humildes aumentarán [su] alegría en {{divine_name:el SEÑOR|Yahvé}}, \\q y [los] necesitados de entre los hombres se gozarán en el Santo de Israel.",
+          "B": "Los humildes tendrán cada vez más alegría en {{divine_name:el SEÑOR|Yahvé}}, \\q y los más necesitados de la humanidad se gozarán en el Santo de Israel.",
+          "R": "Los humildes se llenarán de más alegría gracias {{divine_name:al SEÑOR|a Yahvé}}. \\q Los más pobres serán felices gracias al Santo de Israel."
+        },
+        "fr": {
+          "L": "Et les humbles augmenteront [leur] joie {{divine_name:dans le SEIGNEUR|en Yahvé}}, \\q et les pauvres d’entre les humains se réjouiront dans le Saint d’Israël.",
+          "B": "Les humbles auront de plus en plus de joie {{divine_name:dans le SEIGNEUR|en Yahvé}}, \\q et les plus pauvres des humains seront dans l’allégresse à cause du Saint d’Israël.",
+          "R": "Les gens humbles seront remplis de plus de joie grâce {{divine_name:au SEIGNEUR|à Yahvé}}. \\q Les plus pauvres seront heureux grâce au Saint d’Israël."
+        },
+        "sw": {
+          "L": "Na wanyenyekevu wataongeza furaha katika {{divine_name:BWANA|Yahwe}}, \\q na wahitaji wa wanadamu watashangilia katika Mtakatifu wa Israeli.",
+          "B": "Wanyenyekevu watapata furaha zaidi na zaidi katika {{divine_name:BWANA|Yahwe}}, \\q na walio wahitaji kuliko wote kati ya wanadamu watafurahi katika Mtakatifu wa Israeli.",
+          "R": "Watu wanyenyekevu watajazwa furaha zaidi kwa sababu ya {{divine_name:BWANA|Yahwe}}. \\q Watu maskini kuliko wote watafurahi kwa sababu ya Mtakatifu wa Israeli."
+        },
+        "vi": {
+          "L": "Và người khiêm nhu sẽ thêm niềm vui trong {{divine_name:CHÚA|Gia-vê}}, \\q và người nghèo khó trong loài người sẽ vui mừng trong Đấng Thánh của Y-sơ-ra-ên.",
+          "B": "Người khiêm nhu sẽ càng thêm vui mừng trong {{divine_name:CHÚA|Gia-vê}}, \\q và người nghèo khổ nhất trong loài người sẽ hớn hở trong Đấng Thánh của Y-sơ-ra-ên.",
+          "R": "Những người khiêm nhường sẽ càng vui mừng hơn vì {{divine_name:CHÚA|Gia-vê}}. \\q Những người nghèo nhất sẽ vui mừng vì Đấng Thánh của Y-sơ-ra-ên."
+        },
+        "ko": {
+          "L": "그리고 겸손한 자들이 {{divine_name:주|야훼}} 안에서 기쁨을 더하고, \\q 사람들 가운데 가난한 자들이 이스라엘의 거룩하신 분 안에서 즐거워할 것이다.",
+          "B": "겸손한 사람들이 {{divine_name:주|야훼}} 안에서 더욱더 기뻐하고, \\q 사람들 가운데 가장 가난한 이들이 이스라엘의 거룩하신 분 안에서 즐거워할 것이다.",
+          "R": "겸손한 사람들은 {{divine_name:주|야훼}} 때문에 더욱 기뻐할 것이다. \\q 가장 가난한 사람들이 이스라엘의 거룩하신 분 때문에 행복해할 것이다."
         }
       },
       "decisions": [
@@ -1842,6 +2747,91 @@
           "choice": "the humble, the needy: the poor and the oppressed",
           "alternatives": [],
           "reason": "The words describe people without power, who are cheated in court (verse 21; 11:4; 32:7).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230290190072",
+            "o230290190081"
+          ],
+          "choice": "el Santo de Israel",
+          "alternatives": [],
+          "reason": "The Holy One of Israel is \"el Santo de Israel\" at every level, as 2 Kings 19:22 and Psalm 71:22.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230290190072",
+            "o230290190081"
+          ],
+          "choice": "\"Mtakatifu wa Israeli\" at every level",
+          "alternatives": [
+            "\"Mungu Mtakatifu wa Israeli\""
+          ],
+          "reason": "The title keeps the form of 2 Kings 19:22 and Psalm 71:22 throughout this block, as the terms note settles; verse 23 has \"Mtakatifu wa Yakobo\" in the same way.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230290190091"
+          ],
+          "choice": "\"le Saint d'Israël\" at every level, for Isaiah 21-40",
+          "alternatives": [
+            "\"le Dieu saint d'Israël\""
+          ],
+          "reason": "As the terms note and 2 Kings 19:22; Psalm 78:41.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230290190072",
+            "o230290190081"
+          ],
+          "choice": "\"이스라엘의 거룩하신 분\" at every level",
+          "alternatives": [
+            "\"거룩한 자\""
+          ],
+          "reason": "The terms note's form, as Psalm 71:22, with the honorific when people speak of God; when God names himself it is \"이스라엘의 거룩한 이\". Held for Isaiah 21-40.",
           "uncertain": false,
           "footnote": false
         }
@@ -1877,6 +2867,31 @@
           "L": "For [the] ruthless will come to an end, and [the] scoffer will be finished, \\q and all who watch for wickedness will be cut off,",
           "B": "For the ruthless will be gone and the scoffer finished, \\q and all who are on the watch for a chance to do wrong will be cut off,",
           "R": "This will happen because the cruel will be gone. People who sneer at others will disappear. \\q All who look for chances to do evil will be destroyed."
+        },
+        "es": {
+          "L": "Porque [el] cruel llegará a su fin, y [el] burlador será acabado, \\q y serán cortados todos los que velan para la iniquidad,",
+          "B": "Porque el cruel desaparecerá y el burlador quedará acabado, \\q y serán cortados todos los que están al acecho para hacer el mal,",
+          "R": "Esto sucederá porque los crueles desaparecerán. La gente que se burla de los demás desaparecerá. \\q Todos los que buscan ocasiones para hacer el mal serán destruidos."
+        },
+        "fr": {
+          "L": "Car l’impitoyable prendra fin, et le moqueur sera achevé, \\q et tous ceux qui guettent l’iniquité seront retranchés,",
+          "B": "Car l’impitoyable aura disparu et le moqueur sera fini, \\q et tous ceux qui guettent l’occasion de faire le mal seront retranchés,",
+          "R": "Cela arrivera parce que les gens cruels auront disparu. Ceux qui se moquent des autres disparaîtront. \\q Tous ceux qui cherchent des occasions de faire le mal seront détruits."
+        },
+        "sw": {
+          "L": "Kwa maana mkatili atakoma, na mwenye dharau atakwisha, \\q na wote wanaovizia uovu watakatiliwa mbali,",
+          "B": "Kwa maana mkatili atatoweka na mwenye dharau atakwisha, \\q na wote wanaovizia nafasi ya kutenda mabaya watakatiliwa mbali,",
+          "R": "Jambo hili litatokea kwa sababu watu wakatili wataondoka. Watu wanaowadharau wengine watatoweka. \\q Wote wanaotafuta nafasi za kutenda maovu wataangamizwa."
+        },
+        "vi": {
+          "L": "Vì kẻ hung bạo sẽ chấm dứt, và kẻ nhạo báng sẽ tiêu tan, \\q và mọi kẻ rình rập làm điều gian ác sẽ bị diệt trừ,",
+          "B": "Vì kẻ tàn bạo sẽ không còn, kẻ chế nhạo sẽ tiêu vong, \\q và mọi kẻ rình chờ dịp làm điều ác sẽ bị diệt trừ,",
+          "R": "Điều này sẽ xảy ra vì những kẻ độc ác sẽ không còn nữa. Những kẻ hay chế giễu người khác sẽ biến mất. \\q Mọi kẻ tìm dịp làm điều ác sẽ bị tiêu diệt."
+        },
+        "ko": {
+          "L": "포악한 자가 끝나고 비웃는 자가 없어지며, \\q 악을 노리는 모든 자들이 끊어질 것이기 때문이다.",
+          "B": "포악한 자가 사라지고 비웃는 자가 끝장나며, \\q 악을 저지를 기회만 엿보는 자들이 모두 끊어질 것이다.",
+          "R": "이런 일이 일어날 것은 잔인한 사람들이 사라질 것이기 때문이다. 남을 비웃는 사람들도 없어질 것이다. \\q 나쁜 짓을 할 기회만 엿보는 사람들이 모두 망할 것이다."
         }
       },
       "decisions": [
@@ -1963,6 +2978,31 @@
           "L": "those who make a person a sinner by a word, \\q and for the one who reproves in the gate they lay a snare, \\q and they turn aside [the] righteous with emptiness.",
           "B": "those who make a person guilty with a single word, \\q who set snares for the one who speaks up for justice in the gate, \\q and with baseless claims turn the innocent away.",
           "R": "They make others look guilty by lying about them. \\q They try to trap anyone who speaks up for what is right in court. \\q They use false arguments so that innocent people do not get justice."
+        },
+        "es": {
+          "L": "los que hacen pecador al hombre por una palabra, \\q y al que reprende en la puerta le tienden lazo, \\q y apartan al justo con vaciedad.",
+          "B": "los que con una sola palabra hacen culpable a una persona, \\q los que ponen trampas al que defiende la justicia en la puerta, \\q y con alegatos sin fundamento echan a un lado al inocente.",
+          "R": "Hacen que otros parezcan culpables mintiendo sobre ellos. \\q Tratan de atrapar a cualquiera que defienda lo que es justo en el tribunal. \\q Usan argumentos falsos para que los inocentes no reciban justicia."
+        },
+        "fr": {
+          "L": "ceux qui font pécher un homme par une parole, \\q et qui tendent un piège à celui qui reprend à la porte, \\q et qui écartent le juste par le néant.",
+          "B": "ceux qui rendent un homme coupable d’un seul mot, \\q qui tendent des pièges à celui qui défend le droit à la porte de la ville, \\q et qui, par des accusations sans fondement, écartent l’innocent.",
+          "R": "Ils font passer les autres pour coupables en mentant sur eux. \\q Ils essaient de piéger quiconque défend ce qui est juste au tribunal. \\q Ils se servent de faux arguments pour que les innocents n’obtiennent pas justice."
+        },
+        "sw": {
+          "L": "wale wanaomfanya mtu kuwa mwenye dhambi kwa neno, \\q na kwa yule anayekemea langoni wanamtegea mtego, \\q na kumpotosha mwenye haki kwa ubatili.",
+          "B": "wale wanaomfanya mtu kuwa na hatia kwa neno moja tu, \\q wanaomtegea mitego yule anayesimama kutetea haki langoni, \\q na kwa madai yasiyo na msingi kuwanyima wasio na hatia haki yao.",
+          "R": "Wanawafanya wengine waonekane kuwa na hatia kwa kuwasemea uongo. \\q Wanajaribu kumnasa yeyote anayesimama mahakamani kutetea yaliyo sawa. \\q Wanatumia hoja za uongo ili watu wasio na hatia wasipate haki."
+        },
+        "vi": {
+          "L": "là những kẻ khiến một người thành có tội bởi một lời nói, \\q và đặt bẫy cho người khiển trách tại cổng thành, \\q và dùng điều hư không mà gạt bỏ người công chính.",
+          "B": "là những kẻ chỉ bằng một lời nói mà buộc tội người khác, \\q giăng bẫy người lên tiếng bênh vực công lý tại cổng thành, \\q và dùng những lý lẽ vô căn cứ mà gạt người vô tội qua một bên.",
+          "R": "Chúng nói dối để làm cho người khác bị xem là có tội. \\q Chúng tìm cách gài bẫy bất cứ ai lên tiếng bênh vực lẽ phải tại tòa án. \\q Chúng dùng những lý lẽ giả dối để người vô tội không được xét xử công bằng."
+        },
+        "ko": {
+          "L": "그들은 말 한마디로 사람을 죄인으로 만들고, \\q 성문에서 책망하는 자를 [잡으려고] 덫을 놓으며, \\q 헛된 것으로 의인을 밀어낸다.",
+          "B": "그들은 말 한마디로 사람에게 죄를 뒤집어씌우고, \\q 성문에서 바른말을 하는 사람을 잡으려고 덫을 놓으며, \\q 근거 없는 주장으로 죄 없는 사람을 내쫓는다.",
+          "R": "그들은 거짓말로 남을 죄인으로 몰아세운다. \\q 재판정에서 옳은 것을 말하는 사람을 함정에 빠뜨리려 한다. \\q 거짓 주장으로 죄 없는 사람들이 공정한 재판을 받지 못하게 한다."
         }
       },
       "decisions": [
@@ -2087,6 +3127,31 @@
           "L": "Therefore thus says {{divine_name:the LORD|Yahweh}} to the house of Jacob, who redeemed Abraham: \\q Jacob will not now be ashamed, \\q and his face will not now grow pale.",
           "B": "Therefore {{divine_name:the LORD|Yahweh}}, who redeemed Abraham, says this about the house of Jacob: \\q From now on Jacob will not be disgraced; \\q his face will not turn pale anymore.",
           "R": "So {{divine_name:the LORD|Yahweh}}, who rescued Abraham, has a message for the people of Jacob. This is what {{deity_pronoun:he|He}} says: \\q Jacob's people will not be ashamed anymore. \\q Their faces will not turn pale with fear anymore."
+        },
+        "es": {
+          "L": "Por tanto, así dice {{divine_name:el SEÑOR|Yahvé}} a la casa de Jacob, el que redimió a Abraham: \\q No será avergonzado ahora Jacob, \\q ni su rostro palidecerá ahora.",
+          "B": "Por eso {{divine_name:el SEÑOR|Yahvé}}, que redimió a Abraham, dice esto acerca de la casa de Jacob: \\q De ahora en adelante Jacob no será avergonzado; \\q su rostro ya no palidecerá.",
+          "R": "Por eso {{divine_name:el SEÑOR|Yahvé}}, que rescató a Abraham, tiene un mensaje para el pueblo de Jacob. Esto es lo que {{deity_pronoun:él|Él}} dice: \\q El pueblo de Jacob ya no será avergonzado. \\q Su rostro ya no se pondrá pálido de miedo."
+        },
+        "fr": {
+          "L": "C’est pourquoi ainsi parle {{divine_name:le SEIGNEUR|Yahvé}} à la maison de Jacob, lui qui a racheté Abraham : \\q Jacob ne sera plus maintenant honteux, \\q et son visage ne pâlira plus maintenant.",
+          "B": "C’est pourquoi {{divine_name:le SEIGNEUR|Yahvé}}, qui a racheté Abraham, dit ceci au sujet de la maison de Jacob : \\q Désormais Jacob ne sera plus couvert de honte ; \\q son visage ne pâlira plus.",
+          "R": "Alors {{divine_name:le SEIGNEUR|Yahvé}}, qui a délivré Abraham, a un message pour le peuple de Jacob. Voici ce qu’{{deity_pronoun:il|Il}} dit : \\q Le peuple de Jacob n’aura plus honte. \\q Son visage ne pâlira plus de peur."
+        },
+        "sw": {
+          "L": "Kwa hiyo {{divine_name:BWANA|Yahwe}} asema hivi kwa nyumba ya Yakobo, yeye aliyemkomboa Abrahamu: \\q Yakobo hataaibika sasa, \\q wala uso wake hautageuka rangi sasa.",
+          "B": "Kwa hiyo hivi ndivyo {{divine_name:BWANA|Yahwe}}, aliyemkomboa Abrahamu, asemavyo kuhusu nyumba ya Yakobo: \\q Tangu sasa Yakobo hataaibishwa; \\q uso wake hautageuka rangi tena.",
+          "R": "Kwa hiyo {{divine_name:BWANA|Yahwe}}, aliyemwokoa Abrahamu, ana ujumbe kwa watu wa Yakobo. Hili ndilo analosema: \\q Watu wa Yakobo hawataona aibu tena. \\q Nyuso zao hazitageuka rangi kwa hofu tena."
+        },
+        "vi": {
+          "L": "Vì vậy {{divine_name:CHÚA|Gia-vê}}, Đấng đã cứu chuộc Áp-ra-ham, phán thế này về nhà Gia-cốp: \\q Bây giờ Gia-cốp sẽ không còn hổ thẹn, \\q và bây giờ mặt nó sẽ không còn tái mét.",
+          "B": "Vì vậy {{divine_name:CHÚA|Gia-vê}}, Đấng đã cứu chuộc Áp-ra-ham, phán như vầy về nhà Gia-cốp: \\q Từ nay Gia-cốp sẽ không còn bị hổ thẹn; \\q mặt nó sẽ không còn tái xanh nữa.",
+          "R": "Vì vậy {{divine_name:CHÚA|Gia-vê}}, Đấng đã giải cứu Áp-ra-ham, có sứ điệp cho dân của Gia-cốp. Đây là lời {{deity_pronoun:ngài|Ngài}} phán: \\q Dân của Gia-cốp sẽ không còn xấu hổ nữa. \\q Mặt họ sẽ không còn tái mét vì sợ hãi nữa."
+        },
+        "ko": {
+          "L": "그러므로 아브라함을 구속하신 {{divine_name:주|야훼}}께서 야곱의 집에 대하여 이와 같이 말씀하신다. \\q 야곱이 이제는 부끄러움을 당하지 않고, \\q 그의 얼굴이 이제는 창백해지지 않을 것이다.",
+          "B": "그러므로 아브라함을 구속하신 {{divine_name:주|야훼}}께서 야곱의 집을 두고 이렇게 말씀하신다. \\q 이제부터 야곱은 부끄러움을 당하지 않고, \\q 그의 얼굴이 다시는 창백해지지 않을 것이다.",
+          "R": "그래서 아브라함을 구해 주신 {{divine_name:주|야훼}}께서 야곱 백성에게 하실 말씀이 있다. 그분께서 하시는 말씀이다. \\q 야곱 백성은 다시는 부끄러움을 당하지 않을 것이다. \\q 그들의 얼굴이 다시는 두려움으로 창백해지지 않을 것이다."
         }
       },
       "decisions": [
@@ -2171,6 +3236,89 @@
           "reason": "Balanced and Readable place the description next to the LORD, whom it describes.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230290220091"
+          ],
+          "choice": "redimió (L, B); rescató (R)",
+          "alternatives": [
+            "libró"
+          ],
+          "reason": "The verb of the goʾel is \"redimir\" at L and B and \"rescatar\" at R, as the terms note.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o230290220081",
+            "o230290220111"
+          ],
+          "choice": "the description \"Đấng đã cứu chuộc Áp-ra-ham\" placed next to the LORD",
+          "alternatives": [
+            "after \"nhà Gia-cốp\""
+          ],
+          "reason": "A relative clause after \"nhà Gia-cốp\" would seem to describe Jacob's house; Vietnamese places it next to the LORD even at Literal, as the English Balanced does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230290220111"
+          ],
+          "choice": "\"cứu chuộc\" (L, B); \"giải cứu\" (R)",
+          "alternatives": [
+            "\"chuộc lại\""
+          ],
+          "reason": "The terms note's forms for the verb go'el used of God, here pada, the same picture of setting free.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230290220091"
+          ],
+          "choice": "\"구속하다\" (L, B); \"구해 주다\" (R)",
+          "alternatives": [
+            "\"대속하다\""
+          ],
+          "reason": "The terms note's forms for the verb *padah*/*gaʾal* of God's rescue; Readable says it plainly.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2218,6 +3366,31 @@
           "L": "For when he sees his children, the work of {{deity_pronoun:my|My}} hands, in his midst, they will hold {{deity_pronoun:my|My}} name holy, \\q and they will hold the Holy One of Jacob holy, \\q and the God of Israel they will regard with awe.",
           "B": "For when Jacob sees his children around him, children {{deity_pronoun:my|My}} hands have made, they will keep {{deity_pronoun:my|My}} name holy. \\q They will honor the Holy One of Jacob as holy \\q and tremble with awe before the God of Israel.",
           "R": "Jacob's people will see their children around them, the children I have made. Then they will honor {{deity_pronoun:my|My}} name as holy. \\q They will honor the Holy One of Jacob as holy. \\q They will be filled with awe before the God of Israel."
+        },
+        "es": {
+          "L": "Porque cuando vea a sus hijos, la obra de {{deity_pronoun:mis|Mis}} manos, en medio de él, santificarán {{deity_pronoun:mi|Mi}} nombre, \\q y santificarán al Santo de Jacob, \\q y al Dios de Israel temerán con reverencia.",
+          "B": "Porque cuando Jacob vea a sus hijos a su alrededor, hijos que {{deity_pronoun:mis|Mis}} manos han hecho, santificarán {{deity_pronoun:mi|Mi}} nombre. \\q Honrarán como santo al Santo de Jacob \\q y temblarán con reverencia ante el Dios de Israel.",
+          "R": "El pueblo de Jacob verá a sus hijos a su alrededor, los hijos que yo he hecho. Entonces honrarán {{deity_pronoun:mi|Mi}} nombre como santo. \\q Honrarán como santo al Santo de Jacob. \\q Estarán llenos de reverencia ante el Dios de Israel."
+        },
+        "fr": {
+          "L": "Car quand il verra ses enfants, l’œuvre de {{deity_pronoun:mes|Mes}} mains, au milieu de lui, ils sanctifieront {{deity_pronoun:mon|Mon}} nom, \\q et ils sanctifieront le Saint de Jacob, \\q et le Dieu d’Israël, ils le révéreront.",
+          "B": "Car lorsque Jacob verra autour de lui ses enfants, des enfants que {{deity_pronoun:mes|Mes}} mains ont faits, ils tiendront {{deity_pronoun:mon|Mon}} nom pour saint. \\q Ils reconnaîtront la sainteté du Saint de Jacob \\q et trembleront de respect devant le Dieu d’Israël.",
+          "R": "Le peuple de Jacob verra ses enfants autour de lui, les enfants que j’ai faits. Alors ils honoreront {{deity_pronoun:mon|Mon}} nom comme saint. \\q Ils honoreront le Saint de Jacob comme saint. \\q Ils seront remplis de respect devant le Dieu d’Israël."
+        },
+        "sw": {
+          "L": "Kwa maana atakapowaona watoto wake, kazi ya mikono {{deity_pronoun:yangu|Yangu}}, katikati yake, watalitakasa jina {{deity_pronoun:langu|Langu}}, \\q nao watamtakasa Mtakatifu wa Yakobo, \\q na Mungu wa Israeli watamcha.",
+          "B": "Kwa maana Yakobo atakapowaona watoto wake karibu naye, watoto walioumbwa na mikono {{deity_pronoun:yangu|Yangu}}, watalitakasa jina {{deity_pronoun:langu|Langu}}. \\q Watamheshimu Mtakatifu wa Yakobo kuwa mtakatifu \\q na kutetemeka kwa hofu takatifu mbele ya Mungu wa Israeli.",
+          "R": "Watu wa Yakobo wataona watoto wao karibu nao, watoto niliowaumba. Ndipo watakapoliheshimu jina {{deity_pronoun:langu|Langu}} kuwa takatifu. \\q Watamheshimu Mtakatifu wa Yakobo kuwa mtakatifu. \\q Watajawa na hofu takatifu mbele ya Mungu wa Israeli."
+        },
+        "vi": {
+          "L": "Vì khi nó thấy con cái nó, là công việc của tay {{deity_pronoun:ta|Ta}}, ở giữa nó, họ sẽ tôn danh {{deity_pronoun:ta|Ta}} là thánh, \\q và họ sẽ tôn Đấng Thánh của Gia-cốp là thánh, \\q và họ sẽ kính sợ Đức Chúa Trời của Y-sơ-ra-ên.",
+          "B": "Vì khi Gia-cốp thấy con cháu mình chung quanh, là những đứa con do tay {{deity_pronoun:ta|Ta}} làm nên, họ sẽ tôn thánh danh {{deity_pronoun:ta|Ta}}. \\q Họ sẽ tôn Đấng Thánh của Gia-cốp là thánh \\q và run sợ kính sợ trước Đức Chúa Trời của Y-sơ-ra-ên.",
+          "R": "Dân của Gia-cốp sẽ thấy con cháu mình ở chung quanh, là những đứa con Ta đã làm nên. Rồi họ sẽ tôn kính danh {{deity_pronoun:ta|Ta}} là thánh. \\q Họ sẽ tôn kính Đấng Thánh của Gia-cốp là thánh. \\q Họ sẽ đầy lòng kính sợ trước Đức Chúa Trời của Y-sơ-ra-ên."
+        },
+        "ko": {
+          "L": "그가 자기 가운데서 그의 자녀들, 곧 내 손으로 만든 것을 볼 때에, 그들이 내 이름을 거룩하게 여기고, \\q 야곱의 거룩한 이를 거룩하게 여기며, \\q 이스라엘의 하나님을 두려워할 것이기 때문이다.",
+          "B": "야곱이 자기 둘레에서 자기 자녀들, 곧 내 손으로 지은 자녀들을 볼 때에, 그들이 내 이름을 거룩하게 지킬 것이다. \\q 그들이 야곱의 거룩한 이를 거룩하게 높이고, \\q 이스라엘의 하나님 앞에서 두려워 떨 것이다.",
+          "R": "야곱 백성은 자기 둘레에 있는 자녀들, 곧 내가 만든 자녀들을 볼 것이다. 그러면 그들은 내 이름을 거룩하게 높일 것이다. \\q 그들은 야곱의 거룩한 이를 거룩하게 높일 것이다. \\q 이스라엘의 하나님 앞에서 두려워하며 경외할 것이다."
         }
       },
       "decisions": [
@@ -2301,6 +3474,31 @@
           "L": "And those who go astray in spirit will know understanding, \\q and those who grumble will learn teaching.",
           "B": "People whose spirits have strayed will gain insight, \\q and the grumblers will take teaching to heart.",
           "R": "People who were confused will understand. \\q People who complained will be willing to learn."
+        },
+        "es": {
+          "L": "Y los que se extravían de espíritu conocerán el entendimiento, \\q y los que murmuran aprenderán la enseñanza.",
+          "B": "Los de espíritu extraviado alcanzarán inteligencia, \\q y los murmuradores aceptarán la enseñanza.",
+          "R": "Los que estaban confundidos entenderán. \\q Los que se quejaban estarán dispuestos a aprender."
+        },
+        "fr": {
+          "L": "Et ceux qui s’égarent en esprit connaîtront l’intelligence, \\q et ceux qui murmurent apprendront l’enseignement.",
+          "B": "Ceux dont l’esprit s’est égaré acquerront l’intelligence, \\q et ceux qui murmurent accepteront d’être instruits.",
+          "R": "Ceux qui étaient perdus comprendront. \\q Ceux qui se plaignaient voudront bien apprendre."
+        },
+        "sw": {
+          "L": "Na wale wanaopotea rohoni watajua ufahamu, \\q na wale wanaonung'unika watajifunza mafundisho.",
+          "B": "Watu ambao roho zao zimepotea watapata ufahamu, \\q na wanung'unikaji watapokea mafundisho mioyoni mwao.",
+          "R": "Watu waliokuwa wamechanganyikiwa wataelewa. \\q Watu waliokuwa wakilalamika watakuwa tayari kujifunza."
+        },
+        "vi": {
+          "L": "Và những kẻ lầm lạc trong tâm linh sẽ biết sự hiểu biết, \\q và những kẻ lằm bằm sẽ học sự dạy dỗ.",
+          "B": "Những người có tâm trí lầm lạc sẽ được thông hiểu, \\q và những kẻ hay cằn nhằn sẽ tiếp nhận sự dạy dỗ.",
+          "R": "Những người trước kia lầm lạc sẽ hiểu biết. \\q Những người hay than phiền sẽ sẵn lòng học hỏi."
+        },
+        "ko": {
+          "L": "그리고 마음이 그릇된 자들이 깨달음을 알고, \\q 불평하는 자들이 가르침을 배울 것이다.",
+          "B": "마음이 빗나갔던 사람들이 깨달음을 얻고, \\q 불평하던 사람들이 가르침을 받아들일 것이다.",
+          "R": "혼란에 빠졌던 사람들이 깨닫게 될 것이다. \\q 불평하던 사람들이 기꺼이 배우려 할 것이다."
         }
       },
       "decisions": [

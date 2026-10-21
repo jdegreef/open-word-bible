@@ -25,6 +25,31 @@
           "L": "Comfort, comfort my people, \\q says your God.",
           "B": "Bring comfort, bring comfort to my people, \\q says your God.",
           "R": "Your God says this: \\q Comfort my people. Yes, comfort them."
+        },
+        "es": {
+          "L": "{{plural_you:Consuelen, consuelen|Consolad, consolad}} a mi pueblo, \\q dice {{plural_you:su Dios|vuestro Dios}}.",
+          "B": "{{plural_you:Den consuelo, den|Dad consuelo, dad}} consuelo a mi pueblo, \\q dice {{plural_you:su Dios|vuestro Dios}}.",
+          "R": "{{plural_you:Su Dios|Vuestro Dios}} dice esto: \\q {{plural_you:Consuelen|Consolad}} a mi pueblo. Sí, {{plural_you:consuélenlo|consoladlo}}."
+        },
+        "fr": {
+          "L": "Consolez, consolez {{deity_pronoun:mon|Mon}} peuple, \\q dit votre Dieu.",
+          "B": "Réconfortez, réconfortez {{deity_pronoun:mon|Mon}} peuple, \\q dit votre Dieu.",
+          "R": "Votre Dieu dit ceci : \\q Consolez {{deity_pronoun:mon|Mon}} peuple. Oui, réconfortez-le."
+        },
+        "sw": {
+          "L": "Wafarijini, wafarijini watu wangu, \\q anasema Mungu wenu.",
+          "B": "Wapeni faraja, wapeni faraja watu wangu, \\q anasema Mungu wenu.",
+          "R": "Mungu wenu anasema hivi: \\q Wafarijini watu wangu. Naam, wafarijini."
+        },
+        "vi": {
+          "L": "Hãy an ủi, hãy an ủi dân {{deity_pronoun:ta|Ta}}, \\q Đức Chúa Trời của các ngươi phán.",
+          "B": "Hãy đem niềm an ủi, hãy đem niềm an ủi đến cho dân {{deity_pronoun:ta|Ta}}, \\q Đức Chúa Trời của các ngươi phán.",
+          "R": "Đức Chúa Trời của các ngươi phán thế này: \\q Hãy an ủi dân {{deity_pronoun:ta|Ta}}. Phải, hãy an ủi họ."
+        },
+        "ko": {
+          "L": "위로하여라, 위로하여라, 내 백성을. \\q 너희 하나님이 말한다.",
+          "B": "너희는 위로하여라, 내 백성을 위로하여라. \\q 너희 하나님이 말한다.",
+          "R": "너희 하나님이 이렇게 말한다. \\q 내 백성을 위로하여라. 그래, 그들을 위로하여라."
         }
       },
       "decisions": [
@@ -96,6 +121,117 @@
           "reason": "Balanced keeps the doubled command with a fuller verb phrase; Literal keeps the bare repetition.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "grammar",
+          "tokens": [
+            "o230400010011",
+            "o230400010021",
+            "o230400010052"
+          ],
+          "choice": "Consuelen, consuelen ... su Dios (plural_you)",
+          "alternatives": [
+            "Consuela"
+          ],
+          "reason": "The commands and \"your God\" are plural in the Hebrew, spoken to an unnamed group, so they take plural_you; \"su Dios\" is spanned whole so that \"su\" is not misread as \"his\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400010011",
+            "o230400010021",
+            "o230400010041"
+          ],
+          "choice": "\"Wafarijini, wafarijini\" (L); \"Wapeni faraja\" (B); \"anasema Mungu wenu\"",
+          "alternatives": [
+            "\"Farijini, farijini ... asema\""
+          ],
+          "reason": "The doubled command is plural, as in the Hebrew, and takes the object marker \"wa-\" for \"my people\"; the wording was drafted from the Hebrew and kept apart from the familiar Swahili form of this verse, as the terms note asks for Isaiah 40.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400010011",
+            "o230400010021"
+          ],
+          "choice": "\"Consolez\" (L), \"Réconfortez\" (B) for the doubled command, plural \"vous\"",
+          "alternatives": [
+            "\"Console\" in the singular"
+          ],
+          "reason": "The command is plural in the Hebrew, addressed to unnamed messengers (m2); Balanced uses a fuller verb, as the English \"Bring comfort\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400010011",
+            "o230400010021"
+          ],
+          "choice": "\"an ủi\", and \"các ngươi\" for the plural hearers",
+          "alternatives": [
+            "\"yên ủi\""
+          ],
+          "reason": "The command is plural, given to hearers the text does not name; God speaks to them as a group, \"các ngươi\". \"An ủi\" is the plain modern verb, chosen over the older \"yên ủi\" to keep the line in present-day Vietnamese.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o230400010051",
+            "o230400010052"
+          ],
+          "choice": "\"너희 하나님이 말한다\", without the honorific",
+          "alternatives": [
+            "\"너희 하나님께서 말씀하신다\""
+          ],
+          "reason": "God speaks of himself, as the terms note sets (\"주가 말한다\"); the command is plural, to more than one hearer (meaning decision m2), so \"너희\" is kept.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -144,6 +280,31 @@
           "L": "Speak to [the] heart of Jerusalem, and call out to her \\q that her service is completed, \\q that her iniquity is paid off, \\q that she has received from the hand of {{divine_name:the LORD|Yahweh}} double for all her sins.",
           "B": "Speak to the heart of Jerusalem and call out to her \\q that her time of forced labor is finished, \\q that the penalty for her guilt has been paid, \\q that she has received from {{divine_name:the LORD|Yahweh}}'s hand double for all her sins.",
           "R": "Speak kindly to the people of Jerusalem. \\q Call out to them that their time of suffering is over. \\q The price for their sin has been paid. \\q They have received from {{divine_name:the LORD|Yahweh}} double punishment for all their sins."
+        },
+        "es": {
+          "L": "{{plural_you:Hablen|Hablad}} al corazón de Jerusalén, y {{plural_you:proclámenle|proclamadle}} \\q que su servicio se ha cumplido, \\q que su iniquidad está pagada, \\q que ha recibido de la mano {{divine_name:del SEÑOR|de Yahvé}} el doble por todos sus pecados.",
+          "B": "{{plural_you:Hablen|Hablad}} al corazón de Jerusalén y {{plural_you:anúncienle|anunciadle}} \\q que su tiempo de trabajos forzados ha terminado, \\q que la pena por su culpa ya está pagada, \\q que ha recibido de la mano {{divine_name:del SEÑOR|de Yahvé}} el doble por todos sus pecados.",
+          "R": "{{plural_you:Hablen|Hablad}} con cariño a la gente de Jerusalén. \\q {{plural_you:Anúncienles|Anunciadles}} que su tiempo de sufrimiento ha terminado. \\q El precio de su pecado ya está pagado. \\q Han recibido {{divine_name:del SEÑOR|de Yahvé}} doble castigo por todos sus pecados."
+        },
+        "fr": {
+          "L": "Parlez au cœur de Jérusalem et criez-lui \\q que son service est accompli, \\q que son iniquité est payée, \\q qu’elle a reçu de la main {{divine_name:du SEIGNEUR|de Yahvé}} le double pour tous ses péchés.",
+          "B": "Parlez au cœur de Jérusalem et annoncez-lui à grands cris \\q que son temps de corvée est terminé, \\q que la peine de sa faute est acquittée, \\q qu’elle a reçu de la main {{divine_name:du SEIGNEUR|de Yahvé}} le double pour tous ses péchés.",
+          "R": "Parlez avec douceur aux habitants de Jérusalem. \\q Criez-leur que leur temps de souffrance est fini. \\q Le prix de leur péché a été payé. \\q Ils ont reçu {{divine_name:du SEIGNEUR|de Yahvé}} une double punition pour tous leurs péchés."
+        },
+        "sw": {
+          "L": "Semeni na moyo wa Yerusalemu, na kumwita \\q kwamba utumishi wake umekamilika, \\q kwamba uovu wake umelipiwa, \\q kwamba amepokea kutoka mkononi mwa {{divine_name:BWANA|Yahwe}} mara mbili kwa ajili ya dhambi zake zote.",
+          "B": "Semeni na Yerusalemu kwa maneno yanayoutuliza moyo wake, mkamtangazie \\q kwamba muda wake wa kazi ya kulazimishwa umekwisha, \\q kwamba adhabu ya hatia yake imelipwa, \\q kwamba amepokea kutoka mkononi mwa {{divine_name:BWANA|Yahwe}} mara mbili kwa ajili ya dhambi zake zote.",
+          "R": "Semeni kwa upole na watu wa Yerusalemu. \\q Watangazieni kwamba wakati wao wa mateso umekwisha. \\q Gharama ya dhambi zao imelipwa. \\q Wamepokea kutoka kwa {{divine_name:BWANA|Yahwe}} adhabu mara mbili kwa ajili ya dhambi zao zote."
+        },
+        "vi": {
+          "L": "Hãy nói vào lòng Giê-ru-sa-lem, và kêu gọi nó \\q rằng thời kỳ khổ dịch của nó đã mãn, \\q rằng tội ác của nó đã được trả xong, \\q rằng nó đã nhận từ tay {{divine_name:CHÚA|Gia-vê}} gấp đôi vì mọi tội lỗi của nó.",
+          "B": "Hãy nói lời êm dịu với Giê-ru-sa-lem và loan báo cho nó \\q rằng thời lao dịch khổ sai của nó đã chấm dứt, \\q rằng hình phạt cho tội lỗi nó đã được trả xong, \\q rằng nó đã nhận từ tay {{divine_name:CHÚA|Gia-vê}} gấp đôi vì mọi tội lỗi của mình.",
+          "R": "Hãy nói những lời dịu dàng với dân Giê-ru-sa-lem. \\q Hãy báo cho họ biết thời kỳ đau khổ của họ đã qua. \\q Giá phải trả cho tội lỗi của họ đã được trả xong. \\q Họ đã nhận từ {{divine_name:CHÚA|Gia-vê}} hình phạt gấp đôi vì mọi tội lỗi của mình."
+        },
+        "ko": {
+          "L": "예루살렘의 마음에 말하고, 그에게 외쳐라. \\q 그의 복역 기간이 끝났고, \\q 그의 죄악의 값이 치러졌으며, \\q 그가 {{divine_name:주|야훼}}의 손에서 그의 모든 죄에 대하여 갑절을 받았다고 [외쳐라].",
+          "B": "예루살렘에게 다정하게 말하고 그에게 외쳐라. \\q 그의 고된 복역이 끝났고, \\q 그의 죄에 대한 벌을 다 치렀으며, \\q 그가 {{divine_name:주|야훼}}의 손에서 자기의 모든 죄에 대하여 갑절의 벌을 받았다고 외쳐라.",
+          "R": "예루살렘 사람들에게 다정하게 말하여라. \\q 그들의 고난의 시간이 끝났다고 그들에게 외쳐라. \\q 그들의 죗값이 다 치러졌다. \\q 그들은 자기들의 모든 죄에 대하여 {{divine_name:주|야훼}}께 갑절의 벌을 받았다."
         }
       },
       "decisions": [
@@ -214,6 +375,26 @@
           "reason": "Readable says that the city stands for its people and supplies \"punishment\", which the context implies; Literal and Balanced keep the city as \"her\" and the bare \"double\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400020021",
+            "o230400020031"
+          ],
+          "choice": "\"nói vào lòng\"",
+          "alternatives": [
+            "\"nói với lòng\""
+          ],
+          "reason": "Literal keeps the Hebrew idiom \"speak to the heart\", which the meaning decision explains as speaking kindly to reassure; Balanced and Readable say \"nói lời êm dịu\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -250,6 +431,31 @@
           "L": "A voice is calling: \\q In the wilderness clear the way of {{divine_name:the LORD|Yahweh}}; \\q make level in the desert plain a highway for our God.",
           "B": "A voice calls out: \\q In the wilderness clear a road for {{divine_name:the LORD|Yahweh}}; \\q across the desert plain lay a straight highway for our God.",
           "R": "Someone is calling out: \\q Clear a road through the wilderness for {{divine_name:the LORD|Yahweh}}. \\q Build a straight highway across the desert for our God."
+        },
+        "es": {
+          "L": "Una voz clama: \\q En el desierto {{plural_you:preparen|preparad}} el camino {{divine_name:del SEÑOR|de Yahvé}}; \\q {{plural_you:allanen|allanad}} en la estepa una calzada para nuestro Dios.",
+          "B": "Una voz grita: \\q En el desierto {{plural_you:preparen|preparad}} un camino para {{divine_name:el SEÑOR|Yahvé}}; \\q {{plural_you:tracen|trazad}} en la estepa una calzada recta para nuestro Dios.",
+          "R": "Alguien está gritando: \\q {{plural_you:Preparen|Preparad}} un camino en el desierto para {{divine_name:el SEÑOR|Yahvé}}. \\q {{plural_you:Construyan|Construid}} una calzada recta a través del desierto para nuestro Dios."
+        },
+        "fr": {
+          "L": "Une voix crie : \\q Dans le désert, préparez le chemin {{divine_name:du SEIGNEUR|de Yahvé}} ; \\q aplanissez dans la steppe une route pour notre Dieu.",
+          "B": "Une voix proclame : \\q Dans le désert, préparez le chemin {{divine_name:du SEIGNEUR|de Yahvé}} ; \\q à travers la steppe, tracez une route droite pour notre Dieu.",
+          "R": "Quelqu’un crie : \\q Préparez un chemin à travers le désert pour {{divine_name:le SEIGNEUR|Yahvé}}. \\q Construisez une route droite à travers le désert pour notre Dieu."
+        },
+        "sw": {
+          "L": "Sauti inaita: \\q Nyikani itengenezeni njia ya {{divine_name:BWANA|Yahwe}}; \\q nyoosheni jangwani njia kuu kwa ajili ya Mungu wetu.",
+          "B": "Sauti inaita: \\q Nyikani msafishieni {{divine_name:BWANA|Yahwe}} njia; \\q katika uwanda wa jangwa tengenezeni njia kuu iliyonyooka kwa ajili ya Mungu wetu.",
+          "R": "Mtu fulani anapaza sauti: \\q Safisheni njia nyikani kwa ajili ya {{divine_name:BWANA|Yahwe}}. \\q Jengeni njia kuu iliyonyooka jangwani kwa ajili ya Mungu wetu."
+        },
+        "vi": {
+          "L": "Có tiếng đang kêu: \\q Trong hoang mạc hãy dọn đường cho {{divine_name:CHÚA|Gia-vê}}; \\q trong đồng bằng sa mạc hãy san phẳng một đường cái cho Đức Chúa Trời chúng ta.",
+          "B": "Có tiếng kêu lên: \\q Hãy mở một con đường cho {{divine_name:CHÚA|Gia-vê}} trong hoang mạc; \\q hãy làm một đường cái thẳng tắp băng qua đồng bằng sa mạc cho Đức Chúa Trời chúng ta.",
+          "R": "Có người đang kêu lớn: \\q Hãy dọn một con đường xuyên qua hoang mạc cho {{divine_name:CHÚA|Gia-vê}}. \\q Hãy xây một đường cái thẳng băng qua sa mạc cho Đức Chúa Trời chúng ta."
+        },
+        "ko": {
+          "L": "한 목소리가 외친다. \\q 광야에서 {{divine_name:주|야훼}}의 길을 닦아라. \\q 사막 평원에서 우리 하나님을 위하여 큰길을 평탄하게 하여라.",
+          "B": "한 목소리가 외친다. \\q 광야에 {{divine_name:주|야훼}}께서 오실 길을 내어라. \\q 사막 평원을 가로질러 우리 하나님께서 오실 곧은 큰길을 닦아라.",
+          "R": "누군가가 외치고 있다. \\q 광야에 {{divine_name:주|야훼}}께서 오실 길을 내어라. \\q 사막을 가로질러 우리 하나님께서 오실 곧은 큰길을 만들어라."
         }
       },
       "decisions": [
@@ -321,6 +527,122 @@
           "reason": "Readable says \"someone\" for \"a voice\"; the speaker is not named.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400030041",
+            "o230400030051"
+          ],
+          "choice": "preparen el camino",
+          "alternatives": [
+            "despejen el camino"
+          ],
+          "reason": "The verb means to clear a road; Spanish says \"preparen el camino\", the key words of Matthew 3:3 as published, so the reader can see the quotation, without copying the Greek-based wording of the Gospel.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400030031",
+            "o230400030032",
+            "o230400030051",
+            "o230400030061"
+          ],
+          "choice": "\"nyikani\", \"njia ya BWANA\"",
+          "alternatives": [
+            "\"jangwani\"",
+            "\"barabara ya BWANA\""
+          ],
+          "reason": "The verse is quoted in Matthew 3:3, whose published Swahili has \"nyikani\" and \"njia ya Bwana\"; those key words are kept, while \"nyikani\" goes with the command, as the Hebrew punctuation and the meaning decision ask (Matthew, from the Greek, joins it to the voice).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "allusion",
+          "tokens": [
+            "o230400030041",
+            "o230400030051",
+            "o230400030061"
+          ],
+          "choice": "\"préparez le chemin du SEIGNEUR\"",
+          "alternatives": [
+            "\"dégagez la voie\""
+          ],
+          "reason": "Matthew 3:3 quotes the verse (\"Préparez le chemin du Seigneur\"); French keeps the key words so the quotation can be seen. \"Dans le désert\" goes with the command, as the meaning decision says (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o230400030021",
+            "o230400030031",
+            "o230400030041"
+          ],
+          "choice": "\"Trong hoang mạc\" begins the command",
+          "alternatives": [
+            "\"Có tiếng kêu trong hoang mạc\", as Matthew 3:3 and Luke 3:4"
+          ],
+          "reason": "The Hebrew accents put \"in the wilderness\" with \"clear the way\", as the meaning decision says; the Gospels quote the Greek, which joins it to the voice. \"Dọn đường\" is kept so the quotation can be recognised.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o230400030021",
+            "o230400030031",
+            "o230400030032"
+          ],
+          "choice": "\"광야에서\" belongs to the command, not to the voice",
+          "alternatives": [
+            "\"광야에서 외치는 소리\" (Luke 3:4)"
+          ],
+          "reason": "The Hebrew accents join \"in the wilderness\" to \"clear the way\" (meaning decision m1); the Gospels quote the Greek, which joins it to the voice. Korean keeps the Hebrew reading, with the key words \"목소리\", \"외치다\", \"길\" that let a reader see the Gospels' quotation.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -363,6 +685,31 @@
           "L": "Every valley will be lifted up, \\q and every mountain and hill will be made low, \\q and the uneven [ground] will become level ground, \\q and the rugged places a broad plain.",
           "B": "Every valley will rise \\q and every mountain and hill will sink; \\q the broken ground will be made flat, \\q and the rugged heights an open plain.",
           "R": "Every valley will be raised. \\q Every mountain and hill will be made lower. \\q Rough, hilly ground will be made flat. \\q Steep ridges will become wide, level land."
+        },
+        "es": {
+          "L": "Todo valle será alzado, \\q y todo monte y colina será rebajado, \\q y lo escabroso se volverá llano, \\q y los lugares ásperos, llanura.",
+          "B": "Todo valle se levantará \\q y todo monte y colina se hundirá; \\q el terreno quebrado quedará llano, \\q y las alturas escarpadas, una llanura abierta.",
+          "R": "Todo valle será rellenado. \\q Todo monte y colina será rebajado. \\q El terreno lleno de colinas será aplanado. \\q Las laderas empinadas se convertirán en tierra ancha y llana."
+        },
+        "fr": {
+          "L": "Toute vallée sera élevée, \\q et toute montagne et colline seront abaissées, \\q et le [terrain] accidenté deviendra une terre plane, \\q et les escarpements une large plaine.",
+          "B": "Toute vallée se relèvera, \\q toute montagne et toute colline s’abaisseront ; \\q le sol bosselé deviendra plat, \\q et les hauteurs escarpées une plaine ouverte.",
+          "R": "Toutes les vallées seront remplies. \\q Toutes les montagnes et les collines seront abaissées. \\q Les terrains bosselés deviendront plats. \\q Les pentes raides deviendront de larges terres plates."
+        },
+        "sw": {
+          "L": "Kila bonde litainuliwa, \\q na kila mlima na kilima vitashushwa, \\q na [ardhi] isiyo sawa itakuwa nchi tambarare, \\q na mahali palipoparuza [patakuwa] uwanda mpana.",
+          "B": "Kila bonde litainuka, \\q na kila mlima na kilima vitashuka; \\q ardhi iliyovunjikavunjika itasawazishwa, \\q na vilima vikali vitakuwa uwanda wazi.",
+          "R": "Kila bonde litainuliwa. \\q Kila mlima na kilima kitashushwa. \\q Ardhi yenye mabonde na vilima itasawazishwa. \\q Matuta makali yatakuwa nchi pana tambarare."
+        },
+        "vi": {
+          "L": "Mọi thung lũng sẽ được nâng lên, \\q và mọi núi và đồi sẽ bị hạ thấp, \\q và [đất] gập ghềnh sẽ thành đất bằng, \\q và những chỗ hiểm trở thành đồng bằng rộng.",
+          "B": "Mọi thung lũng sẽ dâng lên, \\q mọi núi và đồi sẽ hạ xuống; \\q đất gồ ghề sẽ được san phẳng, \\q và những dãy đồi lởm chởm sẽ thành đồng bằng thoáng rộng.",
+          "R": "Mọi thung lũng sẽ được nâng lên. \\q Mọi núi và đồi sẽ được hạ thấp. \\q Đất đồi gồ ghề sẽ được làm cho bằng phẳng. \\q Những sườn núi dốc đứng sẽ thành vùng đất rộng và bằng."
+        },
+        "ko": {
+          "L": "모든 골짜기가 높아지고, \\q 모든 산과 언덕이 낮아지며, \\q 울퉁불퉁한 [땅은] 평지가 되고, \\q 험한 곳은 넓은 평원이 될 것이다.",
+          "B": "모든 골짜기는 솟아오르고 \\q 모든 산과 언덕은 내려앉을 것이다. \\q 울퉁불퉁한 땅은 평평해지고, \\q 험한 고개는 탁 트인 평원이 될 것이다.",
+          "R": "골짜기마다 메워질 것이다. \\q 산과 언덕마다 낮아질 것이다. \\q 울퉁불퉁한 언덕 땅이 평평해질 것이다. \\q 가파른 산등성이가 넓고 평평한 땅이 될 것이다."
         }
       },
       "decisions": [
@@ -432,6 +779,31 @@
           "L": "And the glory of {{divine_name:the LORD|Yahweh}} will be revealed, \\q and all flesh together will see [it], \\q for the mouth of {{divine_name:the LORD|Yahweh}} has spoken.",
           "B": "The glory of {{divine_name:the LORD|Yahweh}} will be unveiled, \\q and every human being will see it together, \\q for {{divine_name:the LORD|Yahweh}} has spoken it with {{deity_pronoun:his|His}} own mouth.",
           "R": "Then {{divine_name:the LORD|Yahweh}} will show {{deity_pronoun:his|His}} glory, \\q and all people everywhere will see it together. \\q {{divine_name:The LORD|Yahweh}} {{deity_pronoun:himself|Himself}} has said so."
+        },
+        "es": {
+          "L": "Y la gloria {{divine_name:del SEÑOR|de Yahvé}} será revelada, \\q y toda carne juntamente [la] verá, \\q porque la boca {{divine_name:del SEÑOR|de Yahvé}} ha hablado.",
+          "B": "La gloria {{divine_name:del SEÑOR|de Yahvé}} se manifestará, \\q y todo ser humano la verá a una, \\q porque {{divine_name:el SEÑOR|Yahvé}} lo ha dicho con {{deity_pronoun:su|Su}} propia boca.",
+          "R": "Entonces {{divine_name:el SEÑOR|Yahvé}} mostrará {{deity_pronoun:su|Su}} gloria, \\q y todas las personas de todas partes la verán juntas. \\q {{divine_name:El SEÑOR|Yahvé}} mismo lo ha dicho."
+        },
+        "fr": {
+          "L": "Et la gloire {{divine_name:du SEIGNEUR|de Yahvé}} sera révélée, \\q et toute chair ensemble [la] verra, \\q car la bouche {{divine_name:du SEIGNEUR|de Yahvé}} a parlé.",
+          "B": "La gloire {{divine_name:du SEIGNEUR|de Yahvé}} sera dévoilée, \\q et tous les humains ensemble la verront, \\q car {{divine_name:le SEIGNEUR|Yahvé}} l’a dit de {{deity_pronoun:sa|Sa}} propre bouche.",
+          "R": "Alors {{divine_name:le SEIGNEUR|Yahvé}} montrera {{deity_pronoun:sa|Sa}} gloire, \\q et tous les gens, partout, la verront ensemble. \\q C’est {{divine_name:le SEIGNEUR|Yahvé}} {{deity_pronoun:lui-même|Lui-même}} qui l’a dit."
+        },
+        "sw": {
+          "L": "Na utukufu wa {{divine_name:BWANA|Yahwe}} utafunuliwa, \\q na kila mwili pamoja utauona, \\q kwa maana kinywa cha {{divine_name:BWANA|Yahwe}} kimesema.",
+          "B": "Utukufu wa {{divine_name:BWANA|Yahwe}} utafunuliwa, \\q na wanadamu wote watauona pamoja, \\q kwa maana {{divine_name:BWANA|Yahwe}} amesema kwa kinywa {{deity_pronoun:chake|Chake}} {{deity_pronoun:mwenyewe|Mwenyewe}}.",
+          "R": "Ndipo {{divine_name:BWANA|Yahwe}} atakapoonyesha utukufu {{deity_pronoun:wake|Wake}}, \\q na watu wote kila mahali watauona pamoja. \\q {{divine_name:BWANA|Yahwe}} {{deity_pronoun:mwenyewe|Mwenyewe}} amesema hivyo."
+        },
+        "vi": {
+          "L": "Và vinh quang của {{divine_name:CHÚA|Gia-vê}} sẽ được bày tỏ, \\q và mọi xác thịt cùng nhau sẽ thấy [điều ấy], \\q vì miệng {{divine_name:CHÚA|Gia-vê}} đã phán.",
+          "B": "Vinh quang của {{divine_name:CHÚA|Gia-vê}} sẽ được tỏ ra, \\q và mọi người cùng nhau sẽ thấy, \\q vì chính miệng {{divine_name:CHÚA|Gia-vê}} đã phán.",
+          "R": "Rồi {{divine_name:CHÚA|Gia-vê}} sẽ bày tỏ vinh quang của {{deity_pronoun:ngài|Ngài}}, \\q và mọi người khắp nơi sẽ cùng nhau nhìn thấy. \\q Chính {{divine_name:CHÚA|Gia-vê}} đã phán như vậy."
+        },
+        "ko": {
+          "L": "그리고 {{divine_name:주|야훼}}의 영광이 나타나고, \\q 모든 육체가 함께 [그것을] 볼 것이다. \\q {{divine_name:주|야훼}}의 입이 말씀하셨기 때문이다.",
+          "B": "{{divine_name:주|야훼}}의 영광이 드러나고, \\q 모든 사람이 함께 그것을 볼 것이다. \\q {{divine_name:주|야훼}}께서 친히 입으로 말씀하셨다.",
+          "R": "그때 {{divine_name:주|야훼}}께서 그분의 영광을 보여 주실 것이다. \\q 온 세상 모든 사람이 함께 그것을 볼 것이다. \\q {{divine_name:주|야훼}}께서 친히 그렇게 말씀하셨다."
         }
       },
       "decisions": [
@@ -480,6 +852,107 @@
           "reason": "The same closing formula seals promises in 1:20 and 58:14.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400050051",
+            "o230400050061"
+          ],
+          "choice": "toda carne (L); todo ser humano (B)",
+          "alternatives": [
+            "toda la humanidad"
+          ],
+          "reason": "As Luke 3:6 published: \"toda carne\" at L and \"todo ser humano\" at B; the Hebrew says the glory will be seen, where Luke follows the Greek \"salvation of God\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400050051",
+            "o230400050061"
+          ],
+          "choice": "\"kila mwili\" (L)",
+          "alternatives": [
+            "\"wote wenye mwili\""
+          ],
+          "reason": "\"All flesh\" is \"kila mwili\" at Literal, the phrase of the published Luke 3:6 when it quotes this verse; Balanced and Readable say \"all people\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400050061"
+          ],
+          "choice": "\"mọi xác thịt\"",
+          "alternatives": [
+            "\"mọi người\""
+          ],
+          "reason": "Literal keeps \"all flesh\", as Luke 3:6 L has \"mọi xác thịt\"; Balanced and Readable say \"mọi người\", as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o230400050091"
+          ],
+          "choice": "\"chính miệng CHÚA\" (B); \"Chính CHÚA\" (R), with no pronoun span",
+          "alternatives": [
+            "\"Himself\" with a deity_pronoun span"
+          ],
+          "reason": "The English Balanced and Readable add a spanned \"his\" / \"himself\"; Vietnamese gives the emphasis with \"chính\", which is not a pronoun.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400050061"
+          ],
+          "choice": "\"모든 육체\" (L); \"모든 사람\" (B, R)",
+          "alternatives": [
+            "\"모든 인생\""
+          ],
+          "reason": "The same words as the published Korean of Luke 3:6, which quotes this verse; Balanced and Readable say what \"flesh\" means, as Luke's Balanced does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -521,6 +994,31 @@
           "L": "A voice is saying, \"Call out.\" \\q And [one] said, \"What will I call out?\" \\q All flesh [is] grass, \\q and all its loyalty [is] like the flower of the field.",
           "B": "A voice says, \"Call out.\" \\q And someone answered, \"What should I call out?\" \\q Humankind is grass, \\q and all its loyalty is like a wildflower.",
           "R": "A voice said, \"Shout out a message.\" \\q Someone asked, \"What message should I shout?\" \\q Every person is like grass. \\q Even their faithfulness lasts no longer than a wildflower."
+        },
+        "es": {
+          "L": "Una voz dice: «Clama». \\q Y [uno] dijo: «¿Qué he de clamar?». \\q Toda carne [es] hierba, \\q y toda su lealtad [es] como la flor del campo.",
+          "B": "Una voz dice: «Grita». \\q Y alguien respondió: «¿Qué debo gritar?». \\q La humanidad es hierba, \\q y toda su lealtad es como una flor del campo.",
+          "R": "Una voz dijo: «Grita un mensaje». \\q Alguien preguntó: «¿Qué mensaje debo gritar?». \\q Toda persona es como la hierba. \\q Hasta su fidelidad dura tan poco como una flor del campo."
+        },
+        "fr": {
+          "L": "Une voix dit : « Crie. » \\q Et [quelqu’un] a dit : « Que crierai-je ? » \\q Toute chair [est] de l’herbe, \\q et toute sa loyauté [est] comme la fleur des champs.",
+          "B": "Une voix dit : « Proclame ! » \\q Et quelqu’un a répondu : « Que dois-je proclamer ? » \\q L’humanité n’est que de l’herbe, \\q et toute sa loyauté est comme une fleur des champs.",
+          "R": "Une voix a dit : « Crie un message. » \\q Quelqu’un a demandé : « Quel message dois-je crier ? » \\q Tout être humain est comme l’herbe. \\q Même sa fidélité ne dure pas plus longtemps qu’une fleur sauvage."
+        },
+        "sw": {
+          "L": "Sauti inasema, \"Paza sauti.\" \\q Naye [mmoja] akasema, \"Nipaze sauti kusema nini?\" \\q Kila mwili [ni] nyasi, \\q na uaminifu wake wote [ni] kama ua la shambani.",
+          "B": "Sauti inasema, \"Paza sauti.\" \\q Mtu mmoja akajibu, \"Nipaze sauti nikisema nini?\" \\q Wanadamu ni nyasi, \\q na uaminifu wao wote ni kama ua la porini.",
+          "R": "Sauti ilisema, \"Tangaza ujumbe kwa sauti.\" \\q Mtu mmoja akauliza, \"Nitangaze ujumbe gani?\" \\q Kila mtu ni kama nyasi. \\q Hata uaminifu wao haudumu kuliko ua la porini."
+        },
+        "vi": {
+          "L": "Có tiếng nói: \"Hãy kêu lên.\" \\q Và [có người] nói: \"Tôi sẽ kêu lên điều gì?\" \\q Mọi xác thịt [là] cỏ, \\q và mọi sự trung tín của nó [như] hoa ngoài đồng.",
+          "B": "Có tiếng phán: \"Hãy kêu lên.\" \\q Và có người đáp: \"Tôi phải kêu lên điều gì?\" \\q Loài người là cỏ, \\q và mọi lòng trung tín của họ như hoa dại ngoài đồng.",
+          "R": "Có tiếng nói: \"Hãy rao lên một sứ điệp.\" \\q Có người hỏi: \"Tôi phải rao sứ điệp gì?\" \\q Mọi người đều như cỏ. \\q Ngay cả lòng trung thành của họ cũng chẳng lâu hơn một bông hoa dại."
+        },
+        "ko": {
+          "L": "한 목소리가 말한다. \"외쳐라.\" \\q 그러자 [누군가] 말했다. \"내가 무엇을 외쳐야 합니까?\" \\q 모든 육체는 풀이고, \\q 그 모든 신실함은 들의 꽃과 같다.",
+          "B": "한 목소리가 말한다. \"외쳐라.\" \\q 그러자 누군가가 대답했다. \"무엇을 외쳐야 합니까?\" \\q 사람은 모두 풀이고, \\q 그 모든 신실함은 들꽃과 같다.",
+          "R": "한 목소리가 말했다. \"소리 높여 전하여라.\" \\q 누군가가 물었다. \"무엇을 전해야 합니까?\" \\q 사람은 모두 풀과 같다. \\q 그들의 신실함도 들꽃보다 오래가지 못한다."
         }
       },
       "decisions": [
@@ -590,6 +1088,111 @@
           "reason": "Readable states the point of the comparison, which verses 7-8 make plain.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400060111"
+          ],
+          "choice": "lealtad",
+          "alternatives": [
+            "gloria",
+            "bondad"
+          ],
+          "reason": "Hesed said of people is their loyalty, as the English; 1 Peter 1:24 has \"gloria\" from the Greek, which is not followed here.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400060091",
+            "o230400060122"
+          ],
+          "choice": "\"nyasi\", \"ua\"",
+          "alternatives": [
+            "\"majani\""
+          ],
+          "reason": "1 Peter 1:24-25 quotes verses 6-8; the published Swahili there has \"nyasi\" and \"ua\", so those words are kept here and in verses 7-8, while \"loyalty\" follows the Hebrew (\"uaminifu\") rather than the Greek \"glory\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400060111"
+          ],
+          "choice": "\"sa loyauté\" (L, B), \"sa fidélité\" (R) for ḥesed",
+          "alternatives": [
+            "\"sa gloire\", as 1 Peter 1:24"
+          ],
+          "reason": "The Hebrew word is ḥesed, the loyalty people show; 1 Peter quotes the Greek's \"glory\", so French follows the Hebrew here and keeps \"toute chair ... l'herbe ... la fleur\" so the quotation can still be seen.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400060111"
+          ],
+          "choice": "\"sự trung tín\" / \"lòng trung tín\"",
+          "alternatives": [
+            "\"vinh hoa\", as 1 Peter 1:24"
+          ],
+          "reason": "The Hebrew word is hesed, loyalty, as the meaning decision says; 1 Peter quotes the Greek \"glory\", which is not followed here. \"Mọi xác thịt\" and \"cỏ\" keep the quotation recognisable.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400060111"
+          ],
+          "choice": "\"신실함\" for *ḥesed* here",
+          "alternatives": [
+            "\"영광\" (1 Peter 1:24); \"아름다움\""
+          ],
+          "reason": "The word is the loyalty people show, which does not last (meaning decision m2); 1 Peter quotes the Greek, which has \"glory\", and Korean follows the Hebrew while keeping \"모든 육체는 풀\" so the quotation can be seen.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -626,6 +1229,31 @@
           "L": "Grass dries up, [the] flower wilts, \\q for the wind of {{divine_name:the LORD|Yahweh}} blows on it; \\q truly the people [are] grass.",
           "B": "The grass dries out and the flower droops \\q when the wind of {{divine_name:the LORD|Yahweh}} blows across it; \\q yes, the people are mere grass.",
           "R": "Grass dries up and flowers wilt \\q when {{divine_name:the LORD|Yahweh}} sends {{deity_pronoun:his|His}} wind across them. \\q The people are like that grass."
+        },
+        "es": {
+          "L": "La hierba se seca, la flor se marchita, \\q porque el soplo {{divine_name:del SEÑOR|de Yahvé}} sopla sobre ella; \\q ciertamente el pueblo [es] hierba.",
+          "B": "La hierba se seca y la flor se marchita \\q cuando el viento {{divine_name:del SEÑOR|de Yahvé}} sopla sobre ella; \\q sí, el pueblo es pura hierba.",
+          "R": "La hierba se seca y las flores se marchitan \\q cuando {{divine_name:el SEÑOR|Yahvé}} envía {{deity_pronoun:su|Su}} viento sobre ellas. \\q La gente es como esa hierba."
+        },
+        "fr": {
+          "L": "L’herbe sèche, la fleur se fane, \\q car le souffle {{divine_name:du SEIGNEUR|de Yahvé}} passe sur elle ; \\q vraiment, le peuple [est] de l’herbe.",
+          "B": "L’herbe se dessèche et la fleur se fane \\q quand le vent {{divine_name:du SEIGNEUR|de Yahvé}} souffle sur elle ; \\q oui, le peuple n’est que de l’herbe.",
+          "R": "L’herbe sèche et les fleurs se fanent \\q quand {{divine_name:le SEIGNEUR|Yahvé}} envoie {{deity_pronoun:son|Son}} vent sur elles. \\q Les gens sont comme cette herbe."
+        },
+        "sw": {
+          "L": "Nyasi hukauka, ua hunyauka, \\q kwa maana upepo wa {{divine_name:BWANA|Yahwe}} huvuma juu yake; \\q hakika watu [ni] nyasi.",
+          "B": "Nyasi hukauka na ua hunyauka \\q upepo wa {{divine_name:BWANA|Yahwe}} unapovuma juu yake; \\q naam, watu ni nyasi tu.",
+          "R": "Nyasi hukauka na maua hunyauka \\q {{divine_name:BWANA|Yahwe}} anapopeleka upepo {{deity_pronoun:wake|Wake}} juu yake. \\q Watu ni kama nyasi hiyo."
+        },
+        "vi": {
+          "L": "Cỏ khô héo, hoa tàn úa, \\q vì hơi gió của {{divine_name:CHÚA|Gia-vê}} thổi trên nó; \\q thật, dân [là] cỏ.",
+          "B": "Cỏ khô đi, hoa rũ xuống \\q khi gió của {{divine_name:CHÚA|Gia-vê}} thổi ngang qua; \\q phải, dân chỉ là cỏ.",
+          "R": "Cỏ khô héo và hoa tàn úa \\q khi {{divine_name:CHÚA|Gia-vê}} cho gió của {{deity_pronoun:ngài|Ngài}} thổi qua. \\q Loài người cũng giống như cỏ ấy."
+        },
+        "ko": {
+          "L": "풀은 마르고 꽃은 시든다. \\q {{divine_name:주|야훼}}의 바람이 그 위에 불기 때문이다. \\q 참으로 백성은 풀이다.",
+          "B": "{{divine_name:주|야훼}}의 바람이 그 위로 불어오면 \\q 풀은 마르고 꽃은 시든다. \\q 그렇다, 백성은 한낱 풀이다.",
+          "R": "{{divine_name:주|야훼}}께서 바람을 보내시면 \\q 풀은 마르고 꽃은 시든다. \\q 사람들은 그 풀과 같다."
         }
       },
       "decisions": [
@@ -726,6 +1354,31 @@
           "L": "Grass dries up, [the] flower wilts, \\q but the word of our God will stand forever.",
           "B": "Grass dries out and flowers droop, \\q but the word of our God holds firm for all time.",
           "R": "Grass dries up and flowers wilt. \\q But what our God says will last forever."
+        },
+        "es": {
+          "L": "La hierba se seca, la flor se marchita, \\q pero la palabra de nuestro Dios permanecerá para siempre.",
+          "B": "La hierba se seca y las flores se marchitan, \\q pero la palabra de nuestro Dios se mantiene firme para siempre.",
+          "R": "La hierba se seca y las flores se marchitan. \\q Pero lo que dice nuestro Dios durará para siempre."
+        },
+        "fr": {
+          "L": "L’herbe sèche, la fleur se fane, \\q mais la parole de notre Dieu demeurera pour toujours.",
+          "B": "L’herbe se dessèche et les fleurs se fanent, \\q mais la parole de notre Dieu tient bon à jamais.",
+          "R": "L’herbe sèche et les fleurs se fanent. \\q Mais ce que dit notre Dieu durera toujours."
+        },
+        "sw": {
+          "L": "Nyasi hukauka, ua hunyauka, \\q lakini neno la Mungu wetu litasimama milele.",
+          "B": "Nyasi hukauka na maua hunyauka, \\q lakini neno la Mungu wetu hudumu imara nyakati zote.",
+          "R": "Nyasi hukauka na maua hunyauka. \\q Lakini anachosema Mungu wetu kitadumu milele."
+        },
+        "vi": {
+          "L": "Cỏ khô héo, hoa tàn úa, \\q nhưng lời của Đức Chúa Trời chúng ta sẽ đứng vững đời đời.",
+          "B": "Cỏ khô đi, hoa rũ xuống, \\q nhưng lời của Đức Chúa Trời chúng ta còn vững bền mãi mãi.",
+          "R": "Cỏ khô héo và hoa tàn úa. \\q Nhưng điều Đức Chúa Trời chúng ta phán sẽ còn mãi mãi."
+        },
+        "ko": {
+          "L": "풀은 마르고 꽃은 시들지만, \\q 우리 하나님의 말씀은 영원토록 설 것이다.",
+          "B": "풀은 마르고 꽃은 시든다. \\q 그러나 우리 하나님의 말씀은 영원히 굳게 선다.",
+          "R": "풀은 마르고 꽃은 시든다. \\q 그러나 우리 하나님께서 하신 말씀은 영원히 남는다."
         }
       },
       "decisions": [
@@ -822,6 +1475,31 @@
           "L": "Go up for yourself on a high mountain, bearer of good news, Zion; \\q lift up your voice with strength, bearer of good news, Jerusalem; \\q lift [it] up, do not be afraid; \\q say to the cities of Judah, \"Here [is] your God!\"",
           "B": "Climb a high mountain, Zion, you who carry good news. \\q Shout with all your strength, Jerusalem, you who carry good news. \\q Shout and do not be afraid. \\q Tell the towns of Judah, \"Here is your God!\"",
           "R": "People of Zion, you have good news to tell! Go up on a high mountain. \\q People of Jerusalem, shout the good news as loud as you can. \\q Shout it, and do not be afraid. \\q Tell the towns of Judah, \"Look, your God is here!\""
+        },
+        "es": {
+          "L": "Súbete a un monte alto, Sion, que anuncias buenas noticias; \\q alza con fuerza tu voz, Jerusalén, que anuncias buenas noticias; \\q álzala, no temas; \\q di a las ciudades de Judá: «¡He aquí {{plural_you:su Dios|vuestro Dios}}!».",
+          "B": "Sube a un monte alto, Sion, tú que traes la buena noticia. \\q Grita con todas tus fuerzas, Jerusalén, tú que traes la buena noticia. \\q Grita y no tengas miedo. \\q Diles a los pueblos de Judá: «¡Aquí está {{plural_you:su Dios|vuestro Dios}}!».",
+          "R": "Pueblo de Sion, tienes buenas noticias que contar. Sube a un monte alto. \\q Pueblo de Jerusalén, grita la buena noticia tan fuerte como puedas. \\q Grítala y no tengas miedo. \\q Diles a los pueblos de Judá: «¡{{plural_you:Miren|Mirad}}, {{plural_you:su Dios|vuestro Dios}} está aquí!»."
+        },
+        "fr": {
+          "L": "Monte sur une haute montagne, porteuse de bonne nouvelle, Sion ; \\q élève avec force ta voix, porteuse de bonne nouvelle, Jérusalem ; \\q élève[-la], n’aie pas peur ; \\q dis aux villes de Juda : « Voici votre Dieu ! »",
+          "B": "Gravis une haute montagne, Sion, messagère de bonnes nouvelles. \\q Crie de toutes tes forces, Jérusalem, messagère de bonnes nouvelles. \\q Crie, n’aie pas peur. \\q Dis aux villes de Juda : « Voici votre Dieu ! »",
+          "R": "Habitants de Sion, vous avez une bonne nouvelle à annoncer ! Montez sur une haute montagne. \\q Habitants de Jérusalem, criez la bonne nouvelle aussi fort que vous pouvez. \\q Criez-la, n’ayez pas peur. \\q Dites aux villes de Juda : « Regardez, votre Dieu est là ! »"
+        },
+        "sw": {
+          "L": "Jipandie juu ya mlima mrefu, ewe unayeleta habari njema, Sayuni; \\q inua sauti yako kwa nguvu, ewe unayeleta habari njema, Yerusalemu; \\q iinue, usiogope; \\q iambie miji ya Yuda, \"Tazama, Mungu wenu!\"",
+          "B": "Panda juu ya mlima mrefu, ee Sayuni, wewe unayeleta habari njema. \\q Paza sauti kwa nguvu zako zote, ee Yerusalemu, wewe unayeleta habari njema. \\q Paza sauti wala usiogope. \\q Iambie miji ya Yuda, \"Mungu wenu yuko hapa!\"",
+          "R": "Enyi watu wa Sayuni, mna habari njema za kutangaza! Pandeni juu ya mlima mrefu. \\q Enyi watu wa Yerusalemu, tangazeni habari njema kwa sauti kubwa kadiri mwezavyo. \\q Ipazeni wala msiogope. \\q Iambieni miji ya Yuda, \"Tazameni, Mungu wenu yuko hapa!\""
+        },
+        "vi": {
+          "L": "Hãy tự leo lên một núi cao, hỡi Si-ôn, người đem tin lành; \\q hãy mạnh mẽ cất tiếng lên, hỡi Giê-ru-sa-lem, người đem tin lành; \\q hãy cất [tiếng] lên, đừng sợ; \\q hãy nói với các thành của Giu-đa: \"Đây [là] Đức Chúa Trời của các ngươi!\"",
+          "B": "Hỡi Si-ôn, người mang tin lành, hãy leo lên một núi cao. \\q Hỡi Giê-ru-sa-lem, người mang tin lành, hãy dốc hết sức mà cất tiếng. \\q Hãy cất tiếng lên, đừng sợ. \\q Hãy nói với các thành của Giu-đa: \"Đức Chúa Trời của các ngươi đây!\"",
+          "R": "Hỡi dân Si-ôn, các ngươi có tin vui để báo! Hãy lên một ngọn núi cao. \\q Hỡi dân Giê-ru-sa-lem, hãy hết sức lớn tiếng loan báo tin vui. \\q Hãy loan báo và đừng sợ. \\q Hãy nói với các thành của Giu-đa: \"Kìa, Đức Chúa Trời của các ngươi đã đến!\""
+        },
+        "ko": {
+          "L": "좋은 소식을 전하는 자 시온아, 너는 높은 산에 올라가라. \\q 좋은 소식을 전하는 자 예루살렘아, 힘껏 네 목소리를 높여라. \\q 높여라, 두려워하지 마라. \\q 유다의 성읍들에게 말하여라. \"보라, 너희 하나님이시다!\"",
+          "B": "기쁜 소식을 전하는 사람 시온아, 높은 산에 올라가라. \\q 기쁜 소식을 전하는 사람 예루살렘아, 힘을 다해 외쳐라. \\q 외쳐라, 두려워하지 마라. \\q 유다의 성읍들에게 말하여라. \"여기 너희 하나님이 계시다!\"",
+          "R": "시온 백성아, 너희에게 전할 기쁜 소식이 있다! 높은 산에 올라가라. \\q 예루살렘 백성아, 있는 힘을 다해 기쁜 소식을 외쳐라. \\q 외쳐라, 두려워하지 마라. \\q 유다의 성읍들에게 말하여라. \"보아라, 너희 하나님께서 여기 오셨다!\""
         }
       },
       "decisions": [
@@ -890,6 +1568,116 @@
           "reason": "Readable says that the cities stand for their people (see the note on Daughter Zion at 1:8).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400090061",
+            "o230400090071"
+          ],
+          "choice": "Sion, que anuncias buenas noticias (L); Sion, tú que traes la buena noticia (B); pueblo de Sion, tienes buenas noticias que contar (R)",
+          "alternatives": [
+            "mensajera de buenas nuevas"
+          ],
+          "reason": "The feminine bearer of good news, as the terms note sets it; Zion is \"tú\", and the towns of Judah are addressed in the plural inside the quotation.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400090061",
+            "o230400090111"
+          ],
+          "choice": "\"unayeleta habari njema\" (L, B); \"mna habari njema za kutangaza\" (R)",
+          "alternatives": [
+            "\"mjumbe mwenye habari njema\""
+          ],
+          "reason": "The bearer of good news (mebasser) is \"anayeleta habari njema\", as Romans 10:15 and the terms note; Readable follows the English Readable in speaking to the people of Zion as the ones who carry it, so the terms note's \"mjumbe mwenye habari njema\" is kept for 52:7.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400090061",
+            "o230400090111"
+          ],
+          "choice": "\"porteuse de bonne nouvelle\" (L), \"messagère de bonnes nouvelles\" (B), \"vous avez une bonne nouvelle à annoncer\" (R) for mebasseret",
+          "alternatives": [
+            "\"messager\" in the masculine"
+          ],
+          "reason": "The Hebrew participle is feminine, for Zion herself (m1); French keeps the feminine of the terms note's \"messager de bonnes nouvelles\". Readable speaks to the people, as the English Readable.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400090061",
+            "o230400090111"
+          ],
+          "choice": "\"người đem tin lành\" (L); \"người mang tin lành\" (B); \"tin vui\" (R), lowercase",
+          "alternatives": [
+            "\"Tin Lành\""
+          ],
+          "reason": "The terms note's form for mebasser: a bearer of good news, lowercase, not \"Tin Lành\", the gospel; Readable says \"tin vui\", as Romans 10:15 R does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400090061",
+            "o230400090111"
+          ],
+          "choice": "\"좋은 소식을 전하는 자\" (L); \"기쁜 소식을 전하는 사람\" (B, R)",
+          "alternatives": [
+            "\"복음을 전하는 자\""
+          ],
+          "reason": "The terms note's forms for *mebasser*, as Romans 10:15; \"복음\" is not used in Isaiah.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -936,6 +1724,31 @@
           "L": "Here [is] the Lord {{divine_name:GOD|Yahweh}}! As a mighty one {{deity_pronoun:he|He}} comes, \\q and {{deity_pronoun:his|His}} arm rules for {{deity_pronoun:him|Him}}; \\q here, {{deity_pronoun:his|His}} wages [are] with {{deity_pronoun:him|Him}}, \\q and {{deity_pronoun:his|His}} recompense [is] before {{deity_pronoun:him|Him}}.",
           "B": "Look, the Lord {{divine_name:GOD|Yahweh}} is coming in power, \\q and {{deity_pronoun:his|His}} arm will rule for {{deity_pronoun:him|Him}}. \\q Look, {{deity_pronoun:he|He}} brings {{deity_pronoun:his|His}} prize with {{deity_pronoun:him|Him}}; \\q what {{deity_pronoun:he|He}} has won goes ahead of {{deity_pronoun:him|Him}}.",
           "R": "Look! The Lord {{divine_name:GOD|Yahweh}} is coming with power. \\q He will rule by {{deity_pronoun:his|His}} own strength. \\q Look! He is bringing with {{deity_pronoun:him|Him}} the reward {{deity_pronoun:he|He}} has won. \\q What {{deity_pronoun:he|He}} has earned goes in front of {{deity_pronoun:him|Him}}."
+        },
+        "es": {
+          "L": "¡He aquí el Señor {{divine_name:DIOS|Yahvé}}! Como poderoso viene, \\q y {{deity_pronoun:su|Su}} brazo gobierna por {{deity_pronoun:él|Él}}; \\q he aquí, {{deity_pronoun:su|Su}} salario [está] con {{deity_pronoun:él|Él}}, \\q y {{deity_pronoun:su|Su}} recompensa delante de {{deity_pronoun:él|Él}}.",
+          "B": "Mira, el Señor {{divine_name:DIOS|Yahvé}} viene con poder, \\q y {{deity_pronoun:su|Su}} brazo gobernará por {{deity_pronoun:él|Él}}. \\q Mira, trae consigo {{deity_pronoun:su|Su}} premio; \\q lo que ha ganado va delante de {{deity_pronoun:él|Él}}.",
+          "R": "¡Mira! El Señor {{divine_name:DIOS|Yahvé}} viene con poder. \\q Gobernará con {{deity_pronoun:su|Su}} propia fuerza. \\q ¡Mira! Trae consigo la recompensa que ha ganado. \\q Lo que se ha ganado va delante de {{deity_pronoun:él|Él}}."
+        },
+        "fr": {
+          "L": "Voici le Seigneur {{divine_name:DIEU|Yahvé}} ! Comme un puissant {{deity_pronoun:il|Il}} vient, \\q et {{deity_pronoun:son|Son}} bras gouverne pour {{deity_pronoun:lui|Lui}} ; \\q voici, {{deity_pronoun:son|Son}} salaire [est] avec {{deity_pronoun:lui|Lui}}, \\q et {{deity_pronoun:sa|Sa}} rétribution [est] devant {{deity_pronoun:lui|Lui}}.",
+          "B": "Voici le Seigneur {{divine_name:DIEU|Yahvé}} qui vient avec puissance, \\q et {{deity_pronoun:son|Son}} bras régnera pour {{deity_pronoun:lui|Lui}}. \\q Voici : {{deity_pronoun:il|Il}} apporte avec {{deity_pronoun:lui|Lui}} {{deity_pronoun:son|Son}} butin ; \\q ce qu’{{deity_pronoun:il|Il}} a gagné marche devant {{deity_pronoun:lui|Lui}}.",
+          "R": "Regardez ! Le Seigneur {{divine_name:DIEU|Yahvé}} arrive avec puissance. \\q Il régnera par {{deity_pronoun:sa|Sa}} propre force. \\q Regardez ! Il apporte avec {{deity_pronoun:lui|Lui}} la récompense qu’{{deity_pronoun:il|Il}} a gagnée. \\q Ce qu’{{deity_pronoun:il|Il}} a remporté marche devant {{deity_pronoun:lui|Lui}}."
+        },
+        "sw": {
+          "L": "Tazama, Bwana {{divine_name:MUNGU|Yahwe}}! Anakuja kama mwenye nguvu, \\q na mkono {{deity_pronoun:wake|Wake}} unatawala kwa ajili {{deity_pronoun:yake|Yake}}; \\q tazama, ujira {{deity_pronoun:wake|Wake}} [uko] pamoja {{deity_pronoun:naye|Naye}}, \\q na malipo {{deity_pronoun:yake|Yake}} [yako] mbele {{deity_pronoun:yake|Yake}}.",
+          "B": "Tazama, Bwana {{divine_name:MUNGU|Yahwe}} anakuja kwa uweza, \\q na mkono {{deity_pronoun:wake|Wake}} utatawala kwa ajili {{deity_pronoun:yake|Yake}}. \\q Tazama, analeta tuzo {{deity_pronoun:lake|Lake}} pamoja {{deity_pronoun:naye|Naye}}; \\q alichokishinda kinatangulia mbele {{deity_pronoun:yake|Yake}}.",
+          "R": "Tazama! Bwana {{divine_name:MUNGU|Yahwe}} anakuja na nguvu. \\q Atatawala kwa nguvu {{deity_pronoun:zake|Zake}} mwenyewe. \\q Tazama! Analeta pamoja {{deity_pronoun:naye|Naye}} tuzo aliloshinda. \\q Alichokipata kinatangulia mbele {{deity_pronoun:yake|Yake}}."
+        },
+        "vi": {
+          "L": "Kìa, Chúa là {{divine_name:CHÚA|Gia-vê}}! Ngài đến như một Đấng Quyền Năng, \\q và cánh tay {{deity_pronoun:ngài|Ngài}} cai trị cho {{deity_pronoun:ngài|Ngài}}; \\q kìa, phần thưởng của {{deity_pronoun:ngài|Ngài}} [ở] với {{deity_pronoun:ngài|Ngài}}, \\q và sự báo đáp của {{deity_pronoun:ngài|Ngài}} [đi] trước mặt {{deity_pronoun:ngài|Ngài}}.",
+          "B": "Kìa, Chúa là {{divine_name:CHÚA|Gia-vê}} đang đến trong quyền năng, \\q và cánh tay {{deity_pronoun:ngài|Ngài}} sẽ cai trị cho {{deity_pronoun:ngài|Ngài}}. \\q Kìa, {{deity_pronoun:ngài|Ngài}} mang theo phần thưởng của {{deity_pronoun:ngài|Ngài}}; \\q những gì {{deity_pronoun:ngài|Ngài}} chiến thắng được đi trước mặt {{deity_pronoun:ngài|Ngài}}.",
+          "R": "Hãy xem! Chúa là {{divine_name:CHÚA|Gia-vê}} đang đến với quyền năng. \\q Ngài sẽ cai trị bằng chính sức mạnh của {{deity_pronoun:ngài|Ngài}}. \\q Hãy xem! Ngài mang theo phần thưởng {{deity_pronoun:ngài|Ngài}} đã giành được. \\q Những gì {{deity_pronoun:ngài|Ngài}} đã đạt được đi trước mặt {{deity_pronoun:ngài|Ngài}}."
+        },
+        "ko": {
+          "L": "보라, 주 {{divine_name:하나님|야훼}}께서 강한 자로 오시니, \\q 그분의 팔이 그분을 위하여 다스린다. \\q 보라, 그분의 품삯이 그분과 함께 있고, \\q 그분의 보상이 그분 앞에 있다.",
+          "B": "보아라, 주 {{divine_name:하나님|야훼}}께서 능력으로 오신다. \\q 그분의 팔이 그분을 위하여 다스릴 것이다. \\q 보아라, 그분께서 얻으신 상급을 가지고 오신다. \\q 그분께서 이기고 얻으신 것이 그분 앞에서 온다.",
+          "R": "보아라! 주 {{divine_name:하나님|야훼}}께서 능력으로 오신다. \\q 그분께서 그분의 힘으로 다스리실 것이다. \\q 보아라! 그분께서 얻으신 상을 가지고 오신다. \\q 그분께서 이기고 얻으신 것이 그분 앞에 서서 온다."
         }
       },
       "decisions": [
@@ -1027,6 +1840,31 @@
           "L": "Like a shepherd {{deity_pronoun:he|He}} will tend {{deity_pronoun:his|His}} flock; \\q in {{deity_pronoun:his|His}} arm {{deity_pronoun:he|He}} will gather lambs, \\q and in {{deity_pronoun:his|His}} bosom {{deity_pronoun:he|He}} will carry [them]; \\q nursing [ewes] {{deity_pronoun:he|He}} will lead.",
           "B": "Like a shepherd {{deity_pronoun:he|He}} will pasture {{deity_pronoun:his|His}} flock. \\q He will gather the lambs into {{deity_pronoun:his|His}} arm \\q and carry them close against {{deity_pronoun:his|His}} chest, \\q and {{deity_pronoun:he|He}} will lead the nursing ewes with care.",
           "R": "He will take care of {{deity_pronoun:his|His}} people the way a shepherd takes care of sheep. \\q He will pick up the lambs in {{deity_pronoun:his|His}} arms and hold them close. \\q He will gently guide the mother sheep that are feeding their young."
+        },
+        "es": {
+          "L": "Como pastor {{deity_pronoun:él|Él}} apacentará {{deity_pronoun:su|Su}} rebaño; \\q en {{deity_pronoun:su|Su}} brazo {{deity_pronoun:él|Él}} recogerá los corderos, \\q y en {{deity_pronoun:su|Su}} seno [los] llevará; \\q a las [ovejas] que crían {{deity_pronoun:él|Él}} conducirá.",
+          "B": "Como un pastor {{deity_pronoun:él|Él}} apacentará {{deity_pronoun:su|Su}} rebaño. \\q Reunirá a los corderos en {{deity_pronoun:su|Su}} brazo \\q y los llevará junto a {{deity_pronoun:su|Su}} pecho, \\q y guiará con cuidado a las ovejas que crían.",
+          "R": "Cuidará de {{deity_pronoun:su|Su}} pueblo como un pastor cuida de sus ovejas. \\q Tomará en {{deity_pronoun:sus|Sus}} brazos a los corderos y los llevará junto a {{deity_pronoun:sí|Sí}}. \\q Guiará con suavidad a las ovejas que están criando a sus corderitos."
+        },
+        "fr": {
+          "L": "Comme un berger, {{deity_pronoun:il|Il}} fera paître {{deity_pronoun:son|Son}} troupeau ; \\q dans {{deity_pronoun:son|Son}} bras {{deity_pronoun:il|Il}} rassemblera les agneaux, \\q et sur {{deity_pronoun:son|Son}} sein {{deity_pronoun:il|Il}} [les] portera ; \\q les [brebis] qui allaitent, {{deity_pronoun:il|Il}} les conduira.",
+          "B": "Comme un berger, {{deity_pronoun:il|Il}} mènera paître {{deity_pronoun:son|Son}} troupeau. \\q Il prendra les agneaux dans {{deity_pronoun:son|Son}} bras \\q et les portera serrés contre {{deity_pronoun:sa|Sa}} poitrine, \\q et {{deity_pronoun:il|Il}} guidera avec soin les brebis qui allaitent.",
+          "R": "Il prendra soin de {{deity_pronoun:son|Son}} peuple comme un berger prend soin de ses moutons. \\q Il prendra les agneaux dans {{deity_pronoun:ses|Ses}} bras et les tiendra contre {{deity_pronoun:lui|Lui}}. \\q Il conduira doucement les brebis qui nourrissent leurs petits."
+        },
+        "sw": {
+          "L": "Kama mchungaji atalichunga kundi {{deity_pronoun:lake|Lake}}; \\q kwa mkono {{deity_pronoun:wake|Wake}} atawakusanya wana-kondoo, \\q na kifuani {{deity_pronoun:mwake|Mwake}} atawabeba; \\q [kondoo] wanaonyonyesha atawaongoza.",
+          "B": "Kama mchungaji atalilisha kundi {{deity_pronoun:lake|Lake}}. \\q Atawakusanya wana-kondoo mkononi {{deity_pronoun:mwake|Mwake}} \\q na kuwabeba karibu na kifua {{deity_pronoun:chake|Chake}}, \\q naye atawaongoza kwa uangalifu kondoo wanaonyonyesha.",
+          "R": "Atawatunza watu {{deity_pronoun:wake|Wake}} kama mchungaji anavyowatunza kondoo. \\q Atawabeba wana-kondoo mikononi {{deity_pronoun:mwake|Mwake}} na kuwashika karibu. \\q Atawaongoza kwa upole kondoo mama wanaonyonyesha watoto wao."
+        },
+        "vi": {
+          "L": "Như người chăn chiên, {{deity_pronoun:ngài|Ngài}} sẽ chăn bầy {{deity_pronoun:ngài|Ngài}}; \\q trong cánh tay {{deity_pronoun:ngài|Ngài}}, {{deity_pronoun:ngài|Ngài}} sẽ gom các chiên con, \\q và trong lòng {{deity_pronoun:ngài|Ngài}}, {{deity_pronoun:ngài|Ngài}} sẽ ẵm [chúng]; \\q các chiên mẹ đang cho bú, {{deity_pronoun:ngài|Ngài}} sẽ dẫn dắt.",
+          "B": "Như người chăn, {{deity_pronoun:ngài|Ngài}} sẽ chăn giữ bầy {{deity_pronoun:ngài|Ngài}}. \\q Ngài sẽ gom các chiên con vào cánh tay mình \\q và ẵm chúng sát vào lòng, \\q và {{deity_pronoun:ngài|Ngài}} sẽ nhẹ nhàng dẫn dắt các chiên mẹ đang cho con bú.",
+          "R": "Ngài sẽ chăm sóc dân {{deity_pronoun:ngài|Ngài}} như người chăn chăm sóc bầy chiên. \\q Ngài sẽ bế các chiên con trong tay và ôm sát vào lòng. \\q Ngài sẽ nhẹ nhàng dẫn dắt những chiên mẹ đang cho con bú."
+        },
+        "ko": {
+          "L": "목자처럼 그분께서 그분의 양 떼를 치시고, \\q 그분의 팔로 어린양들을 모으시며, \\q 그분의 품에 [그것들을] 안으시고, \\q 젖 먹이는 [어미 양들을] 이끄실 것이다.",
+          "B": "그분께서 목자처럼 그분의 양 떼를 먹이실 것이다. \\q 어린양들을 팔로 모아 \\q 품에 꼭 안으시고, \\q 젖 먹이는 어미 양들을 조심스럽게 이끄실 것이다.",
+          "R": "목자가 양들을 돌보듯이 그분께서 그분의 백성을 돌보실 것이다. \\q 그분께서 어린양들을 팔에 안아 가까이 품으실 것이다. \\q 새끼에게 젖을 먹이는 어미 양들을 부드럽게 이끄실 것이다."
         }
       },
       "decisions": [
@@ -1123,6 +1961,31 @@
           "L": "Who has measured in the hollow of his hand [the] waters, and marked off [the] heavens with a span, \\q and held in a measure the dust of the earth, \\q and weighed [the] mountains with a scale, \\q and [the] hills in balances?",
           "B": "Who has measured the seas in the cup of his hand, or marked off the sky with the stretch of his fingers? \\q Who has gathered the dust of the earth into a basket, \\q or set the mountains on a scale \\q and the hills on a pair of balances?",
           "R": "Who could measure all the oceans by holding them in his hand? Who could measure the sky with the width of his hand? \\q Who could put all the dust of the earth into a basket? \\q Who could weigh the mountains and hills on a scale?"
+        },
+        "es": {
+          "L": "¿Quién midió las aguas en el hueco de su mano, y marcó los cielos con un palmo, \\q y contuvo en una medida el polvo de la tierra, \\q y pesó los montes con la báscula, \\q y las colinas con la balanza?",
+          "B": "¿Quién ha medido los mares en el hueco de su mano, o ha marcado el cielo con el ancho de sus dedos? \\q ¿Quién ha juntado el polvo de la tierra en una canasta, \\q o ha puesto los montes en una báscula \\q y las colinas en una balanza?",
+          "R": "¿Quién podría medir todos los océanos sosteniéndolos en la mano? ¿Quién podría medir el cielo con el ancho de su mano? \\q ¿Quién podría meter todo el polvo de la tierra en una canasta? \\q ¿Quién podría pesar los montes y las colinas en una báscula?"
+        },
+        "fr": {
+          "L": "Qui a mesuré dans le creux de sa main les eaux, et réglé les cieux avec l’empan, \\q et contenu dans une mesure la poussière de la terre, \\q et pesé les montagnes à la balance, \\q et les collines aux plateaux de la balance ?",
+          "B": "Qui a mesuré les mers dans le creux de sa main, ou évalué le ciel d’un écart de ses doigts ? \\q Qui a rassemblé la poussière de la terre dans un panier, \\q ou posé les montagnes sur une balance \\q et les collines sur ses deux plateaux ?",
+          "R": "Qui pourrait mesurer tous les océans en les tenant dans sa main ? Qui pourrait mesurer le ciel avec la largeur de sa main ? \\q Qui pourrait mettre toute la poussière de la terre dans un panier ? \\q Qui pourrait peser les montagnes et les collines sur une balance ?"
+        },
+        "sw": {
+          "L": "Ni nani aliyepima maji katika konzi ya mkono wake, na kuzipima mbingu kwa shibiri, \\q na kuyatia mavumbi ya dunia katika kipimo, \\q na kuipima milima kwa mizani, \\q na vilima kwa vipimo?",
+          "B": "Ni nani aliyeipima bahari katika kiganja cha mkono wake, au kuzipima mbingu kwa upana wa vidole vyake vilivyotandazwa? \\q Ni nani aliyeyakusanya mavumbi ya dunia katika kikapu, \\q au kuiweka milima juu ya mizani \\q na vilima juu ya vipimo viwili?",
+          "R": "Ni nani anayeweza kuipima bahari yote kwa kuishika mkononi mwake? Ni nani anayeweza kuipima anga kwa upana wa mkono wake? \\q Ni nani anayeweza kuyatia mavumbi yote ya dunia katika kikapu? \\q Ni nani anayeweza kuipima milima na vilima kwa mizani?"
+        },
+        "vi": {
+          "L": "Ai đã đo nước trong lòng bàn tay mình, và lấy gang tay đo các tầng trời, \\q và đong bụi đất trong cái đấu, \\q và cân núi bằng cân móc, \\q và đồi bằng cân đĩa?",
+          "B": "Ai đã đong biển cả trong lòng bàn tay, hay lấy gang tay đo bầu trời? \\q Ai đã gom bụi đất vào một cái thúng, \\q hay đặt núi lên cân \\q và đồi lên bàn cân?",
+          "R": "Ai có thể đo hết nước biển bằng cách bụm trong tay? Ai có thể đo bầu trời bằng bề rộng bàn tay? \\q Ai có thể bỏ hết bụi đất trên thế gian vào một cái thúng? \\q Ai có thể cân núi và đồi trên bàn cân?"
+        },
+        "ko": {
+          "L": "누가 자기 손바닥 우묵한 곳으로 물을 재고, 뼘으로 하늘을 재었으며, \\q 되로 땅의 티끌을 담고, \\q 저울로 산들을, \\q 천칭으로 언덕들을 달았느냐?",
+          "B": "누가 손바닥으로 바닷물을 재고 손뼘으로 하늘을 재어 보았느냐? \\q 누가 땅의 흙을 바구니에 담아 보았느냐? \\q 누가 산들을 저울에 달고 \\q 언덕들을 천칭에 달아 보았느냐?",
+          "R": "누가 바닷물을 다 손에 담아서 잴 수 있느냐? 누가 손뼘으로 하늘을 잴 수 있느냐? \\q 누가 땅의 흙을 모두 바구니에 담을 수 있느냐? \\q 누가 산과 언덕을 저울에 달 수 있느냐?"
         }
       },
       "decisions": [
@@ -1171,6 +2034,86 @@
           "reason": "Balanced uses a familiar container for the small dry measure; Literal keeps \"a measure\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400120062"
+          ],
+          "choice": "\"shibiri\"",
+          "alternatives": [
+            "a units setting span"
+          ],
+          "reason": "The span of a hand is \"shibiri\", a Swahili measure of the same length, so no units setting is needed; the English has none here either.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400120062"
+          ],
+          "choice": "\"l'empan\" at Literal for zeret",
+          "alternatives": [
+            "\"la largeur de la main\""
+          ],
+          "reason": "\"Empan\" is the French name of the measure, the span of the spread hand; Balanced and Readable describe it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400120062",
+            "o230400120092"
+          ],
+          "choice": "\"gang tay\"; \"cái đấu\" (L), \"cái thúng\" (B)",
+          "alternatives": [
+            "metric units"
+          ],
+          "reason": "The span and the third-measure are small household measures given as pictures, with no units span in the English; Vietnamese uses the familiar handspan and a common dry measure.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400120062"
+          ],
+          "choice": "\"뼘\", \"손뼘\"",
+          "alternatives": [
+            "a units span"
+          ],
+          "reason": "The span is a measure of the hand itself, the width of a spread hand; the English has no units span here, and Korean \"뼘\" says the same without conversion.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1204,6 +2147,31 @@
           "L": "Who has gauged the spirit of {{divine_name:the LORD|Yahweh}}, \\q or [as] the man of {{deity_pronoun:his|His}} counsel informs {{deity_pronoun:him|Him}}?",
           "B": "Who has taken the measure of the Spirit of {{divine_name:the LORD|Yahweh}}? \\q What adviser of {{deity_pronoun:his|His}} has ever taught {{deity_pronoun:him|Him}}?",
           "R": "Who can understand the mind of {{divine_name:the LORD|Yahweh}}? \\q Who has ever given {{deity_pronoun:him|Him}} advice or taught {{deity_pronoun:him|Him}} anything?"
+        },
+        "es": {
+          "L": "¿Quién midió el espíritu {{divine_name:del SEÑOR|de Yahvé}}, \\q o [como] su consejero {{deity_pronoun:le|Le}} informó?",
+          "B": "¿Quién ha tomado la medida del Espíritu {{divine_name:del SEÑOR|de Yahvé}}? \\q ¿Qué consejero suyo {{deity_pronoun:le|Le}} ha enseñado jamás?",
+          "R": "¿Quién puede entender la mente {{divine_name:del SEÑOR|de Yahvé}}? \\q ¿Quién {{deity_pronoun:le|Le}} ha dado alguna vez un consejo o {{deity_pronoun:le|Le}} ha enseñado algo?"
+        },
+        "fr": {
+          "L": "Qui a sondé l’esprit {{divine_name:du SEIGNEUR|de Yahvé}}, \\q ou [comme] l’homme de {{deity_pronoun:son|Son}} conseil {{deity_pronoun:l’|L’}}a-t-il instruit ?",
+          "B": "Qui a pris la mesure de l’Esprit {{divine_name:du SEIGNEUR|de Yahvé}} ? \\q Quel conseiller {{deity_pronoun:lui|Lui}} a jamais appris quelque chose ?",
+          "R": "Qui peut comprendre la pensée {{divine_name:du SEIGNEUR|de Yahvé}} ? \\q Qui {{deity_pronoun:lui|Lui}} a jamais donné un conseil ou {{deity_pronoun:lui|Lui}} a appris quelque chose ?"
+        },
+        "sw": {
+          "L": "Ni nani aliyeipima roho ya {{divine_name:BWANA|Yahwe}}, \\q au [kama] mshauri {{deity_pronoun:wake|Wake}} anavyomjulisha?",
+          "B": "Ni nani aliyempima Roho wa {{divine_name:BWANA|Yahwe}}? \\q Ni mshauri gani {{deity_pronoun:wake|Wake}} aliyewahi kumfundisha?",
+          "R": "Ni nani anayeweza kuielewa akili ya {{divine_name:BWANA|Yahwe}}? \\q Ni nani aliyewahi kumpa ushauri au kumfundisha chochote?"
+        },
+        "vi": {
+          "L": "Ai đã đo lường thần linh của {{divine_name:CHÚA|Gia-vê}}, \\q hay [là] người mưu sĩ của {{deity_pronoun:ngài|Ngài}} chỉ dạy {{deity_pronoun:ngài|Ngài}}?",
+          "B": "Ai đã thấu hiểu được Thần của {{divine_name:CHÚA|Gia-vê}}? \\q Mưu sĩ nào của {{deity_pronoun:ngài|Ngài}} đã từng chỉ dạy {{deity_pronoun:ngài|Ngài}}?",
+          "R": "Ai có thể hiểu được tâm trí của {{divine_name:CHÚA|Gia-vê}}? \\q Ai đã từng khuyên bảo {{deity_pronoun:ngài|Ngài}} hay dạy {{deity_pronoun:ngài|Ngài}} điều gì?"
+        },
+        "ko": {
+          "L": "누가 {{divine_name:주|야훼}}의 영을 헤아렸으며, \\q 그분의 조언자로서 그분을 가르쳤느냐?",
+          "B": "누가 {{divine_name:주|야훼}}의 영을 헤아려 보았느냐? \\q 그분의 어떤 조언자가 그분을 가르친 적이 있느냐?",
+          "R": "누가 {{divine_name:주|야훼}}의 마음을 알 수 있느냐? \\q 누가 그분께 조언을 하거나 무엇을 가르쳐 드린 적이 있느냐?"
         }
       },
       "decisions": [
@@ -1255,6 +2223,46 @@
           "reason": "Readable gives the sense of \"spirit\" here, as the meaning decision explains.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400130041",
+            "o230400130081"
+          ],
+          "choice": "\"akili ya BWANA\" (R); \"mshauri wake\"",
+          "alternatives": [
+            "\"nia ya BWANA\""
+          ],
+          "reason": "Readable says \"mind\" as the English does, with \"akili\", the word of the published Romans 11:34, which quotes this verse from the Greek; \"mshauri wake\" is also the word there.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400130041"
+          ],
+          "choice": "\"thần linh\" (L), lowercase; \"Thần\" (B), capitalised",
+          "alternatives": [
+            "one form at both levels"
+          ],
+          "reason": "The English capitalises \"Spirit\" only at Balanced; Vietnamese follows it, keeping Literal's lowercase \"thần linh\" for the LORD's mind and will, as the meaning decision explains.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1298,6 +2306,31 @@
           "L": "With whom did {{deity_pronoun:he|He}} consult, and [who] gave {{deity_pronoun:him|Him}} understanding \\q and taught {{deity_pronoun:him|Him}} in the path of justice, \\q and taught {{deity_pronoun:him|Him}} knowledge, \\q and made known to {{deity_pronoun:him|Him}} the way of understanding?",
           "B": "Whom did {{deity_pronoun:he|He}} ever ask for advice, so as to gain insight? \\q Who trained {{deity_pronoun:him|Him}} in the path of justice, \\q or taught {{deity_pronoun:him|Him}} knowledge, \\q or pointed out to {{deity_pronoun:him|Him}} the road to discernment?",
           "R": "Did {{divine_name:the LORD|Yahweh}} ever need to ask anyone for advice? \\q Did anyone teach {{deity_pronoun:him|Him}} what is right and fair? \\q Did anyone teach {{deity_pronoun:him|Him}} what {{deity_pronoun:he|He}} knows, \\q or show {{deity_pronoun:him|Him}} how to understand things?"
+        },
+        "es": {
+          "L": "¿Con quién se aconsejó {{deity_pronoun:él|Él}}, y [quién] {{deity_pronoun:le|Le}} dio entendimiento \\q y {{deity_pronoun:le|Le}} enseñó la senda de la justicia, \\q y {{deity_pronoun:le|Le}} enseñó conocimiento, \\q y {{deity_pronoun:le|Le}} mostró el camino de la inteligencia?",
+          "B": "¿A quién le pidió {{deity_pronoun:él|Él}} consejo para adquirir entendimiento? \\q ¿Quién {{deity_pronoun:le|Le}} instruyó en la senda de la justicia, \\q o {{deity_pronoun:le|Le}} enseñó conocimiento, \\q o {{deity_pronoun:le|Le}} indicó el camino del discernimiento?",
+          "R": "¿Alguna vez necesitó {{divine_name:el SEÑOR|Yahvé}} pedirle consejo a alguien? \\q ¿Alguien {{deity_pronoun:le|Le}} enseñó lo que es justo y correcto? \\q ¿Alguien {{deity_pronoun:le|Le}} enseñó lo que {{deity_pronoun:él|Él}} sabe, \\q o {{deity_pronoun:le|Le}} mostró cómo entender las cosas?"
+        },
+        "fr": {
+          "L": "Avec qui {{deity_pronoun:s’|S’}}est-{{deity_pronoun:il|Il}} consulté, et [qui] {{deity_pronoun:lui|Lui}} a donné l’intelligence \\q et {{deity_pronoun:l’|L’}}a instruit dans le sentier du droit, \\q et {{deity_pronoun:lui|Lui}} a enseigné la connaissance, \\q et {{deity_pronoun:lui|Lui}} a fait connaître le chemin de l’intelligence ?",
+          "B": "À qui a-t-{{deity_pronoun:il|Il}} jamais demandé conseil pour gagner en discernement ? \\q Qui {{deity_pronoun:l’|L’}}a formé au sentier du droit, \\q ou {{deity_pronoun:lui|Lui}} a enseigné la connaissance, \\q ou {{deity_pronoun:lui|Lui}} a montré la route de l’intelligence ?",
+          "R": "{{divine_name:Le SEIGNEUR|Yahvé}} a-t-{{deity_pronoun:il|Il}} jamais eu besoin de demander conseil à quelqu’un ? \\q Quelqu’un {{deity_pronoun:lui|Lui}} a-t-il appris ce qui est juste et équitable ? \\q Quelqu’un {{deity_pronoun:lui|Lui}} a-t-il enseigné ce qu’{{deity_pronoun:il|Il}} sait, \\q ou {{deity_pronoun:lui|Lui}} a-t-il montré comment comprendre les choses ?"
+        },
+        "sw": {
+          "L": "Alishauriana na nani, na [nani] aliyempa ufahamu \\q na kumfundisha katika njia ya hukumu, \\q na kumfundisha maarifa, \\q na kumjulisha njia ya ufahamu?",
+          "B": "Ni nani aliyewahi kumwomba ushauri, ili apate busara? \\q Ni nani aliyemfunza katika njia ya haki, \\q au kumfundisha maarifa, \\q au kumwonyesha njia ya utambuzi?",
+          "R": "Je, {{divine_name:BWANA|Yahwe}} aliwahi kuhitaji kumwomba mtu yeyote ushauri? \\q Je, kuna mtu aliyemfundisha yaliyo sawa na ya haki? \\q Je, kuna mtu aliyemfundisha anayoyajua, \\q au kumwonyesha jinsi ya kuelewa mambo?"
+        },
+        "vi": {
+          "L": "{{deity_pronoun:ngài|Ngài}} đã hỏi ý kiến ai, và [ai] đã ban cho {{deity_pronoun:ngài|Ngài}} sự hiểu biết, \\q và dạy {{deity_pronoun:ngài|Ngài}} con đường công lý, \\q và dạy {{deity_pronoun:ngài|Ngài}} tri thức, \\q và chỉ cho {{deity_pronoun:ngài|Ngài}} con đường hiểu biết?",
+          "B": "Ngài đã từng hỏi ý ai để được sáng suốt? \\q Ai đã dạy {{deity_pronoun:ngài|Ngài}} con đường công lý, \\q hay dạy {{deity_pronoun:ngài|Ngài}} tri thức, \\q hay chỉ cho {{deity_pronoun:ngài|Ngài}} con đường thông sáng?",
+          "R": "{{divine_name:CHÚA|Gia-vê}} có bao giờ cần hỏi ý kiến ai không? \\q Có ai dạy {{deity_pronoun:ngài|Ngài}} điều gì là đúng và công bằng không? \\q Có ai dạy {{deity_pronoun:ngài|Ngài}} những điều {{deity_pronoun:ngài|Ngài}} biết, \\q hay chỉ cho {{deity_pronoun:ngài|Ngài}} cách hiểu biết mọi sự không?"
+        },
+        "ko": {
+          "L": "그분께서 누구와 의논하셨기에, [누가] 그분을 깨우쳐 드리고 \\q 정의의 길을 그분께 가르쳐 드리고 \\q 그분께 지식을 가르쳐 드리고 \\q 깨달음의 길을 그분께 알려 드렸느냐?",
+          "B": "그분께서 누구에게 조언을 구하여 깨달음을 얻으셨느냐? \\q 누가 그분께 정의의 길을 가르쳐 드렸느냐? \\q 누가 그분께 지식을 가르쳐 드렸느냐? \\q 누가 그분께 분별의 길을 알려 드렸느냐?",
+          "R": "{{divine_name:주|야훼}}께서 누구에게 조언을 구하실 필요가 있으셨느냐? \\q 누가 그분께 옳고 공정한 것을 가르쳐 드렸느냐? \\q 누가 그분께서 아시는 것을 가르쳐 드렸느냐? \\q 누가 그분께 깨닫는 법을 알려 드렸느냐?"
         }
       },
       "decisions": [
@@ -1370,6 +2403,31 @@
           "L": "Look, [the] nations [are] like a drop from a bucket, \\q and like dust on [the] scales they are counted; \\q look, {{deity_pronoun:he|He}} lifts [the] coastlands like fine dust.",
           "B": "The nations are no more than a drop falling from a bucket; \\q they count as the dust left on a scale. \\q He lifts up the coastlands like fine powder.",
           "R": "To God, the nations are like one drop of water from a bucket. \\q They are like a bit of dust on a scale. \\q He can lift up lands far away as if they were dust."
+        },
+        "es": {
+          "L": "He aquí, [las] naciones [son] como una gota de un cubo, \\q y como polvo de la balanza son tenidas; \\q he aquí, {{deity_pronoun:él|Él}} alza [las] costas como polvo fino.",
+          "B": "Las naciones no son más que una gota que cae de un cubo; \\q cuentan como el polvo que queda en una balanza. \\q Levanta las costas lejanas como polvo fino.",
+          "R": "Para Dios, las naciones son como una gota de agua de un cubo. \\q Son como un poco de polvo en una balanza. \\q Puede levantar las tierras lejanas como si fueran polvo."
+        },
+        "fr": {
+          "L": "Voici, les nations [sont] comme une goutte d’un seau, \\q et comme la poussière d’une balance elles sont comptées ; \\q voici, {{deity_pronoun:il|Il}} soulève les îles comme une fine poussière.",
+          "B": "Les nations ne sont qu’une goutte qui tombe d’un seau ; \\q elles comptent autant que la poussière restée sur une balance. \\q Il soulève les îles lointaines comme une fine poudre.",
+          "R": "Pour Dieu, les nations sont comme une goutte d’eau tombée d’un seau. \\q Elles sont comme un peu de poussière sur une balance. \\q Il peut soulever les pays lointains comme si c’était de la poussière."
+        },
+        "sw": {
+          "L": "Tazama, mataifa [ni] kama tone kutoka ndooni, \\q na kama vumbi juu ya mizani yanahesabiwa; \\q tazama, anavinyanyua visiwa kama vumbi laini.",
+          "B": "Mataifa si kitu zaidi ya tone linalodondoka kutoka ndooni; \\q yanahesabiwa kama vumbi lililobaki juu ya mizani. \\q Anaviinua visiwa kama unga laini.",
+          "R": "Kwa Mungu, mataifa ni kama tone moja la maji kutoka ndooni. \\q Ni kama chembe ya vumbi juu ya mizani. \\q Anaweza kuziinua nchi za mbali ng'ambo ya bahari kana kwamba ni vumbi."
+        },
+        "vi": {
+          "L": "Kìa, các dân tộc [như] một giọt nước nơi thùng, \\q và được kể như bụi trên cân; \\q kìa, {{deity_pronoun:ngài|Ngài}} nhấc các hải đảo lên như bụi mịn.",
+          "B": "Các dân tộc chẳng hơn gì một giọt nước rơi từ thùng; \\q chúng được kể như hạt bụi còn sót trên cân. \\q Ngài nhấc các hải đảo lên như bụi mịn.",
+          "R": "Đối với Đức Chúa Trời, các dân tộc chỉ như một giọt nước trong thùng. \\q Chúng như một chút bụi trên bàn cân. \\q Ngài có thể nhấc những miền xa bên kia biển lên như thể chúng là bụi."
+        },
+        "ko": {
+          "L": "보라, 민족들은 두레박의 물 한 방울 같고, \\q 저울 위의 티끌같이 여겨진다. \\q 보라, 그분께서 섬들을 고운 먼지처럼 들어 올리신다.",
+          "B": "민족들은 두레박에서 떨어지는 물 한 방울에 지나지 않고, \\q 저울에 남은 먼지처럼 여겨진다. \\q 그분께서 바닷가 나라들을 고운 가루처럼 들어 올리신다.",
+          "R": "하나님께는 민족들이 두레박에서 떨어진 물 한 방울과 같다. \\q 그들은 저울 위의 작은 먼지와 같다. \\q 그분께서는 먼 나라들을 먼지처럼 들어 올리실 수 있다."
         }
       },
       "decisions": [
@@ -1453,6 +2511,31 @@
           "L": "And Lebanon [is] not enough [for] burning, \\q and its animals [are] not enough [for a] burnt offering.",
           "B": "Lebanon would not supply enough wood for the fire, \\q nor its wild animals enough for a burnt offering.",
           "R": "All the trees in the forests of Lebanon would not make enough firewood for an offering to {{deity_pronoun:him|Him}}. \\q All the animals there would not be enough to sacrifice to {{deity_pronoun:him|Him}}."
+        },
+        "es": {
+          "L": "Y el Líbano no [basta para] quemar, \\q ni sus animales bastan [para] holocausto.",
+          "B": "El Líbano no daría leña suficiente para el fuego, \\q ni sus animales salvajes bastarían para un holocausto.",
+          "R": "Todos los árboles de los bosques del Líbano no darían suficiente leña para una ofrenda a {{deity_pronoun:él|Él}}. \\q Todos los animales de allí no bastarían para ofrecerle un sacrificio."
+        },
+        "fr": {
+          "L": "Et le Liban ne suffit pas [pour] le feu, \\q et ses bêtes ne suffisent pas [pour] l’holocauste.",
+          "B": "Le Liban ne fournirait pas assez de bois pour le feu, \\q ni ses bêtes sauvages assez de victimes pour un holocauste.",
+          "R": "Tous les arbres des forêts du Liban ne suffiraient pas à faire le feu d’une offrande pour {{deity_pronoun:lui|Lui}}. \\q Tous les animaux qui y vivent ne suffiraient pas pour {{deity_pronoun:lui|Lui}} offrir un sacrifice."
+        },
+        "sw": {
+          "L": "Na Lebanoni [haitoshi] kwa kuni, \\q na wanyama wake hawatoshi [kwa] sadaka ya kuteketezwa.",
+          "B": "Lebanoni isingetoa kuni za kutosha kwa moto, \\q wala wanyama wake wa porini wasingetosha kwa sadaka ya kuteketezwa.",
+          "R": "Miti yote ya misitu ya Lebanoni isingetosha kuwa kuni za sadaka ya kumtolea. \\q Wanyama wote wa huko wasingetosha kumtolea dhabihu."
+        },
+        "vi": {
+          "L": "Và Li-ban không đủ [để] đốt, \\q và thú vật của nó không đủ [làm] tế lễ thiêu.",
+          "B": "Li-ban không đủ củi cho ngọn lửa, \\q và thú rừng của nó không đủ cho một tế lễ thiêu.",
+          "R": "Tất cả cây cối trong rừng Li-ban cũng không đủ làm củi để dâng một tế lễ lên {{deity_pronoun:ngài|Ngài}}. \\q Tất cả thú vật ở đó cũng không đủ để dâng lên {{deity_pronoun:ngài|Ngài}}."
+        },
+        "ko": {
+          "L": "그리고 레바논도 땔감으로 넉넉하지 않고, \\q 그 짐승들도 번제물로 넉넉하지 않다.",
+          "B": "레바논의 나무를 다 써도 불을 지피기에 모자라고, \\q 그 짐승들을 다 바쳐도 번제물로 모자란다.",
+          "R": "레바논 숲의 나무를 모두 베어도 그분께 바칠 제물을 태울 땔감으로는 모자란다. \\q 그곳의 짐승을 모두 바쳐도 그분께 드릴 제물로는 모자란다."
         }
       },
       "decisions": [
@@ -1536,6 +2619,31 @@
           "L": "All the nations [are] as nothing before {{deity_pronoun:him|Him}}; \\q as less than nothing and emptiness they are counted by {{deity_pronoun:him|Him}}.",
           "B": "Set beside {{deity_pronoun:him|Him}}, all the nations amount to nothing; \\q to {{deity_pronoun:him|Him}} they count for less than nothing, for an empty void.",
           "R": "Compared with {{deity_pronoun:him|Him}}, all the nations are nothing. \\q He thinks of them as less than nothing, as empty and worthless."
+        },
+        "es": {
+          "L": "Todas las naciones [son] como nada delante de {{deity_pronoun:él|Él}}; \\q como menos que nada y vacío son tenidas por {{deity_pronoun:él|Él}}.",
+          "B": "Comparadas con {{deity_pronoun:él|Él}}, todas las naciones no son nada; \\q para {{deity_pronoun:él|Él}} valen menos que nada, son puro vacío.",
+          "R": "Comparadas con {{deity_pronoun:él|Él}}, todas las naciones no son nada. \\q Él las considera menos que nada, vacías y sin valor."
+        },
+        "fr": {
+          "L": "Toutes les nations [sont] comme rien devant {{deity_pronoun:lui|Lui}} ; \\q moins que le néant et le vide, elles sont comptées par {{deity_pronoun:lui|Lui}}.",
+          "B": "Placées à côté de {{deity_pronoun:lui|Lui}}, toutes les nations ne sont rien ; \\q pour {{deity_pronoun:lui|Lui}}, elles valent moins que rien, un vide sans forme.",
+          "R": "Comparées à {{deity_pronoun:lui|Lui}}, toutes les nations ne sont rien. \\q Il les considère comme moins que rien, comme du vide sans valeur."
+        },
+        "sw": {
+          "L": "Mataifa yote [ni] kama si kitu mbele {{deity_pronoun:yake|Yake}}; \\q kama duni kuliko si kitu na utupu yanahesabiwa {{deity_pronoun:kwake|Kwake}}.",
+          "B": "Yakilinganishwa {{deity_pronoun:naye|Naye}}, mataifa yote si kitu; \\q {{deity_pronoun:kwake|Kwake}} yanahesabiwa kuwa duni kuliko si kitu, kuwa utupu mtupu.",
+          "R": "Ukilinganisha na {{deity_pronoun:yeye|Yeye}}, mataifa yote si kitu. \\q Anayaona kuwa duni kuliko si kitu, kuwa matupu yasiyo na thamani."
+        },
+        "vi": {
+          "L": "Mọi dân tộc [đều] như không có gì trước mặt {{deity_pronoun:ngài|Ngài}}; \\q {{deity_pronoun:ngài|Ngài}} kể chúng như ít hơn không và hư vô.",
+          "B": "Đặt cạnh {{deity_pronoun:ngài|Ngài}}, mọi dân tộc chẳng là gì cả; \\q đối với {{deity_pronoun:ngài|Ngài}}, chúng còn kém hơn hư không, chỉ là khoảng trống rỗng.",
+          "R": "So với {{deity_pronoun:ngài|Ngài}}, mọi dân tộc chẳng là gì. \\q Ngài xem chúng còn kém hơn hư không, trống rỗng và vô giá trị."
+        },
+        "ko": {
+          "L": "모든 민족이 그분 앞에서는 없는 것 같고, \\q 그분께서는 그들을 없는 것보다 못하고 공허한 것으로 여기신다.",
+          "B": "그분 앞에 서면 모든 민족은 아무것도 아니다. \\q 그분께서는 그들을 없는 것보다 못하게, 텅 빈 것으로 여기신다.",
+          "R": "그분과 비교하면 모든 민족은 아무것도 아니다. \\q 그분께서는 그들을 없는 것보다 못하게, 텅 비고 쓸모없는 것으로 여기신다."
         }
       },
       "decisions": [
@@ -1603,6 +2711,31 @@
           "L": "And to whom will you liken God, \\q and what likeness will you set beside {{deity_pronoun:him|Him}}?",
           "B": "Who, then, will you say God is like? \\q What figure could you line up beside {{deity_pronoun:him|Him}}?",
           "R": "So who can you compare to God? \\q What could you say looks like {{deity_pronoun:him|Him}}?"
+        },
+        "es": {
+          "L": "¿A quién, pues, {{plural_you:compararán|compararéis}} a Dios, \\q y qué semejanza {{plural_you:pondrán|pondréis}} junto a {{deity_pronoun:él|Él}}?",
+          "B": "¿A quién, entonces, {{plural_you:dirán|diréis}} que se parece Dios? \\q ¿Qué figura {{plural_you:podrían|podríais}} poner a {{deity_pronoun:su|Su}} lado?",
+          "R": "¿Con quién {{plural_you:pueden|podéis}} comparar a Dios? \\q ¿Qué {{plural_you:podrían|podríais}} decir que se parece a {{deity_pronoun:él|Él}}?"
+        },
+        "fr": {
+          "L": "Et à qui comparerez-vous Dieu, \\q et quelle ressemblance mettrez-vous à côté de {{deity_pronoun:lui|Lui}} ?",
+          "B": "À qui donc direz-vous que Dieu ressemble ? \\q Quelle image pourriez-vous placer à côté de {{deity_pronoun:lui|Lui}} ?",
+          "R": "Alors, à qui pouvez-vous comparer Dieu ? \\q Qu’est-ce qui pourrait {{deity_pronoun:lui|Lui}} ressembler ?"
+        },
+        "sw": {
+          "L": "Basi mtamfananisha Mungu na nani, \\q na ni mfano gani mtakaouweka kando {{deity_pronoun:yake|Yake}}?",
+          "B": "Basi mtasema Mungu anafanana na nani? \\q Ni sura gani mngeweza kuiweka kando {{deity_pronoun:yake|Yake}}?",
+          "R": "Basi mnaweza kumlinganisha Mungu na nani? \\q Ni kitu gani mngeweza kusema kinafanana {{deity_pronoun:naye|Naye}}?"
+        },
+        "vi": {
+          "L": "Vậy các ngươi sẽ ví Đức Chúa Trời với ai, \\q và sẽ lấy hình ảnh nào mà so sánh với {{deity_pronoun:ngài|Ngài}}?",
+          "B": "Vậy các ngươi sẽ nói Đức Chúa Trời giống ai? \\q Các ngươi có thể đặt hình tượng nào bên cạnh {{deity_pronoun:ngài|Ngài}}?",
+          "R": "Vậy các ngươi có thể so sánh Đức Chúa Trời với ai? \\q Các ngươi có thể nói điều gì trông giống {{deity_pronoun:ngài|Ngài}}?"
+        },
+        "ko": {
+          "L": "그렇다면 너희가 하나님을 누구에게 비기겠으며, \\q 무슨 형상을 그분과 견주겠느냐?",
+          "B": "그렇다면 너희는 하나님을 누구와 같다고 하겠느냐? \\q 어떤 모양을 그분 곁에 세워 견주겠느냐?",
+          "R": "그러니 너희가 하나님을 누구와 비교할 수 있겠느냐? \\q 무엇이 그분과 닮았다고 말할 수 있겠느냐?"
         }
       },
       "decisions": [
@@ -1632,6 +2765,27 @@
           "choice": "God: the short divine title El",
           "alternatives": [],
           "reason": "The title stresses God's power and stands in contrast with the made objects that follow.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400180032"
+          ],
+          "choice": "\"các ngươi\" to the hearers of verses 18-31",
+          "alternatives": [
+            "\"các người\""
+          ],
+          "reason": "The questions of verses 18-26 lead up to God's own question in verse 25 and are spoken in his name; Vietnamese keeps one form, \"các ngươi\", through the passage.",
           "uncertain": false,
           "footnote": false
         }
@@ -1670,6 +2824,31 @@
           "L": "The idol? A craftsman cast [it], \\q and a smith overlays it with gold, \\q and he is refining chains of silver.",
           "B": "An idol? A craftsman casts it, \\q a goldsmith plates it in gold \\q and refines silver for its chains.",
           "R": "An idol is made by a worker who pours metal into a mold. \\q Then a goldsmith covers it with gold \\q and makes silver chains for it."
+        },
+        "es": {
+          "L": "¿El ídolo? Un artesano [lo] funde, \\q y el orfebre lo recubre de oro, \\q y le funde cadenas de plata.",
+          "B": "¿Un ídolo? Un artesano lo funde, \\q un orfebre lo enchapa de oro \\q y le refina cadenas de plata.",
+          "R": "Un ídolo lo hace un obrero que vierte metal en un molde. \\q Luego un orfebre lo cubre de oro \\q y le hace cadenas de plata."
+        },
+        "fr": {
+          "L": "L’idole ? Un artisan [l’]a coulée, \\q et un orfèvre la recouvre d’or, \\q et il fond des chaînettes d’argent.",
+          "B": "Une idole ? Un artisan la coule, \\q un orfèvre la plaque d’or \\q et fond de l’argent pour ses chaînettes.",
+          "R": "Une idole est faite par un ouvrier qui verse du métal dans un moule. \\q Puis un orfèvre la recouvre d’or \\q et lui fait des chaînettes d’argent."
+        },
+        "sw": {
+          "L": "Sanamu? Fundi aliisubu, \\q na mfua dhahabu anaifunika kwa dhahabu, \\q naye anasafisha minyororo ya fedha.",
+          "B": "Sanamu? Fundi huisubu, \\q mfua dhahabu huipaka dhahabu \\q na kusafisha fedha kwa ajili ya minyororo yake.",
+          "R": "Sanamu hutengenezwa na fundi anayemimina chuma katika kalibu. \\q Kisha mfua dhahabu huifunika kwa dhahabu \\q na kuitengenezea minyororo ya fedha."
+        },
+        "vi": {
+          "L": "Hình tượng ư? Một người thợ đã đúc [nó], \\q và một thợ vàng bọc nó bằng vàng, \\q và đang luyện những sợi xích bằng bạc.",
+          "B": "Một hình tượng ư? Thợ đúc đổ khuôn nó, \\q thợ vàng dát vàng cho nó \\q và luyện bạc làm dây xích cho nó.",
+          "R": "Hình tượng do một người thợ đổ kim loại vào khuôn mà làm ra. \\q Rồi thợ vàng bọc vàng bên ngoài \\q và làm những sợi xích bằng bạc cho nó."
+        },
+        "ko": {
+          "L": "우상? 장인이 [그것을] 부어 만들고, \\q 금장이가 그것에 금을 입히고, \\q 은사슬을 만든다.",
+          "B": "우상 말이냐? 장인이 그것을 부어 만들고, \\q 금장이가 금을 입히고 \\q 은을 녹여 사슬을 만든다.",
+          "R": "우상은 쇠를 녹여 틀에 붓는 일꾼이 만든다. \\q 그다음에 금장이가 그것에 금을 입히고 \\q 은사슬을 만들어 단다."
         }
       },
       "decisions": [
@@ -1757,6 +2936,31 @@
           "L": "The one [too] poor [for such] a contribution \\q chooses wood [that] will not rot; \\q he seeks for himself a skilled craftsman \\q to set up an idol [that] will not totter.",
           "B": "The one who cannot afford so rich an offering \\q chooses a block of wood that will not decay \\q and goes looking for a skilled carver \\q to mount an idol that will not tip over.",
           "R": "A person who is too poor to give gold chooses wood that will not rot. \\q Then he finds a skilled worker to make an idol that will not fall over."
+        },
+        "es": {
+          "L": "El [demasiado] pobre [para tal] ofrenda \\q escoge madera [que] no se pudra; \\q se busca un artesano hábil \\q para erigir un ídolo [que] no se tambalee.",
+          "B": "El que no puede pagar una ofrenda tan rica \\q escoge un tronco que no se pudra \\q y busca un tallador hábil \\q que le monte un ídolo que no se vuelque.",
+          "R": "Una persona demasiado pobre para dar oro escoge una madera que no se pudra. \\q Luego busca a un obrero hábil para que le haga un ídolo que no se caiga."
+        },
+        "fr": {
+          "L": "Celui qui est [trop] pauvre [pour une telle] offrande \\q choisit un bois [qui] ne pourrit pas ; \\q il se cherche un artisan habile \\q pour dresser une idole [qui] ne vacille pas.",
+          "B": "Celui qui n’a pas les moyens d’une offrande si riche \\q choisit une pièce de bois qui ne pourrira pas \\q et va chercher un sculpteur habile \\q pour monter une idole qui ne basculera pas.",
+          "R": "Celui qui est trop pauvre pour donner de l’or choisit un bois qui ne pourrit pas. \\q Puis il trouve un ouvrier habile pour faire une idole qui ne tombera pas."
+        },
+        "sw": {
+          "L": "Yule [aliye] maskini [mno kwa] matoleo [kama hayo] \\q huchagua mti [usio]oza; \\q hujitafutia fundi stadi \\q ili kusimamisha sanamu [isiyo]yumba.",
+          "B": "Yule asiyeweza kumudu matoleo ya thamani kama hayo \\q huchagua kipande cha mti kisichooza \\q na kwenda kumtafuta fundi stadi wa kuchonga \\q ili kusimamisha sanamu isiyoanguka.",
+          "R": "Mtu aliye maskini mno kuweza kutoa dhahabu huchagua mti usiooza. \\q Kisha humtafuta fundi stadi wa kumtengenezea sanamu isiyoanguka."
+        },
+        "vi": {
+          "L": "Người [quá] nghèo [để dâng] lễ vật [như thế] \\q thì chọn gỗ [không] mục; \\q người tìm cho mình một thợ khéo \\q để dựng một hình tượng [không] lung lay.",
+          "B": "Người không đủ sức dâng một lễ vật quý như thế \\q thì chọn một khúc gỗ không mục \\q rồi đi tìm một thợ chạm khéo tay \\q để dựng một hình tượng không ngã đổ.",
+          "R": "Người quá nghèo không có vàng thì chọn loại gỗ không mục. \\q Rồi người ấy tìm một người thợ khéo để làm một hình tượng không ngã đổ."
+        },
+        "ko": {
+          "L": "그런 예물을 [드리기에] 가난한 자는 \\q 썩지 않을 나무를 고르고, \\q 숙련된 장인을 찾아 \\q 흔들리지 않을 우상을 세운다.",
+          "B": "그렇게 비싼 예물을 바칠 수 없는 사람은 \\q 썩지 않을 나무토막을 고르고, \\q 솜씨 좋은 조각가를 찾아가 \\q 넘어지지 않을 우상을 세우게 한다.",
+          "R": "금을 바칠 수 없을 만큼 가난한 사람은 썩지 않을 나무를 고른다. \\q 그러고는 솜씨 좋은 일꾼을 찾아 넘어지지 않을 우상을 만들게 한다."
         }
       },
       "decisions": [
@@ -1849,6 +3053,31 @@
           "L": "Do you not know? Do you not hear? \\q Was it not told you from [the] start? \\q Have you not understood [since] the foundations of the earth?",
           "B": "Do you not know? Have you not heard? \\q Was it not announced to you at the very start? \\q Have you not grasped it since the earth's foundations were laid?",
           "R": "Do you not know? Have you not heard? \\q You were told this long ago, at the very beginning. \\q You should have understood it ever since the earth was made."
+        },
+        "es": {
+          "L": "¿No {{plural_you:saben|sabéis}}? ¿No {{plural_you:han oído|habéis oído}}? \\q ¿No se {{plural_you:les|os}} anunció desde [el] principio? \\q ¿No {{plural_you:han entendido|habéis entendido}} [desde] los cimientos de la tierra?",
+          "B": "¿No lo {{plural_you:saben|sabéis}}? ¿No lo {{plural_you:han oído|habéis oído}}? \\q ¿No se {{plural_you:les|os}} anunció desde el mismo principio? \\q ¿No lo {{plural_you:han comprendido|habéis comprendido}} desde que se pusieron los cimientos de la tierra?",
+          "R": "¿No lo {{plural_you:saben|sabéis}}? ¿No lo {{plural_you:han oído|habéis oído}}? \\q Se {{plural_you:les|os}} dijo hace mucho, desde el mismo principio. \\q {{plural_you:Debieron|Debisteis}} entenderlo desde que la tierra fue creada."
+        },
+        "fr": {
+          "L": "Ne savez-vous pas ? N’entendez-vous pas ? \\q Ne vous a-t-on pas annoncé dès le commencement ? \\q N’avez-vous pas compris [depuis] les fondations de la terre ?",
+          "B": "Ne le savez-vous pas ? Ne l’avez-vous pas entendu ? \\q Ne vous l’a-t-on pas annoncé dès le tout début ? \\q Ne l’avez-vous pas compris depuis que la terre a été fondée ?",
+          "R": "Ne le savez-vous pas ? Ne l’avez-vous pas entendu ? \\q On vous l’a dit il y a longtemps, dès le commencement. \\q Vous auriez dû le comprendre depuis que la terre a été créée."
+        },
+        "sw": {
+          "L": "Je, hamjui? Je, hamsikii? \\q Je, hamkuambiwa tangu mwanzo? \\q Je, hamkufahamu [tangu] misingi ya dunia?",
+          "B": "Je, hamjui? Je, hamjasikia? \\q Je, hamkutangaziwa tangu mwanzo kabisa? \\q Je, hamjaelewa tangu misingi ya dunia ilipowekwa?",
+          "R": "Je, hamjui? Je, hamjasikia? \\q Mliambiwa jambo hili zamani sana, tangu mwanzo kabisa. \\q Mngepaswa kuelewa tangu dunia ilipoumbwa."
+        },
+        "vi": {
+          "L": "Các ngươi không biết sao? Các ngươi không nghe sao? \\q Từ ban đầu [người ta] không bảo cho các ngươi sao? \\q Từ khi lập nền trái đất, các ngươi không hiểu sao?",
+          "B": "Các ngươi không biết sao? Các ngươi chưa nghe sao? \\q Ngay từ đầu chẳng phải đã có người báo cho các ngươi sao? \\q Từ khi nền trái đất được đặt, các ngươi chẳng hiểu sao?",
+          "R": "Các ngươi không biết sao? Các ngươi chưa nghe sao? \\q Các ngươi đã được cho biết điều này từ rất lâu, ngay từ ban đầu. \\q Lẽ ra các ngươi đã phải hiểu từ khi trái đất được tạo nên."
+        },
+        "ko": {
+          "L": "너희는 알지 못하느냐? 너희는 듣지 못하느냐? \\q 처음부터 그것이 너희에게 전해지지 않았느냐? \\q 땅의 기초가 [놓일 때부터] 너희가 깨닫지 못했느냐?",
+          "B": "너희는 알지 못하느냐? 듣지 못하였느냐? \\q 맨 처음부터 너희에게 전해지지 않았느냐? \\q 땅의 기초가 놓일 때부터 너희가 깨닫지 못하였느냐?",
+          "R": "너희는 모르느냐? 듣지 못했느냐? \\q 너희는 아주 오래전, 맨 처음부터 이 말을 들었다. \\q 땅이 만들어질 때부터 너희는 이것을 깨달았어야 했다."
         }
       },
       "decisions": [
@@ -1932,6 +3161,31 @@
           "L": "[It is] the one who sits above the circle of the earth, \\q and its inhabitants [are] like grasshoppers; \\q the one who stretches out the heavens like a fine cloth \\q and spreads them like a tent to dwell in.",
           "B": "He is the one enthroned high over the earth's round horizon, \\q and the people living on it look like grasshoppers. \\q He draws the sky out like a sheer cloth \\q and spreads it like a tent to dwell in.",
           "R": "God sits on {{deity_pronoun:his|His}} throne high above the earth. \\q From there, the people on earth look as small as grasshoppers. \\q He spreads out the sky like a thin curtain. \\q He spreads it out like a tent to live in."
+        },
+        "es": {
+          "L": "[Él es] el que está sentado sobre el círculo de la tierra, \\q y sus habitantes [son] como langostas; \\q el que extiende los cielos como un velo \\q y los despliega como una tienda para habitar.",
+          "B": "Él es quien reina en lo alto sobre la bóveda de la tierra, \\q y los que viven en ella parecen langostas. \\q Extiende el cielo como una tela fina \\q y lo despliega como una tienda para habitar.",
+          "R": "Dios está sentado en {{deity_pronoun:su|Su}} trono, muy por encima de la tierra. \\q Desde allí, la gente de la tierra se ve tan pequeña como los saltamontes. \\q Extiende el cielo como una cortina delgada. \\q Lo despliega como una tienda para vivir en ella."
+        },
+        "fr": {
+          "L": "[C’est] celui qui siège au-dessus du cercle de la terre, \\q et ses habitants [sont] comme des sauterelles ; \\q celui qui étend les cieux comme une toile fine \\q et les déploie comme une tente pour y habiter.",
+          "B": "C’est {{deity_pronoun:lui|Lui}} qui trône bien au-dessus de l’horizon arrondi de la terre, \\q et ceux qui l’habitent ressemblent à des sauterelles. \\q Il déroule le ciel comme un voile léger \\q et le déploie comme une tente pour y demeurer.",
+          "R": "Dieu est assis sur {{deity_pronoun:son|Son}} trône, très haut au-dessus de la terre. \\q De là-haut, les gens sur la terre paraissent aussi petits que des sauterelles. \\q Il étend le ciel comme un rideau léger. \\q Il le déploie comme une tente pour y habiter."
+        },
+        "sw": {
+          "L": "[Ni] {{deity_pronoun:yeye|Yeye}} aketiye juu ya duara la dunia, \\q na wakaaji wake [ni] kama panzi; \\q {{deity_pronoun:yeye|Yeye}} azitandazaye mbingu kama kitambaa chembamba \\q na kuzikunjua kama hema la kukaa.",
+          "B": "Yeye ndiye aliyeketi kama mfalme juu ya duara la upeo wa dunia, \\q na watu wanaoishi juu yake wanaonekana kama panzi. \\q Huzitandaza mbingu kama kitambaa chembamba \\q na kuzikunjua kama hema la kukaa.",
+          "R": "Mungu ameketi katika kiti {{deity_pronoun:chake|Chake}} cha enzi juu sana ya dunia. \\q Kutoka huko, watu wa duniani wanaonekana wadogo kama panzi. \\q Huitandaza anga kama pazia jembamba. \\q Huikunjua kama hema la kuishi."
+        },
+        "vi": {
+          "L": "[Chính] Đấng ngự trên vòng tròn của trái đất, \\q và cư dân trên đó [như] cào cào; \\q Đấng giăng các tầng trời ra như tấm vải mỏng \\q và trải chúng ra như một cái lều để ở.",
+          "B": "Ngài là Đấng ngự trên cao, trên vòm tròn của trái đất, \\q và người sống trên đất trông như cào cào. \\q Ngài giăng bầu trời ra như tấm màn mỏng \\q và trải nó ra như cái lều để ở.",
+          "R": "Đức Chúa Trời ngồi trên ngai {{deity_pronoun:ngài|Ngài}} ở trên cao, bên trên trái đất. \\q Từ trên ấy, người ta trên đất trông nhỏ bé như cào cào. \\q Ngài giăng bầu trời ra như một tấm màn mỏng. \\q Ngài trải nó ra như cái lều để ở."
+        },
+        "ko": {
+          "L": "[그분은] 땅의 둥근 테 위에 앉아 계신 분이시니, \\q 그 주민들은 메뚜기들과 같다. \\q 그분께서는 하늘을 얇은 천처럼 펴시고, \\q 거주할 장막처럼 그것을 치신다.",
+          "B": "그분께서 땅의 둥근 지평선 위 높이 앉아 계시니, \\q 거기 사는 사람들은 메뚜기처럼 보인다. \\q 그분께서 하늘을 얇은 천처럼 펼치시고 \\q 거하실 장막처럼 치신다.",
+          "R": "하나님께서는 땅 위 높은 곳에 있는 왕좌에 앉아 계신다. \\q 거기에서 보시면 땅 위의 사람들은 메뚜기처럼 작다. \\q 그분께서는 하늘을 얇은 휘장처럼 펼치신다. \\q 그 안에서 사실 장막처럼 그것을 펼치신다."
         }
       },
       "decisions": [
@@ -2031,6 +3285,31 @@
           "L": "The one who brings dignitaries to nothing; \\q [the] judges of [the] earth {{deity_pronoun:he|He}} makes like emptiness.",
           "B": "He turns high officials into nothing \\q and makes the earth's judges like a formless void.",
           "R": "He takes powerful rulers and makes them nothing. \\q He makes the judges of the world worthless."
+        },
+        "es": {
+          "L": "El que reduce a nada a los príncipes; \\q a los jueces de la tierra {{deity_pronoun:él|Él}} los vuelve como el vacío.",
+          "B": "Él convierte en nada a los altos dignatarios \\q y hace de los jueces de la tierra un vacío sin forma.",
+          "R": "Toma a los gobernantes poderosos y los convierte en nada. \\q Hace que los jueces del mundo no valgan nada."
+        },
+        "fr": {
+          "L": "Celui qui réduit les dignitaires à rien ; \\q les juges de la terre, {{deity_pronoun:il|Il}} les rend pareils au vide.",
+          "B": "Il réduit à rien les hauts personnages \\q et rend les juges de la terre pareils à un vide sans forme.",
+          "R": "Il prend les chefs puissants et les réduit à rien. \\q Il rend sans valeur les juges du monde."
+        },
+        "sw": {
+          "L": "Yeye awafanyaye wakuu kuwa si kitu; \\q waamuzi wa dunia huwafanya kama utupu.",
+          "B": "Huwageuza maafisa wakuu kuwa si kitu \\q na kuwafanya waamuzi wa dunia kuwa kama utupu usio na umbo.",
+          "R": "Huwachukua watawala wenye nguvu na kuwafanya si kitu. \\q Huwafanya waamuzi wa ulimwengu kuwa wasio na thamani."
+        },
+        "vi": {
+          "L": "Đấng làm cho các bậc quyền quý trở nên hư không; \\q các thẩm phán của đất, {{deity_pronoun:ngài|Ngài}} làm cho như hư vô.",
+          "B": "Ngài biến các quan chức cao cấp thành hư không \\q và làm cho các thẩm phán trên đất như khoảng trống rỗng.",
+          "R": "Ngài lấy những kẻ cầm quyền có thế lực mà làm cho chẳng còn là gì. \\q Ngài làm cho những người cai trị thế gian trở nên vô giá trị."
+        },
+        "ko": {
+          "L": "고관들을 없는 것으로 만드시는 분, \\q 땅의 재판관들을 공허한 것처럼 만드시는 분이시다.",
+          "B": "그분께서 높은 관리들을 아무것도 아니게 하시고, \\q 땅의 재판관들을 텅 빈 것처럼 만드신다.",
+          "R": "그분께서는 힘 있는 통치자들을 아무것도 아니게 만드신다. \\q 세상의 재판관들을 쓸모없게 만드신다."
         }
       },
       "decisions": [
@@ -2110,6 +3389,31 @@
           "L": "Barely have they been planted, barely have they been sown, \\q barely has their stem taken root in the ground, \\q when {{deity_pronoun:he|He}} also blows on them and they dry up, \\q and a storm carries them off like stubble.",
           "B": "Hardly have they been planted, hardly have they been sown, \\q hardly has their stem rooted in the soil, \\q when {{deity_pronoun:he|He}} breathes on them and they shrivel, \\q and a gale whirls them away like straw.",
           "R": "These rulers are like young plants. They are barely planted. They are barely in the ground. \\q Their roots have hardly started to grow. \\q Then God blows on them, and they dry up. \\q A storm blows them away like straw."
+        },
+        "es": {
+          "L": "Apenas han sido plantados, apenas han sido sembrados, \\q apenas ha echado raíz en la tierra su tallo, \\q cuando {{deity_pronoun:él|Él}} sopla sobre ellos y se secan, \\q y la tempestad se los lleva como paja.",
+          "B": "Apenas han sido plantados, apenas han sido sembrados, \\q apenas ha arraigado su tallo en la tierra, \\q cuando {{deity_pronoun:él|Él}} sopla sobre ellos y se marchitan, \\q y un vendaval se los lleva como paja.",
+          "R": "Esos gobernantes son como plantas tiernas. Apenas han sido plantados. Apenas están en la tierra. \\q Sus raíces casi no han empezado a crecer. \\q Entonces Dios sopla sobre ellos, y se secan. \\q Una tormenta se los lleva como paja."
+        },
+        "fr": {
+          "L": "À peine ont-ils été plantés, à peine ont-ils été semés, \\q à peine leur tige a-t-elle pris racine dans la terre, \\q qu’{{deity_pronoun:il|Il}} souffle sur eux et ils sèchent, \\q et la tempête les emporte comme le chaume.",
+          "B": "À peine plantés, à peine semés, \\q à peine leur tige a-t-elle pris racine dans le sol, \\q qu’{{deity_pronoun:il|Il}} souffle sur eux et ils se flétrissent, \\q et un ouragan les emporte comme de la paille.",
+          "R": "Ces chefs sont comme de jeunes plantes. On vient à peine de les planter. Ils sont à peine en terre. \\q Leurs racines ont tout juste commencé à pousser. \\q Alors Dieu souffle sur eux, et ils sèchent. \\q Une tempête les emporte comme de la paille."
+        },
+        "sw": {
+          "L": "Mara tu wamepandwa, mara tu wamepandwa mbegu, \\q mara tu shina lao limetia mizizi ardhini, \\q {{deity_pronoun:naye|Naye}} huwapulizia nao hukauka, \\q na dhoruba huwachukua kama mabua.",
+          "B": "Hawajapandwa vizuri, hawajapandwa mbegu vizuri, \\q shina lao halijatia mizizi udongoni vizuri, \\q {{deity_pronoun:yeye|Yeye}} huwapulizia nao hunyauka, \\q na upepo mkali huwapeperusha kama majani makavu.",
+          "R": "Watawala hao ni kama mimea michanga. Wamepandwa sasa hivi tu. Wamo ardhini sasa hivi tu. \\q Mizizi yao imeanza tu kuota. \\q Kisha Mungu huwapulizia, nao hukauka. \\q Dhoruba huwapeperusha kama mabua."
+        },
+        "vi": {
+          "L": "Vừa mới được trồng, vừa mới được gieo, \\q gốc chúng vừa mới bén rễ trong đất, \\q thì {{deity_pronoun:ngài|Ngài}} thổi trên chúng và chúng khô héo, \\q và bão cuốn chúng đi như rơm rạ.",
+          "B": "Chúng vừa được trồng, vừa được gieo, \\q gốc chúng vừa bén rễ trong đất, \\q thì {{deity_pronoun:ngài|Ngài}} thổi hơi trên chúng và chúng héo khô, \\q và cơn gió lốc cuốn chúng đi như rơm.",
+          "R": "Những kẻ cai trị ấy giống như cây non. Chúng vừa mới được trồng. Chúng vừa mới được gieo xuống đất. \\q Rễ chúng vừa mới bắt đầu mọc. \\q Rồi Đức Chúa Trời thổi trên chúng, và chúng khô héo. \\q Một cơn bão cuốn chúng đi như rơm."
+        },
+        "ko": {
+          "L": "그들이 겨우 심기고, 겨우 뿌려지고, \\q 그들의 줄기가 겨우 땅에 뿌리를 내리자마자, \\q 그분께서 그들 위에 입김을 부시면 그들이 말라 버리고, \\q 폭풍이 그들을 지푸라기처럼 날려 버린다.",
+          "B": "그들이 심기자마자, 씨가 뿌려지자마자, \\q 그 줄기가 땅에 뿌리를 내리자마자, \\q 그분께서 입김을 부시면 그들은 시들어 버리고, \\q 폭풍이 그들을 지푸라기처럼 휩쓸어 간다.",
+          "R": "이 통치자들은 어린 식물과 같다. 이제 막 심겼다. 이제 막 땅에 뿌려졌다. \\q 뿌리가 겨우 자라기 시작했다. \\q 그때 하나님께서 그들에게 입김을 부시면 그들은 말라 버린다. \\q 폭풍이 그들을 지푸라기처럼 날려 버린다."
         }
       },
       "decisions": [
@@ -2191,6 +3495,31 @@
           "L": "And to whom will you liken {{deity_pronoun:me|Me}}, that I should be equal? \\q says [the] Holy One.",
           "B": "Who will you set beside {{deity_pronoun:me|Me}}, as though I had an equal? \\q says the Holy One.",
           "R": "Who can you compare {{deity_pronoun:me|Me}} to? Is anyone equal to {{deity_pronoun:me|Me}}? \\q This is what the Holy One asks."
+        },
+        "es": {
+          "L": "¿A quién, pues, {{deity_pronoun:me|Me}} {{plural_you:compararán|compararéis}}, para que yo sea su igual? \\q dice el Santo.",
+          "B": "¿A quién {{plural_you:pondrán|pondréis}} a {{deity_pronoun:mi|Mi}} lado, como si yo tuviera igual? \\q dice el Santo.",
+          "R": "¿Con quién {{plural_you:pueden compararme|podéis compararme}}? ¿Hay alguien igual a {{deity_pronoun:mí|Mí}}? \\q Esto es lo que pregunta el Santo."
+        },
+        "fr": {
+          "L": "Et à qui {{deity_pronoun:me|Me}} comparerez-vous, pour que je [lui] sois égal ? \\q dit le Saint.",
+          "B": "À qui {{deity_pronoun:me|Me}} comparerez-vous, comme si j’avais un égal ? \\q dit le Saint.",
+          "R": "À qui pouvez-vous {{deity_pronoun:me|Me}} comparer ? Quelqu’un est-il mon égal ? \\q Voilà ce que demande le Saint."
+        },
+        "sw": {
+          "L": "Basi mtanifananisha na nani, ili nilingane naye? \\q asema Mtakatifu.",
+          "B": "Mtaniweka kando ya nani, kana kwamba nina wa kulingana nami? \\q asema Mtakatifu.",
+          "R": "Mnaweza kunilinganisha na nani? Je, kuna yeyote aliye sawa {{deity_pronoun:nami|Nami}}? \\q Ndivyo anavyouliza Mtakatifu."
+        },
+        "vi": {
+          "L": "Vậy các ngươi sẽ ví {{deity_pronoun:ta|Ta}} với ai, để Ta ngang hàng với nó? \\q Đấng Thánh phán.",
+          "B": "Các ngươi sẽ đặt ai bên cạnh {{deity_pronoun:ta|Ta}}, như thể Ta có kẻ ngang hàng? \\q Đấng Thánh phán.",
+          "R": "Các ngươi có thể so sánh {{deity_pronoun:ta|Ta}} với ai? Có ai ngang hàng với {{deity_pronoun:ta|Ta}} không? \\q Đấng Thánh hỏi như vậy."
+        },
+        "ko": {
+          "L": "그렇다면 너희가 나를 누구에게 비기겠으며, 내가 [그와] 같겠느냐? \\q 거룩한 이가 말한다.",
+          "B": "너희가 나를 누구와 견주겠느냐? 나와 같은 이가 있겠느냐? \\q 거룩한 이가 말한다.",
+          "R": "너희는 나를 누구와 비교할 수 있느냐? 누가 나와 같으냐? \\q 거룩한 이가 이렇게 묻는다."
         }
       },
       "decisions": [
@@ -2220,6 +3549,27 @@
           "choice": "the question of verse 18 returns, now from God himself",
           "alternatives": [],
           "reason": "Compare 46:5 and Exodus 15:11.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400250061"
+          ],
+          "choice": "\"거룩한 이가 말한다\", without the honorific",
+          "alternatives": [
+            "\"거룩하신 분께서 말씀하신다\""
+          ],
+          "reason": "God names himself (meaning decision m2: the question of verse 18 now from God himself); the terms note's form for God's own mouth, as \"이스라엘의 거룩한 이\".",
           "uncertain": false,
           "footnote": false
         }
@@ -2274,6 +3624,31 @@
           "L": "Lift up your eyes on high and see: who created these? \\q The one who brings out their host by number, \\q to all of them {{deity_pronoun:he|He}} calls by name; \\q from the greatness of [{{deity_pronoun:his|His}}] might and [being] strong in power, \\q not one is missing.",
           "B": "Look up high and see. Who created these? \\q It is {{deity_pronoun:he|He}} who marches out their ranks in full count \\q and summons every one by name. \\q So vast is {{deity_pronoun:his|His}} might, so great {{deity_pronoun:his|His}} strength, \\q that not one fails to appear.",
           "R": "Look up at the sky. Who made all the stars? \\q God leads them out like an army, and {{deity_pronoun:he|He}} knows exactly how many there are. \\q He calls each one by its name. \\q He is so strong and powerful that not one of them is missing."
+        },
+        "es": {
+          "L": "{{plural_you:Alcen en alto sus|Alzad en alto vuestros}} ojos y {{plural_you:miren|mirad}}: ¿quién creó estas [cosas]? \\q El que saca por número su ejército, \\q a todas [ellas] {{deity_pronoun:él|Él}} llama por nombre; \\q por la grandeza de [{{deity_pronoun:su|Su}}] fuerza y [por ser] poderoso en vigor, \\q ni una falta.",
+          "B": "{{plural_you:Miren|Mirad}} hacia lo alto y {{plural_you:vean|ved}}. ¿Quién creó estas cosas? \\q Es {{deity_pronoun:él|Él}} quien hace salir sus filas bien contadas \\q y llama a cada una por su nombre. \\q Es tan grande {{deity_pronoun:su|Su}} poder, tan inmensa {{deity_pronoun:su|Su}} fuerza, \\q que ni una sola deja de presentarse.",
+          "R": "{{plural_you:Miren|Mirad}} el cielo. ¿Quién hizo todas las estrellas? \\q Dios las saca como a un ejército, y {{deity_pronoun:él|Él}} sabe exactamente cuántas son. \\q Llama a cada una por su nombre. \\q Es tan fuerte y poderoso que no falta ni una."
+        },
+        "fr": {
+          "L": "Levez vos yeux en haut et voyez : qui a créé ces [choses] ? \\q Celui qui fait sortir leur armée au complet, \\q {{deity_pronoun:il|Il}} les appelle toutes par leur nom ; \\q par la grandeur de [{{deity_pronoun:sa|Sa}}] vigueur et [parce qu’il est] puissant en force, \\q pas une ne manque.",
+          "B": "Levez les yeux et regardez. Qui a créé tout cela ? \\q C’est {{deity_pronoun:lui|Lui}} qui fait sortir leurs rangs au grand complet \\q et qui appelle chacune par son nom. \\q Si grande est {{deity_pronoun:sa|Sa}} vigueur, si immense {{deity_pronoun:sa|Sa}} force, \\q que pas une ne manque à l’appel.",
+          "R": "Regardez le ciel. Qui a fait toutes les étoiles ? \\q Dieu les fait sortir comme une armée, et {{deity_pronoun:il|Il}} sait exactement combien il y en a. \\q Il appelle chacune par son nom. \\q Il est si fort et si puissant qu’il n’en manque pas une seule."
+        },
+        "sw": {
+          "L": "Inueni macho yenu juu mkaone: ni nani aliyeviumba hivi? \\q {{deity_pronoun:yeye|Yeye}} alitoaye jeshi lake kwa hesabu, \\q huviita vyote kwa majina; \\q kwa wingi wa uweza [{{deity_pronoun:wake|Wake}}] na [kwa kuwa] hodari katika nguvu, \\q hakuna hata kimoja kinachokosekana.",
+          "B": "Tazameni juu mkaone. Ni nani aliyeviumba hivi? \\q Ni {{deity_pronoun:yeye|Yeye}} anayeyatoa majeshi yake kwa hesabu kamili \\q na kuviita vyote kwa majina. \\q Uweza {{deity_pronoun:wake|Wake}} ni mkuu mno, na nguvu {{deity_pronoun:zake|Zake}} ni nyingi mno, \\q hata hakuna hata kimoja kinachokosa kuonekana.",
+          "R": "Tazameni juu angani. Ni nani aliyeziumba nyota zote? \\q Mungu huziongoza kama jeshi, {{deity_pronoun:naye|Naye}} anajua idadi yake kamili. \\q Huiita kila moja kwa jina lake. \\q Ana nguvu na uweza mwingi kiasi kwamba hakuna hata moja inayokosekana."
+        },
+        "vi": {
+          "L": "Hãy ngước mắt lên cao mà xem: ai đã tạo nên những vật này? \\q [Chính] Đấng dẫn đạo binh của chúng ra theo số, \\q {{deity_pronoun:ngài|Ngài}} gọi hết thảy chúng bằng tên; \\q bởi sức mạnh lớn lao [của {{deity_pronoun:ngài|Ngài}}] và [vì] quyền năng mạnh mẽ, \\q không một vật nào thiếu vắng.",
+          "B": "Hãy nhìn lên cao mà xem. Ai đã tạo nên những vật ấy? \\q Chính {{deity_pronoun:ngài|Ngài}} là Đấng dẫn các đội ngũ của chúng ra đủ số \\q và gọi từng vật bằng tên. \\q Sức mạnh {{deity_pronoun:ngài|Ngài}} lớn lao, quyền năng {{deity_pronoun:ngài|Ngài}} vĩ đại, \\q đến nỗi không một vật nào vắng mặt.",
+          "R": "Hãy nhìn lên bầu trời. Ai đã tạo nên các ngôi sao? \\q Đức Chúa Trời dẫn chúng ra như một đạo quân, và {{deity_pronoun:ngài|Ngài}} biết rõ có bao nhiêu ngôi sao. \\q Ngài gọi tên từng ngôi sao. \\q Ngài mạnh mẽ và quyền năng đến nỗi không một ngôi sao nào thiếu vắng."
+        },
+        "ko": {
+          "L": "너희 눈을 높이 들어 보아라. 누가 이것들을 창조하였느냐? \\q 그 군대를 수대로 이끌어 내시는 분, \\q 그들을 모두 이름으로 부르시는 분이시다. \\q [그분의] 큰 힘과 강한 능력 때문에 \\q 하나도 빠지지 않는다.",
+          "B": "눈을 들어 높은 곳을 보아라. 누가 이것들을 창조하였느냐? \\q 그 별의 무리를 하나하나 세어 이끌어 내시고 \\q 그 하나하나를 이름으로 부르시는 분이시다. \\q 그분의 힘이 크고 그분의 능력이 강하므로 \\q 하나도 빠지지 않는다.",
+          "R": "하늘을 쳐다보아라. 누가 이 모든 별을 만들었느냐? \\q 하나님께서 군대를 이끄시듯 별들을 이끌어 내신다. 그분께서는 별이 몇 개인지 정확히 아신다. \\q 그분께서 별들을 하나하나 이름으로 부르신다. \\q 그분께서는 힘이 아주 세시고 능력이 크셔서, 별 하나도 빠지지 않는다."
         }
       },
       "decisions": [
@@ -2365,6 +3740,31 @@
           "L": "Why do you say, Jacob, and speak, Israel, \\q \"My way is hidden from {{divine_name:the LORD|Yahweh}}, \\q and my right passes by my God\"?",
           "B": "Why do you say, Jacob, and why do you insist, Israel, \\q \"My path is hidden from {{divine_name:the LORD|Yahweh}}, \\q and my God lets my case slip by\"?",
           "R": "People of Israel, descendants of Jacob, why do you complain? \\q You say, \"{{divine_name:The LORD|Yahweh}} does not see what is happening to me. \\q My God has overlooked my right to fair treatment.\""
+        },
+        "es": {
+          "L": "¿Por qué dices, Jacob, y hablas, Israel: \\q «Mi camino está escondido {{divine_name:del SEÑOR|de Yahvé}}, \\q y mi derecho pasa inadvertido a mi Dios»?",
+          "B": "¿Por qué dices, Jacob, y por qué insistes, Israel: \\q «Mi camino está oculto {{divine_name:del SEÑOR|de Yahvé}}, \\q y mi Dios deja pasar mi causa»?",
+          "R": "Pueblo de Israel, descendientes de Jacob, ¿por qué {{plural_you:se quejan|os quejáis}}? \\q {{plural_you:Dicen|Decís}}: «{{divine_name:El SEÑOR|Yahvé}} no ve lo que me pasa. \\q Mi Dios no ha hecho caso de mi derecho a un trato justo»."
+        },
+        "fr": {
+          "L": "Pourquoi dis-tu, Jacob, et parles-tu, Israël : \\q « Mon chemin est caché {{divine_name:au SEIGNEUR|à Yahvé}}, \\q et mon droit échappe à mon Dieu » ?",
+          "B": "Pourquoi dis-tu, Jacob, pourquoi répètes-tu, Israël : \\q « Ma route est cachée {{divine_name:au SEIGNEUR|à Yahvé}}, \\q et mon Dieu laisse passer ma cause » ?",
+          "R": "Peuple d’Israël, descendants de Jacob, pourquoi vous plaignez-vous ? \\q Vous dites : « {{divine_name:Le SEIGNEUR|Yahvé}} ne voit pas ce qui m’arrive. \\q Mon Dieu ne se soucie pas de mon droit à être traité avec justice. »"
+        },
+        "sw": {
+          "L": "Mbona unasema, Yakobo, na kunena, Israeli, \\q \"Njia yangu imefichika kwa {{divine_name:BWANA|Yahwe}}, \\q na haki yangu inampita Mungu wangu\"?",
+          "B": "Kwa nini unasema, Yakobo, na kwa nini unasisitiza, Israeli, \\q \"Njia yangu imefichwa mbali na {{divine_name:BWANA|Yahwe}}, \\q na Mungu wangu anaiacha kesi yangu ipite tu\"?",
+          "R": "Enyi watu wa Israeli, wazao wa Yakobo, kwa nini mnalalamika? \\q Mnasema, \"{{divine_name:BWANA|Yahwe}} haoni yanayonipata. \\q Mungu wangu amepuuza haki yangu ya kutendewa kwa usawa.\""
+        },
+        "vi": {
+          "L": "Hỡi Gia-cốp, sao ngươi nói, hỡi Y-sơ-ra-ên, sao ngươi bảo: \\q \"Đường lối tôi bị giấu khỏi {{divine_name:CHÚA|Gia-vê}}, \\q và quyền lợi của tôi bị Đức Chúa Trời tôi bỏ qua\"?",
+          "B": "Hỡi Gia-cốp, sao ngươi nói, hỡi Y-sơ-ra-ên, sao ngươi cứ quả quyết: \\q \"Đường tôi đi đã khuất khỏi mắt {{divine_name:CHÚA|Gia-vê}}, \\q và Đức Chúa Trời tôi để mặc vụ kiện của tôi trôi qua\"?",
+          "R": "Hỡi dân Y-sơ-ra-ên, dòng dõi của Gia-cốp, sao các ngươi than phiền? \\q Các ngươi nói: \"{{divine_name:CHÚA|Gia-vê}} không thấy điều đang xảy đến cho tôi. \\q Đức Chúa Trời tôi đã bỏ qua quyền được đối xử công bằng của tôi.\""
+        },
+        "ko": {
+          "L": "야곱아, 네가 어찌하여 말하며, 이스라엘아, 네가 어찌하여 이야기하느냐? \\q \"내 길이 {{divine_name:주|야훼}}께 숨겨져 있고, \\q 내 권리가 내 하나님께 지나쳐 버렸다.\"",
+          "B": "야곱아, 어찌하여 너는 이렇게 말하느냐? 이스라엘아, 어찌하여 너는 이렇게 우기느냐? \\q \"내 길은 {{divine_name:주|야훼}}께 가려져 있고, \\q 내 하나님께서는 내 송사를 그냥 지나쳐 버리신다.\"",
+          "R": "야곱의 자손 이스라엘 백성아, 어찌하여 너희는 불평하느냐? \\q 너희는 말한다. \"{{divine_name:주|야훼}}께서는 나에게 일어나는 일을 보지 못하신다. \\q 내 하나님께서는 내가 공정한 대우를 받을 권리를 못 본 체하신다.\""
         }
       },
       "decisions": [
@@ -2414,6 +3814,28 @@
           "reason": "Readable says that Jacob and Israel are names for the people.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400270031",
+            "o230400270051"
+          ],
+          "choice": "\"ngươi\" for Jacob-Israel (L, B); \"các ngươi\" for the people (R)",
+          "alternatives": [
+            "\"con\""
+          ],
+          "reason": "Jacob-Israel is addressed as one person in L and B, as the Hebrew does; the speaker here talks of the LORD in the third person, so the address stays \"ngươi\" rather than God's own \"con\". Readable addresses the people as a group, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2459,6 +3881,31 @@
           "L": "Do you not know, or have you not heard? A God of eternity [is] {{divine_name:the LORD|Yahweh}}, Creator of the ends of the earth. \\q He does not grow faint, and {{deity_pronoun:he|He}} does not grow weary; \\q there is no searching out {{deity_pronoun:his|His}} understanding.",
           "B": "Do you not know? Or have you not heard? {{divine_name:The LORD|Yahweh}} is the God of all ages, the maker of the earth to its farthest edges. \\q He does not tire or wear out, \\q and {{deity_pronoun:his|His}} understanding is beyond all searching.",
           "R": "Do you not know this? Have you not heard it? {{divine_name:The LORD|Yahweh}} is the God who lives forever. He created the whole earth, from one end to the other. \\q He never gets tired or worn out. \\q No one can ever fully understand how wise {{deity_pronoun:he|He}} is."
+        },
+        "es": {
+          "L": "¿No lo sabes, o no lo has oído? Dios eterno [es] {{divine_name:el SEÑOR|Yahvé}}, Creador de los confines de la tierra. \\q No se fatiga ni se cansa; \\q no hay quien sondee {{deity_pronoun:su|Su}} entendimiento.",
+          "B": "¿No lo sabes? ¿No lo has oído? {{divine_name:El SEÑOR|Yahvé}} es el Dios de todos los tiempos, el creador de la tierra hasta sus últimos rincones. \\q No se cansa ni se agota, \\q y {{deity_pronoun:su|Su}} entendimiento es insondable.",
+          "R": "¿No sabes esto? ¿No lo has oído? {{divine_name:El SEÑOR|Yahvé}} es el Dios que vive para siempre. Él creó toda la tierra, de un extremo al otro. \\q Nunca se cansa ni se agota. \\q Nadie puede entender del todo lo sabio que {{deity_pronoun:él|Él}} es."
+        },
+        "fr": {
+          "L": "Ne sais-tu pas, ou n’as-tu pas entendu ? {{divine_name:Le SEIGNEUR|Yahvé}} [est] un Dieu d’éternité, Créateur des extrémités de la terre. \\q Il ne se fatigue pas et {{deity_pronoun:il|Il}} ne se lasse pas ; \\q on ne peut sonder {{deity_pronoun:son|Son}} intelligence.",
+          "B": "Ne le sais-tu pas ? Ne l’as-tu pas entendu ? {{divine_name:Le SEIGNEUR|Yahvé}} est le Dieu de tous les âges, qui a créé la terre jusqu’à ses extrémités. \\q Il ne se fatigue pas, {{deity_pronoun:il|Il}} ne s’épuise pas, \\q et {{deity_pronoun:son|Son}} intelligence échappe à toute recherche.",
+          "R": "Ne le sais-tu pas ? Ne l’as-tu pas entendu ? {{divine_name:Le SEIGNEUR|Yahvé}} est le Dieu qui vit pour toujours. Il a créé toute la terre, d’un bout à l’autre. \\q Il ne se fatigue jamais, {{deity_pronoun:il|Il}} ne s’épuise jamais. \\q Personne ne pourra jamais comprendre entièrement combien {{deity_pronoun:il|Il}} est sage."
+        },
+        "sw": {
+          "L": "Je, hujui, au hujasikia? {{divine_name:BWANA|Yahwe}} [ni] Mungu wa milele, Muumba wa ncha za dunia. \\q Halegei, wala hachoki; \\q hakuna awezaye kuuchunguza ufahamu {{deity_pronoun:wake|Wake}}.",
+          "B": "Je, hujui? Au hujasikia? {{divine_name:BWANA|Yahwe}} ni Mungu wa nyakati zote, Muumba wa dunia hadi pembe zake za mbali. \\q Halegei wala haishiwi nguvu, \\q na ufahamu {{deity_pronoun:wake|Wake}} hauwezi kuchunguzwa.",
+          "R": "Je, hamjui jambo hili? Hamjalisikia? {{divine_name:BWANA|Yahwe}} ni Mungu anayeishi milele. Aliiumba dunia yote, kutoka mwisho mmoja hadi mwingine. \\q Hachoki wala halegei kamwe. \\q Hakuna anayeweza kuelewa kikamilifu jinsi alivyo na hekima."
+        },
+        "vi": {
+          "L": "Ngươi không biết sao, hay ngươi không nghe sao? {{divine_name:CHÚA|Gia-vê}} [là] Đức Chúa Trời đời đời, Đấng Tạo Hóa của các đầu cùng đất. \\q Ngài không mòn mỏi, và {{deity_pronoun:ngài|Ngài}} không mệt nhọc; \\q sự hiểu biết của {{deity_pronoun:ngài|Ngài}} không thể dò thấu.",
+          "B": "Ngươi không biết sao? Hay ngươi chưa nghe sao? {{divine_name:CHÚA|Gia-vê}} là Đức Chúa Trời của muôn đời, Đấng dựng nên trái đất đến tận cùng các bờ cõi. \\q Ngài không kiệt sức, cũng không đuối sức, \\q và sự thông hiểu của {{deity_pronoun:ngài|Ngài}} không ai dò thấu được.",
+          "R": "Các ngươi không biết điều này sao? Các ngươi chưa nghe sao? {{divine_name:CHÚA|Gia-vê}} là Đức Chúa Trời hằng sống đời đời. Ngài đã tạo nên cả trái đất, từ đầu này đến đầu kia. \\q Ngài không bao giờ mệt mỏi hay kiệt sức. \\q Không ai có thể hiểu hết {{deity_pronoun:ngài|Ngài}} khôn ngoan đến dường nào."
+        },
+        "ko": {
+          "L": "너는 알지 못하느냐? 듣지 못하였느냐? {{divine_name:주|야훼}}는 영원하신 하나님, 땅끝을 창조하신 분이시다. \\q 그분은 지치지 않으시고 피곤하지 않으시며, \\q 그분의 깨달음은 헤아릴 수 없다.",
+          "B": "너는 알지 못하느냐? 듣지 못하였느냐? {{divine_name:주|야훼}}는 영원하신 하나님, 땅끝까지 지으신 분이시다. \\q 그분은 지치거나 피곤해하지 않으시며, \\q 그분의 지혜는 아무도 헤아릴 수 없다.",
+          "R": "너희는 이것을 모르느냐? 듣지 못했느냐? {{divine_name:주|야훼}}께서는 영원히 살아 계신 하나님이시다. 그분께서 이 끝에서 저 끝까지 온 땅을 창조하셨다. \\q 그분께서는 결코 지치거나 피곤해하지 않으신다. \\q 그분께서 얼마나 지혜로우신지 아무도 다 알 수 없다."
         }
       },
       "decisions": [
@@ -2489,6 +3936,48 @@
           "choice": "grow faint ... grow weary: the same two verbs that describe the young in verse 30 and are denied of the faithful in verse 31",
           "alternatives": [],
           "reason": "The repetition ties verses 28-31 together: God never tires, the strongest people do, and God gives his strength to those who wait for him.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400280131",
+            "o230400280151"
+          ],
+          "choice": "\"halegei\" (ya'af); \"hachoki\" (yaga)",
+          "alternatives": [
+            "\"hazimii\""
+          ],
+          "reason": "The two verbs return in verses 30-31, said of the young and denied of those who wait for the LORD, so each Hebrew verb keeps one Swahili verb through the passage; the verse was drafted from the Hebrew and kept apart from the familiar Swahili form.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400280131",
+            "o230400280151"
+          ],
+          "choice": "\"mòn mỏi ... mệt nhọc\" (L); \"kiệt sức ... đuối sức\" (B)",
+          "alternatives": [
+            "the 1926 wording"
+          ],
+          "reason": "The two verbs return in verses 30-31 (meaning decision m2); each level keeps the same pair in all three verses so the link is heard, worded freshly rather than in the familiar older phrasing.",
           "uncertain": false,
           "footnote": false
         }
@@ -2523,6 +4012,31 @@
           "L": "[He is] giving strength to the weary, \\q and to [one with] no vigor {{deity_pronoun:he|He}} increases might.",
           "B": "He gives strength to the exhausted \\q and builds up the power of those who have none.",
           "R": "He gives strength to people who are tired. \\q He makes weak people strong."
+        },
+        "es": {
+          "L": "[Él] da fuerza al cansado, \\q y al que no tiene vigor {{deity_pronoun:él|Él}} le aumenta el poder.",
+          "B": "Él da fuerzas al agotado \\q y acrecienta el poder del que no tiene ninguno.",
+          "R": "Él da fuerzas a los que están cansados. \\q Hace fuertes a los débiles."
+        },
+        "fr": {
+          "L": "[Il] donne de la force à celui qui est las, \\q et à celui qui n’a pas de vigueur, {{deity_pronoun:il|Il}} accroît la puissance.",
+          "B": "Il donne de la force à celui qui est épuisé \\q et augmente la vigueur de celui qui n’en a plus.",
+          "R": "Il donne de la force aux gens fatigués. \\q Il rend forts ceux qui sont faibles."
+        },
+        "sw": {
+          "L": "Humpa nguvu aliyelegea, \\q na asiye na uwezo humzidishia nguvu.",
+          "B": "Huwapa nguvu waliolegea \\q na kuwaongezea uwezo wale wasio nao.",
+          "R": "Huwapa nguvu watu waliochoka. \\q Huwafanya watu dhaifu kuwa na nguvu."
+        },
+        "vi": {
+          "L": "[Ngài] ban sức lực cho kẻ mệt mỏi, \\q và cho [kẻ] không còn sinh lực, {{deity_pronoun:ngài|Ngài}} gia thêm sức mạnh.",
+          "B": "Ngài ban sức cho người kiệt sức \\q và tăng sức mạnh cho người chẳng còn chút sức nào.",
+          "R": "Ngài ban sức lực cho người mệt mỏi. \\q Ngài làm cho người yếu đuối được mạnh mẽ."
+        },
+        "ko": {
+          "L": "그분은 지친 자에게 힘을 주시고, \\q 기운이 없는 자에게 능력을 더하신다.",
+          "B": "그분은 지친 사람에게 힘을 주시고, \\q 기운이 다한 사람에게 능력을 북돋아 주신다.",
+          "R": "그분께서는 지친 사람들에게 힘을 주신다. \\q 약한 사람들을 강하게 하신다."
         }
       },
       "decisions": [
@@ -2570,6 +4084,31 @@
           "L": "And youths grow faint and grow weary, \\q and young men surely stumble.",
           "B": "Youths grow faint and run out of strength; \\q young men in their prime trip and go down.",
           "R": "Even young people get tired and run out of energy. \\q Even the strongest young men lose their footing and fall."
+        },
+        "es": {
+          "L": "Y los jóvenes se fatigan y se cansan, \\q y los muchachos tropiezan sin remedio.",
+          "B": "Los jóvenes se fatigan y se quedan sin fuerzas; \\q los muchachos en la flor de la vida tropiezan y caen.",
+          "R": "Hasta los jóvenes se cansan y se quedan sin energía. \\q Hasta los muchachos más fuertes tropiezan y caen."
+        },
+        "fr": {
+          "L": "Et les jeunes gens se fatiguent et se lassent, \\q et les jeunes hommes trébuchent, ils trébuchent.",
+          "B": "Les jeunes gens se fatiguent et perdent leurs forces ; \\q les jeunes hommes dans la force de l’âge trébuchent et tombent.",
+          "R": "Même les jeunes se fatiguent et n’ont plus d’énergie. \\q Même les jeunes hommes les plus forts perdent l’équilibre et tombent."
+        },
+        "sw": {
+          "L": "Na vijana hulegea na kuchoka, \\q na vijana wa kiume hujikwaa kabisa.",
+          "B": "Vijana hulegea na kuishiwa nguvu; \\q vijana walio katika nguvu zao hujikwaa na kuanguka.",
+          "R": "Hata vijana huchoka na kuishiwa nguvu. \\q Hata vijana wenye nguvu kuliko wote hujikwaa na kuanguka."
+        },
+        "vi": {
+          "L": "Và người trẻ cũng mòn mỏi và mệt nhọc, \\q và thanh niên chắc chắn vấp ngã.",
+          "B": "Người trẻ cũng kiệt sức và đuối sức; \\q thanh niên đang sung sức cũng vấp chân và ngã quỵ.",
+          "R": "Ngay cả người trẻ cũng mệt mỏi và hết sức. \\q Ngay cả những thanh niên khỏe mạnh nhất cũng trượt chân và té ngã."
+        },
+        "ko": {
+          "L": "그리고 소년들도 지치고 피곤하며, \\q 청년들도 반드시 넘어진다.",
+          "B": "소년들도 지쳐서 힘이 다하고, \\q 한창때의 청년들도 걸려 넘어진다.",
+          "R": "젊은 사람들도 피곤해서 기운이 빠진다. \\q 아무리 힘센 청년도 발을 헛디뎌 넘어진다."
         }
       },
       "decisions": [
@@ -2643,6 +4182,31 @@
           "L": "But those who wait for {{divine_name:the LORD|Yahweh}} will exchange [their] strength; \\q they will go up [on] wing like eagles; \\q they will run and not grow weary; \\q they will walk and not grow faint.",
           "B": "But those who wait for {{divine_name:the LORD|Yahweh}} will take on fresh strength. \\q They will climb high on outspread wings like eagles. \\q They will run and not wear out; \\q they will walk and not tire.",
           "R": "But people who wait and hope for {{divine_name:the LORD|Yahweh}} will be given new strength. \\q They will fly high like eagles. \\q They will run and not get tired. \\q They will walk and not become weak."
+        },
+        "es": {
+          "L": "Pero los que esperan {{divine_name:al SEÑOR|a Yahvé}} renovarán [sus] fuerzas; \\q subirán [con] alas como águilas; \\q correrán y no se cansarán; \\q caminarán y no se fatigarán.",
+          "B": "Pero los que esperan {{divine_name:al SEÑOR|a Yahvé}} recibirán fuerzas nuevas. \\q Se elevarán con las alas extendidas como las águilas. \\q Correrán y no se agotarán; \\q caminarán y no se cansarán.",
+          "R": "Pero los que esperan y confían {{divine_name:al SEÑOR|a Yahvé}} recibirán nuevas fuerzas. \\q Volarán alto como las águilas. \\q Correrán y no se cansarán. \\q Caminarán y no se debilitarán."
+        },
+        "fr": {
+          "L": "Mais ceux qui attendent {{divine_name:le SEIGNEUR|Yahvé}} échangeront [leur] force ; \\q ils monteront [sur des] ailes comme les aigles ; \\q ils courront et ne se lasseront pas ; \\q ils marcheront et ne se fatigueront pas.",
+          "B": "Mais ceux qui attendent {{divine_name:le SEIGNEUR|Yahvé}} trouveront une force nouvelle. \\q Ils s’élèveront, les ailes déployées, comme les aigles. \\q Ils courront sans s’épuiser ; \\q ils marcheront sans se fatiguer.",
+          "R": "Mais ceux qui attendent {{divine_name:le SEIGNEUR|Yahvé}} avec espérance recevront une force nouvelle. \\q Ils voleront haut comme des aigles. \\q Ils courront sans se fatiguer. \\q Ils marcheront sans faiblir."
+        },
+        "sw": {
+          "L": "Lakini wanaomngoja {{divine_name:BWANA|Yahwe}} watabadilisha nguvu [zao]; \\q wataruka juu [kwa] mabawa kama tai; \\q watakimbia bila kuchoka; \\q watatembea bila kulegea.",
+          "B": "Lakini wanaomngojea {{divine_name:BWANA|Yahwe}} watajazwa nguvu upya. \\q Watapaa juu kwa mabawa yaliyokunjuliwa kama tai. \\q Watakimbia, nao hawatachoka; \\q watatembea, nao hawatalegea.",
+          "R": "Lakini watu wanaomngoja {{divine_name:BWANA|Yahwe}} kwa matumaini watapewa nguvu tena. \\q Wataruka juu kama tai. \\q Watakimbia bila kuchoka. \\q Watatembea bila kudhoofika."
+        },
+        "vi": {
+          "L": "Nhưng những người trông đợi {{divine_name:CHÚA|Gia-vê}} sẽ đổi [lấy] sức mới; \\q họ sẽ cất cánh bay lên như chim đại bàng; \\q họ sẽ chạy mà không mệt nhọc; \\q họ sẽ bước đi mà không mòn mỏi.",
+          "B": "Nhưng những ai trông đợi {{divine_name:CHÚA|Gia-vê}} sẽ được thêm sức mới. \\q Họ sẽ sải cánh bay cao như đại bàng. \\q Họ sẽ chạy mà không đuối sức; \\q họ sẽ bước đi mà không kiệt sức.",
+          "R": "Nhưng những ai trông đợi và hy vọng nơi {{divine_name:CHÚA|Gia-vê}} sẽ được ban sức mới. \\q Họ sẽ bay cao như đại bàng. \\q Họ sẽ chạy mà không mệt. \\q Họ sẽ bước đi mà không yếu sức."
+        },
+        "ko": {
+          "L": "그러나 {{divine_name:주|야훼}}를 기다리는 자들은 [그들의] 힘을 새로 바꿀 것이다. \\q 그들이 독수리처럼 날개를 치며 올라가고, \\q 달려도 피곤하지 않으며, \\q 걸어도 지치지 않을 것이다.",
+          "B": "그러나 {{divine_name:주|야훼}}를 기다리는 사람들은 새 힘을 입을 것이다. \\q 독수리처럼 날개를 펴고 높이 오를 것이다. \\q 달려도 지치지 않고, \\q 걸어도 피곤하지 않을 것이다.",
+          "R": "그러나 {{divine_name:주|야훼}}를 기다리며 바라는 사람들은 새로운 힘을 받을 것이다. \\q 그들은 독수리처럼 높이 날아오를 것이다. \\q 달려도 지치지 않을 것이다. \\q 걸어도 힘이 빠지지 않을 것이다."
         }
       },
       "decisions": [
@@ -2710,6 +4274,106 @@
           "choice": "take on fresh strength",
           "alternatives": [],
           "reason": "Balanced gives the sense of the verb \"exchange\" as gaining new strength; Literal keeps \"exchange\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400310031"
+          ],
+          "choice": "renovarán",
+          "alternatives": [
+            "cambiarán"
+          ],
+          "reason": "The verb means to exchange, as one changes clothes; Literal says \"renovarán\", which keeps the sense of new strength replacing spent strength, where a bare \"cambiarán\" would not be clear.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400310031"
+          ],
+          "choice": "\"watabadilisha nguvu [zao]\" (L)",
+          "alternatives": [
+            "\"watapata nguvu mpya\""
+          ],
+          "reason": "The verb means to exchange, as one changes clothes; Literal keeps that picture, and the whole verse is worded from the Hebrew rather than from the familiar Swahili form, as the terms note asks for Isaiah 40.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400310031"
+          ],
+          "choice": "\"échangeront [leur] force\" at Literal",
+          "alternatives": [
+            "\"renouvelleront leur force\""
+          ],
+          "reason": "The verb means to exchange, as one changes clothes (m2); Literal keeps that picture, and Balanced and Readable say \"une force nouvelle\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400310072"
+          ],
+          "choice": "\"đại bàng\"",
+          "alternatives": [
+            "\"chim ưng\""
+          ],
+          "reason": "The bird is the eagle, as the English has it and as Exodus 19:4 pictures it; \"đại bàng\" is the plain modern word.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400310012",
+            "o230400310031"
+          ],
+          "choice": "\"기다리다\" for \"wait for\"; \"힘을 새로 바꾸다\" (L)",
+          "alternatives": [
+            "\"앙망하다\"; \"새 힘을 얻다\""
+          ],
+          "reason": "\"앙망하다\" is the older Bible word; the plain verb says the trust and hope of meaning decision m1. Literal keeps the picture of exchanging spent strength for new (meaning decision m2), as the English Literal.",
           "uncertain": false,
           "footnote": false
         }
