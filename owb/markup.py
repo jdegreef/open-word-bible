@@ -105,6 +105,127 @@ def line_errors(text):
     return found
 
 
+# Quotations: where someone's words begin and end in a rendering. The
+# outermost marks are straight double quotes (English, Swahili, Vietnamese,
+# Korean) or guillemets (Spanish, French); quotations inside them use single
+# quotes, curly quotes, or straight double quotes again at the third level.
+# A straight quote opens at the start or after a space, bracket or dash,
+# when a word follows it, and closes anywhere else (as
+# build_site.smart_quotes curls it). A straight single quote can also be an
+# apostrophe; see quotations().
+_QUOTE_CHARS = re.compile("[\"'\u00ab\u00bb\u201c\u201d\u2018\u2019]")
+_PAIRS = {"\u00bb": "\u00ab", "\u201d": "\u201c", "\u2019": "\u2018"}
+
+
+def _opens_here(text, pos):
+    return pos == 0 or text[pos - 1].isspace() or text[pos - 1] in "([\u2014-"
+
+
+def _quotations(text, depth, level=1):
+    """quotations() from one starting state, depth quotations deep (0, 1,
+    or 2: inside a quotation inside the outer one), as ranges of the
+    quotations level deep (1, the outermost; 2, those inside them);
+    raises ValueError."""
+    outer = "\u00ab" if re.search("[\u00ab\u00bb]", text) else '"'
+    inner = "\u201c" if outer == "\u00ab" else "'"
+    stack, ranges = [outer, inner][:depth], []
+    start = 0
+    # A setting span holds no quotation marks (quotations() checks), only
+    # apostrophes: {{deity_pronoun:m’|M’}}.
+    in_span = {i for s in spans(text) for i in range(s.start, s.end)}
+    for m in _QUOTE_CHARS.finditer(text):
+        pos, ch = m.start(), m[0]
+        after = text[pos + 1:pos + 2]
+        if pos in in_span:
+            continue
+        if ch in "\u00ab\u201c\u2018" or (ch in "\"'" and _opens_here(text, pos)
+                                         and after and not after.isspace()):
+            if stack and stack[-1] == ch:
+                raise ValueError(f"quotation mark at {pos} opens inside a quotation of its own kind")
+            stack.append(ch)
+            if len(stack) == level:
+                start = pos + 1
+            continue
+        want = _PAIRS.get(ch, ch)
+        # A single quote followed by a Latin letter (or a setting span) is an
+        # apostrophe ("don't", "qu\u2019{{deity_pronoun:il|Il}}"; Korean sets a
+        # particle right after a closing quote), and so is one after a word
+        # that closes nothing ("the disciples' feet"), unless it ends a
+        # quotation open since before the sentence ('...'"). A curly one
+        # (French and Spanish apostrophes) only ever closes a \u2018 it follows.
+        if want in "'\u2018" and ((after.isalnum() and after < "\u0250") or after == "{"
+                                   or (want not in stack and (after.isspace() or ch == "\u2019"))):
+            continue
+        if want not in stack and stack and want != stack[0]:
+            # A quotation inside the outer one, open since before this
+            # sentence began (the Lord's Prayer, Matthew 6:9-13).
+            stack.insert(1, want)
+            if level == 2:
+                ranges, start = [], 0
+        elif want not in stack:
+            # Open since before this sentence began: everything so far,
+            # quotations included, is inside it.
+            stack.insert(0, want)
+            if len(stack) >= level:
+                ranges, start = [], 0
+        before = len(stack)
+        while stack.pop() != want:
+            pass
+        if before >= level > len(stack):
+            ranges.append((start, pos))
+    if len(stack) >= level:
+        ranges.append((start, len(text)))
+    return ranges
+
+
+def quotations(text, inside=False, inner=False):
+    """The quoted words in text, as [(start, end), ...]: each outermost
+    quotation, from after its opening mark to before its closing one,
+    without the spaces French sets inside guillemets.
+
+    inside says whether the text begins inside a quotation an earlier
+    sentence opened; text with no marks is then one whole quotation. A
+    closing mark with nothing open to close says so too, at any depth:
+    what came before it, quotations included, is inside that quotation.
+    The text can end inside a quotation a later sentence closes. Where the
+    marks do not pair from the state inside gives, the others are tried:
+    inside text may be two deep (a speaker quoted inside a parable, who
+    quotes in turn: Luke 15:18), and either may turn out not to be.
+
+    inner gives the quotations inside the outermost ones instead (the
+    words of Jesus as Paul retells them, Acts 22:7), and inside then says
+    whether the text begins inside one of those.
+
+    Raises ValueError where they pair from neither (a mark opens a
+    quotation of the kind already innermost), or a quotation mark sits
+    inside a {{setting:...}} span."""
+    for s in spans(text):
+        if re.search("[\"\u00ab\u00bb\u201c\u201d]", text[s.start:s.end]):
+            raise ValueError(f"quotation mark inside the setting span at {s.start}")
+    first = None
+    if inner:
+        order, level = ((2, 1, 0) if inside else (1, 0, 2)), 2
+    else:
+        order, level = ((1, 2, 0) if inside else (0, 1)), 1
+    for depth in order:
+        try:
+            ranges = _quotations(text, depth, level)
+            break
+        except ValueError as e:
+            first = first or e
+    else:
+        raise first
+    out = []
+    for s, e in ranges:
+        while s < e and text[s].isspace():
+            s += 1
+        while e > s and text[e - 1].isspace():
+            e -= 1
+        if e > s:
+            out.append((s, e))
+    return out
+
+
 def render(text, settings=None):
     settings = settings or {}
 

@@ -48,7 +48,9 @@ French, Swahili, Vietnamese and Korean.
 Adding a book needs no shared file edited: `data/books.json` already lists
 all 66 books (names in each language, chapter counts), section headings go
 in `data/headings/<BOOK>.json`, chapter summaries in
-`data/summaries/<BOOK>.json`, and each share card's digest sits in its own
+`data/summaries/<BOOK>.json`, the sentences where Jesus speaks (the
+reader's red letters, found in each language from its own quotation marks;
+`owb/words_of_jesus.py`) in `data/words_of_jesus/<BOOK>.json`, and each share card's digest sits in its own
 `web/og/<card>.digest`. Two pull requests that add different chapters touch
 different files, so they don't conflict.
 

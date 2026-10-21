@@ -30,7 +30,7 @@
   // reader's settings follow them to their other devices (site.js syncs
   // owb.settings with the account; the latest device's copy wins whole).
   var settings = { level: "B", gender: 0, christos: 0, divine_name: 0, deity_pronoun: 0, units: 0, plural_you: 0, view: 0,
-                   headings: 0, crossrefs: 0, uncertain: 0, partner: "", script: 0 };
+                   headings: 0, crossrefs: 0, red_letter: 0, uncertain: 0, partner: "", script: 0 };
   var settingsAt = 0;
   function loadSettings() {
     try {
@@ -132,19 +132,26 @@
   }
 
   // A rendering split at its verse markers, each verse a list of pieces
-  // [text, token ids or null]: the pieces with ids are the English that
-  // aligned Greek words became (r.links, built from the record's alignments).
-  // A poetic line break is the piece [null, null].
+  // [text, token ids or null, words of Jesus]: the pieces with ids are the
+  // English that aligned Greek words became (r.links, built from the
+  // record's alignments); the third is true where Jesus speaks (r.wj, from
+  // data/words_of_jesus/). A poetic line break is the piece [null, null].
   function versePieces(r, lang, level) {
     var raw = r.renderings[lang][level];
     var ranges = (r.links && r.links[lang] && r.links[lang][level]) || [];
-    var chunks = [], at = 0;
-    ranges.forEach(function (g) {
-      if (g[0] > at) chunks.push([raw.slice(at, g[0]), null]);
-      chunks.push([raw.slice(g[0], g[1]), g[2]]);
-      at = g[1];
-    });
-    if (at < raw.length) chunks.push([raw.slice(at), null]);
+    var red = (r.wj && r.wj[lang] && r.wj[lang][level]) || [];
+    // Every place a piece starts or ends: the links' ends and the red's.
+    var cuts = [0, raw.length];
+    ranges.concat(red).forEach(function (g) { cuts.push(g[0], g[1]); });
+    cuts = cuts.filter(function (c, i) { return cuts.indexOf(c) === i; }).sort(function (a, b) { return a - b; });
+    var chunks = [];
+    for (var n = 0; n + 1 < cuts.length; n++) {
+      var a = cuts[n], b = cuts[n + 1];
+      var link = ranges.filter(function (g) { return g[0] <= a && b <= g[1]; })[0];
+      var wj = red.some(function (g) { return g[0] <= a && b <= g[1]; });
+      // A link split by the red's edge keeps its ids on both sides.
+      chunks.push([raw.slice(a, b), link ? link[2] : null, wj]);
+    }
     var out = [[verseOf(r.refs[0]), []]];
     chunks.forEach(function (c) {
       c[0].split(VERSE).forEach(function (part, i) {
@@ -153,7 +160,7 @@
         // never hold one, so it only ever falls in unlinked text.
         part.split(LINE).forEach(function (bit, j) {
           if (j) out[out.length - 1][1].push([null, null]);
-          if (bit) out[out.length - 1][1].push([bit, c[1]]);
+          if (bit) out[out.length - 1][1].push([bit, c[1], c[2]]);
         });
       });
     });
@@ -177,6 +184,12 @@
   }
 
   function render(text) { return OWBMarkup.render(text, settings); }
+
+  // Text as a node: a span the red letters colour where Jesus speaks
+  // (body.red-letter, the reader's setting), plain text elsewhere.
+  function wordsNode(text, wj) {
+    return wj ? el("span", "wj", text) : document.createTextNode(text);
+  }
 
   function el(tag, cls, text) {
     var n = document.createElement(tag);
@@ -218,15 +231,16 @@
     // A page shows either the divine name (Old Testament) or the title
     // Christ (New Testament), and measures only where it has them, so
     // some hints are missing.
-    ["gender", "christos", "divine_name", "deity_pronoun", "units", "plural_you", "view", "headings", "crossrefs"].forEach(function (name) {
+    ["gender", "christos", "divine_name", "deity_pronoun", "units", "plural_you", "view", "headings", "crossrefs", "red_letter"].forEach(function (name) {
       var hint = document.getElementById("hint-" + name);
       if (hint) hint.textContent = t("hint_" + name)[settings[name]];
     });
     // The summary on the phone settings button: each shown choice's label.
     var summary = [];
-    // "Show" or "Hide" means nothing without its label, so headings and
-    // cross-references are left out.
-    var shown = ".control:not([hidden]) .seg:not([data-setting=headings]):not([data-setting=crossrefs])";
+    // "Show", "Hide" or "Red" means nothing without its label, so headings,
+    // cross-references and the words of Jesus are left out.
+    var shown = ".control:not([hidden]) .seg:not([data-setting=headings]):not([data-setting=crossrefs])" +
+      ":not([data-setting=red_letter])";
     document.querySelectorAll(shown).forEach(function (seg) {
       var on = seg.querySelector('[aria-pressed="true"]');
       if (on && seg.children.length > 1) summary.push(on.textContent);
@@ -245,6 +259,7 @@
     if (head) head.textContent = DATA.title + " \u00b7 Open Word Bible \u00b7 " + summary.join(" \u00b7 ") +
       " \u00b7 " + location.host + location.pathname;
     document.body.classList.toggle("plain", plain());
+    document.body.classList.toggle("red-letter", settings.red_letter === 1);
     document.body.classList.toggle("view-parallel", parallel());
     document.body.classList.toggle("view-interlinear", interlinear());
     // Offer Parallel only with another language, Interlinear only with links.
@@ -487,10 +502,10 @@
             return;
           }
           var text = render(piece[0]);
-          if (!piece[1]) { into.appendChild(document.createTextNode(text)); return; }
+          if (!piece[1]) { into.appendChild(wordsNode(text, piece[2])); return; }
           if (interlinear()) {
             // The original words over the English they became.
-            var ruby = el("ruby", "il");
+            var ruby = el("ruby", "il" + (piece[2] ? " wj" : ""));
             ruby.appendChild(document.createTextNode(text));
             var rt = el("rt", null, piece[1].map(function (id) { return WORD_TEXT[id] || ""; }).join(" ").trim());
             rt.lang = DATA.source;
@@ -498,7 +513,7 @@
             into.appendChild(ruby);
             return;
           }
-          var w = el("span", "aw", text);
+          var w = el("span", "aw" + (piece[2] ? " wj" : ""), text);
           w.dataset.tokens = piece[1].join(" ");
           // In the chosen sentence, pointing at an English word lights the
           // Greek it came from in the panel.
@@ -578,28 +593,24 @@
           cell.appendChild(el("span", "pmissing", t("not_in_language")));
         } else {
           cell.lang = lang;
-          if (poetic(r, lang)) {
-            // Poetry: each verse a block of lines, as in the reading view.
-            var raw = render(has[settings.level]).split(VERSE), nums = [verseOf(r.refs[0])];
-            for (var k = 1; k < raw.length; k += 2) nums.push(markerVerse(r, raw[k]));
-            nums.forEach(function (v, j) {
-              var verse = el("span", "poem");
-              raw[2 * j].trim().split(LINE).forEach(function (text, n) {
-                var line = el("span", "line");
-                if (!n) line.appendChild(el("sup", "pv", v));
-                line.appendChild(document.createTextNode(text));
-                if (n) verse.appendChild(document.createTextNode(" "));
-                verse.appendChild(line);
-              });
-              cell.appendChild(verse);
-              cell.appendChild(document.createTextNode(" "));
+          // Each verse its number and words; poetry a block of lines, as in
+          // the reading view.
+          var poem = poetic(r, lang);
+          versePieces(r, lang, settings.level).forEach(function (part) {
+            var verse = poem ? el("span", "poem") : cell;
+            var line = poem ? el("span", "line") : cell;
+            if (poem) verse.appendChild(line);
+            line.appendChild(el("sup", "pv", part[0]));
+            part[1].forEach(function (piece) {
+              if (piece[0] !== null) { line.appendChild(wordsNode(render(piece[0]), piece[2])); return; }
+              if (!poem) { line.appendChild(document.createTextNode(" ")); return; }
+              verse.appendChild(document.createTextNode(" "));
+              line = el("span", "line");
+              verse.appendChild(line);
             });
-          } else {
-            splitVerses(r, render(has[settings.level])).forEach(function (part, j) {
-              cell.appendChild(el("sup", "pv", part[0]));
-              cell.appendChild(document.createTextNode(part[1] + " "));
-            });
-          }
+            if (poem) cell.appendChild(verse);
+            cell.appendChild(document.createTextNode(" "));
+          });
           if (i === 0 && lang !== settings.lang) cell.classList.add("fallback");
         }
         row.appendChild(cell);
@@ -1509,18 +1520,23 @@
       return copy.textContent.trim();
     }).join(" ");
   }
-  function setMark(v, change) {
-    var all = marks(), id = verseId(v), m = all[id] || {};
-    for (var k in change) { if (change[k]) m[k] = change[k]; else delete m[k]; }
-    if (m.b || m.h || m.n) {
-      var span = verseEl(v);
-      m.text = verseWords(v);
-      m.lang = (span && span.lang) || settings.lang;
-      m.at = Date.now();
-      all[id] = m;
-    } else {
-      all[id] = { at: Date.now() };
-    }
+  function setMark(v, change) { setMarks([v], change); }
+  // The same change to several verses (a highlight over a selection).
+  function setMarks(vs, change) {
+    var all = marks();
+    vs.forEach(function (v) {
+      var id = verseId(v), m = all[id] || {};
+      for (var k in change) { if (change[k]) m[k] = change[k]; else delete m[k]; }
+      if (m.b || m.h || m.n) {
+        var span = verseEl(v);
+        m.text = verseWords(v);
+        m.lang = (span && span.lang) || settings.lang;
+        m.at = Date.now();
+        all[id] = m;
+      } else {
+        all[id] = { at: Date.now() };
+      }
+    });
     try { localStorage.setItem(MARKS, JSON.stringify(all)); } catch (e) { /* storage full or blocked */ }
     document.dispatchEvent(new Event("owb:marks"));
     var top = panelEl.scrollTop;
@@ -2422,36 +2438,112 @@
     e.preventDefault();
   });
 
-  // A button by the selection does the same, for readers who do not use
-  // the keyboard. On touch screens it sits below, clear of the system menu.
-  var copyBtn = el("button", "copy-quote", t("copy_quote"));
-  copyBtn.type = "button";
-  copyBtn.hidden = true;
-  document.body.appendChild(copyBtn);
-  copyBtn.addEventListener("mousedown", function (e) { e.preventDefault(); });
-  copyBtn.addEventListener("click", function () {
+  // Selected text gets a bar of what can be done with it, after Ochorus's:
+  // copy it with its reference, highlight its verses, see why it reads as it
+  // does, or suggest a change to it. The last two open the panel, so they
+  // are offered in Study view only. On touch screens the bar sits below the
+  // selection, clear of the system menu.
+  var selBar = el("div", "sel-bar");
+  selBar.setAttribute("role", "toolbar");
+  selBar.setAttribute("aria-label", t("sel_actions"));
+  selBar.hidden = true;
+  document.body.appendChild(selBar);
+  // Pressing a button must not clear the selection it acts on.
+  selBar.addEventListener("mousedown", function (e) { e.preventDefault(); });
+
+  // The verses the selection touches, in page order: [{v, record}, ...].
+  function selectedVerses(range) {
+    var seen = {};
+    return Array.prototype.filter.call(textBox.querySelectorAll(".verse"), function (s) {
+      if (!range.intersectsNode(s) || seen[s.dataset.v]) return false;
+      return (seen[s.dataset.v] = true);
+    }).map(function (s) {
+      return { v: s.dataset.v, record: DATA.records.filter(function (r) { return r.id === s.dataset.record; })[0] };
+    });
+  }
+  // The original words behind the selected words, where they are aligned.
+  function selectedTokens(range) {
+    var ids = [];
+    textBox.querySelectorAll(".aw").forEach(function (a) {
+      if (range.intersectsNode(a)) ids = ids.concat(a.dataset.tokens.split(" "));
+    });
+    return ids;
+  }
+  function hideBar() { selBar.hidden = true; }
+
+  function barButton(cls, label, onClick) {
+    var b = el("button", "sel-btn " + cls, label);
+    b.type = "button";
+    b.addEventListener("click", onClick);
+    return b;
+  }
+  var copyBtn = barButton("sel-copy", t("copy_quote"), function () {
     var range = selectedRange();
     var text = range && quote(range);
     if (!text || !navigator.clipboard) return;
     navigator.clipboard.writeText(text).then(function () {
       copyBtn.textContent = t("copied_quote");
-      setTimeout(function () { copyBtn.hidden = true; copyBtn.textContent = t("copy_quote"); }, 1200);
+      setTimeout(function () { hideBar(); copyBtn.textContent = t("copy_quote"); }, 1200);
     }, function () { copyBtn.textContent = t("copy_failed"); });
   });
+  var hueBox = el("span", "sel-hues");
+  hueBox.setAttribute("role", "group");
+  hueBox.setAttribute("aria-label", t("highlight"));
+  HUES.forEach(function (hue) {
+    var h = barButton("mark-hue hl-" + hue, null, function () {
+      var range = selectedRange();
+      if (!range) return;
+      var vs = selectedVerses(range).map(function (x) { return x.v; });
+      // A colour every selected verse already has comes off again.
+      var all = marks();
+      var off = vs.every(function (v) { return (all[verseId(v)] || {}).h === hue; });
+      setMarks(vs, { h: off ? null : hue });
+      window.getSelection().removeAllRanges();
+      hideBar();
+    });
+    h.setAttribute("aria-label", t("hl_" + hue));
+    h.title = t("hl_" + hue);
+    hueBox.appendChild(h);
+  });
+  // Open the first selected verse's sentence in the panel; with "suggest",
+  // with the suggestion box open and the selected words quoted in it.
+  function openSelected(suggest) {
+    var range = selectedRange();
+    var first = range && selectedVerses(range)[0];
+    if (!first || !first.record) return;
+    var ids = selectedTokens(range);
+    if (suggest) {
+      noteOpen = true;
+      noteKind = "suggestion";
+      if (!noteDraft.trim()) noteDraft = "“" + clip(quote(range).split("\n— ")[0], 300) + "” — ";
+    }
+    window.getSelection().removeAllRanges();
+    hideBar();
+    select(first.record, first.v);
+    if (ids.length) light(ids);
+    var field = suggest && document.getElementById("note-text");
+    if (field) { field.focus(); field.setSelectionRange(field.value.length, field.value.length); }
+  }
+  var whyBtn = barButton("sel-why", t("sel_why"), function () { openSelected(false); });
+  var suggestBtn = barButton("sel-suggest", t("note"), function () { openSelected(true); });
+  [copyBtn, hueBox, whyBtn, suggestBtn].forEach(function (b) { selBar.appendChild(b); });
+
   var placing = null;
   document.addEventListener("selectionchange", function () {
     clearTimeout(placing);
     placing = setTimeout(function () {
       var range = selectedRange();
-      if (!range || !navigator.clipboard) { copyBtn.hidden = true; return; }
+      if (!range || !quote(range)) { hideBar(); return; }
+      copyBtn.hidden = !navigator.clipboard;
+      whyBtn.hidden = suggestBtn.hidden = plain();
       var r = range.getBoundingClientRect();
-      copyBtn.hidden = false;
+      selBar.hidden = false;
       var below = window.matchMedia("(pointer: coarse)").matches || r.top < 120;
-      var top = below ? r.bottom + 10 : r.top - copyBtn.offsetHeight - 10;
-      var left = Math.min(Math.max(16, r.left + r.width / 2 - copyBtn.offsetWidth / 2),
-                          document.documentElement.clientWidth - copyBtn.offsetWidth - 16);
-      copyBtn.style.top = top + window.scrollY + "px";
-      copyBtn.style.left = left + window.scrollX + "px";
+      var top = below ? r.bottom + 10 : r.top - selBar.offsetHeight - 10;
+      var left = Math.min(Math.max(16, r.left + r.width / 2 - selBar.offsetWidth / 2),
+                          document.documentElement.clientWidth - selBar.offsetWidth - 16);
+      selBar.style.top = top + window.scrollY + "px";
+      selBar.style.left = Math.max(16, left) + window.scrollX + "px";
     }, 150);
   });
 
