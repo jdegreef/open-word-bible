@@ -44,7 +44,8 @@ BUDGETS = {
     # 2,264 MB on 2026-10-19 with 1 and 2 Samuel in six languages, until the
     # source words, interface text and book names were no longer copied into
     # every language's page (scripts/build_site.py chapter_shared,
-    # reader_shared)].
+    # reader_shared); 1,985 MB on 2026-10-22 with Amharic added as a
+    # seventh site language, about 207 MB].
     # Grows with each book translated and each language added.
     "site_total": 2300 * MB,
 }
