@@ -293,6 +293,8 @@ Settled in Matthew for the four Gospels and Acts.
 | Beelzebul | Belzebu | |
 | magi | os magos | |
 | Zion | Sião | |
+| Aramaic words the Gospels keep | spelled as Portuguese writes their sounds: Corbã, Efatá, Talitá cum, Aba, Boanerges, Raboni, Gólgota; "Eli, Eli, lemá sabactâni" (Matthew 27:46), "Eloí, Eloí, lemá sabactâni" (Mark 15:34) | Never the English transliteration ("th", "ph", "ch"). |
+| the Twelve | os Doze, capitalised at every level | |
 | the Christ (*ho christos*) | o {{christos:Cristo\|Messias}} | As section 7. |
 
 Names: Abraão, Isaque, Jacó, Judá, Tamar, Perez, Raabe, Rute, Boaz, Obede,
