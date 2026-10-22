@@ -1,5 +1,5 @@
 """The site in each interface language: English at the root, the others
-under their codes (/es/, /fr/, /sw/, /vi/, /ko/), the footer's language
+under their codes (/es/, /fr/, /sw/, /vi/, /ko/, /pt/), the footer's language
 switch, and the message catalogs in i18n/."""
 import json
 import re
@@ -179,7 +179,7 @@ class LanguagesTest(unittest.TestCase):
         sw = self.read("sw/jhn/1/index.html")
         self.assertNotIn('data-setting="plural_you"', sw)
         self.assertIn(">Linganifu</button>", sw)
-        for lang, balanced in (("vi", "Cân bằng"), ("ko", "균형")):
+        for lang, balanced in (("vi", "Cân bằng"), ("ko", "균형"), ("pt", "Equilibrada")):
             page = self.read(f"{lang}/jhn/1/index.html")
             self.assertNotIn('data-setting="plural_you"', page)
             self.assertIn(f">{balanced}</button>", page)
@@ -192,7 +192,9 @@ class LanguagesTest(unittest.TestCase):
             data = page_data(page)
             decisions = [d for r in data["records"] for d in r["decisions"]]
             self.assertTrue(all(d["language"] in (None, lang) for d in decisions), lang)
-            self.assertTrue(any(d["language"] == lang for d in decisions), lang)
+            # A language not yet drafted in John 1 has no decisions of its own there.
+            if lang in data["languages"]:
+                self.assertTrue(any(d["language"] == lang for d in decisions), lang)
             self.assertTrue(all({"en", "vi", "ko"} <= set(r["renderings"]) for r in data["records"]), lang)
 
     def test_home_page_shows_nothing_in_english_where_it_need_not(self):
@@ -282,6 +284,7 @@ class LanguagesTest(unittest.TestCase):
         self.assertEqual(build_site._date("2026-10-10", "sw"), "10 Oktoba 2026")
         self.assertEqual(build_site._date("2026-10-10", "vi"), "10 tháng 10, 2026")
         self.assertEqual(build_site._date("2026-10-10", "ko"), "2026년 10월 10일")
+        self.assertEqual(build_site._date("2026-10-10", "pt"), "10 de outubro de 2026")
 
     def test_french_typography_has_no_breaking_space_before_its_marks(self):
         # French sets « » : ; ! ? off with no-break spaces, so a line never
