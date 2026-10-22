@@ -36,6 +36,11 @@
           "L": "{{divine_name:주|야훼}}의 말씀이 나에게 임하여 말씀하셨다.",
           "B": "{{divine_name:주|야훼}}의 말씀이 나에게 임했다.",
           "R": "{{divine_name:주|야훼}}께서 나에게 이 말씀을 주셨다."
+        },
+        "es": {
+          "L": "Vino a mí la palabra {{divine_name:del SEÑOR|de Yahvé}}, diciendo:",
+          "B": "La palabra {{divine_name:del SEÑOR|de Yahvé}} vino a mí:",
+          "R": "{{divine_name:El SEÑOR|Yahvé}} me dio este mensaje:"
         }
       },
       "decisions": [
@@ -140,6 +145,11 @@
           "L": "너희가 이스라엘 땅에 대하여 \"아버지들이 신 포도를 먹었는데, 자식들의 이가 시리다.\" 하는 이 속담을 말하는 것은 무슨 뜻이냐?",
           "B": "너희가 이스라엘 땅에 대하여 \"{{gender:부모가|아버지들이}} 신 포도를 먹었는데, 이가 시린 것은 자식들이다.\" 하는 이 속담을 되풀이하는 것은 무슨 뜻이냐?",
           "R": "너희는 어찌하여 이스라엘 땅에 대하여 \"{{gender:부모가|아버지들이}} 신 포도를 먹었는데, 신맛은 자식들이 느낀다.\" 하는 말을 자꾸 하느냐?"
+        },
+        "es": {
+          "L": "¿Qué {{plural_you:quieren decir ustedes|queréis decir vosotros}}, que usan este proverbio acerca de la tierra de Israel, diciendo: «Los padres comen uvas agrias, y los dientes de los hijos tienen dentera»?",
+          "B": "¿Qué {{plural_you:quieren decir|queréis decir}} al repetir este proverbio sobre la tierra de Israel: «Los padres comen uvas agrias, pero son los hijos los que tienen dentera»?",
+          "R": "¿Por qué {{plural_you:siguen citando|seguís citando}} este dicho sobre la tierra de Israel: «Los padres comen las uvas agrias, pero los hijos se quedan con el sabor amargo»?"
         }
       },
       "decisions": [
@@ -273,6 +283,57 @@
           "reason": "Ezekiel quotes the same saying; Korean keeps Jeremiah's wording so that the two passages read alike, as the English does. Here the gender span is used because Korean has two real wordings, 부모 and 아버지.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o260180020121",
+            "o260180020131",
+            "o260180020141",
+            "o260180020151",
+            "o260180020152",
+            "o260180020161",
+            "o260180020162",
+            "o260180020171"
+          ],
+          "choice": "the proverb in the words of Spanish Jeremiah 31:29 at each level, in the present tense",
+          "alternatives": [],
+          "reason": "The same proverb is quoted in Jeremiah 31:29; the Spanish keeps its wording so the two passages can be seen together.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o260180020121",
+            "o260180020131",
+            "o260180020141",
+            "o260180020151",
+            "o260180020152",
+            "o260180020161",
+            "o260180020162",
+            "o260180020171"
+          ],
+          "choice": "\"los padres\", \"los hijos\", with no gender span here or in 18:4 and 18:20",
+          "alternatives": [],
+          "reason": "Spanish \"padres\" and \"hijos\" already include mothers and daughters, so the English parents/fathers spans have no Spanish counterpart (Deuteronomy 24:16 as published).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -323,6 +384,11 @@
           "L": "내가 살아 있음을 [두고 맹세한다]. 주 {{divine_name:하나님|야훼}}의 선언이다. 너희가 이스라엘에서 다시는 이 속담을 쓸 [일이] 없을 것이다.",
           "B": "내가 살아 있음을 두고 맹세한다. 주 {{divine_name:하나님|야훼}}의 말이다. 이스라엘에서 다시는 이 속담을 입에 올리지 않을 것이다.",
           "R": "내가 살아 있음을 두고 맹세한다. 주 {{divine_name:하나님|야훼}}의 말이다. 너희는 이스라엘에서 다시는 이 말을 하지 않을 것이다."
+        },
+        "es": {
+          "L": "Vivo yo, declara el Señor {{divine_name:DIOS|Yahvé}}, que no {{plural_you:tendrán|tendréis}} más [ocasión] de usar este proverbio en Israel.",
+          "B": "Tan cierto como que yo vivo, afirma el Señor {{divine_name:DIOS|Yahvé}}, que este proverbio ya no se repetirá en Israel.",
+          "R": "Tan cierto como que yo vivo, dice el Señor {{divine_name:DIOS|Yahvé}}, ya no {{plural_you:usarán|usaréis}} este dicho en Israel."
         }
       },
       "decisions": [
@@ -406,6 +472,11 @@
           "L": "보아라, 모든 영혼이 내 것이다. 아버지의 영혼이나 아들의 영혼이나 모두 내 것이다. 죄를 짓는 그 영혼이 죽을 것이다.",
           "B": "모든 사람의 목숨이 내 것이다. {{gender:부모|아버지}}의 목숨도 {{gender:자식|아들}}의 목숨도 다 내 것이다. 죄를 짓는 그 사람이 죽을 것이다.",
           "R": "모든 사람이 내 것이다. {{gender:부모|아버지}}도 {{gender:자식|아들}}도 다 내 것이다. 죄를 짓는 바로 그 사람이 죽을 것이다."
+        },
+        "es": {
+          "L": "He aquí, todas las almas son {{deity_pronoun:mías|Mías}}; como el alma del padre, así el alma del hijo, {{deity_pronoun:mías|Mías}} son. El alma que peque, esa morirá.",
+          "B": "Toda vida {{deity_pronoun:me|Me}} pertenece, tanto la vida del padre como la del hijo; ambas {{deity_pronoun:me|Me}} pertenecen. La persona que peca es la que morirá.",
+          "R": "Todas las personas {{deity_pronoun:me|Me}} pertenecen, tanto los padres como los hijos. La persona que peca es la que morirá."
         }
       },
       "decisions": [
@@ -566,6 +637,26 @@
           "reason": "Korean has both wordings, so it keeps the English setting; Literal keeps 아버지 and 아들 as the Hebrew has them.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o260180040121",
+            "o260180040122"
+          ],
+          "choice": "\"el alma que peque, esa morirá\" (L); \"la persona que peca es la que morirá\" (B, R)",
+          "alternatives": [],
+          "reason": "Nefesh in 18:4 and 18:20 as the terms note sets it.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -608,6 +699,11 @@
           "L": "어떤 사람이 의로워서 정의와 의를 행한다고 하자.",
           "B": "어떤 사람이 의로워서 정의와 의를 행한다고 하자.",
           "R": "어떤 사람이 의롭다고 하자. 그는 공정하고 옳은 일을 한다."
+        },
+        "es": {
+          "L": "Y si un hombre es justo y practica el derecho y la justicia,",
+          "B": "Supongamos que hay un hombre justo, que hace lo que es justo y recto,",
+          "R": "Supongamos que hay un hombre justo. Hace lo que es justo y correcto."
         }
       },
       "decisions": [
@@ -708,6 +804,26 @@
           "reason": "The Isaiah-Jeremiah note's pair, as Isaiah 9:6; R gives the plain sense, as the English R \"fair and right\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o260180050061",
+            "o260180050072"
+          ],
+          "choice": "\"el derecho y la justicia\" (L); \"lo que es justo y recto\" (B); \"lo que es justo y correcto\" (R)",
+          "alternatives": [],
+          "reason": "Mishpat and tsedaqah as the terms note sets them, kept through the chapter.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -767,6 +883,11 @@
           "L": "그가 산 위에서 [제물을] 먹지 않고, 이스라엘 집의 더러운 우상들에게 눈을 들지 않으며, 이웃의 아내를 더럽히지 않고, 월경 중인 여자를 가까이하지 않으며,",
           "B": "그는 산 위의 신당에서 제물을 먹지 않고, 이스라엘 집의 우상들을 바라보지 않으며, 이웃의 아내를 더럽히지 않고, 월경 중인 여자와 잠자리를 같이하지 않는다.",
           "R": "그는 산 위의 신당에서 제물을 먹지 않는다. 그는 이스라엘 백성의 우상들에게 도움을 구하지 않는다. 그는 이웃의 아내와 간음하지 않는다. 그는 월경 중인 여자와 잠자리를 같이하지 않는다."
+        },
+        "es": {
+          "L": "[si] no ha comido sobre los montes, ni ha alzado sus ojos a los ídolos inmundos de la casa de Israel, ni ha deshonrado a la mujer de su prójimo, ni se ha acercado a una mujer en [su] impureza,",
+          "B": "que no come en los santuarios de los montes ni pone los ojos en los ídolos de la casa de Israel, que no deshonra a la mujer de su prójimo ni tiene relaciones con una mujer durante su menstruación,",
+          "R": "No come en los santuarios de los montes. No busca la ayuda de los ídolos del pueblo de Israel. No comete adulterio con la mujer de su prójimo. No tiene relaciones sexuales con una mujer durante su período mensual."
         }
       },
       "decisions": [
@@ -878,6 +999,29 @@
           "reason": "Literal keeps the Hebrew's polite expression. Balanced and Readable state its meaning plainly, as the decision at 16:1 sets out for frank passages.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o260180060171",
+            "o260180060172",
+            "o260180060181",
+            "o260180060191",
+            "o260180060201",
+            "o260180060211"
+          ],
+          "choice": "\"durante su menstruación\" (B); \"durante su período mensual\" (R)",
+          "alternatives": [],
+          "reason": "Said plainly and soberly, as in the Spanish of 22:10.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -930,6 +1074,11 @@
           "L": "아무도 억압하지 않고, 빚진 자의 담보물을 돌려주며, 강도질하지 않고, 굶주린 자에게 자기 빵을 주며, 헐벗은 자에게 옷을 입혀 주고,",
           "B": "그는 아무도 억압하지 않고, 빚진 사람에게서 잡은 담보물을 돌려주며, 남의 것을 빼앗지 않고, 굶주린 사람에게 자기 음식을 나누어 주며, 헐벗은 사람에게 옷을 입혀 준다.",
           "R": "그는 아무도 괴롭히지 않는다. 누가 돈을 꾸면서 갚겠다는 약속으로 물건을 맡기면, 그것을 돌려준다. 그는 남의 것을 빼앗지 않는다. 그는 굶주린 사람에게 먹을 것을 주고, 입을 것이 없는 사람에게 옷을 준다."
+        },
+        "es": {
+          "L": "y no ha oprimido a nadie, ha devuelto al deudor su prenda, no ha cometido robo, ha dado su pan al hambriento y ha cubierto con ropa al desnudo,",
+          "B": "que no oprime a nadie, sino que devuelve al deudor lo que le dio en prenda, que no roba, sino que da su comida al hambriento y viste al desnudo,",
+          "R": "No se aprovecha de nadie. Cuando alguien le deja algo como garantía de que pagará un préstamo, se lo devuelve. No roba a nadie. Da comida a los que tienen hambre y ropa a los que no tienen qué ponerse."
         }
       },
       "decisions": [
@@ -1023,6 +1172,11 @@
           "L": "이자를 받고 꾸어 주지 않으며 이익을 챙기지 않고, 불의에서 손을 거두며, 사람과 사람 사이에 참된 공의로 재판하고,",
           "B": "그는 이자를 받고 돈을 꾸어 주지 않고 이익을 챙기지 않으며, 악한 일에서 손을 떼고, 사람들 사이의 다툼을 공정하게 판가름해 준다.",
           "R": "그는 돈을 꾸어 줄 때 이자를 받지 않고, 그것으로 이익을 남기지 않는다. 그는 나쁜 일을 멀리한다. 그는 사람들 사이의 다툼을 공정하게 해결해 준다."
+        },
+        "es": {
+          "L": "no ha prestado con interés ni ha cobrado usura, ha retirado su mano de la injusticia, ha hecho juicio verdadero entre hombre y hombre,",
+          "B": "que no presta con interés ni cobra usura, que aparta su mano de la maldad y juzga con justicia entre una persona y otra,",
+          "R": "No cobra intereses cuando presta dinero, ni saca ganancias de ello. Se aparta de hacer el mal. Es justo cuando resuelve pleitos entre la gente."
         }
       },
       "decisions": [
@@ -1117,6 +1271,11 @@
           "L": "내 규례를 따라 걷고 내 법도를 지켜 신실하게 행한다면, 그는 의인이다. 그는 반드시 살 것이다. 주 {{divine_name:하나님|야훼}}의 선언이다.",
           "B": "그는 내 규례를 따르고 내 법도를 성실하게 지킨다. 그런 사람이 의인이다. 그는 반드시 살 것이다. 주 {{divine_name:하나님|야훼}}의 말이다.",
           "R": "그는 내 법대로 살고 내 규칙을 잘 지킨다. 그런 사람은 의롭다. 그는 반드시 살 것이다. 주 {{divine_name:하나님|야훼}}의 말이다."
+        },
+        "es": {
+          "L": "[si] anda en {{deity_pronoun:mis|Mis}} estatutos y guarda {{deity_pronoun:mis|Mis}} decretos, actuando con fidelidad, ese [es] justo; ciertamente vivirá, declara el Señor {{divine_name:DIOS|Yahvé}}.",
+          "B": "y que sigue {{deity_pronoun:mis|Mis}} estatutos y cumple fielmente {{deity_pronoun:mis|Mis}} normas. Ese hombre es justo; ciertamente vivirá, afirma el Señor {{divine_name:DIOS|Yahvé}}.",
+          "R": "Vive según {{deity_pronoun:mis|Mis}} leyes y obedece con cuidado {{deity_pronoun:mis|Mis}} normas. Un hombre así es justo. Ciertamente vivirá, dice el Señor {{divine_name:DIOS|Yahvé}}."
         }
       },
       "decisions": [
@@ -1250,6 +1409,32 @@
           "reason": "Korean cannot carry one conditional clause across four verses at Balanced; each verse is a closed sentence, and Literal keeps the long \"if\" sentence that ends here.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o260180090011",
+            "o260180090012",
+            "o260180090013",
+            "o260180090021",
+            "o260180090031",
+            "o260180090032",
+            "o260180090033",
+            "o260180090041"
+          ],
+          "choice": "\"estatutos ... decretos\" (L); \"estatutos ... normas\" (B); \"leyes ... normas\" (R)",
+          "alternatives": [],
+          "reason": "Chuqqot and mishpatim as the terms note sets them for Ezekiel, kept through the chapter.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1295,6 +1480,11 @@
           "L": "그러나 그가 아들을 낳았는데, [그 아들이] 난폭하여 피를 흘리고, 이런 일 가운데 하나라도 저지른다면,",
           "B": "그런데 그에게 아들이 있어, 그 아들이 난폭하여 피를 흘리고 이런 악한 일 가운데 어떤 것을 한다고 하자.",
           "R": "그런데 이 사람에게 아들이 있다고 하자. 그 아들은 난폭하여 사람을 죽이고, 이런 악한 일들을 한다."
+        },
+        "es": {
+          "L": "Pero [si] engendra un hijo violento, derramador de sangre, que hace cualquiera de estas [cosas],",
+          "B": "Pero supongamos que tiene un hijo violento, que derrama sangre y hace cualquiera de estas cosas,",
+          "R": "Pero supongamos que este hombre tiene un hijo violento que mata a la gente. Hace estas cosas malas,"
         }
       },
       "decisions": [
@@ -1370,6 +1560,11 @@
           "L": "그 자신은 이 모든 일 가운데 아무것도 하지 않았는데, [그 아들은] 산 위에서 [제물을] 먹고, 이웃의 아내를 더럽히며,",
           "B": "아버지는 이런 일을 하나도 하지 않았는데, 이 아들은 산 위의 신당에서 제물을 먹고, 이웃의 아내를 더럽힌다.",
           "R": "그의 아버지는 이런 일을 하나도 하지 않았다. 그러나 아들은 산 위의 신당에서 제물을 먹는다. 그는 이웃의 아내와 간음한다."
+        },
+        "es": {
+          "L": "aunque él mismo no hizo ninguna de estas [cosas], que incluso come sobre los montes y deshonra a la mujer de su prójimo,",
+          "B": "aunque el padre no hizo ninguna de ellas. Este hijo come en los santuarios de los montes, deshonra a la mujer de su prójimo,",
+          "R": "aunque su padre no hizo ninguna de ellas. El hijo come en los santuarios de los montes. Comete adulterio con la mujer de su prójimo."
         }
       },
       "decisions": [
@@ -1463,6 +1658,11 @@
           "L": "가난하고 궁핍한 자를 억압하고, 강도질하며, 담보물을 돌려주지 않고, 더러운 우상들에게 눈을 들며, 가증한 일을 행하고,",
           "B": "그는 가난하고 궁핍한 사람을 억압하고, 남의 것을 빼앗으며, 담보물을 돌려주지 않고, 우상들을 바라보며, 역겨운 짓을 한다.",
           "R": "그는 가난하고 어려운 사람들을 괴롭힌다. 그는 남의 것을 빼앗는다. 그는 빚을 갚겠다는 약속으로 맡은 물건을 돌려주지 않는다. 그는 우상들에게 도움을 구하고, 역겨운 일을 한다."
+        },
+        "es": {
+          "L": "oprime al pobre y al necesitado, comete robos, no devuelve la prenda, alza sus ojos a los ídolos inmundos, hace abominación,",
+          "B": "oprime al pobre y al necesitado, comete robos, no devuelve lo que recibió en prenda, pone los ojos en los ídolos, hace cosas detestables,",
+          "R": "Se aprovecha de los pobres y de los necesitados. Roba a la gente. No devuelve lo que le dejaron como garantía de pago. Busca la ayuda de los ídolos, y hace cosas repugnantes."
         }
       },
       "decisions": [
@@ -1541,6 +1741,11 @@
           "L": "이자를 받고 꾸어 주며 이익을 챙긴다면, 그가 살겠느냐? 그는 살지 못할 것이다! 그가 이 모든 가증한 일을 했으니, 그는 반드시 죽임을 당할 것이다. 그의 피가 그에게로 돌아갈 것이다.",
           "B": "그는 이자를 받고 돈을 꾸어 주며 이익을 챙긴다. 이런 사람이 살겠느냐? 살지 못할 것이다! 그가 이 모든 역겨운 짓을 했으니, 반드시 죽임을 당할 것이다. 그가 죽는 책임은 그 자신에게 있다.",
           "R": "그는 돈을 꾸어 주고 이자를 받아 이익을 남긴다. 이런 사람이 살겠느냐? 아니다, 살지 못할 것이다! 그가 이 모든 역겨운 일을 했으니, 그는 죽어야 한다. 그것은 그 자신의 탓이다."
+        },
+        "es": {
+          "L": "presta con interés y cobra usura; ¿vivirá entonces? ¡No vivirá! Ha hecho todas estas abominaciones; ciertamente morirá; su sangre será sobre él.",
+          "B": "y presta con interés y cobra usura. ¿Vivirá un hombre así? ¡No vivirá! Ha hecho todas estas cosas detestables; ciertamente morirá. Su sangre caerá sobre su propia cabeza.",
+          "R": "Cobra intereses cuando presta dinero, y saca ganancias de ello. ¿Vivirá un hombre así? ¡No! Ha hecho todas estas cosas repugnantes, así que tiene que morir. Será culpa suya."
         }
       },
       "decisions": [
@@ -1674,6 +1879,11 @@
           "L": "그러나 보아라, 그가 아들을 낳았는데, [그 아들이] 자기 아버지가 저지른 모든 죄를 보고, 보고서도 그와 같이 하지 않는다면,",
           "B": "그런데 이 사람에게도 아들이 있는데, 그 아들은 자기 아버지가 저지른 모든 죄를 보고, 보고 나서도 그대로 따라 하지 않는다고 하자.",
           "R": "그런데 이 사람에게도 아들이 있다고 하자. 그 아들은 자기 아버지가 지은 모든 죄를 본다. 그는 그것을 곰곰이 생각하고, 아버지처럼 하지 않는다."
+        },
+        "es": {
+          "L": "Pero he aquí, [si] engendra un hijo que ve todos los pecados que hizo su padre, y [los] ve y no hace cosa semejante,",
+          "B": "Pero supongamos que este a su vez tiene un hijo, y el hijo ve todos los pecados que su padre ha cometido, y aunque los ve, no hace lo mismo,",
+          "R": "Pero supongamos que este hombre tiene un hijo. El hijo ve todos los pecados que su padre ha cometido. Piensa en ellos, pero no hace lo mismo."
         }
       },
       "decisions": [
@@ -1763,6 +1973,11 @@
           "L": "산 위에서 [제물을] 먹지 않고, 이스라엘 집의 더러운 우상들에게 눈을 들지 않으며, 이웃의 아내를 더럽히지 않고,",
           "B": "그는 산 위의 신당에서 제물을 먹지 않고, 이스라엘 집의 우상들을 바라보지 않으며, 이웃의 아내를 더럽히지 않는다.",
           "R": "그는 산 위의 신당에서 제물을 먹지 않고, 이스라엘 백성의 우상들에게 도움을 구하지 않는다. 그는 이웃의 아내와 간음하지 않는다."
+        },
+        "es": {
+          "L": "no ha comido sobre los montes, ni ha alzado sus ojos a los ídolos inmundos de la casa de Israel, ni ha deshonrado a la mujer de su prójimo,",
+          "B": "que no come en los santuarios de los montes ni pone los ojos en los ídolos de la casa de Israel, que no deshonra a la mujer de su prójimo,",
+          "R": "No come en los santuarios de los montes ni busca la ayuda de los ídolos del pueblo de Israel. No comete adulterio con la mujer de su prójimo."
         }
       },
       "decisions": [
@@ -1850,6 +2065,11 @@
           "L": "아무도 억압하지 않고, 담보물을 잡지 않으며, 강도질하지 않고, 굶주린 자에게 자기 빵을 주며, 헐벗은 자에게 옷을 입혀 주고,",
           "B": "그는 아무도 억압하지 않고 담보물을 잡지 않으며, 남의 것을 빼앗지 않고, 굶주린 사람에게 자기 음식을 나누어 주며, 헐벗은 사람에게 옷을 입혀 준다.",
           "R": "그는 아무도 괴롭히지 않고, 돈을 꾸어 줄 때 갚겠다는 약속으로 물건을 맡으라고 하지도 않는다. 그는 남의 것을 빼앗지 않는다. 그는 굶주린 사람에게 먹을 것을 주고, 입을 것이 없는 사람에게 옷을 준다."
+        },
+        "es": {
+          "L": "no ha oprimido a nadie, no ha tomado prenda, no ha cometido robo, ha dado su pan al hambriento y ha cubierto con ropa al desnudo,",
+          "B": "que no oprime a nadie ni exige prenda, que no roba, sino que da su comida al hambriento y viste al desnudo,",
+          "R": "No se aprovecha de nadie ni exige nada como garantía de que le pagarán un préstamo. No roba a nadie. Da comida a los que tienen hambre y ropa a los que no tienen qué ponerse."
         }
       },
       "decisions": [
@@ -1926,6 +2146,11 @@
           "L": "가난한 자에게서 손을 거두고, 이자나 이익을 받지 않으며, 내 법도를 행하고 내 규례를 따라 걷는다면, 그는 자기 아버지의 죄악 때문에 죽지 않을 것이다. 그는 반드시 살 것이다.",
           "B": "그는 가난한 사람을 해치지 않고, 이자나 이익을 받지 않으며, 내 법도를 지키고 내 규례를 따른다. 그는 자기 아버지의 죄 때문에 죽지 않을 것이다. 그는 반드시 살 것이다.",
           "R": "그는 가난한 사람들을 해치지 않는다. 그는 돈을 꾸어 주고 이자를 받거나 이익을 남기지 않는다. 그는 내 규칙을 지키고 내 법대로 산다. 그런 사람은 자기 아버지의 죄 때문에 죽지 않을 것이다. 그는 반드시 살 것이다."
+        },
+        "es": {
+          "L": "ha retirado su mano del pobre, no ha cobrado interés ni usura, ha cumplido {{deity_pronoun:mis|Mis}} decretos [y] ha andado en {{deity_pronoun:mis|Mis}} estatutos; no morirá por la iniquidad de su padre; ciertamente vivirá.",
+          "B": "que aparta su mano para no dañar al pobre y no cobra interés ni usura, que cumple {{deity_pronoun:mis|Mis}} normas y sigue {{deity_pronoun:mis|Mis}} estatutos. Ese no morirá por la culpa de su padre; ciertamente vivirá.",
+          "R": "No hace daño a los pobres. No cobra intereses ni saca ganancias de los préstamos. Obedece {{deity_pronoun:mis|Mis}} normas y vive según {{deity_pronoun:mis|Mis}} leyes. Ese hombre no morirá por los pecados de su padre. Ciertamente vivirá."
         }
       },
       "decisions": [
@@ -2041,6 +2266,11 @@
           "L": "그의 아버지로 말하자면, 그가 남을 억눌러 빼앗고, 형제의 것을 강탈하며, 자기 백성 가운데서 좋지 않은 일을 했으니, 보아라, 그는 자기 죄악 때문에 죽을 것이다.",
           "B": "그러나 그의 아버지는 남을 억눌러 빼앗고, 형제의 것을 강탈하며, 자기 백성 가운데서 좋지 않은 일을 했으니, 자기 죄 때문에 죽을 것이다.",
           "R": "그러나 그의 아버지는 자기 죄 때문에 죽을 것이다. 그는 사람들을 속여 빼앗고, 자기 동족의 것을 강탈하고, 자기 백성 가운데서 악한 일을 했다."
+        },
+        "es": {
+          "L": "En cuanto a su padre, por cuanto hizo extorsión, despojó a [su] hermano y no hizo lo bueno en medio de su pueblo, he aquí, morirá por su iniquidad.",
+          "B": "Pero en cuanto a su padre, morirá por su propia culpa, porque extorsionó a otros, robó a su hermano e hizo lo que no es bueno en medio de su pueblo.",
+          "R": "Pero su padre morirá por sus propios pecados, porque estafó a la gente, robó a su hermano e hizo el mal en medio de su pueblo."
         }
       },
       "decisions": [
@@ -2118,6 +2348,11 @@
           "L": "그런데 너희는 \"어찌하여 아들이 아버지의 죄악을 짊어지지 않느냐?\" 하고 말한다. 아들은 정의와 의를 행하고 내 모든 규례를 지켜 행했으니, 그는 반드시 살 것이다.",
           "B": "그런데도 너희는 \"어찌하여 아들이 아버지의 죄를 함께 짊어지지 않느냐?\" 하고 묻는다. 아들은 정의와 의를 행하고 내 모든 규례를 성실하게 지켰으니, 반드시 살 것이다.",
           "R": "그런데도 너희는 \"어찌하여 아들이 아버지의 죄 때문에 벌을 받지 않느냐?\" 하고 묻는다. 아들은 공정하고 옳은 일을 했다. 그는 내 모든 법을 잘 지켰다. 그러니 그는 반드시 살 것이다."
+        },
+        "es": {
+          "L": "Y {{plural_you:dicen|decís}}: «¿Por qué no lleva el hijo la iniquidad del padre?». El hijo ha practicado el derecho y la justicia; ha guardado todos {{deity_pronoun:mis|Mis}} estatutos y los ha cumplido; ciertamente vivirá.",
+          "B": "Pero {{plural_you:ustedes preguntan|vosotros preguntáis}}: «¿Por qué no ha de cargar el hijo con la culpa de su padre?». El hijo ha hecho lo que es justo y recto y ha cuidado de cumplir todos {{deity_pronoun:mis|Mis}} estatutos; por eso, ciertamente vivirá.",
+          "R": "Pero {{plural_you:ustedes preguntan|vosotros preguntáis}}: «¿Por qué no ha de ser castigado el hijo por los pecados de su padre?». El hijo ha hecho lo que es justo y correcto. Ha obedecido con cuidado todas {{deity_pronoun:mis|Mis}} leyes, así que ciertamente vivirá."
         }
       },
       "decisions": [
@@ -2224,6 +2459,11 @@
           "L": "죄를 짓는 그 영혼이 죽을 것이다. 아들은 아버지의 죄악을 짊어지지 않고, 아버지도 아들의 죄악을 짊어지지 않을 것이다. 의인의 의도 자기에게로 돌아가고, 악인의 악도 자기에게로 돌아갈 것이다.",
           "B": "죄를 짓는 그 사람이 죽을 것이다. {{gender:자식|아들}}이 {{gender:부모|아버지}}의 죄를 함께 짊어지지 않고, {{gender:부모|아버지}}도 {{gender:자식|아들}}의 죄를 함께 짊어지지 않을 것이다. 의인의 의는 그 자신의 것이 되고, 악인의 악도 그 자신의 것이 될 것이다.",
           "R": "죄를 짓는 바로 그 사람이 죽을 것이다. {{gender:자식|아들}}은 {{gender:부모|아버지}}의 죄 때문에 벌을 받지 않고, {{gender:부모|아버지}}도 {{gender:자식|아들}}의 죄 때문에 벌을 받지 않을 것이다. 착한 사람은 자기가 한 착한 일로 상을 받고, 악한 사람은 자기가 한 악한 일로 벌을 받을 것이다."
+        },
+        "es": {
+          "L": "El alma que peque, esa morirá. El hijo no llevará la iniquidad del padre, ni el padre llevará la iniquidad del hijo. La justicia del justo será sobre él, y la maldad del malvado será sobre él.",
+          "B": "La persona que peca es la que morirá. El hijo no cargará con la culpa del padre, ni el padre cargará con la culpa del hijo. La justicia del justo será suya, y la maldad del malvado será suya.",
+          "R": "La persona que peca es la que morirá. Los hijos no serán castigados por los pecados de sus padres, ni los padres serán castigados por los pecados de sus hijos. Los buenos recibirán la recompensa del bien que hacen, y los malos recibirán el castigo del mal que hacen."
         }
       },
       "decisions": [
@@ -2431,6 +2671,11 @@
           "L": "그러나 악인이 자기가 저지른 모든 죄에서 돌이켜 내 모든 규례를 지키고 정의와 의를 행하면, 그는 반드시 살 것이다. 그는 죽지 않을 것이다.",
           "B": "그러나 악한 사람이라도 자기가 지은 모든 죄에서 돌이켜 내 모든 규례를 지키고 정의와 의를 행하면, 반드시 살 것이다. 죽지 않을 것이다.",
           "R": "그러나 악한 사람이라도 지금까지 짓던 모든 죄를 그만두었다고 하자. 그리고 내 모든 법을 지키고 공정하고 옳은 일을 한다고 하자. 그러면 그는 반드시 살 것이다. 죽지 않을 것이다."
+        },
+        "es": {
+          "L": "Pero el malvado, si se aparta de todos sus pecados que ha cometido, y guarda todos {{deity_pronoun:mis|Mis}} estatutos, y practica el derecho y la justicia, ciertamente vivirá; no morirá.",
+          "B": "Pero si los malvados se apartan de todos los pecados que han cometido, cumplen todos {{deity_pronoun:mis|Mis}} estatutos y hacen lo que es justo y recto, ciertamente vivirán; no morirán.",
+          "R": "Pero supongamos que los malvados dejan de cometer todos los pecados que han estado cometiendo. Obedecen todas {{deity_pronoun:mis|Mis}} leyes y hacen lo que es justo y correcto. Entonces ciertamente vivirán. No morirán."
         }
       },
       "decisions": [
@@ -2578,6 +2823,11 @@
           "L": "그가 저지른 모든 반역이 그에게 기억되지 않을 것이다. 그가 행한 그의 의 때문에 그는 살 것이다.",
           "B": "그가 저지른 모든 반역은 다시 기억되지 않을 것이다. 그가 행한 의 때문에 그는 살 것이다.",
           "R": "그가 지은 모든 죄를 내가 따지지 않을 것이다. 그가 옳은 일을 했으니 그는 살 것이다."
+        },
+        "es": {
+          "L": "Ninguna de las transgresiones que cometió le será recordada; por la justicia que hizo vivirá.",
+          "B": "Ninguno de los delitos que han cometido se les tendrá en cuenta. Vivirán por la justicia que han practicado.",
+          "R": "Ninguno de los pecados que cometieron se les tomará en cuenta. Vivirán porque han hecho lo que es correcto."
         }
       },
       "decisions": [
@@ -2667,6 +2917,11 @@
           "L": "내가 정말 악인이 죽는 것을 기뻐하겠느냐? 주 {{divine_name:하나님|야훼}}의 선언이다. 그가 자기 길에서 돌이켜 사는 것을 [기뻐하지] 않겠느냐?",
           "B": "내가 악인이 죽는 것을 조금이라도 기뻐하겠느냐? 주 {{divine_name:하나님|야훼}}의 말이다. 오히려 그가 자기 길에서 돌이켜 사는 것을 기뻐하지 않겠느냐?",
           "R": "너희는 악한 사람이 죽을 때 내가 기뻐한다고 생각하느냐? 주 {{divine_name:하나님|야훼}}의 말이다. 아니다! 나는 그가 악한 길에서 돌이켜 살기를 바란다."
+        },
+        "es": {
+          "L": "¿Acaso me complazco yo en la muerte del malvado?, declara el Señor {{divine_name:DIOS|Yahvé}}. ¿No [me complazco más bien] en que se aparte de sus caminos y viva?",
+          "B": "¿Acaso {{deity_pronoun:me|Me}} agrada que mueran los malvados?, afirma el Señor {{divine_name:DIOS|Yahvé}}. ¿No preferiría yo que se aparten de sus caminos y vivan?",
+          "R": "¿Creen que yo me alegro cuando mueren los malvados?, dice el Señor {{divine_name:DIOS|Yahvé}}. ¡No! Lo que quiero es que dejen sus malos caminos y vivan."
         }
       },
       "decisions": [
@@ -2699,6 +2954,42 @@
           "choice": "the LORD takes no pleasure in the death of the wicked: he wants them to turn and live",
           "alternatives": [],
           "reason": "This is the heart of the chapter, repeated in verse 32 and 33:11. The LORD's judgment is real, but his desire is for the wicked to turn. Compare 1 Timothy 2:4 and 2 Peter 3:9.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "punctuation",
+          "tokens": [
+            "o260180230011",
+            "o260180230012",
+            "o260180230021",
+            "o260180230031",
+            "o260180230041",
+            "o260180230051",
+            "o260180230061",
+            "o260180230062",
+            "o260180230071",
+            "o260180230081",
+            "o260180230082",
+            "o260180230091",
+            "o260180230092",
+            "o260180230093",
+            "o260180230101",
+            "o260180230102",
+            "o260180230103",
+            "o260180230111",
+            "o260180230112"
+          ],
+          "choice": "the question closed before the formula (\"?, declara\"), and its second half asked again",
+          "alternatives": [],
+          "reason": "Spanish closes a question before the inserted formula, as in Jeremiah 3:1, so the Hebrew's one question is written as two.",
           "uncertain": false,
           "footnote": false
         }
@@ -2775,6 +3066,11 @@
           "L": "그러나 의인이 자기의 의에서 돌이켜 불의를 행하고, 악인이 행하는 모든 가증한 일대로 행한다면, 그가 살겠느냐? 그가 행한 모든 의로운 일은 기억되지 않을 것이다. 그가 저지른 배신과 그가 지은 죄 때문에, 그것들 때문에 그는 죽을 것이다.",
           "B": "그러나 의인이라도 자기의 의에서 돌이켜 악을 행하고, 악인이 하는 온갖 역겨운 짓을 똑같이 한다면, 그가 살겠느냐? 그가 행한 의로운 일은 하나도 기억되지 않을 것이다. 그가 저지른 배신과 그가 지은 죄 때문에 그는 죽을 것이다.",
           "R": "그러나 착한 사람이 옳은 일을 그만두고 악한 일을 하기 시작했다고 하자. 그가 악한 사람들이 하는 역겨운 일을 똑같이 한다. 그런 사람이 살겠느냐? 아니다! 그가 했던 착한 일은 하나도 기억되지 않을 것이다. 그는 나를 배신하고 죄를 지었기 때문에 죽을 것이다."
+        },
+        "es": {
+          "L": "Pero si el justo se aparta de su justicia y hace injusticia, conforme a todas las abominaciones que hace el malvado, ¿vivirá? Ninguna de las obras justas que hizo será recordada; por la infidelidad que cometió y por el pecado que cometió, por ellos morirá.",
+          "B": "Pero si los justos se apartan de su justicia y hacen el mal, cometiendo las mismas cosas detestables que hacen los malvados, ¿vivirán? Ninguna de las cosas justas que han hecho será recordada. Por la infidelidad de que son culpables y por los pecados que han cometido, morirán.",
+          "R": "Pero supongamos que los buenos dejan de hacer lo correcto y empiezan a hacer el mal. Hacen las mismas cosas repugnantes que hacen los malvados. ¿Vivirán? ¡No! Ninguna de las cosas buenas que hicieron será recordada. Morirán porque {{deity_pronoun:me|Me}} fueron infieles y cometieron pecados."
         }
       },
       "decisions": [
@@ -2900,6 +3196,11 @@
           "L": "그런데 너희는 \"주님의 길이 공평하지 않다.\" 하고 말한다. 이스라엘 집아, 이제 들어라. 내 길이 공평하지 않으냐? 공평하지 않은 것은 너희 길이 아니냐?",
           "B": "그런데도 너희는 \"주님의 길은 공평하지 않다.\" 하고 말한다. 이스라엘 집아, 들어라. 내 길이 공평하지 않단 말이냐? 공평하지 않은 것은 오히려 너희 길이 아니냐?",
           "R": "그런데도 너희는 \"주님께서 하시는 일은 공평하지 않다.\" 하고 말한다. 이스라엘 백성아, 들어라. 내가 하는 일이 공평하지 않으냐? 아니다, 공평하지 않은 것은 너희가 하는 일이다!"
+        },
+        "es": {
+          "L": "Y {{plural_you:dicen|decís}}: «No es recto el camino del Señor». {{plural_you:Oigan|Oíd}} ahora, casa de Israel: ¿No es recto {{deity_pronoun:mi|Mi}} camino? ¿No son más bien {{plural_you:sus caminos|vuestros caminos}} los que no son rectos?",
+          "B": "Pero {{plural_you:ustedes dicen|vosotros decís}}: «El proceder del Señor no es justo». {{plural_you:Escuchen|Escuchad}}, casa de Israel: ¿Es {{deity_pronoun:mi|Mi}} proceder el que no es justo? ¿No es más bien {{plural_you:su proceder|vuestro proceder}} el que es injusto?",
+          "R": "Pero {{plural_you:ustedes dicen|vosotros decís}}: «Lo que hace el Señor no es justo». {{plural_you:Escuchen|Escuchad}}, pueblo de Israel. ¿Es injusto lo que yo hago? ¡No, lo que {{plural_you:ustedes hacen|vosotros hacéis}} es lo injusto!"
         }
       },
       "decisions": [
@@ -3008,6 +3309,11 @@
           "L": "의인이 자기의 의에서 돌이켜 불의를 행하고 그 때문에 죽는다면, 그가 행한 불의 때문에 죽는 것이다.",
           "B": "의인이 자기의 의에서 돌이켜 악을 행하면 그 때문에 죽을 것이다. 그가 저지른 악 때문에 죽는 것이다.",
           "R": "착한 사람이 옳은 일을 그만두고 악한 일을 하기 시작하면 그는 죽을 것이다. 그가 한 악한 일 때문에 죽는 것이다."
+        },
+        "es": {
+          "L": "Cuando el justo se aparta de su justicia y hace injusticia, y muere por ello, por la injusticia que hizo morirá.",
+          "B": "Si los justos se apartan de su justicia y hacen el mal, morirán por ello; por el mal que han hecho, morirán.",
+          "R": "Si los buenos dejan de hacer lo correcto y empiezan a hacer el mal, morirán. Morirán por el mal que han hecho."
         }
       },
       "decisions": [
@@ -3078,6 +3384,11 @@
           "L": "그리고 악인이 자기가 저지른 악에서 돌이켜 정의와 의를 행하면, 그는 자기 영혼을 살릴 것이다.",
           "B": "악인이라도 자기가 저지른 악에서 돌이켜 정의와 의를 행하면, 자기 목숨을 건질 것이다.",
           "R": "악한 사람이라도 악한 일을 그만두고 공정하고 옳은 일을 하기 시작하면, 자기 목숨을 건질 것이다."
+        },
+        "es": {
+          "L": "Y cuando el malvado se aparta de la maldad que hizo y practica el derecho y la justicia, conservará la vida de su alma.",
+          "B": "Y si los malvados se apartan de la maldad que han cometido y hacen lo que es justo y recto, salvarán su vida.",
+          "R": "Y si los malvados dejan de hacer el mal y empiezan a hacer lo que es justo y correcto, salvarán su vida."
         }
       },
       "decisions": [
@@ -3141,6 +3452,11 @@
           "L": "그가 깨닫고 자기가 저지른 모든 반역에서 돌이켰으므로, 그는 반드시 살 것이다. 그는 죽지 않을 것이다.",
           "B": "그가 깊이 생각하고 자기가 저지른 모든 반역에서 돌이켰으니, 반드시 살 것이다. 죽지 않을 것이다.",
           "R": "그는 자기가 하던 일을 곰곰이 생각하고 죄짓기를 그만두었다. 그러니 그는 반드시 살 것이다. 죽지 않을 것이다."
+        },
+        "es": {
+          "L": "Porque reflexionó y se apartó de todas las transgresiones que había cometido, ciertamente vivirá; no morirá.",
+          "B": "Porque lo pensaron bien y se apartaron de todos los delitos que habían cometido, ciertamente vivirán; no morirán.",
+          "R": "Pensaron en lo que estaban haciendo y dejaron de pecar. Por eso ciertamente vivirán. No morirán."
         }
       },
       "decisions": [
@@ -3211,6 +3527,11 @@
           "L": "그런데 이스라엘 집은 \"주님의 길이 공평하지 않다.\" 하고 말한다. 이스라엘 집아, 내 길이 공평하지 않으냐? 공평하지 않은 것은 너희 길이 아니냐?",
           "B": "그런데도 이스라엘 집은 \"주님의 길은 공평하지 않다.\" 하고 말한다. 이스라엘 집아, 내 길이 공평하지 않단 말이냐? 공평하지 않은 것은 오히려 너희 길이 아니냐?",
           "R": "그런데도 이스라엘 백성은 \"주님께서 하시는 일은 공평하지 않다.\" 하고 말한다. 이스라엘 백성아, 내가 하는 일이 공평하지 않으냐? 아니다, 공평하지 않은 것은 너희가 하는 일이다!"
+        },
+        "es": {
+          "L": "Pero la casa de Israel dice: «No es recto el camino del Señor». ¿No son rectos {{deity_pronoun:mis|Mis}} caminos, casa de Israel? ¿No son más bien {{plural_you:sus caminos|vuestros caminos}} los que no son rectos?",
+          "B": "Sin embargo, la casa de Israel dice: «El proceder del Señor no es justo». ¿Es injusto {{deity_pronoun:mi|Mi}} proceder, casa de Israel? ¿No es más bien {{plural_you:su proceder|vuestro proceder}} el que es injusto?",
+          "R": "Pero el pueblo de Israel dice: «Lo que hace el Señor no es justo». Pueblo de Israel, ¿es injusto lo que yo hago? ¡No, lo que {{plural_you:ustedes hacen|vosotros hacéis}} es lo injusto!"
         }
       },
       "decisions": [
@@ -3310,6 +3631,11 @@
           "L": "그러므로 이스라엘 집아, 내가 너희를 각 사람의 길대로 심판하겠다. 주 {{divine_name:하나님|야훼}}의 선언이다. 돌아오너라. 너희의 모든 반역에서 돌아서라. 그러면 죄악이 너희에게 걸림돌이 되지 않을 것이다.",
           "B": "그러므로 이스라엘 집아, 내가 너희 각 사람을 그 행실대로 심판하겠다. 주 {{divine_name:하나님|야훼}}의 말이다. 돌아오너라! 너희의 모든 반역에서 돌아서라. 그러면 죄가 너희를 넘어뜨리지 못할 것이다.",
           "R": "그러니 이스라엘 백성아, 내가 너희 각 사람을 그가 한 일대로 심판하겠다. 주 {{divine_name:하나님|야훼}}의 말이다. 마음을 돌이켜 나에게 돌아오너라! 너희의 모든 죄를 버려라. 그래야 그 죄가 너희를 망하게 하지 않을 것이다."
+        },
+        "es": {
+          "L": "Por tanto, {{plural_you:los|os}} juzgaré, casa de Israel, a cada uno según sus caminos, declara el Señor {{divine_name:DIOS|Yahvé}}. {{plural_you:Vuélvanse|Volveos}} y {{plural_you:apártense|apartaos}} de todas {{plural_you:sus transgresiones|vuestras transgresiones}}, para que la iniquidad no {{plural_you:les|os}} sea tropiezo.",
+          "B": "Por eso, casa de Israel, {{plural_you:los|os}} juzgaré a cada uno según su proceder, afirma el Señor {{divine_name:DIOS|Yahvé}}. {{plural_you:Vuélvanse|Volveos}} y {{plural_you:apártense|apartaos}} de todos {{plural_you:sus delitos|vuestros delitos}}, para que la culpa no {{plural_you:los haga caer|os haga caer}}.",
+          "R": "Por eso, pueblo de Israel, {{plural_you:los|os}} juzgaré a cada uno por lo que haya hecho, dice el Señor {{divine_name:DIOS|Yahvé}}. ¡{{plural_you:Vuelvan|Volved}} a {{deity_pronoun:mí|Mí}}! {{plural_you:Apártense de todos sus pecados|Apartaos de todos vuestros pecados}}, para que el pecado no {{plural_you:los|os}} destruya."
         }
       },
       "decisions": [
@@ -3360,6 +3686,26 @@
             "Turn"
           ],
           "reason": "Readable makes plain that turning means coming back to the LORD, which the call implies.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o260180300111",
+            "o260180300122"
+          ],
+          "choice": "\"{{plural_you:Vuélvanse|Volveos}}\" (L, B); \"{{plural_you:Vuelvan|Volved}} a mí\" (R)",
+          "alternatives": [],
+          "reason": "Shuv as at 14:6: \"volver\", never \"arrepentirse\".",
           "uncertain": false,
           "footnote": false
         }
@@ -3421,6 +3767,11 @@
           "L": "너희가 저지른 모든 반역을 너희에게서 던져 버리고, 너희를 위하여 새 마음과 새 영을 만들어라. 이스라엘 집아, 너희가 어찌하여 죽으려고 하느냐?",
           "B": "너희가 저지른 모든 반역을 내던져 버리고, 새 마음과 새 영을 가져라. 이스라엘 집아, 너희가 어찌하여 죽으려 하느냐?",
           "R": "너희가 지은 모든 죄를 버려라. 새 마음과 새 영을 가져라. 이스라엘 백성아, 너희가 왜 죽으려고 하느냐?"
+        },
+        "es": {
+          "L": "{{plural_you:Echen|Echad}} de {{plural_you:ustedes|vosotros}} todas {{plural_you:sus transgresiones con que han transgredido|vuestras transgresiones con que habéis transgredido}}, y {{plural_you:háganse|haceos}} un corazón nuevo y un espíritu nuevo. ¿Por qué {{plural_you:habrán de morir|habréis de morir}}, casa de Israel?",
+          "B": "{{plural_you:Desháganse de todos los delitos que han cometido|Deshaceos de todos los delitos que habéis cometido}}, y {{plural_you:háganse|haceos}} un corazón nuevo y un espíritu nuevo. ¿Por qué {{plural_you:habrían de morir|habríais de morir}}, casa de Israel?",
+          "R": "{{plural_you:Desháganse de todos los pecados que han cometido|Deshaceos de todos los pecados que habéis cometido}}. {{plural_you:Consíganse|Conseguíos}} un corazón nuevo y un espíritu nuevo. Pueblo de Israel, ¿por qué {{plural_you:han de morir|habéis de morir}}?"
         }
       },
       "decisions": [
@@ -3548,6 +3899,11 @@
           "L": "나는 죽는 자의 죽음을 기뻐하지 않는다. 주 {{divine_name:하나님|야훼}}의 선언이다. 그러니 돌아와서 살아라!",
           "B": "나는 누구의 죽음도 기뻐하지 않는다. 주 {{divine_name:하나님|야훼}}의 말이다. 그러니 돌아와서 살아라!",
           "R": "나는 아무도 죽기를 바라지 않는다. 주 {{divine_name:하나님|야훼}}의 말이다. 그러니 나에게 돌아와서 살아라!"
+        },
+        "es": {
+          "L": "Porque no me complazco en la muerte del que muere, declara el Señor {{divine_name:DIOS|Yahvé}}. ¡{{plural_you:Vuélvanse|Volveos}}, pues, y {{plural_you:vivan|vivid}}!",
+          "B": "La muerte de nadie {{deity_pronoun:me|Me}} causa placer, afirma el Señor {{divine_name:DIOS|Yahvé}}. ¡Así que {{plural_you:vuélvanse|volveos}} y {{plural_you:vivan|vivid}}!",
+          "R": "Yo no quiero que nadie muera, dice el Señor {{divine_name:DIOS|Yahvé}}. ¡Así que {{plural_you:vuelvan|volved}} a {{deity_pronoun:mí|Mí}} y {{plural_you:vivan|vivid}}!"
         }
       },
       "decisions": [
