@@ -470,7 +470,8 @@ class SiteTest(unittest.TestCase):
         for script in ("greek", "greek-ext"):
             self.assertIn(f"gentium-book-plus-{script}-400-normal.woff2", files)
         self.assertIn("noto-serif-hebrew-hebrew-400-normal.woff2", files)
-        for licence in ("OFL-Gentium.txt", "OFL-NotoSerifHebrew.txt"):
+        self.assertIn("noto-serif-ethiopic-ethiopic-400-normal.woff2", files)
+        for licence in ("OFL-Gentium.txt", "OFL-NotoSerifHebrew.txt", "OFL-NotoEthiopic.txt"):
             self.assertIn("SIL Open Font License", (ROOT / "web" / "fonts" / licence).read_text(encoding="utf-8"))
         home = (self.out / "index.html").read_text(encoding="utf-8")
         preload = re.search(r'<link rel="preload" href="/fonts/([^"]+)"', home)[1]
@@ -570,9 +571,10 @@ class SiteTest(unittest.TestCase):
             self.assertEqual(len(verses), len(build_site.votd_refs(lang)))
             self.assertTrue(all("l" not in v for v in verses), lang)
             for vid, v in zip(build_site.votd_refs(lang), verses):
-                # The verse ends a sentence, so it reads on its own (a closing
-                # quotation mark may follow: ” ’, or French » after a no-break space).
-                self.assertRegex(v["t"], r"[.?!](?:[”’]|\u00a0»)?$", vid)
+                # The verse ends a sentence, so it reads on its own (Amharic
+                # ends one with ።; a closing quotation mark may follow: ” ’,
+                # Amharic », or French » after a no-break space).
+                self.assertRegex(v["t"], r"[.?!።](?:[”’»]|\u00a0»)?$", vid)
         home = (self.out / "index.html").read_text(encoding="utf-8")
         data = re.search(r'<script type="application/json" class="votd-data">(.*?)</script>', home, re.S)[1]
         self.assertEqual(json.loads(data), build_site.verses_of_the_day("en"))
