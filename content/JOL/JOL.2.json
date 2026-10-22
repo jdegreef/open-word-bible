@@ -49,6 +49,16 @@
           "L": "¡{{plural_you:Toquen|Tocad}} trompeta en Sion; \\q {{plural_you:den|dad}} la alarma en {{deity_pronoun:mi|Mi}} monte santo! \\q Tiemblen todos los habitantes de la tierra, \\q porque viene el día {{divine_name:del SEÑOR|de Yahvé}}; ciertamente está cerca.",
           "B": "¡{{plural_you:Toquen|Tocad}} el cuerno de carnero en Sion! \\q ¡{{plural_you:Den|Dad}} el toque de guerra en {{deity_pronoun:mi|Mi}} monte santo! \\q Que tiemble todo el que vive en el país, \\q porque el día {{divine_name:del SEÑOR|de Yahvé}} ya viene; está a las puertas.",
           "R": "¡{{plural_you:Toquen|Tocad}} la trompeta en Sion! \\q ¡{{plural_you:Den|Dad}} la alarma en {{deity_pronoun:mi|Mi}} monte santo! \\q Todos los que viven en el país deben temblar de miedo, \\q porque el día {{divine_name:del SEÑOR|de Yahvé}} se acerca. Ya está muy cerca."
+        },
+        "sw": {
+          "L": "Pigeni baragumu katika Sayuni; \\q pigeni kelele ya hatari katika mlima {{deity_pronoun:wangu|Wangu}} mtakatifu! \\q Wakaaji wote wa nchi na watetemeke, \\q kwa maana siku ya {{divine_name:BWANA|Yahwe}} inakuja; kwa kweli i karibu.",
+          "B": "Pigeni baragumu katika Sayuni! \\q Pigeni kelele ya vita katika mlima {{deity_pronoun:wangu|Wangu}} mtakatifu! \\q Wote wanaoishi katika nchi na watetemeke, \\q kwa maana siku ya {{divine_name:BWANA|Yahwe}} inakuja; imekaribia.",
+          "R": "Pigeni baragumu katika Sayuni! \\q Toeni ishara ya hatari katika mlima {{deity_pronoun:wangu|Wangu}} mtakatifu! \\q Kila mtu anayeishi katika nchi hii atetemeke kwa hofu, \\q kwa sababu siku ya {{divine_name:BWANA|Yahwe}} inakuja. Iko karibu sana."
+        },
+        "vi": {
+          "L": "Hãy thổi kèn tại Si-ôn; \\q hãy báo động trên núi thánh của {{deity_pronoun:ta|Ta}}! \\q Hãy để mọi cư dân trong xứ run sợ, \\q vì ngày của {{divine_name:CHÚA|Gia-vê}} đến; ngày ấy thật đã gần.",
+          "B": "Hãy thổi tù và tại Si-ôn! \\q Hãy báo động trên núi thánh của {{deity_pronoun:ta|Ta}}! \\q Hãy để mọi người sống trong xứ run rẩy, \\q vì ngày của {{divine_name:CHÚA|Gia-vê}} đang đến; ngày ấy đã gần kề.",
+          "R": "Hãy thổi kèn tại Si-ôn! \\q Hãy báo động trên núi thánh của {{deity_pronoun:ta|Ta}}! \\q Mọi người sống trong xứ hãy run sợ, \\q vì ngày của {{divine_name:CHÚA|Gia-vê}} đang đến. Ngày ấy đã gần lắm rồi."
         }
       },
       "decisions": [
@@ -203,6 +213,91 @@
           "reason": "The day of the LORD keeps one wording at every level, as Isaiah 13:6 in Spanish. The commands to the people (Blow, sound, gather) are plural in the Hebrew, so each takes a plural_you span through these books. Book-wide choice for Joel 2-4, Amos and Obadiah.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290020010021"
+          ],
+          "choice": "\"baragumu\" at every level",
+          "alternatives": [
+            "tarumbeta"
+          ],
+          "reason": "The shofar is \"baragumu\" at every level, as in Isaiah and Jeremiah; the English varies trumpet / ram's horn, but \"baragumu\" is already the Swahili word for the horn. Recorded once for Joel, Amos and Obadiah.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-2",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290020010131",
+            "o290020010141"
+          ],
+          "choice": "\"siku ya BWANA\" at every level, with the divine_name span on BWANA",
+          "alternatives": [],
+          "reason": "The day of the LORD keeps one wording in Joel, Amos and Obadiah, as Isaiah 13:6. Swahili marks most pronouns for God inside the verb, so it has fewer deity_pronoun spans than the English; they stand only on free pronouns such as \"wangu\" here.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290020010021"
+          ],
+          "choice": "\"kèn\" (L, R); \"tù và\" (B)",
+          "alternatives": [
+            "\"kèn\" at every level"
+          ],
+          "reason": "The shofar follows the settled Vietnamese wording for Isaiah and Jeremiah (Jeremiah 4:5): \"kèn\" at Literal and Readable, \"tù và\" (ram's horn) at Balanced, matching the English trumpet / ram's horn split.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290020010131",
+            "o290020010141"
+          ],
+          "choice": "\"ngày của CHÚA\" at every level, here and through Joel, Amos and Obadiah",
+          "alternatives": [
+            "\"ngày CHÚA\"",
+            "\"ngày Đức Giê-hô-va\""
+          ],
+          "reason": "The day of the LORD keeps the published wording of Isaiah 13:6, 9 at every level, with the divine-name span on CHÚA only, so the phrase reads the same wherever the prophets use it.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -270,6 +365,16 @@
           "L": "¡Día de tinieblas y de oscuridad, día de nubes y de densas tinieblas! \\q Como la aurora extendida sobre los montes, \\q un pueblo grande y poderoso; \\q nunca hubo otro semejante desde antiguo, \\q ni lo habrá después de él \\q por los años de generación en generación.",
           "B": "Es un día de tinieblas y oscuridad, un día de nubes y negrura. \\q Como el alba que se extiende por los montes \\q llega un pueblo grande y poderoso. \\q Nunca antes hubo nada semejante, \\q ni lo habrá jamás \\q por todas las generaciones venideras.",
           "R": "Será un día oscuro y sombrío, un día de nubes negras. \\q Como la primera luz de la mañana que se extiende por los montes, \\q se acerca un ejército enorme y poderoso. \\q Nunca ha habido nada igual, \\q y nunca volverá a haber nada igual, \\q ni en muchísimos años."
+        },
+        "sw": {
+          "L": "Siku ya giza na utusitusi, siku ya mawingu na giza nene! \\q Kama mapambazuko yaliyotandazwa juu ya milima, \\q [ndivyo walivyo] watu wengi na wenye nguvu; \\q mfano wao haujawahi kuwako tangu zamani, \\q wala baada yao hautakuwako tena \\q hadi miaka ya kizazi baada ya kizazi.",
+          "B": "Ni siku ya giza na utusitusi, siku ya mawingu na giza nene. \\q Kama mapambazuko yanavyotanda juu ya milima, \\q ndivyo wanavyokuja watu wengi wenye nguvu. \\q Hakujawahi kuwa na kitu kama hicho tangu zamani, \\q wala hakutakuwa na kitu kama hicho tena \\q katika vizazi vyote vijavyo.",
+          "R": "Itakuwa siku ya giza na huzuni, siku ya mawingu meusi. \\q Kama mwanga wa kwanza wa asubuhi unavyoenea juu ya milima, \\q ndivyo jeshi kubwa lenye nguvu linavyokuja. \\q Hakujawahi kuwa na kitu kama hicho kamwe, \\q wala hakutakuwa na kitu kama hicho tena, \\q hata baada ya miaka mingi sana."
+        },
+        "vi": {
+          "L": "Một ngày tối tăm và u ám, một ngày mây và mù mịt! \\q Như rạng đông trải ra trên các núi, \\q một dân đông đúc và hùng mạnh; \\q như nó thì từ xưa chưa từng có, \\q và sau nó sẽ không còn có nữa \\q cho đến những năm của các thế hệ nối tiếp nhau.",
+          "B": "Đó là một ngày tối tăm và u ám, một ngày mây đen và tối mịt. \\q Như bình minh trải khắp các núi, \\q một dân đông đúc và hùng mạnh kéo đến. \\q Trước nay chưa từng có điều gì như vậy, \\q và về sau cũng sẽ không bao giờ có nữa \\q dù trải qua bao nhiêu thế hệ.",
+          "R": "Đó sẽ là một ngày tối tăm và ảm đạm, một ngày đầy mây đen. \\q Như ánh sáng đầu tiên của buổi sáng trải khắp các núi, \\q một đạo quân đông đảo và mạnh mẽ đang kéo đến. \\q Trước đây chưa từng có điều gì giống như vậy, \\q và sau này cũng sẽ không bao giờ có lại, \\q dù qua rất nhiều năm tháng."
         }
       },
       "decisions": [
@@ -436,6 +541,16 @@
           "L": "Delante de él consume el fuego, \\q y detrás de él arde la llama; \\q como el jardín del Edén [es] la tierra delante de él, y detrás de él, un desierto desolado, \\q y nada en absoluto escapa de él.",
           "B": "Delante de ellos el fuego devora, \\q y detrás de ellos arde una llama. \\q Ante ellos la tierra es como el jardín del Edén; detrás de ellos queda un desierto desolado; \\q nada se les escapa.",
           "R": "Delante de ellos un fuego lo destruye todo. \\q Detrás de ellos las llamas lo queman todo. \\q Antes de que lleguen, la tierra parece el jardín del Edén. Cuando han pasado, es un desierto vacío. \\q Nada se les escapa."
+        },
+        "sw": {
+          "L": "Mbele yake moto unateketeza, \\q na nyuma yake mwali unawaka; \\q nchi [ni] kama bustani ya Edeni mbele yake, na nyuma yake jangwa la ukiwa, \\q wala hakuna kitu kinachoponyoka kutoka kwake.",
+          "B": "Moto unateketeza mbele yao, \\q na nyuma yao mwali unawaka. \\q Mbele yao nchi ni kama bustani ya Edeni; nyuma yao ni jangwa tupu; \\q hakuna kinachowaponyoka.",
+          "R": "Mbele yao moto unaharibu kila kitu. \\q Nyuma yao miali ya moto inateketeza kila kitu. \\q Kabla hawajafika, nchi inaonekana kama bustani ya Edeni. Baada ya kupita, ni jangwa tupu. \\q Hakuna kinachowaponyoka."
+        },
+        "vi": {
+          "L": "Trước nó lửa thiêu nuốt, \\q và sau nó ngọn lửa cháy rực; \\q đất trước nó [giống] như vườn Ê-đen, còn sau nó là một hoang mạc tiêu điều, \\q và chẳng có gì thoát khỏi nó.",
+          "B": "Phía trước chúng lửa thiêu nuốt, \\q phía sau chúng ngọn lửa bừng cháy. \\q Trước mặt chúng, đất như vườn Ê-đen; sau lưng chúng, đất thành hoang mạc tiêu điều; \\q không gì thoát khỏi chúng.",
+          "R": "Phía trước chúng, lửa thiêu hủy mọi thứ. \\q Phía sau chúng, ngọn lửa đốt cháy tất cả. \\q Trước khi chúng đến, đất trông như vườn Ê-đen. Sau khi chúng đi qua, đất chỉ còn là sa mạc trống trơn. \\q Không gì thoát khỏi chúng."
         }
       },
       "decisions": [
@@ -505,6 +620,30 @@
           "reason": "The Hebrew speaks of the army as \"it\", one people. Balanced and Readable say \"they\" and \"them\", which is natural English for an army or a swarm.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290020030012",
+            "o290020030013",
+            "o290020030042",
+            "o290020030043"
+          ],
+          "choice": "\"nó\" (L); \"chúng\" (B, R)",
+          "alternatives": [
+            "\"chúng\" at every level"
+          ],
+          "reason": "The Hebrew speaks of the locust army as \"it\"; Literal keeps \"nó\", while Balanced and Readable use \"chúng\", the pronoun the oracles use for enemies and for a swarm, as the English moves to \"them\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -548,6 +687,16 @@
           "L": "Su aspecto [es] como el aspecto de caballos, \\q y como corceles de guerra, así corren.",
           "B": "Parecen caballos; \\q como caballos de guerra se lanzan al galope.",
           "R": "Parecen caballos, \\q y corren como caballos que se lanzan a la batalla."
+        },
+        "sw": {
+          "L": "Sura yake [ni] kama sura ya farasi, \\q na kama farasi wa vita, ndivyo wanavyokimbia.",
+          "B": "Wanaonekana kama farasi; \\q wanashambulia kama farasi wa vita.",
+          "R": "Wanaonekana kama farasi, \\q nao wanakimbia kama farasi wanaokwenda vitani kwa kasi."
+        },
+        "vi": {
+          "L": "Hình dạng nó như hình dạng của ngựa, \\q và như ngựa chiến, chúng chạy như vậy.",
+          "B": "Chúng trông như ngựa; \\q chúng xông tới như ngựa chiến.",
+          "R": "Chúng trông giống như ngựa, \\q và chúng chạy như ngựa đang lao vào trận."
         }
       },
       "decisions": [
@@ -651,6 +800,16 @@
           "L": "Como estruendo de carros sobre las cumbres de los montes saltan, \\q como el crepitar de una llama de fuego que consume el rastrojo, \\q como un pueblo poderoso dispuesto para la batalla.",
           "B": "Con un estrépito como de carros saltan por las cumbres de los montes, \\q como el chasquido de un fuego ardiente que devora el rastrojo, \\q como un ejército poderoso formado para la batalla.",
           "R": "Saltan sobre las cumbres de los montes con un ruido como de carros que retumban. \\q Suenan como un fuego que arrasa los tallos secos. \\q Son como un ejército fuerte, listo para la batalla."
+        },
+        "sw": {
+          "L": "Kama sauti ya magari ya vita juu ya vilele vya milima wanarukaruka, \\q kama sauti ya mwali wa moto unaoteketeza mabua, \\q kama watu wenye nguvu waliojipanga kwa vita.",
+          "B": "Kwa kishindo kama cha magari ya vita wanarukaruka juu ya vilele vya milima, \\q kama mlio wa moto unaowaka na kuteketeza mabua, \\q kama jeshi lenye nguvu lililojipanga kwa vita.",
+          "R": "Wanarukaruka juu ya vilele vya milima kwa kelele kama ya magari ya vita yanayonguruma. \\q Sauti yao ni kama ya moto unaowaka katika mabua makavu. \\q Wao ni kama jeshi lenye nguvu lililo tayari kwa vita."
+        },
+        "vi": {
+          "L": "Như tiếng xe chiến mã trên các đỉnh núi, chúng nhảy vọt, \\q như tiếng ngọn lửa thiêu nuốt rơm rạ, \\q như một dân hùng mạnh dàn trận để chiến đấu.",
+          "B": "Với tiếng ầm ầm như xe chiến mã, chúng nhảy vọt qua các đỉnh núi, \\q như tiếng lửa cháy lách tách thiêu rụi rơm rạ, \\q như một đạo quân hùng mạnh dàn trận.",
+          "R": "Chúng nhảy qua các đỉnh núi với tiếng ầm ầm như xe chiến mã. \\q Tiếng của chúng như tiếng lửa cháy rần rật trong đám rơm khô. \\q Chúng như một đạo quân mạnh mẽ sẵn sàng ra trận."
         }
       },
       "decisions": [
@@ -743,6 +902,16 @@
           "L": "Delante de él se angustian los pueblos; \\q todos los rostros palidecen.",
           "B": "Al verlos, las naciones se retuercen de angustia; \\q todo rostro palidece.",
           "R": "Cuando la gente de las naciones los ve, tiembla de miedo. \\q Todas las caras se ponen pálidas."
+        },
+        "sw": {
+          "L": "Mbele yake mataifa yanagaagaa kwa uchungu; \\q nyuso zote zinasawijika.",
+          "B": "Mataifa yanapowaona yanagaagaa kwa uchungu; \\q kila uso unasawijika.",
+          "R": "Watu wa mataifa wanapowaona, wanatetemeka kwa hofu. \\q Kila uso unageuka rangi."
+        },
+        "vi": {
+          "L": "Trước nó các dân quằn quại đau đớn; \\q mọi mặt đều tái nhợt.",
+          "B": "Thấy chúng, các dân tộc quằn quại đau đớn; \\q mặt mày ai nấy đều tái xanh.",
+          "R": "Khi dân các nước thấy chúng, họ run rẩy sợ hãi. \\q Mặt ai nấy đều tái mét."
         }
       },
       "decisions": [
@@ -851,6 +1020,16 @@
           "L": "Como valientes corren; \\q como hombres de guerra suben el muro; \\q cada uno va por su camino, \\q y no se desvían de sus sendas.",
           "B": "Atacan como guerreros; \\q escalan el muro como soldados. \\q Cada uno avanza derecho; \\q ninguno rompe la fila.",
           "R": "Corren como guerreros. \\q Trepan los muros como soldados. \\q Cada uno marcha derecho hacia adelante, \\q y ninguno se sale de la fila."
+        },
+        "sw": {
+          "L": "Kama mashujaa wanakimbia; \\q kama watu wa vita wanapanda ukuta; \\q kila mmoja anakwenda katika njia zake, \\q wala hawageuki kutoka mapito yao.",
+          "B": "Wanashambulia kama mashujaa; \\q wanapanda ukuta kama askari. \\q Kila mmoja anasonga mbele moja kwa moja; \\q hakuna anayeiacha safu yake.",
+          "R": "Wanakimbia kama mashujaa. \\q Wanapanda kuta kama askari. \\q Kila mmoja anasonga mbele moja kwa moja, \\q wala hakuna anayetoka katika mstari."
+        },
+        "vi": {
+          "L": "Như những dũng sĩ, chúng chạy; \\q như những người lính chiến, chúng trèo lên tường thành; \\q mỗi con đi theo đường riêng của mình, \\q và chúng không rẽ khỏi lối đi của chúng.",
+          "B": "Chúng xông tới như những dũng sĩ; \\q chúng leo tường thành như binh lính. \\q Con nào cũng tiến thẳng phía trước; \\q không con nào rời hàng ngũ.",
+          "R": "Chúng chạy như những chiến binh. \\q Chúng leo tường thành như binh lính. \\q Con nào cũng tiến thẳng về phía trước, \\q và không con nào ra khỏi hàng."
         }
       },
       "decisions": [
@@ -953,6 +1132,16 @@
           "L": "No se empujan unos a otros; \\q cada uno va por su propia senda; \\q se lanzan a través de las armas y no se detienen.",
           "B": "No se atropellan entre sí; \\q cada uno marcha por su propio camino. \\q Se lanzan entre las armas y no se detienen.",
           "R": "No chocan unos con otros. \\q Cada uno va derecho hacia adelante. \\q Las armas no pueden detenerlos mientras avanzan a toda prisa."
+        },
+        "sw": {
+          "L": "Hawasukumani mmoja na mwenzake; \\q kila mmoja anakwenda katika njia yake; \\q wanapenya kati ya silaha wala hawazuiliki.",
+          "B": "Hawasukumani; \\q kila mmoja anatembea katika njia yake. \\q Wanapita katikati ya silaha wala hawasimami.",
+          "R": "Hawagongani. \\q Kila mmoja anakwenda moja kwa moja. \\q Silaha haziwezi kuwazuia wanapokimbia mbele."
+        },
+        "vi": {
+          "L": "Chúng không chen lấn nhau; \\q mỗi con đi trong đường riêng của mình; \\q chúng lao qua giữa các vũ khí mà không bị chặn lại.",
+          "B": "Chúng không xô đẩy nhau; \\q mỗi con tiến bước theo đường của mình. \\q Chúng lao qua giữa các vũ khí mà không dừng lại.",
+          "R": "Chúng không va vào nhau. \\q Con nào cũng đi thẳng tới trước. \\q Vũ khí không thể chặn chúng lại khi chúng lao tới."
         }
       },
       "decisions": [
@@ -1060,6 +1249,16 @@
           "L": "Se lanzan sobre la ciudad; corren por el muro; \\q suben a las casas; \\q por las ventanas entran como el ladrón.",
           "B": "Invaden la ciudad; corren por el muro; \\q trepan a las casas; \\q entran por las ventanas como un ladrón.",
           "R": "Entran a toda prisa en la ciudad y corren por los muros. \\q Trepan a las casas. \\q Entran por las ventanas como ladrones."
+        },
+        "sw": {
+          "L": "Wanaurukia mji; wanakimbia juu ya ukuta; \\q wanapanda kuingia katika nyumba; \\q wanaingia kupitia madirisha kama mwizi.",
+          "B": "Wanaujaa mji; wanakimbia juu ya ukuta; \\q wanapanda kuingia ndani ya nyumba; \\q wanaingia kupitia madirisha kama mwizi.",
+          "R": "Wanaingia mjini kwa kasi na kukimbia juu ya kuta. \\q Wanapanda kuingia ndani ya nyumba. \\q Wanaingia kupitia madirisha kama wezi."
+        },
+        "vi": {
+          "L": "Chúng xông vào thành; chúng chạy trên tường thành; \\q chúng trèo vào các nhà; \\q chúng vào qua các cửa sổ như kẻ trộm.",
+          "B": "Chúng tràn khắp thành; chúng chạy dọc theo tường thành; \\q chúng leo vào các nhà; \\q chúng lọt vào qua cửa sổ như kẻ trộm.",
+          "R": "Chúng xông vào thành và chạy dọc theo các bức tường. \\q Chúng leo vào nhà. \\q Chúng chui qua cửa sổ mà vào như những tên trộm."
         }
       },
       "decisions": [
@@ -1157,6 +1356,16 @@
           "L": "Delante de él tiembla la tierra; \\q se estremecen los cielos; \\q el sol y la luna se oscurecen, \\q y las estrellas retiran su resplandor.",
           "B": "Ante ellos la tierra se sacude \\q y el cielo se estremece; \\q el sol y la luna se oscurecen, \\q y las estrellas pierden su brillo.",
           "R": "La tierra tiembla delante de ellos, \\q y el cielo se estremece. \\q El sol y la luna se ponen oscuros, \\q y las estrellas dejan de brillar."
+        },
+        "sw": {
+          "L": "Mbele yake nchi inatetemeka; \\q mbingu zinatikisika; \\q jua na mwezi vinatiwa giza, \\q na nyota zinazuia mwangaza wao.",
+          "B": "Mbele yao dunia inatetemeka \\q na anga linatikisika; \\q jua na mwezi vinakuwa giza, \\q na nyota zinapoteza mwangaza wao.",
+          "R": "Dunia inatikisika mbele yao, \\q na anga linatetemeka. \\q Jua na mwezi vinakuwa giza, \\q na nyota zinaacha kung'aa."
+        },
+        "vi": {
+          "L": "Trước nó đất rúng động; \\q các tầng trời rung chuyển; \\q mặt trời và mặt trăng tối sầm, \\q và các ngôi sao thu lại ánh sáng của chúng.",
+          "B": "Trước mặt chúng, đất rung chuyển \\q và bầu trời lay động; \\q mặt trời và mặt trăng tối sầm lại, \\q các ngôi sao mất hết ánh sáng.",
+          "R": "Đất rung chuyển trước mặt chúng, \\q và bầu trời run rẩy. \\q Mặt trời và mặt trăng trở nên tối đen, \\q và các ngôi sao thôi chiếu sáng."
         }
       },
       "decisions": [
@@ -1281,6 +1490,16 @@
           "L": "Y {{divine_name:el SEÑOR|Yahvé}} da {{deity_pronoun:su|Su}} voz delante de {{deity_pronoun:su|Su}} ejército, \\q porque muy grande es {{deity_pronoun:su|Su}} campamento, \\q porque poderoso es el que ejecuta {{deity_pronoun:su|Su}} palabra; \\q porque grande [es] el día {{divine_name:del SEÑOR|de Yahvé}}, y muy temible, ¿y quién lo podrá soportar?",
           "B": "{{divine_name:El SEÑOR|Yahvé}} truena al frente de {{deity_pronoun:su|Su}} ejército; \\q {{deity_pronoun:sus|Sus}} tropas son inmensas, \\q y poderoso es el que cumple {{deity_pronoun:su|Su}} orden. \\q El día {{divine_name:del SEÑOR|de Yahvé}} es grande y muy terrible. ¿Quién lo podrá soportar?",
           "R": "{{divine_name:El SEÑOR|Yahvé}} da órdenes a gritos a {{deity_pronoun:su|Su}} ejército. \\q ¡Hay muchísimos soldados en {{deity_pronoun:su|Su}} ejército! \\q Los que obedecen {{deity_pronoun:sus|Sus}} órdenes son muy fuertes. \\q El día {{divine_name:del SEÑOR|de Yahvé}} es grande y terrible. ¿Quién podrá sobrevivir a ese día?"
+        },
+        "sw": {
+          "L": "Na {{divine_name:BWANA|Yahwe}} anatoa sauti {{deity_pronoun:yake|Yake}} mbele ya jeshi {{deity_pronoun:lake|Lake}}, \\q kwa maana kambi {{deity_pronoun:yake|Yake}} ni kubwa mno, \\q kwa maana ana nguvu yule anayetekeleza neno {{deity_pronoun:lake|Lake}}; \\q kwa maana siku ya {{divine_name:BWANA|Yahwe}} [ni] kuu, na ya kutisha mno, naye ni nani awezaye kuistahimili?",
+          "B": "{{divine_name:BWANA|Yahwe}} ananguruma mbele ya jeshi {{deity_pronoun:lake|Lake}}; \\q majeshi {{deity_pronoun:yake|Yake}} ni makubwa mno, \\q na mwenye nguvu ni yule anayetekeleza amri {{deity_pronoun:yake|Yake}}. \\q Siku ya {{divine_name:BWANA|Yahwe}} ni kuu na ya kutisha sana. Ni nani awezaye kuistahimili?",
+          "R": "{{divine_name:BWANA|Yahwe}} anapiga kelele kutoa amri kwa jeshi {{deity_pronoun:lake|Lake}}. \\q Askari wa jeshi {{deity_pronoun:lake|Lake}} ni wengi mno! \\q Wale wanaotii amri {{deity_pronoun:zake|Zake}} wana nguvu sana. \\q Siku ya {{divine_name:BWANA|Yahwe}} ni kuu na ya kutisha. Ni nani atakayeipita akiwa hai?"
+        },
+        "vi": {
+          "L": "Và {{divine_name:CHÚA|Gia-vê}} cất tiếng của {{deity_pronoun:ngài|Ngài}} trước đạo quân của {{deity_pronoun:ngài|Ngài}}, \\q vì trại quân của {{deity_pronoun:ngài|Ngài}} rất đông, \\q vì kẻ thi hành lời của {{deity_pronoun:ngài|Ngài}} thật hùng mạnh; \\q vì ngày của {{divine_name:CHÚA|Gia-vê}} lớn lao và rất đáng sợ, và ai có thể chịu nổi ngày ấy?",
+          "B": "{{divine_name:CHÚA|Gia-vê}} cất tiếng như sấm trước đạo quân của {{deity_pronoun:ngài|Ngài}}; \\q binh lực của {{deity_pronoun:ngài|Ngài}} đông vô số, \\q và kẻ thi hành mệnh lệnh của {{deity_pronoun:ngài|Ngài}} thật hùng mạnh. \\q Ngày của {{divine_name:CHÚA|Gia-vê}} lớn lao và vô cùng khủng khiếp. Ai chịu nổi ngày ấy?",
+          "R": "{{divine_name:CHÚA|Gia-vê}} hô lớn ra lệnh cho đạo quân của {{deity_pronoun:ngài|Ngài}}. \\q Quân lính của {{deity_pronoun:ngài|Ngài}} đông vô số! \\q Những kẻ vâng theo mệnh lệnh của {{deity_pronoun:ngài|Ngài}} rất mạnh mẽ. \\q Ngày của {{divine_name:CHÚA|Gia-vê}} lớn lao và khủng khiếp. Ai có thể sống sót qua ngày ấy?"
         }
       },
       "decisions": [
@@ -1420,6 +1639,47 @@
           "reason": "Follows the English split for the fear-inspiring day; \"grande y terrible\" is the wording the terms note sets for 3:4 at B and R.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290020110182"
+          ],
+          "choice": "\"ya kutisha\" at every level",
+          "alternatives": [],
+          "reason": "\"Kutisha\" (terrifying) is used for the Hebrew \"fearful\" at all three levels; it is the word the term sheet sets for \"the great and terrible day\" in Joel 3:4.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290020110121",
+            "o290020110131"
+          ],
+          "choice": "\"kẻ thi hành lời của Ngài\" (L, B); \"Những kẻ vâng theo mệnh lệnh của Ngài\" (R)",
+          "alternatives": [
+            "\"Đấng thi hành lời của Ngài\""
+          ],
+          "reason": "The one who carries out his word is the army, not God himself (meaning decision), so the plain \"kẻ\" is used, not the capitalised \"Đấng\" that would point to God.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1473,6 +1733,16 @@
           "L": "Y aun ahora, declara {{divine_name:el SEÑOR|Yahvé}}, \\q {{plural_you:vuelvan|volved}} a {{deity_pronoun:mí|Mí}} con todo {{plural_you:su corazón|vuestro corazón}}, \\q con ayuno, con llanto y con lamento.",
           "B": "Pero aun ahora, afirma {{divine_name:el SEÑOR|Yahvé}}, \\q {{plural_you:vuélvanse|volveos}} a {{deity_pronoun:mí|Mí}} de todo corazón, \\q con ayuno, llanto y duelo.",
           "R": "Pero todavía ahora, dice {{divine_name:el SEÑOR|Yahvé}}, \\q {{plural_you:regresen|regresad}} a {{deity_pronoun:mí|Mí}} de todo corazón. \\q {{plural_you:Ayunen|Ayunad}}, {{plural_you:lloren|llorad}} y {{plural_you:hagan|haced}} duelo."
+        },
+        "sw": {
+          "L": "Na hata sasa, asema {{divine_name:BWANA|Yahwe}}, \\q rudini {{deity_pronoun:kwangu|Kwangu}} kwa moyo wenu wote, \\q kwa kufunga, na kwa kulia, na kwa kuomboleza.",
+          "B": "Lakini hata sasa, asema {{divine_name:BWANA|Yahwe}}, \\q rudini {{deity_pronoun:kwangu|Kwangu}} kwa moyo wenu wote, \\q kwa kufunga, kwa kulia na kwa kuomboleza.",
+          "R": "Lakini hata sasa, anasema {{divine_name:BWANA|Yahwe}}, \\q rudini {{deity_pronoun:kwangu|Kwangu}} kwa moyo wenu wote. \\q Fungeni, lieni na kuomboleza."
+        },
+        "vi": {
+          "L": "Dù vậy ngay cả bây giờ, {{divine_name:CHÚA|Gia-vê}} phán vậy, \\q hãy quay về với {{deity_pronoun:ta|Ta}} hết lòng các ngươi, \\q với sự kiêng ăn, với khóc lóc, và với than van.",
+          "B": "Dù vậy, ngay cả bây giờ, {{divine_name:CHÚA|Gia-vê}} phán vậy, \\q hãy hết lòng quay về với {{deity_pronoun:ta|Ta}}, \\q bằng sự kiêng ăn, khóc lóc và than van.",
+          "R": "Nhưng ngay cả bây giờ, {{divine_name:CHÚA|Gia-vê}} phán, \\q hãy hết lòng trở về với {{deity_pronoun:ta|Ta}}. \\q Hãy nhịn ăn, khóc lóc và than van."
         }
       },
       "decisions": [
@@ -1594,6 +1864,72 @@
           "reason": "Shuv of repentance is \"volver\" / \"volverse\", never \"arrepentirse\", as the Spanish terms note for Jeremiah sets; Readable \"regresar\" as Jeremiah 3 R.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290020120031",
+            "o290020120041"
+          ],
+          "choice": "\"asema BWANA\" (L, B); \"anasema BWANA\" (R)",
+          "alternatives": [],
+          "reason": "The prophets' formula ne'um YHWH, as 2 Kings 19:33 and the Isaiah and Jeremiah blocks; recorded once for Joel, Amos and Obadiah.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290020120031",
+            "o290020120041"
+          ],
+          "choice": "\"CHÚA phán vậy\" (L, B); \"CHÚA phán\" (R)",
+          "alternatives": [
+            "\"Đức Giê-hô-va phán\""
+          ],
+          "reason": "The formula for \"declares the LORD\" (ne'um YHWH) is the one settled for Isaiah and Jeremiah; mid-verse it follows a comma. Recorded once for Joel, Amos and Obadiah.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o290020120061",
+            "o290020120062",
+            "o290020120071",
+            "o290020120072"
+          ],
+          "choice": "\"các ngươi\" for the people at every level",
+          "alternatives": [
+            "\"các con\""
+          ],
+          "reason": "God speaking to the people as a group says \"các ngươi\" at every level, as in the Isaiah and Jeremiah note; \"các con\" is kept for places where the Hebrew calls them children. Recorded once for Joel, Amos and Obadiah.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1655,6 +1991,16 @@
           "L": "{{plural_you:Rasguen|Rasgad}} {{plural_you:su corazón|vuestro corazón}} y no {{plural_you:sus vestidos|vuestros vestidos}}, \\q y {{plural_you:vuelvan|volved}} {{divine_name:al SEÑOR|a Yahvé}} {{plural_you:su Dios|vuestro Dios}}, \\q porque benévolo y compasivo [es] {{deity_pronoun:él|Él}}, \\q lento para la ira y grande en amor leal, \\q y se retracta del mal.",
           "B": "{{plural_you:Desgarren|Desgarrad}} {{plural_you:su corazón|vuestro corazón}}, no solo {{plural_you:su ropa|vuestra ropa}}, \\q y {{plural_you:vuélvanse|volveos}} {{divine_name:al SEÑOR|a Yahvé}} {{plural_you:su Dios|vuestro Dios}}, \\q porque {{deity_pronoun:él|Él}} es benévolo y lleno de tierna compasión, \\q lento para enojarse y rico en amor fiel, \\q y desiste de enviar el desastre.",
           "R": "No {{plural_you:rasguen|rasguéis}} solo {{plural_you:su ropa|vuestra ropa}} para mostrar {{plural_you:su dolor|vuestro dolor}}. {{plural_you:Dejen|Dejad}} que se desgarre {{plural_you:su corazón|vuestro corazón}}. \\q {{plural_you:Regresen|Regresad}} {{divine_name:al SEÑOR|a Yahvé}} {{plural_you:su Dios|vuestro Dios}}. \\q Él es bondadoso y lleno de tierna compasión. \\q No se enoja fácilmente, y {{deity_pronoun:su|Su}} amor fiel es grande. \\q Está dispuesto a cambiar de parecer y no enviar el desastre."
+        },
+        "sw": {
+          "L": "Na rarueni mioyo yenu wala si mavazi yenu, \\q mkamrudie {{divine_name:BWANA|Yahwe}} Mungu wenu, \\q kwa maana {{deity_pronoun:yeye|Yeye}} [ni] mwenye neema na mwenye huruma, \\q mkawivu wa hasira na mwingi wa upendo usiokoma, \\q {{deity_pronoun:naye|Naye}} anaghairi kuhusu mabaya.",
+          "B": "Rarueni mioyo yenu, wala si mavazi yenu, \\q mkamrudie {{divine_name:BWANA|Yahwe}} Mungu wenu, \\q kwa maana {{deity_pronoun:yeye|Yeye}} ni mwenye neema na mwenye huruma ya moyoni, \\q anayechelewa kukasirika na aliyejaa upendo usiokoma, \\q {{deity_pronoun:naye|Naye}} hughairi kuleta maafa.",
+          "R": "Msirarue mavazi yenu tu ili kuonyesha huzuni yenu. Mioyo yenu na iraruke. \\q Mrudieni {{divine_name:BWANA|Yahwe}} Mungu wenu. \\q Yeye ni mwema, tena amejaa huruma. \\q Hakasiriki upesi, na upendo {{deity_pronoun:wake|Wake}} usiokoma ni mkubwa. \\q Yuko tayari kubadili nia {{deity_pronoun:yake|Yake}} asilete maafa."
+        },
+        "vi": {
+          "L": "Hãy xé lòng các ngươi chứ đừng xé áo các ngươi, \\q và hãy quay về với {{divine_name:CHÚA|Gia-vê}} Đức Chúa Trời của các ngươi, \\q vì {{deity_pronoun:ngài|Ngài}} hay ban ơn và đầy lòng thương xót, \\q chậm giận và dồi dào tình yêu thương thành tín, \\q và đổi ý về tai họa.",
+          "B": "Hãy xé lòng mình, đừng xé áo, \\q và hãy quay về với {{divine_name:CHÚA|Gia-vê}} Đức Chúa Trời của các ngươi, \\q vì {{deity_pronoun:ngài|Ngài}} đầy ân điển và lòng trắc ẩn, \\q chậm nóng giận và giàu tình yêu thương thành tín, \\q và {{deity_pronoun:ngài|Ngài}} đổi ý, không giáng tai họa.",
+          "R": "Đừng chỉ xé áo để tỏ lòng buồn rầu. Hãy để lòng các ngươi tan vỡ. \\q Hãy trở về với {{divine_name:CHÚA|Gia-vê}} Đức Chúa Trời của các ngươi. \\q Ngài nhân từ và đầy lòng thương xót. \\q Ngài chậm giận, và tình thương thành tín của {{deity_pronoun:ngài|Ngài}} thật lớn lao. \\q Ngài sẵn lòng đổi ý và không giáng tai họa."
         }
       },
       "decisions": [
@@ -1877,6 +2223,102 @@
           "reason": "God relenting is \"retractarse\" at Literal, as Jeremiah 18:8 and 26:13 L; B \"desiste\", R \"cambiar de parecer\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290020130101",
+            "o290020130111",
+            "o290020130121",
+            "o290020130131",
+            "o290020130141",
+            "o290020130151",
+            "o290020130152"
+          ],
+          "choice": "\"mkawivu wa hasira\", \"mwingi wa upendo usiokoma\" (L); \"anayechelewa kukasirika\", \"aliyejaa upendo usiokoma\" (B); \"Hakasiriki upesi\", \"upendo wake usiokoma\" (R)",
+          "alternatives": [],
+          "reason": "Joel quotes Exodus 34:6, so each level reuses the published Swahili of that verse; only the Hebrew order \"gracious and compassionate\" differs from Exodus. Hesed is \"upendo usiokoma\" at every level, so the English open question about loyal / steadfast love does not arise in Swahili.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-2",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290020130171",
+            "o290020130172"
+          ],
+          "choice": "\"anaghairi\", \"hughairi\" (L, B); \"kubadili nia yake\" (R)",
+          "alternatives": [],
+          "reason": "As Jeremiah 18:8: \"kughairi\" is to call off what one intended; \"kutubu\" is avoided because it means repenting of sin.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290020130101",
+            "o290020130111",
+            "o290020130121",
+            "o290020130131",
+            "o290020130141",
+            "o290020130151",
+            "o290020130152"
+          ],
+          "choice": "the words of the published Vietnamese Exodus 34:6 at each level (\"thương xót\", \"ban ơn\", \"chậm giận\", \"tình yêu thương thành tín\" at L; \"ân điển\", \"lòng trắc ẩn\", \"chậm nóng giận\" at B; \"nhân từ\", \"thương xót\", \"tình thương thành tín\" at R), in Joel's order",
+          "alternatives": [
+            "Exodus 34:6 copied in its own order"
+          ],
+          "reason": "Joel quotes the LORD's self-description to Moses, so the Vietnamese reuses the Exodus 34:6 wording at each level. Joel puts \"gracious\" before \"compassionate\" (Exodus has the reverse), so the two words follow Joel's order. The prophets' \"tình yêu thương thành tín\" for hesed is already the Exodus word.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290020130171",
+            "o290020130172",
+            "o290020130181"
+          ],
+          "choice": "\"đổi ý về tai họa\" (L); \"đổi ý, không giáng tai họa\" (B); \"sẵn lòng đổi ý và không giáng tai họa\" (R)",
+          "alternatives": [
+            "\"ăn năn\"",
+            "\"hối hận\""
+          ],
+          "reason": "As Exodus 32:12, 14: \"đổi ý\" for God relenting, never \"ăn năn\" or \"hối hận\", which would suggest God had done wrong.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1926,6 +2368,16 @@
           "L": "¿Quién sabe [si] {{deity_pronoun:él|Él}} se volverá y se retractará, \\q y dejará tras {{deity_pronoun:sí|Sí}} una bendición, \\q ofrenda de cereal y libación \\q para {{divine_name:el SEÑOR|Yahvé}} {{plural_you:su Dios|vuestro Dios}}?",
           "B": "¿Quién sabe? Tal vez se vuelva y desista, \\q y deje tras {{deity_pronoun:sí|Sí}} una bendición: \\q ofrendas de cereal y libaciones \\q para {{divine_name:el SEÑOR|Yahvé}} {{plural_you:su Dios|vuestro Dios}}.",
           "R": "¿Quién sabe? Tal vez {{deity_pronoun:él|Él}} cambie de parecer y no {{plural_you:los|os}} castigue. \\q Tal vez {{plural_you:les|os}} deje una bendición. \\q Entonces {{plural_you:tendrán|tendréis}} grano y vino para ofrecer \\q {{divine_name:al SEÑOR|a Yahvé}} {{plural_you:su Dios|vuestro Dios}}."
+        },
+        "sw": {
+          "L": "Ni nani ajuaye [kama] {{deity_pronoun:yeye|Yeye}} atageuka na kughairi, \\q na kuacha baraka nyuma {{deity_pronoun:yake|Yake}}, \\q sadaka ya nafaka na sadaka ya kinywaji \\q kwa {{divine_name:BWANA|Yahwe}} Mungu wenu?",
+          "B": "Ni nani ajuaye? Huenda akageuka na kughairi, \\q akaacha baraka nyuma {{deity_pronoun:yake|Yake}}: \\q sadaka za nafaka na sadaka za kinywaji \\q kwa {{divine_name:BWANA|Yahwe}} Mungu wenu.",
+          "R": "Ni nani ajuaye? Huenda atabadili nia {{deity_pronoun:yake|Yake}} asiwaadhibu. \\q Huenda atawaachia baraka. \\q Ndipo mtakuwa na nafaka na divai ya kumtolea \\q {{divine_name:BWANA|Yahwe}} Mungu wenu."
+        },
+        "vi": {
+          "L": "Ai biết được [liệu] {{deity_pronoun:ngài|Ngài}} sẽ quay lại và đổi ý, \\q và để lại sau {{deity_pronoun:ngài|Ngài}} một phước lành, \\q một tế lễ ngũ cốc và một lễ quán \\q cho {{divine_name:CHÚA|Gia-vê}} Đức Chúa Trời của các ngươi?",
+          "B": "Ai biết được? Có thể {{deity_pronoun:ngài|Ngài}} sẽ quay lại và đổi ý, \\q để lại sau {{deity_pronoun:ngài|Ngài}} một phước lành: \\q những tế lễ ngũ cốc và lễ quán \\q dâng lên {{divine_name:CHÚA|Gia-vê}} Đức Chúa Trời của các ngươi.",
+          "R": "Ai biết được? Có lẽ {{deity_pronoun:ngài|Ngài}} sẽ đổi ý và không trừng phạt các ngươi. \\q Có lẽ {{deity_pronoun:ngài|Ngài}} sẽ để lại cho các ngươi một phước lành. \\q Bấy giờ các ngươi sẽ có lúa và rượu \\q để dâng lên {{divine_name:CHÚA|Gia-vê}} Đức Chúa Trời của các ngươi."
         }
       },
       "decisions": [
@@ -2044,6 +2496,16 @@
           "L": "¡{{plural_you:Toquen|Tocad}} trompeta en Sion; \\q {{plural_you:consagren|consagrad}} un ayuno, {{plural_you:convoquen|convocad}} una asamblea solemne!",
           "B": "¡{{plural_you:Toquen|Tocad}} el cuerno de carnero en Sion! \\q {{plural_you:Proclamen|Proclamad}} un ayuno santo; {{plural_you:convoquen|convocad}} una asamblea solemne.",
           "R": "¡{{plural_you:Toquen|Tocad}} la trompeta en Sion! \\q {{plural_you:Anuncien|Anunciad}} un ayuno santo, un tiempo para no comer. {{plural_you:Llamen|Llamad}} a todos a una reunión especial."
+        },
+        "sw": {
+          "L": "Pigeni baragumu katika Sayuni; \\q takaseni mfungo; iteni mkutano mtakatifu.",
+          "B": "Pigeni baragumu katika Sayuni! \\q Tangazeni mfungo mtakatifu; iteni mkutano mtakatifu.",
+          "R": "Pigeni baragumu katika Sayuni! \\q Tangazeni mfungo mtakatifu, wakati wa kutokula chakula. Waiteni watu wote waje kwenye mkutano maalum."
+        },
+        "vi": {
+          "L": "Hãy thổi kèn tại Si-ôn; \\q hãy biệt riêng một kỳ kiêng ăn; hãy triệu tập một buổi nhóm họp trọng thể.",
+          "B": "Hãy thổi tù và tại Si-ôn! \\q Hãy công bố một kỳ kiêng ăn thánh; hãy triệu tập một buổi nhóm họp trọng thể.",
+          "R": "Hãy thổi kèn tại Si-ôn! \\q Hãy công bố một kỳ kiêng ăn thánh, một thời gian nhịn ăn. Hãy kêu gọi mọi người đến một buổi họp đặc biệt."
         }
       },
       "decisions": [
@@ -2162,6 +2624,16 @@
           "L": "{{plural_you:Reúnan|Reunid}} al pueblo; {{plural_you:santifiquen|santificad}} la congregación; {{plural_you:junten|juntad}} a los ancianos; \\q {{plural_you:reúnan|reunid}} a los niños, \\q aun a los que maman del pecho; \\q salga el novio de su alcoba, \\q y la novia de su cámara.",
           "B": "{{plural_you:Reúnan|Reunid}} al pueblo; {{plural_you:purifiquen|purificad}} a la asamblea; {{plural_you:congreguen|congregad}} a los ancianos; \\q {{plural_you:junten|juntad}} a los niños, \\q aun a los bebés que todavía maman. \\q Que el novio deje su habitación \\q y la novia su cámara nupcial.",
           "R": "{{plural_you:Reúnan|Reunid}} a todo el pueblo. {{plural_you:Prepárenlo|Preparadlo}} para la reunión santa. {{plural_you:Junten|Juntad}} a los ancianos, \\q a los niños y aun a los bebés que todavía maman. \\q Que también el novio y la novia salgan de sus habitaciones y vengan."
+        },
+        "sw": {
+          "L": "Kusanyeni watu; takaseni kusanyiko; kusanyeni wazee; \\q kusanyeni watoto, \\q hata wanaonyonya matiti; \\q bwana arusi na atoke chumbani mwake, \\q na bibi arusi katika chumba chake.",
+          "B": "Wakusanyeni watu; litakaseni kusanyiko; waleteni pamoja wazee; \\q wakusanyeni watoto, \\q hata watoto wachanga wanaonyonya. \\q Bwana arusi na atoke chumbani mwake, \\q na bibi arusi katika chumba chake cha arusi.",
+          "R": "Waleteni watu wote pamoja. Waandaeni kwa ajili ya mkutano mtakatifu. Wakusanyeni wazee, \\q watoto, na hata watoto wachanga ambao bado wananyonya. \\q Bwana arusi na bibi arusi waache vyumba vyao, nao waje pia."
+        },
+        "vi": {
+          "L": "Hãy tập hợp dân chúng; hãy thánh hóa hội chúng; hãy nhóm các trưởng lão; \\q hãy tập hợp trẻ con, \\q cả trẻ còn bú; \\q hãy để chàng rể ra khỏi phòng mình, \\q và cô dâu ra khỏi phòng cưới của nàng.",
+          "B": "Hãy nhóm họp dân chúng; hãy làm cho hội chúng nên thánh; hãy quy tụ các trưởng lão; \\q hãy tập hợp trẻ con, \\q cả những em bé đang bú mẹ. \\q Hãy để chàng rể rời phòng riêng \\q và cô dâu rời phòng cưới.",
+          "R": "Hãy tập hợp toàn dân lại. Hãy chuẩn bị họ cho buổi họp thánh. Hãy quy tụ các trưởng lão, \\q trẻ con, và cả những em bé còn bú mẹ. \\q Hãy bảo chàng rể và cô dâu rời phòng mình mà đến dự nữa."
         }
       },
       "decisions": [
@@ -2323,6 +2795,16 @@
           "L": "Entre el pórtico y el altar \\q lloren los sacerdotes, \\q los ministros {{divine_name:del SEÑOR|de Yahvé}}, \\q y digan: «Ten piedad, {{divine_name:SEÑOR|Yahvé}}, de {{deity_pronoun:tu|Tu}} pueblo, y no entregues {{deity_pronoun:tu|Tu}} heredad al oprobio, a ser refrán entre las naciones. \\q ¿Por qué se ha de decir entre los pueblos: \\q “¿Dónde [está] su Dios?”?»",
           "B": "Entre el pórtico y el altar \\q lloren los sacerdotes, \\q los que sirven {{divine_name:al SEÑOR|a Yahvé}}. \\q Que oren así: «¡Ten compasión de {{deity_pronoun:tu|Tu}} pueblo, {{divine_name:SEÑOR|Yahvé}}! No permitas que {{deity_pronoun:tu|Tu}} heredad sea deshonrada, que las naciones hagan de ella un refrán. \\q ¿Por qué se ha de permitir que los pueblos digan: \\q “¿Dónde está su Dios?”?»",
           "R": "Los sacerdotes que sirven {{divine_name:al SEÑOR|a Yahvé}} deben llorar \\q entre el altar y la entrada del templo. \\q Deben orar así: «{{divine_name:SEÑOR|Yahvé}}, ten compasión de {{deity_pronoun:tu|Tu}} pueblo. No dejes que otras naciones se burlen de {{deity_pronoun:tu|Tu}} pueblo y usen su nombre como insulto. \\q ¿Por qué han de poder decir las naciones: “¿Dónde está su Dios?”?»"
+        },
+        "sw": {
+          "L": "Kati ya baraza na madhabahu \\q makuhani na walie, \\q wahudumu wa {{divine_name:BWANA|Yahwe}}, \\q na waseme, \"Wahurumie watu {{deity_pronoun:wako|Wako}}, Ee {{divine_name:BWANA|Yahwe}}, wala usiufanye urithi {{deity_pronoun:wako|Wako}} kuwa aibu, mithali ya dhihaka kati ya mataifa. \\q Kwa nini isemwe kati ya mataifa, \\q 'Mungu wao yuko wapi?'\"",
+          "B": "Kati ya baraza na madhabahu \\q makuhani na walie, \\q wale wanaomtumikia {{divine_name:BWANA|Yahwe}}. \\q Na waombe, \"Ee {{divine_name:BWANA|Yahwe}}, uwahurumie watu {{deity_pronoun:wako|Wako}}! Usiuache urithi {{deity_pronoun:wako|Wako}} uwe aibu, kitu cha kudhihakiwa kati ya mataifa. \\q Kwa nini mataifa yaachwe yaseme, \\q 'Mungu wao yuko wapi?'\"",
+          "R": "Makuhani wanaomtumikia {{divine_name:BWANA|Yahwe}} na walie \\q kati ya madhabahu na mlango wa hekalu. \\q Na waombe, \"Ee {{divine_name:BWANA|Yahwe}}, uwahurumie watu {{deity_pronoun:wako|Wako}}. Usiyaache mataifa mengine yawadhihaki watu {{deity_pronoun:wako|Wako}} na kulitumia jina lao kama tusi. \\q Kwa nini mataifa yaweze kusema, 'Mungu wao yuko wapi?'\""
+        },
+        "vi": {
+          "L": "Giữa tiền sảnh và bàn thờ, \\q hãy để các thầy tế lễ khóc lóc, \\q là những người phục vụ {{divine_name:CHÚA|Gia-vê}}, \\q và hãy để họ nói: \"Lạy {{divine_name:CHÚA|Gia-vê}}, xin tha cho dân của {{deity_pronoun:ngài|Ngài}}, và đừng để cơ nghiệp của {{deity_pronoun:ngài|Ngài}} thành sự sỉ nhục, thành câu châm biếm giữa các dân tộc. \\q Sao lại để người ta nói giữa các dân: \\q 'Đức Chúa Trời của họ ở đâu?'\"",
+          "B": "Giữa tiền sảnh và bàn thờ, \\q hãy để các thầy tế lễ khóc lóc, \\q là những người phục vụ {{divine_name:CHÚA|Gia-vê}}. \\q Hãy để họ cầu nguyện: \"Lạy {{divine_name:CHÚA|Gia-vê}}, xin thương xót dân của {{deity_pronoun:ngài|Ngài}}! Xin đừng để cơ nghiệp của {{deity_pronoun:ngài|Ngài}} trở thành sự sỉ nhục, thành trò cười giữa các dân tộc. \\q Sao lại để các dân nói rằng: \\q 'Đức Chúa Trời của họ ở đâu?'\"",
+          "R": "Các thầy tế lễ phục vụ {{divine_name:CHÚA|Gia-vê}} hãy khóc lóc \\q giữa bàn thờ và lối vào đền thờ. \\q Họ hãy cầu nguyện: \"Lạy {{divine_name:CHÚA|Gia-vê}}, xin thương xót dân của {{deity_pronoun:ngài|Ngài}}. Xin đừng để các dân tộc khác chế nhạo dân của {{deity_pronoun:ngài|Ngài}} và lấy tên họ làm lời lăng mạ. \\q Sao lại để các dân nói được rằng: 'Đức Chúa Trời của họ ở đâu?'\""
         }
       },
       "decisions": [
@@ -2526,6 +3008,72 @@
           "reason": "The nations' taunt is quoted inside the priests' prayer, with “ ” inside « », and the outer question closes after it, as Psalms 79:10 and 115:2 in Spanish.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290020170021",
+            "o290020170022"
+          ],
+          "choice": "\"baraza\" (L, B); \"mlango wa hekalu\" (R)",
+          "alternatives": [],
+          "reason": "The temple porch is \"baraza\", as 1 Kings 6:3; Readable names the place plainly, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o290020170091",
+            "o290020170092",
+            "o290020170101"
+          ],
+          "choice": "\"Lạy CHÚA, xin ...\" placed first in the prayer",
+          "alternatives": [
+            "\"Xin tha cho dân Ngài, lạy CHÚA\""
+          ],
+          "reason": "Vietnamese puts the address \"Lạy CHÚA\" at the head of a prayer; the people speak of God as \"Ngài\", as in the prayers of the Psalms.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290020170011",
+            "o290020170021",
+            "o290020170022"
+          ],
+          "choice": "\"tiền sảnh\" (L, B); \"lối vào đền thờ\" (R)",
+          "alternatives": [
+            "\"hiên cửa\""
+          ],
+          "reason": "The temple porch ('ulam) is \"tiền sảnh\", as 1 Kings 6:3 and the term sheet; Readable says where it was, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2569,6 +3117,16 @@
           "L": "Entonces {{divine_name:el SEÑOR|Yahvé}} se llenó de celo por {{deity_pronoun:su|Su}} tierra \\q y tuvo piedad de {{deity_pronoun:su|Su}} pueblo.",
           "B": "Entonces {{divine_name:el SEÑOR|Yahvé}} se mostró celoso por {{deity_pronoun:su|Su}} tierra \\q y se compadeció de {{deity_pronoun:su|Su}} pueblo.",
           "R": "Entonces {{divine_name:el SEÑOR|Yahvé}} mostró cuánto amaba {{deity_pronoun:su|Su}} tierra, \\q y tuvo compasión de {{deity_pronoun:su|Su}} pueblo."
+        },
+        "sw": {
+          "L": "Ndipo {{divine_name:BWANA|Yahwe}} akaona wivu kwa ajili ya nchi {{deity_pronoun:yake|Yake}} \\q akawahurumia watu {{deity_pronoun:wake|Wake}}.",
+          "B": "Ndipo {{divine_name:BWANA|Yahwe}} akaionea wivu nchi {{deity_pronoun:yake|Yake}} \\q akawaonea huruma watu {{deity_pronoun:wake|Wake}}.",
+          "R": "Ndipo {{divine_name:BWANA|Yahwe}} akaonyesha jinsi alivyoijali sana nchi {{deity_pronoun:yake|Yake}}, \\q akawahurumia watu {{deity_pronoun:wake|Wake}}."
+        },
+        "vi": {
+          "L": "Bấy giờ {{divine_name:CHÚA|Gia-vê}} nổi lòng ghen vì đất của {{deity_pronoun:ngài|Ngài}} \\q và thương xót dân của {{deity_pronoun:ngài|Ngài}}.",
+          "B": "Bấy giờ {{divine_name:CHÚA|Gia-vê}} nổi lòng ghen yêu vì đất của {{deity_pronoun:ngài|Ngài}} \\q và động lòng thương xót dân của {{deity_pronoun:ngài|Ngài}}.",
+          "R": "Bấy giờ {{divine_name:CHÚA|Gia-vê}} tỏ ra {{deity_pronoun:ngài|Ngài}} hết lòng quý mến đất của {{deity_pronoun:ngài|Ngài}}, \\q và {{deity_pronoun:ngài|Ngài}} thương xót dân của {{deity_pronoun:ngài|Ngài}}."
         }
       },
       "decisions": [
@@ -2657,6 +3215,27 @@
           "reason": "These two verses report what the LORD did, the turning point of the book (the meaning decision), so they are narrative, told as French written narrative tells it; the LORD's answer that follows is speech again.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290020180012"
+          ],
+          "choice": "\"nổi lòng ghen\" (L); \"nổi lòng ghen yêu\" (B)",
+          "alternatives": [
+            "\"nổi giận\"",
+            "\"sốt sắng\""
+          ],
+          "reason": "The LORD's jealousy here is protective love for what is his (meaning decision); Literal keeps the published \"ghen\" (1 Kings 14:22), and Balanced adds \"yêu\" so the word cannot be read as envy.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2724,6 +3303,16 @@
           "L": "Y respondió {{divine_name:el SEÑOR|Yahvé}} y dijo a {{deity_pronoun:su|Su}} pueblo: He aquí, yo {{plural_you:les|os}} envío el grano, el mosto y el aceite fresco, \\q y {{plural_you:se saciarán|os saciaréis}} de ello; \\q y nunca más {{plural_you:los|os}} haré objeto de oprobio entre las naciones.",
           "B": "{{divine_name:El SEÑOR|Yahvé}} respondió a {{deity_pronoun:su|Su}} pueblo y dijo: Yo {{plural_you:les|os}} envío grano, vino nuevo y aceite de oliva, \\q y {{plural_you:tendrán|tendréis}} todo lo que {{plural_you:quieran|queráis}}. \\q Nunca más {{plural_you:los|os}} haré objeto de deshonra entre las naciones.",
           "R": "{{divine_name:El SEÑOR|Yahvé}} respondió a {{deity_pronoun:su|Su}} pueblo y dijo: {{plural_you:Les|Os}} envío grano, vino y aceite de oliva. \\q {{plural_you:Tendrán|Tendréis}} comida y bebida en abundancia. \\q Nunca más dejaré que las otras naciones se burlen de {{plural_you:ustedes|vosotros}}."
+        },
+        "sw": {
+          "L": "Na {{divine_name:BWANA|Yahwe}} akajibu, akawaambia watu {{deity_pronoun:wake|Wake}}: Tazama, ninawapelekea nafaka, divai mpya na mafuta mapya, \\q nanyi mtashiba navyo; \\q wala sitawafanya tena kuwa aibu kati ya mataifa.",
+          "B": "{{divine_name:BWANA|Yahwe}} akawajibu watu {{deity_pronoun:wake|Wake}}, akasema: Ninawapelekea nafaka, divai mpya na mafuta ya zeituni, \\q nanyi mtapata vyote mnavyotaka. \\q Sitawafanya tena kamwe kuwa aibu kati ya mataifa.",
+          "R": "{{divine_name:BWANA|Yahwe}} akawajibu watu {{deity_pronoun:wake|Wake}}. Akasema: Ninawapelekea nafaka, divai na mafuta ya zeituni. \\q Mtakuwa na chakula na kinywaji tele. \\q Sitayaacha tena kamwe mataifa mengine yawadhihaki."
+        },
+        "vi": {
+          "L": "Và {{divine_name:CHÚA|Gia-vê}} đáp lời và phán với dân của {{deity_pronoun:ngài|Ngài}}: Này, {{deity_pronoun:ta|Ta}} sai đến cho các ngươi lúa, rượu mới và dầu mới, \\q và các ngươi sẽ được no nê với chúng; \\q và {{deity_pronoun:ta|Ta}} sẽ không làm cho các ngươi thành sự sỉ nhục giữa các dân tộc nữa.",
+          "B": "{{divine_name:CHÚA|Gia-vê}} đáp lời dân {{deity_pronoun:ngài|Ngài}} và phán: Ta sẽ ban cho các ngươi lúa, rượu mới và dầu ô-liu, \\q và các ngươi sẽ được thỏa thích. \\q Ta sẽ không bao giờ để các ngươi thành sự sỉ nhục giữa các dân tộc nữa.",
+          "R": "{{divine_name:CHÚA|Gia-vê}} đáp lời dân {{deity_pronoun:ngài|Ngài}}. Ngài phán: Ta sẽ ban cho các ngươi lúa, rượu và dầu ô-liu. \\q Các ngươi sẽ có dư dật để ăn uống. \\q Ta sẽ không bao giờ để các dân tộc khác chế nhạo các ngươi nữa."
         }
       },
       "decisions": [
@@ -2862,6 +3451,28 @@
           "reason": "The three harvests in the words of Deuteronomy 11:14 in Spanish (L \"mosto\", \"aceite fresco\"; B \"vino nuevo\").",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o290020190031",
+            "o290020190032"
+          ],
+          "choice": "no quotation marks after \"phán\" for the LORD's answer",
+          "alternatives": [
+            "\"phán: \\\"...\\\"\""
+          ],
+          "reason": "As in the English and the prophets, God's first-person oracle takes no quotation marks; the answer runs to the end of the chapter.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2938,6 +3549,16 @@
           "L": "Al del norte lo alejaré de {{plural_you:ustedes|vosotros}} y lo arrojaré a una tierra seca y desolada, \\q su frente hacia el mar oriental, \\q y su retaguardia hacia el mar occidental; \\q y subirá su hedor, y se levantará su pestilencia, \\q porque ha hecho grandes cosas.",
           "B": "Alejaré de {{plural_you:ustedes|vosotros}} al ejército del norte y lo echaré a una tierra seca y desolada, \\q su vanguardia al mar oriental \\q y su retaguardia al mar occidental. \\q Su hedor subirá; su olor a podrido se elevará, \\q porque ha hecho mucho daño.",
           "R": "Echaré lejos de {{plural_you:ustedes|vosotros}} al ejército del norte, a una tierra seca y vacía. \\q Unos irán a parar al mar Muerto, en el oriente, \\q y los demás al mar Mediterráneo, en el occidente. \\q Sus cadáveres se pudrirán y apestarán, \\q por todo el daño que han hecho."
+        },
+        "sw": {
+          "L": "Na yule wa kaskazini nitamwondoa mbali nanyi, nami nitamfukuza aende katika nchi kavu na ya ukiwa, \\q upande wake wa mbele kuelekea bahari ya mashariki, \\q na upande wake wa nyuma kuelekea bahari ya magharibi; \\q uvundo wake utapanda, na harufu yake mbaya itapanda, \\q kwa maana amefanya mambo makubwa.",
+          "B": "Nitalifukuza jeshi la kaskazini mbali nanyi, hadi katika nchi kavu na ya ukiwa, \\q askari wake wa mbele kuelekea bahari ya mashariki, \\q na wa nyuma kuelekea bahari ya magharibi. \\q Uvundo wake utapanda; harufu yake ya kuoza itapanda juu, \\q kwa maana limefanya madhara makubwa.",
+          "R": "Nitalifukuza jeshi kutoka kaskazini mbali nanyi, hadi katika nchi kavu na tupu. \\q Baadhi yao wataingia katika Bahari ya Chumvi upande wa mashariki, \\q na wengine katika Bahari ya Mediterania upande wa magharibi. \\q Maiti zao zitaoza na kunuka, \\q kwa sababu ya madhara yote waliyoyafanya."
+        },
+        "vi": {
+          "L": "Kẻ từ phương bắc, {{deity_pronoun:ta|Ta}} sẽ đuổi xa khỏi các ngươi và xua nó vào một xứ khô hạn và hoang vu, \\q đầu nó hướng về biển phía đông, \\q và đuôi nó về biển phía tây; \\q mùi hôi thối của nó sẽ bốc lên, và mùi tanh tưởi của nó sẽ dâng lên, \\q vì nó đã làm những việc lớn.",
+          "B": "Ta sẽ đuổi đạo quân phương bắc đi xa khỏi các ngươi, vào một xứ khô cằn và hoang vu, \\q đạo tiền quân của nó vào biển phía đông, \\q và đạo hậu quân vào biển phía tây. \\q Mùi hôi thối của nó sẽ bốc lên; mùi xác rữa của nó sẽ dâng lên, \\q vì nó đã gây ra bao nhiêu tai hại.",
+          "R": "Ta sẽ đuổi đạo quân từ phương bắc đi thật xa khỏi các ngươi, vào một xứ khô cằn và trống trải. \\q Một số sẽ rơi xuống Biển Chết ở phía đông, \\q và số còn lại xuống Biển Địa Trung Hải ở phía tây. \\q Xác chúng sẽ thối rữa và bốc mùi hôi, \\q vì mọi tai hại chúng đã gây ra."
         }
       },
       "decisions": [
@@ -3098,6 +3719,16 @@
           "L": "No temas, oh tierra; \\q alégrate y regocíjate, \\q porque {{divine_name:el SEÑOR|Yahvé}} ha hecho grandes cosas.",
           "B": "¡No tengas miedo, tierra! \\q ¡Alégrate y regocíjate, \\q porque {{divine_name:el SEÑOR|Yahvé}} ha hecho grandes cosas!",
           "R": "¡Tierra, no tengas miedo! \\q Ponte alegre y llena de gozo, \\q porque {{divine_name:el SEÑOR|Yahvé}} ha hecho grandes cosas."
+        },
+        "sw": {
+          "L": "Usiogope, ee nchi; \\q furahi na kushangilia, \\q kwa maana {{divine_name:BWANA|Yahwe}} amefanya mambo makubwa.",
+          "B": "Usiogope, ee nchi! \\q Furahi na kushangilia, \\q kwa maana {{divine_name:BWANA|Yahwe}} amefanya mambo makubwa!",
+          "R": "Ewe nchi, usiogope! \\q Furahi na ujae shangwe, \\q kwa sababu {{divine_name:BWANA|Yahwe}} amefanya mambo makubwa."
+        },
+        "vi": {
+          "L": "Hỡi đất, đừng sợ; \\q hãy hân hoan và vui mừng, \\q vì {{divine_name:CHÚA|Gia-vê}} đã làm những việc lớn.",
+          "B": "Hỡi đất, đừng sợ hãi! \\q Hãy hân hoan và vui mừng, \\q vì {{divine_name:CHÚA|Gia-vê}} đã làm những việc lớn lao!",
+          "R": "Hỡi đất đai, đừng sợ! \\q Hãy vui vẻ và tràn đầy niềm vui, \\q vì {{divine_name:CHÚA|Gia-vê}} đã làm những việc lớn lao."
         }
       },
       "decisions": [
@@ -3201,6 +3832,16 @@
           "L": "No {{plural_you:teman|temáis}}, animales del campo, \\q porque los pastos del desierto han reverdecido; \\q porque el árbol ha dado su fruto; \\q la higuera y la vid han dado su fuerza.",
           "B": "No {{plural_you:tengan|tengáis}} miedo, animales salvajes, \\q porque los pastos del desierto reverdecen. \\q Los árboles dan su fruto; \\q la higuera y la vid dan su cosecha completa.",
           "R": "¡Animales salvajes, no {{plural_you:tengan|tengáis}} miedo! \\q Los pastizales vuelven a ponerse verdes. \\q Los árboles están dando fruto. \\q Las higueras y las vides están cargadas de fruta."
+        },
+        "sw": {
+          "L": "Msiogope, wanyama wa shambani, \\q kwa maana malisho ya nyikani yamechipua majani mabichi; \\q kwa maana mti umezaa matunda yake; \\q mtini na mzabibu vimetoa nguvu zao.",
+          "B": "Msiogope, enyi wanyama wa porini, \\q kwa maana malisho ya nyikani yanakuwa mabichi. \\q Miti inazaa matunda yake; \\q mtini na mzabibu vinatoa mavuno yao kamili.",
+          "R": "Enyi wanyama wa porini, msiogope! \\q Nyanda za majani zinakuwa kijani tena. \\q Miti inazaa matunda. \\q Mitini na mizabibu imejaa matunda."
+        },
+        "vi": {
+          "L": "Hỡi các thú đồng, đừng sợ, \\q vì các đồng cỏ nơi hoang mạc đã xanh tươi; \\q vì cây cối đã ra trái của nó; \\q cây vả và cây nho đã sinh sức lực của chúng.",
+          "B": "Hỡi các loài thú hoang, đừng sợ hãi, \\q vì các đồng cỏ nơi hoang mạc đang xanh tươi trở lại. \\q Cây cối đang ra trái; \\q cây vả và cây nho cho đầy hoa lợi.",
+          "R": "Hỡi các loài thú hoang, đừng sợ! \\q Các đồng cỏ đang xanh tươi trở lại. \\q Cây cối đang ra trái. \\q Cây vả và cây nho trĩu nặng trái."
         }
       },
       "decisions": [
@@ -3331,6 +3972,16 @@
           "L": "Hijos de Sion, {{plural_you:alégrense|alegraos}} y {{plural_you:regocíjense|regocijaos}} en {{divine_name:el SEÑOR|Yahvé}} {{plural_you:su Dios|vuestro Dios}}, \\q porque {{plural_you:les|os}} ha dado la lluvia temprana para justicia; \\q ha hecho descender para {{plural_you:ustedes|vosotros}} la lluvia, la lluvia temprana y la tardía, como antes.",
           "B": "Pueblo de Sion, {{plural_you:alégrense|alegraos}}; {{plural_you:regocíjense|regocijaos}} en {{divine_name:el SEÑOR|Yahvé}} {{plural_you:su Dios|vuestro Dios}}. \\q Él {{plural_you:les|os}} ha dado la lluvia de otoño en {{deity_pronoun:su|Su}} fidelidad. \\q Ha derramado lluvia para {{plural_you:ustedes|vosotros}}, la lluvia de otoño y la de primavera, como antes.",
           "R": "¡Pueblo de Sion, {{plural_you:alégrense|alegraos}}! ¡{{plural_you:Regocíjense|Regocijaos}} en {{divine_name:el SEÑOR|Yahvé}} {{plural_you:su Dios|vuestro Dios}}! \\q Él {{plural_you:les|os}} ha dado la lluvia de otoño porque es fiel con {{plural_you:ustedes|vosotros}}. \\q {{plural_you:Les|Os}} ha enviado lluvia en abundancia, la lluvia de otoño y la de primavera, como {{deity_pronoun:él|Él}} lo hizo antes."
+        },
+        "sw": {
+          "L": "Enyi wana wa Sayuni, furahini na kushangilia katika {{divine_name:BWANA|Yahwe}} Mungu wenu, \\q kwa maana {{deity_pronoun:yeye|Yeye}} amewapa mvua ya vuli kwa haki; \\q {{deity_pronoun:yeye|Yeye}} amewanyeshea mvua, mvua ya vuli na mvua ya masika, kama kwanza.",
+          "B": "Enyi watu wa Sayuni, furahini; shangilieni katika {{divine_name:BWANA|Yahwe}} Mungu wenu! \\q Amewapa mvua ya vuli kwa uaminifu {{deity_pronoun:wake|Wake}}. \\q Amewanyeshea mvua tele, mvua ya vuli na mvua ya masika, kama hapo mwanzo.",
+          "R": "Enyi watu wa Sayuni, furahini! Shangilieni katika {{divine_name:BWANA|Yahwe}} Mungu wenu! \\q Amewapa mvua ya vuli kwa sababu {{deity_pronoun:yeye|Yeye}} ni mwaminifu kwenu. \\q Amewaletea mvua nyingi, mvua ya vuli na ya masika, kama alivyofanya zamani."
+        },
+        "vi": {
+          "L": "Hỡi con cái Si-ôn, hãy hân hoan và vui mừng trong {{divine_name:CHÚA|Gia-vê}} Đức Chúa Trời của các ngươi, \\q vì {{deity_pronoun:ngài|Ngài}} đã ban cho các ngươi mưa đầu mùa vì sự công chính; \\q {{deity_pronoun:ngài|Ngài}} đã cho mưa xuống cho các ngươi, mưa đầu mùa và mưa cuối mùa, như trước kia.",
+          "B": "Hỡi dân Si-ôn, hãy hân hoan; hãy vui mừng trong {{divine_name:CHÚA|Gia-vê}} Đức Chúa Trời của các ngươi! \\q Ngài đã ban cho các ngươi mưa mùa thu vì {{deity_pronoun:ngài|Ngài}} thành tín. \\q Ngài đã đổ mưa xuống cho các ngươi, mưa mùa thu và mưa mùa xuân, như trước kia.",
+          "R": "Hỡi dân Si-ôn, hãy vui mừng! Hãy vui mừng trong {{divine_name:CHÚA|Gia-vê}} Đức Chúa Trời của các ngươi! \\q Ngài đã ban cho các ngươi mưa mùa thu vì {{deity_pronoun:ngài|Ngài}} thành tín với các ngươi. \\q Ngài đã cho các ngươi mưa dồi dào, mưa mùa thu và mưa mùa xuân, như {{deity_pronoun:ngài|Ngài}} đã làm trước kia."
         }
       },
       "decisions": [
@@ -3476,6 +4127,72 @@
           "reason": "The children of Zion are its people; \"Hijos de Sion\" is kept at L, and includes women, so no gender span.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290020230111",
+            "o290020230112",
+            "o290020230161",
+            "o290020230172"
+          ],
+          "choice": "\"mvua ya vuli\" and \"mvua ya masika\" at every level",
+          "alternatives": [],
+          "reason": "As Jeremiah 5:24: East African Swahili already names the two rainy seasons, the short rains (vuli) and the long rains (masika), so they render the early and late rains at every level, where the English Balanced and Readable say autumn and spring rain.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290020230111",
+            "o290020230112",
+            "o290020230161",
+            "o290020230172"
+          ],
+          "choice": "\"mưa đầu mùa\", \"mưa cuối mùa\" (L); \"mưa mùa thu\", \"mưa mùa xuân\" (B, R)",
+          "alternatives": [
+            "\"mưa sớm\", \"mưa muộn\""
+          ],
+          "reason": "Literal keeps the Hebrew picture of the first and last rains of the year; Balanced and Readable name the seasons, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-2",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290020230011",
+            "o290020230012"
+          ],
+          "choice": "\"Hỡi con cái Si-ôn\" (L); \"Hỡi dân Si-ôn\" (B, R)",
+          "alternatives": [
+            "\"Hỡi con trai Si-ôn\""
+          ],
+          "reason": "\"Children of Zion\" are its people; Literal keeps \"con cái\", the others say \"dân\", as daughter Zion is \"dân Si-ôn\" at Readable.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3520,6 +4237,16 @@
           "L": "Y las eras se llenarán de grano, \\q y los lagares rebosarán de mosto y aceite fresco.",
           "B": "Las eras se colmarán de grano; \\q los lagares rebosarán de vino nuevo y aceite de oliva.",
           "R": "En las eras se amontonará el grano. \\q Los lagares rebosarán de vino nuevo y aceite de oliva."
+        },
+        "sw": {
+          "L": "Na viwanja vya kupuria vitajaa nafaka, \\q na mashinikizo yatafurika divai mpya na mafuta mapya.",
+          "B": "Viwanja vya kupuria vitajaa nafaka; \\q mashinikizo yatafurika divai mpya na mafuta ya zeituni.",
+          "R": "Viwanja vya kupuria vitajaa nafaka mpaka juu. \\q Mashinikizo yatafurika divai mpya na mafuta ya zeituni."
+        },
+        "vi": {
+          "L": "Và các sân đập lúa sẽ đầy ngũ cốc, \\q và các bồn ép sẽ tràn rượu mới và dầu mới.",
+          "B": "Các sân đập lúa sẽ đầy ắp ngũ cốc; \\q các bồn ép sẽ tràn đầy rượu mới và dầu ô-liu.",
+          "R": "Lúa sẽ chất cao trên các sân đập lúa. \\q Các bồn ép sẽ tràn đầy rượu mới và dầu ô-liu."
         }
       },
       "decisions": [
@@ -3615,6 +4342,16 @@
           "L": "Y {{plural_you:les|os}} restituiré los años \\q que comió la langosta migratoria, \\q la langosta saltadora, la langosta devoradora y la langosta cortadora, \\q {{deity_pronoun:mi|Mi}} gran ejército, \\q que envié entre {{plural_you:ustedes|vosotros}}.",
           "B": "{{plural_you:Les|Os}} compensaré por los años \\q que devoró la langosta migratoria, \\q la langosta saltadora, la langosta devoradora y la langosta cortadora, \\q {{deity_pronoun:mi|Mi}} gran ejército \\q que envié contra {{plural_you:ustedes|vosotros}}.",
           "R": "{{plural_you:Les|Os}} devolveré lo que {{plural_you:perdieron|perdisteis}} en los años \\q en que una nube de langostas tras otra se comió {{plural_you:sus cosechas|vuestras cosechas}}. \\q Eran {{deity_pronoun:mi|Mi}} gran ejército, \\q que envié contra {{plural_you:ustedes|vosotros}}."
+        },
+        "sw": {
+          "L": "Nami nitawalipa kwa ajili ya miaka \\q ambayo nzige wa makundi wameila, \\q nzige warukaji, nzige waharibifu na nzige wakataji, \\q jeshi {{deity_pronoun:langu|Langu}} kubwa, \\q nililolituma kati yenu.",
+          "B": "Nitawalipa kwa ajili ya miaka \\q ambayo nzige wa makundi wameila, \\q nzige warukaji, nzige waharibifu na nzige wakataji, \\q jeshi {{deity_pronoun:langu|Langu}} kubwa \\q nililolituma dhidi yenu.",
+          "R": "Nitawarudishia yale mliyopoteza katika miaka \\q ambayo kundi moja la nzige baada ya jingine lilikula mazao yenu. \\q Walikuwa jeshi {{deity_pronoun:langu|Langu}} kubwa, \\q nililolituma dhidi yenu."
+        },
+        "vi": {
+          "L": "Và {{deity_pronoun:ta|Ta}} sẽ đền bù cho các ngươi những năm \\q mà châu chấu đàn đã ăn, \\q châu chấu non, cào cào ăn trụi và châu chấu cắn phá, \\q là đạo quân lớn của {{deity_pronoun:ta|Ta}}, \\q mà {{deity_pronoun:ta|Ta}} đã sai đến giữa các ngươi.",
+          "B": "Ta sẽ bù lại cho các ngươi những năm \\q mà châu chấu đàn đã ăn mất, \\q cùng châu chấu non, cào cào ăn trụi và châu chấu cắn phá, \\q là đạo quân lớn của {{deity_pronoun:ta|Ta}} \\q mà {{deity_pronoun:ta|Ta}} đã sai đến nghịch cùng các ngươi.",
+          "R": "Ta sẽ trả lại cho các ngươi những gì đã mất trong những năm \\q hết đàn châu chấu này đến đàn châu chấu khác ăn sạch mùa màng các ngươi. \\q Chúng là đạo quân lớn của {{deity_pronoun:ta|Ta}}, \\q mà {{deity_pronoun:ta|Ta}} đã sai đến nghịch cùng các ngươi."
         }
       },
       "decisions": [
@@ -3739,6 +4476,52 @@
           "reason": "The four names as the terms note sets them for 1:4, here in the Hebrew's new order (arbeh, yeleq, chasil, gazam). \"Migratoria\" for the common swarming locust is a first choice for a native reviewer.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290020250072",
+            "o290020250082",
+            "o290020250093",
+            "o290020250103"
+          ],
+          "choice": "\"nzige wa makundi, nzige warukaji, nzige waharibifu, nzige wakataji\" (L, B); \"kundi moja la nzige baada ya jingine\" (R)",
+          "alternatives": [],
+          "reason": "The four locust names of 1:4, here in the Hebrew's different order, worded from what each name describes (cutting, swarming, hopping, stripping) and kept clear of the Union Version's names. Whether they are kinds or stages of locust is not known.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290020250072",
+            "o290020250082",
+            "o290020250093",
+            "o290020250103"
+          ],
+          "choice": "\"châu chấu đàn, châu chấu non, cào cào ăn trụi và châu chấu cắn phá\" (L, B); \"hết đàn châu chấu này đến đàn châu chấu khác\" (R)",
+          "alternatives": [
+            "\"cào cào\" for every name"
+          ],
+          "reason": "The four locust names of 1:4, in the order of this verse, take the terms-sheet wording (\"châu chấu non\" as Psalm 105:34, \"cào cào ăn trụi\" as 1 Kings 8:37); Readable gives the sense, one swarm after another, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3796,6 +4579,16 @@
           "L": "{{plural_you:Comerán|Comeréis}} en abundancia y {{plural_you:se saciarán|os saciaréis}}, \\q y {{plural_you:alabarán|alabaréis}} el nombre {{divine_name:del SEÑOR|de Yahvé}} {{plural_you:su Dios|vuestro Dios}}, \\q que ha obrado maravillas con {{plural_you:ustedes|vosotros}}; \\q y nunca jamás será avergonzado {{deity_pronoun:mi|Mi}} pueblo.",
           "B": "{{plural_you:Comerán|Comeréis}} hasta {{plural_you:saciarse|saciaros}}, \\q y {{plural_you:alabarán|alabaréis}} el nombre {{divine_name:del SEÑOR|de Yahvé}} {{plural_you:su Dios|vuestro Dios}}, \\q que ha hecho maravillas por {{plural_you:ustedes|vosotros}}. \\q Nunca más será avergonzado {{deity_pronoun:mi|Mi}} pueblo.",
           "R": "{{plural_you:Tendrán|Tendréis}} toda la comida que {{plural_you:quieran|queráis}}, \\q y {{plural_you:alabarán|alabaréis}} {{divine_name:al SEÑOR|a Yahvé}} {{plural_you:su Dios|vuestro Dios}}, \\q porque {{deity_pronoun:él|Él}} ha hecho cosas asombrosas por {{plural_you:ustedes|vosotros}}. \\q Mi pueblo nunca más quedará en vergüenza."
+        },
+        "sw": {
+          "L": "Nanyi mtakula kwa wingi na kushiba, \\q na mtalisifu jina la {{divine_name:BWANA|Yahwe}} Mungu wenu, \\q aliyetenda nanyi kwa ajabu; \\q na watu {{deity_pronoun:wangu|Wangu}} hawataaibika kamwe.",
+          "B": "Mtakula mpaka mshibe, \\q nanyi mtalisifu jina la {{divine_name:BWANA|Yahwe}} Mungu wenu, \\q yeye aliyewatendea maajabu. \\q Watu {{deity_pronoun:wangu|Wangu}} hawataaibishwa tena kamwe.",
+          "R": "Mtakuwa na chakula chote mnachotaka, \\q nanyi mtamsifu {{divine_name:BWANA|Yahwe}} Mungu wenu, \\q kwa sababu amewatendea mambo ya ajabu. \\q Watu {{deity_pronoun:wangu|Wangu}} hawataona aibu tena kamwe."
+        },
+        "vi": {
+          "L": "Các ngươi sẽ ăn uống dư dật và được no nê, \\q và sẽ ca ngợi danh {{divine_name:CHÚA|Gia-vê}} Đức Chúa Trời của các ngươi, \\q Đấng đã đối xử kỳ diệu với các ngươi; \\q và dân {{deity_pronoun:ta|Ta}} sẽ chẳng bao giờ bị hổ thẹn.",
+          "B": "Các ngươi sẽ ăn no nê thỏa thích, \\q và các ngươi sẽ ca ngợi danh {{divine_name:CHÚA|Gia-vê}} Đức Chúa Trời của các ngươi, \\q Đấng đã làm những việc kỳ diệu cho các ngươi. \\q Dân {{deity_pronoun:ta|Ta}} sẽ không bao giờ còn bị hổ thẹn nữa.",
+          "R": "Các ngươi sẽ có thức ăn đầy đủ như ý muốn, \\q và các ngươi sẽ ca ngợi {{divine_name:CHÚA|Gia-vê}} Đức Chúa Trời của các ngươi, \\q vì {{deity_pronoun:ngài|Ngài}} đã làm những việc lạ lùng cho các ngươi. \\q Dân {{deity_pronoun:ta|Ta}} sẽ không bao giờ còn phải xấu hổ nữa."
         }
       },
       "decisions": [
@@ -3918,6 +4711,16 @@
           "L": "Y {{plural_you:sabrán|sabréis}} que en medio de Israel [estoy] yo, \\q y [que] yo [soy] {{divine_name:el SEÑOR|Yahvé}} {{plural_you:su Dios|vuestro Dios}}, y no hay otro; \\q y nunca jamás será avergonzado {{deity_pronoun:mi|Mi}} pueblo.",
           "B": "Entonces {{plural_you:sabrán|sabréis}} que yo estoy en medio de Israel, \\q que yo, {{divine_name:el SEÑOR|Yahvé}}, soy {{plural_you:su Dios|vuestro Dios}}, y no hay otro. \\q Nunca más será avergonzado {{deity_pronoun:mi|Mi}} pueblo.",
           "R": "Entonces {{plural_you:sabrán|sabréis}} que yo vivo en medio del pueblo de Israel. \\q {{plural_you:Sabrán|Sabréis}} que yo soy {{divine_name:el SEÑOR|Yahvé}} {{plural_you:su Dios|vuestro Dios}}. No hay otro Dios. \\q Mi pueblo nunca más quedará en vergüenza."
+        },
+        "sw": {
+          "L": "Nanyi mtajua kwamba katikati ya Israeli [niko] {{deity_pronoun:mimi|Mimi}}, \\q na kwamba {{deity_pronoun:mimi|Mimi}} [ni] {{divine_name:BWANA|Yahwe}} Mungu wenu, wala hakuna mwingine; \\q na watu {{deity_pronoun:wangu|Wangu}} hawataaibika kamwe.",
+          "B": "Ndipo mtajua kwamba {{deity_pronoun:mimi|Mimi}} niko katikati ya Israeli, \\q kwamba {{deity_pronoun:mimi|Mimi}}, {{divine_name:BWANA|Yahwe}}, ndimi Mungu wenu, wala hakuna mwingine. \\q Watu {{deity_pronoun:wangu|Wangu}} hawataaibishwa tena kamwe.",
+          "R": "Ndipo mtajua kwamba ninaishi kati ya watu wa Israeli. \\q Mtajua kwamba {{deity_pronoun:mimi|Mimi}} ni {{divine_name:BWANA|Yahwe}} Mungu wenu. Hakuna Mungu mwingine. \\q Watu {{deity_pronoun:wangu|Wangu}} hawataona aibu tena kamwe."
+        },
+        "vi": {
+          "L": "Và các ngươi sẽ biết rằng ở giữa Y-sơ-ra-ên [có] {{deity_pronoun:ta|Ta}}, \\q và {{deity_pronoun:ta|Ta}} [là] {{divine_name:CHÚA|Gia-vê}} Đức Chúa Trời của các ngươi, và không có ai khác; \\q và dân {{deity_pronoun:ta|Ta}} sẽ chẳng bao giờ bị hổ thẹn.",
+          "B": "Bấy giờ các ngươi sẽ biết rằng {{deity_pronoun:ta|Ta}} ở giữa Y-sơ-ra-ên, \\q rằng chính {{deity_pronoun:ta|Ta}} là {{divine_name:CHÚA|Gia-vê}}, Đức Chúa Trời của các ngươi, và không có ai khác. \\q Dân {{deity_pronoun:ta|Ta}} sẽ không bao giờ còn bị hổ thẹn nữa.",
+          "R": "Khi ấy các ngươi sẽ biết rằng {{deity_pronoun:ta|Ta}} sống giữa dân Y-sơ-ra-ên. \\q Các ngươi sẽ biết {{deity_pronoun:ta|Ta}} là {{divine_name:CHÚA|Gia-vê}} Đức Chúa Trời của các ngươi. Không có Đức Chúa Trời nào khác. \\q Dân {{deity_pronoun:ta|Ta}} sẽ không bao giờ còn phải xấu hổ nữa."
         }
       },
       "decisions": [
@@ -4013,6 +4816,28 @@
           "choice": "\"sabrán / sabréis que ...\"",
           "alternatives": [],
           "reason": "\"You will know\" follows the Ezekiel formula of the terms note, with plural_you, and B and R \"Entonces\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290020270011",
+            "o290020270012"
+          ],
+          "choice": "\"các ngươi sẽ biết rằng\" (L); \"Bấy giờ các ngươi sẽ biết rằng\" (B); \"Khi ấy các ngươi sẽ biết\" (R)",
+          "alternatives": [
+            "\"các ngươi sẽ nhận biết\""
+          ],
+          "reason": "The knowledge formula keeps the wording settled for Ezekiel's \"you will know that I am the LORD\" at each level, so the same promise reads the same across the prophets.",
           "uncertain": false,
           "footnote": false
         }
