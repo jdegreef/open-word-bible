@@ -103,6 +103,11 @@ decision is needed for narrative, unlike French.
   *te, ti, teu/tua, contigo*, and the verb in the second person singular.
   God speaking to a person uses *tu* too (the prophets, the voice from
   heaven), as the Old Testament does throughout.
+- **O senhor / a senhora** when someone speaks up to a human master or
+  superior (a slave to his master in a parable, the leaders to Pilate, a
+  son to his father where the story stresses respect): "Senhor, o senhor me
+  entregou cinco talentos". It is how Brazilians address a superior; *você*
+  there sounds rude, and *tu* is kept for God and Jesus.
 - These are wording, not meaning, and Brazilian Portuguese has no regional
   alternative worth a setting, so no reader setting is used for address.
 
@@ -194,7 +199,7 @@ Settings change wording, never meaning, exactly as in English.
   `{{deity_pronoun:si mesmo|Si mesmo}}`, an enclitic after a hyphen
   (`adorá-{{deity_pronoun:lo|Lo}}`), and when Jesus speaks of himself or
   is spoken to: `mim|Mim`, `me|Me`, `meu|Meu`, `minha|Minha`, `tu|Tu`,
-  `te|Te`, `ti|Ti`, `teu|Teu`, `tua|Tua`, `contigo|Contigo`. "Eu" for Jesus
+  `te|Te`, `ti|Ti`, `teu|Teu`, `tua|Tua`, `contigo|Contigo`, `comigo|Comigo`. "Eu" for Jesus
   has no span, and a pronoun at the start of a sentence is written plainly
   with its capital ("Ele estava no princípio com Deus"). Put a span
   wherever the English has one for the same person; Portuguese may need one
