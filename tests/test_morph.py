@@ -60,6 +60,9 @@ class MorphTest(unittest.TestCase):
         self.assertEqual(morph.describe("N-DSF", "vi"), "Danh từ · tặng cách, số ít, giống cái")
         self.assertEqual(morph.describe("V-2AAI-3S", "ko"), "동사 · 제2부정과거 능동태 직설법 · 3인칭 단수")
         self.assertEqual(morph.describe("N-DSF", "ko"), "명사 · 여격 단수 여성")
+        self.assertEqual(morph.describe("V-2AAI-3S", "pt"),
+                         "Verbo · indicativo aoristo segundo, voz ativa · 3.ª pessoa singular")
+        self.assertEqual(morph.describe("N-DSF", "pt"), "Substantivo · dativo singular feminino")
 
     def test_every_hebrew_code_in_the_extracts_is_described(self):
         words = [w for path in (ROOT / "data" / "hbo").glob("*.json")

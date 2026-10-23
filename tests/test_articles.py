@@ -208,7 +208,7 @@ class SiteChromeTest(unittest.TestCase):
             self.assertIn('<footer class="site">', text, path)
             # Links stay in the page's language: /es/ pages link to /es/.
             lang = re.search(r'<html lang="([a-z]+)">', text)[1]
-            self.assertIn(f'href="{build_site.url(lang, "/read/#jhn")}"', text, path)
+            self.assertIn(f'href="{build_site.url(lang, "/read/")}', text, path)
         about = (out / "about" / "index.html").read_text(encoding="utf-8")
         self.assertIn('<h2 id="credits">', about)
         self.assertIn('id="help"', (out / "index.html").read_text(encoding="utf-8"))
