@@ -180,6 +180,7 @@ term at Readable with a decision, Portuguese may loosen it the same way.
 | repent, repentance | arrepender-se, o arrependimento (L, B); R as the English ("mudar de vida", "voltar-se para Deus") | |
 | baptize | batizar | |
 | covenant | a aliança | |
+| boast, boasting (*kauchaomai*, *kauchēma*) | gloriar-se, motivo de glória (L); orgulhar-se, motivo de orgulho (B, R) | Readable says "gabar-se" only where the English Readable says "brag" or "show off". |
 | the gospel | o evangelho (L, B); as boas-novas (R) | "The good news of the kingdom" is "as boas-novas do Reino" at every level where the English says "good news". |
 | slave (*doulos*, *ʿeved*) | escravo (L); servo, serva (B, R) | As the English: "escravo" at every level where slavery itself is the point. |
 | disciples | os discípulos | |

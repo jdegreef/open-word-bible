@@ -150,7 +150,8 @@ class LanguagesTest(unittest.TestCase):
                 page = re.sub(r'<p class="term-(text|note|why-text)" lang="en">.*?</p>'
                               r'|<meta property="og:image:alt" content="[^"]*">', "", page, flags=re.S)
                 for key in keys:
-                    self.assertNotIn(en[key], page, (lang, rel, key))
+                    # A whole word: English "Home" is inside Portuguese "Homem".
+                    self.assertNotRegex(page, r"(?<!\w)" + re.escape(en[key]) + r"(?!\w)", (lang, rel, key))
                     self.assertIn(cat[key], page, (lang, rel, key))
             home = self.read(f"{lang}/index.html")
             self.assertIn(cat["home.heading"], home)
