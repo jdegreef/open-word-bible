@@ -22,8 +22,10 @@ its own quotation marks (markup.quotations). Where a speech ends is a
 meaning decision, made in the record and shown by its quotation marks
 (John 3:16-21), so the red letters follow the translation, never the other
 way round. Words of Jesus are his direct speech, including where the
-narrator quotes what he said ("he had said, \"Follow me\""), but not other
-people quoting him.
+narrator or a witness quotes what he said ("he had said, \"Follow me\"";
+Paul in Acts 20:35), but not his words as others turn them over in
+argument ("What does he mean by 'a little while'?", John 16:18). They are
+marked where the text names him as the speaker.
 """
 import functools
 import json
