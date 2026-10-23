@@ -3,8 +3,8 @@
 The word extracts (data/grc/) carry Robinson-style codes such as N-DSF or
 V-2AAI-3S. describe() turns one into words a reader can follow, in each
 reading language (English, Spanish, French, Swahili, Vietnamese, Korean,
-Amharic): "Noun · dative singular feminine", "Verb · second aorist active
-indicative · 3rd person singular". An unknown code raises ValueError, so a new code in the
+Portuguese, Amharic): "Noun · dative singular feminine", "Verb · second aorist
+active indicative · 3rd person singular". An unknown code raises ValueError, so a new code in the
 data fails the tests rather than showing a reader nothing.
 """
 import re
@@ -184,6 +184,34 @@ WORDS = {
         "suffix": {"N": "부정", "I": "의문", "S": "최상급", "C": "비교급",
                    "ATT": "앗티카 형태", "K": "두 단어가 한 단어로 합쳐진 형태",
                    "P": "불변화사가 붙은 형태", "ABB": "줄임 형태"},
+    },
+    "pt": {
+        "pos": {"N": "Substantivo", "V": "Verbo", "A": "Adjetivo", "T": "Artigo",
+                "P": "Pronome pessoal", "R": "Pronome relativo", "D": "Pronome demonstrativo",
+                "K": "Pronome correlativo", "X": "Pronome indefinido", "I": "Pronome interrogativo",
+                "F": "Pronome reflexivo", "C": "Pronome recíproco", "S": "Pronome possessivo",
+                "Q": "Pronome correlativo ou interrogativo",
+                "ADV": "Advérbio", "CONJ": "Conjunção", "PREP": "Preposição", "PRT": "Partícula",
+                "COND": "Conjunção condicional", "INJ": "Interjeição",
+                "HEB": "Palavra hebraica", "ARAM": "Palavra aramaica"},
+        "indeclinable": {"PRI": "nome próprio, indeclinável", "LI": "letra, indeclinável",
+                         "OI": "indeclinável", "NUI": "número, indeclinável"},
+        "case": {"N": "nominativo", "G": "genitivo", "D": "dativo", "A": "acusativo", "V": "vocativo"},
+        "number": {"S": "singular", "P": "plural"},
+        "gender": {"M": "masculino", "F": "feminino", "N": "neutro"},
+        "tense": {"P": "presente", "I": "imperfeito", "F": "futuro", "A": "aoristo",
+                  "R": "perfeito", "L": "mais-que-perfeito"},
+        "second": "{} segundo",
+        "verb": "{mood} {tense}, {voice}", "voiced": "voz {}",
+        "voice": {"A": "ativa", "M": "média", "P": "passiva", "E": "média ou passiva",
+                  "D": "média (depoente)", "O": "passiva (depoente)",
+                  "N": "média ou passiva (depoente)", "Q": "ativa impessoal", "X": ""},
+        "mood": {"I": "indicativo", "S": "subjuntivo", "O": "optativo", "M": "imperativo",
+                 "N": "infinitivo", "P": "particípio", "R": "particípio (como ordem)"},
+        "person": {"1": "1.ª pessoa", "2": "2.ª pessoa", "3": "3.ª pessoa"},
+        "suffix": {"N": "negação", "I": "interrogativo", "S": "superlativo", "C": "comparativo",
+                   "ATT": "forma ática", "K": "crase (duas palavras unidas)",
+                   "P": "com partícula unida", "ABB": "forma abreviada"},
     },
     "am": {
         "pos": {"N": "ስም", "V": "ግስ", "A": "ቅጽል", "T": "መወሰኛ",
@@ -406,6 +434,31 @@ HEBREW_WORDS = {
         "gender": {"m": "남성", "f": "여성", "b": "남성 또는 여성", "c": "통성"},
         "number": {"s": "단수", "p": "복수", "d": "쌍수"},
         "state": {"a": "절대형", "c": "연계형 (~의)", "d": "한정형"},
+    },
+    "pt": {
+        "pos": {"A": "Adjetivo", "C": "Conjunção", "D": "Advérbio", "N": "Substantivo",
+                "P": "Pronome", "R": "Preposição", "S": "Sufixo", "T": "Partícula", "V": "Verbo"},
+        "noun": {"c": "comum", "g": "gentílico (povo ou lugar)", "p": "nome próprio", "x": ""},
+        "adjective": {"a": "", "c": "número cardinal", "g": "gentílico", "o": "número ordinal"},
+        "pronoun": {"d": "demonstrativo", "f": "indefinido", "i": "interrogativo",
+                    "p": "pessoal", "r": "relativo"},
+        "particle": {"a": "afirmação", "d": "artigo definido", "e": "exortação",
+                     "i": "interrogativa", "j": "interjeição", "m": "demonstrativa",
+                     "n": "negação", "o": "marca de objeto direto", "r": "relativa"},
+        "suffix": {"d": "terminação direcional (para)", "h": "he paragógico",
+                   "n": "nun paragógico", "p": "pronominal"},
+        "with_article": "com artigo",
+        "stem": None,  # the stems are names, the same in every language
+        "conjugation": {"p": "perfeito (qatal)", "q": "perfeito com \u201ce\u201d (weqatal)",
+                        "i": "imperfeito (yiqtol)", "w": "narrativo passado (wayyiqtol)",
+                        "h": "coortativo", "j": "jussivo", "v": "imperativo",
+                        "r": "particípio", "s": "particípio passivo",
+                        "a": "infinitivo absoluto", "c": "infinitivo construto"},
+        "person": {"1": "1.ª pessoa", "2": "2.ª pessoa", "3": "3.ª pessoa"},
+        "gender": {"m": "masculino", "f": "feminino", "b": "masculino ou feminino",
+                   "c": "comum"},
+        "number": {"s": "singular", "p": "plural", "d": "dual"},
+        "state": {"a": "absoluto", "c": "construto (de ...)", "d": "determinado"},
     },
     "am": {
         "pos": {"A": "ቅጽል", "C": "መስተጻምር", "D": "ተውሳከ ግስ", "N": "ስም",

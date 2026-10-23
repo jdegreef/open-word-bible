@@ -10,13 +10,14 @@ rewrites only the entries whose documents changed (plan).
 Matching follows the language of each document's own text, not the
 site's: notes are written in English, and a sentence not yet translated is
 shown, and found, in English. Each language has a text search
-configuration that removes accents and then stems (migration 0003): owb_english,
-owb_spanish, owb_french, and owb_simple for languages Postgres has no
-stemmer for. Every entry is also indexed word for word (owb_simple, the
-lowest weight), so words a stemmer drops ("I am") or shortens ("runn" while
-typing "running") still match. A query word matches an entry in its stemmed
-forms, in the entry's own language only, or word for word as the start of a
-word (tsquery explains why). A "quoted phrase" matches word for word, in order.
+configuration that removes accents and then stems (migrations 0003 and
+0009): owb_english, owb_spanish, owb_french, owb_portuguese, and
+owb_simple for languages Postgres has no stemmer for. Every entry is also
+indexed word for word (owb_simple, the lowest weight), so words a stemmer
+drops ("I am") or shortens ("runn" while typing "running") still match. A
+query word matches an entry in its stemmed forms, in the entry's own
+language only, or word for word as the start of a word (tsquery explains
+why). A "quoted phrase" matches word for word, in order.
 """
 import functools
 import hashlib
@@ -36,7 +37,7 @@ from translation.models import SearchEntry, SearchLanguage, SearchWord
 # The document kinds, by the names the API uses and the site's one-letter codes.
 KINDS = {"passage": "c", "verse": "v", "note": "n", "article": "a"}
 NAMES = {code: name for name, code in KINDS.items()}
-CONFIGS = {"en": "owb_english", "es": "owb_spanish", "fr": "owb_french"}
+CONFIGS = {"en": "owb_english", "es": "owb_spanish", "fr": "owb_french", "pt": "owb_portuguese"}
 SIMPLE = "owb_simple"
 MIN_QUERY = 2
 SPAN = re.compile(r"\{\{([a-z_]+):([^{}]*)\}\}")

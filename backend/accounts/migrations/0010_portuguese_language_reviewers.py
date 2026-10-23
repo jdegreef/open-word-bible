@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
                 condition=models.Q(
                     models.Q(("kind", "scholar_reviewer"), ("language__in", ["grc", "hbo"])),
                     models.Q(("kind", "language_reviewer"),
-                             ("language__in", ["en", "es", "fr", "sw", "vi", "ko", "am"])),
+                             ("language__in", ["en", "es", "fr", "sw", "vi", "ko", "pt"])),
                     models.Q(("kind__in", ["super_admin", "editor", "reporting", "users", "email"]),
                              ("language", "")),
                     _connector="OR",

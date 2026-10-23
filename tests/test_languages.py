@@ -1,5 +1,5 @@
 """The site in each interface language: English at the root, the others
-under their codes (/es/, /fr/, /sw/, /vi/, /ko/, /am/), the footer's language
+under their codes (/es/, /fr/, /sw/, /vi/, /ko/, /pt/, /am/), the footer's language
 switch, and the message catalogs in i18n/."""
 import json
 import re
@@ -147,10 +147,13 @@ class LanguagesTest(unittest.TestCase):
                 page = re.sub(r'<script type="application/json" id="owb-data">.*?</script>'
                               r'|<div class="text" id="text">.*?</div>\s*<section class="notes"', "",
                               self.read(Path(lang) / rel), flags=re.S)
-                # So may a key-term page's English sentences and notes, and
-                # the share card's description, which quotes the opening verse.
+                # So may a key-term page's English sentences and notes, the
+                # share card's description, which quotes the opening verse,
+                # and the home page's verses of the day ("Filho do Homem").
                 page = re.sub(r'<p class="term-(text|note|why-text)" lang="en">.*?</p>'
-                              r'|<meta property="og:image:alt" content="[^"]*">', "", page, flags=re.S)
+                              r'|<meta property="og:image:alt" content="[^"]*">'
+                              r'|<script type="application/json" class="votd-data">.*?</script>'
+                              r'|<p class="votd-text"[^>]*>.*?</p>', "", page, flags=re.S)
                 for key in keys:
                     self.assertNotIn(en[key], page, (lang, rel, key))
                     self.assertIn(cat[key], page, (lang, rel, key))
@@ -181,7 +184,7 @@ class LanguagesTest(unittest.TestCase):
         sw = self.read("sw/jhn/1/index.html")
         self.assertNotIn('data-setting="plural_you"', sw)
         self.assertIn(">Linganifu</button>", sw)
-        for lang, balanced in (("vi", "Cân bằng"), ("ko", "균형"), ("am", "ሚዛናዊ")):
+        for lang, balanced in (("vi", "Cân bằng"), ("ko", "균형"), ("pt", "Equilibrada"), ("am", "ሚዛናዊ")):
             page = self.read(f"{lang}/mat/1/index.html")
             self.assertNotIn('data-setting="plural_you"', page)
             self.assertIn(f">{balanced}</button>", page)
@@ -195,7 +198,7 @@ class LanguagesTest(unittest.TestCase):
             decisions = [d for r in data["records"] for d in r["decisions"]]
             self.assertTrue(all(d["language"] in (None, lang) for d in decisions), lang)
             self.assertTrue(any(d["language"] == lang for d in decisions), lang)
-            self.assertTrue(all({"en", "vi", "ko", "am"} <= set(r["renderings"]) for r in data["records"]), lang)
+            self.assertTrue(all({"en", "vi", "ko", "pt", "am"} <= set(r["renderings"]) for r in data["records"]), lang)
 
     def test_home_page_shows_nothing_in_english_where_it_need_not(self):
         # The verse of the day and the worked examples are taken from what
@@ -284,6 +287,7 @@ class LanguagesTest(unittest.TestCase):
         self.assertEqual(build_site._date("2026-10-10", "sw"), "10 Oktoba 2026")
         self.assertEqual(build_site._date("2026-10-10", "vi"), "10 tháng 10, 2026")
         self.assertEqual(build_site._date("2026-10-10", "ko"), "2026년 10월 10일")
+        self.assertEqual(build_site._date("2026-10-10", "pt"), "10 de outubro de 2026")
 
     def test_french_typography_has_no_breaking_space_before_its_marks(self):
         # French sets « » : ; ! ? off with no-break spaces, so a line never

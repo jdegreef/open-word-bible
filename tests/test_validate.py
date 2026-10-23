@@ -332,8 +332,8 @@ class ValidateTest(unittest.TestCase):
 
     def test_rendering_in_a_language_not_in_the_registry_fails(self):
         record = example_records()[0]
-        record["renderings"]["pt"] = copy.deepcopy(record["renderings"]["en"])
-        self.assertIn("renderings: 'pt' is not a language in data/languages.json",
+        record["renderings"]["de"] = copy.deepcopy(record["renderings"]["en"])
+        self.assertIn("renderings: 'de' is not a language in data/languages.json",
                       validate.validate_record(record))
 
 
