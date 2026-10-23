@@ -145,10 +145,13 @@ class LanguagesTest(unittest.TestCase):
                 page = re.sub(r'<script type="application/json" id="owb-data">.*?</script>'
                               r'|<div class="text" id="text">.*?</div>\s*<section class="notes"', "",
                               self.read(Path(lang) / rel), flags=re.S)
-                # So may a key-term page's English sentences and notes, and
-                # the share card's description, which quotes the opening verse.
+                # So may a key-term page's English sentences and notes, the
+                # share card's description, which quotes the opening verse,
+                # and the home page's verses of the day ("Filho do Homem").
                 page = re.sub(r'<p class="term-(text|note|why-text)" lang="en">.*?</p>'
-                              r'|<meta property="og:image:alt" content="[^"]*">', "", page, flags=re.S)
+                              r'|<meta property="og:image:alt" content="[^"]*">'
+                              r'|<script type="application/json" class="votd-data">.*?</script>'
+                              r'|<p class="votd-text"[^>]*>.*?</p>', "", page, flags=re.S)
                 for key in keys:
                     # A whole word: English "Home" is inside Portuguese "Homem".
                     self.assertNotRegex(page, r"(?<!\w)" + re.escape(en[key]) + r"(?!\w)", (lang, rel, key))
