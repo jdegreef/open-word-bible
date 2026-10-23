@@ -67,6 +67,11 @@
           "L": "Pois o Reino dos céus é semelhante a um homem, senhor de uma casa, que saiu logo de manhã cedo a fim de contratar trabalhadores para a sua vinha.",
           "B": "Pois o Reino dos céus é como esta história: um proprietário de terras saiu ao raiar do dia para contratar trabalhadores para a sua vinha.",
           "R": "O Reino dos céus é como esta história. Um homem tinha uma vinha, uma plantação de uvas. Certo dia, bem cedo, ele saiu para procurar trabalhadores e contratá-los para trabalhar nela."
+        },
+        "am": {
+          "L": "መንግሥተ ሰማያት ለወይን ቦታው ሠራተኞችን ሊቀጥር በማለዳ የወጣን የቤት ጌታ የሆነ ሰው ትመስላለችና።",
+          "B": "መንግሥተ ሰማያት እንዲህ ናትና፤ አንድ የእርሻ ባለቤት በወይን ቦታው የሚሠሩ ሠራተኞችን ለመቅጠር ገና ጎሕ ሲቀድ ወጣ።",
+          "R": "የሰማይ መንግሥት እንዲህ ናት። አንድ ሰው የወይን ቦታ ነበረው፤ ይህም የወይን ተክል የተተከለበት እርሻ ነው። በአንድ ቀን ማለዳ ሠራተኞችን ፈልጎ ለመቅጠር ወጣ።"
         }
       },
       "decisions": [
@@ -419,6 +424,51 @@
           "reason": "For the whole book. \"Vinha\" is the ordinary written word for a vineyard and the one these stories are known by; \"vinhedo\" is also correct but more technical. Readable explains it, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40020001005",
+            "n40020001006",
+            "n40020001007"
+          ],
+          "choice": "\"መንግሥተ ሰማያት\" (L, B); \"የሰማይ መንግሥት\" (R)",
+          "alternatives": [
+            "\"የሰማያት መንግሥት\" at every level"
+          ],
+          "reason": "The style guide's term for Matthew's kingdom of heaven: the Ge'ez phrase is the living church word at Literal and Balanced, and Readable uses the plain Amharic phrase every reader understands. The same holds through this passage.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40020001018"
+          ],
+          "choice": "\"የወይን ቦታ\" (vineyard)",
+          "alternatives": [
+            "\"የወይን እርሻ\"",
+            "\"ወይን ቤት\""
+          ],
+          "reason": "\"የወይን ቦታ\" is the ordinary word for a planted vineyard; \"ወይን ቤት\" could suggest a place where wine is sold. Readable adds a short explanation, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -486,6 +536,11 @@
           "L": "E, tendo combinado com os trabalhadores um denário por dia, ele os enviou para a sua vinha.",
           "B": "Ele combinou com os trabalhadores {{units:o salário normal de um dia|um denário por dia}} e os mandou para a sua vinha.",
           "R": "Ele combinou com eles que pagaria {{units:o valor normal de um dia de trabalho|um denário pelo dia}}. Depois mandou todos para a vinha."
+        },
+        "am": {
+          "L": "ከሠራተኞቹም ጋር በቀን አንድ ዲናር ተስማምቶ ወደ ወይን ቦታው ላካቸው።",
+          "B": "ከሠራተኞቹም ጋር {{units:በተለመደው የአንድ ቀን ደመወዝ|በቀን አንድ ዲናር}} ተስማምቶ ወደ ወይን ቦታው ላካቸው።",
+          "R": "ለአንድ ቀን ሥራ {{units:የተለመደውን ክፍያ|አንድ ዲናር}} ሊከፍላቸው ተስማማ። ከዚያም ወደ ወይን ቦታው ላካቸው።"
         }
       },
       "decisions": [
@@ -674,6 +729,26 @@
           "reason": "For the whole book: \"denário\" is the Portuguese name of the coin (docs/portuguese-style.md, section 11). Where the English Balanced and Readable give the coin's worth with the coin as the alternative, Portuguese does the same, so the reader setting works alike in both languages.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40020002007"
+          ],
+          "choice": "{{units:በተለመደው የአንድ ቀን ደመወዝ|በቀን አንድ ዲናር}} (B) and the like through the parable",
+          "alternatives": [
+            "\"ዲናር\" alone at every level"
+          ],
+          "reason": "A coin is not a measure that has a metric form, so the Amharic follows the English span: the default says what the coin meant (a day's wage), and the Measures setting shows the coin's name, \"ዲናር\". Literal keeps the coin.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -738,6 +813,11 @@
           "L": "E, tendo saído por volta da hora terceira, ele viu outros que estavam na praça, desocupados,",
           "B": "Por volta das nove da manhã, ele saiu e viu outros parados na praça, sem nada para fazer.",
           "R": "Por volta das nove horas da manhã, ele saiu de novo. Viu outras pessoas paradas na praça. Ninguém tinha dado trabalho a elas."
+        },
+        "am": {
+          "L": "በሦስተኛውም ሰዓት ገደማ ወጥቶ ሌሎችን ሥራ ፈትተው በገበያ ቦታ ቆመው አየ፤",
+          "B": "ከጠዋቱ ሦስት ሰዓት ገደማ ወጥቶ ሌሎች ሰዎች ሥራ ሳይኖራቸው በገበያ ቦታ ቆመው አየ።",
+          "R": "ከጠዋቱ ሦስት ሰዓት ገደማ እንደገና ወጣ። በገበያ ቦታ ሌሎች ሰዎች ቆመው አየ። ማንም ሥራ አልሰጣቸውም ነበር።"
         }
       },
       "decisions": [
@@ -987,6 +1067,28 @@
           "reason": "The place is the open town square (m3). A Brazilian \"mercado\" is a market building or a shop, and \"feira\" is a weekly street market; \"praça\" is where people gather in a town.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40020003004",
+            "n40020003005"
+          ],
+          "choice": "\"ከጠዋቱ ሦስት ሰዓት\" (B, R); and in this parable \"እኩለ ቀን\", \"ከቀኑ ዘጠኝ ሰዓት\", \"ከቀኑ አሥራ አንድ ሰዓት\"",
+          "alternatives": [
+            "\"ከጠዋቱ ሦስተኛ ሰዓት\" (L's count)",
+            "the international clock (\"ከጠዋቱ 9 ሰዓት\")"
+          ],
+          "reason": "Ethiopians count the hours from dawn, as the Greek does, so the Greek third, sixth, ninth and eleventh hours are the times Amharic readers already say (three, six, nine and eleven o'clock), with no conversion. The international clock would give the wrong hour to most readers.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1055,6 +1157,11 @@
           "L": "e a eles disse: 'Vão também vocês para a vinha, e o que for justo eu darei a vocês.'",
           "B": "'Vão vocês também para a vinha', ele lhes disse, 'e eu darei a vocês o que for justo.'",
           "R": "Ele disse a eles: 'Vocês também podem ir trabalhar na minha vinha. Eu vou pagar a vocês o que for justo.'"
+        },
+        "am": {
+          "L": "ለእነዚያም እንዲህ አላቸው፦ “እናንተም ደግሞ ወደ ወይን ቦታው ሂዱ፤ ትክክል የሆነውንም ሁሉ እሰጣችኋለሁ።”",
+          "B": "“እናንተም ወደ ወይን ቦታው ሂዱ” አላቸው፤ “ተገቢውንም ክፍያ እሰጣችኋለሁ።”",
+          "R": "“እናንተም ሄዳችሁ በወይን ቦታዬ ሥሩ። ተገቢውን ክፍያ እከፍላችኋለሁ” አላቸው።"
         }
       },
       "decisions": [
@@ -1182,6 +1289,27 @@
           "reason": "A landowner speaking to day laborers he hires; the laborers address their employer deferentially. Quotations inside Jesus's story take single marks, as in the English.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n40020004003"
+          ],
+          "choice": "“ ” for the speakers inside the parable",
+          "alternatives": [
+            "« » for every speech"
+          ],
+          "reason": "The parable is already inside Jesus's words, which open with « » earlier in his speech, so the owner's and workers' words take the inner marks, as the English uses single marks.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1237,6 +1365,11 @@
           "L": "E eles foram.",
           "B": "E eles foram.",
           "R": "Então eles foram."
+        },
+        "am": {
+          "L": "እነርሱም ሄዱ።",
+          "B": "ስለዚህ ሄዱ።",
+          "R": "እነርሱም ሄዱ።"
         }
       },
       "decisions": [
@@ -1316,6 +1449,11 @@
           "L": "De novo, saindo por volta da hora sexta e da hora nona, fez do mesmo modo.",
           "B": "Ele saiu de novo por volta do meio-dia e outra vez por volta das três da tarde, e fez o mesmo.",
           "R": "Ele saiu outra vez por volta do meio-dia e depois por volta das três horas da tarde. Nas duas vezes, fez a mesma coisa."
+        },
+        "am": {
+          "L": "ደግሞም በስድስተኛውና በዘጠነኛው ሰዓት ገደማ ወጥቶ እንዲሁ አደረገ።",
+          "B": "እኩለ ቀን ገደማ እንደገና ወጣ፤ ከቀኑ ዘጠኝ ሰዓት ገደማም ወጣ፤ እንደዚያውም አደረገ።",
+          "R": "እኩለ ቀን ገደማና ከቀኑ ዘጠኝ ሰዓት ገደማ እንደገና ወጣ። በየጊዜውም እንደዚያው አደረገ።"
         }
       },
       "decisions": [
@@ -1468,6 +1606,11 @@
           "L": "E, saindo por volta da [hora] décima primeira, encontrou outros parados, e lhes diz: 'Por que vocês estão parados aqui o dia inteiro, desocupados?'",
           "B": "Depois, por volta das cinco da tarde, ele saiu e encontrou ainda outros parados ali. 'Por que vocês ficaram aqui o dia todo sem fazer nada?', perguntou a eles.",
           "R": "Por volta das cinco horas da tarde, ele saiu outra vez e encontrou mais pessoas paradas ali. Ele perguntou a elas: 'Por que vocês ficaram aqui parados o dia inteiro sem trabalhar?'"
+        },
+        "am": {
+          "L": "በአሥራ አንደኛውም [ሰዓት] ገደማ ወጥቶ ሌሎች ቆመው አገኘ፤ እንዲህም ይላቸዋል፦ “ቀኑን ሙሉ ሥራ ፈትታችሁ ለምን እዚህ ቆማችኋል?”",
+          "B": "ከዚያም ከቀኑ አሥራ አንድ ሰዓት ገደማ ወጥቶ ሌሎች ሰዎች በዚያ ቆመው አገኘ። “ቀኑን ሙሉ ምንም ሳትሠሩ ለምን እዚህ ቆማችኋል?” ሲል ጠየቃቸው።",
+          "R": "ከቀኑ አሥራ አንድ ሰዓት ገደማ እንደገና ወጥቶ ሌሎች ሰዎች በዚያ ቆመው አገኘ። እርሱም “ቀኑን ሙሉ ሳትሠሩ ለምን እዚህ ቆማችኋል?” ብሎ ጠየቃቸው።"
         }
       },
       "decisions": [
@@ -1685,6 +1828,11 @@
           "L": "Eles lhe dizem: 'Porque ninguém nos contratou.'",
           "B": "'Porque ninguém nos contratou', responderam eles.",
           "R": "Eles responderam: 'Ninguém nos contratou.'"
+        },
+        "am": {
+          "L": "ይሉታል፦ “ማንም ስላልቀጠረን ነው።”",
+          "B": "“ማንም ስላልቀጠረን ነው” ብለው መለሱለት።",
+          "R": "እነርሱም “ማንም አልቀጠረንም” ብለው መለሱለት።"
         }
       },
       "decisions": [
@@ -1785,6 +1933,11 @@
           "L": "Ele lhes diz: 'Vão também vocês para a vinha.'",
           "B": "Ele lhes disse: 'Vão vocês também para a vinha.'",
           "R": "Ele disse a eles: 'Então vocês também podem ir trabalhar na minha vinha.'"
+        },
+        "am": {
+          "L": "ይላቸዋል፦ “እናንተም ደግሞ ወደ ወይን ቦታው ሂዱ።”",
+          "B": "“እናንተም ወደ ወይን ቦታው ሂዱ” አላቸው።",
+          "R": "እርሱም “እንግዲያውስ እናንተም ሄዳችሁ በወይን ቦታዬ ሥሩ” አላቸው።"
         }
       },
       "decisions": [
@@ -1919,6 +2072,11 @@
           "L": "E, chegada a tarde, o senhor da vinha diz ao seu administrador: 'Chame os trabalhadores e pague a eles o salário, começando pelos últimos até os primeiros.'",
           "B": "Ao cair da tarde, o dono da vinha disse ao seu administrador: 'Chame os trabalhadores e pague a eles o que lhes é devido. Comece pelos que vieram por último e termine com os primeiros.'",
           "R": "No fim da tarde, o dono da vinha falou com o homem que cuidava dos seus trabalhadores. Ele disse: 'Chame os trabalhadores e pague a eles. Comece pelas pessoas que eu contratei por último e termine com as que contratei primeiro.'"
+        },
+        "am": {
+          "L": "በመሸም ጊዜ የወይን ቦታው ጌታ መጋቢውን እንዲህ ይለዋል፦ “ሠራተኞቹን ጥራና ከኋለኞቹ ጀምረህ እስከ ፊተኞቹ ድረስ ደመወዛቸውን ክፈላቸው።”",
+          "B": "በመሸ ጊዜ የወይን ቦታው ባለቤት የሥራ ኃላፊውን “ሠራተኞቹን ጠርተህ ደመወዛቸውን ክፈላቸው። በመጨረሻ ከተቀጠሩት ጀምረህ በመጀመሪያ በተቀጠሩት ጨርስ” አለው።",
+          "R": "ምሽት በሆነ ጊዜ የወይን ቦታው ባለቤት ሠራተኞቹን የሚቆጣጠረውን ሰው ጠራው። እንዲህም አለው፦ “ሠራተኞቹን ጥራና ክፈላቸው። በመጨረሻ ከቀጠርኳቸው ጀምር፤ በመጀመሪያ በቀጠርኳቸው ጨርስ።”"
         }
       },
       "decisions": [
@@ -2159,6 +2317,26 @@
           "reason": "The word is used of a steward who manages an estate for its owner (m3). A Brazilian \"capataz\" oversees labourers in the field, which is narrower, and \"mordomo\" is now a butler. Readable describes him, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40020008010"
+          ],
+          "choice": "\"መጋቢ\" (L); \"የሥራ ኃላፊ\" (B); \"ሠራተኞቹን የሚቆጣጠረው ሰው\" (R)",
+          "alternatives": [
+            "\"ሹም\"",
+            "\"ተቆጣጣሪ\" at every level"
+          ],
+          "reason": "\"መጋቢ\" is the steward who runs a household's business, the closest single word; Balanced and Readable use the plain words for the man in charge of the workers.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2221,6 +2399,11 @@
           "L": "E, vindo os [contratados] por volta da hora décima primeira, receberam um denário cada um.",
           "B": "Chegaram os que tinham sido contratados por volta das cinco da tarde, e cada um recebeu {{units:o salário de um dia inteiro|um denário}}.",
           "R": "Os trabalhadores que começaram às cinco horas da tarde vieram primeiro. Cada um deles recebeu {{units:o pagamento de um dia inteiro|um denário}}."
+        },
+        "am": {
+          "L": "በአሥራ አንደኛውም ሰዓት ገደማ [የተቀጠሩት] መጥተው እያንዳንዳቸው አንድ ዲናር ተቀበሉ።",
+          "B": "ከቀኑ አሥራ አንድ ሰዓት ገደማ የተቀጠሩት መጡ፤ እያንዳንዳቸውም {{units:የሙሉ ቀን ደመወዝ|አንድ ዲናር}} ተሰጣቸው።",
+          "R": "ከቀኑ አሥራ አንድ ሰዓት ሥራ የጀመሩት ሠራተኞች መጀመሪያ መጡ። እያንዳንዳቸውም {{units:የሙሉ ቀን ክፍያ|አንድ ዲናር}} ተቀበሉ።"
         }
       },
       "decisions": [
@@ -2390,6 +2573,11 @@
           "L": "E, vindo os primeiros, pensaram que receberiam mais; e também eles receberam um denário cada um.",
           "B": "Quando chegaram os primeiros, eles esperavam receber mais. Mas também eles receberam, cada um, {{units:o salário de um dia|um denário}}.",
           "R": "Depois vieram os trabalhadores que tinham sido contratados primeiro. Eles pensaram que iam ganhar mais dinheiro. Mas cada um deles também recebeu {{units:o pagamento de um dia|um denário}}."
+        },
+        "am": {
+          "L": "ፊተኞቹም መጥተው አብልጠው እንደሚቀበሉ አሰቡ፤ እነርሱም ደግሞ እያንዳንዳቸው አንድ ዲናር ተቀበሉ።",
+          "B": "ስለዚህ የመጀመሪያዎቹ በመጡ ጊዜ ብዙ እንደሚያገኙ ጠበቁ። ነገር ግን እነርሱም እያንዳንዳቸው {{units:የአንድ ቀን ደመወዝ|አንድ ዲናር}} ተከፈላቸው።",
+          "R": "ከዚያም በመጀመሪያ የተቀጠሩት ሠራተኞች መጡ። ብዙ ገንዘብ እንደሚያገኙ አሰቡ። ነገር ግን እነርሱም እያንዳንዳቸው {{units:የአንድ ቀን ክፍያ|አንድ ዲናር}} አገኙ።"
         }
       },
       "decisions": [
@@ -2509,6 +2697,11 @@
           "L": "E, tendo recebido, murmuravam contra o senhor da casa, \\v 12 dizendo: 'Estes últimos trabalharam uma hora, e o senhor os fez iguais a nós, que suportamos o peso do dia e o calor escaldante.'",
           "B": "Ao receberem o pagamento, começaram a resmungar contra o proprietário. \\v 12 'Esses que chegaram por último trabalharam uma hora só', disseram eles, 'e o senhor os tratou do mesmo modo que a nós, que carregamos o peso do dia inteiro debaixo do calor escaldante.'",
           "R": "Quando receberam o pagamento, começaram a reclamar do dono. \\v 12 Eles disseram: 'Essas pessoas que chegaram por último trabalharam só uma hora. Mas o senhor pagou a elas o mesmo que a nós! Nós trabalhamos duro o dia inteiro debaixo do sol quente.'"
+        },
+        "am": {
+          "L": "ተቀብለውም በቤቱ ጌታ ላይ ያጉረመርሙ ነበር፤ \\v 12 እንዲህም እያሉ፦ “እነዚህ ኋለኞች አንድ ሰዓት ሠሩ፤ የቀኑን ሸክምና ሐሩሩን ከተሸከምነው ከእኛ ጋር እኩል አደረግሃቸው።”",
+          "B": "ደመወዛቸውንም በተቀበሉ ጊዜ በባለቤቱ ላይ ማጉረምረም ጀመሩ። \\v 12 “እነዚህ በመጨረሻ የመጡት አንድ ሰዓት ብቻ ሠሩ” አሉ፤ “እኛ ግን ቀኑን ሙሉ በሚያቃጥል ሙቀት ሸክሙን ተሸክመን ሳለ ከእኛ ጋር እኩል አደረግሃቸው።”",
+          "R": "ክፍያቸውን በተቀበሉ ጊዜ በባለቤቱ ላይ ማማረር ጀመሩ። \\v 12 እንዲህም አሉ፦ “እነዚህ በመጨረሻ የመጡት ሰዎች የሠሩት አንድ ሰዓት ብቻ ነው። አንተ ግን ልክ እንደ እኛ ከፈልካቸው! እኛ በኃይለኛው ፀሐይ ቀኑን ሙሉ በብርቱ ሠርተናል።”"
         }
       },
       "decisions": [
@@ -2692,6 +2885,26 @@
           "reason": "Hired laborers speak up to the landowner who employs them, so they say \"o senhor\", as Brazilians address an employer or superior (docs/portuguese-style.md, section 4); \"você\" would sound rude to a Brazilian ear. The owner answers one of them with \"você\" (20:13-15).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40020012021"
+          ],
+          "choice": "\"ሐሩር\" (the scorching heat)",
+          "alternatives": [
+            "\"ሙቀት\"",
+            "\"ትኩሳት\""
+          ],
+          "reason": "\"ሐሩር\" names the burning heat of the day, as the Greek word does; \"ትኩሳት\" means a fever. Balanced and Readable say it plainly (\"የሚያቃጥል ሙቀት\", \"ኃይለኛው ፀሐይ\").",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2758,6 +2971,11 @@
           "L": "Mas ele, respondendo a um deles, disse: 'Amigo, não lhe faço injustiça; não foi por um denário que você combinou comigo?",
           "B": "Mas ele respondeu a um deles: 'Amigo, eu não fui injusto com você. Não foi {{units:pelo salário de um dia|por um denário}} que você fez o acordo comigo?",
           "R": "O dono respondeu a um deles: 'Amigo, eu não estou enganando você. Você combinou trabalhar {{units:pelo pagamento de um dia|por um denário}}, não foi?"
+        },
+        "am": {
+          "L": "እርሱ ግን ከእነርሱ ለአንዱ መልሶ እንዲህ አለ፦ “ወዳጄ ሆይ፣ አልበድልህም፤ ከእኔ ጋር በአንድ ዲናር አልተስማማህምን?",
+          "B": "እርሱ ግን ከእነርሱ ለአንዱ እንዲህ ሲል መለሰለት፦ “ወዳጄ፣ ምንም አልበደልሁህም። ከእኔ ጋር የተስማማኸው {{units:በአንድ ቀን ደመወዝ|በአንድ ዲናር}} አልነበረምን?",
+          "R": "ባለቤቱም ከእነርሱ ለአንዱ እንዲህ ሲል መለሰለት፦ “ወዳጄ፣ እኔ አላታለልሁህም። {{units:የአንድ ቀን ክፍያ|አንድ ዲናር}} ልትቀበል ተስማምተህ ነበር፤ አይደለም እንዴ?"
         }
       },
       "decisions": [
@@ -2959,6 +3177,27 @@
           "reason": "The preposition contracts with the article of the default (\"pelo\") but not with the alternative (\"por um\"), so it goes inside both options.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40020013007"
+          ],
+          "choice": "\"ወዳጄ\" (Friend)",
+          "alternatives": [
+            "\"ጓደኛዬ\""
+          ],
+          "reason": "\"ወዳጄ\" is a courteous address that can carry a note of reproof, as the Greek word does here; \"ጓደኛዬ\" would sound like real companionship.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3025,6 +3264,11 @@
           "L": "Pegue o que [é] seu e vá. Mas eu quero dar a este último como também a você.",
           "B": "Pegue o que é seu e vá embora. É escolha minha dar a este último o mesmo que dei a você.",
           "R": "Pegue o seu dinheiro e vá para casa. Eu decidi pagar ao trabalhador que chegou por último o mesmo que paguei a você."
+        },
+        "am": {
+          "L": "የአንተ የሆነውን ውሰድና ሂድ። ነገር ግን ለዚህ ለኋለኛው ደግሞ ለአንተ እንደ [ሰጠሁህ] ልሰጠው እወዳለሁ።",
+          "B": "የአንተ የሆነውን ወስደህ መንገድህን ሂድ። ለዚህ በመጨረሻ ለመጣው ሠራተኛ ለአንተ የሰጠሁትን ያህል መስጠት ፈቃዴ ነው።",
+          "R": "ገንዘብህን ይዘህ ወደ ቤትህ ሂድ። በመጨረሻ ለመጣው ሠራተኛ ልክ እንደ አንተ ልከፍለው ወስኛለሁ።"
         }
       },
       "decisions": [
@@ -3139,6 +3383,11 @@
           "L": "Não me é lícito fazer o que quero com o que [é] meu?",
           "B": "Será que não tenho o direito de fazer o que quero com aquilo que me pertence?",
           "R": "Eu tenho o direito de fazer o que quiser com o meu próprio dinheiro."
+        },
+        "am": {
+          "L": "በእኔ በሆነው ነገር የምወደውን ላደርግ አልተፈቀደልኝምን?",
+          "B": "በገዛ ንብረቴ የፈለግሁትን ለማድረግ መብት የለኝምን?",
+          "R": "በገዛ ገንዘቤ የፈለግሁትን የማድረግ መብት አለኝ።"
         }
       },
       "decisions": [
@@ -3278,6 +3527,11 @@
           "L": "Ou o seu olho é mau porque eu sou bom?'",
           "B": "Ou você olha com olho mau para a minha generosidade?'",
           "R": "Ou você está com raiva e com inveja porque eu sou bondoso com os outros?'"
+        },
+        "am": {
+          "L": "ወይስ እኔ መልካም ስለ ሆንኩ ዓይንህ ክፉ ናትን?”",
+          "B": "ወይስ በልግስናዬ በክፉ ዓይን ታያለህን?”",
+          "R": "ወይስ ለሌሎች ደግ በመሆኔ ተናደሃል፣ ቀንተሃልም?”"
         }
       },
       "decisions": [
@@ -3452,6 +3706,26 @@
           "reason": "An evil eye is envy, a grudging spirit, and good here is generous (meaning decisions); Literal keeps the picture, which Korean readers would not take as envy, so Balanced and Readable say it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40020015012",
+            "n40020015014"
+          ],
+          "choice": "\"ተናደሃል፣ ቀንተሃልም\" (R) for the evil eye",
+          "alternatives": [
+            "\"ክፉ ዓይን\" at every level"
+          ],
+          "reason": "In Amharic \"ክፉ ዓይን\" can call up the belief in a harmful gaze; Literal and Balanced keep the image, and Readable names what the idiom means here, envy, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3513,6 +3787,11 @@
           "L": "Assim os últimos serão primeiros, e os primeiros, últimos.\"",
           "B": "É assim que vai ser: os que são últimos serão primeiros, e os que são primeiros serão últimos.\"",
           "R": "Por isso, as pessoas que agora são as últimas vão ser as primeiras depois. E as que agora são as primeiras vão ser as últimas.\""
+        },
+        "am": {
+          "L": "እንዲሁ ኋለኞች ፊተኞች፣ ፊተኞችም ኋለኞች ይሆናሉ።»",
+          "B": "እንዲሁም ኋለኞች የሆኑት ፊተኞች፣ ፊተኞች የሆኑትም ኋለኞች ይሆናሉ።»",
+          "R": "ስለዚህ አሁን ኋለኞች የሆኑ ሰዎች ያን ጊዜ ፊተኞች ይሆናሉ። አሁን ፊተኞች የሆኑትም ያን ጊዜ ኋለኞች ይሆናሉ።»"
         }
       },
       "decisions": [

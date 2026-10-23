@@ -76,6 +76,19 @@
 @font-face { font-family: "Noto Serif Hebrew"; font-style: normal; font-weight: 600; font-display: swap;
   src: url(/fonts/noto-serif-hebrew-hebrew-600-normal.woff2) format("woff2"); unicode-range: U+0307-0308,U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F; }
 
+/* Amharic's Ethiopic script (ፊደል), which none of the faces above has: Noto
+   Serif Ethiopic beside Gentium and Fraunces, Noto Sans Ethiopic beside
+   Hanken Grotesk. From @fontsource/noto-serif-ethiopic@5.2.8 and
+   @fontsource/noto-sans-ethiopic@5.2.7. */
+@font-face { font-family: "Noto Serif Ethiopic"; font-style: normal; font-weight: 400; font-display: swap;
+  src: url(/fonts/noto-serif-ethiopic-ethiopic-400-normal.woff2) format("woff2"); unicode-range: U+030E,U+1200-1399,U+2D80-2DDE,U+AB01-AB2E,U+1E7E0-1E7E6,U+1E7E8-1E7EB,U+1E7ED-1E7EE,U+1E7F0-1E7FE; }
+@font-face { font-family: "Noto Serif Ethiopic"; font-style: normal; font-weight: 700; font-display: swap;
+  src: url(/fonts/noto-serif-ethiopic-ethiopic-700-normal.woff2) format("woff2"); unicode-range: U+030E,U+1200-1399,U+2D80-2DDE,U+AB01-AB2E,U+1E7E0-1E7E6,U+1E7E8-1E7EB,U+1E7ED-1E7EE,U+1E7F0-1E7FE; }
+@font-face { font-family: "Noto Sans Ethiopic"; font-style: normal; font-weight: 400; font-display: swap;
+  src: url(/fonts/noto-sans-ethiopic-ethiopic-400-normal.woff2) format("woff2"); unicode-range: U+030E,U+1200-1399,U+2D80-2DDE,U+AB01-AB2E,U+1E7E0-1E7E6,U+1E7E8-1E7EB,U+1E7ED-1E7EE,U+1E7F0-1E7FE; }
+@font-face { font-family: "Noto Sans Ethiopic"; font-style: normal; font-weight: 700; font-display: swap;
+  src: url(/fonts/noto-sans-ethiopic-ethiopic-700-normal.woff2) format("woff2"); unicode-range: U+030E,U+1200-1399,U+2D80-2DDE,U+AB01-AB2E,U+1E7E0-1E7E6,U+1E7E8-1E7EB,U+1E7ED-1E7EE,U+1E7F0-1E7FE; }
+
 /* Atkinson Hyperlegible, the Readable typeface in the gear menu, made by the
    Braille Institute for low-vision readers. Generated from
    @fontsource/atkinson-hyperlegible@5.2.8. */
@@ -98,11 +111,11 @@
 
 :root {
   --header-h: 64px;
-  --display: "Fraunces", "Iowan Old Style", Georgia, serif;
-  --serif: "Gentium Book Plus", "Noto Serif Hebrew", Georgia, serif;
+  --display: "Fraunces", "Noto Serif Ethiopic", "Iowan Old Style", Georgia, serif;
+  --serif: "Gentium Book Plus", "Noto Serif Hebrew", "Noto Serif Ethiopic", Georgia, serif;
   --greek: "Gentium Book Plus", "Gentium Plus", serif;
   --hebrew: "Noto Serif Hebrew", serif;
-  --sans: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --sans: "Hanken Grotesk", "Noto Sans Ethiopic", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --radius: 12px;
   --radius-sm: 9px;
   --fast: 150ms;

@@ -75,6 +75,11 @@
           "L": "Enquanto {{deity_pronoun:ele|Ele}} lhes dizia essas coisas, eis que um chefe veio e se ajoelhou diante {{deity_pronoun:dele|Dele}}, dizendo: \"Minha filha acaba de morrer; mas vem, põe a {{deity_pronoun:tua|Tua}} mão sobre ela, e ela viverá.\"",
           "B": "Enquanto Jesus ainda falava, um líder chegou e se ajoelhou diante {{deity_pronoun:dele|Dele}}. \"Minha filha acabou de morrer\", disse ele. \"Mas vem e põe a {{deity_pronoun:tua|Tua}} mão sobre ela, e ela viverá.\"",
           "R": "Enquanto Jesus dizia essas coisas, um líder foi até {{deity_pronoun:ele|Ele}}. O homem se curvou diante de Jesus e disse: \"Minha filha acabou de morrer. Mas vem e põe a {{deity_pronoun:tua|Tua}} mão sobre ela, e ela vai viver de novo.\""
+        },
+        "am": {
+          "L": "እርሱ ይህን ሲነግራቸው ሳለ፣ እነሆ፣ አንድ አለቃ መጥቶ እየሰገደለት እንዲህ አለ፦ «ሴት ልጄ አሁን ሞተች፤ ነገር ግን መጥተህ እጅህን በእርሷ ላይ ጫን፤ በሕይወትም ትኖራለች።»",
+          "B": "ኢየሱስ ገና ይህን እየተናገረ ሳለ አንድ አለቃ መጥቶ በፊቱ ተንበረከከ። «ሴት ልጄ አሁን ገና ሞተች» አለው፤ «ነገር ግን መጥተህ እጅህን ጫንባት፤ በሕይወትም ትኖራለች።»",
+          "R": "ኢየሱስ ይህን እየተናገረ ሳለ አንድ አለቃ ወደ እርሱ መጣ። በኢየሱስ ፊት ሰግዶ እንዲህ አለ፦ «ሴት ልጄ አሁን ገና ሞተች። ነገር ግን መጥተህ እጅህን ጫንባት፤ እንደ ገና በሕይወት ትኖራለች።»"
         }
       },
       "decisions": [
@@ -396,6 +401,49 @@
           "reason": "Portuguese has no everyday word that matches the English Literal \"look\" in narration (\"olhe\" speaks to someone). \"Eis que\" is the Portuguese form of the word and still widely read, so Literal keeps it; Balanced and Readable carry its force in the flow of the sentence, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40009018002"
+          ],
+          "choice": "no deity_pronoun spans in Amharic",
+          "alternatives": [
+            "mirroring the English deity_pronoun spans"
+          ],
+          "reason": "The Ethiopic script has no capital letters, so the setting that capitalises pronouns for God and Jesus has nothing to change in Amharic; the pronouns (እርሱ, እሱ, the verb endings) are written once, with no span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40009018019",
+            "n40009018020"
+          ],
+          "choice": "መጥተህ ... ጫን (አንተ) from the ruler",
+          "alternatives": [
+            "መጥተው ... ይጫኑ (እርስዎ), the respectful form"
+          ],
+          "reason": "A man of rank speaking to Jesus might use the honorific እርስዎ in ordinary life, but the Greek has the plain singular, and this translation gives everyone who speaks to Jesus the Bible's familiar አንተ; a reviewer may prefer እርስዎ for petitioners who do not yet know him.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -458,6 +506,11 @@
           "L": "E Jesus se levantou e o seguiu, e [também] os {{deity_pronoun:seus|Seus}} discípulos.",
           "B": "Jesus se levantou e foi com ele, e os {{deity_pronoun:seus|Seus}} discípulos também.",
           "R": "Então Jesus se levantou e foi com o homem. Os {{deity_pronoun:seus|Seus}} seguidores foram também."
+        },
+        "am": {
+          "L": "ኢየሱስም ተነሥቶ ተከተለው፤ ደቀ መዛሙርቱም [ተከተሉት]።",
+          "B": "ኢየሱስም ተነሥቶ ከእርሱ ጋር ሄደ፤ ደቀ መዛሙርቱም እንዲሁ።",
+          "R": "ስለዚህ ኢየሱስ ተነሥቶ ከአለቃው ጋር ሄደ። ደቀ መዛሙርቱም አብረው ሄዱ።"
         }
       },
       "decisions": [
@@ -493,6 +546,25 @@
             "Ceux qui le suivaient"
           ],
           "reason": "The English Readable says \"followers\"; French keeps \"les disciples\" at every level, as the style guide and the French of Mark and Luke do. The word is well known in French. This holds for the whole passage.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40009019009"
+          ],
+          "choice": "ደቀ መዛሙርት at every level, Readable included",
+          "alternatives": [
+            "ተከታዮች (followers), as the English Readable says"
+          ],
+          "reason": "ደቀ መዛሙርት is the ordinary Amharic word for a teacher's disciples, known to every reader, so Readable keeps it; ተከታዮች would make them sound like supporters of a cause.",
           "uncertain": false,
           "footnote": false
         }
@@ -561,6 +633,11 @@
           "L": "E eis que uma mulher que sofria de hemorragia havia doze anos chegou por trás [{{deity_pronoun:dele|Dele}}] e tocou a franja do {{deity_pronoun:seu|Seu}} manto,",
           "B": "Então uma mulher se aproximou por trás {{deity_pronoun:dele|Dele}}. Havia doze anos que ela sofria de hemorragia. Ela tocou a franja do {{deity_pronoun:seu|Seu}} manto.",
           "R": "Então uma mulher chegou por trás de Jesus. Fazia doze anos que ela tinha um sangramento. Ela tocou a ponta da roupa {{deity_pronoun:dele|Dele}}."
+        },
+        "am": {
+          "L": "እነሆም፣ አሥራ ሁለት ዓመት ደም ሲፈሳት የኖረች አንዲት ሴት ከበስተ ኋላው መጥታ የልብሱን ዘርፍ ነካች፤",
+          "B": "ከዚያም አንዲት ሴት ከኋላው መጣች። ይህች ሴት ለአሥራ ሁለት ዓመት ደም ሲፈሳት ኖራለች። እርሷም የልብሱን ዘርፍ ነካች።",
+          "R": "ከዚያም አንዲት ሴት ከኢየሱስ ኋላ መጣች። ለአሥራ ሁለት ዓመት ደም ይፈሳት ነበር። እሷም የልብሱን ጫፍ ነካች።"
         }
       },
       "decisions": [
@@ -763,6 +840,27 @@
           "reason": "\"Franja\" is the word Portuguese uses for the tassels of Numbers 15:38-39 that the meaning note (m2) refers to; \"borla\" is a decorative tassel with no link to the law, and \"orla\" is only the edge. Readable says \"a ponta da roupa\", as the English Readable says \"the edge of his clothes\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40009020002"
+          ],
+          "choice": "እነሆ (L); ከዚያም or not rendered (B, R)",
+          "alternatives": [
+            "ተመልከቱ (look!)"
+          ],
+          "reason": "እነሆ is the Amharic word that points to what comes next in a story, and Literal keeps it wherever the Greek has its 'look'; ተመልከቱ would sound like a command to the hearers.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -826,6 +924,11 @@
           "L": "pois ela dizia consigo mesma: \"Se eu apenas tocar o manto {{deity_pronoun:dele|Dele}}, serei salva.\"",
           "B": "Ela pensava: \"Se eu conseguir tocar ao menos o manto {{deity_pronoun:dele|Dele}}, ficarei curada.\"",
           "R": "Ela dizia a si mesma: \"Se eu conseguir só tocar a roupa {{deity_pronoun:dele|Dele}}, vou ser curada.\""
+        },
+        "am": {
+          "L": "በልቧ፦ «ልብሱን ብቻ እንኳ ብነካ እድናለሁ» ትል ነበርና።",
+          "B": "«ልብሱን ብቻ እንኳ ብነካ እድናለሁ» ብላ አስባ ነበር።",
+          "R": "እሷም በልቧ፦ «ልብሱን ብቻ ብነካ እድናለሁ» አለች።"
         }
       },
       "decisions": [
@@ -972,6 +1075,27 @@
           "reason": "She speaks of Jesus, not to him; \"seu\" could be read as \"your\", so Portuguese says \"dele\", which also carries the deity_pronoun setting.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40009021011"
+          ],
+          "choice": "እድናለሁ (I will be saved, made well) at every level",
+          "alternatives": [
+            "እፈወሳለሁ (I will be healed), as the English Balanced and Readable say"
+          ],
+          "reason": "Amharic ዳነ means both to recover from an illness and to be saved, just as the Greek word does, so one word keeps both senses at every level where English has to choose between 'saved', 'made well' and 'healed'.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1039,6 +1163,11 @@
           "L": "Mas Jesus, voltando-se e vendo-a, disse: \"Tenha ânimo, filha; a sua fé a salvou.\"",
           "B": "Jesus se virou e, quando a viu, disse: \"Coragem, minha filha! A sua fé a curou.\"",
           "R": "Jesus se virou e olhou para ela. Ele disse: \"Ânimo, minha filha! Você foi curada por causa da sua fé.\""
+        },
+        "am": {
+          "L": "ኢየሱስ ግን ዘወር ብሎ አያትና እንዲህ አለ፦ «አይዞሽ፣ ልጅ ሆይ፤ እምነትሽ አድኖሻል።»",
+          "B": "ኢየሱስም ዘወር ብሎ ባያት ጊዜ እንዲህ አላት፦ «ልጄ ሆይ፣ አይዞሽ! እምነትሽ አድኖሻል።»",
+          "R": "ኢየሱስ ዘወር ብሎ አያት። እንዲህም አላት፦ «ልጄ ሆይ፣ አይዞሽ! ስላመንሽ ድነሻል።»"
         }
       },
       "decisions": [
@@ -1219,6 +1348,11 @@
           "L": "E a mulher foi salva desde aquela hora.",
           "B": "E a partir daquele momento a mulher ficou curada.",
           "R": "Daquele momento em diante, a mulher estava curada."
+        },
+        "am": {
+          "L": "ሴቲቱም ከዚያች ሰዓት ጀምሮ ዳነች።",
+          "B": "ከዚያች ቅጽበት ጀምሮ ሴቲቱ ዳነች።",
+          "R": "ሴቲቱ ከዚያን ጊዜ ጀምሮ ዳነች።"
         }
       },
       "decisions": [
@@ -1342,6 +1476,11 @@
           "L": "E, chegando Jesus à casa do chefe e vendo os tocadores de flauta e a multidão em alvoroço, \\v 24 {{deity_pronoun:ele|Ele}} dizia: \"Retirem-se, pois a menina não morreu, mas dorme.\" E riam {{deity_pronoun:dele|Dele}}.",
           "B": "Quando Jesus chegou à casa do líder, viu os tocadores de flauta e a multidão agitada. \\v 24 \"Saiam daqui\", disse {{deity_pronoun:ele|Ele}}. \"A menina não está morta; ela está dormindo.\" Mas eles riram {{deity_pronoun:dele|Dele}}.",
           "R": "Jesus chegou à casa do líder. Ele viu pessoas tocando flauta para o funeral e uma multidão fazendo muito barulho. \\v 24 Ele disse: \"Saiam daqui. A menina não morreu. Ela só está dormindo.\" Mas as pessoas riram {{deity_pronoun:dele|Dele}}."
+        },
+        "am": {
+          "L": "ኢየሱስም ወደ አለቃው ቤት መጥቶ ዋሽንት ነፊዎችንና የሚንጫጫውን ሕዝብ አይቶ፣ \\v 24 እንዲህ ይል ነበር፦ «ገለል በሉ፤ ልጅቱ አልሞተችምና፤ ተኝታለች እንጂ።» በእርሱም ይሥቁበት ነበር።",
+          "B": "ኢየሱስ ወደ አለቃው ቤት በመጣ ጊዜ ዋሽንት ነፊዎችንና የሚንጫጫውን ሕዝብ አየ። \\v 24 «ገለል በሉ» አለ፤ «ልጅቱ አልሞተችም፤ ተኝታለች።» እነርሱ ግን ሣቁበት።",
+          "R": "ኢየሱስ ወደ አለቃው ቤት መጣ። እዚያም ለለቅሶ ዋሽንት የሚነፉ ሰዎችንና ብዙ የሚጮኽ ሕዝብ አየ። \\v 24 እንዲህም አለ፦ «ከዚህ ሂዱ። ልጅቱ አልሞተችም፤ የተኛች ብቻ ናት።» ሰዎቹ ግን ሣቁበት።"
         }
       },
       "decisions": [
@@ -1541,6 +1680,11 @@
           "L": "Mas, quando a multidão foi posta para fora, {{deity_pronoun:ele|Ele}} entrou e a tomou pela mão, e a menina se levantou.",
           "B": "Depois que a multidão foi mandada para fora, {{deity_pronoun:ele|Ele}} entrou, pegou a menina pela mão, e ela se levantou.",
           "R": "Depois que as pessoas foram mandadas para fora, Jesus entrou e pegou a mão da menina, e ela se levantou."
+        },
+        "am": {
+          "L": "ሕዝቡ ግን ወደ ውጭ ከተላከ በኋላ ገብቶ እጇን ያዛት፤ ልጅቱም ተነሣች።",
+          "B": "ሕዝቡ ወደ ውጭ ከተደረገ በኋላ ገባና የልጅቱን እጅ ያዘ፤ እርሷም ተነሣች።",
+          "R": "ሰዎቹ ወደ ውጭ እንዲወጡ ከተደረገ በኋላ ኢየሱስ ገብቶ የልጅቱን እጅ ያዘ። እሷም ተነሣች።"
         }
       },
       "decisions": [
@@ -1642,6 +1786,27 @@
           "reason": "The Greek verb is the one used of rising from the dead (meaning decision); \"일어나다\" is also the Korean word for rising from death (as in the Korean Mark 5:42), so it keeps both senses without a passive Korean would find stiff.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40009025012"
+          ],
+          "choice": "ተነሣች (she rose)",
+          "alternatives": [
+            "ቆመች (she stood up)"
+          ],
+          "reason": "ተነሣ is the verb for getting up and also for rising from the dead (the noun ትንሣኤ is resurrection), so it keeps the hint the meaning decision describes; ቆመች would say only that she stood.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1704,6 +1869,11 @@
           "L": "E esta notícia saiu por toda aquela terra.",
           "B": "A notícia disso se espalhou por toda a região.",
           "R": "A notícia sobre isso se espalhou por toda aquela região."
+        },
+        "am": {
+          "L": "ይህም ወሬ በዚያ አገር ሁሉ ወጣ።",
+          "B": "የዚህም ወሬ በአካባቢው ሁሉ ተሰራጨ።",
+          "R": "ስለዚህ ነገር የሚነገረው ወሬ በዚያ አካባቢ ሁሉ ተዳረሰ።"
         }
       },
       "decisions": [
@@ -1799,6 +1969,11 @@
           "L": "E, passando Jesus dali, dois cegos {{deity_pronoun:o|O}} seguiram, clamando e dizendo: \"Tem misericórdia de nós, Filho de Davi!\"",
           "B": "Quando Jesus saiu dali, dois cegos {{deity_pronoun:o|O}} seguiram. Eles gritavam sem parar: \"Filho de Davi, tem misericórdia de nós!\"",
           "R": "Quando Jesus estava saindo dali, dois cegos foram atrás {{deity_pronoun:dele|Dele}}. Eles gritavam: \"Filho de Davi, por favor, tem pena de nós!\""
+        },
+        "am": {
+          "L": "ኢየሱስም ከዚያ ሲያልፍ ሁለት ዓይነ ስውሮች እየጮኹ ተከተሉት፤ እንዲህም ይሉ ነበር፦ «ማረን፣ የዳዊት ልጅ ሆይ!»",
+          "B": "ኢየሱስ ከዚያ ሲሄድ ሁለት ዓይነ ስውሮች ተከተሉት፤ እነርሱም፦ «የዳዊት ልጅ ሆይ፣ ማረን!» እያሉ ይጮኹ ነበር።",
+          "R": "ኢየሱስ ከዚያ ሲሄድ ሁለት ዓይነ ስውሮች ተከተሉት። እነርሱም፦ «የዳዊት ልጅ ሆይ፣ እባክህ ራራልን!» እያሉ ጮኹ።"
         }
       },
       "decisions": [
@@ -1960,6 +2135,27 @@
           "reason": "People asking Jesus for help speak of themselves humbly, as the Korean Mark 9:22 does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40009027013"
+          ],
+          "choice": "ማረን (L, B); እባክህ ራራልን (R)",
+          "alternatives": [
+            "ይቅር በለን (forgive us)"
+          ],
+          "reason": "The blind men ask for pity and help, not for forgiveness. ማረን is the familiar cry for mercy; Readable says ራራልን, 'have pity on us', in plainer words. ይቅር በለን would turn the plea into a request for pardon.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2031,6 +2227,11 @@
           "L": "E, tendo {{deity_pronoun:ele|Ele}} entrado na casa, os cegos vieram até {{deity_pronoun:ele|Ele}}, e Jesus lhes diz: \"Vocês creem que eu posso fazer isso?\"",
           "B": "Quando {{deity_pronoun:ele|Ele}} entrou em casa, os cegos se aproximaram {{deity_pronoun:dele|Dele}}, e Jesus lhes perguntou: \"Vocês creem que eu sou capaz de fazer isso?\"",
           "R": "Quando Jesus entrou na casa, os cegos foram até {{deity_pronoun:ele|Ele}}. Jesus perguntou a eles: \"Vocês acreditam que eu posso fazer vocês enxergarem?\""
+        },
+        "am": {
+          "L": "ወደ ቤትም በገባ ጊዜ ዓይነ ስውሮቹ ወደ እርሱ መጡ፤ ኢየሱስም እንዲህ ይላቸዋል፦ «ይህን ማድረግ እንደምችል ታምናላችሁን?»",
+          "B": "ወደ ቤት በገባ ጊዜ ዓይነ ስውሮቹ ወደ እርሱ ቀረቡ፤ ኢየሱስም፦ «ይህን ማድረግ እንደምችል ታምናላችሁ?» ብሎ ጠየቃቸው።",
+          "R": "ኢየሱስ ወደ ቤቱ ሲገባ ዓይነ ስውሮቹ ወደ እርሱ መጡ። ኢየሱስም፦ «እንድታዩ ላደርጋችሁ እንደምችል ታምናላችሁ?» ብሎ ጠየቃቸው።"
         }
       },
       "decisions": [
@@ -2246,6 +2447,11 @@
           "L": "Eles {{deity_pronoun:lhe|Lhe}} dizem: \"Sim, Senhor.\"",
           "B": "\"Sim, Senhor\", disseram eles.",
           "R": "Eles responderam: \"Sim, Senhor.\""
+        },
+        "am": {
+          "L": "እነርሱም፦ «አዎን፣ ጌታ ሆይ» ይሉታል።",
+          "B": "«አዎን፣ ጌታ ሆይ» አሉት።",
+          "R": "እነርሱም፦ «አዎ፣ ጌታዬ» ብለው መለሱለት።"
         }
       },
       "decisions": [
@@ -2412,6 +2618,11 @@
           "L": "Então {{deity_pronoun:ele|Ele}} tocou os olhos deles, dizendo: \"Segundo a fé de vocês, seja feito a vocês.\"",
           "B": "Então {{deity_pronoun:ele|Ele}} tocou os olhos deles e disse: \"Que lhes aconteça conforme a fé que vocês têm.\"",
           "R": "Então {{deity_pronoun:ele|Ele}} tocou os olhos deles e disse: \"Vocês têm fé, então isso vai acontecer com vocês.\""
+        },
+        "am": {
+          "L": "በዚያን ጊዜ ዓይኖቻቸውን እየዳሰሰ እንዲህ አለ፦ «እንደ እምነታችሁ ይደረግላችሁ።»",
+          "B": "ከዚያም ዓይኖቻቸውን ዳሰሰና እንዲህ አለ፦ «ባመናችሁት መሠረት ይሁንላችሁ።»",
+          "R": "ከዚያም ዓይኖቻቸውን ዳስሶ እንዲህ አለ፦ «እምነት አላችሁ፤ ስለዚህ ይሆንላችኋል።»"
         }
       },
       "decisions": [
@@ -2492,6 +2703,11 @@
           "L": "E os olhos deles foram abertos.",
           "B": "E a visão deles foi restaurada.",
           "R": "E eles começaram a enxergar!"
+        },
+        "am": {
+          "L": "ዓይኖቻቸውም ተከፈቱ።",
+          "B": "ዓይናቸውም በራ።",
+          "R": "ማየትም ቻሉ!"
         }
       },
       "decisions": [
@@ -2595,6 +2811,11 @@
           "L": "E Jesus os advertiu severamente, dizendo: \"Vejam que ninguém [o] saiba.\"",
           "B": "Jesus os advertiu com severidade: \"Tomem cuidado para que ninguém fique sabendo disso.\"",
           "R": "Jesus deu a eles uma ordem firme: \"Não deixem ninguém saber disso.\""
+        },
+        "am": {
+          "L": "ኢየሱስም አጥብቆ አስጠነቀቃቸው፤ እንዲህም አለ፦ «ማንም [ይህን] እንዳያውቅ ተጠንቀቁ።»",
+          "B": "ኢየሱስም፦ «ይህን ማንም እንዳይሰማ ተጠንቀቁ» ብሎ በብርቱ አስጠነቀቃቸው።",
+          "R": "ኢየሱስም፦ «ማንም ይህን እንዲያውቅ አታድርጉ» ብሎ በጥብቅ አስጠነቀቃቸው።"
         }
       },
       "decisions": [
@@ -2693,6 +2914,11 @@
           "L": "Mas eles saíram e espalharam a notícia a respeito {{deity_pronoun:dele|Dele}} por toda aquela terra.",
           "B": "Mas eles saíram e espalharam notícias sobre {{deity_pronoun:ele|Ele}} por toda aquela região.",
           "R": "Mas os dois homens saíram e falaram de Jesus a todo mundo naquela região."
+        },
+        "am": {
+          "L": "እነርሱ ግን ወጥተው በዚያ አገር ሁሉ ስለ እርሱ አወሩ።",
+          "B": "እነርሱ ግን ወጥተው በዚያ አካባቢ ሁሉ ስለ እርሱ አወሩ።",
+          "R": "ሁለቱ ሰዎች ግን ወጥተው በዚያ አካባቢ ላለው ሰው ሁሉ ስለ ኢየሱስ ነገሩ።"
         }
       },
       "decisions": [
@@ -2775,6 +3001,11 @@
           "L": "E, saindo eles, eis que {{deity_pronoun:lhe|Lhe}} trouxeram um homem mudo, endemoninhado.",
           "B": "Quando eles estavam saindo, algumas pessoas trouxeram até {{deity_pronoun:ele|Ele}} um homem que não podia falar porque estava dominado por um demônio.",
           "R": "Quando os dois homens estavam saindo, algumas pessoas trouxeram outro homem a Jesus. Esse homem não conseguia falar porque tinha um demônio dentro dele."
+        },
+        "am": {
+          "L": "እነርሱም ሲወጡ፣ እነሆ፣ ጋኔን ያደረበት ዲዳ ሰው ወደ እርሱ አመጡ።",
+          "B": "እነርሱ ሲወጡ ሰዎች ጋኔን ስላደረበት መናገር የማይችል አንድ ሰው ወደ እርሱ አመጡ።",
+          "R": "ሁለቱ ሰዎች ሲሄዱ ሰዎች ሌላ ሰው ወደ ኢየሱስ አመጡ። ይህ ሰው ጋኔን ስላደረበት መናገር አይችልም ነበር።"
         }
       },
       "decisions": [
@@ -2896,6 +3127,27 @@
           "reason": "\"귀신\" for demons as in the Korean Mark and Matthew 4:24. \"벙어리\" is now felt to be demeaning, so the man is described, not labelled. The meaning decision says the demon caused the silence; Balanced and Readable say so, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40009032009"
+          ],
+          "choice": "ጋኔን ያደረበት (on whom a demon has settled)",
+          "alternatives": [
+            "ጋኔን የያዘው (seized by a demon)"
+          ],
+          "reason": "ጋኔን አደረበት, 'a demon dwells on him', is the usual Amharic way of saying someone is possessed, and it is used for every 'demon-possessed' in Matthew.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2955,6 +3207,11 @@
           "L": "E, expulso o demônio, o mudo falou.",
           "B": "Quando o demônio foi expulso, o homem que era mudo começou a falar.",
           "R": "Jesus fez o demônio sair, e o homem começou a falar."
+        },
+        "am": {
+          "L": "ጋኔኑም ከተባረረ በኋላ ዲዳው ተናገረ።",
+          "B": "ጋኔኑ በተባረረ ጊዜ ዲዳ የነበረው ሰው መናገር ጀመረ።",
+          "R": "ኢየሱስ ጋኔኑን አስወጣው፤ ሰውየውም መናገር ጀመረ።"
         }
       },
       "decisions": [
@@ -3076,6 +3333,11 @@
           "L": "E as multidões se maravilharam, dizendo: \"Nunca apareceu [nada] assim em Israel.\"",
           "B": "As multidões ficaram admiradas. \"Israel nunca viu nada igual!\", diziam.",
           "R": "As pessoas ficaram espantadas. Elas diziam: \"Nunca vimos nada parecido em Israel!\""
+        },
+        "am": {
+          "L": "ሕዝቡም ተደነቁ፤ እንዲህም አሉ፦ «እንዲህ ያለ ነገር በእስራኤል ከቶ አልታየም።»",
+          "B": "ሕዝቡ በጣም ተደነቁ፤ «እንዲህ ያለ ነገር በእስራኤል ፈጽሞ ታይቶ አያውቅም!» አሉ።",
+          "R": "ሰዎቹም ተገረሙ። እንዲህም አሉ፦ «እንዲህ ያለ ነገር በእስራኤል ውስጥ አይተን አናውቅም!»"
         }
       },
       "decisions": [
@@ -3163,6 +3425,11 @@
           "L": "Mas os fariseus diziam: \"Pelo chefe dos demônios {{deity_pronoun:ele|Ele}} expulsa os demônios.\"",
           "B": "Mas os fariseus continuavam dizendo: \"É pelo príncipe dos demônios que {{deity_pronoun:ele|Ele}} expulsa demônios.\"",
           "R": "Mas os fariseus diziam: \"É o chefe dos demônios que dá a {{deity_pronoun:ele|Ele}} poder para fazer os demônios saírem.\""
+        },
+        "am": {
+          "L": "ፈሪሳውያን ግን፦ «በአጋንንት አለቃ አጋንንትን ያወጣል» ይሉ ነበር።",
+          "B": "ፈሪሳውያን ግን፦ «አጋንንትን የሚያወጣው በአጋንንት አለቃ ኃይል ነው» ይሉ ነበር።",
+          "R": "ፈሪሳውያን ግን፦ «አጋንንትን የሚያስወጣበትን ኃይል የሚሰጠው የአጋንንት አለቃ ነው» አሉ።"
         }
       },
       "decisions": [
@@ -3357,6 +3624,11 @@
           "L": "E Jesus percorria todas as cidades e os povoados, ensinando nas sinagogas deles e proclamando o evangelho do Reino e curando toda doença e toda enfermidade.",
           "B": "Jesus andava por todas as cidades e povoados, ensinando nas sinagogas deles, anunciando o evangelho do Reino e curando toda doença e toda enfermidade.",
           "R": "Jesus viajou por todas as cidades e povoados. Ele ensinava nas sinagogas deles e contava às pessoas as boas-novas do Reino de Deus. E {{deity_pronoun:ele|Ele}} curava as pessoas de todo tipo de doença e enfermidade."
+        },
+        "am": {
+          "L": "ኢየሱስም ከተሞችን ሁሉና መንደሮችን ይዞር ነበር፤ በምኩራቦቻቸው ያስተምር፣ የመንግሥቱን ወንጌል ያውጅ፣ ማንኛውንም በሽታና ማንኛውንም ሕመም ይፈውስ ነበር።",
+          "B": "ኢየሱስ በምኩራቦቻቸው እያስተማረ፣ የመንግሥቱን ወንጌል እያወጀ፣ ማንኛውንም በሽታና ሕመም እየፈወሰ በከተሞቹና በመንደሮቹ ሁሉ ተዘዋወረ።",
+          "R": "ኢየሱስ በከተሞቹና በመንደሮቹ ሁሉ ተዘዋወረ። በምኩራቦቻቸው አስተማረ፤ ስለ እግዚአብሔር መንግሥት የሚናገረውን የምሥራች ለሰዎች ነገረ። ማንኛውም ዓይነት በሽታና ሕመም ያለባቸውንም ሰዎች ፈወሰ።"
         }
       },
       "decisions": [
@@ -3571,6 +3843,27 @@
           "reason": "For the whole book (docs/portuguese-style.md, section 6): \"evangelho\" where the English says \"gospel\", \"boas-novas\" where it says \"good news\". The English repeats 4:23's wording here on purpose; the Portuguese of 4:23 should be checked against this verse so the frame shows in Portuguese too.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40009035019"
+          ],
+          "choice": "ወንጌል (L, B); የምሥራች (R)",
+          "alternatives": [
+            "ወንጌል at every level"
+          ],
+          "reason": "ወንጌል is the church word for the gospel and also the name of the Gospel books, so Readable says what it is, የምሥራች, 'good news', as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3640,6 +3933,11 @@
           "L": "E, vendo as multidões, {{deity_pronoun:ele|Ele}} teve compaixão delas, porque estavam aflitas e abatidas, como ovelhas que não têm pastor.",
           "B": "Ao ver as multidões, {{deity_pronoun:ele|Ele}} sentiu profunda compaixão delas, porque estavam cansadas e abandonadas, como ovelhas sem pastor.",
           "R": "Quando Jesus viu as multidões, teve pena delas. Elas estavam cansadas e não tinham ninguém para ajudá-las. Eram como ovelhas sem um pastor para cuidar delas."
+        },
+        "am": {
+          "L": "ሕዝቡንም አይቶ ስለ እነርሱ አንጀቱ ተላወሰ፤ ምክንያቱም እረኛ እንደሌላቸው በጎች የተጨነቁና የተጣሉ ነበሩ።",
+          "B": "ሕዝቡን ባየ ጊዜ በጥልቅ ራራላቸው፤ እረኛ እንደሌላቸው በጎች ዝለውና ረዳት አጥተው ነበርና።",
+          "R": "ኢየሱስ ሕዝቡን ሲያይ አዘነላቸው። ደክመው ነበር፤ የሚረዳቸውም ሰው አልነበረም። የሚጠብቃቸው እረኛ እንደሌላቸው በጎች ነበሩ።"
         }
       },
       "decisions": [
@@ -3765,6 +4063,27 @@
           "reason": "Worded as the Korean Mark 6:34, where the same verb and the same picture from Numbers 27:17 appear (meaning decisions). \"불쌍히 여기다\" is kept for the cry \"have mercy\" (9:27).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40009036005"
+          ],
+          "choice": "አንጀቱ ተላወሰ (L); በጥልቅ ራራላቸው (B); አዘነላቸው (R)",
+          "alternatives": [
+            "አዘነላቸው at every level"
+          ],
+          "reason": "The Greek verb pictures being moved in one's inner parts. Amharic has the same picture in አንጀቱ ተላወሰ, 'his insides were stirred', so Literal keeps it; Balanced and Readable say the same in plain words.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3830,6 +4149,11 @@
           "L": "Então {{deity_pronoun:ele|Ele}} diz aos {{deity_pronoun:seus|Seus}} discípulos: \"A colheita [é] grande, mas os trabalhadores [são] poucos;",
           "B": "Então {{deity_pronoun:ele|Ele}} disse aos {{deity_pronoun:seus|Seus}} discípulos: \"A colheita é grande, mas os trabalhadores são poucos.",
           "R": "Então {{deity_pronoun:ele|Ele}} disse aos {{deity_pronoun:seus|Seus}} seguidores: \"Há uma grande colheita de pessoas para recolher, mas os trabalhadores são poucos."
+        },
+        "am": {
+          "L": "በዚያን ጊዜ ደቀ መዛሙርቱን እንዲህ ይላቸዋል፦ «መከሩ ብዙ [ነው]፤ ሠራተኞቹ ግን ጥቂቶች [ናቸው]፤",
+          "B": "ከዚያም ደቀ መዛሙርቱን እንዲህ አላቸው፦ «አዝመራው ብዙ ነው፤ ሠራተኞቹ ግን ጥቂት ናቸው።",
+          "R": "ከዚያም ደቀ መዛሙርቱን እንዲህ አላቸው፦ «የሚሰበሰብ ብዙ የሰዎች አዝመራ አለ፤ ሠራተኞቹ ግን ጥቂት ብቻ ናቸው።"
         }
       },
       "decisions": [
@@ -3995,6 +4319,27 @@
           "reason": "\"Seara\" is the traditional Bible word but names the growing field and sounds bookish today; \"colheita\" is the harvest itself, the word the meaning note (m1) is about, and every Brazilian reader knows it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40009037008"
+          ],
+          "choice": "መከር (L); አዝመራ (B, R)",
+          "alternatives": [
+            "መከር at every level"
+          ],
+          "reason": "መከር, the harvest, is the word Literal keeps; አዝመራ, the standing crop ready to be gathered, is the more common word today and is used at Balanced and Readable, here and in the next sentence.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4060,6 +4405,11 @@
           "L": "portanto, peçam ao Senhor da colheita que envie trabalhadores para a {{deity_pronoun:sua|Sua}} colheita.\"",
           "B": "Por isso, orem ao Senhor da colheita e {{deity_pronoun:lhe|Lhe}} peçam que envie trabalhadores para a {{deity_pronoun:sua|Sua}} colheita.\"",
           "R": "Por isso orem a Deus, o dono da colheita. Peçam a {{deity_pronoun:ele|Ele}} que mande mais trabalhadores para recolher a colheita {{deity_pronoun:dele|Dele}}.\""
+        },
+        "am": {
+          "L": "ስለዚህ የመከሩ ጌታ ሠራተኞችን ወደ መከሩ እንዲልክ ለምኑት።»",
+          "B": "ስለዚህ ወደ አዝመራው ጌታ ጸልዩ፤ ሠራተኞችን ወደ አዝመራው እንዲልክ ለምኑት።»",
+          "R": "ስለዚህ የአዝመራው ባለቤት ወደ ሆነው ወደ እግዚአብሔር ጸልዩ። አዝመራውን የሚሰበስቡ ተጨማሪ ሠራተኞች እንዲልክ ለምኑት።»"
         }
       },
       "decisions": [
