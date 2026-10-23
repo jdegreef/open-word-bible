@@ -153,7 +153,8 @@ class LanguagesTest(unittest.TestCase):
                               r'|<script type="application/json" class="votd-data">.*?</script>'
                               r'|<p class="votd-text"[^>]*>.*?</p>', "", page, flags=re.S)
                 for key in keys:
-                    self.assertNotIn(en[key], page, (lang, rel, key))
+                    # A whole word: English "Home" is inside Portuguese "Homem".
+                    self.assertNotRegex(page, r"(?<!\w)" + re.escape(en[key]) + r"(?!\w)", (lang, rel, key))
                     self.assertIn(cat[key], page, (lang, rel, key))
             home = self.read(f"{lang}/index.html")
             self.assertIn(cat["home.heading"], home)
