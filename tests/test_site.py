@@ -356,10 +356,13 @@ class SiteTest(unittest.TestCase):
         self.assertEqual(trail("php/2"), [("Open Word Bible", site + "/"), ("Read", site + "/read/"),
                                           ("Philippians", site + "/php/"), ("Philippians 2", site + "/php/2/")])
         # A book without a page goes straight from Read to the chapter.
-        self.assertEqual(trail("mrk/2"), [("Open Word Bible", site + "/"), ("Read", site + "/read/"),
-                                          ("Mark 2", site + "/mrk/2/")])
-        mark = (self.out / "mrk" / "2" / "index.html").read_text(encoding="utf-8")
-        self.assertIn('class="chap-book" href="/read/#mrk"', mark)
+        book, chaps = next((b, c) for b, c in build_site.books("en") if not build_site.load_intro(b))
+        code, first = book.lower(), chaps[0].chapter
+        title = build_site.chapter_name(chaps[0].records, book, first, "en")
+        self.assertEqual(trail(f"{code}/{first}"), [("Open Word Bible", site + "/"), ("Read", site + "/read/"),
+                                                    (title, f"{site}/{code}/{first}/")])
+        page = (self.out / code / str(first) / "index.html").read_text(encoding="utf-8")
+        self.assertIn(f'class="chap-book" href="/read/#{code}"', page)
         self.assertEqual(trail("fr/php/2")[-1][1], site + "/fr/php/2/")
         self.assertEqual(len(trail("fr/php/2")), 3)
 
