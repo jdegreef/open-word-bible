@@ -107,7 +107,7 @@ class ReviewTest(AdminTestCase):
 class ChangesTest(AdminTestCase):
     @classmethod
     def setUpTestData(cls):
-        load_extract_words(("grc",))
+        load_extract_words(("grc",), books=("PHM",))
 
     def test_import_records_changes_but_only_counts_first_drafts(self):
         path = CONTENT / "PHM" / "PHM.1.json"

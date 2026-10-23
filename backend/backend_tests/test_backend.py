@@ -10,6 +10,7 @@ from unittest import mock
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.core.management import CommandError, call_command
+from django.db import connection
 from django.test import TestCase
 
 from texts.models import Edition, Verse, Word
@@ -18,10 +19,13 @@ from translation.models import ContentFile, Decision, Rendering, ReviewEvent, Se
 CONTENT = settings.REPO_ROOT / "content"
 
 
-def load_extract_words(languages=("grc", "hbo")):
+def load_extract_words(languages=("grc", "hbo"), books=None):
     """Create the SBLGNT and WLC editions and the words for every chapter in
-    content/ (or only the editions for languages). Returns the SBLGNT
-    edition."""
+    content/ (or only the editions for languages, and only the words of
+    books). Returns the SBLGNT edition.
+
+    The words go in with COPY: there are over 600,000 of them now, and
+    creating them as objects took most of a minute for each test class."""
     editions = {
         "grc": Edition.objects.create(code="sblgnt", name="SBL Greek New Testament", language="grc",
                                       kind="original", licence="CC BY 4.0", source="sblgnt",
@@ -30,19 +34,25 @@ def load_extract_words(languages=("grc", "hbo")):
                                       kind="original", licence="Public domain", source="macula-hebrew",
                                       source_commit="test"),
     }
-    seq, words = 0, []
-    for folder, edition in editions.items():
-        if folder not in languages:
-            continue
-        for path in sorted((settings.REPO_ROOT / "data" / folder).glob("*.json")):
-            for vid, verse_words in json.loads(path.read_text(encoding="utf-8"))["verses"].items():
-                book, chapter, verse = vid.split(".")
-                for w in verse_words:
-                    # Hebrew extracts carry each morpheme's language (H or A).
-                    words.append(Word(edition=edition, book=book, chapter=int(chapter),
-                                      verse=int(verse), seq=seq, **{"lang": folder, **w}))
-                    seq += 1
-    Word.objects.bulk_create(words, batch_size=5000)
+    fields = Word._meta.concrete_fields
+    defaults = {f.attname: f.get_default() for f in fields}
+    seq = 0
+    with connection.cursor() as cursor, cursor.cursor.copy(
+            f"COPY {Word._meta.db_table} ({', '.join(f.column for f in fields)}) FROM STDIN") as copy:
+        for folder, edition in editions.items():
+            if folder not in languages:
+                continue
+            for path in sorted((settings.REPO_ROOT / "data" / folder).glob("*.json")):
+                if books is not None and path.name.split(".")[0] not in books:
+                    continue
+                for vid, verse_words in json.loads(path.read_text(encoding="utf-8"))["verses"].items():
+                    book, chapter, verse = vid.split(".")
+                    for w in verse_words:
+                        # Hebrew extracts carry each morpheme's language (H or A).
+                        word = {**defaults, "lang": folder, **w, "edition_id": edition.pk, "book": book,
+                                "chapter": int(chapter), "verse": int(verse), "seq": seq}
+                        copy.write_row([word[f.attname] for f in fields])
+                        seq += 1
     return editions["grc"]
 
 
@@ -164,7 +174,7 @@ class FreshDatabaseTest(TestCase):
             import_content()
 
     def test_deploy_import_runs_once_texts_are_loaded(self):
-        load_extract_words()
+        load_extract_words(books=("PHP",))
         import_content("--if-texts-loaded", *content_files("PHP/*.json"))
         self.assertTrue(Sentence.objects.exists())
 
@@ -172,7 +182,7 @@ class FreshDatabaseTest(TestCase):
         # Only the Greek is in: the deploy imports the New Testament and skips
         # Genesis instead of failing (which blocked every deploy once Genesis
         # was added before the Hebrew was imported).
-        load_extract_words(languages=("grc",))
+        load_extract_words(languages=("grc",), books=("JHN", "ROM"))
         out = io.StringIO()
         genesis = content_files("GEN/GEN.1.*.json")
         import_content("--if-texts-loaded", *genesis, *content_files("JHN/JHN.1.*.json", "ROM/ROM.1.json"),
@@ -189,7 +199,7 @@ class FreshDatabaseTest(TestCase):
 class ApiTest(TestCase):
     @classmethod
     def setUpTestData(cls):
-        edition = load_extract_words()
+        edition = load_extract_words(books=("JHN", "GEN"))
         import_content(*content_files("JHN/JHN.1.*.json", "GEN/GEN.1.*.json"))
         bsb = Edition.objects.create(code="bsb", name="Berean Standard Bible", language="eng",
                                      kind="reference", licence="Public domain", source="open-bibles",
@@ -277,7 +287,7 @@ class ApiTest(TestCase):
 
 class AdminTest(TestCase):
     def test_review_event_records_the_reviewer(self):
-        load_extract_words()
+        load_extract_words(books=("PHP",))
         import_content(*content_files("PHP/PHP.4.*.json"))
         user = get_user_model().objects.create_superuser("reviewer", "r@example.com", "pw-not-used-elsewhere")
         self.client.force_login(user)

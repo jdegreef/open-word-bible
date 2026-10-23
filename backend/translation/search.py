@@ -113,17 +113,24 @@ def _copy(cursor, table, columns, rows):
             copy.write_row(row)
 
 
-def jsonb_text(value):
-    """value as Postgres prints it as jsonb (doc::text): keys shortest first,
-    then in byte order. key() hashes this, so a document built here can be
-    matched with the one already stored without sending it to the database."""
+def _jsonb_order(value):
+    """value with every object's keys in jsonb's order: shortest first, then
+    in byte order."""
     if isinstance(value, dict):
-        keys = sorted(value, key=lambda k: (len(k.encode()), k.encode()))
-        return "{" + ", ".join(f"{json.dumps(k, ensure_ascii=False)}: {jsonb_text(value[k])}"
-                               for k in keys) + "}"
+        return {k: _jsonb_order(value[k]) for k in sorted(value, key=lambda k: (len(k.encode()), k.encode()))}
     if isinstance(value, list):
-        return "[" + ", ".join(jsonb_text(v) for v in value) + "]"
-    return json.dumps(value, ensure_ascii=False)
+        return [_jsonb_order(v) for v in value]
+    return value
+
+
+def jsonb_text(value):
+    """value as Postgres prints it as jsonb (doc::text): keys in jsonb's
+    order, ", " and ": " between items. key() hashes this, so a document
+    built here can be matched with the one already stored without sending it
+    to the database. One json.dumps for the whole value: a rebuild keys every
+    document in every language, and a call for each string took most of a
+    no-op rebuild."""
+    return json.dumps(_jsonb_order(value), ensure_ascii=False)
 
 
 # The same key, worked out by the database for the entries it holds. An
@@ -209,16 +216,16 @@ def _rebuild_language(site, lang, full):
     site.search_documents.cache_clear()
     SearchLanguage.objects.update_or_create(code=lang, defaults=dict(books=data["books"], pages=data["pages"]))
     docs = [(doc, config(doc.get("l", lang))) for doc in data["docs"]]
-    new = [key(c, doc) for doc, c in docs]
     entries, words = _table(), SearchWord._meta.db_table
     with connection.cursor() as cursor:
-        cursor.execute(f"SELECT id, position, sub, {KEY_SQL} FROM {entries} "
+        # A full rebuild, or the first, matches nothing, so needs no keys.
+        cursor.execute(f"SELECT id, position, sub, {'NULL' if full else KEY_SQL} FROM {entries} "
                        "WHERE language = %s ORDER BY position, sub", [lang])
         old = cursor.fetchall()
         # When the new documents don't fit between the ones kept (rare:
         # one added before the first), every entry is replaced.
-        delete, places = (None if full else plan(old, new)) or (
-            [row[0] for row in old], [(i, i, 0) for i in range(len(new))])
+        delete, places = (None if full or not old else plan(old, [key(c, doc) for doc, c in docs])) or (
+            [row[0] for row in old], [(i, i, 0) for i in range(len(docs))])
         if not delete and not places and SearchWord.objects.filter(language=lang).exists():
             return Change(len(docs), 0, 0)
         if delete:
