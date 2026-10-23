@@ -57,6 +57,11 @@
           "L": "Và {{deity_pronoun:ngài|Ngài}} gọi Môi-se, và {{divine_name:CHÚA|Gia-vê}} phán với ông từ Lều Hội Kiến rằng:",
           "B": "Từ Lều Hội Kiến, {{divine_name:CHÚA|Gia-vê}} gọi Môi-se và phán với ông:",
           "R": "{{divine_name:CHÚA|Gia-vê}} gọi Môi-se từ Lều Hội Kiến và phán với ông:"
+        },
+        "pt": {
+          "L": "E {{deity_pronoun:ele|Ele}} chamou Moisés, e {{divine_name:o SENHOR|Javé}} lhe falou da tenda do encontro, dizendo:",
+          "B": "Da tenda do encontro, {{divine_name:o SENHOR|Javé}} chamou Moisés e lhe disse:",
+          "R": "{{divine_name:O SENHOR|Javé}} chamou Moisés da tenda do encontro e lhe disse:"
         }
       },
       "decisions": [
@@ -414,6 +419,29 @@
           "reason": "Korean has no capital letters, so the setting the English marks on \"He\" has nothing to change; respect for God is carried by \"그분\", \"께서\" and the honorific \"-시-\" at every level, as the Korean style guide sets for the whole Bible.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010010072",
+            "o030010010081"
+          ],
+          "choice": "a tenda do encontro",
+          "alternatives": [
+            "a tenda da congregação",
+            "a tenda da reunião (R)"
+          ],
+          "reason": "For the whole book, as in Exodus (docs/pentateuch-portuguese-terms.md): \"a tenda do encontro\" names the tent where God meets with Moses and Israel (m1). It is already plain Portuguese, so Readable keeps it where the English Readable changes to \"the meeting tent\". \"Tenda da congregação\", the older name, makes it a place where the people gather.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -491,6 +519,11 @@
           "L": "\"Hãy nói với con cháu Y-sơ-ra-ên và bảo họ: 'Khi một người trong các ngươi dâng lễ vật lên {{divine_name:CHÚA|Gia-vê}}, thì các ngươi phải dâng lễ vật mình từ súc vật, từ bầy bò và từ bầy chiên dê.",
           "B": "\"Hãy nói với dân Y-sơ-ra-ên và bảo họ: 'Khi có ai trong các ngươi đem súc vật đến dâng lên {{divine_name:CHÚA|Gia-vê}} làm lễ vật, thì phải chọn con vật trong bầy bò hoặc trong bầy chiên dê.",
           "R": "\"Hãy bảo dân Y-sơ-ra-ên: 'Khi có ai muốn dâng một con vật làm lễ vật cho {{divine_name:CHÚA|Gia-vê}}, thì con vật ấy phải là bò, chiên hay dê của mình."
+        },
+        "pt": {
+          "L": "\"Fala aos filhos de Israel e dize-lhes: 'Quando alguém dentre vocês oferecer uma oferta {{divine_name:ao SENHOR|a Javé}}, dentre os animais, do gado e do rebanho, vocês oferecerão a sua oferta.",
+          "B": "\"Fala aos israelitas e dize-lhes: 'Quando alguém de vocês trouxer um animal como oferta {{divine_name:ao SENHOR|a Javé}}, ele será do gado ou do rebanho.",
+          "R": "\"Diz aos israelitas: 'Quando algum de vocês trouxer um animal como oferta {{divine_name:ao SENHOR|a Javé}}, ele deve ser um boi, uma ovelha ou uma cabra dos animais de vocês."
         }
       },
       "decisions": [
@@ -842,6 +875,52 @@
           "reason": "The Hebrew verb for offering is \"bring near\"; Literal keeps the picture with \"가까이\", while the other levels use the ordinary word for presenting an offering. \"제물\" renders the general word \"offering\" at every level.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o030010020031",
+            "o030010020041"
+          ],
+          "choice": "os filhos de Israel (L); os israelitas (B, R); no gender setting",
+          "alternatives": [
+            "os filhos e as filhas de Israel, under a gender setting"
+          ],
+          "reason": "For the whole book, as Exodus 1:7 and docs/pentateuch-portuguese-terms.md set it: the English needs a gender setting because \"sons\" names only men, but Portuguese \"filhos\" already includes daughters and \"os israelitas\" names the whole people, so there is nothing for a setting to change.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-2",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010020071",
+            "o030010020091",
+            "o030010020111",
+            "o030010020191"
+          ],
+          "choice": "alguém; oferecer ... uma oferta (L)",
+          "alternatives": [
+            "um homem",
+            "trazer para perto (L)"
+          ],
+          "reason": "For the whole book: the Hebrew word is the general word for a human being (m2), and Portuguese \"alguém\" already means anyone, so it takes no gender setting, and the \"ele\" that refers back to it in the laws is ordinary generic Portuguese. Literal says \"oferecer ... oferta\" because the Portuguese verb and noun share a root, as the Hebrew \"bring near\" and \"offering\" do (m1); \"fazer chegar perto\" would keep the picture but not the link.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -913,6 +992,11 @@
           "L": "Nếu lễ vật của người ấy [là] một của lễ thiêu từ bầy bò, người ấy phải dâng một con đực không tì vết; người ấy phải dâng nó tại cửa Lều Hội Kiến, để người ấy được chấp nhận trước mặt {{divine_name:CHÚA|Gia-vê}}.",
           "B": "Nếu của lễ thiêu là một con vật trong bầy bò, thì phải là con đực không tì vết. Người ấy phải đem nó đến cửa Lều Hội Kiến, để được {{divine_name:CHÚA|Gia-vê}} chấp nhận.",
           "R": "Nếu ai dâng một con bò làm của lễ thiêu, thì đó phải là con đực không tì vết. Người ấy phải đem nó đến cửa Lều Hội Kiến. Như vậy {{divine_name:CHÚA|Gia-vê}} sẽ chấp nhận người ấy."
+        },
+        "pt": {
+          "L": "Se a sua oferta [for] um holocausto do gado, oferecerá um macho sem defeito; à entrada da tenda do encontro o oferecerá, para a sua aceitação diante {{divine_name:do SENHOR|de Javé}}.",
+          "B": "Se a oferta for um holocausto do gado, será um macho sem defeito. Ele será trazido à entrada da tenda do encontro, para que {{divine_name:o SENHOR|Javé}} aceite quem o oferece.",
+          "R": "Se trouxeres um holocausto do teu gado, ele deve ser um macho sem nenhum defeito. Deves levá-lo até a entrada da tenda do encontro. Então {{divine_name:o SENHOR|Javé}} te aceitará."
         }
       },
       "decisions": [
@@ -1171,6 +1255,51 @@
           "reason": "The term sheet keeps the established Korean names of the offerings so that the five offerings of Leviticus 1-7 are recognisable; \"흠 없는\" is the plain word for an animal with no defect. Readable adds \"아무\" for emphasis rather than a new term.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010030021",
+            "o030010030071"
+          ],
+          "choice": "o holocausto; sem defeito (L, B), sem nenhum defeito (R)",
+          "alternatives": [
+            "oferta queimada",
+            "perfeito",
+            "íntegro"
+          ],
+          "reason": "For the whole book, as docs/pentateuch-portuguese-terms.md sets them: \"holocausto\" is the Portuguese name for the offering that goes up whole in smoke (m1), at every level, as in Exodus; \"oferta queimada\" is kept for the food offering of verse 9, a different Hebrew word. \"Sem defeito\" is the phrase for an animal with nothing wrong with it (m2); Readable strengthens it to \"sem nenhum defeito\", as the English Readable says it in common words.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-2",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o030010030131"
+          ],
+          "choice": "tu (Readable's address to the worshiper)",
+          "alternatives": [
+            "você",
+            "vocês",
+            "a pessoa"
+          ],
+          "reason": "For the whole book: where the English Readable speaks to the worshiper as \"you\", Portuguese Readable uses \"tu\", \"teu\", \"te\", because it is God's law addressed to each Israelite, and the Pentateuch drafts give God's word to Israel in the singular \"tu\" (Exodus 13:5; 20). \"Vocês\" would make one person's offering sound like the whole people's; \"você\" is kept for people speaking to each other. Where the Hebrew itself speaks to the people in the plural (verse 2), every level says \"vocês\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1234,6 +1363,11 @@
           "L": "Và người ấy phải đặt tay mình trên đầu của lễ thiêu, và nó sẽ được chấp nhận cho người ấy, để chuộc tội cho người ấy.",
           "B": "Người ấy phải đặt tay trên đầu con vật dâng làm của lễ thiêu, và của lễ ấy sẽ được nhận vì người ấy để chuộc tội cho người ấy.",
           "R": "Người dâng phải đặt tay trên đầu con vật. Rồi con vật sẽ được chấp nhận để chuộc tội cho người ấy."
+        },
+        "pt": {
+          "L": "E apoiará a mão sobre a cabeça do holocausto, e ele será aceito em seu favor, para fazer expiação por ele.",
+          "B": "Quem o oferece porá a mão sobre a cabeça do holocausto, e o animal será aceito em seu favor e fará expiação por ele.",
+          "R": "Deves pôr a mão na cabeça do animal. Então ele será aceito em teu favor, para fazer expiação por ti."
         }
       },
       "decisions": [
@@ -1443,6 +1577,29 @@
           "reason": "Korean seldom uses a pronoun for the person in a law; naming him as the one who offers keeps the actor clear where the priest is also active.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010040082"
+          ],
+          "choice": "fazer expiação por",
+          "alternatives": [
+            "expiar",
+            "fazer propiciação por",
+            "tirar a culpa de (R)"
+          ],
+          "reason": "For the whole book (docs/pentateuch-portuguese-terms.md): \"fazer expiação por\" names what the priest does with an offering to put right what stands between the worshiper and God (m2). The English Readable keeps \"make atonement\", and so does Portuguese Readable; \"expiar\" alone suggests the worshiper paying for the sin himself.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1521,6 +1678,11 @@
           "L": "Và người ấy phải giết con bò tơ trước mặt {{divine_name:CHÚA|Gia-vê}}, và các con trai A-rôn, là các thầy tế lễ, phải dâng máu và tạt máu lên bàn thờ chung quanh, [là bàn thờ] ở cửa Lều Hội Kiến.",
           "B": "Người dâng phải giết con bò tơ ấy tại đó, trước mặt {{divine_name:CHÚA|Gia-vê}}. Rồi các con trai A-rôn, là các thầy tế lễ, phải dâng máu và tạt máu lên khắp chung quanh bàn thờ đặt tại cửa Lều Hội Kiến.",
           "R": "Rồi người ấy phải giết con bò tơ tại đó, trước mặt {{divine_name:CHÚA|Gia-vê}}. Các con trai A-rôn là các thầy tế lễ sẽ đem máu đến. Họ sẽ tạt máu lên khắp bốn phía bàn thờ ở cửa Lều Hội Kiến."
+        },
+        "pt": {
+          "L": "E imolará o novilho diante {{divine_name:do SENHOR|de Javé}}, e os filhos de Arão, os sacerdotes, oferecerão o sangue e lançarão o sangue sobre o altar ao redor, que [está à] entrada da tenda do encontro.",
+          "B": "Quem trouxe o novilho o matará ali, diante {{divine_name:do SENHOR|de Javé}}. Depois os filhos de Arão, os sacerdotes, apresentarão o sangue e o jogarão em todos os lados do altar que fica à entrada da tenda do encontro.",
+          "R": "Depois deves matar o novilho ali, diante {{divine_name:do SENHOR|de Javé}}. Os filhos de Arão, os sacerdotes, vão trazer o sangue. Eles vão jogá-lo em todos os lados do altar, na entrada da tenda do encontro."
         }
       },
       "decisions": [
@@ -1712,6 +1874,52 @@
           "reason": "The Hebrew verb is a throw from a basin, not a sprinkle with the finger; \"뿌리다\" is kept for the sprinkling of chapters 4-5 so the two acts stay distinct in Korean.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010050012"
+          ],
+          "choice": "imolar (L); matar (B, R)",
+          "alternatives": [
+            "abater",
+            "sacrificar"
+          ],
+          "reason": "For the whole book, as in Exodus 29:11: Literal says \"imolar\", the Portuguese verb for slaughtering an animal in sacrifice; Balanced and Readable say \"matar\", as the English says \"slaughter\" and \"kill\". \"Abater\" sounds like a slaughterhouse.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-2",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010050132",
+            "o030010050181"
+          ],
+          "choice": "lançar (L); jogar (B, R) ... em todos os lados do altar",
+          "alternatives": [
+            "aspergir",
+            "espargir",
+            "borrifar"
+          ],
+          "reason": "For the whole book: the verb means to throw a quantity of liquid from a bowl (m3), so Portuguese uses \"lançar\" (L) and \"jogar\" (B, R), keeping \"salpicar\" for the different verb \"sprinkle\", done with a finger (4:6), as Exodus 29:21 does and as the English keeps \"splash\" and \"sprinkle\" apart. \"Aspergir\" is left aside because it is used for both in older Bibles.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1771,6 +1979,11 @@
           "L": "Và người ấy phải lột da của lễ thiêu và chặt nó thành từng miếng.",
           "B": "Rồi người dâng phải lột da con vật dâng làm của lễ thiêu và chặt nó ra thành từng phần.",
           "R": "Rồi người ấy phải lột da con vật và chặt nó ra thành từng phần."
+        },
+        "pt": {
+          "L": "E esfolará o holocausto e o cortará nos seus pedaços.",
+          "B": "Depois, quem o oferece tirará a pele do holocausto e o cortará nas suas partes.",
+          "R": "Depois deves tirar a pele do animal e cortá-lo em partes."
         }
       },
       "decisions": [
@@ -1868,6 +2081,11 @@
           "L": "Và các con trai của thầy tế lễ A-rôn phải đặt lửa trên bàn thờ và xếp củi trên lửa.",
           "B": "Các con trai của thầy tế lễ A-rôn phải nhóm lửa trên bàn thờ và xếp củi ngay ngắn trên lửa.",
           "R": "Các con trai của thầy tế lễ A-rôn sẽ nhóm lửa trên bàn thờ và chất củi lên."
+        },
+        "pt": {
+          "L": "E os filhos de Arão, o sacerdote, porão fogo sobre o altar e arrumarão lenha sobre o fogo.",
+          "B": "Os filhos do sacerdote Arão porão fogo no altar e arrumarão a lenha em ordem sobre o fogo.",
+          "R": "Os filhos do sacerdote Arão vão acender um fogo no altar e empilhar lenha em cima dele."
         }
       },
       "decisions": [
@@ -1993,6 +2211,11 @@
           "L": "Và các con trai A-rôn, là các thầy tế lễ, phải xếp các miếng thịt, cái đầu và mỡ trên củi ở trên lửa ở trên bàn thờ.",
           "B": "Các con trai A-rôn, là các thầy tế lễ, phải xếp các phần thịt cùng với cái đầu và mỡ lên trên củi đang cháy trên bàn thờ.",
           "R": "Rồi họ sẽ đặt các phần thịt, cái đầu và mỡ lên củi đang cháy trên bàn thờ."
+        },
+        "pt": {
+          "L": "E os filhos de Arão, os sacerdotes, arrumarão os pedaços, a cabeça e o sebo, sobre a lenha que [está] sobre o fogo que [está] sobre o altar.",
+          "B": "Os filhos de Arão, os sacerdotes, disporão os pedaços sobre a lenha que arde no altar, junto com a cabeça e o sebo.",
+          "R": "Depois eles vão colocar os pedaços, a cabeça e a gordura sobre a lenha que está queimando no altar."
         }
       },
       "decisions": [
@@ -2107,6 +2330,28 @@
           "reason": "Swahili has no common word for suet apart from fat, so \"shahamu\" (animal fat) is used here and for the fat of chapter 3; \"mafuta\" is kept for oil (2:1), so that the two never mix.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010080102"
+          ],
+          "choice": "o sebo (L, B); a gordura (R)",
+          "alternatives": [
+            "a gordura (L, B)",
+            "a banha"
+          ],
+          "reason": "The rare word for hard fat (m1) is \"sebo\" at Literal and Balanced, so that it stays distinct from \"a gordura\", the book's word for the fat of chapter 3; Readable says \"a gordura\", as the English Readable says \"the fat\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2179,6 +2424,11 @@
           "L": "Và bộ lòng và các chân nó, người ấy phải rửa bằng nước, và thầy tế lễ phải làm cho tất cả bốc khói trên bàn thờ, [là] một của lễ thiêu, một của lễ dâng bằng lửa, một hương thơm làm đẹp lòng {{divine_name:CHÚA|Gia-vê}}.",
           "B": "Bộ lòng và các chân phải được rửa bằng nước, rồi thầy tế lễ phải thiêu cả con vật cho bốc khói trên bàn thờ. Đó là của lễ thiêu, của lễ dâng bằng lửa, hương thơm làm đẹp lòng {{divine_name:CHÚA|Gia-vê}}.",
           "R": "Người ấy phải rửa bộ lòng và các chân bằng nước. Rồi thầy tế lễ phải thiêu tất cả trên bàn thờ. Đó là của lễ thiêu, của lễ dâng bằng lửa, có mùi thơm làm đẹp lòng {{divine_name:CHÚA|Gia-vê}}."
+        },
+        "pt": {
+          "L": "E as suas entranhas e as suas pernas lavará com água, e o sacerdote fará subir em fumaça o todo sobre o altar: [é] um holocausto, uma oferta queimada, aroma agradável {{divine_name:ao SENHOR|a Javé}}.",
+          "B": "As vísceras e as pernas serão lavadas com água, e o sacerdote fará o animal inteiro subir em fumaça no altar. É um holocausto, uma oferta queimada, aroma agradável {{divine_name:ao SENHOR|a Javé}}.",
+          "R": "Deves lavar com água as partes de dentro e as pernas. Depois o sacerdote deve queimar tudo no altar. É um holocausto, uma oferta queimada no fogo, um cheiro que agrada {{divine_name:ao SENHOR|a Javé}}."
         }
       },
       "decisions": [
@@ -2509,6 +2759,52 @@
           "reason": "As the term sheet sets for the whole of Exodus to Deuteronomy; \"살라 연기로 올리다\" keeps the Hebrew picture of the offering going up in smoke, while Readable uses the everyday verb.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010090111",
+            "o030010090121",
+            "o030010090131"
+          ],
+          "choice": "uma oferta queimada (L, B), uma oferta queimada no fogo (R); aroma agradável (L, B), um cheiro que agrada (R)",
+          "alternatives": [
+            "uma oferta de alimento",
+            "oferta pelo fogo",
+            "cheiro suave"
+          ],
+          "reason": "For the whole book (docs/pentateuch-portuguese-terms.md), as in Exodus 29:18: the gift presented on the altar fire (m2) is \"oferta queimada\" where the English Balanced says \"food offering\". The meaning note's doubt about the link with fire stays there; \"oferta de alimento\" would suggest that God is fed, which m3 rules out. The phrase of m3 is \"aroma agradável\"; Readable says \"um cheiro que agrada\", as the English Readable does.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-2",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010090052"
+          ],
+          "choice": "fará subir em fumaça (L, B); queimar (R)",
+          "alternatives": [
+            "queimará",
+            "fará fumegar"
+          ],
+          "reason": "For the whole book: the verb is not the ordinary word for burning but means making something go up as smoke (m1), so Literal and Balanced say \"fazer subir em fumaça\", as the English says \"make smoke\" and \"turn into smoke\"; Readable says \"queimar\", as the English Readable says \"burn\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2576,6 +2872,11 @@
           "L": "Và nếu lễ vật của người ấy [là] từ bầy chiên dê, từ chiên hoặc từ dê, làm của lễ thiêu, thì người ấy phải dâng một con đực không tì vết.",
           "B": "Nếu con vật dâng làm của lễ thiêu là từ bầy chiên dê, tức là chiên hoặc dê, thì phải là con đực không tì vết.",
           "R": "Nếu ai dâng một con chiên hay một con dê làm của lễ thiêu, thì đó phải là con đực, khỏe mạnh và không tì vết."
+        },
+        "pt": {
+          "L": "E se a sua oferta [for] do rebanho, das ovelhas ou das cabras, para holocausto, oferecerá um macho sem defeito.",
+          "B": "Se o animal para o holocausto vier do rebanho, das ovelhas ou das cabras, será um macho sem defeito.",
+          "R": "Se trouxeres um animal das tuas ovelhas ou das tuas cabras como holocausto, ele deve ser um macho, um carneiro ou um bode. Deve ser saudável e perfeito."
         }
       },
       "decisions": [
@@ -2624,6 +2925,27 @@
           "choice": "healthy and perfect",
           "alternatives": [],
           "reason": "Readable explains \"unblemished\" in common words.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o030010100062",
+            "o030010100092",
+            "o030010100111"
+          ],
+          "choice": "um animal das tuas ovelhas ou das tuas cabras ... um carneiro ou um bode",
+          "alternatives": [
+            "uma ovelha ou uma cabra ... um macho"
+          ],
+          "reason": "Portuguese \"ovelha\" and \"cabra\" name the females, so the English Readable \"a sheep or a goat ... must be a male\" would contradict itself; Readable says \"um animal das tuas ovelhas ou das tuas cabras\" and names the males, \"carneiro\" and \"bode\".",
           "uncertain": false,
           "footnote": false
         }
@@ -2699,6 +3021,11 @@
           "L": "Và người ấy phải giết nó bên cạnh bàn thờ, về phía bắc, trước mặt {{divine_name:CHÚA|Gia-vê}}, và các con trai A-rôn, là các thầy tế lễ, phải tạt máu nó lên bàn thờ chung quanh.",
           "B": "Người ấy phải giết con vật trước mặt {{divine_name:CHÚA|Gia-vê}} ở phía bắc bàn thờ, và các con trai A-rôn, là các thầy tế lễ, phải tạt máu nó lên khắp chung quanh bàn thờ.",
           "R": "Người ấy phải giết nó trước mặt {{divine_name:CHÚA|Gia-vê}} ở phía bắc bàn thờ. Các con trai A-rôn là các thầy tế lễ sẽ tạt máu nó lên khắp bốn phía bàn thờ."
+        },
+        "pt": {
+          "L": "E o imolará ao lado do altar, para o norte, diante {{divine_name:do SENHOR|de Javé}}, e os filhos de Arão, os sacerdotes, lançarão o seu sangue sobre o altar ao redor.",
+          "B": "O animal será morto diante {{divine_name:do SENHOR|de Javé}}, no lado norte do altar, e os filhos de Arão, os sacerdotes, jogarão o seu sangue em todos os lados do altar.",
+          "R": "Deves matá-lo diante {{divine_name:do SENHOR|de Javé}}, no lado norte do altar. Os filhos de Arão, os sacerdotes, vão jogar o sangue dele em todos os lados do altar."
         }
       },
       "decisions": [
@@ -2810,6 +3137,11 @@
           "L": "Và người ấy phải chặt nó thành từng miếng, cùng với đầu và mỡ của nó, và thầy tế lễ phải xếp chúng trên củi ở trên lửa ở trên bàn thờ.",
           "B": "Con vật phải được chặt ra từng phần, rồi thầy tế lễ xếp các phần ấy, cùng với cái đầu và mỡ, lên củi đang cháy trên bàn thờ.",
           "R": "Rồi người ấy phải chặt nó ra từng phần. Thầy tế lễ sẽ đặt các phần thịt, cái đầu và mỡ lên củi đang cháy trên bàn thờ."
+        },
+        "pt": {
+          "L": "E o cortará nos seus pedaços, com a sua cabeça e o seu sebo, e o sacerdote os arrumará sobre a lenha que [está] sobre o fogo que [está] sobre o altar.",
+          "B": "Ele será cortado nos seus pedaços, e o sacerdote os disporá, com a cabeça e o sebo, sobre a lenha que arde no altar.",
+          "R": "Depois deves cortar o animal em pedaços. O sacerdote vai colocar os pedaços, a cabeça e a gordura sobre a lenha que está queimando no altar."
         }
       },
       "decisions": [
@@ -2903,6 +3235,11 @@
           "L": "Và bộ lòng và các chân, người ấy phải rửa bằng nước, và thầy tế lễ phải dâng tất cả và làm [nó] bốc khói trên bàn thờ; nó [là] một của lễ thiêu, một của lễ dâng bằng lửa, một hương thơm làm đẹp lòng {{divine_name:CHÚA|Gia-vê}}.",
           "B": "Bộ lòng và các chân phải được rửa bằng nước. Thầy tế lễ phải dâng tất cả và thiêu cho bốc khói trên bàn thờ. Đó là của lễ thiêu, của lễ dâng bằng lửa, hương thơm làm đẹp lòng {{divine_name:CHÚA|Gia-vê}}.",
           "R": "Người ấy phải rửa bộ lòng và các chân bằng nước. Thầy tế lễ sẽ dâng tất cả và thiêu trên bàn thờ. Đó là của lễ thiêu, của lễ dâng bằng lửa, có mùi thơm làm đẹp lòng {{divine_name:CHÚA|Gia-vê}}."
+        },
+        "pt": {
+          "L": "E as entranhas e as pernas lavará com água, e o sacerdote oferecerá o todo e [o] fará subir em fumaça sobre o altar; é um holocausto, uma oferta queimada, aroma agradável {{divine_name:ao SENHOR|a Javé}}.",
+          "B": "As vísceras e as pernas serão lavadas com água. O sacerdote apresentará tudo e o fará subir em fumaça no altar. É um holocausto, uma oferta queimada, aroma agradável {{divine_name:ao SENHOR|a Javé}}.",
+          "R": "Deves lavar com água as partes de dentro e as pernas. O sacerdote vai oferecer tudo e queimar no altar. É um holocausto, uma oferta queimada no fogo, um cheiro que agrada {{divine_name:ao SENHOR|a Javé}}."
         }
       },
       "decisions": [
@@ -2990,6 +3327,11 @@
           "L": "Và nếu lễ vật của người ấy dâng lên {{divine_name:CHÚA|Gia-vê}} [là] một của lễ thiêu bằng loài chim, thì người ấy phải dâng lễ vật mình bằng chim cu hoặc bồ câu non.",
           "B": "Nếu của lễ thiêu dâng lên {{divine_name:CHÚA|Gia-vê}} là loài chim, thì người ấy phải dâng một con chim cu hoặc một con bồ câu non.",
           "R": "Nếu ai dâng một con chim làm của lễ thiêu cho {{divine_name:CHÚA|Gia-vê}}, thì phải chọn một con chim cu hoặc một con bồ câu non."
+        },
+        "pt": {
+          "L": "E se a sua oferta {{divine_name:ao SENHOR|a Javé}} [for] um holocausto de aves, oferecerá a sua oferta de rolinhas ou de pombinhos.",
+          "B": "Se alguém oferecer uma ave como holocausto {{divine_name:ao SENHOR|a Javé}}, trará uma rolinha ou um pombinho.",
+          "R": "Se ofereceres uma ave como holocausto {{divine_name:ao SENHOR|a Javé}}, deves escolher uma rolinha ou um pombinho."
         }
       },
       "decisions": [
@@ -3085,6 +3427,30 @@
           "reason": "Korean names the two birds apart; Readable follows the English Readable with the general \"비둘기\" for the first.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010140092",
+            "o030010140121",
+            "o030010140132"
+          ],
+          "choice": "rolinhas; pombinhos",
+          "alternatives": [
+            "rolas",
+            "pombas novas"
+          ],
+          "reason": "For the whole book: \"rolinha\" is the common Brazilian name for the small wild dove (m1), so every level can use it where the English Readable changes to \"dove\"; \"pombinho\" is a young pigeon, the \"sons of the dove\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3158,6 +3524,11 @@
           "L": "Và thầy tế lễ phải đem nó đến bàn thờ, ngắt đầu nó và làm [nó] bốc khói trên bàn thờ, và máu nó phải được vắt ra trên thành bàn thờ.",
           "B": "Thầy tế lễ phải đem nó đến bàn thờ, ngắt đầu nó và thiêu cái đầu cho bốc khói trên bàn thờ; còn máu con chim phải được vắt ra trên cạnh bàn thờ.",
           "R": "Thầy tế lễ sẽ đem con chim đến bàn thờ. Ông sẽ ngắt đầu nó và thiêu cái đầu trên bàn thờ. Rồi ông sẽ cho máu nó chảy ra trên cạnh bàn thờ."
+        },
+        "pt": {
+          "L": "E o sacerdote a oferecerá no altar, e lhe destacará a cabeça e [a] fará subir em fumaça sobre o altar, e o seu sangue será espremido na parede do altar.",
+          "B": "O sacerdote a levará ao altar. Ele destacará a cabeça e a fará subir em fumaça no altar, e o sangue da ave será espremido contra o lado do altar.",
+          "R": "O sacerdote vai levar a ave até o altar. Ele vai arrancar a cabeça dela e queimar a cabeça no altar. Depois vai deixar o sangue dela escorrer pelo lado do altar."
         }
       },
       "decisions": [
@@ -3219,6 +3590,29 @@
           "choice": "the head",
           "alternatives": [],
           "reason": "Balanced and Readable say that what is burned here is the head.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010150052",
+            "o030010150102"
+          ],
+          "choice": "destacará a cabeça; será espremido",
+          "alternatives": [
+            "torcerá a cabeça",
+            "cortará a cabeça",
+            "escorrerá"
+          ],
+          "reason": "The verb means pinching off with the fingers (m1): \"destacar\" says that the head is separated without suggesting a knife, which \"cortar\" would; Readable says \"arrancar\", as the English \"pull off\". The blood is squeezed or drained out (m2): \"espremido\" (L, B) keeps the squeezing; Readable says \"deixar escorrer\".",
           "uncertain": false,
           "footnote": false
         }
@@ -3289,6 +3683,11 @@
           "L": "Và người ấy phải lấy diều nó cùng với lông của nó ra, và ném nó bên cạnh bàn thờ, về phía đông, đến nơi [đổ] tro mỡ.",
           "B": "Ông phải lấy cái diều cùng với lông của nó ra và ném xuống phía đông bàn thờ, tại chỗ đổ tro.",
           "R": "Ông sẽ lấy cái diều và lông của con chim ra, rồi ném xuống phía đông bàn thờ, nơi đổ tro."
+        },
+        "pt": {
+          "L": "E removerá o seu papo com as suas penas e o lançará junto ao altar, para o oriente, no lugar da cinza gordurosa.",
+          "B": "Ele tirará o papo junto com as penas e os jogará do lado leste do altar, no lugar das cinzas.",
+          "R": "Ele vai tirar o papo da ave e as penas. Depois vai jogá-los do lado leste do altar, onde as cinzas ficam amontoadas."
         }
       },
       "decisions": [
@@ -3457,6 +3856,11 @@
           "L": "Và người ấy phải xé nó ra theo hai cánh nó; người ấy không được xé rời [nó] ra; và thầy tế lễ phải làm nó bốc khói trên bàn thờ, trên củi ở trên lửa; nó [là] một của lễ thiêu, một của lễ dâng bằng lửa, một hương thơm làm đẹp lòng {{divine_name:CHÚA|Gia-vê}}.",
           "B": "Ông phải nắm hai cánh mà xé con chim ra, nhưng không xé rời làm đôi. Rồi thầy tế lễ phải thiêu nó cho bốc khói trên củi đang cháy trên bàn thờ. Đó là của lễ thiêu, của lễ dâng bằng lửa, hương thơm làm đẹp lòng {{divine_name:CHÚA|Gia-vê}}.",
           "R": "Ông sẽ cầm hai cánh mà xé con chim ra, nhưng không xé rời làm hai. Rồi thầy tế lễ sẽ thiêu nó trên củi đang cháy trên bàn thờ. Đó là của lễ thiêu, của lễ dâng bằng lửa, có mùi thơm làm đẹp lòng {{divine_name:CHÚA|Gia-vê}}."
+        },
+        "pt": {
+          "L": "E a fenderá pelas asas, [mas] não [a] dividirá; e o sacerdote a fará subir em fumaça sobre o altar, sobre a lenha que [está] sobre o fogo; é um holocausto, uma oferta queimada, aroma agradável {{divine_name:ao SENHOR|a Javé}}.",
+          "B": "Segurando-a pelas asas, ele a rasgará, mas sem parti-la em duas. Depois o sacerdote a fará subir em fumaça no altar, sobre a lenha que arde. É um holocausto, uma oferta queimada, aroma agradável {{divine_name:ao SENHOR|a Javé}}.",
+          "R": "Ele vai segurar a ave pelas asas e abri-la, mas sem dividi-la em duas partes. Depois o sacerdote vai queimá-la no fogo do altar. É um holocausto, uma oferta queimada no fogo, um cheiro que agrada {{divine_name:ao SENHOR|a Javé}}."
         }
       },
       "decisions": [
