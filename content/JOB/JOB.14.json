@@ -26,6 +26,36 @@
           "L": "{{gender:A human|Man}}, born of a woman, \\q [is] short of days and full of turmoil.",
           "B": "{{gender:A human being|Man}}, born of a woman, \\q lives few days, and those days are full of trouble.",
           "R": "Every human being is born of a woman. \\q Our lives are short and full of trouble."
+        },
+        "es": {
+          "L": "{{gender:El ser humano|El hombre}}, nacido de mujer, \\q [es] corto de días y harto de inquietud.",
+          "B": "{{gender:El ser humano|El hombre}}, nacido de mujer, \\q vive pocos días, y esos días están llenos de angustia.",
+          "R": "Todo ser humano nace de una mujer. \\q Nuestra vida es corta y está llena de problemas."
+        },
+        "fr": {
+          "L": "{{gender:L’être humain|L’homme}}, né de la femme, \\q [est] court de jours et rassasié de tourment.",
+          "B": "{{gender:L’être humain|L’homme}}, né d’une femme, \\q vit peu de jours, et ces jours sont pleins de tourments.",
+          "R": "Tout être humain naît d’une femme. \\q Notre vie est courte et pleine de soucis."
+        },
+        "sw": {
+          "L": "Mwanadamu, mzaliwa wa mwanamke, \\q [ni] mfupi wa siku na ameshiba msukosuko.",
+          "B": "Mwanadamu, aliyezaliwa na mwanamke, \\q huishi siku chache, na siku hizo zimejaa dhiki.",
+          "R": "Kila mwanadamu amezaliwa na mwanamke. \\q Maisha yetu ni mafupi na yamejaa matatizo."
+        },
+        "vi": {
+          "L": "Con người do người nữ sinh ra \\q [thì] ít ngày và no đầy xao động.",
+          "B": "Con người do người nữ sinh ra \\q chỉ sống ít ngày, mà những ngày ấy đầy dẫy rối ren.",
+          "R": "Mọi người đều do người nữ sinh ra. \\q Đời chúng con ngắn ngủi và đầy khổ đau."
+        },
+        "ko": {
+          "L": "여자에게서 난 사람은 \\q 날이 짧고 불안으로 가득하다.",
+          "B": "여자에게서 태어난 사람은 \\q 사는 날이 얼마 되지 않고, 그 날들마저 괴로움으로 가득하다.",
+          "R": "사람은 누구나 여자에게서 태어난다. \\q 우리 삶은 짧고 괴로움이 가득하다."
+        },
+        "pt": {
+          "L": "{{gender:O ser humano|O homem}}, nascido de mulher, \\q [é] curto de dias e farto de inquietação.",
+          "B": "{{gender:O ser humano|O homem}}, nascido de mulher, \\q vive pouco tempo, e esse tempo é cheio de inquietação.",
+          "R": "Todo ser humano nasce de uma mulher. \\q A nossa vida é curta e cheia de problemas."
         }
       },
       "decisions": [
@@ -78,6 +108,88 @@
           "reason": "In this chapter Readable speaks of humankind as \"we\", which includes Job, every reader and both men and women, in place of the Hebrew \"he\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o180140010011"
+          ],
+          "choice": "\"chúng con\" for the Readable \"we, our\"",
+          "alternatives": [
+            "\"chúng ta\"",
+            "\"chúng tôi\""
+          ],
+          "reason": "Job's speech from 13:20 to the end of chapter 14 is addressed to God, and in it he calls himself \"con\". Where Readable speaks of humankind as \"we\", Vietnamese says \"chúng con\", which takes in Job and all mortals speaking before God.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o180140010011"
+          ],
+          "choice": "plain 해라체 for the lines about humankind and nature (verses 1-2, 4, 7-12, 18-19a, 21-22, Readable \"we\" as \"우리\"); 합쇼체 with \"주님\" and \"저\" where Job speaks to God",
+          "alternatives": [
+            "합쇼체 for the whole chapter"
+          ],
+          "reason": "The chapter moves between general lines about mortals and direct pleas to God. Korean gives the descriptive and proverbial lines the plain style of written poetry and keeps the 합쇼체 of prayer for the lines addressed to God, as the Psalms move between the two.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o180140010011"
+          ],
+          "choice": "{{gender:O ser humano|O homem}}",
+          "alternatives": [
+            "{{gender:A pessoa|O homem}}"
+          ],
+          "reason": "As the English: the verse is about every human being (m1). \"O ser humano\" is masculine in Portuguese, like \"o homem\", so the verbs and the pronoun \"ele\" that refer back to it through the chapter read the same under either option, and the setting needs to go only on the noun.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-2",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o180140010062",
+            "o180140010071"
+          ],
+          "choice": "farto de inquietação (L); cheio de inquietação (B)",
+          "alternatives": [
+            "cheio de problemas"
+          ],
+          "reason": "Drafted from the gloss: \"farto\" at Literal keeps the sense of having had more than one's fill (m2), the word that returns at 42:17; Balanced follows the English shape (\"vive pouco tempo, e esse tempo ...\") rather than the wording of a familiar version.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -112,6 +224,36 @@
           "L": "Like a flower {{gender:they come up and wither|he comes up and withers}}; \\q and {{gender:they flee|he flees}} like a shadow and {{gender:do|does}} not stay.",
           "B": "{{gender:They spring up|He springs up}} like a flower and {{gender:wither|withers}}; \\q {{gender:they slip|he slips}} away like a shadow and {{gender:do|does}} not last.",
           "R": "We bloom like a flower and then dry up. \\q We pass like a shadow and are gone."
+        },
+        "es": {
+          "L": "Como una flor brota y se marchita; \\q y se escapa como una sombra y no se queda.",
+          "B": "Brota como una flor y se marchita; \\q se desvanece como una sombra y no perdura.",
+          "R": "Florecemos como una flor y luego nos secamos. \\q Pasamos como una sombra y desaparecemos."
+        },
+        "fr": {
+          "L": "Comme une fleur il sort et se fane ; \\q et il fuit comme l’ombre et ne demeure pas.",
+          "B": "Il pousse comme une fleur et se fane ; \\q il s’efface comme une ombre et ne dure pas.",
+          "R": "Nous fleurissons comme une fleur, puis nous séchons. \\q Nous passons comme une ombre, et nous ne sommes plus là."
+        },
+        "sw": {
+          "L": "Kama ua hutokeza na kunyauka; \\q hukimbia kama kivuli wala hakai.",
+          "B": "Huchipuka kama ua kisha hunyauka; \\q hupita kama kivuli wala hadumu.",
+          "R": "Tunachanua kama ua kisha tunakauka. \\q Tunapita kama kivuli na kutoweka."
+        },
+        "vi": {
+          "L": "Như bông hoa, người mọc lên rồi tàn héo; \\q và trốn đi như bóng và không ở lại.",
+          "B": "Con người nở ra như hoa rồi tàn úa; \\q lướt qua như chiếc bóng và chẳng còn lại.",
+          "R": "Chúng con nở như hoa rồi khô héo. \\q Chúng con qua đi như chiếc bóng rồi biến mất."
+        },
+        "ko": {
+          "L": "꽃처럼 피어났다가 시들고, \\q 그림자처럼 달아나 머물지 않는다.",
+          "B": "사람은 꽃처럼 피었다가 시들고, \\q 그림자처럼 사라져 오래가지 못한다.",
+          "R": "우리는 꽃처럼 피었다가 말라 버린다. \\q 그림자처럼 지나가 사라져 버린다."
+        },
+        "pt": {
+          "L": "Como uma flor brota e murcha; \\q e foge como a sombra e não permanece.",
+          "B": "Brota como uma flor e murcha; \\q passa como uma sombra e não dura.",
+          "R": "Nós florescemos como uma flor e logo secamos. \\q Passamos como uma sombra e desaparecemos."
         }
       },
       "decisions": [
@@ -143,6 +285,27 @@
             "is cut down"
           ],
           "reason": "The verb (malal) is used of plants that dry up or are cut off (18:16; Psalm 37:2). Either way the flower is soon gone.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o180140020011",
+            "o180140020041"
+          ],
+          "choice": "no gender span (verses 2, 5, 6, 20-22)",
+          "alternatives": [
+            "{{gender:brotam|brota}}"
+          ],
+          "reason": "The English needs spans on its verbs and pronouns to switch between \"they\" and \"he\". In Portuguese the subject is \"o ser humano\" (14:1), masculine and singular under both options of the setting, so the verbs, \"ele\", \"o\" and \"seu\" stay the same and carry no span.",
           "uncertain": false,
           "footnote": false
         }
@@ -181,6 +344,36 @@
           "L": "Do {{deity_pronoun:you|You}} even open {{deity_pronoun:your|Your}} eyes on such a one? \\q And do {{deity_pronoun:you|You}} bring me into judgment with {{deity_pronoun:you|You}}?",
           "B": "Do {{deity_pronoun:you|You}} really fix {{deity_pronoun:your|Your}} eyes on such a one? \\q Will {{deity_pronoun:you|You}} bring me to trial before {{deity_pronoun:you|You}}?",
           "R": "Is someone like this worth {{deity_pronoun:your|Your}} close watch? \\q Must {{deity_pronoun:you|You}} drag me into court with {{deity_pronoun:you|You}}?"
+        },
+        "es": {
+          "L": "¿Aun sobre uno así abres {{deity_pronoun:tus|Tus}} ojos? \\q ¿Y a mí me llevas a juicio frente a {{deity_pronoun:ti|Ti}}?",
+          "B": "¿De veras fijas {{deity_pronoun:tus|Tus}} ojos en alguien así? \\q ¿Me llevarás a juicio delante de {{deity_pronoun:ti|Ti}}?",
+          "R": "¿Merece alguien así que {{deity_pronoun:tú|Tú}} lo vigiles tan de cerca? \\q ¿Tienes que arrastrarme a un juicio delante de {{deity_pronoun:ti|Ti}}?"
+        },
+        "fr": {
+          "L": "Même sur un tel [être] {{deity_pronoun:tu|Tu}} ouvres {{deity_pronoun:tes|Tes}} yeux ? \\q Et moi, {{deity_pronoun:tu|Tu}} m’amènes en jugement avec {{deity_pronoun:toi|Toi}} ?",
+          "B": "Est-ce vraiment sur un tel être que {{deity_pronoun:tu|Tu}} fixes {{deity_pronoun:tes|Tes}} yeux ? \\q Vas-{{deity_pronoun:tu|Tu}} me faire passer en jugement devant {{deity_pronoun:toi|Toi}} ?",
+          "R": "Quelqu’un comme lui mérite-t-il que {{deity_pronoun:tu|Tu}} le surveilles de si près ? \\q Faut-il que {{deity_pronoun:tu|Tu}} me traînes au tribunal devant {{deity_pronoun:toi|Toi}} ?"
+        },
+        "sw": {
+          "L": "Je, hata juu ya mtu kama huyu unafumbua macho {{deity_pronoun:yako|Yako}}? \\q Na mimi unanileta hukumuni pamoja {{deity_pronoun:nawe|Nawe}}?",
+          "B": "Je, kweli unamkazia macho {{deity_pronoun:yako|Yako}} mtu kama huyu? \\q Utanileta mahakamani mbele {{deity_pronoun:yako|Yako}}?",
+          "R": "Je, mtu kama huyu anastahili {{deity_pronoun:wewe|Wewe}} umchunguze kwa karibu hivyo? \\q Je, ni lazima unikokote mahakamani mbele {{deity_pronoun:yako|Yako}}?"
+        },
+        "vi": {
+          "L": "Chúa lại mở mắt trên một kẻ như thế sao? \\q Và đem con vào sự xét xử với {{deity_pronoun:ngài|Ngài}} sao?",
+          "B": "Chúa thật sự để mắt dò xét một kẻ như thế sao? \\q Ngài sẽ đem con ra xử trước mặt {{deity_pronoun:ngài|Ngài}} sao?",
+          "R": "Một người như thế có đáng để Chúa canh chừng sát sao không? \\q Chúa có cần lôi con ra tòa với {{deity_pronoun:ngài|Ngài}} không?"
+        },
+        "ko": {
+          "L": "이런 자에게도 주님께서 눈을 뜨십니까? \\q 그리고 저를 주님과 함께 심판에 들이십니까?",
+          "B": "이런 자에게서 정말 눈을 떼지 않으십니까? \\q 저를 주님 앞에 세워 재판하시렵니까?",
+          "R": "이런 사람이 주님께서 그렇게 꼼꼼히 지켜보실 만한 존재입니까? \\q 꼭 저를 법정으로 끌고 가셔야 합니까?"
+        },
+        "pt": {
+          "L": "E sobre este abres os {{deity_pronoun:teus|Teus}} olhos? \\q E a mim me trazes a juízo {{deity_pronoun:contigo|Contigo}}?",
+          "B": "E é sobre alguém assim que fixas os {{deity_pronoun:teus|Teus}} olhos? \\q E vais me levar a julgamento diante de {{deity_pronoun:ti|Ti}}?",
+          "R": "Será que alguém assim merece que fiques vigiando tanto? \\q Precisas mesmo me arrastar ao tribunal {{deity_pronoun:contigo|Contigo}}?"
         }
       },
       "decisions": [
@@ -268,6 +461,36 @@
           "L": "Who can bring a clean [thing] out of an unclean? \\q Not one.",
           "B": "Who can bring what is clean out of what is unclean? \\q No one!",
           "R": "Can anyone make something clean out of something unclean? \\q No one can!"
+        },
+        "es": {
+          "L": "¿Quién dará algo puro de lo impuro? \\q Ni uno solo.",
+          "B": "¿Quién puede sacar lo puro de lo impuro? \\q ¡Nadie!",
+          "R": "¿Puede alguien convertir algo impuro en algo puro? \\q ¡Nadie puede!"
+        },
+        "fr": {
+          "L": "Qui tirera du pur de l’impur ? \\q Pas un.",
+          "B": "Qui peut tirer ce qui est pur de ce qui est impur ? \\q Personne !",
+          "R": "Quelqu’un peut-il rendre pur ce qui est impur ? \\q Personne ne le peut !"
+        },
+        "sw": {
+          "L": "Nani atatoa kitu safi kutoka kwa kitu kichafu? \\q Hakuna hata mmoja.",
+          "B": "Ni nani awezaye kutoa kilicho safi katika kilicho najisi? \\q Hakuna!",
+          "R": "Je, kuna mtu anayeweza kufanya kitu kichafu kiwe safi? \\q Hakuna anayeweza!"
+        },
+        "vi": {
+          "L": "Ai sẽ đem [vật] tinh sạch ra từ [vật] ô uế? \\q Không một ai.",
+          "B": "Ai có thể lấy cái thanh sạch ra từ cái ô uế? \\q Chẳng ai cả!",
+          "R": "Có ai làm được cho điều ô uế trở nên tinh sạch không? \\q Không ai làm được!"
+        },
+        "ko": {
+          "L": "누가 부정한 것에서 깨끗한 것을 내겠는가? \\q 하나도 없다.",
+          "B": "누가 더러운 것에서 깨끗한 것을 낼 수 있겠는가? \\q 아무도 없다!",
+          "R": "더러운 것을 깨끗하게 만들 수 있는 사람이 있는가? \\q 아무도 없다!"
+        },
+        "pt": {
+          "L": "Quem tirará o puro do impuro? \\q Ninguém.",
+          "B": "Quem pode tirar algo puro do que é impuro? \\q Ninguém!",
+          "R": "Alguém consegue fazer uma coisa pura de uma coisa impura? \\q Ninguém consegue!"
         }
       },
       "decisions": [
@@ -339,6 +562,36 @@
           "L": "If {{gender:their|his}} days are determined, \\q the number of {{gender:their|his}} months [is] with {{deity_pronoun:you|You}}; \\q {{gender:their|his}} limits {{deity_pronoun:you|You}} have set, and {{gender:they|he}} cannot pass [them],",
           "B": "Since {{gender:their|his}} days are fixed, \\q and the number of {{gender:their|his}} months is in {{deity_pronoun:your|Your}} hands, \\q since {{deity_pronoun:you|You}} have set limits that {{gender:they|he}} cannot cross,",
           "R": "You have already decided how long each of us will live. \\q You know the number of our months. \\q You have set limits we cannot go beyond."
+        },
+        "es": {
+          "L": "Si sus días están determinados, \\q el número de sus meses [está] junto a {{deity_pronoun:ti|Ti}}; \\q {{deity_pronoun:tú|Tú}} has fijado sus límites, y no [los] podrá pasar,",
+          "B": "Ya que sus días están fijados \\q y el número de sus meses está en {{deity_pronoun:tus|Tus}} manos, \\q ya que {{deity_pronoun:tú|Tú}} le has puesto límites que no puede cruzar,",
+          "R": "Ya decidiste cuánto vivirá cada uno de nosotros. \\q Conoces el número de nuestros meses. \\q Pusiste límites que no podemos traspasar."
+        },
+        "fr": {
+          "L": "Si ses jours sont fixés, \\q le nombre de ses mois [est] auprès de {{deity_pronoun:toi|Toi}} ; \\q {{deity_pronoun:tu|Tu}} as posé ses limites, et il ne [les] franchira pas,",
+          "B": "Puisque ses jours sont fixés \\q et que le nombre de ses mois est entre {{deity_pronoun:tes|Tes}} mains, \\q puisque {{deity_pronoun:tu|Tu}} as posé des limites qu’il ne peut franchir,",
+          "R": "Tu as déjà décidé combien de temps chacun de nous vivra. \\q Tu connais le nombre de nos mois. \\q Tu as fixé des limites que nous ne pouvons pas dépasser."
+        },
+        "sw": {
+          "L": "Ikiwa siku zake zimeamuliwa, \\q hesabu ya miezi yake [iko] {{deity_pronoun:kwako|Kwako}}; \\q umeweka mipaka yake, naye hawezi kuivuka,",
+          "B": "Kwa kuwa siku zake zimepangwa, \\q na hesabu ya miezi yake iko mikononi {{deity_pronoun:mwako|Mwako}}, \\q kwa kuwa umemwekea mipaka asiyoweza kuivuka,",
+          "R": "Tayari umeamua kila mmoja wetu ataishi muda gani. \\q Unajua hesabu ya miezi yetu. \\q Umeweka mipaka ambayo hatuwezi kuivuka."
+        },
+        "vi": {
+          "L": "Nếu ngày tháng của họ đã được định, \\q số tháng của họ [ở] nơi {{deity_pronoun:ngài|Ngài}}; \\q Chúa đã đặt giới hạn cho họ, và họ không thể vượt qua,",
+          "B": "Vì ngày tháng con người đã được định, \\q số tháng của họ ở trong tay Chúa, \\q vì Chúa đã đặt ra giới hạn mà họ không thể vượt qua,",
+          "R": "Chúa đã định sẵn mỗi người chúng con sống được bao lâu. \\q Chúa biết số tháng của chúng con. \\q Chúa đã đặt giới hạn mà chúng con không thể vượt qua."
+        },
+        "ko": {
+          "L": "그의 날들이 정해져 있고, \\q 그의 달 수가 주님께 있으며, \\q 주님께서 그의 한계를 정하셔서 그가 [그것을] 넘지 못한다면,",
+          "B": "사람의 날이 이미 정해져 있고 \\q 그 달 수가 주님의 손에 있으며, \\q 주님께서 그가 넘을 수 없는 한계를 정해 두셨으니,",
+          "R": "주님께서는 저희 각 사람이 얼마나 살지 이미 정하셨습니다. \\q 저희가 살 달 수를 알고 계십니다. \\q 저희가 넘을 수 없는 한계를 정해 두셨습니다."
+        },
+        "pt": {
+          "L": "Se os seus dias estão determinados, \\q o número dos seus meses [está] {{deity_pronoun:contigo|Contigo}}; \\q os seus limites fixaste, e ele não [os] ultrapassará,",
+          "B": "Já que os dias dele estão contados, \\q e o número dos seus meses está nas {{deity_pronoun:tuas|Tuas}} mãos, \\q já que lhe fixaste limites que ele não pode ultrapassar,",
+          "R": "Tu já decidiste quanto tempo cada um de nós vai viver. \\q Sabes o número dos nossos meses. \\q Puseste limites que não podemos passar."
         }
       },
       "decisions": [
@@ -442,6 +695,36 @@
           "L": "look away from {{gender:them|him}}, that {{gender:they|he}} may rest, \\q until {{gender:they complete their|he completes his}} day like a hired laborer.",
           "B": "then look away from {{gender:them|him}} and let {{gender:them|him}} rest, \\q until, like a hired worker, {{gender:they finish their|he finishes his}} day.",
           "R": "So stop watching us and leave us alone, \\q until we have finished our day like a worker hired for the day."
+        },
+        "es": {
+          "L": "aparta [la mirada] de él, para que descanse, \\q hasta que cumpla su día como un jornalero.",
+          "B": "entonces aparta de él la mirada y déjalo descansar, \\q hasta que, como un jornalero, termine su jornada.",
+          "R": "Así que deja de vigilarnos y déjanos en paz, \\q hasta que terminemos nuestro día como el trabajador que cobra por día."
+        },
+        "fr": {
+          "L": "détourne-{{deity_pronoun:toi|Toi}} de lui, pour qu’il ait du repos, \\q jusqu’à ce qu’il achève sa journée comme un journalier.",
+          "B": "alors détourne de lui {{deity_pronoun:ton|Ton}} regard et laisse-le se reposer, \\q jusqu’à ce qu’il termine sa journée, comme un ouvrier payé à la journée.",
+          "R": "Alors arrête de nous surveiller et laisse-nous tranquilles, \\q jusqu’à ce que nous ayons fini notre journée, comme un ouvrier engagé pour un jour."
+        },
+        "sw": {
+          "L": "geuza macho kutoka kwake, ili apumzike, \\q hadi aimalize siku yake kama mfanyakazi wa kuajiriwa.",
+          "B": "basi uache kumtazama, umwache apumzike, \\q mpaka, kama kibarua, aimalize siku yake.",
+          "R": "Kwa hiyo acha kutuangalia, utuache tupumzike, \\q mpaka tumalize siku yetu kama kibarua aliyeajiriwa kwa siku moja."
+        },
+        "vi": {
+          "L": "xin quay mắt khỏi họ, để họ được nghỉ, \\q cho đến khi họ làm trọn ngày mình như người làm thuê.",
+          "B": "thì xin Chúa thôi nhìn họ và để họ yên nghỉ, \\q cho đến khi họ xong ngày công như người làm thuê.",
+          "R": "Vậy xin Chúa thôi canh chừng chúng con và để chúng con yên, \\q cho đến khi chúng con làm xong ngày của mình như người làm công nhật."
+        },
+        "ko": {
+          "L": "그에게서 [눈을] 돌이키셔서 그가 쉬게 하십시오, \\q 그가 품꾼처럼 자기 날을 채울 때까지.",
+          "B": "그가 품꾼처럼 하루를 다 마칠 때까지 \\q 그에게서 눈을 돌리시어 그를 쉬게 해 주십시오.",
+          "R": "그러니 저희를 그만 지켜보시고 내버려 두십시오. \\q 하루 품삯을 받는 일꾼처럼 저희가 하루를 다 마칠 때까지 말입니다."
+        },
+        "pt": {
+          "L": "desvia [o olhar] de sobre ele, para que descanse, \\q até que complete, como um assalariado, o seu dia.",
+          "B": "então tira dele os {{deity_pronoun:teus|Teus}} olhos e deixa-o descansar, \\q até que, como um trabalhador contratado, termine o seu dia.",
+          "R": "Então deixa de nos vigiar e deixa-nos em paz, \\q até terminarmos o nosso dia como um trabalhador contratado por dia."
         }
       },
       "decisions": [
@@ -488,6 +771,26 @@
           "reason": "The verb (ratsah) usually means to take pleasure in, but it can also mean to pay off or complete a term (Leviticus 26:34). Job pictures a hired worker who longs for evening (7:1-2): let the mortal finish his day in peace, or at least enjoy its end.",
           "uncertain": true,
           "footnote": true
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "B"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o180140060041",
+            "o180140060061"
+          ],
+          "choice": "the \"until\" line comes first",
+          "alternatives": [
+            "Hebrew order, with the \"until\" clause after the request"
+          ],
+          "reason": "A Korean time clause with \"때까지\" stands before the verb it limits; Balanced puts it first so the request ends the sentence, while Literal keeps the Hebrew order as a trailing phrase.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -525,6 +828,36 @@
           "L": "For there is hope for a tree: \\q if it is cut down, it will sprout again, \\q and its shoots will not cease.",
           "B": "For a tree there is hope: \\q if it is cut down, it will sprout again, \\q and its new shoots will not fail.",
           "R": "At least there is hope for a tree. \\q If it is cut down, it will grow again, \\q and new shoots will keep coming."
+        },
+        "es": {
+          "L": "Porque para el árbol hay esperanza: \\q si es cortado, aún retoñará, \\q y sus brotes no cesarán.",
+          "B": "Para un árbol hay esperanza: \\q si lo cortan, vuelve a brotar, \\q y no le faltan nuevos retoños.",
+          "R": "Al menos hay esperanza para un árbol. \\q Si lo cortan, vuelve a crecer, \\q y le siguen saliendo brotes nuevos."
+        },
+        "fr": {
+          "L": "Car il y a pour l’arbre une espérance : \\q s’il est coupé, il repoussera encore, \\q et ses rejetons ne cesseront pas.",
+          "B": "Pour un arbre, il y a de l’espoir : \\q si on l’abat, il repart, \\q et ses jeunes pousses ne manquent pas.",
+          "R": "Pour un arbre, au moins, il y a de l’espoir. \\q Si on le coupe, il recommence à pousser, \\q et de nouvelles pousses continuent de sortir."
+        },
+        "sw": {
+          "L": "Kwa maana mti una tumaini: \\q hata ukikatwa, utatoa machipukizi upya, \\q wala vichipukizi vyake havitakwisha.",
+          "B": "Mti una matumaini: \\q ukikatwa, huota tena, \\q na machipukizi mapya hayaishi.",
+          "R": "Angalau mti una tumaini. \\q Ukikatwa, unakua tena, \\q na machipukizi mapya yanaendelea kutokea."
+        },
+        "vi": {
+          "L": "Vì có hy vọng cho cây: \\q nếu bị chặt, nó sẽ lại đâm chồi, \\q và chồi non của nó sẽ không dứt.",
+          "B": "Một cái cây còn có hy vọng: \\q dù bị đốn, nó vẫn nảy chồi lại, \\q và những chồi non chẳng thiếu.",
+          "R": "Ít ra một cái cây còn có hy vọng. \\q Nếu bị chặt, nó lại mọc lên, \\q và chồi non cứ tiếp tục nhú ra."
+        },
+        "ko": {
+          "L": "나무에게는 희망이 있다. \\q 베일지라도 다시 새싹을 내고, \\q 그 햇순이 그치지 않는다.",
+          "B": "나무는 그래도 희망이 있다. \\q 잘려도 다시 움이 돋고, \\q 새 가지가 끊이지 않고 자란다.",
+          "R": "적어도 나무에게는 희망이 있다. \\q 베어져도 다시 자라나고, \\q 새순이 계속 돋아난다."
+        },
+        "pt": {
+          "L": "Pois para a árvore há esperança: \\q se for cortada, ainda brotará de novo, \\q e os seus rebentos não cessarão.",
+          "B": "Para uma árvore há esperança: \\q se for cortada, tornará a brotar, \\q e não lhe faltarão novos rebentos.",
+          "R": "Para uma árvore, pelo menos, existe esperança. \\q Se ela for cortada, volta a crescer, \\q e novos brotos continuam aparecendo."
         }
       },
       "decisions": [
@@ -603,6 +936,36 @@
           "L": "Though its root grows old in the earth \\q and its stump dies in the dust,",
           "B": "Even if its root grows old in the ground \\q and its stump dies in the dust,",
           "R": "Its roots may grow old in the ground, \\q and its stump may seem dead in the dry soil,"
+        },
+        "es": {
+          "L": "Aunque envejezca en la tierra su raíz \\q y en el polvo muera su tocón,",
+          "B": "Aunque su raíz envejezca en el suelo \\q y su tronco muera en el polvo,",
+          "R": "Sus raíces pueden envejecer en la tierra, \\q y su tocón puede parecer muerto en el suelo seco,"
+        },
+        "fr": {
+          "L": "Même si sa racine vieillit dans la terre \\q et que dans la poussière meurt sa souche,",
+          "B": "Même si sa racine vieillit dans le sol \\q et que sa souche meurt dans la poussière,",
+          "R": "Ses racines peuvent vieillir dans le sol, \\q et sa souche peut sembler morte dans la terre sèche,"
+        },
+        "sw": {
+          "L": "Ingawa mzizi wake huzeeka ardhini \\q na kisiki chake hufa mavumbini,",
+          "B": "Hata kama mzizi wake utazeeka ardhini \\q na kisiki chake kufa katika mavumbi,",
+          "R": "Mizizi yake inaweza kuzeeka ardhini, \\q na kisiki chake kuonekana kimekufa katika udongo mkavu,"
+        },
+        "vi": {
+          "L": "Dù rễ nó già cỗi trong đất \\q và gốc nó chết trong bụi,",
+          "B": "Dù rễ nó già cỗi dưới đất \\q và gốc cây chết khô trong bụi,",
+          "R": "Rễ của nó có thể già đi trong đất, \\q và gốc nó có vẻ đã chết trong đất khô,"
+        },
+        "ko": {
+          "L": "그 뿌리가 땅속에서 늙고 \\q 그 그루터기가 흙 속에서 죽을지라도,",
+          "B": "그 뿌리가 땅속에서 늙고 \\q 그루터기가 흙에서 죽는다 해도,",
+          "R": "뿌리가 땅속에서 늙어 가고 \\q 그루터기가 마른 흙 속에서 죽은 것처럼 보여도,"
+        },
+        "pt": {
+          "L": "Ainda que a sua raiz envelheça na terra \\q e o seu tronco morra no pó,",
+          "B": "Mesmo que a sua raiz envelheça no chão \\q e o seu toco morra no pó,",
+          "R": "As suas raízes podem envelhecer na terra, \\q e o seu toco pode parecer morto no chão seco,"
         }
       },
       "decisions": [
@@ -683,6 +1046,36 @@
           "L": "at the scent of water it will bud \\q and put forth branches like a plant.",
           "B": "at the first scent of water it will bud \\q and put out shoots like a young plant.",
           "R": "but as soon as it smells water, it buds \\q and grows branches like a new plant."
+        },
+        "es": {
+          "L": "por el olor del agua echará brotes \\q y hará ramas como una planta.",
+          "B": "con solo oler el agua, retoña \\q y echa vástagos como un arbolito.",
+          "R": "pero en cuanto huele el agua, echa brotes \\q y le crecen ramas como a una planta joven."
+        },
+        "fr": {
+          "L": "à l’odeur de l’eau il bourgeonnera \\q et produira des branches comme un plant.",
+          "B": "dès qu’il sent l’eau, il bourgeonne \\q et fait des pousses comme un arbuste qu’on vient de planter.",
+          "R": "mais dès qu’il sent l’eau, il fait des bourgeons \\q et ses branches poussent comme celles d’une nouvelle plante."
+        },
+        "sw": {
+          "L": "kwa harufu ya maji utatoa vitumba \\q na kufanya matawi kama mmea.",
+          "B": "mara unaponusa maji huchipua \\q na kutoa machipukizi kama mmea mchanga.",
+          "R": "lakini mara tu unaponusa maji, unachipua \\q na kuota matawi kama mmea mpya."
+        },
+        "vi": {
+          "L": "gặp hơi nước nó sẽ đâm chồi \\q và trổ cành như cây [non].",
+          "B": "vừa ngửi thấy nước, nó liền nảy lộc \\q và đâm nhánh như cây non.",
+          "R": "nhưng ngay khi gặp nước, nó lại nảy lộc \\q và mọc cành như một cây mới."
+        },
+        "ko": {
+          "L": "물 냄새에 싹이 돋고 \\q 어린나무처럼 가지를 낸다.",
+          "B": "물 냄새만 맡아도 움이 트고 \\q 갓 심은 나무처럼 새 가지를 뻗는다.",
+          "R": "물기만 닿으면 곧 싹이 트고 \\q 어린나무처럼 가지가 자란다."
+        },
+        "pt": {
+          "L": "ao cheiro da água brotará \\q e lançará ramos como uma muda.",
+          "B": "ao primeiro cheiro de água ele brota \\q e solta ramos como uma planta nova.",
+          "R": "mas, assim que sente o cheiro da água, brota \\q e cria galhos como uma planta nova."
         }
       },
       "decisions": [
@@ -747,6 +1140,36 @@
           "L": "But {{gender:a mortal|a man}} dies and is laid low; \\q a human expires, and where [is] {{gender:that one|he}}?",
           "B": "But {{gender:a mortal|a man}} dies and lies powerless; \\q a human being breathes {{gender:their|his}} last, and where {{gender:are they|is he}}?",
           "R": "But we human beings die, and all our strength is gone. \\q We breathe our last, and where are we then?"
+        },
+        "es": {
+          "L": "Pero {{gender:el mortal|el hombre}} muere y queda postrado; \\q expira el ser humano, ¿y dónde [está]?",
+          "B": "Pero {{gender:el mortal|el hombre}} muere y queda sin fuerzas; \\q el ser humano da su último aliento, ¿y dónde está?",
+          "R": "Pero nosotros, los seres humanos, morimos y se nos acaba toda la fuerza. \\q Damos el último suspiro, ¿y dónde estamos entonces?"
+        },
+        "fr": {
+          "L": "Mais {{gender:le mortel|l’homme}} meurt et gît abattu ; \\q l’humain expire, et où [est]-il ?",
+          "B": "Mais {{gender:le mortel|l’homme}} meurt et reste sans force ; \\q l’être humain rend son dernier souffle, et où est-il ?",
+          "R": "Mais nous, les humains, nous mourons, et toute notre force s’en va. \\q Nous rendons notre dernier souffle, et alors, où sommes-nous ?"
+        },
+        "sw": {
+          "L": "Lakini mtu hufa na kulala chini; \\q mwanadamu hukata roho, naye yuko wapi?",
+          "B": "Lakini mtu hufa na kubaki bila nguvu; \\q mwanadamu hutoa pumzi yake ya mwisho, naye yuko wapi?",
+          "R": "Lakini sisi wanadamu tunakufa, na nguvu zetu zote zinaisha. \\q Tunavuta pumzi ya mwisho, na kisha tuko wapi?"
+        },
+        "vi": {
+          "L": "Còn con người chết đi và nằm xuống bất lực; \\q loài người tắt hơi, rồi [họ] ở đâu?",
+          "B": "Nhưng con người chết đi thì nằm đó bất lực; \\q con người trút hơi thở cuối cùng, rồi họ ở đâu?",
+          "R": "Nhưng loài người chúng con chết đi, mọi sức lực đều tiêu tan. \\q Chúng con trút hơi thở cuối cùng, rồi chúng con ở đâu?"
+        },
+        "ko": {
+          "L": "그러나 사람은 죽어 쓰러지고, \\q 인생은 숨을 거두니, 그가 어디 [있는가]?",
+          "B": "그러나 사람은 죽으면 힘없이 누워 버리고, \\q 숨을 거두고 나면 그가 어디에 있는가?",
+          "R": "그러나 우리 사람은 죽고, 모든 힘이 사라진다. \\q 마지막 숨을 거두면, 그때 우리는 어디에 있는가?"
+        },
+        "pt": {
+          "L": "Mas {{gender:o mortal|o homem}} morre e jaz abatido; \\q o ser humano expira, e onde [está] ele?",
+          "B": "Mas {{gender:o mortal|o homem}} morre e fica sem forças; \\q o ser humano dá o último suspiro, e onde está ele?",
+          "R": "Mas nós, seres humanos, morremos, e toda a nossa força se vai. \\q Damos o último suspiro, e onde estamos depois disso?"
         }
       },
       "decisions": [
@@ -841,6 +1264,36 @@
           "L": "Waters vanish from [the] sea, \\q and a river runs dry and is dried up;",
           "B": "As water vanishes from a lake \\q and a river dries up and is parched,",
           "R": "Water evaporates from a lake, \\q and a river dries up and is gone."
+        },
+        "es": {
+          "L": "Las aguas se van del mar, \\q y el río se agota y se seca;",
+          "B": "Como el agua desaparece de un lago \\q y un río se agota y queda reseco,",
+          "R": "El agua de un lago se evapora, \\q y un río se seca y desaparece."
+        },
+        "fr": {
+          "L": "Les eaux s’en vont de la mer, \\q et le fleuve tarit et se dessèche ;",
+          "B": "Comme l’eau disparaît d’un lac \\q et qu’un fleuve tarit et se dessèche,",
+          "R": "L’eau d’un lac s’évapore, \\q et un fleuve s’assèche et disparaît."
+        },
+        "sw": {
+          "L": "Maji hutoweka baharini, \\q na mto hupwa na kukauka;",
+          "B": "Kama maji yanavyotoweka ziwani \\q na mto kupwa na kukauka kabisa,",
+          "R": "Maji ya ziwa hukauka kwa jua, \\q na mto hukauka na kutoweka."
+        },
+        "vi": {
+          "L": "Nước biến khỏi biển, \\q và sông cạn và khô đi;",
+          "B": "Như nước rút khỏi hồ, \\q như dòng sông cạn kiệt và khô nứt,",
+          "R": "Nước trong hồ bốc hơi, \\q và dòng sông khô cạn rồi mất đi."
+        },
+        "ko": {
+          "L": "물이 바다에서 사라지고, \\q 강이 줄어들어 마르듯이,",
+          "B": "호수에서 물이 빠져 버리고 \\q 강이 줄어들어 바싹 마르듯이,",
+          "R": "호수의 물이 말라 버린다. \\q 강도 바싹 말라 사라진다."
+        },
+        "pt": {
+          "L": "As águas desaparecem do mar, \\q e o rio se esgota e seca;",
+          "B": "Como a água que some de um lago \\q e o rio que se esgota e seca,",
+          "R": "A água de um lago evapora, \\q e um rio seca e desaparece."
         }
       },
       "decisions": [
@@ -930,6 +1383,36 @@
           "L": "so {{gender:a person|a man}} lies down and does not rise; \\q until the heavens are no more, they will not awake, \\q and they will not be roused from their sleep.",
           "B": "so {{gender:a person|a man}} lies down and does not rise again; \\q until the heavens are gone, the dead will not awake \\q or be roused from their sleep.",
           "R": "In the same way, we lie down in death and do not get up. \\q As long as the sky is there, the dead will not wake up \\q or be stirred from their sleep."
+        },
+        "es": {
+          "L": "así {{gender:la persona|el hombre}} se acuesta y no se levanta; \\q hasta que no haya cielos, no despertarán, \\q ni serán despertados de su sueño.",
+          "B": "así {{gender:la persona|el hombre}} se acuesta y no vuelve a levantarse; \\q mientras existan los cielos, los muertos no despertarán \\q ni saldrán de su sueño.",
+          "R": "Así también nosotros nos acostamos en la muerte y no nos levantamos. \\q Mientras exista el cielo, los muertos no despertarán \\q ni nadie los sacará de su sueño."
+        },
+        "fr": {
+          "L": "ainsi {{gender:l’être humain|l’homme}} se couche et ne se relève pas ; \\q jusqu’à ce que les cieux ne soient plus, ils ne s’éveilleront pas, \\q et ils ne seront pas tirés de leur sommeil.",
+          "B": "ainsi {{gender:l’être humain|l’homme}} se couche et ne se relève plus ; \\q tant que les cieux dureront, les morts ne s’éveilleront pas \\q et ne sortiront pas de leur sommeil.",
+          "R": "De même, nous nous couchons dans la mort et nous ne nous relevons pas. \\q Tant que le ciel sera là, les morts ne se réveilleront pas \\q et personne ne les tirera de leur sommeil."
+        },
+        "sw": {
+          "L": "ndivyo mtu hulala wala hainuki; \\q mpaka mbingu zisiwepo, hawataamka, \\q wala hawataamshwa kutoka usingizini mwao.",
+          "B": "ndivyo mtu hulala chini wala hainuki tena; \\q mpaka mbingu zitoweke, wafu hawataamka \\q wala kuamshwa usingizini mwao.",
+          "R": "Vivyo hivyo tunalala katika kifo na hatuinuki. \\q Muda wote anga lipo, wafu hawataamka \\q wala kuamshwa kutoka usingizini."
+        },
+        "vi": {
+          "L": "thì con người nằm xuống và không trỗi dậy; \\q cho đến khi các tầng trời không còn, họ sẽ không thức dậy, \\q và sẽ không bị đánh thức khỏi giấc ngủ của họ.",
+          "B": "con người cũng vậy, nằm xuống rồi không trỗi dậy nữa; \\q cho đến khi trời không còn, người chết sẽ không thức giấc, \\q cũng chẳng ra khỏi giấc ngủ của mình.",
+          "R": "Chúng con cũng vậy, nằm xuống trong cõi chết và không đứng dậy. \\q Bao lâu bầu trời còn đó, người chết sẽ không thức dậy, \\q cũng không ai đánh thức họ khỏi giấc ngủ."
+        },
+        "ko": {
+          "L": "사람도 눕고 일어나지 못한다. \\q 하늘이 없어지기까지 그들은 깨지 못하고, \\q 잠에서 일으켜지지 못한다.",
+          "B": "사람도 누우면 다시 일어나지 못한다. \\q 하늘이 다할 때까지 죽은 사람들은 깨어나지 못하고 \\q 잠에서 일어나지 못한다.",
+          "R": "우리도 죽음 속에 누우면 일어나지 못한다. \\q 하늘이 있는 한 죽은 사람들은 깨어나지 못하고 \\q 누구도 그들을 잠에서 깨우지 못한다."
+        },
+        "pt": {
+          "L": "assim {{gender:o ser humano|o homem}} se deita e não se levanta; \\q até que os céus não existam [mais], não despertarão, \\q nem serão acordados do seu sono.",
+          "B": "assim {{gender:o ser humano|o homem}} se deita e não se levanta mais; \\q até que os céus desapareçam, os mortos não acordarão \\q nem serão despertados do seu sono.",
+          "R": "Do mesmo modo, nós nos deitamos na morte e não nos levantamos. \\q Enquanto o céu existir, os mortos não vão acordar \\q nem ser despertados do seu sono."
         }
       },
       "decisions": [
@@ -1057,6 +1540,36 @@
           "L": "Oh that {{deity_pronoun:you|You}} would hide me in Sheol, \\q that {{deity_pronoun:you|You}} would conceal me until {{deity_pronoun:your|Your}} anger turns back, \\q that {{deity_pronoun:you|You}} would set me a limit and remember me!",
           "B": "If only {{deity_pronoun:you|You}} would hide me in Sheol \\q and keep me out of sight until {{deity_pronoun:your|Your}} anger has passed, \\q then set a time for me and remember me!",
           "R": "I wish {{deity_pronoun:you|You}} would hide me in the grave \\q and keep me there until {{deity_pronoun:you|You}} are no longer angry. \\q Then {{deity_pronoun:you|You}} could set a time and remember me."
+        },
+        "es": {
+          "L": "¡Quién diera que en el Seol me escondieras, \\q que me ocultaras hasta que se aparte {{deity_pronoun:tu|Tu}} ira, \\q que me fijaras un plazo y {{deity_pronoun:te|Te}} acordaras de mí!",
+          "B": "¡Si tan solo me escondieras en el lugar de los muertos \\q y me guardaras oculto hasta que pase {{deity_pronoun:tu|Tu}} enojo, \\q y luego me fijaras un tiempo y {{deity_pronoun:te|Te}} acordaras de mí!",
+          "R": "Ojalá me escondieras en el lugar de los muertos \\q y me dejaras allí hasta que ya no estés enojado. \\q Entonces podrías fijar un tiempo y acordarte de mí."
+        },
+        "fr": {
+          "L": "Oh ! si {{deity_pronoun:tu|Tu}} me cachais dans le Shéol, \\q si {{deity_pronoun:tu|Tu}} m’abritais jusqu’à ce que {{deity_pronoun:ta|Ta}} colère se détourne, \\q si {{deity_pronoun:tu|Tu}} me fixais une limite et {{deity_pronoun:te|Te}} souvenais de moi !",
+          "B": "Si seulement {{deity_pronoun:tu|Tu}} me cachais dans le séjour des morts \\q et me gardais à l’abri jusqu’à ce que {{deity_pronoun:ta|Ta}} colère soit passée, \\q puis me fixais un moment et {{deity_pronoun:te|Te}} souvenais de moi !",
+          "R": "J’aimerais que {{deity_pronoun:tu|Tu}} me caches dans le séjour des morts \\q et que {{deity_pronoun:tu|Tu}} m’y gardes jusqu’à ce que {{deity_pronoun:tu|Tu}} ne sois plus en colère. \\q Ensuite {{deity_pronoun:tu|Tu}} pourrais fixer un moment et {{deity_pronoun:te|Te}} souvenir de moi."
+        },
+        "sw": {
+          "L": "Lo, kama ungenifunika Kuzimu, \\q ungenitunza mafichoni mpaka hasira {{deity_pronoun:yako|Yako}} irudi nyuma, \\q ungeniwekea kikomo kisha unikumbuke!",
+          "B": "Ningependa unifiche Kuzimu \\q na kunihifadhi mafichoni mpaka hasira {{deity_pronoun:yako|Yako}} ipite, \\q kisha uniwekee wakati na kunikumbuka!",
+          "R": "Natamani ungenificha Kuzimu \\q na kuniweka huko mpaka usiwe na hasira tena. \\q Kisha ungeweza kuweka wakati na kunikumbuka."
+        },
+        "vi": {
+          "L": "Ôi, ước gì Chúa giấu con trong Âm Phủ, \\q che khuất con cho đến khi cơn giận của {{deity_pronoun:ngài|Ngài}} nguôi đi, \\q đặt cho con một giới hạn và nhớ đến con!",
+          "B": "Ước gì Chúa giấu con trong Âm Phủ, \\q giữ con khuất mắt cho đến khi cơn giận {{deity_pronoun:ngài|Ngài}} qua đi, \\q rồi định cho con một thời hạn và nhớ lại con!",
+          "R": "Con mong Chúa giấu con trong nơi của người chết \\q và giữ con ở đó cho đến khi {{deity_pronoun:ngài|Ngài}} hết giận. \\q Rồi Chúa có thể định một thời điểm và nhớ đến con."
+        },
+        "ko": {
+          "L": "주님께서 저를 스올에 감추시고, \\q 주님의 진노가 돌아설 때까지 저를 숨기시며, \\q 저를 위해 기한을 정하시고 저를 기억해 주신다면 얼마나 좋겠습니까!",
+          "B": "주님께서 저를 스올에 숨겨 두시고, \\q 주님의 진노가 지나갈 때까지 저를 감추어 두셨다가, \\q 때를 정해 저를 기억해 주시면 좋겠습니다!",
+          "R": "주님께서 저를 죽은 사람들이 있는 곳에 숨겨 주시면 좋겠습니다. \\q 주님의 노여움이 풀리실 때까지 저를 거기 두셨다가, \\q 때를 정하셔서 저를 다시 기억해 주시면 좋겠습니다."
+        },
+        "pt": {
+          "L": "Quem dera me escondesses no Sheol, \\q me ocultasses até que se desvie a {{deity_pronoun:tua|Tua}} ira, \\q me marcasses um prazo e {{deity_pronoun:te|Te}} lembrasses de mim!",
+          "B": "Se ao menos me escondesses no mundo dos mortos \\q e me guardasses oculto até passar a {{deity_pronoun:tua|Tua}} ira, \\q e então me marcasses um prazo e {{deity_pronoun:te|Te}} lembrasses de mim!",
+          "R": "Eu queria que me escondesses no mundo dos mortos \\q e me deixasses lá até não estares mais irado. \\q Então poderias marcar um tempo e {{deity_pronoun:te|Te}} lembrar de mim."
         }
       },
       "decisions": [
@@ -1172,6 +1685,36 @@
           "L": "If {{gender:a mortal|a man}} dies, will {{gender:they|he}} live [again]? \\q All the days of my hard service I would wait, \\q until my relief should come.",
           "B": "If {{gender:a mortal|a man}} dies, will {{gender:they|he}} live again? \\q All the days of my hard service I would wait \\q until my release came.",
           "R": "If people die, will they live again? \\q I would wait through all my days of hard service \\q until my release came."
+        },
+        "es": {
+          "L": "Si {{gender:el mortal|el hombre}} muere, ¿vivirá [otra vez]? \\q Todos los días de mi servicio esperaría, \\q hasta que llegara mi relevo.",
+          "B": "Si {{gender:el mortal|el hombre}} muere, ¿volverá a vivir? \\q Todos los días de mi duro servicio esperaría \\q hasta que llegara mi liberación.",
+          "R": "Si las personas mueren, ¿vuelven a vivir? \\q Esperaría todos los días de mi duro servicio \\q hasta que llegara mi liberación."
+        },
+        "fr": {
+          "L": "Si {{gender:le mortel|l’homme}} meurt, vivra-t-il [de nouveau] ? \\q Tous les jours de mon dur service, j’attendrais, \\q jusqu’à ce que vienne ma relève.",
+          "B": "Si {{gender:le mortel|l’homme}} meurt, revivra-t-il ? \\q Tous les jours de mon dur service, j’attendrais \\q que vienne ma libération.",
+          "R": "Quand quelqu’un meurt, peut-il revivre ? \\q J’attendrais pendant tous mes jours de dur service, \\q jusqu’à ce que ma libération arrive."
+        },
+        "sw": {
+          "L": "Mtu akifa, je, ataishi [tena]? \\q Siku zote za utumishi wangu mgumu ningengoja, \\q mpaka badiliko langu lije.",
+          "B": "Mtu akifa, je, ataishi tena? \\q Siku zote za utumishi wangu mzito ningesubiri \\q mpaka kuachiliwa kwangu kufike.",
+          "R": "Watu wakifa, je, wataishi tena? \\q Ningesubiri siku zote za utumishi wangu mgumu \\q mpaka nifunguliwe."
+        },
+        "vi": {
+          "L": "Nếu con người chết, [họ] sẽ sống lại chăng? \\q Trọn những ngày lao dịch của con, con sẽ chờ đợi, \\q cho đến khi lúc con được thay phiên đến.",
+          "B": "Nếu con người chết, họ có sống lại không? \\q Suốt những ngày lao dịch nặng nhọc, con sẽ chờ đợi \\q cho đến khi con được giải phóng.",
+          "R": "Nếu người ta chết, họ có sống lại không? \\q Con sẽ chờ suốt những ngày phục dịch vất vả của con \\q cho đến khi con được tự do."
+        },
+        "ko": {
+          "L": "사람이 죽으면 [다시] 살겠습니까? \\q 제 고된 복무의 모든 날 동안 저는 기다리겠습니다, \\q 제 교대할 때가 올 때까지.",
+          "B": "사람이 죽으면 다시 살 수 있겠습니까? \\q 고된 복무의 모든 날 동안 \\q 풀려날 때가 오기까지 저는 기다리겠습니다.",
+          "R": "사람이 죽으면 다시 살아날 수 있습니까? \\q 저는 고된 일을 하는 모든 날 동안 기다리겠습니다. \\q 제가 풀려날 때가 올 때까지 말입니다."
+        },
+        "pt": {
+          "L": "Se {{gender:um mortal|um homem}} morrer, viverá [de novo]? \\q Todos os dias do meu duro serviço eu esperaria, \\q até que viesse a minha substituição.",
+          "B": "Se {{gender:um mortal|um homem}} morrer, voltará a viver? \\q Todos os dias do meu duro serviço eu esperaria, \\q até que chegasse a minha libertação.",
+          "R": "Se uma pessoa morre, será que vai viver de novo? \\q Eu esperaria durante todos os dias do meu duro serviço, \\q até chegar a hora de ser liberado."
         }
       },
       "decisions": [
@@ -1235,6 +1778,70 @@
           "reason": "The verb (yachal) is the one used in 13:15. Job would wait with expectation, not in despair.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o180140140111"
+          ],
+          "choice": "\"badiliko langu\" (my change)",
+          "alternatives": [
+            "\"faraja yangu\"",
+            "\"kuachiliwa kwangu\""
+          ],
+          "reason": "The word comes from the same root as \"sprout again\" in verse 7. Literal keeps the idea of change so that the link with the tree stays visible; Balanced and Readable say what the change means for Job, his release.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o180140140011",
+            "o180140140021",
+            "o180140140041"
+          ],
+          "choice": "Se {{gender:um mortal|um homem}} morrer, voltará a viver? (B)",
+          "alternatives": [
+            "Se o homem morre, viverá de novo?"
+          ],
+          "reason": "Drafted from the gloss as an open question (m1), with the gender setting where the English has it. \"Voltar a viver\" is the plain Portuguese for living again; \"eu esperaria\" is the verb of 13:15 (\"nele esperarei\"), so the hope of the two verses is heard together (m4).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-2",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o180140140111"
+          ],
+          "choice": "a minha substituição (L); a minha libertação (B)",
+          "alternatives": [
+            "a minha rendição",
+            "a minha mudança"
+          ],
+          "reason": "The word is the relief of a soldier on guard (m3). \"Substituição\" says that at Literal; \"rendição\", the military word, would be read as \"surrender\". Balanced says \"libertação\", as the English says \"release\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1267,6 +1874,36 @@
           "L": "You would call, and I would answer {{deity_pronoun:you|You}}; \\q for the work of {{deity_pronoun:your|Your}} hands {{deity_pronoun:you|You}} would long.",
           "B": "You would call, and I would answer {{deity_pronoun:you|You}}; \\q {{deity_pronoun:you|You}} would long for the creature {{deity_pronoun:your|Your}} hands have made.",
           "R": "You would call me, and I would answer {{deity_pronoun:you|You}}. \\q You would long to see again the one {{deity_pronoun:you|You}} made with {{deity_pronoun:your|Your}} own hands."
+        },
+        "es": {
+          "L": "Llamarías, y yo {{deity_pronoun:te|Te}} respondería; \\q a la obra de {{deity_pronoun:tus|Tus}} manos añorarías.",
+          "B": "Tú llamarías, y yo {{deity_pronoun:te|Te}} respondería; \\q {{deity_pronoun:tú|Tú}} anhelarías a la criatura que hicieron {{deity_pronoun:tus|Tus}} manos.",
+          "R": "Tú me llamarías, y yo {{deity_pronoun:te|Te}} respondería. \\q Desearías volver a ver al que {{deity_pronoun:tú|Tú}} hiciste con {{deity_pronoun:tus|Tus}} propias manos."
+        },
+        "fr": {
+          "L": "Tu appellerais, et moi je {{deity_pronoun:te|Te}} répondrais ; \\q l’œuvre de {{deity_pronoun:tes|Tes}} mains, {{deity_pronoun:tu|Tu}} la désirerais.",
+          "B": "Tu appellerais, et je {{deity_pronoun:te|Te}} répondrais ; \\q {{deity_pronoun:tu|Tu}} languirais après la créature façonnée par {{deity_pronoun:tes|Tes}} mains.",
+          "R": "Tu m’appellerais, et je {{deity_pronoun:te|Te}} répondrais. \\q Tu aurais envie de revoir celui que {{deity_pronoun:tu|Tu}} as fait de {{deity_pronoun:tes|Tes}} propres mains."
+        },
+        "sw": {
+          "L": "Ungeita, nami ningekujibu; \\q kazi ya mikono {{deity_pronoun:yako|Yako}} ungeitamani.",
+          "B": "Ungeniita, nami ningekuitikia; \\q ungekitamani kiumbe kilichofanywa na mikono {{deity_pronoun:yako|Yako}}.",
+          "R": "Ungeniita, nami ningekujibu. \\q Ungetamani kumwona tena yule uliyemuumba kwa mikono {{deity_pronoun:yako|Yako}}."
+        },
+        "vi": {
+          "L": "Chúa sẽ gọi, và con sẽ thưa với {{deity_pronoun:ngài|Ngài}}; \\q công việc của tay {{deity_pronoun:ngài|Ngài}}, {{deity_pronoun:ngài|Ngài}} sẽ mong mỏi.",
+          "B": "Chúa sẽ gọi, và con sẽ đáp lời {{deity_pronoun:ngài|Ngài}}; \\q {{deity_pronoun:ngài|Ngài}} sẽ khao khát tạo vật do tay {{deity_pronoun:ngài|Ngài}} làm ra.",
+          "R": "Chúa sẽ gọi con, và con sẽ thưa với {{deity_pronoun:ngài|Ngài}}. \\q Chúa sẽ mong được gặp lại người mà chính tay {{deity_pronoun:ngài|Ngài}} đã dựng nên."
+        },
+        "ko": {
+          "L": "주님께서 부르시면 제가 주님께 대답하겠고, \\q 주님께서는 주님 손으로 지으신 것을 그리워하실 것입니다.",
+          "B": "주님께서 부르시면 제가 대답하겠습니다. \\q 주님께서는 손수 지으신 피조물을 그리워하실 것입니다.",
+          "R": "주님께서 저를 부르시면 제가 대답하겠습니다. \\q 주님께서는 손수 만드신 저를 다시 보고 싶어 하실 것입니다."
+        },
+        "pt": {
+          "L": "Chamarias, e eu {{deity_pronoun:te|Te}} responderia; \\q da obra das {{deity_pronoun:tuas|Tuas}} mãos terias saudade.",
+          "B": "Tu chamarias, e eu {{deity_pronoun:te|Te}} responderia; \\q terias saudade da criatura que as {{deity_pronoun:tuas|Tuas}} mãos formaram.",
+          "R": "Tu me chamarias, e eu {{deity_pronoun:te|Te}} responderia. \\q Terias saudade de quem fizeste com as {{deity_pronoun:tuas|Tuas}} próprias mãos."
         }
       },
       "decisions": [
@@ -1337,6 +1974,28 @@
           "reason": "Balanced and Readable say plainly that the \"work\" is a person, Job himself (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o180140150061"
+          ],
+          "choice": "terias saudade",
+          "alternatives": [
+            "desejarias",
+            "anelarias"
+          ],
+          "reason": "The verb is the deep longing one has for home (m2). \"Ter saudade\" is exactly that in Portuguese, and it pictures God missing Job rather than hunting him.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1369,6 +2028,36 @@
           "L": "For then {{deity_pronoun:you|You}} would number my steps; \\q {{deity_pronoun:you|You}} would not keep watch over my sin.",
           "B": "Then {{deity_pronoun:you|You}} would count my steps \\q but would not keep watch over my sin.",
           "R": "Then {{deity_pronoun:you|You}} would count each step I take, \\q but {{deity_pronoun:you|You}} would not keep watching for my sins."
+        },
+        "es": {
+          "L": "Porque entonces contarías mis pasos; \\q no vigilarías mi pecado.",
+          "B": "Entonces contarías mis pasos \\q pero no estarías al acecho de mi pecado.",
+          "R": "Entonces contarías cada paso que doy, \\q pero no seguirías buscando mis pecados."
+        },
+        "fr": {
+          "L": "Car alors {{deity_pronoun:tu|Tu}} compterais mes pas ; \\q {{deity_pronoun:tu|Tu}} ne surveillerais pas mon péché.",
+          "B": "Alors {{deity_pronoun:tu|Tu}} compterais mes pas, \\q mais {{deity_pronoun:tu|Tu}} ne guetterais plus mon péché.",
+          "R": "Alors {{deity_pronoun:tu|Tu}} compterais chacun de mes pas, \\q mais {{deity_pronoun:tu|Tu}} ne serais plus à l’affût de mes fautes."
+        },
+        "sw": {
+          "L": "Kwa maana wakati huo ungehesabu hatua zangu; \\q usingeichunga dhambi yangu.",
+          "B": "Ndipo ungezihesabu hatua zangu, \\q lakini usingeiwinda dhambi yangu.",
+          "R": "Ndipo ungehesabu kila hatua ninayopiga, \\q lakini usingeendelea kuvizia dhambi zangu."
+        },
+        "vi": {
+          "L": "Vì khi ấy {{deity_pronoun:ngài|Ngài}} sẽ đếm các bước con; \\q {{deity_pronoun:ngài|Ngài}} sẽ không canh giữ tội con.",
+          "B": "Khi ấy {{deity_pronoun:ngài|Ngài}} sẽ đếm từng bước con, \\q nhưng không rình rập tội lỗi con.",
+          "R": "Khi đó Chúa sẽ đếm từng bước con đi, \\q nhưng {{deity_pronoun:ngài|Ngài}} sẽ không còn dò xét tội lỗi con nữa."
+        },
+        "ko": {
+          "L": "참으로 그때에는 주님께서 제 걸음을 세시고, \\q 제 죄를 지켜보지 않으실 것입니다.",
+          "B": "그때에는 주님께서 제 걸음을 세실지라도 \\q 제 죄를 살피지는 않으실 것입니다.",
+          "R": "그때에는 주님께서 제 걸음 하나하나를 세실 것입니다. \\q 그러나 제 죄를 계속 찾아내려 하지는 않으실 것입니다."
+        },
+        "pt": {
+          "L": "Pois então contarias os meus passos; \\q não vigiarias o meu pecado.",
+          "B": "Então contarias os meus passos, \\q mas não ficarias de olho no meu pecado.",
+          "R": "Então contarias cada passo que dou, \\q mas não ficarias vigiando os meus pecados."
         }
       },
       "decisions": [
@@ -1436,6 +2125,36 @@
           "L": "My transgression [would be] sealed up in a bag, \\q and {{deity_pronoun:you|You}} would plaster over my iniquity.",
           "B": "My offenses would be sealed up in a bag, \\q and {{deity_pronoun:you|You}} would cover over my guilt.",
           "R": "You would tie up my wrongs in a bag and seal it. \\q You would cover over my sins."
+        },
+        "es": {
+          "L": "Sellada en una bolsa [estaría] mi transgresión, \\q y recubrirías mi iniquidad.",
+          "B": "Mis ofensas quedarían selladas en una bolsa, \\q y cubrirías mi culpa.",
+          "R": "Atarías mis faltas en una bolsa y la sellarías. \\q Cubrirías mis pecados."
+        },
+        "fr": {
+          "L": "Scellée dans un sac [serait] ma transgression, \\q et {{deity_pronoun:tu|Tu}} enduirais mon iniquité.",
+          "B": "Mes offenses seraient scellées dans un sac, \\q et {{deity_pronoun:tu|Tu}} recouvrirais ma faute.",
+          "R": "Tu attacherais mes fautes dans un sac et {{deity_pronoun:tu|Tu}} le scellerais. \\q Tu recouvrirais mes péchés."
+        },
+        "sw": {
+          "L": "Kosa langu [lingetiwa] muhuri ndani ya mfuko, \\q {{deity_pronoun:nawe|Nawe}} ungeufunika uovu wangu kwa lipu.",
+          "B": "Makosa yangu yangefungwa ndani ya mfuko kwa muhuri, \\q {{deity_pronoun:nawe|Nawe}} ungeufunika uovu wangu.",
+          "R": "Ungeyafunga makosa yangu ndani ya mfuko na kuutia muhuri. \\q Ungezifunika dhambi zangu."
+        },
+        "vi": {
+          "L": "Sự vi phạm của con [sẽ] bị niêm phong trong túi, \\q và {{deity_pronoun:ngài|Ngài}} sẽ trát kín tội ác con.",
+          "B": "Những lỗi lầm của con sẽ được niêm kín trong túi, \\q và {{deity_pronoun:ngài|Ngài}} sẽ che phủ tội con.",
+          "R": "Chúa sẽ buộc những điều sai trái của con vào túi và niêm lại. \\q Chúa sẽ che lấp tội lỗi con."
+        },
+        "ko": {
+          "L": "제 허물이 자루 속에 봉인되고, \\q 주님께서 제 죄악을 덧발라 덮으실 것입니다.",
+          "B": "제 허물은 자루에 넣어 봉해지고, \\q 주님께서 제 죄를 덮어 주실 것입니다.",
+          "R": "주님께서 제 잘못을 자루에 넣고 묶어 봉하실 것입니다. \\q 제 죄를 덮어 주실 것입니다."
+        },
+        "pt": {
+          "L": "A minha transgressão [estaria] selada num saco, \\q e rebocarias a minha iniquidade.",
+          "B": "As minhas ofensas estariam seladas num saco, \\q e encobririas a minha culpa.",
+          "R": "Amarrarias as minhas faltas num saco e o selarias. \\q Cobririas os meus pecados."
         }
       },
       "decisions": [
@@ -1491,6 +2210,25 @@
           "reason": "Balanced and Readable use the more general \"cover over\"; Literal keeps the picture of plaster.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o180140170042"
+          ],
+          "choice": "rebocarias",
+          "alternatives": [
+            "cobririas"
+          ],
+          "reason": "The verb is the one of 13:4, rendered there \"rebocadores de mentiras\" (m2); Literal keeps the plaster picture so the link is heard. Balanced and Readable say \"encobrir\", \"cobrir\", as the English says \"cover over\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1524,6 +2262,36 @@
           "L": "But a mountain falls [and] crumbles away, \\q and a rock is moved from its place;",
           "B": "But as a mountain falls and crumbles away, \\q and a rock is moved from its place,",
           "R": "But even mountains fall and crumble, \\q and rocks are moved from their place."
+        },
+        "es": {
+          "L": "Pero el monte que cae se desmorona, \\q y la roca se mueve de su lugar;",
+          "B": "Pero así como un monte cae y se desmorona, \\q y una roca es arrancada de su lugar,",
+          "R": "Pero hasta los montes caen y se desmoronan, \\q y las rocas se mueven de su sitio."
+        },
+        "fr": {
+          "L": "Mais la montagne tombe [et] s’effrite, \\q et le rocher est déplacé de son lieu ;",
+          "B": "Mais comme une montagne tombe et s’écroule, \\q comme un rocher est arraché de sa place,",
+          "R": "Pourtant, même les montagnes tombent et s’effritent, \\q et les rochers sont déplacés."
+        },
+        "sw": {
+          "L": "Lakini mlima ukianguka huporomoka, \\q na mwamba huondolewa mahali pake;",
+          "B": "Lakini kama mlima unavyoanguka na kubomoka, \\q na mwamba kuondolewa mahali pake,",
+          "R": "Lakini hata milima huanguka na kubomoka, \\q na miamba huhamishwa mahali pake."
+        },
+        "vi": {
+          "L": "Nhưng núi đổ xuống [thì] tan rã, \\q và tảng đá bị dời khỏi chỗ nó;",
+          "B": "Nhưng như núi sụp đổ rồi tan vụn, \\q như tảng đá bị dời khỏi chỗ của nó,",
+          "R": "Nhưng ngay cả núi cũng sụp đổ và vỡ vụn, \\q và đá cũng bị dời khỏi chỗ."
+        },
+        "ko": {
+          "L": "그러나 산도 무너져 부스러지고, \\q 바위도 제자리에서 옮겨지며,",
+          "B": "그러나 산이 무너져 허물어지고 \\q 바위가 제자리에서 밀려나듯이,",
+          "R": "그러나 산조차 무너져 부서지고 \\q 바위도 제자리에서 밀려난다."
+        },
+        "pt": {
+          "L": "Mas o monte cai [e] se desfaz, \\q e a rocha se move do seu lugar;",
+          "B": "Mas, assim como o monte cai e se desfaz, \\q e a rocha é removida do seu lugar,",
+          "R": "Mas até os montes caem e se desmancham, \\q e as rochas saem do lugar."
         }
       },
       "decisions": [
@@ -1609,6 +2377,36 @@
           "L": "waters wear away stones; \\q its torrents wash away the dust of the land; \\q and the hope of a mortal {{deity_pronoun:you|You}} destroy.",
           "B": "as water wears away stones \\q and floods wash away the soil of the land, \\q so {{deity_pronoun:you|You}} destroy the hope of mortals.",
           "R": "Water wears stones down, \\q and floods wash away the soil. \\q In the same way {{deity_pronoun:you|You}} destroy all our hope."
+        },
+        "es": {
+          "L": "las aguas desgastan las piedras; \\q sus torrentes arrastran el polvo de la tierra; \\q y la esperanza del mortal {{deity_pronoun:tú|Tú}} destruyes.",
+          "B": "como el agua desgasta las piedras \\q y las crecidas arrastran el suelo de la tierra, \\q así {{deity_pronoun:tú|Tú}} destruyes la esperanza de los mortales.",
+          "R": "El agua desgasta las piedras, \\q y las inundaciones se llevan la tierra. \\q De la misma manera {{deity_pronoun:tú|Tú}} destruyes toda nuestra esperanza."
+        },
+        "fr": {
+          "L": "les eaux usent les pierres ; \\q ses torrents emportent la poussière de la terre ; \\q et l’espérance du mortel, {{deity_pronoun:tu|Tu}} la détruis.",
+          "B": "comme l’eau use les pierres \\q et que les crues emportent la terre du pays, \\q ainsi {{deity_pronoun:tu|Tu}} détruis l’espérance des mortels.",
+          "R": "L’eau use les pierres, \\q et les inondations emportent la terre. \\q De la même façon, {{deity_pronoun:tu|Tu}} détruis tout notre espoir."
+        },
+        "sw": {
+          "L": "maji huyachakaza mawe; \\q mafuriko yake huyachukua mavumbi ya nchi; \\q {{deity_pronoun:nawe|Nawe}} tumaini la mwanadamu unaliangamiza.",
+          "B": "kama maji yanavyomomonyoa mawe \\q na mafuriko kuuchukua udongo wa nchi, \\q ndivyo {{deity_pronoun:wewe|Wewe}} unavyoliangamiza tumaini la wanadamu.",
+          "R": "Maji humomonyoa mawe, \\q na mafuriko huuchukua udongo. \\q Vivyo hivyo {{deity_pronoun:wewe|Wewe}} unaliangamiza tumaini letu lote."
+        },
+        "vi": {
+          "L": "nước mài mòn đá; \\q lũ của nó cuốn trôi bụi đất; \\q và hy vọng của loài người, {{deity_pronoun:ngài|Ngài}} hủy diệt.",
+          "B": "như nước làm mòn đá, \\q như lũ lụt cuốn đi đất đai trong xứ, \\q thì {{deity_pronoun:ngài|Ngài}} cũng hủy diệt hy vọng của loài người.",
+          "R": "Nước làm mòn đá, \\q lũ lụt cuốn trôi đất. \\q Chúa cũng hủy diệt mọi hy vọng của chúng con như vậy."
+        },
+        "ko": {
+          "L": "물은 돌을 닳게 하고, \\q 그 큰물은 땅의 흙을 씻어 간다. \\q 그리고 사람의 희망을 주님께서 없애십니다.",
+          "B": "물이 돌을 닳게 하고 \\q 큰물이 땅의 흙을 쓸어 가듯이, \\q 주님께서는 사람의 희망을 꺾어 버리십니다.",
+          "R": "물이 돌을 깎아 낸다. \\q 홍수가 흙을 쓸어 간다. \\q 그처럼 주님께서는 저희의 모든 희망을 없애 버리십니다."
+        },
+        "pt": {
+          "L": "as águas desgastam as pedras; \\q as suas enxurradas levam o pó da terra; \\q e a esperança do mortal {{deity_pronoun:tu|Tu}} destróis.",
+          "B": "assim como a água desgasta as pedras \\q e as enchentes arrastam o solo da terra, \\q assim {{deity_pronoun:tu|Tu}} destróis a esperança dos mortais.",
+          "R": "A água vai gastando as pedras, \\q e as enchentes levam embora a terra. \\q Do mesmo jeito, {{deity_pronoun:tu|Tu}} destróis toda a nossa esperança."
         }
       },
       "decisions": [
@@ -1713,6 +2511,36 @@
           "L": "You overpower {{gender:them|him}} forever, and {{gender:they pass|he passes}} away; \\q {{deity_pronoun:you|You}} change {{gender:their|his}} face and send {{gender:them|him}} away.",
           "B": "You overpower {{gender:them|him}} once for all, and {{gender:they are|he is}} gone; \\q {{deity_pronoun:you|You}} change {{gender:their|his}} face in death and send {{gender:them|him}} away.",
           "R": "You overpower us for good, and we pass away. \\q You change how we look in death and send us away."
+        },
+        "es": {
+          "L": "Lo vences para siempre, y se va; \\q cambias su rostro y lo despides.",
+          "B": "Lo dominas de una vez por todas, y se va; \\q le cambias el rostro en la muerte y lo despides.",
+          "R": "Nos vences para siempre, y desaparecemos. \\q Cambias nuestro aspecto en la muerte y nos despides."
+        },
+        "fr": {
+          "L": "Tu le terrasses pour toujours, et il s’en va ; \\q {{deity_pronoun:tu|Tu}} altères son visage et {{deity_pronoun:tu|Tu}} le renvoies.",
+          "B": "Tu le terrasses une fois pour toutes, et il s’en va ; \\q {{deity_pronoun:tu|Tu}} changes son visage dans la mort et {{deity_pronoun:tu|Tu}} le renvoies.",
+          "R": "Tu nous terrasses pour de bon, et nous disparaissons. \\q Tu changes notre visage dans la mort et {{deity_pronoun:tu|Tu}} nous renvoies."
+        },
+        "sw": {
+          "L": "Wamshinda milele, naye huenda zake; \\q wabadilisha uso wake na kumfukuza.",
+          "B": "Unamshinda mara moja tu, naye anatoweka; \\q unabadilisha uso wake katika kifo na kumwondoa.",
+          "R": "Unatushinda kabisa, nasi tunatoweka. \\q Unabadilisha sura zetu katika kifo na kutuondoa."
+        },
+        "vi": {
+          "L": "Ngài áp đảo họ mãi mãi, và họ ra đi; \\q {{deity_pronoun:ngài|Ngài}} đổi mặt họ và đuổi họ đi.",
+          "B": "Ngài đánh bại con người một lần đủ cả, và họ qua đời; \\q {{deity_pronoun:ngài|Ngài}} làm biến đổi mặt họ trong sự chết rồi đuổi họ đi.",
+          "R": "Chúa áp đảo chúng con mãi mãi, và chúng con qua đời. \\q Chúa làm biến dạng gương mặt chúng con trong cõi chết rồi đuổi chúng con đi."
+        },
+        "ko": {
+          "L": "주님께서 그를 영원히 이기시니 그가 떠나가고, \\q 그의 얼굴을 변하게 하시고 그를 보내십니다.",
+          "B": "주님께서 그를 단번에 꺾으시니 그가 사라지고, \\q 죽음 속에서 그의 얼굴을 바꾸시고 그를 떠나보내십니다.",
+          "R": "주님께서 저희를 영원히 이기시니 저희는 사라집니다. \\q 죽음 속에서 저희 모습을 바꾸시고 저희를 떠나보내십니다."
+        },
+        "pt": {
+          "L": "Tu o vences para sempre, e ele se vai; \\q mudas o seu rosto e o despedes.",
+          "B": "Tu o vences de uma vez por todas, e ele se vai; \\q mudas o seu rosto na morte e o mandas embora.",
+          "R": "Tu nos vences de vez, e nós morremos. \\q Mudas a nossa aparência na morte e nos mandas embora."
         }
       },
       "decisions": [
@@ -1815,6 +2643,36 @@
           "L": "{{gender:Their children|His sons}} are honored, and {{gender:they do|he does}} not know [it]; \\q [the children] are brought low, and {{gender:they do|he does}} not perceive it.",
           "B": "{{gender:Their children|His sons}} may rise to honor, but {{gender:they never know|he never knows}} it; \\q {{gender:their children|his sons}} may sink low, but {{gender:they do|he does}} not see it.",
           "R": "Our children may be honored, but we will never know it. \\q They may be disgraced, but we will not see it."
+        },
+        "es": {
+          "L": "Sus hijos son honrados, y él no [lo] sabe; \\q son humillados, y él no lo percibe.",
+          "B": "Sus hijos pueden llegar a ser honrados, pero él nunca lo sabe; \\q sus hijos pueden caer muy bajo, pero él no lo ve.",
+          "R": "Nuestros hijos pueden recibir honra, pero nunca lo sabremos. \\q Pueden caer en deshonra, pero no lo veremos."
+        },
+        "fr": {
+          "L": "{{gender:Ses enfants|Ses fils}} sont honorés, et il ne [le] sait pas ; \\q ils sont abaissés, et il ne s’en aperçoit pas.",
+          "B": "{{gender:Ses enfants|Ses fils}} peuvent être honorés, il n’en saura jamais rien ; \\q {{gender:ses enfants|ses fils}} peuvent tomber bien bas, il ne le voit pas.",
+          "R": "Nos enfants peuvent être honorés, mais nous n’en saurons jamais rien. \\q Ils peuvent être humiliés, mais nous ne le verrons pas."
+        },
+        "sw": {
+          "L": "Wanawe huheshimiwa, naye hajui; \\q hushushwa chini, naye hatambui.",
+          "B": "Wanawe huenda wakapata heshima, lakini yeye hajui kamwe; \\q wanawe huenda wakadhalilika, lakini yeye haoni.",
+          "R": "Watoto wetu wanaweza kuheshimiwa, lakini hatutajua kamwe. \\q Wanaweza kudharauliwa, lakini hatutaona."
+        },
+        "vi": {
+          "L": "{{gender:Con cái|Con trai}} họ được tôn trọng, mà họ không biết; \\q [con cái] bị hạ thấp, mà họ không nhận ra.",
+          "B": "{{gender:Con cái|Con trai}} họ có thể được vinh hiển, nhưng họ không hề biết; \\q {{gender:con cái|con trai}} họ có thể bị sa sút, nhưng họ cũng chẳng thấy.",
+          "R": "Con cái chúng con có thể được tôn trọng, nhưng chúng con không bao giờ biết. \\q Chúng có thể bị khinh khi, nhưng chúng con không thấy."
+        },
+        "ko": {
+          "L": "그의 {{gender:자녀들|아들들}}이 존귀하게 되어도 그는 알지 못하고, \\q 비천하게 되어도 그는 깨닫지 못한다.",
+          "B": "그의 {{gender:자녀들|아들들}}이 영예를 얻어도 그는 결코 알지 못하고, \\q 그 {{gender:자녀들|아들들}}이 낮아져도 그는 보지 못한다.",
+          "R": "우리 자녀들이 존경을 받아도 우리는 그것을 알지 못한다. \\q 자녀들이 멸시를 받아도 우리는 보지 못한다."
+        },
+        "pt": {
+          "L": "Os seus filhos são honrados, e ele não [o] sabe; \\q [os filhos] são rebaixados, e ele não o percebe.",
+          "B": "Os filhos dele podem alcançar honra, mas ele nunca vai saber; \\q os filhos dele podem cair na humilhação, mas ele não vai ver.",
+          "R": "Os nossos filhos podem ser honrados, mas nós nunca vamos saber. \\q Eles podem ser humilhados, mas não vamos ver."
         }
       },
       "decisions": [
@@ -1882,6 +2740,46 @@
           "reason": "Literal and Balanced repeat the children as the subject of the second line, so that it is clear who is brought low and who does not see it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o180140210021"
+          ],
+          "choice": "\"sus hijos\" with no gender span",
+          "alternatives": [
+            "a gender span \"sus hijos / sus hijos varones\""
+          ],
+          "reason": "Spanish \"hijos\" already covers sons and daughters, so the setting has nothing to change here, unlike the English \"their children / his sons\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o180140210021"
+          ],
+          "choice": "\"wanawe\" with no gender span",
+          "alternatives": [
+            "\"wanawe wa kiume\""
+          ],
+          "reason": "Swahili \"wana\" covers sons and daughters alike, so there is no second wording for the setting to choose.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1916,6 +2814,36 @@
           "L": "Only {{gender:their own flesh feels pain for them|his own flesh feels pain for him}}, \\q and {{gender:their soul mourns for them|his soul mourns for him}}.",
           "B": "{{gender:They feel only the pain of their own body|He feels only the pain of his own body}}; \\q {{gender:they mourn only for themselves|he mourns only for himself}}.",
           "R": "We feel only the pain of our own bodies, \\q and we mourn only for ourselves."
+        },
+        "es": {
+          "L": "Solo su propia carne le duele, \\q y su alma por él se lamenta.",
+          "B": "Solo siente el dolor de su propio cuerpo; \\q solo hace duelo por sí mismo.",
+          "R": "Solo sentimos el dolor de nuestro propio cuerpo, \\q y solo lloramos por nosotros mismos."
+        },
+        "fr": {
+          "L": "Seule sa propre chair souffre pour lui, \\q et son âme est en deuil pour lui.",
+          "B": "Il ne ressent que la douleur de son propre corps ; \\q il ne pleure que sur lui-même.",
+          "R": "Nous ne sentons que la douleur de notre propre corps, \\q et nous ne pleurons que sur nous-mêmes."
+        },
+        "sw": {
+          "L": "Mwili wake tu humuuma, \\q na nafsi yake huomboleza kwa ajili yake.",
+          "B": "Huhisi maumivu ya mwili wake tu; \\q huomboleza kwa ajili yake mwenyewe tu.",
+          "R": "Tunahisi maumivu ya miili yetu tu, \\q na tunajililia sisi wenyewe tu."
+        },
+        "vi": {
+          "L": "Chỉ xác thịt của chính họ đau đớn cho họ, \\q và linh hồn họ than khóc cho họ.",
+          "B": "Họ chỉ cảm thấy nỗi đau của thân xác mình; \\q họ chỉ than khóc cho chính mình.",
+          "R": "Chúng con chỉ cảm thấy nỗi đau của thân thể mình, \\q và chỉ than khóc cho chính mình."
+        },
+        "ko": {
+          "L": "오직 자기 육신만이 그를 위해 아파하고, \\q 자기 영혼만이 그를 위해 슬퍼한다.",
+          "B": "그는 오직 자기 몸의 아픔만 느끼고, \\q 오직 자기 자신을 위해서만 슬퍼한다.",
+          "R": "우리는 우리 몸의 아픔만 느끼고, \\q 우리 자신만을 위해 슬퍼한다."
+        },
+        "pt": {
+          "L": "Somente a sua própria carne lhe dói, \\q e a sua alma chora por ele.",
+          "B": "Ele sente apenas a dor do próprio corpo; \\q chora apenas por si mesmo.",
+          "R": "Sentimos só a dor do nosso próprio corpo \\q e choramos só por nós mesmos."
         }
       },
       "decisions": [

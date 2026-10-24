@@ -97,10 +97,11 @@ the translation.
 ## Fonts
 
 The reading text and Greek are set in Gentium Book Plus, Copyright (c)
-2003–2022 SIL International, and Hebrew in Noto Serif Hebrew, Copyright 2022
-The Noto Project Authors. Headings are set in Fraunces, Copyright 2020 The
+2003–2022 SIL International, Hebrew in Noto Serif Hebrew, Copyright 2022
+The Noto Project Authors, and Amharic in Noto Serif Ethiopic and Noto Sans
+Ethiopic, Copyright 2022 The Noto Project Authors. Headings are set in Fraunces, Copyright 2020 The
 Fraunces Project Authors, and the interface in Hanken Grotesk, Copyright 2021
 The Hanken Grotesk Project Authors. Readers can choose Atkinson Hyperlegible
 for the reading text, Copyright 2020 Braille Institute of America, Inc. All
-five are licensed under the SIL Open Font License 1.1; the licences are in
+seven are licensed under the SIL Open Font License 1.1; the licences are in
 `web/fonts/`.

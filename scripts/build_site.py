@@ -5,7 +5,7 @@ Usage: python3 scripts/build_site.py [-o DIR]
 Needs only the repository: the Greek words come from the committed extracts
 in data/grc/ (see scripts/extract_tokens.py), so a deploy never fetches the
 full sources. Every page is built in each interface language: English at
-the root, the others under their codes (/es/, /fr/, /sw/, /vi/, /ko/).
+the root, the others under their codes (/es/, /fr/, /sw/, /vi/, /ko/, /am/).
 """
 import argparse
 import base64

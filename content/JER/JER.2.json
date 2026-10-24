@@ -51,6 +51,11 @@
           "L": "{{divine_name:주|야훼}}의 말씀이 나에게 임하여 말씀하셨다.",
           "B": "{{divine_name:주|야훼}}의 말씀이 나에게 임했다.",
           "R": "{{divine_name:주|야훼}}께서 나에게 이 말씀을 주셨다."
+        },
+        "pt": {
+          "L": "A palavra {{divine_name:do SENHOR|de Javé}} veio a mim, dizendo:",
+          "B": "A palavra {{divine_name:do SENHOR|de Javé}} veio a mim:",
+          "R": "{{divine_name:O SENHOR|Javé}} me deu esta mensagem:"
         }
       },
       "decisions": [
@@ -182,6 +187,11 @@
           "L": "가서 예루살렘의 귀에 외쳐 말하여라. {{divine_name:주|야훼}}께서 이와 같이 말씀하신다. \\q 나는 너를 위하여 네 젊은 시절의 한결같은 사랑과 \\q 네 신부 시절의 사랑을 기억한다. \\q 네가 광야에서, \\q 씨 뿌리지 않은 땅에서 나를 따라오던 것을 [기억한다].",
           "B": "가서 예루살렘이 듣도록 외쳐라. {{divine_name:주|야훼}}께서 이렇게 말씀하신다. \\q 나는 네 젊은 시절의 한결같은 사랑을 기억한다. \\q 네가 신부처럼 나를 사랑하던 것, \\q 광야를 지나며, \\q 아무것도 심지 않은 땅을 지나며 나를 따라오던 것을 기억한다.",
           "R": "가서 예루살렘 사람들에게 이것을 알려라. {{divine_name:주|야훼}}께서 하시는 말씀이다. \\q 나는 네가 젊었을 때 나에게 보여 준 변함없는 사랑을 기억한다. \\q 너는 신부처럼 나를 사랑했다. \\q 너는 광야를 지나며 나를 따라왔다. \\q 곡식을 심지 않은 땅을 지나며 나를 따라왔다."
+        },
+        "pt": {
+          "L": "Vai e proclama aos ouvidos de Jerusalém, dizendo: Assim diz {{divine_name:o SENHOR|Javé}}: \\q Eu {{deity_pronoun:me|Me}} lembro, a teu favor, do amor leal da tua juventude, \\q do amor do teu tempo de noiva, \\q de quando andavas atrás de {{deity_pronoun:mim|Mim}} no deserto, \\q numa terra não semeada.",
+          "B": "Vai e grita de modo que Jerusalém ouça: Assim diz {{divine_name:o SENHOR|Javé}}: \\q Eu {{deity_pronoun:me|Me}} lembro do amor leal da tua juventude, \\q de como {{deity_pronoun:me|Me}} amavas como noiva, \\q de como foste atrás de {{deity_pronoun:mim|Mim}} pelo deserto, \\q por uma terra onde nada se semeava.",
+          "R": "Vai e anuncia isto ao povo de Jerusalém. É isto que {{divine_name:o SENHOR|Javé}} diz: \\q Eu {{deity_pronoun:me|Me}} lembro do amor fiel que tu {{deity_pronoun:me|Me}} mostraste quando eras jovem. \\q Tu {{deity_pronoun:me|Me}} amavas como uma noiva. \\q Tu {{deity_pronoun:me|Me}} seguiste pelo deserto, \\q por uma terra onde não se plantava nada."
         }
       },
       "decisions": [
@@ -500,6 +510,54 @@
           "reason": "*ḥesed* keeps the wording of the Psalms at each level through Jeremiah.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o240020020102",
+            "o240020020122",
+            "o240020020142",
+            "o240020020152"
+          ],
+          "choice": "tu, teu, tua, with feminine agreement (God to Jerusalem and Israel as a woman, chapters 2-3)",
+          "alternatives": [
+            "vocês",
+            "você"
+          ],
+          "reason": "For the whole book: where God speaks to Jerusalem, Judah or Israel as one woman, his bride (m2) and then his unfaithful wife (2:16-25, 33-37; 3:1-5, 12-14, 19-20), the Hebrew uses the feminine singular, and Portuguese says \"tu\" at every level, as Isaiah 1:21-26 does for the city, with feminine agreement wherever Portuguese marks it (\"contaminada\", 2:23; \"envergonhada\", 2:36; \"possuída\", 3:2; \"atrevida\", 3:3). Where the Hebrew turns to the plural, to the people as a group (2:4-12, 29-31; 3:14, 22), Portuguese says \"vocês\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-2",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240020020031",
+            "o240020020032",
+            "o240020020111"
+          ],
+          "choice": "Assim diz o SENHOR (L, B); É isto que o SENHOR diz (R); amor leal (L, B), amor fiel (R)",
+          "alternatives": [
+            "O SENHOR diz isto (B)"
+          ],
+          "reason": "The messenger formula keeps the wording 1:8 sets for the book after Isaiah 7:7 (r-pt-1 there): \"Assim diz o SENHOR\" at Literal and Balanced, \"É isto que o SENHOR diz\" at Readable; the English Balanced's \"The LORD says this\" has no better Portuguese than the familiar formula. For the whole book, hesed (m1) is \"amor leal\" at Literal and Balanced and \"amor fiel\" at Readable, as Isaiah 54:8 and the Psalms have it.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -564,6 +622,11 @@
           "L": "이스라엘은 {{divine_name:주|야훼}}에게 거룩한 것, \\q 그의 수확의 첫 열매였다. \\q 그것을 삼키는 자는 모두 죄를 짓게 되었고, \\q 재앙이 그들에게 닥쳤다. {{divine_name:주|야훼}}의 선언이다.",
           "B": "이스라엘은 {{divine_name:주|야훼}}에게 거룩하게 구별된 백성, \\q 그가 거두는 수확의 첫 몫이었다. \\q 누구든지 그것을 먹는 자는 죄가 있다고 여겨졌고, \\q 재앙이 그들에게 닥쳤다. {{divine_name:주|야훼}}가 말한다.",
           "R": "이스라엘 백성은 오직 {{divine_name:주|야훼}}의 것이었다. \\q 그들은 그가 거두는 수확의 첫 부분과 같았다. \\q 누구든지 그들을 해치려는 사람은 죄가 있었고, \\q 재앙이 그런 사람들에게 닥쳤다. {{divine_name:주|야훼}}가 말한다."
+        },
+        "pt": {
+          "L": "Israel [era] santo para {{divine_name:o SENHOR|Javé}}, \\q as primícias da {{deity_pronoun:sua|Sua}} colheita; \\q todos os que o devoravam eram tidos por culpados; \\q a desgraça vinha sobre eles, declara {{divine_name:o SENHOR|Javé}}.",
+          "B": "Israel era separado como santo para {{divine_name:o SENHOR|Javé}}, \\q a primeira parte da {{deity_pronoun:sua|Sua}} colheita. \\q Quem comia dela era tido por culpado, \\q e a desgraça caía sobre ele, declara {{divine_name:o SENHOR|Javé}}.",
+          "R": "O povo de Israel pertencia somente {{divine_name:ao SENHOR|a Javé}}. \\q Eles eram como a primeira parte da {{deity_pronoun:sua|Sua}} colheita. \\q Quem tentava fazer mal a eles era culpado, \\q e a desgraça caía sobre quem fazia isso, diz {{divine_name:o SENHOR|Javé}}."
         }
       },
       "decisions": [
@@ -725,6 +788,11 @@
           "L": "{{divine_name:주|야훼}}의 말씀을 들어라, 야곱의 집아, \\q 이스라엘 집의 모든 족속아.",
           "B": "야곱의 집아, {{divine_name:주|야훼}}의 말씀을 들어라. \\q 이스라엘 집의 모든 족속아, 들어라.",
           "R": "야곱의 자손들아, {{divine_name:주|야훼}}께서 하시는 말씀을 들어라. \\q 이스라엘 백성의 모든 가문들아, 들어라."
+        },
+        "pt": {
+          "L": "Ouçam a palavra {{divine_name:do SENHOR|de Javé}}, casa de Jacó, \\q e todos os clãs da casa de Israel.",
+          "B": "Ouçam a palavra {{divine_name:do SENHOR|de Javé}}, casa de Jacó, \\q todos vocês, clãs da casa de Israel.",
+          "R": "Escutem a mensagem {{divine_name:do SENHOR|de Javé}}, descendentes de Jacó, \\q todas as famílias do povo de Israel."
         }
       },
       "decisions": [
@@ -926,6 +994,11 @@
           "L": "{{divine_name:주|야훼}}께서 이와 같이 말씀하신다. 너희 조상들이 내게서 무슨 불의를 찾았기에 \\q 나에게서 멀리 떠나 \\q 헛된 우상들을 따라가서 헛되게 되었느냐?",
           "B": "{{divine_name:주|야훼}}께서 이렇게 말씀하신다. 너희 조상들이 나에게서 무슨 잘못을 찾았기에 \\q 나에게서 그토록 멀리 떠나, \\q 헛된 우상들을 따라가다가 자기들도 헛것이 되었느냐?",
           "R": "{{divine_name:주|야훼}}께서 하시는 말씀이다. 너희 조상들은 내가 자기들에게 잘못했다고 생각했나 보다. \\q 그렇지 않다면 어찌 나에게서 그렇게 멀리 떠났겠느냐? \\q 그들은 쓸모없는 우상들을 따라가다가 자기들도 쓸모없게 되었다."
+        },
+        "pt": {
+          "L": "Assim diz {{divine_name:o SENHOR|Javé}}: Que injustiça os pais de vocês acharam em {{deity_pronoun:mim|Mim}}, \\q para que se afastassem de {{deity_pronoun:mim|Mim}} \\q e andassem atrás de ídolos inúteis e se tornassem inúteis?",
+          "B": "Assim diz {{divine_name:o SENHOR|Javé}}: Que mal os antepassados de vocês acharam em {{deity_pronoun:mim|Mim}}, \\q para irem tão longe de {{deity_pronoun:mim|Mim}} \\q e seguirem ídolos inúteis, tornando-se inúteis eles mesmos?",
+          "R": "É isto que {{divine_name:o SENHOR|Javé}} diz: Os antepassados de vocês devem ter pensado que eu os tinha tratado mal. \\q Por que outra razão iriam para tão longe de {{deity_pronoun:mim|Mim}}? \\q Eles seguiram ídolos sem valor e eles mesmos ficaram sem valor."
         }
       },
       "decisions": [
@@ -1139,6 +1212,28 @@
           "reason": "The Hebrew plays on one word, *hevel*, for the idols and for what their worshipers become; Korean repeats one word at each level to keep the play.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240020050142",
+            "o240020050152"
+          ],
+          "choice": "ídolos inúteis ... se tornassem inúteis (L, B); ídolos sem valor ... ficaram sem valor (R)",
+          "alternatives": [
+            "coisas vãs ... se tornaram vãos"
+          ],
+          "reason": "The phrase is the one 2 Kings 17:15 uses (m2), and each level takes the words that verse has in Portuguese, repeating one word for the noun and the verb, so that the people are seen to become like what they worship.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1226,6 +1321,11 @@
           "L": "그들은 말하지 않았다. \"{{divine_name:주|야훼}}께서 어디 계시냐? \\q 우리를 이집트 땅에서 이끌어 올리신 분, \\q 우리를 광야에서, \\q 사막과 구덩이의 땅에서, \\q 가뭄과 깊은 어둠의 땅에서, \\q 아무도 지나가지 않고 사람이 살지 않는 땅에서 인도하신 분이 [어디 계시냐]?\"",
           "B": "그들은 묻지 않았다. \"{{divine_name:주|야훼}}께서 어디 계시냐? \\q 우리를 이집트 땅에서 이끌어 내신 분, \\q 광야에서 우리를 인도하신 분, \\q 사막의 벌판과 구덩이가 많은 땅, \\q 가뭄과 짙은 어둠의 땅, \\q 아무도 건너지 않고 아무도 살지 않는 땅을 지나게 하신 분이 어디 계시냐?\"",
           "R": "그들은 한 번도 묻지 않았다. \"{{divine_name:주|야훼}}께서는 어디 계시냐? \\q 그분은 우리를 이집트에서 이끌어 내셨다. \\q 그분은 우리를 이끌고 광야를 지나셨다. \\q 구덩이가 가득한 메마른 땅, \\q 메마르고 어두운 땅, \\q 아무도 다니지 않고 아무도 살지 않는 땅을 지나게 하셨다.\""
+        },
+        "pt": {
+          "L": "E eles não disseram: \"Onde [está] {{divine_name:o SENHOR|Javé}}, \\q que nos fez subir da terra do Egito, \\q que nos conduziu no deserto, \\q numa terra de ermo e de covas, \\q numa terra de seca e de trevas profundas, \\q numa terra por onde ninguém passou e onde nenhum ser humano morou?\"",
+          "B": "Eles não perguntaram: \"Onde está {{divine_name:o SENHOR|Javé}}, \\q aquele que nos tirou da terra do Egito, \\q que nos guiou no deserto, \\q por uma terra de planícies desertas e de covas, \\q uma terra de seca e de escuridão profunda, \\q uma terra que ninguém atravessa e onde ninguém mora?\"",
+          "R": "Eles nunca perguntaram: \"Onde está {{divine_name:o SENHOR|Javé}}? \\q Ele nos tirou do Egito. \\q Ele nos guiou pelo deserto, \\q por uma terra seca e cheia de buracos, \\q uma terra seca e escura, \\q onde ninguém viaja e ninguém mora.\""
         }
       },
       "decisions": [
@@ -1406,6 +1506,11 @@
           "L": "나는 너희를 과수원의 땅으로 데려와 \\q 그 열매와 그 좋은 것들을 먹게 했다. \\q 그런데 너희는 들어와서 내 땅을 더럽혔고, \\q 내 유업을 가증한 것으로 만들었다.",
           "B": "내가 너희를 과수원이 우거진 땅으로 데려와 \\q 그 열매와 좋은 것들을 먹게 했다. \\q 그러나 너희는 들어와서 내 땅을 더럽혔다. \\q 너희는 내 소유인 땅을 역겨운 것으로 만들었다.",
           "R": "나는 너희를 과수원이 가득한 땅으로 데려왔다. \\q 너희가 그 열매와 온갖 좋은 음식을 먹게 하려는 것이었다. \\q 그러나 너희는 들어와서 내 땅을 더럽혔다. \\q 너희는 내 것인 그 땅을 내가 싫어하는 곳으로 만들었다."
+        },
+        "pt": {
+          "L": "E eu trouxe vocês para uma terra de pomar, \\q para comerem o seu fruto e os seus bens; \\q mas vocês entraram e contaminaram a {{deity_pronoun:minha|Minha}} terra, \\q e fizeram da {{deity_pronoun:minha|Minha}} herança uma abominação.",
+          "B": "Eu trouxe vocês para uma terra de pomares, \\q para comerem os seus frutos e as suas coisas boas. \\q Mas vocês entraram e contaminaram a {{deity_pronoun:minha|Minha}} terra; \\q fizeram da {{deity_pronoun:minha|Minha}} herança uma coisa detestável.",
+          "R": "Eu trouxe vocês para uma terra cheia de pomares, \\q para que comessem os seus frutos e toda a sua boa comida. \\q Mas, quando entraram, vocês tornaram impura a {{deity_pronoun:minha|Minha}} terra. \\q Vocês fizeram da terra que pertence a {{deity_pronoun:mim|Mim}} uma coisa que eu odeio."
         }
       },
       "decisions": [
@@ -1505,6 +1610,29 @@
           "reason": "The Hebrew addresses the people here in the plural (verses 4-13), and Swahili follows it with \"ninyi\" and the plural verb forms; where the Hebrew speaks to the people in the singular (verse 2, and from verse 14 on, apart from verses 29-31), Swahili uses \"wewe\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240020070052",
+            "o240020070152"
+          ],
+          "choice": "terra de pomar (L), terra de pomares (B), terra cheia de pomares (R); abominação (L), coisa detestável (B), coisa que eu odeio (R)",
+          "alternatives": [
+            "terra fértil",
+            "Carmelo"
+          ],
+          "reason": "For the whole book, as the English (r-en-1): karmel, the planted orchard land (m1), is \"pomar\", not the name of Mount Carmel; the abomination (m4) is \"abominação\" at Literal, \"coisa detestável\" at Balanced and \"coisa que eu odeio\" at Readable, where God speaks.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1582,6 +1710,11 @@
           "L": "제사장들은 \"{{divine_name:주|야훼}}께서 어디 계시냐?\" 하고 말하지 않았다. \\q 가르침을 다루는 자들은 나를 알지 못했고, \\q 목자들은 나를 거역했으며, \\q 예언자들은 바알을 힘입어 예언하고 \\q 유익하지 않은 것들을 따라갔다.",
           "B": "제사장들은 \"{{divine_name:주|야훼}}께서 어디 계시냐?\" 하고 묻지 않았다. \\q 가르침을 맡은 자들은 나를 알지 못했다. \\q 목자들은 나를 거역했다. \\q 예언자들은 바알의 이름으로 예언하고 \\q 아무 유익도 없는 것들을 따라갔다.",
           "R": "제사장들은 한 번도 \"{{divine_name:주|야훼}}께서는 어디 계시냐?\" 하고 묻지 않았다. \\q 내 가르침을 맡은 사람들도 나를 알지 못했다. \\q 지도자들은 나에게 등을 돌렸다. \\q 예언자들은 바알의 이름으로 예언했고 \\q 아무도 도울 수 없는 신들을 따라갔다."
+        },
+        "pt": {
+          "L": "Os sacerdotes não disseram: \"Onde [está] {{divine_name:o SENHOR|Javé}}?\" \\q Os que manejam a instrução não {{deity_pronoun:me|Me}} conheceram; \\q os pastores se rebelaram contra {{deity_pronoun:mim|Mim}}; \\q os profetas profetizaram por Baal \\q e andaram atrás de coisas que não trazem proveito.",
+          "B": "Os sacerdotes não perguntaram: \"Onde está {{divine_name:o SENHOR|Javé}}?\" \\q Os que lidam com a instrução não {{deity_pronoun:me|Me}} conheceram; \\q os pastores se rebelaram contra {{deity_pronoun:mim|Mim}}; \\q os profetas profetizaram em nome de Baal \\q e seguiram coisas que não servem para nada.",
+          "R": "Os sacerdotes nunca perguntaram: \"Onde está {{divine_name:o SENHOR|Javé}}?\" \\q Os encarregados do {{deity_pronoun:meu|Meu}} ensino não {{deity_pronoun:me|Me}} conheceram. \\q Os líderes se voltaram contra {{deity_pronoun:mim|Mim}}. \\q Os profetas falaram em nome de Baal \\q e seguiram deuses que não podem ajudar ninguém."
         }
       },
       "decisions": [
@@ -1765,6 +1898,28 @@
           "reason": "*torah* in Jeremiah is 가르침 at every level, as the English \"instruction\" and the published Psalm 1:2; 31:33 keeps the same word.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240020080072",
+            "o240020080103"
+          ],
+          "choice": "a instrução (L, B), o ensino (R); os pastores (L, B), os líderes (R)",
+          "alternatives": [
+            "a lei"
+          ],
+          "reason": "Torah is God's teaching given through the priests (m1), and Portuguese keeps Isaiah 2:3's words, \"a instrução\" (L, B) and \"o ensino\" (R), so that it is not read as the written Law (\"a Lei\"). The shepherds are the rulers (m2): Literal and Balanced keep the picture, Readable says \"os líderes\", as the English.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1826,6 +1981,11 @@
           "L": "그러므로 내가 아직도 너희와 다투겠다. {{divine_name:주|야훼}}의 선언이다. \\q 너희 자손의 자손들과도 내가 다투겠다.",
           "B": "그러므로 나는 계속해서 너희를 고발하겠다. {{divine_name:주|야훼}}가 말한다. \\q 너희 자손의 자손들까지 고발하겠다.",
           "R": "그래서 나는 계속 너희를 재판에 넘기겠다. {{divine_name:주|야훼}}가 말한다. \\q 너희 손자들까지도 재판에 넘기겠다."
+        },
+        "pt": {
+          "L": "Por isso ainda vou contender com vocês, declara {{divine_name:o SENHOR|Javé}}, \\q e com os filhos dos filhos de vocês contenderei.",
+          "B": "Por isso continuarei a apresentar acusações contra vocês, declara {{divine_name:o SENHOR|Javé}}, \\q e apresentarei acusações contra os filhos dos filhos de vocês.",
+          "R": "Por isso vou continuar levando vocês ao tribunal, diz {{divine_name:o SENHOR|Javé}}. \\q Vou levar também os netos de vocês ao tribunal."
         }
       },
       "decisions": [
@@ -1964,6 +2124,29 @@
           "reason": "The verb is a lawsuit word; each level keeps its wording for it in this chapter (verse 29).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240020090031",
+            "o240020090101"
+          ],
+          "choice": "contender (L); apresentar acusações (B); levar ao tribunal (R)",
+          "alternatives": [
+            "discutir",
+            "brigar"
+          ],
+          "reason": "The verb riv is the language of a lawsuit (m1), and each level keeps the court in Portuguese, as the English does: \"contender\", the general verb for a dispute, at Literal; \"apresentar acusações\" at Balanced; \"levar ao tribunal\" at Readable. Verse 29 turns the same words around.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2029,6 +2212,11 @@
           "L": "깃딤의 섬들로 건너가 보아라. \\q 게달로 [사람을] 보내어 자세히 살펴보아라. \\q 이와 같은 일이 있었는지 보아라.",
           "B": "깃딤의 바닷가 나라들로 건너가 보아라. \\q 게달에 사람을 보내 곰곰이 살펴보아라. \\q 이런 일이 일찍이 있었는지 보아라.",
           "R": "서쪽으로 배를 타고 구브로 섬까지 가서 보아라. \\q 동쪽으로 게달까지 사람을 보내 자세히 알아보아라. \\q 이런 일이 일어난 적이 있는지 보아라."
+        },
+        "pt": {
+          "L": "Pois atravessem até as costas de Quitim e vejam, \\q enviem [alguém] a Quedar e considerem com atenção, \\q e vejam se houve [algo] como isto.",
+          "B": "Passem às costas de Quitim e olhem; \\q mandem alguém a Quedar e pensem bem; \\q vejam se alguma vez aconteceu algo assim.",
+          "R": "Naveguem para o oeste, até as praias de Chipre, e olhem. \\q Mandem alguém para o leste, até Quedar, e examinem bem. \\q Vejam se alguma coisa assim já aconteceu."
         }
       },
       "decisions": [
@@ -2164,6 +2352,29 @@
           "reason": "\"Hải đảo\" is the terms note's word for the coastlands; Readable names Cyprus as the English does, in the form used in Acts.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240020100041",
+            "o240020100062"
+          ],
+          "choice": "Quitim; Quedar; Chipre (R)",
+          "alternatives": [
+            "Kitim",
+            "Kedar"
+          ],
+          "reason": "The names take the forms 1 Chronicles 1:7, 1:29 and Isaiah 23:1 give them in Portuguese; Readable names Cyprus, as the English Readable does (m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2228,6 +2439,11 @@
           "L": "어느 민족이 신들을 바꾼 적이 있느냐? \\q 그것들은 신도 아닌데도 말이다. \\q 그러나 내 백성은 자기의 영광을 유익하지 않은 것과 바꾸었다.",
           "B": "어느 민족이 자기 신들을 바꾼 일이 있느냐? \\q 그것들은 신도 아닌데 말이다. \\q 그런데 내 백성은 자기들의 영광을 아무 도움도 되지 않는 것과 바꾸었다.",
           "R": "어떤 민족도 자기 신들을 새 신들로 바꾼 적이 없다. \\q 그들의 신들은 진짜 신도 아닌데 말이다. \\q 그런데 내 백성은 그들의 영광인 나를 자기들을 도울 수 없는 신들과 바꾸었다."
+        },
+        "pt": {
+          "L": "Acaso uma nação trocou [os seus] deuses, \\q mesmo não sendo eles deuses? \\q Mas o {{deity_pronoun:meu|Meu}} povo trocou a sua glória por aquilo que não traz proveito.",
+          "B": "Alguma nação já trocou os seus deuses, \\q mesmo que nem sejam deuses? \\q Mas o {{deity_pronoun:meu|Meu}} povo trocou a sua glória por algo que não ajuda em nada.",
+          "R": "Nenhuma nação jamais trocou os seus deuses por outros, \\q e os deuses delas nem são deuses de verdade. \\q Mas o {{deity_pronoun:meu|Meu}} povo trocou a {{deity_pronoun:mim|Mim}}, a sua glória, por deuses que não podem ajudá-lo."
         }
       },
       "decisions": [
@@ -2351,6 +2567,11 @@
           "L": "하늘아, 이것을 보고 놀라라. \\q 떨어라, 몹시 메말라 버려라. {{divine_name:주|야훼}}의 선언이다.",
           "B": "하늘아, 이 일을 보고 소스라쳐라. \\q 떨며 몹시 놀라라. {{divine_name:주|야훼}}가 말한다.",
           "R": "위에 있는 하늘아, 이것을 보고 놀라라! \\q 두려워 떨며 완전히 넋을 잃어라. {{divine_name:주|야훼}}가 말한다."
+        },
+        "pt": {
+          "L": "Espantem-se, céus, com isto, \\q estremeçam, fiquem totalmente secos, declara {{divine_name:o SENHOR|Javé}}.",
+          "B": "Céus, fiquem horrorizados com isto; \\q estremeçam e fiquem completamente atônitos, declara {{divine_name:o SENHOR|Javé}}.",
+          "R": "Céus, fiquem chocados com isto! \\q Tremam de horror e fiquem completamente pasmos, diz {{divine_name:o SENHOR|Javé}}."
         }
       },
       "decisions": [
@@ -2418,6 +2639,25 @@
           "choice": "\"Espántense\"/\"Espantaos\", cielos (L, B); \"Cielo, asómbrate\" (R)",
           "alternatives": [],
           "reason": "The heavens are called as witnesses; Literal and Balanced address them in the plural with the plural you setting, Readable speaks to the sky in the singular, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240020120021"
+          ],
+          "choice": "Céus (plural)",
+          "alternatives": [
+            "Céu lá em cima"
+          ],
+          "reason": "The English Readable says \"Sky above\"; Portuguese keeps the plural \"céus\" of the Hebrew at every level, as Isaiah 1:2 calls on them, since \"céus\" is the ordinary word for the heavens called as witnesses (m1).",
           "uncertain": false,
           "footnote": false
         }
@@ -2491,6 +2731,11 @@
           "L": "내 백성이 두 가지 악을 저질렀다. \\q 생수의 샘인 나를 버렸고, \\q 자기들을 위해 물웅덩이들을 깎아 팠다. \\q 물을 담지 못하는 깨진 물웅덩이들을.",
           "B": "내 백성이 두 가지 악을 저질렀다. \\q 살아 흐르는 물의 샘인 나를 버렸고, \\q 스스로 바위를 깎아 물 저장소를 만들었다. \\q 그러나 그것은 금이 가서 물을 담지 못한다.",
           "R": "내 백성은 두 가지 악한 일을 했다. \\q 그들은 맑은 물이 흘러나오는 샘인 나를 떠났다. \\q 그러고는 물을 모아 두려고 스스로 구덩이를 팠다. \\q 그러나 그 구덩이는 금이 가서 물을 조금도 담지 못한다."
+        },
+        "pt": {
+          "L": "Pois o {{deity_pronoun:meu|Meu}} povo fez dois males: \\q abandonaram a {{deity_pronoun:mim|Mim}}, a fonte de águas vivas, \\q para talhar para si cisternas, \\q cisternas quebradas, que não podem conter a água.",
+          "B": "Pois o {{deity_pronoun:meu|Meu}} povo cometeu dois males: \\q eles deixaram a {{deity_pronoun:mim|Mim}}, a nascente de água viva, \\q e abriram cisternas para si mesmos, \\q cisternas trincadas, que não seguram água.",
+          "R": "O {{deity_pronoun:meu|Meu}} povo fez duas coisas más. \\q Eles se afastaram de {{deity_pronoun:mim|Mim}}, a nascente de água fresca e corrente. \\q Depois cavaram os seus próprios buracos para guardar água, \\q mas esses buracos estão rachados e não conseguem segurar água nenhuma."
         }
       },
       "decisions": [
@@ -2599,6 +2844,30 @@
           "reason": "\"Eau vive\" is the ordinary French for running water from a spring, and keeps the picture of God as the source of life (m2); Readable explains it, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240020130081",
+            "o240020130101",
+            "o240020130131"
+          ],
+          "choice": "a fonte de águas vivas (L); a nascente de água viva (B, R); cisternas quebradas (L), trincadas (B)",
+          "alternatives": [
+            "o manancial",
+            "cisternas rotas"
+          ],
+          "reason": "The verse is well known in Portuguese in wording this translation does not copy. \"Fonte\" and \"nascente\" are the plain words for a spring of running water (m1); \"águas vivas\" keeps the Hebrew picture, which 17:13 repeats with the same words. Readable explains the cisterns as pits to store water, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2657,6 +2926,11 @@
           "L": "이스라엘이 노예냐? \\q 아니면 집에서 태어난 [노예]냐? \\q 어찌하여 그가 약탈물이 되었느냐?",
           "B": "이스라엘이 노예냐? \\q 주인집에서 노예로 태어났느냐? \\q 그런데 어찌하여 그가 약탈물이 되었느냐?",
           "R": "이스라엘이 노예냐? \\q 노예로 태어났느냐? \\q 그런데 왜 원수들이 그를 전리품처럼 끌고 갔느냐?"
+        },
+        "pt": {
+          "L": "Acaso Israel [é] um escravo? \\q Ou [é ele um escravo] nascido em casa? \\q Por que ele se tornou presa?",
+          "B": "Israel é um escravo? \\q Nasceu escravo na casa do seu senhor? \\q Então por que ele se tornou uma presa?",
+          "R": "Israel é um escravo? \\q Nasceu na escravidão? \\q Então por que os inimigos o levaram embora como se fosse um saque?"
         }
       },
       "decisions": [
@@ -2812,6 +3086,27 @@
           "reason": "Here slavery itself is the point, so *ʿeved* is 노예 rather than 종, which Korean keeps for God's servants and for court officials.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240020140012"
+          ],
+          "choice": "escravo (every level)",
+          "alternatives": [
+            "servo"
+          ],
+          "reason": "As the English (r-en-1) and the Old Testament terms: the point is slavery itself, set against a free son of the house (m1), so \"escravo\" stands at Balanced and Readable too, where \"servo\" is otherwise used.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2878,6 +3173,11 @@
           "L": "어린 사자들이 그를 향해 으르렁거리며 \\q 자기 소리를 높였다. \\q 그들이 그의 땅을 황무지로 만들었고, \\q 그의 성읍들은 불타서 주민이 없다.",
           "B": "젊은 사자들이 그를 보고 으르렁거리며 \\q 큰 소리로 울부짖었다. \\q 그들이 그의 땅을 폐허로 만들었다. \\q 그의 성읍들은 불타 버려 사는 사람이 없다.",
           "R": "원수들이 어린 사자들처럼 그를 향해 으르렁거렸다. \\q 그들은 그의 땅을 황무지로 만들었다. \\q 그의 성읍들은 불타 버렸고, 아무도 그곳에 살지 않는다."
+        },
+        "pt": {
+          "L": "Contra ele leões novos rugiram, \\q levantaram a sua voz; \\q fizeram da sua terra uma desolação; \\q as suas cidades estão queimadas, sem habitante.",
+          "B": "Leões jovens rugiram contra ele; \\q levantaram a voz. \\q Fizeram da sua terra uma ruína; \\q as suas cidades estão queimadas, e ninguém mora nelas.",
+          "R": "Os inimigos rugiram contra ele como leões jovens. \\q Fizeram da sua terra um deserto. \\q As suas cidades foram queimadas, e ninguém mora ali."
         }
       },
       "decisions": [
@@ -2982,6 +3282,11 @@
           "L": "놉과 다바네스의 자손들도 \\q 네 정수리를 뜯어 먹는다.",
           "B": "멤피스와 다바네스 사람들까지도 \\q 네 정수리를 밀어 버리고 있다.",
           "R": "멤피스와 다바네스에서 온 이집트 사람들까지도 \\q 네 머리를 밀어 맨머리로 만들고 있다."
+        },
+        "pt": {
+          "L": "Também os filhos de Mênfis e de Tafnes \\q pastam o alto da tua cabeça.",
+          "B": "Até o povo de Mênfis e de Tafnes \\q está deixando nu o alto da tua cabeça.",
+          "R": "Até os egípcios de Mênfis e de Tafnes \\q estão deixando a tua cabeça raspada."
         }
       },
       "decisions": [
@@ -3171,6 +3476,29 @@
           "reason": "Literal keeps the Hebrew name of the Egyptian city in its Protestant form; Balanced and Readable give the name a modern reader knows, as the English does. Tahpanhes is 다바네스 at every level, as the terms note.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240020160031",
+            "o240020160052"
+          ],
+          "choice": "Mênfis; Tafnes",
+          "alternatives": [
+            "Nofe",
+            "Tapanes"
+          ],
+          "reason": "Noph is \"Mênfis\", the city's familiar name, as Isaiah 19:13 has it in Portuguese; Tahpanhes is \"Tafnes\", the form kept through the book (43:7-9; 44:1; 46:14).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3236,6 +3564,11 @@
           "L": "이것은 네가 너 자신에게 한 일이 아니냐? \\q 네 하나님 {{divine_name:주|야훼}}를 버림으로써, \\q 그가 너를 길로 인도하던 그때에.",
           "B": "이것은 네가 스스로 불러들인 일이 아니냐? \\q 너는 네 하나님 {{divine_name:주|야훼}}를 버렸다. \\q 그가 너를 길로 인도하고 있을 때에 말이다.",
           "R": "너는 이 어려움을 스스로 불러들였다! \\q 너는 네 하나님 {{divine_name:주|야훼}}를 떠났다. \\q 그가 너를 바른 길로 이끌고 있었는데도 그렇게 했다."
+        },
+        "pt": {
+          "L": "Não foste tu que fizeste isto a ti mesma, \\q por abandonares {{divine_name:o SENHOR|Javé}}, o teu Deus, \\q no tempo em que {{deity_pronoun:ele|Ele}} te conduzia pelo caminho?",
+          "B": "Não é isto o que fizeste a ti mesma \\q ao abandonar {{divine_name:o SENHOR|Javé}}, o teu Deus, \\q enquanto {{deity_pronoun:ele|Ele}} te guiava no caminho?",
+          "R": "Tu mesma trouxeste esta desgraça sobre ti! \\q Tu te afastaste {{divine_name:do SENHOR|de Javé}}, o teu Deus, \\q enquanto {{deity_pronoun:ele|Ele}} te guiava pelo caminho certo."
         }
       },
       "decisions": [
@@ -3400,6 +3733,11 @@
           "L": "그런데 이제 네가 이집트로 가는 길에 [나선 것이] 무슨 일이냐? \\q 시홀의 물을 마시려는 것이냐? \\q 또 네가 앗시리아로 가는 길에 [나선 것이] 무슨 일이냐? \\q 그 강의 물을 마시려는 것이냐?",
           "B": "그런데 이제 네가 이집트로 가는 길에 나서서 \\q 시홀 강물을 마신들 무슨 소용이 있느냐? \\q 앗시리아로 가는 길에 나서서 \\q 유프라테스 강물을 마신들 무슨 소용이 있느냐?",
           "R": "그런데 왜 이집트로 가는 길로 내려가서 \\q 나일 강물을 마시려 하느냐? \\q 왜 앗시리아로 가는 길로 떠나서 \\q 유프라테스 강물을 마시려 하느냐?"
+        },
+        "pt": {
+          "L": "E agora, que [tens] tu [a ver] com o caminho do Egito, \\q para beber as águas de Sior? \\q E que [tens] tu [a ver] com o caminho da Assíria, \\q para beber as águas do Rio?",
+          "B": "E agora, o que ganhas tomando o caminho do Egito \\q para beber as águas do Sior? \\q O que ganhas tomando o caminho da Assíria \\q para beber as águas do Eufrates?",
+          "R": "Então por que descer pelo caminho do Egito \\q para beber água do Nilo? \\q Por que ir pelo caminho da Assíria \\q para beber água do rio Eufrates?"
         }
       },
       "decisions": [
@@ -3575,6 +3913,28 @@
           "reason": "|",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240020180081",
+            "o240020180151"
+          ],
+          "choice": "Sior (L), o Sior (B), o Nilo (R); o Rio (L), o Eufrates (B), o rio Eufrates (R)",
+          "alternatives": [
+            "o Shihor"
+          ],
+          "reason": "For the whole book: unnamed \"the River\" is \"o Rio\" at Literal and the Euphrates at Balanced and Readable, as Isaiah 7:20 and 27:12 have it in Portuguese; Shihor takes the form 1 Chronicles 13:5 and Isaiah 23:3 give it, and Readable names the Nile, as the English Readable does (m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3656,6 +4016,11 @@
           "L": "네 악이 너를 징계하고, 네 돌아섬들이 너를 책망할 것이다. \\q 그러니 알고 보아라. 악하고 쓴 일이다. \\q 네가 네 하나님 {{divine_name:주|야훼}}를 버린 것과 \\q 나에 대한 두려움이 네게 없는 것은. \\q 만군의 주 {{divine_name:하나님|야훼}}의 선언이다.",
           "B": "네 악이 너를 벌하고, 네가 나에게서 돌아선 일이 너를 꾸짖을 것이다. \\q 그러니 깨달아 알아라. \\q 네 하나님 {{divine_name:주|야훼}}를 버리고 \\q 나를 두려워하지 않는 것이 얼마나 악하고 쓰라린 일인지를. \\q 만군의 주 {{divine_name:하나님이|야훼가}} 말한다.",
           "R": "네 악이 너를 벌할 것이다. 나에게서 돌아선 일이 네 잘못을 드러낼 것이다. \\q 이것을 깨닫고 똑똑히 보아라. \\q 네 하나님 {{divine_name:주|야훼}}를 떠나 \\q 나를 두려워하지 않는 것은 악하고 쓰라린 일이다. \\q 하늘의 군대를 거느린 주 {{divine_name:하나님이|야훼가}} 말한다."
+        },
+        "pt": {
+          "L": "A tua maldade te disciplinará, e as tuas infidelidades te repreenderão. \\q Sabe e vê que é mau e amargo \\q abandonares {{divine_name:o SENHOR|Javé}}, o teu Deus, \\q e que o temor de {{deity_pronoun:mim|Mim}} não está em ti, \\q declara o Senhor {{divine_name:DEUS|Javé}} dos Exércitos.",
+          "B": "A tua própria maldade vai te castigar, e as tuas infidelidades vão te condenar. \\q Reconhece, então, e vê como é mau e amargo \\q abandonares {{divine_name:o SENHOR|Javé}}, o teu Deus, \\q sem nenhum temor de {{deity_pronoun:mim|Mim}} em ti, \\q declara o Senhor {{divine_name:DEUS|Javé}} dos Exércitos.",
+          "R": "A tua própria maldade vai te castigar. A tua infidelidade vai mostrar que estás errada. \\q Entende isto e vê com clareza: \\q é mau e amargo deixar {{divine_name:o SENHOR|Javé}}, o teu Deus, \\q e não ter temor de {{deity_pronoun:mim|Mim}}, \\q diz o Senhor {{divine_name:DEUS|Javé}} dos Exércitos."
         }
       },
       "decisions": [
@@ -3835,6 +4200,51 @@
           "reason": "The Lord GOD of hosts follows the terms note (Psalm 69:7 B), with the setting on 하나님; in God's own mouth the Readable form is 거느린, without -시-.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240020190032"
+          ],
+          "choice": "infidelidade(s) (meshuvah); infiel (meshuvah Israel, 3:6-12)",
+          "alternatives": [
+            "apostasia",
+            "desvios"
+          ],
+          "reason": "For the whole book: the noun from \"turn\", one of Jeremiah's key words (m1), is \"infidelidade\" at every level, and the name God gives Israel in 3:6-12 is \"Israel infiel\", so that the reader hears the same word in both places. Its opposite, the call to turn back (3:12, 14, 22), is \"voltar\". \"Apostasia\" is a technical word few readers use.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-2",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240020190181",
+            "o240020190191",
+            "o240020190201"
+          ],
+          "choice": "o Senhor DEUS dos Exércitos (every level)",
+          "alternatives": [
+            "o Senhor DEUS dos exércitos"
+          ],
+          "reason": "As Isaiah 1:24 sets it in Portuguese: Adonai before the divine name is \"o Senhor DEUS\", and tseba'ot is \"dos Exércitos\" at every level, as the English Balanced and Readable say \"of Armies\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3908,6 +4318,11 @@
           "L": "내가 오래전에 네 멍에를 꺾고 네 결박을 끊었다. \\q 그러자 너는 \"나는 범하지 않겠다\" 하고 말했다. \\q 그러나 너는 높은 언덕마다, 푸른 나무 아래마다 \\q 창녀가 되어 누웠다.",
           "B": "오래전에 내가 네 멍에를 꺾고 네 사슬을 끊어 주었다. \\q 그때 너는 \"나는 죄를 짓지 않겠다\" 하고 말했다. \\q 그런데도 너는 높은 언덕마다, 잎이 무성한 나무 아래마다 \\q 창녀처럼 몸을 눕혔다.",
           "R": "오래전에 나는 너를 묶고 있던 멍에를 꺾고 네 사슬을 끊어 주었다. \\q 너는 \"나는 결코 거역하지 않겠다\" 하고 말했다. \\q 그러나 너는 높은 언덕마다, 푸른 나무 아래마다 \\q 창녀처럼 누워 다른 신들을 섬겼다."
+        },
+        "pt": {
+          "L": "Pois desde há muito eu quebrei o teu jugo [e] rompi as tuas amarras, \\q e disseste: \"Não transgredirei.\" \\q Contudo, sobre toda colina alta e debaixo de toda árvore verde \\q tu te deitavas, prostituta.",
+          "B": "Há muito tempo eu quebrei o teu jugo e arrebentei as tuas correntes, \\q e disseste: \"Não vou transgredir.\" \\q Mas sobre toda colina alta e debaixo de toda árvore frondosa \\q tu te esparramavas como prostituta.",
+          "R": "Há muito tempo eu quebrei o jugo que te prendia e arrebentei as tuas correntes. \\q Tu disseste: \"Nunca vou desobedecer.\" \\q Mas em toda colina alta e debaixo de toda árvore verde \\q tu te deitavas como prostituta para adorar outros deuses."
         }
       },
       "decisions": [
@@ -4036,6 +4451,32 @@
           "reason": "The yoke is 멍에 at every level, as the terms note and 1 Kings 12, so that this verse links with the yoke of chapters 27-28.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240020200141",
+            "o240020200151",
+            "o240020200181",
+            "o240020200191",
+            "o240020200221"
+          ],
+          "choice": "toda colina alta ... toda árvore verde (L, R), árvore frondosa (B); prostituta",
+          "alternatives": [
+            "todo monte alto",
+            "sob toda árvore viçosa"
+          ],
+          "reason": "For the whole book (3:6, 13; 17:2): the places of Canaanite worship (m3) keep one wording at each level, following the English's \"green\" and \"leafy\". \"Prostituta\" is the plain word; the picture is of unfaithfulness to God, as Readable says.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4101,6 +4542,11 @@
           "L": "나는 너를 귀한 포도나무로, \\q 모두 참된 씨로 심었다. \\q 그런데 어떻게 네가 내 앞에서 \\q 낯선 포도나무의 썩은 가지로 변했느냐?",
           "B": "나는 너를 좋은 품종의 포도나무로, \\q 온전히 참된 씨에서 난 것으로 심었다. \\q 그런데 어찌하여 너는 내 앞에서 \\q 낯선 포도나무의 들가지로 변해 버렸느냐?",
           "R": "나는 너를 가장 좋은 포도나무처럼, \\q 좋고 깨끗한 씨에서 자라게 심었다. \\q 그런데 어떻게 네가 \\q 나에게 아무 쓸모없는 들포도나무가 되어 버렸느냐?"
+        },
+        "pt": {
+          "L": "Mas eu te plantei, videira de primeira, \\q toda ela de semente legítima. \\q Como, então, te transformaste, diante de {{deity_pronoun:mim|Mim}}, \\q nos brotos degenerados de uma videira estrangeira?",
+          "B": "Eu te plantei como uma videira de qualidade, \\q de semente totalmente legítima. \\q Como, então, te transformaste, diante de {{deity_pronoun:mim|Mim}}, \\q nos brotos selvagens de uma videira estranha?",
+          "R": "Eu te plantei como a melhor espécie de videira, \\q nascida de semente boa e pura. \\q Como pudeste virar \\q uma videira selvagem que para {{deity_pronoun:mim|Mim}} não serve para nada?"
         }
       },
       "decisions": [
@@ -4247,6 +4693,11 @@
           "L": "네가 잿물로 씻고 \\q 비누를 많이 쓸지라도, \\q 네 죄악은 내 앞에 얼룩져 있다. \\q 주 {{divine_name:하나님|야훼}}의 선언이다.",
           "B": "네가 세탁 소다로 문질러 씻고 \\q 비누를 아무리 많이 쓴다 해도, \\q 네 죄는 내 앞에 얼룩으로 남아 있다. \\q 주 {{divine_name:하나님이|야훼가}} 말한다.",
           "R": "네가 독한 비누로 몸을 문지르고 \\q 그것을 마음껏 쓴다 해도, \\q 나는 여전히 네 죄의 얼룩을 본다. \\q 주 {{divine_name:하나님이|야훼가}} 말한다."
+        },
+        "pt": {
+          "L": "Pois, ainda que te laves com soda \\q e uses muito sabão para ti, \\q manchada está a tua iniquidade diante de {{deity_pronoun:mim|Mim}}, \\q declara o Senhor {{divine_name:DEUS|Javé}}.",
+          "B": "Ainda que te esfregues com soda \\q e uses sabão à vontade, \\q a tua culpa continua como uma mancha diante de {{deity_pronoun:mim|Mim}}, \\q declara o Senhor {{divine_name:DEUS|Javé}}.",
+          "R": "Podes te esfregar com sabão forte \\q e usar quanto quiseres, \\q mas eu ainda vejo a mancha do teu pecado, \\q diz o Senhor {{divine_name:DEUS|Javé}}."
         }
       },
       "decisions": [
@@ -4390,6 +4841,11 @@
           "L": "네가 어떻게 \"나는 더럽혀지지 않았다. 나는 바알들을 따라가지 않았다\" 하고 말할 수 있느냐? \\q 골짜기에 있는 네 길을 보아라. \\q 네가 무엇을 했는지 알아라. \\q 너는 제 길을 이리저리 엇갈려 달리는 날랜 어린 암낙타다!",
           "B": "네가 어떻게 \"나는 나를 더럽히지 않았다. 바알들을 따라가지 않았다\" 하고 말할 수 있느냐? \\q 골짜기에 난 네 발자취를 보아라. \\q 네가 한 일을 인정하여라. \\q 너는 이리저리 날뛰는 들뜬 어린 암낙타다!",
           "R": "네가 어떻게 \"나는 더럽지 않다. 나는 바알들, 곧 바알이라는 거짓 신들을 따라가지 않았다\" 하고 말할 수 있느냐? \\q 골짜기에서 네가 한 짓을 보고 그것을 인정하여라. \\q 너는 어린 암낙타와 같다. \\q 사방으로 정신없이 뛰어다니는 낙타다."
+        },
+        "pt": {
+          "L": "Como podes dizer: \"Não estou contaminada, atrás dos baalins não andei\"? \\q Vê o teu caminho no vale; \\q reconhece o que fizeste, \\q camela nova e ligeira que cruza os seus caminhos!",
+          "B": "Como podes dizer: \"Não me tornei impura, não fui atrás dos baalins\"? \\q Olha o teu caminho no vale; \\q admite o que fizeste, \\q camela jovem e inquieta, correndo de um lado para o outro!",
+          "R": "Como podes dizer: \"Não estou impura. Não segui os baalins, os falsos deuses chamados Baal\"? \\q Olha o que fizeste no vale e admite. \\q Tu és como uma camela jovem \\q correndo sem rumo para todos os lados."
         }
       },
       "decisions": [
@@ -4554,6 +5010,28 @@
           "reason": "The published form (1 Kings 18:18; 2 Chronicles 17:3); Readable adds that they are false gods, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240020230062"
+          ],
+          "choice": "os baalins (every level); os falsos deuses chamados Baal (R)",
+          "alternatives": [
+            "os baals",
+            "os Baalins"
+          ],
+          "reason": "For the whole book: the plural of Baal (m1) is \"os baalins\", lowercase, as Judges 2:11, 1 Samuel 12:10 and 1 Kings 18:18 have it in Portuguese; the one god is \"Baal\". Readable explains it, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4625,6 +5103,11 @@
           "L": "광야에 익숙한 들나귀가 제 욕정에 바람을 들이마신다. \\q 그 암컷의 발정을 누가 돌이킬 수 있겠느냐? \\q 그것을 찾는 자들은 모두 수고할 필요가 없다. \\q 그 달에 그들이 그것을 찾아낼 것이다.",
           "B": "광야에서 사는 들나귀가 욕정에 차서 바람 냄새를 맡는다. \\q 발정기에 누가 그것을 막을 수 있겠느냐? \\q 그것을 찾는 수컷들은 애쓸 필요가 없다. \\q 짝짓기 때가 되면 그것을 찾아낼 것이다.",
           "R": "너는 광야에 사는 암컷 들나귀와 같다. 짝을 찾을 때에는 바람 냄새를 맡는다. \\q 발정이 나면 아무도 그것을 붙잡아 둘 수 없다. \\q 그것을 찾는 수컷들은 힘들여 애쓸 필요가 없다. \\q 때가 되면 쉽게 그것을 찾아낸다."
+        },
+        "pt": {
+          "L": "Jumenta selvagem acostumada ao deserto, no desejo da sua alma ela fareja o vento; \\q no seu cio, quem a fará voltar? \\q Todos os que a procuram não se cansarão; \\q no seu mês a acharão.",
+          "B": "Jumenta selvagem que vive à vontade no deserto, ela fareja o vento no seu desejo. \\q No seu tempo de cio, quem pode segurá-la? \\q Os machos que a procuram não precisam se cansar; \\q no tempo do acasalamento eles a encontram.",
+          "R": "Tu és como uma jumenta selvagem que vive no deserto. Quando ela quer um macho, fareja o vento. \\q Quando está no cio, ninguém consegue segurá-la. \\q Os machos que a procuram não precisam se cansar. \\q Quando chega a época dela, eles a encontram com facilidade."
         }
       },
       "decisions": [
@@ -4760,6 +5243,11 @@
           "L": "네 발을 맨발이 되지 않게 하고, \\q 네 목을 목마르지 않게 하여라. \\q 그러나 너는 말했다. \"소용없다! \\q 아니다, 나는 낯선 자들을 사랑했으니 \\q 그들을 따라가겠다.\"",
           "B": "발이 맨발이 되도록 \\q 목이 타도록 달려가지 마라. \\q 그러나 너는 말했다. \"소용없다! \\q 아니다, 나는 낯선 신들을 사랑한다. \\q 나는 그들을 따라가겠다.\"",
           "R": "신발이 다 닳도록, \\q 목이 바싹 마르도록 그들을 쫓아다니지 마라! \\q 그러나 너는 말했다. \"소용없다! \\q 아니다! 나는 그 다른 나라 신들을 사랑한다. \\q 나는 계속 그들을 따라가겠다.\""
+        },
+        "pt": {
+          "L": "Guarda o teu pé de [ficar] descalço \\q e a tua garganta da sede. \\q Mas disseste: \"Não há esperança! \\q Não, pois eu amei estrangeiros, \\q e atrás deles irei.\"",
+          "B": "Não corras até ficares de pés descalços \\q e com a garganta seca de sede. \\q Mas tu disseste: \"Não adianta! \\q Não, eu amo os estrangeiros \\q e vou atrás deles.\"",
+          "R": "Para de correr atrás deles até gastar as sandálias \\q e ficar com a garganta seca de sede! \\q Mas tu disseste: \"Não adianta! \\q Não! Eu amo esses deuses estrangeiros \\q e vou continuar a segui-los.\""
         }
       },
       "decisions": [
@@ -4892,6 +5380,11 @@
           "L": "도둑이 붙잡힐 때 수치를 당하듯이, \\q 이스라엘 집이 수치를 당했다. \\q 그들과 그들의 왕들과 그들의 고관들과 \\q 그들의 제사장들과 그들의 예언자들이,",
           "B": "도둑이 들킬 때 망신을 당하듯이 \\q 이스라엘 집이 수치를 당했다. \\q 그들과 그들의 왕들과 관리들, \\q 그들의 제사장들과 예언자들이 그러하다.",
           "R": "도둑은 붙잡히면 부끄러워한다. \\q 그와 마찬가지로 이스라엘 백성도 부끄러움을 당한다. \\q 그들의 왕들과 지도자들, \\q 그들의 제사장들과 예언자들도 함께 부끄러움을 당한다."
+        },
+        "pt": {
+          "L": "Como o ladrão se envergonha quando é apanhado, \\q assim a casa de Israel é envergonhada: \\q eles, os seus reis, os seus príncipes, \\q e os seus sacerdotes e os seus profetas,",
+          "B": "Como o ladrão fica envergonhado quando é descoberto, \\q assim a casa de Israel fica envergonhada: \\q eles, os seus reis e os seus oficiais, \\q os seus sacerdotes e os seus profetas,",
+          "R": "O ladrão sente vergonha quando é pego. \\q Do mesmo modo, o povo de Israel está envergonhado, \\q junto com os seus reis e líderes, \\q os seus sacerdotes e os seus profetas."
         }
       },
       "decisions": [
@@ -5038,6 +5531,11 @@
           "L": "그들은 나무에게 \"너는 내 아버지다\" 하고, 돌에게 \"네가 우리를 낳았다\" 하고 말한다. \\q 그들이 나에게 등을 돌리고 얼굴을 돌리지 않았기 때문이다. \\q 그러나 그들은 재난의 때에 말한다. \\q \"일어나서 우리를 구원해 주십시오!\"",
           "B": "그들은 나무를 보고 \"내 아버지\"라고 부르고, 돌에게 \"네가 우리를 낳았다\" 하고 말한다. \\q 그들은 나에게 얼굴이 아니라 등을 돌렸다. \\q 그러면서도 재난이 닥치면 말한다. \\q \"일어나 우리를 구원해 주십시오!\"",
           "R": "그들은 나무로 만든 우상에게 \"당신은 내 아버지입니다\" 하고 말한다. 돌로 만든 우상에게 \"당신은 우리를 낳은 어머니입니다\" 하고 말한다. \\q 그들은 나에게 등을 돌리고 나를 쳐다보려고도 하지 않는다. \\q 그러나 어려움을 당하면 나에게 부르짖는다. \\q \"오셔서 우리를 구해 주십시오!\""
+        },
+        "pt": {
+          "L": "que dizem à árvore: \"Tu [és] meu pai\", e à pedra: \"Tu nos deste à luz.\" \\q Pois voltaram para {{deity_pronoun:mim|Mim}} as costas e não o rosto; \\q mas no tempo da sua desgraça dizem: \\q \"Levanta-te e salva-nos!\"",
+          "B": "que chamam uma árvore de \"Meu pai\" e dizem a uma pedra: \"Tu nos deste à luz.\" \\q Eles {{deity_pronoun:me|Me}} viraram as costas, e não o rosto; \\q mas, quando vem a desgraça, dizem: \\q \"Levanta-te e salva-nos!\"",
+          "R": "Eles dizem a um ídolo de madeira: \"Tu és o meu pai.\" Dizem a um ídolo de pedra: \"Tu és a mãe que nos deu à luz.\" \\q Eles viraram as costas para {{deity_pronoun:mim|Mim}} e não querem olhar para {{deity_pronoun:mim|Mim}}. \\q Mas, quando estão em apuros, gritam para {{deity_pronoun:mim|Mim}}: \\q \"Vem nos salvar!\""
         }
       },
       "decisions": [
@@ -5119,6 +5617,30 @@
           "reason": "Readable says what the tree and stone are (m1), puts \"gave birth\" as \"mother\" beside \"father\", and names the one they call on (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o240020270041",
+            "o240020270061",
+            "o240020270181",
+            "o240020270192"
+          ],
+          "choice": "tu (the people to their idols and to God)",
+          "alternatives": [
+            "você"
+          ],
+          "reason": "The people speak to the tree and the stone as to gods, and then to God, so every word they say takes \"tu\", the form of prayer, at every level; the irony is in the words around it, not in the form of address.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5190,6 +5712,11 @@
           "L": "그러면 네가 너를 위해 만든 네 신들은 어디 있느냐? \\q 그들이 일어나라. 그들이 너를 구원할 수 있다면, \\q 네 재난의 때에. \\q 네 성읍의 수만큼 \\q 네 신들이 있기 때문이다, 유다야.",
           "B": "네가 스스로 만든 신들은 그렇다면 어디 있느냐? \\q 그들이 너를 구원할 수 있다면 일어나 보라고 하여라. \\q 네게 재난이 닥쳤을 때 말이다. \\q 유다야, 너는 성읍의 수만큼이나 \\q 많은 신을 두었다.",
           "R": "네가 만든 신들은 어디 있느냐? \\q 네가 어려움을 당할 때 \\q 그들이 와서 너를 구해 보라고 하여라! \\q 유다야, 너는 성읍의 수만큼이나 \\q 많은 신을 가지고 있다."
+        },
+        "pt": {
+          "L": "Mas onde [estão] os teus deuses que fizeste para ti? \\q Que se levantem, se podem te salvar \\q no tempo da tua desgraça; \\q pois tão numerosos quanto as tuas cidades \\q são os teus deuses, Judá.",
+          "B": "Onde estão, então, os deuses que fizeste para ti? \\q Que eles se levantem, se podem te salvar \\q quando a desgraça vier sobre ti. \\q Pois tens tantos deuses \\q quantas cidades tens, Judá.",
+          "R": "Onde estão os deuses que fizeste para ti? \\q Que eles venham te salvar \\q quando estiveres em apuros! \\q Judá, tu tens tantos deuses \\q quantas são as tuas cidades."
         }
       },
       "decisions": [
@@ -5323,6 +5850,11 @@
           "L": "너희가 어찌하여 나와 다투느냐? \\q 너희가 모두 나를 거역했다. {{divine_name:주|야훼}}의 선언이다.",
           "B": "너희가 어찌하여 나를 고발하느냐? \\q 너희가 모두 나를 거역했다. {{divine_name:주|야훼}}가 말한다.",
           "R": "너희가 왜 나를 재판에 넘기려 하느냐? \\q 너희는 모두 나에게 등을 돌렸다. {{divine_name:주|야훼}}가 말한다."
+        },
+        "pt": {
+          "L": "Por que contendem {{deity_pronoun:comigo|Comigo}}? \\q Todos vocês se rebelaram contra {{deity_pronoun:mim|Mim}}, declara {{divine_name:o SENHOR|Javé}}.",
+          "B": "Por que vocês apresentam acusações contra {{deity_pronoun:mim|Mim}}? \\q Todos vocês se rebelaram contra {{deity_pronoun:mim|Mim}}, declara {{divine_name:o SENHOR|Javé}}.",
+          "R": "Por que vocês {{deity_pronoun:me|Me}} levam ao tribunal? \\q Todos vocês se voltaram contra {{deity_pronoun:mim|Mim}}, diz {{divine_name:o SENHOR|Javé}}."
         }
       },
       "decisions": [
@@ -5436,6 +5968,11 @@
           "L": "내가 너희 자녀들을 친 것이 헛되었다. \\q 그들은 징계를 받아들이지 않았다. \\q 너희 칼이 사납게 찢는 사자처럼 너희 예언자들을 삼켰다.",
           "B": "내가 너희 자녀들을 쳤지만 소용이 없었다. \\q 그들은 훈계를 받아들이지 않았다. \\q 너희의 칼이 사나운 사자처럼 너희 예언자들을 삼켰다.",
           "R": "내가 너희 백성을 벌했지만 아무 소용이 없었다. \\q 그들은 깨닫지 못했다. \\q 너희는 먹이를 찢는 사자처럼 칼로 너희 예언자들을 죽였다."
+        },
+        "pt": {
+          "L": "Em vão feri os filhos de vocês; \\q não aceitaram correção. \\q A espada de vocês devorou os profetas de vocês como um leão destruidor.",
+          "B": "De nada adiantou eu ferir os filhos de vocês; \\q eles não aceitaram a disciplina. \\q A própria espada de vocês devorou os seus profetas como um leão devastador.",
+          "R": "Eu castiguei o povo de vocês, mas não adiantou nada. \\q Eles não aprenderam a lição. \\q Vocês mataram à espada os seus próprios profetas, como um leão que despedaça a presa."
         }
       },
       "decisions": [
@@ -5572,6 +6109,11 @@
           "L": "너희, 이 세대여, {{divine_name:주|야훼}}의 말을 보아라. \\q 내가 이스라엘에게 광야였느냐? \\q 깊은 어둠의 땅이었느냐? \\q 어찌하여 내 백성이 \"우리는 마음대로 돌아다닌다. \\q 다시는 당신께 가지 않겠다\" 하고 말하느냐?",
           "B": "이 세대 사람들아, {{divine_name:주|야훼}}의 말을 귀담아들어라. \\q 내가 이스라엘에게 사막이었느냐? \\q 짙은 어둠의 땅이었느냐? \\q 그런데 어찌하여 내 백성이 \"우리는 가고 싶은 대로 다닌다. \\q 다시는 당신께 돌아가지 않겠다\" 하고 말하느냐?",
           "R": "오늘을 사는 사람들아, {{divine_name:주|야훼}}가 하는 말에 귀를 기울여라. \\q 내가 이스라엘에게 사막과 같았느냐? \\q 어둡고 위험한 땅과 같았느냐? \\q 그런데 왜 내 백성이 \"우리는 가고 싶은 곳에 마음대로 간다. \\q 다시는 당신께 돌아가지 않겠다\" 하고 말하느냐?"
+        },
+        "pt": {
+          "L": "Vocês, a geração, vejam a palavra {{divine_name:do SENHOR|de Javé}}: \\q Acaso fui eu um deserto para Israel, \\q ou uma terra de trevas espessas? \\q Por que o {{deity_pronoun:meu|Meu}} povo disse: \"Andamos livres; \\q não voltaremos mais a {{deity_pronoun:ti|Ti}}\"?",
+          "B": "E vocês, gente desta geração, prestem atenção à palavra {{divine_name:do SENHOR|de Javé}}: \\q Fui eu um deserto para Israel, \\q ou uma terra de escuridão profunda? \\q Por que, então, o {{deity_pronoun:meu|Meu}} povo diz: \"Andamos por onde queremos; \\q não vamos voltar a {{deity_pronoun:ti|Ti}}\"?",
+          "R": "Gente de hoje, prestem atenção à mensagem {{divine_name:do SENHOR|de Javé}}: \\q Eu fui como um deserto para Israel? \\q Fui uma terra escura e perigosa? \\q Então por que o {{deity_pronoun:meu|Meu}} povo diz: \"Estamos livres para ir aonde quisermos. \\q Nunca mais vamos voltar a {{deity_pronoun:ti|Ti}}\"?"
         }
       },
       "decisions": [
@@ -5723,6 +6265,11 @@
           "L": "처녀가 자기 패물을, \\q 신부가 자기 띠를 잊을 수 있겠느냐? \\q 그런데 내 백성은 나를 잊었다, \\q 셀 수 없는 날 동안.",
           "B": "젊은 여자가 자기 보석을 잊겠느냐? \\q 신부가 자기가 두르는 띠를 잊겠느냐? \\q 그런데 내 백성은 나를 잊었다. \\q 헤아릴 수 없이 오랫동안 잊었다.",
           "R": "젊은 여자는 자기 장신구를 잊지 않는다. \\q 신부는 자기 혼례복을 잊지 않는다. \\q 그런데 내 백성은 나를 잊었다. \\q 아무도 셀 수 없을 만큼 오랫동안 잊었다."
+        },
+        "pt": {
+          "L": "Esquecerá a virgem os seus enfeites, \\q a noiva as suas faixas? \\q Contudo, o {{deity_pronoun:meu|Meu}} povo {{deity_pronoun:me|Me}} esqueceu \\q por dias sem número.",
+          "B": "Uma moça esqueceria as suas joias, \\q uma noiva a faixa que usa? \\q Mas o {{deity_pronoun:meu|Meu}} povo {{deity_pronoun:me|Me}} esqueceu \\q por dias que não se podem contar.",
+          "R": "Uma moça não esquece as suas joias. \\q Uma noiva não esquece o seu vestido de casamento. \\q Mas o {{deity_pronoun:meu|Meu}} povo {{deity_pronoun:me|Me}} esqueceu \\q por mais tempo do que alguém pode contar."
         }
       },
       "decisions": [
@@ -5852,6 +6399,11 @@
           "L": "네가 사랑을 찾으려고 네 길을 얼마나 잘 꾸미는지! \\q 그러므로 악한 여자들에게까지 \\q 네가 네 길을 가르쳤다.",
           "B": "네가 사랑을 찾아 길을 찾아내는 솜씨가 어찌 그리 능숙하냐! \\q 그래서 너는 악한 여자들에게까지 \\q 네 길을 가르쳤다.",
           "R": "너는 애인들을 쫓아가는 방법을 참 잘도 안다! \\q 너는 악한 여자들에게까지 \\q 네가 사는 방식을 가르쳤다."
+        },
+        "pt": {
+          "L": "Como preparas bem o teu caminho para buscar amor! \\q Por isso, até às mulheres perversas \\q ensinaste os teus caminhos.",
+          "B": "Com que habilidade encontras o caminho para buscar amor! \\q Por isso ensinaste os teus caminhos \\q até a mulheres perversas.",
+          "R": "Tu sabes muito bem como correr atrás de amantes! \\q Tu ensinaste até mulheres perversas \\q a viver como tu vives."
         }
       },
       "decisions": [
@@ -5983,6 +6535,11 @@
           "L": "네 옷자락에서도 \\q 죄 없는 가난한 사람들의 목숨의 피가 발견된다. \\q 네가 그들이 담을 뚫고 들어오는 것을 발견한 것도 아니었다. 그런데도 이 모든 일에도 불구하고,",
           "B": "네 옷자락에서까지 \\q 죄 없는 가난한 사람들의 피가 묻어 있다. \\q 그들이 담을 뚫고 들어오다가 붙잡힌 것도 아니었다. 그런데도 이 모든 일에도 불구하고,",
           "R": "네 옷에는 피가 묻어 있다. \\q 아무 잘못도 하지 않은 가난한 사람들의 피다. \\q 그들은 도둑질하려고 집에 들어오다가 붙잡힌 것도 아니었다. 그런데도 이 모든 일에도 불구하고,"
+        },
+        "pt": {
+          "L": "Até nas abas das tuas vestes se acha \\q o sangue das vidas dos pobres inocentes; \\q não os achaste arrombando. Contudo, apesar de todas estas coisas,",
+          "B": "Até na barra das tuas roupas se encontra \\q o sangue da vida dos pobres inocentes. \\q Tu não os pegaste arrombando a casa. Mesmo assim, apesar de tudo isso,",
+          "R": "Há sangue nas tuas roupas, \\q o sangue de gente pobre que não tinha feito nada de errado. \\q Tu não os pegaste arrombando a casa para roubar. Mesmo assim, apesar de tudo isso,"
         }
       },
       "decisions": [
@@ -6121,6 +6678,11 @@
           "L": "너는 말했다. \"나는 죄가 없다. \\q 분명히 그분의 진노가 나에게서 떠났다.\" \\q 보아라, 나는 너와 재판을 하겠다. \\q 네가 \"나는 죄를 짓지 않았다\" 하고 말하기 때문이다.",
           "B": "너는 말했다. \"나는 죄가 없다. \\q 그분의 진노가 틀림없이 나에게서 떠났다.\" \\q 이제 내가 너를 재판에 부치겠다. \\q 네가 \"나는 죄를 짓지 않았다\" 하고 말하기 때문이다.",
           "R": "너는 말했다. \"나는 아무 잘못도 하지 않았다. \\q 하나님께서는 이제 분명히 나에게 화가 나 있지 않으시다.\" \\q 그러나 이제 내가 너를 재판에 넘기겠다. \\q 네가 \"나는 죄를 짓지 않았다\" 하고 말하기 때문이다."
+        },
+        "pt": {
+          "L": "disseste: \"Sou inocente; \\q certamente a {{deity_pronoun:sua|Sua}} ira se desviou de mim.\" \\q Eis que eu entro em juízo contigo \\q porque dizes: \"Não pequei.\"",
+          "B": "disseste: \"Não tenho culpa; \\q a {{deity_pronoun:sua|Sua}} ira com certeza já se afastou de mim.\" \\q Agora eu vou te levar a julgamento \\q porque dizes: \"Não pequei.\"",
+          "R": "disseste: \"Não fiz nada de errado. \\q Deus com certeza não está mais irado comigo.\" \\q Mas agora eu vou te levar a julgamento \\q porque dizes: \"Eu não pequei.\""
         }
       },
       "decisions": [
@@ -6269,6 +6831,11 @@
           "L": "너는 네 길을 바꾸려고 얼마나 가볍게 돌아다니느냐! \\q 앗시리아로 말미암아 수치를 당했던 것처럼 \\q 이집트로 말미암아서도 수치를 당할 것이다.",
           "B": "너는 어찌 그리 경솔하게 네 길을 바꾸느냐! \\q 앗시리아에게 수치를 당했듯이 \\q 이집트에게도 수치를 당할 것이다.",
           "R": "너는 누구를 믿을지 계속 마음을 바꾼다! \\q 앗시리아가 그랬던 것처럼 \\q 이집트도 너를 실망시키고 부끄럽게 할 것이다."
+        },
+        "pt": {
+          "L": "Quão levianamente andas mudando o teu caminho! \\q Também pelo Egito serás envergonhada, \\q assim como foste envergonhada pela Assíria.",
+          "B": "Com que leviandade andas mudando de rumo! \\q Também o Egito vai te envergonhar, \\q assim como a Assíria te envergonhou.",
+          "R": "Tu vives mudando de ideia sobre em quem confiar! \\q O Egito vai te decepcionar e te envergonhar, \\q assim como a Assíria fez."
         }
       },
       "decisions": [
@@ -6389,6 +6956,11 @@
           "L": "너는 이것에게서도 나올 것이다. \\q 네 두 손을 네 머리 위에 얹은 채로. \\q {{divine_name:주|야훼}}가 네가 의지하는 자들을 버렸으니, \\q 너는 그들로 말미암아 형통하지 못할 것이다.",
           "B": "너는 이집트에게서도 \\q 두 손을 머리에 얹고 나올 것이다. \\q {{divine_name:주|야훼}}가 네가 의지하는 자들을 버렸으니, \\q 너는 그들의 도움으로 잘되지 못할 것이다.",
           "R": "너는 이집트에서도 부끄러움을 당하고 떠날 것이다. \\q 두 손을 머리에 얹고 떠날 것이다. \\q {{divine_name:주|야훼}}가 네가 믿는 나라들을 버렸다. \\q 그들은 네가 잘되도록 도와주지 못할 것이다."
+        },
+        "pt": {
+          "L": "Também deste sairás \\q com as tuas mãos sobre a tua cabeça; \\q pois {{divine_name:o SENHOR|Javé}} rejeitou aqueles em quem confias, \\q e não prosperarás com eles.",
+          "B": "Também do Egito sairás \\q com as mãos na cabeça, \\q porque {{divine_name:o SENHOR|Javé}} rejeitou aqueles em quem te apoias, \\q e não terás sucesso com a ajuda deles.",
+          "R": "Também do Egito sairás envergonhada, \\q com as mãos na cabeça. \\q {{divine_name:O SENHOR|Javé}} rejeitou as nações em que confias. \\q Elas não vão te ajudar a ter sucesso."
         }
       },
       "decisions": [
