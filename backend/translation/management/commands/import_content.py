@@ -24,6 +24,8 @@ are left for the next run, so a deploy after a big change (or the first one,
 with no digests yet) still finishes, and the next deploys catch up.
 --search-budget SECONDS does the same for the search update below: no
 language is started once that long has passed since the command began.
+With --separate-processes each language is updated by a process of its own
+(update_search), which a deploy needs to stay within the API's 512 MB.
 
 Each run is recorded (ImportRun), so the admin's health page can show
 when content/ last reached the database and what failed. So is each
@@ -69,9 +71,11 @@ class Command(BaseCommand):
         parser.add_argument("--search-budget", type=float, metavar="SECONDS",
                             help="Start updating no search language after this long (from the start); "
                                  "the rest wait for the next run")
+        parser.add_argument("--separate-processes", action="store_true",
+                            help="Update each search language in a process of its own (update_search)")
 
     def handle(self, *args, paths, if_texts_loaded=False, everything=False, budget=None, search_budget=None,
-               **options):
+               separate_processes=False, **options):
         started = time.monotonic()
         if if_texts_loaded and not Word.objects.exists():
             self.stdout.write("No source texts in the database yet; run import_texts, "
@@ -80,7 +84,8 @@ class Command(BaseCommand):
         self.run = ImportRun.objects.create(everything=everything)
         try:
             self.import_files(paths, if_texts_loaded, everything, budget, started)
-            self.update_search(everything, None if search_budget is None else started + search_budget)
+            self.update_search(everything, None if search_budget is None else started + search_budget,
+                               separate_processes)
         except CommandError as e:
             self.run.finish(error=str(e))
             raise
@@ -140,8 +145,9 @@ class Command(BaseCommand):
             self.run.skipped.append(message)
         self.stdout.flush()
 
-    def update_search(self, everything, until):
-        changes = search.rebuild(full=everything, until=until)
+    def update_search(self, everything, until, separate):
+        self.stdout.flush()   # before the subprocesses write theirs
+        changes = search.rebuild(full=everything, until=until, separate=separate)
         self.stdout.write("search: " + ", ".join(
             f"{lang} {c.entries} (+{c.added} -{c.removed})" for lang, c in changes.items()))
         left = [lang for lang in search.site_build().LANGUAGES if lang not in changes]

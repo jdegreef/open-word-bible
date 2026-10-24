@@ -24,6 +24,7 @@ import hashlib
 import itertools
 import json
 import re
+import subprocess
 import sys
 import time
 import unicodedata
@@ -199,14 +200,16 @@ def plan(old, new):
     return delete, places
 
 
-def rebuild(full=False, until=None):
+def rebuild(full=False, until=None, separate=False):
     """Bring the search tables up to date with the site's documents in every
     site language, rewriting only the entries whose documents changed (all
     of them with full=True). Each language is a transaction of its own, so
     a deploy stopped part way keeps the languages it finished, and the next
     picks up from there. With until (a time.monotonic() value), no language
     is started after that time: those left out wait for the next rebuild.
-    Returns {language: Change} for the languages it brought up to date."""
+    With separate=True, each language is updated in a process of its own
+    (manage.py update_search), so memory doesn't build up from one to the
+    next. Returns {language: Change} for the languages it brought up to date."""
     site = site_build()
     with transaction.atomic():
         SearchLanguage.objects.exclude(code__in=site.LANGUAGES).delete()
@@ -217,12 +220,21 @@ def rebuild(full=False, until=None):
         for lang in site.LANGUAGES:
             if until is not None and time.monotonic() > until:
                 break
-            changes[lang] = _rebuild_language(site_build(lang), lang, full)
+            changes[lang] = (_rebuild_separately(lang, full) if separate
+                             else _rebuild_language(site_build(lang), lang, full))
         return changes
     finally:
         # Records that hold one language's renderings must not outlive the
         # rebuild: anything else reading build_site would find the others empty.
         site_build()
+
+
+def _rebuild_separately(lang, full):
+    command = [sys.executable, str(settings.BASE_DIR / "manage.py"), "update_search", lang]
+    if full:
+        command.append("--all")
+    out = subprocess.run(command, check=True, stdout=subprocess.PIPE, text=True).stdout
+    return Change(**json.loads(out.splitlines()[-1]))
 
 
 @transaction.atomic

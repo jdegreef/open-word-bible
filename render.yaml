@@ -96,13 +96,15 @@ services:
     # longer than that; import_content explains. So no file is started after
     # 15 minutes (--budget) and no search language after 22
     # (--search-budget): what is left waits for the next deploy, which
-    # starts where this one stopped. Management commands have no statement timeout; web
+    # starts where this one stopped. Each search language is updated in a
+    # process of its own (--separate-processes): all of them in one came to
+    # need more than the 512 MB. Management commands have no statement timeout; web
     # requests give up on a query after DB_STATEMENT_TIMEOUT_MS (15 s).
     # Then send_alerts emails the super admins if the import failed (it
     # runs whatever the import's outcome, and the deploy still fails if the
     # import did). Last, sync_fixes emails readers whose suggestion led to a
     # merged fix. Neither fails the deploy.
-    preDeployCommand: python backend/manage.py migrate --noinput && python backend/manage.py createcachetable && python backend/manage.py import_texts --missing && (python backend/manage.py import_content --if-texts-loaded --budget 900 --search-budget 1320; s=$?; python backend/manage.py send_alerts; exit $s) && (python backend/manage.py sync_fixes || true)
+    preDeployCommand: python backend/manage.py migrate --noinput && python backend/manage.py createcachetable && python backend/manage.py import_texts --missing && (python backend/manage.py import_content --if-texts-loaded --budget 900 --search-budget 1320 --separate-processes; s=$?; python backend/manage.py send_alerts; exit $s) && (python backend/manage.py sync_fixes || true)
     # Threads, so a slow request (such as sending a sign-in email) does not
     # hold up reading.
     startCommand: gunicorn --chdir backend config.wsgi --workers 2 --threads 4 --worker-class gthread --timeout 60
