@@ -240,8 +240,9 @@ def _rebuild_separately(lang, full):
 @transaction.atomic
 def _rebuild_language(site, lang, full):
     data = site.search_documents(lang)
-    # One language's documents at a time: search_documents caches each.
-    site.search_documents.cache_clear()
+    # The documents are all that's needed now: the records go (every cache
+    # cleared), so the memory they held serves the work below.
+    site_build(site.SEARCH_LANG)
     SearchLanguage.objects.update_or_create(code=lang, defaults=dict(books=data["books"], pages=data["pages"]))
     docs = [(doc, config(doc.get("l", lang))) for doc in data["docs"]]
     entries, words = _table(), SearchWord._meta.db_table
