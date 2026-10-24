@@ -76,8 +76,8 @@ services:
   # all in, so no sources are fetched), then imports the content/ files that
   # changed and updates the search entries that changed. Each deploy
   # starts with a fresh disk, so the command fetches just the sources it
-  # needs, and imports one edition per process to stay within the starter
-  # plan's 512 MB. A failed fetch or import is logged and retried on the next
+  # needs, and imports one edition per process to keep memory low (it was
+  # written for the starter plan's 512 MB). A failed fetch or import is logged and retried on the next
   # deploy; it does not stop the deploy. The first deploy after this was
   # added loads wlc and the six reference Bibles (several minutes).
   # Create the first admin once from the service's Shell:
@@ -85,7 +85,9 @@ services:
   - type: web
     name: owb-api
     runtime: python
-    plan: starter
+    # Standard (2 GB): the pre-deploy's search update peaked at about 460 MB,
+    # too close to the starter plan's 512 MB.
+    plan: standard
     # As for the site: deploy main only once its CI checks pass.
     autoDeployTrigger: checksPass
     buildCommand: pip install -r backend/requirements.txt && python backend/manage.py collectstatic --noinput
@@ -98,7 +100,7 @@ services:
     # (--search-budget): what is left waits for the next deploy, which
     # starts where this one stopped. Each search language is updated in a
     # process of its own (--separate-processes): all of them in one came to
-    # need more than the 512 MB. Management commands have no statement timeout; web
+    # need more than the starter plan's 512 MB. Management commands have no statement timeout; web
     # requests give up on a query after DB_STATEMENT_TIMEOUT_MS (15 s).
     # Then send_alerts emails the super admins if the import failed (it
     # runs whatever the import's outcome, and the deploy still fails if the
