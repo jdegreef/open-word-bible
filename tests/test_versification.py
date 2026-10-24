@@ -4,7 +4,7 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 from owb import refs, versification
-from owb.sources import macula_hebrew, open_bibles
+from owb.sources import macula_hebrew, open_bibles, sblgnt
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -58,6 +58,14 @@ class VersificationTest(unittest.TestCase):
                          ["PSA.3.1", "PSA.3.2"])
         self.assertEqual(versification.english_ids(["PSA.13.5", "PSA.13.6"]),
                          ["PSA.13.4", "PSA.13.5", "PSA.13.6"])
+
+    def test_new_testament_verses(self):
+        self.assertEqual(ids(versification.to_english(ref("2CO.13.13"))), ["2CO.13.14"])
+        self.assertEqual(ids(versification.to_source(ref("2CO.13.14"))), ["2CO.13.13"])
+        self.assertEqual(ids(versification.to_source(ref("2CO.13.13"))), ["2CO.13.12"])
+        self.assertEqual(ids(versification.to_source(ref("REV.13.1"))), ["REV.12.18", "REV.13.1"])
+        self.assertEqual(ids(versification.to_english(ref("JHN.3.16"))), ["JHN.3.16"])
+        self.assertEqual(versification.english_chapters("REV", 12), [12, 13])
 
     def test_derive_from_a_verse_map(self):
         xml = """<verseMap><book osisID="Ps">
@@ -135,6 +143,29 @@ class VersificationDataTest(unittest.TestCase):
             with self.subTest(psalm=psalm):
                 expected = 1 if psalm == 13 else hebrew[psalm] - english[psalm]
                 self.assertEqual(sorted(titles[psalm]), list(range(1, expected + 1)))
+
+
+class NewTestamentNumberingTest(unittest.TestCase):
+    """versification.NEW_TESTAMENT against the SBLGNT and the KJV: every
+    SBLGNT verse lands on KJV verses, and every KJV verse is covered except
+    those the SBLGNT leaves out."""
+
+    # Not renumbered: absent from the SBLGNT's text.
+    OMITTED = {"MAT.17.21", "MAT.18.11", "MAT.23.14", "MRK.7.16", "MRK.9.44", "MRK.9.46",
+               "MRK.11.26", "MRK.15.28", "LUK.17.36", "LUK.23.17", "JHN.5.4", "ACT.8.37",
+               "ACT.15.34", "ACT.24.7", "ACT.28.29", "ROM.16.25", "ROM.16.26", "ROM.16.27"}
+
+    def test_every_verse_lands_once(self):
+        nt = refs.BOOK_CODES[refs.BOOK_CODES.index("MAT"):]
+        greek = [r for code in nt for r in sblgnt.load_book(code)]
+        kjv = {refs.Ref(*key) for key in open_bibles.load("kjv") if key[0] in nt}
+        mapped = {e for r in greek for e in versification.to_english(r)}
+        self.assertEqual(mapped - kjv, set())
+        self.assertEqual({str(r) for r in kjv - mapped}, self.OMITTED)
+        for r in kjv - {ref(v) for v in self.OMITTED}:
+            with self.subTest(str(r)):
+                self.assertTrue(versification.to_source(r))
+                self.assertTrue(set(versification.to_source(r)) <= set(greek))
 
 
 if __name__ == "__main__":
