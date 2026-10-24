@@ -72,9 +72,9 @@ def fold(text):
 
 def site_build(lang=None):
     """scripts/build_site.py, with its caches cleared, so it reads content/ afresh,
-    keeping only what search needs of each record (SEARCH_ONLY), in lang
-    and English (SEARCH_LANG). Every language's renderings at once came to
-    outgrow the API's 512 MB."""
+    keeping only what search needs of each record (SEARCH_ONLY), in lang,
+    or English where a sentence is not in lang yet (SEARCH_LANG). Every
+    language's renderings at once came to outgrow the API's 512 MB."""
     scripts = str(settings.REPO_ROOT / "scripts")
     if scripts not in sys.path:
         sys.path.insert(0, scripts)
@@ -255,6 +255,7 @@ def _rebuild_language(site, lang, full):
         # one added before the first), every entry is replaced.
         delete, places = (None if full or not old else plan(old, [key(c, doc) for doc, c in docs])) or (
             [row[0] for row in old], [(i, i, 0) for i in range(len(docs))])
+        del old
         if not delete and not places and SearchWord.objects.filter(language=lang).exists():
             return Change(len(docs), 0, 0)
         if delete:

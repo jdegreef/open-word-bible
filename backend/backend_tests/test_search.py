@@ -93,8 +93,8 @@ class SearchTest(TestCase):
         self.assertIsNone(build_site.SEARCH_LANG)
 
     def test_one_languages_records_give_the_same_documents(self):
-        # The rebuild loads only a language's renderings and English's;
-        # search_documents must not notice.
+        # The rebuild loads only a language's renderings (English's where a
+        # sentence is not in it yet); search_documents must not notice.
         site = search.site_build("pt")
         try:
             one = site.search_documents("pt")

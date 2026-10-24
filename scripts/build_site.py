@@ -744,7 +744,7 @@ def describe(word, lang):
 # records it holds keep only these: all of content/ in memory otherwise
 # outgrows the API's 512 MB. It also sets SEARCH_LANG to the one language it
 # is indexing: only that language's renderings and wording notes are kept,
-# with English's (shown where a sentence is not in it yet). Every other
+# or English's where a sentence is not in it yet (text_lang). Every other
 # language keeps an empty entry, so a record still says which languages it
 # is in (passages_in, languages_label).
 SEARCH_DECISION_KEYS = ("layer", "language", "category", "choice", "alternatives", "reason")
@@ -753,7 +753,7 @@ SEARCH_LANG = None
 
 
 def search_only(r):
-    keep = {"en", SEARCH_LANG} if SEARCH_LANG else set(r["renderings"])
+    keep = {text_lang(r, SEARCH_LANG)} if SEARCH_LANG else set(r["renderings"])
     return {"id": r["id"], "refs": r["refs"],
             "renderings": {code: levels if code in keep else {} for code, levels in r["renderings"].items()},
             "decisions": [{k: d[k] for k in SEARCH_DECISION_KEYS} for d in r["decisions"]
