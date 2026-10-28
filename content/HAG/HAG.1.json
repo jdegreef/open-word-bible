@@ -1661,9 +1661,9 @@
           "R": "{{plural_you:Suban|Subid}} a los montes y {{plural_you:bajen|bajad}} madera. {{plural_you:Construyan|Construid}} el templo. Entonces me agradará, y allí seré honrado, dice {{divine_name:el SEÑOR|Yahvé}}."
         },
         "sw": {
-          "L": "Pandeni [mpaka] milimani, mlete miti, mkaijenge nyumba; nami nitapendezwa nayo na nitatukuzwa, asema {{divine_name:BWANA|Yahwe}}.",
+          "L": "Pandeni [mpaka] milimani, mlete miti, mkaijenge nyumba; {{deity_pronoun:nami|Nami}} nitapendezwa nayo na nitatukuzwa, asema {{divine_name:BWANA|Yahwe}}.",
           "B": "Pandeni milimani, mlete mbao, mkaijenge nyumba. Ndipo nitapendezwa nayo na nitaheshimiwa, asema {{divine_name:BWANA|Yahwe}}.",
-          "R": "Pandeni milimani mlete mbao. Lijengeni hekalu. Ndipo nitapendezwa nalo, nami nitaheshimiwa humo, anasema {{divine_name:BWANA|Yahwe}}."
+          "R": "Pandeni milimani mlete mbao. Lijengeni hekalu. Ndipo nitapendezwa nalo, {{deity_pronoun:nami|Nami}} nitaheshimiwa humo, anasema {{divine_name:BWANA|Yahwe}}."
         },
         "vi": {
           "L": "Hãy lên núi đồi, đem gỗ về và xây nhà; {{deity_pronoun:ta|Ta}} sẽ hài lòng về nó và sẽ được tôn vinh, {{divine_name:CHÚA|Gia-vê}} phán.",
@@ -1785,6 +1785,27 @@
             "\"{{divine_name:주|야훼}}의 선언이다\" here"
           ],
           "reason": "Literal keeps the two Hebrew formulas apart; God names himself without -시-.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o370010080081"
+          ],
+          "choice": "spans only on free pronouns and possessives that mean God, mid-sentence (\"nami\", \"naye\", \"mimi\", \"kwangu\", \"wangu\", \"yake\"), never on verb prefixes",
+          "alternatives": [
+            "a span on every pronoun, as in English"
+          ],
+          "reason": "Swahili marks most pronouns for God inside the verb (\"nitapendezwa\", \"nitatukuzwa\"), and a verb prefix or object marker cannot take a capital, so the deity_pronoun span stands only on free pronouns and possessives. Haggai therefore has fewer spans in Swahili than in English. Mid-sentence, every free pronoun or possessive that means God takes the span, including \"mimi\", \"nami\", \"naye\", \"yeye\" and \"kwangu\", even where the English has none; a word that opens a sentence is written plainly with its capital, and \"naye\" followed by a noun (\"naye BWANA\") is a conjunction with no span. This holds for the whole book, as in Ezekiel and the rest of the Twelve.",
           "uncertain": false,
           "footnote": false
         }

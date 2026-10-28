@@ -591,7 +591,7 @@
           "R": "Barreré a las personas y a los animales, a las aves del cielo y a los peces del mar. \\q Destruiré a los malvados y a los ídolos que los llevan a pecar. \\q Borraré de la tierra a la raza humana, dice {{divine_name:el SEÑOR|Yahvé}}."
         },
         "sw": {
-          "L": "Nitawafagilia mbali mwanadamu na mnyama; nitawafagilia mbali ndege wa angani na samaki wa baharini, \\q na vikwazo pamoja na waovu; \\q nami nitamkatilia mbali mwanadamu kutoka juu ya uso wa ardhi, asema {{divine_name:BWANA|Yahwe}}.",
+          "L": "Nitawafagilia mbali mwanadamu na mnyama; nitawafagilia mbali ndege wa angani na samaki wa baharini, \\q na vikwazo pamoja na waovu; \\q {{deity_pronoun:nami|Nami}} nitamkatilia mbali mwanadamu kutoka juu ya uso wa ardhi, asema {{divine_name:BWANA|Yahwe}}.",
           "B": "Nitawafagilia mbali watu na wanyama; nitawafagilia mbali ndege wa angani na samaki wa baharini, \\q na sanamu zinazowaangusha watu, pamoja na waovu. \\q Nitawakatilia mbali wanadamu kutoka juu ya uso wa dunia, asema {{divine_name:BWANA|Yahwe}}.",
           "R": "Nitawafagilia mbali watu na wanyama, ndege wa angani na samaki wa baharini. \\q Nitawaangamiza waovu na sanamu zinazowaongoza katika dhambi. \\q Nitaiondoa jamii ya wanadamu duniani, anasema {{divine_name:BWANA|Yahwe}}."
         },
@@ -735,6 +735,27 @@
           "reason": "The terms note and the style guide: a pronoun that starts a sentence is written plainly with its capital; mid-sentence \"Ta\" is spanned.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o360010030141"
+          ],
+          "choice": "spans only on free pronouns and possessives that mean God, mid-sentence (\"nami\", \"naye\", \"mimi\", \"kwangu\", \"wangu\", \"yake\"), never on verb prefixes",
+          "alternatives": [
+            "a span on every pronoun, as in English"
+          ],
+          "reason": "Swahili marks most pronouns for God inside the verb (\"nitawafagilia\", \"uliniasi\"), and a verb prefix or object marker cannot take a capital, so the deity_pronoun span stands only on free pronouns and possessives. Zephaniah therefore has fewer spans in Swahili than in English. Mid-sentence, every free pronoun or possessive that means God takes the span, including \"mimi\", \"nami\", \"naye\", \"yeye\" and \"kwangu\", even where the English has none; a word that opens a sentence is written plainly with its capital, and \"naye\" followed by a noun (\"naye BWANA\") is a conjunction with no span. This holds for the whole book, as in Ezekiel and the rest of the Twelve.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -798,7 +819,7 @@
           "R": "Castigaré a Judá \\q y a todos los que viven en Jerusalén. \\q Quitaré de este lugar hasta el último rastro del culto a Baal. \\q Se olvidarán aun los nombres de los sacerdotes que sirven a los ídolos y de los sacerdotes que se les unen."
         },
         "sw": {
-          "L": "Nami nitaunyosha mkono {{deity_pronoun:wangu|Wangu}} dhidi ya Yuda \\q na dhidi ya wote wakaao Yerusalemu; \\q nami nitakatilia mbali kutoka mahali hapa mabaki ya Baali, \\q jina la makuhani wa sanamu pamoja na makuhani,",
+          "L": "Nami nitaunyosha mkono {{deity_pronoun:wangu|Wangu}} dhidi ya Yuda \\q na dhidi ya wote wakaao Yerusalemu; \\q {{deity_pronoun:nami|Nami}} nitakatilia mbali kutoka mahali hapa mabaki ya Baali, \\q jina la makuhani wa sanamu pamoja na makuhani,",
           "B": "Nitaunyosha mkono {{deity_pronoun:wangu|Wangu}} dhidi ya Yuda \\q na dhidi ya wote wanaoishi Yerusalemu. \\q Kutoka mahali hapa nitaondoa kila alama ya Baali, \\q hata jina la makuhani wa sanamu pamoja na makuhani,",
           "R": "Nitaiadhibu Yuda \\q na watu wote wanaoishi Yerusalemu. \\q Nitaondoa mahali hapa kila alama ya mwisho ya ibada ya Baali. \\q Hata majina ya makuhani wanaotumikia sanamu yatasahauliwa, pamoja na makuhani wanaojiunga nao."
         },
@@ -950,30 +971,6 @@
           "footnote": false
         },
         {
-          "id": "r-sw-1",
-          "layer": "rendering",
-          "language": "sw",
-          "levels": [
-            "L",
-            "B",
-            "R"
-          ],
-          "category": "word_choice",
-          "tokens": [
-            "o360010040161",
-            "o360010040171",
-            "o360010040181",
-            "o360010040182"
-          ],
-          "choice": "\"makuhani wa sanamu\" (L, B); \"makuhani wanaotumikia sanamu\" (R)",
-          "alternatives": [
-            "\"makemarimu\""
-          ],
-          "reason": "The kemarim are priests of foreign gods; Swahili names what they are, as the English \"idol-priests\" does, and keeps them apart from \"makuhani\", the priests who joined them.",
-          "uncertain": false,
-          "footnote": false
-        },
-        {
           "id": "r-vi-1",
           "layer": "rendering",
           "language": "vi",
@@ -1035,6 +1032,30 @@
             "\"그마림\""
           ],
           "reason": "As 2 Kings 23:5, where the same word names priests of foreign gods.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o360010040161",
+            "o360010040171",
+            "o360010040181",
+            "o360010040182"
+          ],
+          "choice": "\"makuhani wa sanamu\" (L, B); \"makuhani wanaotumikia sanamu\" (R)",
+          "alternatives": [
+            "\"makemarimu\""
+          ],
+          "reason": "The kemarim are priests of foreign gods; Swahili names what they are, as the English \"idol-priests\" does, and keeps them apart from \"makuhani\", the priests who joined them.",
           "uncertain": false,
           "footnote": false
         }
@@ -1316,7 +1337,7 @@
         "es": {
           "L": "y a los que se apartan de seguir {{divine_name:al SEÑOR|a Yahvé}}, \\q y no han buscado {{divine_name:al SEÑOR|a Yahvé}} ni {{deity_pronoun:lo|Lo}} han consultado.",
           "B": "y a los que han dejado de seguir {{divine_name:al SEÑOR|a Yahvé}}, \\q que no buscan {{divine_name:al SEÑOR|a Yahvé}} ni piden {{deity_pronoun:su|Su}} dirección.",
-          "R": "Destruiré a los que han dejado de seguir {{divine_name:al SEÑOR|a Yahvé}} \\q y no acuden a {{deity_pronoun:él|Él}} ni le piden ayuda."
+          "R": "Destruiré a los que han dejado de seguir {{divine_name:al SEÑOR|a Yahvé}} \\q y no acuden a {{deity_pronoun:él|Él}} ni {{deity_pronoun:le|Le}} piden ayuda."
         },
         "sw": {
           "L": "na wale wanaorudi nyuma wasimfuate {{divine_name:BWANA|Yahwe}}, \\q na wale wasiomtafuta {{divine_name:BWANA|Yahwe}} wala kumuuliza {{deity_pronoun:yeye|Yeye}}.",
@@ -1451,7 +1472,7 @@
         "sw": {
           "L": "Nyamaza mbele ya Bwana {{divine_name:MUNGU|Yahwe}}, \\q kwa maana siku ya {{divine_name:BWANA|Yahwe}} [i] karibu; \\q kwa maana {{divine_name:BWANA|Yahwe}} ameandaa dhabihu; \\q amewatakasa wageni {{deity_pronoun:wake|Wake}}.",
           "B": "Nyamazeni kimya mbele ya Bwana {{divine_name:MUNGU|Yahwe}}, \\q kwa maana siku ya {{divine_name:BWANA|Yahwe}} imekaribia. \\q {{divine_name:BWANA|Yahwe}} ameandaa dhabihu; \\q amewatenga wageni {{deity_pronoun:wake|Wake}} aliowaalika.",
-          "R": "Kaeni kimya mbele ya Bwana {{divine_name:MUNGU|Yahwe}}, \\q kwa sababu siku ya {{divine_name:BWANA|Yahwe}} iko karibu. \\q {{divine_name:BWANA|Yahwe}} ameandaa dhabihu, \\q naye amewachagua wageni {{deity_pronoun:wake|Wake}} na kuwaweka tayari."
+          "R": "Kaeni kimya mbele ya Bwana {{divine_name:MUNGU|Yahwe}}, \\q kwa sababu siku ya {{divine_name:BWANA|Yahwe}} iko karibu. \\q {{divine_name:BWANA|Yahwe}} ameandaa dhabihu, \\q {{deity_pronoun:naye|Naye}} amewachagua wageni {{deity_pronoun:wake|Wake}} na kuwaweka tayari."
         },
         "vi": {
           "L": "Hãy im lặng trước mặt Chúa là {{divine_name:CHÚA|Gia-vê}}, \\q vì ngày của {{divine_name:CHÚA|Gia-vê}} đã gần! \\q Vì {{divine_name:CHÚA|Gia-vê}} đã chuẩn bị một sinh tế; \\q {{deity_pronoun:ngài|Ngài}} đã biệt riêng các khách của {{deity_pronoun:ngài|Ngài}}.",
@@ -1612,34 +1633,6 @@
           "footnote": false
         },
         {
-          "id": "r-sw-1",
-          "layer": "rendering",
-          "language": "sw",
-          "levels": [
-            "L",
-            "B",
-            "R"
-          ],
-          "category": "word_choice",
-          "tokens": [
-            "o360010070011",
-            "o360010070021",
-            "o360010070022",
-            "o360010070031",
-            "o360010070032",
-            "o360010070041",
-            "o360010070051",
-            "o360010070061",
-            "o360010070071",
-            "o360010070081"
-          ],
-          "choice": "\"Bwana MUNGU\" with the span on MUNGU; \"siku ya BWANA [i] karibu\" (L), \"imekaribia\" (B), \"iko karibu\" (R)",
-          "alternatives": [],
-          "reason": "\"The Lord GOD\" (Adonai YHWH) is \"Bwana MUNGU\" at every level, as the term sheet. \"The day of the LORD is near\" reuses the published Swahili of Isaiah 13:6 at each level. Recorded once for this job.",
-          "uncertain": false,
-          "footnote": false
-        },
-        {
           "id": "r-vi-1",
           "layer": "rendering",
           "language": "vi",
@@ -1682,6 +1675,34 @@
             "\"여호와의 날이 가까웠으므로\""
           ],
           "reason": "Zephaniah repeats the published line, so it keeps its words at each level; the prophet speaks of God here, so -시- returns (\"준비하시고\").",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o360010070011",
+            "o360010070021",
+            "o360010070022",
+            "o360010070031",
+            "o360010070032",
+            "o360010070041",
+            "o360010070051",
+            "o360010070061",
+            "o360010070071",
+            "o360010070081"
+          ],
+          "choice": "\"Bwana MUNGU\" with the span on MUNGU; \"siku ya BWANA [i] karibu\" (L), \"imekaribia\" (B), \"iko karibu\" (R)",
+          "alternatives": [],
+          "reason": "\"The Lord GOD\" (Adonai YHWH) is \"Bwana MUNGU\" at every level, as the term sheet. \"The day of the LORD is near\" reuses the published Swahili of Isaiah 13:6 at each level. Recorded once for this job.",
           "uncertain": false,
           "footnote": false
         }
@@ -2776,7 +2797,7 @@
           "R": "En ese tiempo buscaré con lámparas por todos los rincones de Jerusalén. \\q Castigaré a la gente perezosa y satisfecha de sí misma, como el vino que se deja demasiado tiempo sobre sus heces. \\q Ellos piensan: «{{divine_name:El SEÑOR|Yahvé}} no hará nada, ni bueno ni malo»."
         },
         "sw": {
-          "L": "Na itakuwa wakati ule \\q kwamba nitaipekua Yerusalemu kwa taa, \\q nami nitawaadhibu watu wanaoganda juu ya mashapo yao, \\q wanaosema mioyoni mwao, \\q \"{{divine_name:BWANA|Yahwe}} hatatenda mema, wala hatatenda mabaya.\"",
+          "L": "Na itakuwa wakati ule \\q kwamba nitaipekua Yerusalemu kwa taa, \\q {{deity_pronoun:nami|Nami}} nitawaadhibu watu wanaoganda juu ya mashapo yao, \\q wanaosema mioyoni mwao, \\q \"{{divine_name:BWANA|Yahwe}} hatatenda mema, wala hatatenda mabaya.\"",
           "B": "Wakati huo nitaipekua Yerusalemu kwa taa \\q na kuwaadhibu wale walioridhika na kutulia, \\q kama divai iliyoachwa iganda juu ya mashapo yake, \\q wanaosema mioyoni mwao, \\q \"{{divine_name:BWANA|Yahwe}} hatafanya lolote, jema wala baya.\"",
           "R": "Wakati huo nitaipekua kila kona ya Yerusalemu kwa taa. \\q Nitawaadhibu watu walio wavivu na wanaojiridhisha, kama divai iliyoachwa muda mrefu juu ya mashapo yake. \\q Wanafikiri, \"{{divine_name:BWANA|Yahwe}} hatafanya chochote, kizuri wala kibaya.\""
         },
@@ -2933,24 +2954,6 @@
           "footnote": false
         },
         {
-          "id": "r-sw-1",
-          "layer": "rendering",
-          "language": "sw",
-          "levels": [
-            "L"
-          ],
-          "category": "setting_alternative",
-          "tokens": [
-            "o360010120101",
-            "o360010120102"
-          ],
-          "choice": "\"watu\" with no gender span",
-          "alternatives": [],
-          "reason": "The English has a gender span on \"people / men\"; Swahili \"watu\" already covers men and women, and \"wanaume\" would change the meaning, so there is no span. Recorded once for this job.",
-          "uncertain": false,
-          "footnote": false
-        },
-        {
           "id": "r-vi-1",
           "layer": "rendering",
           "language": "vi",
@@ -2988,6 +2991,24 @@
             "\"…께서는 … 하지 않으실 것이다\""
           ],
           "reason": "They speak of God without respect, and the plain form shows it, as hostile speakers do elsewhere; the English \"he\" span has no Korean counterpart. The English Literal's gender span (\"people\" / \"men\") needs none in Korean: \"사람들\" covers both.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o360010120101",
+            "o360010120102"
+          ],
+          "choice": "\"watu\" with no gender span",
+          "alternatives": [],
+          "reason": "The English has a gender span on \"people / men\"; Swahili \"watu\" already covers men and women, and \"wanaume\" would change the meaning, so there is no span. Recorded once for this job.",
           "uncertain": false,
           "footnote": false
         }
