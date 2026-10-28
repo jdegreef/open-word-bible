@@ -54,6 +54,16 @@
           "L": "Hãy xin mưa từ {{divine_name:CHÚA|Gia-vê}} trong mùa mưa xuân; \\q {{divine_name:CHÚA|Gia-vê}} [là Đấng] làm ra mây giông, \\q và {{deity_pronoun:ngài|Ngài}} ban cho họ những trận mưa rào, \\q cho mỗi người cây cỏ ngoài đồng.",
           "B": "Hãy cầu xin {{divine_name:CHÚA|Gia-vê}} ban mưa trong mùa mưa xuân. \\q Chính {{divine_name:CHÚA|Gia-vê}} làm ra mây giông; \\q {{deity_pronoun:ngài|Ngài}} ban cho họ những trận mưa rào \\q và cây cỏ xanh tươi ngoài đồng cho mọi người.",
           "R": "Hãy cầu xin {{divine_name:CHÚA|Gia-vê}} ban mưa vào mùa xuân. \\q Chính {{divine_name:CHÚA|Gia-vê}} là Đấng làm ra mây mưa. \\q Ngài ban những trận mưa rào \\q và làm cho cây cỏ ngoài đồng mọc lên cho mọi người."
+        },
+        "sw": {
+          "L": "Ombeni mvua kwa {{divine_name:BWANA|Yahwe}} wakati wa mvua za masika; \\q {{divine_name:BWANA|Yahwe}} [ndiye] afanyaye mawingu ya dhoruba, \\q naye huwapa manyunyu ya mvua, \\q kila mtu mimea shambani.",
+          "B": "Mwombeni {{divine_name:BWANA|Yahwe}} mvua wakati wa mvua za masika. \\q Ni {{divine_name:BWANA|Yahwe}} anayefanya mawingu ya dhoruba; \\q huwapa manyunyu ya mvua \\q na mimea ya kijani shambani kwa kila mtu.",
+          "R": "Mwombeni {{divine_name:BWANA|Yahwe}} mvua wakati wa masika. \\q {{divine_name:BWANA|Yahwe}} ndiye anayefanya mawingu ya dhoruba. \\q Yeye huleta manyunyu ya mvua \\q na kuifanya mimea ya mashambani imee kwa ajili ya kila mtu."
+        },
+        "ko": {
+          "L": "늦은 비가 내릴 때에 {{divine_name:주|야훼}}께 비를 구하여라. \\q {{divine_name:주|야훼}}께서 먹구름을 만드시고, \\q 그들에게 소낙비를 주시며, \\q 각 사람에게 밭의 채소를 [주신다].",
+          "B": "봄비가 내릴 철에 {{divine_name:주|야훼}}께 비를 구하여라. \\q 먹구름을 만드시는 분은 {{divine_name:주|야훼}}이시다. \\q 그분께서 사람들에게 소낙비를 내려 주시고, \\q 누구에게나 들에 푸른 풀이 돋게 하신다.",
+          "R": "봄에 {{divine_name:주|야훼}}께 비를 내려 달라고 구하여라. \\q 비구름을 만드시는 분은 {{divine_name:주|야훼}}이시다. \\q 그분께서 소나기를 내려 주시고, \\q 모든 사람을 위해 들에 곡식과 풀이 자라게 하신다."
         }
       },
       "decisions": [
@@ -196,6 +206,66 @@
           "reason": "The latter rain falls in March and April; \"mưa xuân\" places it for Vietnamese readers without a technical term.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380100010031",
+            "o380100010041",
+            "o380100010042"
+          ],
+          "choice": "\"mvua za masika\" for the spring rain",
+          "alternatives": [
+            "\"mvua za vuli\""
+          ],
+          "reason": "The latter rains of March and April fall in the long rainy season that Swahili calls \"masika\"; the word needs no explanation for East African readers.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-2",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380100010111"
+          ],
+          "choice": "\"huwapa\" with no deity_pronoun span",
+          "alternatives": [],
+          "reason": "The English \"he\" is the Swahili subject prefix \"a-/hu-\", which cannot carry a capital (Swahili style guide 7); Swahili therefore has fewer spans than the English.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380100010051"
+          ],
+          "choice": "\"늦은 비\" (L); \"봄비\" (B, R)",
+          "alternatives": [],
+          "reason": "Malqosh is the last rain of the season in spring (meaning decision); Literal keeps the Bible term, B and R say when it falls. After a span \"{{divine_name:주|야훼}}이시다\" reads after both forms.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -260,6 +330,16 @@
           "L": "Vì các thê-ra-phim nói điều gian ác, và các thầy bói thấy điều giả dối; \\q chúng nói những giấc mộng hư không, \\q chúng an ủi cách vô ích. \\q Vì vậy, chúng lang thang như chiên; \\q chúng bị khốn khổ vì không có người chăn.",
           "B": "Vì các tượng thần gia đình nói điều dối trá, và các thầy bói thấy điều giả dối; \\q chúng kể những giấc mộng giả, \\q và an ủi bằng lời trống rỗng. \\q Vì vậy dân chúng lạc lối như chiên; \\q họ khốn khổ vì không có người chăn.",
           "R": "Các tượng thần trong nhà đưa ra những lời đáp không thể tin được, và các thầy bói thấy những khải tượng dối trá. \\q Chúng kể những giấc mơ vô nghĩa. \\q Lời an ủi của chúng chẳng ích gì. \\q Vì vậy dân chúng lang thang như chiên lạc. \\q Họ khốn khổ vì không có người chăn dẫn dắt."
+        },
+        "sw": {
+          "L": "Kwa maana terafimu husema uovu, na waaguzi huona uongo; \\q nao husimulia ndoto zisizo na maana; \\q hufariji bure. \\q Kwa hiyo wanatangatanga kama kondoo; \\q wanateseka, kwa maana hakuna mchungaji.",
+          "B": "Kwa maana miungu ya nyumbani husema udanganyifu, na waaguzi huona maono ya uongo; \\q husimulia ndoto za uongo \\q na kutoa faraja isiyo na kitu. \\q Kwa hiyo watu wanatangatanga kama kondoo; \\q wanateseka kwa sababu hawana mchungaji.",
+          "R": "Sanamu za miungu ya nyumbani hutoa majibu yasiyoaminika, na watabiri huona maono ya uongo. \\q Husimulia ndoto zisizo na maana yoyote. \\q Faraja wanayotoa haifai kitu. \\q Kwa hiyo watu wanatangatanga kama kondoo waliopotea. \\q Wanateseka kwa sababu hawana mchungaji wa kuwaongoza."
+        },
+        "ko": {
+          "L": "드라빔은 헛된 것을 말하고, 점쟁이들은 거짓을 보며, \\q 헛된 꿈을 말하고, \\q 헛되이 위로한다. \\q 그러므로 그들이 양 떼처럼 떠돌며, \\q 목자가 없어 괴로움을 당한다.",
+          "B": "집안 신상들은 속이는 말을 하고, 점쟁이들은 거짓 환상을 보며, \\q 거짓 꿈을 이야기하고, \\q 헛된 위로를 한다. \\q 그래서 백성이 양 떼처럼 헤매며, \\q 목자가 없어서 고통을 겪는다.",
+          "R": "집에 모셔 둔 우상들이 하는 대답은 믿을 수가 없고, 점쟁이들이 보는 환상은 거짓이다. \\q 그들이 이야기하는 꿈은 아무 뜻이 없다. \\q 그들이 주는 위로는 쓸모가 없다. \\q 그래서 백성이 길 잃은 양처럼 헤매고 있다. \\q 이끌어 줄 목자가 없어서 고통을 겪고 있다."
         }
       },
       "decisions": [
@@ -424,6 +504,47 @@
           "reason": "Published forms (Genesis and Judges have both \"thê-ra-phim\" and \"tượng thần gia đình\"); L keeps the Hebrew word, as the English L does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380100020021",
+            "o380100020022",
+            "o380100020052",
+            "o380100020053"
+          ],
+          "choice": "\"terafimu\" (L); \"miungu ya nyumbani\" (B); \"sanamu za miungu ya nyumbani\" (R); \"waaguzi\" (L, B), \"watabiri\" (R)",
+          "alternatives": [],
+          "reason": "As the published Hosea 3:4 for the teraphim, and Micah 3:7 and Jeremiah 27:9 for the diviners.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380100020022"
+          ],
+          "choice": "\"드라빔\" (L); \"집안 신상들\" (B); \"집에 모셔 둔 우상들\" (R)",
+          "alternatives": [],
+          "reason": "Literal keeps the name used in Genesis and Judges; B and R say what the teraphim were, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -492,6 +613,16 @@
           "L": "Cơn giận {{deity_pronoun:ta|Ta}} nổi phừng nghịch cùng những người chăn, \\q và {{deity_pronoun:ta|Ta}} sẽ trừng phạt những con dê đực; \\q vì {{divine_name:CHÚA|Gia-vê}} Vạn Quân đã thăm viếng bầy chiên {{deity_pronoun:ngài|Ngài}}, là nhà Giu-đa, \\q và {{deity_pronoun:ngài|Ngài}} sẽ làm cho họ như con chiến mã oai hùng của {{deity_pronoun:ngài|Ngài}} nơi chiến trận.",
           "B": "Cơn giận {{deity_pronoun:ta|Ta}} nổi phừng nghịch cùng những người chăn, \\q và {{deity_pronoun:ta|Ta}} sẽ trừng phạt những kẻ dẫn đầu bầy; \\q vì {{divine_name:CHÚA|Gia-vê}} Vạn Quân chăm sóc bầy chiên {{deity_pronoun:ngài|Ngài}}, là nhà Giu-đa, \\q và sẽ làm cho họ như con chiến mã kiêu hùng của {{deity_pronoun:ngài|Ngài}} nơi chiến trận.",
           "R": "Ta giận những người chăn đang dẫn dắt dân {{deity_pronoun:ta|Ta}}, \\q và {{deity_pronoun:ta|Ta}} sẽ trừng phạt những người lãnh đạo ấy. \\q {{divine_name:CHÚA|Gia-vê}} Vạn Quân chăm sóc bầy chiên {{deity_pronoun:ngài|Ngài}}, là dân Giu-đa. \\q Ngài sẽ làm cho họ như con ngựa kiêu hùng của {{deity_pronoun:ngài|Ngài}} nơi chiến trận."
+        },
+        "sw": {
+          "L": "Hasira {{deity_pronoun:yangu|Yangu}} inawaka dhidi ya wachungaji, \\q na juu ya mabeberu nitaleta [adhabu]; \\q kwa maana {{divine_name:BWANA|Yahwe}} wa majeshi amelijia kundi {{deity_pronoun:lake|Lake}}, nyumba ya Yuda, \\q naye atawafanya kama farasi {{deity_pronoun:wake|Wake}} wa fahari vitani.",
+          "B": "Hasira {{deity_pronoun:yangu|Yangu}} inawaka dhidi ya wachungaji, \\q nami nitawaadhibu wale wanaoliongoza kundi; \\q kwa maana {{divine_name:BWANA|Yahwe}} wa majeshi analitunza kundi {{deity_pronoun:lake|Lake}}, nyumba ya Yuda, \\q naye atawafanya kama farasi {{deity_pronoun:wake|Wake}} wa vita mwenye fahari.",
+          "R": "Nimewakasirikia wachungaji wanaowaongoza watu {{deity_pronoun:wangu|Wangu}}, \\q nami nitawaadhibu viongozi hao. \\q {{divine_name:BWANA|Yahwe}} wa majeshi analitunza kundi {{deity_pronoun:lake|Lake}}, watu wa Yuda. \\q Atawafanya kama farasi {{deity_pronoun:wake|Wake}} hodari vitani."
+        },
+        "ko": {
+          "L": "목자들에게 내 분노가 불타오르니, \\q 내가 숫염소들을 벌하겠다. \\q 만군의 {{divine_name:주|야훼}}가 자기 양 떼인 유다 집을 돌보았으니, \\q 그들을 전쟁터의 자기 위엄 있는 말처럼 만들 것이다.",
+          "B": "내 분노가 목자들에게 불타오른다. \\q 내가 양 떼를 이끄는 자들을 벌하겠다. \\q 만군의 {{divine_name:주|야훼}}가 자기 양 떼인 유다 집을 돌보니, \\q 그들을 전쟁터에 나선 자기의 늠름한 군마처럼 만들 것이다.",
+          "R": "나는 내 백성을 이끄는 목자들에게 몹시 화가 나 있다. \\q 나는 그 지도자들을 벌하겠다. \\q 하늘의 군대를 거느린 {{divine_name:주|야훼}}가 자기 양 떼인 유다 백성을 돌본다. \\q 그들을 전쟁터에 나선 늠름한 말처럼 만들겠다."
         }
       },
       "decisions": [
@@ -634,6 +765,84 @@
           "reason": "Vietnamese has no one verb for both senses; the meaning decision gives the play on the word.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380100030021",
+            "o380100030022",
+            "o380100030061",
+            "o380100030062"
+          ],
+          "choice": "\"wachungaji\" at every level; \"mabeberu\" (L) for the male goats; \"wale wanaoliongoza kundi\" (B), \"viongozi\" (R)",
+          "alternatives": [],
+          "reason": "The term sheet keeps \"wachungaji\" for the shepherds (rulers); Literal keeps the image of the he-goats, and the other levels name the leaders, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-2",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380100030071",
+            "o380100030091"
+          ],
+          "choice": "\"nitaleta [adhabu]\" ... \"amelijia\" (L); \"nitawaadhibu\" ... \"analitunza\" (B, R)",
+          "alternatives": [],
+          "reason": "The Hebrew uses one verb (\"visit\") for punishing the leaders and caring for the flock; Swahili has no single verb with both senses, and the meaning decision explains it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o380100030101",
+            "o380100030111"
+          ],
+          "choice": "\"만군의 {{divine_name:주|야훼}}가 … 돌보았으니\", without -시-, and \"자기 양 떼\"",
+          "alternatives": [],
+          "reason": "God is still speaking (\"my anger\") and names himself in the third person; in his own mouth his name takes no honorific (term sheet), so \"께서\" and \"그분의\" are not used here.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380100030062"
+          ],
+          "choice": "\"숫염소들\" (L); \"양 떼를 이끄는 자들\" (B); \"지도자들\" (R)",
+          "alternatives": [],
+          "reason": "The male goats are the leaders (meaning decision); Literal keeps the image.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -687,6 +896,16 @@
           "L": "Từ nó [sẽ ra] đá góc nhà, từ nó [ra] cọc lều, \\q từ nó [ra] cung chiến trận; \\q từ nó sẽ ra mọi người cai trị cùng nhau.",
           "B": "Từ Giu-đa sẽ ra đá góc nhà, từ Giu-đa ra cọc lều, \\q từ Giu-đa ra cung chiến trận; \\q từ Giu-đa sẽ ra mọi người cai trị.",
           "R": "Từ dân Giu-đa sẽ xuất hiện một người lãnh đạo như đá góc nhà, một người như cọc lều, \\q và một người như cây cung dùng trong chiến trận. \\q Mọi người cai trị đều sẽ ra từ họ."
+        },
+        "sw": {
+          "L": "Kutoka kwake [litatoka] jiwe la pembeni, kutoka kwake kigingi cha hema, \\q kutoka kwake upinde wa vita; \\q kutoka kwake atatoka kila mtawala pamoja.",
+          "B": "Kutoka Yuda litatoka jiwe la pembeni, kutoka Yuda kigingi cha hema, \\q kutoka Yuda upinde wa vita; \\q kutoka Yuda atatoka kila mtawala.",
+          "R": "Kutoka kwa watu wa Yuda atatoka kiongozi aliye kama jiwe la pembeni, na mmoja aliye kama kigingi cha hema, \\q na mmoja aliye kama upinde wa vita. \\q Kila mtawala atatoka kwao."
+        },
+        "ko": {
+          "L": "그에게서 모퉁잇돌이, 그에게서 장막 말뚝이, \\q 그에게서 전쟁의 활이 [나오고], \\q 그에게서 모든 통치자가 함께 나올 것이다.",
+          "B": "유다에게서 모퉁잇돌이 나오고, 유다에게서 장막 말뚝이 나오며, \\q 유다에게서 전쟁에 쓰는 활이 나오고, \\q 유다에게서 모든 통치자가 나올 것이다.",
+          "R": "유다 백성 가운데서 모퉁잇돌 같은 지도자와 장막 말뚝 같은 지도자가 나올 것이다. \\q 전쟁에 쓰는 활 같은 지도자도 나올 것이다. \\q 모든 통치자가 그들 가운데서 나올 것이다."
         }
       },
       "decisions": [
@@ -847,6 +1066,16 @@
           "L": "Họ sẽ như những dũng sĩ giày đạp trong bùn [ngoài] đường nơi chiến trận; \\q họ sẽ chiến đấu, \\q vì {{divine_name:CHÚA|Gia-vê}} [ở] với họ, \\q và họ sẽ làm cho những kẻ cưỡi ngựa phải hổ thẹn.",
           "B": "Họ sẽ như những dũng sĩ nơi chiến trận, giày đạp kẻ thù xuống bùn ngoài đường phố. \\q Họ sẽ chiến đấu, \\q vì {{divine_name:CHÚA|Gia-vê}} ở với họ, \\q và những kẻ cưỡi ngựa sẽ phải hổ thẹn.",
           "R": "Họ sẽ như những người lính trong trận chiến, giày đạp kẻ thù xuống bùn ngoài đường. \\q Họ sẽ chiến đấu, \\q và {{divine_name:CHÚA|Gia-vê}} sẽ ở với họ. \\q Họ sẽ đánh bại kỵ binh của kẻ thù."
+        },
+        "sw": {
+          "L": "Nao watakuwa kama mashujaa wanaokanyaga katika matope ya njiani vitani; \\q nao watapigana, \\q kwa maana {{divine_name:BWANA|Yahwe}} [yuko] pamoja nao, \\q nao watawaaibisha wapanda farasi.",
+          "B": "Watakuwa kama mashujaa vitani, wakiwakanyaga adui katika matope ya njiani. \\q Watapigana, \\q kwa kuwa {{divine_name:BWANA|Yahwe}} yuko pamoja nao, \\q nao wapanda farasi wataaibishwa.",
+          "R": "Watakuwa kama askari vitani wanaowakanyaga adui zao katika matope ya barabarani. \\q Watapigana, \\q naye {{divine_name:BWANA|Yahwe}} atakuwa pamoja nao. \\q Watawashinda wapanda farasi wa adui."
+        },
+        "ko": {
+          "L": "그들은 전쟁 때에 거리의 진흙을 짓밟는 용사들 같을 것이다. \\q 그들이 싸울 것이니, \\q {{divine_name:주|야훼}}께서 그들과 함께 계시기 때문이다. \\q 그들이 말 탄 자들을 부끄럽게 할 것이다.",
+          "B": "그들은 전쟁에서 원수를 거리의 진흙처럼 짓밟는 용사들 같을 것이다. \\q 그들이 싸울 것이다. \\q {{divine_name:주|야훼}}께서 그들과 함께 계시기 때문이다. \\q 말 탄 자들이 부끄러움을 당할 것이다.",
+          "R": "그들은 원수들을 거리의 진흙 속에 짓밟는 군인들 같을 것이다. \\q 그들이 싸울 것이다. \\q {{divine_name:주|야훼}}께서 그들과 함께 계실 것이다. \\q 그들은 원수의 기병들을 이길 것이다."
         }
       },
       "decisions": [
@@ -988,6 +1217,16 @@
           "L": "Ta sẽ làm cho nhà Giu-đa mạnh mẽ, và nhà Giô-sép {{deity_pronoun:ta|Ta}} sẽ giải cứu; \\q {{deity_pronoun:ta|Ta}} sẽ đem họ trở về, vì {{deity_pronoun:ta|Ta}} đã thương xót họ, \\q và họ sẽ như [thể] {{deity_pronoun:ta|Ta}} chưa từng ruồng bỏ họ; \\q vì Ta [là] {{divine_name:CHÚA|Gia-vê}} Đức Chúa Trời của họ, và {{deity_pronoun:ta|Ta}} sẽ đáp lời họ.",
           "B": "Ta sẽ làm cho nhà Giu-đa mạnh mẽ và giải cứu nhà Giô-sép. \\q Ta sẽ đem họ trở về, vì {{deity_pronoun:ta|Ta}} thương xót họ, \\q và sẽ như thể {{deity_pronoun:ta|Ta}} chưa từng ruồng bỏ họ. \\q Ta là {{divine_name:CHÚA|Gia-vê}} Đức Chúa Trời của họ, và {{deity_pronoun:ta|Ta}} sẽ đáp lời họ.",
           "R": "Ta sẽ làm cho dân Giu-đa mạnh mẽ, và {{deity_pronoun:ta|Ta}} sẽ giải cứu các chi tộc phía bắc của Y-sơ-ra-ên. \\q Ta sẽ đem họ về nhà, vì {{deity_pronoun:ta|Ta}} hết lòng thương yêu họ. \\q Sẽ như thể {{deity_pronoun:ta|Ta}} chưa bao giờ xua đuổi họ. \\q Ta là {{divine_name:CHÚA|Gia-vê}} Đức Chúa Trời của họ, và {{deity_pronoun:ta|Ta}} sẽ đáp lời khi họ kêu cầu {{deity_pronoun:ta|Ta}}."
+        },
+        "sw": {
+          "L": "Nami nitaitia nguvu nyumba ya Yuda, na nyumba ya Yusufu nitaiokoa; \\q nami nitawarudisha, kwa maana nimewahurumia, \\q nao watakuwa kana kwamba sikuwatupa; \\q kwa sababu mimi [ni] {{divine_name:BWANA|Yahwe}} Mungu wao, nami nitawajibu.",
+          "B": "Nitaifanya nyumba ya Yuda kuwa na nguvu na kuiokoa nyumba ya Yusufu. \\q Nitawarudisha kwa sababu ninawahurumia, \\q na itakuwa kana kwamba sikuwahi kuwatupa. \\q Mimi ni {{divine_name:BWANA|Yahwe}} Mungu wao, nami nitawajibu.",
+          "R": "Nitawafanya watu wa Yuda kuwa na nguvu, nami nitayaokoa makabila ya kaskazini ya Israeli. \\q Nitawarudisha nyumbani kwa sababu ninawapenda sana. \\q Itakuwa kana kwamba sikuwahi kuwakataa. \\q Mimi ni {{divine_name:BWANA|Yahwe}} Mungu wao, nami nitawajibu wanaponiita."
+        },
+        "ko": {
+          "L": "내가 유다 집을 강하게 하고, 요셉 집을 구원하겠다. \\q 내가 그들을 불쌍히 여기니, 그들을 돌아오게 하겠다. \\q 그들은 내가 버린 적이 없었던 것처럼 될 것이다. \\q 나는 그들의 하나님 {{divine_name:주|야훼}}이니, 그들에게 응답하겠다.",
+          "B": "내가 유다 집을 강하게 하고, 요셉 집을 구원하겠다. \\q 내가 그들을 불쌍히 여기니, 그들을 다시 데려오겠다. \\q 그들은 내가 한 번도 버린 적이 없었던 것처럼 될 것이다. \\q 나는 그들의 하나님 {{divine_name:주|야훼}}이다. 내가 그들에게 응답하겠다.",
+          "R": "나는 유다 백성을 강하게 하고, 북쪽 이스라엘 지파들을 구해 내겠다. \\q 나는 그들을 몹시 불쌍히 여기니, 그들을 고향으로 데려오겠다. \\q 그들은 내가 한 번도 내친 적이 없었던 것처럼 될 것이다. \\q 나는 그들의 하나님 {{divine_name:주|야훼}}이다. 그들이 나를 부르면 내가 대답하겠다."
         }
       },
       "decisions": [
@@ -1128,6 +1367,45 @@
           "reason": "The term sheet: \"chúng\" for Israel under judgment, \"họ\" in promises, as in Jeremiah.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380100060181",
+            "o380100060191"
+          ],
+          "choice": "\"mimi\" written plainly, with no deity_pronoun span",
+          "alternatives": [],
+          "reason": "The English has no span on this \"I\", and in Swahili a free \"mimi\" in God's first-person speech takes one only where the English has one.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380100060111"
+          ],
+          "choice": "\"불쌍히 여기다\" (L, B); \"몹시 불쌍히 여기다\" (R)",
+          "alternatives": [],
+          "reason": "The verb of rachamim is \"불쌍히 여기다\" (term sheet). \"나는 … {{divine_name:주|야훼}}이다\" uses the copula written in full, which reads after both forms.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1187,6 +1465,16 @@
           "L": "Ép-ra-im sẽ như dũng sĩ, \\q lòng họ sẽ vui như [uống] rượu; \\q con cái họ sẽ thấy [điều đó] và vui mừng; \\q lòng họ sẽ hớn hở trong {{divine_name:CHÚA|Gia-vê}}.",
           "B": "Dân Ép-ra-im sẽ như những dũng sĩ, \\q lòng họ sẽ vui như được uống rượu. \\q Con cái họ sẽ thấy và vui mừng; \\q lòng họ sẽ hớn hở trong {{divine_name:CHÚA|Gia-vê}}.",
           "R": "Dân Ép-ra-im sẽ như những người lính mạnh mẽ. \\q Họ sẽ vui như người đã uống rượu. \\q Con cái họ sẽ thấy và vui mừng. \\q Lòng họ sẽ tràn đầy niềm vui trong {{divine_name:CHÚA|Gia-vê}}."
+        },
+        "sw": {
+          "L": "Na Efraimu atakuwa kama shujaa, \\q na moyo wao utafurahi kama [kwa] divai; \\q na watoto wao wataona [hayo] na kufurahi; \\q moyo wao utashangilia katika {{divine_name:BWANA|Yahwe}}.",
+          "B": "Watu wa Efraimu watakuwa kama mashujaa, \\q na mioyo yao itafurahi kana kwamba kwa divai. \\q Watoto wao wataona hayo na kufurahi; \\q mioyo yao itashangilia katika {{divine_name:BWANA|Yahwe}}.",
+          "R": "Watu wa Efraimu watakuwa kama askari hodari. \\q Watafurahi kama watu waliokunywa divai. \\q Watoto wao wataona hayo na kufurahi. \\q Mioyo yao itajaa furaha katika {{divine_name:BWANA|Yahwe}}."
+        },
+        "ko": {
+          "L": "에브라임은 용사처럼 되고, \\q 그들의 마음은 포도주를 마신 듯 기뻐할 것이다. \\q 그들의 자녀들이 보고 기뻐하며, \\q 그들의 마음이 {{divine_name:주|야훼}}로 말미암아 즐거워할 것이다.",
+          "B": "에브라임 사람들은 용사처럼 되고, \\q 그들의 마음은 포도주를 마신 듯 기뻐할 것이다. \\q 그들의 자녀들도 그것을 보고 기뻐하며, \\q 그들의 마음이 {{divine_name:주|야훼}}로 말미암아 즐거워할 것이다.",
+          "R": "에브라임 사람들은 강한 군인처럼 될 것이다. \\q 그들은 포도주를 마신 사람들처럼 기뻐할 것이다. \\q 그들의 자녀들도 그것을 보고 기뻐할 것이다. \\q 그들의 마음이 {{divine_name:주|야훼}}께서 하신 일로 기쁨이 넘칠 것이다."
         }
       },
       "decisions": [
@@ -1291,6 +1579,16 @@
           "L": "Ta sẽ huýt gọi họ và {{deity_pronoun:ta|Ta}} sẽ nhóm họ lại, vì {{deity_pronoun:ta|Ta}} đã cứu chuộc họ; \\q và họ sẽ đông đúc như họ đã đông đúc [trước kia].",
           "B": "Ta sẽ huýt gọi họ và tập hợp họ lại, vì {{deity_pronoun:ta|Ta}} đã giải phóng họ; \\q họ sẽ đông đúc như trước kia.",
           "R": "Ta sẽ huýt sáo gọi họ lại và tập hợp họ, vì {{deity_pronoun:ta|Ta}} đã giải cứu họ. \\q Họ sẽ đông như trước kia."
+        },
+        "sw": {
+          "L": "Nitawapigia mbinja na kuwakusanya, kwa maana nimewakomboa; \\q nao watakuwa wengi kama walivyokuwa wengi zamani.",
+          "B": "Nitawapigia mbinja na kuwakusanya, kwa sababu nimewaweka huru, \\q nao watakuwa wengi kama walivyokuwa zamani.",
+          "R": "Nitapiga mbinja kuwaita pamoja na kuwakusanya, kwa sababu nimewaokoa. \\q Watakuwa wengi kama walivyokuwa zamani."
+        },
+        "ko": {
+          "L": "내가 휘파람을 불어 그들을 모으겠다. 내가 그들을 속량하였기 때문이다. \\q 그들은 전에 많았던 것처럼 많아질 것이다.",
+          "B": "내가 휘파람을 불어 그들을 불러 모으겠다. 내가 그들을 자유롭게 하였기 때문이다. \\q 그들은 전처럼 많아질 것이다.",
+          "R": "나는 휘파람을 불어 그들을 불러 모으겠다. 내가 그들을 구해 냈기 때문이다. \\q 그들은 전처럼 수가 많아질 것이다."
         }
       },
       "decisions": [
@@ -1401,6 +1699,48 @@
           "reason": "The Isaiah note's verb at L; B and R say \"set free\", as the English B and R do.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380100080011",
+            "o380100080021",
+            "o380100080022"
+          ],
+          "choice": "\"kupiga mbinja\" (to whistle)",
+          "alternatives": [
+            "\"kupiga mluzi\""
+          ],
+          "reason": "The common Swahili for a whistle made with the lips, the signal a herder uses to call the flock.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380100080051"
+          ],
+          "choice": "\"속량하다\" (L); \"자유롭게 하다\" (B); \"구해 내다\" (R)",
+          "alternatives": [],
+          "reason": "Padah is to set free as from slavery (meaning decision); Literal uses the established word for ransoming, B and R plain words.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1455,6 +1795,16 @@
           "L": "Dù {{deity_pronoun:ta|Ta}} gieo họ giữa các dân tộc, \\q nhưng ở những nơi xa xôi họ sẽ nhớ đến {{deity_pronoun:ta|Ta}}; \\q họ sẽ sống cùng con cái mình và trở về.",
           "B": "Dù {{deity_pronoun:ta|Ta}} rải họ ra giữa các dân tộc như gieo hạt giống, \\q nơi những xứ xa xôi họ vẫn sẽ nhớ đến {{deity_pronoun:ta|Ta}}; \\q họ và con cái họ sẽ sống, và họ sẽ trở về.",
           "R": "Ta sẽ rải họ ra giữa các dân tộc như gieo hạt giống, \\q nhưng dù ở những xứ xa xôi, họ vẫn sẽ nhớ đến {{deity_pronoun:ta|Ta}}. \\q Họ và con cái họ sẽ sống sót, và họ sẽ trở về quê hương."
+        },
+        "sw": {
+          "L": "Ingawa nitawapanda kati ya watu wa mataifa, \\q hata hivyo katika nchi za mbali watanikumbuka; \\q nao wataishi pamoja na watoto wao na kurudi.",
+          "B": "Ingawa nitawatawanya kama mbegu kati ya mataifa, \\q katika nchi za mbali watanikumbuka; \\q wao pamoja na watoto wao wataishi, nao watarudi.",
+          "R": "Nitawatawanya kati ya mataifa kama mbegu, \\q lakini hata katika nchi za mbali watanikumbuka. \\q Wao na watoto wao wataendelea kuishi, nao watarudi nyumbani."
+        },
+        "ko": {
+          "L": "내가 그들을 민족들 가운데 뿌리더라도, \\q 그들은 먼 곳에서 나를 기억할 것이다. \\q 그들은 자기 자녀들과 함께 살아서 돌아올 것이다.",
+          "B": "내가 그들을 씨 뿌리듯 여러 민족 가운데 흩더라도, \\q 그들은 먼 땅에서 나를 기억할 것이다. \\q 그들과 그 자녀들이 살아남아 돌아올 것이다.",
+          "R": "나는 그들을 씨 뿌리듯 여러 나라에 흩을 것이다. \\q 그러나 그들은 먼 땅에서도 나를 기억할 것이다. \\q 그들과 그 자녀들이 살아남아 고향으로 돌아올 것이다."
         }
       },
       "decisions": [
@@ -1574,6 +1924,16 @@
           "L": "Ta sẽ đem họ về từ xứ Ai Cập, \\q và {{deity_pronoun:ta|Ta}} sẽ nhóm họ lại từ A-si-ri; \\q {{deity_pronoun:ta|Ta}} sẽ đem họ vào xứ Ga-la-át và Li-ban, \\q và sẽ không tìm được [chỗ] cho họ.",
           "B": "Ta sẽ đem họ về nhà từ xứ Ai Cập \\q và tập hợp họ lại từ A-si-ri. \\q Ta sẽ đem họ vào xứ Ga-la-át và Li-ban, \\q cho đến khi không còn chỗ cho họ.",
           "R": "Ta sẽ đem họ về nhà từ Ai Cập \\q và tập hợp họ lại từ A-si-ri. \\q Ta sẽ dẫn họ vào miền Ga-la-át và Li-ban, \\q và sẽ không đủ chỗ cho tất cả họ."
+        },
+        "sw": {
+          "L": "Nami nitawarudisha kutoka nchi ya Misri, \\q na kutoka Ashuru nitawakusanya; \\q na katika nchi ya Gileadi na Lebanoni nitawaleta, \\q wala [nafasi] haitapatikana kwa ajili yao.",
+          "B": "Nitawarudisha nyumbani kutoka nchi ya Misri \\q na kuwakusanya kutoka Ashuru. \\q Nitawaleta katika nchi ya Gileadi na Lebanoni, \\q hata nafasi isitoshe kwa ajili yao.",
+          "R": "Nitawarudisha nyumbani kutoka Misri \\q na kuwakusanya kutoka Ashuru. \\q Nitawaongoza mpaka nchi za Gileadi na Lebanoni, \\q nayo nafasi haitawatosha wote."
+        },
+        "ko": {
+          "L": "내가 그들을 이집트 땅에서 돌아오게 하고, \\q 앗시리아에서 그들을 모으겠다. \\q 내가 그들을 길르앗 땅과 레바논으로 데려가겠으나, \\q 그들에게 [자리가] 모자랄 것이다.",
+          "B": "내가 그들을 이집트 땅에서 데려오고, \\q 앗시리아에서 모아 오겠다. \\q 그들을 길르앗 땅과 레바논으로 데려가겠다. \\q 그곳에 그들이 살 자리가 모자랄 만큼 데려가겠다.",
+          "R": "나는 그들을 이집트에서 고향으로 데려오고, \\q 앗시리아에서 모아 오겠다. \\q 그들을 길르앗 땅과 레바논 땅으로 이끌어 가겠다. \\q 그곳은 그들이 다 살기에 자리가 모자랄 것이다."
         }
       },
       "decisions": [
@@ -1645,6 +2005,25 @@
           "reason": "Balanced and Readable supply \"room\", which Literal brackets (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380100100043"
+          ],
+          "choice": "\"앗시리아\"",
+          "alternatives": [],
+          "reason": "The empire is \"앗시리아\", never \"앗수르\" (term sheet).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1702,9 +2081,19 @@
           "R": "{{divine_name:El SEÑOR|Yahvé}} pasará por el mar de la angustia \\q y golpeará sus olas, \\q y se secarán las partes más profundas del río Nilo. \\q La orgullosa Asiria será derrotada, \\q y Egipto ya no gobernará."
         },
         "vi": {
-          "L": "{{deity_pronoun:ngài|Ngài}} sẽ băng qua biển hoạn nạn \\q và đánh các ngọn sóng trên biển, \\q mọi vực sâu của sông Nin sẽ khô cạn; \\q sự kiêu ngạo của A-si-ri sẽ bị hạ xuống, \\q và cây trượng của Ai Cập sẽ mất đi.",
+          "L": "Ngài sẽ băng qua biển hoạn nạn \\q và đánh các ngọn sóng trên biển, \\q mọi vực sâu của sông Nin sẽ khô cạn; \\q sự kiêu ngạo của A-si-ri sẽ bị hạ xuống, \\q và cây trượng của Ai Cập sẽ mất đi.",
           "B": "Ngài sẽ băng qua biển hoạn nạn \\q và đánh tan các ngọn sóng của nó, \\q và sông Nin sẽ khô cạn đến tận đáy. \\q Sự kiêu ngạo của A-si-ri sẽ bị hạ xuống, \\q và vương quyền của Ai Cập sẽ qua đi.",
           "R": "{{divine_name:CHÚA|Gia-vê}} sẽ đi qua biển hoạn nạn \\q và đánh các ngọn sóng của nó, \\q và những chỗ sâu nhất của sông Nin sẽ khô cạn. \\q A-si-ri kiêu ngạo sẽ bị hạ xuống, \\q và Ai Cập sẽ không còn cai trị nữa."
+        },
+        "sw": {
+          "L": "Naye atapita katika bahari ya taabu \\q na kuyapiga mawimbi katika bahari, \\q na vilindi vyote vya Nile vitakauka; \\q na kiburi cha Ashuru kitashushwa, \\q na fimbo ya enzi ya Misri itaondoka.",
+          "B": "Atapita katika bahari ya taabu \\q na kuyapiga mawimbi yake, \\q na Nile itakauka hadi vilindini mwake. \\q Kiburi cha Ashuru kitashushwa chini, \\q na fimbo ya enzi ya Misri itatoweka.",
+          "R": "{{divine_name:BWANA|Yahwe}} atapita katika bahari ya taabu \\q na kuyapiga mawimbi yake, \\q nazo sehemu zenye kina kirefu za mto Nile zitakauka. \\q Ashuru mwenye kiburi atashushwa, \\q na Misri haitatawala tena."
+        },
+        "ko": {
+          "L": "그분께서 고난의 바다를 건너가시고, \\q 바다의 물결을 치실 것이니, \\q 나일 강의 깊은 곳이 모두 마를 것이다. \\q 앗시리아의 교만이 낮아지고, \\q 이집트의 홀이 떠나갈 것이다.",
+          "B": "그분께서 고난의 바다를 건너가시며, \\q 그 물결을 치실 것이다. \\q 나일 강은 바닥까지 마를 것이다. \\q 앗시리아의 교만이 꺾이고, \\q 이집트의 왕권이 사라질 것이다.",
+          "R": "{{divine_name:주|야훼}}께서 고난의 바다를 지나가시며, \\q 그 물결을 치실 것이다. \\q 나일 강의 가장 깊은 곳까지 마를 것이다. \\q 교만한 앗시리아가 무너지고, \\q 이집트는 더 이상 다스리지 못할 것이다."
         }
       },
       "decisions": [
@@ -1826,23 +2215,41 @@
           "footnote": false
         },
         {
-          "id": "r-vi-1",
+          "id": "r-sw-1",
           "layer": "rendering",
-          "language": "vi",
+          "language": "sw",
           "levels": [
-            "L"
+            "L",
+            "B"
           ],
-          "category": "setting_alternative",
+          "category": "word_choice",
           "tokens": [
             "o380100110011",
             "o380100110012"
           ],
-          "choice": "the sentence-initial pronoun is written \"{{deity_pronoun:ngài|Ngài}}\" at L to match the English span; B starts with plain \"Ngài\"",
-          "alternatives": [
-            "no span at L"
+          "choice": "\"Naye atapita\" (L); \"Atapita\" (B), with no deity_pronoun span",
+          "alternatives": [],
+          "reason": "The English \"He\" is carried by the Swahili verb prefix, which takes no span; Readable names the LORD, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
           ],
-          "reason": "At L the English has a span on \"he\"; Vietnamese capitalises a sentence-initial pronoun anyway, so the span changes nothing visible there, and the guide writes such a pronoun plainly. L keeps the span only because the deity reading is the meaning decision's; a reviewer may drop it.",
-          "uncertain": true,
+          "category": "register",
+          "tokens": [
+            "o380100110012"
+          ],
+          "choice": "\"그분께서 … 건너가시고\" with -시-",
+          "alternatives": [],
+          "reason": "The English marks the one who crosses with a deity span, speaking of the LORD in the third person (meaning decision); Korean gives him the honorific, as it does when the prophet speaks about God.",
+          "uncertain": false,
           "footnote": false
         }
       ],
@@ -1893,6 +2300,16 @@
           "L": "Ta sẽ làm cho họ mạnh mẽ trong {{divine_name:CHÚA|Gia-vê}}, \\q và họ sẽ bước đi trong danh {{deity_pronoun:ngài|Ngài}}, \\q {{divine_name:CHÚA|Gia-vê}} phán vậy.",
           "B": "Ta sẽ ban sức mạnh cho họ trong {{divine_name:CHÚA|Gia-vê}}, \\q và họ sẽ bước đi trong danh {{deity_pronoun:ngài|Ngài}}, \\q {{divine_name:CHÚA|Gia-vê}} phán vậy.",
           "R": "Ta sẽ làm cho họ mạnh mẽ nhờ {{divine_name:CHÚA|Gia-vê}}. \\q Họ sẽ sống như những người mang danh {{deity_pronoun:ngài|Ngài}}, \\q {{divine_name:CHÚA|Gia-vê}} phán."
+        },
+        "sw": {
+          "L": "Nami nitawatia nguvu katika {{divine_name:BWANA|Yahwe}}, \\q nao watatembea katika jina {{deity_pronoun:lake|Lake}}, \\q asema {{divine_name:BWANA|Yahwe}}.",
+          "B": "Nitawapa nguvu katika {{divine_name:BWANA|Yahwe}}, \\q nao wataenenda kwa jina {{deity_pronoun:lake|Lake}}, \\q asema {{divine_name:BWANA|Yahwe}}.",
+          "R": "Nitawafanya wawe na nguvu kupitia {{divine_name:BWANA|Yahwe}}. \\q Wataishi kama watu wanaobeba jina {{deity_pronoun:lake|Lake}}, \\q anasema {{divine_name:BWANA|Yahwe}}."
+        },
+        "ko": {
+          "L": "내가 그들을 {{divine_name:주|야훼}} 안에서 강하게 하겠으니, \\q 그들이 {{divine_name:주|야훼}}의 이름으로 다닐 것이다. \\q {{divine_name:주|야훼}}의 선언이다.",
+          "B": "내가 그들에게 {{divine_name:주|야훼}} 안에서 힘을 주겠다. \\q 그들은 {{divine_name:주|야훼}}의 이름으로 살아갈 것이다. \\q {{divine_name:주|야훼}}가 말한다.",
+          "R": "나는 {{divine_name:주|야훼}}를 힘입어 그들을 강하게 하겠다. \\q 그들은 {{divine_name:주|야훼}}의 이름을 지닌 백성으로 살아갈 것이다. \\q {{divine_name:주|야훼}}가 말한다."
         }
       },
       "decisions": [
@@ -1952,6 +2369,26 @@
           "choice": "declares the LORD (L, B); says the LORD (R); live as people who bear his name (R)",
           "alternatives": [],
           "reason": "The formula follows the wording set in Isaiah. Readable explains \"walk in his name\" (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380100120033",
+            "o380100120034"
+          ],
+          "choice": "\"{{divine_name:주|야훼}}의 이름\" for \"his name\"",
+          "alternatives": [],
+          "reason": "God speaks of himself by name (meaning decision); Korean repeats the name rather than use a pronoun, which would need either an honorific God does not use of himself or a plain \"그\".",
           "uncertain": false,
           "footnote": false
         }
