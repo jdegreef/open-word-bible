@@ -2566,9 +2566,9 @@
           "R": "Trong khi tôi nhìn trong các khải tượng ban đêm, \\q tôi thấy một vị trông giống như một con người. \\q Vị ấy đang đến cùng những đám mây trên bầu trời. \\q Vị ấy đến cùng Đấng Cao Niên \\q và được đưa vào trước mặt {{deity_pronoun:ngài|Ngài}}."
         },
         "ko": {
-          "L": "내가 밤의 환상들 가운데 보고 있었는데, \\q 보라, 하늘의 구름과 함께 \\q 인자 같은 이가 오고 있었다. \\q 그가 옛적부터 계신 분께 이르렀고, \\q 그는 그분 앞으로 인도되었다.",
-          "B": "내가 밤의 환상 가운데 보니, \\q 인자 같은 이가 \\q 하늘의 구름을 타고 오고 있었다. \\q 그가 옛적부터 계신 분께 나아가 \\q 그분 앞에 섰다.",
-          "R": "내가 밤의 환상 가운데 보니, \\q 사람처럼 보이는 이가 있었다. \\q 그는 하늘의 구름과 함께 오고 있었다. \\q 그가 영원히 계신 분께 나아가 \\q 그분 앞으로 인도되었다."
+          "L": "내가 밤의 환상들 가운데 보고 있었는데, \\q 보라, 하늘의 구름과 함께 \\q 인자 같은 분이 오고 있었다. \\q 그가 옛적부터 계신 분께 이르렀고, \\q 그는 그분 앞으로 인도되었다.",
+          "B": "내가 밤의 환상 가운데 보니, \\q 인자 같은 분이 \\q 하늘의 구름을 타고 오고 있었다. \\q 그가 옛적부터 계신 분께 나아가 \\q 그분 앞에 섰다.",
+          "R": "내가 밤의 환상 가운데 보니, \\q 사람처럼 보이는 분이 있었다. \\q 그는 하늘의 구름과 함께 오고 있었다. \\q 그가 영원히 계신 분께 나아가 \\q 그분 앞으로 인도되었다."
         },
         "sw": {
           "L": "Niliendelea kutazama katika maono ya usiku, \\q na tazama, pamoja na mawingu ya mbinguni \\q [mmoja] kama mwana wa binadamu alikuwa akija, \\q naye akamfikia Mzee wa Siku, \\q nao wakamleta karibu mbele {{deity_pronoun:yake|Yake}}.",
@@ -2775,6 +2775,29 @@
           "footnote": false
         },
         {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o270070130091",
+            "o270070130092",
+            "o270070130101"
+          ],
+          "choice": "\"[mmoja] kama mwana wa binadamu\" (L); \"mmoja kama mwana wa binadamu\" (B); \"mtu aliyeonekana kama mwanadamu\" (R); lowercase, with no \"deity_pronoun\" span; spans only on the Ancient of Days",
+          "alternatives": [
+            "\"Mwana wa Adamu\", the Gospel title; \"mwana wa mtu\", the wording of Revelation 1:13 in Swahili"
+          ],
+          "reason": "In the vision this is a description, so it is lowercase, as the English. Jesus takes the phrase as his title \"Mwana wa Adamu\" (Matthew 24:30; 26:64; Mark 14:62, whose \"pamoja na mawingu ya mbinguni\" is kept here). The term sheet's \"mwana wa binadamu\" differs from Revelation 1:13 \"mwana wa mtu\"; a reviewer should choose one wording for both.",
+          "uncertain": true,
+          "footnote": true
+        },
+        {
           "id": "r-ko-1",
           "layer": "rendering",
           "language": "ko",
@@ -2789,12 +2812,12 @@
             "o270070130092",
             "o270070130101"
           ],
-          "choice": "\"인자 같은 이\" (L, B); \"사람처럼 보이는 이\" (R), with no honorific and the pronoun \"그\"",
+          "choice": "\"인자 같은 분\" (L, B); \"사람처럼 보이는 분\" (R), as Revelation 1:13; the verbs take no honorific and the pronoun is \"그\"",
           "alternatives": [
-            "\"인자 같은 분\" (Revelation 1:13)",
+            "\"인자 같은 이\"",
             "\"사람의 아들 같은 이\""
           ],
-          "reason": "In the vision this is a description of a figure in human form, so it takes no -시-, as the English keeps it lowercase with no deity pronoun. \"인자 같은\" matches the Gospels' title \"인자\" and Revelation 1:13 so the quotation stays visible, while \"이\" rather than Revelation's \"분\" keeps it a description. This differs from Ezekiel's \"사람의 아들\", God's plain address to a prophet. The footnoted meaning decision gives Jesus's use of the phrase.",
+          "reason": "Daniel 7:13 follows the Korean Revelation 1:13 (\"인자 같은 분\"), so the quotation stays visible; \"인자 같은\" is also the Gospels' title \"인자\". Readable's \"사람처럼 보이는 분\" keeps the same noun, which also keeps the figure apart from the angels Daniel 8-10 calls \"사람처럼 보이는 이\". In the vision he is a figure in human form, and the English keeps him lowercase with no deity pronoun, so only the noun is shared with Revelation: the verbs take no -시- and the pronoun stays \"그\". This differs from Ezekiel's \"사람의 아들\", God's plain address to a prophet. The footnoted meaning decision gives Jesus's use of the phrase.",
           "uncertain": true,
           "footnote": false
         },
@@ -2821,29 +2844,6 @@
           "reason": "The English keeps the two figures distinct with a deity_pronoun span for one only; Korean marks the same difference with the honorific.",
           "uncertain": false,
           "footnote": false
-        },
-        {
-          "id": "r-sw-1",
-          "layer": "rendering",
-          "language": "sw",
-          "levels": [
-            "L",
-            "B",
-            "R"
-          ],
-          "category": "word_choice",
-          "tokens": [
-            "o270070130091",
-            "o270070130092",
-            "o270070130101"
-          ],
-          "choice": "\"[mmoja] kama mwana wa binadamu\" (L); \"mmoja kama mwana wa binadamu\" (B); \"mtu aliyeonekana kama mwanadamu\" (R); lowercase, with no \"deity_pronoun\" span; spans only on the Ancient of Days",
-          "alternatives": [
-            "\"Mwana wa Adamu\", the Gospel title; \"mwana wa mtu\", the wording of Revelation 1:13 in Swahili"
-          ],
-          "reason": "In the vision this is a description, so it is lowercase, as the English. Jesus takes the phrase as his title \"Mwana wa Adamu\" (Matthew 24:30; 26:64; Mark 14:62, whose \"pamoja na mawingu ya mbinguni\" is kept here). The term sheet's \"mwana wa binadamu\" differs from Revelation 1:13 \"mwana wa mtu\"; a reviewer should choose one wording for both.",
-          "uncertain": true,
-          "footnote": true
         }
       ],
       "status": "ai_draft"
@@ -4901,33 +4901,6 @@
           "footnote": false
         },
         {
-          "id": "r-es-1",
-          "layer": "rendering",
-          "language": "es",
-          "levels": [
-            "L",
-            "B",
-            "R"
-          ],
-          "category": "word_choice",
-          "tokens": [
-            "o270070250151",
-            "o270070250161",
-            "o270070250171",
-            "o270070250172",
-            "o270070250181",
-            "o270070250182",
-            "o270070250191"
-          ],
-          "choice": "\"un tiempo, tiempos y medio tiempo\" (L); \"un tiempo, dos tiempos y medio tiempo\" (B); \"tres períodos y medio de tiempo\" (R)",
-          "alternatives": [
-            "tres años y medio"
-          ],
-          "reason": "The length is not stated in years; the same wording returns in 12:7",
-          "uncertain": false,
-          "footnote": false
-        },
-        {
           "id": "r-vi-1",
           "layer": "rendering",
           "language": "vi",
@@ -5019,6 +4992,33 @@
             "\"miaka mitatu na nusu\""
           ],
           "reason": "The text does not say how long a \"time\" is; Readable counts the periods without naming them years, as the English.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o270070250151",
+            "o270070250161",
+            "o270070250171",
+            "o270070250172",
+            "o270070250181",
+            "o270070250182",
+            "o270070250191"
+          ],
+          "choice": "\"un tiempo, tiempos y medio tiempo\" (L); \"un tiempo, dos tiempos y medio tiempo\" (B); \"tres períodos y medio de tiempo\" (R)",
+          "alternatives": [
+            "tres años y medio"
+          ],
+          "reason": "The length is not stated in years; the same wording, at every level, returns in 12:7",
           "uncertain": false,
           "footnote": false
         }
