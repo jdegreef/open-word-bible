@@ -57,9 +57,12 @@ class SearchTest(TestCase):
             self.assertFalse(entries.filter(vector__isnull=True).exists())
 
     def test_rebuild_replaces_rather_than_adds(self):
+        # One language: a full rebuild of all of them takes minutes.
         before = SearchEntry.objects.count()
-        search.rebuild(full=True)
+        change = search._rebuild_language(search.site_build(), "sw", full=True)
         self.assertEqual(SearchEntry.objects.count(), before)
+        self.assertEqual(change.added, change.removed)
+        self.assertEqual(change.added, SearchEntry.objects.filter(language="sw").count())
 
     def test_rebuild_rewrites_only_what_changed(self):
         ids = set(SearchEntry.objects.values_list("id", flat=True))
@@ -71,8 +74,8 @@ class SearchTest(TestCase):
         first, second = SearchEntry.objects.filter(language="en", kind="v").order_by("position", "sub")[:2]
         first.doc = {**first.doc, "u": "/stale/"}
         first.save()
-        changes = search.rebuild()
-        self.assertEqual((changes["en"].added, changes["en"].removed), (1, 1))
+        change = search._rebuild_language(search.site_build(), "en", full=False)
+        self.assertEqual((change.added, change.removed), (1, 1))
         self.assertFalse(SearchEntry.objects.filter(id=first.id).exists())
         self.assertTrue(SearchEntry.objects.filter(id=second.id).exists())
         docs = build_site.search_documents("en")["docs"]

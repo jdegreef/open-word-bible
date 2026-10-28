@@ -2,9 +2,9 @@
 
 The word extracts (data/grc/) carry Robinson-style codes such as N-DSF or
 V-2AAI-3S. describe() turns one into words a reader can follow, in each
-reading language (English, Spanish, French, Swahili, Vietnamese, Korean):
-"Noun · dative singular feminine", "Verb · second aorist active indicative ·
-3rd person singular". An unknown code raises ValueError, so a new code in the
+reading language (English, Spanish, French, Swahili, Vietnamese, Korean,
+Portuguese, Amharic): "Noun · dative singular feminine", "Verb · second aorist
+active indicative · 3rd person singular". An unknown code raises ValueError, so a new code in the
 data fails the tests rather than showing a reader nothing.
 """
 import re
@@ -184,6 +184,66 @@ WORDS = {
         "suffix": {"N": "부정", "I": "의문", "S": "최상급", "C": "비교급",
                    "ATT": "앗티카 형태", "K": "두 단어가 한 단어로 합쳐진 형태",
                    "P": "불변화사가 붙은 형태", "ABB": "줄임 형태"},
+    },
+    "pt": {
+        "pos": {"N": "Substantivo", "V": "Verbo", "A": "Adjetivo", "T": "Artigo",
+                "P": "Pronome pessoal", "R": "Pronome relativo", "D": "Pronome demonstrativo",
+                "K": "Pronome correlativo", "X": "Pronome indefinido", "I": "Pronome interrogativo",
+                "F": "Pronome reflexivo", "C": "Pronome recíproco", "S": "Pronome possessivo",
+                "Q": "Pronome correlativo ou interrogativo",
+                "ADV": "Advérbio", "CONJ": "Conjunção", "PREP": "Preposição", "PRT": "Partícula",
+                "COND": "Conjunção condicional", "INJ": "Interjeição",
+                "HEB": "Palavra hebraica", "ARAM": "Palavra aramaica"},
+        "indeclinable": {"PRI": "nome próprio, indeclinável", "LI": "letra, indeclinável",
+                         "OI": "indeclinável", "NUI": "número, indeclinável"},
+        "case": {"N": "nominativo", "G": "genitivo", "D": "dativo", "A": "acusativo", "V": "vocativo"},
+        "number": {"S": "singular", "P": "plural"},
+        "gender": {"M": "masculino", "F": "feminino", "N": "neutro"},
+        "tense": {"P": "presente", "I": "imperfeito", "F": "futuro", "A": "aoristo",
+                  "R": "perfeito", "L": "mais-que-perfeito"},
+        "second": "{} segundo",
+        "verb": "{mood} {tense}, {voice}", "voiced": "voz {}",
+        "voice": {"A": "ativa", "M": "média", "P": "passiva", "E": "média ou passiva",
+                  "D": "média (depoente)", "O": "passiva (depoente)",
+                  "N": "média ou passiva (depoente)", "Q": "ativa impessoal", "X": ""},
+        "mood": {"I": "indicativo", "S": "subjuntivo", "O": "optativo", "M": "imperativo",
+                 "N": "infinitivo", "P": "particípio", "R": "particípio (como ordem)"},
+        "person": {"1": "1.ª pessoa", "2": "2.ª pessoa", "3": "3.ª pessoa"},
+        "suffix": {"N": "negação", "I": "interrogativo", "S": "superlativo", "C": "comparativo",
+                   "ATT": "forma ática", "K": "crase (duas palavras unidas)",
+                   "P": "com partícula unida", "ABB": "forma abreviada"},
+    },
+    "am": {
+        "pos": {"N": "ስም", "V": "ግስ", "A": "ቅጽል", "T": "መወሰኛ",
+                "P": "ግላዊ ተውላጠ ስም", "R": "አያያዥ ተውላጠ ስም", "D": "አመልካች ተውላጠ ስም",
+                "K": "ተዛማጅ ተውላጠ ስም", "X": "ያልተወሰነ ተውላጠ ስም", "I": "ጠያቂ ተውላጠ ስም",
+                "F": "ተመላሽ ተውላጠ ስም", "C": "የእርስ በርስ ተውላጠ ስም", "S": "የባለቤትነት ተውላጠ ስም",
+                "Q": "ተዛማጅ ወይም ጠያቂ ተውላጠ ስም",
+                "ADV": "ተውሳከ ግስ", "CONJ": "መስተጻምር", "PREP": "መስተዋድድ", "PRT": "ቅንጣት",
+                "COND": "የሁኔታ መስተጻምር", "INJ": "ቃለ አጋኖ",
+                "HEB": "የዕብራይስጥ ቃል", "ARAM": "የአራማይስጥ ቃል"},
+        "indeclinable": {"PRI": "የተጸውዖ ስም፣ የማይለወጥ", "LI": "ፊደል፣ የማይለወጥ",
+                         "OI": "የማይለወጥ", "NUI": "ቁጥር፣ የማይለወጥ"},
+        "case": {"N": "ባለቤት", "G": "የባለቤትነት", "D": "ተቀባይ", "A": "ተሳቢ", "V": "ጥሪ"},
+        "number": {"S": "ነጠላ", "P": "ብዙ"},
+        "gender": {"M": "ወንድ", "F": "ሴት", "N": "ገለልተኛ"},
+        "tense": {"P": "የአሁን ጊዜ", "I": "ያልተጠናቀቀ ኃላፊ ጊዜ", "F": "የወደፊት ጊዜ",
+                  "A": "ቀላል ኃላፊ ጊዜ", "R": "ፍጹም ጊዜ", "L": "ኃላፊ ፍጹም ጊዜ"},
+        "second": "ሁለተኛ {}",
+        # The voice comes last and may be empty (X), so its separator travels
+        # with it: an Ethiopic comma is not stripped like a trailing ", ".
+        "verb": "{tense}፣ {mood}{voice}", "voiced": "፣ {}",
+        "voice": {"A": "ገቢር", "M": "መካከለኛ", "P": "ተገብሮ", "E": "መካከለኛ ወይም ተገብሮ",
+                  "D": "መካከለኛ (የገቢር ትርጉም)", "O": "ተገብሮ (የገቢር ትርጉም)",
+                  "N": "መካከለኛ ወይም ተገብሮ (የገቢር ትርጉም)", "Q": "ባለቤት የሌለው ገቢር", "X": ""},
+        "mood": {"I": "አመልካች ዘይቤ", "S": "ሁኔታዊ ዘይቤ", "O": "የምኞት ዘይቤ", "M": "የትእዛዝ ዘይቤ",
+                 "N": "የግስ ስም", "P": "ቅጽላዊ ግስ", "R": "ቅጽላዊ ግስ (በትእዛዝ ትርጉም)"},
+        "person": {"1": "አንደኛ መደብ", "2": "ሁለተኛ መደብ", "3": "ሦስተኛ መደብ"},
+        "person_number": "{person}፣ {number}",
+        "join": "፣ ",
+        "suffix": {"N": "አሉታ", "I": "ጠያቂ", "S": "ከሁሉ የበለጠ", "C": "የንጽጽር",
+                   "ATT": "የአቲካ ቅርጽ", "K": "ሁለት ቃላት ተዋሕደው አንድ የሆኑበት",
+                   "P": "ቅንጣት የተያያዘበት", "ABB": "ያጠረ ቅርጽ"},
     },
 }
 
@@ -374,6 +434,53 @@ HEBREW_WORDS = {
         "gender": {"m": "남성", "f": "여성", "b": "남성 또는 여성", "c": "통성"},
         "number": {"s": "단수", "p": "복수", "d": "쌍수"},
         "state": {"a": "절대형", "c": "연계형 (~의)", "d": "한정형"},
+    },
+    "pt": {
+        "pos": {"A": "Adjetivo", "C": "Conjunção", "D": "Advérbio", "N": "Substantivo",
+                "P": "Pronome", "R": "Preposição", "S": "Sufixo", "T": "Partícula", "V": "Verbo"},
+        "noun": {"c": "comum", "g": "gentílico (povo ou lugar)", "p": "nome próprio", "x": ""},
+        "adjective": {"a": "", "c": "número cardinal", "g": "gentílico", "o": "número ordinal"},
+        "pronoun": {"d": "demonstrativo", "f": "indefinido", "i": "interrogativo",
+                    "p": "pessoal", "r": "relativo"},
+        "particle": {"a": "afirmação", "d": "artigo definido", "e": "exortação",
+                     "i": "interrogativa", "j": "interjeição", "m": "demonstrativa",
+                     "n": "negação", "o": "marca de objeto direto", "r": "relativa"},
+        "suffix": {"d": "terminação direcional (para)", "h": "he paragógico",
+                   "n": "nun paragógico", "p": "pronominal"},
+        "with_article": "com artigo",
+        "stem": None,  # the stems are names, the same in every language
+        "conjugation": {"p": "perfeito (qatal)", "q": "perfeito com \u201ce\u201d (weqatal)",
+                        "i": "imperfeito (yiqtol)", "w": "narrativo passado (wayyiqtol)",
+                        "h": "coortativo", "j": "jussivo", "v": "imperativo",
+                        "r": "particípio", "s": "particípio passivo",
+                        "a": "infinitivo absoluto", "c": "infinitivo construto"},
+        "person": {"1": "1.ª pessoa", "2": "2.ª pessoa", "3": "3.ª pessoa"},
+        "gender": {"m": "masculino", "f": "feminino", "b": "masculino ou feminino",
+                   "c": "comum"},
+        "number": {"s": "singular", "p": "plural", "d": "dual"},
+        "state": {"a": "absoluto", "c": "construto (de ...)", "d": "determinado"},
+    },
+    "am": {
+        "pos": {"A": "ቅጽል", "C": "መስተጻምር", "D": "ተውሳከ ግስ", "N": "ስም",
+                "P": "ተውላጠ ስም", "R": "መስተዋድድ", "S": "ቅጥያ", "T": "ቅንጣት", "V": "ግስ"},
+        "noun": {"c": "የወል ስም", "g": "የሕዝብ ወይም የቦታ መጠሪያ", "p": "የተጸውዖ ስም", "x": ""},
+        "adjective": {"a": "", "c": "መደበኛ ቁጥር", "g": "የሕዝብ መጠሪያ", "o": "ተራ ቁጥር"},
+        "pronoun": {"d": "አመልካች", "f": "ያልተወሰነ", "i": "ጠያቂ", "p": "ግላዊ", "r": "አያያዥ"},
+        "particle": {"a": "ማረጋገጫ", "d": "መወሰኛ", "e": "ማበረታቻ",
+                     "i": "ጠያቂ", "j": "ቃለ አጋኖ", "m": "አመልካች",
+                     "n": "አሉታ", "o": "የቀጥታ ተሳቢ ምልክት", "r": "አያያዥ"},
+        "suffix": {"d": "አቅጣጫ አመልካች መድረሻ (ወደ)", "h": "ተጨማሪ ሄ", "n": "ተጨማሪ ኑን", "p": "ተውላጠ ስም"},
+        "with_article": "ከመወሰኛ ጋር",
+        "stem": None,  # the stems are names, the same in every language
+        "conjugation": {"p": "ፍጹም (ቃጣል)", "q": "«እና» የተጨመረበት ፍጹም (ወቃጣል)",
+                        "i": "ያልተጠናቀቀ (ይቅጦል)", "w": "የኃላፊ ትረካ (ወይይቅጦል)",
+                        "h": "የራስ ምኞት", "j": "የሦስተኛ መደብ ትእዛዝ", "v": "ትእዛዝ",
+                        "r": "ቅጽላዊ ግስ", "s": "ተገብሮ ቅጽላዊ ግስ",
+                        "a": "ፍጹም የግስ ስም", "c": "ጥገኛ የግስ ስም"},
+        "person": {"1": "አንደኛ መደብ", "2": "ሁለተኛ መደብ", "3": "ሦስተኛ መደብ"},
+        "gender": {"m": "ወንድ", "f": "ሴት", "b": "ወንድ ወይም ሴት", "c": "የጋራ"},
+        "number": {"s": "ነጠላ", "p": "ብዙ", "d": "ጥንድ"},
+        "state": {"a": "ነጻ", "c": "ጥገኛ (የ...)", "d": "የተወሰነ"},
     },
 }
 

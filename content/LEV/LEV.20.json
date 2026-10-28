@@ -50,6 +50,11 @@
           "L": "그리고 {{divine_name:주|야훼}}께서 모세에게 말씀하여 이르셨다.",
           "B": "{{divine_name:주|야훼}}께서 모세에게 말씀하셨다.",
           "R": "{{divine_name:주|야훼}}께서 모세에게 말씀하셨다."
+        },
+        "pt": {
+          "L": "E {{divine_name:o SENHOR|Javé}} falou a Moisés, dizendo:",
+          "B": "{{divine_name:O SENHOR|Javé}} disse a Moisés:",
+          "R": "{{divine_name:O SENHOR|Javé}} disse a Moisés:"
         }
       },
       "decisions": [
@@ -169,6 +174,11 @@
           "L": "\"그리고 너는 이스라엘 자손에게 말하라. '이스라엘 자손이든 이스라엘에 머물러 사는 나그네든, 누구든지 자기 자식 가운데 [하나를] 몰렉에게 주면, 그는 반드시 죽임을 당해야 한다. 그 땅의 백성이 그를 돌로 쳐야 한다.",
           "B": "\"이스라엘 백성에게 일러라. '이스라엘 백성이든 이스라엘에 사는 나그네든, 누구든지 자기 자식을 하나라도 몰렉에게 넘겨주어 불 가운데로 지나가게 하면, 그 사람은 반드시 죽여야 한다. 그 땅의 백성이 그를 돌로 쳐 죽여야 한다.",
           "R": "\"이스라엘 사람들에게 이렇게 전하여라. '이스라엘 사람이든 이스라엘에 사는 나그네든, 누가 자기 자식을 몰렉이라는 신에게 불태워 바칠 수도 있다. 그런 사람은 죽여야 한다. 그 땅의 사람들이 그가 죽을 때까지 돌을 던져야 한다."
+        },
+        "pt": {
+          "L": "\"E aos filhos de Israel dirás: '{{gender:Qualquer pessoa|Qualquer homem}} dos filhos de Israel ou dos imigrantes que moram como imigrantes em Israel que der algum dos seus descendentes a Moloque certamente será {{gender:morta|morto}}; o povo da terra {{gender:a|o}} apedrejará com pedras.",
+          "B": "\"Dize aos israelitas: '{{gender:Qualquer pessoa|Qualquer homem}} dentre os israelitas ou dentre os estrangeiros que vivem em Israel que der algum dos seus filhos a Moloque, para ser passado pelo fogo, deverá ser {{gender:morta|morto}}. O povo da terra {{gender:a|o}} apedrejará.",
+          "R": "\"Diz aos israelitas: '{{gender:Alguém|Um homem}} de Israel, ou um estrangeiro que mora em Israel, pode dar um dos seus filhos para ser queimado como sacrifício ao deus Moloque. Essa pessoa tem de ser morta: o povo da comunidade deve atirar pedras nela até que ela morra."
         }
       },
       "decisions": [
@@ -345,6 +355,52 @@
           "reason": "The Literal keeps the passive and the doubled verb; the Balanced and Readable say plainly that the community must carry out the sentence, as the meaning decision explains. \"누구든지\" and \"그 사람\" need no gender span (see 17:3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o030200020051",
+            "o030200020061"
+          ],
+          "choice": "Qualquer pessoa / Qualquer homem (L, B), Alguém / Um homem (R), with the words that agree with it under the same setting (morta/morto, a/o, essa pessoa/esse homem)",
+          "alternatives": [
+            "quem (no setting)"
+          ],
+          "reason": "For the chapter, as 17:3 and 17:8 do in Portuguese: the doubled Hebrew \"man\" means anyone at all (m2), and where the English has a gender setting Portuguese puts it on the noun it has to choose, \"qualquer pessoa\" by default and \"qualquer homem\" as the traditional alternative. Portuguese adjectives and pronouns agree with that noun, so they go under the same setting. Where Portuguese can say \"quem\" or \"essa pessoa\" without choosing (verse 9 at Readable, verses 4-6), no setting is needed. The laws about a man and a woman (verses 10-21) speak of real men and take none.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-2",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030200020141",
+            "o030200020171",
+            "o030200020181"
+          ],
+          "choice": "Moloque; certamente será morto (L), deverá ser morto (B), tem de ser morto (R)",
+          "alternatives": [
+            "Moleque",
+            "Moloch"
+          ],
+          "reason": "For the book (18:21; 20:2-5): \"Moloque\" is the usual Brazilian form of the god's name, with -que for the final k as in \"Amaleque\"; Readable adds \"o deus\" as the English does. The doubled verb of the death sentence (m3) follows Exodus 21:12 and 31:14: \"certamente será morto\" at Literal, \"deverá ser morto\" at Balanced, \"tem de ser morto\" at Readable, through the chapter.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -429,6 +485,11 @@
           "L": "그리고 나, 내가 그 사람에게 내 얼굴을 두어 [대적하고], 그를 그의 백성 가운데서 끊어 버리겠다. 그가 자기 자식을 몰렉에게 주어 내 성소를 부정하게 하고 내 거룩한 이름을 더럽혔기 때문이다.",
           "B": "나도 친히 그 사람을 대적하여, 그를 백성 가운데서 끊어 버리겠다. 그가 자기 자식을 몰렉에게 주어 내 성소를 부정하게 하고 내 거룩한 이름을 더럽혔기 때문이다.",
           "R": "나도 직접 그 사람을 대적하겠다. 그를 백성에게서 떼어 내겠다. 그가 자기 자식을 몰렉에게 바쳐서 내 성소를 부정하게 하였기 때문이다. 그는 내 거룩한 이름을 욕되게 하였다."
+        },
+        "pt": {
+          "L": "E eu, eu porei o {{deity_pronoun:meu|Meu}} rosto contra {{gender:essa pessoa|esse homem}} e {{gender:a|o}} cortarei do meio do seu povo, porque deu dos seus descendentes a Moloque, para tornar impuro o {{deity_pronoun:meu|Meu}} santuário e para profanar o {{deity_pronoun:meu|Meu}} santo nome.",
+          "B": "Eu mesmo porei o {{deity_pronoun:meu|Meu}} rosto contra {{gender:essa pessoa|esse homem}} e {{gender:a|o}} eliminarei do meio do povo. Pois, ao dar um filho a Moloque, {{gender:essa pessoa|esse homem}} tornou impuro o {{deity_pronoun:meu|Meu}} santuário e profanou o {{deity_pronoun:meu|Meu}} santo nome.",
+          "R": "Eu mesmo vou me voltar contra {{gender:essa pessoa|esse homem}}. Vou {{gender:eliminá-la|eliminá-lo}} do meio do povo. Ao dar um filho a Moloque, {{gender:essa pessoa|esse homem}} tornou impuro o {{deity_pronoun:meu|Meu}} lugar santo e desonrou o {{deity_pronoun:meu|Meu}} santo nome."
         }
       },
       "decisions": [
@@ -506,6 +567,30 @@
           "reason": "\"Face\" keeps the solemn biblical image of God's face turned against the offender, as at 17:10; \"visage\" would sound like an ordinary facial expression. Readable says \"je me retournerai contre\", as the English Readable says \"turn against\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030200030012",
+            "o030200030021",
+            "o030200030041",
+            "o030200030072"
+          ],
+          "choice": "porei o meu rosto contra (L, B), vou me voltar contra (R); cortarei (L), eliminarei (B, R)",
+          "alternatives": [
+            "me voltarei contra (L, B)"
+          ],
+          "reason": "As 17:10 has it in Portuguese: Literal and Balanced keep the picture of setting the face against someone (m1), and Readable says \"voltar-se contra\". God's own act of cutting off follows the book's \"cortar\" (L) and \"eliminar\" (B, R), as at 19:8 and Exodus 12:15. \"Profanar\" (L, B) and \"desonrar\" (R) are the verbs set at 19:8 and 19:12.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -581,6 +666,11 @@
           "L": "그리고 만일 그 땅의 백성이, 그 사람이 자기 자식을 몰렉에게 줄 때에 그 사람에게서 그들의 눈을 감아 버리고 그를 죽이지 않으면,",
           "B": "그 사람이 자기 자식을 몰렉에게 주는데도 그 땅의 백성이 못 본 체하고 그를 죽이지 않으면,",
           "R": "누가 자기 자식을 몰렉에게 바치는데도 그 땅의 사람들이 못 본 척할 수도 있다. 그리고 그 사람을 죽이지 않을 수도 있다."
+        },
+        "pt": {
+          "L": "E, se o povo da terra de fato esconder os seus olhos de {{gender:essa pessoa|esse homem}} quando {{gender:ela|ele}} der dos seus descendentes a Moloque, para não {{gender:a|o}} matar,",
+          "B": "Se o povo da terra fechar os olhos quando {{gender:essa pessoa|esse homem}} der um dos seus filhos a Moloque, e não {{gender:a|o}} matar,",
+          "R": "O povo da comunidade pode fingir que não vê quando alguém dá um filho a Moloque. Pode deixar de matar essa pessoa."
         }
       },
       "decisions": [
@@ -629,6 +719,27 @@
           "choice": "The people of the community might ...",
           "alternatives": [],
           "reason": "Readable states the case in two sentences, and gives the result in verse 5.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030200040021",
+            "o030200040031",
+            "o030200040071"
+          ],
+          "choice": "fechar os olhos (B); esconder os seus olhos (L); fingir que não vê (R)",
+          "alternatives": [
+            "fazer vista grossa"
+          ],
+          "reason": "To hide the eyes is to look away on purpose (m1). Portuguese \"fechar os olhos\" to something is the ordinary idiom for exactly that, so Balanced can keep a picture where the English says \"look the other way\"; \"fazer vista grossa\" is too colloquial for a law.",
           "uncertain": false,
           "footnote": false
         }
@@ -712,6 +823,11 @@
           "L": "나, 내가 그 사람과 그의 가문에게 내 얼굴을 두어 [대적하고], 그와 그를 따라 음행하는 모든 자, 곧 몰렉을 따라 음행하는 자들을 그들의 백성 가운데서 끊어 버리겠다.",
           "B": "내가 그 사람과 그의 가문을 대적하겠다. 그리고 그 사람과, 그를 따라 몰렉을 섬기며 음행하는 모든 자를 백성 가운데서 끊어 버리겠다.",
           "R": "그러면 내가 그 사람과 그의 가족을 대적하겠다. 내가 그를 백성에게서 떼어 내겠다. 그와 함께 몰렉을 섬기는 사람들도 모두 떼어 내겠다. 그들은 다른 남자를 따라다니는 아내처럼 나를 배신하고 있다."
+        },
+        "pt": {
+          "L": "então eu porei o {{deity_pronoun:meu|Meu}} rosto contra {{gender:essa pessoa|esse homem}} e contra o seu clã, e {{gender:a|o}} cortarei, e a todos os que se prostituem atrás {{gender:dela|dele}}, prostituindo-se atrás de Moloque, do meio do seu povo.",
+          "B": "então eu porei o {{deity_pronoun:meu|Meu}} rosto contra {{gender:essa pessoa|esse homem}} e contra a sua família, e eliminarei do meio do povo tanto {{gender:ela|ele}} como todos os que {{gender:a|o}} seguem, prostituindo-se com Moloque.",
+          "R": "Então eu vou me voltar contra essa pessoa e contra a família dela. Vou eliminar essa pessoa do meio do povo. Também vou eliminar todos os que se juntarem a ela para adorar Moloque. Eles estão sendo infiéis a {{deity_pronoun:mim|Mim}}, como uma esposa que corre atrás de outros homens."
         }
       },
       "decisions": [
@@ -805,6 +921,28 @@
           "reason": "The Hebrew picture of Israel as an unfaithful wife is kept at Literal and Balanced, as in 17:7; the Readable explains it, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030200050122",
+            "o030200050142",
+            "o030200050162"
+          ],
+          "choice": "se prostituem atrás de (L); prostituindo-se com (B)",
+          "alternatives": [
+            "são infiéis a (B)"
+          ],
+          "reason": "As 17:7 has it in Portuguese, Literal and Balanced keep the picture of prostitution for the worship of another god (m2), and Readable explains it in a sentence of its own, as the English Readable does. Readable writes \"a mim\" with the deity setting, though the English has none there, since it is God speaking of himself.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -885,6 +1023,11 @@
           "L": "그리고 영매들과 무당들에게로 돌아서서 그들을 따라 음행하는 사람이 있으면, 내가 그 사람에게 내 얼굴을 두어 [대적하고], 그를 그의 백성 가운데서 끊어 버리겠다.",
           "B": "누구든지 영매나 무당에게 마음을 돌려 그들을 따라 음행하면, 내가 그 사람을 대적하여 그를 백성 가운데서 끊어 버리겠다.",
           "R": "누가 죽은 사람이나 영들과 이야기할 수 있다고 하는 사람들을 찾아가 도움을 구할 수도 있다. 그것은 나를 배신하는 일이다. 내가 그 사람을 대적하겠다. 내가 그를 백성에게서 떼어 내겠다."
+        },
+        "pt": {
+          "L": "E a pessoa que se voltar para os médiuns e para os espíritas, para se prostituir atrás deles, eu porei o {{deity_pronoun:meu|Meu}} rosto contra essa pessoa e a cortarei do meio do seu povo.",
+          "B": "Se alguém se voltar para médiuns e espíritas e se prostituir ao segui-los, eu porei o {{deity_pronoun:meu|Meu}} rosto contra essa pessoa e a eliminarei do meio do povo.",
+          "R": "Alguém pode procurar ajuda com pessoas que dizem que podem falar com os mortos ou com os espíritos. Isso é ser infiel a {{deity_pronoun:mim|Mim}}. Eu vou me voltar contra essa pessoa. Vou eliminá-la do meio do povo."
         }
       },
       "decisions": [
@@ -1009,6 +1152,11 @@
           "L": "그리고 너희는 너희 자신을 거룩하게 하여 거룩하게 되어라. 나는 {{divine_name:주|야훼}} 너희의 하나님이기 때문이다.",
           "B": "너희는 자신을 거룩하게 구별하여 거룩한 사람이 되어라. 내가 {{divine_name:주|야훼}} 너희 하나님이기 때문이다.",
           "R": "너희는 자신을 거룩하게 구별해야 한다. 거룩하게 살아야 한다. 내가 {{divine_name:주|야훼}} 너희 하나님이기 때문이다."
+        },
+        "pt": {
+          "L": "E vocês se consagrarão e serão santos, porque eu [sou] {{divine_name:o SENHOR|Javé}}, o Deus de vocês.",
+          "B": "Consagrem-se e sejam santos, porque eu sou {{divine_name:o SENHOR|Javé}}, o Deus de vocês.",
+          "R": "Separem-se como santos. Sejam santos, porque eu sou {{divine_name:o SENHOR|Javé}}, o Deus de vocês."
         }
       },
       "decisions": [
@@ -1103,6 +1251,11 @@
           "L": "그리고 너희는 내 규례를 지켜 그것을 행하라. 나는 너희를 거룩하게 하는 {{divine_name:주|야훼}}이다.",
           "B": "너희는 내 규례를 지키고 그대로 행하라. 나는 {{divine_name:주|야훼}}이다. 내가 너희를 거룩하게 한다.",
           "R": "너희는 내 규례를 지키고 그대로 행해야 한다. 나는 {{divine_name:주|야훼}}이다. 너희를 거룩하게 하는 이가 바로 나다."
+        },
+        "pt": {
+          "L": "E vocês guardarão os {{deity_pronoun:meus|Meus}} estatutos e os praticarão; eu [sou] {{divine_name:o SENHOR|Javé}}, que os faço santos.",
+          "B": "Vocês guardarão os {{deity_pronoun:meus|Meus}} estatutos e os cumprirão. Eu sou {{divine_name:o SENHOR|Javé}}; eu faço vocês santos.",
+          "R": "Obedeçam às {{deity_pronoun:minhas|Minhas}} leis e façam o que elas dizem. Eu sou {{divine_name:o SENHOR|Javé}}. Eu sou aquele que faz vocês santos."
         }
       },
       "decisions": [
@@ -1133,6 +1286,29 @@
           "choice": "the LORD who makes you holy: Israel's holiness is God's work as well as their duty",
           "alternatives": [],
           "reason": "The verb is the one of verse 7, now with God as subject. Israel is commanded to be holy, yet it is the LORD who sets them apart for himself (Exodus 31:13; Leviticus 21:8; 22:32). Verses 24 and 26 say how: he has separated them from the peoples.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030200080081",
+            "o030200080082"
+          ],
+          "choice": "que os faço santos (L); eu faço vocês santos (B); aquele que faz vocês santos (R)",
+          "alternatives": [
+            "que os santifico",
+            "que os consagro"
+          ],
+          "reason": "God's making Israel holy (m2) is said with \"fazer santo\", so that the link with \"sejam santos\" in verse 7 is plain. \"Santificar\" is heard today mostly of moral improvement, and \"consagrar\" is kept for the people's own act in verse 7, as the book sets it at 8:10.",
           "uncertain": false,
           "footnote": false
         }
@@ -1206,6 +1382,11 @@
           "L": "누구든지 자기 아버지나 자기 어머니를 저주하면, 그는 반드시 죽임을 당해야 한다. 그가 자기 아버지와 자기 어머니를 저주하였으니, 그의 피가 그에게 돌아갈 것이다.",
           "B": "누구든지 아버지나 어머니를 저주하면 반드시 죽여야 한다. 그가 아버지나 어머니를 저주하였으니, 그가 죽는 것은 자기 탓이다.",
           "R": "누구든지 아버지나 어머니를 저주하면 죽여야 한다. 그 사람은 부모를 저주하였으니, 자기가 죽는 것은 자기 탓이다."
+        },
+        "pt": {
+          "L": "Pois {{gender:qualquer pessoa|qualquer homem}} que amaldiçoar o seu pai ou a sua mãe certamente será {{gender:morta|morto}}; amaldiçoou o seu pai e a sua mãe; o seu sangue [está] sobre {{gender:ela|ele}}.",
+          "B": "{{gender:Qualquer pessoa|Qualquer homem}} que amaldiçoar o pai ou a mãe deverá ser {{gender:morta|morto}}. Como amaldiçoou o pai ou a mãe, a culpa pela sua morte é {{gender:dela mesma|dele mesmo}}.",
+          "R": "{{gender:Quem|O homem que}} amaldiçoar o pai ou a mãe tem de ser morto. Essa pessoa amaldiçoou um dos pais e é culpada pela própria morte."
         }
       },
       "decisions": [
@@ -1408,6 +1589,30 @@
           "reason": "The Literal keeps the Hebrew idiom; the Balanced and Readable say what it means, that the guilt for the death is the offender's own and not the community's. The same wording is used through the chapter.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030200090151",
+            "o030200090152",
+            "o030200090161",
+            "o030200090162"
+          ],
+          "choice": "o seu sangue [está] sobre ele (L); a culpa pela sua morte é dele mesmo (B); é culpado pela própria morte (R)",
+          "alternatives": [
+            "o seu sangue cairá sobre ele"
+          ],
+          "reason": "For the chapter (verses 9, 11-13, 16, 27): Literal keeps the Hebrew \"his blood is on him\"; Balanced and Readable say what it means, that the guilt for the death rests on the offender and not on those who carry out the sentence (m2), as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1475,6 +1680,11 @@
           "L": "그리고 남의 아내와 간음하는 남자, 곧 자기 이웃의 아내와 간음하는 남자는, 간음한 남자와 간음한 여자가 반드시 죽임을 당해야 한다.",
           "B": "어떤 남자가 남의 아내, 곧 자기 동족의 아내와 간음하면, 간음한 그 남자와 여자를 둘 다 반드시 죽여야 한다.",
           "R": "어떤 남자가 다른 남자의 아내, 곧 이스라엘 사람의 아내와 성관계를 가질 수도 있다. 그러면 그 남자와 여자를 둘 다 죽여야 한다."
+        },
+        "pt": {
+          "L": "E o homem que adulterar com a mulher de um homem, que adulterar com a mulher do seu próximo, certamente será morto, o adúltero e a adúltera.",
+          "B": "Quando um homem cometer adultério com uma mulher casada, a mulher de um compatriota, o homem e a mulher que cometeram adultério deverão ser mortos, os dois.",
+          "R": "Um homem pode ter relações sexuais com a mulher de outro homem, a mulher de alguém de Israel. Nesse caso, tanto o homem como a mulher têm de ser mortos."
         }
       },
       "decisions": [
@@ -1591,6 +1801,11 @@
           "L": "그리고 자기 아버지의 아내와 동침하는 남자는 자기 아버지의 벗은 몸을 드러낸 것이다. 그 둘은 반드시 죽임을 당해야 한다. 그들의 피가 그들에게 돌아갈 것이다.",
           "B": "어떤 남자가 자기 아버지의 아내와 동침하면, 그것은 자기 아버지를 욕되게 한 것이다. 그 둘을 반드시 죽여야 한다. 그들이 죽는 것은 자기들 탓이다.",
           "R": "어떤 남자가 아버지의 아내와 성관계를 가지면, 그것은 아버지에게 잘못을 저지른 것이다. 그 둘을 죽여야 한다. 그들이 죽는 것은 자기들 탓이다."
+        },
+        "pt": {
+          "L": "E o homem que se deitar com a mulher do seu pai descobriu a nudez do seu pai; ambos certamente serão mortos; o sangue deles [está] sobre eles.",
+          "B": "Se um homem se deitar com a mulher do seu pai, cometeu uma ofensa contra o seu pai. Os dois deverão ser mortos; a culpa pela morte deles é deles mesmos.",
+          "R": "Se um homem tiver relações sexuais com a mulher do seu pai, ele fez um mal contra o seu pai. Os dois têm de ser mortos. Eles são culpados pela própria morte."
         }
       },
       "decisions": [
@@ -1644,6 +1859,29 @@
           "choice": "has sexual relations with; an offense against his father (Balanced) / a wrong against his father (Readable)",
           "alternatives": [],
           "reason": "Literal keeps \"lies with\" and \"uncovered his father's nakedness\". When the nakedness is said to belong to another man, Balanced and Readable say that the act wrongs him, as in chapter 18. The same wording is used in verses 20-21.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030200110031",
+            "o030200110071",
+            "o030200110091"
+          ],
+          "choice": "se deitar com (L, B), ter relações sexuais (R); descobriu a nudez (L), cometeu uma ofensa contra (B), fez um mal contra (R)",
+          "alternatives": [
+            "teve relações sexuais com (B)"
+          ],
+          "reason": "Literal keeps \"descobrir a nudez\", the Hebrew phrase the book uses at Literal from chapter 18. \"Lie with\" is \"se deitar com\" at Literal and Balanced, as set at 15:18; where the English Balanced says \"have sexual relations\" for \"uncover\" or \"see the nakedness\" (verses 17-19), Portuguese Balanced says \"ter relações sexuais\", so that the two Hebrew phrases stay apart. Where the nakedness is said to be another man's, Balanced and Readable say that the act wrongs him, as the English does.",
           "uncertain": false,
           "footnote": false
         }
@@ -1710,6 +1948,11 @@
           "L": "그리고 자기 며느리와 동침하는 남자는, 그 둘이 반드시 죽임을 당해야 한다. 그들이 문란한 일을 저질렀으니, 그들의 피가 그들에게 돌아갈 것이다.",
           "B": "어떤 남자가 자기 며느리와 동침하면, 그 둘을 반드시 죽여야 한다. 그들은 질서를 어지럽히는 문란한 일을 저질렀으니, 그들이 죽는 것은 자기들 탓이다.",
           "R": "어떤 남자가 아들의 아내와 성관계를 가지면, 그 둘을 죽여야 한다. 그들은 결코 섞여서는 안 되는 것을 섞었다. 그들이 죽는 것은 자기들 탓이다."
+        },
+        "pt": {
+          "L": "E o homem que se deitar com a sua nora, ambos certamente serão mortos; fizeram uma confusão; o sangue deles [está] sobre eles.",
+          "B": "Se um homem se deitar com a sua nora, os dois deverão ser mortos. Cometeram uma mistura perversa; a culpa pela morte deles é deles mesmos.",
+          "R": "Se um homem tiver relações sexuais com a mulher do seu filho, os dois têm de ser mortos. Eles misturaram o que deve ficar separado. Eles são culpados pela própria morte."
         }
       },
       "decisions": [
@@ -1760,6 +2003,28 @@
           "choice": "his son's wife; mixed what must be kept apart",
           "alternatives": [],
           "reason": "Readable explains \"daughter-in-law\" and the word for confusion. Balanced says \"a perverse mixing\", as at 18:23.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030200120091"
+          ],
+          "choice": "uma confusão (L); uma mistura perversa (B); misturaram o que deve ficar separado (R)",
+          "alternatives": [
+            "uma perversão",
+            "um incesto"
+          ],
+          "reason": "The rare word comes from a root for mixing (m1), used also at 18:23. Literal keeps \"confusão\" in its old sense of mixing together, as the English Literal keeps \"confusion\"; Balanced and Readable say what it is, as the English does.",
           "uncertain": false,
           "footnote": false
         }
@@ -1827,6 +2092,11 @@
           "L": "그리고 여자와 눕듯이 남자와 눕는 남자는, 그 둘이 가증한 일을 저질렀으니, 반드시 죽임을 당해야 한다. 그들의 피가 그들에게 돌아갈 것이다.",
           "B": "어떤 남자가 여자와 동침하듯이 남자와 동침하면, 그 둘은 가증한 일을 저지른 것이다. 그들을 반드시 죽여야 한다. 그들이 죽는 것은 자기들 탓이다.",
           "R": "어떤 남자가 여자와 성관계를 가지듯이 다른 남자와 성관계를 가지면, 그 둘은 역겨운 일을 한 것이다. 그들을 죽여야 한다. 그들이 죽는 것은 자기들 탓이다."
+        },
+        "pt": {
+          "L": "E o homem que se deitar com um homem, como se deita com uma mulher, ambos fizeram uma abominação; certamente serão mortos; o sangue deles [está] sobre eles.",
+          "B": "Se um homem se deitar com outro homem como se deita com uma mulher, os dois fizeram uma coisa abominável. Deverão ser mortos; a culpa pela morte deles é deles mesmos.",
+          "R": "Se um homem tiver relações sexuais com outro homem como as teria com uma mulher, os dois fizeram uma coisa abominável. Eles têm de ser mortos. Eles são culpados pela própria morte."
         }
       },
       "decisions": [
@@ -1873,6 +2143,28 @@
           "choice": "their blood is on them",
           "alternatives": [],
           "reason": "As in verse 9.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030200130081"
+          ],
+          "choice": "uma abominação (L); uma coisa abominável (B, R)",
+          "alternatives": [
+            "uma coisa detestável (B)",
+            "uma coisa nojenta (R)"
+          ],
+          "reason": "The word the English Literal calls \"abomination\" (m2) keeps \"abominação\" at Literal and \"abominável\" at Balanced and Readable, as 11:10 sets it for the book (and for 18:22, 26-30), though the English Balanced and Readable say \"detestable\" and \"disgusting\": Portuguese keeps \"detestável\" and \"repugnante\" for the different word of chapter 11 and of verse 25, so that the two Hebrew words stay apart.",
           "uncertain": false,
           "footnote": false
         }
@@ -1949,6 +2241,11 @@
           "L": "그리고 한 여자와 그의 어머니를 아울러 아내로 맞는 남자는, 그것이 음란한 악행이니, 그와 그 여자들을 불로 태워, 너희 가운데 음란한 악행이 없게 해야 한다.",
           "B": "어떤 남자가 한 여자와 그 여자의 어머니를 함께 아내로 맞으면, 그것은 추악한 일이다. 그 남자와 두 여자를 불에 태워야 한다. 그래야 너희 가운데 그런 추악한 일이 남아 있지 않을 것이다.",
           "R": "남자가 한 여자와 그 여자의 어머니와 함께 결혼하면 안 된다. 그것은 부끄럽고 악한 일이다. 그렇게 하면 그 남자와 두 여자를 불에 태워야 한다. 그래야 그런 악한 일이 너희 가운데 없을 것이다."
+        },
+        "pt": {
+          "L": "E o homem que tomar uma mulher e a mãe dela, é depravação; no fogo queimarão a ele e a elas, para que não haja depravação no meio de vocês.",
+          "B": "O homem que se casar com uma mulher e também com a mãe dela cometeu uma depravação. Ele e as duas mulheres serão queimados no fogo. Assim essa depravação não continuará no meio de vocês.",
+          "R": "Um homem não deve se casar com uma mulher e com a mãe dela. Isso é uma coisa vergonhosa e má. Se ele fizer isso, ele e as duas mulheres têm de ser queimados no fogo. Então esse mal não existirá mais entre vocês."
         }
       },
       "decisions": [
@@ -2014,6 +2311,28 @@
           "reason": "Readable states the forbidden act first and then the penalty.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030200140081",
+            "o030200140161"
+          ],
+          "choice": "depravação (L, B; also 19:29)",
+          "alternatives": [
+            "perversidade",
+            "infâmia"
+          ],
+          "reason": "The word names a planned and shameful wrong (m2). \"Depravação\" says that, as the English says \"depravity\"; 19:29 uses the same word for the land filled with prostitution.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2076,6 +2395,11 @@
           "L": "그리고 짐승과 교합하는 남자는 반드시 죽임을 당해야 하고, 너희는 그 짐승도 죽여라.",
           "B": "어떤 남자가 짐승과 교합하면 반드시 그를 죽여야 하고, 너희는 그 짐승도 죽여라.",
           "R": "어떤 남자가 짐승과 성관계를 가지면 그를 죽여야 한다. 그 짐승도 죽여야 한다."
+        },
+        "pt": {
+          "L": "E o homem que tiver cópula com um animal certamente será morto, e o animal vocês matarão.",
+          "B": "O homem que tiver relações sexuais com um animal deverá ser morto, e vocês matarão também o animal.",
+          "R": "Se um homem tiver relações sexuais com um animal, ele tem de ser morto. Vocês também têm de matar o animal."
         }
       },
       "decisions": [
@@ -2181,6 +2505,11 @@
           "L": "그리고 어떤 짐승에게든지 가까이 가서 그것과 교합하는 여자가 있으면, 너희는 그 여자와 그 짐승을 죽여라. 그들은 반드시 죽임을 당해야 한다. 그들의 피가 그들에게 돌아갈 것이다.",
           "B": "어떤 여자가 짐승에게 가까이 가서 그것과 교합하면, 너희는 그 여자와 짐승을 죽여라. 그들은 반드시 죽임을 당해야 한다. 그들이 죽는 것은 자기들 탓이다.",
           "R": "어떤 여자가 짐승에게 가서 성관계를 가질 수도 있다. 그러면 그 여자와 짐승을 둘 다 죽여야 한다. 그들은 죽임을 당해야 한다. 그들이 죽는 것은 자기들 탓이다."
+        },
+        "pt": {
+          "L": "E a mulher que se aproximar de qualquer animal para acasalar com ele, matarás a mulher e o animal; certamente serão mortos; o sangue deles [está] sobre eles.",
+          "B": "Quando uma mulher se aproximar de um animal para se acasalar com ele, matarás a mulher e o animal. Os dois deverão ser mortos; a culpa pela morte deles é deles mesmos.",
+          "R": "Uma mulher pode se aproximar de um animal para ter relações sexuais com ele. Nesse caso, tens de matar a mulher e o animal. Eles têm de ser mortos. Eles são culpados pela própria morte."
         }
       },
       "decisions": [
@@ -2212,6 +2541,27 @@
           "choice": "their blood is on them",
           "alternatives": [],
           "reason": "As in verse 9. Here the phrase includes the animal.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o030200160072"
+          ],
+          "choice": "matarás (tu)",
+          "alternatives": [
+            "vocês matarão"
+          ],
+          "reason": "Here the Hebrew turns to the singular \"you\" (\"you shall kill\"), after the plural of verse 15, and every level follows it, as set at 19:2.",
           "uncertain": false,
           "footnote": false
         }
@@ -2302,6 +2652,11 @@
           "L": "그리고 어떤 남자가 자기 누이, 곧 자기 아버지의 딸이나 자기 어머니의 딸을 데려다가, 그가 그 여자의 벗은 몸을 보고 그 여자가 그의 벗은 몸을 보면, 그것은 수치스러운 일이니, 그들은 그들의 백성의 자손들이 보는 앞에서 끊어져야 한다. 그가 자기 누이의 벗은 몸을 드러내었으니, 그는 자기 죄악을 짊어질 것이다.",
           "B": "어떤 남자가 자기 누이, 곧 아버지의 딸이나 어머니의 딸을 아내로 맞아 서로 동침하면, 그것은 수치스러운 일이다. 그들은 백성이 보는 앞에서 끊어져야 한다. 그가 자기 누이와 동침하였으니, 자기 죄의 대가를 치러야 한다.",
           "R": "어떤 남자가 자기 누이, 곧 아버지의 딸이나 어머니의 딸과 결혼하여 성관계를 가질 수도 있다. 그것은 부끄러운 일이다. 그들을 모든 사람이 보는 앞에서 백성에게서 떼어 내야 한다. 그는 자기 누이와 성관계를 가졌으니, 죄가 있으므로 벌을 받을 것이다."
+        },
+        "pt": {
+          "L": "E o homem que tomar a sua irmã, filha do seu pai ou filha da sua mãe, e vir a nudez dela, e ela vir a nudez dele, é uma vergonha, e serão cortados diante dos olhos dos filhos do seu povo; descobriu a nudez da sua irmã; levará a sua iniquidade.",
+          "B": "Se um homem se casar com a sua irmã, filha do seu pai ou filha da sua mãe, e eles tiverem relações sexuais, isso é uma vergonha. Eles deverão ser eliminados à vista do seu povo. Ele teve relações sexuais com a sua irmã e sofrerá as consequências da sua culpa.",
+          "R": "Um homem pode se casar com a sua irmã, filha do seu pai ou da sua mãe, e os dois podem ter relações sexuais. Isso é uma vergonha. Eles têm de ser eliminados do povo, à vista de todos. Ele teve relações sexuais com a sua irmã. Ele é culpado e será castigado."
         }
       },
       "decisions": [
@@ -2395,6 +2750,28 @@
           "reason": "As at 17:16.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030200170181"
+          ],
+          "choice": "uma vergonha",
+          "alternatives": [
+            "uma desonra",
+            "uma infâmia"
+          ],
+          "reason": "This rare word means a reproach or disgrace (m2). \"Vergonha\" says it plainly at every level, as the English \"disgrace\" does; it has nothing to do with the common word for steadfast love that has the same letters.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2473,6 +2850,11 @@
           "L": "그리고 어떤 남자가 [월경으로] 앓는 여자와 동침하여 그 여자의 벗은 몸을 드러내면, 그는 그 여자의 샘을 드러낸 것이고, 그 여자도 자기 피의 샘을 드러낸 것이니, 그 둘은 그들의 백성 가운데서 끊어질 것이다.",
           "B": "어떤 남자가 월경 중인 여자와 동침하면, 그는 그 여자의 피가 흘러나오는 곳을 드러낸 것이고, 그 여자도 그것을 드러나게 한 것이다. 그 둘은 백성 가운데서 끊어져야 한다.",
           "R": "남자는 여자가 월경을 하는 동안에 그와 성관계를 가지면 안 된다. 그렇게 하면 그는 여자의 피가 흘러나오는 곳을 드러낸 것이고, 여자도 그렇게 하도록 내버려 둔 것이다. 그 둘을 백성에게서 떼어 내야 한다."
+        },
+        "pt": {
+          "L": "E o homem que se deitar com uma mulher indisposta e descobrir a nudez dela, pôs a nu a fonte dela, e ela descobriu a fonte do seu sangue; e ambos serão cortados do meio do seu povo.",
+          "B": "Se um homem se deitar com uma mulher durante a menstruação e tiver relações sexuais com ela, ele deixou a descoberto o lugar de onde corre o sangue dela, e ela permitiu que fosse descoberto. Os dois deverão ser eliminados do meio do povo.",
+          "R": "Um homem não deve ter relações sexuais com uma mulher enquanto ela está menstruada. Se fizer isso, ele descobriu o lugar de onde sai o sangue dela, e ela deixou que ele fizesse isso. Os dois têm de ser eliminados do povo."
         }
       },
       "decisions": [
@@ -2557,6 +2939,27 @@
           "reason": "The Hebrew word means faint or unwell (m1). \"Indisposition\" keeps that sense and is the traditional discreet French word for a woman's period; Balanced and Readable say \"pendant ses règles\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030200180061",
+            "o030200180111",
+            "o030200180161"
+          ],
+          "choice": "indisposta (L); a fonte dela, a fonte do seu sangue (L)",
+          "alternatives": [
+            "o fluxo do seu sangue (L, as 12:7)"
+          ],
+          "reason": "\"Indisposta\" is the word 15:33 uses at Literal for a woman unwell in her period (m1). At 12:7 Literal says \"fluxo\" because the phrase there names the bleeding; here the verb \"uncover\" needs the place itself, the source (m2), so Literal keeps \"fonte\", as the English Literal keeps \"spring\". Balanced and Readable say \"o lugar de onde corre o sangue\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2623,6 +3026,11 @@
           "L": "그리고 네 어머니의 누이나 네 아버지의 누이의 벗은 몸을 드러내지 말라. 그것은 자기 살붙이를 드러낸 것이니, 그들은 자기 죄악을 짊어질 것이다.",
           "B": "너는 이모나 고모와 동침하지 말라. 그것은 가까운 혈육의 벗은 몸을 드러내는 일이다. 그들은 자기 죄의 대가를 치러야 한다.",
           "R": "이모나 고모와 성관계를 가지면 안 된다. 그것은 가까운 친척과 성관계를 가지는 일이다. 그 두 사람은 죄가 있으니 벌을 받을 것이다."
+        },
+        "pt": {
+          "L": "E a nudez da irmã da tua mãe e da irmã do teu pai não descobrirás, porque ele pôs a nu a sua própria carne; levarão a sua iniquidade.",
+          "B": "Não terás relações sexuais com a irmã da tua mãe nem com a irmã do teu pai, pois isso é pôr a nu um parente próximo. Eles sofrerão as consequências da sua culpa.",
+          "R": "Não tenhas relações sexuais com a tua tia, irmã da tua mãe ou do teu pai. Isso seria ter relações com um parente próximo. As duas pessoas seriam culpadas e seriam castigadas."
         }
       },
       "decisions": [
@@ -2773,6 +3181,11 @@
           "L": "그리고 자기 숙모와 동침하는 남자는 자기 삼촌의 벗은 몸을 드러낸 것이다. 그들은 자기 죄를 짊어지고, 자식 없이 죽을 것이다.",
           "B": "어떤 남자가 큰어머니나 작은어머니와 동침하면, 그것은 큰아버지나 작은아버지를 욕되게 한 것이다. 그들은 자기 죄의 대가를 치르고 자식 없이 죽을 것이다.",
           "R": "어떤 남자가 큰어머니나 작은어머니와 성관계를 가지면, 그것은 큰아버지나 작은아버지에게 잘못을 저지른 것이다. 그들은 자기 죄 때문에 벌을 받을 것이다. 그들은 자식을 얻지 못하고 죽을 것이다."
+        },
+        "pt": {
+          "L": "E o homem que se deitar com a sua tia descobriu a nudez do seu tio; levarão o seu pecado; morrerão sem filhos.",
+          "B": "Se um homem se deitar com a mulher do seu tio, cometeu uma ofensa contra o seu tio. Eles sofrerão as consequências do seu pecado e morrerão sem filhos.",
+          "R": "Se um homem tiver relações sexuais com a mulher do seu tio, ele fez um mal contra o seu tio. Eles serão castigados pelo seu pecado. Morrerão sem ter filhos."
         }
       },
       "decisions": [
@@ -2891,6 +3304,11 @@
           "L": "그리고 자기 형제의 아내를 데려가는 남자는, 그것이 더러운 일이다. 그는 자기 형제의 벗은 몸을 드러낸 것이니, 그들은 자식이 없을 것이다.",
           "B": "어떤 남자가 자기 형제의 아내를 아내로 맞으면, 그것은 더러운 일이다. 그는 자기 형제를 욕되게 한 것이니, 그 둘은 자식이 없을 것이다.",
           "R": "남자는 자기 형이나 동생의 아내와 결혼하면 안 된다. 그것은 더러운 일이다. 그는 형제에게 잘못을 저지른 것이다. 그 남자와 여자는 자식을 얻지 못할 것이다."
+        },
+        "pt": {
+          "L": "E o homem que tomar a mulher do seu irmão, é impureza; descobriu a nudez do seu irmão; ficarão sem filhos.",
+          "B": "O homem que se casar com a mulher do seu irmão comete uma coisa impura. Cometeu uma ofensa contra o seu irmão; os dois ficarão sem filhos.",
+          "R": "Um homem não deve se casar com a mulher do seu irmão. Isso é uma coisa impura. Ele fez um mal contra o seu irmão. O homem e a mulher não terão filhos."
         }
       },
       "decisions": [
@@ -2935,6 +3353,27 @@
           "choice": "they will be childless",
           "alternatives": [],
           "reason": "As in verse 20.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030200210071"
+          ],
+          "choice": "impureza (L); uma coisa impura (B, R)",
+          "alternatives": [
+            "uma imundície"
+          ],
+          "reason": "The word is the one for a woman's monthly impurity (15:19), here used of a moral wrong (m1), so Portuguese keeps the family of \"impuro\" set for the book at 10:10, as the English says \"impurity\" and \"unclean\".",
           "uncertain": false,
           "footnote": false
         }
@@ -3017,6 +3456,11 @@
           "L": "그리고 너희는 내 모든 규례와 내 모든 법도를 지켜 행하라. 그러면 내가 너희를 데리고 들어가 살게 할 그 땅이 너희를 토해 내지 않을 것이다.",
           "B": "너희는 내 모든 규례와 법도를 지키고 그대로 행하라. 그러면 내가 너희를 데리고 들어가 살게 할 땅이 너희를 토해 내지 않을 것이다.",
           "R": "너희는 내 모든 규례와 법도를 지켜야 한다. 그것이 말하는 대로 행해야 한다. 그러면 내가 너희를 데리고 가서 살게 할 땅이, 사람이 먹은 것을 토해 내듯이 너희를 내쫓지 않을 것이다."
+        },
+        "pt": {
+          "L": "E vocês guardarão todos os {{deity_pronoun:meus|Meus}} estatutos e todas as {{deity_pronoun:minhas|Minhas}} ordenanças, e os praticarão, e a terra para onde eu os estou levando para habitar nela não os vomitará.",
+          "B": "Vocês guardarão todos os {{deity_pronoun:meus|Meus}} estatutos e todas as {{deity_pronoun:minhas|Minhas}} ordenanças e os cumprirão. Assim a terra para onde eu os estou levando, para que morem nela, não os vomitará.",
+          "R": "Obedeçam a todas as {{deity_pronoun:minhas|Minhas}} leis e a todas as {{deity_pronoun:minhas|Minhas}} regras. Façam o que elas dizem. Então a terra para onde eu estou levando vocês para morar não vai expulsar vocês, como uma pessoa vomita."
         }
       },
       "decisions": [
@@ -3135,6 +3579,11 @@
           "L": "그리고 너희는 내가 너희 앞에서 쫓아내는 민족의 규례를 따라 걷지 말라. 그들이 이 모든 일을 행하였으므로, 내가 그들을 몹시 싫어하였다.",
           "B": "너희는 내가 너희 앞에서 쫓아내는 민족의 풍습을 따르지 말라. 그들이 이 모든 일을 저질렀기 때문에, 내가 그들을 혐오하게 되었다.",
           "R": "너희는 그 민족들이 사는 방식대로 살면 안 된다. 너희가 그 땅에 들어갈 때 내가 그들을 쫓아낼 것이다. 그들이 이 모든 일을 했기 때문에 나는 그들을 미워하게 되었다."
+        },
+        "pt": {
+          "L": "E não andarão nos estatutos da nação que eu estou expulsando de diante de vocês, porque fizeram todas estas [coisas], e eu tive aversão a eles.",
+          "B": "Não seguirão os costumes da nação que eu estou expulsando da frente de vocês. Eles fizeram todas essas coisas, e eu passei a ter aversão a eles.",
+          "R": "Não vivam do jeito que as nações vivem. Eu estou expulsando essas nações da terra enquanto vocês chegam. Elas fizeram todas essas coisas, e por isso passei a odiá-las."
         }
       },
       "decisions": [
@@ -3268,6 +3717,11 @@
           "L": "그리고 내가 너희에게 말하였다. 너희, 너희가 그들의 땅을 차지할 것이고, 나, 내가 그것을 너희에게 주어 차지하게 하겠다. [그것은] 젖과 꿀이 흐르는 땅이다. 나는 너희를 민족들에게서 구별한 {{divine_name:주|야훼}} 너희의 하나님이다.",
           "B": "내가 너희에게 말하였다. 너희가 그들의 땅을 차지할 것이다. 젖과 꿀이 흐르는 그 땅을 내가 직접 너희에게 주어 차지하게 하겠다. 나는 {{divine_name:주|야훼}} 너희 하나님이다. 내가 너희를 다른 민족들과 구별하였다.",
           "R": "나는 너희에게 그들의 땅을 차지하게 해 주겠다고 약속하였다. 내가 그 땅을 너희에게 주어 너희 것이 되게 하겠다. 그 땅은 젖과 꿀이 흐르는 기름진 땅이다. 나는 {{divine_name:주|야훼}} 너희 하나님이다. 내가 너희를 다른 민족들과 구별하였다."
+        },
+        "pt": {
+          "L": "E eu disse a vocês: Vocês possuirão a terra deles, e eu, eu a darei a vocês para possuí-la, uma terra onde corre leite e mel. Eu [sou] {{divine_name:o SENHOR|Javé}}, o Deus de vocês, que os separei dos povos.",
+          "B": "Eu disse a vocês que vocês tomarão posse da terra deles; eu mesmo a darei a vocês como propriedade, uma terra onde corre leite e mel. Eu sou {{divine_name:o SENHOR|Javé}}, o Deus de vocês; eu separei vocês dos outros povos.",
+          "R": "Eu prometi a vocês que vocês vão tomar a terra deles. Eu vou dar essa terra a vocês para ser de vocês. É uma terra rica, onde corre leite e mel. Eu sou {{divine_name:o SENHOR|Javé}}, o Deus de vocês. Eu separei vocês das outras nações."
         }
       },
       "decisions": [
@@ -3467,6 +3921,11 @@
           "L": "그리고 너희는 정결한 짐승과 부정한 짐승을, 부정한 새와 정결한 새를 구별하라. 내가 너희를 위하여 부정한 것으로 구별한 짐승이나 새나 땅에 기는 모든 것으로 너희 자신을 가증하게 하지 말라.",
           "B": "그러므로 너희는 정결한 짐승과 부정한 짐승을 구별하고, 부정한 새와 정결한 새를 구별하라. 내가 너희에게 부정하다고 구별해 준 짐승이나 새나 땅에 기어 다니는 어떤 것으로도 너희 자신을 가증하게 하지 말라.",
           "R": "그러므로 너희는 정결한 짐승과 새를 부정한 것들과 구별해야 한다. 내가 부정하다고 말한 짐승이나 새나 땅에 기어 다니는 것을 먹어서 너희 자신을 역겹게 만들면 안 된다."
+        },
+        "pt": {
+          "L": "E vocês farão separação entre o animal puro e o impuro, e entre a ave impura e a pura, e não se tornarão detestáveis por animal, nem por ave, nem por nada que rasteja [sobre] o solo, que eu separei para vocês como impuro.",
+          "B": "Por isso vocês farão distinção entre animais puros e impuros e entre aves impuras e puras. Não se tornarão detestáveis por causa de nenhum animal, ave ou ser que rasteja pelo chão, que eu separei para vocês como impuros.",
+          "R": "Por isso vocês têm de separar os animais e as aves puros dos impuros. Não se tornem repugnantes comendo algum animal, ave ou bicho que rasteja pelo chão que eu disse a vocês que é impuro."
         }
       },
       "decisions": [
@@ -3598,6 +4057,11 @@
           "L": "그리고 너희는 나에게 거룩하게 되어라. 나 {{divine_name:주|야훼}}가 거룩하기 때문이다. 내가 너희를 민족들에게서 구별하여 내 것이 되게 하였다.",
           "B": "너희는 나에게 거룩한 사람들이 되어야 한다. 나 {{divine_name:주|야훼}}가 거룩하기 때문이다. 내가 너희를 다른 민족들과 구별하여 나에게 속하게 하였다.",
           "R": "너희는 거룩해야 하고 나에게 속해야 한다. 나 {{divine_name:주|야훼}}가 거룩하기 때문이다. 내가 너희를 다른 민족들과 구별하여 바로 내 백성으로 삼았다."
+        },
+        "pt": {
+          "L": "E vocês serão santos para {{deity_pronoun:mim|Mim}}, porque santo [sou] eu, {{divine_name:o SENHOR|Javé}}, e eu os separei dos povos para serem {{deity_pronoun:meus|Meus}}.",
+          "B": "Sejam santos para {{deity_pronoun:mim|Mim}}, porque eu, {{divine_name:o SENHOR|Javé}}, sou santo. Eu separei vocês dos outros povos para que pertençam a {{deity_pronoun:mim|Mim}}.",
+          "R": "Sejam santos e pertençam a {{deity_pronoun:mim|Mim}}, porque eu, {{divine_name:o SENHOR|Javé}}, sou santo. Eu separei vocês das outras nações para serem o {{deity_pronoun:meu|Meu}} próprio povo."
         }
       },
       "decisions": [
@@ -3723,6 +4187,11 @@
           "L": "그리고 남자든 여자든, 그들 가운데 영매나 무당이 있으면, 그들은 반드시 죽임을 당해야 한다. 그들을 돌로 쳐야 한다. 그들의 피가 그들에게 돌아갈 것이다.'\"",
           "B": "남자든 여자든 영매나 무당이면 반드시 죽여야 한다. 그들을 돌로 쳐 죽여야 한다. 그들이 죽는 것은 자기들 탓이다.'\"",
           "R": "남자든 여자든, 죽은 사람이나 영들과 이야기할 수 있다고 하는 사람은 죽여야 한다. 사람들이 그들이 죽을 때까지 돌을 던져야 한다. 그들이 죽는 것은 자기들 탓이다.'\""
+        },
+        "pt": {
+          "L": "E um homem ou uma mulher, se houver neles um médium ou um espírita, certamente serão mortos; com pedras os apedrejarão; o sangue deles [está] sobre eles.'\"",
+          "B": "O homem ou a mulher que for médium ou espírita deverá ser morto. Serão apedrejados; a culpa pela morte deles é deles mesmos.'\"",
+          "R": "Qualquer homem ou mulher que diga que pode falar com os mortos ou com os espíritos tem de ser morto. O povo deve atirar pedras neles até que morram. Eles são culpados pela própria morte.'\""
         }
       },
       "decisions": [

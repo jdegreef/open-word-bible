@@ -10,13 +10,14 @@ rewrites only the entries whose documents changed (plan).
 Matching follows the language of each document's own text, not the
 site's: notes are written in English, and a sentence not yet translated is
 shown, and found, in English. Each language has a text search
-configuration that removes accents and then stems (migration 0003): owb_english,
-owb_spanish, owb_french, and owb_simple for languages Postgres has no
-stemmer for. Every entry is also indexed word for word (owb_simple, the
-lowest weight), so words a stemmer drops ("I am") or shortens ("runn" while
-typing "running") still match. A query word matches an entry in its stemmed
-forms, in the entry's own language only, or word for word as the start of a
-word (tsquery explains why). A "quoted phrase" matches word for word, in order.
+configuration that removes accents and then stems (migrations 0003 and
+0009): owb_english, owb_spanish, owb_french, owb_portuguese, and
+owb_simple for languages Postgres has no stemmer for. Every entry is also
+indexed word for word (owb_simple, the lowest weight), so words a stemmer
+drops ("I am") or shortens ("runn" while typing "running") still match. A
+query word matches an entry in its stemmed forms, in the entry's own
+language only, or word for word as the start of a word (tsquery explains
+why). A "quoted phrase" matches word for word, in order.
 """
 import functools
 import hashlib
@@ -36,7 +37,7 @@ from translation.models import SearchEntry, SearchLanguage, SearchWord
 # The document kinds, by the names the API uses and the site's one-letter codes.
 KINDS = {"passage": "c", "verse": "v", "note": "n", "article": "a"}
 NAMES = {code: name for name, code in KINDS.items()}
-CONFIGS = {"en": "owb_english", "es": "owb_spanish", "fr": "owb_french"}
+CONFIGS = {"en": "owb_english", "es": "owb_spanish", "fr": "owb_french", "pt": "owb_portuguese"}
 SIMPLE = "owb_simple"
 MIN_QUERY = 2
 SPAN = re.compile(r"\{\{([a-z_]+):([^{}]*)\}\}")
@@ -112,17 +113,24 @@ def _copy(cursor, table, columns, rows):
             copy.write_row(row)
 
 
-def jsonb_text(value):
-    """value as Postgres prints it as jsonb (doc::text): keys shortest first,
-    then in byte order. key() hashes this, so a document built here can be
-    matched with the one already stored without sending it to the database."""
+def _jsonb_order(value):
+    """value with every object's keys in jsonb's order: shortest first, then
+    in byte order."""
     if isinstance(value, dict):
-        keys = sorted(value, key=lambda k: (len(k.encode()), k.encode()))
-        return "{" + ", ".join(f"{json.dumps(k, ensure_ascii=False)}: {jsonb_text(value[k])}"
-                               for k in keys) + "}"
+        return {k: _jsonb_order(value[k]) for k in sorted(value, key=lambda k: (len(k.encode()), k.encode()))}
     if isinstance(value, list):
-        return "[" + ", ".join(jsonb_text(v) for v in value) + "]"
-    return json.dumps(value, ensure_ascii=False)
+        return [_jsonb_order(v) for v in value]
+    return value
+
+
+def jsonb_text(value):
+    """value as Postgres prints it as jsonb (doc::text): keys in jsonb's
+    order, ", " and ": " between items. key() hashes this, so a document
+    built here can be matched with the one already stored without sending it
+    to the database. One json.dumps for the whole value: a rebuild keys every
+    document in every language, and a call for each string took most of a
+    no-op rebuild."""
+    return json.dumps(_jsonb_order(value), ensure_ascii=False)
 
 
 # The same key, worked out by the database for the entries it holds. An
@@ -208,16 +216,16 @@ def _rebuild_language(site, lang, full):
     site.search_documents.cache_clear()
     SearchLanguage.objects.update_or_create(code=lang, defaults=dict(books=data["books"], pages=data["pages"]))
     docs = [(doc, config(doc.get("l", lang))) for doc in data["docs"]]
-    new = [key(c, doc) for doc, c in docs]
     entries, words = _table(), SearchWord._meta.db_table
     with connection.cursor() as cursor:
-        cursor.execute(f"SELECT id, position, sub, {KEY_SQL} FROM {entries} "
+        # A full rebuild, or the first, matches nothing, so needs no keys.
+        cursor.execute(f"SELECT id, position, sub, {'NULL' if full else KEY_SQL} FROM {entries} "
                        "WHERE language = %s ORDER BY position, sub", [lang])
         old = cursor.fetchall()
         # When the new documents don't fit between the ones kept (rare:
         # one added before the first), every entry is replaced.
-        delete, places = (None if full else plan(old, new)) or (
-            [row[0] for row in old], [(i, i, 0) for i in range(len(new))])
+        delete, places = (None if full or not old else plan(old, [key(c, doc) for doc, c in docs])) or (
+            [row[0] for row in old], [(i, i, 0) for i in range(len(docs))])
         if not delete and not places and SearchWord.objects.filter(language=lang).exists():
             return Change(len(docs), 0, 0)
         if delete:

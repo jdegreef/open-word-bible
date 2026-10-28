@@ -99,7 +99,7 @@ jobs:
     if: needs.changes.outputs.backend == 'true'
     runs-on: ubuntu-latest
     # A hang (a search query once ran for hours on a bad plan) should fail
-    # the run, not hold a runner for six. The tests themselves take 15 to 20
+    # the run, not hold a runner for six. The tests themselves take 10 to 15
     # minutes now (the search rebuild tests grow with content/), so the limit
     # leaves room for a slow runner: on 2026-10-16 a run that passed every
     # test was cancelled at 20 minutes while it tore down the test database.

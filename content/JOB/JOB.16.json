@@ -23,6 +23,36 @@
           "L": "And Job answered and said:",
           "B": "Then Job answered:",
           "R": "Then Job said:"
+        },
+        "es": {
+          "L": "Y respondió Job y dijo:",
+          "B": "Entonces Job respondió:",
+          "R": "Entonces Job dijo:"
+        },
+        "fr": {
+          "L": "Et Job répondit et dit :",
+          "B": "Alors Job répondit :",
+          "R": "Alors Job a dit :"
+        },
+        "sw": {
+          "L": "Ndipo Ayubu akajibu, akasema:",
+          "B": "Kisha Ayubu akajibu:",
+          "R": "Kisha Ayubu akasema:"
+        },
+        "vi": {
+          "L": "Gióp đáp lời và nói:",
+          "B": "Bấy giờ Gióp đáp:",
+          "R": "Gióp nói:"
+        },
+        "ko": {
+          "L": "그러자 욥이 대답하여 말했다.",
+          "B": "그러자 욥이 대답했다.",
+          "R": "그러자 욥이 말했다."
+        },
+        "pt": {
+          "L": "E Jó respondeu e disse:",
+          "B": "Então Jó respondeu:",
+          "R": "Então Jó disse:"
         }
       },
       "decisions": [
@@ -61,6 +91,28 @@
           "reason": "Hebrew introduces speech with two verbs, \"answered and said\". Literal keeps both; Balanced and Readable say it once, with the same wording at every speech introduction in Job.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o180160010012",
+            "o180160010032"
+          ],
+          "choice": "« répondit et dit » (L), « répondit » (B): passé simple; « a dit » (R): passé composé",
+          "alternatives": [
+            "passé composé at every level"
+          ],
+          "reason": "The speech introduction is narrative, so French uses the passé simple at Literal and Balanced and the passé composé at Readable; Job's speech itself is in the present and passé composé.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -91,6 +143,36 @@
           "L": "I have heard many [things] like these; \\q comforters of trouble [are] all of you.",
           "B": "I have heard many things like these; \\q you are all miserable comforters.",
           "R": "I have heard all this before. \\q Some comforters you are! You only make my trouble worse."
+        },
+        "es": {
+          "L": "He oído muchas [cosas] como estas; \\q consoladores de aflicción {{plural_you:son todos ustedes|sois todos vosotros}}.",
+          "B": "He oído muchas cosas como estas; \\q todos {{plural_you:ustedes son|vosotros sois}} unos consoladores miserables.",
+          "R": "Todo esto ya lo he oído antes. \\q ¡Vaya consoladores {{plural_you:son ustedes|sois vosotros}}! Solo {{plural_you:empeoran|empeoráis}} mi sufrimiento."
+        },
+        "fr": {
+          "L": "J’ai entendu beaucoup [de choses] comme celles-ci ; \\q des consolateurs de peine, [voilà ce que] vous êtes tous.",
+          "B": "J’ai entendu bien des choses semblables ; \\q vous êtes tous de pénibles consolateurs.",
+          "R": "J’ai déjà entendu tout cela. \\q Drôles de consolateurs que vous êtes ! Vous ne faites qu’aggraver ma peine."
+        },
+        "sw": {
+          "L": "Nimesikia mambo mengi kama haya; \\q ninyi nyote [ni] wafariji wa taabu.",
+          "B": "Nimesikia mambo mengi kama haya; \\q ninyi nyote ni wafariji wa kusikitisha.",
+          "R": "Haya yote nimeshayasikia. \\q Ninyi ni wafariji wa ajabu kweli! Mnaongeza tu taabu yangu."
+        },
+        "vi": {
+          "L": "Tôi đã nghe nhiều [điều] như thế này; \\q tất cả các anh [là] những kẻ an ủi gây khổ.",
+          "B": "Tôi đã nghe nhiều điều như thế; \\q các anh đều là những người an ủi tồi tệ.",
+          "R": "Tôi đã nghe tất cả những điều này rồi. \\q Các anh an ủi kiểu gì vậy! Các anh chỉ làm nỗi khổ của tôi thêm nặng."
+        },
+        "ko": {
+          "L": "내가 이런 것을 많이 들었소. \\q 그대들은 모두 괴로움을 주는 위로자들이오.",
+          "B": "이런 말은 많이 들었소. \\q 그대들은 모두 고통만 주는 위로자들이오.",
+          "R": "이런 말은 전에도 다 들었소. \\q 그대들이 위로자라니! 내 괴로움만 더할 뿐이오."
+        },
+        "pt": {
+          "L": "Eu ouvi muitas [coisas] como estas; \\q consoladores de sofrimento [são] todos vocês.",
+          "B": "Já ouvi muitas coisas como essas; \\q todos vocês são consoladores miseráveis.",
+          "R": "Já ouvi tudo isso antes. \\q Belos consoladores vocês são! Consoladores que só trazem sofrimento."
         }
       },
       "decisions": [
@@ -179,6 +261,73 @@
           "reason": "Readable spells out the sense of the phrase (m1) with an exclamation that keeps its bitter tone.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o180160020061",
+            "o180160020062"
+          ],
+          "choice": "plural_you spans where Job speaks to all three friends (\"ustedes\" by default, \"vosotros\" as the alternative)",
+          "alternatives": [
+            "\"ustedes\" only"
+          ],
+          "reason": "Job now answers all three friends (the Hebrew \"you\" is plural), so the plural address, verbs included, carries the plural_you setting; in verse 3 he turns to Eliphaz alone with \"tú\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o180160020061",
+            "o180160020062"
+          ],
+          "choice": "하오체 with \"그대들\" / \"그대\" only in the lines Job addresses to his friends (verses 2-5); plain 해라체 for his lament about himself and about God (verses 6, 7a, 9-22); 합쇼체 with \"주님\" and \"저\" where he turns to God (verses 7b-8)",
+          "alternatives": [
+            "하오체 for the whole speech"
+          ],
+          "reason": "Job and his friends speak to each other as respected equals, so direct address to them is in 하오체. Where the speech describes or laments rather than addressing the listener, Korean uses the plain style of written poetry, and prayer to God takes 합쇼체, as in the Psalms.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o180160020041",
+            "o180160020051"
+          ],
+          "choice": "\"consoladores de sofrimento\" (L); \"consoladores miseráveis\" (B); \"Belos consoladores vocês são! Consoladores que só trazem sofrimento\" (R)",
+          "alternatives": [
+            "\"consoladores molestos\"",
+            "\"pobres consoladores\""
+          ],
+          "reason": "The phrase means comforters who bring misery instead of comfort (m1). Literal keeps the Hebrew construction; Balanced uses \"miseráveis\", which in Portuguese means both wretched and worthless, as \"miserable\" does; Readable keeps the bitter exclamation of the English and spells out what their comfort brings. The friends are addressed as \"vocês\", all three of them (m3).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -212,6 +361,36 @@
           "L": "[Is there] an end to words of wind? \\q Or what provokes you that you answer?",
           "B": "Will these windy words never end? \\q What is eating at you, that you keep answering?",
           "R": "Will your empty talk ever stop? \\q What makes you keep on arguing?"
+        },
+        "es": {
+          "L": "¿[Hay] fin para las palabras de viento? \\q ¿O qué te irrita para que respondas?",
+          "B": "¿No acabarán nunca estas palabras de viento? \\q ¿Qué te pica que sigues respondiendo?",
+          "R": "¿Se acabará alguna vez tu charla vacía? \\q ¿Qué te hace seguir discutiendo?"
+        },
+        "fr": {
+          "L": "[Y a-t-il] une fin aux paroles de vent ? \\q Ou qu’est-ce qui t’irrite, pour que tu répondes ?",
+          "B": "Ces paroles pleines de vent ne finiront-elles jamais ? \\q Qu’est-ce qui te pique, pour que tu continues à répondre ?",
+          "R": "Ton bavardage va-t-il enfin s’arrêter ? \\q Qu’est-ce qui te pousse à discuter encore ?"
+        },
+        "sw": {
+          "L": "[Je, kuna] mwisho wa maneno ya upepo? \\q Au ni nini kinachokuudhi hata ujibu?",
+          "B": "Je, maneno haya ya upepo hayataisha kamwe? \\q Ni nini kinachokusumbua hata uendelee kujibu?",
+          "R": "Je, maneno yako matupu yataisha lini? \\q Ni nini kinachokufanya uendelee kubishana?"
+        },
+        "vi": {
+          "L": "Lời của gió [có] tận cùng chăng? \\q Hay điều gì khích anh mà anh đối đáp?",
+          "B": "Những lời gió thổi ấy không bao giờ dứt sao? \\q Điều gì khiến anh bứt rứt mà cứ đối đáp mãi?",
+          "R": "Những lời rỗng tuếch của anh bao giờ mới dứt? \\q Điều gì làm anh cứ tranh cãi mãi?"
+        },
+        "ko": {
+          "L": "바람 같은 말에 끝이 [있겠소]? \\q 무엇이 그대를 자극하기에 그대가 대답하오?",
+          "B": "이 바람 같은 말은 끝나지도 않겠소? \\q 무엇이 그대 속을 긁기에 자꾸 대답하오?",
+          "R": "그대의 빈말은 언제 그치겠소? \\q 무엇 때문에 그대는 계속 따지오?"
+        },
+        "pt": {
+          "L": "[Haverá] fim para palavras de vento? \\q Ou o que irrita você para que responda?",
+          "B": "Essas palavras de vento nunca vão acabar? \\q O que tanto incomoda você, para continuar respondendo?",
+          "R": "Essa conversa vazia não vai parar nunca? \\q O que faz você continuar discutindo?"
         }
       },
       "decisions": [
@@ -326,6 +505,36 @@
           "L": "I also could speak like you, \\q if your soul were in place of my soul; \\q I could join words together against you, \\q and shake my head at you.",
           "B": "I too could talk as you do, \\q if you were in my place; \\q I could string words together against you \\q and shake my head at you.",
           "R": "I could talk the way you do \\q if you were in my place. \\q I could make fine speeches against you \\q and shake my head at you."
+        },
+        "es": {
+          "L": "También yo hablaría como {{plural_you:ustedes|vosotros}}, \\q si {{plural_you:su alma|vuestra alma}} estuviera en lugar de la mía; \\q podría hilar palabras contra {{plural_you:ustedes|vosotros}}, \\q y menear mi cabeza ante {{plural_you:ustedes|vosotros}}.",
+          "B": "Yo también podría hablar como {{plural_you:ustedes|vosotros}}, \\q si {{plural_you:ustedes estuvieran|vosotros estuvierais}} en mi lugar; \\q podría encadenar discursos contra {{plural_you:ustedes|vosotros}} \\q y menear la cabeza ante {{plural_you:ustedes|vosotros}}.",
+          "R": "Yo podría hablar como {{plural_you:ustedes|vosotros}} \\q si {{plural_you:ustedes estuvieran|vosotros estuvierais}} en mi lugar. \\q Podría pronunciar bonitos discursos contra {{plural_you:ustedes|vosotros}} \\q y menear la cabeza ante {{plural_you:ustedes|vosotros}}."
+        },
+        "fr": {
+          "L": "Moi aussi, comme vous je parlerais, \\q si votre âme était à la place de mon âme ; \\q je pourrais assembler des mots contre vous, \\q et hocher la tête sur vous.",
+          "B": "Moi aussi, je pourrais parler comme vous, \\q si vous étiez à ma place ; \\q je pourrais aligner des discours contre vous \\q et hocher la tête en vous regardant.",
+          "R": "Je pourrais parler comme vous \\q si vous étiez à ma place. \\q Je pourrais faire de beaux discours contre vous \\q et secouer la tête devant vous."
+        },
+        "sw": {
+          "L": "Mimi pia ningeweza kusema kama ninyi, \\q kama nafsi yenu ingekuwa mahali pa nafsi yangu; \\q ningeweza kuunganisha maneno dhidi yenu, \\q na kuwatikisia kichwa changu.",
+          "B": "Mimi pia ningeweza kuongea kama ninyi, \\q kama mngekuwa mahali pangu; \\q ningeweza kupanga maneno dhidi yenu \\q na kuwatikisia kichwa.",
+          "R": "Ningeweza kuongea kama mnavyoongea \\q kama mngekuwa mahali pangu. \\q Ningeweza kutoa hotuba nzuri dhidi yenu \\q na kuwatikisia kichwa."
+        },
+        "vi": {
+          "L": "Tôi cũng có thể nói như các anh, \\q nếu linh hồn các anh ở chỗ linh hồn tôi; \\q tôi có thể kết lời chống lại các anh, \\q và lắc đầu với các anh.",
+          "B": "Tôi cũng có thể nói như các anh, \\q nếu các anh ở vào địa vị tôi; \\q tôi có thể xâu chuỗi lời lẽ chống các anh \\q và lắc đầu nhìn các anh.",
+          "R": "Tôi có thể nói như các anh \\q nếu các anh ở vào hoàn cảnh của tôi. \\q Tôi có thể nói những lời hoa mỹ để chống các anh \\q và lắc đầu với các anh."
+        },
+        "ko": {
+          "L": "나도 그대들처럼 말할 수 있겠소, \\q 그대들의 영혼이 내 영혼의 자리에 있다면. \\q 그대들을 향해 말을 엮어 대고, \\q 그대들에게 머리를 흔들 수 있겠소.",
+          "B": "그대들이 내 처지에 있다면 \\q 나도 그대들처럼 말할 수 있겠소. \\q 그대들을 거슬러 말을 늘어놓고 \\q 그대들을 보며 머리를 흔들 수 있겠소.",
+          "R": "그대들이 내 처지가 된다면 \\q 나도 그대들처럼 말할 수 있소. \\q 그대들에게 멋진 연설을 늘어놓고 \\q 머리를 흔들어 보일 수 있소."
+        },
+        "pt": {
+          "L": "Eu também falaria como vocês, \\q se a alma de vocês estivesse no lugar da minha alma; \\q eu juntaria palavras contra vocês \\q e balançaria a minha cabeça para vocês.",
+          "B": "Eu também poderia falar como vocês, \\q se vocês estivessem no meu lugar; \\q poderia alinhavar discursos contra vocês \\q e balançar a cabeça para vocês.",
+          "R": "Eu poderia falar do jeito que vocês falam \\q se vocês estivessem no meu lugar. \\q Poderia fazer belos discursos contra vocês \\q e balançar a cabeça para vocês."
         }
       },
       "decisions": [
@@ -451,6 +660,36 @@
           "L": "I would strengthen you with my mouth, \\q and the moving of my lips would hold back [your pain].",
           "B": "I would encourage you with my mouth, \\q and the comfort of my lips would ease your pain.",
           "R": "I would use my words to make you strong. \\q My comforting words would ease your pain."
+        },
+        "es": {
+          "L": "Yo {{plural_you:los|os}} fortalecería con mi boca, \\q y el movimiento de mis labios contendría [{{plural_you:su dolor|vuestro dolor}}].",
+          "B": "Yo {{plural_you:los|os}} animaría con mi boca, \\q y el consuelo de mis labios aliviaría {{plural_you:su dolor|vuestro dolor}}.",
+          "R": "Usaría mis palabras para {{plural_you:darles|daros}} fuerza. \\q Mis palabras de consuelo aliviarían {{plural_you:su dolor|vuestro dolor}}."
+        },
+        "fr": {
+          "L": "Je vous fortifierais par ma bouche, \\q et le mouvement de mes lèvres retiendrait [votre douleur].",
+          "B": "Je vous encouragerais de ma bouche, \\q et la consolation de mes lèvres apaiserait votre douleur.",
+          "R": "Je me servirais de mes paroles pour vous rendre forts. \\q Mes paroles de réconfort soulageraient votre douleur."
+        },
+        "sw": {
+          "L": "Ningewatia nguvu kwa kinywa changu, \\q na mtikisiko wa midomo yangu ungezuia [maumivu yenu].",
+          "B": "Ningewatia moyo kwa kinywa changu, \\q na faraja ya midomo yangu ingepunguza maumivu yenu.",
+          "R": "Ningetumia maneno yangu kuwatia nguvu. \\q Maneno yangu ya faraja yangepunguza maumivu yenu."
+        },
+        "vi": {
+          "L": "Tôi sẽ lấy miệng mình làm các anh vững mạnh, \\q và sự mấp máy của môi tôi sẽ cầm giữ [nỗi đau các anh].",
+          "B": "Tôi sẽ lấy lời mình khích lệ các anh, \\q và lời an ủi trên môi tôi sẽ làm dịu nỗi đau các anh.",
+          "R": "Tôi sẽ dùng lời mình làm cho các anh mạnh mẽ. \\q Những lời an ủi của tôi sẽ làm vơi nỗi đau các anh."
+        },
+        "ko": {
+          "L": "내 입으로 그대들을 강하게 하고, \\q 내 입술의 움직임으로 [그대들의 고통을] 멈추게 하겠소.",
+          "B": "내 입으로 그대들에게 힘을 북돋우고, \\q 내 입술의 위로로 그대들의 고통을 덜어 주겠소.",
+          "R": "나는 내 말로 그대들에게 힘을 주겠소. \\q 위로하는 내 말이 그대들의 고통을 덜어 줄 것이오."
+        },
+        "pt": {
+          "L": "Eu fortaleceria vocês com a minha boca, \\q e o movimento dos meus lábios conteria [a dor de vocês].",
+          "B": "Eu animaria vocês com as minhas palavras, \\q e o consolo dos meus lábios aliviaria a dor de vocês.",
+          "R": "Eu usaria as minhas palavras para dar forças a vocês. \\q As minhas palavras de consolo aliviariam a dor de vocês."
         }
       },
       "decisions": [
@@ -552,6 +791,36 @@
           "L": "If I speak, my pain is not held back, \\q and [if] I refrain, what goes away from me?",
           "B": "If I speak, my pain is not eased; \\q and if I keep silent, how much of it leaves me?",
           "R": "If I speak, my pain does not get any better. \\q If I keep quiet, it does not go away either."
+        },
+        "es": {
+          "L": "Si hablo, no se contiene mi dolor, \\q y [si] me callo, ¿qué se va de mí?",
+          "B": "Si hablo, mi dolor no se alivia; \\q y si me callo, ¿cuánto de él se aparta de mí?",
+          "R": "Si hablo, mi dolor no mejora nada. \\q Si me callo, tampoco se va."
+        },
+        "fr": {
+          "L": "Si je parle, ma douleur n’est pas retenue, \\q et [si] je me tais, qu’est-ce qui s’en va de moi ?",
+          "B": "Si je parle, ma douleur ne s’apaise pas ; \\q et si je me tais, en quoi me quitte-t-elle ?",
+          "R": "Si je parle, ma douleur ne diminue pas. \\q Si je me tais, elle ne s’en va pas non plus."
+        },
+        "sw": {
+          "L": "Nikisema, maumivu yangu hayazuiliki, \\q na [nikinyamaza], ni nini kinachoondoka kwangu?",
+          "B": "Nikisema, maumivu yangu hayapungui; \\q na nikinyamaza, ni kiasi gani kinaniondokea?",
+          "R": "Nikiongea, maumivu yangu hayapungui hata kidogo. \\q Nikinyamaza, nayo hayaondoki."
+        },
+        "vi": {
+          "L": "Nếu tôi nói, nỗi đau tôi không được cầm giữ, \\q và [nếu] tôi nín lặng, điều gì rời khỏi tôi?",
+          "B": "Nếu tôi nói, nỗi đau tôi chẳng nguôi; \\q còn nếu tôi im lặng, nó có vơi đi chút nào?",
+          "R": "Nếu tôi nói, nỗi đau của tôi cũng chẳng bớt. \\q Nếu tôi im lặng, nó cũng chẳng đi đâu."
+        },
+        "ko": {
+          "L": "내가 말해도 내 고통이 멈추지 않고, \\q 내가 [말을] 그쳐도 무엇이 내게서 떠나가겠는가?",
+          "B": "내가 말을 해도 고통이 덜어지지 않고, \\q 잠잠해도 그 고통이 얼마나 떠나가겠는가?",
+          "R": "말을 해도 내 고통은 조금도 나아지지 않는다. \\q 입을 다물어도 고통은 사라지지 않는다."
+        },
+        "pt": {
+          "L": "Se eu falo, a minha dor não é contida, \\q e [se] me calo, o que sai de mim?",
+          "B": "Se falo, a minha dor não se alivia; \\q e, se me calo, quanto dela vai embora?",
+          "R": "Se eu falo, a minha dor não melhora. \\q Se fico calado, ela também não passa."
         }
       },
       "decisions": [
@@ -648,6 +917,36 @@
           "L": "But now {{deity_pronoun:he|He}} has made me weary; \\q {{deity_pronoun:you|You}} have devastated all my company.",
           "B": "But now God has worn me out; \\q {{deity_pronoun:you|You}} have laid waste my whole household.",
           "R": "God has worn me out. \\q God, {{deity_pronoun:you|You}} have destroyed my whole family."
+        },
+        "es": {
+          "L": "Pero ahora {{deity_pronoun:él|Él}} me ha agotado; \\q {{deity_pronoun:tú|Tú}} has asolado toda mi compañía.",
+          "B": "Pero ahora Dios me ha dejado sin fuerzas; \\q {{deity_pronoun:tú|Tú}} has arrasado a toda mi familia.",
+          "R": "Dios me ha agotado. \\q Dios, {{deity_pronoun:tú|Tú}} has destruido a toda mi familia."
+        },
+        "fr": {
+          "L": "Mais maintenant {{deity_pronoun:il|Il}} m’a épuisé ; \\q {{deity_pronoun:tu|Tu}} as dévasté tout mon entourage.",
+          "B": "Mais maintenant Dieu m’a épuisé ; \\q {{deity_pronoun:tu|Tu}} as ravagé toute ma maison.",
+          "R": "Dieu m’a épuisé. \\q Ô Dieu, {{deity_pronoun:tu|Tu}} as détruit toute ma famille."
+        },
+        "sw": {
+          "L": "Lakini sasa amenichosha; \\q {{deity_pronoun:wewe|Wewe}} umeliharibu kundi langu lote.",
+          "B": "Lakini sasa Mungu amenichosha kabisa; \\q {{deity_pronoun:wewe|Wewe}} umeiangamiza nyumba yangu yote.",
+          "R": "Mungu amenimaliza nguvu. \\q Ee Mungu, {{deity_pronoun:wewe|Wewe}} umeiangamiza familia yangu yote."
+        },
+        "vi": {
+          "L": "Nhưng giờ đây {{deity_pronoun:ngài|Ngài}} đã làm tôi kiệt sức; \\q Chúa đã tàn phá cả đoàn người của con.",
+          "B": "Nhưng giờ đây Đức Chúa Trời đã làm tôi kiệt quệ; \\q Chúa đã tàn phá cả gia đình con.",
+          "R": "Đức Chúa Trời đã làm tôi kiệt sức. \\q Lạy Đức Chúa Trời, Chúa đã hủy diệt cả gia đình con."
+        },
+        "ko": {
+          "L": "그러나 이제 그분께서 나를 지치게 하셨다. \\q 주님께서 제 온 무리를 황폐하게 하셨습니다.",
+          "B": "그러나 이제 하나님께서 나를 기진하게 하셨다. \\q 주님께서 제 온 집안을 쑥대밭으로 만드셨습니다.",
+          "R": "하나님께서 나를 지치게 하셨다. \\q 하나님, 주님께서 제 온 가족을 없애 버리셨습니다."
+        },
+        "pt": {
+          "L": "Mas agora {{deity_pronoun:ele|Ele}} me esgotou; \\q {{deity_pronoun:tu|Tu}} devastaste toda a minha companhia.",
+          "B": "Mas agora Deus me deixou exausto; \\q {{deity_pronoun:tu|Tu}} arrasaste toda a minha casa.",
+          "R": "Deus me deixou sem forças. \\q Ó Deus, {{deity_pronoun:tu|Tu}} destruíste toda a minha família."
         }
       },
       "decisions": [
@@ -720,6 +1019,72 @@
           "reason": "Balanced and Readable name God for the \"he\" of the first line, so that the reader knows who is meant (m1). Readable also names God as the \"you\" of the second line.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o180160070011",
+            "o180160070021"
+          ],
+          "choice": "\"tôi\" in the first line, \"Chúa\" and \"con\" in the second",
+          "alternatives": [
+            "\"tôi\" in both lines",
+            "\"con\" in both lines"
+          ],
+          "reason": "Job first speaks about God (\"he\") and then turns to speak to God (\"you\"), as the meaning decision says. Vietnamese marks the turn with the pronouns: \"tôi\" while he speaks of God, \"con\" when he speaks to him, as in his other pleas to God.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o180160070011",
+            "o180160070021"
+          ],
+          "choice": "plain written style for the first line, 합쇼체 with \"주님\" and \"저\" for the second",
+          "alternatives": [
+            "하오체 throughout, as to the friends"
+          ],
+          "reason": "The first line speaks about God and the second to him. Korean shows the turn with the speech level: the plain style of a lament about God, then the 합쇼체 of prayer, as the Psalms move between the two.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o180160070041"
+          ],
+          "choice": "\"tu\" written out in the second line (\"tu devastaste\", \"tu arrasaste\", \"tu destruíste\")",
+          "alternatives": [
+            "the verb alone (\"devastaste\")"
+          ],
+          "reason": "Portuguese usually drops a subject pronoun, but here Job turns from speaking about God to speaking to him (m1), and the pronoun marks the turn as the English \"you\" does. It takes the deity_pronoun span, as Job addresses God with \"tu\" throughout.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -758,6 +1123,36 @@
           "L": "And {{deity_pronoun:you|You}} have shriveled me up; it has become a witness, \\q and my leanness has risen up against me; \\q it testifies to my face.",
           "B": "You have shriveled me up, and that has become a witness against me; \\q my gauntness rises up against me \\q and testifies to my face.",
           "R": "You have made me shrivel up, \\q and my thin body is like a witness who stands up and accuses me to my face."
+        },
+        "es": {
+          "L": "Y me has arrugado; se ha vuelto testigo, \\q y mi flacura se ha levantado contra mí; \\q en mi cara testifica.",
+          "B": "Me has consumido, y eso se ha vuelto un testigo contra mí; \\q mi flaqueza se levanta contra mí \\q y me acusa en la cara.",
+          "R": "Me has hecho marchitar, \\q y mi cuerpo flaco es como un testigo que se levanta y me acusa en la cara."
+        },
+        "fr": {
+          "L": "Et {{deity_pronoun:tu|Tu}} m’as ratatiné ; c’est devenu un témoin, \\q et ma maigreur s’est levée contre moi ; \\q elle témoigne en face de moi.",
+          "B": "Tu m’as desséché, et c’est devenu un témoin contre moi ; \\q ma maigreur se dresse contre moi \\q et m’accuse en face.",
+          "R": "Tu m’as fait dépérir, \\q et mon corps maigre est comme un témoin qui se lève et m’accuse en face."
+        },
+        "sw": {
+          "L": "Tena umenikunjakunja; imekuwa shahidi, \\q na kukonda kwangu kumeinuka dhidi yangu; \\q kunashuhudia usoni pangu.",
+          "B": "Umeninyausha, na hilo limekuwa shahidi dhidi yangu; \\q kukonda kwangu kunainuka dhidi yangu \\q na kunanishtaki usoni.",
+          "R": "Umenifanya ninyauke, \\q na mwili wangu uliokonda ni kama shahidi anayesimama na kunishtaki usoni."
+        },
+        "vi": {
+          "L": "Và Chúa đã làm con co rút lại; điều đó thành lời chứng, \\q và sự gầy mòn của con đã nổi lên chống lại con; \\q nó làm chứng ngay trước mặt con.",
+          "B": "Chúa đã làm con khô héo, và điều đó thành lời chứng chống lại con; \\q thân hình tiều tụy của con đứng lên chống con \\q và tố cáo con ngay trước mặt.",
+          "R": "Chúa đã làm con héo hon, \\q và thân thể gầy gò của con như một nhân chứng đứng lên tố cáo con ngay trước mặt."
+        },
+        "ko": {
+          "L": "주님께서 저를 쭈그러뜨리셨으니 그것이 증인이 되었고, \\q 제 여윈 몸이 일어나 저를 거스르며 \\q 제 얼굴에 대고 증언합니다.",
+          "B": "주님께서 저를 바싹 마르게 하셨으니 그것이 저를 거스르는 증인이 되었습니다. \\q 제 수척한 몸이 일어나 저를 거스르고 \\q 제 앞에서 저를 고발합니다.",
+          "R": "주님께서 저를 시들게 하셨습니다. \\q 여윈 제 몸은 일어서서 제 앞에서 저를 고발하는 증인과 같습니다."
+        },
+        "pt": {
+          "L": "E {{deity_pronoun:tu|Tu}} me fizeste murchar; isso se tornou uma testemunha, \\q e a minha magreza se levantou contra mim; \\q ela testemunha na minha cara.",
+          "B": "Tu me fizeste murchar, e isso se tornou testemunha contra mim; \\q a minha magreza se levanta contra mim \\q e me acusa cara a cara.",
+          "R": "Tu me fizeste definhar, \\q e o meu corpo magro é como uma testemunha que se levanta e me acusa cara a cara."
         }
       },
       "decisions": [
@@ -889,6 +1284,36 @@
           "L": "His anger has torn [me], and {{deity_pronoun:he|He}} has hated me; \\q {{deity_pronoun:he|He}} has gnashed at me with {{deity_pronoun:his|His}} teeth; \\q my adversary sharpens {{deity_pronoun:his|His}} eyes against me.",
           "B": "His anger has torn me, and {{deity_pronoun:he|He}} hounds me; \\q {{deity_pronoun:he|He}} grinds {{deity_pronoun:his|His}} teeth at me; \\q my enemy stabs at me with {{deity_pronoun:his|His}} eyes.",
           "R": "God is so angry that {{deity_pronoun:he|He}} has torn me to pieces and hunts me down. \\q He grinds {{deity_pronoun:his|His}} teeth at me. \\q My enemy glares at me with piercing eyes."
+        },
+        "es": {
+          "L": "Su ira [me] ha desgarrado, y {{deity_pronoun:él|Él}} me ha odiado; \\q {{deity_pronoun:él|Él}} ha rechinado contra mí {{deity_pronoun:sus|Sus}} dientes; \\q mi adversario aguza {{deity_pronoun:sus|Sus}} ojos contra mí.",
+          "B": "Su ira me ha despedazado, y {{deity_pronoun:él|Él}} me persigue; \\q {{deity_pronoun:él|Él}} rechina {{deity_pronoun:sus|Sus}} dientes contra mí; \\q mi enemigo me apuñala con {{deity_pronoun:sus|Sus}} ojos.",
+          "R": "Dios está tan enojado que me ha hecho pedazos y me persigue. \\q Rechina {{deity_pronoun:sus|Sus}} dientes contra mí. \\q Mi enemigo me clava una mirada penetrante."
+        },
+        "fr": {
+          "L": "Sa colère [m’]a déchiré, et {{deity_pronoun:il|Il}} m’a pris en haine ; \\q {{deity_pronoun:il|Il}} a grincé des dents contre moi ; \\q mon adversaire aiguise {{deity_pronoun:ses|Ses}} yeux contre moi.",
+          "B": "Sa colère m’a déchiré, et {{deity_pronoun:il|Il}} me poursuit ; \\q {{deity_pronoun:il|Il}} grince des dents contre moi ; \\q mon ennemi me transperce de {{deity_pronoun:ses|Ses}} yeux.",
+          "R": "Dieu est si en colère qu’{{deity_pronoun:il|Il}} m’a mis en pièces et me traque. \\q Il grince des dents contre moi. \\q Mon ennemi me fixe d’un regard perçant."
+        },
+        "sw": {
+          "L": "Hasira {{deity_pronoun:yake|Yake}} imenirarua, {{deity_pronoun:naye|Naye}} amenichukia; \\q amenisagia meno {{deity_pronoun:yake|Yake}}; \\q mtesi wangu ananikazia macho {{deity_pronoun:yake|Yake}} kama makali.",
+          "B": "Hasira {{deity_pronoun:yake|Yake}} imenirarua, {{deity_pronoun:naye|Naye}} ananiwinda; \\q ananisagia meno; \\q adui yangu ananichoma kwa macho {{deity_pronoun:yake|Yake}}.",
+          "R": "Mungu amekasirika sana hata amenirarua vipande vipande na kuniwinda. \\q Ananisagia meno. \\q Adui yangu ananikodolea macho makali."
+        },
+        "vi": {
+          "L": "Cơn giận {{deity_pronoun:ngài|Ngài}} đã xé [tôi], và {{deity_pronoun:ngài|Ngài}} đã ghét tôi; \\q {{deity_pronoun:ngài|Ngài}} đã nghiến răng với tôi; \\q kẻ thù tôi mài sắc mắt {{deity_pronoun:ngài|Ngài}} nhìn tôi.",
+          "B": "Trong cơn giận, {{deity_pronoun:ngài|Ngài}} xé nát tôi và săn đuổi tôi; \\q {{deity_pronoun:ngài|Ngài}} nghiến răng với tôi; \\q kẻ thù tôi dùng mắt đâm vào tôi.",
+          "R": "Đức Chúa Trời giận đến nỗi xé tôi ra từng mảnh và săn đuổi tôi. \\q Ngài nghiến răng với tôi. \\q Kẻ thù tôi trừng mắt nhìn tôi sắc lẻm."
+        },
+        "ko": {
+          "L": "그분의 진노가 [나를] 찢고, 그분께서 나를 미워하셨다. \\q 그분께서 나를 향해 이를 가셨다. \\q 내 대적이 나를 향해 눈을 날카롭게 하신다.",
+          "B": "그분께서 진노하여 나를 찢으시고 나를 몰아치신다. \\q 나를 향해 이를 가신다. \\q 내 원수가 눈으로 나를 찌르신다.",
+          "R": "하나님께서 몹시 노하셔서 나를 갈기갈기 찢으시고 쫓으신다. \\q 나를 향해 이를 가신다. \\q 내 원수가 날카로운 눈으로 나를 노려보신다."
+        },
+        "pt": {
+          "L": "A {{deity_pronoun:sua|Sua}} ira [me] dilacerou, e {{deity_pronoun:ele|Ele}} me odiou; \\q {{deity_pronoun:ele|Ele}} rangeu os {{deity_pronoun:seus|Seus}} dentes contra mim; \\q o meu adversário afia os {{deity_pronoun:seus|Seus}} olhos contra mim.",
+          "B": "A {{deity_pronoun:sua|Sua}} ira me dilacerou, e {{deity_pronoun:ele|Ele}} me persegue; \\q {{deity_pronoun:ele|Ele}} range os dentes contra mim; \\q o meu inimigo me fere com os {{deity_pronoun:seus|Seus}} olhos.",
+          "R": "Deus está tão irado que me dilacerou e me caça sem parar. \\q Ele range os dentes contra mim. \\q O meu inimigo me encara com olhos que cortam."
         }
       },
       "decisions": [
@@ -980,6 +1405,27 @@
           "reason": "Readable names God (m1) and says what the hostility does (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o180160090091"
+          ],
+          "choice": "the honorific -시- kept for \"내 대적\" / \"내 원수\"",
+          "alternatives": [
+            "no honorific for \"my adversary\""
+          ],
+          "reason": "The meaning decision says the adversary is God, so the honorific stays on that line too, which keeps the shocking point that Job calls God his enemy.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1018,6 +1464,36 @@
           "L": "They have opened wide their mouth against me; \\q in scorn they have struck my cheeks; \\q together they mass against me.",
           "B": "People gape at me with open mouths; \\q they strike my cheek in scorn; \\q they gang up together against me.",
           "R": "People open their mouths wide to sneer at me. \\q They insult me and slap my face. \\q They all join together against me."
+        },
+        "es": {
+          "L": "Han abierto contra mí su boca; \\q con desprecio han golpeado mis mejillas; \\q a una se amontonan contra mí.",
+          "B": "Me miran boquiabiertos; \\q me golpean la mejilla con desprecio; \\q se confabulan todos contra mí.",
+          "R": "La gente abre la boca para burlarse de mí. \\q Me insultan y me dan bofetadas. \\q Todos se unen contra mí."
+        },
+        "fr": {
+          "L": "Ils ont ouvert grand leur bouche contre moi ; \\q avec mépris ils ont frappé mes joues ; \\q ensemble ils se massent contre moi.",
+          "B": "Des gens me regardent bouche bée ; \\q ils me frappent la joue avec mépris ; \\q ils se liguent tous contre moi.",
+          "R": "Des gens ouvrent grand la bouche pour se moquer de moi. \\q Ils m’insultent et me giflent. \\q Ils s’unissent tous contre moi."
+        },
+        "sw": {
+          "L": "Wamenifumbulia vinywa vyao; \\q kwa dharau wamenipiga mashavuni; \\q kwa pamoja wanajikusanya dhidi yangu.",
+          "B": "Watu wananiachia vinywa wazi; \\q wananipiga shavuni kwa dharau; \\q wanaungana pamoja dhidi yangu.",
+          "R": "Watu wanafungua vinywa vyao kunidhihaki. \\q Wananitukana na kunipiga makofi. \\q Wote wanaungana dhidi yangu."
+        },
+        "vi": {
+          "L": "Chúng đã há miệng chống lại tôi; \\q chúng đã khinh bỉ vả má tôi; \\q chúng cùng nhau tụ tập chống lại tôi.",
+          "B": "Người ta há hốc miệng nhìn tôi; \\q họ khinh miệt vả vào má tôi; \\q họ kéo bè kéo cánh chống lại tôi.",
+          "R": "Người ta há miệng chế nhạo tôi. \\q Họ sỉ nhục tôi và tát vào mặt tôi. \\q Tất cả họ hùa nhau chống lại tôi."
+        },
+        "ko": {
+          "L": "그들이 나를 향해 입을 크게 벌렸고, \\q 모욕하며 내 뺨을 쳤으며, \\q 함께 모여 나를 대적한다.",
+          "B": "사람들이 입을 벌리고 나를 바라보며, \\q 업신여기며 내 뺨을 치고, \\q 떼를 지어 나를 대적한다.",
+          "R": "사람들이 입을 크게 벌리고 나를 비웃는다. \\q 나를 모욕하며 뺨을 친다. \\q 모두 한패가 되어 나를 친다."
+        },
+        "pt": {
+          "L": "Abriram contra mim a sua boca; \\q com desprezo bateram nas minhas faces; \\q juntos se amontoam contra mim.",
+          "B": "As pessoas escancaram a boca contra mim; \\q batem no meu rosto com desprezo; \\q todos se juntam contra mim.",
+          "R": "As pessoas abrem a boca para zombar de mim. \\q Elas me insultam e me dão tapas no rosto. \\q Todas se juntam contra mim."
         }
       },
       "decisions": [
@@ -1120,6 +1596,36 @@
           "L": "God delivers me up to [the] unjust, \\q and throws me into [the] hands of [the] wicked.",
           "B": "God hands me over to the unjust \\q and throws me into the clutches of the wicked.",
           "R": "God has handed me over to evil people. \\q He has thrown me into the power of the wicked."
+        },
+        "es": {
+          "L": "Dios me entrega al inicuo, \\q y en manos de los malvados me arroja.",
+          "B": "Dios me entrega a los injustos \\q y me arroja en las garras de los malvados.",
+          "R": "Dios me ha entregado a gente malvada. \\q Me ha arrojado en poder de los perversos."
+        },
+        "fr": {
+          "L": "Dieu me livre à l’inique, \\q et me jette entre [les] mains des méchants.",
+          "B": "Dieu me livre aux injustes \\q et me jette dans les griffes des méchants.",
+          "R": "Dieu m’a livré à des gens mauvais. \\q Il m’a jeté au pouvoir des méchants."
+        },
+        "sw": {
+          "L": "Mungu ananikabidhi kwa wadhalimu, \\q na kunitupa mikononi mwa waovu.",
+          "B": "Mungu ananikabidhi kwa wasio haki \\q na kunitupa katika makucha ya waovu.",
+          "R": "Mungu amenitia mikononi mwa watu waovu. \\q Amenitupa katika mamlaka ya wenye uovu."
+        },
+        "vi": {
+          "L": "Đức Chúa Trời phó tôi cho kẻ bất công, \\q và ném tôi vào tay kẻ ác.",
+          "B": "Đức Chúa Trời giao tôi cho kẻ bất chính \\q và quăng tôi vào nanh vuốt kẻ ác.",
+          "R": "Đức Chúa Trời đã giao tôi cho những kẻ xấu. \\q Ngài đã ném tôi vào quyền lực của kẻ ác."
+        },
+        "ko": {
+          "L": "하나님께서 나를 불의한 자에게 넘기시고, \\q 악인들의 손에 나를 던지신다.",
+          "B": "하나님께서 나를 불의한 자들에게 넘겨주시고 \\q 악인들의 손아귀에 던지신다.",
+          "R": "하나님께서 나를 악한 사람들에게 넘기셨다. \\q 나를 악인들의 손에 던지셨다."
+        },
+        "pt": {
+          "L": "Deus me entrega ao injusto, \\q e me lança nas mãos dos perversos.",
+          "B": "Deus me entrega aos injustos \\q e me atira nas garras dos perversos.",
+          "R": "Deus me entregou às pessoas más. \\q Ele me jogou no poder dos perversos."
         }
       },
       "decisions": [
@@ -1211,6 +1717,36 @@
           "L": "I was at ease, and {{deity_pronoun:he|He}} shattered me; \\q {{deity_pronoun:he|He}} seized [me] by my neck and dashed me to pieces; \\q and {{deity_pronoun:he|He}} set me up for {{deity_pronoun:himself|Himself}} as a target.",
           "B": "I was at ease, but {{deity_pronoun:he|He}} shattered me; \\q {{deity_pronoun:he|He}} seized me by the neck and smashed me to pieces; \\q {{deity_pronoun:he|He}} set me up as {{deity_pronoun:his|His}} target.",
           "R": "I was living in peace, but God broke me apart. \\q He grabbed me by the neck and smashed me to pieces. \\q He has made me {{deity_pronoun:his|His}} target."
+        },
+        "es": {
+          "L": "Estaba tranquilo, y {{deity_pronoun:él|Él}} me quebrantó; \\q me agarró por la nuca y me hizo pedazos; \\q y me levantó como {{deity_pronoun:su|Su}} blanco.",
+          "B": "Vivía tranquilo, pero {{deity_pronoun:él|Él}} me hizo añicos; \\q me agarró del cuello y me despedazó; \\q me puso como {{deity_pronoun:su|Su}} blanco.",
+          "R": "Vivía en paz, pero Dios me rompió en pedazos. \\q Me agarró del cuello y me hizo trizas. \\q Me ha convertido en {{deity_pronoun:su|Su}} blanco."
+        },
+        "fr": {
+          "L": "J’étais tranquille, et {{deity_pronoun:il|Il}} m’a brisé ; \\q {{deity_pronoun:il|Il}} m’a saisi par la nuque et m’a mis en pièces ; \\q et {{deity_pronoun:il|Il}} m’a dressé pour {{deity_pronoun:lui|Lui}} comme cible.",
+          "B": "J’étais en paix, mais {{deity_pronoun:il|Il}} m’a brisé ; \\q {{deity_pronoun:il|Il}} m’a saisi par la nuque et m’a fracassé ; \\q {{deity_pronoun:il|Il}} a fait de moi {{deity_pronoun:sa|Sa}} cible.",
+          "R": "Je vivais en paix, mais Dieu m’a brisé. \\q Il m’a pris par le cou et m’a mis en pièces. \\q Il a fait de moi {{deity_pronoun:sa|Sa}} cible."
+        },
+        "sw": {
+          "L": "Nilikuwa nimetulia, {{deity_pronoun:naye|Naye}} akanivunjavunja; \\q akanikamata shingoni na kunipondaponda; \\q akanisimamisha kwa ajili {{deity_pronoun:yake|Yake}} kama shabaha.",
+          "B": "Nilikuwa na amani, lakini {{deity_pronoun:yeye|Yeye}} alinivunja; \\q alinishika shingo na kunipasua vipande vipande; \\q amenifanya shabaha {{deity_pronoun:yake|Yake}}.",
+          "R": "Nilikuwa nikiishi kwa amani, lakini Mungu alinivunja. \\q Alinikamata shingoni na kunipasua vipande vipande. \\q Amenifanya shabaha {{deity_pronoun:yake|Yake}}."
+        },
+        "vi": {
+          "L": "Tôi đang yên ổn, và {{deity_pronoun:ngài|Ngài}} đã đập tan tôi; \\q {{deity_pronoun:ngài|Ngài}} nắm lấy cổ tôi và đập tôi tan nát; \\q và {{deity_pronoun:ngài|Ngài}} dựng tôi lên làm bia cho {{deity_pronoun:ngài|Ngài}}.",
+          "B": "Tôi đang sống yên ổn, nhưng {{deity_pronoun:ngài|Ngài}} đã bẻ gãy tôi; \\q {{deity_pronoun:ngài|Ngài}} túm cổ tôi và đập tôi nát vụn; \\q {{deity_pronoun:ngài|Ngài}} lấy tôi làm bia của {{deity_pronoun:ngài|Ngài}}.",
+          "R": "Tôi đang sống bình an, nhưng Đức Chúa Trời đã đập tan tôi. \\q Ngài túm cổ tôi và đập tôi tan tành. \\q Ngài đã lấy tôi làm bia bắn của {{deity_pronoun:ngài|Ngài}}."
+        },
+        "ko": {
+          "L": "내가 평안하였는데 그분께서 나를 깨뜨리시고, \\q 내 목덜미를 잡아 나를 산산조각 내시고, \\q 나를 그분의 과녁으로 세우셨다.",
+          "B": "내가 평안히 지냈는데 그분께서 나를 부수시고, \\q 내 목을 움켜잡고 나를 박살 내시며, \\q 나를 그분의 과녁으로 삼으셨다.",
+          "R": "나는 평화롭게 살고 있었는데 하나님께서 나를 부수셨다. \\q 내 목을 잡고 나를 산산조각 내셨다. \\q 나를 그분의 과녁으로 삼으셨다."
+        },
+        "pt": {
+          "L": "Eu estava tranquilo, e {{deity_pronoun:ele|Ele}} me quebrou; \\q {{deity_pronoun:ele|Ele}} [me] agarrou pelo pescoço e me esmigalhou; \\q e {{deity_pronoun:ele|Ele}} me estabeleceu como {{deity_pronoun:seu|Seu}} alvo.",
+          "B": "Eu vivia tranquilo, mas {{deity_pronoun:ele|Ele}} me quebrou; \\q {{deity_pronoun:ele|Ele}} me agarrou pelo pescoço e me fez em pedaços; \\q {{deity_pronoun:ele|Ele}} me pôs como {{deity_pronoun:seu|Seu}} alvo.",
+          "R": "Eu vivia em paz, mas Deus me partiu ao meio. \\q Ele me agarrou pelo pescoço e me fez em pedaços. \\q Ele fez de mim o {{deity_pronoun:seu|Seu}} alvo."
         }
       },
       "decisions": [
@@ -1315,6 +1851,36 @@
           "L": "His archers surround me; \\q {{deity_pronoun:he|He}} splits open my kidneys and does not spare; \\q {{deity_pronoun:he|He}} pours out my gall on the ground.",
           "B": "His archers surround me. \\q Without mercy {{deity_pronoun:he|He}} slashes open my kidneys \\q and pours out my gall on the ground.",
           "R": "His archers are all around me. \\q Without pity {{deity_pronoun:he|He}} wounds me deep inside \\q and spills my insides out on the ground."
+        },
+        "es": {
+          "L": "Sus arqueros me rodean; \\q {{deity_pronoun:él|Él}} parte mis riñones y no perdona; \\q {{deity_pronoun:él|Él}} derrama en tierra mi hiel.",
+          "B": "Sus arqueros me rodean. \\q Sin piedad {{deity_pronoun:él|Él}} me atraviesa los riñones \\q y derrama mi hiel por el suelo.",
+          "R": "Sus arqueros me rodean por todas partes. \\q Sin compasión {{deity_pronoun:él|Él}} me hiere en lo más hondo \\q y desparrama mis entrañas por el suelo."
+        },
+        "fr": {
+          "L": "Ses archers m’entourent ; \\q {{deity_pronoun:il|Il}} me fend les reins et n’épargne pas ; \\q {{deity_pronoun:il|Il}} répand à terre mon fiel.",
+          "B": "Ses archers m’encerclent. \\q Sans pitié {{deity_pronoun:il|Il}} me transperce les reins \\q et répand mon fiel sur le sol.",
+          "R": "Ses archers sont tout autour de moi. \\q Sans pitié {{deity_pronoun:il|Il}} me blesse au plus profond \\q et répand mes entrailles sur le sol."
+        },
+        "sw": {
+          "L": "Wapiga mishale {{deity_pronoun:wake|Wake}} wananizunguka; \\q ananipasua figo wala hanihurumii; \\q anamwaga nyongo yangu chini.",
+          "B": "Wapiga mishale {{deity_pronoun:wake|Wake}} wamenizunguka. \\q Bila huruma ananipasua figo \\q na kumwaga nyongo yangu ardhini.",
+          "R": "Wapiga mishale {{deity_pronoun:wake|Wake}} wamenizunguka pande zote. \\q Bila huruma ananijeruhi ndani kabisa \\q na kumwaga matumbo yangu chini."
+        },
+        "vi": {
+          "L": "Các xạ thủ của {{deity_pronoun:ngài|Ngài}} vây quanh tôi; \\q {{deity_pronoun:ngài|Ngài}} xẻ thận tôi và không dung tha; \\q {{deity_pronoun:ngài|Ngài}} đổ mật tôi ra đất.",
+          "B": "Các cung thủ của {{deity_pronoun:ngài|Ngài}} vây quanh tôi. \\q Không chút xót thương, {{deity_pronoun:ngài|Ngài}} rạch thận tôi \\q và đổ mật tôi xuống đất.",
+          "R": "Các cung thủ của {{deity_pronoun:ngài|Ngài}} bao vây tôi. \\q Không chút thương xót, {{deity_pronoun:ngài|Ngài}} làm tôi bị thương tận bên trong \\q và đổ ruột gan tôi ra đất."
+        },
+        "ko": {
+          "L": "그분의 궁수들이 나를 에워싸고, \\q 그분께서 내 콩팥을 가르시고 아끼지 않으시며, \\q 내 쓸개를 땅에 쏟으신다.",
+          "B": "그분의 궁수들이 나를 둘러싼다. \\q 그분께서 사정없이 내 콩팥을 찢으시고 \\q 내 쓸개를 땅에 쏟으신다.",
+          "R": "그분의 궁수들이 사방에서 나를 둘러싸고 있다. \\q 그분께서 가차 없이 나를 깊숙이 찌르시고 \\q 내 속을 땅바닥에 쏟아 놓으신다."
+        },
+        "pt": {
+          "L": "Os {{deity_pronoun:seus|Seus}} arqueiros me cercam; \\q {{deity_pronoun:ele|Ele}} fende os meus rins e não poupa; \\q {{deity_pronoun:ele|Ele}} derrama no chão o meu fel.",
+          "B": "Os {{deity_pronoun:seus|Seus}} arqueiros me cercam. \\q Sem piedade, {{deity_pronoun:ele|Ele}} rasga os meus rins \\q e derrama o meu fel no chão.",
+          "R": "Os {{deity_pronoun:seus|Seus}} arqueiros estão ao meu redor. \\q Sem dó, {{deity_pronoun:ele|Ele}} me fere bem lá dentro \\q e espalha as minhas entranhas pelo chão."
         }
       },
       "decisions": [
@@ -1420,6 +1986,36 @@
           "L": "He breaks through me, breach upon breach; \\q {{deity_pronoun:he|He}} runs at me like a warrior.",
           "B": "He breaks through me again and again, like a wall breached; \\q {{deity_pronoun:he|He}} charges at me like a warrior.",
           "R": "He breaks through my defenses again and again, as an army breaks through a city wall. \\q He charges at me like a soldier."
+        },
+        "es": {
+          "L": "Me abre brecha sobre brecha; \\q corre contra mí como un guerrero.",
+          "B": "Abre brecha en mí una y otra vez, como en un muro; \\q arremete contra mí como un guerrero.",
+          "R": "Rompe mis defensas una y otra vez, como un ejército que abre brecha en la muralla de una ciudad. \\q Me embiste como un soldado."
+        },
+        "fr": {
+          "L": "Il ouvre en moi brèche sur brèche ; \\q {{deity_pronoun:il|Il}} court sur moi comme un guerrier.",
+          "B": "Il ouvre en moi brèche après brèche, comme dans un rempart ; \\q {{deity_pronoun:il|Il}} fonce sur moi comme un guerrier.",
+          "R": "Il enfonce mes défenses encore et encore, comme une armée qui perce la muraille d’une ville. \\q Il fonce sur moi comme un soldat."
+        },
+        "sw": {
+          "L": "Ananibomoa, bomoko juu ya bomoko; \\q ananikimbilia kama shujaa.",
+          "B": "Ananibomoa tena na tena, kama ukuta uliobomolewa; \\q ananishambulia kama shujaa.",
+          "R": "Anavunja ulinzi wangu tena na tena, kama jeshi linavyobomoa ukuta wa mji. \\q Ananishambulia kama askari."
+        },
+        "vi": {
+          "L": "Ngài phá vỡ tôi, lỗ thủng chồng lỗ thủng; \\q {{deity_pronoun:ngài|Ngài}} xông vào tôi như một dũng sĩ.",
+          "B": "Ngài chọc thủng tôi hết lần này đến lần khác như tường thành bị phá; \\q {{deity_pronoun:ngài|Ngài}} lao vào tôi như một chiến binh.",
+          "R": "Ngài phá vỡ hàng phòng thủ của tôi hết lần này đến lần khác, như một đạo quân phá vỡ tường thành. \\q Ngài lao vào tôi như một người lính."
+        },
+        "ko": {
+          "L": "그분께서 나를 뚫고 또 뚫으시며, \\q 용사처럼 내게 달려드신다.",
+          "B": "그분께서 무너진 성벽처럼 나를 거듭 뚫으시고 \\q 용사처럼 내게 돌진하신다.",
+          "R": "군대가 성벽을 뚫듯이 그분께서 나를 지키는 것을 거듭 뚫고 들어오신다. \\q 군인처럼 내게 달려드신다."
+        },
+        "pt": {
+          "L": "Ele me rompe, brecha sobre brecha; \\q {{deity_pronoun:ele|Ele}} corre contra mim como um guerreiro.",
+          "B": "Ele abre brechas em mim, uma após outra, como numa muralha; \\q {{deity_pronoun:ele|Ele}} investe contra mim como um guerreiro.",
+          "R": "Ele rompe as minhas defesas uma vez após outra, como um exército que derruba a muralha de uma cidade. \\q Ele avança contra mim como um soldado."
         }
       },
       "decisions": [
@@ -1522,6 +2118,36 @@
           "L": "I have sewn sackcloth over my skin, \\q and thrust my horn into the dust.",
           "B": "I have sewn sackcloth over my skin \\q and laid my strength in the dust.",
           "R": "I have sewn rough mourning clothes onto my skin, \\q and my pride lies in the dust."
+        },
+        "es": {
+          "L": "He cosido saco sobre mi piel, \\q y he hundido mi cuerno en el polvo.",
+          "B": "He cosido tela de saco sobre mi piel \\q y he dejado mi fuerza en el polvo.",
+          "R": "Me he cosido a la piel ásperas ropas de luto, \\q y mi orgullo está por los suelos."
+        },
+        "fr": {
+          "L": "J’ai cousu un sac sur ma peau, \\q et j’ai enfoncé ma corne dans la poussière.",
+          "B": "J’ai cousu une toile de sac sur ma peau \\q et j’ai mis ma force dans la poussière.",
+          "R": "J’ai cousu sur ma peau de rudes vêtements de deuil, \\q et ma fierté traîne dans la poussière."
+        },
+        "sw": {
+          "L": "Nimeshona gunia juu ya ngozi yangu, \\q na kuisukuma pembe yangu mavumbini.",
+          "B": "Nimeshona nguo ya gunia juu ya ngozi yangu \\q na kuziweka nguvu zangu mavumbini.",
+          "R": "Nimeshona nguo za maombolezo zinazokwaruza kwenye ngozi yangu, \\q na kiburi changu kimelala mavumbini."
+        },
+        "vi": {
+          "L": "Tôi đã khâu vải sô trên da tôi, \\q và dúi sừng tôi vào bụi đất.",
+          "B": "Tôi đã khâu vải sô lên da mình \\q và đặt sức mạnh của tôi trong bụi đất.",
+          "R": "Tôi đã khâu áo tang thô ráp dính vào da, \\q và niềm kiêu hãnh của tôi nằm trong bụi đất."
+        },
+        "ko": {
+          "L": "내가 내 피부 위에 굵은 베를 꿰매고, \\q 내 뿔을 흙 속에 처박았다.",
+          "B": "내가 굵은 베옷을 살갗에 꿰매 붙이고 \\q 내 힘을 흙먼지 속에 묻었다.",
+          "R": "나는 거친 상복을 살갗에 꿰매 입었고, \\q 내 자존심은 흙바닥에 떨어졌다."
+        },
+        "pt": {
+          "L": "Costurei pano de saco sobre a minha pele \\q e enfiei o meu chifre no pó.",
+          "B": "Costurei pano de saco sobre a minha pele \\q e deitei a minha força no pó.",
+          "R": "Costurei roupas ásperas de luto na minha pele, \\q e o meu orgulho está jogado no pó."
         }
       },
       "decisions": [
@@ -1642,6 +2268,36 @@
           "L": "My face is red from weeping, \\q and on my eyelids [is] deep darkness.",
           "B": "My face is red with weeping, \\q and deep shadows lie on my eyelids.",
           "R": "My face is red from crying, \\q and there are dark circles around my eyes."
+        },
+        "es": {
+          "L": "Mi rostro está enrojecido por el llanto, \\q y sobre mis párpados [hay] densa oscuridad.",
+          "B": "Mi cara está roja de tanto llorar, \\q y sombras profundas cubren mis párpados.",
+          "R": "Tengo la cara roja de llorar, \\q y ojeras oscuras alrededor de los ojos."
+        },
+        "fr": {
+          "L": "Mon visage est rouge de pleurs, \\q et sur mes paupières [est] l’ombre épaisse.",
+          "B": "Mon visage est rougi par les larmes, \\q et des ombres profondes pèsent sur mes paupières.",
+          "R": "J’ai le visage rouge à force de pleurer, \\q et des cernes noirs autour des yeux."
+        },
+        "sw": {
+          "L": "Uso wangu ni mwekundu kwa kulia, \\q na juu ya kope zangu [kuna] giza nene.",
+          "B": "Uso wangu umekuwa mwekundu kwa kulia, \\q na vivuli vizito vimetanda kwenye kope zangu.",
+          "R": "Uso wangu ni mwekundu kwa kulia, \\q na kuna duara jeusi kuzunguka macho yangu."
+        },
+        "vi": {
+          "L": "Mặt tôi đỏ vì khóc lóc, \\q và trên mí mắt tôi [là] bóng tối dày đặc.",
+          "B": "Mặt tôi đỏ hoe vì khóc, \\q và bóng đen sâu phủ trên mí mắt tôi.",
+          "R": "Mặt tôi đỏ lên vì khóc, \\q và quanh mắt tôi thâm quầng."
+        },
+        "ko": {
+          "L": "내 얼굴은 울음으로 붉어졌고, \\q 내 눈꺼풀에는 짙은 어둠이 [있다].",
+          "B": "내 얼굴은 울어서 붉어졌고, \\q 눈꺼풀에는 짙은 그늘이 드리웠다.",
+          "R": "울어서 얼굴이 빨갛고, \\q 눈가는 거무스름하다."
+        },
+        "pt": {
+          "L": "O meu rosto está vermelho de choro, \\q e sobre as minhas pálpebras [há] sombra profunda.",
+          "B": "O meu rosto está vermelho de tanto chorar, \\q e sombras profundas pesam sobre as minhas pálpebras.",
+          "R": "O meu rosto está vermelho de tanto chorar, \\q e tenho olheiras escuras ao redor dos olhos."
         }
       },
       "decisions": [
@@ -1738,6 +2394,36 @@
           "L": "although [there is] no violence in my hands, \\q and my prayer [is] pure.",
           "B": "even though my hands have done no violence \\q and my prayer is pure.",
           "R": "And all this has happened even though I have never hurt anyone, \\q and my prayers are sincere."
+        },
+        "es": {
+          "L": "aunque no [hay] violencia en mis manos, \\q y mi oración [es] pura.",
+          "B": "aunque mis manos no han cometido violencia \\q y mi oración es pura.",
+          "R": "Y todo esto me ha pasado aunque nunca he hecho daño a nadie, \\q y mis oraciones son sinceras."
+        },
+        "fr": {
+          "L": "bien qu’[il n’y ait] pas de violence dans mes mains, \\q et que ma prière [soit] pure.",
+          "B": "alors que mes mains n’ont commis aucune violence \\q et que ma prière est pure.",
+          "R": "Et tout cela m’est arrivé alors que je n’ai jamais fait de mal à personne, \\q et que mes prières sont sincères."
+        },
+        "sw": {
+          "L": "ingawa [hakuna] udhalimu mikononi mwangu, \\q na sala yangu [ni] safi.",
+          "B": "ingawa mikono yangu haijatenda udhalimu \\q na sala yangu ni safi.",
+          "R": "Na haya yote yamenipata ingawa sijawahi kumdhuru mtu yeyote, \\q na sala zangu ni za kweli."
+        },
+        "vi": {
+          "L": "dù [không có] sự bạo ngược trong tay tôi, \\q và lời cầu nguyện của tôi [là] trong sạch.",
+          "B": "dù tay tôi chẳng làm điều bạo ngược \\q và lời cầu nguyện của tôi trong sạch.",
+          "R": "Mọi điều ấy xảy đến dù tôi chưa từng làm hại ai, \\q và lời cầu nguyện của tôi là thành thật."
+        },
+        "ko": {
+          "L": "내 손에는 폭력이 없고, \\q 내 기도는 깨끗한데도 [그러하다].",
+          "B": "내 손으로 폭력을 행한 적이 없고 \\q 내 기도가 깨끗한데도 그러하다.",
+          "R": "나는 누구에게도 해를 끼친 적이 없는데 이 모든 일이 일어났다. \\q 내 기도도 진실하였다."
+        },
+        "pt": {
+          "L": "embora [não haja] violência nas minhas mãos, \\q e a minha oração [seja] pura.",
+          "B": "mesmo que as minhas mãos não tenham praticado violência \\q e a minha oração seja pura.",
+          "R": "E tudo isso aconteceu mesmo que eu nunca tenha machucado ninguém \\q e as minhas orações sejam sinceras."
         }
       },
       "decisions": [
@@ -1836,6 +2522,36 @@
           "L": "Earth, do not cover my blood, \\q and let there be no [resting] place for my cry.",
           "B": "Earth, do not cover my blood; \\q let my cry find no place to rest.",
           "R": "Earth, do not hide my blood! \\q Do not let my cry for justice ever be silenced."
+        },
+        "es": {
+          "L": "Tierra, no cubras mi sangre, \\q y que no haya [lugar de descanso] para mi clamor.",
+          "B": "¡Tierra, no cubras mi sangre! \\q Que mi clamor no encuentre dónde descansar.",
+          "R": "¡Tierra, no escondas mi sangre! \\q No dejes que mi grito pidiendo justicia se apague jamás."
+        },
+        "fr": {
+          "L": "Terre, ne couvre pas mon sang, \\q et qu’il n’y ait pas de [lieu de repos] pour mon cri.",
+          "B": "Terre, ne couvre pas mon sang ; \\q que mon cri ne trouve aucun lieu où s’arrêter.",
+          "R": "Terre, ne cache pas mon sang ! \\q Ne laisse jamais se taire mon cri qui réclame justice."
+        },
+        "sw": {
+          "L": "Ee nchi, usiifunike damu yangu, \\q wala kilio changu kisiwe na mahali [pa kupumzika].",
+          "B": "Ee nchi, usiifunike damu yangu; \\q kilio changu kisipate mahali pa kutulia.",
+          "R": "Ee nchi, usiifiche damu yangu! \\q Usiache kilio changu cha kudai haki kinyamazishwe kamwe."
+        },
+        "vi": {
+          "L": "Hỡi đất, đừng che lấp máu tôi, \\q và chớ có [chỗ nghỉ] cho tiếng kêu của tôi.",
+          "B": "Hỡi đất, đừng che lấp máu tôi; \\q xin cho tiếng kêu của tôi không tìm được chỗ ngơi nghỉ.",
+          "R": "Hỡi đất, đừng giấu máu tôi! \\q Đừng để tiếng kêu đòi công lý của tôi bị dập tắt."
+        },
+        "ko": {
+          "L": "땅아, 내 피를 덮지 마라. \\q 내 부르짖음이 [쉴] 곳이 없게 하여라.",
+          "B": "땅아, 내 피를 덮지 마라. \\q 내 부르짖음이 머물러 쉴 곳을 찾지 못하게 하여라.",
+          "R": "땅아, 내 피를 숨기지 마라! \\q 정의를 구하는 내 외침이 결코 잠잠해지지 않게 하여라."
+        },
+        "pt": {
+          "L": "Ó terra, não cubras o meu sangue, \\q e que não haja [lugar de descanso] para o meu clamor.",
+          "B": "Ó terra, não cubras o meu sangue; \\q que o meu clamor não encontre lugar onde descansar.",
+          "R": "Terra, não escondas o meu sangue! \\q Não deixes que o meu pedido de justiça se cale."
         }
       },
       "decisions": [
@@ -1901,6 +2617,28 @@
           "reason": "Readable says what the cry is for (m1, m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o180160180011",
+            "o180160180031"
+          ],
+          "choice": "\"tu\" for the earth (\"não cubras\", \"não escondas\")",
+          "alternatives": [
+            "\"você\" (\"não cubra\")"
+          ],
+          "reason": "Job calls on the earth as poetry calls on things that cannot answer. Portuguese poetry addresses them with \"tu\", and \"você\" would make the cry sound like conversation; the form is not the one used for God, so there is no setting span.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1935,6 +2673,36 @@
           "L": "Even now, look, my witness [is] in the heavens, \\q and the one who testifies for me [is] on high.",
           "B": "Even now my witness is in heaven; \\q the one who vouches for me is on high.",
           "R": "Even now I have a witness in heaven. \\q There is someone on high who will speak up for me."
+        },
+        "es": {
+          "L": "Aun ahora, mira, mi testigo [está] en los cielos, \\q y el que da testimonio por mí [está] en las alturas.",
+          "B": "Aun ahora mi testigo está en el cielo; \\q el que responde por mí está en lo alto.",
+          "R": "Aun ahora tengo un testigo en el cielo. \\q Hay alguien en lo alto que hablará a mi favor."
+        },
+        "fr": {
+          "L": "Même maintenant, voici, mon témoin [est] dans les cieux, \\q et celui qui témoigne pour moi [est] dans les hauteurs.",
+          "B": "Dès maintenant, mon témoin est dans le ciel ; \\q celui qui se porte garant de moi est là-haut.",
+          "R": "Même maintenant, j’ai un témoin dans le ciel. \\q Là-haut, quelqu’un parlera en ma faveur."
+        },
+        "sw": {
+          "L": "Hata sasa, tazama, shahidi wangu [yuko] mbinguni, \\q na anayenishuhudia [yuko] juu.",
+          "B": "Hata sasa shahidi wangu yuko mbinguni; \\q yule anayenithibitisha yuko juu.",
+          "R": "Hata sasa nina shahidi mbinguni. \\q Kuna mtu huko juu atakayesema kwa ajili yangu."
+        },
+        "vi": {
+          "L": "Ngay bây giờ, kìa, nhân chứng của tôi [ở] trên các tầng trời, \\q và vị làm chứng cho tôi [ở] nơi cao.",
+          "B": "Ngay lúc này, nhân chứng của tôi đang ở trên trời; \\q vị bảo chứng cho tôi ở nơi cao.",
+          "R": "Ngay cả bây giờ, tôi vẫn có một nhân chứng trên trời. \\q Có một vị ở trên cao sẽ lên tiếng bênh vực tôi."
+        },
+        "ko": {
+          "L": "지금도, 보라, 내 증인이 하늘에 [계시고], \\q 나를 위해 증언하는 이가 높은 곳에 [계신다].",
+          "B": "지금도 내 증인이 하늘에 계시고, \\q 나를 보증하시는 분이 높은 곳에 계신다.",
+          "R": "지금도 하늘에는 내 증인이 계신다. \\q 높은 곳에서 나를 위해 말해 주실 분이 계신다."
+        },
+        "pt": {
+          "L": "Também agora, eis que a minha testemunha [está] nos céus, \\q e aquele que testifica a meu favor [está] nas alturas.",
+          "B": "Mesmo agora, a minha testemunha está nos céus; \\q quem responde por mim está nas alturas.",
+          "R": "Mesmo agora, tenho uma testemunha nos céus. \\q Há alguém lá no alto que vai falar a meu favor."
         }
       },
       "decisions": [
@@ -2023,6 +2791,77 @@
           "reason": "Balanced uses an everyday phrase for a witness who supports someone's case. It avoids \"advocate\", which would suggest a lawyer, more than the word says.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o180160190041",
+            "o180160190042"
+          ],
+          "choice": "\"vị\" for the one who testifies (verses 19 and 21)",
+          "alternatives": [
+            "\"Đấng\"",
+            "\"người\""
+          ],
+          "reason": "The meaning decision leaves open whether the witness is God himself or a heavenly being. \"Đấng\" would name him as God; \"người\" would make him an ordinary man. \"vị\" is respectful without deciding, and takes no deity_pronoun span.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o180160190041",
+            "o180160190042"
+          ],
+          "choice": "honorific \"계시다\" and \"분\" for the witness in heaven",
+          "alternatives": [
+            "plain \"있다\" and \"이\""
+          ],
+          "reason": "The witness is in heaven, so Korean speaks of him with respect; the honorific suits God or a heavenly being alike and so keeps the question open, as the meaning decision does.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o180160190051",
+            "o180160190052",
+            "o180160190062",
+            "o180160190063"
+          ],
+          "choice": "\"a minha testemunha está nos céus\" (L, B); \"tenho uma testemunha nos céus\" (R); \"aquele que testifica a meu favor\" (L), \"quem responde por mim\" (B), \"alguém ... que vai falar a meu favor\" (R)",
+          "alternatives": [
+            "\"o meu advogado\"",
+            "\"o meu fiador\"",
+            "\"a minha Testemunha\" with a capital"
+          ],
+          "reason": "The text leaves open whether the witness is God himself or a heavenly figure who takes Job's side (m1), so Portuguese uses no capital and no deity_pronoun span, here and for the \"ele\" of verse 21. \"Responder por alguém\" is the everyday phrase for vouching for a person, as the English Balanced \"vouches for me\"; \"advogado\" would say more than the word does. \"Nos céus\" keeps the Hebrew plural, as Portuguese has always said it.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2054,6 +2893,36 @@
           "L": "My scorners [are] my friends; \\q to God my eye drips [tears].",
           "B": "My friends scorn me; \\q my eyes pour out tears to God.",
           "R": "My friends make fun of me, \\q while I cry out to God with tears."
+        },
+        "es": {
+          "L": "Mis burladores [son] mis amigos; \\q ante Dios mi ojo destila [lágrimas].",
+          "B": "Mis amigos se burlan de mí; \\q mis ojos derraman lágrimas ante Dios.",
+          "R": "Mis amigos se ríen de mí, \\q mientras yo clamo a Dios con lágrimas."
+        },
+        "fr": {
+          "L": "Mes moqueurs [sont] mes amis ; \\q vers Dieu mon œil verse [des larmes].",
+          "B": "Mes amis se moquent de moi ; \\q mes yeux versent des larmes devant Dieu.",
+          "R": "Mes amis se moquent de moi, \\q pendant que je crie vers Dieu en pleurant."
+        },
+        "sw": {
+          "L": "Wenye kunidhihaki [ndio] rafiki zangu; \\q kwa Mungu jicho langu linadondosha [machozi].",
+          "B": "Rafiki zangu wananidhihaki; \\q macho yangu yanamwaga machozi mbele za Mungu.",
+          "R": "Rafiki zangu wananicheka, \\q huku mimi nikimlilia Mungu kwa machozi."
+        },
+        "vi": {
+          "L": "Những kẻ nhạo báng tôi [là] bạn tôi; \\q mắt tôi nhỏ [lệ] hướng về Đức Chúa Trời.",
+          "B": "Bạn bè chế nhạo tôi; \\q mắt tôi tuôn lệ trước mặt Đức Chúa Trời.",
+          "R": "Bạn bè chế giễu tôi, \\q còn tôi khóc lóc kêu cầu Đức Chúa Trời."
+        },
+        "ko": {
+          "L": "나를 조롱하는 자들이 내 친구들이요, \\q 내 눈은 하나님을 향해 [눈물을] 흘린다.",
+          "B": "내 친구들은 나를 조롱하나, \\q 내 눈은 하나님 앞에 눈물을 쏟는다.",
+          "R": "내 친구들은 나를 비웃는데, \\q 나는 눈물로 하나님께 부르짖는다."
+        },
+        "pt": {
+          "L": "Os meus zombadores [são] os meus amigos; \\q para Deus o meu olho goteja [lágrimas].",
+          "B": "Os meus amigos zombam de mim; \\q os meus olhos derramam lágrimas diante de Deus.",
+          "R": "Os meus amigos riem de mim, \\q enquanto eu choro e clamo a Deus."
         }
       },
       "decisions": [
@@ -2146,6 +3015,36 @@
           "L": "and [that] he would argue for a man with God, \\q and [as] a son of man for his friend.",
           "B": "that he would plead for a man with God, \\q as one pleads for a friend.",
           "R": "I want someone to plead my case with God, \\q the way a person stands up for a friend."
+        },
+        "es": {
+          "L": "y [que] él defendiera a un hombre ante Dios, \\q y [como] un hijo de hombre a su amigo.",
+          "B": "que él abogara por un hombre ante Dios, \\q como quien aboga por un amigo.",
+          "R": "Quiero que alguien defienda mi causa ante Dios, \\q como una persona da la cara por un amigo."
+        },
+        "fr": {
+          "L": "et [qu’]il plaiderait pour un homme auprès de Dieu, \\q et [comme] un fils d’homme pour son ami.",
+          "B": "qu’il plaide pour un homme auprès de Dieu, \\q comme on plaide pour un ami.",
+          "R": "Je voudrais que quelqu’un défende ma cause devant Dieu, \\q comme une personne prend la défense d’un ami."
+        },
+        "sw": {
+          "L": "na [kwamba] angemtetea mtu mbele ya Mungu, \\q na [kama] mwanadamu kwa ajili ya rafiki yake.",
+          "B": "kwamba angemtetea mtu mbele za Mungu, \\q kama mtu anavyomtetea rafiki yake.",
+          "R": "Nataka mtu anitetee mbele za Mungu, \\q kama mtu anavyomsimamia rafiki yake."
+        },
+        "vi": {
+          "L": "và [rằng] vị ấy sẽ biện hộ cho một người trước Đức Chúa Trời, \\q và [như] một con người cho bạn mình.",
+          "B": "để vị ấy bênh vực một người trước mặt Đức Chúa Trời, \\q như người ta bênh vực bạn mình.",
+          "R": "Tôi muốn có ai đó biện hộ cho tôi trước Đức Chúa Trời, \\q như người ta đứng ra bênh vực bạn mình."
+        },
+        "ko": {
+          "L": "그분이 사람을 위해 하나님과 변론해 주시기를, \\q 사람의 아들이 그의 친구를 위해 [하듯이 해 주시기를 바란다].",
+          "B": "그분이 사람을 위해 하나님 앞에서 변론해 주시기를, \\q 사람이 제 친구를 위해 변론하듯 해 주시기를 바란다.",
+          "R": "누군가가 하나님 앞에서 내 사정을 변호해 주면 좋겠다. \\q 사람이 친구 편을 들어 주듯이 말이다."
+        },
+        "pt": {
+          "L": "e [que] ele defenderia um homem diante de Deus, \\q e [como] um filho de homem pelo seu amigo.",
+          "B": "que ele defenderia a causa de um homem diante de Deus, \\q como alguém defende um amigo.",
+          "R": "Quero que alguém defenda a minha causa diante de Deus, \\q como uma pessoa defende um amigo."
         }
       },
       "decisions": [
@@ -2276,6 +3175,36 @@
           "L": "For [the] years of number will come, \\q and I will go [the] way [from which] I will not return.",
           "B": "For only a few years will come \\q before I go the way of no return.",
           "R": "In only a few years \\q I will die and never come back."
+        },
+        "es": {
+          "L": "Porque [los] años contados vendrán, \\q y por [el] camino [del que] no volveré me iré.",
+          "B": "Porque solo vendrán unos pocos años \\q antes de que me vaya por el camino sin regreso.",
+          "R": "Dentro de pocos años \\q moriré y nunca volveré."
+        },
+        "fr": {
+          "L": "Car [les] années comptées viendront, \\q et je m’en irai par [le] chemin [d’où] je ne reviendrai pas.",
+          "B": "Car il ne viendra que peu d’années \\q avant que je parte par le chemin sans retour.",
+          "R": "Dans quelques années seulement, \\q je mourrai et je ne reviendrai jamais."
+        },
+        "sw": {
+          "L": "Kwa maana miaka ya kuhesabika itakuja, \\q nami nitaiendea njia [ambayo] sitarudi.",
+          "B": "Kwa maana ni miaka michache tu itakayokuja \\q kabla sijaenda njia isiyo na kurudi.",
+          "R": "Baada ya miaka michache tu \\q nitakufa na sitarudi tena."
+        },
+        "vi": {
+          "L": "Vì [những] năm có thể đếm được sẽ đến, \\q và tôi sẽ đi [con] đường [mà] tôi không trở lại.",
+          "B": "Vì chỉ vài năm nữa thôi \\q là tôi sẽ đi con đường không trở lại.",
+          "R": "Chỉ ít năm nữa thôi, \\q tôi sẽ chết và không bao giờ trở lại."
+        },
+        "ko": {
+          "L": "셀 수 있는 해들이 지나면, \\q 나는 돌아오지 못할 길을 갈 것이기 때문이다.",
+          "B": "몇 해만 지나면 \\q 나는 돌아오지 못할 길을 떠날 것이다.",
+          "R": "몇 해만 지나면 \\q 나는 죽어서 다시는 돌아오지 못한다."
+        },
+        "pt": {
+          "L": "Pois [os] anos contados virão, \\q e eu irei pelo caminho [de onde] não voltarei.",
+          "B": "Pois só restam poucos anos \\q antes que eu siga o caminho sem volta.",
+          "R": "Em poucos anos \\q eu vou morrer e nunca mais voltar."
         }
       },
       "decisions": [

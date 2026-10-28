@@ -90,9 +90,9 @@ class SiteTest(unittest.TestCase):
         verses = list(dict.fromkeys(v for r in data["records"] for v in r["refs"]))
         self.assertEqual(verses, [f"JHN.1.{v}" for v in range(1, 52)])
         # English for every sentence; Spanish for 1:1-18 so far, French,
-        # Swahili, Vietnamese and Korean for the whole chapter.
-        self.assertEqual(data["languages"], ["en", "es", "fr", "sw", "vi", "ko"])
-        for lang in ("fr", "sw", "vi", "ko"):
+        # Swahili, Vietnamese, Korean and Portuguese for the whole chapter.
+        self.assertEqual(data["languages"], ["en", "es", "fr", "sw", "vi", "ko", "pt"])
+        for lang in ("fr", "sw", "vi", "ko", "pt"):
             self.assertTrue(all(lang in r["renderings"] for r in data["records"]), lang)
         self.assertTrue(all("en" in r["renderings"] for r in data["records"]))
 
@@ -356,10 +356,13 @@ class SiteTest(unittest.TestCase):
         self.assertEqual(trail("php/2"), [("Open Word Bible", site + "/"), ("Read", site + "/read/"),
                                           ("Philippians", site + "/php/"), ("Philippians 2", site + "/php/2/")])
         # A book without a page goes straight from Read to the chapter.
-        self.assertEqual(trail("mrk/2"), [("Open Word Bible", site + "/"), ("Read", site + "/read/"),
-                                          ("Mark 2", site + "/mrk/2/")])
-        mark = (self.out / "mrk" / "2" / "index.html").read_text(encoding="utf-8")
-        self.assertIn('class="chap-book" href="/read/#mrk"', mark)
+        book, chaps = next((b, c) for b, c in build_site.books("en") if not build_site.load_intro(b))
+        code, first = book.lower(), chaps[0].chapter
+        title = build_site.chapter_name(chaps[0].records, book, first, "en")
+        self.assertEqual(trail(f"{code}/{first}"), [("Open Word Bible", site + "/"), ("Read", site + "/read/"),
+                                                    (title, f"{site}/{code}/{first}/")])
+        page = (self.out / code / str(first) / "index.html").read_text(encoding="utf-8")
+        self.assertIn(f'class="chap-book" href="/read/#{code}"', page)
         self.assertEqual(trail("fr/php/2")[-1][1], site + "/fr/php/2/")
         self.assertEqual(len(trail("fr/php/2")), 3)
 
@@ -470,7 +473,8 @@ class SiteTest(unittest.TestCase):
         for script in ("greek", "greek-ext"):
             self.assertIn(f"gentium-book-plus-{script}-400-normal.woff2", files)
         self.assertIn("noto-serif-hebrew-hebrew-400-normal.woff2", files)
-        for licence in ("OFL-Gentium.txt", "OFL-NotoSerifHebrew.txt"):
+        self.assertIn("noto-serif-ethiopic-ethiopic-400-normal.woff2", files)
+        for licence in ("OFL-Gentium.txt", "OFL-NotoSerifHebrew.txt", "OFL-NotoEthiopic.txt"):
             self.assertIn("SIL Open Font License", (ROOT / "web" / "fonts" / licence).read_text(encoding="utf-8"))
         home = (self.out / "index.html").read_text(encoding="utf-8")
         preload = re.search(r'<link rel="preload" href="/fonts/([^"]+)"', home)[1]
@@ -570,9 +574,10 @@ class SiteTest(unittest.TestCase):
             self.assertEqual(len(verses), len(build_site.votd_refs(lang)))
             self.assertTrue(all("l" not in v for v in verses), lang)
             for vid, v in zip(build_site.votd_refs(lang), verses):
-                # The verse ends a sentence, so it reads on its own (a closing
-                # quotation mark may follow: ” ’, or French » after a no-break space).
-                self.assertRegex(v["t"], r"[.?!](?:[”’]|\u00a0»)?$", vid)
+                # The verse ends a sentence, so it reads on its own (Amharic
+                # ends one with ።; a closing quotation mark may follow: ” ’,
+                # Amharic », or French » after a no-break space).
+                self.assertRegex(v["t"], r"[.?!።](?:[”’»]|\u00a0»)?$", vid)
         home = (self.out / "index.html").read_text(encoding="utf-8")
         data = re.search(r'<script type="application/json" class="votd-data">(.*?)</script>', home, re.S)[1]
         self.assertEqual(json.loads(data), build_site.verses_of_the_day("en"))
