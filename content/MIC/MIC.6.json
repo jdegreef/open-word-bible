@@ -35,6 +35,31 @@
           "L": "Hear, please, what {{divine_name:the LORD|Yahweh}} is saying: \\q Arise, contend before the mountains, \\q and let the hills hear your voice.",
           "B": "Listen to what {{divine_name:the LORD|Yahweh}} says: \\q Stand up, plead your case before the mountains; \\q let the hills hear your voice.",
           "R": "Listen to what {{divine_name:the LORD|Yahweh}} is saying: \\q Stand up and present your case to the mountains. \\q Let the hills hear what you have to say."
+        },
+        "es": {
+          "L": "{{plural_you:Oigan|Oíd}}, por favor, lo que dice {{divine_name:el SEÑOR|Yahvé}}: \\q Levántate, entabla pleito ante los montes, \\q y que oigan las colinas tu voz.",
+          "B": "{{plural_you:Escuchen|Escuchad}} lo que dice {{divine_name:el SEÑOR|Yahvé}}: \\q Ponte en pie, defiende tu causa ante los montes; \\q que las colinas oigan tu voz.",
+          "R": "{{plural_you:Escuchen|Escuchad}} lo que está diciendo {{divine_name:el SEÑOR|Yahvé}}: \\q Ponte de pie y presenta tu caso a los montes. \\q Que las colinas oigan lo que tienes que decir."
+        },
+        "fr": {
+          "L": "Écoutez donc ce que dit {{divine_name:le SEIGNEUR|Yahvé}} : \\q Lève-toi, plaide devant les montagnes, \\q et que les collines entendent ta voix.",
+          "B": "Écoutez ce que dit {{divine_name:le SEIGNEUR|Yahvé}} : \\q Debout ! Plaide ta cause devant les montagnes ; \\q que les collines entendent ta voix.",
+          "R": "Écoutez ce que {{divine_name:le SEIGNEUR|Yahvé}} est en train de dire : \\q Lève-toi et présente ta cause aux montagnes. \\q Que les collines entendent ce que tu as à dire."
+        },
+        "sw": {
+          "L": "Sikieni, tafadhali, lile analolisema {{divine_name:BWANA|Yahwe}}: \\q Inuka, ushindane mbele ya milima, \\q na vilima visikie sauti yako.",
+          "B": "Sikilizeni anachosema {{divine_name:BWANA|Yahwe}}: \\q Simama, utetee shauri mbele ya milima; \\q vilima na visikie sauti yako.",
+          "R": "Sikilizeni anachosema {{divine_name:BWANA|Yahwe}}: \\q Simama, ueleze kesi yako mbele ya milima. \\q Vilima na visikie unachotaka kusema."
+        },
+        "vi": {
+          "L": "Xin hãy nghe điều {{divine_name:CHÚA|Gia-vê}} đang phán: \\q Hãy đứng dậy, hãy tranh tụng trước các núi, \\q và hãy để các đồi nghe tiếng ngươi.",
+          "B": "Hãy nghe điều {{divine_name:CHÚA|Gia-vê}} phán: \\q Hãy đứng lên, trình bày vụ kiện trước núi non; \\q hãy để các đồi nghe tiếng con.",
+          "R": "Hãy lắng nghe điều {{divine_name:CHÚA|Gia-vê}} đang phán: \\q Hãy đứng dậy và trình bày vụ kiện của con trước các núi. \\q Hãy để các đồi nghe điều con muốn nói."
+        },
+        "ko": {
+          "L": "이제 {{divine_name:주|야훼}}께서 하시는 말씀을 들어라. \\q 일어나서 산들 앞에서 변론하여라. \\q 언덕들이 네 목소리를 듣게 하여라.",
+          "B": "{{divine_name:주|야훼}}께서 하시는 말씀을 들어라. \\q 일어나서 산들 앞에서 이 사건을 변론하여라. \\q 언덕들이 네 목소리를 듣게 하여라.",
+          "R": "{{divine_name:주|야훼}}께서 하시는 말씀을 들어 보아라. \\q 일어나서 산들에게 이 사건을 설명하여라. \\q 언덕들이 네 말을 듣게 하여라."
         }
       },
       "decisions": [
@@ -96,6 +121,69 @@
           "reason": "Literal keeps the polite \"please\", which in English reads as urgency. The legal sense is kept at every level (m1): Literal uses the verb \"contend\", Balanced and Readable a phrase with \"case\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o330060010011",
+            "o330060010071",
+            "o330060010081"
+          ],
+          "choice": "\"{{plural_you:Oigan|Oíd}}\" (L), \"{{plural_you:Escuchen|Escuchad}}\" (B, R) for the plural call; \"Levántate\", \"entabla pleito\" (L), \"defiende tu causa\" (B), \"presenta tu caso\" (R) in the singular",
+          "alternatives": [],
+          "reason": "The first verb is plural, spoken to the hearers, and takes the plural_you setting; the commands that follow are masculine singular, spoken to the prophet (m2), so they stay with tú.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o330060010071",
+            "o330060010131",
+            "o330060010132"
+          ],
+          "choice": "\"tiếng ngươi\" (L); \"tiếng con\", \"vụ kiện của con\" (B, R)",
+          "alternatives": [],
+          "reason": "The LORD gives the prophet a commission, so he addresses him as \"ngươi\" at Literal and \"con\" at Balanced and Readable, as the term sheet sets for God speaking to a prophet.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o330060010011",
+            "o330060010071",
+            "o330060010081"
+          ],
+          "choice": "\"들어라\" to the hearers; \"변론하여라\" (L, B), \"설명하여라\" (R) to the prophet, all in 해라체",
+          "alternatives": [],
+          "reason": "Both the call to the people and the LORD's command to the prophet are in the plain imperative used for the oracles; the prophet's report gives the LORD -시- (\"하시는 말씀\").",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -139,6 +227,31 @@
           "L": "Hear, mountains, the case of {{divine_name:the LORD|Yahweh}}, \\q and you enduring ones, foundations of the earth; \\q for {{divine_name:the LORD|Yahweh}} has a case with {{deity_pronoun:his|His}} people, \\q and with Israel {{deity_pronoun:he|He}} will argue.",
           "B": "Hear the case of {{divine_name:the LORD|Yahweh}}, you mountains, \\q you everlasting foundations of the earth! \\q For {{divine_name:the LORD|Yahweh}} has a lawsuit against {{deity_pronoun:his|His}} people; \\q {{deity_pronoun:he|He}} will argue it against Israel.",
           "R": "Listen, you mountains, to {{divine_name:the LORD|Yahweh}}'s charges. \\q Listen, you ancient foundations of the earth! \\q {{divine_name:The LORD|Yahweh}} has a case against {{deity_pronoun:his|His}} people. \\q He is bringing charges against Israel."
+        },
+        "es": {
+          "L": "{{plural_you:Oigan|Oíd}}, montes, el pleito {{divine_name:del SEÑOR|de Yahvé}}, \\q y {{plural_you:ustedes|vosotros}}, perdurables, cimientos de la tierra; \\q porque {{divine_name:el SEÑOR|Yahvé}} tiene pleito con {{deity_pronoun:su|Su}} pueblo, \\q y con Israel {{deity_pronoun:él|Él}} discutirá.",
+          "B": "{{plural_you:Escuchen|Escuchad}}, montes, el pleito {{divine_name:del SEÑOR|de Yahvé}}, \\q ¡cimientos eternos de la tierra! \\q Porque {{divine_name:el SEÑOR|Yahvé}} tiene un pleito contra {{deity_pronoun:su|Su}} pueblo; \\q {{deity_pronoun:él|Él}} presentará su acusación contra Israel.",
+          "R": "{{plural_you:Escuchen|Escuchad}}, montes, las acusaciones {{divine_name:del SEÑOR|de Yahvé}}. \\q ¡{{plural_you:Escuchen|Escuchad}}, antiguos cimientos de la tierra! \\q {{divine_name:El SEÑOR|Yahvé}} tiene un pleito contra {{deity_pronoun:su|Su}} pueblo. \\q Está presentando cargos contra Israel."
+        },
+        "fr": {
+          "L": "Écoutez, montagnes, le procès {{divine_name:du SEIGNEUR|de Yahvé}}, \\q et vous, les immuables, fondements de la terre ; \\q car {{divine_name:le SEIGNEUR|Yahvé}} a un procès avec {{deity_pronoun:son|Son}} peuple, \\q et avec Israël {{deity_pronoun:il|Il}} va plaider.",
+          "B": "Écoutez le procès {{divine_name:du SEIGNEUR|de Yahvé}}, vous les montagnes, \\q vous, fondements éternels de la terre ! \\q Car {{divine_name:le SEIGNEUR|Yahvé}} est en procès avec {{deity_pronoun:son|Son}} peuple ; \\q {{deity_pronoun:il|Il}} plaide contre Israël.",
+          "R": "Montagnes, écoutez les accusations {{divine_name:du SEIGNEUR|de Yahvé}}. \\q Écoutez, vous, les fondations très anciennes de la terre ! \\q {{divine_name:Le SEIGNEUR|Yahvé}} accuse {{deity_pronoun:son|Son}} peuple. \\q Il porte plainte contre Israël."
+        },
+        "sw": {
+          "L": "Sikieni, enyi milima, mashtaka ya {{divine_name:BWANA|Yahwe}}, \\q nanyi mnaodumu, misingi ya dunia; \\q kwa maana {{divine_name:BWANA|Yahwe}} ana mashtaka na watu {{deity_pronoun:wake|Wake}}, \\q na pamoja na Israeli atahojiana.",
+          "B": "Sikieni mashtaka ya {{divine_name:BWANA|Yahwe}}, enyi milima, \\q enyi misingi ya milele ya dunia! \\q Kwa maana {{divine_name:BWANA|Yahwe}} ana mashtaka dhidi ya watu {{deity_pronoun:wake|Wake}}; \\q atahojiana na Israeli.",
+          "R": "Sikilizeni, enyi milima, mashtaka ya {{divine_name:BWANA|Yahwe}}. \\q Sikilizeni, enyi misingi ya zamani ya dunia! \\q {{divine_name:BWANA|Yahwe}} ana kesi dhidi ya watu {{deity_pronoun:wake|Wake}}. \\q Anaileta kesi {{deity_pronoun:yake|Yake}} dhidi ya Israeli."
+        },
+        "vi": {
+          "L": "Hỡi các núi, hãy nghe vụ kiện của {{divine_name:CHÚA|Gia-vê}}, \\q và hỡi các nền vững bền của đất; \\q vì {{divine_name:CHÚA|Gia-vê}} có vụ kiện với dân {{deity_pronoun:ngài|Ngài}}, \\q và {{deity_pronoun:ngài|Ngài}} sẽ tranh luận với Y-sơ-ra-ên.",
+          "B": "Hỡi các núi, hãy nghe vụ kiện của {{divine_name:CHÚA|Gia-vê}}, \\q hỡi các nền đời đời của đất! \\q Vì {{divine_name:CHÚA|Gia-vê}} có vụ kiện nghịch cùng dân {{deity_pronoun:ngài|Ngài}}; \\q {{deity_pronoun:ngài|Ngài}} sẽ tranh luận với Y-sơ-ra-ên.",
+          "R": "Hỡi các núi, hãy nghe những lời buộc tội của {{divine_name:CHÚA|Gia-vê}}. \\q Hỡi các nền móng xưa của đất, hãy lắng nghe! \\q {{divine_name:CHÚA|Gia-vê}} có vụ kiện nghịch cùng dân {{deity_pronoun:ngài|Ngài}}. \\q Ngài đang buộc tội Y-sơ-ra-ên."
+        },
+        "ko": {
+          "L": "산들아, {{divine_name:주|야훼}}의 소송을 들어라. \\q 땅의 견고한 기초들아, [들어라]. \\q {{divine_name:주|야훼}}께서 자기 백성과 소송하시고, \\q 이스라엘과 변론하실 것이다.",
+          "B": "{{divine_name:주|야훼}}의 소송을 들어라, 산들아. \\q 땅의 영원한 기초들아! \\q {{divine_name:주|야훼}}께서 자기 백성을 고소하셨다. \\q 그분께서 이스라엘을 상대로 변론하실 것이다.",
+          "R": "산들아, {{divine_name:주|야훼}}께서 하시는 고발을 들어라. \\q 땅의 오래된 기초들아, 들어라! \\q {{divine_name:주|야훼}}께서 자기 백성을 고소하셨다. \\q 그분께서 이스라엘을 고발하신다."
         }
       },
       "decisions": [
@@ -196,6 +309,47 @@
           "reason": "Balanced and Readable say \"against\", which is what the lawsuit means. \"He will argue it against Israel\" (B) begins after a semicolon, so \"he\" keeps the setting for pronouns for God.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o330060020041",
+            "o330060020101"
+          ],
+          "choice": "\"pleito\" (L, B) for the legal case; \"acusaciones\", \"cargos\" (R)",
+          "alternatives": [],
+          "reason": "The word is a lawsuit (m1); \"pleito\" is the ordinary Spanish word for a case at law and keeps the court picture of verses 1-2.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o330060020041",
+            "o330060020101",
+            "o330060020161"
+          ],
+          "choice": "\"mashtaka\" (L, B) for the case; \"kesi\" (R); \"atahojiana na\" (L, B) for \"argue\"",
+          "alternatives": [],
+          "reason": "\"Mashtaka\" is a charge brought in court, the sense of the noun here (m1); Readable uses the everyday word \"kesi\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -231,6 +385,31 @@
           "L": "My people, what have I done to you, and how have I wearied you? \\q Testify against {{deity_pronoun:me|Me}}!",
           "B": "My people, what have I done to you? How have I made you weary? \\q Testify against {{deity_pronoun:me|Me}}!",
           "R": "My people, what have I done to you? How have I been a burden to you? \\q Tell me what I have done wrong!"
+        },
+        "es": {
+          "L": "Pueblo mío, ¿qué te he hecho, y en qué te he fatigado? \\q ¡Testifica contra {{deity_pronoun:mí|Mí}}!",
+          "B": "Pueblo mío, ¿qué te he hecho? ¿Con qué te he cansado? \\q ¡Declara contra {{deity_pronoun:mí|Mí}}!",
+          "R": "Pueblo mío, ¿qué mal te he hecho? ¿En qué he sido una carga para ti? \\q ¡Dime qué hice mal!"
+        },
+        "fr": {
+          "L": "Mon peuple, que t’ai-je fait, et en quoi t’ai-je lassé ? \\q Témoigne contre {{deity_pronoun:moi|Moi}} !",
+          "B": "Mon peuple, que t’ai-je fait ? En quoi t’ai-je accablé ? \\q Viens témoigner contre {{deity_pronoun:moi|Moi}} !",
+          "R": "Mon peuple, que t’ai-je fait ? En quoi ai-je été un fardeau pour toi ? \\q Dis-moi ce que j’ai fait de mal !"
+        },
+        "sw": {
+          "L": "Enyi watu {{deity_pronoun:wangu|Wangu}}, nimewatendea nini, na nimewachosha kwa jinsi gani? \\q Shuhudieni dhidi {{deity_pronoun:yangu|Yangu}}!",
+          "B": "Enyi watu {{deity_pronoun:wangu|Wangu}}, nimewatendea nini? Nimewachosha kwa jambo gani? \\q Toeni ushahidi dhidi {{deity_pronoun:yangu|Yangu}}!",
+          "R": "Enyi watu {{deity_pronoun:wangu|Wangu}}, nimewakosea nini? Nimekuwa mzigo kwenu kwa jinsi gani? \\q Niambieni kosa nililofanya!"
+        },
+        "vi": {
+          "L": "Hỡi dân {{deity_pronoun:ta|Ta}}, {{deity_pronoun:ta|Ta}} đã làm gì cho ngươi, và {{deity_pronoun:ta|Ta}} đã làm ngươi mệt mỏi thế nào? \\q Hãy làm chứng nghịch lại {{deity_pronoun:ta|Ta}}!",
+          "B": "Hỡi dân {{deity_pronoun:ta|Ta}}, {{deity_pronoun:ta|Ta}} đã làm gì ngươi? Ta đã làm ngươi mỏi mệt ở điểm nào? \\q Hãy làm chứng nghịch lại {{deity_pronoun:ta|Ta}}!",
+          "R": "Hỡi dân {{deity_pronoun:ta|Ta}}, {{deity_pronoun:ta|Ta}} đã làm gì hại ngươi? Ta đã làm ngươi khổ sở ở chỗ nào? \\q Hãy nói cho {{deity_pronoun:ta|Ta}} biết {{deity_pronoun:ta|Ta}} đã làm gì sai!"
+        },
+        "ko": {
+          "L": "내 백성아, 내가 너에게 무엇을 하였으며, 무엇으로 너를 지치게 하였느냐? \\q 나를 거슬러 증언하여라!",
+          "B": "내 백성아, 내가 너에게 무엇을 하였느냐? 내가 무엇으로 너를 힘들게 하였느냐? \\q 나를 거슬러 증언하여 보아라!",
+          "R": "내 백성아, 내가 너에게 무엇을 잘못하였느냐? 내가 무엇으로 너에게 짐이 되었느냐? \\q 내가 무엇을 잘못했는지 말해 보아라!"
         }
       },
       "decisions": [
@@ -290,6 +469,49 @@
           "reason": "\"My\" at the start of a sentence is capitalized either way, so it takes no setting; \"me\" later in the verse does. Readable says what the testimony would be about.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o330060030011",
+            "o330060030041",
+            "o330060030042",
+            "o330060030071"
+          ],
+          "choice": "\"Enyi watu wangu\" with plural verbs (\"nimewatendea\", \"Shuhudieni\")",
+          "alternatives": [],
+          "reason": "The Hebrew speaks to \"my people\" as one person; Swahili \"watu\" takes plural agreement, so the people are addressed as \"ninyi\" through verses 3-5, as Hosea's oracles do. The sense does not change.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o330060030011",
+            "o330060030041",
+            "o330060030042"
+          ],
+          "choice": "\"Hỡi dân Ta\" ... \"ngươi\" at every level",
+          "alternatives": [],
+          "reason": "The LORD is bringing a charge against his people, so he calls them \"ngươi\" at every level, as the term sheet sets for rebuke, while \"dân Ta\" keeps the bond (m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -334,6 +556,31 @@
           "L": "For I brought you up from the land of Egypt, \\q and from the house of slaves I redeemed you, \\q and I sent before you \\q Moses, Aaron, and Miriam.",
           "B": "For I brought you up out of the land of Egypt; \\q I redeemed you from the house where you were slaves. \\q I sent Moses, Aaron, and Miriam \\q to lead you.",
           "R": "I brought you up out of Egypt. \\q I bought you back from the land where you lived as slaves. \\q I sent Moses, Aaron, and Miriam \\q to lead you."
+        },
+        "es": {
+          "L": "Porque yo te hice subir de la tierra de Egipto, \\q y de la casa de esclavos te redimí, \\q y envié delante de ti \\q a Moisés, a Aarón y a Miriam.",
+          "B": "Yo te hice subir del país de Egipto; \\q te redimí de la casa en que servías como esclavo. \\q Envié a Moisés, a Aarón y a Miriam \\q para que te guiaran.",
+          "R": "Yo te saqué de Egipto. \\q Te rescaté del país donde vivías como esclavo. \\q Envié a Moisés, a Aarón y a Miriam \\q para que te guiaran."
+        },
+        "fr": {
+          "L": "Car je t’ai fait monter du pays d’Égypte, \\q et de la maison des esclaves je t’ai racheté, \\q et j’ai envoyé devant toi \\q Moïse, Aaron et Myriam.",
+          "B": "Je t’ai fait monter du pays d’Égypte ; \\q je t’ai racheté de la maison où tu servais comme esclave. \\q J’ai envoyé Moïse, Aaron et Myriam \\q pour te conduire.",
+          "R": "Je t’ai fait sortir d’Égypte. \\q Je t’ai racheté du pays où tu vivais comme esclave. \\q J’ai envoyé Moïse, Aaron et Myriam \\q pour te guider."
+        },
+        "sw": {
+          "L": "Kwa maana niliwapandisha kutoka nchi ya Misri, \\q na kutoka nyumba ya watumwa niliwakomboa, \\q {{deity_pronoun:nami|Nami}} nikatuma mbele yenu \\q Musa, Haruni na Miriamu.",
+          "B": "Kwa maana niliwapandisha kutoka nchi ya Misri; \\q niliwakomboa kutoka nyumba mliyotumikishwa kama watumwa. \\q Niliwatuma Musa, Haruni na Miriamu \\q wawaongoze.",
+          "R": "Niliwatoa Misri. \\q Niliwakomboa kutoka nchi mliyoishi kama watumwa. \\q Niliwatuma Musa, Haruni na Miriamu \\q wawaongoze."
+        },
+        "vi": {
+          "L": "Vì {{deity_pronoun:ta|Ta}} đã đem ngươi lên khỏi xứ Ai Cập, \\q và chuộc ngươi ra khỏi nhà nô lệ, \\q và {{deity_pronoun:ta|Ta}} đã sai đi trước ngươi \\q Môi-se, A-rôn và Mi-ri-am.",
+          "B": "Vì {{deity_pronoun:ta|Ta}} đã đem ngươi lên khỏi xứ Ai Cập; \\q {{deity_pronoun:ta|Ta}} đã chuộc ngươi ra khỏi nhà mà ngươi làm nô lệ. \\q Ta đã sai Môi-se, A-rôn và Mi-ri-am \\q đi trước dẫn dắt ngươi.",
+          "R": "Ta đã đem ngươi ra khỏi Ai Cập. \\q Ta đã chuộc ngươi khỏi xứ mà ngươi sống làm nô lệ. \\q Ta đã sai Môi-se, A-rôn và Mi-ri-am \\q đến dẫn dắt ngươi."
+        },
+        "ko": {
+          "L": "내가 너를 이집트 땅에서 이끌어 올렸고, \\q 종들의 집에서 너를 속량하였다. \\q 내가 네 앞에 보낸 이들은 \\q 모세와 아론과 미리암이었다.",
+          "B": "나는 너를 이집트 땅에서 이끌어 올렸고, \\q 네가 노예로 살던 집에서 너를 속량하였다. \\q 나는 모세와 아론과 미리암을 보내어 \\q 너를 이끌게 하였다.",
+          "R": "나는 너를 이집트에서 이끌어 냈다. \\q 네가 노예로 살던 땅에서 값을 치르고 너를 되찾았다. \\q 나는 모세와 아론과 미리암을 보내어 \\q 너를 이끌게 하였다."
         }
       },
       "decisions": [
@@ -410,6 +657,99 @@
           "reason": "Each level reuses its wording of the published Exodus 20:2, and keeps \"slaves\", since slavery itself is the point here. The verb \"redeem\" follows the wording set for the prophets. \"Sent before you\" means sent to lead them, which Balanced and Readable say.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o330060040052",
+            "o330060040061"
+          ],
+          "choice": "\"de la casa en que servías como esclavo\" (B)",
+          "alternatives": [],
+          "reason": "Balanced reuses the published Spanish Exodus 20:2 at that level, as the English does (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o330060040052",
+            "o330060040061"
+          ],
+          "choice": "\"de la maison où tu servais comme esclave\" (B)",
+          "alternatives": [],
+          "reason": "Balanced reuses the published French Exodus 20:2, as the English does (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o330060040052",
+            "o330060040061"
+          ],
+          "choice": "\"nyumba mliyotumikishwa kama watumwa\" (B)",
+          "alternatives": [],
+          "reason": "The wording of the published Swahili Exodus 20:2 (\"nyumba ulimotumikishwa kama mtumwa\"), put in the plural used for the people in these verses.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o330060040052",
+            "o330060040061"
+          ],
+          "choice": "\"nhà mà ngươi làm nô lệ\" (B)",
+          "alternatives": [],
+          "reason": "The words of the published Vietnamese Exodus 20:2 at Balanced (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o330060040052",
+            "o330060040061",
+            "o330060040071",
+            "o330060040072"
+          ],
+          "choice": "\"네가 노예로 살던 집\" (B), as the Korean Exodus 20:2; \"속량하였다\" (L, B), \"값을 치르고 너를 되찾았다\" (R)",
+          "alternatives": [],
+          "reason": "Balanced reuses the published Exodus 20:2. Readable says what redeeming means: buying back from slavery (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -459,6 +799,31 @@
           "L": "My people, remember, please, what Balak king of Moab planned, \\q and what Balaam son of Beor answered him, \\q from Shittim to Gilgal, \\q so that you may know the righteous acts of {{divine_name:the LORD|Yahweh}}.",
           "B": "My people, remember what Balak king of Moab plotted, \\q and how Balaam son of Beor answered him. \\q Remember the way from Shittim to Gilgal, \\q so that you may know the saving deeds of {{divine_name:the LORD|Yahweh}}.",
           "R": "My people, remember how Balak king of Moab planned to harm you, \\q and how Balaam son of Beor answered him with blessings. \\q Remember your journey from Shittim to Gilgal. \\q Then you will know how {{divine_name:the LORD|Yahweh}} did what was right and saved you."
+        },
+        "es": {
+          "L": "Pueblo mío, recuerda, te ruego, lo que planeó Balac rey de Moab, \\q y lo que le respondió Balaam hijo de Beor, \\q desde Sitim hasta Gilgal, \\q para que conozcas los actos de justicia {{divine_name:del SEÑOR|de Yahvé}}.",
+          "B": "Pueblo mío, recuerda lo que tramó Balac rey de Moab \\q y cómo le respondió Balaam hijo de Beor. \\q Recuerda el camino de Sitim a Gilgal, \\q para que conozcas las obras salvadoras {{divine_name:del SEÑOR|de Yahvé}}.",
+          "R": "Pueblo mío, recuerda cómo Balac rey de Moab planeó hacerte daño, \\q y cómo Balaam hijo de Beor le respondió con bendiciones. \\q Recuerda tu viaje de Sitim a Gilgal. \\q Así sabrás que {{divine_name:el SEÑOR|Yahvé}} hizo lo justo y te salvó."
+        },
+        "fr": {
+          "L": "Mon peuple, souviens-toi donc de ce qu’a projeté Balak, roi de Moab, \\q et de ce que lui a répondu Balaam, fils de Béor, \\q de Shittim jusqu’à Guilgal, \\q afin que tu connaisses les actes de justice {{divine_name:du SEIGNEUR|de Yahvé}}.",
+          "B": "Mon peuple, rappelle-toi ce que complotait Balak, roi de Moab, \\q et ce que lui a répondu Balaam, fils de Béor. \\q Rappelle-toi le chemin de Shittim à Guilgal, \\q afin de connaître les actes par lesquels {{divine_name:le SEIGNEUR|Yahvé}} t’a sauvé.",
+          "R": "Mon peuple, souviens-toi comment Balak, roi de Moab, voulait te faire du mal, \\q et comment Balaam, fils de Béor, lui a répondu par des bénédictions. \\q Souviens-toi de ton voyage de Shittim à Guilgal. \\q Alors tu sauras que {{divine_name:le SEIGNEUR|Yahvé}} a fait ce qui est juste et t’a sauvé."
+        },
+        "sw": {
+          "L": "Enyi watu {{deity_pronoun:wangu|Wangu}}, kumbukeni, tafadhali, shauri alilopanga Balaki mfalme wa Moabu, \\q na jinsi Balaamu mwana wa Beori alivyomjibu, \\q kutoka Shitimu mpaka Gilgali, \\q mpate kujua matendo ya haki ya {{divine_name:BWANA|Yahwe}}.",
+          "B": "Enyi watu {{deity_pronoun:wangu|Wangu}}, kumbukeni hila aliyoipanga Balaki mfalme wa Moabu, \\q na jinsi Balaamu mwana wa Beori alivyomjibu. \\q Kumbukeni safari kutoka Shitimu hadi Gilgali, \\q mpate kujua matendo ya {{divine_name:BWANA|Yahwe}} ya kuokoa.",
+          "R": "Enyi watu {{deity_pronoun:wangu|Wangu}}, kumbukeni jinsi Balaki mfalme wa Moabu alivyopanga kuwadhuru, \\q na jinsi Balaamu mwana wa Beori alivyomjibu kwa baraka. \\q Kumbukeni safari yenu kutoka Shitimu hadi Gilgali. \\q Ndipo mtajua jinsi {{divine_name:BWANA|Yahwe}} alivyotenda haki na kuwaokoa."
+        },
+        "vi": {
+          "L": "Hỡi dân {{deity_pronoun:ta|Ta}}, xin hãy nhớ lại điều Ba-lác vua Mô-áp đã mưu tính, \\q và điều Ba-la-am con trai Bê-ô đã đáp lại hắn, \\q từ Si-tim cho đến Ghinh-ganh, \\q để ngươi biết những việc công chính của {{divine_name:CHÚA|Gia-vê}}.",
+          "B": "Hỡi dân {{deity_pronoun:ta|Ta}}, hãy nhớ lại điều Ba-lác vua Mô-áp đã âm mưu, \\q và cách Ba-la-am con trai Bê-ô đáp lời hắn. \\q Hãy nhớ lại con đường từ Si-tim đến Ghinh-ganh, \\q để ngươi biết những việc giải cứu của {{divine_name:CHÚA|Gia-vê}}.",
+          "R": "Hỡi dân {{deity_pronoun:ta|Ta}}, hãy nhớ lại Ba-lác vua Mô-áp đã định hại ngươi thế nào, \\q và Ba-la-am con trai Bê-ô đã đáp lời hắn bằng những lời chúc phước ra sao. \\q Hãy nhớ lại cuộc hành trình của ngươi từ Si-tim đến Ghinh-ganh. \\q Bấy giờ ngươi sẽ biết {{divine_name:CHÚA|Gia-vê}} đã làm điều công chính và giải cứu ngươi."
+        },
+        "ko": {
+          "L": "내 백성아, 모압 왕 발락이 무엇을 꾀하였으며, \\q 브올의 아들 발람이 그에게 무엇이라고 대답하였는지 기억하여라. \\q 싯딤에서부터 길갈까지 [있었던 일을 기억하여라]. \\q 그리하여 {{divine_name:주|야훼}}의 의로운 행위들을 알아라.",
+          "B": "내 백성아, 모압 왕 발락이 무슨 음모를 꾸몄으며, \\q 브올의 아들 발람이 그에게 어떻게 대답하였는지 기억하여라. \\q 싯딤에서 길갈까지 지나온 길을 기억하여라. \\q 그러면 {{divine_name:주|야훼}}가 이룬 구원의 일들을 알 것이다.",
+          "R": "내 백성아, 모압 왕 발락이 너를 해치려고 어떤 계획을 세웠는지, \\q 브올의 아들 발람이 어떻게 그에게 축복으로 대답하였는지 기억하여라. \\q 싯딤에서 길갈까지 네가 걸어온 길을 기억하여라. \\q 그러면 {{divine_name:주|야훼}}가 옳은 일을 하여 너를 구원하였다는 것을 알게 될 것이다."
         }
       },
       "decisions": [
@@ -538,6 +903,45 @@
           "reason": "Balanced and Readable give the sense of \"righteous acts\" here (m3). The Hebrew has no verb before \"from Shittim to Gilgal\"; Balanced and Readable supply \"remember\" from the start of the verse. Readable says how Balaam answered (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o330060050051",
+            "o330060050101"
+          ],
+          "choice": "\"a projeté\", \"a répondu\" in the passé composé",
+          "alternatives": [],
+          "reason": "The verse is the LORD's speech, so past events are told in the passé composé at every level, as the term sheet sets for the oracles.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o330060050211",
+            "o330060050221"
+          ],
+          "choice": "\"주가 이룬 구원의 일들\" (B), \"주가 옳은 일을 하여\" (R), without -시-",
+          "alternatives": [],
+          "reason": "The LORD speaks of himself by name here, and God takes no honorific in his own mouth.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -577,6 +981,31 @@
           "L": "\"With what shall I come before {{divine_name:the LORD|Yahweh}}, \\q [and] bow myself to the God of the height? \\q Shall I come before {{deity_pronoun:him|Him}} with burnt offerings, \\q with calves, sons of a year?",
           "B": "\"What shall I bring when I come before {{divine_name:the LORD|Yahweh}} \\q and bow down before God on high? \\q Shall I come to {{deity_pronoun:him|Him}} with burnt offerings, \\q with year-old calves?",
           "R": "\"What should I bring to {{divine_name:the LORD|Yahweh}} \\q when I come to bow down to God in heaven? \\q Should I bring {{deity_pronoun:him|Him}} burnt offerings, \\q young calves a year old?"
+        },
+        "es": {
+          "L": "«¿Con qué saldré al encuentro {{divine_name:del SEÑOR|de Yahvé}}, \\q [y] me inclinaré ante el Dios de la altura? \\q ¿Saldré a {{deity_pronoun:su|Su}} encuentro con holocaustos, \\q con terneros, hijos de un año?",
+          "B": "«¿Qué llevaré cuando vaya ante {{divine_name:el SEÑOR|Yahvé}} \\q y me incline ante el Dios de lo alto? \\q ¿Acudiré a {{deity_pronoun:él|Él}} con holocaustos, \\q con terneros de un año?",
+          "R": "«¿Qué debo llevarle {{divine_name:al SEÑOR|a Yahvé}} \\q cuando vaya a inclinarme ante el Dios del cielo? \\q ¿Debo llevarle holocaustos, \\q terneros de un año?"
+        },
+        "fr": {
+          "L": "« Avec quoi irai-je au-devant {{divine_name:du SEIGNEUR|de Yahvé}}, \\q [et] me prosternerai-je devant le Dieu de la hauteur ? \\q Irai-je au-devant de {{deity_pronoun:lui|Lui}} avec des holocaustes, \\q avec des veaux, fils d’un an ?",
+          "B": "« Qu’apporterai-je quand je viendrai devant {{divine_name:le SEIGNEUR|Yahvé}} \\q et que je m’inclinerai devant le Dieu d’en haut ? \\q Viendrai-je à {{deity_pronoun:lui|Lui}} avec des holocaustes, \\q avec des veaux âgés d’un an ?",
+          "R": "« Que dois-je apporter {{divine_name:au SEIGNEUR|à Yahvé}} \\q quand je viens m’incliner devant le Dieu du ciel ? \\q Dois-je {{deity_pronoun:lui|Lui}} apporter des holocaustes, \\q de jeunes veaux d’un an ?"
+        },
+        "sw": {
+          "L": "\"Nitakuja mbele za {{divine_name:BWANA|Yahwe}} na kitu gani, \\q [na] kusujudu kwa Mungu wa mahali pa juu? \\q Je, nije mbele {{deity_pronoun:yake|Yake}} na sadaka za kuteketezwa, \\q na ndama, wana wa mwaka mmoja?",
+          "B": "\"Nilete nini ninapokuja mbele za {{divine_name:BWANA|Yahwe}} \\q na kumsujudia Mungu aliye juu? \\q Je, nije {{deity_pronoun:kwake|Kwake}} na sadaka za kuteketezwa, \\q na ndama wa mwaka mmoja?",
+          "R": "\"Nimletee {{divine_name:BWANA|Yahwe}} nini \\q ninapokuja kumsujudia Mungu aliye mbinguni? \\q Je, nimletee sadaka za kuteketezwa, \\q ndama wachanga wa mwaka mmoja?"
+        },
+        "vi": {
+          "L": "\"Tôi sẽ lấy gì mà đến gặp {{divine_name:CHÚA|Gia-vê}}, \\q [và] cúi mình trước Đức Chúa Trời của nơi cao? \\q Tôi có nên đến gặp {{deity_pronoun:ngài|Ngài}} với của lễ thiêu, \\q với những con bê một tuổi chăng?",
+          "B": "\"Tôi phải đem gì khi đến trước mặt {{divine_name:CHÚA|Gia-vê}} \\q và cúi lạy Đức Chúa Trời trên cao? \\q Tôi có nên đến với {{deity_pronoun:ngài|Ngài}} bằng của lễ thiêu, \\q bằng những con bê một tuổi không?",
+          "R": "\"Tôi nên đem gì dâng lên {{divine_name:CHÚA|Gia-vê}} \\q khi tôi đến cúi lạy Đức Chúa Trời trên trời? \\q Tôi có nên dâng cho {{deity_pronoun:ngài|Ngài}} của lễ thiêu, \\q những con bê non một tuổi không?"
+        },
+        "ko": {
+          "L": "\"내가 무엇을 들고 {{divine_name:주|야훼}}를 맞으러 가며, \\q 높은 곳에 계신 하나님께 엎드려야 하는가? \\q 번제물을 들고 그분을 맞으러 가야 하는가? \\q 한 살 된 송아지들을 들고 [가야 하는가]?",
+          "B": "\"{{divine_name:주|야훼}} 앞에 나아갈 때에 내가 무엇을 가져가야 하며, \\q 높이 계신 하나님께 무엇을 드리며 엎드려야 하는가? \\q 번제물을 가지고 그분께 가야 하는가? \\q 한 살 된 송아지들을 가지고 가야 하는가?",
+          "R": "\"{{divine_name:주|야훼}}께 무엇을 가져가야 할까? \\q 하늘에 계신 하나님께 엎드려 절하러 갈 때 무엇을 드려야 할까? \\q 그분께 번제물을 바쳐야 할까? \\q 한 살 된 어린 송아지를 바쳐야 할까?"
         }
       },
       "decisions": [
@@ -652,6 +1081,72 @@
           "reason": "The verb means to come to meet someone, with a gift in hand; Balanced and Readable say \"bring\". The worshiper's words in verses 6-7 are set in quotation marks as speech quoted in the prophecy (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o330060060011",
+            "o330060060012",
+            "o330060060021",
+            "o330060060072",
+            "o330060060073"
+          ],
+          "choice": "\"saldré al encuentro\" (L); \"llevaré\", \"acudiré\" (B); \"llevarle\" (R); the worshiper's words open with «",
+          "alternatives": [],
+          "reason": "The verb means to come to meet someone with a gift (English r-en-1); Literal keeps the meeting, Balanced and Readable say what is brought. The words of verses 6-7 are speech quoted in the prophecy (m1), so they take « ».",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o330060060011",
+            "o330060060012",
+            "o330060060021"
+          ],
+          "choice": "\"irai-je au-devant\" (L); \"Qu'apporterai-je\" (B); \"Que dois-je apporter\" (R); quoted in « »",
+          "alternatives": [],
+          "reason": "Literal keeps the verb of coming to meet someone; Balanced and Readable say what is brought. The worshiper's words are quoted inside the prophecy, so they take « » across verses 6-7.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o330060060021",
+            "o330060060071",
+            "o330060060072",
+            "o330060060073"
+          ],
+          "choice": "the worshiper speaks in the plain style with -시- for God (\"계신 하나님\", \"그분께\")",
+          "alternatives": [],
+          "reason": "The worshiper asks himself these questions aloud, so they are in plain speech, not prayer; God, spoken about, takes the honorific.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -696,6 +1191,31 @@
           "L": "Will {{divine_name:the LORD|Yahweh}} be pleased with thousands of rams, \\q with ten thousands of torrents of oil? \\q Shall I give my firstborn [to pay for] my transgression, \\q the fruit of my belly [for] the sin of my soul?\"",
           "B": "Will {{divine_name:the LORD|Yahweh}} be pleased with thousands of rams, \\q with ten thousand streams of olive oil? \\q Shall I give my firstborn for my rebellion, \\q the child of my body for my own sin?\"",
           "R": "Will {{divine_name:the LORD|Yahweh}} be pleased if I bring thousands of rams \\q or rivers of olive oil? \\q Should I give my oldest child for the wrong I have done? \\q Should I sacrifice my own child to pay for my sin?\""
+        },
+        "es": {
+          "L": "¿Le agradarán {{divine_name:al SEÑOR|a Yahvé}} miles de carneros, \\q miríadas de torrentes de aceite? \\q ¿Entregaré a mi primogénito [para pagar] mi transgresión, \\q al fruto de mi vientre [por] el pecado de mi alma?»",
+          "B": "¿Quedará satisfecho {{divine_name:el SEÑOR|Yahvé}} con miles de carneros, \\q con diez mil ríos de aceite de oliva? \\q ¿Entregaré a mi primogénito por mi delito, \\q al hijo de mis entrañas por mi propio pecado?»",
+          "R": "¿Estará contento {{divine_name:el SEÑOR|Yahvé}} si le llevo miles de carneros \\q o ríos de aceite de oliva? \\q ¿Debo entregar a mi hijo mayor por el mal que he hecho? \\q ¿Debo sacrificar a mi propio hijo para pagar por mi pecado?»"
+        },
+        "fr": {
+          "L": "{{divine_name:Le SEIGNEUR|Yahvé}} prendra-t-il plaisir à des milliers de béliers, \\q à des dizaines de milliers de torrents d’huile ? \\q Donnerai-je mon premier-né [pour payer] ma transgression, \\q le fruit de mon ventre [pour] le péché de mon âme ? »",
+          "B": "{{divine_name:Le SEIGNEUR|Yahvé}} sera-t-il satisfait de milliers de béliers, \\q de dix mille ruisseaux d’huile d’olive ? \\q Donnerai-je mon premier-né pour ma rébellion, \\q l’enfant de ma chair pour mon propre péché ? »",
+          "R": "{{divine_name:Le SEIGNEUR|Yahvé}} sera-t-il content si j’apporte des milliers de béliers \\q ou des rivières d’huile d’olive ? \\q Dois-je donner mon fils aîné pour le mal que j’ai fait ? \\q Dois-je sacrifier mon propre enfant pour payer mon péché ? »"
+        },
+        "sw": {
+          "L": "Je, {{divine_name:BWANA|Yahwe}} ataridhika na maelfu ya kondoo dume, \\q na mito ya mafuta kwa makumi ya maelfu? \\q Je, nimtoe mzaliwa wangu wa kwanza [kulipia] maasi yangu, \\q tunda la tumbo langu [kwa ajili ya] dhambi ya nafsi yangu?\"",
+          "B": "Je, {{divine_name:BWANA|Yahwe}} ataridhika na kondoo dume maelfu, \\q na vijito elfu kumi vya mafuta ya zeituni? \\q Je, nimtoe mzaliwa wangu wa kwanza kwa ajili ya makosa yangu, \\q mtoto wa mwili wangu kwa ajili ya dhambi yangu mwenyewe?\"",
+          "R": "Je, {{divine_name:BWANA|Yahwe}} atafurahi nikimletea maelfu ya kondoo dume \\q au mito ya mafuta ya zeituni? \\q Je, nimtoe mtoto wangu wa kwanza kwa ajili ya dhambi niliyotenda? \\q Je, nimtoe mtoto wangu mwenyewe sadaka ili kulipia dhambi yangu?\""
+        },
+        "vi": {
+          "L": "{{divine_name:CHÚA|Gia-vê}} có vui lòng về hàng ngàn chiên đực, \\q về hàng vạn dòng suối dầu chăng? \\q Tôi có nên dâng con đầu lòng của tôi [để chuộc] tội vi phạm của tôi, \\q dâng bông trái của lòng dạ tôi [vì] tội lỗi của linh hồn tôi chăng?\"",
+          "B": "{{divine_name:CHÚA|Gia-vê}} có hài lòng với hàng ngàn chiên đực, \\q với muôn vàn dòng dầu ô-liu không? \\q Tôi có nên dâng con đầu lòng vì tội ác của tôi, \\q dâng đứa con do chính tôi sinh ra vì tội lỗi của mình không?\"",
+          "R": "{{divine_name:CHÚA|Gia-vê}} có hài lòng không nếu tôi dâng hàng ngàn chiên đực \\q hay những dòng sông dầu ô-liu? \\q Tôi có nên dâng đứa con cả để đền tội tôi đã làm không? \\q Tôi có nên dâng chính con mình làm sinh tế để trả giá cho tội lỗi tôi không?\""
+        },
+        "ko": {
+          "L": "{{divine_name:주|야훼}}께서 수천 마리의 숫양을, \\q 수만 줄기의 기름 시내를 기뻐하시겠는가? \\q 내 반역 [값으로] 내 맏아들을 드려야 하는가? \\q 내 영혼의 죄 [값으로] 내 몸의 열매를 [드려야 하는가]?\"",
+          "B": "{{divine_name:주|야훼}}께서 숫양 수천 마리나 \\q 수만 줄기로 흐르는 올리브기름을 기뻐하시겠는가? \\q 내 반역 때문에 내 맏아들을 바쳐야 하는가? \\q 내 죄 때문에 내 몸에서 난 자식을 바쳐야 하는가?\"",
+          "R": "숫양을 수천 마리 가져가면 {{divine_name:주|야훼}}께서 기뻐하실까? \\q 올리브기름을 강물처럼 바치면 기뻐하실까? \\q 내가 지은 잘못 때문에 내 맏아들을 바쳐야 할까? \\q 내 죗값을 치르려고 내 자식을 제물로 바쳐야 할까?\""
         }
       },
       "decisions": [
@@ -772,6 +1292,45 @@
           "reason": "The word for transgression follows the wording set for the prophets. Readable says what giving the firstborn means (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o330060070101",
+            "o330060070102"
+          ],
+          "choice": "\"transgresión\" (L), \"delito\" (B), \"el mal que he hecho\" (R); the quotation closes with »",
+          "alternatives": [],
+          "reason": "The word for transgression follows the wording set for Micah (1:5). The worshiper's words that began in verse 6 end here.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o330060070101",
+            "o330060070102"
+          ],
+          "choice": "\"반역\" (L, B) for pesha'",
+          "alternatives": [],
+          "reason": "The term sheet's word for pesha' in the prophets; 개역's 허물 is avoided so that the line is drafted fresh.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -819,6 +1378,31 @@
           "L": "He has told you, {{gender:mortal|man}}, what [is] good; \\q and what does {{divine_name:the LORD|Yahweh}} seek from you except to do justice and to love loyal love, \\q and to walk humbly with your God?",
           "B": "He has told you, {{gender:mortal|man}}, what is good. \\q And what does {{divine_name:the LORD|Yahweh}} ask of you except to do justice, to love loyalty, \\q and to walk humbly with your God?",
           "R": "{{divine_name:The LORD|Yahweh}} has told you, {{gender:human beings|man}}, what is good. \\q He asks you to do what is just and to love being kind and loyal, \\q and to live humbly, obeying your God."
+        },
+        "es": {
+          "L": "Se te ha declarado, {{gender:mortal|hombre}}, lo que [es] bueno; \\q ¿y qué busca {{divine_name:el SEÑOR|Yahvé}} de ti sino hacer justicia y amar el amor leal, \\q y andar humildemente con tu Dios?",
+          "B": "Se te ha declarado, {{gender:mortal|hombre}}, lo que es bueno. \\q ¿Y qué espera de ti {{divine_name:el SEÑOR|Yahvé}}, sino que hagas justicia, que ames la lealtad \\q y que camines humildemente con tu Dios?",
+          "R": "{{divine_name:El SEÑOR|Yahvé}} te ha dicho, {{gender:ser humano|hombre}}, lo que es bueno. \\q Te pide que hagas lo que es justo, que ames ser bondadoso y leal, \\q y que vivas con humildad, obedeciendo a tu Dios."
+        },
+        "fr": {
+          "L": "Il t’a fait savoir, {{gender:mortel|homme}}, ce qui [est] bon ; \\q et que recherche de toi {{divine_name:le SEIGNEUR|Yahvé}}, sinon de pratiquer le droit et d’aimer l’amour loyal, \\q et de marcher humblement avec ton Dieu ?",
+          "B": "Il t’a fait savoir, {{gender:mortel|homme}}, ce qui est bon. \\q Et qu’attend de toi {{divine_name:le SEIGNEUR|Yahvé}}, sinon de pratiquer la justice, d’aimer la loyauté, \\q et de marcher humblement avec ton Dieu ?",
+          "R": "{{divine_name:Le SEIGNEUR|Yahvé}} t’a fait savoir, {{gender:humain|homme}}, ce qui est bien. \\q Il te demande de faire ce qui est juste, d’aimer la bonté et la loyauté, \\q et de vivre humblement en obéissant à ton Dieu."
+        },
+        "sw": {
+          "L": "Amekujulisha, ewe mwanadamu, lililo jema; \\q na {{divine_name:BWANA|Yahwe}} anatafuta nini kwako, isipokuwa kutenda haki na kupenda upendo usiokoma, \\q na kutembea kwa unyenyekevu na Mungu wako?",
+          "B": "Amekujulisha, ewe mwanadamu, lililo jema. \\q Na {{divine_name:BWANA|Yahwe}} anatafuta nini kwako, isipokuwa kutenda haki, kupenda uaminifu, \\q na kutembea kwa unyenyekevu na Mungu wako?",
+          "R": "{{divine_name:BWANA|Yahwe}} amekujulisha, ewe mwanadamu, lililo jema. \\q Anachotaka kwako ni kutenda yaliyo ya haki, kupenda kuwa mwema na mwaminifu, \\q na kuishi kwa unyenyekevu ukimtii Mungu wako."
+        },
+        "vi": {
+          "L": "Ngài đã cho ngươi biết, hỡi người phàm, điều gì [là] tốt; \\q và {{divine_name:CHÚA|Gia-vê}} đòi hỏi gì nơi ngươi ngoài việc thi hành công lý, yêu tình yêu thương thành tín, \\q và bước đi khiêm nhường với Đức Chúa Trời của ngươi?",
+          "B": "Ngài đã cho ngươi biết, hỡi người phàm, điều gì là tốt. \\q Và {{divine_name:CHÚA|Gia-vê}} đòi hỏi gì nơi ngươi, ngoài việc thi hành công lý, yêu mến lòng trung tín, \\q và bước đi khiêm nhường với Đức Chúa Trời của ngươi?",
+          "R": "Hỡi loài người, {{divine_name:CHÚA|Gia-vê}} đã cho anh em biết điều gì là tốt. \\q Ngài muốn anh em làm điều công bằng, yêu thích sống nhân từ và trung tín, \\q và sống khiêm nhường, vâng lời Đức Chúa Trời của mình."
+        },
+        "ko": {
+          "L": "사람아, 그분께서 무엇이 선한지 너에게 알려 주셨다. \\q {{divine_name:주|야훼}}께서 너에게서 찾으시는 것이 정의를 행하고 한결같은 사랑을 사랑하며, \\q 겸손히 네 하나님과 함께 걷는 것 말고 무엇이겠느냐?",
+          "B": "사람아, 그분께서 무엇이 선한지 너에게 알려 주셨다. \\q {{divine_name:주|야훼}}께서 너에게 바라시는 것은 정의를 행하고 신의를 사랑하며, \\q 겸손히 네 하나님과 함께 걷는 것이 아니겠느냐?",
+          "R": "사람아, {{divine_name:주|야훼}}께서 무엇이 좋은 것인지 너에게 알려 주셨다. \\q 그분께서 바라시는 것은 옳은 일을 하고, 친절하고 신실하게 사는 것을 좋아하며, \\q 겸손하게 살면서 네 하나님께 순종하는 것이다."
         }
       },
       "decisions": [
@@ -958,6 +1542,131 @@
           "reason": "The Hebrew word means a human being, man or woman, so it takes the gender setting. Readable turns the questions into statements.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o330060080142",
+            "o330060080151"
+          ],
+          "choice": "\"amar el amor leal\" (L); \"que ames la lealtad\" (B); \"que ames ser bondadoso y leal\" (R)",
+          "alternatives": [],
+          "reason": "As the term sheet sets for this verse, following the English ruling: Literal keeps the prophets' \"amor leal\", Balanced and Readable say what loving hesed means. The line is drafted from the Hebrew and avoids RV60's \"amar misericordia\" and \"humillarte ante tu Dios\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-2",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o330060080031"
+          ],
+          "choice": "\"{{gender:mortal|hombre}}\" (L, B); \"{{gender:ser humano|hombre}}\" (R)",
+          "alternatives": [],
+          "reason": "The Hebrew word means any human being (m1), so the address takes the gender setting, as in English.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o330060080131",
+            "o330060080142",
+            "o330060080151",
+            "o330060080162",
+            "o330060080171"
+          ],
+          "choice": "\"pratiquer le droit, aimer l'amour loyal\" (L); \"pratiquer la justice, aimer la loyauté\" (B); \"faire ce qui est juste, aimer la bonté et la loyauté\" (R); \"marcher humblement avec ton Dieu\" (L, B)",
+          "alternatives": [],
+          "reason": "The wording the term sheet sets for this verse, from the English ruling on hesed here (r-en-1); it is drafted from the Hebrew, not from Segond's \"que tu aimes la miséricorde\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o330060080031",
+            "o330060080142",
+            "o330060080151"
+          ],
+          "choice": "\"ewe mwanadamu\" with no gender setting; \"kupenda upendo usiokoma\" (L); \"kupenda uaminifu\" (B); \"kupenda kuwa mwema na mwaminifu\" (R)",
+          "alternatives": [],
+          "reason": "\"Mwanadamu\" already means any human being, so Swahili needs no gender span where the English has one. Hesed follows the term sheet's wording for this verse, drafted away from the Union Version's \"kupenda rehema\".",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o330060080031",
+            "o330060080142",
+            "o330060080151"
+          ],
+          "choice": "\"hỡi người phàm\" (L, B), \"hỡi loài người\" with \"anh em\" (R); \"yêu tình yêu thương thành tín\" (L), \"yêu mến lòng trung tín\" (B), \"yêu thích sống nhân từ và trung tín\" (R)",
+          "alternatives": [],
+          "reason": "As the term sheet sets for this verse. The Vietnamese address already includes everyone, so there is no gender span; Readable addresses the hearers as \"anh em\", the prophet pleading in his own voice.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o330060080031",
+            "o330060080142",
+            "o330060080151"
+          ],
+          "choice": "\"사람아\" at every level; \"한결같은 사랑을 사랑하며\" (L); \"신의를 사랑하며\" (B); \"친절하고 신실하게 사는 것을 좋아하며\" (R)",
+          "alternatives": [],
+          "reason": "Literal keeps the settled word for hesed; Balanced and Readable leave it for the sense of loving loyalty, as the English ruling does here (r-en-1). 사람아 includes everyone, so there is no gender span.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -996,6 +1705,31 @@
           "L": "The voice of {{divine_name:the LORD|Yahweh}} calls to the city, \\q and sound wisdom will see {{deity_pronoun:your|Your}} name: \\q Hear the rod, and who has appointed it!",
           "B": "The voice of {{divine_name:the LORD|Yahweh}} calls out to the city, \\q and the wise will respect {{deity_pronoun:your|Your}} name: \\q Listen to the rod of punishment, and to the one who appointed it!",
           "R": "Listen! {{divine_name:The LORD|Yahweh}} is calling out to the city. \\q It is wise to respect {{deity_pronoun:your|Your}} name, {{divine_name:LORD|Yahweh}}. \\q Listen to the punishment that is coming, and to the one who sends it!"
+        },
+        "es": {
+          "L": "La voz {{divine_name:del SEÑOR|de Yahvé}} clama a la ciudad, \\q y la sensatez verá {{deity_pronoun:tu|Tu}} nombre: \\q ¡{{plural_you:Oigan|Oíd}} la vara, y a quien la ha señalado!",
+          "B": "La voz {{divine_name:del SEÑOR|de Yahvé}} llama a gritos a la ciudad, \\q y los sabios respetarán {{deity_pronoun:tu|Tu}} nombre: \\q ¡{{plural_you:Escuchen|Escuchad}} la vara del castigo y a quien la ha dispuesto!",
+          "R": "¡{{plural_you:Escuchen|Escuchad}}! {{divine_name:El SEÑOR|Yahvé}} está llamando a la ciudad. \\q Es sabio respetar {{deity_pronoun:tu|Tu}} nombre, {{divine_name:SEÑOR|Yahvé}}. \\q ¡{{plural_you:Escuchen|Escuchad}} el castigo que viene, y a quien lo envía!"
+        },
+        "fr": {
+          "L": "La voix {{divine_name:du SEIGNEUR|de Yahvé}} crie à la ville, \\q et la sagesse verra {{deity_pronoun:ton|Ton}} nom : \\q Écoutez le bâton, et qui l’a désigné !",
+          "B": "La voix {{divine_name:du SEIGNEUR|de Yahvé}} appelle la ville, \\q et les sages respecteront {{deity_pronoun:ton|Ton}} nom : \\q Écoutez le bâton du châtiment, et celui qui l’a fixé !",
+          "R": "Écoutez ! {{divine_name:Le SEIGNEUR|Yahvé}} appelle la ville. \\q Il est sage de respecter {{deity_pronoun:ton|Ton}} nom, {{divine_name:SEIGNEUR|Yahvé}}. \\q Écoutez la punition qui vient, et celui qui l’envoie !"
+        },
+        "sw": {
+          "L": "Sauti ya {{divine_name:BWANA|Yahwe}} inauita mji, \\q na hekima kamili italiona jina {{deity_pronoun:lako|Lako}}: \\q Isikieni fimbo, na yeye aliyeiweka!",
+          "B": "Sauti ya {{divine_name:BWANA|Yahwe}} inauita mji kwa nguvu, \\q na wenye hekima wataliheshimu jina {{deity_pronoun:lako|Lako}}: \\q Isikilizeni fimbo ya adhabu, na yeye aliyeiamuru!",
+          "R": "Sikilizeni! {{divine_name:BWANA|Yahwe}} anauita mji. \\q Ni hekima kuliheshimu jina {{deity_pronoun:lako|Lako}}, Ee {{divine_name:BWANA|Yahwe}}. \\q Sikilizeni adhabu inayokuja, na yeye anayeileta!"
+        },
+        "vi": {
+          "L": "Tiếng của {{divine_name:CHÚA|Gia-vê}} kêu gọi thành, \\q và sự khôn ngoan thật sẽ thấy danh {{deity_pronoun:ngài|Ngài}}: \\q Hãy nghe cây roi, và ai đã chỉ định nó!",
+          "B": "Tiếng {{divine_name:CHÚA|Gia-vê}} kêu gọi thành, \\q và người khôn ngoan sẽ kính sợ danh {{deity_pronoun:ngài|Ngài}}: \\q Hãy nghe cây roi trừng phạt và Đấng đã định nó!",
+          "R": "Hãy nghe! {{divine_name:CHÚA|Gia-vê}} đang kêu gọi thành. \\q Lạy {{divine_name:CHÚA|Gia-vê}}, khôn ngoan là biết kính sợ danh {{deity_pronoun:ngài|Ngài}}. \\q Hãy nghe về sự trừng phạt sắp đến, và về Đấng sai nó đến!"
+        },
+        "ko": {
+          "L": "{{divine_name:주|야훼}}의 목소리가 성읍을 향하여 외친다. \\q 온전한 지혜는 주님의 이름을 볼 것이다. \\q 매와, 그 매를 정하신 분의 말을 들어라!",
+          "B": "{{divine_name:주|야훼}}께서 성읍을 향하여 외치신다. \\q 지혜로운 사람은 주님의 이름을 경외할 것이다. \\q 징벌의 매와, 그 매를 정하신 분께 귀를 기울여라!",
+          "R": "들어라! {{divine_name:주|야훼}}께서 성읍을 부르신다. \\q {{divine_name:주|야훼}}여, 주님의 이름을 두려워하는 것이 지혜입니다. \\q 다가오는 벌과, 그 벌을 보내시는 분께 귀를 기울여라!"
         }
       },
       "decisions": [
@@ -1075,6 +1809,47 @@
           "reason": "Balanced and Readable say what the rod stands for (m2) and what seeing the name means (m1). \"Your\" is spoken to the LORD, so it carries the setting for pronouns for God; Readable adds the address \"LORD\" to make that clear.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o330060090071",
+            "o330060090072",
+            "o330060090081"
+          ],
+          "choice": "\"{{deity_pronoun:tu|Tu}} nombre\" spoken to the LORD; \"{{divine_name:SEÑOR|Yahvé}}\" added as an address (R); \"{{plural_you:Oigan|Oíd}}\" for the plural command",
+          "alternatives": [],
+          "reason": "The middle line turns to speak to the LORD (m1), so its \"tu\" carries the pronoun setting; the last command is plural in Hebrew and takes plural_you.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o330060090071",
+            "o330060090072"
+          ],
+          "choice": "\"주님의 이름\" for \"your name\"; R \"주여, ... 지혜입니다\" in 합쇼체",
+          "alternatives": [],
+          "reason": "The line speaks to the LORD, so Korean uses 주님 rather than a bare 너; Readable, which adds the address, puts that one line in the polite style of prayer.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1108,6 +1883,31 @@
           "L": "Are there still, [in] the house of the wicked, \\q treasures of wickedness, \\q and the scant ephah, [which is] cursed?",
           "B": "Is there still, in the house of the wicked, \\q treasure gained by wickedness, \\q and the short measure that is cursed?",
           "R": "Wicked people still have houses full of treasure \\q that they got by cheating. \\q They use a measure that is too small, and it is cursed."
+        },
+        "es": {
+          "L": "¿Hay todavía, [en] la casa del impío, \\q tesoros de impiedad, \\q y el efa escaso, [que es] maldito?",
+          "B": "¿Sigue habiendo en la casa del malvado \\q tesoros ganados con maldad, \\q y la medida falsa que está maldita?",
+          "R": "Los malvados todavía tienen casas llenas de tesoros \\q que consiguieron con trampas. \\q Usan una medida demasiado pequeña, y eso está maldito."
+        },
+        "fr": {
+          "L": "Y a-t-il encore, [dans] la maison du méchant, \\q des trésors de méchanceté, \\q et l’épha réduit, [qui est] maudit ?",
+          "B": "Y a-t-il encore, dans la maison du méchant, \\q des trésors acquis par la méchanceté, \\q et la mesure trop petite, qui est maudite ?",
+          "R": "Les méchants ont encore des maisons pleines de trésors \\q qu’ils ont gagnés en trichant. \\q Ils utilisent une mesure trop petite, et elle est maudite."
+        },
+        "sw": {
+          "L": "Je, bado [kuna] katika nyumba ya mwovu \\q hazina za uovu, \\q na efa pungufu, [ambayo ni] ya kulaaniwa?",
+          "B": "Je, bado kuna katika nyumba ya mwovu \\q hazina zilizopatikana kwa uovu, \\q na kipimo pungufu kilicholaaniwa?",
+          "R": "Waovu bado wana nyumba zilizojaa hazina \\q walizopata kwa kudanganya. \\q Wanatumia kipimo kilicho kidogo mno, nacho kimelaaniwa."
+        },
+        "vi": {
+          "L": "Trong nhà kẻ ác há chẳng còn \\q những của cải gian ác, \\q và cái ê-pha thiếu hụt, [là vật] đáng rủa sả sao?",
+          "B": "Trong nhà kẻ ác vẫn còn \\q của cải kiếm được bằng gian ác, \\q và cái đấu đong thiếu bị nguyền rủa sao?",
+          "R": "Bọn gian ác vẫn còn những ngôi nhà đầy của cải \\q mà chúng kiếm được bằng cách gian lận. \\q Chúng dùng cái đấu đong quá nhỏ, và điều đó bị nguyền rủa."
+        },
+        "ko": {
+          "L": "악인의 집에 아직도 \\q 악으로 모은 재물이 있으며, \\q 저주받을 줄어든 에바가 있느냐?",
+          "B": "악인의 집에 아직도 \\q 악하게 모은 보물이 있느냐? \\q 저주받은 작은 되가 아직도 있느냐?",
+          "R": "악한 사람들은 아직도 집에 보물을 가득 쌓아 두고 있다. \\q 그것은 속여서 모은 것이다. \\q 그들은 너무 작은 되를 쓰는데, 그것은 저주받은 것이다."
         }
       },
       "decisions": [
@@ -1178,6 +1978,66 @@
           "reason": "Literal keeps the name of the measure; Balanced and Readable say what it was (m2). Readable turns the question into the statement it implies.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o330060100072",
+            "o330060100081"
+          ],
+          "choice": "\"el efa escaso\" (L); \"la medida falsa\" (B); \"una medida demasiado pequeña\" (R)",
+          "alternatives": [],
+          "reason": "Literal keeps the name of the measure, as the English does; Balanced and Readable say what it was (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-sw-1",
+          "layer": "rendering",
+          "language": "sw",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o330060100072",
+            "o330060100081"
+          ],
+          "choice": "\"efa pungufu\" (L); \"kipimo pungufu\" (B); \"kipimo kilicho kidogo mno\" (R)",
+          "alternatives": [],
+          "reason": "Literal keeps the ephah, as the published Swahili names it; Balanced and Readable say it was a measure made small to cheat (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-vi-1",
+          "layer": "rendering",
+          "language": "vi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o330060100072",
+            "o330060100081"
+          ],
+          "choice": "\"cái ê-pha thiếu hụt\" (L); \"cái đấu đong thiếu\" (B); \"cái đấu đong quá nhỏ\" (R)",
+          "alternatives": [],
+          "reason": "Literal keeps the measure's name; Balanced and Readable use the everyday measuring vessel (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1210,6 +2070,31 @@
           "L": "Shall I be pure with wicked scales \\q and with a bag of deceitful weights?",
           "B": "Can I be counted pure with dishonest scales \\q and a bag of false weights?",
           "R": "Can anyone who uses dishonest scales \\q and false weights be counted innocent?"
+        },
+        "es": {
+          "L": "¿Seré puro con balanzas de impiedad \\q y con una bolsa de pesas de engaño?",
+          "B": "¿Podré ser tenido por puro con balanzas tramposas \\q y una bolsa de pesas falsas?",
+          "R": "¿Puede alguien que usa balanzas tramposas \\q y pesas falsas ser declarado inocente?"
+        },
+        "fr": {
+          "L": "Serai-je pur avec des balances de méchanceté \\q et avec un sac de poids trompeurs ?",
+          "B": "Puis-je être tenu pour pur avec des balances fausses \\q et un sac de poids truqués ?",
+          "R": "Celui qui se sert de balances malhonnêtes \\q et de faux poids peut-il être déclaré innocent ?"
+        },
+        "sw": {
+          "L": "Je, nitakuwa safi pamoja na mizani za uovu, \\q na mfuko wa mawe ya kupimia ya udanganyifu?",
+          "B": "Je, naweza kuhesabiwa kuwa safi nikitumia mizani za udanganyifu \\q na mfuko wa mawe ya uongo ya kupimia?",
+          "R": "Je, mtu anayetumia mizani za udanganyifu \\q na mawe ya kupimia ya uongo anaweza kuhesabiwa kuwa hana hatia?"
+        },
+        "vi": {
+          "L": "Tôi há có thể trong sạch với cái cân gian ác \\q và với túi quả cân lừa dối sao?",
+          "B": "Tôi có thể được kể là trong sạch khi dùng cân gian \\q và túi quả cân giả dối sao?",
+          "R": "Có ai dùng cân gian lận \\q và quả cân giả mà được kể là vô tội không?"
+        },
+        "ko": {
+          "L": "내가 악한 저울과 \\q 속이는 저울추 주머니를 가지고 깨끗하겠느냐?",
+          "B": "속이는 저울과 \\q 거짓 저울추 주머니를 쓰면서 내가 깨끗하다고 인정받을 수 있겠느냐?",
+          "R": "속이는 저울과 \\q 거짓 저울추를 쓰는 사람이 죄가 없다고 인정받을 수 있겠느냐?"
         }
       },
       "decisions": [
@@ -1307,6 +2192,31 @@
           "L": "Her rich are full of violence, \\q and her inhabitants speak falsehood, \\q and their tongue [is] deceit in their mouth.",
           "B": "Her rich are full of violence; \\q her people speak lies, \\q and their tongues deceive with every word.",
           "R": "The rich people of the city are cruel and violent. \\q The people who live there tell lies. \\q Everything they say is meant to deceive."
+        },
+        "es": {
+          "L": "Sus ricos están llenos de violencia, \\q y sus habitantes hablan mentira, \\q y su lengua [es] engaño en su boca.",
+          "B": "Sus ricos están llenos de violencia; \\q su gente dice mentiras, \\q y su lengua engaña con cada palabra.",
+          "R": "Los ricos de la ciudad son crueles y violentos. \\q La gente que vive allí dice mentiras. \\q Todo lo que dicen es para engañar."
+        },
+        "fr": {
+          "L": "Ses riches sont pleins de violence, \\q et ses habitants disent le mensonge, \\q et leur langue [est] tromperie dans leur bouche.",
+          "B": "Ses riches sont pleins de violence ; \\q ses habitants disent des mensonges, \\q et leur langue trompe à chaque mot.",
+          "R": "Les riches de la ville sont cruels et violents. \\q Ceux qui y habitent disent des mensonges. \\q Tout ce qu’ils disent est fait pour tromper."
+        },
+        "sw": {
+          "L": "Matajiri wake wamejaa udhalimu, \\q na wakazi wake husema uongo, \\q na ulimi wao [ni] hila kinywani mwao.",
+          "B": "Matajiri wake wamejaa ukatili; \\q watu wake husema uongo, \\q na ndimi zao hudanganya kwa kila neno.",
+          "R": "Matajiri wa mji huu ni wakatili na wenye jeuri. \\q Watu wanaoishi humo husema uongo. \\q Kila wanachosema kinakusudiwa kudanganya."
+        },
+        "vi": {
+          "L": "Những kẻ giàu của nó đầy dẫy bạo lực, \\q dân cư của nó nói điều dối trá, \\q và lưỡi chúng [là] sự lừa gạt trong miệng chúng.",
+          "B": "Những kẻ giàu của thành ấy đầy bạo lực; \\q dân cư nó nói dối, \\q và lưỡi chúng lừa gạt trong từng lời nói.",
+          "R": "Những người giàu trong thành thật tàn ác và hung bạo. \\q Những người sống ở đó nói dối. \\q Mọi lời chúng nói đều nhằm lừa gạt."
+        },
+        "ko": {
+          "L": "그 성읍의 부자들은 폭력으로 가득하고, \\q 그 주민들은 거짓을 말하며, \\q 그들의 입 속의 혀는 속임수이다.",
+          "B": "그 성의 부자들은 폭력을 일삼고, \\q 그 주민들은 거짓말을 하며, \\q 그들의 혀는 말할 때마다 속인다.",
+          "R": "이 성의 부자들은 잔인하고 난폭하다. \\q 거기 사는 사람들은 거짓말을 한다. \\q 그들이 하는 말은 모두 남을 속이려는 것이다."
         }
       },
       "decisions": [
@@ -1378,6 +2288,24 @@
           "reason": "The Hebrew begins with \"whose\", tying the verse to the city of verse 9; every level begins a new sentence with \"her\", and Readable names the city.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ko-1",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o330060120011"
+          ],
+          "choice": "\"그 성읍의\" (L), \"그 성의\" (B) for \"her\"",
+          "alternatives": [],
+          "reason": "Korean has no feminine pronoun for the city and does not use 그녀 for Zion or Jerusalem, so the city of verse 9 is named.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1410,6 +2338,31 @@
           "L": "And I also will make [you] sick, striking you, \\q making [you] desolate because of your sins.",
           "B": "So I in turn will strike you a sickening blow \\q and bring you to ruin because of your sins.",
           "R": "So I will strike you down, and you will be sick. \\q I will ruin you because of your sins."
+        },
+        "es": {
+          "L": "Y también yo [te] haré enfermar al herirte, \\q [te] dejaré desolado a causa de tus pecados.",
+          "B": "Por eso yo, a mi vez, te heriré con un golpe que te enfermará \\q y te llevaré a la ruina por tus pecados.",
+          "R": "Por eso te heriré, y quedarás enfermo. \\q Te arruinaré por tus pecados."
+        },
+        "fr": {
+          "L": "Et moi aussi, je [te] rendrai malade en te frappant, \\q [te] dévastant à cause de tes péchés.",
+          "B": "Alors moi, à mon tour, je te frapperai d’un coup qui rend malade \\q et je te réduirai à la ruine à cause de tes péchés.",
+          "R": "Alors je vais te frapper, et tu seras malade. \\q Je vais te ruiner à cause de tes péchés."
+        },
+        "sw": {
+          "L": "Nami pia nitakutia ugonjwa kwa kukupiga, \\q nikikufanya ukiwa kwa sababu ya dhambi zako.",
+          "B": "Kwa hiyo {{deity_pronoun:nami|Nami}} nitakupiga pigo linalokutia ugonjwa \\q na kukuletea maangamizi kwa sababu ya dhambi zako.",
+          "R": "Kwa hiyo nitakupiga, nawe utaugua. \\q Nitakuangamiza kwa sababu ya dhambi zako."
+        },
+        "vi": {
+          "L": "Vậy chính {{deity_pronoun:ta|Ta}} cũng sẽ làm [ngươi] đau đớn khi đánh ngươi, \\q làm [ngươi] hoang tàn vì tội lỗi ngươi.",
+          "B": "Vì thế đến lượt {{deity_pronoun:ta|Ta}}, {{deity_pronoun:ta|Ta}} sẽ giáng cho ngươi một đòn đau đớn \\q và làm ngươi điêu tàn vì tội lỗi của ngươi.",
+          "R": "Vì vậy {{deity_pronoun:ta|Ta}} sẽ đánh ngươi, và ngươi sẽ đau ốm. \\q Ta sẽ hủy hoại ngươi vì tội lỗi của ngươi."
+        },
+        "ko": {
+          "L": "그러므로 나도 너를 쳐서 병들게 하고, \\q 네 죄 때문에 [너를] 황폐하게 하겠다.",
+          "B": "그러므로 나도 너를 쳐서 중한 병이 들게 하고, \\q 네 죄 때문에 너를 망하게 하겠다.",
+          "R": "그래서 내가 너를 쳐서 병들게 하겠다. \\q 네 죄 때문에 너를 망하게 하겠다."
         }
       },
       "decisions": [
@@ -1469,6 +2422,28 @@
           "reason": "\"Also I\" answers the city's wrongs: they have struck others, and the LORD will strike them. Literal brackets the \"you\" that the Hebrew leaves implied.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o330060130042",
+            "o330060130051",
+            "o330060130071",
+            "o330060130072"
+          ],
+          "choice": "\"tú\" (te, tus) from here to verse 15; \"desolado\" (L)",
+          "alternatives": [],
+          "reason": "From verse 13 the Hebrew speaks to the city or people as one man (masculine singular), so Spanish uses tú with masculine agreement; plural_you returns in verse 16, where the Hebrew is plural.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1513,6 +2488,31 @@
           "L": "You will eat, but not be satisfied, \\q and your emptiness [will be] within you; \\q you will put away, but not save, \\q and what you do save I will give to the sword.",
           "B": "You will eat, but not be satisfied; \\q your stomach will still be empty. \\q You will store things up, but save nothing, \\q and what you do save I will hand over to the sword.",
           "R": "You will eat, but you will still be hungry. \\q Your stomachs will be empty. \\q You will try to save things, but you will not keep them safe. \\q Whatever you do save, I will let your enemies destroy in war."
+        },
+        "es": {
+          "L": "Tú comerás, pero no te saciarás, \\q y tu vacío [estará] dentro de ti; \\q apartarás, pero no pondrás a salvo, \\q y lo que pongas a salvo lo entregaré a la espada.",
+          "B": "Comerás, pero no quedarás satisfecho; \\q tu estómago seguirá vacío. \\q Guardarás cosas, pero no salvarás nada, \\q y lo que logres salvar lo entregaré a la espada.",
+          "R": "Comerás, pero seguirás con hambre. \\q Tendrás el estómago vacío. \\q Intentarás salvar tus cosas, pero no podrás ponerlas a salvo. \\q Lo que logres salvar, dejaré que tus enemigos lo destruyan en la guerra."
+        },
+        "fr": {
+          "L": "Tu mangeras, mais tu ne seras pas rassasié, \\q et ton vide [sera] au-dedans de toi ; \\q tu mettras de côté, mais tu ne sauveras pas, \\q et ce que tu sauveras, je le livrerai à l’épée.",
+          "B": "Tu mangeras, mais sans être rassasié ; \\q ton ventre restera vide. \\q Tu mettras des biens de côté, mais tu ne sauveras rien, \\q et ce que tu auras sauvé, je le livrerai à l’épée.",
+          "R": "Tu mangeras, mais tu auras encore faim. \\q Ton ventre sera vide. \\q Tu essaieras de sauver tes biens, mais tu ne pourras pas les garder. \\q Et ce que tu auras sauvé, je laisserai tes ennemis le détruire à la guerre."
+        },
+        "sw": {
+          "L": "Utakula, lakini hutashiba, \\q na utupu wako [utakuwa] ndani yako; \\q utaondoa, lakini hutaokoa, \\q na kile utakachookoa nitakitoa kwa upanga.",
+          "B": "Utakula, lakini hutashiba; \\q tumbo lako litabaki tupu. \\q Utaweka akiba, lakini hutaokoa kitu, \\q na kile utakachookoa nitakitia upangani.",
+          "R": "Utakula, lakini bado utakuwa na njaa. \\q Tumbo lako litakuwa tupu. \\q Utajaribu kuokoa mali yako, lakini hutaweza kuilinda. \\q Chochote utakachookoa nitawaachia adui zako wakiharibu vitani."
+        },
+        "vi": {
+          "L": "Ngươi sẽ ăn mà không no, \\q và sự trống rỗng [sẽ ở] trong lòng ngươi; \\q ngươi sẽ dời đi mà không cứu được, \\q và điều gì ngươi cứu được, {{deity_pronoun:ta|Ta}} sẽ phó cho gươm.",
+          "B": "Ngươi sẽ ăn nhưng không no; \\q bụng ngươi vẫn trống rỗng. \\q Ngươi sẽ tích trữ nhưng chẳng giữ được gì, \\q và những gì ngươi giữ lại được, {{deity_pronoun:ta|Ta}} sẽ phó cho gươm giáo.",
+          "R": "Ngươi sẽ ăn nhưng vẫn đói. \\q Bụng ngươi sẽ trống rỗng. \\q Ngươi sẽ cố cất giữ của cải, nhưng sẽ không giữ được. \\q Những gì ngươi cứu được, {{deity_pronoun:ta|Ta}} sẽ để kẻ thù ngươi phá hủy trong chiến tranh."
+        },
+        "ko": {
+          "L": "네가 먹어도 배부르지 않고, \\q 네 속에 허기가 [있을 것이다]. \\q 네가 옮겨 놓아도 지키지 못하고, \\q 네가 지킨 것은 내가 칼에 넘겨주겠다.",
+          "B": "너는 먹어도 배부르지 않고, \\q 배 속은 여전히 비어 있을 것이다. \\q 너는 물건을 쌓아 두어도 아무것도 건지지 못하고, \\q 네가 건진 것은 내가 칼에 넘겨주겠다.",
+          "R": "너는 먹어도 여전히 배가 고플 것이다. \\q 배 속이 텅 빌 것이다. \\q 재산을 지키려고 애써도 지키지 못할 것이다. \\q 네가 건진 것도 내가 원수들에게 넘겨 전쟁으로 망하게 하겠다."
         }
       },
       "decisions": [
@@ -1591,6 +2591,25 @@
           "reason": "Balanced and Readable give the likely sense of the rare word (m2). Readable says what giving to the sword means.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o330060140052",
+            "o330060140053"
+          ],
+          "choice": "\"ton vide\" (L); \"ton ventre restera vide\" (B)",
+          "alternatives": [],
+          "reason": "The rare word most likely means emptiness or hunger (m2); Literal keeps \"vide\", Balanced says where it is felt.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1631,6 +2650,31 @@
           "L": "You will sow, but not reap; \\q you will tread olives, but not anoint yourself with oil, \\q and new wine, but not drink wine.",
           "B": "You will sow, but you will not harvest; \\q you will press olives, but not rub yourselves with the oil; \\q you will tread grapes, but not drink the wine.",
           "R": "You will plant crops, but you will not harvest them. \\q You will press olives, but you will not use the oil. \\q You will crush grapes, but you will not drink the wine."
+        },
+        "es": {
+          "L": "Tú sembrarás, pero no segarás; \\q pisarás aceitunas, pero no te ungirás con aceite, \\q y mosto, pero no beberás vino.",
+          "B": "Sembrarás, pero no cosecharás; \\q prensarás aceitunas, pero no te frotarás con el aceite; \\q pisarás uvas, pero no beberás el vino.",
+          "R": "Sembrarás, pero no recogerás la cosecha. \\q Prensarás aceitunas, pero no usarás el aceite. \\q Exprimirás uvas, pero no beberás el vino."
+        },
+        "fr": {
+          "L": "Tu sèmeras, mais tu ne moissonneras pas ; \\q tu fouleras l’olive, mais tu ne t’oindras pas d’huile, \\q et le vin nouveau, mais tu ne boiras pas de vin.",
+          "B": "Tu sèmeras, mais tu ne récolteras pas ; \\q tu presseras les olives, mais tu ne te frotteras pas d’huile ; \\q tu fouleras le raisin, mais tu n’en boiras pas le vin.",
+          "R": "Tu planteras, mais tu ne récolteras pas. \\q Tu presseras des olives, mais tu ne profiteras pas de l’huile. \\q Tu écraseras du raisin, mais tu ne boiras pas le vin."
+        },
+        "sw": {
+          "L": "Utapanda, lakini hutavuna; \\q utakanyaga zeituni, lakini hutajipaka mafuta, \\q na divai mpya, lakini hutakunywa divai.",
+          "B": "Utapanda, lakini hutavuna; \\q utakamua zeituni, lakini hutajipaka mafuta yake; \\q utakanyaga zabibu, lakini hutakunywa divai.",
+          "R": "Utapanda mbegu, lakini hutavuna mazao. \\q Utakamua zeituni, lakini hutatumia mafuta. \\q Utaponda zabibu, lakini hutakunywa divai."
+        },
+        "vi": {
+          "L": "Ngươi sẽ gieo mà không gặt; \\q ngươi sẽ đạp ô-liu mà không xức dầu, \\q và rượu mới, mà không uống rượu.",
+          "B": "Ngươi sẽ gieo nhưng không gặt; \\q ngươi sẽ ép ô-liu nhưng không được xức dầu; \\q ngươi sẽ đạp nho nhưng không được uống rượu.",
+          "R": "Ngươi sẽ trồng trọt nhưng không được thu hoạch. \\q Ngươi sẽ ép ô-liu nhưng không được dùng dầu. \\q Ngươi sẽ ép nho nhưng không được uống rượu."
+        },
+        "ko": {
+          "L": "너는 씨를 뿌려도 거두지 못하고, \\q 올리브를 밟아도 기름을 바르지 못하며, \\q 새 포도주를 [밟아도] 포도주를 마시지 못할 것이다.",
+          "B": "너는 씨를 뿌려도 거두지 못하고, \\q 올리브를 짜도 그 기름을 몸에 바르지 못하며, \\q 포도를 밟아도 그 포도주를 마시지 못할 것이다.",
+          "R": "너는 곡식을 심어도 거두지 못할 것이다. \\q 올리브를 짜도 그 기름을 쓰지 못할 것이다. \\q 포도를 으깨도 포도주를 마시지 못할 것이다."
         }
       },
       "decisions": [
@@ -1742,6 +2786,31 @@
           "L": "And the statutes of Omri are kept, and every deed of the house of Ahab, \\q and you walk in their counsels, \\q so that I make you a horror, and her inhabitants a hissing, \\q and you will carry the reproach of {{deity_pronoun:my|My}} people.",
           "B": "The decrees of Omri are carefully kept, and all the practices of Ahab's house, \\q and you follow their counsels. \\q So I will make you a horror and your people an object of scorn, \\q and you will bear the disgrace of {{deity_pronoun:my|My}} people.",
           "R": "You follow the laws that King Omri made \\q and do everything King Ahab's family did. \\q So I will make you a horror, and people will mock those who live in your city. \\q You will suffer the shame that falls on {{deity_pronoun:my|My}} people."
+        },
+        "es": {
+          "L": "Y se guardan los estatutos de Omri, y toda obra de la casa de Acab, \\q y {{plural_you:ustedes andan|vosotros andáis}} en sus consejos, \\q para que yo te haga un espanto, y a sus habitantes un silbido, \\q y {{plural_you:ustedes cargarán|vosotros cargaréis}} con el oprobio de {{deity_pronoun:mi|Mi}} pueblo.",
+          "B": "Se cumplen con cuidado los decretos de Omri y todas las prácticas de la casa de Acab, \\q y {{plural_you:ustedes siguen|vosotros seguís}} sus consejos. \\q Por eso te convertiré en un espanto, y a tu gente en objeto de burla, \\q y {{plural_you:ustedes llevarán|vosotros llevaréis}} la deshonra de {{deity_pronoun:mi|Mi}} pueblo.",
+          "R": "{{plural_you:Ustedes siguen|Vosotros seguís}} las leyes que hizo el rey Omri \\q y {{plural_you:hacen|hacéis}} todo lo que hizo la familia del rey Acab. \\q Por eso {{plural_you:los convertiré|os convertiré}} en un espanto, y la gente se burlará de los que viven en {{plural_you:su ciudad|vuestra ciudad}}. \\q {{plural_you:Sufrirán|Sufriréis}} la vergüenza que cae sobre {{deity_pronoun:mi|Mi}} pueblo."
+        },
+        "fr": {
+          "L": "Et l’on observe les prescriptions d’Omri, et toute l’œuvre de la maison d’Achab, \\q et vous marchez selon leurs conseils, \\q afin que je fasse de toi une horreur, et de ses habitants un objet de sifflement, \\q et vous porterez l’opprobre de {{deity_pronoun:mon|Mon}} peuple.",
+          "B": "On observe avec soin les décrets d’Omri et toutes les pratiques de la maison d’Achab, \\q et vous suivez leurs conseils. \\q Alors je ferai de toi un objet d’horreur, et de tes habitants un objet de moquerie, \\q et vous porterez la honte de {{deity_pronoun:mon|Mon}} peuple.",
+          "R": "Vous suivez les lois que le roi Omri a faites \\q et vous faites tout ce qu’a fait la famille du roi Achab. \\q Alors je ferai de vous un objet d’horreur, et les gens se moqueront des habitants de votre ville. \\q Vous subirez la honte qui tombe sur {{deity_pronoun:mon|Mon}} peuple."
+        },
+        "sw": {
+          "L": "Na amri za Omri zinashikwa, na kila tendo la nyumba ya Ahabu, \\q nanyi mnaenenda katika mashauri yao, \\q ili nikufanye kitisho, na wakazi wake kitu cha kuzomewa, \\q nanyi mtachukua aibu ya watu {{deity_pronoun:wangu|Wangu}}.",
+          "B": "Amri za Omri zinashikwa kwa uangalifu, pamoja na desturi zote za nyumba ya Ahabu, \\q nanyi mnafuata mashauri yao. \\q Kwa hiyo nitakufanya kitisho, na wakazi wako kitu cha dharau, \\q nanyi mtabeba aibu ya watu {{deity_pronoun:wangu|Wangu}}.",
+          "R": "Mnafuata sheria alizoweka mfalme Omri \\q na kufanya yote waliyofanya jamaa ya mfalme Ahabu. \\q Kwa hiyo nitawafanya kuwa kitisho, na watu watawadhihaki wakazi wa mji wenu. \\q Mtapata aibu inayowapata watu {{deity_pronoun:wangu|Wangu}}."
+        },
+        "vi": {
+          "L": "Các luật lệ của Ôm-ri được tuân giữ, cùng mọi việc làm của nhà A-háp, \\q và các ngươi bước đi theo mưu kế của chúng, \\q để {{deity_pronoun:ta|Ta}} làm cho ngươi thành sự kinh hoàng, và dân cư nó thành trò huýt sáo, \\q và các ngươi sẽ mang sự sỉ nhục của dân {{deity_pronoun:ta|Ta}}.",
+          "B": "Người ta cẩn thận giữ các luật lệ của Ôm-ri và mọi thói tục của nhà A-háp, \\q và các ngươi làm theo mưu kế của chúng. \\q Vì thế {{deity_pronoun:ta|Ta}} sẽ làm cho ngươi thành nỗi kinh hoàng, và dân cư ngươi thành trò cười, \\q và các ngươi sẽ mang lấy nỗi nhục của dân {{deity_pronoun:ta|Ta}}.",
+          "R": "Các ngươi làm theo luật lệ vua Ôm-ri đặt ra \\q và làm mọi điều gia đình vua A-háp đã làm. \\q Vì vậy {{deity_pronoun:ta|Ta}} sẽ làm cho các ngươi thành nỗi kinh hoàng, và người ta sẽ chế nhạo dân cư trong thành các ngươi. \\q Các ngươi sẽ chịu sự sỉ nhục giáng trên dân {{deity_pronoun:ta|Ta}}."
+        },
+        "ko": {
+          "L": "오므리의 규례와 아합 집의 모든 행위가 지켜지고, \\q 너희가 그들의 계략대로 행하니, \\q 내가 너를 공포의 대상으로, 그 주민을 비웃음거리로 만들 것이다. \\q 너희는 내 백성의 수치를 짊어질 것이다.",
+          "B": "오므리의 규례와 아합 집안의 모든 관습이 꼼꼼히 지켜지고, \\q 너희는 그들의 계략을 따랐다. \\q 그러므로 내가 너를 공포의 대상으로 만들고, 네 주민을 조롱거리로 만들겠다. \\q 너희는 내 백성이 당하는 수치를 짊어질 것이다.",
+          "R": "너희는 오므리 왕이 만든 법을 따르고, \\q 아합 왕의 집안이 한 일을 다 따라 한다. \\q 그래서 내가 너희를 끔찍한 꼴이 되게 하겠다. 사람들이 너희 성에 사는 사람들을 비웃을 것이다. \\q 너희는 내 백성이 당하는 수치를 겪을 것이다."
         }
       },
       "decisions": [
@@ -1829,6 +2898,50 @@
           "choice": "a horror, a hissing (L); a horror, an object of scorn (B); a horror, people will mock (R); reproach (L); disgrace (B); shame (R)",
           "alternatives": [],
           "reason": "The words for horror and hissing follow the wording set for Jeremiah. Readable names Omri and Ahab as kings. \"My people\" is the LORD's, so \"my\" carries the setting for pronouns for God.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-es-1",
+          "layer": "rendering",
+          "language": "es",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o330060160082",
+            "o330060160112",
+            "o330060160122",
+            "o330060160181"
+          ],
+          "choice": "plural_you for \"walk\" and \"bear\" (L, B), singular \"te\" for \"make you a horror\" (L, B); plural throughout (R)",
+          "alternatives": [],
+          "reason": "The Hebrew \"you walk\" and \"you will bear\" are plural, while \"I will make you\" is singular, the city as one; Literal and Balanced follow each switch, and Readable keeps one plural address for clarity.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fr-1",
+          "layer": "rendering",
+          "language": "fr",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o330060160082",
+            "o330060160112",
+            "o330060160122",
+            "o330060160181"
+          ],
+          "choice": "\"vous\" for \"walk\" and \"bear\", \"toi\" for \"make you a horror\" (L, B); \"vous\" throughout (R)",
+          "alternatives": [],
+          "reason": "French switches between \"tu\" and \"vous\" where the Hebrew does, as the term sheet sets for Micah; Readable keeps one address.",
           "uncertain": false,
           "footnote": false
         }
