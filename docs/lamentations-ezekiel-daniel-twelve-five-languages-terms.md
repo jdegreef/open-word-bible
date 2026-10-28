@@ -1610,7 +1610,7 @@ This is why "declares the Lord GOD" at B and R below is no longer written the Is
 | O king! / O king, live forever! | 임금님! at every level [2 Kings 16:7 L]; 임금님, 영원히 사시기를 빕니다! / same / 임금님, 오래오래 사십시오! [1 Kings 1:31] |
 | the God of heaven; the Most High | 하늘의 하나님 [Ezra]; 지극히 높으신 분 / same / 가장 높으신 하나님 [Gen 14:18; Isa 14:14; Lk 1:32]. Both take -시- even in Nebuchadnezzar's mouth |
 | the Ancient of Days (7:9, 13, 22) | 옛적부터 계신 분 / same / 영원히 계신 분. He takes -시- and 그분 |
-| one like a son of man (7:13) | 인자 같은 이 / 인자 같은 이 / 사람처럼 보이는 이. It takes no -시- and is 그 (a description: Isaiah's servant rule). 인자 같은 matches Rev 1:13 and the Gospels' 인자 so the quotation is visible, and 이 rather than 분 keeps it a description. A decision says so and contrasts it with Ezekiel's 사람의 아들 (uncertain) |
+| one like a son of man (7:13) | 인자 같은 분 / 인자 같은 분 / 사람처럼 보이는 분, as Revelation 1:13 (인자 같은 분), so the quotation is visible. The verbs take no -시- and the pronoun stays 그, because the English keeps him lowercase; 분 also keeps him apart from the angels of Daniel 8–10 (사람처럼 보이는 이). A decision says so and contrasts it with Ezekiel's 사람의 아들 |
 | the holy ones of the Most High | 지극히 높으신 분의 거룩한 이들 / same / 하나님의 거룩한 백성. Not 성도들, the NT word. "A holy one" (4:10; 8:13) is 거룩한 이 |
 | a watcher (*'ir*) | 지켜보는 이 / 지켜보는 이 / 하늘에서 온 심부름꾼 (uncertain) |
 | a son of the gods (3:25) | 신들의 아들 / 신들의 아들 같은 이 / 하늘의 존재. Lowercase in sense: no -시- in Nebuchadnezzar's words |
@@ -1809,7 +1809,7 @@ Each verse keeps the form its text uses, as the English does. Published forms wi
 
 ### Uncertain, for the native reviewer
 
-- 사람의 아들아 against 인자야 in Ezekiel and Daniel 8:17, and 인자 같은 이 in Daniel 7:13.
+- 사람의 아들아 against 인자야 in Ezekiel and Daniel 8:17, and 인자 같은 분 in Daniel 7:13.
 - 주 {{divine_name:하나님|야훼}}의 말이다 for "declares / says the Lord GOD" (B, R).
 - 긍휼 없음 and 내 백성 아님.
 - 초막 against 장막 in Amos 9:11.
