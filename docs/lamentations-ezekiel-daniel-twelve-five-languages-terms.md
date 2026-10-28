@@ -537,7 +537,7 @@ Everything in the Spanish section of `docs/isaiah-jeremiah-ezra-five-languages-t
 
 ### Ezekiel's temple vision (40–48) and its units
 
-- **Units.** Literal keeps the original units, as the English does: *seis codos [de largo], de a codo y un ancho de mano* (40:5). Balanced and Readable use `{{units:metric|original}}` spans wherever the English has one, worked out on the long cubit. The long cubit is 52.5 cm, a cubit plus a handbreadth of 7.5 cm. A handbreadth is *un ancho de mano* [Exodus 25:25]; *palmo* is the span. Use exactly these values. The alternative writes numbers up to ninety-nine in words and thousands with a space, as Spanish writes them:
+- **Units.** Literal keeps the original units, as the English does: *seis codos [de largo], de a codo y un ancho de mano* (40:5). Balanced and Readable use `{{units:metric|original}}` spans wherever the English has one, worked out on the long cubit. The long cubit is about 53 cm (the English's 21 inches; a 45 cm cubit plus a handbreadth of 7.5 cm). A handbreadth is *un ancho de mano* [Exodus 25:25]; *palmo* is the span. Use exactly these values. The alternative writes numbers up to ninety-nine in words and thousands with a space, as Spanish writes them:
 
 | original | metric span text |
 |---|---|
