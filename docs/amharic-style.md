@@ -277,6 +277,26 @@ where the Greek differs.
 - **Familiar wording.** Fixed short phrases may stay (ልቅሶና ጥርስ ማፋጨት);
   anything longer that matches the 1962 Bible is reworded.
 
+Settled later, in Luke, John, Acts and Paul:
+
+- **"Master"** (Luke's *epistata*) is አለቃ ሆይ, kept apart from መምህር
+  (Teacher) and ጌታ (Lord).
+- **The Son** as a title is ወልድ beside አብ (the Father); ልጁ only where the
+  Greek pictures a son in a household (John 8:35).
+- **Pentecost** is በዓለ ሃምሳ (Acts 2:1; 20:16; 1 Corinthians 16:8);
+  ጰንጠቆስጤ is now heard mostly as the name of a church movement.
+- **Saul** is ሳውል for Paul, ሳኦል for the king.
+- **Members** of the body are ክፍሎች at every level; ብልት now usually
+  means the genitals. The body is አካል; ሥጋ is kept for flesh and for the
+  Lord's body at the meal.
+- **Christ with a suffix or prefix** puts the whole word in each option,
+  with the definite form where the Greek has the article:
+  `{{christos:የክርስቶስ|የመሲሑ}}`, `{{christos:በክርስቶስ|በመሲሕ}}`.
+- **"Ancestors"** offered by the English as a gender span is
+  `{{gender:ቅድመ አያቶቻችን|አባቶቻችን}}` (proposed; Matthew has none).
+- **First person past** is -ኩ after a consonant stem (ወደድኩ) and -ሁ after
+  a vowel stem (አየሁ, መጣሁ).
+
 ## 8. Status
 
 An Amharic rendering added to a record does not change its status. Nothing
