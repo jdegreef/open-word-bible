@@ -62,6 +62,11 @@
           "L": "그리고 그날에 너는 말할 것이다. \\q {{divine_name:주|야훼}}여, 제가 주님께 감사드립니다. 주님께서 저에게 노하셨으나, \\q 주님의 분노가 돌이켜졌고, 주님께서 저를 위로하십니다.",
           "B": "그날에 너는 이렇게 말할 것이다. \\q {{divine_name:주|야훼}}여, 주님께 감사드립니다! 주님께서 저에게 노하셨으나, \\q 이제는 주님의 분노가 풀리고, 주님께서 저를 위로해 주십니다.",
           "R": "그때에 너는 이렇게 말할 것이다. \\q {{divine_name:주|야훼}}여, 감사합니다! 주님께서는 저에게 화가 나셨습니다. \\q 그러나 이제는 주님의 화가 풀렸고, 주님께서 저를 위로해 주십니다."
+        },
+        "pt": {
+          "L": "E dirás naquele dia: \\q Eu {{deity_pronoun:te|Te}} darei graças, {{divine_name:SENHOR|Javé}}, porque {{deity_pronoun:tu|Tu}} estavas irado comigo; \\q a {{deity_pronoun:tua|Tua}} ira voltou atrás, e {{deity_pronoun:tu|Tu}} me consolas.",
+          "B": "Naquele dia dirás: \\q {{divine_name:SENHOR|Javé}}, eu {{deity_pronoun:te|Te}} agradeço! Tu estavas irado comigo, \\q mas a {{deity_pronoun:tua|Tua}} ira recuou, e agora {{deity_pronoun:tu|Tu}} me consolas.",
+          "R": "Naquele dia dirás: \\q Eu {{deity_pronoun:te|Te}} agradeço, {{divine_name:SENHOR|Javé}}! Tu estavas irado comigo. \\q Mas agora a {{deity_pronoun:tua|Tua}} ira passou, e {{deity_pronoun:tu|Tu}} me consolas."
         }
       },
       "decisions": [
@@ -195,6 +200,50 @@
           "reason": "As the terms note for prayers and the Psalms (Psalm 19:15); verses 2-6 speak about God and to the people, and take the plain style.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o230120010012",
+            "o230120010042"
+          ],
+          "choice": "dirás (tu, Israel as one); te, tu, tua (the song to God)",
+          "alternatives": [
+            "vocês dirão"
+          ],
+          "reason": "For the whole song: verse 1 speaks to Israel as one person (m1), so \"dirás\"; verses 3-4 turn to the plural, \"vocês\"; the song itself speaks to God with \"tu\" and the deity_pronoun setting, as the Psalms do. The LORD is called by name with the divine_name setting and no article, \"SENHOR\", as in the Psalms' Portuguese.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-2",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230120010091",
+            "o230120010101"
+          ],
+          "choice": "a tua ira voltou atrás (L); a tua ira recuou (B)",
+          "alternatives": [
+            "a tua ira se desviou",
+            "se apartou"
+          ],
+          "reason": "The verb is the one of the refrain of 5:25 and 9:11-10:4, \"his anger has not turned back\". Literal and Balanced use the same verb as their refrain (\"não voltou atrás\", \"não recuou\"), so that the song is heard as its answer.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -263,6 +312,11 @@
           "L": "보아라, 하나님은 나의 구원이시다. 내가 신뢰하고 두려워하지 않을 것이다. \\q 나의 힘과 노래는 {{divine_name:주|야}}, 곧 {{divine_name:주|야훼}}이시니, \\q 그분께서 나의 구원이 되셨다.",
           "B": "보아라, 하나님은 나의 구원이시다! 나는 그분을 의지하고 두려워하지 않겠다. \\q {{divine_name:주|야}}, 곧 {{divine_name:주|야훼}}께서 나의 힘이시요 나의 노래이시니, \\q 그분께서 나의 구원이 되셨다.",
           "R": "하나님께서 나를 구원하시는 분이시다! 나는 그분을 믿고 두려워하지 않겠다. \\q {{divine_name:주|야}}, 곧 {{divine_name:주|야훼}}께서 나를 강하게 하시고 내게 부를 노래를 주신다. \\q 그분께서 나를 구원하시는 분이 되셨다."
+        },
+        "pt": {
+          "L": "Eis que Deus [é] a minha salvação; confiarei e não temerei, \\q porque a minha força e [o meu] cântico [é] Iá, {{divine_name:o SENHOR|Javé}}, \\q e {{deity_pronoun:ele|Ele}} se tornou a minha salvação.",
+          "B": "Vejam: Deus é a minha salvação! Vou me apoiar {{deity_pronoun:nele|Nele}} e não terei medo. \\q Pois a minha força e o meu cântico é Iá, {{divine_name:o SENHOR|Javé}}; \\q {{deity_pronoun:ele|Ele}} veio para me salvar.",
+          "R": "Deus é quem me salva! Vou confiar {{deity_pronoun:nele|Nele}} e não vou ter medo. \\q Iá, {{divine_name:o SENHOR|Javé}}, me dá forças e é o motivo do meu canto. \\q Ele me salvou."
         }
       },
       "decisions": [
@@ -459,6 +513,33 @@
           "reason": "The Psalms note gives Yah as \"{{divine_name:주|야}}\". By default the two read \"주, 곧 주\", but with the setting they show the Hebrew's short form and full name side by side (meaning decision m2); the line follows the song of the sea and Psalm 118:14.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230120020081",
+            "o230120020092",
+            "o230120020101",
+            "o230120020111",
+            "o230120020122",
+            "o230120020142"
+          ],
+          "choice": "Iá, o SENHOR; the words of Exodus 15:2",
+          "alternatives": [
+            "o SENHOR, o SENHOR",
+            "Já"
+          ],
+          "reason": "These lines repeat the song of the sea (m1), and each level keeps the Portuguese of Exodus 15:2 and Psalm 118:14 (\"A minha força e [o meu] cântico [é]\", \"se tornou a minha salvação\" at Literal; \"ele veio para me salvar\" at Balanced; \"me dá forças ... o motivo do meu canto. Ele me salvou\" at Readable). Here the short name is followed by the full one (m2), so, as the English keeps \"Yah\", Portuguese writes the short name plainly as Exodus 15:2 spells it, \"Iá\", before \"o SENHOR\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -515,6 +596,11 @@
           "L": "그리고 너희가 기쁨으로 \\q 구원의 샘들에서 물을 길을 것이다.",
           "B": "너희가 기뻐하며 \\q 구원의 샘에서 물을 길을 것이다.",
           "R": "하나님께서 너희를 구원하실 때 너희는 기쁨에 넘칠 것이다. \\q 그것은 샘에서 시원한 물을 긷는 것과 같을 것이다."
+        },
+        "pt": {
+          "L": "E vocês tirarão água com alegria \\q das fontes da salvação.",
+          "B": "Com alegria vocês vão tirar água \\q das fontes da salvação.",
+          "R": "Vocês vão ficar cheios de alegria quando Deus salvar vocês. \\q Vai ser como tirar água fresca de uma fonte."
         }
       },
       "decisions": [
@@ -635,6 +721,11 @@
           "L": "그리고 그날에 너희가 말할 것이다. \\q {{divine_name:주|야훼}}께 감사하여라. 그분의 이름을 불러라. \\q 백성들 가운데 그분께서 하신 일들을 알려라. \\q 그분의 이름이 높으심을 기억하게 하여라.",
           "B": "그날에 너희는 이렇게 말할 것이다. \\q {{divine_name:주|야훼}}께 감사하고 그분의 이름을 불러라! \\q 그분께서 하신 일을 모든 백성에게 알려라. \\q 그분의 이름이 높으시다는 것을 일깨워 주어라.",
           "R": "그때에 너희는 이렇게 말할 것이다. \\q {{divine_name:주|야훼}}께 감사하여라! 그분의 이름을 부르며 기도하여라! \\q 그분께서 하신 일을 온 세상 사람들에게 알려라. \\q 그분의 이름이 위대하고 높으시다는 것을 그들에게 일깨워 주어라."
+        },
+        "pt": {
+          "L": "E vocês dirão naquele dia: \\q Rendam graças {{divine_name:ao SENHOR|a Javé}}, invoquem o {{deity_pronoun:seu|Seu}} nome; \\q façam conhecidos entre os povos os {{deity_pronoun:seus|Seus}} feitos; \\q lembrem que o {{deity_pronoun:seu|Seu}} nome é exaltado.",
+          "B": "Naquele dia vocês dirão: \\q Rendam graças {{divine_name:ao SENHOR|a Javé}}; invoquem o {{deity_pronoun:seu|Seu}} nome! \\q Contem a todos os povos o que {{deity_pronoun:ele|Ele}} fez; \\q lembrem a eles que o {{deity_pronoun:seu|Seu}} nome está acima de tudo.",
+          "R": "Naquele dia vocês dirão: \\q Agradeçam {{divine_name:ao SENHOR|a Javé}}! Chamem por {{deity_pronoun:ele|Ele}} pelo nome! \\q Contem às nações o que {{deity_pronoun:ele|Ele}} fez. \\q Lembrem a elas que o {{deity_pronoun:seu|Seu}} nome é grande e está acima de tudo."
         }
       },
       "decisions": [
@@ -726,6 +817,30 @@
           "reason": "0",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230120040041",
+            "o230120040061",
+            "o230120040081",
+            "o230120040101"
+          ],
+          "choice": "Rendam graças ao SENHOR; invoquem o seu nome; façam conhecidos entre os povos os seus feitos (L); contem a todos os povos o que ele fez (B)",
+          "alternatives": [
+            "Deem graças",
+            "anunciem"
+          ],
+          "reason": "The first three lines match Psalm 105:1 and 1 Chronicles 16:8 (m1), and keep the Portuguese of Psalm 105:1 at Literal and Balanced.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -784,6 +899,11 @@
           "L": "{{divine_name:주|야훼}}께 찬양하여라. 그분께서 위엄 있는 [일들을] 하셨다. \\q 이것을 온 땅에 알려라.",
           "B": "{{divine_name:주|야훼}}께 노래하며 찬양하여라. 그분께서 위엄 있게 일하셨다. \\q 온 땅이 이것을 알게 하여라.",
           "R": "{{divine_name:주|야훼}}께 찬양의 노래를 불러라! 그분께서 크고 놀라운 일을 하셨다. \\q 온 세상 사람들이 그것을 알게 하여라."
+        },
+        "pt": {
+          "L": "Cantem louvores {{divine_name:ao SENHOR|a Javé}}, porque {{deity_pronoun:ele|Ele}} fez [coisas] majestosas; \\q [seja] isto conhecido em toda a terra.",
+          "B": "Toquem e cantem {{divine_name:ao SENHOR|a Javé}}, pois {{deity_pronoun:ele|Ele}} agiu com majestade; \\q que a terra inteira fique sabendo disso.",
+          "R": "Cantem louvores {{divine_name:ao SENHOR|a Javé}}! Ele fez coisas grandes e maravilhosas. \\q Que todas as pessoas do mundo fiquem sabendo disso."
         }
       },
       "decisions": [
@@ -890,6 +1010,11 @@
           "L": "시온의 주민아, 소리치고 기뻐 외쳐라. \\q 이스라엘의 거룩하신 분이 너희 가운데 크시기 때문이다.",
           "B": "시온에 사는 사람들아, 소리 높여 기뻐 노래하여라. \\q 너희 가운데 계시는 이스라엘의 거룩하신 분은 위대하시다.",
           "R": "시온 백성아, 기뻐 소리치며 노래하여라! \\q 이스라엘의 거룩하신 분께서 너희와 함께 계신다. 그분은 위대하시다."
+        },
+        "pt": {
+          "L": "Grita e canta de alegria, moradora de Sião, \\q porque grande no meio de ti [é] o Santo de Israel.",
+          "B": "Levanta a voz e canta com alegria, tu que moras em Sião, \\q pois o Santo de Israel, que está no meio de ti, é grande.",
+          "R": "Povo de Sião, grita e canta de alegria! \\q O Santo de Israel está contigo, e {{deity_pronoun:ele|Ele}} é grande."
         }
       },
       "decisions": [
@@ -980,6 +1105,27 @@
             "\"habitant de Sion\""
           ],
           "reason": "The word is feminine singular, the city’s people pictured as a woman (meaning decision m1); Literal keeps it, Readable addresses the people.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230120060031",
+            "o230120060041"
+          ],
+          "choice": "moradora de Sião (L); tu que moras em Sião (B); Povo de Sião (R)",
+          "alternatives": [
+            "habitante de Sião",
+            "morador de Sião"
+          ],
+          "reason": "The word is feminine singular, the people of Zion pictured as one woman (m1). Literal keeps the feminine with \"moradora\" and the \"tu\" of 1:22; Balanced says \"tu que moras\", and Readable \"Povo de Sião\", as the English Readable does.",
           "uncertain": false,
           "footnote": false
         }

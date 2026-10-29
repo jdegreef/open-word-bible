@@ -8,8 +8,8 @@ verse markers split out, so each verse is plain text. A verse not yet
 translated is left out, never filled from another Bible; the manifest lists
 which.
 
-Most Bibles and importers number Old Testament verses as English Bibles do,
-not as the Hebrew does, so numbering="english" (the default) moves each
+Most Bibles and importers number verses as English Bibles do, not as the
+Hebrew (and, in five places, the SBLGNT) does, so numbering="english" (the default) moves each
 verse to its English number (owb/versification.py); numbering="source" keeps
 ours. A
 psalm title, which English Bibles print unnumbered, becomes the chapter's
