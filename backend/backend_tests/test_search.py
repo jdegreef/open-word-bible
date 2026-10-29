@@ -2,6 +2,7 @@
 builds from the site's own search documents, and the endpoint, in each site
 language."""
 import sys
+import time
 
 from django.conf import settings
 from django.core.cache import cache
@@ -59,7 +60,7 @@ class SearchTest(TestCase):
     def test_rebuild_replaces_rather_than_adds(self):
         # One language: a full rebuild of all of them takes minutes.
         before = SearchEntry.objects.count()
-        change = search._rebuild_language(search.site_build(), "sw", full=True)
+        change = search._rebuild_language(search.site_build("sw"), "sw", full=True)
         self.assertEqual(SearchEntry.objects.count(), before)
         self.assertEqual(change.added, change.removed)
         self.assertEqual(change.added, SearchEntry.objects.filter(language="sw").count())
@@ -74,7 +75,7 @@ class SearchTest(TestCase):
         first, second = SearchEntry.objects.filter(language="en", kind="v").order_by("position", "sub")[:2]
         first.doc = {**first.doc, "u": "/stale/"}
         first.save()
-        change = search._rebuild_language(search.site_build(), "en", full=False)
+        change = search._rebuild_language(search.site_build("en"), "en", full=False)
         self.assertEqual((change.added, change.removed), (1, 1))
         self.assertFalse(SearchEntry.objects.filter(id=first.id).exists())
         self.assertTrue(SearchEntry.objects.filter(id=second.id).exists())
@@ -82,6 +83,24 @@ class SearchTest(TestCase):
         entries = SearchEntry.objects.filter(language="en").order_by("position", "sub")
         self.assertEqual([e.doc for e in entries], docs)
         self.assertFalse(entries.filter(vector__isnull=True).exists())
+
+    def test_search_budget_leaves_languages_for_the_next_run(self):
+        # Past the deadline no language is started, and the ones done stay.
+        before = SearchEntry.objects.count()
+        self.assertEqual(search.rebuild(until=time.monotonic() - 1), {})
+        self.assertEqual(SearchEntry.objects.count(), before)
+        # The records loaded for one language don't outlive the rebuild.
+        self.assertIsNone(build_site.SEARCH_LANG)
+
+    def test_one_languages_records_give_the_same_documents(self):
+        # The rebuild loads only a language's renderings (English's where a
+        # sentence is not in it yet); search_documents must not notice.
+        site = search.site_build("pt")
+        try:
+            one = site.search_documents("pt")
+        finally:
+            search.site_build()
+        self.assertEqual(one, build_site.search_documents("pt"))
 
     def test_jsonb_text_matches_postgres(self):
         # plan() matches stored entries by this key, worked out here for new
