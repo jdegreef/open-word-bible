@@ -53,6 +53,11 @@
           "L": "그러나 이 일이 요나에게 악했으니, 큰 악이었다. 그래서 그가 [분노로] 달아올랐다.",
           "B": "그러나 요나에게는 이 일이 크게 잘못된 일로 보였다. 그래서 그는 화가 났다.",
           "R": "그러나 요나는 이 일 때문에 몹시 언짢았다. 그래서 그는 화를 냈다."
+        },
+        "pt": {
+          "L": "Mas [isso] foi mal para Jonas, um grande mal, e ele se inflamou [de ira].",
+          "B": "Mas, para Jonas, isso foi um grande mal, e ele ficou irado.",
+          "R": "Mas isso deixou Jonas muito aborrecido, e ele ficou com raiva."
         }
       },
       "decisions": [
@@ -302,6 +307,11 @@
           "L": "그리고 그가 {{divine_name:주|야훼}}께 기도하여 말했다. \"아, {{divine_name:주|야훼}}여, 제가 아직 제 땅에 있을 때에 이것이 제 말이 아니었습니까? 그래서 제가 먼저 다시스로 도망하려 했던 것입니다. 주님은 은혜롭고 긍휼이 많은 하나님이시며, 분노를 오래 참으시고 한결같은 사랑이 크시며, 재앙에 대하여 뜻을 돌이키시는 분이심을 제가 알았기 때문입니다.",
           "B": "그가 {{divine_name:주|야훼}}께 기도했다. \"{{divine_name:주|야훼}}여, 제가 고향에 있을 때에 이미 이렇게 말하지 않았습니까? 그래서 제가 서둘러 다시스로 달아나려 했던 것입니다. 주님은 은혜를 베푸시고 불쌍히 여기시는 하나님이시며, 쉽게 노하지 않으시고 한결같은 사랑이 넘치시며, 재앙을 내리시려다가도 뜻을 돌이키시는 분이라는 것을 제가 알고 있었습니다.",
           "R": "요나가 {{divine_name:주|야훼}}께 기도했다. \"{{divine_name:주|야훼}}여, 제가 고향에 있을 때에 이렇게 될 거라고 말씀드리지 않았습니까! 그래서 제가 서둘러 다시스로 달아나려고 했던 것입니다. 저는 주님이 친절을 베푸시고 따뜻한 사랑으로 불쌍히 여기시는 하나님이신 줄 알았습니다. 주님은 좀처럼 화를 내지 않으십니다. 주님의 변함없는 사랑은 큽니다. 주님은 마음을 바꾸셔서 사람들에게 벌을 내리지 않으십니다."
+        },
+        "pt": {
+          "L": "E ele orou {{divine_name:ao SENHOR|a Javé}} e disse: \"Por favor, {{divine_name:SENHOR|Javé}}, não [era] esta a minha palavra quando eu ainda estava na minha terra? Por isso me antecipei fugindo para Társis; pois eu sabia que {{deity_pronoun:tu|Tu}} [és] um Deus misericordioso e compassivo, longo de ira e grande em amor leal, e que desiste do mal.",
+          "B": "Ele orou {{divine_name:ao SENHOR|a Javé}}: \"Por favor, {{divine_name:SENHOR|Javé}}, não foi isso que eu disse quando ainda estava na minha terra? Foi por isso que me apressei a fugir para Társis. Pois eu sabia que {{deity_pronoun:tu|Tu}} és um Deus misericordioso e compassivo, lento para se irar e cheio de amor leal, e que desiste de mandar a desgraça.",
+          "R": "Jonas orou {{divine_name:ao SENHOR|a Javé}}: \"Por favor, {{divine_name:SENHOR|Javé}}, eu disse que isso ia acontecer quando ainda estava em casa! Foi por isso que fugi depressa para Társis. Eu sabia que {{deity_pronoun:tu|Tu}} és um Deus bondoso e cheio de compaixão. Tu demoras a ficar irado. O {{deity_pronoun:teu|Teu}} amor fiel é grande. Tu estás sempre pronto a mudar de ideia e não mandar a desgraça."
         }
       },
       "decisions": [
@@ -639,6 +649,55 @@
           "reason": "As 3:9-10: God relenting is \"renoncer à\", never \"se repentir\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o320040020231",
+            "o320040020241",
+            "o320040020252",
+            "o320040020261",
+            "o320040020271",
+            "o320040020282"
+          ],
+          "choice": "the Portuguese of Exodus 34:6 and Joel 2:13, in Jonah's order",
+          "alternatives": [
+            "compassivo e misericordioso"
+          ],
+          "reason": "Jonah quotes Exodus 34:6 with \"gracious\" first (m1), as Joel 2:13 does, so each level uses Joel 2:13's Portuguese of the confession, spoken to God with \"tu\": \"misericordioso e compassivo, longo de ira e grande em amor leal\" (L), \"misericordioso e compassivo, lento para se irar e cheio de amor leal\" (B), \"bondoso e cheio de compaixão ... demora a ficar irado ... amor fiel é grande\" (R).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-2",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o320040020302",
+            "o320040020322"
+          ],
+          "choice": "desiste do mal (L); desiste de mandar a desgraça (B); pronto a mudar de ideia e não mandar a desgraça (R)",
+          "alternatives": [
+            "volta atrás quanto à desgraça (L)",
+            "se arrepende do mal"
+          ],
+          "reason": "Relenting is \"desistir\" at Literal and Balanced and \"mudar de ideia\" at Readable, as in 3:9-10 (m2); Balanced and Readable keep Joel 2:13's words for it. Literal says \"do mal\", the book's one word for evil and disaster (1:2), where Joel's Literal says \"volta atrás quanto à desgraça\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -703,6 +762,11 @@
           "L": "그러니 이제 {{divine_name:주|야훼}}여, 제발 제 목숨을 제게서 거두어 주십시오. 제게는 죽는 것이 사는 것보다 낫기 때문입니다.\"",
           "B": "그러니 이제 {{divine_name:주|야훼}}여, 제발 제 목숨을 거두어 주십시오. 저에게는 죽는 것이 사는 것보다 낫습니다.\"",
           "R": "그러니 이제 {{divine_name:주|야훼}}여, 제발 저를 죽게 해 주십시오. 저는 사느니 차라리 죽는 것이 낫겠습니다.\""
+        },
+        "pt": {
+          "L": "E agora, {{divine_name:SENHOR|Javé}}, toma, por favor, a minha vida de mim, pois a minha morte [é] melhor do que a minha vida.\"",
+          "B": "Agora, {{divine_name:SENHOR|Javé}}, por favor, tira a minha vida, pois para mim a morte é melhor do que a vida.\"",
+          "R": "Agora, {{divine_name:SENHOR|Javé}}, por favor, deixa-me morrer. Prefiro estar morto a estar vivo.\""
         }
       },
       "decisions": [
@@ -827,6 +891,26 @@
           "reason": "The meaning decision points to Elijah's prayer in 1 Kings 19:4, whose published Vietnamese has \"xin lấy mạng sống con đi\"; the same words are kept.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o320040030031",
+            "o320040030061",
+            "o320040030062"
+          ],
+          "choice": "toma ... a minha vida (L); tira a minha vida (B)",
+          "alternatives": [],
+          "reason": "Jonah prays Elijah's words (m1), so Literal and Balanced keep the Portuguese of 1 Kings 19:4 at their levels, \"toma a minha vida\" and \"tira a minha vida\", with \"SENHOR\" and no \"ó\", as the English has no \"O\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -882,6 +966,11 @@
           "L": "그러자 {{divine_name:주|야훼}}께서 말씀하셨다. \"네가 [분노로] 달아오르는 것이 잘하는 것이냐?\"",
           "B": "그러나 {{divine_name:주|야훼}}께서 말씀하셨다. \"네가 화를 내는 것이 옳으냐?\"",
           "R": "그러나 {{divine_name:주|야훼}}께서 말씀하셨다. \"네가 화를 내는 것이 옳은 일이냐?\""
+        },
+        "pt": {
+          "L": "E {{divine_name:o SENHOR|Javé}} disse: \"É bom que tu estejas ardendo [de ira]?\"",
+          "B": "Mas {{divine_name:o SENHOR|Javé}} disse: \"Tens razão para estar irado?\"",
+          "R": "Mas {{divine_name:o SENHOR|Javé}} disse: \"Tens o direito de ficar com raiva?\""
         }
       },
       "decisions": [
@@ -1083,6 +1172,11 @@
           "L": "그리고 요나가 그 성읍에서 나가 그 성읍 동쪽에 앉았다. 그리고 그가 거기에 자기를 위하여 초막을 만들고 그 아래 그늘에 앉아, 그 성읍에 무슨 일이 일어날지 볼 때까지 [기다렸다].",
           "B": "요나는 성읍에서 나가 성읍 동쪽에 앉았다. 그는 거기에 초막을 하나 만들고 그 아래 그늘에 앉아서, 그 성읍이 어떻게 되는지 지켜보았다.",
           "R": "요나는 성읍에서 나와 성읍 동쪽에 가서 앉았다. 그는 거기에 나뭇가지로 쉴 곳을 만들고 그 그늘에 앉았다. 그는 성읍에 무슨 일이 일어날지 기다리며 지켜보았다."
+        },
+        "pt": {
+          "L": "E Jonas saiu da cidade e se sentou a leste da cidade. E fez para si ali uma cabana e se sentou debaixo dela, à sombra, até ver o que aconteceria na cidade.",
+          "B": "Jonas saiu da cidade e se sentou a leste dela. Fez ali um abrigo para si e se sentou debaixo dele, à sombra, esperando para ver o que seria da cidade.",
+          "R": "Jonas saiu da cidade e se sentou num lugar a leste dela. Ali ele fez um abrigo para si e se sentou na sombra dele. Ficou esperando para ver o que ia acontecer com a cidade."
         }
       },
       "decisions": [
@@ -1295,6 +1389,11 @@
           "L": "그리고 {{divine_name:주|야훼}} 하나님께서 식물 하나를 정하여 두셔서, 그것이 요나 위로 자라 올라 그의 머리 위에 그늘이 되게 하여, 그를 그의 괴로움에서 건지게 하셨다. 요나는 그 식물 때문에 큰 기쁨으로 기뻐했다.",
           "B": "{{divine_name:주|야훼}} 하나님께서 잎이 무성한 덩굴 하나를 마련해 두셨다. 그 덩굴이 요나 위로 자라 올라 그의 머리에 그늘을 드리워, 그를 괴로움에서 건져 주었다. 요나는 그 덩굴 때문에 몹시 기뻐했다.",
           "R": "그때 {{divine_name:주|야훼}} 하나님께서 잎이 무성한 덩굴 하나를 보내셨다. 그 덩굴이 요나 위로 자라 올라 그의 머리에 그늘을 만들어 주었다. 그래서 요나의 괴로움이 덜해졌다. 요나는 그 덩굴 때문에 아주 기뻤다."
+        },
+        "pt": {
+          "L": "E {{divine_name:o SENHOR|Javé}} Deus designou uma planta, e ela subiu por cima de Jonas para ser sombra sobre a sua cabeça, para livrá-lo do seu mal; e Jonas se alegrou por causa da planta [com] grande alegria.",
+          "B": "{{divine_name:O SENHOR|Javé}} Deus designou uma planta frondosa, e ela cresceu por cima de Jonas para dar sombra à sua cabeça e livrá-lo do seu desconforto. Jonas ficou muito alegre por causa da planta.",
+          "R": "Então {{divine_name:o SENHOR|Javé}} Deus mandou uma planta cheia de folhas, e ela cresceu por cima de Jonas. Ela fez sombra na cabeça dele e aliviou o seu sofrimento. Jonas ficou muito feliz com a planta."
         }
       },
       "decisions": [
@@ -1531,6 +1630,29 @@
           "reason": "As the term sheet: the English does not name the plant, whose kind is uncertain, so French does not say \"ricin\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o320040060041"
+          ],
+          "choice": "uma planta (L); uma planta frondosa (B); uma planta cheia de folhas (R)",
+          "alternatives": [
+            "uma aboboreira",
+            "um rícino",
+            "uma hera"
+          ],
+          "reason": "The kind of plant is not known (m1). As the English says \"a plant\" and \"a leafy plant\" without naming a kind, Portuguese does not say \"aboboreira\", the gourd of older Portuguese Bibles, which comes from the Greek translation's reading, nor \"rícino\", the castor-oil plant many suggest; \"frondosa\" and \"cheia de folhas\" say why it gave shade.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1596,6 +1718,11 @@
           "L": "그리고 다음 날 동이 틀 때에 하나님께서 벌레 한 마리를 정하여 두셨다. 그것이 그 식물을 쳐서 [식물이] 시들었다.",
           "B": "그러나 다음 날 동이 틀 무렵에 하나님께서 벌레 한 마리를 마련해 두셨다. 그 벌레가 덩굴을 갉아 먹자, 덩굴이 시들어 버렸다.",
           "R": "그러나 다음 날 이른 아침에 하나님께서 벌레 한 마리를 보내셨다. 벌레가 덩굴을 갉아 먹어서, 덩굴이 말라 버렸다."
+        },
+        "pt": {
+          "L": "E Deus designou um verme quando a aurora subiu no dia seguinte, e ele feriu a planta, e ela secou.",
+          "B": "Mas, ao raiar do dia seguinte, Deus designou um verme, que atacou a planta, e ela secou.",
+          "R": "Mas, bem cedo na manhã seguinte, Deus mandou um verme. Ele roeu a planta, e a planta secou."
         }
       },
       "decisions": [
@@ -1717,6 +1844,11 @@
           "L": "그리고 해가 떠오를 때에 하나님께서 뜨거운 동풍을 정하여 두셨다. 해가 요나의 머리를 내리쬐니 그가 기진하였다. 그가 죽기를 스스로 구하며 말했다. \"제게는 죽는 것이 사는 것보다 낫습니다.\"",
           "B": "해가 뜨자 하나님께서 뜨거운 동풍을 마련해 두셨다. 해가 요나의 머리 위로 내리쬐자, 그는 기운이 다 빠졌다. 그는 죽기를 구하며 말했다. \"저에게는 죽는 것이 사는 것보다 낫습니다.\"",
           "R": "해가 뜨자 하나님께서 동쪽에서 뜨거운 바람을 보내셨다. 해가 요나의 머리 위로 뜨겁게 내리쬐었다. 그는 힘이 빠져 쓰러질 것 같았다. 그는 죽게 해 달라고 빌었다. \"저는 사느니 차라리 죽는 것이 낫겠습니다.\" 그가 말했다."
+        },
+        "pt": {
+          "L": "E aconteceu que, quando o sol nasceu, Deus designou um vento oriental abrasador, e o sol feriu a cabeça de Jonas, e ele desfaleceu; e pediu para si a morte, e disse: \"A minha morte [é] melhor do que a minha vida.\"",
+          "B": "Quando o sol nasceu, Deus designou um vento abrasador vindo do leste, e o sol bateu na cabeça de Jonas até ele desfalecer. Ele pediu a morte e disse: \"Para mim a morte é melhor do que a vida.\"",
+          "R": "Quando o sol nasceu, Deus mandou um vento quente do leste. O sol bateu forte na cabeça de Jonas, e ele ficou fraco e quase desmaiou. Ele pediu para morrer. \"Prefiro estar morto a estar vivo\", disse ele."
         }
       },
       "decisions": [
@@ -1866,6 +1998,29 @@
           "reason": "The meaning decision names 1 Kings 19:4; these are the published Vietnamese words of that verse at each level. Jonah's words are spoken to God, so he says \"con\", as in 4:3.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o320040080061",
+            "o320040080071",
+            "o320040080152",
+            "o320040080161",
+            "o320040080171"
+          ],
+          "choice": "um vento oriental abrasador (L); um vento abrasador vindo do leste (B); um vento quente do leste (R); pediu para si a morte (L), pediu a morte (B), pediu para morrer (R)",
+          "alternatives": [],
+          "reason": "\"Vento oriental\" is the term the Pentateuch's Portuguese uses for the east wind off the desert (m1); Balanced and Readable say where it came from in plainer words. The request to die keeps the Portuguese of 1 Kings 19:4 at each level (m2), and Jonah's words repeat verse 3.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1934,6 +2089,11 @@
           "L": "그러자 하나님께서 요나에게 말씀하셨다. \"네가 그 식물 때문에 [분노로] 달아오르는 것이 잘하는 것이냐?\" 그가 말했다. \"제가 죽기까지 [분노로] 달아오르는 것이 잘하는 것입니다.\"",
           "B": "그러나 하나님께서 요나에게 말씀하셨다. \"네가 그 덩굴 때문에 화를 내는 것이 옳으냐?\" 요나가 대답했다. \"제가 화를 내는 것이 옳습니다. 죽고 싶을 만큼 화가 납니다!\"",
           "R": "그러나 하나님께서 요나에게 말씀하셨다. \"네가 그 덩굴 때문에 화를 내는 것이 옳은 일이냐?\" 요나가 대답했다. \"네, 옳습니다. 너무 화가 나서 죽을 것만 같습니다!\""
+        },
+        "pt": {
+          "L": "E Deus disse a Jonas: \"É bom que tu estejas ardendo [de ira] por causa da planta?\" E ele disse: \"É bom que eu esteja ardendo [de ira], até a morte.\"",
+          "B": "Mas Deus disse a Jonas: \"Tens razão para estar irado por causa da planta?\" \"Tenho razão para estar irado\", disse ele, \"irado a ponto de morrer!\"",
+          "R": "Mas Deus disse a Jonas: \"Tens o direito de ficar com raiva por causa da planta?\" \"Tenho, sim\", respondeu Jonas. \"Estou com tanta raiva que eu poderia morrer!\""
         }
       },
       "decisions": [
@@ -2074,6 +2234,11 @@
           "L": "그리고 {{divine_name:주|야훼}}께서 말씀하셨다. \"너는 네가 수고하지도 않았고 자라게 하지도 않은 그 식물, 하룻밤의 아들로 생겨났다가 하룻밤의 아들로 없어진 [그 식물]을 아꼈다.",
           "B": "그러자 {{divine_name:주|야훼}}께서 말씀하셨다. \"너는 그 덩굴을 위해 수고한 것도 없고 그것을 자라게 하지도 않았는데, 그 덩굴을 아까워하는구나. 그것은 하룻밤 사이에 자랐다가 하룻밤 사이에 죽어 버렸다.",
           "R": "그러자 {{divine_name:주|야훼}}께서 말씀하셨다. \"너는 이 덩굴을 아까워하는구나. 너는 그것을 자라게 하려고 아무 일도 하지 않았다. 그 덩굴은 하룻밤 사이에 자랐다가 그만큼 빨리 죽어 버렸다."
+        },
+        "pt": {
+          "L": "E {{divine_name:o SENHOR|Javé}} disse: \"Tu tiveste pena da planta, pela qual não trabalhaste e que não fizeste crescer, que surgiu [como] filho de uma noite e pereceu [como] filho de uma noite.",
+          "B": "Então {{divine_name:o SENHOR|Javé}} disse: \"Tu tiveste pena da planta, embora não tenhas trabalhado por ela nem a tenhas feito crescer. Ela nasceu numa noite e morreu numa noite.",
+          "R": "Então {{divine_name:o SENHOR|Javé}} disse: \"Tu te importaste com esta planta, embora não tenhas feito nada para ela crescer. Ela cresceu numa noite e morreu com a mesma rapidez."
         }
       },
       "decisions": [
@@ -2309,6 +2474,11 @@
           "L": "그런데 나는, 오른손과 왼손을 분간하지 못하는 사람이 120,000명이 넘고, 짐승도 많은 이 큰 성읍 니느웨를 아끼지 않아야 하겠느냐?\"",
           "B": "그렇다면 오른손과 왼손을 분간하지 못하는 사람이 120,000명이 넘게 살고, 짐승도 많은 이 큰 성읍 니느웨를 내가 어찌 아까워하지 않겠느냐?\"",
           "R": "그렇다면 내가 이 큰 성읍 니느웨를 아까워하지 않아야 하겠느냐? 그곳에는 오른손과 왼손도 구별하지 못하는 사람이 120,000명이 넘게 살고 있다. 짐승도 많다.\""
+        },
+        "pt": {
+          "L": "E eu, não terei pena de Nínive, a grande cidade, em que há mais de cento e vinte mil seres humanos que não sabem [distinguir] entre a sua mão direita e a sua esquerda, e muitos animais?\"",
+          "B": "E eu não deveria ter pena de Nínive, aquela grande cidade, onde há mais de cento e vinte mil pessoas que não sabem distinguir a mão direita da esquerda, além de muitos animais?\"",
+          "R": "Então eu não deveria me importar com a grande cidade de Nínive? Mais de cento e vinte mil pessoas moram lá, e elas não sabem distinguir a mão direita da esquerda. E há também muitos animais.\""
         }
       },
       "decisions": [
@@ -2526,6 +2696,32 @@
           "choice": "\"avoir pitié\" (L, B), \"s'inquiéter pour\" (R), the same verb as 4:10 at each level",
           "alternatives": [],
           "reason": "God's question picks up Jonah's pity for the plant, so each level repeats its word from verse 10.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o320040110111",
+            "o320040110121",
+            "o320040110122",
+            "o320040110131",
+            "o320040110171",
+            "o320040110181"
+          ],
+          "choice": "cento e vinte mil; não sabem distinguir a mão direita da esquerda",
+          "alternatives": [
+            "120.000"
+          ],
+          "reason": "Portuguese writes a round number like this in words in running text (docs/portuguese-style.md, section 5), where the English uses figures. Balanced and Readable say \"não sabem distinguir a mão direita da esquerda\", the plain Portuguese for the idiom (m1); Literal brackets \"distinguir\" and keeps \"entre\".",
           "uncertain": false,
           "footnote": false
         }
