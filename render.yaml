@@ -169,60 +169,9 @@ services:
       - key: SENTRY_TRACES_SAMPLE_RATE
         sync: false
 
-  # Alerts (backend/staff/alerts.py) every 30 minutes: emails the super
-  # admins once when CI on main fails, a content import fails, a drafting
-  # job or fix request stalls, or a reader message waits more than three
-  # days. CI failing on main never reaches the pre-deploy above (main isn't
-  # deployed), so this is what catches it. A cron job is billed separately
-  # from the API service; without it, alerts still go out before each
-  # deploy. Remove this service to stop them.
-  - type: cron
-    name: owb-alerts
-    runtime: python
-    plan: starter
-    schedule: "*/30 * * * *"
-    buildCommand: pip install -r backend/requirements.txt
-    startCommand: python backend/manage.py send_alerts
-    envVars:
-      - key: PYTHON_VERSION
-        value: "3.13"
-      - key: DATABASE_URL
-        fromDatabase:
-          name: owb-db
-          property: connectionString
-      - key: DJANGO_SECRET_KEY
-        fromService:
-          type: web
-          name: owb-api
-          envVarKey: DJANGO_SECRET_KEY
-      - key: OWB_SITE_URL
-        value: https://openwordbible.org
-      - key: OWB_SUPER_ADMIN_EMAILS
-        fromService:
-          type: web
-          name: owb-api
-          envVarKey: OWB_SUPER_ADMIN_EMAILS
-      - key: EMAIL_HOST
-        fromService:
-          type: web
-          name: owb-api
-          envVarKey: EMAIL_HOST
-      - key: EMAIL_HOST_USER
-        fromService:
-          type: web
-          name: owb-api
-          envVarKey: EMAIL_HOST_USER
-      - key: EMAIL_HOST_PASSWORD
-        fromService:
-          type: web
-          name: owb-api
-          envVarKey: EMAIL_HOST_PASSWORD
-      - key: DEFAULT_FROM_EMAIL
-        fromService:
-          type: web
-          name: owb-api
-          envVarKey: DEFAULT_FROM_EMAIL
-      # Set in the dashboard as for owb-api: the jobs and CI are read from
-      # GitHub with it (without it, stalled jobs aren't checked).
-      - key: OWB_GITHUB_TOKEN
-        sync: false
+  # The owb-alerts cron job (backend/staff/alerts.py, every 30 minutes) is
+  # left out until owb-api has SMTP settings: it only sends email, and it
+  # reads EMAIL_* from owb-api, so the Blueprint sync fails while those are
+  # unset. To bring it back, set EMAIL_HOST, EMAIL_HOST_USER,
+  # EMAIL_HOST_PASSWORD and DEFAULT_FROM_EMAIL on owb-api, then restore the
+  # service from git history (render.yaml at 4ed6799).
