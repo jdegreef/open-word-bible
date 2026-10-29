@@ -25,7 +25,9 @@ way round. Words of Jesus are his direct speech, including where the
 narrator or a witness quotes what he said ("he had said, \"Follow me\"";
 Paul in Acts 20:35), but not his words as others turn them over in
 argument ("What does he mean by 'a little while'?", John 16:18). They are
-marked where the text names him as the speaker.
+marked where the text, or a meaning decision in the record, names him as
+the speaker: Revelation 22:7 is his voice within the angel's message, but
+1:8 and 21:5-8 are given as God's.
 """
 import functools
 import json
